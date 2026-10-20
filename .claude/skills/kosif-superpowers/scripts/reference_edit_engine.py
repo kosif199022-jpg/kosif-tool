@@ -311,6 +311,25 @@ def stage_assets(project,root,manifest,shots):
     return originals[-1][1] if audio is not None else None
 
 
+def check_audio_length(path,edit):
+    """The replacement audio is the master clock: its length must match the timeline (±1 frame + 50 ms).
+    Fails closed on a mismatch; reports honestly when ffprobe is missing and nothing was measured."""
+    fps=float(edit.get("fps") or 30);timeline=float(edit.get("duration") or edit.get("totalFrames",0)/fps)
+    if not shutil.which("ffprobe"):
+        return {"timelineSeconds":timeline,"audioSeconds":None,"lengthVerified":False,"why":"ffprobe not installed"}
+    import subprocess
+    r=subprocess.run(["ffprobe","-v","error","-show_entries","format=duration","-of","default=nw=1:nk=1",str(path)],
+                     capture_output=True,text=True,timeout=60)
+    try:seconds=float(r.stdout.strip())
+    except ValueError:
+        return {"timelineSeconds":timeline,"audioSeconds":None,"lengthVerified":False,
+                "why":f"ffprobe could not read a duration from {path.name}; check it before rendering"}
+    if abs(seconds-timeline)>1/fps+0.05:
+        raise ValueError(f"replacement audio is {seconds:.3f} s but the timeline from --cues is {timeline:.3f} s; "
+                         "build the cues from this audio so it stays the master clock")
+    return {"timelineSeconds":timeline,"audioSeconds":round(seconds,3),"lengthVerified":True}
+
+
 def create_project(project,edit,manifest=None,assets_dir=None):
     dest=Path(project)
     if dest.exists() or dest.is_symlink() or not dest.parent.is_dir():
@@ -328,11 +347,13 @@ def create_project(project,edit,manifest=None,assets_dir=None):
         basename(name,AUDIO_EXTS if i==len(clips) else ASSET_EXTS)
         if assets_dir is None or not (Path(assets_dir)/name).is_file() or (Path(assets_dir)/name).is_symlink():
             raise ValueError("replacement asset missing, symlinked or no directory provided")
+    audio_check=check_audio_length(Path(assets_dir)/manifest["audio"],edit) if manifest.get("audio") is not None else None
     dest.mkdir()
     try:
         (dest/"src").mkdir()
         e=json.loads(json.dumps(edit))
         e["audio"]=stage_assets(dest,assets_dir,manifest,e["shots"])
+        if audio_check is not None:e["evidence"]["replacementAudio"]=audio_check
         (dest/"package.json").write_text(json.dumps(PACKAGE,indent=2)+"\n",encoding="utf8")
         (dest/"src"/"index.jsx").write_text(INDEX,encoding="utf8")
         (dest/"src"/"Root.jsx").write_text(ROOT,encoding="utf8")

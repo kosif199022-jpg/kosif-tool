@@ -152,6 +152,8 @@ def export(prepared,out,fps=24,time=0,audio=None):
     out=Path(out);fps=int(num(fps,1,60))
     if out.exists():raise ValueError("Refusing to overwrite")
     suffix=out.suffix.lower()
+    if suffix not in (".png",".svg",".gif",".mp4"):raise ValueError("Use .png .svg .gif .mp4")
+    if audio and suffix!=".mp4":raise ValueError("--audio is supported only with MP4 output")
     if suffix in (".png",".svg"):
         scene,arm=figure(prepared,time)
         if suffix==".png":paint(scene).save(out)
@@ -161,8 +163,8 @@ def export(prepared,out,fps=24,time=0,audio=None):
         n=round(prepared["duration"]*fps)
         if abs(n/fps-prepared["duration"])>1e-8:raise ValueError("duration*fps must be an exact frame count")
         if n>MAX_FRAMES:raise ValueError("frame count exceeds safety limit")
-        if suffix==".gif" and audio:raise ValueError("GIF cannot contain original audio")
-        if suffix==".mp4" and not shutil.which("ffmpeg"):raise ValueError("FFmpeg unavailable")
+        if suffix==".mp4" and not (shutil.which("ffmpeg") and shutil.which("ffprobe")):
+            raise ValueError("MP4 needs ffmpeg and ffprobe on PATH")
         if audio:
             tracks=probe(audio,"a:0")
             if not tracks or tracks[0]["codec_name"]!="aac":raise ValueError("Pass compatible AAC input for stream-copy to MP4")
@@ -175,8 +177,10 @@ def export(prepared,out,fps=24,time=0,audio=None):
                 im=paint(scene).convert("RGB")
                 if suffix==".gif":frames.append(im)
                 else:im.save(folder/f"{i:05d}.png")
+            # Build and verify inside the temp folder; only a verified file reaches --output.
+            final=folder/("final"+suffix)
             if suffix==".gif":
-                frames[0].save(out,save_all=True,append_images=frames[1:],duration=round(1000/fps),loop=0,optimize=False)
+                frames[0].save(final,save_all=True,append_images=frames[1:],duration=round(1000/fps),loop=0,optimize=False)
             else:
                 temp=folder/"silent.mp4"
                 cmd=["ffmpeg","-v","error","-y","-framerate",str(fps),"-i",str(folder/"%05d.png"),
@@ -184,15 +188,15 @@ def export(prepared,out,fps=24,time=0,audio=None):
                 subprocess.run(cmd,check=True,capture_output=True)
                 if audio:
                     cmd=["ffmpeg","-v","error","-y","-i",str(temp),"-i",str(audio),
-                         "-map","0:v:0","-map","1:a:0","-c:v","copy","-c:a","copy","-movflags","+faststart",str(out)]
+                         "-map","0:v:0","-map","1:a:0","-c:v","copy","-c:a","copy","-movflags","+faststart",str(final)]
                     subprocess.run(cmd,check=True,capture_output=True)
-                    if packet_hashes(audio)!=packet_hashes(out):raise ValueError("audio packet hashes changed")
-                else:shutil.copyfile(temp,out)
+                    if packet_hashes(audio)!=packet_hashes(final):raise ValueError("audio packet hashes changed")
+                else:shutil.copyfile(temp,final)
+                video=probe(final,"v:0")
+                if not video or video[0].get("codec_name")!="h264":raise ValueError("invalid H.264 video")
+            if out.exists():raise ValueError("output appeared concurrently; not overwriting")
+            shutil.copyfile(final,out)
         frames=n
-        if suffix==".mp4":
-            video=probe(out,"v:0")
-            if not video or video[0].get("codec_name")!="h264":raise ValueError("invalid H.264 video")
-    else:raise ValueError("Use .png .svg .gif .mp4")
     digest=hashlib.sha256(out.read_bytes()).hexdigest()
     return {"output":str(out),"verified":out.exists() and out.stat().st_size>100,
             "frames":frames,"fps":fps,"audio_packet_copy_verified":bool(audio),
@@ -209,7 +213,7 @@ def main(argv=None):
     args=ap.parse_args(argv)
     if args.command=="doctor":
         print(json.dumps({"schema":SCHEMA,"pillow":Image.__version__,"ffmpeg":bool(shutil.which("ffmpeg")),
-                          "formats":["png","svg","gif","mp4"],"max_frames":MAX_FRAMES}))
+                          "ffprobe":bool(shutil.which("ffprobe")),"formats":["png","svg","gif","mp4"],"max_frames":MAX_FRAMES}))
         return 0
     try:
         words=words_from_file(args.words)

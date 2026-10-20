@@ -1,6 +1,6 @@
 # KOSIF Repository Capability Transfer — مصدر ← قدرة قابلة للاختبار
 
-**Status:** This is a functioning local **repository inspection and safe ZIP packaging** utility, not an assertion that the upstream repositories have been incorporated as runnable engines. It extends the existing 4,223 catalog powers without altering their counts. Existing original KOSIF motion and character executors remain unchanged.
+**Status:** This is a functioning local **repository inspection and safe ZIP packaging** utility, not an assertion that the upstream repositories have been incorporated as runnable engines. It extends the existing catalog powers without altering their counts. Existing original KOSIF motion and character executors remain unchanged.
 
 ## 1. The real executable (no dependencies)
 
@@ -12,7 +12,7 @@ python3 "$SKILL_DIR/scripts/repository_capability_packer.py" pack ./downloaded-r
 python3 "$SKILL_DIR/scripts/repository_capability_packer.py" inspect ./source-archive.zip
 ```
 
-The code walks a local checkout or an existing ZIP, excludes common build caches, archives, executables and filenames indicating secrets, checks path traversal, symlinks, zip bombs/size limits, generates SHA-256 per included file, infers **candidate** capabilities from code structure, and produces a reproducible ZIP with no automatic code execution. **It does not clone, download or execute upstream code.** Inputs with exposed secrets inside otherwise named source files still need human review: filename screening is NOT a security audit, and source-code ZIPs MUST NOT be redistributed before licensing/secret inspection.
+The code walks a local checkout or an existing ZIP, excludes common build caches, archives, executables and filenames indicating secrets, checks path traversal, symlinks, zip bombs/size limits, generates SHA-256 per included file, infers **candidate** capabilities from code structure, and produces a reproducible ZIP with no automatic code execution. Every file it writes (`inspect --out`, `pack --out`, `--report`) must lie outside the input; missing parent folders are created, and an existing file is never replaced unless you pass `--force`. **It does not clone, download or execute upstream code.** Inputs with exposed secrets inside otherwise named source files still need human review: filename screening is NOT a security audit, and source-code ZIPs MUST NOT be redistributed before licensing/secret inspection.
 
 ### What each badge means
 

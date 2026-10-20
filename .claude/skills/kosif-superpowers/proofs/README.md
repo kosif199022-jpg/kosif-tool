@@ -44,7 +44,7 @@ Proof folders for the non-motion domains, each run in a Claude Code cloud contai
 | [general-data](general-data/README.md) | تحليل بيانات بأرقام مطابقة بثلاث طرق (pandas وDuckDB)، رسوم بتسميات عربية، رياضيات دقيقة ومحاكاة مخاطر، ولوحة RTL — data analysis, dashboards and strategy maths (ANLY-*, APP-*, PROD-*) | 17/17 |
 | [general-docs](general-docs/README.md) | مستندات عربية وإنجليزية DOCX وXLSX وPPTX وPDF تُكتب وتُحوَّل وتُقرأ وتُصوَّر وتُقرأ آليًا، والتقاط الويب — office documents and web capture (DOC-*, WEB-*) | 24/24 + 3/3 |
 | [general-media](general-media/README.md) | صور ونصوص عربية مقروءة آليًا (OCR)، ضغط وجودة، لوحة ألوان، رمز QR، وتحليل صوت وتوحيد جهارته وقصّه — images, OCR and audio (MEDIA-*) | 16/16 |
-| [general-writing](general-writing/README.md) | سكربتات الكتابة (`tell_scan.py`، `anchor_gate.py`) وأدوات اللغة العربية على نصوص أصلية — writing and Arabic-language powers (WRITE, PROMPT-02, ARL) | 58/58 |
+| [general-writing](general-writing/README.md) | سكربتات الكتابة (`tell_scan.py`، `anchor_gate.py`) وأدوات اللغة العربية على نصوص أصلية — writing and Arabic-language powers (WRITE, PROMPT-02, ARL) | 62/62 |
 | [general-graphify](general-graphify/README.md) | خريطة معرفة للكود بلا مفتاح: تثبيت Graphify، رسم الكود، الاستعلام، أثر التغيير، خادم MCP محلي وموصل مستضاف — code knowledge graph (GRAPH-*, CODE-03, SEC-14) | run log in folder |
 | [general-earlier-runs](general-earlier-runs/README.md) | سجل مشحون لتشغيلات جلسة سابقة كانت أدلتها في ملفات مؤقتة فقط (Hugging Face، torch للمعالج، تحديث Graphify وتكامله مع Claude Code) — shipped log of earlier-session runs (WEB-08, SELF-28, GRAPH-05, GRAPH-09) | HF re-run 2/2; rest marked not re-run |
 

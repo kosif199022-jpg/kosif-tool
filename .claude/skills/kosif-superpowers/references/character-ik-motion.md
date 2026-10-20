@@ -4,7 +4,7 @@
 
 `scripts/character_ik.py` adds **an original two-bone inverse-kinematics arm rig** with deterministic motion start times (from explicitly supplied words.json), integrated with `creative_paint.py` for actual images and animation export.
 
-It DOES NOT reverse engineer or copy Adobe Animate or Paint code. It uses standard analytic geometry, Pillow, and FFmpeg.
+It DOES NOT reverse engineer or copy Adobe Animate or Paint code. It uses standard analytic geometry, Pillow, and FFmpeg (MP4 needs both `ffmpeg` and `ffprobe`; `doctor` reports each).
 
 ### Example usage
 
@@ -18,7 +18,7 @@ python "$R/scripts/character_ik.py" render --scene "$R/templates/ik-wave-demo.js
 python "$R/scripts/character_ik.py" render --scene "$R/templates/ik-wave-demo.json" --words "$R/templates/ik-wave-words.json" --fps 24 --output wave.mp4
 ```
 
-Optional `--audio narration.m4a` **only for MP4**: the source audio must already be AAC encoded and match the scene's duration; the encoder copies AAC packets rather than re-encoding, and independently checks data hashes of every audio packet (same coded payload in the input and output). It never edits or stretches narration. Unsupported source codecs are deliberately refused rather than silently transcoded.
+Optional `--audio narration.m4a` **only for MP4** (PNG, SVG and GIF outputs refuse it): the source audio must already be AAC encoded and match the scene's duration; the encoder copies AAC packets rather than re-encoding, and independently checks data hashes of every audio packet (same coded payload in the input and output). It never edits or stretches narration. Unsupported source codecs are deliberately refused rather than silently transcoded.
 
 ### Formats and motion semantics
 - `kosif.ik.v1` JSON describes canvas, shoulder point, upper/lower bone length, elbow bend sign and targets.
@@ -27,7 +27,7 @@ Optional `--audio narration.m4a` **only for MP4**: the source audio must already
 - The pose stays still until each cue. Then the target moves along a smoothstep path of configurable `travel` seconds. Overlapping cues fail validation.
 - Analytic IK solves an elbow position with fixed upper/forearm lengths via law of cosines, handling unreachable targets by clamping to nearest reachable radius.
 - Exports PNG/SVG at specified `--time`, GIF/MP4 for all frames. MP4 uses H.264 and fixed FPS; GIF may coalesce duplicate visual frames but preserves cumulative duration.
-- No existing output overwritten; no executable inputs or arbitrary external code.
+- No existing output overwritten; GIF/MP4 are built and verified in a temporary folder, so a failed codec or audio-hash check leaves nothing at `--output`. No executable inputs or arbitrary external code.
 - Boundaries: 128..2048 canvas dimensions, 0.1..30 seconds, 600 frames at most, 100 cues, shoulder and limb positions should remain in the viewable canvas.
 
 ### Verification
@@ -56,4 +56,4 @@ Demo proof in PRIVATE local directory `KOSIF_RESEARCH_PRIVATE_20261019/ik_charac
 - SVG is a static vector pose at a given time, not animated SVG.
 
 ### Transfer to Claude Code
-Read this document and `templates/ik-wave-demo.json`. Create an original JSON with target positions and, optionally, word cues. Probe dependencies with `doctor`, render 1–2 proof frames, inspect generated images, run tests, then export final MP4. Link to existing `code_drawing_master.py` for richer character paths and `cinematic_film_pipeline.py` for full-film editing.
+Read this document and `templates/ik-wave-demo.json`. Create an original JSON with target positions and, optionally, word cues. Probe dependencies with `doctor`, render 1–2 proof frames, inspect generated images, run tests, then export final MP4. Link to existing `code_drawing_master.py` for richer character paths; for full-film editing use the tools in `references/guides/edit.md` (`cinematic_cut_planner.py` for a word-timed edit decision list, then `cinematic_broll_render.py` to render it).

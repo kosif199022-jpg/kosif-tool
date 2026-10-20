@@ -1,4 +1,4 @@
-﻿"""Metadata only: fixed fixtures, no network or execution."""
+"""Metadata only: fixed fixtures, no network or execution."""
 import json
 from pathlib import Path
 import sys

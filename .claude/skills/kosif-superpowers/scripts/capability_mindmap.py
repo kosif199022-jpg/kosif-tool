@@ -87,8 +87,8 @@ def task_map(t, sps, hubs, stages, brief=None):
     hub_by = {h["id"]: h for h in hubs}
     words = set(re.findall(r"[a-z0-9:]+|[؀-ۿ]{2,}", (brief or t.get("brief", "")).lower()))
     plan = collections.OrderedDict()
-    fallback = {"understand": ["think", "research"], "plan": ["think", "story"], "create": [], "refine": [],
-                "assemble": ["render"], "verify": ["render", "think"], "deliver": ["render", "montage"]}
+    fallback = {"understand": ["thinking", "research"], "plan": ["thinking"], "create": [], "refine": [],
+                "assemble": ["3d", "motion"], "verify": ["quality"], "deliver": ["motion", "documents"]}
 
     def ranked(hub_ids, st_id, need_rel):
         out = []
@@ -263,7 +263,7 @@ def main(argv=None):
         import kosif_hubs as H
         idx = json.loads(HUBX.read_text(encoding="utf-8"))
         hubs = [r["hub"]["id"] for r in H.route(idx, a.task, 4)]
-        for need in ("render",) if any(h in ("motion", "montage", "draw", "audio", "3d", "type") for h in hubs) else ():
+        for need in ("quality",) if any(h in ("motion", "drawing", "audio", "3d", "type", "images") for h in hubs) else ():
             if need not in hubs:
                 hubs.append(need)
         tm = task_map({"id": "custom", "ar": a.task, "en": "", "hubs": hubs}, sps, d["hubs"], stages, brief=a.task)

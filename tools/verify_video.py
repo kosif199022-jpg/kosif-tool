@@ -11,7 +11,8 @@ Checks with ffprobe/ffmpeg (both must be on PATH):
 
 Usage:
   python3 tools/verify_video.py film.mp4 --aspect 9:16 --fps 30 --duration 15 [--audio voice.mp3] [--lufs -14] [--json report.json]
-Exit code 1 when any check fails.
+Exit code 1 when any check fails; 2 when an input cannot be read (missing or unreadable video
+or --audio master, unreadable --aspect) or ffprobe/ffmpeg is missing.
 """
 from __future__ import annotations
 
@@ -27,9 +28,28 @@ sys.path.insert(0, str(Path(__file__).resolve().parent))
 from aspects import ratio_of  # noqa: E402  (any W:H, WxH or name)
 
 
+class InputError(Exception):
+    """An input file ffprobe cannot read; reported as one line, exit 2."""
+
+
 def probe(path: str) -> dict:
-    out = subprocess.run(["ffprobe", "-v", "error", "-show_format", "-show_streams", "-count_frames", "-of", "json", path], capture_output=True, text=True, check=True)
-    return json.loads(out.stdout)
+    out = subprocess.run(["ffprobe", "-v", "error", "-show_format", "-show_streams", "-count_frames", "-of", "json", path], capture_output=True, text=True)
+    if out.returncode != 0:
+        reason = (out.stderr.strip().splitlines() or [f"ffprobe exit status {out.returncode}"])[-1]
+        raise InputError(f"cannot read input: {reason if path in reason else f'{path}: {reason}'}")
+    try:
+        return json.loads(out.stdout)
+    except ValueError:
+        raise InputError(f"cannot read input: {path}: ffprobe returned no JSON") from None
+
+
+def aspect_spec(value: str) -> str:
+    """argparse type: keep the user's spelling, reject a spec aspects.py cannot read."""
+    try:
+        ratio_of(value)
+    except ValueError as exc:
+        raise argparse.ArgumentTypeError(str(exc)) from None
+    return value
 
 
 def loudness(path: str) -> dict | None:
@@ -58,7 +78,7 @@ def frac(s: str) -> float:
 def main() -> int:
     ap = argparse.ArgumentParser(description=__doc__, formatter_class=argparse.RawDescriptionHelpFormatter)
     ap.add_argument("video")
-    ap.add_argument("--aspect", help="any ratio: 9:16, 21:9, 2.35:1, 1920x816, reel, cinema…")
+    ap.add_argument("--aspect", type=aspect_spec, help="any ratio: 9:16, 21:9, 2.35:1, 1920x816, reel, cinema…")
     ap.add_argument("--fps", type=float)
     ap.add_argument("--duration", type=float, help="expected duration in seconds")
     ap.add_argument("--audio", help="master audio file whose duration the video must match")
@@ -71,6 +91,15 @@ def main() -> int:
             print(f"{tool} not found on PATH", file=sys.stderr)
             return 2
 
+    try:
+        return run_checks(args)
+    except InputError as exc:
+        print(exc, file=sys.stderr)
+        return 2
+
+
+def run_checks(args: argparse.Namespace) -> int:
+    master = probe(args.audio) if args.audio else None  # fail fast on a bad master before the long frame count
     info = probe(args.video)
     v = next((s for s in info["streams"] if s["codec_type"] == "video"), None)
     a = next((s for s in info["streams"] if s["codec_type"] == "audio"), None)
@@ -110,8 +139,7 @@ def main() -> int:
                     checks.append((f"integrated loudness {args.lufs:g} LUFS ±1.5", abs(lu["integrated_lufs"] - args.lufs) <= 1.5, f"{lu['integrated_lufs']} LUFS"))
                 if lu.get("true_peak_dbfs") is not None:
                     checks.append(("true peak ≤ -1 dBFS", lu["true_peak_dbfs"] <= -1.0, f"{lu['true_peak_dbfs']} dBFS"))
-            if args.audio:
-                master = probe(args.audio)
+            if master is not None:
                 mdur = float(master["format"].get("duration") or 0)
                 adur = float(a.get("duration") or dur)
                 report["master_audio_s"] = round(mdur, 3)

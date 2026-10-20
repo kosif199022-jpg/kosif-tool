@@ -163,6 +163,8 @@ def execute(name, args=None):
             raise PermissionError("Command must be an argument array")
         if tuple(argv[:2]) not in approved:
             raise PermissionError("Command not allowlisted")
+        if argv[0] != "git" and len(argv) != 2:
+            raise PermissionError("Version checks take no extra arguments")
         if argv[0] == "git" and (len(argv) > 3 or (len(argv) == 3 and argv[2] not in {"--short", "--stat", "--show-toplevel", "--branch"})):
             raise PermissionError("Only read-only git arguments")
         p = resolve(a.get("cwd", "."), True)

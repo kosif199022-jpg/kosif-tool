@@ -31,10 +31,10 @@ class HubTests(unittest.TestCase):
                 self.assertTrue((SK / "scripts" / s).exists(), s)
 
     def test_routing(self):
-        for task, hub in (("مونتاج ريلز بانتقالات سريعة", "montage"), ("ارسم شعار بالكود", "draw"),
-                          ("analyze an electron app with rea", "reverse"), ("اكتب مقال عربي", "write")):
+        for task, hubs in (("مونتاج ريلز بانتقالات سريعة", {"motion"}), ("ارسم شعار بالكود", {"drawing"}),
+                           ("analyze an electron app with rea", {"reverse"}), ("اكتب مقال عربي", {"documents", "type"})):
             res = H.route(self.idx, task, 3)
-            self.assertIn(hub, [r["hub"]["id"] for r in res], task)
+            self.assertTrue(hubs & {r["hub"]["id"] for r in res}, task)
 
     def test_install_plan_never_marks_keys_present_without_env(self):
         rows = H.install_plan(["key:elevenlabs"])

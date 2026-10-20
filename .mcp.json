@@ -1,0 +1,8 @@
+{
+  "mcpServers": {
+    "kosif-superpowers": {
+      "command": "python3",
+      "args": [".claude/skills/kosif-superpowers/scripts/kosif_mcp.py"]
+    }
+  }
+}

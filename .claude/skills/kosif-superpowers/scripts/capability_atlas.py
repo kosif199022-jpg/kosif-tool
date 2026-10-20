@@ -126,6 +126,10 @@ def guide_text(atlas):
         "# KOSIF Capability Atlas — Claude discovery index", "",
         "Generated from real repository data. Catalog evidence is NOT a live execution receipt.", "",
         f"**{c['total']:,} powers / {len(c['families'])} families / {len(c['domains'])} domains / {c['routes']} route descriptions.**", "",
+        "For a task in the user's words, `python3 scripts/hub.py find \"<task>\"` combines this atlas with the runnable tools and guides.", "",
+        "## الفهرس / contents", "",
+        "1. [Claude task protocol](#claude-task-protocol)", "2. [Commands](#commands)", "3. [Evidence model](#evidence-model)",
+        "4. [Families by domain](#families-by-domain)", "5. [Decision flow](#decision-flow)", "",
         "## Claude task protocol", "",
         "1. Read this guide and the KOSIF master SKILL.md; do not load all power JSON files into context.",
         "2. Run: python scripts/capability_atlas.py plan \"<exact user task>\" --json",
@@ -164,11 +168,22 @@ def guide_text(atlas):
     return "\n".join(lines)
 
 
+def build_outputs(atlas=None) -> dict:
+    atlas = atlas or assemble()
+    return {INDEX: json.dumps(atlas, ensure_ascii=False, separators=(",", ":"), sort_keys=True) + "\n",
+            GUIDE: guide_text(atlas)}
+
+
+def stale_outputs() -> list:
+    """Generated files that differ from a fresh build (empty when up to date)."""
+    return [p for p, text in build_outputs().items() if not p.is_file() or p.read_text(encoding="utf-8") != text]
+
+
 def build(write=True):
     atlas = assemble()
     if write:
-        INDEX.write_text(json.dumps(atlas, ensure_ascii=False, separators=(",", ":"), sort_keys=True) + "\n", encoding="utf-8")
-        GUIDE.write_text(guide_text(atlas), encoding="utf-8")
+        for path, text in build_outputs(atlas).items():
+            path.write_text(text, encoding="utf-8")
     return atlas
 
 
@@ -203,6 +218,19 @@ def search(atlas, phrase, top=10, domain=None):
     return [dict(row, score=round(score, 2)) for score, row in ranked[:top]]
 
 
+_REQS = None
+
+
+def _requirement_registry() -> dict:
+    global _REQS
+    if _REQS is None:
+        try:
+            _REQS = json.loads((SKILL / "data" / "requirements.json").read_text(encoding="utf-8"))
+        except (OSError, ValueError):
+            _REQS = {}
+    return _REQS
+
+
 def requirement_state(required):
     item = str(required)
     if item in ("python3", "python"):
@@ -212,9 +240,11 @@ def requirement_state(required):
         return {"name": item, "state": "detected" if shutil.which(item) else "not_detected", "basis": "PATH"}
     if kind == "bin":
         return {"name": item, "state": "detected" if shutil.which(name) else "not_detected", "basis": "PATH"}
-    if kind == "pip" and re.fullmatch(r"[A-Za-z_]\w*(?:\.[A-Za-z_]\w*)*", name):
+    if kind == "pip" and re.fullmatch(r"[A-Za-z_][\w.-]*", name):
+        # data/requirements.json names the import module in "detect" (pip:pillow → PIL, pip:opencv → cv2)
+        module = (_requirement_registry().get(item) or {}).get("detect") or name.replace("-", "_")
         try:
-            found = importlib.util.find_spec(name) is not None
+            found = importlib.util.find_spec(module) is not None
         except (ImportError, ValueError, AttributeError):
             found = False
         return {"name": item, "state": "detected" if found else "not_detected", "basis": "import spec"}
@@ -275,6 +305,7 @@ def main(argv=None):
     sub = ap.add_subparsers(dest="command", required=True)
     for cmd in ("build", "stats", "doctor"):
         sub.add_parser(cmd).add_argument("--json", action="store_true")
+    sub.choices["build"].add_argument("--check", action="store_true", help="write nothing; exit 1 when a generated file is stale")
     for cmd in ("search", "plan"):
         p = sub.add_parser(cmd)
         p.add_argument("task")
@@ -286,6 +317,12 @@ def main(argv=None):
     p.add_argument("id")
     p.add_argument("--json", action="store_true")
     args = ap.parse_args(argv)
+    if args.command == "build" and args.check:
+        stale = stale_outputs()
+        for p in stale:
+            print(f"stale: {p.relative_to(SKILL).as_posix()} — run python3 scripts/capability_atlas.py build")
+        print("capability atlas up to date" if not stale else f"capability_atlas build --check: {len(stale)} stale file(s)")
+        return 1 if stale else 0
     if args.command == "build":
         a = build()
         output = {"index": str(INDEX), "guide": str(GUIDE), "catalog": a["catalog"]}

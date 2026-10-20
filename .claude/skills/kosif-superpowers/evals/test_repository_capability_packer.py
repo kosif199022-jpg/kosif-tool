@@ -1,4 +1,6 @@
+import contextlib
 import importlib.util
+import io
 from pathlib import Path
 import tempfile
 import unittest
@@ -29,4 +31,25 @@ class Tests(unittest.TestCase):
   with tempfile.TemporaryDirectory() as t:
    d=Path(t)/'repo';d.mkdir();(d/'main.py').write_text('hello')
    with self.assertRaises(p.UnsafeRepository):p.pack(d,d/'export.zip')
+ def test_license_paths_keep_case_and_skill_md_signal(self):
+  with tempfile.TemporaryDirectory() as t:
+   d=Path(t)/'repo';d.mkdir();(d/'LICENSE').write_text('MIT');(d/'SKILL.md').write_text('# s');(d/'docs').mkdir();(d/'docs'/'NOTICE').write_text('n')
+   r=p.inspect(d)
+   self.assertEqual(sorted(r['license_files']),['LICENSE','docs/NOTICE'])
+   self.assertTrue(any(x['capability_area']=='skill' for x in r['potential_capabilities']))
+ def test_outputs_guarded_created_and_not_overwritten(self):
+  with tempfile.TemporaryDirectory() as t, contextlib.redirect_stdout(io.StringIO()), contextlib.redirect_stderr(io.StringIO()):
+   d=Path(t)/'repo';d.mkdir();(d/'main.py').write_text('pass')
+   self.assertEqual(p.main(['inspect',str(d),'--out',str(d/'inside.json')]),2);self.assertFalse((d/'inside.json').exists())
+   fresh=Path(t)/'out'/'new'/'report.json'
+   self.assertEqual(p.main(['inspect',str(d),'--out',str(fresh)]),0);self.assertTrue(fresh.is_file())
+   self.assertEqual(p.main(['inspect',str(d),'--out',str(fresh)]),2)
+   self.assertEqual(p.main(['inspect',str(d),'--out',str(fresh),'--force']),0)
+   old=Path(t)/'existing.zip';old.write_text('keep me')
+   self.assertEqual(p.main(['pack',str(d),'--out',str(old)]),2);self.assertEqual(old.read_text(),'keep me')
+   self.assertEqual(p.main(['pack',str(d),'--out',str(old),'--force']),0)
+   with ZipFile(old) as z:self.assertIn('main.py',z.namelist())
+   rep=Path(t)/'rep.json';rep.write_text('keep');zipped=Path(t)/'fresh.zip'
+   self.assertEqual(p.main(['pack',str(d),'--out',str(zipped),'--report',str(rep)]),2)
+   self.assertFalse(zipped.exists());self.assertEqual(rep.read_text(),'keep')
 if __name__=='__main__':unittest.main()

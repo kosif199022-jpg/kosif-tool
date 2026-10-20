@@ -11,7 +11,7 @@ Command-line entrypoint: `scripts/creative_paint.py`.
 - Python 3.9+ and Pillow (the laptop's runtime used Python 3.13 + Pillow 12.3.0)
 - FFmpeg for MP4 only. PNG, SVG and GIF run without it.
 - `doctor` checks Pillow, FFmpeg and supported output formats.
-- Source scene must be a validated declarative JSON object with `schema: "kosif.paint.v1"`.
+- Source scene must be a validated declarative JSON object with `schema: "kosif.paint.v1"` (UTF-8, with or without a BOM).
 
 ### Callable commands for Claude Code
 
@@ -34,7 +34,7 @@ python $P animate --scene $S --output "motion.mp4" --fps 24 --duration 2
 - Raster PNG images; scalable **editable SVG** layers.
 - Layer ordering, visibility, opacity, normal/multiply/screen compositing (raster), transparent backgrounds.
 - Rectangles, ellipses, polygons, lines, pressure-varying brush strokes and text.
-- Per-layer x/y movement, scale, rotation and opacity on timestamped linear/ease-in-out keyframes.
+- Per-layer x/y movement, scale, rotation and opacity on timestamped linear/ease-in-out keyframes. Scale works from the canvas origin; a positive `angle` turns the layer clockwise about the centre of its scaled canvas box, and PNG/GIF/MP4 and SVG place rotated layers in the same spot (within about a pixel).
 - Animated GIF and H.264 MP4 frame sequence export.
 - Per-output SHA-256, simple validation; input is declarative JSON only (no code execution).
 - Boundaries: 2048×2048 dimensions, 150 layers, 1500 shapes, 300 animation frames.
@@ -53,7 +53,7 @@ Arabic and complex-script font shaping depends on the active Pillow/FreeType lib
 python -m unittest discover -s .claude/skills/kosif-superpowers/evals -p test_creative_paint.py -v
 ```
 
-13 tests cover scene and keyframe validation, unsafe shape rejection, image pixel positions, brush strokes, time interpolation, SVG escaping, PNG/SVG/GIF/MP4 export, no-overwrite behavior and the actual CLI invocation.
+16 tests cover scene and keyframe validation, unsafe shape rejection, image pixel positions, brush strokes, time interpolation, in-place rotation that matches between PNG and SVG, SVG escaping, PNG/SVG/GIF/MP4 export, no-overwrite behavior and the actual CLI invocation (including a scene saved with a UTF-8 BOM).
 
 ### Suggested use by Claude
 

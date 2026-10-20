@@ -28,8 +28,14 @@
    "master clock",
    "untouched audio",
    "duration",
-   "ffprobe"
-  ]
+   "ffprobe",
+   "مدة الفيديو",
+   "حفظ الصوت",
+   "تركيب الصوت",
+   "audio length",
+   "mux audio"
+  ],
+  "when": "عند ضبط مدة الفيلم على صوت المستخدم دون مطه أو إعادة توقيته / when film length must follow the user's audio exactly, without stretching or resampling it"
  },
  {
   "id": "SYNC-02",
@@ -56,8 +62,14 @@
    "words.json",
    "توقيت الكلمات",
    "timing file",
-   "KOSIF_WORDS"
-  ]
+   "KOSIF_WORDS",
+   "مزامنة الكلمات",
+   "توقيت النص",
+   "تزامن",
+   "word timestamps",
+   "timing schema"
+  ],
+  "when": "عند تجهيز ملف توقيت الكلمات الرئيسي الذي يقود الحركة في الفيلم / when preparing the master word-timing file (word, start, end) that drives the film"
  },
  {
   "id": "SYNC-03",
@@ -85,8 +97,14 @@
    "srt",
    "vtt",
    "words_convert",
-   "offset"
-  ]
+   "offset",
+   "ملف ترجمة",
+   "سب تايتل",
+   "تحويل الترجمة",
+   "subtitles",
+   "whisper json"
+  ],
+  "when": "حين يملك المستخدم ملف ترجمة SRT أو VTT أو تفريغ Whisper ويريده توقيت كلمات / when the user has SRT, VTT, Whisper JSON or CSV and needs it as words.json"
  },
  {
   "id": "SYNC-04",
@@ -113,8 +131,14 @@
    "tolerance",
    "sync accuracy",
    "lead",
-   "100 ms"
-  ]
+   "100 ms",
+   "دقة التزامن",
+   "تأخير الحركة",
+   "مزامنة مع الكلام",
+   "timing offset",
+   "word sync"
+  ],
+  "when": "عند ضبط أو مراجعة دقة التزامن بين الحركة والكلمة المنطوقة / when setting or checking how close motion must land to each spoken word"
  },
  {
   "id": "SYNC-05",
@@ -140,8 +164,14 @@
    "قياس التزامن",
    "sync probe",
    "qa",
-   "word onset"
-  ]
+   "word onset",
+   "فحص التزامن",
+   "اختبار التوقيت",
+   "مراجعة الجودة",
+   "sync check",
+   "frame check"
+  ],
+  "when": "عند التحقق إطارا بإطار من ظهور كل كلمة وقت نطقها بعد تعديل words.json / when verifying frame by frame that each word appears on its spoken start"
  },
  {
   "id": "SYNC-06",
@@ -166,8 +196,14 @@
    "تحقق",
    "validation",
    "words.json",
-   "monotonic"
-  ]
+   "monotonic",
+   "توقيت جاهز",
+   "تفريغ خارجي",
+   "ريل",
+   "pretimed transcript",
+   "external transcript"
+  ],
+  "when": "حين يأتي المستخدم بملف words.json جاهز ويريد تشغيل الريل دون Whisper / when the user brings a ready words.json and the reel must run without Whisper"
  },
  {
   "id": "SYNC-07",
@@ -198,8 +234,14 @@
    "faster-whisper",
    "asr",
    "word timestamps",
-   "arabic"
-  ]
+   "arabic",
+   "تحويل الكلام لنص",
+   "استخراج الترجمة",
+   "تفريغ صوتي",
+   "speech to text",
+   "offline"
+  ],
+  "when": "حين يحتاج المستخدم تفريغ كلام عربي بتوقيت كل كلمة محليا دون إنترنت / when Arabic speech needs local, offline transcription with per-word timing"
  },
  {
   "id": "SYNC-08",
@@ -228,8 +270,14 @@
    "en model",
    "language ar",
    "model size",
-   "trap"
-  ]
+   "trap",
+   "اختيار النموذج",
+   "تفريغ عربي",
+   "ترجمة خاطئة",
+   "small.en",
+   "transcription"
+  ],
+  "when": "عند اختيار نموذج Whisper لتفريغ كلام عربي أو غير إنجليزي / when choosing a Whisper model to transcribe Arabic or other non-English speech"
  },
  {
   "id": "SYNC-09",
@@ -257,8 +305,14 @@
    "piper",
    "فونيمات",
    "phoneme alignment",
-   "tts timing"
-  ]
+   "tts timing",
+   "تعليق صوتي",
+   "صوت مولد",
+   "توقيت الكلمات",
+   "text to speech",
+   "word timing"
+  ],
+  "when": "حين يكون التعليق الصوتي مولدا بـ Piper ونريد توقيت كلمات دقيقا بلا تفريغ / when the voice is synthesised with Piper and exact word timing is needed without ASR"
  },
  {
   "id": "SYNC-10",
@@ -286,8 +340,14 @@
    "forced alignment",
    "lyrics",
    "dua",
-   "tashkeel"
-  ]
+   "tashkeel",
+   "كلمات الأغنية",
+   "قصيدة",
+   "تشكيل",
+   "poem",
+   "text alignment"
+  ],
+  "when": "عند وضع كلمات الأغنية أو القصيدة أو الدعاء الصحيحة بالتشكيل على أزمنة التفريغ / when the exact lyrics, poem or dua text must replace ASR words while keeping their times"
  },
  {
   "id": "SYNC-11",
@@ -312,8 +372,14 @@
    "تصحيح",
    "لهجة",
    "transcript fix",
-   "clitics"
-  ]
+   "clitics",
+   "أخطاء التفريغ",
+   "تعديل الكلمات",
+   "عامية",
+   "misheard words",
+   "dialect"
+  ],
+  "when": "حين يخطئ التفريغ في سماع كلمات أو لهجة ونريد تصحيحها دون فقد التوقيت / when ASR misheard words or dialect and the fixes must keep the original timing"
  },
  {
   "id": "SYNC-12",
@@ -339,8 +405,14 @@
    "بداية النطق",
    "onset",
    "snap",
-   "lyrics timing"
-  ]
+   "lyrics timing",
+   "تأخر الكلمات",
+   "تقديم الترجمة",
+   "ضبط التوقيت",
+   "timing drift",
+   "vocal onset"
+  ],
+  "when": "عند ملاحظة أن طوابع الكلمات تسبق النطق المسموع أو تتأخر عنه / when word stamps drift early or late from the audible onset and need snapping"
  },
  {
   "id": "SYNC-13",
@@ -365,8 +437,14 @@
    "تجهيز الصوت",
    "stt prep",
    "16 khz",
-   "timing trap"
-  ]
+   "timing trap",
+   "تنقية الصوت",
+   "فلتر الصوت",
+   "حذف الصمت",
+   "ffmpeg",
+   "band filter"
+  ],
+  "when": "عند تجهيز الصوت للتفريغ مع الحذر من حذف الصمت أو التسريع الذي يكسر التوقيت / when preparing audio for transcription without breaking the timeline"
  },
  {
   "id": "SYNC-14",
@@ -397,8 +475,14 @@
    "diarization",
    "deepgram",
    "elevenlabs",
-   "speakers"
-  ]
+   "speakers",
+   "فصل المتحدثين",
+   "تعدد المتحدثين",
+   "تفريغ سريع",
+   "assemblyai",
+   "speaker labels"
+  ],
+  "when": "حين نحتاج أسماء المتحدثين أو تفريغا سريعا عبر خدمة مستضافة / when speaker labels or fast turnaround call for hosted transcription with word timings"
  },
  {
   "id": "SYNC-15",
@@ -426,8 +510,14 @@
    "hyperframes",
    "transcribe",
    "parakeet",
-   "whisper.cpp"
-  ]
+   "whisper.cpp",
+   "تفريغ",
+   "استخراج ترجمة",
+   "ملف ترجمة",
+   "srt",
+   "subtitles"
+  ],
+  "when": "عند تفريغ فيديو أو صوت بأمر واحد إلى SRT أو VTT أو كلمات عبر HyperFrames / when one command should transcribe a clip to SRT, VTT or words via HyperFrames"
  },
  {
   "id": "SYNC-16",
@@ -451,8 +541,14 @@
    "إعادات",
    "retakes",
    "beat sheet",
-   "transcript edit"
-  ]
+   "transcript edit",
+   "مونتاج من النص",
+   "حذف الإعادات",
+   "تقطيع",
+   "edit assembly",
+   "duplicate takes"
+  ],
+  "when": "حين يحوي التسجيل جملا معادة ونريد الاحتفاظ بآخرها وبناء المونتاج من النص / when a recording has retakes and the edit should be assembled from the transcript"
  },
  {
   "id": "SYNC-17",
@@ -477,8 +573,14 @@
    "تقدير",
    "voiced spans",
    "no asr",
-   "estimate"
-  ]
+   "estimate",
+   "بدون تفريغ",
+   "توزيع النص",
+   "توقيت تقريبي",
+   "approximate timing",
+   "speech regions"
+  ],
+  "when": "حين لا يتوفر تفريغ ونريد توزيع النص على مقاطع الكلام المسموعة كتقدير / when no ASR is available and text must be spread over voiced spans as an estimate"
  },
  {
   "id": "SYNC-18",
@@ -504,8 +606,14 @@
    "توزيع",
    "word timing",
    "by length",
-   "srt"
-  ]
+   "srt",
+   "طول الكلمة",
+   "عدد الحروف",
+   "سطر الترجمة",
+   "letter count",
+   "caption line"
+  ],
+  "when": "حين يكون لسطر الترجمة زمن بلا أزمنة كلمات ونريد توزيعه حسب طول الكلمات / when a caption line has a time span but no word times"
  },
  {
   "id": "SYNC-19",
@@ -532,8 +640,14 @@
    "ميزانية الكلمات",
    "word budget",
    "pacing",
-   "script length"
-  ]
+   "script length",
+   "طول السكريبت",
+   "كتابة التعليق",
+   "عدد الكلمات",
+   "narration",
+   "words per minute"
+  ],
+  "when": "قبل كتابة التعليق الصوتي لتحديد عدد الكلمات المناسب لمدة كل مشهد / before writing narration, to fit the word count to each scene's duration"
  },
  {
   "id": "SYNC-20",
@@ -559,8 +673,14 @@
    "سكريبت",
    "timestamps",
    "parser",
-   "script timing"
-  ]
+   "script timing",
+   "سكريبت موقوت",
+   "توقيت مكتوب",
+   "تقسيم المقاطع",
+   "timed script",
+   "clips"
+  ],
+  "when": "حين يكتب المستخدم سكريبت بأسطر موقوتة مثل 0–3s ويريد توزيعه على المقاطع / when a script comes with timed lines like '0–3s: text' to split across clips"
  },
  {
   "id": "SYNC-21",
@@ -587,8 +707,14 @@
    "تجميع",
    "grouping",
    "caption pages",
-   "words per line"
-  ]
+   "words per line",
+   "تقسيم الترجمة",
+   "سطور الترجمة",
+   "عدد الكلمات في السطر",
+   "chunking",
+   "tiktok captions"
+  ],
+  "when": "عند تقسيم الترجمة إلى مجموعات كلمات تناسب طاقة الكلام ووقفاته / when splitting captions into word groups that match speech energy and pauses"
  },
  {
   "id": "SYNC-22",
@@ -614,8 +740,14 @@
    "safe zone",
    "placement",
    "exit",
-   "faces"
-  ]
+   "faces",
+   "مكان الترجمة",
+   "إخفاء الترجمة",
+   "تداخل الترجمة",
+   "vertical video",
+   "caption position"
+  ],
+  "when": "عند تحديد مكان الترجمة بعيدا عن الوجوه وواجهة المنصة وضمان اختفائها في وقتها / when placing captions in safe zones away from faces and platform UI, each group exiting on time"
  },
  {
   "id": "SYNC-23",
@@ -641,8 +773,14 @@
    "tone",
    "caption style",
    "hype",
-   "documentary"
-  ]
+   "documentary",
+   "شكل الترجمة",
+   "خط الترجمة",
+   "حماسي",
+   "corporate",
+   "tutorial"
+  ],
+  "when": "عند اختيار شكل الترجمة وحركتها حسب نبرة الكلام: حماسي أو رسمي أو تعليمي أو قصصي / when picking caption weight, entrance, colour and size from the speech tone"
  },
  {
   "id": "SYNC-24",
@@ -670,8 +808,14 @@
    "تباين",
    "legibility",
    "contrast",
-   "bilingual"
-  ]
+   "bilingual",
+   "قراءة الترجمة",
+   "حد أسود",
+   "ترجمة عربية",
+   "outline",
+   "readable captions"
+  ],
+  "when": "حين تكون الترجمة العربية صعبة القراءة فوق الفيديو أو نحتاج تباينا كافيا / when Arabic captions must stay readable over video with enough contrast"
  },
  {
   "id": "SYNC-25",
@@ -698,8 +842,14 @@
    "srt",
    "sidecar",
    "accessibility",
-   "mov_text"
-  ]
+   "mov_text",
+   "ترجمة محروقة",
+   "ملف ترجمة جانبي",
+   "إتاحة",
+   "vtt",
+   "burned captions"
+  ],
+  "when": "عند تسليم الترجمة: نقل كلام المتحدث حرفيا وحرقها فقط إذا طلبها المستخدم / when delivering captions verbatim, as SRT/VTT sidecars unless burning is requested"
  },
  {
   "id": "SYNC-26",
@@ -725,8 +875,14 @@
    "emphasis",
    "keyword",
    "loudness peak",
-   "numbers"
-  ]
+   "numbers",
+   "كلمة مميزة",
+   "تمييز الكلمات",
+   "هايلايت",
+   "highlight words",
+   "accent word"
+  ],
+  "when": "حين نريد إبراز الأرقام والأسماء والكلمات العاطفية تلقائيا في الترجمة / when numbers, brands and emotional words should be emphasised automatically"
  },
  {
   "id": "SYNC-27",
@@ -757,8 +913,14 @@
    "libass",
    "burn",
    "arabic captions",
-   "karaoke"
-  ]
+   "karaoke",
+   "ترجمة محروقة",
+   "تلوين الكلمة",
+   "ريلز",
+   "burned subtitles",
+   "word highlight"
+  ],
+  "when": "حين يطلب المستخدم ترجمة عربية محروقة كاريوكي تتلون فيها الكلمة المنطوقة وتنبض / when burned Arabic karaoke captions should colour and pop the spoken word"
  },
  {
   "id": "SYNC-28",
@@ -787,8 +949,14 @@
    "tiktok",
    "hormozi",
    "cinema",
-   "caption presets"
-  ]
+   "caption presets",
+   "شكل الترجمة",
+   "قوالب ترجمة",
+   "ترجمة جاهزة",
+   "punchy",
+   "minimal"
+  ],
+  "when": "عند اختيار ستايل ترجمة جاهز للريلز أو تيك توك أو السينما بدل تصميمه من الصفر / when a ready caption preset (reels, tiktok, cinema…) is wanted instead of designing one"
  },
  {
   "id": "SYNC-29",
@@ -816,8 +984,14 @@
    "vtt",
    "ass",
    "caption pages",
-   "tiktok pages"
-  ]
+   "tiktok pages",
+   "تصدير الترجمة",
+   "ملفات ترجمة",
+   "كاريوكي",
+   "json",
+   "whisper"
+  ],
+  "when": "حين نريد تحويل كلمات Whisper أو SRT إلى صفحات ترجمة وملفات SRT وVTT وASS / when Whisper word stamps or SRT must become caption pages plus JSON, SRT, VTT and ASS"
  },
  {
   "id": "SYNC-30",
@@ -844,8 +1018,14 @@
    "playres",
    "ass",
    "calibration",
-   "font size"
-  ]
+   "font size",
+   "حجم الخط",
+   "هامش الترجمة",
+   "ترجمة محروقة",
+   "libass",
+   "margin"
+  ],
+  "when": "حين يظهر حجم الترجمة المحروقة أو هامشها خاطئا في فيديو 1080×1920 / when burned ASS/SRT font size or margins come out wrong on real frames"
  },
  {
   "id": "SYNC-31",
@@ -871,8 +1051,14 @@
    "k karaoke",
    "even split",
    "omni",
-   "estimated timing"
-  ]
+   "estimated timing",
+   "كاريوكي",
+   "تقسيم متساو",
+   "ترجمة محروقة",
+   "tiktok",
+   "smart_montage"
+  ],
+  "when": "عند استخدام ستايلات tiktok أو cinema أو punchy كشكل كاريوكي بزمن موزع بالتساوي / when a karaoke look with evenly split word time is acceptable"
  },
  {
   "id": "SYNC-32",
@@ -897,8 +1083,14 @@
    "word reveal",
    "mask wipe",
    "kinetic captions",
-   "rtl"
-  ]
+   "rtl",
+   "ظهور الكلمات",
+   "كتابة متحركة",
+   "تايبوغرافي",
+   "spring",
+   "kinetic typography"
+  ],
+  "when": "حين نريد كلمات عربية تظهر بقناع ناعم من اليمين لحظة نطقها / when each word should reveal through a soft right-to-left mask exactly as it is spoken"
  },
  {
   "id": "SYNC-33",
@@ -925,8 +1117,14 @@
    "تعبئة",
    "clip-path",
    "rtl karaoke",
-   "fill"
-  ]
+   "fill",
+   "ذهبي",
+   "تلوين الكلمة",
+   "حروف متصلة",
+   "word fill",
+   "arabic karaoke"
+  ],
+  "when": "حين نريد تعبئة كل كلمة عربية بالذهبي من اليمين أثناء نطقها دون فصل الحروف / when Arabic words should fill gold right-to-left while spoken, letters kept joined"
  },
  {
   "id": "SYNC-34",
@@ -953,8 +1151,14 @@
    "كبسولة",
    "karaoke pill",
    "canvas",
-   "starter"
-  ]
+   "starter",
+   "كاريوكي",
+   "إبراز الكلمة الحالية",
+   "ترجمة متحركة",
+   "html canvas",
+   "pill highlight"
+  ],
+  "when": "عند الحاجة لترجمة كاريوكي في starter الكانفس تبرز الكلمة الحالية بكبسولة ملونة / when the html-canvas starter needs karaoke with the current word in a pill"
  },
  {
   "id": "SYNC-35",
@@ -981,8 +1185,14 @@
    "ريموشن",
    "remotion captions",
    "bidi",
-   "tiktok pages"
-  ]
+   "tiktok pages",
+   "ترجمة بالكلمة",
+   "اتجاه النص",
+   "عربي وإنجليزي",
+   "rtl",
+   "word captions"
+  ],
+  "when": "حين يحتاج مشروع Remotion ترجمة بالكلمة من words.json مع اتجاه عربي أو إنجليزي تلقائي / when a Remotion project needs word captions from words.json with automatic text direction"
  },
  {
   "id": "SYNC-36",
@@ -1008,8 +1218,14 @@
    "syllable",
    "speech captions",
    "gold keyword",
-   "mask"
-  ]
+   "mask",
+   "كلمات ذهبية",
+   "ضبابية",
+   "ظهور الكلمات",
+   "blur reveal",
+   "keyword color"
+  ],
+  "when": "عند كتابة ترجمة كلام تصعد كل كلمة فيها من ضبابية على زمنها مع كلمات مفتاحية ملونة / when speech captions should rise word by word from blur, with accent keywords"
  },
  {
   "id": "SYNC-37",
@@ -1038,8 +1254,14 @@
    "شبحي",
    "ghost caption",
    "lit words",
-   "whiteboard"
-  ]
+   "whiteboard",
+   "سطر باهت",
+   "إضاءة الكلمات",
+   "تعلم اللغة",
+   "language learning",
+   "fade highlight"
+  ],
+  "when": "حين نريد عرض السطر كاملا باهتا ثم إضاءة كل كلمة عند نطقها / when the whole line shows faded and each word lights up as it is spoken"
  },
  {
   "id": "SYNC-38",
@@ -1067,8 +1289,14 @@
    "صندوق",
    "highlight box",
    "word hop",
-   "tiktok"
-  ]
+   "tiktok",
+   "تمييز الكلمة",
+   "خلفية الكلمة",
+   "هايلايت",
+   "brand color",
+   "active word"
+  ],
+  "when": "حين نريد صندوقا بلون العلامة ينتقل إلى الكلمة المنطوقة في الترجمة / when a brand-coloured box should slide to each spoken word"
  },
  {
   "id": "SYNC-39",
@@ -1094,8 +1322,14 @@
   "tags": [
    "آلة كاتبة",
    "typewriter captions",
-   "voice timed"
-  ]
+   "voice timed",
+   "كتابة حرف حرف",
+   "مؤشر كتابة",
+   "ترجمة متزامنة",
+   "typing effect",
+   "caret"
+  ],
+  "when": "حين نريد ترجمة تكتب حرفا حرفا لحظة نطق كل كلمة / when caption letters should type out over each word's spoken duration"
  },
  {
   "id": "SYNC-40",
@@ -1122,8 +1356,14 @@
    "دائرة",
    "keyword counter",
    "annotation",
-   "underline"
-  ]
+   "underline",
+   "تكرار الكلمة",
+   "خط تحت الكلمة",
+   "تعليق توضيحي",
+   "circle draw",
+   "word count"
+  ],
+  "when": "حين نريد عدادا يزيد مع كل تكرار لكلمة مفتاحية أو دائرة ترسم عند نطقها / when a keyword's occurrences bump a counter or a circle draws as it is spoken"
  },
  {
   "id": "SYNC-41",
@@ -1150,8 +1390,14 @@
    "caption components",
    "karaoke",
    "kinetic slam",
-   "neon captions"
-  ]
+   "neon captions",
+   "قوالب ترجمة",
+   "ترجمة نيون",
+   "غليتش",
+   "glitch",
+   "caption treatments"
+  ],
+  "when": "عند اختيار معالجة ترجمة جاهزة مثل نيون أو غليتش أو كاريوكي في HyperFrames / when a ready HyperFrames caption treatment (neon, glitch, pill karaoke…) fits"
  },
  {
   "id": "SYNC-42",
@@ -1179,8 +1425,14 @@
    "embedded captions",
    "behind subject",
    "themes",
-   "podcast"
-  ]
+   "podcast",
+   "خلف الشخص",
+   "مقطع متحدث",
+   "كلمة بارزة",
+   "matte",
+   "talking head"
+  ],
+  "when": "حين نريد ترجمة لمقطع متحدث مع كلمة ذروة تظهر خلف الشخص عبر قناع / when a talking clip needs a verbatim caption rail plus a peak word behind the speaker"
  },
  {
   "id": "SYNC-43",
@@ -1206,8 +1458,14 @@
    "شريط سفلي",
    "lower third",
    "name tag",
-   "news ticker"
-  ]
+   "news ticker",
+   "اسم المتحدث",
+   "تعريف الضيف",
+   "لقب",
+   "title bar",
+   "name strap"
+  ],
+  "when": "حين نحتاج شريطا سفليا لاسم المتحدث ولقبه أو شريط أخبار / when a speaker's name and title need a lower third or a news ticker"
  },
  {
   "id": "SYNC-44",
@@ -1235,8 +1493,14 @@
    "بصمة",
    "basma",
    "caption presets",
-   "arabic captions"
-  ]
+   "arabic captions",
+   "حركات الترجمة",
+   "ستايل ترجمة",
+   "إبراز الكلمة",
+   "highlight modes",
+   "word animation"
+  ],
+  "when": "عند اختيار حركة أو طريقة إبراز أو ستايل عربي جاهز للترجمة في بصمة / when choosing per-word animations, highlight modes or Arabic caption presets in Basma"
  },
  {
   "id": "SYNC-45",
@@ -1267,8 +1531,14 @@
    "قصيدة",
    "lyric video",
    "verse",
-   "poem"
-  ]
+   "poem",
+   "أغنية",
+   "كلمات متحركة",
+   "تايبوغرافي",
+   "song",
+   "kinetic typography"
+  ],
+  "when": "حين يريد المستخدم فيلم كلمات متحركة من أغنية أو قصيدة أو دعاء على توقيت الصوت / when the user wants a kinetic-typography film from a song, poem or dua audio"
  },
  {
   "id": "SYNC-46",
@@ -1296,8 +1566,14 @@
    "صوت إلى موشن",
    "voice note",
    "semantic scenes",
-   "infographic"
-  ]
+   "infographic",
+   "رسالة صوتية",
+   "موشن جرافيك",
+   "مشاهد متحركة",
+   "audio to video",
+   "animated scenes"
+  ],
+  "when": "حين يرسل المستخدم صوتا ويريد مشاهد موشن تعبر عن معنى كل جملة / when a voice recording should become animated scenes matching each sentence's meaning"
  },
  {
   "id": "SYNC-47",
@@ -1322,8 +1598,14 @@
    "directed edit",
    "talking clip",
    "payoff",
-   "keywords"
-  ]
+   "keywords",
+   "مقطع متحدث",
+   "مونتاج تلقائي",
+   "الفصول",
+   "face safe",
+   "chapters"
+  ],
+  "when": "حين نريد إخراجا تلقائيا لمقطع متحدث يختار الذروة والكلمات المفتاحية ومواضع آمنة من الوجه / when a talking clip should be auto-directed: payoff line, keywords and face-safe captions"
  },
  {
   "id": "SYNC-48",
@@ -1349,8 +1631,14 @@
    "ريل",
    "reel",
    "auto captions",
-   "talking clip"
-  ]
+   "talking clip",
+   "ريلز",
+   "فيديو عمودي",
+   "مسح الترجمة",
+   "decaption",
+   "vertical reel"
+  ],
+  "when": "حين يعطي المستخدم مقطع كلام ويريد ريلا عموديا جاهزا بترجمة كاريوكي / when a talking clip should become a finished 1080×1920 reel with karaoke captions"
  },
  {
   "id": "SYNC-49",
@@ -1377,8 +1665,14 @@
    "دعاء",
    "recitation",
    "waqf",
-   "no music"
-  ]
+   "no music",
+   "آيات",
+   "فيديو ديني",
+   "قارئ",
+   "quran",
+   "dua"
+  ],
+  "when": "عند عمل فيديو لتلاوة قرآن أو دعاء يتبع القارئ ويغير الشاشة عند الوقف / when a Quran recitation or dua video should follow the reciter and change on waqf"
  },
  {
   "id": "SYNC-50",
@@ -1403,8 +1697,14 @@
    "أغنية",
    "lyrics",
    "line timing",
-   "lyric video"
-  ]
+   "lyric video",
+   "كلمات الأغنية",
+   "توقيت السطر",
+   "غناء",
+   "singing",
+   "song sync"
+  ],
+  "when": "عند توقيت ظهور أسطر الأغنية وبقائها واختفائها مع الغناء / when timing lyric lines to enter before, hold during and exit right after the singing"
  },
  {
   "id": "SYNC-51",
@@ -1432,8 +1732,14 @@
    "أغنية",
    "songreel",
    "lyric reel",
-   "music video"
-  ]
+   "music video",
+   "كليب",
+   "ريلز أغنية",
+   "لقطات",
+   "footage",
+   "song structure"
+  ],
+  "when": "حين يريد المستخدم ريل كلمات لأغنية بلقطات مقطعة على أقسامها / when the user wants a lyric reel cut from a clip pool to a song's sections"
  },
  {
   "id": "SYNC-52",
@@ -1459,8 +1765,14 @@
    "دليل بصري",
    "narration",
    "sync rules",
-   "explainer"
-  ]
+   "explainer",
+   "تعليق صوتي",
+   "فيديو شرح",
+   "جدول المشاهد",
+   "beat table",
+   "voiceover"
+  ],
+  "when": "عند بناء فيلم يقوده التعليق الصوتي بحيث تقابل كل جملة صورة تثبتها / when planning a voice-led film where every spoken line gets one visual proof"
  },
  {
   "id": "SYNC-53",
@@ -1489,8 +1801,14 @@
    "silence",
    "silencedetect",
    "jump cut",
-   "edl"
-  ]
+   "edl",
+   "هواء ميت",
+   "قص الصمت",
+   "تقطيع",
+   "dead air",
+   "loudnorm"
+  ],
+  "when": "حين نريد إيجاد فترات الصمت أو الهواء الميت في التسجيل لقصها / when finding dead air or silent gaps in a recording to cut them"
  },
  {
   "id": "SYNC-54",
@@ -1515,8 +1833,14 @@
    "انزياح",
    "drift",
    "concat audio",
-   "mp3 padding"
-  ]
+   "mp3 padding",
+   "دمج الصوت",
+   "تأخر الصوت",
+   "عدم تزامن",
+   "out of sync",
+   "ffmpeg concat"
+  ],
+  "when": "حين يتراكم انزياح بعد دمج ملفات صوت كثيرة بالنسخ / when joined audio pieces drift out of sync after copy-mode concat"
  },
  {
   "id": "SYNC-55",
@@ -1545,8 +1869,14 @@
    "sfx",
    "peak alignment",
    "whoosh",
-   "transient"
-  ]
+   "transient",
+   "مؤثرات صوتية",
+   "ووش",
+   "توقيت المؤثر",
+   "sound effects",
+   "riser"
+  ],
+  "when": "عند وضع مؤثر صوتي بحيث تقع ذروته بالضبط على الحدث البصري / when placing a sound effect so its peak lands exactly on the visual event"
  },
  {
   "id": "SYNC-56",
@@ -1574,8 +1904,14 @@
    "mux",
    "original audio",
    "sha256",
-   "song"
-  ]
+   "song",
+   "تجميع المشاهد",
+   "أغنية أصلية",
+   "الصوت الأصلي",
+   "concat",
+   "ffmpeg"
+  ],
+  "when": "حين نجمع المشاهد المرندرة ونضع أغنية المستخدم الأصلية تحتها دون تعديل / when joining rendered segments and laying the user's original song under them untouched"
  },
  {
   "id": "SYNC-57",
@@ -1604,8 +1940,14 @@
    "rms",
    "channels",
    "audio reactive",
-   "envelope"
-  ]
+   "envelope",
+   "تفاعل مع الصوت",
+   "ضربات الإيقاع",
+   "باص",
+   "bass",
+   "kicks"
+  ],
+  "when": "حين نريد أن تتفاعل الحركة مع الصوت: الباص والضربات والبدايات والصمت / when visuals should react to the sound: bass, kicks, onsets and silence"
  },
  {
   "id": "SYNC-58",
@@ -1631,8 +1973,14 @@
    "مزامنة الفم",
    "lip sync",
    "visemes",
-   "mouth"
-  ]
+   "mouth",
+   "حركة الفم",
+   "شخصية متكلمة",
+   "تحريك الفم",
+   "talking character",
+   "phonemes"
+  ],
+  "when": "حين نحتاج شخصية متحركة يتحرك فمها مع الكلام أو الغناء / when an animated character's mouth must move with speech or sung lyrics"
  },
  {
   "id": "SYNC-X01",

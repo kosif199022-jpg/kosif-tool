@@ -1,5 +1,6 @@
 """Font matching must not invent exact font identity."""
 import importlib.util
+import subprocess
 import sys
 import tempfile
 import unittest
@@ -35,4 +36,26 @@ class FontFidelityTests(unittest.TestCase):
         self.assertEqual(font.ratio_overlap(a,a),1.0)
         blank=Image.new("L",(16,16),0)
         self.assertEqual(font.ratio_overlap(a,blank),0.0)
+    def test_corrupt_font_is_a_clean_error(self):
+        if importlib.util.find_spec("fontTools") is None:self.skipTest("fontTools not present")
+        with tempfile.TemporaryDirectory() as d:
+            p=Path(d)/"fake.ttf";p.write_text("not a font")
+            with self.assertRaises(ValueError):font.info(p,"مرحبا")
+            run=subprocess.run([sys.executable,str(PATH),"inspect",str(p)],capture_output=True,text=True)
+            self.assertEqual(run.returncode,2)
+            self.assertIn("FONT FIDELITY ERROR",run.stderr)
+            self.assertNotIn("Traceback",run.stderr)
+    def test_woff2_without_brotli_is_not_reported_as_missing_fonttools(self):
+        if importlib.util.find_spec("fontTools") is None:self.skipTest("fontTools not present")
+        from fontTools.ttLib import woff2
+        old=getattr(woff2,"haveBrotli",True)
+        woff2.haveBrotli=False
+        try:
+            with tempfile.TemporaryDirectory() as d:
+                p=Path(d)/"face.woff2";p.write_bytes(b"wOF2")
+                note=font.info(p,"مرحبا").get("inspection_note","")
+        finally:
+            woff2.haveBrotli=old
+        self.assertIn("brotli",note)
+        self.assertNotIn("fontTools not installed",note)
 if __name__=="__main__": unittest.main()

@@ -14,7 +14,7 @@
   "requires": [],
   "license": "method paraphrased from Atlas skills under MIT; the skills keep their own licenses — see each folder's SOURCE.md",
   "proof": [],
-  "proof_scope": "url",
+  "proof_scope": "none",
   "styles": [],
   "tags": [
    "AGENTS.md",
@@ -52,7 +52,9 @@
   "how": "1) Inventory CLAUDE.md, AGENTS.md, .cursor/rules, Copilot instructions and .claude/rules. 2) Classify each block: always-needed, task-specific (make it a skill), heavy reference (link a doc), or delegated work (subagent). 3) Cut long or ignored sections; keep short, testable rules about repeated mistakes. 4) Add pointers so every context file stays small and loads on demand. 5) Generate per-tool files from one config (AGENTS.md from a sources list) and verify they match. 6) Capture recurring corrections as new rules.",
   "params": "repo path; target tools (Claude, Cursor, Copilot); size budget",
   "install": "",
-  "requires": [],
+  "requires": [
+   "claude:tools"
+  ],
   "license": "method paraphrased from Atlas skills under MIT; the skills keep their own licenses — see each folder's SOURCE.md",
   "proof": [
    "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/3047-adlc-context/13100-agent-context-files",
@@ -120,10 +122,7 @@
   "how": "1) Resolve the mode (status|install|upgrade|...|purge) from the prompt; print a PLAN block; ask only if destructive. 2) Enumerate the memory surface by command; split into disjoint batches. 3) GATHER: read-only agents list change facts for the scope (session|branch|commit|all). 4) SYNC: one bounded agent per batch, all spawned in one message; facts first, dedup second, compression third; every file ends at or below its line count. 5) VERIFY: a different read-only agent per edited batch re-checks each fact in code and that removed facts are gone. 6) HARD depth: audit rule path globs (TOO_BROAD/TOO_NARROW/DANGLING/MISSING) and purge what a model already knows. 7) Report in chat only.",
   "params": "scope (session|branch|commit <sha>|recent:N|all); depth (NORMAL|HARD); reach (MEMORY|REFS); free-text emphasis",
   "install": "",
-  "requires": [
-   "git",
-   "claude:tools"
-  ],
+  "requires": [],
   "license": "method paraphrased from Atlas skills under MIT (no copyleft seen among supporting ids); the skills keep their own licenses — see each folder's SOURCE.md",
   "proof": [
    "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/2096-brewdoc/7431-memory-sync-setup",
@@ -187,9 +186,7 @@
   "how": "1) Pull a full year of supplier bills and direct payments. 2) Filter by reportable industries (construction, cleaning, courier, IT, road freight, security); mixed businesses apply the 10% of GST turnover test. 3) Validate ABN: 11 digits plus check digit. 4) Separate GST; report gross. 5) Aggregate per contractor (gross, GST, net, count, first/last date). 6) Error sweep: missing ABN, duplicates, employees in AP, materials-only. 7) Word working paper; deadline 28 August.",
   "params": "financial year, industry",
   "install": "",
-  "requires": [
-   "pip:office"
-  ],
+  "requires": [],
   "license": "method paraphrased from Atlas skills under MIT; the skills keep their own licenses — see each folder's SOURCE.md",
   "proof": [
    "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/3585-xbert-tpar/14397-tpar"
@@ -296,7 +293,7 @@
   "requires": [],
   "license": "method paraphrased from Atlas skills under MIT; the skills keep their own licenses — see each folder's SOURCE.md",
   "proof": [],
-  "proof_scope": "url",
+  "proof_scope": "none",
   "styles": [],
   "tags": [
    "agreements",
@@ -336,8 +333,7 @@
   "params": "contract type, user party, jurisdiction",
   "install": "",
   "requires": [
-   "pip:office",
-   "python3"
+   "pip:office"
   ],
   "license": "method paraphrased from Atlas skills under Apache-2.0 / MIT; the skills keep their own licenses — see each folder's SOURCE.md",
   "proof": [
@@ -396,7 +392,7 @@
   "params": "contract text, playbook",
   "install": "",
   "requires": [
-   "python3"
+   "pip:office"
   ],
   "license": "method paraphrased from Atlas skills under MIT/Apache-2.0; the skills keep their own licenses — see each folder's SOURCE.md",
   "proof": [
@@ -518,7 +514,7 @@
   "requires": [],
   "license": "method paraphrased from Atlas skills under MIT/Apache-2.0; the skills keep their own licenses — see each folder's SOURCE.md",
   "proof": [],
-  "proof_scope": "url",
+  "proof_scope": "none",
   "styles": [],
   "tags": [
    "risk",
@@ -557,7 +553,6 @@
   "params": "--scope, --include-columns, --dialect, --out",
   "install": "",
   "requires": [
-   "git",
    "npm:mermaid"
   ],
   "license": "method paraphrased from Atlas skills under MIT; the skills keep their own licenses — see each folder's SOURCE.md",
@@ -717,6 +712,167 @@
   "id": "ADOCS-14",
   "family": "atlas-docs",
   "domain": "docs",
+  "name_ar": "جاهزية الموقع لـ llms.txt وزواحف AI",
+  "name_en": "llms.txt and AI-crawler readiness",
+  "status": "documented",
+  "what": "جعل الموقع مقروءاً لنماذج اللغة عبر llms.txt ومسارات md وترويسات Link. — Make a site readable to LLMs with llms.txt, .md routes, Link headers, Content-Signal and crawler checks.",
+  "when": "Optimizing docs or blog for AI citation and agent fetching.",
+  "how": "1) Map host header control. 2) Allow GPTBot/ClaudeBot/PerplexityBot; add Content-Signal. 3) Curated /llms.txt. 4) Serve /path.md from same source, text/markdown. 5) Advertise via link tag and HTTP Link header. 6) Accept negotiation. 7) Measure AI citations with answer samples.",
+  "params": "signal policy",
+  "install": "",
+  "requires": [],
+  "license": "method paraphrased from Atlas skills under MIT; the skills keep their own licenses — see each folder's SOURCE.md",
+  "proof": [
+   "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/3174-llms-visibility/13503-llms-visibility"
+  ],
+  "proof_scope": "url",
+  "styles": [],
+  "tags": [
+   "llms-txt",
+   "geo",
+   "seo",
+   "ذكاء"
+  ],
+  "section": "هندسة النماذج اللغوية — LLM & AI engineering",
+  "source": "KOSIF Atlas mining 2026-10-20 (https://github.com/kosif199022-jpg/kosif-atlas): llms-visibility/llms-visibility (#13503) · theme ai-llm-engineering · 7 supporting skills · verifier read: skills/3174-llms-visibility/13503-llms-visibility, ",
+  "atlas": {
+   "ids": [
+    "3486",
+    "8365",
+    "8366",
+    "8367",
+    "8374",
+    "8377",
+    "13503"
+   ],
+   "examples": [
+    {
+     "id": "13503",
+     "plugin": "llms-visibility",
+     "skill": "llms-visibility",
+     "url": "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/3174-llms-visibility/13503-llms-visibility"
+    }
+   ],
+   "theme": "ai-llm-engineering",
+   "risk_notes": "none",
+   "kosif_overlap_ids": [],
+   "stage": "extracted",
+   "verified_by": "b008-ai-llm-engineering-2.json"
+  }
+ },
+ {
+  "id": "ADOCS-15",
+  "family": "atlas-docs",
+  "domain": "docs",
+  "name_ar": "تصنيف MDR الأوروبي والملف الفني",
+  "name_en": "EU MDR classification and technical file",
+  "status": "documented",
+  "what": "تصنيف الجهاز وفق قواعد MDR وتجهيز مخطط الملف الفني والتقييم السريري. — Classify a device under MDR 2017/745 Annex VIII rules and outline the technical documentation and clinical evaluation.",
+  "when": "User needs CE marking, MDR class, PSUR or post-market plan.",
+  "how": "1) Record duration, invasiveness, body-system contact, active/energy status. 2) Apply rules 1-22; software via MDCG 2019-11 algorithm. 3) Document rationale and confirm with Notified Body. 4) Map Annex II/III technical file sections. 5) Plan Annex XIV clinical evaluation and Art. 86 PSUR cadence.",
+  "params": "device facts, software role",
+  "install": "",
+  "requires": [],
+  "license": "method paraphrased from Atlas skills under MIT; the skills keep their own licenses — see each folder's SOURCE.md",
+  "proof": [
+   "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/214-ra-qm-skills/679-mdr-745-specialist",
+   "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/214-ra-qm-skills/684-ra-qm-skills"
+  ],
+  "proof_scope": "url",
+  "styles": [],
+  "tags": [
+   "MDR",
+   "CE",
+   "medtech",
+   "تصنيف"
+  ],
+  "section": "القطاعات المنظّمة — Regulated industries & domain expertise",
+  "source": "KOSIF Atlas mining 2026-10-20 (https://github.com/kosif199022-jpg/kosif-atlas): ra-qm-skills/mdr-745-specialist (#679); ra-qm-skills/ra-qm-skills (#684) · theme compliance-industry · 2 supporting skills · verifier read: skills/214-ra-qm-skills/679-mdr-745-specialist, skills/214-ra-qm-skills/684-ra-qm-skills",
+  "atlas": {
+   "ids": [
+    "679",
+    "684"
+   ],
+   "examples": [
+    {
+     "id": "679",
+     "plugin": "ra-qm-skills",
+     "skill": "mdr-745-specialist",
+     "url": "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/214-ra-qm-skills/679-mdr-745-specialist"
+    },
+    {
+     "id": "684",
+     "plugin": "ra-qm-skills",
+     "skill": "ra-qm-skills",
+     "url": "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/214-ra-qm-skills/684-ra-qm-skills"
+    }
+   ],
+   "theme": "compliance-industry",
+   "risk_notes": "Bundled py script (not run).",
+   "kosif_overlap_ids": [],
+   "stage": "extracted",
+   "verified_by": "b021-compliance-industry-1.json"
+  }
+ },
+ {
+  "id": "ADOCS-16",
+  "family": "atlas-docs",
+  "domain": "docs",
+  "name_ar": "شجرة اختيار مسار FDA للأجهزة الطبية",
+  "name_en": "FDA device pathway selection decision tree",
+  "status": "documented",
+  "what": "اختيار مسار 510(k) أو De Novo أو PMA حسب وجود جهاز مرجعي ودرجة الخطورة وتخطيط اجتماع ما قبل التقديم. — Choose 510(k) / De Novo / PMA from predicate availability and risk, then plan a Pre-Sub.",
+  "when": "Medical device team asks which FDA route, timeline or fee applies.",
+  "how": "1) Identify product code and class. 2) Search 510(k) database for predicates. 3) Branch: predicate+equivalent -> 510(k) (abbreviated/special/traditional by change type); novel low-moderate risk -> De Novo; Class III -> PMA. 4) Tabulate timeline and user fee, flag fee year. 5) Draft Q-Sub questions and schedule Pre-Sub. Output is a recommendation for regulatory review.",
+  "params": "device description, intended use, candidate predicates",
+  "install": "",
+  "requires": [],
+  "license": "method paraphrased from Atlas skills under MIT; the skills keep their own licenses — see each folder's SOURCE.md",
+  "proof": [
+   "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/214-ra-qm-skills/674-fda-consultant-specialist",
+   "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/214-ra-qm-skills/685-regulatory-affairs-head"
+  ],
+  "proof_scope": "url",
+  "styles": [],
+  "tags": [
+   "FDA",
+   "510k",
+   "regulatory",
+   "هيئة الغذاء والدواء"
+  ],
+  "section": "القطاعات المنظّمة — Regulated industries & domain expertise",
+  "source": "KOSIF Atlas mining 2026-10-20 (https://github.com/kosif199022-jpg/kosif-atlas): ra-qm-skills/fda-consultant-specialist (#674); ra-qm-skills/regulatory-affairs-head (#685) · theme compliance-industry · 3 supporting skills · verifier read: skills/214-ra-qm-skills/674-fda-consultant-specialist, skills/214-ra-qm-skills/685-regulatory-affairs-head",
+  "atlas": {
+   "ids": [
+    "674",
+    "684",
+    "685"
+   ],
+   "examples": [
+    {
+     "id": "674",
+     "plugin": "ra-qm-skills",
+     "skill": "fda-consultant-specialist",
+     "url": "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/214-ra-qm-skills/674-fda-consultant-specialist"
+    },
+    {
+     "id": "685",
+     "plugin": "ra-qm-skills",
+     "skill": "regulatory-affairs-head",
+     "url": "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/214-ra-qm-skills/685-regulatory-affairs-head"
+    }
+   ],
+   "theme": "compliance-industry",
+   "risk_notes": "Bundled py scripts (not run); fees/dates may be stale.",
+   "kosif_overlap_ids": [],
+   "stage": "extracted",
+   "verified_by": "b021-compliance-industry-1.json"
+  }
+ },
+ {
+  "id": "ADOCS-17",
+  "family": "atlas-docs",
+  "domain": "docs",
   "name_ar": "مخطط AWS بصيغة draw.io بأيقونات رسمية",
   "name_en": "AWS architecture draw.io with official icons",
   "status": "documented",
@@ -726,7 +882,7 @@
   "params": "sketch, legend, export format",
   "install": "",
   "requires": [
-   "node"
+   "npm:mermaid"
   ],
   "license": "method paraphrased from Atlas skills under Apache-2.0 / MIT; the skills keep their own licenses — see each folder's SOURCE.md",
   "proof": [
@@ -771,7 +927,7 @@
   }
  },
  {
-  "id": "ADOCS-15",
+  "id": "ADOCS-18",
   "family": "atlas-docs",
   "domain": "docs",
   "name_ar": "اختيار محرك المخططات: PlantUML أو D2 أو Structurizr",
@@ -783,8 +939,7 @@
   "params": "mode, engine",
   "install": "",
   "requires": [
-   "plantuml",
-   "graphviz"
+   "plantuml"
   ],
   "license": "method paraphrased from Atlas skills under MIT; the skills keep their own licenses — see each folder's SOURCE.md",
   "proof": [
@@ -837,7 +992,7 @@
   }
  },
  {
-  "id": "ADOCS-16",
+  "id": "ADOCS-19",
   "family": "atlas-docs",
   "domain": "docs",
   "name_ar": "مخطط معماري مبني على الريبو الفعلي",
@@ -849,8 +1004,8 @@
   "params": "mode (generate|diff|trace|watch), target path",
   "install": "",
   "requires": [
-   "python3",
-   "git"
+   "docker",
+   "npm:mermaid"
   ],
   "license": "method paraphrased from Atlas skills under MIT; one WTFPL; the skills keep their own licenses — see each folder's SOURCE.md",
   "proof": [
@@ -903,7 +1058,7 @@
   }
  },
  {
-  "id": "ADOCS-17",
+  "id": "ADOCS-20",
   "family": "atlas-docs",
   "domain": "docs",
   "name_ar": "رسم Excalidraw يحمل حجة بصرية",
@@ -914,10 +1069,7 @@
   "how": "1. Assess simple vs technical depth. 2. Research real formats for technical ones. 3. Map concepts to visual patterns; apply isomorphism test. 4. Generate JSON section by section using a color palette file. 5. Render, view, fix until clean.",
   "params": "depth, palette",
   "install": "",
-  "requires": [
-   "python3",
-   "chromium"
-  ],
+  "requires": [],
   "license": "method paraphrased from Atlas skills under MIT / Apache-2.0; the skills keep their own licenses — see each folder's SOURCE.md",
   "proof": [
    "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/2790-work/11181-draw-excalidraw",
@@ -960,7 +1112,7 @@
   }
  },
  {
-  "id": "ADOCS-18",
+  "id": "ADOCS-21",
   "family": "atlas-docs",
   "domain": "docs",
   "name_ar": "رسم مخططات Mermaid والتحقق منها",
@@ -972,8 +1124,7 @@
   "params": "type, output format, theme",
   "install": "npm i -g @mermaid-js/mermaid-cli",
   "requires": [
-   "npm:mermaid",
-   "node"
+   "npm:mermaid"
   ],
   "license": "method paraphrased from Atlas skills under MIT; the skills keep their own licenses — see each folder's SOURCE.md",
   "proof": [
@@ -1027,7 +1178,7 @@
   }
  },
  {
-  "id": "ADOCS-19",
+  "id": "ADOCS-22",
   "family": "atlas-docs",
   "domain": "docs",
   "name_ar": "تخطيط الرسوم العقدية وتصميم UML",
@@ -1038,9 +1189,7 @@
   "how": "1. Classify graph (tree, DAG, general). 2. Pick layered, force or tree layout. 3. Minimize crossings, align ranks, group clusters. 4. Use correct UML notation per type. 5. Review readability.",
   "params": "graph type",
   "install": "",
-  "requires": [
-   "npm:d3"
-  ],
+  "requires": [],
   "license": "method paraphrased from Atlas skills under MIT; the skills keep their own licenses — see each folder's SOURCE.md",
   "proof": [
    "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/2690-build-web-data-visualization/10326-node-link-and-diagram-layout",
@@ -1084,7 +1233,7 @@
   }
  },
  {
-  "id": "ADOCS-20",
+  "id": "ADOCS-23",
   "family": "atlas-docs",
   "domain": "docs",
   "name_ar": "مخطط HTML مستقل بـ SVG مضمن",
@@ -1095,9 +1244,7 @@
   "how": "1. Fix the question the figure answers. 2. Cap node count (complexity budget). 3. Use semantic colors, orthogonal arrows, boundaries dashed, store paths solid and lookups dashed. 4. Inline SVG, no external deps. 5. Check labels, contrast and reading order.",
   "params": "node cap, theme",
   "install": "",
-  "requires": [
-   "chromium"
-  ],
+  "requires": [],
   "license": "method paraphrased from Atlas skills under MIT / BSD-3-Clause; the skills keep their own licenses — see each folder's SOURCE.md",
   "proof": [
    "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/345-visuals/1242-html-diagram",
@@ -1149,7 +1296,7 @@
   }
  },
  {
-  "id": "ADOCS-21",
+  "id": "ADOCS-24",
   "family": "atlas-docs",
   "domain": "docs",
   "name_ar": "خطة تنفيذ مرئية للمراجعة في المتصفح",
@@ -1161,7 +1308,7 @@
   "params": "doc dir",
   "install": "",
   "requires": [
-   "node"
+   "npm:mermaid"
   ],
   "license": "method paraphrased from Atlas skills under MIT; the skills keep their own licenses — see each folder's SOURCE.md",
   "proof": [
@@ -1206,7 +1353,7 @@
   }
  },
  {
-  "id": "ADOCS-22",
+  "id": "ADOCS-25",
   "family": "atlas-docs",
   "domain": "docs",
   "name_ar": "إنشاء ADR وRFC مع ترقيم وربط",
@@ -1217,10 +1364,7 @@
   "how": "1 Classify: settled decision -> ADR, open proposal -> RFC, accepted RFC -> resolve into ADR. 2 Fill context, decision, consequences, status. 3 Scan docs/prds, adrs, prps for missing IDs; assign next number; update manifest. 4 Use --dry-run first. 5 Link ids to GitHub issues; detect opportunities in conversation.",
   "params": "",
   "install": "",
-  "requires": [
-   "git",
-   "gh"
-  ],
+  "requires": [],
   "license": "method paraphrased from Atlas skills under MIT; the skills keep their own licenses — see each folder's SOURCE.md",
   "proof": [
    "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/341-archcore/1209-document"
@@ -1263,7 +1407,7 @@
   }
  },
  {
-  "id": "ADOCS-23",
+  "id": "ADOCS-26",
   "family": "atlas-docs",
   "domain": "docs",
   "name_ar": "تحديث التوثيق بالاعتماد على الكود",
@@ -1321,7 +1465,7 @@
   }
  },
  {
-  "id": "ADOCS-24",
+  "id": "ADOCS-27",
   "family": "atlas-docs",
   "domain": "docs",
   "name_ar": "إعادة هيكلة التوثيق بإطار دياتاكسيس",
@@ -1373,7 +1517,7 @@
   }
  },
  {
-  "id": "ADOCS-25",
+  "id": "ADOCS-28",
   "family": "atlas-docs",
   "domain": "docs",
   "name_ar": "تدقيق انحراف التوثيق عن الكود",
@@ -1429,7 +1573,7 @@
   }
  },
  {
-  "id": "ADOCS-26",
+  "id": "ADOCS-29",
   "family": "atlas-docs",
   "domain": "docs",
   "name_ar": "توثيق الدروس المستفادة من المشكلات المحلولة",
@@ -1441,7 +1585,7 @@
   "params": "",
   "install": "",
   "requires": [
-   "git"
+   "claude:tools"
   ],
   "license": "method paraphrased from Atlas skills under MIT; the skills keep their own licenses — see each folder's SOURCE.md",
   "proof": [
@@ -1483,7 +1627,7 @@
   }
  },
  {
-  "id": "ADOCS-27",
+  "id": "ADOCS-30",
   "family": "atlas-docs",
   "domain": "docs",
   "name_ar": "ويكي مترابط تديره النماذج",
@@ -1497,7 +1641,7 @@
   "requires": [],
   "license": "method paraphrased from Atlas skills under MIT; the skills keep their own licenses — see each folder's SOURCE.md",
   "proof": [],
-  "proof_scope": "url",
+  "proof_scope": "none",
   "styles": [],
   "tags": [
    "wiki",
@@ -1524,7 +1668,7 @@
   }
  },
  {
-  "id": "ADOCS-28",
+  "id": "ADOCS-31",
   "family": "atlas-docs",
   "domain": "docs",
   "name_ar": "البحث في توثيق المكتبات بالإصدار الصحيح",
@@ -1535,12 +1679,10 @@
   "how": "1 Read dependency version from lockfile. 2 Fetch official docs or llms.txt. 3 Cite source URL. 4 Record gotchas in a rule file.",
   "params": "",
   "install": "",
-  "requires": [
-   "network"
-  ],
+  "requires": [],
   "license": "method paraphrased from Atlas skills under MIT; the skills keep their own licenses — see each folder's SOURCE.md",
   "proof": [],
-  "proof_scope": "url",
+  "proof_scope": "none",
   "styles": [],
   "tags": [
    "docs-lookup",
@@ -1569,7 +1711,7 @@
   }
  },
  {
-  "id": "ADOCS-29",
+  "id": "ADOCS-32",
   "family": "atlas-docs",
   "domain": "docs",
   "name_ar": "ضغط الماركداون دون فقدان المعنى",
@@ -1580,9 +1722,7 @@
   "how": "1 Snapshot original to temp dir. 2 Compress mechanically (flavor-vs-content matrix: cut filler/hedge/pleasantry, keep directives, qualifiers, numbers, examples). 3 Spawn reviewer comparing original vs condensed, listing semantic loss, ambiguity, false positives with citations. 4 Revert any loss. 5 Keep snapshot only on request.",
   "params": "",
   "install": "",
-  "requires": [
-   "git"
-  ],
+  "requires": [],
   "license": "method paraphrased from Atlas skills under MIT; the skills keep their own licenses — see each folder's SOURCE.md",
   "proof": [
    "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/2434-docs-hygiene/9448-compress"
@@ -1620,7 +1760,7 @@
   }
  },
  {
-  "id": "ADOCS-30",
+  "id": "ADOCS-33",
   "family": "atlas-docs",
   "domain": "docs",
   "name_ar": "كتابة README والتحقق منه",
@@ -1634,7 +1774,7 @@
   "requires": [],
   "license": "method paraphrased from Atlas skills under MIT; the skills keep their own licenses — see each folder's SOURCE.md",
   "proof": [],
-  "proof_scope": "url",
+  "proof_scope": "none",
   "styles": [],
   "tags": [
    "readme",
@@ -1662,7 +1802,7 @@
   }
  },
  {
-  "id": "ADOCS-31",
+  "id": "ADOCS-34",
   "family": "atlas-docs",
   "domain": "docs",
   "name_ar": "إزالة التعليقات الزائدة في الكود",
@@ -1713,7 +1853,7 @@
   }
  },
  {
-  "id": "ADOCS-32",
+  "id": "ADOCS-35",
   "family": "atlas-docs",
   "domain": "docs",
   "name_ar": "كتابة سرد الألعاب المتفرع",
@@ -1759,7 +1899,7 @@
   }
  },
  {
-  "id": "ADOCS-33",
+  "id": "ADOCS-36",
   "family": "atlas-docs",
   "domain": "docs",
   "name_ar": "اختيار رقم الإصدار وكتابة سجل التغييرات",
@@ -1829,169 +1969,6 @@
   }
  },
  {
-  "id": "ADOCS-34",
-  "family": "atlas-docs",
-  "domain": "docs",
-  "name_ar": "جاهزية الموقع لـ llms.txt وزواحف AI",
-  "name_en": "llms.txt and AI-crawler readiness",
-  "status": "documented",
-  "what": "جعل الموقع مقروءاً لنماذج اللغة عبر llms.txt ومسارات md وترويسات Link. — Make a site readable to LLMs with llms.txt, .md routes, Link headers, Content-Signal and crawler checks.",
-  "when": "Optimizing docs or blog for AI citation and agent fetching.",
-  "how": "1) Map host header control. 2) Allow GPTBot/ClaudeBot/PerplexityBot; add Content-Signal. 3) Curated /llms.txt. 4) Serve /path.md from same source, text/markdown. 5) Advertise via link tag and HTTP Link header. 6) Accept negotiation. 7) Measure AI citations with answer samples.",
-  "params": "signal policy",
-  "install": "",
-  "requires": [
-   "network"
-  ],
-  "license": "method paraphrased from Atlas skills under MIT; the skills keep their own licenses — see each folder's SOURCE.md",
-  "proof": [
-   "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/3174-llms-visibility/13503-llms-visibility"
-  ],
-  "proof_scope": "url",
-  "styles": [],
-  "tags": [
-   "llms-txt",
-   "geo",
-   "seo",
-   "ذكاء"
-  ],
-  "section": "هندسة النماذج اللغوية — LLM & AI engineering",
-  "source": "KOSIF Atlas mining 2026-10-20 (https://github.com/kosif199022-jpg/kosif-atlas): llms-visibility/llms-visibility (#13503) · theme ai-llm-engineering · 7 supporting skills · verifier read: skills/3174-llms-visibility/13503-llms-visibility, ",
-  "atlas": {
-   "ids": [
-    "3486",
-    "8365",
-    "8366",
-    "8367",
-    "8374",
-    "8377",
-    "13503"
-   ],
-   "examples": [
-    {
-     "id": "13503",
-     "plugin": "llms-visibility",
-     "skill": "llms-visibility",
-     "url": "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/3174-llms-visibility/13503-llms-visibility"
-    }
-   ],
-   "theme": "ai-llm-engineering",
-   "risk_notes": "none",
-   "kosif_overlap_ids": [],
-   "stage": "extracted",
-   "verified_by": "b008-ai-llm-engineering-2.json"
-  }
- },
- {
-  "id": "ADOCS-35",
-  "family": "atlas-docs",
-  "domain": "docs",
-  "name_ar": "تصنيف MDR الأوروبي والملف الفني",
-  "name_en": "EU MDR classification and technical file",
-  "status": "documented",
-  "what": "تصنيف الجهاز وفق قواعد MDR وتجهيز مخطط الملف الفني والتقييم السريري. — Classify a device under MDR 2017/745 Annex VIII rules and outline the technical documentation and clinical evaluation.",
-  "when": "User needs CE marking, MDR class, PSUR or post-market plan.",
-  "how": "1) Record duration, invasiveness, body-system contact, active/energy status. 2) Apply rules 1-22; software via MDCG 2019-11 algorithm. 3) Document rationale and confirm with Notified Body. 4) Map Annex II/III technical file sections. 5) Plan Annex XIV clinical evaluation and Art. 86 PSUR cadence.",
-  "params": "device facts, software role",
-  "install": "",
-  "requires": [],
-  "license": "method paraphrased from Atlas skills under MIT; the skills keep their own licenses — see each folder's SOURCE.md",
-  "proof": [
-   "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/214-ra-qm-skills/679-mdr-745-specialist",
-   "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/214-ra-qm-skills/684-ra-qm-skills"
-  ],
-  "proof_scope": "url",
-  "styles": [],
-  "tags": [
-   "MDR",
-   "CE",
-   "medtech",
-   "تصنيف"
-  ],
-  "section": "القطاعات المنظّمة — Regulated industries & domain expertise",
-  "source": "KOSIF Atlas mining 2026-10-20 (https://github.com/kosif199022-jpg/kosif-atlas): ra-qm-skills/mdr-745-specialist (#679); ra-qm-skills/ra-qm-skills (#684) · theme compliance-industry · 2 supporting skills · verifier read: skills/214-ra-qm-skills/679-mdr-745-specialist, skills/214-ra-qm-skills/684-ra-qm-skills",
-  "atlas": {
-   "ids": [
-    "679",
-    "684"
-   ],
-   "examples": [
-    {
-     "id": "679",
-     "plugin": "ra-qm-skills",
-     "skill": "mdr-745-specialist",
-     "url": "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/214-ra-qm-skills/679-mdr-745-specialist"
-    },
-    {
-     "id": "684",
-     "plugin": "ra-qm-skills",
-     "skill": "ra-qm-skills",
-     "url": "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/214-ra-qm-skills/684-ra-qm-skills"
-    }
-   ],
-   "theme": "compliance-industry",
-   "risk_notes": "Bundled py script (not run).",
-   "kosif_overlap_ids": [],
-   "stage": "extracted",
-   "verified_by": "b021-compliance-industry-1.json"
-  }
- },
- {
-  "id": "ADOCS-36",
-  "family": "atlas-docs",
-  "domain": "docs",
-  "name_ar": "شجرة اختيار مسار FDA للأجهزة الطبية",
-  "name_en": "FDA device pathway selection decision tree",
-  "status": "documented",
-  "what": "اختيار مسار 510(k) أو De Novo أو PMA حسب وجود جهاز مرجعي ودرجة الخطورة وتخطيط اجتماع ما قبل التقديم. — Choose 510(k) / De Novo / PMA from predicate availability and risk, then plan a Pre-Sub.",
-  "when": "Medical device team asks which FDA route, timeline or fee applies.",
-  "how": "1) Identify product code and class. 2) Search 510(k) database for predicates. 3) Branch: predicate+equivalent -> 510(k) (abbreviated/special/traditional by change type); novel low-moderate risk -> De Novo; Class III -> PMA. 4) Tabulate timeline and user fee, flag fee year. 5) Draft Q-Sub questions and schedule Pre-Sub. Output is a recommendation for regulatory review.",
-  "params": "device description, intended use, candidate predicates",
-  "install": "",
-  "requires": [],
-  "license": "method paraphrased from Atlas skills under MIT; the skills keep their own licenses — see each folder's SOURCE.md",
-  "proof": [
-   "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/214-ra-qm-skills/674-fda-consultant-specialist",
-   "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/214-ra-qm-skills/685-regulatory-affairs-head"
-  ],
-  "proof_scope": "url",
-  "styles": [],
-  "tags": [
-   "FDA",
-   "510k",
-   "regulatory",
-   "هيئة الغذاء والدواء"
-  ],
-  "section": "القطاعات المنظّمة — Regulated industries & domain expertise",
-  "source": "KOSIF Atlas mining 2026-10-20 (https://github.com/kosif199022-jpg/kosif-atlas): ra-qm-skills/fda-consultant-specialist (#674); ra-qm-skills/regulatory-affairs-head (#685) · theme compliance-industry · 3 supporting skills · verifier read: skills/214-ra-qm-skills/674-fda-consultant-specialist, skills/214-ra-qm-skills/685-regulatory-affairs-head",
-  "atlas": {
-   "ids": [
-    "674",
-    "684",
-    "685"
-   ],
-   "examples": [
-    {
-     "id": "674",
-     "plugin": "ra-qm-skills",
-     "skill": "fda-consultant-specialist",
-     "url": "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/214-ra-qm-skills/674-fda-consultant-specialist"
-    },
-    {
-     "id": "685",
-     "plugin": "ra-qm-skills",
-     "skill": "regulatory-affairs-head",
-     "url": "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/214-ra-qm-skills/685-regulatory-affairs-head"
-    }
-   ],
-   "theme": "compliance-industry",
-   "risk_notes": "Bundled py scripts (not run); fees/dates may be stale.",
-   "kosif_overlap_ids": [],
-   "stage": "extracted",
-   "verified_by": "b021-compliance-industry-1.json"
-  }
- },
- {
   "id": "ADOCS-37",
   "family": "atlas-docs",
   "domain": "docs",
@@ -2057,9 +2034,7 @@
   "how": "1) Summarize context, intuition and decisions. 2) Build a self-contained HTML with questions at the bottom. 3) Test whether the user can explain the change to a reviewer. 4) A failed quiz signals intent mismatch before merge. 5) Do not use it to verify the artifact itself.",
   "params": "change scope",
   "install": "",
-  "requires": [
-   "node"
-  ],
+  "requires": [],
   "license": "method paraphrased from Atlas skills under MIT; the skills keep their own licenses — see each folder's SOURCE.md",
   "proof": [
    "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/2437-education/9461-quiz-me",

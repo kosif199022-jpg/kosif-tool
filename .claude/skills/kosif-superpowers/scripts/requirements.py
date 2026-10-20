@@ -241,7 +241,7 @@ def cmd_plan(task: str, limit: int, as_json: bool = False) -> int:
 
 
 # ---------------------------------------------------------------- index
-def cmd_index(probe: bool) -> int:
+def cmd_index(probe: bool, check: bool = False) -> int:
     reg = registry(); pres = present(reg) if probe else {}
     pw = all_powers()
     unlock = {k: [] for k in reg}
@@ -281,7 +281,12 @@ def cmd_index(probe: bool) -> int:
     none = [r for r in pw if not r.get("requires")]
     L += ["<a id=\"none\"></a>", "## قدرات بلا مستلزمات خارجية / no external requirement", "",
           f"{len(none)} powers need only Claude and this skill (thinking, writing, planning, review protocols). The rest name at least one requirement above.", ""]
-    OUT.write_text("\n".join(L), encoding="utf-8")
+    text = "\n".join(line.rstrip() for line in L)
+    if check:
+        fresh = OUT.is_file() and OUT.read_text(encoding="utf-8") == text
+        print(f"{OUT.relative_to(SKILL)} " + ("up to date" if fresh else "is stale — run python3 scripts/requirements.py index"))
+        return 0 if fresh else 1
+    OUT.write_text(text, encoding="utf-8")
     print(f"wrote {OUT.relative_to(SKILL)} · {len(reg)} requirements · {len(pw) - len(none)} powers with requirements · {len(none)} without")
     return 0
 
@@ -291,6 +296,7 @@ def main(argv=None) -> int:
     sub = ap.add_subparsers(dest="cmd", required=True)
     d = sub.add_parser("derive"); d.add_argument("--check", action="store_true")
     i = sub.add_parser("index"); i.add_argument("--probe", action="store_true")
+    i.add_argument("--check", action="store_true", help="write nothing; exit 1 when references/requirements.md is stale (not with --probe)")
     f = sub.add_parser("for"); f.add_argument("id")
     p = sub.add_parser("plan"); p.add_argument("task"); p.add_argument("--limit", type=int, default=12); p.add_argument("--json", action="store_true")
     pr = sub.add_parser("present"); pr.add_argument("--json", action="store_true")
@@ -298,7 +304,9 @@ def main(argv=None) -> int:
     if a.cmd == "derive":
         return cmd_derive(a.check)
     if a.cmd == "index":
-        return cmd_index(a.probe)
+        if a.check and a.probe:
+            ap.error("--check compares the committed file, which is built without --probe")
+        return cmd_index(a.probe, a.check)
     if a.cmd == "for":
         return cmd_for(a.id)
     if a.cmd == "plan":

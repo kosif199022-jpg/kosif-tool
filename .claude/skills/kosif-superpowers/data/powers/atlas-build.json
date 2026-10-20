@@ -12,8 +12,6 @@
   "params": "mode (init|run|status); roadmap path; grace window; loop limits; retry-watchdog env for unattended sessions",
   "install": "",
   "requires": [
-   "gh",
-   "git",
    "claude:tools"
   ],
   "license": "method paraphrased from Atlas skills under Apache-2.0 / MIT (no copyleft seen among supporting ids); the skills keep their own licenses — see each folder's SOURCE.md",
@@ -83,9 +81,7 @@
   "how": "1) start dims json. 2) stage start/end with outcome. 3) record event (types not instances, max 400 chars, no secrets). 4) wait start/end for user halts. 5) finalize rollup.",
   "params": "project path",
   "install": "",
-  "requires": [
-   "node"
-  ],
+  "requires": [],
   "license": "method paraphrased from Atlas skills under MIT; the skills keep their own licenses — see each folder's SOURCE.md",
   "proof": [
    "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/3419-wix/14021-rp-telemetry"
@@ -132,11 +128,7 @@
   "how": "1) An architect pass sorts outstanding issues into parallelizable groups. 2) Each issue gets a small squad: developer, adversarial reviewer, QA/SDET. 3) Define stages and gates; hold write locks so two roles never edit the same artifact. 4) Specialist deep-dive: researcher, architect and PM run in parallel and yield a prioritized next-build report. 5) Coordinate with SendMessage/TaskUpdate and ring a 'doorbell' instead of pasting payloads; log traffic as JSONL. 6) Show run status (stages, roles, locks, gates); resume an interrupted run verify-first.",
   "params": "repo and issue list; role set; stage gates; capacity",
   "install": "",
-  "requires": [
-   "gh",
-   "git",
-   "claude:tools"
-  ],
+  "requires": [],
   "license": "method paraphrased from Atlas skills under MIT; the skills keep their own licenses — see each folder's SOURCE.md",
   "proof": [
    "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/3263-agent-team-orchestration/13774-agent-team-orchestration",
@@ -271,7 +263,9 @@
   "how": "1) iOS: Fastlane match for certs, Android: keystore kept out of repo. 2) macOS: Developer ID, hardened runtime, notarytool then staple; Windows: Authenticode, EV cert. 3) Keys in CI secrets. 4) Updater verifies signature, uses channels, staged rollout, rollback, version floor. 5) Pick Electron vs Tauri by real needs.",
   "params": "platform",
   "install": "",
-  "requires": [],
+  "requires": [
+   "os:macos"
+  ],
   "license": "method paraphrased from Atlas skills under MIT; the skills keep their own licenses — see each folder's SOURCE.md",
   "proof": [
    "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/2279-desktop-app-engineering/8701-packaging-signing-and-updates",
@@ -331,9 +325,7 @@
   "how": "1) ANCHOR on a requirement id or technique with at least one named open question. 2) Open spike-report.md immediately and append as you go. 3) Harvest structure/tokens/payloads from source into harvest-table.md; only invent what the requirement adds and annotate it. 4) Keep reviewer shell visually distinct from app tokens. 5) Data fidelity: live > recorded > labeled stub.",
   "params": "anchor id, open questions",
   "install": "",
-  "requires": [
-   "chromium"
-  ],
+  "requires": [],
   "license": "method paraphrased from Atlas skills under MIT; the skills keep their own licenses — see each folder's SOURCE.md",
   "proof": [
    "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/3394-prototype-spike/13930-prototype-spike",
@@ -391,10 +383,7 @@
   "how": "1) Resolve kit dir and require clean git tree. 2) Author spec then HTML prototype. 3) Analyze outputs to decide which backend/agent/frontend tracks are needed. 4) Track in a work-plan file with pointer json. 5) After each delegate, read its result envelope and check liveness. 6) Resume by reading the plan; one phase at a time (build skill).",
   "params": "app name or plan slug",
   "install": "",
-  "requires": [
-   "node",
-   "git"
-  ],
+  "requires": [],
   "license": "method paraphrased from Atlas skills under MIT; the skills keep their own licenses — see each folder's SOURCE.md",
   "proof": [
    "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/2104-app-orchestrator-kit/7475-orchestrate-app",
@@ -456,7 +445,6 @@
   "params": "ticket key, URL, workspace",
   "install": "",
   "requires": [
-   "node",
    "chromium"
   ],
   "license": "method paraphrased from Atlas skills under MIT; the skills keep their own licenses — see each folder's SOURCE.md",
@@ -509,7 +497,7 @@
   "params": "app name, strategy",
   "install": "",
   "requires": [
-   "node"
+   "chromium"
   ],
   "license": "method paraphrased from Atlas skills under MIT; the skills keep their own licenses — see each folder's SOURCE.md",
   "proof": [
@@ -567,7 +555,7 @@
   "params": "auth, db, payments, features",
   "install": "",
   "requires": [
-   "node"
+   "npm:react"
   ],
   "license": "method paraphrased from Atlas skills under MIT; the skills keep their own licenses — see each folder's SOURCE.md",
   "proof": [
@@ -625,9 +613,7 @@
   "how": "1) Inspect product state across stores via the store-state skill. 2) Add Customer Center UI for self-service management. 3) Configure plans/usage pricing. 4) Estimate app value from recurring revenue multiples.",
   "params": "store, SDK",
   "install": "",
-  "requires": [
-   "network"
-  ],
+  "requires": [],
   "license": "method paraphrased from Atlas skills under MIT; the skills keep their own licenses — see each folder's SOURCE.md",
   "proof": [
    "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/723-pwa-builder/1752-pwa"
@@ -677,9 +663,7 @@
   "how": "1) State the single question and a fixed budget. 2) Build minimum throwaway code in an isolated folder. 3) For requirements, render screens in a local dashboard while interviewing, pushing state each turn and draining user events first. 4) Record answer and decision, then keep or delete. 5) Fold results into SPEC.md.",
   "params": "question, time budget",
   "install": "",
-  "requires": [
-   "python3"
-  ],
+  "requires": [],
   "license": "method paraphrased from Atlas skills under MIT; the skills keep their own licenses — see each folder's SOURCE.md",
   "proof": [
    "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/1120-ambient-library/2627-grill-with-prototype",
@@ -738,8 +722,8 @@
   "params": "business solutions needed",
   "install": "",
   "requires": [
-   "node",
-   "network"
+   "chromium",
+   "key:unspecified"
   ],
   "license": "method paraphrased from Atlas skills under MIT; the skills keep their own licenses — see each folder's SOURCE.md",
   "proof": [
@@ -801,8 +785,7 @@
   "install": "npm i -g agent-browser && agent-browser install",
   "requires": [
    "node",
-   "chromium",
-   "npm:rea"
+   "chromium"
   ],
   "license": "method paraphrased from Atlas skills under MIT / Apache-2.0; the skills keep their own licenses — see each folder's SOURCE.md",
   "proof": [
@@ -870,9 +853,7 @@
   "params": "source url, mode",
   "install": "",
   "requires": [
-   "node",
-   "chromium",
-   "npm:esbuild"
+   "chromium"
   ],
   "license": "method paraphrased from Atlas skills under MIT; the skills keep their own licenses — see each folder's SOURCE.md",
   "proof": [
@@ -929,7 +910,6 @@
   "params": "debug port, url",
   "install": "",
   "requires": [
-   "claude:browser",
    "chromium"
   ],
   "license": "method paraphrased from Atlas skills under Apache-2.0 / MIT; the skills keep their own licenses — see each folder's SOURCE.md",
@@ -997,9 +977,8 @@
   "params": "viewport, targets",
   "install": "",
   "requires": [
-   "docker",
-   "python3",
-   "chromium"
+   "chromium",
+   "docker"
   ],
   "license": "method paraphrased from Atlas skills under MIT; the skills keep their own licenses — see each folder's SOURCE.md",
   "proof": [
@@ -1057,8 +1036,7 @@
   "params": "url, size, id",
   "install": "",
   "requires": [
-   "chromium",
-   "node"
+   "chromium"
   ],
   "license": "method paraphrased from Atlas skills under MIT; the skills keep their own licenses — see each folder's SOURCE.md",
   "proof": [
@@ -1193,8 +1171,7 @@
   "install": "pip install playwright && playwright install chromium",
   "requires": [
    "python3",
-   "chromium",
-   "npm:axe"
+   "chromium"
   ],
   "license": "method paraphrased from Atlas skills under MIT; the skills keep their own licenses — see each folder's SOURCE.md",
   "proof": [
@@ -1260,7 +1237,7 @@
   "params": "file path",
   "install": "",
   "requires": [
-   "claude:browser"
+   "chromium"
   ],
   "license": "method paraphrased from Atlas skills under MIT; the skills keep their own licenses — see each folder's SOURCE.md",
   "proof": [
@@ -1309,7 +1286,6 @@
   "params": "url, ready selector, out path",
   "install": "",
   "requires": [
-   "node",
    "chromium"
   ],
   "license": "method paraphrased from Atlas skills under MIT; the skills keep their own licenses — see each folder's SOURCE.md",
@@ -1375,7 +1351,7 @@
   "params": "url/path, optional fix",
   "install": "",
   "requires": [
-   "claude:browser"
+   "network"
   ],
   "license": "method paraphrased from Atlas skills under MIT; the skills keep their own licenses — see each folder's SOURCE.md",
   "proof": [
@@ -1435,7 +1411,7 @@
   "requires": [],
   "license": "method paraphrased from Atlas skills under MIT; the skills keep their own licenses — see each folder's SOURCE.md",
   "proof": [],
-  "proof_scope": "url",
+  "proof_scope": "none",
   "styles": [],
   "tags": [
    "pool",
@@ -1528,7 +1504,7 @@
   "requires": [],
   "license": "method paraphrased from Atlas skills under MIT; the skills keep their own licenses — see each folder's SOURCE.md",
   "proof": [],
-  "proof_scope": "url",
+  "proof_scope": "none",
   "styles": [],
   "tags": [
    "kafka",
@@ -1566,9 +1542,7 @@
   "how": "1) Choose store: Postgres, Key Value, Blob, Edge Config. 2) Internal vs external connection string. 3) Respect creation constraints and autoscaling. 4) Use Marketplace Neon/Upstash on Vercel. 5) Set env secrets.",
   "params": "platform",
   "install": "",
-  "requires": [
-   "network"
-  ],
+  "requires": [],
   "license": "method paraphrased from Atlas skills under MIT / Apache-2.0; the skills keep their own licenses — see each folder's SOURCE.md",
   "proof": [
    "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/889-render/2010-render-postgres",
@@ -1816,7 +1790,6 @@
   "params": "component type",
   "install": "",
   "requires": [
-   "npm:axe",
    "npm:pa11y"
   ],
   "license": "method paraphrased from Atlas skills under MIT; the skills keep their own licenses — see each folder's SOURCE.md",
@@ -1877,7 +1850,7 @@
   "params": "",
   "install": "",
   "requires": [
-   "python3"
+   "npm:axe"
   ],
   "license": "method paraphrased from Atlas skills under MIT; the skills keep their own licenses — see each folder's SOURCE.md",
   "proof": [
@@ -1933,9 +1906,7 @@
   "how": "1) Convert colors to OKLCH/LAB, compute luminance contrast (4.5:1 text, 3:1 large/UI). 2) Fluid size: clamp(min, preferred vw+rem, max). 3) Grid line math with negative indexes and spans. 4) Verify at viewport extremes.",
   "params": "palette, viewport range",
   "install": "",
-  "requires": [
-   "python3"
-  ],
+  "requires": [],
   "license": "method paraphrased from Atlas skills under MIT; the skills keep their own licenses — see each folder's SOURCE.md",
   "proof": [
    "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/2199-lvtd-skills/8013-color-math-accessibility",
@@ -2179,7 +2150,7 @@
   "params": "",
   "install": "",
   "requires": [
-   "python3"
+   "npm:react"
   ],
   "license": "method paraphrased from Atlas skills under Apache-2.0 / MIT; the skills keep their own licenses — see each folder's SOURCE.md",
   "proof": [
@@ -2237,7 +2208,6 @@
   "params": "",
   "install": "",
   "requires": [
-   "node",
    "npm:react"
   ],
   "license": "method paraphrased from Atlas skills under MIT; the skills keep their own licenses — see each folder's SOURCE.md",
@@ -2297,8 +2267,7 @@
   "params": "urls, mode",
   "install": "",
   "requires": [
-   "claude:browser",
-   "chromium"
+   "npm:three"
   ],
   "license": "method paraphrased from Atlas skills under MIT; the skills keep their own licenses — see each folder's SOURCE.md",
   "proof": [
@@ -2364,10 +2333,7 @@
   "how": "1) Auth with scoped token. 2) GET file, walk styles for colors/type/spacing. 3) Export images by node id (svg/png) with batching. 4) Respect rate limits with exponential backoff and caching. 5) Map to tokens and components. 6) Optionally CI sync job.",
   "params": "file key",
   "install": "",
-  "requires": [
-   "network",
-   "node"
-  ],
+  "requires": [],
   "license": "method paraphrased from Atlas skills under MIT; the skills keep their own licenses — see each folder's SOURCE.md",
   "proof": [
    "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/3252",
@@ -2434,10 +2400,7 @@
   "how": "1) Parse file key and node-id (convert - to :). 2) Try Figma MCP get_metadata; authenticate if needed. 3) Else require FIGMA_PAT (file_content:read) and stop if missing. 4) Discover pages/frames. 5) Export frames and variables for downstream skills.",
   "params": "figma url",
   "install": "",
-  "requires": [
-   "network",
-   "claude:tools"
-  ],
+  "requires": [],
   "license": "method paraphrased from Atlas skills under MIT; the skills keep their own licenses — see each folder's SOURCE.md",
   "proof": [
    "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/3009-uxd-design/12857-uxd-figma-read"
@@ -2484,9 +2447,7 @@
   "how": "1. Read selected nodes via Figma MCP and write measurements into a plan. 2. Build each node against the embedded specs using project components. 3. Compare the implemented screen with the source and fix deviations. 4. Diff Figma versions to produce a code-update checklist. 5. Map colors/spacing to tokens.",
   "params": "",
   "install": "",
-  "requires": [
-   "claude:tools"
-  ],
+  "requires": [],
   "license": "method paraphrased from Atlas skills under MIT; the skills keep their own licenses — see each folder's SOURCE.md",
   "proof": [
    "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/quiver/14453-design",
@@ -2545,9 +2506,7 @@
   "how": "1. Check LCP image priority, font loading, layout reservations for CLS, long handlers for INP. 2. Audit CSS for fixed widths and missing breakpoints. 3. Render at several viewports and compare. 4. Prefer container queries and fluid type. 5. Report fixes with evidence.",
   "params": "",
   "install": "",
-  "requires": [
-   "claude:browser"
-  ],
+  "requires": [],
   "license": "method paraphrased from Atlas skills under MIT; the skills keep their own licenses — see each folder's SOURCE.md",
   "proof": [
    "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/majestic-frontend/8280-frontend-performance",
@@ -2605,7 +2564,7 @@
   "params": "",
   "install": "",
   "requires": [
-   "claude:browser"
+   "npm:axe"
   ],
   "license": "method paraphrased from Atlas skills under MIT / Apache-2.0; the skills keep their own licenses — see each folder's SOURCE.md",
   "proof": [
@@ -2664,8 +2623,7 @@
   "params": "brand brief",
   "install": "",
   "requires": [
-   "npm:gsap",
-   "node"
+   "npm:gsap"
   ],
   "license": "method paraphrased from Atlas skills under MIT / Apache-2.0; the skills keep their own licenses — see each folder's SOURCE.md",
   "proof": [
@@ -2732,9 +2690,7 @@
   "params": "actual.png, desired.png",
   "install": "",
   "requires": [
-   "python3",
-   "chromium",
-   "pip:pillow"
+   "python3"
   ],
   "license": "method paraphrased from Atlas skills under MIT; the skills keep their own licenses — see each folder's SOURCE.md",
   "proof": [
@@ -2789,11 +2745,7 @@
   "how": "1. Capture actual screenshot beside the desired one. 2. Optionally export element bboxes (scaled by device scale x2/x3) as JSON. 3. Diff with tolerances (deltaE CIE76 ~3, px ~2, region area 0.5%). 4. Mask status bar (~141px) and home indicator (~102px) at x3. 5. Read diff.json pass flag and heatmap PNG; iterate until pass.",
   "params": "",
   "install": "",
-  "requires": [
-   "python3",
-   "pip:pillow",
-   "pip:numpy"
-  ],
+  "requires": [],
   "license": "method paraphrased from Atlas skills under MIT; the skills keep their own licenses — see each folder's SOURCE.md",
   "proof": [
    "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/887-mobile/1996-check-mobile-design",
@@ -2850,10 +2802,7 @@
   "how": "1) One source of truth in W3C DTCG JSON ($value/$type). 2) Primitives: raw palette, never used by products. 3) Semantic tokens name roles (color.bg.surface) referencing primitives. 4) Component tokens only when independent tuning is needed. 5) Themes = semantic maps under [data-brand][data-theme]. 6) Style Dictionary to CSS vars plus typed TS map, build fails on bad names.",
   "params": "brands, modes",
   "install": "",
-  "requires": [
-   "node",
-   "npm:esbuild"
-  ],
+  "requires": [],
   "license": "method paraphrased from Atlas skills under MIT; the skills keep their own licenses — see each folder's SOURCE.md",
   "proof": [
    "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/2278-design-systems-engineering/8697-design-token-architecture",
@@ -2920,8 +2869,7 @@
   "params": "scope dir, severity threshold, framework",
   "install": "",
   "requires": [
-   "python3",
-   "node"
+   "npm:axe"
   ],
   "license": "method paraphrased from Atlas skills under MIT / Apache-2.0; the skills keep their own licenses — see each folder's SOURCE.md",
   "proof": [
@@ -2989,10 +2937,7 @@
   "how": "1) Preflight git status, branch, existing tags. 2) Validate/review gates. 3) Bump, commit release files. 4) git tag vX locally, push tag. 5) gh release create with notes. 6) Verify with git ls-remote --tags. Support --dry-run.",
   "params": "version, dry-run",
   "install": "",
-  "requires": [
-   "git",
-   "gh"
-  ],
+  "requires": [],
   "license": "method paraphrased from Atlas skills under MIT/Apache; the skills keep their own licenses — see each folder's SOURCE.md",
   "proof": [
    "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/?/10012-release",

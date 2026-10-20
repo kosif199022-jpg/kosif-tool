@@ -1,19 +1,90 @@
 {
- "schema": "kosif.hubs.v1",
- "note": "Hand-authored top layer: hub → families. scripts/kosif_hubs.py derives superpowers, atomic counts, requirements and install plans from the catalog.",
- "hubs": [
-  {
-   "id": "draw",
-   "ar": "الرسم والتصميم والشخصيات",
-   "en": "Drawing, design & characters",
-   "families": [
-    "hand-drawn-draw-on",
-    "shapes-morph-geometry",
-    "characters-rigs",
-    "pixel-retro-stylized",
-    "texture-material",
-    "brand-logo-identity"
+ "schema": "kosif.hubs-overlay.v2",
+ "note": "Families come from scripts/smart_capabilities.py SPEC (single source of truth). This file only adds entry scripts, a start command and routing keywords per group.",
+ "groups": {
+  "research": {
+   "scripts": [
+    "source_scout.py",
+    "creative_external_search.py",
+    "fetch_reference.py",
+    "atlas_capability_miner.py"
    ],
+   "start": "python3 scripts/source_scout.py check",
+   "keywords": [
+    "بحث",
+    "مصادر",
+    "research",
+    "search",
+    "sources",
+    "cite"
+   ]
+  },
+  "thinking": {
+   "scripts": [
+    "think.py",
+    "invention_lab.py",
+    "creative_reasoning_bridge.py",
+    "capability_mindmap.py"
+   ],
+   "start": "python3 scripts/think.py ladder \"<المهمة>\"",
+   "keywords": [
+    "فكر",
+    "خطة",
+    "قرار",
+    "فكرة",
+    "قصة",
+    "سيناريو",
+    "think",
+    "plan",
+    "decide",
+    "idea",
+    "story",
+    "strategy"
+   ]
+  },
+  "agents": {
+   "scripts": [
+    "skill_intelligence.py",
+    "hub.py",
+    "probe_env.py",
+    "superpowers_unified.py",
+    "capability_runtime_router.py"
+   ],
+   "start": "python3 scripts/hub.py doctor",
+   "keywords": [
+    "وكلاء",
+    "أدوات",
+    "agents",
+    "tools",
+    "workflow",
+    "orchestrate"
+   ]
+  },
+  "software": {
+   "scripts": [
+    "app_studio.py",
+    "repository_capability_packer.py",
+    "local_project_audit.py",
+    "browser_scout.py"
+   ],
+   "start": "python3 scripts/hub.py find \"<المهمة>\"",
+   "keywords": [
+    "كود",
+    "برمجة",
+    "تطبيق",
+    "موقع",
+    "واجهة",
+    "code",
+    "app",
+    "website",
+    "ui",
+    "api",
+    "debug",
+    "refactor",
+    "git"
+   ]
+  },
+  "drawing": {
    "scripts": [
     "montage_pro.py",
     "smart_draw.py",
@@ -28,102 +99,44 @@
     "رسم",
     "ارسم",
     "شخصية",
-    "لوجو",
     "شعار",
+    "مخطط",
     "draw",
     "sketch",
     "character",
     "logo",
     "svg",
-    "illustration"
+    "diagram"
    ]
   },
-  {
-   "id": "montage",
-   "ar": "المونتاج وتحرير الفيديو",
-   "en": "Montage & video editing",
-   "families": [
-    "transitions-cuts",
-    "photo-video-footage",
-    "video-download",
-    "formats-platforms"
-   ],
+  "images": {
    "scripts": [
-    "montage_pro.py",
-    "cinematic_cut_planner.py",
-    "cinematic_broll_render.py",
-    "reference_edit_engine.py",
-    "motion_reference_probe.py",
-    "fetch_video.py",
-    "media_sources.py",
-    "verify_video.py",
-    "mimic/"
+    "app_studio.py",
+    "app_studio_paint.py",
+    "reference_visual_fingerprint.py"
    ],
-   "start": "python3 scripts/montage_pro.py doctor",
+   "start": "python3 scripts/app_studio.py doctor",
    "keywords": [
-    "مونتاج",
-    "قص",
-    "ريلز",
-    "انتقال",
-    "فيديو",
-    "montage",
-    "edit",
-    "cut",
-    "reels",
-    "transition",
-    "footage"
+    "صورة",
+    "صور",
+    "فوتوشوب",
+    "تلوين",
+    "توليد",
+    "photo",
+    "image",
+    "color",
+    "generate",
+    "remove background"
    ]
   },
-  {
-   "id": "motion",
-   "ar": "الموشن جرافيك والكاميرا والمؤثرات",
-   "en": "Motion graphics, camera & effects",
-   "families": [
-    "easing-timing-rhythm",
-    "camera-composition-layout",
-    "particles-fluids-physics",
-    "light-glow-bloom",
-    "color-palette-grading",
-    "ui-product-device",
-    "other"
-   ],
+  "3d": {
    "scripts": [
-    "montage_pro.py",
-    "motion_director.py",
-    "motion_stack.py",
-    "motion_runtime.py",
-    "motion_kit_bridge.py"
-   ],
-   "start": "python3 scripts/motion_director.py doctor",
-   "keywords": [
-    "موشن",
-    "تحريك",
-    "كاميرا",
-    "توهج",
-    "جزيئات",
-    "ألوان",
-    "motion",
-    "animation",
-    "camera",
-    "glow",
-    "particles",
-    "easing"
-   ]
-  },
-  {
-   "id": "3d",
-   "ar": "ثلاثي الأبعاد وBlender",
-   "en": "3D & Blender",
-   "families": [
-    "3d-spatial"
-   ],
-   "scripts": [
-    "montage_pro.py",
     "native_3d.py",
     "native_glb.py",
     "blender_bridge.py",
     "blender_cinema.py",
-    "blender_motion_video.py"
+    "blender_motion_video.py",
+    "montage_pro.py"
    ],
    "start": "python3 scripts/native_3d.py doctor",
    "keywords": [
@@ -131,54 +144,54 @@
     "3d",
     "بلندر",
     "blender",
+    "render",
+    "رندر",
     "glb",
     "three"
    ]
   },
-  {
-   "id": "type",
-   "ar": "الخطوط والطباعة المتحركة (عربي ولاتيني)",
-   "en": "Typography & kinetic type",
-   "families": [
-    "typography-arabic",
-    "typography-latin"
-   ],
-   "scripts": [
-    "font_fidelity_lab.py",
-    "render_text.cjs"
-   ],
-   "start": "python3 scripts/font_fidelity_lab.py --help",
-   "keywords": [
-    "خط",
-    "خطوط",
-    "كتابة متحركة",
-    "تايبوجرافي",
-    "font",
-    "typography",
-    "kinetic",
-    "calligraphy"
-   ]
-  },
-  {
-   "id": "audio",
-   "ar": "الصوت والموسيقى والترجمة النصية",
-   "en": "Audio, music, voice & captions",
-   "families": [
-    "music-beat-sound",
-    "voice-tts",
-    "audio-sync-captions"
-   ],
+  "motion": {
    "scripts": [
     "montage_pro.py",
+    "stream_grabber.py",
+    "motion_director.py",
+    "motion_stack.py",
+    "motion_runtime.py",
+    "reference_edit_engine.py",
+    "cinematic_cut_planner.py",
+    "cinematic_broll_render.py",
+    "fetch_video.py",
+    "media_sources.py",
+    "verify_video.py"
+   ],
+   "start": "python3 scripts/montage_pro.py doctor",
+   "keywords": [
+    "مونتاج",
+    "موشن",
+    "فيديو",
+    "ريلز",
+    "تحريك",
+    "انتقال",
+    "montage",
+    "motion",
+    "video",
+    "reels",
+    "edit",
+    "animation",
+    "transition"
+   ]
+  },
+  "audio": {
+   "scripts": [
     "audio_cue_mapper.py",
-    "music_rhythm_engine.py"
+    "music_rhythm_engine.py",
+    "montage_pro.py"
    ],
    "start": "python3 scripts/audio_cue_mapper.py --help",
    "keywords": [
     "صوت",
     "موسيقى",
     "إيقاع",
-    "ترجمة",
     "تفريغ",
     "audio",
     "music",
@@ -189,176 +202,92 @@
     "tts"
    ]
   },
-  {
-   "id": "dataviz",
-   "ar": "الرسوم البيانية والخرائط والمخططات",
-   "en": "Charts, maps & explainer diagrams",
-   "families": [
-    "charts-data-infographic",
-    "maps-geo",
-    "diagrams-explainers-code"
+  "type": {
+   "scripts": [
+    "font_fidelity_lab.py",
+    "render_text.cjs"
    ],
-   "scripts": [],
-   "start": "python3 scripts/powers.py family charts-data-infographic",
+   "start": "python3 scripts/font_fidelity_lab.py --help",
    "keywords": [
+    "خط",
+    "خطوط",
+    "عربي",
+    "تايبوجرافي",
+    "font",
+    "typography",
+    "kinetic",
+    "arabic",
+    "rtl"
+   ]
+  },
+  "data": {
+   "scripts": [],
+   "start": "python3 scripts/powers.py family data-analysis",
+   "keywords": [
+    "بيانات",
+    "تحليل",
+    "اكسل",
     "رسم بياني",
     "خريطة",
-    "مخطط",
-    "انفوجرافيك",
+    "data",
+    "analysis",
     "chart",
+    "dashboard",
     "map",
-    "diagram",
-    "infographic"
+    "csv"
    ]
   },
-  {
-   "id": "genai",
-   "ar": "التوليد بالذكاء الاصطناعي والبرومبت",
-   "en": "AI generation & prompts",
-   "families": [
-    "ai-generation",
-    "prompt-craft"
-   ],
-   "scripts": [],
-   "start": "python3 scripts/powers.py family ai-generation",
-   "keywords": [
-    "توليد",
-    "برومبت",
-    "ذكاء",
-    "generate",
-    "prompt",
-    "image generation",
-    "video generation"
-   ]
-  },
-  {
-   "id": "story",
-   "ar": "الفكرة والقصة والإخراج",
-   "en": "Ideas, story & direction",
-   "families": [
-    "story-direction-ideas",
-    "creativity-engine"
-   ],
+  "documents": {
    "scripts": [
-    "creative_reasoning_bridge.py",
-    "invention_lab.py"
+    "tell_scan.py",
+    "anchor_gate.py"
    ],
-   "start": "python3 scripts/think.py ideas \"<الفكرة>\"",
+   "start": "python3 scripts/tell_scan.py --help",
    "keywords": [
-    "فكرة",
-    "قصة",
-    "سيناريو",
-    "إخراج",
-    "idea",
-    "story",
-    "script",
-    "storyboard",
-    "creative"
+    "مستند",
+    "تقرير",
+    "اكتب",
+    "مقال",
+    "كتابة",
+    "document",
+    "report",
+    "write",
+    "article",
+    "pdf",
+    "word"
    ]
   },
-  {
-   "id": "render",
-   "ar": "الرندر والتحقق من الجودة",
-   "en": "Render pipeline & QA",
-   "families": [
-    "engines-render-pipeline",
-    "qa-verification"
-   ],
+  "quality": {
    "scripts": [
     "verify_video.py",
     "creative_quality_gate.py",
-    "aspects.py"
+    "check_skill.py"
    ],
    "start": "python3 scripts/verify_video.py --help",
    "keywords": [
-    "رندر",
-    "تصدير",
+    "اختبار",
     "جودة",
     "تحقق",
-    "render",
-    "export",
-    "mp4",
-    "qa",
-    "verify"
-   ]
-  },
-  {
-   "id": "image-apps",
-   "ar": "تحرير الصور ومزايا التطبيقات",
-   "en": "Photo editing & app features",
-   "families": [
-    "app-feature-transfer",
-    "media-image-audio",
-    "atlas-media"
-   ],
-   "scripts": [
-    "app_studio.py",
-    "app_studio_paint.py"
-   ],
-   "start": "python3 scripts/app_studio.py doctor",
-   "keywords": [
-    "صورة",
-    "صور",
-    "فوتوشوب",
-    "كانفا",
-    "photo",
-    "image",
-    "photoshop",
-    "canva",
-    "capcut",
-    "remove background"
-   ]
-  },
-  {
-   "id": "code",
-   "ar": "الكود والهندسة والأمان",
-   "en": "Code, engineering & security",
-   "families": [
-    "code-engineering",
-    "api-testing",
-    "security-safety",
-    "knowledge-graph",
-    "atlas-code"
-   ],
-   "scripts": [
-    "repository_capability_packer.py",
-    "local_project_audit.py"
-   ],
-   "start": "python3 scripts/powers.py family code-engineering",
-   "keywords": [
-    "كود",
-    "برمجة",
-    "اختبار",
     "أمان",
-    "git",
-    "code",
     "test",
-    "debug",
-    "api",
+    "qa",
+    "verify",
     "security",
-    "refactor",
-    "devops",
-    "database"
+    "audit"
    ]
   },
-  {
-   "id": "reverse",
-   "ar": "فحص البرامج والهندسة العكسية (REA)",
-   "en": "Software investigation (REA)",
-   "families": [
-    "software-investigation"
-   ],
+  "reverse": {
    "scripts": [
     "rea_bridge.py",
     "rea_family_router.py",
     "installer_triage.py",
-    "atlas_capability_miner.py"
+    "stream_grabber.py"
    ],
    "start": "python3 scripts/rea_bridge.py doctor",
    "keywords": [
     "هندسة عكسية",
     "فحص برنامج",
-    "تطبيق",
+    "جفرا",
     "rea",
     "reverse",
     "binary",
@@ -367,180 +296,12 @@
     "ghidra"
    ]
   },
-  {
-   "id": "think",
-   "ar": "التفكير والتخطيط والوكلاء",
-   "en": "Thinking, planning & agents",
-   "families": [
-    "thinking-core",
-    "mental-models",
-    "planning-execution",
-    "verification-evals",
-    "agent-orchestration",
-    "self-discovery",
-    "atlas-mind"
-   ],
-   "scripts": [
-    "think.py",
-    "probe_env.py",
-    "superpowers_unified.py",
-    "capability_runtime_router.py"
-   ],
-   "start": "python3 scripts/think.py ladder \"<المهمة>\"",
-   "keywords": [
-    "فكر",
-    "خطة",
-    "قرار",
-    "وكلاء",
-    "think",
-    "plan",
-    "decide",
-    "agents",
-    "review",
-    "workflow"
-   ]
-  },
-  {
-   "id": "write",
-   "ar": "الكتابة واللغة العربية",
-   "en": "Writing & Arabic",
-   "families": [
-    "writing-humanizer",
-    "arabic-language",
-    "atlas-craft"
-   ],
-   "scripts": [
-    "tell_scan.py",
-    "anchor_gate.py"
-   ],
-   "start": "python3 scripts/tell_scan.py --help",
-   "keywords": [
-    "اكتب",
-    "كتابة",
-    "مقال",
-    "عربي",
-    "إملاء",
-    "write",
-    "article",
-    "arabic",
-    "translate",
-    "copy"
-   ]
-  },
-  {
-   "id": "data",
-   "ar": "تحليل البيانات",
-   "en": "Data analysis",
-   "families": [
-    "data-analysis",
-    "atlas-data"
-   ],
+  "misc": {
    "scripts": [],
-   "start": "python3 scripts/powers.py family data-analysis",
+   "start": "python3 scripts/powers.py family other",
    "keywords": [
-    "بيانات",
-    "تحليل",
-    "اكسل",
-    "csv",
-    "data",
-    "analysis",
-    "statistics",
-    "ml",
-    "dashboard"
-   ]
-  },
-  {
-   "id": "docs",
-   "ar": "المستندات والمكتب",
-   "en": "Documents & office",
-   "families": [
-    "documents-office",
-    "atlas-docs"
-   ],
-   "scripts": [],
-   "start": "python3 scripts/powers.py family documents-office",
-   "keywords": [
-    "مستند",
-    "وورد",
-    "pdf",
-    "عرض",
-    "شرائح",
-    "document",
-    "word",
-    "slides",
-    "docs"
-   ]
-  },
-  {
-   "id": "research",
-   "ar": "البحث والمصادر",
-   "en": "Research & sources",
-   "families": [
-    "web-research",
-    "atlas-research"
-   ],
-   "scripts": [
-    "source_scout.py",
-    "creative_external_search.py",
-    "fetch_reference.py"
-   ],
-   "start": "python3 scripts/source_scout.py check",
-   "keywords": [
-    "بحث",
-    "مصادر",
-    "research",
-    "search",
-    "sources",
-    "cite"
-   ]
-  },
-  {
-   "id": "apps",
-   "ar": "التطبيقات والواجهات والمواقع",
-   "en": "Apps, UI & web",
-   "families": [
-    "apps-artifacts",
-    "atlas-build"
-   ],
-   "scripts": [
-    "browser_scout.py"
-   ],
-   "start": "python3 scripts/powers.py family apps-artifacts",
-   "keywords": [
-    "تطبيق",
-    "موقع",
-    "واجهة",
-    "app",
-    "website",
-    "ui",
-    "dashboard",
-    "frontend"
-   ]
-  },
-  {
-   "id": "business",
-   "ar": "المنتج والتسويق والمال",
-   "en": "Product, marketing & finance",
-   "families": [
-    "strategy-finance",
-    "atlas-strategy"
-   ],
-   "scripts": [
-    "architecture_sizer.py"
-   ],
-   "start": "python3 scripts/powers.py family strategy-finance",
-   "keywords": [
-    "تسويق",
-    "منتج",
-    "مبيعات",
-    "مال",
-    "marketing",
-    "product",
-    "sales",
-    "finance",
-    "seo",
-    "pricing"
+    "other"
    ]
   }
- ]
+ }
 }

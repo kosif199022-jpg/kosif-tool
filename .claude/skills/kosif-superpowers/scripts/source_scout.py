@@ -5,6 +5,7 @@ Source registry is curated from external GitHub README and repository metadata;
 each result is a reference to investigate, not an installed skill or capability.
 """
 import argparse
+import difflib
 import json
 from pathlib import Path
 import re
@@ -155,7 +156,12 @@ def main(argv=None):
             result=next((r for r in rows if r["id"].lower()==a.repo_or_id.lower()
                          or r["repo"].lower()==a.repo_or_id.lower()), None)
             if not result:
-                raise ValueError("source not found")
+                names=[r["id"] for r in rows]+[r["repo"] for r in rows]
+                print(json.dumps({"status":"not_found", "query":a.repo_or_id,
+                                  "did_you_mean":difflib.get_close_matches(a.repo_or_id, names, n=3, cutoff=0.5),
+                                  "hint":"run `list` to see every id and repo"},
+                                 ensure_ascii=False),file=sys.stderr)
+                return 1
         else:
             result={"query":" ".join(a.query), "results":suggest(" ".join(a.query), rows,
                        limit=a.limit, domain=a.domain, code_reuse=a.code_reuse),
@@ -163,7 +169,7 @@ def main(argv=None):
         print(json.dumps(result,ensure_ascii=False,indent=2))
         return 0
     except (ValueError, OSError, json.JSONDecodeError) as e:
-        print(json.dumps({"status":"catalog_error", "error_type":type(e).__name__},
+        print(json.dumps({"status":"catalog_error", "error_type":type(e).__name__, "error":str(e)},
                          ensure_ascii=False),file=sys.stderr)
         return 2
 

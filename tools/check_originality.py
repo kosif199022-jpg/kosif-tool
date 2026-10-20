@@ -7,7 +7,12 @@ repository, e.g. in a scratch directory) and reports any shared run of N words.
 
   python3 tools/check_originality.py --briefs <dir-with-batch-json> --texts <dir-with-<slug>.txt> [--ngram 6]
 
-Exit code 1 when any brief shares a run of >= --ngram words with its source.
+Exit codes: 0 clean, 1 when any brief shares a run of >= --ngram words with its
+source, 2 when --briefs or --texts is not a folder, --briefs holds no *.json
+file, or a batch file is not valid JSON shaped {"briefs": [...]} (2 wins over
+1; the other files are still checked and reported). Only briefs
+whose id starts with pm- and that have a matching <slug>.txt are compared; the
+number of pm- briefs without a source text is reported on stderr.
 """
 from __future__ import annotations
 
@@ -37,26 +42,43 @@ def shared_runs(a: list[str], b: list[str], n: int) -> list[str]:
 def brief_text(b: dict) -> str:
     parts = [b.get("summary_en", ""), b.get("concept_en", ""), b.get("assumptions_en", "")]
     for k in ("scenes_en", "motion_rules_en", "facts_from_source", "keywords"):
-        parts.extend(b.get(k) or [])
-    return " ".join(parts)
+        v = b.get(k) or []
+        parts.extend(v if isinstance(v, list) else [v])
+    return " ".join(x for x in parts if isinstance(x, str))
 
 
 def main() -> int:
     ap = argparse.ArgumentParser(description=__doc__, formatter_class=argparse.RawDescriptionHelpFormatter)
-    ap.add_argument("--briefs", required=True)
-    ap.add_argument("--texts", required=True)
-    ap.add_argument("--ngram", type=int, default=6)
+    ap.add_argument("--briefs", required=True, help="folder of batch *.json files, each {\"briefs\": [...]}")
+    ap.add_argument("--texts", required=True, help="folder of <slug>.txt source descriptions (kept outside the repo)")
+    ap.add_argument("--ngram", type=int, default=6, help="shared run length, in words, that counts as reuse (default 6)")
     args = ap.parse_args()
-    texts = Path(args.texts)
-    total, flagged = 0, []
-    for f in sorted(Path(args.briefs).glob("*.json")):
-        data = json.loads(f.read_text(encoding="utf-8"))
-        for b in data.get("briefs", []):
-            ident = b.get("id", "")
-            if not ident.startswith("pm-"):
+    briefs_dir, texts = Path(args.briefs), Path(args.texts)
+    for flag, d in (("--briefs", briefs_dir), ("--texts", texts)):
+        if not d.is_dir():
+            ap.error(f"{flag} {d} is not a folder")
+    if args.ngram < 1:
+        ap.error("--ngram must be at least 1")
+    files = sorted(briefs_dir.glob("*.json"))
+    if not files:
+        ap.error(f"--briefs {briefs_dir} has no *.json files")
+    total, flagged, no_text, bad = 0, [], 0, []
+    for f in files:
+        try:
+            data = json.loads(f.read_text(encoding="utf-8"))
+        except (OSError, UnicodeDecodeError, json.JSONDecodeError) as e:
+            bad.append(f"{f.name}: invalid JSON ({e})")
+            continue
+        if not isinstance(data, dict) or not isinstance(data.get("briefs"), list):
+            bad.append(f'{f.name}: expected an object {{"briefs": [...]}}')
+            continue
+        for b in data["briefs"]:
+            ident = b.get("id") if isinstance(b, dict) else None
+            if not isinstance(ident, str) or not ident.startswith("pm-"):
                 continue
             src = texts / (ident[3:] + ".txt")
             if not src.exists():
+                no_text += 1
                 continue
             total += 1
             # skip the TITLE/TAGS header lines of the source file
@@ -69,6 +91,12 @@ def main() -> int:
         for r in runs[:5]:
             print("   ·", r)
     print(f"checked {total} briefs, flagged {len(flagged)}")
+    if no_text:
+        print(f"note: {no_text} pm- brief(s) have no <slug>.txt in {texts} and were not checked", file=sys.stderr)
+    for msg in bad:
+        print(msg, file=sys.stderr)
+    if bad:
+        return 2
     return 1 if flagged else 0
 
 

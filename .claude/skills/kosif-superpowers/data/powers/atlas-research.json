@@ -12,7 +12,7 @@
   "params": "video id",
   "install": "",
   "requires": [
-   "network"
+   "key:unspecified"
   ],
   "license": "method paraphrased from Atlas skills under MIT; the skills keep their own licenses — see each folder's SOURCE.md",
   "proof": [
@@ -61,7 +61,6 @@
   "params": "browser-mode, endpoint",
   "install": "",
   "requires": [
-   "pip:crawl4ai",
    "chromium"
   ],
   "license": "method paraphrased from Atlas skills under MIT; the skills keep their own licenses — see each folder's SOURCE.md",
@@ -119,9 +118,7 @@
   "how": "1) Check robots.txt. 2) Read ToS. 3) Public vs authenticated. 4) Set polite rate. 5) Flag PII and copyright. 6) Choose fetch strategy only after gate passes.",
   "params": "target site",
   "install": "",
-  "requires": [
-   "network"
-  ],
+  "requires": [],
   "license": "method paraphrased from Atlas skills under MIT; the skills keep their own licenses — see each folder's SOURCE.md",
   "proof": [
    "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/2407-web-scraping-data-extraction/9331-legal-ethical-and-fetch-strategy"
@@ -169,9 +166,7 @@
   "how": "1) Draft codebook with definitions. 2) Code excerpts, keep source references. 3) Track inter-coder agreement. 4) Distinguish associational vs causal claims. 5) List rival explanations and discriminating predictions.",
   "params": "",
   "install": "",
-  "requires": [
-   "python3"
-  ],
+  "requires": [],
   "license": "method paraphrased from Atlas skills under MIT; the skills keep their own licenses — see each folder's SOURCE.md",
   "proof": [
    "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/3208-qualitative-research/13577-qualitative-analysis",
@@ -224,7 +219,9 @@
   "how": "1) Volatile facts: RAG. 2) Unsettled behavior: prompting. 3) Domain text <10MB RAG; 10-500MB RAG+FT; 0.5-10GB CPT then SFT; >10GB CPT. 4) Demonstrations: SFT; preference pairs: DPO/ORPO/KTO; verifiable reward: GRPO/RLVR. 5) CPT LR about 10% of pretraining LR. 6) No eval harness: build it first. Then export merged/quantized.",
   "params": "domain text volume",
   "install": "",
-  "requires": [],
+  "requires": [
+   "pip:chromadb"
+  ],
   "license": "method paraphrased from Atlas skills under MIT / Apache-2.0; the skills keep their own licenses — see each folder's SOURCE.md",
   "proof": [
    "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/3104-llm-finetuning/13289-finetuning-method-selection"
@@ -276,9 +273,7 @@
   "how": "1) Fill protocol synopsis template. 2) endpoint_selector: 5 weighted dimensions, classify primary/key-secondary/exploratory, flag surrogates. 3) sample_size_estimator for means (Cohen d), proportions, survival (Schoenfeld) with sourced effect size. 4) phase_gate_scorer 0-100 giving GO / GO-WITH-CONDITIONS / REDESIGN / NO-GO plus owners. 5) Route to biostatistician and medical monitor; output is advisory.",
   "params": "design, effect size, alpha, power",
   "install": "",
-  "requires": [
-   "python3"
-  ],
+  "requires": [],
   "license": "method paraphrased from Atlas skills under MIT; the skills keep their own licenses — see each folder's SOURCE.md",
   "proof": [
    "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/217-research-ops-skills/690-clinical-research"
@@ -324,9 +319,7 @@
   "how": "1) Crawl practice page for names, credentials, specialties. 2) Enrich gaps via search. 3) Return structured table.",
   "params": "list",
   "install": "",
-  "requires": [
-   "network"
-  ],
+  "requires": [],
   "license": "method paraphrased from Atlas skills under MIT; the skills keep their own licenses — see each folder's SOURCE.md",
   "proof": [
    "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/2666-nimble/10153-healthcare-providers-enrich",
@@ -380,9 +373,7 @@
   "how": "1) Q1 precise invention description; reject vague answers once. 2) Q2 pick one of five sub-use-cases. 3) Q3 jurisdictions (US/EP/CN/JP/KR/PCT) for FTO, landscape, diligence. 4) Extract concepts and keywords. 5) Search per path strategy, report with caveats and no legal advice.",
   "params": "invention, purpose, jurisdictions",
   "install": "",
-  "requires": [
-   "network"
-  ],
+  "requires": [],
   "license": "method paraphrased from Atlas skills under MIT; the skills keep their own licenses — see each folder's SOURCE.md",
   "proof": [
    "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/224-patent/701-patent"
@@ -430,7 +421,7 @@
   "install": "npm i docx",
   "requires": [
    "node",
-   "network"
+   "pip:office"
   ],
   "license": "method paraphrased from Atlas skills under MIT; the skills keep their own licenses — see each folder's SOURCE.md",
   "proof": [

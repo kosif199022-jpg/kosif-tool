@@ -126,6 +126,13 @@ def camera_filter(move: str, count: int, fps: int, width: int, height: int) -> s
 
 
 def render(edl_file, manifest_file, audio_file, destination, width=1080, height=1920, codec="libx264"):
+    # cheap output checks first, so a wrong name never costs a whole render
+    if destination.suffix.lower() not in (".mkv",".mp4"):
+        raise ValueError("use .mkv for immutable audio master or .mp4 when compatible")
+    if destination.exists():
+        raise FileExistsError("refusing to overwrite output")
+    if codec not in ("libx264","libx265"):
+        raise ValueError("unsupported codec")
     if not shutil.which("ffmpeg") or not shutil.which("ffprobe"):
         raise RuntimeError("FFmpeg and FFprobe must be installed")
     edl=json.loads(edl_file.read_text(encoding="utf-8"))
@@ -146,10 +153,6 @@ def render(edl_file, manifest_file, audio_file, destination, width=1080, height=
         raise ValueError("invalid render dimensions/fps")
     selected=verify_footage(edl,manifest,manifest_file.parent)
     destination.parent.mkdir(parents=True,exist_ok=True)
-    if destination.exists():
-        raise FileExistsError("refusing to overwrite output")
-    if codec not in ("libx264","libx265"):
-        raise ValueError("unsupported codec")
     with tempfile.TemporaryDirectory(prefix="kosif_cinematic_") as tmp:
         work=Path(tmp)
         clips=[]
@@ -174,9 +177,6 @@ def render(edl_file, manifest_file, audio_file, destination, width=1080, height=
         invoke(["ffmpeg","-hide_banner","-loglevel","error","-nostdin","-y",
                 "-safe","0","-f","concat","-i",str(concat),
                 "-map","0:v:0","-c:v","copy",str(silent)])
-        expected_ext=destination.suffix.lower()
-        if expected_ext not in (".mkv",".mp4"):
-            raise ValueError("use .mkv for immutable audio master or .mp4 when compatible")
         try:
             invoke(["ffmpeg","-hide_banner","-loglevel","error","-nostdin","-y",
                     "-i",str(silent),"-i",str(audio_file),"-map","0:v:0","-map","1:a:0",
@@ -215,7 +215,11 @@ def main():
     ap.add_argument("--width",type=int,default=1080)
     ap.add_argument("--height",type=int,default=1920)
     args=ap.parse_args()
-    print(json.dumps(render(args.edl,args.manifest,args.audio,args.out,args.width,args.height),ensure_ascii=False,indent=2))
+    try:
+        result=render(args.edl,args.manifest,args.audio,args.out,args.width,args.height)
+    except (OSError, ValueError, RuntimeError, KeyError, subprocess.CalledProcessError) as exc:
+        ap.error(f"{type(exc).__name__}: {exc}")
+    print(json.dumps(result,ensure_ascii=False,indent=2))
     return 0
 
 

@@ -17,7 +17,8 @@ def local_ref(proof: str, repo: Path):
     if not isinstance(proof, str) or not proof.startswith("kosif-tool/"):
         return None
     raw = proof[len("kosif-tool/"):].split("#", 1)[0]
-    raw = re.sub(r":\d+(?::\d+)?$", "", raw)
+    # Strip a line suffix: ":12", ":12:4" (line:column) or ":15-16" (line range).
+    raw = re.sub(r":\d+(?:[-:]\d+)?$", "", raw)
     path = PurePosixPath(raw)
     if path.is_absolute() or ".." in path.parts or not raw:
         return False
@@ -88,11 +89,20 @@ def audit(skill: Path):
 
 
 def main():
-    ap = argparse.ArgumentParser()
+    ap = argparse.ArgumentParser(
+        description="Static evidence-coverage audit of the KOSIF powers catalog. "
+                    "Exit 0 = clean, 1 = record integrity errors found, "
+                    "2 = catalog missing or unreadable.")
     ap.add_argument("--skill", type=Path,
-                    default=Path(__file__).resolve().parent.parent)
+                    default=Path(__file__).resolve().parent.parent,
+                    help="skill folder that holds data/powers/*.json (default: this skill)")
     args = ap.parse_args()
-    result = audit(args.skill)
+    try:
+        result = audit(args.skill)
+    except (OSError, ValueError) as exc:
+        # json.JSONDecodeError is a ValueError. Exit 2 keeps "cannot audit"
+        # distinct from exit 1 ("audited, integrity errors found").
+        ap.exit(2, f"{ap.prog}: error: {exc} ({args.skill})\n")
     print(json.dumps(result, ensure_ascii=False, indent=2))
     return 1 if result["record_integrity_errors"] else 0
 

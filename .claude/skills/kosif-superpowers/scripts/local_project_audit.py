@@ -119,14 +119,23 @@ def main():
     args = p.parse_args()
     if not 1 <= args.limit <= 1000000:
         p.error("invalid file limit")
-    result = scan(args.root, args.limit)
+    try:
+        result = scan(args.root, args.limit)
+    except FileNotFoundError:
+        p.error(f"root not found: {args.root}")
+    except (OSError, ValueError) as exc:
+        # ValueError: the root exists but is not a directory.
+        p.error(f"cannot audit {args.root}: {exc}")
     raw = json.dumps(result, ensure_ascii=False, indent=2)
     if args.output:
         dest = Path(args.output).resolve()
         if dest == Path(args.root).resolve() or Path(args.root).resolve() in dest.parents:
             p.error("refusing to write inside audited input folder")
-        dest.parent.mkdir(parents=True, exist_ok=True)
-        dest.write_text(raw, encoding="utf-8")
+        try:
+            dest.parent.mkdir(parents=True, exist_ok=True)
+            dest.write_text(raw, encoding="utf-8")
+        except OSError as exc:
+            p.error(f"cannot write report {args.output}: {exc.strerror or exc}")
     print(json.dumps({k:v for k,v in result.items() if k not in {"samples", "skipped"}},
                      ensure_ascii=False))
 if __name__ == "__main__":

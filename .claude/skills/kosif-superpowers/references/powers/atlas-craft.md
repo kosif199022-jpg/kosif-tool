@@ -9,7 +9,7 @@
 مسارات الدليل نسبية إلى `/home/user/`؛ و`session-<date>:<file>#<section>` تشير إلى تشغيل موثق في جلسة سابقة؛ و`owner-upload:` إلى ملف داخل أرشيف أرسله المالك. Proof paths are relative to `/home/user/`.
 
 **المجال / domain:** الكتابة واللغة — Writing & language · **البادئة / prefix:** `ACRAFT` · **البيانات / data:** `data/powers/atlas-craft.json` · **بحث / search:** `python3 scripts/powers.py family atlas-craft`
-**مراجع ذات صلة / related references:** [capability-atlas.md](../capability-atlas.md) · [hubs.md](../hubs.md)
+**مراجع ذات صلة / related references:** [CLAUDE_3_MINUTE_MAP.md](../CLAUDE_3_MINUTE_MAP.md) · [hubs.md](../hubs.md)
 
 ## الفهرس / contents
 
@@ -23,7 +23,7 @@
 - **ماذا / what:** إنتاج مخططات ASCII ومنظمات Mermaid مبسطة. — Produce ASCII or sketch wireframes and simple Mermaid organizers for focus.
 - **متى أستخدمها / when:** User wants screen wireframe, whiteboard sketch or task breakdown visual.
 - **كيف / how:** 1. Default to ASCII wireframe; hand-drawn HTML on request. 2. Keep few nodes, color-code, chunk steps. 3. Mermaid for timelines, flows, checklists. 4. Iterate sketch until recognized. **أرقام / params:** style
-- **يحتاج / needs:** [`node`](../requirements.md#req-node)
+- **يحتاج / needs:** [`npm:mermaid`](../requirements.md#req-npm-mermaid)
 - **الرخصة / license:** method paraphrased from Atlas skills under MIT; the skills keep their own licenses — see each folder's SOURCE.md
 - **الدليل / proof:** `https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/1567-tonone/4396-draft-wireframe` · `https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/1806-neurodivergent-visual-org/4844-neurodivergent-visual-org` · `https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/1995-hypotyposis/7163-sketch`
 - **المصدر / source:** KOSIF Atlas mining 2026-10-20 (https://github.com/kosif199022-jpg/kosif-atlas): tonone/draft-wireframe (#4396); neurodivergent-visual-org/neurodivergent-visual-org (#4844); hypotyposis/sketch (#7163) · theme diagrams-visual-docs · 4 supporting skills · verifier read: skills/1567-tonone/4396-draft-wireframe, skills/1806-neurodivergent-visual-org/4844-neurodivergent-visual-org, skills/1995-hypotyposis/7163-sketch
@@ -74,7 +74,6 @@
 - **ماذا / what:** اختيار الخطوط والأحجام والمقاييس وطول السطر لمقروئية أفضل. — Choose typefaces, sizes, scales and line lengths for legible web typography.
 - **متى أستخدمها / when:** Setting type scale, readability complaints, font pairing.
 - **كيف / how:** 1) Pick a modular type scale. 2) Body size at least 16px, line-height about 1.5. 3) Line length 45-75 characters. 4) Limit to 1-2 families and few weights. 5) Establish typographic hierarchy via size/weight contrast.
-- **يحتاج / needs:** [`fonts:arabic`](../requirements.md#req-fonts-arabic)
 - **الرخصة / license:** method paraphrased from Atlas skills under MIT; the skills keep their own licenses — see each folder's SOURCE.md
 - **الدليل / proof:** `https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/3438-ux-design/14126-web-typography` · `https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/1503-universal-design-principles/3826-legibility-typeface-and-size`
 - **المصدر / source:** KOSIF Atlas mining 2026-10-20 (https://github.com/kosif199022-jpg/kosif-atlas): ux-design/web-typography (#14126); universal-design-principles/legibility-typeface-and-size (#3826) · theme frontend-ui-design · 4 supporting skills · verifier read: skills/3438-ux-design/14126-web-typography, skills/1503-universal-design-principles/3826-legibility-typeface-and-size

@@ -12,7 +12,7 @@
   "params": "style",
   "install": "",
   "requires": [
-   "node"
+   "npm:mermaid"
   ],
   "license": "method paraphrased from Atlas skills under MIT; the skills keep their own licenses — see each folder's SOURCE.md",
   "proof": [
@@ -355,9 +355,7 @@
   "how": "1) Pick a modular type scale. 2) Body size at least 16px, line-height about 1.5. 3) Line length 45-75 characters. 4) Limit to 1-2 families and few weights. 5) Establish typographic hierarchy via size/weight contrast.",
   "params": "",
   "install": "",
-  "requires": [
-   "fonts:arabic"
-  ],
+  "requires": [],
   "license": "method paraphrased from Atlas skills under MIT; the skills keep their own licenses — see each folder's SOURCE.md",
   "proof": [
    "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/3438-ux-design/14126-web-typography",

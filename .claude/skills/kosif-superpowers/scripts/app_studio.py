@@ -47,6 +47,11 @@ REQ = {  # requirement id (data/requirements.json) → (python module, pip insta
     "pip:matplotlib": ("matplotlib", "pip install matplotlib"),
     "pip:office": ("pptx", "pip install python-pptx"),
 }
+# Extras that only some settings of an op need: op → [(python module, pip install line, what needs it)].
+# doctor keeps the op "ready" without them but lists the gap under "limited".
+OPTIONAL = {
+    "font-subset": [("brotli", "pip install brotli", "flavor=woff2")],
+}
 BASE = ["pip:numpy", "pip:opencv"]
 OPS = {}
 
@@ -1049,7 +1054,7 @@ def font_build(inp, out, p):
     return res("font-build", str(out), {"glyphs": len(glyphs), "codepoints": len(cmap), "features": bool(fea)})
 
 
-@op("font-inspect", "FontLab font info / Glyphs panel", "APPX-84", ["pip:fonttools"], "فحص خط", "names, glyph count, scripts (Arabic coverage), features, kerning pairs")
+@op("font-inspect", "FontLab font info / Glyphs panel", "APPX-84", ["pip:fonttools"], "فحص خط", "family/style names, glyph and codepoint counts, Arabic letter coverage, GSUB/GPOS feature tags (e.g. kern), variable flag")
 def font_inspect(inp, out, p):
     from fontTools.ttLib import TTFont
     arabic = list(range(0x0621, 0x064B))
@@ -1064,9 +1069,15 @@ def font_inspect(inp, out, p):
     return res("font-inspect", None, info, verified=True)
 
 
-@op("font-subset", "FontLab export / web fonts", "APPX-85", ["pip:fonttools"], "تقليص خط للويب", "text= or unicodes=, flavor=woff2|woff")
+@op("font-subset", "FontLab export / web fonts", "APPX-85", ["pip:fonttools"], "تقليص خط للويب", "text= or unicodes=, flavor=woff2|woff (woff2 needs brotli)")
 def font_subset(inp, out, p):
     from fontTools import subset
+    if p.get("flavor") == "woff2":
+        try:
+            importlib.import_module("brotli")
+        except ImportError:
+            raise ImportError("flavor=woff2 needs the brotli package: pip install brotli "
+                              "(or use flavor=woff, or no flavor for TTF)") from None
     opts = subset.Options()
     opts.layout_features = ["*"]
     if p.get("flavor"):
@@ -1075,6 +1086,7 @@ def font_subset(inp, out, p):
     s = subset.Subsetter(opts)
     s.populate(text=p.get("text", ""), unicodes=[int(u, 16) for u in p.get("unicodes", "").split(",") if u])
     s.subset(ft)
+    Path(out).parent.mkdir(parents=True, exist_ok=True)
     subset.save_font(ft, out, opts)
     ft.close()   # release the source file (Windows locks open files)
     return res("font-subset", str(out), {"bytes_in": Path(inp[0]).stat().st_size, "bytes_out": Path(out).stat().st_size})
@@ -1876,13 +1888,29 @@ def missing(reqs):
     return out
 
 
+def missing_optional(name):
+    out = []
+    for mod, pip, needed_for in OPTIONAL.get(name, []):
+        try:
+            importlib.import_module(mod)
+        except Exception:
+            out.append({"needed_for": needed_for, "module": mod, "install": pip})
+    return out
+
+
 def doctor():
     rows, runnable = [], 0
+    installs = set()
     for name, o in OPS.items():
         miss = missing(o["requires"])
         runnable += not miss
-        rows.append({"op": name, "ready": not miss, "missing": [m["requirement"] for m in miss]})
-    installs = sorted({m["install"] for o in OPS.values() for m in missing(o["requires"])})
+        row = {"op": name, "ready": not miss, "missing": [m["requirement"] for m in miss]}
+        opt = missing_optional(name)
+        if opt:   # the op runs, but not with these settings until the extra is installed
+            row["limited"] = [f"{m['needed_for']} needs {m['module']} ({m['install']})" for m in opt]
+        rows.append(row)
+        installs.update(m["install"] for m in miss + opt)
+    installs = sorted(installs)
     extra = {}
     try:
         from PIL import features

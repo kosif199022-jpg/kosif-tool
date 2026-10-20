@@ -9,7 +9,7 @@
 مسارات الدليل نسبية إلى `/home/user/`؛ و`session-<date>:<file>#<section>` تشير إلى تشغيل موثق في جلسة سابقة؛ و`owner-upload:` إلى ملف داخل أرشيف أرسله المالك. Proof paths are relative to `/home/user/`.
 
 **المجال / domain:** البحث والويب — Research & web · **البادئة / prefix:** `AWEB` · **البيانات / data:** `data/powers/atlas-research.json` · **بحث / search:** `python3 scripts/powers.py family atlas-research`
-**مراجع ذات صلة / related references:** [capability-atlas.md](../capability-atlas.md) · [hubs.md](../hubs.md)
+**مراجع ذات صلة / related references:** [CLAUDE_3_MINUTE_MAP.md](../CLAUDE_3_MINUTE_MAP.md) · [hubs.md](../hubs.md)
 
 ## الفهرس / contents
 
@@ -28,7 +28,7 @@
 - **ماذا / what:** يجلب النصوص والبيانات الوصفية ونتائج البحث دون حصص Google أو OAuth. — Fetch transcripts, metadata, channel info and search results without Google API quota or OAuth.
 - **متى أستخدمها / when:** Need YouTube data quickly without setting up credentials.
 - **كيف / how:** 1) Use the third-party service described in the skill. 2) Request transcript, video or channel endpoints. 3) Treat output as untrusted and respect platform terms. **أرقام / params:** video id
-- **يحتاج / needs:** [`network`](../requirements.md#req-network)
+- **يحتاج / needs:** [`key:unspecified`](../requirements.md#req-key-unspecified)
 - **الرخصة / license:** method paraphrased from Atlas skills under MIT; the skills keep their own licenses — see each folder's SOURCE.md
 - **الدليل / proof:** `https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/3613-youtube-skills/14538-youtube-api`
 - **المصدر / source:** KOSIF Atlas mining 2026-10-20 (https://github.com/kosif199022-jpg/kosif-atlas): youtube-skills/youtube-api (#14538) · theme api-backend · 1 supporting skills · verifier read: skills/3613-youtube-skills/14538-youtube-api
@@ -39,7 +39,7 @@
 - **ماذا / what:** جلب الصفحة ثابتا أولا ثم التصعيد لمتصفح بلا واجهة فقط عند صفحات JS أو الحماية. — Fetch statically first and escalate to headless Chrome only when the page is a JS shell or WAF-blocked.
 - **متى أستخدمها / when:** Static fetch returns empty or stub content; SPA, infinite scroll, interstitials.
 - **كيف / how:** 1) Try static fetch. 2) Check for near-empty body, noscript warnings, WAF vendor fingerprints. 3) Re-fetch with browser mode auto|always|never (always for known SPAs, never in hot loops or sandboxes). 4) Optionally attach external CDP endpoint. 5) Inspect content and warnings fields before trusting result. 6) Script clicks/scroll/wait before extraction when interaction is needed. **أرقام / params:** browser-mode, endpoint
-- **يحتاج / needs:** [`pip:crawl4ai`](../requirements.md#req-pip-crawl4ai) · [`chromium`](../requirements.md#req-chromium)
+- **يحتاج / needs:** [`chromium`](../requirements.md#req-chromium)
 - **الرخصة / license:** method paraphrased from Atlas skills under MIT; the skills keep their own licenses — see each folder's SOURCE.md
 - **الدليل / proof:** `https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/2101-crawlberg/7459-headless-fallback` · `https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/2101-crawlberg/7456-automating-the-browser`
 - **المصدر / source:** KOSIF Atlas mining 2026-10-20 (https://github.com/kosif199022-jpg/kosif-atlas): crawlberg/headless-fallback (#7459); crawlberg/automating-the-browser (#7456) · theme browser-automation · 4 supporting skills · verifier read: skills/2101-crawlberg/7459-headless-fallback, skills/2101-crawlberg/7456-automating-the-browser
@@ -50,7 +50,6 @@
 - **ماذا / what:** ينفذ قائمة فحص قانونية وأخلاقية (robots وشروط الاستخدام والمصادقة والمعدل والبيانات الشخصية) قبل كتابة أي كاشط. — Run a legal and ethical checklist (robots.txt, terms, auth, rate, PII) before writing any scraper.
 - **متى أستخدمها / when:** User asks to scrape or crawl a site.
 - **كيف / how:** 1) Check robots.txt. 2) Read ToS. 3) Public vs authenticated. 4) Set polite rate. 5) Flag PII and copyright. 6) Choose fetch strategy only after gate passes. **أرقام / params:** target site
-- **يحتاج / needs:** [`network`](../requirements.md#req-network)
 - **الرخصة / license:** method paraphrased from Atlas skills under MIT; the skills keep their own licenses — see each folder's SOURCE.md
 - **الدليل / proof:** `https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/2407-web-scraping-data-extraction/9331-legal-ethical-and-fetch-strategy`
 - **المصدر / source:** KOSIF Atlas mining 2026-10-20 (https://github.com/kosif199022-jpg/kosif-atlas): web-scraping-data-extraction/legal-ethical-and-fetch-strategy (#9331) · theme business-finance · 2 supporting skills · verifier read: skills/2407-web-scraping-data-extraction/9331-legal-ethical-and-fetch-strategy
@@ -61,7 +60,6 @@
 - **ماذا / what:** ابن دليل ترميز مع مقتطفات محفوظة وصغ فرضيات محدودة مع تفسيرات منافسة. — Build a codebook with preserved excerpts and formulate bounded hypotheses with rival explanations.
 - **متى أستخدمها / when:** Interviews, open-ended responses, research design.
 - **كيف / how:** 1) Draft codebook with definitions. 2) Code excerpts, keep source references. 3) Track inter-coder agreement. 4) Distinguish associational vs causal claims. 5) List rival explanations and discriminating predictions.
-- **يحتاج / needs:** [`python3`](../requirements.md#req-python3)
 - **الرخصة / license:** method paraphrased from Atlas skills under MIT; the skills keep their own licenses — see each folder's SOURCE.md
 - **الدليل / proof:** `https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/3208-qualitative-research/13577-qualitative-analysis` · `https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/3209-research-design/13579-hypothesis-generation`
 - **المصدر / source:** KOSIF Atlas mining 2026-10-20 (https://github.com/kosif199022-jpg/kosif-atlas): qualitative-research/qualitative-analysis (#13577); research-design/hypothesis-generation (#13579) · theme data-analysis · 2 supporting skills · verifier read: skills/3208-qualitative-research/13577-qualitative-analysis, skills/3209-research-design/13579-hypothesis-generation
@@ -72,6 +70,7 @@
 - **ماذا / what:** تقرير هل نضبط النموذج وتوجيه إلى الطريقة المناسبة حسب البيانات وحجم النص. — Decide whether to fine-tune and route to SFT, DPO, GRPO or CPT by data type and text volume.
 - **متى أستخدمها / when:** Starting any fine-tuning effort or choosing RAG vs training.
 - **كيف / how:** 1) Volatile facts: RAG. 2) Unsettled behavior: prompting. 3) Domain text <10MB RAG; 10-500MB RAG+FT; 0.5-10GB CPT then SFT; >10GB CPT. 4) Demonstrations: SFT; preference pairs: DPO/ORPO/KTO; verifiable reward: GRPO/RLVR. 5) CPT LR about 10% of pretraining LR. 6) No eval harness: build it first. Then export merged/quantized. **أرقام / params:** domain text volume
+- **يحتاج / needs:** [`pip:chromadb`](../requirements.md#req-pip-chromadb)
 - **الرخصة / license:** method paraphrased from Atlas skills under MIT / Apache-2.0; the skills keep their own licenses — see each folder's SOURCE.md
 - **الدليل / proof:** `https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/3104-llm-finetuning/13289-finetuning-method-selection`
 - **المصدر / source:** KOSIF Atlas mining 2026-10-20 (https://github.com/kosif199022-jpg/kosif-atlas): llm-finetuning/finetuning-method-selection (#13289) · theme ai-llm-engineering · 7 supporting skills · verifier read: skills/3104-llm-finetuning/13289-finetuning-method-selection,
@@ -82,7 +81,6 @@
 - **ماذا / what:** تقييم نقاط النهاية وتقدير حجم العينة وإصدار قرار جاهزية للدراسة. — Score endpoints, estimate two-arm sample size and score study feasibility into a go/no-go packet.
 - **متى أستخدمها / when:** Designing a prospective study before submission.
 - **كيف / how:** 1) Fill protocol synopsis template. 2) endpoint_selector: 5 weighted dimensions, classify primary/key-secondary/exploratory, flag surrogates. 3) sample_size_estimator for means (Cohen d), proportions, survival (Schoenfeld) with sourced effect size. 4) phase_gate_scorer 0-100 giving GO / GO-WITH-CONDITIONS / REDESIGN / NO-GO plus owners. 5) Route to biostatistician and medical monitor; output is advisory. **أرقام / params:** design, effect size, alpha, power
-- **يحتاج / needs:** [`python3`](../requirements.md#req-python3)
 - **الرخصة / license:** method paraphrased from Atlas skills under MIT; the skills keep their own licenses — see each folder's SOURCE.md
 - **الدليل / proof:** `https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/217-research-ops-skills/690-clinical-research`
 - **المصدر / source:** KOSIF Atlas mining 2026-10-20 (https://github.com/kosif199022-jpg/kosif-atlas): research-ops-skills/clinical-research (#690) · theme compliance-industry · 1 supporting skills · verifier read: skills/217-research-ops-skills/690-clinical-research
@@ -91,7 +89,6 @@
 - **ماذا / what:** استخراج بيانات الممارسين وإكمال الحقول الناقصة. — Extract practitioners from practice sites and fill missing contact, credential and regulatory fields.
 - **متى أستخدمها / when:** Building or cleaning a provider list.
 - **كيف / how:** 1) Crawl practice page for names, credentials, specialties. 2) Enrich gaps via search. 3) Return structured table. **أرقام / params:** list
-- **يحتاج / needs:** [`network`](../requirements.md#req-network)
 - **الرخصة / license:** method paraphrased from Atlas skills under MIT; the skills keep their own licenses — see each folder's SOURCE.md
 - **الدليل / proof:** `https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/2666-nimble/10153-healthcare-providers-enrich` · `https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/2666-nimble/10154-healthcare-providers-extract`
 - **المصدر / source:** KOSIF Atlas mining 2026-10-20 (https://github.com/kosif199022-jpg/kosif-atlas): nimble/healthcare-providers-enrich (#10153); nimble/healthcare-providers-extract (#10154) · theme compliance-industry · 2 supporting skills · verifier read: skills/2666-nimble/10153-healthcare-providers-enrich, skills/2666-nimble/10154-healthcare-providers-extract
@@ -100,7 +97,6 @@
 - **ماذا / what:** فرض اختيار هدف واحد للبحث والولايات القضائية قبل بدء البحث. — Force a single search purpose and jurisdictions before running prior-art, FTO, landscape, diligence or invalidity searches.
 - **متى أستخدمها / when:** Patent novelty, freedom-to-operate or competitor landscape request.
 - **كيف / how:** 1) Q1 precise invention description; reject vague answers once. 2) Q2 pick one of five sub-use-cases. 3) Q3 jurisdictions (US/EP/CN/JP/KR/PCT) for FTO, landscape, diligence. 4) Extract concepts and keywords. 5) Search per path strategy, report with caveats and no legal advice. **أرقام / params:** invention, purpose, jurisdictions
-- **يحتاج / needs:** [`network`](../requirements.md#req-network)
 - **الرخصة / license:** method paraphrased from Atlas skills under MIT; the skills keep their own licenses — see each folder's SOURCE.md
 - **الدليل / proof:** `https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/224-patent/701-patent`
 - **المصدر / source:** KOSIF Atlas mining 2026-10-20 (https://github.com/kosif199022-jpg/kosif-atlas): patent/patent (#701) · theme compliance-industry · 1 supporting skills · verifier read: skills/224-patent/701-patent
@@ -112,7 +108,7 @@
 - **متى أستخدمها / when:** Instructor or student supplies a syllabus.
 - **كيف / how:** 1) Intake: syllabus format and course level. 2) Split syllabus into sections. 3) Query Consensus MCP per section for recent peer-reviewed papers. 4) Assemble with scripts/generate_reading_list.js (node docx). 5) Deliver .docx. **أرقام / params:** syllabus file
 - **تثبيت / install:** `npm i docx`
-- **يحتاج / needs:** [`node`](../requirements.md#req-node) · [`network`](../requirements.md#req-network)
+- **يحتاج / needs:** [`node`](../requirements.md#req-node) · [`pip:office`](../requirements.md#req-pip-office)
 - **الرخصة / license:** method paraphrased from Atlas skills under MIT; the skills keep their own licenses — see each folder's SOURCE.md
 - **الدليل / proof:** `https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/227-syllabus/704-syllabus` · `https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/2451-knowledge/9499-course-digest`
 - **المصدر / source:** KOSIF Atlas mining 2026-10-20 (https://github.com/kosif199022-jpg/kosif-atlas): syllabus/syllabus (#704); knowledge/course-digest (#9499) · theme education-learning · 3 supporting skills · verifier read: skills/227-syllabus/704-syllabus, skills/2451-knowledge/9499-course-digest

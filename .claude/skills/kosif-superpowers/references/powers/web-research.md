@@ -9,7 +9,7 @@
 مسارات الدليل نسبية إلى `/home/user/`؛ و`session-<date>:<file>#<section>` تشير إلى تشغيل موثق في جلسة سابقة؛ و`owner-upload:` إلى ملف داخل أرشيف أرسله المالك. Proof paths are relative to `/home/user/`.
 
 **المجال / domain:** البحث والويب — Research & web · **البادئة / prefix:** `WEB` · **البيانات / data:** `data/powers/web-research.json` · **بحث / search:** `python3 scripts/powers.py family web-research`
-**مراجع ذات صلة / related references:** [capability-atlas.md](../capability-atlas.md) · [capability-audit.md](../capability-audit.md) · [creativity.md](../creativity.md) · [hubs.md](../hubs.md) · [method-packs.md](../method-packs.md) · [requirements.md](../requirements.md)
+**مراجع ذات صلة / related references:** [CLAUDE_3_MINUTE_MAP.md](../CLAUDE_3_MINUTE_MAP.md) · [capability-audit.md](../capability-audit.md) · [creativity.md](../creativity.md) · [hubs.md](../hubs.md) · [method-packs.md](../method-packs.md)
 
 ## الفهرس / contents
 

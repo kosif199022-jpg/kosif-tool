@@ -72,14 +72,34 @@ DENY_DOMAINS={"github.com","raw.githubusercontent.com","githubusercontent.com","
 URL=re.compile(r"https?://[^\s<>)\]\"']+",re.I)
 
 
+GH_LOGIN=re.compile(r"^[A-Za-z0-9](?:[A-Za-z0-9-]{0,38})$")
+
+
 def gh(endpoint,params=None,timeout=40):
     cmd=["gh","api","-X","GET",endpoint]
     for k,v in (params or {}).items():
         cmd.extend(["-f",f"{k}={v}"])
-    result=subprocess.run(cmd,capture_output=True,text=True,timeout=timeout,encoding="utf-8",errors="replace")
+    try:
+        result=subprocess.run(cmd,capture_output=True,text=True,timeout=timeout,encoding="utf-8",errors="replace")
+    except FileNotFoundError:
+        raise RuntimeError("the gh CLI is not installed or not on PATH") from None
+    except subprocess.TimeoutExpired:
+        raise RuntimeError("gh api %s timed out after %ss"%(endpoint,timeout)) from None
     if result.returncode:
         raise RuntimeError(result.stderr.strip()[:350])
     return json.loads(result.stdout)
+
+
+def gh_pages(endpoint,params=None,max_pages=100):
+    """Every page of a GitHub list endpoint (100 rows per page)."""
+    rows=[]
+    for page in range(1,max_pages+1):
+        data=gh(endpoint,{**(params or {}),"per_page":100,"page":page})
+        if not isinstance(data,list):
+            raise RuntimeError("gh api %s did not return a list"%endpoint)
+        rows.extend(data)
+        if len(data)<100: break
+    return rows
 
 
 def readme(repo):
@@ -87,10 +107,17 @@ def readme(repo):
     return base64.b64decode(data["content"]).decode("utf-8",errors="replace")
 
 
-def owner_inventory(local: Path):
-    owned=gh("user/repos",{"per_page":100,"type":"owner"})
-    # Only public info for the second account; do not bypass authorization.
-    other=gh("users/elkosif0-cmd/repos",{"per_page":100,"type":"owner"})
+def owner_inventory(local: Path,extra_accounts=()):
+    login=str(gh("user").get("login") or "")
+    if not login: raise RuntimeError("gh api user returned no login; run gh auth login")
+    owned=gh_pages("user/repos",{"type":"owner"})
+    accounts=[login]
+    other=[]
+    for account in extra_accounts:
+        if account.casefold() in {a.casefold() for a in accounts}: continue
+        accounts.append(account)
+        # Only public info for extra accounts; do not bypass authorization.
+        other+=gh_pages("users/"+urllib.parse.quote(account,safe="")+"/repos",{"type":"owner"})
     entries=[]
     for value in owned+other:
         if not value or not value.get("full_name"): continue
@@ -106,7 +133,7 @@ def owner_inventory(local: Path):
     return {"owned_repository_count":len(entries),
             "public_count":sum(not v["private"] for v in entries),
             "private_count":sum(v["private"] for v in entries),
-            "accounts":["kosif199022-jpg","elkosif0-cmd"],
+            "accounts":accounts,
             "private_metadata_publication":False}
 
 
@@ -201,7 +228,8 @@ def save_json(path,data):
 
 def study_own_trees(local):
     path=local/"owner_repositories_PRIVATE_LOCAL.json"
-    if not path.exists(): raise FileNotFoundError("run owner-inventory first")
+    if not path.exists():
+        raise FileNotFoundError("%s not found; run the `own` action with the same --private-output first"%path)
     rows=json.loads(path.read_text(encoding="utf-8"))
     findings=[]
     for row in rows:
@@ -250,27 +278,54 @@ def report():
             "status":"discovery_catalog; NOT 1000 deep REA inspections"}
 
 
+def _login(value):
+    if not GH_LOGIN.match(value):
+        raise argparse.ArgumentTypeError("not a GitHub login: %r"%value)
+    return value
+
+
+def _count(path):
+    try: return len(json.loads(path.read_text(encoding="utf-8")))
+    except (OSError,ValueError,TypeError): return 0
+
+
 def main():
-    ap=argparse.ArgumentParser()
+    ap=argparse.ArgumentParser(description=__doc__.split("\n\n")[0])
     ap.add_argument("action",choices=["own","repos","sites","trees","report"])
     ap.add_argument("--limit",type=int,default=1000)
     ap.add_argument("--pages",type=int,default=2)
     ap.add_argument("--private-output",type=Path,required=False)
+    ap.add_argument("--force",action="store_true",help="write the catalog even when discovery errors shrank it")
+    ap.add_argument("--account",action="append",default=[],type=_login,metavar="LOGIN",
+                    help="own: also list this GitHub account's public repos (repeatable); "
+                         "the authenticated gh login is always included")
     a=ap.parse_args()
+    if a.private_output:
+        po=a.private_output.resolve()
+        if any((d/".git").exists() for d in (po,*po.parents)):
+            ap.error("--private-output must be outside every git repository (it holds private data)")
     if a.action=="own":
         if not a.private_output: ap.error("--private-output required; outside git repo")
-        out=owner_inventory(a.private_output)
+        out=owner_inventory(a.private_output,a.account)
     elif a.action=="trees":
         if not a.private_output: ap.error("--private-output required")
         out=study_own_trees(a.private_output)
     elif a.action=="repos":
         rec,err=public_repos(limit=a.limit,pages=a.pages)
+        old_n=_count(CATALOG/"public_repos.json")
+        if err and len(rec)<old_n and not a.force:
+            print(json.dumps({"status":"no_changes_written","why":"discovery errors would shrink public_repos.json from %d to %d rows; fix gh auth/network or pass --force"%(old_n,len(rec)),"errors":err[:5]},ensure_ascii=False,indent=2))
+            return 1
         save_json(CATALOG/"public_repos.json",rec)
         save_json(CATALOG/"repository_discovery_errors.json",err)
         out={"cataloged":len(rec),"target":a.limit,"errors":len(err),
              "status":"metadata_index_not_rea_analysis"}
     elif a.action=="sites":
         rows,err=public_sites(a.limit)
+        old_n=_count(CATALOG/"creative_websites.json")
+        if err and len(rows)<old_n and not a.force:
+            print(json.dumps({"status":"no_changes_written","why":"discovery errors would shrink creative_websites.json from %d to %d rows; fix gh auth/network or pass --force"%(old_n,len(rows)),"errors":err[:5]},ensure_ascii=False,indent=2))
+            return 1
         save_json(CATALOG/"creative_websites.json",rows)
         save_json(CATALOG/"website_discovery_errors.json",err)
         out={"cataloged":len(rows),"target":a.limit,"errors":len(err),
@@ -280,5 +335,14 @@ def main():
     return 0
 
 
+def _run():
+    try:
+        return main()
+    except (RuntimeError,OSError,ValueError) as e:
+        print(json.dumps({"status":"error","error_type":type(e).__name__,"error":str(e)},
+                         ensure_ascii=False),file=sys.stderr)
+        return 2
+
+
 if __name__=="__main__":
-    raise SystemExit(main())
+    raise SystemExit(_run())

@@ -30,8 +30,8 @@ python3 tools/words_convert.py captions.srt my-film/words.js
 **الرندر:**
 
 ```bash
-# لوحة إطارات للموافقة قبل الرندر
-node tools/render_html.cjs --in starters/html-canvas/index.html --out out/preview.png --preview
+# لوحة إطارات للموافقة قبل الرندر (تُكتب بجانب --out باسم out/film_preview.png)
+node tools/render_html.cjs --in starters/html-canvas/index.html --out out/film.mp4 --preview
 # الفيلم كاملًا مع الصوت الأصلي كما هو
 node tools/render_html.cjs --in starters/html-canvas/index.html --out out/film.mp4 --fps 30 --audio voice.mp3
 # فحص التسليم
@@ -66,7 +66,7 @@ A 9:16 sample film (1080×1920, 30 fps, 12 s) built with HTML + Canvas + SVG and
 **Render:**
 
 ```bash
-node tools/render_html.cjs --in starters/html-canvas/index.html --out out/preview.png --preview
+node tools/render_html.cjs --in starters/html-canvas/index.html --out out/film.mp4 --preview   # contact sheet: out/film_preview.png
 node tools/render_html.cjs --in starters/html-canvas/index.html --out out/film.mp4 --fps 30 --audio voice.mp3
 python3 tools/verify_video.py out/film.mp4 --aspect 9:16 --fps 30 --duration 12 --audio voice.mp3
 ```

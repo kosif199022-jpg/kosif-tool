@@ -8,8 +8,11 @@ import tempfile
 import unittest
 import zipfile
 
-import numpy as np
-import cv2
+try:
+    import numpy as np
+    import cv2
+except ImportError as exc:  # optional extras: pip install numpy opencv-python-headless pillow
+    raise unittest.SkipTest(f"App Studio tests need numpy and opencv-python-headless ({exc})")
 
 PATH = Path(__file__).resolve().parents[1] / "scripts" / "app_studio.py"
 spec = importlib.util.spec_from_file_location("app_studio_paint_test", PATH)

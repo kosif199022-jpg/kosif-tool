@@ -1,4 +1,4 @@
-﻿#!/usr/bin/env python3
+#!/usr/bin/env python3
 """Original KOSIF Smart Draw: bounded freehand and deterministic shape assist.
 Informed by publicly described workflows, no AutoDraw/Canva code or art.
 Not an ML drawing model or a product clone.

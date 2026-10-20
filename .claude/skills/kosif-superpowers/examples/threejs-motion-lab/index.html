@@ -1,0 +1,39 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>KOSIF • THREE.JS CINEMATIC LAB</title>
+<script type="importmap">
+{"imports":{"three":"/node_modules/three/build/three.module.js","three/addons/":"/node_modules/three/examples/jsm/"}}
+</script>
+<style>
+:root{color-scheme:dark}*{box-sizing:border-box}html,body{margin:0;width:100%;height:100%;overflow:hidden;background:#050d11;font-family:Arial,Helvetica,sans-serif;color:#eee8d8}
+#stage{position:relative;width:100vw;height:100vh;background:linear-gradient(180deg,#071119 0%,#0a161f 45%,#050b0d 100%);overflow:hidden}
+#stage canvas{display:block;position:absolute;inset:0;width:100%;height:100%}
+#noise{position:absolute;inset:0;pointer-events:none;background:radial-gradient(ellipse 70% 42% at 50% 38%,transparent 35%,rgba(0,0,0,.25) 100%);mix-blend-mode:multiply}
+#topline{position:absolute;left:7%;right:7%;top:5%;display:flex;justify-content:space-between;align-items:center;letter-spacing:.16em;font-size:12px;font-weight:bold}
+#identity{display:flex;align-items:center;gap:11px}.seal{height:30px;width:30px;border:1px solid #f1bf70;border-radius:50%;display:grid;place-items:center;color:#e7bb73;font-size:16px}.onair{color:#f3c88c}
+#ruler{position:absolute;left:7%;right:7%;top:13%;height:1px;background:linear-gradient(90deg,#edbf73,transparent)}
+#chip{position:absolute;top:18%;left:7%;font-size:13px;letter-spacing:.24em;color:#c3a879;font-weight:650}
+#orbit-label{position:absolute;top:52%;right:6%;font-size:11px;writing-mode:vertical-rl;letter-spacing:.23em;color:#adbcbd}
+#bottom{position:absolute;bottom:7%;left:7%;right:7%}
+#micro{font-size:13px;color:#ceb28a;letter-spacing:.24em;font-weight:700;margin-bottom:16px}
+#headline{font-family:Arial Black,Arial,Helvetica,sans-serif;font-weight:900;font-size:clamp(66px,19vw,166px);line-height:.82;letter-spacing:-.085em;margin-left:-.045em;color:#f1eadb;text-shadow:0 16px 34px #0009}
+#caption{max-width:85%;margin-top:20px;font-size:17px;line-height:1.55;color:#b8c1c0;letter-spacing:.02em}
+#bar{height:3px;margin-top:26px;background:#65747955;overflow:hidden}#progress{height:100%;width:0;background:#f3c475;transform-origin:left}
+#footer{display:flex;align-items:center;justify-content:space-between;margin-top:15px;color:#d6d5cb;font-size:11px;font-weight:700;letter-spacing:.14em}
+body[data-capture="1"] #stage{width:720px;height:1280px}
+@media(max-width:420px){#headline{font-size:19vw}#caption{font-size:14px}}
+</style>
+</head>
+<body>
+<div id="stage" aria-label="KOSIF 3D kinetic motion demo">
+ <div id="noise"></div>
+ <div id="topline"><div id="identity"><span class="seal">K</span><span>KOSIF<br>STUDIO</span></div><span class="onair">MOTION / 001</span></div>
+ <div id="ruler"></div><div id="chip">CREATIVE INTELLIGENCE / 3D</div>
+ <div id="orbit-label">PROCEDURAL · LIGHTING · CAMERA</div>
+ <div id="bottom"><div id="micro">IDEAS INTO REALITY</div><div id="headline">DEPTH</div><div id="caption">From a single thought to an immersive scene.</div>
+ <div id="bar"><div id="progress"></div></div><div id="footer"><span>THREE.JS / CINEMATIC LAB</span><span id="time">00:00 / 00:05</span></div></div>
+</div>
+<script type="module" src="/main.js"></script>
+</body></html>

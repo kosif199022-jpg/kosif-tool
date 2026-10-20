@@ -157,8 +157,15 @@ def main():
     ap.add_argument("--fps",type=int,default=30)
     ap.add_argument("--out",type=Path,required=True)
     args=ap.parse_args()
-    result=build(json.loads(args.words.read_text(encoding="utf-8")),
-                 json.loads(args.clips.read_text(encoding="utf-8")),args.duration,args.fps)
+    if args.fps <= 0 or args.duration <= 0:
+        ap.error("--fps and --duration must be positive")
+    try:
+        words=json.loads(args.words.read_text(encoding="utf-8"))
+        if isinstance(words, dict) and isinstance(words.get("words"), list):
+            words=words["words"]  # the repo's words.json shape: {"words": [...]}
+        result=build(words, json.loads(args.clips.read_text(encoding="utf-8")),args.duration,args.fps)
+    except (OSError, ValueError, KeyError, TypeError) as exc:
+        ap.error(f"{type(exc).__name__}: {exc}")
     args.out.parent.mkdir(parents=True,exist_ok=True)
     args.out.write_text(json.dumps(result,indent=2,ensure_ascii=False)+"\n",encoding="utf-8")
     print(json.dumps({"file":str(args.out),"scenes":len(result["scenes"]),

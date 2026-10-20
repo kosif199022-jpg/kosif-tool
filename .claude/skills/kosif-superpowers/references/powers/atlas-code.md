@@ -9,7 +9,7 @@
 مسارات الدليل نسبية إلى `/home/user/`؛ و`session-<date>:<file>#<section>` تشير إلى تشغيل موثق في جلسة سابقة؛ و`owner-upload:` إلى ملف داخل أرشيف أرسله المالك. Proof paths are relative to `/home/user/`.
 
 **المجال / domain:** الهندسة والكود — Code & engineering · **البادئة / prefix:** `ACODE` · **البيانات / data:** `data/powers/atlas-code.json` · **بحث / search:** `python3 scripts/powers.py family atlas-code`
-**مراجع ذات صلة / related references:** [capability-atlas.md](../capability-atlas.md) · [capability-audit.md](../capability-audit.md) · [hubs.md](../hubs.md)
+**مراجع ذات صلة / related references:** [CLAUDE_3_MINUTE_MAP.md](../CLAUDE_3_MINUTE_MAP.md) · [capability-audit.md](../capability-audit.md) · [hubs.md](../hubs.md)
 
 ## الفهرس / contents
 
@@ -23,13 +23,13 @@
 - **قواعد البيانات — Databases & storage** — ACODE-87 … ACODE-96 (10)
 - **التصحيح — Debugging & diagnosis** — ACODE-97 … ACODE-120 (24)
 - **DevOps والسحابة — DevOps, CI/CD, cloud & infrastructure** — ACODE-121 … ACODE-157 (37)
-- **المخططات — Diagrams & visual documentation** — ACODE-158 (1)
-- **الواجهات والتصميم — Front-end, UI & design systems** — ACODE-159 … ACODE-167 (9)
-- **تطوير الألعاب — Game development** — ACODE-168 … ACODE-175 (8)
-- **سير عمل تطوير عام — General development workflow** — ACODE-176 … ACODE-180 (5)
-- **Git والإصدار — Git, pull requests & releases** — ACODE-181 … ACODE-197 (17)
-- **هندسة النماذج اللغوية — LLM & AI engineering** — ACODE-198 … ACODE-213 (16)
-- **القطاعات المنظّمة — Regulated industries & domain expertise** — ACODE-214 … ACODE-216 (3)
+- **هندسة النماذج اللغوية — LLM & AI engineering** — ACODE-158 … ACODE-173 (16)
+- **القطاعات المنظّمة — Regulated industries & domain expertise** — ACODE-174 … ACODE-176 (3)
+- **المخططات — Diagrams & visual documentation** — ACODE-177 (1)
+- **الواجهات والتصميم — Front-end, UI & design systems** — ACODE-178 … ACODE-186 (9)
+- **تطوير الألعاب — Game development** — ACODE-187 … ACODE-194 (8)
+- **سير عمل تطوير عام — General development workflow** — ACODE-195 … ACODE-199 (5)
+- **Git والإصدار — Git, pull requests & releases** — ACODE-200 … ACODE-216 (17)
 - المصادر والرخص / sources & licences
 
 ## سير عمل الوكلاء — Agent workflows & orchestration
@@ -46,7 +46,6 @@
 - **ماذا / what:** يفحص ملفات المستودع المحلية بحثًا عن أوامر مدمّرة وأتمتة تكتب بيانات اعتماد وصلاحيات وكيل واسعة قبل التعديل، ويعيد إيصال مخاطر جاهزًا مع الخطوة الآمنة التالية. — Scan a repository's local files for destructive commands, credential-writing automation and over-broad agent authority before agent edits, and return a pasteable risk receipt with the next safe action.
 - **متى أستخدمها / when:** User asks to prepare a repo for agent changes, check for risky hooks, set agent permissions or autonomy levels, or says run agent preflight / check this repo before edits.
 - **كيف / how:** 1) Confirm repo path; read only local docs/config; send nothing outside. 2) Run the lightweight scanner from a trusted root, else apply manual rules. 3) Inspect high-signal paths first: .claude/, .cursor/, .github/, shell scripts, JSON/YAML/TOML config, package manifests, env files. 4) Classify: Green = clean git, no markers; Yellow = hooks, broad tool permissions or git state unavailable (checkpoint or narrow scope first); Red = recursive delete or credential writing in an agent-controlled path (stop for human review). 5) Receipt: Decision, Repository, Git state, Risk buckets, Evidence, Next safe action. 6) Set permission and autonomy level per task type. **أرقام / params:** repo path; strictness; autonomy level policy
-- **يحتاج / needs:** [`git`](../requirements.md#req-git) · [`python3`](../requirements.md#req-python3)
 - **الرخصة / license:** method paraphrased from Atlas skills under MIT; the skills keep their own licenses — see each folder's SOURCE.md
 - **الدليل / proof:** `https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/1918-agent-safety-preflight/7058-agent-safety-preflight` · `https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/3049-adlc-govern/13121-agent-permissions` · `https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/3045-adlc-agent-engineering/13086-agent-runtime-guardrails`
 - **المصدر / source:** KOSIF Atlas mining 2026-10-20 (https://github.com/kosif199022-jpg/kosif-atlas): agent-safety-preflight/agent-safety-preflight (#7058); adlc-govern/agent-permissions (#13121); adlc-agent-engineering/agent-runtime-guardrails (#13086) · theme agent-workflow · 7 supporting skills · verifier read: skills/1918-agent-safety-preflight/7058-agent-safety-preflight, skills/3049-adlc-govern/13121-agent-permissions, skills/3045-adlc-agent-engineering/13086-agent-runtime-guardrails
@@ -55,7 +54,6 @@
 - **ماذا / what:** يمسح كل مواضع جلسات الوكلاء على القرص بحثًا عن أسرار مسرّبة دون إعادة تسريبها، ويقيّم الخطورة، ثم يدوّر السر أولًا وينظّف ثانيًا بالبصمات فقط. — Sweep every on-disk agent session surface for leaked secrets without re-leaking them, triage severity, rotate first and scrub second using fingerprints only.
 - **متى أستخدمها / when:** Auditing whether secrets ended up in Claude Code/Codex session files, a credential is suspected leaked, rotating a shared credential, or scrubbing transcripts after rotation.
 - **كيف / how:** 1) Sweep every surface: projects/**/*.jsonl, file-history, prompt history, hook logs, other agents' homes, `*.jsonl.deleted.*` tombstones, editor backups. 2) `rg -uu --no-messages -o -a` with prefix-anchored patterns (AWS AKIA/ASIA, Slack xox, npm_, private-key headers); without -uu rg silently reports clean. 3) Drop noise: node_modules, redaction fixtures, docs example keys, temp STS creds. 4) Report file + status + sha256[:10] fingerprint, never the value; never put a secret on argv. 5) Severity: key id alone is housekeeping, id plus secret is an incident; probe liveness non-destructively. 6) Rotate outside any transcribed session, then scrub by a kill-list of verified-dead fingerprints. **أرقام / params:** agent home dirs; credential classes; fingerprint kill-list
-- **يحتاج / needs:** [`python3`](../requirements.md#req-python3)
 - **الرخصة / license:** method paraphrased from Atlas skills under MIT; the skills keep their own licenses — see each folder's SOURCE.md
 - **الدليل / proof:** `https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/3262-agent-session-credential-audit/13773-agent-session-credential-audit` · `https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/3260-agent-credential-leak-surfaces/13771-agent-credential-leak-surfaces` · `https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/1559-agent-guard/4323-setup-agent-guard`
 - **المصدر / source:** KOSIF Atlas mining 2026-10-20 (https://github.com/kosif199022-jpg/kosif-atlas): agent-session-credential-audit/agent-session-credential-audit (#13773); agent-credential-leak-surfaces/agent-credential-leak-surfaces (#13771); agent-guard/setup-agent-guard (#4323) · theme agent-workflow · 4 supporting skills · verifier read: skills/3262-agent-session-credential-audit/13773-agent-session-credential-audit, skills/3260-agent-credential-leak-surfaces/13771-agent-credential-leak-surfaces, skills/1559-agent-guard/4323-setup-agent-guard
@@ -64,7 +62,6 @@
 - **ماذا / what:** إجراء مقابلة تحديد المتطلبات ثم توليد هيكل سكربت سير العمل وفحصه قبل التشغيل. — Run intake, scaffold a topology (fan-out, pipeline, loop, judge-panel), and lint the .js workflow for resume-breaking mistakes.
 - **متى أستخدمها / when:** User wants to orchestrate sub-agents in a fixed, resumable topology.
 - **كيف / how:** 1) Ask unit of work, unit count, need-all-results, structured output. 2) Pick topology; default to pipeline unless a stage needs the full prior set. 3) Meta block as a pure literal first statement. 4) No Date.now/Math.random/fs in orchestrator; pass timestamps via args. 5) parallel() takes thunks; filter(Boolean) results. 6) Guard loops with counter or budget check (1000-agent cap). 7) Lint then run. **أرقام / params:** topology, task description
-- **يحتاج / needs:** [`python3`](../requirements.md#req-python3) · [`node`](../requirements.md#req-node)
 - **الرخصة / license:** method paraphrased from Atlas skills under MIT; the skills keep their own licenses — see each folder's SOURCE.md
 - **الدليل / proof:** `https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/186-workflow-builder/555-workflow-builder` · `https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/256-zirkel/861-zirkel-solve`
 - **المصدر / source:** KOSIF Atlas mining 2026-10-20 (https://github.com/kosif199022-jpg/kosif-atlas): workflow-builder/workflow-builder (#555); zirkel/zirkel-solve (#861) · theme agent-workflow · 3 supporting skills · verifier read: skills/186-workflow-builder/555-workflow-builder, skills/256-zirkel/861-zirkel-solve
@@ -73,7 +70,7 @@
 - **ماذا / what:** مقارنة وكلاء البرمجة على نفس الطلب ونفس الالتزام الابتدائي ونفس فحص النتيجة داخل أشجار عمل مؤقتة، ثم تجميع الوقت والرموز والتكلفة وبوابات النجاح في تقرير واحد. — Compare coding agents on the same prompt, starting commit and outcome check using disposable git worktrees, then aggregate time, tokens, cost and pass/fail gates into one report.
 - **متى أستخدمها / when:** Choosing between agents or models for a repo task; measuring a prompt or skill change; need defensible time and cost numbers rather than impressions.
 - **كيف / how:** 1) Write a repo-level TOML config: prompt file, start branch or commit, agent list, an outer check (proves the real outcome before and after, and times it) and an inner check (fast feedback for the agent). 2) Require a clean repo, installed CLIs and a passing outer check. 3) Confirm agents and a run ID, then run trials sequentially so load does not bias timing: run_trial.py --repo --config --agent --run. 4) Results land in eval-results/<task>/<agent>/run-<id>-<timestamp>/ on result branches; never commit on the user's branch. 5) Aggregate with parse_transcript.py --aggregate ... --output comparison.json --render-report comparison.md; never rank a failed trial. **أرقام / params:** prompt path; start_branch or start_commit; agents; outer_check; inner_check; run id
-- **يحتاج / needs:** [`git`](../requirements.md#req-git) · [`python3`](../requirements.md#req-python3) · [`claude:tools`](../requirements.md#req-claude-tools)
+- **يحتاج / needs:** [`python3`](../requirements.md#req-python3) · [`git`](../requirements.md#req-git)
 - **الرخصة / license:** method paraphrased from Atlas skills under MIT (no copyleft seen among supporting ids); the skills keep their own licenses — see each folder's SOURCE.md
 - **الدليل / proof:** `https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/2992-development-skills/12679-ai-agent-bench` · `https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/2818-codex-subagent/11438-codex-subagent-driven-development`
 - **المصدر / source:** KOSIF Atlas mining 2026-10-20 (https://github.com/kosif199022-jpg/kosif-atlas): development-skills/ai-agent-bench (#12679); codex-subagent/codex-subagent-driven-development (#11438) · theme agent-workflow · 3 supporting skills · verifier read: skills/2992-development-skills/12679-ai-agent-bench, skills/2818-codex-subagent/11438-codex-subagent-driven-development
@@ -82,7 +79,6 @@
 - **ماذا / what:** تقسيم إعادة الهيكلة الكبيرة لمراحل مع ملفات نقاط حفظ تنجو من فقدان السياق. — Split large refactors into phases recorded in checkpoint files that survive context loss.
 - **متى أستخدمها / when:** Refactor spans 10+ files or needs phased rollout.
 - **كيف / how:** 1) Enumerate affected files. 2) Write phase plan to a checkpoint file. 3) Execute a phase, run tests, update checkpoint. 4) New session resumes from checkpoint.
-- **يحتاج / needs:** [`git`](../requirements.md#req-git)
 - **الرخصة / license:** method paraphrased from Atlas skills under MIT; the skills keep their own licenses — see each folder's SOURCE.md
 - **الدليل / proof:** `https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/2175-workflow-orchestration-plugin/7946-workflow-checkpoint-refactor`
 - **المصدر / source:** KOSIF Atlas mining 2026-10-20 (https://github.com/kosif199022-jpg/kosif-atlas): workflow-orchestration-plugin/workflow-checkpoint-refactor (#7946) · theme agent-workflow · 2 supporting skills · verifier read: skills/2175-workflow-orchestration-plugin/7946-workflow-checkpoint-refactor
@@ -91,7 +87,7 @@
 - **ماذا / what:** يشغّل عدة وكلاء مستقلين على المهمة نفسها في worktrees معزولة، ويرتّبهم بمقياس رقمي أو حكم نموذج أعمى، ثم يدمج فائزًا واحدًا فقط ويؤرشف الباقين. — Run N independent agents on the same task in isolated git worktrees, rank them by a metric or blind LLM judge, merge exactly one winner and archive the rest.
 - **متى أستخدمها / when:** User wants several approaches tried in parallel (optimization, refactor, test-writing, bug-fix alternatives, copy variants) or a tournament/A-B comparison of drafts.
 - **كيف / how:** 1) Init a session: config (task, N, eval criteria) plus a state machine INIT -> DISPATCH -> MONITOR -> EVALUATE -> MERGE and message-board channels (dispatch/progress/results). 2) Read-only preflight of what the repo can support before spending tokens; record a baseline. 3) Launch all N in ONE message via the Agent tool with `isolation: worktree`, each told to commit and write a result note. 4) Evaluate: metric mode runs the eval command in each worktree and parses a number; judge mode ranks diffs; hybrid uses the judge for ties. 5) `git merge --no-ff` the winner, tag losers (e.g. `hub/archive/<session>/agent-<i>`), remove worktrees, post a summary. **أرقام / params:** N candidates; eval command + metric direction, or judge rubric; template (optimizer/refactorer/test-writer/bug-fixer)
-- **يحتاج / needs:** [`git`](../requirements.md#req-git) · [`python3`](../requirements.md#req-python3)
+- **يحتاج / needs:** [`git`](../requirements.md#req-git) · [`claude:tools`](../requirements.md#req-claude-tools)
 - **الرخصة / license:** method paraphrased from Atlas skills under MIT; the skills keep their own licenses — see each folder's SOURCE.md
 - **الدليل / proof:** `https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/155-agenthub/512-agenthub` · `https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/250-arbeitsplan/803-arbeitsplan-run` · `https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/250-arbeitsplan/801-arbeitsplan-patterns`
 - **المصدر / source:** KOSIF Atlas mining 2026-10-20 (https://github.com/kosif199022-jpg/kosif-atlas): agenthub/agenthub (#512); arbeitsplan/arbeitsplan-run (#803); arbeitsplan/arbeitsplan-patterns (#801) · theme agent-workflow · 8 supporting skills · verifier read: skills/155-agenthub/512-agenthub, skills/250-arbeitsplan/803-arbeitsplan-run, skills/250-arbeitsplan/801-arbeitsplan-patterns
@@ -100,7 +96,7 @@
 - **ماذا / what:** منع التداخل بين وكلاء البرمجة في أشجار عمل git منفصلة عبر تبادل سجلات رسائل (حقائق ومقترحات ملكية وتقارير حالة وتفويضات وإقرارات) مع جرس من سطر واحد وإيصالات مسجلة. — Prevent overlap between coding agents in separate git worktrees by exchanging mailbox message records (facts, ownership proposals, state reports, authorizations, acknowledgements) with a one-line doorbell and recorded receipts.
 - **متى أستخدمها / when:** Several coding agents may touch the same files, depend on each other or share an external blocker; ownership must be negotiated; agent sessions must be recovered after a multiplexer restart.
 - **كيف / how:** 1) Register a mail identity per agent; derive the project key and build commands only through the provided wrapper script, never by hand. 2) Before work, check overlap in files, dependencies and external blockers. 3) Send ownership proposals and state reports as message records, then ring a one-line doorbell in the recipient pane. 4) Recipient reads its inbox and records a receipt. 5) Pane operations (inventory, bounded wait, prompt, start, relaunch, stop, worktree create/open) go through wrapper skills. 6) Start the Executor session for a Change only via its orchestrate skill. 7) Before restarting the multiplexer, prepare an exact-session manifest and recover from it. **أرقام / params:** agent names; message type; project key; session manifest
-- **يحتاج / needs:** [`git`](../requirements.md#req-git) · [`python3`](../requirements.md#req-python3)
+- **يحتاج / needs:** [`git`](../requirements.md#req-git)
 - **الرخصة / license:** method paraphrased from Atlas skills under MIT (no copyleft seen among supporting ids); the skills keep their own licenses — see each folder's SOURCE.md
 - **الدليل / proof:** `https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/2779-coding-agents/11058-coordinate-agents` · `https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/2779-coding-agents/11060-operate-agent-mail` · `https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/2779-coding-agents/11062-operate-prowl`
 - **المصدر / source:** KOSIF Atlas mining 2026-10-20 (https://github.com/kosif199022-jpg/kosif-atlas): coding-agents/coordinate-agents (#11058); coding-agents/operate-agent-mail (#11060); coding-agents/operate-prowl (#11062) · theme agent-workflow · 7 supporting skills · verifier read: skills/2779-coding-agents/11058-coordinate-agents, skills/2779-coding-agents/11060-operate-agent-mail, skills/2779-coding-agents/11062-operate-prowl
@@ -109,7 +105,7 @@
 - **ماذا / what:** تسليم مهمة محددة للتنفيذ أو النقد أو التشخيص إلى بيئة وكيل برمجة أخرى (Codex CLI أو مهمة Claude Code متتبَّعة أو ZCode) انطلاقاً من خطة مكتوبة، ثم مراجعة التغييرات بنموذج ثانٍ قبل القبول. — Hand a bounded implementation, critique or diagnosis task to another coding-agent runtime (Codex CLI, a tracked Claude Code job, ZCode) from a written plan, then have a second model review the diff before accepting it.
 - **متى أستخدمها / when:** A second opinion or a different model is wanted; work should run in the background in another CLI; reviewing a plan or diff with a different vendor; keeping the main agent's judgment while offloading execution.
 - **كيف / how:** 1) Put the task and acceptance checks in a prompt file from a written plan. 2) Choose runtime and flags: background or wait, resume or fresh, write permission, model, effort level. 3) Dispatch the other runtime as implementer or reviewer; have the controller prepare an isolated git worktree. 4) Follow live progress by job id and resume instead of restarting. 5) Second-model review gate: a different model critiques the diff against the plan. 6) The main agent keeps judgment and decides to accept or reject; no auto-merge. Flags and bridge behaviour taken from skill descriptions only. **أرقام / params:** runtime (codex|claude|zcode); model; effort (low..max); background/wait; prompt file; write permission
-- **يحتاج / needs:** [`git`](../requirements.md#req-git) · [`claude:tools`](../requirements.md#req-claude-tools)
+- **يحتاج / needs:** [`git`](../requirements.md#req-git)
 - **الرخصة / license:** method paraphrased from Atlas skills under Apache-2.0 / MIT (no copyleft seen among supporting ids); the skills keep their own licenses — see each folder's SOURCE.md
 - **الدليل / proof:** `https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/3033-cc/13044-rescue` · `https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/2818-codex-subagent/11438-codex-subagent-driven-development` · `https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/3023-codex-zcode-bridge/12928-zcode-bridge`
 - **المصدر / source:** KOSIF Atlas mining 2026-10-20 (https://github.com/kosif199022-jpg/kosif-atlas): cc/rescue (#13044); codex-subagent/codex-subagent-driven-development (#11438); codex-zcode-bridge/zcode-bridge (#12928) · theme agent-workflow · 8 supporting skills · verifier read: skills/3033-cc/13044-rescue, skills/2818-codex-subagent/11438-codex-subagent-driven-development, skills/3023-codex-zcode-bridge/12928-zcode-bridge
@@ -118,7 +114,7 @@
 - **ماذا / what:** يصمم سير عمل طويل ومتحمل للأعطال بفصل الـ workflow عن الـ activity وساجا تعويضية وإعادة محاولات ومهلًا، ثم يشخّصه ويختبره عبر واجهات المحرك نفسه. — Design long-running, failure-tolerant workflows with workflow/activity separation, compensating sagas, retries and timeouts, then debug and test them through the engine's own APIs.
 - **متى أستخدمها / when:** Building multi-step distributed transactions without 2PC, long-running processes, or authoring, debugging and end-to-end testing Amazon MWAA/Airflow workflows.
 - **كيف / how:** 1) Separate deterministic workflow code from side-effecting activities and respect determinism constraints. 2) For cross-service transactions define a compensating action per step (saga) and the order of undo. 3) For Airflow: pick operators deliberately, set timeouts, retry strategy, schedule and failure notifications. 4) Deploy the artifact (Python DAG on provisioned, YAML on serverless). 5) Test by triggering a run and watching it to completion. 6) Debug failures from environment details, REST API (`aws mwaa invoke-rest-api`) and CloudWatch logs. **أرقام / params:** engine (Temporal/MWAA); step list with compensations; retry and timeout policy
-- **يحتاج / needs:** [`network`](../requirements.md#req-network)
+- **يحتاج / needs:** [`python3`](../requirements.md#req-python3)
 - **الرخصة / license:** method paraphrased from Atlas skills under MIT (backend-development) / Apache-2.0 (aws-data-analytics); the skills keep their own licenses — see each folder's SOURCE.md
 - **الدليل / proof:** `https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/3450-backend-development/14153-workflow-orchestration-patterns` · `https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/366-aws-data-analytics/1342-authoring-mwaa-workflow` · `https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/366-aws-data-analytics/1345-debugging-mwaa-workflow`
 - **المصدر / source:** KOSIF Atlas mining 2026-10-20 (https://github.com/kosif199022-jpg/kosif-atlas): backend-development/workflow-orchestration-patterns (#14153); aws-data-analytics/authoring-mwaa-workflow (#1342); aws-data-analytics/debugging-mwaa-workflow (#1345) · theme agent-workflow · 5 supporting skills · verifier read: skills/3450-backend-development/14153-workflow-orchestration-patterns, skills/366-aws-data-analytics/1342-authoring-mwaa-workflow, skills/366-aws-data-analytics/1345-debugging-mwaa-workflow
@@ -127,6 +123,7 @@
 - **ماذا / what:** بناء تكامل مع واجهة مورّد مدفوعة أو تتطلب اعتماداً خلف محوّل رفيع يعتمد افتراضياً على بيانات اصطناعية، ويجعل أي حركة حية اختباراً دخانياً صريحاً ومحدوداً بقرار المستخدم. — Build an integration against a paid or credentialed vendor API behind a thin adapter that defaults to synthetic fixtures and makes any live traffic an explicit, bounded opt-in smoke test.
 - **متى أستخدمها / when:** Implementing parsers, retry classification, async job or webhook handling for a vendor SDK without spending credits or touching production data; requests like 'mock the API locally' or 'offline test loop'.
 - **كيف / how:** 1) Wrap the vendor SDK in a thin provider adapter. 2) Default every test run to synthetic or contract fixtures: no network, no credits. 3) Cover parsers, retry classification, async snapshot or job handling and callbacks offline against those fixtures. 4) Make live calls a separate opt-in smoke test (explicit command or env flag), tiny and bounded. 5) For OAuth vendors use a dedicated development integration, never production credentials. 6) In tool-use loops keep JSON-schema validation, explicit dispatch, result correlation and approval gates. Pattern taken from templated 'pack' descriptions. **أرقام / params:** vendor; fixture location; live-test flag name; credential scope
+- **يحتاج / needs:** [`key:unspecified`](../requirements.md#req-key-unspecified)
 - **الرخصة / license:** method paraphrased from Atlas skills under MIT (no copyleft seen among supporting ids); the skills keep their own licenses — see each folder's SOURCE.md
 - **الدليل / proof:** `https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/1831-brightdata-pack/5155-brightdata-local-dev-loop` · `https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/1832-canva-pack/5180-canva-local-dev-loop` · `https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/1841-cohere-pack/5400-cohere-local-dev-loop`
 - **المصدر / source:** KOSIF Atlas mining 2026-10-20 (https://github.com/kosif199022-jpg/kosif-atlas): brightdata-pack/brightdata-local-dev-loop (#5155); canva-pack/canva-local-dev-loop (#5180); cohere-pack/cohere-local-dev-loop (#5400) · theme agent-workflow · 5 supporting skills · verifier read: skills/1831-brightdata-pack/5155-brightdata-local-dev-loop, skills/1832-canva-pack/5180-canva-local-dev-loop, skills/1841-cohere-pack/5400-cohere-local-dev-loop
@@ -135,7 +132,7 @@
 - **ماذا / what:** تنفيذ خطة بوكيل جديد لكل مهمة والتزام واحد لكل مهمة ومراجعة المطابقة ثم الجودة. — Execute a plan or todo queue with one fresh-context subagent per task, one commit each, and spec review before quality review.
 - **متى أستخدمها / when:** Executing implementation plans with independent tasks; processing a whole .llm/todo.md queue.
 - **كيف / how:** 1) Confirm subagent spawn tool exists, leave plan mode. 2) Leader only coordinates (Bash, spawn), never implements. 3) Extract next task, record HEAD. 4) Spawn fresh implementer (TDD, self-check, commit). 5) Spec-compliance reviewer, then code-quality reviewer; fail loops back to fix. 6) Verify HEAD advanced by exactly one commit and worktree clean. 7) Mark failed tasks blocked, never retry twice; run sequentially when sharing worktree. **أرقام / params:** plan file, max tasks
-- **يحتاج / needs:** [`git`](../requirements.md#req-git)
+- **يحتاج / needs:** [`git`](../requirements.md#req-git) · [`claude:tools`](../requirements.md#req-claude-tools)
 - **الرخصة / license:** method paraphrased from Atlas skills under MIT/Apache-2.0; the skills keep their own licenses — see each folder's SOURCE.md
 - **الدليل / proof:** `https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/2554-markdown-tasks/9914-do-all-tasks` · `https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/3599-pdforge/14440-subagent-driven-development`
 - **المصدر / source:** KOSIF Atlas mining 2026-10-20 (https://github.com/kosif199022-jpg/kosif-atlas): markdown-tasks/do-all-tasks (#9914); pdforge/subagent-driven-development (#14440) · theme agent-workflow · 5 supporting skills · verifier read: skills/2554-markdown-tasks/9914-do-all-tasks, skills/3599-pdforge/14440-subagent-driven-development
@@ -153,7 +150,7 @@
 - **ماذا / what:** يحسّن ملفًا واحدًا مقابل أمر تقييم ثابت بحلقة تعديل وقياس، فيثبّت التحسينات بـ commit ويتراجع عن الإخفاقات مع تسجيل كل محاولة. — Optimize one target file against a fixed evaluation command by looping edit, measure, then commit improvements or reset failures, logging every attempt.
 - **متى أستخدمها / when:** User says make this faster/smaller/better, optimize a file for a metric, improve prompts/headlines, or run experiments overnight or on a schedule.
 - **كيف / how:** 1) Define the experiment: target file, eval command, metric name, direction (lower/higher), scope project or user (a setup script creates `.autoresearch/<domain>/<name>/` with program.md, config.cfg, results.tsv, optional evaluate.py). 2) Lock the evaluator: never edit the gate being judged. 3) Each iteration: edit only the target, run the fixed eval, parse the metric. 4) Better than best so far -> git commit (keep); worse -> git reset (discard); error -> log crash. 5) Append `commit | metric | status | description` to results.tsv (gitignored). 6) Repeat on an interval (10m, 1h, daily) via a cron-style scheduler; resume by checking out the experiment branch and reading results history. **أرقام / params:** target path; eval command; metric; direction; domain (engineering/marketing/content/prompts); interval
-- **يحتاج / needs:** [`git`](../requirements.md#req-git) · [`python3`](../requirements.md#req-python3)
+- **يحتاج / needs:** [`python3`](../requirements.md#req-python3) · [`git`](../requirements.md#req-git)
 - **الرخصة / license:** method paraphrased from Atlas skills under MIT; the skills keep their own licenses — see each folder's SOURCE.md
 - **الدليل / proof:** `https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/156-autoresearch-agent/522-autoresearch-agent` · `https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/156-autoresearch-agent/520-ar-resume` · `https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/156-autoresearch-agent/523-loop`
 - **المصدر / source:** KOSIF Atlas mining 2026-10-20 (https://github.com/kosif199022-jpg/kosif-atlas): autoresearch-agent/autoresearch-agent (#522); autoresearch-agent/ar-resume (#520); autoresearch-agent/loop (#523) · theme agent-workflow · 3 supporting skills · verifier read: skills/156-autoresearch-agent/522-autoresearch-agent, skills/156-autoresearch-agent/520-ar-resume, skills/156-autoresearch-agent/523-loop
@@ -162,7 +159,7 @@
 - **ماذا / what:** فحص طلبات الدمج والفروع والحالة قبل العمل لتجنب تكرار عمل الوكلاء المتزامنين أو الكتابة فوقه. — Check for existing PRs, branches and changed state before acting so concurrent agent sessions do not duplicate or clobber work.
 - **متى أستخدمها / when:** Before opening a PR, creating a branch/worktree, applying a plan, merging a PR you did not open, or finding foreign uncommitted changes.
 - **كيف / how:** 1) gh pr list --state open and grep each PR's diff --name-only for your files. 2) If an older PR fixes more, adopt it instead of shipping a half fix. 3) Re-plan before any apply/deploy older than minutes. 4) Ask live peer sessions what they do before sizeable work. 5) Claim branch names early. 6) Leave merging peers' PRs to owners; audit afterwards if you did. **أرقام / params:** repo, files
-- **يحتاج / needs:** [`gh`](../requirements.md#req-gh) · [`git`](../requirements.md#req-git)
+- **يحتاج / needs:** [`gh`](../requirements.md#req-gh)
 - **الرخصة / license:** method paraphrased from Atlas skills under MIT/Apache-2.0; the skills keep their own licenses — see each folder's SOURCE.md
 - **الدليل / proof:** `https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/3338-parallel-agent-session-collisions/13852-parallel-agent-session-collisions`
 - **المصدر / source:** KOSIF Atlas mining 2026-10-20 (https://github.com/kosif199022-jpg/kosif-atlas): parallel-agent-session-collisions/parallel-agent-session-collisions (#13852) · theme agent-workflow · 4 supporting skills · verifier read: skills/3338-parallel-agent-session-collisions/13852-parallel-agent-session-collisions
@@ -171,7 +168,7 @@
 - **ماذا / what:** يتحقق من نظافة المستودع وتفرّد أسماء الفروع وتثبيت جذر git قبل إطلاق وكلاء متزامنين، فلا يلوّث الكتّاب المتوازيون بعضهم ولا نسخة العمل الرئيسية. — Check repo cleanliness, branch-name uniqueness and git-root pinning before fanning out concurrent agents, so parallel writers never contaminate each other or the main checkout.
 - **متى أستخدمها / when:** User asks to spawn several agents/subagents at once, write a lead prompt for a fan-out, run worktree-isolated parallel implementation, or sequence dependent work items in waves.
 - **كيف / how:** 1) Dispatch from the main conversation; sub-agent sandboxes may lack the Agent tool, so require a tool check and a sequential-fallback report. 2) Preflight: `git status --porcelain` empty, `git worktree list` clash-free, unique branch per agent, target name free (`git branch -a --list`, `git ls-remote --heads origin`), shared counters (next ADR/PRP number) snapshotted; on failure refuse, never clean user work. 3) Tell git-writing agents to pin `git rev-parse --show-toplevel` and use `git -C "$WORKTREE"`; never export GIT_DIR/GIT_WORK_TREE. 4) Check nested-repo toplevel differs. 5) Run dependent items in waves; pre-dump exclusive-lock tools. 6) Afterwards verify main repo state. **أرقام / params:** agent count; task list per agent; target branch names; worktree root; wave order
-- **يحتاج / needs:** [`git`](../requirements.md#req-git)
+- **يحتاج / needs:** [`git`](../requirements.md#req-git) · [`claude:tools`](../requirements.md#req-claude-tools)
 - **الرخصة / license:** method paraphrased from Atlas skills under MIT; the skills keep their own licenses — see each folder's SOURCE.md
 - **الدليل / proof:** `https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/2134-agent-patterns-plugin/7579-parallel-agent-dispatch` · `https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/1457-aegis/3562-dispatching-parallel-agents` · `https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/2134-agent-patterns-plugin/7584-wave-based-dispatch`
 - **المصدر / source:** KOSIF Atlas mining 2026-10-20 (https://github.com/kosif199022-jpg/kosif-atlas): agent-patterns-plugin/parallel-agent-dispatch (#7579); aegis/dispatching-parallel-agents (#3562); agent-patterns-plugin/wave-based-dispatch (#7584) · theme agent-workflow · 9 supporting skills · verifier read: skills/2134-agent-patterns-plugin/7579-parallel-agent-dispatch, skills/1457-aegis/3562-dispatching-parallel-agents, skills/2134-agent-patterns-plugin/7584-wave-based-dispatch
@@ -180,7 +177,7 @@
 - **ماذا / what:** جمع حالة المستودع البعيد وطلبات الدمج والتعارضات ثم تقرير المتابعة. — Gather remote state, existing PRs, branch divergence and conflicts, then decide whether to proceed.
 - **متى أستخدمها / when:** Starting an issue, resuming, or before spawning parallel agents.
 - **كيف / how:** 1) git fetch origin --prune. 2) Resolve base (origin/main, origin/master, main, master). 3) Compute AHEAD/BEHIND, uncommitted, stash, conflict files. 4) Look up issue state and PRs. 5) Merged PR means stop; open PR means ask user continue or restart. **أرقام / params:** issue number or branch
-- **يحتاج / needs:** [`git`](../requirements.md#req-git) · [`gh`](../requirements.md#req-gh)
+- **يحتاج / needs:** [`git`](../requirements.md#req-git)
 - **الرخصة / license:** method paraphrased from Atlas skills under MIT; the skills keep their own licenses — see each folder's SOURCE.md
 - **الدليل / proof:** `https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/2175-workflow-orchestration-plugin/7948-workflow-preflight`
 - **المصدر / source:** KOSIF Atlas mining 2026-10-20 (https://github.com/kosif199022-jpg/kosif-atlas): workflow-orchestration-plugin/workflow-preflight (#7948) · theme agent-workflow · 2 supporting skills · verifier read: skills/2175-workflow-orchestration-plugin/7948-workflow-preflight
@@ -198,7 +195,7 @@
 - **ماذا / what:** تثبيت خطافات اختيارية تحذّر الوكيل الفرعي عند 80% من ميزانية الوقت وتمنع الأدوات غير الختامية بعد 100%، مع خطافات شقيقة تحدّ حجم الرد النهائي وتوجّه الاستدعاء العام إلى الوكيل الخبير. — Install opt-in PreToolUse and SubagentStop hooks that warn a subagent at 80% of a time budget and deny non-finalization tools past 100%, with sibling hooks that cap the size of the final return message and route generic spawns to the real expert agent.
 - **متى أستخدمها / when:** A subagent runs for ages with no timeout; subagent final reports flood the main context; a generic Agent spawn picks the wrong specialist; requests like 'agent time limit', 'return budget', 'route to expert'.
 - **كيف / how:** 1) Probe status first (installed? project or global scope?) and print a PLAN block before any write. 2) Warn that a global PreToolUse '.*' matcher costs about 60 ms on every tool call. 3) Copy the guard and a SubagentStop cleanup script into hooks and register them (Bash only for ~/.claude). 4) Config JSON: defaultMinutes, per-agent-type overrides, hardStopRatio (>1, default 2). 5) At 80% inject one wrap-up note; past 100% deny every tool except Read/Write/Edit/Todo-class finalizers; past the hard-stop ratio allow only Write/Edit; always deny AskUserQuestion. 6) Fail open, key state by agent_id, no-op in the main session. 7) State the limits: time is sampled only at tool boundaries. **أرقام / params:** mode (status|install|upgrade|enable|disable|uninstall|purge); scope (project|global); budget minutes; hardStopRatio; byAgentType overrides
-- **يحتاج / needs:** [`node`](../requirements.md#req-node) · [`claude:tools`](../requirements.md#req-claude-tools)
+- **يحتاج / needs:** [`claude:tools`](../requirements.md#req-claude-tools)
 - **الرخصة / license:** method paraphrased from Atlas skills under MIT (no copyleft seen among supporting ids); the skills keep their own licenses — see each folder's SOURCE.md
 - **الدليل / proof:** `https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/2098-brewtools/7439-agent-deadline-setup` · `https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/2098-brewtools/7440-agent-return-setup` · `https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/2098-brewtools/7441-agent-router-setup`
 - **المصدر / source:** KOSIF Atlas mining 2026-10-20 (https://github.com/kosif199022-jpg/kosif-atlas): brewtools/agent-deadline-setup (#7439); brewtools/agent-return-setup (#7440); brewtools/agent-router-setup (#7441) · theme agent-workflow · 3 supporting skills · verifier read: skills/2098-brewtools/7439-agent-deadline-setup, skills/2098-brewtools/7440-agent-return-setup, skills/2098-brewtools/7441-agent-router-setup
@@ -250,6 +247,7 @@
 - **ماذا / what:** اختيار نوع المصادقة الصحيح بأقل صلاحيات ودورة حياة للأسرار. — Pick the right auth grant (API key, OAuth client-credentials, restricted key) with least-privilege scopes and secret lifecycle.
 - **متى أستخدمها / when:** Setting up install/auth for a third-party API or SDK.
 - **كيف / how:** 1) Decide user-facing vs headless (auth-code vs client-credentials). 2) Request minimum scopes; separate sandbox and production keys. 3) Keep keys server-side in a secret manager, never in client code or logs. 4) Pin dated API-version header. 5) Verify with a bounded read-only call. 6) Document rotation and revocation; prefer restricted keys over master tokens. **أرقام / params:** vendor, environment, scopes
+- **يحتاج / needs:** [`chromium`](../requirements.md#req-chromium) · [`key:unspecified`](../requirements.md#req-key-unspecified)
 - **الرخصة / license:** method paraphrased from Atlas skills under MIT; the skills keep their own licenses — see each folder's SOURCE.md
 - **الدليل / proof:** `https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/1897-ramp-pack/6602-ramp-install-auth` · `https://github.com/kosif199022-jpg/kosif-atlas/tree/main/see batch record 6560` · `https://github.com/kosif199022-jpg/kosif-atlas/tree/main/see batch record 10498`
 - **المصدر / source:** KOSIF Atlas mining 2026-10-20 (https://github.com/kosif199022-jpg/kosif-atlas): ramp-pack/ramp-install-auth (#6602); procore-pack/procore-install-auth (#6560); twilio-developer-kit/twilio-security-api-auth (#10498) · theme api-backend · 8 supporting skills · verifier read: skills/1897-ramp-pack/6602-ramp-install-auth, see batch record 6560, see batch record 10498
@@ -258,6 +256,7 @@
 - **ماذا / what:** يختار بين REST وWebhooks وWebSockets وSDK لحالة الاستخدام مع شرح المفاضلات. — Pick between REST, webhooks, WebSockets, Rivet or client SDKs for a use case and explain tradeoffs.
 - **متى أستخدمها / when:** Planning a Zoom integration or video/contact-center feature.
 - **كيف / how:** 1) State the use case and who runs the code (server or client). 2) Events: webhooks for simple, WebSockets for low latency. 3) Resource management: REST. 4) Embedded video: Video SDK per platform. 5) Preflight: Probe SDK. 6) Settle auth with the OAuth workflow first. **أرقام / params:** use case
+- **يحتاج / needs:** [`key:unspecified`](../requirements.md#req-key-unspecified)
 - **الرخصة / license:** method paraphrased from Atlas skills under MIT; the skills keep their own licenses — see each folder's SOURCE.md
 - **الدليل / proof:** `https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/330-zoom-plugin/1054-plan-zoom-product` · `https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/330-zoom-plugin/1056-build-zoom-rest-api-app` · `https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/330-zoom-plugin/1080-setup-zoom-websockets`
 - **المصدر / source:** KOSIF Atlas mining 2026-10-20 (https://github.com/kosif199022-jpg/kosif-atlas): zoom-plugin/plan-zoom-product (#1054); zoom-plugin/build-zoom-rest-api-app (#1056); zoom-plugin/setup-zoom-websockets (#1080) · theme api-backend · 4 supporting skills · verifier read: skills/330-zoom-plugin/1054-plan-zoom-product, skills/330-zoom-plugin/1056-build-zoom-rest-api-app, skills/330-zoom-plugin/1080-setup-zoom-websockets
@@ -266,7 +265,6 @@
 - **ماذا / what:** كتابة اختبارات عقود المستهلك ونشرها والتحقق من المزود وبوابة النشر. — Write Pact consumer tests, publish to a broker, verify provider states and gate deploys with can-i-deploy.
 - **متى أستخدمها / when:** Preventing breaking API changes between services.
 - **كيف / how:** 1) Map consumer-provider interactions. 2) Consumer Pact tests with matchers (like, eachLike, term) producing pact JSON. 3) pact-broker publish with version+branch. 4) Provider verification with provider states; publish results. 5) can-i-deploy in CI. 6) For specs use openapi-diff: removed endpoints/narrowed types are breaking.
-- **يحتاج / needs:** [`node`](../requirements.md#req-node)
 - **الرخصة / license:** method paraphrased from Atlas skills under MIT; the skills keep their own licenses — see each folder's SOURCE.md
 - **الدليل / proof:** `https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/1958-contract-test-validator/7101-validating-api-contracts` · `https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/2244-backend-engineering/8538-api-contract-testing` · `https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/2145-configure-plugin/7671-configure-api-tests`
 - **المصدر / source:** KOSIF Atlas mining 2026-10-20 (https://github.com/kosif199022-jpg/kosif-atlas): contract-test-validator/validating-api-contracts (#7101); backend-engineering/api-contract-testing (#8538); configure-plugin/configure-api-tests (#7671) · theme api-backend · 3 supporting skills · verifier read: skills/1958-contract-test-validator/7101-validating-api-contracts, skills/2244-backend-engineering/8538-api-contract-testing, skills/2145-configure-plugin/7671-configure-api-tests
@@ -275,7 +273,6 @@
 - **ماذا / what:** تسجيل حركة المتصفح في HAR واستخراج النقاط وتوليد عميل مستقل. — Record browser traffic to HAR, identify first-party JSON endpoints and generate a browser-free client or CLI.
 - **متى أستخدمها / when:** User wants a CLI/client for a site with no public API.
 - **كيف / how:** 1) Login first, start `agent-browser network har start`, exercise each flow twice with different inputs, stop to a .har. 2) jq filter entries by JSON mimeType; drop analytics/third-party noise. 3) Extract request headers/body and response text to type schemas; find auth headers by omission testing. 4) Generate one function per flow; load cookies from file/env, never hardcode. 5) Call every endpoint live to verify.
-- **يحتاج / needs:** [`claude:browser`](../requirements.md#req-claude-browser) · [`node`](../requirements.md#req-node)
 - **الرخصة / license:** method paraphrased from Atlas skills under Apache-2.0 (3351), MIT others; the skills keep their own licenses — see each folder's SOURCE.md
 - **الدليل / proof:** `https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/1412-agent-browser/3351-derive-client` · `https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/1801-cli-power-skills/4830-api-testing` · `https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/1551-dev-skills/4317-swagger-doc-skill`
 - **المصدر / source:** KOSIF Atlas mining 2026-10-20 (https://github.com/kosif199022-jpg/kosif-atlas): agent-browser/derive-client (#3351); cli-power-skills/api-testing (#4830); dev-skills/swagger-doc-skill (#4317) · theme api-backend · 3 supporting skills · verifier read: skills/1412-agent-browser/3351-derive-client, skills/1801-cli-power-skills/4830-api-testing, skills/1551-dev-skills/4317-swagger-doc-skill
@@ -292,6 +289,7 @@
 - **ماذا / what:** بناء تسجيل ودخول وتجديد توكن مع تجزئة كلمات المرور وحراس أدوار. — Implement register/login/refresh/me endpoints with hashed passwords, rotating refresh tokens and role middleware.
 - **متى أستخدمها / when:** Adding login, tokens or route guards to an Express/Node API.
 - **كيف / how:** 1) Users + refresh_tokens tables (store hashed refresh, expiresAt, revokedAt). 2) argon2 hash/verify; jose-signed access token ~15m with sub+role; refresh ~7d, rotate and revoke old. 3) requireAuth/requireRole middleware, not inline checks; inactive user=401. 4) Never accept role from body; seed admins. 5) Rate-limit /token. 6) Tests: 201, 401, 422, 403.
+- **يحتاج / needs:** [`key:unspecified`](../requirements.md#req-key-unspecified)
 - **الرخصة / license:** method paraphrased from Atlas skills under MIT; the skills keep their own licenses — see each folder's SOURCE.md
 - **الدليل / proof:** `https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/2105-backend-dev-kit/7476-auth-jwt` · `https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/2239-auth-identity/8512-authorization-rbac` · `https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/2893-better-auth/11692-two-factor-authentication-best-practices`
 - **المصدر / source:** KOSIF Atlas mining 2026-10-20 (https://github.com/kosif199022-jpg/kosif-atlas): backend-dev-kit/auth-jwt (#7476); auth-identity/authorization-rbac (#8512); better-auth/two-factor-authentication-best-practices (#11692) · theme api-backend · 7 supporting skills · verifier read: skills/2105-backend-dev-kit/7476-auth-jwt, skills/2239-auth-identity/8512-authorization-rbac, skills/2893-better-auth/11692-two-factor-authentication-best-practices
@@ -300,6 +298,7 @@
 - **ماذا / what:** إعداد مفتاح API أو OAuth بصلاحيات محدودة من مخزن أسرار والتحقق بطلب قراءة واحد. — Set up API key, OAuth or JWT access with scoped credentials from a secret manager and prove it with one read-only call.
 - **متى أستخدمها / when:** Starting an integration (install-auth, hello-world) or auditing how credentials are stored and rotated.
 - **كيف / how:** 1) Choose the auth model (API key, OAuth client-credentials, user OAuth, JWT) per use case. 2) Request minimum scopes. 3) Inject secret via env/secret manager, never URL or logs. 4) Send as Authorization: Bearer header only. 5) Verify with one bounded read-only identity call. 6) Document owner, expiry, rotation, revocation. **أرقام / params:** vendor, auth model, scopes
+- **يحتاج / needs:** [`key:unspecified`](../requirements.md#req-key-unspecified)
 - **الرخصة / license:** method paraphrased from Atlas skills under MIT; the skills keep their own licenses — see each folder's SOURCE.md
 - **الدليل / proof:** `https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/3335-oauth-mint-counting-passthrough-proxy/13849-oauth-mint-counting-passthrough-proxy`
 - **المصدر / source:** KOSIF Atlas mining 2026-10-20 (https://github.com/kosif199022-jpg/kosif-atlas): oauth-mint-counting-passthrough-proxy/oauth-mint-counting-passthrough-proxy (#13849) · theme api-backend · 8 supporting skills · verifier read: skills/3335-oauth-mint-counting-passthrough-proxy/13849-oauth-mint-counting-passthrough-proxy
@@ -308,7 +307,7 @@
 - **ماذا / what:** ينفذ تدفق OAuth عبر مستقبل محلي مع فحص state وملفات أسرار بصلاحيات مقيدة. — Run an authorization-code OAuth flow with a loopback receiver, state check and permission-locked secret files.
 - **متى أستخدمها / when:** Need CLI-style OAuth for an API without leaking secrets in args or logs.
 - **كيف / how:** 1) Generate random state into a 0600 file (dirs 0700). 2) Run a loopback listener on 127.0.0.1 validating exact path and state; it saves only the code. 3) Open consent URL with same state. 4) Exchange code via integration file, code file and token file args, never secrets on the command line. 5) Delete the one-time code file. 6) Refresh with a refresh flag. 7) Paginated schema fetch treating a repeated page as an error. **أرقام / params:** integration JSON (subdomain, client_id, client_secret, redirect_uri)
-- **يحتاج / needs:** [`python3`](../requirements.md#req-python3)
+- **يحتاج / needs:** [`key:unspecified`](../requirements.md#req-key-unspecified)
 - **الرخصة / license:** method paraphrased from Atlas skills under MIT; the skills keep their own licenses — see each folder's SOURCE.md
 - **الدليل / proof:** `https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/2655-yandex-direct-for-all/10092-amocrm-api-control`
 - **المصدر / source:** KOSIF Atlas mining 2026-10-20 (https://github.com/kosif199022-jpg/kosif-atlas): yandex-direct-for-all/amocrm-api-control (#10092) · theme api-backend · 1 supporting skills · verifier read: skills/2655-yandex-direct-for-all/10092-amocrm-api-control
@@ -333,6 +332,7 @@
 - **ماذا / what:** يختار نمط OAuth المناسب وأقل الصلاحيات وتصميما آمنا لتخزين الرموز وتجديدها. — Choose the right OAuth grant, minimal scopes and a safe token storage and refresh design for a third-party API.
 - **متى أستخدمها / when:** Integrating Zoom, amoCRM or any OAuth API; auth failures; deciding app type.
 - **كيف / how:** 1) Clarify actor and tenant model (who authorizes whom). 2) Pick grant (authorization code, client credentials, server-to-server). 3) List minimum scopes for the exact flow. 4) Define token store and refresh: always persist the newly returned refresh token, never reuse the old one. 5) Debug auth by checking app configuration before blaming the API. 6) Redirect URI must match registration exactly. **أرقام / params:** provider, app type
+- **يحتاج / needs:** [`key:unspecified`](../requirements.md#req-key-unspecified)
 - **الرخصة / license:** method paraphrased from Atlas skills under MIT; the skills keep their own licenses — see each folder's SOURCE.md
 - **الدليل / proof:** `https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/330-zoom-plugin/1061-setup-zoom-oauth` · `https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/2655-yandex-direct-for-all/10092-amocrm-api-control`
 - **المصدر / source:** KOSIF Atlas mining 2026-10-20 (https://github.com/kosif199022-jpg/kosif-atlas): zoom-plugin/setup-zoom-oauth (#1061); yandex-direct-for-all/amocrm-api-control (#10092) · theme api-backend · 2 supporting skills · verifier read: skills/330-zoom-plugin/1061-setup-zoom-oauth, skills/2655-yandex-direct-for-all/10092-amocrm-api-control
@@ -341,6 +341,7 @@
 - **ماذا / what:** إثبات أن عميل OAuth2 يخزّن التوكن ويجدده عبر وكيل عدّاد يمرّر الطلبات. — Prove an OAuth2 client-credentials caller caches and refreshes tokens by routing its token endpoint through a counting pass-through proxy.
 - **متى أستخدمها / when:** Unit tests mock the HTTP layer yet latency doubles or token endpoint rate limits trip.
 - **كيف / how:** 1) Start a local proxy on an ephemeral 127.0.0.1 port that increments a counter and forwards to the real token endpoint. 2) Point the configured tokenEndpoint at it. 3) Skip when credentials env vars absent. 4) Assert using deltas of the counter. 5) Cases: no bearer gives 401 and 0 mints; one call 1 mint; N calls 1 mint; poisoned cached token gives 1 mint and success. **أرقام / params:** token endpoint, env creds
+- **يحتاج / needs:** [`key:unspecified`](../requirements.md#req-key-unspecified)
 - **الرخصة / license:** method paraphrased from Atlas skills under MIT; the skills keep their own licenses — see each folder's SOURCE.md
 - **الدليل / proof:** `https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/3335-oauth-mint-counting-passthrough-proxy/13849-oauth-mint-counting-passthrough-proxy`
 - **المصدر / source:** KOSIF Atlas mining 2026-10-20 (https://github.com/kosif199022-jpg/kosif-atlas): oauth-mint-counting-passthrough-proxy/oauth-mint-counting-passthrough-proxy (#13849) · theme api-backend · 3 supporting skills · verifier read: skills/3335-oauth-mint-counting-passthrough-proxy/13849-oauth-mint-counting-passthrough-proxy
@@ -349,6 +350,7 @@
 - **ماذا / what:** اختيار التدفق الصحيح (PKCE أو بيانات العميل أو الجهاز) وكشف الأنماط الخاطئة. — Pick Authorization Code+PKCE, confidential code flow, client credentials or device grant per client, and flag anti-patterns.
 - **متى أستخدمها / when:** Designing or auditing login/SSO/M2M authentication.
 - **كيف / how:** 1) Map client type to flow: SPA/native=Code+PKCE (S256), server app=confidential code, M2M=client credentials, no-browser=device grant; never Implicit. 2) Generate code_verifier/challenge and random state; verify state on callback. 3) Treat ID token vs access vs refresh tokens separately. 4) Exact redirect URIs and minimal scopes. 5) Emit rationale + anti-pattern list.
+- **يحتاج / needs:** [`key:unspecified`](../requirements.md#req-key-unspecified)
 - **الرخصة / license:** method paraphrased from Atlas skills under MIT; the skills keep their own licenses — see each folder's SOURCE.md
 - **الدليل / proof:** `https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/2239-auth-identity/8515-oauth-oidc-flow-design` · `https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/2239-auth-identity/8514-google-sso-setup` · `https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/3476-developer-essentials/14183-auth-implementation-patterns`
 - **المصدر / source:** KOSIF Atlas mining 2026-10-20 (https://github.com/kosif199022-jpg/kosif-atlas): auth-identity/oauth-oidc-flow-design (#8515); auth-identity/google-sso-setup (#8514); developer-essentials/auth-implementation-patterns (#14183) · theme api-backend · 6 supporting skills · verifier read: skills/2239-auth-identity/8515-oauth-oidc-flow-design, skills/2239-auth-identity/8514-google-sso-setup, skills/3476-developer-essentials/14183-auth-implementation-patterns
@@ -365,6 +367,7 @@
 - **ماذا / what:** توليد تدفقات الرابط السحري والمفاتيح الممرّرة وJWT وOAuth/OIDC للويب والجوال. — Generate magic-link, WebAuthn passkey, JWT and OAuth/OIDC login flows for web and mobile apps.
 - **متى أستخدمها / when:** Adding login to an app (Firebase, Neon Auth, better-auth).
 - **كيف / how:** 1) Pick method (magic link, passkey, OIDC). 2) Short-lived signed tokens with expiry and single use. 3) Store refresh tokens httpOnly. 4) Verify audience/issuer on JWT. 5) Add rate limits on auth endpoints. 6) Test flows. **أرقام / params:** provider
+- **يحتاج / needs:** [`key:unspecified`](../requirements.md#req-key-unspecified)
 - **الرخصة / license:** method paraphrased from Atlas skills under MIT; the skills keep their own licenses — see each folder's SOURCE.md
 - **الدليل / proof:** `https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/3335-oauth-mint-counting-passthrough-proxy/13849-oauth-mint-counting-passthrough-proxy`
 - **المصدر / source:** KOSIF Atlas mining 2026-10-20 (https://github.com/kosif199022-jpg/kosif-atlas): oauth-mint-counting-passthrough-proxy/oauth-mint-counting-passthrough-proxy (#13849) · theme api-backend · 8 supporting skills · verifier read: skills/3335-oauth-mint-counting-passthrough-proxy/13849-oauth-mint-counting-passthrough-proxy
@@ -405,7 +408,7 @@
 - **ماذا / what:** بناء مورد Express واحد من مواصفة مع تحقق واختبارات وبوابات جودة. — Build one Express API resource increment from an upstream spec with Zod, Drizzle, router, OpenAPI, Vitest and quality gates.
 - **متى أستخدمها / when:** Implementing a CRUD resource increment in a Node backend.
 - **كيف / how:** 1) Check git clean, scaffold service if missing. 2) Import scoped entities/API surface from spec (import-upstream.mjs). 3) Write blackboard spec and validate it. 4) Zod schemas, Drizzle repo, service, router, OpenAPI, Vitest. 5) Run gates script. 6) Human review and result file.
-- **يحتاج / needs:** [`node`](../requirements.md#req-node) · [`git`](../requirements.md#req-git)
+- **يحتاج / needs:** [`node`](../requirements.md#req-node)
 - **الرخصة / license:** method paraphrased from Atlas skills under MIT; the skills keep their own licenses — see each folder's SOURCE.md
 - **الدليل / proof:** `https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/2105-backend-dev-kit/7477-backend-dev` · `https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/2875-codex-howto/11590-build-backend` · `https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/133-codex-project-autopilot/369-backend-builder`
 - **المصدر / source:** KOSIF Atlas mining 2026-10-20 (https://github.com/kosif199022-jpg/kosif-atlas): backend-dev-kit/backend-dev (#7477); codex-howto/build-backend (#11590); codex-project-autopilot/backend-builder (#369) · theme api-backend · 5 supporting skills · verifier read: skills/2105-backend-dev-kit/7477-backend-dev, skills/2875-codex-howto/11590-build-backend, skills/133-codex-project-autopilot/369-backend-builder
@@ -462,6 +465,7 @@
 - **ماذا / what:** اختيار نموذج المصادقة الصحيح وتخزين السر بأمان وإثبات الوصول بطلب قراءة فقط. — Choose the correct auth model (API key vs OAuth, key scope, region), store secrets safely and prove access with a read-only call.
 - **متى أستخدمها / when:** Onboarding a new SaaS API or debugging 401/403.
 - **كيف / how:** 1) Identify auth model, environment/region and least-privilege key type. 2) Keep secrets in env/secret manager, never browser or repo. 3) Server-side OAuth with state validation and token refresh storage. 4) Verify with a minimal read-only identity request returning a redacted receipt. 5) Document rotation/revocation.
+- **يحتاج / needs:** [`key:unspecified`](../requirements.md#req-key-unspecified)
 - **الرخصة / license:** method paraphrased from Atlas skills under MIT; the skills keep their own licenses — see each folder's SOURCE.md
 - **الدليل / proof:** `https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/1819-adobe-pack/4901-adobe-install-auth` · `https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/1832-canva-pack/5175-canva-hello-world` · `https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/1841-cohere-pack/5399-cohere-install-auth`
 - **المصدر / source:** KOSIF Atlas mining 2026-10-20 (https://github.com/kosif199022-jpg/kosif-atlas): adobe-pack/adobe-install-auth (#4901); canva-pack/canva-hello-world (#5175); cohere-pack/cohere-install-auth (#5399) · theme api-backend · 8 supporting skills · verifier read: skills/1819-adobe-pack/4901-adobe-install-auth, skills/1832-canva-pack/5175-canva-hello-world, skills/1841-cohere-pack/5399-cohere-install-auth
@@ -502,7 +506,6 @@
 - **ماذا / what:** يصمم خادم WebSocket قابلا للتوسع مع مصادقة عند الترقية وغرف ونبضات وتوزيع عبر Redis. — Design a scalable WebSocket server with token-checked upgrade, channel rooms, heartbeats and Redis fan-out.
 - **متى أستخدمها / when:** User wants real-time bidirectional API, chat, live dashboards or collaborative sync.
 - **كيف / how:** 1) Attach ws/Socket.IO to the HTTP server on /ws with allowed origins. 2) Validate JWT/session during the upgrade event and reject with 401 before switching protocol. 3) Keep a registry of connections (user, channels). 4) JSON envelope: type, channel, payload, correlationId. 5) Ping/pong about every 30s with timeout sweep (~60s). 6) Redis pub/sub adapter for multi-node; per-connection rate limit, close code 1008. 7) Lifecycle tests: connect, auth, subscribe, reconnect. **أرقام / params:** library (ws, socket.io, websockets), channel model
-- **يحتاج / needs:** [`node`](../requirements.md#req-node)
 - **الرخصة / license:** method paraphrased from Atlas skills under MIT; the skills keep their own licenses — see each folder's SOURCE.md
 - **الدليل / proof:** `https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/1630-websocket-server-builder/4601-building-websocket-server` · `https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/868-websocket-auth/1897-ws-auth`
 - **المصدر / source:** KOSIF Atlas mining 2026-10-20 (https://github.com/kosif199022-jpg/kosif-atlas): websocket-server-builder/building-websocket-server (#4601); websocket-auth/ws-auth (#1897) · theme api-backend · 2 supporting skills · verifier read: skills/1630-websocket-server-builder/4601-building-websocket-server, skills/868-websocket-auth/1897-ws-auth
@@ -513,7 +516,6 @@
 - **ماذا / what:** يصمم تحكماً بمعدل الطلبات من ترويسات الميزانية مع إعادة محاولة ذكية. — Design client-side throttling from response budget headers plus retry with Retry-After or jittered exponential backoff.
 - **متى أستخدمها / when:** 429/THROTTLED errors, bulk syncs, Procore/Shopify/Webflow/Workhuman integrations.
 - **كيف / how:** 1) Read the limit model: REST leaky bucket (40 at 2/s; Plus 80 at 4/s via call-limit header), GraphQL cost (1000 points, 50/s restore, extensions.cost.throttleStatus). 2) Track available budget per response and pre-wait. 3) On 429 honor Retry-After else exponential backoff with jitter, cap 30s. 4) Use bulk operations instead of tight pagination loops. 5) Queue per plan/endpoint. **أرقام / params:** plan tier, endpoint
-- **يحتاج / needs:** [`node`](../requirements.md#req-node)
 - **الرخصة / license:** method paraphrased from Atlas skills under MIT; the skills keep their own licenses — see each folder's SOURCE.md
 - **الدليل / proof:** `https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/1905-shopify-pack/6800-shopify-rate-limits` · `https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/1905-shopify-pack/6800-shopify-rate-limits`
 - **المصدر / source:** KOSIF Atlas mining 2026-10-20 (https://github.com/kosif199022-jpg/kosif-atlas): shopify-pack/shopify-rate-limits (#6800); procore-pack/procore-rate-limits (#6567) · theme app-building · 5 supporting skills · verifier read: skills/1905-shopify-pack/6800-shopify-rate-limits, skills/1905-shopify-pack/6800-shopify-rate-limits
@@ -530,7 +532,6 @@
 - **ماذا / what:** يلتقط لقطتي ذاكرة حول عمل متكرر ويقارنهما لتحديد المشتبهين. — Capture two V8 heap snapshots around a repeated action and diff them into ranked leak suspects and detached DOM counts.
 - **متى أستخدمها / when:** Page memory grows, SPA slows over time, detached nodes suspected.
 - **كيف / how:** 1) Launch Chrome with --remote-debugging-port=9222 and a separate user-data-dir. 2) Baseline snapshot at rest (forces GC). 3) Repeat suspect action 10-20 times. 4) Second snapshot. 5) Diff with --top and --min-size-delta; read summary.suspects (count grows with N), growth[], detached delta. Fix and repeat. **أرقام / params:** url fragment, N repeats
-- **يحتاج / needs:** [`node`](../requirements.md#req-node) · [`chromium`](../requirements.md#req-chromium)
 - **الرخصة / license:** method paraphrased from Atlas skills under MIT; the skills keep their own licenses — see each folder's SOURCE.md
 - **الدليل / proof:** `https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/890-web/2012-heap-snapshot-leaks`
 - **المصدر / source:** KOSIF Atlas mining 2026-10-20 (https://github.com/kosif199022-jpg/kosif-atlas): web/heap-snapshot-leaks (#2012) · theme app-building · 2 supporting skills · verifier read: skills/890-web/2012-heap-snapshot-leaks
@@ -539,7 +540,6 @@
 - **ماذا / what:** يطبق قائمة دورة حياة موحدة على تكامل منصة خارجية للإنتاج. — Apply a standard lifecycle checklist to a third-party platform integration: hello-world, local loop, CI, multi-env, observability, incident runbook, prod gate.
 - **متى أستخدمها / when:** Shipping any Shopify/Webflow/Windsurf-style integration to production.
 - **كيف / how:** 1) Read-first hello-world with official SDK. 2) Separate dev/staging/prod identities and tokens. 3) Fail-closed CI with pinned tools. 4) Instrument budgets, errors, webhooks. 5) Redacted debug bundle and incident runbook with write freeze. 6) Prod gate: scopes, retry, privacy, rollback. **أرقام / params:** platform
-- **يحتاج / needs:** [`git`](../requirements.md#req-git)
 - **الرخصة / license:** method paraphrased from Atlas skills under MIT; the skills keep their own licenses — see each folder's SOURCE.md
 - **الدليل / proof:** `https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/1905-shopify-pack/6804-shopify-security-basics` · `https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/1905-shopify-pack/6804-shopify-security-basics`
 - **المصدر / source:** KOSIF Atlas mining 2026-10-20 (https://github.com/kosif199022-jpg/kosif-atlas): webflow-pack/webflow-prod-checklist (#7002); shopify-pack/shopify-prod-checklist (#6799) · theme app-building · 7 supporting skills · verifier read: skills/1905-shopify-pack/6804-shopify-security-basics, skills/1905-shopify-pack/6804-shopify-security-basics
@@ -548,7 +548,7 @@
 - **ماذا / what:** يبني تطبيق MCP يقرن أداة بواجهة HTML واحدة مجمعة يعرضها المضيف. — Build an MCP App that pairs a tool with a bundled single-file HTML resource rendered by the host.
 - **متى أستخدمها / when:** Adding interactive UI to an MCP server or converting a web app.
 - **كيف / how:** 1) Choose framework (React useApp hook or vanilla). 2) Register tool with _meta.ui.resourceUri. 3) Register resource serving bundled HTML. 4) Bundle with vite-plugin-singlefile. 5) Handle result in UI lifecycle. Migration skill maps OpenAI Apps SDK to MCP. **أرقام / params:** framework, transport
-- **يحتاج / needs:** [`node`](../requirements.md#req-node)
+- **يحتاج / needs:** [`npm:esbuild`](../requirements.md#req-npm-esbuild) · [`npm:react`](../requirements.md#req-npm-react) · [`key:openai`](../requirements.md#req-key-openai)
 - **الرخصة / license:** method paraphrased from Atlas skills under MIT; the skills keep their own licenses — see each folder's SOURCE.md
 - **الدليل / proof:** `https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/2536-mcp-apps/9833-create-mcp-app`
 - **المصدر / source:** KOSIF Atlas mining 2026-10-20 (https://github.com/kosif199022-jpg/kosif-atlas): mcp-apps/create-mcp-app (#9833) · theme app-building · 4 supporting skills · verifier read: skills/2536-mcp-apps/9833-create-mcp-app
@@ -557,7 +557,6 @@
 - **ماذا / what:** يلتقط ويفك حركة HTTP وWebSocket لتطبيق واحد لتوثيق واجهته. — Capture HTTP and WebSocket traffic of one target app with mitmproxy and decode it to document its API.
 - **متى أستخدمها / when:** Reverse-engineering own or authorized app API behavior.
 - **كيف / how:** 1) Define single target app and scope. 2) Run mitmproxy with the helper scripts to record flows. 3) Decode bodies and WebSocket frames. 4) Summarize endpoints, auth headers, payload shapes. Only on apps you are authorized to inspect. **أرقام / params:** target app, host filter
-- **يحتاج / needs:** [`python3`](../requirements.md#req-python3) · [`network`](../requirements.md#req-network)
 - **الرخصة / license:** method paraphrased from Atlas skills under MIT; the skills keep their own licenses — see each folder's SOURCE.md
 - **الدليل / proof:** `https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/890-web/2012-heap-snapshot-leaks`
 - **المصدر / source:** KOSIF Atlas mining 2026-10-20 (https://github.com/kosif199022-jpg/kosif-atlas): proxy/inspect-app-traffic (#2001) · theme app-building · 2 supporting skills · verifier read: skills/890-web/2012-heap-snapshot-leaks
@@ -566,7 +565,6 @@
 - **ماذا / what:** يقيّم كود تطبيق شوبيفاي مقابل متطلبات المتجر بثلاث حالات. — Evaluate a Shopify app codebase requirement by requirement into likely-pass, likely-fail or needs-review.
 - **متى أستخدمها / when:** Before submitting a Shopify app or after review rejection.
 - **كيف / how:** 1) Process each requirement independently (sub-agent or separate pass). 2) Search code for the evidence pattern. 3) Mark pass/fail/needs-review; prefer needs-review over silent pass. 4) Check conditional groups' applicability signal first and log skipped groups. 5) Report briefly; confirm session tokens, scopes, GDPR hooks, Billing API, pinned API version. **أرقام / params:** app path
-- **يحتاج / needs:** [`node`](../requirements.md#req-node) · [`git`](../requirements.md#req-git)
 - **الرخصة / license:** method paraphrased from Atlas skills under MIT; the skills keep their own licenses — see each folder's SOURCE.md
 - **الدليل / proof:** `https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/3055-shopify-plugin/13165-shopify-app-store-review` · `https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/2383-shopify-app-engineering/9221-ship-app-store-ready`
 - **المصدر / source:** KOSIF Atlas mining 2026-10-20 (https://github.com/kosif199022-jpg/kosif-atlas): shopify-plugin/shopify-app-store-review (#13165); shopify-app-engineering/ship-app-store-ready (#9221) · theme app-building · 4 supporting skills · verifier read: skills/3055-shopify-plugin/13165-shopify-app-store-review, skills/2383-shopify-app-engineering/9221-ship-app-store-ready
@@ -583,7 +581,6 @@
 - **ماذا / what:** يؤمّن مستقبل الويب هوك بالتحقق من HMAC ومنع التكرار والرد السريع. — Harden a webhook receiver with raw-body HMAC-SHA256 check, idempotent dedupe and immediate 200 with async work.
 - **متى أستخدمها / when:** Building or reviewing Shopify/Wix/Webflow/Zoom webhook endpoints; retries or auto-disabled hooks.
 - **كيف / how:** 1) Use raw body parser, not JSON. 2) Compute HMAC-SHA256 with app secret, compare via timingSafeEqual. 3) Dedupe on event/resource id. 4) Return 200 at once, enqueue work. 5) Implement mandatory GDPR topics (customers/redact, shop/redact, customers/data_request) and app/uninstalled cleanup. **أرقام / params:** platform, secret header name
-- **يحتاج / needs:** [`node`](../requirements.md#req-node)
 - **الرخصة / license:** method paraphrased from Atlas skills under MIT; the skills keep their own licenses — see each folder's SOURCE.md
 - **الدليل / proof:** `https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/1905-shopify-pack/6804-shopify-security-basics` · `https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/2383-shopify-app-engineering/9221-ship-app-store-ready` · `https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/1905-shopify-pack/6808-shopify-webhooks-events`
 - **المصدر / source:** KOSIF Atlas mining 2026-10-20 (https://github.com/kosif199022-jpg/kosif-atlas): shopify-pack/shopify-security-basics (#6804); shopify-app-engineering/ship-app-store-ready (#9221); webflow-pack/webflow-webhooks-events (#7008) · theme app-building · 5 supporting skills · verifier read: skills/1905-shopify-pack/6804-shopify-security-basics, skills/2383-shopify-app-engineering/9221-ship-app-store-ready, skills/1905-shopify-pack/6808-shopify-webhooks-events
@@ -595,7 +592,7 @@
 - **متى أستخدمها / when:** Building payments with USDC.
 - **كيف / how:** 1) Compare wallet types by custody. 2) Developer must generate entity secret themselves. 3) Use UUID idempotency keys. 4) Poll transaction INITIATED to COMPLETE; handle FAILED/DENIED. 5) Gateway for unified balance. **أرقام / params:** API key, entity secret
 - **تثبيت / install:** `npm i @circle-fin/developer-controlled-wallets`
-- **يحتاج / needs:** [`node`](../requirements.md#req-node) · [`network`](../requirements.md#req-network)
+- **يحتاج / needs:** [`node`](../requirements.md#req-node) · [`key:unspecified`](../requirements.md#req-key-unspecified)
 - **الرخصة / license:** method paraphrased from Atlas skills under Apache-2.0; the skills keep their own licenses — see each folder's SOURCE.md
 - **الدليل / proof:** `https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/1104-circle/2516-use-developer-controlled-wallets` · `https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/1104-circle/2517-use-gateway`
 - **المصدر / source:** KOSIF Atlas mining 2026-10-20 (https://github.com/kosif199022-jpg/kosif-atlas): circle/use-developer-controlled-wallets (#2516); circle/use-gateway (#2517) · theme blockchain-web3 · 6 supporting skills · verifier read: skills/1104-circle/2516-use-developer-controlled-wallets, skills/1104-circle/2517-use-gateway
@@ -621,7 +618,7 @@
 - **متى أستخدمها / when:** Setting up tests, gas reports or mainnet-fork testing.
 - **كيف / how:** 1) Configure hardhat.config with optimizer(200 runs), gas-reporter, solidity-coverage. 2) Use loadFixture deploy fixtures and time helpers. 3) Enable mainnet forking at a pinned block via RPC env var. 4) Add Foundry fuzz/invariant tests. 5) Verify on Etherscan with API key from env. **أرقام / params:** rpc url, solc version
 - **تثبيت / install:** `npm i hardhat`
-- **يحتاج / needs:** [`node`](../requirements.md#req-node)
+- **يحتاج / needs:** [`node`](../requirements.md#req-node) · [`key:unspecified`](../requirements.md#req-key-unspecified)
 - **الرخصة / license:** method paraphrased from Atlas skills under MIT; the skills keep their own licenses — see each folder's SOURCE.md
 - **الدليل / proof:** `https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/3453-blockchain-web3/14159-web3-testing` · `https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/586-hardhat-setup/1615-hardhat`
 - **المصدر / source:** KOSIF Atlas mining 2026-10-20 (https://github.com/kosif199022-jpg/kosif-atlas): blockchain-web3/web3-testing (#14159); hardhat-setup/hardhat (#1615) · theme blockchain-web3 · 4 supporting skills · verifier read: skills/3453-blockchain-web3/14159-web3-testing, skills/586-hardhat-setup/1615-hardhat
@@ -647,7 +644,7 @@
 - **متى أستخدمها / when:** Starting an Alchemy/QuickNode integration.
 - **كيف / how:** 1) Create viem client, assert chain ID. 2) Test auth and failure modes. 3) Isolate typed reads from provider SDK. 4) Use NFT API v3 for ownership and collection queries. **أرقام / params:** api key env
 - **تثبيت / install:** `npm i viem`
-- **يحتاج / needs:** [`node`](../requirements.md#req-node)
+- **يحتاج / needs:** [`node`](../requirements.md#req-node) · [`key:unspecified`](../requirements.md#req-key-unspecified)
 - **الرخصة / license:** method paraphrased from Atlas skills under MIT; the skills keep their own licenses — see each folder's SOURCE.md
 - **الدليل / proof:** `https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/1820-alchemy-pack/4925-alchemy-hello-world` · `https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/1820-alchemy-pack/4921-alchemy-core-workflow-b`
 - **المصدر / source:** KOSIF Atlas mining 2026-10-20 (https://github.com/kosif199022-jpg/kosif-atlas): alchemy-pack/alchemy-hello-world (#4925); alchemy-pack/alchemy-core-workflow-b (#4921) · theme blockchain-web3 · 3 supporting skills · verifier read: skills/1820-alchemy-pack/4925-alchemy-hello-world, skills/1820-alchemy-pack/4921-alchemy-core-workflow-b
@@ -668,7 +665,6 @@
 - **ماذا / what:** فحص ملفات AGENTS.md وCLAUDE.md من التضخم والانحراف وتوليدها أو ضغطها. — Lint AGENTS.md/CLAUDE.md for bloat and drift, generate or compress them.
 - **متى أستخدمها / when:** Repo lacks AGENTS.md or it is stale.
 - **كيف / how:** 1) Audit for bloat, contradictions, duplication, stale refs. 2) Create from repo facts. 3) Compress into terse signal. 4) Update after commits land.
-- **يحتاج / needs:** [`git`](../requirements.md#req-git)
 - **الرخصة / license:** method paraphrased from Atlas skills under MIT; the skills keep their own licenses — see each folder's SOURCE.md
 - **الدليل / proof:** `https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/?`
 - **المصدر / source:** KOSIF Atlas mining 2026-10-20 (https://github.com/kosif199022-jpg/kosif-atlas): aiboarding/audit-agent-onboarding (#3708) · theme code-understanding · 6 supporting skills · verifier read: skills/?
@@ -677,7 +673,6 @@
 - **ماذا / what:** استعلام رسم كود مفهرس عن الرموز والمستدعين والأثر والاختبارات بدل البحث النصي. — Query a pre-indexed code graph for symbols, callers, impact and tests instead of grepping.
 - **متى أستخدمها / when:** Orientation in big repos, impact analysis, who-calls questions.
 - **كيف / how:** 1) Check graph exists; build or refresh if stale. 2) Find symbol, then callers/callees. 3) Run impact to list affected files and linked tests. 4) Fall back to LSP then grep. 5) Verify hits by reading the file. **أرقام / params:** symbol
-- **يحتاج / needs:** [`claude:tools`](../requirements.md#req-claude-tools)
 - **الرخصة / license:** method paraphrased from Atlas skills under MIT; the skills keep their own licenses — see each folder's SOURCE.md
 - **الدليل / proof:** `https://github.com/kosif199022-jpg/kosif-atlas/tree/main/?` · `https://github.com/kosif199022-jpg/kosif-atlas/tree/main/?`
 - **المصدر / source:** KOSIF Atlas mining 2026-10-20 (https://github.com/kosif199022-jpg/kosif-atlas): codegraph/Navigating Codebases with CodeGraph (#11712); quiver/code-navigation (#14449) · theme code-understanding · 9 supporting skills · verifier read: ?, ?
@@ -686,7 +681,6 @@
 - **ماذا / what:** مسح المستودع للقراءة فقط وكتابة خريطة مؤرخة للوحدات والمسارات والمخاطر ووصفات التعديل. — Survey a repo read-only and write a dated map of modules, core flows, risks and how-to-change recipes.
 - **متى أستخدمها / when:** Onboarding to an unfamiliar or legacy repo, or before a large refactor or migration.
 - **كيف / how:** 1) Survey tree to 2-3 levels, build files, CI, entry points, tests, config. 2) Per module: one-line responsibility, key files, inbound/outbound deps. 3) Trace 2-3 core flows file by file. 4) Rate risk per module (tests, hotspots, dead code, secrets by location only). 5) Write change recipes ('to add an endpoint start at...'). 6) Mark unsure claims (unverified); save docs/codebase-map.md and link from context file. **أرقام / params:** repo path, output dir
-- **يحتاج / needs:** [`git`](../requirements.md#req-git)
 - **الرخصة / license:** method paraphrased from Atlas skills under MIT; the skills keep their own licenses — see each folder's SOURCE.md
 - **الدليل / proof:** `https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/3047-adlc-context/13101-codebase-map` · `https://github.com/kosif199022-jpg/kosif-atlas/tree/main/?` · `https://github.com/kosif199022-jpg/kosif-atlas/tree/main/?`
 - **المصدر / source:** KOSIF Atlas mining 2026-10-20 (https://github.com/kosif199022-jpg/kosif-atlas): adlc-context/codebase-map (#13101); codebase-mapper/map-codebase-workflow (#97); tonone/apex-recon (#4353) · theme code-understanding · 8 supporting skills · verifier read: skills/3047-adlc-context/13101-codebase-map, ?, ?
@@ -695,7 +689,6 @@
 - **ماذا / what:** إيجاد الصادرات والاعتماديات غير المستخدمة وتثبيت الإصدارات. — Find unused exports/deps and pin or upgrade dependencies safely.
 - **متى أستخدمها / when:** Cleanup or upgrade tasks.
 - **كيف / how:** 1) Run knip for unused files/exports. 2) Audit vulnerabilities. 3) Pin versions. 4) Staged upgrade with tests. 5) One draft PR per repo sweep.
-- **يحتاج / needs:** [`node`](../requirements.md#req-node) · [`git`](../requirements.md#req-git)
 - **الرخصة / license:** method paraphrased from Atlas skills under MIT; the skills keep their own licenses — see each folder's SOURCE.md
 - **الدليل / proof:** `https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/?`
 - **المصدر / source:** KOSIF Atlas mining 2026-10-20 (https://github.com/kosif199022-jpg/kosif-atlas): typescript-plugin/knip-dead-code (#7940) · theme code-understanding · 8 supporting skills · verifier read: skills/?
@@ -704,7 +697,7 @@
 - **ماذا / what:** بناء رسم اعتماديات يذكر لكل رابط ملف التصريح وسطره. — Build a project dependency graph where every edge cites the manifest file and declaration.
 - **متى أستخدمها / when:** Asked which project depends on which, cycles, or internal vs external deps.
 - **كيف / how:** 1) Run a script over manifests to emit one-object-per-line JSON, deterministic by HEAD commit date. 2) Result ok/unknown; unknown means no adapter read the tree, so do not draw. 3) Check findings for unread-reference-tags or unread-manifest before trusting an empty graph. 4) Render internal edges as a mermaid flowchart. 5) Flags: --cycles-only, --include-external. **أرقام / params:** path, flags
-- **يحتاج / needs:** [`git`](../requirements.md#req-git) · [`npm:mermaid`](../requirements.md#req-npm-mermaid)
+- **يحتاج / needs:** [`npm:mermaid`](../requirements.md#req-npm-mermaid)
 - **الرخصة / license:** method paraphrased from Atlas skills under MIT; the skills keep their own licenses — see each folder's SOURCE.md
 - **الدليل / proof:** `https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/?` · `https://github.com/kosif199022-jpg/kosif-atlas/tree/main/?`
 - **المصدر / source:** KOSIF Atlas mining 2026-10-20 (https://github.com/kosif199022-jpg/kosif-atlas): architecture/map-dependencies (#9364); architecture/map-landscape (#9368) · theme code-understanding · 6 supporting skills · verifier read: skills/?, ?
@@ -738,7 +731,7 @@
 - **ماذا / what:** مسح الملفات بعدد الرموز والهاش وتوزيع القراءة على وكلاء وإعادة رسم الملفات المتغيرة فقط. — Scan files with token counts and hashes, fan out reading to subagents, and re-map only changed files.
 - **متى أستخدمها / when:** Large repos where one context cannot read everything, or when a map must stay fresh.
 - **كيف / how:** 1) If docs/.mercator.json exists run the scanner in diff mode; no changes means stop. 2) Else scan to JSON (file tree, per-file tokens, SHA-256, merkle root). 3) Group files into subagent assignments within a token budget. 4) Orchestrator never reads files; subagents report. 5) Synthesize docs/CODEBASE_MAP.md, write manifest, add summary to CLAUDE.md. **أرقام / params:** token budget per agent
-- **يحتاج / needs:** [`python3`](../requirements.md#req-python3) · [`git`](../requirements.md#req-git)
+- **يحتاج / needs:** [`claude:tools`](../requirements.md#req-claude-tools)
 - **الرخصة / license:** method paraphrased from Atlas skills under MIT; the skills keep their own licenses — see each folder's SOURCE.md
 - **الدليل / proof:** `https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/?` · `https://github.com/kosif199022-jpg/kosif-atlas/tree/main/?`
 - **المصدر / source:** KOSIF Atlas mining 2026-10-20 (https://github.com/kosif199022-jpg/kosif-atlas): mercator-ai/mercator-ai (#13079); codebase-mapper/team-codebase-map-workflow (#98) · theme code-understanding · 4 supporting skills · verifier read: skills/?, ?
@@ -778,7 +771,7 @@
 - **ماذا / what:** يصمم موصلاً تزايدياً مخصصاً بمؤشر من الخادم وحالة محفوظة ومسار إعادة تعبئة. — Design a custom incremental connector with a server-set cursor, checkpointed state and backfill path.
 - **متى أستخدمها / when:** No vendor connector exists for a REST source.
 - **كيف / how:** 1) Exhaust catalog/iPaaS alternatives first. 2) Low-code manifest.yaml for REST+one cursor, Python CDK for custom auth or nested streams. 3) Cursor must be monotonic and server-set, never client clock. 4) Checkpoint state; separate bounded-window backfill. 5) Honour Retry-After, exponential backoff with ceiling, keyset pagination. 6) Declare schema; land raw; destination upsert on primary key. 7) Record maintenance owner and runbook.
-- **يحتاج / needs:** [`python3`](../requirements.md#req-python3)
+- **يحتاج / needs:** [`python3`](../requirements.md#req-python3) · [`key:unspecified`](../requirements.md#req-key-unspecified)
 - **الرخصة / license:** method paraphrased from Atlas skills under MIT; the skills keep their own licenses — see each folder's SOURCE.md
 - **الدليل / proof:** `https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/2270-data-platform/8651-airbyte-cdk-authoring` · `https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/2207-majestic-data/8244-data-pipeline-design` · `https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/2957-posthog/12413-tuning-incremental-sync-config`
 - **المصدر / source:** KOSIF Atlas mining 2026-10-20 (https://github.com/kosif199022-jpg/kosif-atlas): data-platform/airbyte-cdk-authoring (#8651); majestic-data/data-pipeline-design (#8244); posthog/tuning-incremental-sync-config (#12413) · theme data-engineering · 3 supporting skills · verifier read: skills/2270-data-platform/8651-airbyte-cdk-authoring, skills/2207-majestic-data/8244-data-pipeline-design, skills/2957-posthog/12413-tuning-incremental-sync-config
@@ -789,7 +782,6 @@
 - **ماذا / what:** يصنف أوامر SQL إلى حرة ومشروطة ومدمرة ويفرض تجربة جافة قبل الكتابة. — Classify SQL as free, confirm-required, or destructive and require a dry-run before writes.
 - **متى أستخدمها / when:** agent about to run DML/DDL on a live database
 - **كيف / how:** 1) Allow SELECT, EXPLAIN, catalog and pg_stat reads freely. 2) Require explicit confirmation for CREATE INDEX, ALTER, REINDEX, VACUUM FULL. 3) Flag DROP, TRUNCATE, DELETE without WHERE as destructive. 4) Prefer CONCURRENTLY and maintenance windows. 5) Show dry-run/row-count preview before executing mutation. **أرقام / params:** target db
-- **يحتاج / needs:** [`claude:tools`](../requirements.md#req-claude-tools)
 - **الرخصة / license:** method paraphrased from Atlas skills under Apache-2.0 / MIT; the skills keep their own licenses — see each folder's SOURCE.md
 - **الدليل / proof:** `https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/2971-pwdev-postgres/12521-postgres` · `https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/2965-pwdev-devops/12480-postgres-dba`
 - **المصدر / source:** KOSIF Atlas mining 2026-10-20 (https://github.com/kosif199022-jpg/kosif-atlas): pwdev-postgres/postgres (#12521); pwdev-devops/postgres-dba (#12480) · theme databases · 3 supporting skills · verifier read: skills/2971-pwdev-postgres/12521-postgres, skills/2965-pwdev-devops/12480-postgres-dba
@@ -798,7 +790,7 @@
 - **ماذا / what:** يراجع المخططات عبر سبع عدسات بوكلاء متوازيين وتقييم الخطورة. — Review schemas against seven lenses with parallel sub-agents and severity scoring.
 - **متى أستخدمها / when:** reviewing DDL, migrations, dbt models, PR diffs, design docs
 - **كيف / how:** 1) Detect target vs implementation dialect; gap is a review axis. 2) Pick lenses: relational, migration-safety, data-modeling, type-design, pg-scale-sins, simplification, conventions/security. 3) Count objects: <=3 single pass, else one sub-agent per lens. 4) Keep main thread lean. 5) Re-verify CRITICAL/HIGH findings in main context. 6) Synthesize scored report. **أرقام / params:** target path or PR
-- **يحتاج / needs:** [`git`](../requirements.md#req-git)
+- **يحتاج / needs:** [`lean`](../requirements.md#req-lean)
 - **الرخصة / license:** method paraphrased from Atlas skills under MIT; the skills keep their own licenses — see each folder's SOURCE.md
 - **الدليل / proof:** `https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/2531-schema-review/9828-schema-review`
 - **المصدر / source:** KOSIF Atlas mining 2026-10-20 (https://github.com/kosif199022-jpg/kosif-atlas): schema-review/schema-review (#9828) · theme databases · 3 supporting skills · verifier read: skills/2531-schema-review/9828-schema-review
@@ -840,7 +832,7 @@
 - **ماذا / what:** يدمج supabase-js للمصادقة والتخزين والتوسع بالتجميع والنسخ. — Integrate supabase-js for SSR auth, realtime, storage, pooling and read replicas.
 - **متى أستخدمها / when:** building Next.js/SPA on Supabase, 429s, load spikes
 - **كيف / how:** 1) Pick architecture per stack (SSR cookies vs SPA). 2) Use typed client patterns. 3) Pool connections, tune limits. 4) Read replicas for analytics. 5) Webhooks via pg_net/LISTEN-NOTIFY. 6) Circuit breakers around createClient. **أرقام / params:** stack
-- **يحتاج / needs:** [`node`](../requirements.md#req-node)
+- **يحتاج / needs:** [`npm:react`](../requirements.md#req-npm-react)
 - **الرخصة / license:** method paraphrased from Atlas skills under MIT; the skills keep their own licenses — see each folder's SOURCE.md
 - **الدليل / proof:** `https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/1908-supabase-pack/6844-supabase-architecture-variants` · `https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/1908-supabase-pack/6857-supabase-load-scale`
 - **المصدر / source:** KOSIF Atlas mining 2026-10-20 (https://github.com/kosif199022-jpg/kosif-atlas): supabase-pack/supabase-architecture-variants (#6844); supabase-pack/supabase-load-scale (#6857) · theme databases · 5 supporting skills · verifier read: skills/1908-supabase-pack/6844-supabase-architecture-variants, skills/1908-supabase-pack/6857-supabase-load-scale
@@ -849,7 +841,6 @@
 - **ماذا / what:** يطبق RLS وفصل مفاتيح anon وservice_role وحذف/تصدير GDPR. — Apply row-level security, anon vs service_role separation and GDPR deletion/export.
 - **متى أستخدمها / when:** Supabase security audit, prod checklist
 - **كيف / how:** 1) Enable RLS on every public table. 2) Write per-role policies; index policy columns. 3) Never ship service_role to client. 4) Use pooler for connections. 5) GDPR: auth.admin.deleteUser and data export. 6) Run prod checklist: backups, monitoring, rate limits. **أرقام / params:** project
-- **يحتاج / needs:** [`node`](../requirements.md#req-node)
 - **الرخصة / license:** method paraphrased from Atlas skills under MIT; the skills keep their own licenses — see each folder's SOURCE.md
 - **الدليل / proof:** `https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/1908-supabase-pack/6870-supabase-security-basics` · `https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/1908-supabase-pack/6864-supabase-prod-checklist`
 - **المصدر / source:** KOSIF Atlas mining 2026-10-20 (https://github.com/kosif199022-jpg/kosif-atlas): supabase-pack/supabase-security-basics (#6870); supabase-pack/supabase-prod-checklist (#6864) · theme databases · 5 supporting skills · verifier read: skills/1908-supabase-pack/6870-supabase-security-basics, skills/1908-supabase-pack/6864-supabase-prod-checklist
@@ -867,7 +858,7 @@
 - **متى أستخدمها / when:** schema change on production, add column, rename, retype, backfill
 - **كيف / how:** 1) npx supabase migration new <name>; write DDL with RLS, indexes, triggers. 2) Test with db reset locally. 3) Nullable column with default is lock-free on PG11+. 4) CREATE INDEX CONCURRENTLY in a disable-transaction migration. 5) Rename/retype via expand-contract: add column, sync trigger, batch backfill, swap, drop. 6) gen types typescript; db push to remote. **أرقام / params:** migration name, target env
 - **تثبيت / install:** `npm i -g supabase`
-- **يحتاج / needs:** [`node`](../requirements.md#req-node) · [`docker`](../requirements.md#req-docker)
+- **يحتاج / needs:** [`node`](../requirements.md#req-node)
 - **الرخصة / license:** method paraphrased from Atlas skills under MIT; the skills keep their own licenses — see each folder's SOURCE.md
 - **الدليل / proof:** `https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/1908-supabase-pack/6859-supabase-migration-deep-dive` · `https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/768-schema-drift/1797-schema`
 - **المصدر / source:** KOSIF Atlas mining 2026-10-20 (https://github.com/kosif199022-jpg/kosif-atlas): supabase-pack/supabase-migration-deep-dive (#6859); schema-drift/schema (#1797) · theme databases · 5 supporting skills · verifier read: skills/1908-supabase-pack/6859-supabase-migration-deep-dive, skills/768-schema-drift/1797-schema
@@ -878,6 +869,7 @@
 - **ماذا / what:** يشغّل محققين متوازيين على فرضيات متنافسة يتحدى بعضهم بعضاً ثم يصلح بالاختبار أولاً. — Runs parallel investigators on rival root-cause hypotheses who challenge each other, then fixes via TDD.
 - **متى أستخدمها / when:** Intermittent or unclear bugs where a single linear pass failed.
 - **كيف / how:** 1) Escalate only after systematic debugging fails. 2) Spawn one investigator per hypothesis with evidence requirements. 3) Structured debate: each must rebut others with evidence. 4) Synthesize the surviving root cause. 5) Write failing test, fix, independently verify, loop until green. Claimed gain: ~40% to 80% first-hypothesis accuracy.
+- **يحتاج / needs:** [`pip:hypothesis`](../requirements.md#req-pip-hypothesis)
 - **الرخصة / license:** method paraphrased from Atlas skills under check per-plugin; the skills keep their own licenses — see each folder's SOURCE.md
 - **الدليل / proof:** `https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/3596-forge-teams/14420-adversarial-debugging`
 - **المصدر / source:** KOSIF Atlas mining 2026-10-20 (https://github.com/kosif199022-jpg/kosif-atlas): forge-teams/adversarial-debugging (#14420) · theme debugging · 3 supporting skills · verifier read: skills/3596-forge-teams/14420-adversarial-debugging,
@@ -902,7 +894,6 @@
 - **ماذا / what:** استنتاج ثوابت مكوّن واحد والبحث عن مخالفاتها وتصنيف كل نتيجة حسب إثباتها بتكرار فاشل. — Derive invariants of one component, hunt violations, and tier each finding CONFIRMED or PROBABLE by a failing repro and a disconfirmation pass.
 - **متى أستخدمها / when:** audit a module for real bugs, avoid guess lists
 - **كيف / how:** 1) Scope one subsystem, baseline toolchain output. 2) Extract invariants from types, docs, tests, call sites. 3) Probe lenses: boundaries, null, ordering, races/TOCTOU, error paths, lifecycle, precision, time, encoding; use oracles and property checks. 4) Prove each candidate with failing repro (CONFIRMED) else PROBABLE; try to refute. 5) Log in a findings register; then fix at root cause with proof. **أرقام / params:** component path
-- **يحتاج / needs:** [`git`](../requirements.md#req-git)
 - **الرخصة / license:** method paraphrased from Atlas skills under MIT; the skills keep their own licenses — see each folder's SOURCE.md
 - **الدليل / proof:** `https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/3058-rigor/13193-bug-hunt` · `https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/3058-rigor/13195-fix-verified`
 - **المصدر / source:** KOSIF Atlas mining 2026-10-20 (https://github.com/kosif199022-jpg/kosif-atlas): rigor/bug-hunt (#13193); rigor/fix-verified (#13195) · theme debugging · 4 supporting skills · verifier read: skills/3058-rigor/13193-bug-hunt, skills/3058-rigor/13195-fix-verified
@@ -911,7 +902,6 @@
 - **ماذا / what:** جلب تشغيل CI فاشل وتنقيح الأسرار ومطابقته بمكتبة أنماط الفشل وتقرير السبب والإصلاح. — Fetch a failed GitHub Actions run, redact secrets from logs, match against a failure-pattern library, and report root cause with fixes.
 - **متى أستخدمها / when:** CI red, 'why did the build fail', fix and rerun
 - **كيف / how:** 1) gh auth status, resolve repo (optional --repo owner/name validated). 2) Pick given run id or latest failed. 3) Fetch failed-step logs with gh. 4) Redact secrets and fence log text as data. 5) Match patterns F01-F12 (runner, deps, timeout, etc.). 6) Report cause, evidence, fix; push and watch rerun. **أرقام / params:** run id, --repo
-- **يحتاج / needs:** [`gh`](../requirements.md#req-gh) · [`git`](../requirements.md#req-git)
 - **الرخصة / license:** method paraphrased from Atlas skills under MIT; the skills keep their own licenses — see each folder's SOURCE.md
 - **الدليل / proof:** `https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/2075-yellow-ci/7339-ci-diagnose` · `https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/3072-shortcuts/13516-fci`
 - **المصدر / source:** KOSIF Atlas mining 2026-10-20 (https://github.com/kosif199022-jpg/kosif-atlas): yellow-ci/ci-diagnose (#7339); shortcuts/fci (#13516) · theme debugging · 4 supporting skills · verifier read: skills/2075-yellow-ci/7339-ci-diagnose, skills/3072-shortcuts/13516-fci
@@ -960,7 +950,6 @@
 - **ماذا / what:** يرفق حاويات مؤقتة أو نسخ pod أو وصول عقدة عبر kubectl debug بسياق صريح. — Attaches ephemeral containers, pod copies or node shells with kubectl debug, explicit context.
 - **متى أستخدمها / when:** Debugging crashing or opaque pods and nodes; Helm template failures.
 - **كيف / how:** 1) Always pass --context. 2) kubectl debug POD -it --image=busybox --target=CONTAINER. 3) Use --profile=netadmin for network. 4) Copy pod with changed image/command for crash loops. 5) Node debug for host fs. For Helm: helm template/--dry-run --debug.
-- **يحتاج / needs:** [`claude:tools`](../requirements.md#req-claude-tools)
 - **الرخصة / license:** method paraphrased from Atlas skills under check per-plugin; the skills keep their own licenses — see each folder's SOURCE.md
 - **الدليل / proof:** `https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/2157-kubernetes-plugin/7785-kubectl-debugging`
 - **المصدر / source:** KOSIF Atlas mining 2026-10-20 (https://github.com/kosif199022-jpg/kosif-atlas): kubernetes-plugin/kubectl-debugging (#7785) · theme debugging · 2 supporting skills · verifier read: skills/2157-kubernetes-plugin/7785-kubectl-debugging,
@@ -977,7 +966,6 @@
 - **ماذا / what:** يستخرج القيم الشاذة وأنماط الأخطاء من السجلات في تقرير مرتب. — Extracts latency outliers, recurring errors and resource warnings from logs into a ranked report.
 - **متى أستخدمها / when:** User asks to analyze logs or find slow requests.
 - **كيف / how:** 1) Parse timestamps, durations, levels. 2) grep/awk to group errors by normalized message. 3) Flag requests over a latency threshold. 4) Report counts, first/last seen, top offenders and fix hints. Wide structured events and high cardinality help (Honeycomb).
-- **يحتاج / needs:** [`python3`](../requirements.md#req-python3)
 - **الرخصة / license:** method paraphrased from Atlas skills under MIT; the skills keep their own licenses — see each folder's SOURCE.md
 - **الدليل / proof:** `https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/1778-log-analysis-tool/4798-analyzing-logs`
 - **المصدر / source:** KOSIF Atlas mining 2026-10-20 (https://github.com/kosif199022-jpg/kosif-atlas): log-analysis-tool/analyzing-logs (#4798) · theme debugging · 7 supporting skills · verifier read: skills/1778-log-analysis-tool/4798-analyzing-logs,
@@ -986,7 +974,6 @@
 - **ماذا / what:** زوّد التكامل بسجلات منظمة منقّحة ومعرّفات ارتباط ومقاييس زمن وأخطاء وتنبيهات. — Instrument an integration with redacted structured logs, correlation IDs, latency/error metrics and alerts.
 - **متى أستخدمها / when:** Adding monitoring to a service or integration; debugging after the fact.
 - **كيف / how:** 1) Structured logs with request/job ID, no payload content. 2) Metrics: rate, errors by class, latency percentiles, cost/quota. 3) Keep label cardinality low. 4) Traces propagate IDs across services (OpenTelemetry). 5) Alerts on SLO burn, not single errors. 6) Audit trail for agent actions.
-- **يحتاج / needs:** [`node`](../requirements.md#req-node)
 - **الرخصة / license:** method paraphrased from Atlas skills under MIT; the skills keep their own licenses — see each folder's SOURCE.md
 - **الدليل / proof:** `https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/1819-adobe-pack/4896-adobe-debug-bundle` · `https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/3051-adlc-operate/13141-agentops-observability` · `https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/3604-agent-harness-skills/14470-runtime-evidence-and-tracing`
 - **المصدر / source:** KOSIF Atlas mining 2026-10-20 (https://github.com/kosif199022-jpg/kosif-atlas): adobe-pack/adobe-debug-bundle (#4896); adlc-operate/agentops-observability (#13141); agent-harness-skills/runtime-evidence-and-tracing (#14470) · theme debugging · 10 supporting skills · verifier read: skills/1819-adobe-pack/4896-adobe-debug-bundle, skills/3051-adlc-operate/13141-agentops-observability, skills/3604-agent-harness-skills/14470-runtime-evidence-and-tracing
@@ -1012,6 +999,7 @@
 - **ماذا / what:** ابنِ أمرًا سريعًا حتميًا يعيد إنتاج العطل بدقة قبل أي نظرية أو إصلاح. — Build a fast deterministic pass/fail command that reproduces the exact symptom before any theory or fix.
 - **متى أستخدمها / when:** Bug reported with no repro; user says debug/diagnose; flaky or slow regression.
 - **كيف / how:** 1) Pick a seam: failing test, curl script, CLI+fixture diff, headless browser, captured-trace replay, throwaway harness, fuzz loop, git bisect run, differential old/new. 2) Run it once, show redacted output. 3) Tighten: faster (seconds), sharper (assert exact symptom), deterministic (pin time, seed RNG). 4) Flaky: loop 100x, add stress until rate is debuggable. 5) If impossible, stop and ask for env access, HAR/log/core dump, or permission for instrumentation. **أرقام / params:** bug description
+- **يحتاج / needs:** [`chromium`](../requirements.md#req-chromium)
 - **الرخصة / license:** method paraphrased from Atlas skills under MIT; the skills keep their own licenses — see each folder's SOURCE.md
 - **الدليل / proof:** `https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/1120-ambient-library/2669-diagnosing-bugs` · `https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/2429-debugging/9410-debug` · `https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/1457-aegis/3573-systematic-debugging`
 - **المصدر / source:** KOSIF Atlas mining 2026-10-20 (https://github.com/kosif199022-jpg/kosif-atlas): ambient-library/diagnosing-bugs (#2669); debugging/debug (#9410); aegis/systematic-debugging (#3573) · theme debugging · 5 supporting skills · verifier read: skills/1120-ambient-library/2669-diagnosing-bugs, skills/2429-debugging/9410-debug, skills/1457-aegis/3573-systematic-debugging
@@ -1029,7 +1017,6 @@
 - **ماذا / what:** يجمع بيان تشخيص أدنى بالبيانات الوصفية فقط للتصعيد دون أسرار أو حمولات. — Assembles a minimal metadata-only diagnostic manifest for vendor/API escalation without secrets or payloads.
 - **متى أستخدمها / when:** Escalating an API/SDK/webhook defect to a vendor or support.
 - **كيف / how:** 1) Declare allowed fields (timestamps, release SHA, operation, version header, status/code, correlation ID, payload digest). 2) Record config shape: variable names, hosts, flags, credential aliases, never values. 3) List bounded attempts only. 4) Add minimal sanitized fixture if needed. 5) Run secret scan then human approval. 6) Send with checksum and expiry, delete after.
-- **يحتاج / needs:** [`gitleaks`](../requirements.md#req-gitleaks)
 - **الرخصة / license:** method paraphrased from Atlas skills under MIT; the skills keep their own licenses — see each folder's SOURCE.md
 - **الدليل / proof:** `https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/1855-flexport-pack/5710-flexport-debug-bundle`
 - **المصدر / source:** KOSIF Atlas mining 2026-10-20 (https://github.com/kosif199022-jpg/kosif-atlas): flexport-pack/flexport-debug-bundle (#5710) · theme debugging · 10 supporting skills · verifier read: skills/1855-flexport-pack/5710-flexport-debug-bundle,
@@ -1046,7 +1033,7 @@
 - **ماذا / what:** تصحيح الأخطاء بقراءة الخطأ كاملاً وتكرار الحالة وتتبع البيانات واختبار فرضية واحدة قبل أي إصلاح. — Debug by reading the full error, reproducing, checking recent changes, tracing data backwards and testing one falsifiable hypothesis at a time before any fix.
 - **متى أستخدمها / when:** bug, failing test, unexpected behavior, regression, previous fix failed
 - **كيف / how:** 1) Read whole error and stack. 2) Reproduce deterministically. 3) git log/diff for recent changes. 4) In multi-component systems log at every boundary once to locate the failing layer. 5) Compare against a working similar path, list every difference. 6) Write 'I think X because Y', change one variable; if wrong form a new hypothesis, never stack fixes. 7) Fix only after cause is explained. **أرقام / params:** error text, repro steps
-- **يحتاج / needs:** [`git`](../requirements.md#req-git)
+- **يحتاج / needs:** [`git`](../requirements.md#req-git) · [`pip:hypothesis`](../requirements.md#req-pip-hypothesis)
 - **الرخصة / license:** method paraphrased from Atlas skills under MIT / Apache-2.0; the skills keep their own licenses — see each folder's SOURCE.md
 - **الدليل / proof:** `https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/2972-pwdev-power/12523-power-debug` · `https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/2679-superpowers/10262-systematic-debugging` · `https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/3603-quiver/14457-hypothesis-debugging`
 - **المصدر / source:** KOSIF Atlas mining 2026-10-20 (https://github.com/kosif199022-jpg/kosif-atlas): pwdev-power/power-debug (#12523); superpowers/systematic-debugging (#10262); quiver/hypothesis-debugging (#14457) · theme debugging · 7 supporting skills · verifier read: skills/2972-pwdev-power/12523-power-debug, skills/2679-superpowers/10262-systematic-debugging, skills/3603-quiver/14457-hypothesis-debugging
@@ -1055,7 +1042,6 @@
 - **ماذا / what:** إيجاد مشكلة في Sentry وسحب التتبع والفتات وتحديد السبب في الكود وإصلاحه. — Find a Sentry issue, pull stack trace and breadcrumbs, locate the code cause and fix it.
 - **متى أستخدمها / when:** production exception reported in Sentry
 - **كيف / how:** 1) Locate issue by link/ID/search. 2) Pull stack, breadcrumbs, tags, release. 3) Map frames to source. 4) Apply root-cause fix and verify. 5) Enrich capture context if signal is thin. **أرقام / params:** issue link
-- **يحتاج / needs:** [`mcp:github`](../requirements.md#req-mcp-github)
 - **الرخصة / license:** method paraphrased from Atlas skills under MIT; the skills keep their own licenses — see each folder's SOURCE.md
 - **الدليل / proof:** `https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/3624-sentry/3624-sentry-debug-issue`
 - **المصدر / source:** KOSIF Atlas mining 2026-10-20 (https://github.com/kosif199022-jpg/kosif-atlas): sentry/sentry-debug-issue (#3624) · theme debugging · 7 supporting skills · verifier read: skills/3624-sentry/3624-sentry-debug-issue
@@ -1064,7 +1050,7 @@
 - **ماذا / what:** فحص الأسطر المضافة بحثاً عن أخطاء مبتلعة وcatch فارغة وawait مفقود ومعاملات وهمية. — Scan added diff lines for swallowed errors, empty catches, missing awaits and ghost transactions, reporting with exit codes.
 - **متى أستخدمها / when:** pre-commit or PR review of error-handling changes
 - **كيف / how:** 1) Run scan.sh on uncommitted changes, or --base origin/main --format json. 2) Exit 0 clean, 1 findings, >1 internal error. 3) Covers TS/JS, Python, C#, PHP. 4) Report-only; fix swallowed errors or acknowledge with a reason env var. 5) Optional commit gate hook. **أرقام / params:** base ref
-- **يحتاج / needs:** [`git`](../requirements.md#req-git)
+- **يحتاج / needs:** [`python3`](../requirements.md#req-python3) · [`git`](../requirements.md#req-git)
 - **الرخصة / license:** method paraphrased from Atlas skills under MIT; the skills keep their own licenses — see each folder's SOURCE.md
 - **الدليل / proof:** `https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/2834-silent-failure-scanner/11534-silent-failure-scanner`
 - **المصدر / source:** KOSIF Atlas mining 2026-10-20 (https://github.com/kosif199022-jpg/kosif-atlas): silent-failure-scanner/silent-failure-scanner (#11534) · theme debugging · 1 supporting skills · verifier read: skills/2834-silent-failure-scanner/11534-silent-failure-scanner
@@ -1092,7 +1078,7 @@
 - **ماذا / what:** يجلب سجلات إخفاق Actions ويصلح ويتحقق محليا ثم يدفع ضمن ميزانية محددة. — Fetches failed GitHub Actions logs, repairs, verifies locally and pushes within cycle and time budgets.
 - **متى أستخدمها / when:** Red PR checks, flaky pipeline triage.
 - **كيف / how:** 1) gh pr view --json number,url,headRefName,headRefOid to get head SHA. 2) Fetch failed run logs, bound size. 3) Dispatch fix; verify locally. 4) Push only if verification passes. 5) Checkpoint per head_sha in a JSON file; defaults 3 cycles, 90 minutes, 5-minute polling; stop if head changes. **أرقام / params:** PR number or branch
-- **يحتاج / needs:** [`gh`](../requirements.md#req-gh) · [`git`](../requirements.md#req-git)
+- **يحتاج / needs:** [`gh`](../requirements.md#req-gh)
 - **الرخصة / license:** method paraphrased from Atlas skills under MIT; the skills keep their own licenses — see each folder's SOURCE.md
 - **الدليل / proof:** `https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/3605-ateam/14475-ci-repair`
 - **المصدر / source:** KOSIF Atlas mining 2026-10-20 (https://github.com/kosif199022-jpg/kosif-atlas): ateam/ci-repair (#14475) · theme devops-cloud · 3 supporting skills · verifier read: skills/3605-ateam/14475-ci-repair
@@ -1101,7 +1087,6 @@
 - **ماذا / what:** يخطط تجارب حقن أعطال بفرضية مستقرة ونطاق ضرر محدود وشروط إيقاف ثم تقرير. — Plans fault-injection experiments with steady-state hypothesis, bounded blast radius and abort criteria, then a postmortem.
 - **متى أستخدمها / when:** Gameday, resilience testing, choosing chaos tooling.
 - **كيف / how:** 1) State steady-state hypothesis (e.g. p99 under 500ms). 2) Choose fault (latency, kill, dependency loss). 3) Compute blast radius from traffic share, user population and duration. 4) Define abort criteria before starting. 5) Run small, observe, then postmortem from plan and results. Tools: Chaos Toolkit, Chaos Mesh, Litmus, AWS FIS. **أرقام / params:** target, attack, duration
-- **يحتاج / needs:** [`python3`](../requirements.md#req-python3)
 - **الرخصة / license:** method paraphrased from Atlas skills under MIT; the skills keep their own licenses — see each folder's SOURCE.md
 - **الدليل / proof:** `https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/160-chaos-engineering/529-chaos-engineering`
 - **المصدر / source:** KOSIF Atlas mining 2026-10-20 (https://github.com/kosif199022-jpg/kosif-atlas): chaos-engineering/chaos-engineering (#529) · theme devops-cloud · 1 supporting skills · verifier read: skills/160-chaos-engineering/529-chaos-engineering
@@ -1126,7 +1111,6 @@
 - **ماذا / what:** ينشئ render.yaml أو إعدادات Wrangler أو Packer لنشر المنصات. — Generates render.yaml, Wrangler configs or Packer/OpenTofu code to deploy to Render, Cloudflare, Railway or Azure.
 - **متى أستخدمها / when:** Asked to deploy to Render/Cloudflare/Railway/Sealos.
 - **كيف / how:** 1) Analyze codebase for runtime and services. 2) Generate Blueprint or wrangler config. 3) Set env secrets via platform. 4) Configure domains and TLS. 5) Deploy and verify. **أرقام / params:** platform
-- **يحتاج / needs:** [`network`](../requirements.md#req-network)
 - **الرخصة / license:** method paraphrased from Atlas skills under MIT; the skills keep their own licenses — see each folder's SOURCE.md
 - **الدليل / proof:** `https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/2993-render/12706-render-deploy` · `https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/2205-majestic-cloudflare/8237-wrangler`
 - **المصدر / source:** KOSIF Atlas mining 2026-10-20 (https://github.com/kosif199022-jpg/kosif-atlas): render/render-deploy (#12706); majestic-cloudflare/wrangler (#8237) · theme devops-cloud · 8 supporting skills · verifier read: skills/2993-render/12706-render-deploy, skills/2205-majestic-cloudflare/8237-wrangler
@@ -1184,7 +1168,7 @@
 - **ماذا / what:** يحدد المستودع والمصادقة ويختار التشغيل ويفرز سجلات الفشل للقراءة فقط. — Resolve repo and auth, pick the run by most specific id, and triage failed-job logs read-only.
 - **متى أستخدمها / when:** CI failed, workflow logs, PR checks red
 - **كيف / how:** 1) Parse git remote for owner/repo/host and probe gh access. 2) Select run: run id, else PR checks, else commit SHA, else latest on branch; state the rule. 3) gh run view --json databaseId,status,conclusion. 4) Fetch failed-job logs only, grep first error. 5) If no access and no TTY, report remediation; never switch accounts without user consent. **أرقام / params:** run id, PR, branch
-- **يحتاج / needs:** [`gh`](../requirements.md#req-gh) · [`git`](../requirements.md#req-git)
+- **يحتاج / needs:** [`gh`](../requirements.md#req-gh)
 - **الرخصة / license:** method paraphrased from Atlas skills under MIT; the skills keep their own licenses — see each folder's SOURCE.md
 - **الدليل / proof:** `https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/2788-spec-tree/11147-inspect-github-actions` · `https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/*/13509-ci` · `https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/2075-yellow-ci/7344-ci-status`
 - **المصدر / source:** KOSIF Atlas mining 2026-10-20 (https://github.com/kosif199022-jpg/kosif-atlas): spec-tree/inspect-github-actions (#11147); shortcuts/ci (#13509); yellow-ci/ci-status (#7344) · theme devops-cloud · 4 supporting skills · verifier read: skills/2788-spec-tree/11147-inspect-github-actions, skills/*/13509-ci, skills/2075-yellow-ci/7344-ci-status
@@ -1210,7 +1194,6 @@
 - **ماذا / what:** يدقق الـworkflows لاستبدال مفاتيح JSON بـOIDC وصلاحيات دنيا. — Audits workflows to replace service-account JSON keys with OIDC WIF and least-privilege IAM.
 - **متى أستخدمها / when:** Securing CI deploys to Google Cloud or Vertex AI.
 - **كيف / how:** 1) Scan workflows for JSON keys. 2) Require permissions id-token: write. 3) Use google-github-actions/auth with WIF provider. 4) Reject owner/editor roles. 5) Add secret scan and post-deploy health check. 6) Document one-time WIF setup. **أرقام / params:** project, repo
-- **يحتاج / needs:** [`gh`](../requirements.md#req-gh)
 - **الرخصة / license:** method paraphrased from Atlas skills under MIT; the skills keep their own licenses — see each folder's SOURCE.md
 - **الدليل / proof:** `https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/1733-jeremy-github-actions-gcp/4740-gh-actions-validator`
 - **المصدر / source:** KOSIF Atlas mining 2026-10-20 (https://github.com/kosif199022-jpg/kosif-atlas): jeremy-github-actions-gcp/gh-actions-validator (#4740) · theme devops-cloud · 5 supporting skills · verifier read: skills/1733-jeremy-github-actions-gcp/4740-gh-actions-validator
@@ -1244,7 +1227,6 @@
 - **ماذا / what:** يبني مسار CI لتكامل API خارجي بفحوص عقد دون اتصال واختبار حي اختياري ومحمي. — Builds a CI lane for a third-party API integration using offline contract fixtures and an optional, protected live smoke test.
 - **متى أستخدمها / when:** Adding CI for any SaaS/API adapter (Mistral, Navan, Ramp, Miro, Salesforce...) without exposing secrets to forks.
 - **كيف / how:** 1) Pin schema/OpenAPI and record synthetic fixtures. 2) Default job runs offline: lint, contract tests, secret scan, host allowlist. 3) Live smoke is a separate job on a protected environment, read-only, bounded calls, never on fork PRs. 4) Fail closed when secrets are absent. 5) Upload no payloads or tokens as artifacts. **أرقام / params:** service name, spec location, CI provider
-- **يحتاج / needs:** [`git`](../requirements.md#req-git)
 - **الرخصة / license:** method paraphrased from Atlas skills under MIT; the skills keep their own licenses — see each folder's SOURCE.md
 - **الدليل / proof:** `https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/1885-mistral-pack/6325-mistral-ci-integration` · `https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/1901-salesforce-pack/6677-salesforce-ci-integration` · `https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/1897-ramp-pack/6591-ramp-ci-integration`
 - **المصدر / source:** KOSIF Atlas mining 2026-10-20 (https://github.com/kosif199022-jpg/kosif-atlas): mistral-pack/mistral-ci-integration (#6325); salesforce-pack/salesforce-ci-integration (#6677); ramp-pack/ramp-ci-integration (#6591) · theme devops-cloud · 7 supporting skills · verifier read: skills/1885-mistral-pack/6325-mistral-ci-integration, skills/1901-salesforce-pack/6677-salesforce-ci-integration, skills/1897-ramp-pack/6591-ramp-ci-integration
@@ -1261,7 +1243,6 @@
 - **ماذا / what:** يفحص ملفات YAML مقابل كتالوج قواعد ويعرض الإصلاحات ولا يطبقها إلا بعد التأكيد. — Scan workflow YAML against a numbered rule catalog, preview fixes, and apply only after confirmation.
 - **متى أستخدمها / when:** before pushing workflow changes
 - **كيف / how:** 1) Glob .github/workflows/*.yml. 2) Validate any user-supplied path against an allowlist (no .., no absolute, regex, symlink stays inside dir); never interpolate raw text into shell. 3) Check rules W01-W14 (runner labels, timeouts, concurrency, cleanup). 4) Group by severity. 5) Show diff preview, confirm, then edit. **أرقام / params:** file path
-- **يحتاج / needs:** [`git`](../requirements.md#req-git)
 - **الرخصة / license:** method paraphrased from Atlas skills under MIT; the skills keep their own licenses — see each folder's SOURCE.md
 - **الدليل / proof:** `https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/2075-yellow-ci/7340-ci-lint-workflows` · `https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/2075-yellow-ci/7338-ci-conventions` · `https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/*/2260-set-up-ci`
 - **المصدر / source:** KOSIF Atlas mining 2026-10-20 (https://github.com/kosif199022-jpg/kosif-atlas): yellow-ci/ci-lint-workflows (#7340); yellow-ci/ci-conventions (#7338); set-up-ci/set-up-ci (#2260) · theme devops-cloud · 5 supporting skills · verifier read: skills/2075-yellow-ci/7340-ci-lint-workflows, skills/2075-yellow-ci/7338-ci-conventions, skills/*/2260-set-up-ci
@@ -1278,7 +1259,6 @@
 - **ماذا / what:** يضبط اتحاد هوية الأحمال لينشر خط CI بتوكن قصير العمر بلا أسرار. — Configures workload identity federation so pipelines deploy to Azure with short-lived tokens and no stored secrets.
 - **متى أستخدمها / when:** Replacing client secrets in GitHub Actions or Azure DevOps.
 - **كيف / how:** 1) az ad app create, then az ad sp create. 2) az ad app federated-credential create with issuer token.actions.githubusercontent.com, audience api://AzureADTokenExchange. 3) Choose subject: repo:org/repo:ref:refs/heads/main, :pull_request, :environment:production. 4) Assign least-privilege RBAC at resource-group scope. 5) Workflow requests id-token write and logs in. **أرقام / params:** org/repo, scope
-- **يحتاج / needs:** [`gh`](../requirements.md#req-gh)
 - **الرخصة / license:** method paraphrased from Atlas skills under MIT / Apache-2.0; the skills keep their own licenses — see each folder's SOURCE.md
 - **الدليل / proof:** `https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/2243-azure-cloud/8537-workload-identity-federation` · `https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/2244-aws-cloud/8530-aws-least-privilege-iam`
 - **المصدر / source:** KOSIF Atlas mining 2026-10-20 (https://github.com/kosif199022-jpg/kosif-atlas): azure-cloud/workload-identity-federation (#8537); aws-cloud/aws-least-privilege-iam (#8530) · theme devops-cloud · 3 supporting skills · verifier read: skills/2243-azure-cloud/8537-workload-identity-federation, skills/2244-aws-cloud/8530-aws-least-privilege-iam
@@ -1287,7 +1267,6 @@
 - **ماذا / what:** يفرز أعطال النشر ويتراجع ويكتب مراجعة ما بعد الحادث. — Triage deploy outages: check provider status, recent deploys, error logs, then roll back and write a postmortem.
 - **متى أستخدمها / when:** production down after deploy
 - **كيف / how:** 1) Check provider status API. 2) vercel ls --prod and recent deployments. 3) Error logs. 4) Deploy in last 30 min means roll back or promote previous. 5) Post status updates. 6) Postmortem.
-- **يحتاج / needs:** [`network`](../requirements.md#req-network)
 - **الرخصة / license:** method paraphrased from Atlas skills under MIT/Apache-2.0; the skills keep their own licenses — see each folder's SOURCE.md
 - **الدليل / proof:** `https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/1913-vercel-pack/6967-vercel-incident-runbook` · `https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/*/10532-deployments-cicd`
 - **المصدر / source:** KOSIF Atlas mining 2026-10-20 (https://github.com/kosif199022-jpg/kosif-atlas): vercel-pack/vercel-incident-runbook (#6967); vercel/deployments-cicd (#10532) · theme devops-cloud · 5 supporting skills · verifier read: skills/1913-vercel-pack/6967-vercel-incident-runbook, skills/*/10532-deployments-cicd
@@ -1344,7 +1323,6 @@
 - **ماذا / what:** يخطط نشر خدمة تعتمد API بأسرار محدودة وفحص صحة منفصل وكناري وتراجع مثبت. — Plans deployment of an API-backed service with scoped secrets, separate liveness vs dependency readiness, bounded concurrency, canary and proven rollback.
 - **متى أستخدمها / when:** Releasing a service that calls an external provider; asked to deploy to Vercel/Fly/Cloud Run with secrets.
 - **كيف / how:** 1) Map build/runtime/secret/egress/scaling/shutdown. 2) Build once from immutable artifact, inject secrets at runtime only, never to browser/build output. 3) Liveness local only; readiness separate and without provider calls. 4) Set deadlines and bounded concurrency with shared limiter. 5) Staging, offline checks, approved synthetic canary, fixed traffic bound. 6) Prove rollback and reconcile queues to avoid duplicated work. Output release id, limits, rollback receipt. **أرقام / params:** platform, environment, release SHA
-- **يحتاج / needs:** [`git`](../requirements.md#req-git)
 - **الرخصة / license:** method paraphrased from Atlas skills under MIT; the skills keep their own licenses — see each folder's SOURCE.md
 - **الدليل / proof:** `https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/1885-mistral-pack/6332-mistral-deploy-integration` · `https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/1871-intercom-pack/5999-intercom-deploy-integration` · `https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/1901-salesforce-pack/6684-salesforce-deploy-integration`
 - **المصدر / source:** KOSIF Atlas mining 2026-10-20 (https://github.com/kosif199022-jpg/kosif-atlas): mistral-pack/mistral-deploy-integration (#6332); intercom-pack/intercom-deploy-integration (#5999); salesforce-pack/salesforce-deploy-integration (#6684) · theme devops-cloud · 10 supporting skills · verifier read: skills/1885-mistral-pack/6332-mistral-deploy-integration, skills/1871-intercom-pack/5999-intercom-deploy-integration, skills/1901-salesforce-pack/6684-salesforce-deploy-integration
@@ -1377,7 +1355,6 @@
 - **ماذا / what:** يحول الخطة إلى JSON ويقيّمها بـ OPA لمنع البنية المخالفة قبل التطبيق. — Convert the plan to JSON and evaluate with OPA/Conftest or Sentinel to block bad infrastructure before apply.
 - **متى أستخدمها / when:** IaC review, CI gate for terraform
 - **كيف / how:** 1) terraform plan -out=tfplan. 2) terraform show -json tfplan > plan.json. 3) conftest test plan.json against rego policies. 4) Rules: no public storage, no 0.0.0.0/0 on admin ports, no wildcard IAM, required tags, encryption on. 5) Fail pipeline before apply. **أرقام / params:** policy dir
-- **يحتاج / needs:** [`docker`](../requirements.md#req-docker)
 - **الرخصة / license:** method paraphrased from Atlas skills under MIT; terraform plugin items MPL-2.0 (copyleft); the skills keep their own licenses — see each folder's SOURCE.md
 - **الدليل / proof:** `https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/2396-terraform-iac/9278-policy-as-code-iac` · `https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/*/x6673-terraform-policy`
 - **المصدر / source:** KOSIF Atlas mining 2026-10-20 (https://github.com/kosif199022-jpg/kosif-atlas): terraform-iac/policy-as-code-iac (#9278); terraform/terraform-policy (#x6673) · theme devops-cloud · 4 supporting skills · verifier read: skills/2396-terraform-iac/9278-policy-as-code-iac, skills/*/x6673-terraform-policy
@@ -1391,385 +1368,18 @@
 - **الدليل / proof:** `https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/2625-ghfactory/10002-ghfactory`
 - **المصدر / source:** KOSIF Atlas mining 2026-10-20 (https://github.com/kosif199022-jpg/kosif-atlas): ghfactory/ghfactory (#10002) · theme devops-cloud · 4 supporting skills · verifier read: skills/2625-ghfactory/10002-ghfactory
 
-## المخططات — Diagrams & visual documentation
-
-#### ACODE-158 · مخطط تسلسل موثق من نقطة دخول الكود · Cited sequence diagram from code entry point · 📄 موصوف / documented only
-- **ماذا / what:** تتبع نقطة دخول عبر مواقع الاستدعاء وإنتاج مخطط تسلسل موثق. — Trace one entry point through tracked call sites into a Mermaid sequence diagram with citations.
-- **متى أستخدمها / when:** User asks what happens when an endpoint or method runs.
-- **كيف / how:** 1. Collect with a script that emits flow.json (entry, --depth default 5). 2. Every hop must cite a file:line. 3. Leave interface, service-locator and reflection hops unresolved. 4. Treat Publish/Send as hand-off to events mapping. 5. Render sequenceDiagram only from emitted hops; on refusal stop. **أرقام / params:** entry point, depth
-- **يحتاج / needs:** [`git`](../requirements.md#req-git) · [`claude:tools`](../requirements.md#req-claude-tools)
-- **الرخصة / license:** method paraphrased from Atlas skills under MIT; the skills keep their own licenses — see each folder's SOURCE.md
-- **الدليل / proof:** `https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/2415-architecture/9367-map-flow` · `https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/2690-build-web-data-visualization/10334-uml-and-software-architecture-visualizat`
-- **المصدر / source:** KOSIF Atlas mining 2026-10-20 (https://github.com/kosif199022-jpg/kosif-atlas): architecture/map-flow (#9367); build-web-data-visualization/uml-and-software-architecture-visualization (#10334) · theme diagrams-visual-docs · 3 supporting skills · verifier read: skills/2415-architecture/9367-map-flow, skills/2690-build-web-data-visualization/10334-uml-and-software-architecture-visualizat
-
-## الواجهات والتصميم — Front-end, UI & design systems
-
-#### ACODE-159 · البحث في مكتبة المكونات بسكربت مساعد · Component library lookup with helper script · 📄 موصوف / documented only
-- **ماذا / what:** البحث في حزمة نظام تصميم عن مكونات وخصائص وأمثلة. — Search a design-system package for components, props, examples and testkits through a bundled Node helper.
-- **متى أستخدمها / when:** Building UI with a vendor design system such as Wix WDS.
-- **كيف / how:** 1) Confirm package installed. 2) node wds.cjs search keywords. 3) component or components for props. 4) example for JSX. 5) testkit for test drivers. **أرقام / params:** component keywords
-- **يحتاج / needs:** [`node`](../requirements.md#req-node)
-- **الرخصة / license:** method paraphrased from Atlas skills under MIT; the skills keep their own licenses — see each folder's SOURCE.md
-- **الدليل / proof:** `https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/3419-wix/14004-wix-design-system`
-- **المصدر / source:** KOSIF Atlas mining 2026-10-20 (https://github.com/kosif199022-jpg/kosif-atlas): wix/wix-design-system (#14004) · theme frontend-ui-design · 4 supporting skills · verifier read: skills/3419-wix/14004-wix-design-system
-
-#### ACODE-160 · بوابة جودة التصميم في CI · Design-quality CI gate with SARIF · 📄 موصوف / documented only
-- **ماذا / what:** أضف فحصاً في طلبات الدمج يفشل عند تراجع الوصولية والرموز مقابل خط أساس. — Add a pull-request check that fails on new accessibility, token and responsive regressions against a baseline.
-- **متى أستخدمها / when:** Repo needs automated UI regression gating.
-- **كيف / how:** 1. Commit a reviewed policy and baseline of accepted debt. 2. Run the CI command locally producing SARIF plus a human report. 3. Add a GitHub Actions workflow on pull_request with contents:read and security-events:write. 4. Prove it passes on baseline and fails on a seeded regression. 5. Hand off threshold, suppressed count and artifact paths.
-- **يحتاج / needs:** [`gh`](../requirements.md#req-gh) · [`node`](../requirements.md#req-node)
-- **الرخصة / license:** method paraphrased from Atlas skills under MIT; the skills keep their own licenses — see each folder's SOURCE.md
-- **الدليل / proof:** `https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/3029-memoire/12948-enforce-design-ci`
-- **المصدر / source:** KOSIF Atlas mining 2026-10-20 (https://github.com/kosif199022-jpg/kosif-atlas): memoire/enforce-design-ci (#12948) · theme frontend-ui-design · 2 supporting skills · verifier read: skills/3029-memoire/12948-enforce-design-ci
-
-#### ACODE-161 · بناء نظام رموز التصميم · Design token system scaffold · 📄 موصوف / documented only
-- **ماذا / what:** بناء رموز التصميم الأولية والدلالية من هوية العلامة إلى JSON ومتغيرات CSS وثيم الإطار. — Scaffold primitive and semantic tokens from a brand spec into JSON, CSS variables and a framework theme.
-- **متى أستخدمها / when:** New design system, Figma-code drift, dark-mode rollout, Tailwind/shadcn theming.
-- **كيف / how:** 1) Define primitives (gray/brand ramps) named by value. 2) Define semantic tokens (background/text/accent) referencing primitives. 3) Components use semantic tokens only. 4) Emit CSS variables; override semantics under dark mode. 5) Map into Tailwind/shadcn theme. 6) Name by role, not hue (primary, not blue). **أرقام / params:** brand colors, scales, framework
-- **الرخصة / license:** method paraphrased from Atlas skills under MIT; the skills keep their own licenses — see each folder's SOURCE.md
-- **الدليل / proof:** `https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/2406-web-design/9323-design-tokens-scaffolding` · `https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/2406-web-design/9322-design-system-audit`
-- **المصدر / source:** KOSIF Atlas mining 2026-10-20 (https://github.com/kosif199022-jpg/kosif-atlas): web-design/design-tokens-scaffolding (#9323); web-design/design-system-audit (#9322) · theme frontend-ui-design · 5 supporting skills · verifier read: skills/2406-web-design/9323-design-tokens-scaffolding, skills/2406-web-design/9322-design-system-audit
-
-#### ACODE-162 · فحص القيم الصلبة واستبدالها برموز · Hardcoded-style scan to design tokens · 📄 موصوف / documented only
-- **ماذا / what:** افحص الشيفرة عن ألوان ومسافات صلبة واقترح رموزاً بديلة. — Scan code for raw colors, spacing and legacy classes and propose token replacements.
-- **متى أستخدمها / when:** Auditing or migrating CSS to a design system.
-- **كيف / how:** 1. Grep for hex/rgb/hsl and px spacing, radius, shadow values. 2. Match each to the nearest token. 3. Scan legacy class prefixes and modifier classes for version migration. 4. Report usage counts and a replacement table. 5. Apply only reviewed changes.
-- **الرخصة / license:** method paraphrased from Atlas skills under MIT; the skills keep their own licenses — see each folder's SOURCE.md
-- **الدليل / proof:** `https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/2998-patternfly/12762-pf-color-scan` · `https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/2998-patternfly/12763-pf-css-token-check`
-- **المصدر / source:** KOSIF Atlas mining 2026-10-20 (https://github.com/kosif199022-jpg/kosif-atlas): patternfly/pf-color-scan (#12762); patternfly/pf-css-token-check (#12763) · theme frontend-ui-design · 5 supporting skills · verifier read: skills/2998-patternfly/12762-pf-color-scan, skills/2998-patternfly/12763-pf-css-token-check
-
-#### ACODE-163 · هيكلة مكون React مع shadcn وTailwind وStorybook · React component scaffold with shadcn, Tailwind, Storybook · 📄 موصوف / documented only
-- **ماذا / what:** إنشاء مجلد مكون بملفات منظمة وvariants وshadcn وقصص Storybook ضمن طبقة FSD. — Scaffold a component folder with kebab-case files, cva variants, shadcn composition and CSF3 stories in an FSD layer.
-- **متى أستخدمها / when:** Creating or refactoring React UI in a repo using shadcn/Tailwind.
-- **كيف / how:** 1) Pick FSD layer and slice with index.ts. 2) component.tsx plus styles.ts using cva() variants. 3) Pull primitives via shadcn CLI/registry, keep structure. 4) CSF3 story per shared/ui primitive. 5) Accessibility pass. **أرقام / params:** component name
-- **يحتاج / needs:** [`node`](../requirements.md#req-node) · [`npm:react`](../requirements.md#req-npm-react)
-- **الرخصة / license:** method paraphrased from Atlas skills under MIT; the skills keep their own licenses — see each folder's SOURCE.md
-- **الدليل / proof:** `https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/7523` · `https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/7522` · `https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/10315`
-- **المصدر / source:** KOSIF Atlas mining 2026-10-20 (https://github.com/kosif199022-jpg/kosif-atlas): frontend-dev-kit/tailwind-styles (#7523); frontend-dev-kit/storybook (#7522); build-web-apps/shadcn (#10315) · theme frontend-ui-design · 9 supporting skills · verifier read: skills/7523, skills/7522, skills/10315
-
-#### ACODE-164 · إعداد shadcn وUnoCSS لتنسيق المكونات · shadcn and UnoCSS component styling setup · 📄 موصوف / documented only
-- **ماذا / what:** تهيئة shadcn/ui دون تفاعل وضبط CSS الذري بشكل متسق. — Initialize shadcn/ui non-interactively and configure atomic CSS (UnoCSS or Tailwind) consistently.
-- **متى أستخدمها / when:** Adding React UI components, theming, utility-CSS config.
-- **كيف / how:** 1) Inspect uno.config.* or components.json first. 2) Run npx shadcn@latest init -d (or --preset code -f), keep radix base. 3) Add components with the CLI; they are copied as source. 4) Use theme tokens and shortcuts in UnoCSS. 5) Avoid attributify if setup unclear.
-- **تثبيت / install:** `npx shadcn@latest init -d`
-- **يحتاج / needs:** [`node`](../requirements.md#req-node) · [`npm:react`](../requirements.md#req-npm-react)
-- **الرخصة / license:** method paraphrased from Atlas skills under MIT; the skills keep their own licenses — see each folder's SOURCE.md
-- **الدليل / proof:** `https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/2722-vercel/10555-shadcn` · `https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/2945-unocss/12211-unocss`
-- **المصدر / source:** KOSIF Atlas mining 2026-10-20 (https://github.com/kosif199022-jpg/kosif-atlas): vercel/shadcn (#10555); unocss/unocss (#12211) · theme frontend-ui-design · 7 supporting skills · verifier read: skills/2722-vercel/10555-shadcn, skills/2945-unocss/12211-unocss
-
-#### ACODE-165 · قواعد تركيب shadcn وTailwind · shadcn/ui and Tailwind composition rules · 📄 موصوف / documented only
-- **ماذا / what:** طبّق سير shadcn وقواعد Tailwind: ألوان دلالية وgap وحقول منظمة. — Apply the shadcn CLI workflow and Tailwind rules: semantic colors, gap over space, FieldGroup forms.
-- **متى أستخدمها / when:** Adding or fixing shadcn components, Tailwind styling, Radix to Base UI migration.
-- **كيف / how:** 1. Run shadcn info --json for project context. 2. Search registries before custom UI; compose (Tabs+Card+form). 3. Use variants and semantic tokens (bg-primary), never raw colors or manual dark:. 4. flex gap-* not space-*; size-*; cn(); no manual z-index on overlays. 5. Forms: FieldGroup+Field, data-invalid plus aria-invalid.
-- **تثبيت / install:** `npx shadcn@latest info --json`
-- **يحتاج / needs:** [`node`](../requirements.md#req-node)
-- **الرخصة / license:** method paraphrased from Atlas skills under MIT / Apache-2.0; the skills keep their own licenses — see each folder's SOURCE.md
-- **الدليل / proof:** `https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/2935-shadcn-ui/12182-shadcn` · `https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/tailwind/3674-tailwind-best-practices`
-- **المصدر / source:** KOSIF Atlas mining 2026-10-20 (https://github.com/kosif199022-jpg/kosif-atlas): shadcn-ui/shadcn (#12182); tailwind/tailwind-best-practices (#3674) · theme frontend-ui-design · 7 supporting skills · verifier read: skills/2935-shadcn-ui/12182-shadcn, skills/tailwind/3674-tailwind-best-practices
-
-#### ACODE-166 · فاحص وصولية HTML مع بقايا يدوية · Stdlib HTML accessibility linter with manual residue · 📄 موصوف / documented only
-- **ماذا / what:** افحص HTML بقواعد WCAG القابلة للآلة واذكر دائماً ما يحتاج مراجعة بشرية. — Lint output HTML for machine-decidable WCAG rules and always list what needs human review.
-- **متى أستخدمها / when:** Gating generated HTML reports without a browser.
-- **كيف / how:** 1. Parse HTML with stdlib. 2. Blocking rules: img-alt, html-lang, link-name, button-name, control-label, table-headers. 3. Advisory: th-scope, heading-order. 4. FAIL only on blocking; PASS still emits non-empty manual_residue (floor is about 30-50% of WCAG). 5. Emit an exit-coded JSON sub-receipt.
-- **يحتاج / needs:** [`python3`](../requirements.md#req-python3)
-- **الرخصة / license:** method paraphrased from Atlas skills under MIT; the skills keep their own licenses — see each folder's SOURCE.md
-- **الدليل / proof:** `https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/2370-report-regeneration/9164-report-a11y-gate`
-- **المصدر / source:** KOSIF Atlas mining 2026-10-20 (https://github.com/kosif199022-jpg/kosif-atlas): report-regeneration/report-a11y-gate (#9164) · theme frontend-ui-design · 4 supporting skills · verifier read: skills/2370-report-regeneration/9164-report-a11y-gate
-
-#### ACODE-167 · مراجعة الوصولية وفق WCAG · WCAG four-principle accessibility review · 📄 موصوف / documented only
-- **ماذا / what:** مراجعة شاشة وفق مبادئ WCAG الأربعة مع إصلاحات محددة. — Review a screen against perceivable, operable, understandable and robust criteria with concrete fixes.
-- **متى أستخدمها / when:** Any user-facing screen, a11y audit, WCAG/Section 508/EAA question, fixing accessibility bugs.
-- **كيف / how:** 1) Perceivable: alt text, contrast 4.5:1, colour never sole signal, reflow/zoom. 2) Operable: full keyboard, visible focus, target size. 3) Understandable: labels, predictable behaviour, error recovery. 4) Robust: semantic HTML, ARIA only when needed. 5) Report findings by severity with a fix each; optionally confirm with axe/pa11y. **أرقام / params:** url or code
-- **يحتاج / needs:** [`npm:axe`](../requirements.md#req-npm-axe)
-- **الرخصة / license:** method paraphrased from Atlas skills under MIT; the skills keep their own licenses — see each folder's SOURCE.md
-- **الدليل / proof:** `https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/1503-universal-design-principles/3841-accessibility` · `https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/1530-webcraft/4191-fix-web-accessibility`
-- **المصدر / source:** KOSIF Atlas mining 2026-10-20 (https://github.com/kosif199022-jpg/kosif-atlas): universal-design-principles/accessibility (#3841); webcraft/fix-web-accessibility (#4191) · theme frontend-ui-design · 8 supporting skills · verifier read: skills/1503-universal-design-principles/3841-accessibility, skills/1530-webcraft/4191-fix-web-accessibility
-
-## تطوير الألعاب — Game development
-
-#### ACODE-168 · بيفي: ECS وتدفق الحالات وخط الأصول · Bevy ECS, state flow and asset pipeline · 📄 موصوف / documented only
-- **ماذا / what:** تصميم ألعاب Bevy بنمط ECS وتدفق حالات وكتالوج أصول ومحتوى مبني على بيانات. — Design Bevy games with ECS queries, scheduling, AppState flow, typed asset catalogs and data-driven content.
-- **متى أستخدمها / when:** Writing or reviewing Rust/Bevy or Legion game code.
-- **كيف / how:** 1) Model components/resources and queries; use change detection. 2) AppState enum with OnEnter/OnExit and state-scoped cleanup. 3) Typed asset catalog, validate paths, loading state. 4) Move monsters/items/loot to Serde data files with validation. 5) Plan small playable slices with acceptance checks.
-- **يحتاج / needs:** [`node`](../requirements.md#req-node)
-- **الرخصة / license:** method paraphrased from Atlas skills under MIT; the skills keep their own licenses — see each folder's SOURCE.md
-- **الدليل / proof:** `https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/2137-bevy-plugin/7587-bevy-ecs-patterns` · `https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/2199-lvtd-skills/8152-rust-bevy-state-flow`
-- **المصدر / source:** KOSIF Atlas mining 2026-10-20 (https://github.com/kosif199022-jpg/kosif-atlas): bevy-plugin/bevy-ecs-patterns (#7587); lvtd-skills/rust-bevy-state-flow (#8152) · theme game-dev · 7 supporting skills · verifier read: skills/2137-bevy-plugin/7587-bevy-ecs-patterns, skills/2199-lvtd-skills/8152-rust-bevy-state-flow
-
-#### ACODE-169 · حزمة ألعاب المتصفح وPhaser · Browser game stack, Phaser and web foundations · 📄 موصوف / documented only
-- **ماذا / what:** اختيار المحرك ومعمارية ألعاب المتصفح وبناء ثنائي الأبعاد بـ Phaser. — Choose engine and architecture for browser games and implement 2D with Phaser, TypeScript and Vite.
-- **متى أستخدمها / when:** New browser game or stack choice.
-- **كيف / how:** 1) Route by 2D/3D. 2) Separate simulation from render; define input model. 3) Phaser scenes in TS with Vite. 4) Plan assets. 5) Playtest.
-- **يحتاج / needs:** [`node`](../requirements.md#req-node)
-- **الرخصة / license:** method paraphrased from Atlas skills under MIT/Apache-2.0; the skills keep their own licenses — see each folder's SOURCE.md
-- **الدليل / proof:** `https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/2696-game-studio/10366-phaser-2d-game` · `https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/2696-game-studio/10371-web-game-foundations`
-- **المصدر / source:** KOSIF Atlas mining 2026-10-20 (https://github.com/kosif199022-jpg/kosif-atlas): game-studio/phaser-2d-game (#10366); game-studio/web-game-foundations (#10371) · theme game-dev · 4 supporting skills · verifier read: skills/2696-game-studio/10366-phaser-2d-game, skills/2696-game-studio/10371-web-game-foundations
-
-#### ACODE-170 · فيزياء خطوة ثابتة وكشف تصادم · Fixed-step physics and collision broadphase · 📄 موصوف / documented only
-- **ماذا / what:** فصل المحاكاة الحتمية بخطوة ثابتة عن العرض مع تصادم AABB. — Separate deterministic fixed-step simulation from presentation and add AABB broadphase with swept checks.
-- **متى أستخدمها / when:** Frame-rate dependent movement or missed collisions at high speed.
-- **كيف / how:** 1) Sample input in update, apply movement in fixed step. 2) Store velocity/intent in components. 3) Sweep/predict before committing positions. 4) Spatial index with AABB, emit typed collision events. 5) Interpolate visuals. 6) Benchmark broadphase.
-- **الرخصة / license:** method paraphrased from Atlas skills under MIT; the skills keep their own licenses — see each folder's SOURCE.md
-- **الدليل / proof:** `https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/2199-lvtd-skills/8150-rust-bevy-fixed-step-physics` · `https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/2199-lvtd-skills/8149-rust-bevy-collision-broadphase`
-- **المصدر / source:** KOSIF Atlas mining 2026-10-20 (https://github.com/kosif199022-jpg/kosif-atlas): lvtd-skills/rust-bevy-fixed-step-physics (#8150); lvtd-skills/rust-bevy-collision-broadphase (#8149) · theme game-dev · 3 supporting skills · verifier read: skills/2199-lvtd-skills/8150-rust-bevy-fixed-step-physics, skills/2199-lvtd-skills/8149-rust-bevy-collision-broadphase
-
-#### ACODE-171 · اختيار تمثيل الهندسة وSDF وتحويل الشبكات · Geometry, SDF and mesh-voxel conversion choice · 📄 موصوف / documented only
-- **ماذا / what:** اختيار تمثيل هندسي والتحويل بين شبكات وSDF وفوكسل. — Choose geometric representations and plan conversions among meshes, SDFs, voxels and contours.
-- **متى أستخدمها / when:** Rendering, collision, procedural shapes or transform bugs.
-- **كيف / how:** 1) List needs: render, collision, edit. 2) Pick mesh, SDF, voxel or curve. 3) Plan conversion keeping gameplay fidelity. 4) Check coordinate spaces and matrices.
-- **يحتاج / needs:** [`pip:numpy`](../requirements.md#req-pip-numpy)
-- **الرخصة / license:** method paraphrased from Atlas skills under MIT; the skills keep their own licenses — see each folder's SOURCE.md
-- **الدليل / proof:** `https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/2199-lvtd-skills/8087-game-sdf-and-field-modeling`
-- **المصدر / source:** KOSIF Atlas mining 2026-10-20 (https://github.com/kosif199022-jpg/kosif-atlas): lvtd-skills/game-sdf-and-field-modeling (#8087) · theme game-dev · 4 supporting skills · verifier read: skills/2199-lvtd-skills/8087-game-sdf-and-field-modeling
-
-#### ACODE-172 · أنماط معمارية لـ GDScript في Godot 4 · Godot 4 GDScript architecture patterns · 📄 موصوف / documented only
-- **ماذا / what:** هيكلة لعبة Godot 4 بالإشارات والمشاهد والموارد وآلات الحالة. — Structure a Godot 4 game with signals, scenes, resources, state machines and typed exports.
-- **متى أستخدمها / when:** Building or reviewing a Godot 4 game or GDScript system.
-- **كيف / how:** 1) Split into scenes (tscn) and data resources (tres). 2) Use typed signals for events instead of node paths. 3) @export typed vars with groups/ranges. 4) State machine node per entity. 5) Move physics in _physics_process with move_and_slide. 6) Run headless --check-only before finishing. **أرقام / params:** engine version
-- **يحتاج / needs:** [`node`](../requirements.md#req-node)
-- **الرخصة / license:** method paraphrased from Atlas skills under MIT; the skills keep their own licenses — see each folder's SOURCE.md
-- **الدليل / proof:** `https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/3098-game-development/13268-godot-gdscript-patterns` · `https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/1526-gamegen/4176-godot-gameplay`
-- **المصدر / source:** KOSIF Atlas mining 2026-10-20 (https://github.com/kosif199022-jpg/kosif-atlas): game-development/godot-gdscript-patterns (#13268); gamegen/godot-gameplay (#4176) · theme game-dev · 4 supporting skills · verifier read: skills/3098-game-development/13268-godot-gdscript-patterns, skills/1526-gamegen/4176-godot-gameplay
-
-#### ACODE-173 · فحص محرر Godot الحي عبر سطر الأوامر · Godot live-editor inspection via CLI · 📄 موصوف / documented only
-- **ماذا / what:** فحص وتعديل محرر Godot يعمل فعلا مع إثبات النتائج بقراءة الحالة ولقطات الشاشة. — Inspect and mutate a running Godot editor/game through a CLI, proving results with state reads and screenshots.
-- **متى أستخدمها / when:** A request touching live scene, node, UI or gameplay state in Godot.
-- **كيف / how:** 1) status/instances to find the editor. 2) Read compact scene tree and selected props. 3) Use undoable node add/set and signal connect, not eval. 4) Run the scene and check error output. 5) Verify UI via ui tree, click and runtime screenshot. 6) Write QA scenarios with requirements per step. **أرقام / params:** editor pid
-- **يحتاج / needs:** [`claude:tools`](../requirements.md#req-claude-tools)
-- **الرخصة / license:** method paraphrased from Atlas skills under MIT; the skills keep their own licenses — see each folder's SOURCE.md
-- **الدليل / proof:** `https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/2669-hera-godot/10172-live-editor`
-- **المصدر / source:** KOSIF Atlas mining 2026-10-20 (https://github.com/kosif199022-jpg/kosif-atlas): hera-godot/live-editor (#10172) · theme game-dev · 1 supporting skills · verifier read: skills/2669-hera-godot/10172-live-editor
-
-#### ACODE-174 · حلقة قياس أداء اللعبة · Measured game performance loop · 📄 موصوف / documented only
-- **ماذا / what:** قياس الأداء ثم تغيير واحد كل مرة والإبقاء على التحسن المثبت فقط. — Baseline frame times on desktop and emulated phone, make one change per trial, keep only measured wins.
-- **متى أستخدمها / when:** Game stutters, heats phone or loads slowly.
-- **كيف / how:** 1) Baseline p50/p95 frame, busy, load. 2) Pick one goal metric. 3) One change then paired A/B runs. 4) Require beat noise and unchanged looks. 5) Revert otherwise. **أرقام / params:** goal metric
-- **يحتاج / needs:** [`chromium`](../requirements.md#req-chromium) · [`node`](../requirements.md#req-node)
-- **الرخصة / license:** method paraphrased from Atlas skills under Apache-2.0/MIT; the skills keep their own licenses — see each folder's SOURCE.md
-- **الدليل / proof:** `https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/1511-homie/3895-perf` · `https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/2696-game-studio/10363-game-playtest`
-- **المصدر / source:** KOSIF Atlas mining 2026-10-20 (https://github.com/kosif199022-jpg/kosif-atlas): homie/perf (#3895); game-studio/game-playtest (#10363) · theme game-dev · 3 supporting skills · verifier read: skills/1511-homie/3895-perf, skills/2696-game-studio/10363-game-playtest
-
-#### ACODE-175 · وحدة DOTS وأتمتة محركات Unity وUnreal · Unity DOTS ECS and Unreal/Unity automation · 📄 موصوف / documented only
-- **ماذا / what:** تطبيق أنماط Unity DOTS وأتمتة المحررات والبناء الدفعي. — Apply Unity ECS/Jobs/Burst patterns and drive Unity/Unreal editors via batch builds, editor Python or MCP.
-- **متى أستخدمها / when:** Data-oriented Unity work or scripted Unity/Unreal builds and live-editor actions.
-- **كيف / how:** 1) Components as data, systems with Jobs and Burst. 2) Batch-mode builds, Addressables. 3) Unreal: editor Python, UAT packaging. 4) Live-editor MCP for scene queries and edits. 5) Verify via build logs. **أرقام / params:** engine
-- **يحتاج / needs:** [`claude:tools`](../requirements.md#req-claude-tools)
-- **الرخصة / license:** method paraphrased from Atlas skills under MIT; the skills keep their own licenses — see each folder's SOURCE.md
-- **الدليل / proof:** `https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/3098-game-development/13269-unity-ecs-patterns` · `https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/1372-unreal-engine-skills-for-claude-code/3185-unreal-mcp`
-- **المصدر / source:** KOSIF Atlas mining 2026-10-20 (https://github.com/kosif199022-jpg/kosif-atlas): game-development/unity-ecs-patterns (#13269); unreal-engine-skills-for-claude-code/unreal-mcp (#3185) · theme game-dev · 4 supporting skills · verifier read: skills/3098-game-development/13269-unity-ecs-patterns, skills/1372-unreal-engine-skills-for-claude-code/3185-unreal-mcp
-
-## سير عمل تطوير عام — General development workflow
-
-#### ACODE-176 · تصنيف نتائج regex قبل الاستبدال الجماعي · Classify regex matches before bulk sweep · 📄 موصوف / documented only
-- **ماذا / what:** يصنف كل مطابقة قبل الاستبدال الجماعي لتجنب إفساد الملفات المصممة والسجلات التاريخية. — Bucket every match of a bulk find-replace into stale target, false positive, out-of-scope design, or immutable record before editing.
-- **متى أستخدمها / when:** Renaming commands, tools, paths or syntax across many files, especially docs mixing live text with ADRs/changelogs.
-- **كيف / how:** 1) Decide target: code goes to ast-grep structural rewrite, prose goes to regex. 2) Enumerate all matches with rg and read the surrounding line. 3) Bucket into: transform / leave false positive / leave designed filename (delimiter also in file names) / supersede-note historical record. 4) Apply scoped transform only to bucket 1. 5) Verify with allowlist-aware grep that leftovers are only buckets 2-4.
-- **الرخصة / license:** method paraphrased from Atlas skills under MIT; the skills keep their own licenses — see each folder's SOURCE.md
-- **الدليل / proof:** `https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/2140-code-quality-plugin/7627-bulk-sweep-classify`
-- **المصدر / source:** KOSIF Atlas mining 2026-10-20 (https://github.com/kosif199022-jpg/kosif-atlas): code-quality-plugin/bulk-sweep-classify (#7627) · theme general-dev-workflow · 1 supporting skills · verifier read: skills/2140-code-quality-plugin/7627-bulk-sweep-classify
-
-#### ACODE-177 · فحص الكود الميت وتنظيف الاستيراد · Dead code and import cleanup scan · 📄 موصوف / documented only
-- **ماذا / what:** يكتشف الكود غير المستخدم ويحذفه. — Find unused functions, imports and variables, then remove them.
-- **متى أستخدمها / when:** Cleanup before release or refactor; long functions to split.
-- **كيف / how:** 1) Grep definitions and usage counts. 2) Flag zero-reference symbols and unused imports. 3) Check dynamic/export use before removing. 4) Edit and rerun build/tests. Skills are thin stubs; also function splitting for overly long functions.
-- **الرخصة / license:** method paraphrased from Atlas skills under MIT; the skills keep their own licenses — see each folder's SOURCE.md
-- **الدليل / proof:** `https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/510-dead-code/1539-dead-code-scan`
-- **المصدر / source:** KOSIF Atlas mining 2026-10-20 (https://github.com/kosif199022-jpg/kosif-atlas): dead-code/dead-code-scan (#1539) · theme general-dev-workflow · 3 supporting skills · verifier read: skills/510-dead-code/1539-dead-code-scan
-
-#### ACODE-178 · إضافة رمز تشخيص منظم لمكتبة JS · Diagnostic code catalog entry · 📄 موصوف / documented only
-- **ماذا / what:** يضيف رمز خطأ منظم بقواعد ثابتة للترقيم والرسالة. — Add a PREFIX_XNNNN diagnostic with why/fix/docs via defineDiagnostics conventions.
-- **متى أستخدمها / when:** Adding an error code to a JS/TS library using nostics.
-- **كيف / how:** 1) Grep defineDiagnostics to find the codes object. 2) Code = PREFIX_XNNNN, X area B/R/C/D, next free number; never reuse. 3) Add why (required, string or typed fn), optional fix and docs. 4) Pass cause/sources only at call site. 5) Report with diagnostics.CODE(params) or throw it.
-- **يحتاج / needs:** [`node`](../requirements.md#req-node)
-- **الرخصة / license:** method paraphrased from Atlas skills under MIT; the skills keep their own licenses — see each folder's SOURCE.md
-- **الدليل / proof:** `https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/2916-nostics/12103-add-diagnostic`
-- **المصدر / source:** KOSIF Atlas mining 2026-10-20 (https://github.com/kosif199022-jpg/kosif-atlas): nostics/add-diagnostic (#12103) · theme general-dev-workflow · 3 supporting skills · verifier read: skills/2916-nostics/12103-add-diagnostic
-
-#### ACODE-179 · إدارة مهام todo.md عبر سكربتات · Markdown todo file task scripts · 📄 موصوف / documented only
-- **ماذا / what:** يدير قائمة المهام في ملف markdown عبر سكربتات مع سبب الحظر. — Manage .llm/todo.md through get/add/mark/archive scripts with blocked markers carrying failure reasons.
-- **متى أستخدمها / when:** Working through a task list, adding or recovering blocked tasks across sessions.
-- **كيف / how:** 1) task_get.py prints the first [ ] task with indented context. 2) task_add.py appends a task; chain calls with && for batches. 3) task_mark.py flips [ ] to [x], or --marker='!' with required --reason quoting the concrete failure. 4) task_archive.py moves the list to dated file and carries [!] tasks forward. 5) Unblock recovers [!] tasks from archives. Never read the file directly.
-- **يحتاج / needs:** [`python3`](../requirements.md#req-python3)
-- **الرخصة / license:** method paraphrased from Atlas skills under Apache-2.0; the skills keep their own licenses — see each folder's SOURCE.md
-- **الدليل / proof:** `https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/2554-markdown-tasks/9920-tasks`
-- **المصدر / source:** KOSIF Atlas mining 2026-10-20 (https://github.com/kosif199022-jpg/kosif-atlas): markdown-tasks/tasks (#9920) · theme general-dev-workflow · 3 supporting skills · verifier read: skills/2554-markdown-tasks/9920-tasks,
-
-#### ACODE-180 · مزامنة متتبع الميزات مع TODO · Sync feature tracker with TODO · 📄 موصوف / documented only
-- **ماذا / what:** يزامن ملف تتبع الميزات مع TODO.md ويسحب أوامر العمل المنجزة. — Reconcile a feature-tracker JSON with TODO.md checkboxes and drain completed work orders from a sidecar.
-- **متى أستخدمها / when:** Reconciling TODO vs tracker, recalculating completion stats, draining completed WOs.
-- **كيف / how:** 1) Pick mode: --summary (read-only jq markdown report), --drain-wave WO-A,WO-B (move tasks.pending to completed with evidence), else full sync. 2) Detect taskwarrior sidecar. 3) Flip FRs whose implementing_wos are all closed. 4) Recompute stats. 5) Confirm before writes; quiet mode skips only navigation menus.
-- **الرخصة / license:** method paraphrased from Atlas skills under MIT; the skills keep their own licenses — see each folder's SOURCE.md
-- **الدليل / proof:** `https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/2139-blueprint-plugin/7606-blueprint-feature-tracker-sync`
-- **المصدر / source:** KOSIF Atlas mining 2026-10-20 (https://github.com/kosif199022-jpg/kosif-atlas): blueprint-plugin/blueprint-feature-tracker-sync (#7606) · theme general-dev-workflow · 1 supporting skills · verifier read: skills/2139-blueprint-plugin/7606-blueprint-feature-tracker-sync
-
-## Git والإصدار — Git, pull requests & releases
-
-#### ACODE-181 · تقسيم التغييرات إلى commits ذرية · Atomic commit splitting by purpose · 📄 موصوف / documented only
-- **ماذا / what:** تجميع التغييرات حسب الغرض وإنشاء commits منطقية متعددة أو دمج الإصلاحات في commits سابقة. — Group a dirty working tree by purpose and create several logical commits, or fold fixes into earlier commits.
-- **متى أستخدمها / when:** Large uncommitted diff, review feedback touching older commits, messy history.
-- **كيف / how:** 1) git diff --stat and group hunks by purpose. 2) git add -p or per-file staging, commit each group. 3) For review fixes: stage changes, git absorb --base main (only own commits, default last 10) then git rebase -i --autosquash. 4) Verify git absorb --version first; do not auto-install. 5) Reword messages in bulk if needed. **أرقام / params:** base=main
-- **يحتاج / needs:** [`git`](../requirements.md#req-git)
-- **الرخصة / license:** method paraphrased from Atlas skills under MIT; the skills keep their own licenses — see each folder's SOURCE.md
-- **الدليل / proof:** `https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/1232-git-absorb/2912-git-absorb` · `https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/2546-git/9890-commit-chunks` · `https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/atomic-commits/13493-atomic-commits`
-- **المصدر / source:** KOSIF Atlas mining 2026-10-20 (https://github.com/kosif199022-jpg/kosif-atlas): git-absorb/git-absorb (#2912); git/commit-chunks (#9890); atomic-commits/atomic-commits (#13493) · theme git-release · 6 supporting skills · verifier read: skills/1232-git-absorb/2912-git-absorb, skills/2546-git/9890-commit-chunks, skills/atomic-commits/13493-atomic-commits
-
-#### ACODE-182 · مراقبة PR حتى يصبح جاهزا للدمج · Babysit PR until green and mergeable · 📄 موصوف / documented only
-- **ماذا / what:** متابعة فحوص PR وتعليقاته وإصلاح الفشل والدمج فقط عند تحقق الجاهزية. — Poll PR checks and review threads, fix failures, and merge only when a gate proves readiness.
-- **متى أستخدمها / when:** Watch PR, monitor CI, wait for green then merge.
-- **كيف / how:** 1) gh pr checks and review threads. 2) Safe tier: fix branch-owned issues, never resolve threads or merge. 3) Verify each finding before acting. 4) Worker tier: merge only if gate script passes. 5) Race guard: confirm PR not already merged before force-push. 6) Loop on interval. **أرقام / params:** tier, scope, interval
-- **يحتاج / needs:** [`gh`](../requirements.md#req-gh) · [`git`](../requirements.md#req-git)
-- **الرخصة / license:** method paraphrased from Atlas skills under MIT/Apache; the skills keep their own licenses — see each folder's SOURCE.md
-- **الدليل / proof:** `https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/2476-source-control/9610-babysit-prs` · `https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/?/2240-monitor-pr` · `https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/?/13857`
-- **المصدر / source:** KOSIF Atlas mining 2026-10-20 (https://github.com/kosif199022-jpg/kosif-atlas): source-control/babysit-prs (#9610); monitor-pr/monitor-pr (#2240); pr-amend-force-push-lost-to-racing-merge/pr-amend (#13857) · theme git-release · 10 supporting skills · verifier read: skills/2476-source-control/9610-babysit-prs, skills/?/2240-monitor-pr, skills/?/13857
-
-#### ACODE-183 · سجل تغييرات من الكوميتات · Changelog from commits, Keep a Changelog · 📄 موصوف / documented only
-- **ماذا / what:** توليد أو تحديث سجل التغييرات من تاريخ الكوميتات بأقسام Keep a Changelog. — Generate or update CHANGELOG.md entries from commit history in Keep a Changelog sections.
-- **متى أستخدمها / when:** Preparing release notes or changelog for a tag range.
-- **كيف / how:** 1) git log lastTag..HEAD --pretty and group by Conventional type. 2) Map feat to Added, fix to Fixed, deprecations, Removed, Security. 3) Rewrite as user-facing one-liners, drop chore noise. 4) Insert under Unreleased, dated heading at release. 5) Update compare links at bottom. **أرقام / params:** range
-- **يحتاج / needs:** [`git`](../requirements.md#req-git)
-- **الرخصة / license:** method paraphrased from Atlas skills under MIT; the skills keep their own licenses — see each folder's SOURCE.md
-- **الدليل / proof:** `https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/boss/3154-changelog-generation` · `https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/development-skills/12684-changelog` · `https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/documentation-gene/13256-changelog-automation`
-- **المصدر / source:** KOSIF Atlas mining 2026-10-20 (https://github.com/kosif199022-jpg/kosif-atlas): boss/devops/changelog-generation (#3154); development-skills/changelog (#12684); documentation-generator/changelog-automation (#13256) · theme git-release · 7 supporting skills · verifier read: skills/boss/3154-changelog-generation, skills/development-skills/12684-changelog, skills/documentation-gene/13256-changelog-automation
-
-#### ACODE-184 · رسالة commit بصيغة Conventional من التغييرات · Conventional commit from staged diff · 📄 موصوف / documented only
-- **ماذا / what:** توليد رسالة commit بصيغة Conventional Commits من الفروقات المجهزة مع تجهيز ملفات محددة فقط. — Derive a Conventional Commits 1.0 message (type, scope, body) from the staged diff after staging specific files only.
-- **متى أستخدمها / when:** User asks to commit, write a commit message, or enforce commit style.
-- **كيف / how:** 1) git status --short and git diff --cached --name-only; unstage .env*, keys, binaries, build artifacts. 2) Never git add . or -A; stage named files via NUL-delimited array. 3) Read git diff --cached, infer type(scope) and imperative subject. 4) Put why in body; mention BREAKING CHANGE footer. 5) Show message for review, then commit; no AI attribution if repo forbids. **أرقام / params:** target=staged|all; style=single-line|body
-- **يحتاج / needs:** [`git`](../requirements.md#req-git)
-- **الرخصة / license:** method paraphrased from Atlas skills under MIT; the skills keep their own licenses — see each folder's SOURCE.md
-- **الدليل / proof:** `https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/conventional-commits` · `https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/commit/10026-commit` · `https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/epic/3192-commit`
-- **المصدر / source:** KOSIF Atlas mining 2026-10-20 (https://github.com/kosif199022-jpg/kosif-atlas): conventional-commits/conventional-commits (#2904); commit/commit (#10026); epic/commit (#3192); go-workflow/commit (#3655) … · theme git-release · 15 supporting skills · verifier read: skills/conventional-commits, skills/commit/10026-commit, skills/epic/3192-commit
-
-#### ACODE-185 · خطافات تمنع أوامر git الخطرة · Dangerous git command guardrail hooks · 📄 موصوف / documented only
-- **ماذا / what:** تثبيت خطافات تمنع أوامر git المدمرة. — Install Claude Code hooks blocking push, reset --hard, clean, branch -D.
-- **متى أستخدمها / when:** Protect repo from destructive agent commands.
-- **كيف / how:** 1) Add PreToolUse Bash hook script. 2) Match patterns push, reset --hard, clean -f, branch -D. 3) Exit nonzero with message. 4) Test hook without disabling it.
-- **يحتاج / needs:** [`git`](../requirements.md#req-git)
-- **الرخصة / license:** method paraphrased from Atlas skills under MIT; the skills keep their own licenses — see each folder's SOURCE.md
-- **الدليل / proof:** `https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/?/8435` · `https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/?/13884`
-- **المصدر / source:** KOSIF Atlas mining 2026-10-20 (https://github.com/kosif199022-jpg/kosif-atlas): mattpocock-skills/git-guardrails-claude-code (#8435); test-a-commit-blocking-hook/test (#13884) · theme git-release · 4 supporting skills · verifier read: skills/?/8435, skills/?/13884
-
-#### ACODE-186 · محاكاة تعارضات قائمة الدمج · Merge queue conflict simulation · 📄 موصوف / documented only
-- **ماذا / what:** التنبؤ بالتعارضات بين فروع قائمة الدمج دون لمس المراجع أو شجرة العمل. — Predict which branches in a merge queue conflict without touching refs, index or worktree.
-- **متى أستخدمها / when:** Several PRs edit the same registry/changelog; choosing merge order.
-- **كيف / how:** 1) Start from base commit. 2) git merge-tree --write-tree base_c branch writes merged tree and prints OID (plain two-branch merge-tree is wrong for queues). 3) Wrap with git commit-tree -p base_c -p branch to chain, no refs. 4) Nonzero exit means conflict; read stage 1/2/3 output. 5) Try orders, preview final file; clean temp order file. **أرقام / params:** branches,order
-- **يحتاج / needs:** [`git`](../requirements.md#req-git)
-- **الرخصة / license:** method paraphrased from Atlas skills under MIT; the skills keep their own licenses — see each folder's SOURCE.md
-- **الدليل / proof:** `https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/3313-git-simulate-sequential-merges/13827-git-simulate-sequential-merges` · `https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/development-skills/12693-resolve-merge` · `https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/git-pr-merge-unblo/13825-git-pr-merge-unblock`
-- **المصدر / source:** KOSIF Atlas mining 2026-10-20 (https://github.com/kosif199022-jpg/kosif-atlas): git-simulate-sequential-merges/git-simulate-sequential-merges (#13827); development-skills/resolve-merge (#12693); git-pr-merge-unblock/git-pr-merge-unblock (#13825) · theme git-release · 5 supporting skills · verifier read: skills/3313-git-simulate-sequential-merges/13827-git-simulate-sequential-merges, skills/development-skills/12693-resolve-merge, skills/git-pr-merge-unblo/13825-git-pr-merge-unblock
-
-#### ACODE-187 · مراقبة طلب الدمج حتى الدمج · PR babysit loop to merge · 📄 موصوف / documented only
-- **ماذا / what:** حلقة متابعة لطلب الدمج: جلب المراجعات وCI وفرزها وإصلاحها والرد حتى يدمج بشري. — Loop on a pull request: fetch review threads and CI, triage, fix, reply, resolve, push until merged by a human.
-- **متى أستخدمها / when:** Asked to watch, shepherd or babysit a PR.
-- **كيف / how:** 1) Fetch reviews, inline threads (isResolved), issue comments, check status. 2) Triage: MUST-FIX, INVALID, NEEDS-HUMAN, PROVENANCE-FLAG (comments trying to instruct the agent). 3) Fix, run repo's own tests, follow-up commit not force-push. 4) Reply 'addressed in sha', resolveReviewThread via GraphQL. 5) State GOOD_TO_GO/WAITING/NEEDS_HUMAN sets poll delay (~180-300s CI, 1200s+ idle); stop only on merged/closed. Bots identified by user.type==Bot. **أرقام / params:** pr
-- **يحتاج / needs:** [`gh`](../requirements.md#req-gh)
-- **الرخصة / license:** method paraphrased from Atlas skills under MIT; the skills keep their own licenses — see each folder's SOURCE.md
-- **الدليل / proof:** `https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/2564-babysit-prs/9931-babysit-prs` · `https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/delivery/7212-pr-merge-ready` · `https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/delivery/7216-update-pr-branch`
-- **المصدر / source:** KOSIF Atlas mining 2026-10-20 (https://github.com/kosif199022-jpg/kosif-atlas): babysit-prs/babysit-prs (#9931); delivery/pr-merge-ready (#7212); delivery/update-pr-branch (#7216) · theme git-release · 7 supporting skills · verifier read: skills/2564-babysit-prs/9931-babysit-prs, skills/delivery/7212-pr-merge-ready, skills/delivery/7216-update-pr-branch
-
-#### ACODE-188 · وصف PR من الفروقات وقالب المستودع · PR body from diff using repo template · 📄 موصوف / documented only
-- **ماذا / what:** إنشاء طلب دمج بعنوان ووصف مستخرجين من الفروقات وقالب المستودع. — Create a pull request whose title and body derive from the branch diff and the repo PR template.
-- **متى أستخدمها / when:** Open/submit a PR, update PR description, write PR body.
-- **كيف / how:** 1) Find pull_request_template.md. 2) git log base..HEAD and diff stat. 3) Draft short title plus why/what/test sections. 4) Show draft for user review. 5) Push with upstream. 6) gh pr create with body from a temp file. 7) Re-run to update description later. **أرقام / params:** base branch, draft flag
-- **يحتاج / needs:** [`git`](../requirements.md#req-git) · [`gh`](../requirements.md#req-gh)
-- **الرخصة / license:** method paraphrased from Atlas skills under MIT/Apache; the skills keep their own licenses — see each folder's SOURCE.md
-- **الدليل / proof:** `https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/?/3657-create-pr` · `https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/?/9946-pr-craft` · `https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/?/10061-pr-style`
-- **المصدر / source:** KOSIF Atlas mining 2026-10-20 (https://github.com/kosif199022-jpg/kosif-atlas): go-workflow/create-pr (#3657); pr-craft/pr-craft (#9946); pr/pr-style (#10061) · theme git-release · 10 supporting skills · verifier read: skills/?/3657-create-pr, skills/?/9946-pr-craft, skills/?/10061-pr-style
-
-#### ACODE-189 · فتح طلب دمج بوصف واضح · PR creation with reviewer-friendly body · 📄 موصوف / documented only
-- **ماذا / what:** إنشاء commit ودفع وفتح طلب دمج بوصف يتبع القالب وتحديثه. — Commit, push and open a PR with a template-aware description and summary kept updated.
-- **متى أستخدمها / when:** Ship it, open PR, update PR summary.
-- **كيف / how:** 1) Find pull_request_template.md; fill sections. 2) Check branch not default; push -u. 3) gh pr create with title in commit style, body via tmpfile; draft by default. 4) Summary: what, why, test evidence, risks. 5) Later gh pr edit to refresh summary from commits. **أرقام / params:** draft=true
-- **يحتاج / needs:** [`gh`](../requirements.md#req-gh) · [`git`](../requirements.md#req-git)
-- **الرخصة / license:** method paraphrased from Atlas skills under MIT; the skills keep their own licenses — see each folder's SOURCE.md
-- **الدليل / proof:** `https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/compound-engineeri/3283-ce-commit-push-pr` · `https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/1450-chronicle/3542-pr` · `https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/github-dev/3387-update-pr-summary`
-- **المصدر / source:** KOSIF Atlas mining 2026-10-20 (https://github.com/kosif199022-jpg/kosif-atlas): compound-engineering/ce-commit-push-pr (#3283); chronicle/pr (#3542); github-dev/update-pr-summary (#3387) · theme git-release · 7 supporting skills · verifier read: skills/compound-engineeri/3283-ce-commit-push-pr, skills/1450-chronicle/3542-pr, skills/github-dev/3387-update-pr-summary
-
-#### ACODE-190 · إزالة أسرار دُفعت من السجل المستضاف · Purge pushed secrets from hosted history · 📄 موصوف / documented only
-- **ماذا / what:** بعد force-push يجب التحقق من بقاء الكوميتات القديمة وإعادة إنشاء المستودع. — After force-push, verify old commits remain served and recreate repo to truly unpublish.
-- **متى أستخدمها / when:** Sensitive data pushed then rewritten; going public.
-- **كيف / how:** 1) Proof: gh api repos/O/R/commits/<old-sha> and contents?ref=<sha>; a size means still served. 2) Local git log/fsck prove nothing. 3) Best: delete repo (needs delete_repo scope via gh auth refresh) and recreate. 4) Else rename old repo, create fresh one for new repo id. 5) Rotate leaked secrets regardless.
-- **يحتاج / needs:** [`gh`](../requirements.md#req-gh) · [`git`](../requirements.md#req-git)
-- **الرخصة / license:** method paraphrased from Atlas skills under MIT; the skills keep their own licenses — see each folder's SOURCE.md
-- **الدليل / proof:** `https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/3312-git-rewrite-does-not-unpublish-orphaned/13826-git-rewrite-does-not-unpublish-orphaned` · `https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/gist-to-repo-migra/13822-gist-to-repo-migration`
-- **المصدر / source:** KOSIF Atlas mining 2026-10-20 (https://github.com/kosif199022-jpg/kosif-atlas): git-rewrite-does-not-unpublish-orphaned/git-rewrite-does-not-unpublish-orphaned-commits (#13826); gist-to-repo-migration/gist-to-repo-migration (#13822) · theme git-release · 3 supporting skills · verifier read: skills/3312-git-rewrite-does-not-unpublish-orphaned/13826-git-rewrite-does-not-unpublish-orphaned, skills/gist-to-repo-migra/13822-gist-to-repo-migration
-
-#### ACODE-191 · إصدار نسخة مع سجل التغييرات والوسم · Release cut with changelog and tag · 📄 موصوف / documented only
-- **ماذا / what:** إصدار نسخة: تحديد رقم semver وتحديث الملفات والسجل ثم الوسم والنشر. — Cut a release: choose semver bump, update version files and CHANGELOG, tag and publish a GitHub release.
-- **متى أستخدمها / when:** User says cut/ship a release or bump version.
-- **كيف / how:** 1) Preconditions: clean tree, default branch up to date, Unreleased non-empty, last tag matches version file. 2) Bump: breaking/Removed major, feature minor, fix patch (pre-1.0 shifts down). 3) git switch -c chore/release-X.Y.Z; change every version copy, regenerate lockfile with project tool. 4) Rename Unreleased to [X.Y.Z] - date, add fresh Unreleased, fix compare links. 5) Commit chore(release), PR, squash merge, tag, gh release. Defer to release-please/changesets PR if present; never merge with --admin; ask before push. **أرقام / params:** version?
-- **يحتاج / needs:** [`git`](../requirements.md#req-git) · [`gh`](../requirements.md#req-gh)
-- **الرخصة / license:** method paraphrased from Atlas skills under MIT; the skills keep their own licenses — see each folder's SOURCE.md
-- **الدليل / proof:** `https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/3167-cut-release/13496-cut-release` · `https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/1450-chronicle/3543-release` · `https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/container-plugin/7717-deploy-release`
-- **المصدر / source:** KOSIF Atlas mining 2026-10-20 (https://github.com/kosif199022-jpg/kosif-atlas): cut-release/cut-release (#13496); chronicle/release (#3543); container-plugin/deploy-release (#7717) · theme git-release · 7 supporting skills · verifier read: skills/3167-cut-release/13496-cut-release, skills/1450-chronicle/3543-release, skills/container-plugin/7717-deploy-release
-
-#### ACODE-192 · حل تعارضات الدمج وإعادة التأسيس · Resolve rebase and merge conflicts · 📄 موصوف / documented only
-- **ماذا / what:** دمج أو إعادة تأسيس الفرع وحل التعارضات بفهم نية الطرفين والدفع بأمان. — Merge or rebase onto base, resolve conflicts per commit using both sides' intent, and push safely.
-- **متى أستخدمها / when:** Merge main, rebase onto main, conflict in progress.
-- **كيف / how:** 1) git fetch. 2) Merge/rebase base. 3) For each conflict read git log of both sides, keep intent. 4) Build/test. 5) git push --force-with-lease only for rebase. 6) Never blind-force. **أرقام / params:** base branch
-- **يحتاج / needs:** [`git`](../requirements.md#req-git)
-- **الرخصة / license:** method paraphrased from Atlas skills under MIT; the skills keep their own licenses — see each folder's SOURCE.md
-- **الدليل / proof:** `https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/?/9614` · `https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/?/2246` · `https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/?/8418`
-- **المصدر / source:** KOSIF Atlas mining 2026-10-20 (https://github.com/kosif199022-jpg/kosif-atlas): source-control/resolve-conflicts (#9614); rebase-onto-main/rebase-onto-main (#2246); mattpocock-skills/resolving-merge-conflicts (#8418) · theme git-release · 6 supporting skills · verifier read: skills/?/9614, skills/?/2246, skills/?/8418
-
-#### ACODE-193 · تقسيم فرع إلى فروع بكوميت واحد · Split branch into one-commit branches · 📄 موصوف / documented only
-- **ماذا / what:** تحويل فرع فيه N كوميت إلى N فروع بكوميت واحد عبر cherry-pick دون المساس بالأصلي. — Turn a branch of N commits into N single-commit branches via cherry-pick without touching the original.
-- **متى أستخدمها / when:** Reviewers want small PRs from one large branch.
-- **كيف / how:** 1) git log --oneline --reverse base..HEAD; stop if 0 or 1 commits. 2) Propose kebab-case names (3-5 words) from subjects, get approval. 3) For each commit oldest first: skip if branch tip equals sha, else suffix -2; git branch name base; git switch; git cherry-pick sha. 4) On conflict leave branch conflicted, continue, report. 5) Switch back; never delete or force-push. **أرقام / params:** base
-- **يحتاج / needs:** [`git`](../requirements.md#req-git)
-- **الرخصة / license:** method paraphrased from Atlas skills under MIT; the skills keep their own licenses — see each folder's SOURCE.md
-- **الدليل / proof:** `https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/2546-git/9897-split-branch` · `https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/1233-git-chain/2913-git-chain` · `https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/adlc-build/13096-small-batch-delivery`
-- **المصدر / source:** KOSIF Atlas mining 2026-10-20 (https://github.com/kosif199022-jpg/kosif-atlas): git/split-branch (#9897); git-chain/git-chain (#2913); adlc-build/small-batch-delivery (#13096) · theme git-release · 4 supporting skills · verifier read: skills/2546-git/9897-split-branch, skills/1233-git-chain/2913-git-chain, skills/adlc-build/13096-small-batch-delivery
-
-#### ACODE-194 · طلبات دمج متراكبة عبر gh stack · Stacked PRs with gh stack · 📄 موصوف / documented only
-- **ماذا / what:** إرسال ومزامنة وتعديل ودمج طلبات الدمج المتراكبة على GitHub. — Submit, sync, navigate, amend and merge GitHub-native stacked pull requests.
-- **متى أستخدمها / when:** Dependent branches or chained PRs need to stay rebased on trunk.
-- **كيف / how:** 1) Check tooling readiness (gh stack). 2) Submit: stage specific files, conventional commit, gh stack submit --auto (draft; --open to publish). 3) gh stack sync to rebase on trunk, prune merged. 4) Amend folds working-tree changes into current commit and resubmits. 5) gh stack merge; cleanup unstacks. Alternative: git-chain for local chains.
-- **يحتاج / needs:** [`gh`](../requirements.md#req-gh) · [`git`](../requirements.md#req-git)
-- **الرخصة / license:** method paraphrased from Atlas skills under MIT; the skills keep their own licenses — see each folder's SOURCE.md
-- **الدليل / proof:** `https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/2072-github-workflow/7312-github-stack-submit` · `https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/2072-github-workflow/7313-github-stack-sync` · `https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/1233-git-chain/2913-git-chain`
-- **المصدر / source:** KOSIF Atlas mining 2026-10-20 (https://github.com/kosif199022-jpg/kosif-atlas): github-workflow/github-stack-submit (#7312); github-workflow/github-stack-sync (#7313); git-chain/git-chain (#2913) · theme git-release · 8 supporting skills · verifier read: skills/2072-github-workflow/7312-github-stack-submit, skills/2072-github-workflow/7313-github-stack-sync, skills/1233-git-chain/2913-git-chain
-
-#### ACODE-195 · طلبات دمج متراكمة مع Graphite وMergify · Stacked PRs with Graphite or Mergify · 📄 موصوف / documented only
-- **ماذا / what:** إدارة سلسلة فروع بالتتابع عبر gt أو mergify: إنشاء ورفع وإعادة ترتيب ودمج. — Drive a stack of one-commit branches via gt or mergify stack, submit, sync, restack and merge in order.
-- **متى أستخدمها / when:** Stacked diffs, split a big change into reviewable PRs.
-- **كيف / how:** 1) gt create -am msg per layer (one commit per branch). 2) gt submit --stack. 3) Amend via gt modify, never raw git rebase on tracked branches. 4) gt sync: pull trunk, restack, untrack merged. 5) Merge trunk-up. 6) Mergify: push stack, merge queue, Depends-On protections. **أرقام / params:** trunk, stack scope
-- **تثبيت / install:** `npm i -g @withgraphite/graphite-cli`
-- **يحتاج / needs:** [`git`](../requirements.md#req-git) · [`gh`](../requirements.md#req-gh)
-- **الرخصة / license:** method paraphrased from Atlas skills under MIT/Apache; the skills keep their own licenses — see each folder's SOURCE.md
-- **الدليل / proof:** `https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/2909-graphite/12079-graphite` · `https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/2510-mergify/9684-mergify-stack` · `https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/?/7321-gt-sync`
-- **المصدر / source:** KOSIF Atlas mining 2026-10-20 (https://github.com/kosif199022-jpg/kosif-atlas): graphite/graphite (#12079); mergify/mergify-stack (#9684); gt-workflow/gt-sync (#7321) · theme git-release · 12 supporting skills · verifier read: skills/2909-graphite/12079-graphite, skills/2510-mergify/9684-mergify-stack, skills/?/7321-gt-sync
-
-#### ACODE-196 · مسار من issue إلى PR بأشجار عمل معزولة · Worktree-isolated issue-to-PR flow · 📄 موصوف / documented only
-- **ماذا / what:** تنفيذ issue كاملا في شجرة عمل معزولة مع اختبارات وPR ودمج. — Take a GitHub issue through worktree, TDD implementation, verification, PR and merge.
-- **متى أستخدمها / when:** Complete issue #N, start issue, parallel agents.
-- **كيف / how:** 1) gh issue view for context. 2) git worktree add per issue branch. 3) Plan, write tests first. 4) Implement, run verification. 5) Finish pipeline commit/rebase/simplify. 6) PR, review loop, merge. 7) Remove worktree and prune. **أرقام / params:** issue number
-- **يحتاج / needs:** [`git`](../requirements.md#req-git) · [`gh`](../requirements.md#req-gh)
-- **الرخصة / license:** method paraphrased from Atlas skills under MIT/Apache; the skills keep their own licenses — see each folder's SOURCE.md
-- **الدليل / proof:** `https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/2631-issueflow/10008-issueflow` · `https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/?/3661-start-issue` · `https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/?/9943-parallel-worktrees`
-- **المصدر / source:** KOSIF Atlas mining 2026-10-20 (https://github.com/kosif199022-jpg/kosif-atlas): issueflow/issueflow (#10008); go-workflow/start-issue (#3661); parallel-worktrees/parallel-worktrees (#9943) · theme git-release · 10 supporting skills · verifier read: skills/2631-issueflow/10008-issueflow, skills/?/3661-start-issue, skills/?/9943-parallel-worktrees
-
-#### ACODE-197 · إدارة worktree وتنظيفها بأمان · Worktree lifecycle and safe cleanup · 📄 موصوف / documented only
-- **ماذا / what:** إنشاء worktree لكل مهمة وحذف worktrees والفروع المدموجة دون إجبار. — Create sibling worktrees per task and remove worktrees and merged branches without force.
-- **متى أستخدمها / when:** Parallel tasks, dirty tree blocks switching, cleanup after merge.
-- **كيف / how:** 1) Create in peer dir: git worktree add ../repo-feature -b feature base. 2) Keep main checkout on default branch. 3) Cleanup: git worktree list, remove only clean ones (no --force), git worktree prune. 4) Delete gone branches: git fetch -p, list [gone], git branch -d. 5) Fix worktree created inside repo by moving with git worktree move.
-- **يحتاج / needs:** [`git`](../requirements.md#req-git)
-- **الرخصة / license:** method paraphrased from Atlas skills under MIT; the skills keep their own licenses — see each folder's SOURCE.md
-- **الدليل / proof:** `https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/2546-git/9889-clean-worktrees` · `https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/compound-engineeri/3311-ce-worktree` · `https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/git-worktree-conve/13829-git-worktree-convention`
-- **المصدر / source:** KOSIF Atlas mining 2026-10-20 (https://github.com/kosif199022-jpg/kosif-atlas): git/clean-worktrees (#9889); compound-engineering/ce-worktree (#3311); git-worktree-convention/git-worktree-convention (#13829) · theme git-release · 8 supporting skills · verifier read: skills/2546-git/9889-clean-worktrees, skills/compound-engineeri/3311-ce-worktree, skills/git-worktree-conve/13829-git-worktree-convention
-
 ## هندسة النماذج اللغوية — LLM & AI engineering
 
-#### ACODE-198 · تصميم تطبيق Agent SDK وخطافاته · Agent SDK app and hooks design · 📄 موصوف / documented only
+#### ACODE-158 · تصميم تطبيق Agent SDK وخطافاته · Agent SDK app and hooks design · 📄 موصوف / documented only
 - **ماذا / what:** تضمين حلقة وكيل في الكود مع أدوات وتسليمات وحواجز وخطافات دورة الحياة. — Embed an agent loop in code with tools, handoffs, guardrails and lifecycle hooks.
 - **متى أستخدمها / when:** Building a production agent or custom agent runner.
 - **كيف / how:** 1) Choose SDK (Claude Agent SDK, OpenAI Agents, Cloudflare Agents, Vercel AI SDK). 2) Define tools with schemas. 3) Add handoffs and guardrails. 4) Pick hooks (PreToolUse, PostToolUse, Stop) for policy. 5) Cap turns and budget.
-- **يحتاج / needs:** [`node`](../requirements.md#req-node)
+- **يحتاج / needs:** [`key:openai`](../requirements.md#req-key-openai)
 - **الرخصة / license:** method paraphrased from Atlas skills under Apache-2.0/MIT; the skills keep their own licenses — see each folder's SOURCE.md
 - **الدليل / proof:** `https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/15-ai-tooling/23-agent-sdk-builder` · `https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/2254-claude-app-engineering/8580-agent-sdk-hook-design` · `https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/2103-agent-dev-kit/7471-openai-agents-sdk`
 - **المصدر / source:** KOSIF Atlas mining 2026-10-20 (https://github.com/kosif199022-jpg/kosif-atlas): ai-tooling/agent-sdk-builder (#23); claude-app-engineering/agent-sdk-hook-design (#8580); agent-dev-kit/openai-agents-sdk (#7471) · theme ai-llm-engineering · 6 supporting skills · verifier read: skills/15-ai-tooling/23-agent-sdk-builder, skills/2254-claude-app-engineering/8580-agent-sdk-hook-design, skills/2103-agent-dev-kit/7471-openai-agents-sdk
 
-#### ACODE-199 · حكم LLM معايَر ومدقَّق التحيز · Calibrated, bias-audited LLM-as-judge · 📄 موصوف / documented only
+#### ACODE-159 · حكم LLM معايَر ومدقَّق التحيز · Calibrated, bias-audited LLM-as-judge · 📄 موصوف / documented only
 - **ماذا / what:** تصميم حكم LLM بمعايير مرسّاة وقرار منظم ومعايرة مقابل التقييم البشري. — Design an LLM judge with anchored rubric levels, structured verdicts, pinned model and human-agreement calibration.
 - **متى أستخدمها / when:** Any time an LLM grades outputs or A/B pairs before its numbers are trusted.
 - **كيف / how:** 1) Define per-criterion anchored levels (0/1/2), not 1-10. 2) Judge returns {criterion: level, reason}. 3) Prefer pairwise with randomized A/B side. 4) Pin judge model, version, temperature and log them. 5) Label 30-50 samples by humans, compute raw agreement or Cohen kappa, fix rubric if low. 6) Audit position, verbosity, self-preference, leniency drift; recalibrate on any judge/rubric change. **أرقام / params:** rubric criteria; sample size 30-50
@@ -1777,16 +1387,15 @@
 - **الدليل / proof:** `https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/2328-llm-evaluation-engineering/8937-build-llm-judge`
 - **المصدر / source:** KOSIF Atlas mining 2026-10-20 (https://github.com/kosif199022-jpg/kosif-atlas): llm-evaluation-engineering/build-llm-judge (#8937) · theme ai-llm-engineering · 3 supporting skills · verifier read: skills/2328-llm-evaluation-engineering/8937-build-llm-judge,
 
-#### ACODE-200 · تحصين حدود المعدل وإعادة المحاولة · Claude API rate-limit and retry hardening · 📄 موصوف / documented only
+#### ACODE-160 · تحصين حدود المعدل وإعادة المحاولة · Claude API rate-limit and retry hardening · 📄 موصوف / documented only
 - **ماذا / what:** إضافة تحكم بالمعدل وتراجع أسي وقائمة جاهزية إنتاج لاستدعاءات واجهة Claude. — Add header-aware throttling, backoff and production checklist for Claude API calls.
 - **متى أستخدمها / when:** 429/529 errors, load scaling, preparing LLM feature for production.
 - **كيف / how:** 1) Know RPM/ITPM/OTPM; cached input not counted in ITPM. 2) Set SDK max_retries or custom exponential backoff with jitter. 3) Read ratelimit response headers and pace requests. 4) Add circuit breaker, fallback model, queue for batch work. 5) Run prod checklist: keys, logging, budgets, incident runbook.
-- **يحتاج / needs:** [`pip:anthropic`](../requirements.md#req-pip-anthropic)
 - **الرخصة / license:** method paraphrased from Atlas skills under MIT/Apache-2.0; the skills keep their own licenses — see each folder's SOURCE.md
 - **الدليل / proof:** `https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/1823-anthropic-pack/5001-anth-rate-limits` · `https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/1823-anthropic-pack/5000-anth-prod-checklist` · `https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/1823-anthropic-pack/4998-anth-performance-tuning`
 - **المصدر / source:** KOSIF Atlas mining 2026-10-20 (https://github.com/kosif199022-jpg/kosif-atlas): anthropic-pack/anth-rate-limits (#5001); anthropic-pack/anth-prod-checklist (#5000); anthropic-pack/anth-performance-tuning (#4998) · theme ai-llm-engineering · 6 supporting skills · verifier read: skills/1823-anthropic-pack/5001-anth-rate-limits, skills/1823-anthropic-pack/5000-anth-prod-checklist, skills/1823-anthropic-pack/4998-anth-performance-tuning
 
-#### ACODE-201 · حزمة تقييم LLM ثابتة بمجموعة ذهبية · Committed LLM eval suite with goldens · 📄 موصوف / documented only
+#### ACODE-161 · حزمة تقييم LLM ثابتة بمجموعة ذهبية · Committed LLM eval suite with goldens · 📄 موصوف / documented only
 - **ماذا / what:** بناء حلقة تقييم pytest ثابتة بأمثلة ذهبية ومقاييس وتحسين متكرر من الإخفاقات. — Build a committed pytest eval loop with generated goldens, metrics and iterative failure fixing.
 - **متى أستخدمها / when:** Evaluating agents, RAG or chatbots; adding evals; regression-testing prompts.
 - **كيف / how:** 1) Inspect app and existing eval code. 2) Reuse or generate goldens (deepeval generate). 3) Keep metrics in metrics.py with thresholds. 4) Run deepeval test run, not raw pytest. 5) Inspect failing traces, patch prompt/tool/retrieval, rerun (default 5 rounds). Alternative: inspect-ai/lighteval for Hub models.
@@ -1796,25 +1405,24 @@
 - **الدليل / proof:** `https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/1207-deepeval/2856-deepeval` · `https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/1514-huggingface-skills/3932-huggingface-community-evals` · `https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/1075-forkmind/2384-forkmind`
 - **المصدر / source:** KOSIF Atlas mining 2026-10-20 (https://github.com/kosif199022-jpg/kosif-atlas): deepeval/deepeval (#2856); huggingface-skills/huggingface-community-evals (#3932); forkmind/forkmind (#2384) · theme ai-llm-engineering · 5 supporting skills · verifier read: skills/1207-deepeval/2856-deepeval, skills/1514-huggingface-skills/3932-huggingface-community-evals, skills/1075-forkmind/2384-forkmind
 
-#### ACODE-202 · رصد تطبيقات الذكاء التوليدي بـ OpenTelemetry · GenAI observability with OpenTelemetry · 📄 موصوف / documented only
+#### ACODE-162 · رصد تطبيقات الذكاء التوليدي بـ OpenTelemetry · GenAI observability with OpenTelemetry · 📄 موصوف / documented only
 - **ماذا / what:** تجهيز تطبيقات LLM بمسارات OTel لرصد الرموز والتكلفة والزمن وخطوات الوكيل. — Instrument LLM apps with OTel spans for tokens, cost, latency and agent steps.
 - **متى أستخدمها / when:** Debugging LLM latency/cost, tracing agents or RAG.
 - **كيف / how:** 1) Wrap each LLM/tool call in a span with GenAI semantic attributes (model, provider, input/output tokens). 2) Decide content-capture policy for prompts. 3) Export OTLP to backend. 4) Build queries for cost by prompt/model and cache. 5) Alert on errors and latency.
-- **يحتاج / needs:** [`network`](../requirements.md#req-network)
 - **الرخصة / license:** method paraphrased from Atlas skills under Apache-2.0/MIT; the skills keep their own licenses — see each folder's SOURCE.md
 - **الدليل / proof:** `https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/1512-honeycomb/3908-otel-genai-instrumentation` · `https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/1368-dynatrace/3126-dt-obs-genai` · `https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/1343-dominodatalab/3082-domino-genai-tracing`
 - **المصدر / source:** KOSIF Atlas mining 2026-10-20 (https://github.com/kosif199022-jpg/kosif-atlas): honeycomb/otel-genai-instrumentation (#3908); dynatrace/dt-obs-genai (#3126); dominodatalab/domino-genai-tracing (#3082) · theme ai-llm-engineering · 6 supporting skills · verifier read: skills/1512-honeycomb/3908-otel-genai-instrumentation, skills/1368-dynatrace/3126-dt-obs-genai, skills/1343-dominodatalab/3082-domino-genai-tracing
 
-#### ACODE-203 · خط RAG هجين مع إحالات · Hybrid-search RAG pipeline with citations · 📄 موصوف / documented only
+#### ACODE-163 · خط RAG هجين مع إحالات · Hybrid-search RAG pipeline with citations · 📄 موصوف / documented only
 - **ماذا / what:** تصميم خط RAG بتقطيع أب/ابن وبحث هجين وإعادة ترتيب وإجابات موثقة بالمصادر. — Design a RAG pipeline with parent/child chunking, hybrid dense+BM25 retrieval, rerank and cited answers.
 - **متى أستخدمها / when:** User wants document Q&A, knowledge-base search or retrieval as an agent tool.
 - **كيف / how:** 1) Clarify doc types, query types, latency, volume (pgvector vs Qdrant). 2) Separate ingest module: load, parent/child chunk with metadata, embed, upsert. 3) Collection with dense plus sparse; fuse with RRF. 4) Query: metadata filter, hybrid top-20, fetch parents, rerank to top-5. 5) Generate with numbered context, citations, answer-only-from-context. 6) Golden Q/A set before shipping.
-- **يحتاج / needs:** [`network`](../requirements.md#req-network)
+- **يحتاج / needs:** [`pip:chromadb`](../requirements.md#req-pip-chromadb)
 - **الرخصة / license:** method paraphrased from Atlas skills under MIT/Apache-2.0; the skills keep their own licenses — see each folder's SOURCE.md
 - **الدليل / proof:** `https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/2103-agent-dev-kit/7472-rag-pipeline` · `https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/895-brightdata-plugin/2049-rag-pipeline` · `https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/1841-cohere-pack/5390-cohere-core-workflow-a`
 - **المصدر / source:** KOSIF Atlas mining 2026-10-20 (https://github.com/kosif199022-jpg/kosif-atlas): agent-dev-kit/rag-pipeline (#7472); brightdata-plugin/rag-pipeline (#2049); cohere-pack/cohere-core-workflow-a (#5390) · theme ai-llm-engineering · 7 supporting skills · verifier read: skills/2103-agent-dev-kit/7472-rag-pipeline, skills/895-brightdata-plugin/2049-rag-pipeline, skills/1841-cohere-pack/5390-cohere-core-workflow-a
 
-#### ACODE-204 · تحصين LangChain 1.0 للإنتاج · LangChain 1.0 production hardening · 📄 موصوف / documented only
+#### ACODE-164 · تحصين LangChain 1.0 للإنتاج · LangChain 1.0 production hardening · 📄 موصوف / documented only
 - **ماذا / what:** تطبيق إعدادات إنتاجية على سلاسل LangChain: middleware وحدود معدل وصلاحيات وأمان ومراقبة. — Apply production defaults to LangChain chains: middleware, rate limits, RBAC, security, observability and prompt versioning.
 - **متى أستخدمها / when:** Taking a LangChain/LangGraph app to production or diagnosing incidents.
 - **كيف / how:** 1) Layered architecture. 2) Composable middleware for retries/guards. 3) Share rate limiter across workers. 4) Tenant isolation and role checks. 5) Defend against prompt injection. 6) LangSmith or OpenTelemetry traces. 7) Prompts versioned like code; deterministic local test loop with fake models.
@@ -1822,42 +1430,43 @@
 - **الدليل / proof:** — (لا دليل تشغيل بعد / no run proof yet)
 - **المصدر / source:** KOSIF Atlas mining 2026-10-20 (https://github.com/kosif199022-jpg/kosif-atlas):  · theme ai-llm-engineering · 10 supporting skills · verifier read: , ,
 
-#### ACODE-205 · حالة وتدفق وكلاء LangGraph · LangGraph 1.0 agent state and flow · 📄 موصوف / documented only
+#### ACODE-165 · حالة وتدفق وكلاء LangGraph · LangGraph 1.0 agent state and flow · 📄 موصوف / documented only
 - **ماذا / what:** بناء وكلاء LangGraph صحيحين بحالة typed ونقاط حفظ وintrrupt بشري وgraphs فرعية. — Build correct LangGraph agents with typed state, checkpointers, thread_id discipline, human interrupts and subgraphs.
 - **متى أستخدمها / when:** Adding chat memory, approval flows, streaming or subgraphs to a LangGraph agent.
 - **كيف / how:** 1) TypedDict state, JSON-safe values only (no datetime/Decimal). 2) Checkpointer by env: MemorySaver dev, SqliteSaver local, PostgresSaver/Async prod. 3) Always pass config configurable thread_id (UUID4 per conversation) or memory silently resets. 4) interrupt_before for approvals. 5) Pick stream_mode messages vs updates. 6) Migrate Postgres checkpoint schema explicitly on upgrade. 7) Use time-travel to debug. **أرقام / params:** thread_id strategy
 - **تثبيت / install:** `pip install langgraph langchain-core`
+- **يحتاج / needs:** [`python3`](../requirements.md#req-python3)
 - **الرخصة / license:** method paraphrased from Atlas skills under MIT; the skills keep their own licenses — see each folder's SOURCE.md
 - **الدليل / proof:** `https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/1875-langchain-py-pack/6109-langchain-langgraph-checkpointing`
 - **المصدر / source:** KOSIF Atlas mining 2026-10-20 (https://github.com/kosif199022-jpg/kosif-atlas): langchain-py-pack/langchain-langgraph-checkpointing (#6109) · theme ai-llm-engineering · 7 supporting skills · verifier read: skills/1875-langchain-py-pack/6109-langchain-langgraph-checkpointing, ,
 
-#### ACODE-206 · تخطيط ضبط نماذج اللغة SFT/DPO · LLM fine-tuning job planning (SFT/DPO/GRPO) · 📄 موصوف / documented only
+#### ACODE-166 · تخطيط ضبط نماذج اللغة SFT/DPO · LLM fine-tuning job planning (SFT/DPO/GRPO) · 📄 موصوف / documented only
 - **ماذا / what:** اختيار طريقة التدريب وتقدير التكلفة وتشغيل الضبط على وحدات GPU مُدارة. — Choose a training method, estimate cost and run fine-tuning on managed GPUs with monitoring.
 - **متى أستخدمها / when:** Fine-tuning a language/vision/embedding model.
 - **كيف / how:** 1) Pick method: SFT, DPO, GRPO or reward model; Unsloth for low VRAM. 2) Inspect dataset format first. 3) Estimate cost and GPU memory (hf-mem). 4) Submit job with PEP 723 script, include Trackio. 5) Push to Hub; optional GGUF for llama.cpp/Ollama.
-- **يحتاج / needs:** [`gpu`](../requirements.md#req-gpu) · [`python3`](../requirements.md#req-python3) · [`network`](../requirements.md#req-network)
+- **يحتاج / needs:** [`pip:llama-cpp`](../requirements.md#req-pip-llama-cpp)
 - **الرخصة / license:** method paraphrased from Atlas skills under Apache-2.0/MIT; the skills keep their own licenses — see each folder's SOURCE.md
 - **الدليل / proof:** `https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/1514-huggingface-skills/3935-huggingface-llm-trainer` · `https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/2511-azure/9722-finetuning` · `https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/1514-huggingface-skills/3945-train-sentence-transformers`
 - **المصدر / source:** KOSIF Atlas mining 2026-10-20 (https://github.com/kosif199022-jpg/kosif-atlas): huggingface-skills/huggingface-llm-trainer (#3935); azure/finetuning (#9722); huggingface-skills/train-sentence-transformers (#3945) · theme ai-llm-engineering · 6 supporting skills · verifier read: skills/1514-huggingface-skills/3935-huggingface-llm-trainer, skills/2511-azure/9722-finetuning, skills/1514-huggingface-skills/3945-train-sentence-transformers
 
-#### ACODE-207 · مراقبة LLM وتحليل الإخفاقات · LLM observability and failure triage · 📄 موصوف / documented only
+#### ACODE-167 · مراقبة LLM وتحليل الإخفاقات · LLM observability and failure triage · 📄 موصوف / documented only
 - **ماذا / what:** قياس تطبيقات LLM وفحص التتبعات والتكاليف والإخفاقات في Langfuse أو PostHog. — Instrument LLM apps and investigate traces, costs, clusters and failures in Langfuse or PostHog.
 - **متى أستخدمها / when:** Debugging production agent traces or setting up LLM analytics.
 - **كيف / how:** 1) Instrument SDK to emit traces. 2) Inspect traces by session, latency, exceptions. 3) Cluster usage to spot patterns. 4) Break cost by model/user/trace. 5) Review evaluations (code, LLM judge). 6) Turn recurring failures into datasets.
-- **يحتاج / needs:** [`network`](../requirements.md#req-network)
 - **الرخصة / license:** method paraphrased from Atlas skills under MIT; the skills keep their own licenses — see each folder's SOURCE.md
 - **الدليل / proof:** — (لا دليل تشغيل بعد / no run proof yet)
 - **المصدر / source:** KOSIF Atlas mining 2026-10-20 (https://github.com/kosif199022-jpg/kosif-atlas):  · theme ai-llm-engineering · 7 supporting skills · verifier read: , ,
 
-#### ACODE-208 · ترحيل مزود LLM إلى Bedrock · Migrate LLM provider SDK to Bedrock · 📄 موصوف / documented only
+#### ACODE-168 · ترحيل مزود LLM إلى Bedrock · Migrate LLM provider SDK to Bedrock · 📄 موصوف / documented only
 - **ماذا / what:** إعادة كتابة استدعاءات مزود إلى مزود آخر ومقارنة جودة المخرجات. — Rewrite OpenAI/Gemini/Anthropic SDK calls to a new provider and compare output quality.
 - **متى أستخدمها / when:** Switching LLM provider or consolidating on a cloud.
 - **كيف / how:** 1) Inventory call sites and features used. 2) Map models and params. 3) Rewrite via unified client. 4) Run a side-by-side eval on a prompt sample. 5) Roll out behind a flag.
+- **يحتاج / needs:** [`key:openai`](../requirements.md#req-key-openai)
 - **الرخصة / license:** method paraphrased from Atlas skills under Apache-2.0/MIT; the skills keep their own licenses — see each folder's SOURCE.md
 - **الدليل / proof:** `https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/367-aws-startup-advisor/1361-llm-to-bedrock` · `https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/1823-anthropic-pack/4995-anth-migration-deep-dive`
 - **المصدر / source:** KOSIF Atlas mining 2026-10-20 (https://github.com/kosif199022-jpg/kosif-atlas): aws-startup-advisor/llm-to-bedrock (#1361); anthropic-pack/anth-migration-deep-dive (#4995) · theme ai-llm-engineering · 4 supporting skills · verifier read: skills/367-aws-startup-advisor/1361-llm-to-bedrock, skills/1823-anthropic-pack/4995-anth-migration-deep-dive
 
-#### ACODE-209 · تفويض متعدد النماذج ورأي ثانٍ · Multi-model delegation and second opinion · 📄 موصوف / documented only
+#### ACODE-169 · تفويض متعدد النماذج ورأي ثانٍ · Multi-model delegation and second opinion · 📄 موصوف / documented only
 - **ماذا / what:** توجيه المهام إلى نماذج متعددة والحصول على رأي ثانٍ. — Route tasks to Claude, Codex, Gemini, Ollama or local workers and collect second opinions.
 - **متى أستخدمها / when:** Needing independent review or cheaper worker for a subtask.
 - **كيف / how:** 1) Choose worker by task. 2) Check CLI configured. 3) Send bounded prompt. 4) Compare and reconcile. 5) Match model tier to effort per lane.
@@ -1865,16 +1474,15 @@
 - **الدليل / proof:** — (لا دليل تشغيل بعد / no run proof yet)
 - **المصدر / source:** KOSIF Atlas mining 2026-10-20 (https://github.com/kosif199022-jpg/kosif-atlas):  · theme ai-llm-engineering · 6 supporting skills · verifier read: ,
 
-#### ACODE-210 · تدقيق ذاكرة الـprompt المؤقتة وإصلاحها · Prompt-cache hit-rate audit and fix · 📄 موصوف / documented only
+#### ACODE-170 · تدقيق ذاكرة الـprompt المؤقتة وإصلاحها · Prompt-cache hit-rate audit and fix · 📄 موصوف / documented only
 - **ماذا / what:** تشخيص انخفاض إصابة الكاش من حقول الاستخدام وإصلاح موضع نقاط التوقف. — Diagnose low prompt-cache hit rate from usage fields and fix breakpoint placement.
 - **متى أستخدمها / when:** Cache hit under 80%, cost spike, or designing a new endpoint.
 - **كيف / how:** 1) Read cache_creation_input_tokens and cache_read_input_tokens from usage; hit = read/(read+creation), target >=80%. 2) Diff two raw payloads: tools array mutating, breakpoint below volatile content. 3) Check per-model minimum block size, max 4 breakpoints, TTL (5min vs 1h at 2x creation). 4) Freeze tools/system in constants. 5) Warm-up call, then 10 identical-prefix calls; measure over 1h.
-- **يحتاج / needs:** [`pip:anthropic`](../requirements.md#req-pip-anthropic)
 - **الرخصة / license:** method paraphrased from Atlas skills under MIT/Apache-2.0; the skills keep their own licenses — see each folder's SOURCE.md
 - **الدليل / proof:** `https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/2254-claude-app-engineering/8585-prompt-caching-audit` · `https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/1823-anthropic-pack/4984-anth-cost-tuning` · `https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/2231-ai-rag-engineering/8475-budget-tokens`
 - **المصدر / source:** KOSIF Atlas mining 2026-10-20 (https://github.com/kosif199022-jpg/kosif-atlas): claude-app-engineering/prompt-caching-audit (#8585); anthropic-pack/anth-cost-tuning (#4984); ai-rag-engineering/budget-tokens (#8475) · theme ai-llm-engineering · 4 supporting skills · verifier read: skills/2254-claude-app-engineering/8585-prompt-caching-audit, skills/1823-anthropic-pack/4984-anth-cost-tuning, skills/2231-ai-rag-engineering/8475-budget-tokens
 
-#### ACODE-211 · دليل بناء وضبط خط RAG · RAG pipeline build and tuning guide · 📄 موصوف / documented only
+#### ACODE-171 · دليل بناء وضبط خط RAG · RAG pipeline build and tuning guide · 📄 موصوف / documented only
 - **ماذا / what:** بناء خط RAG إنتاجي بإعدادات افتراضية سليمة وترقية كل مرحلة عند ظهور فشل مقيس. — Build a production RAG pipeline from sane defaults and upgrade each stage only against measured failures.
 - **متى أستخدمها / when:** Building or choosing chunking, embeddings, vector DB, hybrid search or reranking for RAG.
 - **كيف / how:** 1) Start: recursive split ~512 tokens with 10-15% overlap. 2) Embed with a value model; keep metric matching training. 3) Vector DB with INT8 quantization. 4) Hybrid dense+sparse fused by RRF. 5) Evaluate with RAGAS from day one. 6) Upgrade by failure: keyword misses add BM25/SPLADE; ambiguous chunks add contextual retrieval; noise add cross-encoder rerank; multi-hop go agentic. **أرقام / params:** chunk size; embedding model; vector DB
@@ -1883,7 +1491,7 @@
 - **الدليل / proof:** `https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/rag-development`
 - **المصدر / source:** KOSIF Atlas mining 2026-10-20 (https://github.com/kosif199022-jpg/kosif-atlas): rag-development/rag-development (#62) · theme ai-llm-engineering · 6 supporting skills · verifier read: skills/rag-development, ,
 
-#### ACODE-212 · عقد مخرجات LLM منظمة موثوقة · Reliable structured LLM output contract · 📄 موصوف / documented only
+#### ACODE-172 · عقد مخرجات LLM منظمة موثوقة · Reliable structured LLM output contract · 📄 موصوف / documented only
 - **ماذا / what:** فرض مخرجات منظمة عبر schema أو استدعاء أداة مع تحقق وإصلاح محدود وفشل آمن. — Enforce parseable LLM output via schema mode or forced tool call plus parse, validate, bounded repair and fail-closed.
 - **متى أستخدمها / when:** Output format drifts or downstream code parses model text.
 - **كيف / how:** 1) Write schema plus refusal, unknown and error shapes. 2) Pick mechanism in order: native JSON schema, forced tool call, constrained grammar, prose+parser. 3) Parse, validate schema and business invariants. 4) Repair by re-prompting with exact error, bounded retries, then fail closed. 5) Fence untrusted input as data. **أرقام / params:** retry bound
@@ -1891,27 +1499,28 @@
 - **الدليل / proof:** `https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/2361-prompt-engineering/9117-structured-output-design`
 - **المصدر / source:** KOSIF Atlas mining 2026-10-20 (https://github.com/kosif199022-jpg/kosif-atlas): prompt-engineering/structured-output-design (#9117) · theme ai-llm-engineering · 3 supporting skills · verifier read: skills/2361-prompt-engineering/9117-structured-output-design,
 
-#### ACODE-213 · تتابع مزودي LLM عبر Router · Vendor failover waterfall via LiteLLM Router · 📄 موصوف / documented only
+#### ACODE-173 · تتابع مزودي LLM عبر Router · Vendor failover waterfall via LiteLLM Router · 📄 موصوف / documented only
 - **ماذا / what:** ضبط تتابع مزودين مرتب كبيانات باستخدام Router بدل سلاسل try/except. — Configure ordered multi-vendor failover as data using LiteLLM Router instead of hand-written try/except chains.
 - **متى أستخدمها / when:** 429s, dead keys or out-of-credit vendors take an agent down.
 - **كيف / how:** 1) Ordered vendor list: index 0 primary. 2) Map to model_list (primary, fb0..) plus fallbacks chain. 3) Router(num_retries=1, cooldown_time=60). 4) Tune allowed_fails, context_window_fallbacks, per-deployment budgets. 5) Do not waterfall non-idempotent calls. 6) Prove failover with a forced-failure test. **أرقام / params:** vendor order; cooldown
 - **تثبيت / install:** `pip install litellm`
+- **يحتاج / needs:** [`python3`](../requirements.md#req-python3)
 - **الرخصة / license:** method paraphrased from Atlas skills under MIT / Apache-2.0; the skills keep their own licenses — see each folder's SOURCE.md
 - **الدليل / proof:** `https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/3327-llm-vendor-waterfall/13841-llm-vendor-waterfall`
 - **المصدر / source:** KOSIF Atlas mining 2026-10-20 (https://github.com/kosif199022-jpg/kosif-atlas): llm-vendor-waterfall/llm-vendor-waterfall (#13841) · theme ai-llm-engineering · 5 supporting skills · verifier read: skills/3327-llm-vendor-waterfall/13841-llm-vendor-waterfall,
 
 ## القطاعات المنظّمة — Regulated industries & domain expertise
 
-#### ACODE-214 · بناء شجرة هجوم · Attack tree construction · 📄 موصوف / documented only
+#### ACODE-174 · بناء شجرة هجوم · Attack tree construction · 📄 موصوف / documented only
 - **ماذا / what:** بناء أشجار هجوم لتوضيح مسارات التهديد. — Build attack trees to map threat paths and defense gaps.
 - **متى أستخدمها / when:** Threat modeling or explaining risk to stakeholders.
 - **كيف / how:** 1) Set root goal. 2) Decompose AND/OR sub-goals. 3) Score likelihood and cost. 4) Mark mitigations. 5) Render with mermaid or graphviz. **أرقام / params:** goal
-- **يحتاج / needs:** [`graphviz`](../requirements.md#req-graphviz)
+- **يحتاج / needs:** [`graphviz`](../requirements.md#req-graphviz) · [`npm:mermaid`](../requirements.md#req-npm-mermaid)
 - **الرخصة / license:** method paraphrased from Atlas skills under MIT; the skills keep their own licenses — see each folder's SOURCE.md
 - **الدليل / proof:** `https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/3515-security-scanning/14283-attack-tree-construction`
 - **المصدر / source:** KOSIF Atlas mining 2026-10-20 (https://github.com/kosif199022-jpg/kosif-atlas): security-scanning/attack-tree-construction (#14283) · theme compliance-industry · 1 supporting skills · verifier read: skills/3515-security-scanning/14283-attack-tree-construction
 
-#### ACODE-215 · وثائق ما قبل الإطلاق للتطبيقات المولدة · Pre-ship documentation set for vibe-coded apps · 📄 موصوف / documented only
+#### ACODE-175 · وثائق ما قبل الإطلاق للتطبيقات المولدة · Pre-ship documentation set for vibe-coded apps · 📄 موصوف / documented only
 - **ماذا / what:** إنتاج وثائق المعمارية والصلاحيات والمتغيرات وخريطة الاختبارات. — Produce architecture, flows, permissions, variables and test-map docs, plus conditional emails/cron/SEO/automation docs.
 - **متى أستخدمها / when:** Reviewing or shipping an AI-built app.
 - **كيف / how:** 1) Write 5 core docs: architecture, flows, permissions, variables/secrets by risk, tests map. 2) Mark rules checked, proposed, or unchecked. 3) Add emails, cron, seo, automation only if capability exists. **أرقام / params:** repo
@@ -1919,14 +1528,372 @@
 - **الدليل / proof:** `https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/2876-pm-ai-shipping/11601-shipping-artifacts`
 - **المصدر / source:** KOSIF Atlas mining 2026-10-20 (https://github.com/kosif199022-jpg/kosif-atlas): pm-ai-shipping/shipping-artifacts (#11601) · theme compliance-industry · 1 supporting skills · verifier read: skills/2876-pm-ai-shipping/11601-shipping-artifacts
 
-#### ACODE-216 · تجهيز حزم الامتثال لأرقام Twilio · Twilio regulatory bundle provisioning · 📄 موصوف / documented only
+#### ACODE-176 · تجهيز حزم الامتثال لأرقام Twilio · Twilio regulatory bundle provisioning · 📄 موصوف / documented only
 - **ماذا / what:** استعلام اللوائح وإنشاء المستخدم والمستندات وتقييم الحزمة وتقديمها. — Query regulations, create end-user and documents, evaluate and submit a bundle for international numbers.
 - **متى أستخدمها / when:** Need an international Twilio number requiring regulatory approval.
 - **كيف / how:** 1) GET Regulations by IsoCountry, NumberType, EndUserType. 2) POST EndUser. 3) Upload Supporting Documents. 4) Assign items to Bundle. 5) Evaluate, fix failures, submit; update on regulation change. Credentials from env. **أرقام / params:** country, number type
-- **يحتاج / needs:** [`network`](../requirements.md#req-network) · [`python3`](../requirements.md#req-python3)
 - **الرخصة / license:** method paraphrased from Atlas skills under MIT/Apache-2.0; the skills keep their own licenses — see each folder's SOURCE.md
 - **الدليل / proof:** `https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/2721-twilio-developer-kit/10496-twilio-regulatory-compliance-bundles` · `https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/108-airwallex-dev/271-airwallex-kyc`
 - **المصدر / source:** KOSIF Atlas mining 2026-10-20 (https://github.com/kosif199022-jpg/kosif-atlas): twilio-developer-kit/twilio-regulatory-compliance-bundles (#10496); airwallex-dev/airwallex-kyc (#271) · theme compliance-industry · 2 supporting skills · verifier read: skills/2721-twilio-developer-kit/10496-twilio-regulatory-compliance-bundles, skills/108-airwallex-dev/271-airwallex-kyc
+
+## المخططات — Diagrams & visual documentation
+
+#### ACODE-177 · مخطط تسلسل موثق من نقطة دخول الكود · Cited sequence diagram from code entry point · 📄 موصوف / documented only
+- **ماذا / what:** تتبع نقطة دخول عبر مواقع الاستدعاء وإنتاج مخطط تسلسل موثق. — Trace one entry point through tracked call sites into a Mermaid sequence diagram with citations.
+- **متى أستخدمها / when:** User asks what happens when an endpoint or method runs.
+- **كيف / how:** 1. Collect with a script that emits flow.json (entry, --depth default 5). 2. Every hop must cite a file:line. 3. Leave interface, service-locator and reflection hops unresolved. 4. Treat Publish/Send as hand-off to events mapping. 5. Render sequenceDiagram only from emitted hops; on refusal stop. **أرقام / params:** entry point, depth
+- **يحتاج / needs:** [`npm:mermaid`](../requirements.md#req-npm-mermaid)
+- **الرخصة / license:** method paraphrased from Atlas skills under MIT; the skills keep their own licenses — see each folder's SOURCE.md
+- **الدليل / proof:** `https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/2415-architecture/9367-map-flow` · `https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/2690-build-web-data-visualization/10334-uml-and-software-architecture-visualizat`
+- **المصدر / source:** KOSIF Atlas mining 2026-10-20 (https://github.com/kosif199022-jpg/kosif-atlas): architecture/map-flow (#9367); build-web-data-visualization/uml-and-software-architecture-visualization (#10334) · theme diagrams-visual-docs · 3 supporting skills · verifier read: skills/2415-architecture/9367-map-flow, skills/2690-build-web-data-visualization/10334-uml-and-software-architecture-visualizat
+
+## الواجهات والتصميم — Front-end, UI & design systems
+
+#### ACODE-178 · البحث في مكتبة المكونات بسكربت مساعد · Component library lookup with helper script · 📄 موصوف / documented only
+- **ماذا / what:** البحث في حزمة نظام تصميم عن مكونات وخصائص وأمثلة. — Search a design-system package for components, props, examples and testkits through a bundled Node helper.
+- **متى أستخدمها / when:** Building UI with a vendor design system such as Wix WDS.
+- **كيف / how:** 1) Confirm package installed. 2) node wds.cjs search keywords. 3) component or components for props. 4) example for JSX. 5) testkit for test drivers. **أرقام / params:** component keywords
+- **يحتاج / needs:** [`node`](../requirements.md#req-node)
+- **الرخصة / license:** method paraphrased from Atlas skills under MIT; the skills keep their own licenses — see each folder's SOURCE.md
+- **الدليل / proof:** `https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/3419-wix/14004-wix-design-system`
+- **المصدر / source:** KOSIF Atlas mining 2026-10-20 (https://github.com/kosif199022-jpg/kosif-atlas): wix/wix-design-system (#14004) · theme frontend-ui-design · 4 supporting skills · verifier read: skills/3419-wix/14004-wix-design-system
+
+#### ACODE-179 · بوابة جودة التصميم في CI · Design-quality CI gate with SARIF · 📄 موصوف / documented only
+- **ماذا / what:** أضف فحصاً في طلبات الدمج يفشل عند تراجع الوصولية والرموز مقابل خط أساس. — Add a pull-request check that fails on new accessibility, token and responsive regressions against a baseline.
+- **متى أستخدمها / when:** Repo needs automated UI regression gating.
+- **كيف / how:** 1. Commit a reviewed policy and baseline of accepted debt. 2. Run the CI command locally producing SARIF plus a human report. 3. Add a GitHub Actions workflow on pull_request with contents:read and security-events:write. 4. Prove it passes on baseline and fails on a seeded regression. 5. Hand off threshold, suppressed count and artifact paths.
+- **الرخصة / license:** method paraphrased from Atlas skills under MIT; the skills keep their own licenses — see each folder's SOURCE.md
+- **الدليل / proof:** `https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/3029-memoire/12948-enforce-design-ci`
+- **المصدر / source:** KOSIF Atlas mining 2026-10-20 (https://github.com/kosif199022-jpg/kosif-atlas): memoire/enforce-design-ci (#12948) · theme frontend-ui-design · 2 supporting skills · verifier read: skills/3029-memoire/12948-enforce-design-ci
+
+#### ACODE-180 · بناء نظام رموز التصميم · Design token system scaffold · 📄 موصوف / documented only
+- **ماذا / what:** بناء رموز التصميم الأولية والدلالية من هوية العلامة إلى JSON ومتغيرات CSS وثيم الإطار. — Scaffold primitive and semantic tokens from a brand spec into JSON, CSS variables and a framework theme.
+- **متى أستخدمها / when:** New design system, Figma-code drift, dark-mode rollout, Tailwind/shadcn theming.
+- **كيف / how:** 1) Define primitives (gray/brand ramps) named by value. 2) Define semantic tokens (background/text/accent) referencing primitives. 3) Components use semantic tokens only. 4) Emit CSS variables; override semantics under dark mode. 5) Map into Tailwind/shadcn theme. 6) Name by role, not hue (primary, not blue). **أرقام / params:** brand colors, scales, framework
+- **يحتاج / needs:** [`npm:react`](../requirements.md#req-npm-react)
+- **الرخصة / license:** method paraphrased from Atlas skills under MIT; the skills keep their own licenses — see each folder's SOURCE.md
+- **الدليل / proof:** `https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/2406-web-design/9323-design-tokens-scaffolding` · `https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/2406-web-design/9322-design-system-audit`
+- **المصدر / source:** KOSIF Atlas mining 2026-10-20 (https://github.com/kosif199022-jpg/kosif-atlas): web-design/design-tokens-scaffolding (#9323); web-design/design-system-audit (#9322) · theme frontend-ui-design · 5 supporting skills · verifier read: skills/2406-web-design/9323-design-tokens-scaffolding, skills/2406-web-design/9322-design-system-audit
+
+#### ACODE-181 · فحص القيم الصلبة واستبدالها برموز · Hardcoded-style scan to design tokens · 📄 موصوف / documented only
+- **ماذا / what:** افحص الشيفرة عن ألوان ومسافات صلبة واقترح رموزاً بديلة. — Scan code for raw colors, spacing and legacy classes and propose token replacements.
+- **متى أستخدمها / when:** Auditing or migrating CSS to a design system.
+- **كيف / how:** 1. Grep for hex/rgb/hsl and px spacing, radius, shadow values. 2. Match each to the nearest token. 3. Scan legacy class prefixes and modifier classes for version migration. 4. Report usage counts and a replacement table. 5. Apply only reviewed changes.
+- **الرخصة / license:** method paraphrased from Atlas skills under MIT; the skills keep their own licenses — see each folder's SOURCE.md
+- **الدليل / proof:** `https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/2998-patternfly/12762-pf-color-scan` · `https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/2998-patternfly/12763-pf-css-token-check`
+- **المصدر / source:** KOSIF Atlas mining 2026-10-20 (https://github.com/kosif199022-jpg/kosif-atlas): patternfly/pf-color-scan (#12762); patternfly/pf-css-token-check (#12763) · theme frontend-ui-design · 5 supporting skills · verifier read: skills/2998-patternfly/12762-pf-color-scan, skills/2998-patternfly/12763-pf-css-token-check
+
+#### ACODE-182 · هيكلة مكون React مع shadcn وTailwind وStorybook · React component scaffold with shadcn, Tailwind, Storybook · 📄 موصوف / documented only
+- **ماذا / what:** إنشاء مجلد مكون بملفات منظمة وvariants وshadcn وقصص Storybook ضمن طبقة FSD. — Scaffold a component folder with kebab-case files, cva variants, shadcn composition and CSF3 stories in an FSD layer.
+- **متى أستخدمها / when:** Creating or refactoring React UI in a repo using shadcn/Tailwind.
+- **كيف / how:** 1) Pick FSD layer and slice with index.ts. 2) component.tsx plus styles.ts using cva() variants. 3) Pull primitives via shadcn CLI/registry, keep structure. 4) CSF3 story per shared/ui primitive. 5) Accessibility pass. **أرقام / params:** component name
+- **يحتاج / needs:** [`npm:react`](../requirements.md#req-npm-react)
+- **الرخصة / license:** method paraphrased from Atlas skills under MIT; the skills keep their own licenses — see each folder's SOURCE.md
+- **الدليل / proof:** `https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/7523` · `https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/7522` · `https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/10315`
+- **المصدر / source:** KOSIF Atlas mining 2026-10-20 (https://github.com/kosif199022-jpg/kosif-atlas): frontend-dev-kit/tailwind-styles (#7523); frontend-dev-kit/storybook (#7522); build-web-apps/shadcn (#10315) · theme frontend-ui-design · 9 supporting skills · verifier read: skills/7523, skills/7522, skills/10315
+
+#### ACODE-183 · إعداد shadcn وUnoCSS لتنسيق المكونات · shadcn and UnoCSS component styling setup · 📄 موصوف / documented only
+- **ماذا / what:** تهيئة shadcn/ui دون تفاعل وضبط CSS الذري بشكل متسق. — Initialize shadcn/ui non-interactively and configure atomic CSS (UnoCSS or Tailwind) consistently.
+- **متى أستخدمها / when:** Adding React UI components, theming, utility-CSS config.
+- **كيف / how:** 1) Inspect uno.config.* or components.json first. 2) Run npx shadcn@latest init -d (or --preset code -f), keep radix base. 3) Add components with the CLI; they are copied as source. 4) Use theme tokens and shortcuts in UnoCSS. 5) Avoid attributify if setup unclear.
+- **تثبيت / install:** `npx shadcn@latest init -d`
+- **يحتاج / needs:** [`npm:react`](../requirements.md#req-npm-react)
+- **الرخصة / license:** method paraphrased from Atlas skills under MIT; the skills keep their own licenses — see each folder's SOURCE.md
+- **الدليل / proof:** `https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/2722-vercel/10555-shadcn` · `https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/2945-unocss/12211-unocss`
+- **المصدر / source:** KOSIF Atlas mining 2026-10-20 (https://github.com/kosif199022-jpg/kosif-atlas): vercel/shadcn (#10555); unocss/unocss (#12211) · theme frontend-ui-design · 7 supporting skills · verifier read: skills/2722-vercel/10555-shadcn, skills/2945-unocss/12211-unocss
+
+#### ACODE-184 · قواعد تركيب shadcn وTailwind · shadcn/ui and Tailwind composition rules · 📄 موصوف / documented only
+- **ماذا / what:** طبّق سير shadcn وقواعد Tailwind: ألوان دلالية وgap وحقول منظمة. — Apply the shadcn CLI workflow and Tailwind rules: semantic colors, gap over space, FieldGroup forms.
+- **متى أستخدمها / when:** Adding or fixing shadcn components, Tailwind styling, Radix to Base UI migration.
+- **كيف / how:** 1. Run shadcn info --json for project context. 2. Search registries before custom UI; compose (Tabs+Card+form). 3. Use variants and semantic tokens (bg-primary), never raw colors or manual dark:. 4. flex gap-* not space-*; size-*; cn(); no manual z-index on overlays. 5. Forms: FieldGroup+Field, data-invalid plus aria-invalid.
+- **تثبيت / install:** `npx shadcn@latest info --json`
+- **يحتاج / needs:** [`npm:react`](../requirements.md#req-npm-react)
+- **الرخصة / license:** method paraphrased from Atlas skills under MIT / Apache-2.0; the skills keep their own licenses — see each folder's SOURCE.md
+- **الدليل / proof:** `https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/2935-shadcn-ui/12182-shadcn` · `https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/tailwind/3674-tailwind-best-practices`
+- **المصدر / source:** KOSIF Atlas mining 2026-10-20 (https://github.com/kosif199022-jpg/kosif-atlas): shadcn-ui/shadcn (#12182); tailwind/tailwind-best-practices (#3674) · theme frontend-ui-design · 7 supporting skills · verifier read: skills/2935-shadcn-ui/12182-shadcn, skills/tailwind/3674-tailwind-best-practices
+
+#### ACODE-185 · فاحص وصولية HTML مع بقايا يدوية · Stdlib HTML accessibility linter with manual residue · 📄 موصوف / documented only
+- **ماذا / what:** افحص HTML بقواعد WCAG القابلة للآلة واذكر دائماً ما يحتاج مراجعة بشرية. — Lint output HTML for machine-decidable WCAG rules and always list what needs human review.
+- **متى أستخدمها / when:** Gating generated HTML reports without a browser.
+- **كيف / how:** 1. Parse HTML with stdlib. 2. Blocking rules: img-alt, html-lang, link-name, button-name, control-label, table-headers. 3. Advisory: th-scope, heading-order. 4. FAIL only on blocking; PASS still emits non-empty manual_residue (floor is about 30-50% of WCAG). 5. Emit an exit-coded JSON sub-receipt.
+- **يحتاج / needs:** [`npm:axe`](../requirements.md#req-npm-axe)
+- **الرخصة / license:** method paraphrased from Atlas skills under MIT; the skills keep their own licenses — see each folder's SOURCE.md
+- **الدليل / proof:** `https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/2370-report-regeneration/9164-report-a11y-gate`
+- **المصدر / source:** KOSIF Atlas mining 2026-10-20 (https://github.com/kosif199022-jpg/kosif-atlas): report-regeneration/report-a11y-gate (#9164) · theme frontend-ui-design · 4 supporting skills · verifier read: skills/2370-report-regeneration/9164-report-a11y-gate
+
+#### ACODE-186 · مراجعة الوصولية وفق WCAG · WCAG four-principle accessibility review · 📄 موصوف / documented only
+- **ماذا / what:** مراجعة شاشة وفق مبادئ WCAG الأربعة مع إصلاحات محددة. — Review a screen against perceivable, operable, understandable and robust criteria with concrete fixes.
+- **متى أستخدمها / when:** Any user-facing screen, a11y audit, WCAG/Section 508/EAA question, fixing accessibility bugs.
+- **كيف / how:** 1) Perceivable: alt text, contrast 4.5:1, colour never sole signal, reflow/zoom. 2) Operable: full keyboard, visible focus, target size. 3) Understandable: labels, predictable behaviour, error recovery. 4) Robust: semantic HTML, ARIA only when needed. 5) Report findings by severity with a fix each; optionally confirm with axe/pa11y. **أرقام / params:** url or code
+- **يحتاج / needs:** [`npm:axe`](../requirements.md#req-npm-axe) · [`npm:pa11y`](../requirements.md#req-npm-pa11y)
+- **الرخصة / license:** method paraphrased from Atlas skills under MIT; the skills keep their own licenses — see each folder's SOURCE.md
+- **الدليل / proof:** `https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/1503-universal-design-principles/3841-accessibility` · `https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/1530-webcraft/4191-fix-web-accessibility`
+- **المصدر / source:** KOSIF Atlas mining 2026-10-20 (https://github.com/kosif199022-jpg/kosif-atlas): universal-design-principles/accessibility (#3841); webcraft/fix-web-accessibility (#4191) · theme frontend-ui-design · 8 supporting skills · verifier read: skills/1503-universal-design-principles/3841-accessibility, skills/1530-webcraft/4191-fix-web-accessibility
+
+## تطوير الألعاب — Game development
+
+#### ACODE-187 · بيفي: ECS وتدفق الحالات وخط الأصول · Bevy ECS, state flow and asset pipeline · 📄 موصوف / documented only
+- **ماذا / what:** تصميم ألعاب Bevy بنمط ECS وتدفق حالات وكتالوج أصول ومحتوى مبني على بيانات. — Design Bevy games with ECS queries, scheduling, AppState flow, typed asset catalogs and data-driven content.
+- **متى أستخدمها / when:** Writing or reviewing Rust/Bevy or Legion game code.
+- **كيف / how:** 1) Model components/resources and queries; use change detection. 2) AppState enum with OnEnter/OnExit and state-scoped cleanup. 3) Typed asset catalog, validate paths, loading state. 4) Move monsters/items/loot to Serde data files with validation. 5) Plan small playable slices with acceptance checks.
+- **الرخصة / license:** method paraphrased from Atlas skills under MIT; the skills keep their own licenses — see each folder's SOURCE.md
+- **الدليل / proof:** `https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/2137-bevy-plugin/7587-bevy-ecs-patterns` · `https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/2199-lvtd-skills/8152-rust-bevy-state-flow`
+- **المصدر / source:** KOSIF Atlas mining 2026-10-20 (https://github.com/kosif199022-jpg/kosif-atlas): bevy-plugin/bevy-ecs-patterns (#7587); lvtd-skills/rust-bevy-state-flow (#8152) · theme game-dev · 7 supporting skills · verifier read: skills/2137-bevy-plugin/7587-bevy-ecs-patterns, skills/2199-lvtd-skills/8152-rust-bevy-state-flow
+
+#### ACODE-188 · حزمة ألعاب المتصفح وPhaser · Browser game stack, Phaser and web foundations · 📄 موصوف / documented only
+- **ماذا / what:** اختيار المحرك ومعمارية ألعاب المتصفح وبناء ثنائي الأبعاد بـ Phaser. — Choose engine and architecture for browser games and implement 2D with Phaser, TypeScript and Vite.
+- **متى أستخدمها / when:** New browser game or stack choice.
+- **كيف / how:** 1) Route by 2D/3D. 2) Separate simulation from render; define input model. 3) Phaser scenes in TS with Vite. 4) Plan assets. 5) Playtest.
+- **يحتاج / needs:** [`npm:esbuild`](../requirements.md#req-npm-esbuild)
+- **الرخصة / license:** method paraphrased from Atlas skills under MIT/Apache-2.0; the skills keep their own licenses — see each folder's SOURCE.md
+- **الدليل / proof:** `https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/2696-game-studio/10366-phaser-2d-game` · `https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/2696-game-studio/10371-web-game-foundations`
+- **المصدر / source:** KOSIF Atlas mining 2026-10-20 (https://github.com/kosif199022-jpg/kosif-atlas): game-studio/phaser-2d-game (#10366); game-studio/web-game-foundations (#10371) · theme game-dev · 4 supporting skills · verifier read: skills/2696-game-studio/10366-phaser-2d-game, skills/2696-game-studio/10371-web-game-foundations
+
+#### ACODE-189 · فيزياء خطوة ثابتة وكشف تصادم · Fixed-step physics and collision broadphase · 📄 موصوف / documented only
+- **ماذا / what:** فصل المحاكاة الحتمية بخطوة ثابتة عن العرض مع تصادم AABB. — Separate deterministic fixed-step simulation from presentation and add AABB broadphase with swept checks.
+- **متى أستخدمها / when:** Frame-rate dependent movement or missed collisions at high speed.
+- **كيف / how:** 1) Sample input in update, apply movement in fixed step. 2) Store velocity/intent in components. 3) Sweep/predict before committing positions. 4) Spatial index with AABB, emit typed collision events. 5) Interpolate visuals. 6) Benchmark broadphase.
+- **الرخصة / license:** method paraphrased from Atlas skills under MIT; the skills keep their own licenses — see each folder's SOURCE.md
+- **الدليل / proof:** `https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/2199-lvtd-skills/8150-rust-bevy-fixed-step-physics` · `https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/2199-lvtd-skills/8149-rust-bevy-collision-broadphase`
+- **المصدر / source:** KOSIF Atlas mining 2026-10-20 (https://github.com/kosif199022-jpg/kosif-atlas): lvtd-skills/rust-bevy-fixed-step-physics (#8150); lvtd-skills/rust-bevy-collision-broadphase (#8149) · theme game-dev · 3 supporting skills · verifier read: skills/2199-lvtd-skills/8150-rust-bevy-fixed-step-physics, skills/2199-lvtd-skills/8149-rust-bevy-collision-broadphase
+
+#### ACODE-190 · اختيار تمثيل الهندسة وSDF وتحويل الشبكات · Geometry, SDF and mesh-voxel conversion choice · 📄 موصوف / documented only
+- **ماذا / what:** اختيار تمثيل هندسي والتحويل بين شبكات وSDF وفوكسل. — Choose geometric representations and plan conversions among meshes, SDFs, voxels and contours.
+- **متى أستخدمها / when:** Rendering, collision, procedural shapes or transform bugs.
+- **كيف / how:** 1) List needs: render, collision, edit. 2) Pick mesh, SDF, voxel or curve. 3) Plan conversion keeping gameplay fidelity. 4) Check coordinate spaces and matrices.
+- **الرخصة / license:** method paraphrased from Atlas skills under MIT; the skills keep their own licenses — see each folder's SOURCE.md
+- **الدليل / proof:** `https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/2199-lvtd-skills/8087-game-sdf-and-field-modeling`
+- **المصدر / source:** KOSIF Atlas mining 2026-10-20 (https://github.com/kosif199022-jpg/kosif-atlas): lvtd-skills/game-sdf-and-field-modeling (#8087) · theme game-dev · 4 supporting skills · verifier read: skills/2199-lvtd-skills/8087-game-sdf-and-field-modeling
+
+#### ACODE-191 · أنماط معمارية لـ GDScript في Godot 4 · Godot 4 GDScript architecture patterns · 📄 موصوف / documented only
+- **ماذا / what:** هيكلة لعبة Godot 4 بالإشارات والمشاهد والموارد وآلات الحالة. — Structure a Godot 4 game with signals, scenes, resources, state machines and typed exports.
+- **متى أستخدمها / when:** Building or reviewing a Godot 4 game or GDScript system.
+- **كيف / how:** 1) Split into scenes (tscn) and data resources (tres). 2) Use typed signals for events instead of node paths. 3) @export typed vars with groups/ranges. 4) State machine node per entity. 5) Move physics in _physics_process with move_and_slide. 6) Run headless --check-only before finishing. **أرقام / params:** engine version
+- **يحتاج / needs:** [`chromium`](../requirements.md#req-chromium)
+- **الرخصة / license:** method paraphrased from Atlas skills under MIT; the skills keep their own licenses — see each folder's SOURCE.md
+- **الدليل / proof:** `https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/3098-game-development/13268-godot-gdscript-patterns` · `https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/1526-gamegen/4176-godot-gameplay`
+- **المصدر / source:** KOSIF Atlas mining 2026-10-20 (https://github.com/kosif199022-jpg/kosif-atlas): game-development/godot-gdscript-patterns (#13268); gamegen/godot-gameplay (#4176) · theme game-dev · 4 supporting skills · verifier read: skills/3098-game-development/13268-godot-gdscript-patterns, skills/1526-gamegen/4176-godot-gameplay
+
+#### ACODE-192 · فحص محرر Godot الحي عبر سطر الأوامر · Godot live-editor inspection via CLI · 📄 موصوف / documented only
+- **ماذا / what:** فحص وتعديل محرر Godot يعمل فعلا مع إثبات النتائج بقراءة الحالة ولقطات الشاشة. — Inspect and mutate a running Godot editor/game through a CLI, proving results with state reads and screenshots.
+- **متى أستخدمها / when:** A request touching live scene, node, UI or gameplay state in Godot.
+- **كيف / how:** 1) status/instances to find the editor. 2) Read compact scene tree and selected props. 3) Use undoable node add/set and signal connect, not eval. 4) Run the scene and check error output. 5) Verify UI via ui tree, click and runtime screenshot. 6) Write QA scenarios with requirements per step. **أرقام / params:** editor pid
+- **الرخصة / license:** method paraphrased from Atlas skills under MIT; the skills keep their own licenses — see each folder's SOURCE.md
+- **الدليل / proof:** `https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/2669-hera-godot/10172-live-editor`
+- **المصدر / source:** KOSIF Atlas mining 2026-10-20 (https://github.com/kosif199022-jpg/kosif-atlas): hera-godot/live-editor (#10172) · theme game-dev · 1 supporting skills · verifier read: skills/2669-hera-godot/10172-live-editor
+
+#### ACODE-193 · حلقة قياس أداء اللعبة · Measured game performance loop · 📄 موصوف / documented only
+- **ماذا / what:** قياس الأداء ثم تغيير واحد كل مرة والإبقاء على التحسن المثبت فقط. — Baseline frame times on desktop and emulated phone, make one change per trial, keep only measured wins.
+- **متى أستخدمها / when:** Game stutters, heats phone or loads slowly.
+- **كيف / how:** 1) Baseline p50/p95 frame, busy, load. 2) Pick one goal metric. 3) One change then paired A/B runs. 4) Require beat noise and unchanged looks. 5) Revert otherwise. **أرقام / params:** goal metric
+- **الرخصة / license:** method paraphrased from Atlas skills under Apache-2.0/MIT; the skills keep their own licenses — see each folder's SOURCE.md
+- **الدليل / proof:** `https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/1511-homie/3895-perf` · `https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/2696-game-studio/10363-game-playtest`
+- **المصدر / source:** KOSIF Atlas mining 2026-10-20 (https://github.com/kosif199022-jpg/kosif-atlas): homie/perf (#3895); game-studio/game-playtest (#10363) · theme game-dev · 3 supporting skills · verifier read: skills/1511-homie/3895-perf, skills/2696-game-studio/10363-game-playtest
+
+#### ACODE-194 · وحدة DOTS وأتمتة محركات Unity وUnreal · Unity DOTS ECS and Unreal/Unity automation · 📄 موصوف / documented only
+- **ماذا / what:** تطبيق أنماط Unity DOTS وأتمتة المحررات والبناء الدفعي. — Apply Unity ECS/Jobs/Burst patterns and drive Unity/Unreal editors via batch builds, editor Python or MCP.
+- **متى أستخدمها / when:** Data-oriented Unity work or scripted Unity/Unreal builds and live-editor actions.
+- **كيف / how:** 1) Components as data, systems with Jobs and Burst. 2) Batch-mode builds, Addressables. 3) Unreal: editor Python, UAT packaging. 4) Live-editor MCP for scene queries and edits. 5) Verify via build logs. **أرقام / params:** engine
+- **يحتاج / needs:** [`python3`](../requirements.md#req-python3)
+- **الرخصة / license:** method paraphrased from Atlas skills under MIT; the skills keep their own licenses — see each folder's SOURCE.md
+- **الدليل / proof:** `https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/3098-game-development/13269-unity-ecs-patterns` · `https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/1372-unreal-engine-skills-for-claude-code/3185-unreal-mcp`
+- **المصدر / source:** KOSIF Atlas mining 2026-10-20 (https://github.com/kosif199022-jpg/kosif-atlas): game-development/unity-ecs-patterns (#13269); unreal-engine-skills-for-claude-code/unreal-mcp (#3185) · theme game-dev · 4 supporting skills · verifier read: skills/3098-game-development/13269-unity-ecs-patterns, skills/1372-unreal-engine-skills-for-claude-code/3185-unreal-mcp
+
+## سير عمل تطوير عام — General development workflow
+
+#### ACODE-195 · تصنيف نتائج regex قبل الاستبدال الجماعي · Classify regex matches before bulk sweep · 📄 موصوف / documented only
+- **ماذا / what:** يصنف كل مطابقة قبل الاستبدال الجماعي لتجنب إفساد الملفات المصممة والسجلات التاريخية. — Bucket every match of a bulk find-replace into stale target, false positive, out-of-scope design, or immutable record before editing.
+- **متى أستخدمها / when:** Renaming commands, tools, paths or syntax across many files, especially docs mixing live text with ADRs/changelogs.
+- **كيف / how:** 1) Decide target: code goes to ast-grep structural rewrite, prose goes to regex. 2) Enumerate all matches with rg and read the surrounding line. 3) Bucket into: transform / leave false positive / leave designed filename (delimiter also in file names) / supersede-note historical record. 4) Apply scoped transform only to bucket 1. 5) Verify with allowlist-aware grep that leftovers are only buckets 2-4.
+- **الرخصة / license:** method paraphrased from Atlas skills under MIT; the skills keep their own licenses — see each folder's SOURCE.md
+- **الدليل / proof:** `https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/2140-code-quality-plugin/7627-bulk-sweep-classify`
+- **المصدر / source:** KOSIF Atlas mining 2026-10-20 (https://github.com/kosif199022-jpg/kosif-atlas): code-quality-plugin/bulk-sweep-classify (#7627) · theme general-dev-workflow · 1 supporting skills · verifier read: skills/2140-code-quality-plugin/7627-bulk-sweep-classify
+
+#### ACODE-196 · فحص الكود الميت وتنظيف الاستيراد · Dead code and import cleanup scan · 📄 موصوف / documented only
+- **ماذا / what:** يكتشف الكود غير المستخدم ويحذفه. — Find unused functions, imports and variables, then remove them.
+- **متى أستخدمها / when:** Cleanup before release or refactor; long functions to split.
+- **كيف / how:** 1) Grep definitions and usage counts. 2) Flag zero-reference symbols and unused imports. 3) Check dynamic/export use before removing. 4) Edit and rerun build/tests. Skills are thin stubs; also function splitting for overly long functions.
+- **الرخصة / license:** method paraphrased from Atlas skills under MIT; the skills keep their own licenses — see each folder's SOURCE.md
+- **الدليل / proof:** `https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/510-dead-code/1539-dead-code-scan`
+- **المصدر / source:** KOSIF Atlas mining 2026-10-20 (https://github.com/kosif199022-jpg/kosif-atlas): dead-code/dead-code-scan (#1539) · theme general-dev-workflow · 3 supporting skills · verifier read: skills/510-dead-code/1539-dead-code-scan
+
+#### ACODE-197 · إضافة رمز تشخيص منظم لمكتبة JS · Diagnostic code catalog entry · 📄 موصوف / documented only
+- **ماذا / what:** يضيف رمز خطأ منظم بقواعد ثابتة للترقيم والرسالة. — Add a PREFIX_XNNNN diagnostic with why/fix/docs via defineDiagnostics conventions.
+- **متى أستخدمها / when:** Adding an error code to a JS/TS library using nostics.
+- **كيف / how:** 1) Grep defineDiagnostics to find the codes object. 2) Code = PREFIX_XNNNN, X area B/R/C/D, next free number; never reuse. 3) Add why (required, string or typed fn), optional fix and docs. 4) Pass cause/sources only at call site. 5) Report with diagnostics.CODE(params) or throw it.
+- **الرخصة / license:** method paraphrased from Atlas skills under MIT; the skills keep their own licenses — see each folder's SOURCE.md
+- **الدليل / proof:** `https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/2916-nostics/12103-add-diagnostic`
+- **المصدر / source:** KOSIF Atlas mining 2026-10-20 (https://github.com/kosif199022-jpg/kosif-atlas): nostics/add-diagnostic (#12103) · theme general-dev-workflow · 3 supporting skills · verifier read: skills/2916-nostics/12103-add-diagnostic
+
+#### ACODE-198 · إدارة مهام todo.md عبر سكربتات · Markdown todo file task scripts · 📄 موصوف / documented only
+- **ماذا / what:** يدير قائمة المهام في ملف markdown عبر سكربتات مع سبب الحظر. — Manage .llm/todo.md through get/add/mark/archive scripts with blocked markers carrying failure reasons.
+- **متى أستخدمها / when:** Working through a task list, adding or recovering blocked tasks across sessions.
+- **كيف / how:** 1) task_get.py prints the first [ ] task with indented context. 2) task_add.py appends a task; chain calls with && for batches. 3) task_mark.py flips [ ] to [x], or --marker='!' with required --reason quoting the concrete failure. 4) task_archive.py moves the list to dated file and carries [!] tasks forward. 5) Unblock recovers [!] tasks from archives. Never read the file directly.
+- **يحتاج / needs:** [`python3`](../requirements.md#req-python3)
+- **الرخصة / license:** method paraphrased from Atlas skills under Apache-2.0; the skills keep their own licenses — see each folder's SOURCE.md
+- **الدليل / proof:** `https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/2554-markdown-tasks/9920-tasks`
+- **المصدر / source:** KOSIF Atlas mining 2026-10-20 (https://github.com/kosif199022-jpg/kosif-atlas): markdown-tasks/tasks (#9920) · theme general-dev-workflow · 3 supporting skills · verifier read: skills/2554-markdown-tasks/9920-tasks,
+
+#### ACODE-199 · مزامنة متتبع الميزات مع TODO · Sync feature tracker with TODO · 📄 موصوف / documented only
+- **ماذا / what:** يزامن ملف تتبع الميزات مع TODO.md ويسحب أوامر العمل المنجزة. — Reconcile a feature-tracker JSON with TODO.md checkboxes and drain completed work orders from a sidecar.
+- **متى أستخدمها / when:** Reconciling TODO vs tracker, recalculating completion stats, draining completed WOs.
+- **كيف / how:** 1) Pick mode: --summary (read-only jq markdown report), --drain-wave WO-A,WO-B (move tasks.pending to completed with evidence), else full sync. 2) Detect taskwarrior sidecar. 3) Flip FRs whose implementing_wos are all closed. 4) Recompute stats. 5) Confirm before writes; quiet mode skips only navigation menus.
+- **الرخصة / license:** method paraphrased from Atlas skills under MIT; the skills keep their own licenses — see each folder's SOURCE.md
+- **الدليل / proof:** `https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/2139-blueprint-plugin/7606-blueprint-feature-tracker-sync`
+- **المصدر / source:** KOSIF Atlas mining 2026-10-20 (https://github.com/kosif199022-jpg/kosif-atlas): blueprint-plugin/blueprint-feature-tracker-sync (#7606) · theme general-dev-workflow · 1 supporting skills · verifier read: skills/2139-blueprint-plugin/7606-blueprint-feature-tracker-sync
+
+## Git والإصدار — Git, pull requests & releases
+
+#### ACODE-200 · تقسيم التغييرات إلى commits ذرية · Atomic commit splitting by purpose · 📄 موصوف / documented only
+- **ماذا / what:** تجميع التغييرات حسب الغرض وإنشاء commits منطقية متعددة أو دمج الإصلاحات في commits سابقة. — Group a dirty working tree by purpose and create several logical commits, or fold fixes into earlier commits.
+- **متى أستخدمها / when:** Large uncommitted diff, review feedback touching older commits, messy history.
+- **كيف / how:** 1) git diff --stat and group hunks by purpose. 2) git add -p or per-file staging, commit each group. 3) For review fixes: stage changes, git absorb --base main (only own commits, default last 10) then git rebase -i --autosquash. 4) Verify git absorb --version first; do not auto-install. 5) Reword messages in bulk if needed. **أرقام / params:** base=main
+- **يحتاج / needs:** [`git`](../requirements.md#req-git)
+- **الرخصة / license:** method paraphrased from Atlas skills under MIT; the skills keep their own licenses — see each folder's SOURCE.md
+- **الدليل / proof:** `https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/1232-git-absorb/2912-git-absorb` · `https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/2546-git/9890-commit-chunks` · `https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/atomic-commits/13493-atomic-commits`
+- **المصدر / source:** KOSIF Atlas mining 2026-10-20 (https://github.com/kosif199022-jpg/kosif-atlas): git-absorb/git-absorb (#2912); git/commit-chunks (#9890); atomic-commits/atomic-commits (#13493) · theme git-release · 6 supporting skills · verifier read: skills/1232-git-absorb/2912-git-absorb, skills/2546-git/9890-commit-chunks, skills/atomic-commits/13493-atomic-commits
+
+#### ACODE-201 · مراقبة PR حتى يصبح جاهزا للدمج · Babysit PR until green and mergeable · 📄 موصوف / documented only
+- **ماذا / what:** متابعة فحوص PR وتعليقاته وإصلاح الفشل والدمج فقط عند تحقق الجاهزية. — Poll PR checks and review threads, fix failures, and merge only when a gate proves readiness.
+- **متى أستخدمها / when:** Watch PR, monitor CI, wait for green then merge.
+- **كيف / how:** 1) gh pr checks and review threads. 2) Safe tier: fix branch-owned issues, never resolve threads or merge. 3) Verify each finding before acting. 4) Worker tier: merge only if gate script passes. 5) Race guard: confirm PR not already merged before force-push. 6) Loop on interval. **أرقام / params:** tier, scope, interval
+- **يحتاج / needs:** [`gh`](../requirements.md#req-gh)
+- **الرخصة / license:** method paraphrased from Atlas skills under MIT/Apache; the skills keep their own licenses — see each folder's SOURCE.md
+- **الدليل / proof:** `https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/2476-source-control/9610-babysit-prs` · `https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/?/2240-monitor-pr` · `https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/?/13857`
+- **المصدر / source:** KOSIF Atlas mining 2026-10-20 (https://github.com/kosif199022-jpg/kosif-atlas): source-control/babysit-prs (#9610); monitor-pr/monitor-pr (#2240); pr-amend-force-push-lost-to-racing-merge/pr-amend (#13857) · theme git-release · 10 supporting skills · verifier read: skills/2476-source-control/9610-babysit-prs, skills/?/2240-monitor-pr, skills/?/13857
+
+#### ACODE-202 · سجل تغييرات من الكوميتات · Changelog from commits, Keep a Changelog · 📄 موصوف / documented only
+- **ماذا / what:** توليد أو تحديث سجل التغييرات من تاريخ الكوميتات بأقسام Keep a Changelog. — Generate or update CHANGELOG.md entries from commit history in Keep a Changelog sections.
+- **متى أستخدمها / when:** Preparing release notes or changelog for a tag range.
+- **كيف / how:** 1) git log lastTag..HEAD --pretty and group by Conventional type. 2) Map feat to Added, fix to Fixed, deprecations, Removed, Security. 3) Rewrite as user-facing one-liners, drop chore noise. 4) Insert under Unreleased, dated heading at release. 5) Update compare links at bottom. **أرقام / params:** range
+- **يحتاج / needs:** [`git`](../requirements.md#req-git)
+- **الرخصة / license:** method paraphrased from Atlas skills under MIT; the skills keep their own licenses — see each folder's SOURCE.md
+- **الدليل / proof:** `https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/boss/3154-changelog-generation` · `https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/development-skills/12684-changelog` · `https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/documentation-gene/13256-changelog-automation`
+- **المصدر / source:** KOSIF Atlas mining 2026-10-20 (https://github.com/kosif199022-jpg/kosif-atlas): boss/devops/changelog-generation (#3154); development-skills/changelog (#12684); documentation-generator/changelog-automation (#13256) · theme git-release · 7 supporting skills · verifier read: skills/boss/3154-changelog-generation, skills/development-skills/12684-changelog, skills/documentation-gene/13256-changelog-automation
+
+#### ACODE-203 · رسالة commit بصيغة Conventional من التغييرات · Conventional commit from staged diff · 📄 موصوف / documented only
+- **ماذا / what:** توليد رسالة commit بصيغة Conventional Commits من الفروقات المجهزة مع تجهيز ملفات محددة فقط. — Derive a Conventional Commits 1.0 message (type, scope, body) from the staged diff after staging specific files only.
+- **متى أستخدمها / when:** User asks to commit, write a commit message, or enforce commit style.
+- **كيف / how:** 1) git status --short and git diff --cached --name-only; unstage .env*, keys, binaries, build artifacts. 2) Never git add . or -A; stage named files via NUL-delimited array. 3) Read git diff --cached, infer type(scope) and imperative subject. 4) Put why in body; mention BREAKING CHANGE footer. 5) Show message for review, then commit; no AI attribution if repo forbids. **أرقام / params:** target=staged|all; style=single-line|body
+- **يحتاج / needs:** [`git`](../requirements.md#req-git)
+- **الرخصة / license:** method paraphrased from Atlas skills under MIT; the skills keep their own licenses — see each folder's SOURCE.md
+- **الدليل / proof:** `https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/conventional-commits` · `https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/commit/10026-commit` · `https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/epic/3192-commit`
+- **المصدر / source:** KOSIF Atlas mining 2026-10-20 (https://github.com/kosif199022-jpg/kosif-atlas): conventional-commits/conventional-commits (#2904); commit/commit (#10026); epic/commit (#3192); go-workflow/commit (#3655) … · theme git-release · 15 supporting skills · verifier read: skills/conventional-commits, skills/commit/10026-commit, skills/epic/3192-commit
+
+#### ACODE-204 · خطافات تمنع أوامر git الخطرة · Dangerous git command guardrail hooks · 📄 موصوف / documented only
+- **ماذا / what:** تثبيت خطافات تمنع أوامر git المدمرة. — Install Claude Code hooks blocking push, reset --hard, clean, branch -D.
+- **متى أستخدمها / when:** Protect repo from destructive agent commands.
+- **كيف / how:** 1) Add PreToolUse Bash hook script. 2) Match patterns push, reset --hard, clean -f, branch -D. 3) Exit nonzero with message. 4) Test hook without disabling it.
+- **الرخصة / license:** method paraphrased from Atlas skills under MIT; the skills keep their own licenses — see each folder's SOURCE.md
+- **الدليل / proof:** `https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/?/8435` · `https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/?/13884`
+- **المصدر / source:** KOSIF Atlas mining 2026-10-20 (https://github.com/kosif199022-jpg/kosif-atlas): mattpocock-skills/git-guardrails-claude-code (#8435); test-a-commit-blocking-hook/test (#13884) · theme git-release · 4 supporting skills · verifier read: skills/?/8435, skills/?/13884
+
+#### ACODE-205 · محاكاة تعارضات قائمة الدمج · Merge queue conflict simulation · 📄 موصوف / documented only
+- **ماذا / what:** التنبؤ بالتعارضات بين فروع قائمة الدمج دون لمس المراجع أو شجرة العمل. — Predict which branches in a merge queue conflict without touching refs, index or worktree.
+- **متى أستخدمها / when:** Several PRs edit the same registry/changelog; choosing merge order.
+- **كيف / how:** 1) Start from base commit. 2) git merge-tree --write-tree base_c branch writes merged tree and prints OID (plain two-branch merge-tree is wrong for queues). 3) Wrap with git commit-tree -p base_c -p branch to chain, no refs. 4) Nonzero exit means conflict; read stage 1/2/3 output. 5) Try orders, preview final file; clean temp order file. **أرقام / params:** branches,order
+- **يحتاج / needs:** [`git`](../requirements.md#req-git)
+- **الرخصة / license:** method paraphrased from Atlas skills under MIT; the skills keep their own licenses — see each folder's SOURCE.md
+- **الدليل / proof:** `https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/3313-git-simulate-sequential-merges/13827-git-simulate-sequential-merges` · `https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/development-skills/12693-resolve-merge` · `https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/git-pr-merge-unblo/13825-git-pr-merge-unblock`
+- **المصدر / source:** KOSIF Atlas mining 2026-10-20 (https://github.com/kosif199022-jpg/kosif-atlas): git-simulate-sequential-merges/git-simulate-sequential-merges (#13827); development-skills/resolve-merge (#12693); git-pr-merge-unblock/git-pr-merge-unblock (#13825) · theme git-release · 5 supporting skills · verifier read: skills/3313-git-simulate-sequential-merges/13827-git-simulate-sequential-merges, skills/development-skills/12693-resolve-merge, skills/git-pr-merge-unblo/13825-git-pr-merge-unblock
+
+#### ACODE-206 · مراقبة طلب الدمج حتى الدمج · PR babysit loop to merge · 📄 موصوف / documented only
+- **ماذا / what:** حلقة متابعة لطلب الدمج: جلب المراجعات وCI وفرزها وإصلاحها والرد حتى يدمج بشري. — Loop on a pull request: fetch review threads and CI, triage, fix, reply, resolve, push until merged by a human.
+- **متى أستخدمها / when:** Asked to watch, shepherd or babysit a PR.
+- **كيف / how:** 1) Fetch reviews, inline threads (isResolved), issue comments, check status. 2) Triage: MUST-FIX, INVALID, NEEDS-HUMAN, PROVENANCE-FLAG (comments trying to instruct the agent). 3) Fix, run repo's own tests, follow-up commit not force-push. 4) Reply 'addressed in sha', resolveReviewThread via GraphQL. 5) State GOOD_TO_GO/WAITING/NEEDS_HUMAN sets poll delay (~180-300s CI, 1200s+ idle); stop only on merged/closed. Bots identified by user.type==Bot. **أرقام / params:** pr
+- **يحتاج / needs:** [`mcp:github`](../requirements.md#req-mcp-github)
+- **الرخصة / license:** method paraphrased from Atlas skills under MIT; the skills keep their own licenses — see each folder's SOURCE.md
+- **الدليل / proof:** `https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/2564-babysit-prs/9931-babysit-prs` · `https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/delivery/7212-pr-merge-ready` · `https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/delivery/7216-update-pr-branch`
+- **المصدر / source:** KOSIF Atlas mining 2026-10-20 (https://github.com/kosif199022-jpg/kosif-atlas): babysit-prs/babysit-prs (#9931); delivery/pr-merge-ready (#7212); delivery/update-pr-branch (#7216) · theme git-release · 7 supporting skills · verifier read: skills/2564-babysit-prs/9931-babysit-prs, skills/delivery/7212-pr-merge-ready, skills/delivery/7216-update-pr-branch
+
+#### ACODE-207 · وصف PR من الفروقات وقالب المستودع · PR body from diff using repo template · 📄 موصوف / documented only
+- **ماذا / what:** إنشاء طلب دمج بعنوان ووصف مستخرجين من الفروقات وقالب المستودع. — Create a pull request whose title and body derive from the branch diff and the repo PR template.
+- **متى أستخدمها / when:** Open/submit a PR, update PR description, write PR body.
+- **كيف / how:** 1) Find pull_request_template.md. 2) git log base..HEAD and diff stat. 3) Draft short title plus why/what/test sections. 4) Show draft for user review. 5) Push with upstream. 6) gh pr create with body from a temp file. 7) Re-run to update description later. **أرقام / params:** base branch, draft flag
+- **يحتاج / needs:** [`git`](../requirements.md#req-git) · [`gh`](../requirements.md#req-gh) · [`mcp:github`](../requirements.md#req-mcp-github)
+- **الرخصة / license:** method paraphrased from Atlas skills under MIT/Apache; the skills keep their own licenses — see each folder's SOURCE.md
+- **الدليل / proof:** `https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/?/3657-create-pr` · `https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/?/9946-pr-craft` · `https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/?/10061-pr-style`
+- **المصدر / source:** KOSIF Atlas mining 2026-10-20 (https://github.com/kosif199022-jpg/kosif-atlas): go-workflow/create-pr (#3657); pr-craft/pr-craft (#9946); pr/pr-style (#10061) · theme git-release · 10 supporting skills · verifier read: skills/?/3657-create-pr, skills/?/9946-pr-craft, skills/?/10061-pr-style
+
+#### ACODE-208 · فتح طلب دمج بوصف واضح · PR creation with reviewer-friendly body · 📄 موصوف / documented only
+- **ماذا / what:** إنشاء commit ودفع وفتح طلب دمج بوصف يتبع القالب وتحديثه. — Commit, push and open a PR with a template-aware description and summary kept updated.
+- **متى أستخدمها / when:** Ship it, open PR, update PR summary.
+- **كيف / how:** 1) Find pull_request_template.md; fill sections. 2) Check branch not default; push -u. 3) gh pr create with title in commit style, body via tmpfile; draft by default. 4) Summary: what, why, test evidence, risks. 5) Later gh pr edit to refresh summary from commits. **أرقام / params:** draft=true
+- **يحتاج / needs:** [`gh`](../requirements.md#req-gh)
+- **الرخصة / license:** method paraphrased from Atlas skills under MIT; the skills keep their own licenses — see each folder's SOURCE.md
+- **الدليل / proof:** `https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/compound-engineeri/3283-ce-commit-push-pr` · `https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/1450-chronicle/3542-pr` · `https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/github-dev/3387-update-pr-summary`
+- **المصدر / source:** KOSIF Atlas mining 2026-10-20 (https://github.com/kosif199022-jpg/kosif-atlas): compound-engineering/ce-commit-push-pr (#3283); chronicle/pr (#3542); github-dev/update-pr-summary (#3387) · theme git-release · 7 supporting skills · verifier read: skills/compound-engineeri/3283-ce-commit-push-pr, skills/1450-chronicle/3542-pr, skills/github-dev/3387-update-pr-summary
+
+#### ACODE-209 · إزالة أسرار دُفعت من السجل المستضاف · Purge pushed secrets from hosted history · 📄 موصوف / documented only
+- **ماذا / what:** بعد force-push يجب التحقق من بقاء الكوميتات القديمة وإعادة إنشاء المستودع. — After force-push, verify old commits remain served and recreate repo to truly unpublish.
+- **متى أستخدمها / when:** Sensitive data pushed then rewritten; going public.
+- **كيف / how:** 1) Proof: gh api repos/O/R/commits/<old-sha> and contents?ref=<sha>; a size means still served. 2) Local git log/fsck prove nothing. 3) Best: delete repo (needs delete_repo scope via gh auth refresh) and recreate. 4) Else rename old repo, create fresh one for new repo id. 5) Rotate leaked secrets regardless.
+- **يحتاج / needs:** [`git`](../requirements.md#req-git) · [`gh`](../requirements.md#req-gh)
+- **الرخصة / license:** method paraphrased from Atlas skills under MIT; the skills keep their own licenses — see each folder's SOURCE.md
+- **الدليل / proof:** `https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/3312-git-rewrite-does-not-unpublish-orphaned/13826-git-rewrite-does-not-unpublish-orphaned` · `https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/gist-to-repo-migra/13822-gist-to-repo-migration`
+- **المصدر / source:** KOSIF Atlas mining 2026-10-20 (https://github.com/kosif199022-jpg/kosif-atlas): git-rewrite-does-not-unpublish-orphaned/git-rewrite-does-not-unpublish-orphaned-commits (#13826); gist-to-repo-migration/gist-to-repo-migration (#13822) · theme git-release · 3 supporting skills · verifier read: skills/3312-git-rewrite-does-not-unpublish-orphaned/13826-git-rewrite-does-not-unpublish-orphaned, skills/gist-to-repo-migra/13822-gist-to-repo-migration
+
+#### ACODE-210 · إصدار نسخة مع سجل التغييرات والوسم · Release cut with changelog and tag · 📄 موصوف / documented only
+- **ماذا / what:** إصدار نسخة: تحديد رقم semver وتحديث الملفات والسجل ثم الوسم والنشر. — Cut a release: choose semver bump, update version files and CHANGELOG, tag and publish a GitHub release.
+- **متى أستخدمها / when:** User says cut/ship a release or bump version.
+- **كيف / how:** 1) Preconditions: clean tree, default branch up to date, Unreleased non-empty, last tag matches version file. 2) Bump: breaking/Removed major, feature minor, fix patch (pre-1.0 shifts down). 3) git switch -c chore/release-X.Y.Z; change every version copy, regenerate lockfile with project tool. 4) Rename Unreleased to [X.Y.Z] - date, add fresh Unreleased, fix compare links. 5) Commit chore(release), PR, squash merge, tag, gh release. Defer to release-please/changesets PR if present; never merge with --admin; ask before push. **أرقام / params:** version?
+- **الرخصة / license:** method paraphrased from Atlas skills under MIT; the skills keep their own licenses — see each folder's SOURCE.md
+- **الدليل / proof:** `https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/3167-cut-release/13496-cut-release` · `https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/1450-chronicle/3543-release` · `https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/container-plugin/7717-deploy-release`
+- **المصدر / source:** KOSIF Atlas mining 2026-10-20 (https://github.com/kosif199022-jpg/kosif-atlas): cut-release/cut-release (#13496); chronicle/release (#3543); container-plugin/deploy-release (#7717) · theme git-release · 7 supporting skills · verifier read: skills/3167-cut-release/13496-cut-release, skills/1450-chronicle/3543-release, skills/container-plugin/7717-deploy-release
+
+#### ACODE-211 · حل تعارضات الدمج وإعادة التأسيس · Resolve rebase and merge conflicts · 📄 موصوف / documented only
+- **ماذا / what:** دمج أو إعادة تأسيس الفرع وحل التعارضات بفهم نية الطرفين والدفع بأمان. — Merge or rebase onto base, resolve conflicts per commit using both sides' intent, and push safely.
+- **متى أستخدمها / when:** Merge main, rebase onto main, conflict in progress.
+- **كيف / how:** 1) git fetch. 2) Merge/rebase base. 3) For each conflict read git log of both sides, keep intent. 4) Build/test. 5) git push --force-with-lease only for rebase. 6) Never blind-force. **أرقام / params:** base branch
+- **يحتاج / needs:** [`git`](../requirements.md#req-git)
+- **الرخصة / license:** method paraphrased from Atlas skills under MIT; the skills keep their own licenses — see each folder's SOURCE.md
+- **الدليل / proof:** `https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/?/9614` · `https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/?/2246` · `https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/?/8418`
+- **المصدر / source:** KOSIF Atlas mining 2026-10-20 (https://github.com/kosif199022-jpg/kosif-atlas): source-control/resolve-conflicts (#9614); rebase-onto-main/rebase-onto-main (#2246); mattpocock-skills/resolving-merge-conflicts (#8418) · theme git-release · 6 supporting skills · verifier read: skills/?/9614, skills/?/2246, skills/?/8418
+
+#### ACODE-212 · تقسيم فرع إلى فروع بكوميت واحد · Split branch into one-commit branches · 📄 موصوف / documented only
+- **ماذا / what:** تحويل فرع فيه N كوميت إلى N فروع بكوميت واحد عبر cherry-pick دون المساس بالأصلي. — Turn a branch of N commits into N single-commit branches via cherry-pick without touching the original.
+- **متى أستخدمها / when:** Reviewers want small PRs from one large branch.
+- **كيف / how:** 1) git log --oneline --reverse base..HEAD; stop if 0 or 1 commits. 2) Propose kebab-case names (3-5 words) from subjects, get approval. 3) For each commit oldest first: skip if branch tip equals sha, else suffix -2; git branch name base; git switch; git cherry-pick sha. 4) On conflict leave branch conflicted, continue, report. 5) Switch back; never delete or force-push. **أرقام / params:** base
+- **يحتاج / needs:** [`git`](../requirements.md#req-git)
+- **الرخصة / license:** method paraphrased from Atlas skills under MIT; the skills keep their own licenses — see each folder's SOURCE.md
+- **الدليل / proof:** `https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/2546-git/9897-split-branch` · `https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/1233-git-chain/2913-git-chain` · `https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/adlc-build/13096-small-batch-delivery`
+- **المصدر / source:** KOSIF Atlas mining 2026-10-20 (https://github.com/kosif199022-jpg/kosif-atlas): git/split-branch (#9897); git-chain/git-chain (#2913); adlc-build/small-batch-delivery (#13096) · theme git-release · 4 supporting skills · verifier read: skills/2546-git/9897-split-branch, skills/1233-git-chain/2913-git-chain, skills/adlc-build/13096-small-batch-delivery
+
+#### ACODE-213 · طلبات دمج متراكبة عبر gh stack · Stacked PRs with gh stack · 📄 موصوف / documented only
+- **ماذا / what:** إرسال ومزامنة وتعديل ودمج طلبات الدمج المتراكبة على GitHub. — Submit, sync, navigate, amend and merge GitHub-native stacked pull requests.
+- **متى أستخدمها / when:** Dependent branches or chained PRs need to stay rebased on trunk.
+- **كيف / how:** 1) Check tooling readiness (gh stack). 2) Submit: stage specific files, conventional commit, gh stack submit --auto (draft; --open to publish). 3) gh stack sync to rebase on trunk, prune merged. 4) Amend folds working-tree changes into current commit and resubmits. 5) gh stack merge; cleanup unstacks. Alternative: git-chain for local chains.
+- **الرخصة / license:** method paraphrased from Atlas skills under MIT; the skills keep their own licenses — see each folder's SOURCE.md
+- **الدليل / proof:** `https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/2072-github-workflow/7312-github-stack-submit` · `https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/2072-github-workflow/7313-github-stack-sync` · `https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/1233-git-chain/2913-git-chain`
+- **المصدر / source:** KOSIF Atlas mining 2026-10-20 (https://github.com/kosif199022-jpg/kosif-atlas): github-workflow/github-stack-submit (#7312); github-workflow/github-stack-sync (#7313); git-chain/git-chain (#2913) · theme git-release · 8 supporting skills · verifier read: skills/2072-github-workflow/7312-github-stack-submit, skills/2072-github-workflow/7313-github-stack-sync, skills/1233-git-chain/2913-git-chain
+
+#### ACODE-214 · طلبات دمج متراكمة مع Graphite وMergify · Stacked PRs with Graphite or Mergify · 📄 موصوف / documented only
+- **ماذا / what:** إدارة سلسلة فروع بالتتابع عبر gt أو mergify: إنشاء ورفع وإعادة ترتيب ودمج. — Drive a stack of one-commit branches via gt or mergify stack, submit, sync, restack and merge in order.
+- **متى أستخدمها / when:** Stacked diffs, split a big change into reviewable PRs.
+- **كيف / how:** 1) gt create -am msg per layer (one commit per branch). 2) gt submit --stack. 3) Amend via gt modify, never raw git rebase on tracked branches. 4) gt sync: pull trunk, restack, untrack merged. 5) Merge trunk-up. 6) Mergify: push stack, merge queue, Depends-On protections. **أرقام / params:** trunk, stack scope
+- **تثبيت / install:** `npm i -g @withgraphite/graphite-cli`
+- **يحتاج / needs:** [`node`](../requirements.md#req-node)
+- **الرخصة / license:** method paraphrased from Atlas skills under MIT/Apache; the skills keep their own licenses — see each folder's SOURCE.md
+- **الدليل / proof:** `https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/2909-graphite/12079-graphite` · `https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/2510-mergify/9684-mergify-stack` · `https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/?/7321-gt-sync`
+- **المصدر / source:** KOSIF Atlas mining 2026-10-20 (https://github.com/kosif199022-jpg/kosif-atlas): graphite/graphite (#12079); mergify/mergify-stack (#9684); gt-workflow/gt-sync (#7321) · theme git-release · 12 supporting skills · verifier read: skills/2909-graphite/12079-graphite, skills/2510-mergify/9684-mergify-stack, skills/?/7321-gt-sync
+
+#### ACODE-215 · مسار من issue إلى PR بأشجار عمل معزولة · Worktree-isolated issue-to-PR flow · 📄 موصوف / documented only
+- **ماذا / what:** تنفيذ issue كاملا في شجرة عمل معزولة مع اختبارات وPR ودمج. — Take a GitHub issue through worktree, TDD implementation, verification, PR and merge.
+- **متى أستخدمها / when:** Complete issue #N, start issue, parallel agents.
+- **كيف / how:** 1) gh issue view for context. 2) git worktree add per issue branch. 3) Plan, write tests first. 4) Implement, run verification. 5) Finish pipeline commit/rebase/simplify. 6) PR, review loop, merge. 7) Remove worktree and prune. **أرقام / params:** issue number
+- **يحتاج / needs:** [`git`](../requirements.md#req-git) · [`gh`](../requirements.md#req-gh)
+- **الرخصة / license:** method paraphrased from Atlas skills under MIT/Apache; the skills keep their own licenses — see each folder's SOURCE.md
+- **الدليل / proof:** `https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/2631-issueflow/10008-issueflow` · `https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/?/3661-start-issue` · `https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/?/9943-parallel-worktrees`
+- **المصدر / source:** KOSIF Atlas mining 2026-10-20 (https://github.com/kosif199022-jpg/kosif-atlas): issueflow/issueflow (#10008); go-workflow/start-issue (#3661); parallel-worktrees/parallel-worktrees (#9943) · theme git-release · 10 supporting skills · verifier read: skills/2631-issueflow/10008-issueflow, skills/?/3661-start-issue, skills/?/9943-parallel-worktrees
+
+#### ACODE-216 · إدارة worktree وتنظيفها بأمان · Worktree lifecycle and safe cleanup · 📄 موصوف / documented only
+- **ماذا / what:** إنشاء worktree لكل مهمة وحذف worktrees والفروع المدموجة دون إجبار. — Create sibling worktrees per task and remove worktrees and merged branches without force.
+- **متى أستخدمها / when:** Parallel tasks, dirty tree blocks switching, cleanup after merge.
+- **كيف / how:** 1) Create in peer dir: git worktree add ../repo-feature -b feature base. 2) Keep main checkout on default branch. 3) Cleanup: git worktree list, remove only clean ones (no --force), git worktree prune. 4) Delete gone branches: git fetch -p, list [gone], git branch -d. 5) Fix worktree created inside repo by moving with git worktree move.
+- **يحتاج / needs:** [`git`](../requirements.md#req-git)
+- **الرخصة / license:** method paraphrased from Atlas skills under MIT; the skills keep their own licenses — see each folder's SOURCE.md
+- **الدليل / proof:** `https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/2546-git/9889-clean-worktrees` · `https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/compound-engineeri/3311-ce-worktree` · `https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/git-worktree-conve/13829-git-worktree-convention`
+- **المصدر / source:** KOSIF Atlas mining 2026-10-20 (https://github.com/kosif199022-jpg/kosif-atlas): git/clean-worktrees (#9889); compound-engineering/ce-worktree (#3311); git-worktree-convention/git-worktree-convention (#13829) · theme git-release · 8 supporting skills · verifier read: skills/2546-git/9889-clean-worktrees, skills/compound-engineeri/3311-ce-worktree, skills/git-worktree-conve/13829-git-worktree-convention
 
 ## المصادر والرخص / sources & licences
 

@@ -31,8 +31,16 @@ def size_system(daily_requests, peak_factor, payload_bytes, retention_days,
     retention=dec(retention_days)
     capacity=dec(replica_rps)
     utilization=dec(target_utilization)
-    ncopy=int(copies)
-    if peak < 1 or utilization > 1 or ncopy < 1 or Decimal(ncopy) != dec(copies):
+    # Parse copies as a decimal first so "1.5" or "two" get the same clear
+    # message instead of int()'s raw "invalid literal" text.
+    try:
+        copies_dec=dec(copies)
+    except ValueError:
+        raise ValueError("copies must be a positive integer") from None
+    if copies_dec != copies_dec.to_integral_value():
+        raise ValueError("copies must be a positive integer")
+    ncopy=int(copies_dec)
+    if peak < 1 or utilization > 1:
         raise ValueError("peak factor >=1, 0<utilization<=1, copies positive integer")
     average_rps=calls/Decimal(86400)
     peak_rps=average_rps*peak
@@ -52,7 +60,7 @@ def size_system(daily_requests, peak_factor, payload_bytes, retention_days,
         "retained_storage_bytes":retained_bytes,
         "storage_gib":str((Decimal(retained_bytes)/Decimal(1024**3)).quantize(Decimal("0.001"))),
         "assumptions":"per-request retained byte amount, linear peak factor, static per-replica sustained throughput",
-        "exclusions":["database indexes","log overhead","backups","compression",
+        "exclusions":["database indexes","caching","log overhead","backups","compression",
                       "bursty traffic shape","network","CDN","failover headroom","regional placement"],
         "executed_benchmark":False,
         "source_reference":"https://github.com/donnemartin/system-design-primer"

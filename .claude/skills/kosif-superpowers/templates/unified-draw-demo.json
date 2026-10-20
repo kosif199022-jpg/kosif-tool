@@ -1,0 +1,100 @@
+{
+  "schema": "kosif.unified-draw.v1",
+  "width": 640,
+  "height": 480,
+  "background": "#F4F0E6",
+  "elements": [
+    {
+      "type": "stroke",
+      "assist": true,
+      "color": "#1C5545",
+      "width": 7,
+      "brush": "pen",
+      "points": [
+        [
+          60,
+          55
+        ],
+        [
+          285,
+          55
+        ],
+        [
+          285,
+          215
+        ],
+        [
+          60,
+          215
+        ],
+        [
+          60,
+          55
+        ]
+      ]
+    },
+    {
+      "type": "shape",
+      "kind": "ellipse",
+      "x": 340,
+      "y": 60,
+      "width": 180,
+      "height": 130,
+      "fill": "#D9E9C8",
+      "stroke": "#1C5545",
+      "stroke_width": 5
+    },
+    {
+      "type": "stroke",
+      "assist": true,
+      "color": "#1C5545",
+      "width": 6,
+      "brush": "marker",
+      "points": [
+        [
+          70,
+          245
+        ],
+        [
+          190,
+          245
+        ],
+        [
+          290,
+          245
+        ]
+      ]
+    },
+    {
+      "type": "shape",
+      "kind": "polygon",
+      "points": [
+        [
+          390,
+          255
+        ],
+        [
+          505,
+          255
+        ],
+        [
+          448,
+          355
+        ]
+      ],
+      "fill": "#D2AD72",
+      "stroke": "#1C5545",
+      "stroke_width": 4
+    },
+    {
+      "type": "shape",
+      "kind": "text",
+      "x": 65,
+      "y": 375,
+      "text": "KOSIF DRAW",
+      "size": 32,
+      "fill": "#1C5545",
+      "stroke_width": 0
+    }
+  ]
+}

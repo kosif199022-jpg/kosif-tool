@@ -9,7 +9,7 @@
 مسارات الدليل نسبية إلى `/home/user/`؛ و`session-<date>:<file>#<section>` تشير إلى تشغيل موثق في جلسة سابقة؛ و`owner-upload:` إلى ملف داخل أرشيف أرسله المالك. Proof paths are relative to `/home/user/`.
 
 **المجال / domain:** الصور والصوت — Image & audio · **البادئة / prefix:** `AMEDIA` · **البيانات / data:** `data/powers/atlas-media.json` · **بحث / search:** `python3 scripts/powers.py family atlas-media`
-**مراجع ذات صلة / related references:** [capability-atlas.md](../capability-atlas.md) · [hubs.md](../hubs.md)
+**مراجع ذات صلة / related references:** [CLAUDE_3_MINUTE_MAP.md](../CLAUDE_3_MINUTE_MAP.md) · [hubs.md](../hubs.md)
 
 ## الفهرس / contents
 
@@ -24,7 +24,7 @@
 - **ماذا / what:** يولّد كلامًا بإعدادات صوت قابلة للضبط ويستنسخ الأصوات ويحوّل الصوت ويولّد مؤثرات. — Generate speech with tunable voice settings, clone voices from samples, and produce speech-to-speech, SFX and isolation.
 - **متى أستخدمها / when:** Building TTS, voice cloning, voice conversion, audio isolation or sound-effect generation on ElevenLabs.
 - **كيف / how:** 1) Install SDK and set API key via env. 2) textToSpeech.convert(voiceId, text, model eleven_multilingual_v2, voice_settings stability ~0.5, similarity ~0.75, style, speed 0.7-1.2) and pipe stream to file. 3) Instant clone from 30+ s of clean audio. 4) Use WebSocket streaming for chatbots. 5) Cut cost by model choice, caching repeated text and usage alerts; handle 429 with queue and backoff; verify webhook HMAC. **أرقام / params:** voice id, model, voice settings
-- **يحتاج / needs:** [`key:elevenlabs`](../requirements.md#req-key-elevenlabs) · [`node`](../requirements.md#req-node) · [`network`](../requirements.md#req-network)
+- **يحتاج / needs:** [`key:elevenlabs`](../requirements.md#req-key-elevenlabs) · [`key:unspecified`](../requirements.md#req-key-unspecified)
 - **الرخصة / license:** method paraphrased from Atlas skills under MIT; the skills keep their own licenses — see each folder's SOURCE.md
 - **الدليل / proof:** `https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/1847-elevenlabs-pack/5514-elevenlabs-core-workflow-a` · `https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/1847-elevenlabs-pack/5522-elevenlabs-performance-tuning`
 - **المصدر / source:** KOSIF Atlas mining 2026-10-20 (https://github.com/kosif199022-jpg/kosif-atlas): elevenlabs-pack/elevenlabs-core-workflow-a (#5514); elevenlabs-pack/elevenlabs-performance-tuning (#5522) · theme audio-voice · 6 supporting skills · verifier read: skills/1847-elevenlabs-pack/5514-elevenlabs-core-workflow-a, skills/1847-elevenlabs-pack/5522-elevenlabs-performance-tuning
@@ -42,7 +42,6 @@
 - **ماذا / what:** يولّد مجموعات مؤثرات بنسخ متعددة وفئات مستوى وتحذيرات للبدء المتأخر أو الترددات الضعيفة. — Render named effect sets with variants, level classes and warnings for late onset or inaudible lows.
 - **متى أستخدمها / when:** A game needs jump/coin/hit/win/UI sounds that sit together in a mix and play on phone speakers.
 - **كيف / how:** 1) Pick a kit (arcade, platformer, shooter, party, ui) or write a JSON spec of effect name, preset, pitch in semitones, length, seed, style (clean/retro/soft), level. 2) Render three variants for frequent sounds, one take for once-per-round signals. 3) Normalize by loudest 50 ms into classes ui -20, small -16, normal -12, big -9 dB, ceiling -1 dBFS. 4) Reject effects that start late or have little energy under about 300 Hz. 5) Review reel spectrogram image and warnings. **أرقام / params:** kit, style, variants
-- **يحتاج / needs:** [`node`](../requirements.md#req-node) · [`ffmpeg`](../requirements.md#req-ffmpeg)
 - **الرخصة / license:** method paraphrased from Atlas skills under Apache-2.0 / MIT; the skills keep their own licenses — see each folder's SOURCE.md
 - **الدليل / proof:** `https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/1511-homie/3901-sound` · `https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/1526-gamegen/4163-game-audio-procedural`
 - **المصدر / source:** KOSIF Atlas mining 2026-10-20 (https://github.com/kosif199022-jpg/kosif-atlas): homie/sound (#3901); gamegen/game-audio-procedural (#4163) · theme audio-voice · 2 supporting skills · verifier read: skills/1511-homie/3901-sound, skills/1526-gamegen/4163-game-audio-procedural
@@ -51,7 +50,7 @@
 - **ماذا / what:** يستدعي واجهة تفريغ سحابية للنسخ والترجمة وفصل المتحدثين وتوقيت الكلمات ضمن الحدود. — Call a hosted speech-to-text API for transcription, translation, speaker diarization and word timings within size limits.
 - **متى أستخدمها / when:** App needs batch or realtime transcription, captions or speaker segments via Together, Groq Whisper or ElevenLabs STT.
 - **كيف / how:** 1) Choose transport: REST batch, streaming, or realtime WebSocket (confirm PCM format first). 2) Respect batch limits: 80 MB direct upload, 1 GB URL fetch, 4 h per request; split longer audio. 3) Pass binary file handle in Python SDK. 4) Request verbose output for word timestamps or diarization and code for the richer response shape. 5) Use translations endpoint for English output. **أرقام / params:** model, response_format
-- **يحتاج / needs:** [`network`](../requirements.md#req-network) · [`python3`](../requirements.md#req-python3)
+- **يحتاج / needs:** [`pip:pyannote`](../requirements.md#req-pip-pyannote)
 - **الرخصة / license:** method paraphrased from Atlas skills under MIT; the skills keep their own licenses — see each folder's SOURCE.md
 - **الدليل / proof:** `https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/3214-togetherai-skills/13585-together-audio` · `https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/1864-groq-pack/5867-groq-core-workflow-b`
 - **المصدر / source:** KOSIF Atlas mining 2026-10-20 (https://github.com/kosif199022-jpg/kosif-atlas): togetherai-skills/together-audio (#13585); groq-pack/groq-core-workflow-b (#5867) · theme audio-voice · 4 supporting skills · verifier read: skills/3214-togetherai-skills/13585-together-audio, skills/1864-groq-pack/5867-groq-core-workflow-b
@@ -78,7 +77,7 @@
 - **ماذا / what:** يبني بنية الأغنية ويكتب موجّهات Suno بكلمات موسومة أو خطة تأليف ElevenLabs. — Structure songs by section form and write Suno style prompts with tagged lyrics, or compose via ElevenLabs Music plans.
 - **متى أستخدمها / when:** Writing songs, themes or game scores and prompting AI music generators.
 - **كيف / how:** 1) Identify sections (verse, chorus, bridge, refrain) and form (AABA, verse/chorus, verse/refrain) with Pattison-style balance. 2) For Suno write a compact style prompt (genre, mood, instruments, tempo) plus lyrics with section tags. 3) Iterate with troubleshooting tips per genre. 4) For ElevenLabs Music build a composition plan for sung material via the creator's own account. 5) Keep a section list for later bar-aligned video cuts. **أرقام / params:** genre, mood, form
-- **يحتاج / needs:** [`key:elevenlabs`](../requirements.md#req-key-elevenlabs)
+- **يحتاج / needs:** [`key:elevenlabs`](../requirements.md#req-key-elevenlabs) · [`key:video-gen`](../requirements.md#req-key-video-gen)
 - **الرخصة / license:** method paraphrased from Atlas skills under MIT / Apache-2.0; the skills keep their own licenses — see each folder's SOURCE.md
 - **الدليل / proof:** `https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/2475-songwriting/9606-song-form` · `https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/2475-songwriting/9607-suno` · `https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/1511-homie/3892-music`
 - **المصدر / source:** KOSIF Atlas mining 2026-10-20 (https://github.com/kosif199022-jpg/kosif-atlas): songwriting/song-form (#9606); songwriting/suno (#9607); homie/music (#3892) · theme audio-voice · 3 supporting skills · verifier read: skills/2475-songwriting/9606-song-form, skills/2475-songwriting/9607-suno, skills/1511-homie/3892-music
@@ -96,7 +95,7 @@
 - **ماذا / what:** يولّد مؤثرات وموسيقى قابلة للتكرار من كود بايثون ويصدّرها بصيغة OGG مع بيان. — Synthesize SFX and loop-ready music scores deterministically from seeds with numpy/scipy, exporting OGG plus manifest.
 - **متى أستخدمها / when:** Need license-clean original SFX, jingles, UI sounds or looping game music without samples or paid services.
 - **كيف / how:** 1) Write audio direction: cue table (id, mood, tempo, key, loop/one-shot) and SFX per game event. 2) Define a sonic identity (key, brightness, grit, space) in a shared style module. 3) Vendor the synth toolkit into the project tools dir. 4) Each SFX is a seeded function, each track a score; render via a build script writing OGG and manifest with SHA-256, duration, loop data. 5) Check objective metrics and spectrogram review images; cross-check EBU R128 with ffmpeg. Not suited to realistic acoustic instruments or vocals. **أرقام / params:** seed, key, tempo, cue list
-- **يحتاج / needs:** [`python3`](../requirements.md#req-python3) · [`pip:numpy`](../requirements.md#req-pip-numpy) · [`pip:scipy`](../requirements.md#req-pip-scipy) · [`pip:soundfile`](../requirements.md#req-pip-soundfile) · [`ffmpeg`](../requirements.md#req-ffmpeg)
+- **يحتاج / needs:** [`ffmpeg`](../requirements.md#req-ffmpeg) · [`pip:numpy`](../requirements.md#req-pip-numpy) · [`pip:scipy`](../requirements.md#req-pip-scipy)
 - **الرخصة / license:** method paraphrased from Atlas skills under MIT / Apache-2.0; the skills keep their own licenses — see each folder's SOURCE.md
 - **الدليل / proof:** `https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/1526-gamegen/4163-game-audio-procedural` · `https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/1511-homie/3901-sound`
 - **المصدر / source:** KOSIF Atlas mining 2026-10-20 (https://github.com/kosif199022-jpg/kosif-atlas): gamegen/game-audio-procedural (#4163); homie/sound (#3901) · theme audio-voice · 2 supporting skills · verifier read: skills/1526-gamegen/4163-game-audio-procedural, skills/1511-homie/3901-sound
@@ -105,7 +104,6 @@
 - **ماذا / what:** يبني مقطوعة قصيرة من ملف JSON للأوتار والأنماط ويصدّر المزيج والسطور وحلقات بلا درز. — Build a short score from a JSON of chords and patterns and render mix, stems and seamless loop sections.
 - **متى أستخدمها / when:** Need a theme or looping bed with stems, bar grid for trailer cuts, or game music generated offline.
 - **كيف / how:** 1) Write score.json: tempo, key, instruments (level, pan, echo, reverb send, kick ducking), sections in whole bars with chords and per-instrument patterns, arrangement, loop sections. 2) Render mix at -14 LUFS (or -18 as a bed under effects) plus 24-bit master and per-instrument stems that sum to the mix. 3) Loops: render each section three times and keep the middle copy so reverb tails land at the loop head. 4) Check seam value (1 or less is seamless) and bar length; export plan.json bar grid for video cuts. **أرقام / params:** --loops, --lufs
-- **يحتاج / needs:** [`node`](../requirements.md#req-node) · [`ffmpeg`](../requirements.md#req-ffmpeg)
 - **الرخصة / license:** method paraphrased from Atlas skills under Apache-2.0 / MIT; the skills keep their own licenses — see each folder's SOURCE.md
 - **الدليل / proof:** `https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/1511-homie/3901-sound` · `https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/1526-gamegen/4163-game-audio-procedural`
 - **المصدر / source:** KOSIF Atlas mining 2026-10-20 (https://github.com/kosif199022-jpg/kosif-atlas): homie/sound (#3901); gamegen/game-audio-procedural (#4163) · theme audio-voice · 2 supporting skills · verifier read: skills/1511-homie/3901-sound, skills/1526-gamegen/4163-game-audio-procedural
@@ -114,7 +112,6 @@
 - **ماذا / what:** يختار ويربط مزودي التعرف والتوليد الصوتي لوكيل صوتي حسب القناة واللغة والبث. — Choose and wire STT/TTS providers for a voice agent by channel bandwidth, language and streaming needs.
 - **متى أستخدمها / when:** Designing a phone or web voice agent, Twilio ConversationRelay, low-latency speech pipelines.
 - **كيف / how:** 1) Classify channel: narrowband telephony versus wideband web. 2) Pick provider by language coverage and streaming support. 3) Use bidirectional audio streaming (Twilio ConversationRelay handles ASR, TTS, barge-in). 4) Tune latency: model choice, streaming, caching, audio format. 5) Add rate-limit queues, health checks and rollback before production. **أرقام / params:** channel, languages
-- **يحتاج / needs:** [`network`](../requirements.md#req-network)
 - **الرخصة / license:** method paraphrased from Atlas skills under MIT; the skills keep their own licenses — see each folder's SOURCE.md
 - **الدليل / proof:** `https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/2261-conversational-ai-voice-engineering/8616-speech-recognition-and-synthesis` · `https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/2721-twilio-developer-kit/10514-twilio-voice-conversation-relay`
 - **المصدر / source:** KOSIF Atlas mining 2026-10-20 (https://github.com/kosif199022-jpg/kosif-atlas): conversational-ai-voice-engineering/speech-recognition-and-synthesis (#8616); twilio-developer-kit/twilio-voice-conversation-relay (#10514) · theme audio-voice · 5 supporting skills · verifier read: skills/2261-conversational-ai-voice-engineering/8616-speech-recognition-and-synthesis, skills/2721-twilio-developer-kit/10514-twilio-voice-conversation-relay
@@ -125,7 +122,7 @@
 - **ماذا / what:** توليد شريط حركة كامل من إطار معتمد ومعايرته بمقياس ومرساة موحدين. — Generate a whole animation strip from one approved seed and normalize to fixed frames with shared scale and anchor.
 - **متى أستخدمها / when:** 2D sprite animation or pixel-art sheets.
 - **كيف / how:** 1) Approved seed frame. 2) build_sprite_edit_canvas.py (slots, canvas). 3) One edit request for whole strip, with invariants. 4) normalize_sprite_strip.py: shared scale, bottom-center anchor. 5) Optionally lock frame 1. 6) render preview sheet. **أرقام / params:** frames,slot
-- **يحتاج / needs:** [`pip:pillow`](../requirements.md#req-pip-pillow)
+- **يحتاج / needs:** [`python3`](../requirements.md#req-python3)
 - **الرخصة / license:** method paraphrased from Atlas skills under MIT; the skills keep their own licenses — see each folder's SOURCE.md
 - **الدليل / proof:** `https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/2696-game-studio/10368-sprite-pipeline` · `https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/2460-pixel-art/9527-sprite`
 - **المصدر / source:** KOSIF Atlas mining 2026-10-20 (https://github.com/kosif199022-jpg/kosif-atlas): game-studio/sprite-pipeline (#10368); pixel-art/sprite (#9527) · theme game-dev · 5 supporting skills · verifier read: skills/2696-game-studio/10368-sprite-pipeline, skills/2460-pixel-art/9527-sprite
@@ -134,7 +131,7 @@
 - **ماذا / what:** تسجيل لعب آلي وقص على شبكة إيقاع بـ ffmpeg. — Record bot gameplay in Godot Movie Maker and cut on a beat-aligned grid with ffmpeg into 16:9, 9:16 and GIF.
 - **متى أستخدمها / when:** Promo trailer or devlog clip for a Godot game.
 - **كيف / how:** 1) Beat sheet approved. 2) BPM where bar = whole frames at 60fps (14400/BPM). 3) Render shots, cut by timeline.json. 4) Export 1080p60 H.264, -14 LUFS, vertical, GIF. **أرقام / params:** bpm
-- **يحتاج / needs:** [`ffmpeg`](../requirements.md#req-ffmpeg) · [`python3`](../requirements.md#req-python3)
+- **يحتاج / needs:** [`ffmpeg`](../requirements.md#req-ffmpeg)
 - **الرخصة / license:** method paraphrased from Atlas skills under MIT; the skills keep their own licenses — see each folder's SOURCE.md
 - **الدليل / proof:** `https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/1526-gamegen/4173-game-trailer`
 - **المصدر / source:** KOSIF Atlas mining 2026-10-20 (https://github.com/kosif199022-jpg/kosif-atlas): gamegen/game-trailer (#4173) · theme game-dev · 3 supporting skills · verifier read: skills/1526-gamegen/4173-game-trailer

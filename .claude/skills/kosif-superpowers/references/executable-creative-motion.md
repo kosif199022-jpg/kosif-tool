@@ -2,6 +2,14 @@
 
 **This module is not a list of links.** It ships executable original KOSIF code for timed SVG animation, moving characters, camera moves, a scene compiler, a local reference-video timing probe and project-scaffold generators for external engines.
 
+## الفهرس / contents
+
+- [True capability matrix](#true-capability-matrix)
+- [Start producing something, rather than just suggesting technologies](#start-producing-something-rather-than-just-suggesting-technologies)
+- [How the 25 technologies transfer practical ideas to KOSIF](#how-the-25-technologies-transfer-practical-ideas-to-kosif)
+- [Minimal custom JSON example](#minimal-custom-json-example)
+- [Honest validation](#honest-validation)
+
 ## True capability matrix
 
 | Job | Included executable component | Requirements | Honest runtime state |

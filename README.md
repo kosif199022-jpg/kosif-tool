@@ -10,15 +10,18 @@
 
 | الطبقة / layer | ما هي / what | من أين تبدأ / start |
 |---|---|---|
-| **المهارة العامة** `.claude/skills/kosif-superpowers/` | تعرّف Claude بقدراته الحقيقية في كل جلسة وبطرق التفكير والإبداع والتحقق، مع كتالوج 4,751 قدرة في 10 مجالات، لكل قدرة مستلزماتها (التفكير، الكتابة والعربية، الكود، البيانات، المستندات، البحث، التطبيقات، الصور والصوت، المنتج والمال، الموشن) لكل منها شارة دليل | [SKILL.md](.claude/skills/kosif-superpowers/SKILL.md) ثم [الخريطة الذهنية](.claude/skills/kosif-superpowers/references/capability-map.md) |
-| **أطلس الموشن** `styles/` `playbooks/` `catalog/` | 288 أسلوب موشن جرافيك، لكل منها SKILL.md وSTYLE.json وBRIEF.md، و17 دليل إنتاج | [STYLE_INDEX.md](STYLE_INDEX.md) · [AGENTS.md](AGENTS.md) |
+| **المهارة العامة** `.claude/skills/kosif-superpowers/` | تعرّف Claude بقدراته الحقيقية في كل جلسة وبطرق التفكير والإبداع والتحقق، مع كتالوج 5,296 قدرة في 10 مجالات، لكل قدرة مستلزماتها (التفكير، الكتابة والعربية، الكود، البيانات، المستندات، البحث، التطبيقات، الصور والصوت، المنتج والمال، الموشن) لكل منها شارة دليل، وأكثر من 90 أداة تُشغَّل فعلًا وباب واحد للبحث فيها | [SKILL.md](.claude/skills/kosif-superpowers/SKILL.md) ثم [الفهرس](.claude/skills/kosif-superpowers/references/INDEX.md) و[الخريطة الذهنية](.claude/skills/kosif-superpowers/references/capability-map.md) |
+| **أطلس الموشن** `styles/` `playbooks/` `catalog/` | 289 أسلوب موشن جرافيك، لكل منها SKILL.md وSTYLE.json وBRIEF.md، و17 دليل إنتاج | [STYLE_INDEX.md](STYLE_INDEX.md) · [AGENTS.md](AGENTS.md) |
 | **الأدوات** `tools/` `starters/` `templates/` | `kosif.py` (بحث وتجهيز مشروع)، `render_html.cjs` (رندر HTML إلى فيديو)، `verify_video.py` (فحص الناتج)، ومشروعا بداية html-canvas وRemotion | [tools/render_html.md](tools/render_html.md) |
 | **مهارة المونتاج التحريري** `.claude/skills/editorial-film-edit/` | مهارة مستقلة لمونتاج لقطات بأسلوب أرشيفي تحريري مع مراجع متصفح جاهزة | [SKILL.md](.claude/skills/editorial-film-edit/SKILL.md) |
+| **المشاريع** `projects/` | أفلام منتهية بمصادرها القابلة للتعديل: مفاتيح الثروة، تحية مصر والسعودية، وثلاث ريلز أدعية | [projects/README.md](projects/README.md) |
 | **الموقع** `index.html` `web/` | واجهة تصفح الأساليب ومولّد الطلبات، تُنشر على GitHub Pages | https://kosif199022-jpg.github.io/kosif-tool/ |
 
-**لـ Claude — ابدأ هنا:** إن وصلك رابط هذا المستودع فقط فاقرأ [CAPABILITIES.md](CAPABILITIES.md) (خريطتك الذاتية المولّدة: ماذا تستطيع، وماذا تحتاج، وكيف تفكّر). داخل المستودع شغّل `python3 .claude/skills/kosif-superpowers/scripts/boot.py`.
+**لـ Claude — ابدأ هنا:** إن وصلك رابط هذا المستودع فقط فاقرأ [CAPABILITIES.md](CAPABILITIES.md) (خريطتك الذاتية المولّدة: ماذا تستطيع، وماذا تحتاج، وكيف تفكّر). داخل المستودع شغّل `python3 .claude/skills/kosif-superpowers/scripts/boot.py` ثم `python3 .claude/skills/kosif-superpowers/scripts/hub.py find "<المهمة>"`: يعطيك الأداة التي تشغّلها بأمر جاهز، والقدرات المناسبة، والدليل الذي تقرؤه.
+
+**لأي تطبيق أو وكيل / for any app or agent:** خادم MCP للقراءة فقط `.claude/skills/kosif-superpowers/scripts/kosif_mcp.py` (يسجّله [.mcp.json](.mcp.json) داخل المستودع)، و[manifest.json](.claude/skills/kosif-superpowers/manifest.json) لكل الأدوات والعائلات والأدلة بصيغة JSON، و[AGENTS.md](AGENTS.md) لوكلاء البرمجة الآخرين، و[llms.txt](llms.txt) للنماذج.
 **لـ Claude:** حين تفتح هذا المستودع، حمّل `.claude/skills/kosif-superpowers/SKILL.md` ونفّذ بروتوكول التشغيل فيه قبل أن تبدأ، ثم اقرأ `AGENTS.md` إن كان الطلب موشن جرافيك. الفحص الكامل: `python3 tools/validate.py` و`python3 -m unittest discover -s tests`.
-**For Claude:** given only this repo's link, read [CAPABILITIES.md](CAPABILITIES.md) (generated self-model; also [llms.txt](llms.txt)); inside the repo run `scripts/boot.py`. On entering this repo, load the superpowers SKILL.md first and run its power-up protocol; read AGENTS.md for motion work. Everything that was on separate branches is now merged here.
+**For Claude:** given only this repo's link, read [CAPABILITIES.md](CAPABILITIES.md) (generated self-model; also [llms.txt](llms.txt)); inside the repo run `scripts/boot.py`, then `scripts/hub.py find "<task>"` for the tool to run, the powers that apply and the guide to read. On entering this repo, load the superpowers SKILL.md first and run its power-up protocol; read AGENTS.md for motion work. Every branch is merged into `main`.
 
 
 **الموقع:** https://kosif199022-jpg.github.io/kosif-tool/ · **الفهرس:** [STYLE_INDEX.md](STYLE_INDEX.md) · **الدلائل:** [playbooks/](playbooks/)
@@ -37,11 +40,11 @@
 
 ## مهارة القدرات الخارقة لـ Claude
 
-المجلد [`.claude/skills/kosif-superpowers/`](.claude/skills/kosif-superpowers/SKILL.md) مهارة تعرّف Claude بقدراته الحقيقية في كل جلسة: الأدوات والموصلات، والمكتبات التي يثبّتها بأمر واحد، وطرق التفكير والإبداع والتحقق، وكتالوج من 4,200+ قدرة في 10 مجالات (التفكير، الكتابة والعربية، الكود، البيانات، المستندات، البحث، التطبيقات، الصور والصوت، المنتج والمال، الموشن) لكل منها وصفة ودليل.
+المجلد [`.claude/skills/kosif-superpowers/`](.claude/skills/kosif-superpowers/SKILL.md) مهارة تعرّف Claude بقدراته الحقيقية في كل جلسة: الأدوات والموصلات، والمكتبات التي يثبّتها بأمر واحد، وطرق التفكير والإبداع والتحقق، وكتالوج من 5,100+ قدرة في 10 مجالات (التفكير، الكتابة والعربية، الكود، البيانات، المستندات، البحث، التطبيقات، الصور والصوت، المنتج والمال، الموشن) لكل منها وصفة ودليل.
 
 - **في Claude Code:** تُحمَّل تلقائيًا من هذا المستودع، أو انسخ المجلد إلى `~/.claude/skills/`.
 - **في claude.ai:** `python3 .claude/skills/kosif-superpowers/scripts/package_skill.py` ثم ارفع ملف `.skill` الناتج.
-- **ابدأ بـ:** `python3 .claude/skills/kosif-superpowers/scripts/probe_env.py` ثم `powers.py suggest "<طلبك>"`. الخريطة الذهنية للقدرات: [capability-map.md](.claude/skills/kosif-superpowers/references/capability-map.md).
+- **ابدأ بـ:** `python3 .claude/skills/kosif-superpowers/scripts/boot.py` ثم `hub.py find "<طلبك>"` (أدوات + قدرات + أدلة)، و`hub.py doctor` لما يعمل على جهازك الآن. الخريطة الذهنية للقدرات: [capability-map.md](.claude/skills/kosif-superpowers/references/capability-map.md).
 
 ## الاستخدام السريع مع Claude Code
 
@@ -57,7 +60,7 @@ python3 tools/kosif.py search "سبورة"                 # بحث عربي/إ�
 python3 tools/kosif.py show pm-ror-fly-9950f1         # السجل + الملف الإبداعي + الدلائل
 python3 tools/kosif.py prompt pm-ror-fly-9950f1 --aspect 9:16 --duration 20 --source "audio voice.mp3"
 python3 tools/kosif.py scaffold pm-ror-fly-9950f1 ./my-film --starter html-canvas
-node tools/render_html.cjs --in ./my-film/index.html --out ./my-film/preview.png --preview   # لوحة إطارات
+node tools/render_html.cjs --in ./my-film/index.html --out ./my-film/film.mp4 --preview      # لوحة إطارات → my-film/film_preview.png
 node tools/render_html.cjs --in ./my-film/index.html --out ./my-film/film.mp4 --audio voice.mp3
 python3 tools/words_convert.py captions.srt ./my-film/words.json       # ترجمة → توقيتات كلمات
 python3 tools/verify_video.py ./my-film/film.mp4 --aspect 9:16 --fps 30 --duration 20 --audio voice.mp3   # بوابة التسليم
@@ -90,7 +93,7 @@ A Claude-readable atlas of motion-graphics styles with a static website, origina
 | `starters/remotion/` | Minimal Remotion v4 project (title reveal, SVG chart, logo card, word-level captions). |
 | `tools/` | `kosif.py` CLI, `render_html.cjs` (Playwright + ffmpeg), `words_convert.py` (SRT/VTT/Whisper → words.json), `verify_video.py` (delivery gate with loudness), `sync_catalog.py`, `import_briefs.py`, `build.py`, `validate.py`, `check_originality.py`. |
 | `tests/` | Python `unittest` and Node `node:test` suites run by CI. |
-| `.claude/skills/kosif-superpowers/` | Claude Code skill: a searchable catalog of 4,500+ powers in 10 domains with requirements, evidence badges and proofs, a thinking engine (think.py), a capability graph, executable motion tools, a credited 100-repository tool map, a permissioned reference inspector and font matching. |
+| `.claude/skills/kosif-superpowers/` | Claude Code skill: a searchable catalog of 5,100+ powers in 10 domains with requirements, evidence badges and proofs, 90+ runnable tools behind one front door (`scripts/hub.py find`), a read-only MCP server (`scripts/kosif_mcp.py`) and a JSON manifest, a thinking engine (think.py), a capability graph, executable motion tools, a credited 125-repository tool map, a permissioned reference inspector and font matching. |
 | `fonts/kosif-jumuah/` | KOSIF Jumuah, an OFL type family matched to the Friday-greeting reference (Amiri Arabic with stacked ligatures + Bodoni Moda figures), with the reproducible build script, a seek-driven demo and the match report. |
 
 ### Quick start

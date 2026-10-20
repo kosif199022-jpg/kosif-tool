@@ -1,14 +1,31 @@
 # KOSIF TOOL — Claude superpowers and Arabic-first motion-graphics atlas
 
-> A Claude Code skill that tells Claude what it can really do: 4,751 powers in 52 families and 10 domains, each with an evidence badge (868 proven by real runs), the requirements to run it, executable thinking tools, and a 288-style motion-graphics atlas.
+> A Claude Code skill that tells Claude what it can really do: 5,296 powers in 62 families and 10 domains, each with an evidence badge (918 proven by real runs), the requirements to run it, 113 runnable tools, executable thinking tools, and a 289-style motion-graphics atlas.
 
-Start with CAPABILITIES.md, then the skill's SKILL.md. Inside Claude Code run `python3 .claude/skills/kosif-superpowers/scripts/boot.py`.
+Start with CAPABILITIES.md, then the skill's SKILL.md. Inside Claude Code run `python3 .claude/skills/kosif-superpowers/scripts/boot.py`, then `python3 .claude/skills/kosif-superpowers/scripts/hub.py find "<task>"` (tools to run + powers + guides in one answer).
 
 ## Start
 - [CAPABILITIES.md](https://raw.githubusercontent.com/kosif199022-jpg/kosif-tool/main/CAPABILITIES.md): generated self-model for Claude
 - [SKILL.md](https://raw.githubusercontent.com/kosif199022-jpg/kosif-tool/main/.claude/skills/kosif-superpowers/SKILL.md): the skill and its power-up protocol
+- [INDEX.md](https://raw.githubusercontent.com/kosif199022-jpg/kosif-tool/main/.claude/skills/kosif-superpowers/references/INDEX.md): every runnable tool, guide and power family on one page
+- [manifest.json](https://raw.githubusercontent.com/kosif199022-jpg/kosif-tool/main/.claude/skills/kosif-superpowers/manifest.json): the same as JSON for apps and agents (tools, families, guides, counts)
+- [tools.json](https://raw.githubusercontent.com/kosif199022-jpg/kosif-tool/main/.claude/skills/kosif-superpowers/data/tools.json): the tool registry (schema: .claude/skills/kosif-superpowers/schemas/tools.schema.json)
+- MCP: `python3 .claude/skills/kosif-superpowers/scripts/kosif_mcp.py` is a read-only stdio MCP server (kosif_find, kosif_tool, kosif_power …); the repo's .mcp.json registers it
 - [cognition.md](https://raw.githubusercontent.com/kosif199022-jpg/kosif-tool/main/.claude/skills/kosif-superpowers/references/cognition.md): how to think, plan, decide and create
 - [requirements.md](https://raw.githubusercontent.com/kosif199022-jpg/kosif-tool/main/.claude/skills/kosif-superpowers/references/requirements.md): what each power needs and what each install unlocks
+
+## Guides by area
+- [3d](https://raw.githubusercontent.com/kosif199022-jpg/kosif-tool/main/.claude/skills/kosif-superpowers/references/guides/3d.md)
+- [audio](https://raw.githubusercontent.com/kosif199022-jpg/kosif-tool/main/.claude/skills/kosif-superpowers/references/guides/audio.md)
+- [discover](https://raw.githubusercontent.com/kosif199022-jpg/kosif-tool/main/.claude/skills/kosif-superpowers/references/guides/discover.md)
+- [draw](https://raw.githubusercontent.com/kosif199022-jpg/kosif-tool/main/.claude/skills/kosif-superpowers/references/guides/draw.md)
+- [edit](https://raw.githubusercontent.com/kosif199022-jpg/kosif-tool/main/.claude/skills/kosif-superpowers/references/guides/edit.md)
+- [image](https://raw.githubusercontent.com/kosif199022-jpg/kosif-tool/main/.claude/skills/kosif-superpowers/references/guides/image.md)
+- [investigate](https://raw.githubusercontent.com/kosif199022-jpg/kosif-tool/main/.claude/skills/kosif-superpowers/references/guides/investigate.md)
+- [local-computer](https://raw.githubusercontent.com/kosif199022-jpg/kosif-tool/main/.claude/skills/kosif-superpowers/references/guides/local-computer.md)
+- [maintain](https://raw.githubusercontent.com/kosif199022-jpg/kosif-tool/main/.claude/skills/kosif-superpowers/references/guides/maintain.md)
+- [motion](https://raw.githubusercontent.com/kosif199022-jpg/kosif-tool/main/.claude/skills/kosif-superpowers/references/guides/motion.md)
+- [sources](https://raw.githubusercontent.com/kosif199022-jpg/kosif-tool/main/.claude/skills/kosif-superpowers/references/guides/sources.md)
 
 ## Families
 - [3d-spatial](https://raw.githubusercontent.com/kosif199022-jpg/kosif-tool/main/.claude/skills/kosif-superpowers/references/powers/3d-spatial.md)
@@ -18,6 +35,15 @@ Start with CAPABILITIES.md, then the skill's SKILL.md. Inside Claude Code run `p
 - [app-feature-transfer](https://raw.githubusercontent.com/kosif199022-jpg/kosif-tool/main/.claude/skills/kosif-superpowers/references/powers/app-feature-transfer.md)
 - [apps-artifacts](https://raw.githubusercontent.com/kosif199022-jpg/kosif-tool/main/.claude/skills/kosif-superpowers/references/powers/apps-artifacts.md)
 - [arabic-language](https://raw.githubusercontent.com/kosif199022-jpg/kosif-tool/main/.claude/skills/kosif-superpowers/references/powers/arabic-language.md)
+- [atlas-build](https://raw.githubusercontent.com/kosif199022-jpg/kosif-tool/main/.claude/skills/kosif-superpowers/references/powers/atlas-build.md)
+- [atlas-code](https://raw.githubusercontent.com/kosif199022-jpg/kosif-tool/main/.claude/skills/kosif-superpowers/references/powers/atlas-code.md)
+- [atlas-craft](https://raw.githubusercontent.com/kosif199022-jpg/kosif-tool/main/.claude/skills/kosif-superpowers/references/powers/atlas-craft.md)
+- [atlas-data](https://raw.githubusercontent.com/kosif199022-jpg/kosif-tool/main/.claude/skills/kosif-superpowers/references/powers/atlas-data.md)
+- [atlas-docs](https://raw.githubusercontent.com/kosif199022-jpg/kosif-tool/main/.claude/skills/kosif-superpowers/references/powers/atlas-docs.md)
+- [atlas-media](https://raw.githubusercontent.com/kosif199022-jpg/kosif-tool/main/.claude/skills/kosif-superpowers/references/powers/atlas-media.md)
+- [atlas-mind](https://raw.githubusercontent.com/kosif199022-jpg/kosif-tool/main/.claude/skills/kosif-superpowers/references/powers/atlas-mind.md)
+- [atlas-research](https://raw.githubusercontent.com/kosif199022-jpg/kosif-tool/main/.claude/skills/kosif-superpowers/references/powers/atlas-research.md)
+- [atlas-strategy](https://raw.githubusercontent.com/kosif199022-jpg/kosif-tool/main/.claude/skills/kosif-superpowers/references/powers/atlas-strategy.md)
 - [audio-sync-captions](https://raw.githubusercontent.com/kosif199022-jpg/kosif-tool/main/.claude/skills/kosif-superpowers/references/powers/audio-sync-captions.md)
 - [brand-logo-identity](https://raw.githubusercontent.com/kosif199022-jpg/kosif-tool/main/.claude/skills/kosif-superpowers/references/powers/brand-logo-identity.md)
 - [camera-composition-layout](https://raw.githubusercontent.com/kosif199022-jpg/kosif-tool/main/.claude/skills/kosif-superpowers/references/powers/camera-composition-layout.md)
@@ -46,6 +72,7 @@ Start with CAPABILITIES.md, then the skill's SKILL.md. Inside Claude Code run `p
 - [planning-execution](https://raw.githubusercontent.com/kosif199022-jpg/kosif-tool/main/.claude/skills/kosif-superpowers/references/powers/planning-execution.md)
 - [prompt-craft](https://raw.githubusercontent.com/kosif199022-jpg/kosif-tool/main/.claude/skills/kosif-superpowers/references/powers/prompt-craft.md)
 - [qa-verification](https://raw.githubusercontent.com/kosif199022-jpg/kosif-tool/main/.claude/skills/kosif-superpowers/references/powers/qa-verification.md)
+- [runnable-tools](https://raw.githubusercontent.com/kosif199022-jpg/kosif-tool/main/.claude/skills/kosif-superpowers/references/powers/runnable-tools.md)
 - [security-safety](https://raw.githubusercontent.com/kosif199022-jpg/kosif-tool/main/.claude/skills/kosif-superpowers/references/powers/security-safety.md)
 - [self-discovery](https://raw.githubusercontent.com/kosif199022-jpg/kosif-tool/main/.claude/skills/kosif-superpowers/references/powers/self-discovery.md)
 - [shapes-morph-geometry](https://raw.githubusercontent.com/kosif199022-jpg/kosif-tool/main/.claude/skills/kosif-superpowers/references/powers/shapes-morph-geometry.md)
@@ -65,6 +92,7 @@ Start with CAPABILITIES.md, then the skill's SKILL.md. Inside Claude Code run `p
 - [writing-humanizer](https://raw.githubusercontent.com/kosif199022-jpg/kosif-tool/main/.claude/skills/kosif-superpowers/references/powers/writing-humanizer.md)
 
 ## Optional
-- [repos.md](https://raw.githubusercontent.com/kosif199022-jpg/kosif-tool/main/.claude/skills/kosif-superpowers/references/repos.md): 124 credited open-source tools
-- [AGENTS.md](https://raw.githubusercontent.com/kosif199022-jpg/kosif-tool/main/AGENTS.md): motion-graphics production rules
-- [STYLE_INDEX.md](https://raw.githubusercontent.com/kosif199022-jpg/kosif-tool/main/STYLE_INDEX.md): 288 styles
+- [repos.md](https://raw.githubusercontent.com/kosif199022-jpg/kosif-tool/main/.claude/skills/kosif-superpowers/references/repos.md): 125 credited open-source tools
+- [AGENTS.md](https://raw.githubusercontent.com/kosif199022-jpg/kosif-tool/main/AGENTS.md): agent guide (any coding agent) and motion-graphics production rules
+- [STYLE_INDEX.md](https://raw.githubusercontent.com/kosif199022-jpg/kosif-tool/main/STYLE_INDEX.md): 289 styles
+- [projects/README.md](https://raw.githubusercontent.com/kosif199022-jpg/kosif-tool/main/projects/README.md): finished films built with this repo

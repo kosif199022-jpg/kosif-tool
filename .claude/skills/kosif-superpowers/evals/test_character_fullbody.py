@@ -129,6 +129,23 @@ class FullbodyTests(unittest.TestCase):
             self.assertTrue(result["audio_packets_preserved"])
             self.assertEqual(ik.packet_hashes(wav), ik.packet_hashes(video))
 
+    def test_mp4_without_ffprobe_fails_before_writing(self):
+        from unittest import mock
+        real = shutil.which
+        with tempfile.TemporaryDirectory() as tmp, mock.patch.object(
+                b.shutil, "which", lambda name: None if name == "ffprobe" else real(name)):
+            path = Path(tmp)/"motion.mp4"
+            with self.assertRaises(ValueError):
+                b.export(self.p, path, fps=8)
+            self.assertFalse(path.exists())
+
+    def test_doctor_reports_ffprobe(self):
+        import subprocess
+        ret = subprocess.run([sys.executable, str(SKILL/"scripts/character_fullbody.py"), "doctor"],
+                             text=True, capture_output=True)
+        self.assertEqual(ret.returncode, 0, ret.stderr)
+        self.assertIn("ffprobe", json.loads(ret.stdout))
+
     def test_no_executable_shapes(self):
         bad = copy.deepcopy(self.scene)
         bad["actions"].append({"time":2.9,"kind":"exec","duration":0.1})

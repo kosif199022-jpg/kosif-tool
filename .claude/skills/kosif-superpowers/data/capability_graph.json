@@ -15,7 +15,7 @@
    "id": "root",
    "kind": "root",
    "label": "KOSIF Superpowers",
-   "count": 5236
+   "count": 5296
   },
   {
    "id": "dom:motion",
@@ -460,31 +460,22 @@
    }
   },
   {
-   "id": "req:claude:browser",
+   "id": "req:npm:axe",
    "kind": "requirement",
-   "label": "claude:browser",
-   "ar": "تصفّح وتحكم في جهاز المستخدم بموافقته",
-   "en": "browse and control the user's machine with consent",
-   "install": "Claude in Chrome extension or the desktop app's built-in browser / computer use",
-   "req_kind": "service"
+   "label": "npm:axe",
+   "ar": "فحص إمكانية الوصول",
+   "en": "accessibility checks",
+   "install": "npm i -D axe-core @axe-core/playwright",
+   "req_kind": "npm"
   },
   {
-   "id": "req:network",
+   "id": "req:os:macos",
    "kind": "requirement",
-   "label": "network",
-   "ar": "اتصال بالشبكة للتثبيت والتحميل",
-   "en": "outbound network for installs and downloads",
-   "install": "outbound network (cloud sessions: the environment's network policy; registries pypi/npm/huggingface must be allowed)",
+   "label": "os:macos",
+   "ar": "أدوات Apple (Mach-O، plist، Swift)",
+   "en": "Apple toolchain (Mach-O, plist, Swift)",
+   "install": "a macOS machine with Xcode command-line tools",
    "req_kind": "os"
-  },
-  {
-   "id": "req:gh",
-   "kind": "requirement",
-   "label": "gh",
-   "ar": "GitHub من سطر الأوامر",
-   "en": "GitHub from the shell",
-   "install": "https://cli.github.com  (cloud sessions: use the GitHub MCP tools instead)",
-   "req_kind": "bin"
   },
   {
    "id": "fam:atlas-code",
@@ -499,22 +490,13 @@
    }
   },
   {
-   "id": "req:docker",
+   "id": "req:gh",
    "kind": "requirement",
-   "label": "docker",
-   "ar": "حاويات معزولة",
-   "en": "isolated containers",
-   "install": "https://docs.docker.com/get-docker (daemon needed; cloud containers have the client only)",
+   "label": "gh",
+   "ar": "GitHub من سطر الأوامر",
+   "en": "GitHub from the shell",
+   "install": "https://cli.github.com  (cloud sessions: use the GitHub MCP tools instead)",
    "req_kind": "bin"
-  },
-  {
-   "id": "req:os:macos",
-   "kind": "requirement",
-   "label": "os:macos",
-   "ar": "أدوات Apple (Mach-O، plist، Swift)",
-   "en": "Apple toolchain (Mach-O, plist, Swift)",
-   "install": "a macOS machine with Xcode command-line tools",
-   "req_kind": "os"
   },
   {
    "id": "fam:atlas-craft",
@@ -527,6 +509,15 @@
    "status": {
     "documented": 7
    }
+  },
+  {
+   "id": "req:npm:mermaid",
+   "kind": "requirement",
+   "label": "npm:mermaid",
+   "ar": "رسم مخططات Mermaid إلى صور",
+   "en": "render Mermaid diagrams to images",
+   "install": "npm i -g @mermaid-js/mermaid-cli",
+   "req_kind": "npm"
   },
   {
    "id": "dom:data",
@@ -555,21 +546,30 @@
    "req_kind": "pip"
   },
   {
-   "id": "req:pip:scipy",
+   "id": "req:npm:p5",
    "kind": "requirement",
-   "label": "pip:scipy",
-   "ar": "مرشحات الإشارة والتحسين",
-   "en": "signal filters and optimisation",
-   "install": "pip install scipy",
+   "label": "npm:p5",
+   "ar": "برمجة إبداعية ثنائية الأبعاد",
+   "en": "2D creative coding",
+   "install": "npm i p5  (LGPL: load as a script, do not bundle into proprietary code)",
+   "req_kind": "npm"
+  },
+  {
+   "id": "req:pip:duckdb",
+   "kind": "requirement",
+   "label": "pip:duckdb",
+   "ar": "SQL على ملفات ضخمة",
+   "en": "SQL over large files",
+   "install": "pip install duckdb",
    "req_kind": "pip"
   },
   {
-   "id": "req:pip:statsforecast",
+   "id": "req:pip:chromadb",
    "kind": "requirement",
-   "label": "pip:statsforecast",
-   "ar": "التنبؤ بالسلاسل الزمنية",
-   "en": "time-series forecasting",
-   "install": "pip install statsforecast",
+   "label": "pip:chromadb",
+   "ar": "مخزن متجهات للاسترجاع",
+   "en": "vector store for RAG",
+   "install": "pip install chromadb",
    "req_kind": "pip"
   },
   {
@@ -590,13 +590,22 @@
    }
   },
   {
-   "id": "req:npm:mermaid",
+   "id": "req:plantuml",
    "kind": "requirement",
-   "label": "npm:mermaid",
-   "ar": "رسم مخططات Mermaid إلى صور",
-   "en": "render Mermaid diagrams to images",
-   "install": "npm i -g @mermaid-js/mermaid-cli",
-   "req_kind": "npm"
+   "label": "plantuml",
+   "ar": "مخططات UML من نص",
+   "en": "UML from text",
+   "install": "apt-get install -y plantuml",
+   "req_kind": "apt"
+  },
+  {
+   "id": "req:docker",
+   "kind": "requirement",
+   "label": "docker",
+   "ar": "حاويات معزولة",
+   "en": "isolated containers",
+   "install": "https://docs.docker.com/get-docker (daemon needed; cloud containers have the client only)",
+   "req_kind": "bin"
   },
   {
    "id": "dom:media",
@@ -622,6 +631,15 @@
    "ar": "أصوات عربية عالية الجودة مدفوعة",
    "en": "paid high-quality Arabic voices",
    "install": "ELEVENLABS_API_KEY (paid)",
+   "req_kind": "key"
+  },
+  {
+   "id": "req:pip:pyannote",
+   "kind": "requirement",
+   "label": "pip:pyannote",
+   "ar": "تمييز المتحدثين",
+   "en": "speaker diarization",
+   "install": "pip install pyannote.audio + Hugging Face token",
    "req_kind": "key"
   },
   {
@@ -681,15 +699,6 @@
    }
   },
   {
-   "id": "req:pip:crawl4ai",
-   "kind": "requirement",
-   "label": "pip:crawl4ai",
-   "ar": "تحويل الصفحات إلى Markdown",
-   "en": "pages to Markdown",
-   "install": "pip install crawl4ai && crawl4ai-setup",
-   "req_kind": "pip"
-  },
-  {
    "id": "dom:strategy",
    "kind": "domain",
    "label": "strategy"
@@ -707,6 +716,15 @@
    }
   },
   {
+   "id": "req:lean",
+   "kind": "requirement",
+   "label": "lean",
+   "ar": "البراهين الرياضية الصورية",
+   "en": "formal proofs",
+   "install": "elan installer: curl -sSf https://raw.githubusercontent.com/leanprover/elan/master/elan-init.sh | sh -s -- -y",
+   "req_kind": "bin"
+  },
+  {
    "id": "fam:audio-sync-captions",
    "kind": "family",
    "label": "Audio sync & captions",
@@ -722,6 +740,15 @@
     "install": 7,
     "seen": 5
    }
+  },
+  {
+   "id": "req:network",
+   "kind": "requirement",
+   "label": "network",
+   "ar": "اتصال بالشبكة للتثبيت والتحميل",
+   "en": "outbound network for installs and downloads",
+   "install": "outbound network (cloud sessions: the environment's network policy; registries pypi/npm/huggingface must be allowed)",
+   "req_kind": "os"
   },
   {
    "id": "fam:brand-logo-identity",
@@ -864,15 +891,6 @@
    }
   },
   {
-   "id": "req:pip:duckdb",
-   "kind": "requirement",
-   "label": "pip:duckdb",
-   "ar": "SQL على ملفات ضخمة",
-   "en": "SQL over large files",
-   "install": "pip install duckdb",
-   "req_kind": "pip"
-  },
-  {
    "id": "req:pip:piper",
    "kind": "requirement",
    "label": "pip:piper",
@@ -935,6 +953,15 @@
    "ar": "جداول بيانات سريعة",
    "en": "fast dataframes",
    "install": "pip install polars",
+   "req_kind": "pip"
+  },
+  {
+   "id": "req:pip:scipy",
+   "kind": "requirement",
+   "label": "pip:scipy",
+   "ar": "مرشحات الإشارة والتحسين",
+   "en": "signal filters and optimisation",
+   "install": "pip install scipy",
    "req_kind": "pip"
   },
   {
@@ -1303,15 +1330,6 @@
    }
   },
   {
-   "id": "req:npm:axe",
-   "kind": "requirement",
-   "label": "npm:axe",
-   "ar": "فحص إمكانية الوصول",
-   "en": "accessibility checks",
-   "install": "npm i -D axe-core @axe-core/playwright",
-   "req_kind": "npm"
-  },
-  {
    "id": "script:scripts/mimic/synthetic/run_synthetic.py",
    "kind": "script",
    "label": "scripts/mimic/synthetic/run_synthetic.py"
@@ -1326,6 +1344,72 @@
    "kind": "script",
    "label": "scripts/mimic/synthetic/make_reference.py",
    "executor_score": 1.58
+  },
+  {
+   "id": "fam:runnable-tools",
+   "kind": "family",
+   "label": "Runnable KOSIF tools",
+   "ar": "الأدوات القابلة للتشغيل",
+   "prefix": "TOOL",
+   "count": 60,
+   "proven": 50,
+   "status": {
+    "proven": 50,
+    "ready": 5,
+    "install": 5
+   }
+  },
+  {
+   "id": "script:scripts/hub.py",
+   "kind": "script",
+   "label": "scripts/hub.py"
+  },
+  {
+   "id": "script:scripts/motion_director.py",
+   "kind": "script",
+   "label": "scripts/motion_director.py",
+   "executor_score": 1.19
+  },
+  {
+   "id": "script:scripts/blender_bridge.py",
+   "kind": "script",
+   "label": "scripts/blender_bridge.py"
+  },
+  {
+   "id": "script:scripts/boot.py",
+   "kind": "script",
+   "label": "scripts/boot.py"
+  },
+  {
+   "id": "script:scripts/capability_atlas.py",
+   "kind": "script",
+   "label": "scripts/capability_atlas.py"
+  },
+  {
+   "id": "script:scripts/capability_runtime_router.py",
+   "kind": "script",
+   "label": "scripts/capability_runtime_router.py"
+  },
+  {
+   "id": "script:scripts/local_first.py",
+   "kind": "script",
+   "label": "scripts/local_first.py"
+  },
+  {
+   "id": "script:scripts/superpowers_unified.py",
+   "kind": "script",
+   "label": "scripts/superpowers_unified.py"
+  },
+  {
+   "id": "script:scripts/motion_kit_bridge.py",
+   "kind": "script",
+   "label": "scripts/motion_kit_bridge.py",
+   "executor_score": 1.21
+  },
+  {
+   "id": "script:scripts/motion_runtime.py",
+   "kind": "script",
+   "label": "scripts/motion_runtime.py"
   },
   {
    "id": "fam:security-safety",
@@ -1484,15 +1568,6 @@
    "en": "scheduling and optimisation",
    "install": "pip install ortools",
    "req_kind": "pip"
-  },
-  {
-   "id": "req:npm:p5",
-   "kind": "requirement",
-   "label": "npm:p5",
-   "ar": "برمجة إبداعية ثنائية الأبعاد",
-   "en": "2D creative coding",
-   "install": "npm i p5  (LGPL: load as a script, do not bundle into proprietary code)",
-   "req_kind": "npm"
   },
   {
    "id": "fam:texture-material",
@@ -1746,105 +1821,14 @@
    "label": "scripts/tell_scan.py"
   },
   {
-   "id": "script:scripts/boot.py",
+   "id": "script:scripts/atlas_bulk_source_audit.py",
    "kind": "script",
-   "label": "scripts/boot.py"
+   "label": "scripts/atlas_bulk_source_audit.py"
   },
   {
-   "id": "script:scripts/character_fullbody.py",
+   "id": "script:scripts/atlas_deep_fusion.py",
    "kind": "script",
-   "label": "scripts/character_fullbody.py"
-  },
-  {
-   "id": "script:scripts/creative_paint.py",
-   "kind": "script",
-   "label": "scripts/creative_paint.py"
-  },
-  {
-   "id": "script:scripts/character_ik.py",
-   "kind": "script",
-   "label": "scripts/character_ik.py"
-  },
-  {
-   "id": "script:scripts/verify_video.py",
-   "kind": "script",
-   "label": "scripts/verify_video.py"
-  },
-  {
-   "id": "script:scripts/aspects.py",
-   "kind": "script",
-   "label": "scripts/aspects.py"
-  },
-  {
-   "id": "script:scripts/rebalance_creative_repos.py",
-   "kind": "script",
-   "label": "scripts/rebalance_creative_repos.py"
-  },
-  {
-   "id": "script:scripts/rea_creative_research_atlas.py",
-   "kind": "script",
-   "label": "scripts/rea_creative_research_atlas.py"
-  },
-  {
-   "id": "script:scripts/cinematic_broll_render.py",
-   "kind": "script",
-   "label": "scripts/cinematic_broll_render.py"
-  },
-  {
-   "id": "script:scripts/cinematic_cut_planner.py",
-   "kind": "script",
-   "label": "scripts/cinematic_cut_planner.py"
-  },
-  {
-   "id": "script:scripts/package_skill.py",
-   "kind": "script",
-   "label": "scripts/package_skill.py"
-  },
-  {
-   "id": "script:scripts/check_skill.py",
-   "kind": "script",
-   "label": "scripts/check_skill.py"
-  },
-  {
-   "id": "script:scripts/capability_graph.py",
-   "kind": "script",
-   "label": "scripts/capability_graph.py"
-  },
-  {
-   "id": "script:scripts/capability_atlas.py",
-   "kind": "script",
-   "label": "scripts/capability_atlas.py"
-  },
-  {
-   "id": "script:scripts/superpowers_unified.py",
-   "kind": "script",
-   "label": "scripts/superpowers_unified.py"
-  },
-  {
-   "id": "script:scripts/kosif_hubs.py",
-   "kind": "script",
-   "label": "scripts/kosif_hubs.py"
-  },
-  {
-   "id": "script:scripts/superpower_fusion.py",
-   "kind": "script",
-   "label": "scripts/superpower_fusion.py"
-  },
-  {
-   "id": "script:scripts/creative_reasoning_bridge.py",
-   "kind": "script",
-   "label": "scripts/creative_reasoning_bridge.py"
-  },
-  {
-   "id": "script:scripts/motion_director.py",
-   "kind": "script",
-   "label": "scripts/motion_director.py",
-   "executor_score": 1.19
-  },
-  {
-   "id": "script:scripts/audio_cue_mapper.py",
-   "kind": "script",
-   "label": "scripts/audio_cue_mapper.py"
+   "label": "scripts/atlas_deep_fusion.py"
   },
   {
    "id": "script:scripts/atlas_transfer.py",
@@ -1857,40 +1841,34 @@
    "label": "scripts/atlas_capability_miner.py"
   },
   {
-   "id": "script:scripts/capability_mindmap.py",
+   "id": "script:scripts/blender_cinematic_bridge.py",
    "kind": "script",
-   "label": "scripts/capability_mindmap.py"
+   "label": "scripts/blender_cinematic_bridge.py"
   },
   {
-   "id": "script:scripts/blender_worker.py",
+   "id": "script:scripts/audio_cue_mapper.py",
    "kind": "script",
-   "label": "scripts/blender_worker.py"
+   "label": "scripts/audio_cue_mapper.py"
   },
   {
-   "id": "script:scripts/blender_bridge.py",
+   "id": "script:scripts/blender_cycles_render.py",
    "kind": "script",
-   "label": "scripts/blender_bridge.py"
+   "label": "scripts/blender_cycles_render.py"
   },
   {
-   "id": "script:scripts/motion_kit_bridge.py",
+   "id": "script:scripts/unified_cinematic.py",
    "kind": "script",
-   "label": "scripts/motion_kit_bridge.py",
-   "executor_score": 1.21
+   "label": "scripts/unified_cinematic.py"
   },
   {
-   "id": "script:scripts/code_drawing_master.py",
+   "id": "script:scripts/unified_draw.py",
    "kind": "script",
-   "label": "scripts/code_drawing_master.py"
+   "label": "scripts/unified_draw.py"
   },
   {
-   "id": "script:scripts/reference_visual_fingerprint.py",
+   "id": "script:scripts/unified_media.py",
    "kind": "script",
-   "label": "scripts/reference_visual_fingerprint.py"
-  },
-  {
-   "id": "script:scripts/motion_reference_probe.py",
-   "kind": "script",
-   "label": "scripts/motion_reference_probe.py"
+   "label": "scripts/unified_media.py"
   },
   {
    "id": "script:scripts/blender_motion_video.py",
@@ -1898,14 +1876,89 @@
    "label": "scripts/blender_motion_video.py"
   },
   {
-   "id": "script:scripts/reference_edit_engine.py",
+   "id": "script:scripts/blender_worker.py",
    "kind": "script",
-   "label": "scripts/reference_edit_engine.py"
+   "label": "scripts/blender_worker.py"
   },
   {
-   "id": "script:scripts/creative_quality_gate.py",
+   "id": "script:scripts/capability_graph.py",
    "kind": "script",
-   "label": "scripts/creative_quality_gate.py"
+   "label": "scripts/capability_graph.py"
+  },
+  {
+   "id": "script:scripts/capability_mindmap.py",
+   "kind": "script",
+   "label": "scripts/capability_mindmap.py"
+  },
+  {
+   "id": "script:scripts/kosif_hubs.py",
+   "kind": "script",
+   "label": "scripts/kosif_hubs.py"
+  },
+  {
+   "id": "script:scripts/superpower_fusion.py",
+   "kind": "script",
+   "label": "scripts/superpower_fusion.py"
+  },
+  {
+   "id": "script:scripts/character_fullbody.py",
+   "kind": "script",
+   "label": "scripts/character_fullbody.py"
+  },
+  {
+   "id": "script:scripts/character_ik.py",
+   "kind": "script",
+   "label": "scripts/character_ik.py"
+  },
+  {
+   "id": "script:scripts/creative_paint.py",
+   "kind": "script",
+   "label": "scripts/creative_paint.py"
+  },
+  {
+   "id": "script:scripts/check_skill.py",
+   "kind": "script",
+   "label": "scripts/check_skill.py"
+  },
+  {
+   "id": "script:scripts/cinematic_broll_render.py",
+   "kind": "script",
+   "label": "scripts/cinematic_broll_render.py"
+  },
+  {
+   "id": "script:scripts/cinematic_cut_planner.py",
+   "kind": "script",
+   "label": "scripts/cinematic_cut_planner.py"
+  },
+  {
+   "id": "script:scripts/creative_reasoning_bridge.py",
+   "kind": "script",
+   "label": "scripts/creative_reasoning_bridge.py"
+  },
+  {
+   "id": "script:scripts/relabel_proofs.py",
+   "kind": "script",
+   "label": "scripts/relabel_proofs.py"
+  },
+  {
+   "id": "script:scripts/smart_capabilities.py",
+   "kind": "script",
+   "label": "scripts/smart_capabilities.py"
+  },
+  {
+   "id": "script:scripts/kosif_mcp.py",
+   "kind": "script",
+   "label": "scripts/kosif_mcp.py"
+  },
+  {
+   "id": "script:scripts/kosif_timeline_demo.py",
+   "kind": "script",
+   "label": "scripts/kosif_timeline_demo.py"
+  },
+  {
+   "id": "script:scripts/kosif_timeline.py",
+   "kind": "script",
+   "label": "scripts/kosif_timeline.py"
   },
   {
    "id": "script:scripts/mimic/mm_common.py",
@@ -1934,124 +1987,114 @@
    "label": "scripts/mimic/synthetic/synth.py"
   },
   {
+   "id": "script:scripts/code_drawing_master.py",
+   "kind": "script",
+   "label": "scripts/code_drawing_master.py"
+  },
+  {
+   "id": "script:scripts/package_skill.py",
+   "kind": "script",
+   "label": "scripts/package_skill.py"
+  },
+  {
+   "id": "script:scripts/rebalance_creative_repos.py",
+   "kind": "script",
+   "label": "scripts/rebalance_creative_repos.py"
+  },
+  {
+   "id": "script:scripts/rea_creative_research_atlas.py",
+   "kind": "script",
+   "label": "scripts/rea_creative_research_atlas.py"
+  },
+  {
+   "id": "script:scripts/reference_edit_engine.py",
+   "kind": "script",
+   "label": "scripts/reference_edit_engine.py"
+  },
+  {
+   "id": "script:scripts/creative_quality_gate.py",
+   "kind": "script",
+   "label": "scripts/creative_quality_gate.py"
+  },
+  {
+   "id": "script:scripts/reference_visual_fingerprint.py",
+   "kind": "script",
+   "label": "scripts/reference_visual_fingerprint.py"
+  },
+  {
+   "id": "script:scripts/motion_reference_probe.py",
+   "kind": "script",
+   "label": "scripts/motion_reference_probe.py"
+  },
+  {
+   "id": "script:scripts/skill_intelligence.py",
+   "kind": "script",
+   "label": "scripts/skill_intelligence.py"
+  },
+  {
+   "id": "script:scripts/smart_draw.py",
+   "kind": "script",
+   "label": "scripts/smart_draw.py"
+  },
+  {
+   "id": "script:scripts/test_atlas_reviewed_methods_v3.py",
+   "kind": "script",
+   "label": "scripts/test_atlas_reviewed_methods_v3.py"
+  },
+  {
+   "id": "script:scripts/atlas_reviewed_methods_v3.py",
+   "kind": "script",
+   "label": "scripts/atlas_reviewed_methods_v3.py"
+  },
+  {
+   "id": "script:scripts/test_blender_cat_fur_upgrade.py",
+   "kind": "script",
+   "label": "scripts/test_blender_cat_fur_upgrade.py"
+  },
+  {
+   "id": "script:scripts/test_blender_cinematic_bridge.py",
+   "kind": "script",
+   "label": "scripts/test_blender_cinematic_bridge.py"
+  },
+  {
+   "id": "script:scripts/test_kosif_timeline.py",
+   "kind": "script",
+   "label": "scripts/test_kosif_timeline.py"
+  },
+  {
+   "id": "script:scripts/test_unified_cinematic.py",
+   "kind": "script",
+   "label": "scripts/test_unified_cinematic.py"
+  },
+  {
+   "id": "script:scripts/test_unified_draw.py",
+   "kind": "script",
+   "label": "scripts/test_unified_draw.py"
+  },
+  {
+   "id": "script:scripts/test_unified_draw_animation.py",
+   "kind": "script",
+   "label": "scripts/test_unified_draw_animation.py"
+  },
+  {
+   "id": "script:scripts/test_unified_media.py",
+   "kind": "script",
+   "label": "scripts/test_unified_media.py"
+  },
+  {
+   "id": "script:scripts/verify_video.py",
+   "kind": "script",
+   "label": "scripts/verify_video.py"
+  },
+  {
+   "id": "script:scripts/aspects.py",
+   "kind": "script",
+   "label": "scripts/aspects.py"
+  },
+  {
    "id": "script:scripts/python_package_probe.py",
    "kind": "script",
    "label": "scripts/python_package_probe.py"
-  },
-  {
-   "id": "test:.claude/skills/kosif-superpowers/evals/test_catalog_evidence_audit.py",
-   "kind": "test",
-   "label": ".claude/skills/kosif-superpowers/evals/test_catalog_evidence_audit.py"
-  },
-  {
-   "id": "test:.claude/skills/kosif-superpowers/evals/test_installer_triage.py",
-   "kind": "test",
-   "label": ".claude/skills/kosif-superpowers/evals/test_installer_triage.py"
-  },
-  {
-   "id": "test:.claude/skills/kosif-superpowers/evals/test_local_first.py",
-   "kind": "test",
-   "label": ".claude/skills/kosif-superpowers/evals/test_local_first.py"
-  },
-  {
-   "id": "test:.claude/skills/kosif-superpowers/evals/test_rea_routing.py",
-   "kind": "test",
-   "label": ".claude/skills/kosif-superpowers/evals/test_rea_routing.py"
-  },
-  {
-   "id": "test:tests/test_superpowers.py",
-   "kind": "test",
-   "label": "tests/test_superpowers.py"
-  },
-  {
-   "id": "test:tests/test_superpowers_catalog.py",
-   "kind": "test",
-   "label": "tests/test_superpowers_catalog.py"
-  },
-  {
-   "id": "test:tests/test_mimic.py",
-   "kind": "test",
-   "label": "tests/test_mimic.py"
-  },
-  {
-   "id": "test:tests/test_aspects.py",
-   "kind": "test",
-   "label": "tests/test_aspects.py"
-  },
-  {
-   "id": "test:tests/test_capability_graph.py",
-   "kind": "test",
-   "label": "tests/test_capability_graph.py"
-  },
-  {
-   "id": "test:tests/test_requirements.py",
-   "kind": "test",
-   "label": "tests/test_requirements.py"
-  },
-  {
-   "id": "test:tests/test_superpowers_unified.py",
-   "kind": "test",
-   "label": "tests/test_superpowers_unified.py"
-  },
-  {
-   "id": "test:tests/test_reference_fetch_security.py",
-   "kind": "test",
-   "label": "tests/test_reference_fetch_security.py"
-  },
-  {
-   "id": "test:tests/test_tools_extra.py",
-   "kind": "test",
-   "label": "tests/test_tools_extra.py"
-  },
-  {
-   "id": "test:tests/test_media_sources_gateway.py",
-   "kind": "test",
-   "label": "tests/test_media_sources_gateway.py"
-  },
-  {
-   "id": "test:tests/test_capability_atlas.py",
-   "kind": "test",
-   "label": "tests/test_capability_atlas.py"
-  },
-  {
-   "id": "test:tests/test_cinematic_cut_planner.py",
-   "kind": "test",
-   "label": "tests/test_cinematic_cut_planner.py"
-  },
-  {
-   "id": "test:tests/test_think.py",
-   "kind": "test",
-   "label": "tests/test_think.py"
-  },
-  {
-   "id": "test:tests/test_boot.py",
-   "kind": "test",
-   "label": "tests/test_boot.py"
-  },
-  {
-   "id": "test:.claude/skills/kosif-superpowers/evals/test_superpower_fusion.py",
-   "kind": "test",
-   "label": ".claude/skills/kosif-superpowers/evals/test_superpower_fusion.py"
-  },
-  {
-   "id": "test:.claude/skills/kosif-superpowers/evals/test_blender_cinema.py",
-   "kind": "test",
-   "label": ".claude/skills/kosif-superpowers/evals/test_blender_cinema.py"
-  },
-  {
-   "id": "test:.claude/skills/kosif-superpowers/evals/test_code_drawing_master.py",
-   "kind": "test",
-   "label": ".claude/skills/kosif-superpowers/evals/test_code_drawing_master.py"
-  },
-  {
-   "id": "test:.claude/skills/kosif-superpowers/evals/test_atlas_capability_miner.py",
-   "kind": "test",
-   "label": ".claude/skills/kosif-superpowers/evals/test_atlas_capability_miner.py"
-  },
-  {
-   "id": "test:.claude/skills/kosif-superpowers/evals/test_system_python.py",
-   "kind": "test",
-   "label": ".claude/skills/kosif-superpowers/evals/test_system_python.py"
   },
   {
    "id": "test:.claude/skills/kosif-superpowers/evals/test_app_studio.py",
@@ -2064,9 +2107,34 @@
    "label": ".claude/skills/kosif-superpowers/evals/test_app_studio_paint.py"
   },
   {
-   "id": "test:.claude/skills/kosif-superpowers/evals/test_blender_bridge.py",
+   "id": "test:.claude/skills/kosif-superpowers/evals/test_hub.py",
    "kind": "test",
-   "label": ".claude/skills/kosif-superpowers/evals/test_blender_bridge.py"
+   "label": ".claude/skills/kosif-superpowers/evals/test_hub.py"
+  },
+  {
+   "id": "test:tests/test_aspects.py",
+   "kind": "test",
+   "label": "tests/test_aspects.py"
+  },
+  {
+   "id": "test:tests/test_catalog_tools.py",
+   "kind": "test",
+   "label": "tests/test_catalog_tools.py"
+  },
+  {
+   "id": "test:.claude/skills/kosif-superpowers/evals/test_atlas_capability_miner.py",
+   "kind": "test",
+   "label": ".claude/skills/kosif-superpowers/evals/test_atlas_capability_miner.py"
+  },
+  {
+   "id": "test:.claude/skills/kosif-superpowers/evals/test_blender_cinema.py",
+   "kind": "test",
+   "label": ".claude/skills/kosif-superpowers/evals/test_blender_cinema.py"
+  },
+  {
+   "id": "test:tests/test_atlas_cycles_integration.py",
+   "kind": "test",
+   "label": "tests/test_atlas_cycles_integration.py"
   },
   {
    "id": "test:.claude/skills/kosif-superpowers/evals/test_blender_motion_video.py",
@@ -2074,9 +2142,54 @@
    "label": ".claude/skills/kosif-superpowers/evals/test_blender_motion_video.py"
   },
   {
+   "id": "test:.claude/skills/kosif-superpowers/evals/test_blender_bridge.py",
+   "kind": "test",
+   "label": ".claude/skills/kosif-superpowers/evals/test_blender_bridge.py"
+  },
+  {
+   "id": "test:tests/test_boot.py",
+   "kind": "test",
+   "label": "tests/test_boot.py"
+  },
+  {
+   "id": "test:tests/test_capability_atlas.py",
+   "kind": "test",
+   "label": "tests/test_capability_atlas.py"
+  },
+  {
+   "id": "test:tests/test_capability_graph.py",
+   "kind": "test",
+   "label": "tests/test_capability_graph.py"
+  },
+  {
    "id": "test:.claude/skills/kosif-superpowers/evals/test_capability_mindmap.py",
    "kind": "test",
    "label": ".claude/skills/kosif-superpowers/evals/test_capability_mindmap.py"
+  },
+  {
+   "id": "test:.claude/skills/kosif-superpowers/evals/test_capability_runtime_router.py",
+   "kind": "test",
+   "label": ".claude/skills/kosif-superpowers/evals/test_capability_runtime_router.py"
+  },
+  {
+   "id": "test:.claude/skills/kosif-superpowers/evals/test_character_fullbody.py",
+   "kind": "test",
+   "label": ".claude/skills/kosif-superpowers/evals/test_character_fullbody.py"
+  },
+  {
+   "id": "test:.claude/skills/kosif-superpowers/evals/test_check_skill_json.py",
+   "kind": "test",
+   "label": ".claude/skills/kosif-superpowers/evals/test_check_skill_json.py"
+  },
+  {
+   "id": "test:tests/test_cinematic_cut_planner.py",
+   "kind": "test",
+   "label": "tests/test_cinematic_cut_planner.py"
+  },
+  {
+   "id": "test:.claude/skills/kosif-superpowers/evals/test_code_drawing_master.py",
+   "kind": "test",
+   "label": ".claude/skills/kosif-superpowers/evals/test_code_drawing_master.py"
   },
   {
    "id": "test:.claude/skills/kosif-superpowers/evals/test_creative_paint.py",
@@ -2084,14 +2197,39 @@
    "label": ".claude/skills/kosif-superpowers/evals/test_creative_paint.py"
   },
   {
+   "id": "test:tests/test_reference_fetch_security.py",
+   "kind": "test",
+   "label": "tests/test_reference_fetch_security.py"
+  },
+  {
+   "id": "test:tests/test_superpowers_catalog.py",
+   "kind": "test",
+   "label": "tests/test_superpowers_catalog.py"
+  },
+  {
+   "id": "test:tests/test_media_sources_gateway.py",
+   "kind": "test",
+   "label": "tests/test_media_sources_gateway.py"
+  },
+  {
+   "id": "test:.claude/skills/kosif-superpowers/evals/test_installer_triage.py",
+   "kind": "test",
+   "label": ".claude/skills/kosif-superpowers/evals/test_installer_triage.py"
+  },
+  {
    "id": "test:.claude/skills/kosif-superpowers/evals/test_kosif_hubs.py",
    "kind": "test",
    "label": ".claude/skills/kosif-superpowers/evals/test_kosif_hubs.py"
   },
   {
-   "id": "test:.claude/skills/kosif-superpowers/evals/test_capability_runtime_router.py",
+   "id": "test:.claude/skills/kosif-superpowers/evals/test_local_first.py",
    "kind": "test",
-   "label": ".claude/skills/kosif-superpowers/evals/test_capability_runtime_router.py"
+   "label": ".claude/skills/kosif-superpowers/evals/test_local_first.py"
+  },
+  {
+   "id": "test:tests/test_mimic.py",
+   "kind": "test",
+   "label": "tests/test_mimic.py"
   },
   {
    "id": "test:.claude/skills/kosif-superpowers/evals/test_motion_director.py",
@@ -2104,9 +2242,64 @@
    "label": ".claude/skills/kosif-superpowers/evals/test_motion_reference_probe.py"
   },
   {
+   "id": "test:.claude/skills/kosif-superpowers/evals/test_motion_runtime.py",
+   "kind": "test",
+   "label": ".claude/skills/kosif-superpowers/evals/test_motion_runtime.py"
+  },
+  {
+   "id": "test:tests/test_superpowers_unified.py",
+   "kind": "test",
+   "label": "tests/test_superpowers_unified.py"
+  },
+  {
+   "id": "test:.claude/skills/kosif-superpowers/evals/test_catalog_evidence_audit.py",
+   "kind": "test",
+   "label": ".claude/skills/kosif-superpowers/evals/test_catalog_evidence_audit.py"
+  },
+  {
+   "id": "test:.claude/skills/kosif-superpowers/evals/test_rea_routing.py",
+   "kind": "test",
+   "label": ".claude/skills/kosif-superpowers/evals/test_rea_routing.py"
+  },
+  {
+   "id": "test:tests/test_superpowers.py",
+   "kind": "test",
+   "label": "tests/test_superpowers.py"
+  },
+  {
+   "id": "test:.claude/skills/kosif-superpowers/evals/test_system_python.py",
+   "kind": "test",
+   "label": ".claude/skills/kosif-superpowers/evals/test_system_python.py"
+  },
+  {
    "id": "test:.claude/skills/kosif-superpowers/evals/test_rea_bridge.py",
    "kind": "test",
    "label": ".claude/skills/kosif-superpowers/evals/test_rea_bridge.py"
+  },
+  {
+   "id": "test:tests/test_creative_external_research.py",
+   "kind": "test",
+   "label": "tests/test_creative_external_research.py"
+  },
+  {
+   "id": "test:tests/test_requirements.py",
+   "kind": "test",
+   "label": "tests/test_requirements.py"
+  },
+  {
+   "id": "test:.claude/skills/kosif-superpowers/evals/test_superpower_fusion.py",
+   "kind": "test",
+   "label": ".claude/skills/kosif-superpowers/evals/test_superpower_fusion.py"
+  },
+  {
+   "id": "test:tests/test_think.py",
+   "kind": "test",
+   "label": "tests/test_think.py"
+  },
+  {
+   "id": "test:tests/test_tools_extra.py",
+   "kind": "test",
+   "label": "tests/test_tools_extra.py"
   }
  ],
  "edges": [
@@ -2538,51 +2731,51 @@
   },
   {
    "from": "fam:atlas-build",
-   "to": "req:node",
-   "rel": "needs",
-   "w": 16
-  },
-  {
-   "from": "fam:atlas-build",
    "to": "req:chromium",
    "rel": "needs",
    "w": 12
   },
   {
    "from": "fam:atlas-build",
+   "to": "req:npm:react",
+   "rel": "needs",
+   "w": 3
+  },
+  {
+   "from": "fam:atlas-build",
+   "to": "req:npm:axe",
+   "rel": "needs",
+   "w": 3
+  },
+  {
+   "from": "fam:atlas-build",
+   "to": "req:node",
+   "rel": "needs",
+   "w": 2
+  },
+  {
+   "from": "fam:atlas-build",
    "to": "req:python3",
    "rel": "needs",
-   "w": 9
-  },
-  {
-   "from": "fam:atlas-build",
-   "to": "req:claude:browser",
-   "rel": "needs",
-   "w": 6
-  },
-  {
-   "from": "fam:atlas-build",
-   "to": "req:network",
-   "rel": "needs",
-   "w": 5
-  },
-  {
-   "from": "fam:atlas-build",
-   "to": "req:git",
-   "rel": "needs",
-   "w": 4
+   "w": 2
   },
   {
    "from": "fam:atlas-build",
    "to": "req:claude:tools",
    "rel": "needs",
-   "w": 4
+   "w": 1
   },
   {
    "from": "fam:atlas-build",
-   "to": "req:gh",
+   "to": "req:os:macos",
    "rel": "needs",
-   "w": 3
+   "w": 1
+  },
+  {
+   "from": "fam:atlas-build",
+   "to": "req:key:unspecified",
+   "rel": "needs",
+   "w": 1
   },
   {
    "from": "root",
@@ -2600,49 +2793,49 @@
    "from": "fam:atlas-code",
    "to": "req:git",
    "rel": "needs",
-   "w": 50
+   "w": 24
   },
   {
    "from": "fam:atlas-code",
-   "to": "req:node",
+   "to": "req:key:unspecified",
    "rel": "needs",
-   "w": 32
+   "w": 15
   },
   {
    "from": "fam:atlas-code",
    "to": "req:python3",
    "rel": "needs",
-   "w": 21
+   "w": 13
   },
   {
    "from": "fam:atlas-code",
    "to": "req:gh",
    "rel": "needs",
-   "w": 20
+   "w": 11
   },
   {
    "from": "fam:atlas-code",
-   "to": "req:network",
-   "rel": "needs",
-   "w": 10
-  },
-  {
-   "from": "fam:atlas-code",
-   "to": "req:claude:tools",
+   "to": "req:node",
    "rel": "needs",
    "w": 9
   },
   {
    "from": "fam:atlas-code",
-   "to": "req:docker",
+   "to": "req:npm:react",
    "rel": "needs",
-   "w": 4
+   "w": 6
   },
   {
    "from": "fam:atlas-code",
-   "to": "req:os:macos",
+   "to": "req:claude:tools",
    "rel": "needs",
-   "w": 2
+   "w": 5
+  },
+  {
+   "from": "fam:atlas-code",
+   "to": "req:chromium",
+   "rel": "needs",
+   "w": 3
   },
   {
    "from": "root",
@@ -2658,13 +2851,7 @@
   },
   {
    "from": "fam:atlas-craft",
-   "to": "req:node",
-   "rel": "needs",
-   "w": 1
-  },
-  {
-   "from": "fam:atlas-craft",
-   "to": "req:fonts:arabic",
+   "to": "req:npm:mermaid",
    "rel": "needs",
    "w": 1
   },
@@ -2684,49 +2871,37 @@
    "from": "fam:atlas-data",
    "to": "req:python3",
    "rel": "needs",
-   "w": 29
+   "w": 4
   },
   {
    "from": "fam:atlas-data",
    "to": "req:pip:pandas",
    "rel": "needs",
-   "w": 15
-  },
-  {
-   "from": "fam:atlas-data",
-   "to": "req:pip:scipy",
-   "rel": "needs",
-   "w": 6
-  },
-  {
-   "from": "fam:atlas-data",
-   "to": "req:pip:numpy",
-   "rel": "needs",
-   "w": 4
-  },
-  {
-   "from": "fam:atlas-data",
-   "to": "req:network",
-   "rel": "needs",
-   "w": 3
-  },
-  {
-   "from": "fam:atlas-data",
-   "to": "req:claude:tools",
-   "rel": "needs",
-   "w": 3
-  },
-  {
-   "from": "fam:atlas-data",
-   "to": "req:pip:matplotlib",
-   "rel": "needs",
    "w": 2
   },
   {
    "from": "fam:atlas-data",
-   "to": "req:pip:statsforecast",
+   "to": "req:tesseract",
    "rel": "needs",
-   "w": 2
+   "w": 1
+  },
+  {
+   "from": "fam:atlas-data",
+   "to": "req:npm:p5",
+   "rel": "needs",
+   "w": 1
+  },
+  {
+   "from": "fam:atlas-data",
+   "to": "req:pip:duckdb",
+   "rel": "needs",
+   "w": 1
+  },
+  {
+   "from": "fam:atlas-data",
+   "to": "req:pip:chromadb",
+   "rel": "needs",
+   "w": 1
   },
   {
    "from": "root",
@@ -2742,21 +2917,9 @@
   },
   {
    "from": "fam:atlas-docs",
-   "to": "req:git",
+   "to": "req:npm:mermaid",
    "rel": "needs",
-   "w": 9
-  },
-  {
-   "from": "fam:atlas-docs",
-   "to": "req:python3",
-   "rel": "needs",
-   "w": 5
-  },
-  {
-   "from": "fam:atlas-docs",
-   "to": "req:node",
-   "rel": "needs",
-   "w": 4
+   "w": 6
   },
   {
    "from": "fam:atlas-docs",
@@ -2766,25 +2929,31 @@
   },
   {
    "from": "fam:atlas-docs",
-   "to": "req:npm:mermaid",
+   "to": "req:git",
    "rel": "needs",
    "w": 3
   },
   {
    "from": "fam:atlas-docs",
-   "to": "req:chromium",
-   "rel": "needs",
-   "w": 2
-  },
-  {
-   "from": "fam:atlas-docs",
-   "to": "req:network",
-   "rel": "needs",
-   "w": 2
-  },
-  {
-   "from": "fam:atlas-docs",
    "to": "req:claude:tools",
+   "rel": "needs",
+   "w": 2
+  },
+  {
+   "from": "fam:atlas-docs",
+   "to": "req:plantuml",
+   "rel": "needs",
+   "w": 1
+  },
+  {
+   "from": "fam:atlas-docs",
+   "to": "req:docker",
+   "rel": "needs",
+   "w": 1
+  },
+  {
+   "from": "fam:atlas-docs",
+   "to": "req:python3",
    "rel": "needs",
    "w": 1
   },
@@ -2804,31 +2973,25 @@
    "from": "fam:atlas-media",
    "to": "req:ffmpeg",
    "rel": "needs",
-   "w": 7
-  },
-  {
-   "from": "fam:atlas-media",
-   "to": "req:node",
-   "rel": "needs",
-   "w": 3
-  },
-  {
-   "from": "fam:atlas-media",
-   "to": "req:network",
-   "rel": "needs",
-   "w": 3
-  },
-  {
-   "from": "fam:atlas-media",
-   "to": "req:python3",
-   "rel": "needs",
-   "w": 3
+   "w": 5
   },
   {
    "from": "fam:atlas-media",
    "to": "req:key:elevenlabs",
    "rel": "needs",
    "w": 2
+  },
+  {
+   "from": "fam:atlas-media",
+   "to": "req:key:unspecified",
+   "rel": "needs",
+   "w": 1
+  },
+  {
+   "from": "fam:atlas-media",
+   "to": "req:pip:pyannote",
+   "rel": "needs",
+   "w": 1
   },
   {
    "from": "fam:atlas-media",
@@ -2839,6 +3002,12 @@
   {
    "from": "fam:atlas-media",
    "to": "req:pip:faster-whisper",
+   "rel": "needs",
+   "w": 1
+  },
+  {
+   "from": "fam:atlas-media",
+   "to": "req:key:video-gen",
    "rel": "needs",
    "w": 1
   },
@@ -2862,27 +3031,27 @@
   },
   {
    "from": "fam:atlas-mind",
+   "to": "req:claude:tools",
+   "rel": "needs",
+   "w": 7
+  },
+  {
+   "from": "fam:atlas-mind",
    "to": "req:git",
    "rel": "needs",
-   "w": 6
+   "w": 4
+  },
+  {
+   "from": "fam:atlas-mind",
+   "to": "req:chromium",
+   "rel": "needs",
+   "w": 1
   },
   {
    "from": "fam:atlas-mind",
    "to": "req:python3",
    "rel": "needs",
-   "w": 4
-  },
-  {
-   "from": "fam:atlas-mind",
-   "to": "req:claude:tools",
-   "rel": "needs",
-   "w": 4
-  },
-  {
-   "from": "fam:atlas-mind",
-   "to": "req:network",
-   "rel": "needs",
-   "w": 2
+   "w": 1
   },
   {
    "from": "fam:atlas-mind",
@@ -2904,19 +3073,7 @@
   },
   {
    "from": "fam:atlas-research",
-   "to": "req:network",
-   "rel": "needs",
-   "w": 5
-  },
-  {
-   "from": "fam:atlas-research",
-   "to": "req:python3",
-   "rel": "needs",
-   "w": 2
-  },
-  {
-   "from": "fam:atlas-research",
-   "to": "req:pip:crawl4ai",
+   "to": "req:key:unspecified",
    "rel": "needs",
    "w": 1
   },
@@ -2928,7 +3085,19 @@
   },
   {
    "from": "fam:atlas-research",
+   "to": "req:pip:chromadb",
+   "rel": "needs",
+   "w": 1
+  },
+  {
+   "from": "fam:atlas-research",
    "to": "req:node",
+   "rel": "needs",
+   "w": 1
+  },
+  {
+   "from": "fam:atlas-research",
+   "to": "req:pip:office",
    "rel": "needs",
    "w": 1
   },
@@ -2946,39 +3115,15 @@
   },
   {
    "from": "fam:atlas-strategy",
-   "to": "req:python3",
+   "to": "req:lean",
    "rel": "needs",
-   "w": 9
+   "w": 3
   },
   {
    "from": "fam:atlas-strategy",
-   "to": "req:pip:pandas",
-   "rel": "needs",
-   "w": 5
-  },
-  {
-   "from": "fam:atlas-strategy",
-   "to": "req:network",
-   "rel": "needs",
-   "w": 4
-  },
-  {
-   "from": "fam:atlas-strategy",
-   "to": "req:gh",
+   "to": "req:key:video-gen",
    "rel": "needs",
    "w": 2
-  },
-  {
-   "from": "fam:atlas-strategy",
-   "to": "req:git",
-   "rel": "needs",
-   "w": 1
-  },
-  {
-   "from": "fam:atlas-strategy",
-   "to": "req:claude:tools",
-   "rel": "needs",
-   "w": 1
   },
   {
    "from": "fam:atlas-strategy",
@@ -2988,7 +3133,31 @@
   },
   {
    "from": "fam:atlas-strategy",
+   "to": "req:pip:pandas",
+   "rel": "needs",
+   "w": 1
+  },
+  {
+   "from": "fam:atlas-strategy",
    "to": "req:pip:matplotlib",
+   "rel": "needs",
+   "w": 1
+  },
+  {
+   "from": "fam:atlas-strategy",
+   "to": "req:pip:hypothesis",
+   "rel": "needs",
+   "w": 1
+  },
+  {
+   "from": "fam:atlas-strategy",
+   "to": "req:python3",
+   "rel": "needs",
+   "w": 1
+  },
+  {
+   "from": "fam:atlas-strategy",
+   "to": "req:os:macos",
    "rel": "needs",
    "w": 1
   },
@@ -3812,7 +3981,7 @@
    "from": "fam:engines-render-pipeline",
    "to": "req:key:unspecified",
    "rel": "needs",
-   "w": 26
+   "w": 27
   },
   {
    "from": "fam:engines-render-pipeline",
@@ -4034,19 +4203,19 @@
    "from": "fam:light-glow-bloom",
    "to": "req:npm:three",
    "rel": "needs",
-   "w": 17
+   "w": 18
+  },
+  {
+   "from": "fam:light-glow-bloom",
+   "to": "req:chromium",
+   "rel": "needs",
+   "w": 8
   },
   {
    "from": "fam:light-glow-bloom",
    "to": "req:python3",
    "rel": "needs",
    "w": 8
-  },
-  {
-   "from": "fam:light-glow-bloom",
-   "to": "req:chromium",
-   "rel": "needs",
-   "w": 7
   },
   {
    "from": "fam:light-glow-bloom",
@@ -4650,15 +4819,15 @@
   },
   {
    "from": "fam:qa-verification",
-   "to": "req:npm:hyperframes",
+   "to": "req:chromium",
    "rel": "needs",
    "w": 24
   },
   {
    "from": "fam:qa-verification",
-   "to": "req:chromium",
+   "to": "req:npm:hyperframes",
    "rel": "needs",
-   "w": 23
+   "w": 24
   },
   {
    "from": "fam:qa-verification",
@@ -4701,6 +4870,126 @@
    "to": "script:scripts/mimic/synthetic/make_reference.py",
    "rel": "runs",
    "w": 1
+  },
+  {
+   "from": "root",
+   "to": "dom:build",
+   "rel": "has",
+   "w": 1
+  },
+  {
+   "from": "dom:build",
+   "to": "fam:runnable-tools",
+   "rel": "has",
+   "w": 60
+  },
+  {
+   "from": "fam:runnable-tools",
+   "to": "req:python3",
+   "rel": "needs",
+   "w": 48
+  },
+  {
+   "from": "fam:runnable-tools",
+   "to": "req:ffmpeg",
+   "rel": "needs",
+   "w": 13
+  },
+  {
+   "from": "fam:runnable-tools",
+   "to": "req:pip:pillow",
+   "rel": "needs",
+   "w": 8
+  },
+  {
+   "from": "fam:runnable-tools",
+   "to": "req:blender",
+   "rel": "needs",
+   "w": 7
+  },
+  {
+   "from": "fam:runnable-tools",
+   "to": "req:chromium",
+   "rel": "needs",
+   "w": 6
+  },
+  {
+   "from": "fam:runnable-tools",
+   "to": "req:node",
+   "rel": "needs",
+   "w": 6
+  },
+  {
+   "from": "fam:runnable-tools",
+   "to": "req:npm:rea",
+   "rel": "needs",
+   "w": 6
+  },
+  {
+   "from": "fam:runnable-tools",
+   "to": "req:npm:remotion",
+   "rel": "needs",
+   "w": 3
+  },
+  {
+   "from": "fam:runnable-tools",
+   "to": "script:scripts/hub.py",
+   "rel": "runs",
+   "w": 65
+  },
+  {
+   "from": "fam:runnable-tools",
+   "to": "script:scripts/motion_director.py",
+   "rel": "runs",
+   "w": 6
+  },
+  {
+   "from": "fam:runnable-tools",
+   "to": "script:scripts/blender_bridge.py",
+   "rel": "runs",
+   "w": 6
+  },
+  {
+   "from": "fam:runnable-tools",
+   "to": "script:scripts/boot.py",
+   "rel": "runs",
+   "w": 5
+  },
+  {
+   "from": "fam:runnable-tools",
+   "to": "script:scripts/capability_atlas.py",
+   "rel": "runs",
+   "w": 5
+  },
+  {
+   "from": "fam:runnable-tools",
+   "to": "script:scripts/capability_runtime_router.py",
+   "rel": "runs",
+   "w": 5
+  },
+  {
+   "from": "fam:runnable-tools",
+   "to": "script:scripts/local_first.py",
+   "rel": "runs",
+   "w": 5
+  },
+  {
+   "from": "fam:runnable-tools",
+   "to": "script:scripts/superpowers_unified.py",
+   "rel": "runs",
+   "w": 5
+  },
+  {
+   "from": "fam:runnable-tools",
+   "to": "script:scripts/motion_kit_bridge.py",
+   "rel": "runs",
+   "w": 5
+  },
+  {
+   "from": "fam:runnable-tools",
+   "to": "script:scripts/motion_runtime.py",
+   "rel": "runs",
+   "w": 5
   },
   {
    "from": "root",
@@ -5801,6 +6090,72 @@
    "w": 2
   },
   {
+   "from": "script:scripts/app_studio.py",
+   "to": "script:scripts/app_studio_paint.py",
+   "rel": "imports",
+   "w": 1
+  },
+  {
+   "from": "script:scripts/atlas_bulk_source_audit.py",
+   "to": "script:scripts/atlas_deep_fusion.py",
+   "rel": "imports",
+   "w": 1
+  },
+  {
+   "from": "script:scripts/atlas_transfer.py",
+   "to": "script:scripts/atlas_capability_miner.py",
+   "rel": "imports",
+   "w": 1
+  },
+  {
+   "from": "script:scripts/atlas_transfer.py",
+   "to": "script:scripts/powers.py",
+   "rel": "imports",
+   "w": 1
+  },
+  {
+   "from": "script:scripts/blender_cinematic_bridge.py",
+   "to": "script:scripts/audio_cue_mapper.py",
+   "rel": "imports",
+   "w": 1
+  },
+  {
+   "from": "script:scripts/blender_cinematic_bridge.py",
+   "to": "script:scripts/blender_cycles_render.py",
+   "rel": "imports",
+   "w": 1
+  },
+  {
+   "from": "script:scripts/blender_cinematic_bridge.py",
+   "to": "script:scripts/unified_cinematic.py",
+   "rel": "imports",
+   "w": 1
+  },
+  {
+   "from": "script:scripts/blender_cinematic_bridge.py",
+   "to": "script:scripts/unified_draw.py",
+   "rel": "imports",
+   "w": 1
+  },
+  {
+   "from": "script:scripts/blender_cinematic_bridge.py",
+   "to": "script:scripts/unified_media.py",
+   "rel": "imports",
+   "w": 1
+  },
+  {
+   "from": "script:scripts/blender_motion_video.py",
+   "to": "script:scripts/blender_bridge.py",
+   "rel": "imports",
+   "w": 1
+  },
+  {
+   "from": "script:scripts/blender_worker.py",
+   "to": "script:scripts/blender_bridge.py",
+   "rel": "imports",
+   "w": 1
+  },
+  {
    "from": "script:scripts/boot.py",
    "to": "script:scripts/powers.py",
    "rel": "imports",
@@ -5813,55 +6168,7 @@
    "w": 1
   },
   {
-   "from": "script:scripts/character_fullbody.py",
-   "to": "script:scripts/creative_paint.py",
-   "rel": "imports",
-   "w": 1
-  },
-  {
-   "from": "script:scripts/character_fullbody.py",
-   "to": "script:scripts/character_ik.py",
-   "rel": "imports",
-   "w": 1
-  },
-  {
-   "from": "script:scripts/verify_video.py",
-   "to": "script:scripts/aspects.py",
-   "rel": "imports",
-   "w": 1
-  },
-  {
-   "from": "script:scripts/rebalance_creative_repos.py",
-   "to": "script:scripts/rea_creative_research_atlas.py",
-   "rel": "imports",
-   "w": 1
-  },
-  {
-   "from": "script:scripts/character_ik.py",
-   "to": "script:scripts/creative_paint.py",
-   "rel": "imports",
-   "w": 1
-  },
-  {
-   "from": "script:scripts/cinematic_broll_render.py",
-   "to": "script:scripts/cinematic_cut_planner.py",
-   "rel": "imports",
-   "w": 1
-  },
-  {
-   "from": "script:scripts/requirements.py",
-   "to": "script:scripts/powers.py",
-   "rel": "imports",
-   "w": 1
-  },
-  {
-   "from": "script:scripts/package_skill.py",
-   "to": "script:scripts/check_skill.py",
-   "rel": "imports",
-   "w": 1
-  },
-  {
-   "from": "script:scripts/capability_graph.py",
+   "from": "script:scripts/build_chapters.py",
    "to": "script:scripts/powers.py",
    "rel": "imports",
    "w": 1
@@ -5873,49 +6180,7 @@
    "w": 1
   },
   {
-   "from": "script:scripts/kosif_hubs.py",
-   "to": "script:scripts/powers.py",
-   "rel": "imports",
-   "w": 1
-  },
-  {
-   "from": "script:scripts/kosif_hubs.py",
-   "to": "script:scripts/requirements.py",
-   "rel": "imports",
-   "w": 1
-  },
-  {
-   "from": "script:scripts/kosif_hubs.py",
-   "to": "script:scripts/superpower_fusion.py",
-   "rel": "imports",
-   "w": 1
-  },
-  {
-   "from": "script:scripts/creative_reasoning_bridge.py",
-   "to": "script:scripts/motion_director.py",
-   "rel": "imports",
-   "w": 1
-  },
-  {
-   "from": "script:scripts/creative_reasoning_bridge.py",
-   "to": "script:scripts/audio_cue_mapper.py",
-   "rel": "imports",
-   "w": 1
-  },
-  {
-   "from": "script:scripts/atlas_transfer.py",
-   "to": "script:scripts/powers.py",
-   "rel": "imports",
-   "w": 1
-  },
-  {
-   "from": "script:scripts/atlas_transfer.py",
-   "to": "script:scripts/atlas_capability_miner.py",
-   "rel": "imports",
-   "w": 1
-  },
-  {
-   "from": "script:scripts/capability_mindmap.py",
+   "from": "script:scripts/capability_graph.py",
    "to": "script:scripts/powers.py",
    "rel": "imports",
    "w": 1
@@ -5928,19 +6193,31 @@
   },
   {
    "from": "script:scripts/capability_mindmap.py",
+   "to": "script:scripts/powers.py",
+   "rel": "imports",
+   "w": 1
+  },
+  {
+   "from": "script:scripts/capability_mindmap.py",
    "to": "script:scripts/superpower_fusion.py",
    "rel": "imports",
    "w": 1
   },
   {
-   "from": "script:scripts/think.py",
-   "to": "script:scripts/powers.py",
+   "from": "script:scripts/character_fullbody.py",
+   "to": "script:scripts/character_ik.py",
    "rel": "imports",
    "w": 1
   },
   {
-   "from": "script:scripts/check_skill.py",
-   "to": "script:scripts/powers.py",
+   "from": "script:scripts/character_fullbody.py",
+   "to": "script:scripts/creative_paint.py",
+   "rel": "imports",
+   "w": 1
+  },
+  {
+   "from": "script:scripts/character_ik.py",
+   "to": "script:scripts/creative_paint.py",
    "rel": "imports",
    "w": 1
   },
@@ -5951,127 +6228,133 @@
    "w": 1
   },
   {
-   "from": "script:scripts/build_chapters.py",
+   "from": "script:scripts/check_skill.py",
+   "to": "script:scripts/hub.py",
+   "rel": "imports",
+   "w": 1
+  },
+  {
+   "from": "script:scripts/check_skill.py",
    "to": "script:scripts/powers.py",
    "rel": "imports",
    "w": 1
   },
   {
-   "from": "script:scripts/blender_worker.py",
-   "to": "script:scripts/blender_bridge.py",
+   "from": "script:scripts/cinematic_broll_render.py",
+   "to": "script:scripts/cinematic_cut_planner.py",
    "rel": "imports",
    "w": 1
   },
   {
-   "from": "script:scripts/powers.py",
-   "to": "script:scripts/probe_env.py",
+   "from": "script:scripts/creative_reasoning_bridge.py",
+   "to": "script:scripts/audio_cue_mapper.py",
    "rel": "imports",
    "w": 1
   },
   {
-   "from": "script:scripts/superpower_fusion.py",
-   "to": "script:scripts/powers.py",
-   "rel": "imports",
-   "w": 1
-  },
-  {
-   "from": "script:scripts/app_studio.py",
-   "to": "script:scripts/app_studio_paint.py",
-   "rel": "imports",
-   "w": 1
-  },
-  {
-   "from": "script:scripts/motion_kit_bridge.py",
-   "to": "script:scripts/code_drawing_master.py",
-   "rel": "imports",
-   "w": 1
-  },
-  {
-   "from": "script:scripts/motion_kit_bridge.py",
+   "from": "script:scripts/creative_reasoning_bridge.py",
    "to": "script:scripts/motion_director.py",
    "rel": "imports",
    "w": 1
   },
   {
-   "from": "script:scripts/reference_visual_fingerprint.py",
-   "to": "script:scripts/motion_reference_probe.py",
+   "from": "script:scripts/hub.py",
+   "to": "script:scripts/powers.py",
    "rel": "imports",
    "w": 1
   },
   {
-   "from": "script:scripts/blender_motion_video.py",
-   "to": "script:scripts/blender_bridge.py",
+   "from": "script:scripts/hub.py",
+   "to": "script:scripts/relabel_proofs.py",
    "rel": "imports",
    "w": 1
   },
   {
-   "from": "script:scripts/reference_edit_engine.py",
-   "to": "script:scripts/creative_quality_gate.py",
+   "from": "script:scripts/hub.py",
+   "to": "script:scripts/requirements.py",
    "rel": "imports",
    "w": 1
   },
   {
-   "from": "script:scripts/mimic/mm_textfx.py",
-   "to": "script:scripts/mimic/mm_common.py",
+   "from": "script:scripts/kosif_hubs.py",
+   "to": "script:scripts/powers.py",
    "rel": "imports",
    "w": 1
   },
   {
-   "from": "script:scripts/mimic/mm_textfx.py",
-   "to": "script:scripts/mimic/mm_render_text.py",
+   "from": "script:scripts/kosif_hubs.py",
+   "to": "script:scripts/requirements.py",
    "rel": "imports",
    "w": 1
   },
   {
-   "from": "script:scripts/mimic/mm_textfx.py",
-   "to": "script:scripts/mimic/mm_img.py",
+   "from": "script:scripts/kosif_hubs.py",
+   "to": "script:scripts/smart_capabilities.py",
    "rel": "imports",
    "w": 1
   },
   {
-   "from": "script:scripts/mimic/mm_fonts_lib.py",
-   "to": "script:scripts/mimic/mm_common.py",
+   "from": "script:scripts/kosif_hubs.py",
+   "to": "script:scripts/superpower_fusion.py",
    "rel": "imports",
    "w": 1
   },
   {
-   "from": "script:scripts/mimic/mm_render_text.py",
-   "to": "script:scripts/mimic/mm_common.py",
+   "from": "script:scripts/kosif_mcp.py",
+   "to": "script:scripts/hub.py",
    "rel": "imports",
    "w": 1
   },
   {
-   "from": "script:scripts/mimic/mm_render_text.py",
-   "to": "script:scripts/mimic/mm_img.py",
+   "from": "script:scripts/kosif_mcp.py",
+   "to": "script:scripts/powers.py",
    "rel": "imports",
    "w": 1
   },
   {
-   "from": "script:scripts/mimic/mm_render_text.py",
+   "from": "script:scripts/kosif_timeline_demo.py",
+   "to": "script:scripts/kosif_timeline.py",
+   "rel": "imports",
+   "w": 1
+  },
+  {
+   "from": "script:scripts/mimic/mm_analyze.py",
    "to": "script:scripts/mimic/mm_color.py",
    "rel": "imports",
    "w": 1
   },
   {
-   "from": "script:scripts/mimic/mm_build.py",
-   "to": "script:scripts/mimic/mm_textfx.py",
-   "rel": "imports",
-   "w": 1
-  },
-  {
-   "from": "script:scripts/mimic/mm_build.py",
+   "from": "script:scripts/mimic/mm_analyze.py",
    "to": "script:scripts/mimic/mm_common.py",
    "rel": "imports",
    "w": 1
   },
   {
-   "from": "script:scripts/mimic/mm_build.py",
+   "from": "script:scripts/mimic/mm_analyze.py",
    "to": "script:scripts/mimic/mm_img.py",
    "rel": "imports",
    "w": 1
   },
   {
-   "from": "script:scripts/mimic/mm_build.py",
+   "from": "script:scripts/mimic/mm_analyze.py",
+   "to": "script:scripts/mimic/mm_sheets.py",
+   "rel": "imports",
+   "w": 1
+  },
+  {
+   "from": "script:scripts/mimic/mm_analyze.py",
+   "to": "script:scripts/mimic/mm_text.py",
+   "rel": "imports",
+   "w": 1
+  },
+  {
+   "from": "script:scripts/mimic/mm_analyze.py",
+   "to": "script:scripts/mimic/mm_transitions.py",
+   "rel": "imports",
+   "w": 1
+  },
+  {
+   "from": "script:scripts/mimic/mm_analyze.py",
    "to": "script:scripts/mimic/mm_video.py",
    "rel": "imports",
    "w": 1
@@ -6084,7 +6367,37 @@
   },
   {
    "from": "script:scripts/mimic/mm_build.py",
+   "to": "script:scripts/mimic/mm_common.py",
+   "rel": "imports",
+   "w": 1
+  },
+  {
+   "from": "script:scripts/mimic/mm_build.py",
+   "to": "script:scripts/mimic/mm_img.py",
+   "rel": "imports",
+   "w": 1
+  },
+  {
+   "from": "script:scripts/mimic/mm_build.py",
+   "to": "script:scripts/mimic/mm_textfx.py",
+   "rel": "imports",
+   "w": 1
+  },
+  {
+   "from": "script:scripts/mimic/mm_build.py",
    "to": "script:scripts/mimic/mm_transitions.py",
+   "rel": "imports",
+   "w": 1
+  },
+  {
+   "from": "script:scripts/mimic/mm_build.py",
+   "to": "script:scripts/mimic/mm_video.py",
+   "rel": "imports",
+   "w": 1
+  },
+  {
+   "from": "script:scripts/mimic/mm_fonts.py",
+   "to": "script:scripts/mimic/mm_common.py",
    "rel": "imports",
    "w": 1
   },
@@ -6102,19 +6415,37 @@
   },
   {
    "from": "script:scripts/mimic/mm_fonts.py",
-   "to": "script:scripts/mimic/mm_sheets.py",
-   "rel": "imports",
-   "w": 1
-  },
-  {
-   "from": "script:scripts/mimic/mm_fonts.py",
    "to": "script:scripts/mimic/mm_render_text.py",
    "rel": "imports",
    "w": 1
   },
   {
    "from": "script:scripts/mimic/mm_fonts.py",
+   "to": "script:scripts/mimic/mm_sheets.py",
+   "rel": "imports",
+   "w": 1
+  },
+  {
+   "from": "script:scripts/mimic/mm_fonts_lib.py",
    "to": "script:scripts/mimic/mm_common.py",
+   "rel": "imports",
+   "w": 1
+  },
+  {
+   "from": "script:scripts/mimic/mm_render_text.py",
+   "to": "script:scripts/mimic/mm_color.py",
+   "rel": "imports",
+   "w": 1
+  },
+  {
+   "from": "script:scripts/mimic/mm_render_text.py",
+   "to": "script:scripts/mimic/mm_common.py",
+   "rel": "imports",
+   "w": 1
+  },
+  {
+   "from": "script:scripts/mimic/mm_render_text.py",
+   "to": "script:scripts/mimic/mm_img.py",
    "rel": "imports",
    "w": 1
   },
@@ -6126,6 +6457,54 @@
   },
   {
    "from": "script:scripts/mimic/mm_sheets.py",
+   "to": "script:scripts/mimic/mm_img.py",
+   "rel": "imports",
+   "w": 1
+  },
+  {
+   "from": "script:scripts/mimic/mm_text.py",
+   "to": "script:scripts/mimic/mm_color.py",
+   "rel": "imports",
+   "w": 1
+  },
+  {
+   "from": "script:scripts/mimic/mm_text.py",
+   "to": "script:scripts/mimic/mm_common.py",
+   "rel": "imports",
+   "w": 1
+  },
+  {
+   "from": "script:scripts/mimic/mm_text.py",
+   "to": "script:scripts/mimic/mm_img.py",
+   "rel": "imports",
+   "w": 1
+  },
+  {
+   "from": "script:scripts/mimic/mm_text.py",
+   "to": "script:scripts/mimic/mm_video.py",
+   "rel": "imports",
+   "w": 1
+  },
+  {
+   "from": "script:scripts/mimic/mm_textfx.py",
+   "to": "script:scripts/mimic/mm_common.py",
+   "rel": "imports",
+   "w": 1
+  },
+  {
+   "from": "script:scripts/mimic/mm_textfx.py",
+   "to": "script:scripts/mimic/mm_img.py",
+   "rel": "imports",
+   "w": 1
+  },
+  {
+   "from": "script:scripts/mimic/mm_textfx.py",
+   "to": "script:scripts/mimic/mm_render_text.py",
+   "rel": "imports",
+   "w": 1
+  },
+  {
+   "from": "script:scripts/mimic/mm_transitions.py",
    "to": "script:scripts/mimic/mm_img.py",
    "rel": "imports",
    "w": 1
@@ -6137,74 +6516,26 @@
    "w": 1
   },
   {
-   "from": "script:scripts/mimic/mm_text.py",
+   "from": "script:scripts/mimic/synthetic/make_candidates.py",
    "to": "script:scripts/mimic/mm_common.py",
    "rel": "imports",
    "w": 1
   },
   {
-   "from": "script:scripts/mimic/mm_text.py",
-   "to": "script:scripts/mimic/mm_img.py",
+   "from": "script:scripts/mimic/synthetic/make_candidates.py",
+   "to": "script:scripts/mimic/mm_fonts_lib.py",
    "rel": "imports",
    "w": 1
   },
   {
-   "from": "script:scripts/mimic/mm_text.py",
-   "to": "script:scripts/mimic/mm_video.py",
+   "from": "script:scripts/mimic/synthetic/make_candidates.py",
+   "to": "script:scripts/mimic/synthetic/synth.py",
    "rel": "imports",
    "w": 1
   },
   {
-   "from": "script:scripts/mimic/mm_text.py",
-   "to": "script:scripts/mimic/mm_color.py",
-   "rel": "imports",
-   "w": 1
-  },
-  {
-   "from": "script:scripts/mimic/mm_transitions.py",
-   "to": "script:scripts/mimic/mm_img.py",
-   "rel": "imports",
-   "w": 1
-  },
-  {
-   "from": "script:scripts/mimic/mm_analyze.py",
-   "to": "script:scripts/mimic/mm_img.py",
-   "rel": "imports",
-   "w": 1
-  },
-  {
-   "from": "script:scripts/mimic/mm_analyze.py",
-   "to": "script:scripts/mimic/mm_text.py",
-   "rel": "imports",
-   "w": 1
-  },
-  {
-   "from": "script:scripts/mimic/mm_analyze.py",
-   "to": "script:scripts/mimic/mm_video.py",
-   "rel": "imports",
-   "w": 1
-  },
-  {
-   "from": "script:scripts/mimic/mm_analyze.py",
-   "to": "script:scripts/mimic/mm_color.py",
-   "rel": "imports",
-   "w": 1
-  },
-  {
-   "from": "script:scripts/mimic/mm_analyze.py",
-   "to": "script:scripts/mimic/mm_sheets.py",
-   "rel": "imports",
-   "w": 1
-  },
-  {
-   "from": "script:scripts/mimic/mm_analyze.py",
-   "to": "script:scripts/mimic/mm_common.py",
-   "rel": "imports",
-   "w": 1
-  },
-  {
-   "from": "script:scripts/mimic/mm_analyze.py",
-   "to": "script:scripts/mimic/mm_transitions.py",
+   "from": "script:scripts/mimic/synthetic/make_reference.py",
+   "to": "script:scripts/mimic/synthetic/synth.py",
    "rel": "imports",
    "w": 1
   },
@@ -6227,14 +6558,224 @@
    "w": 1
   },
   {
-   "from": "script:scripts/mimic/synthetic/make_candidates.py",
-   "to": "script:scripts/mimic/synthetic/synth.py",
+   "from": "script:scripts/motion_kit_bridge.py",
+   "to": "script:scripts/code_drawing_master.py",
    "rel": "imports",
    "w": 1
   },
   {
-   "from": "script:scripts/mimic/synthetic/make_reference.py",
-   "to": "script:scripts/mimic/synthetic/synth.py",
+   "from": "script:scripts/motion_kit_bridge.py",
+   "to": "script:scripts/motion_director.py",
+   "rel": "imports",
+   "w": 1
+  },
+  {
+   "from": "script:scripts/package_skill.py",
+   "to": "script:scripts/check_skill.py",
+   "rel": "imports",
+   "w": 1
+  },
+  {
+   "from": "script:scripts/powers.py",
+   "to": "script:scripts/probe_env.py",
+   "rel": "imports",
+   "w": 1
+  },
+  {
+   "from": "script:scripts/rebalance_creative_repos.py",
+   "to": "script:scripts/rea_creative_research_atlas.py",
+   "rel": "imports",
+   "w": 1
+  },
+  {
+   "from": "script:scripts/reference_edit_engine.py",
+   "to": "script:scripts/creative_quality_gate.py",
+   "rel": "imports",
+   "w": 1
+  },
+  {
+   "from": "script:scripts/reference_visual_fingerprint.py",
+   "to": "script:scripts/motion_reference_probe.py",
+   "rel": "imports",
+   "w": 1
+  },
+  {
+   "from": "script:scripts/requirements.py",
+   "to": "script:scripts/powers.py",
+   "rel": "imports",
+   "w": 1
+  },
+  {
+   "from": "script:scripts/skill_intelligence.py",
+   "to": "script:scripts/atlas_capability_miner.py",
+   "rel": "imports",
+   "w": 1
+  },
+  {
+   "from": "script:scripts/skill_intelligence.py",
+   "to": "script:scripts/powers.py",
+   "rel": "imports",
+   "w": 1
+  },
+  {
+   "from": "script:scripts/skill_intelligence.py",
+   "to": "script:scripts/requirements.py",
+   "rel": "imports",
+   "w": 1
+  },
+  {
+   "from": "script:scripts/skill_intelligence.py",
+   "to": "script:scripts/smart_capabilities.py",
+   "rel": "imports",
+   "w": 1
+  },
+  {
+   "from": "script:scripts/smart_draw.py",
+   "to": "script:scripts/creative_paint.py",
+   "rel": "imports",
+   "w": 1
+  },
+  {
+   "from": "script:scripts/superpower_fusion.py",
+   "to": "script:scripts/powers.py",
+   "rel": "imports",
+   "w": 1
+  },
+  {
+   "from": "script:scripts/test_atlas_reviewed_methods_v3.py",
+   "to": "script:scripts/atlas_reviewed_methods_v3.py",
+   "rel": "imports",
+   "w": 1
+  },
+  {
+   "from": "script:scripts/test_blender_cat_fur_upgrade.py",
+   "to": "script:scripts/blender_cycles_render.py",
+   "rel": "imports",
+   "w": 1
+  },
+  {
+   "from": "script:scripts/test_blender_cinematic_bridge.py",
+   "to": "script:scripts/blender_cinematic_bridge.py",
+   "rel": "imports",
+   "w": 1
+  },
+  {
+   "from": "script:scripts/test_blender_cinematic_bridge.py",
+   "to": "script:scripts/unified_draw.py",
+   "rel": "imports",
+   "w": 1
+  },
+  {
+   "from": "script:scripts/test_kosif_timeline.py",
+   "to": "script:scripts/kosif_timeline.py",
+   "rel": "imports",
+   "w": 1
+  },
+  {
+   "from": "script:scripts/test_unified_cinematic.py",
+   "to": "script:scripts/audio_cue_mapper.py",
+   "rel": "imports",
+   "w": 1
+  },
+  {
+   "from": "script:scripts/test_unified_cinematic.py",
+   "to": "script:scripts/unified_cinematic.py",
+   "rel": "imports",
+   "w": 1
+  },
+  {
+   "from": "script:scripts/test_unified_cinematic.py",
+   "to": "script:scripts/unified_draw.py",
+   "rel": "imports",
+   "w": 1
+  },
+  {
+   "from": "script:scripts/test_unified_cinematic.py",
+   "to": "script:scripts/unified_media.py",
+   "rel": "imports",
+   "w": 1
+  },
+  {
+   "from": "script:scripts/test_unified_draw.py",
+   "to": "script:scripts/unified_draw.py",
+   "rel": "imports",
+   "w": 1
+  },
+  {
+   "from": "script:scripts/test_unified_draw_animation.py",
+   "to": "script:scripts/creative_paint.py",
+   "rel": "imports",
+   "w": 1
+  },
+  {
+   "from": "script:scripts/test_unified_draw_animation.py",
+   "to": "script:scripts/unified_draw.py",
+   "rel": "imports",
+   "w": 1
+  },
+  {
+   "from": "script:scripts/test_unified_media.py",
+   "to": "script:scripts/unified_draw.py",
+   "rel": "imports",
+   "w": 1
+  },
+  {
+   "from": "script:scripts/test_unified_media.py",
+   "to": "script:scripts/unified_media.py",
+   "rel": "imports",
+   "w": 1
+  },
+  {
+   "from": "script:scripts/think.py",
+   "to": "script:scripts/powers.py",
+   "rel": "imports",
+   "w": 1
+  },
+  {
+   "from": "script:scripts/unified_cinematic.py",
+   "to": "script:scripts/audio_cue_mapper.py",
+   "rel": "imports",
+   "w": 1
+  },
+  {
+   "from": "script:scripts/unified_cinematic.py",
+   "to": "script:scripts/unified_draw.py",
+   "rel": "imports",
+   "w": 1
+  },
+  {
+   "from": "script:scripts/unified_cinematic.py",
+   "to": "script:scripts/unified_media.py",
+   "rel": "imports",
+   "w": 1
+  },
+  {
+   "from": "script:scripts/unified_draw.py",
+   "to": "script:scripts/creative_paint.py",
+   "rel": "imports",
+   "w": 1
+  },
+  {
+   "from": "script:scripts/unified_draw.py",
+   "to": "script:scripts/smart_draw.py",
+   "rel": "imports",
+   "w": 1
+  },
+  {
+   "from": "script:scripts/unified_media.py",
+   "to": "script:scripts/creative_paint.py",
+   "rel": "imports",
+   "w": 1
+  },
+  {
+   "from": "script:scripts/unified_media.py",
+   "to": "script:scripts/unified_draw.py",
+   "rel": "imports",
+   "w": 1
+  },
+  {
+   "from": "script:scripts/verify_video.py",
+   "to": "script:scripts/aspects.py",
    "rel": "imports",
    "w": 1
   },
@@ -6243,6 +6784,246 @@
    "to": "script:scripts/check_skill.py",
    "rel": "graphify:indirect_call",
    "w": 0.85
+  },
+  {
+   "from": "script:scripts/app_studio.py",
+   "to": "test:.claude/skills/kosif-superpowers/evals/test_app_studio.py",
+   "rel": "tested_by",
+   "w": 1
+  },
+  {
+   "from": "script:scripts/app_studio.py",
+   "to": "test:.claude/skills/kosif-superpowers/evals/test_app_studio_paint.py",
+   "rel": "tested_by",
+   "w": 1
+  },
+  {
+   "from": "script:scripts/app_studio_paint.py",
+   "to": "test:.claude/skills/kosif-superpowers/evals/test_app_studio.py",
+   "rel": "tested_by",
+   "w": 1
+  },
+  {
+   "from": "script:scripts/app_studio_paint.py",
+   "to": "test:.claude/skills/kosif-superpowers/evals/test_app_studio_paint.py",
+   "rel": "tested_by",
+   "w": 1
+  },
+  {
+   "from": "script:scripts/aspects.py",
+   "to": "test:.claude/skills/kosif-superpowers/evals/test_hub.py",
+   "rel": "tested_by",
+   "w": 1
+  },
+  {
+   "from": "script:scripts/aspects.py",
+   "to": "test:tests/test_aspects.py",
+   "rel": "tested_by",
+   "w": 1
+  },
+  {
+   "from": "script:scripts/aspects.py",
+   "to": "test:tests/test_catalog_tools.py",
+   "rel": "tested_by",
+   "w": 1
+  },
+  {
+   "from": "script:scripts/atlas_capability_miner.py",
+   "to": "test:.claude/skills/kosif-superpowers/evals/test_atlas_capability_miner.py",
+   "rel": "tested_by",
+   "w": 1
+  },
+  {
+   "from": "script:scripts/blender_cinema.py",
+   "to": "test:.claude/skills/kosif-superpowers/evals/test_blender_cinema.py",
+   "rel": "tested_by",
+   "w": 1
+  },
+  {
+   "from": "script:scripts/blender_cycles_render.py",
+   "to": "test:tests/test_atlas_cycles_integration.py",
+   "rel": "tested_by",
+   "w": 1
+  },
+  {
+   "from": "script:scripts/blender_motion_video.py",
+   "to": "test:.claude/skills/kosif-superpowers/evals/test_blender_motion_video.py",
+   "rel": "tested_by",
+   "w": 1
+  },
+  {
+   "from": "script:scripts/blender_worker.py",
+   "to": "test:.claude/skills/kosif-superpowers/evals/test_blender_bridge.py",
+   "rel": "tested_by",
+   "w": 1
+  },
+  {
+   "from": "script:scripts/blender_worker.py",
+   "to": "test:.claude/skills/kosif-superpowers/evals/test_blender_motion_video.py",
+   "rel": "tested_by",
+   "w": 1
+  },
+  {
+   "from": "script:scripts/boot.py",
+   "to": "test:tests/test_boot.py",
+   "rel": "tested_by",
+   "w": 1
+  },
+  {
+   "from": "script:scripts/capability_atlas.py",
+   "to": "test:tests/test_capability_atlas.py",
+   "rel": "tested_by",
+   "w": 1
+  },
+  {
+   "from": "script:scripts/capability_graph.py",
+   "to": "test:tests/test_capability_graph.py",
+   "rel": "tested_by",
+   "w": 1
+  },
+  {
+   "from": "script:scripts/capability_mindmap.py",
+   "to": "test:.claude/skills/kosif-superpowers/evals/test_capability_mindmap.py",
+   "rel": "tested_by",
+   "w": 1
+  },
+  {
+   "from": "script:scripts/capability_runtime_router.py",
+   "to": "test:.claude/skills/kosif-superpowers/evals/test_capability_runtime_router.py",
+   "rel": "tested_by",
+   "w": 1
+  },
+  {
+   "from": "script:scripts/character_fullbody.py",
+   "to": "test:.claude/skills/kosif-superpowers/evals/test_character_fullbody.py",
+   "rel": "tested_by",
+   "w": 1
+  },
+  {
+   "from": "script:scripts/check_skill.py",
+   "to": "test:.claude/skills/kosif-superpowers/evals/test_check_skill_json.py",
+   "rel": "tested_by",
+   "w": 1
+  },
+  {
+   "from": "script:scripts/cinematic_cut_planner.py",
+   "to": "test:tests/test_cinematic_cut_planner.py",
+   "rel": "tested_by",
+   "w": 1
+  },
+  {
+   "from": "script:scripts/code_drawing_master.py",
+   "to": "test:.claude/skills/kosif-superpowers/evals/test_code_drawing_master.py",
+   "rel": "tested_by",
+   "w": 1
+  },
+  {
+   "from": "script:scripts/creative_paint.py",
+   "to": "test:.claude/skills/kosif-superpowers/evals/test_creative_paint.py",
+   "rel": "tested_by",
+   "w": 1
+  },
+  {
+   "from": "script:scripts/fetch_reference.py",
+   "to": "test:tests/test_reference_fetch_security.py",
+   "rel": "tested_by",
+   "w": 1
+  },
+  {
+   "from": "script:scripts/fetch_reference.py",
+   "to": "test:tests/test_superpowers_catalog.py",
+   "rel": "tested_by",
+   "w": 1
+  },
+  {
+   "from": "script:scripts/fetch_video.py",
+   "to": "test:tests/test_media_sources_gateway.py",
+   "rel": "tested_by",
+   "w": 1
+  },
+  {
+   "from": "script:scripts/hub.py",
+   "to": "test:.claude/skills/kosif-superpowers/evals/test_hub.py",
+   "rel": "tested_by",
+   "w": 1
+  },
+  {
+   "from": "script:scripts/installer_triage.py",
+   "to": "test:.claude/skills/kosif-superpowers/evals/test_installer_triage.py",
+   "rel": "tested_by",
+   "w": 1
+  },
+  {
+   "from": "script:scripts/kosif_hubs.py",
+   "to": "test:.claude/skills/kosif-superpowers/evals/test_kosif_hubs.py",
+   "rel": "tested_by",
+   "w": 1
+  },
+  {
+   "from": "script:scripts/kosif_mcp.py",
+   "to": "test:.claude/skills/kosif-superpowers/evals/test_hub.py",
+   "rel": "tested_by",
+   "w": 1
+  },
+  {
+   "from": "script:scripts/local_first.py",
+   "to": "test:.claude/skills/kosif-superpowers/evals/test_local_first.py",
+   "rel": "tested_by",
+   "w": 1
+  },
+  {
+   "from": "script:scripts/mimic/mm_analyze.py",
+   "to": "test:tests/test_mimic.py",
+   "rel": "tested_by",
+   "w": 1
+  },
+  {
+   "from": "script:scripts/mimic/mm_common.py",
+   "to": "test:tests/test_mimic.py",
+   "rel": "tested_by",
+   "w": 1
+  },
+  {
+   "from": "script:scripts/mimic/mm_transitions.py",
+   "to": "test:tests/test_mimic.py",
+   "rel": "tested_by",
+   "w": 1
+  },
+  {
+   "from": "script:scripts/mimic/synthetic/make_reference.py",
+   "to": "test:tests/test_mimic.py",
+   "rel": "tested_by",
+   "w": 1
+  },
+  {
+   "from": "script:scripts/mimic/synthetic/run_synthetic.py",
+   "to": "test:tests/test_mimic.py",
+   "rel": "tested_by",
+   "w": 1
+  },
+  {
+   "from": "script:scripts/motion_director.py",
+   "to": "test:.claude/skills/kosif-superpowers/evals/test_motion_director.py",
+   "rel": "tested_by",
+   "w": 1
+  },
+  {
+   "from": "script:scripts/motion_reference_probe.py",
+   "to": "test:.claude/skills/kosif-superpowers/evals/test_motion_reference_probe.py",
+   "rel": "tested_by",
+   "w": 1
+  },
+  {
+   "from": "script:scripts/motion_runtime.py",
+   "to": "test:.claude/skills/kosif-superpowers/evals/test_motion_runtime.py",
+   "rel": "tested_by",
+   "w": 1
+  },
+  {
+   "from": "script:scripts/package_skill.py",
+   "to": "test:tests/test_superpowers_unified.py",
+   "rel": "tested_by",
+   "w": 1
   },
   {
    "from": "script:scripts/powers.py",
@@ -6281,224 +7062,20 @@
    "w": 1
   },
   {
-   "from": "script:scripts/mimic/mm_common.py",
-   "to": "test:tests/test_mimic.py",
-   "rel": "tested_by",
-   "w": 1
-  },
-  {
-   "from": "script:scripts/mimic/mm_transitions.py",
-   "to": "test:tests/test_mimic.py",
-   "rel": "tested_by",
-   "w": 1
-  },
-  {
-   "from": "script:scripts/mimic/mm_analyze.py",
-   "to": "test:tests/test_mimic.py",
-   "rel": "tested_by",
-   "w": 1
-  },
-  {
-   "from": "script:scripts/mimic/synthetic/run_synthetic.py",
-   "to": "test:tests/test_mimic.py",
-   "rel": "tested_by",
-   "w": 1
-  },
-  {
-   "from": "script:scripts/mimic/synthetic/make_reference.py",
-   "to": "test:tests/test_mimic.py",
-   "rel": "tested_by",
-   "w": 1
-  },
-  {
-   "from": "script:scripts/aspects.py",
-   "to": "test:tests/test_aspects.py",
-   "rel": "tested_by",
-   "w": 1
-  },
-  {
-   "from": "script:scripts/capability_graph.py",
-   "to": "test:tests/test_capability_graph.py",
-   "rel": "tested_by",
-   "w": 1
-  },
-  {
-   "from": "script:scripts/requirements.py",
-   "to": "test:tests/test_requirements.py",
-   "rel": "tested_by",
-   "w": 1
-  },
-  {
-   "from": "script:scripts/package_skill.py",
-   "to": "test:tests/test_superpowers_unified.py",
-   "rel": "tested_by",
-   "w": 1
-  },
-  {
-   "from": "script:scripts/superpowers_unified.py",
-   "to": "test:tests/test_superpowers_unified.py",
-   "rel": "tested_by",
-   "w": 1
-  },
-  {
-   "from": "script:scripts/fetch_reference.py",
-   "to": "test:tests/test_reference_fetch_security.py",
-   "rel": "tested_by",
-   "w": 1
-  },
-  {
-   "from": "script:scripts/fetch_reference.py",
-   "to": "test:tests/test_superpowers_catalog.py",
-   "rel": "tested_by",
-   "w": 1
-  },
-  {
-   "from": "script:scripts/verify_video.py",
-   "to": "test:tests/test_tools_extra.py",
-   "rel": "tested_by",
-   "w": 1
-  },
-  {
-   "from": "script:scripts/fetch_video.py",
-   "to": "test:tests/test_media_sources_gateway.py",
-   "rel": "tested_by",
-   "w": 1
-  },
-  {
-   "from": "script:scripts/capability_atlas.py",
-   "to": "test:tests/test_capability_atlas.py",
-   "rel": "tested_by",
-   "w": 1
-  },
-  {
-   "from": "script:scripts/cinematic_cut_planner.py",
-   "to": "test:tests/test_cinematic_cut_planner.py",
-   "rel": "tested_by",
-   "w": 1
-  },
-  {
-   "from": "script:scripts/think.py",
-   "to": "test:tests/test_think.py",
-   "rel": "tested_by",
-   "w": 1
-  },
-  {
-   "from": "script:scripts/render_text.cjs",
-   "to": "test:tests/test_superpowers_catalog.py",
-   "rel": "tested_by",
-   "w": 1
-  },
-  {
-   "from": "script:scripts/superpowers.py",
-   "to": "test:tests/test_superpowers_catalog.py",
-   "rel": "tested_by",
-   "w": 1
-  },
-  {
-   "from": "script:scripts/boot.py",
-   "to": "test:tests/test_boot.py",
-   "rel": "tested_by",
-   "w": 1
-  },
-  {
-   "from": "script:scripts/superpower_fusion.py",
-   "to": "test:.claude/skills/kosif-superpowers/evals/test_superpower_fusion.py",
-   "rel": "tested_by",
-   "w": 1
-  },
-  {
-   "from": "script:scripts/blender_cinema.py",
-   "to": "test:.claude/skills/kosif-superpowers/evals/test_blender_cinema.py",
-   "rel": "tested_by",
-   "w": 1
-  },
-  {
-   "from": "script:scripts/code_drawing_master.py",
-   "to": "test:.claude/skills/kosif-superpowers/evals/test_code_drawing_master.py",
-   "rel": "tested_by",
-   "w": 1
-  },
-  {
-   "from": "script:scripts/atlas_capability_miner.py",
-   "to": "test:.claude/skills/kosif-superpowers/evals/test_atlas_capability_miner.py",
-   "rel": "tested_by",
-   "w": 1
-  },
-  {
    "from": "script:scripts/python_package_probe.py",
    "to": "test:.claude/skills/kosif-superpowers/evals/test_system_python.py",
    "rel": "tested_by",
    "w": 1
   },
   {
-   "from": "script:scripts/app_studio_paint.py",
-   "to": "test:.claude/skills/kosif-superpowers/evals/test_app_studio.py",
+   "from": "script:scripts/rea_bridge.py",
+   "to": "test:.claude/skills/kosif-superpowers/evals/test_rea_bridge.py",
    "rel": "tested_by",
    "w": 1
   },
   {
-   "from": "script:scripts/app_studio_paint.py",
-   "to": "test:.claude/skills/kosif-superpowers/evals/test_app_studio_paint.py",
-   "rel": "tested_by",
-   "w": 1
-  },
-  {
-   "from": "script:scripts/app_studio.py",
-   "to": "test:.claude/skills/kosif-superpowers/evals/test_app_studio.py",
-   "rel": "tested_by",
-   "w": 1
-  },
-  {
-   "from": "script:scripts/app_studio.py",
-   "to": "test:.claude/skills/kosif-superpowers/evals/test_app_studio_paint.py",
-   "rel": "tested_by",
-   "w": 1
-  },
-  {
-   "from": "script:scripts/blender_worker.py",
-   "to": "test:.claude/skills/kosif-superpowers/evals/test_blender_bridge.py",
-   "rel": "tested_by",
-   "w": 1
-  },
-  {
-   "from": "script:scripts/blender_worker.py",
-   "to": "test:.claude/skills/kosif-superpowers/evals/test_blender_motion_video.py",
-   "rel": "tested_by",
-   "w": 1
-  },
-  {
-   "from": "script:scripts/blender_motion_video.py",
-   "to": "test:.claude/skills/kosif-superpowers/evals/test_blender_motion_video.py",
-   "rel": "tested_by",
-   "w": 1
-  },
-  {
-   "from": "script:scripts/installer_triage.py",
-   "to": "test:.claude/skills/kosif-superpowers/evals/test_installer_triage.py",
-   "rel": "tested_by",
-   "w": 1
-  },
-  {
-   "from": "script:scripts/capability_mindmap.py",
-   "to": "test:.claude/skills/kosif-superpowers/evals/test_capability_mindmap.py",
-   "rel": "tested_by",
-   "w": 1
-  },
-  {
-   "from": "script:scripts/creative_paint.py",
-   "to": "test:.claude/skills/kosif-superpowers/evals/test_creative_paint.py",
-   "rel": "tested_by",
-   "w": 1
-  },
-  {
-   "from": "script:scripts/kosif_hubs.py",
-   "to": "test:.claude/skills/kosif-superpowers/evals/test_kosif_hubs.py",
-   "rel": "tested_by",
-   "w": 1
-  },
-  {
-   "from": "script:scripts/reference_visual_fingerprint.py",
-   "to": "test:.claude/skills/kosif-superpowers/evals/test_capability_runtime_router.py",
+   "from": "script:scripts/rea_creative_research_atlas.py",
+   "to": "test:tests/test_creative_external_research.py",
    "rel": "tested_by",
    "w": 1
   },
@@ -6509,20 +7086,68 @@
    "w": 1
   },
   {
-   "from": "script:scripts/motion_director.py",
-   "to": "test:.claude/skills/kosif-superpowers/evals/test_motion_director.py",
+   "from": "script:scripts/reference_visual_fingerprint.py",
+   "to": "test:.claude/skills/kosif-superpowers/evals/test_capability_runtime_router.py",
    "rel": "tested_by",
    "w": 1
   },
   {
-   "from": "script:scripts/motion_reference_probe.py",
-   "to": "test:.claude/skills/kosif-superpowers/evals/test_motion_reference_probe.py",
+   "from": "script:scripts/render_text.cjs",
+   "to": "test:tests/test_superpowers_catalog.py",
    "rel": "tested_by",
    "w": 1
   },
   {
-   "from": "script:scripts/rea_bridge.py",
-   "to": "test:.claude/skills/kosif-superpowers/evals/test_rea_bridge.py",
+   "from": "script:scripts/requirements.py",
+   "to": "test:.claude/skills/kosif-superpowers/evals/test_hub.py",
+   "rel": "tested_by",
+   "w": 1
+  },
+  {
+   "from": "script:scripts/requirements.py",
+   "to": "test:tests/test_requirements.py",
+   "rel": "tested_by",
+   "w": 1
+  },
+  {
+   "from": "script:scripts/superpower_fusion.py",
+   "to": "test:.claude/skills/kosif-superpowers/evals/test_superpower_fusion.py",
+   "rel": "tested_by",
+   "w": 1
+  },
+  {
+   "from": "script:scripts/superpowers.py",
+   "to": "test:tests/test_superpowers_catalog.py",
+   "rel": "tested_by",
+   "w": 1
+  },
+  {
+   "from": "script:scripts/superpowers_unified.py",
+   "to": "test:tests/test_superpowers_unified.py",
+   "rel": "tested_by",
+   "w": 1
+  },
+  {
+   "from": "script:scripts/think.py",
+   "to": "test:tests/test_think.py",
+   "rel": "tested_by",
+   "w": 1
+  },
+  {
+   "from": "script:scripts/verify_video.py",
+   "to": "test:.claude/skills/kosif-superpowers/evals/test_hub.py",
+   "rel": "tested_by",
+   "w": 1
+  },
+  {
+   "from": "script:scripts/verify_video.py",
+   "to": "test:.claude/skills/kosif-superpowers/evals/test_motion_runtime.py",
+   "rel": "tested_by",
+   "w": 1
+  },
+  {
+   "from": "script:scripts/verify_video.py",
+   "to": "test:tests/test_tools_extra.py",
    "rel": "tested_by",
    "w": 1
   }

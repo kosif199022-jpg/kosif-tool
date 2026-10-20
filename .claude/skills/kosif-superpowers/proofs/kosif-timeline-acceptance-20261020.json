@@ -1,0 +1,69 @@
+{
+  "schema": "kosif.timeline.v1-acceptance",
+  "date": "2026-10-20",
+  "source": "original synthetic video/image/audio generated with local FFmpeg and Pillow",
+  "pipeline": "local JSON timeline -> ordered FFmpeg video/image layers + independent audio mix -> H264/AAC MP4",
+  "tests": {
+    "new_timeline_regression_tests": 17,
+    "passed": 17,
+    "one_click_demo": true
+  },
+  "project": {
+    "track_count": 3,
+    "clip_count": 4,
+    "kinds": [
+      "audio",
+      "image",
+      "video"
+    ],
+    "non_destructive_edits_tested": [
+      "move",
+      "trim",
+      "fade",
+      "undo",
+      "redo"
+    ],
+    "visual_transition": "alpha fade on overlapping clips"
+  },
+  "output_video": {
+    "codec": "h264",
+    "fps": "12/1",
+    "frames": 36,
+    "width": 480,
+    "height": 270,
+    "duration_seconds": 3.0,
+    "audio_codec": "aac"
+  },
+  "outputs": {
+    "project.json": {
+      "sha256": "f905959b74ea10fb1d3a8556e117dc485e23a282fea70ecd346a80c4e3bbf97d",
+      "bytes": 1634
+    },
+    "scene-a.mp4": {
+      "sha256": "781fab5b87a9a6fda384d3ab3519457517dc094911a9411e416e41186b32044f",
+      "bytes": 21301
+    },
+    "scene-b.mp4": {
+      "sha256": "1a3bba5fa5c6baa10d61532bd24a1c913c5aa933579ca03a539374578b909c01",
+      "bytes": 2350
+    },
+    "music.wav": {
+      "sha256": "961ce3920269ca0d54241d2e4672dc61f8ae7ce26c74608e1c376e2ea9fb27ae",
+      "bytes": 264678
+    },
+    "overlay.png": {
+      "sha256": "478475a42087c8c7f76195b1bf69b3f91100306e2922483b8dbe4332b4d9301d",
+      "bytes": 542
+    },
+    "timeline.mp4": {
+      "sha256": "6cc3e4522972b13c8f26c8df9b3e647ca9399401776f1034c72d374b84dce486",
+      "bytes": 69258
+    },
+    "receipt.json": {
+      "sha256": "1f3f24662d1ca4782df0134918e80c6794f899a65919095988a198149f64a8d5",
+      "bytes": 497
+    }
+  },
+  "local_folder": "C:\\Users\\Public\\KOSIF-TIMELINE-ONE-CLICK-20261020",
+  "limitations": "CLI/JSON editor, not a live graphical interface; no screen capture, no sophisticated transitions or external application code; original synthetic media files were used."
+}

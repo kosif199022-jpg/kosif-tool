@@ -6,10 +6,13 @@ Code edges come from a local AST pass over scripts/ (always current) merged with
 data/graphify_code_layer.json (cross-checked; marked with its commit).
 
     python3 scripts/capability_graph.py build              # write data/capability_graph.json + references/capability-graph.html
+    python3 scripts/capability_graph.py build --check      # exit 1 if the committed files are stale (writes nothing)
+    python3 scripts/capability_graph.py build --out-dir D  # write both files into D instead (tests)
     python3 scripts/capability_graph.py stats              # node/edge counts per layer
     python3 scripts/capability_graph.py path <FAMILY|REQ|SCRIPT>   # neighbours of one node (what it unlocks / needs / proves)
 
-Stdlib only; the HTML is self-contained (no CDN) and works offline.
+Stdlib only; the HTML is self-contained (no CDN) and works offline. Output is deterministic: every
+collection is sorted, so two builds of the same tree are byte-identical on any machine.
 """
 from __future__ import annotations
 
@@ -38,7 +41,7 @@ def load():
 
 def ast_imports():
     """script → local scripts it imports (module names resolved inside scripts/)."""
-    mods = {p.stem: p for p in HERE.rglob("*.py") if "__pycache__" not in p.parts}
+    mods = {p.stem: p for p in sorted(HERE.rglob("*.py")) if "__pycache__" not in p.parts}
     edges = []
     for p in mods.values():
         try:
@@ -51,7 +54,7 @@ def ast_imports():
                 names |= {a.name.split(".")[0] for a in n.names}
             elif isinstance(n, ast.ImportFrom) and n.module:
                 names.add(n.module.split(".")[0])
-        for nm in names:
+        for nm in sorted(names):
             if nm in mods and mods[nm] != p:
                 edges.append((rel(p), rel(mods[nm])))
     return edges
@@ -64,8 +67,8 @@ def rel(p: Path) -> str:
 def tests_for_scripts():
     """script → test files that mention it (repo tests/ and skill evals/)."""
     out = defaultdict(set)
-    files = list((REPO / "tests").glob("*.py")) + list((SKILL / "evals").glob("*.py")) + list((SKILL / "evals").glob("*.mjs"))
-    scripts = [p for p in HERE.rglob("*") if p.suffix in (".py", ".cjs", ".mjs") and "__pycache__" not in p.parts]
+    files = sorted((REPO / "tests").glob("*.py")) + sorted((SKILL / "evals").glob("*.py")) + sorted((SKILL / "evals").glob("*.mjs"))
+    scripts = sorted(p for p in HERE.rglob("*") if p.suffix in (".py", ".cjs", ".mjs") and "__pycache__" not in p.parts)
     for t in files:
         try:
             txt = t.read_text(encoding="utf-8")
@@ -77,7 +80,7 @@ def tests_for_scripts():
     return out
 
 
-def build():
+def build(check: bool = False, out_dir: Path = None):
     P, pw = load()
     reg = json.loads((SKILL / "data" / "requirements.json").read_text(encoding="utf-8"))
     nodes, edges = {}, []
@@ -126,7 +129,7 @@ def build():
         elif e["from"].startswith("scripts/") and (SKILL / e["from"]).exists() and (SKILL / e["to"]).exists():
             node(a, "script", e["from"]); node(b, "script", e["to"])
             edges.append((a, b, "graphify:" + e["rel"], e.get("conf", 1)))
-    for s, tests in tests_for_scripts().items():
+    for s, tests in sorted(tests_for_scripts().items()):
         if f"script:{s}" not in nodes:
             continue
         for t in sorted(tests):
@@ -139,10 +142,22 @@ def build():
     data = {"generated_by": "scripts/capability_graph.py", "graphify": {k: gfy.get(k) for k in ("commit", "indexed_at", "graph")},
             "graphify_import_edges_confirmed_locally": confirmed,
             "nodes": list(nodes.values()), "edges": [{"from": a, "to": b, "rel": k, "w": w} for a, b, k, w in edges]}
-    OUT_JSON.write_text(json.dumps(data, ensure_ascii=False, indent=1) + "\n", encoding="utf-8")
-    OUT_HTML.write_text(html(data), encoding="utf-8")
+    outputs = {OUT_JSON: json.dumps(data, ensure_ascii=False, indent=1) + "\n", OUT_HTML: html(data)}
+    if check:
+        stale = [rel(p) for p, text in outputs.items() if not p.is_file() or p.read_text(encoding="utf-8") != text]
+        if stale:
+            print("capability graph is stale: " + ", ".join(stale) + " — run: python3 scripts/capability_graph.py build", file=sys.stderr)
+            return 1
+        print("capability graph up to date")
+        return 0
+    written = []
+    for p, text in outputs.items():
+        dest = Path(out_dir) / p.name if out_dir else p
+        dest.parent.mkdir(parents=True, exist_ok=True)
+        dest.write_text(text, encoding="utf-8")
+        written.append(str(dest) if out_dir else rel(p))
     kinds = Counter(n["kind"] for n in nodes.values())
-    print(f"wrote {rel(OUT_JSON)} and {rel(OUT_HTML)} · nodes {dict(kinds)} · edges {len(edges)} · graphify edges confirmed {confirmed}")
+    print(f"wrote {' and '.join(written)} · nodes {dict(kinds)} · edges {len(edges)} · graphify edges confirmed {confirmed}")
     return 0
 
 
@@ -225,5 +240,14 @@ def cmd_path(key: str):
 if __name__ == "__main__":
     if hasattr(signal, "SIGPIPE"):
         signal.signal(signal.SIGPIPE, signal.SIG_DFL)
-    a = sys.argv[1:] or ["build"]
-    sys.exit(build() if a[0] == "build" else cmd_stats() if a[0] == "stats" else cmd_path(a[1]) if a[0] == "path" and len(a) > 1 else (print(__doc__) or 2))
+    import argparse
+    ap = argparse.ArgumentParser(description=__doc__, formatter_class=argparse.RawDescriptionHelpFormatter)
+    sub = ap.add_subparsers(dest="cmd")
+    b = sub.add_parser("build", help="write (or --check) the graph JSON and HTML")
+    b.add_argument("--check", action="store_true"); b.add_argument("--out-dir")
+    sub.add_parser("stats", help="node/edge counts per layer")
+    pa = sub.add_parser("path", help="neighbours of one node"); pa.add_argument("key")
+    a = ap.parse_args()
+    if a.cmd in (None, "build"):
+        sys.exit(build(check=getattr(a, "check", False), out_dir=getattr(a, "out_dir", None)))
+    sys.exit(cmd_stats() if a.cmd == "stats" else cmd_path(a.key))

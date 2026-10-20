@@ -45,7 +45,10 @@ def record_scope(rec: dict) -> str:
 
 
 def main(argv=None) -> int:
-    check = "--check" in (argv or sys.argv[1:])
+    import argparse
+    ap = argparse.ArgumentParser(description=__doc__, formatter_class=argparse.RawDescriptionHelpFormatter)
+    ap.add_argument("--check", action="store_true", help="report only; exit 1 when any record would change")
+    check = ap.parse_args(argv).check
     changed, by_scope = 0, {}
     for f in sorted(glob.glob(str(SK / "data" / "powers" / "*.json"))):
         text = Path(f).read_text(encoding="utf-8")

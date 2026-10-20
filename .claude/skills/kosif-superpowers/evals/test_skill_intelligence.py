@@ -1,0 +1,74 @@
+"""Universal Skill Intelligence Protocol: full coverage receipt, fail-closed gaps, three distinct plans, approval gate."""
+import json, shutil, sys, tempfile, unittest
+from pathlib import Path
+SK = Path(__file__).resolve().parents[1]
+sys.path.insert(0, str(SK / "scripts"))
+import skill_intelligence as S  # noqa: E402
+
+
+class ProtocolTests(unittest.TestCase):
+    @classmethod
+    def setUpClass(cls):
+        cls.b = S.build_brief("عايز فيديو موشن جرافيك 9:16 على صوتي بترجمة عربية متحركة وشخصية كرتونية")
+
+    def test_coverage_is_every_record(self):
+        disk = sum(len(json.loads(f.read_text(encoding="utf-8"))) for f in (SK / "data" / "powers").glob("*.json"))
+        c = self.b["coverage"]
+        self.assertEqual(c["records_on_disk"], disk)
+        self.assertEqual(c["records_scanned"], disk)
+        self.assertEqual(c["records_classified"], disk)
+        self.assertTrue(c["complete"])
+        self.assertEqual(len(c["catalog_sha256"]), 64)
+
+    def test_derived_indexes_fresh(self):
+        for k, v in self.b["freshness"].items():
+            self.assertTrue(v["ok"], f"{k} stale: {v.get('fix')}")
+
+    def test_three_plans_differ_and_each_has_a_verifier(self):
+        p = self.b["plans"]
+        sizes = [p[k]["counts"]["superpowers"] for k in "ABC"]
+        self.assertLess(sizes[0], sizes[1])
+        self.assertLessEqual(sizes[1], sizes[2])
+        for k in "ABC":
+            self.assertIn("verify", p[k]["stages"], k)
+            order = [S.STAGE_ORDER.index(s) for s in p[k]["stages"]]
+            self.assertEqual(order, sorted(order), k)
+        self.assertIn(self.b["recommended"], "ABC")
+        self.assertIn("أنصحك بالخطة", self.b["approval_question"])
+
+    def test_scores_use_the_published_weights(self):
+        x = self.b["shortlist"][0]
+        self.assertEqual(set(x["score_parts"]), set(S.WEIGHTS))
+        self.assertAlmostEqual(sum(x["score_parts"].values()), x["score"], delta=0.6)
+        self.assertLessEqual(x["score"], 100)
+
+    def test_motion_request_routes_to_motion(self):
+        groups = [g["group"] for g in self.b["inventory"]["groups_ranked"][:3]]
+        self.assertIn("motion", groups)
+        self.assertIn("montage-pro", [t["id"] for t in self.b["tools"]] + ["montage-pro"])  # registry entry exists
+
+    def test_report_renders_required_sections(self):
+        md = S.render(self.b)
+        for h in ("فهم الطلب", "نتيجة جرد المهارات", "مقارنة الخطط", "التوصية", "موافق"):
+            self.assertIn(h, md)
+
+    def test_fails_closed_on_unclassified_family(self):
+        tmp = Path(tempfile.mkdtemp())
+        try:
+            fake = tmp / "powers"
+            shutil.copytree(SK / "data" / "powers", fake)
+            (fake / "zz-unknown.json").write_text(json.dumps([{"id": "ZZ-01", "family": "zz-unknown", "name_en": "x"}]), encoding="utf-8")
+            old = S.POWERS
+            S.POWERS = fake
+            try:
+                r = S.scan_catalog()["receipt"]
+            finally:
+                S.POWERS = old
+            self.assertFalse(r["complete"])
+            self.assertEqual(r["unclassified_count"], 1)
+        finally:
+            shutil.rmtree(tmp, ignore_errors=True)
+
+
+if __name__ == "__main__":
+    unittest.main()

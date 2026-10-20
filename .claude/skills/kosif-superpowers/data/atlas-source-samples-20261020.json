@@ -1,0 +1,626 @@
+﻿{
+    "schema":  "kosif.atlas.source-samples.v1",
+    "date":  "2026-10-20",
+    "atlas_commit":  "99bb108d",
+    "sampled_unique_count":  34,
+    "coverage_note":  "Source-only examination of selected SKILL.md files, not all Atlas skills; cannot verify runtime or safety.",
+    "inspected":  [
+                      {
+                          "id":  12650,
+                          "skill":  "8d-report-writing",
+                          "path":  "skills/2989-quality-engineering-skills/12650-8d-report-writing",
+                          "upstream":  "https://github.com/hashgraph-online/awesome-codex-plugins/tree/9cc4f3e/plugins/RBraga01/Quality-Engineering-Skills",
+                          "license":  "MIT",
+                          "sha256":  "b6691229397b407658fff5dbc5b523e6dc10709ecd6172c6f985288ba7c70f91",
+                          "bytes":  11821,
+                          "headings":  18,
+                          "static_warning_patterns":  [
+
+                                                      ],
+                          "domains":  [
+                                          "language"
+                                      ],
+                          "state":  "static_text_sample_only",
+                          "executed":  false
+                      },
+                      {
+                          "id":  13131,
+                          "skill":  "acceptance-criteria",
+                          "path":  "skills/3050-adlc-intent/13131-acceptance-criteria",
+                          "upstream":  "https://github.com/shmulikdav/adlc-skills/tree/f0445434337a5fbf05ccc731dadbc7fa993d736e/adlc-intent",
+                          "license":  "MIT",
+                          "sha256":  "a3388636d0b8d7a19801ce34603414528733101fffbf39dfc576111a7cb89b63",
+                          "bytes":  2496,
+                          "headings":  7,
+                          "static_warning_patterns":  [
+
+                                                      ],
+                          "domains":  [
+                                          "language"
+                                      ],
+                          "state":  "static_text_sample_only",
+                          "executed":  false
+                      },
+                      {
+                          "id":  4559,
+                          "skill":  "adk-agent-builder",
+                          "path":  "skills/1588-jeremy-google-adk/4559-adk-agent-builder",
+                          "upstream":  "https://github.com/jeremylongshore/tons-of-skills-marketplace/tree/b520cf9/plugins/ai-ml/jeremy-google-adk",
+                          "license":  "MIT",
+                          "sha256":  "ed9bacab0d026e1da0607c74ad5a238ac7f7f48ab3c382994ee48cedf99b2ac8",
+                          "bytes":  3849,
+                          "headings":  8,
+                          "static_warning_patterns":  [
+
+                                                      ],
+                          "domains":  [
+                                          "agents",
+                                          "web_apps"
+                                      ],
+                          "state":  "static_text_sample_only",
+                          "executed":  false
+                      },
+                      {
+                          "id":  4893,
+                          "skill":  "adobe-core-workflow-b",
+                          "path":  "skills/1819-adobe-pack/4893-adobe-core-workflow-b",
+                          "upstream":  "https://github.com/jeremylongshore/tons-of-skills-marketplace/tree/b520cf9/plugins/saas-packs/adobe-pack",
+                          "license":  "MIT",
+                          "sha256":  "c4d2419a09305fd26b99eee5f2be818b02bbce2e662cf6a54e624f3f2a3cf12a",
+                          "bytes":  4297,
+                          "headings":  13,
+                          "static_warning_patterns":  [
+
+                                                      ],
+                          "domains":  [
+                                          "documents"
+                                      ],
+                          "state":  "static_text_sample_only",
+                          "executed":  false
+                      },
+                      {
+                          "id":  3728,
+                          "skill":  "aesthetic-usability-effect",
+                          "path":  "skills/1503-universal-design-principles/3728-aesthetic-usability-effect",
+                          "upstream":  "https://github.com/hashgraph-online/awesome-codex-plugins/tree/9cc4f3e/plugins/HDeibler/universal-design-principles",
+                          "license":  "MIT",
+                          "sha256":  "aa8152d957ced01cd453bbb11c2723720f85397875fbe068be6c7ce331e2b7d9",
+                          "bytes":  15637,
+                          "headings":  22,
+                          "static_warning_patterns":  [
+
+                                                      ],
+                          "domains":  [
+                                          "design"
+                                      ],
+                          "state":  "static_text_sample_only",
+                          "executed":  false
+                      },
+                      {
+                          "id":  11670,
+                          "skill":  "agent-browser",
+                          "path":  "skills/2887-agent-browser/11670-agent-browser",
+                          "upstream":  "https://github.com/pleaseai/claude-code-plugins/tree/42ce3f976dd3aad0754ca683c1118b0d54faa36a/plugins/agent-browser",
+                          "license":  "Apache-2.0",
+                          "sha256":  "3a7520e64de2dfaa516b6721c001e84e06e3c06a187b82af029ae721540ebfac",
+                          "bytes":  3457,
+                          "headings":  5,
+                          "static_warning_patterns":  [
+
+                                                      ],
+                          "domains":  [
+                                          "web_apps"
+                                      ],
+                          "state":  "static_text_sample_only",
+                          "executed":  false
+                      },
+                      {
+                          "id":  11674,
+                          "skill":  "agent-browser",
+                          "path":  "skills/2887-agent-browser/11674-agent-browser",
+                          "upstream":  "https://github.com/pleaseai/claude-code-plugins/tree/42ce3f976dd3aad0754ca683c1118b0d54faa36a/plugins/agent-browser",
+                          "license":  "Apache-2.0",
+                          "sha256":  "3a7520e64de2dfaa516b6721c001e84e06e3c06a187b82af029ae721540ebfac",
+                          "bytes":  3457,
+                          "headings":  5,
+                          "static_warning_patterns":  [
+
+                                                      ],
+                          "domains":  [
+                                          "web_apps"
+                                      ],
+                          "state":  "static_text_sample_only",
+                          "executed":  false
+                      },
+                      {
+                          "id":  23,
+                          "skill":  "agent-sdk-builder",
+                          "path":  "skills/15-ai-tooling/23-agent-sdk-builder",
+                          "upstream":  "https://github.com/acaprino/daodan/tree/39443d215d28fcbc32d651895b3cc45c64f24b6f/exports/claude/plugins/ai-tooling",
+                          "license":  "MIT",
+                          "sha256":  "6fdb28611fb2aa1400d91b7836f9b581e7e467244214ca938e860b4c54be838f",
+                          "bytes":  8828,
+                          "headings":  8,
+                          "static_warning_patterns":  [
+                                                          "api_key"
+                                                      ],
+                          "domains":  [
+                                          "agents"
+                                      ],
+                          "state":  "static_text_sample_only",
+                          "executed":  false
+                      },
+                      {
+                          "id":  83,
+                          "skill":  "agent-sdk-builder",
+                          "path":  "skills/55-ai-tooling/83-agent-sdk-builder",
+                          "upstream":  "https://github.com/acaprino/daodan/tree/39443d215d28fcbc32d651895b3cc45c64f24b6f/exports/codex/plugins/ai-tooling",
+                          "license":  "MIT",
+                          "sha256":  "04931d34b19ad89d17af1b8eb8bd1b6a1d9f9d70589623619d7ac878746ee273",
+                          "bytes":  9024,
+                          "headings":  8,
+                          "static_warning_patterns":  [
+                                                          "api_key"
+                                                      ],
+                          "domains":  [
+                                          "agents"
+                                      ],
+                          "state":  "static_text_sample_only",
+                          "executed":  false
+                      },
+                      {
+                          "id":  2419,
+                          "skill":  "akbun-draw-quiet-pencil",
+                          "path":  "skills/1094-akbun-draw/2419-akbun-draw-quiet-pencil",
+                          "upstream":  "https://github.com/choisungwook/akbun-aitools/tree/b592650776c4ed1723087911010466d0b537fc6b/plugins/akbun-draw",
+                          "license":  "MIT",
+                          "sha256":  "312c3df44cdea27a22d682ad854d09823e28426c7f1c539a16404278357a475c",
+                          "bytes":  9281,
+                          "headings":  8,
+                          "static_warning_patterns":  [
+
+                                                      ],
+                          "domains":  [
+                                          "design"
+                                      ],
+                          "state":  "static_text_sample_only",
+                          "executed":  false
+                      },
+                      {
+                          "id":  3323,
+                          "skill":  "android-design",
+                          "path":  "skills/1394-stark/3323-android-design",
+                          "upstream":  "https://github.com/hashgraph-online/awesome-codex-plugins/tree/9cc4f3e/plugins/f0d010c/stark",
+                          "license":  "Apache-2.0",
+                          "sha256":  "8b5fca080ea612a524fb33c68b5b038530048beef8eb8133cd08768855f10b10",
+                          "bytes":  10078,
+                          "headings":  14,
+                          "static_warning_patterns":  [
+
+                                                      ],
+                          "domains":  [
+                                          "design"
+                                      ],
+                          "state":  "static_text_sample_only",
+                          "executed":  false
+                      },
+                      {
+                          "id":  14278,
+                          "skill":  "anti-reversing-techniques",
+                          "path":  "skills/3512-reverse-engineering/14278-anti-reversing-techniques",
+                          "upstream":  "https://github.com/wshobson/agents/tree/156b7a5/plugins/reverse-engineering",
+                          "license":  "MIT",
+                          "sha256":  "fd203065f4eec2c2021e9a019e02129fa780a0d668a8ac9e4724e18cb8fd996d",
+                          "bytes":  3931,
+                          "headings":  5,
+                          "static_warning_patterns":  [
+
+                                                      ],
+                          "domains":  [
+                                          "engineering",
+                                          "reverse_engineering",
+                                          "research"
+                                      ],
+                          "state":  "static_text_sample_only",
+                          "executed":  false
+                      },
+                      {
+                          "id":  5011,
+                          "skill":  "apify-core-workflow-b",
+                          "path":  "skills/1824-apify-pack/5011-apify-core-workflow-b",
+                          "upstream":  "https://github.com/jeremylongshore/tons-of-skills-marketplace/tree/b520cf9/plugins/saas-packs/apify-pack",
+                          "license":  "MIT",
+                          "sha256":  "d1bc46182f01d8f0268c288e555aa36f43850c11b9436429d7f3c76a767f5c46",
+                          "bytes":  7125,
+                          "headings":  15,
+                          "static_warning_patterns":  [
+
+                                                      ],
+                          "domains":  [
+                                          "reverse_engineering"
+                                      ],
+                          "state":  "static_text_sample_only",
+                          "executed":  false
+                      },
+                      {
+                          "id":  14073,
+                          "skill":  "architecture-optimization",
+                          "path":  "skills/3431-metaskills/14073-architecture-optimization",
+                          "upstream":  "https://github.com/wondelai/skills/tree/c172996495bed0fcd26896a9416b2093fd7073f0/plugins/metaskills",
+                          "license":  "MIT",
+                          "sha256":  "f52ac42637adf0122a4d4ab9355a68eb4e1b30a29e553fb74f375c9d43de8302",
+                          "bytes":  29595,
+                          "headings":  17,
+                          "static_warning_patterns":  [
+
+                                                      ],
+                          "domains":  [
+                                          "engineering"
+                                      ],
+                          "state":  "static_text_sample_only",
+                          "executed":  false
+                      },
+                      {
+                          "id":  204,
+                          "skill":  "awwwards-motion",
+                          "path":  "skills/95-awwwards-motion/204-awwwards-motion",
+                          "upstream":  "https://github.com/adamperlis/adam-plugins/tree/e41984f68ab8a53f028d078c6070ec8658fd41ac/plugins/awwwards-motion",
+                          "license":  "MIT",
+                          "sha256":  "e08b590217f823c428b7efc80c9554ac7ab428c6b41dfaa06d69ec7ad97576ae",
+                          "bytes":  23783,
+                          "headings":  63,
+                          "static_warning_patterns":  [
+
+                                                      ],
+                          "domains":  [
+                                          "media_motion"
+                                      ],
+                          "state":  "static_text_sample_only",
+                          "executed":  false
+                      },
+                      {
+                          "id":  14368,
+                          "skill":  "bas-prep",
+                          "path":  "skills/3556-xbert-bas-prep/14368-bas-prep",
+                          "upstream":  "https://github.com/xbertintelligence/xbert-plugins/tree/7e6bcc16a3fd1da830522d1d30f97a76c52b67aa/plugins/xbert-bas-prep",
+                          "license":  "MIT",
+                          "sha256":  "b16b8eb48884fff8107e67690599b5648581d3ced958d87d031c72c2e7e4f325",
+                          "bytes":  7070,
+                          "headings":  11,
+                          "static_warning_patterns":  [
+
+                                                      ],
+                          "domains":  [
+                                          "documents"
+                                      ],
+                          "state":  "static_text_sample_only",
+                          "executed":  false
+                      },
+                      {
+                          "id":  14279,
+                          "skill":  "binary-analysis-patterns",
+                          "path":  "skills/3512-reverse-engineering/14279-binary-analysis-patterns",
+                          "upstream":  "https://github.com/wshobson/agents/tree/156b7a5/plugins/reverse-engineering",
+                          "license":  "MIT",
+                          "sha256":  "895c49228f3ed1213f4d72c906fef793cba7c0eb81c704b833df3c8c8438b4e7",
+                          "bytes":  7856,
+                          "headings":  30,
+                          "static_warning_patterns":  [
+
+                                                      ],
+                          "domains":  [
+                                          "reverse_engineering"
+                                      ],
+                          "state":  "static_text_sample_only",
+                          "executed":  false
+                      },
+                      {
+                          "id":  2177,
+                          "skill":  "carbone",
+                          "path":  "skills/931-carbone-skill/2177-carbone",
+                          "upstream":  "https://github.com/carboneio/carbone-skill/tree/25207b3f52b97872312eab997ee5c62cc5c9542d",
+                          "license":  "Apache-2.0",
+                          "sha256":  "0ff1549ce6a435253278e0dec5e9ef424bf36ecafaf197ca9d51d138704bab5b",
+                          "bytes":  32932,
+                          "headings":  50,
+                          "static_warning_patterns":  [
+
+                                                      ],
+                          "domains":  [
+                                          "finance",
+                                          "documents"
+                                      ],
+                          "state":  "static_text_sample_only",
+                          "executed":  false
+                      },
+                      {
+                          "id":  9290,
+                          "skill":  "design-fx-and-interest-rate-hedge",
+                          "path":  "skills/2399-treasury-management/9290-design-fx-and-interest-rate-hedge",
+                          "upstream":  "https://github.com/mcorbett51090/ravenclaude/tree/300e672ec81d25d7d6a07345aa7783f7c89d5db7/plugins/treasury-management",
+                          "license":  "MIT",
+                          "sha256":  "aa64c80117214f506de1ee7ec342b4682686e264d08ebc0afde8dacf2691ab3a",
+                          "bytes":  7594,
+                          "headings":  4,
+                          "static_warning_patterns":  [
+
+                                                      ],
+                          "domains":  [
+                                          "finance"
+                                      ],
+                          "state":  "static_text_sample_only",
+                          "executed":  false
+                      },
+                      {
+                          "id":  13634,
+                          "skill":  "doubt-driven-development",
+                          "path":  "skills/3221-doubt-driven-development/13634-doubt-driven-development",
+                          "upstream":  "https://github.com/ulebule/claude-skills/tree/cb320c21990e92391f5e0bf4207a150515d1ff19/plugins/doubt-driven-development",
+                          "license":  "MIT",
+                          "sha256":  "59aef769adeae40aad67a1d54474aaf914ea7ecdfc2a4752a54840a8d29f80de",
+                          "bytes":  16487,
+                          "headings":  20,
+                          "static_warning_patterns":  [
+                                                          "prompt injection"
+                                                      ],
+                          "domains":  [
+                                          "reasoning"
+                                      ],
+                          "state":  "static_text_sample_only",
+                          "executed":  false
+                      },
+                      {
+                          "id":  4030,
+                          "skill":  "engagement-workflow",
+                          "path":  "skills/1520-digital-marketing-pro/4030-engagement-workflow",
+                          "upstream":  "https://github.com/hashgraph-online/awesome-codex-plugins/tree/9cc4f3e/plugins/indranilbanerjee/digital-marketing-pro",
+                          "license":  "MIT",
+                          "sha256":  "49ca43f7328616f3af0a99a89f256d04f61d026b29f43489e5ce0140ec28120a",
+                          "bytes":  26268,
+                          "headings":  29,
+                          "static_warning_patterns":  [
+
+                                                      ],
+                          "domains":  [
+                                          "reasoning"
+                                      ],
+                          "state":  "static_text_sample_only",
+                          "executed":  false
+                      },
+                      {
+                          "id":  3848,
+                          "skill":  "factor-of-safety-failure-margin",
+                          "path":  "skills/1503-universal-design-principles/3848-factor-of-safety-failure-margin",
+                          "upstream":  "https://github.com/hashgraph-online/awesome-codex-plugins/tree/9cc4f3e/plugins/HDeibler/universal-design-principles",
+                          "license":  "MIT",
+                          "sha256":  "3e90b6a65fc7ace58797658c4926de0eb4df865005b19bc00b2f64b62d3b71ee",
+                          "bytes":  7433,
+                          "headings":  20,
+                          "static_warning_patterns":  [
+
+                                                      ],
+                          "domains":  [
+                                          "reasoning"
+                                      ],
+                          "state":  "static_text_sample_only",
+                          "executed":  false
+                      },
+                      {
+                          "id":  14378,
+                          "skill":  "fbt-prep",
+                          "path":  "skills/3566-xbert-fbt-prep/14378-fbt-prep",
+                          "upstream":  "https://github.com/xbertintelligence/xbert-plugins/tree/7e6bcc16a3fd1da830522d1d30f97a76c52b67aa/plugins/xbert-fbt-prep",
+                          "license":  "MIT",
+                          "sha256":  "5cb863d38082315de7c3558ab04bb2553ec633fb90af435b866a8cdf8f03f530",
+                          "bytes":  7078,
+                          "headings":  16,
+                          "static_warning_patterns":  [
+
+                                                      ],
+                          "domains":  [
+                                          "finance"
+                                      ],
+                          "state":  "static_text_sample_only",
+                          "executed":  false
+                      },
+                      {
+                          "id":  207,
+                          "skill":  "fullstack-coding",
+                          "path":  "skills/98-fullstack-coding/207-fullstack-coding",
+                          "upstream":  "https://github.com/adamperlis/adam-plugins/tree/e41984f68ab8a53f028d078c6070ec8658fd41ac/plugins/fullstack-coding",
+                          "license":  "MIT",
+                          "sha256":  "871a52219e242bcdf7e00dfdeb00fbdebeaa767477fb9eef1a20ae2245ebe599",
+                          "bytes":  17492,
+                          "headings":  33,
+                          "static_warning_patterns":  [
+
+                                                      ],
+                          "domains":  [
+                                          "engineering",
+                                          "web_apps"
+                                      ],
+                          "state":  "static_text_sample_only",
+                          "executed":  false
+                      },
+                      {
+                          "id":  7151,
+                          "skill":  "goal-research",
+                          "path":  "skills/1990-epistemic-cooperative/7151-goal-research",
+                          "upstream":  "https://github.com/jongwony/epistemic-protocols/tree/10abcb37573c187b3fc23d5dc834519475b920b2/epistemic-cooperative",
+                          "license":  "MIT",
+                          "sha256":  "489d7afd5cb8d1327383bfdef020adc5d1a0a68e03cac6109677527977d58623",
+                          "bytes":  8838,
+                          "headings":  7,
+                          "static_warning_patterns":  [
+
+                                                      ],
+                          "domains":  [
+                                          "research"
+                                      ],
+                          "state":  "static_text_sample_only",
+                          "executed":  false
+                      },
+                      {
+                          "id":  14319,
+                          "skill":  "humanize",
+                          "path":  "skills/3536-humanize/14319-humanize",
+                          "upstream":  "https://github.com/x-mesh/xm/tree/cb4b788703cf164f1344fc3f3bc3e20c5e4ae2b8/x-humanize",
+                          "license":  "MIT",
+                          "sha256":  "5de2daf064902f898178fd74533cf4b735b9d731bdf7032fb949c87d1fe38c7e",
+                          "bytes":  28090,
+                          "headings":  33,
+                          "static_warning_patterns":  [
+
+                                                      ],
+                          "domains":  [
+                                          "language"
+                                      ],
+                          "state":  "static_text_sample_only",
+                          "executed":  false
+                      },
+                      {
+                          "id":  5965,
+                          "skill":  "ideogram-security-basics",
+                          "path":  "skills/1869-ideogram-pack/5965-ideogram-security-basics",
+                          "upstream":  "https://github.com/jeremylongshore/tons-of-skills-marketplace/tree/b520cf9/plugins/saas-packs/ideogram-pack",
+                          "license":  "MIT",
+                          "sha256":  "2473756e627d7573f2df456614514682fb50c54b36669e34b04ae40dc768fa1b",
+                          "bytes":  4749,
+                          "headings":  13,
+                          "static_warning_patterns":  [
+                                                          "api_key"
+                                                      ],
+                          "domains":  [
+                                          "security"
+                                      ],
+                          "state":  "static_text_sample_only",
+                          "executed":  false
+                      },
+                      {
+                          "id":  14084,
+                          "skill":  "improve-code-quality",
+                          "path":  "skills/3431-metaskills/14084-improve-code-quality",
+                          "upstream":  "https://github.com/wondelai/skills/tree/c172996495bed0fcd26896a9416b2093fd7073f0/plugins/metaskills",
+                          "license":  "MIT",
+                          "sha256":  "bb4ec46eadb0e1aafbe911920763d11079ecb897dacddb90e81a5896d7020bf5",
+                          "bytes":  25049,
+                          "headings":  18,
+                          "static_warning_patterns":  [
+
+                                                      ],
+                          "domains":  [
+                                          "engineering"
+                                      ],
+                          "state":  "static_text_sample_only",
+                          "executed":  false
+                      },
+                      {
+                          "id":  5989,
+                          "skill":  "instantly-security-basics",
+                          "path":  "skills/1870-instantly-pack/5989-instantly-security-basics",
+                          "upstream":  "https://github.com/jeremylongshore/tons-of-skills-marketplace/tree/b520cf9/plugins/saas-packs/instantly-pack",
+                          "license":  "MIT",
+                          "sha256":  "0d4b19a1b5309b4510348bdcfb3911441f136c4867606a263cbd348e7e59c04b",
+                          "bytes":  4693,
+                          "headings":  12,
+                          "static_warning_patterns":  [
+
+                                                      ],
+                          "domains":  [
+                                          "security"
+                                      ],
+                          "state":  "static_text_sample_only",
+                          "executed":  false
+                      },
+                      {
+                          "id":  6346,
+                          "skill":  "mistral-security-basics",
+                          "path":  "skills/1885-mistral-pack/6346-mistral-security-basics",
+                          "upstream":  "https://github.com/jeremylongshore/tons-of-skills-marketplace/tree/b520cf9/plugins/saas-packs/mistral-pack",
+                          "license":  "MIT",
+                          "sha256":  "16cadd726ebc697b99a910dbce2435b59974b6ca862d5a6c4a279197209b4358",
+                          "bytes":  3508,
+                          "headings":  13,
+                          "static_warning_patterns":  [
+
+                                                      ],
+                          "domains":  [
+                                          "security"
+                                      ],
+                          "state":  "static_text_sample_only",
+                          "executed":  false
+                      },
+                      {
+                          "id":  7548,
+                          "skill":  "pre-mortem",
+                          "path":  "skills/2123-pre-mortem/7548-pre-mortem",
+                          "upstream":  "https://github.com/kyletabor/claude_plugins/tree/c5206a24ec5ec12080f0b7ae2f1661055786cc78/pre-mortem",
+                          "license":  "MIT",
+                          "sha256":  "d67f70acc7b87afd530d36913b5d2b569826000d55b7e756ec72572a4af39d18",
+                          "bytes":  6136,
+                          "headings":  12,
+                          "static_warning_patterns":  [
+
+                                                      ],
+                          "domains":  [
+                                          "research"
+                                      ],
+                          "state":  "static_text_sample_only",
+                          "executed":  false
+                      },
+                      {
+                          "id":  757,
+                          "skill":  "remotion",
+                          "path":  "skills/235-mas-video-lab/757-remotion",
+                          "upstream":  "https://github.com/alivirgo/major-ai-skills/tree/ba3a5729d60646626fee31c2d9906adc59f418dc/plugins/mas-video-lab",
+                          "license":  "MIT",
+                          "sha256":  "745e08d17d44596297e6bebafae946fcbcf279a36ec50f8b9077d4396a84c987",
+                          "bytes":  5686,
+                          "headings":  9,
+                          "static_warning_patterns":  [
+
+                                                      ],
+                          "domains":  [
+                                          "media_motion"
+                                      ],
+                          "state":  "static_text_sample_only",
+                          "executed":  false
+                      },
+                      {
+                          "id":  14535,
+                          "skill":  "transcript",
+                          "path":  "skills/3613-youtube-skills/14535-transcript",
+                          "upstream":  "https://github.com/hashgraph-online/awesome-codex-plugins/tree/9cc4f3e/plugins/ZeroPointRepo/youtube-skills",
+                          "license":  "MIT",
+                          "sha256":  "4f71cefee059f70ab598649835f35dbb3d636d548d2127ea2c27415b1c36e184",
+                          "bytes":  4560,
+                          "headings":  7,
+                          "static_warning_patterns":  [
+                                                          "api_key"
+                                                      ],
+                          "domains":  [
+                                          "research"
+                                      ],
+                          "state":  "static_text_sample_only",
+                          "executed":  false
+                      },
+                      {
+                          "id":  10272,
+                          "skill":  "video",
+                          "path":  "skills/2681-emulo/10272-video",
+                          "upstream":  "https://github.com/hashgraph-online/awesome-codex-plugins/tree/9cc4f3e/plugins/ohad6k/emulo",
+                          "license":  "MIT",
+                          "sha256":  "33b21f6722ee21b5d1f43fbbfc1ef77182d954555a60a43b6d813e24b5ee550d",
+                          "bytes":  33019,
+                          "headings":  25,
+                          "static_warning_patterns":  [
+
+                                                      ],
+                          "domains":  [
+                                          "media_motion"
+                                      ],
+                          "state":  "static_text_sample_only",
+                          "executed":  false
+                      }
+                  ]
+}

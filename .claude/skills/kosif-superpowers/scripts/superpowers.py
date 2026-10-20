@@ -2,7 +2,7 @@
 """KOSIF superpowers catalog CLI — فهرس القوى: list, search, show, doctor, stats, build, check.
 
 The catalog (`repos.json` next to this skill) records 125 major open-source repositories
-whose capabilities a KOSIF film-maker can draw on, grouped into twelve superpowers.
+whose capabilities a KOSIF film-maker can draw on, grouped into fifteen superpowers (the keys of repos.json "capabilities").
 This tool reads it, regenerates `references/repos.md` from it and checks which of the
 tools are actually installed on this machine — so a plan never promises an integration
 that is not there.
@@ -124,6 +124,11 @@ def md_cell(text) -> str:
     return str(text).replace("|", "\\|").replace("\n", " ").strip()
 
 
+def _slug(heading: str) -> str:
+    """GitHub-style anchor: lowercase, drop punctuation (letters of any script stay), spaces → hyphens."""
+    return re.sub(r"[^\w\- ]", "", heading.strip().lower()).replace(" ", "-")
+
+
 def render_repos_md(data: dict) -> str:
     repos = data["repos"]
     caps = data.get("capabilities") or {}
@@ -138,6 +143,13 @@ def render_repos_md(data: dict) -> str:
         "يُولَّد هذا الملف من `repos.json`؛ لا تحرّره يدويًا.",
         "",
         f"**{len(repos)}** repositories · **{len(used_caps)}** superpowers · ≈ **{stars:,.0f}k** GitHub stars combined · generated {data.get('generated', '')}",
+        "",
+        "## الفهرس / contents",
+        "",
+        "- [How to read — كيفية القراءة](#how-to-read--كيفية-القراءة)",
+        *[f"- [{c} — {CAP_AR.get(c, c)} ({n})](#{_slug(f'{c} — {CAP_AR.get(c, c)} ({n})')})"
+          for c, n in ((c, sum(1 for r in repos if r.get('capability') == c)) for c in CAP_ORDER + [c for c in caps if c not in CAP_ORDER]) if n],
+        "- [Credits and policy — الحقوق والسياسة](#credits-and-policy--الحقوق-والسياسة)",
         "",
         "## How to read — كيفية القراءة",
         "",

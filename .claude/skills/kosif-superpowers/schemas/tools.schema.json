@@ -1,0 +1,297 @@
+{
+ "$schema": "https://json-schema.org/draft/2020-12/schema",
+ "$id": "https://github.com/kosif199022-jpg/kosif-tool/.claude/skills/kosif-superpowers/schemas/tools.schema.json",
+ "title": "KOSIF tool registry (data/tools.json)",
+ "description": "Every runnable KOSIF tool: what it does, when to use it, how to call it, what it needs and how safe it is. Paths and command examples are relative to the tool's root: 'skill' = .claude/skills/kosif-superpowers, 'repo' = the kosif-tool repository root.",
+ "type": "object",
+ "required": [
+  "schema",
+  "areas",
+  "tools"
+ ],
+ "properties": {
+  "schema": {
+   "const": "kosif.tools.v1"
+  },
+  "note": {
+   "type": "string"
+  },
+  "areas": {
+   "type": "array",
+   "items": {
+    "type": "object",
+    "required": [
+     "id",
+     "ar",
+     "en"
+    ],
+    "properties": {
+     "id": {
+      "enum": [
+       "discover",
+       "think",
+       "motion",
+       "edit",
+       "audio",
+       "draw",
+       "3d",
+       "image",
+       "sources",
+       "investigate",
+       "local-computer",
+       "maintain"
+      ]
+     },
+     "ar": {
+      "type": "string"
+     },
+     "en": {
+      "type": "string"
+     },
+     "about": {
+      "type": "string"
+     }
+    }
+   }
+  },
+  "docs": {
+   "type": "array",
+   "items": {
+    "type": "object",
+    "required": [
+     "path",
+     "area"
+    ],
+    "properties": {
+     "path": {
+      "type": "string"
+     },
+     "area": {
+      "type": "string"
+     },
+     "summary": {
+      "type": "string"
+     }
+    }
+   }
+  },
+  "tools": {
+   "type": "array",
+   "items": {
+    "$ref": "#/$defs/tool"
+   }
+  }
+ },
+ "$defs": {
+  "tool": {
+   "type": "object",
+   "required": [
+    "id",
+    "path",
+    "root",
+    "kind",
+    "area",
+    "title_en",
+    "title_ar",
+    "summary_en",
+    "summary_ar",
+    "use_when",
+    "keywords",
+    "commands",
+    "inputs",
+    "outputs",
+    "requires",
+    "safety",
+    "consent",
+    "limits",
+    "tests",
+    "docs",
+    "families",
+    "evidence"
+   ],
+   "properties": {
+    "id": {
+     "type": "string",
+     "pattern": "^[a-z0-9]+(?:-[a-z0-9]+)*$"
+    },
+    "path": {
+     "type": "string"
+    },
+    "root": {
+     "enum": [
+      "skill",
+      "repo"
+     ]
+    },
+    "kind": {
+     "enum": [
+      "cli",
+      "library",
+      "mcp-server",
+      "template"
+     ]
+    },
+    "area": {
+     "enum": [
+      "discover",
+      "think",
+      "motion",
+      "edit",
+      "audio",
+      "draw",
+      "3d",
+      "image",
+      "sources",
+      "investigate",
+      "local-computer",
+      "maintain"
+     ]
+    },
+    "title_en": {
+     "type": "string"
+    },
+    "title_ar": {
+     "type": "string"
+    },
+    "summary_en": {
+     "type": "string"
+    },
+    "summary_ar": {
+     "type": "string"
+    },
+    "use_when": {
+     "type": "array",
+     "items": {
+      "type": "string"
+     },
+     "minItems": 2
+    },
+    "keywords": {
+     "type": "array",
+     "items": {
+      "type": "string"
+     },
+     "minItems": 4
+    },
+    "commands": {
+     "type": "array",
+     "minItems": 1,
+     "items": {
+      "type": "object",
+      "required": [
+       "name",
+       "example",
+       "does"
+      ],
+      "properties": {
+       "name": {
+        "type": "string"
+       },
+       "example": {
+        "type": "string"
+       },
+       "does": {
+        "type": "string"
+       }
+      }
+     }
+    },
+    "inputs": {
+     "type": "string"
+    },
+    "outputs": {
+     "type": "string"
+    },
+    "requires": {
+     "type": "object",
+     "required": [
+      "python",
+      "binaries",
+      "node",
+      "optional",
+      "network"
+     ],
+     "properties": {
+      "python": {
+       "type": "array",
+       "items": {
+        "type": "string"
+       }
+      },
+      "binaries": {
+       "type": "array",
+       "items": {
+        "type": "string"
+       }
+      },
+      "node": {
+       "type": "array",
+       "items": {
+        "type": "string"
+       }
+      },
+      "optional": {
+       "type": "array",
+       "items": {
+        "type": "string"
+       }
+      },
+      "network": {
+       "type": "boolean"
+      }
+     }
+    },
+    "safety": {
+     "enum": [
+      "read-only",
+      "writes-files",
+      "runs-external-programs",
+      "network"
+     ]
+    },
+    "consent": {
+     "type": "string"
+    },
+    "safe_commands": {
+     "type": "array",
+     "items": {
+      "type": "string",
+      "pattern": "^[\\w-]+$"
+     },
+     "description": "Subcommands that only read (whatever their arguments), so hub.py run needs no --yes for them even when the tool has a consent text or a risky safety level."
+    },
+    "limits": {
+     "type": "string"
+    },
+    "tests": {
+     "type": "array",
+     "items": {
+      "type": "string"
+     }
+    },
+    "docs": {
+     "type": "array",
+     "items": {
+      "type": "string"
+     }
+    },
+    "families": {
+     "type": "array",
+     "items": {
+      "type": "string"
+     }
+    },
+    "evidence": {
+     "enum": [
+      "tested-here",
+      "tested-elsewhere",
+      "untested"
+     ]
+    },
+    "evidence_note": {
+     "type": "string"
+    }
+   }
+  }
+ }
+}

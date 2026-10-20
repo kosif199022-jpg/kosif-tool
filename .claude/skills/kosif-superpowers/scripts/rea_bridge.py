@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 """KOSIF Superpowers: opt-in, evidence-bounded REA CLI bridge.
 
-Never installs tools or executes inspections without --authorized and --run.
+Never installs tools; an inspection runs only through the `run` subcommand with --authorized.
 All stdout payloads stay in a caller-named local file, not the chat log.
 """
 import argparse
@@ -31,7 +31,8 @@ STATIC_COMMANDS = {
     "pe-resources": "inspect-pe-resources",
     "recorded-crash": "inspect-recorded-crash",
 }
-# Every REA command (153 in v6.7.0) is catalogued as a power record; `catalog` lists them with their status.
+# Every REA 6.7.0 CLI command (153), MCP-only tool and MCP prompt, plus the KOSIF installer-triage
+# additions, is catalogued as a power record; `catalog` lists them all with their status.
 CATALOG = Path(__file__).resolve().parent.parent / "data" / "powers" / "software-investigation.json"
 DOCUMENTED_ONLY = {
     "native": "docs/native-investigation.md", "apk": "docs/android-analysis.md",

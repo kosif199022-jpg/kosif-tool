@@ -11,9 +11,7 @@
   "how": "1) Prove idempotency first: deterministic partition keys and overwrite-by-partition writes so a re-run cannot duplicate. 2) Add bounded retries with exponential backoff and jitter per step. 3) On Convex use the workflow component so each step runs in order and retries independently; do not chain scheduler calls or build a custom jobs table. 4) Plan the backfill: partition strategy, catch-up configuration, concurrency caps, monitoring and rollback. 5) For Falcon Fusion style engines: discover actions through the live API, author workflow YAML, validate against the JSON schema, then trigger and tail execution status. Based on descriptions plus brief reads, not full procedures.",
   "params": "partition key; retry limits; concurrency cap; engine (Convex|Airflow-style|Falcon Fusion)",
   "install": "",
-  "requires": [
-   "node"
-  ],
+  "requires": [],
   "license": "method paraphrased from Atlas skills under Apache-2.0 / MIT (no copyleft seen among supporting ids); the skills keep their own licenses — see each folder's SOURCE.md",
   "proof": [
    "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/2269-data-orchestration/8650-handle-backfills-and-retries",
@@ -78,9 +76,7 @@
   "how": "1) Index sessions into a local store (sqlite or JSONL set). 2) Sweep for categories: tool errors, retry loops, duplicate calls, shell commands that a dedicated tool already covers, oversized results or sessions. 3) Record findings with session id and evidence in a findings store. 4) For specific numbers (tool timings, query counts, error summaries) delegate to an inspector that queries the files so raw data stays out of the main context. 5) Optionally keep an append-only JSONL traffic log so a fleet has one org-wide view. 6) Turn repeated findings into rules or skills.",
   "params": "transcript directory; finding categories; time window",
   "install": "",
-  "requires": [
-   "python3"
-  ],
+  "requires": [],
   "license": "method paraphrased from Atlas skills under MIT; the skills keep their own licenses — see each folder's SOURCE.md",
   "proof": [
    "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/236-agent-transcripts/764-transcript-sweep",
@@ -204,9 +200,7 @@
   "how": "1) Require per-row fields: source, occurred_at, status, responsible, external_link. 2) Join on external_link. 3) Output three buckets: match, mismatch (field-level diff), only-in-second. 4) Read-only by default; any write needs separate explicit approval. 5) Use synthetic data for tests; never publish tokens, subdomains or contacts.",
   "params": "two exports, key field",
   "install": "",
-  "requires": [
-   "python3"
-  ],
+  "requires": [],
   "license": "method paraphrased from Atlas skills under MIT; the skills keep their own licenses — see each folder's SOURCE.md",
   "proof": [
    "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/2655-yandex-direct-for-all/10092-amocrm-api-control",
@@ -262,8 +256,7 @@
   "params": "pair, chain",
   "install": "pip install httpx rich networkx",
   "requires": [
-   "python3",
-   "network"
+   "python3"
   ],
   "license": "method paraphrased from Atlas skills under MIT; the skills keep their own licenses — see each folder's SOURCE.md",
   "proof": [
@@ -325,9 +318,7 @@
   "how": "1) Export CSVs. 2) Run calculator with --year and --method. 3) --compare-methods. 4) --income-report for staking/airdrops. 5) Output CSV. Not tax advice.",
   "params": "year, method",
   "install": "",
-  "requires": [
-   "python3"
-  ],
+  "requires": [],
   "license": "method paraphrased from Atlas skills under MIT; the skills keep their own licenses — see each folder's SOURCE.md",
   "proof": [
    "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/1663-crypto-tax-calculator/4668-calculating-crypto-taxes"
@@ -374,10 +365,7 @@
   "how": "1) Query blocks/txs. 2) Track whale flows. 3) Value portfolio and allocation. 4) Score rarity by trait frequency.",
   "params": "address, collection",
   "install": "",
-  "requires": [
-   "python3",
-   "network"
-  ],
+  "requires": [],
   "license": "method paraphrased from Atlas skills under MIT; the skills keep their own licenses — see each folder's SOURCE.md",
   "proof": [
    "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/1674-on-chain-analytics/4679-analyzing-on-chain-data",
@@ -434,8 +422,7 @@
   "params": "date order, fiscal start",
   "install": "",
   "requires": [
-   "tesseract",
-   "pip:pandas"
+   "tesseract"
   ],
   "license": "method paraphrased from Atlas skills under MIT/Apache-2.0; the skills keep their own licenses — see each folder's SOURCE.md",
   "proof": [
@@ -486,10 +473,7 @@
   "how": "1) Define 2-4 scenarios with per-channel budget, ROI mean and std, saturation. 2) Run 10,000 iterations (50k for high stakes) sampling ROI with diminishing returns. 3) Report mean, P10, P50, P90, probability of target. 4) Rank by expected and risk-adjusted return; tornado sensitivity of top scenarios. 5) Check convergence; document assumptions.",
   "params": "scenarios, iterations, horizon months",
   "install": "",
-  "requires": [
-   "python3",
-   "pip:numpy"
-  ],
+  "requires": [],
   "license": "method paraphrased from Atlas skills under MIT; the skills keep their own licenses — see each folder's SOURCE.md",
   "proof": [
    "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/1520-digital-marketing-pro/4117-simulate"
@@ -538,10 +522,7 @@
   "how": "1) Validate input completeness (nulls, implausible values) before ratios. 2) Run ratio calculator on JSON statements across 5 categories. 3) Decompose variances into drivers with waterfall narrative; mark favorable/unfavorable. 4) Rolling forecast with base/bull/bear. 5) Track accuracy targets about +/-5% revenue, +/-3% expenses. 6) Executive summary first.",
   "params": "statements JSON, materiality threshold",
   "install": "",
-  "requires": [
-   "python3",
-   "pip:pandas"
-  ],
+  "requires": [],
   "license": "method paraphrased from Atlas skills under MIT/Apache-2.0; the skills keep their own licenses — see each folder's SOURCE.md",
   "proof": [
    "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/189-finance-skills/560-financial-analyst"
@@ -591,9 +572,7 @@
   "how": "1) Prepare JSON: quota, stages, average_cycle_days, deals. 2) Run pipeline analyzer (--format text|json). 3) Healthy coverage 3-4x quota; velocity = opps x avg deal x win rate / cycle. 4) Flag deals over 2x stage cycle and >40% concentration. 5) Track forecast accuracy over periods; compute GTM efficiency.",
   "params": "quota, stages, deals",
   "install": "",
-  "requires": [
-   "python3"
-  ],
+  "requires": [],
   "license": "method paraphrased from Atlas skills under MIT; the skills keep their own licenses — see each folder's SOURCE.md",
   "proof": [
    "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/136-business-growth-skills/386-revenue-operations"
@@ -643,9 +622,7 @@
   "how": "1) Pull ledger and timesheets from the accounting system. 2) Reconcile and close month. 3) Payroll: pre-run sanity checks, post-run reconciliation. 4) Draft invoice-chase emails by aging bucket. 5) Walk accounting profit to taxable income. 6) Build Div 7A loan schedule per shareholder loan. 7) Mark as prep for accountant, not tax advice.",
   "params": "jurisdiction, period, ledger source",
   "install": "",
-  "requires": [
-   "pip:pandas"
-  ],
+  "requires": [],
   "license": "method paraphrased from Atlas skills under Apache-2.0 / MIT; the skills keep their own licenses — see each folder's SOURCE.md",
   "proof": [
    "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills",
@@ -708,10 +685,7 @@
   "how": "1) Confirm metric type, n and observed values. 2) Proportions->z-test, means->t-test, categories->chi-square. 3) Report p, CI, Cohen d/h or Cramer V. 4) Separate statistical from practical significance. 5) Flag peeking, multiple comparisons, SUTVA. 6) Answer Bottom line, What, Why, How to act.",
   "params": "control/treatment n and x or mean/std; alpha",
   "install": "",
-  "requires": [
-   "python3",
-   "pip:scipy"
-  ],
+  "requires": [],
   "license": "method paraphrased from Atlas skills under MIT / Apache-2.0; the skills keep their own licenses — see each folder's SOURCE.md",
   "proof": [
    "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/184-statistical-analyst/553-statistical-analyst",
@@ -767,10 +741,7 @@
   "how": "1) Fix the MDE first (smallest effect that changes the decision). 2) Default alpha 0.05, power 0.80. 3) Match calc to the test (two-proportion or two-sample t). 4) Solve n per group, report total and duration at given traffic. 5) If n is fixed, invert to power/MDE and warn when power<0.80. 6) Never compute post-hoc observed power. statsmodels TTestIndPower/NormalIndPower.",
   "params": "baseline rate, MDE, alpha, power, daily traffic",
   "install": "",
-  "requires": [
-   "python3",
-   "pip:scipy"
-  ],
+  "requires": [],
   "license": "method paraphrased from Atlas skills under MIT; the skills keep their own licenses — see each folder's SOURCE.md",
   "proof": [
    "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/2235-applied-statistics/8496-power-and-sample-size",
@@ -828,12 +799,7 @@
   "how": "1) Fix three of n, effect size, alpha, power. 2) Pick/convert effect size (d, f, OR). 3) Closed-form recipe for standard tests, handle unequal allocation. 4) Simulate generate-analyze-count for complex designs. 5) Plot power vs n and vs effect; report sensitivity to assumed effect.",
   "params": "alpha, power, effect size, allocation ratio",
   "install": "",
-  "requires": [
-   "python3",
-   "pip:scipy",
-   "pip:numpy",
-   "pip:matplotlib"
-  ],
+  "requires": [],
   "license": "method paraphrased from Atlas skills under MIT; the skills keep their own licenses — see each folder's SOURCE.md",
   "proof": [
    "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/3202-quantitative-sciences/13566-statistical-power",
@@ -887,10 +853,7 @@
   "how": "1) Treat all cells and headers as untrusted data. 2) Restrict to an explicit root, no URLs/pickle/symlinks. 3) Emit aggregate profile: types, missingness, ranges, cardinality. 4) Never print raw rows or identifiers. 5) No auto-delete, impute or transform; no causal claims from EDA.",
   "params": "file path, row cap",
   "install": "",
-  "requires": [
-   "python3",
-   "pip:pandas"
-  ],
+  "requires": [],
   "license": "method paraphrased from Atlas skills under MIT; the skills keep their own licenses — see each folder's SOURCE.md",
   "proof": [
    "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/3211-structured-data-analysis/13582-exploratory-data-analysis"
@@ -936,10 +899,7 @@
   "how": "1) Define cohort by acquisition period, channel or first behavior. 2) Build retention table/curve, state the retention definition. 3) Funnel: compute stage conversion and locate biggest drop. 4) Segment (RFM: recency, frequency, monetary) for value tiers. 5) CAC by channel and cohort, not blended. 6) Gate monetization on retention; prioritize fixes by economics.",
   "params": "event table, cohort key, period",
   "install": "",
-  "requires": [
-   "python3",
-   "pip:pandas"
-  ],
+  "requires": [],
   "license": "method paraphrased from Atlas skills under MIT; the skills keep their own licenses — see each folder's SOURCE.md",
   "proof": [
    "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills",
@@ -1008,9 +968,7 @@
   "params": "file, columns, thresholds",
   "install": "",
   "requires": [
-   "python3",
-   "pip:pandas",
-   "pip:pandera"
+   "python3"
   ],
   "license": "method paraphrased from Atlas skills under MIT; the skills keep their own licenses — see each folder's SOURCE.md",
   "proof": [
@@ -1077,11 +1035,7 @@
   "how": "1) Recover pre-registered metric, test and stopping rule; flag post-hoc choices. 2) Check early stopping/peeking. 3) Run primary test; headline is effect size plus 95% CI, not p. 4) Check guardrails (latency, churn, revenue). 5) Holm/Bonferroni (confirmatory) or Benjamini-Hochberg (exploratory) across metrics/segments. 6) Simpson's paradox check by subgroup. 7) Fill template: Primary / Decision-relevant / Guardrails / Multiplicity / Pitfall screen / Verdict.",
   "params": "experiment data, plan, metrics, guardrails",
   "install": "",
-  "requires": [
-   "python3",
-   "pip:scipy",
-   "pip:pandas"
-  ],
+  "requires": [],
   "license": "method paraphrased from Atlas skills under MIT; the skills keep their own licenses — see each folder's SOURCE.md",
   "proof": [
    "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/2235-applied-statistics/8495-experiment-analysis",
@@ -1147,11 +1101,7 @@
   "how": "1) Use unconstrained demand; flag outliers. 2) Need >=12 periods for seasonal, >=6 otherwise. 3) SES / Holt / Holt-Winters; Croston or TSB if CV>0.5 intermittent. 4) Holdout last 3-6 periods. 5) MAPE, bias (|bias|<=5%), tracking signal (|TS|>4 out of control). 6) Documented overrides overlay.",
   "params": "horizon, holdout, season length",
   "install": "",
-  "requires": [
-   "python3",
-   "pip:statsforecast",
-   "pip:pandas"
-  ],
+  "requires": [],
   "license": "method paraphrased from Atlas skills under MIT; the skills keep their own licenses — see each folder's SOURCE.md",
   "proof": [
    "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/2389-supply-chain-planning/9247-demand-forecasting",
@@ -1207,9 +1157,8 @@
   "params": "column, grouping, window",
   "install": "",
   "requires": [
-   "python3",
    "pip:pandas",
-   "pip:numpy"
+   "npm:p5"
   ],
   "license": "method paraphrased from Atlas skills under MIT; the skills keep their own licenses — see each folder's SOURCE.md",
   "proof": [
@@ -1267,11 +1216,7 @@
   "how": "1) Verify target definition and availability at prediction time. 2) Profile shape, dtypes, missingness (and why), cardinality, duplicates, per-column distributions. 3) Record each cleaning choice and rationale. 4) Read plots adversarially (bimodality, Simpson reversal). 5) List leakage candidates (post-outcome columns, target-derived, ID-encoded). 6) Frame findings as hypotheses with uncertainty; do not p-hack. 7) Emit EDA report.",
   "params": "dataset, target",
   "install": "",
-  "requires": [
-   "python3",
-   "pip:pandas",
-   "pip:matplotlib"
-  ],
+  "requires": [],
   "license": "method paraphrased from Atlas skills under MIT; the skills keep their own licenses — see each folder's SOURCE.md",
   "proof": [
    "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/2272-data-science-research/8669-eda-workflow",
@@ -1328,11 +1273,7 @@
   "how": "1) Pick model family (OLS, GLM, time-series) from outcome type. 2) Driver-based: explicit drivers with owners, rolling refresh. 3) 13-week cash: receipts by source, disbursements, direct method. 4) Backtest on holdout, report error and intervals. 5) Check assumptions: residuals, multicollinearity, seasonality. 6) Set anomaly thresholds from forecast band.",
   "params": "history, horizon, drivers",
   "install": "",
-  "requires": [
-   "python3",
-   "pip:pandas",
-   "pip:statsforecast"
-  ],
+  "requires": [],
   "license": "method paraphrased from Atlas skills under MIT; the skills keep their own licenses — see each folder's SOURCE.md",
   "proof": [
    "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills",
@@ -1399,7 +1340,6 @@
   "params": "language, data, spec",
   "install": "",
   "requires": [
-   "python3",
    "pip:pandas"
   ],
   "license": "method paraphrased from Atlas skills under MIT; the skills keep their own licenses — see each folder's SOURCE.md",
@@ -1460,11 +1400,7 @@
   "how": "1) Classify outcome and design (paired, groups, repeated). 2) Check normality, variance, independence. 3) Select parametric or non-parametric. 4) Report effect size and CI not just p. 5) Offer Bayesian estimate; correct for multiple tests.",
   "params": "",
   "install": "",
-  "requires": [
-   "python3",
-   "pip:scipy",
-   "pip:pandas"
-  ],
+  "requires": [],
   "license": "method paraphrased from Atlas skills under MIT; the skills keep their own licenses — see each folder's SOURCE.md",
   "proof": [
    "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/3202-quantitative-sciences/13565-statistical-analysis"
@@ -1511,11 +1447,7 @@
   "how": "1) Copy file, record checksum; inspect BOM, line endings, null bytes, encoding candidates (strict UTF-8 first). 2) Detect dialect by sampling several regions; use a real CSV parser, never regex split. 3) Map source to normalized headers. 4) Parse with expected column count; quarantine failures with line number, raw text, error, field count. 5) Normalize dates/numbers/booleans as hypotheses. 6) Count every dropped or repaired row.",
   "params": "file, expected schema",
   "install": "",
-  "requires": [
-   "python3",
-   "pip:pandas",
-   "pip:duckdb"
-  ],
+  "requires": [],
   "license": "method paraphrased from Atlas skills under MIT; the skills keep their own licenses — see each folder's SOURCE.md",
   "proof": [
    "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/2207-majestic-data/8243-csv-wrangling",
@@ -1573,10 +1505,7 @@
   "how": "1) Classify claim: point comparison, trend or group comparison. 2) Get denominators; no n means 'insufficient data'. 3) Rates: Wilson CI; means: t or bootstrap CI on the difference; rare counts: Poisson CI. 4) If CI spans zero, annotate 'within normal variation'. 5) Trends: fitted slope with CI or control-chart band, never two points. 6) Output the widget annotation plus one-line caveat.",
   "params": "metric, period values, n",
   "install": "",
-  "requires": [
-   "python3",
-   "pip:scipy"
-  ],
+  "requires": [],
   "license": "method paraphrased from Atlas skills under MIT; the skills keep their own licenses — see each folder's SOURCE.md",
   "proof": [
    "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/2235-applied-statistics/8498-statistical-qa-of-metrics",
@@ -1634,9 +1563,7 @@
   "how": "1) Hash-based deterministic sticky assignment per unit. 2) Log exposure (who saw the variant), not just assignment. 3) Chi-square SRM test of observed vs intended split; failure invalidates the result. 4) Pre-register primary metric, MDE, duration, guardrails. 5) Forbid peeking-to-stop and HARKing. 6) Hand clean exposure/metric data to the statistics step.",
   "params": "intended split, unit of randomization",
   "install": "",
-  "requires": [
-   "python3"
-  ],
+  "requires": [],
   "license": "method paraphrased from Atlas skills under MIT; the skills keep their own licenses — see each folder's SOURCE.md",
   "proof": [
    "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/2291-experimentation-growth-engineering/8764-ab-test-plumbing",
@@ -1749,9 +1676,7 @@
   "how": "1) Check active streaming consumers before DROP, CREATE OR REPLACE or VACUUM. 2) Narrow MERGE predicates to clustering keys. 3) Keep VACUUM retention beyond checkpoint and time-travel needs. 4) Auto Loader: plan for schema evolution. 5) Confirm source replayability before DLT full refresh. 6) Hook fails open if consumers cannot be verified.",
   "params": "",
   "install": "",
-  "requires": [
-   "python3"
-  ],
+  "requires": [],
   "license": "method paraphrased from Atlas skills under MIT; the skills keep their own licenses — see each folder's SOURCE.md",
   "proof": [
    "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/1844-databricks-pack/5462-databricks-streaming-guardian",
@@ -1813,9 +1738,7 @@
   "how": "1) List all sources and schemas with status. 2) Classify errors: credentials, schema drift, wrong incremental field, rate limit. 3) Map each class to a recovery (reconnect, tune config, reload, resync). 4) Report degraded sources ranked by staleness. 5) Verify after the fix.",
   "params": "",
   "install": "",
-  "requires": [
-   "claude:tools"
-  ],
+  "requires": [],
   "license": "method paraphrased from Atlas skills under MIT; the skills keep their own licenses — see each folder's SOURCE.md",
   "proof": [
    "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/2957-posthog/12303-diagnosing-failed-warehouse-syncs",
@@ -2067,7 +1990,9 @@
   "how": "1) Read stage timeline, task-time skew, shuffle spill, GC, plan. 2) Map: one task far longer -> AQE skew join or salting; small dim -> broadcast; tiny files -> OPTIMIZE; driver OOM -> no collect(). 3) Prefer AQE and built-ins over conf knobs; replace Python UDFs. 4) Re-run and confirm the metric moved. 5) Cost: auto-terminate, jobs compute, spot workers, right-size warehouses.",
   "params": "",
   "install": "",
-  "requires": [],
+  "requires": [
+   "python3"
+  ],
   "license": "method paraphrased from Atlas skills under MIT; the skills keep their own licenses — see each folder's SOURCE.md",
   "proof": [
    "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/2276-databricks-lakehouse-engineering/8689-tune-spark-and-costs",
@@ -2130,9 +2055,7 @@
   "how": "1) Tiny deterministic fixtures covering duplicates, nulls, late rows, deletes. 2) Contract tests on schema and keys. 3) Run the incremental model twice and on a replay; results must be identical. 4) Reconcile source vs target counts and sums. 5) Failure-path tests for bad records and partial failure. 6) Run in a non-production profile.",
   "params": "",
   "install": "",
-  "requires": [
-   "python3"
-  ],
+  "requires": [],
   "license": "method paraphrased from Atlas skills under MIT; the skills keep their own licenses — see each folder's SOURCE.md",
   "proof": [
    "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/2207-majestic-data/8245-data-pipeline-testing",
@@ -2195,9 +2118,7 @@
   "how": "1) Read current config first; do not tune a running schema. 2) Refresh candidate incremental fields from the source. 3) Patch sync_type, incremental_field (matching real type), primary_key_columns (required for CDC), cdc_table_mode, sync_frequency. 4) Run CDC prerequisite check for Postgres. 5) Trigger reload; use resync only when old data is invalid. 6) Confirm last_synced_at advanced.",
   "params": "",
   "install": "",
-  "requires": [
-   "claude:tools"
-  ],
+  "requires": [],
   "license": "method paraphrased from Atlas skills under MIT; the skills keep their own licenses — see each folder's SOURCE.md",
   "proof": [
    "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/2957-posthog/12413-tuning-incremental-sync-config",
@@ -2364,9 +2285,7 @@
   "how": "1) Capture EXPLAIN (ANALYZE, BUFFERS); note seq scans, bad row estimates, costly sorts. 2) Map predicate to index: equality/range B-tree, subset partial, multi-column composite by selectivity, INCLUDE covering, jsonb/text GIN. 3) Rewrite: no function on indexed column, no SELECT *, batch instead of loop, join/IN for N+1. 4) Refresh stats (ANALYZE/autovacuum) before adding more indexes. 5) Re-run plan and compare.",
   "params": "query text, plan output, dialect",
   "install": "",
-  "requires": [
-   "python3"
-  ],
+  "requires": [],
   "license": "method paraphrased from Atlas skills under MIT / Apache-2.0; the skills keep their own licenses — see each folder's SOURCE.md",
   "proof": [
    "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/2274-database-engineering/8681-query-and-index-tuning"
@@ -2421,9 +2340,7 @@
   "how": "1) Create/list/drop databases. 2) Create indexes on collections. 3) Manage users, roles, privileges. 4) Cloud ACL and projects. Confirm drops.",
   "params": "cluster",
   "install": "",
-  "requires": [
-   "network"
-  ],
+  "requires": [],
   "license": "method paraphrased from Atlas skills under Apache-2.0; the skills keep their own licenses — see each folder's SOURCE.md",
   "proof": [
    "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/3616-zilliz/14557-index",
@@ -2530,9 +2447,7 @@
   "how": "1) Rank pg_stat_statements by total_exec_time. 2) EXPLAIN (ANALYZE, BUFFERS) the culprit. 3) Compare estimated vs actual rows; large gap means ANALYZE the table. 4) Seq Scan on big table or Nested Loop: add index; Sort to disk: raise work_mem; heavy Filter: partial index. 5) Build with CREATE INDEX CONCURRENTLY; list idx_scan=0 indexes only after a full usage cycle. 6) Check n_dead_tup and autovacuum; VACUUM FULL last resort.",
   "params": "connection string, query text",
   "install": "",
-  "requires": [
-   "claude:tools"
-  ],
+  "requires": [],
   "license": "method paraphrased from Atlas skills under Apache-2.0 / MIT; the skills keep their own licenses — see each folder's SOURCE.md",
   "proof": [
    "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/2965-pwdev-devops/12480-postgres-dba",
@@ -2589,9 +2504,7 @@
   "how": "1) Columns system_from, system_to NOT NULL, sentinel 9999-12-31 23:59:59. 2) PK (id, system_to); index (id, system_from). 3) Update = phase out old row, insert new with contiguous timestamps. 4) Skip when incoming equals current. 5) Rollback by phasing in prior version. 6) SQLite: recreate table to change PK.",
   "params": "table",
   "install": "",
-  "requires": [
-   "python3"
-  ],
+  "requires": [],
   "license": "method paraphrased from Atlas skills under Apache-2.0; the skills keep their own licenses — see each folder's SOURCE.md",
   "proof": [
    "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/2559-temporal-data/9928-temporal-data"
@@ -2686,7 +2599,7 @@
   "params": "embedding model; index params; labeled queries",
   "install": "",
   "requires": [
-   "pip:numpy"
+   "pip:chromadb"
   ],
   "license": "method paraphrased from Atlas skills under MIT; the skills keep their own licenses — see each folder's SOURCE.md",
   "proof": [
@@ -2736,9 +2649,7 @@
   "how": "1) List accounts needing tie-out. 2) Match each to statement or subledger and investigate variances. 3) Classify reconciling items (outstanding checks, deposits in transit, timing). 4) Block reporting until reconciled; output a status.",
   "params": "GL balances, statements",
   "install": "",
-  "requires": [
-   "pip:pandas"
-  ],
+  "requires": [],
   "license": "method paraphrased from Atlas skills under MIT/Apache-2.0; the skills keep their own licenses — see each folder's SOURCE.md",
   "proof": [
    "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/2228-accounting-bookkeeping/8461-reconcile-accounts",

@@ -1,6 +1,7 @@
-﻿"""Safe read-only project and archive triage tests."""
+"""Safe read-only project and archive triage tests."""
 import json
 import pathlib
+import subprocess
 import sys
 import tempfile
 import unittest
@@ -53,5 +54,18 @@ class LocalProjectAuditTests(unittest.TestCase):
             p=pathlib.Path(tmp)/'file.txt';p.write_text('x')
             with self.assertRaises(ValueError):a.scan(p)
             with self.assertRaises(FileNotFoundError):a.scan(pathlib.Path(tmp)/'not-here')
+
+    def test_cli_bad_root_is_clean_error(self):
+        script=SK/'scripts'/'local_project_audit.py'
+        with tempfile.TemporaryDirectory() as tmp:
+            f=pathlib.Path(tmp)/'a.js';f.write_text('x')
+            for root,needle in ((pathlib.Path(tmp)/'missing','root not found'),(f,'root must be a directory')):
+                with self.subTest(root=root.name):
+                    run=subprocess.run([sys.executable,str(script),str(root)],
+                                       capture_output=True,text=True,timeout=30)
+                    self.assertEqual(run.returncode,2)
+                    self.assertIn(needle,run.stderr)
+                    self.assertNotIn('Traceback',run.stderr)
+                    self.assertEqual(run.stdout,'')
 
 if __name__=='__main__':unittest.main()

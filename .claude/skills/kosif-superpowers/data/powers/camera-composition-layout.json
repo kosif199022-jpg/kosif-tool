@@ -16,8 +16,15 @@
   ],
   "proof_scope": "sibling",
   "styles": [],
-  "tags": [],
-  "id": "CAM-01"
+  "tags": [
+   "زووم",
+   "تقريب الكاميرا",
+   "تكبير متعدد",
+   "multi-target zoom",
+   "zoom keyframes"
+  ],
+  "id": "CAM-01",
+  "when": "حين تحتاج زووم كاميرا يتنقل بين عدة أهداف بحركة زنبركية ناعمة / when a camera zoom must travel through several targets with a smooth spring feel"
  },
  {
   "family": "camera-composition-layout",
@@ -37,8 +44,15 @@
   ],
   "proof_scope": "sibling",
   "styles": [],
-  "tags": [],
-  "id": "CAM-02"
+  "tags": [
+   "واجهة تطبيق",
+   "تخطيط متجاوب",
+   "شريط تنقل سفلي",
+   "responsive layout",
+   "bottom nav"
+  ],
+  "id": "CAM-02",
+  "when": "عند بناء واجهة تطبيق عربية بثلاثة أعمدة تتحول لشريط تنقل سفلي على الجوال / for an Arabic RTL app layout whose side rails collapse into a bottom tab bar on mobile"
  },
  {
   "family": "camera-composition-layout",
@@ -57,8 +71,15 @@
   ],
   "proof_scope": "sibling",
   "styles": [],
-  "tags": [],
-  "id": "CAM-03"
+  "tags": [
+   "من اليمين لليسار",
+   "اتجاه الصفحة",
+   "تعريب الواجهة",
+   "right-to-left",
+   "mirroring"
+  ],
+  "id": "CAM-03",
+  "when": "حين يجب أن تنعكس الصفحة تلقائيا من اليمين لليسار للعربية بنفس CSS / when the same CSS must mirror correctly for Arabic right-to-left pages"
  },
  {
   "family": "camera-composition-layout",
@@ -76,8 +97,16 @@
   ],
   "proof_scope": "sibling",
   "styles": [],
-  "tags": [],
-  "id": "CAM-04"
+  "tags": [
+   "مقاس الفيديو",
+   "توزيع العناصر",
+   "ريلز",
+   "aspect ratio",
+   "safe margins",
+   "negative space"
+  ],
+  "id": "CAM-04",
+  "when": "عند تحديد أماكن النص والعنصر حسب مقاس الفيديو 9:16 أو 16:9 أو 1:1 / for placing text and objects per aspect ratio (9:16, 16:9, 1:1) with safe margins"
  },
  {
   "family": "camera-composition-layout",
@@ -97,8 +126,15 @@
   ],
   "proof_scope": "sibling",
   "styles": [],
-  "tags": [],
-  "id": "CAM-05"
+  "tags": [
+   "تخطيط اللقطات",
+   "لقطة قريبة",
+   "لقطة واسعة",
+   "shot plan",
+   "close-up"
+  ],
+  "id": "CAM-05",
+  "when": "حين تخطط خمس لقطات لقصة تتصاعد من لقطة واسعة إلى لقطة قريبة / when planning a five-clip story whose shots escalate from wide to close-up"
  },
  {
   "family": "camera-composition-layout",
@@ -116,8 +152,16 @@
   ],
   "proof_scope": "sibling",
   "styles": [],
-  "tags": [],
-  "id": "CAM-06"
+  "tags": [
+   "لقطة قريبة",
+   "عدسة",
+   "مشهد رومانسي",
+   "close-up",
+   "lens coverage",
+   "romance"
+  ],
+  "id": "CAM-06",
+  "when": "عند تغطية كل لحظة عاطفية بلقطة واسعة وأخرى قريبة للتفاصيل / for covering each emotional story beat with a wide establishing frame and an intimate close-up"
  },
  {
   "family": "camera-composition-layout",
@@ -135,8 +179,15 @@
   ],
   "proof_scope": "sibling",
   "styles": [],
-  "tags": [],
-  "id": "CAM-07"
+  "tags": [
+   "تصوير الطعام",
+   "أكل",
+   "لقطة ماكرو",
+   "food video",
+   "tripod shot"
+  ],
+  "id": "CAM-07",
+  "when": "حين تصور طعاما بلقطة ثابتة مائلة قريبة وعمق ميدان ضحل في كل المقاطع / when shooting food clips with one fixed angled close-up and shallow depth of field"
  },
  {
   "family": "camera-composition-layout",
@@ -154,8 +205,15 @@
   ],
   "proof_scope": "sibling",
   "styles": [],
-  "tags": [],
-  "id": "CAM-08"
+  "tags": [
+   "كاميرا ثلاثية الأبعاد",
+   "كيفريم",
+   "حركة الكاميرا",
+   "3d camera",
+   "keyframes"
+  ],
+  "id": "CAM-08",
+  "when": "عند تحريك كاميرا ثلاثية الأبعاد بين مواضع محددة بالزمن مع ثبات بين الأحداث / for moving a 3D camera between timed positions and look targets with still holds between events"
  },
  {
   "family": "camera-composition-layout",
@@ -173,8 +231,15 @@
   ],
   "proof_scope": "sibling",
   "styles": [],
-  "tags": [],
-  "id": "CAM-09"
+  "tags": [
+   "عمق وهمي",
+   "طبقات متحركة",
+   "اقتراب بطيء",
+   "2.5d camera",
+   "layered depth"
+  ],
+  "id": "CAM-09",
+  "when": "حين تريد عمقا وهميا من طبقات SVG تتحرك بسرعات مختلفة مع اقتراب بطيء / when building 2.5D depth from SVG layers moving at different rates under a slow push-in"
  },
  {
   "family": "camera-composition-layout",
@@ -193,8 +258,16 @@
   ],
   "proof_scope": "sibling",
   "styles": [],
-  "tags": [],
-  "id": "CAM-10"
+  "tags": [
+   "ترجمة",
+   "كابشن",
+   "تفادي الوجه",
+   "captions",
+   "subtitles",
+   "face box"
+  ],
+  "id": "CAM-10",
+  "when": "عند وضع الكلمات والترجمة في فيديو عمودي دون تغطية الوجه / when placing keywords and captions in a vertical video without covering the detected face"
  },
  {
   "family": "camera-composition-layout",
@@ -213,8 +286,15 @@
   ],
   "proof_scope": "sibling",
   "styles": [],
-  "tags": [],
-  "id": "CAM-11"
+  "tags": [
+   "برومبت فيديو",
+   "حركة الكاميرا",
+   "video prompt",
+   "prompt lint",
+   "dolly"
+  ],
+  "id": "CAM-11",
+  "when": "حين تكتب برومبت فيديو وتريد حركة كاميرا واحدة واضحة لكل لقطة / when writing video prompts that should name exactly one camera move per shot"
  },
  {
   "family": "camera-composition-layout",
@@ -233,8 +313,15 @@
   ],
   "proof_scope": "sibling",
   "styles": [],
-  "tags": [],
-  "id": "CAM-12"
+  "tags": [
+   "ترجمة",
+   "مكان الكابشن",
+   "نص فوق الوجه",
+   "caption placement",
+   "subtitle position"
+  ],
+  "id": "CAM-12",
+  "when": "عند ترتيب الكلمة والترجمة تحت الذقن بعيدا عن العينين والفم / for stacking a keyword under the chin and captions below it, never over eyes or mouth"
  },
  {
   "family": "camera-composition-layout",
@@ -253,8 +340,15 @@
   ],
   "proof_scope": "repo",
   "styles": [],
-  "tags": [],
-  "id": "CAM-13"
+  "tags": [
+   "تحريك المشهد",
+   "زووم",
+   "دوران الكاميرا",
+   "pan and zoom",
+   "camera keyframes"
+  ],
+  "id": "CAM-13",
+  "when": "حين تحتاج كاميرا ثنائية الأبعاد تتحرك وتقرب وتدور فوق المشهد مع بقاء الترجمة ثابتة / when a 2D camera should pan, zoom and rotate the scene while captions stay pinned"
  },
  {
   "family": "camera-composition-layout",
@@ -274,8 +368,15 @@
   ],
   "proof_scope": "sibling",
   "styles": [],
-  "tags": [],
-  "id": "CAM-14"
+  "tags": [
+   "لقطة ثابتة",
+   "حركة خفيفة",
+   "تنفس الإطار",
+   "slow zoom",
+   "idle motion"
+  ],
+  "id": "CAM-14",
+  "when": "عند لقطة ثابتة طويلة تحتاج تكبيرا خفيفا كي لا يبدو الإطار متجمدا / when a long hold needs a slow scale creep or drift so the frame never looks frozen"
  },
  {
   "family": "camera-composition-layout",
@@ -296,8 +397,15 @@
   ],
   "proof_scope": "sibling",
   "styles": [],
-  "tags": [],
-  "id": "CAM-15"
+  "tags": [
+   "بارالاكس",
+   "عمق",
+   "طبقات",
+   "depth",
+   "2.5d"
+  ],
+  "id": "CAM-15",
+  "when": "حين تريد إحساس عمق بتحريك طبقات بسرعات حسب بعدها عن الكاميرا / for a 2.5D depth feel by drifting layers at speeds set by their depth"
  },
  {
   "family": "camera-composition-layout",
@@ -317,8 +425,15 @@
   ],
   "proof_scope": "sibling",
   "styles": [],
-  "tags": [],
-  "id": "CAM-16"
+  "tags": [
+   "نقل التركيز",
+   "بلور",
+   "ضبابية",
+   "focus pull",
+   "blur crossfade"
+  ],
+  "id": "CAM-16",
+  "when": "عند نقل البؤرة بين عنصر حاد ونسخة مموهة دون تقطيع في البلور / when faking a focus pull by crossfading a sharp element with a blurred twin"
  },
  {
   "family": "camera-composition-layout",
@@ -337,8 +452,16 @@
   ],
   "proof_scope": "sibling",
   "styles": [],
-  "tags": [],
-  "id": "CAM-17"
+  "tags": [
+   "اهتزاز",
+   "هزة",
+   "رجة",
+   "impact",
+   "screen shake",
+   "jitter"
+  ],
+  "id": "CAM-17",
+  "when": "حين يحتاج المشهد هزة كاميرا عند ضربة أو اصطدام ثم يهدأ / for an impact hit that shakes the frame and decays back to rest"
  },
  {
   "family": "camera-composition-layout",
@@ -358,8 +481,15 @@
   ],
   "proof_scope": "sibling",
   "styles": [],
-  "tags": [],
-  "id": "CAM-18"
+  "tags": [
+   "مسار الكاميرا",
+   "منحنى",
+   "حركة انسيابية",
+   "spline path",
+   "smooth camera"
+  ],
+  "id": "CAM-18",
+  "when": "عند تحريك كاميرا عبر عدة نقاط في مسار منحني دون توقف مفاجئ بينها / when a camera should glide through several keys on a curved path without stopping dead"
  },
  {
   "family": "camera-composition-layout",
@@ -378,8 +508,15 @@
   ],
   "proof_scope": "sibling",
   "styles": [],
-  "tags": [],
-  "id": "CAM-19"
+  "tags": [
+   "تأثير الدوار",
+   "تمدد الخلفية",
+   "فيرتيغو",
+   "vertigo effect",
+   "fov zoom"
+  ],
+  "id": "CAM-19",
+  "when": "حين تريد تأثير فيرتيغو حيث يثبت حجم العنصر وتتمدد الخلفية / for the Vertigo effect where the subject keeps its size while the background stretches"
  },
  {
   "family": "camera-composition-layout",
@@ -398,8 +535,15 @@
   ],
   "proof_scope": "sibling",
   "styles": [],
-  "tags": [],
-  "id": "CAM-20"
+  "tags": [
+   "دوران الكاميرا",
+   "لف حول المجسم",
+   "عرض ثلاثي الأبعاد",
+   "orbit camera",
+   "circle around"
+  ],
+  "id": "CAM-20",
+  "when": "عند الدوران حول العنصر الرئيسي والتوقف عند أجزائه مع انجراف خفيف / when circling a hero object and pausing on its parts with slight drift"
  },
  {
   "family": "camera-composition-layout",
@@ -418,8 +562,16 @@
   ],
   "proof_scope": "sibling",
   "styles": [],
-  "tags": [],
-  "id": "CAM-21"
+  "tags": [
+   "ظهور عند التمرير",
+   "سكرول",
+   "أنيميشن الموقع",
+   "scroll animation",
+   "stagger",
+   "on-scroll reveal"
+  ],
+  "id": "CAM-21",
+  "when": "حين تريد ظهور عناصر الصفحة تدريجيا عند التمرير إليها / for page elements that rise into place with a stagger as they scroll into view"
  },
  {
   "family": "camera-composition-layout",
@@ -440,8 +592,16 @@
   ],
   "proof_scope": "sibling",
   "styles": [],
-  "tags": [],
-  "id": "CAM-22"
+  "tags": [
+   "لقطة شاشة",
+   "تحريك الصورة",
+   "صورة ثابتة",
+   "screenshot",
+   "slow pan",
+   "zoompan"
+  ],
+  "id": "CAM-22",
+  "when": "عند عرض لقطات شاشة لموقع في فيديو دون أن تبقى صورة ثابتة / when showing website screenshots in a video so no still sits dead on screen"
  },
  {
   "family": "camera-composition-layout",
@@ -460,8 +620,16 @@
   ],
   "proof_scope": "sibling",
   "styles": [],
-  "tags": [],
-  "id": "CAM-23"
+  "tags": [
+   "خريطة",
+   "تكبير الخريطة",
+   "التنقل بين المناطق",
+   "map zoom",
+   "svg map",
+   "fly to"
+  ],
+  "id": "CAM-23",
+  "when": "حين تريد التحليق بالكاميرا داخل خريطة SVG إلى منطقة أو مدينة / for flying the camera into a region or city on an SVG map"
  },
  {
   "family": "camera-composition-layout",
@@ -480,8 +648,15 @@
   ],
   "proof_scope": "sibling",
   "styles": [],
-  "tags": [],
-  "id": "CAM-24"
+  "tags": [
+   "تتبع الماوس",
+   "تفاعل",
+   "مشهد تفاعلي",
+   "mouse follow",
+   "interactive scene"
+  ],
+  "id": "CAM-24",
+  "when": "عند كاميرا مشهد ويب تتبع المؤشر واللمس وتتقدم مع التمرير / for a web scene camera that follows the pointer and touch and dollies forward on scroll"
  },
  {
   "family": "camera-composition-layout",
@@ -500,8 +675,16 @@
   ],
   "proof_scope": "sibling",
   "styles": [],
-  "tags": [],
-  "id": "CAM-25"
+  "tags": [
+   "تعتيم",
+   "وضوح النص",
+   "تدرج",
+   "text over video",
+   "gradient overlay",
+   "readability"
+  ],
+  "id": "CAM-25",
+  "when": "حين يكون نص عربي فوق فيديو بملء الشاشة ويحتاج تعتيما ليقرأ / when Arabic copy over a full-bleed video needs darkening gradients to stay readable"
  },
  {
   "family": "camera-composition-layout",
@@ -520,8 +703,16 @@
   ],
   "proof_scope": "sibling",
   "styles": [],
-  "tags": [],
-  "id": "CAM-26"
+  "tags": [
+   "بطاقات",
+   "قناع",
+   "تلاشي الصورة",
+   "card design",
+   "gradient mask",
+   "image fade"
+  ],
+  "id": "CAM-26",
+  "when": "عند إضافة صورة على طرف بطاقة تذوب فيها بتدرج بألوان الهوية / for a card picture on the far side that fades into the card with a brand-toned gradient mask"
  },
  {
   "family": "camera-composition-layout",
@@ -540,8 +731,16 @@
   ],
   "proof_scope": "sibling",
   "styles": [],
-  "tags": [],
-  "id": "CAM-27"
+  "tags": [
+   "كاميرا ثابتة",
+   "دفع بطيء",
+   "لقطة هادئة",
+   "slow push",
+   "no shake",
+   "editorial"
+  ],
+  "id": "CAM-27",
+  "when": "حين تريد كاميرا تحريرية هادئة بدفع بطيء دون أي اهتزاز / for a calm editorial shot with a locked lens, slow push and no shake"
  },
  {
   "family": "camera-composition-layout",
@@ -560,8 +759,15 @@
   ],
   "proof_scope": "sibling",
   "styles": [],
-  "tags": [],
-  "id": "CAM-28"
+  "tags": [
+   "فيديو عمودي",
+   "هوامش آمنة",
+   "ريلز",
+   "vertical video",
+   "mobile layout"
+  ],
+  "id": "CAM-28",
+  "when": "عند تصميم إطار عمودي للجوال 1080x1920 بهوامش آمنة ومساحة فارغة نظيفة / for a 1080x1920 vertical composition with safe side margins and clean negative space"
  },
  {
   "family": "camera-composition-layout",
@@ -581,8 +787,15 @@
   ],
   "proof_scope": "sibling",
   "styles": [],
-  "tags": [],
-  "id": "CAM-29"
+  "tags": [
+   "تقسيم الشاشة",
+   "شاشة مقسومة",
+   "صورة داخل صورة",
+   "split screen",
+   "picture in picture"
+  ],
+  "id": "CAM-29",
+  "when": "حين تجمع فيديو مع بطاقة بتقسيم الشاشة أو صورة داخل صورة أو تراكب / when combining a video with a card as split screen, stacked, picture-in-picture or overlay"
  },
  {
   "family": "camera-composition-layout",
@@ -601,8 +814,16 @@
   ],
   "proof_scope": "sibling",
   "styles": [],
-  "tags": [],
-  "id": "CAM-30"
+  "tags": [
+   "إطار الفيديو",
+   "برواز",
+   "زخرفة",
+   "video border",
+   "viewfinder",
+   "photo frame"
+  ],
+  "id": "CAM-30",
+  "when": "عند إضافة إطار زخرفي حول الفيديو مثل خط رفيع أو إطار بولارويد / for decorative chrome around a video such as a hairline viewfinder or a polaroid frame"
  },
  {
   "family": "camera-composition-layout",
@@ -620,8 +841,15 @@
   ],
   "proof_scope": "sibling",
   "styles": [],
-  "tags": [],
-  "id": "CAM-31"
+  "tags": [
+   "تحريك المشهد",
+   "حركة الكاميرا",
+   "كاميرا ثنائية الأبعاد",
+   "pan",
+   "scene camera"
+  ],
+  "id": "CAM-31",
+  "when": "حين تحرك المشهد كله ككاميرا واحدة مع البقاء ثابتا بين الحركات / when moving the whole stage as one camera and staying still between moves"
  },
  {
   "family": "camera-composition-layout",
@@ -639,8 +867,16 @@
   ],
   "proof_scope": "sibling",
   "styles": [],
-  "tags": [],
-  "id": "CAM-32"
+  "tags": [
+   "زووم",
+   "تقريب",
+   "ابتعاد",
+   "push in",
+   "pull out",
+   "zoom in"
+  ],
+  "id": "CAM-32",
+  "when": "عند دفع الكاميرا للداخل أو سحبها للخلف بسرعة زووم تبدو ثابتة / for a push-in or pull-out whose zoom speed feels constant"
  },
  {
   "family": "camera-composition-layout",
@@ -658,8 +894,15 @@
   ],
   "proof_scope": "sibling",
   "styles": [],
-  "tags": [],
-  "id": "CAM-33"
+  "tags": [
+   "نقل التركيز",
+   "بلور",
+   "ضبابية",
+   "focus pull",
+   "blur"
+  ],
+  "id": "CAM-33",
+  "when": "حين تحاكي نقل البؤرة بين عنصرين بالمزج مع نسخة مموهة ثابتة / when simulating a focus pull by crossfading with a constant-blur twin"
  },
  {
   "family": "camera-composition-layout",
@@ -678,8 +921,15 @@
   ],
   "proof_scope": "sibling",
   "styles": [],
-  "tags": [],
-  "id": "CAM-34"
+  "tags": [
+   "بوكيه",
+   "خلفية ضبابية",
+   "تركيز",
+   "background blur",
+   "focus distance"
+  ],
+  "id": "CAM-34",
+  "when": "عند مشهد ثلاثي الأبعاد يحتاج خلفية ضبابية وتركيزا يتغير مع كل إطار / for a 3D scene needing bokeh blur with focus distance driven per frame"
  },
  {
   "family": "camera-composition-layout",
@@ -698,8 +948,16 @@
   ],
   "proof_scope": "sibling",
   "styles": [],
-  "tags": [],
-  "id": "CAM-35"
+  "tags": [
+   "أنواع اللقطات",
+   "لقطة واسعة",
+   "لقطة قريبة",
+   "shot types",
+   "close-up",
+   "low angle"
+  ],
+  "id": "CAM-35",
+  "when": "حين تريد لقطات مسماة كالواسعة والمتوسطة والقريبة بإطار محسوب من حجم الموضوع / for named shot types (wide, medium, close-up) framed from subject size and fov"
  },
  {
   "family": "camera-composition-layout",
@@ -717,8 +975,15 @@
   ],
   "proof_scope": "sibling",
   "styles": [],
-  "tags": [],
-  "id": "CAM-36"
+  "tags": [
+   "كاميرا باليد",
+   "اهتزاز طبيعي",
+   "رجة",
+   "handheld look",
+   "camera sway"
+  ],
+  "id": "CAM-36",
+  "when": "عند إضافة اهتزاز كاميرا محمولة طبيعي لمشهد ثلاثي الأبعاد / for natural handheld sway and slight roll on a 3D camera"
  },
  {
   "family": "camera-composition-layout",
@@ -736,8 +1001,15 @@
   ],
   "proof_scope": "sibling",
   "styles": [],
-  "tags": [],
-  "id": "CAM-37"
+  "tags": [
+   "دوران الكاميرا",
+   "لف حول المجسم",
+   "توقفات",
+   "3d orbit",
+   "camera stops"
+  ],
+  "id": "CAM-37",
+  "when": "حين تدور الكاميرا حول الموضوع وتقف عند محطات بزاوية عدسة لكل توقف / when a camera circles a subject on the shorter arc and holds at stops with per-stop fov"
  },
  {
   "family": "camera-composition-layout",
@@ -755,8 +1027,15 @@
   ],
   "proof_scope": "sibling",
   "styles": [],
-  "tags": [],
-  "id": "CAM-38"
+  "tags": [
+   "تكبير بطيء",
+   "صورة ثابتة",
+   "مونتاج",
+   "slow zoom",
+   "photo zoom"
+  ],
+  "id": "CAM-38",
+  "when": "عند تحريك صورة ثابتة أو مقطع بتكبير بطيء خفيف في المونتاج / for a slow gentle zoom on a still image or clip in the timeline"
  },
  {
   "family": "camera-composition-layout",
@@ -774,8 +1053,16 @@
   ],
   "proof_scope": "sibling",
   "styles": [],
-  "tags": [],
-  "id": "CAM-39"
+  "tags": [
+   "ملاءمة الفيديو",
+   "خلفية مموهة",
+   "أشرطة سوداء",
+   "letterbox",
+   "blurred background",
+   "crop"
+  ],
+  "id": "CAM-39",
+  "when": "حين لا يطابق مقاس المقطع الإطار وتريد قصه أو إضافة أشرطة أو خلفية ضبابية / when footage does not match the frame and needs crop, letterbox padding or a blurred fill"
  },
  {
   "family": "camera-composition-layout",
@@ -795,8 +1082,16 @@
   ],
   "proof_scope": "sibling",
   "styles": [],
-  "tags": [],
-  "id": "CAM-40"
+  "tags": [
+   "تغيير المقاس",
+   "قص الفيديو",
+   "تحويل لعمودي",
+   "reframe",
+   "aspect ratio",
+   "crop"
+  ],
+  "id": "CAM-40",
+  "when": "عند تحويل مقاس فيديو إلى 9:16 أو 1:1 أو غيره مع إبقاء الوجه في الإطار / when converting a clip to 9:16 or another ratio while keeping the face in frame"
  },
  {
   "family": "camera-composition-layout",
@@ -815,8 +1110,15 @@
   ],
   "proof_scope": "sibling",
   "styles": [],
-  "tags": [],
-  "id": "CAM-41"
+  "tags": [
+   "حركة الكاميرا",
+   "خطة المشاهد",
+   "manifest",
+   "slow push",
+   "orbit"
+  ],
+  "id": "CAM-41",
+  "when": "حين تحدد حركة كاميرا لمشهد في الخطة ويجب أن تكون من الأسماء المقبولة / when setting a scene's camera move in the plan or manifest from the allowed names"
  },
  {
   "family": "camera-composition-layout",
@@ -834,8 +1136,16 @@
   ],
   "proof_scope": "sibling",
   "styles": [],
-  "tags": [],
-  "id": "CAM-42"
+  "tags": [
+   "ملء الإطار",
+   "قص الحواف",
+   "أشرطة",
+   "letterbox",
+   "fill frame",
+   "crop"
+  ],
+  "id": "CAM-42",
+  "when": "عند وضع صورة أو مقطع إما بملء الإطار مع قص الحواف أو كاملا بأشرطة / for media clips that either fill the frame with edge cropping or show whole letterboxed"
  },
  {
   "family": "camera-composition-layout",
@@ -853,8 +1163,16 @@
   ],
   "proof_scope": "sibling",
   "styles": [],
-  "tags": [],
-  "id": "CAM-43"
+  "tags": [
+   "بارالاكس",
+   "طبقات",
+   "عمق",
+   "depth layers",
+   "camera track",
+   "2.5d"
+  ],
+  "id": "CAM-43",
+  "when": "حين تبني عمقا من طبقات سماء ومبان وأرض ومقدمة تتحرك بسرعات مختلفة تحت تتبع كاميرا / for depth from sky, building, ground and foreground layers moving at different rates under one camera track"
  },
  {
   "family": "camera-composition-layout",
@@ -872,8 +1190,16 @@
   ],
   "proof_scope": "sibling",
   "styles": [],
-  "tags": [],
-  "id": "CAM-44"
+  "tags": [
+   "سينمائي",
+   "أشرطة سوداء",
+   "تعتيم الحواف",
+   "film look",
+   "vignette",
+   "title card"
+  ],
+  "id": "CAM-44",
+  "when": "عند إعطاء المشهد طابعا سينمائيا بأشرطة سوداء وتعتيم الحواف وعنوان رفيع متباعد / for a filmic look with black bars, edge vignette and a light, widely spaced title"
  },
  {
   "family": "camera-composition-layout",
@@ -893,8 +1219,16 @@
   ],
   "proof_scope": "sibling",
   "styles": [],
-  "tags": [],
-  "id": "CAM-45"
+  "tags": [
+   "قاعدة الأثلاث",
+   "تكوين الصورة",
+   "تماثل",
+   "rule of thirds",
+   "symmetry",
+   "image analysis"
+  ],
+  "id": "CAM-45",
+  "when": "حين تريد فحص تكوين صورة: قاعدة الأثلاث والتماثل وأقرب نسبة أبعاد / when checking an image's composition: rule of thirds, symmetry and nearest aspect ratio"
  },
  {
   "family": "camera-composition-layout",
@@ -914,8 +1248,16 @@
   ],
   "proof_scope": "sibling",
   "styles": [],
-  "tags": [],
-  "id": "CAM-46"
+  "tags": [
+   "التعريض",
+   "فتحة العدسة",
+   "سرعة الغالق",
+   "exposure",
+   "aperture",
+   "iso"
+  ],
+  "id": "CAM-46",
+  "when": "عند حساب سرعة غالق مكافئة بعد تغيير فتحة العدسة أو ISO لإضاءة مقنعة / when computing the matching shutter after changing aperture or ISO for believable lighting"
  },
  {
   "family": "camera-composition-layout",
@@ -935,8 +1277,16 @@
   ],
   "proof_scope": "sibling",
   "styles": [],
-  "tags": [],
-  "id": "CAM-47"
+  "tags": [
+   "زاوية الغالق",
+   "ضبابية الحركة",
+   "معدل الإطارات",
+   "motion blur",
+   "fps",
+   "180 degree"
+  ],
+  "id": "CAM-47",
+  "when": "حين تحول زاوية الغالق ومعدل الإطارات إلى سرعة غالق لتقدير ضبابية الحركة / when converting shutter angle and fps into shutter speed to plan motion blur"
  },
  {
   "family": "camera-composition-layout",
@@ -955,8 +1305,16 @@
   ],
   "proof_scope": "sibling",
   "styles": [],
-  "tags": [],
-  "id": "CAM-48"
+  "tags": [
+   "تحريك المشهد",
+   "حركة المسرح",
+   "كاميرا",
+   "stage move",
+   "pan",
+   "zoom"
+  ],
+  "id": "CAM-48",
+  "when": "عند تحريك المسرح كله ككاميرا ثنائية الأبعاد بعدد حركات محدود وثبات بينها / for moving the whole stage as one 2D camera with few counted moves and stillness between"
  },
  {
   "family": "camera-composition-layout",
@@ -975,8 +1333,16 @@
   ],
   "proof_scope": "sibling",
   "styles": [],
-  "tags": [],
-  "id": "CAM-49"
+  "tags": [
+   "زووم",
+   "تقريب",
+   "دفع للداخل",
+   "push in",
+   "zoom in",
+   "constant zoom"
+  ],
+  "id": "CAM-49",
+  "when": "حين تريد دفعة كاميرا للداخل يبدو تكبيرها ثابت السرعة / when a camera push-in should scale in log space so its speed feels constant"
  },
  {
   "family": "camera-composition-layout",
@@ -994,8 +1360,16 @@
   ],
   "proof_scope": "sibling",
   "styles": [],
-  "tags": [],
-  "id": "CAM-50"
+  "tags": [
+   "ضبابية الحركة",
+   "بلور",
+   "سرعة",
+   "motion blur",
+   "fast move",
+   "svg blur"
+  ],
+  "id": "CAM-50",
+  "when": "عند حركة سريعة تحتاج ضبابية في اتجاه واحد تزداد ثم تختفي / for a fast move that needs a one-axis blur that swells and clears"
  },
  {
   "family": "camera-composition-layout",
@@ -1013,8 +1387,15 @@
   ],
   "proof_scope": "sibling",
   "styles": [],
-  "tags": [],
-  "id": "CAM-51"
+  "tags": [
+   "كاميرا ثلاثية الأبعاد",
+   "كيفريم",
+   "حركة الكاميرا",
+   "3d camera",
+   "look at"
+  ],
+  "id": "CAM-51",
+  "when": "حين تحرك كاميرا ثلاثية الأبعاد بين مواضع وأهداف نظر محددة مع ثبات بين الأحداث / when a 3D camera moves between keyed positions and look targets, still between events"
  },
  {
   "family": "camera-composition-layout",
@@ -1036,8 +1417,16 @@
   ],
   "proof_scope": "sibling",
   "styles": [],
-  "tags": [],
-  "id": "CAM-52"
+  "tags": [
+   "أنواع اللقطات",
+   "وصف اللقطة",
+   "لغة الإخراج",
+   "shot types",
+   "director",
+   "veo"
+  ],
+  "id": "CAM-52",
+  "when": "عند تحويل وصف لقطة نصي مثل لقطة منخفضة متتبعة إلى كاميرا ثلاثية الأبعاد / when turning shot words like 'low angle tracking shot' into 3D cameras with cuts and DOF"
  },
  {
   "family": "camera-composition-layout",
@@ -1056,8 +1445,16 @@
   ],
   "proof_scope": "sibling",
   "styles": [],
-  "tags": [],
-  "id": "CAM-53"
+  "tags": [
+   "تمويه",
+   "بلور",
+   "ضبابية الحركة",
+   "defocus",
+   "motion blur",
+   "blur"
+  ],
+  "id": "CAM-53",
+  "when": "حين تريد تمويه عمق للوحة كلها أو لشكل محدد أو ضبابية حركة اتجاهية / for depth-of-field blur on the whole canvas or a shape, or directional motion blur"
  },
  {
   "family": "camera-composition-layout",
@@ -1077,8 +1474,16 @@
   ],
   "proof_scope": "sibling",
   "styles": [],
-  "tags": [],
-  "id": "CAM-54"
+  "tags": [
+   "مظهر فوتوغرافي",
+   "مؤثرات العدسة",
+   "حبيبات",
+   "bloom",
+   "vignette",
+   "film grain"
+  ],
+  "id": "CAM-54",
+  "when": "عند جعل لوحة مرسومة تبدو كأنها مصورة بكاميرا عبر ترتيب مؤثرات العدسة / when making a painting look photographed by applying lens effects in a set order"
  },
  {
   "family": "camera-composition-layout",
@@ -1097,8 +1502,16 @@
   ],
   "proof_scope": "sibling",
   "styles": [],
-  "tags": [],
-  "id": "CAM-55"
+  "tags": [
+   "أشرطة سوداء",
+   "سينمائي",
+   "شرايط",
+   "letterbox",
+   "black bars",
+   "widescreen"
+  ],
+  "id": "CAM-55",
+  "when": "حين تحول لوحة 1200x800 إلى إطار سينمائي بأشرطة سوداء أعلى وأسفل / for turning a 1200x800 sheet into a cinematic frame with top and bottom black bars"
  },
  {
   "family": "camera-composition-layout",
@@ -1118,8 +1531,16 @@
   ],
   "proof_scope": "sibling",
   "styles": [],
-  "tags": [],
-  "id": "CAM-56"
+  "tags": [
+   "ضباب",
+   "عمق جوي",
+   "منظر طبيعي",
+   "fog",
+   "haze",
+   "landscape"
+  ],
+  "id": "CAM-56",
+  "when": "عند إضافة عمق جوي وضباب بين طبقات الجبال لتبدو البعيدة باهتة ومائلة للأزرق / for atmospheric depth and fog between mountain layers so distant ones fade and turn bluer"
  },
  {
   "family": "camera-composition-layout",
@@ -1139,8 +1560,16 @@
   ],
   "proof_scope": "sibling",
   "styles": [],
-  "tags": [],
-  "id": "CAM-57"
+  "tags": [
+   "إيقاع",
+   "زووم على الموسيقى",
+   "بيت",
+   "beat sync",
+   "zoom hit",
+   "beat zoom"
+  ],
+  "id": "CAM-57",
+  "when": "حين تريد ضربة زووم على إيقاع الموسيقى في المونتاج تقفز ثم تهدأ / when the montage needs a zoom hit on each downbeat that jumps then decays"
  },
  {
   "family": "camera-composition-layout",
@@ -1162,8 +1591,16 @@
   ],
   "proof_scope": "sibling",
   "styles": [],
-  "tags": [],
-  "id": "CAM-58"
+  "tags": [
+   "تحويل لعمودي",
+   "قص الفيديو",
+   "تتبع الوجه",
+   "reframe",
+   "vertical crop",
+   "face crop"
+  ],
+  "id": "CAM-58",
+  "when": "عند تغيير مقاس فيديو بالقص حول الوجوه أو الحركة أو بخلفية مموهة لعرضه كاملا / when converting aspect ratio by cropping around faces or motion, or fitting over a blurred copy"
  },
  {
   "family": "camera-composition-layout",
@@ -1183,8 +1620,16 @@
   ],
   "proof_scope": "sibling",
   "styles": [],
-  "tags": [],
-  "id": "CAM-59"
+  "tags": [
+   "تتبع الماوس",
+   "بارالاكس",
+   "عمق",
+   "mouse move",
+   "gsap",
+   "pointer"
+  ],
+  "id": "CAM-59",
+  "when": "حين تريد طبقات تتحرك مع الماوس كأنك تنظر من نافذة أو بمسار مبرمج في الفيديو / for layers that drift with the pointer like looking through a window, or on a scripted path in video"
  },
  {
   "family": "camera-composition-layout",
@@ -1206,8 +1651,16 @@
   ],
   "proof_scope": "sibling",
   "styles": [],
-  "tags": [],
-  "id": "CAM-60"
+  "tags": [
+   "سكرول",
+   "تمرير",
+   "تثبيت القسم",
+   "scrolltrigger",
+   "pinned section",
+   "horizontal scroll"
+  ],
+  "id": "CAM-60",
+  "when": "عند بناء صفحة تمرير بخلفية أبطأ وأقسام مثبتة ومعرض أفقي أثناء التمرير / for scroll pages with slower backgrounds, pinned sections and horizontal galleries"
  },
  {
   "family": "camera-composition-layout",
@@ -1227,8 +1680,16 @@
   ],
   "proof_scope": "sibling",
   "styles": [],
-  "tags": [],
-  "id": "CAM-61"
+  "tags": [
+   "بطاقات متراكمة",
+   "تمرير",
+   "سكرول",
+   "card stack",
+   "sticky cards",
+   "scrolltrigger"
+  ],
+  "id": "CAM-61",
+  "when": "حين تريد بطاقات تتثبت وتتراكم فوق بعضها كرزمة أثناء التمرير / for cards that pin and stack like a deck as the page scrolls"
  },
  {
   "family": "camera-composition-layout",
@@ -1249,8 +1710,15 @@
   ],
   "proof_scope": "sibling",
   "styles": [],
-  "tags": [],
-  "id": "CAM-62"
+  "tags": [
+   "قصة تفاعلية",
+   "سرد بالتمرير",
+   "صورة مثبتة",
+   "scrollytelling",
+   "pinned graphic"
+  ],
+  "id": "CAM-62",
+  "when": "عند سرد قصة بالتمرير مع صورة مثبتة تتغير بجانب خطوات النص / for scrollytelling with a pinned visual that swaps frames as text steps scroll by"
  },
  {
   "family": "camera-composition-layout",
@@ -1270,8 +1738,16 @@
   ],
   "proof_scope": "sibling",
   "styles": [],
-  "tags": [],
-  "id": "CAM-63"
+  "tags": [
+   "ظهور البطاقات",
+   "بطاقات المزايا",
+   "ميلان",
+   "card reveal",
+   "stagger",
+   "scrolltrigger"
+  ],
+  "id": "CAM-63",
+  "when": "حين تظهر بطاقات المزايا بالتتابع مع ميلان ثلاثي الأبعاد خفيف عند التمرير / when feature cards arrive in sequence with a slight 3D tilt-up on scroll"
  },
  {
   "family": "camera-composition-layout",
@@ -1289,8 +1765,16 @@
   ],
   "proof_scope": "sibling",
   "styles": [],
-  "tags": [],
-  "id": "CAM-64"
+  "tags": [
+   "بوكيه",
+   "خلفية ضبابية",
+   "نقل البؤرة",
+   "bokeh",
+   "tsl",
+   "focus pull"
+  ],
+  "id": "CAM-64",
+  "when": "عند الحاجة إلى تركيز وبوكيه حسب عمق المشهد مع تحريك المسافة لنقل البؤرة / for depth-based focus and bokeh blur, animating focus distance for a rack focus"
  },
  {
   "family": "camera-composition-layout",
@@ -1311,8 +1795,16 @@
   ],
   "proof_scope": "sibling",
   "styles": [],
-  "tags": [],
-  "id": "CAM-65"
+  "tags": [
+   "معرض صور",
+   "تشويه",
+   "ثلاثي الأبعاد",
+   "image gallery",
+   "shader",
+   "gsap"
+  ],
+  "id": "CAM-65",
+  "when": "حين تريد معرض صور ثلاثي الأبعاد ينحني مع السرعة ويقاد بالزمن في الفيديو / for a 3D image-plane gallery whose shader bends with velocity, driven by the timeline in video"
  },
  {
   "family": "camera-composition-layout",
@@ -1332,8 +1824,16 @@
   ],
   "proof_scope": "sibling",
   "styles": [],
-  "tags": [],
-  "id": "CAM-66"
+  "tags": [
+   "حالات الكاميرا",
+   "انتقال الكاميرا",
+   "كرة أرضية",
+   "camera presets",
+   "globe",
+   "gsap"
+  ],
+  "id": "CAM-66",
+  "when": "عند تحديد لقطات بداية ونهاية وحالات كاميرا مسماة والانتقال بينها بأقصر مسار / for defining first and final frames and named camera states, tweening the shortest path between them"
  },
  {
   "family": "camera-composition-layout",
@@ -1353,8 +1853,16 @@
   ],
   "proof_scope": "sibling",
   "styles": [],
-  "tags": [],
-  "id": "CAM-67"
+  "tags": [
+   "حروف متحركة",
+   "فيزياء",
+   "تصادم",
+   "matter.js",
+   "physics text",
+   "collision"
+  ],
+  "id": "CAM-67",
+  "when": "حين تتحرك الحروف وتتفادى الأزرار وكتل النص كعوائق فيزيائية / when kinetic letters flow around buttons and copy blocks as physical obstacles"
  },
  {
   "family": "camera-composition-layout",
@@ -1375,8 +1883,16 @@
   ],
   "proof_scope": "sibling",
   "styles": [],
-  "tags": [],
-  "id": "CAM-68"
+  "tags": [
+   "خريطة",
+   "مسار رحلة",
+   "تحريك الخريطة",
+   "mapbox",
+   "maplibre",
+   "route animation"
+  ],
+  "id": "CAM-68",
+  "when": "عند تحريك خريطة تتبع رأس المسار وتبتعد في منتصف الرحلة ثم تقترب عند الوجهة / for a map camera that follows the route head, pulls out mid-journey and dives in at the destination"
  },
  {
   "family": "camera-composition-layout",
@@ -1395,8 +1911,16 @@
   ],
   "proof_scope": "sibling",
   "styles": [],
-  "tags": [],
-  "id": "CAM-69"
+  "tags": [
+   "زووم",
+   "مونتاج",
+   "قطعات",
+   "zoom effect",
+   "punch zoom",
+   "cuts"
+  ],
+  "id": "CAM-69",
+  "when": "حين تريد زووم بين القطعات في المونتاج: ضربة أو كين بيرنز أو انجراف أو نبض / when footage needs a zoom behaviour between cuts: punch, Ken Burns, drift or pulse"
  },
  {
   "family": "camera-composition-layout",
@@ -1415,8 +1939,16 @@
   ],
   "proof_scope": "sibling",
   "styles": [],
-  "tags": [],
-  "id": "CAM-70"
+  "tags": [
+   "حركة الكاميرا",
+   "مونتاج",
+   "كاميرا افتراضية",
+   "whip pan",
+   "push in",
+   "virtual camera"
+  ],
+  "id": "CAM-70",
+  "when": "عند إضافة حركات كاميرا افتراضية للمقاطع مثل الدفع والسحب والبان والبان السريع / for virtual camera moves on footage such as push-in, pull-out, pan, whip pan and truck"
  },
  {
   "family": "camera-composition-layout",
@@ -1437,8 +1969,16 @@
   ],
   "proof_scope": "sibling",
   "styles": [],
-  "tags": [],
-  "id": "CAM-71"
+  "tags": [
+   "دوران",
+   "زوايا سوداء",
+   "تكبير تعويضي",
+   "roll",
+   "black corners",
+   "rotation"
+  ],
+  "id": "CAM-71",
+  "when": "حين تدور الكاميرا على المقطع وتحتاج تكبيرا كافيا لمنع ظهور زوايا سوداء / when the camera rolls and the zoom must rise enough to hide black corners"
  },
  {
   "family": "camera-composition-layout",
@@ -1457,8 +1997,16 @@
   ],
   "proof_scope": "sibling",
   "styles": [],
-  "tags": [],
-  "id": "CAM-72"
+  "tags": [
+   "مود",
+   "طابع الفيديو",
+   "تخطيط تلقائي",
+   "auto camera",
+   "mood",
+   "music"
+  ],
+  "id": "CAM-72",
+  "when": "عند تخطيط حركة كاميرا لكل لقطة تلقائيا حسب المود والقطعات والكلمات العالية / for auto-planning a camera move per shot from the cuts, the mood and the loudest spoken words"
  },
  {
   "family": "camera-composition-layout",
@@ -1477,8 +2025,16 @@
   ],
   "proof_scope": "sibling",
   "styles": [],
-  "tags": [],
-  "id": "CAM-73"
+  "tags": [
+   "خلفية مموهة",
+   "عرض كامل",
+   "مقاس الفيديو",
+   "blur fill",
+   "fit",
+   "aspect ratio"
+  ],
+  "id": "CAM-73",
+  "when": "حين يختلف مقاس المقطع وتريد عرضه كاملا فوق نسخة مموهة منه بدل القص / when footage of another aspect should sit whole over its own blurred copy instead of cropping"
  },
  {
   "family": "camera-composition-layout",
@@ -1496,8 +2052,16 @@
   ],
   "proof_scope": "sibling",
   "styles": [],
-  "tags": [],
-  "id": "CAM-74"
+  "tags": [
+   "أشرطة سوداء",
+   "شرايط",
+   "سينمائي",
+   "black bars",
+   "widescreen",
+   "film look"
+  ],
+  "id": "CAM-74",
+  "when": "عند إعطاء الفيديو مظهرا عريضا سينمائيا بأشرطة سوداء أعلى وأسفل / for a widescreen film look with black bars top and bottom"
  },
  {
   "family": "camera-composition-layout",
@@ -1515,8 +2079,16 @@
   ],
   "proof_scope": "sibling",
   "styles": [],
-  "tags": [],
-  "id": "CAM-75"
+  "tags": [
+   "صورة داخل صورة",
+   "نافذة صغيرة",
+   "زاوية الشاشة",
+   "pip",
+   "corner window",
+   "inset video"
+  ],
+  "id": "CAM-75",
+  "when": "حين تريد نافذة فيديو أو صورة صغيرة بزاوية الشاشة تدخل بحركة زنبركية / when a video or image should play as a rounded corner window that springs in"
  },
  {
   "family": "camera-composition-layout",
@@ -1534,8 +2106,16 @@
   ],
   "proof_scope": "sibling",
   "styles": [],
-  "tags": [],
-  "id": "CAM-76"
+  "tags": [
+   "فيديو مرجعي",
+   "تقليد الأسلوب",
+   "حركة الكاميرا",
+   "reference video",
+   "style transfer",
+   "camera moves"
+  ],
+  "id": "CAM-76",
+  "when": "عند نقل حركات كاميرا فيديو مرجعي إلى قطعات فيديوك بنفس الترتيب / when applying a reference video's measured camera moves to your own cuts in the same order"
  },
  {
   "family": "camera-composition-layout",
@@ -1558,8 +2138,16 @@
   ],
   "proof_scope": "sibling",
   "styles": [],
-  "tags": [],
-  "id": "CAM-77"
+  "tags": [
+   "اهتزاز",
+   "كاميرا محمولة",
+   "رجة",
+   "handheld",
+   "hyperframes",
+   "lens profile"
+  ],
+  "id": "CAM-77",
+  "when": "حين تحتاج اهتزاز كاميرا محمولة ثابت النتيجة عند التنقل في الزمن مع ملفات لكل عدسة / for a seek-safe handheld camera shake with per-lens profiles on any wrapper"
  },
  {
   "family": "camera-composition-layout",
@@ -1582,8 +2170,16 @@
   ],
   "proof_scope": "sibling",
   "styles": [],
-  "tags": [],
-  "id": "CAM-78"
+  "tags": [
+   "تسجيل الشاشة",
+   "نقرات",
+   "تكبير تلقائي",
+   "screen recording",
+   "auto zoom",
+   "click zoom"
+  ],
+  "id": "CAM-78",
+  "when": "عند فيديو تسجيل شاشة يقرب تلقائيا نحو النقرات ويتبع المؤشر / for a screen recording that auto-zooms toward each click and follows the cursor"
  },
  {
   "family": "camera-composition-layout",
@@ -1607,8 +2203,16 @@
   ],
   "proof_scope": "sibling",
   "styles": [],
-  "tags": [],
-  "id": "CAM-79"
+  "tags": [
+   "بطاقة ثابتة",
+   "حركة خفيفة",
+   "لمعة",
+   "loop",
+   "idle animation",
+   "light sweep"
+  ],
+  "id": "CAM-79",
+  "when": "حين تبقى بطاقة في المنتصف وتحتاج حياة خفيفة بدوران وتنفس ولمعة بطيئة / when a centred card should stay subtly alive with rotation, breathing and a slow light sweep"
  },
  {
   "family": "camera-composition-layout",
@@ -1631,8 +2235,16 @@
   ],
   "proof_scope": "sibling",
   "styles": [],
-  "tags": [],
-  "id": "CAM-80"
+  "tags": [
+   "نقل التركيز",
+   "بطاقتان",
+   "عمق",
+   "focus shift",
+   "blur",
+   "depth"
+  ],
+  "id": "CAM-80",
+  "when": "عند نقل التركيز مرة واحدة بين بطاقتين على أعماق مختلفة مثل مسودة ومنشور / for shifting focus once between two cards at different depths, e.g. Draft to Published"
  },
  {
   "family": "camera-composition-layout",
@@ -1655,8 +2267,16 @@
   ],
   "proof_scope": "sibling",
   "styles": [],
-  "tags": [],
-  "id": "CAM-81"
+  "tags": [
+   "بانوراما",
+   "خطوات",
+   "مراحل",
+   "pan",
+   "steps",
+   "process"
+  ],
+  "id": "CAM-81",
+  "when": "حين تريد حركة كاميرا جانبية تمر على محطات مسماة مع توقف عند كل واحدة / for a lateral camera pan across labelled stations, dwelling at each stop"
  },
  {
   "family": "camera-composition-layout",
@@ -1678,8 +2298,16 @@
   ],
   "proof_scope": "sibling",
   "styles": [],
-  "tags": [],
-  "id": "CAM-82"
+  "tags": [
+   "عرض تطبيق",
+   "هاتف",
+   "شاشة الجوال",
+   "app demo",
+   "phone mockup",
+   "ui reveal"
+  ],
+  "id": "CAM-82",
+  "when": "عند عرض تطبيق بهاتف يرتفع ثم تدخل الكاميرا عبر شاشته وتتمدد الواجهة لملء الإطار / for showing an app: a phone rises and the camera pushes through its screen as layered UI fills the frame"
  },
  {
   "family": "camera-composition-layout",
@@ -1702,8 +2330,15 @@
   ],
   "proof_scope": "sibling",
   "styles": [],
-  "tags": [],
-  "id": "CAM-83"
+  "tags": [
+   "تصغير",
+   "شبكة بطاقات",
+   "بارالاكس",
+   "zoom out",
+   "card grid"
+  ],
+  "id": "CAM-83",
+  "when": "حين تصغر بطاقة من ملء الشاشة وتدخل البطاقات المجاورة لتكوين شبكة / when a focus card shrinks from full frame while siblings parallax in to form a grid"
  },
  {
   "family": "camera-composition-layout",
@@ -1726,8 +2361,16 @@
   ],
   "proof_scope": "sibling",
   "styles": [],
-  "tags": [],
-  "id": "CAM-84"
+  "tags": [
+   "تكبير",
+   "بطاقات",
+   "دخول للتفاصيل",
+   "zoom in",
+   "card zoom",
+   "focus card"
+  ],
+  "id": "CAM-84",
+  "when": "عند تكبير البطاقة الوسطى لتملأ الإطار بينما تتباعد البطاقات المحيطة / when the centre card scales to fill frame while sibling cards parallax outward"
  },
  {
   "family": "camera-composition-layout",
@@ -1750,8 +2393,16 @@
   ],
   "proof_scope": "sibling",
   "styles": [],
-  "tags": [],
-  "id": "CAM-85"
+  "tags": [
+   "كشف",
+   "ابتعاد الكاميرا",
+   "رقم",
+   "reveal",
+   "zoom out",
+   "stat reveal"
+  ],
+  "id": "CAM-85",
+  "when": "حين تبدأ بتفصيلة قريبة مثل رقم ثم تبتعد الكاميرا لتكشف العنوان والسياق / when a tight detail like a number holds, then one pull-back reveals the headline and context"
  },
  {
   "family": "camera-composition-layout",
@@ -1774,8 +2425,15 @@
   ],
   "proof_scope": "sibling",
   "styles": [],
-  "tags": [],
-  "id": "CAM-86"
+  "tags": [
+   "زووم بطيء",
+   "اقتراب الكاميرا",
+   "عنوان متحرك",
+   "slow zoom",
+   "headline intro"
+  ],
+  "id": "CAM-86",
+  "when": "حين تريد دفعة كاميرا بطيئة نحو عنوان في منتصف الشاشة مع تلاش هادئ / when you need a slow camera push toward a centred headline with a soft fade"
  },
  {
   "family": "camera-composition-layout",
@@ -1798,8 +2456,15 @@
   ],
   "proof_scope": "sibling",
   "styles": [],
-  "tags": [],
-  "id": "CAM-87"
+  "tags": [
+   "تمرير سينمائي",
+   "سكرول",
+   "بارالاكس",
+   "scroll story",
+   "parallax scroll"
+  ],
+  "id": "CAM-87",
+  "when": "عند عرض عدة أقسام في مشهد طويل بتمرير سينمائي وبارالاكس حتى القسم الأخير / for a cinematic scroll through stacked sections with depth parallax, easing into the last one"
  },
  {
   "family": "camera-composition-layout",
@@ -1822,8 +2487,15 @@
   ],
   "proof_scope": "sibling",
   "styles": [],
-  "tags": [],
-  "id": "CAM-88"
+  "tags": [
+   "زووم على الشاشة",
+   "شرح تطبيق",
+   "تركيز على عنصر",
+   "ui zoom",
+   "app demo"
+  ],
+  "id": "CAM-88",
+  "when": "حين تريد التكبير على جزء من واجهة تطبيق في لحظة محددة والثبات عليه / when you want to zoom into a spot on an app UI on cue and hold there"
  },
  {
   "family": "camera-composition-layout",
@@ -1846,8 +2518,15 @@
   ],
   "proof_scope": "sibling",
   "styles": [],
-  "tags": [],
-  "id": "CAM-89"
+  "tags": [
+   "حركة كاميرا",
+   "زووم",
+   "ميلان ثلاثي الأبعاد",
+   "youtube camera",
+   "tilt pan"
+  ],
+  "id": "CAM-89",
+  "when": "حين تحتاج تكبيرًا أو انزلاقًا أو ميلانًا ثلاثي الأبعاد على فيديو أو بطاقة بأسلوب يوتيوب / for adding zoom, slide or 3D tilt-pan moves to a video or card wrapper"
  },
  {
   "family": "camera-composition-layout",
@@ -1870,8 +2549,15 @@
   ],
   "proof_scope": "sibling",
   "styles": [],
-  "tags": [],
-  "id": "CAM-90"
+  "tags": [
+   "تأثير الدوار",
+   "زووم عكسي",
+   "تمدد الخلفية",
+   "vertigo effect",
+   "background stretch"
+  ],
+  "id": "CAM-90",
+  "when": "حين تريد تأثير الدوار حيث يبقى الشخص بنفس الحجم بينما تتمدد الخلفية أو تنكمش / when the subject must keep its size while the background stretches or collapses"
  },
  {
   "family": "camera-composition-layout",
@@ -1895,8 +2581,15 @@
   ],
   "proof_scope": "sibling",
   "styles": [],
-  "tags": [],
-  "id": "CAM-91"
+  "tags": [
+   "سحب التركيز",
+   "خلفية مموهة",
+   "تأثير العدسة",
+   "focus pull",
+   "bokeh"
+  ],
+  "id": "CAM-91",
+  "when": "حين تريد نقل التركيز من القريب إلى البعيد مع بوكيه عدسة واقعي / when you need a focus pull from near to far with realistic lens bokeh"
  },
  {
   "family": "camera-composition-layout",
@@ -1919,8 +2612,15 @@
   ],
   "proof_scope": "sibling",
   "styles": [],
-  "tags": [],
-  "id": "CAM-92"
+  "tags": [
+   "عرض صور",
+   "دوامة صور",
+   "معرض دائري",
+   "image carousel",
+   "photo gallery"
+  ],
+  "id": "CAM-92",
+  "when": "عند عرض مجموعة صور تدور في دائرة بعمق وتأرجح سريع ثم بطيء / for showing a set of photos spinning around a circle with depth and fast-slow swings"
  },
  {
   "family": "camera-composition-layout",
@@ -1943,8 +2643,15 @@
   ],
   "proof_scope": "sibling",
   "styles": [],
-  "tags": [],
-  "id": "CAM-93"
+  "tags": [
+   "كرة صور",
+   "معرض ثلاثي الأبعاد",
+   "صور تدور",
+   "3d gallery",
+   "sphere"
+  ],
+  "id": "CAM-93",
+  "when": "حين تريد عرض صور كثيرة على كرة ثلاثية الأبعاد تدور / for showing many images as cards on a spinning 3D sphere"
  },
  {
   "family": "camera-composition-layout",
@@ -1967,8 +2674,15 @@
   ],
   "proof_scope": "sibling",
   "styles": [],
-  "tags": [],
-  "id": "CAM-94"
+  "tags": [
+   "صور على مسار",
+   "شريط صور",
+   "منحنى",
+   "card path",
+   "photo strip"
+  ],
+  "id": "CAM-94",
+  "when": "عند تحريك بطاقات صور على مسار منحن مثل قوس أو موجة أو حرف S / for moving image cards along a curved path such as an arc, wave or S-curve"
  },
  {
   "family": "camera-composition-layout",
@@ -1991,8 +2705,15 @@
   ],
   "proof_scope": "sibling",
   "styles": [],
-  "tags": [],
-  "id": "CAM-95"
+  "tags": [
+   "عنوان مع صور",
+   "كشف الكلمات",
+   "افتتاحية",
+   "title reveal",
+   "word reveal"
+  ],
+  "id": "CAM-95",
+  "when": "حين تريد عنوانًا يظهر كلمة كلمة بينما تلتف حوله دائرة صور ثم قطع لسطر ثان / when a headline reveals word by word as a circle of images converges, then cuts to a second line"
  },
  {
   "family": "camera-composition-layout",
@@ -2015,8 +2736,15 @@
   ],
   "proof_scope": "sibling",
   "styles": [],
-  "tags": [],
-  "id": "CAM-96"
+  "tags": [
+   "حلقة صور",
+   "عرض بطاقات",
+   "معرض صور",
+   "card ring",
+   "3d carousel"
+  ],
+  "id": "CAM-96",
+  "when": "عند عرض صور كبيرة في حلقة مائلة تحت كاميرا ثلاثية الأبعاد تلتفت نحو المركز / for a ring of large image cards tilted into a row under a 3D camera"
  },
  {
   "family": "camera-composition-layout",
@@ -2037,8 +2765,16 @@
   ],
   "proof_scope": "sibling",
   "styles": [],
-  "tags": [],
-  "id": "CAM-97"
+  "tags": [
+   "تصميم سويسري",
+   "شبكة تخطيط",
+   "قالب بداية",
+   "grid layout",
+   "helvetica",
+   "starter"
+  ],
+  "id": "CAM-97",
+  "when": "حين تبدأ مشروعًا بتخطيط شبكي سويسري منظم أو تحتاج مرجعًا للألوان والخطوط / when starting from a structured Swiss-grid layout or using it as a type and palette reference"
  },
  {
   "family": "camera-composition-layout",
@@ -2056,8 +2792,15 @@
   ],
   "proof_scope": "sibling",
   "styles": [],
-  "tags": [],
-  "id": "CAM-98"
+  "tags": [
+   "مساحة الترجمة",
+   "أسفل الشاشة",
+   "الكابشن",
+   "safe area",
+   "subtitle space"
+  ],
+  "id": "CAM-98",
+  "when": "حين تضع ترجمة كاريوكي أسفل الإطار وتريد إبقاء باقي العناصر في الجزء العلوي / when a karaoke caption owns the bottom of the frame and other content must stay above it"
  },
  {
   "family": "camera-composition-layout",
@@ -2075,8 +2818,15 @@
   ],
   "proof_scope": "sibling",
   "styles": [],
-  "tags": [],
-  "id": "CAM-99"
+  "tags": [
+   "زووم سريع",
+   "تكبير مفاجئ",
+   "لقطة فيديو",
+   "snap zoom",
+   "zoom hit"
+  ],
+  "id": "CAM-99",
+  "when": "حين تريد تكبيرًا سريعًا مفاجئًا على لقطة فيديو دون كسر توقيت الكليب / when you need a quick punch zoom on a video clip without breaking the clip timing"
  },
  {
   "family": "camera-composition-layout",
@@ -2094,8 +2844,15 @@
   ],
   "proof_scope": "sibling",
   "styles": [],
-  "tags": [],
-  "id": "CAM-100"
+  "tags": [
+   "تحريك الصور",
+   "صورة ثابتة",
+   "زووم بطيء",
+   "photo pan",
+   "slow zoom"
+  ],
+  "id": "CAM-100",
+  "when": "حين تريد تحريك صورة ثابتة أو لقطة بتكبير وانزلاق بطيء لتبدو حية / when you want a slow zoom-and-pan drift over a still photo or clip"
  },
  {
   "family": "camera-composition-layout",
@@ -2113,8 +2870,15 @@
   ],
   "proof_scope": "sibling",
   "styles": [],
-  "tags": [],
-  "id": "CAM-101"
+  "tags": [
+   "قص الفيديو",
+   "كروب",
+   "تأطير",
+   "crop animation",
+   "mask"
+  ],
+  "id": "CAM-101",
+  "when": "عند إعادة تأطير لقطة أو قصها تدريجيًا وتحريكها داخل الإطار / for reframing or cropping a clip with an animated inset and offset"
  },
  {
   "family": "camera-composition-layout",
@@ -2133,8 +2897,15 @@
   ],
   "proof_scope": "sibling",
   "styles": [],
-  "tags": [],
-  "id": "CAM-102"
+  "tags": [
+   "خلفية ثابتة",
+   "تبديل المشاهد",
+   "طبقات",
+   "persistent background",
+   "scene layers"
+  ],
+  "id": "CAM-102",
+  "when": "حين تبني مشاهد بملء الشاشة تتبدل مقدمتها بينما تبقى طبقة الخلفية مستمرة / when full-frame scenes swap in the foreground while one background layer persists across them"
  },
  {
   "family": "camera-composition-layout",
@@ -2156,8 +2927,15 @@
   ],
   "proof_scope": "sibling",
   "styles": [],
-  "tags": [],
-  "id": "CAM-103"
+  "tags": [
+   "زووم على عنصر",
+   "تكبير جانبي",
+   "تركيز على هدف",
+   "off-center zoom",
+   "zoom target"
+  ],
+  "id": "CAM-103",
+  "when": "حين تريد التكبير على عنصر ليس في منتصف الشاشة / when you need to zoom onto an off-centre element on screen"
  },
  {
   "family": "camera-composition-layout",
@@ -2179,8 +2957,15 @@
   ],
   "proof_scope": "sibling",
   "styles": [],
-  "tags": [],
-  "id": "CAM-104"
+  "tags": [
+   "تأثير الكتابة",
+   "آلة كاتبة",
+   "تتبع النص",
+   "typewriter",
+   "caret follow"
+  ],
+  "id": "CAM-104",
+  "when": "عند كتابة نص متحرك وتريد أن تتبع الكاميرا مؤشر الكتابة ليبقى ظاهرًا / when text is being typed and the camera should follow the caret to keep it in view"
  },
  {
   "family": "camera-composition-layout",
@@ -2202,8 +2987,15 @@
   ],
   "proof_scope": "sibling",
   "styles": [],
-  "tags": [],
-  "id": "CAM-105"
+  "tags": [
+   "زووم متعدد",
+   "تبعيد وتقريب",
+   "حركة مستمرة",
+   "zoom phases",
+   "camera drift"
+  ],
+  "id": "CAM-105",
+  "when": "حين يحتاج المشهد مراحل زووم متتالية من تبعيد وتركيز ودفع مع انجراف خفيف مستمر / when a scene needs successive pull-back, focus and push phases with a constant subtle drift"
  },
  {
   "family": "camera-composition-layout",
@@ -2225,8 +3017,15 @@
   ],
   "proof_scope": "sibling",
   "styles": [],
-  "tags": [],
-  "id": "CAM-106"
+  "tags": [
+   "كاميرا وهمية",
+   "زووم وبان",
+   "تحريك المشهد",
+   "fake camera",
+   "pan and zoom"
+  ],
+  "id": "CAM-106",
+  "when": "حين تريد كاميرا افتراضية تعمل زووم وتحريك وتثبيت تركيز بتحريك غلاف واحد للمشهد / for faking zoom, pan and focus-lock by transforming one world wrapper"
  },
  {
   "family": "camera-composition-layout",
@@ -2248,8 +3047,15 @@
   ],
   "proof_scope": "sibling",
   "styles": [],
-  "tags": [],
-  "id": "CAM-107"
+  "tags": [
+   "تمويه الخلفية",
+   "بلور",
+   "سحب التركيز",
+   "blur background",
+   "focus shift"
+  ],
+  "id": "CAM-107",
+  "when": "حين تريد تمويه الطبقات غير المهمة وإبقاء العنصر الأساسي حادًا أو نقل التركيز بين مستويين / when off-focus layers should blur while the key element stays sharp, or focus racks between two planes"
  },
  {
   "family": "camera-composition-layout",
@@ -2271,8 +3077,15 @@
   ],
   "proof_scope": "sibling",
   "styles": [],
-  "tags": [],
-  "id": "CAM-108"
+  "tags": [
+   "تفرق العناصر",
+   "توزيع من المنتصف",
+   "تمدد",
+   "spread out",
+   "expand layout"
+  ],
+  "id": "CAM-108",
+  "when": "عند عناصر تبدأ متجمعة في المنتصف ثم تتفرق معًا إلى أماكنها النهائية / for elements that start clustered at centre and spread out together to their final positions"
  },
  {
   "family": "camera-composition-layout",
@@ -2294,8 +3107,15 @@
   ],
   "proof_scope": "sibling",
   "styles": [],
-  "tags": [],
-  "id": "CAM-109"
+  "tags": [
+   "كارتين",
+   "عرض جنبا إلى جنب",
+   "ميلان ثلاثي الأبعاد",
+   "two cards",
+   "3d tilt"
+  ],
+  "id": "CAM-109",
+  "when": "حين تعرض بطاقتين جنبًا إلى جنب بميلان متعاكس تدخلان من الجانبين وتطفوان / for showing two side-by-side cards with opposite 3D tilts sliding in and floating"
  },
  {
   "family": "camera-composition-layout",
@@ -2316,8 +3136,15 @@
   ],
   "proof_scope": "sibling",
   "styles": [],
-  "tags": [],
-  "id": "CAM-110"
+  "tags": [
+   "تنقل بين النقاط",
+   "لوحة عملاقة",
+   "بان",
+   "camera pan",
+   "stations"
+  ],
+  "id": "CAM-110",
+  "when": "حين تريد التنقل بالكاميرا بين محطات أو نقاط مسماة على لوحة واحدة كبيرة / when one camera pans across labeled stations on a single oversized canvas"
  },
  {
   "family": "camera-composition-layout",
@@ -2338,8 +3165,15 @@
   ],
   "proof_scope": "sibling",
   "styles": [],
-  "tags": [],
-  "id": "CAM-111"
+  "tags": [
+   "جولة كاميرا",
+   "طيران سينمائي",
+   "غوص الكاميرا",
+   "flythrough",
+   "camera tour"
+  ],
+  "id": "CAM-111",
+  "when": "عند رحلة كاميرا متعددة المراحل عبر عالم واحد مثل غوص ونقرة ثم انتقال للنتيجة أو طيران سينمائي / for a multi-leg camera journey across one world: dive, click and swoop, or a cinematic 3D flight"
  },
  {
   "family": "camera-composition-layout",
@@ -2360,8 +3194,15 @@
   ],
   "proof_scope": "sibling",
   "styles": [],
-  "tags": [],
-  "id": "CAM-112"
+  "tags": [
+   "تبعيد",
+   "كشف تدريجي",
+   "لقطة قريبة",
+   "pull back",
+   "wide reveal"
+  ],
+  "id": "CAM-112",
+  "when": "حين تبدأ بلقطة قريبة على تفصيلة ثم تبعد الكاميرا ببطء لتكشف مساحة العمل كاملة / when opening tight on a detail, then one long zoom-out reveals the whole workspace"
  },
  {
   "family": "camera-composition-layout",
@@ -2382,8 +3223,15 @@
   ],
   "proof_scope": "sibling",
   "styles": [],
-  "tags": [],
-  "id": "CAM-113"
+  "tags": [
+   "شبكة شعارات",
+   "تجميع البطاقات",
+   "ظهور متتابع",
+   "logo grid",
+   "stagger"
+  ],
+  "id": "CAM-113",
+  "when": "عند عرض شعارات أو بطاقات تتجمع بالتتابع في شبكة أو قائمة / for logos, tiles or cards that assemble one after another into a grid or list"
  },
  {
   "family": "camera-composition-layout",
@@ -2404,8 +3252,15 @@
   ],
   "proof_scope": "sibling",
   "styles": [],
-  "tags": [],
-  "id": "CAM-114"
+  "tags": [
+   "مقارنة عنصرين",
+   "مقابل",
+   "شاشة مقسومة",
+   "versus",
+   "side by side"
+  ],
+  "id": "CAM-114",
+  "when": "حين تقارن بين عنصرين متساويين يدخلان من الجانبين مع شارات تظهر بينهما / when comparing two equal items that enter from opposite sides with badges popping in between"
  },
  {
   "family": "camera-composition-layout",
@@ -2423,8 +3278,15 @@
   ],
   "proof_scope": "sibling",
   "styles": [],
-  "tags": [],
-  "id": "CAM-115"
+  "tags": [
+   "أحجام الخطوط",
+   "مقاسات الفيديو",
+   "تخطيط الإطار",
+   "font size",
+   "gradient banding"
+  ],
+  "id": "CAM-115",
+  "when": "حين تحدد أحجام الخطوط والحدود والمسافات لفيديو بدل أحجام الويب أو تخطط لطبقات الإطار / when setting text sizes, borders and padding for video rather than web, or planning frame layers"
  },
  {
   "family": "camera-composition-layout",
@@ -2442,8 +3304,15 @@
   ],
   "proof_scope": "sibling",
   "styles": [],
-  "tags": [],
-  "id": "CAM-116"
+  "tags": [
+   "فيديو داخل فيديو",
+   "نافذة فيديو",
+   "بيكتشر إن بيكتشر",
+   "pip",
+   "video window"
+  ],
+  "id": "CAM-116",
+  "when": "حين تضع فيديو داخل نافذة بإطار فوق خلفية مصممة / when placing a video inside a framed window over a designed background"
  },
  {
   "family": "camera-composition-layout",
@@ -2461,8 +3330,15 @@
   ],
   "proof_scope": "sibling",
   "styles": [],
-  "tags": [],
-  "id": "CAM-117"
+  "tags": [
+   "شريحة عنوان",
+   "سلايد شو",
+   "عناوين الأقسام",
+   "slideshow",
+   "intro title"
+  ],
+  "id": "CAM-117",
+  "when": "عند عمل بطاقة عنوان بسيطة بتلاش أو عرض شرائح بعناوين أقسام / for a simple fading title card or a slideshow with section headers"
  },
  {
   "family": "camera-composition-layout",
@@ -2482,8 +3358,15 @@
   ],
   "proof_scope": "sibling",
   "styles": [],
-  "tags": [],
-  "id": "CAM-118"
+  "tags": [
+   "هوامش آمنة",
+   "حواف الشاشة",
+   "منطقة العنوان",
+   "title safe",
+   "action safe"
+  ],
+  "id": "CAM-118",
+  "when": "حين تريد إبقاء النصوص والعناصر المهمة داخل حدود آمنة بعيدًا عن حواف الإطار / when keeping titles and key action inside safe margins away from the frame edges"
  },
  {
   "family": "camera-composition-layout",
@@ -2503,8 +3386,15 @@
   ],
   "proof_scope": "sibling",
   "styles": [],
-  "tags": [],
-  "id": "CAM-119"
+  "tags": [
+   "مكان الترجمة",
+   "قناع الشخص",
+   "تموضع النص",
+   "caption placement",
+   "matte"
+  ],
+  "id": "CAM-119",
+  "when": "قبل كتابة الترجمة حين تريد معرفة الأماكن المتاحة للنص من قناع الشخص / before authoring captions, to find from the subject matte where text can go"
  },
  {
   "family": "camera-composition-layout",
@@ -2523,8 +3413,15 @@
   ],
   "proof_scope": "sibling",
   "styles": [],
-  "tags": [],
-  "id": "CAM-120"
+  "tags": [
+   "توزيع الترجمة",
+   "كتابة على الحائط",
+   "مساحة فارغة",
+   "caption layout",
+   "text placement"
+  ],
+  "id": "CAM-120",
+  "when": "حين تختار مكان الترجمة حسب نوع اللقطة والمساحة الخالية واتجاه نظر الشخص / when choosing where captions go based on shot type, clean space and the subject's gaze"
  },
  {
   "family": "camera-composition-layout",
@@ -2544,8 +3441,15 @@
   ],
   "proof_scope": "sibling",
   "styles": [],
-  "tags": [],
-  "id": "CAM-121"
+  "tags": [
+   "هزة الشاشة",
+   "تعتيم",
+   "حبيبات فيلم",
+   "screen shake",
+   "film grain"
+  ],
+  "id": "CAM-121",
+  "when": "حين تريد لحظات تفاعل على اللقطة كتعتيم أو زووم أو اهتزاز أو حبيبات يتحرك فيها الشخص والنص معًا / for reaction beats on footage (dim, punch, shake, grain) that move subject, text and plate together"
  },
  {
   "family": "camera-composition-layout",
@@ -2563,8 +3467,15 @@
   ],
   "proof_scope": "sibling",
   "styles": [],
-  "tags": [],
-  "id": "CAM-122"
+  "tags": [
+   "الثلث السفلي",
+   "لوحة جانبية",
+   "مكان البطاقة",
+   "lower third",
+   "side panel"
+  ],
+  "id": "CAM-122",
+  "when": "حين تحدد مكان البطاقة على الشاشة: ملء الشاشة أو الثلث السفلي أو لوحة جانبية أو فوق الفيديو / when deciding where a card sits: fullscreen, lower third, side panel or over the video"
  },
  {
   "family": "camera-composition-layout",
@@ -2585,8 +3496,15 @@
   ],
   "proof_scope": "sibling",
   "styles": [],
-  "tags": [],
-  "id": "CAM-123"
+  "tags": [
+   "اهتزاز على الإيقاع",
+   "هزة",
+   "مزامنة الموسيقى",
+   "beat sync",
+   "music hit"
+  ],
+  "id": "CAM-123",
+  "when": "عند هز الشاشة مع ضربات الموسيقى مثل الدروب أو الكيك / for shaking the screen on music hits like a drop, crash or kick"
  },
  {
   "family": "camera-composition-layout",
@@ -2607,8 +3525,15 @@
   ],
   "proof_scope": "sibling",
   "styles": [],
-  "tags": [],
-  "id": "CAM-124"
+  "tags": [
+   "تأثير الدوار",
+   "بناء الموسيقى",
+   "مزامنة الإيقاع",
+   "vertigo",
+   "music build"
+  ],
+  "id": "CAM-124",
+  "when": "حين تريد تأثير الدوار على بناء الموسيقى أو بداية جملة لحنية / for a vertigo dolly zoom timed to a musical build or phrase"
  },
  {
   "family": "camera-composition-layout",
@@ -2629,8 +3554,15 @@
   ],
   "proof_scope": "sibling",
   "styles": [],
-  "tags": [],
-  "id": "CAM-125"
+  "tags": [
+   "زووم عنيف",
+   "زووم على الدروب",
+   "صدمة",
+   "snap zoom",
+   "drop"
+  ],
+  "id": "CAM-125",
+  "when": "عند زووم عنيف ومفاجئ على الدروب أو ذروة الموسيقى / for a violent crash zoom on a music drop or surge"
  },
  {
   "family": "camera-composition-layout",
@@ -2651,8 +3583,15 @@
   ],
   "proof_scope": "sibling",
   "styles": [],
-  "tags": [],
-  "id": "CAM-126"
+  "tags": [
+   "موزاييك",
+   "تجميع المربعات",
+   "شبكة على الإيقاع",
+   "tile grid",
+   "beat sync"
+  ],
+  "id": "CAM-126",
+  "when": "حين تريد مربعات متناثرة تطير وتتجمع في شبكة مع الإيقاع / when scattered tiles should fly in and pack into a grid on the beat or build"
  },
  {
   "family": "camera-composition-layout",
@@ -2673,8 +3612,15 @@
   ],
   "proof_scope": "sibling",
   "styles": [],
-  "tags": [],
-  "id": "CAM-127"
+  "tags": [
+   "كشف البوستر",
+   "مربعات قطرية",
+   "ملصق",
+   "poster reveal",
+   "diagonal sweep"
+  ],
+  "id": "CAM-127",
+  "when": "عند كشف بوستر بمربعات تتجمع في مسح قطري مع بناء الموسيقى / for revealing a poster with a diagonal sweep of tiles on a music build or reveal"
  },
  {
   "family": "camera-composition-layout",
@@ -2694,8 +3640,15 @@
   ],
   "proof_scope": "sibling",
   "styles": [],
-  "tags": [],
-  "id": "CAM-128"
+  "tags": [
+   "زووم ناعم",
+   "تكبير متدرج",
+   "استيفاء",
+   "log zoom",
+   "smooth zoom"
+  ],
+  "id": "CAM-128",
+  "when": "حين تريد أن يتم التكبير والتحجيم باستيفاء لوغاريتمي داخل مشروع موشن / when scale and zoom should be interpolated in log space inside a motion-kit project"
  },
  {
   "family": "camera-composition-layout",
@@ -2715,8 +3668,15 @@
   ],
   "proof_scope": "sibling",
   "styles": [],
-  "tags": [],
-  "id": "CAM-129"
+  "tags": [
+   "هزة الكاميرا",
+   "رجة",
+   "صدمة",
+   "camera shake",
+   "impact"
+  ],
+  "id": "CAM-129",
+  "when": "عند ضربة اهتزاز للكاميرا تخمد تدريجيًا وتتكرر بنفس الشكل في كل مرة / for a decaying camera hit shake that repeats the same way each time (seeded)"
  },
  {
   "family": "camera-composition-layout",
@@ -2736,8 +3696,15 @@
   ],
   "proof_scope": "sibling",
   "styles": [],
-  "tags": [],
-  "id": "CAM-130"
+  "tags": [
+   "عمق",
+   "طبقات متحركة",
+   "تأثير العمق",
+   "depth layers",
+   "layered depth"
+  ],
+  "id": "CAM-130",
+  "when": "حين تريد إحساسًا بالعمق بتحريك الطبقات بسرعات مختلفة حسب بعدها / when layers should move by depth to give the scene a sense of depth"
  },
  {
   "family": "camera-composition-layout",
@@ -2757,8 +3724,15 @@
   ],
   "proof_scope": "sibling",
   "styles": [],
-  "tags": [],
-  "id": "CAM-131"
+  "tags": [
+   "لقطة ثابتة",
+   "حركة خفيفة",
+   "انجراف",
+   "subtle motion",
+   "living hold"
+  ],
+  "id": "CAM-131",
+  "when": "حين لا تريد أن تتجمد اللقطة الثابتة فتضيف لها زحفًا أو انجرافًا خفيفًا / when a hold should not freeze but keep a slow creep or drift"
  },
  {
   "family": "camera-composition-layout",
@@ -2779,8 +3753,15 @@
   ],
   "proof_scope": "sibling",
   "styles": [],
-  "tags": [],
-  "id": "CAM-132"
+  "tags": [
+   "أنواع اللقطات",
+   "لقطة قريبة",
+   "زاوية التصوير",
+   "shot types",
+   "veo"
+  ],
+  "id": "CAM-132",
+  "when": "حين تريد تحويل أسماء اللقطات مثل واسعة أو قريبة أو تتبع أو رافعة إلى كاميرا ثلاثية الأبعاد / for turning shot names like wide, close-up, tracking or crane into 3D cameras"
  },
  {
   "family": "camera-composition-layout",
@@ -2799,8 +3780,15 @@
   ],
   "proof_scope": "sibling",
   "styles": [],
-  "tags": [],
-  "id": "CAM-133"
+  "tags": [
+   "مسار سلس",
+   "حركة متصلة",
+   "نقاط مفتاحية",
+   "spline camera",
+   "keyframes"
+  ],
+  "id": "CAM-133",
+  "when": "عند حركة كاميرا واحدة متصلة تمر بعدة نقاط دون توقف / for one continuous camera move through several keys without stopping"
  },
  {
   "family": "camera-composition-layout",
@@ -2820,8 +3808,15 @@
   ],
   "proof_scope": "sibling",
   "styles": [],
-  "tags": [],
-  "id": "CAM-134"
+  "tags": [
+   "دوران حول الهدف",
+   "لف حول المجسم",
+   "توقفات",
+   "orbit",
+   "turnaround"
+  ],
+  "id": "CAM-134",
+  "when": "حين تدور الكاميرا حول هدف وتتوقف عند كل محطة قليلًا / when the camera walks around a target and holds at each stop"
  },
  {
   "family": "camera-composition-layout",
@@ -2840,8 +3835,15 @@
   ],
   "proof_scope": "sibling",
   "styles": [],
-  "tags": [],
-  "id": "CAM-135"
+  "tags": [
+   "تدرج داكن",
+   "وضوح النص",
+   "قراءة العنوان",
+   "gradient overlay",
+   "text contrast"
+  ],
+  "id": "CAM-135",
+  "when": "حين يكون العنوان فوق سماء أو منطقة ساطعة في أعلى الكادر ويصعب قراءته / when a title sits over a bright sky at the top of the frame and must stay readable"
  },
  {
   "family": "camera-composition-layout",
@@ -2859,8 +3861,15 @@
   ],
   "proof_scope": "sibling",
   "styles": [],
-  "tags": [],
-  "id": "CAM-136"
+  "tags": [
+   "توكينج هيد",
+   "زووم على الكلمات",
+   "مزامنة الكلام",
+   "talking head",
+   "word sync"
+  ],
+  "id": "CAM-136",
+  "when": "حين تريد كاميرا تتحرك مع كلام المتحدث فتقترب بهدوء وتضرب زووم سريع على الكلمات المهمة / when a talking-head shot needs camera pushes between lines and quick punches on stressed words"
  },
  {
   "family": "camera-composition-layout",
@@ -2878,8 +3887,15 @@
   ],
   "proof_scope": "sibling",
   "styles": [],
-  "tags": [],
-  "id": "CAM-137"
+  "tags": [
+   "رجة خفيفة",
+   "اهتزاز على الكلمة",
+   "تأثير الصدمة",
+   "micro shake",
+   "impact"
+  ],
+  "id": "CAM-137",
+  "when": "عند اهتزاز صغير جدًا على أقوى كلمة ليعطي إحساس الصدمة بنفس النتيجة في كل رندر / for a tiny shake on the hardest word that sells impact identically on every render"
  },
  {
   "family": "camera-composition-layout",
@@ -2899,8 +3915,15 @@
   ],
   "proof_scope": "sibling",
   "styles": [],
-  "tags": [],
-  "id": "CAM-138"
+  "tags": [
+   "زووم ناعم",
+   "لقطة حية",
+   "حركة بطيئة",
+   "smooth push",
+   "slow creep"
+  ],
+  "id": "CAM-138",
+  "when": "حين تريد زووم بسرعة تبدو متساوية للعين ولقطات ثابتة لا تتجمد بل تزحف ببطء / when zooms should feel even in speed and holds should creep instead of freezing"
  },
  {
   "family": "camera-composition-layout",
@@ -2918,8 +3941,15 @@
   ],
   "proof_scope": "sibling",
   "styles": [],
-  "tags": [],
-  "id": "CAM-139"
+  "tags": [
+   "دوران الكاميرا",
+   "لحظة الكسر",
+   "مشهد ثلاثي الأبعاد",
+   "3d orbit",
+   "pull back"
+  ],
+  "id": "CAM-139",
+  "when": "حين تدور الكاميرا حول شخصية صغيرة وتقترب عند لحظة الكسر وتهتز ثم تبتعد للنتيجة / when the camera orbits a small character, pushes in for the break, shakes at the snap and pulls back"
  },
  {
   "family": "camera-composition-layout",
@@ -2937,8 +3967,15 @@
   ],
   "proof_scope": "sibling",
   "styles": [],
-  "tags": [],
-  "id": "CAM-140"
+  "tags": [
+   "جولة حول الشخصية",
+   "لقطة قريبة للعين",
+   "دوران كامل",
+   "character tour",
+   "full orbit"
+  ],
+  "id": "CAM-140",
+  "when": "عند جولة كاميرا كاملة حول شخصيتين تتوقف عند أجزاء كالرأس والعين والذيل ثم تعود للقطة الواسعة / for a full camera circle around two characters, stopping on head, eye and tail, then back to wide"
  },
  {
   "family": "camera-composition-layout",
@@ -2957,8 +3994,16 @@
   ],
   "proof_scope": "sibling",
   "styles": [],
-  "tags": [],
-  "id": "CAM-141"
+  "tags": [
+   "تجميد اللحظة",
+   "توقف الزمن",
+   "إيقاع الموسيقى",
+   "time freeze",
+   "tape stop",
+   "music sync"
+  ],
+  "id": "CAM-141",
+  "when": "حين تريد لقطة متصلة على إيقاع الموسيقى يتجمد فيها العالم بينما تواصل الكاميرا الدوران / for a continuous take on the music bars where the world freezes while the camera keeps orbiting"
  },
  {
   "family": "camera-composition-layout",
@@ -2978,8 +4023,15 @@
   ],
   "proof_scope": "sibling",
   "styles": [],
-  "tags": [],
-  "id": "CAM-142"
+  "tags": [
+   "كي فريم",
+   "نقاط الكاميرا",
+   "زاوية الرؤية",
+   "keyframe camera",
+   "fov"
+  ],
+  "id": "CAM-142",
+  "when": "حين تريد كاميرا تمر بنقاط محددة بحركة ناعمة واحدة أو حركات بطيئة بينها سكون مع تغيير زاوية العدسة / when camera keys should give one smooth move or slow moves with stillness between, plus fov changes"
  },
  {
   "family": "camera-composition-layout",
@@ -3000,8 +4052,15 @@
   ],
   "proof_scope": "sibling",
   "styles": [],
-  "tags": [],
-  "id": "CAM-143"
+  "tags": [
+   "زاوية منخفضة",
+   "وصف اللقطة",
+   "لقطة سينمائية",
+   "low angle",
+   "ai video"
+  ],
+  "id": "CAM-143",
+  "when": "حين تريد ترجمة وصف لقطة مثل دفع بطيء من زاوية منخفضة إلى حركة كاميرا دقيقة بالأرقام / when translating shot words like 'slow push-in, low angle' into explicit camera math"
  },
  {
   "family": "camera-composition-layout",
@@ -3020,8 +4079,15 @@
   ],
   "proof_scope": "sibling",
   "styles": [],
-  "tags": [],
-  "id": "CAM-144"
+  "tags": [
+   "تعليق توضيحي",
+   "خط إشارة",
+   "شرح الأجزاء",
+   "callout",
+   "label tracking"
+  ],
+  "id": "CAM-144",
+  "when": "حين تريد تعليقًا أو خط إشارة ثنائي الأبعاد يتبع جزءًا داخل مشهد ثلاثي الأبعاد بدقة / when a 2D callout with a leader line must track a part of a 3D scene exactly"
  },
  {
   "family": "camera-composition-layout",
@@ -3039,8 +4105,15 @@
   ],
   "proof_scope": "sibling",
   "styles": [],
-  "tags": [],
-  "id": "CAM-145"
+  "tags": [
+   "زووم بطيء",
+   "تحريك الصورة",
+   "تكبير ناعم",
+   "slow zoom",
+   "photo zoom"
+  ],
+  "id": "CAM-145",
+  "when": "عند إضافة زووم بطيء ناعم على كليب بتحديد بداية ونهاية التكبير / for adding a smooth slow zoom to a clip by setting its start and end zoom"
  },
  {
   "family": "camera-composition-layout",
@@ -3059,8 +4132,15 @@
   ],
   "proof_scope": "sibling",
   "styles": [],
-  "tags": [],
-  "id": "CAM-146"
+  "tags": [
+   "حركة قوسية",
+   "اقتراب دائري",
+   "لف حول المجسم",
+   "arc shot",
+   "orbit push"
+  ],
+  "id": "CAM-146",
+  "when": "حين تريد كاميرا تلف ربع دورة حول المجسم وهي تقترب منه وتعلو وتنخفض بخفة / when the camera should arc a quarter turn around the subject while pushing in and gently bobbing"
  },
  {
   "family": "camera-composition-layout",
@@ -3082,8 +4162,15 @@
   ],
   "proof_scope": "sibling",
   "styles": [],
-  "tags": [],
-  "id": "CAM-147"
+  "tags": [
+   "شد الانتباه",
+   "زووم متكرر",
+   "فيديو متكلم",
+   "retention",
+   "zoompan"
+  ],
+  "id": "CAM-147",
+  "when": "حين يكون الفيديو لمتحدث وتريد زووم خفيفًا متكررًا كل بضع ثوان لشد الانتباه / when talking-head footage needs a slight punch-in every few seconds to reset attention"
  },
  {
   "family": "camera-composition-layout",
@@ -3103,8 +4190,15 @@
   ],
   "proof_scope": "sibling",
   "styles": [],
-  "tags": [],
-  "id": "CAM-148"
+  "tags": [
+   "لقطة درون",
+   "طيران الكاميرا",
+   "حركة رافعة",
+   "drone shot",
+   "flythrough"
+  ],
+  "id": "CAM-148",
+  "when": "عند فيلم ثلاثي الأبعاد يحتاج حركة كاميرا واضحة لكل لقطة كالغوص أو الرافعة أو تتبع الدرون أو الطيران عبر المشهد / for a 3D film where each shot needs one readable move: dive, crane, drone track or flythrough"
  },
  {
   "family": "camera-composition-layout",
@@ -3123,8 +4217,15 @@
   ],
   "proof_scope": "sibling",
   "styles": [],
-  "tags": [],
-  "id": "CAM-149"
+  "tags": [
+   "وضوح النص",
+   "تعتيم الحواف",
+   "خلفية مزدحمة",
+   "vignette",
+   "text readability"
+  ],
+  "id": "CAM-149",
+  "when": "حين تكون الخلفية مزدحمة بالرسوم وتريد إبقاء النص مقروءًا وتركيز العين داخل القوس / when busy art behind text must stay readable and the eye should stay inside the arch"
  },
  {
   "family": "camera-composition-layout",
@@ -3142,8 +4243,15 @@
   ],
   "proof_scope": "sibling",
   "styles": [],
-  "tags": [],
-  "id": "CAM-150"
+  "tags": [
+   "حركة خفيفة",
+   "تقريب على الجملة",
+   "تأكيد",
+   "subtle zoom",
+   "emphasis push"
+  ],
+  "id": "CAM-150",
+  "when": "حين تريد كاميرا تتنفس ببطء طوال الفيلم ثم تقترب عند الجملة المهمة والخاتمة / when a 2D stage should breathe slowly throughout, then push in on the key line and the ending"
  },
  {
   "family": "camera-composition-layout",
@@ -3154,15 +4262,24 @@
   "how": "plate(id,t0,t1,{from,to,x0,x1,y0,y1}): visibility on/off at cut times, img scale from -> to over the whole hold with E.dolly; plates inset -4% to allow movement.",
   "params": "examples 1.0 -> 1.22 (+40 px y), 1.18 -> 1.02, 1.05 -> 1.25, 1.25 -> 1.06, 1.02 -> 1.3, 1.35 -> 1.0",
   "install": "see arsenal-libraries.md",
-  "requires": [],
+  "requires": [
+   "imagemagick"
+  ],
   "license": "owner",
   "proof": [
    "kosif-one/projects/whatsapp-motion/projects/success/index.html:121-135"
   ],
   "proof_scope": "sibling",
   "styles": [],
-  "tags": [],
-  "id": "CAM-151"
+  "tags": [
+   "صور ثابتة",
+   "تحريك الصور",
+   "قطع حاد",
+   "photo montage",
+   "still to motion"
+  ],
+  "id": "CAM-151",
+  "when": "حين تريد أن تبدو الصور الثابتة كأنها فيديو فتدخل كل صورة بالقطع وهي تتحرك بالفعل / when still images should feel like footage, each cut in while already scaling and drifting"
  },
  {
   "family": "camera-composition-layout",
@@ -3180,8 +4297,15 @@
   ],
   "proof_scope": "sibling",
   "styles": [],
-  "tags": [],
-  "id": "CAM-152"
+  "tags": [
+   "لحظة عاطفية",
+   "هزة",
+   "تأكيد الكلمة",
+   "emphasis",
+   "shake hit"
+  ],
+  "id": "CAM-152",
+  "when": "عند كلمة عاطفية قوية تريد أن يقترب المشهد كله ويهتز لربع ثانية ثم يهدأ / on a strong emotional word, when the whole stage should punch in and shake for a quarter second, then settle"
  },
  {
   "family": "camera-composition-layout",
@@ -3199,8 +4323,15 @@
   ],
   "proof_scope": "sibling",
   "styles": [],
-  "tags": [],
-  "id": "CAM-153"
+  "tags": [
+   "كاميرا المشهد",
+   "زووم ناعم",
+   "حركة خفيفة",
+   "2d camera",
+   "camera moves"
+  ],
+  "id": "CAM-153",
+  "when": "حين تعامل المسرح كله ككاميرا واحدة بحركات مسماة وزووم بسرعة ثابتة ولقطات ثابتة تتنفس / when treating the whole stage as one camera with named moves, even-speed pushes and breathing holds"
  },
  {
   "family": "camera-composition-layout",
@@ -3219,8 +4350,15 @@
   ],
   "proof_scope": "repo",
   "styles": [],
-  "tags": [],
-  "id": "CAM-154"
+  "tags": [
+   "استبدال اللقطات",
+   "تقليد المونتاج",
+   "كشف الحركة",
+   "motion match",
+   "shot replacement"
+  ],
+  "id": "CAM-154",
+  "when": "حين تريد نسخ حركة الزووم والبان البطيئة من لقطات مرجعية وتطبيقها على لقطات بديلة / when copying the slow pan/zoom of reference shots onto replacement footage"
  },
  {
   "family": "camera-composition-layout",
@@ -3238,8 +4376,15 @@
   ],
   "proof_scope": "repo",
   "styles": [],
-  "tags": [],
-  "id": "CAM-155"
+  "tags": [
+   "خلفية مموهة",
+   "ملء الإطار",
+   "مقاس الفيديو",
+   "fit to frame",
+   "blurred background"
+  ],
+  "id": "CAM-155",
+  "when": "عند ملاءمة لقطة للإطار بالملء أو الاحتواء أو فوق خلفية مموهة مع حركة كين برنز / for fitting a shot to the frame with cover, contain or contain over a blurred backdrop, plus Ken Burns"
  },
  {
   "family": "camera-composition-layout",
@@ -3258,8 +4403,15 @@
   ],
   "proof_scope": "sibling",
   "styles": [],
-  "tags": [],
-  "id": "CAM-156"
+  "tags": [
+   "تمويه الخلفية",
+   "بلور",
+   "عزل العنصر",
+   "dof",
+   "background blur"
+  ],
+  "id": "CAM-156",
+  "when": "حين تريد تمويه الخلفية في مشهد KOSIF Studio قبل رسم العنصر الأساسي / when blurring the background in a KOSIF Studio scene before drawing the hero"
  },
  {
   "family": "camera-composition-layout",
@@ -3278,8 +4430,15 @@
   ],
   "proof_scope": "sibling",
   "styles": [],
-  "tags": [],
-  "id": "CAM-157"
+  "tags": [
+   "بلور الحركة",
+   "مطر",
+   "رذاذ",
+   "streak blur",
+   "rain"
+  ],
+  "id": "CAM-157",
+  "when": "عند إضافة ضبابية حركة لعناصر مثل المطر أو الرذاذ في مشهد KOSIF Studio / for adding motion blur to elements like rain or spray in a KOSIF Studio scene"
  },
  {
   "family": "camera-composition-layout",
@@ -3299,8 +4458,15 @@
   ],
   "proof_scope": "sibling",
   "styles": [],
-  "tags": [],
-  "id": "CAM-158"
+  "tags": [
+   "ثمنيل",
+   "صورة مصغرة",
+   "غلاف الفيديو",
+   "thumbnail design",
+   "cover image"
+  ],
+  "id": "CAM-158",
+  "when": "حين تصمم صورة مصغرة بعنصر كبير ورسالة من ثلاث كلمات وسهم أو دائرة اختيارية / when designing a thumbnail with a large hero, a three-word message and an optional arrow or circle"
  },
  {
   "family": "camera-composition-layout",
@@ -3318,8 +4484,15 @@
   ],
   "proof_scope": "sibling",
   "styles": [],
-  "tags": [],
-  "id": "CAM-159"
+  "tags": [
+   "تحريك المشهد",
+   "كاميرا افتراضية",
+   "زووم وبان",
+   "virtual camera",
+   "pan"
+  ],
+  "id": "CAM-159",
+  "when": "حين تريد تحريك المسرح كله ككتلة واحدة بالإزاحة والتكبير والدوران كأنه كاميرا / when the whole stage should move as one object (x, y, scale, rotation) like a camera"
  },
  {
   "family": "camera-composition-layout",
@@ -3338,8 +4511,15 @@
   ],
   "proof_scope": "sibling",
   "styles": [],
-  "tags": [],
-  "id": "CAM-160"
+  "tags": [
+   "زووم ناعم",
+   "تقريب",
+   "سرعة ثابتة",
+   "zoom in",
+   "smooth push"
+  ],
+  "id": "CAM-160",
+  "when": "حين تريد اقترابًا بالكاميرا تبدو سرعته ثابتة للعين من البداية للنهاية / when a camera push should grow at a constant perceived rate"
  },
  {
   "family": "camera-composition-layout",
@@ -3357,8 +4537,15 @@
   ],
   "proof_scope": "sibling",
   "styles": [],
-  "tags": [],
-  "id": "CAM-161"
+  "tags": [
+   "رجة الكاميرا",
+   "هزة",
+   "صدمة",
+   "impact shake",
+   "jitter"
+  ],
+  "id": "CAM-161",
+  "when": "عند ضربة أو صدمة تحتاج اهتزازًا للكاميرا يخمد تدريجيًا مع دوران خفيف / for hits that need a decaying camera jitter with a little rotation"
  },
  {
   "family": "camera-composition-layout",
@@ -3376,8 +4563,15 @@
   ],
   "proof_scope": "sibling",
   "styles": [],
-  "tags": [],
-  "id": "CAM-162"
+  "tags": [
+   "نقاط الكاميرا",
+   "سكون",
+   "انتقال ناعم",
+   "camera keys",
+   "ease in out"
+  ],
+  "id": "CAM-162",
+  "when": "حين تتحرك الكاميرا بين أوضاع محددة بانسيابية وتسكن بين الأحداث / when the camera should ease between set positions and stay still between events"
  },
  {
   "family": "camera-composition-layout",
@@ -3395,8 +4589,15 @@
   ],
   "proof_scope": "sibling",
   "styles": [],
-  "tags": [],
-  "id": "CAM-163"
+  "tags": [
+   "مسار متصل",
+   "حركة سلسة",
+   "طيران الكاميرا",
+   "spline path",
+   "flythrough"
+  ],
+  "id": "CAM-163",
+  "when": "عند حركة كاميرا متصلة عبر عدة مفاتيح لا تتوقف فجأة أبدًا / for one continuous camera move through keys that never stops dead"
  },
  {
   "family": "camera-composition-layout",
@@ -3417,8 +4618,15 @@
   ],
   "proof_scope": "sibling",
   "styles": [],
-  "tags": [],
-  "id": "CAM-164"
+  "tags": [
+   "أحجام اللقطات",
+   "لغة المخرج",
+   "زوايا التصوير",
+   "shot size",
+   "director"
+  ],
+  "id": "CAM-164",
+  "when": "حين تريد كاميرا ثلاثية الأبعاد ثابتة النتيجة من كلمات المخرج مثل لقطة قريبة أو واسعة أو من أسفل / for deterministic 3D cameras from director shot words like close-up, wide or low angle"
  },
  {
   "family": "camera-composition-layout",
@@ -3436,8 +4644,15 @@
   ],
   "proof_scope": "sibling",
   "styles": [],
-  "tags": [],
-  "id": "CAM-165"
+  "tags": [
+   "كاميرا محمولة",
+   "تمايل",
+   "هاند هيلد",
+   "handheld",
+   "camera sway"
+  ],
+  "id": "CAM-165",
+  "when": "حين تريد إحساس كاميرا محمولة باليد بتمايل ناعم لا ارتعاش عشوائي / when you want a handheld camera feel with smooth sway rather than random jitter"
  },
  {
   "family": "camera-composition-layout",
@@ -3455,8 +4670,15 @@
   ],
   "proof_scope": "sibling",
   "styles": [],
-  "tags": [],
-  "id": "CAM-166"
+  "tags": [
+   "وصف نصي",
+   "نص إلى كاميرا",
+   "لغة اللقطات",
+   "text to camera",
+   "prompt"
+  ],
+  "id": "CAM-166",
+  "when": "حين يصف المستخدم اللقطة بالكلام مثل لقطة تتبع من زاوية منخفضة وتريد تحويلها لكاميرا / when the user describes a shot in words, e.g. 'low angle tracking shot', and it must become a camera"
  },
  {
   "family": "camera-composition-layout",
@@ -3474,8 +4696,15 @@
   ],
   "proof_scope": "sibling",
   "styles": [],
-  "tags": [],
-  "id": "CAM-167"
+  "tags": [
+   "خلفية متدرجة",
+   "تدرج دائري",
+   "خلفية",
+   "backdrop",
+   "radial gradient"
+  ],
+  "id": "CAM-167",
+  "when": "حين يحتاج المشهد خلفية استوديو بتدرج دائري / when a scene needs a radial-gradient studio backdrop as its background"
  },
  {
   "family": "camera-composition-layout",
@@ -3493,8 +4722,15 @@
   ],
   "proof_scope": "sibling",
   "styles": [],
-  "tags": [],
-  "id": "CAM-168"
+  "tags": [
+   "عرض منتج",
+   "إضاءة استوديو",
+   "خلفية فاتحة",
+   "product shot",
+   "three point lighting"
+  ],
+  "id": "CAM-168",
+  "when": "عند عرض منتج في استوديو كريمي بظل أرضي وشبكة خفيفة وإضاءة رئيسية ومساعدة وخلفية / for showing a product in a cream studio set with a contact shadow, faint grid and key/fill/rim lights"
  },
  {
   "family": "camera-composition-layout",
@@ -3516,8 +4752,15 @@
   ],
   "proof_scope": "sibling",
   "styles": [],
-  "tags": [],
-  "id": "CAM-169"
+  "tags": [
+   "بلور الحركة",
+   "آثار الضوء",
+   "تعريض طويل",
+   "light trails",
+   "star trails"
+  ],
+  "id": "CAM-169",
+  "when": "حين تريد ضبابية حركة واقعية كغالق الكاميرا أو آثار ضوء ونجوم بالتعريض الطويل / for realistic shutter motion blur, or long-exposure light trails and star trails"
  },
  {
   "family": "camera-composition-layout",
@@ -3536,8 +4779,15 @@
   ],
   "proof_scope": "sibling",
   "styles": [],
-  "tags": [],
-  "id": "CAM-170"
+  "tags": [
+   "تمويه الخلفية",
+   "بلور",
+   "عمق الصورة",
+   "background blur",
+   "dof"
+  ],
+  "id": "CAM-170",
+  "when": "حين تريد تمويه كل ما رسم في الخلفية قبل إضافة العنصر الأساسي / when everything painted so far should go out of focus before the subject is drawn"
  },
  {
   "family": "camera-composition-layout",
@@ -3558,8 +4808,15 @@
   ],
   "proof_scope": "sibling",
   "styles": [],
-  "tags": [],
-  "id": "CAM-171"
+  "tags": [
+   "تمويه اتجاهي",
+   "مطر",
+   "بلور حركة",
+   "streak blur",
+   "rain effect"
+  ],
+  "id": "CAM-171",
+  "when": "حين تحتاج خطوطا مائلة داخل شكل لتمثيل مطر أو رذاذ أو رفرفة أجنحة / when a shape needs streaks along an angle, like rain, spray or wing beats"
  },
  {
   "family": "camera-composition-layout",
@@ -3577,8 +4834,15 @@
   ],
   "proof_scope": "sibling",
   "styles": [],
-  "tags": [],
-  "id": "CAM-172"
+  "tags": [
+   "زيغ لوني",
+   "تأثير عدسة",
+   "فصل الألوان",
+   "rgb split",
+   "lens fringe"
+  ],
+  "id": "CAM-172",
+  "when": "حين تريد مظهر عدسة حقيقية تنفصل فيه القنوات الحمراء والزرقاء عند أطراف الكادر / for a real-lens look where red and blue channels split toward the frame edges"
  },
  {
   "family": "camera-composition-layout",
@@ -3598,8 +4862,15 @@
   ],
   "proof_scope": "sibling",
   "styles": [],
-  "tags": [],
-  "id": "CAM-173"
+  "tags": [
+   "زووم رقمي",
+   "فيديو متكلم",
+   "هزة كاميرا",
+   "punch in",
+   "talking head"
+  ],
+  "id": "CAM-173",
+  "when": "حين يكون عندك مقطع متكلم ثابت وتريد دفعات وانجرافا وزووم سريعا على الكلمات المهمة / when a static talking clip needs eased pushes, drifts and sharp punches on stressed words"
  },
  {
   "family": "camera-composition-layout",
@@ -3620,8 +4891,15 @@
   ],
   "proof_scope": "sibling",
   "styles": [],
-  "tags": [],
-  "id": "CAM-174"
+  "tags": [
+   "زووم تلقائي",
+   "كشف الشخص",
+   "تقريب على المتحدث",
+   "auto zoom",
+   "subject detection"
+  ],
+  "id": "CAM-174",
+  "when": "حين تريد أن تقترب الكاميرا تلقائيا من الشخص في كل لقطة دون تحديد مكانه يدويا / when the camera should push in on the subject of each shot automatically, found by skin or motion"
  },
  {
   "family": "camera-composition-layout",
@@ -3639,8 +4917,15 @@
   ],
   "proof_scope": "sibling",
   "styles": [],
-  "tags": [],
-  "id": "CAM-175"
+  "tags": [
+   "تجنب الوجه",
+   "مكان النص",
+   "نص فوق صورة",
+   "text placement",
+   "face safe"
+  ],
+  "id": "CAM-175",
+  "when": "حين تضع سطور نص فوق صور فيها أشخاص وتريد ألا يغطي النص الوجه / when verse lines over photos must move to the upper or lower third to keep off the face"
  },
  {
   "family": "camera-composition-layout",
@@ -3661,8 +4946,15 @@
   ],
   "proof_scope": "sibling",
   "styles": [],
-  "tags": [],
-  "id": "CAM-176"
+  "tags": [
+   "أشرطة سوداء",
+   "مظهر سينمائي",
+   "سينماتك",
+   "black bars",
+   "widescreen"
+  ],
+  "id": "CAM-176",
+  "when": "حين تريد شرائط سوداء سينمائية تنفتح بعد العنوان وتنغلق في نهاية الفيديو / for cinematic black bars that open from the title and close on the end"
  },
  {
   "family": "camera-composition-layout",
@@ -3680,8 +4972,15 @@
   ],
   "proof_scope": "sibling",
   "styles": [],
-  "tags": [],
-  "id": "CAM-177"
+  "tags": [
+   "دوران الكاميرا",
+   "لف حول الموضوع",
+   "وثائقي",
+   "orbit shot",
+   "camera holds"
+  ],
+  "id": "CAM-177",
+  "when": "حين تريد كاميرا تلف حول الموضوع وتتوقف عند أجزاء كالرأس والعين بأسلوب وثائقي معملي / for a lab documentary move that circles the subject and holds on parts like head or eye"
  },
  {
   "family": "camera-composition-layout",
@@ -3704,8 +5003,15 @@
   "styles": [
    "higgsfield-journey"
   ],
-  "tags": [],
-  "id": "CAM-178"
+  "tags": [
+   "لقطة متصلة",
+   "بلا قطع",
+   "طيران الكاميرا",
+   "fly-through",
+   "one take"
+  ],
+  "id": "CAM-178",
+  "when": "حين يطلب المستخدم رحلة كاميرا متصلة تعبر المشاهد بلا قطع وتنتقل بالحركة نفسها / when the user wants one continuous fly-through camera journey across scenes with no cuts"
  },
  {
   "family": "camera-composition-layout",
@@ -3723,8 +5029,15 @@
   ],
   "proof_scope": "repo",
   "styles": [],
-  "tags": [],
-  "id": "CAM-179"
+  "tags": [
+   "انجراف بطيء",
+   "حركة ناعمة",
+   "كاميرا خفيفة",
+   "slow drift",
+   "subtle camera"
+  ],
+  "id": "CAM-179",
+  "when": "حين تريد حركة كاميرا خفيفة مستمرة طوال الفيلم في Remotion بتكبير وانزياح ودوران بسيط / for a subtle whole-film camera drift in Remotion with gentle scale, pan and rotation"
  },
  {
   "family": "camera-composition-layout",
@@ -3744,8 +5057,15 @@
   ],
   "proof_scope": "repo",
   "styles": [],
-  "tags": [],
-  "id": "CAM-180"
+  "tags": [
+   "مسار منحني",
+   "كاميرا ثلاثية الأبعاد",
+   "حركة سلسة",
+   "camera spline",
+   "3d camera"
+  ],
+  "id": "CAM-180",
+  "when": "حين تحتاج مسار كاميرا منحنيا وسلسا في مشهد ثلاثي الأبعاد بلا بدايات أو توقفات خطية / for a smooth curved camera path on a CatmullRom spline with eased, never linear, starts and stops"
  },
  {
   "family": "camera-composition-layout",
@@ -3766,8 +5086,15 @@
   ],
   "proof_scope": "sibling",
   "styles": [],
-  "tags": [],
-  "id": "CAM-181"
+  "tags": [
+   "تحليق فوق الخريطة",
+   "لقطة جوية",
+   "مسار طيران",
+   "flyover",
+   "cesium"
+  ],
+  "id": "CAM-181",
+  "when": "حين تبني لقطة تحليق فوق تضاريس وتريد مسارا ناعما وسرعة ثابتة وميلا طبيعيا في المنعطفات / for a terrain flyover that needs a rounded route, constant ground speed and banking into turns"
  },
  {
   "family": "camera-composition-layout",
@@ -3788,8 +5115,15 @@
   ],
   "proof_scope": "sibling",
   "styles": [],
-  "tags": [],
-  "id": "CAM-182"
+  "tags": [
+   "مساحة للنص",
+   "قاعدة الأثلاث",
+   "برومبت صورة",
+   "negative space",
+   "banner"
+  ],
+  "id": "CAM-182",
+  "when": "حين تكتب برومبت صورة وتحتاج مساحة فارغة نظيفة لاحقا للنص المتحرك أو الشعار / when prompting an image generator so the frame leaves clean empty space for later text or a logo"
  },
  {
   "family": "camera-composition-layout",
@@ -3811,8 +5145,15 @@
   ],
   "proof_scope": "sibling",
   "styles": [],
-  "tags": [],
-  "id": "CAM-183"
+  "tags": [
+   "برومبت فيديو",
+   "مصطلحات التصوير",
+   "توليد فيديو",
+   "kling",
+   "camera prompt"
+  ],
+  "id": "CAM-183",
+  "when": "حين تكتب برومبت لنموذج فيديو وتختار حركة كاميرا واحدة واضحة مثل بان أو دولي أو أوربت / when writing a video-model prompt and picking one plain camera move: pan, tilt, dolly or orbit"
  },
  {
   "family": "camera-composition-layout",
@@ -3832,8 +5173,15 @@
   ],
   "proof_scope": "sibling",
   "styles": [],
-  "tags": [],
-  "id": "CAM-184"
+  "tags": [
+   "تحكم بالكاميرا",
+   "زووم",
+   "تحريك صورة",
+   "image to video",
+   "camera control"
+  ],
+  "id": "CAM-184",
+  "when": "حين تولد فيديو في Kling وتريد حركة كاميرا رقمية على محور واحد مثل بان أو زووم أو إمالة / when generating in Kling and you need a numeric single-axis camera move: pan, zoom or tilt"
  },
  {
   "family": "camera-composition-layout",
@@ -3853,8 +5201,15 @@
   ],
   "proof_scope": "sibling",
   "styles": [],
-  "tags": [],
-  "id": "CAM-185"
+  "tags": [
+   "إعلان يو جي سي",
+   "حجم اللقطة",
+   "إعلان مولد",
+   "ugc ad",
+   "shot framing"
+  ],
+  "id": "CAM-185",
+  "when": "حين تولد إعلانا من عدة مقاطع وتريد تحديد لقطة بداية كل مقطع بدل أوامر حركة الكاميرا / for multi-segment generated ads where each segment's opening framing, not a lens move, defines the cut"
  },
  {
   "family": "camera-composition-layout",
@@ -3877,8 +5232,15 @@
   ],
   "proof_scope": "sibling",
   "styles": [],
-  "tags": [],
-  "id": "CAM-186"
+  "tags": [
+   "إعادة تأطير",
+   "تتبع الشخص",
+   "قص ذكي",
+   "reframe",
+   "auto crop"
+  ],
+  "id": "CAM-186",
+  "when": "حين يقص الكادر الفيديو لملء الإطار وتريد أن يتبع الشخص جانبيا في كل لقطة دون اهتزاز / when a cover crop must follow the subject sideways per shot without jitter"
  },
  {
   "family": "camera-composition-layout",
@@ -3899,8 +5261,15 @@
   ],
   "proof_scope": "sibling",
   "styles": [],
-  "tags": [],
-  "id": "CAM-187"
+  "tags": [
+   "منتج فاخر",
+   "إعلان منتج",
+   "دوران حول المنتج",
+   "product shot",
+   "half orbit"
+  ],
+  "id": "CAM-187",
+  "when": "حين تكتب برومبت مقطع لمنتج فاخر وتحتاج حركة كاميرا مناسبة كنصف دوران بطيء حوله / for a luxury product leg prompt that needs a slow half-orbit around the hero object"
  },
  {
   "family": "camera-composition-layout",
@@ -3921,8 +5290,15 @@
   ],
   "proof_scope": "sibling",
   "styles": [],
-  "tags": [],
-  "id": "CAM-188"
+  "tags": [
+   "عقارات",
+   "جولة منزل",
+   "تصوير عقاري",
+   "property tour",
+   "steadicam"
+  ],
+  "id": "CAM-188",
+  "when": "حين تصنع فيديو عقاريا وتحتاج كاميرا تنساب عبر الأبواب وترتفع في الردهات / for a real-estate leg prompt: steadicam glide through doorways and crane-up in atria"
  },
  {
   "family": "camera-composition-layout",
@@ -3943,8 +5319,15 @@
   ],
   "proof_scope": "sibling",
   "styles": [],
-  "tags": [],
-  "id": "CAM-189"
+  "tags": [
+   "مشهد صناعي",
+   "تتبع جانبي",
+   "بارالاكس",
+   "lateral track",
+   "parallax"
+  ],
+  "id": "CAM-189",
+  "when": "حين تصنع مشهدا بطابع صناعي وتحتاج تتبعا جانبيا منخفضا مع بارالاكس في المقدمة / for an industrial leg prompt: a low lateral track with foreground parallax"
  },
  {
   "family": "camera-composition-layout",
@@ -3965,8 +5348,15 @@
   ],
   "proof_scope": "sibling",
   "styles": [],
-  "tags": [],
-  "id": "CAM-190"
+  "tags": [
+   "سفر وسياحة",
+   "لقطة درون",
+   "كشف المكان",
+   "drone shot",
+   "reveal"
+  ],
+  "id": "CAM-190",
+  "when": "حين تصنع فيديو سفر وتريد لقطة درون ترتفع لتكشف المكان ثم تنقض نازلة / for a travel leg prompt: a drone rise-and-reveal followed by a descending swoop"
  },
  {
   "family": "camera-composition-layout",
@@ -3987,8 +5377,15 @@
   ],
   "proof_scope": "sibling",
   "styles": [],
-  "tags": [],
-  "id": "CAM-191"
+  "tags": [
+   "طبخ",
+   "أكل",
+   "حرف يدوية",
+   "food video",
+   "push in"
+  ],
+  "id": "CAM-191",
+  "when": "حين تصنع مقطع طبخ أو حرفة يدوية وتريد دفع الكاميرا نحو لحظة العمل ثم التراجع بهدوء / for a food or craft leg prompt: push in on the craft moment, then ease back"
  },
  {
   "family": "camera-composition-layout",
@@ -4009,8 +5406,15 @@
   ],
   "proof_scope": "sibling",
   "styles": [],
-  "tags": [],
-  "id": "CAM-192"
+  "tags": [
+   "عالم مصغر",
+   "مجسمات صغيرة",
+   "غوص الكاميرا",
+   "tiny world",
+   "aerial hop"
+  ],
+  "id": "CAM-192",
+  "when": "حين تصنع عالما مصغرا وتريد كاميرا تغوص فيه وتقفز جويا بين أجزائه / for a miniature-world leg prompt with dives and aerial hops"
  },
  {
   "family": "camera-composition-layout",
@@ -4031,8 +5435,15 @@
   ],
   "proof_scope": "sibling",
   "styles": [],
-  "tags": [],
-  "id": "CAM-193"
+  "tags": [
+   "زاوية ثابتة",
+   "منظور إيزومتري",
+   "حركة هادئة",
+   "isometric",
+   "fixed angle"
+  ],
+  "id": "CAM-193",
+  "when": "حين تريد زاوية إيزومترية علوية ثابتة بحركة مستقيمة هادئة وإعادة توليد أقل / when you want a fixed high isometric view with straight level travel and the calmest, cheapest rerolls"
  },
  {
   "family": "camera-composition-layout",
@@ -4052,8 +5463,15 @@
   ],
   "proof_scope": "sibling",
   "styles": [],
-  "tags": [],
-  "id": "CAM-194"
+  "tags": [
+   "لقطة متصلة",
+   "ديوراما",
+   "هيكل الفيديو",
+   "one take",
+   "diorama"
+  ],
+  "id": "CAM-194",
+  "when": "حين تختار بين رحلة طيران أمامية واحدة لعالم متصل أو غوص في كل ديوراما مع وصلات جوية / when choosing between one forward flight or diving into each diorama with aerial connectors"
  },
  {
   "family": "camera-composition-layout",
@@ -4080,8 +5498,15 @@
    "pm-tequilafunks-97f6c9",
    "pm-umangratani-57f86a"
   ],
-  "tags": [],
-  "id": "CAM-195"
+  "tags": [
+   "واجهة تقنية",
+   "تايم كود",
+   "شوريل",
+   "reel overlay",
+   "timecode"
+  ],
+  "id": "CAM-195",
+  "when": "حين تريد طبقة HUD فوق كل مشاهد الريل بزوايا وتايمكود ونقطة تسجيل وأشرطة تقدم / for a showreel overlay with corner brackets, running timecode, REC dot and progress bars"
  },
  {
   "family": "camera-composition-layout",
@@ -4107,8 +5532,15 @@
    "pm-sudo-kiran-49176d",
    "pm-topi-003-9ca6b5"
   ],
-  "tags": [],
-  "id": "CAM-196"
+  "tags": [
+   "عداد الإطارات",
+   "تايم كود",
+   "زوايا الإطار",
+   "frame counter",
+   "timecode overlay"
+  ],
+  "id": "CAM-196",
+  "when": "حين تحتاج إطارا بسيطا بزوايا وتايمكود وعداد إطارات فوق الفيديو / for a simple overlay of corner brackets, mono timecode and a frame counter"
  },
  {
   "family": "camera-composition-layout",
@@ -4132,8 +5564,15 @@
    "pm-kyonax-on-tech-aabc1d",
    "pm-sudeepsd-1a3485"
   ],
-  "tags": [],
-  "id": "CAM-197"
+  "tags": [
+   "إيقاع",
+   "فصول الفيديو",
+   "تايم كود",
+   "beat counter",
+   "chapter label"
+  ],
+  "id": "CAM-197",
+  "when": "حين تريد إطار HUD ثابتا للشوريل يعرض الفصل والتايمكود ومربعات تمتلئ مع كل نبضة إيقاع / for a persistent reel HUD showing chapter, live timecode and beat squares that fill per beat"
  },
  {
   "family": "camera-composition-layout",
@@ -4157,8 +5596,15 @@
    "pm-misbahsy-80eaec",
    "pm-stephanlivera-df17a2"
   ],
-  "tags": [],
-  "id": "CAM-198"
+  "tags": [
+   "خط تقدم",
+   "إطار خفيف",
+   "تايم كود",
+   "progress line",
+   "corner ticks"
+  ],
+  "id": "CAM-198",
+  "when": "حين تريد إطارا خفيفا بعلامات زوايا وتايمكود وخط تقدم سفلي رفيع / for light HUD chrome: corner tick marks, timecode and a thin bottom progress line"
  },
  {
   "family": "camera-composition-layout",
@@ -4180,8 +5626,15 @@
    "pm-arjunsh1607-93005d",
    "pm-sahildesigner23-ee3155"
   ],
-  "tags": [],
-  "id": "CAM-199"
+  "tags": [
+   "محدد المنظر",
+   "شكل الكاميرا",
+   "تايم كود",
+   "camera ui",
+   "corner labels"
+  ],
+  "id": "CAM-199",
+  "when": "حين تريد شكل شاشة الكاميرا بزوايا وتسميات في الأركان الأربعة وتايمكود محسوب من رقم الإطار / for a viewfinder look with corner brackets, mono labels in all four corners and frame-based timecode"
  },
  {
   "family": "camera-composition-layout",
@@ -4203,8 +5656,15 @@
    "pm-crazyalphaaa-bc7e75",
    "pm-zaqailo-212ad3"
   ],
-  "tags": [],
-  "id": "CAM-200"
+  "tags": [
+   "شوريل",
+   "شريط تقدم",
+   "اسم الفصل",
+   "reel overlay",
+   "progress bar"
+  ],
+  "id": "CAM-200",
+  "when": "حين تريد إطارا ثابتا على كل مشاهد الشوريل باسم الفصل والتايمكود وشريط التقدم / for a showreel frame that stays over all scenes with chapter label, timecode and progress bar"
  },
  {
   "family": "camera-composition-layout",
@@ -4224,8 +5684,15 @@
   "styles": [
    "chalkboard"
   ],
-  "tags": [],
-  "id": "CAM-201"
+  "tags": [
+   "فيديو تعليمي",
+   "شرح درس",
+   "سبورة",
+   "explainer",
+   "zoom tour"
+  ],
+  "id": "CAM-201",
+  "when": "حين تشرح درسا على لوحة وتريد الكاميرا تقترب من كل عنصر عند رسمه ثم تبتعد لتكشف اللوحة كاملة / for a lesson board where the camera zooms to each element as it is drawn, then pulls out to reveal all"
  },
  {
   "family": "camera-composition-layout",
@@ -4245,8 +5712,15 @@
   "styles": [
    "doodle"
   ],
-  "tags": [],
-  "id": "CAM-202"
+  "tags": [
+   "لقطة واحدة",
+   "عالم متصل",
+   "وقفات الكلام",
+   "one take",
+   "continuous world"
+  ],
+  "id": "CAM-202",
+  "when": "حين تريد عالما طويلا واحدا تتنقل الكاميرا بين مناطقه في لقطة واحدة ولا تتحرك إلا في وقفات الكلام / for one long world strip where the camera moves between zones in one take, only in sentence pauses"
  },
  {
   "family": "camera-composition-layout",
@@ -4266,8 +5740,15 @@
   "styles": [
    "fake3d"
   ],
-  "tags": [],
-  "id": "CAM-203"
+  "tags": [
+   "منظور مائل",
+   "إسقاط ثلاثي الأبعاد",
+   "باب يفتح",
+   "3d projection",
+   "oblique view"
+  ],
+  "id": "CAM-203",
+  "when": "حين ترسم غرفة بزاوية مائلة من مضلعات مسقطة وتحتاج بابا يفتح ومفتاحا داخل القفل / for an oblique room drawn from projected 3D polygons with a swinging door and a key in the lock"
  },
  {
   "family": "camera-composition-layout",
@@ -4287,8 +5768,15 @@
   "styles": [
    "isometric"
   ],
-  "tags": [],
-  "id": "CAM-204"
+  "tags": [
+   "كاميرا تتبع",
+   "تتبع مركبة",
+   "إطارات مفتاحية",
+   "follow cam",
+   "keyframes"
+  ],
+  "id": "CAM-204",
+  "when": "حين تحرك الكاميرا بمفاتيح في إحداثيات العالم وتريدها أن تتبع مركبة متحركة بين المناطق بسلاسة / for world-space camera keyframes that blend into following a moving van between zones"
  },
  {
   "family": "camera-composition-layout",
@@ -4308,8 +5796,15 @@
   "styles": [
    "map-journey"
   ],
-  "tags": [],
-  "id": "CAM-205"
+  "tags": [
+   "تتبع المسار",
+   "زووم ديناميكي",
+   "خط الرحلة",
+   "route animation",
+   "follow zoom"
+  ],
+  "id": "CAM-205",
+  "when": "حين تتبع الكاميرا رأس مسار متحرك فتتسع في منتصف كل مرحلة وتقترب عند الوصول / for a route-following camera that widens mid-leg and tightens on arrival"
  },
  {
   "family": "camera-composition-layout",
@@ -4329,8 +5824,15 @@
   "styles": [
    "pm-0xfemyn-e114d3"
   ],
-  "tags": [],
-  "id": "CAM-206"
+  "tags": [
+   "فوضى",
+   "شارات",
+   "زحمة",
+   "floating badges",
+   "chaos"
+  ],
+  "id": "CAM-206",
+  "when": "حين تريد مشهد فوضى بشارات صغيرة طافية تتكاثر وتزداد كثافتها مع ارتفاع العداد / for a chaotic field of floating status-dot badges whose density grows as a counter climbs"
  },
  {
   "family": "camera-composition-layout",
@@ -4350,8 +5852,15 @@
   "styles": [
    "pm-1stnoel-c20a89"
   ],
-  "tags": [],
-  "id": "CAM-207"
+  "tags": [
+   "خطوات",
+   "تبويبات",
+   "شرح خطوة بخطوة",
+   "steps bar",
+   "tabs"
+  ],
+  "id": "CAM-207",
+  "when": "حين يشرح الفيديو خطوات مرقمة وتريد شريط تبويبات يبرز الخطوة الحالية بلون معكوس / for a numbered step tab bar whose active tab inverts as each section changes"
  },
  {
   "family": "camera-composition-layout",
@@ -4371,8 +5880,15 @@
   "styles": [
    "pm-3xtihor-0f6911"
   ],
-  "tags": [],
-  "id": "CAM-208"
+  "tags": [
+   "زوايا",
+   "تايم كود",
+   "إطار بسيط",
+   "corner brackets",
+   "minimal hud"
+  ],
+  "id": "CAM-208",
+  "when": "حين تكفيك زوايا إطار بسيطة مع تايمكود صغير بخط أحادي المسافة فوق الفيديو / for a minimal overlay: corner brackets with a tiny mono timecode"
  },
  {
   "family": "camera-composition-layout",
@@ -4392,8 +5908,15 @@
   "styles": [
    "pm-abderrahmen-g-9e8ed0"
   ],
-  "tags": [],
-  "id": "CAM-209"
+  "tags": [
+   "خاتمة",
+   "نهاية الفيديو",
+   "ملصقات الشخصيات",
+   "outro",
+   "end card"
+  ],
+  "id": "CAM-209",
+  "when": "حين تريد خاتمة مبهجة بأشعة باستيل دوارة وحلقة شخصيات حول عنوان مكتوب بخط اليد / for a cheerful finale: rotating pastel rays with all character stickers ringed around a handwritten title"
  },
  {
   "family": "camera-composition-layout",
@@ -4413,8 +5936,15 @@
   "styles": [
    "pm-agonaliu-466a8f"
   ],
-  "tags": [],
-  "id": "CAM-210"
+  "tags": [
+   "ترقيم الأقسام",
+   "شوريل",
+   "دقة الفيديو",
+   "section counter",
+   "reel frame"
+  ],
+  "id": "CAM-210",
+  "when": "حين تريد إطار شوريل يرقم الأقسام ويعرض اسم المشروع والتايمكود ودقة الفيديو وخط التقدم / for a reel frame with numbered sections, project label, timecode, resolution tag and progress line"
  },
  {
   "family": "camera-composition-layout",
@@ -4434,8 +5964,15 @@
   "styles": [
    "pm-ai-baymax-0ef9dd"
   ],
-  "tags": [],
-  "id": "CAM-211"
+  "tags": [
+   "عرض ميزة",
+   "تقسيم الشاشة",
+   "نافذة متصفح",
+   "feature layout",
+   "browser window"
+  ],
+  "id": "CAM-211",
+  "when": "حين تعرض ميزة بعنوان ونص ووسوم على اليسار ونافذة متصفح كبيرة بظل ناعم على اليمين / for a feature beat with text and tag chips on the left and a large shadowed browser window on the right"
  },
  {
   "family": "camera-composition-layout",
@@ -4455,8 +5992,15 @@
   "styles": [
    "pm-ai-baymax-0ef9dd"
   ],
-  "tags": [],
-  "id": "CAM-212"
+  "tags": [
+   "لقطة شاشة",
+   "تقريب بطيء",
+   "زووم",
+   "screenshot zoom",
+   "ui walkthrough"
+  ],
+  "id": "CAM-212",
+  "when": "حين تشرح لقطة شاشة وتريد تقريبا بطيئا وتحريكا نحو الجزء الذي تتحدث عنه / when explaining a screenshot and slowly zooming and panning to the region being explained"
  },
  {
   "family": "camera-composition-layout",
@@ -4476,8 +6020,15 @@
   "styles": [
    "pm-aistocksavvy-3fb9f5"
   ],
-  "tags": [],
-  "id": "CAM-213"
+  "tags": [
+   "شريط سفلي",
+   "أقسام الفيديو",
+   "فصول",
+   "chapter nav",
+   "section bar"
+  ],
+  "id": "CAM-213",
+  "when": "حين تريد شريطا سفليا بأسماء الأقسام يبرز القسم الحالي مع كل فصل / for a bottom bar of section names that highlights the current chapter"
  },
  {
   "family": "camera-composition-layout",
@@ -4497,8 +6048,15 @@
   "styles": [
    "pm-ajith-io-4c248f"
   ],
-  "tags": [],
-  "id": "CAM-214"
+  "tags": [
+   "بطاقات متوهجة",
+   "تحليق",
+   "صور مصغرة",
+   "thumbnail wall",
+   "dolly"
+  ],
+  "id": "CAM-214",
+  "when": "حين تريد تحليقا فوق مئات البطاقات المصغرة المتوهجة مع عبارة جريئة في المنتصف / for a fly-over across hundreds of glowing thumbnail cards with a bold statement in the centre"
  },
  {
   "family": "camera-composition-layout",
@@ -4518,8 +6076,15 @@
   "styles": [
    "pm-ajith-io-b5626e"
   ],
-  "tags": [],
-  "id": "CAM-215"
+  "tags": [
+   "إيقاع الموسيقى",
+   "عداد الإيقاع",
+   "تايم كود",
+   "bpm counter",
+   "music hud"
+  ],
+  "id": "CAM-215",
+  "when": "حين تريد طبقة فيلمية بعلامات قص في الأركان وعداد BPM والمازورة والتايمكود / for a film overlay with corner crop marks, a BPM and bar counter, and timecode"
  },
  {
   "family": "camera-composition-layout",
@@ -4539,8 +6104,15 @@
   "styles": [
    "pm-ajith-io-c52e09"
   ],
-  "tags": [],
-  "id": "CAM-216"
+  "tags": [
+   "تقسيم الشاشة",
+   "نص وصورة",
+   "تنسيق المشهد",
+   "split layout",
+   "two column"
+  ],
+  "id": "CAM-216",
+  "when": "حين تريد تخطيطا بسيطا بعنوان على اليسار وبطاقة واجهة بظل على اليمين / for a simple layout: headline on the left 40% and a shadowed UI card on the right"
  },
  {
   "family": "camera-composition-layout",
@@ -4560,8 +6132,15 @@
   "styles": [
    "pm-anas0ra-e57aea"
   ],
-  "tags": [],
-  "id": "CAM-217"
+  "tags": [
+   "اقتراب الكاميرا",
+   "لقطة قريبة",
+   "ماسكوت",
+   "dolly in",
+   "close-up"
+  ],
+  "id": "CAM-217",
+  "when": "حين تريد أن تقترب الكاميرا من لقطة واسعة إلى لقطة قريبة على الشخصية مع عمق ميدان / for a dolly from a wide shot to a mascot close-up with depth of field"
  },
  {
   "family": "camera-composition-layout",
@@ -4581,8 +6160,15 @@
   "styles": [
    "pm-andginja-333d32"
   ],
-  "tags": [],
-  "id": "CAM-218"
+  "tags": [
+   "إحداثيات",
+   "طابع جغرافي",
+   "زوايا الإطار",
+   "coordinates overlay",
+   "geo labels"
+  ],
+  "id": "CAM-218",
+  "when": "حين تريد إطارا بزوايا وإحداثيات وأسماء أقسام فوق المشهد بطابع جغرافي / for a geo-style overlay of corner brackets, coordinates and section labels"
  },
  {
   "family": "camera-composition-layout",
@@ -4602,8 +6188,15 @@
   "styles": [
    "pm-anilraok-eff262"
   ],
-  "tags": [],
-  "id": "CAM-219"
+  "tags": [
+   "لقطة علوية",
+   "شعار الختام",
+   "كرين",
+   "outro",
+   "overhead shot"
+  ],
+  "id": "CAM-219",
+  "when": "حين تختم الفيديو برفع الكاميرا إلى لقطة علوية ثم تظهر عبارة الختام والشعار تدريجيا / for an ending that cranes the camera to overhead, then fades in a tagline and logo"
  },
  {
   "family": "camera-composition-layout",
@@ -4623,8 +6216,15 @@
   "styles": [
    "pm-anthonyriera-9b1b2a"
   ],
-  "tags": [],
-  "id": "CAM-220"
+  "tags": [
+   "مساحة فارغة",
+   "تصميم بسيط",
+   "كلمة مميزة",
+   "minimal title",
+   "black background"
+  ],
+  "id": "CAM-220",
+  "when": "حين تريد عنوانا قصيرا في وسط شاشة سوداء بكلمة أو أيقونة مميزة بلون العلامة / for a short centred headline on black with one accent word or icon in brand colour"
  },
  {
   "family": "camera-composition-layout",
@@ -4644,8 +6244,15 @@
   "styles": [
    "pm-antonio-kodheli-490109"
   ],
-  "tags": [],
-  "id": "CAM-221"
+  "tags": [
+   "زووم سلس",
+   "تنقل داخل الواجهة",
+   "تكبير لوغاريتمي",
+   "ui zoom",
+   "camera pan"
+  ],
+  "id": "CAM-221",
+  "when": "حين تبني الواجهة كاملة مرة واحدة وتتنقل فيها بكاميرا تكبر وتتحرك بسلاسة دون حركتين معا / when the whole UI is laid out once and a camera moves and zooms across it with uniform log-scale zooms"
  },
  {
   "family": "camera-composition-layout",
@@ -4665,8 +6272,15 @@
   "styles": [
    "pm-aschapmann-131210"
   ],
-  "tags": [],
-  "id": "CAM-222"
+  "tags": [
+   "خلفية",
+   "بطاقات مموهة",
+   "خلفية متحركة",
+   "card wall",
+   "blurred background"
+  ],
+  "id": "CAM-222",
+  "when": "حين تحتاج خلفية من بطاقات محتوى مائلة ومموهة تتحرك ببطء خلف عنوان حاد / for a backdrop of tilted, blurred content cards drifting slowly behind a sharp headline"
  },
  {
   "family": "camera-composition-layout",
@@ -4686,8 +6300,15 @@
   "styles": [
    "pm-axtonliu-0b861d"
   ],
-  "tags": [],
-  "id": "CAM-223"
+  "tags": [
+   "إحساس السرعة",
+   "بارالاكس",
+   "حركة جانبية",
+   "speed effect",
+   "parallax"
+  ],
+  "id": "CAM-223",
+  "when": "حين تريد إحساس سرعة لراكب يتحرك بمرور أعمدة السياج في المقدمة أسرع من الخلفية / for a sense of speed as foreground railing posts sweep past faster than the background"
  },
  {
   "family": "camera-composition-layout",
@@ -4707,8 +6328,15 @@
   "styles": [
    "pm-bizibeast-10f264"
   ],
-  "tags": [],
-  "id": "CAM-224"
+  "tags": [
+   "شبكة مزايا",
+   "بلاطات",
+   "تجميع",
+   "feature grid",
+   "spring animation"
+  ],
+  "id": "CAM-224",
+  "when": "حين تعرض مزايا كثيرة كبلاطات مختلفة الأحجام والألوان تقفز لتتجمع في شبكة / for feature tiles of varied sizes and colours springing into a 4x3 grid, one mini label each"
  },
  {
   "family": "camera-composition-layout",
@@ -4728,8 +6356,15 @@
   "styles": [
    "pm-blue-clarity-ef56d0"
   ],
-  "tags": [],
-  "id": "CAM-225"
+  "tags": [
+   "شبكة بطاقات",
+   "عروض مصغرة",
+   "بنتو",
+   "demo grid",
+   "looping cards"
+  ],
+  "id": "CAM-225",
+  "when": "حين تريد شبكة 3×3 من بطاقات ملونة تعرض كل منها عرضا صغيرا متكررا / for a 3x3 grid of colour cards, each looping its own mini demo"
  },
  {
   "family": "camera-composition-layout",
@@ -4749,8 +6384,15 @@
   "styles": [
    "pm-bogdandragomir-35e024"
   ],
-  "tags": [],
-  "id": "CAM-226"
+  "tags": [
+   "علامات الطباعة",
+   "زوايا رفيعة",
+   "تأطير",
+   "registration marks",
+   "print marks"
+  ],
+  "id": "CAM-226",
+  "when": "حين تريد تأطير لوحة واجهة بعلامات زوايا رفيعة تشبه علامات القص في الطباعة / for framing a UI panel with thin L-shaped corner ticks like print registration marks"
  },
  {
   "family": "camera-composition-layout",
@@ -4770,8 +6412,15 @@
   "styles": [
    "pm-brainextends-e19ac3"
   ],
-  "tags": [],
-  "id": "CAM-227"
+  "tags": [
+   "خلفية متدرجة",
+   "جرادينت",
+   "إطار مستدير",
+   "gradient background",
+   "stage frame"
+  ],
+  "id": "CAM-227",
+  "when": "حين تريد خلفية متدرجة بلون العلامة ومسرحا داكنا بحواف دائرية يجري داخله كل الحدث / for a brand-colour gradient backdrop with a dark rounded stage that holds all the action"
  },
  {
   "family": "camera-composition-layout",
@@ -4791,8 +6440,15 @@
   "styles": [
    "pm-bthreeagency-b9b8d9"
   ],
-  "tags": [],
-  "id": "CAM-228"
+  "tags": [
+   "تقريب الهاتف",
+   "زووم على الجوال",
+   "موبايل",
+   "phone zoom",
+   "mobile ui"
+  ],
+  "id": "CAM-228",
+  "when": "حين تريد تقريب الهاتف نحو شارة فيه ثم الثبات قليلا والعودة / for pushing in on a phone around a badge, holding, then returning"
  },
  {
   "family": "camera-composition-layout",
@@ -4812,8 +6468,15 @@
   "styles": [
    "pm-buildfastwithai-53234e"
   ],
-  "tags": [],
-  "id": "CAM-229"
+  "tags": [
+   "تسميات صغيرة",
+   "طابع ملصق",
+   "مفتاح الألوان",
+   "micro labels",
+   "poster style"
+  ],
+  "id": "CAM-229",
+  "when": "حين تريد تسميات صغيرة بأسلوب الملصق كرقم اللوحة ورمز الفصل ونقاط مفتاح الألوان / for small poster-style labels: plate number, chapter code and colour-key dots on the left edge"
  },
  {
   "family": "camera-composition-layout",
@@ -4833,8 +6496,15 @@
   "styles": [
    "pm-buildfastwithai-ed9447"
   ],
-  "tags": [],
-  "id": "CAM-230"
+  "tags": [
+   "عرض مجسم",
+   "لف حول المجسم",
+   "منصة دوارة",
+   "spin view",
+   "model orbit"
+  ],
+  "id": "CAM-230",
+  "when": "حين تريد عرض مجسم بدوران الكاميرا حوله فوق أرضية بظل ناعم / for showcasing a model with the camera orbiting it on textured ground with a soft shadow"
  },
  {
   "family": "camera-composition-layout",
@@ -4854,8 +6524,15 @@
   "styles": [
    "pm-charlesmendez-73b6e4"
   ],
-  "tags": [],
-  "id": "CAM-231"
+  "tags": [
+   "تقسيم الشاشة",
+   "كلمة ملونة",
+   "عنوان وواجهة",
+   "split screen",
+   "headline layout"
+  ],
+  "id": "CAM-231",
+  "when": "حين تريد تقسيم 40/60 بعنوان من سطرين وكلمة مفتاحية ملونة بجانب بطاقة واجهة / for a 40/60 split: two-line headline with a green key word beside a UI card"
  },
  {
   "family": "camera-composition-layout",
@@ -4875,8 +6552,15 @@
   "styles": [
    "pm-dale-vaz-cc612a"
   ],
-  "tags": [],
-  "id": "CAM-232"
+  "tags": [
+   "زووم قوي",
+   "تفاصيل الواجهة",
+   "تكبير",
+   "ui zoom",
+   "detail zoom"
+  ],
+  "id": "CAM-232",
+  "when": "حين تريد تقريبا قويا على تفصيلة صغيرة في الواجهة مع تمويه خفيف أثناء الحركة / for a strong zoom into a small UI region with a slight blur during the move"
  },
  {
   "family": "camera-composition-layout",
@@ -4896,8 +6580,15 @@
   "styles": [
    "pm-daniel-haida-8691d4"
   ],
-  "tags": [],
-  "id": "CAM-233"
+  "tags": [
+   "عمق",
+   "تمويه الخلفية",
+   "بطاقات متراكبة",
+   "blur background",
+   "card stack"
+  ],
+  "id": "CAM-233",
+  "when": "حين تريد إبراز البطاقة الأمامية بتمويه البطاقات الخلفية وتخفيف شفافيتها / for focusing the front card by blurring and fading the cards behind it"
  },
  {
   "family": "camera-composition-layout",
@@ -4917,8 +6608,15 @@
   "styles": [
    "pm-danilowm-d3720d"
   ],
-  "tags": [],
-  "id": "CAM-234"
+  "tags": [
+   "ترقيم الفصول",
+   "خط تقدم",
+   "أقسام الفيديو",
+   "chapter counter",
+   "corner label"
+  ],
+  "id": "CAM-234",
+  "when": "حين تريد وسم فصل مرقما أسفل اليسار مع خط تقدم ونص مواصفات أسفل اليمين / for a numbered chapter tag bottom-left with a progress line and spec text bottom-right"
  },
  {
   "family": "camera-composition-layout",
@@ -4938,8 +6636,15 @@
   "styles": [
    "pm-davidmarcus-a28a60"
   ],
-  "tags": [],
-  "id": "CAM-235"
+  "tags": [
+   "ترويسة",
+   "طابع مجلة",
+   "اسم القسم",
+   "magazine header",
+   "top bar"
+  ],
+  "id": "CAM-235",
+  "when": "حين تريد ترويسة بأسلوب مجلة بالعلامة يسارا والعبارة التعريفية يمينا واسم القسم فوق خط / for a magazine-style header: brand left, tagline right, section label over a rule"
  },
  {
   "family": "camera-composition-layout",
@@ -4959,8 +6664,15 @@
   "styles": [
    "pm-davidshulmanfl-371638"
   ],
-  "tags": [],
-  "id": "CAM-236"
+  "tags": [
+   "شاشة مقسومة",
+   "عدة مقاطع",
+   "كولاج فيديو",
+   "video grid",
+   "multi clip"
+  ],
+  "id": "CAM-236",
+  "when": "حين تريد عرض عدة مقاطع معا في شبكة 3×3 على لوحات ملونة / for showing several clips at once in a 3x3 grid on coloured panels"
  },
  {
   "family": "camera-composition-layout",
@@ -4980,8 +6692,15 @@
   "styles": [
    "pm-ddryo-loos-300829"
   ],
-  "tags": [],
-  "id": "CAM-237"
+  "tags": [
+   "عنوان الفصل",
+   "ترقيم",
+   "ظهور بتمويه",
+   "chapter title",
+   "section heading"
+  ],
+  "id": "CAM-237",
+  "when": "حين تريد عنوان فصل أعلى اليسار برقم صغير يظهر بتلاش وتمويه عند بداية كل فصل / for a top-left chapter header with a small index that fades and blurs in at each chapter start"
  },
  {
   "family": "camera-composition-layout",
@@ -5001,8 +6720,15 @@
   "styles": [
    "pm-ddryo-loos-300829"
   ],
-  "tags": [],
-  "id": "CAM-238"
+  "tags": [
+   "انتقال",
+   "ترانزيشن",
+   "بطاقة عنوان",
+   "title transition",
+   "shrink"
+  ],
+  "id": "CAM-238",
+  "when": "حين تريد انتقالا من بطاقة عنوان سوداء تتقلص بحواف دائرية لتكشف المحتوى التالي / for a transition where a black title card shrinks with rounded corners before crossing to the next UI"
  },
  {
   "family": "camera-composition-layout",
@@ -5022,8 +6748,15 @@
   "styles": [
    "pm-demitiyageekzen-7770ad"
   ],
-  "tags": [],
-  "id": "CAM-239"
+  "tags": [
+   "كشف تدريجي",
+   "حركة جانبية",
+   "بارالاكس",
+   "reveal shot",
+   "truck move"
+  ],
+  "id": "CAM-239",
+  "when": "حين تريد كشف معلم بحركة جانبية بطيئة مع بارالاكس بين الأفق البعيد والأشجار القريبة / for slowly revealing a landmark with a lateral truck and layered parallax"
  },
  {
   "family": "camera-composition-layout",
@@ -5043,8 +6776,15 @@
   "styles": [
    "pm-demonugc-4c5753"
   ],
-  "tags": [],
-  "id": "CAM-240"
+  "tags": [
+   "تصميم بسيط",
+   "خلفية رمادية",
+   "مساحة فارغة",
+   "minimal",
+   "clean background"
+  ],
+  "id": "CAM-240",
+  "when": "حين تريد مشهدا بسيطا جدا بعنصر واحد على رمادي دافئ بظل ناعم / for a minimal scene: one element on flat warm grey with a soft shadow"
  },
  {
   "family": "camera-composition-layout",
@@ -5064,8 +6804,15 @@
   "styles": [
    "pm-elliot-garreffa-f334bc"
   ],
-  "tags": [],
-  "id": "CAM-241"
+  "tags": [
+   "من الفوضى للنظام",
+   "ترتيب البطاقات",
+   "شريط بحث",
+   "search pill",
+   "spring settle"
+  ],
+  "id": "CAM-241",
+  "when": "حين تريد تحويل الفوضى إلى ترتيب: بطاقات مائلة عشوائيا ترتص في صف مع شريط بحث يتفرع إليها / for scattered, rotated cards that spring into an aligned row as a search pill appears and connects to each"
  },
  {
   "family": "camera-composition-layout",
@@ -5085,8 +6832,15 @@
   "styles": [
    "pm-fionntobin-97b7af"
   ],
-  "tags": [],
-  "id": "CAM-242"
+  "tags": [
+   "عداد الإطارات",
+   "فيديو بالكود",
+   "عداد الفصول",
+   "frame counter",
+   "code rendered"
+  ],
+  "id": "CAM-242",
+  "when": "حين تريد إبراز أن الفيديو مصنوع بالكود بعدادات للإطار والفصل في الأركان تتغير كل إطار / to celebrate a code-rendered video with frame and chapter counters ticking in the corners"
  },
  {
   "family": "camera-composition-layout",
@@ -5106,8 +6860,15 @@
   "styles": [
    "pm-fractadev-149adc"
   ],
-  "tags": [],
-  "id": "CAM-243"
+  "tags": [
+   "تركيز",
+   "تمويه الواجهة",
+   "إبراز جزء",
+   "focus blur",
+   "ui highlight"
+  ],
+  "id": "CAM-243",
+  "when": "حين تريد توجيه نظر المشاهد إلى جزء من الواجهة بتمويه الباقي / for guiding attention to one UI region by blurring the inactive parts"
  },
  {
   "family": "camera-composition-layout",
@@ -5127,8 +6888,15 @@
   "styles": [
    "pm-gautam-mer1-2ae354"
   ],
-  "tags": [],
-  "id": "CAM-244"
+  "tags": [
+   "بطاقات مزايا",
+   "ظهور متتابع",
+   "شبكة",
+   "feature grid",
+   "staggered"
+  ],
+  "id": "CAM-244",
+  "when": "حين تعرض مزايا في بطاقات بيضاء مستديرة بعنوان وعرض صغير ترتفع بالتتابع / for white rounded feature cards on light grey, each with a title and mini demo, rising staggered"
  },
  {
   "family": "camera-composition-layout",
@@ -5150,8 +6918,15 @@
   "styles": [
    "pm-gigabit-million-16b3a0"
   ],
-  "tags": [],
-  "id": "CAM-245"
+  "tags": [
+   "فيديو قائمة",
+   "قالب متكرر",
+   "تعبئة من البيانات",
+   "data driven",
+   "reusable template"
+  ],
+  "id": "CAM-245",
+  "when": "حين تصنع فيديو قائمة لعدة عناصر وتريد قالب بطاقة واحدا يتغذى من البيانات لكل عنصر / for a listicle video where one data-fed card component is reused for every item"
  },
  {
   "family": "camera-composition-layout",
@@ -5171,8 +6946,15 @@
   "styles": [
    "pm-gigabit-million-16b3a0"
   ],
-  "tags": [],
-  "id": "CAM-246"
+  "tags": [
+   "مؤشر تقدم",
+   "شرطات",
+   "أجزاء الفيديو",
+   "progress indicator",
+   "segment bar"
+  ],
+  "id": "CAM-246",
+  "when": "حين تريد مؤشر تقدم بشرطات قصيرة في الأعلى تمتلئ فيه شرطة المقطع الحالي بلون مميز / for header progress dashes where the current one fills with accent colour as its segment plays"
  },
  {
   "family": "camera-composition-layout",
@@ -5192,8 +6974,15 @@
   "styles": [
    "pm-gizakdag-b8c59e"
   ],
-  "tags": [],
-  "id": "CAM-247"
+  "tags": [
+   "كاميرا فيديو",
+   "نقطة التسجيل",
+   "تايم كود",
+   "rec dot",
+   "camcorder look"
+  ],
+  "id": "CAM-247",
+  "when": "حين تريد شكل كاميرا تسجيل بزوايا وتايمكود ونقطة تسجيل حمراء تومض / for a camcorder look with corner brackets, timecode and a blinking red REC dot"
  },
  {
   "family": "camera-composition-layout",
@@ -5213,8 +7002,15 @@
   "styles": [
    "pm-gizakdag-cf4ae6"
   ],
-  "tags": [],
-  "id": "CAM-248"
+  "tags": [
+   "شاشة الكاميرا",
+   "نقطة التسجيل",
+   "تايم كود",
+   "rec",
+   "camera frame"
+  ],
+  "id": "CAM-248",
+  "when": "حين تريد إطارا يشبه شاشة الكاميرا بعلامات زوايا وعداد تايمكود ونقطة تسجيل / for a camera-screen look: corner marks, timecode counter and a REC dot"
  },
  {
   "family": "camera-composition-layout",
@@ -5234,8 +7030,15 @@
   "styles": [
    "pm-gizakdag-cf4ae6"
   ],
-  "tags": [],
-  "id": "CAM-249"
+  "tags": [
+   "كولاج",
+   "طبقات صور",
+   "إحساس بالعمق",
+   "layered parallax",
+   "photo collage"
+  ],
+  "id": "CAM-249",
+  "when": "حين تريد تقريبا على كولاج من طبقات صور تتحرك كل منها بسرعة مختلفة لإحساس العمق / for pushing into a layered collage where each PNG layer scales at its own rate"
  },
  {
   "family": "camera-composition-layout",
@@ -5255,8 +7058,15 @@
   "styles": [
    "pm-gorden-sun-041f56"
   ],
-  "tags": [],
-  "id": "CAM-250"
+  "tags": [
+   "كاميرا مطاردة",
+   "ملاحقة",
+   "تتبع جسم",
+   "follow camera",
+   "smooth lag"
+  ],
+  "id": "CAM-250",
+  "when": "حين تريد كاميرا تلاحق كرة متحركة بتأخير ناعم ونظرة مستقرة / for a chase camera that trails a moving ball with smooth lag and a smoothed look target"
  },
  {
   "family": "camera-composition-layout",
@@ -5276,8 +7086,15 @@
   "styles": [
    "pm-grace-sunnyy-29bc61"
   ],
-  "tags": [],
-  "id": "CAM-251"
+  "tags": [
+   "شرح التقنية",
+   "تعليق برمجي",
+   "إيقاع",
+   "code comment",
+   "bpm"
+  ],
+  "id": "CAM-251",
+  "when": "حين تريد HUD يكتب اسم التقنية الحالية كتعليق برمجي مع BPM ورقم المازورة وخط زمني / for a HUD that names the current technique as a code comment, plus BPM, bar number and a keyframe timeline"
  },
  {
   "family": "camera-composition-layout",
@@ -5297,8 +7114,15 @@
   "styles": [
    "pm-henkvaness-0e06af"
   ],
-  "tags": [],
-  "id": "CAM-252"
+  "tags": [
+   "مقارنة",
+   "قبل وبعد",
+   "برومبت",
+   "comparison",
+   "prompt tips"
+  ],
+  "id": "CAM-252",
+  "when": "حين تقارن ما كتبه الناس بالبديل المقترح في عمودين لكل منهما برومبت ورد / for a two-column comparison of what people typed versus what to type instead, each with prompt and reply cards"
  },
  {
   "family": "camera-composition-layout",
@@ -5318,8 +7142,15 @@
   "styles": [
    "pm-heyiammallik-e72d17"
   ],
-  "tags": [],
-  "id": "CAM-253"
+  "tags": [
+   "عداد",
+   "ترقيم",
+   "زاوية الشاشة",
+   "index counter",
+   "uppercase labels"
+  ],
+  "id": "CAM-253",
+  "when": "حين تريد عدادا صغيرا مثل 04/10 أعلى اليمين مع تسميات بحروف كبيرة أحادية المسافة / for a small 04/10 index top-right with uppercase mono labels"
  },
  {
   "family": "camera-composition-layout",
@@ -5339,8 +7170,15 @@
   "styles": [
    "pm-himanshutwtxs-5f4b43"
   ],
-  "tags": [],
-  "id": "CAM-254"
+  "tags": [
+   "تايملاين",
+   "مونتاج",
+   "مؤشر التشغيل",
+   "playhead",
+   "keyframes"
+  ],
+  "id": "CAM-254",
+  "when": "حين تريد شريطا زمنيا يشبه برامج المونتاج بنقاط مفاتيح ومؤشر تشغيل يتحرك مع الوقت / for an editor-style timeline bar with diamond keyframes and a playhead moving in real time"
  },
  {
   "family": "camera-composition-layout",
@@ -5360,8 +7198,15 @@
   "styles": [
    "pm-ho-ba-f3f0e9"
   ],
-  "tags": [],
-  "id": "CAM-255"
+  "tags": [
+   "منظور مائل",
+   "تقريب الواجهة",
+   "عرض ثلاثي الأبعاد",
+   "3d tilt",
+   "perspective"
+  ],
+  "id": "CAM-255",
+  "when": "حين تريد إمالة الواجهة بزاوية خفيفة ثم الاقتراب منها ببطء / for tilting a UI about 10 degrees on X and slowly pushing in on it"
  },
  {
   "family": "camera-composition-layout",
@@ -5381,8 +7226,15 @@
   "styles": [
    "pm-hqmank-7c61f1"
   ],
-  "tags": [],
-  "id": "CAM-256"
+  "tags": [
+   "إطار زوايا",
+   "تايم كود",
+   "خلفية كريمية",
+   "corner brackets",
+   "timecode overlay"
+  ],
+  "id": "CAM-256",
+  "when": "حين تريد إطارًا بأقواس زوايا وتايم كود صغير على خلفية كريمية بطابع ورقي / when you want a frame of corner brackets and tiny timecode labels on a cream paper ground"
  },
  {
   "family": "camera-composition-layout",
@@ -5402,8 +7254,15 @@
   "styles": [
    "pm-iammxfschr-d68f90"
   ],
-  "tags": [],
-  "id": "CAM-257"
+  "tags": [
+   "شاشة مقسومة",
+   "عرض ميزة",
+   "بطاقة واجهة",
+   "split layout",
+   "feature reveal"
+  ],
+  "id": "CAM-257",
+  "when": "عند عرض ميزة منتج بعنوان على اليسار وبطاقة واجهة داكنة تنزلق على اليمين / for a feature beat with a headline on the left and a dark UI card sliding in on the right"
  },
  {
   "family": "camera-composition-layout",
@@ -5423,8 +7282,15 @@
   "styles": [
    "pm-ibrahimwasim240-809370"
   ],
-  "tags": [],
-  "id": "CAM-258"
+  "tags": [
+   "واجهة لعبة",
+   "عداد نقاط",
+   "مؤقت تنازلي",
+   "game ui",
+   "score counter"
+  ],
+  "id": "CAM-258",
+  "when": "حين يريد المستخدم طابع ألعاب الفيديو بعداد نقاط وقلوب ومستوى ومؤقت تنازلي وشريط تقدم ثابت / when the user wants a video-game look with score counter, hearts, level, countdown timer and a persistent progress bar"
  },
  {
   "family": "camera-composition-layout",
@@ -5444,8 +7310,15 @@
   "styles": [
    "pm-influencer-seo-ce8c33"
   ],
-  "tags": [],
-  "id": "CAM-259"
+  "tags": [
+   "شريط سفلي",
+   "ترقيم",
+   "اسم النموذج",
+   "lower third",
+   "index label"
+  ],
+  "id": "CAM-259",
+  "when": "عند تقديم عناصر أو نماذج مرقمة بشريط سفلي يضم رقم الفهرس واسم النموذج تحت الكلمة الرئيسية / for introducing numbered items or models with a lower-third showing an index number and the model name"
  },
  {
   "family": "camera-composition-layout",
@@ -5465,8 +7338,15 @@
   "styles": [
    "pm-itsolelehmann-e47532"
   ],
-  "tags": [],
-  "id": "CAM-260"
+  "tags": [
+   "بارالاكس",
+   "منظر طبيعي",
+   "طبقات متحركة",
+   "parallax",
+   "scrolling landscape"
+  ],
+  "id": "CAM-260",
+  "when": "حين تريد إحساس رحلة يُرى منظرها من نافذة بطبقات طبيعية تتحرك أفقيًا بسرعات متفاوتة / when you want a travel feel seen through a window, with landscape layers scrolling sideways at different speeds"
  },
  {
   "family": "camera-composition-layout",
@@ -5486,8 +7366,16 @@
   "styles": [
    "pm-itsolelehmann-e47532"
   ],
-  "tags": [],
-  "id": "CAM-261"
+  "tags": [
+   "تناظر",
+   "ألوان باستيل",
+   "تكوين مركزي",
+   "symmetry",
+   "pastel palette",
+   "centered composition"
+  ],
+  "id": "CAM-261",
+  "when": "حين يطلب المستخدم لقطة متناظرة بأسلوب ويس أندرسون بألوان باستيل ومنظور أمامي مسطح / when the user asks for a symmetrical Wes Anderson style frame with pastel colours and a flat frontal perspective"
  },
  {
   "family": "camera-composition-layout",
@@ -5507,8 +7395,15 @@
   "styles": [
    "pm-itsuki-dev-10942d"
   ],
-  "tags": [],
-  "id": "CAM-262"
+  "tags": [
+   "رقم المشهد",
+   "مؤشر تقدم",
+   "عداد مشاهد",
+   "scene counter",
+   "progress indicator"
+  ],
+  "id": "CAM-262",
+  "when": "عند حاجة الفيديو إلى تسمية صغيرة تبين رقم المشهد من الإجمالي واسمه مع جزء تقدم / when a video needs a small label showing scene number out of total and its name, plus a progress segment"
  },
  {
   "family": "camera-composition-layout",
@@ -5528,8 +7423,15 @@
   "styles": [
    "pm-ivanfioravanti-bd9261"
   ],
-  "tags": [],
-  "id": "CAM-263"
+  "tags": [
+   "كاميرا تتبع",
+   "ميلان الكاميرا",
+   "مطاردة",
+   "follow cam",
+   "camera roll"
+  ],
+  "id": "CAM-263",
+  "when": "حين تتبع الكاميرا جسمًا متحركًا من الخلف وتميل مع حركته الجانبية / when the camera follows a moving target from behind and banks with its sideways velocity"
  },
  {
   "family": "camera-composition-layout",
@@ -5549,8 +7451,16 @@
   "styles": [
    "pm-jake11moran-a269c4"
   ],
-  "tags": [],
-  "id": "CAM-264"
+  "tags": [
+   "كتابة آلية",
+   "سطر أوامر",
+   "زووم على الشاشة",
+   "typewriter",
+   "terminal text",
+   "zoom in"
+  ],
+  "id": "CAM-264",
+  "when": "عند الاقتراب من شاشة لكتابة سطر طرفية أخضر بمؤشر مربع ثم الابتعاد / for pushing into a monitor to type a green terminal line with a block cursor, then pulling back"
  },
  {
   "family": "camera-composition-layout",
@@ -5570,8 +7480,15 @@
   "styles": [
    "pm-jasonzhou1993-8595e0"
   ],
-  "tags": [],
-  "id": "CAM-265"
+  "tags": [
+   "ريل أعمال",
+   "تراكب ثابت",
+   "عداد إطارات",
+   "showreel",
+   "overlay"
+  ],
+  "id": "CAM-265",
+  "when": "حين يحتاج الشوريل إلى إطار ثابت بزوايا وعنوان وتايم كود واسم الفصل وعداد إطارات وخط تقدم / when a showreel needs a persistent overlay with corner brackets, title, timecode, chapter label, frame counter and progress line"
  },
  {
   "family": "camera-composition-layout",
@@ -5591,8 +7508,15 @@
   "styles": [
    "pm-jesscaroline7-1ff7cb"
   ],
-  "tags": [],
-  "id": "CAM-266"
+  "tags": [
+   "علامات قص",
+   "زوايا",
+   "تأطير",
+   "crop marks",
+   "brand tag"
+  ],
+  "id": "CAM-266",
+  "when": "عند تأطير الشاشة بعلامات قص على شكل L مع اسم العلامة وتاريخ في التذييل / for framing the screen with L-shaped crop marks, a brand tag and a footer date"
  },
  {
   "family": "camera-composition-layout",
@@ -5612,8 +7536,15 @@
   "styles": [
    "pm-jhylee95-e1152f"
   ],
-  "tags": [],
-  "id": "CAM-267"
+  "tags": [
+   "ديمو منتج",
+   "نافذة متصفح",
+   "مؤشر الماوس",
+   "product demo",
+   "app window"
+  ],
+  "id": "CAM-267",
+  "when": "حين تعرض منتجًا رقميًا بسطر عنوان قصير ونافذة متصفح أو تطبيق تصعد ومؤشر ينفذ إجراءً واحدًا / when showing a product with a short headline, a browser or app window sliding up and a cursor doing one action"
  },
  {
   "family": "camera-composition-layout",
@@ -5633,8 +7564,15 @@
   "styles": [
    "pm-jhylee95-e1152f"
   ],
-  "tags": [],
-  "id": "CAM-268"
+  "tags": [
+   "شعار ثابت",
+   "هوية بصرية",
+   "تقطيع سريع",
+   "brand logo",
+   "consistent branding"
+  ],
+  "id": "CAM-268",
+  "when": "حين تتتابع مشاهد سريعة وتريد توحيدها بعناصر ثابتة في الزوايا كعنوان القسم والأيقونة والشعار / when rapid cuts need unifying with persistent corner elements: section kicker, icon and brand logo"
  },
  {
   "family": "camera-composition-layout",
@@ -5654,8 +7592,15 @@
   "styles": [
    "pm-justincooperman-e7bbc4"
   ],
-  "tags": [],
-  "id": "CAM-269"
+  "tags": [
+   "تحريك كاميرا",
+   "بان وزووم",
+   "شرح منتج",
+   "pan zoom",
+   "ui walkthrough"
+  ],
+  "id": "CAM-269",
+  "when": "عند شرح خطوات منتج بتحريك كاميرا فوق لوحة واجهة واحدة كبيرة بدل القطع بين اللقطات / for walking through product steps by moving a camera over one large UI canvas instead of cutting"
  },
  {
   "family": "camera-composition-layout",
@@ -5675,8 +7620,15 @@
   "styles": [
    "pm-kamstudiolabs-447565"
   ],
-  "tags": [],
-  "id": "CAM-270"
+  "tags": [
+   "آلات موسيقية",
+   "نوتات",
+   "مخطط موسيقي",
+   "music diagram",
+   "instrument layout"
+  ],
+  "id": "CAM-270",
+  "when": "حين تعرض آلات موسيقية في صفوف أفقية بأشرطة ملونة حسب العائلة وأسماء النوتات تحتها / when laying out musical instruments as horizontal rows of colour-coded bars with note names below"
  },
  {
   "family": "camera-composition-layout",
@@ -5696,8 +7648,15 @@
   "styles": [
    "pm-kamstudiolabs-c9bb28"
   ],
-  "tags": [],
-  "id": "CAM-271"
+  "tags": [
+   "دخول للشاشة",
+   "زووم",
+   "ترانزيشن",
+   "push in",
+   "screen zoom"
+  ],
+  "id": "CAM-271",
+  "when": "عند الانتقال من لقطة الغرفة إلى محتوى الشاشة ثم العودة في بداية المقطع ونهايته / for moving the camera from a room shot into the monitor content and back as an opening and closing bookend"
  },
  {
   "family": "camera-composition-layout",
@@ -5717,8 +7676,15 @@
   "styles": [
    "pm-kangaroohere-b10f8d"
   ],
-  "tags": [],
-  "id": "CAM-272"
+  "tags": [
+   "ثلاثة أقسام",
+   "ألواح ملونة",
+   "فئات",
+   "three panels",
+   "category intro"
+  ],
+  "id": "CAM-272",
+  "when": "حين تعرض ثلاث فئات أو أقسام في ألواح عمودية ملونة تصعد بتتابع مع أيقونة وعنوان / when presenting three categories as equal vertical colour panels sliding up in stagger, each with icon and label"
  },
  {
   "family": "camera-composition-layout",
@@ -5738,8 +7704,15 @@
   "styles": [
    "pm-kangaroohere-b10f8d"
   ],
-  "tags": [],
-  "id": "CAM-273"
+  "tags": [
+   "نص عمودي",
+   "كتابة جانبية",
+   "تأطير بطاقة",
+   "vertical text",
+   "side label"
+  ],
+  "id": "CAM-273",
+  "when": "عند إضافة كلمة عمودية مدارة 90 درجة على الحافة اليسرى لتأطير بطاقة / for adding a 90-degree rotated uppercase word on the left edge to frame a card"
  },
  {
   "family": "camera-composition-layout",
@@ -5759,8 +7732,15 @@
   "styles": [
    "pm-kikelopezdesign-7cc9e8"
   ],
-  "tags": [],
-  "id": "CAM-274"
+  "tags": [
+   "زووم أوت",
+   "كشف الأعمال",
+   "معرض أعمال",
+   "zoom out reveal",
+   "portfolio"
+  ],
+  "id": "CAM-274",
+  "when": "حين تبدأ قريبًا من الشعار ثم تبتعد بسرعة لكشف مجموعة الأعمال كلها دفعة واحدة / when starting tight on a logo tile and zooming out fast to reveal the whole body of work at once"
  },
  {
   "family": "camera-composition-layout",
@@ -5780,8 +7760,15 @@
   "styles": [
    "pm-kloss-xyz-fe0c31"
   ],
-  "tags": [],
-  "id": "CAM-275"
+  "tags": [
+   "فصول",
+   "مسطرة زمنية",
+   "مؤشر الموضع",
+   "chapter label",
+   "timeline marker"
+  ],
+  "id": "CAM-275",
+  "when": "عند تقسيم الفيديو إلى فصول مرقمة مع مسطرة زمنية صغيرة ومؤشر يبين الموضع / for chaptered videos needing a numbered chapter label and a small tick ruler with a position marker"
  },
  {
   "family": "camera-composition-layout",
@@ -5801,8 +7788,15 @@
   "styles": [
    "pm-kmasiff-cc72cb"
   ],
-  "tags": [],
-  "id": "CAM-276"
+  "tags": [
+   "تبويبات",
+   "شريط تنقل",
+   "تبديل المشاهد",
+   "tab bar",
+   "navigation"
+  ],
+  "id": "CAM-276",
+  "when": "حين تتنقل بين أقسام الفيديو بشريط تبويبات علوي ينزلق فيه التبويب النشط وتتبدل المشاهد / when navigating video sections with a top pill tab bar whose active tab slides while scene content swaps"
  },
  {
   "family": "camera-composition-layout",
@@ -5822,8 +7816,15 @@
   "styles": [
    "pm-koldo2k-5cff87"
   ],
-  "tags": [],
-  "id": "CAM-277"
+  "tags": [
+   "تكبير متواصل",
+   "عوالم متداخلة",
+   "زوم عميق",
+   "endless zoom",
+   "nested worlds"
+  ],
+  "id": "CAM-277",
+  "when": "عند الحاجة إلى زووم لا ينتهي يعبر عوالم متداخلة بسرعة محسوسة ثابتة / for an endless zoom through nested worlds at a constant perceived speed"
  },
  {
   "family": "camera-composition-layout",
@@ -5843,8 +7844,15 @@
   "styles": [
    "pm-konstantinsaifo-96fc89"
   ],
-  "tags": [],
-  "id": "CAM-278"
+  "tags": [
+   "دوران الكاميرا",
+   "اقتراب",
+   "مدار",
+   "orbit camera",
+   "push in"
+  ],
+  "id": "CAM-278",
+  "when": "حين تريد كاميرا تدور حول الهدف وتقترب منه بانسيابية بتحريك هدف ومسافة OrbitControls / when the camera should orbit and push in on a target by tweening OrbitControls target and distance"
  },
  {
   "family": "camera-composition-layout",
@@ -5864,8 +7872,15 @@
   "styles": [
    "pm-l3d1c-0e35a3"
   ],
-  "tags": [],
-  "id": "CAM-279"
+  "tags": [
+   "خطوات",
+   "شرح الواجهة",
+   "تعليق نصي",
+   "tutorial steps",
+   "caption"
+  ],
+  "id": "CAM-279",
+  "when": "عند شرح خطوات استخدام واجهة بتسمية خطوة مرقمة وتعليق عريض أسفلها / for explaining UI steps with a numbered step label and a bold caption beneath the interface"
  },
  {
   "family": "camera-composition-layout",
@@ -5885,8 +7900,15 @@
   "styles": [
    "pm-lemomo-ai-0d9cff"
   ],
-  "tags": [],
-  "id": "CAM-280"
+  "tags": [
+   "سبورة",
+   "خريطة الخطوات",
+   "بان",
+   "explainer",
+   "pull back"
+  ],
+  "id": "CAM-280",
+  "when": "حين تشرح عملية من عدة خطوات على سبورة كبيرة تتنقل الكاميرا بينها ثم تبتعد لعرض الخريطة كاملة / when explaining a multi-step process on one big board, panning between steps then pulling back to show the whole map"
  },
  {
   "family": "camera-composition-layout",
@@ -5906,8 +7928,15 @@
   "styles": [
    "pm-lester-tyy-f897f7"
   ],
-  "tags": [],
-  "id": "CAM-281"
+  "tags": [
+   "تقريب على زر",
+   "إبراز عنصر",
+   "زووم",
+   "zoom in",
+   "highlight button"
+  ],
+  "id": "CAM-281",
+  "when": "عند لفت الانتباه إلى زر أو عنصر في الواجهة بالتقريب عليه ثم العودة / for drawing attention to a button or UI element by zooming the whole UI onto it and returning"
  },
  {
   "family": "camera-composition-layout",
@@ -5927,8 +7956,15 @@
   "styles": [
    "pm-levabashidze-2d713a"
   ],
-  "tags": [],
-  "id": "CAM-282"
+  "tags": [
+   "طراز سويسري",
+   "عداد فصول",
+   "تسميات الزوايا",
+   "swiss design",
+   "segmented progress"
+  ],
+  "id": "CAM-282",
+  "when": "حين تريد إطارًا بطابع سويسري بعلامات قص وتسميات في الزوايا وعداد فصول وشريط تقدم مقسم / when you want a Swiss-style frame with crop marks, corner labels, chapter counter and a segmented progress bar"
  },
  {
   "family": "camera-composition-layout",
@@ -5948,8 +7984,15 @@
   "styles": [
    "pm-linearuncle-5d2bae"
   ],
-  "tags": [],
-  "id": "CAM-283"
+  "tags": [
+   "عدسة مكبرة",
+   "شرح رياضيات",
+   "منحنى دالة",
+   "magnifier",
+   "math explainer"
+  ],
+  "id": "CAM-283",
+  "when": "عند شرح فكرة رياضية بعدسة مكبرة تكبر منحنى دالة حتى يختفي انحناؤه وتقارن الأملس بالزاوية / for a math explainer using a magnifier that rescales a function until its curvature vanishes, comparing smooth vs corner"
  },
  {
   "family": "camera-composition-layout",
@@ -5969,8 +8012,15 @@
   "styles": [
    "pm-listudio-820c7b"
   ],
-  "tags": [],
-  "id": "CAM-284"
+  "tags": [
+   "تمويه الخلفية",
+   "بلور",
+   "عمق",
+   "background blur",
+   "depth layering"
+  ],
+  "id": "CAM-284",
+  "when": "حين تفتح لوحة تفاصيل فوق المعرض مع إبقاء المشهد السابق خلفها مموهًا ومعتمًا لإحساس العمق / when a detail panel slides in over the gallery and the previous scene stays blurred and dimmed behind it for depth"
  },
  {
   "family": "camera-composition-layout",
@@ -5990,8 +8040,15 @@
   "styles": [
    "pm-lukasersil-0ed38e"
   ],
-  "tags": [],
-  "id": "CAM-285"
+  "tags": [
+   "فصول",
+   "تايم كود",
+   "سرعة الإيقاع",
+   "bpm counter",
+   "hud overlay"
+  ],
+  "id": "CAM-285",
+  "when": "عند فيديو مقسم إلى فصول يحتاج إطارًا بزوايا ورقم الفصل وتايم كود وسرعة الإيقاع BPM / for a chaptered video needing corner brackets, chapter index, timecode and a BPM readout"
  },
  {
   "family": "camera-composition-layout",
@@ -6011,8 +8068,15 @@
   "styles": [
    "pm-madhav-xo-f97f20"
   ],
-  "tags": [],
-  "id": "CAM-286"
+  "tags": [
+   "خاتمة",
+   "أشرطة سوداء",
+   "نهاية الفيديو",
+   "outro",
+   "ending"
+  ],
+  "id": "CAM-286",
+  "when": "لختام الفيديو بأشرطة سوداء تنغلق من أعلى وأسفل حتى يبقى شريط رفيع من بطاقة الاسم ثم إظلام / for ending a video with black bars closing from top and bottom to a thin strip of the name card, then cut to black"
  },
  {
   "family": "camera-composition-layout",
@@ -6032,8 +8096,15 @@
   "styles": [
    "pm-majin-appsheet-2d3c1a"
   ],
-  "tags": [],
-  "id": "CAM-287"
+  "tags": [
+   "تايبوجرافي",
+   "كتابة عمودية",
+   "تكوين حروف",
+   "typography layout",
+   "vertical type"
+  ],
+  "id": "CAM-287",
+  "when": "حين تريد تكوينًا طباعيًا يجمع حرفًا كبيرًا أفقيًا مع عمود حروف صغيرة يفصلهما خط رفيع على شكل L / when pairing a large horizontal glyph with a vertical stack of small glyphs separated by thin L-shaped rules"
  },
  {
   "family": "camera-composition-layout",
@@ -6053,8 +8124,15 @@
   "styles": [
    "pm-majin-appsheet-2d3c1a"
   ],
-  "tags": [],
-  "id": "CAM-288"
+  "tags": [
+   "تسميات الزوايا",
+   "بيانات وصفية",
+   "سنة الإصدار",
+   "corner labels",
+   "metadata"
+  ],
+  "id": "CAM-288",
+  "when": "عند إضافة تسميات صغيرة متباعدة الحروف في الزوايا للسنة أو الإصدار مع خط أحمر تحت إحداها / for adding tiny wide-tracked caps labels in the corners for year or version, with a red underline"
  },
  {
   "family": "camera-composition-layout",
@@ -6074,8 +8152,15 @@
   "styles": [
    "pm-majorbaguette-fb11d7"
   ],
-  "tags": [],
-  "id": "CAM-289"
+  "tags": [
+   "رقم الخطوة",
+   "شارة",
+   "خطوات متتالية",
+   "step badge",
+   "step counter"
+  ],
+  "id": "CAM-289",
+  "when": "حين تعرض خطوات متتالية برقم داخل مربع ملون واسم الخطوة أعلى المنتصف يتبدل مع كل خطوة / when showing sequential steps with a two-digit number chip and step name at top centre that swaps per step"
  },
  {
   "family": "camera-composition-layout",
@@ -6095,8 +8180,15 @@
   "styles": [
    "pm-mdaman010-e7226a"
   ],
-  "tags": [],
-  "id": "CAM-290"
+  "tags": [
+   "طيران الكاميرا",
+   "انتقال بين الفصول",
+   "حركة كاميرا",
+   "camera move",
+   "fly to"
+  ],
+  "id": "CAM-290",
+  "when": "عند الانتقال بين فصول المشهد بطيران الكاميرا بسلاسة من موضع إلى آخر / for flying the camera smoothly from one chapter position and target to the next"
  },
  {
   "family": "camera-composition-layout",
@@ -6116,8 +8208,15 @@
   "styles": [
    "pm-micheleharmonic-77628e"
   ],
-  "tags": [],
-  "id": "CAM-291"
+  "tags": [
+   "تايم كود",
+   "رابط الموقع",
+   "زوايا ثابتة",
+   "timecode",
+   "safe area"
+  ],
+  "id": "CAM-291",
+  "when": "حين تريد تسميات ثابتة في زوايا الشاشة للرابط والشعار النصي وتايم كود جارٍ تبقى مقروءة على الأسود والأبيض / when you need persistent corner labels (URL, slogan, live timecode) that stay readable on both black and white"
  },
  {
   "family": "camera-composition-layout",
@@ -6137,8 +8236,15 @@
   "styles": [
    "pm-monokern-ade5b6"
   ],
-  "tags": [],
-  "id": "CAM-292"
+  "tags": [
+   "نفق",
+   "حلقات متكررة",
+   "زوم لا نهائي",
+   "tunnel",
+   "endless loop"
+  ],
+  "id": "CAM-292",
+  "when": "عند الرغبة في نفق لا نهائي من حلقات متكررة تتكبر أسيًا وتلتف من جديد / for an endless tunnel of repeating rings that scale exponentially and wrap around"
  },
  {
   "family": "camera-composition-layout",
@@ -6158,8 +8264,15 @@
   "styles": [
    "pm-ndhabarde11-f155b4"
   ],
-  "tags": [],
-  "id": "CAM-293"
+  "tags": [
+   "فصول مرقمة",
+   "مسطرة تقدم",
+   "إطار زوايا",
+   "chapter counter",
+   "progress ruler"
+  ],
+  "id": "CAM-293",
+  "when": "حين يقسم الفيديو إلى فصول مرقمة ويحتاج إطارًا بزوايا وتايم كود ومسطرة تقدم / when a video is split into numbered chapters and needs corner brackets, timecode and a ruler progress"
  },
  {
   "family": "camera-composition-layout",
@@ -6179,8 +8292,15 @@
   "styles": [
    "pm-nft-chen-5f8bb0"
   ],
-  "tags": [],
-  "id": "CAM-294"
+  "tags": [
+   "طائرة",
+   "كاميرا تتبع",
+   "ميلان الأفق",
+   "flight camera",
+   "follow cam"
+  ],
+  "id": "CAM-294",
+  "when": "عند تتبع طائرة من الخلف وأعلى بكاميرا ناعمة تميل مع ميلان الطائرة فيميل الأفق / for following a plane from behind and above with a smoothed camera that inherits its roll so the horizon tilts"
  },
  {
   "family": "camera-composition-layout",
@@ -6200,8 +8320,15 @@
   "styles": [
    "pm-nikolajankovic-ce4ff4"
   ],
-  "tags": [],
-  "id": "CAM-295"
+  "tags": [
+   "مقارنة",
+   "تقسيم الشاشة",
+   "أنت وأنا",
+   "comparison",
+   "split screen"
+  ],
+  "id": "CAM-295",
+  "when": "حين تشرح الفرق بين دورك ودوري بتقسيم الشاشة بخط متقطع وأيقونة لكل جانب وسطر تحذير أحمر / when contrasting 'you' vs 'me' with a dashed split screen, one icon per side and a red caveat line"
  },
  {
   "family": "camera-composition-layout",
@@ -6221,8 +8348,15 @@
   "styles": [
    "pm-nolkeeg-bf062e"
   ],
-  "tags": [],
-  "id": "CAM-296"
+  "tags": [
+   "إطار سينمائي",
+   "مؤشر التشغيل",
+   "شريط الزمن",
+   "playhead",
+   "elapsed bar"
+  ],
+  "id": "CAM-296",
+  "when": "عند إضافة إطار سينمائي خافت بزوايا قص وتايم كود وشريط زمن منقضٍ بعلامات ومؤشر متحرك / for adding faint cinematic chrome with crop corners, timecode and an elapsed bar with ticks and a moving playhead"
  },
  {
   "family": "camera-composition-layout",
@@ -6242,8 +8376,15 @@
   "styles": [
    "pm-palashbagchi11-0a4b6b"
   ],
-  "tags": [],
-  "id": "CAM-297"
+  "tags": [
+   "خط تقدم",
+   "مؤشر التقدم",
+   "مدة الفيديو",
+   "progress bar",
+   "story progress"
+  ],
+  "id": "CAM-297",
+  "when": "حين تريد خطًا رفيعًا أسفل الشاشة ينمو طوال الفيديو ليبين تقدم القصة / when you want a thin line at the bottom edge growing over the whole duration to signal story progress"
  },
  {
   "family": "camera-composition-layout",
@@ -6263,8 +8404,15 @@
   "styles": [
    "pm-pankajkumar-dev-0bee87"
   ],
-  "tags": [],
-  "id": "CAM-298"
+  "tags": [
+   "ملصق",
+   "بوستر",
+   "بيانات الزوايا",
+   "poster layout",
+   "corner metadata"
+  ],
+  "id": "CAM-298",
+  "when": "عند تصميم بطابع الملصقات يعرض في الزوايا العنوان والفصل ومواصفات الشبكة وتايم كود يتحدث مع كل فصل / for a poster-style frame with corner labels for title, chapter, grid spec and running timecode updating per act"
  },
  {
   "family": "camera-composition-layout",
@@ -6284,8 +8432,15 @@
   "styles": [
    "pm-paulo-kombucha-96431c"
   ],
-  "tags": [],
-  "id": "CAM-299"
+  "tags": [
+   "بطاقة نتيجة",
+   "فاتح وداكن",
+   "ماسكوت",
+   "result card",
+   "mascot"
+  ],
+  "id": "CAM-299",
+  "when": "حين تعرض نتيجة رقمية في بطاقة نصفها فاتح للتحكم ونصفها داكن للرقم مع شخصية على الزاوية / when showing a result number in a card split into a light controls half and a dark result half, with a mascot overlapping"
  },
  {
   "family": "camera-composition-layout",
@@ -6305,8 +8460,15 @@
   "styles": [
    "pm-polydao-7a572b"
   ],
-  "tags": [],
-  "id": "CAM-300"
+  "tags": [
+   "رقم الفصل",
+   "شريط علوي",
+   "تقدم الفصول",
+   "chapter strip",
+   "chapter number"
+  ],
+  "id": "CAM-300",
+  "when": "عند حاجة الفيديو إلى شريط علوي يبين رقم الفصل من الإجمالي وعنوانه / for a top strip showing the current chapter number out of total with its title"
  },
  {
   "family": "camera-composition-layout",
@@ -6326,8 +8488,15 @@
   "styles": [
    "pm-quickdesignio-dd93d0"
   ],
-  "tags": [],
-  "id": "CAM-301"
+  "tags": [
+   "شبكة بطاقات",
+   "انجراف",
+   "بطاقات متحركة",
+   "card grid",
+   "floating cards"
+  ],
+  "id": "CAM-301",
+  "when": "حين تريد شبكة بطاقات 4×3 تنجرف وتدور قليلًا / when you want a 4x3 wall of cards drifting with a slight rotation"
  },
  {
   "family": "camera-composition-layout",
@@ -6347,8 +8516,15 @@
   "styles": [
    "pm-ratheejaisal-1f4538"
   ],
-  "tags": [],
-  "id": "CAM-302"
+  "tags": [
+   "عرض ميزات",
+   "بطاقة طافية",
+   "عنوان عريض",
+   "feature showcase",
+   "product features"
+  ],
+  "id": "CAM-302",
+  "when": "عند عرض عدة ميزات بتخطيط ثابت: عنوان عريض يسارًا وبطاقة واجهة بيضاء طافية يمينًا يتبدل محتواها / for presenting several features in one fixed layout: bold headline left, floating white UI card right with swapped content"
  },
  {
   "family": "camera-composition-layout",
@@ -6368,8 +8544,15 @@
   "styles": [
    "pm-rebutonepress-810f78"
   ],
-  "tags": [],
-  "id": "CAM-303"
+  "tags": [
+   "اقتراب بطيء",
+   "دولي",
+   "تقريب تدريجي",
+   "slow push",
+   "dolly in"
+  ],
+  "id": "CAM-303",
+  "when": "حين تريد اقترابًا بطيئًا جدًا من جسم على مدى دقائق ليكبر حجمه بثبات مع تغير خفيف في الزاوية / when slowly approaching an object over minutes so its size grows steadily, with a slight inclination change for reveal"
  },
  {
   "family": "camera-composition-layout",
@@ -6389,8 +8572,15 @@
   "styles": [
    "pm-rendesr-86be44"
   ],
-  "tags": [],
-  "id": "CAM-304"
+  "tags": [
+   "فصول",
+   "رقم الفصل",
+   "خط تقدم",
+   "chapter frame",
+   "progress line"
+  ],
+  "id": "CAM-304",
+  "when": "عند فيديو بفصول يحتاج إطارًا بسيطًا بزوايا ورقم الفصل وخط تقدم سفلي / for a chaptered video needing a simple frame with corner brackets, chapter number and a bottom progress line"
  },
  {
   "family": "camera-composition-layout",
@@ -6410,8 +8600,15 @@
   "styles": [
    "pm-rneayan-ea6129"
   ],
-  "tags": [],
-  "id": "CAM-305"
+  "tags": [
+   "راسم إشارة",
+   "قراءات حية",
+   "أوسيلوسكوب",
+   "oscilloscope",
+   "live readout"
+  ],
+  "id": "CAM-305",
+  "when": "حين تريد طابع راسم الإشارة بقراءات حية في الزوايا مثل الفولت والإيقاع والزمن تتحدث كل إطار / when you want a scope-style HUD with live corner readouts (V/div, BPM, time) updating every frame"
  },
  {
   "family": "camera-composition-layout",
@@ -6431,8 +8628,15 @@
   "styles": [
    "pm-rossaxbt-3085b7"
   ],
-  "tags": [],
-  "id": "CAM-306"
+  "tags": [
+   "مود بورد",
+   "شبكة صور",
+   "لوحة إلهام",
+   "moodboard",
+   "photo grid"
+  ],
+  "id": "CAM-306",
+  "when": "عند تجميع صور إلهام أو مود بورد تطير من خارج الإطار وتستقر في شبكة 3×3 بتتابع / for assembling moodboard images that fly in from off-frame and settle into a staggered 3x3 grid"
  },
  {
   "family": "camera-composition-layout",
@@ -6452,8 +8656,15 @@
   "styles": [
    "pm-rossaxbt-3085b7"
   ],
-  "tags": [],
-  "id": "CAM-307"
+  "tags": [
+   "زووم بطيء",
+   "حركة مستمرة",
+   "تلاشي",
+   "slow zoom",
+   "seamless push"
+  ],
+  "id": "CAM-307",
+  "when": "حين تريد زووم بطيئًا مستمرًا عبر المشاهد دون قفزات مع ظهور العناصر بتلاشٍ ناعم / when you want a slow continuous push across scenes that never snaps, with smooth eased fades"
  },
  {
   "family": "camera-composition-layout",
@@ -6473,8 +8684,16 @@
   "styles": [
    "pm-ryzoft-4f85bd"
   ],
-  "tags": [],
-  "id": "CAM-308"
+  "tags": [
+   "أشرطة سوداء",
+   "سينمائي",
+   "نسبة عرض",
+   "letterbox",
+   "widescreen",
+   "shot list"
+  ],
+  "id": "CAM-308",
+  "when": "عند الرغبة في مظهر سينمائي بأشرطة سوداء بنسبة 2.39:1 وقائمة لقطات بعدسات متنوعة / for a cinematic look with 2.39:1 black bars and a shot list using varied lenses"
  },
  {
   "family": "camera-composition-layout",
@@ -6494,8 +8713,16 @@
   "styles": [
    "pm-sab8a-364a5a"
   ],
-  "tags": [],
-  "id": "CAM-309"
+  "tags": [
+   "ملخص",
+   "دعوة لاتخاذ إجراء",
+   "شبكة لقطات",
+   "recap",
+   "cta",
+   "end screen"
+  ],
+  "id": "CAM-309",
+  "when": "لختام بملخص يعرض المقاطع في شبكة 3×3 مرقمة بجانب سؤال دعوة لاتخاذ إجراء فوق خلفية مموهة / for a recap with a numbered 3x3 grid of segment stills beside a big CTA question over a blurred backdrop"
  },
  {
   "family": "camera-composition-layout",
@@ -6515,8 +8742,15 @@
   "styles": [
    "pm-samaote-5e2fc2"
   ],
-  "tags": [],
-  "id": "CAM-310"
+  "tags": [
+   "عد تنازلي",
+   "مازورة",
+   "اسم الفنان",
+   "music video",
+   "bar counter"
+  ],
+  "id": "CAM-310",
+  "when": "حين تريد إطارًا ثابتًا يعرض العنوان والفنان وعدًا تنازليًا ورقم المازورة واسم الفصل / when you want a persistent frame showing title and artist, a countdown, a bar counter with dash progress and the chapter label"
  },
  {
   "family": "camera-composition-layout",
@@ -6536,8 +8770,15 @@
   "styles": [
    "pm-samaote-5e2fc2"
   ],
-  "tags": [],
-  "id": "CAM-311"
+  "tags": [
+   "كلمات متزامنة",
+   "شبكة",
+   "نص حركي",
+   "kinetic text",
+   "word timing"
+  ],
+  "id": "CAM-311",
+  "when": "عند جعل الكلمات تسقط في خلايا شبكة على ورق كريمي مع توقيت ظهورها وإبراز الكلمة المفتاحية بالأحمر / for words snapping into grid cells on their onset over cream paper, with the key word in red"
  },
  {
   "family": "camera-composition-layout",
@@ -6557,8 +8798,15 @@
   "styles": [
    "pm-samuel-spitz-974923"
   ],
-  "tags": [],
-  "id": "CAM-312"
+  "tags": [
+   "تسميات الفصول",
+   "تايم كود",
+   "أقسام الفيديو",
+   "chapter labels",
+   "timecode"
+  ],
+  "id": "CAM-312",
+  "when": "حين تحتاج تسميات فصول مرقمة في الزاوية مع تايم كود / when you need numbered chapter labels in the corner plus a timecode"
  },
  {
   "family": "camera-composition-layout",
@@ -6578,8 +8826,15 @@
   "styles": [
    "pm-samuel-yostt-891f87"
   ],
-  "tags": [],
-  "id": "CAM-313"
+  "tags": [
+   "صور مصغرة",
+   "محتوى لا نهائي",
+   "جدار فيديوهات",
+   "thumbnails",
+   "content wall"
+  ],
+  "id": "CAM-313",
+  "when": "عند الإيحاء بمحتوى لا ينتهي بجدار صور مصغرة مائل يتحرك قطريًا يمينًا مع نص على اليسار / for suggesting infinite content with a tilted wall of video thumbnails moving diagonally on the right and text on the left"
  },
  {
   "family": "camera-composition-layout",
@@ -6599,8 +8854,15 @@
   "styles": [
    "pm-sayan-shanky-f850d8"
   ],
-  "tags": [],
-  "id": "CAM-314"
+  "tags": [
+   "بطاقة نصية",
+   "رقم الفصل",
+   "تلاشي متقاطع",
+   "text card",
+   "crossfade"
+  ],
+  "id": "CAM-314",
+  "when": "حين تعرض فصولًا ببطاقة نصية أسفل اليسار فيها رقم الفصل وعنوان وفقرة قصيرة تتبدل بتلاشٍ / when showing chapters with a bottom-left text card (number, headline, short body) that crossfades per chapter"
  },
  {
   "family": "camera-composition-layout",
@@ -6620,8 +8882,15 @@
   "styles": [
    "pm-shinskinakamoto-20190b"
   ],
-  "tags": [],
-  "id": "CAM-315"
+  "tags": [
+   "محدد المنظر",
+   "فيوفايندر",
+   "نقاط تقدم",
+   "viewfinder",
+   "camera overlay"
+  ],
+  "id": "CAM-315",
+  "when": "عند الرغبة في إطار يشبه عدسة الكاميرا بزوايا ورقم البكرة وتايم كود ونقاط تقدم للفصول / for a viewfinder-style frame with corner brackets, reel ID, timecode and chapter progress dots"
  },
  {
   "family": "camera-composition-layout",
@@ -6641,8 +8910,15 @@
   "styles": [
    "pm-shneural-2abdfa"
   ],
-  "tags": [],
-  "id": "CAM-316"
+  "tags": [
+   "عنوان ضخم",
+   "كروم",
+   "جسم دوار",
+   "3d blob",
+   "hero slide"
+  ],
+  "id": "CAM-316",
+  "when": "حين تريد شريحة بعنوان ضخم بأحرف كبيرة يسارًا وجسم ثلاثي الأبعاد كروم يدور يمينًا مع ترقيم الصفحات / when you want a slide with a heavy caps headline left and a rotating chrome 3D blob right, with pagination"
  },
  {
   "family": "camera-composition-layout",
@@ -6662,8 +8938,15 @@
   "styles": [
    "pm-slvdev-64c45a"
   ],
-  "tags": [],
-  "id": "CAM-317"
+  "tags": [
+   "كولاج",
+   "زووم أوت",
+   "ملخص المشاهد",
+   "zoom out",
+   "recap"
+  ],
+  "id": "CAM-317",
+  "when": "عند الابتعاد بالكاميرا لكشف كل المشاهد السابقة كبطاقات متجاورة معتمة / for zooming out to reveal all previous scenes as dimmed tiled cards"
  },
  {
   "family": "camera-composition-layout",
@@ -6683,8 +8966,15 @@
   "styles": [
    "pm-spearwtf-3c1fd1"
   ],
-  "tags": [],
-  "id": "CAM-318"
+  "tags": [
+   "أوراق رسمية",
+   "ختم",
+   "معاملات",
+   "stamp",
+   "documents"
+  ],
+  "id": "CAM-318",
+  "when": "حين تتحرك الكاميرا فوق أوراق ونماذج تحت إضاءة مركزة ثم يهبط ختم أحمر على إحداها / when the camera tracks over form sheets under a spotlight and a red stamp slams onto one"
  },
  {
   "family": "camera-composition-layout",
@@ -6704,8 +8994,15 @@
   "styles": [
    "pm-sudo-kiran-4f8b59"
   ],
-  "tags": [],
-  "id": "CAM-319"
+  "tags": [
+   "رقم كبير",
+   "شرح خطوات",
+   "نافذة تطبيق",
+   "step layout",
+   "how it works"
+  ],
+  "id": "CAM-319",
+  "when": "عند شرح خطوات الاستخدام برقم كبير متدرج وعنوان يسارًا ونافذة واجهة تنزلق يمينًا / for numbered steps with a big gradient numeral and title on the left and a UI window sliding in on the right"
  },
  {
   "family": "camera-composition-layout",
@@ -6725,8 +9022,15 @@
   "styles": [
    "pm-tak3sh8-be5012"
   ],
-  "tags": [],
-  "id": "CAM-320"
+  "tags": [
+   "سبورة بيضاء",
+   "وايت بورد",
+   "ترجمة",
+   "whiteboard",
+   "subtitles"
+  ],
+  "id": "CAM-320",
+  "when": "حين تريد مشهد سبورة بيضاء مؤطرة على جدار داكن مع الترجمة أسفلها على الجدار / for a set with a framed whiteboard on a dark slate wall and subtitles living on the wall below it"
  },
  {
   "family": "camera-composition-layout",
@@ -6746,8 +9050,15 @@
   "styles": [
    "pm-techhalla-7acbc2"
   ],
-  "tags": [],
-  "id": "CAM-321"
+  "tags": [
+   "مواصفات الفيديو",
+   "عداد الإيقاع",
+   "إطار تقني",
+   "beat counter",
+   "specs overlay"
+  ],
+  "id": "CAM-321",
+  "when": "عند الرغبة في إطار إنتاجي تقني يعرض المعرف والدقة والفريمات والإيقاع والزمن المنقضي وعداد النبضات / for a technical production frame showing ID, BPM, resolution, fps, elapsed time and a beat counter"
  },
  {
   "family": "camera-composition-layout",
@@ -6767,8 +9078,15 @@
   "styles": [
    "pm-techyoutbe-945b56"
   ],
-  "tags": [],
-  "id": "CAM-322"
+  "tags": [
+   "تخطيط",
+   "دليل بصري",
+   "عنوان وصورة",
+   "layout",
+   "proof shot"
+  ],
+  "id": "CAM-322",
+  "when": "حين تريد تخطيطًا بسيطًا بعنوان أعلى اليسار ودليل بصري يملأ معظم الشاشة تحته / when you want a simple layout with a headline top-left and visual proof filling the lower 70%"
  },
  {
   "family": "camera-composition-layout",
@@ -6788,8 +9106,15 @@
   "styles": [
    "pm-teslachartz-c58b32"
   ],
-  "tags": [],
-  "id": "CAM-323"
+  "tags": [
+   "تعليق الشكل",
+   "مواصفات تقنية",
+   "مربعات الإيقاع",
+   "figure caption",
+   "technical overlay"
+  ],
+  "id": "CAM-323",
+  "when": "عند فيديو تقني بفصول يحتاج تعليق FIG لكل مشهد مع مواصفات قصيرة وتايم كود وشريط تقدم ومربعات الإيقاع / for a technical chaptered reel needing per-scene FIG captions with specs, timecode, progress bar and beat squares"
  },
  {
   "family": "camera-composition-layout",
@@ -6809,8 +9134,15 @@
   "styles": [
    "pm-theparuchh-6e08c3"
   ],
-  "tags": [],
-  "id": "CAM-324"
+  "tags": [
+   "إحساس الضخامة",
+   "مقياس",
+   "شخصية صغيرة",
+   "sense of scale",
+   "scale reference"
+  ],
+  "id": "CAM-324",
+  "when": "حين تريد إبراز ضخامة جسم مضيء بوضع شخصية صغيرة بعباءة حمراء أسفل المنتصف أمامه / when you want to show the scale of a huge emissive object with a tiny red-cloaked figure centre-low facing it"
  },
  {
   "family": "camera-composition-layout",
@@ -6830,8 +9162,15 @@
   "styles": [
    "pm-theviableedge-9065be"
   ],
-  "tags": [],
-  "id": "CAM-325"
+  "tags": [
+   "مراحل",
+   "تقدم الخطوات",
+   "خط المراحل",
+   "stepper",
+   "process steps"
+  ],
+  "id": "CAM-325",
+  "when": "عند عرض أربع مراحل على خط بنقاط ملونة تمتلئ عند تفعيل كل مرحلة / for showing four stages as coloured dots with labels on a line that fill as each becomes active"
  },
  {
   "family": "camera-composition-layout",
@@ -6851,8 +9190,15 @@
   "styles": [
    "pm-theviableedge-9065be"
   ],
-  "tags": [],
-  "id": "CAM-326"
+  "tags": [
+   "بطاقات متناثرة",
+   "انجراف",
+   "صور مبعثرة",
+   "scattered cards",
+   "drifting cards"
+  ],
+  "id": "CAM-326",
+  "when": "حين تريد كولاجًا من بطاقات صغيرة مائلة متناثرة تنجرف بخفة / when you want a collage of small rotated cards scattered and drifting slightly"
  },
  {
   "family": "camera-composition-layout",
@@ -6872,8 +9218,15 @@
   "styles": [
    "pm-thismacapital-dfba20"
   ],
-  "tags": [],
-  "id": "CAM-327"
+  "tags": [
+   "بطاقات صور",
+   "ظهور متتابع",
+   "معرض صور",
+   "photo cards",
+   "stagger"
+  ],
+  "id": "CAM-327",
+  "when": "عند عرض ثلاث صور في بطاقات مستديرة الحواف تصعد وتظهر بتتابع على خلفية كحلية مع تسميات / for three rounded photo cards rising and fading in with a stagger on dark navy, with labels"
  },
  {
   "family": "camera-composition-layout",
@@ -6893,8 +9246,15 @@
   "styles": [
    "pm-tolgayhickiran-e90799"
   ],
-  "tags": [],
-  "id": "CAM-328"
+  "tags": [
+   "ريل",
+   "مسطرة زمنية",
+   "رمز المشهد",
+   "reel overlay",
+   "scrubber"
+  ],
+  "id": "CAM-328",
+  "when": "حين تريد إطار ريل يعرض رمز المشهد ومسطرة بمؤشر متحرك ونص المواصفات وزوايا / when you want reel chrome with scene code, a ruler scrubber with moving marker, spec text and corner brackets"
  },
  {
   "family": "camera-composition-layout",
@@ -6914,8 +9274,15 @@
   "styles": [
    "pm-utopyaszx-1b2f94"
   ],
-  "tags": [],
-  "id": "CAM-329"
+  "tags": [
+   "ترقيم الخطوات",
+   "عناوين",
+   "خط سيريف",
+   "step numbers",
+   "section header"
+  ],
+  "id": "CAM-329",
+  "when": "عند ترقيم خطوات الفيديو بأرقام سيريف مائلة وعنوان عريض أعلى اليسار / for numbering video steps with italic serif numerals and a bold label at top-left"
  },
  {
   "family": "camera-composition-layout",
@@ -6935,8 +9302,15 @@
   "styles": [
    "pm-vanshwtfff-db0466"
   ],
-  "tags": [],
-  "id": "CAM-330"
+  "tags": [
+   "مسطرة زمنية",
+   "مؤشر أحمر",
+   "علامات الفصول",
+   "playhead",
+   "chapter markers"
+  ],
+  "id": "CAM-330",
+  "when": "حين تريد مسطرة زمنية سفلية بعلامات فصول ومؤشر أحمر يتحرك مع الفيديو ويعرض اسم الفصل الحالي / when you want a bottom ruler with chapter markers and a red playhead moving with the video, labelling the current chapter"
  },
  {
   "family": "camera-composition-layout",
@@ -6956,8 +9330,15 @@
   "styles": [
    "pm-viktoroddy-98c1d8"
   ],
-  "tags": [],
-  "id": "CAM-331"
+  "tags": [
+   "لقطات شاشة",
+   "سكرين شوت",
+   "ضبابية الحركة",
+   "screenshots",
+   "motion blur"
+  ],
+  "id": "CAM-331",
+  "when": "عند استعراض لقطات شاشة كثيرة بسرعة في جدار مائل ينزلق قطريًا بضبابية حركة ثم يصغر للكشف / for sweeping through many screenshots on a tilted wall moving diagonally with motion blur, then scaling down to reveal"
  },
  {
   "family": "camera-composition-layout",
@@ -6977,8 +9358,15 @@
   "styles": [
    "pm-wani-shola-16ca7a"
   ],
-  "tags": [],
-  "id": "CAM-332"
+  "tags": [
+   "بطاقات متداخلة",
+   "حركة نابضية",
+   "شارات",
+   "spring animation",
+   "overlapping cards"
+  ],
+  "id": "CAM-332",
+  "when": "حين تريد بطاقتين متداخلتين مائلتين قليلًا تدخلان بحركة نابضية / when you want two overlapping cards tilted about 5 degrees that spring in"
  },
  {
   "family": "camera-composition-layout",
@@ -6998,8 +9386,15 @@
   "styles": [
    "pm-web3wesley-7bb108"
   ],
-  "tags": [],
-  "id": "CAM-333"
+  "tags": [
+   "إيزنج",
+   "منحنى الحركة",
+   "تسميات الزوايا",
+   "easing",
+   "timecode"
+  ],
+  "id": "CAM-333",
+  "when": "عند عرض اسم منحنى التسهيل والتايم كود في زوايا الشاشة / for showing the easing curve name and timecode in the screen corners"
  },
  {
   "family": "camera-composition-layout",
@@ -7019,8 +9414,15 @@
   "styles": [
    "pm-wozu-co-242285"
   ],
-  "tags": [],
-  "id": "CAM-334"
+  "tags": [
+   "زووم داخل التطبيق",
+   "نافذة سطح المكتب",
+   "إبراز منطقة",
+   "zoom in",
+   "app demo"
+  ],
+  "id": "CAM-334",
+  "when": "حين تعرض نافذة تطبيق كاملة ثم تقترب لقص منطقة مهمة بينما يبقى العنوان ثابتًا / when showing a full desktop window then scaling in to crop the area of interest while the headline stays pinned"
  },
  {
   "family": "camera-composition-layout",
@@ -7040,8 +9442,15 @@
   "styles": [
    "pm-x4b47x-9cc84f"
   ],
-  "tags": [],
-  "id": "CAM-335"
+  "tags": [
+   "مسرح",
+   "خشبة",
+   "تأطير",
+   "theater",
+   "curtain"
+  ],
+  "id": "CAM-335",
+  "when": "عند تأطير المشهد بستارة مسرح حمراء على الجانبين وأعلى الإطار / for framing the scene with red curtain sides and a valance overlay on top"
  },
  {
   "family": "camera-composition-layout",
@@ -7061,8 +9470,16 @@
   "styles": [
    "product"
   ],
-  "tags": [],
-  "id": "CAM-336"
+  "tags": [
+   "عمق",
+   "عبور الكاميرا",
+   "ووش",
+   "fly through",
+   "z depth",
+   "whoosh"
+  ],
+  "id": "CAM-336",
+  "when": "حين تعبر الكاميرا بين بطاقات موزعة في العمق تتلاشى عند الاقتراب مع صوت ووش عند المرور / when the camera flies through cards spread in depth, fading as they near and triggering a whoosh at each pass"
  },
  {
   "family": "camera-composition-layout",
@@ -7082,8 +9499,15 @@
   "styles": [
    "stickman"
   ],
-  "tags": [],
-  "id": "CAM-337"
+  "tags": [
+   "هزة",
+   "شيك",
+   "صدمة",
+   "camera shake",
+   "screen shake"
+  ],
+  "id": "CAM-337",
+  "when": "عند الارتطام أو الضربة لإضافة اهتزاز كاميرا يخفت تدريجيًا بعد كل صدمة / for adding a camera shake that decays after each impact or hit"
  },
  {
   "family": "camera-composition-layout",
@@ -7103,8 +9527,15 @@
   "styles": [
    "stickman"
   ],
-  "tags": [],
-  "id": "CAM-338"
+  "tags": [
+   "سرد بصري",
+   "سبب ومشكلة وحل",
+   "منظر جانبي",
+   "side view",
+   "storytelling layout"
+  ],
+  "id": "CAM-338",
+  "when": "حين تروي قصة سبب ثم مشكلة ثم حل بعناصر مصفوفة على أرضية واحدة من اليسار لليمين بمنظر جانبي / when telling a cause, problem, solution story with props laid left-to-right on one floor line in side view"
  },
  {
   "family": "camera-composition-layout",
@@ -7124,8 +9555,15 @@
   "styles": [
    "whiteboard"
   ],
-  "tags": [],
-  "id": "CAM-339"
+  "tags": [
+   "مزامنة الطبقات",
+   "تحويل CSS",
+   "تحريك الكاميرا",
+   "css transform",
+   "layer sync"
+  ],
+  "id": "CAM-339",
+  "when": "عند الحاجة لتحريك كاميرا واحدة على طبقة رسم SVG وطبقة نص HTML معًا كي تبقيا متطابقتين / when one camera move must drive both an SVG drawing layer and an HTML text layer so they stay locked"
  },
  {
   "family": "camera-composition-layout",
@@ -7145,8 +9583,15 @@
   ],
   "proof_scope": "sibling",
   "styles": [],
-  "tags": [],
-  "id": "CAM-340"
+  "tags": [
+   "هوية بصرية",
+   "شبكة لقطات",
+   "مقاسات متعددة",
+   "brand montage",
+   "multi ratio"
+  ],
+  "id": "CAM-340",
+  "when": "حين تريد مونتاجًا شبكيًا يجمع لقطات الواجهة مع شعار العلامة وألوانها وخطوطها بتصميم لكل مقاس / when you want a grid montage mixing real UI moments with the brand's mark, palette and type, designed per aspect ratio"
  },
  {
   "family": "camera-composition-layout",
@@ -7164,8 +9609,15 @@
   ],
   "proof_scope": "sibling",
   "styles": [],
-  "tags": [],
-  "id": "CAM-341"
+  "tags": [
+   "تخطيط المشهد",
+   "تداخل العناصر",
+   "ترتيب العناصر",
+   "scene layout",
+   "element overlap"
+  ],
+  "id": "CAM-341",
+  "when": "حين تبني مشهد موشن وتريد تثبيت توزيع العناصر قبل التحريك لكشف التداخل / when laying out a scene's fullest frame before animating entrances and exits, to catch overlaps"
  },
  {
   "family": "camera-composition-layout",
@@ -7184,8 +9636,15 @@
   ],
   "proof_scope": "sibling",
   "styles": [],
-  "tags": [],
-  "id": "CAM-342"
+  "tags": [
+   "تكوين الكادر",
+   "ملء الإطار",
+   "نقطة تركيز",
+   "frame composition",
+   "focal point"
+  ],
+  "id": "CAM-342",
+  "when": "حين يبدو الكادر فارغًا أو كصفحة ويب وتحتاج ملء الإطار بطبقات ونقطتي تركيز / when a video frame looks empty or web-like and needs layers, focal points and edge anchoring"
  },
  {
   "family": "camera-composition-layout",
@@ -7203,8 +9662,16 @@
   ],
   "proof_scope": "sibling",
   "styles": [],
-  "tags": [],
-  "id": "CAM-343"
+  "tags": [
+   "مسار الكاميرا",
+   "منحنى",
+   "سرعة ثابتة",
+   "camera path",
+   "catmull-rom",
+   "bezier"
+  ],
+  "id": "CAM-343",
+  "when": "عند تحريك كاميرا أو جسم على مسار منحني بسرعة ثابتة دون تسارع مفاجئ / when moving a camera or object along a curved path at constant speed"
  },
  {
   "family": "camera-composition-layout",
@@ -7223,8 +9690,15 @@
   ],
   "proof_scope": "sibling",
   "styles": [],
-  "tags": [],
-  "id": "CAM-344"
+  "tags": [
+   "نسبة 16:9",
+   "تكبير المسرح",
+   "مقاس ثابت",
+   "letterbox",
+   "viewport scaling"
+  ],
+  "id": "CAM-344",
+  "when": "حين تصمم المشهد بمقاس 1920x1080 وتريد تكبيره ليناسب أي شاشة دون إعادة ترتيب / when authoring at 1920x1080 and scaling the whole stage to any viewport without reflow"
  },
  {
   "family": "camera-composition-layout",
@@ -7242,8 +9716,15 @@
   ],
   "proof_scope": "sibling",
   "styles": [],
-  "tags": [],
-  "id": "CAM-345"
+  "tags": [
+   "مسافات",
+   "زوايا مستديرة",
+   "حواف دائرية",
+   "spacing tokens",
+   "border radius"
+  ],
+  "id": "CAM-345",
+  "when": "حين تضبط المسافات والزوايا المستديرة وأحجام الخط في التصميم بنظام متسق / when setting consistent spacing, nested corner radii and type sizes for a design"
  },
  {
   "family": "camera-composition-layout",
@@ -7261,8 +9742,15 @@
   ],
   "proof_scope": "sibling",
   "styles": [],
-  "tags": [],
-  "id": "CAM-346"
+  "tags": [
+   "تكوين غير متماثل",
+   "صورة خارج الإطار",
+   "إيقاع بصري",
+   "full bleed",
+   "asymmetric layout"
+  ],
+  "id": "CAM-346",
+  "when": "حين تريد تكوينًا غير متماثل بعناوين مزاحة وصور تخرج عن حدود الإطار لخلق إيقاع / when you want offset titles and imagery bleeding past containers to create rhythm"
  },
  {
   "family": "camera-composition-layout",
@@ -7280,8 +9768,16 @@
   ],
   "proof_scope": "sibling",
   "styles": [],
-  "tags": [],
-  "id": "CAM-347"
+  "tags": [
+   "عرض توضيحي",
+   "ديمو",
+   "لقطة شاشة",
+   "تقسيم الشاشة",
+   "demo layout",
+   "cta"
+  ],
+  "id": "CAM-347",
+  "when": "حين تبني مشهد عرض ديمو بعنوان أعلى ولقطة شاشة في الوسط ودعوة للإجراء أسفل / when building a 1920x1080 demo scene with title band, hero screenshot and footer CTA"
  },
  {
   "family": "camera-composition-layout",
@@ -7299,8 +9795,16 @@
   ],
   "proof_scope": "sibling",
   "styles": [],
-  "tags": [],
-  "id": "CAM-348"
+  "tags": [
+   "بدون وجه",
+   "تصوير المكتب",
+   "زاوية علوية",
+   "faceless",
+   "top-down",
+   "over-shoulder"
+  ],
+  "id": "CAM-348",
+  "when": "حين يريد صانع المحتوى التصوير دون إظهار وجهه ويحتاج زوايا كاميرا جاهزة / when a faceless creator needs repeatable camera framings with set distances and angles"
  },
  {
   "family": "camera-composition-layout",
@@ -7318,8 +9822,16 @@
   ],
   "proof_scope": "sibling",
   "styles": [],
-  "tags": [],
-  "id": "CAM-349"
+  "tags": [
+   "بسيط",
+   "مينيمال",
+   "مساحة فارغة",
+   "لون واحد",
+   "minimalist",
+   "clean style"
+  ],
+  "id": "CAM-349",
+  "when": "حين يطلب المستخدم أسلوبًا هادئًا ونظيفًا بمساحات فارغة ولون مميز واحد ونص واضح / when the user wants a calm, clean minimal look with negative space and one accent colour"
  },
  {
   "family": "camera-composition-layout",
@@ -7341,8 +9853,15 @@
   ],
   "proof_scope": "sibling",
   "styles": [],
-  "tags": [],
-  "id": "CAM-350"
+  "tags": [
+   "سينمائي",
+   "ضباب وإضاءة",
+   "بارالاكس",
+   "moody",
+   "parallax"
+  ],
+  "id": "CAM-350",
+  "when": "حين يريد المستخدم جوًا سينمائيًا بعمق وطبقات وإضاءة موجهة لبناء مزاج وترقب / when the user wants a moody cinematic look with depth layers, directed light and slow reveals"
  },
  {
   "family": "camera-composition-layout",
@@ -7364,8 +9883,16 @@
   ],
   "proof_scope": "sibling",
   "styles": [],
-  "tags": [],
-  "id": "CAM-351"
+  "tags": [
+   "أسلوب تحريري",
+   "شبكة أعمدة",
+   "كشف الأسطر",
+   "خط النسخ",
+   "typography",
+   "line reveal"
+  ],
+  "id": "CAM-351",
+  "when": "حين يطلب المستخدم أسلوبًا تحريريًا يعتمد على شبكة طباعية وعناوين واضحة وكشف الأسطر / when the user wants a modern editorial style with typographic grid, headlines and line reveals"
  },
  {
   "family": "camera-composition-layout",
@@ -7384,8 +9911,16 @@
   ],
   "proof_scope": "sibling",
   "styles": [],
-  "tags": [],
-  "id": "CAM-352"
+  "tags": [
+   "زووم",
+   "تكبير على تفصيلة",
+   "خريطة مصغرة",
+   "zoom in",
+   "minimap",
+   "detail zoom"
+  ],
+  "id": "CAM-352",
+  "when": "حين تريد التكبير من الصورة الكاملة إلى تفصيلة مع خريطة صغيرة توضح موقعها / when zooming from the whole view into a detail while a small locator map keeps viewers oriented"
  },
  {
   "family": "camera-composition-layout",
@@ -7404,8 +9939,16 @@
   ],
   "proof_scope": "sibling",
   "styles": [],
-  "tags": [],
-  "id": "CAM-353"
+  "tags": [
+   "ستوري بورد",
+   "لقطة واسعة",
+   "لقطة قريبة",
+   "بي رول",
+   "storyboard",
+   "b-roll"
+  ],
+  "id": "CAM-353",
+  "when": "حين تكتب ستوري بورد وتريد أن تؤدي كل لقطة وظيفة واضحة بين واسعة ومتوسطة وقريبة / when planning a storyboard so every wide, medium, close shot and B-roll has a clear job"
  },
  {
   "family": "camera-composition-layout",
@@ -7426,8 +9969,16 @@
   ],
   "proof_scope": "sibling",
   "styles": [],
-  "tags": [],
-  "id": "CAM-354"
+  "tags": [
+   "تعتيم الخلفية",
+   "ظل",
+   "تمويه الخلفية",
+   "وضوح النص",
+   "scrim",
+   "backdrop blur"
+  ],
+  "id": "CAM-354",
+  "when": "حين تضع نصوصًا أو عناصر فوق فيديو وتحتاج فصلها عن الخلفية بتعتيم أو ظل أو تمويه / when overlays on footage need separation from the plate via scrim, dimming, shadow or blur"
  },
  {
   "family": "camera-composition-layout",
@@ -7445,8 +9996,16 @@
   ],
   "proof_scope": "sibling",
   "styles": [],
-  "tags": [],
-  "id": "CAM-355"
+  "tags": [
+   "تنظيف التصميم",
+   "زحمة بصرية",
+   "شعار مكرر",
+   "تبسيط",
+   "clutter",
+   "visual noise"
+  ],
+  "id": "CAM-355",
+  "when": "حين تبدو الإطارات مزدحمة بزخارف وأيقونات وشعارات مكررة وتحتاج تنظيفها قبل التحريك / when storyboard frames are cluttered with borders, icons and repeated logos before animating"
  },
  {
   "family": "camera-composition-layout",
@@ -7469,8 +10028,16 @@
   ],
   "proof_scope": "sibling",
   "styles": [],
-  "tags": [],
-  "id": "CAM-356"
+  "tags": [
+   "فيديو عمودي",
+   "فيديو طولي",
+   "إعادة توزيع",
+   "vertical video",
+   "9:16",
+   "remotion"
+  ],
+  "id": "CAM-356",
+  "when": "حين تحتاج نسخة عمودية 9:16 من موشن جرافيك أو لقطات ألعاب دون قص يفقد الدقة / when you need a 9:16 vertical version of motion graphics or game footage instead of cropping 16:9"
  },
  {
   "family": "camera-composition-layout",
@@ -7488,8 +10055,16 @@
   ],
   "proof_scope": "sibling",
   "styles": [],
-  "tags": [],
-  "id": "CAM-357"
+  "tags": [
+   "صورة في صورة",
+   "مقارنة فيديوهين",
+   "تسجيل شاشة",
+   "علامة مائية",
+   "pip",
+   "hstack"
+  ],
+  "id": "CAM-357",
+  "when": "حين تريد وضع كاميرا المقدم فوق تسجيل الشاشة أو مقارنة مقطعين جنبًا إلى جنب / when overlaying a webcam presenter on a screen capture or stacking clips side by side to compare"
  },
  {
   "family": "camera-composition-layout",
@@ -7507,8 +10082,15 @@
   ],
   "proof_scope": "sibling",
   "styles": [],
-  "tags": [],
-  "id": "CAM-358"
+  "tags": [
+   "نص واحد",
+   "زحمة النصوص",
+   "وضوح القراءة",
+   "text overload",
+   "single message"
+  ],
+  "id": "CAM-358",
+  "when": "حين تزدحم اللقطة بنصوص متعددة وتريد أن يحمل عنصر واحد فقط الكلام على سطح حقيقي / when a frame has competing text layers and only one object on a real surface should carry copy"
  },
  {
   "family": "camera-composition-layout",
@@ -7526,8 +10108,16 @@
   ],
   "proof_scope": "sibling",
   "styles": [],
-  "tags": [],
-  "id": "CAM-359"
+  "tags": [
+   "ترجمة",
+   "طول النص",
+   "قص النص",
+   "حجم الخط التلقائي",
+   "localization",
+   "text overflow"
+  ],
+  "id": "CAM-359",
+  "when": "عند ترجمة نصوص الفيديو لتفادي قص الكلام بعد أن يطول النص المترجم / when translating on-screen text so longer translations don't get clipped"
  },
  {
   "family": "camera-composition-layout",
@@ -7546,8 +10136,15 @@
   ],
   "proof_scope": "sibling",
   "styles": [],
-  "tags": [],
-  "id": "CAM-360"
+  "tags": [
+   "تلوين",
+   "إبراز عنصر",
+   "تجميع بالألوان",
+   "highlight",
+   "color grouping"
+  ],
+  "id": "CAM-360",
+  "when": "حين تريد إبراز العنصر الذي يتحدث عنه الراوي وجعل العناصر المتشابهة تُقرأ كمجموعة باللون / when highlighting the one element the narration is about and grouping items by shared colour"
  },
  {
   "family": "camera-composition-layout",
@@ -7566,8 +10163,16 @@
   ],
   "proof_scope": "sibling",
   "styles": [],
-  "tags": [],
-  "id": "CAM-361"
+  "tags": [
+   "تباين",
+   "ترتيب بصري",
+   "سطوع",
+   "تركيز",
+   "visual hierarchy",
+   "contrast"
+  ],
+  "id": "CAM-361",
+  "when": "حين تتنافس عناصر الإطار على الانتباه وتحتاج ترتيبًا هرميًا بالسطوع والتباين قبل الألوان / when frame elements compete for attention and need hierarchy through lightness contrast"
  },
  {
   "family": "camera-composition-layout",
@@ -7585,8 +10190,15 @@
   ],
   "proof_scope": "sibling",
   "styles": [],
-  "tags": [],
-  "id": "CAM-362"
+  "tags": [
+   "بدون وجه",
+   "زوايا التصوير",
+   "مسافة الكاميرا",
+   "b-roll",
+   "faceless shots"
+  ],
+  "id": "CAM-362",
+  "when": "حين تكتب بريف لقطات بي رول بدون وجه أو تضبط كاميرا افتراضية بزوايا ومسافات جاهزة / when briefing faceless B-roll or setting virtual cameras with preset distances and angles"
  },
  {
   "family": "camera-composition-layout",
@@ -7605,8 +10217,15 @@
   ],
   "proof_scope": "sibling",
   "styles": [],
-  "tags": [],
-  "id": "CAM-363"
+  "tags": [
+   "داشبورد",
+   "عرض البيانات",
+   "ترتيب المعلومات",
+   "power bi",
+   "dashboard layout"
+  ],
+  "id": "CAM-363",
+  "when": "حين تعرض بيانات أو داشبورد في فيديو وتريد ترتيب المعلومات من الخلاصة إلى التفصيل / when presenting data in video, ordering headline, breakdown and detail by viewing time"
  },
  {
   "family": "camera-composition-layout",
@@ -7625,8 +10244,16 @@
   ],
   "proof_scope": "sibling",
   "styles": [],
-  "tags": [],
-  "id": "CAM-364"
+  "tags": [
+   "واجهة مستخدم",
+   "مسافات",
+   "زوايا مستديرة",
+   "هدف اللمس",
+   "ui tokens",
+   "focus ring"
+  ],
+  "id": "CAM-364",
+  "when": "حين تبني واجهة أو بطاقات وتحتاج مسافات منتظمة وزوايا متداخلة وأهداف لمس مناسبة / when building UI cards that need consistent spacing, nested radii, touch targets and a focus ring"
  },
  {
   "family": "camera-composition-layout",
@@ -7647,8 +10274,16 @@
   ],
   "proof_scope": "sibling",
   "styles": [],
-  "tags": [],
-  "id": "CAM-365"
+  "tags": [
+   "عنوان عربي",
+   "من اليمين لليسار",
+   "عكس الصورة",
+   "مساحة للعنوان",
+   "rtl",
+   "mirror"
+  ],
+  "id": "CAM-365",
+  "when": "حين تحتاج صورة أو مقطعًا بفراغ على اليمين لعنوان عربي فتعكس المشهد ليقع الموضوع يسارًا / when hero art needs empty right-side space for an Arabic headline by mirroring the subject left"
  },
  {
   "family": "camera-composition-layout",
@@ -7666,8 +10301,15 @@
   ],
   "proof_scope": "sibling",
   "styles": [],
-  "tags": [],
-  "id": "CAM-366"
+  "tags": [
+   "دفع الكاميرا",
+   "زووم",
+   "تقريب",
+   "push in",
+   "zoom speed"
+  ],
+  "id": "CAM-366",
+  "when": "حين تحتاج أرقامًا افتراضية لمقدار ومدة دفع الكاميرا واللقطات القريبة أثناء التحريك / when you need default numbers for camera push scale, duration and close-ups while animating"
  },
  {
   "family": "camera-composition-layout",
@@ -7685,8 +10327,15 @@
   ],
   "proof_scope": "sibling",
   "styles": [],
-  "tags": [],
-  "id": "CAM-367"
+  "tags": [
+   "زووم",
+   "لقطة المتحدث",
+   "تنويع الكادر",
+   "talking head",
+   "punch in"
+  ],
+  "id": "CAM-367",
+  "when": "حين تكون اللقطة لمتحدث أمام الكاميرا وتريد التبديل بين كادر عادي وزووم خفيف كل بضع ثوانٍ / when a talking-head shot should alternate normal framing with a slight punch-in zoom"
  },
  {
   "family": "camera-composition-layout",
@@ -7704,8 +10353,15 @@
   ],
   "proof_scope": "sibling",
   "styles": [],
-  "tags": [],
-  "id": "CAM-368"
+  "tags": [
+   "حركة معاكسة",
+   "تنسيق الحركة",
+   "بارالاكس",
+   "counter motion",
+   "choreography"
+  ],
+  "id": "CAM-368",
+  "when": "حين تحرك مجموعة عناصر وتريد أن يقودها عنصر رئيسي مع حركة معاكسة وسرعات بارالاكس للطبقات / when choreographing a group where the hero leads, with counter-motion and parallax speeds"
  },
  {
   "family": "camera-composition-layout",
@@ -7723,8 +10379,15 @@
   ],
   "proof_scope": "sibling",
   "styles": [],
-  "tags": [],
-  "id": "CAM-369"
+  "tags": [
+   "كاميرا افتراضية",
+   "حركة الكاميرا",
+   "حاوية",
+   "camera rig",
+   "transform"
+  ],
+  "id": "CAM-369",
+  "when": "حين تبني كاميرا افتراضية بتحويل واحد على حاوية واحدة وحركة واحدة في كل مرة مع ثبات بين الأحداث / when building a virtual camera as one transform on one container, one move at a time"
  },
  {
   "family": "camera-composition-layout",
@@ -7742,8 +10405,15 @@
   ],
   "proof_scope": "sibling",
   "styles": [],
-  "tags": [],
-  "id": "CAM-370"
+  "tags": [
+   "قاعدة الأثلاث",
+   "تكوين الصورة",
+   "برومبت",
+   "framing",
+   "thirds"
+  ],
+  "id": "CAM-370",
+  "when": "حين تكتب برومبت لصورة أو تخطط لقطة وتريد وضع الموضوع على خطوط الأثلاث / when writing an image prompt or planning a shot that places the subject on the thirds grid"
  },
  {
   "family": "camera-composition-layout",
@@ -7761,8 +10431,15 @@
   ],
   "proof_scope": "sibling",
   "styles": [],
-  "tags": [],
-  "id": "CAM-371"
+  "tags": [
+   "النسبة الذهبية",
+   "حلزون",
+   "تكوين اللقطة",
+   "golden spiral",
+   "framing"
+  ],
+  "id": "CAM-371",
+  "when": "حين تكتب برومبت أو تخطط لقطة بتكوين النسبة الذهبية أو الحلزون الذهبي / when writing a prompt or planning a shot with golden ratio or golden spiral composition"
  },
  {
   "family": "camera-composition-layout",
@@ -7780,8 +10457,15 @@
   ],
   "proof_scope": "sibling",
   "styles": [],
-  "tags": [],
-  "id": "CAM-372"
+  "tags": [
+   "تماثل",
+   "منتصف الكادر",
+   "تكوين متناظر",
+   "symmetry",
+   "centered"
+  ],
+  "id": "CAM-372",
+  "when": "حين يحتاج البرومبت أو اللقطة كادرًا متماثلًا والموضوع في منتصفه تمامًا / when a prompt or shot calls for a centred, symmetrical frame"
  },
  {
   "family": "camera-composition-layout",
@@ -7799,8 +10483,15 @@
   ],
   "proof_scope": "sibling",
   "styles": [],
-  "tags": [],
-  "id": "CAM-373"
+  "tags": [
+   "خطوط موجهة",
+   "توجيه النظر",
+   "تكوين اللقطة",
+   "eye guidance",
+   "framing"
+  ],
+  "id": "CAM-373",
+  "when": "حين تريد توجيه عين المشاهد نحو الموضوع بخطوط داخل الكادر في برومبت أو لقطة / when a prompt or shot should guide the eye to the subject with lines in the frame"
  },
  {
   "family": "camera-composition-layout",
@@ -7818,8 +10509,15 @@
   ],
   "proof_scope": "sibling",
   "styles": [],
-  "tags": [],
-  "id": "CAM-374"
+  "tags": [
+   "مساحة فارغة",
+   "فراغ",
+   "بساطة",
+   "empty space",
+   "minimal framing"
+  ],
+  "id": "CAM-374",
+  "when": "حين يحتاج البرومبت أو اللقطة مساحة فارغة واسعة حول الموضوع / when a prompt or shot needs generous empty space around the subject"
  },
  {
   "family": "camera-composition-layout",
@@ -7837,8 +10535,15 @@
   ],
   "proof_scope": "sibling",
   "styles": [],
-  "tags": [],
-  "id": "CAM-375"
+  "tags": [
+   "إطار داخل إطار",
+   "تأطير",
+   "تكوين اللقطة",
+   "framing",
+   "nested frame"
+  ],
+  "id": "CAM-375",
+  "when": "حين تريد تأطير الموضوع داخل إطار آخر ضمن المشهد في برومبت أو لقطة / when a prompt or shot frames the subject inside another frame within the scene"
  },
  {
   "family": "camera-composition-layout",
@@ -7856,8 +10561,15 @@
   ],
   "proof_scope": "sibling",
   "styles": [],
-  "tags": [],
-  "id": "CAM-376"
+  "tags": [
+   "زاوية منخفضة",
+   "زاوية عالية",
+   "قوة الشخصية",
+   "low angle",
+   "high angle"
+  ],
+  "id": "CAM-376",
+  "when": "حين تريد إظهار الشخصية قوية بزاوية منخفضة أو ضعيفة بزاوية مرتفعة في برومبت أو لقطة / when a prompt or shot should make a subject look heroic from low or vulnerable from high"
  },
  {
   "family": "camera-composition-layout",
@@ -7875,8 +10587,15 @@
   ],
   "proof_scope": "sibling",
   "styles": [],
-  "tags": [],
-  "id": "CAM-377"
+  "tags": [
+   "عمق",
+   "طبقات",
+   "مقدمة وخلفية",
+   "layers",
+   "depth"
+  ],
+  "id": "CAM-377",
+  "when": "حين تريد عمقًا في اللقطة بطبقات أمامية ووسطى وخلفية في برومبت أو تصوير / when a prompt or shot needs depth via stacked foreground, midground and background"
  },
  {
   "family": "camera-composition-layout",
@@ -7894,8 +10613,15 @@
   ],
   "proof_scope": "sibling",
   "styles": [],
-  "tags": [],
-  "id": "CAM-378"
+  "tags": [
+   "عدسة",
+   "بعد بؤري",
+   "أنامورفيك",
+   "focal length",
+   "lens choice"
+  ],
+  "id": "CAM-378",
+  "when": "حين تختار البعد البؤري أو العدسة للقطة من 14 مم الواسعة إلى 200 مم أو أنامورفيك / when choosing a focal length or lens for a shot, from 14mm wide to 200mm or anamorphic 40mm"
  },
  {
   "family": "camera-composition-layout",
@@ -7913,8 +10639,16 @@
   ],
   "proof_scope": "sibling",
   "styles": [],
-  "tags": [],
-  "id": "CAM-379"
+  "tags": [
+   "حجم اللقطة",
+   "زاوية الكاميرا",
+   "كلوز أب",
+   "درون",
+   "close-up",
+   "pov"
+  ],
+  "id": "CAM-379",
+  "when": "حين تحدد حجم اللقطة وزاويتها من الكلوز أب إلى الإنسرت ومن مستوى العين إلى الدرون / when picking shot size and angle, from extreme close-up to insert, eye level to drone or POV"
  },
  {
   "family": "camera-composition-layout",
@@ -7932,8 +10666,16 @@
   ],
   "proof_scope": "sibling",
   "styles": [],
-  "tags": [],
-  "id": "CAM-380"
+  "tags": [
+   "حركة الكاميرا",
+   "بان",
+   "دولي",
+   "وصف الحركة",
+   "camera moves",
+   "steadicam"
+  ],
+  "id": "CAM-380",
+  "when": "حين تصف حركة الكاميرا نصيًا في برومبت للنماذج أو خطة لقطات مثل بان وتيلت ودولي / when describing camera movement in prose for models or shot plans: pan, tilt, dolly, orbit"
  },
  {
   "family": "camera-composition-layout",
@@ -7951,8 +10693,15 @@
   ],
   "proof_scope": "sibling",
   "styles": [],
-  "tags": [],
-  "id": "CAM-381"
+  "tags": [
+   "تكوين اللقطة",
+   "قواعد التصوير",
+   "تأطير",
+   "framing",
+   "shot design"
+  ],
+  "id": "CAM-381",
+  "when": "حين تختار نظام تكوين لكل لقطة من قائمة جاهزة كالأثلاث والتماثل والخطوط الموجهة / when choosing one named composition system per shot, such as thirds, symmetry or leading lines"
  },
  {
   "family": "camera-composition-layout",
@@ -7970,8 +10719,16 @@
   ],
   "proof_scope": "sibling",
   "styles": [],
-  "tags": [],
-  "id": "CAM-382"
+  "tags": [
+   "استمرارية",
+   "راكور",
+   "اتجاه الشاشة",
+   "مراجعة",
+   "continuity",
+   "screen direction"
+  ],
+  "id": "CAM-382",
+  "when": "قبل تسليم أي مشهد متعدد اللقطات للتأكد من ثبات الإضاءة والملابس والاتجاه وقاعدة 180 درجة / before delivering any multi-shot sequence, to check light, wardrobe, props and the 180-degree rule"
  },
  {
   "family": "camera-composition-layout",
@@ -7990,8 +10747,16 @@
   ],
   "proof_scope": "sibling",
   "styles": [],
-  "tags": [],
-  "id": "CAM-383"
+  "tags": [
+   "عدسة واسعة",
+   "عدسة طويلة",
+   "عزل الموضوع",
+   "بوكيه",
+   "focal length",
+   "bokeh"
+  ],
+  "id": "CAM-383",
+  "when": "حين تريد معرفة الأثر القصصي لكل عدسة: الواسعة تُظهر المكان والطويلة تعزل الموضوع / when choosing a focal length for its storytelling effect: wide shows environment, long isolates"
  },
  {
   "family": "camera-composition-layout",
@@ -8011,8 +10776,15 @@
   ],
   "proof_scope": "sibling",
   "styles": [],
-  "tags": [],
-  "id": "CAM-384"
+  "tags": [
+   "قائمة لقطات",
+   "زاوية التصوير",
+   "حجم اللقطة",
+   "shot list",
+   "framing terms"
+  ],
+  "id": "CAM-384",
+  "when": "حين تكتب قائمة لقطات وتحدد لكل لقطة حجمها وزاويتها وحركتها وأثرها العاطفي / when writing a shot list and picking size, angle and camera move with its emotional use per shot"
  },
  {
   "family": "camera-composition-layout",
@@ -8030,8 +10802,16 @@
   ],
   "proof_scope": "sibling",
   "styles": [],
-  "tags": [],
-  "id": "CAM-385"
+  "tags": [
+   "تكوين الكادر",
+   "حجم العنوان",
+   "خلفية حية",
+   "طبقات",
+   "frame layout",
+   "title size"
+  ],
+  "id": "CAM-385",
+  "when": "حين تصمم كادر الفيديو قبل التحريك وتريد عنوانًا كبيرًا وطبقات وخلفية غير سوداء فارغة / when designing a video frame before motion: large title, three layers, two focal points, no empty black"
  },
  {
   "family": "camera-composition-layout",
@@ -8051,8 +10831,15 @@
   ],
   "proof_scope": "sibling",
   "styles": [],
-  "tags": [],
-  "id": "CAM-386"
+  "tags": [
+   "تخطيط ثابت",
+   "دخول وخروج",
+   "تحريك العناصر",
+   "gsap",
+   "css layout"
+  ],
+  "id": "CAM-386",
+  "when": "حين تبدأ تحريك مشهد وتريد وضع كل عنصر أولًا في أوضح لحظاته ثم تحريكه منها وإليها / when animating a scene by first placing each element at its clearest moment as static CSS"
  },
  {
   "family": "camera-composition-layout",
@@ -8070,8 +10857,15 @@
   ],
   "proof_scope": "sibling",
   "styles": [],
-  "tags": [],
-  "id": "CAM-387"
+  "tags": [
+   "دخول العنصر",
+   "حركة الدخول",
+   "انيميشن دخول",
+   "entrance animation",
+   "scale in"
+  ],
+  "id": "CAM-387",
+  "when": "حين تصمم دخول العنصر الرئيسي بحركة ودوران وتمويه من مسافة بدل التكبير في مكانه / when a hero entrance should travel in with rotation, blur and scale instead of growing in place"
  },
  {
   "family": "camera-composition-layout",
@@ -8090,8 +10884,15 @@
   ],
   "proof_scope": "sibling",
   "styles": [],
-  "tags": [],
-  "id": "CAM-388"
+  "tags": [
+   "حركات الكاميرا",
+   "توزيع الحركة",
+   "ثبات الكاميرا",
+   "camera moves",
+   "motion budget"
+  ],
+  "id": "CAM-388",
+  "when": "حين تخطط حركات الكاميرا في مشهد وتريد عددًا محدودًا من الحركات المسماة مع ثبات بينها / when planning 2-3 named timed camera moves with holds between and no constant drift"
  },
  {
   "family": "camera-composition-layout",
@@ -8111,8 +10912,14 @@
   ],
   "proof_scope": "sibling",
   "styles": [],
-  "tags": [],
-  "id": "CAM-389"
+  "tags": [
+   "كلينج",
+   "معاملات الكاميرا",
+   "حركة الكاميرا",
+   "camera parameters"
+  ],
+  "id": "CAM-389",
+  "when": "حين تستخدم Kling وتحتاج مرجعًا لمعاملات التحكم في حركة الكاميرا / when using Kling and you need a reference for its camera control parameters"
  },
  {
   "family": "camera-composition-layout",
@@ -8131,8 +10938,15 @@
   ],
   "proof_scope": "sibling",
   "styles": [],
-  "tags": [],
-  "id": "CAM-390"
+  "tags": [
+   "رسوم ثنائية الأبعاد",
+   "كاميرا افتراضية",
+   "انجراف",
+   "2d animation",
+   "camera drift"
+  ],
+  "id": "CAM-390",
+  "when": "حين تحرك كاميرا افتراضية في فيلم ثنائي الأبعاد أو 2.5D وتحتاج حدود الدفع والانجراف بلا اهتزاز يدوي / when moving a virtual camera in a 2D or 2.5D film with push and drift limits"
  },
  {
   "family": "camera-composition-layout",
@@ -8151,8 +10965,15 @@
   ],
   "proof_scope": "sibling",
   "styles": [],
-  "tags": [],
-  "id": "CAM-391"
+  "tags": [
+   "رسم لوحة",
+   "تكوين قطري",
+   "عمق جوي",
+   "painting",
+   "diagonal composition"
+  ],
+  "id": "CAM-391",
+  "when": "حين ترسم لوحة أو مشهدًا ثابتًا فيه بطل وخصم وتريد تكوينًا بقطر قوي وعمق جوي / when composing a painted still with hero and antagonist on a strong diagonal and atmospheric depth"
  },
  {
   "family": "camera-composition-layout",
@@ -8171,8 +10992,16 @@
   ],
   "proof_scope": "repo",
   "styles": [],
-  "tags": [],
-  "id": "CAM-392"
+  "tags": [
+   "خطة المشاهد",
+   "زووم إن",
+   "سحب للخلف",
+   "تبديل التركيز",
+   "push-in",
+   "rack focus"
+  ],
+  "id": "CAM-392",
+  "when": "حين تملأ عمود الكاميرا في جدول خطة المشاهد وتحتاج قيمًا افتراضية للدفع والبان والسحب / when filling the Camera column of a scene plan with push-in, pan or pull-back defaults"
  },
  {
   "family": "camera-composition-layout",
@@ -8193,8 +11022,16 @@
   ],
   "proof_scope": "repo",
   "styles": [],
-  "tags": [],
-  "id": "CAM-393"
+  "tags": [
+   "زاوية الرؤية",
+   "كاميرا ثلاثية الأبعاد",
+   "لقطة منتج",
+   "three.js",
+   "fov",
+   "perspective camera"
+  ],
+  "id": "CAM-393",
+  "when": "حين تضبط كاميرا ثلاثية الأبعاد في Three.js وتريد زاوية رؤية تقابل عدسة طبيعية أو لقطة منتج قريبة / when setting a Three.js camera fov to match natural lenses or a product close-up"
  },
  {
   "family": "camera-composition-layout",
@@ -8212,8 +11049,15 @@
   ],
   "proof_scope": "repo",
   "styles": [],
-  "tags": [],
-  "id": "CAM-394"
+  "tags": [
+   "بارالاكس",
+   "عمق الطبقات",
+   "سرعة الطبقات",
+   "parallax",
+   "layer depth"
+  ],
+  "id": "CAM-394",
+  "when": "حين تبني بارالاكس بطبقات أمامية ووسطى وخلفية وتحتاج نسب السرعة حسب العمق / when building planar parallax and you need layer speed factors by depth"
  },
  {
   "family": "camera-composition-layout",
@@ -8231,8 +11075,15 @@
   ],
   "proof_scope": "repo",
   "styles": [],
-  "tags": [],
-  "id": "CAM-395"
+  "tags": [
+   "خلفية ضبابية",
+   "عمق الميدان",
+   "بلور",
+   "blur",
+   "depth of field"
+  ],
+  "id": "CAM-395",
+  "when": "حين تريد خلفية ضبابية توحي بعمق الميدان دون كلفة عالية في مشهد 2.5D / when you want a blurred background suggesting depth of field without expensive DOF in 2.5D"
  },
  {
   "family": "camera-composition-layout",
@@ -8250,8 +11101,15 @@
   ],
   "proof_scope": "repo",
   "styles": [],
-  "tags": [],
-  "id": "CAM-396"
+  "tags": [
+   "رسم بياني",
+   "جدول بيانات",
+   "حركة كاميرا هادئة",
+   "charts",
+   "gentle camera"
+  ],
+  "id": "CAM-396",
+  "when": "حين تحرك الكاميرا فوق جداول أو رسوم بيانية وتريد حركة هادئة محدودة بلا اهتزاز / when moving the camera over charts or tabular info gently, with a small push and pan and no shake"
  },
  {
   "family": "camera-composition-layout",
@@ -8269,8 +11127,15 @@
   ],
   "proof_scope": "repo",
   "styles": [],
-  "tags": [],
-  "id": "CAM-397"
+  "tags": [
+   "مخطط توضيحي",
+   "انتقال بين الأجزاء",
+   "زووم",
+   "diagram",
+   "pan between sections"
+  ],
+  "id": "CAM-397",
+  "when": "حين تشرح مخططًا على مراحل وتنقل الكاميرا بين أجزائه بزووم محدود وتوقف بعد كل حركة / when panning a camera between chapters of a diagram with zoom limits and holds after moves"
  },
  {
   "family": "camera-composition-layout",
@@ -8288,8 +11153,15 @@
   ],
   "proof_scope": "repo",
   "styles": [],
-  "tags": [],
-  "id": "CAM-398"
+  "tags": [
+   "إطار الجهاز",
+   "نسبة العرض",
+   "حجم الجهاز",
+   "device frame",
+   "aspect ratio"
+  ],
+  "id": "CAM-398",
+  "when": "حين تعرض جهازًا في فيديو وتريد حجمه المناسب لكل نسبة عرض 9:16 أو 16:9 أو 1:1 / when sizing a device frame for each aspect ratio: 9:16, 16:9 or 1:1"
  },
  {
   "family": "camera-composition-layout",
@@ -8307,8 +11179,15 @@
   ],
   "proof_scope": "repo",
   "styles": [],
-  "tags": [],
-  "id": "CAM-399"
+  "tags": [
+   "قص آمن",
+   "هوامش النص",
+   "شاشة الجهاز",
+   "safe area",
+   "safe crop"
+  ],
+  "id": "CAM-399",
+  "when": "حين تقص أو تقرّب على شاشة جهاز وتريد هوامش آمنة للنص دون قطع الجزيرة أو الكاميرا أو مؤشر الرئيسية / when cropping or pushing in on a device without cutting the island, camera or home indicator"
  },
  {
   "family": "camera-composition-layout",
@@ -8326,8 +11205,15 @@
   ],
   "proof_scope": "repo",
   "styles": [],
-  "tags": [],
-  "id": "CAM-400"
+  "tags": [
+   "تقريب عند النقر",
+   "دفع بطيء",
+   "شاشة الجهاز",
+   "tap zoom",
+   "device demo"
+  ],
+  "id": "CAM-400",
+  "when": "حين تعرض شاشة جهاز وتريد دفعًا بطيئًا أثناء التوقف وتقريبًا نحو العنصر عند النقر عليه / when showing a device with a slow push during holds and a dolly toward the tapped element"
  },
  {
   "family": "camera-composition-layout",
@@ -8345,8 +11231,15 @@
   ],
   "proof_scope": "repo",
   "styles": [],
-  "tags": [],
-  "id": "CAM-401"
+  "tags": [
+   "تحريك الصور",
+   "تناسق الحركة",
+   "حركة موحدة",
+   "photo animation",
+   "camera rig"
+  ],
+  "id": "CAM-401",
+  "when": "حين تحرك عدة صور في مشهد واحد وتريد أن تبدو القطعات كأن مصورًا واحدًا يحرك الكاميرا / when animating several photos in one scene so cuts feel like one operator on one rig"
  },
  {
   "family": "camera-composition-layout",
@@ -8364,8 +11257,15 @@
   ],
   "proof_scope": "repo",
   "styles": [],
-  "tags": [],
-  "id": "CAM-402"
+  "tags": [
+   "صورة شخصية",
+   "بورتريه",
+   "تقريب الوجه",
+   "portrait",
+   "face framing"
+  ],
+  "id": "CAM-402",
+  "when": "حين تؤطر صورة شخصية أو وجهًا وتريد العينين في الثلث العلوي وتقريبًا محدودًا على الوجه / when framing a portrait with eyes in the top third and limited push into faces"
  },
  {
   "family": "camera-composition-layout",
@@ -8383,8 +11283,15 @@
   ],
   "proof_scope": "repo",
   "styles": [],
-  "tags": [],
-  "id": "CAM-403"
+  "tags": [
+   "لقطة شاشة",
+   "تعليقات توضيحية",
+   "حجم الشاشة",
+   "callouts",
+   "screenshot"
+  ],
+  "id": "CAM-403",
+  "when": "حين تعرض شاشة دون إطار جهاز وتحتاج نسبة عرضها ودورانها عند الوصول وموضع التعليقات / when framing a device-free screen with width share, arrival rotation and callouts outside it"
  },
  {
   "family": "camera-composition-layout",
@@ -8404,8 +11311,15 @@
   ],
   "proof_scope": "repo",
   "styles": [],
-  "tags": [],
-  "id": "CAM-404"
+  "tags": [
+   "كاميرا افتراضية",
+   "زووم",
+   "دقة مضاعفة",
+   "remotion",
+   "render scale"
+  ],
+  "id": "CAM-404",
+  "when": "حين تبني كاميرا في Remotion بتحويل واحد للدفع والبان وتحتاج بناءً بدقة مضاعفة للزووم الكبير / when one transform drives push, pan and focus per scene and zooms over 1.4x need a 2x build"
  },
  {
   "family": "camera-composition-layout",
@@ -8423,8 +11337,16 @@
   ],
   "proof_scope": "sibling",
   "styles": [],
-  "tags": [],
-  "id": "CAM-405"
+  "tags": [
+   "وصل المقاطع",
+   "استمرارية الحركة",
+   "برومبت",
+   "مقاطع متتالية",
+   "motion continuity",
+   "prompt chaining"
+  ],
+  "id": "CAM-405",
+  "when": "حين تكتب برومبتات لمقاطع متتالية وتريد أن تتصل الحركة بين نهاية مقطع وبداية التالي / when writing prompts for consecutive legs so each ends in slow forward drift the next continues"
  },
  {
   "family": "camera-composition-layout",
@@ -8442,8 +11364,15 @@
   ],
   "proof_scope": "sibling",
   "styles": [],
-  "tags": [],
-  "id": "CAM-406"
+  "tags": [
+   "مسافات",
+   "هوامش",
+   "حشو الأزرار",
+   "spacing",
+   "padding"
+  ],
+  "id": "CAM-406",
+  "when": "حين تضبط المسافات في تصميم الواجهة وتريد الالتزام بقيم مسافات معتمدة فقط / when spacing a UI and you must stick to the approved pixel values only"
  },
  {
   "family": "camera-composition-layout",
@@ -8463,8 +11392,15 @@
   "styles": [
    "pm-0xevinho-3777d8"
   ],
-  "tags": [],
-  "id": "CAM-407"
+  "tags": [
+   "اهتزاز",
+   "هزة الشاشة",
+   "ضربة",
+   "screen shake",
+   "impact"
+  ],
+  "id": "CAM-407",
+  "when": "حين تريد اهتزازًا خفيفًا واحدًا للشاشة لحظة الاصطدام أو الضربة / when you want a single subtle screen shake on an impact"
  },
  {
   "family": "camera-composition-layout",
@@ -8484,8 +11420,15 @@
   "styles": [
    "pm-abderrahmen-g-9e8ed0"
   ],
-  "tags": [],
-  "id": "CAM-408"
+  "tags": [
+   "كاميرا محمولة",
+   "اهتزاز خفيف",
+   "قطع على الإيقاع",
+   "handheld",
+   "beat sync"
+  ],
+  "id": "CAM-408",
+  "when": "حين تريد كاميرا تدفع ببطء مع كل نبضة مع اهتزاز يدوي خفيف وقطعات على ضربات الصوت / when you want a slow push per beat with gentle handheld drift and straight cuts on sound hits"
  },
  {
   "family": "camera-composition-layout",
@@ -8505,8 +11448,15 @@
   "styles": [
    "pm-ajith-io-ea7f2d"
   ],
-  "tags": [],
-  "id": "CAM-409"
+  "tags": [
+   "شبكة خلفية",
+   "محاذاة",
+   "خلفية مربعات",
+   "grid background",
+   "alignment"
+  ],
+  "id": "CAM-409",
+  "when": "حين تريد شبكة ظاهرة في خلفية كل لقطة تستقر عليها العناصر بمحاذاة منتظمة / when every shot shows a visible background grid and elements rest on its cells"
  },
  {
   "family": "camera-composition-layout",
@@ -8526,8 +11476,15 @@
   "styles": [
    "pm-aschapmann-131210"
   ],
-  "tags": [],
-  "id": "CAM-410"
+  "tags": [
+   "حركة هادئة",
+   "زووم بطيء",
+   "بان",
+   "slow zoom",
+   "subtle camera"
+  ],
+  "id": "CAM-410",
+  "when": "حين تريد حركة كاميرا هادئة مستمرة بدفع بطيء أو بان صغير دون حركات سريعة أو دوران / when you want continuous slow pushes or small pans with no whip or rotation"
  },
  {
   "family": "camera-composition-layout",
@@ -8547,8 +11504,15 @@
   "styles": [
    "pm-davidshulmanfl-371638"
   ],
-  "tags": [],
-  "id": "CAM-411"
+  "tags": [
+   "كورس",
+   "أغنية",
+   "دولي إن",
+   "music",
+   "dolly in"
+  ],
+  "id": "CAM-411",
+  "when": "حين تريد أن تقترب الكاميرا وحدها بدولي ناعم واحد في كل كورس من الأغنية / when only the camera should move, with one eased dolly-in per song chorus"
  },
  {
   "family": "camera-composition-layout",
@@ -8568,8 +11532,15 @@
   "styles": [
    "pm-deifosv-04e4d3"
   ],
-  "tags": [],
-  "id": "CAM-412"
+  "tags": [
+   "تتبع",
+   "متابعة الكرة",
+   "كاميرا تتبع",
+   "follow cam",
+   "tracking"
+  ],
+  "id": "CAM-412",
+  "when": "حين تتبع الكاميرا جسمًا متحركًا كالكرة بتأخير وتجاوز ثم إعادة توسيط / when the camera follows a moving subject like a ball with lag and overshoot before recentring"
  },
  {
   "family": "camera-composition-layout",
@@ -8589,8 +11560,15 @@
   "styles": [
    "pm-kamstudiolabs-0b0824"
   ],
-  "tags": [],
-  "id": "CAM-413"
+  "tags": [
+   "أشرطة سوداء",
+   "سينمائي",
+   "شاشة عريضة",
+   "cinematic bars",
+   "widescreen"
+  ],
+  "id": "CAM-413",
+  "when": "حين تريد مظهرًا سينمائيًا بأشرطة سوداء داخل كادر 16:9 مع حركة دولي فقط / when you want a cinematic 2.35:1 letterbox inside 16:9 with a dolly-only camera"
  },
  {
   "family": "camera-composition-layout",
@@ -8610,8 +11588,15 @@
   "styles": [
    "pm-kantamk-61f410"
   ],
-  "tags": [],
-  "id": "CAM-414"
+  "tags": [
+   "ذروة",
+   "اهتزاز",
+   "زووم",
+   "climax",
+   "hit shake"
+  ],
+  "id": "CAM-414",
+  "when": "حين تريد ذروة بزووم عند بقاء ثلاث حلقات واهتزاز يتلاشى مع كل ضربة / when building a climax with a zoom as 3 rings remain and a decaying shake on each hit"
  },
  {
   "family": "camera-composition-layout",
@@ -8631,8 +11616,15 @@
   "styles": [
    "pm-melvynx-6cde6c"
   ],
-  "tags": [],
-  "id": "CAM-415"
+  "tags": [
+   "واجهة مستخدم",
+   "بارالاكس",
+   "دوران ثلاثي الأبعاد",
+   "ui showcase",
+   "3d tilt"
+  ],
+  "id": "CAM-415",
+  "when": "حين تعرض واجهة مسطحة بكاميرا 2.5D مع بان ودفع واحد ودوران ثلاثي الأبعاد محدود / when presenting flat UI with a 2.5D camera: pans, one push and up to 8° 3D rotation"
  },
  {
   "family": "camera-composition-layout",
@@ -8652,8 +11644,15 @@
   "styles": [
    "pm-micheleharmonic-77628e"
   ],
-  "tags": [],
-  "id": "CAM-416"
+  "tags": [
+   "زووم مفاجئ",
+   "ضربة",
+   "تأثير صدمة",
+   "punch zoom",
+   "impact zoom"
+  ],
+  "id": "CAM-416",
+  "when": "حين تريد زوومًا صادمًا يقفز في إطار واحد عند ضربة ثم يرتخي تدريجيًا / when you want a zoom that jumps in one frame on a hit and then relaxes back"
  },
  {
   "family": "camera-composition-layout",
@@ -8673,8 +11672,15 @@
   "styles": [
    "pm-monokern-ade5b6"
   ],
-  "tags": [],
-  "id": "CAM-417"
+  "tags": [
+   "دخول للعين",
+   "زووم مستمر",
+   "تقريب متواصل",
+   "exponential zoom",
+   "eye zoom"
+  ],
+  "id": "CAM-417",
+  "when": "حين تريد زوومًا نفقيًا مستمرًا نحو بؤبؤ العين بمعدل أسي ثابت / when you want a continuous inward tunnel zoom toward a pupil at a constant exponential rate"
  },
  {
   "family": "camera-composition-layout",
@@ -8694,8 +11700,15 @@
   "styles": [
    "pm-mrtanviir-132457"
   ],
-  "tags": [],
-  "id": "CAM-418"
+  "tags": [
+   "كاميرا ثابتة",
+   "زووم خفيف",
+   "حركة قليلة",
+   "locked camera",
+   "minimal motion"
+  ],
+  "id": "CAM-418",
+  "when": "حين تريد كاميرا ثابتة لا تتحرك إلا بدفعتين صغيرتين فقط / when the camera stays static except for two small push-ins"
  },
  {
   "family": "camera-composition-layout",
@@ -8715,8 +11728,15 @@
   "styles": [
    "pm-ratheejaisal-1f4538"
   ],
-  "tags": [],
-  "id": "CAM-419"
+  "tags": [
+   "ظل",
+   "عمق",
+   "بروز العنصر",
+   "drop shadow",
+   "depth"
+  ],
+  "id": "CAM-419",
+  "when": "حين تكون الكاميرا ثابتة وتريد إيحاء العمق بتكبير العنصر قليلًا مع ظل ساقط / when the camera is locked and depth comes from a slight scale-up plus a drop shadow"
  },
  {
   "family": "camera-composition-layout",
@@ -8736,8 +11756,15 @@
   "styles": [
    "pm-robvjourney-ce3e1a"
   ],
-  "tags": [],
-  "id": "CAM-420"
+  "tags": [
+   "بارالاكس",
+   "شبكة خلفية",
+   "طبقتين",
+   "parallax",
+   "grid"
+  ],
+  "id": "CAM-420",
+  "when": "حين تريد خلفية شبكة تتحرك بنصف السرعة لصنع بارالاكس بطبقتين / when a background grid moves at half speed to create two-layer parallax"
  },
  {
   "family": "camera-composition-layout",
@@ -8757,8 +11784,15 @@
   "styles": [
    "pm-sarut0bisasuke-cefa43"
   ],
-  "tags": [],
-  "id": "CAM-421"
+  "tags": [
+   "لقطة واحدة",
+   "زووم بطيء",
+   "ون شوت",
+   "one take",
+   "slow zoom"
+  ],
+  "id": "CAM-421",
+  "when": "حين يكون الفيديو لقطة واحدة متصلة وتريد دفعًا بطيئًا جدًا للكاميرا على مدى 30 ثانية / when a single continuous shot needs a very slow push from 1.00 to 1.06 over 30 s"
  },
  {
   "id": "CAM-X01",

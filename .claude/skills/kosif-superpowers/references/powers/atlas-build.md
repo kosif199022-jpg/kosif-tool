@@ -9,7 +9,7 @@
 مسارات الدليل نسبية إلى `/home/user/`؛ و`session-<date>:<file>#<section>` تشير إلى تشغيل موثق في جلسة سابقة؛ و`owner-upload:` إلى ملف داخل أرشيف أرسله المالك. Proof paths are relative to `/home/user/`.
 
 **المجال / domain:** التطبيقات والواجهات — Apps & artifacts · **البادئة / prefix:** `ABUILD` · **البيانات / data:** `data/powers/atlas-build.json` · **بحث / search:** `python3 scripts/powers.py family atlas-build`
-**مراجع ذات صلة / related references:** [capability-atlas.md](../capability-atlas.md) · [capability-audit.md](../capability-audit.md) · [hubs.md](../hubs.md)
+**مراجع ذات صلة / related references:** [CLAUDE_3_MINUTE_MAP.md](../CLAUDE_3_MINUTE_MAP.md) · [hubs.md](../hubs.md)
 
 ## الفهرس / contents
 
@@ -29,7 +29,7 @@
 - **ماذا / what:** قيادة خارطة طريق معتمدة ذات مراحل حتى النهاية دون إشراف: وكيل منفذ معزول لكل مرحلة، وطلب دمج مشروط بنجاح CI والمراجع الآلي، ثم الدمج بعد مهلة وتحديث اللوحات وتسلسل المرحلة التالية. — Drive an approved phased roadmap to completion unattended with one isolated implementer subagent per phase, each PR gated on CI and the review bot, merged after a grace window, then dashboards updated and the next phase chained.
 - **متى أستخدمها / when:** An approved roadmap with per-phase task files exists; 'run autopilot'; overnight multi-phase build; any unattended loop that needs finite limits and stop conditions.
 - **كيف / how:** 1) Preflight in every mode: gh installed and authenticated, git base branch reachable on origin, roadmap with progress dashboard plus per-phase task files, a config doc present, declared external tools up; refuse rather than invent plans. 2) init mode writes the config from the roadmap, then STOPS for human review. 3) run: orchestrator spawns one isolated implementer per phase, opens a PR, waits for CI and review bot via background wake-ups, fixes findings, merges only when the full merge gate holds after a grace window, updates dashboards, chains the next phase. 4) Declare finite loop limits and termination conditions up front; stop on any unmet precondition. **أرقام / params:** mode (init|run|status); roadmap path; grace window; loop limits; retry-watchdog env for unattended sessions
-- **يحتاج / needs:** [`gh`](../requirements.md#req-gh) · [`git`](../requirements.md#req-git) · [`claude:tools`](../requirements.md#req-claude-tools)
+- **يحتاج / needs:** [`claude:tools`](../requirements.md#req-claude-tools)
 - **الرخصة / license:** method paraphrased from Atlas skills under Apache-2.0 / MIT (no copyleft seen among supporting ids); the skills keep their own licenses — see each folder's SOURCE.md
 - **الدليل / proof:** `https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/899-bymax-codex/2087-autopilot` · `https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/3407-clean-room/13957-clean-room-loop` · `https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/3111-constellation/13312-roundloop`
 - **المصدر / source:** KOSIF Atlas mining 2026-10-20 (https://github.com/kosif199022-jpg/kosif-atlas): bymax-codex/autopilot (#2087); clean-room/clean-room-loop (#13957); constellation/roundloop (#13312) · theme agent-workflow · 8 supporting skills · verifier read: skills/899-bymax-codex/2087-autopilot, skills/3407-clean-room/13957-clean-room-loop, skills/3111-constellation/13312-roundloop
@@ -38,7 +38,6 @@
 - **ماذا / what:** تسجيل التوقفات والأخطاء وأزمنة المراحل عبر مسجل موثق دون تشخيص. — Record halts, errors and stage timings through a validated recorder with observation-not-diagnosis rule.
 - **متى أستخدمها / when:** Long migration or pipeline runs.
 - **كيف / how:** 1) start dims json. 2) stage start/end with outcome. 3) record event (types not instances, max 400 chars, no secrets). 4) wait start/end for user halts. 5) finalize rollup. **أرقام / params:** project path
-- **يحتاج / needs:** [`node`](../requirements.md#req-node)
 - **الرخصة / license:** method paraphrased from Atlas skills under MIT; the skills keep their own licenses — see each folder's SOURCE.md
 - **الدليل / proof:** `https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/3419-wix/14021-rp-telemetry`
 - **المصدر / source:** KOSIF Atlas mining 2026-10-20 (https://github.com/kosif199022-jpg/kosif-atlas): wix/rp-telemetry (#14021) · theme agent-workflow · 3 supporting skills · verifier read: skills/3419-wix/14021-rp-telemetry
@@ -47,7 +46,6 @@
 - **ماذا / what:** يشغّل فريق وكلاء بأدوار (مطوّر ومراجع خصم ومختبر جودة) بخطة معماري عبر بوابات مراحل وأقفال كتابة واستئناف يبدأ بالتحقق، مع تنسيق بالرسائل وسجل مشترك. — Run an architect-planned team of role agents (developer, adversarial reviewer, QA) through staged gates with write locks and verify-first resume, coordinating via messages and a shared log.
 - **متى أستخدمها / when:** User wants an agent team on a repo's open issues, role-based specialist analysis (researcher, architect, PM), or to configure Claude Code agent teams with lead/teammates and messaging.
 - **كيف / how:** 1) An architect pass sorts outstanding issues into parallelizable groups. 2) Each issue gets a small squad: developer, adversarial reviewer, QA/SDET. 3) Define stages and gates; hold write locks so two roles never edit the same artifact. 4) Specialist deep-dive: researcher, architect and PM run in parallel and yield a prioritized next-build report. 5) Coordinate with SendMessage/TaskUpdate and ring a 'doorbell' instead of pasting payloads; log traffic as JSONL. 6) Show run status (stages, roles, locks, gates); resume an interrupted run verify-first. **أرقام / params:** repo and issue list; role set; stage gates; capacity
-- **يحتاج / needs:** [`gh`](../requirements.md#req-gh) · [`git`](../requirements.md#req-git) · [`claude:tools`](../requirements.md#req-claude-tools)
 - **الرخصة / license:** method paraphrased from Atlas skills under MIT; the skills keep their own licenses — see each folder's SOURCE.md
 - **الدليل / proof:** `https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/3263-agent-team-orchestration/13774-agent-team-orchestration` · `https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/3605-ateam/14480-run` · `https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/2134-agent-patterns-plugin/7563-agent-teams`
 - **المصدر / source:** KOSIF Atlas mining 2026-10-20 (https://github.com/kosif199022-jpg/kosif-atlas): agent-team-orchestration/agent-team-orchestration (#13774); ateam/run (#14480); agent-patterns-plugin/agent-teams (#7563) · theme agent-workflow · 8 supporting skills · verifier read: skills/3263-agent-team-orchestration/13774-agent-team-orchestration, skills/3605-ateam/14480-run, skills/2134-agent-patterns-plugin/7563-agent-teams
@@ -66,6 +64,7 @@
 - **ماذا / what:** يصمم التوقيع والتوثيق والطرح المرحلي والتحديث الآمن لتطبيقات الجوال والمكتب. — Design code signing, notarization, staged rollout and safe auto-update for mobile and desktop apps.
 - **متى أستخدمها / when:** Setting up CI releases or diagnosing signing failures.
 - **كيف / how:** 1) iOS: Fastlane match for certs, Android: keystore kept out of repo. 2) macOS: Developer ID, hardened runtime, notarytool then staple; Windows: Authenticode, EV cert. 3) Keys in CI secrets. 4) Updater verifies signature, uses channels, staged rollout, rollback, version floor. 5) Pick Electron vs Tauri by real needs. **أرقام / params:** platform
+- **يحتاج / needs:** [`os:macos`](../requirements.md#req-os-macos)
 - **الرخصة / license:** method paraphrased from Atlas skills under MIT; the skills keep their own licenses — see each folder's SOURCE.md
 - **الدليل / proof:** `https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/2279-desktop-app-engineering/8701-packaging-signing-and-updates` · `https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/2340-mobile-engineering/8992-app-store-release-pipeline`
 - **المصدر / source:** KOSIF Atlas mining 2026-10-20 (https://github.com/kosif199022-jpg/kosif-atlas): desktop-app-engineering/packaging-signing-and-updates (#8701); mobile-engineering/app-store-release-pipeline (#8992) · theme app-building · 8 supporting skills · verifier read: skills/2279-desktop-app-engineering/8701-packaging-signing-and-updates, skills/2340-mobile-engineering/8992-app-store-release-pipeline
@@ -74,7 +73,6 @@
 - **ماذا / what:** يبني نموذج HTML واحداً تتحكم فيه الأسئلة المفتوحة مع تقرير نتائج. — Build one self-contained clickable HTML prototype whose controls are the open questions, with harvest table and spike report.
 - **متى أستخدمها / when:** Requirement needs validating or a technique is unproven before building.
 - **كيف / how:** 1) ANCHOR on a requirement id or technique with at least one named open question. 2) Open spike-report.md immediately and append as you go. 3) Harvest structure/tokens/payloads from source into harvest-table.md; only invent what the requirement adds and annotate it. 4) Keep reviewer shell visually distinct from app tokens. 5) Data fidelity: live > recorded > labeled stub. **أرقام / params:** anchor id, open questions
-- **يحتاج / needs:** [`chromium`](../requirements.md#req-chromium)
 - **الرخصة / license:** method paraphrased from Atlas skills under MIT; the skills keep their own licenses — see each folder's SOURCE.md
 - **الدليل / proof:** `https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/3394-prototype-spike/13930-prototype-spike` · `https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/3394-prototype-spike/13930-prototype-spike`
 - **المصدر / source:** KOSIF Atlas mining 2026-10-20 (https://github.com/kosif199022-jpg/kosif-atlas): prototype-spike/prototype-spike (#13930); universal-design-principles/prototyping-when-and-what (#3858) · theme app-building · 5 supporting skills · verifier read: skills/3394-prototype-spike/13930-prototype-spike, skills/3394-prototype-spike/13930-prototype-spike
@@ -83,7 +81,6 @@
 - **ماذا / what:** ينسق المواصفة والنموذج والخلفية والواجهة عبر خطة عمل متتبعة وملفات تسليم. — Sequence spec, prototype, backend, agent and frontend work from a tracked work plan with handoff envelopes.
 - **متى أستخدمها / when:** Large app build needing staged delegation and resumable state.
 - **كيف / how:** 1) Resolve kit dir and require clean git tree. 2) Author spec then HTML prototype. 3) Analyze outputs to decide which backend/agent/frontend tracks are needed. 4) Track in a work-plan file with pointer json. 5) After each delegate, read its result envelope and check liveness. 6) Resume by reading the plan; one phase at a time (build skill). **أرقام / params:** app name or plan slug
-- **يحتاج / needs:** [`node`](../requirements.md#req-node) · [`git`](../requirements.md#req-git)
 - **الرخصة / license:** method paraphrased from Atlas skills under MIT; the skills keep their own licenses — see each folder's SOURCE.md
 - **الدليل / proof:** `https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/2104-app-orchestrator-kit/7475-orchestrate-app` · `https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/3431-metaskills/14075-create-app`
 - **المصدر / source:** KOSIF Atlas mining 2026-10-20 (https://github.com/kosif199022-jpg/kosif-atlas): app-orchestrator-kit/orchestrate-app (#7475); metaskills/create-app (#14075) · theme app-building · 9 supporting skills · verifier read: skills/2104-app-orchestrator-kit/7475-orchestrate-app, skills/3431-metaskills/14075-create-app
@@ -92,7 +89,7 @@
 - **ماذا / what:** يختبر النموذج بمعايير القبول وسيناريوهات مستخدمين ويصدر تقريراً مصوراً. — Run AC verdicts with fix loop then persona Playwright walkthroughs and emit an HTML evidence report.
 - **متى أستخدمها / when:** Validating a UX prototype before MR review or stakeholder share.
 - **كيف / how:** 1) Require ticket key and reachable URL or built dist (serve with sirv --single). 2) Phase A: check each acceptance criterion with source access, fix FAILs, log iterations. 3) Phase B: persona walkthroughs via Playwright with screenshots and think-aloud traces. 4) Write evaluation-report.html and csv. 5) Optionally publish to Pages/Vercel. **أرقام / params:** ticket key, URL, workspace
-- **يحتاج / needs:** [`node`](../requirements.md#req-node) · [`chromium`](../requirements.md#req-chromium)
+- **يحتاج / needs:** [`chromium`](../requirements.md#req-chromium)
 - **الرخصة / license:** method paraphrased from Atlas skills under MIT; the skills keep their own licenses — see each folder's SOURCE.md
 - **الدليل / proof:** `https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/3010-uxd-prototype/12859-uxd-prototype-evaluate`
 - **المصدر / source:** KOSIF Atlas mining 2026-10-20 (https://github.com/kosif199022-jpg/kosif-atlas): uxd-prototype/uxd-prototype-evaluate (#12859) · theme app-building · 4 supporting skills · verifier read: skills/3010-uxd-prototype/12859-uxd-prototype-evaluate
@@ -101,7 +98,7 @@
 - **ماذا / what:** يولد PWA بملف manifest وعامل خدمة. — Generate a PWA with manifest, service worker caching and engine-gap awareness.
 - **متى أستخدمها / when:** Making web app installable or offline-capable.
 - **كيف / how:** 1) Write manifest with icons, display, start_url. 2) Register service worker with cache strategy per route. 3) Check engine gaps (iOS vs Chromium) in pwa-expert notes. 4) Test with Lighthouse. **أرقام / params:** app name, strategy
-- **يحتاج / needs:** [`node`](../requirements.md#req-node)
+- **يحتاج / needs:** [`chromium`](../requirements.md#req-chromium)
 - **الرخصة / license:** method paraphrased from Atlas skills under MIT; the skills keep their own licenses — see each folder's SOURCE.md
 - **الدليل / proof:** `https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/723-pwa-builder/1752-pwa` · `https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/723-pwa-builder/1752-pwa`
 - **المصدر / source:** KOSIF Atlas mining 2026-10-20 (https://github.com/kosif199022-jpg/kosif-atlas): pwa-builder/pwa (#1752); pwa-expert/pwa-development (#52) · theme app-building · 3 supporting skills · verifier read: skills/723-pwa-builder/1752-pwa, skills/723-pwa-builder/1752-pwa
@@ -110,7 +107,7 @@
 - **ماذا / what:** يولّد هيكل SaaS كامل بمصادقة وفواتير ولوحة تحكم من وصف قصير. — Generate a Next.js App Router SaaS skeleton with auth, DB, Stripe billing, dashboard and marketing groups from a short brief.
 - **متى أستخدمها / when:** New SaaS or multi-tenant product kickoff.
 - **كيف / how:** 1) Collect brief: product, auth (nextauth/clerk/supabase), DB, payments, features. 2) Lay out route groups (auth), (dashboard), (marketing), api/webhooks/stripe, billing checkout/portal. 3) Add lib/auth, lib/db with Drizzle schema, plan cards, usage meter. 4) Wire Stripe webhooks with signature check. 5) Add tenant isolation per tenant-bill pattern. **أرقام / params:** auth, db, payments, features
-- **يحتاج / needs:** [`node`](../requirements.md#req-node)
+- **يحتاج / needs:** [`npm:react`](../requirements.md#req-npm-react)
 - **الرخصة / license:** method paraphrased from Atlas skills under MIT; the skills keep their own licenses — see each folder's SOURCE.md
 - **الدليل / proof:** `https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/198-product-skills/641-saas-scaffolder` · `https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/198-product-skills/641-saas-scaffolder`
 - **المصدر / source:** KOSIF Atlas mining 2026-10-20 (https://github.com/kosif199022-jpg/kosif-atlas): product-skills/saas-scaffolder (#641); tenant-billing/tenant-bill (#1860) · theme app-building · 4 supporting skills · verifier read: skills/198-product-skills/641-saas-scaffolder, skills/198-product-skills/641-saas-scaffolder
@@ -119,7 +116,6 @@
 - **ماذا / what:** يفحص حالة المنتجات ويضيف مركز العملاء للاشتراكات. — Inspect App Store/Play product state and add RevenueCat Customer Center to an app.
 - **متى أستخدمها / when:** Mobile subscription apps, pricing tiers, app valuation.
 - **كيف / how:** 1) Inspect product state across stores via the store-state skill. 2) Add Customer Center UI for self-service management. 3) Configure plans/usage pricing. 4) Estimate app value from recurring revenue multiples. **أرقام / params:** store, SDK
-- **يحتاج / needs:** [`network`](../requirements.md#req-network)
 - **الرخصة / license:** method paraphrased from Atlas skills under MIT; the skills keep their own licenses — see each folder's SOURCE.md
 - **الدليل / proof:** `https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/723-pwa-builder/1752-pwa`
 - **المصدر / source:** KOSIF Atlas mining 2026-10-20 (https://github.com/kosif199022-jpg/kosif-atlas): revenuecat/revenuecat-customer-center (#12735) · theme app-building · 4 supporting skills · verifier read: skills/723-pwa-builder/1752-pwa
@@ -128,7 +124,6 @@
 - **ماذا / what:** يبني نموذجا مؤقتا أو واجهة قابلة للنقر لحسم سؤال تصميم أو جدوى واحد ثم يحذفه أو يعتمده. — Build a disposable prototype or clickable mock to settle a single design or feasibility question, then discard or keep.
 - **متى أستخدمها / when:** Unclear how something should work or feel; requirements interview needs visuals.
 - **كيف / how:** 1) State the single question and a fixed budget. 2) Build minimum throwaway code in an isolated folder. 3) For requirements, render screens in a local dashboard while interviewing, pushing state each turn and draining user events first. 4) Record answer and decision, then keep or delete. 5) Fold results into SPEC.md. **أرقام / params:** question, time budget
-- **يحتاج / needs:** [`python3`](../requirements.md#req-python3)
 - **الرخصة / license:** method paraphrased from Atlas skills under MIT; the skills keep their own licenses — see each folder's SOURCE.md
 - **الدليل / proof:** `https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/1120-ambient-library/2627-grill-with-prototype` · `https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/1120-ambient-library/2601-chat-n-build`
 - **المصدر / source:** KOSIF Atlas mining 2026-10-20 (https://github.com/kosif199022-jpg/kosif-atlas): ambient-library/grill-with-prototype (#2627); ambient-library/chat-n-build (#2601) · theme app-building · 6 supporting skills · verifier read: skills/1120-ambient-library/2627-grill-with-prototype, skills/1120-ambient-library/2601-chat-n-build
@@ -137,7 +132,7 @@
 - **ماذا / what:** يجمع موقع Wix هيدلس بربط وحدات SDK جاهزة بدل كتابتها. — Assemble a Wix Headless site by wiring shipped verified @wix/sdk modules and REST scaffolds rather than authoring integrations.
 - **متى أستخدمها / when:** Building headless storefront, bookings or CMS on Wix; migrating from Shopify or other platforms.
 - **كيف / how:** 1) Authenticate to obtain a Wix access token. 2) Use wix-docs to confirm endpoint, method and shape. 3) Wire shipped SDK modules for Stores/Bookings/CMS. 4) For vibe-coded front ends use dependency-free REST scaffolds. 5) For migrations route via replatform modules then quick catalog import adapter with final report. **أرقام / params:** business solutions needed
-- **يحتاج / needs:** [`node`](../requirements.md#req-node) · [`network`](../requirements.md#req-network)
+- **يحتاج / needs:** [`chromium`](../requirements.md#req-chromium) · [`key:unspecified`](../requirements.md#req-key-unspecified)
 - **الرخصة / license:** method paraphrased from Atlas skills under MIT; the skills keep their own licenses — see each folder's SOURCE.md
 - **الدليل / proof:** `https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/890-web/2012-heap-snapshot-leaks` · `https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/890-web/2012-heap-snapshot-leaks`
 - **المصدر / source:** KOSIF Atlas mining 2026-10-20 (https://github.com/kosif199022-jpg/kosif-atlas): wix/wix-headless-fast (#14006); wix/wix-vibe-headless (#14022) · theme app-building · 6 supporting skills · verifier read: skills/890-web/2012-heap-snapshot-leaks, skills/890-web/2012-heap-snapshot-leaks
@@ -149,7 +144,7 @@
 - **متى أستخدمها / when:** Task needs clicking/filling/scraping a live JS-rendered page cheaply in tokens.
 - **كيف / how:** 1) open URL (daemon starts Chrome). 2) snapshot interactive elements with bounded output. 3) click/fill by ref (@eN or eN), not CSS. 4) re-snapshot after any DOM change since refs move. 5) read text with a size cap. 6) screenshot only for visual or canvas checks. 7) close the session. Chain commands or batch to reuse the daemon. **أرقام / params:** url, output cap, session name
 - **تثبيت / install:** `npm i -g agent-browser && agent-browser install`
-- **يحتاج / needs:** [`node`](../requirements.md#req-node) · [`chromium`](../requirements.md#req-chromium) · [`npm:rea`](../requirements.md#req-npm-rea)
+- **يحتاج / needs:** [`node`](../requirements.md#req-node) · [`chromium`](../requirements.md#req-chromium)
 - **الرخصة / license:** method paraphrased from Atlas skills under MIT / Apache-2.0; the skills keep their own licenses — see each folder's SOURCE.md
 - **الدليل / proof:** `https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/1395-agent-browser/3331-agent-browser` · `https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/2464-playwright/9552-playwright` · `https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/2923-playwright-cli/12134-playwright-cli`
 - **المصدر / source:** KOSIF Atlas mining 2026-10-20 (https://github.com/kosif199022-jpg/kosif-atlas): agent-browser/agent-browser (#3331); playwright/playwright (#9552); playwright-cli/playwright-cli (#12134) · theme browser-automation · 7 supporting skills · verifier read: skills/1395-agent-browser/3331-agent-browser, skills/2464-playwright/9552-playwright, skills/2923-playwright-cli/12134-playwright-cli
@@ -158,7 +153,7 @@
 - **ماذا / what:** إعادة بناء صفحة رئيسية من بيان استخراج مجمد من المتصفح ثم سد الفجوات بمراجعة بصرية. — Rebuild a public home page as a headless frontend from a frozen browser-derived extraction manifest, then close gaps through visual review.
 - **متى أستخدمها / when:** Migrating or cloning a site while preserving SEO, assets, interactions.
 - **كيف / how:** 1) Resolve source URL, output dir, mode. 2) Capture with a real browser (never HTML-only), freeze extraction manifest and first-viewport evidence. 3) Build only from the frozen manifest. 4) Verify runnable dev/build scripts. 5) Visual compare and gap loop until accepted or done_with_gaps. Stage resources load on demand. **أرقام / params:** source url, mode
-- **يحتاج / needs:** [`node`](../requirements.md#req-node) · [`chromium`](../requirements.md#req-chromium) · [`npm:esbuild`](../requirements.md#req-npm-esbuild)
+- **يحتاج / needs:** [`chromium`](../requirements.md#req-chromium)
 - **الرخصة / license:** method paraphrased from Atlas skills under MIT; the skills keep their own licenses — see each folder's SOURCE.md
 - **الدليل / proof:** `https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/3419-wix/14023-wix-headless-replatform` · `https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/3419-wix/14027-rp-source-evidence`
 - **المصدر / source:** KOSIF Atlas mining 2026-10-20 (https://github.com/kosif199022-jpg/kosif-atlas): wix/wix-headless-replatform (#14023); wix/rp-source-evidence (#14027) · theme browser-automation · 3 supporting skills · verifier read: skills/3419-wix/14023-wix-headless-replatform, skills/3419-wix/14027-rp-source-evidence
@@ -167,7 +162,7 @@
 - **ماذا / what:** فحص الكونسول والشبكة وDOM للصفحة الحية عبر DevTools MCP أو منفذ CDP لإعادة إنتاج الأخطاء. — Inspect console, network, DOM and performance of a live page through Chrome DevTools MCP or a CDP port to reproduce browser bugs.
 - **متى أستخدمها / when:** UI bug that only reproduces in a browser; need console errors or failed requests.
 - **كيف / how:** 1) Connect via chrome-devtools MCP or a debugging port (9222; MCP proxy 9224). 2) Navigate, take snapshot, emulate viewport. 3) Read console and network for errors. 4) Reproduce flow with click/fill. 5) Screenshot before and after fix. 6) Fix, reload, re-verify. For a user's own Chrome, ask before attaching. **أرقام / params:** debug port, url
-- **يحتاج / needs:** [`claude:browser`](../requirements.md#req-claude-browser) · [`chromium`](../requirements.md#req-chromium)
+- **يحتاج / needs:** [`chromium`](../requirements.md#req-chromium)
 - **الرخصة / license:** method paraphrased from Atlas skills under Apache-2.0 / MIT; the skills keep their own licenses — see each folder's SOURCE.md
 - **الدليل / proof:** `https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/3416-chrome-devtools/13989-chrome-devtools` · `https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/1219-chrome-cdp/2901-chrome-cdp` · `https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/2759-charly-selkies/10880-chrome-devtools-mcp`
 - **المصدر / source:** KOSIF Atlas mining 2026-10-20 (https://github.com/kosif199022-jpg/kosif-atlas): chrome-devtools/chrome-devtools (#13989); chrome-cdp/chrome-cdp (#2901); charly-selkies/chrome-devtools-mcp (#10880) · theme browser-automation · 6 supporting skills · verifier read: skills/3416-chrome-devtools/13989-chrome-devtools, skills/1219-chrome-cdp/2901-chrome-cdp, skills/2759-charly-selkies/10880-chrome-devtools-mcp
@@ -176,7 +171,7 @@
 - **ماذا / what:** توليد لقطات توثيق قابلة للتكرار داخل Docker بواسطة Playwright وتنظيف اللقطات الزائدة. — Generate reproducible README or doc screenshots in Docker with Playwright, then clean up stray screenshots.
 - **متى أستخدمها / when:** Need deterministic screenshots in CI or for custom-node packs.
 - **كيف / how:** 1) Build a Docker image with Playwright and fonts. 2) Mount the app, start it, wait on ready selector. 3) Run a script that captures each target at a fixed viewport. 4) Write to an output dir with a manifest. 5) Optionally compare to baselines for visual regression. 6) Move leftover session screenshots to trash only with approval. **أرقام / params:** viewport, targets
-- **يحتاج / needs:** [`docker`](../requirements.md#req-docker) · [`python3`](../requirements.md#req-python3) · [`chromium`](../requirements.md#req-chromium)
+- **يحتاج / needs:** [`chromium`](../requirements.md#req-chromium) · [`docker`](../requirements.md#req-docker)
 - **الرخصة / license:** method paraphrased from Atlas skills under MIT; the skills keep their own licenses — see each folder's SOURCE.md
 - **الدليل / proof:** `https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/2142-comfyui-plugin/7662-comfyui-screenshot-pipeline` · `https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/861-visual-regression/1890-visual-reg`
 - **المصدر / source:** KOSIF Atlas mining 2026-10-20 (https://github.com/kosif199022-jpg/kosif-atlas): comfyui-plugin/comfyui-screenshot-pipeline (#7662); visual-regression/visual-reg (#1890) · theme browser-automation · 4 supporting skills · verifier read: skills/2142-comfyui-plugin/7662-comfyui-screenshot-pipeline, skills/861-visual-regression/1890-visual-reg
@@ -185,7 +180,7 @@
 - **ماذا / what:** فتح الصفحات في متصفح بلا واجهة بملف مؤقت وقراءتها والنقر وأخذ لقطات بأوامر قصيرة. — Open pages in throwaway-profile headless Chrome (CDP), Firefox (Marionette) or Safari (safaridriver) and read, click, eval and screenshot with one-line commands.
 - **متى أستخدمها / when:** Cross-browser preview, no Playwright available, or must not touch the user's browser.
 - **كيف / how:** 1) open <url> (new throwaway profile; --headed only if watched; --size). 2) text/status for state. 3) click/type/press by CSS selector. 4) eval expression, wait expression with timeout. 5) screenshot --output [--full]. 6) With several instances pass --id. 7) close deletes the profile. Use herdr-browser inside Herdr for console/network. **أرقام / params:** url, size, id
-- **يحتاج / needs:** [`chromium`](../requirements.md#req-chromium) · [`node`](../requirements.md#req-node)
+- **يحتاج / needs:** [`chromium`](../requirements.md#req-chromium)
 - **الرخصة / license:** method paraphrased from Atlas skills under MIT; the skills keep their own licenses — see each folder's SOURCE.md
 - **الدليل / proof:** `https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/1449-browsers/3536-chrome` · `https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/1449-browsers/3537-firefox` · `https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/1449-browsers/3538-safari`
 - **المصدر / source:** KOSIF Atlas mining 2026-10-20 (https://github.com/kosif199022-jpg/kosif-atlas): browsers/chrome (#3536); browsers/firefox (#3537); browsers/safari (#3538) · theme browser-automation · 5 supporting skills · verifier read: skills/1449-browsers/3536-chrome, skills/1449-browsers/3537-firefox, skills/1449-browsers/3538-safari
@@ -205,7 +200,7 @@
 - **متى أستخدمها / when:** Setting up or extending E2E suites with evidence and quality gates.
 - **كيف / how:** 1) Init runtime in the app (init_project script). 2) Classify page roles from a11y tree. 3) Record with codegen, then refactor into Page Objects with stored auth state and API mocks. 4) Lint scenario by AST; check app readiness. 5) run_a11y_scan (axe) with fail-on-violations exit 1. 6) check_cwv for LCP/CLS/TTFB with fail-on-poor. 7) Keep video/trace evidence; scripts print one JSON on stdout. **أرقام / params:** base url, thresholds
 - **تثبيت / install:** `pip install playwright && playwright install chromium`
-- **يحتاج / needs:** [`python3`](../requirements.md#req-python3) · [`chromium`](../requirements.md#req-chromium) · [`npm:axe`](../requirements.md#req-npm-axe)
+- **يحتاج / needs:** [`python3`](../requirements.md#req-python3) · [`chromium`](../requirements.md#req-chromium)
 - **الرخصة / license:** method paraphrased from Atlas skills under MIT; the skills keep their own licenses — see each folder's SOURCE.md
 - **الدليل / proof:** `https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/1329-playwright-kit/2981-playwright-kit-ops` · `https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/1329-playwright-kit/2979-playwright-authoring` · `https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/1369-boss/3164-qa-e2e-playwright`
 - **المصدر / source:** KOSIF Atlas mining 2026-10-20 (https://github.com/kosif199022-jpg/kosif-atlas): playwright-kit/playwright-kit-ops (#2981); playwright-kit/playwright-authoring (#2979); boss/qa/e2e-playwright (#3164) · theme browser-automation · 5 supporting skills · verifier read: skills/1329-playwright-kit/2981-playwright-kit-ops, skills/1329-playwright-kit/2979-playwright-authoring, skills/1369-boss/3164-qa-e2e-playwright
@@ -214,7 +209,7 @@
 - **ماذا / what:** رفع ملف عندما يكون حقل الإدخال مخفيا وتفشل أداة الرفع. — Upload a file when the input is hidden and the MCP upload tool times out.
 - **متى أستخدمها / when:** MCP upload tool times out on a hidden input.
 - **كيف / how:** Locate the hidden input, expose it or target it directly, set files programmatically, then dispatch change events and verify the page shows the file. **أرقام / params:** file path
-- **يحتاج / needs:** [`claude:browser`](../requirements.md#req-claude-browser)
+- **يحتاج / needs:** [`chromium`](../requirements.md#req-chromium)
 - **الرخصة / license:** method paraphrased from Atlas skills under MIT; the skills keep their own licenses — see each folder's SOURCE.md
 - **الدليل / proof:** `https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/3342-playwright-mcp-upload-hidden-file-input/13856-playwright-mcp-upload-hidden-file-input`
 - **المصدر / source:** KOSIF Atlas mining 2026-10-20 (https://github.com/kosif199022-jpg/kosif-atlas): playwright-mcp-upload-hidden-file-input/playwright-mcp-upload-hidden-file-input (#13856) · theme browser-automation · 2 supporting skills · verifier read: skills/3342-playwright-mcp-upload-hidden-file-input/13856-playwright-mcp-upload-hidden-file-input
@@ -223,7 +218,7 @@
 - **ماذا / what:** إثبات ادعاء واجهة في متصفح حقيقي بأرخص وسيلة متاحة والإبلاغ بنجاح أو فشل أو تعطل مع الأدلة. — Prove a UI claim in a real browser using the cheapest available runtime and report pass, fail or blocked with evidence.
 - **متى أستخدمها / when:** User asks to verify, screenshot or record a flow without wanting permanent tests.
 - **كيف / how:** 1) Pick runtime: session browser tools, project runner, bundled Playwright scripts, else report blocked. 2) Reuse a running dev server; ask if several. 3) Use role/label/text/testid locators, wait on observable state, never fixed sleeps. 4) screenshot-url/sequence scripts emit a JSON manifest (viewport, console errors, failed network, status>=400). 5) Write temp scripts under /tmp/playwright-*. 6) After two failed attempts, save evidence and stop. **أرقام / params:** url, ready selector, out path
-- **يحتاج / needs:** [`node`](../requirements.md#req-node) · [`chromium`](../requirements.md#req-chromium)
+- **يحتاج / needs:** [`chromium`](../requirements.md#req-chromium)
 - **الرخصة / license:** method paraphrased from Atlas skills under MIT; the skills keep their own licenses — see each folder's SOURCE.md
 - **الدليل / proof:** `https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/112-browser/286-browser-automation` · `https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/238-browser/775-browser` · `https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/2111-frontend-dev-kit/7511-browser-debug`
 - **المصدر / source:** KOSIF Atlas mining 2026-10-20 (https://github.com/kosif199022-jpg/kosif-atlas): browser/browser-automation (#286); browser/browser (#775); frontend-dev-kit/browser-debug (#7511) · theme browser-automation · 4 supporting skills · verifier read: skills/112-browser/286-browser-automation, skills/238-browser/775-browser, skills/2111-frontend-dev-kit/7511-browser-debug
@@ -232,7 +227,7 @@
 - **ماذا / what:** فحص الصفحات المتغيرة عند 375 و768 و1280 بكسل وإخراج جدول بالمشاكل. — Check changed pages at 375, 768 and 1280 px in a real browser and tabulate layout, console and network findings.
 - **متى أستخدمها / when:** After a frontend change, before merge, or when asked to check how a page looks.
 - **كيف / how:** 1) Map changed files to routes (or take the given URL). 2) curl -sI; start dev server if nothing answers. 3) Open a NEW tab; resize or emulate 375x812x2 mobile, 768, 1280. 4) Screenshot and read each; look for overflow, clipping, overlap, tiny tap targets, uncollapsed nav, broken images. 5) Check console and failed requests; ignore third-party analytics. 6) Exercise any new interaction once. 7) Output page-by-width table; fix only if asked; close tabs. **أرقام / params:** url/path, optional fix
-- **يحتاج / needs:** [`claude:browser`](../requirements.md#req-claude-browser)
+- **يحتاج / needs:** [`network`](../requirements.md#req-network)
 - **الرخصة / license:** method paraphrased from Atlas skills under MIT; the skills keep their own licenses — see each folder's SOURCE.md
 - **الدليل / proof:** `https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/3166-browser-qa/13495-browser-qa` · `https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/3165-browser-compat/13494-browser-compat`
 - **المصدر / source:** KOSIF Atlas mining 2026-10-20 (https://github.com/kosif199022-jpg/kosif-atlas): browser-qa/browser-qa (#13495); browser-compat/browser-compat (#13494) · theme browser-automation · 4 supporting skills · verifier read: skills/3166-browser-qa/13495-browser-qa, skills/3165-browser-compat/13494-browser-compat
@@ -267,7 +262,6 @@
 - **ماذا / what:** يجهز تخزين Render وVercel وSealos بسلاسل اتصال صحيحة. — Provision Render, Vercel and Sealos storage with correct connection strings.
 - **متى أستخدمها / when:** deploying with managed DB/KV/blob
 - **كيف / how:** 1) Choose store: Postgres, Key Value, Blob, Edge Config. 2) Internal vs external connection string. 3) Respect creation constraints and autoscaling. 4) Use Marketplace Neon/Upstash on Vercel. 5) Set env secrets. **أرقام / params:** platform
-- **يحتاج / needs:** [`network`](../requirements.md#req-network)
 - **الرخصة / license:** method paraphrased from Atlas skills under MIT / Apache-2.0; the skills keep their own licenses — see each folder's SOURCE.md
 - **الدليل / proof:** `https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/889-render/2010-render-postgres` · `https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/2722-vercel/10571-vercel-storage`
 - **المصدر / source:** KOSIF Atlas mining 2026-10-20 (https://github.com/kosif199022-jpg/kosif-atlas): render/render-postgres (#2010); vercel/vercel-storage (#10571) · theme databases · 5 supporting skills · verifier read: skills/889-render/2010-render-postgres, skills/2722-vercel/10571-vercel-storage
@@ -306,7 +300,7 @@
 - **ماذا / what:** تصميم مكونات بعناصر دلالية أولا وARIA عند الحاجة فقط مع إدارة لوحة المفاتيح والتركيز. — Design components with semantic HTML first, ARIA only where needed, keyboard and focus management.
 - **متى أستخدمها / when:** Building dialogs, menus, tabs, forms or reviewing ARIA misuse.
 - **كيف / how:** 1) Pick native element before ARIA. 2) Define roles, name and state. 3) Specify keyboard map and focus trap/return. 4) Check visible focus and 2.5.8 target size. 5) Write tests (axe/pa11y, keyboard walk-through). **أرقام / params:** component type
-- **يحتاج / needs:** [`npm:axe`](../requirements.md#req-npm-axe) · [`npm:pa11y`](../requirements.md#req-npm-pa11y)
+- **يحتاج / needs:** [`npm:pa11y`](../requirements.md#req-npm-pa11y)
 - **الرخصة / license:** method paraphrased from Atlas skills under MIT; the skills keep their own licenses — see each folder's SOURCE.md
 - **الدليل / proof:** `https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/8453` · `https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/7559`
 - **المصدر / source:** KOSIF Atlas mining 2026-10-20 (https://github.com/kosif199022-jpg/kosif-atlas): accessibility-engineering/design-accessible-pattern (#8453); accessibility-plugin/accessibility-implementation (#7559) · theme frontend-ui-design · 6 supporting skills · verifier read: skills/8453, skills/7559
@@ -315,7 +309,7 @@
 - **ماذا / what:** التقط ألوان وخطوط العلامة مرة واحدة واشتق لوحة من 12 رمزاً وارفض ما يفشل بتباين AA. — Capture brand colors and fonts once, derive a 12-token palette, and refuse values failing WCAG AA contrast.
 - **متى أستخدمها / when:** Converting markdown or reports to branded HTML, or setting a brand default.
 - **كيف / how:** 1. Ask ~10 questions: output dir, primary/accent HEX, heading/body Google fonts, style (editorial/technical/minimal/playful), code theme, TOC mode. 2. Validate body-text and link contrast >= 4.5:1; reject the save otherwise. 3. Derive 12 CSS custom properties from HSL. 4. Merge config project > global > defaults. 5. Every converter must read the config and visibly change output.
-- **يحتاج / needs:** [`python3`](../requirements.md#req-python3)
+- **يحتاج / needs:** [`npm:axe`](../requirements.md#req-npm-axe)
 - **الرخصة / license:** method paraphrased from Atlas skills under MIT; the skills keep their own licenses — see each folder's SOURCE.md
 - **الدليل / proof:** `https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/191-markdown-html-skills/564-design-system` · `https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/191-markdown-html-skills/565-markdown-html-orchestrator`
 - **المصدر / source:** KOSIF Atlas mining 2026-10-20 (https://github.com/kosif199022-jpg/kosif-atlas): markdown-html-skills/design-system (#564); markdown-html-skills/markdown-html-orchestrator (#565) · theme frontend-ui-design · 3 supporting skills · verifier read: skills/191-markdown-html-skills/564-design-system, skills/191-markdown-html-skills/565-markdown-html-orchestrator
@@ -324,7 +318,6 @@
 - **ماذا / what:** اشتقاق ألوان آمنة للتباين وإحداثيات الشبكة وأحجام clamp مرنة بصيغ صريحة. — Derive OKLCH/contrast-safe palettes, grid coordinates and fluid clamp() sizes with explicit formulas.
 - **متى أستخدمها / when:** Tuning palettes, fluid type, responsive breakpoints or grid placement.
 - **كيف / how:** 1) Convert colors to OKLCH/LAB, compute luminance contrast (4.5:1 text, 3:1 large/UI). 2) Fluid size: clamp(min, preferred vw+rem, max). 3) Grid line math with negative indexes and spans. 4) Verify at viewport extremes. **أرقام / params:** palette, viewport range
-- **يحتاج / needs:** [`python3`](../requirements.md#req-python3)
 - **الرخصة / license:** method paraphrased from Atlas skills under MIT; the skills keep their own licenses — see each folder's SOURCE.md
 - **الدليل / proof:** `https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/2199-lvtd-skills/8013-color-math-accessibility` · `https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/8145`
 - **المصدر / source:** KOSIF Atlas mining 2026-10-20 (https://github.com/kosif199022-jpg/kosif-atlas): lvtd-skills/color-math-accessibility (#8013); lvtd-skills/responsive-layout-math (#8145) · theme frontend-ui-design · 6 supporting skills · verifier read: skills/2199-lvtd-skills/8013-color-math-accessibility, skills/8145
@@ -357,7 +350,7 @@
 - **ماذا / what:** اكتب مصدر رموز DTCG واحد وصدّره إلى Tailwind وCSS وSwiftUI وCompose وWinUI. — Author one W3C DTCG token JSON and export it to Tailwind, CSS variables, SwiftUI, Compose and WinUI.
 - **متى أستخدمها / when:** User asks for design tokens, a theme system, or one token source for web and native.
 - **كيف / how:** 1. Write tokens with $value/$type/$description (color, dimension, fontFamily, duration, shadow, typography). 2. Layer primitive, semantic, component tokens, aliasing via {color.brand.primary}. 3. Translate with a script, never by hand (Tailwind v4 @theme, :root vars, Compose ColorScheme, WinUI ResourceDictionary). 4. Audit for circular refs, raw-vs-semantic naming, single-platform drift. 5. Skip tokens for bespoke art-directed pages.
-- **يحتاج / needs:** [`python3`](../requirements.md#req-python3)
+- **يحتاج / needs:** [`npm:react`](../requirements.md#req-npm-react)
 - **الرخصة / license:** method paraphrased from Atlas skills under Apache-2.0 / MIT; the skills keep their own licenses — see each folder's SOURCE.md
 - **الدليل / proof:** `https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/1394-stark/3327-design-tokens` · `https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/3529-ui-design/14307-design-system-patterns`
 - **المصدر / source:** KOSIF Atlas mining 2026-10-20 (https://github.com/kosif199022-jpg/kosif-atlas): stark/design-tokens (#3327); ui-design/design-system-patterns (#14307) · theme frontend-ui-design · 4 supporting skills · verifier read: skills/1394-stark/3327-design-tokens, skills/3529-ui-design/14307-design-system-patterns
@@ -366,7 +359,7 @@
 - **ماذا / what:** نفّذ تدقيقاً حتمياً لمصدر الواجهة وأبلغ بنتائج مرتبطة بالملفات. — Run a deterministic source audit of React/Tailwind UI and report file-anchored findings by user impact.
 - **متى أستخدمها / when:** Reviewing or changing a React, Next.js, Tailwind or shadcn interface.
 - **كيف / how:** 1. Read repo instructions and pick the route/component. 2. Run a static diagnose over the repo with JSON output and no write. 3. Group findings by user impact (a11y, hierarchy, tokens, states, responsive). 4. Verify each fix against the cited file and local tokens. 5. Re-run; report before/after score, omissions, remaining risk as a priority/evidence/change table.
-- **يحتاج / needs:** [`node`](../requirements.md#req-node) · [`npm:react`](../requirements.md#req-npm-react)
+- **يحتاج / needs:** [`npm:react`](../requirements.md#req-npm-react)
 - **الرخصة / license:** method paraphrased from Atlas skills under MIT; the skills keep their own licenses — see each folder's SOURCE.md
 - **الدليل / proof:** `https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/3029-memoire/12946-audit-frontend-design` · `https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/3029-memoire/12950-remember-design-system`
 - **المصدر / source:** KOSIF Atlas mining 2026-10-20 (https://github.com/kosif199022-jpg/kosif-atlas): memoire/audit-frontend-design (#12946); memoire/remember-design-system (#12950) · theme frontend-ui-design · 5 supporting skills · verifier read: skills/3029-memoire/12946-audit-frontend-design, skills/3029-memoire/12950-remember-design-system
@@ -375,7 +368,7 @@
 - **ماذا / what:** استخراج الأنماط المحسوبة من موقع حي إلى ملف تصميم منظم JSON مع استنساخ اختياري. — Pull exact computed styles from a live site into a structured design profile JSON and optionally clone it.
 - **متى أستخدمها / when:** Asked to replicate, analyze or reverse a site's visual style.
 - **كيف / how:** 1) Open URL in browser tool, inject JS reading getComputedStyle for colors, fonts, spacing, radii, shadows, motion. 2) Scan code for canvas/WebGL/shader effects. 3) Judge mood and layout by eye. 4) Write DNA JSON (150+ field schema), --dna-only stops here. 5) Optionally generate code and compare screenshots. **أرقام / params:** urls, mode
-- **يحتاج / needs:** [`claude:browser`](../requirements.md#req-claude-browser) · [`chromium`](../requirements.md#req-chromium)
+- **يحتاج / needs:** [`npm:three`](../requirements.md#req-npm-three)
 - **الرخصة / license:** method paraphrased from Atlas skills under MIT; the skills keep their own licenses — see each folder's SOURCE.md
 - **الدليل / proof:** `https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/3594-design-clone/14410-design-clone` · `https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/2673-claude-octopus/10214-skill-extract` · `https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/2042`
 - **المصدر / source:** KOSIF Atlas mining 2026-10-20 (https://github.com/kosif199022-jpg/kosif-atlas): design-clone/design-clone (#14410); claude-octopus/skill-extract (#10214); brightdata-plugin/design-mirror (#2042) · theme frontend-ui-design · 6 supporting skills · verifier read: skills/3594-design-clone/14410-design-clone, skills/2673-claude-octopus/10214-skill-extract, skills/2042
@@ -384,7 +377,6 @@
 - **ماذا / what:** استخدام واجهة Figma لاستخراج الرموز وتصدير الأصول ثم تنفيذ مكونات من رابط Figma. — Use the Figma REST API to extract tokens and export assets, then implement components from a Figma URL.
 - **متى أستخدمها / when:** Given a Figma URL or asked to sync tokens in CI.
 - **كيف / how:** 1) Auth with scoped token. 2) GET file, walk styles for colors/type/spacing. 3) Export images by node id (svg/png) with batching. 4) Respect rate limits with exponential backoff and caching. 5) Map to tokens and components. 6) Optionally CI sync job. **أرقام / params:** file key
-- **يحتاج / needs:** [`network`](../requirements.md#req-network) · [`node`](../requirements.md#req-node)
 - **الرخصة / license:** method paraphrased from Atlas skills under MIT; the skills keep their own licenses — see each folder's SOURCE.md
 - **الدليل / proof:** `https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/3252` · `https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/5606` · `https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/5625`
 - **المصدر / source:** KOSIF Atlas mining 2026-10-20 (https://github.com/kosif199022-jpg/kosif-atlas): figma/figma-implementing (#3252); figma-pack/figma-core-workflow-a (#5606); figma-pack/figma-rate-limits (#5625) · theme frontend-ui-design · 8 supporting skills · verifier read: skills/3252, skills/5606, skills/5625
@@ -393,7 +385,6 @@
 - **ماذا / what:** جلب لقطات وبنية ومتغيرات من رابط Figma عبر MCP ثم REST. — Pull screenshots, structure and variables from a Figma URL using MCP first then REST with a token.
 - **متى أستخدمها / when:** User supplies Figma link; need tokens or frames for implementation.
 - **كيف / how:** 1) Parse file key and node-id (convert - to :). 2) Try Figma MCP get_metadata; authenticate if needed. 3) Else require FIGMA_PAT (file_content:read) and stop if missing. 4) Discover pages/frames. 5) Export frames and variables for downstream skills. **أرقام / params:** figma url
-- **يحتاج / needs:** [`network`](../requirements.md#req-network) · [`claude:tools`](../requirements.md#req-claude-tools)
 - **الرخصة / license:** method paraphrased from Atlas skills under MIT; the skills keep their own licenses — see each folder's SOURCE.md
 - **الدليل / proof:** `https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/3009-uxd-design/12857-uxd-figma-read`
 - **المصدر / source:** KOSIF Atlas mining 2026-10-20 (https://github.com/kosif199022-jpg/kosif-atlas): uxd-design/uxd-figma-read (#12857) · theme frontend-ui-design · 2 supporting skills · verifier read: skills/3009-uxd-design/12857-uxd-figma-read
@@ -402,7 +393,6 @@
 - **ماذا / what:** استخرج عقد Figma إلى خطة مقاسة ثم ابنِ وقارن وأصلح. — Extract Figma nodes into a measured plan, build against it, then diff and fix deviations.
 - **متى أستخدمها / when:** Implementing or syncing a design from Figma.
 - **كيف / how:** 1. Read selected nodes via Figma MCP and write measurements into a plan. 2. Build each node against the embedded specs using project components. 3. Compare the implemented screen with the source and fix deviations. 4. Diff Figma versions to produce a code-update checklist. 5. Map colors/spacing to tokens.
-- **يحتاج / needs:** [`claude:tools`](../requirements.md#req-claude-tools)
 - **الرخصة / license:** method paraphrased from Atlas skills under MIT; the skills keep their own licenses — see each folder's SOURCE.md
 - **الدليل / proof:** `https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/quiver/14453-design` · `https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/2998-patternfly/12791-pf-figma-diff`
 - **المصدر / source:** KOSIF Atlas mining 2026-10-20 (https://github.com/kosif199022-jpg/kosif-atlas): quiver/design (#14453); patternfly/pf-figma-diff (#12791) · theme frontend-ui-design · 7 supporting skills · verifier read: skills/quiver/14453-design, skills/2998-patternfly/12791-pf-figma-diff
@@ -411,7 +401,6 @@
 - **ماذا / what:** شخّص مشاكل LCP وCLS وINP والاستجابة من المصدر والعرض. — Diagnose LCP, CLS, INP regressions and responsive issues from source and rendered output.
 - **متى أستخدمها / when:** Page feels slow, layout shifts, or breakpoints break.
 - **كيف / how:** 1. Check LCP image priority, font loading, layout reservations for CLS, long handlers for INP. 2. Audit CSS for fixed widths and missing breakpoints. 3. Render at several viewports and compare. 4. Prefer container queries and fluid type. 5. Report fixes with evidence.
-- **يحتاج / needs:** [`claude:browser`](../requirements.md#req-claude-browser)
 - **الرخصة / license:** method paraphrased from Atlas skills under MIT; the skills keep their own licenses — see each folder's SOURCE.md
 - **الدليل / proof:** `https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/majestic-frontend/8280-frontend-performance` · `https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/3529-ui-design/14312-responsive-design`
 - **المصدر / source:** KOSIF Atlas mining 2026-10-20 (https://github.com/kosif199022-jpg/kosif-atlas): majestic-frontend/frontend-performance (#8280); ui-design/responsive-design (#14312) · theme frontend-ui-design · 5 supporting skills · verifier read: skills/majestic-frontend/8280-frontend-performance, skills/3529-ui-design/14312-responsive-design
@@ -420,7 +409,7 @@
 - **ماذا / what:** شغّل الواجهة عبر المتصفح لفحص ترتيب Tab ومصائد التركيز وسلوك المفاتيح. — Drive a running UI with browser automation to check tab order, focus traps and component key behavior.
 - **متى أستخدمها / when:** Validating keyboard navigation of an app or component demo.
 - **كيف / how:** 1. Open the URL at 1440x900 and screenshot a baseline. 2. Read the accessibility tree; list interactive elements and overlay triggers. 3. Walk ordered criteria: tab order, skip link, focus visible, modal trapping, menu arrows, Escape. 4. Apply component-specific key maps. 5. Report violations with fixes; note manual testing is still needed.
-- **يحتاج / needs:** [`claude:browser`](../requirements.md#req-claude-browser)
+- **يحتاج / needs:** [`npm:axe`](../requirements.md#req-npm-axe)
 - **الرخصة / license:** method paraphrased from Atlas skills under MIT / Apache-2.0; the skills keep their own licenses — see each folder's SOURCE.md
 - **الدليل / proof:** `https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/2998-patternfly/12754-pf-a11y-keyboard` · `https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/2998-patternfly/12753-pf-a11y-audit`
 - **المصدر / source:** KOSIF Atlas mining 2026-10-20 (https://github.com/kosif199022-jpg/kosif-atlas): patternfly/pf-a11y-keyboard (#12754); patternfly/pf-a11y-audit (#12753) · theme frontend-ui-design · 5 supporting skills · verifier read: skills/2998-patternfly/12754-pf-a11y-keyboard, skills/2998-patternfly/12753-pf-a11y-audit
@@ -429,7 +418,7 @@
 - **ماذا / what:** بناء صفحة هبوط بهوية العلامة مع CSS ثلاثي الأبعاد وحركة GSAP بعد مقابلة العلامة. — Build a brand-first single-page landing with 3D CSS and GSAP scroll effects after a brand interview.
 - **متى أستخدمها / when:** Requests for marketing or landing pages.
 - **كيف / how:** 1) Interview: colors, typography, shape language, audience. 2) Choose art direction from product context. 3) Generate single HTML with GSAP ScrollTrigger and 3D CSS. 4) Audit six conversion dimensions (above-fold, trust, form). 5) Deploy optional. **أرقام / params:** brand brief
-- **يحتاج / needs:** [`npm:gsap`](../requirements.md#req-npm-gsap) · [`node`](../requirements.md#req-node)
+- **يحتاج / needs:** [`npm:gsap`](../requirements.md#req-npm-gsap)
 - **الرخصة / license:** method paraphrased from Atlas skills under MIT / Apache-2.0; the skills keep their own licenses — see each folder's SOURCE.md
 - **الدليل / proof:** `https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/196-landing/621-landing` · `https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/14160` · `https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/4059`
 - **المصدر / source:** KOSIF Atlas mining 2026-10-20 (https://github.com/kosif199022-jpg/kosif-atlas): landing/landing (#621); brand-landingpage/brand-landingpage (#14160); digital-marketing-pro/landing-page-audit (#4059) · theme frontend-ui-design · 6 supporting skills · verifier read: skills/196-landing/621-landing, skills/14160, skills/4059
@@ -438,7 +427,7 @@
 - **ماذا / what:** مقارنة صفحة منفذة بالتصميم المرجعي وربط الفروق بعناصر مسماة. — Compare a built page to a reference, attributing colour and position diffs to named elements.
 - **متى أستخدمها / when:** Matching a page to a mockup, figuring out why a build differs.
 - **كيف / how:** 1) Screenshot actual page; save desired.png. 2) Optionally dump DOM bboxes scaled by DPR to elements.json. 3) Run bundled check_design.py with tolerances (deltaE 3, px 2, region 0.5%). 4) Read diff.json: kind color/position per element. 5) Fix, recapture, stop at pass true. **أرقام / params:** actual.png, desired.png
-- **يحتاج / needs:** [`python3`](../requirements.md#req-python3) · [`chromium`](../requirements.md#req-chromium) · [`pip:pillow`](../requirements.md#req-pip-pillow)
+- **يحتاج / needs:** [`python3`](../requirements.md#req-python3)
 - **الرخصة / license:** method paraphrased from Atlas skills under MIT; the skills keep their own licenses — see each folder's SOURCE.md
 - **الدليل / proof:** `https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/890-web/2011-check-web-design` · `https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/1530-webcraft/4196-ui-screenshots`
 - **المصدر / source:** KOSIF Atlas mining 2026-10-20 (https://github.com/kosif199022-jpg/kosif-atlas): web/check-web-design (#2011); webcraft/ui-screenshots (#4196) · theme frontend-ui-design · 2 supporting skills · verifier read: skills/890-web/2011-check-web-design, skills/1530-webcraft/4196-ui-screenshots
@@ -447,7 +436,6 @@
 - **ماذا / what:** قارن الشاشة المبنية بصورة التصميم واحسب فرق اللون الإدراكي لكل عنصر. — Compare a built screen to a design image, mask chrome, and report perceptual delta per element.
 - **متى أستخدمها / when:** Matching a screen to a design reference or debugging a mismatch.
 - **كيف / how:** 1. Capture actual screenshot beside the desired one. 2. Optionally export element bboxes (scaled by device scale x2/x3) as JSON. 3. Diff with tolerances (deltaE CIE76 ~3, px ~2, region area 0.5%). 4. Mask status bar (~141px) and home indicator (~102px) at x3. 5. Read diff.json pass flag and heatmap PNG; iterate until pass.
-- **يحتاج / needs:** [`python3`](../requirements.md#req-python3) · [`pip:pillow`](../requirements.md#req-pip-pillow) · [`pip:numpy`](../requirements.md#req-pip-numpy)
 - **الرخصة / license:** method paraphrased from Atlas skills under MIT; the skills keep their own licenses — see each folder's SOURCE.md
 - **الدليل / proof:** `https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/887-mobile/1996-check-mobile-design` · `https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/2370-report-regeneration/9165-report-fidelity-harness`
 - **المصدر / source:** KOSIF Atlas mining 2026-10-20 (https://github.com/kosif199022-jpg/kosif-atlas): mobile/check-mobile-design (#1996); report-regeneration/report-fidelity-harness (#9165) · theme frontend-ui-design · 5 supporting skills · verifier read: skills/887-mobile/1996-check-mobile-design, skills/2370-report-regeneration/9165-report-fidelity-harness
@@ -456,7 +444,6 @@
 - **ماذا / what:** هيكلة رموز التصميم أولية ودلالية ومكوّنية مع الثيمات كتبديل قيم دلالية وتصديرها لكل منصة. — Structure tokens as primitive, semantic and component tiers with themes as semantic value swaps, emitted per platform.
 - **متى أستخدمها / when:** Setting up tokens, dark mode or multi-brand.
 - **كيف / how:** 1) One source of truth in W3C DTCG JSON ($value/$type). 2) Primitives: raw palette, never used by products. 3) Semantic tokens name roles (color.bg.surface) referencing primitives. 4) Component tokens only when independent tuning is needed. 5) Themes = semantic maps under [data-brand][data-theme]. 6) Style Dictionary to CSS vars plus typed TS map, build fails on bad names. **أرقام / params:** brands, modes
-- **يحتاج / needs:** [`node`](../requirements.md#req-node) · [`npm:esbuild`](../requirements.md#req-npm-esbuild)
 - **الرخصة / license:** method paraphrased from Atlas skills under MIT; the skills keep their own licenses — see each folder's SOURCE.md
 - **الدليل / proof:** `https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/2278-design-systems-engineering/8697-design-token-architecture` · `https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/13267` · `https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/7560`
 - **المصدر / source:** KOSIF Atlas mining 2026-10-20 (https://github.com/kosif199022-jpg/kosif-atlas): design-systems-engineering/design-token-architecture (#8697); frontend-mobile-development/tailwind-design-system (#13267); accessibility-plugin/design-tokens (#7560) · theme frontend-ui-design · 7 supporting skills · verifier read: skills/2278-design-systems-engineering/8697-design-token-architecture, skills/13267, skills/7560
@@ -465,7 +452,7 @@
 - **ماذا / what:** فحص كود الواجهة لمخالفات WCAG 2.2 وترتيبها بالخطورة وتقديم إصلاحات قبل/بعد ثم إعادة التحقق. — Scan a front-end codebase for WCAG 2.2 A/AA violations, rank by severity, emit before/after fixes and re-verify against a baseline.
 - **متى أستخدمها / when:** Asked to audit, fix or gate accessibility in React/Vue/Angular/HTML code.
 - **كيف / how:** 1) Detect framework. 2) Scan for criteria (alt 1.1.1, keyboard 2.1.1, labels, contrast 1.4.3). 3) Classify Critical (fix before release) / Major (this sprint) / Minor (2 sprints). 4) Emit framework-specific before/after diffs. 5) Re-run against saved baseline JSON to catch regressions. 6) Output stakeholder report and CI-friendly result. **أرقام / params:** scope dir, severity threshold, framework
-- **يحتاج / needs:** [`python3`](../requirements.md#req-python3) · [`node`](../requirements.md#req-node)
+- **يحتاج / needs:** [`npm:axe`](../requirements.md#req-npm-axe)
 - **الرخصة / license:** method paraphrased from Atlas skills under MIT / Apache-2.0; the skills keep their own licenses — see each folder's SOURCE.md
 - **الدليل / proof:** `https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/149-a11y-audit/492-a11y-audit` · `https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/13231` · `https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/948`
 - **المصدر / source:** KOSIF Atlas mining 2026-10-20 (https://github.com/kosif199022-jpg/kosif-atlas): a11y-audit/a11y-audit (#492); accessibility-compliance/wcag-audit-patterns (#13231); design/accessibility-review (#948) · theme frontend-ui-design · 8 supporting skills · verifier read: skills/149-a11y-audit/492-a11y-audit, skills/13231, skills/948
@@ -476,7 +463,6 @@
 - **ماذا / what:** تنفيذ بوابات الإصدار ثم الوسم والنشر والتحقق من وجود الوسم. — Run release gates, tag, push and publish a GitHub release then prove the tag exists.
 - **متى أستخدمها / when:** Cut/ship a release, publish version.
 - **كيف / how:** 1) Preflight git status, branch, existing tags. 2) Validate/review gates. 3) Bump, commit release files. 4) git tag vX locally, push tag. 5) gh release create with notes. 6) Verify with git ls-remote --tags. Support --dry-run. **أرقام / params:** version, dry-run
-- **يحتاج / needs:** [`git`](../requirements.md#req-git) · [`gh`](../requirements.md#req-gh)
 - **الرخصة / license:** method paraphrased from Atlas skills under MIT/Apache; the skills keep their own licenses — see each folder's SOURCE.md
 - **الدليل / proof:** `https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/?/10012-release` · `https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/?/1238-ship` · `https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/?/9678-releasing`
 - **المصدر / source:** KOSIF Atlas mining 2026-10-20 (https://github.com/kosif199022-jpg/kosif-atlas): release/release (#10012); kernel/ship (#1238); mergify/releasing (#9678) · theme git-release · 10 supporting skills · verifier read: skills/?/10012-release, skills/?/1238-ship, skills/?/9678-releasing

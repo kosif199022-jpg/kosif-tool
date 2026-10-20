@@ -13,8 +13,7 @@
   "install": "",
   "requires": [
    "key:elevenlabs",
-   "node",
-   "network"
+   "key:unspecified"
   ],
   "license": "method paraphrased from Atlas skills under MIT; the skills keep their own licenses — see each folder's SOURCE.md",
   "proof": [
@@ -130,10 +129,7 @@
   "how": "1) Pick a kit (arcade, platformer, shooter, party, ui) or write a JSON spec of effect name, preset, pitch in semitones, length, seed, style (clean/retro/soft), level. 2) Render three variants for frequent sounds, one take for once-per-round signals. 3) Normalize by loudest 50 ms into classes ui -20, small -16, normal -12, big -9 dB, ceiling -1 dBFS. 4) Reject effects that start late or have little energy under about 300 Hz. 5) Review reel spectrogram image and warnings.",
   "params": "kit, style, variants",
   "install": "",
-  "requires": [
-   "node",
-   "ffmpeg"
-  ],
+  "requires": [],
   "license": "method paraphrased from Atlas skills under Apache-2.0 / MIT; the skills keep their own licenses — see each folder's SOURCE.md",
   "proof": [
    "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/1511-homie/3901-sound",
@@ -188,8 +184,7 @@
   "params": "model, response_format",
   "install": "",
   "requires": [
-   "network",
-   "python3"
+   "pip:pyannote"
   ],
   "license": "method paraphrased from Atlas skills under MIT; the skills keep their own licenses — see each folder's SOURCE.md",
   "proof": [
@@ -364,7 +359,8 @@
   "params": "genre, mood, form",
   "install": "",
   "requires": [
-   "key:elevenlabs"
+   "key:elevenlabs",
+   "key:video-gen"
   ],
   "license": "method paraphrased from Atlas skills under MIT / Apache-2.0; the skills keep their own licenses — see each folder's SOURCE.md",
   "proof": [
@@ -476,11 +472,9 @@
   "params": "seed, key, tempo, cue list",
   "install": "",
   "requires": [
-   "python3",
+   "ffmpeg",
    "pip:numpy",
-   "pip:scipy",
-   "pip:soundfile",
-   "ffmpeg"
+   "pip:scipy"
   ],
   "license": "method paraphrased from Atlas skills under MIT / Apache-2.0; the skills keep their own licenses — see each folder's SOURCE.md",
   "proof": [
@@ -536,10 +530,7 @@
   "how": "1) Write score.json: tempo, key, instruments (level, pan, echo, reverb send, kick ducking), sections in whole bars with chords and per-instrument patterns, arrangement, loop sections. 2) Render mix at -14 LUFS (or -18 as a bed under effects) plus 24-bit master and per-instrument stems that sum to the mix. 3) Loops: render each section three times and keep the middle copy so reverb tails land at the loop head. 4) Check seam value (1 or less is seamless) and bar length; export plan.json bar grid for video cuts.",
   "params": "--loops, --lufs",
   "install": "",
-  "requires": [
-   "node",
-   "ffmpeg"
-  ],
+  "requires": [],
   "license": "method paraphrased from Atlas skills under Apache-2.0 / MIT; the skills keep their own licenses — see each folder's SOURCE.md",
   "proof": [
    "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/1511-homie/3901-sound",
@@ -594,9 +585,7 @@
   "how": "1) Classify channel: narrowband telephony versus wideband web. 2) Pick provider by language coverage and streaming support. 3) Use bidirectional audio streaming (Twilio ConversationRelay handles ASR, TTS, barge-in). 4) Tune latency: model choice, streaming, caching, audio format. 5) Add rate-limit queues, health checks and rollback before production.",
   "params": "channel, languages",
   "install": "",
-  "requires": [
-   "network"
-  ],
+  "requires": [],
   "license": "method paraphrased from Atlas skills under MIT; the skills keep their own licenses — see each folder's SOURCE.md",
   "proof": [
    "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/2261-conversational-ai-voice-engineering/8616-speech-recognition-and-synthesis",
@@ -654,7 +643,7 @@
   "params": "frames,slot",
   "install": "",
   "requires": [
-   "pip:pillow"
+   "python3"
   ],
   "license": "method paraphrased from Atlas skills under MIT; the skills keep their own licenses — see each folder's SOURCE.md",
   "proof": [
@@ -716,8 +705,7 @@
   "params": "bpm",
   "install": "",
   "requires": [
-   "ffmpeg",
-   "python3"
+   "ffmpeg"
   ],
   "license": "method paraphrased from Atlas skills under MIT; the skills keep their own licenses — see each folder's SOURCE.md",
   "proof": [

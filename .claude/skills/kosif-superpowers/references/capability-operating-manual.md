@@ -2,6 +2,17 @@
 
 This is an action manual for Claude: **capabilities, tools, prerequisites, permissions, recipes, evidence**. Not another bookmark list. Execute the included router to find the narrowest real tool before claiming an ability.
 
+## الفهرس / contents
+
+- [1. Start of every substantial task](#1-start-of-every-substantial-task)
+- [2. Permission-aware action contract](#2-permission-aware-action-contract)
+- [3. Katana-like reference video editing — real KOSIF workflow](#3-katana-like-reference-video-editing--real-kosif-workflow)
+- [4. Music meaning + audio-reactive art](#4-music-meaning--audio-reactive-art)
+- [5. Drawing, animation, compositing and rendering](#5-drawing-animation-compositing-and-rendering)
+- [6. Reasoning, agents and real engineering practices](#6-reasoning-agents-and-real-engineering-practices)
+- [7. Python ecosystem: ten prominent results from repository search](#7-python-ecosystem-ten-prominent-results-from-repository-search)
+- [8. Transfer procedure for every new repo, not a bookmark dump](#8-transfer-procedure-for-every-new-repo-not-a-bookmark-dump)
+
 ## 1. Start of every substantial task
 
     SKILL_DIR=.claude/skills/kosif-superpowers

@@ -1,4 +1,4 @@
-﻿"""Independent geometry extension tests: mesh topology, pixels and object depth."""
+"""Independent geometry extension tests: mesh topology, pixels and object depth."""
 import copy
 from pathlib import Path
 import sys

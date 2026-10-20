@@ -24,8 +24,14 @@
    "product demo",
    "silent demo",
    "storyboard",
-   "feature video"
-  ]
+   "feature video",
+   "فيديو منتج",
+   "شرح تطبيق",
+   "بدون تعليق",
+   "app demo",
+   "ui walkthrough"
+  ],
+  "when": "حين يطلب المستخدم فيديو عرض منتج بلا تعليق صوتي تحكي فيه الواجهة والمؤشر القصة / when the user wants a product demo with no voiceover where the UI and cursor tell the story"
  },
  {
   "id": "UI-02",
@@ -50,8 +56,14 @@
    "زمن الاستجابة",
    "latency",
    "feedback",
-   "click response"
-  ]
+   "click response",
+   "توقيت النقرة",
+   "رد فعل الواجهة",
+   "تأخير",
+   "response timing",
+   "ui delay"
+  ],
+  "when": "عند تحريك نقرة على الواجهة وتحديد متى تستجيب الشاشة بعد الضغط حتى لا تبدو كعرض شرائح أو خلل / when timing how soon the UI reacts after a click so it reads neither as a slideshow nor a bug"
  },
  {
   "id": "UI-03",
@@ -77,8 +89,14 @@
    "lorem",
    "real data",
    "localisation",
-   "ui copy"
-  ]
+   "ui copy",
+   "بيانات واقعية",
+   "نص تجريبي",
+   "تعريب الواجهة",
+   "placeholder text",
+   "test data"
+  ],
+  "when": "حين تحتاج الواجهة المعروضة أسماء ومبالغ وتواريخ واقعية بلغة المشاهد بدل نص تجريبي / when a shown UI needs realistic, locale-correct names, amounts and dates instead of placeholder text"
  },
  {
   "id": "UI-04",
@@ -104,8 +122,14 @@
    "إعادة بناء الواجهة",
    "ui rebuild",
    "layers",
-   "dom"
-  ]
+   "dom",
+   "لقطة شاشة",
+   "تحريك الواجهة",
+   "عمق",
+   "screenshot to ui",
+   "parallax"
+  ],
+  "when": "عند تحويل لقطة شاشة إلى واجهة حية متحركة تُبنى طبقة طبقة لكل منها توقيتها / when turning a screenshot into a live, layered UI where each layer gets its own timeline"
  },
  {
   "id": "UI-05",
@@ -132,8 +156,14 @@
    "قطع شفافة",
    "asset kit",
    "omitBackground",
-   "playwright screenshot"
-  ]
+   "playwright screenshot",
+   "قص الأيقونات",
+   "خلفية شفافة",
+   "عناصر الواجهة",
+   "ui parts",
+   "transparent cutouts"
+  ],
+  "when": "حين تحتاج قطع واجهة شفافة عالية الدقة (أزرار وأيقونات وشرائح) قبل التحريك / when you need high-res transparent cut-outs of buttons, chips and icons before animating"
  },
  {
   "id": "UI-06",
@@ -160,8 +190,14 @@
    "rtl",
    "mirroring",
    "arabic ui",
-   "logical css"
-  ]
+   "logical css",
+   "تعريب",
+   "يمين لليسار",
+   "عكس الواجهة",
+   "right to left",
+   "localization"
+  ],
+  "when": "عند تحويل واجهة منتج أو تطبيق هاتف إلى العربية وعكس اتجاه التفاعل من اليمين لليسار / when localising a product or phone UI to Arabic and mirroring interaction right-to-left"
  },
  {
   "id": "UI-07",
@@ -185,8 +221,14 @@
    "لوحة بيانات",
    "dashboard",
    "kpi",
-   "focal view"
-  ]
+   "focal view",
+   "داشبورد",
+   "مؤشرات الأداء",
+   "ملخص تنفيذي",
+   "metrics",
+   "executive summary"
+  ],
+  "when": "حين يظهر في الفيديو لوحة بيانات ويجب أن يتصدر مؤشر رئيسي واحد وتتراجع البقية / when a video frame shows a dashboard and one headline metric must lead while the rest recede"
  },
  {
   "id": "UI-08",
@@ -211,8 +253,14 @@
    "تفاعل دقيق",
    "microinteraction",
    "beat",
-   "timing ranges"
-  ]
+   "timing ranges",
+   "حركة الواجهة",
+   "توقيت الحركة",
+   "تغذية راجعة",
+   "ui animation",
+   "motion timing"
+  ],
+  "when": "عند تخطيط كل لحظة تفاعل في الواجهة من المُطلِق إلى الحالة المستقرة وضبط مدتها / when storyboarding each UI moment from trigger to settled state and choosing its duration"
  },
  {
   "id": "UI-09",
@@ -235,8 +283,14 @@
    "حلقة",
    "loop",
    "component clip",
-   "seamless"
-  ]
+   "seamless",
+   "تكرار",
+   "لوب",
+   "مكون واجهة",
+   "looping clip",
+   "short clip"
+  ],
+  "when": "حين يطلب المستخدم مقطعًا قصيرًا يتكرر بلا قفزة لمكوّن واجهة واحد يؤدي فعلًا واحدًا / when the user wants a short seamless loop of one UI component doing one action"
  },
  {
   "id": "UI-10",
@@ -260,8 +314,14 @@
    "تعليمي",
    "tutorial",
    "action labels",
-   "onboarding"
-  ]
+   "onboarding",
+   "فيديو تعليمي",
+   "شرح خطوات",
+   "عناوين الخطوات",
+   "captions",
+   "how-to"
+  ],
+  "when": "عند كتابة عناوين خطوات فيديو تعليمي أو شرح تطبيق بحيث تسمّي الفعل لا رقم الخطوة / when writing captions for a tutorial or app walkthrough that name the action, not a step number"
  },
  {
   "id": "UI-11",
@@ -293,8 +353,14 @@
    "press",
    "hermite",
    "motion-kit",
-   "typeOn"
-  ]
+   "typeOn",
+   "سهم الماوس",
+   "نقرة",
+   "كتابة نص",
+   "pointer animation",
+   "click"
+  ],
+  "when": "حين تحتاج مؤشرًا مرسومًا يتنقل بين محطات زمنية ويضغط الأهداف ويكتب نصًا داخل motion-kit / when you need a drawn cursor that travels timed stops, presses targets and types text with motion-kit"
  },
  {
   "id": "UI-12",
@@ -324,8 +390,14 @@
    "seek",
    "draw(t)",
    "product ui",
-   "deterministic"
-  ]
+   "deterministic",
+   "مشهد واجهة",
+   "فيديو عمودي",
+   "بطاقات متتابعة",
+   "vertical video",
+   "html canvas"
+  ],
+  "when": "عند بناء مشهد واجهة منتج على Canvas بشاشة تصعد وبطاقات متتابعة ومؤشر وزر ينضغط، كدالة للزمن / when building a canvas product-UI scene (rising screen, staggered cards, cursor, button press) as a function of time"
  },
  {
   "id": "UI-13",
@@ -352,8 +424,14 @@
    "cursor path",
    "catmull-rom",
    "arc length",
-   "dwell"
-  ]
+   "dwell",
+   "حركة الماوس",
+   "توقف المؤشر",
+   "سهم",
+   "mouse movement",
+   "click target"
+  ],
+  "when": "حين تخطط مسار المؤشر في عرض منتج: متى يظهر وكيف ينزلق وكم يتوقف على الهدف قبل الضغط / when planning a demo cursor's path: when it appears, how it glides, and how long it dwells before clicking"
  },
  {
   "id": "UI-14",
@@ -380,8 +458,14 @@
    "تموج",
    "ripple",
    "click ring",
-   "press feedback"
-  ]
+   "press feedback",
+   "أثر النقرة",
+   "دائرة الضغط",
+   "ضغطة",
+   "click effect",
+   "tap ripple"
+  ],
+  "when": "عند إظهار أثر النقرة بحلقة تتسع أو تموج تحت المؤشر أو اللمس في فيديو واجهة / when showing a click with an expanding ring or ripple under the cursor or tap in a UI video"
  },
  {
   "id": "UI-15",
@@ -411,8 +495,14 @@
    "مؤشر ماك",
    "macos cursor",
    "directional",
-   "oversized cursor"
-  ]
+   "oversized cursor",
+   "سهم ماك",
+   "ماوس كبير",
+   "زوم على النقرة",
+   "mac pointer",
+   "click zoom"
+  ],
+  "when": "حين تريد مؤشر ماك يدور مع اتجاه حركته ويكبر عند المرور بينما تقترب الكاميرا من النقرة / when you want a macOS arrow that turns with its motion and grows on hover while the camera zooms to the click"
  },
  {
   "id": "UI-16",
@@ -437,8 +527,14 @@
    "هالة",
    "cursor halo",
    "homing",
-   "camera drift"
-  ]
+   "camera drift",
+   "تتبع الهدف",
+   "نبضة النقرة",
+   "هدف متحرك",
+   "moving target",
+   "click pulse"
+  ],
+  "when": "عند متابعة المؤشر لعنصر يتحرك مع انجراف الكاميرا، وإبراز النقرة بهالة لونية نابضة / when the cursor must chase a moving element while the camera drifts, with a pulsing accent halo on click"
  },
  {
   "id": "UI-17",
@@ -465,8 +561,14 @@
    "مغناطيسي",
    "magnetic",
    "hover",
-   "cursor"
-  ]
+   "cursor",
+   "انجذاب",
+   "أزرار تفاعلية",
+   "مرور الماوس",
+   "hover effect",
+   "button attraction"
+  ],
+  "when": "حين يطلب المستخدم أزرارًا تنجذب نحو المؤشر ونقطة ناعمة تتحول إلى خلفية الزر عند المرور / when the user wants buttons pulled toward the cursor and a soft dot morphing into the hover plate"
  },
  {
   "id": "UI-18",
@@ -492,8 +594,14 @@
    "سحب",
    "إفلات",
    "drag and drop",
-   "kanban"
-  ]
+   "kanban",
+   "سحب البطاقات",
+   "لوحة مهام",
+   "نقل عنصر",
+   "drag",
+   "resize"
+  ],
+  "when": "عند تصوير سحب بطاقة وإفلاتها في عمود آخر، أو سحب مقبض تعبئة أو تغيير الحجم من الزاوية / when showing a card dragged into another column, or a fill-handle or corner-resize drag"
  },
  {
   "id": "UI-19",
@@ -520,8 +628,14 @@
    "تحديد نص",
    "text select",
    "marquee",
-   "context menu"
-  ]
+   "context menu",
+   "تظليل النص",
+   "قائمة النقر الأيمن",
+   "تحديد متعدد",
+   "right click",
+   "highlight text"
+  ],
+  "when": "حين يحتاج المشهد تحديد نص وتنسيقه، أو سحب مستطيل تحديد على صور، أو فتح قائمة النقر الأيمن / when a scene needs text selection and formatting, a marquee drag over photos, or a right-click menu"
  },
  {
   "id": "UI-20",
@@ -552,8 +666,14 @@
    "تعاون",
    "multiplayer",
    "named cursor",
-   "figma style"
-  ]
+   "figma style",
+   "عمل جماعي",
+   "مؤشرات متعددة",
+   "مستخدمين",
+   "collaboration",
+   "shared canvas"
+  ],
+  "when": "عند إظهار عدة مستخدمين يعملون معًا على لوحة واحدة بمؤشرات ملونة تحمل أسماءهم / when showing several people working one canvas together with coloured, named cursors"
  },
  {
   "id": "UI-21",
@@ -579,8 +699,14 @@
    "وكيل",
    "agent",
    "ai cursor",
-   "automation"
-  ]
+   "automation",
+   "ذكاء اصطناعي",
+   "وكيل ذكي",
+   "خطوات تلقائية",
+   "ai agent",
+   "task steps"
+  ],
+  "when": "حين يطلب المستخدم إظهار وكيل ذكاء اصطناعي يتنقل بين خطوات وينقر الأهداف وينتهي بعلامة صح / when the user wants an AI agent pointer that walks steps, clicks targets and ends on a check"
  },
  {
   "id": "UI-22",
@@ -609,8 +735,14 @@
    "هاتف",
    "tap",
    "swipe",
-   "touch indicator"
-  ]
+   "touch indicator",
+   "لمسة",
+   "سحب للتحديث",
+   "تطبيق جوال",
+   "mobile gesture",
+   "pull to refresh"
+  ],
+  "when": "عند عرض تطبيق هاتف والحاجة لدائرة لمس تُظهر النقر أو السحب على الشاشة / when demoing a phone app and you need a touch circle showing taps or swipes on screen"
  },
  {
   "id": "UI-23",
@@ -635,8 +767,14 @@
    "اختصار",
    "keyboard",
    "shortcut",
-   "keycaps"
-  ]
+   "keycaps",
+   "لوحة المفاتيح",
+   "أزرار الكيبورد",
+   "كيبورد",
+   "hotkey",
+   "key press"
+  ],
+  "when": "حين تريد إظهار اختصار لوحة مفاتيح بأزرار تنضغط بالتتابع ثم تطلق الحركة التالية / when you want to show a keyboard shortcut as keycaps pressing in sequence and triggering the next move"
  },
  {
   "id": "UI-24",
@@ -666,8 +804,14 @@
    "slider",
    "live sync",
    "inspector",
-   "control"
-  ]
+   "control",
+   "إعدادات",
+   "سلايدر",
+   "معاينة مباشرة",
+   "settings panel",
+   "real-time preview"
+  ],
+  "when": "عند تحريك منزلق أو حقل إعدادات بحيث يتغير العنصر المرتبط به في النبضة نفسها / when a slider or settings field changes and its bound element must update in the same beat"
  },
  {
   "id": "UI-25",
@@ -698,8 +842,14 @@
    "typewriter",
    "typing",
    "caret",
-   "seeded"
-  ]
+   "seeded",
+   "كتابة حرف بحرف",
+   "مؤشر الكتابة",
+   "نص يكتب",
+   "type on",
+   "text reveal"
+  ],
+  "when": "حين يحتاج المشهد نصًا يُكتب حرفًا حرفًا بإيقاع بشري مع مؤشر كتابة وامض، بما فيه العربي / when a scene needs text typed character by character on a human rhythm with a blinking caret, Arabic included"
  },
  {
   "id": "UI-26",
@@ -731,8 +881,14 @@
    "prompt",
    "generate",
    "ai tool",
-   "send button"
-  ]
+   "send button",
+   "ذكاء اصطناعي",
+   "توليد",
+   "حقل الكتابة",
+   "prompt box",
+   "ai generation"
+  ],
+  "when": "عند تصوير أداة ذكاء اصطناعي: كتابة طلب في الحقل ثم الضغط على إرسال ثم ظهور التحميل والنتيجة / when showing an AI tool: typing a prompt, pressing send, then loading and the generated result"
  },
  {
   "id": "UI-27",
@@ -768,8 +924,14 @@
    "agent",
    "checklist",
    "tool calls",
-   "ai"
-  ]
+   "ai",
+   "تقدم المهام",
+   "خطوات التنفيذ",
+   "ذكاء اصطناعي",
+   "task progress",
+   "progress theater"
+  ],
+  "when": "حين تريد إظهار وكيل ينفذ خطة خطوة بخطوة بصفوف أدوات تدور ثم تتحول لعلامات صح / when you want an agent working through a plan, tool rows spinning then turning into checks"
  },
  {
   "id": "UI-28",
@@ -801,8 +963,14 @@
    "chat",
    "bubbles",
    "typing dots",
-   "messaging"
-  ]
+   "messaging",
+   "رسائل",
+   "شات",
+   "فقاعات الرسائل",
+   "text messages",
+   "message thread"
+  ],
+  "when": "عند بناء مشهد مراسلة أو دردشة بفقاعات رسائل ونقاط كتابة جارية وعلامة استلام / when building a messaging or chat scene with message bubbles, typing dots and a receipt mark"
  },
  {
   "id": "UI-29",
@@ -836,8 +1004,14 @@
    "terminal",
    "ide",
    "vs code",
-   "diff"
-  ]
+   "diff",
+   "محرر أكواد",
+   "سطر الأوامر",
+   "برمجة",
+   "code editor",
+   "command line"
+  ],
+  "when": "حين يتضمن الفيديو كتابة كود في محرر VS Code أو أوامر في طرفية ماك، أو عرض فرق بين سطرين / when a video shows code typed in VS Code, commands in a macOS terminal, or a line diff"
  },
  {
   "id": "UI-30",
@@ -869,8 +1043,14 @@
    "لوحة أوامر",
    "command palette",
    "search",
-   "filter"
-  ]
+   "filter",
+   "تصفية النتائج",
+   "نتائج البحث",
+   "سيرش",
+   "search results",
+   "keyword highlight"
+  ],
+  "when": "عند تصوير كتابة في حقل بحث تتصفى معه النتائج ويبرز الأول ثم يتحول الإدخال إلى إشعار / when showing typing into a search field that filters results, highlights the top row, then becomes a toast"
  },
  {
   "id": "UI-31",
@@ -902,8 +1082,14 @@
    "سجل",
    "streaming",
    "live log",
-   "skeleton reply"
-  ]
+   "skeleton reply",
+   "ظهور الإجابة",
+   "سجل العمليات",
+   "رد تدريجي",
+   "line by line",
+   "activity log"
+  ],
+  "when": "حين تظهر إجابة سطرًا بسطر بعد فقاعة السؤال، أو سجل حي تُضاف إليه سطور بوسوم ملونة / when an answer appears line by line after a question bubble, or a live log keeps appending tagged rows"
  },
  {
   "id": "UI-32",
@@ -929,8 +1115,14 @@
    "ملاحظات",
    "notes",
    "typing story",
-   "9:16"
-  ]
+   "9:16",
+   "كتابة قصة",
+   "مذكرات",
+   "فيديو عمودي",
+   "notes app",
+   "vertical video"
+  ],
+  "when": "عند سرد قصة بالكتابة في تطبيق ملاحظات: عنوان عريض ثم سطور تُكتب والصفحة تتمرر مع كل سطر / when telling a story by typing in a notes app: a bold title, then lines typed while the page scrolls"
  },
  {
   "id": "UI-33",
@@ -958,8 +1150,14 @@
    "hover",
    "toggle",
    "shake",
-   "timing"
-  ]
+   "timing",
+   "مدة الحركة",
+   "أزمنة الحركة",
+   "اهتزاز الخطأ",
+   "durations",
+   "ui feedback"
+  ],
+  "when": "حين تحتاج أزمنة جاهزة لردود فعل الواجهة: ضغط ومرور وتبديل وإشعار ودرج وهيكل واهتزاز خطأ / when you need ready timings for UI feedback: press, hover, toggle, toast, drawer, skeleton, error shake"
  },
  {
   "id": "UI-34",
@@ -985,8 +1183,14 @@
    "مرور",
    "press",
    "hover",
-   "rtl icons"
-  ]
+   "rtl icons",
+   "حالة الزر",
+   "مرور الماوس",
+   "اتجاه القراءة",
+   "button states",
+   "hover lift"
+  ],
+  "when": "عند ضبط ضغط الأزرار والمرور عليها، مع دفع الأيقونات في اتجاه القراءة / when tuning button press and hover states and nudging inline icons in the reading direction"
  },
  {
   "id": "UI-35",
@@ -1012,8 +1216,14 @@
    "نابض",
    "cta",
    "press spring",
-   "release"
-  ]
+   "release",
+   "زر الدعوة",
+   "ارتداد",
+   "بوتون",
+   "bounce",
+   "button animation"
+  ],
+  "when": "حين يطلب المستخدم زر دعوة لإجراء ينضغط ثم يرتد بنابض، أو يتحول إلى شريط تقدم / when the user wants a CTA button that compresses then springs back, or flattens into a progress bar"
  },
  {
   "id": "UI-36",
@@ -1045,8 +1255,14 @@
    "وضع داكن",
    "toggle",
    "theme switch",
-   "dark mode"
-  ]
+   "dark mode",
+   "تبديل الوضع",
+   "الوضع الليلي",
+   "سويتش",
+   "on off switch",
+   "light mode"
+  ],
+  "when": "عند تحريك مفتاح تشغيل وإيقاف أو جعل التبديل بين الوضع الفاتح والداكن حدثًا بصريًا في الفيديو / when animating an on/off switch or making a light/dark theme switch the visual event"
  },
  {
   "id": "UI-37",
@@ -1075,8 +1291,14 @@
    "علامة صح",
    "success",
    "checkmark",
-   "spinner"
-  ]
+   "spinner",
+   "تحميل",
+   "تم الحفظ",
+   "اكتمال العملية",
+   "loading",
+   "done state"
+  ],
+  "when": "حين يجب أن ينتهي التحميل بعلامة صح تُرسم بخطها مع نبضة حلقة لتأكيد نجاح العملية / when a loading spinner should resolve into a drawn check with a ring pop to confirm success"
  },
  {
   "id": "UI-38",
@@ -1106,8 +1328,14 @@
    "تحقق",
    "form",
    "validation",
-   "error shake"
-  ]
+   "error shake",
+   "حقل إدخال",
+   "خطأ إدخال",
+   "تعبئة نموذج",
+   "input field",
+   "form fill"
+  ],
+  "when": "عند إظهار حقل إدخال يهتز عند الخطأ ويقترح تصحيحًا ثم يتحول للأخضر، أو تعبئة نموذج كاملة / when showing an input field that shakes on error, suggests a fix and turns green, or a full form fill"
  },
  {
   "id": "UI-39",
@@ -1137,8 +1365,14 @@
    "هيكل",
    "skeleton",
    "shimmer",
-   "loading"
-  ]
+   "loading",
+   "انتظار",
+   "شاشة تحميل",
+   "لودينج",
+   "placeholder",
+   "loading state"
+  ],
+  "when": "حين تحتاج حالة تحميل بعناصر رمادية لامعة تتحول إلى المحتوى، أو اختيار مؤشر التحميل حسب مدة الانتظار / when you need a shimmering skeleton that reveals content, or to pick a loading indicator by wait time"
  },
  {
   "id": "UI-40",
@@ -1170,8 +1404,14 @@
    "notification",
    "dynamic island",
    "toast",
-   "stack"
-  ]
+   "stack",
+   "تنبيه",
+   "نوتيفيكيشن",
+   "شارة العدد",
+   "alert",
+   "badge"
+  ],
+  "when": "عند تصوير إشعار iOS أو macOS ينزل، أو جزيرة ديناميكية تتمدد، أو إشعارات تتراكم فوق بعضها / when showing an iOS or macOS notification drop, a dynamic island expanding, or notifications piling up"
  },
  {
   "id": "UI-41",
@@ -1205,8 +1445,14 @@
    "flip",
    "shared element",
    "morph",
-   "modal"
-  ]
+   "modal",
+   "توسيع البطاقة",
+   "انتقال سلس",
+   "نافذة منبثقة",
+   "expand card",
+   "card to panel"
+  ],
+  "when": "حين تتوسع بطاقة صغيرة إلى لوحة كاملة أو نافذة بانتقال واحد متصل يحافظ على العنصر نفسه / when a small card should expand into a full panel or modal through one continuous shared-element move"
  },
  {
   "id": "UI-42",
@@ -1233,8 +1479,14 @@
    "reorder",
    "flip",
    "list",
-   "sort"
-  ]
+   "sort",
+   "فرز",
+   "ترتيب العناصر",
+   "تبديل المواقع",
+   "rearrange",
+   "card order"
+  ],
+  "when": "عند إعادة ترتيب بطاقات أو عناصر قائمة لتنزلق لأماكنها الجديدة، أو سطور مستند ترتب نفسها / when list items or cards should slide into a new order, or document lines re-order themselves"
  },
  {
   "id": "UI-43",
@@ -1259,8 +1511,14 @@
    "تبويب",
    "tabs",
    "nav indicator",
-   "active state"
-  ]
+   "active state",
+   "قائمة التنقل",
+   "شريط التبويبات",
+   "تابات",
+   "navigation bar",
+   "bottom nav"
+  ],
+  "when": "حين يتنقل المشهد بين تبويبات أو عناصر قائمة تنقل ويحتاج مؤشرًا ينزلق إلى العنصر النشط / when switching tabs or nav items and you need an indicator that slides to the active one"
  },
  {
   "id": "UI-44",
@@ -1292,8 +1550,14 @@
    "stepper",
    "progress bar",
    "progress ring",
-   "chips"
-  ]
+   "chips",
+   "نسبة الإنجاز",
+   "خطوات",
+   "بروجرس",
+   "steps",
+   "completion"
+  ],
+  "when": "عند إظهار التقدم عبر مراحل بخط يمتلئ وعقد تتحول لعلامات صح، أو حلقة تقدم، أو شريط تقدم للفيلم / when showing progress through steps with filling nodes and checks, a progress ring, or a film progress bar"
  },
  {
   "id": "UI-45",
@@ -1321,8 +1585,14 @@
    "نقطة",
    "status dot",
    "live",
-   "halo"
-  ]
+   "halo",
+   "متصل",
+   "مباشر",
+   "مؤشر الحالة",
+   "online indicator",
+   "live badge"
+  ],
+  "when": "حين تحتاج الواجهة نقطة حالة ملونة بهالة ناعمة أو شارة «متصل» بنقطة نابضة / when a UI needs a coloured status dot with a soft halo or an online/live pill with a pulsing dot"
  },
  {
   "id": "UI-46",
@@ -1346,8 +1616,14 @@
    "قصاصات",
    "celebration",
    "confetti",
-   "signature moment"
-  ]
+   "signature moment",
+   "كونفيتي",
+   "إعجاب",
+   "فرحة",
+   "like burst",
+   "particles"
+  ],
+  "when": "عند إضافة لحظة احتفال مميزة للعلامة كقصاصات أو انفجار إعجاب على أكثر فعل ظهورًا في المنتج / when adding a signature branded celebration, like confetti or a like-burst, on the product's most visible action"
  },
  {
   "id": "UI-47",
@@ -1374,8 +1650,14 @@
    "device frame",
    "mockup",
    "island",
-   "notch"
-  ]
+   "notch",
+   "موبايل",
+   "جوال",
+   "إطار هاتف",
+   "phone frame",
+   "app screen"
+  ],
+  "when": "حين تحتاج رسم هاتف بمقاسات صحيحة للشاشة والزوايا والإطار والجزيرة أو النوتش لعرض تطبيق / when you need a correctly proportioned phone (screen, radii, bezel, island or notch) to show an app"
  },
  {
   "id": "UI-48",
@@ -1400,8 +1682,14 @@
    "perspective",
    "yaw",
    "rotation",
-   "hover"
-  ]
+   "hover",
+   "دوران الهاتف",
+   "ميلان",
+   "طفو",
+   "3d tilt",
+   "idle float"
+  ],
+  "when": "عند تدوير هاتف في منظور ثلاثي الأبعاد وضبط حدود الميل وسرعة الدوران وطفوه الهادئ أثناء الثبات / when rotating a phone in 3D perspective and capping its tilt, rotation speed and idle float"
  },
  {
   "id": "UI-49",
@@ -1432,8 +1720,14 @@
    "كشف",
    "device entrance",
    "hero reveal",
-   "spring"
-  ]
+   "spring",
+   "ظهور الهاتف",
+   "لقطة افتتاحية",
+   "عرض تطبيق",
+   "app reveal",
+   "phone intro"
+  ],
+  "when": "حين يطلب المستخدم افتتاحية يصعد فيها الهاتف ويستقر ثم تظهر الواجهة والعنوان مع اقتراب الكاميرا / when the user wants an opening where the phone rises and settles, then UI rows, headline and a slow push"
  },
  {
   "id": "UI-50",
@@ -1458,8 +1752,14 @@
    "canvas phone",
    "2.5d",
    "fake 3d",
-   "drawPhone"
-  ]
+   "drawPhone",
+   "هاتف مرسوم",
+   "دوران وهمي",
+   "موك أب",
+   "pseudo 3d",
+   "phone mockup"
+  ],
+  "when": "عند رسم هاتف على Canvas ثنائي الأبعاد يوحي بالدوران دون محرك ثلاثي الأبعاد، بزاوية أقل من 28° / when drawing a phone on a 2D canvas that fakes rotation without a 3D engine, under 28° yaw"
  },
  {
   "id": "UI-51",
@@ -1486,8 +1786,14 @@
    "ريموشن",
    "remotion",
    "device",
-   "react phone"
-  ]
+   "react phone",
+   "هاتف متحرك",
+   "مكون رياكت",
+   "لمعة الشاشة",
+   "phone component",
+   "glare"
+  ],
+  "when": "حين تبني الفيديو في Remotion وتحتاج مكوّن هاتف React بدخول نابض وضغط ولمعة وظل / when building in Remotion and you need a React phone with spring entrance, tap press, glare and shadow"
  },
  {
   "id": "UI-52",
@@ -1511,8 +1817,14 @@
    "جهازان",
    "handoff",
    "turntable",
-   "browser to phone"
-  ]
+   "browser to phone",
+   "انتقال بين الأجهزة",
+   "من المتصفح للجوال",
+   "دوران الجهاز",
+   "device transition",
+   "cross device"
+  ],
+  "when": "عند الانتقال من جهاز إلى آخر، كمتصفح إلى هاتف، مع عنصر مشترك يطير بينهما على قوس / when moving from one device to another, such as browser to phone, with a shared element flying between them"
  },
  {
   "id": "UI-53",
@@ -1545,8 +1857,14 @@
    "نافذة",
    "browser mockup",
    "macos",
-   "window chrome"
-  ]
+   "window chrome",
+   "موقع ويب",
+   "شريط العنوان",
+   "إطار المتصفح",
+   "website mockup",
+   "url bar"
+  ],
+  "when": "حين تحتاج نافذة متصفح أو ماك وهمية بأضواء المرور وشريط رابط لعرض موقع أو تطبيق ويب / when you need a mock browser or macOS window with traffic-light dots and a URL bar to show a site or web app"
  },
  {
   "id": "UI-54",
@@ -1576,8 +1894,14 @@
    "مروحة",
    "multi device",
    "fan out",
-   "splay"
-  ]
+   "splay",
+   "هاتف وتابلت",
+   "شاشات متعددة",
+   "تابلت",
+   "tablet",
+   "desktop"
+  ],
+  "when": "عند عرض المنتج على هاتف وجهاز لوحي وحاسوب معًا، أو هاتف يتكاثر إلى خمسة كالمروحة / when showing a product on phone, tablet and desktop together, or one phone multiplying into a fan of five"
  },
  {
   "id": "UI-55",
@@ -1610,8 +1934,14 @@
    "3d phone",
    "gltf",
    "liquid glass",
-   "turntable"
-  ]
+   "turntable",
+   "مجسم ثلاثي الأبعاد",
+   "دوران 360",
+   "لابتوب",
+   "three.js",
+   "360 spin"
+  ],
+  "when": "حين يطلب المستخدم آيفون أو ماك بوك ثلاثي الأبعاد بشاشة حية ودوران 360 بأسلوب مراجعات المنتجات / when the user wants a 3D iPhone or MacBook with a live screen and a 360 turntable, product-review style"
  },
  {
   "id": "UI-56",
@@ -1639,8 +1969,14 @@
    "mockup",
    "screenshot",
    "device composite",
-   "2x"
-  ]
+   "2x",
+   "عبوة منتج",
+   "عرض التصميم",
+   "صورة عالية الدقة",
+   "package mockup",
+   "playwright"
+  ],
+  "when": "عند وضع صورة أو تصميم داخل إطار جهاز أو عبوة منتج والتقاطها صورة عالية الدقة / when placing an image or design inside a device or package frame and capturing it as a high-res still"
  },
  {
   "id": "UI-57",
@@ -1663,8 +1999,14 @@
    "قلب",
    "flip",
    "phone",
-   "swap"
-  ]
+   "swap",
+   "انقلاب الهاتف",
+   "تغيير الشاشة",
+   "لف الجهاز",
+   "rotate",
+   "screen swap"
+  ],
+  "when": "حين تريد قلب الهاتف 180° لتبديل الشاشة في منتصف الدوران والانتقال لواجهة أخرى / when you want to flip a phone 180° and swap its screen at the midpoint to reveal another view"
  },
  {
   "id": "UI-58",
@@ -1691,8 +2033,14 @@
    "جولة",
    "scroll tour",
    "callouts",
-   "parallax"
-  ]
+   "parallax",
+   "سكرول",
+   "شرح الصفحة",
+   "تمرير الشاشة",
+   "page tour",
+   "scrolling"
+  ],
+  "when": "عند جولة في صفحة أو تطبيق بالتمرير مع شروحات تظهر بعد توقف كل تمريرة / when touring a page or app by scrolling, with callouts appearing after each scroll stops"
  },
  {
   "id": "UI-59",
@@ -1721,8 +2069,14 @@
    "خط قائد",
    "callout",
    "leader line",
-   "annotation"
-  ]
+   "annotation",
+   "تعليقات توضيحية",
+   "أسهم الشرح",
+   "تسميات",
+   "labels",
+   "pointer lines"
+  ],
+  "when": "حين تحتاج شروحًا خارج الجهاز تشير لعناصر الواجهة بخطوط تُرسم وتتبع عنصرها / when you need labels outside the device pointing to UI elements with drawn leader lines that track them"
  },
  {
   "id": "UI-60",
@@ -1748,8 +2102,14 @@
    "زوم",
    "push in",
    "focus zoom",
-   "camera"
-  ]
+   "camera",
+   "تقريب",
+   "تكبير الشاشة",
+   "حركة كاميرا",
+   "zoom in",
+   "click focus"
+  ],
+  "when": "عند اقتراب الكاميرا من موضع النقرة في عرض واجهة لإبراز التفاصيل ثم التوقف لحظة / when the camera should push toward the click point in a UI demo to highlight detail, then hold"
  },
  {
   "id": "UI-61",
@@ -1776,8 +2136,14 @@
    "نافذة",
    "modal",
    "click recipe",
-   "remotion"
-  ]
+   "remotion",
+   "نافذة منبثقة",
+   "بوب أب",
+   "فتح نافذة",
+   "popup",
+   "dialog"
+  ],
+  "when": "حين يضغط المؤشر زرًا فتفتح نافذة منبثقة بنابض وتتتابع حقولها ثم تقترب الكاميرا / when the cursor clicks a button that opens a spring modal with staggered fields and a focus zoom"
  },
  {
   "id": "UI-62",
@@ -1808,8 +2174,14 @@
    "صفحة مائلة",
    "3d page scroll",
    "tilted ui",
-   "perspective pan"
-  ]
+   "perspective pan",
+   "عرض موقع",
+   "ميلان ثلاثي الأبعاد",
+   "تمرير الصفحة",
+   "website showcase",
+   "webpage scroll"
+  ],
+  "when": "حين تريد عرض صفحة ويب كاملة مائلة في المنظور يتمرر محتواها أو تنزلق عبر الإطار كلحظة مغايرة / when showing a full webpage tilted in 3D perspective, scrolling or panning across frame as a contrast moment"
  },
  {
   "id": "UI-63",
@@ -1838,8 +2210,14 @@
    "جدار بطاقات",
    "card wall",
    "depth of field",
-   "dolly"
-  ]
+   "dolly",
+   "شبكة بطاقات",
+   "عمق",
+   "صور مصغرة",
+   "thumbnails",
+   "blur"
+  ],
+  "when": "عند عرض جدار بطاقات أو صور مصغرة في عمق ثلاثي الأبعاد تتقدم نحوه الكاميرا مع ضبابية حسب البعد / when showing a wall of cards or thumbnails in 3D depth as the camera dollies in with distance blur"
  },
  {
   "id": "UI-64",
@@ -1863,8 +2241,14 @@
    "تكبير",
    "magnifier",
    "lens",
-   "detail"
-  ]
+   "detail",
+   "عدسة مكبرة",
+   "إبراز التفاصيل",
+   "زووم",
+   "zoom lens",
+   "close-up"
+  ],
+  "when": "حين تريد إبراز ملمس أو تفاصيل دقيقة في المنتج بعدسة مكبرة تنزلق على سطحه مع تسمية / when you want to reveal texture or fine detail on a product with a magnifying lens gliding over it"
  },
  {
   "id": "UI-65",
@@ -1891,8 +2275,14 @@
    "تهيئة",
    "hotspot",
    "tooltip",
-   "onboarding tour"
-  ]
+   "onboarding tour",
+   "جولة تعريفية",
+   "شرح الميزات",
+   "تلميح",
+   "product tour",
+   "walkthrough"
+  ],
+  "when": "عند شرح ميزات تطبيق خطوة بخطوة بنقطة نابضة على الهدف وفقاعة إرشاد بعداد الخطوات / when explaining app features step by step with a pulsing hotspot and a tooltip card with a step counter"
  },
  {
   "id": "UI-66",
@@ -1921,8 +2311,14 @@
    "قبل وبعد",
    "before after",
    "wipe",
-   "comparison"
-  ]
+   "comparison",
+   "مقارنة النتائج",
+   "خط فاصل",
+   "الفرق",
+   "split screen",
+   "reveal slider"
+  ],
+  "when": "حين يطلب المستخدم مقارنة قبل وبعد بخط فاصل يمسح الصورة ويستقر عند نسبة / when the user wants a before/after comparison with a divider wiping across and resting at a split"
  },
  {
   "id": "UI-67",
@@ -1954,8 +2350,14 @@
    "دوار",
    "carousel",
    "screens",
-   "feature swap"
-  ]
+   "feature swap",
+   "شاشات التطبيق",
+   "سلايدر شاشات",
+   "عرض الميزات",
+   "app screens",
+   "slider"
+  ],
+  "when": "عند عرض عدة شاشات تطبيق على سكة متحركة، أو موكاب ثابت تتبدل ميزاته مع العناوين / when showing several app screens on a moving rail, or a pinned mock swapping features as captions change"
  },
  {
   "id": "UI-68",
@@ -1984,8 +2386,14 @@
    "بنتو",
    "bento",
    "feature grid",
-   "design system"
-  ]
+   "design system",
+   "ميزات المنتج",
+   "شبكة بطاقات",
+   "بطاقات",
+   "features",
+   "card grid"
+  ],
+  "when": "حين تحتاج عرض ميزات المنتج في شبكة بطاقات مستديرة بواجهات مصغرة متحركة تظهر بالتتابع / when presenting product features in a grid of rounded cards with mini animated UIs popping in"
  },
  {
   "id": "UI-69",
@@ -2012,8 +2420,14 @@
    "لوحة قياس",
    "instrument panel",
    "callouts",
-   "3d labels"
-  ]
+   "3d labels",
+   "واجهة تقنية",
+   "رسوم حية",
+   "تسميات المشهد",
+   "heads-up display",
+   "live charts"
+  ],
+  "when": "عند بناء لوحة قياس تقنية بأشرطة زمنية ورسوم حية وشروح مسقطة من نقاط في مشهد ثلاثي الأبعاد / when building a technical HUD with live chart panels and callouts projected from 3D scene anchors"
  },
  {
   "id": "UI-70",
@@ -2046,8 +2460,14 @@
    "tracking box",
    "scanner",
    "ocr",
-   "qr"
-  ]
+   "qr",
+   "تتبع هدف",
+   "مسح ضوئي",
+   "نسبة الثقة",
+   "target lock",
+   "scan line"
+  ],
+  "when": "حين تريد مربع تتبع بزوايا ونسبة ثقة يلاحق هدفًا، أو ماسحًا ينقفل على بطاقة بخط مسح / when you want an AI-style box tracking a target with a confidence label, or scanner corners with a sweep line"
  },
  {
   "id": "UI-71",
@@ -2078,8 +2498,14 @@
    "design tool",
    "selection handles",
    "canvas",
-   "figma style"
-  ]
+   "figma style",
+   "لوحة التصميم",
+   "مقابض التحجيم",
+   "شبكة نقاط",
+   "design canvas",
+   "resize handles"
+  ],
+  "when": "عند عرض عمل تصميم كإطارات على لوحة منقطة بكاميرا تتنقل، مع مستطيل تحديد بمقابض ووسم مقاس / when showing design work as frames on a dotted canvas with a moving camera, plus selection handles and a size tag"
  },
  {
   "id": "UI-72",
@@ -2108,8 +2534,14 @@
    "playwright",
    "screen recording",
    "steps",
-   "walkthrough"
-  ]
+   "walkthrough",
+   "تصوير موقع",
+   "سكرين ريكورد",
+   "أتمتة المتصفح",
+   "browser automation",
+   "captions"
+  ],
+  "when": "حين تحتاج تسجيل صفحة ويب حقيقية بخطوات مبرمجة: نقر وسحب وكتابة وتمرير مع ترجمة لكل خطوة / when you need to record a real web page through scripted steps (click, drag, type, scroll) with per-step captions"
  },
  {
   "id": "UI-73",
@@ -2139,8 +2571,14 @@
    "website to video",
    "capture",
    "launch video",
-   "hyperframes"
-  ]
+   "hyperframes",
+   "فيديو من رابط",
+   "رابط موقع",
+   "هوية الموقع",
+   "url to video",
+   "site screenshots"
+  ],
+  "when": "حين يعطي المستخدم رابط موقع ويريد فيديو إطلاق مبنيًا من لقطات الموقع نفسه وألوانه وخطوطه / when the user gives a website URL and wants a launch video built from the site's own screenshots, colours and fonts"
  },
  {
   "id": "UI-74",
@@ -2167,8 +2605,14 @@
    "إطلاق",
    "launch film",
    "brag",
-   "product launch"
-  ]
+   "product launch",
+   "فيديو إطلاق",
+   "تطبيق جديد",
+   "برومو",
+   "kmotion",
+   "launch video"
+  ],
+  "when": "عند إنتاج فيلم إطلاق لموقع أو تطبيق من مجلد أو رابط بقصة: خطاف ثم مشكلة ثم كشف وميزات ودعوة / when producing a site or app launch film from a folder or URL with a hook, pain, reveal, features and CTA story"
  },
  {
   "id": "UI-75",
@@ -2195,8 +2639,14 @@
    "ميزة",
    "feature video",
    "real app",
-   "reframe"
-  ]
+   "reframe",
+   "تصوير التطبيق",
+   "مقاسات متعددة",
+   "عمودي ومربع",
+   "aspect ratios",
+   "screen capture"
+  ],
+  "when": "حين يريد المستخدم فيديو يعرض ميزة حقيقية من تطبيقه الفعلي لا موك أب، بعدة مقاسات للنشر / when the user wants a video of a real feature captured from the actual app, not a mockup, in several aspect ratios"
  },
  {
   "id": "UI-76",
@@ -2222,8 +2672,14 @@
    "فيجما",
    "figma",
    "handoff",
-   "design to code"
-  ]
+   "design to code",
+   "تصميم إلى كود",
+   "تصدير التصميم",
+   "طبقات",
+   "html css",
+   "auto layout"
+  ],
+  "when": "عند تحويل إطار من فيجما إلى طبقات HTML/CSS قابلة للتحريك بألوانه وخطوطه ومسافاته / when converting a Figma frame into animatable HTML/CSS layers with its colours, type and spacing"
  },
  {
   "id": "UI-77",
@@ -2250,8 +2706,14 @@
    "تسجيل",
    "agent-browser",
    "browser recording",
-   "contact sheet"
-  ]
+   "contact sheet",
+   "تسجيل الشاشة",
+   "تسجيل تبويب",
+   "لقطات مصغرة",
+   "screen recording",
+   "webm"
+  ],
+  "when": "حين تريد تسجيل تبويب المتصفح فيديو بمؤشر متحرك ولوحة لقطات، مع توفر أداة agent-browser / when you want to record a browser tab to video with an animated pointer and a contact sheet via agent-browser"
  },
  {
   "id": "UI-78",
@@ -2276,8 +2738,14 @@
    "تعليمي",
    "yaml",
    "tutorial",
-   "docker"
-  ]
+   "docker",
+   "شرح بالفيديو",
+   "تعليق صوتي",
+   "ترجمة",
+   "tts",
+   "subtitles"
+  ],
+  "when": "عند إنتاج فيديو تعليمي من ملف YAML يصف الشرائح وخطوات الشاشة والتعليق، مع صوت آلي وترجمة / when producing a tutorial video from a YAML file describing slides, screen steps and narration, with TTS and subtitles"
  },
  {
   "id": "UI-79",
@@ -2302,8 +2770,14 @@
    "tokens",
    "spacing",
    "shadows",
-   "type scale"
-  ]
+   "type scale",
+   "مسافات",
+   "ظلال",
+   "أحجام الخطوط",
+   "design tokens",
+   "elevation"
+  ],
+  "when": "حين تحتاج قيمًا ثابتة لتصميم الواجهة قبل البناء: شبكة المسافات والزوايا وسلم الخطوط ومستويات الظل / when you need fixed UI design values before building: spacing grid, radii, type scale and shadow tiers"
  },
  {
   "id": "UI-80",
@@ -2333,8 +2807,14 @@
    "glassmorphism",
    "backdrop blur",
    "frosted",
-   "glass ui"
-  ]
+   "glass ui",
+   "زجاج ضبابي",
+   "شفافية",
+   "بطاقات زجاجية",
+   "translucent",
+   "blur panel"
+  ],
+  "when": "حين يطلب المستخدم واجهة زجاجية ضبابية فوق خلفية داكنة ببطاقات شفافة وحد رفيع وظل ناعم / when the user wants frosted-glass UI panels over a dark background with translucent cards, a thin border and soft shadow"
  },
  {
   "id": "UI-81",
@@ -2361,8 +2841,14 @@
    "tokens",
    "themes",
    "dark mode",
-   "brand"
-  ]
+   "brand",
+   "ألوان العلامة",
+   "سمات",
+   "تخصيص الواجهة",
+   "theming",
+   "light dark"
+  ],
+  "when": "عند بناء نظام ثيمات واحد يتبدل بين أشكال ووضع فاتح وداكن وهويات علامات دون تثبيت الألوان / when building one token system that switches looks, light/dark modes and brand variants without hard-coded colours"
  },
  {
   "id": "UI-82",
@@ -2389,8 +2875,14 @@
    "إطلاق",
    "product promo",
    "neon prompt",
-   "readex pro"
-  ]
+   "readex pro",
+   "إعلان منتج",
+   "نص متحرك",
+   "نيون",
+   "kinetic typography",
+   "launch promo"
+  ],
+  "when": "حين يطلب المستخدم برومو إطلاق منتج بتايبوغرافي حركي وصندوق طلب نيون وكرة زجاجية وتقلب فاتح/داكن / when the user wants a product-launch promo with kinetic type, a neon prompt box, a glass orb and light/dark flips"
  },
  {
   "id": "UI-83",
@@ -2417,8 +2909,14 @@
    "ملصقات",
    "sticker ui",
    "neo brutalism",
-   "offset shadow"
-  ]
+   "offset shadow",
+   "ظل صلب",
+   "حدود سميكة",
+   "بروتاليزم",
+   "brutalist",
+   "hard shadow"
+  ],
+  "when": "حين تريد واجهة بأسلوب الملصقات: حدود داكنة سميكة وزوايا كبيرة وظل صلب بلا ضبابية / when you want a sticker-style UI with thick dark outlines, big radii and a hard offset shadow with no blur"
  },
  {
   "id": "UI-84",
@@ -2445,8 +2943,14 @@
    "hyperframes",
    "registry",
    "components",
-   "ui kit"
-  ]
+   "ui kit",
+   "مكتبة جاهزة",
+   "عناصر واجهة",
+   "قوالب",
+   "ready made",
+   "ui library"
+  ],
+  "when": "عند الحاجة لمكوّن واجهة جاهز (مؤشر أو إشعار أو جهاز أو محادثة أو تبويب) يُركّب في المشهد مباشرة / when you need a ready UI component (cursor, notification, device, chat, tabs) to mount straight into a scene"
  },
  {
   "id": "UI-85",
@@ -2471,8 +2975,14 @@
    "مخطط",
    "blueprint",
    "storyboard",
-   "ui scenes"
-  ]
+   "ui scenes",
+   "وصفة مشهد",
+   "تخطيط المشهد",
+   "قوالب مشاهد",
+   "scene recipe",
+   "templates"
+  ],
+  "when": "حين تخطط ستوري بورد لمشهد واجهة شائع وتريد وصفة مراحل جاهزة تختارها حسب دور المشهد / when storyboarding a common UI scene and you want a ready multi-phase recipe picked by the scene's role"
  },
  {
   "id": "UI-86",
@@ -2503,8 +3013,14 @@
    "saas demo",
    "ui micro",
    "glass ui",
-   "kosif styles"
-  ]
+   "kosif styles",
+   "قالب جاهز",
+   "بدء مشروع",
+   "أسلوب جاهز",
+   "starter",
+   "template"
+  ],
+  "when": "عند بدء مشروع عرض SaaS أو تفاعلات واجهة دقيقة أو واجهة زجاجية وتريد أسلوبًا جاهزًا للبناء / when starting a SaaS demo, UI micro-interaction or glass UI project and you want a ready style to scaffold"
  },
  {
   "id": "UI-87",
@@ -2531,8 +3047,14 @@
    "player",
    "html deliverable",
    "reduced motion",
-   "seek"
-  ]
+   "seek",
+   "مشغل فيديو",
+   "صفحة ويب",
+   "بدون إنترنت",
+   "offline page",
+   "video player"
+  ],
+  "when": "حين يجب تسليم الفيلم صفحة ويب تعمل بلا إنترنت بأزرار تشغيل وإيقاف وشريط تقديم ورابط تحميل / when the film must ship as an offline web page with play/pause, a seek slider and an MP4 download link"
  },
  {
   "id": "UI-88",
@@ -2558,8 +3080,14 @@
    "review",
    "shortcuts",
    "arabic keyboard",
-   "undo"
-  ]
+   "undo",
+   "تعديل المواضع",
+   "ملاحظات المراجعة",
+   "تراجع",
+   "drag resize",
+   "edit mode"
+  ],
+  "when": "عند مراجعة الفيلم وتعديل مواضع العناصر بالسحب والتحجيم، مع اختصارات تعمل على لوحة مفاتيح عربية / when reviewing a film and adjusting element placement by drag and resize, with shortcuts that work on an Arabic keyboard"
  },
  {
   "id": "UI-89",
@@ -2585,8 +3113,14 @@
    "landing page",
    "performance",
    "hover",
-   "web"
-  ]
+   "web",
+   "سرعة الموقع",
+   "لاندنج بيج",
+   "تصميم متجاوب",
+   "responsive",
+   "page speed"
+  ],
+  "when": "حين يكون الناتج صفحة ويب أو صفحة هبوط وتحتاج ترتيب الأقسام وميزانية أداء وتقييد المرور / when the deliverable is a web or landing page needing section order, a performance budget and hover only on fine pointers"
  },
  {
   "id": "UI-X01",

@@ -14,7 +14,7 @@
   "requires": [],
   "license": "method paraphrased from Atlas skills under MIT; the skills keep their own licenses — see each folder's SOURCE.md",
   "proof": [],
-  "proof_scope": "url",
+  "proof_scope": "none",
   "styles": [],
   "tags": [
    "memory",
@@ -181,9 +181,7 @@
   "how": "1) Ask forcing questions first: observable DONE outcome (artifact plus a command that exits 0), no-touch paths, escalation owner, budget (default 12 loop iterations, 3 attempts per task). 2) Compile goal to plan JSON (vague goals are refused). 3) Init state file; loop `next` -> execute one task -> `record` -> `verify`, where the controller itself runs the check command and stores evidence. 4) Never adjudicate your own verification or edit the gate; a retry must change approach. 5) Exhausted budgets escalate (exit 2/5), never fake success; only a human waives. 6) Close is refused while anything is unverified; durable state lets a fresh session resume.",
   "params": "goal text; domain manifest; max_attempts_per_task; max_loop_iterations; no-touch paths",
   "install": "",
-  "requires": [
-   "python3"
-  ],
+  "requires": [],
   "license": "method paraphrased from Atlas skills under MIT; the skills keep their own licenses — see each folder's SOURCE.md",
   "proof": [
    "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/154-agent-harness/511-agent-harness",
@@ -303,9 +301,7 @@
   "how": "1) Detect learning signals in-session (explicit corrections, repeated preferences, decisions). 2) Queue them and remind the user to run a reflect step rather than silently rewriting instructions. 3) On approval write durable items to CLAUDE.md or a project memory directory, one fact per entry, dated. 4) At session start or resume, load or search stored memory (local files, or a hosted librarian when a key is configured). 5) Sync incrementally from the last checkpoint so repeated runs are cheap. 6) Periodically classify entries as delete, merge, shorten or keep, and back up before pruning. Procedure inferred from descriptions, not from the scripts.",
   "params": "storage target (CLAUDE.md|memory dir|hosted service); approval mode; checkpoint scope",
   "install": "",
-  "requires": [
-   "claude:tools"
-  ],
+  "requires": [],
   "license": "method paraphrased from Atlas skills under MIT (no copyleft seen among supporting ids); the skills keep their own licenses — see each folder's SOURCE.md",
   "proof": [
    "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/1070-claude-reflect/2374-claude-reflect",
@@ -372,9 +368,7 @@
   "how": "1) Run the tell/ask command directly with a project fragment and the task. 2) Fragment is matched against workspace, tab, name, pane and cwd. 3) On ambiguity, show candidates and let the user choose; never guess. 4) Fall back to a registry or zoxide path to spawn a workspace. 5) Confirm destructive requests first. 6) Tell is fire-and-forget; use ask for answers.",
   "params": "",
   "install": "",
-  "requires": [
-   "claude:tools"
-  ],
+  "requires": [],
   "license": "method paraphrased from Atlas skills under MIT; the skills keep their own licenses — see each folder's SOURCE.md",
   "proof": [
    "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/1454-herdr/3554-tell",
@@ -439,7 +433,9 @@
   "how": "1) Init docs/session-journal/ with a '*' .gitignore. 2) Maintain _active.md as the cross-session index of unclosed threads with where each lives. 3) Per-session directory holds _detail.md and drafts. 4) Keep a bounded compression block: decisions, open questions, user direction, focus, next action. 5) Reconcile against reality at session start.",
   "params": "",
   "install": "",
-  "requires": [],
+  "requires": [
+   "git"
+  ],
   "license": "method paraphrased from Atlas skills under MIT; the skills keep their own licenses — see each folder's SOURCE.md",
   "proof": [
    "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/2057-session-journal/7302-session-journal",
@@ -497,7 +493,9 @@
   "how": "1) Do cheap discovery inline. 2) Delegate only if output is large and only the conclusion matters, or 2+ units are truly independent and work exceeds a few tool calls. 3) Keep dependent chains inline. 4) One answerable question per agent with a stated return shape (file:line table, verdict plus why). 5) Bound each delegation so it cannot hang.",
   "params": "",
   "install": "",
-  "requires": [],
+  "requires": [
+   "claude:tools"
+  ],
   "license": "method paraphrased from Atlas skills under MIT; the skills keep their own licenses — see each folder's SOURCE.md",
   "proof": [
    "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/1408-toolu/3345-orchestrator",
@@ -555,9 +553,7 @@
   "how": "1) Collect git branch, HEAD sha and status. 2) Write a checkpoint JSON: task, steps_completed each with evidence (sha, test output), current_outputs, pending_steps, resume.next_operation as a literal first action. 3) Hash the dirty diff when tree is dirty. 4) Quote sha strings so they stay strings. 5) Validate against the schema before trusting it. 6) Steps without evidence move to pending.",
   "params": "",
   "install": "",
-  "requires": [
-   "git"
-  ],
+  "requires": [],
   "license": "method paraphrased from Atlas skills under MIT; the skills keep their own licenses — see each folder's SOURCE.md",
   "proof": [
    "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/342-kernel/1216-checkpoint",
@@ -795,9 +791,7 @@
   "how": "1) Judge reads prompt. 2) Dispatch scout, reviewer, labrat via external CLI. 3) Score axes per round (Pareto). 4) Judge mediates and stops.",
   "params": "model route",
   "install": "",
-  "requires": [
-   "network"
-  ],
+  "requires": [],
   "license": "method paraphrased from Atlas skills under MIT; the skills keep their own licenses — see each folder's SOURCE.md",
   "proof": [
    "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/3253-xbrd-gdsp-fknpft/13699-xbreed",
@@ -1032,7 +1026,9 @@
   "how": "1) Group failures by what is broken. 2) Confirm no shared state; if related, use one agent. 3) Give each agent a focused scope, constructed context only (no session history), constraints and expected output. 4) Dispatch concurrently. 5) Review summaries, check for conflicting edits, run the full suite.",
   "params": "",
   "install": "",
-  "requires": [],
+  "requires": [
+   "claude:tools"
+  ],
   "license": "method paraphrased from Atlas skills under MIT; the skills keep their own licenses — see each folder's SOURCE.md",
   "proof": [
    "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/2679-superpowers/10256-dispatching-parallel-agents",
@@ -1148,7 +1144,7 @@
   "params": "peer name; call shape (question|work order|conference); notify-when-idle flag",
   "install": "",
   "requires": [
-   "claude:tools"
+   "chromium"
   ],
   "license": "method paraphrased from Atlas skills under Apache-2.0 / MIT (no copyleft seen among supporting ids); the skills keep their own licenses — see each folder's SOURCE.md",
   "proof": [
@@ -1217,7 +1213,9 @@
   "how": "1) Gate: only at a real phase boundary (last output settled, next phase not started); mid-phase just continue or push remaining work to a subagent. 2) Walk top-down, first match wins: CONTINUE if the next phase needs current context and the window is still in its quality zone; CLEAR only if everything is positively confirmed disposable; HANDOFF only if you can name what crosses which boundary (harness, directory, person, parallel fork); DELEGATE if the rest is bounded enough to run unattended; else COMPACT. 3) Handoff file: present tense, agent-facing, resumable, references by path or URL, never inline copies. 4) Check links resolve and run a secret scan before it leaves the machine.",
   "params": "boundary type (harness|directory|person|fork); target agent; where to store the handoff file",
   "install": "",
-  "requires": [],
+  "requires": [
+   "claude:tools"
+  ],
   "license": "method paraphrased from Atlas skills under Apache-2.0 / MIT (no copyleft seen among supporting ids); the skills keep their own licenses — see each folder's SOURCE.md",
   "proof": [
    "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/2008-context-handoff/7173-context-handoff",
@@ -1388,7 +1386,9 @@
   "how": "1) Ignore idle notices (runtime-generated). 2) Inspect transcript: a tool_use with no tool_result means truly blocked; none means not wedged. 3) Check whether the agent type lacks a messaging tool or is a forward-only wrapper. 4) Recover output from transcript or the job runtime state directory. 5) Next time choose an agent type with a reporting channel.",
   "params": "",
   "install": "",
-  "requires": [],
+  "requires": [
+   "claude:tools"
+  ],
   "license": "method paraphrased from Atlas skills under MIT; the skills keep their own licenses — see each folder's SOURCE.md",
   "proof": [
    "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/3361-subagent-no-report-channel/13876-subagent-no-report-channel",
@@ -1442,7 +1442,9 @@
   "how": "1) Brief fields: deliverable, read-first list, exhaustive file table with no overlap among concurrent lanes, restated traps, literal verify commands with expected output, forbidden list, raw counts return, external capabilities needed. 2) Make the prompt standalone; pass large briefs by file path. 3) Validate returns for placeholders and minimum length; retry degraded ones. 4) Freeze reviewed inputs by hash. 5) One git writer per worktree.",
   "params": "",
   "install": "",
-  "requires": [],
+  "requires": [
+   "git"
+  ],
   "license": "method paraphrased from Atlas skills under MIT; the skills keep their own licenses — see each folder's SOURCE.md",
   "proof": [
    "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/342-kernel/1234-orchestration",
@@ -1501,9 +1503,7 @@
   "how": "1) Compact mode: before compaction write a dated checkpoint distilling decisions, open questions, file/branch state and the next step since the last checkpoint. 2) Handoff mode: add what the next agent must read first and known gotchas. 3) Keep a shared store (e.g. `.context/` with a routing table saying when to read each file) so any CLI or model can pick up the work. 4) Session start: read the latest checkpoint, present project state, then ask what to work on. 5) Close-out ritual: commit, export the conversation, write the handoff, harvest durable lessons into memory.",
   "params": "mode: compact | handoff | close-out; store directory",
   "install": "",
-  "requires": [
-   "git"
-  ],
+  "requires": [],
   "license": "method paraphrased from Atlas skills under MIT; the skills keep their own licenses — see each folder's SOURCE.md",
   "proof": [
    "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/1120-ambient-library/2602-checkpoint",
@@ -1642,9 +1642,7 @@
   "how": "1) Reuse or mint a chain_id. 2) Capture git path, branch, HEAD, dirty files, bounded diff. 3) Record only commands actually run plus results. 4) Separate settled requirements, verified facts, decisions, hypotheses, blockers. 5) Set one concrete next action. 6) Write history file then atomically replace HANDOFF.md; scan for secrets. Thresholds: <40% nothing, 40-55% draft, 55-70% finalize, 70%+ switch. Resume: diff recorded vs current repo, report drift, never reset.",
   "params": "project, chain_id, store path",
   "install": "",
-  "requires": [
-   "git"
-  ],
+  "requires": [],
   "license": "method paraphrased from Atlas skills under MIT; the skills keep their own licenses — see each folder's SOURCE.md",
   "proof": [
    "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/2206-majestic-core/8240-session-handoff"
@@ -1755,12 +1753,10 @@
   "how": "1) Locate session JSONL log. 2) Parse record types and tool calls. 3) Extract goals, files touched, commands, outcomes. 4) Report only evidenced actions.",
   "params": "session id",
   "install": "",
-  "requires": [
-   "python3"
-  ],
+  "requires": [],
   "license": "method paraphrased from Atlas skills under MIT; the skills keep their own licenses — see each folder's SOURCE.md",
   "proof": [],
-  "proof_scope": "url",
+  "proof_scope": "none",
   "styles": [],
   "tags": [
    "recap",
@@ -1855,9 +1851,7 @@
   "how": "1) state-find for prior run. 2) Clarify, pause on blocking uncertainty. 3) Explore if multiple approaches. 4) Decompose into Kahn waves. 5) Execute. 6) Revise. 7) run-event per phase.",
   "params": "task",
   "install": "",
-  "requires": [
-   "python3"
-  ],
+  "requires": [],
   "license": "method paraphrased from Atlas skills under MIT; the skills keep their own licenses — see each folder's SOURCE.md",
   "proof": [
    "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/256-zirkel/861-zirkel-solve",
@@ -1910,7 +1904,9 @@
   "how": "1) Leader selects strategy from the catalog. 2) Spawn agents via native Agent tool with distinct roles. 3) Cheap tasks to haiku, judgment on session model. 4) Leader synthesizes and self-scores. 5) Optional eval gate with rubric, grounded for code. 6) Plan first, run in parallel, adversarially verify.",
   "params": "strategy, agent count, rubric",
   "install": "",
-  "requires": [],
+  "requires": [
+   "claude:tools"
+  ],
   "license": "method paraphrased from Atlas skills under MIT; the skills keep their own licenses — see each folder's SOURCE.md",
   "proof": [
    "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/3539-op/14322-op",
@@ -1968,7 +1964,9 @@
   "how": "1) Invoke create-subagent for any new agent. 2) Check config against the standards skill: profile, capability, invocation, placement, evidence. 3) Run audit-subagent to judge the file with findings. 4) Fix and re-audit. Note: three variants (subagent, custom agent, templated terms) are near-duplicates.",
   "params": "",
   "install": "",
-  "requires": [],
+  "requires": [
+   "claude:tools"
+  ],
   "license": "method paraphrased from Atlas skills under MIT; the skills keep their own licenses — see each folder's SOURCE.md",
   "proof": [
    "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/(see batch file path field)",
@@ -2029,9 +2027,7 @@
   "how": "1) handoff.sh write to plans/handoff/DATE-slug.md with YAML front matter (branch, head, dirty digest, body digest). 2) Narrative: task, status, plan refs, step, open decisions, rejected approaches, evidence, pending ops, in-flight files, next action. 3) Redact secrets. 4) Resume: preflight returns ready/mismatched/unsupported/blocked; continue only if ready.",
   "params": "slug",
   "install": "",
-  "requires": [
-   "git"
-  ],
+  "requires": [],
   "license": "method paraphrased from Atlas skills under MIT; the skills keep their own licenses — see each folder's SOURCE.md",
   "proof": [
    "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/2078-yellow-core/7377-session-handoff",
@@ -2371,8 +2367,7 @@
   "params": "max-depth, colors",
   "install": "",
   "requires": [
-   "python3",
-   "network"
+   "python3"
   ],
   "license": "method paraphrased from Atlas skills under MIT; the skills keep their own licenses — see each folder's SOURCE.md",
   "proof": [

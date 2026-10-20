@@ -1,0 +1,83 @@
+{
+  "schema": "kosif.blender-cat-fur.v2-acceptance",
+  "date": "2026-10-20",
+  "engine": "Blender 5.2.2 Cycles CPU",
+  "workflow": "Original .blend => procedural fur .blend => Cycles H264 => KOSIF 2D overlay + source WAV to AAC",
+  "expected_fur_strands": 2600,
+  "actual_scene_inspection_strands": {
+    "torso": 1716,
+    "head": 884
+  },
+  "whiskers": 6,
+  "upgraded_scene_objects": 64,
+  "new_native_blender_regression_tests_passed": 7,
+  "new_bridge_preflight_tests_added": 1,
+  "saved_still": {
+    "resolution": [
+      640,
+      360
+    ],
+    "cycles_samples": 24
+  },
+  "full_movie": {
+    "cycles_samples": 12,
+    "codec_video": "h264",
+    "codec_audio": "aac",
+    "frames": 24,
+    "fps": "12/1",
+    "resolution": [
+      512,
+      288
+    ],
+    "seconds": 2.0
+  },
+  "one_click_verified": {
+    "fur_count": 2600,
+    "fur_seed": 2307,
+    "render_report_verified": true,
+    "source_scene_sha256": "d1a05ca86ecd153530b2c8f48c99a265e8e7a06e72cfe8af993c0b944551eac8",
+    "codec_video": "h264",
+    "codec_audio": "aac",
+    "frames": 24,
+    "fps": "12/1",
+    "resolution": [
+      384,
+      216
+    ],
+    "seconds": 2.0
+  },
+  "media_files": {
+    "original_scene": {
+      "filename": "rescue_scene.blend",
+      "bytes": 156362,
+      "sha256": "d1a05ca86ecd153530b2c8f48c99a265e8e7a06e72cfe8af993c0b944551eac8"
+    },
+    "upgraded_scene": {
+      "filename": "cat_fur_scene_v2.blend",
+      "bytes": 286868,
+      "sha256": "6478707ef8e5658c5a1b4c43d729ff0f9767899840be95b44ab9e9aa15045235"
+    },
+    "hero_image": {
+      "filename": "hero_v2_preview.png",
+      "bytes": 282034,
+      "sha256": "77df722e2ae890ccdc533cef421a1b096dde46e625fe61dd97ac8b685ae9a63b"
+    },
+    "final_higher_resolution": {
+      "filename": "cat_fur_cinematic_512.mp4",
+      "bytes": 94623,
+      "sha256": "719cc5ac0520125e6179d0670bc7e4a14c8f86ccb0dc9062e5d55a44af0c542e"
+    },
+    "one_click_fur_pipeline": {
+      "filename": "one_click_fur_pipeline.mp4",
+      "bytes": 78093,
+      "sha256": "3fff004dcff5e96cf42c0fe76ec6c2b0161488a072ec77f1b468030dde9e8e76"
+    },
+    "source_audio": {
+      "filename": "master.wav",
+      "bytes": 88244,
+      "sha256": "6bd3c4c180410bd3ba5f20a1dee1a959b5e60c2a08af4d7458dd910706e0f289"
+    }
+  },
+  "local_files_directory": "C:\\Users\\Public\\KOSIF-BLENDER-FUR-UPGRADE-20261020",
+  "limitations": "Original procedural cat/person remain stylized (not physically realistic live-action). Human face detail is primitive. No full fur dynamics, skeletal animal gait or real recordings."
+}

@@ -1,4 +1,4 @@
-﻿#!/usr/bin/env python3
+#!/usr/bin/env python3
 """KOSIF local task-to-capability matching, independent of commercial directory code.
 
 The source is KOSIF's OWN capability_atlas_index.json. No requests to external
@@ -137,7 +137,10 @@ def main():
         out = {"status":"index_available", "records":len(records),
                "network_requests":0, "features":["bilingual", "local-index", "requirements", "evidence-labels"]}
     elif args.task:
-        out = rank(args.task, records, args.top)
+        try:
+            out = rank(args.task, records, args.top)
+        except ValueError as exc:  # e.g. a stop-word-only task or --top out of range
+            p.error(str(exc))
     else:
         p.error("task or --doctor required")
     print(json.dumps(out, ensure_ascii=False, indent=2))

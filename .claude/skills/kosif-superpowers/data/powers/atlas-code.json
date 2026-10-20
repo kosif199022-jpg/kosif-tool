@@ -14,7 +14,7 @@
   "requires": [],
   "license": "method paraphrased from Atlas skills under MIT; the skills keep their own licenses — see each folder's SOURCE.md",
   "proof": [],
-  "proof_scope": "url",
+  "proof_scope": "none",
   "styles": [],
   "tags": [
    "injection",
@@ -51,10 +51,7 @@
   "how": "1) Confirm repo path; read only local docs/config; send nothing outside. 2) Run the lightweight scanner from a trusted root, else apply manual rules. 3) Inspect high-signal paths first: .claude/, .cursor/, .github/, shell scripts, JSON/YAML/TOML config, package manifests, env files. 4) Classify: Green = clean git, no markers; Yellow = hooks, broad tool permissions or git state unavailable (checkpoint or narrow scope first); Red = recursive delete or credential writing in an agent-controlled path (stop for human review). 5) Receipt: Decision, Repository, Git state, Risk buckets, Evidence, Next safe action. 6) Set permission and autonomy level per task type.",
   "params": "repo path; strictness; autonomy level policy",
   "install": "",
-  "requires": [
-   "git",
-   "python3"
-  ],
+  "requires": [],
   "license": "method paraphrased from Atlas skills under MIT; the skills keep their own licenses — see each folder's SOURCE.md",
   "proof": [
    "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/1918-agent-safety-preflight/7058-agent-safety-preflight",
@@ -121,9 +118,7 @@
   "how": "1) Sweep every surface: projects/**/*.jsonl, file-history, prompt history, hook logs, other agents' homes, `*.jsonl.deleted.*` tombstones, editor backups. 2) `rg -uu --no-messages -o -a` with prefix-anchored patterns (AWS AKIA/ASIA, Slack xox, npm_, private-key headers); without -uu rg silently reports clean. 3) Drop noise: node_modules, redaction fixtures, docs example keys, temp STS creds. 4) Report file + status + sha256[:10] fingerprint, never the value; never put a secret on argv. 5) Severity: key id alone is housekeeping, id plus secret is an incident; probe liveness non-destructively. 6) Rotate outside any transcribed session, then scrub by a kill-list of verified-dead fingerprints.",
   "params": "agent home dirs; credential classes; fingerprint kill-list",
   "install": "",
-  "requires": [
-   "python3"
-  ],
+  "requires": [],
   "license": "method paraphrased from Atlas skills under MIT; the skills keep their own licenses — see each folder's SOURCE.md",
   "proof": [
    "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/3262-agent-session-credential-audit/13773-agent-session-credential-audit",
@@ -187,10 +182,7 @@
   "how": "1) Ask unit of work, unit count, need-all-results, structured output. 2) Pick topology; default to pipeline unless a stage needs the full prior set. 3) Meta block as a pure literal first statement. 4) No Date.now/Math.random/fs in orchestrator; pass timestamps via args. 5) parallel() takes thunks; filter(Boolean) results. 6) Guard loops with counter or budget check (1000-agent cap). 7) Lint then run.",
   "params": "topology, task description",
   "install": "",
-  "requires": [
-   "python3",
-   "node"
-  ],
+  "requires": [],
   "license": "method paraphrased from Atlas skills under MIT; the skills keep their own licenses — see each folder's SOURCE.md",
   "proof": [
    "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/186-workflow-builder/555-workflow-builder",
@@ -246,9 +238,8 @@
   "params": "prompt path; start_branch or start_commit; agents; outer_check; inner_check; run id",
   "install": "",
   "requires": [
-   "git",
    "python3",
-   "claude:tools"
+   "git"
   ],
   "license": "method paraphrased from Atlas skills under MIT (no copyleft seen among supporting ids); the skills keep their own licenses — see each folder's SOURCE.md",
   "proof": [
@@ -305,9 +296,7 @@
   "how": "1) Enumerate affected files. 2) Write phase plan to a checkpoint file. 3) Execute a phase, run tests, update checkpoint. 4) New session resumes from checkpoint.",
   "params": "",
   "install": "",
-  "requires": [
-   "git"
-  ],
+  "requires": [],
   "license": "method paraphrased from Atlas skills under MIT; the skills keep their own licenses — see each folder's SOURCE.md",
   "proof": [
    "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/2175-workflow-orchestration-plugin/7946-workflow-checkpoint-refactor"
@@ -355,7 +344,7 @@
   "install": "",
   "requires": [
    "git",
-   "python3"
+   "claude:tools"
   ],
   "license": "method paraphrased from Atlas skills under MIT; the skills keep their own licenses — see each folder's SOURCE.md",
   "proof": [
@@ -425,8 +414,7 @@
   "params": "agent names; message type; project key; session manifest",
   "install": "",
   "requires": [
-   "git",
-   "python3"
+   "git"
   ],
   "license": "method paraphrased from Atlas skills under MIT (no copyleft seen among supporting ids); the skills keep their own licenses — see each folder's SOURCE.md",
   "proof": [
@@ -495,8 +483,7 @@
   "params": "runtime (codex|claude|zcode); model; effort (low..max); background/wait; prompt file; write permission",
   "install": "",
   "requires": [
-   "git",
-   "claude:tools"
+   "git"
   ],
   "license": "method paraphrased from Atlas skills under Apache-2.0 / MIT (no copyleft seen among supporting ids); the skills keep their own licenses — see each folder's SOURCE.md",
   "proof": [
@@ -566,7 +553,7 @@
   "params": "engine (Temporal/MWAA); step list with compensations; retry and timeout policy",
   "install": "",
   "requires": [
-   "network"
+   "python3"
   ],
   "license": "method paraphrased from Atlas skills under MIT (backend-development) / Apache-2.0 (aws-data-analytics); the skills keep their own licenses — see each folder's SOURCE.md",
   "proof": [
@@ -632,7 +619,9 @@
   "how": "1) Wrap the vendor SDK in a thin provider adapter. 2) Default every test run to synthetic or contract fixtures: no network, no credits. 3) Cover parsers, retry classification, async snapshot or job handling and callbacks offline against those fixtures. 4) Make live calls a separate opt-in smoke test (explicit command or env flag), tiny and bounded. 5) For OAuth vendors use a dedicated development integration, never production credentials. 6) In tool-use loops keep JSON-schema validation, explicit dispatch, result correlation and approval gates. Pattern taken from templated 'pack' descriptions.",
   "params": "vendor; fixture location; live-test flag name; credential scope",
   "install": "",
-  "requires": [],
+  "requires": [
+   "key:unspecified"
+  ],
   "license": "method paraphrased from Atlas skills under MIT (no copyleft seen among supporting ids); the skills keep their own licenses — see each folder's SOURCE.md",
   "proof": [
    "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/1831-brightdata-pack/5155-brightdata-local-dev-loop",
@@ -698,7 +687,8 @@
   "params": "plan file, max tasks",
   "install": "",
   "requires": [
-   "git"
+   "git",
+   "claude:tools"
   ],
   "license": "method paraphrased from Atlas skills under MIT/Apache-2.0; the skills keep their own licenses — see each folder's SOURCE.md",
   "proof": [
@@ -806,8 +796,8 @@
   "params": "target path; eval command; metric; direction; domain (engineering/marketing/content/prompts); interval",
   "install": "",
   "requires": [
-   "git",
-   "python3"
+   "python3",
+   "git"
   ],
   "license": "method paraphrased from Atlas skills under MIT; the skills keep their own licenses — see each folder's SOURCE.md",
   "proof": [
@@ -872,8 +862,7 @@
   "params": "repo, files",
   "install": "",
   "requires": [
-   "gh",
-   "git"
+   "gh"
   ],
   "license": "method paraphrased from Atlas skills under MIT/Apache-2.0; the skills keep their own licenses — see each folder's SOURCE.md",
   "proof": [
@@ -924,7 +913,8 @@
   "params": "agent count; task list per agent; target branch names; worktree root; wave order",
   "install": "",
   "requires": [
-   "git"
+   "git",
+   "claude:tools"
   ],
   "license": "method paraphrased from Atlas skills under MIT; the skills keep their own licenses — see each folder's SOURCE.md",
   "proof": [
@@ -995,8 +985,7 @@
   "params": "issue number or branch",
   "install": "",
   "requires": [
-   "git",
-   "gh"
+   "git"
   ],
   "license": "method paraphrased from Atlas skills under MIT; the skills keep their own licenses — see each folder's SOURCE.md",
   "proof": [
@@ -1094,7 +1083,6 @@
   "params": "mode (status|install|upgrade|enable|disable|uninstall|purge); scope (project|global); budget minutes; hardStopRatio; byAgentType overrides",
   "install": "",
   "requires": [
-   "node",
    "claude:tools"
   ],
   "license": "method paraphrased from Atlas skills under MIT (no copyleft seen among supporting ids); the skills keep their own licenses — see each folder's SOURCE.md",
@@ -1440,7 +1428,10 @@
   "how": "1) Decide user-facing vs headless (auth-code vs client-credentials). 2) Request minimum scopes; separate sandbox and production keys. 3) Keep keys server-side in a secret manager, never in client code or logs. 4) Pin dated API-version header. 5) Verify with a bounded read-only call. 6) Document rotation and revocation; prefer restricted keys over master tokens.",
   "params": "vendor, environment, scopes",
   "install": "",
-  "requires": [],
+  "requires": [
+   "chromium",
+   "key:unspecified"
+  ],
   "license": "method paraphrased from Atlas skills under MIT; the skills keep their own licenses — see each folder's SOURCE.md",
   "proof": [
    "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/1897-ramp-pack/6602-ramp-install-auth",
@@ -1507,7 +1498,9 @@
   "how": "1) State the use case and who runs the code (server or client). 2) Events: webhooks for simple, WebSockets for low latency. 3) Resource management: REST. 4) Embedded video: Video SDK per platform. 5) Preflight: Probe SDK. 6) Settle auth with the OAuth workflow first.",
   "params": "use case",
   "install": "",
-  "requires": [],
+  "requires": [
+   "key:unspecified"
+  ],
   "license": "method paraphrased from Atlas skills under MIT; the skills keep their own licenses — see each folder's SOURCE.md",
   "proof": [
    "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/330-zoom-plugin/1054-plan-zoom-product",
@@ -1571,9 +1564,7 @@
   "how": "1) Map consumer-provider interactions. 2) Consumer Pact tests with matchers (like, eachLike, term) producing pact JSON. 3) pact-broker publish with version+branch. 4) Provider verification with provider states; publish results. 5) can-i-deploy in CI. 6) For specs use openapi-diff: removed endpoints/narrowed types are breaking.",
   "params": "",
   "install": "",
-  "requires": [
-   "node"
-  ],
+  "requires": [],
   "license": "method paraphrased from Atlas skills under MIT; the skills keep their own licenses — see each folder's SOURCE.md",
   "proof": [
    "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/1958-contract-test-validator/7101-validating-api-contracts",
@@ -1635,10 +1626,7 @@
   "how": "1) Login first, start `agent-browser network har start`, exercise each flow twice with different inputs, stop to a .har. 2) jq filter entries by JSON mimeType; drop analytics/third-party noise. 3) Extract request headers/body and response text to type schemas; find auth headers by omission testing. 4) Generate one function per flow; load cookies from file/env, never hardcode. 5) Call every endpoint live to verify.",
   "params": "",
   "install": "",
-  "requires": [
-   "claude:browser",
-   "node"
-  ],
+  "requires": [],
   "license": "method paraphrased from Atlas skills under Apache-2.0 (3351), MIT others; the skills keep their own licenses — see each folder's SOURCE.md",
   "proof": [
    "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/1412-agent-browser/3351-derive-client",
@@ -1747,7 +1735,9 @@
   "how": "1) Users + refresh_tokens tables (store hashed refresh, expiresAt, revokedAt). 2) argon2 hash/verify; jose-signed access token ~15m with sub+role; refresh ~7d, rotate and revoke old. 3) requireAuth/requireRole middleware, not inline checks; inactive user=401. 4) Never accept role from body; seed admins. 5) Rate-limit /token. 6) Tests: 201, 401, 422, 403.",
   "params": "",
   "install": "",
-  "requires": [],
+  "requires": [
+   "key:unspecified"
+  ],
   "license": "method paraphrased from Atlas skills under MIT; the skills keep their own licenses — see each folder's SOURCE.md",
   "proof": [
    "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/2105-backend-dev-kit/7476-auth-jwt",
@@ -1813,7 +1803,9 @@
   "how": "1) Choose the auth model (API key, OAuth client-credentials, user OAuth, JWT) per use case. 2) Request minimum scopes. 3) Inject secret via env/secret manager, never URL or logs. 4) Send as Authorization: Bearer header only. 5) Verify with one bounded read-only identity call. 6) Document owner, expiry, rotation, revocation.",
   "params": "vendor, auth model, scopes",
   "install": "",
-  "requires": [],
+  "requires": [
+   "key:unspecified"
+  ],
   "license": "method paraphrased from Atlas skills under MIT; the skills keep their own licenses — see each folder's SOURCE.md",
   "proof": [
    "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/3335-oauth-mint-counting-passthrough-proxy/13849-oauth-mint-counting-passthrough-proxy"
@@ -1868,7 +1860,7 @@
   "params": "integration JSON (subdomain, client_id, client_secret, redirect_uri)",
   "install": "",
   "requires": [
-   "python3"
+   "key:unspecified"
   ],
   "license": "method paraphrased from Atlas skills under MIT; the skills keep their own licenses — see each folder's SOURCE.md",
   "proof": [
@@ -2026,7 +2018,9 @@
   "how": "1) Clarify actor and tenant model (who authorizes whom). 2) Pick grant (authorization code, client credentials, server-to-server). 3) List minimum scopes for the exact flow. 4) Define token store and refresh: always persist the newly returned refresh token, never reuse the old one. 5) Debug auth by checking app configuration before blaming the API. 6) Redirect URI must match registration exactly.",
   "params": "provider, app type",
   "install": "",
-  "requires": [],
+  "requires": [
+   "key:unspecified"
+  ],
   "license": "method paraphrased from Atlas skills under MIT; the skills keep their own licenses — see each folder's SOURCE.md",
   "proof": [
    "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/330-zoom-plugin/1061-setup-zoom-oauth",
@@ -2081,7 +2075,9 @@
   "how": "1) Start a local proxy on an ephemeral 127.0.0.1 port that increments a counter and forwards to the real token endpoint. 2) Point the configured tokenEndpoint at it. 3) Skip when credentials env vars absent. 4) Assert using deltas of the counter. 5) Cases: no bearer gives 401 and 0 mints; one call 1 mint; N calls 1 mint; poisoned cached token gives 1 mint and success.",
   "params": "token endpoint, env creds",
   "install": "",
-  "requires": [],
+  "requires": [
+   "key:unspecified"
+  ],
   "license": "method paraphrased from Atlas skills under MIT; the skills keep their own licenses — see each folder's SOURCE.md",
   "proof": [
    "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/3335-oauth-mint-counting-passthrough-proxy/13849-oauth-mint-counting-passthrough-proxy"
@@ -2130,7 +2126,9 @@
   "how": "1) Map client type to flow: SPA/native=Code+PKCE (S256), server app=confidential code, M2M=client credentials, no-browser=device grant; never Implicit. 2) Generate code_verifier/challenge and random state; verify state on callback. 3) Treat ID token vs access vs refresh tokens separately. 4) Exact redirect URIs and minimal scopes. 5) Emit rationale + anti-pattern list.",
   "params": "",
   "install": "",
-  "requires": [],
+  "requires": [
+   "key:unspecified"
+  ],
   "license": "method paraphrased from Atlas skills under MIT; the skills keep their own licenses — see each folder's SOURCE.md",
   "proof": [
    "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/2239-auth-identity/8515-oauth-oidc-flow-design",
@@ -2247,7 +2245,9 @@
   "how": "1) Pick method (magic link, passkey, OIDC). 2) Short-lived signed tokens with expiry and single use. 3) Store refresh tokens httpOnly. 4) Verify audience/issuer on JWT. 5) Add rate limits on auth endpoints. 6) Test flows.",
   "params": "provider",
   "install": "",
-  "requires": [],
+  "requires": [
+   "key:unspecified"
+  ],
   "license": "method paraphrased from Atlas skills under MIT; the skills keep their own licenses — see each folder's SOURCE.md",
   "proof": [
    "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/3335-oauth-mint-counting-passthrough-proxy/13849-oauth-mint-counting-passthrough-proxy"
@@ -2560,8 +2560,7 @@
   "params": "",
   "install": "",
   "requires": [
-   "node",
-   "git"
+   "node"
   ],
   "license": "method paraphrased from Atlas skills under MIT; the skills keep their own licenses — see each folder's SOURCE.md",
   "proof": [
@@ -2986,7 +2985,9 @@
   "how": "1) Identify auth model, environment/region and least-privilege key type. 2) Keep secrets in env/secret manager, never browser or repo. 3) Server-side OAuth with state validation and token refresh storage. 4) Verify with a minimal read-only identity request returning a redacted receipt. 5) Document rotation/revocation.",
   "params": "",
   "install": "",
-  "requires": [],
+  "requires": [
+   "key:unspecified"
+  ],
   "license": "method paraphrased from Atlas skills under MIT; the skills keep their own licenses — see each folder's SOURCE.md",
   "proof": [
    "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/1819-adobe-pack/4901-adobe-install-auth",
@@ -3296,9 +3297,7 @@
   "how": "1) Attach ws/Socket.IO to the HTTP server on /ws with allowed origins. 2) Validate JWT/session during the upgrade event and reject with 401 before switching protocol. 3) Keep a registry of connections (user, channels). 4) JSON envelope: type, channel, payload, correlationId. 5) Ping/pong about every 30s with timeout sweep (~60s). 6) Redis pub/sub adapter for multi-node; per-connection rate limit, close code 1008. 7) Lifecycle tests: connect, auth, subscribe, reconnect.",
   "params": "library (ws, socket.io, websockets), channel model",
   "install": "",
-  "requires": [
-   "node"
-  ],
+  "requires": [],
   "license": "method paraphrased from Atlas skills under MIT; the skills keep their own licenses — see each folder's SOURCE.md",
   "proof": [
    "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/1630-websocket-server-builder/4601-building-websocket-server",
@@ -3353,9 +3352,7 @@
   "how": "1) Read the limit model: REST leaky bucket (40 at 2/s; Plus 80 at 4/s via call-limit header), GraphQL cost (1000 points, 50/s restore, extensions.cost.throttleStatus). 2) Track available budget per response and pre-wait. 3) On 429 honor Retry-After else exponential backoff with jitter, cap 30s. 4) Use bulk operations instead of tight pagination loops. 5) Queue per plan/endpoint.",
   "params": "plan tier, endpoint",
   "install": "",
-  "requires": [
-   "node"
-  ],
+  "requires": [],
   "license": "method paraphrased from Atlas skills under MIT; the skills keep their own licenses — see each folder's SOURCE.md",
   "proof": [
    "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/1905-shopify-pack/6800-shopify-rate-limits",
@@ -3466,10 +3463,7 @@
   "how": "1) Launch Chrome with --remote-debugging-port=9222 and a separate user-data-dir. 2) Baseline snapshot at rest (forces GC). 3) Repeat suspect action 10-20 times. 4) Second snapshot. 5) Diff with --top and --min-size-delta; read summary.suspects (count grows with N), growth[], detached delta. Fix and repeat.",
   "params": "url fragment, N repeats",
   "install": "",
-  "requires": [
-   "node",
-   "chromium"
-  ],
+  "requires": [],
   "license": "method paraphrased from Atlas skills under MIT; the skills keep their own licenses — see each folder's SOURCE.md",
   "proof": [
    "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/890-web/2012-heap-snapshot-leaks"
@@ -3517,9 +3511,7 @@
   "how": "1) Read-first hello-world with official SDK. 2) Separate dev/staging/prod identities and tokens. 3) Fail-closed CI with pinned tools. 4) Instrument budgets, errors, webhooks. 5) Redacted debug bundle and incident runbook with write freeze. 6) Prod gate: scopes, retry, privacy, rollback.",
   "params": "platform",
   "install": "",
-  "requires": [
-   "git"
-  ],
+  "requires": [],
   "license": "method paraphrased from Atlas skills under MIT; the skills keep their own licenses — see each folder's SOURCE.md",
   "proof": [
    "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/1905-shopify-pack/6804-shopify-security-basics",
@@ -3580,7 +3572,9 @@
   "params": "framework, transport",
   "install": "",
   "requires": [
-   "node"
+   "npm:esbuild",
+   "npm:react",
+   "key:openai"
   ],
   "license": "method paraphrased from Atlas skills under MIT; the skills keep their own licenses — see each folder's SOURCE.md",
   "proof": [
@@ -3630,10 +3624,7 @@
   "how": "1) Define single target app and scope. 2) Run mitmproxy with the helper scripts to record flows. 3) Decode bodies and WebSocket frames. 4) Summarize endpoints, auth headers, payload shapes. Only on apps you are authorized to inspect.",
   "params": "target app, host filter",
   "install": "",
-  "requires": [
-   "python3",
-   "network"
-  ],
+  "requires": [],
   "license": "method paraphrased from Atlas skills under MIT; the skills keep their own licenses — see each folder's SOURCE.md",
   "proof": [
    "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/890-web/2012-heap-snapshot-leaks"
@@ -3681,10 +3672,7 @@
   "how": "1) Process each requirement independently (sub-agent or separate pass). 2) Search code for the evidence pattern. 3) Mark pass/fail/needs-review; prefer needs-review over silent pass. 4) Check conditional groups' applicability signal first and log skipped groups. 5) Report briefly; confirm session tokens, scopes, GDPR hooks, Billing API, pinned API version.",
   "params": "app path",
   "install": "",
-  "requires": [
-   "node",
-   "git"
-  ],
+  "requires": [],
   "license": "method paraphrased from Atlas skills under MIT; the skills keep their own licenses — see each folder's SOURCE.md",
   "proof": [
    "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/3055-shopify-plugin/13165-shopify-app-store-review",
@@ -3793,9 +3781,7 @@
   "how": "1) Use raw body parser, not JSON. 2) Compute HMAC-SHA256 with app secret, compare via timingSafeEqual. 3) Dedupe on event/resource id. 4) Return 200 at once, enqueue work. 5) Implement mandatory GDPR topics (customers/redact, shop/redact, customers/data_request) and app/uninstalled cleanup.",
   "params": "platform, secret header name",
   "install": "",
-  "requires": [
-   "node"
-  ],
+  "requires": [],
   "license": "method paraphrased from Atlas skills under MIT; the skills keep their own licenses — see each folder's SOURCE.md",
   "proof": [
    "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/1905-shopify-pack/6804-shopify-security-basics",
@@ -3862,7 +3848,7 @@
   "install": "npm i @circle-fin/developer-controlled-wallets",
   "requires": [
    "node",
-   "network"
+   "key:unspecified"
   ],
   "license": "method paraphrased from Atlas skills under Apache-2.0; the skills keep their own licenses — see each folder's SOURCE.md",
   "proof": [
@@ -4030,7 +4016,8 @@
   "params": "rpc url, solc version",
   "install": "npm i hardhat",
   "requires": [
-   "node"
+   "node",
+   "key:unspecified"
   ],
   "license": "method paraphrased from Atlas skills under MIT; the skills keep their own licenses — see each folder's SOURCE.md",
   "proof": [
@@ -4190,7 +4177,8 @@
   "params": "api key env",
   "install": "npm i viem",
   "requires": [
-   "node"
+   "node",
+   "key:unspecified"
   ],
   "license": "method paraphrased from Atlas skills under MIT; the skills keep their own licenses — see each folder's SOURCE.md",
   "proof": [
@@ -4300,9 +4288,7 @@
   "how": "1) Audit for bloat, contradictions, duplication, stale refs. 2) Create from repo facts. 3) Compress into terse signal. 4) Update after commits land.",
   "params": "",
   "install": "",
-  "requires": [
-   "git"
-  ],
+  "requires": [],
   "license": "method paraphrased from Atlas skills under MIT; the skills keep their own licenses — see each folder's SOURCE.md",
   "proof": [
    "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/?"
@@ -4353,9 +4339,7 @@
   "how": "1) Check graph exists; build or refresh if stale. 2) Find symbol, then callers/callees. 3) Run impact to list affected files and linked tests. 4) Fall back to LSP then grep. 5) Verify hits by reading the file.",
   "params": "symbol",
   "install": "",
-  "requires": [
-   "claude:tools"
-  ],
+  "requires": [],
   "license": "method paraphrased from Atlas skills under MIT; the skills keep their own licenses — see each folder's SOURCE.md",
   "proof": [
    "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/?",
@@ -4416,9 +4400,7 @@
   "how": "1) Survey tree to 2-3 levels, build files, CI, entry points, tests, config. 2) Per module: one-line responsibility, key files, inbound/outbound deps. 3) Trace 2-3 core flows file by file. 4) Rate risk per module (tests, hotspots, dead code, secrets by location only). 5) Write change recipes ('to add an endpoint start at...'). 6) Mark unsure claims (unverified); save docs/codebase-map.md and link from context file.",
   "params": "repo path, output dir",
   "install": "",
-  "requires": [
-   "git"
-  ],
+  "requires": [],
   "license": "method paraphrased from Atlas skills under MIT; the skills keep their own licenses — see each folder's SOURCE.md",
   "proof": [
    "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/3047-adlc-context/13101-codebase-map",
@@ -4485,10 +4467,7 @@
   "how": "1) Run knip for unused files/exports. 2) Audit vulnerabilities. 3) Pin versions. 4) Staged upgrade with tests. 5) One draft PR per repo sweep.",
   "params": "",
   "install": "",
-  "requires": [
-   "node",
-   "git"
-  ],
+  "requires": [],
   "license": "method paraphrased from Atlas skills under MIT; the skills keep their own licenses — see each folder's SOURCE.md",
   "proof": [
    "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/?"
@@ -4542,7 +4521,6 @@
   "params": "path, flags",
   "install": "",
   "requires": [
-   "git",
    "npm:mermaid"
   ],
   "license": "method paraphrased from Atlas skills under MIT; the skills keep their own licenses — see each folder's SOURCE.md",
@@ -4762,8 +4740,7 @@
   "params": "token budget per agent",
   "install": "",
   "requires": [
-   "python3",
-   "git"
+   "claude:tools"
   ],
   "license": "method paraphrased from Atlas skills under MIT; the skills keep their own licenses — see each folder's SOURCE.md",
   "proof": [
@@ -4985,7 +4962,8 @@
   "params": "",
   "install": "",
   "requires": [
-   "python3"
+   "python3",
+   "key:unspecified"
   ],
   "license": "method paraphrased from Atlas skills under MIT; the skills keep their own licenses — see each folder's SOURCE.md",
   "proof": [
@@ -5048,9 +5026,7 @@
   "how": "1) Allow SELECT, EXPLAIN, catalog and pg_stat reads freely. 2) Require explicit confirmation for CREATE INDEX, ALTER, REINDEX, VACUUM FULL. 3) Flag DROP, TRUNCATE, DELETE without WHERE as destructive. 4) Prefer CONCURRENTLY and maintenance windows. 5) Show dry-run/row-count preview before executing mutation.",
   "params": "target db",
   "install": "",
-  "requires": [
-   "claude:tools"
-  ],
+  "requires": [],
   "license": "method paraphrased from Atlas skills under Apache-2.0 / MIT; the skills keep their own licenses — see each folder's SOURCE.md",
   "proof": [
    "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/2971-pwdev-postgres/12521-postgres",
@@ -5105,7 +5081,7 @@
   "params": "target path or PR",
   "install": "",
   "requires": [
-   "git"
+   "lean"
   ],
   "license": "method paraphrased from Atlas skills under MIT; the skills keep their own licenses — see each folder's SOURCE.md",
   "proof": [
@@ -5207,7 +5183,7 @@
   "requires": [],
   "license": "method paraphrased from Atlas skills under MIT; the skills keep their own licenses — see each folder's SOURCE.md",
   "proof": [],
-  "proof_scope": "url",
+  "proof_scope": "none",
   "styles": [],
   "tags": [
    "seed",
@@ -5359,7 +5335,7 @@
   "params": "stack",
   "install": "",
   "requires": [
-   "node"
+   "npm:react"
   ],
   "license": "method paraphrased from Atlas skills under MIT; the skills keep their own licenses — see each folder's SOURCE.md",
   "proof": [
@@ -5416,9 +5392,7 @@
   "how": "1) Enable RLS on every public table. 2) Write per-role policies; index policy columns. 3) Never ship service_role to client. 4) Use pooler for connections. 5) GDPR: auth.admin.deleteUser and data export. 6) Run prod checklist: backups, monitoring, rate limits.",
   "params": "project",
   "install": "",
-  "requires": [
-   "node"
-  ],
+  "requires": [],
   "license": "method paraphrased from Atlas skills under MIT; the skills keep their own licenses — see each folder's SOURCE.md",
   "proof": [
    "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/1908-supabase-pack/6870-supabase-security-basics",
@@ -5525,8 +5499,7 @@
   "params": "migration name, target env",
   "install": "npm i -g supabase",
   "requires": [
-   "node",
-   "docker"
+   "node"
   ],
   "license": "method paraphrased from Atlas skills under MIT; the skills keep their own licenses — see each folder's SOURCE.md",
   "proof": [
@@ -5583,7 +5556,9 @@
   "how": "1) Escalate only after systematic debugging fails. 2) Spawn one investigator per hypothesis with evidence requirements. 3) Structured debate: each must rebut others with evidence. 4) Synthesize the surviving root cause. 5) Write failing test, fix, independently verify, loop until green. Claimed gain: ~40% to 80% first-hypothesis accuracy.",
   "params": "",
   "install": "",
-  "requires": [],
+  "requires": [
+   "pip:hypothesis"
+  ],
   "license": "method paraphrased from Atlas skills under check per-plugin; the skills keep their own licenses — see each folder's SOURCE.md",
   "proof": [
    "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/3596-forge-teams/14420-adversarial-debugging"
@@ -5749,9 +5724,7 @@
   "how": "1) Scope one subsystem, baseline toolchain output. 2) Extract invariants from types, docs, tests, call sites. 3) Probe lenses: boundaries, null, ordering, races/TOCTOU, error paths, lifecycle, precision, time, encoding; use oracles and property checks. 4) Prove each candidate with failing repro (CONFIRMED) else PROBABLE; try to refute. 5) Log in a findings register; then fix at root cause with proof.",
   "params": "component path",
   "install": "",
-  "requires": [
-   "git"
-  ],
+  "requires": [],
   "license": "method paraphrased from Atlas skills under MIT; the skills keep their own licenses — see each folder's SOURCE.md",
   "proof": [
    "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/3058-rigor/13193-bug-hunt",
@@ -5808,10 +5781,7 @@
   "how": "1) gh auth status, resolve repo (optional --repo owner/name validated). 2) Pick given run id or latest failed. 3) Fetch failed-step logs with gh. 4) Redact secrets and fence log text as data. 5) Match patterns F01-F12 (runner, deps, timeout, etc.). 6) Report cause, evidence, fix; push and watch rerun.",
   "params": "run id, --repo",
   "install": "",
-  "requires": [
-   "gh",
-   "git"
-  ],
+  "requires": [],
   "license": "method paraphrased from Atlas skills under MIT; the skills keep their own licenses — see each folder's SOURCE.md",
   "proof": [
    "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/2075-yellow-ci/7339-ci-diagnose",
@@ -6049,7 +6019,7 @@
   "requires": [],
   "license": "method paraphrased from Atlas skills under MIT; the skills keep their own licenses — see each folder's SOURCE.md",
   "proof": [],
-  "proof_scope": "url",
+  "proof_scope": "none",
   "styles": [],
   "tags": [
    "incident",
@@ -6101,7 +6071,7 @@
   "requires": [],
   "license": "method paraphrased from Atlas skills under MIT; the skills keep their own licenses — see each folder's SOURCE.md",
   "proof": [],
-  "proof_scope": "url",
+  "proof_scope": "none",
   "styles": [],
   "tags": [
    "observability",
@@ -6154,9 +6124,7 @@
   "how": "1) Always pass --context. 2) kubectl debug POD -it --image=busybox --target=CONTAINER. 3) Use --profile=netadmin for network. 4) Copy pod with changed image/command for crash loops. 5) Node debug for host fs. For Helm: helm template/--dry-run --debug.",
   "params": "",
   "install": "",
-  "requires": [
-   "claude:tools"
-  ],
+  "requires": [],
   "license": "method paraphrased from Atlas skills under check per-plugin; the skills keep their own licenses — see each folder's SOURCE.md",
   "proof": [
    "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/2157-kubernetes-plugin/7785-kubectl-debugging"
@@ -6262,9 +6230,7 @@
   "how": "1) Parse timestamps, durations, levels. 2) grep/awk to group errors by normalized message. 3) Flag requests over a latency threshold. 4) Report counts, first/last seen, top offenders and fix hints. Wide structured events and high cardinality help (Honeycomb).",
   "params": "",
   "install": "",
-  "requires": [
-   "python3"
-  ],
+  "requires": [],
   "license": "method paraphrased from Atlas skills under MIT; the skills keep their own licenses — see each folder's SOURCE.md",
   "proof": [
    "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/1778-log-analysis-tool/4798-analyzing-logs"
@@ -6316,9 +6282,7 @@
   "how": "1) Structured logs with request/job ID, no payload content. 2) Metrics: rate, errors by class, latency percentiles, cost/quota. 3) Keep label cardinality low. 4) Traces propagate IDs across services (OpenTelemetry). 5) Alerts on SLO burn, not single errors. 6) Audit trail for agent actions.",
   "params": "",
   "install": "",
-  "requires": [
-   "node"
-  ],
+  "requires": [],
   "license": "method paraphrased from Atlas skills under MIT; the skills keep their own licenses — see each folder's SOURCE.md",
   "proof": [
    "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/1819-adobe-pack/4896-adobe-debug-bundle",
@@ -6495,7 +6459,9 @@
   "how": "1) Pick a seam: failing test, curl script, CLI+fixture diff, headless browser, captured-trace replay, throwaway harness, fuzz loop, git bisect run, differential old/new. 2) Run it once, show redacted output. 3) Tighten: faster (seconds), sharper (assert exact symptom), deterministic (pin time, seed RNG). 4) Flaky: loop 100x, add stress until rate is debuggable. 5) If impossible, stop and ask for env access, HAR/log/core dump, or permission for instrumentation.",
   "params": "bug description",
   "install": "",
-  "requires": [],
+  "requires": [
+   "chromium"
+  ],
   "license": "method paraphrased from Atlas skills under MIT; the skills keep their own licenses — see each folder's SOURCE.md",
   "proof": [
    "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/1120-ambient-library/2669-diagnosing-bugs",
@@ -6620,9 +6586,7 @@
   "how": "1) Declare allowed fields (timestamps, release SHA, operation, version header, status/code, correlation ID, payload digest). 2) Record config shape: variable names, hosts, flags, credential aliases, never values. 3) List bounded attempts only. 4) Add minimal sanitized fixture if needed. 5) Run secret scan then human approval. 6) Send with checksum and expiry, delete after.",
   "params": "",
   "install": "",
-  "requires": [
-   "gitleaks"
-  ],
+  "requires": [],
   "license": "method paraphrased from Atlas skills under MIT; the skills keep their own licenses — see each folder's SOURCE.md",
   "proof": [
    "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/1855-flexport-pack/5710-flexport-debug-bundle"
@@ -6741,7 +6705,8 @@
   "params": "error text, repro steps",
   "install": "",
   "requires": [
-   "git"
+   "git",
+   "pip:hypothesis"
   ],
   "license": "method paraphrased from Atlas skills under MIT / Apache-2.0; the skills keep their own licenses — see each folder's SOURCE.md",
   "proof": [
@@ -6809,9 +6774,7 @@
   "how": "1) Locate issue by link/ID/search. 2) Pull stack, breadcrumbs, tags, release. 3) Map frames to source. 4) Apply root-cause fix and verify. 5) Enrich capture context if signal is thin.",
   "params": "issue link",
   "install": "",
-  "requires": [
-   "mcp:github"
-  ],
+  "requires": [],
   "license": "method paraphrased from Atlas skills under MIT; the skills keep their own licenses — see each folder's SOURCE.md",
   "proof": [
    "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/3624-sentry/3624-sentry-debug-issue"
@@ -6865,6 +6828,7 @@
   "params": "base ref",
   "install": "",
   "requires": [
+   "python3",
    "git"
   ],
   "license": "method paraphrased from Atlas skills under MIT; the skills keep their own licenses — see each folder's SOURCE.md",
@@ -7010,8 +6974,7 @@
   "params": "PR number or branch",
   "install": "",
   "requires": [
-   "gh",
-   "git"
+   "gh"
   ],
   "license": "method paraphrased from Atlas skills under MIT; the skills keep their own licenses — see each folder's SOURCE.md",
   "proof": [
@@ -7060,9 +7023,7 @@
   "how": "1) State steady-state hypothesis (e.g. p99 under 500ms). 2) Choose fault (latency, kill, dependency loss). 3) Compute blast radius from traffic share, user population and duration. 4) Define abort criteria before starting. 5) Run small, observe, then postmortem from plan and results. Tools: Chaos Toolkit, Chaos Mesh, Litmus, AWS FIS.",
   "params": "target, attack, duration",
   "install": "",
-  "requires": [
-   "python3"
-  ],
+  "requires": [],
   "license": "method paraphrased from Atlas skills under MIT; the skills keep their own licenses — see each folder's SOURCE.md",
   "proof": [
    "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/160-chaos-engineering/529-chaos-engineering"
@@ -7212,9 +7173,7 @@
   "how": "1) Analyze codebase for runtime and services. 2) Generate Blueprint or wrangler config. 3) Set env secrets via platform. 4) Configure domains and TLS. 5) Deploy and verify.",
   "params": "platform",
   "install": "",
-  "requires": [
-   "network"
-  ],
+  "requires": [],
   "license": "method paraphrased from Atlas skills under MIT; the skills keep their own licenses — see each folder's SOURCE.md",
   "proof": [
    "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/2993-render/12706-render-deploy",
@@ -7617,8 +7576,7 @@
   "params": "run id, PR, branch",
   "install": "",
   "requires": [
-   "gh",
-   "git"
+   "gh"
   ],
   "license": "method paraphrased from Atlas skills under MIT; the skills keep their own licenses — see each folder's SOURCE.md",
   "proof": [
@@ -7793,9 +7751,7 @@
   "how": "1) Scan workflows for JSON keys. 2) Require permissions id-token: write. 3) Use google-github-actions/auth with WIF provider. 4) Reject owner/editor roles. 5) Add secret scan and post-deploy health check. 6) Document one-time WIF setup.",
   "params": "project, repo",
   "install": "",
-  "requires": [
-   "gh"
-  ],
+  "requires": [],
   "license": "method paraphrased from Atlas skills under MIT; the skills keep their own licenses — see each folder's SOURCE.md",
   "proof": [
    "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/1733-jeremy-github-actions-gcp/4740-gh-actions-validator"
@@ -8014,9 +7970,7 @@
   "how": "1) Pin schema/OpenAPI and record synthetic fixtures. 2) Default job runs offline: lint, contract tests, secret scan, host allowlist. 3) Live smoke is a separate job on a protected environment, read-only, bounded calls, never on fork PRs. 4) Fail closed when secrets are absent. 5) Upload no payloads or tokens as artifacts.",
   "params": "service name, spec location, CI provider",
   "install": "",
-  "requires": [
-   "git"
-  ],
+  "requires": [],
   "license": "method paraphrased from Atlas skills under MIT; the skills keep their own licenses — see each folder's SOURCE.md",
   "proof": [
    "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/1885-mistral-pack/6325-mistral-ci-integration",
@@ -8132,9 +8086,7 @@
   "how": "1) Glob .github/workflows/*.yml. 2) Validate any user-supplied path against an allowlist (no .., no absolute, regex, symlink stays inside dir); never interpolate raw text into shell. 3) Check rules W01-W14 (runner labels, timeouts, concurrency, cleanup). 4) Group by severity. 5) Show diff preview, confirm, then edit.",
   "params": "file path",
   "install": "",
-  "requires": [
-   "git"
-  ],
+  "requires": [],
   "license": "method paraphrased from Atlas skills under MIT; the skills keep their own licenses — see each folder's SOURCE.md",
   "proof": [
    "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/2075-yellow-ci/7340-ci-lint-workflows",
@@ -8258,9 +8210,7 @@
   "how": "1) az ad app create, then az ad sp create. 2) az ad app federated-credential create with issuer token.actions.githubusercontent.com, audience api://AzureADTokenExchange. 3) Choose subject: repo:org/repo:ref:refs/heads/main, :pull_request, :environment:production. 4) Assign least-privilege RBAC at resource-group scope. 5) Workflow requests id-token write and logs in.",
   "params": "org/repo, scope",
   "install": "",
-  "requires": [
-   "gh"
-  ],
+  "requires": [],
   "license": "method paraphrased from Atlas skills under MIT / Apache-2.0; the skills keep their own licenses — see each folder's SOURCE.md",
   "proof": [
    "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/2243-azure-cloud/8537-workload-identity-federation",
@@ -8315,9 +8265,7 @@
   "how": "1) Check provider status API. 2) vercel ls --prod and recent deployments. 3) Error logs. 4) Deploy in last 30 min means roll back or promote previous. 5) Post status updates. 6) Postmortem.",
   "params": "",
   "install": "",
-  "requires": [
-   "network"
-  ],
+  "requires": [],
   "license": "method paraphrased from Atlas skills under MIT/Apache-2.0; the skills keep their own licenses — see each folder's SOURCE.md",
   "proof": [
    "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/1913-vercel-pack/6967-vercel-incident-runbook",
@@ -8718,9 +8666,7 @@
   "how": "1) Map build/runtime/secret/egress/scaling/shutdown. 2) Build once from immutable artifact, inject secrets at runtime only, never to browser/build output. 3) Liveness local only; readiness separate and without provider calls. 4) Set deadlines and bounded concurrency with shared limiter. 5) Staging, offline checks, approved synthetic canary, fixed traffic bound. 6) Prove rollback and reconcile queues to avoid duplicated work. Output release id, limits, rollback receipt.",
   "params": "platform, environment, release SHA",
   "install": "",
-  "requires": [
-   "git"
-  ],
+  "requires": [],
   "license": "method paraphrased from Atlas skills under MIT; the skills keep their own licenses — see each folder's SOURCE.md",
   "proof": [
    "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/1885-mistral-pack/6332-mistral-deploy-integration",
@@ -8954,9 +8900,7 @@
   "how": "1) terraform plan -out=tfplan. 2) terraform show -json tfplan > plan.json. 3) conftest test plan.json against rego policies. 4) Rules: no public storage, no 0.0.0.0/0 on admin ports, no wildcard IAM, required tags, encryption on. 5) Fail pipeline before apply.",
   "params": "policy dir",
   "install": "",
-  "requires": [
-   "docker"
-  ],
+  "requires": [],
   "license": "method paraphrased from Atlas skills under MIT; terraform plugin items MPL-2.0 (copyleft); the skills keep their own licenses — see each folder's SOURCE.md",
   "proof": [
    "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/2396-terraform-iac/9278-policy-as-code-iac",
@@ -9055,6 +8999,1071 @@
   "id": "ACODE-158",
   "family": "atlas-code",
   "domain": "code",
+  "name_ar": "تصميم تطبيق Agent SDK وخطافاته",
+  "name_en": "Agent SDK app and hooks design",
+  "status": "documented",
+  "what": "تضمين حلقة وكيل في الكود مع أدوات وتسليمات وحواجز وخطافات دورة الحياة. — Embed an agent loop in code with tools, handoffs, guardrails and lifecycle hooks.",
+  "when": "Building a production agent or custom agent runner.",
+  "how": "1) Choose SDK (Claude Agent SDK, OpenAI Agents, Cloudflare Agents, Vercel AI SDK). 2) Define tools with schemas. 3) Add handoffs and guardrails. 4) Pick hooks (PreToolUse, PostToolUse, Stop) for policy. 5) Cap turns and budget.",
+  "params": "",
+  "install": "",
+  "requires": [
+   "key:openai"
+  ],
+  "license": "method paraphrased from Atlas skills under Apache-2.0/MIT; the skills keep their own licenses — see each folder's SOURCE.md",
+  "proof": [
+   "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/15-ai-tooling/23-agent-sdk-builder",
+   "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/2254-claude-app-engineering/8580-agent-sdk-hook-design",
+   "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/2103-agent-dev-kit/7471-openai-agents-sdk"
+  ],
+  "proof_scope": "url",
+  "styles": [],
+  "tags": [
+   "agent-sdk",
+   "hooks",
+   "agents",
+   "وكلاء",
+   "خطافات"
+  ],
+  "section": "هندسة النماذج اللغوية — LLM & AI engineering",
+  "source": "KOSIF Atlas mining 2026-10-20 (https://github.com/kosif199022-jpg/kosif-atlas): ai-tooling/agent-sdk-builder (#23); claude-app-engineering/agent-sdk-hook-design (#8580); agent-dev-kit/openai-agents-sdk (#7471) · theme ai-llm-engineering · 6 supporting skills · verifier read: skills/15-ai-tooling/23-agent-sdk-builder, skills/2254-claude-app-engineering/8580-agent-sdk-hook-design, skills/2103-agent-dev-kit/7471-openai-agents-sdk",
+  "atlas": {
+   "ids": [
+    "23",
+    "3357",
+    "7471",
+    "8580",
+    "11676",
+    "14697"
+   ],
+   "examples": [
+    {
+     "id": "23",
+     "plugin": "ai-tooling",
+     "skill": "agent-sdk-builder",
+     "url": "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/15-ai-tooling/23-agent-sdk-builder"
+    },
+    {
+     "id": "8580",
+     "plugin": "claude-app-engineering",
+     "skill": "agent-sdk-hook-design",
+     "url": "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/2254-claude-app-engineering/8580-agent-sdk-hook-design"
+    },
+    {
+     "id": "7471",
+     "plugin": "agent-dev-kit",
+     "skill": "openai-agents-sdk",
+     "url": "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/2103-agent-dev-kit/7471-openai-agents-sdk"
+    }
+   ],
+   "theme": "ai-llm-engineering",
+   "risk_notes": "Agents execute tools; sandbox them.",
+   "kosif_overlap_ids": [],
+   "stage": "extracted",
+   "verified_by": "b007-ai-llm-engineering-1.json"
+  }
+ },
+ {
+  "id": "ACODE-159",
+  "family": "atlas-code",
+  "domain": "code",
+  "name_ar": "حكم LLM معايَر ومدقَّق التحيز",
+  "name_en": "Calibrated, bias-audited LLM-as-judge",
+  "status": "documented",
+  "what": "تصميم حكم LLM بمعايير مرسّاة وقرار منظم ومعايرة مقابل التقييم البشري. — Design an LLM judge with anchored rubric levels, structured verdicts, pinned model and human-agreement calibration.",
+  "when": "Any time an LLM grades outputs or A/B pairs before its numbers are trusted.",
+  "how": "1) Define per-criterion anchored levels (0/1/2), not 1-10. 2) Judge returns {criterion: level, reason}. 3) Prefer pairwise with randomized A/B side. 4) Pin judge model, version, temperature and log them. 5) Label 30-50 samples by humans, compute raw agreement or Cohen kappa, fix rubric if low. 6) Audit position, verbosity, self-preference, leniency drift; recalibrate on any judge/rubric change.",
+  "params": "rubric criteria; sample size 30-50",
+  "install": "",
+  "requires": [],
+  "license": "method paraphrased from Atlas skills under MIT; the skills keep their own licenses — see each folder's SOURCE.md",
+  "proof": [
+   "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/2328-llm-evaluation-engineering/8937-build-llm-judge"
+  ],
+  "proof_scope": "url",
+  "styles": [],
+  "tags": [
+   "llm-judge",
+   "evaluation",
+   "تقييم",
+   "rubric"
+  ],
+  "section": "هندسة النماذج اللغوية — LLM & AI engineering",
+  "source": "KOSIF Atlas mining 2026-10-20 (https://github.com/kosif199022-jpg/kosif-atlas): llm-evaluation-engineering/build-llm-judge (#8937) · theme ai-llm-engineering · 3 supporting skills · verifier read: skills/2328-llm-evaluation-engineering/8937-build-llm-judge, ",
+  "atlas": {
+   "ids": [
+    "8223",
+    "8937",
+    "12315"
+   ],
+   "examples": [
+    {
+     "id": "8937",
+     "plugin": "llm-evaluation-engineering",
+     "skill": "build-llm-judge",
+     "url": "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/2328-llm-evaluation-engineering/8937-build-llm-judge"
+    }
+   ],
+   "theme": "ai-llm-engineering",
+   "risk_notes": "none (instruction-only)",
+   "kosif_overlap_ids": [],
+   "stage": "extracted",
+   "verified_by": "b008-ai-llm-engineering-2.json"
+  }
+ },
+ {
+  "id": "ACODE-160",
+  "family": "atlas-code",
+  "domain": "code",
+  "name_ar": "تحصين حدود المعدل وإعادة المحاولة",
+  "name_en": "Claude API rate-limit and retry hardening",
+  "status": "documented",
+  "what": "إضافة تحكم بالمعدل وتراجع أسي وقائمة جاهزية إنتاج لاستدعاءات واجهة Claude. — Add header-aware throttling, backoff and production checklist for Claude API calls.",
+  "when": "429/529 errors, load scaling, preparing LLM feature for production.",
+  "how": "1) Know RPM/ITPM/OTPM; cached input not counted in ITPM. 2) Set SDK max_retries or custom exponential backoff with jitter. 3) Read ratelimit response headers and pace requests. 4) Add circuit breaker, fallback model, queue for batch work. 5) Run prod checklist: keys, logging, budgets, incident runbook.",
+  "params": "",
+  "install": "",
+  "requires": [],
+  "license": "method paraphrased from Atlas skills under MIT/Apache-2.0; the skills keep their own licenses — see each folder's SOURCE.md",
+  "proof": [
+   "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/1823-anthropic-pack/5001-anth-rate-limits",
+   "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/1823-anthropic-pack/5000-anth-prod-checklist",
+   "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/1823-anthropic-pack/4998-anth-performance-tuning"
+  ],
+  "proof_scope": "url",
+  "styles": [],
+  "tags": [
+   "rate-limit",
+   "retry",
+   "reliability",
+   "حدود-المعدل",
+   "موثوقية"
+  ],
+  "section": "هندسة النماذج اللغوية — LLM & AI engineering",
+  "source": "KOSIF Atlas mining 2026-10-20 (https://github.com/kosif199022-jpg/kosif-atlas): anthropic-pack/anth-rate-limits (#5001); anthropic-pack/anth-prod-checklist (#5000); anthropic-pack/anth-performance-tuning (#4998) · theme ai-llm-engineering · 6 supporting skills · verifier read: skills/1823-anthropic-pack/5001-anth-rate-limits, skills/1823-anthropic-pack/5000-anth-prod-checklist, skills/1823-anthropic-pack/4998-anth-performance-tuning",
+  "atlas": {
+   "ids": [
+    "4981",
+    "4993",
+    "4998",
+    "5000",
+    "5001",
+    "5003"
+   ],
+   "examples": [
+    {
+     "id": "5001",
+     "plugin": "anthropic-pack",
+     "skill": "anth-rate-limits",
+     "url": "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/1823-anthropic-pack/5001-anth-rate-limits"
+    },
+    {
+     "id": "5000",
+     "plugin": "anthropic-pack",
+     "skill": "anth-prod-checklist",
+     "url": "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/1823-anthropic-pack/5000-anth-prod-checklist"
+    },
+    {
+     "id": "4998",
+     "plugin": "anthropic-pack",
+     "skill": "anth-performance-tuning",
+     "url": "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/1823-anthropic-pack/4998-anth-performance-tuning"
+    }
+   ],
+   "theme": "ai-llm-engineering",
+   "risk_notes": "Pure guidance.",
+   "kosif_overlap_ids": [],
+   "stage": "extracted",
+   "verified_by": "b007-ai-llm-engineering-1.json"
+  }
+ },
+ {
+  "id": "ACODE-161",
+  "family": "atlas-code",
+  "domain": "code",
+  "name_ar": "حزمة تقييم LLM ثابتة بمجموعة ذهبية",
+  "name_en": "Committed LLM eval suite with goldens",
+  "status": "documented",
+  "what": "بناء حلقة تقييم pytest ثابتة بأمثلة ذهبية ومقاييس وتحسين متكرر من الإخفاقات. — Build a committed pytest eval loop with generated goldens, metrics and iterative failure fixing.",
+  "when": "Evaluating agents, RAG or chatbots; adding evals; regression-testing prompts.",
+  "how": "1) Inspect app and existing eval code. 2) Reuse or generate goldens (deepeval generate). 3) Keep metrics in metrics.py with thresholds. 4) Run deepeval test run, not raw pytest. 5) Inspect failing traces, patch prompt/tool/retrieval, rerun (default 5 rounds). Alternative: inspect-ai/lighteval for Hub models.",
+  "params": "",
+  "install": "pip install deepeval",
+  "requires": [
+   "python3"
+  ],
+  "license": "method paraphrased from Atlas skills under MIT/Apache-2.0; the skills keep their own licenses — see each folder's SOURCE.md",
+  "proof": [
+   "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/1207-deepeval/2856-deepeval",
+   "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/1514-huggingface-skills/3932-huggingface-community-evals",
+   "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/1075-forkmind/2384-forkmind"
+  ],
+  "proof_scope": "url",
+  "styles": [],
+  "tags": [
+   "evals",
+   "deepeval",
+   "testing",
+   "تقييم",
+   "اختبار"
+  ],
+  "section": "هندسة النماذج اللغوية — LLM & AI engineering",
+  "source": "KOSIF Atlas mining 2026-10-20 (https://github.com/kosif199022-jpg/kosif-atlas): deepeval/deepeval (#2856); huggingface-skills/huggingface-community-evals (#3932); forkmind/forkmind (#2384) · theme ai-llm-engineering · 5 supporting skills · verifier read: skills/1207-deepeval/2856-deepeval, skills/1514-huggingface-skills/3932-huggingface-community-evals, skills/1075-forkmind/2384-forkmind",
+  "atlas": {
+   "ids": [
+    "2384",
+    "2855",
+    "2856",
+    "3932",
+    "13903"
+   ],
+   "examples": [
+    {
+     "id": "2856",
+     "plugin": "deepeval",
+     "skill": "deepeval",
+     "url": "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/1207-deepeval/2856-deepeval"
+    },
+    {
+     "id": "3932",
+     "plugin": "huggingface-skills",
+     "skill": "huggingface-community-evals",
+     "url": "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/1514-huggingface-skills/3932-huggingface-community-evals"
+    },
+    {
+     "id": "2384",
+     "plugin": "forkmind",
+     "skill": "forkmind",
+     "url": "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/1075-forkmind/2384-forkmind"
+    }
+   ],
+   "theme": "ai-llm-engineering",
+   "risk_notes": "Runs model calls; optional upload to Confident AI.",
+   "kosif_overlap_ids": [],
+   "stage": "extracted",
+   "verified_by": "b007-ai-llm-engineering-1.json"
+  }
+ },
+ {
+  "id": "ACODE-162",
+  "family": "atlas-code",
+  "domain": "code",
+  "name_ar": "رصد تطبيقات الذكاء التوليدي بـ OpenTelemetry",
+  "name_en": "GenAI observability with OpenTelemetry",
+  "status": "documented",
+  "what": "تجهيز تطبيقات LLM بمسارات OTel لرصد الرموز والتكلفة والزمن وخطوات الوكيل. — Instrument LLM apps with OTel spans for tokens, cost, latency and agent steps.",
+  "when": "Debugging LLM latency/cost, tracing agents or RAG.",
+  "how": "1) Wrap each LLM/tool call in a span with GenAI semantic attributes (model, provider, input/output tokens). 2) Decide content-capture policy for prompts. 3) Export OTLP to backend. 4) Build queries for cost by prompt/model and cache. 5) Alert on errors and latency.",
+  "params": "",
+  "install": "",
+  "requires": [],
+  "license": "method paraphrased from Atlas skills under Apache-2.0/MIT; the skills keep their own licenses — see each folder's SOURCE.md",
+  "proof": [
+   "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/1512-honeycomb/3908-otel-genai-instrumentation",
+   "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/1368-dynatrace/3126-dt-obs-genai",
+   "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/1343-dominodatalab/3082-domino-genai-tracing"
+  ],
+  "proof_scope": "url",
+  "styles": [],
+  "tags": [
+   "observability",
+   "otel",
+   "tracing",
+   "رصد",
+   "تتبع"
+  ],
+  "section": "هندسة النماذج اللغوية — LLM & AI engineering",
+  "source": "KOSIF Atlas mining 2026-10-20 (https://github.com/kosif199022-jpg/kosif-atlas): honeycomb/otel-genai-instrumentation (#3908); dynatrace/dt-obs-genai (#3126); dominodatalab/domino-genai-tracing (#3082) · theme ai-llm-engineering · 6 supporting skills · verifier read: skills/1512-honeycomb/3908-otel-genai-instrumentation, skills/1368-dynatrace/3126-dt-obs-genai, skills/1343-dominodatalab/3082-domino-genai-tracing",
+  "atlas": {
+   "ids": [
+    "2384",
+    "2854",
+    "2855",
+    "3082",
+    "3126",
+    "3908"
+   ],
+   "examples": [
+    {
+     "id": "3908",
+     "plugin": "honeycomb",
+     "skill": "otel-genai-instrumentation",
+     "url": "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/1512-honeycomb/3908-otel-genai-instrumentation"
+    },
+    {
+     "id": "3126",
+     "plugin": "dynatrace",
+     "skill": "dt-obs-genai",
+     "url": "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/1368-dynatrace/3126-dt-obs-genai"
+    },
+    {
+     "id": "3082",
+     "plugin": "dominodatalab",
+     "skill": "domino-genai-tracing",
+     "url": "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/1343-dominodatalab/3082-domino-genai-tracing"
+    }
+   ],
+   "theme": "ai-llm-engineering",
+   "risk_notes": "Exports telemetry over network; may contain prompt data.",
+   "kosif_overlap_ids": [],
+   "stage": "extracted",
+   "verified_by": "b007-ai-llm-engineering-1.json"
+  }
+ },
+ {
+  "id": "ACODE-163",
+  "family": "atlas-code",
+  "domain": "code",
+  "name_ar": "خط RAG هجين مع إحالات",
+  "name_en": "Hybrid-search RAG pipeline with citations",
+  "status": "documented",
+  "what": "تصميم خط RAG بتقطيع أب/ابن وبحث هجين وإعادة ترتيب وإجابات موثقة بالمصادر. — Design a RAG pipeline with parent/child chunking, hybrid dense+BM25 retrieval, rerank and cited answers.",
+  "when": "User wants document Q&A, knowledge-base search or retrieval as an agent tool.",
+  "how": "1) Clarify doc types, query types, latency, volume (pgvector vs Qdrant). 2) Separate ingest module: load, parent/child chunk with metadata, embed, upsert. 3) Collection with dense plus sparse; fuse with RRF. 4) Query: metadata filter, hybrid top-20, fetch parents, rerank to top-5. 5) Generate with numbered context, citations, answer-only-from-context. 6) Golden Q/A set before shipping.",
+  "params": "",
+  "install": "",
+  "requires": [
+   "pip:chromadb"
+  ],
+  "license": "method paraphrased from Atlas skills under MIT/Apache-2.0; the skills keep their own licenses — see each folder's SOURCE.md",
+  "proof": [
+   "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/2103-agent-dev-kit/7472-rag-pipeline",
+   "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/895-brightdata-plugin/2049-rag-pipeline",
+   "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/1841-cohere-pack/5390-cohere-core-workflow-a"
+  ],
+  "proof_scope": "url",
+  "styles": [],
+  "tags": [
+   "RAG",
+   "retrieval",
+   "hybrid-search",
+   "بحث-دلالي",
+   "تضمين"
+  ],
+  "section": "هندسة النماذج اللغوية — LLM & AI engineering",
+  "source": "KOSIF Atlas mining 2026-10-20 (https://github.com/kosif199022-jpg/kosif-atlas): agent-dev-kit/rag-pipeline (#7472); brightdata-plugin/rag-pipeline (#2049); cohere-pack/cohere-core-workflow-a (#5390) · theme ai-llm-engineering · 7 supporting skills · verifier read: skills/2103-agent-dev-kit/7472-rag-pipeline, skills/895-brightdata-plugin/2049-rag-pipeline, skills/1841-cohere-pack/5390-cohere-core-workflow-a",
+  "atlas": {
+   "ids": [
+    "1563",
+    "2049",
+    "3594",
+    "5390",
+    "7472",
+    "8475",
+    "9778"
+   ],
+   "examples": [
+    {
+     "id": "7472",
+     "plugin": "agent-dev-kit",
+     "skill": "rag-pipeline",
+     "url": "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/2103-agent-dev-kit/7472-rag-pipeline"
+    },
+    {
+     "id": "2049",
+     "plugin": "brightdata-plugin",
+     "skill": "rag-pipeline",
+     "url": "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/895-brightdata-plugin/2049-rag-pipeline"
+    },
+    {
+     "id": "5390",
+     "plugin": "cohere-pack",
+     "skill": "cohere-core-workflow-a",
+     "url": "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/1841-cohere-pack/5390-cohere-core-workflow-a"
+    }
+   ],
+   "theme": "ai-llm-engineering",
+   "risk_notes": "Provider SDK calls and vector DB writes need API keys.",
+   "kosif_overlap_ids": [
+    "AGENT-37"
+   ],
+   "stage": "extracted",
+   "verified_by": "b007-ai-llm-engineering-1.json"
+  }
+ },
+ {
+  "id": "ACODE-164",
+  "family": "atlas-code",
+  "domain": "code",
+  "name_ar": "تحصين LangChain 1.0 للإنتاج",
+  "name_en": "LangChain 1.0 production hardening",
+  "status": "documented",
+  "what": "تطبيق إعدادات إنتاجية على سلاسل LangChain: middleware وحدود معدل وصلاحيات وأمان ومراقبة. — Apply production defaults to LangChain chains: middleware, rate limits, RBAC, security, observability and prompt versioning.",
+  "when": "Taking a LangChain/LangGraph app to production or diagnosing incidents.",
+  "how": "1) Layered architecture. 2) Composable middleware for retries/guards. 3) Share rate limiter across workers. 4) Tenant isolation and role checks. 5) Defend against prompt injection. 6) LangSmith or OpenTelemetry traces. 7) Prompts versioned like code; deterministic local test loop with fake models.",
+  "params": "",
+  "install": "",
+  "requires": [],
+  "license": "method paraphrased from Atlas skills under MIT; the skills keep their own licenses — see each folder's SOURCE.md",
+  "proof": [],
+  "proof_scope": "none",
+  "styles": [],
+  "tags": [
+   "langchain",
+   "production",
+   "observability",
+   "إنتاج"
+  ],
+  "section": "هندسة النماذج اللغوية — LLM & AI engineering",
+  "source": "KOSIF Atlas mining 2026-10-20 (https://github.com/kosif199022-jpg/kosif-atlas):  · theme ai-llm-engineering · 10 supporting skills · verifier read: , , ",
+  "atlas": {
+   "ids": [
+    "6104",
+    "6106",
+    "6113",
+    "6114",
+    "6117",
+    "6118",
+    "6120",
+    "6121",
+    "6122",
+    "6124"
+   ],
+   "examples": [],
+   "theme": "ai-llm-engineering",
+   "risk_notes": "none (instruction-only)",
+   "kosif_overlap_ids": [],
+   "stage": "extracted",
+   "verified_by": "b008-ai-llm-engineering-2.json"
+  }
+ },
+ {
+  "id": "ACODE-165",
+  "family": "atlas-code",
+  "domain": "code",
+  "name_ar": "حالة وتدفق وكلاء LangGraph",
+  "name_en": "LangGraph 1.0 agent state and flow",
+  "status": "documented",
+  "what": "بناء وكلاء LangGraph صحيحين بحالة typed ونقاط حفظ وintrrupt بشري وgraphs فرعية. — Build correct LangGraph agents with typed state, checkpointers, thread_id discipline, human interrupts and subgraphs.",
+  "when": "Adding chat memory, approval flows, streaming or subgraphs to a LangGraph agent.",
+  "how": "1) TypedDict state, JSON-safe values only (no datetime/Decimal). 2) Checkpointer by env: MemorySaver dev, SqliteSaver local, PostgresSaver/Async prod. 3) Always pass config configurable thread_id (UUID4 per conversation) or memory silently resets. 4) interrupt_before for approvals. 5) Pick stream_mode messages vs updates. 6) Migrate Postgres checkpoint schema explicitly on upgrade. 7) Use time-travel to debug.",
+  "params": "thread_id strategy",
+  "install": "pip install langgraph langchain-core",
+  "requires": [
+   "python3"
+  ],
+  "license": "method paraphrased from Atlas skills under MIT; the skills keep their own licenses — see each folder's SOURCE.md",
+  "proof": [
+   "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/1875-langchain-py-pack/6109-langchain-langgraph-checkpointing"
+  ],
+  "proof_scope": "url",
+  "styles": [],
+  "tags": [
+   "langgraph",
+   "agents",
+   "checkpoint",
+   "وكلاء"
+  ],
+  "section": "هندسة النماذج اللغوية — LLM & AI engineering",
+  "source": "KOSIF Atlas mining 2026-10-20 (https://github.com/kosif199022-jpg/kosif-atlas): langchain-py-pack/langchain-langgraph-checkpointing (#6109) · theme ai-llm-engineering · 7 supporting skills · verifier read: skills/1875-langchain-py-pack/6109-langchain-langgraph-checkpointing, , ",
+  "atlas": {
+   "ids": [
+    "2164",
+    "6107",
+    "6108",
+    "6109",
+    "6110",
+    "6111",
+    "6112"
+   ],
+   "examples": [
+    {
+     "id": "6109",
+     "plugin": "langchain-py-pack",
+     "skill": "langchain-langgraph-checkpointing",
+     "url": "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/1875-langchain-py-pack/6109-langchain-langgraph-checkpointing"
+    }
+   ],
+   "theme": "ai-llm-engineering",
+   "risk_notes": "none (instruction-only)",
+   "kosif_overlap_ids": [],
+   "stage": "extracted",
+   "verified_by": "b008-ai-llm-engineering-2.json"
+  }
+ },
+ {
+  "id": "ACODE-166",
+  "family": "atlas-code",
+  "domain": "code",
+  "name_ar": "تخطيط ضبط نماذج اللغة SFT/DPO",
+  "name_en": "LLM fine-tuning job planning (SFT/DPO/GRPO)",
+  "status": "documented",
+  "what": "اختيار طريقة التدريب وتقدير التكلفة وتشغيل الضبط على وحدات GPU مُدارة. — Choose a training method, estimate cost and run fine-tuning on managed GPUs with monitoring.",
+  "when": "Fine-tuning a language/vision/embedding model.",
+  "how": "1) Pick method: SFT, DPO, GRPO or reward model; Unsloth for low VRAM. 2) Inspect dataset format first. 3) Estimate cost and GPU memory (hf-mem). 4) Submit job with PEP 723 script, include Trackio. 5) Push to Hub; optional GGUF for llama.cpp/Ollama.",
+  "params": "",
+  "install": "",
+  "requires": [
+   "pip:llama-cpp"
+  ],
+  "license": "method paraphrased from Atlas skills under Apache-2.0/MIT; the skills keep their own licenses — see each folder's SOURCE.md",
+  "proof": [
+   "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/1514-huggingface-skills/3935-huggingface-llm-trainer",
+   "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/2511-azure/9722-finetuning",
+   "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/1514-huggingface-skills/3945-train-sentence-transformers"
+  ],
+  "proof_scope": "url",
+  "styles": [],
+  "tags": [
+   "fine-tuning",
+   "trl",
+   "lora",
+   "ضبط-دقيق",
+   "تدريب"
+  ],
+  "section": "هندسة النماذج اللغوية — LLM & AI engineering",
+  "source": "KOSIF Atlas mining 2026-10-20 (https://github.com/kosif199022-jpg/kosif-atlas): huggingface-skills/huggingface-llm-trainer (#3935); azure/finetuning (#9722); huggingface-skills/train-sentence-transformers (#3945) · theme ai-llm-engineering · 6 supporting skills · verifier read: skills/1514-huggingface-skills/3935-huggingface-llm-trainer, skills/2511-azure/9722-finetuning, skills/1514-huggingface-skills/3945-train-sentence-transformers",
+  "atlas": {
+   "ids": [
+    "1317",
+    "3930",
+    "3935",
+    "3945",
+    "9722",
+    "10845"
+   ],
+   "examples": [
+    {
+     "id": "3935",
+     "plugin": "huggingface-skills",
+     "skill": "huggingface-llm-trainer",
+     "url": "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/1514-huggingface-skills/3935-huggingface-llm-trainer"
+    },
+    {
+     "id": "9722",
+     "plugin": "azure",
+     "skill": "finetuning",
+     "url": "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/2511-azure/9722-finetuning"
+    },
+    {
+     "id": "3945",
+     "plugin": "huggingface-skills",
+     "skill": "train-sentence-transformers",
+     "url": "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/1514-huggingface-skills/3945-train-sentence-transformers"
+    }
+   ],
+   "theme": "ai-llm-engineering",
+   "risk_notes": "Launches paid cloud jobs; scripts use uv.",
+   "kosif_overlap_ids": [],
+   "stage": "extracted",
+   "verified_by": "b007-ai-llm-engineering-1.json"
+  }
+ },
+ {
+  "id": "ACODE-167",
+  "family": "atlas-code",
+  "domain": "code",
+  "name_ar": "مراقبة LLM وتحليل الإخفاقات",
+  "name_en": "LLM observability and failure triage",
+  "status": "documented",
+  "what": "قياس تطبيقات LLM وفحص التتبعات والتكاليف والإخفاقات في Langfuse أو PostHog. — Instrument LLM apps and investigate traces, costs, clusters and failures in Langfuse or PostHog.",
+  "when": "Debugging production agent traces or setting up LLM analytics.",
+  "how": "1) Instrument SDK to emit traces. 2) Inspect traces by session, latency, exceptions. 3) Cluster usage to spot patterns. 4) Break cost by model/user/trace. 5) Review evaluations (code, LLM judge). 6) Turn recurring failures into datasets.",
+  "params": "",
+  "install": "",
+  "requires": [],
+  "license": "method paraphrased from Atlas skills under MIT; the skills keep their own licenses — see each folder's SOURCE.md",
+  "proof": [],
+  "proof_scope": "none",
+  "styles": [],
+  "tags": [
+   "observability",
+   "traces",
+   "langfuse",
+   "مراقبة"
+  ],
+  "section": "هندسة النماذج اللغوية — LLM & AI engineering",
+  "source": "KOSIF Atlas mining 2026-10-20 (https://github.com/kosif199022-jpg/kosif-atlas):  · theme ai-llm-engineering · 7 supporting skills · verifier read: , , ",
+  "atlas": {
+   "ids": [
+    "1279",
+    "7558",
+    "12308",
+    "12313",
+    "12316",
+    "12337",
+    "12377"
+   ],
+   "examples": [],
+   "theme": "ai-llm-engineering",
+   "risk_notes": "MCP tools calling external services; 6 py in 12316",
+   "kosif_overlap_ids": [],
+   "stage": "extracted",
+   "verified_by": "b008-ai-llm-engineering-2.json"
+  }
+ },
+ {
+  "id": "ACODE-168",
+  "family": "atlas-code",
+  "domain": "code",
+  "name_ar": "ترحيل مزود LLM إلى Bedrock",
+  "name_en": "Migrate LLM provider SDK to Bedrock",
+  "status": "documented",
+  "what": "إعادة كتابة استدعاءات مزود إلى مزود آخر ومقارنة جودة المخرجات. — Rewrite OpenAI/Gemini/Anthropic SDK calls to a new provider and compare output quality.",
+  "when": "Switching LLM provider or consolidating on a cloud.",
+  "how": "1) Inventory call sites and features used. 2) Map models and params. 3) Rewrite via unified client. 4) Run a side-by-side eval on a prompt sample. 5) Roll out behind a flag.",
+  "params": "",
+  "install": "",
+  "requires": [
+   "key:openai"
+  ],
+  "license": "method paraphrased from Atlas skills under Apache-2.0/MIT; the skills keep their own licenses — see each folder's SOURCE.md",
+  "proof": [
+   "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/367-aws-startup-advisor/1361-llm-to-bedrock",
+   "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/1823-anthropic-pack/4995-anth-migration-deep-dive"
+  ],
+  "proof_scope": "url",
+  "styles": [],
+  "tags": [
+   "migration",
+   "bedrock",
+   "sdk",
+   "ترحيل",
+   "مزود"
+  ],
+  "section": "هندسة النماذج اللغوية — LLM & AI engineering",
+  "source": "KOSIF Atlas mining 2026-10-20 (https://github.com/kosif199022-jpg/kosif-atlas): aws-startup-advisor/llm-to-bedrock (#1361); anthropic-pack/anth-migration-deep-dive (#4995) · theme ai-llm-engineering · 4 supporting skills · verifier read: skills/367-aws-startup-advisor/1361-llm-to-bedrock, skills/1823-anthropic-pack/4995-anth-migration-deep-dive",
+  "atlas": {
+   "ids": [
+    "1316",
+    "1361",
+    "1362",
+    "4995"
+   ],
+   "examples": [
+    {
+     "id": "1361",
+     "plugin": "aws-startup-advisor",
+     "skill": "llm-to-bedrock",
+     "url": "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/367-aws-startup-advisor/1361-llm-to-bedrock"
+    },
+    {
+     "id": "4995",
+     "plugin": "anthropic-pack",
+     "skill": "anth-migration-deep-dive",
+     "url": "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/1823-anthropic-pack/4995-anth-migration-deep-dive"
+    }
+   ],
+   "theme": "ai-llm-engineering",
+   "risk_notes": "Rewrites code; delegates to sibling skill.",
+   "kosif_overlap_ids": [],
+   "stage": "extracted",
+   "verified_by": "b007-ai-llm-engineering-1.json"
+  }
+ },
+ {
+  "id": "ACODE-169",
+  "family": "atlas-code",
+  "domain": "code",
+  "name_ar": "تفويض متعدد النماذج ورأي ثانٍ",
+  "name_en": "Multi-model delegation and second opinion",
+  "status": "documented",
+  "what": "توجيه المهام إلى نماذج متعددة والحصول على رأي ثانٍ. — Route tasks to Claude, Codex, Gemini, Ollama or local workers and collect second opinions.",
+  "when": "Needing independent review or cheaper worker for a subtask.",
+  "how": "1) Choose worker by task. 2) Check CLI configured. 3) Send bounded prompt. 4) Compare and reconcile. 5) Match model tier to effort per lane.",
+  "params": "",
+  "install": "",
+  "requires": [],
+  "license": "method paraphrased from Atlas skills under MIT; the skills keep their own licenses — see each folder's SOURCE.md",
+  "proof": [],
+  "proof_scope": "none",
+  "styles": [],
+  "tags": [
+   "second-opinion",
+   "orchestration",
+   "نماذج"
+  ],
+  "section": "هندسة النماذج اللغوية — LLM & AI engineering",
+  "source": "KOSIF Atlas mining 2026-10-20 (https://github.com/kosif199022-jpg/kosif-atlas):  · theme ai-llm-engineering · 6 supporting skills · verifier read: , ",
+  "atlas": {
+   "ids": [
+    "1293",
+    "3667",
+    "3668",
+    "3669",
+    "11479",
+    "11482"
+   ],
+   "examples": [],
+   "theme": "ai-llm-engineering",
+   "risk_notes": "executes external CLIs and sends code to third-party models",
+   "kosif_overlap_ids": [],
+   "stage": "extracted",
+   "verified_by": "b008-ai-llm-engineering-2.json"
+  }
+ },
+ {
+  "id": "ACODE-170",
+  "family": "atlas-code",
+  "domain": "code",
+  "name_ar": "تدقيق ذاكرة الـprompt المؤقتة وإصلاحها",
+  "name_en": "Prompt-cache hit-rate audit and fix",
+  "status": "documented",
+  "what": "تشخيص انخفاض إصابة الكاش من حقول الاستخدام وإصلاح موضع نقاط التوقف. — Diagnose low prompt-cache hit rate from usage fields and fix breakpoint placement.",
+  "when": "Cache hit under 80%, cost spike, or designing a new endpoint.",
+  "how": "1) Read cache_creation_input_tokens and cache_read_input_tokens from usage; hit = read/(read+creation), target >=80%. 2) Diff two raw payloads: tools array mutating, breakpoint below volatile content. 3) Check per-model minimum block size, max 4 breakpoints, TTL (5min vs 1h at 2x creation). 4) Freeze tools/system in constants. 5) Warm-up call, then 10 identical-prefix calls; measure over 1h.",
+  "params": "",
+  "install": "",
+  "requires": [],
+  "license": "method paraphrased from Atlas skills under MIT/Apache-2.0; the skills keep their own licenses — see each folder's SOURCE.md",
+  "proof": [
+   "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/2254-claude-app-engineering/8585-prompt-caching-audit",
+   "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/1823-anthropic-pack/4984-anth-cost-tuning",
+   "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/2231-ai-rag-engineering/8475-budget-tokens"
+  ],
+  "proof_scope": "url",
+  "styles": [],
+  "tags": [
+   "caching",
+   "cost",
+   "anthropic",
+   "تخزين-مؤقت",
+   "تكلفة"
+  ],
+  "section": "هندسة النماذج اللغوية — LLM & AI engineering",
+  "source": "KOSIF Atlas mining 2026-10-20 (https://github.com/kosif199022-jpg/kosif-atlas): claude-app-engineering/prompt-caching-audit (#8585); anthropic-pack/anth-cost-tuning (#4984); ai-rag-engineering/budget-tokens (#8475) · theme ai-llm-engineering · 4 supporting skills · verifier read: skills/2254-claude-app-engineering/8585-prompt-caching-audit, skills/1823-anthropic-pack/4984-anth-cost-tuning, skills/2231-ai-rag-engineering/8475-budget-tokens",
+  "atlas": {
+   "ids": [
+    "4984",
+    "4998",
+    "8475",
+    "8585"
+   ],
+   "examples": [
+    {
+     "id": "8585",
+     "plugin": "claude-app-engineering",
+     "skill": "prompt-caching-audit",
+     "url": "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/2254-claude-app-engineering/8585-prompt-caching-audit"
+    },
+    {
+     "id": "4984",
+     "plugin": "anthropic-pack",
+     "skill": "anth-cost-tuning",
+     "url": "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/1823-anthropic-pack/4984-anth-cost-tuning"
+    },
+    {
+     "id": "8475",
+     "plugin": "ai-rag-engineering",
+     "skill": "budget-tokens",
+     "url": "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/2231-ai-rag-engineering/8475-budget-tokens"
+    }
+   ],
+   "theme": "ai-llm-engineering",
+   "risk_notes": "Only reads usage; live verification needs API key.",
+   "kosif_overlap_ids": [],
+   "stage": "extracted",
+   "verified_by": "b007-ai-llm-engineering-1.json"
+  }
+ },
+ {
+  "id": "ACODE-171",
+  "family": "atlas-code",
+  "domain": "code",
+  "name_ar": "دليل بناء وضبط خط RAG",
+  "name_en": "RAG pipeline build and tuning guide",
+  "status": "documented",
+  "what": "بناء خط RAG إنتاجي بإعدادات افتراضية سليمة وترقية كل مرحلة عند ظهور فشل مقيس. — Build a production RAG pipeline from sane defaults and upgrade each stage only against measured failures.",
+  "when": "Building or choosing chunking, embeddings, vector DB, hybrid search or reranking for RAG.",
+  "how": "1) Start: recursive split ~512 tokens with 10-15% overlap. 2) Embed with a value model; keep metric matching training. 3) Vector DB with INT8 quantization. 4) Hybrid dense+sparse fused by RRF. 5) Evaluate with RAGAS from day one. 6) Upgrade by failure: keyword misses add BM25/SPLADE; ambiguous chunks add contextual retrieval; noise add cross-encoder rerank; multi-hop go agentic.",
+  "params": "chunk size; embedding model; vector DB",
+  "install": "",
+  "requires": [
+   "pip:chromadb"
+  ],
+  "license": "method paraphrased from Atlas skills under MIT; the skills keep their own licenses — see each folder's SOURCE.md",
+  "proof": [
+   "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/rag-development"
+  ],
+  "proof_scope": "url",
+  "styles": [],
+  "tags": [
+   "rag",
+   "embeddings",
+   "retrieval",
+   "استرجاع"
+  ],
+  "section": "هندسة النماذج اللغوية — LLM & AI engineering",
+  "source": "KOSIF Atlas mining 2026-10-20 (https://github.com/kosif199022-jpg/kosif-atlas): rag-development/rag-development (#62) · theme ai-llm-engineering · 6 supporting skills · verifier read: skills/rag-development, , ",
+  "atlas": {
+   "ids": [
+    "62",
+    "1759",
+    "1886",
+    "6103",
+    "13278",
+    "13283"
+   ],
+   "examples": [
+    {
+     "id": "62",
+     "plugin": "rag-development",
+     "skill": "rag-development",
+     "url": "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/rag-development"
+    }
+   ],
+   "theme": "ai-llm-engineering",
+   "risk_notes": "none (instruction-only)",
+   "kosif_overlap_ids": [
+    "AGENT-37"
+   ],
+   "stage": "extracted",
+   "verified_by": "b008-ai-llm-engineering-2.json"
+  }
+ },
+ {
+  "id": "ACODE-172",
+  "family": "atlas-code",
+  "domain": "code",
+  "name_ar": "عقد مخرجات LLM منظمة موثوقة",
+  "name_en": "Reliable structured LLM output contract",
+  "status": "documented",
+  "what": "فرض مخرجات منظمة عبر schema أو استدعاء أداة مع تحقق وإصلاح محدود وفشل آمن. — Enforce parseable LLM output via schema mode or forced tool call plus parse, validate, bounded repair and fail-closed.",
+  "when": "Output format drifts or downstream code parses model text.",
+  "how": "1) Write schema plus refusal, unknown and error shapes. 2) Pick mechanism in order: native JSON schema, forced tool call, constrained grammar, prose+parser. 3) Parse, validate schema and business invariants. 4) Repair by re-prompting with exact error, bounded retries, then fail closed. 5) Fence untrusted input as data.",
+  "params": "retry bound",
+  "install": "",
+  "requires": [],
+  "license": "method paraphrased from Atlas skills under MIT / Apache-2.0; the skills keep their own licenses — see each folder's SOURCE.md",
+  "proof": [
+   "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/2361-prompt-engineering/9117-structured-output-design"
+  ],
+  "proof_scope": "url",
+  "styles": [],
+  "tags": [
+   "structured-output",
+   "json",
+   "schema",
+   "مخرجات"
+  ],
+  "section": "هندسة النماذج اللغوية — LLM & AI engineering",
+  "source": "KOSIF Atlas mining 2026-10-20 (https://github.com/kosif199022-jpg/kosif-atlas): prompt-engineering/structured-output-design (#9117) · theme ai-llm-engineering · 3 supporting skills · verifier read: skills/2361-prompt-engineering/9117-structured-output-design, ",
+  "atlas": {
+   "ids": [
+    "6115",
+    "9117",
+    "10525"
+   ],
+   "examples": [
+    {
+     "id": "9117",
+     "plugin": "prompt-engineering",
+     "skill": "structured-output-design",
+     "url": "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/2361-prompt-engineering/9117-structured-output-design"
+    }
+   ],
+   "theme": "ai-llm-engineering",
+   "risk_notes": "none",
+   "kosif_overlap_ids": [],
+   "stage": "extracted",
+   "verified_by": "b008-ai-llm-engineering-2.json"
+  }
+ },
+ {
+  "id": "ACODE-173",
+  "family": "atlas-code",
+  "domain": "code",
+  "name_ar": "تتابع مزودي LLM عبر Router",
+  "name_en": "Vendor failover waterfall via LiteLLM Router",
+  "status": "documented",
+  "what": "ضبط تتابع مزودين مرتب كبيانات باستخدام Router بدل سلاسل try/except. — Configure ordered multi-vendor failover as data using LiteLLM Router instead of hand-written try/except chains.",
+  "when": "429s, dead keys or out-of-credit vendors take an agent down.",
+  "how": "1) Ordered vendor list: index 0 primary. 2) Map to model_list (primary, fb0..) plus fallbacks chain. 3) Router(num_retries=1, cooldown_time=60). 4) Tune allowed_fails, context_window_fallbacks, per-deployment budgets. 5) Do not waterfall non-idempotent calls. 6) Prove failover with a forced-failure test.",
+  "params": "vendor order; cooldown",
+  "install": "pip install litellm",
+  "requires": [
+   "python3"
+  ],
+  "license": "method paraphrased from Atlas skills under MIT / Apache-2.0; the skills keep their own licenses — see each folder's SOURCE.md",
+  "proof": [
+   "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/3327-llm-vendor-waterfall/13841-llm-vendor-waterfall"
+  ],
+  "proof_scope": "url",
+  "styles": [],
+  "tags": [
+   "failover",
+   "gateway",
+   "litellm",
+   "مزود"
+  ],
+  "section": "هندسة النماذج اللغوية — LLM & AI engineering",
+  "source": "KOSIF Atlas mining 2026-10-20 (https://github.com/kosif199022-jpg/kosif-atlas): llm-vendor-waterfall/llm-vendor-waterfall (#13841) · theme ai-llm-engineering · 5 supporting skills · verifier read: skills/3327-llm-vendor-waterfall/13841-llm-vendor-waterfall, ",
+  "atlas": {
+   "ids": [
+    "3723",
+    "10100",
+    "10523",
+    "13717",
+    "13841"
+   ],
+   "examples": [
+    {
+     "id": "13841",
+     "plugin": "llm-vendor-waterfall",
+     "skill": "llm-vendor-waterfall",
+     "url": "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/3327-llm-vendor-waterfall/13841-llm-vendor-waterfall"
+    }
+   ],
+   "theme": "ai-llm-engineering",
+   "risk_notes": "none; handles API keys",
+   "kosif_overlap_ids": [],
+   "stage": "extracted",
+   "verified_by": "b008-ai-llm-engineering-2.json"
+  }
+ },
+ {
+  "id": "ACODE-174",
+  "family": "atlas-code",
+  "domain": "code",
+  "name_ar": "بناء شجرة هجوم",
+  "name_en": "Attack tree construction",
+  "status": "documented",
+  "what": "بناء أشجار هجوم لتوضيح مسارات التهديد. — Build attack trees to map threat paths and defense gaps.",
+  "when": "Threat modeling or explaining risk to stakeholders.",
+  "how": "1) Set root goal. 2) Decompose AND/OR sub-goals. 3) Score likelihood and cost. 4) Mark mitigations. 5) Render with mermaid or graphviz.",
+  "params": "goal",
+  "install": "",
+  "requires": [
+   "graphviz",
+   "npm:mermaid"
+  ],
+  "license": "method paraphrased from Atlas skills under MIT; the skills keep their own licenses — see each folder's SOURCE.md",
+  "proof": [
+   "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/3515-security-scanning/14283-attack-tree-construction"
+  ],
+  "proof_scope": "url",
+  "styles": [],
+  "tags": [
+   "threat",
+   "security",
+   "tree",
+   "هجوم"
+  ],
+  "section": "القطاعات المنظّمة — Regulated industries & domain expertise",
+  "source": "KOSIF Atlas mining 2026-10-20 (https://github.com/kosif199022-jpg/kosif-atlas): security-scanning/attack-tree-construction (#14283) · theme compliance-industry · 1 supporting skills · verifier read: skills/3515-security-scanning/14283-attack-tree-construction",
+  "atlas": {
+   "ids": [
+    "14283"
+   ],
+   "examples": [
+    {
+     "id": "14283",
+     "plugin": "security-scanning",
+     "skill": "attack-tree-construction",
+     "url": "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/3515-security-scanning/14283-attack-tree-construction"
+    }
+   ],
+   "theme": "compliance-industry",
+   "risk_notes": "Text only.",
+   "kosif_overlap_ids": [],
+   "stage": "extracted",
+   "verified_by": "b021-compliance-industry-1.json"
+  }
+ },
+ {
+  "id": "ACODE-175",
+  "family": "atlas-code",
+  "domain": "code",
+  "name_ar": "وثائق ما قبل الإطلاق للتطبيقات المولدة",
+  "name_en": "Pre-ship documentation set for vibe-coded apps",
+  "status": "documented",
+  "what": "إنتاج وثائق المعمارية والصلاحيات والمتغيرات وخريطة الاختبارات. — Produce architecture, flows, permissions, variables and test-map docs, plus conditional emails/cron/SEO/automation docs.",
+  "when": "Reviewing or shipping an AI-built app.",
+  "how": "1) Write 5 core docs: architecture, flows, permissions, variables/secrets by risk, tests map. 2) Mark rules checked, proposed, or unchecked. 3) Add emails, cron, seo, automation only if capability exists.",
+  "params": "repo",
+  "install": "",
+  "requires": [],
+  "license": "method paraphrased from Atlas skills under MIT; the skills keep their own licenses — see each folder's SOURCE.md",
+  "proof": [
+   "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/2876-pm-ai-shipping/11601-shipping-artifacts"
+  ],
+  "proof_scope": "url",
+  "styles": [],
+  "tags": [
+   "docs",
+   "review",
+   "shipping",
+   "توثيق"
+  ],
+  "section": "القطاعات المنظّمة — Regulated industries & domain expertise",
+  "source": "KOSIF Atlas mining 2026-10-20 (https://github.com/kosif199022-jpg/kosif-atlas): pm-ai-shipping/shipping-artifacts (#11601) · theme compliance-industry · 1 supporting skills · verifier read: skills/2876-pm-ai-shipping/11601-shipping-artifacts",
+  "atlas": {
+   "ids": [
+    "11601"
+   ],
+   "examples": [
+    {
+     "id": "11601",
+     "plugin": "pm-ai-shipping",
+     "skill": "shipping-artifacts",
+     "url": "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/2876-pm-ai-shipping/11601-shipping-artifacts"
+    }
+   ],
+   "theme": "compliance-industry",
+   "risk_notes": "Text only.",
+   "kosif_overlap_ids": [],
+   "stage": "extracted",
+   "verified_by": "b021-compliance-industry-1.json"
+  }
+ },
+ {
+  "id": "ACODE-176",
+  "family": "atlas-code",
+  "domain": "code",
+  "name_ar": "تجهيز حزم الامتثال لأرقام Twilio",
+  "name_en": "Twilio regulatory bundle provisioning",
+  "status": "documented",
+  "what": "استعلام اللوائح وإنشاء المستخدم والمستندات وتقييم الحزمة وتقديمها. — Query regulations, create end-user and documents, evaluate and submit a bundle for international numbers.",
+  "when": "Need an international Twilio number requiring regulatory approval.",
+  "how": "1) GET Regulations by IsoCountry, NumberType, EndUserType. 2) POST EndUser. 3) Upload Supporting Documents. 4) Assign items to Bundle. 5) Evaluate, fix failures, submit; update on regulation change. Credentials from env.",
+  "params": "country, number type",
+  "install": "",
+  "requires": [],
+  "license": "method paraphrased from Atlas skills under MIT/Apache-2.0; the skills keep their own licenses — see each folder's SOURCE.md",
+  "proof": [
+   "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/2721-twilio-developer-kit/10496-twilio-regulatory-compliance-bundles",
+   "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/108-airwallex-dev/271-airwallex-kyc"
+  ],
+  "proof_scope": "url",
+  "styles": [],
+  "tags": [
+   "twilio",
+   "KYC",
+   "API",
+   "امتثال"
+  ],
+  "section": "القطاعات المنظّمة — Regulated industries & domain expertise",
+  "source": "KOSIF Atlas mining 2026-10-20 (https://github.com/kosif199022-jpg/kosif-atlas): twilio-developer-kit/twilio-regulatory-compliance-bundles (#10496); airwallex-dev/airwallex-kyc (#271) · theme compliance-industry · 2 supporting skills · verifier read: skills/2721-twilio-developer-kit/10496-twilio-regulatory-compliance-bundles, skills/108-airwallex-dev/271-airwallex-kyc",
+  "atlas": {
+   "ids": [
+    "271",
+    "10496"
+   ],
+   "examples": [
+    {
+     "id": "10496",
+     "plugin": "twilio-developer-kit",
+     "skill": "twilio-regulatory-compliance-bundles",
+     "url": "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/2721-twilio-developer-kit/10496-twilio-regulatory-compliance-bundles"
+    },
+    {
+     "id": "271",
+     "plugin": "airwallex-dev",
+     "skill": "airwallex-kyc",
+     "url": "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/108-airwallex-dev/271-airwallex-kyc"
+    }
+   ],
+   "theme": "compliance-industry",
+   "risk_notes": "Calls live APIs with account tokens; do not run blindly.",
+   "kosif_overlap_ids": [],
+   "stage": "extracted",
+   "verified_by": "b021-compliance-industry-1.json"
+  }
+ },
+ {
+  "id": "ACODE-177",
+  "family": "atlas-code",
+  "domain": "code",
   "name_ar": "مخطط تسلسل موثق من نقطة دخول الكود",
   "name_en": "Cited sequence diagram from code entry point",
   "status": "documented",
@@ -9064,8 +10073,7 @@
   "params": "entry point, depth",
   "install": "",
   "requires": [
-   "git",
-   "claude:tools"
+   "npm:mermaid"
   ],
   "license": "method paraphrased from Atlas skills under MIT; the skills keep their own licenses — see each folder's SOURCE.md",
   "proof": [
@@ -9110,7 +10118,7 @@
   }
  },
  {
-  "id": "ACODE-159",
+  "id": "ACODE-178",
   "family": "atlas-code",
   "domain": "code",
   "name_ar": "البحث في مكتبة المكونات بسكربت مساعد",
@@ -9161,7 +10169,7 @@
   }
  },
  {
-  "id": "ACODE-160",
+  "id": "ACODE-179",
   "family": "atlas-code",
   "domain": "code",
   "name_ar": "بوابة جودة التصميم في CI",
@@ -9172,10 +10180,7 @@
   "how": "1. Commit a reviewed policy and baseline of accepted debt. 2. Run the CI command locally producing SARIF plus a human report. 3. Add a GitHub Actions workflow on pull_request with contents:read and security-events:write. 4. Prove it passes on baseline and fails on a seeded regression. 5. Hand off threshold, suppressed count and artifact paths.",
   "params": "",
   "install": "",
-  "requires": [
-   "gh",
-   "node"
-  ],
+  "requires": [],
   "license": "method paraphrased from Atlas skills under MIT; the skills keep their own licenses — see each folder's SOURCE.md",
   "proof": [
    "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/3029-memoire/12948-enforce-design-ci"
@@ -9211,7 +10216,7 @@
   }
  },
  {
-  "id": "ACODE-161",
+  "id": "ACODE-180",
   "family": "atlas-code",
   "domain": "code",
   "name_ar": "بناء نظام رموز التصميم",
@@ -9222,7 +10227,9 @@
   "how": "1) Define primitives (gray/brand ramps) named by value. 2) Define semantic tokens (background/text/accent) referencing primitives. 3) Components use semantic tokens only. 4) Emit CSS variables; override semantics under dark mode. 5) Map into Tailwind/shadcn theme. 6) Name by role, not hue (primary, not blue).",
   "params": "brand colors, scales, framework",
   "install": "",
-  "requires": [],
+  "requires": [
+   "npm:react"
+  ],
   "license": "method paraphrased from Atlas skills under MIT; the skills keep their own licenses — see each folder's SOURCE.md",
   "proof": [
    "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/2406-web-design/9323-design-tokens-scaffolding",
@@ -9268,7 +10275,7 @@
   }
  },
  {
-  "id": "ACODE-162",
+  "id": "ACODE-181",
   "family": "atlas-code",
   "domain": "code",
   "name_ar": "فحص القيم الصلبة واستبدالها برموز",
@@ -9325,7 +10332,7 @@
   }
  },
  {
-  "id": "ACODE-163",
+  "id": "ACODE-182",
   "family": "atlas-code",
   "domain": "code",
   "name_ar": "هيكلة مكون React مع shadcn وTailwind وStorybook",
@@ -9337,7 +10344,6 @@
   "params": "component name",
   "install": "",
   "requires": [
-   "node",
    "npm:react"
   ],
   "license": "method paraphrased from Atlas skills under MIT; the skills keep their own licenses — see each folder's SOURCE.md",
@@ -9396,7 +10402,7 @@
   }
  },
  {
-  "id": "ACODE-164",
+  "id": "ACODE-183",
   "family": "atlas-code",
   "domain": "code",
   "name_ar": "إعداد shadcn وUnoCSS لتنسيق المكونات",
@@ -9408,7 +10414,6 @@
   "params": "",
   "install": "npx shadcn@latest init -d",
   "requires": [
-   "node",
    "npm:react"
   ],
   "license": "method paraphrased from Atlas skills under MIT; the skills keep their own licenses — see each folder's SOURCE.md",
@@ -9458,7 +10463,7 @@
   }
  },
  {
-  "id": "ACODE-165",
+  "id": "ACODE-184",
   "family": "atlas-code",
   "domain": "code",
   "name_ar": "قواعد تركيب shadcn وTailwind",
@@ -9470,7 +10475,7 @@
   "params": "",
   "install": "npx shadcn@latest info --json",
   "requires": [
-   "node"
+   "npm:react"
   ],
   "license": "method paraphrased from Atlas skills under MIT / Apache-2.0; the skills keep their own licenses — see each folder's SOURCE.md",
   "proof": [
@@ -9519,7 +10524,7 @@
   }
  },
  {
-  "id": "ACODE-166",
+  "id": "ACODE-185",
   "family": "atlas-code",
   "domain": "code",
   "name_ar": "فاحص وصولية HTML مع بقايا يدوية",
@@ -9531,7 +10536,7 @@
   "params": "",
   "install": "",
   "requires": [
-   "python3"
+   "npm:axe"
   ],
   "license": "method paraphrased from Atlas skills under MIT; the skills keep their own licenses — see each folder's SOURCE.md",
   "proof": [
@@ -9570,7 +10575,7 @@
   }
  },
  {
-  "id": "ACODE-167",
+  "id": "ACODE-186",
   "family": "atlas-code",
   "domain": "code",
   "name_ar": "مراجعة الوصولية وفق WCAG",
@@ -9582,7 +10587,8 @@
   "params": "url or code",
   "install": "",
   "requires": [
-   "npm:axe"
+   "npm:axe",
+   "npm:pa11y"
   ],
   "license": "method paraphrased from Atlas skills under MIT; the skills keep their own licenses — see each folder's SOURCE.md",
   "proof": [
@@ -9632,7 +10638,7 @@
   }
  },
  {
-  "id": "ACODE-168",
+  "id": "ACODE-187",
   "family": "atlas-code",
   "domain": "code",
   "name_ar": "بيفي: ECS وتدفق الحالات وخط الأصول",
@@ -9643,9 +10649,7 @@
   "how": "1) Model components/resources and queries; use change detection. 2) AppState enum with OnEnter/OnExit and state-scoped cleanup. 3) Typed asset catalog, validate paths, loading state. 4) Move monsters/items/loot to Serde data files with validation. 5) Plan small playable slices with acceptance checks.",
   "params": "",
   "install": "",
-  "requires": [
-   "node"
-  ],
+  "requires": [],
   "license": "method paraphrased from Atlas skills under MIT; the skills keep their own licenses — see each folder's SOURCE.md",
   "proof": [
    "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/2137-bevy-plugin/7587-bevy-ecs-patterns",
@@ -9693,7 +10697,7 @@
   }
  },
  {
-  "id": "ACODE-169",
+  "id": "ACODE-188",
   "family": "atlas-code",
   "domain": "code",
   "name_ar": "حزمة ألعاب المتصفح وPhaser",
@@ -9705,7 +10709,7 @@
   "params": "",
   "install": "",
   "requires": [
-   "node"
+   "npm:esbuild"
   ],
   "license": "method paraphrased from Atlas skills under MIT/Apache-2.0; the skills keep their own licenses — see each folder's SOURCE.md",
   "proof": [
@@ -9751,7 +10755,7 @@
   }
  },
  {
-  "id": "ACODE-170",
+  "id": "ACODE-189",
   "family": "atlas-code",
   "domain": "code",
   "name_ar": "فيزياء خطوة ثابتة وكشف تصادم",
@@ -9806,7 +10810,7 @@
   }
  },
  {
-  "id": "ACODE-171",
+  "id": "ACODE-190",
   "family": "atlas-code",
   "domain": "code",
   "name_ar": "اختيار تمثيل الهندسة وSDF وتحويل الشبكات",
@@ -9817,9 +10821,7 @@
   "how": "1) List needs: render, collision, edit. 2) Pick mesh, SDF, voxel or curve. 3) Plan conversion keeping gameplay fidelity. 4) Check coordinate spaces and matrices.",
   "params": "",
   "install": "",
-  "requires": [
-   "pip:numpy"
-  ],
+  "requires": [],
   "license": "method paraphrased from Atlas skills under MIT; the skills keep their own licenses — see each folder's SOURCE.md",
   "proof": [
    "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/2199-lvtd-skills/8087-game-sdf-and-field-modeling"
@@ -9857,7 +10859,7 @@
   }
  },
  {
-  "id": "ACODE-172",
+  "id": "ACODE-191",
   "family": "atlas-code",
   "domain": "code",
   "name_ar": "أنماط معمارية لـ GDScript في Godot 4",
@@ -9869,7 +10871,7 @@
   "params": "engine version",
   "install": "",
   "requires": [
-   "node"
+   "chromium"
   ],
   "license": "method paraphrased from Atlas skills under MIT; the skills keep their own licenses — see each folder's SOURCE.md",
   "proof": [
@@ -9915,7 +10917,7 @@
   }
  },
  {
-  "id": "ACODE-173",
+  "id": "ACODE-192",
   "family": "atlas-code",
   "domain": "code",
   "name_ar": "فحص محرر Godot الحي عبر سطر الأوامر",
@@ -9926,9 +10928,7 @@
   "how": "1) status/instances to find the editor. 2) Read compact scene tree and selected props. 3) Use undoable node add/set and signal connect, not eval. 4) Run the scene and check error output. 5) Verify UI via ui tree, click and runtime screenshot. 6) Write QA scenarios with requirements per step.",
   "params": "editor pid",
   "install": "",
-  "requires": [
-   "claude:tools"
-  ],
+  "requires": [],
   "license": "method paraphrased from Atlas skills under MIT; the skills keep their own licenses — see each folder's SOURCE.md",
   "proof": [
    "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/2669-hera-godot/10172-live-editor"
@@ -9963,7 +10963,7 @@
   }
  },
  {
-  "id": "ACODE-174",
+  "id": "ACODE-193",
   "family": "atlas-code",
   "domain": "code",
   "name_ar": "حلقة قياس أداء اللعبة",
@@ -9974,10 +10974,7 @@
   "how": "1) Baseline p50/p95 frame, busy, load. 2) Pick one goal metric. 3) One change then paired A/B runs. 4) Require beat noise and unchanged looks. 5) Revert otherwise.",
   "params": "goal metric",
   "install": "",
-  "requires": [
-   "chromium",
-   "node"
-  ],
+  "requires": [],
   "license": "method paraphrased from Atlas skills under Apache-2.0/MIT; the skills keep their own licenses — see each folder's SOURCE.md",
   "proof": [
    "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/1511-homie/3895-perf",
@@ -10021,7 +11018,7 @@
   }
  },
  {
-  "id": "ACODE-175",
+  "id": "ACODE-194",
   "family": "atlas-code",
   "domain": "code",
   "name_ar": "وحدة DOTS وأتمتة محركات Unity وUnreal",
@@ -10033,7 +11030,7 @@
   "params": "engine",
   "install": "",
   "requires": [
-   "claude:tools"
+   "python3"
   ],
   "license": "method paraphrased from Atlas skills under MIT; the skills keep their own licenses — see each folder's SOURCE.md",
   "proof": [
@@ -10079,7 +11076,7 @@
   }
  },
  {
-  "id": "ACODE-176",
+  "id": "ACODE-195",
   "family": "atlas-code",
   "domain": "code",
   "name_ar": "تصنيف نتائج regex قبل الاستبدال الجماعي",
@@ -10125,7 +11122,7 @@
   }
  },
  {
-  "id": "ACODE-177",
+  "id": "ACODE-196",
   "family": "atlas-code",
   "domain": "code",
   "name_ar": "فحص الكود الميت وتنظيف الاستيراد",
@@ -10173,7 +11170,7 @@
   }
  },
  {
-  "id": "ACODE-178",
+  "id": "ACODE-197",
   "family": "atlas-code",
   "domain": "code",
   "name_ar": "إضافة رمز تشخيص منظم لمكتبة JS",
@@ -10184,9 +11181,7 @@
   "how": "1) Grep defineDiagnostics to find the codes object. 2) Code = PREFIX_XNNNN, X area B/R/C/D, next free number; never reuse. 3) Add why (required, string or typed fn), optional fix and docs. 4) Pass cause/sources only at call site. 5) Report with diagnostics.CODE(params) or throw it.",
   "params": "",
   "install": "",
-  "requires": [
-   "node"
-  ],
+  "requires": [],
   "license": "method paraphrased from Atlas skills under MIT; the skills keep their own licenses — see each folder's SOURCE.md",
   "proof": [
    "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/2916-nostics/12103-add-diagnostic"
@@ -10223,7 +11218,7 @@
   }
  },
  {
-  "id": "ACODE-179",
+  "id": "ACODE-198",
   "family": "atlas-code",
   "domain": "code",
   "name_ar": "إدارة مهام todo.md عبر سكربتات",
@@ -10273,7 +11268,7 @@
   }
  },
  {
-  "id": "ACODE-180",
+  "id": "ACODE-199",
   "family": "atlas-code",
   "domain": "code",
   "name_ar": "مزامنة متتبع الميزات مع TODO",
@@ -10319,7 +11314,7 @@
   }
  },
  {
-  "id": "ACODE-181",
+  "id": "ACODE-200",
   "family": "atlas-code",
   "domain": "code",
   "name_ar": "تقسيم التغييرات إلى commits ذرية",
@@ -10386,7 +11381,7 @@
   }
  },
  {
-  "id": "ACODE-182",
+  "id": "ACODE-201",
   "family": "atlas-code",
   "domain": "code",
   "name_ar": "مراقبة PR حتى يصبح جاهزا للدمج",
@@ -10398,8 +11393,7 @@
   "params": "tier, scope, interval",
   "install": "",
   "requires": [
-   "gh",
-   "git"
+   "gh"
   ],
   "license": "method paraphrased from Atlas skills under MIT/Apache; the skills keep their own licenses — see each folder's SOURCE.md",
   "proof": [
@@ -10459,7 +11453,7 @@
   }
  },
  {
-  "id": "ACODE-183",
+  "id": "ACODE-202",
   "family": "atlas-code",
   "domain": "code",
   "name_ar": "سجل تغييرات من الكوميتات",
@@ -10527,7 +11521,7 @@
   }
  },
  {
-  "id": "ACODE-184",
+  "id": "ACODE-203",
   "family": "atlas-code",
   "domain": "code",
   "name_ar": "رسالة commit بصيغة Conventional من التغييرات",
@@ -10621,7 +11615,7 @@
   }
  },
  {
-  "id": "ACODE-185",
+  "id": "ACODE-204",
   "family": "atlas-code",
   "domain": "code",
   "name_ar": "خطافات تمنع أوامر git الخطرة",
@@ -10632,9 +11626,7 @@
   "how": "1) Add PreToolUse Bash hook script. 2) Match patterns push, reset --hard, clean -f, branch -D. 3) Exit nonzero with message. 4) Test hook without disabling it.",
   "params": "",
   "install": "",
-  "requires": [
-   "git"
-  ],
+  "requires": [],
   "license": "method paraphrased from Atlas skills under MIT; the skills keep their own licenses — see each folder's SOURCE.md",
   "proof": [
    "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/?/8435",
@@ -10678,7 +11670,7 @@
   }
  },
  {
-  "id": "ACODE-186",
+  "id": "ACODE-205",
   "family": "atlas-code",
   "domain": "code",
   "name_ar": "محاكاة تعارضات قائمة الدمج",
@@ -10744,7 +11736,7 @@
   }
  },
  {
-  "id": "ACODE-187",
+  "id": "ACODE-206",
   "family": "atlas-code",
   "domain": "code",
   "name_ar": "مراقبة طلب الدمج حتى الدمج",
@@ -10756,7 +11748,7 @@
   "params": "pr",
   "install": "",
   "requires": [
-   "gh"
+   "mcp:github"
   ],
   "license": "method paraphrased from Atlas skills under MIT; the skills keep their own licenses — see each folder's SOURCE.md",
   "proof": [
@@ -10814,7 +11806,7 @@
   }
  },
  {
-  "id": "ACODE-188",
+  "id": "ACODE-207",
   "family": "atlas-code",
   "domain": "code",
   "name_ar": "وصف PR من الفروقات وقالب المستودع",
@@ -10827,7 +11819,8 @@
   "install": "",
   "requires": [
    "git",
-   "gh"
+   "gh",
+   "mcp:github"
   ],
   "license": "method paraphrased from Atlas skills under MIT/Apache; the skills keep their own licenses — see each folder's SOURCE.md",
   "proof": [
@@ -10887,7 +11880,7 @@
   }
  },
  {
-  "id": "ACODE-189",
+  "id": "ACODE-208",
   "family": "atlas-code",
   "domain": "code",
   "name_ar": "فتح طلب دمج بوصف واضح",
@@ -10899,8 +11892,7 @@
   "params": "draft=true",
   "install": "",
   "requires": [
-   "gh",
-   "git"
+   "gh"
   ],
   "license": "method paraphrased from Atlas skills under MIT; the skills keep their own licenses — see each folder's SOURCE.md",
   "proof": [
@@ -10958,7 +11950,7 @@
   }
  },
  {
-  "id": "ACODE-190",
+  "id": "ACODE-209",
   "family": "atlas-code",
   "domain": "code",
   "name_ar": "إزالة أسرار دُفعت من السجل المستضاف",
@@ -10970,8 +11962,8 @@
   "params": "",
   "install": "",
   "requires": [
-   "gh",
-   "git"
+   "git",
+   "gh"
   ],
   "license": "method paraphrased from Atlas skills under MIT; the skills keep their own licenses — see each folder's SOURCE.md",
   "proof": [
@@ -11016,7 +12008,7 @@
   }
  },
  {
-  "id": "ACODE-191",
+  "id": "ACODE-210",
   "family": "atlas-code",
   "domain": "code",
   "name_ar": "إصدار نسخة مع سجل التغييرات والوسم",
@@ -11027,10 +12019,7 @@
   "how": "1) Preconditions: clean tree, default branch up to date, Unreleased non-empty, last tag matches version file. 2) Bump: breaking/Removed major, feature minor, fix patch (pre-1.0 shifts down). 3) git switch -c chore/release-X.Y.Z; change every version copy, regenerate lockfile with project tool. 4) Rename Unreleased to [X.Y.Z] - date, add fresh Unreleased, fix compare links. 5) Commit chore(release), PR, squash merge, tag, gh release. Defer to release-please/changesets PR if present; never merge with --admin; ask before push.",
   "params": "version?",
   "install": "",
-  "requires": [
-   "git",
-   "gh"
-  ],
+  "requires": [],
   "license": "method paraphrased from Atlas skills under MIT; the skills keep their own licenses — see each folder's SOURCE.md",
   "proof": [
    "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/3167-cut-release/13496-cut-release",
@@ -11085,7 +12074,7 @@
   }
  },
  {
-  "id": "ACODE-192",
+  "id": "ACODE-211",
   "family": "atlas-code",
   "domain": "code",
   "name_ar": "حل تعارضات الدمج وإعادة التأسيس",
@@ -11151,7 +12140,7 @@
   }
  },
  {
-  "id": "ACODE-193",
+  "id": "ACODE-212",
   "family": "atlas-code",
   "domain": "code",
   "name_ar": "تقسيم فرع إلى فروع بكوميت واحد",
@@ -11216,7 +12205,7 @@
   }
  },
  {
-  "id": "ACODE-194",
+  "id": "ACODE-213",
   "family": "atlas-code",
   "domain": "code",
   "name_ar": "طلبات دمج متراكبة عبر gh stack",
@@ -11227,10 +12216,7 @@
   "how": "1) Check tooling readiness (gh stack). 2) Submit: stage specific files, conventional commit, gh stack submit --auto (draft; --open to publish). 3) gh stack sync to rebase on trunk, prune merged. 4) Amend folds working-tree changes into current commit and resubmits. 5) gh stack merge; cleanup unstacks. Alternative: git-chain for local chains.",
   "params": "",
   "install": "",
-  "requires": [
-   "gh",
-   "git"
-  ],
+  "requires": [],
   "license": "method paraphrased from Atlas skills under MIT; the skills keep their own licenses — see each folder's SOURCE.md",
   "proof": [
    "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/2072-github-workflow/7312-github-stack-submit",
@@ -11286,7 +12272,7 @@
   }
  },
  {
-  "id": "ACODE-195",
+  "id": "ACODE-214",
   "family": "atlas-code",
   "domain": "code",
   "name_ar": "طلبات دمج متراكمة مع Graphite وMergify",
@@ -11298,8 +12284,7 @@
   "params": "trunk, stack scope",
   "install": "npm i -g @withgraphite/graphite-cli",
   "requires": [
-   "git",
-   "gh"
+   "node"
   ],
   "license": "method paraphrased from Atlas skills under MIT/Apache; the skills keep their own licenses — see each folder's SOURCE.md",
   "proof": [
@@ -11359,7 +12344,7 @@
   }
  },
  {
-  "id": "ACODE-196",
+  "id": "ACODE-215",
   "family": "atlas-code",
   "domain": "code",
   "name_ar": "مسار من issue إلى PR بأشجار عمل معزولة",
@@ -11433,7 +12418,7 @@
   }
  },
  {
-  "id": "ACODE-197",
+  "id": "ACODE-216",
   "family": "atlas-code",
   "domain": "code",
   "name_ar": "إدارة worktree وتنظيفها بأمان",
@@ -11499,1077 +12484,6 @@
    "kosif_overlap_ids": [],
    "stage": "extracted",
    "verified_by": "b042-git-release-1.json"
-  }
- },
- {
-  "id": "ACODE-198",
-  "family": "atlas-code",
-  "domain": "code",
-  "name_ar": "تصميم تطبيق Agent SDK وخطافاته",
-  "name_en": "Agent SDK app and hooks design",
-  "status": "documented",
-  "what": "تضمين حلقة وكيل في الكود مع أدوات وتسليمات وحواجز وخطافات دورة الحياة. — Embed an agent loop in code with tools, handoffs, guardrails and lifecycle hooks.",
-  "when": "Building a production agent or custom agent runner.",
-  "how": "1) Choose SDK (Claude Agent SDK, OpenAI Agents, Cloudflare Agents, Vercel AI SDK). 2) Define tools with schemas. 3) Add handoffs and guardrails. 4) Pick hooks (PreToolUse, PostToolUse, Stop) for policy. 5) Cap turns and budget.",
-  "params": "",
-  "install": "",
-  "requires": [
-   "node"
-  ],
-  "license": "method paraphrased from Atlas skills under Apache-2.0/MIT; the skills keep their own licenses — see each folder's SOURCE.md",
-  "proof": [
-   "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/15-ai-tooling/23-agent-sdk-builder",
-   "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/2254-claude-app-engineering/8580-agent-sdk-hook-design",
-   "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/2103-agent-dev-kit/7471-openai-agents-sdk"
-  ],
-  "proof_scope": "url",
-  "styles": [],
-  "tags": [
-   "agent-sdk",
-   "hooks",
-   "agents",
-   "وكلاء",
-   "خطافات"
-  ],
-  "section": "هندسة النماذج اللغوية — LLM & AI engineering",
-  "source": "KOSIF Atlas mining 2026-10-20 (https://github.com/kosif199022-jpg/kosif-atlas): ai-tooling/agent-sdk-builder (#23); claude-app-engineering/agent-sdk-hook-design (#8580); agent-dev-kit/openai-agents-sdk (#7471) · theme ai-llm-engineering · 6 supporting skills · verifier read: skills/15-ai-tooling/23-agent-sdk-builder, skills/2254-claude-app-engineering/8580-agent-sdk-hook-design, skills/2103-agent-dev-kit/7471-openai-agents-sdk",
-  "atlas": {
-   "ids": [
-    "23",
-    "3357",
-    "7471",
-    "8580",
-    "11676",
-    "14697"
-   ],
-   "examples": [
-    {
-     "id": "23",
-     "plugin": "ai-tooling",
-     "skill": "agent-sdk-builder",
-     "url": "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/15-ai-tooling/23-agent-sdk-builder"
-    },
-    {
-     "id": "8580",
-     "plugin": "claude-app-engineering",
-     "skill": "agent-sdk-hook-design",
-     "url": "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/2254-claude-app-engineering/8580-agent-sdk-hook-design"
-    },
-    {
-     "id": "7471",
-     "plugin": "agent-dev-kit",
-     "skill": "openai-agents-sdk",
-     "url": "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/2103-agent-dev-kit/7471-openai-agents-sdk"
-    }
-   ],
-   "theme": "ai-llm-engineering",
-   "risk_notes": "Agents execute tools; sandbox them.",
-   "kosif_overlap_ids": [],
-   "stage": "extracted",
-   "verified_by": "b007-ai-llm-engineering-1.json"
-  }
- },
- {
-  "id": "ACODE-199",
-  "family": "atlas-code",
-  "domain": "code",
-  "name_ar": "حكم LLM معايَر ومدقَّق التحيز",
-  "name_en": "Calibrated, bias-audited LLM-as-judge",
-  "status": "documented",
-  "what": "تصميم حكم LLM بمعايير مرسّاة وقرار منظم ومعايرة مقابل التقييم البشري. — Design an LLM judge with anchored rubric levels, structured verdicts, pinned model and human-agreement calibration.",
-  "when": "Any time an LLM grades outputs or A/B pairs before its numbers are trusted.",
-  "how": "1) Define per-criterion anchored levels (0/1/2), not 1-10. 2) Judge returns {criterion: level, reason}. 3) Prefer pairwise with randomized A/B side. 4) Pin judge model, version, temperature and log them. 5) Label 30-50 samples by humans, compute raw agreement or Cohen kappa, fix rubric if low. 6) Audit position, verbosity, self-preference, leniency drift; recalibrate on any judge/rubric change.",
-  "params": "rubric criteria; sample size 30-50",
-  "install": "",
-  "requires": [],
-  "license": "method paraphrased from Atlas skills under MIT; the skills keep their own licenses — see each folder's SOURCE.md",
-  "proof": [
-   "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/2328-llm-evaluation-engineering/8937-build-llm-judge"
-  ],
-  "proof_scope": "url",
-  "styles": [],
-  "tags": [
-   "llm-judge",
-   "evaluation",
-   "تقييم",
-   "rubric"
-  ],
-  "section": "هندسة النماذج اللغوية — LLM & AI engineering",
-  "source": "KOSIF Atlas mining 2026-10-20 (https://github.com/kosif199022-jpg/kosif-atlas): llm-evaluation-engineering/build-llm-judge (#8937) · theme ai-llm-engineering · 3 supporting skills · verifier read: skills/2328-llm-evaluation-engineering/8937-build-llm-judge, ",
-  "atlas": {
-   "ids": [
-    "8223",
-    "8937",
-    "12315"
-   ],
-   "examples": [
-    {
-     "id": "8937",
-     "plugin": "llm-evaluation-engineering",
-     "skill": "build-llm-judge",
-     "url": "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/2328-llm-evaluation-engineering/8937-build-llm-judge"
-    }
-   ],
-   "theme": "ai-llm-engineering",
-   "risk_notes": "none (instruction-only)",
-   "kosif_overlap_ids": [],
-   "stage": "extracted",
-   "verified_by": "b008-ai-llm-engineering-2.json"
-  }
- },
- {
-  "id": "ACODE-200",
-  "family": "atlas-code",
-  "domain": "code",
-  "name_ar": "تحصين حدود المعدل وإعادة المحاولة",
-  "name_en": "Claude API rate-limit and retry hardening",
-  "status": "documented",
-  "what": "إضافة تحكم بالمعدل وتراجع أسي وقائمة جاهزية إنتاج لاستدعاءات واجهة Claude. — Add header-aware throttling, backoff and production checklist for Claude API calls.",
-  "when": "429/529 errors, load scaling, preparing LLM feature for production.",
-  "how": "1) Know RPM/ITPM/OTPM; cached input not counted in ITPM. 2) Set SDK max_retries or custom exponential backoff with jitter. 3) Read ratelimit response headers and pace requests. 4) Add circuit breaker, fallback model, queue for batch work. 5) Run prod checklist: keys, logging, budgets, incident runbook.",
-  "params": "",
-  "install": "",
-  "requires": [
-   "pip:anthropic"
-  ],
-  "license": "method paraphrased from Atlas skills under MIT/Apache-2.0; the skills keep their own licenses — see each folder's SOURCE.md",
-  "proof": [
-   "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/1823-anthropic-pack/5001-anth-rate-limits",
-   "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/1823-anthropic-pack/5000-anth-prod-checklist",
-   "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/1823-anthropic-pack/4998-anth-performance-tuning"
-  ],
-  "proof_scope": "url",
-  "styles": [],
-  "tags": [
-   "rate-limit",
-   "retry",
-   "reliability",
-   "حدود-المعدل",
-   "موثوقية"
-  ],
-  "section": "هندسة النماذج اللغوية — LLM & AI engineering",
-  "source": "KOSIF Atlas mining 2026-10-20 (https://github.com/kosif199022-jpg/kosif-atlas): anthropic-pack/anth-rate-limits (#5001); anthropic-pack/anth-prod-checklist (#5000); anthropic-pack/anth-performance-tuning (#4998) · theme ai-llm-engineering · 6 supporting skills · verifier read: skills/1823-anthropic-pack/5001-anth-rate-limits, skills/1823-anthropic-pack/5000-anth-prod-checklist, skills/1823-anthropic-pack/4998-anth-performance-tuning",
-  "atlas": {
-   "ids": [
-    "4981",
-    "4993",
-    "4998",
-    "5000",
-    "5001",
-    "5003"
-   ],
-   "examples": [
-    {
-     "id": "5001",
-     "plugin": "anthropic-pack",
-     "skill": "anth-rate-limits",
-     "url": "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/1823-anthropic-pack/5001-anth-rate-limits"
-    },
-    {
-     "id": "5000",
-     "plugin": "anthropic-pack",
-     "skill": "anth-prod-checklist",
-     "url": "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/1823-anthropic-pack/5000-anth-prod-checklist"
-    },
-    {
-     "id": "4998",
-     "plugin": "anthropic-pack",
-     "skill": "anth-performance-tuning",
-     "url": "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/1823-anthropic-pack/4998-anth-performance-tuning"
-    }
-   ],
-   "theme": "ai-llm-engineering",
-   "risk_notes": "Pure guidance.",
-   "kosif_overlap_ids": [],
-   "stage": "extracted",
-   "verified_by": "b007-ai-llm-engineering-1.json"
-  }
- },
- {
-  "id": "ACODE-201",
-  "family": "atlas-code",
-  "domain": "code",
-  "name_ar": "حزمة تقييم LLM ثابتة بمجموعة ذهبية",
-  "name_en": "Committed LLM eval suite with goldens",
-  "status": "documented",
-  "what": "بناء حلقة تقييم pytest ثابتة بأمثلة ذهبية ومقاييس وتحسين متكرر من الإخفاقات. — Build a committed pytest eval loop with generated goldens, metrics and iterative failure fixing.",
-  "when": "Evaluating agents, RAG or chatbots; adding evals; regression-testing prompts.",
-  "how": "1) Inspect app and existing eval code. 2) Reuse or generate goldens (deepeval generate). 3) Keep metrics in metrics.py with thresholds. 4) Run deepeval test run, not raw pytest. 5) Inspect failing traces, patch prompt/tool/retrieval, rerun (default 5 rounds). Alternative: inspect-ai/lighteval for Hub models.",
-  "params": "",
-  "install": "pip install deepeval",
-  "requires": [
-   "python3"
-  ],
-  "license": "method paraphrased from Atlas skills under MIT/Apache-2.0; the skills keep their own licenses — see each folder's SOURCE.md",
-  "proof": [
-   "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/1207-deepeval/2856-deepeval",
-   "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/1514-huggingface-skills/3932-huggingface-community-evals",
-   "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/1075-forkmind/2384-forkmind"
-  ],
-  "proof_scope": "url",
-  "styles": [],
-  "tags": [
-   "evals",
-   "deepeval",
-   "testing",
-   "تقييم",
-   "اختبار"
-  ],
-  "section": "هندسة النماذج اللغوية — LLM & AI engineering",
-  "source": "KOSIF Atlas mining 2026-10-20 (https://github.com/kosif199022-jpg/kosif-atlas): deepeval/deepeval (#2856); huggingface-skills/huggingface-community-evals (#3932); forkmind/forkmind (#2384) · theme ai-llm-engineering · 5 supporting skills · verifier read: skills/1207-deepeval/2856-deepeval, skills/1514-huggingface-skills/3932-huggingface-community-evals, skills/1075-forkmind/2384-forkmind",
-  "atlas": {
-   "ids": [
-    "2384",
-    "2855",
-    "2856",
-    "3932",
-    "13903"
-   ],
-   "examples": [
-    {
-     "id": "2856",
-     "plugin": "deepeval",
-     "skill": "deepeval",
-     "url": "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/1207-deepeval/2856-deepeval"
-    },
-    {
-     "id": "3932",
-     "plugin": "huggingface-skills",
-     "skill": "huggingface-community-evals",
-     "url": "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/1514-huggingface-skills/3932-huggingface-community-evals"
-    },
-    {
-     "id": "2384",
-     "plugin": "forkmind",
-     "skill": "forkmind",
-     "url": "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/1075-forkmind/2384-forkmind"
-    }
-   ],
-   "theme": "ai-llm-engineering",
-   "risk_notes": "Runs model calls; optional upload to Confident AI.",
-   "kosif_overlap_ids": [],
-   "stage": "extracted",
-   "verified_by": "b007-ai-llm-engineering-1.json"
-  }
- },
- {
-  "id": "ACODE-202",
-  "family": "atlas-code",
-  "domain": "code",
-  "name_ar": "رصد تطبيقات الذكاء التوليدي بـ OpenTelemetry",
-  "name_en": "GenAI observability with OpenTelemetry",
-  "status": "documented",
-  "what": "تجهيز تطبيقات LLM بمسارات OTel لرصد الرموز والتكلفة والزمن وخطوات الوكيل. — Instrument LLM apps with OTel spans for tokens, cost, latency and agent steps.",
-  "when": "Debugging LLM latency/cost, tracing agents or RAG.",
-  "how": "1) Wrap each LLM/tool call in a span with GenAI semantic attributes (model, provider, input/output tokens). 2) Decide content-capture policy for prompts. 3) Export OTLP to backend. 4) Build queries for cost by prompt/model and cache. 5) Alert on errors and latency.",
-  "params": "",
-  "install": "",
-  "requires": [
-   "network"
-  ],
-  "license": "method paraphrased from Atlas skills under Apache-2.0/MIT; the skills keep their own licenses — see each folder's SOURCE.md",
-  "proof": [
-   "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/1512-honeycomb/3908-otel-genai-instrumentation",
-   "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/1368-dynatrace/3126-dt-obs-genai",
-   "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/1343-dominodatalab/3082-domino-genai-tracing"
-  ],
-  "proof_scope": "url",
-  "styles": [],
-  "tags": [
-   "observability",
-   "otel",
-   "tracing",
-   "رصد",
-   "تتبع"
-  ],
-  "section": "هندسة النماذج اللغوية — LLM & AI engineering",
-  "source": "KOSIF Atlas mining 2026-10-20 (https://github.com/kosif199022-jpg/kosif-atlas): honeycomb/otel-genai-instrumentation (#3908); dynatrace/dt-obs-genai (#3126); dominodatalab/domino-genai-tracing (#3082) · theme ai-llm-engineering · 6 supporting skills · verifier read: skills/1512-honeycomb/3908-otel-genai-instrumentation, skills/1368-dynatrace/3126-dt-obs-genai, skills/1343-dominodatalab/3082-domino-genai-tracing",
-  "atlas": {
-   "ids": [
-    "2384",
-    "2854",
-    "2855",
-    "3082",
-    "3126",
-    "3908"
-   ],
-   "examples": [
-    {
-     "id": "3908",
-     "plugin": "honeycomb",
-     "skill": "otel-genai-instrumentation",
-     "url": "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/1512-honeycomb/3908-otel-genai-instrumentation"
-    },
-    {
-     "id": "3126",
-     "plugin": "dynatrace",
-     "skill": "dt-obs-genai",
-     "url": "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/1368-dynatrace/3126-dt-obs-genai"
-    },
-    {
-     "id": "3082",
-     "plugin": "dominodatalab",
-     "skill": "domino-genai-tracing",
-     "url": "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/1343-dominodatalab/3082-domino-genai-tracing"
-    }
-   ],
-   "theme": "ai-llm-engineering",
-   "risk_notes": "Exports telemetry over network; may contain prompt data.",
-   "kosif_overlap_ids": [],
-   "stage": "extracted",
-   "verified_by": "b007-ai-llm-engineering-1.json"
-  }
- },
- {
-  "id": "ACODE-203",
-  "family": "atlas-code",
-  "domain": "code",
-  "name_ar": "خط RAG هجين مع إحالات",
-  "name_en": "Hybrid-search RAG pipeline with citations",
-  "status": "documented",
-  "what": "تصميم خط RAG بتقطيع أب/ابن وبحث هجين وإعادة ترتيب وإجابات موثقة بالمصادر. — Design a RAG pipeline with parent/child chunking, hybrid dense+BM25 retrieval, rerank and cited answers.",
-  "when": "User wants document Q&A, knowledge-base search or retrieval as an agent tool.",
-  "how": "1) Clarify doc types, query types, latency, volume (pgvector vs Qdrant). 2) Separate ingest module: load, parent/child chunk with metadata, embed, upsert. 3) Collection with dense plus sparse; fuse with RRF. 4) Query: metadata filter, hybrid top-20, fetch parents, rerank to top-5. 5) Generate with numbered context, citations, answer-only-from-context. 6) Golden Q/A set before shipping.",
-  "params": "",
-  "install": "",
-  "requires": [
-   "network"
-  ],
-  "license": "method paraphrased from Atlas skills under MIT/Apache-2.0; the skills keep their own licenses — see each folder's SOURCE.md",
-  "proof": [
-   "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/2103-agent-dev-kit/7472-rag-pipeline",
-   "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/895-brightdata-plugin/2049-rag-pipeline",
-   "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/1841-cohere-pack/5390-cohere-core-workflow-a"
-  ],
-  "proof_scope": "url",
-  "styles": [],
-  "tags": [
-   "RAG",
-   "retrieval",
-   "hybrid-search",
-   "بحث-دلالي",
-   "تضمين"
-  ],
-  "section": "هندسة النماذج اللغوية — LLM & AI engineering",
-  "source": "KOSIF Atlas mining 2026-10-20 (https://github.com/kosif199022-jpg/kosif-atlas): agent-dev-kit/rag-pipeline (#7472); brightdata-plugin/rag-pipeline (#2049); cohere-pack/cohere-core-workflow-a (#5390) · theme ai-llm-engineering · 7 supporting skills · verifier read: skills/2103-agent-dev-kit/7472-rag-pipeline, skills/895-brightdata-plugin/2049-rag-pipeline, skills/1841-cohere-pack/5390-cohere-core-workflow-a",
-  "atlas": {
-   "ids": [
-    "1563",
-    "2049",
-    "3594",
-    "5390",
-    "7472",
-    "8475",
-    "9778"
-   ],
-   "examples": [
-    {
-     "id": "7472",
-     "plugin": "agent-dev-kit",
-     "skill": "rag-pipeline",
-     "url": "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/2103-agent-dev-kit/7472-rag-pipeline"
-    },
-    {
-     "id": "2049",
-     "plugin": "brightdata-plugin",
-     "skill": "rag-pipeline",
-     "url": "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/895-brightdata-plugin/2049-rag-pipeline"
-    },
-    {
-     "id": "5390",
-     "plugin": "cohere-pack",
-     "skill": "cohere-core-workflow-a",
-     "url": "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/1841-cohere-pack/5390-cohere-core-workflow-a"
-    }
-   ],
-   "theme": "ai-llm-engineering",
-   "risk_notes": "Provider SDK calls and vector DB writes need API keys.",
-   "kosif_overlap_ids": [
-    "AGENT-37"
-   ],
-   "stage": "extracted",
-   "verified_by": "b007-ai-llm-engineering-1.json"
-  }
- },
- {
-  "id": "ACODE-204",
-  "family": "atlas-code",
-  "domain": "code",
-  "name_ar": "تحصين LangChain 1.0 للإنتاج",
-  "name_en": "LangChain 1.0 production hardening",
-  "status": "documented",
-  "what": "تطبيق إعدادات إنتاجية على سلاسل LangChain: middleware وحدود معدل وصلاحيات وأمان ومراقبة. — Apply production defaults to LangChain chains: middleware, rate limits, RBAC, security, observability and prompt versioning.",
-  "when": "Taking a LangChain/LangGraph app to production or diagnosing incidents.",
-  "how": "1) Layered architecture. 2) Composable middleware for retries/guards. 3) Share rate limiter across workers. 4) Tenant isolation and role checks. 5) Defend against prompt injection. 6) LangSmith or OpenTelemetry traces. 7) Prompts versioned like code; deterministic local test loop with fake models.",
-  "params": "",
-  "install": "",
-  "requires": [],
-  "license": "method paraphrased from Atlas skills under MIT; the skills keep their own licenses — see each folder's SOURCE.md",
-  "proof": [],
-  "proof_scope": "url",
-  "styles": [],
-  "tags": [
-   "langchain",
-   "production",
-   "observability",
-   "إنتاج"
-  ],
-  "section": "هندسة النماذج اللغوية — LLM & AI engineering",
-  "source": "KOSIF Atlas mining 2026-10-20 (https://github.com/kosif199022-jpg/kosif-atlas):  · theme ai-llm-engineering · 10 supporting skills · verifier read: , , ",
-  "atlas": {
-   "ids": [
-    "6104",
-    "6106",
-    "6113",
-    "6114",
-    "6117",
-    "6118",
-    "6120",
-    "6121",
-    "6122",
-    "6124"
-   ],
-   "examples": [],
-   "theme": "ai-llm-engineering",
-   "risk_notes": "none (instruction-only)",
-   "kosif_overlap_ids": [],
-   "stage": "extracted",
-   "verified_by": "b008-ai-llm-engineering-2.json"
-  }
- },
- {
-  "id": "ACODE-205",
-  "family": "atlas-code",
-  "domain": "code",
-  "name_ar": "حالة وتدفق وكلاء LangGraph",
-  "name_en": "LangGraph 1.0 agent state and flow",
-  "status": "documented",
-  "what": "بناء وكلاء LangGraph صحيحين بحالة typed ونقاط حفظ وintrrupt بشري وgraphs فرعية. — Build correct LangGraph agents with typed state, checkpointers, thread_id discipline, human interrupts and subgraphs.",
-  "when": "Adding chat memory, approval flows, streaming or subgraphs to a LangGraph agent.",
-  "how": "1) TypedDict state, JSON-safe values only (no datetime/Decimal). 2) Checkpointer by env: MemorySaver dev, SqliteSaver local, PostgresSaver/Async prod. 3) Always pass config configurable thread_id (UUID4 per conversation) or memory silently resets. 4) interrupt_before for approvals. 5) Pick stream_mode messages vs updates. 6) Migrate Postgres checkpoint schema explicitly on upgrade. 7) Use time-travel to debug.",
-  "params": "thread_id strategy",
-  "install": "pip install langgraph langchain-core",
-  "requires": [],
-  "license": "method paraphrased from Atlas skills under MIT; the skills keep their own licenses — see each folder's SOURCE.md",
-  "proof": [
-   "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/1875-langchain-py-pack/6109-langchain-langgraph-checkpointing"
-  ],
-  "proof_scope": "url",
-  "styles": [],
-  "tags": [
-   "langgraph",
-   "agents",
-   "checkpoint",
-   "وكلاء"
-  ],
-  "section": "هندسة النماذج اللغوية — LLM & AI engineering",
-  "source": "KOSIF Atlas mining 2026-10-20 (https://github.com/kosif199022-jpg/kosif-atlas): langchain-py-pack/langchain-langgraph-checkpointing (#6109) · theme ai-llm-engineering · 7 supporting skills · verifier read: skills/1875-langchain-py-pack/6109-langchain-langgraph-checkpointing, , ",
-  "atlas": {
-   "ids": [
-    "2164",
-    "6107",
-    "6108",
-    "6109",
-    "6110",
-    "6111",
-    "6112"
-   ],
-   "examples": [
-    {
-     "id": "6109",
-     "plugin": "langchain-py-pack",
-     "skill": "langchain-langgraph-checkpointing",
-     "url": "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/1875-langchain-py-pack/6109-langchain-langgraph-checkpointing"
-    }
-   ],
-   "theme": "ai-llm-engineering",
-   "risk_notes": "none (instruction-only)",
-   "kosif_overlap_ids": [],
-   "stage": "extracted",
-   "verified_by": "b008-ai-llm-engineering-2.json"
-  }
- },
- {
-  "id": "ACODE-206",
-  "family": "atlas-code",
-  "domain": "code",
-  "name_ar": "تخطيط ضبط نماذج اللغة SFT/DPO",
-  "name_en": "LLM fine-tuning job planning (SFT/DPO/GRPO)",
-  "status": "documented",
-  "what": "اختيار طريقة التدريب وتقدير التكلفة وتشغيل الضبط على وحدات GPU مُدارة. — Choose a training method, estimate cost and run fine-tuning on managed GPUs with monitoring.",
-  "when": "Fine-tuning a language/vision/embedding model.",
-  "how": "1) Pick method: SFT, DPO, GRPO or reward model; Unsloth for low VRAM. 2) Inspect dataset format first. 3) Estimate cost and GPU memory (hf-mem). 4) Submit job with PEP 723 script, include Trackio. 5) Push to Hub; optional GGUF for llama.cpp/Ollama.",
-  "params": "",
-  "install": "",
-  "requires": [
-   "gpu",
-   "python3",
-   "network"
-  ],
-  "license": "method paraphrased from Atlas skills under Apache-2.0/MIT; the skills keep their own licenses — see each folder's SOURCE.md",
-  "proof": [
-   "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/1514-huggingface-skills/3935-huggingface-llm-trainer",
-   "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/2511-azure/9722-finetuning",
-   "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/1514-huggingface-skills/3945-train-sentence-transformers"
-  ],
-  "proof_scope": "url",
-  "styles": [],
-  "tags": [
-   "fine-tuning",
-   "trl",
-   "lora",
-   "ضبط-دقيق",
-   "تدريب"
-  ],
-  "section": "هندسة النماذج اللغوية — LLM & AI engineering",
-  "source": "KOSIF Atlas mining 2026-10-20 (https://github.com/kosif199022-jpg/kosif-atlas): huggingface-skills/huggingface-llm-trainer (#3935); azure/finetuning (#9722); huggingface-skills/train-sentence-transformers (#3945) · theme ai-llm-engineering · 6 supporting skills · verifier read: skills/1514-huggingface-skills/3935-huggingface-llm-trainer, skills/2511-azure/9722-finetuning, skills/1514-huggingface-skills/3945-train-sentence-transformers",
-  "atlas": {
-   "ids": [
-    "1317",
-    "3930",
-    "3935",
-    "3945",
-    "9722",
-    "10845"
-   ],
-   "examples": [
-    {
-     "id": "3935",
-     "plugin": "huggingface-skills",
-     "skill": "huggingface-llm-trainer",
-     "url": "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/1514-huggingface-skills/3935-huggingface-llm-trainer"
-    },
-    {
-     "id": "9722",
-     "plugin": "azure",
-     "skill": "finetuning",
-     "url": "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/2511-azure/9722-finetuning"
-    },
-    {
-     "id": "3945",
-     "plugin": "huggingface-skills",
-     "skill": "train-sentence-transformers",
-     "url": "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/1514-huggingface-skills/3945-train-sentence-transformers"
-    }
-   ],
-   "theme": "ai-llm-engineering",
-   "risk_notes": "Launches paid cloud jobs; scripts use uv.",
-   "kosif_overlap_ids": [],
-   "stage": "extracted",
-   "verified_by": "b007-ai-llm-engineering-1.json"
-  }
- },
- {
-  "id": "ACODE-207",
-  "family": "atlas-code",
-  "domain": "code",
-  "name_ar": "مراقبة LLM وتحليل الإخفاقات",
-  "name_en": "LLM observability and failure triage",
-  "status": "documented",
-  "what": "قياس تطبيقات LLM وفحص التتبعات والتكاليف والإخفاقات في Langfuse أو PostHog. — Instrument LLM apps and investigate traces, costs, clusters and failures in Langfuse or PostHog.",
-  "when": "Debugging production agent traces or setting up LLM analytics.",
-  "how": "1) Instrument SDK to emit traces. 2) Inspect traces by session, latency, exceptions. 3) Cluster usage to spot patterns. 4) Break cost by model/user/trace. 5) Review evaluations (code, LLM judge). 6) Turn recurring failures into datasets.",
-  "params": "",
-  "install": "",
-  "requires": [
-   "network"
-  ],
-  "license": "method paraphrased from Atlas skills under MIT; the skills keep their own licenses — see each folder's SOURCE.md",
-  "proof": [],
-  "proof_scope": "url",
-  "styles": [],
-  "tags": [
-   "observability",
-   "traces",
-   "langfuse",
-   "مراقبة"
-  ],
-  "section": "هندسة النماذج اللغوية — LLM & AI engineering",
-  "source": "KOSIF Atlas mining 2026-10-20 (https://github.com/kosif199022-jpg/kosif-atlas):  · theme ai-llm-engineering · 7 supporting skills · verifier read: , , ",
-  "atlas": {
-   "ids": [
-    "1279",
-    "7558",
-    "12308",
-    "12313",
-    "12316",
-    "12337",
-    "12377"
-   ],
-   "examples": [],
-   "theme": "ai-llm-engineering",
-   "risk_notes": "MCP tools calling external services; 6 py in 12316",
-   "kosif_overlap_ids": [],
-   "stage": "extracted",
-   "verified_by": "b008-ai-llm-engineering-2.json"
-  }
- },
- {
-  "id": "ACODE-208",
-  "family": "atlas-code",
-  "domain": "code",
-  "name_ar": "ترحيل مزود LLM إلى Bedrock",
-  "name_en": "Migrate LLM provider SDK to Bedrock",
-  "status": "documented",
-  "what": "إعادة كتابة استدعاءات مزود إلى مزود آخر ومقارنة جودة المخرجات. — Rewrite OpenAI/Gemini/Anthropic SDK calls to a new provider and compare output quality.",
-  "when": "Switching LLM provider or consolidating on a cloud.",
-  "how": "1) Inventory call sites and features used. 2) Map models and params. 3) Rewrite via unified client. 4) Run a side-by-side eval on a prompt sample. 5) Roll out behind a flag.",
-  "params": "",
-  "install": "",
-  "requires": [],
-  "license": "method paraphrased from Atlas skills under Apache-2.0/MIT; the skills keep their own licenses — see each folder's SOURCE.md",
-  "proof": [
-   "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/367-aws-startup-advisor/1361-llm-to-bedrock",
-   "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/1823-anthropic-pack/4995-anth-migration-deep-dive"
-  ],
-  "proof_scope": "url",
-  "styles": [],
-  "tags": [
-   "migration",
-   "bedrock",
-   "sdk",
-   "ترحيل",
-   "مزود"
-  ],
-  "section": "هندسة النماذج اللغوية — LLM & AI engineering",
-  "source": "KOSIF Atlas mining 2026-10-20 (https://github.com/kosif199022-jpg/kosif-atlas): aws-startup-advisor/llm-to-bedrock (#1361); anthropic-pack/anth-migration-deep-dive (#4995) · theme ai-llm-engineering · 4 supporting skills · verifier read: skills/367-aws-startup-advisor/1361-llm-to-bedrock, skills/1823-anthropic-pack/4995-anth-migration-deep-dive",
-  "atlas": {
-   "ids": [
-    "1316",
-    "1361",
-    "1362",
-    "4995"
-   ],
-   "examples": [
-    {
-     "id": "1361",
-     "plugin": "aws-startup-advisor",
-     "skill": "llm-to-bedrock",
-     "url": "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/367-aws-startup-advisor/1361-llm-to-bedrock"
-    },
-    {
-     "id": "4995",
-     "plugin": "anthropic-pack",
-     "skill": "anth-migration-deep-dive",
-     "url": "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/1823-anthropic-pack/4995-anth-migration-deep-dive"
-    }
-   ],
-   "theme": "ai-llm-engineering",
-   "risk_notes": "Rewrites code; delegates to sibling skill.",
-   "kosif_overlap_ids": [],
-   "stage": "extracted",
-   "verified_by": "b007-ai-llm-engineering-1.json"
-  }
- },
- {
-  "id": "ACODE-209",
-  "family": "atlas-code",
-  "domain": "code",
-  "name_ar": "تفويض متعدد النماذج ورأي ثانٍ",
-  "name_en": "Multi-model delegation and second opinion",
-  "status": "documented",
-  "what": "توجيه المهام إلى نماذج متعددة والحصول على رأي ثانٍ. — Route tasks to Claude, Codex, Gemini, Ollama or local workers and collect second opinions.",
-  "when": "Needing independent review or cheaper worker for a subtask.",
-  "how": "1) Choose worker by task. 2) Check CLI configured. 3) Send bounded prompt. 4) Compare and reconcile. 5) Match model tier to effort per lane.",
-  "params": "",
-  "install": "",
-  "requires": [],
-  "license": "method paraphrased from Atlas skills under MIT; the skills keep their own licenses — see each folder's SOURCE.md",
-  "proof": [],
-  "proof_scope": "url",
-  "styles": [],
-  "tags": [
-   "second-opinion",
-   "orchestration",
-   "نماذج"
-  ],
-  "section": "هندسة النماذج اللغوية — LLM & AI engineering",
-  "source": "KOSIF Atlas mining 2026-10-20 (https://github.com/kosif199022-jpg/kosif-atlas):  · theme ai-llm-engineering · 6 supporting skills · verifier read: , ",
-  "atlas": {
-   "ids": [
-    "1293",
-    "3667",
-    "3668",
-    "3669",
-    "11479",
-    "11482"
-   ],
-   "examples": [],
-   "theme": "ai-llm-engineering",
-   "risk_notes": "executes external CLIs and sends code to third-party models",
-   "kosif_overlap_ids": [],
-   "stage": "extracted",
-   "verified_by": "b008-ai-llm-engineering-2.json"
-  }
- },
- {
-  "id": "ACODE-210",
-  "family": "atlas-code",
-  "domain": "code",
-  "name_ar": "تدقيق ذاكرة الـprompt المؤقتة وإصلاحها",
-  "name_en": "Prompt-cache hit-rate audit and fix",
-  "status": "documented",
-  "what": "تشخيص انخفاض إصابة الكاش من حقول الاستخدام وإصلاح موضع نقاط التوقف. — Diagnose low prompt-cache hit rate from usage fields and fix breakpoint placement.",
-  "when": "Cache hit under 80%, cost spike, or designing a new endpoint.",
-  "how": "1) Read cache_creation_input_tokens and cache_read_input_tokens from usage; hit = read/(read+creation), target >=80%. 2) Diff two raw payloads: tools array mutating, breakpoint below volatile content. 3) Check per-model minimum block size, max 4 breakpoints, TTL (5min vs 1h at 2x creation). 4) Freeze tools/system in constants. 5) Warm-up call, then 10 identical-prefix calls; measure over 1h.",
-  "params": "",
-  "install": "",
-  "requires": [
-   "pip:anthropic"
-  ],
-  "license": "method paraphrased from Atlas skills under MIT/Apache-2.0; the skills keep their own licenses — see each folder's SOURCE.md",
-  "proof": [
-   "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/2254-claude-app-engineering/8585-prompt-caching-audit",
-   "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/1823-anthropic-pack/4984-anth-cost-tuning",
-   "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/2231-ai-rag-engineering/8475-budget-tokens"
-  ],
-  "proof_scope": "url",
-  "styles": [],
-  "tags": [
-   "caching",
-   "cost",
-   "anthropic",
-   "تخزين-مؤقت",
-   "تكلفة"
-  ],
-  "section": "هندسة النماذج اللغوية — LLM & AI engineering",
-  "source": "KOSIF Atlas mining 2026-10-20 (https://github.com/kosif199022-jpg/kosif-atlas): claude-app-engineering/prompt-caching-audit (#8585); anthropic-pack/anth-cost-tuning (#4984); ai-rag-engineering/budget-tokens (#8475) · theme ai-llm-engineering · 4 supporting skills · verifier read: skills/2254-claude-app-engineering/8585-prompt-caching-audit, skills/1823-anthropic-pack/4984-anth-cost-tuning, skills/2231-ai-rag-engineering/8475-budget-tokens",
-  "atlas": {
-   "ids": [
-    "4984",
-    "4998",
-    "8475",
-    "8585"
-   ],
-   "examples": [
-    {
-     "id": "8585",
-     "plugin": "claude-app-engineering",
-     "skill": "prompt-caching-audit",
-     "url": "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/2254-claude-app-engineering/8585-prompt-caching-audit"
-    },
-    {
-     "id": "4984",
-     "plugin": "anthropic-pack",
-     "skill": "anth-cost-tuning",
-     "url": "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/1823-anthropic-pack/4984-anth-cost-tuning"
-    },
-    {
-     "id": "8475",
-     "plugin": "ai-rag-engineering",
-     "skill": "budget-tokens",
-     "url": "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/2231-ai-rag-engineering/8475-budget-tokens"
-    }
-   ],
-   "theme": "ai-llm-engineering",
-   "risk_notes": "Only reads usage; live verification needs API key.",
-   "kosif_overlap_ids": [],
-   "stage": "extracted",
-   "verified_by": "b007-ai-llm-engineering-1.json"
-  }
- },
- {
-  "id": "ACODE-211",
-  "family": "atlas-code",
-  "domain": "code",
-  "name_ar": "دليل بناء وضبط خط RAG",
-  "name_en": "RAG pipeline build and tuning guide",
-  "status": "documented",
-  "what": "بناء خط RAG إنتاجي بإعدادات افتراضية سليمة وترقية كل مرحلة عند ظهور فشل مقيس. — Build a production RAG pipeline from sane defaults and upgrade each stage only against measured failures.",
-  "when": "Building or choosing chunking, embeddings, vector DB, hybrid search or reranking for RAG.",
-  "how": "1) Start: recursive split ~512 tokens with 10-15% overlap. 2) Embed with a value model; keep metric matching training. 3) Vector DB with INT8 quantization. 4) Hybrid dense+sparse fused by RRF. 5) Evaluate with RAGAS from day one. 6) Upgrade by failure: keyword misses add BM25/SPLADE; ambiguous chunks add contextual retrieval; noise add cross-encoder rerank; multi-hop go agentic.",
-  "params": "chunk size; embedding model; vector DB",
-  "install": "",
-  "requires": [
-   "pip:chromadb"
-  ],
-  "license": "method paraphrased from Atlas skills under MIT; the skills keep their own licenses — see each folder's SOURCE.md",
-  "proof": [
-   "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/rag-development"
-  ],
-  "proof_scope": "url",
-  "styles": [],
-  "tags": [
-   "rag",
-   "embeddings",
-   "retrieval",
-   "استرجاع"
-  ],
-  "section": "هندسة النماذج اللغوية — LLM & AI engineering",
-  "source": "KOSIF Atlas mining 2026-10-20 (https://github.com/kosif199022-jpg/kosif-atlas): rag-development/rag-development (#62) · theme ai-llm-engineering · 6 supporting skills · verifier read: skills/rag-development, , ",
-  "atlas": {
-   "ids": [
-    "62",
-    "1759",
-    "1886",
-    "6103",
-    "13278",
-    "13283"
-   ],
-   "examples": [
-    {
-     "id": "62",
-     "plugin": "rag-development",
-     "skill": "rag-development",
-     "url": "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/rag-development"
-    }
-   ],
-   "theme": "ai-llm-engineering",
-   "risk_notes": "none (instruction-only)",
-   "kosif_overlap_ids": [
-    "AGENT-37"
-   ],
-   "stage": "extracted",
-   "verified_by": "b008-ai-llm-engineering-2.json"
-  }
- },
- {
-  "id": "ACODE-212",
-  "family": "atlas-code",
-  "domain": "code",
-  "name_ar": "عقد مخرجات LLM منظمة موثوقة",
-  "name_en": "Reliable structured LLM output contract",
-  "status": "documented",
-  "what": "فرض مخرجات منظمة عبر schema أو استدعاء أداة مع تحقق وإصلاح محدود وفشل آمن. — Enforce parseable LLM output via schema mode or forced tool call plus parse, validate, bounded repair and fail-closed.",
-  "when": "Output format drifts or downstream code parses model text.",
-  "how": "1) Write schema plus refusal, unknown and error shapes. 2) Pick mechanism in order: native JSON schema, forced tool call, constrained grammar, prose+parser. 3) Parse, validate schema and business invariants. 4) Repair by re-prompting with exact error, bounded retries, then fail closed. 5) Fence untrusted input as data.",
-  "params": "retry bound",
-  "install": "",
-  "requires": [],
-  "license": "method paraphrased from Atlas skills under MIT / Apache-2.0; the skills keep their own licenses — see each folder's SOURCE.md",
-  "proof": [
-   "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/2361-prompt-engineering/9117-structured-output-design"
-  ],
-  "proof_scope": "url",
-  "styles": [],
-  "tags": [
-   "structured-output",
-   "json",
-   "schema",
-   "مخرجات"
-  ],
-  "section": "هندسة النماذج اللغوية — LLM & AI engineering",
-  "source": "KOSIF Atlas mining 2026-10-20 (https://github.com/kosif199022-jpg/kosif-atlas): prompt-engineering/structured-output-design (#9117) · theme ai-llm-engineering · 3 supporting skills · verifier read: skills/2361-prompt-engineering/9117-structured-output-design, ",
-  "atlas": {
-   "ids": [
-    "6115",
-    "9117",
-    "10525"
-   ],
-   "examples": [
-    {
-     "id": "9117",
-     "plugin": "prompt-engineering",
-     "skill": "structured-output-design",
-     "url": "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/2361-prompt-engineering/9117-structured-output-design"
-    }
-   ],
-   "theme": "ai-llm-engineering",
-   "risk_notes": "none",
-   "kosif_overlap_ids": [],
-   "stage": "extracted",
-   "verified_by": "b008-ai-llm-engineering-2.json"
-  }
- },
- {
-  "id": "ACODE-213",
-  "family": "atlas-code",
-  "domain": "code",
-  "name_ar": "تتابع مزودي LLM عبر Router",
-  "name_en": "Vendor failover waterfall via LiteLLM Router",
-  "status": "documented",
-  "what": "ضبط تتابع مزودين مرتب كبيانات باستخدام Router بدل سلاسل try/except. — Configure ordered multi-vendor failover as data using LiteLLM Router instead of hand-written try/except chains.",
-  "when": "429s, dead keys or out-of-credit vendors take an agent down.",
-  "how": "1) Ordered vendor list: index 0 primary. 2) Map to model_list (primary, fb0..) plus fallbacks chain. 3) Router(num_retries=1, cooldown_time=60). 4) Tune allowed_fails, context_window_fallbacks, per-deployment budgets. 5) Do not waterfall non-idempotent calls. 6) Prove failover with a forced-failure test.",
-  "params": "vendor order; cooldown",
-  "install": "pip install litellm",
-  "requires": [],
-  "license": "method paraphrased from Atlas skills under MIT / Apache-2.0; the skills keep their own licenses — see each folder's SOURCE.md",
-  "proof": [
-   "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/3327-llm-vendor-waterfall/13841-llm-vendor-waterfall"
-  ],
-  "proof_scope": "url",
-  "styles": [],
-  "tags": [
-   "failover",
-   "gateway",
-   "litellm",
-   "مزود"
-  ],
-  "section": "هندسة النماذج اللغوية — LLM & AI engineering",
-  "source": "KOSIF Atlas mining 2026-10-20 (https://github.com/kosif199022-jpg/kosif-atlas): llm-vendor-waterfall/llm-vendor-waterfall (#13841) · theme ai-llm-engineering · 5 supporting skills · verifier read: skills/3327-llm-vendor-waterfall/13841-llm-vendor-waterfall, ",
-  "atlas": {
-   "ids": [
-    "3723",
-    "10100",
-    "10523",
-    "13717",
-    "13841"
-   ],
-   "examples": [
-    {
-     "id": "13841",
-     "plugin": "llm-vendor-waterfall",
-     "skill": "llm-vendor-waterfall",
-     "url": "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/3327-llm-vendor-waterfall/13841-llm-vendor-waterfall"
-    }
-   ],
-   "theme": "ai-llm-engineering",
-   "risk_notes": "none; handles API keys",
-   "kosif_overlap_ids": [],
-   "stage": "extracted",
-   "verified_by": "b008-ai-llm-engineering-2.json"
-  }
- },
- {
-  "id": "ACODE-214",
-  "family": "atlas-code",
-  "domain": "code",
-  "name_ar": "بناء شجرة هجوم",
-  "name_en": "Attack tree construction",
-  "status": "documented",
-  "what": "بناء أشجار هجوم لتوضيح مسارات التهديد. — Build attack trees to map threat paths and defense gaps.",
-  "when": "Threat modeling or explaining risk to stakeholders.",
-  "how": "1) Set root goal. 2) Decompose AND/OR sub-goals. 3) Score likelihood and cost. 4) Mark mitigations. 5) Render with mermaid or graphviz.",
-  "params": "goal",
-  "install": "",
-  "requires": [
-   "graphviz"
-  ],
-  "license": "method paraphrased from Atlas skills under MIT; the skills keep their own licenses — see each folder's SOURCE.md",
-  "proof": [
-   "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/3515-security-scanning/14283-attack-tree-construction"
-  ],
-  "proof_scope": "url",
-  "styles": [],
-  "tags": [
-   "threat",
-   "security",
-   "tree",
-   "هجوم"
-  ],
-  "section": "القطاعات المنظّمة — Regulated industries & domain expertise",
-  "source": "KOSIF Atlas mining 2026-10-20 (https://github.com/kosif199022-jpg/kosif-atlas): security-scanning/attack-tree-construction (#14283) · theme compliance-industry · 1 supporting skills · verifier read: skills/3515-security-scanning/14283-attack-tree-construction",
-  "atlas": {
-   "ids": [
-    "14283"
-   ],
-   "examples": [
-    {
-     "id": "14283",
-     "plugin": "security-scanning",
-     "skill": "attack-tree-construction",
-     "url": "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/3515-security-scanning/14283-attack-tree-construction"
-    }
-   ],
-   "theme": "compliance-industry",
-   "risk_notes": "Text only.",
-   "kosif_overlap_ids": [],
-   "stage": "extracted",
-   "verified_by": "b021-compliance-industry-1.json"
-  }
- },
- {
-  "id": "ACODE-215",
-  "family": "atlas-code",
-  "domain": "code",
-  "name_ar": "وثائق ما قبل الإطلاق للتطبيقات المولدة",
-  "name_en": "Pre-ship documentation set for vibe-coded apps",
-  "status": "documented",
-  "what": "إنتاج وثائق المعمارية والصلاحيات والمتغيرات وخريطة الاختبارات. — Produce architecture, flows, permissions, variables and test-map docs, plus conditional emails/cron/SEO/automation docs.",
-  "when": "Reviewing or shipping an AI-built app.",
-  "how": "1) Write 5 core docs: architecture, flows, permissions, variables/secrets by risk, tests map. 2) Mark rules checked, proposed, or unchecked. 3) Add emails, cron, seo, automation only if capability exists.",
-  "params": "repo",
-  "install": "",
-  "requires": [],
-  "license": "method paraphrased from Atlas skills under MIT; the skills keep their own licenses — see each folder's SOURCE.md",
-  "proof": [
-   "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/2876-pm-ai-shipping/11601-shipping-artifacts"
-  ],
-  "proof_scope": "url",
-  "styles": [],
-  "tags": [
-   "docs",
-   "review",
-   "shipping",
-   "توثيق"
-  ],
-  "section": "القطاعات المنظّمة — Regulated industries & domain expertise",
-  "source": "KOSIF Atlas mining 2026-10-20 (https://github.com/kosif199022-jpg/kosif-atlas): pm-ai-shipping/shipping-artifacts (#11601) · theme compliance-industry · 1 supporting skills · verifier read: skills/2876-pm-ai-shipping/11601-shipping-artifacts",
-  "atlas": {
-   "ids": [
-    "11601"
-   ],
-   "examples": [
-    {
-     "id": "11601",
-     "plugin": "pm-ai-shipping",
-     "skill": "shipping-artifacts",
-     "url": "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/2876-pm-ai-shipping/11601-shipping-artifacts"
-    }
-   ],
-   "theme": "compliance-industry",
-   "risk_notes": "Text only.",
-   "kosif_overlap_ids": [],
-   "stage": "extracted",
-   "verified_by": "b021-compliance-industry-1.json"
-  }
- },
- {
-  "id": "ACODE-216",
-  "family": "atlas-code",
-  "domain": "code",
-  "name_ar": "تجهيز حزم الامتثال لأرقام Twilio",
-  "name_en": "Twilio regulatory bundle provisioning",
-  "status": "documented",
-  "what": "استعلام اللوائح وإنشاء المستخدم والمستندات وتقييم الحزمة وتقديمها. — Query regulations, create end-user and documents, evaluate and submit a bundle for international numbers.",
-  "when": "Need an international Twilio number requiring regulatory approval.",
-  "how": "1) GET Regulations by IsoCountry, NumberType, EndUserType. 2) POST EndUser. 3) Upload Supporting Documents. 4) Assign items to Bundle. 5) Evaluate, fix failures, submit; update on regulation change. Credentials from env.",
-  "params": "country, number type",
-  "install": "",
-  "requires": [
-   "network",
-   "python3"
-  ],
-  "license": "method paraphrased from Atlas skills under MIT/Apache-2.0; the skills keep their own licenses — see each folder's SOURCE.md",
-  "proof": [
-   "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/2721-twilio-developer-kit/10496-twilio-regulatory-compliance-bundles",
-   "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/108-airwallex-dev/271-airwallex-kyc"
-  ],
-  "proof_scope": "url",
-  "styles": [],
-  "tags": [
-   "twilio",
-   "KYC",
-   "API",
-   "امتثال"
-  ],
-  "section": "القطاعات المنظّمة — Regulated industries & domain expertise",
-  "source": "KOSIF Atlas mining 2026-10-20 (https://github.com/kosif199022-jpg/kosif-atlas): twilio-developer-kit/twilio-regulatory-compliance-bundles (#10496); airwallex-dev/airwallex-kyc (#271) · theme compliance-industry · 2 supporting skills · verifier read: skills/2721-twilio-developer-kit/10496-twilio-regulatory-compliance-bundles, skills/108-airwallex-dev/271-airwallex-kyc",
-  "atlas": {
-   "ids": [
-    "271",
-    "10496"
-   ],
-   "examples": [
-    {
-     "id": "10496",
-     "plugin": "twilio-developer-kit",
-     "skill": "twilio-regulatory-compliance-bundles",
-     "url": "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/2721-twilio-developer-kit/10496-twilio-regulatory-compliance-bundles"
-    },
-    {
-     "id": "271",
-     "plugin": "airwallex-dev",
-     "skill": "airwallex-kyc",
-     "url": "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/108-airwallex-dev/271-airwallex-kyc"
-    }
-   ],
-   "theme": "compliance-industry",
-   "risk_notes": "Calls live APIs with account tokens; do not run blindly.",
-   "kosif_overlap_ids": [],
-   "stage": "extracted",
-   "verified_by": "b021-compliance-industry-1.json"
   }
  }
 ]

@@ -26,8 +26,14 @@
    "hash",
    "deterministic",
    "mulberry32",
-   "rng"
-  ]
+   "rng",
+   "عشوائي ثابت",
+   "توليد عشوائي",
+   "نفس النتيجة",
+   "random",
+   "reproducible render"
+  ],
+  "when": "حين تتغير الجسيمات أو الوميض بين رندر وآخر وتحتاج نتيجة ثابتة في كل إطار / when random values must render identically on every frame and every re-render"
  },
  {
   "id": "PART-02",
@@ -56,8 +62,14 @@
    "bake",
    "seek",
    "simulation",
-   "deterministic"
-  ]
+   "deterministic",
+   "قفز للإطار",
+   "محاكاة مخبوزة",
+   "جاذبية",
+   "scrubbing",
+   "ballistic"
+  ],
+  "when": "عند الحاجة لتقديم الجسيمات أو ترجيعها لأي لحظة دون تراكم حالة بين الإطارات / when particles must be seekable to any frame without carrying state between frames"
  },
  {
   "id": "PART-03",
@@ -82,8 +94,14 @@
    "meaning",
    "data",
    "rule",
-   "particles"
-  ]
+   "particles",
+   "زخرفة",
+   "فيديو تحليلي",
+   "تمثيل البيانات",
+   "data storytelling",
+   "decorative dust"
+  ],
+  "when": "حين تفكر في إضافة جسيمات للزينة أو تريدها أن تعبر عن كمية أو تدفق في فيديو تحليلي / when deciding whether particles belong on screen and what each one stands for"
  },
  {
   "id": "PART-04",
@@ -110,8 +128,14 @@
    "budget",
    "count",
    "sizes",
-   "rule"
-  ]
+   "rule",
+   "عدد الجسيمات",
+   "أداء",
+   "زحمة",
+   "performance",
+   "particle count"
+  ],
+  "when": "عند ضبط عدد الجسيمات وأحجامها وألوانها حتى لا تزدحم الشاشة أو يثقل الأداء / when setting particle count, sizes and colours for Canvas 2D or WebGL"
  },
  {
   "id": "PART-05",
@@ -135,8 +159,14 @@
    "impact",
    "contact frame",
    "sfx",
-   "sync"
-  ]
+   "sync",
+   "مزامنة",
+   "مؤثر صوتي",
+   "ضربة",
+   "hit timing",
+   "audio sync"
+  ],
+  "when": "حين يجب أن يقع الانفجار أو صوت الضربة على لحظة التلامس تمامًا لا على بداية المقطع / when bursts and hit sounds must land exactly on the contact frame"
  },
  {
   "id": "PART-06",
@@ -165,8 +195,14 @@
    "seeded",
    "gravity",
    "explosion",
-   "reveal"
-  ]
+   "reveal",
+   "فرقعة",
+   "جسيمات متطايرة",
+   "تفجير",
+   "particle explosion",
+   "canvas burst"
+  ],
+  "when": "عند طلب انفجار جسيمات من المركز يتكرر بالشكل نفسه في كل رندر / when you need a repeatable particle explosion from the centre as a pure function of time"
  },
  {
   "id": "PART-07",
@@ -190,8 +226,14 @@
    "reveal",
    "burst",
    "ring",
-   "hero word"
-  ]
+   "hero word",
+   "ظهور كلمة",
+   "عنوان",
+   "موجة صدمة",
+   "word reveal",
+   "shockwave"
+  ],
+  "when": "حين تريد إظهار كلمة رئيسية بقفزة نابضية يتبعها انفجار جسيمات وحلقة تتسع / for revealing a hero word with a spring pop, a particle burst and an expanding ring"
  },
  {
   "id": "PART-08",
@@ -226,8 +268,14 @@
    "احتفال",
    "confetti",
    "celebration",
-   "end card"
-  ]
+   "end card",
+   "كونفيتي",
+   "فرحة",
+   "تهنئة",
+   "party",
+   "falling paper"
+  ],
+  "when": "لما يطلب المستخدم احتفالًا بقصاصات ملونة تنطلق وتتساقط وتنقلب، مثل بطاقة الختام / when the user wants a celebration with confetti bursting, falling and flipping, e.g. an end card"
  },
  {
   "id": "PART-09",
@@ -255,8 +303,14 @@
    "beat",
    "drop",
    "hyperframes",
-   "speed lines"
-  ]
+   "speed lines",
+   "إيقاع",
+   "موسيقى",
+   "خطوط شعاعية",
+   "music sync",
+   "crash"
+  ],
+  "when": "حين تريد انفجار جسيمات أو خطوط سرعة شعاعية على لحظة الدروب أو الضربة في الموسيقى / when particle or radial speed-line bursts must hit a music drop, crash or surge"
  },
  {
   "id": "PART-10",
@@ -286,8 +340,14 @@
    "شرر",
    "dash burst",
    "impact",
-   "tracers"
-  ]
+   "tracers",
+   "اصطدام",
+   "خطوط سرعة",
+   "ضربة",
+   "spark lines",
+   "hit effect"
+  ],
+  "when": "عند الحاجة لشرطات تنطلق من المركز أو خطوط شرر قصيرة عند نقطة اصطدام / for radial dash bursts from the centre or short spark lines at an impact point"
  },
  {
   "id": "PART-11",
@@ -317,8 +377,14 @@
    "شظايا",
    "shatter",
    "shards",
-   "rgb split"
-  ]
+   "rgb split",
+   "تكسير",
+   "تهشم",
+   "تفتت",
+   "break apart",
+   "fragments"
+  ],
+  "when": "لما يطلب المستخدم أن يتكسر جسم أو حلقة إلى مربعات أو شظايا متطايرة / when an object or a ring should break apart into flying squares or shards"
  },
  {
   "id": "PART-12",
@@ -346,8 +412,14 @@
    "سحابة",
    "image burst",
    "cards",
-   "community"
-  ]
+   "community",
+   "بطاقات صور",
+   "معرض صور",
+   "صور متطايرة",
+   "photo cloud",
+   "gallery"
+  ],
+  "when": "حين تعرض مجموعة صور أو بطاقات تنطلق من المركز ثم تطفو حول عنوان / when many image cards should burst out radially and float around a caption"
  },
  {
   "id": "PART-13",
@@ -373,8 +445,14 @@
    "نجوم",
    "achievement",
    "unlock",
-   "gold"
-  ]
+   "gold",
+   "مكافأة",
+   "فوز",
+   "ذهبي",
+   "reward",
+   "star burst"
+  ],
+  "when": "عند لحظة فتح إنجاز أو مكافأة تحتاج انفجار نجوم ذهبية يتلاشى / for an achievement unlock or reward moment with a fading gold star burst"
  },
  {
   "id": "PART-14",
@@ -401,8 +479,14 @@
    "pixel vfx",
    "palette",
    "retro",
-   "sprite"
-  ]
+   "sprite",
+   "بكسل آرت",
+   "ألعاب قديمة",
+   "تعويذة",
+   "pixel art",
+   "spell effect"
+  ],
+  "when": "حين يطلب مؤثرات بكسل آرت بطابع الألعاب القديمة كشرر وضربات وتعاويذ تخبو بدرجات اللون / for pixel-art sparks, slashes, explosions or spells that fade by palette steps"
  },
  {
   "id": "PART-15",
@@ -435,8 +519,14 @@
    "particles to text",
    "arabic",
    "gather",
-   "curl"
-  ]
+   "curl",
+   "تكوين نص",
+   "عنوان عربي",
+   "حروف متصلة",
+   "text formation",
+   "word reveal"
+  ],
+  "when": "لما يطلب المستخدم أن تتجمع الجسيمات وتكوّن كلمة أو عنوانًا عربيًا بحروف متصلة / when particles should assemble into a joined Arabic word or title"
  },
  {
   "id": "PART-16",
@@ -468,8 +558,14 @@
    "dissolve",
    "disintegrate",
    "embers",
-   "text"
-  ]
+   "text",
+   "تلاشي النص",
+   "اختفاء",
+   "تبخر",
+   "text vanish",
+   "particle text"
+  ],
+  "when": "حين يريد أن تتلاشى الكلمة وتتفتت إلى جسيمات أو جمر متصاعد / when a word should break up into rising particles or glowing embers and vanish"
  },
  {
   "id": "PART-17",
@@ -500,8 +596,14 @@
    "شعار",
    "point cloud",
    "logo reveal",
-   "coalesce"
-  ]
+   "coalesce",
+   "لوجو",
+   "ظهور الشعار",
+   "تجمع نقاط",
+   "logo animation",
+   "points assemble"
+  ],
+  "when": "عند كشف شعار أو أيقونة تتكون من نقاط مبعثرة تقفز إلى أماكنها / for a logo or icon reveal that assembles from scattered points springing into place"
  },
  {
   "id": "PART-18",
@@ -530,8 +632,14 @@
    "مدرج",
    "particles to chart",
    "histogram",
-   "ui"
-  ]
+   "ui",
+   "رسم بياني",
+   "إنفوجرافيك",
+   "تحول",
+   "data viz",
+   "morph"
+  ],
+  "when": "حين تتحول الجسيمات إلى رسم بياني أو شبكة أو واجهة تطبيق في فيديو شرح بيانات / when particles should morph into a chart, histogram, grid or UI"
  },
  {
   "id": "PART-19",
@@ -556,8 +664,13 @@
    "كشف صورة",
    "image reveal",
    "particles",
-   "hyperframes"
-  ]
+   "hyperframes",
+   "ظهور صورة",
+   "إظهار صورة",
+   "تقارب الجسيمات",
+   "photo reveal"
+  ],
+  "when": "لما يطلب كشف صورة تظهر تدريجيًا تحت حقل جسيمات يتقارب / when an image should be revealed beneath a converging particle field"
  },
  {
   "id": "PART-20",
@@ -585,8 +698,14 @@
    "torus",
    "sphere",
    "morph",
-   "helix"
-  ]
+   "helix",
+   "تحول الأشكال",
+   "كرة",
+   "لولب",
+   "shape transform",
+   "3d points"
+  ],
+  "when": "عند تحويل سحابة نقاط من شكل إلى آخر مثل حلقة إلى كرة أو لولب إلى خيوط / for morphing a 3D point cloud between shapes, like torus to sphere or helix to strands"
  },
  {
   "id": "PART-21",
@@ -613,8 +732,14 @@
    "mocap",
    "silhouette",
    "particle body",
-   "dance"
-  ]
+   "dance",
+   "رقص",
+   "راقص",
+   "تتبع الجسم",
+   "motion capture",
+   "video to particles"
+  ],
+  "when": "حين يريد تحويل راقص أو شخص في فيديو بكاميرا ثابتة إلى جسم من الجسيمات / when turning a performer in a fixed-camera video into a particle body"
  },
  {
   "id": "PART-22",
@@ -640,8 +765,14 @@
    "perlin",
    "simplex",
    "fbm",
-   "domain warp"
-  ]
+   "domain warp",
+   "غيوم",
+   "تضاريس",
+   "تشويش",
+   "noise texture",
+   "procedural noise"
+  ],
+  "when": "عند اختيار نوع الضوضاء المناسب لحركة سائلة أو غيوم أو تضاريس أو تدفق ملتف / when choosing a noise type for fluid motion, clouds, terrain or curling flow"
  },
  {
   "id": "PART-23",
@@ -667,8 +798,14 @@
    "stream function",
    "divergence free",
    "flow",
-   "swirl"
-  ]
+   "swirl",
+   "دوران",
+   "التفاف",
+   "حركة سائلة",
+   "fluid motion",
+   "no clumping"
+  ],
+  "when": "حين تحتاج جسيمات تدور وتلتف كالسائل دون أن تتكدس في مكان واحد / when particles must swirl like a fluid without clumping together"
  },
  {
   "id": "PART-24",
@@ -698,8 +835,15 @@
    "flow field",
    "streaks",
    "generative",
-   "noise"
-  ]
+   "noise",
+   "ريح",
+   "شعر",
+   "مغناطيس",
+   "خلفية متحركة",
+   "wind lines",
+   "generative art"
+  ],
+  "when": "عند رسم خطوط ناعمة تتبع حقل ضوضاء كالشعر أو الريح أو المغناطيس، أو خلفية خلف العناوين / for noise-driven streak lines like hair, wind or magnetism, or a backdrop behind titles"
  },
  {
   "id": "PART-25",
@@ -726,8 +870,14 @@
    "flow field",
    "metaball",
    "beat",
-   "hyperframes"
-  ]
+   "hyperframes",
+   "خلفية",
+   "كرات لزجة",
+   "موسيقى",
+   "gooey",
+   "generative background"
+  ],
+  "when": "حين تحتاج خلفية توليدية متدفقة طوال المقطع أو كرات لزجة على البناء والدروب الموسيقي / when you need a flowing generative background bed or gooey blobs tied to a music build or drop"
  },
  {
   "id": "PART-26",
@@ -756,8 +906,14 @@
    "مسار",
    "flow along path",
    "network",
-   "data stream"
-  ]
+   "data stream",
+   "أنابيب",
+   "نشاط الشبكة",
+   "اتجاه الحركة",
+   "pipes",
+   "moving dots"
+  ],
+  "when": "عند إظهار الاتجاه والنشاط على طرق أو أنابيب أو شبكة بنقاط متحركة تترك أثرًا / for showing direction and activity with dots moving along routes, pipes or network edges"
  },
  {
   "id": "PART-27",
@@ -783,8 +939,14 @@
    "trips",
    "arcs",
    "map flow",
-   "geo"
-  ]
+   "geo",
+   "خريطة",
+   "رحلات",
+   "أقواس",
+   "maplibre",
+   "origin destination"
+  ],
+  "when": "لما يطلب خريطة متحركة برحلات أو أقواس من منشأ إلى وجهة أو كثافة سداسية / when animating a map with trips, origin-destination arcs or hexagon density"
  },
  {
   "id": "PART-28",
@@ -810,8 +972,14 @@
    "smear",
    "trail",
    "shader",
-   "fluid"
-  ]
+   "fluid",
+   "كاميرا حرارية",
+   "لمس الشاشة",
+   "تلطيخ",
+   "heat camera",
+   "finger trail"
+  ],
+  "when": "حين يريد مؤثر كاميرا حرارية يُلطخ بأثر الإصبع ثم يلتئم مع موجة عند الضغط / for a heat-camera blob smeared by a finger or pointer trail, with a ripple on press"
  },
  {
   "id": "PART-29",
@@ -841,8 +1009,14 @@
    "شبكة نقاط",
    "attractor",
    "displacement",
-   "cursor field"
-  ]
+   "cursor field",
+   "تنافر",
+   "مؤشر",
+   "سلسلة كرات",
+   "repel",
+   "dot grid"
+  ],
+  "when": "عند الحاجة لشبكة نقاط تبتعد عن جسم متحرك وتتلون بالمسافة، أو سلسلة كرات تتبعه / for a dot grid pushed away by a moving object, or a chain of balls following a leader"
  },
  {
   "id": "PART-30",
@@ -872,8 +1046,14 @@
    "waveform",
    "ribbons",
    "lines",
-   "audio"
-  ]
+   "audio",
+   "موجة صوتية",
+   "منحنيات",
+   "خلفية",
+   "sine waves",
+   "gradient lines"
+  ],
+  "when": "حين تريد خطوطًا موجية متعددة كإشارة صوتية أو شرائط منحنيات متدرجة كخلفية / for multi-line noisy waveforms or gradient sine-line ribbons as a backdrop"
  },
  {
   "id": "PART-31",
@@ -901,8 +1081,14 @@
    "trail",
    "light trail",
    "comet",
-   "history"
-  ]
+   "history",
+   "ذيل ضوئي",
+   "مذنب",
+   "أثر الحركة",
+   "motion trail",
+   "afterimage"
+  ],
+  "when": "عند إضافة ذيل أو أثر ضوئي خلف جسم متحرك كمذنب أو طائرة مسيّرة / for adding a fading trail or light streak behind moving objects like comets or drones"
  },
  {
   "id": "PART-32",
@@ -927,8 +1113,14 @@
    "rain",
    "motion-kit",
    "svg",
-   "weather"
-  ]
+   "weather",
+   "أمطار",
+   "شتا",
+   "قطرات",
+   "rainfall",
+   "rain streaks"
+  ],
+  "when": "لما يطلب المستخدم مطرًا بسيطًا مائلًا فوق مشهد SVG أو عناصر الصفحة / when the user wants simple slanted rain over an SVG or DOM scene"
  },
  {
   "id": "PART-33",
@@ -955,8 +1147,14 @@
    "دخان",
    "vapour",
    "steam",
-   "smoke"
-  ]
+   "smoke",
+   "قهوة",
+   "كوب ساخن",
+   "أنفاس",
+   "coffee steam",
+   "breath"
+  ],
+  "when": "حين تحتاج بخارًا يتصاعد من كوب أو دخانًا خفيفًا أو أنفاسًا تخرج وتتلاشى / for rising steam from a cup, light smoke or breath that drifts and fades"
  },
  {
   "id": "PART-34",
@@ -983,8 +1181,14 @@
    "نجوم",
    "sparkle",
    "twinkle",
-   "stars"
-  ]
+   "stars",
+   "لمعان",
+   "سحر",
+   "بريق",
+   "glitter",
+   "magic"
+  ],
+  "when": "عند الحاجة لنجوم أو غبار سحري يلمع ويخفت في منطقة من المشهد / for twinkling stars, dust or magic sparkles across a region of the scene"
  },
  {
   "id": "PART-35",
@@ -1013,8 +1217,14 @@
    "dust",
    "motes",
    "atmosphere",
-   "depth"
-  ]
+   "depth",
+   "ذرات",
+   "جو",
+   "خلفية",
+   "floating particles",
+   "ambience"
+  ],
+  "when": "حين تبدو الخلفية فارغة وتحتاج ذرات غبار مضيئة تطفو لتعطي الهواء عمقًا خلف النص / when an empty backdrop needs floating luminous dust to give depth behind text"
  },
  {
   "id": "PART-36",
@@ -1041,8 +1251,14 @@
    "snow",
    "sparks",
    "confetti",
-   "dust"
-  ]
+   "dust",
+   "طبقة جسيمات",
+   "غبار",
+   "ثلج",
+   "قصاصات",
+   "particle overlay"
+  ],
+  "when": "عند إضافة طبقة جسيمات جاهزة في محرر Basma: غبار أو بوكيه أو شرر أو ثلج أو قصاصات / for adding a ready particle overlay in the Basma editor: dust, bokeh, sparks, snow or confetti"
  },
  {
   "id": "PART-37",
@@ -1072,8 +1288,14 @@
    "rain",
    "puddle",
    "splash",
-   "parallax"
-  ]
+   "parallax",
+   "رذاذ",
+   "تموجات",
+   "خطوات",
+   "ripples",
+   "footsteps"
+  ],
+  "when": "حين يطلب مشهد مطر بعمق بطبقتين وبركًا تتموج ورذاذًا يتطاير مع كل خطوة / for deep two-layer parallax rain with rippling puddles and splashes at each footstep"
  },
  {
   "id": "PART-38",
@@ -1098,8 +1320,14 @@
    "رسام",
    "rain",
    "studio",
-   "painted"
-  ]
+   "painted",
+   "وهج النار",
+   "تمويه حركي",
+   "رسم",
+   "motion blur",
+   "firelight"
+  ],
+  "when": "عند رسم مطر بطبقات عمق يضيئه وهج نار دافئ ثم تمويه حركي في Studio / for painted rain in depth layers lit by warm firelight, then motion blur, in Studio"
  },
  {
   "id": "PART-39",
@@ -1128,8 +1356,14 @@
    "مطر",
    "fog",
    "rain",
-   "cloud"
-  ]
+   "cloud",
+   "غيمة",
+   "شبورة",
+   "دورة الماء",
+   "mist",
+   "water cycle"
+  ],
+  "when": "حين يحتاج المشهد مطرًا مع ضباب منجرف، أو غيمة تمطر وتصنع حلقات على الأرض كدورة الماء / for rain with drifting fog bands, or a cloud raining with ground rings as in a water cycle"
  },
  {
   "id": "PART-40",
@@ -1158,8 +1392,14 @@
    "petals",
    "snow",
    "leaves",
-   "seasonal"
-  ]
+   "seasonal",
+   "ورد",
+   "خريف",
+   "تساقط",
+   "falling leaves",
+   "blossoms"
+  ],
+  "when": "عند طلب بتلات ورد أو أوراق خريف أو ثلج تتساقط وتتمايل مع الريح / when rose petals, leaves or snow should fall and sway with the wind"
  },
  {
   "id": "PART-41",
@@ -1186,8 +1426,14 @@
    "نجوم",
    "snow",
    "starfield",
-   "hyperframes"
-  ]
+   "hyperframes",
+   "سماء ليلية",
+   "شتاء",
+   "تساقط الثلج",
+   "night sky",
+   "snowfall"
+  ],
+  "when": "حين تريد ثلجًا متساقطًا بعمق يترك المنتصف صافيًا أو سماء ليلية بنجوم تتلألأ / for depth-correct falling snow that keeps the centre clear, or a twinkling night sky"
  },
  {
   "id": "PART-42",
@@ -1216,8 +1462,14 @@
    "point sprites",
    "webgl",
    "snow",
-   "embers"
-  ]
+   "embers",
+   "ثلاثي الأبعاد",
+   "شيدر",
+   "توهج",
+   "3d particles",
+   "additive blend"
+  ],
+  "when": "عند الحاجة لثلج أو جمر في مشهد ثلاثي الأبعاد يسقط ويتمايل ويخفت مع العمق / for 3D snow or embers as point sprites that fall, sway and fade with depth"
  },
  {
   "id": "PART-43",
@@ -1243,8 +1495,14 @@
    "motes",
    "kick",
    "beat",
-   "audio reactive"
-  ]
+   "audio reactive",
+   "طبل",
+   "إيقاع",
+   "تفاعل مع الصوت",
+   "kick drum",
+   "pulse rings"
+  ],
+  "when": "حين تريد ذرات ضوء تتصاعد مع الصوت وحلقات تتسع مع كل ضربة طبل / when light motes should rise with the audio and rings pulse on each kick drum"
  },
  {
   "id": "PART-44",
@@ -1268,8 +1526,14 @@
    "aura",
    "particles",
    "background",
-   "canvas"
-  ]
+   "canvas",
+   "توهج",
+   "خلفية بسيطة",
+   "نقاط صاعدة",
+   "radial glow",
+   "gradient"
+  ],
+  "when": "عند الحاجة لخلفية بسيطة بتوهج دائري ونقاط تصعد ببطء خلف المحتوى / for a simple backdrop with a soft radial glow and slowly rising dots"
  },
  {
   "id": "PART-45",
@@ -1293,8 +1557,14 @@
    "خلفية",
    "ambient loop",
    "podcast",
-   "seamless"
-  ]
+   "seamless",
+   "تكرار",
+   "لوب",
+   "هادئ",
+   "loop",
+   "calm background"
+  ],
+  "when": "حين تحتاج خلفية هادئة تتكرر بلا قفزة خلف بودكاست أو عنوان / for a calm, seamlessly looping background behind a podcast or title"
  },
  {
   "id": "PART-46",
@@ -1328,8 +1598,14 @@
    "fibonacci sphere",
    "point cloud",
    "globe",
-   "ai"
-  ]
+   "ai",
+   "كوكب",
+   "ذكاء اصطناعي",
+   "كرة أرضية",
+   "dot sphere",
+   "rotating sphere"
+  ],
+  "when": "لما يطلب كرة أو كوكبًا من النقاط يدور بعمق، كرمز للذكاء الاصطناعي أو للعالم / when the user wants a rotating 3D sphere of points, e.g. an AI or globe motif"
  },
  {
   "id": "PART-47",
@@ -1362,8 +1638,14 @@
    "galaxy",
    "spiral",
    "space",
-   "differential rotation"
-  ]
+   "differential rotation",
+   "فضاء",
+   "كون",
+   "نجوم",
+   "cosmos",
+   "universe"
+  ],
+  "when": "عند طلب مجرة حلزونية دوارة أو مشهد فضائي بنقاط ملونة على أذرع / for a rotating spiral galaxy or a space scene of coloured points on arms"
  },
  {
   "id": "PART-48",
@@ -1396,8 +1678,14 @@
    "warp",
    "hyperspace",
    "speed lines",
-   "tunnel"
-  ]
+   "tunnel",
+   "سرعة الضوء",
+   "نفق نجوم",
+   "انتقال",
+   "light speed",
+   "scene transition"
+  ],
+  "when": "حين يريد قفزة بسرعة الضوء أو نفقًا من النجوم، أو انتقالًا بين مشهدين على الدروب / for a light-speed star warp, a star tunnel, or a warp transition between scenes on a drop"
  },
  {
   "id": "PART-49",
@@ -1427,8 +1715,14 @@
    "كوكبة",
    "torus",
    "constellation",
-   "network"
-  ]
+   "network",
+   "نجوم متصلة",
+   "خطوط",
+   "شبكة اتصال",
+   "connected dots",
+   "star map"
+  ],
+  "when": "عند الحاجة لحلقة نقاط دوارة أو نجوم تتصل بخطوط كشبكة كوكبة / for a rotating torus of points or stars linked by lines like a constellation"
  },
  {
   "id": "PART-50",
@@ -1455,8 +1749,14 @@
    "point sprites",
    "additive",
    "three.js",
-   "sparkle"
-  ]
+   "sparkle",
+   "توهج",
+   "ثلاثي الأبعاد",
+   "جسيمات",
+   "glow",
+   "floating lights"
+  ],
+  "when": "حين يحتاج مشهد ثلاثي الأبعاد مئات النقاط المتوهجة تدور ببطء حول العنصر الرئيسي / when a 3D scene needs hundreds of glowing points slowly orbiting the hero"
  },
  {
   "id": "PART-51",
@@ -1484,8 +1784,14 @@
    "compute",
    "100k",
    "webgpu",
-   "tsl"
-  ]
+   "tsl",
+   "كرت الشاشة",
+   "عدد ضخم",
+   "محاكاة",
+   "webgl",
+   "ping-pong"
+  ],
+  "when": "عند الحاجة لمحاكاة مئة ألف جسيم أو أكثر على كرت الشاشة / when you need to simulate 100k+ particles on the GPU"
  },
  {
   "id": "PART-52",
@@ -1515,8 +1821,14 @@
    "vortex",
    "suck in",
    "shards",
-   "spiral"
-  ]
+   "spiral",
+   "شفط",
+   "إعصار",
+   "نيون",
+   "whirlpool",
+   "swirl"
+  ],
+  "when": "حين يريد دوامة جسيمات أو عناصر تُشفط نحو البطل وهي تصغر، أو شظايا نيون طافية / for a particle vortex, items sucked into the hero, or floating neon shards"
  },
  {
   "id": "PART-53",
@@ -1544,8 +1856,14 @@
    "لهب",
    "fire",
    "flame",
-   "dragon"
-  ]
+   "dragon",
+   "تنين",
+   "حريق",
+   "نفث النار",
+   "fire breath",
+   "burning"
+  ],
+  "when": "لما يطلب نارًا أو نفث لهب من تنين مع توهج ورذاذ عند الاصطدام / when the user wants fire breath or flames from a dragon, with a glow cone and impact splash"
  },
  {
   "id": "PART-54",
@@ -1573,8 +1891,14 @@
    "دخان",
    "embers",
    "smoke",
-   "sparks"
-  ]
+   "sparks",
+   "شرار",
+   "تعتيم",
+   "أجواء نار",
+   "vignette",
+   "fire atmosphere"
+  ],
+  "when": "عند إضافة جو من الشرر والدخان والجمر المتطاير حول مشهد نار / for adding drifting embers, sparks and smoke atmosphere around a fire scene"
  },
  {
   "id": "PART-55",
@@ -1605,8 +1929,14 @@
    "sparks",
    "tape stop",
    "beat",
-   "three.js"
-  ]
+   "three.js",
+   "توقف الصوت",
+   "تجميد",
+   "إيقاع",
+   "tape clock",
+   "freeze"
+  ],
+  "when": "حين يُقذف الشرر مع الأحداث الصوتية ويجب أن يتجمد في الهواء عند توقف الشريط / when sparks fired on sound events must hang mid-air as the track stops"
  },
  {
   "id": "PART-56",
@@ -1632,8 +1962,14 @@
    "clouds",
    "steam",
    "smoke",
-   "studio"
-  ]
+   "studio",
+   "سحاب",
+   "ضوء القمر",
+   "رسم",
+   "moonlit",
+   "cloud painting"
+  ],
+  "when": "عند رسم غيوم أو دخان أو بخار في Studio بإضاءة القمر أو النار، أو بخار حيث تلتقي نار وماء / for painting clouds, smoke or steam in Studio lit by moon or fire, or steam where fire meets water"
  },
  {
   "id": "PART-57",
@@ -1659,8 +1995,14 @@
    "spray",
    "foam",
    "splash",
-   "water"
-  ]
+   "water",
+   "أمواج",
+   "سمكة",
+   "بحر",
+   "waves",
+   "fish jump"
+  ],
+  "when": "حين يحتاج المشهد رذاذ ماء أو زبدًا على الأمواج أو ماء ينهمر عن جسم، أو قفزة سمكة / for water spray, foam on wave crests, water running off a body, or a fish jump"
  },
  {
   "id": "PART-58",
@@ -1690,8 +2032,14 @@
    "water",
    "reflection",
    "fresnel",
-   "three.js"
-  ]
+   "three.js",
+   "محيط",
+   "انعكاس",
+   "تموجات",
+   "ocean",
+   "ripples"
+  ],
+  "when": "عند الحاجة لبحر عاكس بلمعان الشمس أو القمر، أو ماء ضحل شفاف بتموجات في مشهد ثلاثي الأبعاد / for a reflective 3D sea with sun or moon glitter, or shallow see-through water with ripples"
  },
  {
   "id": "PART-59",
@@ -1719,8 +2067,14 @@
    "water shader",
    "nile",
    "sea",
-   "fresnel"
-  ]
+   "fresnel",
+   "نهر",
+   "أمواج",
+   "لمعان",
+   "river",
+   "waves"
+  ],
+  "when": "حين تريد ماء منمّطًا كالنيل بأمواج ولمعان شمس وضباب، أو سطح بحر مسطح ثنائي الأبعاد / for stylised water like the Nile with waves, sun glints and fog, or a flat 2D sea"
  },
  {
   "id": "PART-60",
@@ -1756,8 +2110,14 @@
    "clouds",
    "rain",
    "flock",
-   "three.js"
-  ]
+   "three.js",
+   "جو",
+   "بخار",
+   "دورة الماء",
+   "volumetric",
+   "water cycle"
+  ],
+  "when": "عند بناء طقس ثلاثي الأبعاد يتغير مع القصة: سحب ومطر وبخار وأسراب طيور / for 3D weather that follows the story: clouds, rain, vapour and bird flocks"
  },
  {
   "id": "PART-61",
@@ -1792,8 +2152,15 @@
    "petals",
    "sway",
    "cloth",
-   "flag"
-  ]
+   "flag",
+   "بركة",
+   "أسماك",
+   "عشب",
+   "pond",
+   "grass",
+   "lily pads"
+  ],
+  "when": "حين يطلب مشهد بركة بأسماك كوي وبتلات طافية وزنابق وقصب وعشب يتمايل مع الريح / for a pond scene with koi, floating petals, lily pads and reeds swaying in the wind"
  },
  {
   "id": "PART-62",
@@ -1822,8 +2189,14 @@
    "سيارات",
    "light trails",
    "long exposure",
-   "night city"
-  ]
+   "night city",
+   "مدينة ليلية",
+   "شارع",
+   "تعريض طويل",
+   "traffic",
+   "headlights"
+  ],
+  "when": "عند الحاجة لخطوط أضواء السيارات الطويلة في مدينة ليلية كأنها تصوير بتعريض طويل / for long-exposure car light streaks in a night city"
  },
  {
   "id": "PART-63",
@@ -1852,8 +2225,14 @@
    "pour",
    "liquid fill",
    "drink",
-   "wobble"
-  ]
+   "wobble",
+   "مشروب",
+   "كوب",
+   "زجاجة",
+   "pouring",
+   "glass fill"
+  ],
+  "when": "لما يطلب زجاجة تسكب مشروبًا وكوبًا يمتلئ بسائل يتموج أو قشدة تنتشر داخله / when a bottle should pour and a glass fill with wobbling liquid or diffusing cream"
  },
  {
   "id": "PART-64",
@@ -1886,8 +2265,14 @@
    "fluid sim",
    "metaball",
    "chrome",
-   "contours"
-  ]
+   "contours",
+   "معدن سائل",
+   "كروم",
+   "خلفية سائلة",
+   "liquid background",
+   "blobs"
+  ],
+  "when": "حين تحتاج خلفية سائل ملون خلف نص، أو كرات معدنية كالكروم تلتحم، أو خطوط كنتور / for a dye-fluid backdrop behind text, merging chrome metaballs, or iso-contour blobs"
  },
  {
   "id": "PART-65",
@@ -1899,7 +2284,9 @@
   "how": "Emitter as closed form: particle i born at floor(t·rate) with hash-seeded velocity, age = t − birth, colour ramp by age, \"lighter\"; cube exhaust: emissive cubes ~1 s life, 40/s; heat streaks: red line sprites rising and fading.",
   "params": "30–60 / frame; life ~1 s",
   "install": "",
-  "requires": [],
+  "requires": [
+   "pip:torch"
+  ],
   "license": "",
   "proof": [
    "kosif-tool/styles/pm-konstantinsaifo-96fc89",
@@ -1918,8 +2305,14 @@
    "exhaust",
    "plume",
    "emitter",
-   "rocket"
-  ]
+   "rocket",
+   "صاروخ",
+   "نار",
+   "حرارة",
+   "torch",
+   "fire particles"
+  ],
+  "when": "عند الحاجة لعادم صاروخ أو شعلة أو باعث نار يطلق جسيمات تصعد وتتغير ألوانها / for a rocket exhaust plume or a fire emitter whose particles rise and change colour"
  },
  {
   "id": "PART-66",
@@ -1947,8 +2340,14 @@
    "فوانيس",
    "underwater",
    "bubbles",
-   "lanterns"
-  ]
+   "lanterns",
+   "فقاعات",
+   "قناديل البحر",
+   "أشعة ضوء",
+   "jellyfish",
+   "light rays"
+  ],
+  "when": "حين يريد مشهدًا تحت البحر بأشعة ضوء وقناديل وفقاعات، أو فوانيس مضيئة تطفو على الماء / for an underwater scene with light shafts, jellyfish and bubbles, or glowing lanterns on water"
  },
  {
   "id": "PART-67",
@@ -1976,8 +2375,14 @@
    "flip",
    "pyro",
    "vex",
-   "simulation"
-  ]
+   "simulation",
+   "محاكاة سوائل",
+   "دخان",
+   "قماش",
+   "cloth",
+   "rigid body"
+  ],
+  "when": "عند الحاجة لمحاكاة احترافية لسوائل أو دخان أو قماش أو أجسام صلبة في Houdini بترخيص تجاري / when pro fluid, smoke, cloth or rigid-body simulation in Houdini is needed, with a commercial licence"
  },
  {
   "id": "PART-68",
@@ -2006,8 +2411,14 @@
    "bounce",
    "restitution",
    "physics",
-   "parabola"
-  ]
+   "parabola",
+   "كرة",
+   "شرح فيزياء",
+   "قطع مكافئ",
+   "ball bounce",
+   "squash stretch"
+  ],
+  "when": "حين يشرح الفيديو ارتداد كرة بالجاذبية ومعامل الارتداد مع أثر منقط للمسار / for explaining a ball bouncing under gravity with restitution and a dotted path"
  },
  {
   "id": "PART-69",
@@ -2035,8 +2446,14 @@
    "ring escape",
    "satisfying",
    "physics",
-   "reflection"
-  ]
+   "reflection",
+   "مريح للأعصاب",
+   "هروب الكرة",
+   "ارتداد",
+   "bouncing ball",
+   "gap escape"
+  ],
+  "when": "لما يطلب فيديو مريحًا لكرة ترتد داخل حلقات دوارة وتهرب من فجواتها فتتحطم الحلقة / for a satisfying clip of a ball bouncing inside rotating gapped rings that shatter as it escapes"
  },
  {
   "id": "PART-70",
@@ -2071,8 +2488,14 @@
    "pile",
    "stack",
    "topple",
-   "jar"
-  ]
+   "jar",
+   "انهيار",
+   "برج",
+   "عداد",
+   "falling",
+   "collapse"
+  ],
+  "when": "حين تسقط بطاقات أو أيقونات أو ملصقات وتتكدس، أو ينهار برج، أو يمتلئ برطمان مع عداد / when cards, icons or posters drop and pile up, a tower topples, or a jar fills with a counter"
  },
  {
   "id": "PART-71",
@@ -2101,8 +2524,14 @@
    "rapier",
    "matter-js",
    "cannon",
-   "rigid body"
-  ]
+   "rigid body",
+   "أجسام صلبة",
+   "سقوط",
+   "تصادم",
+   "physics engine",
+   "collision"
+  ],
+  "when": "عند الحاجة لسقوط شعارات أو مكعبات وتكدسها بفيزياء حقيقية في 2D أو 3D مع خبز النتائج قبل الرندر / when logos or cubes must fall and stack with real 2D or 3D physics, baked before render"
  },
  {
   "id": "PART-72",
@@ -2131,8 +2560,14 @@
    "pendulum",
    "physical exit",
    "shuffle",
-   "hyperframes"
-  ]
+   "hyperframes",
+   "تأرجح",
+   "خروج",
+   "خلط بطاقات",
+   "swing",
+   "card exit"
+  ],
+  "when": "حين يريد عنصرًا يتأرجح كالبندول ويستقر، أو بطاقة تخرج برمية أو سقوط، أو خلط رصة بطاقات / when content swings to rest like a pendulum, a card exits by toss or drop, or a card stack reshuffles"
  },
  {
   "id": "PART-73",
@@ -2158,8 +2593,14 @@
    "strings",
    "damped sine",
    "impact",
-   "music"
-  ]
+   "music",
+   "اهتزاز",
+   "ذبذبة",
+   "خطوط تهتز",
+   "vibration",
+   "string wobble"
+  ],
+  "when": "عند اهتزاز أوتار أو خطوط أفقية لحظة الاصطدام ثم تخمد تدريجيًا / for horizontal strings or lines that vibrate on impact and gradually settle"
  },
  {
   "id": "PART-74",
@@ -2190,8 +2631,14 @@
    "طيور",
    "boids",
    "flock",
-   "birds"
-  ]
+   "birds",
+   "نوارس",
+   "طيران",
+   "حروف طائرة",
+   "swarm",
+   "gulls"
+  ],
+  "when": "لما يطلب سرب طيور يطير على مسار أو آلاف النقاط تتحرك كسرب، أو كلمات تطير كسرب / when the user wants a bird flock on a path, thousands of flocking dots, or words flying as a swarm"
  },
  {
   "id": "PART-75",
@@ -2214,8 +2661,14 @@
    "رمية",
    "toss",
    "parabola",
-   "ghost trail"
-  ]
+   "ghost trail",
+   "قذف",
+   "قوس",
+   "أثر شبحي",
+   "throw",
+   "arc"
+  ],
+  "when": "حين يُرمى رمز أو عنصر على قوس ويترك نسخًا شبحية تتلاشى خلفه / when a token is thrown on an arc leaving fading ghost copies behind"
  },
  {
   "id": "PART-X01",

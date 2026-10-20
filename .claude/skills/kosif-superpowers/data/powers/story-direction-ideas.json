@@ -28,8 +28,14 @@
    "intake",
    "questions",
    "defaults",
-   "brief"
-  ]
+   "brief",
+   "أسئلة توضيحية",
+   "متطلبات",
+   "لهجة",
+   "clarify",
+   "requirements"
+  ],
+  "when": "حين يصل طلب فيديو ناقص المعلومات وتحتاج سؤال المستخدم مرة واحدة مع اقتراحات افتراضية / when a video request is missing details and you need to ask once, offering defaults, before starting"
  },
  {
   "id": "STORY-02",
@@ -60,8 +66,15 @@
    "routes",
    "add-ons",
    "intent",
-   "classifier"
-  ]
+   "classifier",
+   "تصنيف الطلب",
+   "مسار الإنتاج",
+   "ريل",
+   "ترجمة",
+   "pipeline",
+   "request routing"
+  ],
+  "when": "حين يكتب المستخدم طلبًا عامًا بالعربية أو الإنجليزية وتريد تحديد المسار المناسب وإضافاته كالترجمة والموسيقى / when a free-form Arabic or English request must be routed to the right production pipeline with its add-ons"
  },
  {
   "id": "STORY-03",
@@ -92,8 +105,14 @@
    "shot plan",
    "proplan",
    "frames",
-   "beats"
-  ]
+   "beats",
+   "ستوريبورد",
+   "حركة كاميرا",
+   "تقطيع اللقطات",
+   "camera moves",
+   "beat plan"
+  ],
+  "when": "عند تحويل جملة مهمة إلى ستوريبورد بخمس نبضات بإطارات دقيقة وحركة كاميرا لكل لقطة قبل التنفيذ / when turning a one-line task into a frame-exact 5-beat storyboard with a camera move per shot"
  },
  {
   "id": "STORY-04",
@@ -124,8 +143,14 @@
    "request",
    "prompt generator",
    "handoff",
-   "style"
-  ]
+   "style",
+   "صياغة الطلب",
+   "قالب طلب",
+   "تعليمات",
+   "prompt template",
+   "bilingual"
+  ],
+  "when": "حين تريد صياغة طلب جاهز ثنائي اللغة من سجل أسلوب مع المقاس والمدة والمصدر والصوت / when you need a ready bilingual request built from a style record with aspect, duration, source and audio options"
  },
  {
   "id": "STORY-05",
@@ -155,8 +180,14 @@
    "directions",
    "style menu",
    "pitch round",
-   "custom"
-  ]
+   "custom",
+   "اختيار الأسلوب",
+   "مزج الأساليب",
+   "ستايل",
+   "style choice",
+   "blend"
+  ],
+  "when": "حين يكون الطلب مفتوحًا قبل الستوريبورد وتحتاج عرض 3–5 اتجاهات أسلوب ليختار المستخدم أو يمزج اثنين / when an open brief needs 3–5 distinct style directions offered before storyboarding, letting the user pick or blend two"
  },
  {
   "id": "STORY-06",
@@ -181,8 +212,14 @@
    "ملاحظات",
    "feedback",
    "revision",
-   "review loop"
-  ]
+   "review loop",
+   "تعديلات",
+   "رأي العميل",
+   "تحسين المسودة",
+   "notes",
+   "edits"
+  ],
+  "when": "عند تلقي ملاحظات المستخدم على مسودة: تعديل محدد أو إحساس عام أو سؤال أو تثبيت أو موافقة / when handling user feedback on a draft — a named change, a vague feeling, a question, a hold or an approval"
  },
  {
   "id": "STORY-07",
@@ -207,8 +244,15 @@
    "checklist",
    "full power",
    "media pass",
-   "upgrade"
-  ]
+   "upgrade",
+   "مراجعة قبل البناء",
+   "تحسينات",
+   "موسيقى خلفية",
+   "مؤثرات صوتية",
+   "pre-build",
+   "sfx"
+  ],
+  "when": "عند الاستعداد للبناء لمراجعة المادة والصورة والصوت والتشطيب، واقتراح كل تحسينات الوسائط في طلب واحد / when about to build and you want to sweep material, picture, sound and finish and offer all media upgrades in one ask"
  },
  {
   "id": "STORY-08",
@@ -239,8 +283,14 @@
    "style sheet",
    "plan",
    "scene table",
-   "scaffold"
-  ]
+   "scaffold",
+   "جدول المشاهد",
+   "ورقة الأسلوب",
+   "توقيت المشاهد",
+   "timing",
+   "plan.md"
+  ],
+  "when": "عند بدء مشروع وتحتاج ورقة أسلوب تفصل المرصود عن المفترض وجدول مشاهد موقوتًا ينتهي عند المدة بالضبط / when starting a project and you need a style sheet (observed vs assumed) and a gap-free timed scene table"
  },
  {
   "id": "STORY-09",
@@ -266,8 +316,14 @@
    "بطاقة مشهد",
    "scene contract",
    "json",
-   "storyboard data"
-  ]
+   "storyboard data",
+   "بطاقات المشاهد",
+   "تخطيط المشاهد",
+   "توقيت الكلمات",
+   "scene cards",
+   "words.json"
+  ],
+  "when": "حين تريد وصف كل مشهد كسجل JSON فيه النص والطبقات والكاميرا والتوقيت وفعل الحركة قبل التحريك / when every scene should be a structured JSON card with text, layers, camera, timing and a motion verb"
  },
  {
   "id": "STORY-10",
@@ -294,8 +350,14 @@
    "boards",
    "approval",
    "storyboard",
-   "animatic"
-  ]
+   "animatic",
+   "اعتماد",
+   "لوحة ألوان",
+   "أوراق الشخصيات",
+   "pre-production",
+   "sign-off"
+  ],
+  "when": "حين تحتاج موافقة المستخدم على البريف ودليل الأسلوب والألوان والشخصيات ولوحات الستوريبورد قبل أي رندر / when you need user sign-off on brief, style guide, palette, characters and storyboard before any render"
  },
  {
   "id": "STORY-11",
@@ -321,8 +383,14 @@
    "beat sheet",
    "shot list",
    "new information",
-   "storyboard"
-  ]
+   "storyboard",
+   "سكريبت",
+   "قائمة لقطات",
+   "تقطيع",
+   "script",
+   "timed beats"
+  ],
+  "when": "عند كتابة النص قبل التحريك وتريد التأكد أن كل نبضة تضيف معلومة جديدة وإلا تُحذف / when scripting before animating and you want every beat to add new information, cutting the ones that don't"
  },
  {
   "id": "STORY-12",
@@ -347,8 +415,14 @@
    "motion score",
    "easing",
    "timing table",
-   "ledger"
-  ]
+   "ledger",
+   "توقيت الحركة",
+   "منحنى الحركة",
+   "تتابع",
+   "reduced motion",
+   "animation spec"
+  ],
+  "when": "عند التخطيط لكود الحركة لتحديد بداية كل نبضة ونهايتها ومدتها ومنحناها ومحفّزها وبديلها / when planning animation code and you must specify each beat's states, duration, delay, easing, trigger and fallback"
  },
  {
   "id": "STORY-13",
@@ -377,8 +451,15 @@
    "shot list",
    "continuity",
    "7 layers",
-   "handoff"
-  ]
+   "handoff",
+   "فيلم سينمائي",
+   "إضاءة",
+   "تدرج لوني",
+   "أوامر اللقطات",
+   "lighting plan",
+   "logline"
+  ],
+  "when": "حين يطلب المستخدم فيلمًا سينمائيًا بلقطات متعددة ويحتاج حزمة كاملة من المرجعيات والأوامر وخطة الإضاءة / for a multi-shot cinematic film needing reference sheets, per-shot prompts, a lighting plan and continuity checks"
  },
  {
   "id": "STORY-14",
@@ -404,8 +485,14 @@
    "استمرارية",
    "lock block",
    "continuity",
-   "character consistency"
-  ]
+   "character consistency",
+   "ثبات الشخصية",
+   "تطابق الشخصيات",
+   "وصف ثابت",
+   "consistency",
+   "prompt lock"
+  ],
+  "when": "حين تحتاج ثبات الشخصية والخلفية والإضاءة عبر كل الأوامر بلصق وصف مجمّد في كل أمر / when character, world and lighting must stay identical across every prompt via frozen pasted descriptions"
  },
  {
   "id": "STORY-15",
@@ -434,8 +521,14 @@
    "taste",
    "preferences",
    "recipe",
-   "series"
-  ]
+   "series",
+   "حفظ الإعدادات",
+   "وصفة",
+   "افتراضيات",
+   "presets",
+   "saved settings"
+  ],
+  "when": "حين يكرر المستخدم نفس الاختيارات وتريد حفظها كافتراضيات أو تجميد تشغيل معتمد كوصفة مسماة / when the user keeps repeating choices and you want to remember them or freeze an approved run as a named recipe"
  },
  {
   "id": "STORY-16",
@@ -463,8 +556,14 @@
    "hook",
    "first frame",
    "opener",
-   "muted"
-  ]
+   "muted",
+   "افتتاحية",
+   "شد الانتباه",
+   "ريلز",
+   "intro",
+   "pattern interrupt"
+  ],
+  "when": "حين تريد افتتاحًا يشد المشاهد من أول ثانية في ريل أو فيديو قصير دون البدء بالشعار / when the opening must grab viewers in the first second of a reel or short without starting on the logo"
  },
  {
   "id": "STORY-17",
@@ -491,8 +590,14 @@
    "hook patterns",
    "opener",
    "a/b hooks",
-   "curiosity gap"
-  ]
+   "curiosity gap",
+   "جملة افتتاحية",
+   "سؤال افتتاحي",
+   "قبل وبعد",
+   "viral opener",
+   "hook ideas"
+  ],
+  "when": "حين تحتاج عدة صيغ افتتاح مختلفة لنفس الفيديو للاختيار بينها: سؤال، رقم صادم، قبل/بعد، اعتراف / when you need several labelled opener variants — question, shocking stat, before/after, confession — to pick from"
  },
  {
   "id": "STORY-18",
@@ -519,8 +624,14 @@
    "افتتاح بارد",
    "cold open",
    "vlog hook",
-   "silent"
-  ]
+   "silent",
+   "مقدمة فلوج",
+   "تشويق",
+   "بدون كلام",
+   "teaser",
+   "vlog intro"
+  ],
+  "when": "حين يكون لديك فلوج جاهز بلا كلام وتريد مقدمة تشويقية قصيرة قبله لا تتجاوز 45 ثانية / when a finished speech-free vlog needs a teaser intro hook of up to 45 s placed before it"
  },
  {
   "id": "STORY-19",
@@ -546,8 +657,14 @@
    "proof",
    "first frame",
    "result first",
-   "demo"
-  ]
+   "demo",
+   "فيديو منتج",
+   "عرض المنتج",
+   "افتتاحية",
+   "product video",
+   "evidence"
+  ],
+  "when": "حين يبدأ فيديو منتج أو ديمو وتريد أن يظهر المنتج أو الدليل من الإطار الأول بدل خلفية متدرجة / when a product or demo video should open on the product or evidence from frame 0, not a generic gradient"
  },
  {
   "id": "STORY-20",
@@ -582,8 +699,14 @@
    "question hook",
    "reversal",
    "notifications",
-   "cold open"
-  ]
+   "cold open",
+   "افتتاحية",
+   "نقطة الألم",
+   "إعلان منتج",
+   "pain points",
+   "product intro"
+  ],
+  "when": "حين تريد افتتاحية لإعلان منتج بسؤال بكلمة ملونة أو سطرين متعاكسين أو إشعارات تحكي ألم المستخدم / when opening a product promo with a coloured-word question, a two-line reversal or pain-point notifications"
  },
  {
   "id": "STORY-21",
@@ -613,8 +736,14 @@
    "story lint",
    "gmc",
    "stakes",
-   "escalation"
-  ]
+   "escalation",
+   "سيناريو",
+   "حبكة",
+   "فحص القصة",
+   "storytelling",
+   "plot"
+  ],
+  "when": "حين تكتب قصة أو سيناريو وتريد فحص أن لكل نبضة هدفًا وصراعًا ورهانًا يتصاعد وذروة تحل الصراع / when writing a story and you want to check each beat for goal, conflict, rising stakes and a resolving climax"
  },
  {
   "id": "STORY-22",
@@ -643,8 +772,14 @@
    "abt",
    "bab",
    "storybrand",
-   "plots"
-  ]
+   "plots",
+   "بناء القصة",
+   "هيكل سردي",
+   "دراسة حالة",
+   "narrative structure",
+   "hero journey"
+  ],
+  "when": "حين تحتار في بناء قصة الفيديو وتريد إطارًا مناسبًا للهدف: إعلان قصير، شرح، دراسة حالة، قصة علامة / when choosing a narrative structure by goal — short ad, explainer, case study, feature or brand story"
  },
  {
   "id": "STORY-23",
@@ -673,8 +808,14 @@
    "arc",
    "payoff",
    "beats",
-   "short film"
-  ]
+   "short film",
+   "هيكل الريل",
+   "قصة قصيرة",
+   "تصاعد",
+   "reel structure",
+   "story arc"
+  ],
+  "when": "حين تبني فيديو قصيرًا أو ريل قصصيًا وتريد قوسًا من الخطاف إلى الضغط ثم الانفراج والدفعة ونهاية مقصودة / when structuring a short piece or story reel from hook through pressure and lift to payoff and a deliberate end"
  },
  {
   "id": "STORY-24",
@@ -700,8 +841,14 @@
    "five second",
    "sting",
    "iris",
-   "brand"
-  ]
+   "brand",
+   "فيديو خمس ثوان",
+   "كشف الشعار",
+   "لوجو",
+   "brand reveal",
+   "5s video"
+  ],
+  "when": "حين يطلب المستخدم فيديو قصيرًا جدًا من خمس ثوانٍ لفكرة واحدة ينتهي بكشف اسم العلامة / when the user wants a 5-second, one-idea film that ends by revealing the brand"
  },
  {
   "id": "STORY-25",
@@ -736,8 +883,14 @@
    "app ad",
    "cta",
    "features",
-   "remotion"
-  ]
+   "remotion",
+   "إعلان تطبيق",
+   "اعلان 15 ثانية",
+   "دعوة للفعل",
+   "promo",
+   "commercial"
+  ],
+  "when": "حين يطلب المستخدم إعلانًا قصيرًا لتطبيق أو منتج بخطاف ومزايا ودليل ودعوة للفعل وشعار / when building a short app or product ad with hook, promise, features, proof, CTA and logo timed to frames"
  },
  {
   "id": "STORY-26",
@@ -770,8 +923,14 @@
    "launch",
    "saas",
    "problem solution",
-   "teaser"
-  ]
+   "teaser",
+   "فيديو إطلاق",
+   "تشويق",
+   "مشكلة وحل",
+   "product demo",
+   "pas"
+  ],
+  "when": "حين تحتاج تقسيمًا زمنيًا بالثواني لفيديو عرض منتج أو مشكلة وحل أو تشويق أو إطلاق / when you need per-second budgets for a product demo, problem-solution video, teaser or launch arc"
  },
  {
   "id": "STORY-27",
@@ -801,8 +960,14 @@
    "brand film",
    "reveal",
    "metaphor",
-   "problem world"
-  ]
+   "problem world",
+   "فيلم العلامة التجارية",
+   "كشف المنتج",
+   "استعارة بصرية",
+   "product reveal",
+   "brand story"
+  ],
+  "when": "حين تصنع فيلم علامة تجارية ينتقل من عالم المشكلة إلى كشف المنتج كدليل عبر استعارة بصرية / for a brand film that moves from a problem world to the product reveal as proof, carried by a visual metaphor"
  },
  {
   "id": "STORY-28",
@@ -836,8 +1001,14 @@
    "how-to",
    "listicle",
    "narration",
-   "faceless"
-  ]
+   "faceless",
+   "فيديو تعليمي",
+   "شرح خطوات",
+   "تعليق صوتي",
+   "tutorial",
+   "essay video"
+  ],
+  "when": "حين تكتب فيديو شرح: شرح مفهوم، طريقة عمل بخطوات، قائمة، أو شرح قصير بسرد من خمسة أسطر / when scripting an explainer — concept, step-by-step how-to, listicle, story or a five-line short narration"
  },
  {
   "id": "STORY-29",
@@ -866,8 +1037,14 @@
    "cut rate",
    "essay",
    "vlog",
-   "pacing"
-  ]
+   "pacing",
+   "مونتاج طويل",
+   "سرعة القطع",
+   "يوميات",
+   "shot length",
+   "long form"
+  ],
+  "when": "عند مونتاج فيديو طويل بأسلوب مقال أو يوميات أو تأمل وتحتاج أرقام طول اللقطة وعدد القطعات / when editing long-form essay, diary or reflection videos and you need shot-length and cut-rate targets"
  },
  {
   "id": "STORY-30",
@@ -896,8 +1073,14 @@
    "long form",
    "script",
    "chapters",
-   "tutorial"
-  ]
+   "tutorial",
+   "سكريبت يوتيوب",
+   "مدة المشاهدة",
+   "فصول الفيديو",
+   "drop-off",
+   "youtube"
+  ],
+  "when": "حين تكتب سكريبت فيديو يوتيوب طويل وتريد خطافًا وأقسامًا موسومة وإمساكًا عند نقاط انسحاب المشاهدين / when scripting a long YouTube video with a fast hook, labelled chapters and holds at viewer drop-off points"
  },
  {
   "id": "STORY-31",
@@ -928,8 +1111,14 @@
    "bars",
    "energy arc",
    "climax",
-   "silence"
-  ]
+   "silence",
+   "برومو",
+   "إعلان تشويقي",
+   "إيقاع الموسيقى",
+   "music sync",
+   "promo"
+  ],
+  "when": "حين تصنع تريلر أو برومو من 35–45 ثانية على موسيقى وتريد توزيع اللقطات والكتابة على المازورات / when cutting a 35–45 s trailer to music and planning shots, captions and the climax bar by bar"
  },
  {
   "id": "STORY-32",
@@ -955,8 +1144,14 @@
    "data story",
    "insight title",
    "layering",
-   "before after"
-  ]
+   "before after",
+   "قصة الأرقام",
+   "رسوم بيانية",
+   "عنوان الاستبصار",
+   "charts",
+   "data video"
+  ],
+  "when": "حين تحوّل أرقامًا أو بيانات إلى فيديو يبدأ بالرقم المفاجئ ويضيف طبقة في كل نبضة حتى التوصية / when turning data into a video that opens on a surprising number and layers evidence toward a recommendation"
  },
  {
   "id": "STORY-33",
@@ -983,8 +1178,14 @@
    "deck",
    "investor",
    "aida",
-   "scqa"
-  ]
+   "scqa",
+   "عرض مستثمرين",
+   "بيتش",
+   "مبيعات",
+   "presentation",
+   "slides"
+  ],
+  "when": "حين تحوّل عرضًا تقديميًا للمستثمرين أو المبيعات أو مؤتمر إلى هيكل فيديو بعناوين ادعاء / when turning an investor, sales, conference or internal deck into a video skeleton with claim headlines"
  },
  {
   "id": "STORY-34",
@@ -1014,8 +1215,14 @@
    "kids",
    "picture book",
    "bedtime",
-   "day night"
-  ]
+   "day night",
+   "حكاية أطفال",
+   "قصة قبل النوم",
+   "كتاب مصور",
+   "children",
+   "storybook"
+  ],
+  "when": "حين يطلب المستخدم قصة أطفال مصورة أو فيلمًا للأطفال يمتد من الصباح إلى ليل القرية / when making a children's picture-book story or a kids film structured as one day from morning to night"
  },
  {
   "id": "STORY-35",
@@ -1041,8 +1248,14 @@
    "thesis",
    "motif",
    "direction",
-   "concept"
-  ]
+   "concept",
+   "فكرة بصرية",
+   "اتجاه إبداعي",
+   "موشن جرافيك",
+   "art direction",
+   "visual idea"
+  ],
+  "when": "عند بدء مشروع موشن وتحتاج اقتراح 2–3 اتجاهات ثم الالتزام بأطروحة ونقش ومادة وحركة / when starting a motion piece and you need 2–3 directions, then a commitment to one thesis, motif, material and movement"
  },
  {
   "id": "STORY-36",
@@ -1068,8 +1281,14 @@
    "لحظة",
    "signature moment",
    "restraint",
-   "hero beat"
-  ]
+   "hero beat",
+   "مؤثرات كثيرة",
+   "بساطة",
+   "لحظة مميزة",
+   "minimal",
+   "focus"
+  ],
+  "when": "حين يبدو الفيلم مزدحمًا بالمؤثرات أو كقالب جاهز وتريد لحظة توقيع واحدة وكل ما حولها هادئ / when a film feels cluttered with effects or template-like and you want one signature moment with the rest quiet"
  },
  {
   "id": "STORY-37",
@@ -1099,8 +1318,14 @@
    "anti slop",
    "ai look",
    "cliches",
-   "lint"
-  ]
+   "lint",
+   "كليشيهات",
+   "شكل القوالب",
+   "تصميم عام",
+   "generic look",
+   "template look"
+  ],
+  "when": "حين يبدو التصميم أو الموشن كأنه مولّد أو قالب عام وتريد فحصه من الكليشيهات الشائعة / when a design or motion piece looks generic or machine-generated and you want to check it against known clichés"
  },
  {
   "id": "STORY-38",
@@ -1131,8 +1356,14 @@
    "held breath",
    "real weight",
    "kinetic",
-   "glitch"
-  ]
+   "glitch",
+   "طابع الحركة",
+   "أسلوب الحركة",
+   "اتساق",
+   "motion style",
+   "consistency"
+  ],
+  "when": "حين تريد أن تخرج كل حركات الفيلم من طابع واحد متسق بمسموحات ومحظورات واضحة / when every move in a film should follow one consistent motion personality with explicit allowed moves and bans"
  },
  {
   "id": "STORY-39",
@@ -1161,8 +1392,15 @@
    "هادئ",
    "mood",
    "feeling",
-   "archetype"
-  ]
+   "archetype",
+   "رسمي",
+   "صحفي",
+   "إحساس الفيديو",
+   "luxury",
+   "playful",
+   "corporate"
+  ],
+  "when": "حين يصف المستخدم الإحساس بكلمات مثل فخم أو تقني أو مرح أو هادئ وتحتاج ترجمتها إلى مدد وحركة / when the user describes a feeling like luxurious, techy, playful or calm and you must turn it into timings and motion"
  },
  {
   "id": "STORY-40",
@@ -1187,8 +1425,14 @@
    "swiss pulse",
    "velvet",
    "data drift",
-   "named styles"
-  ]
+   "named styles",
+   "ستايل جاهز",
+   "لوحة ألوان",
+   "خطوط",
+   "visual style",
+   "look"
+  ],
+  "when": "حين تريد أسلوبًا بصريًا جاهزًا بلوحة ألوان وخط ومنحنى وانتقال محدد من ثمانية أساليب مسماة / when you want a ready visual style with a set palette, typeface, easing and transition from eight named looks"
  },
  {
   "id": "STORY-41",
@@ -1219,8 +1463,14 @@
    "brutalist",
    "glass",
    "presets",
-   "dosage"
-  ]
+   "dosage",
+   "هوية بصرية",
+   "زجاجي",
+   "سويسري",
+   "crt",
+   "swiss"
+  ],
+  "when": "حين تختار لغة بصرية واحدة للفيلم (تحريري، سويسري، CRT، زجاجي، فخامة) دون خلط الأنظمة / when picking one aesthetic system for a film — editorial, Swiss, CRT, glass, luxury — without mixing systems"
  },
  {
   "id": "STORY-42",
@@ -1248,8 +1498,14 @@
    "build breathe resolve",
    "stagger",
    "counter motion",
-   "anti slideshow"
-  ]
+   "anti slideshow",
+   "تتابع العناصر",
+   "عرض شرائح",
+   "حركة مضادة",
+   "slideshow",
+   "timing rules"
+  ],
+  "when": "حين يبدو التحريك كعرض شرائح وتريد قواعد بناء وتنفّس وحسم وتتابع وحركة مضادة لكل مشهد / when the animation feels like a slideshow and you need build-breathe-resolve, stagger and counter-motion rules per scene"
  },
  {
   "id": "STORY-43",
@@ -1275,8 +1531,14 @@
    "energy verbs",
    "beat direction",
    "depth layers",
-   "website film"
-  ]
+   "website film",
+   "أفعال الحركة",
+   "طبقات العمق",
+   "إيقاع المشاهد",
+   "foreground background",
+   "rhythm"
+  ],
+  "when": "حين تكتب توجيه كل نبضة بأفعال طاقة وعناصر موزعة على المقدمة والوسط والخلفية / when directing each beat with energy verbs and 5+ elements spread across foreground, midground and background"
  },
  {
   "id": "STORY-44",
@@ -1303,8 +1565,14 @@
    "critique",
    "review",
    "contact sheet",
-   "lenses"
-  ]
+   "lenses",
+   "تقييم",
+   "نقد فني",
+   "تكوين",
+   "art direction",
+   "quality check"
+  ],
+  "when": "حين تريد قبل الرندر نقد المشهد وتقييمه من 10 وتحديه بعدسات فنية كالإضاءة والتكوين واللون / when you want to critique and score a scene before render and challenge it through lenses like lighting, composition and colour"
  },
  {
   "id": "STORY-45",
@@ -1334,8 +1602,14 @@
    "reference",
    "study",
    "style guide",
-   "imitation"
-  ]
+   "imitation",
+   "فيديو مرجعي",
+   "نفس الستايل",
+   "تحليل مرجع",
+   "inspiration",
+   "similar style"
+  ],
+  "when": "حين يعطي المستخدم فيديو مرجعيًا ويريد أسلوبًا مشابهًا دون نسخ محتواه / when the user shares a reference video and wants a similar style without copying its content"
  },
  {
   "id": "STORY-46",
@@ -1364,8 +1638,14 @@
    "لا اختراع",
    "honesty",
    "no invented numbers",
-   "limits"
-  ]
+   "limits",
+   "أمانة",
+   "حدود",
+   "واقعي",
+   "accuracy",
+   "fact check"
+  ],
+  "when": "حين يطلب المستخدم نتيجة «واقعية» أو أرقامًا أو تلخيص مستند وتحتاج توضيح الحدود دون اختراع / when the user asks for 'realistic' output, figures or a document summary and you must state limits without inventing"
  },
  {
   "id": "STORY-47",
@@ -1401,8 +1681,14 @@
    "travelling device",
    "hero object",
    "match cut",
-   "continuity"
-  ]
+   "continuity",
+   "عنصر رابط",
+   "ربط اللقطات",
+   "نبض على الإيقاع",
+   "transition",
+   "thread"
+  ],
+  "when": "حين تريد عنصرًا واحدًا يربط الفيلم كله، كنقطة تنبض مع الإيقاع وتصير زرًا ثم نقطة الشعار / when one object should carry through every cut — a dot that pulses on beat, becomes a button and ends as the logo dot"
  },
  {
   "id": "STORY-48",
@@ -1429,8 +1715,14 @@
    "payoff",
    "climax",
    "refrain",
-   "stress"
-  ]
+   "stress",
+   "جملة مهمة",
+   "كلمات الأغنية",
+   "إبراز",
+   "lyrics",
+   "key line"
+  ],
+  "when": "حين تريد إيجاد جملة الذروة في كلام أو أغنية لتكبيرها وإبرازها وتثبيتها قبل الإظلام / when you need to find the climax line in a speech or song to enlarge, highlight and hold it before the dip"
  },
  {
   "id": "STORY-49",
@@ -1457,8 +1749,14 @@
    "symbol",
    "motif",
    "metaphor",
-   "icon"
-  ]
+   "icon",
+   "أيقونات",
+   "عداد",
+   "رسومات توضيحية",
+   "counter",
+   "keyword"
+  ],
+  "when": "حين تريد رسم رمز بجوار الكلام حسب معنى الكلمة المفتاحية وتحويل الأرقام المنطوقة إلى عدّاد / when a keyword's meaning should trigger a drawn symbol beside the line and spoken numbers become a counter"
  },
  {
   "id": "STORY-50",
@@ -1497,8 +1795,14 @@
    "chapters",
    "chapter card",
    "numbered",
-   "sections"
-  ]
+   "sections",
+   "عناوين الفصول",
+   "أقسام",
+   "عنوان فرعي",
+   "section titles",
+   "lesson"
+  ],
+  "when": "حين يحتاج فيديو طويل أو درس أو ريل عرض عناوين فصول مرقمة تفصل الأقسام / when a long video, lesson or showreel needs numbered chapter labels to separate sections"
  },
  {
   "id": "STORY-51",
@@ -1533,8 +1837,14 @@
    "recap",
    "summary grid",
    "collage",
-   "takeaways"
-  ]
+   "takeaways",
+   "خلاصة",
+   "نهاية الفيديو",
+   "كولاج",
+   "ending",
+   "wrap-up"
+  ],
+  "when": "عند ختام فيديو شرح أو قائمة بملخص: شبكة عناصر أو كولاج للمشاهد أو لوحة خلاصات / when ending an explainer or list video with a recap — summary grid, scene collage, takeaway board or progress bar"
  },
  {
   "id": "STORY-52",
@@ -1568,8 +1878,14 @@
    "bookend",
    "loop",
    "outro",
-   "ending"
-  ]
+   "ending",
+   "تكرار",
+   "بداية ونهاية",
+   "لوب",
+   "looping video",
+   "closing"
+  ],
+  "when": "حين تريد نهاية تعود لنفس بطاقة البداية أو إطارها، أو فيديو يعود لأوله ليتكرر كحلقة / when the ending should mirror the opening card or frame, or return to the start so the video loops"
  },
  {
   "id": "STORY-53",
@@ -1604,8 +1920,14 @@
    "statement card",
    "black card",
    "silence",
-   "outro"
-  ]
+   "outro",
+   "شاشة سوداء",
+   "فاصل",
+   "جملة واحدة",
+   "end card",
+   "pause"
+  ],
+  "when": "حين تحتاج فاصلًا بجملة واحدة على شاشة سوداء لتغيير الفصل أو لحظة صمت في الظلام قبل الذروة / when you need a bold one-line card on black to change chapter, or a dark silent beat before the climax"
  },
  {
   "id": "STORY-54",
@@ -1639,8 +1961,14 @@
    "mood shift",
    "dark light",
    "genre hop",
-   "interlude"
-  ]
+   "interlude",
+   "ثيم",
+   "تحول",
+   "ظلام ونور",
+   "theme switch",
+   "night scene"
+  ],
+  "when": "حين تريد قلب مزاج الفيلم من المشكلة إلى الحل بتبديل الثيم من ظلام لنور أو إدراج مشهد ليلي / when switching the film's theme from dark to light to mark problem → solution, or inserting a night interlude"
  },
  {
   "id": "STORY-55",
@@ -1679,8 +2007,14 @@
    "gag",
    "speech bubble",
    "stamp",
-   "emotional beat"
-  ]
+   "emotional beat",
+   "ميم",
+   "ضحك",
+   "إفيه",
+   "meme",
+   "humor"
+  ],
+  "when": "حين تريد لحظة مضحكة أو عاطفية في الموشن مثل فقاعة كلام أو ختم ميم أو قلب الشخصية / when adding a comic or emotional beat — speech-bubble gag, meme stamp, giant cursor or character flip"
  },
  {
   "id": "STORY-56",
@@ -1715,8 +2049,14 @@
    "pain points",
    "the fix",
    "reframing",
-   "persuasion"
-  ]
+   "persuasion",
+   "إقناع",
+   "مشكلة وحل",
+   "مقارنة السعر",
+   "argument",
+   "old vs new"
+  ],
+  "when": "حين تبني فيديو إقناعيًا يعرض نقاط الألم ثم الحل وإعادة تأطير التكلفة والطريقة القديمة المشطوبة / when building a persuasive video showing pain points, the fix, a cost reframe and the old way struck out"
  },
  {
   "id": "STORY-57",
@@ -1743,8 +2083,14 @@
    "سحب للخلف",
    "flash bridge",
    "pull back",
-   "poster reveal"
-  ]
+   "poster reveal",
+   "انتقال",
+   "ترانزيشن",
+   "ملصق",
+   "transition",
+   "zoom out"
+  ],
+  "when": "حين تريد انتقالًا بين مشهدين بالدفع داخل الضوء ثم وميض ثم سحب للخلف يكشف المشهد كملصق على حائط / for a transition that pushes into light, flashes, then pulls back to reveal the next scene as a poster on a wall"
  },
  {
   "id": "STORY-58",
@@ -1780,8 +2126,14 @@
    "surreal",
    "overwhelm",
    "single take",
-   "metaphor"
-  ]
+   "metaphor",
+   "خيال",
+   "لقطة واحدة",
+   "مفهوم مجرد",
+   "one take",
+   "floating"
+  ],
+  "when": "حين تريد مشهدًا سرياليًا أو ازدحامًا حول مركز هادئ أو لقطة واحدة بلا قطع أو منارة لمفهوم مجرد / for a surreal floating-props scene, overload around a calm centre, a cut-free single take or a beacon for an abstract idea"
  },
  {
   "id": "STORY-59",
@@ -1810,8 +2162,14 @@
    "talking head",
    "directed edit",
    "keyword",
-   "reel"
-  ]
+   "reel",
+   "فيديو متكلم",
+   "ترجمة",
+   "كابشن",
+   "captions",
+   "talking video"
+  ],
+  "when": "حين يعطي المستخدم فيديو كلام ويريد ريلًا مُمنتجًا بكلمات مفتاحية كبيرة وترجمة وأرقام وانتقالات / when the user gives a talking clip and wants an edited reel with big keywords, captions, number rings and transitions"
  },
  {
   "id": "STORY-60",
@@ -1838,8 +2196,14 @@
    "motivational",
    "talking reel",
    "arc",
-   "premium edit"
-  ]
+   "premium edit",
+   "فيديو تحفيزي",
+   "مونتاج احترافي",
+   "ريلز",
+   "motivation",
+   "speech reel"
+  ],
+  "when": "حين يريد المستخدم ريلًا تحفيزيًا من مقطع كلام بقوس 20 ثانية من الخطاف إلى الانفراج والدفعة / when the user wants a motivational talking reel built on a 20 s arc from hook freeze to lift, payoff and dip"
  },
  {
   "id": "STORY-61",
@@ -1869,8 +2233,14 @@
    "launch video",
    "tones",
    "website to video",
-   "share copy"
-  ]
+   "share copy",
+   "إطلاق منتج",
+   "فيديو من موقع",
+   "نص مشاركة",
+   "product launch",
+   "url to video"
+  ],
+  "when": "حين يريد المستخدم فيديو إطلاق قصيرًا لمنتجه من رابط موقعه أو من الكود مع غلاف ونص مشاركة / when the user wants a 15–25 s launch video built from their website or codebase, with poster and share copy"
  },
  {
   "id": "STORY-62",
@@ -1896,8 +2266,14 @@
    "showreel",
    "120 bpm",
    "beats",
-   "studio reel"
-  ]
+   "studio reel",
+   "ريل استوديو",
+   "عرض أعمال",
+   "إيقاع",
+   "portfolio",
+   "beat grid"
+  ],
+  "when": "حين تريد ريل عرض 15 ثانية لاستوديو أو أداة تقع لقطاته على شبكة إيقاع 120 BPM / when making a 15 s studio showreel whose cues land on a 120 BPM beat grid"
  },
  {
   "id": "STORY-63",
@@ -1924,8 +2300,14 @@
    "lab film",
    "stage bands",
    "educational",
-   "structural"
-  ]
+   "structural",
+   "فيلم تعليمي",
+   "اختبار التحمل",
+   "شرح المنتج",
+   "stress test",
+   "callouts"
+  ],
+  "when": "حين تصنع فيلمًا تعليميًا عن منتج بمراحل مسماة (حمل، كسر، استبدال، ترتيب) تقود الكاميرا والتعليقات والمؤثرات / for an educational product film cut into named stage bands that drive camera, captions and effects together"
  },
  {
   "id": "STORY-64",
@@ -1951,8 +2333,14 @@
    "wordless",
    "silent short",
    "leap",
-   "cat"
-  ]
+   "cat",
+   "فيلم صامت",
+   "بدون حوار",
+   "قطة",
+   "animated short",
+   "no dialogue"
+  ],
+  "when": "حين تريد فيلمًا قصيرًا بلا حوار عن بطل يتبع ضوءًا ويقفز فوق عقبة وينتهي بسطر الشعار / for a short wordless film where a hero follows a light, leaps an obstacle and ends on a tagline"
  },
  {
   "id": "STORY-65",
@@ -1977,8 +2365,14 @@
    "stickman",
    "genres",
    "plot twist",
-   "comedy"
-  ]
+   "comedy",
+   "رجل العصا",
+   "كوميديا",
+   "مفاجأة",
+   "stick figure",
+   "short story"
+  ],
+  "when": "حين يطلب المستخدم قصة ستيكمان مضحكة أو رومانسية أو مؤثرة أو بمفاجأة وتحتاج خمس نبضات للنوع / when the user wants a stickman story — funny, love, touching, twist, dark comedy or reality flip — in five beats"
  },
  {
   "id": "STORY-66",
@@ -2005,8 +2399,14 @@
    "رومانسي",
    "romance",
    "paired frames",
-   "paper crane"
-  ]
+   "paper crane",
+   "قصة حب",
+   "عاطفي",
+   "لقطة قريبة",
+   "love story",
+   "9:16"
+  ],
+  "when": "حين يريد المستخدم قصة حب قصيرة عمودية بخمس نبضات، لكل نبضة لقطة واسعة وأخرى قريبة وسطر سرد / when the user wants a short vertical love story in five beats, each with a wide and a close-up frame plus a narration line"
  },
  {
   "id": "STORY-67",
@@ -2031,8 +2431,14 @@
    "food",
    "clips",
    "recipe reel",
-   "macro"
-  ]
+   "macro",
+   "وصفة طبخ",
+   "أكل",
+   "خطوات التحضير",
+   "cooking",
+   "food video"
+  ],
+  "when": "حين يطلب المستخدم عددًا محددًا من مقاطع وصفة طبخ وتحتاج توزيعها على خطوات التحضير الحقيقية / when the user asks for a set number of cooking clips that must map onto the real preparation steps"
  },
  {
   "id": "STORY-68",
@@ -2060,8 +2466,14 @@
    "viral",
    "gated",
    "stages",
-   "editorial"
-  ]
+   "editorial",
+   "انتشار",
+   "ترند",
+   "خطوة بخطوة",
+   "step by step",
+   "short video"
+  ],
+  "when": "حين يريد المستخدم فيديو تحريريًا للانتشار عبر مراحل يختار فيها العنوان والسكريبت والألوان / when the user wants a viral editorial video built in gated stages — titles, script, palettes, poster and motion prompts"
  },
  {
   "id": "STORY-69",
@@ -2089,8 +2501,15 @@
    "friday",
    "mihrab",
    "islamic",
-   "calm"
-  ]
+   "calm",
+   "إسلامي",
+   "ديني",
+   "خط ديواني",
+   "جمعة مباركة",
+   "religious",
+   "calligraphy"
+  ],
+  "when": "حين يطلب المستخدم ريل جمعة أو فيديو دعاء هادئًا بخط عربي ولقطات ساكنة أو رسم محراب / when the user wants a calm Friday reel or dua video with Arabic calligraphy lines, quiet B-roll or a drawn mihrab"
  },
  {
   "id": "STORY-70",
@@ -2118,8 +2537,14 @@
    "montage",
    "song",
    "emotional order",
-   "exile"
-  ]
+   "exile",
+   "سفر",
+   "حنين",
+   "مونتاج أغنية",
+   "music video",
+   "vertical"
+  ],
+  "when": "حين يريد المستخدم مونتاجًا على أغنية بترتيب اللقطات حسب معناها العاطفي مع ترك الأغنية كما هي / when montaging clips to a song in emotional order by its meaning, keeping the song untouched"
  },
  {
   "id": "STORY-71",
@@ -2145,8 +2570,14 @@
    "heritage",
    "speculative",
    "disclaimer",
-   "chips"
-  ]
+   "chips",
+   "المستقبل",
+   "تراث",
+   "خيال علمي",
+   "futuristic",
+   "pyramids"
+  ],
+  "when": "حين تصنع فيديو تخيليًا عن المستقبل حول معالم حقيقية كالأهرامات مع رقائق حقائق وإخلاء «تصور فني» / for a speculative future video around real monuments like the pyramids, with fact chips and an artistic-concept disclaimer"
  },
  {
   "id": "STORY-72",
@@ -2173,8 +2604,14 @@
    "explainer",
    "voice",
    "cold warm",
-   "question mark"
-  ]
+   "question mark",
+   "تعليق صوتي",
+   "مال وسعادة",
+   "مقارنة",
+   "success",
+   "gsap"
+  ],
+  "when": "حين تحتاج شرحًا صوتيًا عن معنى النجاح يقابل عالم المال البارد بعالم ذهبي دافئ على لوحات مولّدة / for a voice-led explainer about the meaning of success contrasting a cold money world with a warm golden one"
  },
  {
   "id": "STORY-73",
@@ -2201,8 +2638,14 @@
    "creator",
    "faceless",
    "transcript first",
-   "b-roll"
-  ]
+   "b-roll",
+   "بدون وجه",
+   "يوتيوبر",
+   "تسجيل شاشة",
+   "screen recording",
+   "voiceover"
+  ],
+  "when": "حين يريد صانع محتوى شكلًا لفيديو مثل الاختبار أو اليوم، أو فيديو بتعليق صوتي دون إظهار الوجه / when a creator needs a video shape (The Test, The Day) or a faceless voice-over edit checked for faces"
  },
  {
   "id": "STORY-74",
@@ -2230,8 +2673,14 @@
    "city montage",
    "travel",
    "shot grammar",
-   "downbeats"
-  ]
+   "downbeats",
+   "فلوج سفر",
+   "لقطات الشارع",
+   "أحجام اللقطات",
+   "travel vlog",
+   "beat cuts"
+  ],
+  "when": "عند مونتاج لقطات مدينة أو سفر على الإيقاع وتريد ترتيب الواسع والمتوسط والتفاصيل وربط اتجاه الحركة / when editing city or travel footage to music, alternating wide, mid and detail shots and matching motion direction"
  },
  {
   "id": "STORY-75",
@@ -2260,8 +2709,14 @@
    "templates",
    "gallery",
    "starter",
-   "script contract"
-  ]
+   "script contract",
+   "قالب جاهز",
+   "نماذج",
+   "بداية سريعة",
+   "brief templates",
+   "presets"
+  ],
+  "when": "حين يريد المستخدم البدء من قالب فيلم جاهز (ريل، إطلاق، شرح…) بخانات للموضوع والسطر والرقم / when the user wants to start from a ready film brief template — showreel, launch, explainer — with slots to fill"
  },
  {
   "id": "STORY-76",
@@ -2290,8 +2745,14 @@
    "painting",
    "dragon",
    "drawing router",
-   "painted realism"
-  ]
+   "painted realism",
+   "رسمة",
+   "تنين",
+   "لوحة خيالية",
+   "fantasy art",
+   "three.js"
+  ],
+  "when": "حين يطلب المستخدم رسم صورة كما هي أو لوحة سينمائية من وصف أو مشهدًا ثلاثي الأبعاد أو فيلمًا للرسم / when a drawing request must be routed — copy an image as code, a cinematic painting, a 3D scene or a painter film"
  },
  {
   "id": "STORY-77",
@@ -2319,8 +2780,14 @@
    "creature",
    "world bible",
    "fantasy",
-   "lore"
-  ]
+   "lore",
+   "وحوش",
+   "عالم خيالي",
+   "تصميم كائنات",
+   "character design",
+   "rarity"
+  ],
+  "when": "حين يريد المستخدم ابتكار كائنات أو عالم خيالي أصلي ببطاقات ندرة وبيئة وحركة مميزة / when designing original creatures or a fantasy world bible with rarity, biome and signature moves, no trademarked characters"
  },
  {
   "id": "STORY-78",
@@ -2348,8 +2815,14 @@
    "ideation",
    "random stimuli",
    "brainstorm",
-   "100 ideas"
-  ]
+   "100 ideas",
+   "أفكار جديدة",
+   "إبداع",
+   "فكرة فيديو",
+   "creativity",
+   "idea generation"
+  ],
+  "when": "حين تحتاج أفكارًا غير متوقعة وتريد محفزات عشوائية فعلًا وأوامر استفزاز أو 100 فكرة ثم تصفية / when you need unexpected ideas and want genuinely random stimuli, provocations or 100 ideas followed by a filter"
  },
  {
   "id": "STORY-79",
@@ -2375,8 +2848,14 @@
    "nuggets",
    "story mine",
    "quote cards",
-   "angles"
-  ]
+   "angles",
+   "اقتباسات",
+   "مقاطع قصيرة",
+   "قصة شخصية",
+   "clips",
+   "transcript"
+  ],
+  "when": "حين تريد استخراج نقاط واقتباسات من تفريغ نصي أو قصة شخصية لتحويلها إلى مقاطع قصيرة / when mining a transcript or lived story for 15–25 nuggets to turn into short clips and quote cards"
  },
  {
   "id": "STORY-80",
@@ -2404,8 +2883,14 @@
    "headline",
    "ctr",
    "copywriting",
-   "arabic copy"
-  ]
+   "arabic copy",
+   "عنوان الفيديو",
+   "عنوان جذاب",
+   "نسبة النقر",
+   "video title",
+   "click-through"
+  ],
+  "when": "حين تكتب عنوان فيديو وتريد عنوانًا جذابًا صادقًا يعبّر عن توتر حقيقي ويمر بخمسة اختبارات / when writing a video title that carries an honest tension and passes five tests, without clickbait"
  },
  {
   "id": "STORY-81",
@@ -2430,8 +2915,14 @@
    "cta",
    "call to action",
    "end card",
-   "conversion"
-  ]
+   "conversion",
+   "دعوة للفعل",
+   "بطاقة النهاية",
+   "تعليق مثبت",
+   "pinned comment",
+   "mid-roll"
+  ],
+  "when": "حين تحدد أين تضع الدعوة للفعل في فيديو قصير أو طويل: عند الذروة أو في المنتصف وآخر دقيقة / when deciding where to place calls to action in short or long videos — at the climax, mid-roll or the final minute"
  },
  {
   "id": "STORY-82",
@@ -2457,8 +2948,14 @@
    "نفسية",
    "thumbnail",
    "emotion",
-   "curiosity"
-  ]
+   "curiosity",
+   "صورة مصغرة",
+   "ثمنيل",
+   "تصميم الغلاف",
+   "cover",
+   "playwright"
+  ],
+  "when": "حين تصمم صورة غلاف لفيديو وتريد البدء من السؤال والعاطفة التي يجب أن يشعر بها المشاهد / when designing a video thumbnail starting from the question and emotion the viewer should feel, then 2–3 directions"
  },
  {
   "id": "STORY-83",
@@ -2487,8 +2984,14 @@
    "pillars",
    "calendar",
    "ics",
-   "series"
-  ]
+   "series",
+   "خطة محتوى",
+   "جدول نشر",
+   "سوشيال ميديا",
+   "content plan",
+   "social media"
+  ],
+  "when": "حين يريد المستخدم خطة نشر على السوشيال ميديا بأعمدة محتوى موزعة على المنصات والأيام في تقويم / when the user wants a social posting plan with weighted content pillars spread across platforms and days"
  },
  {
   "id": "STORY-84",
@@ -2514,8 +3017,14 @@
    "trend",
    "prompt patterns",
    "effort",
-   "budget"
-  ]
+   "budget",
+   "كتابة الطلب",
+   "تكلفة",
+   "وقت التنفيذ",
+   "how to prompt",
+   "cost"
+  ],
+  "when": "حين يسأل المستخدم كيف يصيغ طلب موشن ناجحًا أو كم من الوقت والكلفة يحتاج، بأنماط طلب نجحت / when the user asks how to phrase a motion request that works, or what time and cost to expect"
  },
  {
   "id": "STORY-85",
@@ -2544,8 +3053,14 @@
    "subagents",
    "jev",
    "decision",
-   "roles"
-  ]
+   "roles",
+   "مخرج",
+   "توزيع المهام",
+   "فريق وكلاء",
+   "personas",
+   "agents"
+  ],
+  "when": "حين تريد توزيع العمل على وكلاء متخصصين كمخرج سينمائي ومهندس صوت وناقد بصري، أو ترجيح خيار باحتمال / when delegating to specialist agent personas — director, sound engineer, critic — or scoring options by probability"
  },
  {
   "id": "STORY-P01",
@@ -2580,8 +3095,14 @@
    "art deco",
    "holographic",
    "blueprint",
-   "split-flap"
-  ]
+   "split-flap",
+   "أسلوب موشن",
+   "جسيمات",
+   "نيون",
+   "particles",
+   "neon"
+  ],
+  "when": "حين تريد اختيارًا سريعًا بين عشرين أسلوب موشن (جسيمات، نيون، سلكي ثلاثي الأبعاد…) مع المحركات المرشحة / when picking quickly among 20 motion styles — particles, neon, wireframe 3D — with candidate engines for each"
  },
  {
   "id": "STORY-P02",
@@ -2612,8 +3133,14 @@
    "creative brief",
    "إحاطة",
    "تخطيط",
-   "engine choice"
-  ]
+   "engine choice",
+   "بريف",
+   "خطة الفيلم",
+   "مواصفات",
+   "spec",
+   "master clock"
+  ],
+  "when": "حين تحتاج قبل أي كود إحاطة بثماني خانات تحسم القصة والمقاس والشكل والحركة والصوت والمخرجات / when you need an eight-slot brief before any code, fixing story, format, look, motion, sound, quality and output"
  },
  {
   "id": "STORY-P03",
@@ -2638,8 +3165,14 @@
    "قاموس",
    "مصطلحات",
    "direction",
-   "brief translation"
-  ]
+   "brief translation",
+   "ناعم",
+   "سلس",
+   "مع الإيقاع",
+   "smooth",
+   "easing"
+  ],
+  "when": "حين يستخدم المستخدم كلمات عامة مثل «ناعم» أو «متتابع» أو «مع الإيقاع» وتحتاج تحويلها لتعليمات حركة / when the user says vague words like smooth, staggered or on the beat and you must turn them into programmable motion"
  },
  {
   "id": "STORY-X01",

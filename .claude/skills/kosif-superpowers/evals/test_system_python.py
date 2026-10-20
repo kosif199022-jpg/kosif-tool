@@ -70,6 +70,27 @@ class ArchitectureSizerTests(unittest.TestCase):
             with self.subTest(value=x),self.assertRaises(ValueError):
                 self.base(copies=x)
 
+    def test_copies_accepts_integral_decimal(self):
+        self.assertEqual(self.base(copies="2")["inputs"]["copies"],2)
+        self.assertEqual(self.base(copies="3.0")["inputs"]["copies"],3)
+
+    def test_exclusions_match_docstring(self):
+        v=self.base()
+        for item in ("database indexes","caching","backups","compression","network"):
+            self.assertIn(item,v["exclusions"])
+
+    def test_cli_non_integer_copies_is_clean_error(self):
+        for x in ("1.5","two"):
+            with self.subTest(value=x):
+                run=subprocess.run([sys.executable,str(SCRIPTS/"architecture_sizer.py"),
+                                    "--daily-requests","86400","--peak-factor","5",
+                                    "--payload-bytes","1000","--retention-days","7",
+                                    "--replica-rps","100","--target-utilization","0.5",
+                                    "--copies",x],capture_output=True,text=True,timeout=10)
+                self.assertEqual(run.returncode,2)
+                self.assertIn("copies must be a positive integer",run.stderr)
+                self.assertNotIn("invalid literal",run.stderr)
+
     def test_cli_does_not_guess_missing_inputs(self):
         run=subprocess.run([sys.executable,str(SCRIPTS/"architecture_sizer.py"),
                             "--daily-requests","100"],capture_output=True,text=True,timeout=5)

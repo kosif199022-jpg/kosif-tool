@@ -1,0 +1,79 @@
+{
+  "schema": "kosif.unified-draw.v1",
+  "width": 384,
+  "height": 216,
+  "background": "transparent",
+  "elements": [
+    {
+      "type": "shape",
+      "kind": "rectangle",
+      "x": 12,
+      "y": 161,
+      "width": 252,
+      "height": 43,
+      "fill": "#132622",
+      "stroke": "#132622",
+      "stroke_width": 0,
+      "opacity": 0.77
+    },
+    {
+      "type": "shape",
+      "kind": "text",
+      "x": 23,
+      "y": 169,
+      "text": "KOSIF - RESCUE SCENE",
+      "size": 17,
+      "fill": "#FFFFFF",
+      "stroke_width": 0,
+      "opacity": 1
+    },
+    {
+      "type": "shape",
+      "kind": "line",
+      "stroke": "#EBC487",
+      "stroke_width": 3,
+      "points": [
+        [
+          22,
+          194
+        ],
+        [
+          247,
+          194
+        ]
+      ]
+    },
+    {
+      "type": "stroke",
+      "assist": true,
+      "points": [
+        [
+          294,
+          177
+        ],
+        [
+          332,
+          177
+        ],
+        [
+          365,
+          177
+        ]
+      ],
+      "width": 4,
+      "color": "#F5DDAB",
+      "keyframes": [
+        {
+          "time": 0,
+          "x": 0,
+          "y": 0
+        },
+        {
+          "time": 2,
+          "x": 0,
+          "y": -14
+        }
+      ]
+    }
+  ]
+}
