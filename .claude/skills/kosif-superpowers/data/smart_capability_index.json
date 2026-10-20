@@ -1,7 +1,7 @@
 {
   "schema": "kosif.smart-capability-index.v1",
   "origin": "data/powers/*.json (catalog); no original records changed",
-  "catalog_powers": 5296,
+  "catalog_powers": 5297,
   "group_count": 15,
   "family_count": 62,
   "tool_count": 114,
@@ -129,17 +129,17 @@
       ],
       "keywords": "agent orchestration tool routing discover automation وكلاء أدوات توجيه بحث",
       "workflow": [],
-      "count": 141,
+      "count": 142,
       "status_counts": {
         "documented": 49,
         "install": 8,
         "key": 2,
-        "proven": 77,
+        "proven": 78,
         "ready": 5
       },
       "family_counts": {
         "agent-orchestration": 38,
-        "runnable-tools": 60,
+        "runnable-tools": 61,
         "self-discovery": 43
       },
       "examples": [
@@ -65487,6 +65487,26 @@
       ],
       "source": "runnable-tools.json",
       "what": "يقرأ فهرس مكتبة PromptsMotion العامة وصفحات تفاصيلها ويخزّنها مؤقتًا في ‎.cache/promptsmotion/‎، ثم يستخرج البيانات الوصفية الواقعية فقط، ويعيد كتابة catalog/styles.json وcatalog/prompts_motion.json وملف STYLE.json لكل أسلوب، ويضع listed=false على الإدخالات التي خرجت من الفهرس. —"
+    },
+    {
+      "id": "TOOL-61",
+      "family": "runnable-tools",
+      "group": "agents",
+      "domain": "build",
+      "name_en": "KOSIF Telegram Typography Atlas — private-safe font knowledge and idea search",
+      "name_ar": "مكتبة KOSIF الشاملة للخطوط وأفكار التصميم من صادرات تيليجرام",
+      "status": "proven",
+      "requires": [
+        "pip:pillow",
+        "pip:fonttools",
+        "fonts:arabic"
+      ],
+      "proof": [
+        "kosif-tool/.claude/skills/kosif-superpowers/scripts/test_telegram_typography_atlas.py",
+        "kosif-tool/.claude/skills/kosif-superpowers/scripts/telegram_typography_atlas.py"
+      ],
+      "source": "runnable-tools.json",
+      "what": "ابحث في فهرس بيانات 5,514 خطًا فريدًا من صادرات تيليجرام الخاصة بك (4,634 تدعم العربية): صف لكل عائلة بأوزانها، وكلمات الأنماط بالعربي (كوفي، رقعة، ديواني، ثلث، نسخ) مع تسامح الإملاء، وفلتر للرخص المفتوحة، و16 اتجاهًا تصميميًا أصليًا. الخطوط والرسائل والصور والمسارات تبقى على جها"
     },
     {
       "id": "SEC-01",

@@ -3,7 +3,7 @@
 
 > **قوتك هنا / what this gives you:** كل سكربت في المهارة والمستودع يُشغَّل فعلًا ولم يكن له سجل في الكتالوج: ماذا يفعل، ومتى، وأمره الأول، ومستلزماته، ودليله. مولَّدة من data/tools.json بأمر hub.py build؛ hub.py tool <id> يعطي البطاقة كاملة. — Every script in the skill and repository that really runs and had no catalog record: what it does, when, its first command, requirements and proof. Generated from data/tools.json by hub.py build; hub.py tool <id> gives the full card.
 > **أقوى دليل / strongest evidence:** **TOOL-01** Offline bilingual capability finder (`kosif-tool/.claude/skills/kosif-superpowers/evals/test_ai_tool_discovery.py`) · **TOOL-02** Session boot briefing (`kosif-tool/tests/test_boot.py`)
-> **60 powers follow** — ✅ 50 · 🟢 5 · 📦 5 · 🔑 0 · 👁 0 · 📄 0 · 💡 0.
+> **61 powers follow** — ✅ 51 · 🟢 5 · 📦 5 · 🔑 0 · 👁 0 · 📄 0 · 💡 0.
 
 **الحالة / status:** ✅ مُثبت (شُغّل فعلًا وله مسار دليل) · 🟢 جاهز (كود موجود يعمل بما هو متاح عادة) · 📦 بأمر تثبيت واحد · 🔑 يحتاج مفتاحًا أو حسابًا أو موصلًا · 👁 شوهد في فيديو مرجعي (للموشن فقط) · 📄 طريقة موثقة · 💡 فكرة. الشارة هي أدنى مستوى صادق — the badge is the lowest level that is true.
 مسارات الدليل نسبية إلى `/home/user/`؛ و`session-<date>:<file>#<section>` تشير إلى تشغيل موثق في جلسة سابقة؛ و`owner-upload:` إلى ملف داخل أرشيف أرسله المالك. Proof paths are relative to `/home/user/`.
@@ -22,7 +22,7 @@
 - **Software investigation / فحص البرامج** — TOOL-32 … TOOL-54 (4)
 - **Maintain and build / الصيانة والبناء** — TOOL-33 … TOOL-60 (6)
 - **3D / ثلاثي الأبعاد** — TOOL-36 … TOOL-41 (6)
-- **Image, design and fonts / الصور والتصميم والخطوط** — TOOL-42 (1)
+- **Image, design and fonts / الصور والتصميم والخطوط** — TOOL-42 … TOOL-61 (2)
 - **Sources and references / المصادر والمراجع** — TOOL-43 … TOOL-51 (9)
 - **Local computer / الجهاز المحلي** — TOOL-55 (1)
 - المصادر والرخص / sources & licences
@@ -479,6 +479,15 @@
 - **الدليل / proof:** `kosif-tool/tests/test_font_fidelity_lab.py` · `kosif-tool/.claude/skills/kosif-superpowers/scripts/font_fidelity_lab.py`
 - **المصدر / source:** data/tools.json
 
+#### TOOL-61 · مكتبة KOSIF الشاملة للخطوط وأفكار التصميم من صادرات تيليجرام · KOSIF Telegram Typography Atlas — private-safe font knowledge and idea search · ✅ مُثبت هنا / proven here
+- **ماذا / what:** ابحث في فهرس بيانات 5,514 خطًا فريدًا من صادرات تيليجرام الخاصة بك (4,634 تدعم العربية): صف لكل عائلة بأوزانها، وكلمات الأنماط بالعربي (كوفي، رقعة، ديواني، ثلث، نسخ) مع تسامح الإملاء، وفلتر للرخص المفتوحة، و16 اتجاهًا تصميميًا أصليًا. الخطوط والرسائل والصور والمسارات تبقى على جهازك فقط. — Search a public metadata index of the 5,514 SHA-256-distinct fonts found in the user's own Telegram Desktop exports (4,634 with Arabic letters): one row per family with its styles, Arabic spelling-tolerant style words (كوفي، رقعة، ديواني، ثلث، نسخ), an open-license filter, and 16 original design directions. scan/enrich-zips rebuild the index on the user's machine (bounded, in-memory ZIP reads); refresh re-derives tags, name-based license flags, ideas and counts from the public index alone. Fonts, chats, images and local paths never leave the device.
+- **متى أستخدمها / when:** اختار لي خط رقعة أو كوفي أو ديواني من مكتبة خطوطي لبوستر أو شعار مع حالة الرخصة / Pick an Arabic or Latin font for a logo, poster, brand, reel or kinetic text from the fonts the user already collected
+- **كيف / how:** find: `python3 scripts/telegram_typography_atlas.py find --index data/telegram-typography-catalog-complete-20261020.json "خط رقعة" --arabic-only --limit 15`; find (open licenses only): `python3 scripts/telegram_typography_atlas.py find --index data/telegram-typography-catalog-complete-20261020.json kufi --license open`; doctor: `python3 scripts/telegram_typography_atlas.py doctor`; refresh: `python3 scripts/telegram_typography_atlas.py refresh --index data/telegram-typography-catalog-complete-20261020.json --out ./refreshed.json`. Full card: `python3 scripts/hub.py tool telegram-typography-atlas`. Limits: Metadata and message keyword themes, not understanding of every photo (2,981 image headers read; 80 photos sampled once). 4 exports, 2,766 messages, 1,269 loose font files and 5,283 font members in 89 ZIPs gave 5,514 distinct font binaries (~2,412 family names). 1 ZIP unreadable and 36 ZIP fonts unparsed; EOT/.glyphs members, RAR, PDF and nested archives not indexed. License labels come from embedded names only and never grant permission. find and refresh need only Python; scan needs fonttools, beautifulsoup4 and Pillow (optional list), WOFF2 in ZIPs needs brotli. **أرقام / params:** in: Authorized user-supplied local Telegram Desktop ChatExport folders and local ZIP font archives; no scripts or executables run. · out: Public metadata index (no font bytes, chats, images, URLs or local paths) with 16 design directions, and a separate private local-only locator. redistribution_approved stays false for every font until a person checks the actual license.
+- **تثبيت / install:** `optional: pip:fonttools, pip:beautifulsoup4, pip:Pillow, pip:lxml, pip:brotli`
+- **يحتاج / needs:** [`pip:pillow`](../requirements.md#req-pip-pillow) · [`pip:fonttools`](../requirements.md#req-pip-fonttools) · [`fonts:arabic`](../requirements.md#req-fonts-arabic)
+- **الدليل / proof:** `kosif-tool/.claude/skills/kosif-superpowers/scripts/test_telegram_typography_atlas.py` · `kosif-tool/.claude/skills/kosif-superpowers/scripts/telegram_typography_atlas.py`
+- **المصدر / source:** data/tools.json
+
 ## Sources and references / المصادر والمراجع
 
 #### TOOL-43 · بحث مهارات أطلس الخارجية · Atlas external skill search · ✅ مُثبت هنا / proven here
@@ -571,7 +580,7 @@
 
 ## المصادر والرخص / sources & licences
 
-- الرخص / licences: — (60)
+- الرخص / licences: — (61)
 - الأفكار مكتوبة بكلماتنا مع رابط المصدر؛ لا يُنسخ نص طرف ثالث طويل. Ideas are paraphrased with a link to the source; no long third-party text is copied. `—` = no licence recorded (own method or own wording).
 
 ---

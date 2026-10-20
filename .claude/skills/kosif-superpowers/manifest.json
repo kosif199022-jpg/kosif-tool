@@ -15,7 +15,7 @@
  },
  "paths_note": "Tool paths and examples are relative to their root: 'skill' = this folder, 'repo' = the kosif-tool repository root.",
  "counts": {
-  "powers": 5296,
+  "powers": 5297,
   "families": 62,
   "domains": 10,
   "tools": 114,
@@ -25,7 +25,7 @@
    "idea": 71,
    "install": 971,
    "key": 176,
-   "proven": 918,
+   "proven": 919,
    "ready": 642,
    "seen": 609
   }
@@ -885,10 +885,10 @@
    "domain": "build",
    "title_ar": "الأدوات القابلة للتشغيل",
    "title_en": "Runnable KOSIF tools",
-   "count": 60,
+   "count": 61,
    "statuses": {
     "install": 5,
-    "proven": 50,
+    "proven": 51,
     "ready": 5
    },
    "chapter": "references/powers/runnable-tools.md",
@@ -10493,86 +10493,105 @@
    "area": "image",
    "title_en": "KOSIF Telegram Typography Atlas — private-safe font knowledge and idea search",
    "title_ar": "مكتبة KOSIF الشاملة للخطوط وأفكار التصميم من صادرات تيليجرام",
-   "summary_en": "Read authorized Telegram Desktop exports and font metadata from TTF/OTF plus bounded ZIP TTF/OTF/WOFF/WOFF2 entries, deduplicate by SHA256, discover Arabic glyph repertoire, family/style/weight/variable/color glyphs, classify visual themes and search original design briefs; keep raw chat/private paths/fonts/images OFF public GitHub.",
-   "summary_ar": "فهرسة آلاف الخطوط وأفكار التصميم، مع دعم العربية وتصنيف الخطوط والوزن وحقوق الاستخدام، وإبقاء الرسائل والصور وملفات الخطوط الأصلية داخل جهاز المستخدم فقط.",
+   "summary_en": "Search a public metadata index of the 5,514 SHA-256-distinct fonts found in the user's own Telegram Desktop exports (4,634 with Arabic letters): one row per family with its styles, Arabic spelling-tolerant style words (كوفي، رقعة، ديواني، ثلث، نسخ), an open-license filter, and 16 original design directions. scan/enrich-zips rebuild the index on the user's machine (bounded, in-memory ZIP reads); refresh re-derives tags, name-based license flags, ideas and counts from the public index alone. Fonts, chats, images and local paths never leave the device.",
+   "summary_ar": "ابحث في فهرس بيانات 5,514 خطًا فريدًا من صادرات تيليجرام الخاصة بك (4,634 تدعم العربية): صف لكل عائلة بأوزانها، وكلمات الأنماط بالعربي (كوفي، رقعة، ديواني، ثلث، نسخ) مع تسامح الإملاء، وفلتر للرخص المفتوحة، و16 اتجاهًا تصميميًا أصليًا. الخطوط والرسائل والصور والمسارات تبقى على جهازك فقط.",
    "use_when": [
-    "Research Arabic fonts and typographic styles before designing logos, posters, brands, motion graphics or a new original typeface",
-    "Find glyph-support candidates in user-authorized Telegram export without publicly redistributing font binaries",
-    "حلل خطوط تيليجرام واختر إلهام كوفي ونسخ وديواني ورقعة مع فحص الرخصة"
+    "Pick an Arabic or Latin font for a logo, poster, brand, reel or kinetic text from the fonts the user already collected",
+    "Find open-license (OFL) candidates in a style before designing, then measure them with font-fidelity-lab",
+    "اختار لي خط رقعة أو كوفي أو ديواني من مكتبة خطوطي لبوستر أو شعار مع حالة الرخصة"
    ],
    "keywords": [
-    "typography",
-    "telegram",
-    "fonts",
-    "arabic",
-    "kufi",
-    "naskh",
-    "ruqah",
-    "diwani",
-    "lettering",
-    "open type",
-    "glyphs",
-    "font family",
-    "shaping",
-    "harfbuzz",
-    "metadata",
     "OFL",
-    "license",
-    "zip",
+    "arabic",
+    "diwani",
+    "font family",
+    "font pairing",
+    "fonts",
+    "glyphs",
+    "harfbuzz",
     "idea",
-    "فونت",
-    "خطوط",
-    "كوفي",
-    "نسخ",
+    "kids font",
+    "kufi",
+    "lettering",
+    "license",
+    "logo",
+    "metadata",
+    "naskh",
+    "open license",
+    "open type",
+    "poster",
+    "ruqah",
+    "shaping",
+    "telegram",
+    "typography",
+    "zip",
+    "بوستر",
+    "تايبوغرافي",
     "تصميم الخطوط",
+    "ثلث",
+    "خطوط",
+    "ديواني",
+    "رقعة",
+    "شعار",
+    "فونت",
+    "كوفي",
+    "لوجو",
     "مكتبة",
-    "تايبوغرافي"
+    "نستعليق",
+    "نسخ"
    ],
    "commands": [
     {
-     "name": "doctor",
-     "example": "python3 scripts/telegram_typography_atlas.py doctor",
-     "does": "Check BeautifulSoup, fontTools and Pillow availability."
+     "name": "find",
+     "example": "python3 scripts/telegram_typography_atlas.py find --index data/telegram-typography-catalog-complete-20261020.json \"خط رقعة\" --arabic-only --limit 15",
+     "does": "Read-only search of the public index: style tags and name words, one row per family (styles, file copies, license status), open-claimed licenses first on ties."
     },
     {
-     "name": "find",
-     "example": "python3 scripts/telegram_typography_atlas.py find --index data/telegram-typography-catalog-complete-20261020.json 'كوفي' --arabic-only --limit 15",
-     "does": "Search already indexed Arabic/Latin font family/style, license status and matching idea tags."
+     "name": "find (open licenses only)",
+     "example": "python3 scripts/telegram_typography_atlas.py find --index data/telegram-typography-catalog-complete-20261020.json kufi --license open",
+     "does": "Only fonts whose embedded name table claims OFL, Apache or public domain. Still unverified: confirm the license at the font's official source before use."
+    },
+    {
+     "name": "doctor",
+     "example": "python3 scripts/telegram_typography_atlas.py doctor",
+     "does": "Says which commands this machine can run: find and refresh need nothing extra; scan needs beautifulsoup4, fonttools and Pillow; WOFF2 inside ZIPs needs brotli."
+    },
+    {
+     "name": "refresh",
+     "example": "python3 scripts/telegram_typography_atlas.py refresh --index data/telegram-typography-catalog-complete-20261020.json --out ./refreshed.json",
+     "does": "Re-derive whole-word tags, name-based license flags (trial/demo/personal use), design ideas, counts and limitations from the public index alone; never overwrites."
     },
     {
      "name": "scan",
      "example": "python3 scripts/telegram_typography_atlas.py scan --root ./my-telegram-exports --public-out ./new-public.json --private-out ./new-private.json",
-     "does": "Scan exported Telegram HTML, TTF/OTF metadata, image headers, write public safe metadata plus separate private local-only locator; rejects overwrites."
+     "does": "On the user's machine: index loose TTF/OTF fonts, chat themes and image headers of ChatExport* folders into a public file and a separate private locator; refuses overwrites and outputs inside the exports."
     },
     {
      "name": "enrich-zips",
-     "example": "python3 scripts/telegram_typography_atlas.py enrich-zips --root ./my-telegram-exports --public ./new-public.json --private ./new-private.json --new-public ./complete.json --new-private ./private-complete.json",
-     "does": "Open only allowed-sized archive font members in memory; deduplicate by SHA256; preserve private original locations off GitHub."
-    },
-    {
-     "name": "tests",
-     "example": "python3 scripts/test_telegram_typography_atlas.py",
-     "does": "Run privacy, parsing, Arabic tag, search, immutable output and malicious ZIP traversal guards."
+     "example": "python3 scripts/telegram_typography_atlas.py enrich-zips --root ./my-telegram-exports --public ./new-public.json --private ./new-private.json --new-public ./complete.json --new-private ./complete-private.json",
+     "does": "Add fonts found inside ZIP archives: decompression capped per member, traversal/absolute/encrypted members refused, nothing extracted; ideas and counts rebuilt over all fonts."
     }
    ],
    "inputs": "Authorized user-supplied local Telegram Desktop ChatExport folders and local ZIP font archives; no scripts or executables run.",
-   "outputs": "Safe searchable metadata catalog, 15 original design directions, no media/font payloads; strictly separate private local-only asset locator. All redistribution_approved flags remain false pending actual license review.",
+   "outputs": "Public metadata index (no font bytes, chats, images, URLs or local paths) with 16 design directions, and a separate private local-only locator. redistribution_approved stays false for every font until a person checks the actual license.",
    "requires": {
-    "python": [
-     "Pillow",
-     "fonttools",
-     "beautifulsoup4"
-    ],
+    "python": [],
     "binaries": [],
     "node": [],
-    "optional": [],
+    "optional": [
+     "pip:fonttools",
+     "pip:beautifulsoup4",
+     "pip:Pillow",
+     "pip:lxml",
+     "pip:brotli"
+    ],
     "network": false
    },
    "safety": "writes-files",
    "consent": "Read only the user's authorized exported chat backups. Never upload raw messages, senders, URLs, font bytes, photo assets or private file locations to GitHub; use only actually licensed fonts for production.",
-   "limits": "Catalog metadata and message keyword themes, not machine understanding of all photos. 4 exports, 2766 HTML messages, 1269 standalone files, 89 ZIP archives and 5283 embedded font entries indexed; resulting 5514 unique font binary hashes. 1 ZIP malformed, 36 ZIP font binaries could not be parsed, RAR archives not unpacked, no legal permission inferred from OS/2 or font-name metadata.",
+   "limits": "Metadata and message keyword themes, not understanding of every photo (2,981 image headers read; 80 photos sampled once). 4 exports, 2,766 messages, 1,269 loose font files and 5,283 font members in 89 ZIPs gave 5,514 distinct font binaries (~2,412 family names). 1 ZIP unreadable and 36 ZIP fonts unparsed; EOT/.glyphs members, RAR, PDF and nested archives not indexed. License labels come from embedded names only and never grant permission. find and refresh need only Python; scan needs fonttools, beautifulsoup4 and Pillow (optional list), WOFF2 in ZIPs needs brotli.",
    "evidence": "tested-here",
-   "evidence_note": "2026-10-20 authorized remote laptop: scanned 4 export folders, 2766 non-service messages, 2981 images headers, visually sampled 80 privately, parsed 5514 unique direct/nested font binaries (36 nested unparsed). 6/6 regression tests passed. Public atlas contains metadata only, excludes personal conversations, raw fonts/images/source paths.",
+   "evidence_note": "16 unit tests run in this checkout (synthetic fonts and ZIPs: privacy of the public file, no file-name leaks, bounded ZIP reads, traversal refusal, whole-word tags, family collapse, refresh determinism) plus a privacy check of the committed index. The index itself was produced on the user's authorized laptop on 2026-10-20 and refreshed here.",
    "tests": [
     ".claude/skills/kosif-superpowers/scripts/test_telegram_typography_atlas.py"
    ],
@@ -10582,7 +10601,12 @@
    "families": [
     "typography-arabic",
     "typography-latin"
-   ]
+   ],
+   "safe_commands": [
+    "find",
+    "doctor"
+   ],
+   "power_id": "TOOL-61"
   },
   {
    "id": "skill-intelligence",

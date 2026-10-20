@@ -30,7 +30,7 @@
 <a id="numbers"></a>
 ## 2. الأرقام / numbers
 
-**5,296** قدرة · **62** عائلة · **10** مجالات · ✅ 918 مُثبتة بتشغيل فعلي · 🟢 642 جاهزة · 📦 971 بأمر تثبيت · 🔑 176 بمفتاح أو حساب · 👁 609 شوهدت في فيديو مرجعي · 📄 1909 طريقة موصوفة · 💡 71 فكرة.
+**5,297** قدرة · **62** عائلة · **10** مجالات · ✅ 919 مُثبتة بتشغيل فعلي · 🟢 642 جاهزة · 📦 971 بأمر تثبيت · 🔑 176 بمفتاح أو حساب · 👁 609 شوهدت في فيديو مرجعي · 📄 1909 طريقة موصوفة · 💡 71 فكرة.
 المستلزمات المسجّلة: **122** (أدوات، حزم، مفاتيح، منصات، خطوط، نماذج)؛ النماذج الذهنية: **63**؛ خريطة الأدوات: **125** مستودعًا موثّق الترخيص؛ أطلس الموشن: **289** أسلوبًا؛ الأدوات القابلة للتشغيل: **114**.
 
 <a id="tools"></a>
@@ -115,12 +115,12 @@
 | [التحقق والتقييم — Verification & evals](https://github.com/kosif199022-jpg/kosif-tool/blob/main/.claude/skills/kosif-superpowers/references/powers/verification-evals.md) | CHECK | 29 | 4 | CHECK-02 Postcondition gate on the delivered file (ffpr; CHECK-03 Look at the output: contact sheets, frames, sc; CHECK-22 Catalog snapshot: powers.py stats + repo valid |
 | [التخطيط والتنفيذ — Planning & execution](https://github.com/kosif199022-jpg/kosif-tool/blob/main/.claude/skills/kosif-superpowers/references/powers/planning-execution.md) | PLAN | 12 | 2 | PLAN-01 Full plan scaffold from a goal; PLAN-05 Requirements gate before scheduling; PLAN-02 Backcasting from the end state |
 
-### التطبيقات والواجهات / build — 252 powers · ✅ 152
+### التطبيقات والواجهات / build — 253 powers · ✅ 153
 
 | family | prefix | powers | ✅ | examples (proven first) |
 |---|---|---|---|---|
 | [قدرات التطبيقات المحللة — Analyzed app capabilities](https://github.com/kosif199022-jpg/kosif-tool/blob/main/.claude/skills/kosif-superpowers/references/powers/app-feature-transfer.md) | APPX | 119 | 96 | APPX-01 Speed curve (ramp); APPX-02 Chroma key; APPX-03 Auto reframe to 9:16 |
-| [الأدوات القابلة للتشغيل — Runnable KOSIF tools](https://github.com/kosif199022-jpg/kosif-tool/blob/main/.claude/skills/kosif-superpowers/references/powers/runnable-tools.md) | TOOL | 60 | 50 | TOOL-01 Offline bilingual capability finder; TOOL-02 Session boot briefing; TOOL-03 Capability Atlas search and planner |
+| [الأدوات القابلة للتشغيل — Runnable KOSIF tools](https://github.com/kosif199022-jpg/kosif-tool/blob/main/.claude/skills/kosif-superpowers/references/powers/runnable-tools.md) | TOOL | 61 | 51 | TOOL-01 Offline bilingual capability finder; TOOL-02 Session boot briefing; TOOL-03 Capability Atlas search and planner |
 | [أطلس: التطبيقات والواجهات والتكاملات — Atlas: apps, UI & integrations](https://github.com/kosif199022-jpg/kosif-tool/blob/main/.claude/skills/kosif-superpowers/references/powers/atlas-build.md) | ABUILD | 50 | 0 | ABUILD-01 Autonomous phase-per-PR roadmap execution loop; ABUILD-02 Observation-only run telemetry recorder; ABUILD-03 Role-squad agent pipeline with stages, locks a |
 | [التطبيقات والواجهات — Apps & artifacts](https://github.com/kosif199022-jpg/kosif-tool/blob/main/.claude/skills/kosif-superpowers/references/powers/apps-artifacts.md) | APP | 23 | 6 | APP-04 Dependency-free RTL dashboard page; APP-05 Phone-viewport screenshot + overflow check; APP-06 HTML to MP4 renderer (repo tool) |
 
@@ -185,10 +185,10 @@
 | `key:unspecified` | key | 172 | `an account, API key or connector named in the power's install/how text (ask the user; never guess a value)` |
 | `node` | bin | 166 | `https://nodejs.org (22+)  — apt-get install -y nodejs npm` |
 | `pip:numpy` | pip | 129 | `pip install numpy` |
-| `pip:pillow` | pip | 124 | `pip install pillow  (Arabic shaping needs a libraqm build: PIL.features.check('raqm'))` |
+| `pip:pillow` | pip | 125 | `pip install pillow  (Arabic shaping needs a libraqm build: PIL.features.check('raqm'))` |
 | `npm:remotion` | npm | 115 | `npm i remotion@4.0.536 @remotion/cli@4.0.536  (Remotion licence: free for individuals, company licence above 3` |
 | `pip:opencv` | pip | 94 | `pip install opencv-python-headless` |
-| `fonts:arabic` | font | 90 | `OFL Arabic fonts (Amiri, Cairo, Tajawal, Reem Kufi, Aref Ruqaa, Lalezar) ship in proofs/_shared/fonts; more fr` |
+| `fonts:arabic` | font | 91 | `OFL Arabic fonts (Amiri, Cairo, Tajawal, Reem Kufi, Aref Ruqaa, Lalezar) ship in proofs/_shared/fonts; more fr` |
 | `imagemagick` | bin | 82 | `apt-get install -y imagemagick` |
 | `engine:ghidra` | bin | 76 | `Ghidra 12.1 from github.com/NationalSecurityAgency/ghidra + GHIDRA_INSTALL_DIR; or Hopper (rea setup), IDA MCP` |
 | `claude:tools` | service | 73 | `Claude Code (CLI, desktop, web) — Agent, Workflow, Artifact, WebFetch/WebSearch, ToolSearch` |

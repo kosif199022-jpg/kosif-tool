@@ -74,7 +74,7 @@ class ProtocolTests(unittest.TestCase):
         index = json.loads((SK / lib["index"]).read_text(encoding="utf-8"))
         self.assertEqual(lib["stats"]["fonts"], len(index["fonts"]))
         self.assertEqual(lib["stats"]["redistribution_approved"], 0)  # license hints are never permission
-        self.assertIn('"kufi"', lib["command"])
+        self.assertRegex(lib["command"], r'"[^"]*kufi[^"]*"')
         self.assertIn("--arabic-only", lib["command"])
         self.assertNotRegex(json.dumps(lib, ensure_ascii=False), r"[A-Za-z]:\\\\|/Users/|/home/")  # no private paths
         self.assertEqual(b["analysis"]["primary"], "image")

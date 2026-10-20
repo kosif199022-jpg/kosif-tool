@@ -269,10 +269,12 @@ ARABIC_TERMS = {  # the Arabic-text need means different checks per deliverable
 }
 FONT_STYLES = {  # request word → query word the atlas understands (its tags are English; its find also matches Arabic)
     "كوفي": "kufi", "ديواني": "diwani", "ثلث": "thuluth", "رقعه": "ruqah", "نسخ": "naskh", "مغربي": "maghrebi",
-    "هندسي": "geometric", "يدوي": "handwritten", "فرشاه": "brush", "زخرف": "decorative", "دائري": "rounded", "اطفال": "rounded",
+    "هندسي": "geometric", "يدوي": "handwritten", "فرشاه": "brush", "زخرف": "decorative", "دائري": "rounded", "اطفال": "kids",
+    "نستعليق": "nastaliq", "شعار": "logo", "لوجو": "logo", "بوستر": "display", "عناوين": "display", "مجسم": "3d",
     "عريض": "bold", "رفيع": "light", "قديم": "vintage", "حديث": "modern", "متغير": "variable",
     "kufi": "kufi", "naskh": "naskh", "ruqah": "ruqah", "diwani": "diwani", "thuluth": "thuluth", "geometric": "geometric",
     "handwritten": "handwritten", "brush": "brush", "rounded": "rounded", "variable": "variable", "display": "display", "logo": "logo",
+    "poster": "display", "kids": "kids", "nastaliq": "nastaliq",
 }
 # user-owned asset libraries: searched when the request needs them; their files stay on the user's device
 ASSET_LIBRARIES = [{
@@ -280,7 +282,7 @@ ASSET_LIBRARIES = [{
     "title_ar": "مكتبة خطوطك من صادرات تيليجرام", "title_en": "Your Telegram typography atlas",
     "where": "ملفات الخطوط نفسها على لابتوبك فقط (ملف المواقع الخاص هناك)؛ هنا فهرس بيانات بلا خطوط. للرندر هنا: خط برخصة مؤكدة من مصدره الرسمي، أو اعمل على اللابتوب عبر Remote Desktop Commander بإذنك.",
     "gate": "رخصة name table تلميح لا تصريح: redistribution_approved=false للكل حتى تُراجع الرخصة الفعلية من مصدرها؛ لا تنسخ حدود حروف خط مملوك.",
-    "routes": {"A": "find → أفضل 5 خطوط OFL-claimed تناسب النمط → تأكيد الرخصة من المصدر الرسمي",
+    "routes": {"A": "find --license open → أفضل 5 عائلات تناسب النمط → تأكيد الرخصة من المصدر الرسمي",
                "B": "find 15–20 مرشحًا → font-fidelity-lab (تغطية الجملة وGSUB/GPOS) → render-text لوحة مقارنة 16/24/48/96 → اختيار بسبب مكتوب",
                "C": "B + حروف أو شعار أصلي من الصفر مستلهم من فئة الأفكار (unified-draw/creative-paint أو FontForge) + بوابة أصالة"},
     "plan_tools": {"A": ["telegram-typography-atlas"], "B": ["telegram-typography-atlas", "font-fidelity-lab", "render-text"],
@@ -312,7 +314,7 @@ def asset_libraries(task: str) -> list:
         rel = idx.relative_to(SKILL).as_posix()
         out.append({"id": lib["id"], "title_ar": lib["title_ar"], "title_en": lib["title_en"], "index": rel,
                     "stats": {"fonts": len(fonts), "arabic": sum(1 for f in fonts if f.get("has_arabic")),
-                              "families": len({f.get("family", "").strip().casefold() for f in fonts if f.get("family", "").strip()}),
+                              "families": (d.get("script_coverage") or {}).get("unique_font_families", 0),
                               "ideas": len(d.get("typography_design_ideas", [])), "license": dict(lic.most_common()),
                               "redistribution_approved": sum(1 for f in fonts if f.get("redistribution_approved"))},
                     "styles_detected": styles,

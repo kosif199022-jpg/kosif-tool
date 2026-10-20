@@ -24,10 +24,10 @@
 | 8 | [`key:unspecified`](#req-key-unspecified) | key | 172 | engines-render-pipeline, ai-generation, atlas-code, camera-composition-layout, qa-verification |  |
 | 9 | [`node`](#req-node) | bin | 166 | qa-verification, engines-render-pipeline, atlas-code, color-palette-grading, ui-product-device |  |
 | 10 | [`pip:numpy`](#req-pip-numpy) | pip | 129 | app-feature-transfer, music-beat-sound, qa-verification, transitions-cuts, color-palette-grading |  |
-| 11 | [`pip:pillow`](#req-pip-pillow) | pip | 124 | app-feature-transfer, qa-verification, engines-render-pipeline, runnable-tools, typography-arabic |  |
+| 11 | [`pip:pillow`](#req-pip-pillow) | pip | 125 | app-feature-transfer, qa-verification, engines-render-pipeline, runnable-tools, typography-arabic |  |
 | 12 | [`npm:remotion`](#req-npm-remotion) | npm | 115 | engines-render-pipeline, music-beat-sound, typography-arabic, easing-timing-rhythm, transitions-cuts |  |
 | 13 | [`pip:opencv`](#req-pip-opencv) | pip | 94 | app-feature-transfer, transitions-cuts, media-image-audio, engines-render-pipeline, photo-video-footage |  |
-| 14 | [`fonts:arabic`](#req-fonts-arabic) | font | 90 | typography-arabic, documents-office, typography-latin, audio-sync-captions, arabic-language |  |
+| 14 | [`fonts:arabic`](#req-fonts-arabic) | font | 91 | typography-arabic, documents-office, typography-latin, audio-sync-captions, arabic-language |  |
 | 15 | [`imagemagick`](#req-imagemagick) | bin | 82 | engines-render-pipeline, music-beat-sound, transitions-cuts, photo-video-footage, qa-verification |  |
 | 16 | [`engine:ghidra`](#req-engine-ghidra) | bin | 76 | software-investigation, runnable-tools |  |
 | 17 | [`claude:tools`](#req-claude-tools) | service | 73 | agent-orchestration, thinking-core, atlas-mind, atlas-code, self-discovery |  |
@@ -63,8 +63,8 @@
 | 47 | [`pip:torch`](#req-pip-torch) | pip | 14 | self-discovery, arabic-language, ai-generation, media-image-audio, documents-office |  |
 | 48 | [`pip:pandas`](#req-pip-pandas) | pip | 13 | self-discovery, atlas-data, data-analysis, atlas-strategy, code-engineering |  |
 | 49 | [`pip:librosa`](#req-pip-librosa) | pip | 13 | music-beat-sound, media-image-audio, qa-verification, self-discovery, video-download |  |
-| 50 | [`pip:piper`](#req-pip-piper) | model | 12 | voice-tts, audio-sync-captions, self-discovery, creativity-engine |  |
-| 51 | [`pip:fonttools`](#req-pip-fonttools) | pip | 12 | app-feature-transfer, qa-verification, typography-arabic, brand-logo-identity, diagrams-explainers-code |  |
+| 50 | [`pip:fonttools`](#req-pip-fonttools) | pip | 13 | app-feature-transfer, qa-verification, runnable-tools, typography-arabic, brand-logo-identity |  |
+| 51 | [`pip:piper`](#req-pip-piper) | model | 12 | voice-tts, audio-sync-captions, self-discovery, creativity-engine |  |
 | 52 | [`pip:hypothesis`](#req-pip-hypothesis) | pip | 12 | atlas-code, code-engineering, mental-models, agent-orchestration, atlas-strategy |  |
 | 53 | [`libreoffice`](#req-libreoffice) | bin | 11 | documents-office, self-discovery, data-analysis, media-image-audio, strategy-finance |  |
 | 54 | [`npm:animejs`](#req-npm-animejs) | npm | 11 | engines-render-pipeline, easing-timing-rhythm, qa-verification, transitions-cuts, ui-product-device |  |
@@ -245,9 +245,9 @@
 
 - **النوع / kind:** pip (حزمة بايثون)
 - **التثبيت / install:** `pip install pillow  (Arabic shaping needs a libraqm build: PIL.features.check('raqm'))`
-- **يفتح / unlocks:** 124 powers
-- **بالحالة / by status:** proven 74 · documented 21 · ready 19 · install 6 · key 2 · idea 1 · seen 1
-- **العائلات / families:** app-feature-transfer (36), qa-verification (15), engines-render-pipeline (14), runnable-tools (8), typography-arabic (8), media-image-audio (6), texture-material (5), color-palette-grading (3)
+- **يفتح / unlocks:** 125 powers
+- **بالحالة / by status:** proven 75 · documented 21 · ready 19 · install 6 · key 2 · idea 1 · seen 1
+- **العائلات / families:** app-feature-transfer (36), qa-verification (15), engines-render-pipeline (14), runnable-tools (9), typography-arabic (8), media-image-audio (6), texture-material (5), color-palette-grading (3)
 - **أمثلة / examples:** `ANLY-11` Detect libraqm before shaping Arabic · `APPX-105` Blend modes (24) and layer stacks → PNG or OpenR · `APPX-113` Sticker: cut-out with white border and soft shad · `APPX-38` Watermark with exact opacity · `APPX-39` Perceptual JPEG recompression (JPEGmini-style) · `APPX-40` Contact sheet / print templates
 
 <a id="req-npm-remotion"></a>
@@ -275,8 +275,8 @@
 
 - **النوع / kind:** font (خطوط)
 - **التثبيت / install:** `OFL Arabic fonts (Amiri, Cairo, Tajawal, Reem Kufi, Aref Ruqaa, Lalezar) ship in proofs/_shared/fonts; more from fonts.google.com`
-- **يفتح / unlocks:** 90 powers
-- **بالحالة / by status:** proven 40 · ready 19 · documented 16 · install 13 · seen 1 · key 1
+- **يفتح / unlocks:** 91 powers
+- **بالحالة / by status:** proven 41 · ready 19 · documented 16 · install 13 · seen 1 · key 1
 - **العائلات / families:** typography-arabic (25), documents-office (6), typography-latin (6), audio-sync-captions (5), arabic-language (4), brand-logo-identity (4), maps-geo (4), data-analysis (3)
 - **أمثلة / examples:** `ANLY-10` matplotlib charts with Arabic labels · `ANLY-24` Spatial analysis (geopandas/shapely/pyproj) · `ANLY-37` GeoPandas: Join, buffer and reproject vector geo · `APPX-88` Template design (JSON → PNG/PDF) · `ARAB-06` Shaping-engine routing · `ARAB-09` Real type over generated plates
 
@@ -630,6 +630,16 @@
 - **العائلات / families:** music-beat-sound (6), media-image-audio (2), qa-verification (2), self-discovery (1), video-download (1), web-research (1)
 - **أمثلة / examples:** `MEDIA-16` Pitch tracking (librosa YIN) · `MEDIA-17` Onset and tempo detection · `SELF-18` Python import probe · `BEAT-129` Beat-grid analyzer (audiomap.json) · `BEAT-159` Measured beat detection · `BEAT-217` Beat-grid trailer from a capture
 
+<a id="req-pip-fonttools"></a>
+### `pip:fonttools` — فحص الخطوط وتقطيعها ودمجها / inspect, subset and merge fonts
+
+- **النوع / kind:** pip (حزمة بايثون)
+- **التثبيت / install:** `pip install fonttools brotli`
+- **يفتح / unlocks:** 13 powers
+- **بالحالة / by status:** proven 7 · documented 3 · ready 2 · install 1
+- **العائلات / families:** app-feature-transfer (4), qa-verification (2), runnable-tools (2), typography-arabic (2), brand-logo-identity (1), diagrams-explainers-code (1), engines-render-pipeline (1)
+- **أمثلة / examples:** `APPX-44` Build a font with kerning · `APPX-84` Font inspection · `APPX-85` Font subsetting · `ARAB-X05` Assemble a matched OFL family from two masters · `QA-X09` Synthetic ground-truth scorecard for the mimic p · `TOOL-42` Arabic-aware font fidelity lab
+
 <a id="req-pip-piper"></a>
 ### `pip:piper` — توليد صوت عربي محلي بلا مفتاح مع محاذاة الفونيمات / local Arabic TTS without a key, with phoneme alignment
 
@@ -639,16 +649,6 @@
 - **بالحالة / by status:** proven 5 · documented 5 · key 1 · ready 1
 - **العائلات / families:** voice-tts (7), audio-sync-captions (2), self-discovery (2), creativity-engine (1)
 - **أمثلة / examples:** `SELF-29` License gate before adopting · `SYNC-09` True word timing from Piper phonemes · `VOICE-01` Piper offline Arabic TTS · `VOICE-19` Read speed by content — regenerate, never stretc · `VOICE-41` Character voice costumes · `IDEA-21` Combo: WRITE + VOICE + synced captions
-
-<a id="req-pip-fonttools"></a>
-### `pip:fonttools` — فحص الخطوط وتقطيعها ودمجها / inspect, subset and merge fonts
-
-- **النوع / kind:** pip (حزمة بايثون)
-- **التثبيت / install:** `pip install fonttools brotli`
-- **يفتح / unlocks:** 12 powers
-- **بالحالة / by status:** proven 6 · documented 3 · ready 2 · install 1
-- **العائلات / families:** app-feature-transfer (4), qa-verification (2), typography-arabic (2), brand-logo-identity (1), diagrams-explainers-code (1), engines-render-pipeline (1), runnable-tools (1)
-- **أمثلة / examples:** `APPX-44` Build a font with kerning · `APPX-84` Font inspection · `APPX-85` Font subsetting · `ARAB-X05` Assemble a matched OFL family from two masters · `QA-X09` Synthetic ground-truth scorecard for the mimic p · `TOOL-42` Arabic-aware font fidelity lab
 
 <a id="req-pip-hypothesis"></a>
 ### `pip:hypothesis` — اختبارات الخصائص / property-based tests
