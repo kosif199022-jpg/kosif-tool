@@ -104,6 +104,21 @@ See [REA website investigation](references/taaft-rea-discovery-audit.md).
 
 When asked to export a simple animated 3D scene without installing or running Blender, read [native-glb-no-blender.md](references/native-glb-no-blender.md) and run scripts/native_glb.py with templates/blender-demo.json and a new .glb destination. Supported in this native exporter: cube/sphere meshes, colors and translation keyframes, using only Python standard library. For actual native image/video rasterization consult scripts/native_3d.py instead. Neither is a complete Blender replacement; never claim that all Blender functions were recovered by REA/Ghidra.
 
+## Atlas source-reviewed method guidance — 2026-10-20
+
+For task-specific thinking, finance, security, motion, design, research, software and authorized reverse-engineering work, use the **source-read method router** alongside the existing KOSIF catalog:
+
+```powershell
+python scripts/atlas_reviewed_methods_v3.py --doctor
+python scripts/atlas_reviewed_methods_v3.py --task "غيدرا REA تحليل تطبيق" --domain reverse_engineering
+python scripts/atlas_reviewed_methods_v3.py --task "إقفال محاسبي شهري" --domain finance
+python -m unittest discover -s scripts -p test_atlas_reviewed_methods_v3.py -v
+```
+
+[Source review and provenance report](references/atlas-source-review-20261020.md) and [24 independently restated review methods](data/atlas-reviewed-methods-20261020.json) summarize **14,793 metadata records**, **395 checked SKILL.md source texts**, and **24 bounded source-backed guidance routes across 12 domains**. Each method preserves the upstream link, pinned Atlas commit and source SHA-256. This is not 14,793 executable capabilities or a security certification. No third-party code was merged, installed or run. Copyleft skills remain reference-only; check each license and obtain permission where needed.
+
+For native binary inspection, use independently installed official REA/Ghidra after live checks. REA/Ghidra may be present on a user's own machine, but this catalog does not install or grant access to them. Use `rea doctor --client claude_code --provider ghidra` and choose an authorized local target before `rea analyze <target> --provider ghidra`. Follow local approval boundaries and preserve evidence.
+
 ## Capability Atlas — start here for every substantial task
 
 Use the **generated bilingual capability index** at [references/capability-atlas.md](references/capability-atlas.md). Run `python scripts/capability_atlas.py plan "<user task>" --json` to select source-backed capability IDs, requirements, workflow skills and suggested execution routes. Drill into a selected ID with `python scripts/capability_atlas.py show <ID> --json`; run `doctor --json` to detect a stale index and `build` after catalog edits. Never treat catalog status as confirmation of live execution or silently install dependencies. See the full protocol in the guide.
