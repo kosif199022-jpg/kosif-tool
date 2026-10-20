@@ -81,10 +81,11 @@ def live(as_json: bool) -> int:
     for u in unlock[:8]:
         print(f"  +{u['unlocks']:<4} {u['requirement']:<20} → {u['install']}")
     print("""
+structure: 20 hubs → 456 fused superpowers → every atomic power (START.md · references/hubs.md)
 next:
-  1. python3 scripts/think.py ladder "<task>"         how deep to think
-  2. python3 scripts/powers.py suggest "<task>"       which powers
-  3. python3 scripts/requirements.py plan "<task>"    what to install first (▶ = can start now)
+  1. python3 scripts/kosif_hubs.py route "<task>"     hub + superpowers + scripts + install plan
+  2. python3 scripts/kosif_hubs.py install <hub>      install what is missing (--apply: pip/npm only)
+  3. python3 scripts/superpower_fusion.py show SP-…   the superpower's ordered members and links
   4. python3 scripts/think.py frame "<task>"          the contract, then build a thin slice and verify it
 map: references/capability-graph.html · thinking: references/cognition.md · rules: SKILL.md §6""")
     return 0

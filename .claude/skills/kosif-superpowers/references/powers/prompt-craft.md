@@ -9,7 +9,7 @@
 مسارات الدليل نسبية إلى `/home/user/`؛ و`session-<date>:<file>#<section>` تشير إلى تشغيل موثق في جلسة سابقة؛ و`owner-upload:` إلى ملف داخل أرشيف أرسله المالك. Proof paths are relative to `/home/user/`.
 
 **المجال / domain:** الكتابة واللغة — Writing & language · **البادئة / prefix:** `PROMPT` · **البيانات / data:** `data/powers/prompt-craft.json` · **بحث / search:** `python3 scripts/powers.py family prompt-craft`
-**مراجع ذات صلة / related references:** [capability-atlas.md](../capability-atlas.md) · [creativity.md](../creativity.md) · [prompt-optimizer.md](../prompt-optimizer.md) · [requirements.md](../requirements.md) · [verification.md](../verification.md)
+**مراجع ذات صلة / related references:** [capability-atlas.md](../capability-atlas.md) · [creativity.md](../creativity.md) · [hubs.md](../hubs.md) · [prompt-optimizer.md](../prompt-optimizer.md) · [requirements.md](../requirements.md) · [verification.md](../verification.md)
 
 ## الفهرس / contents
 

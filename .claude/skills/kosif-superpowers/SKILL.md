@@ -101,14 +101,15 @@ Use the **generated bilingual capability index** at [references/capability-atlas
 <!-- counts: powers=5236 families=61 domains=10 styles=289 watched=254 proven=868 ready=637 install=966 key=176 seen=609 documented=1909 idea=71 -->
 **الأرقام / counts:** 5,236 قدرة في 61 عائلة و10 مجالات — ✅ 868 · 🟢 637 · 📦 966 · 🔑 176 · 👁 609 · 📄 1,909 · 💡 71 · 289 أسلوبًا مرجعيًا (254 منها شوهد فيديوها). `python3 $SKILL_DIR/scripts/powers.py stats`
 
-## 0. القدرات الخارقة المدمجة — fused superpowers (ابدأ هنا)
-الـ5,236 قدرة ذرية مدمجة الآن في **456 قدرة خارقة** (نحو 11.48 قدرة في كل واحدة)، كل منها خط تنفيذ مرتب (✅ أولًا) ومرتبطة بأقرب القدرات الخارقة إليها في رسم واحد متصل. قدرات أطلس المتشابهة انصهرت داخل قدرات KOSIF الأصلية (40 قدرة).
+## 0. ابدأ من البوابات — hubs → superpowers → powers (start here)
+كل القدرات مقسّمة الآن في **20 بوابة** بحسب نوع العمل (الرسم، المونتاج، الموشن، 3D، الخطوط، الصوت، البيانات المرئية، التوليد، القصة، الرندر والجودة، الصور، الكود، الهندسة العكسية، التفكير، الكتابة، البيانات، المستندات، البحث، التطبيقات، الأعمال). داخل كل بوابة **قدرات خارقة مدمجة** (456 إجمالًا: القدرات التي تؤدي العمل نفسه جُمعت معًا، والتوائم المتطابقة معلّمة)، وداخل كل قدرة خارقة القدرات الذرية بأدلتها.
 
-    python3 $SKILL_DIR/scripts/superpower_fusion.py suggest "<المهمة بكلمات المستخدم>"
-    python3 $SKILL_DIR/scripts/superpower_fusion.py show SP-0286        # الأعضاء والمستلزمات والروابط
-    python3 $SKILL_DIR/scripts/superpower_fusion.py of BEAT-16          # أي قدرة خارقة تحوي قدرة ذرية
+    python3 $SKILL_DIR/scripts/kosif_hubs.py                          # الخريطة: 20 بوابة وجاهزية كل منها
+    python3 $SKILL_DIR/scripts/kosif_hubs.py route "<المهمة>"         # البوابة + القدرات الخارقة + السكربتات + خطة التثبيت
+    python3 $SKILL_DIR/scripts/kosif_hubs.py install montage          # ثبّت الناقص (--apply ينفذ pip/npm فقط)
+    python3 $SKILL_DIR/scripts/superpower_fusion.py show SP-0286      # أعضاء القدرة الخارقة مرتبة (✅ أولًا) وتوائمها وروابطها
 
-الجدول الكامل: [superpowers.md](references/superpowers.md). القدرات الذرية باقية كطبقة الدليل (IDs والشارات والإثباتات)؛ شارة القدرة الخارقة `best` تعني أقوى عضو فيها لا كل أعضائها، و`status_mix` هو التوزيع الصادق. بعد تعديل الكتالوج: `superpower_fusion.py build`.
+ملخص سريع لكلود: [START.md](START.md). الخريطة الكاملة: [hubs.md](references/hubs.md) و[superpowers.md](references/superpowers.md). شارة القدرة الخارقة `best` تعني أقوى عضو لا كل الأعضاء. بعد تعديل الكتالوج: `superpower_fusion.py build` ثم `kosif_hubs.py build`.
 
 ## 1. ابدأ هنا — بروتوكول التشغيل / the power-up protocol
 اعمل هذا في أول دقيقتين من أي مهمة حقيقية. Do this in the first two minutes of any real task.

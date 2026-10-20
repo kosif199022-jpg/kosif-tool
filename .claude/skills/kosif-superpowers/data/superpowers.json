@@ -1,6 +1,8 @@
 {
 "schema": "kosif.superpowers.v1",
 "atoms": 5236,
+"distinct_methods": 4956,
+"twin_groups": 160,
 "superpowers": 456,
 "per_target": 12,
 "fusion_ratio": 11.48,
@@ -132,6 +134,13 @@
 }
 ],
 "proof": [],
+"twins": [
+[
+"AMIND-29",
+"AGENT-31"
+]
+],
+"distinct_methods": 14,
 "links": [
 {
 "id": "SP-0005",
@@ -282,6 +291,8 @@
 "kosif-tool/.claude/skills/kosif-superpowers/proofs/toolbelt-smoke/smoke.py",
 "kosif-tool/.claude/skills/kosif-superpowers/proofs/toolbelt-smoke/results.json"
 ],
+"twins": [],
+"distinct_methods": 15,
 "links": [
 {
 "id": "SP-0061",
@@ -400,6 +411,8 @@
 }
 ],
 "proof": [],
+"twins": [],
+"distinct_methods": 11,
 "links": [
 {
 "id": "SP-0040",
@@ -478,6 +491,8 @@
 }
 ],
 "proof": [],
+"twins": [],
+"distinct_methods": 5,
 "links": [
 {
 "id": "SP-0028",
@@ -727,6 +742,8 @@
 }
 ],
 "proof": [],
+"twins": [],
+"distinct_methods": 33,
 "links": [
 {
 "id": "SP-0125",
@@ -784,6 +801,8 @@
 }
 ],
 "proof": [],
+"twins": [],
+"distinct_methods": 2,
 "links": [
 {
 "id": "SP-0042",
@@ -835,6 +854,8 @@
 }
 ],
 "proof": [],
+"twins": [],
+"distinct_methods": 1,
 "links": [
 {
 "id": "SP-0039",
@@ -1017,6 +1038,8 @@
 "kosif-tool/.claude/skills/kosif-superpowers/references/cognition.md",
 "kosif-tool/.claude/skills/kosif-superpowers/scripts/requirements.py"
 ],
+"twins": [],
+"distinct_methods": 21,
 "links": [
 {
 "id": "SP-0013",
@@ -1107,6 +1130,8 @@
 }
 ],
 "proof": [],
+"twins": [],
+"distinct_methods": 6,
 "links": [
 {
 "id": "SP-0058",
@@ -1164,6 +1189,8 @@
 }
 ],
 "proof": [],
+"twins": [],
+"distinct_methods": 2,
 "links": [
 {
 "id": "SP-0375",
@@ -1452,6 +1479,8 @@
 }
 ],
 "proof": [],
+"twins": [],
+"distinct_methods": 40,
 "links": [
 {
 "id": "SP-0012",
@@ -1546,6 +1575,8 @@
 }
 ],
 "proof": [],
+"twins": [],
+"distinct_methods": 7,
 "links": [
 {
 "id": "SP-0011",
@@ -1633,6 +1664,8 @@
 }
 ],
 "proof": [],
+"twins": [],
+"distinct_methods": 6,
 "links": [
 {
 "id": "SP-0011",
@@ -1708,6 +1741,8 @@
 }
 ],
 "proof": [],
+"twins": [],
+"distinct_methods": 4,
 "links": [
 {
 "id": "SP-0011",
@@ -1783,6 +1818,8 @@
 }
 ],
 "proof": [],
+"twins": [],
+"distinct_methods": 4,
 "links": [
 {
 "id": "SP-0011",
@@ -1846,6 +1883,8 @@
 }
 ],
 "proof": [],
+"twins": [],
+"distinct_methods": 2,
 "links": [
 {
 "id": "SP-0011",
@@ -1975,6 +2014,8 @@
 "kosif-tool/tests/test_think.py",
 "kosif-tool/.claude/skills/kosif-superpowers/references/cognition.md"
 ],
+"twins": [],
+"distinct_methods": 12,
 "links": [
 {
 "id": "SP-0023",
@@ -2149,6 +2190,8 @@
 "kosif-tool/.claude/skills/kosif-superpowers/references/surfaces.md",
 "session-2026-10-16:general-arsenal.md#Key lessons (surprises Claude must know — training-data APIs are stale)"
 ],
+"twins": [],
+"distinct_methods": 19,
 "links": [
 {
 "id": "SP-0024",
@@ -2298,6 +2341,8 @@
 "kosif-tool/.claude/skills/kosif-superpowers/scripts/probe_env.py",
 "session-2026-10-16:env-probe.md#1. Hardware / OS"
 ],
+"twins": [],
+"distinct_methods": 15,
 "links": [
 {
 "id": "SP-0332",
@@ -2387,6 +2432,8 @@
 "proof": [
 "kosif-tool/.claude/skills/kosif-superpowers/proofs/general-discovery/README.md"
 ],
+"twins": [],
+"distinct_methods": 6,
 "links": [
 {
 "id": "SP-0061",
@@ -2454,6 +2501,8 @@
 }
 ],
 "proof": [],
+"twins": [],
+"distinct_methods": 3,
 "links": [
 {
 "id": "SP-0026",
@@ -2628,6 +2677,8 @@
 "kosif-tool/.claude/skills/kosif-superpowers/references/cognition.md",
 "session-2026-10-16:skill-audit.md#2"
 ],
+"twins": [],
+"distinct_methods": 20,
 "links": [
 {
 "id": "SP-0058",
@@ -2772,6 +2823,8 @@
 }
 ],
 "proof": [],
+"twins": [],
+"distinct_methods": 16,
 "links": [
 {
 "id": "SP-0017",
@@ -2865,6 +2918,8 @@
 }
 ],
 "proof": [],
+"twins": [],
+"distinct_methods": 7,
 "links": [
 {
 "id": "SP-0018",
@@ -2932,6 +2987,8 @@
 }
 ],
 "proof": [],
+"twins": [],
+"distinct_methods": 3,
 "links": [
 {
 "id": "SP-0340",
@@ -3106,6 +3163,8 @@
 "session-2026-10-16:skill-audit.md#4",
 "kosif-tool/.claude/skills/kosif-superpowers/scripts/powers.py"
 ],
+"twins": [],
+"distinct_methods": 19,
 "links": [
 {
 "id": "SP-0027",
@@ -3189,6 +3248,8 @@
 }
 ],
 "proof": [],
+"twins": [],
+"distinct_methods": 6,
 "links": [
 {
 "id": "SP-0342",
@@ -3261,6 +3322,8 @@
 }
 ],
 "proof": [],
+"twins": [],
+"distinct_methods": 4,
 "links": [
 {
 "id": "SP-0004",
@@ -3436,6 +3499,8 @@
 "kosif-tool/.claude/skills/kosif-superpowers/proofs/general-writing/arabic_probe.py",
 "kosif-tool/.claude/skills/kosif-superpowers/proofs/toolbelt-smoke/README.md"
 ],
+"twins": [],
+"distinct_methods": 19,
 "links": [
 {
 "id": "SP-0095",
@@ -3508,6 +3573,8 @@
 "kosif-tool/.claude/skills/kosif-superpowers/proofs/general-writing/README.md",
 "kosif-tool/.claude/skills/kosif-superpowers/proofs/general-writing/arabic_probe.py"
 ],
+"twins": [],
+"distinct_methods": 3,
 "links": [
 {
 "id": "SP-0119",
@@ -3598,6 +3665,8 @@
 }
 ],
 "proof": [],
+"twins": [],
+"distinct_methods": 7,
 "links": [
 {
 "id": "SP-0112",
@@ -3754,6 +3823,8 @@
 "kosif-tool/.claude/skills/kosif-superpowers/proofs/general-writing/README.md",
 "kosif-tool/.claude/skills/kosif-superpowers/proofs/general-writing/test_writing.py"
 ],
+"twins": [],
+"distinct_methods": 17,
 "links": [
 {
 "id": "SP-0133",
@@ -3832,6 +3903,8 @@
 }
 ],
 "proof": [],
+"twins": [],
+"distinct_methods": 5,
 "links": [
 {
 "id": "SP-0032",
@@ -3951,6 +4024,8 @@
 "kosif-tool/.claude/skills/kosif-superpowers/proofs/general-writing/README.md",
 "kosif-tool/.claude/skills/kosif-superpowers/proofs/general-writing/test_writing.py"
 ],
+"twins": [],
+"distinct_methods": 11,
 "links": [
 {
 "id": "SP-0029",
@@ -4068,6 +4143,8 @@
 "kosif-tool/.claude/skills/kosif-superpowers/proofs/general-writing/README.md",
 "kosif-tool/.claude/skills/kosif-superpowers/proofs/general-writing/test_writing.py"
 ],
+"twins": [],
+"distinct_methods": 11,
 "links": [
 {
 "id": "SP-0452",
@@ -4155,6 +4232,8 @@
 "kosif-tool/.claude/skills/kosif-superpowers/proofs/general-writing/README.md",
 "kosif-tool/.claude/skills/kosif-superpowers/proofs/general-writing/test_writing.py"
 ],
+"twins": [],
+"distinct_methods": 6,
 "links": [
 {
 "id": "SP-0025",
@@ -4410,6 +4489,25 @@
 "kosif-tool/.claude/skills/kosif-superpowers/proofs/bruno-api/results.json",
 "kosif-tool/tests/test_bruno_api.py"
 ],
+"twins": [
+[
+"API-04",
+"API-03"
+],
+[
+"ACODE-99",
+"ACODE-102"
+],
+[
+"ACODE-51",
+"ACODE-31"
+],
+[
+"ACODE-57",
+"ACODE-64"
+]
+],
+"distinct_methods": 29,
 "links": [
 {
 "id": "SP-0038",
@@ -4490,6 +4588,8 @@
 }
 ],
 "proof": [],
+"twins": [],
+"distinct_methods": 5,
 "links": [
 {
 "id": "SP-0037",
@@ -4746,6 +4846,18 @@
 }
 ],
 "proof": [],
+"twins": [
+[
+"ACODE-135",
+"ACODE-157",
+"ACODE-134"
+],
+[
+"ACODE-146",
+"ACODE-126"
+]
+],
+"distinct_methods": 31,
 "links": [
 {
 "id": "SP-0121",
@@ -4950,6 +5062,13 @@
 }
 ],
 "proof": [],
+"twins": [
+[
+"ACODE-203",
+"ACODE-211"
+]
+],
+"distinct_methods": 24,
 "links": [
 {
 "id": "SP-0005",
@@ -5125,6 +5244,15 @@
 }
 ],
 "proof": [],
+"twins": [
+[
+"ACODE-55",
+"ACODE-52",
+"ACODE-54",
+"ACODE-53"
+]
+],
+"distinct_methods": 18,
 "links": [
 {
 "id": "SP-0037",
@@ -5292,6 +5420,13 @@
 }
 ],
 "proof": [],
+"twins": [
+[
+"ACODE-97",
+"ACODE-98"
+]
+],
+"distinct_methods": 18,
 "links": [
 {
 "id": "SP-0006",
@@ -5442,6 +5577,13 @@
 }
 ],
 "proof": [],
+"twins": [
+[
+"ACODE-187",
+"ACODE-182"
+]
+],
+"distinct_methods": 16,
 "links": [
 {
 "id": "SP-0060",
@@ -5574,6 +5716,14 @@
 }
 ],
 "proof": [],
+"twins": [
+[
+"ACODE-164",
+"ACODE-165",
+"ACODE-163"
+]
+],
+"distinct_methods": 11,
 "links": [
 {
 "id": "SP-0112",
@@ -5676,6 +5826,8 @@
 }
 ],
 "proof": [],
+"twins": [],
+"distinct_methods": 9,
 "links": [
 {
 "id": "SP-0041",
@@ -5774,6 +5926,13 @@
 }
 ],
 "proof": [],
+"twins": [
+[
+"ACODE-172",
+"ACODE-173"
+]
+],
+"distinct_methods": 7,
 "links": [
 {
 "id": "SP-0093",
@@ -5866,6 +6025,8 @@
 }
 ],
 "proof": [],
+"twins": [],
+"distinct_methods": 7,
 "links": [
 {
 "id": "SP-0055",
@@ -5959,6 +6120,8 @@
 }
 ],
 "proof": [],
+"twins": [],
+"distinct_methods": 7,
 "links": [
 {
 "id": "SP-0047",
@@ -6050,6 +6213,8 @@
 }
 ],
 "proof": [],
+"twins": [],
+"distinct_methods": 7,
 "links": [
 {
 "id": "SP-0116",
@@ -6143,6 +6308,8 @@
 }
 ],
 "proof": [],
+"twins": [],
+"distinct_methods": 7,
 "links": [
 {
 "id": "SP-0114",
@@ -6233,6 +6400,8 @@
 }
 ],
 "proof": [],
+"twins": [],
+"distinct_methods": 7,
 "links": [
 {
 "id": "SP-0085",
@@ -6306,6 +6475,8 @@
 }
 ],
 "proof": [],
+"twins": [],
+"distinct_methods": 4,
 "links": [
 {
 "id": "SP-0351",
@@ -6379,6 +6550,8 @@
 }
 ],
 "proof": [],
+"twins": [],
+"distinct_methods": 4,
 "links": [
 {
 "id": "SP-0097",
@@ -6444,6 +6617,8 @@
 }
 ],
 "proof": [],
+"twins": [],
+"distinct_methods": 3,
 "links": [
 {
 "id": "SP-0041",
@@ -6631,6 +6806,8 @@
 "kosif-tool/.claude/skills/kosif-superpowers/proofs/toolbelt-smoke/smoke.py",
 "kosif-tool/.claude/skills/kosif-superpowers/proofs/toolbelt-smoke/results.json"
 ],
+"twins": [],
+"distinct_methods": 21,
 "links": [
 {
 "id": "SP-0333",
@@ -6720,6 +6897,8 @@
 "proof": [
 "kosif-tool/.claude/skills/kosif-superpowers/proofs/general-graphify/README.md"
 ],
+"twins": [],
+"distinct_methods": 6,
 "links": [
 {
 "id": "SP-0024",
@@ -6877,6 +7056,13 @@
 "kosif-tool/.claude/skills/kosif-superpowers/proofs/general-earlier-runs/README.md",
 "kosif-tool/.claude/skills/kosif-superpowers/references/graphify.md"
 ],
+"twins": [
+[
+"GRAPH-11",
+"GRAPH-12"
+]
+],
+"distinct_methods": 15,
 "links": [
 {
 "id": "SP-0227",
@@ -6974,6 +7160,8 @@
 "kosif-tool/.claude/skills/kosif-superpowers/proofs/general-graphify/mindmap-repo.md",
 "kosif-tool/.claude/skills/kosif-superpowers/proofs/general-graphify/graph_mindmap.py"
 ],
+"twins": [],
+"distinct_methods": 6,
 "links": [
 {
 "id": "SP-0280",
@@ -7122,6 +7310,8 @@
 "proof": [
 "kosif-tool/.claude/skills/kosif-superpowers/proofs/general-graphify/README.md"
 ],
+"twins": [],
+"distinct_methods": 15,
 "links": [
 {
 "id": "SP-0333",
@@ -7218,6 +7408,8 @@
 }
 ],
 "proof": [],
+"twins": [],
+"distinct_methods": 7,
 "links": [
 {
 "id": "SP-0043",
@@ -7684,6 +7876,82 @@
 }
 ],
 "proof": [],
+"twins": [
+[
+"REA-159",
+"REA-158",
+"REA-164",
+"REA-163",
+"REA-175",
+"REA-157",
+"REA-224",
+"REA-156",
+"REA-166",
+"REA-162",
+"REA-167",
+"REA-180",
+"REA-169",
+"REA-222",
+"REA-173",
+"REA-228",
+"REA-229",
+"REA-165",
+"REA-174",
+"REA-154",
+"REA-223",
+"REA-189",
+"REA-221",
+"REA-193",
+"REA-178",
+"REA-216",
+"REA-182",
+"REA-183",
+"REA-177",
+"REA-188",
+"REA-168"
+],
+[
+"REA-170",
+"REA-176",
+"REA-172",
+"REA-171"
+],
+[
+"REA-212",
+"REA-210",
+"REA-211",
+"REA-192"
+],
+[
+"REA-218",
+"REA-217",
+"REA-219"
+],
+[
+"REA-227",
+"REA-225",
+"REA-226"
+],
+[
+"REA-194",
+"REA-195"
+],
+[
+"REA-213",
+"REA-215",
+"REA-214"
+],
+[
+"REA-184",
+"REA-160",
+"REA-155"
+],
+[
+"REA-186",
+"REA-187"
+]
+],
+"distinct_methods": 23,
 "links": [
 {
 "id": "SP-0073",
@@ -7916,6 +8184,8 @@
 "kosif-tool/.claude/skills/kosif-superpowers/proofs/rea-static-runs/runs.json",
 "https://github.com/morluto/rea/blob/main/docs/android-analysis.md"
 ],
+"twins": [],
+"distinct_methods": 29,
 "links": [
 {
 "id": "SP-0079",
@@ -8089,6 +8359,13 @@
 "kosif-tool/.claude/skills/kosif-superpowers/proofs/rea-static-runs/runs.json",
 "https://github.com/morluto/rea/blob/main/docs/javascript-application-workflows.md"
 ],
+"twins": [
+[
+"REA-046",
+"REA-002"
+]
+],
+"distinct_methods": 18,
 "links": [
 {
 "id": "SP-0064",
@@ -8235,6 +8512,18 @@
 }
 ],
 "proof": [],
+"twins": [
+[
+"REA-120",
+"REA-119"
+],
+[
+"REA-069",
+"REA-087",
+"REA-103"
+]
+],
+"distinct_methods": 13,
 "links": [
 {
 "id": "SP-0063",
@@ -8364,6 +8653,14 @@
 "kosif-tool/.claude/skills/kosif-superpowers/proofs/rea-static-runs/runs.json",
 "https://github.com/morluto/rea/blob/main/docs/cli.md"
 ],
+"twins": [
+[
+"REA-070",
+"REA-072",
+"REA-071"
+]
+],
+"distinct_methods": 10,
 "links": [
 {
 "id": "SP-0066",
@@ -8489,6 +8786,8 @@
 "kosif-tool/.claude/skills/kosif-superpowers/proofs/rea-static-runs/runs.json",
 "https://github.com/morluto/rea/blob/main/docs/mcp-contracts.md"
 ],
+"twins": [],
+"distinct_methods": 11,
 "links": [
 {
 "id": "SP-0067",
@@ -8612,6 +8911,13 @@
 "https://github.com/morluto/rea/blob/main/docs/cli.md",
 "https://github.com/morluto/rea/blob/main/docs/mcp-contracts.md"
 ],
+"twins": [
+[
+"REA-015",
+"REA-019"
+]
+],
+"distinct_methods": 9,
 "links": [
 {
 "id": "SP-0066",
@@ -8725,6 +9031,13 @@
 "https://github.com/morluto/rea/blob/main/docs/electron-observation.md",
 "https://github.com/morluto/rea/blob/main/docs/javascript-application-workflows.md"
 ],
+"twins": [
+[
+"REA-109",
+"REA-112"
+]
+],
+"distinct_methods": 8,
 "links": [
 {
 "id": "SP-0072",
@@ -8837,6 +9150,13 @@
 "kosif-tool/.claude/skills/kosif-superpowers/proofs/rea-static-runs/runs.json",
 "https://github.com/morluto/rea/blob/main/docs/javascript-application-workflows.md"
 ],
+"twins": [
+[
+"REA-142",
+"REA-144"
+]
+],
+"distinct_methods": 8,
 "links": [
 {
 "id": "SP-0067",
@@ -8943,6 +9263,21 @@
 }
 ],
 "proof": [],
+"twins": [
+[
+"REA-200",
+"REA-196",
+"REA-201",
+"REA-198",
+"REA-197",
+"REA-199"
+],
+[
+"REA-096",
+"REA-108"
+]
+],
+"distinct_methods": 3,
 "links": [
 {
 "id": "SP-0061",
@@ -9044,6 +9379,17 @@
 }
 ],
 "proof": [],
+"twins": [
+[
+"REA-207",
+"REA-208",
+"REA-206",
+"REA-209",
+"REA-026",
+"REA-038"
+]
+],
+"distinct_methods": 3,
 "links": [
 {
 "id": "SP-0061",
@@ -9135,6 +9481,16 @@
 "proof": [
 "kosif-tool/.claude/skills/kosif-superpowers/proofs/windows-installers-rea/README.md"
 ],
+"twins": [
+[
+"REA-236",
+"REA-241",
+"REA-238",
+"REA-237",
+"REA-240"
+]
+],
+"distinct_methods": 2,
 "links": [
 {
 "id": "SP-0068",
@@ -9213,6 +9569,15 @@
 }
 ],
 "proof": [],
+"twins": [
+[
+"REA-204",
+"REA-203",
+"REA-202",
+"REA-205"
+]
+],
+"distinct_methods": 2,
 "links": [
 {
 "id": "SP-0061",
@@ -9296,6 +9661,8 @@
 }
 ],
 "proof": [],
+"twins": [],
+"distinct_methods": 5,
 "links": [
 {
 "id": "SP-0065",
@@ -9384,6 +9751,8 @@
 "kosif-tool/.claude/skills/kosif-superpowers/proofs/rea-static-runs/runs.json",
 "https://github.com/morluto/rea/blob/main/docs/pcap-analysis.md"
 ],
+"twins": [],
+"distinct_methods": 5,
 "links": [
 {
 "id": "SP-0074",
@@ -9466,6 +9835,8 @@
 "kosif-tool/.claude/skills/kosif-superpowers/proofs/rea-static-runs/runs.json",
 "https://github.com/morluto/rea/blob/main/docs/javascript-application-workflows.md"
 ],
+"twins": [],
+"distinct_methods": 4,
 "links": [
 {
 "id": "SP-0069",
@@ -9542,6 +9913,15 @@
 }
 ],
 "proof": [],
+"twins": [
+[
+"REA-117",
+"REA-110",
+"REA-031",
+"REA-067"
+]
+],
+"distinct_methods": 1,
 "links": [
 {
 "id": "SP-0061",
@@ -9623,6 +10003,8 @@
 "kosif-tool/.claude/skills/kosif-superpowers/proofs/rea-static-runs/runs.json",
 "https://github.com/morluto/rea/blob/main/docs/mcp-contracts.md"
 ],
+"twins": [],
+"distinct_methods": 4,
 "links": [
 {
 "id": "SP-0066",
@@ -9700,6 +10082,8 @@
 "kosif-tool/.claude/skills/kosif-superpowers/proofs/rea-static-runs/runs.json",
 "https://github.com/morluto/rea/blob/main/docs/signal-recordings.md"
 ],
+"twins": [],
+"distinct_methods": 3,
 "links": [
 {
 "id": "SP-0062",
@@ -9777,6 +10161,13 @@
 "https://github.com/morluto/rea/blob/main/docs/reverse-engineering-tools.md",
 "https://github.com/morluto/rea/blob/main/docs/javascript-application-workflows.md"
 ],
+"twins": [
+[
+"REA-111",
+"REA-093"
+]
+],
+"distinct_methods": 2,
 "links": [
 {
 "id": "SP-0068",
@@ -9847,6 +10238,8 @@
 "kosif-tool/.claude/skills/kosif-superpowers/proofs/rea-static-runs/runs.json",
 "https://github.com/morluto/rea/blob/main/docs/javascript-application-workflows.md"
 ],
+"twins": [],
+"distinct_methods": 2,
 "links": [
 {
 "id": "SP-0076",
@@ -10073,6 +10466,17 @@
 }
 ],
 "proof": [],
+"twins": [
+[
+"ADATA-22",
+"ADATA-16"
+],
+[
+"ADATA-14",
+"ADATA-15"
+]
+],
+"distinct_methods": 26,
 "links": [
 {
 "id": "SP-0122",
@@ -10152,6 +10556,8 @@
 }
 ],
 "proof": [],
+"twins": [],
+"distinct_methods": 5,
 "links": [
 {
 "id": "SP-0005",
@@ -10230,6 +10636,8 @@
 }
 ],
 "proof": [],
+"twins": [],
+"distinct_methods": 5,
 "links": [
 {
 "id": "SP-0049",
@@ -10311,6 +10719,8 @@
 }
 ],
 "proof": [],
+"twins": [],
+"distinct_methods": 5,
 "links": [
 {
 "id": "SP-0123",
@@ -10487,6 +10897,17 @@
 "kosif-tool/.claude/skills/kosif-superpowers/proofs/toolbelt-smoke/README.md",
 "kosif-tool/.claude/skills/kosif-superpowers/proofs/toolbelt-smoke/smoke.py"
 ],
+"twins": [
+[
+"ANLY-02",
+"ANLY-33"
+],
+[
+"ANLY-04",
+"ANLY-34"
+]
+],
+"distinct_methods": 17,
 "links": [
 {
 "id": "SP-0283",
@@ -10607,6 +11028,8 @@
 "kosif-tool/.claude/skills/kosif-superpowers/proofs/toolbelt-smoke/README.md",
 "kosif-tool/.claude/skills/kosif-superpowers/proofs/toolbelt-smoke/smoke.py"
 ],
+"twins": [],
+"distinct_methods": 10,
 "links": [
 {
 "id": "SP-0126",
@@ -10716,6 +11139,8 @@
 "kosif-tool/.claude/skills/kosif-superpowers/references/arsenal-general.md",
 "kosif-tool/.claude/skills/kosif-superpowers/proofs/toolbelt-smoke/README.md"
 ],
+"twins": [],
+"distinct_methods": 8,
 "links": [
 {
 "id": "SP-0354",
@@ -10809,6 +11234,8 @@
 "kosif-tool/.claude/skills/kosif-superpowers/references/arsenal-general.md",
 "kosif-tool/.claude/skills/kosif-superpowers/proofs/general-media/README.md"
 ],
+"twins": [],
+"distinct_methods": 6,
 "links": [
 {
 "id": "SP-0191",
@@ -11037,6 +11464,13 @@
 }
 ],
 "proof": [],
+"twins": [
+[
+"ADOCS-01",
+"ADOCS-02"
+]
+],
+"distinct_methods": 28,
 "links": [
 {
 "id": "SP-0210",
@@ -11121,6 +11555,13 @@
 }
 ],
 "proof": [],
+"twins": [
+[
+"ADOCS-07",
+"ADOCS-08"
+]
+],
+"distinct_methods": 5,
 "links": [
 {
 "id": "SP-0123",
@@ -11186,6 +11627,8 @@
 }
 ],
 "proof": [],
+"twins": [],
+"distinct_methods": 3,
 "links": [
 {
 "id": "SP-0041",
@@ -11243,6 +11686,8 @@
 }
 ],
 "proof": [],
+"twins": [],
+"distinct_methods": 2,
 "links": [
 {
 "id": "SP-0046",
@@ -11436,6 +11881,8 @@
 "session-2026-10-16:general-arsenal.md#full-table",
 "kosif-tool/.claude/skills/kosif-superpowers/references/arsenal-general.md"
 ],
+"twins": [],
+"distinct_methods": 22,
 "links": [
 {
 "id": "SP-0095",
@@ -11558,6 +12005,13 @@
 "kosif-tool/.claude/skills/kosif-superpowers/proofs/general-data/README.md",
 "kosif-tool/.claude/skills/kosif-superpowers/proofs/general-media/README.md"
 ],
+"twins": [
+[
+"DOC-34",
+"ADOCS-15"
+]
+],
+"distinct_methods": 9,
 "links": [
 {
 "id": "SP-0427",
@@ -11624,6 +12078,8 @@
 }
 ],
 "proof": [],
+"twins": [],
+"distinct_methods": 3,
 "links": [
 {
 "id": "SP-0229",
@@ -11729,6 +12185,8 @@
 }
 ],
 "proof": [],
+"twins": [],
+"distinct_methods": 9,
 "links": [
 {
 "id": "SP-0053",
@@ -11887,6 +12345,8 @@
 "kosif-tool/.claude/skills/kosif-superpowers/references/arsenal-general.md",
 "kosif-tool/.claude/skills/kosif-superpowers/proofs/general-data/README.md"
 ],
+"twins": [],
+"distinct_methods": 16,
 "links": [
 {
 "id": "SP-0097",
@@ -11993,6 +12453,8 @@
 "proof": [
 "kosif-tool/.claude/skills/kosif-superpowers/proofs/general-docs/README.md"
 ],
+"twins": [],
+"distinct_methods": 8,
 "links": [
 {
 "id": "SP-0056",
@@ -12297,6 +12759,8 @@
 "kosif-tool/.claude/skills/kosif-superpowers/evals/test_app_studio.py",
 "kosif-tool/.claude/skills/kosif-superpowers/scripts/app_studio.py"
 ],
+"twins": [],
+"distinct_methods": 41,
 "links": [
 {
 "id": "SP-0101",
@@ -12471,6 +12935,8 @@
 "kosif-tool/.claude/skills/kosif-superpowers/proofs/windows-installers-rea/README.md",
 "kosif-tool/.claude/skills/kosif-superpowers/evals/test_app_studio.py"
 ],
+"twins": [],
+"distinct_methods": 19,
 "links": [
 {
 "id": "SP-0072",
@@ -12621,6 +13087,8 @@
 "kosif-tool/.claude/skills/kosif-superpowers/proofs/windows-installers-rea/CANVA_DESIGN_2026-10-19.md",
 "kosif-tool/.claude/skills/kosif-superpowers/proofs/app-feature-transfer/README.md"
 ],
+"twins": [],
+"distinct_methods": 15,
 "links": [
 {
 "id": "SP-0148",
@@ -12770,6 +13238,8 @@
 "kosif-tool/.claude/skills/kosif-superpowers/proofs/app-feature-transfer/README.md",
 "kosif-tool/.claude/skills/kosif-superpowers/proofs/app-feature-transfer/smoke_studio.py"
 ],
+"twins": [],
+"distinct_methods": 15,
 "links": [
 {
 "id": "SP-0428",
@@ -12869,6 +13339,8 @@
 "kosif-tool/.claude/skills/kosif-superpowers/proofs/windows-installers-rea/PAINT_PHOTOSHOP_BLENDER_2026-10-20.md",
 "kosif-tool/.claude/skills/kosif-superpowers/proofs/app-feature-transfer/README.md"
 ],
+"twins": [],
+"distinct_methods": 7,
 "links": [
 {
 "id": "SP-0201",
@@ -12957,6 +13429,8 @@
 "kosif-tool/.claude/skills/kosif-superpowers/scripts/app_studio_paint.py",
 "kosif-tool/.claude/skills/kosif-superpowers/proofs/windows-installers-rea/PAINT_PHOTOSHOP_BLENDER_2026-10-20.md"
 ],
+"twins": [],
+"distinct_methods": 6,
 "links": [
 {
 "id": "SP-0102",
@@ -13041,6 +13515,8 @@
 "kosif-tool/.claude/skills/kosif-superpowers/scripts/app_studio_paint.py",
 "kosif-tool/.claude/skills/kosif-superpowers/proofs/windows-installers-rea/PAINT_PHOTOSHOP_BLENDER_2026-10-20.md"
 ],
+"twins": [],
+"distinct_methods": 5,
 "links": [
 {
 "id": "SP-0385",
@@ -13127,6 +13603,8 @@
 "kosif-tool/.claude/skills/kosif-superpowers/evals/test_app_studio.py",
 "kosif-tool/.claude/skills/kosif-superpowers/scripts/app_studio.py"
 ],
+"twins": [],
+"distinct_methods": 5,
 "links": [
 {
 "id": "SP-0120",
@@ -13206,6 +13684,8 @@
 "kosif-tool/.claude/skills/kosif-superpowers/proofs/windows-installers-rea/PAINT_PHOTOSHOP_BLENDER_2026-10-20.md",
 "kosif-tool/.claude/skills/kosif-superpowers/proofs/windows-installers-rea/paint_blender_2026-10-20/blender_presets.jpg"
 ],
+"twins": [],
+"distinct_methods": 4,
 "links": [
 {
 "id": "SP-0129",
@@ -13263,6 +13743,8 @@
 }
 ],
 "proof": [],
+"twins": [],
+"distinct_methods": 2,
 "links": [
 {
 "id": "SP-0150",
@@ -13420,6 +13902,8 @@
 "kosif-tool/.claude/skills/kosif-superpowers/proofs/data-story/README.md",
 "kosif-tool/.claude/skills/kosif-superpowers/proofs/general-data/README.md"
 ],
+"twins": [],
+"distinct_methods": 16,
 "links": [
 {
 "id": "SP-0232",
@@ -13520,6 +14004,8 @@
 "proof": [
 "kosif-tool/.claude/skills/kosif-superpowers/proofs/general-data/README.md"
 ],
+"twins": [],
+"distinct_methods": 7,
 "links": [
 {
 "id": "SP-0337",
@@ -13700,6 +14186,17 @@
 }
 ],
 "proof": [],
+"twins": [
+[
+"ABUILD-47",
+"ABUILD-46"
+],
+[
+"ABUILD-42",
+"ABUILD-40"
+]
+],
+"distinct_methods": 19,
 "links": [
 {
 "id": "SP-0031",
@@ -13814,6 +14311,8 @@
 }
 ],
 "proof": [],
+"twins": [],
+"distinct_methods": 10,
 "links": [
 {
 "id": "SP-0233",
@@ -13919,6 +14418,8 @@
 }
 ],
 "proof": [],
+"twins": [],
+"distinct_methods": 9,
 "links": [
 {
 "id": "SP-0050",
@@ -14005,6 +14506,8 @@
 }
 ],
 "proof": [],
+"twins": [],
+"distinct_methods": 6,
 "links": [
 {
 "id": "SP-0005",
@@ -14076,6 +14579,8 @@
 }
 ],
 "proof": [],
+"twins": [],
+"distinct_methods": 4,
 "links": [
 {
 "id": "SP-0049",
@@ -14196,6 +14701,8 @@
 }
 ],
 "proof": [],
+"twins": [],
+"distinct_methods": 11,
 "links": [
 {
 "id": "SP-0452",
@@ -14348,6 +14855,8 @@
 "session-2026-10-16:general-arsenal.md#full-table",
 "kosif-tool/.claude/skills/kosif-superpowers/proofs/toolbelt-smoke/README.md"
 ],
+"twins": [],
+"distinct_methods": 15,
 "links": [
 {
 "id": "SP-0452",
@@ -14480,6 +14989,8 @@
 "kosif-tool/.claude/skills/kosif-superpowers/proofs/general-docs/README.md",
 "kosif-tool/.claude/skills/kosif-superpowers/proofs/general-data/README.md"
 ],
+"twins": [],
+"distinct_methods": 12,
 "links": [
 {
 "id": "SP-0030",
@@ -14601,6 +15112,8 @@
 "session-2026-10-16:general-arsenal.md#full-table",
 "session-2026-10-16:env-probe.md#5-real-install-tests"
 ],
+"twins": [],
+"distinct_methods": 10,
 "links": [
 {
 "id": "SP-0134",
@@ -14751,6 +15264,8 @@
 }
 ],
 "proof": [],
+"twins": [],
+"distinct_methods": 17,
 "links": [
 {
 "id": "SP-0039",
@@ -14868,6 +15383,8 @@
 }
 ],
 "proof": [],
+"twins": [],
+"distinct_methods": 11,
 "links": [
 {
 "id": "SP-0082",
@@ -14985,6 +15502,8 @@
 }
 ],
 "proof": [],
+"twins": [],
+"distinct_methods": 11,
 "links": [
 {
 "id": "SP-0091",
@@ -15094,6 +15613,8 @@
 }
 ],
 "proof": [],
+"twins": [],
+"distinct_methods": 10,
 "links": [
 {
 "id": "SP-0041",
@@ -15192,6 +15713,8 @@
 }
 ],
 "proof": [],
+"twins": [],
+"distinct_methods": 8,
 "links": [
 {
 "id": "SP-0005",
@@ -15324,6 +15847,8 @@
 "kosif-tool/.claude/skills/kosif-superpowers/proofs/toolbelt-smoke/smoke.py",
 "kosif-tool/.claude/skills/kosif-superpowers/proofs/toolbelt-smoke/results.json"
 ],
+"twins": [],
+"distinct_methods": 12,
 "links": [
 {
 "id": "SP-0087",
@@ -15412,6 +15937,8 @@
 "proof": [
 "kosif-tool/.claude/skills/kosif-superpowers/proofs/general-data/README.md"
 ],
+"twins": [],
+"distinct_methods": 6,
 "links": [
 {
 "id": "SP-0012",
@@ -15575,6 +16102,8 @@
 }
 ],
 "proof": [],
+"twins": [],
+"distinct_methods": 18,
 "links": [
 {
 "id": "SP-0316",
@@ -15717,6 +16246,8 @@
 "kosif-earth-ci-fork/ui/art/crystal-world.js",
 "kosif-earth-ci-fork/tools/crystal_world.test.mjs"
 ],
+"twins": [],
+"distinct_methods": 13,
 "links": [
 {
 "id": "SP-0108",
@@ -15836,6 +16367,8 @@
 }
 ],
 "proof": [],
+"twins": [],
+"distinct_methods": 11,
 "links": [
 {
 "id": "SP-0168",
@@ -15927,6 +16460,8 @@
 "100-superskills/skills/kosif-montage-motion/tests/test_shape_kit.py:21",
 "kosif-studio/motion/kit/shape-kit.js:183"
 ],
+"twins": [],
+"distinct_methods": 6,
 "links": [
 {
 "id": "SP-0169",
@@ -16005,6 +16540,8 @@
 }
 ],
 "proof": [],
+"twins": [],
+"distinct_methods": 4,
 "links": [
 {
 "id": "SP-0366",
@@ -16293,6 +16830,8 @@
 "100-superskills/skills/kosif-montage-motion/references/visual-catalog.md",
 "kosif-one/tools/kosif-omni/skills/kosif-prompt-master/scripts/prompt_forge.py:183"
 ],
+"twins": [],
+"distinct_methods": 37,
 "links": [
 {
 "id": "SP-0032",
@@ -16426,6 +16965,8 @@
 "kosif-studio/studio.py:156",
 "kosif-studio/tests/test_studio.py:433"
 ],
+"twins": [],
+"distinct_methods": 12,
 "links": [
 {
 "id": "SP-0120",
@@ -16545,6 +17086,8 @@
 }
 ],
 "proof": [],
+"twins": [],
+"distinct_methods": 11,
 "links": [
 {
 "id": "SP-0147",
@@ -16662,6 +17205,8 @@
 }
 ],
 "proof": [],
+"twins": [],
+"distinct_methods": 10,
 "links": [
 {
 "id": "SP-0140",
@@ -16769,6 +17314,8 @@
 }
 ],
 "proof": [],
+"twins": [],
+"distinct_methods": 8,
 "links": [
 {
 "id": "SP-0294",
@@ -16852,6 +17399,8 @@
 }
 ],
 "proof": [],
+"twins": [],
+"distinct_methods": 6,
 "links": [
 {
 "id": "SP-0372",
@@ -16936,6 +17485,8 @@
 }
 ],
 "proof": [],
+"twins": [],
+"distinct_methods": 5,
 "links": [
 {
 "id": "SP-0254",
@@ -17012,6 +17563,8 @@
 }
 ],
 "proof": [],
+"twins": [],
+"distinct_methods": 4,
 "links": [
 {
 "id": "SP-0313",
@@ -17309,6 +17862,8 @@
 "100-superskills/skills/audio-reactive-captions-studio/scripts/captions_pages.py:95",
 "100-superskills/skills/audio-reactive-captions-studio/references/captions-rules.md"
 ],
+"twins": [],
+"distinct_methods": 39,
 "links": [
 {
 "id": "SP-0427",
@@ -17423,6 +17978,8 @@
 "kosif-tool/.claude/skills/kosif-superpowers/proofs/arabic-voice-kinetic/transcribe.py",
 "kosif-tool/.claude/skills/kosif-superpowers/proofs/arabic-voice-kinetic/README.md"
 ],
+"twins": [],
+"distinct_methods": 8,
 "links": [
 {
 "id": "SP-0117",
@@ -17530,6 +18087,8 @@
 "100-superskills/skills/kosif-montage-motion/templates/verse.html:62",
 "kosif-studio/tests/test_studio.py:943"
 ],
+"twins": [],
+"distinct_methods": 8,
 "links": [
 {
 "id": "SP-0427",
@@ -17607,6 +18166,8 @@
 "kosif-tool/starters/html-canvas/index.html:181",
 "kosif-tool/starters/html-canvas/timeline.js:82"
 ],
+"twins": [],
+"distinct_methods": 3,
 "links": [
 {
 "id": "SP-0301",
@@ -17670,6 +18231,8 @@
 }
 ],
 "proof": [],
+"twins": [],
+"distinct_methods": 2,
 "links": [
 {
 "id": "SP-0347",
@@ -17879,6 +18442,8 @@
 "kosif-studio/scenes/aghnam_logo.json",
 "kosif-studio/out/aghnam_logo.svg"
 ],
+"twins": [],
+"distinct_methods": 24,
 "links": [
 {
 "id": "SP-0391",
@@ -17984,6 +18549,8 @@
 }
 ],
 "proof": [],
+"twins": [],
+"distinct_methods": 8,
 "links": [
 {
 "id": "SP-0159",
@@ -18080,6 +18647,8 @@
 }
 ],
 "proof": [],
+"twins": [],
+"distinct_methods": 6,
 "links": [
 {
 "id": "SP-0112",
@@ -18161,6 +18730,8 @@
 }
 ],
 "proof": [],
+"twins": [],
+"distinct_methods": 5,
 "links": [
 {
 "id": "SP-0443",
@@ -18655,6 +19226,28 @@
 "kosif-tool/starters/html-canvas/index.html:106",
 "fastify-motion-bro/scripts/profiles/food-flow.mjs:32"
 ],
+"twins": [
+[
+"CAM-08",
+"CAM-51",
+"CAM-162"
+],
+[
+"CAM-31",
+"CAM-48",
+"CAM-159"
+],
+[
+"CAM-189",
+"CAM-188",
+"CAM-190"
+],
+[
+"CAM-280",
+"CAM-269"
+]
+],
+"distinct_methods": 64,
 "links": [
 {
 "id": "SP-0153",
@@ -18923,6 +19516,32 @@
 }
 ],
 "proof": [],
+"twins": [
+[
+"CAM-208",
+"CAM-196",
+"CAM-293",
+"CAM-304",
+"CAM-200",
+"CAM-198",
+"CAM-256",
+"CAM-291"
+],
+[
+"CAM-197",
+"CAM-210",
+"CAM-310"
+],
+[
+"CAM-312",
+"CAM-285"
+],
+[
+"CAM-195",
+"CAM-265"
+]
+],
+"distinct_methods": 26,
 "links": [
 {
 "id": "SP-0183",
@@ -19117,6 +19736,13 @@
 }
 ],
 "proof": [],
+"twins": [
+[
+"CAM-92",
+"CAM-95"
+]
+],
+"distinct_methods": 22,
 "links": [
 {
 "id": "SP-0169",
@@ -19311,6 +19937,15 @@
 "kosif-studio/motion/kit/motion-kit.js:88",
 "100-superskills/skills/kosif-montage-motion/references/motion-craft.md"
 ],
+"twins": [
+[
+"CAM-32",
+"CAM-49",
+"CAM-86",
+"CAM-160"
+]
+],
+"distinct_methods": 19,
 "links": [
 {
 "id": "SP-0417",
@@ -19496,6 +20131,17 @@
 }
 ],
 "proof": [],
+"twins": [
+[
+"CAM-38",
+"CAM-145"
+],
+[
+"CAM-19",
+"CAM-90"
+]
+],
+"distinct_methods": 19,
 "links": [
 {
 "id": "SP-0221",
@@ -19679,6 +20325,8 @@
 }
 ],
 "proof": [],
+"twins": [],
+"distinct_methods": 21,
 "links": [
 {
 "id": "SP-0240",
@@ -19841,6 +20489,13 @@
 "100-superskills/skills/video-prompt-director/scripts/video_prompt_forge.py:24",
 "100-superskills/skills/video-prompt-director/scripts/video_prompt_forge.py:40"
 ],
+"twins": [
+[
+"CAM-52",
+"CAM-132"
+]
+],
+"distinct_methods": 16,
 "links": [
 {
 "id": "SP-0220",
@@ -19997,6 +20652,18 @@
 }
 ],
 "proof": [],
+"twins": [
+[
+"CAM-34",
+"CAM-64"
+],
+[
+"CAM-16",
+"CAM-33",
+"CAM-91"
+]
+],
+"distinct_methods": 13,
 "links": [
 {
 "id": "SP-0130",
@@ -20142,6 +20809,15 @@
 }
 ],
 "proof": [],
+"twins": [
+[
+"CAM-125",
+"CAM-127",
+"CAM-123",
+"CAM-126"
+]
+],
+"distinct_methods": 12,
 "links": [
 {
 "id": "SP-0396",
@@ -20275,6 +20951,8 @@
 }
 ],
 "proof": [],
+"twins": [],
+"distinct_methods": 13,
 "links": [
 {
 "id": "SP-0286",
@@ -20404,6 +21082,8 @@
 }
 ],
 "proof": [],
+"twins": [],
+"distinct_methods": 13,
 "links": [
 {
 "id": "SP-0412",
@@ -20537,6 +21217,8 @@
 "kosif-audit-pro/app/layout.tsx",
 "kosif-studio/motion/direct.py:108"
 ],
+"twins": [],
+"distinct_methods": 12,
 "links": [
 {
 "id": "SP-0165",
@@ -20664,6 +21346,13 @@
 "proof": [
 "100-superskills/skills/kosif-montage-motion/scripts/projects/midnight_cat/assets/scene.js:124"
 ],
+"twins": [
+[
+"CAM-84",
+"CAM-83"
+]
+],
+"distinct_methods": 11,
 "links": [
 {
 "id": "SP-0330",
@@ -20787,6 +21476,8 @@
 }
 ],
 "proof": [],
+"twins": [],
+"distinct_methods": 11,
 "links": [
 {
 "id": "SP-0150",
@@ -20908,6 +21599,15 @@
 }
 ],
 "proof": [],
+"twins": [
+[
+"CAM-17",
+"CAM-129",
+"CAM-161",
+"CAM-77"
+]
+],
+"distinct_methods": 8,
 "links": [
 {
 "id": "SP-0150",
@@ -21027,6 +21727,8 @@
 }
 ],
 "proof": [],
+"twins": [],
+"distinct_methods": 11,
 "links": [
 {
 "id": "SP-0161",
@@ -21128,6 +21830,8 @@
 }
 ],
 "proof": [],
+"twins": [],
+"distinct_methods": 8,
 "links": [
 {
 "id": "SP-0277",
@@ -21234,6 +21938,17 @@
 }
 ],
 "proof": [],
+"twins": [
+[
+"CAM-55",
+"CAM-74"
+],
+[
+"CAM-308",
+"CAM-413"
+]
+],
+"distinct_methods": 6,
 "links": [
 {
 "id": "SP-0410",
@@ -21323,6 +22038,8 @@
 }
 ],
 "proof": [],
+"twins": [],
+"distinct_methods": 7,
 "links": [
 {
 "id": "SP-0130",
@@ -21417,6 +22134,8 @@
 }
 ],
 "proof": [],
+"twins": [],
+"distinct_methods": 7,
 "links": [
 {
 "id": "SP-0441",
@@ -21503,6 +22222,8 @@
 }
 ],
 "proof": [],
+"twins": [],
+"distinct_methods": 6,
 "links": [
 {
 "id": "SP-0160",
@@ -21595,6 +22316,8 @@
 }
 ],
 "proof": [],
+"twins": [],
+"distinct_methods": 6,
 "links": [
 {
 "id": "SP-0256",
@@ -21685,6 +22408,8 @@
 }
 ],
 "proof": [],
+"twins": [],
+"distinct_methods": 6,
 "links": [
 {
 "id": "SP-0160",
@@ -21772,6 +22497,8 @@
 "fastify-motion-bro/scripts/profiles/character-romance.mjs:18",
 "fastify-motion-bro/scripts/profiles/stickman.mjs:31,36-37"
 ],
+"twins": [],
+"distinct_methods": 5,
 "links": [
 {
 "id": "SP-0164",
@@ -21855,6 +22582,8 @@
 "100-superskills/skills/kosif-montage-motion/tests/test_directors.py:30",
 "100-superskills/skills/kosif-montage-motion/tests/test_core.py:54"
 ],
+"twins": [],
+"distinct_methods": 5,
 "links": [
 {
 "id": "SP-0175",
@@ -21939,6 +22668,8 @@
 }
 ],
 "proof": [],
+"twins": [],
+"distinct_methods": 5,
 "links": [
 {
 "id": "SP-0174",
@@ -22019,6 +22750,8 @@
 }
 ],
 "proof": [],
+"twins": [],
+"distinct_methods": 5,
 "links": [
 {
 "id": "SP-0166",
@@ -22104,6 +22837,8 @@
 }
 ],
 "proof": [],
+"twins": [],
+"distinct_methods": 5,
 "links": [
 {
 "id": "SP-0162",
@@ -22178,6 +22913,8 @@
 }
 ],
 "proof": [],
+"twins": [],
+"distinct_methods": 4,
 "links": [
 {
 "id": "SP-0445",
@@ -22255,6 +22992,8 @@
 }
 ],
 "proof": [],
+"twins": [],
+"distinct_methods": 4,
 "links": [
 {
 "id": "SP-0154",
@@ -22330,6 +23069,8 @@
 }
 ],
 "proof": [],
+"twins": [],
+"distinct_methods": 4,
 "links": [
 {
 "id": "SP-0277",
@@ -22398,6 +23139,8 @@
 }
 ],
 "proof": [],
+"twins": [],
+"distinct_methods": 3,
 "links": [
 {
 "id": "SP-0345",
@@ -22469,6 +23212,8 @@
 }
 ],
 "proof": [],
+"twins": [],
+"distinct_methods": 3,
 "links": [
 {
 "id": "SP-0162",
@@ -22536,6 +23281,8 @@
 }
 ],
 "proof": [],
+"twins": [],
+"distinct_methods": 3,
 "links": [
 {
 "id": "SP-0151",
@@ -22599,6 +23346,8 @@
 }
 ],
 "proof": [],
+"twins": [],
+"distinct_methods": 3,
 "links": [
 {
 "id": "SP-0031",
@@ -22652,6 +23401,8 @@
 }
 ],
 "proof": [],
+"twins": [],
+"distinct_methods": 1,
 "links": [
 {
 "id": "SP-0207",
@@ -22851,6 +23602,8 @@
 "fastify-motion-bro/scripts/profiles/fitness.mjs",
 "fastify-motion-bro/tests/production-profiles.test.mjs"
 ],
+"twins": [],
+"distinct_methods": 23,
 "links": [
 {
 "id": "SP-0187",
@@ -23027,6 +23780,8 @@
 "kosif-studio/scenes/dragon_girl.py:288",
 "kosif-studio/tests/test_studio.py:227"
 ],
+"twins": [],
+"distinct_methods": 18,
 "links": [
 {
 "id": "SP-0186",
@@ -23119,6 +23874,8 @@
 "100-superskills/skills/kosif-montage-motion/tests/test_shape_kit.py:40",
 "100-superskills/skills/kosif-montage-motion/scripts/projects/bunny_twin/src/main.js:29"
 ],
+"twins": [],
+"distinct_methods": 5,
 "links": [
 {
 "id": "SP-0370",
@@ -23193,6 +23950,8 @@
 "kosif-tool/styles/stickman",
 "kosif-tool/styles/pm-axtonliu-0b861d"
 ],
+"twins": [],
+"distinct_methods": 3,
 "links": [
 {
 "id": "SP-0004",
@@ -23255,6 +24014,8 @@
 "100-superskills/skills/kosif-montage-motion/scripts/projects/midnight_cat/assets/scene.js:107",
 "kosif-tool/styles/pm-kamstudiolabs-c9bb28"
 ],
+"twins": [],
+"distinct_methods": 2,
 "links": [
 {
 "id": "SP-0135",
@@ -23570,6 +24331,8 @@
 "kosif-audit-studio/styles.css:688",
 "kosif-audit-pro/tests/palette.test.mjs"
 ],
+"twins": [],
+"distinct_methods": 41,
 "links": [
 {
 "id": "SP-0089",
@@ -23719,6 +24482,8 @@
 "100-superskills/skills/kosif-montage-motion/scripts/kit/motion-kit.js:227",
 "kosif-studio/motion/kit/motion-kit.js:227"
 ],
+"twins": [],
+"distinct_methods": 15,
 "links": [
 {
 "id": "SP-0429",
@@ -23845,6 +24610,8 @@
 "kosif-tool/starters/html-canvas/index.html:157",
 "kosif-tool/playbooks/charts.md:37"
 ],
+"twins": [],
+"distinct_methods": 11,
 "links": [
 {
 "id": "SP-0230",
@@ -23964,6 +24731,8 @@
 "kosif-studio/tests/test_studio.py:910",
 "100-superskills/skills/kosif-montage-motion/templates/directed.html:96"
 ],
+"twins": [],
+"distinct_methods": 10,
 "links": [
 {
 "id": "SP-0425",
@@ -24069,6 +24838,8 @@
 }
 ],
 "proof": [],
+"twins": [],
+"distinct_methods": 8,
 "links": [
 {
 "id": "SP-0198",
@@ -24165,6 +24936,8 @@
 }
 ],
 "proof": [],
+"twins": [],
+"distinct_methods": 7,
 "links": [
 {
 "id": "SP-0364",
@@ -24265,6 +25038,8 @@
 "kosif-studio/motion/twin_dashboard.py:1",
 "100-superskills/skills/kosif-montage-motion/scripts/projects/bunny_twin/index.html:107"
 ],
+"twins": [],
+"distinct_methods": 7,
 "links": [
 {
 "id": "SP-0152",
@@ -24349,6 +25124,8 @@
 }
 ],
 "proof": [],
+"twins": [],
+"distinct_methods": 5,
 "links": [
 {
 "id": "SP-0429",
@@ -24404,6 +25181,8 @@
 }
 ],
 "proof": [],
+"twins": [],
+"distinct_methods": 1,
 "links": [
 {
 "id": "SP-0359",
@@ -24603,6 +25382,8 @@
 "fastify-motion-bro/tests/viral-editorial.test.mjs",
 "kosif-tool/starters/html-canvas/index.html:9"
 ],
+"twins": [],
+"distinct_methods": 22,
 "links": [
 {
 "id": "SP-0307",
@@ -24778,6 +25559,8 @@
 "kosif-atlas/skills/1096-akbun-editvideo/2435-akbun-davinciresolve-logconvert/SKILL.md",
 "100-superskills/skills/pro-video-editor-ffmpeg/references/ffmpeg-recipes.md"
 ],
+"twins": [],
+"distinct_methods": 18,
 "links": [
 {
 "id": "SP-0379",
@@ -24925,6 +25708,8 @@
 "kosif-earth-ci-fork/ui/layouts/shell.js:69",
 "kosif-atlas/skills/196-landing/621-landing/scripts/brand_palette_validator.py"
 ],
+"twins": [],
+"distinct_methods": 14,
 "links": [
 {
 "id": "SP-0297",
@@ -25043,6 +25828,8 @@
 "kosif-atlas/skills/2199-lvtd-skills/8013-color-math-accessibility",
 "100-superskills/skills/brand-identity-logo/SKILL.md:23"
 ],
+"twins": [],
+"distinct_methods": 9,
 "links": [
 {
 "id": "SP-0337",
@@ -25159,6 +25946,8 @@
 "kosif-earth-ci-fork/docs/design/SQC-IDENTITY-ar.md",
 "kosif-earth-ci-fork/tools/identity_unity.test.mjs"
 ],
+"twins": [],
+"distinct_methods": 9,
 "links": [
 {
 "id": "SP-0380",
@@ -25266,6 +26055,8 @@
 "kosif-one/tools/kosif-omni/skills/kosif-vision/scripts/image_analyze.py:100",
 "100-superskills/skills/kosif-montage-motion/scripts/omni/image_analyze.py:59"
 ],
+"twins": [],
+"distinct_methods": 7,
 "links": [
 {
 "id": "SP-0202",
@@ -25346,6 +26137,8 @@
 "fastify-motion-bro/scripts/profiles/kinetic-flow.mjs:24-30,44-54",
 "fastify-motion-bro/tests/production-profiles.test.mjs:67-74"
 ],
+"twins": [],
+"distinct_methods": 4,
 "links": [
 {
 "id": "SP-0381",
@@ -25430,6 +26223,8 @@
 "kosif-atlas/skills/1096-akbun-editvideo/2442-akbun-davinciresolve-sky/SKILL.md",
 "kosif-atlas/skills/1096-akbun-editvideo/2442-akbun-davinciresolve-sky/scripts/sky.py"
 ],
+"twins": [],
+"distinct_methods": 4,
 "links": [
 {
 "id": "SP-0277",
@@ -25678,6 +26473,8 @@
 "kosif-studio/tests/test_studio.py:629",
 "100-superskills/skills/trend-animation-styles/references/styles.md"
 ],
+"twins": [],
+"distinct_methods": 30,
 "links": [
 {
 "id": "SP-0376",
@@ -25802,6 +26599,8 @@
 }
 ],
 "proof": [],
+"twins": [],
+"distinct_methods": 12,
 "links": [
 {
 "id": "SP-0316",
@@ -25925,6 +26724,13 @@
 "100-superskills/skills/kosif-montage-motion/references/STRUCTURAL_TWIN.md",
 "100-superskills/skills/kosif-montage-motion/scripts/twin_dashboard.py:763"
 ],
+"twins": [
+[
+"EXPL-50",
+"EXPL-51"
+]
+],
+"distinct_methods": 9,
 "links": [
 {
 "id": "SP-0090",
@@ -26011,6 +26817,8 @@
 }
 ],
 "proof": [],
+"twins": [],
+"distinct_methods": 6,
 "links": [
 {
 "id": "SP-0058",
@@ -26087,6 +26895,8 @@
 }
 ],
 "proof": [],
+"twins": [],
+"distinct_methods": 4,
 "links": [
 {
 "id": "SP-0366",
@@ -26155,6 +26965,8 @@
 }
 ],
 "proof": [],
+"twins": [],
+"distinct_methods": 3,
 "links": [
 {
 "id": "SP-0171",
@@ -26369,6 +27181,8 @@
 "kosif-tool/.claude/skills/kosif-superpowers/references/external-skills.md",
 "kosif-tool/.claude/skills/kosif-superpowers/proofs/motion-v2/README.md"
 ],
+"twins": [],
+"distinct_methods": 25,
 "links": [
 {
 "id": "SP-0422",
@@ -26548,6 +27362,8 @@
 "owner-upload:motion-saas_skill/higgsfield-motion-saas/references/ease-math.md",
 "kosif-studio/motion/qa.py:407"
 ],
+"twins": [],
+"distinct_methods": 19,
 "links": [
 {
 "id": "SP-0141",
@@ -26688,6 +27504,8 @@
 "kosif-audit-pro/app/globals.css:600",
 "kosif-audit-studio/studio.css:114"
 ],
+"twins": [],
+"distinct_methods": 13,
 "links": [
 {
 "id": "SP-0351",
@@ -26820,6 +27638,8 @@
 "100-superskills/skills/kosif-montage-motion/references/craft-numbers.md",
 "app/public/js/00_editor.js:2309"
 ],
+"twins": [],
+"distinct_methods": 12,
 "links": [
 {
 "id": "SP-0158",
@@ -26951,6 +27771,8 @@
 "kosif-tool/starters/html-canvas/timeline.js",
 "kosif-studio/motion/qa.py:59"
 ],
+"twins": [],
+"distinct_methods": 11,
 "links": [
 {
 "id": "SP-0286",
@@ -27054,6 +27876,8 @@
 "kosif-audit-pro/tests/motion-contract.test.mjs",
 "kosif-audit-pro/README.md"
 ],
+"twins": [],
+"distinct_methods": 8,
 "links": [
 {
 "id": "SP-0430",
@@ -27151,6 +27975,8 @@
 "100-superskills/skills/kosif-montage-motion/tests/test_v6.py",
 "100-superskills/skills/pro-video-editor-ffmpeg/references/ffmpeg-recipes.md"
 ],
+"twins": [],
+"distinct_methods": 6,
 "links": [
 {
 "id": "SP-0324",
@@ -27234,6 +28060,8 @@
 "kosif-atlas/skills/2712-remotion/10436-remotion-markup/timing.md",
 "100-superskills/skills/kosif-montage-motion/scripts/web/static/studio/model.mjs:12"
 ],
+"twins": [],
+"distinct_methods": 4,
 "links": [
 {
 "id": "SP-0154",
@@ -27312,6 +28140,8 @@
 "app/public/js/00_editor.js:2317",
 "kosif-atlas/skills/1526-gamegen/4164-game-audio-vfx/SKILL.md"
 ],
+"twins": [],
+"distinct_methods": 4,
 "links": [
 {
 "id": "SP-0297",
@@ -27565,6 +28395,18 @@
 "kosif-tool/.claude/skills/kosif-superpowers/scripts/mimic/mm_build.py",
 "kosif-tool/.claude/skills/kosif-superpowers/references/mimic.md"
 ],
+"twins": [
+[
+"ENG-255",
+"ENG-256",
+"ENG-257",
+"ENG-258",
+"ENG-259",
+"ENG-244",
+"ENG-242"
+]
+],
+"distinct_methods": 25,
 "links": [
 {
 "id": "SP-0227",
@@ -27813,6 +28655,21 @@
 "kosif-tool/starters/html-canvas/index.html:230",
 "kosif-atlas/skills/2414-animation/9356-produce/SKILL.md"
 ],
+"twins": [
+[
+"ENG-41",
+"ENG-111"
+],
+[
+"ENG-01",
+"ENG-210"
+],
+[
+"ENG-279",
+"ENG-388"
+]
+],
+"distinct_methods": 27,
 "links": [
 {
 "id": "SP-0233",
@@ -27992,6 +28849,17 @@
 "100-superskills/skills/kosif-montage-motion/scripts/web/recipes.py:107",
 "100-superskills/skills/kosif-montage-motion/tests/test_web.py:115"
 ],
+"twins": [
+[
+"ENG-184",
+"ENG-202"
+],
+[
+"ENG-291",
+"ENG-260"
+]
+],
+"distinct_methods": 17,
 "links": [
 {
 "id": "SP-0312",
@@ -28155,6 +29023,21 @@
 }
 ],
 "proof": [],
+"twins": [
+[
+"ENG-103",
+"ENG-216"
+],
+[
+"ENG-213",
+"ENG-306"
+],
+[
+"ENG-266",
+"ENG-236"
+]
+],
+"distinct_methods": 15,
 "links": [
 {
 "id": "SP-0233",
@@ -28329,6 +29212,14 @@
 "100-superskills/skills/kosif-montage-motion/scripts/web/server.py:1",
 "100-superskills/skills/kosif-montage-motion/scripts/web/server.py:49"
 ],
+"twins": [
+[
+"ENG-18",
+"ENG-219",
+"ENG-233"
+]
+],
+"distinct_methods": 16,
 "links": [
 {
 "id": "SP-0061",
@@ -28493,6 +29384,17 @@
 "kosif-studio/motion/motion.py:126",
 "kosif-studio/motion/motion.py:466"
 ],
+"twins": [
+[
+"ENG-84",
+"ENG-73"
+],
+[
+"ENG-232",
+"ENG-264"
+]
+],
+"distinct_methods": 15,
 "links": [
 {
 "id": "SP-0358",
@@ -28661,6 +29563,17 @@
 "100-superskills/skills/kosif-montage-motion/CHANGELOG.md",
 "kosif-one/tools/kosif-one/scripts/plan.py:188"
 ],
+"twins": [
+[
+"ENG-07",
+"ENG-391"
+],
+[
+"ENG-337",
+"ENG-334"
+]
+],
+"distinct_methods": 15,
 "links": [
 {
 "id": "SP-0226",
@@ -28818,6 +29731,8 @@
 }
 ],
 "proof": [],
+"twins": [],
+"distinct_methods": 17,
 "links": [
 {
 "id": "SP-0406",
@@ -28987,6 +29902,8 @@
 "kosif-one/projects/duck-vs-dragon/duck_dragon.svg",
 "kosif-tool/tools/kosif.py:101"
 ],
+"twins": [],
+"distinct_methods": 17,
 "links": [
 {
 "id": "SP-0083",
@@ -29144,6 +30061,8 @@
 "100-superskills/skills/kosif-montage-motion/scripts/web/wbcompat.py:122",
 "100-superskills/skills/kosif-montage-motion/scripts/web/wbcompat.py:135"
 ],
+"twins": [],
+"distinct_methods": 16,
 "links": [
 {
 "id": "SP-0110",
@@ -29296,6 +30215,8 @@
 }
 ],
 "proof": [],
+"twins": [],
+"distinct_methods": 16,
 "links": [
 {
 "id": "SP-0113",
@@ -29439,6 +30360,13 @@
 "kosif-atlas/skills/1526-gamegen/4173-game-trailer/references/assembly-and-review.md",
 "kosif-atlas/skills/1526-gamegen/4173-game-trailer/assets/marketing/render.py"
 ],
+"twins": [
+[
+"ENG-226",
+"ENG-349"
+]
+],
+"distinct_methods": 13,
 "links": [
 {
 "id": "SP-0158",
@@ -29588,6 +30516,8 @@
 "kosif-earth-ci-fork/ui/art/crystal-world.js:113",
 "kosif-earth-ci-fork/tools/crystal_world.test.mjs"
 ],
+"twins": [],
+"distinct_methods": 14,
 "links": [
 {
 "id": "SP-0224",
@@ -29735,6 +30665,8 @@
 "100-superskills/skills/kosif-montage-motion/scripts/web/static/studio/offline.mjs:96",
 "100-superskills/skills/kosif-montage-motion/scripts/web/static/studio/offline.mjs:108"
 ],
+"twins": [],
+"distinct_methods": 14,
 "links": [
 {
 "id": "SP-0118",
@@ -29882,6 +30814,8 @@
 "100-superskills/skills/kosif-montage-motion/scripts/kit/three-kit.js:361",
 "kosif-tool/.claude/skills/kosif-superpowers/scripts/superpowers.py"
 ],
+"twins": [],
+"distinct_methods": 14,
 "links": [
 {
 "id": "SP-0274",
@@ -30033,6 +30967,13 @@
 "100-superskills/skills/kosif-montage-motion/tests/studio/offline.test.mjs",
 "100-superskills/skills/kosif-montage-motion/tests/studio/offline.test.mjs:6"
 ],
+"twins": [
+[
+"ENG-26",
+"ENG-159"
+]
+],
+"distinct_methods": 13,
 "links": [
 {
 "id": "SP-0260",
@@ -30174,6 +31115,8 @@
 "proof": [
 "100-superskills/skills/kosif-montage-motion/SKILL.md"
 ],
+"twins": [],
+"distinct_methods": 13,
 "links": [
 {
 "id": "SP-0322",
@@ -30308,6 +31251,13 @@
 }
 ],
 "proof": [],
+"twins": [
+[
+"ENG-81",
+"ENG-288"
+]
+],
+"distinct_methods": 12,
 "links": [
 {
 "id": "SP-0155",
@@ -30439,6 +31389,13 @@
 }
 ],
 "proof": [],
+"twins": [
+[
+"ENG-311",
+"ENG-358"
+]
+],
+"distinct_methods": 11,
 "links": [
 {
 "id": "SP-0357",
@@ -30567,6 +31524,8 @@
 "kosif-tool/tools/render_html.cjs:67",
 "kosif-studio/svg_import.py:1"
 ],
+"twins": [],
+"distinct_methods": 11,
 "links": [
 {
 "id": "SP-0257",
@@ -30689,6 +31648,13 @@
 "100-superskills/skills/kosif-montage-motion/scripts/projects/midnight_cat/assets/scene.js:124",
 "100-superskills/skills/kosif-montage-motion/scripts/projects/midnight_cat/index.html:20"
 ],
+"twins": [
+[
+"ENG-09",
+"ENG-82"
+]
+],
+"distinct_methods": 9,
 "links": [
 {
 "id": "SP-0371",
@@ -30802,6 +31768,8 @@
 }
 ],
 "proof": [],
+"twins": [],
+"distinct_methods": 10,
 "links": [
 {
 "id": "SP-0234",
@@ -30919,6 +31887,8 @@
 "kosif-tool/tools/render_html.md",
 "kosif-earth-ci-fork/tools/brand_art.test.mjs"
 ],
+"twins": [],
+"distinct_methods": 9,
 "links": [
 {
 "id": "SP-0353",
@@ -31036,6 +32006,8 @@
 "100-superskills/skills/kosif-montage-motion/scripts/web/static/studio/app.mjs:108",
 "100-superskills/skills/kosif-montage-motion/tests/studio/export.mock.test.mjs"
 ],
+"twins": [],
+"distinct_methods": 9,
 "links": [
 {
 "id": "SP-0453",
@@ -31148,6 +32120,8 @@
 }
 ],
 "proof": [],
+"twins": [],
+"distinct_methods": 9,
 "links": [
 {
 "id": "SP-0355",
@@ -31252,6 +32226,13 @@
 "kosif-one/tools/kosif-studio/motion/kit/motion-kit.js:466",
 "kosif-one/tools/kosif-studio/motion/references/hyperframes-authoring.md"
 ],
+"twins": [
+[
+"ENG-10",
+"ENG-284"
+]
+],
+"distinct_methods": 6,
 "links": [
 {
 "id": "SP-0224",
@@ -31353,6 +32334,8 @@
 "proof": [
 "kosif-tool/tools/render_html.cjs:230"
 ],
+"twins": [],
+"distinct_methods": 7,
 "links": [
 {
 "id": "SP-0343",
@@ -31455,6 +32438,13 @@
 "100-superskills/skills/kosif-montage-motion/scripts/web/server.py:402",
 "100-superskills/skills/kosif-montage-motion/scripts/web/server.py:444"
 ],
+"twins": [
+[
+"ENG-276",
+"ENG-309"
+]
+],
+"distinct_methods": 6,
 "links": [
 {
 "id": "SP-0358",
@@ -31541,6 +32531,15 @@
 "kosif-studio/motion/kit/motion-kit.js:119",
 "kosif-studio/tests/test_studio.py:570"
 ],
+"twins": [
+[
+"ENG-34",
+"ENG-92",
+"ENG-76",
+"ENG-273"
+]
+],
+"distinct_methods": 3,
 "links": [
 {
 "id": "SP-0315",
@@ -31640,6 +32639,13 @@
 "100-superskills/skills/kosif-montage-motion/scripts/kit/k3-entry.js",
 "100-superskills/skills/kosif-montage-motion/scripts/motion.py:232"
 ],
+"twins": [
+[
+"ENG-203",
+"ENG-177"
+]
+],
+"distinct_methods": 5,
 "links": [
 {
 "id": "SP-0358",
@@ -31733,6 +32739,8 @@
 }
 ],
 "proof": [],
+"twins": [],
+"distinct_methods": 6,
 "links": [
 {
 "id": "SP-0324",
@@ -31821,6 +32829,8 @@
 "proof": [
 "kosif-tool/tools/render_html.cjs:483"
 ],
+"twins": [],
+"distinct_methods": 6,
 "links": [
 {
 "id": "SP-0139",
@@ -31907,6 +32917,8 @@
 "kosif-studio/render.py:397",
 "kosif-tool/tools/render_html.cjs:138"
 ],
+"twins": [],
+"distinct_methods": 5,
 "links": [
 {
 "id": "SP-0113",
@@ -31978,6 +32990,8 @@
 }
 ],
 "proof": [],
+"twins": [],
+"distinct_methods": 4,
 "links": [
 {
 "id": "SP-0171",
@@ -32057,6 +33071,8 @@
 }
 ],
 "proof": [],
+"twins": [],
+"distinct_methods": 4,
 "links": [
 {
 "id": "SP-0242",
@@ -32117,6 +33133,8 @@
 }
 ],
 "proof": [],
+"twins": [],
+"distinct_methods": 2,
 "links": [
 {
 "id": "SP-0324",
@@ -32170,6 +33188,8 @@
 }
 ],
 "proof": [],
+"twins": [],
+"distinct_methods": 1,
 "links": [
 {
 "id": "SP-0271",
@@ -32413,6 +33433,8 @@
 "100-superskills/skills/kosif-montage-motion/scripts/web/recipes.py:84",
 "kosif-atlas/skills/1526-gamegen/4173-game-trailer/references/assembly-and-review.md"
 ],
+"twins": [],
+"distinct_methods": 30,
 "links": [
 {
 "id": "SP-0238",
@@ -32551,6 +33573,8 @@
 "kosif-one/vendor/brag/skills/brag/references/step-4-deliver.md",
 "kosif-atlas/skills/1511-homie/3903-video/references/TRAILER.md"
 ],
+"twins": [],
+"distinct_methods": 12,
 "links": [
 {
 "id": "SP-0362",
@@ -32681,6 +33705,8 @@
 "style:pm-rebutonepress-810f78",
 "style:pm-kamstudiolabs-0b0824"
 ],
+"twins": [],
+"distinct_methods": 11,
 "links": [
 {
 "id": "SP-0167",
@@ -32785,6 +33811,8 @@
 "app/public/js/00_editor.js:2079",
 "100-superskills/skills/kosif-social/scripts/social.py:39"
 ],
+"twins": [],
+"distinct_methods": 7,
 "links": [
 {
 "id": "SP-0433",
@@ -32891,6 +33919,8 @@
 "100-superskills/skills/kosif-montage-motion/scripts/web/recipes.py:87",
 "kosif-atlas/skills/2712-remotion/10438-remotion-render/transparent-videos.md"
 ],
+"twins": [],
+"distinct_methods": 7,
 "links": [
 {
 "id": "SP-0236",
@@ -32961,6 +33991,8 @@
 }
 ],
 "proof": [],
+"twins": [],
+"distinct_methods": 3,
 "links": [
 {
 "id": "SP-0431",
@@ -33178,6 +34210,8 @@
 "kosif-atlas/skills/2702-hyperframes/10381-website-to-hyperframes/references/techniques.md",
 "kosif-one/vendor/hyperframes/skills/hyperframes-animation/rules/svg-path-draw.md"
 ],
+"twins": [],
+"distinct_methods": 25,
 "links": [
 {
 "id": "SP-0282",
@@ -33299,6 +34333,8 @@
 }
 ],
 "proof": [],
+"twins": [],
+"distinct_methods": 11,
 "links": [
 {
 "id": "SP-0146",
@@ -33424,6 +34460,8 @@
 "kosif-tool/playbooks/hand-drawn.md",
 "kosif-tool/styles/pm-deebeeeff-50fcd0"
 ],
+"twins": [],
+"distinct_methods": 10,
 "links": [
 {
 "id": "SP-0427",
@@ -33516,6 +34554,8 @@
 "kosif-tool/styles/chalkboard",
 "kosif-tool/styles/doodle"
 ],
+"twins": [],
+"distinct_methods": 6,
 "links": [
 {
 "id": "SP-0386",
@@ -33605,6 +34645,8 @@
 "kosif-studio/runner.py:39",
 "kosif-studio/tests/test_studio.py:331"
 ],
+"twins": [],
+"distinct_methods": 5,
 "links": [
 {
 "id": "SP-0280",
@@ -33689,6 +34731,8 @@
 "kosif-tool/styles/pm-ik-builds-b8bdcf",
 "kosif-tool/styles/pm-sab8a-364a5a"
 ],
+"twins": [],
+"distinct_methods": 5,
 "links": [
 {
 "id": "SP-0438",
@@ -33900,6 +34944,8 @@
 "kosif-tool/styles/neon-tech/SKILL.md",
 "kosif-tool/tools/render_html.cjs"
 ],
+"twins": [],
+"distinct_methods": 24,
 "links": [
 {
 "id": "SP-0295",
@@ -34093,6 +35139,8 @@
 "kosif-studio/references/drawing-guide.md:62",
 "kosif-studio/scenes/whale_dragon.py:30"
 ],
+"twins": [],
+"distinct_methods": 21,
 "links": [
 {
 "id": "SP-0275",
@@ -34235,6 +35283,8 @@
 "style:fake3d",
 "100-superskills/skills/kosif-montage-motion/references/book-lessons.md"
 ],
+"twins": [],
+"distinct_methods": 13,
 "links": [
 {
 "id": "SP-0277",
@@ -34354,6 +35404,8 @@
 "100-superskills/skills/kosif-montage-motion/scripts/web/static/studio/app.mjs:67",
 "100-superskills/skills/kosif-montage-motion/scripts/web/static/studio/index.html"
 ],
+"twins": [],
+"distinct_methods": 10,
 "links": [
 {
 "id": "SP-0273",
@@ -34469,6 +35521,8 @@
 "kosif-atlas/skills/2221-webgpu-threejs-tsl/8405-webgpu-threejs-tsl/SKILL.md",
 "100-superskills/skills/kosif-montage-motion/scripts/projects/premium_edit/index.html:35"
 ],
+"twins": [],
+"distinct_methods": 9,
 "links": [
 {
 "id": "SP-0383",
@@ -34560,6 +35614,8 @@
 "kosif-atlas/skills/95-awwwards-motion/204-awwwards-motion/SKILL.md",
 "kosif-studio/render.py:756"
 ],
+"twins": [],
+"distinct_methods": 5,
 "links": [
 {
 "id": "SP-0166",
@@ -34639,6 +35695,8 @@
 "kosif-one/projects/thursday-dua-animation/source/index.html:212-217",
 "style:pm-marouanegazouzi-6071d5"
 ],
+"twins": [],
+"distinct_methods": 3,
 "links": [
 {
 "id": "SP-0403",
@@ -34703,6 +35761,8 @@
 }
 ],
 "proof": [],
+"twins": [],
+"distinct_methods": 2,
 "links": [
 {
 "id": "SP-0266",
@@ -34914,6 +35974,8 @@
 "kosif-earth-ci-fork/ui/features/sales-map.js:49",
 "fastify-motion-bro/scripts/profiles/vox-history.mjs:15-18"
 ],
+"twins": [],
+"distinct_methods": 24,
 "links": [
 {
 "id": "SP-0058",
@@ -35033,6 +36095,8 @@
 }
 ],
 "proof": [],
+"twins": [],
+"distinct_methods": 11,
 "links": [
 {
 "id": "SP-0280",
@@ -35146,6 +36210,8 @@
 }
 ],
 "proof": [],
+"twins": [],
+"distinct_methods": 10,
 "links": [
 {
 "id": "SP-0266",
@@ -35261,6 +36327,8 @@
 "kosif-atlas/skills/2712-remotion/10435-remotion-maps/techniques/cesium/references/3d-flyover-architecture.md",
 "kosif-atlas/skills/2712-remotion/10435-remotion-maps/techniques/cesium/references/3d-troubleshooting.md"
 ],
+"twins": [],
+"distinct_methods": 9,
 "links": [
 {
 "id": "SP-0082",
@@ -35343,6 +36411,8 @@
 }
 ],
 "proof": [],
+"twins": [],
+"distinct_methods": 5,
 "links": [
 {
 "id": "SP-0381",
@@ -35416,6 +36486,8 @@
 }
 ],
 "proof": [],
+"twins": [],
+"distinct_methods": 3,
 "links": [
 {
 "id": "SP-0271",
@@ -35862,6 +36934,29 @@
 "kosif-studio/motion/qa.py:304",
 "kosif-studio/tests/test_studio.py:667"
 ],
+"twins": [
+[
+"BEAT-16",
+"BEAT-52"
+],
+[
+"BEAT-14",
+"BEAT-20"
+],
+[
+"BEAT-74",
+"BEAT-138"
+],
+[
+"BEAT-191",
+"BEAT-183"
+],
+[
+"BEAT-185",
+"BEAT-211"
+]
+],
+"distinct_methods": 58,
 "links": [
 {
 "id": "SP-0402",
@@ -36146,6 +37241,22 @@
 "kosif-tool/tools/kosif.py:74",
 "kosif-tool/web/generator.js"
 ],
+"twins": [
+[
+"BEAT-10",
+"BEAT-84",
+"BEAT-78",
+"BEAT-137",
+"BEAT-268",
+"BEAT-244",
+"BEAT-262"
+],
+[
+"BEAT-164",
+"BEAT-175"
+]
+],
+"distinct_methods": 29,
 "links": [
 {
 "id": "SP-0452",
@@ -36363,6 +37474,13 @@
 "kosif-studio/motion/projects/bunny_twin/twin/cues.json",
 "kosif-one/tools/kosif-studio/motion/score.py:146"
 ],
+"twins": [
+[
+"BEAT-255",
+"BEAT-251"
+]
+],
+"distinct_methods": 25,
 "links": [
 {
 "id": "SP-0306",
@@ -36553,6 +37671,8 @@
 }
 ],
 "proof": [],
+"twins": [],
+"distinct_methods": 22,
 "links": [
 {
 "id": "SP-0359",
@@ -36703,6 +37823,18 @@
 "kosif-studio/tests/test_studio.py:667",
 "kosif-studio/motion/projects/showreel/assets/score.json"
 ],
+"twins": [
+[
+"BEAT-61",
+"BEAT-63",
+"BEAT-64"
+],
+[
+"BEAT-47",
+"BEAT-75"
+]
+],
+"distinct_methods": 12,
 "links": [
 {
 "id": "SP-0304",
@@ -36840,6 +37972,8 @@
 "kosif-atlas/skills/1526-gamegen/4173-game-trailer/references/assembly-and-review.md",
 "kosif-atlas/skills/1526-gamegen/4173-game-trailer/references/gotchas.md"
 ],
+"twins": [],
+"distinct_methods": 12,
 "links": [
 {
 "id": "SP-0118",
@@ -36969,6 +38103,8 @@
 "kosif-studio/tests/test_studio.py:572",
 "kosif-studio/motion/score.py:70"
 ],
+"twins": [],
+"distinct_methods": 12,
 "links": [
 {
 "id": "SP-0290",
@@ -37092,6 +38228,8 @@
 "proof": [
 "100-superskills/skills/kosif-montage-motion/tests/test_songreel.py:27"
 ],
+"twins": [],
+"distinct_methods": 11,
 "links": [
 {
 "id": "SP-0376",
@@ -37209,6 +38347,13 @@
 }
 ],
 "proof": [],
+"twins": [
+[
+"BEAT-166",
+"BEAT-X08"
+]
+],
+"distinct_methods": 10,
 "links": [
 {
 "id": "SP-0117",
@@ -37322,6 +38467,8 @@
 }
 ],
 "proof": [],
+"twins": [],
+"distinct_methods": 10,
 "links": [
 {
 "id": "SP-0272",
@@ -37432,6 +38579,17 @@
 "kosif-studio/motion/qa.py:448",
 "kosif-studio/tests/test_studio.py:719"
 ],
+"twins": [
+[
+"BEAT-19",
+"BEAT-57"
+],
+[
+"BEAT-28",
+"BEAT-133"
+]
+],
+"distinct_methods": 7,
 "links": [
 {
 "id": "SP-0301",
@@ -37536,6 +38694,8 @@
 "proof": [
 "kosif-studio/motion/kit/motion-kit.js:47"
 ],
+"twins": [],
+"distinct_methods": 8,
 "links": [
 {
 "id": "SP-0222",
@@ -37642,6 +38802,8 @@
 "proof": [
 "kosif-studio/motion/score.py:299"
 ],
+"twins": [],
+"distinct_methods": 8,
 "links": [
 {
 "id": "SP-0300",
@@ -37739,6 +38901,8 @@
 "kosif-one/tools/kosif-studio/motion/score.py:1",
 "kosif-one/tools/kosif-studio/motion/qa.py"
 ],
+"twins": [],
+"distinct_methods": 7,
 "links": [
 {
 "id": "SP-0296",
@@ -37830,6 +38994,8 @@
 }
 ],
 "proof": [],
+"twins": [],
+"distinct_methods": 7,
 "links": [
 {
 "id": "SP-0298",
@@ -37923,6 +39089,13 @@
 }
 ],
 "proof": [],
+"twins": [
+[
+"BEAT-82",
+"BEAT-53"
+]
+],
+"distinct_methods": 6,
 "links": [
 {
 "id": "SP-0296",
@@ -38013,6 +39186,8 @@
 "fastify-motion-bro/scripts/profiles/food-flow.mjs:4-28,34-45",
 "fastify-motion-bro/scripts/profiles/car-exploded.mjs:58"
 ],
+"twins": [],
+"distinct_methods": 6,
 "links": [
 {
 "id": "SP-0300",
@@ -38103,6 +39278,8 @@
 }
 ],
 "proof": [],
+"twins": [],
+"distinct_methods": 6,
 "links": [
 {
 "id": "SP-0287",
@@ -38188,6 +39365,8 @@
 }
 ],
 "proof": [],
+"twins": [],
+"distinct_methods": 6,
 "links": [
 {
 "id": "SP-0290",
@@ -38277,6 +39456,8 @@
 "100-superskills/skills/kosif-montage-motion/tests/test_v6.py:88",
 "100-superskills/skills/kosif-montage-motion/scripts/projects/showreel/index.html:54"
 ],
+"twins": [],
+"distinct_methods": 5,
 "links": [
 {
 "id": "SP-0118",
@@ -38350,6 +39531,8 @@
 }
 ],
 "proof": [],
+"twins": [],
+"distinct_methods": 4,
 "links": [
 {
 "id": "SP-0288",
@@ -38423,6 +39606,8 @@
 }
 ],
 "proof": [],
+"twins": [],
+"distinct_methods": 4,
 "links": [
 {
 "id": "SP-0029",
@@ -38487,6 +39672,8 @@
 }
 ],
 "proof": [],
+"twins": [],
+"distinct_methods": 3,
 "links": [
 {
 "id": "SP-0143",
@@ -38558,6 +39745,8 @@
 }
 ],
 "proof": [],
+"twins": [],
+"distinct_methods": 3,
 "links": [
 {
 "id": "SP-0286",
@@ -38622,6 +39811,8 @@
 }
 ],
 "proof": [],
+"twins": [],
+"distinct_methods": 2,
 "links": [
 {
 "id": "SP-0217",
@@ -38686,6 +39877,8 @@
 }
 ],
 "proof": [],
+"twins": [],
+"distinct_methods": 2,
 "links": [
 {
 "id": "SP-0299",
@@ -38819,6 +40012,8 @@
 "kosif-tool/STYLE_INDEX.md",
 "kosif-tool/tests/test_cli.py"
 ],
+"twins": [],
+"distinct_methods": 11,
 "links": [
 {
 "id": "SP-0225",
@@ -38944,6 +40139,8 @@
 "100-superskills/skills/kosif-montage-motion/scripts/web/claude_bridge.py:27",
 "100-superskills/skills/kosif-montage-motion/scripts/web/claude_bridge.py:146"
 ],
+"twins": [],
+"distinct_methods": 10,
 "links": [
 {
 "id": "SP-0140",
@@ -39035,6 +40232,8 @@
 "kosif-one/tools/kosif-omni/mcp-server/kosif_mcp/skillengine.py:282",
 "kosif-one/tools/kosif-omni/skills/kosif-source-router/SKILL.md"
 ],
+"twins": [],
+"distinct_methods": 6,
 "links": [
 {
 "id": "SP-0228",
@@ -39260,6 +40459,8 @@
 "kosif-tool/starters/html-canvas/index.html:118",
 "kosif-tool/playbooks/particles.md:52-66"
 ],
+"twins": [],
+"distinct_methods": 27,
 "links": [
 {
 "id": "SP-0251",
@@ -39409,6 +40610,8 @@
 "kosif-tool/styles/pm-crazyalphaaa-bc7e75",
 "kosif-tool/playbooks/particles.md:26"
 ],
+"twins": [],
+"distinct_methods": 14,
 "links": [
 {
 "id": "SP-0128",
@@ -39520,6 +40723,8 @@
 }
 ],
 "proof": [],
+"twins": [],
+"distinct_methods": 9,
 "links": [
 {
 "id": "SP-0047",
@@ -39630,6 +40835,8 @@
 "kosif-tool/playbooks/particles.md:27",
 "kosif-tool/styles/pm-maxalexweber-67688b"
 ],
+"twins": [],
+"distinct_methods": 9,
 "links": [
 {
 "id": "SP-0319",
@@ -39742,6 +40949,8 @@
 "kosif-atlas/skills/1526-gamegen/4164-game-audio-vfx/SKILL.md",
 "kosif-one/vendor/hyperframes/skills/hyperframes-animation/rules/particle-burst.md"
 ],
+"twins": [],
+"distinct_methods": 8,
 "links": [
 {
 "id": "SP-0442",
@@ -39846,6 +41055,8 @@
 }
 ],
 "proof": [],
+"twins": [],
+"distinct_methods": 8,
 "links": [
 {
 "id": "SP-0235",
@@ -39899,6 +41110,8 @@
 }
 ],
 "proof": [],
+"twins": [],
+"distinct_methods": 1,
 "links": [
 {
 "id": "SP-0329",
@@ -40129,6 +41342,8 @@
 "kosif-studio/motion/montage.py:42",
 "kosif-studio/motion/motion.py:496"
 ],
+"twins": [],
+"distinct_methods": 27,
 "links": [
 {
 "id": "SP-0402",
@@ -40276,6 +41491,8 @@
 "kosif-tool/styles/dua/dua.style.json",
 "kosif-tool/styles/dua/ANALYSIS.md"
 ],
+"twins": [],
+"distinct_methods": 14,
 "links": [
 {
 "id": "SP-0426",
@@ -40420,6 +41637,8 @@
 "https://github.com/affaan-m/ECC/tree/main/skills/taste-application/SKILL.md",
 "https://github.com/affaan-m/ECC/tree/main/skills/video-editing/SKILL.md"
 ],
+"twins": [],
+"distinct_methods": 13,
 "links": [
 {
 "id": "SP-0421",
@@ -40512,6 +41731,8 @@
 }
 ],
 "proof": [],
+"twins": [],
+"distinct_methods": 6,
 "links": [
 {
 "id": "SP-0337",
@@ -40601,6 +41822,8 @@
 "kosif-studio/motion/decaption.py:63",
 "kosif-atlas/skills/235-mas-video-lab/754-ffmpeg/SKILL.md"
 ],
+"twins": [],
+"distinct_methods": 5,
 "links": [
 {
 "id": "SP-0346",
@@ -40672,6 +41895,8 @@
 }
 ],
 "proof": [],
+"twins": [],
+"distinct_methods": 3,
 "links": [
 {
 "id": "SP-0227",
@@ -40874,6 +42099,8 @@
 "style:pm-emollick-8661a8",
 "style:pm-ghinaiya-nirmal-5d8fec"
 ],
+"twins": [],
+"distinct_methods": 23,
 "links": [
 {
 "id": "SP-0392",
@@ -40972,6 +42199,8 @@
 "kosif-one/vendor/hyperframes/skills/media-use/scripts/dither.mjs",
 "kosif-one/vendor/hyperframes/skills/media-use/scripts/dither.test.mjs"
 ],
+"twins": [],
+"distinct_methods": 6,
 "links": [
 {
 "id": "SP-0321",
@@ -41046,6 +42275,8 @@
 "style:pm-rneayan-474bcf",
 "kosif-one/vendor/hyperframes/docs/guides/media-effects.mdx"
 ],
+"twins": [],
+"distinct_methods": 3,
 "links": [
 {
 "id": "SP-0162",
@@ -41322,6 +42553,19 @@
 "kosif-studio/motion/qa.py:173",
 "kosif-studio/tests/test_studio.py:739"
 ],
+"twins": [
+[
+"QA-01",
+"QA-87",
+"QA-144",
+"QA-345"
+],
+[
+"QA-194",
+"QA-210"
+]
+],
+"distinct_methods": 31,
 "links": [
 {
 "id": "SP-0044",
@@ -41595,6 +42839,17 @@
 "kosif-studio/tests/test_studio.py:684",
 "kosif-tool/tools/check_originality.py"
 ],
+"twins": [
+[
+"QA-57",
+"QA-309"
+],
+[
+"QA-89",
+"QA-70"
+]
+],
+"distinct_methods": 33,
 "links": [
 {
 "id": "SP-0019",
@@ -41863,6 +43118,13 @@
 "100-superskills/skills/kosif-montage-motion/scripts/web/server.py:697",
 "100-superskills/skills/kosif-montage-motion/tests/test_review.py:59"
 ],
+"twins": [
+[
+"QA-132",
+"QA-324"
+]
+],
+"distinct_methods": 33,
 "links": [
 {
 "id": "SP-0004",
@@ -42094,6 +43356,18 @@
 "kosif-tool/tools/render_html.cjs",
 "kosif-tool/.claude/skills/kosif-superpowers/proofs/mimic-synthetic/README.md"
 ],
+"twins": [
+[
+"QA-99",
+"QA-90",
+"QA-211"
+],
+[
+"QA-199",
+"QA-197"
+]
+],
+"distinct_methods": 25,
 "links": [
 {
 "id": "SP-0426",
@@ -42282,6 +43556,13 @@
 "kosif-tool/package.json",
 "fastify-motion-bro/tests/planner.test.mjs"
 ],
+"twins": [
+[
+"QA-67",
+"QA-25"
+]
+],
+"distinct_methods": 20,
 "links": [
 {
 "id": "SP-0045",
@@ -42452,6 +43733,8 @@
 "kosif-studio/out/kosif_motion_showreel.mp4",
 "kosif-one/tools/kosif-omni/skills/kosif-image-studio/scripts/prompt_lint.py"
 ],
+"twins": [],
+"distinct_methods": 18,
 "links": [
 {
 "id": "SP-0134",
@@ -42609,6 +43892,8 @@
 "kosif-atlas/skills/3202-quantitative-sciences/13564-scientific-visualization/scripts/palette_audit.py",
 "kosif-atlas/skills/2690-build-web-data-visualization/10318-accessibility-and-inclusive-visualizatio/references/color-contrast-and-redundant-encoding.md"
 ],
+"twins": [],
+"distinct_methods": 16,
 "links": [
 {
 "id": "SP-0203",
@@ -42754,6 +44039,17 @@
 "kosif-studio/motion/qa.py:106",
 "kosif-studio/tests/test_studio.py:699"
 ],
+"twins": [
+[
+"QA-58",
+"QA-115"
+],
+[
+"QA-231",
+"QA-320"
+]
+],
+"distinct_methods": 13,
 "links": [
 {
 "id": "SP-0333",
@@ -42900,6 +44196,13 @@
 "kosif-tool/.claude/skills/kosif-superpowers/proofs/motion-v2/README.md",
 "owner-upload:motion-skill-claude/higgsfield-motion-claude/scripts/activity.mjs"
 ],
+"twins": [
+[
+"QA-342",
+"QA-306"
+]
+],
+"distinct_methods": 13,
 "links": [
 {
 "id": "SP-0331",
@@ -43033,6 +44336,8 @@
 }
 ],
 "proof": [],
+"twins": [],
+"distinct_methods": 14,
 "links": [
 {
 "id": "SP-0025",
@@ -43168,6 +44473,8 @@
 "kosif-one/projects/KOSIF_Motion_Ghorba/KOSIF_Ghorba_Render.py:86-93",
 "kosif-one/projects/KOSIF_Motion_Ghorba/KOSIF_Ghorba_Render.py:94-133"
 ],
+"twins": [],
+"distinct_methods": 13,
 "links": [
 {
 "id": "SP-0027",
@@ -43307,6 +44614,8 @@
 "100-superskills/skills/kosif-montage-motion/scripts/web/wbcompat.py:31",
 "100-superskills/skills/kosif-montage-motion/scripts/web/wbcompat.py:154"
 ],
+"twins": [],
+"distinct_methods": 13,
 "links": [
 {
 "id": "SP-0027",
@@ -43441,6 +44750,8 @@
 "fastify-motion-bro/scripts/render.py:24-25",
 "100-superskills/skills/kosif-montage-motion/tests/test_render_client.py:12"
 ],
+"twins": [],
+"distinct_methods": 12,
 "links": [
 {
 "id": "SP-0249",
@@ -43567,6 +44878,21 @@
 "kosif-one/tools/kosif-omni/skills/kosif-image-studio/references/visual-execution-contract.md",
 "kosif-one/tools/kosif-omni/skills/kosif-think-pro/scripts/visual_reliability_self_test.py"
 ],
+"twins": [
+[
+"QA-200",
+"QA-195"
+],
+[
+"QA-224",
+"QA-226"
+],
+[
+"QA-335",
+"QA-334"
+]
+],
+"distinct_methods": 8,
 "links": [
 {
 "id": "SP-0004",
@@ -43681,6 +45007,8 @@
 "proof": [
 "100-superskills/skills/kosif-montage-motion/tests/test_launch.py:54"
 ],
+"twins": [],
+"distinct_methods": 10,
 "links": [
 {
 "id": "SP-0331",
@@ -43801,6 +45129,8 @@
 "100-superskills/skills/kosif-montage-motion/tests/test_mimic.py:47",
 "100-superskills/skills/kosif-montage-motion/tests/test_mimic.py:76"
 ],
+"twins": [],
+"distinct_methods": 9,
 "links": [
 {
 "id": "SP-0390",
@@ -43916,6 +45246,8 @@
 "kosif-atlas/skills/3323-joined-audio-transcript-drift/13837-joined-audio-transcript-drift",
 "100-superskills/skills/video-prompt-director/SKILL.md:25"
 ],
+"twins": [],
+"distinct_methods": 9,
 "links": [
 {
 "id": "SP-0145",
@@ -44021,6 +45353,8 @@
 }
 ],
 "proof": [],
+"twins": [],
+"distinct_methods": 8,
 "links": [
 {
 "id": "SP-0201",
@@ -44125,6 +45459,8 @@
 "100-superskills/skills/kosif-montage-motion/tests/test_web.py:224",
 "100-superskills/skills/kosif-montage-motion/tests/test_structural_twin.py:21"
 ],
+"twins": [],
+"distinct_methods": 7,
 "links": [
 {
 "id": "SP-0108",
@@ -44217,6 +45553,8 @@
 }
 ],
 "proof": [],
+"twins": [],
+"distinct_methods": 7,
 "links": [
 {
 "id": "SP-0082",
@@ -44315,6 +45653,8 @@
 "kosif-studio/studio.py:1139",
 "100-superskills/skills/kosif-social/scripts/social.py:633"
 ],
+"twins": [],
+"distinct_methods": 7,
 "links": [
 {
 "id": "SP-0121",
@@ -44411,6 +45751,8 @@
 }
 ],
 "proof": [],
+"twins": [],
+"distinct_methods": 7,
 "links": [
 {
 "id": "SP-0351",
@@ -44514,6 +45856,8 @@
 "kosif-tool/tools/render_html.cjs:515",
 "100-superskills/skills/kosif-montage-motion/scripts/projects/midnight_cat/player-test.cjs:1"
 ],
+"twins": [],
+"distinct_methods": 7,
 "links": [
 {
 "id": "SP-0245",
@@ -44614,6 +45958,8 @@
 "kosif-tool/tools/kosif.py:606",
 "kosif-tool/tools/kosif.py:614"
 ],
+"twins": [],
+"distinct_methods": 7,
 "links": [
 {
 "id": "SP-0088",
@@ -44701,6 +46047,8 @@
 }
 ],
 "proof": [],
+"twins": [],
+"distinct_methods": 6,
 "links": [
 {
 "id": "SP-0247",
@@ -44790,6 +46138,8 @@
 }
 ],
 "proof": [],
+"twins": [],
+"distinct_methods": 6,
 "links": [
 {
 "id": "SP-0256",
@@ -44875,6 +46225,8 @@
 }
 ],
 "proof": [],
+"twins": [],
+"distinct_methods": 5,
 "links": [
 {
 "id": "SP-0241",
@@ -44949,6 +46301,8 @@
 "100-superskills/skills/kosif-montage-motion/scripts/web/static/studio/model.mjs:13",
 "100-superskills/skills/kosif-montage-motion/tests/studio/model.test.mjs"
 ],
+"twins": [],
+"distinct_methods": 3,
 "links": [
 {
 "id": "SP-0228",
@@ -45014,6 +46368,8 @@
 }
 ],
 "proof": [],
+"twins": [],
+"distinct_methods": 2,
 "links": [
 {
 "id": "SP-0289",
@@ -45078,6 +46434,8 @@
 }
 ],
 "proof": [],
+"twins": [],
+"distinct_methods": 2,
 "links": [
 {
 "id": "SP-0237",
@@ -45133,6 +46491,8 @@
 }
 ],
 "proof": [],
+"twins": [],
+"distinct_methods": 1,
 "links": [
 {
 "id": "SP-0195",
@@ -45190,6 +46550,8 @@
 }
 ],
 "proof": [],
+"twins": [],
+"distinct_methods": 1,
 "links": [
 {
 "id": "SP-0261",
@@ -45486,6 +46848,8 @@
 "kosif-studio/motion/projects/kit_v3_demo/index.html",
 "kosif-one/projects/whatsapp-motion/projects/success/assets/motion-kit.js"
 ],
+"twins": [],
+"distinct_methods": 38,
 "links": [
 {
 "id": "SP-0395",
@@ -45664,6 +47028,8 @@
 "kosif-tool/styles/pm-leonkohli-6dc01b",
 "kosif-tool/styles/pm-prasenx-8d9323"
 ],
+"twins": [],
+"distinct_methods": 20,
 "links": [
 {
 "id": "SP-0196",
@@ -45779,6 +47145,8 @@
 "kosif-tool/styles/pm-ajith-io-b5626e",
 "kosif-tool/styles/pm-mrtanviir-132457"
 ],
+"twins": [],
+"distinct_methods": 9,
 "links": [
 {
 "id": "SP-0203",
@@ -45888,6 +47256,8 @@
 "kosif-studio/to_python.py:80",
 "kosif-studio/tests/test_studio.py:42"
 ],
+"twins": [],
+"distinct_methods": 8,
 "links": [
 {
 "id": "SP-0441",
@@ -45985,6 +47355,8 @@
 "kosif-tool/styles/pm-roundtablespace-d3a1be",
 "kosif-tool/styles/pm-stephanlivera-df17a2"
 ],
+"twins": [],
+"distinct_methods": 7,
 "links": [
 {
 "id": "SP-0401",
@@ -46068,6 +47440,8 @@
 }
 ],
 "proof": [],
+"twins": [],
+"distinct_methods": 5,
 "links": [
 {
 "id": "SP-0422",
@@ -46155,6 +47529,8 @@
 "kosif-atlas/skills/100-ui-motion/209-kinetic-inflated-hero",
 "kosif-tool/styles/pm-raphaelaubryy-4b137e"
 ],
+"twins": [],
+"distinct_methods": 5,
 "links": [
 {
 "id": "SP-0316",
@@ -46228,6 +47604,8 @@
 "kosif-studio/motion/kit/shape-kit.js:44",
 "kosif-studio/motion/references/shape-kit.md"
 ],
+"twins": [],
+"distinct_methods": 3,
 "links": [
 {
 "id": "SP-0131",
@@ -46496,6 +47874,8 @@
 "fastify-motion-bro/scripts/profiles/stickman.mjs:9-17",
 "fastify-motion-bro/tests/production-profiles.test.mjs"
 ],
+"twins": [],
+"distinct_methods": 34,
 "links": [
 {
 "id": "SP-0243",
@@ -46627,6 +48007,8 @@
 "kosif-tool/web/generator.js",
 "kosif-tool/tests/test_generator.mjs"
 ],
+"twins": [],
+"distinct_methods": 11,
 "links": [
 {
 "id": "SP-0138",
@@ -46749,6 +48131,8 @@
 "kosif-tool/tests/test_templates.py",
 "fastify-motion-bro/scripts/planner.mjs:25-35"
 ],
+"twins": [],
+"distinct_methods": 11,
 "links": [
 {
 "id": "SP-0158",
@@ -46856,6 +48240,8 @@
 }
 ],
 "proof": [],
+"twins": [],
+"distinct_methods": 8,
 "links": [
 {
 "id": "SP-0149",
@@ -46965,6 +48351,8 @@
 "kosif-atlas/skills/192-marketing-skills/611-social-content/SKILL.md",
 "fastify-motion-bro/scripts/profiles/food-flow.mjs:62-80"
 ],
+"twins": [],
+"distinct_methods": 8,
 "links": [
 {
 "id": "SP-0010",
@@ -47069,6 +48457,8 @@
 "100-superskills/skills/kosif-montage-motion/scripts/direct.py",
 "kosif-studio/motion/direct.py:116"
 ],
+"twins": [],
+"distinct_methods": 8,
 "links": [
 {
 "id": "SP-0208",
@@ -47169,6 +48559,8 @@
 "kosif-one/tools/kosif-omni/skills/kosif-video/scripts/story_lint.py:32",
 "kosif-one/tools/kosif-omni/skills/kosif-video/references/story-conflict.md"
 ],
+"twins": [],
+"distinct_methods": 7,
 "links": [
 {
 "id": "SP-0332",
@@ -47272,6 +48664,8 @@
 "fastify-motion-bro/tests/viral-editorial.test.mjs",
 "fastify-motion-bro/skills/viral-editorial/SKILL.md:7-13"
 ],
+"twins": [],
+"distinct_methods": 7,
 "links": [
 {
 "id": "SP-0412",
@@ -47483,6 +48877,8 @@
 "kosif-one/projects/thursday-dua-animation/source/index.html",
 "kosif-one/projects/whatsapp-motion/projects/success/index.html"
 ],
+"twins": [],
+"distinct_methods": 24,
 "links": [
 {
 "id": "SP-0201",
@@ -47635,6 +49031,8 @@
 "kosif-one/vendor/hyperframes/registry/components/torn-paper-rip/torn-paper-rip.html",
 "kosif-one/vendor/hyperframes/registry/components/paper-collage-reveal/paper-collage-reveal.html"
 ],
+"twins": [],
+"distinct_methods": 15,
 "links": [
 {
 "id": "SP-0204",
@@ -47790,6 +49188,8 @@
 "100-superskills/skills/kosif-montage-motion/scripts/web/static/examples/cinematic-cat.html:109",
 "kosif-studio/render.py:618"
 ],
+"twins": [],
+"distinct_methods": 15,
 "links": [
 {
 "id": "SP-0206",
@@ -47942,6 +49342,8 @@
 "100-superskills/skills/kosif-montage-motion/scripts/projects/night_boat/src/main.js:115",
 "100-superskills/skills/kosif-montage-motion/scripts/projects/night_boat/src/main.js:156"
 ],
+"twins": [],
+"distinct_methods": 15,
 "links": [
 {
 "id": "SP-0169",
@@ -48059,6 +49461,8 @@
 "kosif-tool/.claude/skills/kosif-superpowers/proofs/glass-luxury-logo/README.md",
 "kosif-tool/.claude/skills/kosif-superpowers/proofs/glass-luxury-logo/index.html"
 ],
+"twins": [],
+"distinct_methods": 10,
 "links": [
 {
 "id": "SP-0276",
@@ -48178,6 +49582,8 @@
 "kosif-earth-ci-fork/docs/design/KOSIF-LUXE.md",
 "kosif-tool/.claude/skills/kosif-superpowers/proofs/glass-luxury-logo/README.md"
 ],
+"twins": [],
+"distinct_methods": 9,
 "links": [
 {
 "id": "SP-0329",
@@ -48281,6 +49687,8 @@
 "kosif-studio/scenes/whale_dragon.py:164",
 "kosif-one/projects/duck-vs-dragon/duck_dragon.py"
 ],
+"twins": [],
+"distinct_methods": 7,
 "links": [
 {
 "id": "SP-0106",
@@ -48332,6 +49740,8 @@
 }
 ],
 "proof": [],
+"twins": [],
+"distinct_methods": 1,
 "links": [
 {
 "id": "SP-0269",
@@ -48965,6 +50375,102 @@
 "kosif-tool/.claude/skills/kosif-superpowers/proofs/mimic-synthetic/README.md",
 "fastify-motion-bro/scripts/profiles/stickman.mjs:36"
 ],
+"twins": [
+[
+"TRANS-01",
+"TRANS-02",
+"TRANS-03",
+"TRANS-88",
+"TRANS-90",
+"TRANS-89",
+"TRANS-91"
+],
+[
+"TRANS-12",
+"TRANS-X13"
+],
+[
+"TRANS-38",
+"TRANS-112",
+"TRANS-211"
+],
+[
+"TRANS-182",
+"TRANS-181",
+"TRANS-202",
+"TRANS-197"
+],
+[
+"TRANS-115",
+"TRANS-214"
+],
+[
+"TRANS-107",
+"TRANS-207"
+],
+[
+"TRANS-116",
+"TRANS-215"
+],
+[
+"TRANS-105",
+"TRANS-205"
+],
+[
+"TRANS-118",
+"TRANS-217"
+],
+[
+"TRANS-114",
+"TRANS-213"
+],
+[
+"TRANS-109",
+"TRANS-209"
+],
+[
+"TRANS-106",
+"TRANS-206"
+],
+[
+"TRANS-111",
+"TRANS-210"
+],
+[
+"TRANS-108",
+"TRANS-208"
+],
+[
+"TRANS-173",
+"TRANS-174",
+"TRANS-175"
+],
+[
+"TRANS-117",
+"TRANS-216"
+],
+[
+"TRANS-212",
+"TRANS-113"
+],
+[
+"TRANS-190",
+"TRANS-144"
+],
+[
+"TRANS-192",
+"TRANS-204"
+],
+[
+"TRANS-177",
+"TRANS-178"
+],
+[
+"TRANS-189",
+"TRANS-188"
+]
+],
+"distinct_methods": 65,
 "links": [
 {
 "id": "SP-0404",
@@ -49367,6 +50873,60 @@
 "kosif-atlas/skills/1526-gamegen/4173-game-trailer/assets/marketing/render.py",
 "kosif-atlas/skills/1096-akbun-editvideo/2454-davinciresolve-cut-travelflow/SKILL.md"
 ],
+"twins": [
+[
+"TRANS-10",
+"TRANS-71",
+"TRANS-72",
+"TRANS-58",
+"TRANS-69",
+"TRANS-73",
+"TRANS-70",
+"TRANS-59",
+"TRANS-248"
+],
+[
+"TRANS-19",
+"TRANS-15"
+],
+[
+"TRANS-14",
+"TRANS-16",
+"TRANS-68"
+],
+[
+"TRANS-77",
+"TRANS-64",
+"TRANS-76",
+"TRANS-63",
+"TRANS-62",
+"TRANS-75",
+"TRANS-74"
+],
+[
+"TRANS-153",
+"TRANS-413"
+],
+[
+"TRANS-162",
+"TRANS-409"
+],
+[
+"TRANS-156",
+"TRANS-415"
+],
+[
+"TRANS-159",
+"TRANS-416"
+],
+[
+"TRANS-410",
+"TRANS-411",
+"TRANS-417",
+"TRANS-414"
+]
+],
+"distinct_methods": 32,
 "links": [
 {
 "id": "SP-0417",
@@ -49649,6 +51209,13 @@
 "proof": [
 "fastify-motion-bro/scripts/profiles/kinetic-flow.mjs:4-20,115,118"
 ],
+"twins": [
+[
+"TRANS-432",
+"TRANS-451"
+]
+],
+"distinct_methods": 36,
 "links": [
 {
 "id": "SP-0398",
@@ -49844,6 +51411,8 @@
 "kosif-atlas/skills/1096-akbun-editvideo/2453-davinciresolve-cut-devtalk/SKILL.md",
 "kosif-atlas/skills/1096-akbun-editvideo/2460-davinciresolve-story-devtalk/SKILL.md"
 ],
+"twins": [],
+"distinct_methods": 22,
 "links": [
 {
 "id": "SP-0393",
@@ -50005,6 +51574,8 @@
 }
 ],
 "proof": [],
+"twins": [],
+"distinct_methods": 17,
 "links": [
 {
 "id": "SP-0398",
@@ -50163,6 +51734,8 @@
 }
 ],
 "proof": [],
+"twins": [],
+"distinct_methods": 17,
 "links": [
 {
 "id": "SP-0328",
@@ -50323,6 +51896,13 @@
 "kosif-studio/motion/montage.py:105",
 "kosif-studio/motion/montage.py:115"
 ],
+"twins": [
+[
+"TRANS-57",
+"TRANS-256"
+]
+],
+"distinct_methods": 15,
 "links": [
 {
 "id": "SP-0390",
@@ -50478,6 +52058,13 @@
 }
 ],
 "proof": [],
+"twins": [
+[
+"TRANS-184",
+"TRANS-183"
+]
+],
+"distinct_methods": 15,
 "links": [
 {
 "id": "SP-0387",
@@ -50630,6 +52217,8 @@
 }
 ],
 "proof": [],
+"twins": [],
+"distinct_methods": 15,
 "links": [
 {
 "id": "SP-0363",
@@ -50768,6 +52357,17 @@
 }
 ],
 "proof": [],
+"twins": [
+[
+"TRANS-221",
+"TRANS-223",
+"TRANS-224",
+"TRANS-227",
+"TRANS-225",
+"TRANS-226"
+]
+],
+"distinct_methods": 9,
 "links": [
 {
 "id": "SP-0158",
@@ -50903,6 +52503,13 @@
 }
 ],
 "proof": [],
+"twins": [
+[
+"TRANS-155",
+"TRANS-412"
+]
+],
+"distinct_methods": 12,
 "links": [
 {
 "id": "SP-0387",
@@ -51033,6 +52640,8 @@
 }
 ],
 "proof": [],
+"twins": [],
+"distinct_methods": 13,
 "links": [
 {
 "id": "SP-0391",
@@ -51164,6 +52773,13 @@
 }
 ],
 "proof": [],
+"twins": [
+[
+"TRANS-166",
+"TRANS-135"
+]
+],
+"distinct_methods": 11,
 "links": [
 {
 "id": "SP-0387",
@@ -51291,6 +52907,8 @@
 }
 ],
 "proof": [],
+"twins": [],
+"distinct_methods": 12,
 "links": [
 {
 "id": "SP-0398",
@@ -51412,6 +53030,17 @@
 }
 ],
 "proof": [],
+"twins": [
+[
+"TRANS-45",
+"TRANS-180"
+],
+[
+"TRANS-78",
+"TRANS-255"
+]
+],
+"distinct_methods": 9,
 "links": [
 {
 "id": "SP-0449",
@@ -51531,6 +53160,8 @@
 "kosif-studio/motion/montage.py:218",
 "kosif-studio/motion/montage.py:254"
 ],
+"twins": [],
+"distinct_methods": 10,
 "links": [
 {
 "id": "SP-0286",
@@ -51638,6 +53269,8 @@
 }
 ],
 "proof": [],
+"twins": [],
+"distinct_methods": 9,
 "links": [
 {
 "id": "SP-0278",
@@ -51749,6 +53382,8 @@
 }
 ],
 "proof": [],
+"twins": [],
+"distinct_methods": 9,
 "links": [
 {
 "id": "SP-0387",
@@ -51851,6 +53486,13 @@
 }
 ],
 "proof": [],
+"twins": [
+[
+"TRANS-132",
+"TRANS-131"
+]
+],
+"distinct_methods": 7,
 "links": [
 {
 "id": "SP-0154",
@@ -51946,6 +53588,8 @@
 }
 ],
 "proof": [],
+"twins": [],
+"distinct_methods": 7,
 "links": [
 {
 "id": "SP-0390",
@@ -52036,6 +53680,8 @@
 }
 ],
 "proof": [],
+"twins": [],
+"distinct_methods": 6,
 "links": [
 {
 "id": "SP-0141",
@@ -52127,6 +53773,13 @@
 }
 ],
 "proof": [],
+"twins": [
+[
+"TRANS-83",
+"TRANS-398"
+]
+],
+"distinct_methods": 5,
 "links": [
 {
 "id": "SP-0409",
@@ -52214,6 +53867,8 @@
 }
 ],
 "proof": [],
+"twins": [],
+"distinct_methods": 5,
 "links": [
 {
 "id": "SP-0408",
@@ -52291,6 +53946,8 @@
 }
 ],
 "proof": [],
+"twins": [],
+"distinct_methods": 5,
 "links": [
 {
 "id": "SP-0167",
@@ -52374,6 +54031,8 @@
 }
 ],
 "proof": [],
+"twins": [],
+"distinct_methods": 5,
 "links": [
 {
 "id": "SP-0152",
@@ -52455,6 +54114,8 @@
 }
 ],
 "proof": [],
+"twins": [],
+"distinct_methods": 5,
 "links": [
 {
 "id": "SP-0160",
@@ -52530,6 +54191,8 @@
 }
 ],
 "proof": [],
+"twins": [],
+"distinct_methods": 4,
 "links": [
 {
 "id": "SP-0278",
@@ -52604,6 +54267,8 @@
 "kosif-atlas/skills/1096-akbun-editvideo/2441-akbun-davinciresolve-searchhook/SKILL.md",
 "kosif-atlas/skills/1096-akbun-editvideo/2441-akbun-davinciresolve-searchhook/scripts/searchhook.py"
 ],
+"twins": [],
+"distinct_methods": 3,
 "links": [
 {
 "id": "SP-0287",
@@ -52678,6 +54343,8 @@
 "kosif-audit-pro/app/globals.css:595",
 "kosif-audit-pro/app/globals.css:637"
 ],
+"twins": [],
+"distinct_methods": 3,
 "links": [
 {
 "id": "SP-0063",
@@ -52747,6 +54414,8 @@
 }
 ],
 "proof": [],
+"twins": [],
+"distinct_methods": 3,
 "links": [
 {
 "id": "SP-0389",
@@ -52818,6 +54487,13 @@
 }
 ],
 "proof": [],
+"twins": [
+[
+"TRANS-161",
+"TRANS-408"
+]
+],
+"distinct_methods": 2,
 "links": [
 {
 "id": "SP-0153",
@@ -52885,6 +54561,8 @@
 }
 ],
 "proof": [],
+"twins": [],
+"distinct_methods": 3,
 "links": [
 {
 "id": "SP-0243",
@@ -52953,6 +54631,8 @@
 }
 ],
 "proof": [],
+"twins": [],
+"distinct_methods": 3,
 "links": [
 {
 "id": "SP-0389",
@@ -53023,6 +54703,13 @@
 }
 ],
 "proof": [],
+"twins": [
+[
+"TRANS-81",
+"TRANS-85"
+]
+],
+"distinct_methods": 2,
 "links": [
 {
 "id": "SP-0330",
@@ -53084,6 +54771,8 @@
 }
 ],
 "proof": [],
+"twins": [],
+"distinct_methods": 2,
 "links": [
 {
 "id": "SP-0324",
@@ -53139,6 +54828,8 @@
 }
 ],
 "proof": [],
+"twins": [],
+"distinct_methods": 1,
 "links": [
 {
 "id": "SP-0214",
@@ -53194,6 +54885,8 @@
 }
 ],
 "proof": [],
+"twins": [],
+"distinct_methods": 1,
 "links": [
 {
 "id": "SP-0157",
@@ -53245,6 +54938,8 @@
 }
 ],
 "proof": [],
+"twins": [],
+"distinct_methods": 1,
 "links": [
 {
 "id": "SP-0336",
@@ -53296,6 +54991,8 @@
 }
 ],
 "proof": [],
+"twins": [],
+"distinct_methods": 1,
 "links": [
 {
 "id": "SP-0194",
@@ -53347,6 +55044,8 @@
 }
 ],
 "proof": [],
+"twins": [],
+"distinct_methods": 1,
 "links": [
 {
 "id": "SP-0334",
@@ -53696,6 +55395,8 @@
 "kosif-studio/motion/qa.py:62",
 "kosif-studio/tests/test_studio.py:549"
 ],
+"twins": [],
+"distinct_methods": 47,
 "links": [
 {
 "id": "SP-0141",
@@ -53817,6 +55518,8 @@
 "kosif-tool/fonts/kosif-jumuah/README.md",
 "kosif-tool/fonts/kosif-jumuah/build_font.py"
 ],
+"twins": [],
+"distinct_methods": 10,
 "links": [
 {
 "id": "SP-0435",
@@ -53921,6 +55624,8 @@
 "kosif-audit-pro/lib/kosif/format.mjs",
 "kosif-audit-pro/tests/kosif-engine.test.mjs:94"
 ],
+"twins": [],
+"distinct_methods": 8,
 "links": [
 {
 "id": "SP-0192",
@@ -54033,6 +55738,8 @@
 "kosif-studio/tests/test_studio.py:765",
 "kosif-atlas/skills/235-mas-video-lab/754-ffmpeg/SKILL.md"
 ],
+"twins": [],
+"distinct_methods": 8,
 "links": [
 {
 "id": "SP-0219",
@@ -54136,6 +55843,8 @@
 "100-superskills/skills/image-prompt-forge/scripts/image_prompt_forge.py:56",
 "kosif-atlas/skills/1094-akbun-draw/2423-akbun-draw-webtoon-b"
 ],
+"twins": [],
+"distinct_methods": 7,
 "links": [
 {
 "id": "SP-0437",
@@ -54241,6 +55950,8 @@
 "kosif-tool/.claude/skills/kosif-superpowers/scripts/mimic/mm_text.py",
 "kosif-tool/.claude/skills/kosif-superpowers/scripts/mimic/mm_render_text.py"
 ],
+"twins": [],
+"distinct_methods": 7,
 "links": [
 {
 "id": "SP-0435",
@@ -54336,6 +56047,8 @@
 "kosif-tool/tools/kosif.py:83",
 "kosif-tool/playbooks/arabic-typography.md"
 ],
+"twins": [],
+"distinct_methods": 6,
 "links": [
 {
 "id": "SP-0145",
@@ -54411,6 +56124,8 @@
 "kosif-tool/fonts/kosif-jumuah/demo/title-aljumuah.svg",
 "kosif-tool/fonts/kosif-jumuah/demo/jumuah.html"
 ],
+"twins": [],
+"distinct_methods": 3,
 "links": [
 {
 "id": "SP-0432",
@@ -54637,6 +56352,8 @@
 "style:pm-kamstudiolabs-0b0824",
 "style:pm-axtonliu-0b861d"
 ],
+"twins": [],
+"distinct_methods": 27,
 "links": [
 {
 "id": "SP-0428",
@@ -54789,6 +56506,8 @@
 }
 ],
 "proof": [],
+"twins": [],
+"distinct_methods": 16,
 "links": [
 {
 "id": "SP-0427",
@@ -54919,6 +56638,8 @@
 }
 ],
 "proof": [],
+"twins": [],
+"distinct_methods": 12,
 "links": [
 {
 "id": "SP-0431",
@@ -55031,6 +56752,8 @@
 }
 ],
 "proof": [],
+"twins": [],
+"distinct_methods": 10,
 "links": [
 {
 "id": "SP-0271",
@@ -55140,6 +56863,8 @@
 }
 ],
 "proof": [],
+"twins": [],
+"distinct_methods": 9,
 "links": [
 {
 "id": "SP-0450",
@@ -55256,6 +56981,8 @@
 "fastify-motion-bro/tests/production-profiles.test.mjs",
 "fastify-motion-bro/skills/kinetic-flow/SKILL.md:13"
 ],
+"twins": [],
+"distinct_methods": 9,
 "links": [
 {
 "id": "SP-0286",
@@ -55348,6 +57075,8 @@
 }
 ],
 "proof": [],
+"twins": [],
+"distinct_methods": 7,
 "links": [
 {
 "id": "SP-0169",
@@ -55412,6 +57141,8 @@
 }
 ],
 "proof": [],
+"twins": [],
+"distinct_methods": 2,
 "links": [
 {
 "id": "SP-0319",
@@ -55647,6 +57378,8 @@
 "kosif-studio/motion/projects/kit_v3_demo/index.html:39",
 "kosif-studio/tests/test_studio.py:637"
 ],
+"twins": [],
+"distinct_methods": 28,
 "links": [
 {
 "id": "SP-0149",
@@ -55784,6 +57517,8 @@
 "kosif-tool/tools/render_html.cjs",
 "kosif-tool/starters/html-canvas/index.html"
 ],
+"twins": [],
+"distinct_methods": 12,
 "links": [
 {
 "id": "SP-0171",
@@ -55920,6 +57655,8 @@
 "100-superskills/skills/kosif-montage-motion/scripts/projects/bunny_twin/index.html:30",
 "style:pm-kmasiff-cc72cb"
 ],
+"twins": [],
+"distinct_methods": 12,
 "links": [
 {
 "id": "SP-0217",
@@ -56037,6 +57774,8 @@
 }
 ],
 "proof": [],
+"twins": [],
+"distinct_methods": 10,
 "links": [
 {
 "id": "SP-0230",
@@ -56153,6 +57892,8 @@
 "100-superskills/skills/trend-animation-styles/references/styles.md",
 "kosif-tool/styles/glass-ui/SKILL.md"
 ],
+"twins": [],
+"distinct_methods": 9,
 "links": [
 {
 "id": "SP-0169",
@@ -56265,6 +58006,8 @@
 "100-superskills/skills/kosif-montage-motion/scripts/projects/midnight_cat/build.cjs:6",
 "100-superskills/skills/kosif-montage-motion/scripts/projects/midnight_cat/player-test.cjs:1"
 ],
+"twins": [],
+"distinct_methods": 8,
 "links": [
 {
 "id": "SP-0164",
@@ -56369,6 +58112,8 @@
 }
 ],
 "proof": [],
+"twins": [],
+"distinct_methods": 8,
 "links": [
 {
 "id": "SP-0401",
@@ -56459,6 +58204,8 @@
 }
 ],
 "proof": [],
+"twins": [],
+"distinct_methods": 6,
 "links": [
 {
 "id": "SP-0439",
@@ -56581,6 +58328,8 @@
 "owner-upload:8cc9be77-c32.sh (Cinema C V32)",
 "owner-upload:8cc9be77-c32.sh"
 ],
+"twins": [],
+"distinct_methods": 10,
 "links": [
 {
 "id": "SP-0325",
@@ -56807,6 +58556,8 @@
 "kosif-studio/motion/reel.py:38",
 "kosif-one/tools/kosif-studio/motion/reel.py:38"
 ],
+"twins": [],
+"distinct_methods": 27,
 "links": [
 {
 "id": "SP-0117",
@@ -56928,6 +58679,8 @@
 "kosif-atlas/skills/1847-elevenlabs-pack/5514-elevenlabs-core-workflow-a",
 "kosif-tool/tools/verify_video.py"
 ],
+"twins": [],
+"distinct_methods": 10,
 "links": [
 {
 "id": "SP-0118",
@@ -57036,6 +58789,8 @@
 }
 ],
 "proof": [],
+"twins": [],
+"distinct_methods": 9,
 "links": [
 {
 "id": "SP-0455",
@@ -57122,6 +58877,8 @@
 }
 ],
 "proof": [],
+"twins": [],
+"distinct_methods": 5,
 "links": [
 {
 "id": "SP-0454",
@@ -57196,6 +58953,8 @@
 }
 ],
 "proof": [],
+"twins": [],
+"distinct_methods": 4,
 "links": [
 {
 "id": "SP-0364",

@@ -9,7 +9,7 @@
 مسارات الدليل نسبية إلى `/home/user/`؛ و`session-<date>:<file>#<section>` تشير إلى تشغيل موثق في جلسة سابقة؛ و`owner-upload:` إلى ملف داخل أرشيف أرسله المالك. Proof paths are relative to `/home/user/`.
 
 **المجال / domain:** الصور والصوت — Image & audio · **البادئة / prefix:** `AMEDIA` · **البيانات / data:** `data/powers/atlas-media.json` · **بحث / search:** `python3 scripts/powers.py family atlas-media`
-**مراجع ذات صلة / related references:** [capability-atlas.md](../capability-atlas.md)
+**مراجع ذات صلة / related references:** [capability-atlas.md](../capability-atlas.md) · [hubs.md](../hubs.md)
 
 ## الفهرس / contents
 

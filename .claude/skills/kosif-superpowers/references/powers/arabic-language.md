@@ -9,7 +9,7 @@
 مسارات الدليل نسبية إلى `/home/user/`؛ و`session-<date>:<file>#<section>` تشير إلى تشغيل موثق في جلسة سابقة؛ و`owner-upload:` إلى ملف داخل أرشيف أرسله المالك. Proof paths are relative to `/home/user/`.
 
 **المجال / domain:** الكتابة واللغة — Writing & language · **البادئة / prefix:** `ARL` · **البيانات / data:** `data/powers/arabic-language.json` · **بحث / search:** `python3 scripts/powers.py family arabic-language`
-**مراجع ذات صلة / related references:** [capability-atlas.md](../capability-atlas.md) · [creativity.md](../creativity.md) · [humanizer.md](../humanizer.md) · [requirements.md](../requirements.md)
+**مراجع ذات صلة / related references:** [capability-atlas.md](../capability-atlas.md) · [creativity.md](../creativity.md) · [hubs.md](../hubs.md) · [humanizer.md](../humanizer.md) · [requirements.md](../requirements.md)
 
 ## الفهرس / contents
 

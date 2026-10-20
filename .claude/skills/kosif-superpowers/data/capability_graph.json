@@ -1756,14 +1756,14 @@
    "label": "scripts/character_fullbody.py"
   },
   {
-   "id": "script:scripts/creative_paint.py",
-   "kind": "script",
-   "label": "scripts/creative_paint.py"
-  },
-  {
    "id": "script:scripts/character_ik.py",
    "kind": "script",
    "label": "scripts/character_ik.py"
+  },
+  {
+   "id": "script:scripts/creative_paint.py",
+   "kind": "script",
+   "label": "scripts/creative_paint.py"
   },
   {
    "id": "script:scripts/verify_video.py",
@@ -1821,20 +1821,30 @@
    "label": "scripts/superpowers_unified.py"
   },
   {
+   "id": "script:scripts/kosif_hubs.py",
+   "kind": "script",
+   "label": "scripts/kosif_hubs.py"
+  },
+  {
+   "id": "script:scripts/superpower_fusion.py",
+   "kind": "script",
+   "label": "scripts/superpower_fusion.py"
+  },
+  {
    "id": "script:scripts/creative_reasoning_bridge.py",
    "kind": "script",
    "label": "scripts/creative_reasoning_bridge.py"
+  },
+  {
+   "id": "script:scripts/audio_cue_mapper.py",
+   "kind": "script",
+   "label": "scripts/audio_cue_mapper.py"
   },
   {
    "id": "script:scripts/motion_director.py",
    "kind": "script",
    "label": "scripts/motion_director.py",
    "executor_score": 1.19
-  },
-  {
-   "id": "script:scripts/audio_cue_mapper.py",
-   "kind": "script",
-   "label": "scripts/audio_cue_mapper.py"
   },
   {
    "id": "script:scripts/atlas_transfer.py",
@@ -1855,11 +1865,6 @@
    "id": "script:scripts/blender_bridge.py",
    "kind": "script",
    "label": "scripts/blender_bridge.py"
-  },
-  {
-   "id": "script:scripts/superpower_fusion.py",
-   "kind": "script",
-   "label": "scripts/superpower_fusion.py"
   },
   {
    "id": "script:scripts/motion_kit_bridge.py",
@@ -2067,6 +2072,11 @@
    "id": "test:.claude/skills/kosif-superpowers/evals/test_creative_paint.py",
    "kind": "test",
    "label": ".claude/skills/kosif-superpowers/evals/test_creative_paint.py"
+  },
+  {
+   "id": "test:.claude/skills/kosif-superpowers/evals/test_kosif_hubs.py",
+   "kind": "test",
+   "label": ".claude/skills/kosif-superpowers/evals/test_kosif_hubs.py"
   },
   {
    "id": "test:.claude/skills/kosif-superpowers/evals/test_capability_runtime_router.py",
@@ -5782,25 +5792,25 @@
   },
   {
    "from": "script:scripts/boot.py",
-   "to": "script:scripts/requirements.py",
-   "rel": "imports",
-   "w": 1
-  },
-  {
-   "from": "script:scripts/boot.py",
    "to": "script:scripts/powers.py",
    "rel": "imports",
    "w": 1
   },
   {
-   "from": "script:scripts/character_fullbody.py",
-   "to": "script:scripts/creative_paint.py",
+   "from": "script:scripts/boot.py",
+   "to": "script:scripts/requirements.py",
    "rel": "imports",
    "w": 1
   },
   {
    "from": "script:scripts/character_fullbody.py",
    "to": "script:scripts/character_ik.py",
+   "rel": "imports",
+   "w": 1
+  },
+  {
+   "from": "script:scripts/character_fullbody.py",
+   "to": "script:scripts/creative_paint.py",
    "rel": "imports",
    "w": 1
   },
@@ -5853,8 +5863,20 @@
    "w": 1
   },
   {
-   "from": "script:scripts/creative_reasoning_bridge.py",
-   "to": "script:scripts/motion_director.py",
+   "from": "script:scripts/kosif_hubs.py",
+   "to": "script:scripts/powers.py",
+   "rel": "imports",
+   "w": 1
+  },
+  {
+   "from": "script:scripts/kosif_hubs.py",
+   "to": "script:scripts/superpower_fusion.py",
+   "rel": "imports",
+   "w": 1
+  },
+  {
+   "from": "script:scripts/kosif_hubs.py",
+   "to": "script:scripts/requirements.py",
    "rel": "imports",
    "w": 1
   },
@@ -5865,14 +5887,20 @@
    "w": 1
   },
   {
-   "from": "script:scripts/atlas_transfer.py",
-   "to": "script:scripts/atlas_capability_miner.py",
+   "from": "script:scripts/creative_reasoning_bridge.py",
+   "to": "script:scripts/motion_director.py",
    "rel": "imports",
    "w": 1
   },
   {
    "from": "script:scripts/atlas_transfer.py",
    "to": "script:scripts/powers.py",
+   "rel": "imports",
+   "w": 1
+  },
+  {
+   "from": "script:scripts/atlas_transfer.py",
+   "to": "script:scripts/atlas_capability_miner.py",
    "rel": "imports",
    "w": 1
   },
@@ -5884,13 +5912,13 @@
   },
   {
    "from": "script:scripts/check_skill.py",
-   "to": "script:scripts/build_chapters.py",
+   "to": "script:scripts/powers.py",
    "rel": "imports",
    "w": 1
   },
   {
    "from": "script:scripts/check_skill.py",
-   "to": "script:scripts/powers.py",
+   "to": "script:scripts/build_chapters.py",
    "rel": "imports",
    "w": 1
   },
@@ -5956,12 +5984,6 @@
   },
   {
    "from": "script:scripts/mimic/mm_textfx.py",
-   "to": "script:scripts/mimic/mm_render_text.py",
-   "rel": "imports",
-   "w": 1
-  },
-  {
-   "from": "script:scripts/mimic/mm_textfx.py",
    "to": "script:scripts/mimic/mm_common.py",
    "rel": "imports",
    "w": 1
@@ -5969,6 +5991,12 @@
   {
    "from": "script:scripts/mimic/mm_textfx.py",
    "to": "script:scripts/mimic/mm_img.py",
+   "rel": "imports",
+   "w": 1
+  },
+  {
+   "from": "script:scripts/mimic/mm_textfx.py",
+   "to": "script:scripts/mimic/mm_render_text.py",
    "rel": "imports",
    "w": 1
   },
@@ -5980,7 +6008,7 @@
   },
   {
    "from": "script:scripts/mimic/mm_render_text.py",
-   "to": "script:scripts/mimic/mm_color.py",
+   "to": "script:scripts/mimic/mm_common.py",
    "rel": "imports",
    "w": 1
   },
@@ -5992,19 +6020,7 @@
   },
   {
    "from": "script:scripts/mimic/mm_render_text.py",
-   "to": "script:scripts/mimic/mm_common.py",
-   "rel": "imports",
-   "w": 1
-  },
-  {
-   "from": "script:scripts/mimic/mm_build.py",
    "to": "script:scripts/mimic/mm_color.py",
-   "rel": "imports",
-   "w": 1
-  },
-  {
-   "from": "script:scripts/mimic/mm_build.py",
-   "to": "script:scripts/mimic/mm_transitions.py",
    "rel": "imports",
    "w": 1
   },
@@ -6016,7 +6032,25 @@
   },
   {
    "from": "script:scripts/mimic/mm_build.py",
+   "to": "script:scripts/mimic/mm_common.py",
+   "rel": "imports",
+   "w": 1
+  },
+  {
+   "from": "script:scripts/mimic/mm_build.py",
+   "to": "script:scripts/mimic/mm_transitions.py",
+   "rel": "imports",
+   "w": 1
+  },
+  {
+   "from": "script:scripts/mimic/mm_build.py",
    "to": "script:scripts/mimic/mm_img.py",
+   "rel": "imports",
+   "w": 1
+  },
+  {
+   "from": "script:scripts/mimic/mm_build.py",
+   "to": "script:scripts/mimic/mm_color.py",
    "rel": "imports",
    "w": 1
   },
@@ -6027,7 +6061,7 @@
    "w": 1
   },
   {
-   "from": "script:scripts/mimic/mm_build.py",
+   "from": "script:scripts/mimic/mm_fonts.py",
    "to": "script:scripts/mimic/mm_common.py",
    "rel": "imports",
    "w": 1
@@ -6040,25 +6074,19 @@
   },
   {
    "from": "script:scripts/mimic/mm_fonts.py",
-   "to": "script:scripts/mimic/mm_sheets.py",
-   "rel": "imports",
-   "w": 1
-  },
-  {
-   "from": "script:scripts/mimic/mm_fonts.py",
    "to": "script:scripts/mimic/mm_fonts_lib.py",
    "rel": "imports",
    "w": 1
   },
   {
    "from": "script:scripts/mimic/mm_fonts.py",
-   "to": "script:scripts/mimic/mm_img.py",
+   "to": "script:scripts/mimic/mm_sheets.py",
    "rel": "imports",
    "w": 1
   },
   {
    "from": "script:scripts/mimic/mm_fonts.py",
-   "to": "script:scripts/mimic/mm_common.py",
+   "to": "script:scripts/mimic/mm_img.py",
    "rel": "imports",
    "w": 1
   },
@@ -6082,25 +6110,25 @@
   },
   {
    "from": "script:scripts/mimic/mm_text.py",
-   "to": "script:scripts/mimic/mm_color.py",
-   "rel": "imports",
-   "w": 1
-  },
-  {
-   "from": "script:scripts/mimic/mm_text.py",
    "to": "script:scripts/mimic/mm_video.py",
    "rel": "imports",
    "w": 1
   },
   {
    "from": "script:scripts/mimic/mm_text.py",
-   "to": "script:scripts/mimic/mm_img.py",
+   "to": "script:scripts/mimic/mm_common.py",
    "rel": "imports",
    "w": 1
   },
   {
    "from": "script:scripts/mimic/mm_text.py",
-   "to": "script:scripts/mimic/mm_common.py",
+   "to": "script:scripts/mimic/mm_color.py",
+   "rel": "imports",
+   "w": 1
+  },
+  {
+   "from": "script:scripts/mimic/mm_text.py",
+   "to": "script:scripts/mimic/mm_img.py",
    "rel": "imports",
    "w": 1
   },
@@ -6118,13 +6146,19 @@
   },
   {
    "from": "script:scripts/mimic/mm_analyze.py",
-   "to": "script:scripts/mimic/mm_sheets.py",
+   "to": "script:scripts/mimic/mm_common.py",
    "rel": "imports",
    "w": 1
   },
   {
    "from": "script:scripts/mimic/mm_analyze.py",
    "to": "script:scripts/mimic/mm_color.py",
+   "rel": "imports",
+   "w": 1
+  },
+  {
+   "from": "script:scripts/mimic/mm_analyze.py",
+   "to": "script:scripts/mimic/mm_sheets.py",
    "rel": "imports",
    "w": 1
   },
@@ -6147,7 +6181,7 @@
    "w": 1
   },
   {
-   "from": "script:scripts/mimic/mm_analyze.py",
+   "from": "script:scripts/mimic/synthetic/run_synthetic.py",
    "to": "script:scripts/mimic/mm_common.py",
    "rel": "imports",
    "w": 1
@@ -6161,12 +6195,6 @@
   {
    "from": "script:scripts/mimic/synthetic/run_synthetic.py",
    "to": "script:scripts/mimic/mm_analyze.py",
-   "rel": "imports",
-   "w": 1
-  },
-  {
-   "from": "script:scripts/mimic/synthetic/run_synthetic.py",
-   "to": "script:scripts/mimic/mm_common.py",
    "rel": "imports",
    "w": 1
   },
@@ -6425,6 +6453,12 @@
   {
    "from": "script:scripts/creative_paint.py",
    "to": "test:.claude/skills/kosif-superpowers/evals/test_creative_paint.py",
+   "rel": "tested_by",
+   "w": 1
+  },
+  {
+   "from": "script:scripts/kosif_hubs.py",
+   "to": "test:.claude/skills/kosif-superpowers/evals/test_kosif_hubs.py",
    "rel": "tested_by",
    "w": 1
   },

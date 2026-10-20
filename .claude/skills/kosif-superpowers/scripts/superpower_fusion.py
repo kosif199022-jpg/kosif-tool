@@ -41,6 +41,7 @@ STOP = set("the a an of and or to in on with for from by via as at is are be use
 RANK = {s: i for i, s in enumerate(P.STATUSES)}
 FOLD_MIN = 0.18
 LINKS = 4
+TWIN = 0.62
 
 
 def toks(s):
@@ -184,6 +185,15 @@ def build(per=12):
                 if ps[i].get("status") == "proven" and pr not in proofs and len(proofs) < 4:
                     proofs.append(pr)
         best = min(mix, key=lambda s: RANK.get(s, 9))
+        # twins: members that do the same job (near-identical vectors) — use the first (strongest badge), skip the rest
+        twins, used = [], set()
+        for x in mem:
+            if x in used:
+                continue
+            grp = [y for y in mem if y != x and y not in used and dot(VEC[x], VEC[y]) >= TWIN]
+            if grp:
+                used.update(grp + [x])
+                twins.append([ps[x]["id"]] + [ps[y]["id"] for y in grp])
         sps.append({
             "id": "SP-%04d" % n, "domain": g["domain"], "family": g["family"],
             "name_ar": ps[med].get("name_ar"), "name_en": ps[med].get("name_en"),
@@ -193,7 +203,7 @@ def build(per=12):
             "families": dict(fams.most_common()), "atlas_folded": sum(1 for i in mem if ps[i]["family"].startswith("atlas-")),
             "requires": [r for r, _ in req.most_common(8)],
             "pipeline": [{"id": ps[i]["id"], "status": ps[i].get("status"), "name_en": ps[i].get("name_en"), "name_ar": ps[i].get("name_ar")} for i in mem],
-            "proof": proofs, "_c": g["c"],
+            "proof": proofs, "twins": twins, "distinct_methods": len(mem) - sum(len(g) - 1 for g in twins), "_c": g["c"],
         })
     # links: top-N centroid neighbours (any family) + strongest cross-domain neighbour
     for a in sps:
@@ -207,7 +217,8 @@ def build(per=12):
         a.pop("_c")
     atoms = len(ps)
     comp = connected(sps)
-    data = {"schema": "kosif.superpowers.v1", "atoms": atoms, "superpowers": len(sps), "per_target": per,
+    data = {"schema": "kosif.superpowers.v1", "atoms": atoms, "distinct_methods": sum(s["distinct_methods"] for s in sps),
+            "twin_groups": sum(len(s["twins"]) for s in sps), "superpowers": len(sps), "per_target": per,
             "fusion_ratio": round(atoms / max(1, len(sps)), 2), "atlas_folded_into_native": folded,
             "graph_components": comp,
             "note": ("Each atomic power belongs to exactly one superpower; atomic IDs, proofs and badges stay the evidence. "
@@ -301,7 +312,7 @@ def main(argv=None):
         data = build(a.per)
         OUT.write_text(json.dumps(data, ensure_ascii=False, indent=0) + "\n", encoding="utf-8")
         DOC.write_text(write_doc(data), encoding="utf-8")
-        print(f"{data['atoms']} atomic powers → {data['superpowers']} superpowers (×{data['fusion_ratio']}), "
+        print(f"{data['atoms']} atomic powers ({data['distinct_methods']} distinct after {data['twin_groups']} twin groups) → {data['superpowers']} superpowers (×{data['fusion_ratio']}), "
               f"{data['atlas_folded_into_native']} Atlas powers folded into native ones, graph components {data['graph_components']}")
         return 0
     data = load()
@@ -327,6 +338,8 @@ def main(argv=None):
         print("status: " + " ".join(f"{P.BADGE[k]}{v}" for k, v in s["status_mix"].items()) + f" · ready now {s['ready_now']} · needs: {', '.join(s['requires']) or '—'}")
         for m in s["pipeline"]:
             print(f"  {P.BADGE.get(m['status'], '')} {m['id']:<10} {m['name_en']}")
+        for g in s.get("twins") or []:
+            print("  twins (same job, keep the first): " + " = ".join(g))
         print("links: " + " · ".join(f"{l['id']} ({l['sim']})" for l in s["links"]))
         return 0
     if a.cmd == "suggest":

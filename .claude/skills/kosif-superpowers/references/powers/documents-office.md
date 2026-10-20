@@ -9,7 +9,7 @@
 مسارات الدليل نسبية إلى `/home/user/`؛ و`session-<date>:<file>#<section>` تشير إلى تشغيل موثق في جلسة سابقة؛ و`owner-upload:` إلى ملف داخل أرشيف أرسله المالك. Proof paths are relative to `/home/user/`.
 
 **المجال / domain:** المستندات — Documents · **البادئة / prefix:** `DOC` · **البيانات / data:** `data/powers/documents-office.json` · **بحث / search:** `python3 scripts/powers.py family documents-office`
-**مراجع ذات صلة / related references:** [capability-atlas.md](../capability-atlas.md) · [capability-map.md](../capability-map.md) · [creativity.md](../creativity.md) · [requirements.md](../requirements.md)
+**مراجع ذات صلة / related references:** [capability-atlas.md](../capability-atlas.md) · [capability-map.md](../capability-map.md) · [creativity.md](../creativity.md) · [hubs.md](../hubs.md) · [requirements.md](../requirements.md)
 
 ## الفهرس / contents
 
