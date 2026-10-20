@@ -180,7 +180,7 @@ function drawFrame(t) {                                          // pure: depend
 window.__kosif = { duration: DURATION, fps: 30, seek: (t) => drawFrame(t) };
 ```
 
-Preview with `node tools/render_html.cjs --in film.html --out preview.mp4 --preview`, check the contact sheet at 0.6 s, 1.2 s and 1.8 s, then render with `--audio` when a voice track exists.
+Preview with `node tools/render_html.cjs --in film.html --out film.mp4 --preview`, check `film_preview.png` at 0.6 s, 1.2 s and 1.8 s, then render with `--audio` when a voice track exists.
 
 **بالعربية:** القالبان يشتركان في عقد واحد: دالة نقية للزمن. في Remotion الزمن هو `useCurrentFrame()` والقيم تُشتق بـ `interpolate` أو `spring`؛ في html-canvas تعرض الصفحة `window.__kosif = { duration, seek(t) }` ويستدعي المحرّك `seek` لكل إطار، فلا حالة مخفية بين الاستدعاءات. احتفظ بالبيانات في كائن JSON واحد، وبالقيمة المُسهَّلة في متغير واحد يغذي الشكل والنص معًا. المقطع الأول أعمدة متدرجة يشترك فيها العمود والرقم في قيمة واحدة مع دعم RTL، والثاني خط يُرسم على Canvas مع عدّاد يقرأ قيمة رأس القلم.
 

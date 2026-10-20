@@ -91,16 +91,17 @@ import { staticFile } from "remotion";
 
 ### Chromium الموجود على الجهاز
 
-لا يحتاج Remotion إلى تنزيل متصفح إذا وُجد Chromium محلياً. يبحث `remotion.config.ts` تلقائياً عن:
+لا يحتاج Remotion إلى تنزيل متصفح إذا وُجد Chromium محلياً. يبحث `remotion.config.ts` تلقائياً، بالترتيب، عن:
 
-1. المتغير `KOSIF_BROWSER=/path/to/chrome`
-2. أي Chromium من Playwright تحت `$PLAYWRIGHT_BROWSERS_PATH` أو `/opt/pw-browsers`
+1. المتغير `KOSIF_BROWSER=/path/to/headless_shell`
+2. نسخة `chromium_headless_shell-*` من Playwright تحت `$PLAYWRIGHT_BROWSERS_PATH` أو `/opt/pw-browsers` (الملف `chrome-linux/headless_shell`)
+3. نسخة Chromium الكاملة `chromium-*` هناك كخيار أخير فقط
 
-على هذا الجهاز المسار المتحقق منه هو `/opt/pw-browsers/chromium-1194/chrome-linux/chrome` (تحقق بـ `ls /opt/pw-browsers/`). يمكنك أيضاً تمريره صراحة:
+يشغّل Remotion المتصفح بأعلام headless الكلاسيكية، ونسخ Chromium الكاملة لم تعد تقبلها، لذلك استخدم headless shell. على هذا الجهاز مساره `/opt/pw-browsers/chromium_headless_shell-1194/chrome-linux/headless_shell` (تحقق من الرقم بـ `ls /opt/pw-browsers/`). يمكنك أيضاً تمريره صراحة:
 
 ```bash
 npx remotion render KosifFilm out/film.mp4 \
-  --browser-executable=/opt/pw-browsers/chromium-1194/chrome-linux/chrome
+  --browser-executable=/opt/pw-browsers/chromium_headless_shell-1194/chrome-linux/headless_shell
 ```
 
 ### الخطوط
@@ -218,14 +219,15 @@ Generate `public/words.json` from the audio with any transcriber that outputs wo
 
 Remotion does not need to download a browser when a Chromium already exists. `remotion.config.ts` looks, in order, for:
 
-1. `KOSIF_BROWSER=/path/to/chrome` (environment variable)
-2. any Playwright Chromium under `$PLAYWRIGHT_BROWSERS_PATH` or `/opt/pw-browsers`
+1. `KOSIF_BROWSER=/path/to/headless_shell` (environment variable)
+2. a Playwright `chromium_headless_shell-*` build under `$PLAYWRIGHT_BROWSERS_PATH` or `/opt/pw-browsers` (`chrome-linux/headless_shell`)
+3. a full Playwright `chromium-*` build there, only as a last resort
 
-On this machine the verified path is `/opt/pw-browsers/chromium-1194/chrome-linux/chrome` (check with `ls /opt/pw-browsers/`). You can also pass it explicitly, which overrides the config file:
+Remotion drives Chrome with the classic headless flags, which full Chromium builds no longer accept, so use the headless shell. On this machine it is `/opt/pw-browsers/chromium_headless_shell-1194/chrome-linux/headless_shell` (check the number with `ls /opt/pw-browsers/`). You can also pass it explicitly, which overrides the config file:
 
 ```bash
 npx remotion render KosifFilm out/film.mp4 \
-  --browser-executable=/opt/pw-browsers/chromium-1194/chrome-linux/chrome
+  --browser-executable=/opt/pw-browsers/chromium_headless_shell-1194/chrome-linux/headless_shell
 ```
 
 ### Fonts

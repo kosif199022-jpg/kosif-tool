@@ -74,6 +74,16 @@ def checked(cmd):
     done=subprocess.run(cmd,stdout=subprocess.PIPE,stderr=subprocess.STDOUT,text=True,errors='replace')
     if done.returncode:raise RuntimeError('Command failed '+str(done.returncode)+' '+done.stdout[-1200:])
     return done.stdout[-500:]
+def probe(ffprobe,video,width,height,frames):
+    """Read back size and frame count; Matroska has no nb_frames, so packets are counted as well."""
+    info=subprocess.run([ffprobe,'-v','error','-select_streams','v:0','-count_packets',
+           '-show_entries','stream=width,height,nb_frames,nb_read_packets,codec_name','-of','json',str(video)],
+           capture_output=True,text=True,check=True)
+    details=(json.loads(info.stdout).get('streams') or [{}])[0]
+    counts=[int(details[k]) for k in ('nb_frames','nb_read_packets') if str(details.get(k,'')).isdigit()]
+    if details.get('width')!=width or details.get('height')!=height or not counts or any(c!=frames for c in counts):
+        raise RuntimeError('Video QA failure: '+json.dumps(details))
+    return details
 def main():
     p=argparse.ArgumentParser()
     p.add_argument('action',choices=['doctor','plan','render'])
@@ -116,12 +126,7 @@ def main():
                  '-framerate',str(a.fps),'-start_number','1','-i',str(frames/'frame_%04d.png'),
                  '-c:v','libx264','-crf','18','-pix_fmt','yuv420p',
                  '-movflags','+faststart','-an',str(out)])
-    info=subprocess.run([engines['ffprobe'],'-v','error','-select_streams','v:0',
-           '-show_entries','stream=width,height,nb_frames,codec_name','-of','json',str(out)],
-           capture_output=True,text=True,check=True)
-    details=json.loads(info.stdout)['streams'][0]
-    if details['width']!=a.width or details['height']!=a.height or int(details.get('nb_frames',a.frames))!=a.frames:
-        raise RuntimeError('Video QA failure')
+    details=probe(engines['ffprobe'],out,a.width,a.height,a.frames)
     report.update(status='VERIFIED_VIDEO',video_sha256=digest(out),probe=details)
     rpt=out.with_name(out.stem+'.render-report.json')
     rpt.write_text(json.dumps(report,ensure_ascii=False,indent=2),encoding='utf-8')

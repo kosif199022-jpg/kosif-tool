@@ -1,14 +1,28 @@
 #!/usr/bin/env python3
 """Executed ONLY by locally installed Blender. Original bpy geometry from bounded JSON."""
+import argparse
 import json
 from pathlib import Path
 import sys
 
-args = sys.argv[sys.argv.index("--") + 1:]
-if len(args) != 2:
-    raise ValueError("expected JSON input and output path")
-source, output = [Path(value).resolve() for value in args]
-import bpy
+parser = argparse.ArgumentParser(
+    prog="blender_worker.py", formatter_class=argparse.RawDescriptionHelpFormatter,
+    description="Blender-side KOSIF scene builder: re-validates a kosif.blender.v1 scene JSON and writes\n"
+                "a .png still, a .blend or an animated .glb. It runs only inside Blender;\n"
+                "blender_bridge.py render is the usual way to launch it.",
+    epilog="example:\n  blender --background --factory-startup --disable-autoexec --python-exit-code 3 \\\n"
+           "    --python scripts/blender_worker.py -- templates/blender-demo.json ./out/scene.glb")
+parser.add_argument("scene", help="kosif.blender.v1 scene JSON")
+parser.add_argument("output", help="new output path ending in .png, .blend or .glb")
+# Inside Blender the worker's arguments follow "--"; plain python passes them directly.
+args = parser.parse_args(sys.argv[sys.argv.index("--") + 1:] if "--" in sys.argv else sys.argv[1:])
+try:
+    import bpy
+except ImportError:
+    parser.error("bpy is not available: run this inside Blender "
+                 "(blender --background --python blender_worker.py -- scene.json out.glb) "
+                 "or use blender_bridge.py render")
+source, output = Path(args.scene).resolve(), Path(args.output).resolve()
 
 scene = json.loads(source.read_text(encoding="utf-8-sig"))
 # Called from blender_bridge.py after schema validation; validate again to avoid bypass.

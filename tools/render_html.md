@@ -41,7 +41,7 @@ Renders an animated HTML page to MP4 frame by frame with headless Chromium (Play
 |---|---|
 | `--in <file.html|URL>` | page to render (local file or http URL) |
 | `--out <file>` | output `.mp4`; with `--preview` the contact sheet is written next to it as `<name>_preview.png` |
-| `--aspect` | any frame: `9:16`, `16:9`, `4:5`, `3:4`, `21:9`, `2.35:1`, `1920x816`, `reel`, `square`, `cinema` (sets width/height; ratios inside 9:16…16:9 get a 1080 px short side, wider/taller ones a 1920 px long side, always even) |
+| `--aspect` | any frame: `9:16`, `16:9`, `4:5`, `3:4`, `21:9`, `2.35:1`, `1920x816`, or any name `tools/aspects.py` accepts (`reel`, `story`, `square`, `cinema`, Arabic names such as `مربع`) (sets width/height; ratios inside 9:16…16:9 get a 1080 px short side, wider/taller ones a 1920 px long side, always even) |
 | `--width`, `--height` | viewport in CSS px (default 1080×1920; override `--aspect`) |
 | `--fps` | frames per second (default 30) |
 | `--duration`, `--start` | seconds; seek mode defaults to `window.__kosif.duration` |
@@ -51,6 +51,9 @@ Renders an animated HTML page to MP4 frame by frame with headless Chromium (Play
 | `--crf`, `--scale` | H.264 quality (default 18) and device scale factor |
 | `--frames-dir`, `--keep-frames` | keep the PNG frames |
 | `--seed`, `--offline`, `--timeout`, `--settle` | determinism helpers (seeded `Math.random`, block network, load timeout, settle delay) |
+| `--help`, `-h` | print the options and exit 0 |
+
+An unknown option (a typo such as `--fsp 24`), a stray argument or a value option without its value is a usage error: the message and the usage go to stderr and the exit code is 1, so nothing renders with a silent default.
 
 **Page contract for seek mode:** `window.__kosif = { duration, fps?, seek(t) }` where `seek(t)` draws the frame for time `t` synchronously or returns a promise; optional `window.__kosifReady` promise (e.g. `document.fonts.ready`). The starter in `starters/html-canvas/` implements it.
 

@@ -17,7 +17,7 @@
  *
  * Usage:
  *   node tools/render_html.cjs --in <file.html|http URL> --out <out.mp4>
- *        [--width 1080] [--height 1920] [--fps 30] [--duration <s>] [--start 0]
+ *        [--aspect <spec>] [--width 1080] [--height 1920] [--fps 30] [--duration <s>] [--start 0]
  *        [--audio <file>] [--mode seek|virtual] [--preview] [--frames-dir <dir>]
  *        [--crf 18] [--scale 1] [--seed <n>] [--offline] [--keep-frames]
  *        [--timeout <ms>] [--settle <ms>]
@@ -85,7 +85,8 @@ KOSIF render_html — deterministic HTML -> MP4
   node ${require('path').relative(process.cwd(), __filename) || 'render_html.cjs'} --in <file.html|http URL> --out <out.mp4> [options]
 
 Options
-  --aspect <spec>     any frame: 9:16, 16:9, 4:5, 21:9, 2.35:1, 1920x816, reel, square, cinema
+  --aspect <spec>     any frame: 9:16, 16:9, 4:5, 21:9, 2.35:1, 1920x816 or a name that tools/aspects.py
+                      accepts (reel, story, square, cinema, ... and Arabic names such as مربع or سينما)
                       (sets --width/--height; explicit --width/--height still win)
   --width <px>        viewport width in CSS px            (default ${DEFAULTS.width})
   --height <px>       viewport height in CSS px           (default ${DEFAULTS.height})
@@ -104,27 +105,45 @@ Options
   --offline           abort every http(s) request (system fonts only, fully reproducible)
   --timeout <ms>      page load timeout                   (default ${DEFAULTS.timeout})
   --settle <ms>       extra wall-clock wait after the page is ready (default ${DEFAULTS.settle})
-  --help              this text
+  --help, -h          this text
 
+Unknown options and stray arguments are usage errors.
 Exit codes: 0 ok, ${EXIT_USAGE} usage error, ${EXIT_RENDER} render/encode failure, ${EXIT_VERIFY} ffprobe disagrees with the request.
 `;
   (stream || process.stdout).write(text.trimStart());
 }
 
+// Every option the CLI understands. Anything else is reported as a usage error,
+// so a typo such as --fsp 24 never renders silently with the default.
+const VALUE_OPTIONS = new Set(['in', 'out', 'aspect', 'width', 'height', 'fps', 'duration', 'start',
+  'audio', 'mode', 'frames-dir', 'crf', 'scale', 'seed', 'timeout', 'settle']);
+const FLAG_OPTIONS = new Set(['preview', 'offline', 'keep-frames', 'help']);
+
 function parseArgs(argv) {
-  const out = { _: [] };
+  const out = { _: [], unknown: [] };
   for (let i = 0; i < argv.length; i++) {
     const a = argv[i];
+    if (a === '-h') { out.help = true; continue; }
     if (!a.startsWith('--')) { out._.push(a); continue; }
     let key = a.slice(2);
     let val;
     const eq = key.indexOf('=');
     if (eq >= 0) { val = key.slice(eq + 1); key = key.slice(0, eq); }
-    else if (i + 1 < argv.length && !argv[i + 1].startsWith('--')) { val = argv[++i]; }
+    else if (!FLAG_OPTIONS.has(key) && i + 1 < argv.length && !argv[i + 1].startsWith('--')) { val = argv[++i]; }
     else { val = true; }
+    if (!VALUE_OPTIONS.has(key) && !FLAG_OPTIONS.has(key)) { out.unknown.push('--' + key); continue; }
     out[key] = val;
   }
   return out;
+}
+
+// Rejects what parseArgs could not place (run after --help has been honoured).
+function checkArgs(args) {
+  if (args.unknown.length) throw new UsageError(`unknown option${args.unknown.length > 1 ? 's' : ''}: ${args.unknown.join(', ')}`);
+  if (args._.length) throw new UsageError(`unexpected argument${args._.length > 1 ? 's' : ''}: ${args._.join(' ')} (options take the form --name value)`);
+  for (const key of VALUE_OPTIONS) {
+    if (args[key] === true) throw new UsageError(`--${key} needs a value`);
+  }
 }
 
 function numberOpt(args, key, def, { integer = false, min = -Infinity } = {}) {
@@ -448,9 +467,19 @@ function composeContactSheet({ framesDir, picks, out }) {
 
 // -------------------------------------------------------------------- main
 
-// Any aspect -> even pixel size; mirrors tools/aspects.py and web/generator.js resolveAspect().
+// Any aspect -> even pixel size. Same presets, names (Arabic included) and pixel rule as
+// PRESETS/NAMES in tools/aspects.py; tests/test_render_html.mjs checks that they stay in step.
 const ASPECT_PRESETS = { '9:16': [1080, 1920], '16:9': [1920, 1080], '1:1': [1080, 1080], '4:5': [1080, 1350] };
-const ASPECT_NAMES = { reel: '9:16', story: '9:16', tiktok: '9:16', shorts: '9:16', vertical: '9:16', youtube: '16:9', landscape: '16:9', horizontal: '16:9', square: '1:1', feed: '4:5', portrait: '4:5', instagram: '4:5', classic: '4:3', cinema: '2.39:1', scope: '2.39:1', ultrawide: '21:9', wide: '21:9', flat: '1.85:1' };
+const ASPECT_NAMES = {
+  reel: '9:16', reels: '9:16', story: '9:16', stories: '9:16', tiktok: '9:16', shorts: '9:16',
+  vertical: '9:16', 'portrait-full': '9:16', 'ريلز': '9:16', 'ستوري': '9:16', 'طولي': '9:16', 'تيك توك': '9:16',
+  youtube: '16:9', landscape: '16:9', horizontal: '16:9', hd: '16:9', 'عرضي': '16:9', 'يوتيوب': '16:9',
+  square: '1:1', 'مربع': '1:1',
+  feed: '4:5', portrait: '4:5', instagram: '4:5', 'انستجرام': '4:5',
+  classic: '4:3', tv: '4:3', 'كلاسيكي': '4:3',
+  cinema: '2.39:1', scope: '2.39:1', anamorphic: '2.39:1', 'سينما': '2.39:1', 'سينمائي': '2.39:1',
+  ultrawide: '21:9', wide: '21:9', flat: '1.85:1',
+};
 function aspectSize(spec) {
   const even = (n) => { n = Math.round(n); return n % 2 ? n + 1 : n; };
   let s = spec.trim().toLowerCase();
@@ -468,11 +497,12 @@ function aspectSize(spec) {
 
 async function main() {
   const args = parseArgs(process.argv.slice(2));
-  if (args.help || args.h) { usage(); return 0; }
-  if (!args.in || args.in === true) throw new UsageError('--in <file.html|http URL> is required');
-  if (!args.out || args.out === true) throw new UsageError('--out <out.mp4> is required');
+  if (args.help) { usage(); return 0; }
+  checkArgs(args);
+  if (!args.in) throw new UsageError('--in <file.html|http URL> is required');
+  if (!args.out) throw new UsageError('--out <out.mp4> is required');
 
-  const fromAspect = args.aspect && args.aspect !== true ? aspectSize(String(args.aspect)) : null;
+  const fromAspect = args.aspect ? aspectSize(String(args.aspect)) : null;
   if (args.aspect && !fromAspect) throw new UsageError(`--aspect ${args.aspect} is not a readable ratio (W:H, WxH or a name)`);
   const width = numberOpt(args, 'width', fromAspect ? fromAspect.w : DEFAULTS.width, { integer: true, min: 2 });
   const height = numberOpt(args, 'height', fromAspect ? fromAspect.h : DEFAULTS.height, { integer: true, min: 2 });
@@ -619,13 +649,18 @@ async function main() {
   return exitCode;
 }
 
-main().then((code) => { process.exitCode = code; }).catch((err) => {
-  if (err instanceof UsageError) {
-    warn(err.message);
-    usage(process.stderr);
-    process.exitCode = EXIT_USAGE;
-  } else {
-    warn(err && err.stack ? err.stack : String(err));
-    process.exitCode = EXIT_RENDER;
-  }
-});
+if (require.main === module) {
+  main().then((code) => { process.exitCode = code; }).catch((err) => {
+    if (err instanceof UsageError) {
+      warn(err.message);
+      usage(process.stderr);
+      process.exitCode = EXIT_USAGE;
+    } else {
+      warn(err && err.stack ? err.stack : String(err));
+      process.exitCode = EXIT_RENDER;
+    }
+  });
+} else {
+  // Loaded with require() (tests): expose the pure helpers, render nothing.
+  module.exports = { parseArgs, checkArgs, aspectSize, ASPECT_PRESETS, ASPECT_NAMES, UsageError };
+}
