@@ -46,6 +46,27 @@ def word_key(s: str) -> str:
     return " ".join(sorted(set(w)))
 
 
+def theme_section(theme: str):
+    try:
+        import atlas_capability_miner as AM
+        meta = AM.THEMES.get(theme) or AM.FALLBACK
+        return meta[1], meta[2]
+    except Exception:  # noqa: BLE001
+        return "عام", "General"
+
+
+def from_extract(c: dict, fname: str) -> dict:
+    """Map an extraction-agent capability to the verifier shape (not yet adversarially verified)."""
+    ar, en = theme_section(c.get("theme") or "")
+    r = dict(c)
+    r.update({"verdict": "keep" if c.get("novelty") != "exists" else "covered", "status": "documented",
+              "section_ar": ar, "section_en": en, "license": c.get("license_notes") or "",
+              "sources_read": [e.get("path") for e in (c.get("examples") or [])][:3], "_stage": "extracted"})
+    if "copyleft" in str(c.get("license_notes") or "").lower() and "mit" not in str(c.get("license_notes") or "").lower():
+        r["verdict"] = "drop"
+    return r
+
+
 def load_results(dirs) -> list:
     rows = []
     for d in dirs:
@@ -55,7 +76,9 @@ def load_results(dirs) -> list:
             except (OSError, ValueError) as exc:
                 print("skip %s: %s" % (f, exc), file=sys.stderr)
                 continue
-            for r in data.get("results", []) if isinstance(data, dict) else []:
+            items = data.get("results") if isinstance(data, dict) and "results" in data else \
+                [from_extract(c, f.name) for c in (data.get("capabilities") or [])] if isinstance(data, dict) else []
+            for r in items:
                 r = dict(r)
                 r["_file"] = f.name
                 rows.append(r)
@@ -160,6 +183,7 @@ def build(rows: list, date: str, known_req: set) -> dict:
                     ("theme", r.get("theme") or ""),
                     ("risk_notes", clean_text(r.get("risk_notes"), 240)),
                     ("kosif_overlap_ids", [str(x) for x in (r.get("kosif_overlap_ids") or [])[:8]]),
+                    ("stage", r.get("_stage") or "verified"),
                     ("verified_by", r.get("_file")),
                 ])),
             ])

@@ -1,0 +1,2783 @@
+[
+ {
+  "id": "ADATA-01",
+  "family": "atlas-data",
+  "domain": "data",
+  "name_ar": "خطوط معالجة آمنة التكرار وملء رجعي مضبوط",
+  "name_en": "Idempotent pipeline steps, retries and safe backfills",
+  "status": "documented",
+  "what": "جعل خطوط المعالجة متعددة الخطوات آمنة لإعادة التشغيل بإثبات التكرار الآمن وإضافة إعادة محاولة محدودة لكل خطوة وتنفيذ ملء رجعي مضبوط، باستخدام محرك سير عمل دائم بدل سلاسل مهام يدوية. — Make multi-step pipelines safe to re-run by proving idempotency, adding bounded per-step retries, and executing controlled backfills, using a durable workflow engine instead of hand-rolled job chains.",
+  "when": "A 'do A then B then C, retry each' job; ETL or order fulfillment; a backfill that may corrupt state; building or debugging a Falcon Fusion or Convex workflow.",
+  "how": "1) Prove idempotency first: deterministic partition keys and overwrite-by-partition writes so a re-run cannot duplicate. 2) Add bounded retries with exponential backoff and jitter per step. 3) On Convex use the workflow component so each step runs in order and retries independently; do not chain scheduler calls or build a custom jobs table. 4) Plan the backfill: partition strategy, catch-up configuration, concurrency caps, monitoring and rollback. 5) For Falcon Fusion style engines: discover actions through the live API, author workflow YAML, validate against the JSON schema, then trigger and tail execution status. Based on descriptions plus brief reads, not full procedures.",
+  "params": "partition key; retry limits; concurrency cap; engine (Convex|Airflow-style|Falcon Fusion)",
+  "install": "",
+  "requires": [
+   "node"
+  ],
+  "license": "method paraphrased from Atlas skills under Apache-2.0 / MIT (no copyleft seen among supporting ids); the skills keep their own licenses — see each folder's SOURCE.md",
+  "proof": [
+   "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/2269-data-orchestration/8650-handle-backfills-and-retries",
+   "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/1472-convex/3609-workflow",
+   "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/1209-crowdstrike-falcon-fusion/2865-workflows"
+  ],
+  "proof_scope": "url",
+  "styles": [],
+  "tags": [
+   "idempotency",
+   "backfill",
+   "workflow",
+   "إعادة-المحاولة",
+   "durable"
+  ],
+  "section": "سير عمل الوكلاء — Agent workflows & orchestration",
+  "source": "KOSIF Atlas mining 2026-10-20 (https://github.com/kosif199022-jpg/kosif-atlas): data-orchestration/handle-backfills-and-retries (#8650); convex/workflow (#3609); crowdstrike-falcon-fusion/workflows (#2865) · theme agent-workflow · 5 supporting skills · verifier read: skills/2269-data-orchestration/8650-handle-backfills-and-retries, skills/1472-convex/3609-workflow, skills/1209-crowdstrike-falcon-fusion/2865-workflows",
+  "atlas": {
+   "ids": [
+    "2859",
+    "2861",
+    "2865",
+    "3609",
+    "8650"
+   ],
+   "examples": [
+    {
+     "id": "8650",
+     "plugin": "data-orchestration",
+     "skill": "handle-backfills-and-retries",
+     "url": "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/2269-data-orchestration/8650-handle-backfills-and-retries"
+    },
+    {
+     "id": "3609",
+     "plugin": "convex",
+     "skill": "workflow",
+     "url": "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/1472-convex/3609-workflow"
+    },
+    {
+     "id": "2865",
+     "plugin": "crowdstrike-falcon-fusion",
+     "skill": "workflows",
+     "url": "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/1209-crowdstrike-falcon-fusion/2865-workflows"
+    }
+   ],
+   "theme": "agent-workflow",
+   "risk_notes": "Falcon Fusion skills ship Python that calls a live security-vendor API with credentials and can trigger workflows; backfills write production data; read-only review first. Atlas risk tags across supporting ids: hooks, mcp_server, scripts.",
+   "kosif_overlap_ids": [],
+   "stage": "extracted",
+   "verified_by": "b002-agent-workflow-2.json"
+  }
+ },
+ {
+  "id": "ADATA-02",
+  "family": "atlas-data",
+  "domain": "data",
+  "name_ar": "استخراج الأنماط السيئة من سجلات جلسات الوكلاء",
+  "name_en": "Mine agent session logs for anti-patterns",
+  "status": "documented",
+  "what": "يفهرس سجلات جلسات الوكلاء ويعلّم أخطاء الأدوات وحلقات إعادة المحاولة والاستدعاءات المكررة والنتائج الضخمة، ويستخرج حقائق محددة من JSONL ضخم دون تحميله في السياق. — Index agent session transcripts, flag tool errors, retry loops, duplicate calls and oversized results, and pull exact facts from huge JSONL without loading the raw data into context.",
+  "when": "User wants to review agent performance, find tool misuse, debug agent behavior, mine workflow patterns, or answer a numeric question about long transcripts or a fleet's traffic.",
+  "how": "1) Index sessions into a local store (sqlite or JSONL set). 2) Sweep for categories: tool errors, retry loops, duplicate calls, shell commands that a dedicated tool already covers, oversized results or sessions. 3) Record findings with session id and evidence in a findings store. 4) For specific numbers (tool timings, query counts, error summaries) delegate to an inspector that queries the files so raw data stays out of the main context. 5) Optionally keep an append-only JSONL traffic log so a fleet has one org-wide view. 6) Turn repeated findings into rules or skills.",
+  "params": "transcript directory; finding categories; time window",
+  "install": "",
+  "requires": [
+   "python3"
+  ],
+  "license": "method paraphrased from Atlas skills under MIT; the skills keep their own licenses — see each folder's SOURCE.md",
+  "proof": [
+   "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/236-agent-transcripts/764-transcript-sweep",
+   "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/1544-agentskill-kaizen/4237-transcript-analysis",
+   "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/3264-agent-traffic-log/13775-agent-traffic-log"
+  ],
+  "proof_scope": "url",
+  "styles": [],
+  "tags": [
+   "transcript-analysis",
+   "kaizen",
+   "session-logs",
+   "تحليل الجلسات",
+   "observability"
+  ],
+  "section": "سير عمل الوكلاء — Agent workflows & orchestration",
+  "source": "KOSIF Atlas mining 2026-10-20 (https://github.com/kosif199022-jpg/kosif-atlas): agent-transcripts/transcript-sweep (#764); agentskill-kaizen/transcript-analysis (#4237); agent-traffic-log/agent-traffic-log (#13775) · theme agent-workflow · 6 supporting skills · verifier read: skills/236-agent-transcripts/764-transcript-sweep, skills/1544-agentskill-kaizen/4237-transcript-analysis, skills/3264-agent-traffic-log/13775-agent-traffic-log",
+  "atlas": {
+   "ids": [
+    "764",
+    "4236",
+    "4237",
+    "7147",
+    "12752",
+    "13775"
+   ],
+   "examples": [
+    {
+     "id": "764",
+     "plugin": "agent-transcripts",
+     "skill": "transcript-sweep",
+     "url": "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/236-agent-transcripts/764-transcript-sweep"
+    },
+    {
+     "id": "4237",
+     "plugin": "agentskill-kaizen",
+     "skill": "transcript-analysis",
+     "url": "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/1544-agentskill-kaizen/4237-transcript-analysis"
+    },
+    {
+     "id": "13775",
+     "plugin": "agent-traffic-log",
+     "skill": "agent-traffic-log",
+     "url": "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/3264-agent-traffic-log/13775-agent-traffic-log"
+    }
+   ],
+   "theme": "agent-workflow",
+   "risk_notes": "Scripts, plus mcp_server in agentskill-kaizen and hooks in anamnesis; transcripts can hold secrets (see credential audit). Steps inferred from descriptions only.",
+   "kosif_overlap_ids": [],
+   "stage": "extracted",
+   "verified_by": "b001-agent-workflow-1.json"
+  }
+ },
+ {
+  "id": "ADATA-03",
+  "family": "atlas-data",
+  "domain": "data",
+  "name_ar": "نشر استعلام محفوظ كنقطة API",
+  "name_en": "Expose saved query as API endpoint",
+  "status": "documented",
+  "what": "إنشاء وضبط نقطة PostHog بنوع الاستعلام والتخزين المؤقت والإصدارات. — Create and tune a PostHog endpoint: query kind, name, variables, freshness, materialisation, versions.",
+  "when": "Exposing HogQL/insight data to external callers.",
+  "how": "1) Confirm external caller and stable query. 2) URL-safe snake_case name, no version. 3) Choose HogQL vs insight. 4) Set data_freshness_seconds; materialise heavy queries without cohort breakdown. 5) Preview drafts, roll back versions. 6) Audit stale endpoints.",
+  "params": "",
+  "install": "",
+  "requires": [],
+  "license": "method paraphrased from Atlas skills under MIT; the skills keep their own licenses — see each folder's SOURCE.md",
+  "proof": [
+   "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/2957-posthog/12289-creating-an-endpoint",
+   "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/see batch record 12372"
+  ],
+  "proof_scope": "url",
+  "styles": [],
+  "tags": [
+   "posthog",
+   "endpoint",
+   "hogql",
+   "تحليلات"
+  ],
+  "section": "واجهات API والخلفية — APIs, backends & auth",
+  "source": "KOSIF Atlas mining 2026-10-20 (https://github.com/kosif199022-jpg/kosif-atlas): posthog/creating-an-endpoint (#12289); posthog/setting-up-a-custom-rest-source (#12372) · theme api-backend · 6 supporting skills · verifier read: skills/2957-posthog/12289-creating-an-endpoint, see batch record 12372",
+  "atlas": {
+   "ids": [
+    "12263",
+    "12282",
+    "12286",
+    "12289",
+    "12301",
+    "12347"
+   ],
+   "examples": [
+    {
+     "id": "12289",
+     "plugin": "posthog",
+     "skill": "creating-an-endpoint",
+     "url": "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/2957-posthog/12289-creating-an-endpoint"
+    },
+    {
+     "id": "12372",
+     "plugin": "posthog",
+     "skill": "setting-up-a-custom-rest-source",
+     "url": "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/see batch record 12372"
+    }
+   ],
+   "theme": "api-backend",
+   "risk_notes": "Instructs use of PostHog MCP tools that write to a project.",
+   "kosif_overlap_ids": [],
+   "stage": "extracted",
+   "verified_by": "b011-api-backend-3.json"
+  }
+ },
+ {
+  "id": "ADATA-04",
+  "family": "atlas-data",
+  "domain": "data",
+  "name_ar": "مطابقة الطلبات بين CRM وأدوات التحليل",
+  "name_en": "Reconcile leads across CRM and analytics",
+  "status": "documented",
+  "what": "يطابق سجلات الطلبات بين مصدرين بمفتاح الرابط الخارجي ويصنفها إلى مطابق ومختلف ومنفرد. — Reconcile lead records between two sources keyed on an external link and classify matches, diffs and one-sided rows.",
+  "when": "Comparing CRM leads with ad or call-tracking reports (amoCRM, Roistat, Yandex Direct).",
+  "how": "1) Require per-row fields: source, occurred_at, status, responsible, external_link. 2) Join on external_link. 3) Output three buckets: match, mismatch (field-level diff), only-in-second. 4) Read-only by default; any write needs separate explicit approval. 5) Use synthetic data for tests; never publish tokens, subdomains or contacts.",
+  "params": "two exports, key field",
+  "install": "",
+  "requires": [
+   "python3"
+  ],
+  "license": "method paraphrased from Atlas skills under MIT; the skills keep their own licenses — see each folder's SOURCE.md",
+  "proof": [
+   "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/2655-yandex-direct-for-all/10092-amocrm-api-control",
+   "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/2655-yandex-direct-for-all/10094-roistat-reports-api"
+  ],
+  "proof_scope": "url",
+  "styles": [],
+  "tags": [
+   "reconciliation",
+   "crm",
+   "sheet-join",
+   "مطابقة",
+   "تحليل"
+  ],
+  "section": "واجهات API والخلفية — APIs, backends & auth",
+  "source": "KOSIF Atlas mining 2026-10-20 (https://github.com/kosif199022-jpg/kosif-atlas): yandex-direct-for-all/amocrm-api-control (#10092); yandex-direct-for-all/roistat-reports-api (#10094) · theme api-backend · 2 supporting skills · verifier read: skills/2655-yandex-direct-for-all/10092-amocrm-api-control, skills/2655-yandex-direct-for-all/10094-roistat-reports-api",
+  "atlas": {
+   "ids": [
+    "10092",
+    "10094"
+   ],
+   "examples": [
+    {
+     "id": "10092",
+     "plugin": "yandex-direct-for-all",
+     "skill": "amocrm-api-control",
+     "url": "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/2655-yandex-direct-for-all/10092-amocrm-api-control"
+    },
+    {
+     "id": "10094",
+     "plugin": "yandex-direct-for-all",
+     "skill": "roistat-reports-api",
+     "url": "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/2655-yandex-direct-for-all/10094-roistat-reports-api"
+    }
+   ],
+   "theme": "api-backend",
+   "risk_notes": "Includes python scripts hitting vendor APIs; write operations are guarded by approval text.",
+   "kosif_overlap_ids": [],
+   "stage": "extracted",
+   "verified_by": "b012-api-backend-4.json"
+  }
+ },
+ {
+  "id": "ADATA-05",
+  "family": "atlas-data",
+  "domain": "data",
+  "name_ar": "أدوات تحليل سوق الكريبتو وDeFi",
+  "name_en": "Crypto market and DeFi analytics CLI suite",
+  "status": "documented",
+  "what": "تشغيل تحليلات الأرباح والسيولة والمعاملات المعلقة. — Run script-driven analysis: arbitrage, liquidity pools, yields, mempool, derivatives, sentiment.",
+  "when": "Researching spreads, pools, yields or gas.",
+  "how": "1) arb_finder.py scan/triangular/cross-chain with fees. 2) mempool_analyzer.py gas percentiles (10/50/75/90). 3) Compare APY, TVL, impermanent loss. 4) Use public APIs.",
+  "params": "pair, chain",
+  "install": "pip install httpx rich networkx",
+  "requires": [
+   "python3",
+   "network"
+  ],
+  "license": "method paraphrased from Atlas skills under MIT; the skills keep their own licenses — see each folder's SOURCE.md",
+  "proof": [
+   "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/1656-arbitrage-opportunity-finder/4661-finding-arbitrage-opportunities",
+   "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/1672-mempool-analyzer/4677-analyzing-mempool"
+  ],
+  "proof_scope": "url",
+  "styles": [],
+  "tags": [
+   "defi",
+   "arbitrage",
+   "تحليل"
+  ],
+  "section": "البلوكتشين — Blockchain & web3",
+  "source": "KOSIF Atlas mining 2026-10-20 (https://github.com/kosif199022-jpg/kosif-atlas): arbitrage-opportunity-finder/finding-arbitrage-opportunities (#4661); mempool-analyzer/analyzing-mempool (#4677) · theme blockchain-web3 · 10 supporting skills · verifier read: skills/1656-arbitrage-opportunity-finder/4661-finding-arbitrage-opportunities, skills/1672-mempool-analyzer/4677-analyzing-mempool",
+  "atlas": {
+   "ids": [
+    "4661",
+    "4664",
+    "4669",
+    "4670",
+    "4672",
+    "4673",
+    "4674",
+    "4676",
+    "4677",
+    "4681"
+   ],
+   "examples": [
+    {
+     "id": "4661",
+     "plugin": "arbitrage-opportunity-finder",
+     "skill": "finding-arbitrage-opportunities",
+     "url": "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/1656-arbitrage-opportunity-finder/4661-finding-arbitrage-opportunities"
+    },
+    {
+     "id": "4677",
+     "plugin": "mempool-analyzer",
+     "skill": "analyzing-mempool",
+     "url": "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/1672-mempool-analyzer/4677-analyzing-mempool"
+    }
+   ],
+   "theme": "blockchain-web3",
+   "risk_notes": "Bundled Python scripts call public APIs/RPC; read-only",
+   "kosif_overlap_ids": [],
+   "stage": "extracted",
+   "verified_by": "b016-blockchain-web3-1.json"
+  }
+ },
+ {
+  "id": "ADATA-06",
+  "family": "atlas-data",
+  "domain": "data",
+  "name_ar": "ضرائب الكريبتو بطرق FIFO وLIFO وHIFO",
+  "name_en": "Crypto tax gains with FIFO LIFO HIFO",
+  "status": "documented",
+  "what": "حساب الأرباح الرأسمالية وإنتاج نموذج 8949. — Compute cost basis and capital gains from exchange CSVs and emit Form 8949.",
+  "when": "Tax reports for crypto.",
+  "how": "1) Export CSVs. 2) Run calculator with --year and --method. 3) --compare-methods. 4) --income-report for staking/airdrops. 5) Output CSV. Not tax advice.",
+  "params": "year, method",
+  "install": "",
+  "requires": [
+   "python3"
+  ],
+  "license": "method paraphrased from Atlas skills under MIT; the skills keep their own licenses — see each folder's SOURCE.md",
+  "proof": [
+   "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/1663-crypto-tax-calculator/4668-calculating-crypto-taxes"
+  ],
+  "proof_scope": "url",
+  "styles": [],
+  "tags": [
+   "tax",
+   "fifo",
+   "ضرائب"
+  ],
+  "section": "البلوكتشين — Blockchain & web3",
+  "source": "KOSIF Atlas mining 2026-10-20 (https://github.com/kosif199022-jpg/kosif-atlas): crypto-tax-calculator/calculating-crypto-taxes (#4668) · theme blockchain-web3 · 3 supporting skills · verifier read: skills/1663-crypto-tax-calculator/4668-calculating-crypto-taxes",
+  "atlas": {
+   "ids": [
+    "878",
+    "894",
+    "4668"
+   ],
+   "examples": [
+    {
+     "id": "4668",
+     "plugin": "crypto-tax-calculator",
+     "skill": "calculating-crypto-taxes",
+     "url": "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/1663-crypto-tax-calculator/4668-calculating-crypto-taxes"
+    }
+   ],
+   "theme": "blockchain-web3",
+   "risk_notes": "Local script, reads CSVs",
+   "kosif_overlap_ids": [],
+   "stage": "extracted",
+   "verified_by": "b016-blockchain-web3-1.json"
+  }
+ },
+ {
+  "id": "ADATA-07",
+  "family": "atlas-data",
+  "domain": "data",
+  "name_ar": "تحليل بيانات السلسلة والمحفظة وندرة NFT",
+  "name_en": "On-chain data, portfolio and NFT rarity analysis",
+  "status": "documented",
+  "what": "استكشاف المعاملات وتتبع الحيتان وترتيب ندرة NFT. — Explore blocks/transactions, whale flows, portfolios and rank NFT rarity.",
+  "when": "Investigating wallets or collections.",
+  "how": "1) Query blocks/txs. 2) Track whale flows. 3) Value portfolio and allocation. 4) Score rarity by trait frequency.",
+  "params": "address, collection",
+  "install": "",
+  "requires": [
+   "python3",
+   "network"
+  ],
+  "license": "method paraphrased from Atlas skills under MIT; the skills keep their own licenses — see each folder's SOURCE.md",
+  "proof": [
+   "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/1674-on-chain-analytics/4679-analyzing-on-chain-data",
+   "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/1673-nft-rarity-analyzer/4678-analyzing-nft-rarity"
+  ],
+  "proof_scope": "url",
+  "styles": [],
+  "tags": [
+   "onchain",
+   "nft",
+   "تحليل"
+  ],
+  "section": "البلوكتشين — Blockchain & web3",
+  "source": "KOSIF Atlas mining 2026-10-20 (https://github.com/kosif199022-jpg/kosif-atlas): on-chain-analytics/analyzing-on-chain-data (#4679); nft-rarity-analyzer/analyzing-nft-rarity (#4678) · theme blockchain-web3 · 5 supporting skills · verifier read: skills/1674-on-chain-analytics/4679-analyzing-on-chain-data, skills/1673-nft-rarity-analyzer/4678-analyzing-nft-rarity",
+  "atlas": {
+   "ids": [
+    "4662",
+    "4666",
+    "4675",
+    "4678",
+    "4679"
+   ],
+   "examples": [
+    {
+     "id": "4679",
+     "plugin": "on-chain-analytics",
+     "skill": "analyzing-on-chain-data",
+     "url": "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/1674-on-chain-analytics/4679-analyzing-on-chain-data"
+    },
+    {
+     "id": "4678",
+     "plugin": "nft-rarity-analyzer",
+     "skill": "analyzing-nft-rarity",
+     "url": "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/1673-nft-rarity-analyzer/4678-analyzing-nft-rarity"
+    }
+   ],
+   "theme": "blockchain-web3",
+   "risk_notes": "Scripts call public APIs",
+   "kosif_overlap_ids": [],
+   "stage": "extracted",
+   "verified_by": "b016-blockchain-web3-1.json"
+  }
+ },
+ {
+  "id": "ADATA-08",
+  "family": "atlas-data",
+  "domain": "data",
+  "name_ar": "استقبال الفواتير والإيصالات وأرشفتها",
+  "name_en": "Invoice and receipt intake into archive",
+  "status": "documented",
+  "what": "يستخرج حقول الفواتير بدرجة ثقة ويربط المستندات ويعيد تسميتها ويؤرشفها ويستعلم عنها. — Extract invoice fields with confidence, link documents by shared numbers, rename and file by period, then query.",
+  "when": "Folder of invoices/receipts/statements to organize for accounting.",
+  "how": "1) Read one doc first: fields (vendor, invoice_no, po, date, due, subtotal, tax, total, currency, iban) with high/medium/low confidence. 2) Cross-reference shared invoice/PO/IBAN numbers (check-digit verified). 3) Dry-run rename template {date}_{vendor}_{ref}. 4) Intake to YYYY/MM or FY/Q, OCR scans, keep originals. 5) Query by total>1000, due<date; export CSV. Caveat: no line items; low-confidence date is mtime.",
+  "params": "date order, fiscal start",
+  "install": "",
+  "requires": [
+   "tesseract",
+   "pip:pandas"
+  ],
+  "license": "method paraphrased from Atlas skills under MIT/Apache-2.0; the skills keep their own licenses — see each folder's SOURCE.md",
+  "proof": [
+   "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/1196-carrel-finance/2839-accounting-inbox"
+  ],
+  "proof_scope": "url",
+  "styles": [],
+  "tags": [
+   "invoices",
+   "OCR",
+   "فواتير",
+   "accounting"
+  ],
+  "section": "الأعمال والمال — Business, finance & legal",
+  "source": "KOSIF Atlas mining 2026-10-20 (https://github.com/kosif199022-jpg/kosif-atlas): carrel-finance/accounting-inbox (#2839) · theme business-finance · 5 supporting skills · verifier read: skills/1196-carrel-finance/2839-accounting-inbox, , ",
+  "atlas": {
+   "ids": [
+    "263",
+    "1636",
+    "2839",
+    "2916",
+    "4143"
+   ],
+   "examples": [
+    {
+     "id": "2839",
+     "plugin": "carrel-finance",
+     "skill": "accounting-inbox",
+     "url": "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/1196-carrel-finance/2839-accounting-inbox"
+    }
+   ],
+   "theme": "business-finance",
+   "risk_notes": "Uses external carrel CLI and OCR; airwallex/quickbooks skills write to live finance APIs",
+   "kosif_overlap_ids": [],
+   "stage": "extracted",
+   "verified_by": "b018-business-finance-1.json"
+  }
+ },
+ {
+  "id": "ADATA-09",
+  "family": "atlas-data",
+  "domain": "data",
+  "name_ar": "نمذجة مونت كارلو وسيناريوهات ماذا لو",
+  "name_en": "Monte Carlo and what-if scenario modeling",
+  "status": "documented",
+  "what": "يحاكي سيناريوهات الميزانية بتوزيعات عائد ويعرض P10/P50/P90 واحتمال بلوغ الهدف. — Simulate budget or channel scenarios with sampled ROI distributions and report P10/P50/P90 and target probability.",
+  "when": "Comparing budget reallocations, cascading multi-variable what-ifs, risk-adjusted decisions.",
+  "how": "1) Define 2-4 scenarios with per-channel budget, ROI mean and std, saturation. 2) Run 10,000 iterations (50k for high stakes) sampling ROI with diminishing returns. 3) Report mean, P10, P50, P90, probability of target. 4) Rank by expected and risk-adjusted return; tornado sensitivity of top scenarios. 5) Check convergence; document assumptions.",
+  "params": "scenarios, iterations, horizon months",
+  "install": "",
+  "requires": [
+   "python3",
+   "pip:numpy"
+  ],
+  "license": "method paraphrased from Atlas skills under MIT; the skills keep their own licenses — see each folder's SOURCE.md",
+  "proof": [
+   "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/1520-digital-marketing-pro/4117-simulate"
+  ],
+  "proof_scope": "url",
+  "styles": [],
+  "tags": [
+   "monte-carlo",
+   "scenarios",
+   "محاكاة",
+   "budget"
+  ],
+  "section": "الأعمال والمال — Business, finance & legal",
+  "source": "KOSIF Atlas mining 2026-10-20 (https://github.com/kosif199022-jpg/kosif-atlas): digital-marketing-pro/simulate (#4117) · theme business-finance · 4 supporting skills · verifier read: skills/1520-digital-marketing-pro/4117-simulate, , ",
+  "atlas": {
+   "ids": [
+    "437",
+    "3989",
+    "4117",
+    "4135"
+   ],
+   "examples": [
+    {
+     "id": "4117",
+     "plugin": "digital-marketing-pro",
+     "skill": "simulate",
+     "url": "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/1520-digital-marketing-pro/4117-simulate"
+    }
+   ],
+   "theme": "business-finance",
+   "risk_notes": "Calls bundled revenue-simulator.py locally",
+   "kosif_overlap_ids": [],
+   "stage": "extracted",
+   "verified_by": "b018-business-finance-1.json"
+  }
+ },
+ {
+  "id": "ADATA-10",
+  "family": "atlas-data",
+  "domain": "data",
+  "name_ar": "تحليل النسب والانحرافات والتوقع المتجدد",
+  "name_en": "Ratio analysis, variance and rolling forecast",
+  "status": "documented",
+  "what": "يحسب نسب الربحية والسيولة والرفع والكفاءة وانحرافات الموازنة وتوقعات مبنية على المحركات. — Compute profitability, liquidity, leverage, efficiency and valuation ratios, favorable/unfavorable budget variances and driver-based forecasts.",
+  "when": "Statement analysis, monthly close review, budget vs actual, forecast refresh.",
+  "how": "1) Validate input completeness (nulls, implausible values) before ratios. 2) Run ratio calculator on JSON statements across 5 categories. 3) Decompose variances into drivers with waterfall narrative; mark favorable/unfavorable. 4) Rolling forecast with base/bull/bear. 5) Track accuracy targets about +/-5% revenue, +/-3% expenses. 6) Executive summary first.",
+  "params": "statements JSON, materiality threshold",
+  "install": "",
+  "requires": [
+   "python3",
+   "pip:pandas"
+  ],
+  "license": "method paraphrased from Atlas skills under MIT/Apache-2.0; the skills keep their own licenses — see each folder's SOURCE.md",
+  "proof": [
+   "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/189-finance-skills/560-financial-analyst"
+  ],
+  "proof_scope": "url",
+  "styles": [],
+  "tags": [
+   "ratios",
+   "variance",
+   "نسب مالية",
+   "forecast"
+  ],
+  "section": "الأعمال والمال — Business, finance & legal",
+  "source": "KOSIF Atlas mining 2026-10-20 (https://github.com/kosif199022-jpg/kosif-atlas): finance-skills/financial-analyst (#560) · theme business-finance · 5 supporting skills · verifier read: skills/189-finance-skills/560-financial-analyst, , ",
+  "atlas": {
+   "ids": [
+    "560",
+    "972",
+    "977",
+    "2495",
+    "8778"
+   ],
+   "examples": [
+    {
+     "id": "560",
+     "plugin": "finance-skills",
+     "skill": "financial-analyst",
+     "url": "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/189-finance-skills/560-financial-analyst"
+    }
+   ],
+   "theme": "business-finance",
+   "risk_notes": "Local python scripts; chronograph skills call a vendor connector",
+   "kosif_overlap_ids": [],
+   "stage": "extracted",
+   "verified_by": "b018-business-finance-1.json"
+  }
+ },
+ {
+  "id": "ADATA-11",
+  "family": "atlas-data",
+  "domain": "data",
+  "name_ar": "مقاييس خط المبيعات وكفاءة الدخول للسوق",
+  "name_en": "SaaS pipeline and GTM efficiency metrics",
+  "status": "documented",
+  "what": "يحلل تغطية خط المبيعات والسرعة وعمر الصفقات ودقة التوقع وكفاءة GTM. — Analyze pipeline coverage, velocity, deal aging, forecast accuracy and GTM efficiency from JSON deal data.",
+  "when": "Pipeline review, forecast accuracy audit, CRO reporting.",
+  "how": "1) Prepare JSON: quota, stages, average_cycle_days, deals. 2) Run pipeline analyzer (--format text|json). 3) Healthy coverage 3-4x quota; velocity = opps x avg deal x win rate / cycle. 4) Flag deals over 2x stage cycle and >40% concentration. 5) Track forecast accuracy over periods; compute GTM efficiency.",
+  "params": "quota, stages, deals",
+  "install": "",
+  "requires": [
+   "python3"
+  ],
+  "license": "method paraphrased from Atlas skills under MIT; the skills keep their own licenses — see each folder's SOURCE.md",
+  "proof": [
+   "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/136-business-growth-skills/386-revenue-operations"
+  ],
+  "proof_scope": "url",
+  "styles": [],
+  "tags": [
+   "pipeline",
+   "SaaS",
+   "مبيعات",
+   "GTM"
+  ],
+  "section": "الأعمال والمال — Business, finance & legal",
+  "source": "KOSIF Atlas mining 2026-10-20 (https://github.com/kosif199022-jpg/kosif-atlas): business-growth-skills/revenue-operations (#386) · theme business-finance · 5 supporting skills · verifier read: skills/136-business-growth-skills/386-revenue-operations, , ",
+  "atlas": {
+   "ids": [
+    "386",
+    "412",
+    "426",
+    "3998",
+    "8358"
+   ],
+   "examples": [
+    {
+     "id": "386",
+     "plugin": "business-growth-skills",
+     "skill": "revenue-operations",
+     "url": "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/136-business-growth-skills/386-revenue-operations"
+    }
+   ],
+   "theme": "business-finance",
+   "risk_notes": "Local python scripts",
+   "kosif_overlap_ids": [],
+   "stage": "extracted",
+   "verified_by": "b018-business-finance-1.json"
+  }
+ },
+ {
+  "id": "ADATA-12",
+  "family": "atlas-data",
+  "domain": "data",
+  "name_ar": "محاسبة الأعمال الصغيرة: رواتب وضرائب وتحصيل",
+  "name_en": "Small-business bookkeeping: payroll, tax, invoice chase",
+  "status": "documented",
+  "what": "ينفذ روتين نهاية الشهر للأعمال الصغيرة: تجهيز الرواتب وتذكير الفواتير وحزم الضرائب وجداول نهاية السنة. — Run month-end routines for small businesses: payroll prep, overdue invoice reminders, tax packs and AU year-end schedules.",
+  "when": "Owner wants cash snapshot, payroll or tax prep, reconciliation, or Australian Div 7A/FBT work.",
+  "how": "1) Pull ledger and timesheets from the accounting system. 2) Reconcile and close month. 3) Payroll: pre-run sanity checks, post-run reconciliation. 4) Draft invoice-chase emails by aging bucket. 5) Walk accounting profit to taxable income. 6) Build Div 7A loan schedule per shareholder loan. 7) Mark as prep for accountant, not tax advice.",
+  "params": "jurisdiction, period, ledger source",
+  "install": "",
+  "requires": [
+   "pip:pandas"
+  ],
+  "license": "method paraphrased from Atlas skills under Apache-2.0 / MIT; the skills keep their own licenses — see each folder's SOURCE.md",
+  "proof": [
+   "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills",
+   "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills"
+  ],
+  "proof_scope": "url",
+  "styles": [],
+  "tags": [
+   "payroll",
+   "tax prep",
+   "invoice",
+   "رواتب",
+   "ضرائب"
+  ],
+  "section": "الأعمال والمال — Business, finance & legal",
+  "source": "KOSIF Atlas mining 2026-10-20 (https://github.com/kosif199022-jpg/kosif-atlas): small-business/invoice-chase (#1152); xbert-tax-reconciliation/tax-reconciliation (#14396) · theme business-finance · 8 supporting skills · verifier read: skills/, skills/",
+  "atlas": {
+   "ids": [
+    "1138",
+    "1152",
+    "1161",
+    "1174",
+    "14376",
+    "14378",
+    "14388",
+    "14396"
+   ],
+   "examples": [
+    {
+     "id": "1152",
+     "plugin": "small-business",
+     "skill": "invoice-chase",
+     "url": "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills"
+    },
+    {
+     "id": "14396",
+     "plugin": "xbert-tax-reconciliation",
+     "skill": "tax-reconciliation",
+     "url": "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills"
+    }
+   ],
+   "theme": "business-finance",
+   "risk_notes": "Connectors to ledgers and payroll; sends emails; handles sensitive financial data.",
+   "kosif_overlap_ids": [
+    "ANLY-29"
+   ],
+   "stage": "extracted",
+   "verified_by": "b019-business-finance-2.json"
+  }
+ },
+ {
+  "id": "ADATA-13",
+  "family": "atlas-data",
+  "domain": "data",
+  "name_ar": "تحليل نتائج اختبار A/B مع حجم الأثر",
+  "name_en": "A/B test result analysis with effect sizes",
+  "status": "documented",
+  "what": "اختر الاختبار الإحصائي المناسب واذكر القيمة p وفترة الثقة وحجم الأثر ثم قرار الإطلاق أو الانتظار. — Choose z/t/chi-square test, report p-value, CI and effect size, then give ship/hold/extend verdict.",
+  "when": "User shares experiment numbers and asks whether the result is significant.",
+  "how": "1) Confirm metric type, n and observed values. 2) Proportions->z-test, means->t-test, categories->chi-square. 3) Report p, CI, Cohen d/h or Cramer V. 4) Separate statistical from practical significance. 5) Flag peeking, multiple comparisons, SUTVA. 6) Answer Bottom line, What, Why, How to act.",
+  "params": "control/treatment n and x or mean/std; alpha",
+  "install": "",
+  "requires": [
+   "python3",
+   "pip:scipy"
+  ],
+  "license": "method paraphrased from Atlas skills under MIT / Apache-2.0; the skills keep their own licenses — see each folder's SOURCE.md",
+  "proof": [
+   "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/184-statistical-analyst/553-statistical-analyst",
+   "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/2996-revenuecat/12738-experiment-analysis"
+  ],
+  "proof_scope": "url",
+  "styles": [],
+  "tags": [
+   "ab-test",
+   "significance",
+   "اختبار",
+   "إحصاء"
+  ],
+  "section": "تحليل البيانات — Data analysis & statistics",
+  "source": "KOSIF Atlas mining 2026-10-20 (https://github.com/kosif199022-jpg/kosif-atlas): statistical-analyst/statistical-analyst (#553); revenuecat/experiment-analysis (#12738) · theme data-analysis · 4 supporting skills · verifier read: skills/184-statistical-analyst/553-statistical-analyst, skills/2996-revenuecat/12738-experiment-analysis",
+  "atlas": {
+   "ids": [
+    "553",
+    "4458",
+    "12738",
+    "12929"
+   ],
+   "examples": [
+    {
+     "id": "553",
+     "plugin": "statistical-analyst",
+     "skill": "statistical-analyst",
+     "url": "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/184-statistical-analyst/553-statistical-analyst"
+    },
+    {
+     "id": "12738",
+     "plugin": "revenuecat",
+     "skill": "experiment-analysis",
+     "url": "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/2996-revenuecat/12738-experiment-analysis"
+    }
+   ],
+   "theme": "data-analysis",
+   "risk_notes": "Atlas ships Python scripts (not run here); local math only",
+   "kosif_overlap_ids": [],
+   "stage": "extracted",
+   "verified_by": "b023-data-analysis-2.json"
+  }
+ },
+ {
+  "id": "ADATA-14",
+  "family": "atlas-data",
+  "domain": "data",
+  "name_ar": "تخطيط حجم العينة وقوة اختبار A/B",
+  "name_en": "A/B test sample size and power planning",
+  "status": "documented",
+  "what": "يحسب حجم العينة المطلوب لكل مجموعة من ألفا والقوة وأصغر أثر مهم قبل الإطلاق. — Compute required n per group from alpha, power and a business-meaningful MDE before launch.",
+  "when": "Planning an experiment; asked how big a sample is needed or whether a null result is trustworthy.",
+  "how": "1) Fix the MDE first (smallest effect that changes the decision). 2) Default alpha 0.05, power 0.80. 3) Match calc to the test (two-proportion or two-sample t). 4) Solve n per group, report total and duration at given traffic. 5) If n is fixed, invert to power/MDE and warn when power<0.80. 6) Never compute post-hoc observed power. statsmodels TTestIndPower/NormalIndPower.",
+  "params": "baseline rate, MDE, alpha, power, daily traffic",
+  "install": "",
+  "requires": [
+   "python3",
+   "pip:scipy"
+  ],
+  "license": "method paraphrased from Atlas skills under MIT; the skills keep their own licenses — see each folder's SOURCE.md",
+  "proof": [
+   "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/2235-applied-statistics/8496-power-and-sample-size",
+   "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills"
+  ],
+  "proof_scope": "url",
+  "styles": [],
+  "tags": [
+   "ab-test",
+   "power",
+   "sample-size",
+   "اختبار",
+   "عينة"
+  ],
+  "section": "تحليل البيانات — Data analysis & statistics",
+  "source": "KOSIF Atlas mining 2026-10-20 (https://github.com/kosif199022-jpg/kosif-atlas): applied-statistics/power-and-sample-size (#8496); lvtd-skills/experiment-sensitivity-optimization (#8069) · theme data-analysis · 5 supporting skills · verifier read: skills/2235-applied-statistics/8496-power-and-sample-size, skills/",
+  "atlas": {
+   "ids": [
+    "3974",
+    "7993",
+    "8069",
+    "8070",
+    "8496"
+   ],
+   "examples": [
+    {
+     "id": "8496",
+     "plugin": "applied-statistics",
+     "skill": "power-and-sample-size",
+     "url": "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/2235-applied-statistics/8496-power-and-sample-size"
+    },
+    {
+     "id": "8069",
+     "plugin": "lvtd-skills",
+     "skill": "experiment-sensitivity-optimization",
+     "url": "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills"
+    }
+   ],
+   "theme": "data-analysis",
+   "risk_notes": "Instruction-only; no scripts.",
+   "kosif_overlap_ids": [],
+   "stage": "extracted",
+   "verified_by": "b022-data-analysis-1.json"
+  }
+ },
+ {
+  "id": "ADATA-15",
+  "family": "atlas-data",
+  "domain": "data",
+  "name_ar": "تخطيط القدرة الإحصائية وحجم العينة",
+  "name_en": "A priori power and sample-size planning",
+  "status": "documented",
+  "what": "احسب حجم العينة المطلوب أو أصغر أثر قابل للكشف بالصيغ المغلقة أو المحاكاة مع منحنيات القدرة. — Compute required n or minimum detectable effect by closed form or Monte Carlo simulation, with power curves.",
+  "when": "Grant, protocol or study needs a sample-size justification.",
+  "how": "1) Fix three of n, effect size, alpha, power. 2) Pick/convert effect size (d, f, OR). 3) Closed-form recipe for standard tests, handle unequal allocation. 4) Simulate generate-analyze-count for complex designs. 5) Plot power vs n and vs effect; report sensitivity to assumed effect.",
+  "params": "alpha, power, effect size, allocation ratio",
+  "install": "",
+  "requires": [
+   "python3",
+   "pip:scipy",
+   "pip:numpy",
+   "pip:matplotlib"
+  ],
+  "license": "method paraphrased from Atlas skills under MIT; the skills keep their own licenses — see each folder's SOURCE.md",
+  "proof": [
+   "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/3202-quantitative-sciences/13566-statistical-power",
+   "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/3202-quantitative-sciences/13565-statistical-analysis"
+  ],
+  "proof_scope": "url",
+  "styles": [],
+  "tags": [
+   "power",
+   "sample-size",
+   "عينة"
+  ],
+  "section": "تحليل البيانات — Data analysis & statistics",
+  "source": "KOSIF Atlas mining 2026-10-20 (https://github.com/kosif199022-jpg/kosif-atlas): quantitative-sciences/statistical-power (#13566); quantitative-sciences/statistical-analysis (#13565) · theme data-analysis · 3 supporting skills · verifier read: skills/3202-quantitative-sciences/13566-statistical-power, skills/3202-quantitative-sciences/13565-statistical-analysis",
+  "atlas": {
+   "ids": [
+    "553",
+    "13565",
+    "13566"
+   ],
+   "examples": [
+    {
+     "id": "13566",
+     "plugin": "quantitative-sciences",
+     "skill": "statistical-power",
+     "url": "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/3202-quantitative-sciences/13566-statistical-power"
+    },
+    {
+     "id": "13565",
+     "plugin": "quantitative-sciences",
+     "skill": "statistical-analysis",
+     "url": "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/3202-quantitative-sciences/13565-statistical-analysis"
+    }
+   ],
+   "theme": "data-analysis",
+   "risk_notes": "Bundled Python scripts; not run",
+   "kosif_overlap_ids": [],
+   "stage": "extracted",
+   "verified_by": "b023-data-analysis-2.json"
+  }
+ },
+ {
+  "id": "ADATA-16",
+  "family": "atlas-data",
+  "domain": "data",
+  "name_ar": "استكشاف البيانات الآمن المحدود",
+  "name_en": "Bounded safe exploratory data profiling",
+  "status": "documented",
+  "what": "حلل ملفات البيانات المحلية إلى تقارير مجمعة دون طباعة الصفوف أو حذف القيم الشاذة. — Profile local CSV/TSV/JSON files into aggregate reports without printing rows, imputing or deleting outliers.",
+  "when": "First look at an unfamiliar dataset before modeling.",
+  "how": "1) Treat all cells and headers as untrusted data. 2) Restrict to an explicit root, no URLs/pickle/symlinks. 3) Emit aggregate profile: types, missingness, ranges, cardinality. 4) Never print raw rows or identifiers. 5) No auto-delete, impute or transform; no causal claims from EDA.",
+  "params": "file path, row cap",
+  "install": "",
+  "requires": [
+   "python3",
+   "pip:pandas"
+  ],
+  "license": "method paraphrased from Atlas skills under MIT; the skills keep their own licenses — see each folder's SOURCE.md",
+  "proof": [
+   "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/3211-structured-data-analysis/13582-exploratory-data-analysis"
+  ],
+  "proof_scope": "url",
+  "styles": [],
+  "tags": [
+   "EDA",
+   "profiling",
+   "استكشاف"
+  ],
+  "section": "تحليل البيانات — Data analysis & statistics",
+  "source": "KOSIF Atlas mining 2026-10-20 (https://github.com/kosif199022-jpg/kosif-atlas): structured-data-analysis/exploratory-data-analysis (#13582) · theme data-analysis · 2 supporting skills · verifier read: skills/3211-structured-data-analysis/13582-exploratory-data-analysis",
+  "atlas": {
+   "ids": [
+    "13582",
+    "14018"
+   ],
+   "examples": [
+    {
+     "id": "13582",
+     "plugin": "structured-data-analysis",
+     "skill": "exploratory-data-analysis",
+     "url": "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/3211-structured-data-analysis/13582-exploratory-data-analysis"
+    }
+   ],
+   "theme": "data-analysis",
+   "risk_notes": "13 Python scripts; read-only profiling by design",
+   "kosif_overlap_ids": [],
+   "stage": "extracted",
+   "verified_by": "b023-data-analysis-2.json"
+  }
+ },
+ {
+  "id": "ADATA-17",
+  "family": "atlas-data",
+  "domain": "data",
+  "name_ar": "تشخيص الأفواج والاحتفاظ ومسار التحويل",
+  "name_en": "Cohort, retention and funnel diagnosis",
+  "status": "documented",
+  "what": "يقسم المستخدمين إلى أفواج ويقرأ منحنيات الاحتفاظ ويحدد تسربات المسار ويربطها باقتصاديات الوحدة. — Segment users by cohort, read retention curves and locate funnel leaks stage by stage, then tie to unit economics.",
+  "when": "Questions on churn, repeat rate, D1/D7/D30 retention, conversion drop or CAC by channel.",
+  "how": "1) Define cohort by acquisition period, channel or first behavior. 2) Build retention table/curve, state the retention definition. 3) Funnel: compute stage conversion and locate biggest drop. 4) Segment (RFM: recency, frequency, monetary) for value tiers. 5) CAC by channel and cohort, not blended. 6) Gate monetization on retention; prioritize fixes by economics.",
+  "params": "event table, cohort key, period",
+  "install": "",
+  "requires": [
+   "python3",
+   "pip:pandas"
+  ],
+  "license": "method paraphrased from Atlas skills under MIT; the skills keep their own licenses — see each folder's SOURCE.md",
+  "proof": [
+   "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills",
+   "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills",
+   "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills"
+  ],
+  "proof_scope": "url",
+  "styles": [],
+  "tags": [
+   "cohort",
+   "retention",
+   "funnel",
+   "احتفاظ",
+   "مسار"
+  ],
+  "section": "تحليل البيانات — Data analysis & statistics",
+  "source": "KOSIF Atlas mining 2026-10-20 (https://github.com/kosif199022-jpg/kosif-atlas): pm-data-analytics/cohort-analysis (#11603); ecommerce-dtc/diagnose-the-funnel (#8721); lvtd-skills/eighty-twenty-customer-value-rfm (#8060) · theme data-analysis · 8 supporting skills · verifier read: skills/, skills/, skills/",
+  "atlas": {
+   "ids": [
+    "4003",
+    "8060",
+    "8719",
+    "8721",
+    "8722",
+    "8843",
+    "8877",
+    "11603"
+   ],
+   "examples": [
+    {
+     "id": "11603",
+     "plugin": "pm-data-analytics",
+     "skill": "cohort-analysis",
+     "url": "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills"
+    },
+    {
+     "id": "8721",
+     "plugin": "ecommerce-dtc",
+     "skill": "diagnose-the-funnel",
+     "url": "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills"
+    },
+    {
+     "id": "8060",
+     "plugin": "lvtd-skills",
+     "skill": "eighty-twenty-customer-value-rfm",
+     "url": "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills"
+    }
+   ],
+   "theme": "data-analysis",
+   "risk_notes": "Instruction-only; no scripts.",
+   "kosif_overlap_ids": [],
+   "stage": "extracted",
+   "verified_by": "b022-data-analysis-1.json"
+  }
+ },
+ {
+  "id": "ADATA-18",
+  "family": "atlas-data",
+  "domain": "data",
+  "name_ar": "تدقيق جودة البيانات مع خطة إصلاح",
+  "name_en": "Dataset quality audit with scored remediation plan",
+  "status": "documented",
+  "what": "يوصف مجموعة بيانات ويصنف القيم المفقودة والشاذة ويمنح درجة جودة ويرتب الإصلاحات. — Profile a dataset, classify missingness and outliers, score quality 0-100 and prioritize fixes.",
+  "when": "Asked to check data quality, hunt nulls/outliers/duplicates, or set up monitoring thresholds.",
+  "how": "1) Profile: shape, dtypes, null %, cardinality, constants, mixed types (data_profiler.py --file x.csv, --format json). 2) Missingness pattern MCAR/MAR/MNAR with imputation advice per column. 3) Outliers by IQR and z-score. 4) Cross-column: duplicates, referential integrity, logical constraints. 5) Data Quality Score 0-100 and ranked remediation. 6) Monitoring: 5-8 critical columns with null/outlier/domain thresholds. Also uniqueness/not-null/referential/freshness tests (Great Expectations, dbt).",
+  "params": "file, columns, thresholds",
+  "install": "",
+  "requires": [
+   "python3",
+   "pip:pandas",
+   "pip:pandera"
+  ],
+  "license": "method paraphrased from Atlas skills under MIT; the skills keep their own licenses — see each folder's SOURCE.md",
+  "proof": [
+   "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/164-data-quality-auditor/533-data-quality-auditor",
+   "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/3081-data-engineering/13248-data-quality-frameworks",
+   "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills"
+  ],
+  "proof_scope": "url",
+  "styles": [],
+  "tags": [
+   "data-quality",
+   "missing",
+   "outliers",
+   "جودة",
+   "تدقيق"
+  ],
+  "section": "تحليل البيانات — Data analysis & statistics",
+  "source": "KOSIF Atlas mining 2026-10-20 (https://github.com/kosif199022-jpg/kosif-atlas): data-quality-auditor/data-quality-auditor (#533); data-engineering/data-quality-frameworks (#13248); data-platform/data-quality-tests (#8658) · theme data-analysis · 6 supporting skills · verifier read: skills/164-data-quality-auditor/533-data-quality-auditor, skills/3081-data-engineering/13248-data-quality-frameworks, skills/",
+  "atlas": {
+   "ids": [
+    "533",
+    "1535",
+    "8246",
+    "8658",
+    "8858",
+    "13248"
+   ],
+   "examples": [
+    {
+     "id": "533",
+     "plugin": "data-quality-auditor",
+     "skill": "data-quality-auditor",
+     "url": "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/164-data-quality-auditor/533-data-quality-auditor"
+    },
+    {
+     "id": "13248",
+     "plugin": "data-engineering",
+     "skill": "data-quality-frameworks",
+     "url": "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/3081-data-engineering/13248-data-quality-frameworks"
+    },
+    {
+     "id": "8658",
+     "plugin": "data-platform",
+     "skill": "data-quality-tests",
+     "url": "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills"
+    }
+   ],
+   "theme": "data-analysis",
+   "risk_notes": "Bundled py scripts (profiler, missing-value, outlier) read local files only; not run here.",
+   "kosif_overlap_ids": [],
+   "stage": "extracted",
+   "verified_by": "b022-data-analysis-1.json"
+  }
+ },
+ {
+  "id": "ADATA-19",
+  "family": "atlas-data",
+  "domain": "data",
+  "name_ar": "قراءة نتائج تجربة A/B بحكم قابل للدفاع",
+  "name_en": "Defensible A/B experiment readout and verdict",
+  "status": "documented",
+  "what": "يحلل تجربة منتهية مقابل خطتها ويصدر حكم إطلاق أو رفض أو غير حاسم مع حجم الأثر وفاصل الثقة. — Analyze a finished experiment against its plan and issue a ship / don't ship / inconclusive verdict with effect size and CI.",
+  "when": "A test finished and someone asks whether the winner is real or can ship.",
+  "how": "1) Recover pre-registered metric, test and stopping rule; flag post-hoc choices. 2) Check early stopping/peeking. 3) Run primary test; headline is effect size plus 95% CI, not p. 4) Check guardrails (latency, churn, revenue). 5) Holm/Bonferroni (confirmatory) or Benjamini-Hochberg (exploratory) across metrics/segments. 6) Simpson's paradox check by subgroup. 7) Fill template: Primary / Decision-relevant / Guardrails / Multiplicity / Pitfall screen / Verdict.",
+  "params": "experiment data, plan, metrics, guardrails",
+  "install": "",
+  "requires": [
+   "python3",
+   "pip:scipy",
+   "pip:pandas"
+  ],
+  "license": "method paraphrased from Atlas skills under MIT; the skills keep their own licenses — see each folder's SOURCE.md",
+  "proof": [
+   "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/2235-applied-statistics/8495-experiment-analysis",
+   "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills",
+   "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills"
+  ],
+  "proof_scope": "url",
+  "styles": [],
+  "tags": [
+   "ab-test",
+   "verdict",
+   "multiplicity",
+   "تجربة",
+   "نتائج"
+  ],
+  "section": "تحليل البيانات — Data analysis & statistics",
+  "source": "KOSIF Atlas mining 2026-10-20 (https://github.com/kosif199022-jpg/kosif-atlas): applied-statistics/experiment-analysis (#8495); lvtd-skills/ab-test-results-readout (#7994); pm-data-analytics/ab-test-analysis (#11602) · theme data-analysis · 6 supporting skills · verifier read: skills/2235-applied-statistics/8495-experiment-analysis, skills/, skills/",
+  "atlas": {
+   "ids": [
+    "7993",
+    "7994",
+    "8118",
+    "8202",
+    "8495",
+    "11602"
+   ],
+   "examples": [
+    {
+     "id": "8495",
+     "plugin": "applied-statistics",
+     "skill": "experiment-analysis",
+     "url": "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/2235-applied-statistics/8495-experiment-analysis"
+    },
+    {
+     "id": "7994",
+     "plugin": "lvtd-skills",
+     "skill": "ab-test-results-readout",
+     "url": "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills"
+    },
+    {
+     "id": "11602",
+     "plugin": "pm-data-analytics",
+     "skill": "ab-test-analysis",
+     "url": "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills"
+    }
+   ],
+   "theme": "data-analysis",
+   "risk_notes": "Instruction-only; no scripts.",
+   "kosif_overlap_ids": [],
+   "stage": "extracted",
+   "verified_by": "b022-data-analysis-1.json"
+  }
+ },
+ {
+  "id": "ADATA-20",
+  "family": "atlas-data",
+  "domain": "data",
+  "name_ar": "توقع الطلب مع بوابة الدقة",
+  "name_en": "Demand forecast with accuracy gate",
+  "status": "documented",
+  "what": "نظف السجل واختر نموذج التمهيد أو كروستون وتحقق من MAPE والانحياز قبل الاعتماد. — Clean history, pick smoothing/Croston model by demand pattern, and require MAPE/bias/tracking signal before use.",
+  "when": "Forecasting SKU demand, sales or any time series.",
+  "how": "1) Use unconstrained demand; flag outliers. 2) Need >=12 periods for seasonal, >=6 otherwise. 3) SES / Holt / Holt-Winters; Croston or TSB if CV>0.5 intermittent. 4) Holdout last 3-6 periods. 5) MAPE, bias (|bias|<=5%), tracking signal (|TS|>4 out of control). 6) Documented overrides overlay.",
+  "params": "horizon, holdout, season length",
+  "install": "",
+  "requires": [
+   "python3",
+   "pip:statsforecast",
+   "pip:pandas"
+  ],
+  "license": "method paraphrased from Atlas skills under MIT; the skills keep their own licenses — see each folder's SOURCE.md",
+  "proof": [
+   "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/2389-supply-chain-planning/9247-demand-forecasting",
+   "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/1603-time-series-forecaster/4574-forecasting-time-series-data"
+  ],
+  "proof_scope": "url",
+  "styles": [],
+  "tags": [
+   "forecast",
+   "MAPE",
+   "توقع"
+  ],
+  "section": "تحليل البيانات — Data analysis & statistics",
+  "source": "KOSIF Atlas mining 2026-10-20 (https://github.com/kosif199022-jpg/kosif-atlas): supply-chain-planning/demand-forecasting (#9247); time-series-forecaster/forecasting-time-series-data (#4574) · theme data-analysis · 4 supporting skills · verifier read: skills/2389-supply-chain-planning/9247-demand-forecasting, skills/1603-time-series-forecaster/4574-forecasting-time-series-data",
+  "atlas": {
+   "ids": [
+    "1867",
+    "4574",
+    "9247",
+    "12740"
+   ],
+   "examples": [
+    {
+     "id": "9247",
+     "plugin": "supply-chain-planning",
+     "skill": "demand-forecasting",
+     "url": "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/2389-supply-chain-planning/9247-demand-forecasting"
+    },
+    {
+     "id": "4574",
+     "plugin": "time-series-forecaster",
+     "skill": "forecasting-time-series-data",
+     "url": "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/1603-time-series-forecaster/4574-forecasting-time-series-data"
+    }
+   ],
+   "theme": "data-analysis",
+   "risk_notes": "Plain procedure; 4574 ships a script",
+   "kosif_overlap_ids": [],
+   "stage": "extracted",
+   "verified_by": "b023-data-analysis-2.json"
+  }
+ },
+ {
+  "id": "ADATA-21",
+  "family": "atlas-data",
+  "domain": "data",
+  "name_ar": "الإحصاء الوصفي وسرد التوزيعات",
+  "name_en": "Descriptive statistics and distribution narrative",
+  "status": "documented",
+  "what": "يختار مقاييس المركز والتشتت المناسبة ويصف التوزيعات بالمئينات والقيم الشاذة وتنعيم الاتجاه. — Choose the right center/spread measures and describe distributions with percentiles, outliers and trend smoothing.",
+  "when": "Summarizing a numeric column, asked about outliers, correlations or trends in a dataset.",
+  "how": "1) Skewed data: report median and mean together; gap shows skew. 2) Spread: SD if normal, IQR if skewed, CV across scales. 3) Report p1,p5,p25,p50,p75,p90,p95,p99. 4) Describe shape, center, spread, outliers, bounds. 5) Trends: rolling 7d/28d means via pandas. 6) Outliers by IQR or z-score; hedge statistical claims.",
+  "params": "column, grouping, window",
+  "install": "",
+  "requires": [
+   "python3",
+   "pip:pandas",
+   "pip:numpy"
+  ],
+  "license": "method paraphrased from Atlas skills under MIT; the skills keep their own licenses — see each folder's SOURCE.md",
+  "proof": [
+   "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/317-data/945-statistical-analysis",
+   "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills"
+  ],
+  "proof_scope": "url",
+  "styles": [],
+  "tags": [
+   "descriptive",
+   "percentiles",
+   "outliers",
+   "إحصاء",
+   "توزيع"
+  ],
+  "section": "تحليل البيانات — Data analysis & statistics",
+  "source": "KOSIF Atlas mining 2026-10-20 (https://github.com/kosif199022-jpg/kosif-atlas): data/statistical-analysis (#945); data/analyze (#938) · theme data-analysis · 4 supporting skills · verifier read: skills/317-data/945-statistical-analysis, skills/",
+  "atlas": {
+   "ids": [
+    "938",
+    "945",
+    "1721",
+    "8669"
+   ],
+   "examples": [
+    {
+     "id": "945",
+     "plugin": "data",
+     "skill": "statistical-analysis",
+     "url": "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/317-data/945-statistical-analysis"
+    },
+    {
+     "id": "938",
+     "plugin": "data",
+     "skill": "analyze",
+     "url": "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills"
+    }
+   ],
+   "theme": "data-analysis",
+   "risk_notes": "Instruction-only; no scripts.",
+   "kosif_overlap_ids": [],
+   "stage": "extracted",
+   "verified_by": "b022-data-analysis-1.json"
+  }
+ },
+ {
+  "id": "ADATA-22",
+  "family": "atlas-data",
+  "domain": "data",
+  "name_ar": "استكشاف البيانات المنضبط قبل النمذجة",
+  "name_en": "Disciplined exploratory data analysis pass",
+  "status": "documented",
+  "what": "يوصف البيانات ويوثق قرارات التنظيف ويكشف التسرب ويحول الأنماط إلى فرضيات قبل النمذجة. — Profile data, document cleaning decisions, flag leakage and turn patterns into hypotheses before modeling.",
+  "when": "Starting analysis on a new dataset or before any model is trained.",
+  "how": "1) Verify target definition and availability at prediction time. 2) Profile shape, dtypes, missingness (and why), cardinality, duplicates, per-column distributions. 3) Record each cleaning choice and rationale. 4) Read plots adversarially (bimodality, Simpson reversal). 5) List leakage candidates (post-outcome columns, target-derived, ID-encoded). 6) Frame findings as hypotheses with uncertainty; do not p-hack. 7) Emit EDA report.",
+  "params": "dataset, target",
+  "install": "",
+  "requires": [
+   "python3",
+   "pip:pandas",
+   "pip:matplotlib"
+  ],
+  "license": "method paraphrased from Atlas skills under MIT; the skills keep their own licenses — see each folder's SOURCE.md",
+  "proof": [
+   "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/2272-data-science-research/8669-eda-workflow",
+   "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills"
+  ],
+  "proof_scope": "url",
+  "styles": [],
+  "tags": [
+   "eda",
+   "leakage",
+   "profiling",
+   "استكشاف",
+   "بيانات"
+  ],
+  "section": "تحليل البيانات — Data analysis & statistics",
+  "source": "KOSIF Atlas mining 2026-10-20 (https://github.com/kosif199022-jpg/kosif-atlas): data-science-research/eda-workflow (#8669); data-science-research/reproducible-research (#8671) · theme data-analysis · 4 supporting skills · verifier read: skills/2272-data-science-research/8669-eda-workflow, skills/",
+  "atlas": {
+   "ids": [
+    "938",
+    "945",
+    "8669",
+    "8671"
+   ],
+   "examples": [
+    {
+     "id": "8669",
+     "plugin": "data-science-research",
+     "skill": "eda-workflow",
+     "url": "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/2272-data-science-research/8669-eda-workflow"
+    },
+    {
+     "id": "8671",
+     "plugin": "data-science-research",
+     "skill": "reproducible-research",
+     "url": "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills"
+    }
+   ],
+   "theme": "data-analysis",
+   "risk_notes": "Instruction-only; no scripts.",
+   "kosif_overlap_ids": [],
+   "stage": "extracted",
+   "verified_by": "b022-data-analysis-1.json"
+  }
+ },
+ {
+  "id": "ADATA-23",
+  "family": "atlas-data",
+  "domain": "data",
+  "name_ar": "التنبؤ بالمحركات ومراجعة نماذج الانحدار",
+  "name_en": "Driver-based forecasts and regression review",
+  "status": "documented",
+  "what": "يبني تنبؤات قائمة على المحركات أو السلاسل الزمنية ويراجع نماذج الانحدار والتنبؤ. — Build driver-based or time-series forecasts and review regression/forecast models for defensibility.",
+  "when": "Quarterly bookings/ARR/cash forecasts, spend anomaly thresholds, or checking an OLS/forecast model.",
+  "how": "1) Pick model family (OLS, GLM, time-series) from outcome type. 2) Driver-based: explicit drivers with owners, rolling refresh. 3) 13-week cash: receipts by source, disbursements, direct method. 4) Backtest on holdout, report error and intervals. 5) Check assumptions: residuals, multicollinearity, seasonality. 6) Set anomaly thresholds from forecast band.",
+  "params": "history, horizon, drivers",
+  "install": "",
+  "requires": [
+   "python3",
+   "pip:pandas",
+   "pip:statsforecast"
+  ],
+  "license": "method paraphrased from Atlas skills under MIT; the skills keep their own licenses — see each folder's SOURCE.md",
+  "proof": [
+   "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills",
+   "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills",
+   "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills"
+  ],
+  "proof_scope": "url",
+  "styles": [],
+  "tags": [
+   "forecast",
+   "regression",
+   "backtest",
+   "تنبؤ",
+   "انحدار"
+  ],
+  "section": "تحليل البيانات — Data analysis & statistics",
+  "source": "KOSIF Atlas mining 2026-10-20 (https://github.com/kosif199022-jpg/kosif-atlas): applied-statistics/regression-and-forecasting-review (#8497); finance/driver-based-forecasting (#8783); commercial-skills/commercial-forecaster (#476) · theme data-analysis · 6 supporting skills · verifier read: skills/, skills/, skills/",
+  "atlas": {
+   "ids": [
+    "476",
+    "3133",
+    "8497",
+    "8783",
+    "8797",
+    "8800"
+   ],
+   "examples": [
+    {
+     "id": "8497",
+     "plugin": "applied-statistics",
+     "skill": "regression-and-forecasting-review",
+     "url": "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills"
+    },
+    {
+     "id": "8783",
+     "plugin": "finance",
+     "skill": "driver-based-forecasting",
+     "url": "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills"
+    },
+    {
+     "id": "476",
+     "plugin": "commercial-skills",
+     "skill": "commercial-forecaster",
+     "url": "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills"
+    }
+   ],
+   "theme": "data-analysis",
+   "risk_notes": "commercial-forecaster ships py scripts; not run.",
+   "kosif_overlap_ids": [],
+   "stage": "extracted",
+   "verified_by": "b022-data-analysis-1.json"
+  }
+ },
+ {
+  "id": "ADATA-24",
+  "family": "atlas-data",
+  "domain": "data",
+  "name_ar": "سير عمل التحليل التجريبي بلغات بايثون وR وستاتا",
+  "name_en": "Empirical analysis workflow in Python, R or Stata",
+  "status": "documented",
+  "what": "ينفذ سير عمل قياسيا كاملا مع تسجيل مسبق وجداول ورسوم جاهزة للنشر. — Run a classical end-to-end econometric workflow with preregistration and publication-grade tables and figures.",
+  "when": "Economics-style empirical project needing regressions, tables, or a preregistered design.",
+  "how": "1) Preregister hypotheses, outcomes, specification. 2) Clean and document data in chosen stack (pandas/statsmodels, tidyverse/fixest, Stata). 3) Descriptive table then main regressions with robust/clustered errors. 4) Robustness checks. 5) Regression tables and figures to journal style. 6) Reproducible script top to bottom.",
+  "params": "language, data, spec",
+  "install": "",
+  "requires": [
+   "python3",
+   "pip:pandas"
+  ],
+  "license": "method paraphrased from Atlas skills under MIT; the skills keep their own licenses — see each folder's SOURCE.md",
+  "proof": [
+   "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills",
+   "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills"
+  ],
+  "proof_scope": "url",
+  "styles": [],
+  "tags": [
+   "econometrics",
+   "regression",
+   "tables",
+   "اقتصاد قياسي",
+   "جداول"
+  ],
+  "section": "تحليل البيانات — Data analysis & statistics",
+  "source": "KOSIF Atlas mining 2026-10-20 (https://github.com/kosif199022-jpg/kosif-atlas): empirical-analysis-python/Full-empirical-analysis-skill (#x3354); aer-skills/aer-tables-figures (#2067) · theme data-analysis · 6 supporting skills · verifier read: skills/, skills/",
+  "atlas": {
+   "ids": [
+    "2060",
+    "2067",
+    "8671",
+    "x3354",
+    "x3355",
+    "x3356"
+   ],
+   "examples": [
+    {
+     "id": "x3354",
+     "plugin": "empirical-analysis-python",
+     "skill": "Full-empirical-analysis-skill",
+     "url": "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills"
+    },
+    {
+     "id": "2067",
+     "plugin": "aer-skills",
+     "skill": "aer-tables-figures",
+     "url": "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills"
+    }
+   ],
+   "theme": "data-analysis",
+   "risk_notes": "Instruction-only; no scripts.",
+   "kosif_overlap_ids": [],
+   "stage": "extracted",
+   "verified_by": "b022-data-analysis-1.json"
+  }
+ },
+ {
+  "id": "ADATA-25",
+  "family": "atlas-data",
+  "domain": "data",
+  "name_ar": "اختيار الاختبار الإحصائي وفحص الافتراضات",
+  "name_en": "Guided test selection with assumption checks",
+  "status": "documented",
+  "what": "اختر الاختبار من نوع البيانات وافحص الافتراضات واذكر أحجام الأثر وبدائل بايزية. — Pick a statistical test from data type, check assumptions, report effect sizes and Bayesian alternatives.",
+  "when": "Researcher asks which test to use or how to report results.",
+  "how": "1) Classify outcome and design (paired, groups, repeated). 2) Check normality, variance, independence. 3) Select parametric or non-parametric. 4) Report effect size and CI not just p. 5) Offer Bayesian estimate; correct for multiple tests.",
+  "params": "",
+  "install": "",
+  "requires": [
+   "python3",
+   "pip:scipy",
+   "pip:pandas"
+  ],
+  "license": "method paraphrased from Atlas skills under MIT; the skills keep their own licenses — see each folder's SOURCE.md",
+  "proof": [
+   "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/3202-quantitative-sciences/13565-statistical-analysis"
+  ],
+  "proof_scope": "url",
+  "styles": [],
+  "tags": [
+   "stats",
+   "assumptions",
+   "اختبار"
+  ],
+  "section": "تحليل البيانات — Data analysis & statistics",
+  "source": "KOSIF Atlas mining 2026-10-20 (https://github.com/kosif199022-jpg/kosif-atlas): quantitative-sciences/statistical-analysis (#13565) · theme data-analysis · 3 supporting skills · verifier read: skills/3202-quantitative-sciences/13565-statistical-analysis",
+  "atlas": {
+   "ids": [
+    "553",
+    "13565",
+    "13579"
+   ],
+   "examples": [
+    {
+     "id": "13565",
+     "plugin": "quantitative-sciences",
+     "skill": "statistical-analysis",
+     "url": "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/3202-quantitative-sciences/13565-statistical-analysis"
+    }
+   ],
+   "theme": "data-analysis",
+   "risk_notes": "Script bundled; not executed",
+   "kosif_overlap_ids": [],
+   "stage": "extracted",
+   "verified_by": "b023-data-analysis-2.json"
+  }
+ },
+ {
+  "id": "ADATA-26",
+  "family": "atlas-data",
+  "domain": "data",
+  "name_ar": "استرجاع ملفات CSV الفوضوية دون فقد صفوف",
+  "name_en": "Recover messy CSV/TSV without losing rows",
+  "status": "documented",
+  "what": "يقرأ ملفات محددة الفواصل غير موثوقة بشكل قابل للتكرار مع فحص البايتات واكتشاف اللهجة وحجر الصفوف التالفة. — Parse unreliable delimited files reproducibly with byte inspection, dialect detection and a quarantine of bad rows.",
+  "when": "CSV with unknown encoding, ragged rows, locale numbers, repeated headers or schema drift.",
+  "how": "1) Copy file, record checksum; inspect BOM, line endings, null bytes, encoding candidates (strict UTF-8 first). 2) Detect dialect by sampling several regions; use a real CSV parser, never regex split. 3) Map source to normalized headers. 4) Parse with expected column count; quarantine failures with line number, raw text, error, field count. 5) Normalize dates/numbers/booleans as hypotheses. 6) Count every dropped or repaired row.",
+  "params": "file, expected schema",
+  "install": "",
+  "requires": [
+   "python3",
+   "pip:pandas",
+   "pip:duckdb"
+  ],
+  "license": "method paraphrased from Atlas skills under MIT; the skills keep their own licenses — see each folder's SOURCE.md",
+  "proof": [
+   "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/2207-majestic-data/8243-csv-wrangling",
+   "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills"
+  ],
+  "proof_scope": "url",
+  "styles": [],
+  "tags": [
+   "csv",
+   "encoding",
+   "quarantine",
+   "ملفات",
+   "تنظيف"
+  ],
+  "section": "تحليل البيانات — Data analysis & statistics",
+  "source": "KOSIF Atlas mining 2026-10-20 (https://github.com/kosif199022-jpg/kosif-atlas): majestic-data/csv-wrangling (#8243); cli-power-skills/data-processing (#4832) · theme data-analysis · 5 supporting skills · verifier read: skills/2207-majestic-data/8243-csv-wrangling, skills/",
+  "atlas": {
+   "ids": [
+    "1524",
+    "1525",
+    "4238",
+    "4832",
+    "8243"
+   ],
+   "examples": [
+    {
+     "id": "8243",
+     "plugin": "majestic-data",
+     "skill": "csv-wrangling",
+     "url": "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/2207-majestic-data/8243-csv-wrangling"
+    },
+    {
+     "id": "4832",
+     "plugin": "cli-power-skills",
+     "skill": "data-processing",
+     "url": "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills"
+    }
+   ],
+   "theme": "data-analysis",
+   "risk_notes": "Instruction-only; no scripts.",
+   "kosif_overlap_ids": [],
+   "stage": "extracted",
+   "verified_by": "b022-data-analysis-1.json"
+  }
+ },
+ {
+  "id": "ADATA-27",
+  "family": "atlas-data",
+  "domain": "data",
+  "name_ar": "تمييز الإشارة عن الضجيج في مؤشرات اللوحات",
+  "name_en": "Signal-vs-noise annotation for dashboard metrics",
+  "status": "documented",
+  "what": "يرفق فواصل ثقة أو علامة بيانات غير كافية بتغيرات المؤشرات حتى لا تدعي اللوحات ضجيجا. — Attach confidence intervals or insufficient-data flags to KPI movements so dashboards do not assert noise.",
+  "when": "A KPI tile shows a period-over-period change or trend and someone asks if it is real.",
+  "how": "1) Classify claim: point comparison, trend or group comparison. 2) Get denominators; no n means 'insufficient data'. 3) Rates: Wilson CI; means: t or bootstrap CI on the difference; rare counts: Poisson CI. 4) If CI spans zero, annotate 'within normal variation'. 5) Trends: fitted slope with CI or control-chart band, never two points. 6) Output the widget annotation plus one-line caveat.",
+  "params": "metric, period values, n",
+  "install": "",
+  "requires": [
+   "python3",
+   "pip:scipy"
+  ],
+  "license": "method paraphrased from Atlas skills under MIT; the skills keep their own licenses — see each folder's SOURCE.md",
+  "proof": [
+   "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/2235-applied-statistics/8498-statistical-qa-of-metrics",
+   "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/317-data/945-statistical-analysis"
+  ],
+  "proof_scope": "url",
+  "styles": [],
+  "tags": [
+   "dashboard",
+   "confidence-interval",
+   "kpi",
+   "مؤشرات",
+   "ضجيج"
+  ],
+  "section": "تحليل البيانات — Data analysis & statistics",
+  "source": "KOSIF Atlas mining 2026-10-20 (https://github.com/kosif199022-jpg/kosif-atlas): applied-statistics/statistical-qa-of-metrics (#8498); data/statistical-analysis (#945) · theme data-analysis · 5 supporting skills · verifier read: skills/2235-applied-statistics/8498-statistical-qa-of-metrics, skills/317-data/945-statistical-analysis",
+  "atlas": {
+   "ids": [
+    "945",
+    "3980",
+    "8498",
+    "13110",
+    "14162"
+   ],
+   "examples": [
+    {
+     "id": "8498",
+     "plugin": "applied-statistics",
+     "skill": "statistical-qa-of-metrics",
+     "url": "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/2235-applied-statistics/8498-statistical-qa-of-metrics"
+    },
+    {
+     "id": "945",
+     "plugin": "data",
+     "skill": "statistical-analysis",
+     "url": "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/317-data/945-statistical-analysis"
+    }
+   ],
+   "theme": "data-analysis",
+   "risk_notes": "Instruction-only; no scripts.",
+   "kosif_overlap_ids": [],
+   "stage": "extracted",
+   "verified_by": "b022-data-analysis-1.json"
+  }
+ },
+ {
+  "id": "ADATA-28",
+  "family": "atlas-data",
+  "domain": "data",
+  "name_ar": "بنية تجارب موثوقة مع فحص SRM",
+  "name_en": "Trustworthy experiment plumbing with SRM check",
+  "status": "documented",
+  "what": "يهيئ توزيعا ثابتا وتسجيل التعرض وبوابة عدم تطابق النسب قبل قراءة أي نتيجة. — Set up sticky assignment, exposure logging and a sample-ratio-mismatch gate before reading any result.",
+  "when": "Building or auditing an experimentation pipeline; suspicious or strange experiment results.",
+  "how": "1) Hash-based deterministic sticky assignment per unit. 2) Log exposure (who saw the variant), not just assignment. 3) Chi-square SRM test of observed vs intended split; failure invalidates the result. 4) Pre-register primary metric, MDE, duration, guardrails. 5) Forbid peeking-to-stop and HARKing. 6) Hand clean exposure/metric data to the statistics step.",
+  "params": "intended split, unit of randomization",
+  "install": "",
+  "requires": [
+   "python3"
+  ],
+  "license": "method paraphrased from Atlas skills under MIT; the skills keep their own licenses — see each folder's SOURCE.md",
+  "proof": [
+   "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/2291-experimentation-growth-engineering/8764-ab-test-plumbing",
+   "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills"
+  ],
+  "proof_scope": "url",
+  "styles": [],
+  "tags": [
+   "srm",
+   "assignment",
+   "exposure",
+   "تجارب",
+   "تسجيل"
+  ],
+  "section": "تحليل البيانات — Data analysis & statistics",
+  "source": "KOSIF Atlas mining 2026-10-20 (https://github.com/kosif199022-jpg/kosif-atlas): experimentation-growth-engineering/ab-test-plumbing (#8764); posthog/diagnosing-experiment-results (#12302) · theme data-analysis · 6 supporting skills · verifier read: skills/2291-experimentation-growth-engineering/8764-ab-test-plumbing, skills/",
+  "atlas": {
+   "ids": [
+    "7993",
+    "8764",
+    "12280",
+    "12281",
+    "12291",
+    "12302"
+   ],
+   "examples": [
+    {
+     "id": "8764",
+     "plugin": "experimentation-growth-engineering",
+     "skill": "ab-test-plumbing",
+     "url": "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/2291-experimentation-growth-engineering/8764-ab-test-plumbing"
+    },
+    {
+     "id": "12302",
+     "plugin": "posthog",
+     "skill": "diagnosing-experiment-results",
+     "url": "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills"
+    }
+   ],
+   "theme": "data-analysis",
+   "risk_notes": "Instruction-only; no scripts.",
+   "kosif_overlap_ids": [],
+   "stage": "extracted",
+   "verified_by": "b022-data-analysis-1.json"
+  }
+ },
+ {
+  "id": "ADATA-29",
+  "family": "atlas-data",
+  "domain": "data",
+  "name_ar": "فهرس البيانات ووسم PII والنسب",
+  "name_en": "Catalog, PII tagging and lineage setup",
+  "status": "documented",
+  "what": "يبني فهرس بيانات مع وسم الأعمدة الحساسة والنسب وتنقية العينات. — Build a maintained data catalog with sensitive-column tagging and lineage, and scrub samples.",
+  "when": "Governance request or sharing example data from a dbt output.",
+  "how": "1) Automated PII discovery and column-level tags. 2) Capture lineage from runs. 3) Certify canonical metrics and trusted tables. 4) For sample data, use non-production profile and scrub classified columns.",
+  "params": "",
+  "install": "",
+  "requires": [],
+  "license": "method paraphrased from Atlas skills under MIT; the skills keep their own licenses — see each folder's SOURCE.md",
+  "proof": [
+   "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/2268-data-governance-privacy/8644-catalog-and-lineage",
+   "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/1371-dataproduct-builder-dbt/3180-dataproduct-exampledata"
+  ],
+  "proof_scope": "url",
+  "styles": [],
+  "tags": [
+   "catalog",
+   "lineage",
+   "PII",
+   "حوكمة"
+  ],
+  "section": "هندسة البيانات — Data engineering & pipelines",
+  "source": "KOSIF Atlas mining 2026-10-20 (https://github.com/kosif199022-jpg/kosif-atlas): data-governance-privacy/catalog-and-lineage (#8644); dataproduct-builder-dbt/dataproduct-exampledata (#3180) · theme data-engineering · 2 supporting skills · verifier read: skills/2268-data-governance-privacy/8644-catalog-and-lineage, skills/1371-dataproduct-builder-dbt/3180-dataproduct-exampledata",
+  "atlas": {
+   "ids": [
+    "3180",
+    "8644"
+   ],
+   "examples": [
+    {
+     "id": "8644",
+     "plugin": "data-governance-privacy",
+     "skill": "catalog-and-lineage",
+     "url": "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/2268-data-governance-privacy/8644-catalog-and-lineage"
+    },
+    {
+     "id": "3180",
+     "plugin": "dataproduct-builder-dbt",
+     "skill": "dataproduct-exampledata",
+     "url": "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/1371-dataproduct-builder-dbt/3180-dataproduct-exampledata"
+    }
+   ],
+   "theme": "data-engineering",
+   "risk_notes": "Documentation; sampling touches real data.",
+   "kosif_overlap_ids": [],
+   "stage": "extracted",
+   "verified_by": "b024-data-engineering-1.json"
+  }
+ },
+ {
+  "id": "ADATA-30",
+  "family": "atlas-data",
+  "domain": "data",
+  "name_ar": "حارس مخاطر Delta والبث",
+  "name_en": "Delta and streaming foot-gun guard",
+  "status": "documented",
+  "what": "يمنع العمليات المدمرة على جداول البث ويعالج أعطال التزامن ونقاط التحقق. — Prevent destructive Delta operations on streamed tables and recover from concurrency or checkpoint failures.",
+  "when": "ConcurrentAppend errors, stream breaks after VACUUM, Auto Loader stops on new column, DLT full refresh.",
+  "how": "1) Check active streaming consumers before DROP, CREATE OR REPLACE or VACUUM. 2) Narrow MERGE predicates to clustering keys. 3) Keep VACUUM retention beyond checkpoint and time-travel needs. 4) Auto Loader: plan for schema evolution. 5) Confirm source replayability before DLT full refresh. 6) Hook fails open if consumers cannot be verified.",
+  "params": "",
+  "install": "",
+  "requires": [
+   "python3"
+  ],
+  "license": "method paraphrased from Atlas skills under MIT; the skills keep their own licenses — see each folder's SOURCE.md",
+  "proof": [
+   "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/1844-databricks-pack/5462-databricks-streaming-guardian",
+   "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/1844-databricks-pack/5460-databricks-cluster-forensics",
+   "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/2276-databricks-lakehouse-engineering/8688-design-medallion-lakehouse"
+  ],
+  "proof_scope": "url",
+  "styles": [],
+  "tags": [
+   "delta",
+   "streaming",
+   "hook",
+   "حماية"
+  ],
+  "section": "هندسة البيانات — Data engineering & pipelines",
+  "source": "KOSIF Atlas mining 2026-10-20 (https://github.com/kosif199022-jpg/kosif-atlas): databricks-pack/databricks-streaming-guardian (#5462); databricks-pack/databricks-cluster-forensics (#5460); databricks-lakehouse-engineering/design-medallion-lakehouse (#8688) · theme data-engineering · 3 supporting skills · verifier read: skills/1844-databricks-pack/5462-databricks-streaming-guardian, skills/1844-databricks-pack/5460-databricks-cluster-forensics, skills/2276-databricks-lakehouse-engineering/8688-design-medallion-lakehouse",
+  "atlas": {
+   "ids": [
+    "5460",
+    "5462",
+    "8688"
+   ],
+   "examples": [
+    {
+     "id": "5462",
+     "plugin": "databricks-pack",
+     "skill": "databricks-streaming-guardian",
+     "url": "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/1844-databricks-pack/5462-databricks-streaming-guardian"
+    },
+    {
+     "id": "5460",
+     "plugin": "databricks-pack",
+     "skill": "databricks-cluster-forensics",
+     "url": "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/1844-databricks-pack/5460-databricks-cluster-forensics"
+    },
+    {
+     "id": "8688",
+     "plugin": "databricks-lakehouse-engineering",
+     "skill": "design-medallion-lakehouse",
+     "url": "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/2276-databricks-lakehouse-engineering/8688-design-medallion-lakehouse"
+    }
+   ],
+   "theme": "data-engineering",
+   "risk_notes": "Ships PreToolUse hook plus py/sh scripts that inspect Databricks; not executed here.",
+   "kosif_overlap_ids": [],
+   "stage": "extracted",
+   "verified_by": "b024-data-engineering-1.json"
+  }
+ },
+ {
+  "id": "ADATA-31",
+  "family": "atlas-data",
+  "domain": "data",
+  "name_ar": "تشخيص فشل المزامنة وصحة المصادر",
+  "name_en": "Diagnose failing warehouse syncs and source health",
+  "status": "documented",
+  "what": "يفحص كل المصادر ويجد المزامنات المعطلة ويوصي بإجراء الإصلاح المناسب. — Audit all warehouse sources, find broken syncs and recommend the matching recovery action.",
+  "when": "A synced table is stale, missing or erroring.",
+  "how": "1) List all sources and schemas with status. 2) Classify errors: credentials, schema drift, wrong incremental field, rate limit. 3) Map each class to a recovery (reconnect, tune config, reload, resync). 4) Report degraded sources ranked by staleness. 5) Verify after the fix.",
+  "params": "",
+  "install": "",
+  "requires": [
+   "claude:tools"
+  ],
+  "license": "method paraphrased from Atlas skills under MIT; the skills keep their own licenses — see each folder's SOURCE.md",
+  "proof": [
+   "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/2957-posthog/12303-diagnosing-failed-warehouse-syncs",
+   "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/2957-posthog/12265-auditing-warehouse-source-health",
+   "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/2957-posthog/12413-tuning-incremental-sync-config"
+  ],
+  "proof_scope": "url",
+  "styles": [],
+  "tags": [
+   "diagnosis",
+   "warehouse",
+   "health",
+   "تشخيص"
+  ],
+  "section": "هندسة البيانات — Data engineering & pipelines",
+  "source": "KOSIF Atlas mining 2026-10-20 (https://github.com/kosif199022-jpg/kosif-atlas): posthog/diagnosing-failed-warehouse-syncs (#12303); posthog/auditing-warehouse-source-health (#12265); posthog/tuning-incremental-sync-config (#12413) · theme data-engineering · 3 supporting skills · verifier read: skills/2957-posthog/12303-diagnosing-failed-warehouse-syncs, skills/2957-posthog/12265-auditing-warehouse-source-health, skills/2957-posthog/12413-tuning-incremental-sync-config",
+  "atlas": {
+   "ids": [
+    "12265",
+    "12303",
+    "12413"
+   ],
+   "examples": [
+    {
+     "id": "12303",
+     "plugin": "posthog",
+     "skill": "diagnosing-failed-warehouse-syncs",
+     "url": "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/2957-posthog/12303-diagnosing-failed-warehouse-syncs"
+    },
+    {
+     "id": "12265",
+     "plugin": "posthog",
+     "skill": "auditing-warehouse-source-health",
+     "url": "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/2957-posthog/12265-auditing-warehouse-source-health"
+    },
+    {
+     "id": "12413",
+     "plugin": "posthog",
+     "skill": "tuning-incremental-sync-config",
+     "url": "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/2957-posthog/12413-tuning-incremental-sync-config"
+    }
+   ],
+   "theme": "data-engineering",
+   "risk_notes": "Read-heavy; recovery steps may write.",
+   "kosif_overlap_ids": [],
+   "stage": "extracted",
+   "verified_by": "b024-data-engineering-1.json"
+  }
+ },
+ {
+  "id": "ADATA-32",
+  "family": "atlas-data",
+  "domain": "data",
+  "name_ar": "هيكلة مشروع dbt بطبقات وCI",
+  "name_en": "Layered dbt project scaffold with CI",
+  "status": "documented",
+  "what": "يبني مشروع dbt بطبقات واضحة واختبارات وتوثيق وسير CI عند كل طلب دمج. — Scaffold a dbt project with sources, staging, intermediate and marts layers, tests, docs and a PR build workflow.",
+  "when": "Greenfield warehouse, or an ungoverned dbt project with no tests or marts reading raw.",
+  "how": "1) Layout: models/staging (one model per source table, cast/rename only), intermediate (private int_*), marts (fct_/dim_ BI contract), seeds, snapshots, macros. 2) Rules: staging uses source(); marts use ref() only; BI never reads int_*. 3) Add source freshness, generic tests (unique, not_null, relationships) plus singular tests. 4) Doc blocks for every model. 5) Separate build role and query role. 6) CI runs dbt build on PR; keep profiles.yml out of git, ship profiles.yml.example.",
+  "params": "warehouse target, source systems, env promotion (dev/prod)",
+  "install": "pip install dbt-core",
+  "requires": [
+   "python3"
+  ],
+  "license": "method paraphrased from Atlas skills under MIT; the skills keep their own licenses — see each folder's SOURCE.md",
+  "proof": [
+   "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/2270-data-platform/8659-dbt-project-scaffolding",
+   "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/2233-analytics-engineering/8485-dbt-modeling",
+   "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/2207-majestic-data/8249-dbt-development"
+  ],
+  "proof_scope": "url",
+  "styles": [],
+  "tags": [
+   "dbt",
+   "scaffold",
+   "نمذجة",
+   "CI"
+  ],
+  "section": "هندسة البيانات — Data engineering & pipelines",
+  "source": "KOSIF Atlas mining 2026-10-20 (https://github.com/kosif199022-jpg/kosif-atlas): data-platform/dbt-project-scaffolding (#8659); analytics-engineering/dbt-modeling (#8485); majestic-data/dbt-development (#8249) · theme data-engineering · 4 supporting skills · verifier read: skills/2270-data-platform/8659-dbt-project-scaffolding, skills/2233-analytics-engineering/8485-dbt-modeling, skills/2207-majestic-data/8249-dbt-development",
+  "atlas": {
+   "ids": [
+    "8249",
+    "8485",
+    "8659",
+    "13249"
+   ],
+   "examples": [
+    {
+     "id": "8659",
+     "plugin": "data-platform",
+     "skill": "dbt-project-scaffolding",
+     "url": "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/2270-data-platform/8659-dbt-project-scaffolding"
+    },
+    {
+     "id": "8485",
+     "plugin": "analytics-engineering",
+     "skill": "dbt-modeling",
+     "url": "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/2233-analytics-engineering/8485-dbt-modeling"
+    },
+    {
+     "id": "8249",
+     "plugin": "majestic-data",
+     "skill": "dbt-development",
+     "url": "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/2207-majestic-data/8249-dbt-development"
+    }
+   ],
+   "theme": "data-engineering",
+   "risk_notes": "Documentation only; the described CI and dbt runs execute code in the user's own project.",
+   "kosif_overlap_ids": [],
+   "stage": "extracted",
+   "verified_by": "b024-data-engineering-1.json"
+  }
+ },
+ {
+  "id": "ADATA-33",
+  "family": "atlas-data",
+  "domain": "data",
+  "name_ar": "تصميم ميدالية ومنهج الاستيعاب",
+  "name_en": "Medallion lakehouse and ingestion method choice",
+  "status": "documented",
+  "what": "يختار طبقات برونز وفضي وذهبي وطريقة الاستيعاب انطلاقاً من أهداف الاستعلام والحداثة. — Pick bronze/silver/gold layering and the ingestion method backward from query and freshness SLOs.",
+  "when": "Designing a lakehouse or choosing among mirroring, copy job, pipelines and dataflows.",
+  "how": "1) State queries and freshness SLO. 2) Decide what earns each layer. 3) Match method to source: mirroring, copy job, pipeline, dataflow, JDBC import. 4) Prefer managed Iceberg or Delta tables with compaction. 5) Document trade-offs and cost.",
+  "params": "",
+  "install": "",
+  "requires": [],
+  "license": "method paraphrased from Atlas skills under MIT/Apache-2.0; the skills keep their own licenses — see each folder's SOURCE.md",
+  "proof": [
+   "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/2276-databricks-lakehouse-engineering/8688-design-medallion-lakehouse",
+   "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/2337-microsoft-fabric/8978-fabric-ingestion-method-selection",
+   "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/366-aws-data-analytics/1348-ingesting-into-data-lake"
+  ],
+  "proof_scope": "url",
+  "styles": [],
+  "tags": [
+   "lakehouse",
+   "medallion",
+   "ingestion",
+   "بحيرة"
+  ],
+  "section": "هندسة البيانات — Data engineering & pipelines",
+  "source": "KOSIF Atlas mining 2026-10-20 (https://github.com/kosif199022-jpg/kosif-atlas): databricks-lakehouse-engineering/design-medallion-lakehouse (#8688); microsoft-fabric/fabric-ingestion-method-selection (#8978); aws-data-analytics/ingesting-into-data-lake (#1348) · theme data-engineering · 3 supporting skills · verifier read: skills/2276-databricks-lakehouse-engineering/8688-design-medallion-lakehouse, skills/2337-microsoft-fabric/8978-fabric-ingestion-method-selection, skills/366-aws-data-analytics/1348-ingesting-into-data-lake",
+  "atlas": {
+   "ids": [
+    "1348",
+    "8688",
+    "8978"
+   ],
+   "examples": [
+    {
+     "id": "8688",
+     "plugin": "databricks-lakehouse-engineering",
+     "skill": "design-medallion-lakehouse",
+     "url": "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/2276-databricks-lakehouse-engineering/8688-design-medallion-lakehouse"
+    },
+    {
+     "id": "8978",
+     "plugin": "microsoft-fabric",
+     "skill": "fabric-ingestion-method-selection",
+     "url": "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/2337-microsoft-fabric/8978-fabric-ingestion-method-selection"
+    },
+    {
+     "id": "1348",
+     "plugin": "aws-data-analytics",
+     "skill": "ingesting-into-data-lake",
+     "url": "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/366-aws-data-analytics/1348-ingesting-into-data-lake"
+    }
+   ],
+   "theme": "data-engineering",
+   "risk_notes": "Documentation only.",
+   "kosif_overlap_ids": [],
+   "stage": "extracted",
+   "verified_by": "b024-data-engineering-1.json"
+  }
+ },
+ {
+  "id": "ADATA-34",
+  "family": "atlas-data",
+  "domain": "data",
+  "name_ar": "عقد خط بيانات: الحبيبية والتكرار الآمن",
+  "name_en": "Pipeline contract: grain, idempotency, checkpoints",
+  "status": "documented",
+  "what": "يكتب عقد الخط ويختار استراتيجية التحميل قبل تنفيذ أي ETL أو ELT أو CDC. — Write a pipeline contract and pick a load strategy before implementing any ETL/ELT/CDC job.",
+  "when": "Designing a new batch or incremental load, or a replay/backfill requirement.",
+  "how": "1) Capture inputs: source/target grain, natural and dedup keys, volume, cadence, late-arriving and delete behaviour, backfill needs. 2) Contract: cursor, write behaviour, delete handling, validation boundary, publication condition, owner. 3) Strategy table: small stable -> full refresh with atomic swap; ordered cursor -> incremental with overlap + upsert; change log -> CDC; immutable events -> append+dedup; no change signal -> snapshot diff. 4) Never advance the checkpoint before durable publish and validation. 5) Add bad-record path and run metadata.",
+  "params": "",
+  "install": "",
+  "requires": [],
+  "license": "method paraphrased from Atlas skills under MIT; the skills keep their own licenses — see each folder's SOURCE.md",
+  "proof": [
+   "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/2207-majestic-data/8244-data-pipeline-design",
+   "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/438-change-data-capture/1467-cdc",
+   "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/2270-data-platform/8651-airbyte-cdk-authoring"
+  ],
+  "proof_scope": "url",
+  "styles": [],
+  "tags": [
+   "ETL",
+   "idempotency",
+   "CDC",
+   "تصميم"
+  ],
+  "section": "هندسة البيانات — Data engineering & pipelines",
+  "source": "KOSIF Atlas mining 2026-10-20 (https://github.com/kosif199022-jpg/kosif-atlas): majestic-data/data-pipeline-design (#8244); change-data-capture/cdc (#1467); data-platform/airbyte-cdk-authoring (#8651) · theme data-engineering · 4 supporting skills · verifier read: skills/2207-majestic-data/8244-data-pipeline-design, skills/438-change-data-capture/1467-cdc, skills/2270-data-platform/8651-airbyte-cdk-authoring",
+  "atlas": {
+   "ids": [
+    "1467",
+    "8244",
+    "8245",
+    "8651"
+   ],
+   "examples": [
+    {
+     "id": "8244",
+     "plugin": "majestic-data",
+     "skill": "data-pipeline-design",
+     "url": "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/2207-majestic-data/8244-data-pipeline-design"
+    },
+    {
+     "id": "1467",
+     "plugin": "change-data-capture",
+     "skill": "cdc",
+     "url": "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/438-change-data-capture/1467-cdc"
+    },
+    {
+     "id": "8651",
+     "plugin": "data-platform",
+     "skill": "airbyte-cdk-authoring",
+     "url": "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/2270-data-platform/8651-airbyte-cdk-authoring"
+    }
+   ],
+   "theme": "data-engineering",
+   "risk_notes": "Documentation only.",
+   "kosif_overlap_ids": [],
+   "stage": "extracted",
+   "verified_by": "b024-data-engineering-1.json"
+  }
+ },
+ {
+  "id": "ADATA-35",
+  "family": "atlas-data",
+  "domain": "data",
+  "name_ar": "ضبط Spark بالأدلة أولاً",
+  "name_en": "Spark and Databricks evidence-first tuning",
+  "status": "documented",
+  "what": "يشخص مهام Spark البطيئة من الواجهة وخطة الاستعلام ثم يطبق الإصلاح المناسب. — Diagnose slow or spilling Spark jobs from Spark UI and query plan, then apply the matching fix and cost cut.",
+  "when": "A job is slow, spills, OOMs or the DBU bill is high.",
+  "how": "1) Read stage timeline, task-time skew, shuffle spill, GC, plan. 2) Map: one task far longer -> AQE skew join or salting; small dim -> broadcast; tiny files -> OPTIMIZE; driver OOM -> no collect(). 3) Prefer AQE and built-ins over conf knobs; replace Python UDFs. 4) Re-run and confirm the metric moved. 5) Cost: auto-terminate, jobs compute, spot workers, right-size warehouses.",
+  "params": "",
+  "install": "",
+  "requires": [],
+  "license": "method paraphrased from Atlas skills under MIT; the skills keep their own licenses — see each folder's SOURCE.md",
+  "proof": [
+   "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/2276-databricks-lakehouse-engineering/8689-tune-spark-and-costs",
+   "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/2765-oracle-ai-data-platform-workbench-engine/11006-aidp-spark-optimization",
+   "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/1844-databricks-pack/5460-databricks-cluster-forensics"
+  ],
+  "proof_scope": "url",
+  "styles": [],
+  "tags": [
+   "spark",
+   "databricks",
+   "performance",
+   "أداء"
+  ],
+  "section": "هندسة البيانات — Data engineering & pipelines",
+  "source": "KOSIF Atlas mining 2026-10-20 (https://github.com/kosif199022-jpg/kosif-atlas): databricks-lakehouse-engineering/tune-spark-and-costs (#8689); oracle-ai-data-platform-workbench-engineer-agent/aidp-spark-optimization (#11006); databricks-pack/databricks-cluster-forensics (#5460) · theme data-engineering · 4 supporting skills · verifier read: skills/2276-databricks-lakehouse-engineering/8689-tune-spark-and-costs, skills/2765-oracle-ai-data-platform-workbench-engine/11006-aidp-spark-optimization, skills/1844-databricks-pack/5460-databricks-cluster-forensics",
+  "atlas": {
+   "ids": [
+    "5460",
+    "8688",
+    "8689",
+    "11006"
+   ],
+   "examples": [
+    {
+     "id": "8689",
+     "plugin": "databricks-lakehouse-engineering",
+     "skill": "tune-spark-and-costs",
+     "url": "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/2276-databricks-lakehouse-engineering/8689-tune-spark-and-costs"
+    },
+    {
+     "id": "11006",
+     "plugin": "oracle-ai-data-platform-workbench-engineer-agent",
+     "skill": "aidp-spark-optimization",
+     "url": "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/2765-oracle-ai-data-platform-workbench-engine/11006-aidp-spark-optimization"
+    },
+    {
+     "id": "5460",
+     "plugin": "databricks-pack",
+     "skill": "databricks-cluster-forensics",
+     "url": "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/1844-databricks-pack/5460-databricks-cluster-forensics"
+    }
+   ],
+   "theme": "data-engineering",
+   "risk_notes": "Documentation; 5460 ships Python/shell scripts not executed here.",
+   "kosif_overlap_ids": [],
+   "stage": "extracted",
+   "verified_by": "b024-data-engineering-1.json"
+  }
+ },
+ {
+  "id": "ADATA-36",
+  "family": "atlas-data",
+  "domain": "data",
+  "name_ar": "خطة اختبار لخطوط ETL وdbt",
+  "name_en": "Test plan for ETL and dbt pipelines",
+  "status": "documented",
+  "what": "يصمم بيانات اختبار وفحوصاً للتحويلات والعقود وإعادة التشغيل والمطابقة. — Design fixtures and tests for transforms, contracts, incrementality, replay and reconciliation.",
+  "when": "Verifying a pipeline or dbt model change before merge.",
+  "how": "1) Tiny deterministic fixtures covering duplicates, nulls, late rows, deletes. 2) Contract tests on schema and keys. 3) Run the incremental model twice and on a replay; results must be identical. 4) Reconcile source vs target counts and sums. 5) Failure-path tests for bad records and partial failure. 6) Run in a non-production profile.",
+  "params": "",
+  "install": "",
+  "requires": [
+   "python3"
+  ],
+  "license": "method paraphrased from Atlas skills under MIT; the skills keep their own licenses — see each folder's SOURCE.md",
+  "proof": [
+   "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/2207-majestic-data/8245-data-pipeline-testing",
+   "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/2207-majestic-data/8249-dbt-development",
+   "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/3081-data-engineering/13249-dbt-transformation-patterns"
+  ],
+  "proof_scope": "url",
+  "styles": [],
+  "tags": [
+   "testing",
+   "dbt",
+   "fixtures",
+   "اختبار"
+  ],
+  "section": "هندسة البيانات — Data engineering & pipelines",
+  "source": "KOSIF Atlas mining 2026-10-20 (https://github.com/kosif199022-jpg/kosif-atlas): majestic-data/data-pipeline-testing (#8245); majestic-data/dbt-development (#8249); data-engineering/dbt-transformation-patterns (#13249) · theme data-engineering · 4 supporting skills · verifier read: skills/2207-majestic-data/8245-data-pipeline-testing, skills/2207-majestic-data/8249-dbt-development, skills/3081-data-engineering/13249-dbt-transformation-patterns",
+  "atlas": {
+   "ids": [
+    "8245",
+    "8249",
+    "8659",
+    "13249"
+   ],
+   "examples": [
+    {
+     "id": "8245",
+     "plugin": "majestic-data",
+     "skill": "data-pipeline-testing",
+     "url": "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/2207-majestic-data/8245-data-pipeline-testing"
+    },
+    {
+     "id": "8249",
+     "plugin": "majestic-data",
+     "skill": "dbt-development",
+     "url": "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/2207-majestic-data/8249-dbt-development"
+    },
+    {
+     "id": "13249",
+     "plugin": "data-engineering",
+     "skill": "dbt-transformation-patterns",
+     "url": "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/3081-data-engineering/13249-dbt-transformation-patterns"
+    }
+   ],
+   "theme": "data-engineering",
+   "risk_notes": "Documentation only.",
+   "kosif_overlap_ids": [],
+   "stage": "extracted",
+   "verified_by": "b024-data-engineering-1.json"
+  }
+ },
+ {
+  "id": "ADATA-37",
+  "family": "atlas-data",
+  "domain": "data",
+  "name_ar": "ضبط نوع مزامنة المستودع والحقل التزايدي",
+  "name_en": "Tune warehouse sync type and incremental field",
+  "status": "documented",
+  "what": "يغير نوع مزامنة جدول المستودع بين كامل وتزايدي وCDC بأمان. — Change a warehouse table sync between full refresh, incremental, append, CDC or webhook safely.",
+  "when": "A sync is too slow, too frequent, or its incremental column or primary key is wrong.",
+  "how": "1) Read current config first; do not tune a running schema. 2) Refresh candidate incremental fields from the source. 3) Patch sync_type, incremental_field (matching real type), primary_key_columns (required for CDC), cdc_table_mode, sync_frequency. 4) Run CDC prerequisite check for Postgres. 5) Trigger reload; use resync only when old data is invalid. 6) Confirm last_synced_at advanced.",
+  "params": "",
+  "install": "",
+  "requires": [
+   "claude:tools"
+  ],
+  "license": "method paraphrased from Atlas skills under MIT; the skills keep their own licenses — see each folder's SOURCE.md",
+  "proof": [
+   "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/2957-posthog/12413-tuning-incremental-sync-config",
+   "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/2957-posthog/12303-diagnosing-failed-warehouse-syncs",
+   "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/2957-posthog/12265-auditing-warehouse-source-health"
+  ],
+  "proof_scope": "url",
+  "styles": [],
+  "tags": [
+   "sync",
+   "incremental",
+   "CDC",
+   "مزامنة"
+  ],
+  "section": "هندسة البيانات — Data engineering & pipelines",
+  "source": "KOSIF Atlas mining 2026-10-20 (https://github.com/kosif199022-jpg/kosif-atlas): posthog/tuning-incremental-sync-config (#12413); posthog/diagnosing-failed-warehouse-syncs (#12303); posthog/auditing-warehouse-source-health (#12265) · theme data-engineering · 3 supporting skills · verifier read: skills/2957-posthog/12413-tuning-incremental-sync-config, skills/2957-posthog/12303-diagnosing-failed-warehouse-syncs, skills/2957-posthog/12265-auditing-warehouse-source-health",
+  "atlas": {
+   "ids": [
+    "12265",
+    "12303",
+    "12413"
+   ],
+   "examples": [
+    {
+     "id": "12413",
+     "plugin": "posthog",
+     "skill": "tuning-incremental-sync-config",
+     "url": "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/2957-posthog/12413-tuning-incremental-sync-config"
+    },
+    {
+     "id": "12303",
+     "plugin": "posthog",
+     "skill": "diagnosing-failed-warehouse-syncs",
+     "url": "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/2957-posthog/12303-diagnosing-failed-warehouse-syncs"
+    },
+    {
+     "id": "12265",
+     "plugin": "posthog",
+     "skill": "auditing-warehouse-source-health",
+     "url": "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/2957-posthog/12265-auditing-warehouse-source-health"
+    }
+   ],
+   "theme": "data-engineering",
+   "risk_notes": "Uses PostHog MCP tools that write config; resync and delete-data are destructive.",
+   "kosif_overlap_ids": [],
+   "stage": "extracted",
+   "verified_by": "b024-data-engineering-1.json"
+  }
+ },
+ {
+  "id": "ADATA-38",
+  "family": "atlas-data",
+  "domain": "data",
+  "name_ar": "مراجعة مخطط واستعلامات ClickHouse",
+  "name_en": "ClickHouse schema and query rule review",
+  "status": "documented",
+  "what": "راجع مخططات واستعلامات ClickHouse وفق قواعد محددة مع استكشاف آمن. — Review ClickHouse schemas/queries against a rule set (ORDER BY, partitioning, inserts) and run safe agent discovery.",
+  "when": "CREATE TABLE review, slow analytical query, ingest design.",
+  "how": "1) Connect via MCP or CLI. 2) Discover databases, tables, columns, sort keys, skip indexes, sample rows, EXPLAIN. 3) Check rules per category (schema, query, insert, agent) and cite rule names. 4) Always LIMIT and set timeouts; narrow filters on memory errors. 5) Design MergeTree ORDER BY, TTL, batch inserts; monitor with system tables.",
+  "params": "ddl or query",
+  "install": "",
+  "requires": [],
+  "license": "method paraphrased from Atlas skills under Apache-2.0 / MIT; the skills keep their own licenses — see each folder's SOURCE.md",
+  "proof": [
+   "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/1118-clickhouse/2556-clickhouse-best-practices"
+  ],
+  "proof_scope": "url",
+  "styles": [],
+  "tags": [
+   "clickhouse",
+   "olap",
+   "مراجعة"
+  ],
+  "section": "قواعد البيانات — Databases & storage",
+  "source": "KOSIF Atlas mining 2026-10-20 (https://github.com/kosif199022-jpg/kosif-atlas): clickhouse/clickhouse-best-practices (#2556) · theme databases · 7 supporting skills · verifier read: skills/1118-clickhouse/2556-clickhouse-best-practices, , ",
+  "atlas": {
+   "ids": [
+    "2547",
+    "2556",
+    "5318",
+    "5319",
+    "5322",
+    "5326",
+    "5332"
+   ],
+   "examples": [
+    {
+     "id": "2556",
+     "plugin": "clickhouse",
+     "skill": "clickhouse-best-practices",
+     "url": "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/1118-clickhouse/2556-clickhouse-best-practices"
+    }
+   ],
+   "theme": "databases",
+   "risk_notes": "Some skills ship JS; clickhousectl installs/runs servers.",
+   "kosif_overlap_ids": [],
+   "stage": "extracted",
+   "verified_by": "b025-databases-1.json"
+  }
+ },
+ {
+  "id": "ADATA-39",
+  "family": "atlas-data",
+  "domain": "data",
+  "name_ar": "استعلام DuckDB على ملفات محلية أو S3",
+  "name_en": "DuckDB attach, query and read local or S3 data",
+  "status": "documented",
+  "what": "اربط ملف DuckDB واستكشف المخطط واستعلم عن ملفات CSV وParquet وS3 بـ SQL. — Attach a DuckDB file, explore schema, persist a state.sql, and query CSV/Parquet/JSON/SQLite or S3 files with SQL.",
+  "when": "Ad-hoc analytics on files without a server.",
+  "how": "1) Resolve absolute path, check file exists. 2) command -v duckdb; validate with PRAGMA version. 3) List duckdb_tables(), columns, row counts. 4) Write state.sql and reuse via duckdb -init state.sql -c query. 5) read_csv/read_parquet/httpfs for files and S3/R2/GCS; spatial extension for geo. 6) chDB for ClickHouse-flavoured local SQL.",
+  "params": "db path, SQL",
+  "install": "pip install duckdb",
+  "requires": [
+   "pip:duckdb"
+  ],
+  "license": "method paraphrased from Atlas skills under MIT / Apache-2.0; the skills keep their own licenses — see each folder's SOURCE.md",
+  "proof": [
+   "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/1366-duckdb-skills/3103-attach-db"
+  ],
+  "proof_scope": "url",
+  "styles": [],
+  "tags": [
+   "duckdb",
+   "parquet",
+   "sql",
+   "استعلام"
+  ],
+  "section": "قواعد البيانات — Databases & storage",
+  "source": "KOSIF Atlas mining 2026-10-20 (https://github.com/kosif199022-jpg/kosif-atlas): duckdb-skills/attach-db (#3103) · theme databases · 7 supporting skills · verifier read: skills/1366-duckdb-skills/3103-attach-db, , ",
+  "atlas": {
+   "ids": [
+    "2546",
+    "2907",
+    "3103",
+    "3107",
+    "3108",
+    "3110",
+    "3111"
+   ],
+   "examples": [
+    {
+     "id": "3103",
+     "plugin": "duckdb-skills",
+     "skill": "attach-db",
+     "url": "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/1366-duckdb-skills/3103-attach-db"
+    }
+   ],
+   "theme": "databases",
+   "risk_notes": "Runs duckdb CLI, writes state file; S3 queries use network and credentials.",
+   "kosif_overlap_ids": [],
+   "stage": "extracted",
+   "verified_by": "b025-databases-1.json"
+  }
+ },
+ {
+  "id": "ADATA-40",
+  "family": "atlas-data",
+  "domain": "data",
+  "name_ar": "ضبط استعلامات SQL والفهارس بالأدلة",
+  "name_en": "Evidence-first SQL query and index tuning",
+  "status": "documented",
+  "what": "اقرأ خطة التنفيذ واختر نوع الفهرس المناسب وأعد كتابة الاستعلام لتحسين الأداء بقياس فعلي. — Read EXPLAIN ANALYZE output, pick the right index type and rewrite the query to be sargable, yielding a measured speedup.",
+  "when": "Slow query, slow endpoint, N+1 suspicion, index design question.",
+  "how": "1) Capture EXPLAIN (ANALYZE, BUFFERS); note seq scans, bad row estimates, costly sorts. 2) Map predicate to index: equality/range B-tree, subset partial, multi-column composite by selectivity, INCLUDE covering, jsonb/text GIN. 3) Rewrite: no function on indexed column, no SELECT *, batch instead of loop, join/IN for N+1. 4) Refresh stats (ANALYZE/autovacuum) before adding more indexes. 5) Re-run plan and compare.",
+  "params": "query text, plan output, dialect",
+  "install": "",
+  "requires": [
+   "python3"
+  ],
+  "license": "method paraphrased from Atlas skills under MIT / Apache-2.0; the skills keep their own licenses — see each folder's SOURCE.md",
+  "proof": [
+   "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/2274-database-engineering/8681-query-and-index-tuning"
+  ],
+  "proof_scope": "url",
+  "styles": [],
+  "tags": [
+   "sql",
+   "explain",
+   "index",
+   "فهارس",
+   "أداء"
+  ],
+  "section": "قواعد البيانات — Databases & storage",
+  "source": "KOSIF Atlas mining 2026-10-20 (https://github.com/kosif199022-jpg/kosif-atlas): database-engineering/query-and-index-tuning (#8681) · theme databases · 9 supporting skills · verifier read: skills/2274-database-engineering/8681-query-and-index-tuning, , ",
+  "atlas": {
+   "ids": [
+    "2934",
+    "4697",
+    "8032",
+    "8037",
+    "8039",
+    "8043",
+    "8681",
+    "9823",
+    "14192"
+   ],
+   "examples": [
+    {
+     "id": "8681",
+     "plugin": "database-engineering",
+     "skill": "query-and-index-tuning",
+     "url": "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/2274-database-engineering/8681-query-and-index-tuning"
+    }
+   ],
+   "theme": "databases",
+   "risk_notes": "Read-only guidance; one plugin ships a python script (diagnose-queries) that may connect to a DB.",
+   "kosif_overlap_ids": [],
+   "stage": "extracted",
+   "verified_by": "b025-databases-1.json"
+  }
+ },
+ {
+  "id": "ADATA-41",
+  "family": "atlas-data",
+  "domain": "data",
+  "name_ar": "إدارة Milvus وZilliz عبر الأوامر",
+  "name_en": "Milvus and Zilliz admin via CLI",
+  "status": "documented",
+  "what": "يدير قواعد المتجهات والفهارس والمستخدمين والأدوار. — Manage vector databases, indexes, users, roles and projects.",
+  "when": "vector DB admin",
+  "how": "1) Create/list/drop databases. 2) Create indexes on collections. 3) Manage users, roles, privileges. 4) Cloud ACL and projects. Confirm drops.",
+  "params": "cluster",
+  "install": "",
+  "requires": [
+   "network"
+  ],
+  "license": "method paraphrased from Atlas skills under Apache-2.0; the skills keep their own licenses — see each folder's SOURCE.md",
+  "proof": [
+   "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/3616-zilliz/14557-index",
+   "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/3616-zilliz/14567-user-role"
+  ],
+  "proof_scope": "url",
+  "styles": [],
+  "tags": [
+   "milvus",
+   "vector",
+   "متجهات"
+  ],
+  "section": "قواعد البيانات — Databases & storage",
+  "source": "KOSIF Atlas mining 2026-10-20 (https://github.com/kosif199022-jpg/kosif-atlas): zilliz/index (#14557); zilliz/user-role (#14567) · theme databases · 5 supporting skills · verifier read: skills/3616-zilliz/14557-index, skills/3616-zilliz/14567-user-role",
+  "atlas": {
+   "ids": [
+    "14547",
+    "14553",
+    "14557",
+    "14563",
+    "14567"
+   ],
+   "examples": [
+    {
+     "id": "14557",
+     "plugin": "zilliz",
+     "skill": "index",
+     "url": "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/3616-zilliz/14557-index"
+    },
+    {
+     "id": "14567",
+     "plugin": "zilliz",
+     "skill": "user-role",
+     "url": "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/3616-zilliz/14567-user-role"
+    }
+   ],
+   "theme": "databases",
+   "risk_notes": "Cloud API calls; drops destructive.",
+   "kosif_overlap_ids": [],
+   "stage": "extracted",
+   "verified_by": "b026-databases-2.json"
+  }
+ },
+ {
+  "id": "ADATA-42",
+  "family": "atlas-data",
+  "domain": "data",
+  "name_ar": "من اللغة الطبيعية إلى استعلام MongoDB",
+  "name_en": "Natural-language to MongoDB query and schema design",
+  "status": "documented",
+  "what": "اجلب الفهارس والمخطط وعينات ثم ولّد استعلام find أو aggregation للقراءة فقط. — Fetch indexes, schema and samples, validate fields, then emit a read-only find or aggregation pipeline; advise schema patterns.",
+  "when": "MongoDB query writing, optimization, modeling.",
+  "how": "1) list DBs/collections. 2) collection-indexes, collection-schema (sampleSize 50), find limit 4. 3) Validate every field name. 4) Prefer find; use aggregation only for grouping or multi-stage. 5) Check query uses an index; apply embed-vs-reference schema patterns; tune connection pools/timeouts.",
+  "params": "db, collection, request",
+  "install": "",
+  "requires": [],
+  "license": "method paraphrased from Atlas skills under Apache-2.0; the skills keep their own licenses — see each folder's SOURCE.md",
+  "proof": [
+   "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/2540-mongodb/9854-mongodb-natural-language-querying"
+  ],
+  "proof_scope": "url",
+  "styles": [],
+  "tags": [
+   "mongodb",
+   "nosql",
+   "aggregation",
+   "استعلام"
+  ],
+  "section": "قواعد البيانات — Databases & storage",
+  "source": "KOSIF Atlas mining 2026-10-20 (https://github.com/kosif199022-jpg/kosif-atlas): mongodb/mongodb-natural-language-querying (#9854) · theme databases · 6 supporting skills · verifier read: skills/2540-mongodb/9854-mongodb-natural-language-querying, , ",
+  "atlas": {
+   "ids": [
+    "1692",
+    "4707",
+    "9852",
+    "9854",
+    "9855",
+    "9856"
+   ],
+   "examples": [
+    {
+     "id": "9854",
+     "plugin": "mongodb",
+     "skill": "mongodb-natural-language-querying",
+     "url": "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/2540-mongodb/9854-mongodb-natural-language-querying"
+    }
+   ],
+   "theme": "databases",
+   "risk_notes": "Needs MongoDB MCP server; read-only by design.",
+   "kosif_overlap_ids": [],
+   "stage": "extracted",
+   "verified_by": "b025-databases-1.json"
+  }
+ },
+ {
+  "id": "ADATA-43",
+  "family": "atlas-data",
+  "domain": "data",
+  "name_ar": "تشخيص استعلامات Postgres البطيئة بـ EXPLAIN",
+  "name_en": "Postgres slow-query diagnosis with EXPLAIN",
+  "status": "documented",
+  "what": "يحدد الاستعلامات الأبطأ ويقرأ الخطة الفعلية ويربط الأعراض بالحلول. — Find top time-consuming queries, read the real plan, and map plan symptoms to fixes.",
+  "when": "slow query, seq scan, missing index, vacuum bloat, lock/deadlock",
+  "how": "1) Rank pg_stat_statements by total_exec_time. 2) EXPLAIN (ANALYZE, BUFFERS) the culprit. 3) Compare estimated vs actual rows; large gap means ANALYZE the table. 4) Seq Scan on big table or Nested Loop: add index; Sort to disk: raise work_mem; heavy Filter: partial index. 5) Build with CREATE INDEX CONCURRENTLY; list idx_scan=0 indexes only after a full usage cycle. 6) Check n_dead_tup and autovacuum; VACUUM FULL last resort.",
+  "params": "connection string, query text",
+  "install": "",
+  "requires": [
+   "claude:tools"
+  ],
+  "license": "method paraphrased from Atlas skills under Apache-2.0 / MIT; the skills keep their own licenses — see each folder's SOURCE.md",
+  "proof": [
+   "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/2965-pwdev-devops/12480-postgres-dba",
+   "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/2939-supabase/12194-supabase-postgres-best-practices"
+  ],
+  "proof_scope": "url",
+  "styles": [],
+  "tags": [
+   "postgres",
+   "explain",
+   "بطء الاستعلام",
+   "indexing"
+  ],
+  "section": "قواعد البيانات — Databases & storage",
+  "source": "KOSIF Atlas mining 2026-10-20 (https://github.com/kosif199022-jpg/kosif-atlas): pwdev-devops/postgres-dba (#12480); supabase/supabase-postgres-best-practices (#12194) · theme databases · 5 supporting skills · verifier read: skills/2965-pwdev-devops/12480-postgres-dba, skills/2939-supabase/12194-supabase-postgres-best-practices",
+  "atlas": {
+   "ids": [
+    "1757",
+    "4709",
+    "6862",
+    "12194",
+    "12480"
+   ],
+   "examples": [
+    {
+     "id": "12480",
+     "plugin": "pwdev-devops",
+     "skill": "postgres-dba",
+     "url": "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/2965-pwdev-devops/12480-postgres-dba"
+    },
+    {
+     "id": "12194",
+     "plugin": "supabase",
+     "skill": "supabase-postgres-best-practices",
+     "url": "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/2939-supabase/12194-supabase-postgres-best-practices"
+    }
+   ],
+   "theme": "databases",
+   "risk_notes": "Reference only; advice includes DDL that locks tables, needs confirmation gate.",
+   "kosif_overlap_ids": [],
+   "stage": "extracted",
+   "verified_by": "b026-databases-2.json"
+  }
+ },
+ {
+  "id": "ADATA-44",
+  "family": "atlas-data",
+  "domain": "data",
+  "name_ar": "نمط الجداول الزمنية بوقت النظام",
+  "name_en": "System-time temporal table pattern",
+  "status": "documented",
+  "what": "يؤرشف الصفوف بإضافة فقط مع system_from وsystem_to وقيمة مستقبلية. — Version rows append-only with system_from/system_to and a far-future sentinel.",
+  "when": "audit history, rollback, sync/merge",
+  "how": "1) Columns system_from, system_to NOT NULL, sentinel 9999-12-31 23:59:59. 2) PK (id, system_to); index (id, system_from). 3) Update = phase out old row, insert new with contiguous timestamps. 4) Skip when incoming equals current. 5) Rollback by phasing in prior version. 6) SQLite: recreate table to change PK.",
+  "params": "table",
+  "install": "",
+  "requires": [
+   "python3"
+  ],
+  "license": "method paraphrased from Atlas skills under Apache-2.0; the skills keep their own licenses — see each folder's SOURCE.md",
+  "proof": [
+   "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/2559-temporal-data/9928-temporal-data"
+  ],
+  "proof_scope": "url",
+  "styles": [],
+  "tags": [
+   "temporal",
+   "versioning",
+   "سجل تاريخي"
+  ],
+  "section": "قواعد البيانات — Databases & storage",
+  "source": "KOSIF Atlas mining 2026-10-20 (https://github.com/kosif199022-jpg/kosif-atlas): temporal-data/temporal-data (#9928) · theme databases · 1 supporting skills · verifier read: skills/2559-temporal-data/9928-temporal-data",
+  "atlas": {
+   "ids": [
+    "9928"
+   ],
+   "examples": [
+    {
+     "id": "9928",
+     "plugin": "temporal-data",
+     "skill": "temporal-data",
+     "url": "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/2559-temporal-data/9928-temporal-data"
+    }
+   ],
+   "theme": "databases",
+   "risk_notes": "Reference only.",
+   "kosif_overlap_ids": [],
+   "stage": "extracted",
+   "verified_by": "b026-databases-2.json"
+  }
+ },
+ {
+  "id": "ADATA-45",
+  "family": "atlas-data",
+  "domain": "data",
+  "name_ar": "سجل تدقيق للتغييرات في قاعدة البيانات",
+  "name_en": "Trigger-based database audit trail",
+  "status": "documented",
+  "what": "أنشئ جدول تدقيق ومشغلات تسجل القيم القديمة والجديدة والمستخدم والوقت. — Create an audit_log table plus triggers capturing old/new JSONB values, actor and timestamp for compliance.",
+  "when": "GDPR/HIPAA/SOX change tracking.",
+  "how": "1) Choose tables (PII, financial, access control) and operations. 2) Create audit_log(table_name, record_id, action, old_values JSONB, new_values JSONB, changed_by, changed_at, client_ip). 3) Generic trigger function per table. 4) Alternatives: app-level, CDC, native logs. 5) Plan 10-30 percent yearly storage, separate tablespace, retention/archival.",
+  "params": "tables, ops, retention",
+  "install": "",
+  "requires": [],
+  "license": "method paraphrased from Atlas skills under MIT; the skills keep their own licenses — see each folder's SOURCE.md",
+  "proof": [
+   "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/1685-database-audit-logger/4689-implementing-database-audit-logging"
+  ],
+  "proof_scope": "url",
+  "styles": [],
+  "tags": [
+   "audit",
+   "trigger",
+   "compliance",
+   "تدقيق"
+  ],
+  "section": "قواعد البيانات — Databases & storage",
+  "source": "KOSIF Atlas mining 2026-10-20 (https://github.com/kosif199022-jpg/kosif-atlas): database-audit-logger/implementing-database-audit-logging (#4689) · theme databases · 4 supporting skills · verifier read: skills/1685-database-audit-logger/4689-implementing-database-audit-logging, ",
+  "atlas": {
+   "ids": [
+    "4686",
+    "4687",
+    "4688",
+    "4689"
+   ],
+   "examples": [
+    {
+     "id": "4689",
+     "plugin": "database-audit-logger",
+     "skill": "implementing-database-audit-logging",
+     "url": "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/1685-database-audit-logger/4689-implementing-database-audit-logging"
+    }
+   ],
+   "theme": "databases",
+   "risk_notes": "Has py/sh helpers; DDL needs CREATE TRIGGER rights.",
+   "kosif_overlap_ids": [],
+   "stage": "extracted",
+   "verified_by": "b025-databases-1.json"
+  }
+ },
+ {
+  "id": "ADATA-46",
+  "family": "atlas-data",
+  "domain": "data",
+  "name_ar": "تدقيق خط الاسترجاع على سبعة محاور",
+  "name_en": "Seven-axis retrieval pipeline audit",
+  "status": "documented",
+  "what": "تدقيق خط RAG رقمياً عبر مجموعة التقييم والتقطيع وهندسة التضمين واسترجاع ANN والدمج وإعادة الترتيب. — Audit a RAG or vector index numerically across eval set, chunking, embedding geometry, ANN recall, fusion and reranking.",
+  "when": "Retrieval returns wrong or missing context, or before launching a RAG system.",
+  "how": "1) Check a labeled query set exists (else bootstrap; that is finding #1). 2) Chunking: size sweep, truncation beyond embedding context, dedup. 3) Geometry: anisotropy, effective rank, hubness, normalization. 4) ANN recall vs brute force, with production filters, tune ef/nprobe. 5) Composition: add sparse leg for exact-match corpora. 6) Fusion: use RRF, not raw score sums. 7) Reranker: check first-stage headroom and eval-gate lift. Rank findings with unretrievable docs first.",
+  "params": "embedding model; index params; labeled queries",
+  "install": "",
+  "requires": [
+   "pip:numpy"
+  ],
+  "license": "method paraphrased from Atlas skills under MIT; the skills keep their own licenses — see each folder's SOURCE.md",
+  "proof": [
+   "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/2530-retrieval-review/9827-retrieval-review"
+  ],
+  "proof_scope": "url",
+  "styles": [],
+  "tags": [
+   "rag-audit",
+   "recall",
+   "vector-index",
+   "تدقيق"
+  ],
+  "section": "هندسة النماذج اللغوية — LLM & AI engineering",
+  "source": "KOSIF Atlas mining 2026-10-20 (https://github.com/kosif199022-jpg/kosif-atlas): retrieval-review/retrieval-review (#9827) · theme ai-llm-engineering · 4 supporting skills · verifier read: skills/2530-retrieval-review/9827-retrieval-review, , ",
+  "atlas": {
+   "ids": [
+    "722",
+    "9827",
+    "13285",
+    "14568"
+   ],
+   "examples": [
+    {
+     "id": "9827",
+     "plugin": "retrieval-review",
+     "skill": "retrieval-review",
+     "url": "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/2530-retrieval-review/9827-retrieval-review"
+    }
+   ],
+   "theme": "ai-llm-engineering",
+   "risk_notes": "none; may suggest running metrics on user data",
+   "kosif_overlap_ids": [],
+   "stage": "extracted",
+   "verified_by": "b008-ai-llm-engineering-2.json"
+  }
+ },
+ {
+  "id": "ADATA-47",
+  "family": "atlas-data",
+  "domain": "data",
+  "name_ar": "بوابة تسوية الحسابات قبل التقارير",
+  "name_en": "Account reconciliation gate before reporting",
+  "status": "documented",
+  "what": "مطابقة كل حساب بمصدر مستقل وتسوية البنود قبل إصدار القوائم. — Tie each bank and balance-sheet account to an independent source and clear reconciling items before statements ship.",
+  "when": "Bank rec, GL-to-subledger, intercompany rec or month-end close.",
+  "how": "1) List accounts needing tie-out. 2) Match each to statement or subledger and investigate variances. 3) Classify reconciling items (outstanding checks, deposits in transit, timing). 4) Block reporting until reconciled; output a status.",
+  "params": "GL balances, statements",
+  "install": "",
+  "requires": [
+   "pip:pandas"
+  ],
+  "license": "method paraphrased from Atlas skills under MIT/Apache-2.0; the skills keep their own licenses — see each folder's SOURCE.md",
+  "proof": [
+   "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/2228-accounting-bookkeeping/8461-reconcile-accounts",
+   "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/321-finance/975-reconciliation"
+  ],
+  "proof_scope": "url",
+  "styles": [],
+  "tags": [
+   "reconciliation",
+   "accounting",
+   "close",
+   "تسوية"
+  ],
+  "section": "القطاعات المنظّمة — Regulated industries & domain expertise",
+  "source": "KOSIF Atlas mining 2026-10-20 (https://github.com/kosif199022-jpg/kosif-atlas): accounting-bookkeeping/reconcile-accounts (#8461); finance/reconciliation (#975) · theme compliance-industry · 2 supporting skills · verifier read: skills/2228-accounting-bookkeeping/8461-reconcile-accounts, skills/321-finance/975-reconciliation",
+  "atlas": {
+   "ids": [
+    "975",
+    "8461"
+   ],
+   "examples": [
+    {
+     "id": "8461",
+     "plugin": "accounting-bookkeeping",
+     "skill": "reconcile-accounts",
+     "url": "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/2228-accounting-bookkeeping/8461-reconcile-accounts"
+    },
+    {
+     "id": "975",
+     "plugin": "finance",
+     "skill": "reconciliation",
+     "url": "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/321-finance/975-reconciliation"
+    }
+   ],
+   "theme": "compliance-industry",
+   "risk_notes": "Text only.",
+   "kosif_overlap_ids": [],
+   "stage": "extracted",
+   "verified_by": "b021-compliance-industry-1.json"
+  }
+ }
+]

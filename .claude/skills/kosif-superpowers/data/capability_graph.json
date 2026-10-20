@@ -15,7 +15,7 @@
    "id": "root",
    "kind": "root",
    "label": "KOSIF Superpowers",
-   "count": 4751
+   "count": 5125
   },
   {
    "id": "dom:motion",
@@ -448,6 +448,244 @@
    "label": "scripts/anchor_gate.py"
   },
   {
+   "id": "fam:atlas-build",
+   "kind": "family",
+   "label": "Atlas: apps, UI & integrations",
+   "ar": "أطلس: التطبيقات والواجهات والتكاملات",
+   "prefix": "ABUILD",
+   "count": 30,
+   "proven": 0,
+   "status": {
+    "documented": 30
+   }
+  },
+  {
+   "id": "req:network",
+   "kind": "requirement",
+   "label": "network",
+   "ar": "اتصال بالشبكة للتثبيت والتحميل",
+   "en": "outbound network for installs and downloads",
+   "install": "outbound network (cloud sessions: the environment's network policy; registries pypi/npm/huggingface must be allowed)",
+   "req_kind": "os"
+  },
+  {
+   "id": "req:claude:browser",
+   "kind": "requirement",
+   "label": "claude:browser",
+   "ar": "تصفّح وتحكم في جهاز المستخدم بموافقته",
+   "en": "browse and control the user's machine with consent",
+   "install": "Claude in Chrome extension or the desktop app's built-in browser / computer use",
+   "req_kind": "service"
+  },
+  {
+   "id": "req:gh",
+   "kind": "requirement",
+   "label": "gh",
+   "ar": "GitHub من سطر الأوامر",
+   "en": "GitHub from the shell",
+   "install": "https://cli.github.com  (cloud sessions: use the GitHub MCP tools instead)",
+   "req_kind": "bin"
+  },
+  {
+   "id": "fam:atlas-code",
+   "kind": "family",
+   "label": "Atlas: engineering & code",
+   "ar": "أطلس: الهندسة والكود",
+   "prefix": "ACODE",
+   "count": 176,
+   "proven": 0,
+   "status": {
+    "documented": 176
+   }
+  },
+  {
+   "id": "req:docker",
+   "kind": "requirement",
+   "label": "docker",
+   "ar": "حاويات معزولة",
+   "en": "isolated containers",
+   "install": "https://docs.docker.com/get-docker (daemon needed; cloud containers have the client only)",
+   "req_kind": "bin"
+  },
+  {
+   "id": "req:os:macos",
+   "kind": "requirement",
+   "label": "os:macos",
+   "ar": "أدوات Apple (Mach-O، plist، Swift)",
+   "en": "Apple toolchain (Mach-O, plist, Swift)",
+   "install": "a macOS machine with Xcode command-line tools",
+   "req_kind": "os"
+  },
+  {
+   "id": "dom:data",
+   "kind": "domain",
+   "label": "data"
+  },
+  {
+   "id": "fam:atlas-data",
+   "kind": "family",
+   "label": "Atlas: data, ML & charts",
+   "ar": "أطلس: البيانات والتعلم الآلي",
+   "prefix": "ADATA",
+   "count": 47,
+   "proven": 0,
+   "status": {
+    "documented": 47
+   }
+  },
+  {
+   "id": "req:pip:pandas",
+   "kind": "requirement",
+   "label": "pip:pandas",
+   "ar": "جداول وتحليل بيانات",
+   "en": "tables and data analysis",
+   "install": "pip install pandas",
+   "req_kind": "pip"
+  },
+  {
+   "id": "req:pip:scipy",
+   "kind": "requirement",
+   "label": "pip:scipy",
+   "ar": "مرشحات الإشارة والتحسين",
+   "en": "signal filters and optimisation",
+   "install": "pip install scipy",
+   "req_kind": "pip"
+  },
+  {
+   "id": "req:pip:statsforecast",
+   "kind": "requirement",
+   "label": "pip:statsforecast",
+   "ar": "التنبؤ بالسلاسل الزمنية",
+   "en": "time-series forecasting",
+   "install": "pip install statsforecast",
+   "req_kind": "pip"
+  },
+  {
+   "id": "dom:docs",
+   "kind": "domain",
+   "label": "docs"
+  },
+  {
+   "id": "fam:atlas-docs",
+   "kind": "family",
+   "label": "Atlas: documents & diagrams",
+   "ar": "أطلس: المستندات والمخططات",
+   "prefix": "ADOCS",
+   "count": 16,
+   "proven": 0,
+   "status": {
+    "documented": 16
+   }
+  },
+  {
+   "id": "req:npm:mermaid",
+   "kind": "requirement",
+   "label": "npm:mermaid",
+   "ar": "رسم مخططات Mermaid إلى صور",
+   "en": "render Mermaid diagrams to images",
+   "install": "npm i -g @mermaid-js/mermaid-cli",
+   "req_kind": "npm"
+  },
+  {
+   "id": "dom:media",
+   "kind": "domain",
+   "label": "media"
+  },
+  {
+   "id": "fam:atlas-media",
+   "kind": "family",
+   "label": "Atlas: images, audio & video",
+   "ar": "أطلس: الصور والصوت والفيديو",
+   "prefix": "AMEDIA",
+   "count": 11,
+   "proven": 0,
+   "status": {
+    "documented": 11
+   }
+  },
+  {
+   "id": "req:key:elevenlabs",
+   "kind": "requirement",
+   "label": "key:elevenlabs",
+   "ar": "أصوات عربية عالية الجودة مدفوعة",
+   "en": "paid high-quality Arabic voices",
+   "install": "ELEVENLABS_API_KEY (paid)",
+   "req_kind": "key"
+  },
+  {
+   "id": "req:yt-dlp",
+   "kind": "requirement",
+   "label": "yt-dlp",
+   "ar": "تحميل وسائط مرخّصة أو مملوكة من روابط",
+   "en": "download licensed or owned media from links",
+   "install": "pip install yt-dlp",
+   "req_kind": "pip"
+  },
+  {
+   "id": "req:pip:faster-whisper",
+   "kind": "requirement",
+   "label": "pip:faster-whisper",
+   "ar": "تفريغ الصوت مع توقيت كل كلمة (عربي)",
+   "en": "speech-to-text with word timestamps (Arabic)",
+   "install": "pip install faster-whisper  (models from huggingface.co: small 466 MB, large-v3 3.1 GB; CPU works)",
+   "req_kind": "model"
+  },
+  {
+   "id": "fam:atlas-mind",
+   "kind": "family",
+   "label": "Atlas: agent workflows, planning & review",
+   "ar": "أطلس: الوكلاء والتخطيط والمراجعة",
+   "prefix": "AMIND",
+   "count": 40,
+   "proven": 0,
+   "status": {
+    "documented": 40
+   }
+  },
+  {
+   "id": "dom:research",
+   "kind": "domain",
+   "label": "research"
+  },
+  {
+   "id": "fam:atlas-research",
+   "kind": "family",
+   "label": "Atlas: research & knowledge",
+   "ar": "أطلس: البحث والمعرفة",
+   "prefix": "AWEB",
+   "count": 8,
+   "proven": 0,
+   "status": {
+    "documented": 8
+   }
+  },
+  {
+   "id": "req:pip:crawl4ai",
+   "kind": "requirement",
+   "label": "pip:crawl4ai",
+   "ar": "تحويل الصفحات إلى Markdown",
+   "en": "pages to Markdown",
+   "install": "pip install crawl4ai && crawl4ai-setup",
+   "req_kind": "pip"
+  },
+  {
+   "id": "dom:strategy",
+   "kind": "domain",
+   "label": "strategy"
+  },
+  {
+   "id": "fam:atlas-strategy",
+   "kind": "family",
+   "label": "Atlas: product, marketing & business",
+   "ar": "أطلس: المنتج والتسويق والأعمال",
+   "prefix": "ASTRAT",
+   "count": 46,
+   "proven": 0,
+   "status": {
+    "documented": 46
+   }
+  },
+  {
    "id": "fam:audio-sync-captions",
    "kind": "family",
    "label": "Audio sync & captions",
@@ -463,24 +701,6 @@
     "install": 7,
     "seen": 5
    }
-  },
-  {
-   "id": "req:pip:faster-whisper",
-   "kind": "requirement",
-   "label": "pip:faster-whisper",
-   "ar": "تفريغ الصوت مع توقيت كل كلمة (عربي)",
-   "en": "speech-to-text with word timestamps (Arabic)",
-   "install": "pip install faster-whisper  (models from huggingface.co: small 466 MB, large-v3 3.1 GB; CPU works)",
-   "req_kind": "model"
-  },
-  {
-   "id": "req:network",
-   "kind": "requirement",
-   "label": "network",
-   "ar": "اتصال بالشبكة للتثبيت والتحميل",
-   "en": "outbound network for installs and downloads",
-   "install": "outbound network (cloud sessions: the environment's network policy; registries pypi/npm/huggingface must be allowed)",
-   "req_kind": "os"
   },
   {
    "id": "fam:brand-logo-identity",
@@ -623,15 +843,6 @@
    }
   },
   {
-   "id": "req:pip:pandas",
-   "kind": "requirement",
-   "label": "pip:pandas",
-   "ar": "جداول وتحليل بيانات",
-   "en": "tables and data analysis",
-   "install": "pip install pandas",
-   "req_kind": "pip"
-  },
-  {
    "id": "req:pip:duckdb",
    "kind": "requirement",
    "label": "pip:duckdb",
@@ -674,11 +885,6 @@
    "label": "scripts/requirements.py"
   },
   {
-   "id": "dom:data",
-   "kind": "domain",
-   "label": "data"
-  },
-  {
    "id": "fam:data-analysis",
    "kind": "family",
    "label": "Data analysis",
@@ -711,15 +917,6 @@
    "req_kind": "pip"
   },
   {
-   "id": "req:pip:scipy",
-   "kind": "requirement",
-   "label": "pip:scipy",
-   "ar": "مرشحات الإشارة والتحسين",
-   "en": "signal filters and optimisation",
-   "install": "pip install scipy",
-   "req_kind": "pip"
-  },
-  {
    "id": "fam:diagrams-explainers-code",
    "kind": "family",
    "label": "Diagrams, explainers & code",
@@ -736,20 +933,6 @@
     "idea": 2,
     "proven": 2
    }
-  },
-  {
-   "id": "req:npm:mermaid",
-   "kind": "requirement",
-   "label": "npm:mermaid",
-   "ar": "رسم مخططات Mermaid إلى صور",
-   "en": "render Mermaid diagrams to images",
-   "install": "npm i -g @mermaid-js/mermaid-cli",
-   "req_kind": "npm"
-  },
-  {
-   "id": "dom:docs",
-   "kind": "domain",
-   "label": "docs"
   },
   {
    "id": "fam:documents-office",
@@ -933,11 +1116,6 @@
    "req_kind": "npm"
   },
   {
-   "id": "dom:media",
-   "kind": "domain",
-   "label": "media"
-  },
-  {
    "id": "fam:media-image-audio",
    "kind": "family",
    "label": "Image & audio",
@@ -980,15 +1158,6 @@
     "documented": 79,
     "idea": 12
    }
-  },
-  {
-   "id": "req:key:elevenlabs",
-   "kind": "requirement",
-   "label": "key:elevenlabs",
-   "ar": "أصوات عربية عالية الجودة مدفوعة",
-   "en": "paid high-quality Arabic voices",
-   "install": "ELEVENLABS_API_KEY (paid)",
-   "req_kind": "key"
   },
   {
    "id": "fam:other",
@@ -1242,15 +1411,6 @@
    "req_kind": "bin"
   },
   {
-   "id": "req:os:macos",
-   "kind": "requirement",
-   "label": "os:macos",
-   "ar": "أدوات Apple (Mach-O، plist، Swift)",
-   "en": "Apple toolchain (Mach-O, plist, Swift)",
-   "install": "a macOS machine with Xcode command-line tools",
-   "req_kind": "os"
-  },
-  {
    "id": "req:engine:rizin",
    "kind": "requirement",
    "label": "engine:rizin",
@@ -1280,11 +1440,6 @@
     "seen": 11,
     "key": 1
    }
-  },
-  {
-   "id": "dom:strategy",
-   "kind": "domain",
-   "label": "strategy"
   },
   {
    "id": "fam:strategy-finance",
@@ -1488,15 +1643,6 @@
    }
   },
   {
-   "id": "req:yt-dlp",
-   "kind": "requirement",
-   "label": "yt-dlp",
-   "ar": "تحميل وسائط مرخّصة أو مملوكة من روابط",
-   "en": "download licensed or owned media from links",
-   "install": "pip install yt-dlp",
-   "req_kind": "pip"
-  },
-  {
    "id": "req:pip:librosa",
    "kind": "requirement",
    "label": "pip:librosa",
@@ -1535,11 +1681,6 @@
    "en": "local TTS (English and others)",
    "install": "pip install kokoro soundfile  (weights from huggingface.co)",
    "req_kind": "model"
-  },
-  {
-   "id": "dom:research",
-   "kind": "domain",
-   "label": "research"
   },
   {
    "id": "fam:web-research",
@@ -1584,34 +1725,9 @@
    "label": "scripts/tell_scan.py"
   },
   {
-   "id": "script:scripts/blender_worker.py",
-   "kind": "script",
-   "label": "scripts/blender_worker.py"
-  },
-  {
-   "id": "script:scripts/blender_bridge.py",
-   "kind": "script",
-   "label": "scripts/blender_bridge.py"
-  },
-  {
    "id": "script:scripts/boot.py",
    "kind": "script",
    "label": "scripts/boot.py"
-  },
-  {
-   "id": "script:scripts/capability_atlas.py",
-   "kind": "script",
-   "label": "scripts/capability_atlas.py"
-  },
-  {
-   "id": "script:scripts/superpowers_unified.py",
-   "kind": "script",
-   "label": "scripts/superpowers_unified.py"
-  },
-  {
-   "id": "script:scripts/capability_graph.py",
-   "kind": "script",
-   "label": "scripts/capability_graph.py"
   },
   {
    "id": "script:scripts/character_fullbody.py",
@@ -1619,19 +1735,34 @@
    "label": "scripts/character_fullbody.py"
   },
   {
-   "id": "script:scripts/character_ik.py",
-   "kind": "script",
-   "label": "scripts/character_ik.py"
-  },
-  {
    "id": "script:scripts/creative_paint.py",
    "kind": "script",
    "label": "scripts/creative_paint.py"
   },
   {
-   "id": "script:scripts/check_skill.py",
+   "id": "script:scripts/character_ik.py",
    "kind": "script",
-   "label": "scripts/check_skill.py"
+   "label": "scripts/character_ik.py"
+  },
+  {
+   "id": "script:scripts/verify_video.py",
+   "kind": "script",
+   "label": "scripts/verify_video.py"
+  },
+  {
+   "id": "script:scripts/aspects.py",
+   "kind": "script",
+   "label": "scripts/aspects.py"
+  },
+  {
+   "id": "script:scripts/rebalance_creative_repos.py",
+   "kind": "script",
+   "label": "scripts/rebalance_creative_repos.py"
+  },
+  {
+   "id": "script:scripts/rea_creative_research_atlas.py",
+   "kind": "script",
+   "label": "scripts/rea_creative_research_atlas.py"
   },
   {
    "id": "script:scripts/cinematic_broll_render.py",
@@ -1642,6 +1773,31 @@
    "id": "script:scripts/cinematic_cut_planner.py",
    "kind": "script",
    "label": "scripts/cinematic_cut_planner.py"
+  },
+  {
+   "id": "script:scripts/package_skill.py",
+   "kind": "script",
+   "label": "scripts/package_skill.py"
+  },
+  {
+   "id": "script:scripts/check_skill.py",
+   "kind": "script",
+   "label": "scripts/check_skill.py"
+  },
+  {
+   "id": "script:scripts/capability_graph.py",
+   "kind": "script",
+   "label": "scripts/capability_graph.py"
+  },
+  {
+   "id": "script:scripts/capability_atlas.py",
+   "kind": "script",
+   "label": "scripts/capability_atlas.py"
+  },
+  {
+   "id": "script:scripts/superpowers_unified.py",
+   "kind": "script",
+   "label": "scripts/superpowers_unified.py"
   },
   {
    "id": "script:scripts/creative_reasoning_bridge.py",
@@ -1660,6 +1816,26 @@
    "label": "scripts/audio_cue_mapper.py"
   },
   {
+   "id": "script:scripts/atlas_transfer.py",
+   "kind": "script",
+   "label": "scripts/atlas_transfer.py"
+  },
+  {
+   "id": "script:scripts/atlas_capability_miner.py",
+   "kind": "script",
+   "label": "scripts/atlas_capability_miner.py"
+  },
+  {
+   "id": "script:scripts/blender_worker.py",
+   "kind": "script",
+   "label": "scripts/blender_worker.py"
+  },
+  {
+   "id": "script:scripts/blender_bridge.py",
+   "kind": "script",
+   "label": "scripts/blender_bridge.py"
+  },
+  {
    "id": "script:scripts/motion_kit_bridge.py",
    "kind": "script",
    "label": "scripts/motion_kit_bridge.py",
@@ -1669,31 +1845,6 @@
    "id": "script:scripts/code_drawing_master.py",
    "kind": "script",
    "label": "scripts/code_drawing_master.py"
-  },
-  {
-   "id": "script:scripts/package_skill.py",
-   "kind": "script",
-   "label": "scripts/package_skill.py"
-  },
-  {
-   "id": "script:scripts/rebalance_creative_repos.py",
-   "kind": "script",
-   "label": "scripts/rebalance_creative_repos.py"
-  },
-  {
-   "id": "script:scripts/rea_creative_research_atlas.py",
-   "kind": "script",
-   "label": "scripts/rea_creative_research_atlas.py"
-  },
-  {
-   "id": "script:scripts/reference_edit_engine.py",
-   "kind": "script",
-   "label": "scripts/reference_edit_engine.py"
-  },
-  {
-   "id": "script:scripts/creative_quality_gate.py",
-   "kind": "script",
-   "label": "scripts/creative_quality_gate.py"
   },
   {
    "id": "script:scripts/reference_visual_fingerprint.py",
@@ -1706,20 +1857,19 @@
    "label": "scripts/motion_reference_probe.py"
   },
   {
-   "id": "script:scripts/verify_video.py",
+   "id": "script:scripts/blender_motion_video.py",
    "kind": "script",
-   "label": "scripts/verify_video.py"
+   "label": "scripts/blender_motion_video.py"
   },
   {
-   "id": "script:scripts/aspects.py",
+   "id": "script:scripts/reference_edit_engine.py",
    "kind": "script",
-   "label": "scripts/aspects.py"
+   "label": "scripts/reference_edit_engine.py"
   },
   {
-   "id": "script:scripts/mimic/mm_video.py",
+   "id": "script:scripts/creative_quality_gate.py",
    "kind": "script",
-   "label": "scripts/mimic/mm_video.py",
-   "executor_score": 2.7
+   "label": "scripts/creative_quality_gate.py"
   },
   {
    "id": "script:scripts/mimic/mm_common.py",
@@ -1730,6 +1880,12 @@
    "id": "script:scripts/mimic/mm_img.py",
    "kind": "script",
    "label": "scripts/mimic/mm_img.py"
+  },
+  {
+   "id": "script:scripts/mimic/mm_video.py",
+   "kind": "script",
+   "label": "scripts/mimic/mm_video.py",
+   "executor_score": 2.7
   },
   {
    "id": "script:scripts/mimic/synthetic/make_candidates.py",
@@ -1745,56 +1901,6 @@
    "id": "script:scripts/python_package_probe.py",
    "kind": "script",
    "label": "scripts/python_package_probe.py"
-  },
-  {
-   "id": "test:tests/test_aspects.py",
-   "kind": "test",
-   "label": "tests/test_aspects.py"
-  },
-  {
-   "id": "test:tests/test_boot.py",
-   "kind": "test",
-   "label": "tests/test_boot.py"
-  },
-  {
-   "id": "test:tests/test_capability_atlas.py",
-   "kind": "test",
-   "label": "tests/test_capability_atlas.py"
-  },
-  {
-   "id": "test:tests/test_capability_graph.py",
-   "kind": "test",
-   "label": "tests/test_capability_graph.py"
-  },
-  {
-   "id": "test:tests/test_cinematic_cut_planner.py",
-   "kind": "test",
-   "label": "tests/test_cinematic_cut_planner.py"
-  },
-  {
-   "id": "test:tests/test_media_sources_gateway.py",
-   "kind": "test",
-   "label": "tests/test_media_sources_gateway.py"
-  },
-  {
-   "id": "test:tests/test_mimic.py",
-   "kind": "test",
-   "label": "tests/test_mimic.py"
-  },
-  {
-   "id": "test:tests/test_reference_fetch_security.py",
-   "kind": "test",
-   "label": "tests/test_reference_fetch_security.py"
-  },
-  {
-   "id": "test:tests/test_superpowers_catalog.py",
-   "kind": "test",
-   "label": "tests/test_superpowers_catalog.py"
-  },
-  {
-   "id": "test:tests/test_requirements.py",
-   "kind": "test",
-   "label": "tests/test_requirements.py"
   },
   {
    "id": "test:.claude/skills/kosif-superpowers/evals/test_catalog_evidence_audit.py",
@@ -1822,9 +1928,59 @@
    "label": "tests/test_superpowers.py"
   },
   {
+   "id": "test:tests/test_superpowers_catalog.py",
+   "kind": "test",
+   "label": "tests/test_superpowers_catalog.py"
+  },
+  {
+   "id": "test:tests/test_mimic.py",
+   "kind": "test",
+   "label": "tests/test_mimic.py"
+  },
+  {
+   "id": "test:tests/test_aspects.py",
+   "kind": "test",
+   "label": "tests/test_aspects.py"
+  },
+  {
+   "id": "test:tests/test_capability_graph.py",
+   "kind": "test",
+   "label": "tests/test_capability_graph.py"
+  },
+  {
+   "id": "test:tests/test_requirements.py",
+   "kind": "test",
+   "label": "tests/test_requirements.py"
+  },
+  {
    "id": "test:tests/test_superpowers_unified.py",
    "kind": "test",
    "label": "tests/test_superpowers_unified.py"
+  },
+  {
+   "id": "test:tests/test_reference_fetch_security.py",
+   "kind": "test",
+   "label": "tests/test_reference_fetch_security.py"
+  },
+  {
+   "id": "test:tests/test_tools_extra.py",
+   "kind": "test",
+   "label": "tests/test_tools_extra.py"
+  },
+  {
+   "id": "test:tests/test_media_sources_gateway.py",
+   "kind": "test",
+   "label": "tests/test_media_sources_gateway.py"
+  },
+  {
+   "id": "test:tests/test_capability_atlas.py",
+   "kind": "test",
+   "label": "tests/test_capability_atlas.py"
+  },
+  {
+   "id": "test:tests/test_cinematic_cut_planner.py",
+   "kind": "test",
+   "label": "tests/test_cinematic_cut_planner.py"
   },
   {
    "id": "test:tests/test_think.py",
@@ -1832,9 +1988,29 @@
    "label": "tests/test_think.py"
   },
   {
-   "id": "test:tests/test_tools_extra.py",
+   "id": "test:tests/test_boot.py",
    "kind": "test",
-   "label": "tests/test_tools_extra.py"
+   "label": "tests/test_boot.py"
+  },
+  {
+   "id": "test:.claude/skills/kosif-superpowers/evals/test_blender_cinema.py",
+   "kind": "test",
+   "label": ".claude/skills/kosif-superpowers/evals/test_blender_cinema.py"
+  },
+  {
+   "id": "test:.claude/skills/kosif-superpowers/evals/test_code_drawing_master.py",
+   "kind": "test",
+   "label": ".claude/skills/kosif-superpowers/evals/test_code_drawing_master.py"
+  },
+  {
+   "id": "test:.claude/skills/kosif-superpowers/evals/test_atlas_capability_miner.py",
+   "kind": "test",
+   "label": ".claude/skills/kosif-superpowers/evals/test_atlas_capability_miner.py"
+  },
+  {
+   "id": "test:.claude/skills/kosif-superpowers/evals/test_system_python.py",
+   "kind": "test",
+   "label": ".claude/skills/kosif-superpowers/evals/test_system_python.py"
   },
   {
    "id": "test:.claude/skills/kosif-superpowers/evals/test_app_studio.py",
@@ -1852,24 +2028,19 @@
    "label": ".claude/skills/kosif-superpowers/evals/test_blender_bridge.py"
   },
   {
-   "id": "test:.claude/skills/kosif-superpowers/evals/test_blender_cinema.py",
+   "id": "test:.claude/skills/kosif-superpowers/evals/test_blender_motion_video.py",
    "kind": "test",
-   "label": ".claude/skills/kosif-superpowers/evals/test_blender_cinema.py"
-  },
-  {
-   "id": "test:.claude/skills/kosif-superpowers/evals/test_capability_runtime_router.py",
-   "kind": "test",
-   "label": ".claude/skills/kosif-superpowers/evals/test_capability_runtime_router.py"
-  },
-  {
-   "id": "test:.claude/skills/kosif-superpowers/evals/test_code_drawing_master.py",
-   "kind": "test",
-   "label": ".claude/skills/kosif-superpowers/evals/test_code_drawing_master.py"
+   "label": ".claude/skills/kosif-superpowers/evals/test_blender_motion_video.py"
   },
   {
    "id": "test:.claude/skills/kosif-superpowers/evals/test_creative_paint.py",
    "kind": "test",
    "label": ".claude/skills/kosif-superpowers/evals/test_creative_paint.py"
+  },
+  {
+   "id": "test:.claude/skills/kosif-superpowers/evals/test_capability_runtime_router.py",
+   "kind": "test",
+   "label": ".claude/skills/kosif-superpowers/evals/test_capability_runtime_router.py"
   },
   {
    "id": "test:.claude/skills/kosif-superpowers/evals/test_motion_director.py",
@@ -1885,11 +2056,6 @@
    "id": "test:.claude/skills/kosif-superpowers/evals/test_rea_bridge.py",
    "kind": "test",
    "label": ".claude/skills/kosif-superpowers/evals/test_rea_bridge.py"
-  },
-  {
-   "id": "test:.claude/skills/kosif-superpowers/evals/test_system_python.py",
-   "kind": "test",
-   "label": ".claude/skills/kosif-superpowers/evals/test_system_python.py"
   }
  ],
  "edges": [
@@ -2305,6 +2471,426 @@
    "from": "fam:arabic-language",
    "to": "script:scripts/anchor_gate.py",
    "rel": "runs",
+   "w": 1
+  },
+  {
+   "from": "root",
+   "to": "dom:build",
+   "rel": "has",
+   "w": 1
+  },
+  {
+   "from": "dom:build",
+   "to": "fam:atlas-build",
+   "rel": "has",
+   "w": 30
+  },
+  {
+   "from": "fam:atlas-build",
+   "to": "req:node",
+   "rel": "needs",
+   "w": 11
+  },
+  {
+   "from": "fam:atlas-build",
+   "to": "req:chromium",
+   "rel": "needs",
+   "w": 10
+  },
+  {
+   "from": "fam:atlas-build",
+   "to": "req:git",
+   "rel": "needs",
+   "w": 3
+  },
+  {
+   "from": "fam:atlas-build",
+   "to": "req:network",
+   "rel": "needs",
+   "w": 3
+  },
+  {
+   "from": "fam:atlas-build",
+   "to": "req:python3",
+   "rel": "needs",
+   "w": 3
+  },
+  {
+   "from": "fam:atlas-build",
+   "to": "req:claude:browser",
+   "rel": "needs",
+   "w": 3
+  },
+  {
+   "from": "fam:atlas-build",
+   "to": "req:gh",
+   "rel": "needs",
+   "w": 2
+  },
+  {
+   "from": "fam:atlas-build",
+   "to": "req:claude:tools",
+   "rel": "needs",
+   "w": 2
+  },
+  {
+   "from": "root",
+   "to": "dom:code",
+   "rel": "has",
+   "w": 1
+  },
+  {
+   "from": "dom:code",
+   "to": "fam:atlas-code",
+   "rel": "has",
+   "w": 176
+  },
+  {
+   "from": "fam:atlas-code",
+   "to": "req:git",
+   "rel": "needs",
+   "w": 33
+  },
+  {
+   "from": "fam:atlas-code",
+   "to": "req:node",
+   "rel": "needs",
+   "w": 22
+  },
+  {
+   "from": "fam:atlas-code",
+   "to": "req:python3",
+   "rel": "needs",
+   "w": 19
+  },
+  {
+   "from": "fam:atlas-code",
+   "to": "req:network",
+   "rel": "needs",
+   "w": 10
+  },
+  {
+   "from": "fam:atlas-code",
+   "to": "req:gh",
+   "rel": "needs",
+   "w": 10
+  },
+  {
+   "from": "fam:atlas-code",
+   "to": "req:claude:tools",
+   "rel": "needs",
+   "w": 6
+  },
+  {
+   "from": "fam:atlas-code",
+   "to": "req:docker",
+   "rel": "needs",
+   "w": 4
+  },
+  {
+   "from": "fam:atlas-code",
+   "to": "req:os:macos",
+   "rel": "needs",
+   "w": 2
+  },
+  {
+   "from": "root",
+   "to": "dom:data",
+   "rel": "has",
+   "w": 1
+  },
+  {
+   "from": "dom:data",
+   "to": "fam:atlas-data",
+   "rel": "has",
+   "w": 47
+  },
+  {
+   "from": "fam:atlas-data",
+   "to": "req:python3",
+   "rel": "needs",
+   "w": 29
+  },
+  {
+   "from": "fam:atlas-data",
+   "to": "req:pip:pandas",
+   "rel": "needs",
+   "w": 15
+  },
+  {
+   "from": "fam:atlas-data",
+   "to": "req:pip:scipy",
+   "rel": "needs",
+   "w": 6
+  },
+  {
+   "from": "fam:atlas-data",
+   "to": "req:pip:numpy",
+   "rel": "needs",
+   "w": 4
+  },
+  {
+   "from": "fam:atlas-data",
+   "to": "req:network",
+   "rel": "needs",
+   "w": 3
+  },
+  {
+   "from": "fam:atlas-data",
+   "to": "req:claude:tools",
+   "rel": "needs",
+   "w": 3
+  },
+  {
+   "from": "fam:atlas-data",
+   "to": "req:pip:matplotlib",
+   "rel": "needs",
+   "w": 2
+  },
+  {
+   "from": "fam:atlas-data",
+   "to": "req:pip:statsforecast",
+   "rel": "needs",
+   "w": 2
+  },
+  {
+   "from": "root",
+   "to": "dom:docs",
+   "rel": "has",
+   "w": 1
+  },
+  {
+   "from": "dom:docs",
+   "to": "fam:atlas-docs",
+   "rel": "has",
+   "w": 16
+  },
+  {
+   "from": "fam:atlas-docs",
+   "to": "req:pip:office",
+   "rel": "needs",
+   "w": 3
+  },
+  {
+   "from": "fam:atlas-docs",
+   "to": "req:git",
+   "rel": "needs",
+   "w": 2
+  },
+  {
+   "from": "fam:atlas-docs",
+   "to": "req:python3",
+   "rel": "needs",
+   "w": 2
+  },
+  {
+   "from": "fam:atlas-docs",
+   "to": "req:claude:tools",
+   "rel": "needs",
+   "w": 1
+  },
+  {
+   "from": "fam:atlas-docs",
+   "to": "req:npm:mermaid",
+   "rel": "needs",
+   "w": 1
+  },
+  {
+   "from": "fam:atlas-docs",
+   "to": "req:network",
+   "rel": "needs",
+   "w": 1
+  },
+  {
+   "from": "root",
+   "to": "dom:media",
+   "rel": "has",
+   "w": 1
+  },
+  {
+   "from": "dom:media",
+   "to": "fam:atlas-media",
+   "rel": "has",
+   "w": 11
+  },
+  {
+   "from": "fam:atlas-media",
+   "to": "req:ffmpeg",
+   "rel": "needs",
+   "w": 6
+  },
+  {
+   "from": "fam:atlas-media",
+   "to": "req:node",
+   "rel": "needs",
+   "w": 3
+  },
+  {
+   "from": "fam:atlas-media",
+   "to": "req:network",
+   "rel": "needs",
+   "w": 3
+  },
+  {
+   "from": "fam:atlas-media",
+   "to": "req:key:elevenlabs",
+   "rel": "needs",
+   "w": 2
+  },
+  {
+   "from": "fam:atlas-media",
+   "to": "req:python3",
+   "rel": "needs",
+   "w": 2
+  },
+  {
+   "from": "fam:atlas-media",
+   "to": "req:yt-dlp",
+   "rel": "needs",
+   "w": 1
+  },
+  {
+   "from": "fam:atlas-media",
+   "to": "req:pip:faster-whisper",
+   "rel": "needs",
+   "w": 1
+  },
+  {
+   "from": "fam:atlas-media",
+   "to": "req:docker",
+   "rel": "needs",
+   "w": 1
+  },
+  {
+   "from": "root",
+   "to": "dom:mind",
+   "rel": "has",
+   "w": 1
+  },
+  {
+   "from": "dom:mind",
+   "to": "fam:atlas-mind",
+   "rel": "has",
+   "w": 40
+  },
+  {
+   "from": "fam:atlas-mind",
+   "to": "req:git",
+   "rel": "needs",
+   "w": 6
+  },
+  {
+   "from": "fam:atlas-mind",
+   "to": "req:claude:tools",
+   "rel": "needs",
+   "w": 4
+  },
+  {
+   "from": "fam:atlas-mind",
+   "to": "req:python3",
+   "rel": "needs",
+   "w": 3
+  },
+  {
+   "from": "fam:atlas-mind",
+   "to": "req:network",
+   "rel": "needs",
+   "w": 1
+  },
+  {
+   "from": "root",
+   "to": "dom:research",
+   "rel": "has",
+   "w": 1
+  },
+  {
+   "from": "dom:research",
+   "to": "fam:atlas-research",
+   "rel": "has",
+   "w": 8
+  },
+  {
+   "from": "fam:atlas-research",
+   "to": "req:network",
+   "rel": "needs",
+   "w": 4
+  },
+  {
+   "from": "fam:atlas-research",
+   "to": "req:python3",
+   "rel": "needs",
+   "w": 2
+  },
+  {
+   "from": "fam:atlas-research",
+   "to": "req:pip:crawl4ai",
+   "rel": "needs",
+   "w": 1
+  },
+  {
+   "from": "fam:atlas-research",
+   "to": "req:chromium",
+   "rel": "needs",
+   "w": 1
+  },
+  {
+   "from": "root",
+   "to": "dom:strategy",
+   "rel": "has",
+   "w": 1
+  },
+  {
+   "from": "dom:strategy",
+   "to": "fam:atlas-strategy",
+   "rel": "has",
+   "w": 46
+  },
+  {
+   "from": "fam:atlas-strategy",
+   "to": "req:python3",
+   "rel": "needs",
+   "w": 8
+  },
+  {
+   "from": "fam:atlas-strategy",
+   "to": "req:pip:pandas",
+   "rel": "needs",
+   "w": 5
+  },
+  {
+   "from": "fam:atlas-strategy",
+   "to": "req:network",
+   "rel": "needs",
+   "w": 2
+  },
+  {
+   "from": "fam:atlas-strategy",
+   "to": "req:git",
+   "rel": "needs",
+   "w": 1
+  },
+  {
+   "from": "fam:atlas-strategy",
+   "to": "req:claude:tools",
+   "rel": "needs",
+   "w": 1
+  },
+  {
+   "from": "fam:atlas-strategy",
+   "to": "req:gh",
+   "rel": "needs",
+   "w": 1
+  },
+  {
+   "from": "fam:atlas-strategy",
+   "to": "req:pip:numpy",
+   "rel": "needs",
+   "w": 1
+  },
+  {
+   "from": "fam:atlas-strategy",
+   "to": "req:pip:matplotlib",
+   "rel": "needs",
    "w": 1
   },
   {
@@ -5116,44 +5702,20 @@
    "w": 2
   },
   {
-   "from": "script:scripts/app_studio.py",
-   "to": "script:scripts/app_studio_paint.py",
-   "rel": "imports",
-   "w": 1
-  },
-  {
-   "from": "script:scripts/blender_worker.py",
-   "to": "script:scripts/blender_bridge.py",
-   "rel": "imports",
-   "w": 1
-  },
-  {
-   "from": "script:scripts/boot.py",
-   "to": "script:scripts/powers.py",
-   "rel": "imports",
-   "w": 1
-  },
-  {
    "from": "script:scripts/boot.py",
    "to": "script:scripts/requirements.py",
    "rel": "imports",
    "w": 1
   },
   {
-   "from": "script:scripts/build_chapters.py",
+   "from": "script:scripts/boot.py",
    "to": "script:scripts/powers.py",
    "rel": "imports",
    "w": 1
   },
   {
-   "from": "script:scripts/capability_atlas.py",
-   "to": "script:scripts/superpowers_unified.py",
-   "rel": "imports",
-   "w": 1
-  },
-  {
-   "from": "script:scripts/capability_graph.py",
-   "to": "script:scripts/powers.py",
+   "from": "script:scripts/character_fullbody.py",
+   "to": "script:scripts/creative_paint.py",
    "rel": "imports",
    "w": 1
   },
@@ -5164,8 +5726,14 @@
    "w": 1
   },
   {
-   "from": "script:scripts/character_fullbody.py",
-   "to": "script:scripts/creative_paint.py",
+   "from": "script:scripts/verify_video.py",
+   "to": "script:scripts/aspects.py",
+   "rel": "imports",
+   "w": 1
+  },
+  {
+   "from": "script:scripts/rebalance_creative_repos.py",
+   "to": "script:scripts/rea_creative_research_atlas.py",
    "rel": "imports",
    "w": 1
   },
@@ -5176,20 +5744,32 @@
    "w": 1
   },
   {
-   "from": "script:scripts/check_skill.py",
+   "from": "script:scripts/cinematic_broll_render.py",
+   "to": "script:scripts/cinematic_cut_planner.py",
+   "rel": "imports",
+   "w": 1
+  },
+  {
+   "from": "script:scripts/requirements.py",
    "to": "script:scripts/powers.py",
    "rel": "imports",
    "w": 1
   },
   {
-   "from": "script:scripts/check_skill.py",
-   "to": "script:scripts/build_chapters.py",
+   "from": "script:scripts/package_skill.py",
+   "to": "script:scripts/check_skill.py",
    "rel": "imports",
    "w": 1
   },
   {
-   "from": "script:scripts/cinematic_broll_render.py",
-   "to": "script:scripts/cinematic_cut_planner.py",
+   "from": "script:scripts/capability_graph.py",
+   "to": "script:scripts/powers.py",
+   "rel": "imports",
+   "w": 1
+  },
+  {
+   "from": "script:scripts/capability_atlas.py",
+   "to": "script:scripts/superpowers_unified.py",
    "rel": "imports",
    "w": 1
   },
@@ -5206,6 +5786,60 @@
    "w": 1
   },
   {
+   "from": "script:scripts/atlas_transfer.py",
+   "to": "script:scripts/powers.py",
+   "rel": "imports",
+   "w": 1
+  },
+  {
+   "from": "script:scripts/atlas_transfer.py",
+   "to": "script:scripts/atlas_capability_miner.py",
+   "rel": "imports",
+   "w": 1
+  },
+  {
+   "from": "script:scripts/think.py",
+   "to": "script:scripts/powers.py",
+   "rel": "imports",
+   "w": 1
+  },
+  {
+   "from": "script:scripts/check_skill.py",
+   "to": "script:scripts/powers.py",
+   "rel": "imports",
+   "w": 1
+  },
+  {
+   "from": "script:scripts/check_skill.py",
+   "to": "script:scripts/build_chapters.py",
+   "rel": "imports",
+   "w": 1
+  },
+  {
+   "from": "script:scripts/build_chapters.py",
+   "to": "script:scripts/powers.py",
+   "rel": "imports",
+   "w": 1
+  },
+  {
+   "from": "script:scripts/blender_worker.py",
+   "to": "script:scripts/blender_bridge.py",
+   "rel": "imports",
+   "w": 1
+  },
+  {
+   "from": "script:scripts/powers.py",
+   "to": "script:scripts/probe_env.py",
+   "rel": "imports",
+   "w": 1
+  },
+  {
+   "from": "script:scripts/app_studio.py",
+   "to": "script:scripts/app_studio_paint.py",
+   "rel": "imports",
+   "w": 1
+  },
+  {
    "from": "script:scripts/motion_kit_bridge.py",
    "to": "script:scripts/code_drawing_master.py",
    "rel": "imports",
@@ -5218,20 +5852,14 @@
    "w": 1
   },
   {
-   "from": "script:scripts/package_skill.py",
-   "to": "script:scripts/check_skill.py",
+   "from": "script:scripts/reference_visual_fingerprint.py",
+   "to": "script:scripts/motion_reference_probe.py",
    "rel": "imports",
    "w": 1
   },
   {
-   "from": "script:scripts/powers.py",
-   "to": "script:scripts/probe_env.py",
-   "rel": "imports",
-   "w": 1
-  },
-  {
-   "from": "script:scripts/rebalance_creative_repos.py",
-   "to": "script:scripts/rea_creative_research_atlas.py",
+   "from": "script:scripts/blender_motion_video.py",
+   "to": "script:scripts/blender_bridge.py",
    "rel": "imports",
    "w": 1
   },
@@ -5242,133 +5870,19 @@
    "w": 1
   },
   {
-   "from": "script:scripts/reference_visual_fingerprint.py",
-   "to": "script:scripts/motion_reference_probe.py",
-   "rel": "imports",
-   "w": 1
-  },
-  {
-   "from": "script:scripts/requirements.py",
-   "to": "script:scripts/powers.py",
-   "rel": "imports",
-   "w": 1
-  },
-  {
-   "from": "script:scripts/think.py",
-   "to": "script:scripts/powers.py",
-   "rel": "imports",
-   "w": 1
-  },
-  {
-   "from": "script:scripts/verify_video.py",
-   "to": "script:scripts/aspects.py",
-   "rel": "imports",
-   "w": 1
-  },
-  {
-   "from": "script:scripts/mimic/mm_analyze.py",
-   "to": "script:scripts/mimic/mm_video.py",
-   "rel": "imports",
-   "w": 1
-  },
-  {
-   "from": "script:scripts/mimic/mm_analyze.py",
-   "to": "script:scripts/mimic/mm_sheets.py",
-   "rel": "imports",
-   "w": 1
-  },
-  {
-   "from": "script:scripts/mimic/mm_analyze.py",
-   "to": "script:scripts/mimic/mm_text.py",
-   "rel": "imports",
-   "w": 1
-  },
-  {
-   "from": "script:scripts/mimic/mm_analyze.py",
-   "to": "script:scripts/mimic/mm_common.py",
-   "rel": "imports",
-   "w": 1
-  },
-  {
-   "from": "script:scripts/mimic/mm_analyze.py",
-   "to": "script:scripts/mimic/mm_transitions.py",
-   "rel": "imports",
-   "w": 1
-  },
-  {
-   "from": "script:scripts/mimic/mm_analyze.py",
-   "to": "script:scripts/mimic/mm_color.py",
-   "rel": "imports",
-   "w": 1
-  },
-  {
-   "from": "script:scripts/mimic/mm_analyze.py",
-   "to": "script:scripts/mimic/mm_img.py",
-   "rel": "imports",
-   "w": 1
-  },
-  {
-   "from": "script:scripts/mimic/mm_build.py",
-   "to": "script:scripts/mimic/mm_textfx.py",
-   "rel": "imports",
-   "w": 1
-  },
-  {
-   "from": "script:scripts/mimic/mm_build.py",
-   "to": "script:scripts/mimic/mm_video.py",
-   "rel": "imports",
-   "w": 1
-  },
-  {
-   "from": "script:scripts/mimic/mm_build.py",
-   "to": "script:scripts/mimic/mm_common.py",
-   "rel": "imports",
-   "w": 1
-  },
-  {
-   "from": "script:scripts/mimic/mm_build.py",
-   "to": "script:scripts/mimic/mm_img.py",
-   "rel": "imports",
-   "w": 1
-  },
-  {
-   "from": "script:scripts/mimic/mm_build.py",
-   "to": "script:scripts/mimic/mm_transitions.py",
-   "rel": "imports",
-   "w": 1
-  },
-  {
-   "from": "script:scripts/mimic/mm_build.py",
-   "to": "script:scripts/mimic/mm_color.py",
-   "rel": "imports",
-   "w": 1
-  },
-  {
-   "from": "script:scripts/mimic/mm_fonts.py",
+   "from": "script:scripts/mimic/mm_textfx.py",
    "to": "script:scripts/mimic/mm_render_text.py",
    "rel": "imports",
    "w": 1
   },
   {
-   "from": "script:scripts/mimic/mm_fonts.py",
-   "to": "script:scripts/mimic/mm_sheets.py",
-   "rel": "imports",
-   "w": 1
-  },
-  {
-   "from": "script:scripts/mimic/mm_fonts.py",
+   "from": "script:scripts/mimic/mm_textfx.py",
    "to": "script:scripts/mimic/mm_common.py",
    "rel": "imports",
    "w": 1
   },
   {
-   "from": "script:scripts/mimic/mm_fonts.py",
-   "to": "script:scripts/mimic/mm_fonts_lib.py",
-   "rel": "imports",
-   "w": 1
-  },
-  {
-   "from": "script:scripts/mimic/mm_fonts.py",
+   "from": "script:scripts/mimic/mm_textfx.py",
    "to": "script:scripts/mimic/mm_img.py",
    "rel": "imports",
    "w": 1
@@ -5398,14 +5912,98 @@
    "w": 1
   },
   {
-   "from": "script:scripts/mimic/mm_sheets.py",
+   "from": "script:scripts/mimic/mm_build.py",
+   "to": "script:scripts/mimic/mm_common.py",
+   "rel": "imports",
+   "w": 1
+  },
+  {
+   "from": "script:scripts/mimic/mm_build.py",
+   "to": "script:scripts/mimic/mm_transitions.py",
+   "rel": "imports",
+   "w": 1
+  },
+  {
+   "from": "script:scripts/mimic/mm_build.py",
    "to": "script:scripts/mimic/mm_img.py",
+   "rel": "imports",
+   "w": 1
+  },
+  {
+   "from": "script:scripts/mimic/mm_build.py",
+   "to": "script:scripts/mimic/mm_textfx.py",
+   "rel": "imports",
+   "w": 1
+  },
+  {
+   "from": "script:scripts/mimic/mm_build.py",
+   "to": "script:scripts/mimic/mm_video.py",
+   "rel": "imports",
+   "w": 1
+  },
+  {
+   "from": "script:scripts/mimic/mm_build.py",
+   "to": "script:scripts/mimic/mm_color.py",
+   "rel": "imports",
+   "w": 1
+  },
+  {
+   "from": "script:scripts/mimic/mm_fonts.py",
+   "to": "script:scripts/mimic/mm_fonts_lib.py",
+   "rel": "imports",
+   "w": 1
+  },
+  {
+   "from": "script:scripts/mimic/mm_fonts.py",
+   "to": "script:scripts/mimic/mm_render_text.py",
+   "rel": "imports",
+   "w": 1
+  },
+  {
+   "from": "script:scripts/mimic/mm_fonts.py",
+   "to": "script:scripts/mimic/mm_sheets.py",
+   "rel": "imports",
+   "w": 1
+  },
+  {
+   "from": "script:scripts/mimic/mm_fonts.py",
+   "to": "script:scripts/mimic/mm_img.py",
+   "rel": "imports",
+   "w": 1
+  },
+  {
+   "from": "script:scripts/mimic/mm_fonts.py",
+   "to": "script:scripts/mimic/mm_common.py",
    "rel": "imports",
    "w": 1
   },
   {
    "from": "script:scripts/mimic/mm_sheets.py",
    "to": "script:scripts/mimic/mm_common.py",
+   "rel": "imports",
+   "w": 1
+  },
+  {
+   "from": "script:scripts/mimic/mm_sheets.py",
+   "to": "script:scripts/mimic/mm_img.py",
+   "rel": "imports",
+   "w": 1
+  },
+  {
+   "from": "script:scripts/mimic/mm_video.py",
+   "to": "script:scripts/mimic/mm_common.py",
+   "rel": "imports",
+   "w": 1
+  },
+  {
+   "from": "script:scripts/mimic/mm_text.py",
+   "to": "script:scripts/mimic/mm_common.py",
+   "rel": "imports",
+   "w": 1
+  },
+  {
+   "from": "script:scripts/mimic/mm_text.py",
+   "to": "script:scripts/mimic/mm_img.py",
    "rel": "imports",
    "w": 1
   },
@@ -5417,37 +6015,7 @@
   },
   {
    "from": "script:scripts/mimic/mm_text.py",
-   "to": "script:scripts/mimic/mm_common.py",
-   "rel": "imports",
-   "w": 1
-  },
-  {
-   "from": "script:scripts/mimic/mm_text.py",
-   "to": "script:scripts/mimic/mm_img.py",
-   "rel": "imports",
-   "w": 1
-  },
-  {
-   "from": "script:scripts/mimic/mm_text.py",
    "to": "script:scripts/mimic/mm_color.py",
-   "rel": "imports",
-   "w": 1
-  },
-  {
-   "from": "script:scripts/mimic/mm_textfx.py",
-   "to": "script:scripts/mimic/mm_img.py",
-   "rel": "imports",
-   "w": 1
-  },
-  {
-   "from": "script:scripts/mimic/mm_textfx.py",
-   "to": "script:scripts/mimic/mm_render_text.py",
-   "rel": "imports",
-   "w": 1
-  },
-  {
-   "from": "script:scripts/mimic/mm_textfx.py",
-   "to": "script:scripts/mimic/mm_common.py",
    "rel": "imports",
    "w": 1
   },
@@ -5458,8 +6026,62 @@
    "w": 1
   },
   {
-   "from": "script:scripts/mimic/mm_video.py",
+   "from": "script:scripts/mimic/mm_analyze.py",
+   "to": "script:scripts/mimic/mm_transitions.py",
+   "rel": "imports",
+   "w": 1
+  },
+  {
+   "from": "script:scripts/mimic/mm_analyze.py",
+   "to": "script:scripts/mimic/mm_img.py",
+   "rel": "imports",
+   "w": 1
+  },
+  {
+   "from": "script:scripts/mimic/mm_analyze.py",
+   "to": "script:scripts/mimic/mm_sheets.py",
+   "rel": "imports",
+   "w": 1
+  },
+  {
+   "from": "script:scripts/mimic/mm_analyze.py",
+   "to": "script:scripts/mimic/mm_color.py",
+   "rel": "imports",
+   "w": 1
+  },
+  {
+   "from": "script:scripts/mimic/mm_analyze.py",
    "to": "script:scripts/mimic/mm_common.py",
+   "rel": "imports",
+   "w": 1
+  },
+  {
+   "from": "script:scripts/mimic/mm_analyze.py",
+   "to": "script:scripts/mimic/mm_text.py",
+   "rel": "imports",
+   "w": 1
+  },
+  {
+   "from": "script:scripts/mimic/mm_analyze.py",
+   "to": "script:scripts/mimic/mm_video.py",
+   "rel": "imports",
+   "w": 1
+  },
+  {
+   "from": "script:scripts/mimic/synthetic/run_synthetic.py",
+   "to": "script:scripts/mimic/mm_common.py",
+   "rel": "imports",
+   "w": 1
+  },
+  {
+   "from": "script:scripts/mimic/synthetic/run_synthetic.py",
+   "to": "script:scripts/mimic/mm_fonts.py",
+   "rel": "imports",
+   "w": 1
+  },
+  {
+   "from": "script:scripts/mimic/synthetic/run_synthetic.py",
+   "to": "script:scripts/mimic/mm_analyze.py",
    "rel": "imports",
    "w": 1
   },
@@ -5476,112 +6098,10 @@
    "w": 1
   },
   {
-   "from": "script:scripts/mimic/synthetic/run_synthetic.py",
-   "to": "script:scripts/mimic/mm_fonts.py",
-   "rel": "imports",
-   "w": 1
-  },
-  {
-   "from": "script:scripts/mimic/synthetic/run_synthetic.py",
-   "to": "script:scripts/mimic/mm_common.py",
-   "rel": "imports",
-   "w": 1
-  },
-  {
-   "from": "script:scripts/mimic/synthetic/run_synthetic.py",
-   "to": "script:scripts/mimic/mm_analyze.py",
-   "rel": "imports",
-   "w": 1
-  },
-  {
    "from": "script:scripts/python_package_probe.py",
    "to": "script:scripts/check_skill.py",
    "rel": "graphify:indirect_call",
    "w": 0.85
-  },
-  {
-   "from": "script:scripts/aspects.py",
-   "to": "test:tests/test_aspects.py",
-   "rel": "tested_by",
-   "w": 1
-  },
-  {
-   "from": "script:scripts/boot.py",
-   "to": "test:tests/test_boot.py",
-   "rel": "tested_by",
-   "w": 1
-  },
-  {
-   "from": "script:scripts/capability_atlas.py",
-   "to": "test:tests/test_capability_atlas.py",
-   "rel": "tested_by",
-   "w": 1
-  },
-  {
-   "from": "script:scripts/capability_graph.py",
-   "to": "test:tests/test_capability_graph.py",
-   "rel": "tested_by",
-   "w": 1
-  },
-  {
-   "from": "script:scripts/cinematic_cut_planner.py",
-   "to": "test:tests/test_cinematic_cut_planner.py",
-   "rel": "tested_by",
-   "w": 1
-  },
-  {
-   "from": "script:scripts/fetch_video.py",
-   "to": "test:tests/test_media_sources_gateway.py",
-   "rel": "tested_by",
-   "w": 1
-  },
-  {
-   "from": "script:scripts/mimic/mm_analyze.py",
-   "to": "test:tests/test_mimic.py",
-   "rel": "tested_by",
-   "w": 1
-  },
-  {
-   "from": "script:scripts/mimic/mm_common.py",
-   "to": "test:tests/test_mimic.py",
-   "rel": "tested_by",
-   "w": 1
-  },
-  {
-   "from": "script:scripts/mimic/mm_transitions.py",
-   "to": "test:tests/test_mimic.py",
-   "rel": "tested_by",
-   "w": 1
-  },
-  {
-   "from": "script:scripts/mimic/synthetic/make_reference.py",
-   "to": "test:tests/test_mimic.py",
-   "rel": "tested_by",
-   "w": 1
-  },
-  {
-   "from": "script:scripts/mimic/synthetic/run_synthetic.py",
-   "to": "test:tests/test_mimic.py",
-   "rel": "tested_by",
-   "w": 1
-  },
-  {
-   "from": "script:scripts/fetch_reference.py",
-   "to": "test:tests/test_reference_fetch_security.py",
-   "rel": "tested_by",
-   "w": 1
-  },
-  {
-   "from": "script:scripts/fetch_reference.py",
-   "to": "test:tests/test_superpowers_catalog.py",
-   "rel": "tested_by",
-   "w": 1
-  },
-  {
-   "from": "script:scripts/requirements.py",
-   "to": "test:tests/test_requirements.py",
-   "rel": "tested_by",
-   "w": 1
   },
   {
    "from": "script:scripts/powers.py",
@@ -5620,14 +6140,50 @@
    "w": 1
   },
   {
-   "from": "script:scripts/render_text.cjs",
-   "to": "test:tests/test_superpowers_catalog.py",
+   "from": "script:scripts/mimic/mm_common.py",
+   "to": "test:tests/test_mimic.py",
    "rel": "tested_by",
    "w": 1
   },
   {
-   "from": "script:scripts/superpowers.py",
-   "to": "test:tests/test_superpowers_catalog.py",
+   "from": "script:scripts/mimic/mm_transitions.py",
+   "to": "test:tests/test_mimic.py",
+   "rel": "tested_by",
+   "w": 1
+  },
+  {
+   "from": "script:scripts/mimic/mm_analyze.py",
+   "to": "test:tests/test_mimic.py",
+   "rel": "tested_by",
+   "w": 1
+  },
+  {
+   "from": "script:scripts/mimic/synthetic/run_synthetic.py",
+   "to": "test:tests/test_mimic.py",
+   "rel": "tested_by",
+   "w": 1
+  },
+  {
+   "from": "script:scripts/mimic/synthetic/make_reference.py",
+   "to": "test:tests/test_mimic.py",
+   "rel": "tested_by",
+   "w": 1
+  },
+  {
+   "from": "script:scripts/aspects.py",
+   "to": "test:tests/test_aspects.py",
+   "rel": "tested_by",
+   "w": 1
+  },
+  {
+   "from": "script:scripts/capability_graph.py",
+   "to": "test:tests/test_capability_graph.py",
+   "rel": "tested_by",
+   "w": 1
+  },
+  {
+   "from": "script:scripts/requirements.py",
+   "to": "test:tests/test_requirements.py",
    "rel": "tested_by",
    "w": 1
   },
@@ -5644,8 +6200,14 @@
    "w": 1
   },
   {
-   "from": "script:scripts/think.py",
-   "to": "test:tests/test_think.py",
+   "from": "script:scripts/fetch_reference.py",
+   "to": "test:tests/test_reference_fetch_security.py",
+   "rel": "tested_by",
+   "w": 1
+  },
+  {
+   "from": "script:scripts/fetch_reference.py",
+   "to": "test:tests/test_superpowers_catalog.py",
    "rel": "tested_by",
    "w": 1
   },
@@ -5656,25 +6218,91 @@
    "w": 1
   },
   {
-   "from": "script:scripts/app_studio.py",
+   "from": "script:scripts/fetch_video.py",
+   "to": "test:tests/test_media_sources_gateway.py",
+   "rel": "tested_by",
+   "w": 1
+  },
+  {
+   "from": "script:scripts/capability_atlas.py",
+   "to": "test:tests/test_capability_atlas.py",
+   "rel": "tested_by",
+   "w": 1
+  },
+  {
+   "from": "script:scripts/cinematic_cut_planner.py",
+   "to": "test:tests/test_cinematic_cut_planner.py",
+   "rel": "tested_by",
+   "w": 1
+  },
+  {
+   "from": "script:scripts/think.py",
+   "to": "test:tests/test_think.py",
+   "rel": "tested_by",
+   "w": 1
+  },
+  {
+   "from": "script:scripts/render_text.cjs",
+   "to": "test:tests/test_superpowers_catalog.py",
+   "rel": "tested_by",
+   "w": 1
+  },
+  {
+   "from": "script:scripts/superpowers.py",
+   "to": "test:tests/test_superpowers_catalog.py",
+   "rel": "tested_by",
+   "w": 1
+  },
+  {
+   "from": "script:scripts/boot.py",
+   "to": "test:tests/test_boot.py",
+   "rel": "tested_by",
+   "w": 1
+  },
+  {
+   "from": "script:scripts/blender_cinema.py",
+   "to": "test:.claude/skills/kosif-superpowers/evals/test_blender_cinema.py",
+   "rel": "tested_by",
+   "w": 1
+  },
+  {
+   "from": "script:scripts/code_drawing_master.py",
+   "to": "test:.claude/skills/kosif-superpowers/evals/test_code_drawing_master.py",
+   "rel": "tested_by",
+   "w": 1
+  },
+  {
+   "from": "script:scripts/atlas_capability_miner.py",
+   "to": "test:.claude/skills/kosif-superpowers/evals/test_atlas_capability_miner.py",
+   "rel": "tested_by",
+   "w": 1
+  },
+  {
+   "from": "script:scripts/python_package_probe.py",
+   "to": "test:.claude/skills/kosif-superpowers/evals/test_system_python.py",
+   "rel": "tested_by",
+   "w": 1
+  },
+  {
+   "from": "script:scripts/app_studio_paint.py",
    "to": "test:.claude/skills/kosif-superpowers/evals/test_app_studio.py",
    "rel": "tested_by",
    "w": 1
   },
   {
-   "from": "script:scripts/app_studio.py",
+   "from": "script:scripts/app_studio_paint.py",
    "to": "test:.claude/skills/kosif-superpowers/evals/test_app_studio_paint.py",
    "rel": "tested_by",
    "w": 1
   },
   {
-   "from": "script:scripts/app_studio_paint.py",
+   "from": "script:scripts/app_studio.py",
    "to": "test:.claude/skills/kosif-superpowers/evals/test_app_studio.py",
    "rel": "tested_by",
    "w": 1
   },
   {
-   "from": "script:scripts/app_studio_paint.py",
+   "from": "script:scripts/app_studio.py",
    "to": "test:.claude/skills/kosif-superpowers/evals/test_app_studio_paint.py",
    "rel": "tested_by",
    "w": 1
@@ -5686,26 +6314,20 @@
    "w": 1
   },
   {
-   "from": "script:scripts/blender_cinema.py",
-   "to": "test:.claude/skills/kosif-superpowers/evals/test_blender_cinema.py",
+   "from": "script:scripts/blender_worker.py",
+   "to": "test:.claude/skills/kosif-superpowers/evals/test_blender_motion_video.py",
    "rel": "tested_by",
    "w": 1
   },
   {
-   "from": "script:scripts/reference_edit_engine.py",
-   "to": "test:.claude/skills/kosif-superpowers/evals/test_capability_runtime_router.py",
+   "from": "script:scripts/blender_motion_video.py",
+   "to": "test:.claude/skills/kosif-superpowers/evals/test_blender_motion_video.py",
    "rel": "tested_by",
    "w": 1
   },
   {
-   "from": "script:scripts/reference_visual_fingerprint.py",
-   "to": "test:.claude/skills/kosif-superpowers/evals/test_capability_runtime_router.py",
-   "rel": "tested_by",
-   "w": 1
-  },
-  {
-   "from": "script:scripts/code_drawing_master.py",
-   "to": "test:.claude/skills/kosif-superpowers/evals/test_code_drawing_master.py",
+   "from": "script:scripts/installer_triage.py",
+   "to": "test:.claude/skills/kosif-superpowers/evals/test_installer_triage.py",
    "rel": "tested_by",
    "w": 1
   },
@@ -5716,8 +6338,14 @@
    "w": 1
   },
   {
-   "from": "script:scripts/installer_triage.py",
-   "to": "test:.claude/skills/kosif-superpowers/evals/test_installer_triage.py",
+   "from": "script:scripts/reference_visual_fingerprint.py",
+   "to": "test:.claude/skills/kosif-superpowers/evals/test_capability_runtime_router.py",
+   "rel": "tested_by",
+   "w": 1
+  },
+  {
+   "from": "script:scripts/reference_edit_engine.py",
+   "to": "test:.claude/skills/kosif-superpowers/evals/test_capability_runtime_router.py",
    "rel": "tested_by",
    "w": 1
   },
@@ -5736,12 +6364,6 @@
   {
    "from": "script:scripts/rea_bridge.py",
    "to": "test:.claude/skills/kosif-superpowers/evals/test_rea_bridge.py",
-   "rel": "tested_by",
-   "w": 1
-  },
-  {
-   "from": "script:scripts/python_package_probe.py",
-   "to": "test:.claude/skills/kosif-superpowers/evals/test_system_python.py",
    "rel": "tested_by",
    "w": 1
   }

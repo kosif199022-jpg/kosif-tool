@@ -1,0 +1,644 @@
+[
+ {
+  "id": "AMEDIA-01",
+  "family": "atlas-media",
+  "domain": "media",
+  "name_ar": "تحويل نص لصوت واستنساخ وMؤثرات ElevenLabs",
+  "name_en": "ElevenLabs TTS, cloning and sound effects",
+  "status": "documented",
+  "what": "يولّد كلامًا بإعدادات صوت قابلة للضبط ويستنسخ الأصوات ويحوّل الصوت ويولّد مؤثرات. — Generate speech with tunable voice settings, clone voices from samples, and produce speech-to-speech, SFX and isolation.",
+  "when": "Building TTS, voice cloning, voice conversion, audio isolation or sound-effect generation on ElevenLabs.",
+  "how": "1) Install SDK and set API key via env. 2) textToSpeech.convert(voiceId, text, model eleven_multilingual_v2, voice_settings stability ~0.5, similarity ~0.75, style, speed 0.7-1.2) and pipe stream to file. 3) Instant clone from 30+ s of clean audio. 4) Use WebSocket streaming for chatbots. 5) Cut cost by model choice, caching repeated text and usage alerts; handle 429 with queue and backoff; verify webhook HMAC.",
+  "params": "voice id, model, voice settings",
+  "install": "",
+  "requires": [
+   "key:elevenlabs",
+   "node",
+   "network"
+  ],
+  "license": "method paraphrased from Atlas skills under MIT; the skills keep their own licenses — see each folder's SOURCE.md",
+  "proof": [
+   "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/1847-elevenlabs-pack/5514-elevenlabs-core-workflow-a",
+   "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/1847-elevenlabs-pack/5522-elevenlabs-performance-tuning"
+  ],
+  "proof_scope": "url",
+  "styles": [],
+  "tags": [
+   "ElevenLabs",
+   "TTS",
+   "clone",
+   "استنساخ صوت"
+  ],
+  "section": "الصوت — Audio, voice & music",
+  "source": "KOSIF Atlas mining 2026-10-20 (https://github.com/kosif199022-jpg/kosif-atlas): elevenlabs-pack/elevenlabs-core-workflow-a (#5514); elevenlabs-pack/elevenlabs-performance-tuning (#5522) · theme audio-voice · 6 supporting skills · verifier read: skills/1847-elevenlabs-pack/5514-elevenlabs-core-workflow-a, skills/1847-elevenlabs-pack/5522-elevenlabs-performance-tuning",
+  "atlas": {
+   "ids": [
+    "5514",
+    "5515",
+    "5516",
+    "5522",
+    "5524",
+    "10936"
+   ],
+   "examples": [
+    {
+     "id": "5514",
+     "plugin": "elevenlabs-pack",
+     "skill": "elevenlabs-core-workflow-a",
+     "url": "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/1847-elevenlabs-pack/5514-elevenlabs-core-workflow-a"
+    },
+    {
+     "id": "5522",
+     "plugin": "elevenlabs-pack",
+     "skill": "elevenlabs-performance-tuning",
+     "url": "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/1847-elevenlabs-pack/5522-elevenlabs-performance-tuning"
+    }
+   ],
+   "theme": "audio-voice",
+   "risk_notes": "Paid API, key handling, network calls; webhooks.",
+   "kosif_overlap_ids": [],
+   "stage": "extracted",
+   "verified_by": "b015-audio-voice-1.json"
+  }
+ },
+ {
+  "id": "AMEDIA-02",
+  "family": "atlas-media",
+  "domain": "media",
+  "name_ar": "فحص تسليم المزيج النهائي ليوتيوب 4K",
+  "name_en": "Final mix delivery check for YouTube 4K",
+  "status": "documented",
+  "what": "يصدّر ملف 4K ويتحقق من الدقة والإطارات والمدة والصوت وLUFS وذروة الصوت. — Render a 4K delivery file and verify resolution, fps, duration, AAC audio, LUFS and true peak with ffprobe and ebur128.",
+  "when": "Preparing a DaVinci Resolve mix for upload or any final render needing loudness QA.",
+  "how": "1) Duplicate timeline and keep original audio. 2) Render 3840x2160 H.264 (45 Mbps up to 30 fps, 68 at 60 fps) with AAC 48 kHz 320 kbps stereo. 3) ffprobe codec, size, fps, sample rate, channels, duration; frames within 1 of timeline. 4) ffmpeg -af ebur128=peak=true on the final file: target -14 LUFS +-1, true peak <= -1 dBTP. 5) On repeated failure stop and report; upload private by default.",
+  "params": "loudness target",
+  "install": "",
+  "requires": [
+   "ffmpeg"
+  ],
+  "license": "method paraphrased from Atlas skills under MIT; the skills keep their own licenses — see each folder's SOURCE.md",
+  "proof": [
+   "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/1096-akbun-editvideo/2450-davinciresolve-audio-delivery",
+   "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/1096-akbun-editvideo/2459-davinciresolve-sfx-epidemicsound"
+  ],
+  "proof_scope": "url",
+  "styles": [],
+  "tags": [
+   "LUFS",
+   "render",
+   "تسليم",
+   "ffprobe"
+  ],
+  "section": "الصوت — Audio, voice & music",
+  "source": "KOSIF Atlas mining 2026-10-20 (https://github.com/kosif199022-jpg/kosif-atlas): akbun-editvideo/davinciresolve-audio-delivery (#2450); akbun-editvideo/davinciresolve-sfx-epidemicsound (#2459) · theme audio-voice · 3 supporting skills · verifier read: skills/1096-akbun-editvideo/2450-davinciresolve-audio-delivery, skills/1096-akbun-editvideo/2459-davinciresolve-sfx-epidemicsound",
+  "atlas": {
+   "ids": [
+    "2450",
+    "2451",
+    "2459"
+   ],
+   "examples": [
+    {
+     "id": "2450",
+     "plugin": "akbun-editvideo",
+     "skill": "davinciresolve-audio-delivery",
+     "url": "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/1096-akbun-editvideo/2450-davinciresolve-audio-delivery"
+    },
+    {
+     "id": "2459",
+     "plugin": "akbun-editvideo",
+     "skill": "davinciresolve-sfx-epidemicsound",
+     "url": "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/1096-akbun-editvideo/2459-davinciresolve-sfx-epidemicsound"
+    }
+   ],
+   "theme": "audio-voice",
+   "risk_notes": "Uses Resolve python API; may upload to YouTube only on request.",
+   "kosif_overlap_ids": [],
+   "stage": "extracted",
+   "verified_by": "b015-audio-voice-1.json"
+  }
+ },
+ {
+  "id": "AMEDIA-03",
+  "family": "atlas-media",
+  "domain": "media",
+  "name_ar": "مجموعات مؤثرات لعبة بمستويات صوت",
+  "name_en": "Game SFX sets with loudness classes",
+  "status": "documented",
+  "what": "يولّد مجموعات مؤثرات بنسخ متعددة وفئات مستوى وتحذيرات للبدء المتأخر أو الترددات الضعيفة. — Render named effect sets with variants, level classes and warnings for late onset or inaudible lows.",
+  "when": "A game needs jump/coin/hit/win/UI sounds that sit together in a mix and play on phone speakers.",
+  "how": "1) Pick a kit (arcade, platformer, shooter, party, ui) or write a JSON spec of effect name, preset, pitch in semitones, length, seed, style (clean/retro/soft), level. 2) Render three variants for frequent sounds, one take for once-per-round signals. 3) Normalize by loudest 50 ms into classes ui -20, small -16, normal -12, big -9 dB, ceiling -1 dBFS. 4) Reject effects that start late or have little energy under about 300 Hz. 5) Review reel spectrogram image and warnings.",
+  "params": "kit, style, variants",
+  "install": "",
+  "requires": [
+   "node",
+   "ffmpeg"
+  ],
+  "license": "method paraphrased from Atlas skills under Apache-2.0 / MIT; the skills keep their own licenses — see each folder's SOURCE.md",
+  "proof": [
+   "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/1511-homie/3901-sound",
+   "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/1526-gamegen/4163-game-audio-procedural"
+  ],
+  "proof_scope": "url",
+  "styles": [],
+  "tags": [
+   "SFX",
+   "loudness",
+   "مؤثرات",
+   "مستويات"
+  ],
+  "section": "الصوت — Audio, voice & music",
+  "source": "KOSIF Atlas mining 2026-10-20 (https://github.com/kosif199022-jpg/kosif-atlas): homie/sound (#3901); gamegen/game-audio-procedural (#4163) · theme audio-voice · 2 supporting skills · verifier read: skills/1511-homie/3901-sound, skills/1526-gamegen/4163-game-audio-procedural",
+  "atlas": {
+   "ids": [
+    "3901",
+    "4163"
+   ],
+   "examples": [
+    {
+     "id": "3901",
+     "plugin": "homie",
+     "skill": "sound",
+     "url": "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/1511-homie/3901-sound"
+    },
+    {
+     "id": "4163",
+     "plugin": "gamegen",
+     "skill": "game-audio-procedural",
+     "url": "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/1526-gamegen/4163-game-audio-procedural"
+    }
+   ],
+   "theme": "audio-voice",
+   "risk_notes": "Node script writes files and calls ffmpeg locally; no network.",
+   "kosif_overlap_ids": [],
+   "stage": "extracted",
+   "verified_by": "b015-audio-voice-1.json"
+  }
+ },
+ {
+  "id": "AMEDIA-04",
+  "family": "atlas-media",
+  "domain": "media",
+  "name_ar": "تفريغ سحابي مع فصل المتحدثين والتوقيت",
+  "name_en": "Hosted STT with diarization and timestamps",
+  "status": "documented",
+  "what": "يستدعي واجهة تفريغ سحابية للنسخ والترجمة وفصل المتحدثين وتوقيت الكلمات ضمن الحدود. — Call a hosted speech-to-text API for transcription, translation, speaker diarization and word timings within size limits.",
+  "when": "App needs batch or realtime transcription, captions or speaker segments via Together, Groq Whisper or ElevenLabs STT.",
+  "how": "1) Choose transport: REST batch, streaming, or realtime WebSocket (confirm PCM format first). 2) Respect batch limits: 80 MB direct upload, 1 GB URL fetch, 4 h per request; split longer audio. 3) Pass binary file handle in Python SDK. 4) Request verbose output for word timestamps or diarization and code for the richer response shape. 5) Use translations endpoint for English output.",
+  "params": "model, response_format",
+  "install": "",
+  "requires": [
+   "network",
+   "python3"
+  ],
+  "license": "method paraphrased from Atlas skills under MIT; the skills keep their own licenses — see each folder's SOURCE.md",
+  "proof": [
+   "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/3214-togetherai-skills/13585-together-audio",
+   "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/1864-groq-pack/5867-groq-core-workflow-b"
+  ],
+  "proof_scope": "url",
+  "styles": [],
+  "tags": [
+   "STT",
+   "diarization",
+   "API",
+   "تفريغ",
+   "توقيت كلمات"
+  ],
+  "section": "الصوت — Audio, voice & music",
+  "source": "KOSIF Atlas mining 2026-10-20 (https://github.com/kosif199022-jpg/kosif-atlas): togetherai-skills/together-audio (#13585); groq-pack/groq-core-workflow-b (#5867) · theme audio-voice · 4 supporting skills · verifier read: skills/3214-togetherai-skills/13585-together-audio, skills/1864-groq-pack/5867-groq-core-workflow-b",
+  "atlas": {
+   "ids": [
+    "5473",
+    "5515",
+    "5867",
+    "13585"
+   ],
+   "examples": [
+    {
+     "id": "13585",
+     "plugin": "togetherai-skills",
+     "skill": "together-audio",
+     "url": "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/3214-togetherai-skills/13585-together-audio"
+    },
+    {
+     "id": "5867",
+     "plugin": "groq-pack",
+     "skill": "groq-core-workflow-b",
+     "url": "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/1864-groq-pack/5867-groq-core-workflow-b"
+    }
+   ],
+   "theme": "audio-voice",
+   "risk_notes": "Calls network APIs with API keys; ships py/ts sample scripts.",
+   "kosif_overlap_ids": [
+    "MEDIA-25"
+   ],
+   "stage": "extracted",
+   "verified_by": "b015-audio-voice-1.json"
+  }
+ },
+ {
+  "id": "AMEDIA-05",
+  "family": "atlas-media",
+  "domain": "media",
+  "name_ar": "إصلاح انحراف التوقيت في دمج الصوت",
+  "name_en": "Joined-audio timestamp drift fix",
+  "status": "documented",
+  "what": "يحافظ على تطابق توقيت النص والفصول بعد دمج مقاطع صوتية كثيرة. — Keep transcript, chapter and caption times aligned after concatenating many audio pieces.",
+  "when": "Subtitles drift later through a concatenated file, joined file longer than the sum of parts, ffmpeg non-monotonic dts warning, stitching TTS chunks.",
+  "how": "1) Diagnose: compare ffprobe sum of piece durations with joined duration. 2) Cause: copy-mode concat keeps each encoder's start/end padding and header frame (about 50 ms per join). 3) Frame-count arithmetic is still off, so do not rely on it. 4) Re-encode once at the end (or decode to PCM, concat, encode) so offsets are exact. 5) Verify by measuring the final file and checking last-chapter offset, never assume.",
+  "params": "input file list, target codec",
+  "install": "",
+  "requires": [
+   "ffmpeg"
+  ],
+  "license": "method paraphrased from Atlas skills under MIT; the skills keep their own licenses — see each folder's SOURCE.md",
+  "proof": [
+   "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/3323-joined-audio-transcript-drift/13837-joined-audio-transcript-drift"
+  ],
+  "proof_scope": "url",
+  "styles": [],
+  "tags": [
+   "ffmpeg",
+   "drift",
+   "concat",
+   "مزامنة",
+   "دمج صوت"
+  ],
+  "section": "الصوت — Audio, voice & music",
+  "source": "KOSIF Atlas mining 2026-10-20 (https://github.com/kosif199022-jpg/kosif-atlas): joined-audio-transcript-drift/joined-audio-transcript-drift (#13837) · theme audio-voice · 3 supporting skills · verifier read: skills/3323-joined-audio-transcript-drift/13837-joined-audio-transcript-drift",
+  "atlas": {
+   "ids": [
+    "5514",
+    "13585",
+    "13837"
+   ],
+   "examples": [
+    {
+     "id": "13837",
+     "plugin": "joined-audio-transcript-drift",
+     "skill": "joined-audio-transcript-drift",
+     "url": "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/3323-joined-audio-transcript-drift/13837-joined-audio-transcript-drift"
+    }
+   ],
+   "theme": "audio-voice",
+   "risk_notes": "Instruction-only; runs ffmpeg locally.",
+   "kosif_overlap_ids": [],
+   "stage": "extracted",
+   "verified_by": "b015-audio-voice-1.json"
+  }
+ },
+ {
+  "id": "AMEDIA-06",
+  "family": "atlas-media",
+  "domain": "media",
+  "name_ar": "تفريغ محلي بـ whisper للملفات والبث",
+  "name_en": "Local whisper transcription of files and live streams",
+  "status": "documented",
+  "what": "يفرّغ الصوت أو الفيديو أو البث المباشر إلى نص بنموذج whisper محلي. — Transcribe audio, video or live streams to plain text with a local whisper model in batch or segmented live mode.",
+  "when": "Need a transcript of a podcast, interview, live stream or video audio track and no text source exists.",
+  "how": "1) Run an idempotent setup that ensures ffmpeg, yt-dlp/streamlink and a whisper runner. 2) Batch: pass file or URL (downloaded first with a time cap) and an output txt; read JSON with word count and a thin flag (under 1500 words). 3) Live: ffmpeg segments the stream into about 30 s chunks, each finished chunk is transcribed and appended to the output, stop on stream end, max minutes or Ctrl-C. 4) Run live mode in background and tail the file. Picture content is not read.",
+  "params": "segment seconds, max minutes",
+  "install": "",
+  "requires": [
+   "ffmpeg",
+   "yt-dlp",
+   "pip:faster-whisper"
+  ],
+  "license": "method paraphrased from Atlas skills under MIT; the skills keep their own licenses — see each folder's SOURCE.md",
+  "proof": [
+   "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/886-intel/1994-transcribe",
+   "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/3214-togetherai-skills/13585-together-audio"
+  ],
+  "proof_scope": "url",
+  "styles": [],
+  "tags": [
+   "whisper",
+   "transcribe",
+   "تفريغ",
+   "بث مباشر"
+  ],
+  "section": "الصوت — Audio, voice & music",
+  "source": "KOSIF Atlas mining 2026-10-20 (https://github.com/kosif199022-jpg/kosif-atlas): intel/transcribe (#1994); togetherai-skills/together-audio (#13585) · theme audio-voice · 4 supporting skills · verifier read: skills/886-intel/1994-transcribe, skills/3214-togetherai-skills/13585-together-audio",
+  "atlas": {
+   "ids": [
+    "1994",
+    "5515",
+    "5867",
+    "13585"
+   ],
+   "examples": [
+    {
+     "id": "1994",
+     "plugin": "intel",
+     "skill": "transcribe",
+     "url": "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/886-intel/1994-transcribe"
+    },
+    {
+     "id": "13585",
+     "plugin": "togetherai-skills",
+     "skill": "together-audio",
+     "url": "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/3214-togetherai-skills/13585-together-audio"
+    }
+   ],
+   "theme": "audio-voice",
+   "risk_notes": "Scripts download URLs, install via Homebrew and run long background processes.",
+   "kosif_overlap_ids": [
+    "MEDIA-25",
+    "SYNC-07"
+   ],
+   "stage": "extracted",
+   "verified_by": "b015-audio-voice-1.json"
+  }
+ },
+ {
+  "id": "AMEDIA-07",
+  "family": "atlas-media",
+  "domain": "media",
+  "name_ar": "صياغة كلمات الأغاني وموجّهات Suno",
+  "name_en": "Lyrics and Suno music prompt crafting",
+  "status": "documented",
+  "what": "يبني بنية الأغنية ويكتب موجّهات Suno بكلمات موسومة أو خطة تأليف ElevenLabs. — Structure songs by section form and write Suno style prompts with tagged lyrics, or compose via ElevenLabs Music plans.",
+  "when": "Writing songs, themes or game scores and prompting AI music generators.",
+  "how": "1) Identify sections (verse, chorus, bridge, refrain) and form (AABA, verse/chorus, verse/refrain) with Pattison-style balance. 2) For Suno write a compact style prompt (genre, mood, instruments, tempo) plus lyrics with section tags. 3) Iterate with troubleshooting tips per genre. 4) For ElevenLabs Music build a composition plan for sung material via the creator's own account. 5) Keep a section list for later bar-aligned video cuts.",
+  "params": "genre, mood, form",
+  "install": "",
+  "requires": [
+   "key:elevenlabs"
+  ],
+  "license": "method paraphrased from Atlas skills under MIT / Apache-2.0; the skills keep their own licenses — see each folder's SOURCE.md",
+  "proof": [
+   "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/2475-songwriting/9606-song-form",
+   "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/2475-songwriting/9607-suno",
+   "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/1511-homie/3892-music"
+  ],
+  "proof_scope": "url",
+  "styles": [],
+  "tags": [
+   "Suno",
+   "lyrics",
+   "songwriting",
+   "كلمات أغاني"
+  ],
+  "section": "الصوت — Audio, voice & music",
+  "source": "KOSIF Atlas mining 2026-10-20 (https://github.com/kosif199022-jpg/kosif-atlas): songwriting/song-form (#9606); songwriting/suno (#9607); homie/music (#3892) · theme audio-voice · 3 supporting skills · verifier read: skills/2475-songwriting/9606-song-form, skills/2475-songwriting/9607-suno, skills/1511-homie/3892-music",
+  "atlas": {
+   "ids": [
+    "3892",
+    "9606",
+    "9607"
+   ],
+   "examples": [
+    {
+     "id": "9606",
+     "plugin": "songwriting",
+     "skill": "song-form",
+     "url": "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/2475-songwriting/9606-song-form"
+    },
+    {
+     "id": "9607",
+     "plugin": "songwriting",
+     "skill": "suno",
+     "url": "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/2475-songwriting/9607-suno"
+    },
+    {
+     "id": "3892",
+     "plugin": "homie",
+     "skill": "music",
+     "url": "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/1511-homie/3892-music"
+    }
+   ],
+   "theme": "audio-voice",
+   "risk_notes": "Homie music ships js and uses paid ElevenLabs.",
+   "kosif_overlap_ids": [],
+   "stage": "extracted",
+   "verified_by": "b015-audio-voice-1.json"
+  }
+ },
+ {
+  "id": "AMEDIA-08",
+  "family": "atlas-media",
+  "domain": "media",
+  "name_ar": "صوت PipeWire داخل الحاويات",
+  "name_en": "PipeWire audio in containers",
+  "status": "documented",
+  "what": "تشغيل PipeWire مع WirePlumber وتوافق PulseAudio للصوت في الحاويات. — Run PipeWire with WirePlumber and PulseAudio compatibility for audio in containerized desktops.",
+  "when": "Audio missing or misrouted inside Docker or remote desktop sessions.",
+  "how": "1) Start pipewire, wireplumber and the pulse compatibility service in the session. 2) Confirm sockets in XDG_RUNTIME_DIR. 3) Point apps to the pulse socket. 4) List nodes and sinks to debug routing.",
+  "params": "",
+  "install": "",
+  "requires": [
+   "docker"
+  ],
+  "license": "method paraphrased from Atlas skills under MIT; the skills keep their own licenses — see each folder's SOURCE.md",
+  "proof": [
+   "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/2759-charly-selkies/10892-pipewire"
+  ],
+  "proof_scope": "url",
+  "styles": [],
+  "tags": [
+   "PipeWire",
+   "Docker",
+   "صوت",
+   "حاويات"
+  ],
+  "section": "الصوت — Audio, voice & music",
+  "source": "KOSIF Atlas mining 2026-10-20 (https://github.com/kosif199022-jpg/kosif-atlas): charly-selkies/pipewire (#10892) · theme audio-voice · 1 supporting skills · verifier read: skills/2759-charly-selkies/10892-pipewire",
+  "atlas": {
+   "ids": [
+    "10892"
+   ],
+   "examples": [
+    {
+     "id": "10892",
+     "plugin": "charly-selkies",
+     "skill": "pipewire",
+     "url": "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/2759-charly-selkies/10892-pipewire"
+    }
+   ],
+   "theme": "audio-voice",
+   "risk_notes": "Instruction only; touches system audio services.",
+   "kosif_overlap_ids": [],
+   "stage": "extracted",
+   "verified_by": "b015-audio-voice-1.json"
+  }
+ },
+ {
+  "id": "AMEDIA-09",
+  "family": "atlas-media",
+  "domain": "media",
+  "name_ar": "صوت ألعاب إجرائي بالكود",
+  "name_en": "Procedural game audio from Python code",
+  "status": "documented",
+  "what": "يولّد مؤثرات وموسيقى قابلة للتكرار من كود بايثون ويصدّرها بصيغة OGG مع بيان. — Synthesize SFX and loop-ready music scores deterministically from seeds with numpy/scipy, exporting OGG plus manifest.",
+  "when": "Need license-clean original SFX, jingles, UI sounds or looping game music without samples or paid services.",
+  "how": "1) Write audio direction: cue table (id, mood, tempo, key, loop/one-shot) and SFX per game event. 2) Define a sonic identity (key, brightness, grit, space) in a shared style module. 3) Vendor the synth toolkit into the project tools dir. 4) Each SFX is a seeded function, each track a score; render via a build script writing OGG and manifest with SHA-256, duration, loop data. 5) Check objective metrics and spectrogram review images; cross-check EBU R128 with ffmpeg. Not suited to realistic acoustic instruments or vocals.",
+  "params": "seed, key, tempo, cue list",
+  "install": "",
+  "requires": [
+   "python3",
+   "pip:numpy",
+   "pip:scipy",
+   "pip:soundfile",
+   "ffmpeg"
+  ],
+  "license": "method paraphrased from Atlas skills under MIT / Apache-2.0; the skills keep their own licenses — see each folder's SOURCE.md",
+  "proof": [
+   "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/1526-gamegen/4163-game-audio-procedural",
+   "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/1511-homie/3901-sound"
+  ],
+  "proof_scope": "url",
+  "styles": [],
+  "tags": [
+   "synth",
+   "game audio",
+   "SFX",
+   "صوت إجرائي",
+   "ألعاب"
+  ],
+  "section": "الصوت — Audio, voice & music",
+  "source": "KOSIF Atlas mining 2026-10-20 (https://github.com/kosif199022-jpg/kosif-atlas): gamegen/game-audio-procedural (#4163); homie/sound (#3901) · theme audio-voice · 2 supporting skills · verifier read: skills/1526-gamegen/4163-game-audio-procedural, skills/1511-homie/3901-sound",
+  "atlas": {
+   "ids": [
+    "3901",
+    "4163"
+   ],
+   "examples": [
+    {
+     "id": "4163",
+     "plugin": "gamegen",
+     "skill": "game-audio-procedural",
+     "url": "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/1526-gamegen/4163-game-audio-procedural"
+    },
+    {
+     "id": "3901",
+     "plugin": "homie",
+     "skill": "sound",
+     "url": "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/1511-homie/3901-sound"
+    }
+   ],
+   "theme": "audio-voice",
+   "risk_notes": "Ships ~20 py scripts that write files; would be run locally only after review.",
+   "kosif_overlap_ids": [],
+   "stage": "extracted",
+   "verified_by": "b015-audio-voice-1.json"
+  }
+ },
+ {
+  "id": "AMEDIA-10",
+  "family": "atlas-media",
+  "domain": "media",
+  "name_ar": "مقطوعة مُصنَّعة بحلقات متصلة",
+  "name_en": "Synthesized score with seamless loops",
+  "status": "documented",
+  "what": "يبني مقطوعة قصيرة من ملف JSON للأوتار والأنماط ويصدّر المزيج والسطور وحلقات بلا درز. — Build a short score from a JSON of chords and patterns and render mix, stems and seamless loop sections.",
+  "when": "Need a theme or looping bed with stems, bar grid for trailer cuts, or game music generated offline.",
+  "how": "1) Write score.json: tempo, key, instruments (level, pan, echo, reverb send, kick ducking), sections in whole bars with chords and per-instrument patterns, arrangement, loop sections. 2) Render mix at -14 LUFS (or -18 as a bed under effects) plus 24-bit master and per-instrument stems that sum to the mix. 3) Loops: render each section three times and keep the middle copy so reverb tails land at the loop head. 4) Check seam value (1 or less is seamless) and bar length; export plan.json bar grid for video cuts.",
+  "params": "--loops, --lufs",
+  "install": "",
+  "requires": [
+   "node",
+   "ffmpeg"
+  ],
+  "license": "method paraphrased from Atlas skills under Apache-2.0 / MIT; the skills keep their own licenses — see each folder's SOURCE.md",
+  "proof": [
+   "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/1511-homie/3901-sound",
+   "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/1526-gamegen/4163-game-audio-procedural"
+  ],
+  "proof_scope": "url",
+  "styles": [],
+  "tags": [
+   "loops",
+   "stems",
+   "music",
+   "حلقات",
+   "موسيقى"
+  ],
+  "section": "الصوت — Audio, voice & music",
+  "source": "KOSIF Atlas mining 2026-10-20 (https://github.com/kosif199022-jpg/kosif-atlas): homie/sound (#3901); gamegen/game-audio-procedural (#4163) · theme audio-voice · 2 supporting skills · verifier read: skills/1511-homie/3901-sound, skills/1526-gamegen/4163-game-audio-procedural",
+  "atlas": {
+   "ids": [
+    "3901",
+    "4163"
+   ],
+   "examples": [
+    {
+     "id": "3901",
+     "plugin": "homie",
+     "skill": "sound",
+     "url": "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/1511-homie/3901-sound"
+    },
+    {
+     "id": "4163",
+     "plugin": "gamegen",
+     "skill": "game-audio-procedural",
+     "url": "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/1526-gamegen/4163-game-audio-procedural"
+    }
+   ],
+   "theme": "audio-voice",
+   "risk_notes": "Local scripts, file writes only.",
+   "kosif_overlap_ids": [],
+   "stage": "extracted",
+   "verified_by": "b015-audio-voice-1.json"
+  }
+ },
+ {
+  "id": "AMEDIA-11",
+  "family": "atlas-media",
+  "domain": "media",
+  "name_ar": "اختيار طبقة ASR/TTS لوكيل صوتي",
+  "name_en": "Voice-agent ASR/TTS stack selection",
+  "status": "documented",
+  "what": "يختار ويربط مزودي التعرف والتوليد الصوتي لوكيل صوتي حسب القناة واللغة والبث. — Choose and wire STT/TTS providers for a voice agent by channel bandwidth, language and streaming needs.",
+  "when": "Designing a phone or web voice agent, Twilio ConversationRelay, low-latency speech pipelines.",
+  "how": "1) Classify channel: narrowband telephony versus wideband web. 2) Pick provider by language coverage and streaming support. 3) Use bidirectional audio streaming (Twilio ConversationRelay handles ASR, TTS, barge-in). 4) Tune latency: model choice, streaming, caching, audio format. 5) Add rate-limit queues, health checks and rollback before production.",
+  "params": "channel, languages",
+  "install": "",
+  "requires": [
+   "network"
+  ],
+  "license": "method paraphrased from Atlas skills under MIT; the skills keep their own licenses — see each folder's SOURCE.md",
+  "proof": [
+   "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/2261-conversational-ai-voice-engineering/8616-speech-recognition-and-synthesis",
+   "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/2721-twilio-developer-kit/10514-twilio-voice-conversation-relay"
+  ],
+  "proof_scope": "url",
+  "styles": [],
+  "tags": [
+   "voice agent",
+   "Twilio",
+   "وكيل صوتي",
+   "ASR"
+  ],
+  "section": "الصوت — Audio, voice & music",
+  "source": "KOSIF Atlas mining 2026-10-20 (https://github.com/kosif199022-jpg/kosif-atlas): conversational-ai-voice-engineering/speech-recognition-and-synthesis (#8616); twilio-developer-kit/twilio-voice-conversation-relay (#10514) · theme audio-voice · 5 supporting skills · verifier read: skills/2261-conversational-ai-voice-engineering/8616-speech-recognition-and-synthesis, skills/2721-twilio-developer-kit/10514-twilio-voice-conversation-relay",
+  "atlas": {
+   "ids": [
+    "5522",
+    "5524",
+    "5525",
+    "8616",
+    "10514"
+   ],
+   "examples": [
+    {
+     "id": "8616",
+     "plugin": "conversational-ai-voice-engineering",
+     "skill": "speech-recognition-and-synthesis",
+     "url": "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/2261-conversational-ai-voice-engineering/8616-speech-recognition-and-synthesis"
+    },
+    {
+     "id": "10514",
+     "plugin": "twilio-developer-kit",
+     "skill": "twilio-voice-conversation-relay",
+     "url": "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/2721-twilio-developer-kit/10514-twilio-voice-conversation-relay"
+    }
+   ],
+   "theme": "audio-voice",
+   "risk_notes": "Telephony and paid APIs; not seen executing here.",
+   "kosif_overlap_ids": [],
+   "stage": "extracted",
+   "verified_by": "b015-audio-voice-1.json"
+  }
+ }
+]
