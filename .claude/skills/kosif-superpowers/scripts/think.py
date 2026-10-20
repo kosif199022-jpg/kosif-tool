@@ -15,7 +15,9 @@ Stdlib only, deterministic with --seed. The output is a scaffold to think with, 
 from __future__ import annotations
 
 import argparse
+import ast
 import json
+import operator
 import random
 import re
 import statistics
@@ -266,6 +268,42 @@ def cmd_decide(path: str) -> int:
 
 
 # ------------------------------------------------------------------ fermi
+_ARITH_BIN = {ast.Add: operator.add, ast.Sub: operator.sub, ast.Mult: operator.mul, ast.Div: operator.truediv, ast.Pow: operator.pow}
+_ARITH_UN = {ast.UAdd: operator.pos, ast.USub: operator.neg}
+
+
+def _arith_tree(expr: str):
+    """Parse an arithmetic expression and refuse anything else (attributes, calls, subscripts …)."""
+    try:
+        tree = ast.parse(expr, mode="eval")
+    except SyntaxError as exc:
+        raise ValueError(f"not an expression ({exc.msg})") from None
+    for node in ast.walk(tree):
+        if isinstance(node, (ast.Expression, ast.Name, ast.Load)) or type(node) in _ARITH_BIN or type(node) in _ARITH_UN:
+            continue
+        if isinstance(node, ast.Constant) and isinstance(node.value, (int, float)) and not isinstance(node.value, bool):
+            continue
+        if isinstance(node, (ast.BinOp, ast.UnaryOp)):
+            continue
+        raise ValueError(f"{type(node).__name__} is not allowed")
+    return tree
+
+
+def _arith_eval(node, env: dict) -> float:
+    """Evaluate a tree from _arith_tree with plain numbers; no eval(), no builtins, no attribute access."""
+    if isinstance(node, ast.Expression):
+        return _arith_eval(node.body, env)
+    if isinstance(node, ast.Constant):
+        return node.value
+    if isinstance(node, ast.Name):
+        return env[node.id]
+    if isinstance(node, ast.BinOp):
+        return _ARITH_BIN[type(node.op)](_arith_eval(node.left, env), _arith_eval(node.right, env))
+    if isinstance(node, ast.UnaryOp):
+        return _ARITH_UN[type(node.op)](_arith_eval(node.operand, env))
+    raise ValueError(f"{type(node).__name__} is not allowed")
+
+
 def cmd_fermi(expr: str, ranges: list, n: int, seed: int) -> int:
     rng = random.Random(seed)
     bounds = {}
@@ -276,15 +314,17 @@ def cmd_fermi(expr: str, ranges: list, n: int, seed: int) -> int:
     missing = names - set(bounds)
     if missing:
         print(f"missing --range for {sorted(missing)}"); return 2
-    if not re.fullmatch(r"[\w\s\.\*\+\-/\(\)]+", expr):
-        print("expression may only use names, numbers and + - * / ( )"); return 2
+    try:
+        tree = _arith_tree(expr)
+    except ValueError as exc:
+        print(f"expression may only use names, numbers and + - * / ** ( ): {exc}"); return 2
     vals = []
     import math
     for _ in range(n):
         env = {}
         for k, (lo, hi) in bounds.items():
             env[k] = math.exp(rng.uniform(math.log(lo), math.log(hi))) if lo > 0 else rng.uniform(lo, hi)
-        vals.append(eval(expr, {"__builtins__": {}}, env))  # noqa: S307 - validated arithmetic only
+        vals.append(_arith_eval(tree, env))
     vals.sort()
     q = lambda p: vals[int(p * (len(vals) - 1))]
     print(json.dumps({"expr": expr, "p10": q(0.10), "p50": q(0.50), "p90": q(0.90), "mean": statistics.fmean(vals), "samples": n}, indent=1))
@@ -305,7 +345,8 @@ CRITIC = [
 def cmd_critic(path: str) -> int:
     text = Path(path).read_text(encoding="utf-8")
     hits = 0
-    for i, line in enumerate(text.splitlines(), 1):
+    for i, raw in enumerate(text.splitlines(), 1):
+        line = re.sub("[\u064B-\u0652\u0640]", "", raw)  # جدًا → جدا, دائمًا → دائما: tanween and tatweel never hide a flag
         for pat, why in CRITIC:
             for m in re.finditer(pat, line, re.I):
                 hits += 1

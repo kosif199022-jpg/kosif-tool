@@ -120,5 +120,18 @@ class ReferenceEditEngineTests(unittest.TestCase):
         x=sample();x["status"]="reference_timing_observed_not_animation_reconstructed__fake"
         with self.assertRaises(ValueError):r.plan(x)
 
+    @unittest.skipUnless(__import__("shutil").which("ffmpeg") and __import__("shutil").which("ffprobe"), "needs ffmpeg/ffprobe")
+    def test_replacement_audio_must_match_the_timeline(self):
+        import subprocess
+        with tempfile.TemporaryDirectory() as d:
+            d=Path(d)
+            for secs in (2,6):
+                subprocess.run(["ffmpeg","-v","error","-f","lavfi","-i",f"sine=f=440:d={secs}",str(d/f"v{secs}.wav")],check=True)
+            edit={"fps":30,"duration":6.0,"totalFrames":180}
+            with self.assertRaises(ValueError):r.check_audio_length(d/"v2.wav",edit)
+            self.assertTrue(r.check_audio_length(d/"v6.wav",edit)["lengthVerified"])
+            (d/"fake.wav").write_bytes(b"not audio")
+            self.assertFalse(r.check_audio_length(d/"fake.wav",edit)["lengthVerified"])
+
 
 if __name__=="__main__":unittest.main()

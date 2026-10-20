@@ -199,9 +199,11 @@ def main():
     p.add_argument("--out",required=True,help="new JSON path; will never overwrite")
     args=p.parse_args()
     try:
-        data=analyze(args.video,args.probe)
         dest=Path(args.out)
+        # refuse a bad destination before spending up to minutes decoding the video
         if dest.is_symlink() or not dest.parent.is_dir():raise ValueError("output parent missing or unsafe")
+        if dest.exists():raise FileExistsError(f"{dest} already exists; choose a new --out")
+        data=analyze(args.video,args.probe)
         with dest.open("x",encoding="utf-8") as f:
             json.dump(data,f,ensure_ascii=False,indent=2)
             f.write("\n")
