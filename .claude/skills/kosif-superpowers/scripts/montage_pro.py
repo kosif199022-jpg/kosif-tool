@@ -8,7 +8,8 @@ Upload an audio or a video, get a team, a menu of strong options, and a real ren
   python3 montage_pro.py intake MEDIA --job JOB                  # analyst: measure the file (ffprobe, loudness, energy cues, cuts)
   python3 montage_pro.py options JOB [--brief "..."]             # director: option menu for this material + stage plan
   python3 montage_pro.py acquire URL --job JOB --license "CC0 / owner / …" --source-page URL [--owner]
-                                                                 # IDM-style desk: segmented resumable file download or stream grab + rights.json
+                                                                 # IDM-style desk: segmented resumable file download, DASH/HLS manifest grab
+                                                                 # (stream_grabber.py), or page grab (yt-dlp) + rights.json
   python3 montage_pro.py convert JOB                             # conformer: edit-ready mezzanine (CFR H.264/AAC 48k) + 540p proxies
   python3 montage_pro.py build JOB --option ID [--style …]       # editor/motion/render/QA: produce and verify the chosen option
 
@@ -245,17 +246,23 @@ def acquire(url: str, job: Path, licence: str, source_page: str, owner: bool, pa
     dest = job / "footage"
     dest.mkdir(parents=True, exist_ok=True)
     host = (u.hostname or "").lower()
-    stream = any(host == h or host.endswith("." + h) for h in STREAM_HOSTS) or u.path.lower().endswith((".m3u8", ".mpd"))
+    stream = any(host == h or host.endswith("." + h) for h in STREAM_HOSTS)
     before = {p.name for p in dest.iterdir()}
-    if stream:
-        route = "stream-grab (yt-dlp/ffmpeg via fetch_video.py; HLS/DASH segments merged, edit-safe H.264/AAC)"
+    manifest = u.path.lower().endswith((".m3u8", ".mpd"))
+    if manifest:
+        name = re.sub(r"[^\w.\-]+", "_", Path(u.path).stem)[:80] or "stream"
+        route = "manifest grab (KOSIF stream_grabber: DASH/HLS segment list → parallel resumable segments → merge best video+audio; DRM refused)"
+        rc, out, err = sh([PY, str(HERE / "stream_grabber.py"), "grab", url, "-o", str(dest / (name + ".mp4")), "--max-height", "1080",
+                           "--work", str(job / "work" / ("grab-" + name))], 3600)
+    elif stream:
+        route = "page stream grab (yt-dlp/ffmpeg via fetch_video.py; edit-safe H.264/AAC)"
         rc, out, err = sh([PY, str(HERE / "fetch_video.py"), url, "-o", str(dest), "--quality", "1080"], 3600)
     else:
         name = Path(u.path).name or "download.bin"
         name = re.sub(r"[^\w.\-]+", "_", name)[:120]
         route = f"segmented resumable download ({parts} ranges, .part resume, sha256) via app_studio.py download"
         rc, out, err = sh([PY, str(HERE / "app_studio.py"), "download", url, "-o", str(dest / name), "--set", f"parts={parts}"], 3600)
-    new = [p for p in dest.iterdir() if p.name not in before and p.is_file() and not p.name.endswith(".part")]
+    new = [p for p in dest.iterdir() if p.name not in before and p.is_file() and not p.name.endswith((".part", ".parts"))]
     rights = jload(job / "rights.json", []) or []
     for p in new:
         rights.append({"file": str(p.relative_to(job)), "url": url, "source_page": source_page or url, "licence": licence or "owner-supplied",
