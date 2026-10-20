@@ -7,6 +7,7 @@ from __future__ import annotations
 import json
 import os
 import re
+import shutil
 import subprocess
 import sys
 import tempfile
@@ -74,10 +75,16 @@ class RegistryTest(unittest.TestCase):
         """`--help` must never crash: heavy imports belong inside the commands that need them."""
         for t in self.reg["tools"]:
             path = (SKILL if t["root"] == "skill" else REPO) / t["path"]
-            if t["kind"] != "cli" or path.suffix != ".py" or t["id"] in ("blender-worker",):
+            if t["kind"] != "cli" or path.suffix not in (".py", ".cjs"):
+                continue
+            if path.suffix == ".cjs" and not shutil.which("node"):
                 continue
             with self.subTest(tool=t["id"]):
-                proc = run(str(path), "--help", cwd=SKILL if t["root"] == "skill" else REPO, timeout=60)
+                cwd = SKILL if t["root"] == "skill" else REPO
+                if path.suffix == ".py":
+                    proc = run(str(path), "--help", cwd=cwd, timeout=60)
+                else:
+                    proc = subprocess.run(["node", str(path), "--help"], cwd=cwd, capture_output=True, text=True, timeout=60)
                 self.assertEqual(proc.returncode, 0, f"{t['id']} --help failed: {proc.stderr[-400:]}")
 
     def test_schema_enums_match_the_code(self):
@@ -164,8 +171,28 @@ class FindTest(unittest.TestCase):
         proc = run("scripts/hub.py", "run", gated["id"], "--definitely-not-a-flag")
         self.assertEqual(proc.returncode, 3, proc.stderr)
         self.assertIn("--yes", proc.stderr)
-        ok = run("scripts/hub.py", "run", "powers", "stats")
+        ok = run("scripts/hub.py", "run", "powers", "stats")  # listed in the tool's safe_commands
         self.assertEqual(ok.returncode, 0, ok.stderr)
+        risky = run("scripts/hub.py", "run", "powers", "env", "--json")  # not listed: still gated
+        self.assertEqual(risky.returncode, 3, risky.stderr)
+        bare = run("scripts/hub.py", "run", gated["id"])  # a bare run is not exempt
+        self.assertEqual(bare.returncode, 3, bare.stderr)
+
+    def test_run_passes_a_late_separator_to_the_tool(self):
+        proc = run("scripts/hub.py", "run", "invention-lab", "invent", "--", "-captions")
+        self.assertEqual(proc.returncode, 0, proc.stderr)
+        self.assertEqual(json.loads(proc.stdout)["problem"], "-captions")
+
+    def test_tool_lookup_needs_a_whole_id_or_file_name(self):
+        for bad in ("", "py", "s"):
+            self.assertEqual(run("scripts/hub.py", "tool", bad).returncode, 1, bad)
+        self.assertEqual(run("scripts/hub.py", "tool", "hub.py").returncode, 0)
+
+    def test_shown_rewrites_paths_once_and_quotes_odd_roots(self):
+        tool = {"root": "skill"}
+        out = hub.shown("node -e \"import x from './resources/a.mjs'\" ../../../proofs/p.blend scripts/x.py", tool, cwd=Path("/"))
+        prefix = os.path.relpath(SKILL, "/").replace(os.sep, "/")
+        self.assertEqual(out, f"node -e \"import x from '{prefix}/resources/a.mjs'\" {prefix}/../../../proofs/p.blend {prefix}/scripts/x.py")
 
 
 class ArabicSearchTest(unittest.TestCase):

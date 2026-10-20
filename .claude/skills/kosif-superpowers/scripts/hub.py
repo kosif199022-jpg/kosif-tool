@@ -133,6 +133,9 @@ def validate_registry(data: dict, check_files: bool = True) -> list:
         if not isinstance(req, dict) or not all(isinstance(req.get(k), list) for k in ("python", "binaries", "node", "optional")) \
                 or not isinstance(req.get("network"), bool):
             errs.append(f"{tid}: requires needs python/binaries/node/optional lists and a network boolean")
+        sc = t.get("safe_commands", [])
+        if not isinstance(sc, list) or not all(isinstance(x, str) and re.fullmatch(r"[\w-]+", x) for x in sc):
+            errs.append(f"{tid}: safe_commands must be a list of subcommand words")
         if not isinstance(t.get("consent"), str):
             errs.append(f"{tid}: consent must be a string (empty when nothing needs approval)")
         if check_files:
@@ -368,8 +371,12 @@ def shown(example: str, tool: dict, cwd: Path = None) -> str:
         prefix = os.path.relpath(base, cwd).replace(os.sep, "/")
     except ValueError:
         prefix = base.as_posix()
+    if re.search(r"[^\w./:+@-]", prefix):  # spaces or shell characters: run it from its root instead
+        return f"cd {shlex.quote(str(base))} && {example}"
     dirs = SKILL_DIRS if tool["root"] == "skill" else REPO_DIRS
-    return re.sub(r"(?<![\w./-])(" + "|".join(dirs) + r")/", lambda m: f"{prefix}/{m.group(1)}/", example)
+    # one pass, so the inserted prefix (which may itself start with ../) is never rewritten again
+    pat = r"(?<![\w./-])(?:(?:\./)?(" + "|".join(dirs) + r")/|((?:\.\./)+))"
+    return re.sub(pat, lambda m: f"{prefix}/{m.group(1)}/" if m.group(1) else f"{prefix}/{m.group(2)}", example)
 
 
 def tool_card(t: dict, reg: dict, full: bool = True) -> dict:
@@ -462,7 +469,9 @@ def cmd_find(a) -> int:
             print(f"  {s['id']}  {s['name']}")
     for h in res["hints"]:
         print(f"\nhint: {h}")
-    print("\nnext: " + " · ".join(shown(n, {"root": "skill"}) for n in res["next"]))
+    q = shlex.quote(a.brief)
+    print("\nnext: " + " · ".join(shown(n[: -len(q)], {"root": "skill"}) + q if n.endswith(" " + q) else shown(n, {"root": "skill"})
+                                   for n in res["next"]))
     print("badges: ✅ proven · 🟢 ready · 📦 install · 🔑 key · 👁 seen · 📄 documented · 💡 idea — claim the lowest true one.")
     return 0
 
@@ -470,7 +479,9 @@ def cmd_find(a) -> int:
 def cmd_tool(a) -> int:
     reg = load_registry()
     by = tools_by_id(reg)
-    t = by.get(a.id) or next((x for x in reg["tools"] if x["path"].rstrip("/").endswith(a.id) or Path(x["path"]).stem == a.id), None)
+    name = a.id.strip()
+    t = by.get(name) or (next((x for x in reg["tools"] if name and (Path(x["path"].rstrip("/")).name == name
+                                                                    or Path(x["path"].rstrip("/")).stem == name)), None))
     if not t:
         close = [i for i in by if a.id.lower() in i]
         print(f"no tool '{a.id}'" + (f"; did you mean: {', '.join(close[:6])}" if close else "; see: python3 scripts/hub.py list"), file=sys.stderr)
@@ -587,7 +598,8 @@ def cmd_run(a, extra: list) -> int:
         for c in t["commands"]:
             print(f"  $ {shown(c['example'], t)}", file=sys.stderr)
         return 2
-    harmless = bool(extra) and set(extra) <= {"--help", "-h"}
+    # --help, or a subcommand the registry lists as read-only whatever its arguments, needs no approval
+    harmless = bool(extra) and (set(extra) <= {"--help", "-h"} or extra[0] in (t.get("safe_commands") or []))
     if (t["consent"] or t["safety"] in ("network", "runs-external-programs")) and not a.yes and not harmless:
         print(f"{t['id']} needs approval first: {t['consent'] or t['safety']}\nRe-run with --yes once the user has agreed.", file=sys.stderr)
         return 3
@@ -851,14 +863,21 @@ def main(argv=None) -> int:
     if argv[:1] == ["run"]:
         # hub.py run [--yes] <id> [--yes] [--] <tool args …>: everything after the id goes to the tool,
         # except a --yes before an optional "--" separator.
-        rest = argv[1:]
-        cut = rest.index("--") if "--" in rest else len(rest)
-        mine, theirs = rest[:cut], rest[cut + 1:]
-        yes = "--yes" in mine
-        mine = [x for x in mine if x != "--yes"]
-        if mine:
-            argv = ["run", mine[0]] + (["--yes"] if yes else [])
-            extra = mine[1:] + theirs
+        rest, yes, i = argv[1:], False, 0
+        while i < len(rest) and rest[i] == "--yes":
+            yes, i = True, i + 1
+        if i < len(rest) and rest[i] != "--":
+            tid, tail, j = rest[i], rest[i + 1:], 0
+            while j < len(tail) and tail[j] == "--yes":
+                yes, j = True, j + 1
+            if j < len(tail) and tail[j] == "--":  # "run <id> [--yes] -- args": everything after goes to the tool verbatim
+                extra = tail[j + 1:]
+            else:  # a --yes before any later "--" is the hub's; a later "--" and what follows belong to the tool
+                tail = tail[j:]
+                cut = tail.index("--") if "--" in tail else len(tail)
+                yes = yes or "--yes" in tail[:cut]
+                extra = [x for x in tail[:cut] if x != "--yes"] + tail[cut:]
+            argv = ["run", tid] + (["--yes"] if yes else [])
     ap = argparse.ArgumentParser(prog="hub.py", description="KOSIF hub: one front door to tools, powers and guides.",
                                  formatter_class=argparse.RawDescriptionHelpFormatter, epilog=__doc__.split("\n\n", 1)[1])
     sub = ap.add_subparsers(dest="cmd", required=True)

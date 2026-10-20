@@ -107,6 +107,9 @@ def clean(text) -> str:
     return s.replace("\r\n", "\n").replace("\n", "\n  ")
 
 
+GENERATED_REFS = {"INDEX.md", "requirements.md", "capability-atlas.md", "capability-map.md"}
+
+
 def related_refs(stem: str, prefix: str, rows) -> list:
     """Narrative references that mention this family (by source field, stem or ID)."""
     names = set()
@@ -116,7 +119,7 @@ def related_refs(stem: str, prefix: str, rows) -> list:
     id_re = re.compile(r"\b%s-\d{2,3}\b" % re.escape(prefix)) if prefix else None
     if REFS.is_dir():
         for f in sorted(REFS.glob("*.md")):
-            if f.name == "INDEX.md":  # the generated index lists every family; it is linked from SKILL.md instead
+            if f.name in GENERATED_REFS:  # built after the chapters and mention every family; linking them would make the build order matter
                 continue
             try:
                 txt = f.read_text(encoding="utf-8")

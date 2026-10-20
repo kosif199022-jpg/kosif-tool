@@ -252,6 +252,14 @@
     "consent": {
      "type": "string"
     },
+    "safe_commands": {
+     "type": "array",
+     "items": {
+      "type": "string",
+      "pattern": "^[\\w-]+$"
+     },
+     "description": "Subcommands that only read (whatever their arguments), so hub.py run needs no --yes for them even when the tool has a consent text or a risky safety level."
+    },
     "limits": {
      "type": "string"
     },

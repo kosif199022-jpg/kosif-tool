@@ -2,10 +2,20 @@
 """Import creative briefs into the atlas.
 
 Reads every *.json file in a directory (each `{"briefs": [...]}`), validates the
-brief objects against the shape documented in catalog/SCHEMA.md, writes
-styles/<id>/BRIEF.md, catalog/briefs.json and copies the brief-derived summary
-fields (name_ar, summary_ar, summary_en, keywords, difficulty, duration_s,
-stack, brief) into catalog/styles.json and styles/<id>/STYLE.json.
+brief objects against the brief shape documented in catalog/SCHEMA.md ("Brief
+objects"), writes styles/<id>/BRIEF.md, catalog/briefs.json and copies the
+brief-derived summary fields (name_ar, summary_ar, summary_en, keywords,
+difficulty, duration_s, stack, brief) into catalog/styles.json and
+styles/<id>/STYLE.json. Every file is parsed before anything is written.
+
+Without --strict, files that are not valid JSON or not shaped {"briefs": [...]},
+unknown ids, and briefs with missing keys, wrong types or an unreadable aspect
+are skipped; briefs that only fail a value check (difficulty 1-5, known stack
+names, 6-20 keywords, 3-8 scenes_en, numeric duration_s, ISO revised_from_video,
+title_ar up to 80 chars) are still imported, and every issue is printed.
+With --strict, any brief with an issue is skipped, the rest are imported and the
+exit code is 1; an unreadable or wrongly shaped file stops the run with exit 1
+before anything is written.
 
 Usage:
   python3 tools/import_briefs.py <dir-with-batch-json> [--strict]
@@ -118,40 +128,63 @@ def render_md(rec: dict, b: dict) -> str:
 """
 
 
+def load_batches(files: list[Path]) -> tuple[list[tuple[Path, list]], list[str]]:
+    """Parse every batch file up front, so a bad file is found before anything is written."""
+    batches, errors = [], []
+    for f in files:
+        try:
+            data = json.loads(f.read_text(encoding="utf-8"))
+        except OSError as e:
+            errors.append(f"{f.name}: cannot read ({e})")
+            continue
+        except (UnicodeDecodeError, json.JSONDecodeError) as e:
+            errors.append(f"{f.name}: invalid JSON ({e})")
+            continue
+        if not isinstance(data, dict) or not isinstance(data.get("briefs"), list):
+            got = 'an object without a "briefs" list' if isinstance(data, dict) else f"a JSON {type(data).__name__}"
+            errors.append(f'{f.name}: expected an object {{"briefs": [...]}}, got {got}')
+            continue
+        batches.append((f, data["briefs"]))
+    return batches, errors
+
+
 def main() -> int:
     ap = argparse.ArgumentParser(description=__doc__, formatter_class=argparse.RawDescriptionHelpFormatter)
     ap.add_argument("directory")
-    ap.add_argument("--strict", action="store_true", help="fail on any invalid brief instead of skipping it")
+    ap.add_argument("--strict", action="store_true",
+                    help="skip every brief with any issue (not only missing keys or wrong types) and exit 1 if any "
+                         "brief was skipped or any id is unknown; an unreadable file stops the run before anything is written")
     args = ap.parse_args()
     src = Path(args.directory)
     files = sorted(src.glob("*.json"))
     if not files:
         print("no *.json files in", src, file=sys.stderr)
         return 2
+    batches, file_errors = load_batches(files)
+    for e in file_errors:
+        print(e, file=sys.stderr)
+    if args.strict and file_errors:
+        print("--strict: nothing was written", file=sys.stderr)
+        return 1
     records = json.loads(CATALOG.read_text(encoding="utf-8"))
     by_id = {r["id"]: r for r in records}
     existing = json.loads(BRIEFS.read_text(encoding="utf-8")) if BRIEFS.exists() else {}
     imported, skipped, unknown = 0, [], []
-    for f in files:
-        try:
-            data = json.loads(f.read_text(encoding="utf-8"))
-        except json.JSONDecodeError as e:
-            print(f"{f.name}: invalid JSON ({e})", file=sys.stderr)
-            if args.strict:
-                return 1
-            continue
-        for b in data.get("briefs", []):
+    for f, briefs in batches:
+        for n, b in enumerate(briefs, 1):
+            if not isinstance(b, dict):
+                skipped.append((f"{f.name} item {n}", ["not a JSON object"], True))
+                continue
             ident = b.get("id")
-            if ident not in by_id:
+            if not isinstance(ident, str) or ident not in by_id:
                 unknown.append(ident)
                 continue
             errs = problems(b)
+            fatal = bool(errs) and (args.strict or any(e.startswith("missing") or "not a" in e for e in errs))
             if errs:
-                skipped.append((ident, errs))
-                if args.strict:
-                    continue
-                if any(e.startswith("missing") or "not a" in e for e in errs):
-                    continue
+                skipped.append((ident, errs, fatal))
+            if fatal:
+                continue
             rec = by_id[ident]
             existing[ident] = b
             d = ROOT / "styles" / ident
@@ -176,8 +209,8 @@ def main() -> int:
     print(f"imported {imported} briefs; {len(existing)} total in catalog/briefs.json")
     if unknown:
         print("unknown ids:", unknown, file=sys.stderr)
-    for ident, errs in skipped:
-        print(f"issues in {ident}: {'; '.join(errs)}", file=sys.stderr)
+    for ident, errs, fatal in skipped:
+        print(f"issues in {ident} ({'skipped' if fatal else 'imported anyway'}): {'; '.join(errs)}", file=sys.stderr)
     if args.strict and (skipped or unknown):
         return 1
     return 0

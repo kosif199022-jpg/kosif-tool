@@ -168,11 +168,22 @@ def guide_text(atlas):
     return "\n".join(lines)
 
 
+def build_outputs(atlas=None) -> dict:
+    atlas = atlas or assemble()
+    return {INDEX: json.dumps(atlas, ensure_ascii=False, separators=(",", ":"), sort_keys=True) + "\n",
+            GUIDE: guide_text(atlas)}
+
+
+def stale_outputs() -> list:
+    """Generated files that differ from a fresh build (empty when up to date)."""
+    return [p for p, text in build_outputs().items() if not p.is_file() or p.read_text(encoding="utf-8") != text]
+
+
 def build(write=True):
     atlas = assemble()
     if write:
-        INDEX.write_text(json.dumps(atlas, ensure_ascii=False, separators=(",", ":"), sort_keys=True) + "\n", encoding="utf-8")
-        GUIDE.write_text(guide_text(atlas), encoding="utf-8")
+        for path, text in build_outputs(atlas).items():
+            path.write_text(text, encoding="utf-8")
     return atlas
 
 
@@ -294,6 +305,7 @@ def main(argv=None):
     sub = ap.add_subparsers(dest="command", required=True)
     for cmd in ("build", "stats", "doctor"):
         sub.add_parser(cmd).add_argument("--json", action="store_true")
+    sub.choices["build"].add_argument("--check", action="store_true", help="write nothing; exit 1 when a generated file is stale")
     for cmd in ("search", "plan"):
         p = sub.add_parser(cmd)
         p.add_argument("task")
@@ -305,6 +317,12 @@ def main(argv=None):
     p.add_argument("id")
     p.add_argument("--json", action="store_true")
     args = ap.parse_args(argv)
+    if args.command == "build" and args.check:
+        stale = stale_outputs()
+        for p in stale:
+            print(f"stale: {p.relative_to(SKILL).as_posix()} — run python3 scripts/capability_atlas.py build")
+        print("capability atlas up to date" if not stale else f"capability_atlas build --check: {len(stale)} stale file(s)")
+        return 1 if stale else 0
     if args.command == "build":
         a = build()
         output = {"index": str(INDEX), "guide": str(GUIDE), "catalog": a["catalog"]}
