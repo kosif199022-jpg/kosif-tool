@@ -107,9 +107,10 @@ Use the **generated bilingual capability index** at [references/capability-atlas
     python3 $SKILL_DIR/scripts/kosif_hubs.py                          # الخريطة: 20 بوابة وجاهزية كل منها
     python3 $SKILL_DIR/scripts/kosif_hubs.py route "<المهمة>"         # البوابة + القدرات الخارقة + السكربتات + خطة التثبيت
     python3 $SKILL_DIR/scripts/kosif_hubs.py install montage          # ثبّت الناقص (--apply ينفذ pip/npm فقط)
-    python3 $SKILL_DIR/scripts/superpower_fusion.py show SP-0286      # أعضاء القدرة الخارقة مرتبة (✅ أولًا) وتوائمها وروابطها
+    python3 $SKILL_DIR/scripts/superpower_fusion.py show SP-0280      # أعضاء القدرة الخارقة مرتبة (✅ أولًا) وتوائمها وروابطها
+    python3 $SKILL_DIR/scripts/capability_mindmap.py task "<المهمة>"  # خريطة ذهنية مرحلية: افهم ← خطّط ← اصنع ← حسّن ← ارندر ← تحقّق ← سلّم
 
-ملخص سريع لكلود: [START.md](START.md). الخريطة الكاملة: [hubs.md](references/hubs.md) و[superpowers.md](references/superpowers.md). شارة القدرة الخارقة `best` تعني أقوى عضو لا كل الأعضاء. بعد تعديل الكتالوج: `superpower_fusion.py build` ثم `kosif_hubs.py build`.
+ملخص سريع لكلود: [START.md](START.md). الخريطة الكاملة: [hubs.md](references/hubs.md) و[superpowers.md](references/superpowers.md) و[الخريطة الذهنية وخرائط المهام](references/capability-mindmap.md) و[تدقيق التكرار والدمج](references/capability-audit.md). شارة القدرة الخارقة `best` تعني أقوى عضو لا كل الأعضاء. بعد تعديل الكتالوج: `superpower_fusion.py build` ثم `kosif_hubs.py build` ثم `capability_mindmap.py build`.
 
 ## 1. ابدأ هنا — بروتوكول التشغيل / the power-up protocol
 اعمل هذا في أول دقيقتين من أي مهمة حقيقية. Do this in the first two minutes of any real task.

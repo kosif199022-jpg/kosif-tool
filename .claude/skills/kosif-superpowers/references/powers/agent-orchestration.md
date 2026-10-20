@@ -9,7 +9,7 @@
 مسارات الدليل نسبية إلى `/home/user/`؛ و`session-<date>:<file>#<section>` تشير إلى تشغيل موثق في جلسة سابقة؛ و`owner-upload:` إلى ملف داخل أرشيف أرسله المالك. Proof paths are relative to `/home/user/`.
 
 **المجال / domain:** العقل والتفكير — Mind & thinking · **البادئة / prefix:** `AGENT` · **البيانات / data:** `data/powers/agent-orchestration.json` · **بحث / search:** `python3 scripts/powers.py family agent-orchestration`
-**مراجع ذات صلة / related references:** [capability-atlas.md](../capability-atlas.md) · [ecc-harness.md](../ecc-harness.md) · [ecc-skills-index.md](../ecc-skills-index.md) · [hubs.md](../hubs.md) · [requirements.md](../requirements.md)
+**مراجع ذات صلة / related references:** [capability-atlas.md](../capability-atlas.md) · [capability-audit.md](../capability-audit.md) · [ecc-harness.md](../ecc-harness.md) · [ecc-skills-index.md](../ecc-skills-index.md) · [hubs.md](../hubs.md) · [requirements.md](../requirements.md)
 
 ## الفهرس / contents
 

@@ -9,7 +9,7 @@
 مسارات الدليل نسبية إلى `/home/user/`؛ و`session-<date>:<file>#<section>` تشير إلى تشغيل موثق في جلسة سابقة؛ و`owner-upload:` إلى ملف داخل أرشيف أرسله المالك. Proof paths are relative to `/home/user/`.
 
 **المجال / domain:** العقل والتفكير — Mind & thinking · **البادئة / prefix:** `CHECK` · **البيانات / data:** `data/powers/verification-evals.json` · **بحث / search:** `python3 scripts/powers.py family verification-evals`
-**مراجع ذات صلة / related references:** [capability-atlas.md](../capability-atlas.md) · [cinematic-director-pro.md](../cinematic-director-pro.md) · [hubs.md](../hubs.md) · [requirements.md](../requirements.md) · [thinking.md](../thinking.md) · [verification.md](../verification.md)
+**مراجع ذات صلة / related references:** [capability-atlas.md](../capability-atlas.md) · [capability-audit.md](../capability-audit.md) · [cinematic-director-pro.md](../cinematic-director-pro.md) · [hubs.md](../hubs.md) · [requirements.md](../requirements.md) · [thinking.md](../thinking.md) · [verification.md](../verification.md)
 
 ## الفهرس / contents
 

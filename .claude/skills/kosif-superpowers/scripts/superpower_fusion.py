@@ -42,6 +42,9 @@ RANK = {s: i for i, s in enumerate(P.STATUSES)}
 FOLD_MIN = 0.18
 LINKS = 4
 TWIN = 0.62
+TINY = 2
+ABSORB_MIN = 0.12
+UNIFY = 0.78
 
 
 def toks(s):
@@ -168,6 +171,45 @@ def build(per=12):
                 groups.append({"family": f, "members": g, "domain": dom, "c": centroid([VEC[i] for i in g])})
     for g in groups:
         g["c"] = centroid([VEC[i] for i in g["members"]])
+    # unify look-alikes: an atom near-identical to an atom in another superpower moves next to it (becomes its twin)
+    home = {i: g for g in groups for i in g["members"]}
+    inv = collections.defaultdict(list)
+    for i in home:
+        for w in VEC[i]:
+            inv[w].append(i)
+    moved = 0
+    for a in sorted(home):
+        sc = collections.Counter()
+        for w, x in VEC[a].items():
+            if len(inv[w]) > 300:
+                continue
+            for b in inv[w]:
+                if b > a:
+                    sc[b] += x * VEC[b][w]
+        for b, s in sc.items():
+            if s >= UNIFY and home[a] is not home[b]:
+                src, dst = (home[b], home[a]) if len(home[a]["members"]) >= len(home[b]["members"]) else (home[a], home[b])
+                mover = b if src is home[b] else a
+                if len(src["members"]) > 1:
+                    src["members"].remove(mover)
+                    dst["members"].append(mover)
+                    home[mover] = dst
+                    moved += 1
+    for g in groups:
+        g["c"] = centroid([VEC[i] for i in g["members"]])
+    # absorb tiny superpowers (≤ TINY members) into the nearest superpower of the same domain
+    absorbed = 0
+    for g in sorted([g for g in groups if len(g["members"]) <= TINY], key=lambda g: len(g["members"])):
+        others = [o for o in groups if o is not g and o["domain"] == g["domain"] and o.get("members")]
+        if not others:
+            continue
+        best = max(others, key=lambda o: (dot(g["c"], o["c"]) + (0.05 if o["family"] == g["family"] else 0)))
+        if dot(g["c"], best["c"]) >= ABSORB_MIN:
+            best["members"] += g["members"]
+            best["c"] = centroid([VEC[i] for i in best["members"]])
+            g["members"] = []
+            absorbed += 1
+    groups = [g for g in groups if g["members"]]
     # stable order: domain order, family, then size
     dom_order = {d: n for n, d in enumerate(P.DOMAINS)}
     groups.sort(key=lambda g: (dom_order.get(g["domain"], 99), g["family"], -len(g["members"]), min(ps[i]["id"] for i in g["members"])))
@@ -190,7 +232,9 @@ def build(per=12):
         for x in mem:
             if x in used:
                 continue
-            grp = [y for y in mem if y != x and y not in used and dot(VEC[x], VEC[y]) >= TWIN]
+            nx = re.sub(r"[^a-z0-9]+", " ", str(ps[x].get("name_en")).lower()).strip()
+            grp = [y for y in mem if y != x and y not in used and (dot(VEC[x], VEC[y]) >= TWIN or
+                   re.sub(r"[^a-z0-9]+", " ", str(ps[y].get("name_en")).lower()).strip() == nx)]
             if grp:
                 used.update(grp + [x])
                 twins.append([ps[x]["id"]] + [ps[y]["id"] for y in grp])
@@ -219,7 +263,7 @@ def build(per=12):
     comp = connected(sps)
     data = {"schema": "kosif.superpowers.v1", "atoms": atoms, "distinct_methods": sum(s["distinct_methods"] for s in sps),
             "twin_groups": sum(len(s["twins"]) for s in sps), "superpowers": len(sps), "per_target": per,
-            "fusion_ratio": round(atoms / max(1, len(sps)), 2), "atlas_folded_into_native": folded,
+            "fusion_ratio": round(atoms / max(1, len(sps)), 2), "atlas_folded_into_native": folded, "tiny_absorbed": absorbed, "lookalikes_unified": moved,
             "graph_components": comp,
             "note": ("Each atomic power belongs to exactly one superpower; atomic IDs, proofs and badges stay the evidence. "
                      "'best' = strongest member badge, status_mix = honest distribution. Built by scripts/superpower_fusion.py."),

@@ -9,7 +9,7 @@
 مسارات الدليل نسبية إلى `/home/user/`؛ و`session-<date>:<file>#<section>` تشير إلى تشغيل موثق في جلسة سابقة؛ و`owner-upload:` إلى ملف داخل أرشيف أرسله المالك. Proof paths are relative to `/home/user/`.
 
 **المجال / domain:** العقل والتفكير — Mind & thinking · **البادئة / prefix:** `MODEL` · **البيانات / data:** `data/powers/mental-models.json` · **بحث / search:** `python3 scripts/powers.py family mental-models`
-**مراجع ذات صلة / related references:** [capability-atlas.md](../capability-atlas.md) · [cognition.md](../cognition.md) · [hubs.md](../hubs.md) · [requirements.md](../requirements.md)
+**مراجع ذات صلة / related references:** [capability-atlas.md](../capability-atlas.md) · [capability-audit.md](../capability-audit.md) · [cognition.md](../cognition.md) · [hubs.md](../hubs.md) · [requirements.md](../requirements.md)
 
 ## الفهرس / contents
 
