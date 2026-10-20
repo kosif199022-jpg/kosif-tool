@@ -31,8 +31,9 @@ Commands below are typed from the skill folder (`.claude/skills/kosif-superpower
 
 1. [فحص البرامج والهندسة العكسية / REA optional integration](#فحص-البرامج-والهندسة-العكسية--rea-optional-integration)
 2. [Repository Capability Transfer — فحص وضغط المستودعات للكود](#repository-capability-transfer--فحص-وضغط-المستودعات-للكود)
-3. [REA v6.7 family router](#rea-v67-family-router)
-4. [REA + Ghidra on an authorized binary (2026-10-20)](#rea--ghidra-on-an-authorized-binary-2026-10-20)
+3. [دراسة تطبيق ويب عام / Public web app study](#دراسة-تطبيق-ويب-عام--public-web-app-study)
+4. [REA v6.7 family router](#rea-v67-family-router)
+5. [REA + Ghidra on an authorized binary (2026-10-20)](#rea--ghidra-on-an-authorized-binary-2026-10-20)
 
 ## فحص البرامج والهندسة العكسية / REA optional integration
 
@@ -57,6 +58,22 @@ Commands below are typed from the skill folder (`.claude/skills/kosif-superpower
     python3 -m unittest discover -s $SKILL_DIR/evals -p test_repository_capability_packer.py -v
 
 قبل نسخ أي كود: اقرأ رخص الملفات والتبعيات والأصول، صمّم Adapter ضيقًا واختبار قبول، ثم تحقّق من تشغيله فعليًا. الفلترة بالاسم لا تُعتبر ماسح أسرار شاملًا؛ افحص ZIP وتقرير البصمات قبل مشاركته.
+
+## دراسة تطبيق ويب عام / Public web app study
+
+لمعرفة «مبني بإيه» واستلهام أفكار تطبيق ويب عام، استخدم أداة واحدة بدل خطوات REA اليدوية:
+
+```bash
+python3 scripts/web_app_study.py run https://www.example.com --out ~/kosif-studies/example --dry-run   # الخطة فقط
+python3 scripts/web_app_study.py run https://www.example.com --out ~/kosif-studies/example             # الدراسة + التقرير
+python3 scripts/web_app_study.py report ~/kosif-studies/example                                       # تقرير الحقائق من جديد
+```
+
+- متصفح معزول بلا تسجيل دخول، بملف شخصي جديد يُحذف بعد التشغيل. يرفض منفذًا مشغولًا حتى لا يتصل بمتصفح آخر عليه حسابك، ولا يتصل إلا بالموقع المدروس.
+- مجلد الدراسة خارج أي مستودع git: فيه سكربتات الموقع، وهي لا تُرفع أبدًا.
+- التقرير حقائق فقط: الإطار والإصدارات والمكتبات بدرجة ثقة (مرصود أو مذكور)، والخدمات من أسماء مفاتيح التخزين لا قيمها، وأدوات WebMCP، وأعداد نقاط الاتصال لا أسماؤها.
+- `--deep` يضيف تحليلًا ثابتًا محدودًا للذاكرة. `analyze-web-bundle` بلا حدود نفدت ذاكرته على حزمة 5.9 MB.
+- الأفكار تُكتب بكلماتك مع ذكر المصدر. مثال كامل: [دراسة MagicPath](../app-studies/magicpath.md) وقدراتها APPX-120…APPX-139.
 
 ## REA v6.7 family router
 

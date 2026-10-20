@@ -21,7 +21,7 @@
 | التزامن | عميل Socket.IO v4 إلى خادم API منفصل؛ لا مكتبة CRDT | مسار `/engine.io`؛ أحداث بأسماء «مجال:كيان:فعل» للمشاريع والمكونات والدعوات وبث تشغيل الوكيل على اللوحة |
 | الذكاء الاصطناعي في الواجهة | Vercel AI SDK 5.0.55 · خادم MCP بعيد وتوزيع مهارات للوكلاء | ثابت الإصدار بجوار وكيل مستخدم SDK، ومقتطفات إعداد MCP لأدوات وكلاء البرمجة |
 | التسجيل والحماية | نظام دخول خاص بعدة مزودين · Google Identity Services · reCAPTCHA | سكربتا `accounts.google.com/gsi/client` و`recaptcha/api.js` |
-| القياس والدعم | Firebase SDK 11.10.0 (للتحليلات، لا للدخول) · Mixpanel 2.70.0 · Vercel Analytics 1.5.0 · GTM · Hotjar · Intercom · إعلانات Google وLinkedIn وReddit | معرّفات الإصدارات وأسماء مفاتيح التخزين (لم تُقرأ قيمها) |
+| القياس والدعم | Firebase SDK 11.10.0 (للتحليلات، لا للدخول) · Mixpanel 2.70.0 · Vercel Analytics 1.5.0 · GTM · Hotjar · Intercom · إعلانات Google، وعلى الأرجح LinkedIn وReddit | معرّفات الإصدارات وأسماء مفاتيح التخزين (لم تُقرأ قيمها)؛ LinkedIn وReddit مستنتجان من أسماء المفاتيح فقط |
 | الواجهة | Tailwind · shadcn/ui · Radix · Framer Motion · lucide · sonner · Zod 4.1.11 | `data-slot` و`data-radix-` و`framerAppearId` و`$ZodType` |
 | WebMCP | لا أدوات معلنة في الصفحة الرئيسية | `discover-webmcp-tools` |
 | الصفحة | 5,504 عقدة DOM · 63 سكربتًا و29 صورة و18 خطًا وملفا CSS · 96 سكربتًا مصدَّرًا (5.8 MB) | `inspect-web-page` |
