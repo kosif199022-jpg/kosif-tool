@@ -76,6 +76,10 @@
 Use `python scripts/atlas_reviewed_methods_v3.py --doctor` or the `--task` option within the skill directory.
 The selector only returns provenance-backed guidance, not executable external tooling, and does not bypass permission requirements.
 
+## Machine-readable sampled-source evidence
+
+The [395-record source-audit receipt](../data/atlas-source-evidence-395-20261020.json) publishes per-file source hashes, warning-category flags, path, scope and metadata verdict; it deliberately excludes third-party source bodies and any private machine secrets.
+
 ## Evidence location
 
 Full local review: `C:\KOSIF\atlas-superpowers-audit\source_audit.json` (local evidence, not published because of size).
