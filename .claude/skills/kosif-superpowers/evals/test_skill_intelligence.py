@@ -64,6 +64,28 @@ class ProtocolTests(unittest.TestCase):
         ideas = {self.b["plans"][k]["idea"] for k in "ABC"}
         self.assertEqual(len(ideas), 3)
 
+    def test_font_requests_bring_the_users_typography_library(self):
+        for task in ("اعمل خطة مذاكرة لابني", "خطوات تثبيت بايثون", "خطأ في الكود"):
+            self.assertEqual(S.asset_libraries(task), [], task)  # خطة/خطوات/خطأ are not fonts
+        b = S.build_brief("صمم شعار بخط كوفي لمطعم شاورما، عربي وإنجليزي")
+        libs = b["asset_libraries"]
+        self.assertEqual([x["id"] for x in libs], ["telegram-typography-atlas"])
+        lib = libs[0]
+        index = json.loads((SK / lib["index"]).read_text(encoding="utf-8"))
+        self.assertEqual(lib["stats"]["fonts"], len(index["fonts"]))
+        self.assertEqual(lib["stats"]["redistribution_approved"], 0)  # license hints are never permission
+        self.assertIn('"kufi"', lib["command"])
+        self.assertIn("--arabic-only", lib["command"])
+        self.assertNotRegex(json.dumps(lib, ensure_ascii=False), r"[A-Za-z]:\\\\|/Users/|/home/")  # no private paths
+        self.assertEqual(b["analysis"]["primary"], "image")
+        self.assertTrue(any(m["need"].startswith("خط مناسب") and m["status"] == "covered" for m in b["must_have_coverage"]))
+        for k in "ABC":
+            p = b["plans"][k]
+            self.assertEqual(p["tools"][0]["id"], "telegram-typography-atlas", k)
+            self.assertIn("telegram-typography-atlas", p["asset_routes"])
+        self.assertIn("font-fidelity-lab", [t["id"] for t in b["plans"]["B"]["tools"]])
+        self.assertIn("مكتبات أصولك", S.render(b))
+
     def test_count_and_deep(self):
         sp = [x["id"] for x in self.b["plans"]["A"]["superpowers"]]
         c = S.count(sp)

@@ -8,7 +8,7 @@ Commands below are typed from the skill folder (`.claude/skills/kosif-superpower
 
 <!-- hub:area:image:start -->
 
-**الأدوات / tools (5)** — `python3 scripts/hub.py tool <id>` for every command, requirement and limit:
+**الأدوات / tools (6)** — `python3 scripts/hub.py tool <id>` for every command, requirement and limit:
 
 | tool | what it does | start with | evidence |
 |---|---|---|---|
@@ -17,6 +17,7 @@ Commands below are typed from the skill folder (`.claude/skills/kosif-superpower
 | `font-fidelity-lab` | Inspects a licensed font's OpenType facts: cmap coverage of a phrase, GSUB/GPOS, variable axes and family name. It also ranks a folder of TTF/OTF fonts against a tight crop of reference text by rendering the same phrase with libraqm shaping and scoring normalized mask IoU. The output is JSON candidates, never a claimed identification. | `python3 scripts/font_fidelity_lab.py inspect proofs/_shared/fonts/Amiri-Regular.ttf --text "جمعة مباركة"` | tested-here |
 | `render-text` | Renders text samples in candidate font files through headless Chromium (HarfBuzz shaping) and saves one tightly cropped PNG per item plus a renders.json of box sizes, so the candidates can be compared side by side against a reference typeface. | `node scripts/render_text.cjs ./spec.json ./out/` | tested-elsewhere |
 | `unified-media` | One CLI links App Studio authorized local photo processing, Unified Draw freehand/geometric layers and Creative Paint keyframe animation for composited PNG/GIF/MP4. | `python3 scripts/unified_media.py doctor` | tested-here |
+| `telegram-typography-atlas` | Read authorized Telegram Desktop exports and font metadata from TTF/OTF plus bounded ZIP TTF/OTF/WOFF/WOFF2 entries, deduplicate by SHA256, discover Arabic glyph repertoire, family/style/weight/variable/color glyphs, classify visual themes and search original design briefs; keep raw chat/private paths/fonts/images OFF public GitHub. | `python3 scripts/telegram_typography_atlas.py doctor` | tested-here |
 
 <!-- hub:area:image:end -->
 

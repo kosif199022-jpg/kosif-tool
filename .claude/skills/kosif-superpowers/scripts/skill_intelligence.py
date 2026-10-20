@@ -73,7 +73,8 @@ ALIASES = {  # protocol-specific Arabic/Egyptian → English bridges (checked ag
     "عربيه": "arabic", "عربي": "arabic", "ميزه": "feature", "ميزة": "feature", "مشابهه": "similar original", "مشابهة": "similar original",
     "حلل": "analyze analysis", "هندسه": "engineering", "عكسيه": "reverse", "مثبت": "installed", "مسار": "path",
     "مونتاج": "montage edit cut", "فيديو": "video", "صوره": "image photo", "صور": "images photos", "رسم": "draw drawing",
-    "ارسم": "draw", "خط": "font typography", "شعار": "logo brand", "بيانات": "data", "مستند": "document", "بحث": "search research",
+    "ارسم": "draw", "خط": "font typography", "خطوط": "fonts typography", "فونت": "font typeface", "كوفي": "kufi arabic font",
+    "ديواني": "diwani calligraphy", "بوستر": "poster", "لوجو": "logo brand", "شعار": "logo brand", "بيانات": "data", "مستند": "document", "بحث": "search research",
 }
 
 
@@ -253,7 +254,71 @@ MUST_HAVE = [
     ("محاسبة ومخزون بأرقام صحيحة", r"محاسب|مخزون|inventory|accounting|ledger", "accounting ledger inventory bookkeeping"),
     ("مونتاج وقطع", r"مونتاج|montage", "montage edit cut transitions"),
     ("ترجمة", r"^ترجم|translate", "translation"),
+    ("خط مناسب برخصة مؤكدة", None, "arabic font typography font matching fonts license kinetic typography lettering"),
 ]
+_AR = "\u0621-\u064a"
+FONT_RX = (rf"(?<![{_AR}])[وف]?(?:بال|لل|ال|ب|ل)?(?:خطوط|خط|فونتات|فونت)(?![{_AR}])|كوفي|ديواني|كاليجراف|تايبو|حروفيه|"
+           r"\bfonts?\b|typeface|typograph|lettering|calligraph|\bglyphs?\b|شعار|لوجو|\blogos?\b|بوستر|\bposters?\b")
+MUST_HAVE = [(n, FONT_RX if rx is None else rx, terms) for n, rx, terms in MUST_HAVE]
+ARABIC_TERMS = {  # the Arabic-text need means different checks per deliverable
+    "image": "arabic shaping harfbuzz glyph ligature font logo poster rtl lettering",
+    "document": "arabic rtl docx pdf shaping fonts document",
+    "video": "arabic rtl shaping whole word kinetic typography captions",
+    "code": "arabic rtl bidi ui localization shaping",
+    "3d": "arabic shaping 3d text extrude glyph",
+}
+FONT_STYLES = {  # request word → query word the atlas understands (its tags are English; its find also matches Arabic)
+    "كوفي": "kufi", "ديواني": "diwani", "ثلث": "thuluth", "رقعه": "ruqah", "نسخ": "naskh", "مغربي": "maghrebi",
+    "هندسي": "geometric", "يدوي": "handwritten", "فرشاه": "brush", "زخرف": "decorative", "دائري": "rounded", "اطفال": "rounded",
+    "عريض": "bold", "رفيع": "light", "قديم": "vintage", "حديث": "modern", "متغير": "variable",
+    "kufi": "kufi", "naskh": "naskh", "ruqah": "ruqah", "diwani": "diwani", "thuluth": "thuluth", "geometric": "geometric",
+    "handwritten": "handwritten", "brush": "brush", "rounded": "rounded", "variable": "variable", "display": "display", "logo": "logo",
+}
+# user-owned asset libraries: searched when the request needs them; their files stay on the user's device
+ASSET_LIBRARIES = [{
+    "id": "telegram-typography-atlas", "trigger": FONT_RX, "index_glob": "data/telegram-typography-catalog-*.json",
+    "title_ar": "مكتبة خطوطك من صادرات تيليجرام", "title_en": "Your Telegram typography atlas",
+    "where": "ملفات الخطوط نفسها على لابتوبك فقط (ملف المواقع الخاص هناك)؛ هنا فهرس بيانات بلا خطوط. للرندر هنا: خط برخصة مؤكدة من مصدره الرسمي، أو اعمل على اللابتوب عبر Remote Desktop Commander بإذنك.",
+    "gate": "رخصة name table تلميح لا تصريح: redistribution_approved=false للكل حتى تُراجع الرخصة الفعلية من مصدرها؛ لا تنسخ حدود حروف خط مملوك.",
+    "routes": {"A": "find → أفضل 5 خطوط OFL-claimed تناسب النمط → تأكيد الرخصة من المصدر الرسمي",
+               "B": "find 15–20 مرشحًا → font-fidelity-lab (تغطية الجملة وGSUB/GPOS) → render-text لوحة مقارنة 16/24/48/96 → اختيار بسبب مكتوب",
+               "C": "B + حروف أو شعار أصلي من الصفر مستلهم من فئة الأفكار (unified-draw/creative-paint أو FontForge) + بوابة أصالة"},
+    "plan_tools": {"A": ["telegram-typography-atlas"], "B": ["telegram-typography-atlas", "font-fidelity-lab", "render-text"],
+                   "C": ["telegram-typography-atlas", "font-fidelity-lab", "render-text", "unified-draw"]},
+}]
+
+
+def asset_libraries(task: str) -> list:
+    """Libraries the request needs, with live counts read from their public index (no private paths)."""
+    low = norm_ar(task.lower())
+    out = []
+    for lib in ASSET_LIBRARIES:
+        if not re.search(lib["trigger"], low):
+            continue
+        files = sorted(SKILL.glob(lib["index_glob"]))
+        if not files:
+            continue
+        idx = files[-1]
+        d = jload(idx, {}) or {}
+        fonts = d.get("fonts", [])
+        lic = collections.Counter(f.get("license_status", "?") for f in fonts)
+        styles = []
+        for w in re.findall(r"[\w]+", low):
+            s = FONT_STYLES.get(w) or FONT_STYLES.get(w[2:] if w.startswith("ال") else w)
+            if s and s not in styles:
+                styles.append(s)
+        arabic = bool(re.search(r"عربي|arabic|[\u0621-\u064a]", low))
+        q = " ".join(styles) or ("arabic" if arabic else "display")
+        rel = idx.relative_to(SKILL).as_posix()
+        out.append({"id": lib["id"], "title_ar": lib["title_ar"], "title_en": lib["title_en"], "index": rel,
+                    "stats": {"fonts": len(fonts), "arabic": sum(1 for f in fonts if f.get("has_arabic")),
+                              "families": len({f.get("family", "").strip().casefold() for f in fonts if f.get("family", "").strip()}),
+                              "ideas": len(d.get("typography_design_ideas", [])), "license": dict(lic.most_common()),
+                              "redistribution_approved": sum(1 for f in fonts if f.get("redistribution_approved"))},
+                    "styles_detected": styles,
+                    "command": f'python3 scripts/telegram_typography_atlas.py find --index {rel} "{q}"' + (" --arabic-only" if arabic else "") + " --limit 20",
+                    "where": lib["where"], "gate": lib["gate"], "routes": lib["routes"], "plan_tools": lib["plan_tools"]})
+    return out
 VERIFY_TERMS = {
     "video": "verify video delivery gate ffprobe loudness frames qa", "audio": "loudness lufs verify audio qa",
     "code": "tests test suite regression golden unit coverage", "reverse": "evidence originality tests golden parity",
@@ -273,6 +338,10 @@ ARCHETYPES = {
                 "A": ("فحص ثابت بـ REA ثم تقرير بنية", ["software-investigation", "runnable-tools"]),
                 "B": ("فحص ثابت + بناء أصلي نظيف ببوابة أصالة", ["software-investigation", "code-engineering", "verification-evals", "runnable-tools"]),
                 "C": ("فحص ثابت وديناميكي + اختبارات تكافؤ سلوكي", ["software-investigation", "code-engineering", "verification-evals", "qa-verification", "app-feature-transfer", "runnable-tools"])},
+    "image": {"stages": ["understand", "plan", "create", "refine", "verify", "deliver"],
+              "A": ("خط برخصة مؤكدة + تكوين بسيط واضح", ["typography-arabic", "typography-latin", "brand-logo-identity", "camera-composition-layout", "runnable-tools"]),
+              "B": ("تصميم مخصص: مطابقة خطوط + تكوين متجهي + فحص قراءة وتباين", ["typography-arabic", "typography-latin", "brand-logo-identity", "shapes-morph-geometry", "color-palette-grading", "qa-verification", "runnable-tools"]),
+              "C": ("حروف أصلية من الصفر + هوية كاملة + موك أب وحركة", ["typography-arabic", "brand-logo-identity", "hand-drawn-draw-on", "shapes-morph-geometry", "texture-material", "light-glow-bloom", "creativity-engine", "easing-timing-rhythm"])},
     "_generic": {"stages": STAGE_ORDER,
                  "A": ("المسار الأقصر بأقوى القدرات الجاهزة", []), "B": ("مسار متوازن مع تكامل من مجالات أخرى", []), "C": ("مسار شامل بمراحل ونقاط توقف", [])},
 }
@@ -281,7 +350,7 @@ ARCHETYPES = {
 # domain affinity per primary deliverable: off-domain clusters are down-weighted, never hidden from the receipt
 AFFINITY = {"code": {"motion": 0.4, "reverse": 0.4}, "reverse": {"motion": 0.4}, "data": {"motion": 0.5, "reverse": 0.4},
             "document": {"motion": 0.5, "reverse": 0.4}, "research": {"motion": 0.5, "reverse": 0.4}, "text": {"motion": 0.5, "reverse": 0.3},
-            "video": {"reverse": 0.3}, "audio": {"reverse": 0.3}, "image": {"reverse": 0.3}, "3d": {"reverse": 0.3}}
+            "video": {"reverse": 0.3}, "audio": {"reverse": 0.3}, "image": {"reverse": 0.3, "docs": 0.5, "code": 0.6}, "3d": {"reverse": 0.3}}
 
 
 def affinity(primary: str, sp_domain: str, families) -> float:
@@ -309,7 +378,7 @@ def analyse(task: str) -> dict:
         level = "L2"
     primary = deliver[0] if deliver else ("text" if level == "L0" else "unspecified")
     own = {"voice": bool(re.search(OWN_VOICE_RX, low)), "footage": bool(re.search(OWN_FOOTAGE_RX, low))}
-    musts = [{"need": n, "terms": terms} for n, rx, terms in MUST_HAVE if re.search(rx, low)]
+    musts = [{"need": n, "terms": ARABIC_TERMS.get(primary, terms) if n.startswith("نص عربي") else terms} for n, rx, terms in MUST_HAVE if re.search(rx, low)]
     platforms = [k for k, rx in PLATFORM_RX.items() if re.search(rx, low)]
     questions = []
     if primary == "video" and not aspects:
@@ -529,6 +598,18 @@ def build_brief(task: str, details=False, terms: str = "") -> dict:
     except Exception as exc:  # noqa: BLE001
         guides = [f"hub.py find failed: {exc}"]
     readiness = tool_readiness()
+    libs = asset_libraries(task)
+    for lib in libs:
+        for tid in dict.fromkeys(t for v in lib["plan_tools"].values() for t in v):
+            if tid in tools and tid not in [t["id"] for t in tools_hit]:
+                reg_t = tools[tid]
+                tools_hit.insert(0 if tid == lib["id"] else len(tools_hit), {
+                    "id": tid, "title_ar": reg_t.get("title_ar"), "title_en": reg_t.get("title_en"), "area": reg_t.get("area"),
+                    "state": "ready (find)" if tid == lib["id"] else readiness["state"].get(tid), "missing": [], "families": reg_t.get("families", []),
+                    "command": lib["command"] if tid == lib["id"] else ((reg_t.get("commands") or [{}])[0].get("example"))})
+        for th in tools_hit:
+            if th["id"] == lib["id"]:
+                th.update(state="ready (find)", command=lib["command"])
 
     # plans = approaches
     arch = ARCHETYPES.get(an["primary"], ARCHETYPES["_generic"])
@@ -571,6 +652,8 @@ def build_brief(task: str, details=False, terms: str = "") -> dict:
         keys = [k for k in req if str(k).startswith("key:") and pres.get(k) != "present"]
         cf = {f for x in chosen for f in x.get("families", [])}
         tl = [t for t in tools_hit if set(t["families"]) & cf] or tools_hit[:2]
+        lib_tools = [tid for lib in libs for tid in lib["plan_tools"].get(name, [])]
+        tl = [t for t in tools_hit if t["id"] in lib_tools] + [t for t in tl if t["id"] not in lib_tools]
         doc_share = sum(1 for x in chosen if x["local_badge"] in ("📄", "💡")) / max(1, len(chosen))
         uncovered = [m["need"] for m in must_cov if m["status"] == "covered" and not set(m["superpowers"]) & {x["id"] for x in chosen}]
         risks = []
@@ -586,8 +669,9 @@ def build_brief(task: str, details=False, terms: str = "") -> dict:
                 "stages": {s: [x["id"] for x in v] for s, v in stages.items()},
                 "counts": {"groups": len({x["group"] for x in chosen}), "superpowers": len(chosen), "atoms_used": len(atoms),
                            "atoms_used_local_badges": dict(badge_mix), "members_in_scope": sum(x["size"] for x in chosen),
-                           "tools": len(tl), "tools_ready": sum(1 for t in tl if t["state"] == "ready")},
+                           "tools": len(tl), "tools_ready": sum(1 for t in tl if str(t["state"]).startswith("ready"))},
                 "groups": sorted({x["group"] for x in chosen}), "tools": tl[:6], "requires": req, "missing": missing, "keys": keys,
+                "asset_routes": {lib["id"]: lib["routes"][name] for lib in libs if name in lib["routes"]},
                 "risks": risks or ["لا مخاطر ظاهرة من البيانات"]}
 
     plans = {}
@@ -614,7 +698,7 @@ def build_brief(task: str, details=False, terms: str = "") -> dict:
                            "superpowers_relevant": len(sp_rows), "shortlist": len(short), "groups_total": receipt["groups"], "families": receipt["families"],
                            "tools_total": readiness["summary"].get("tools"), "tools_ready": readiness["summary"].get("ready"),
                            "groups_ranked": [{"group": g, "score": round(v, 1)} for g, v in gsc.most_common()]},
-             "must_have_coverage": must_cov, "excluded": excluded,
+             "must_have_coverage": must_cov, "excluded": excluded, "asset_libraries": libs,
              "top_powers": [{"id": r["id"], "name_ar": r["name_ar"], "name_en": r["name_en"], "group": r["group"], "catalog_status": r["status"],
                              "local_badge": local_badge(r, pres), "score": round(s, 2)} for s, r in relevant[:40]],
              "shortlist": short, "verifiers": [{"id": v["id"], "name_ar": v["name_ar"], "name_en": v["name_en"]} for v in verifiers],
@@ -661,6 +745,14 @@ def render(b: dict) -> str:
           f"| أدوات جاهزة الآن | {inv['tools_ready']} من {inv['tools_total']} |",
           f"| بصمة الكتالوج | `{c['catalog_sha256'][:16]}…` |", "",
           "الحداثة: " + " · ".join(f"{k} {'✅' if v.get('ok') else '❌ → ' + v.get('fix', '')}" for k, v in b["freshness"].items()), ""]
+    for lib in b.get("asset_libraries", []):
+        s = lib["stats"]
+        lic = " · ".join(f"{k} {v:,}" for k, v in list(s["license"].items())[:4])
+        L += [f"## مكتبات أصولك: {lib['title_ar']}", "",
+              f"- {s['fonts']:,} خط فريد · {s['arabic']:,} يدعم العربية · {s['families']:,} عائلة · {s['ideas']} فئة أفكار · رخص: {lic}"
+              + f" · معتمد لإعادة التوزيع: {s['redistribution_approved']}",
+              f"- النمط المكتشف: {', '.join(lib['styles_detected']) or '—'} · ابحث: `{lib['command']}`",
+              f"- المكان: {lib['where']}", f"- البوابة: {lib['gate']}", ""]
     pl = b["plans"]
     L += ["## مقارنة الخطط (مناهج مختلفة؛ استبدلها بمناهجك من المرحلة 4 إن كانت أقوى)", "",
           "| البند | الخطة A | الخطة B | الخطة C |", "|---|---|---|---|"]
@@ -671,6 +763,8 @@ def render(b: dict) -> str:
     row("شارات القدرات المستخدمة هنا", lambda p: " ".join(f"{k}{v}" for k, v in sorted(p["counts"]["atoms_used_local_badges"].items(), key=lambda kv: LOCAL_RANK.index(kv[0]))))
     row("متطلبات ناقصة", lambda p: str(len(p["missing"])))
     row("المخاطر", lambda p: " · ".join(p["risks"])[:150])
+    if any(p.get("asset_routes") for p in pl.values()):
+        row("مسار الخطوط", lambda p: " · ".join(p.get("asset_routes", {}).values())[:170] or "—")
     L += ["", "**المراحل:**"]
     for k in "ABC":
         L.append(f"- **{k}:** " + " ← ".join(f"{s}: " + ", ".join(v) for s, v in pl[k]["stages"].items()))

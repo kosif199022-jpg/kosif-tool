@@ -2062,6 +2062,16 @@
    "label": "scripts/test_kosif_timeline.py"
   },
   {
+   "id": "script:scripts/test_telegram_typography_atlas.py",
+   "kind": "script",
+   "label": "scripts/test_telegram_typography_atlas.py"
+  },
+  {
+   "id": "script:scripts/telegram_typography_atlas.py",
+   "kind": "script",
+   "label": "scripts/telegram_typography_atlas.py"
+  },
+  {
    "id": "script:scripts/test_unified_cinematic.py",
    "kind": "script",
    "label": "scripts/test_unified_cinematic.py"
@@ -6662,6 +6672,12 @@
   {
    "from": "script:scripts/test_kosif_timeline.py",
    "to": "script:scripts/kosif_timeline.py",
+   "rel": "imports",
+   "w": 1
+  },
+  {
+   "from": "script:scripts/test_telegram_typography_atlas.py",
+   "to": "script:scripts/telegram_typography_atlas.py",
    "rel": "imports",
    "w": 1
   },
