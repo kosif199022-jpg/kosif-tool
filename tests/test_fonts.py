@@ -17,6 +17,11 @@ try:
     from fontTools.ttLib import TTFont  # type: ignore
 except ImportError:  # CI installs no third-party packages; coverage checks then skip with a reason
     TTFont = None
+try:
+    from fontTools.ttLib import woff2 as _woff2  # type: ignore
+    HAVE_BROTLI = bool(getattr(_woff2, "haveBrotli", False))
+except ImportError:
+    HAVE_BROTLI = False
 
 
 class KitFilesTest(unittest.TestCase):
@@ -71,6 +76,8 @@ class FontBinaryTest(unittest.TestCase):
         for style in STYLES:
             for ext in ("ttf", "woff2"):
                 with self.subTest(style=style, ext=ext):
+                    if ext == "woff2" and not HAVE_BROTLI:
+                        self.skipTest("reading WOFF2 needs the brotli module (pip install brotli)")
                     font = TTFont(KIT / f"KOSIFJumuah-{style}.{ext}")
                     names = font["name"]
                     self.assertEqual(names.getDebugName(1), "KOSIF Jumuah")
