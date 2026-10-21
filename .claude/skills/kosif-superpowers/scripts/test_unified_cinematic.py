@@ -81,17 +81,23 @@ class CinematicIntegration(unittest.TestCase):
         self.assertLess(first.getpixel((0,0))[0],mid.getpixel((0,0))[0])
         self.assertLess(last.getpixel((0,0))[0],mid.getpixel((0,0))[0])
 
-    def test_bad_wav_and_immutable_manual_keyframes(self):
+    def test_bad_wav_and_frame_limit(self):
         with tempfile.TemporaryDirectory() as d:
             fake=Path(d)/"invalid.wav";fake.write_bytes(b"not wave")
             out=Path(d)/"out.mp4"
             with self.assertRaises(ValueError):
                 plan(PHOTO,drawing(),fake,out)
+            with self.assertRaisesRegex(ValueError,"300 frame"):
+                plan(PHOTO,drawing(),wav_sample(Path(d)/"long.wav",8),out,fps=60)
+
+    # plan() checks for FFmpeg before it validates pulse keyframes, so without FFmpeg it raises the FFmpeg error first.
+    @unittest.skipUnless(shutil.which("ffmpeg") and shutil.which("ffprobe"),"FFmpeg required")
+    def test_immutable_manual_keyframes(self):
+        with tempfile.TemporaryDirectory() as d:
+            out=Path(d)/"out.mp4"
             wav=wav_sample(Path(d)/"a.wav")
             with self.assertRaisesRegex(ValueError,"keyframes"):
                 plan(PHOTO,drawing(),wav,out,pulse_element=1)
-            with self.assertRaisesRegex(ValueError,"300 frame"):
-                plan(PHOTO,drawing(),wav_sample(Path(d)/"long.wav",8),out,fps=60)
 
     def test_invalid_config_and_no_overwrite(self):
         with tempfile.TemporaryDirectory() as d:
