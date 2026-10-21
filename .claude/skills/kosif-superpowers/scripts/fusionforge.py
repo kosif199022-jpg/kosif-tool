@@ -5,6 +5,7 @@ From repository root:
   python3 .claude/skills/kosif-superpowers/scripts/fusionforge.py propose "طلبك" --project project_id
   python3 .claude/skills/kosif-superpowers/scripts/fusionforge.py record --project project_id --id FUSE-... --status tested --evidence QA.json
   python3 .claude/skills/kosif-superpowers/scripts/fusionforge.py record --project project_id --id FUSE-... --status verified --evidence QA.json --qa-pass
+  python3 .claude/skills/kosif-superpowers/scripts/fusionforge.py trace --project project_id --id FUSE-... --stage create --action "Executed renderer" --tool ffmpeg --evidence frame.png
   python3 .claude/skills/kosif-superpowers/scripts/fusionforge.py catalog --project project_id
   python3 .claude/skills/kosif-superpowers/scripts/fusionforge.py show --project project_id --id FUSE-...
 
@@ -154,6 +155,34 @@ def propose(args):
     refresh_index(space)
     return record
 
+def trace(args):
+    """Append a project-private, step-level workflow observation (not a proof of QA)."""
+    space=space_for(args)
+    path=recipe_path(space,args.id)
+    recipe=read(path)
+    if recipe["status"]=="verified":
+        raise ValueError("Verified recipes are immutable; create a new experiment")
+    if args.stage not in STAGES or not args.action.strip():
+        raise ValueError("A valid workflow stage and non-empty action are required")
+    fields=" ".join([args.action,args.tool or "",args.input or "",args.output or "",args.observed or ""])
+    if re.search(r"(?i)(sk-proj-[a-z0-9_-]{6,}|ghp_[a-z0-9]{10,}|bearer\s+[a-z0-9._-]{12,}|xox[baprs]-)",fields):
+        raise ValueError("Refusing likely secrets in execution trace")
+    receipt={"stage":args.stage,"action":args.action,"tool":args.tool or "not_reported",
+             "input_summary":args.input or "not_reported","output_summary":args.output or "not_reported",
+             "observed":args.observed or "not_verified","reported_capability_ids":args.capabilities or [],
+             "logged_at":dt.datetime.now(dt.timezone.utc).isoformat(),"evidence":None}
+    if args.evidence:
+        proof=Path(args.evidence).resolve()
+        if not proof.is_file() or not proof.stat().st_size:
+            raise ValueError("Evidence must be an existing nonempty file")
+        receipt["evidence"]={"local_path":str(proof),
+                             "sha256":hashlib.sha256(proof.read_bytes()).hexdigest()}
+    recipe.setdefault("execution_trace",[]).append(receipt)
+    recipe["updated_at"]=dt.datetime.now(dt.timezone.utc).isoformat()
+    save(path,recipe)
+    refresh_index(space)
+    return receipt
+
 def record(args):
     space=space_for(args)
     path=recipe_path(space,args.id)
@@ -189,6 +218,11 @@ def main():
     a=sub.add_parser("record");a.add_argument("--project",required=True);a.add_argument("--id",required=True)
     a.add_argument("--status",required=True,choices=("candidate","planned","tested","verified","failed"))
     a.add_argument("--evidence");a.add_argument("--qa-pass",action="store_true");a.add_argument("--note")
+    a=sub.add_parser("trace");a.add_argument("--project",required=True);a.add_argument("--id",required=True)
+    a.add_argument("--stage",required=True,choices=STAGES)
+    a.add_argument("--action",required=True);a.add_argument("--tool")
+    a.add_argument("--input");a.add_argument("--output");a.add_argument("--observed")
+    a.add_argument("--capabilities",nargs="*");a.add_argument("--evidence")
     a=sub.add_parser("catalog");a.add_argument("--project",required=True)
     a=sub.add_parser("show");a.add_argument("--project",required=True);a.add_argument("--id",required=True)
     args=p.parse_args()
@@ -198,6 +232,8 @@ def main():
         result=propose(args)
     elif args.cmd=="record":
         result=record(args)
+    elif args.cmd=="trace":
+        result=trace(args)
     elif args.cmd=="catalog":
         result=refresh_index(space_for(args))
     else:
