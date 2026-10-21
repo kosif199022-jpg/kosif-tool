@@ -9740,6 +9740,89 @@
    "evidence": "tested-here"
   },
   {
+   "id": "fusionforge",
+   "path": "scripts/fusionforge.py",
+   "root": "skill",
+   "kind": "cli",
+   "area": "discover",
+   "title_en": "FusionForge project-scoped composite workflow recipes",
+   "title_ar": "FusionForge لوصفات الـWorkflow المركبة داخل المشروع",
+   "summary_en": "Turns a request into a project-scoped candidate recipe of catalog superpowers (data/superpowers.json), appends evidence-hashed execution traces, and records tested, failed or verified outcomes. Verified recipes of the same project are recalled when a later goal is similar. Everything stays under out/fusionforge/<project>/ (git-ignored); nothing is executed, installed or published.",
+   "summary_ar": "يحوّل الطلب إلى وصفة مرشحة داخل المشروع من القدرات الخارقة في الكتالوج، ويضيف سجل تنفيذ بخطوات وبصمات أدلة، ويسجل نتيجة الاختبار أو الفشل أو التحقق. الوصفات المتحققة في المشروع نفسه تُستدعى عند هدف مشابه لاحقًا. كل شيء محفوظ في out/fusionforge/<project>/ المستثنى من git؛ لا تنفيذ ولا تثبيت ولا نشر.",
+   "use_when": [
+    "اعمل وصفة توليف مهارات للمهمة دي وسجّل خطوات التنفيذ",
+    "ابتكر workflow مركب من مهارات متعددة واحفظه للمشروع",
+    "Compose several superpowers into a reusable workflow recipe for this project",
+    "Record the evidence for each step of the composite workflow I just ran"
+   ],
+   "keywords": [
+    "fusionforge",
+    "composite workflow",
+    "recipe",
+    "skill composition",
+    "self-learning",
+    "execution trace",
+    "evidence",
+    "توليف المهارات",
+    "وصفة",
+    "سجل تنفيذ",
+    "تعلم ذاتي",
+    "مهارة مركبة"
+   ],
+   "commands": [
+    {
+     "name": "propose",
+     "example": "python3 scripts/fusionforge.py propose \"مونتاج ريلز بترجمة عربية\" --project demo_project",
+     "does": "Ranks catalog superpowers for the goal, writes a candidate recipe FUSE-<date>-<hex> and refreshes the project index."
+    },
+    {
+     "name": "trace",
+     "example": "python3 scripts/fusionforge.py trace --project demo_project --id FUSE-20261021-0123456789 --stage verify --action \"Ran verify_video.py\" --tool verify_video --evidence report.json",
+     "does": "Appends one observed step with an optional SHA-256-hashed evidence file; refuses likely secrets."
+    },
+    {
+     "name": "record",
+     "example": "python3 scripts/fusionforge.py record --project demo_project --id FUSE-20261021-0123456789 --status tested --evidence report.json",
+     "does": "Sets candidate, planned, tested, failed or verified; tested, failed and verified need an evidence file, verified also needs --qa-pass."
+    },
+    {
+     "name": "catalog",
+     "example": "python3 scripts/fusionforge.py catalog --project demo_project",
+     "does": "Lists the project's recipes with status and evidence counts."
+    },
+    {
+     "name": "show",
+     "example": "python3 scripts/fusionforge.py show --project demo_project --id FUSE-20261021-0123456789",
+     "does": "Prints one recipe as JSON."
+    }
+   ],
+   "inputs": "A goal in the user's words and a project slug ([A-Za-z0-9_-]); for trace/record, a recipe ID, a stage or status and optional local evidence files.",
+   "outputs": "JSON recipes and index.json under out/fusionforge/<project>/ (or --root), printed to stdout.",
+   "requires": {
+    "python": [],
+    "binaries": [],
+    "node": [],
+    "optional": [],
+    "network": false
+   },
+   "safety": "writes-files",
+   "consent": "Writes only under out/fusionforge/<project>/ (or the --root folder); evidence files are read and hashed, never uploaded.",
+   "limits": "Ranking is keyword matching over catalog labels and the proposed stages are placeholders; 'verified' reflects the caller's --qa-pass assertion with an evidence file, not a check run by this tool, and the index is local to the checkout (not synced across machines or cloud sessions).",
+   "tests": [
+    ".claude/skills/kosif-superpowers/evals/test_fusionforge.py"
+   ],
+   "docs": [
+    ".claude/skills/kosif-superpowers/PROTOCOL.md"
+   ],
+   "families": [
+    "self-discovery",
+    "agent-orchestration",
+    "planning-execution"
+   ],
+   "evidence": "tested-here",
+   "evidence_note": "evals/test_fusionforge.py 4/4 passed on this checkout (python3 -m unittest) before registration."
+  },
+  {
    "id": "superpower-fusion",
    "path": "scripts/superpower_fusion.py",
    "root": "skill",
