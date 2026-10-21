@@ -1,0 +1,141 @@
+{
+ "$schema": "https://json-schema.org/draft/2020-12/schema",
+ "$id": "https://github.com/kosif199022-jpg/kosif-tool/.claude/skills/kosif-superpowers/schemas/fusionforge.card.v2.json",
+ "title": "FusionForge v2 card (the fenced ```json fusionforge-card-v2 block of a Markdown card)",
+ "description": "A redacted, portable copy of a recipe for shell-less use (claude.ai): no absolute paths, evidence by sha256 only. import-card always creates a candidate and keeps results as self_reported, never as evidence. A card written by hand without a shell is UNSAVED (MEMORY_RUNTIME_UNAVAILABLE). Paths in free text (POSIX, file://, Windows drive or UNC, ~/) are replaced by <abs-path> or <home-path>.",
+ "type": "object",
+ "required": [
+  "schema",
+  "source_recipe",
+  "status_at_export",
+  "goal",
+  "nodes",
+  "edges",
+  "plans"
+ ],
+ "properties": {
+  "schema": {
+   "const": "kosif.fusionforge.card.v2"
+  },
+  "engine": {
+   "type": "string"
+  },
+  "protocol": {
+   "type": "string"
+  },
+  "source_recipe": {
+   "type": "string"
+  },
+  "project": {
+   "type": "string"
+  },
+  "status_at_export": {
+   "enum": [
+    "candidate",
+    "planned",
+    "tested",
+    "verified",
+    "failed"
+   ]
+  },
+  "goal": {
+   "type": "string"
+  },
+  "deliverable_kind": {
+   "type": "string"
+  },
+  "brief": {
+   "type": "object"
+  },
+  "catalog": {
+   "type": [
+    "object",
+    "null"
+   ]
+  },
+  "capabilities": {
+   "type": "object"
+  },
+  "nodes": {
+   "type": "array",
+   "items": {
+    "$ref": "fusionforge.recipe.v2.json#/$defs/node"
+   }
+  },
+  "edges": {
+   "type": "array",
+   "items": {
+    "$ref": "fusionforge.recipe.v2.json#/$defs/edge"
+   }
+  },
+  "plans": {
+   "type": "object"
+  },
+  "suggested_plan": {
+   "type": [
+    "string",
+    "null"
+   ]
+  },
+  "plan_choice": {
+   "type": [
+    "object",
+    "null"
+   ]
+  },
+  "self_reported": {
+   "type": "array",
+   "items": {
+    "type": "object",
+    "properties": {
+     "seq": {
+      "type": "integer"
+     },
+     "node": {
+      "type": [
+       "string",
+       "null"
+      ]
+     },
+     "stage": {
+      "type": "string"
+     },
+     "result": {
+      "type": [
+       "string",
+       "null"
+      ]
+     },
+     "tool": {
+      "type": "string"
+     },
+     "observed": {
+      "type": "string"
+     },
+     "evidence_sha256": {
+      "type": [
+       "string",
+       "null"
+      ]
+     }
+    }
+   }
+  },
+  "evidence_sha256": {
+   "type": "array",
+   "items": {
+    "type": "string",
+    "pattern": "^[0-9a-f]{64}$"
+   }
+  },
+  "lessons": {
+   "type": "array",
+   "items": {
+    "type": "object"
+   }
+  },
+  "generated_at": {
+   "type": "string"
+  }
+ }
+}

@@ -18,6 +18,12 @@ Checks (errors fail the run, warnings do not unless --strict):
   tools         data/tools.json is valid (scripts/hub.py), every script is registered, and the files
                 hub.py build generates (manifest.json, references/INDEX.md, tool blocks) are current
   drift         every "N,NNN powers / قدرة" claim in the entry documents matches the live catalog
+  protocol      USIP structure (PROTOCOL.md core + references/protocol/): core under 520 lines and 72,000 characters, unique headings,
+                contents lists in heading order, every appendix linked from the trigger table, relative links and
+                #anchors resolve, every scripts/ evals/ tools/ tests/ file named exists, the CHANGELOG maps every
+                old section ID, one "USIP vX.Y" across the core, its paste block, SESSION_PROMPT, CLAUDE.md, SKILL.md
+                and both engines, and the canonical plan-letter definitions (evals/test_protocol_structure.py adds
+                the fusionforge.py command and required-flag check and the v5.2 text-retention check)
 
 Counts marker — put this HTML comment anywhere in SKILL.md (it is invisible when rendered) and
 keep the human-readable numbers next to it in sync; print a fresh one with --print-counts:
@@ -42,6 +48,7 @@ import argparse
 import json
 import re
 import sys
+import unicodedata
 import urllib.parse
 from collections import Counter
 from pathlib import Path
@@ -524,6 +531,221 @@ def check_drift(r: Report):
             r.err("drift", f"SKILL.md says {n} proven records have proof_scope={m.group(1)}, the catalog has {scopes.get(m.group(1), 0)}")
 
 
+# ------------------------------------------------------------------ protocol structure (USIP core + appendices)
+
+PROTO_CORE = SK / "PROTOCOL.md"
+PROTO_DIR = SK / "references" / "protocol"
+PROTO_MAX_LINES = 520
+PROTO_MAX_CHARS = 72_000   # the core is read in full on every L1+ request: lines alone do not bound it
+PROTO_TOC_MIN_LINES = 80
+PROTO_TRIGGERS = "متى تفتح الملاحق / appendix triggers"
+PROTO_GLOSSARY = "المسرد / glossary"
+PROTO_PASTE = "النسخة المختصرة للصق في مشروع claude.ai"
+PROTO_MAP = "خريطة الأقسام القديمة / old → new map"
+PROTO_OLD_IDS = (("banner", "toc", "repo-origin", "loop", "priority", "levels", "-1")
+                 + tuple(f"-1.{i}" for i in range(1, 49)) + ("-1.10.أ", "-1.10.ب")
+                 + tuple(f"Phase {i}" for i in range(12)) + ("field-lessons", "paste"))
+# The canonical plan letters (PROTOCOL.md glossary = Phase 6); every consumer quotes them.
+PLAN_AR = ("A — الذكية السريعة", "أبسط مسار يحقق كل متطلب إلزامي", "B — الاحترافية المتوازنة", "تكاملات من مجالات أخرى",
+           "C — القصوى الابتكارية", "ليست B + إضافات", "D — المدمجة")
+PLAN_EN = ("simplest path that meets every must-have", "balanced professional with cross-domain integration",
+           "different engine, source or verification method (not B plus extras)", "user-approved merge of named nodes from A/B/C")
+PLAN_DRIFT = ("A توازن", "وB مبتكرة", "B توليفة ابتكارية", "B (مبتكرة بترابط بعيد)", "C (طموحة مع بوابات جودة إضافية)",
+              "minimal reliable workflow", "cross-domain new composition")
+VERSION_RE = re.compile(r"USIP v(\d+(?:\.\d+)*)")
+HEADING_RE = re.compile(r"^(#{1,6})\s+(.+?)\s*#*\s*$")
+NAMED_FILE_RE = re.compile(r"(?<![\w.-])(scripts|evals|tools|tests)/([A-Za-z0-9_][\w-]*\.(?:py|cjs|mjs))")
+ANCHOR_RE = re.compile(r"<a\s+(?:id|name)=\"([^\"]+)\"")
+
+
+def gh_slug(title: str) -> str:
+    """GitHub's heading anchor: lower case; keep letters, marks, digits, space, '-' and '_'; spaces become '-'."""
+    t = re.sub(r"`|\*\*|__", "", title.strip()).lower()
+    return "".join(c for c in t if c in " -_" or unicodedata.category(c)[0] in "LMN").replace(" ", "-")
+
+
+def md_headings(text: str) -> list:
+    """[(level, title, line_index)] outside fenced code."""
+    out, fence = [], None
+    for i, ln in enumerate(text.split("\n")):
+        m = re.match(r"^\s{0,3}(```|~~~)", ln)
+        if m:
+            fence = None if fence == m.group(1) else (fence or m.group(1))
+            continue
+        if fence:
+            continue
+        h = HEADING_RE.match(ln)
+        if h:
+            out.append((len(h.group(1)), h.group(2), i))
+    return out
+
+
+def md_anchors(path: Path) -> set:
+    text = path.read_text(encoding="utf-8", errors="replace")
+    return {gh_slug(t) for _lv, t, _i in md_headings(text)} | set(ANCHOR_RE.findall(text))
+
+
+def md_section(text: str, title: str) -> str:
+    """The body of the first heading whose text equals title, up to the next heading of the same or higher level."""
+    lines, hs = text.split("\n"), md_headings(text)
+    for k, (lv, t, i) in enumerate(hs):
+        if t == title:
+            end = next((j for lv2, _t, j in hs[k + 1:] if lv2 <= lv), len(lines))
+            return "\n".join(lines[i + 1:end])
+    return ""
+
+
+def toc_problem(text: str):
+    """None when the contents list links the level-2/3 headings that follow it, in order; else a message."""
+    hs = md_headings(text)
+    k = next((n for n, (_lv, t, _i) in enumerate(hs) if TOC_RE.match("## " + t)), None)
+    if k is None:
+        return None
+    lines = text.split("\n")
+    end = hs[k + 1][2] if k + 1 < len(hs) else len(lines)
+    listed = [urllib.parse.unquote(a) for a in re.findall(r"\]\(#([^)\s]+)\)", "\n".join(lines[hs[k][2] + 1:end]))]
+    want = [gh_slug(t) for lv, t, _i in hs[k + 1:] if lv in (2, 3)]
+    if listed == want:
+        return None
+    first = next((n for n, (a, b) in enumerate(zip(listed, want)) if a != b), min(len(listed), len(want)))
+    return (f"contents list ({len(listed)} links) differs from the heading order ({len(want)} headings) at item {first + 1}: "
+            f"{(listed[first:first + 1] or ['—'])[0]!r} vs {(want[first:first + 1] or ['—'])[0]!r}")
+
+
+def protocol_files() -> list:
+    return ([PROTO_CORE] if PROTO_CORE.is_file() else []) + (sorted(PROTO_DIR.glob("*.md")) if PROTO_DIR.is_dir() else [])
+
+
+def changelog_map() -> dict:
+    """{old section id: [link targets]} from the CHANGELOG's old -> new table."""
+    f = PROTO_DIR / "CHANGELOG.md"
+    out = {}
+    if not f.is_file():
+        return out
+    for ln in md_section(f.read_text(encoding="utf-8"), PROTO_MAP).split("\n"):
+        m = re.match(r"^\|\s*`([^`]+)`\s*\|", ln)
+        if m:
+            out[m.group(1)] = LINK_RE.findall(ln)
+    return out
+
+
+def protocol_version() -> str:
+    m = VERSION_RE.search(PROTO_CORE.read_text(encoding="utf-8").split("\n", 1)[0]) if PROTO_CORE.is_file() else None
+    return m.group(1) if m else ""
+
+
+def protocol_problems() -> list:
+    """[(level, message)] for the protocol check; cheap, read-only, no subprocesses."""
+    probs = []
+    if not PROTO_CORE.is_file():
+        return [("info", "no PROTOCOL.md in this copy; protocol checks skipped")]
+    core = PROTO_CORE.read_text(encoding="utf-8")
+    n = core.count("\n") + (0 if core.endswith("\n") else 1)
+    if n >= PROTO_MAX_LINES:
+        probs.append(("error", f"PROTOCOL.md has {n} lines; the always-read core must stay under {PROTO_MAX_LINES} (move conditional material to an appendix)"))
+    if len(core) > PROTO_MAX_CHARS:
+        probs.append(("error", f"PROTOCOL.md has {len(core):,} characters; the always-read core must stay under {PROTO_MAX_CHARS:,} (move conditional material to an appendix)"))
+    ver = protocol_version()
+    if not ver:
+        probs.append(("error", "PROTOCOL.md title has no 'USIP vX.Y'"))
+    for f in protocol_files():
+        text = f.read_text(encoding="utf-8")
+        name = rel(f)
+        seen = Counter(t for _lv, t, _i in md_headings(text))
+        for t, c in seen.items():
+            if c > 1:
+                probs.append(("error", f"{name}: heading {t!r} appears {c} times"))
+        lines = text.count("\n") + 1
+        if lines > PROTO_TOC_MIN_LINES and not TOC_RE.search(text):
+            probs.append(("error", f"{name} has {lines} lines but no '## الفهرس / contents' list"))
+        msg = toc_problem(text)
+        if msg:
+            probs.append(("error", f"{name}: {msg}"))
+        if f != PROTO_CORE and CORE_LINK_RE.search(text) is None:
+            probs.append(("error", f"{name} does not link back to ../../PROTOCOL.md"))
+        for kind, fname in sorted(set(NAMED_FILE_RE.findall(strip_fences(text)))):
+            base = SK if kind in ("scripts", "evals") else REPO
+            if not (base / kind / fname).is_file():
+                probs.append(("error", f"{name} names {kind}/{fname}, which does not exist"))
+        for target in LINK_RE.findall(strip_code(text)):
+            if re.match(r"^(?:[a-z][a-z0-9+.-]*:|//)", target, re.I):
+                continue
+            path, _, anchor = urllib.parse.unquote(target).partition("#")
+            dest = (f.parent / path) if path else f
+            if not dest.exists():
+                probs.append(("error", f"{name}: broken link → {target}"))
+            elif anchor and dest.suffix == ".md" and anchor not in md_anchors(dest):
+                probs.append(("error", f"{name}: link → {target} has no matching heading anchor"))
+    # every appendix is reachable from the core's trigger table
+    linked = {Path(urllib.parse.unquote(t).split("#")[0]).name for t in LINK_RE.findall(md_section(core, PROTO_TRIGGERS))}
+    for f in protocol_files()[1:]:
+        if f.name not in linked:
+            probs.append(("error", f"references/protocol/{f.name} is not linked from the core's trigger table"))
+    # every old section id is mapped
+    mp = changelog_map()
+    if PROTO_DIR.is_dir():
+        missing = [i for i in PROTO_OLD_IDS if not mp.get(i)]
+        if missing:
+            probs.append(("error", f"CHANGELOG old → new map lacks {len(missing)} old section id(s): {', '.join(missing[:8])}"))
+    # one version everywhere
+    paste = md_section(core, PROTO_PASTE)
+    if ver and f"USIP v{ver}" not in paste:
+        probs.append(("error", f"the paste block in PROTOCOL.md does not say USIP v{ver}"))
+    entries = [SK / "SESSION_PROMPT.md", SK / "SKILL.md", REPO / "CLAUDE.md"]
+    for f in entries:
+        if not f.is_file():
+            continue
+        found = set(VERSION_RE.findall(f.read_text(encoding="utf-8")))
+        if ver and found != {ver}:
+            probs.append(("error", f"{f.name} names USIP {', '.join('v' + v for v in sorted(found)) or 'no version'}; the core is v{ver}"))
+    for f in (SK / "scripts" / "skill_intelligence.py", SK / "scripts" / "fusionforge.py"):
+        if f.is_file() and ver and f"USIP v{ver}" not in module_doc(f):
+            probs.append(("error", f"scripts/{f.name} docstring does not name USIP v{ver}"))
+    # the plan letters mean one thing everywhere
+    gloss = md_section(core, PROTO_GLOSSARY)
+    for label, text in (("PROTOCOL.md glossary", gloss), ("SESSION_PROMPT.md", (SK / "SESSION_PROMPT.md").read_text(encoding="utf-8")
+                                                                                   if (SK / "SESSION_PROMPT.md").is_file() else None)):
+        if text is None:
+            continue
+        for s in PLAN_AR:
+            if s not in text:
+                probs.append(("error", f"{label} lacks the canonical plan text {s!r}"))
+    ff = SK / "scripts" / "fusionforge.py"
+    if ff.is_file():
+        src = ff.read_text(encoding="utf-8")
+        for s in PLAN_EN:
+            if s not in src:
+                probs.append(("error", f"scripts/fusionforge.py lacks the canonical plan label {s!r}"))
+    drift_files = [f for f in protocol_files() if f.name != "CHANGELOG.md"] + [f for f in entries if f.is_file()] + ([ff] if ff.is_file() else [])
+    for f in drift_files:
+        text = f.read_text(encoding="utf-8")
+        for s in PLAN_DRIFT:
+            if s in text:
+                probs.append(("error", f"{f.name} still uses the retired plan wording {s!r}"))
+    probs.append(("info", f"core {n} lines, {len(core):,} characters · {len(protocol_files()) - 1} file(s) under references/protocol · USIP v{ver or '?'} · {len(mp)} mapped old section(s)"))
+    return probs
+
+
+CORE_LINK_RE = re.compile(r"\]\(\.\./\.\./PROTOCOL\.md(?:#[^)]*)?\)")
+
+
+def module_doc(path: Path) -> str:
+    """The module docstring (text between the first two triple quotes)."""
+    parts = path.read_text(encoding="utf-8").split('"""', 2)
+    return parts[1] if len(parts) == 3 else ""
+
+
+def strip_fences(text: str) -> str:
+    """Text without fenced blocks' fence lines only (named files inside commands still count)."""
+    return re.sub(r"^\s{0,3}(```|~~~).*$", "", text, flags=re.M)
+
+
+def check_protocol(r: Report):
+    r.checks["protocol"] += 1
+    for level, msg in protocol_problems():
+        r.add(level, "protocol", msg)
+
+
 def live_counts() -> dict:
     powers, styles = P.load_powers(), P.load_styles()
     st = Counter(p.get("status") for p in powers)
@@ -694,6 +916,7 @@ def main(argv=None) -> int:
     check_evals(r)
     check_tools(r)
     check_drift(r)
+    check_protocol(r)
     errors, warns = r.count("error"), r.count("warn")
     failed = errors > 0 or (a.strict and warns > 0)
     if a.json:

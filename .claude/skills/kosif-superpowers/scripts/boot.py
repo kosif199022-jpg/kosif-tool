@@ -112,14 +112,16 @@ def live(as_json: bool) -> int:
     if tools:
         print(f"\nrunnable tools: {len(tools)} in {len({t['area'] for t in tools})} areas — python3 scripts/hub.py doctor shows which run here now")
     print("""
-protocol (any substantial request): understand → scan 100% of the catalog → shortlist → 3 plans → wait for "موافق"
-  0. python3 scripts/skill_intelligence.py brief "<task>"  coverage receipt + groups + superpowers + candidates + plan skeleton
+protocol USIP v5.3 (any substantial request; L0 is answered at once): level → request card → brief (100% receipt)
+  → [L2/L3] FusionForge reuse + propose → plans A/B/C with the questions and suggested defaults in ONE report → wait for the user's word
+  0. mkdir -p <repo>/out/<job> && python3 scripts/skill_intelligence.py brief "<task>" --out <repo>/out/<job>/brief.json   receipt + candidates + plans + questions
+  0b. python3 scripts/fusionforge.py propose "<task>" --project <slug> --from-brief <repo>/out/<job>/brief.json   L2/L3 recipe; validate/choose/trace/record after approval
 next:
   1. python3 scripts/hub.py find "<task>"             tools to run + powers + guides, in one answer
   2. python3 scripts/hub.py tool <tool-id>            exact commands, requirements, safety, tests
   3. python3 scripts/capability_mindmap.py task "<task>"  stage-by-stage mind map (understand → … → deliver)
   4. python3 scripts/think.py ladder "<task>"         how deep to think; think.py frame "<task>" for the contract
-protocol: PROTOCOL.md · index: references/INDEX.md · map: references/capability-graph.html · thinking: references/cognition.md · rules: SKILL.md §6""")
+protocol: PROTOCOL.md (core) + references/protocol/ (appendices) · index: references/INDEX.md · map: references/capability-graph.html · thinking: references/cognition.md · rules: SKILL.md §6""")
     return 0
 
 

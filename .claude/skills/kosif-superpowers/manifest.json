@@ -8807,8 +8807,8 @@
    "area": "maintain",
    "title_en": "Skill Health Check",
    "title_ar": "فحص سلامة المهارة",
-   "summary_en": "Validates the kosif-superpowers skill with 12 read-only checks: SKILL.md frontmatter, power records, proof paths, relative Markdown links, contents headings, generated chapters, the counts marker, model names, secrets and leaked session paths, evals/evals.json, the data/tools.json registry with its generated hub files, and power-count drift in the entry docs. It can also run the routing evals, then prints a text or JSON report and exits 1 on any error.",
-   "summary_ar": "يفحص مهارة kosif-superpowers باثني عشر فحصًا لا تكتب شيئًا: ترويسة ملف SKILL.md، وسجلات القدرات، ومسارات الأدلة، وروابط Markdown النسبية، وعناوين المحتويات، والفصول المولَّدة، وعلامة العدّادات، وأسماء النماذج، والأسرار ومسارات الجلسات المسرَّبة، وملف evals/evals.json، وسجل الأدوات data/tools.json مع الملفات المولَّدة منه، وتطابق أعداد القدرات المذكورة في الوثائق الرئيسية. ويستطيع أيضًا تشغيل تقييمات التوجيه، ثم يطبع تقريرًا نصيًا أو بصيغة JSON ويخرج بالرمز 1 عند وجود أي خطأ.",
+   "summary_en": "Validates the kosif-superpowers skill with 13 read-only checks: SKILL.md frontmatter, power records, proof paths, relative Markdown links, contents headings, generated chapters, the counts marker, model names, secrets and leaked session paths, evals/evals.json, the data/tools.json registry with its generated hub files, power-count drift in the entry docs, and the USIP protocol structure (PROTOCOL.md core and references/protocol/). It can also run the routing evals, then prints a text or JSON report and exits 1 on any error.",
+   "summary_ar": "يفحص مهارة kosif-superpowers بثلاثة عشر فحصًا لا تكتب شيئًا: ترويسة ملف SKILL.md، وسجلات القدرات، ومسارات الأدلة، وروابط Markdown النسبية، وعناوين المحتويات، والفصول المولَّدة، وعلامة العدّادات، وأسماء النماذج، والأسرار ومسارات الجلسات المسرَّبة، وملف evals/evals.json، وسجل الأدوات data/tools.json مع الملفات المولَّدة منه، وتطابق أعداد القدرات المذكورة في الوثائق الرئيسية، وبنية بروتوكول USIP (نواة PROTOCOL.md وملاحق references/protocol/). ويستطيع أيضًا تشغيل تقييمات التوجيه، ثم يطبع تقريرًا نصيًا أو بصيغة JSON ويخرج بالرمز 1 عند وجود أي خطأ.",
    "use_when": [
     "افحص المهارة قبل ما نعمل commit",
     "شيك على المهارة وشوف فيه روابط مكسورة أو أعداد غلط",
@@ -8838,7 +8838,7 @@
     {
      "name": "check",
      "example": "python3 scripts/check_skill.py",
-     "does": "Runs all 12 checks and prints 'LEVEL [check] message' lines plus a summary such as 'check_skill: 12 checks · N error(s) · M warning(s) → OK/FAIL'. Exits 1 on any error."
+     "does": "Runs all 13 checks and prints 'LEVEL [check] message' lines plus a summary such as 'check_skill: 13 checks · N error(s) · M warning(s) → OK/FAIL'. Exits 1 on any error."
     },
     {
      "name": "--strict",
@@ -10814,7 +10814,7 @@
     }
    ],
    "inputs": "A request in the user's words (Arabic or English).",
-   "outputs": "Markdown report or JSON brief (kosif.skill-intelligence.v1); exit 1 when coverage is incomplete.",
+   "outputs": "Markdown report or JSON brief (kosif.skill-intelligence.v2); exit 1 when coverage is incomplete.",
    "requires": {
     "python": [],
     "binaries": [],
@@ -10826,7 +10826,9 @@
    "consent": "none: read-only (writes only the optional --out file)",
    "limits": "The analysis and plans are deterministic drafts from catalog text; Claude must think them over, and no capability is executed or verified by this tool.",
    "tests": [
-    ".claude/skills/kosif-superpowers/evals/test_skill_intelligence.py"
+    ".claude/skills/kosif-superpowers/evals/test_skill_intelligence.py",
+    ".claude/skills/kosif-superpowers/evals/test_routing_quality.py",
+    ".claude/skills/kosif-superpowers/evals/test_usip_shadow.py"
    ],
    "docs": [
     ".claude/skills/kosif-superpowers/PROTOCOL.md"
@@ -10844,15 +10846,17 @@
    "root": "skill",
    "kind": "cli",
    "area": "discover",
-   "title_en": "FusionForge project-scoped composite workflow recipes",
-   "title_ar": "FusionForge لوصفات الـWorkflow المركبة داخل المشروع",
-   "summary_en": "Turns a request into a project-scoped candidate recipe of catalog superpowers (data/superpowers.json), appends evidence-hashed execution traces, and records tested, failed or verified outcomes. Verified recipes of the same project are recalled when a later goal is similar. Everything stays under out/fusionforge/<project>/ (git-ignored); nothing is executed, installed or published.",
-   "summary_ar": "يحوّل الطلب إلى وصفة مرشحة داخل المشروع من القدرات الخارقة في الكتالوج، ويضيف سجل تنفيذ بخطوات وبصمات أدلة، ويسجل نتيجة الاختبار أو الفشل أو التحقق. الوصفات المتحققة في المشروع نفسه تُستدعى عند هدف مشابه لاحقًا. كل شيء محفوظ في out/fusionforge/<project>/ المستثنى من git؛ لا تنفيذ ولا تثبيت ولا نشر.",
+   "title_en": "FusionForge v2 project-scoped composite workflow recipes",
+   "title_ar": "FusionForge v2 لوصفات الـWorkflow المركبة داخل المشروع",
+   "summary_en": "Turns the USIP brief (skill_intelligence is the single ranker) into a project-scoped candidate recipe: typed workflow nodes per stage holding catalog superpowers fingerprinted by their atom IDs, input/output artifact kinds, an executor reference and handoff edges, with plans A/B/C taken from the brief. It then records the approved plan, per-node traces with hashed evidence and every status change through an enforced state machine (candidate, planned, tested, then verified or failed) whose verified gate checks the records; validate runs checks V01-V12, and lessons, reuse and propose's recall rank the same project's earlier recipes. Cards and redacted bundles carry recipes to another session. Writes only under out/fusionforge/<project>/; it never executes a power, installs, publishes or edits the catalog.",
+   "summary_ar": "يحوّل تقرير USIP (والمرتِّب الوحيد هو skill_intelligence) إلى وصفة مرشحة داخل المشروع: عُقد Workflow لكل مرحلة تحمل قدرات الكتالوج ببصمة ذراتها، وأنواع المدخلات والمخرجات، ومرجع المنفّذ، وحواف التسليم، مع الخطط A وB وC من التقرير نفسه. ثم يسجّل الخطة المعتمدة، وسجل تنفيذ لكل عقدة ببصمات الأدلة، وكل تغيير حالة عبر آلة حالات مُلزمة (candidate ثم planned ثم tested ثم verified أو failed) لها بوابة تحقق تفحص السجلات؛ ويجري validate الفحوص V01–V12، وترتّب lessons وreuse واستدعاءُ propose وصفاتِ المشروع نفسه السابقة. والبطاقات والحزم المنقّحة تنقل الوصفات إلى جلسة أخرى. يكتب فقط في out/fusionforge/<project>/، ولا ينفّذ قدرة ولا يثبّت شيئًا ولا ينشر ولا يعدّل الكتالوج.",
    "use_when": [
     "اعمل وصفة توليف مهارات للمهمة دي وسجّل خطوات التنفيذ",
     "ابتكر workflow مركب من مهارات متعددة واحفظه للمشروع",
+    "رتّب وصفات المشروع السابقة لهدف جديد وقل لي أي تجربة فاشلة أتجنبها",
     "Compose several superpowers into a reusable workflow recipe for this project",
-    "Record the evidence for each step of the composite workflow I just ran"
+    "Record the evidence for each step of the composite workflow I just ran",
+    "Export this project's FusionForge recipes so the next cloud session can import them"
    ],
    "keywords": [
     "fusionforge",
@@ -10862,41 +10866,120 @@
     "self-learning",
     "execution trace",
     "evidence",
+    "verified gate",
+    "state machine",
+    "reuse",
+    "lessons",
+    "recipe card",
+    "export bundle",
     "توليف المهارات",
     "وصفة",
     "سجل تنفيذ",
     "تعلم ذاتي",
-    "مهارة مركبة"
+    "مهارة مركبة",
+    "بوابة التحقق",
+    "دروس المشروع",
+    "بطاقة الوصفة"
    ],
    "commands": [
     {
      "name": "propose",
-     "example": "python3 scripts/fusionforge.py propose \"مونتاج ريلز بترجمة عربية\" --project demo_project",
-     "does": "Ranks catalog superpowers for the goal, writes a candidate recipe FUSE-<date>-<hex> and refreshes the project index."
+     "example": "python3 scripts/fusionforge.py propose \"مونتاج ريلز بترجمة عربية\" --project demo_project --from-brief out/20261021-reel/brief.json",
+     "does": "Builds a candidate v2 recipe from the brief (without --from-brief it runs the brief in process; the brief is saved beside the recipe): typed nodes and edges for plans A/B/C, recall of this project's earlier recipes and similar-unverified links. Needs a complete coverage receipt; NO_MATCH exits 3 with a --terms hint. Also --terms, --max-capabilities 1-60 (default 24) and --id."
+    },
+    {
+     "name": "reuse",
+     "example": "python3 scripts/fusionforge.py reuse \"مونتاج ريلز بترجمة عربية\" --project demo_project --from-brief out/20261021-reel/brief.json",
+     "does": "Read-only: ranks this project's earlier recipes by sim x strength x recency x freshness (sim_basis says goal text or goal + capabilities) and lists failed ones under avoid with their lessons. --top N, --no-brief, --terms."
+    },
+    {
+     "name": "validate",
+     "example": "python3 scripts/fusionforge.py validate --project demo_project --id FUSE-20261021-0123456789",
+     "does": "Read-only checks V01-V12: schema, status log, handoff kinds, a final verify, executors, evidence present and unchanged, secrets, self-evidence, verified without a run, catalog drift and unknown capabilities (the last two warnings). Exit 4 on any error."
+    },
+    {
+     "name": "choose",
+     "example": "python3 scripts/fusionforge.py choose --project demo_project --id FUSE-20261021-0123456789 --plan B --why \"balanced quality for a 30-second reel\"",
+     "does": "Records the user's plan (A, B, C, or D with --nodes N01,N02) and moves candidate to planned; needs a clean validate and resets every node to pending. Node results count only after this."
     },
     {
      "name": "trace",
-     "example": "python3 scripts/fusionforge.py trace --project demo_project --id FUSE-20261021-0123456789 --stage verify --action \"Ran verify_video.py\" --tool verify_video --evidence report.json",
-     "does": "Appends one observed step with an optional SHA-256-hashed evidence file; refuses likely secrets."
+     "example": "python3 scripts/fusionforge.py trace --project demo_project --id FUSE-20261021-0123456789 --stage verify --node N06 --action \"Ran verify_video.py on the render\" --result passed --tool tool:verify-video --observed \"1080x1920, 30 fps, -14.1 LUFS\" --evidence out/20261021-reel/qa.json",
+     "does": "Appends one executed step and updates the node's status (skipped needs --observed; failed can carry --error-class); records tool substitutions; refuses credentials, unknown capability IDs and final recipes. Also --input, --output, --capabilities."
     },
     {
      "name": "record",
-     "example": "python3 scripts/fusionforge.py record --project demo_project --id FUSE-20261021-0123456789 --status tested --evidence report.json",
-     "does": "Sets candidate, planned, tested, failed or verified; tested, failed and verified need an evidence file, verified also needs --qa-pass."
+     "example": "python3 scripts/fusionforge.py record --project demo_project --id FUSE-20261021-0123456789 --status tested --evidence out/20261021-reel/qa.json",
+     "does": "Enforced transitions with a status log: tested needs evidence and at least one trace with a result; failed needs evidence and --note; planned is set only by choose (USE_CHOOSE)."
+    },
+    {
+     "name": "record --status verified",
+     "example": "python3 scripts/fusionforge.py record --project demo_project --id FUSE-20261021-0123456789 --status verified --evidence out/20261021-reel/final-qa.json --qa-pass",
+     "does": "The verified gate: tested state, --qa-pass, every node of the chosen plan passed or skipped, a verify node passed with local evidence, evidence unlike any failure evidence of the project and not already used to verify another recipe, and a clean validate. --baseline FILE keeps the comparison file (stored, not compared)."
+    },
+    {
+     "name": "lessons",
+     "example": "python3 scripts/fusionforge.py lessons --project demo_project",
+     "does": "Rebuilds <project>/lessons.json from every recipe's traces: WORKED, FAILED, REPLACED, HANDOFF and RECIPE_FAILED, with per-executor counts (assumed executors counted apart)."
+    },
+    {
+     "name": "fork",
+     "example": "python3 scripts/fusionforge.py fork --project demo_project --id FUSE-20261021-0123456789",
+     "does": "New candidate from any recipe (verified and failed are final) with statuses reset and forked_from kept; --new-id sets its ID."
+    },
+    {
+     "name": "set-graph",
+     "example": "python3 scripts/fusionforge.py set-graph --project demo_project --id FUSE-20261021-0123456789 --file out/20261021-reel/graph.json",
+     "does": "Replaces a candidate's nodes, edges and plans after checking every field and handoff kind (GRAPH_INVALID otherwise)."
+    },
+    {
+     "name": "bind",
+     "example": "python3 scripts/fusionforge.py bind --project demo_project --id FUSE-20261021-0123456789 --node N03 --executor tool:montage-pro",
+     "does": "Sets a node's executor on a candidate or planned recipe: tool:<tools.json id>, bin:<name>, mcp:<server/tool>, method:<atom id> or human."
+    },
+    {
+     "name": "card",
+     "example": "python3 scripts/fusionforge.py card --project demo_project --id FUSE-20261021-0123456789",
+     "does": "Writes <project>/cards/<id>.md (or --out FILE.md): a Markdown card with an embedded kosif.fusionforge.card.v2 JSON block, no absolute paths, evidence by sha256, for claude.ai without a shell."
+    },
+    {
+     "name": "import-card",
+     "example": "python3 scripts/fusionforge.py import-card out/fusionforge/demo_project/cards/FUSE-20261021-0123456789.md --project other_project",
+     "does": "New candidate from a card (status forced to candidate, provenance card); malformed cards stop with CARD_INVALID."
+    },
+    {
+     "name": "export",
+     "example": "python3 scripts/fusionforge.py export --project demo_project",
+     "does": "Writes a redacted kosif.fusionforge.bundle.v2 (recipes + lessons) to <project>/exports/<project>-<YYYYMMDD>.json (or --out FILE.json) for opt-in persistence; never committed. --include-candidates adds unfinished recipes."
+    },
+    {
+     "name": "import",
+     "example": "python3 scripts/fusionforge.py import out/fusionforge/demo_project/exports/demo_project-20261021.json --project demo_project",
+     "does": "Imports a bundle of the same project; statuses kept with imported: true; evidence not on this machine is a warning and weighs x0.8 in reuse; verified and promote need a new local verify run."
+    },
+    {
+     "name": "migrate",
+     "example": "python3 scripts/fusionforge.py migrate --project demo_project",
+     "does": "Converts v1 recipes to v2 with byte-identical backups under <project>/legacy/; a v1 verified recipe with no trace is flagged legacy_unproven (x0.3 in reuse, never promoted)."
+    },
+    {
+     "name": "promote",
+     "example": "python3 scripts/fusionforge.py promote --project demo_project --id FUSE-20261021-0123456789",
+     "does": "Writes <project>/promotions/<id>.proposal.json in state pending_human for a verified recipe proved on this machine; never edits the catalog."
+    },
+    {
+     "name": "show",
+     "example": "python3 scripts/fusionforge.py show --project demo_project --id FUSE-20261021-0123456789 --json",
+     "does": "Read-only: one recipe (a malformed record gets a short summary instead of a crash)."
     },
     {
      "name": "catalog",
      "example": "python3 scripts/fusionforge.py catalog --project demo_project",
-     "does": "Lists the project's recipes with status and evidence counts."
-    },
-    {
-     "name": "show",
-     "example": "python3 scripts/fusionforge.py show --project demo_project --id FUSE-20261021-0123456789",
-     "does": "Prints one recipe as JSON."
+     "does": "Read-only listing of the project's recipes by status; invalid files are listed, never fatal; creates no folders."
     }
    ],
-   "inputs": "A goal in the user's words and a project slug ([A-Za-z0-9_-]); for trace/record, a recipe ID, a stage or status and optional local evidence files.",
-   "outputs": "JSON recipes and index.json under out/fusionforge/<project>/ (or --root), printed to stdout.",
+   "inputs": "A goal in the user's words, a project slug ([A-Za-z0-9_-]) and, preferably, the brief.json from skill_intelligence.py brief --out; later a recipe ID, a plan letter, a stage, node, executor reference or status, and local evidence files (regular, non-empty files inside the working directory, its git checkout, the FusionForge root or the skill's checkout). Global options: --root, --catalog-file, --tools-file, --now; every command takes --json.",
+   "outputs": "Under <root>/<project>/ (root: --root, else $KOSIF_FUSIONFORGE_ROOT, else <git top>/out/fusionforge, git-ignored): recipes (kosif.fusionforge.recipe.v2) with their saved brief, index.json, lessons.json, content-addressed evidence copies up to 5 MB, cards, export bundles, legacy backups and promotion proposals. stdout: a short summary, or full JSON with --json (always with \"root\"). Errors are one line 'fusionforge: error: CODE: message'; exit 2 usage/validation/state, 3 NO_MATCH, 4 validate errors.",
    "requires": {
     "python": [],
     "binaries": [],
@@ -10905,13 +10988,15 @@
     "network": false
    },
    "safety": "writes-files",
-   "consent": "Writes only under out/fusionforge/<project>/ (or the --root folder); evidence files are read and hashed, never uploaded.",
-   "limits": "Ranking is keyword matching over catalog labels and the proposed stages are placeholders; 'verified' reflects the caller's --qa-pass assertion with an evidence file, not a check run by this tool, and the index is local to the checkout (not synced across machines or cloud sessions).",
+   "consent": "Writes only under the FusionForge root (out/fusionforge/<project>/, or --root / $KOSIF_FUSIONFORGE_ROOT); evidence files are read, hashed and copied there, never uploaded; nothing is committed, published or sent.",
+   "limits": "It never executes a power or tool: 'verified' means the caller's own QA passed this engine's gate on the records (states, traces, evidence hashes), not that the engine judged the work, and --baseline is stored but not compared. 'Learning' is lessons and rankings computed from the same project's recorded traces: nothing is learned across projects, no model is trained and nothing is swapped automatically. Records are local files under out/fusionforge/ (git-ignored): a new machine or a new cloud container starts empty unless the user exports a bundle or card and imports it there. Node I/O contracts are drafts (default_unconfirmed) until set-graph replaces them, the picks are only as good as the brief, and project isolation is the project folder name.",
    "tests": [
-    ".claude/skills/kosif-superpowers/evals/test_fusionforge.py"
+    ".claude/skills/kosif-superpowers/evals/test_fusionforge.py",
+    ".claude/skills/kosif-superpowers/evals/test_usip_shadow.py"
    ],
    "docs": [
-    ".claude/skills/kosif-superpowers/PROTOCOL.md"
+    ".claude/skills/kosif-superpowers/PROTOCOL.md",
+    ".claude/skills/kosif-superpowers/references/protocol/A4-fusionforge-composition.md"
    ],
    "families": [
     "self-discovery",
@@ -10919,7 +11004,13 @@
     "planning-execution"
    ],
    "evidence": "tested-here",
-   "evidence_note": "evals/test_fusionforge.py 4/4 passed on this checkout (python3 -m unittest) before registration."
+   "evidence_note": "2026-10-21 on this checkout: evals/test_fusionforge.py 48/48 passed (python3 -m unittest; fixture catalog plus real-catalog smoke and determinism runs), and evals/test_usip_shadow.py ran the FusionForge shadow rows (-1.38#1-#10, -1.32#05, -1.32#22, R24) against the real catalog in a temporary root. An end-to-end run (propose, validate, choose, trace, record tested and verified, lessons, reuse, card, export, import, fork, promote, migrate) exited 0 at every step.",
+   "safe_commands": [
+    "show",
+    "catalog",
+    "validate",
+    "reuse"
+   ]
   },
   {
    "id": "superpower-fusion",

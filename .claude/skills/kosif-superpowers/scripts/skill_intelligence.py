@@ -1,18 +1,30 @@
 #!/usr/bin/env python3
-"""KOSIF Universal Skill Intelligence Protocol — محرك بروتوكول ذكاء المهارات الشامل (USIP v2.1).
+"""KOSIF Universal Skill Intelligence Protocol — محرك بروتوكول ذكاء المهارات الشامل (implements USIP v5.3).
 
 The machine half of PROTOCOL.md. For any request it:
   0. checks the environment and that every derived index is fresh,
-  1. drafts a request card: protocol level (L0–L3), deliverable, constraints, own-asset rules, must-haves,
+  1. drafts a request card: protocol level (L0–L3; a question, definition or how-to is L0 even when it names a
+     video or code term), intent (produce, or publish something that exists), deliverable, style, topics,
+     constraints, own-asset rules (ownership forms only), must-haves (each with deliverable-specific search terms;
+     a GitHub push only on a push intent) and the questions that change the result, each with a suggested default,
   2. scans 100% of the catalog records (every data/powers/*.json row) and returns a SHA-256 coverage receipt
      that fails closed when any record is unreadable, unclassified or duplicated,
-  3. ranks groups, fused superpowers, powers and runnable tools; a must-have layer forces in what the request
-     cannot do without, a constraint layer excludes what would replace the user's own assets, fit gates keep
-     unrelated "creative" picks out,
+  3. ranks groups, fused superpowers, powers and runnable tools by query CONCEPTS (a word, its aliases and its
+     clitic stem count once; homonyms are resolved by the SENSE table; a superpower's size does not buy rank);
+     a must-have layer forces in what the request cannot do without (through a family that can meet the need for
+     this deliverable, else an honest gap), a constraint layer excludes what would replace the user's own assets,
+     a fit floor (MIN_FIT x best fit) keeps unrelated picks out of plans, and a superpower built around one named
+     platform (Godot, Shopify, App Store, EVM, GitHub Actions, JEB, MongoDB…) needs that platform in the request,
   4. scores candidates (fit 35 · integration 20 · feasibility 15 · evidence 10 · cost 10 · creativity 10) with
-     LOCAL badges (proof in this checkout, requirements present here),
-  5. drafts plans A/B/C as different APPROACHES for the deliverable type, each covering every must-have and
-     ending in a verifier, with defined counts, risks, a recommendation and its reason, and the approval question.
+     LOCAL badges (proof in this checkout, requirements present here); below the fit floor every non-fit part
+     scales with fit, and a cross-domain integration never comes from a group that is off-domain for the deliverable,
+  5. picks verifiers per deliverable and per request (best atom + 0.25 x next three, weighted by how much the
+     checker also matches the request, a family whitelist, no sound checks for a silent deliverable and a dedicated
+     loudness check for one that carries sound) and drafts plans A/B/C as different APPROACHES for the deliverable
+     type (A = simplest path that meets every must-have, B = balanced professional with cross-domain integration,
+     C = different engine, source or verification method, not B plus extras: C reuses at most half of B's own picks
+     and has picks of its own, else it is labelled a depth level of B, else marked unavailable), each covering every
+     must-have and ending in a verifier, with counts, risks, a recommendation and its reason, and the approval question.
 
   python3 skill_intelligence.py brief "<request>" [--terms "english keywords"] [--json] [--out FILE] [--details]
   python3 skill_intelligence.py count --sp SP-0001,SP-0002 [--atoms ID,...] [--tools id,...]   # counts for an edited plan
@@ -51,6 +63,11 @@ WEIGHTS = {"fit": 35, "integration": 20, "feasibility": 15, "evidence": 10, "cos
 LOCAL_RANK = ["✅", "🟢", "📦", "🔑", "📄", "💡"]
 LOCAL_EVIDENCE = {"✅": 1.0, "🟢": 0.8, "📦": 0.55, "🔑": 0.4, "📄": 0.25, "💡": 0.1}
 STAGE_ORDER = ["understand", "plan", "create", "refine", "assemble", "verify", "deliver"]
+PROTOCOL_VERSION = "USIP v5.3"
+MIN_FIT = 0.25          # a non-must-have pick needs at least this share of the best fit to enter a plan or be "core"
+PLAN_DEFINITIONS = {    # canonical one-line meanings (CONTRACT glossary); Phase 6 of PROTOCOL.md is the source
+    "A": "simplest path that meets every must-have", "B": "balanced professional with cross-domain integration",
+    "C": "different engine, source or verification method (not B plus extras)", "D": "user-approved merge of named nodes from A/B/C"}
 
 
 # ------------------------------------------------------------------ text
@@ -61,20 +78,48 @@ def norm_ar(s: str) -> str:
 
 _STOP_RAW = ("the and for with from that this your make build want need what how please a an is are of to my can i you me it in on "
              "عايز اعمل عمل من في على عن الى إلى و ال دي ده دول هذا هذه لي هل ممكن اريد أريد ابغى ابي عاوز يا مع كل بعد قبل "
-             "فيه يكون ابني صغير بسيط بسيطة عندي عشان علشان بتاع بتاعي اللي الذي التي انا أنا لو او أو ثم كده كدا ازاي إزاي")
+             "فيه يكون ابني صغير بسيط بسيطة عندي عشان علشان بتاع بتاعي اللي الذي التي انا أنا لو او أو ثم كده كدا ازاي إزاي "
+             "create ملف طلع وطلع الـ طور افضل احسن بين بينها best طويل طويله مفصل")
 STOP = {norm_ar(w) for w in _STOP_RAW.split()}
 ALIASES = {  # protocol-specific Arabic/Egyptian → English bridges (checked against catalog wording)
-    "محاسبه": "accounting bookkeeping ledger", "محاسبة": "accounting bookkeeping ledger", "مخزون": "inventory stock",
+    "محاسبه": "accounting bookkeeping ledger", "محاسبة": "accounting bookkeeping ledger", "مخزون": "inventory stock sku",
     "مبيعات": "sales", "تقرير": "report", "شهري": "monthly", "فاتوره": "invoice", "فواتير": "invoice",
     "ترجم": "translate translation", "ترجمه": "translation subtitles captions", "فويس": "voice narration audio", "صوتي": "voice narration audio",
-    "بصوتي": "voice narration audio", "تطبيق": "app application", "ويب": "web", "اختبارات": "tests testing", "اختبار": "test testing",
-    "شخصيه": "character", "كرتونيه": "cartoon character", "كرتوني": "cartoon character", "ريلز": "reels vertical short",
+    "بصوتي": "voice narration audio", "تطبيق": "app application", "اختبارات": "tests testing", "اختبار": "test testing",
+    "شخصيه": "character", "ابحث": "search research", "دور": "search", "كرتونيه": "cartoon character", "كرتوني": "cartoon character", "ريلز": "reels vertical short",
     "موشن": "motion graphics animation", "جرافيك": "graphics", "متحركه": "animated kinetic", "كلمات": "words captions kinetic typography",
     "عربيه": "arabic", "عربي": "arabic", "ميزه": "feature", "ميزة": "feature", "مشابهه": "similar original", "مشابهة": "similar original",
     "حلل": "analyze analysis", "هندسه": "engineering", "عكسيه": "reverse", "مثبت": "installed", "مسار": "path",
     "مونتاج": "montage edit cut", "فيديو": "video", "صوره": "image photo", "صور": "images photos", "رسم": "draw drawing",
     "ارسم": "draw", "خط": "font typography", "خطوط": "fonts typography", "فونت": "font typeface", "كوفي": "kufi arabic font",
     "ديواني": "diwani calligraphy", "بوستر": "poster", "لوجو": "logo brand", "شعار": "logo brand", "بيانات": "data", "مستند": "document", "بحث": "search research",
+    "بروتوكول": "protocol", "تفريغ": "transcription transcribe speech-to-text whisper asr", "تفريغه": "transcription transcribe speech-to-text whisper asr",
+    "مقال": "article essay", "مقاله": "article essay", "قارن": "compare comparison benchmark", "مقارنه": "compare comparison benchmark",
+    "مكتبات": "libraries packages", "داشبورد": "dashboard", "اختبر": "test testing", "مهارات": "skills", "سكيل": "skill",
+    "اكسل": "excel spreadsheet xlsx", "جدول": "table spreadsheet", "ويب": "web frontend backend", "اداره": "management crud admin",
+    "ثلاثي": "3d", "ثلاثيه": "3d", "ابعاد": "3d", "تمشي": "walk walking", "يمشي": "walk walking", "مشي": "walk walking",
+    "مشهد": "scene", "سينمائي": "cinematic", "حرك": "animate animation",
+    "مصاريف": "expense expenses budget spending", "مصروفات": "expense expenses budget spending", "نفقات": "expense expenses budget spending",
+    "ميزانيه": "budget expense", "لعبه": "game", "العاب": "game games", "قواعد": "rules",
+}
+# homonyms whose dominant catalog sense differs from the user's. Each entry is (rules, default): a rule is
+# (context regex on the request, terms, keep_word) and the first rule whose context matches wins; otherwise the default
+# (terms, keep_word) applies. keep_word=False drops the bare word (its catalog sense is the wrong one). Checked against
+# catalog wording; tests cover the opposite sense of every entry.
+_GIT_CTX = r"github|جيت ?هب|\bgit\b|مستودع|ريبو|\brepo\b|pull request|طلب دمج|\bbranch\b|فرع|\bcommits?\b"
+_CI_CTX = r"github actions|\bci\b|yaml|\.github|\bactions?\b|n8n|zapier|airflow|\bdags?\b"
+SENSE = {
+    "workflows": ([(_CI_CTX, "", True)], ("orchestration multi-agent", False)),
+    "workflow": ([(_CI_CTX, "", True)], ("orchestration multi-agent", False)),
+    "ارفع": ([(_GIT_CTX, "github commit branch", False), (r"جوده|دقه|وضوح|quality|resolution|\bres\b", "upscale enhance quality", False)],
+             ("upload publish", False)),
+    "push": ([(_GIT_CTX, "git github commit", False)], ("", True)),           # otherwise the camera sense («camera push»)
+    "محرك": ([(r"usip|fusionforge|بروتوكول|protocol|مهار(?:ه|ات)|سكيل|skills?\b|\bagents?\b|وكيل|وكلاء|workflow|توليف|orchestr", "orchestration", False)],
+             ("engine", True)),                                              # a game, search, rules or render engine stays an engine
+    "تسجيل": ([(r"دخول|login|sign ?in|حساب|مستخدم", "login authentication", False),
+               (r"شاشه|screen|صوت|audio|voice|فيديو|video|مايك|mic", "recording", True),
+               (r"مصاريف|مصروفات|نفقات|حضور|يومي|بيانات|expense|budget", "log tracking record", False)],
+              ("log record", True)),
 }
 
 
@@ -84,23 +129,62 @@ def tokens(s: str) -> list:
     return [w for w in re.findall(r"[a-z0-9][a-z0-9+#-]*[a-z0-9+#]|[a-z0-9]|[ء-يٱ-ۓ]{2,}", s) if w not in STOP]
 
 
+def _stems(w: str) -> list:
+    """Clitic stems of an Arabic word: one leading clitic (و/ب/ل/ف/ال…) and/or one trailing pronoun (ه/ها/هم)."""
+    out = []
+    for pre in ("وال", "بال", "فال", "لل", "ال", "و", "ب", "ل", "ف"):
+        if w.startswith(pre) and len(w) - len(pre) >= 3:
+            out.append(w[len(pre):])
+            break
+    for x in [w] + out:
+        for suf in ("ها", "هم", "ه"):
+            if x.endswith(suf) and len(x) - len(suf) >= 3:
+                out.append(x[:-len(suf)])
+                break
+    return out
+
+
+def _concept(w: str, df, ctx: str) -> list:
+    """One request word as a concept: the word, its clitic stem (when only the stem is in the catalog), its aliases,
+    or the SENSE replacement when the catalog's dominant sense is not the user's."""
+    base = w
+    if re.match(r"[؀-ۿ]", w) and w not in ALIASES and w not in SENSE:
+        stems = _stems(w)
+        known = next((st for st in stems if st in ALIASES or st in SENSE), None)
+        if known:
+            base = known
+        elif df.get(w, 0) < 3:   # a clitic form the catalog barely uses: score its stem
+            base = next((st for st in stems if df.get(st, 0) > max(2, df.get(w, 0))), w)
+    if base in SENSE:
+        rules, default = SENSE[base]
+        terms, keep = next(((t, k) for rx, t, k in rules if re.search(rx, ctx)), default)
+        group = ([w, base] if keep else []) + tokens(terms)
+    else:
+        group = [w, base] + tokens(ALIASES.get(base, ""))
+    return [x for x in dict.fromkeys(group) if x and x not in STOP]
+
+
+def concepts(query: str, df: collections.Counter, extra: str = "") -> list:
+    """Query concepts (lists of interchangeable terms). A word and its alias are one concept, so an Arabic word and its
+    English translation do not score twice; concepts that share a term are merged."""
+    ctx = norm_ar(f"{query} {extra}".lower())
+    groups = []
+    for w in tokens(query) + tokens(extra):
+        g = _concept(w, df, ctx)
+        if not g:
+            continue
+        for h in groups:
+            if set(h) & set(g):
+                h.extend(x for x in g if x not in h)
+                break
+        else:
+            groups.append(g)
+    return groups
+
+
 def expand(query: str, df: collections.Counter, extra: str = "") -> list:
-    """Query words + aliases + clitic stems that exist in the catalog vocabulary (and only then)."""
-    words = tokens(query) + tokens(extra)
-    out = list(words)
-    for w in words:
-        if w in ALIASES:
-            out += tokens(ALIASES[w])
-        if re.match(r"[؀-ۿ]", w) and df.get(w, 0) == 0:
-            for pre in ("وال", "بال", "لل", "ال", "و", "ب", "ل", "ف"):
-                if w.startswith(pre) and len(w) - len(pre) >= 3:
-                    stem = w[len(pre):]
-                    if df.get(stem, 0) > 0:
-                        out.append(stem)
-                        if stem in ALIASES:
-                            out += tokens(ALIASES[stem])
-                    break
-    return list(dict.fromkeys(x for x in out if x and x not in STOP))
+    """Query words + aliases + clitic stems + SENSE rewrites, flattened (the terms of concepts())."""
+    return list(dict.fromkeys(x for g in concepts(query, df, extra) for x in g))
 
 
 def jload(p: Path, default=None):
@@ -225,33 +309,101 @@ def freshness(records) -> dict:
 
 # ------------------------------------------------------------------ stage 1: request card
 DELIVERABLES = [  # priority order: the first that matches is the primary deliverable
-    ("reverse", r"هندسه عكسيه|جفرا|ghidra|\brea\b|reverse|binary|\.exe|\.dll|\.apk|app\.asar|\basar\b|electron|الكترون"),
-    ("code", r"كود|برمجه|تطبيق|موقع|سكربت|\bbug\b|\bcode\b|\bapp\b|website|script|\bapi\b|repo|مستودع|برنامج"),
-    ("video", r"فيديو|مونتاج|ريلز|موشن|انيميشن|تحريك|(?<![ء-ي])[وف]?(?:حرك|متحرك|متحركه)(?![ء-ي])|فيلم|video|montage|\breels?\b|motion|animation|film|\bmp4\b|lyric|كلمات (?:ال)?اغني(?:ه|تي)"),
-    ("audio", r"بودكاست|موسيقى|اغني(?:ه|تي|ات)|نشيد|اناشيد|تلاوه|podcast|music|song|nasheed"),
+    ("reverse", r"هندسه عكسيه|جفرا|ghidra|\brea\b|reverse|binary|\.exe|\.dll|\.apk|\b(?:exe|dll|apk|ipa|dylib)\b|ملف تنفيذي|الملف التنفيذي|"
+                r"(?<![ء-ي])[وف]?فك (?:ال)?(?:تطبيق|ملف|برنامج)|app\.asar|\basar\b|electron|الكترون"),
+    ("code", r"كود|برمجه|تطبيق|(?<![ء-ي])[وف]?(?:ال|ل|ب)?موقع(?:ي|نا|ك)?(?![ء-ي])|سكربت|\bbug\b|\bcode\b|\bapp\b|\bwebsites?\b|\bscripts?\b|"
+             r"\bapi\b|\brepo(?:s|sitory|sitories)?\b|مستودع|برنامج|(?<![ء-ي])[وف]?(?:ال)?بوت(?![ء-ي])|\b(?:chat)?bots?\b"),
+    ("video", r"فيديو|مونتاج|ريلز|موشن|انيميشن|تحريك|(?<![ء-ي])[وف]?(?:حرك|متحرك|متحركه)(?![ء-ي])|فيلم|video|montage|\breels?\b|motion|animation|film|\bmp4\b|\bintro\b|انترو|paper edit|rough cut"),
+    ("audio", r"بودكاست|موسيقي|اغني(?:ه|تي|ات)|نشيد|اناشيد|تلاوه|podcast|music|song|nasheed|\bsuno\b|سونو|\blyrics?\b|كلمات (?:ال)?اغني(?:ه|تي)"),
     ("3d", r"ثلاثي|\b3d\b|بلندر|blender|\bglb\b|three\.?js"),
-    ("image", r"صوره|صور|تصميم|بوستر|شعار|لوجو|بطاقه|كارت|دعوه|غلاف|هويه بصريه|(?<![ء-ي])[وف]?(?:ا)?رسم|ماسكوت|image|photo|poster|logo|design|illustrat|mascot|\bcard\b|invitation|\bcover\b|\bpng\b|\bjpg\b"),
+    ("image", r"صوره|صور|تصميم|بوستر|شعار|لوجو|بطاقه|كارت|دعوه|غلاف|هويه بصريه|(?<![ء-ي])[وف]?(?:ا)?رسم|ماسكوت|image|photo|poster|logo|design|illustrat|mascot|\bcard\b|invitation|\bcover\b(?!\s+letters?)|\bpng\b|\bjpg\b"),
     ("data", r"بيانات|اكسل|جدول|\bdata\b|\bcsv\b|excel|chart|dashboard"),
-    ("document", r"تقرير|مستند|وورد|\bpdf\b|عرض تقديمي|شرائح|report|document|docx|slides|deck|مقال|article"),
+    ("document", r"تقرير|مستند|وورد|\bpdf\b|عرض تقديمي|شرائح|report|document|docx|slides|deck|مقال|article|\bdescriptions?\b|"
+                 r"\bemails?\b|ايميل|\bnewsletter\b|\bblog posts?\b|وصف (?:ال)?منتج|cover letters?|\bpoems?\b|قصيده|خطاب"),
     ("research", r"ابحث|مصادر|research|sources|قارن|compare"),
 ]
-SHORT_INTENTS = r"^(ترجم|translate|اشرح|explain|عرف|define|ما معني|ايه معني|صحح|proofread|rename|اعد صياغه|لخص|summari[sz]e)"
+# a weaker code signal: engineering words that make code the deliverable only when nothing stronger is named. The
+# ambiguous ones (protocol, engine, workflow, commit: a hotel protocol, a search-engine marketing plan, a morning
+# workflow) count only next to a software context word.
+META_CODE_RX = (r"github|جيت ?هب|\bgit\b|pull request|\bci\b|سكيل|skill\.md|\b(?:claude|agent|kosif)\s+skills?\b|\bmcp\b|\bcli\b|\bsdk\b")
+META_WEAK_RX = (r"بروتوكول|(?<![ء-ي])[وف]?(?:بال|لل|ال|ب|ل)?محرك(?:ات)?(?![ء-ي])|\bprotocol\b|\bengine\b|\bcommits?\b|workflows?\b")
+SOFTWARE_CTX_RX = (r"كود|برمج|سكربت|\bscripts?\b|\bcode\b|github|جيت ?هب|\bgit\b|\brepo\b|مستودع|skill|سكيل|مهار(?:ه|ات)|\bmcp\b|\bcli\b|"
+                   r"\bsdk\b|\bapi\b|اختبار|اختبر(?!ني|نا)|\btests?\b|pytest|unittest|usip|fusionforge|kosif|claude|\bagents?\b|وكيل|وكلاء|"
+                   r"python|بايثون|javascript|typescript|\bnode\b|remotion|\bjson\b|yaml|\bci\b|\bllm\b|توليف")
+SHORT_INTENTS = (r"^(ترجم|translate|اشرح|explain|عرف|define|ما معني|ايه معني|وش معني|ايش معني|شو معني|اش معني|ش معني|يعني ايه|يعني ايش|يعني شو|"
+                 r"شو يعني|وش يعني|ايش يعني|ما المقصود|ما الفرق|ايه الفرق|وش الفرق|شو الفرق|ما هو|ما هي|ايه هو|ايه هي|ايش هو|ايش هي|وش هو|وش هي|"
+                 r"شو هو|شو هي|مين|من هو|من هي|متي|امتي|فين|وين|اين|كم|ليش|ليه|لماذا|"
+                 r"what does|what is|what's|whats|what are|who|when|where|why|how many|how much|difference between|the difference|meaning of|"
+                 r"صحح|صلح|proofread|rename|اعد صياغه|لخص|summari[sz]e)")
+# a definition or how-to question: L0 even when it names a video, code, 3D or reverse-engineering term ("what does API mean?")
+DEFINE_RX = (r"^(?:ما معني|ايه معني|وش معني|ايش معني|شو معني|اش معني|يعني ايه|يعني ايش|يعني شو|شو يعني|وش يعني|ايش يعني|ما المقصود|ما الفرق|"
+             r"ايه الفرق|وش الفرق|شو الفرق|ما هو|ما هي|ايه هو|ايه هي|ايش هو|وش هو|شو هو|عرف|define|what does|what is|what's|whats|what are|"
+             r"meaning of|difference between|the difference|(?:اشرح(?: لي)?|explain)\s+(?:ازاي|كيف|ايه|يعني|what|how|why|the difference|الفرق))")
+# an existing artefact of the user's ("this code", «الكود ده»): a question about it is work on it, not a definition
+EXISTING_OBJ_RX = (r"\b(?:this|these|my|our|attached)\b|(?<![ء-ي])(?:ده|دي|دا|دول|هذا|هذه|هاد|هاي|عندي|بتاعي|بتاعتي|حقي|تبعي|المرفق)(?![ء-ي])")
+# a verb or format that turns an explain/summarise request into production (PROTOCOL.md: such a request is not L0).
+# A format counts only as an output: «في مقال» / "in an article" (indefinite), never «في التقرير» / "in the report".
+_FMT = r"(?:مقال|مقاله|تقرير|عرض|فيديو|ملف|كتاب|منشور|بوست|pdf|شرائح|انفوجرافيك|ريلز)"
+PRODUCE_RX = (r"(?<![ء-ي])[وف]?(?:اعمل|اكتب|صمم|انشر|جهز|حضر|طلع|ارفع|ابني|انتج|صدر|ارسم|اصنع|سوي)(?:ه|ها|هم|لي|لنا)?(?![ء-ي])|"
+              r"(?<![ء-ي])[وف]?حول(?:ه|ها|هم|لي)?(?:\s+\S+){0,3}?\s+(?:الي|ل)\s|"     # «حوّله إلى/لـ» converts; «حول» alone is 'about'
+              r"\b(?:create|make|write|publish|post|produce|generate|export|build|design|render|convert)\b|"
+              rf"(?:علي شكل|في شكل|بشكل|بصيغه|(?<![ء-ي])ك)\s*(?:ال)?{_FMT}(?![ء-ي])|(?<![ء-ي])في\s+{_FMT}(?![ء-ي])(?!\s+ال)|"
+              r"\b(?:as|in|into) an? (?:[a-z0-9-]+\s+){0,2}(?:article|report|deck|video|post|pdf|document|slides?|animation|reel|infographic)\b")
+HOWTO_RX = r"(?:ازاي|كيف|ازاى|how to|how do i|how can i|how should i)\s*$"
+RESEARCH_LEAD_RX = r"(?:find|search for|look for|look up|compare|research|ابحث|دور(?:لي| لي)?|قارن)\b"
 FAST_RX = r"(بسرعه|نسخه (بسيطه|سريعه)|مختصر|quick version|\bquick\b|\bfast\b|سطر واحد|one line)"
-MAX_RX = r"(باقصي|اقصي قوه|كل القدرات|\bmaximum\b|\bmax\b|ultimate|best possible|سينمائي|cinematic)"
-OWN_VOICE_RX = r"(بصوتي|صوتي|فويس|تسجيلي|my (own )?voice|my recording|i recorded)"
-OWN_FOOTAGE_RX = r"(فيديو(هات)? (بتاعي|الخاص بي)|لقطاتي|صوري|my footage|my (own )?video|my photos)"
-PLATFORM_RX = {"os:macos": r"mac|ماك|\bios\b|xcode|apple", "engine:android": r"android|apk|اندرويد", "os:windows": r"windows|ويندوز|\.exe"}
+# "max 30 seconds" / "maximum length" is a limit, not an ambition
+MAX_RX = (r"(باقصي|اقصي قوه|كل القدرات|\bmax(?:imum)?\b(?!\s*(?:of\s*)?\d|\s+(?:length|duration|size|time|seconds?|minutes?|secs?|mins?|"
+          r"chars?|characters|words|width|height|pages?|frames?|files?|budget))|ultimate|best possible)")
+# publishing or uploading something that already exists is delivery, not new production
+PUBLISH_RX = r"(?<![ء-ي])[وف]?(?:انشر|ارفع|نزل|شير)\S*|\b(?:post|publish|upload|share|push)(?:ed|es|ing)?\b"
+PUBLISH_DEST_RX = (r"يوتيوب|youtube|انستا|instagram|\binsta\b|tiktok|تيك ?توك|فيسبوك|facebook|تويتر|twitter|لينكد|linkedin|مدون|\bblog\b|"
+                   r"ووردبريس|wordpress|درايف|\bdrive\b|github|جيت ?هب|سناب|snapchat|threads|reddit|medium|substack|\bstore\b|متجر")
+PUBLISH_OBJ_RX = (r"\b(?:this|my|our|the|these)\b|(?<![ء-ي])(?:ده|دي|دا|هذا|هذه|بتاعي|بتاعتي)(?![ء-ي])|"
+                  r"(?<![ء-ي])[وف]?ال(?:فيديو|مقال|مقاله|ريلز|صوره|صور|بوست|منشور|تعديلات|كود|ملف|تطبيق|موقع)")
+NEW_WORK_RX = (r"(?<![ء-ي])[وف]?(?:اعمل|اكتب|صمم|جهز|حضر|ابني|انتج|ارسم|اصنع|سوي|عدل|حرر|طور|حسن|اضف|صلح|اختبر|قص|مونتج|ترجم)"
+               r"(?:ه|ها|هم|لي|لنا)?(?![ء-ي])|\b(?:create|make|write|produce|generate|build|design|render|edit|cut|develop|improve|fix|add|"
+               r"test|translate|refactor)\b")
+STYLE_RX = {"cinematic": r"سينمائي|cinematic|فيلمي|film look"}   # a style steers families, never the level or the effort
+STYLE_FAMILIES = {"cinematic": ["3d-spatial", "light-glow-bloom", "camera-composition-layout", "color-palette-grading", "engines-render-pipeline"]}
+LONG_RX = r"طويل|مفصل|شامل|بالتفصيل|\blong(?:form)?\b|detailed|in-depth|comprehensive"
+# a subject the request is ABOUT (a research, data or document request on audio is still not a video job)
+TOPIC_FAMILIES = {"speech": ["audio-sync-captions", "voice-tts"], "music": ["music-beat-sound"], "motion": ["transitions-cuts", "formats-platforms"],
+                  "3d": ["3d-spatial", "engines-render-pipeline"], "reverse": ["software-investigation"]}
+TOPIC_RX = {"audio": r"صوت|تفريغ|\basr\b|\bstt\b|speech|whisper|transcri|audio|voice|موسيق|music|podcast|بودكاست",
+            "speech": r"صوت|تفريغ|\basr\b|\bstt\b|speech|whisper|transcri|voice|podcast|بودكاست|كلام|نطق",
+            "music": r"موسيق|music|\bsong|اغني|\bbeats?\b|ايقاع|نشيد",
+            "motion": r"فيديو|video|موشن|motion|انيميشن|animation|مونتاج",
+            "3d": r"ثلاثي|\b3d\b|blender|بلندر", "reverse": r"هندسه عكسيه|reverse|ghidra|\bapk\b|electron|الكترون"}
+# the user's OWN voice or recording (an ownership form, never the adjective «صوتي» in «تفريغ صوتي» / «بودكاست صوتي»)
+OWN_VOICE_RX = (r"بصوتي|فويسي|تسجيلي|(?<![ء-ي])(?:علي|ب|مع|استخدم|خد|حط)\s*صوتي(?![ء-ي])|صوتي (?:المرفق|المسجل|ده|دا|دي)|"
+                r"(?:فويس|تسجيل|ريكورد)(?:ات)? (?:بتاعي|المرفق|حقي|تبعي)|عندي (?:فويس|تسجيل)|"
+                r"\bmy (?:own )?(?:voice|recording|narration|voice ?over)\b|\bi recorded\b|recorded myself")
+OWN_FOOTAGE_RX = (r"(فيديو(هات)? (بتاعي|بتاعتي|الخاص(ه)? بي|حقي|تبعي)|فيديوهاتي|مقاطعي|لقطاتي|صوري|تصويري|"
+                  r"\bmy (?:own )?(?:footage|videos?|clips?|photos|shots)\b|footage i (?:shot|filmed|recorded))")
+SOUND_RX = (r"مونتاج|montage|\breels?\b|ريلز|tiktok|تيك ?توك|shorts|music|موسيق|اغني|\bsongs?\b|نشيد|صوت|voice|audio|podcast|بودكاست|"
+            r"narrat|تعليق صوتي|\bbeats?\b|ايقاع")
+SILENT_RX = r"صامت|بدون صوت|بلا صوت|من غير صوت|\bsilent\b|no audio|no sound|without (?:sound|audio)|\bmuted?\b"
+PLATFORM_RX = {"os:macos": r"mac|ماك|\bios\b|xcode|apple", "engine:android": r"android|apk|اندرويد", "os:windows": r"windows|ويندوز|\.exe|\bexe\b"}
+# a push or upload INTENT next to a git target (a bare mention of GitHub or git is research, a question or a topic)
+_GIT_TARGET = r"(?:ال)?(?:github|جيت ?هب|\bgit\b|مستودع|ريبو|\brepo\b|\bbranch\b|فرع)"
+PUSH_RX = (r"pull request|طلب دمج|\bopen (?:a )?pr\b|\bpr\s*#?\d+|\bgit (?:push|commit)\b|"
+           rf"(?:(?<![ء-ي])[وف]?(?:ارفع|رفع|ادفع|انشر)\S*|\b(?:push|commit)(?:ed|es|ing)?\b)(?:\s+\S+){{0,4}}?\s+{_GIT_TARGET}")
+# the request already names where the work goes, so the branch question would not change the result
+BRANCH_NAMED_RX = (r"(?:new|current|feature|same|separate|existing)\s+branch|\bbranch (?:called|named)\b|\bbranch\s+[\w-]*[/_-][\w./-]*|"
+                   r"\b(?:main|master)\b|فرع (?:جديد|حالي|منفصل)|الفرع (?:ال)?(?:حالي|جديد)|نفس الفرع")
 MUST_HAVE = [
     ("توقيت الكلمات من صوت المستخدم", r"(كلمات|نص|ترجمه|captions?|subtitles?|words).{0,40}(صوت|فويس|voice|audio)|(صوت|فويس|voice).{0,40}(كلمات|ترجمه|captions?|words)",
      "transcription word timestamps whisper alignment words.json word timing sync"),
     ("نص عربي صحيح RTL", r"عربي|عربيه|arabic|كوفي|ديواني|نستعليق|(?<![ء-ي])[وف]?(?:بال|خط\s+(?:ال)?)(?:رقعه|ثلث|نسخ|مغربي)(?![ء-ي])", "arabic rtl shaping whole word kinetic typography"),
-    ("اختبارات آلية", r"اختبار|tests?\b|testing", "unit tests test suite regression"),
+    ("اختبارات آلية", r"اختبار|اختبر(?!ني|نا)|\btests?\b|\btesting\b|unittest|pytest|\btdd\b", "unit tests test suite regression"),   # «اختبرني» = quiz me
+    ("رفع على GitHub عبر فرع وطلب دمج", PUSH_RX, "github commit branch pull request git"),
     ("تقرير PDF", r"\bpdf\b", "pdf report generate"),
     ("شخصية متحركة", r"شخصيه|character", "character rig animation blink walk wave"),
     ("مقاس ريلز ومناطق آمنة", r"ريلز|reels?|9:16|تيك ?توك|tiktok|shorts", "vertical 9:16 reels safe area"),
     ("تحليل تطبيق Electron بأدلة", r"electron|asar|الكترون", "electron asar javascript application analysis"),
-    ("بناء أصلي نظيف (clean-room) مع بوابة أصالة", r"(ابني|ابن|build|اعمل).{0,40}(مشابه|similar|زي|like)|ميزه مشابهه|استفد من (?:افكار|فكره)|استلهم|خد(?:وا)? (?:افكار|فكره)|borrow (?:the )?ideas|inspired by", "originality check clean room reimplementation specification"),
-    ("محاسبة ومخزون بأرقام صحيحة", r"محاسب|مخزون|inventory|accounting|ledger", "accounting ledger inventory bookkeeping"),
+    ("بناء أصلي نظيف (clean-room) مع بوابة أصالة", r"(ابني|ابن|build|اعمل).{0,40}(مشابه|similar|(?<![ء-ي])زي(?![ء-ي])|\blike\b)|ميزه مشابهه|استفد من (?:افكار|فكره)|استلهم|خد(?:وا)? (?:افكار|فكره)|borrow (?:the )?ideas|inspired by|clean.?room|reimplement|original version|نسخه اصليه", "originality check clean room reimplementation specification"),
+    ("محاسبة ومخزون بأرقام صحيحة", r"محاسب|مخزون|inventory|accounting|ledger", "inventory sku stock accounting ledger bookkeeping reconciliation"),
     ("مونتاج وقطع", r"مونتاج|montage", "montage edit cut transitions"),
     ("ترجمة", r"^ترجم|translate", "translation"),
     ("خط مناسب برخصة مؤكدة", None, "arabic font typography font matching fonts license kinetic typography lettering"),
@@ -266,11 +418,67 @@ STYLE_SKIP = {"arabic", "latin", "licensing", "font_creation"}
 MUST_HAVE = [(n, FONT_RX if rx is None else rx, terms) for n, rx, terms in MUST_HAVE]
 ARABIC_TERMS = {  # the Arabic-text need means different checks per deliverable
     "image": "arabic shaping harfbuzz glyph ligature font logo poster rtl lettering",
-    "document": "arabic rtl docx pdf shaping fonts document",
+    "document": "arabic writing msa grammar proofread",
     "video": "arabic rtl shaping whole word kinetic typography captions",
     "code": "arabic rtl bidi ui localization shaping",
     "3d": "arabic shaping 3d text extrude glyph",
+    "research": "arabic nlp speech recognition asr dialect benchmark",
+    "data": "arabic rtl xlsx charts labels",
+    "text": "arabic grammar proofread msa",
+    "audio": "arabic lyrics pronunciation diacritics",
+    "unspecified": "arabic rtl shaping",
 }
+FONT_TERMS = {"image": "font typography font matching fonts license lettering logo",
+              "video": "font typography kinetic typography lettering fonts license"}
+CLEANROOM_TERMS = {  # the clean-room need for software means evidence-backed reconstruction, not a prompt-originality check
+    "code": "clean room reimplementation specification parity tests reconstruction evidence originality",
+    "reverse": "clean room reimplementation specification reconstruction evidence parity originality",
+}
+# a must-have pick must match through an atom of a family that can meet the need FOR THIS DELIVERABLE; when none does,
+# the need is reported as a gap instead of "covered" by an off-target superpower (a video delivery gate is no clean room)
+NEED_FAMILIES = {
+    "بناء أصلي": {d: {"software-investigation", "app-feature-transfer", "verification-evals", "code-engineering", "atlas-code", "atlas-build",
+                     "security-safety", "api-testing"} for d in ("code", "reverse")},
+    "محاسبة ومخزون": {d: {"atlas-data", "data-analysis", "strategy-finance", "documents-office", "apps-artifacts", "code-engineering",
+                         "atlas-build", "app-feature-transfer"} for d in ("code", "data", "document", "unspecified")},
+}
+# a superpower built around ONE named platform or product enters a plan, verifies or covers a need only when the request
+# names that platform or its domain (a CRUD web app gets no Godot, Shopify, App Store, EVM, GitHub Actions or JEB picks)
+NAMED_PLATFORM_GATES = [
+    (r"\bgodot\b|gdscript|\bunity\b|phaser", r"لعب|العاب|\bgames?\b|gaming|godot|unity|phaser"),
+    (r"\bevm\b|\bnft\b|\bviem\b|solidity|blockchain", r"\bevm\b|\bnfts?\b|ethereum|blockchain|web3|crypto|solidity|بلوك ?تشين|عملات رقميه"),
+    (r"shopify", r"shopify|شوبيفاي"),
+    (r"app.?store|play store", r"app ?store|play store|متجر (?:ال)?تطبيقات|ابل ستور|جوجل بلاي|app preview"),
+    (r"github actions", r"github actions|\bci\b|ci/cd|cicd|\bactions\b|runners?\b|\bpipelines?\b"),
+    (r"\bjeb\b|\.jdb2", r"\bjeb\b|jdb2|android|\bapk\b|\bdex\b|اندرويد"),
+    (r"mongodb", r"mongo|nosql|مونجو"),
+    (r"\bsympy\b|symbolic solving", r"sympy|symbolic|equations?|معادل|\bmath|رياضي|calculus|algebra|جبر|تفاضل"),
+    (r"figma", r"figma|فيجما|mock-?ups?|موك ?اب|pixel-?(?:exact|perfect)|design (?:file|handoff)"),
+    (r"\bqr\b", r"\bqr\b|باركود|barcode|كيو ار"),
+    (r"pipewire", r"pipewire|pulseaudio|linux audio|docker|container"),
+    (r"electron", r"electron|الكترون|asar|\bnode\b"),
+    (r"native instruction|inspect_macho|hopper", r"native|binary|binaries|\bexe\b|\bdll\b|machine code|assembly|disassembl|x86|\barm64?\b|"
+                                                r"firmware|\belf\b|mach-?o|\bipa\b|macos|ثنائي|تنفيذي"),
+    (r"\bllms?\b", r"\bllms?\b|\bai\b|ذكاء|نموذج|نماذج|models?\b|agents?\b|وكيل|وكلاء|chat ?bot|بوت|\bbots?\b|\bgpt|claude|prompt|"
+                   r"skills?\b|مهار|usip|fusionforge"),
+    # an English-only request gets no Arabic-specific superpower ("charts with Arabic labels" is not Arabic-specific)
+    (r"^arabic (?!\+)|arabic text\b|\brtl\b(?! mirror)|\(ar/en\)", r"[ء-ي]|arabic|\brtl\b"),
+    # superpowers about this skill itself: only for work on the skill, its protocol or its engine
+    (r"this skill|capability atlas|skill packager|self-evolution", r"kosif|skills?\b|سكيل|مهار|usip|fusionforge|بروتوكول|protocol|catalog|كتالوج"),
+]
+TEST_TERMS = {  # the tests need, per deliverable (a motion suite is not a code test suite)
+    "code": "test-driven development tdd pytest unittest unit tests code review regression",
+    "reverse": "parity tests unit tests regression evidence",
+    "video": "motion test suite frame qa golden regression",
+    "image": "golden still regression visual test",
+}
+# Arabic that names the language a tool, library or model handles is not a request for right-to-left output text
+ARABIC_TOOL_RX = (r"(?:مكتب|نموذج|نماذج|ادوات|اداه|تفريغ|تعرف|محرك|librar|models?\b|tools?\b|\basr\b|\bstt\b|\bocr\b|\bnlp\b|dataset)"
+                  r"\S*(?:\s+\S+){0,2}\s+(?:لل)?(?:عربي|عربيه|العربي|العربيه|arabic)|"
+                  r"\barabic\s+(?:asr|stt|ocr|nlp|speech|librar|models?|datasets?|tools?)")
+# ... unless the OUTPUT is named Arabic («مقال عربي», «بالعربي», "in Arabic"): then the right-to-left need stays
+ARABIC_OUTPUT_RX = (r"(?:مقال|تقرير|نص|نصوص|كلمات|محتوي|بوست|منشور|كتاب|قصيده|عنوان|خطاب|رساله|ايميل|ترجمه|سكريبت|تعليق|كابشن)\S*\s+"
+                    r"(?:بال)?عربي|بالعربي|باللغه العربيه|\bin arabic\b|\barabic (?:article|text|copy|captions?|subtitles?|post|report|content)")
 FONT_STYLES = {  # request word → query word the atlas understands (its tags are English; its find also matches Arabic)
     "كوفي": "kufi", "ديواني": "diwani", "ثلث": "thuluth", "رقعه": "ruqah", "نسخ": "naskh", "مغربي": "maghrebi",
     "هندسي": "geometric", "يدوي": "handwritten", "فرشاه": "brush", "زخرف": "decorative", "دائري": "rounded", "اطفال": "kids",
@@ -347,47 +555,121 @@ def asset_libraries(task: str) -> list:
     return out
 VERIFY_TERMS = {
     "video": "verify video delivery gate ffprobe loudness frames qa", "audio": "loudness lufs verify audio qa",
-    "code": "tests test suite regression golden unit coverage", "reverse": "evidence originality tests golden parity",
-    "image": "contrast legibility wcag golden still arabic typography font qa", "3d": "frames verify render check", "data": "validation check numbers reconcile",
-    "document": "proofread review check anchor numbers", "research": "citation fact check sources", "text": "proofread review language",
+    "code": "tests test suite regression unit coverage test-driven pytest unittest code review",
+    "reverse": "evidence originality tests golden parity",
+    "image": "contrast legibility wcag golden still typography font qa", "3d": "frames verify render check",
+    "data": "validation check numbers reconcile agreement anchor totals source tie-out",
+    "document": "proofread review check anchor numbers quote citation", "research": "citation fact check sources quote",
+    "text": "proofread review language", "unspecified": "verify evidence review check qa",
 }
+# a verifier must come from a family that can judge this deliverable (a CI cost optimiser never verifies an article)
+VERIFY_FAMILIES = {
+    "video": {"qa-verification", "formats-platforms", "audio-sync-captions", "music-beat-sound", "transitions-cuts", "engines-render-pipeline",
+              "typography-arabic", "color-palette-grading"},
+    "audio": {"music-beat-sound", "audio-sync-captions", "voice-tts", "qa-verification"},
+    "code": {"code-engineering", "api-testing", "verification-evals", "qa-verification", "security-safety", "atlas-code", "atlas-build", "apps-artifacts"},
+    "reverse": {"software-investigation", "verification-evals", "qa-verification", "code-engineering", "app-feature-transfer", "security-safety"},
+    "image": {"qa-verification", "typography-arabic", "typography-latin", "brand-logo-identity", "color-palette-grading"},
+    "3d": {"3d-spatial", "engines-render-pipeline", "qa-verification", "light-glow-bloom", "texture-material"},
+    "data": {"data-analysis", "atlas-data", "charts-data-infographic", "qa-verification"},
+    "document": {"writing-humanizer", "documents-office", "atlas-docs", "atlas-craft", "arabic-language", "web-research"},
+    "research": {"web-research", "atlas-research", "knowledge-graph", "writing-humanizer", "documents-office"},
+    "text": {"writing-humanizer", "arabic-language", "documents-office", "qa-verification"},
+    "unspecified": {"qa-verification", "verification-evals"},
+}
+SOUND_FAMILIES = {"music-beat-sound", "voice-tts"}   # a silent deliverable gets no loudness or voice checks
 ARCHETYPES = {
     "video": {"stages": STAGE_ORDER,
               "A": ("محرك المونتاج والقوالب الجاهزة (ffmpeg/Montage Pro)", ["transitions-cuts", "photo-video-footage", "formats-platforms", "video-download", "music-beat-sound", "audio-sync-captions", "runnable-tools"]),
               "B": ("محرك موشن مخصص متزامن مع الكلمات (SVG/HTML)", ["hand-drawn-draw-on", "typography-arabic", "typography-latin", "easing-timing-rhythm", "characters-rigs", "audio-sync-captions", "shapes-morph-geometry", "camera-composition-layout", "runnable-tools"]),
               "C": ("خط سينمائي متعدد المحركات (3D/Remotion/مؤثرات)", ["3d-spatial", "engines-render-pipeline", "light-glow-bloom", "particles-fluids-physics", "color-palette-grading", "texture-material", "characters-rigs", "typography-arabic", "audio-sync-captions"])},
     "code": {"stages": ["understand", "plan", "create", "verify", "deliver"],
-             "A": ("إعادة استخدام مكتبة/قالب جاهز وتهيئته", ["atlas-code", "apps-artifacts", "atlas-build", "code-engineering"]),
-             "B": ("بناء نظيف بمعمارية واختبارات", ["code-engineering", "api-testing", "verification-evals", "security-safety", "atlas-code", "documents-office"]),
+             "A": ("إعادة استخدام مكتبة/قالب جاهز وتهيئته", ["apps-artifacts", "atlas-build", "code-engineering"]),
+             "B": ("بناء نظيف بمعمارية واختبارات", ["code-engineering", "api-testing", "verification-evals", "security-safety", "apps-artifacts", "atlas-build"]),
              "C": ("بناء + معايير أداء وتكافؤ وأمان وCI", ["code-engineering", "api-testing", "verification-evals", "security-safety", "qa-verification", "atlas-mind", "planning-execution", "atlas-code"])},
     "reverse": {"stages": ["understand", "plan", "create", "verify", "deliver"],
                 "A": ("فحص ثابت بـ REA ثم تقرير بنية", ["software-investigation", "runnable-tools"]),
                 "B": ("فحص ثابت + بناء أصلي نظيف ببوابة أصالة", ["software-investigation", "code-engineering", "verification-evals", "runnable-tools"]),
                 "C": ("فحص ثابت وديناميكي + اختبارات تكافؤ سلوكي", ["software-investigation", "code-engineering", "verification-evals", "qa-verification", "app-feature-transfer", "runnable-tools"])},
+    "data": {"stages": ["understand", "plan", "create", "verify", "deliver"],
+             "A": ("إعادة حساب مباشرة (DuckDB/pandas) وجدول مطابقة للمصدر", ["data-analysis", "atlas-data", "charts-data-infographic", "documents-office"]),
+             "B": ("تحليل استكشافي منضبط + اختبارات مطابقة الأرقام + تقرير", ["data-analysis", "atlas-data", "charts-data-infographic", "qa-verification",
+                                                                          "verification-evals", "documents-office"]),
+             "C": ("خط بيانات بعقد وبوابات + لوحة تفاعلية بدل التقرير الثابت", ["data-analysis", "atlas-data", "charts-data-infographic", "apps-artifacts",
+                                                                             "verification-evals", "planning-execution"])},
+    "document": {"stages": ["understand", "plan", "create", "refine", "verify", "deliver"],
+                 "A": ("كتابة مباشرة بأسلوب واضح + تدقيق لغوي", ["writing-humanizer", "arabic-language", "documents-office", "atlas-docs"]),
+                 "B": ("مصادر + هيكل + كتابة + تدقيق وتوثيق الاقتباسات", ["writing-humanizer", "arabic-language", "documents-office", "web-research",
+                                                                      "atlas-research", "qa-verification"]),
+                 "C": ("بحث عميق موثق + رسوم ومخططات + تصدير منسق", ["web-research", "atlas-research", "documents-office", "charts-data-infographic",
+                                                                    "diagrams-explainers-code", "writing-humanizer"])},
+    "research": {"stages": ["understand", "plan", "create", "verify", "deliver"],
+                 "A": ("بحث موثق المصادر وجدول مقارنة", ["web-research", "atlas-research", "documents-office"]),
+                 "B": ("بحث متوازٍ + معايير مقارنة + تحقق من المصادر", ["web-research", "atlas-research", "knowledge-graph", "qa-verification",
+                                                                    "verification-evals", "documents-office"]),
+                 "C": ("قياس فعلي على عينات (benchmark) ثم تقرير", ["verification-evals", "data-analysis", "runnable-tools", "code-engineering",
+                                                                 "web-research", "audio-sync-captions"])},
+    "audio": {"stages": STAGE_ORDER,
+              "A": ("كتابة/تجهيز مباشر بالقوالب الجاهزة", ["music-beat-sound", "voice-tts", "writing-humanizer", "arabic-language"]),
+              "B": ("مسار متوازن: نص + توقيت + ميكس وفحص صوت", ["music-beat-sound", "audio-sync-captions", "voice-tts", "arabic-language", "qa-verification"]),
+              "C": ("محرك مختلف: توليد/تحليل إيقاعي ثم مراجعة", ["music-beat-sound", "audio-sync-captions", "ai-generation", "creativity-engine", "verification-evals"])},
     "image": {"stages": ["understand", "plan", "create", "refine", "verify", "deliver"],
               "A": ("خط برخصة مؤكدة + تكوين بسيط واضح", ["typography-arabic", "typography-latin", "brand-logo-identity", "camera-composition-layout", "runnable-tools"]),
               "B": ("تصميم مخصص: مطابقة خطوط + تكوين متجهي + فحص قراءة وتباين", ["typography-arabic", "typography-latin", "brand-logo-identity", "shapes-morph-geometry", "color-palette-grading", "qa-verification", "runnable-tools"]),
               "C": ("حروف أصلية من الصفر + هوية كاملة + موك أب وحركة", ["typography-arabic", "brand-logo-identity", "hand-drawn-draw-on", "shapes-morph-geometry", "texture-material", "light-glow-bloom", "creativity-engine", "easing-timing-rhythm"])},
+    # posting or pushing something that already exists: no production stage (no montage, camera or motion picks)
+    "publish": {"stages": ["understand", "plan", "refine", "verify", "deliver"],
+                "A": ("نشر مباشر بمواصفات المنصة", ["formats-platforms", "documents-office", "atlas-code", "apps-artifacts"]),
+                "B": ("فحص مواصفات المنصة ونسخة متوافقة ثم نشر وتحقق بعده", ["formats-platforms", "qa-verification", "verification-evals",
+                                                                          "atlas-code", "security-safety", "documents-office"]),
+                "C": ("نسخة مخصصة لكل منصة + غلاف وعنوان + متابعة أداء بعد النشر", ["formats-platforms", "story-direction-ideas", "data-analysis",
+                                                                                  "charts-data-infographic", "planning-execution", "apps-artifacts"])},
     "_generic": {"stages": STAGE_ORDER,
                  "A": ("المسار الأقصر بأقوى القدرات الجاهزة", []), "B": ("مسار متوازن مع تكامل من مجالات أخرى", []), "C": ("مسار شامل بمراحل ونقاط توقف", [])},
 }
 
 
 # domain affinity per primary deliverable: off-domain clusters are down-weighted, never hidden from the receipt
-AFFINITY = {"code": {"motion": 0.4, "reverse": 0.4}, "reverse": {"motion": 0.4}, "data": {"motion": 0.5, "reverse": 0.4},
-            "document": {"motion": 0.5, "reverse": 0.4}, "research": {"motion": 0.5, "reverse": 0.4}, "text": {"motion": 0.5, "reverse": 0.3},
-            "video": {"reverse": 0.3}, "audio": {"reverse": 0.3}, "image": {"reverse": 0.3, "docs": 0.5, "code": 0.6}, "3d": {"reverse": 0.3}}
+# keyed on the superpower's majority atom domain AND its plan group (a motion tool filed under domain "build" is still motion)
+AFFINITY = {"code": {"motion": 0.4, "reverse": 0.4, "audio": 0.5, "3d": 0.6}, "reverse": {"motion": 0.4, "audio": 0.4},
+            "data": {"motion": 0.5, "reverse": 0.4, "audio": 0.5, "3d": 0.5},
+            "document": {"motion": 0.5, "reverse": 0.4, "audio": 0.5, "3d": 0.5}, "research": {"motion": 0.5, "reverse": 0.4, "audio": 0.6},
+            "text": {"motion": 0.5, "reverse": 0.3, "audio": 0.5},
+            # media deliverables: data science, software engineering and binary inspection are off-domain unless the
+            # request is about them ("explain transformers in a video" is not a gradient-boosting job)
+            "video": {"reverse": 0.3, "data": 0.5, "software": 0.6, "code": 0.6},
+            "audio": {"reverse": 0.3, "data": 0.5, "software": 0.6, "code": 0.6},
+            "image": {"reverse": 0.3, "docs": 0.5, "code": 0.6, "data": 0.5, "software": 0.6},
+            "3d": {"reverse": 0.3, "data": 0.5, "software": 0.6, "code": 0.6}}
 
 
+HOME_GROUPS = {"code": ["software"], "reverse": ["reverse"], "video": ["motion"], "audio": ["audio"], "3d": ["3d"],
+               "image": ["images", "drawing", "type"], "data": ["data"], "document": ["documents"], "research": ["research"], "text": ["documents"]}
 MEDIA_TIME_FAMILIES = {"music-beat-sound", "audio-sync-captions", "voice-tts", "transitions-cuts", "video-download"}
+MOVING_RX = r"montage|\breels?\b|\bfilm\b|footage|\bvideo\b|transition|camera move|drift|speed ramp"
 
 
-def affinity(primary: str, sp_domain: str, families, still: bool = False) -> float:
+def affinity(primary: str, sp_domain: str, families, still: bool = False, group: str = None, topics=()) -> float:
+    """Down-weight a superpower outside the deliverable's domain. A group the request is about (topics) is never
+    penalised, and the superpower's plan group counts as well as its catalog domain."""
     a = AFFINITY.get(primary, {})
-    f = a.get("reverse", 1.0) if "software-investigation" in families else 1.0
+    f = a.get("reverse", 1.0) if "software-investigation" in families and "reverse" not in topics else 1.0
     if still and set(families) & MEDIA_TIME_FAMILIES:   # a still image: sound and cutting are off-target
         f = min(f, 0.3)
+    if set(families) & {x for t in topics for x in TOPIC_FAMILIES.get(t, [])}:
+        return f   # the request is about this medium (speech for an ASR study, 3D for a 3D brief)
+    f = min(f, a.get(group, 1.0)) if group else f
     return min(f, a.get(sp_domain, 1.0))
+
+
+def produces(low: str) -> bool:
+    """A production verb or an output format in the (normalised) request, not as part of a how-to question."""
+    for m in re.finditer(PRODUCE_RX, low):
+        if m.start() == 0 and not re.match(SHORT_INTENTS, low):
+            return True
+        if not re.search(HOWTO_RX, low[:m.start()]):
+            return True
+    return False
 
 
 def analyse(task: str) -> dict:
@@ -398,66 +680,176 @@ def analyse(task: str) -> dict:
         deliver = ["image"] + [d for d in deliver if d not in ("code", "image")]
     if not deliver and re.search(FONT_RX, low):
         deliver = ["image"]   # choosing or designing type is a visual deliverable
+    if re.search(r"cover letters?|\bresumes?\b|\bcv\b|سيره ذاتيه|خطاب (?:تقديم|تحفيزي)", low):
+        deliver = ["document"] + [d for d in deliver if d != "document"]   # a cover letter for a data job is a letter
+    if re.match(RESEARCH_LEAD_RX, low.strip()) and not re.search(NEW_WORK_RX, low) and (not deliver or deliver[0] == "code"):
+        deliver = ["research"] + [d for d in deliver if d != "research"]   # "find the best GitHub repos for…" is a search
+    named = list(deliver)       # deliverables the request names outright (an explain-question about git stays L0)
+    meta = re.search(META_CODE_RX, low) or (re.search(META_WEAK_RX, low) and re.search(SOFTWARE_CTX_RX, low))
+    if "code" not in deliver and meta and not (named and named[0] in ("research", "document")):
+        deliver.append("code")  # protocol / engine / skill / GitHub work: software, but after any stronger deliverable
+                                # (an article or a comparison ABOUT GitHub is not a software job)
     numbers = re.findall(r"\d+(?:[.,]\d+)?\s*(?:ثانيه|ثواني|ث|دقيقه|دقائق|sec|min|fps|%|k)?", task)
     aspects = re.findall(r"\b(?:9:16|16:9|1:1|4:5|21:9|4:3)\b", task)
     paths = re.findall(r"[\w./\\:-]+\.(?:mp4|mov|wav|mp3|m4a|png|jpg|jpeg|pdf|docx|xlsx|csv|json|py|js|ts|blend|glb|exe|dll|apk|asar)\b", task, re.I)
     existing = [p for p in paths if Path(p).expanduser().exists()]
     ntok = len(tokens(task))
     ambition = "max" if re.search(MAX_RX, low) else ("fast" if re.search(FAST_RX, low) else "balanced")
-    if re.search(SHORT_INTENTS, low.strip()) and not paths and ntok <= 14 and not set(deliver) & {"video", "code", "reverse", "3d"}:
-        level = "L0"
+    style = [k for k, rx in STYLE_RX.items() if re.search(rx, low)]
+    s = low.strip()
+    heavy = set(named) & {"video", "code", "reverse", "3d"}
+    publish = bool(re.search(PUBLISH_RX, low) and re.search(PUBLISH_DEST_RX, low) and re.search(PUBLISH_OBJ_RX, low)
+                   and not re.search(NEW_WORK_RX, low))
+    if (re.search(SHORT_INTENTS, s) and not paths and ntok <= 14 and not produces(s)
+            and (not heavy or (re.search(DEFINE_RX, s) and not re.search(EXISTING_OBJ_RX, s)))):
+        level = "L0"   # a question, explanation or definition (also "what does API mean?" / «ما معنى موشن جرافيك؟»)
     elif ambition == "max":
         level = "L3"
-    elif not paths and ntok <= 8 and not set(deliver) & {"video", "code", "reverse", "3d", "data"}:
+    elif publish:
+        level = "L1"   # posting or pushing something that exists: delivery, not new production
+    elif not paths and ntok <= 8 and not set(deliver) & {"video", "code", "reverse", "3d", "data"} and not re.search(LONG_RX, low):
         level = "L1"
     else:
         level = "L2"
+    if level == "L0":
+        deliver = named
     primary = deliver[0] if deliver else ("text" if level == "L0" else "unspecified")
     own = {"voice": bool(re.search(OWN_VOICE_RX, low)), "footage": bool(re.search(OWN_FOOTAGE_RX, low))}
-    if (own["voice"] or own["footage"]) and level in ("L0", "L1"):
+    if (own["voice"] or own["footage"]) and level in ("L0", "L1") and not publish:
         level = "L2"   # the user's own files are involved
-    musts = [{"need": n, "terms": ARABIC_TERMS.get(primary, terms) if n.startswith("نص عربي") else terms} for n, rx, terms in MUST_HAVE if re.search(rx, low)]
+    topics = [g for g, rx in TOPIC_RX.items() if re.search(rx, low)]
+    musts = []
+    for n, rx, terms in MUST_HAVE:
+        if not re.search(rx, low):
+            continue
+        if n.startswith("نص عربي"):
+            if re.search(ARABIC_TOOL_RX, low) and not re.search(FONT_RX, low) and not re.search(ARABIC_OUTPUT_RX, low):
+                continue   # Arabic is what the library or model handles, not right-to-left output text
+            terms = ARABIC_TERMS.get(primary, terms)
+            if primary in ("document", "text") and re.search(r"docx|\bpdf\b|وورد|\bword\b|عرض تقديمي|slides|pptx", low):
+                terms += " rtl docx pdf shaping"   # a file format: right-to-left layout matters, not only the language
+        elif n.startswith("اختبارات"):
+            terms = TEST_TERMS.get(primary, TEST_TERMS["code"])
+        elif n.startswith("بناء أصلي"):
+            terms = CLEANROOM_TERMS.get(primary, terms)
+        elif n.startswith("خط مناسب"):   # a logo needs font matching, a lyric video kinetic type; Arabic only when asked
+            terms = FONT_TERMS.get(primary, FONT_TERMS["image"]) + (" arabic" if re.search(r"[ء-ي]|arabic", low) else "")
+        elif n.startswith("محاسبة") and (primary == "reverse" or "reverse" in topics):
+            continue   # an artefact inventory of a binary is not bookkeeping
+        musts.append({"need": n, "terms": terms})
+    if ("reverse" in deliver and re.search(r"rebuild|re-build|اعد بناء|اعاده بناء|ابني نسخه|اعمل نسخه", low)
+            and not any(m["need"].startswith("بناء أصلي") for m in musts)):
+        n, _rx, terms = next(x for x in MUST_HAVE if x[0].startswith("بناء أصلي"))
+        musts.append({"need": n, "terms": CLEANROOM_TERMS.get(primary, terms)})
     if re.search(FONT_RX, low) and re.search(BILINGUAL_RX, low):
         musts.append({"need": "زوج خطوط يغطي العربية واللاتينية", "terms": "arabic latin font pairing bilingual typography type pairings"})
     platforms = [k for k, rx in PLATFORM_RX.items() if re.search(rx, low)]
-    questions = []
-    if primary == "video" and not aspects:
+    questions, qdefaults = [], []
+    if primary == "video" and not aspects and not publish:   # a named platform already fixes the spec of a post
         questions.append("المقاس والمنصة (9:16 ريلز؟ 16:9 يوتيوب؟)")
+        qdefaults.append("9:16 ريلز" if re.search(r"ريلز|reels?|تيك ?توك|tiktok|shorts", low) else "16:9 يوتيوب")
     if (own["voice"] or own["footage"] or primary in ("reverse",)) and not existing:
         questions.append("أين الملف المصدر؟ (رفع في الجلسة، مسار على جهازك عبر Remote Desktop Commander بإذنك، أو رابط)")
+        qdefaults.append("ارفعه في الجلسة")
+    if any(m["need"].startswith("رفع على GitHub") for m in musts) and not re.search(BRANCH_NAMED_RX, low):
+        questions.append("إلى أي فرع يُرفع العمل؟ (فرع جديد + طلب دمج، أم الفرع الحالي)")
+        qdefaults.append("فرع جديد + طلب دمج؛ لا دفع إلى main بلا إذن صريح")
+    if level == "L0":
+        questions, qdefaults, musts = [], [], []   # L0 gets no plans, no questions and no must-haves
     still = primary == "image" and not set(deliver) & {"video", "audio"}
+    # silent only on an explicit cue, or when nothing in the request carries sound (own footage, a montage or reel does)
+    silent = bool(re.search(SILENT_RX, low)) or not (own["voice"] or own["footage"] or set(deliver) & {"audio"} or "audio" in topics
+                                                     or re.search(SOUND_RX, low))
     return {"request": task, "level": level, "deliverables": deliver or [primary], "primary": primary, "ambition": ambition, "still": still,
+            "style": style, "topics": topics, "silent": silent, "intent": "publish" if publish else "produce",
             "constraints": {"numbers": [n.strip() for n in numbers if n.strip()], "aspects": aspects, "own_assets": own, "platforms_mentioned": platforms},
             "files_mentioned": paths, "files_found": existing, "must_haves": musts, "open_questions": questions,
+            "questions": [{"question": q_, "suggested_default": d_} for q_, d_ in zip(questions, qdefaults)],
             "claude_must_answer": ["ماذا يريد حرفيًا؟", "ما النتيجة النهائية؟", "ما المشكلة الأساسية؟", "المتطلبات الصريحة والضمنية",
                                    "مستوى الجودة والجمهور", "القيود: وقت/تكلفة/أجهزة/صلاحيات/ترخيص", "معايير نجاح قابلة للقياس", "طريقة أذكى من وصف المستخدم؟"]}
 
 
 # ------------------------------------------------------------------ ranking
+_DF_CACHE = {}
+
+
 def build_df(records):
-    df = collections.Counter()
-    toks = []
-    for r in records:
-        t = collections.Counter(tokens(r["text"]))
-        toks.append(t)
-        for w in t:
-            df[w] += 1
+    """Document frequencies and per-record term counts (cached per catalog content, so repeated briefs are fast)."""
+    key = hashlib.sha256("\x00".join(r["id"] + "\x01" + r["text"] for r in records).encode("utf-8")).hexdigest()
+    if key not in _DF_CACHE:
+        df = collections.Counter()
+        toks = []
+        for r in records:
+            t = collections.Counter(tokens(r["text"]))
+            toks.append(t)
+            for w in t:
+                df[w] += 1
+        _DF_CACHE.clear()
+        _DF_CACHE[key] = (df, toks, [set(tokens(r["name_en"] + " " + r["name_ar"])) for r in records])
+    df, toks, names = _DF_CACHE[key]
+    for r, nm in zip(records, names):
+        r["_name_tokens"] = nm
     return df, toks
 
 
-def score_records(records, toks, df, words):
+PROCESS_TERMS = {"github", "commit", "branch", "git", "test", "testing", "tests", "pytest", "unittest", "اختبار", "اختبارات", "اختبر"}
+QUALIFIER_TERMS = {"arabic"}   # the language of the output: the right-to-left must-have routes it, in the ranking it only qualifies
+
+
+SUBJECT_RX = r"(?:^|\s)(?:عن|حول|about|on the topic of)\s+(.+)$"
+
+
+def concept_weights(groups, an: dict = None) -> list:
+    """A process step the must-have layer already routes (tests, a GitHub push) is a qualifier in the general ranking,
+    not the subject: without this every GitHub-Actions or motion-test superpower outranks the actual work. For a text
+    deliverable, what the text is ABOUT is content, not a capability need ("an article about AI" needs writing tools,
+    not LLM-ops tools)."""
+    subject = set()
+    if an and an.get("primary") in ("document", "text"):
+        m = re.search(SUBJECT_RX, norm_ar(an.get("request", "").lower()))
+        subject = set(tokens(m.group(1))) if m else set()
+    style = {w for w in (g[0] for g in groups if g) if any(re.search(rx, w) for rx in STYLE_RX.values())}
+    out = []
+    for g in groups:
+        if set(g) & PROCESS_TERMS:
+            out.append(0.35)
+        elif g and g[0] in subject:
+            out.append(0.3)
+        elif g and (g[0] in style or set(g) & QUALIFIER_TERMS):
+            out.append(0.5)
+        else:
+            out.append(1.0)
+    return out
+
+
+def score_records(records, toks, df, words, detail=False, weights=None):
+    """Relevance of every record. `words` is a flat list of terms or a list of concepts (lists of interchangeable
+    terms): a concept scores once per record, by its best term, so a word and its alias are not counted twice.
+    `weights` scales each concept. detail=True returns (score, {concept index: score}) per record."""
+    groups = [list(g) if isinstance(g, (list, tuple)) else [g] for g in words]
+    weights = list(weights) if weights else [1.0] * len(groups)
     n = len(records)
+    idf = {w: math.log(1 + n / (1 + df.get(w, 0))) for g in groups for w in g}
+    prefixed = {w: [k for k in df if k != w and k.startswith(w)] for g in groups for w in g if len(w) >= 4}
     out = []
     for r, t in zip(records, toks):
-        name = set(tokens(r["name_en"] + " " + r["name_ar"]))
-        s = 0.0
-        for w in words:
-            tf = t.get(w, 0)
-            if not tf and len(w) >= 4:
-                tf = sum(c for k, c in t.items() if k.startswith(w))
-            if tf:
-                s += (1 + math.log(1 + tf)) * math.log(1 + n / (1 + df.get(w, 0))) * (2.2 if w in name else 1.0)
-        out.append(s)
+        name = r.get("_name_tokens")
+        if name is None:
+            name = set(tokens(r["name_en"] + " " + r["name_ar"]))
+        s, parts = 0.0, {}
+        for gi, g in enumerate(groups):
+            best = 0.0
+            for w in g:
+                tf = t.get(w, 0)
+                if not tf and w in prefixed:
+                    tf = sum(t.get(k, 0) for k in prefixed[w])
+                if tf:
+                    best = max(best, (1 + math.log(1 + tf)) * idf[w] * (2.2 if w in name else 1.0))
+            if best:
+                best *= weights[gi]
+                s += best
+                parts[gi] = best
+        out.append((s, parts) if detail else s)
     return out
 
 
@@ -489,8 +881,13 @@ def build_brief(task: str, details=False, terms: str = "") -> dict:
     fresh = freshness(records)
     an = analyse(task)
     df, toks = build_df(records)
+    cq = concepts(task, df, terms)
     q = expand(task, df, terms)
-    scores = score_records(records, toks, df, q)
+    detail = score_records(records, toks, df, cq, detail=True, weights=concept_weights(cq, an))
+    scores = [d[0] for d in detail]
+    parts_of = {r["id"]: d[1] for r, d in zip(records, detail)}
+    cw = concept_weights(cq, an)
+    cmax = [max((d[1].get(gi, 0.0) for d in detail), default=0.0) for gi in range(len(cq))]   # best score per concept
     by_id = {r["id"]: (r, s) for r, s in zip(records, scores)}
     reg, pres = requirement_presence()
     tools = tool_registry()
@@ -513,14 +910,21 @@ def build_brief(task: str, details=False, terms: str = "") -> dict:
     stage_of = {k: v.get("stage") for k, v in (mind.get("superpowers") or {}).items()}
     own_voice = an["constraints"]["own_assets"]["voice"]
     mentioned_platforms = set(an["constraints"]["platforms_mentioned"])
+    asked_low = norm_ar(f"{task} {terms}".lower())
     excluded = []
     sp_rows = []
     for s in sp.get("items", []):
         ms = [(by_id[m["id"]][0], by_id[m["id"]][1]) for m in s["pipeline"] if m["id"] in by_id]
         rel = sorted((sc for _r, sc in ms), reverse=True)
-        fit = sum(rel[:5]) + 0.25 * sum(rel[5:])
-        if fit <= 0:
+        if not rel or rel[0] <= 0:
             continue
+        depth = rel[0] + 0.25 * sum(rel[1:4])            # best atom + a quarter of the next three
+        best_c = [max(parts_of[a["id"]].get(gi, 0.0) for a, _ in ms) for gi in range(len(cq))]
+        cover = sum(best_c)                              # each concept once, by its best atom
+        n_conc = sum(1 for gi in range(len(cq)) if best_c[gi] > 0 and cw[gi] >= 0.5)   # request concepts it matches
+        share_c = sum(cw[gi] * best_c[gi] / cmax[gi] for gi in range(len(cq)) if cmax[gi]) / (sum(cw[gi] for gi in range(len(cq)) if cmax[gi]) or 1)
+        fit = (depth + cover) / 2 / (1 + 0.15 * math.log(max(1, len(ms))))   # many atoms do not buy rank
+        fit *= 0.5 + 0.5 * share_c                       # how much of the request this superpower covers
         fam_count = collections.Counter(a["family"] for a, _ in ms)
         if own_voice and (fam_count.get("voice-tts", 0) >= 0.5 * len(ms) or re.search(r"\btts\b|text.to.speech|voice clon|elevenlabs|voice costume", s["name_en"].lower())):
             excluded.append({"id": s["id"], "name": s["name_en"], "reason": "يستبدل صوت المستخدم (TTS/استنساخ) والطلب على صوته هو"})
@@ -528,23 +932,37 @@ def build_brief(task: str, details=False, terms: str = "") -> dict:
         plat = {k for a, _ in ms for k in a.get("requires") or [] if k in PLATFORM_RX}
         if plat and not plat & mentioned_platforms:
             fit *= 0.3
+        gated = any(re.search(nrx, s["name_en"].lower()) and not re.search(rrx, asked_low) for nrx, rrx in NAMED_PLATFORM_GATES)
+        if gated:
+            fit *= 0.3   # built around a platform the request does not name
         dom = collections.Counter(a.get("domain") or "motion" for a, _ in ms).most_common(1)[0][0]
-        fit *= affinity(an["primary"], dom, fam_count, an["still"])
+        grp = plan_group(s.get("families", {}), s["pipeline"])
+        fit *= affinity(an["primary"], dom, fam_count, an["still"], grp, an["topics"])
         hits = sorted(((a, sc) for a, sc in ms if sc > 0), key=lambda x: -x[1])
+        if an["still"] and re.search(MOVING_RX, " ".join(a["name_en"] for a, _ in hits[:2]).lower()):
+            fit *= 0.5   # a still image: what matched is about moving pictures
         badges = [local_badge(a, pres) for a, _ in (hits or ms)]
         lb = min(badges, key=LOCAL_RANK.index) if badges else "📄"
         ready_local = sum(1 for a, _ in ms if local_badge(a, pres) in ("✅", "🟢"))
-        sp_rows.append({"id": s["id"], "name_ar": s["name_ar"], "name_en": s["name_en"], "group": plan_group(s.get("families", {}), s["pipeline"]), "domain": dom,
+        sp_rows.append({"id": s["id"], "name_ar": s["name_ar"], "name_en": s["name_en"], "group": grp, "domain": dom,
                         "families": list(fam_count), "stage": stage_of.get(s["id"], "create"), "size": s["size"], "catalog_best": s["best"],
                         "local_badge": lb, "ready_local": ready_local, "requires": s.get("requires", []), "links": [l["id"] for l in s.get("links", [])],
+                        "hit_requires": sorted({str(k) for a, _ in hits[:2] for k in a.get("requires") or []}),   # what the best matches need
                         "fit_raw": fit, "hits": [a["id"] for a, _ in hits], "contains": [a["name_en"] for a, _ in hits[:3]],
-                        "badge_mix_local": dict(collections.Counter(badges))})
+                        "badge_mix_local": dict(collections.Counter(badges)), "gated": gated, "n_concepts": n_conc})
     sp_rows.sort(key=lambda x: -x["fit_raw"])
     maxfit = max([x["fit_raw"] for x in sp_rows] or [1.0])
     gsc = collections.Counter()
     for x in sp_rows[:80]:
         gsc[x["group"]] += x["fit_raw"]
-    top_groups = [g for g, _ in gsc.most_common(2)]
+    # core groups: the deliverable's own group(s) plus the two strongest groups that are not off-domain for it
+    pen = AFFINITY.get(an["primary"], {})
+    eligible = [g for g, _ in gsc.most_common() if not (pen.get(g, 1.0) < 1.0 and g not in an["topics"])]
+    top_groups = list(dict.fromkeys(HOME_GROUPS.get(an["primary"], []) + eligible[:2]))
+
+    n_req = sum(1 for w_ in cw if w_ >= 0.5)
+    home = {g for d in an["deliverables"] for g in HOME_GROUPS.get(d, [])} | set(an["topics"])
+    pen_ok = lambda g: pen.get(g, 1.0) >= 1.0 or g in home   # a cross-domain integration never comes from an off-domain group
 
     # must-have layer: each need gets its own sub-ranking and at least one superpower
     must_cov = []
@@ -552,20 +970,45 @@ def build_brief(task: str, details=False, terms: str = "") -> dict:
     top_atom = max([s for s, _ in relevant[:1]] or [1.0])
     sp_by_id = {x["id"]: x for x in sp_rows}
     atom2sp = {m["id"]: s["id"] for s in sp.get("items", []) for m in s["pipeline"]}
+    media_words = set(an["topics"]) | set(an["deliverables"])
+
+    def off_need(row) -> bool:
+        """A must-have pick from the wrong sense of the need's words: reverse-engineering tools outside a reverse job,
+        motion/audio/3D suites for a code, data, document or research deliverable that names no such medium."""
+        if "software-investigation" in row["families"] and an["primary"] != "reverse" and "reverse" not in an["topics"]:
+            return True
+        return row["group"] in ("motion", "audio", "3d") and an["primary"] in ("code", "reverse", "data", "document", "research", "text", "unspecified") \
+            and row["group"] not in media_words and not (row["group"] == "motion" and "video" in media_words)
+
     for need in an["must_haves"]:
-        w = expand(need["terms"], df)
+        w = concepts(need["terms"], df)
         sub = score_records(records, toks, df, w)
-        best_atoms = sorted(((sc, r) for r, sc in zip(records, sub) if sc > 0), key=lambda x: -x[0])[:16]
-        agg = collections.Counter()
+        allowed = next((v.get(an["primary"]) for k, v in NEED_FAMILIES.items() if need["need"].startswith(k)), None)
+        best_atoms = []
+        for sc, r in sorted(((sc, r) for r, sc in zip(records, sub) if sc > 0), key=lambda x: -x[0]):
+            sid = atom2sp.get(r["id"])
+            if allowed and r.get("family") not in allowed:
+                continue   # this family cannot meet the need for this deliverable
+            if sid in sp_by_id and (off_need(sp_by_id[sid]) or sp_by_id[sid]["gated"]):
+                continue
+            best_atoms.append((sc, r))
+            if len(best_atoms) >= 16:
+                break
+        per = collections.defaultdict(list)
         for sc, r in best_atoms:
             sid = atom2sp.get(r["id"])
             if sid and sid in sp_by_id:
+                row = sp_by_id[sid]
                 ctx = by_id[r["id"]][1] / top_atom   # how much this atom also matches the whole request
-                agg[sid] += sc * (1 + ctx) * affinity(an["primary"], sp_by_id[sid]["domain"], sp_by_id[sid]["families"], an["still"])
+                per[sid].append(sc * (1 + ctx) * affinity(an["primary"], row["domain"], row["families"], an["still"], row["group"], an["topics"]))
+        agg = collections.Counter()
+        for sid, v in per.items():   # normalised like fit: a superpower with many weak atoms does not outvote one strong match
+            v.sort(reverse=True)
+            agg[sid] = v[0] + 0.25 * sum(v[1:4])
         ranked_need = agg.most_common(2)
         pick = [ranked_need[0][0]] if ranked_need else []
-        if len(ranked_need) > 1 and ranked_need[1][1] >= 0.75 * ranked_need[0][1]:
-            pick.append(ranked_need[1][0])
+        if len(ranked_need) > 1 and ranked_need[1][1] >= 0.75 * ranked_need[0][1] and sp_by_id[ranked_need[1][0]]["fit_raw"] >= MIN_FIT * maxfit:
+            pick.append(ranked_need[1][0])   # a second pick must also fit the request, not only the need's words
         must_ids.update(pick)
         must_cov.append({"need": need["need"], "superpowers": pick, "atoms": [r["id"] for _, r in best_atoms[:4]],
                          "status": "covered" if pick else "gap", "local_badges": [sp_by_id[p]["local_badge"] for p in pick]})
@@ -574,42 +1017,96 @@ def build_brief(task: str, details=False, terms: str = "") -> dict:
     short_ids = {x["id"] for x in short}
     for x in short:
         integ = len([l for l in x["links"] if l in short_ids])
-        miss = [k for k in x["requires"] if pres.get(k) == "missing"]
-        keys = [k for k in x["requires"] if str(k).startswith("key:") and pres.get(k) != "present"]
-        strong_outside = x["group"] not in top_groups and x["fit_raw"] >= 0.4 * maxfit
-        sc = {"fit": x["fit_raw"] / maxfit, "integration": min(1.0, integ / 3), "feasibility": x["ready_local"] / max(1, x["size"]),
-              "evidence": LOCAL_EVIDENCE.get(x["local_badge"], 0.2), "cost": 1.0 - min(1.0, 0.25 * len(miss) + 0.5 * len(keys)),
-              "creativity": 1.0 if strong_outside else 0.3 * x["fit_raw"] / maxfit}
+        req_used = x.get("hit_requires") or x["requires"]   # cost of the atoms that match, not of every member
+        miss = [k for k in req_used if pres.get(k) == "missing"]
+        keys = [k for k in req_used if str(k).startswith("key:") and pres.get(k) != "present"]
+        share = x["fit_raw"] / maxfit
+        strong_outside = (x["group"] not in top_groups and share >= 0.4 and pen_ok(x["group"]) and pen_ok(x["domain"])
+                          and x.get("n_concepts", 0) >= min(2, n_req))   # one homonym hit is not an integration
+        g = min(1.0, share / MIN_FIT)   # below the fit floor, readiness and links cannot lift an off-target pick up the shortlist
+        sc = {"fit": share, "integration": min(1.0, integ / 3) * g,   # links cannot outrank relevance
+              "feasibility": x["ready_local"] / max(1, x["size"]) * g,
+              "evidence": LOCAL_EVIDENCE.get(x["local_badge"], 0.2) * g, "cost": (1.0 - min(1.0, 0.25 * len(miss) + 0.5 * len(keys))) * g,
+              "creativity": share if strong_outside else 0.3 * share}   # scaled by fit: an off-target pick is not "creative"
         x["score"] = round(sum(WEIGHTS[k] * v for k, v in sc.items()), 1)
         x["score_parts"] = {k: round(WEIGHTS[k] * v, 1) for k, v in sc.items()}
+        x["fit_share"] = round(share, 3)
         x["missing"], x["needs_key"] = miss, keys
-        x["role"] = "must-have" if x["id"] in must_ids else ("core" if x["group"] in top_groups else ("cross-domain" if strong_outside else "peripheral"))
+        x["role"] = "must-have" if x["id"] in must_ids else ("core" if x["group"] in top_groups and share >= MIN_FIT
+                                                              else ("cross-domain" if strong_outside else "peripheral"))
     short.sort(key=lambda x: (x["role"] != "must-have", -x["score"]))
-    # verifiers by deliverable
-    vt = expand(VERIFY_TERMS.get(an["primary"], VERIFY_TERMS["text"]), df)
+    # verifiers by deliverable: normalised per superpower (best atom + 0.25 x next three), from a family that can judge
+    # this deliverable, keys checked per matched atom, no sound checks for a silent deliverable, no off-domain checker
+    # and weighted by how much the checker also matches THIS request (two data requests do not get the same verifiers)
+    arabic_out = any(m["need"].startswith("نص عربي") for m in an["must_haves"]) or bool(
+        an["primary"] in ("document", "text") and re.search(r"[ء-ي]", task))
+    vterms = VERIFY_TERMS.get(an["primary"], VERIFY_TERMS["unspecified"]) + (" arabic" if arabic_out and an["primary"] == "image" else "")
+    vt = concepts(vterms, df)
     vsc = score_records(records, toks, df, vt)
-    vagg = collections.Counter()
+    vfam = set(VERIFY_FAMILIES.get(an["primary"], VERIFY_FAMILIES["unspecified"]))
+    if not arabic_out:
+        vfam -= {"typography-arabic", "arabic-language"}   # an English logo or report gets no Arabic-typography check
+    sp_items = {y["id"]: y for y in sp.get("items", [])}
+
+    def name_gated(name: str) -> bool:
+        return any(re.search(nrx, name.lower()) and not re.search(rrx, asked_low) for nrx, rrx in NAMED_PLATFORM_GATES)
+    meta_cache = {}
+
+    def sp_meta(sid):
+        if sid in sp_by_id:
+            b_ = sp_by_id[sid]
+            return b_["domain"], b_["families"], b_["group"]
+        if sid not in meta_cache:
+            y = sp_items[sid]
+            mem = [by_id[m["id"]][0] for m in y["pipeline"] if m["id"] in by_id]
+            dom_ = collections.Counter(a.get("domain") or "motion" for a in mem).most_common(1)[0][0] if mem else "motion"
+            meta_cache[sid] = (dom_, list(y.get("families", {})), plan_group(y.get("families", {}), y["pipeline"]))
+        return meta_cache[sid]
+
+    per_sp = collections.defaultdict(list)
+    v_best, v_sound = {}, set()
     for r, sc in zip(records, vsc):
-        if sc > 0 and atom2sp.get(r["id"]):
-            sid = atom2sp[r["id"]]
-            base = sp_by_id.get(sid)
-            aff = affinity(an["primary"], base["domain"], base["families"], an["still"]) if base else affinity(an["primary"], r.get("domain") or "motion", [r.get("family")], an["still"])
-            vagg[sid] += sc * aff
+        sid = atom2sp.get(r["id"])
+        if sc <= 0 or not sid or r.get("family") not in vfam:
+            continue
+        if any(str(k).startswith("key:") and pres.get(k) != "present" for k in r.get("requires") or []):
+            continue
+        if an["silent"] and (r.get("family") in SOUND_FAMILIES or re.search(r"loudness|\blufs\b|\bsound\b|\baudio\b", r["name_en"].lower())):
+            continue
+        dom_, fams_, grp_ = sp_meta(sid)
+        aff = affinity(an["primary"], dom_, fams_, an["still"], grp_, an["topics"])
+        if aff < 0.6 or name_gated(sp_items[sid]["name_en"]):
+            continue
+        ctx = by_id[r["id"]][1] / top_atom                                     # this atom also matches the request
+        fs = sp_by_id[sid]["fit_raw"] / maxfit if sid in sp_by_id else 0.0     # its superpower fits the request
+        v_ = sc * aff * (1 + ctx + fs)
+        per_sp[sid].append(v_)
+        if v_ > v_best.get(sid, (0, "", ""))[0]:
+            v_best[sid] = (v_, r["name_en"], r.get("family"))
+        if re.search(r"loudness|\blufs\b|true.?peak", sp_items[sid]["name_en"].lower()):
+            v_sound.add(sid)   # a dedicated sound check (not a gate that also reads LUFS)
+    vagg = {}
+    for sid, v in per_sp.items():
+        v.sort(reverse=True)
+        vagg[sid] = v[0] + 0.25 * sum(v[1:4])
+    v_order = sorted(vagg, key=lambda k: (-vagg[k], k))
+    snd = [sid for sid in v_order if sid in v_sound]
+    if not an["silent"] and an["primary"] in ("video", "audio") and snd and snd[0] not in v_order[:2]:
+        v_order.remove(snd[0])
+        v_order.insert(1, snd[0])   # a montage, reel or voice track carries sound: the balanced plan checks its loudness
     verifiers = []
-    for sid, _ in vagg.most_common(40):
-        s = sp_by_id.get(sid) or next(({"id": y["id"], "name_ar": y["name_ar"], "name_en": y["name_en"], "group": "quality", "stage": "verify",
-                                         "size": y["size"], "catalog_best": y["best"], "local_badge": "📄", "ready_local": 0, "requires": y.get("requires", []),
-                                         "links": [], "fit_raw": 0, "hits": [], "contains": [], "families": list(y.get("families", {})), "score": 0,
-                                         "role": "verifier", "missing": [], "needs_key": []} for y in sp.get("items", []) if y["id"] == sid), None)
-        if not s or s.get("needs_key"):
-            continue
-        if any(str(k).startswith("key:") for k in s.get("requires", [])):
-            continue
+    for sid in v_order[:4]:   # A uses 1, B the first 2, C the first + 3rd/4th (another method)
+        y = sp_items[sid]
+        dom_, fams_, grp_ = sp_meta(sid)
+        s = sp_by_id.get(sid) or {"id": y["id"], "name_ar": y["name_ar"], "name_en": y["name_en"], "group": grp_, "domain": dom_, "stage": "verify",
+                                  "size": y["size"], "catalog_best": y["best"], "local_badge": "📄", "ready_local": 0, "requires": y.get("requires", []),
+                                  "links": [], "fit_raw": 0, "hits": [], "contains": [], "families": fams_, "score": 0,
+                                  "role": "verifier", "missing": [], "needs_key": []}
         s = dict(s)
-        s["stage"], s["role"] = "verify", "verifier"
+        s["stage"], s["role"], s["verify_score"] = "verify", "verifier", round(vagg[sid], 2)
+        s["contains"] = [v_best[sid][1]] + [c for c in s.get("contains", []) if c != v_best[sid][1]][:1]
+        s["via_family"] = v_best[sid][2]
         verifiers.append(s)
-        if len(verifiers) >= 3:
-            break
     # complements: linked to a top pick, relevant themselves, same or adjacent stage
     comp = []
     for x in short[:8]:
@@ -670,33 +1167,76 @@ def build_brief(task: str, details=False, terms: str = "") -> dict:
                 th.update(state="ready (find)", command=lib["command"])
 
     # plans = approaches
-    arch = ARCHETYPES.get(an["primary"], ARCHETYPES["_generic"])
+    arch = ARCHETYPES["publish"] if an.get("intent") == "publish" else ARCHETYPES.get(an["primary"], ARCHETYPES["_generic"])
     stages_tpl = arch["stages"]
     must_rows = [sp_by_id[i] for i in must_ids if i in sp_by_id]
 
-    def plan(name, k, n_verify, extra_cross):
+    style_fams = {f for st_ in an["style"] for f in STYLE_FAMILIES.get(st_, [])}
+    topic_fams = {f for t_ in an["topics"] for f in TOPIC_FAMILIES.get(t_, [])} if an["primary"] in ("research", "data", "document") else set()
+    floor = MIN_FIT * maxfit
+
+    def off_domain(x) -> bool:
+        """Reverse-engineering tools are never a cross-domain integration for a job that inspects no binary or app, and a
+        superpower built around a platform the request does not name never enters a plan."""
+        if x["role"] == "must-have":
+            return False
+        if x.get("gated"):
+            return True
+        return x["group"] == "reverse" and an["primary"] != "reverse" and "reverse" not in an["topics"] and "reverse" not in an["deliverables"]
+
+    def can_verify(x, fams) -> bool:
+        """A verify-stage pick must be able to judge this deliverable, and a silent deliverable gets no sound checks."""
+        f = set(x["families"])
+        if an["silent"] and (f <= SOUND_FAMILIES or re.search(r"loudness|\blufs\b|\bsound\b|\baudio\b", x["name_en"].lower())):
+            return False
+        return bool(f & (vfam | fams))
+
+    def plan(name, k, vsel, extra_cross, avoid=frozenset(), share_best=True, min_size=0):
+        """One approach. Stage picks need the fit floor (must-haves are exempt). `avoid` keeps C a different method: B's
+        own picks are not reused anywhere (stage picks, cross-domain extras, the top-up), except the best pick of a stage
+        when share_best. `min_size` tops the plan up with further non-avoided stage candidates (never with B's picks)."""
         idea, fams = arch[name]
-        fams = set(fams)
-        pool = [x for x in short if x["role"] != "peripheral" or name == "C"]
+        fams = set(fams) | (style_fams if name != "A" else set()) | topic_fams
+        boost = lambda x: x["score"] * (1.6 if fams and set(x["families"]) & fams else (0.6 if fams else 1.0))
+        pool = [x for x in short if (x["role"] != "peripheral" or name == "C") and (x["role"] == "must-have" or x["fit_raw"] >= floor)
+                and (x["role"] == "must-have" or (x["stage"] or "create") != "verify" or can_verify(x, fams)) and not off_domain(x)]
         chosen, stages = [], collections.OrderedDict((s, []) for s in stages_tpl)
+        left = []
         for st in stages_tpl:
             cands = [x for x in pool if (x["stage"] or "create") == st and x["id"] not in [c["id"] for c in chosen]]
-            cands.sort(key=lambda x: -(x["score"] * (1.6 if fams and set(x["families"]) & fams else (0.6 if fams else 1.0))))
-            for x in cands[:k]:
+            cands.sort(key=lambda x: -boost(x))
+            if avoid:
+                head = cands[:1] if share_best else []
+                cands = head + [x for x in cands[len(head):] if x["id"] not in avoid]
+            picked = []
+            for _ in range(min(k, len(cands))):   # a second pick in a stage prefers another family (an integration, not a twin)
+                seen = {f for y in picked for f in y["families"]}
+                rest = [x for x in cands if x not in picked]
+                rest.sort(key=lambda x: -(boost(x) * (0.75 if set(x["families"]) & seen else 1.0)))
+                picked.append(rest[0])
+            for x in picked:
                 chosen.append(x)
                 stages[st].append(x)
+            left += [x for x in cands if x not in picked]
         need_rows = must_rows if name != "A" else [sp_by_id[m["superpowers"][0]] for m in must_cov if m["superpowers"] and m["superpowers"][0] in sp_by_id]
         for x in need_rows:
             if x["id"] not in [c["id"] for c in chosen]:
                 chosen.append(x)
                 st = x["stage"] if x["stage"] in stages else stages_tpl[min(2, len(stages_tpl) - 1)]
                 stages.setdefault(st, []).append(x)
-        for v in verifiers[:n_verify]:
+        for v in vsel:
             if v["id"] not in [c["id"] for c in chosen]:
                 chosen.append(v)
                 stages.setdefault("verify", []).append(v)
         if extra_cross:
-            for x in [y for y in short if y["role"] == "cross-domain" and y["id"] not in [c["id"] for c in chosen]][:extra_cross]:
+            for x in [y for y in short if y["role"] == "cross-domain" and y["id"] not in [c["id"] for c in chosen] and not off_domain(y)
+                      and y["id"] not in avoid and ((y["stage"] or "create") != "verify" or can_verify(y, fams))][:extra_cross]:
+                chosen.append(x)
+                stages.setdefault(x["stage"] or "create", []).append(x)
+        for x in sorted(left, key=lambda x: -boost(x)):   # top-up: deeper stage picks, never B's own
+            if len(chosen) >= min_size:
+                break
+            if x["id"] not in [c["id"] for c in chosen] and x["id"] not in avoid:
                 chosen.append(x)
                 stages.setdefault(x["stage"] or "create", []).append(x)
         stages = collections.OrderedDict((s, stages[s]) for s in STAGE_ORDER if stages.get(s))
@@ -721,9 +1261,11 @@ def build_brief(task: str, details=False, terms: str = "") -> dict:
             risks.append("مفاتيح/خدمات: " + ", ".join(keys[:4]))
         if doc_share > 0.4:
             risks.append(f"{int(doc_share * 100)}% من القدرات الخارقة المختارة موصوفة فقط محليًا (📄) وتحتاج تنفيذًا")
-        return {"name": name, "idea": idea, "meets_must_haves": not uncovered and all(m["status"] == "covered" for m in must_cov), "uncovered": uncovered,
+        return {"name": name, "idea": idea, "definition": PLAN_DEFINITIONS[name],
+                "meets_must_haves": not uncovered and all(m["status"] == "covered" for m in must_cov), "uncovered": uncovered,
                 "superpowers": [{"id": x["id"], "name_ar": x["name_ar"], "name_en": x["name_en"], "stage": x["stage"], "group": x["group"],
-                                 "score": x.get("score"), "local_badge": x["local_badge"], "role": x.get("role")} for x in chosen],
+                                 "score": x.get("score"), "local_badge": x["local_badge"], "role": x.get("role"),
+                                 "contains": list(x.get("contains") or [])[:2]} for x in chosen],
                 "stages": {s: [x["id"] for x in v] for s, v in stages.items()},
                 "counts": {"groups": len({x["group"] for x in chosen}), "superpowers": len(chosen), "atoms_used": len(atoms),
                            "atoms_used_local_badges": dict(badge_mix), "members_in_scope": sum(x["size"] for x in chosen),
@@ -734,11 +1276,40 @@ def build_brief(task: str, details=False, terms: str = "") -> dict:
 
     plans = {}
     if an["level"] != "L0":
-        plans = {"A": plan("A", 1, 1, 0), "B": plan("B", 2, 2, 1), "C": plan("C", 3, 2, 3)}
+        ids_of = lambda p_: {x["id"] for x in p_["superpowers"]}
+        plans = {"A": plan("A", 1, verifiers[:1], 0), "B": plan("B", 2, verifiers[:2], 1)}
+        b_ids = ids_of(plans["B"])
+        fixed = must_ids | {v["id"] for v in verifiers}          # every plan must carry the must-haves; checks are listed apart
+        b_core = frozenset(b_ids - fixed)
+        c_ver = verifiers[:1] + verifiers[2:4] if len(verifiers) > 2 else verifiers[:2]   # another verification method
+        avoid = frozenset(b_ids - must_ids - {v["id"] for v in c_ver})   # B's own picks, also a check C does not use
+
+        def differs(p_):
+            """C is another method, not B plus extras: it has picks of its own, keeps at most half of B's own picks and
+            does not contain the whole of B."""
+            c_ids = ids_of(p_)
+            c_core = c_ids - fixed
+            return bool(c_core - b_ids) and 2 * len(b_core & c_core) <= len(b_core) and not b_ids <= c_ids
+
+        c_plan = plan("C", 3, c_ver, 3, avoid=avoid, min_size=len(b_ids))
+        if not differs(c_plan):
+            c_plan = plan("C", 3, c_ver, 3, avoid=avoid, share_best=False, min_size=len(b_ids))
+        if not differs(c_plan):
+            # the catalog offers no different method above the fit floor: C is honestly a depth level of B (never B twice)
+            c_plan = plan("C", 3, verifiers[:4], 3, min_size=len(b_ids))
+            if ids_of(c_plan) == b_ids:
+                c_plan = finish_plan("C", arch["C"][0], [], {})
+                c_plan.update(unavailable="لا يوجد في الكتالوج منهج مختلف ولا مستوى أعمق فوق حد الملاءمة؛ اعتمد B أو اقترح منهجك",
+                              meets_must_haves=False, tools=[])
+                c_plan["counts"].update(tools=0, tools_ready=0)
+            else:
+                c_plan["depth_of"] = "B"
+                c_plan["idea"] += " — مستوى عمق لمنهج B نفسه (لا يوجد في الكتالوج منهج مختلف فوق حد الملاءمة)"
+        plans["C"] = c_plan
     # recommendation with a reason
     if an["level"] == "L0":
         rec, why = None, "طلب L0: أجب مباشرة بلا خطط"
-    elif an["ambition"] == "max":
+    elif an["ambition"] == "max" and not plans["C"].get("unavailable"):
         rec, why = "C", "طلبت أقصى جودة"
     elif an["primary"] in ("code", "reverse") and any(m["need"].startswith("اختبارات") for m in an["must_haves"]):
         rec, why = "B", "كود باختبارات: البناء النظيف بالاختبارات يحقق المتطلبات الإلزامية"
@@ -750,7 +1321,8 @@ def build_brief(task: str, details=False, terms: str = "") -> dict:
         alt = next((k for k in "BC" if plans[k]["meets_must_haves"]), rec)
         if alt != rec:
             rec, why = alt, why + f"؛ الخطة الأصلية لا تغطي كل المتطلبات الإلزامية فاخترت {alt}"
-    brief = {"schema": "kosif.skill-intelligence.v2", "protocol": "PROTOCOL.md", "elapsed_s": None, "environment": environment(),
+    brief = {"schema": "kosif.skill-intelligence.v2", "protocol": PROTOCOL_VERSION, "protocol_doc": "PROTOCOL.md", "elapsed_s": None,
+             "environment": environment(),
              "freshness": fresh, "coverage": receipt, "analysis": an, "query_terms": q[:50],
              "inventory": {"powers_total": receipt["records_on_disk"], "powers_relevant": len(relevant), "superpowers_total": len(sp.get("items", [])),
                            "superpowers_relevant": len(sp_rows), "shortlist": len(short), "groups_total": receipt["groups"], "families": receipt["families"],
@@ -759,12 +1331,18 @@ def build_brief(task: str, details=False, terms: str = "") -> dict:
              "must_have_coverage": must_cov, "excluded": excluded, "asset_libraries": libs,
              "top_powers": [{"id": r["id"], "name_ar": r["name_ar"], "name_en": r["name_en"], "group": r["group"], "catalog_status": r["status"],
                              "local_badge": local_badge(r, pres), "score": round(s, 2)} for s, r in relevant[:40]],
-             "shortlist": short, "verifiers": [{"id": v["id"], "name_ar": v["name_ar"], "name_en": v["name_en"]} for v in verifiers],
+             "shortlist": short, "verifiers": [{"id": v["id"], "name_ar": v["name_ar"], "name_en": v["name_en"], "via": v["contains"][0],
+                                                "via_family": v["via_family"]} for v in verifiers],
              "complements": comp[:8], "tools": tools_hit[:10], "guides": guides, "plans": plans, "recommended": rec, "recommended_reason": why,
              "approval_question": (f"أنصحك بالخطة {rec}. تحب أعرض لك تفاصيل القدرات وخطوات التنفيذ، ولا توافق على الخطة ونبدأ مباشرة؟" if rec else None),
-             "reply_words": {"موافق": "نفّذ الخطة الموصى بها", "تفاصيل": "جدول أعمق للقدرات والتسلسل والاعتماديات والاختبارات",
-                             "A/B/C": "اعتمد خطة أخرى", "طوّر": "جولة نقد وتحسين وبحث عن تكاملات جديدة",
-                             "نفّذ بأقصى قوة": "أعلى مستوى عملي دون التضحية بالاختبارات والترخيص", "نفّذ مباشرة": "تخطَّ العرض للمهام البسيطة"}}
+             "plan_definitions": PLAN_DEFINITIONS,
+             "reply_words": {"موافق": "نفّذ الخطة الموصى بها واقبل الإجابة المقترحة لكل سؤال مدرج",
+                             "تفاصيل": "جدول أعمق للقدرات والتسلسل والاعتماديات والاختبارات",
+                             "A/B/C": "اعتمد خطة أخرى", "D": "خطة مدمجة من عُقد تسمّيها من A/B/C",
+                             "طوّر": "جولة نقد وتحسين وبحث عن تكاملات جديدة",
+                             "نفّذ بأقصى قوة": "أعلى مستوى عملي دون التضحية بالاختبارات والترخيص", "نفّذ مباشرة": "تخطَّ العرض للمهام البسيطة",
+                             "كمّل بدوني": "تابع بالإجابات المقترحة دون انتظاري"},
+             "execution_words": {"كمّل": "تابع التنفيذ", "وقف": "أوقف التنفيذ", "تراجع": "تراجع عن آخر خطوة"}}
     brief["elapsed_s"] = round(time.time() - t0, 2)
     if not details:
         for x in brief["shortlist"]:
@@ -780,13 +1358,15 @@ def render(b: dict) -> str:
         return "\n".join([f"**المستوى L0 — مباشر.** الطلب قصير بلا ملفات أو إنتاج؛ الفحص الشامل غير لازم للإجابة "
                           f"(الإيصال متاح: {c['records_scanned']:,}/{c['records_on_disk']:,} {'✅' if c['complete'] else '❌'}).",
                           "أجب الآن بلغة المستخدم ولهجته، بلا خطط ولا سؤال موافقة."])
-    L = ["# تقرير بروتوكول ذكاء المهارات — KOSIF USIP", "", f"**المستوى {an['level']}** · **الطلب:** {an['request']}", "",
+    L = [f"# تقرير بروتوكول ذكاء المهارات — KOSIF {b.get('protocol', PROTOCOL_VERSION)}", "", f"**المستوى {an['level']}** · **الطلب:** {an['request']}", "",
          "## بطاقة الطلب (مسودة آلية يكملها Claude)", "",
-         f"- المخرج الأساسي: {an['primary']} ({', '.join(an['deliverables'])}) · الطموح: {an['ambition']}",
+         f"- المخرج الأساسي: {an['primary']} ({', '.join(an['deliverables'])}) · الطموح: {an['ambition']}"
+         + (f" · الأسلوب: {', '.join(an.get('style') or [])}" if an.get("style") else ""),
          f"- قيود: أرقام {an['constraints']['numbers'] or '—'} · مقاسات {an['constraints']['aspects'] or '—'} · ملفات موجودة {an['files_found'] or '—'}"
          + (" · **صوت المستخدم لا يُستبدل**" if an["constraints"]["own_assets"]["voice"] else "")
          + (" · **لقطات المستخدم لا تُستبدل**" if an["constraints"]["own_assets"]["footage"] else ""),
-         "- أسئلة/افتراضات: " + (" · ".join(an["open_questions"]) or "—"), ""]
+         "- أسئلة تغيّر النتيجة (مع الإجابة المقترحة؛ «موافق» تقبلها كلها): "
+         + (" · ".join(f"{q_['question']} ← {q_['suggested_default']}" for q_ in an.get("questions") or []) or " · ".join(an["open_questions"]) or "—"), ""]
     if b["must_have_coverage"]:
         L += ["**جدول التغطية الإلزامي:**", "", "| المتطلب | القدرات الخارقة | قدرات ذرية | الحالة |", "|---|---|---|---|"]
         for m in b["must_have_coverage"]:
@@ -817,7 +1397,7 @@ def render(b: dict) -> str:
           "| البند | الخطة A | الخطة B | الخطة C |", "|---|---|---|---|"]
     row = lambda label, f: L.append(f"| {label} | " + " | ".join(f(pl[k]) for k in "ABC") + " |")
     row("المنهج", lambda p: p["idea"])
-    row("تغطي كل الإلزامي؟", lambda p: "نعم" if p["meets_must_haves"] else "لا: " + ", ".join(p["uncovered"])[:60])
+    row("تغطي كل الإلزامي؟", lambda p: "غير متاحة" if p.get("unavailable") else ("نعم" if p["meets_must_haves"] else "لا: " + ", ".join(p["uncovered"])[:60]))
     row("مجموعات · قدرات خارقة · قدرات مستخدمة · أدوات (جاهزة)", lambda p: f"{p['counts']['groups']} · {p['counts']['superpowers']} · {p['counts']['atoms_used']} · {p['counts']['tools']} ({p['counts']['tools_ready']})")
     row("شارات القدرات المستخدمة هنا", lambda p: " ".join(f"{k}{v}" for k, v in sorted(p["counts"]["atoms_used_local_badges"].items(), key=lambda kv: LOCAL_RANK.index(kv[0]))))
     row("متطلبات ناقصة", lambda p: str(len(p["missing"])))
@@ -826,7 +1406,9 @@ def render(b: dict) -> str:
         row("مسار الخطوط", lambda p: " · ".join(p.get("asset_routes", {}).values())[:170] or "—")
     L += ["", "**المراحل:**"]
     for k in "ABC":
-        L.append(f"- **{k}:** " + " ← ".join(f"{s}: " + ", ".join(v) for s, v in pl[k]["stages"].items()))
+        L.append(f"- **{k}:** " + (pl[k]["unavailable"] if pl[k].get("unavailable") else
+                                   " ← ".join(f"{s}: " + ", ".join(v) for s, v in pl[k]["stages"].items())
+                                   + (f" (مستوى عمق لـ {pl[k]['depth_of']})" if pl[k].get("depth_of") else "")))
     L += ["", "## قائمة الترشيح (أعلى 12)", "", "| SP | القدرة الخارقة (تحتوي) | المجموعة | المرحلة | الدرجة | هنا | الدور |", "|---|---|---|---|---|---|---|"]
     for x in b["shortlist"][:12]:
         L.append(f"| {x['id']} | {x['name_ar']} ({'; '.join(x['contains'][:2])[:70]}) | {x['group']} | {x['stage']} | {x['score']} | {x['local_badge']} | {x['role']} |")
@@ -910,6 +1492,7 @@ def main(argv=None):
         return 0
     br = build_brief(a.task, a.details, a.terms)
     if a.out:
+        a.out.parent.mkdir(parents=True, exist_ok=True)   # the work dir may not exist yet
         a.out.write_text(json.dumps(br, ensure_ascii=False, indent=1) + "\n", encoding="utf-8")
         print(summary(br, a.out))
     elif a.json:
