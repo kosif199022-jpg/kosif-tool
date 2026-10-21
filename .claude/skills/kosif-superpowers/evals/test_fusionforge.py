@@ -19,9 +19,10 @@ class FusionForgeTest(unittest.TestCase):
         self.catalog.write_text(json.dumps({
             "superpowers":3,"atoms":30,
             "items":[
-                {"id":"SP-0001","name_en":"video montage typography","name_ar":"مونتاج فيديو","domain":"motion","size":8,"ready_now":3,"status_mix":{"ready":3}},
+                {"id":"SP-0001","name_en":"video montage typography","name_ar":"مونتاج فيديو","domain":"motion","size":8,"ready_now":3,"status_mix":{"ready":3},"links":[{"id":"SP-0004","sim":0.55}]},
                 {"id":"SP-0002","name_en":"video audio alignment","name_ar":"صوت فيديو","domain":"media","size":7,"ready_now":3},
-                {"id":"SP-0003","name_en":"video validation quality","name_ar":"فحص فيديو","domain":"data","size":6,"ready_now":2}
+                {"id":"SP-0003","name_en":"video validation quality","name_ar":"فحص فيديو","domain":"data","size":6,"ready_now":2},
+                {"id":"SP-0004","name_en":"financial reconciliation invariant","name_ar":"تسوية مالية مستقلة","domain":"data","size":3,"ready_now":2}
             ]},ensure_ascii=False),encoding="utf-8")
         self.prefix=[sys.executable,str(SCRIPT),"--root",str(self.root/"out"),
                      "--catalog-file",str(self.catalog)]
@@ -40,6 +41,8 @@ class FusionForgeTest(unittest.TestCase):
         self.assertEqual(d["status"],"candidate")
         self.assertGreaterEqual(len(d["capabilities"]),1)
         self.assertEqual(len(d["workflow"]),8)
+        self.assertIn("SP-0004", {c["id"] for c in d["capabilities"]}, "cross-domain linked capability should be considered")
+        self.assertTrue(any(edge["to"]=="SP-0004" for edge in d["integration_graph"]))
         self.assertEqual(len(d["methods"]),3)
         index=self.run_cli("catalog","--project","alpha")
         self.assertEqual(index["total"],1)
