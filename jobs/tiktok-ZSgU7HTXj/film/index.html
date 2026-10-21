@@ -1,0 +1,442 @@
+<!doctype html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=1080">
+<title>خلّي ولي مدير ٢ — كرتون</title>
+<style>
+  @font-face { font-family: Lalezar; src: url(../fonts/Lalezar-Regular.ttf); font-display: block; }
+  @font-face { font-family: Marhey; src: url(../fonts/Marhey-VF.ttf); font-weight: 300 700; font-display: block; }
+  @font-face { font-family: Kufi; src: url(../../thursday-22oct/fonts/ReemKufi-VF.ttf); font-weight: 400 700; font-display: block; }
+  html, body { margin: 0; background: #e9dcc6; }
+  canvas { display: block; width: 1080px; height: 1920px; }
+</style>
+<script src="data.js"></script>
+</head>
+<body>
+<canvas id="c" width="1080" height="1920"></canvas>
+<script>
+(() => {
+  const W = 1080, H = 1920, FPS = 30, DURATION = DATA.duration;
+  const cv = document.getElementById('c'), ctx = cv.getContext('2d');
+  const INK = '#2b1b14';
+
+  // ---------------------------------------------------------------- helpers
+  const clamp = (x, a = 0, b = 1) => Math.min(b, Math.max(a, x));
+  const lin = (t, a, b) => clamp((t - a) / (b - a));
+  const easeOut = x => 1 - Math.pow(1 - x, 3);
+  const easeInOut = x => x < .5 ? 4 * x * x * x : 1 - Math.pow(-2 * x + 2, 3) / 2;
+  const easeBack = x => { const c = 1.9; return 1 + (c + 1) * Math.pow(x - 1, 3) + c * Math.pow(x - 1, 2); };
+  const mix = (a, b, k) => a + (b - a) * k;
+  const noise = (t, s) => Math.sin(t * 1.7 + s) * .5 + Math.sin(t * 3.1 + s * 2.3) * .3 + Math.sin(t * 5.3 + s * .7) * .2;
+  const rmsAt = t => { const k = t * FPS, i = Math.floor(k), f = k - i, r = DATA.rms;
+    return mix(r[clamp(i, 0, r.length - 1)] || 0, r[clamp(i + 1, 0, r.length - 1)] || 0, f); };
+  // beat pulse: 1 on the beat, decays over ~0.25 s
+  function beat(t) {
+    const b = DATA.beats; let lo = 0, hi = b.length - 1;
+    while (lo < hi) { const m = (lo + hi + 1) >> 1; if (b[m] <= t) lo = m; else hi = m - 1; }
+    const d = t - b[lo]; return { k: lo, p: d >= 0 ? Math.exp(-d * 9) : 0 };
+  }
+  const speakerAt = t => (DATA.phrases.find(p => t >= p.s - .05 && t < p.e + .15) || {}).who || null;
+
+  function shape(fill, stroke = INK, lw = 6) {
+    if (fill) { ctx.fillStyle = fill; ctx.fill(); }
+    if (stroke) { ctx.lineWidth = lw; ctx.strokeStyle = stroke; ctx.lineJoin = 'round'; ctx.lineCap = 'round'; ctx.stroke(); }
+  }
+  function ellipse(x, y, rx, ry, rot = 0) { ctx.beginPath(); ctx.ellipse(x, y, rx, ry, rot, 0, Math.PI * 2); }
+
+  // ---------------------------------------------------------------- mouth (shared lip-sync)
+  // open 0..1 from the loudness envelope, width wobble keeps vowels varied
+  function mouth(x, y, w, open, t, seed, lip) {
+    const o = clamp(open), ww = w * (0.8 + .25 * noise(t * 2.2, seed)) * (1 - .15 * o);
+    if (o < .08) {
+      ctx.beginPath(); ctx.moveTo(x - ww / 2, y); ctx.quadraticCurveTo(x, y + 6, x + ww / 2, y);
+      shape(null, INK, 6); return;
+    }
+    const h = 8 + 58 * o;
+    ctx.beginPath();
+    ctx.moveTo(x - ww / 2, y);
+    ctx.bezierCurveTo(x - ww / 2, y - h * .45, x + ww / 2, y - h * .45, x + ww / 2, y);
+    ctx.bezierCurveTo(x + ww / 2, y + h, x - ww / 2, y + h, x - ww / 2, y);
+    shape('#5a1616', INK, 6);
+    ctx.save(); ctx.clip();
+    ctx.fillStyle = '#fff'; ctx.fillRect(x - ww / 2, y - h * .45, ww, h * .3);          // teeth
+    ellipse(x, y + h * .85, ww * .32, h * .35); ctx.fillStyle = '#d4566a'; ctx.fill();  // tongue
+    ctx.restore();
+    if (lip) { ctx.beginPath(); ctx.moveTo(x - ww / 2, y); ctx.bezierCurveTo(x - ww / 2, y - h * .45, x + ww / 2, y - h * .45, x + ww / 2, y); shape(null, lip, 5); }
+  }
+
+  // ---------------------------------------------------------------- the manager (aviators, tie)
+  // pose: {turn -1..1 (towards singer), brow -1 frown..1 raised, talk 0..1, chin 0..1 (hand on chin), steam 0..1, sweat 0..1}
+  function manager(t, pose) {
+    const SK = '#c98c62', SK2 = '#a86d47', SH = '#9cc1e8', SH2 = '#7aa1cc', TIE = '#1f2a44';
+    // body
+    ctx.save();
+    ctx.beginPath(); ctx.moveTo(-260, 520); ctx.bezierCurveTo(-250, 250, -170, 190, 0, 185);
+    ctx.bezierCurveTo(170, 190, 250, 250, 260, 520); ctx.closePath(); shape(SH);
+    ctx.beginPath(); ctx.moveTo(-90, 230); ctx.quadraticCurveTo(-150, 330, -140, 520); shape(null, SH2, 5);
+    ctx.beginPath(); ctx.moveTo(90, 230); ctx.quadraticCurveTo(150, 330, 140, 520); shape(null, SH2, 5);
+    // collar + tie
+    ctx.beginPath(); ctx.moveTo(-70, 165); ctx.lineTo(0, 235); ctx.lineTo(-55, 255); ctx.lineTo(-95, 190); ctx.closePath(); shape('#b9d5f2');
+    ctx.beginPath(); ctx.moveTo(70, 165); ctx.lineTo(0, 235); ctx.lineTo(55, 255); ctx.lineTo(95, 190); ctx.closePath(); shape('#b9d5f2');
+    ctx.beginPath(); ctx.moveTo(-22, 228); ctx.lineTo(22, 228); ctx.lineTo(16, 262); ctx.lineTo(-16, 262); ctx.closePath(); shape(TIE);
+    ctx.beginPath(); ctx.moveTo(-16, 262); ctx.lineTo(16, 262); ctx.lineTo(36, 470); ctx.lineTo(0, 520); ctx.lineTo(-36, 470); ctx.closePath(); shape(TIE);
+    ctx.save(); ctx.clip(); ctx.strokeStyle = 'rgba(255,255,255,.18)'; ctx.lineWidth = 6;
+    for (let k = 0; k < 9; k++) { ctx.beginPath(); ctx.moveTo(-60, 250 + k * 34); ctx.lineTo(60, 210 + k * 34); ctx.stroke(); }
+    ctx.restore();
+    ctx.restore();
+    // neck
+    ctx.beginPath(); ctx.moveTo(-48, 110); ctx.lineTo(-52, 200); ctx.quadraticCurveTo(0, 225, 52, 200); ctx.lineTo(48, 110); ctx.closePath(); shape(SK);
+    // head (turns a little towards the singer)
+    const turn = pose.turn || 0;
+    ctx.save(); ctx.translate(turn * 14, 0); ctx.rotate(turn * .06);
+    ellipse(-96, 0, 18, 30); shape(SK); ellipse(96, 0, 18, 30); shape(SK);
+    ctx.beginPath(); ctx.moveTo(-92, -40); ctx.bezierCurveTo(-100, -150, 100, -150, 92, -40);
+    ctx.bezierCurveTo(98, 60, 70, 130, 0, 138); ctx.bezierCurveTo(-70, 130, -98, 60, -92, -40); ctx.closePath(); shape(SK);
+    // short hair cap + stubble
+    ctx.save(); ctx.clip();
+    ctx.fillStyle = 'rgba(40,28,22,.55)'; ctx.beginPath(); ctx.ellipse(0, -112, 110, 52, 0, 0, Math.PI * 2); ctx.fill();
+    ctx.fillStyle = 'rgba(70,45,35,.18)'; ctx.beginPath(); ctx.ellipse(0, 100, 85, 45, 0, 0, Math.PI * 2); ctx.fill();
+    ctx.fillStyle = 'rgba(0,0,0,.08)'; ctx.fillRect(40 + turn * 20, -150, 80, 300);
+    ctx.restore();
+    // brows above the aviators
+    const brow = pose.brow || 0;
+    [[-1], [1]].forEach(([s]) => {
+      ctx.save(); ctx.translate(s * 46 + turn * 10, -58 - brow * 12); ctx.rotate(s * (-brow * .22 + (brow < 0 ? .1 : 0)) * -1);
+      ctx.beginPath(); ctx.moveTo(-34, 4); ctx.quadraticCurveTo(0, -10, 34, 2); shape(null, '#2a1a12', 12); ctx.restore();
+    });
+    // aviators
+    const gx = turn * 12;
+    [[-1], [1]].forEach(([s]) => {
+      const cx = s * 46 + gx;
+      ctx.beginPath(); ctx.moveTo(cx - 40, -36); ctx.quadraticCurveTo(cx, -46, cx + 40, -36);
+      ctx.quadraticCurveTo(cx + 44, 10, cx + 8, 18); ctx.quadraticCurveTo(cx - 34, 20, cx - 40, -36); ctx.closePath();
+      const g = ctx.createLinearGradient(cx, -40, cx, 20); g.addColorStop(0, '#1d2f45'); g.addColorStop(.6, '#3b4f7a'); g.addColorStop(1, '#7a5a8c');
+      shape(g, '#c9a24a', 5);
+      ctx.save(); ctx.clip();          // gleam sweeps across now and then
+      const gp = ((t * .45 + (s > 0 ? .08 : 0)) % 1.6) - .3;
+      ctx.fillStyle = 'rgba(255,255,255,.55)'; ctx.beginPath();
+      ctx.moveTo(cx - 60 + gp * 140, -50); ctx.lineTo(cx - 40 + gp * 140, -50); ctx.lineTo(cx - 80 + gp * 140, 30); ctx.lineTo(cx - 100 + gp * 140, 30); ctx.fill();
+      ctx.restore();
+    });
+    ctx.beginPath(); ctx.moveTo(-8 + gx, -36); ctx.quadraticCurveTo(gx, -42, 8 + gx, -36); shape(null, '#c9a24a', 5);
+    // nose + mouth
+    ctx.beginPath(); ctx.moveTo(4 + turn * 14, 4); ctx.quadraticCurveTo(18 + turn * 14, 44, -2 + turn * 14, 52); shape(null, SK2, 6);
+    const open = (pose.talk || 0);
+    if (open > .02) mouth(turn * 12, 84, 70, open, t, 3, null);
+    else { ctx.beginPath(); ctx.moveTo(-30 + turn * 12, 86 + (brow < 0 ? -2 : 0)); ctx.quadraticCurveTo(turn * 12, 80 + (brow < 0 ? 8 : 0), 30 + turn * 12, 86); shape(null, '#5b2e22', 7); }
+    // sweat drop
+    if (pose.sweat > 0) {
+      ctx.save(); ctx.globalAlpha = pose.sweat; ctx.translate(96, -70 + 40 * ((t * .8) % 1));
+      ctx.beginPath(); ctx.moveTo(0, -22); ctx.quadraticCurveTo(16, 4, 0, 12); ctx.quadraticCurveTo(-16, 4, 0, -22); shape('#9fd8ff', '#2b6ea3', 4); ctx.restore();
+    }
+    ctx.restore();
+    // steam from the ears
+    if (pose.steam > 0) [-1, 1].forEach(s => {
+      for (let k = 0; k < 3; k++) {
+        const q = ((t * 1.6 + k / 3) % 1);
+        ctx.save(); ctx.globalAlpha = pose.steam * (1 - q) * .9;
+        ellipse(s * (120 + q * 70), -10 - q * 120, 18 + q * 26, 14 + q * 20); shape('#ffffff', 'rgba(43,27,20,.35)', 3); ctx.restore();
+      }
+    });
+    // hand on chin: elbow resting low, forearm up to the jaw
+    if (pose.chin > 0) {
+      const k = easeOut(pose.chin), hx = mix(200, 52, k), hy = mix(600, 150, k);
+      ctx.beginPath(); ctx.moveTo(150, 520); ctx.lineTo(hx + 10, hy + 40); shape(null, INK, 82);
+      ctx.beginPath(); ctx.moveTo(150, 520); ctx.lineTo(hx + 10, hy + 40); shape(null, SH, 70);
+      ctx.beginPath(); ctx.moveTo(hx + 28, hy + 64); ctx.lineTo(hx - 12, hy + 46); shape(null, '#e8f1fb', 22);   // cuff
+      ellipse(hx, hy, 42, 38, -.5); shape(SK);
+      ctx.beginPath(); ctx.moveTo(hx - 26, hy - 18); ctx.quadraticCurveTo(hx - 34, hy - 50, hx - 10, hy - 56); shape(null, INK, 6);
+    }
+    // talking hand (intro): index finger up, wagging with the words
+    if (pose.hand > 0) {
+      const k = easeBack(clamp(pose.hand)), w = Math.sin(t * 9) * .18 * (pose.talk || 0);
+      const hx = mix(260, 175, k), hy = mix(700, 260, k);
+      ctx.beginPath(); ctx.moveTo(240, 560); ctx.lineTo(hx, hy + 40); shape(null, INK, 82);
+      ctx.beginPath(); ctx.moveTo(240, 560); ctx.lineTo(hx, hy + 40); shape(null, SH, 70);
+      ctx.save(); ctx.translate(hx, hy); ctx.rotate(-.25 + w);
+      ellipse(0, 0, 44, 40); shape(SK);
+      ctx.beginPath(); ctx.moveTo(-6, -26); ctx.lineTo(-10, -100); shape(null, INK, 28); ctx.beginPath(); ctx.moveTo(-6, -26); ctx.lineTo(-10, -100); shape(null, SK, 17);
+      ctx.restore();
+    }
+  }
+
+  // ---------------------------------------------------------------- the singer (cap, beard, pink tee)
+  // pose: {talk, brow, look -1..1 (eyes to manager), lean, gesture: {kind, k}}
+  function singer(t, pose) {
+    const SK = '#c58a61', SK2 = '#a36a44', TEE = '#e0367f', TEE2 = '#b8205f', BEARD = '#1f1512';
+    // body
+    ctx.beginPath(); ctx.moveTo(-330, 700); ctx.bezierCurveTo(-320, 330, -200, 240, 0, 232);
+    ctx.bezierCurveTo(200, 240, 320, 330, 330, 700); ctx.closePath(); shape(TEE);
+    ctx.beginPath(); ctx.moveTo(-70, 228); ctx.quadraticCurveTo(0, 290, 70, 228); shape(TEE2, INK, 6);
+    ctx.save(); ctx.translate(0, 430); ctx.rotate(-.06);
+    ctx.font = '86px Lalezar'; ctx.textAlign = 'center'; ctx.fillStyle = '#fff'; ctx.direction = 'rtl';
+    ctx.fillText('كلامي مضبوط', 0, 0);
+    ctx.font = '40px Marhey'; ctx.fillText('— ولي مدير —', 0, 64); ctx.restore();
+    // neck
+    ctx.beginPath(); ctx.moveTo(-58, 120); ctx.lineTo(-62, 245); ctx.quadraticCurveTo(0, 268, 62, 245); ctx.lineTo(58, 120); ctx.closePath(); shape(SK);
+    ctx.save(); ctx.rotate(pose.lean || 0);
+    // ears + head
+    ellipse(-104, 10, 20, 32); shape(SK); ellipse(104, 10, 20, 32); shape(SK);
+    ctx.beginPath(); ctx.moveTo(-100, -40); ctx.bezierCurveTo(-108, -160, 108, -160, 100, -40);
+    ctx.bezierCurveTo(106, 70, 76, 150, 0, 158); ctx.bezierCurveTo(-76, 150, -106, 70, -100, -40); ctx.closePath(); shape(SK);
+    // beard
+    ctx.beginPath(); ctx.moveTo(-104, 10); ctx.bezierCurveTo(-104, 120, -70, 205, 0, 214); ctx.bezierCurveTo(70, 205, 104, 120, 104, 10);
+    ctx.bezierCurveTo(90, 60, 60, 70, 40, 60); ctx.quadraticCurveTo(0, 50, -40, 60); ctx.bezierCurveTo(-60, 70, -90, 60, -104, 10); ctx.closePath();
+    shape(BEARD, INK, 5);
+    // eyes
+    const look = pose.look || 0, brow = pose.brow || 0, wide = 1 + .25 * Math.max(0, brow);
+    [[-1], [1]].forEach(([s]) => {
+      const ex = s * 44, ey = -18;
+      ellipse(ex, ey, 26, 22 * wide); shape('#fff', INK, 5);
+      ellipse(ex + look * 10, ey + 2, 12, 13); ctx.fillStyle = '#4a2c1a'; ctx.fill();
+      ellipse(ex + look * 10, ey + 2, 6, 7); ctx.fillStyle = '#000'; ctx.fill();
+      ellipse(ex + look * 10 + 4, ey - 3, 3, 3); ctx.fillStyle = '#fff'; ctx.fill();
+      // blink
+      if ((t % 4.3) < .1) { ellipse(ex, ey, 27, 23 * wide); ctx.fillStyle = SK; ctx.fill(); ctx.beginPath(); ctx.moveTo(ex - 24, ey); ctx.lineTo(ex + 24, ey); shape(null, INK, 5); }
+      ctx.save(); ctx.translate(ex, ey - 40 - brow * 14); ctx.rotate(s * brow * -.18 + (brow < 0 ? s * .2 : 0));
+      ctx.beginPath(); ctx.moveTo(-32, 6); ctx.quadraticCurveTo(0, -12, 32, 4); shape(null, BEARD, 15); ctx.restore();
+    });
+    // nose
+    ctx.beginPath(); ctx.moveTo(6, -4); ctx.quadraticCurveTo(26, 44, -6, 52); ctx.quadraticCurveTo(-18, 48, -14, 40); shape(null, SK2, 6);
+    // moustache + mouth
+    mouth(0, 92, 82, pose.talk || 0, t, 9, null);
+    ctx.beginPath(); ctx.moveTo(-58, 80); ctx.quadraticCurveTo(0, 50, 58, 80); ctx.quadraticCurveTo(0, 68, -58, 80); shape(BEARD, INK, 4);
+    // cap: crown, front panel, brim
+    ctx.beginPath(); ctx.moveTo(-118, -70); ctx.bezierCurveTo(-120, -210, 120, -210, 118, -70); ctx.closePath(); shape('#4b545e');
+    ctx.beginPath(); ctx.moveTo(-70, -78); ctx.bezierCurveTo(-60, -186, 60, -186, 70, -78); ctx.closePath(); shape('#c9d1d6', INK, 4);
+    ctx.beginPath(); ctx.moveTo(-24, -150); ctx.lineTo(0, -120); ctx.lineTo(24, -150); shape(null, '#3b434c', 6);
+    ctx.beginPath(); ctx.moveTo(-130, -72); ctx.bezierCurveTo(-90, -40, 120, -44, 168, -70); ctx.bezierCurveTo(140, -98, -100, -100, -130, -72); ctx.closePath(); shape('#3d454e');
+    ellipse(0, -196, 12, 6); shape('#3d454e', INK, 4);
+    ctx.restore();
+  }
+
+  // ---------------------------------------------------------------- the singer's arm (in front of everything)
+  // gesture kinds: point (at the manager), wag (finger no-no), temple, bottle, open (palm up)
+  function arm(t, g) {
+    if (!g || g.k <= 0) return;
+    const k = easeBack(clamp(g.k)), SK = '#c58a61', S = 1.42;
+    // screen-space targets: shoulder low-left in front of the body, hand per gesture
+    const sh = [390, 1640];
+    const T = { point: [400, 1130, -2.25], wag: [470, 1210, -1.57 + .35 * Math.sin(t * 14)], temple: [560, 1000, -2.6],
+                bottle: [440, 1200, -1.35 + .08 * Math.sin(t * 3)], open: [430, 1330, -1.9 + .15 * Math.sin(t * 6)] }[g.kind];
+    const hx = mix(sh[0] - 60, T[0], k), hy = mix(1980, T[1], k);
+    const ex = (sh[0] + hx) / 2 - 120, ey = (sh[1] + hy) / 2 + 60;          // elbow bends outwards
+    const limb = (x0, y0, x1, y1, c, w) => { ctx.beginPath(); ctx.moveTo(x0, y0); ctx.lineTo(x1, y1); shape(null, INK, w + 12); ctx.beginPath(); ctx.moveTo(x0, y0); ctx.lineTo(x1, y1); shape(null, c, w); };
+    ctx.save();
+    limb(sh[0], sh[1], ex, ey, '#e0367f', 96);
+    limb(ex, ey, hx, hy, SK, 70);
+    ctx.beginPath(); ctx.arc(ex, ey, 44, 0, 7); ctx.fillStyle = SK; ctx.fill();
+    ctx.beginPath(); ctx.moveTo(sh[0] - 20, sh[1] + 30); ctx.lineTo((sh[0] + ex) / 2, (sh[1] + ey) / 2); shape(null, '#e0367f', 96);
+    ctx.translate(hx, hy); ctx.rotate(T[2]); ctx.scale(S * .8, S * .8);
+    ellipse(0, 0, 52, 44); shape(SK);
+    if (g.kind === 'bottle') {
+      ctx.save(); ctx.rotate(1.35);
+      ctx.beginPath(); ctx.rect(-34, -170, 68, 190); shape('rgba(190,230,255,.8)', INK, 5);
+      ctx.beginPath(); ctx.rect(-18, -200, 36, 30); shape('#2f7fd1', INK, 5);
+      ctx.fillStyle = '#2f7fd1'; ctx.fillRect(-34, -110, 68, 40); ctx.restore();
+      ellipse(0, 0, 52, 44); shape(SK);
+    } else if (g.kind === 'open') {
+      [-30, -10, 10, 30].forEach(a => { ctx.beginPath(); ctx.moveTo(a * .9, -30); ctx.lineTo(a * 1.4, -86); shape(null, INK, 26); ctx.beginPath(); ctx.moveTo(a * .9, -30); ctx.lineTo(a * 1.4, -86); shape(null, SK, 15); });
+    } else {
+      ctx.beginPath(); ctx.moveTo(0, -30); ctx.lineTo(0, -120); shape(null, INK, 30);
+      ctx.beginPath(); ctx.moveTo(0, -30); ctx.lineTo(0, -120); shape(null, SK, 19);
+      ctx.beginPath(); ctx.moveTo(-30, -20); ctx.quadraticCurveTo(-46, 0, -30, 18); shape(null, INK, 5);   // thumb
+    }
+    ctx.restore();
+  }
+
+  // ---------------------------------------------------------------- car interior + street outside
+  function car(t, cam) {
+    // street through the rear window, scrolling left
+    ctx.save();
+    ctx.beginPath(); ctx.moveTo(-60, 470); ctx.lineTo(1140, 450); ctx.lineTo(1140, 1060); ctx.lineTo(-60, 1080); ctx.closePath(); ctx.clip();
+    const sky = ctx.createLinearGradient(0, 450, 0, 1000); sky.addColorStop(0, '#9fd3f0'); sky.addColorStop(1, '#f6e7c6');
+    ctx.fillStyle = sky; ctx.fillRect(-60, 440, 1200, 660);
+    const far = (t * 60) % 300, near = (t * 260) % 520;
+    ctx.fillStyle = '#c7cfd6';
+    for (let k = -1; k < 6; k++) { const x = k * 300 - far; ctx.fillRect(x, 640 - (k * 37 % 90), 190, 400); }
+    ctx.fillStyle = '#e8c58f';
+    for (let k = -1; k < 4; k++) { const x = k * 520 - near; ctx.fillRect(x, 760, 300, 320); ctx.fillStyle = '#d7ad6f'; ctx.fillRect(x + 30, 800, 60, 60); ctx.fillRect(x + 150, 800, 60, 60); ctx.fillStyle = '#e8c58f'; }
+    for (let k = -1; k < 4; k++) {   // palms
+      const x = k * 520 + 400 - near;
+      ctx.beginPath(); ctx.moveTo(x, 1080); ctx.quadraticCurveTo(x + 20, 860, x + 6, 720); shape(null, '#7a5531', 16);
+      for (let f = 0; f < 6; f++) { ctx.beginPath(); ctx.moveTo(x + 6, 720); const a = f / 5 * Math.PI + Math.PI;
+        ctx.quadraticCurveTo(x + 6 + Math.cos(a) * 60, 690 + Math.sin(a) * 30, x + 6 + Math.cos(a) * 120, 730 + Math.abs(Math.cos(a)) * 30); shape(null, '#3f8a43', 14); }
+    }
+    ctx.restore();
+    // window frame + ceiling
+    const ce = ctx.createLinearGradient(0, 0, 0, 520); ce.addColorStop(0, '#d9cbb3'); ce.addColorStop(1, '#efe4d0');
+    ctx.beginPath(); ctx.moveTo(-60, -60); ctx.lineTo(1140, -60); ctx.lineTo(1140, 450); ctx.quadraticCurveTo(540, 520, -60, 470); ctx.closePath(); shape(ce, INK, 6);
+    ellipse(540, 150, 170, 46); shape('#cbbb9f', '#9b8a6f', 4);
+    ellipse(540, 150, 90, 22); shape(`rgba(255,248,220,${.6 + .4 * (DATA.rms[Math.floor(t * FPS)] || 0)})`, '#9b8a6f', 3);
+    // seats
+    ctx.beginPath(); ctx.moveTo(-60, 1100); ctx.quadraticCurveTo(-40, 820, 120, 780); ctx.lineTo(560, 760); ctx.quadraticCurveTo(700, 800, 720, 1100); ctx.closePath(); shape('#d8c5a4');
+    ctx.beginPath(); ctx.moveTo(40, 860); ctx.quadraticCurveTo(300, 820, 600, 850); shape(null, '#bfa985', 6);
+  }
+
+  // ---------------------------------------------------------------- comic layer
+  const BUBBLE = { x: 540, y: 300, w: 940, h: 300 };
+  function layoutWords(ph, font, maxw) {
+    ctx.font = font; const sp = ctx.measureText(' ').width * 1.15; const lines = [[]];
+    ph.words.forEach(w => { const ww = ctx.measureText(w.w).width; let ln = lines[lines.length - 1];
+      const cur = ln.reduce((s, x) => s + x.ww + sp, 0); if (ln.length && cur + ww > maxw) { lines.push([]); ln = lines[lines.length - 1]; }
+      ln.push({ ...w, ww }); });
+    const out = []; lines.forEach((ln, li) => { const lw = ln.reduce((s, x) => s + x.ww, 0) + sp * (ln.length - 1); let x = lw / 2;
+      ln.forEach(w => { out.push({ ...w, cx: x - w.ww / 2, line: li }); x -= w.ww + sp; }); });
+    return { words: out, n: lines.length };
+  }
+  function bubble(t, ph, next, tail) {
+    const inn = easeBack(lin(t, ph.s - .18, ph.s + .12)), out = next ? easeInOut(lin(t, next.s - .14, next.s + .02)) : lin(t, ph.e + .5, ph.e + .8);
+    const sc = inn * (1 - out); if (sc <= .01) return;
+    const big = ph.words.length <= 3, font = big ? '112px Lalezar' : '92px Lalezar';
+    const L = layoutWords(ph, font, BUBBLE.w - 120), lh = big ? 120 : 104;
+    const bh = Math.max(220, L.n * lh + 90);
+    ctx.save(); ctx.translate(BUBBLE.x, BUBBLE.y); ctx.scale(sc, sc); ctx.rotate(ph.tilt || 0);
+    // bubble with a tail towards the speaker
+    ctx.beginPath(); const w = BUBBLE.w, r = 70;
+    ctx.moveTo(-w / 2 + r, -bh / 2); ctx.arcTo(w / 2, -bh / 2, w / 2, bh / 2, r); ctx.arcTo(w / 2, bh / 2, -w / 2, bh / 2, r);
+    ctx.lineTo(tail[0] + 40, bh / 2); ctx.lineTo(tail[0], tail[1]); ctx.lineTo(tail[0] - 50, bh / 2);
+    ctx.arcTo(-w / 2, bh / 2, -w / 2, -bh / 2, r); ctx.arcTo(-w / 2, -bh / 2, w / 2, -bh / 2, r); ctx.closePath();
+    ctx.save(); ctx.translate(10, 12); ctx.fillStyle = 'rgba(43,27,20,.25)'; ctx.fill(); ctx.restore();
+    shape(ph.who === 'boss' ? '#fff8e6' : '#ffffff', INK, 8);
+    ctx.textAlign = 'center'; ctx.textBaseline = 'middle'; ctx.direction = 'rtl';
+    const y0 = -(L.n - 1) * lh / 2 + 6;
+    L.words.forEach(wd => {
+      const q = lin(t, wd.s - .12, wd.s + .1); if (q <= 0) return;
+      const active = t >= wd.s - .04 && t < wd.e;
+      ctx.save(); ctx.translate(wd.cx, y0 + wd.line * lh); const s2 = .4 + .6 * easeBack(q) + (active ? .08 : 0); ctx.scale(s2, s2);
+      ctx.font = font; ctx.lineWidth = 10; ctx.strokeStyle = INK; ctx.strokeText(wd.w, 0, 0);
+      ctx.fillStyle = active ? (ph.who === 'boss' ? '#3a7bd5' : '#e0367f') : '#ffffff'; ctx.fillText(wd.w, 0, 0);
+      ctx.restore();
+    });
+    ctx.restore();
+  }
+  function sticker(t, s) {
+    const q = lin(t, s.t, s.t + .25), out = lin(t, s.t + s.d - .2, s.t + s.d);
+    const sc = easeBack(q) * (1 - out); if (sc <= .01) return;
+    ctx.save(); ctx.translate(s.x, s.y + Math.sin(t * 4) * 8); ctx.rotate((s.r || 0) + Math.sin(t * 3) * .08); ctx.scale(sc, sc);
+    if (s.text) {
+      ctx.font = (s.size || 70) + 'px Lalezar'; ctx.textAlign = 'center'; ctx.textBaseline = 'middle'; ctx.direction = 'rtl';
+      const w = ctx.measureText(s.text).width + 60;
+      ctx.beginPath(); ctx.roundRect(-w / 2, -55, w, 110, 30); shape(s.bg || '#ffd23f', INK, 7);
+      ctx.fillStyle = s.fg || INK; ctx.fillText(s.text, 0, 4);
+    } else { ctx.font = (s.size || 120) + 'px "Noto Color Emoji"'; ctx.textAlign = 'center'; ctx.textBaseline = 'middle'; ctx.fillText(s.emoji, 0, 0); }
+    ctx.restore();
+  }
+  function speedLines(t, k, cx, cy) {
+    if (k <= 0) return;
+    ctx.save(); ctx.globalAlpha = k * .55; ctx.strokeStyle = INK; ctx.lineCap = 'round';
+    for (let i = 0; i < 26; i++) { const a = i / 26 * Math.PI * 2 + Math.floor(t * 12) * .37, r0 = 560 + (i * 53 % 160);
+      ctx.lineWidth = 4 + (i * 7 % 9); ctx.beginPath(); ctx.moveTo(cx + Math.cos(a) * r0, cy + Math.sin(a) * r0); ctx.lineTo(cx + Math.cos(a) * 1500, cy + Math.sin(a) * 1500); ctx.stroke(); }
+    ctx.restore();
+  }
+
+  // ---------------------------------------------------------------- direction (what each character does when)
+  const PH = DATA.phrases, INTRO_END = DATA.introEnd;
+  function cuesAt(t, list) { let best = null; list.forEach(c => { if (t >= c.s - .25 && t < c.e + .25) best = c; }); return best; }
+  function gestureAt(t) {
+    const c = cuesAt(t, DATA.gestures); if (!c) return null;
+    return { kind: c.kind, k: lin(t, c.s - .25, c.s + .05) * (1 - lin(t, c.e, c.e + .25)) };
+  }
+  function punchAt(t) { let k = 0; DATA.punches.forEach(p => { if (t >= p && t < p + .6) k = Math.max(k, Math.exp(-(t - p) * 6)); }); return k; }
+
+  function drawScene(t) {
+    const talking = speakerAt(t), env = rmsAt(t), bt = beat(t);
+    const bossTalk = talking === 'boss' ? clamp(env * 1.4) : 0, kidTalk = talking === 'kid' ? clamp(env * 1.5) : 0;
+    const whip = lin(t, INTRO_END - .25, INTRO_END + .25);               // whip pan from the intro close-up to the two-shot
+    const punch = punchAt(t);
+    const shake = 6 * (1 + punch * 3);
+    ctx.save();
+    ctx.translate(noise(t * 2, 1) * shake, noise(t * 2, 5) * shake);
+    ctx.translate(540, 960); ctx.scale(1 + .07 * punch, 1 + .07 * punch); ctx.translate(-540, -960);
+    if (t < INTRO_END) {
+      // ------------------------------- intro: the boss talks to camera
+      ctx.save(); ctx.translate(-whip * 1400, 0);
+      car(t, 0);
+      ctx.save(); ctx.translate(560, 980); ctx.scale(1.85, 1.85);
+      ctx.rotate(.03 * noise(t, 2) + .04 * bt.p * (bossTalk > .1 ? 1 : 0));
+      manager(t, { talk: bossTalk, brow: talking === 'boss' ? .3 + .4 * noise(t * 1.3, 4) : 0, turn: .1 * noise(t * .7, 8), sweat: 0,
+        hand: lin(t, 4.6, 5.0) * (1 - lin(t, 8.4, 8.8)) });
+      ctx.restore(); ctx.restore();
+    }
+    if (t >= INTRO_END - .25) {
+      // ------------------------------- two-shot: kid sings at the boss
+      ctx.save(); ctx.translate((1 - whip) * 1400, 0);
+      car(t, 1);
+      const m = DATA.boss;
+      const st = m.find(c => t >= c.s && t < c.e) || {};
+      const fade = (c, a = .3) => c ? lin(t, c.s, c.s + a) * (1 - lin(t, c.e - a, c.e)) : 0;
+      ctx.save(); ctx.translate(300, 820); ctx.scale(.92, .92);
+      ctx.rotate(.02 * noise(t * .8, 3));
+      manager(t, { talk: bossTalk, turn: .5 + .3 * Math.sin(t * .4), brow: st.brow != null ? st.brow * fade(st) - .2 : -.2,
+        chin: st.chin ? fade(st, .4) : 0, steam: st.steam ? fade(st) : 0, sweat: st.sweat ? fade(st) : 0 });
+      ctx.restore();
+      // the kid, bobbing on the beat
+      const bob = bt.p * (talking === 'kid' ? 1 : .4), side = bt.k % 2 ? 1 : -1;
+      ctx.save(); ctx.translate(700, 1080 + bob * 18); ctx.scale(1.42, 1.42);
+      singer(t, { talk: kidTalk, brow: .3 + .5 * noise(t * 1.1, 2) + (punch > .3 ? .5 : 0), look: -.7 + .3 * noise(t * .5, 7), lean: side * bob * .05 - .04 });
+      ctx.restore();
+      arm(t, gestureAt(t));
+      ctx.restore();
+    }
+    ctx.restore();
+    speedLines(t, punch, 540, 960);
+    // whip-pan streaks
+    if (whip > 0 && whip < 1) { ctx.save(); ctx.globalAlpha = Math.sin(Math.PI * whip) * .8; ctx.fillStyle = '#fff';
+      for (let k = 0; k < 40; k++) ctx.fillRect(((k * 137) % 1080) - 200, (k * 97) % 1920, 600, 6 + (k % 5) * 3); ctx.restore(); }
+  }
+
+  function notes(t) {
+    const b = DATA.beats;
+    for (let i = 0; i < b.length; i++) {
+      const age = t - b[i]; if (age < 0 || age > 1.6) continue;
+      if (speakerAt(b[i]) !== 'kid' || i % 2) continue;
+      const q = age / 1.6, side = (i >> 1) % 2 ? 1 : -1;
+      ctx.save(); ctx.globalAlpha = Math.sin(Math.PI * q);
+      ctx.translate(820 + side * 110 + Math.sin(age * 5) * 30, 1180 - q * 520); ctx.rotate(side * .2);
+      ctx.font = '96px Marhey'; ctx.textAlign = 'center'; ctx.lineWidth = 10; ctx.strokeStyle = INK;
+      const g = (i >> 2) % 2 ? '♫' : '♪'; ctx.strokeText(g, 0, 0); ctx.fillStyle = side > 0 ? '#ffd23f' : '#e0367f'; ctx.fillText(g, 0, 0);
+      ctx.restore();
+    }
+  }
+  function drawComics(t) {
+    if (t > DATA.introEnd) notes(t);
+    PH.forEach((ph, i) => { if (t >= ph.s - .3 && t < (PH[i + 1] ? PH[i + 1].s + .1 : ph.e + .9))
+      bubble(t, ph, PH[i + 1], ph.who === 'boss' ? (t < INTRO_END ? [-40, 300] : [-280, 330]) : [200, 360]); });
+    DATA.stickers.forEach(s => { if (t >= s.t && t < s.t + s.d) sticker(t, s); });
+  }
+
+  function drawFrameUI(t) {
+    // title card over the intro, credits at the end
+    const ti = easeBack(lin(t, .3, .7)) * (1 - lin(t, 3.4, 3.8));
+    if (ti > 0) { ctx.save(); ctx.translate(540, 1560); ctx.rotate(-.05); ctx.scale(ti, ti);
+      ctx.font = '150px Lalezar'; ctx.textAlign = 'center'; ctx.textBaseline = 'middle'; ctx.direction = 'rtl';
+      ctx.lineWidth = 22; ctx.strokeStyle = INK; ctx.strokeText('خلّي ولي مدير ٢', 0, 0); ctx.fillStyle = '#ffd23f'; ctx.fillText('خلّي ولي مدير ٢', 0, 0);
+      ctx.restore(); }
+    ctx.save(); ctx.globalAlpha = .9; ctx.font = '600 30px Kufi'; ctx.textAlign = 'left'; ctx.direction = 'ltr'; ctx.fillStyle = INK;
+    ctx.fillText('@kosif', 40, 1880); ctx.textAlign = 'right'; ctx.direction = 'rtl'; ctx.fillText('الصوت: @mo7moneam', 1040, 1880); ctx.restore();
+    const en = easeBack(lin(t, DURATION - 2.2, DURATION - 1.8));
+    if (en > 0) { ctx.save(); ctx.translate(540, 1580); ctx.rotate(.04); ctx.scale(en, en);
+      ctx.beginPath(); ctx.roundRect(-400, -110, 800, 220, 40); shape('#e0367f', INK, 10);
+      ctx.font = '120px Lalezar'; ctx.textAlign = 'center'; ctx.textBaseline = 'middle'; ctx.direction = 'rtl'; ctx.fillStyle = '#fff';
+      ctx.fillText('الجزء التاني 😂', 0, 8); ctx.restore(); }
+  }
+
+  async function seek(t) {
+    t = clamp(t, 0, DURATION);
+    ctx.setTransform(1, 0, 0, 1, 0, 0);
+    ctx.fillStyle = '#efe4d0'; ctx.fillRect(0, 0, W, H);
+    drawScene(t);
+    drawComics(t);
+    drawFrameUI(t);
+  }
+  window.__kosif = { duration: DURATION, fps: FPS, seek };
+  window.__kosifReady = Promise.all(['112px Lalezar', '40px Marhey', '600 30px Kufi', '120px "Noto Color Emoji"']
+    .map(f => document.fonts.load(f, 'خلّي ولي مدير 😂'))).then(() => document.fonts.ready).then(() => true);
+  const t0 = parseFloat(new URLSearchParams(location.search).get('t') || '0') || 0;
+  window.__kosifReady.then(() => seek(t0));
+})();
+</script>
+</body>
+</html>
