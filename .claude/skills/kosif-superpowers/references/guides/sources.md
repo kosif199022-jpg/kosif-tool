@@ -8,7 +8,7 @@ Commands below are typed from the skill folder (`.claude/skills/kosif-superpower
 
 <!-- hub:area:sources:start -->
 
-**الأدوات / tools (13)** — `python3 scripts/hub.py tool <id>` for every command, requirement and limit:
+**الأدوات / tools (14)** — `python3 scripts/hub.py tool <id>` for every command, requirement and limit:
 
 | tool | what it does | start with | evidence |
 |---|---|---|---|
@@ -18,6 +18,7 @@ Commands below are typed from the skill folder (`.claude/skills/kosif-superpower
 | `creative-external-search` | Keyword-searches an offline index of 1,000 public GitHub repositories (video editing and processing, motion graphics, image and photo tools, computer vision, creative coding) and 1,000 creative websites extracted from curated awesome lists (design tools, motion graphics, AI image tools, creative coding, video production), and prints ranked JSON matches labelled metadata-only. | `python3 scripts/creative_external_search.py search "kinetic typography" --kind repo --top 5` | tested-here |
 | `fetch-reference` | Discovers media URLs on a public web page (video and source tags, Open Graph and Twitter tags, JSON-LD, script text) or takes a direct file or an unencrypted HLS playlist. It downloads the media within a size cap into a git-ignored cache and measures it with ffmpeg (probe, contact sheet, scene cuts and dominant palette), plus a bilingual REPORT.md for STYLE.md. | `python3 scripts/fetch_reference.py https://example.com/page --list --json` | tested-here |
 | `fetch-video` | Wraps yt-dlp to download one or many video or audio links for editing, with a format fallback chain, optional browser impersonation, a user cookies file and a quality cap. It can add an edit-safe H.264/AAC .safe.mp4 copy and writes a manifest.json with the file, duration, dimensions, frame rate, codecs, title, uploader and any license the site exposes. | `python3 scripts/fetch_video.py --doctor` | tested-elsewhere |
+| `stock-fetch` | Downloads free stock clips by id or page URL without an API key: Pexels through its public download endpoint (a 302 to videos.pexels.com) and Mixkit through its free 720p file. It writes manifest.json with the page, file URL, licence name, link and terms, size, dimensions, frame rate and duration, can skip oversized files, and has a probe that reports which stock sources answer from the current machine. | `python3 scripts/stock_fetch.py probe` | tested-here |
 | `media-sources` | Lists and searches a fixed catalog of 100 stock, open-collection and texture websites and prints the legal prerequisites for a URL. It downloads a single asset through fetch_video.py only after explicit per-asset rights evidence is supplied, and records each download with its SHA-256 and rights in asset_rights.jsonl. | `python3 scripts/media_sources.py list` | tested-here |
 | `rea-creative-research-atlas` | Builds the creative discovery catalogs by querying GitHub through the gh CLI: topic searches for repos, outbound links extracted from curated awesome-list READMEs for sites, and the owner's repo inventory and git-tree metadata. Each run prints a JSON summary; only `report` works offline, counting the existing catalogs. | `python3 scripts/rea_creative_research_atlas.py report` | tested-elsewhere |
 | `rebalance-creative-repos` | Runs eight extra GitHub topic searches via gh and merges the results into the creative repo catalog. It drops rows that look like unverified-model marketing, then rewrites data/rea-creative-research/public_repos.json as 1,000 rows under fixed per-category quotas. | `python3 scripts/rebalance_creative_repos.py run` | tested-elsewhere |
@@ -35,8 +36,9 @@ Commands below are typed from the skill folder (`.claude/skills/kosif-superpower
 3. [تصميم الأنظمة واكتشاف مكتبات بايثون — Systems + Python](#تصميم-الأنظمة-واكتشاف-مكتبات-بايثون--systems--python)
 4. [Reference-media inspector / فحص فيديو المرجع](#reference-media-inspector--فحص-فيديو-المرجع)
 5. [Auto media acquisition & editing assets / التحميل لمهام المونتاج](#auto-media-acquisition--editing-assets--التحميل-لمهام-المونتاج)
-6. [REA Creative Research Atlas — 2,000 public sources (2026-10-19)](#rea-creative-research-atlas--2000-public-sources-2026-10-19)
-7. [Atlas external search (2026-10-20)](#atlas-external-search-2026-10-20)
+6. [Stock footage without an API key / لقطات مجانية بلا مفتاح](#stock-footage-without-an-api-key--لقطات-مجانية-بلا-مفتاح)
+7. [REA Creative Research Atlas — 2,000 public sources (2026-10-19)](#rea-creative-research-atlas--2000-public-sources-2026-10-19)
+8. [Atlas external search (2026-10-20)](#atlas-external-search-2026-10-20)
 
 ## Web apps and browser isolation research
 
@@ -90,6 +92,29 @@ This does NOT execute or validate any third-party skill.
 When the user asks to download or edit a video or obtain stock images/footage, consult [video download workflow](../video-download.md) and [100 media source websites](../stock-media-100.md). Use `scripts/media_sources.py` to discover sources, verify media-specific license/permission evidence, download via existing `scripts/fetch_video.py`, and record a SHA-256/rights manifest for the editing project. iPhone/a-Shell: `tools/a-shell/Cinema_C_V34_Studio_iPhone.sh`.
 
 Activate this capability on every applicable request; do not download content from arbitrary platforms without the user's ownership/license or relevant permission. Not every asset on an indexed site is copyright-free. Exclude NC/ND content from commercial edits and do not bypass DRM/access controls. If downloads are blocked, report the limitation and use authorized files supplied by the user.
+
+## Stock footage without an API key / لقطات مجانية بلا مفتاح
+
+Field notes from three delivered montage jobs (2026-10-21, cloud session). Run `python3 scripts/stock_fetch.py probe` first: it prints what answers from the machine you are on.
+
+| source | from a cloud session | how to use it |
+|---|---|---|
+| Pexels search pages | 403 to scripts | find ids with a web search restricted to `pexels.com` (result URLs end in `-<id>/`) |
+| Pexels download endpoint | **302 → videos.pexels.com** | `stock_fetch.py pexels <id|url> …` — no key; vertical 1080×1920 and 4K clips exist |
+| Pexels API | 401 without a key; **new keys paused** by Pexels on 2026-10-21 | do not ask the user for a key; never ask them to paste a key into chat (keys go in the environment's secrets) |
+| Mixkit | pages 200, `<id>-720.mp4` 200, 1080/2160 **403** | `stock_fetch.py mixkit <id> …`; 720p only, so do not crop 16:9 to full-screen 9:16 (2.7× upscale looks soft) |
+| Pixabay API | 400 without a key; pages 403 | needs the user's key in the environment |
+| Wikimedia API | **429** (shared-IP rate limit) | retry later, one request at a time |
+| Vecteezy | previews are watermarked; downloads need login | not usable unattended |
+| Coverr | reachable, few Islamic or Haram clips | check per topic |
+
+Rules that came out of those jobs:
+
+1. **Find, then fetch.** Search the web for ids (`pexels video kaaba night`, `pexels makkah clock tower`), download with `stock_fetch.py`, then make one contact sheet and look at it before choosing: titles mislead (a "mosque" clip was a church-like ceiling, a "praying with beads" clip used rudraksha beads).
+2. **Clarity beats full-bleed.** With 720p sources, show the clip in a framed panel (≤1.4× upscale) and keep text outside it; effects live only inside transition windows. A user rejected blur, wash and particles over the footage.
+3. **Religious context must be unmistakable.** Prefer shots where the mosque, the Kaaba or the Qur'an is obvious; replace anything a viewer could read as another faith.
+4. **Licence manifest.** Keep `stock/manifest.json` with the job and credit the sound owner on screen when the audio is someone else's (TikTok sound reuse is the user's call; note it in DECISIONS.md).
+5. **Real rain** comes from a rain-on-black clip (Pexels 36344044) blended with `screen` over the footage, not from drawn streaks.
 
 ## REA Creative Research Atlas — 2,000 public sources (2026-10-19)
 

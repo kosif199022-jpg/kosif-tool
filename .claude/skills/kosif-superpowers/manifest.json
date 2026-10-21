@@ -18,7 +18,7 @@
   "powers": 5318,
   "families": 62,
   "domains": 10,
-  "tools": 115,
+  "tools": 116,
   "guides": 95,
   "statuses": {
    "documented": 1929,
@@ -7291,6 +7291,81 @@
     "video-download",
     "photo-video-footage",
     "formats-platforms"
+   ]
+  },
+  {
+   "id": "stock-fetch",
+   "path": "scripts/stock_fetch.py",
+   "root": "skill",
+   "kind": "cli",
+   "area": "sources",
+   "title_en": "Keyless stock footage fetcher (Pexels, Mixkit)",
+   "title_ar": "تحميل لقطات مجانية بلا مفتاح (Pexels وMixkit)",
+   "summary_en": "Downloads free stock clips by id or page URL without an API key: Pexels through its public download endpoint (a 302 to videos.pexels.com) and Mixkit through its free 720p file. It writes manifest.json with the page, file URL, licence name, link and terms, size, dimensions, frame rate and duration, can skip oversized files, and has a probe that reports which stock sources answer from the current machine.",
+   "summary_ar": "ينزّل لقطات مجانية برقم المقطع أو رابط صفحته بلا مفتاح API: من Pexels عبر رابط التحميل العام (تحويل 302 إلى videos.pexels.com)، ومن Mixkit عبر ملف 720p المجاني. ويكتب manifest.json فيه الصفحة ورابط الملف واسم الرخصة ورابطها وشروطها والحجم والأبعاد ومعدل الإطارات والمدة، ويتخطى الملفات الضخمة، وفيه فحص يبيّن أي مصادر اللقطات تستجيب من الجهاز الحالي.",
+   "use_when": [
+    "هات لقطات مجانية للحرم من Pexels من غير مفتاح",
+    "مفتاح Pexels مش متاح، نزّل الفيديوهات دي بأرقامها",
+    "Download these Pexels clips by id without an API key",
+    "Which stock footage sites can this cloud machine reach?"
+   ],
+   "keywords": [
+    "pexels",
+    "mixkit",
+    "stock footage",
+    "b-roll",
+    "no api key",
+    "free video",
+    "licence manifest",
+    "لقطات مجانية",
+    "بدون مفتاح",
+    "تحميل لقطات",
+    "مونتاج",
+    "بكسلز"
+   ],
+   "commands": [
+    {
+     "name": "probe",
+     "example": "python3 scripts/stock_fetch.py probe",
+     "does": "Prints the HTTP status of Mixkit pages and files, the Pexels search page, download endpoint and API, the Pixabay API, the Wikimedia API and Coverr from this machine."
+    },
+    {
+     "name": "pexels",
+     "example": "python3 scripts/stock_fetch.py pexels 35155732 https://www.pexels.com/video/people-walking-around-the-kaaba-9112700/ -o ./stock --max-mb 120",
+     "does": "Resolves each id through https://www.pexels.com/download/video/<id>/ (302), downloads the file, probes it and merges the rows into ./stock/manifest.json. --dry-run only resolves and sizes."
+    },
+    {
+     "name": "mixkit",
+     "example": "python3 scripts/stock_fetch.py mixkit 4312 9998 -o ./stock",
+     "does": "Downloads https://assets.mixkit.co/videos/<id>/<id>-720.mp4 (the free size; 1080 and 2160 return 403) and records it in the manifest."
+    }
+   ],
+   "inputs": "Clip ids or page URLs (the id is the trailing number), -o output folder (default ./stock), --max-mb (default 120, 0 = no limit), --dry-run.",
+   "outputs": "<out>/<id>.mp4 and <out>/manifest.json (rows merged by source and id). Exit 0 when every clip resolved, 1 when any failed, 2 on a usage error.",
+   "requires": {
+    "python": [],
+    "binaries": [],
+    "node": [],
+    "optional": [
+     "bin:ffprobe"
+    ],
+    "network": true
+   },
+   "safety": "network",
+   "consent": "It downloads third-party stock media; keep the manifest with the project and follow each licence (no resale of unaltered clips, no implied endorsement). Find ids with a web search restricted to pexels.com or mixkit.co; the tool does not search or log in.",
+   "limits": "It works only while the Pexels download endpoint keeps answering with a 302 and Mixkit keeps its 720p file public; it cannot search Pexels (search pages return 403 to scripts and new API keys were paused on 2026-10-21) and gives Mixkit clips at 720p only.",
+   "evidence": "tested-here",
+   "evidence_note": "tests/test_stock_fetch.py 5/5 passed offline; on 2026-10-21 the probe and live downloads ran from a cloud session: 17 Pexels clips (Kaaba, Masjid al-Haram, rain) fetched by id with no key, and Mixkit 720p files were used in three delivered films.",
+   "tests": [
+    "tests/test_stock_fetch.py"
+   ],
+   "docs": [
+    ".claude/skills/kosif-superpowers/references/guides/sources.md",
+    ".claude/skills/kosif-superpowers/references/stock-media-100.md"
+   ],
+   "families": [
+    "photo-video-footage",
+    "video-download"
    ]
   },
   {

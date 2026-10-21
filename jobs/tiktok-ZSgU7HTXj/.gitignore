@@ -1,0 +1,8 @@
+source/*.mp4
+source/*.m4a
+source/*.wav
+source/frames/
+source/*.info.json
+source/large_*.txt
+build/frames/
+out/

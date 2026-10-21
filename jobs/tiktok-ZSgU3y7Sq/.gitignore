@@ -1,0 +1,7 @@
+source/*.mp4
+source/*.wav
+source/frames/
+source/*.info.json
+stock/
+build/frames/
+out/
