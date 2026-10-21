@@ -10,12 +10,12 @@
 | Word sync | words appear on onset | each word fades in at onset −0.14 s, glows until end +0.12 s (faster-whisper medium timings) | ✅ |
 | Cuts | on phrase onsets | 13 shots, cut 80 ms before each phrase, 0.36 s dissolve | ✅ |
 | Date | Thursday 22 Oct 2026 | 22.10.2026 · ١١ جمادى الأولى ١٤٤٨ هـ (Umm al-Qura; source 08.10 = 27 Rabi' II checked) | ✅ |
-| Handle | @OAUN.11 | at the arch base from 1.6 s | ✅ |
+| Handle | @kosif | at the arch base from 1.6 s | ✅ |
 | Arabic shaping | joined, RTL | checked on full-res frame 24.4 s and 8-frame preview | ✅ |
 | Safe zones | clear of TikTok UI | text between y 200 and 1700, centred width ≤ 800 px | ✅ (visual) |
 
 ## Credits and licences
-- Footage: Mixkit free stock video (Mixkit Free License), clips 9998, 6850, 15694, 11922, 9805, 21168, 21114, 34189, 22166, 34251, 4312, 17255, 9736 — 720p sources (4312 at 1080p).
+- Footage: Mixkit free stock video (Mixkit Free License), clips 9998, 6850, 34223, 11922, 9805, 21168, 21114, 34189, 22166, 34251, 4312, 17255, 9736 — 720p sources (4312 at 1080p).
 - Fonts (SIL OFL 1.1): Aref Ruqaa Bold (title), Reem Kufi (dates, handle), Amiri Bold (dua), KOSIF Jumuah Bold («آمين»).
 - Audio: the user's own TikTok video (@oaun.11), unchanged.
 
