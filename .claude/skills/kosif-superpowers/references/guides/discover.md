@@ -8,7 +8,7 @@ Commands below are typed from the skill folder (`.claude/skills/kosif-superpower
 
 <!-- hub:area:discover:start -->
 
-**الأدوات / tools (17)** — `python3 scripts/hub.py tool <id>` for every command, requirement and limit:
+**الأدوات / tools (20)** — `python3 scripts/hub.py tool <id>` for every command, requirement and limit:
 
 | tool | what it does | start with | evidence |
 |---|---|---|---|
@@ -29,12 +29,15 @@ Commands below are typed from the skill folder (`.claude/skills/kosif-superpower
 | `atlas-capability-miner` | Indexes or queries metadata of third-party Atlas skills with an opt-in REA path; source presence is not execution proof. | `python3 scripts/atlas_capability_miner.py --help` | tested-here |
 | `atlas-task-method-router` | Finds source-backed Atlas method candidates for a task without executing their code. | `python3 scripts/atlas_task_method_router.py --help` | untested |
 | `smart-capabilities` | Deterministically classifies all 5,185 KOSIF power IDs into 15 task-based integration candidate groups, finds matches for Arabic or English prompts, and checks source-to-index completeness without claiming runtime fusion. | `python3 scripts/smart_capabilities.py groups` | tested-here |
+| `skill-intelligence` | Before any substantial request: scans 100% of the catalog records with a SHA-256 coverage receipt that fails closed on unreadable or unclassified records, checks that every derived index is fresh, drafts a request analysis, ranks groups, fused superpowers, powers and runnable tools, scores candidates (fit 35, integration 20, feasibility 15, evidence 10, cost 10, creativity 10) and drafts plans A/B/C with a recommendation and the approval question. | `python3 scripts/skill_intelligence.py brief "مونتاج ريلز على الإيقاع بترجمة عربية"` | tested-here |
+| `superpower-fusion` | Partitions every catalog power into exactly one fused superpower (per-family TF-IDF k-means, near-identical powers unified, tiny groups absorbed), marks twin powers that do the same job, links each superpower to its nearest neighbours in one connected graph, and reports an honest status mix. | `python3 scripts/superpower_fusion.py build` | tested-here |
+| `kosif-groups` | For each of the 15 smart groups lists its fused superpowers ordered by readiness, entry scripts, a start command, linked groups and a per-group install plan that separates pip/npm lines (run with --apply) from system tools and keys that need the user's approval. | `python3 scripts/kosif_hubs.py` | tested-here |
 
 <!-- hub:area:discover:end -->
 
 <!-- hub:area:think:start -->
 
-**الأدوات / tools (5)** — `python3 scripts/hub.py tool <id>` for every command, requirement and limit:
+**الأدوات / tools (6)** — `python3 scripts/hub.py tool <id>` for every command, requirement and limit:
 
 | tool | what it does | start with | evidence |
 |---|---|---|---|
@@ -43,6 +46,7 @@ Commands below are typed from the skill folder (`.claude/skills/kosif-superpower
 | `invention-lab` | Turns one problem statement into a reproducible, ranked JSON list of falsifiable engineering ideas (16 TRIZ-style inventive methods × 4 lenses), each with a hypothesis, test, success metric and rejection threshold. | `python3 scripts/invention_lab.py methods` | tested-here |
 | `tell-scan` | Scans English and Arabic (MSA and Egyptian) prose for stock 'AI-sounding' writing habits and tool leftovers, and reports each hit with its line, strength and an overall verdict (EDIT/REVIEW/LOOK/LEAVE/CLEAN). | `python3 scripts/tell_scan.py proofs/general-writing/samples/en_ai.txt` | tested-here |
 | `think` | Turns thinking procedures into checkable text scaffolds. It picks a reasoning level (L0–L6), writes a task contract, ranks 63 mental models, drafts a backcast plan, builds an idea matrix from catalog powers, scores a weighted decision with sensitivity, runs a Monte-Carlo Fermi estimate and flags weak wording in a draft. | `python3 scripts/think.py ladder "design a 30-day plan for a course launch"` | tested-here |
+| `capability-mindmap` | Orders every superpower by task stage (understand, plan, create, refine, assemble, verify, deliver), builds stage plans for any request and 12 ready task maps with Mermaid flowcharts, and audits same-name groups, twins, cross-superpower look-alikes and pairs to develop together. | `python3 scripts/capability_mindmap.py build` | tested-here |
 
 <!-- hub:area:think:end -->
 

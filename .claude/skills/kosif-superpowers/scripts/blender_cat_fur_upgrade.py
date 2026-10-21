@@ -13,8 +13,14 @@ import random
 import sys
 from pathlib import Path
 
-import bpy
-from mathutils import Vector
+try:
+    import bpy
+    from mathutils import Vector
+except ImportError:  # plain Python: show help instead of crashing
+    if {"-h", "--help"} & set(sys.argv):
+        print(__doc__)
+        raise SystemExit(0)
+    raise SystemExit("Run inside Blender: blender -b --factory-startup --disable-autoexec --python <this file> -- ...")
 
 parser=argparse.ArgumentParser()
 parser.add_argument("--source",required=True)

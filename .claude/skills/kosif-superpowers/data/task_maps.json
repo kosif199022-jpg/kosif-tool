@@ -1,0 +1,353 @@
+{
+ "schema": "kosif.task-maps.v1",
+ "stages": [
+  {
+   "id": "understand",
+   "ar": "افهم المادة",
+   "en": "Understand the material",
+   "kw": [
+    "analy",
+    "inspect",
+    "probe",
+    "detect",
+    "measure",
+    "transcri",
+    "audit",
+    "read",
+    "extract",
+    "identify",
+    "fingerprint",
+    "doctor",
+    "discover",
+    "research",
+    "search",
+    "survey",
+    "profile",
+    "triage",
+    "explore",
+    "diagnos",
+    "تحليل",
+    "فحص",
+    "قياس",
+    "تفريغ",
+    "اكتشاف"
+   ]
+  },
+  {
+   "id": "plan",
+   "ar": "خطّط وقرّر",
+   "en": "Plan & decide",
+   "kw": [
+    "plan",
+    "storyboard",
+    "script",
+    "brief",
+    "decide",
+    "decision",
+    "strategy",
+    "outline",
+    "spec",
+    "design doc",
+    "frame",
+    "concept",
+    "idea",
+    "direction",
+    "structure",
+    "roadmap",
+    "layout",
+    "compose",
+    "grid",
+    "خطة",
+    "سيناريو",
+    "فكرة",
+    "قرار",
+    "تخطيط"
+   ]
+  },
+  {
+   "id": "create",
+   "ar": "اصنع",
+   "en": "Create",
+   "kw": [
+    "draw",
+    "generate",
+    "build",
+    "animate",
+    "write",
+    "create",
+    "render text",
+    "paint",
+    "sketch",
+    "character",
+    "shape",
+    "type",
+    "logo",
+    "chart",
+    "map",
+    "scene",
+    "model",
+    "code",
+    "scaffold",
+    "voice",
+    "tts",
+    "رسم",
+    "توليد",
+    "كتابة",
+    "تحريك",
+    "بناء"
+   ]
+  },
+  {
+   "id": "refine",
+   "ar": "حسّن واصقل",
+   "en": "Refine & polish",
+   "kw": [
+    "grade",
+    "glow",
+    "bloom",
+    "ease",
+    "easing",
+    "polish",
+    "texture",
+    "grain",
+    "color",
+    "colour",
+    "light",
+    "blur",
+    "sharpen",
+    "refactor",
+    "optimi",
+    "tune",
+    "mix",
+    "duck",
+    "master",
+    "denoise",
+    "transition",
+    "timing",
+    "rhythm",
+    "تحسين",
+    "ألوان",
+    "إضاءة",
+    "انتقال"
+   ]
+  },
+  {
+   "id": "assemble",
+   "ar": "جمّع وارندر",
+   "en": "Assemble & render",
+   "kw": [
+    "render",
+    "export",
+    "encode",
+    "compose",
+    "composit",
+    "pipeline",
+    "engine",
+    "ffmpeg",
+    "concat",
+    "mux",
+    "package",
+    "bundle",
+    "deploy",
+    "release",
+    "build pipeline",
+    "رندر",
+    "تصدير",
+    "تجميع"
+   ]
+  },
+  {
+   "id": "verify",
+   "ar": "تحقّق",
+   "en": "Verify",
+   "kw": [
+    "verify",
+    "check",
+    "test",
+    "qa",
+    "validate",
+    "gate",
+    "review",
+    "lint",
+    "proof",
+    "measure output",
+    "loudness",
+    "contrast",
+    "safe area",
+    "ffprobe",
+    "eval",
+    "تحقق",
+    "اختبار",
+    "مراجعة",
+    "جودة"
+   ]
+  },
+  {
+   "id": "deliver",
+   "ar": "سلّم وانشر",
+   "en": "Deliver & publish",
+   "kw": [
+    "deliver",
+    "publish",
+    "format",
+    "platform",
+    "aspect",
+    "reels",
+    "tiktok",
+    "youtube",
+    "share",
+    "upload",
+    "docs",
+    "report",
+    "handoff",
+    "تسليم",
+    "نشر",
+    "منصة",
+    "مقاس"
+   ]
+  }
+ ],
+ "tasks": [
+  {
+   "id": "motion-film",
+   "ar": "فيديو موشن جرافيك بصوت",
+   "en": "Motion-graphics film with voice",
+   "hubs": [
+    "thinking",
+    "audio",
+    "type",
+    "motion",
+    "drawing",
+    "3d",
+    "quality"
+   ],
+   "brief": "motion graphics video with arabic voice over kinetic typography camera glow render mp4"
+  },
+  {
+   "id": "reels-edit",
+   "ar": "مونتاج ريلز على الإيقاع",
+   "en": "Beat-synced reels edit",
+   "hubs": [
+    "motion",
+    "audio",
+    "images",
+    "quality"
+   ],
+   "brief": "reels montage cut on beat transitions captions 9:16 export"
+  },
+  {
+   "id": "character",
+   "ar": "رسم شخصية وتحريكها",
+   "en": "Draw and animate a character",
+   "hubs": [
+    "drawing",
+    "motion",
+    "audio",
+    "3d"
+   ],
+   "brief": "draw character rig walk wave lip sync animate export"
+  },
+  {
+   "id": "explainer",
+   "ar": "فيديو شرح بالمخططات والبيانات",
+   "en": "Data/diagram explainer",
+   "hubs": [
+    "data",
+    "drawing",
+    "motion",
+    "thinking"
+   ],
+   "brief": "explainer diagram chart infographic animated reveal narration"
+  },
+  {
+   "id": "brand",
+   "ar": "هوية وشعار وإعلان",
+   "en": "Brand, logo & ad",
+   "hubs": [
+    "drawing",
+    "type",
+    "motion",
+    "thinking"
+   ],
+   "brief": "logo reveal brand identity palette ad promo"
+  },
+  {
+   "id": "photo",
+   "ar": "تحرير صور وتصميم",
+   "en": "Photo editing & design",
+   "hubs": [
+    "images",
+    "software",
+    "drawing"
+   ],
+   "brief": "photo edit remove background color grade poster design"
+  },
+  {
+   "id": "3d-scene",
+   "ar": "مشهد ثلاثي الأبعاد",
+   "en": "3D scene",
+   "hubs": [
+    "3d",
+    "motion",
+    "quality"
+   ],
+   "brief": "3d scene camera orbit lighting render blender glb"
+  },
+  {
+   "id": "app",
+   "ar": "بناء تطبيق أو موقع",
+   "en": "Build an app or site",
+   "hubs": [
+    "thinking",
+    "software",
+    "documents",
+    "quality"
+   ],
+   "brief": "build web app ui frontend backend api test deploy"
+  },
+  {
+   "id": "code-change",
+   "ar": "تعديل كود وإصلاح",
+   "en": "Change or fix code",
+   "hubs": [
+    "thinking",
+    "software",
+    "quality"
+   ],
+   "brief": "debug fix bug test refactor review commit pull request"
+  },
+  {
+   "id": "reverse",
+   "ar": "فحص تطبيق ونقل ميزة",
+   "en": "Investigate an app and transfer a feature",
+   "hubs": [
+    "reverse",
+    "software",
+    "quality"
+   ],
+   "brief": "reverse engineer app electron binary feature evidence rebuild"
+  },
+  {
+   "id": "data-report",
+   "ar": "تحليل بيانات وتقرير",
+   "en": "Data analysis report",
+   "hubs": [
+    "data",
+    "documents",
+    "quality"
+   ],
+   "brief": "analyze csv data statistics chart report"
+  },
+  {
+   "id": "research-write",
+   "ar": "بحث وكتابة مقال",
+   "en": "Research and write",
+   "hubs": [
+    "research",
+    "thinking",
+    "documents"
+   ],
+   "brief": "research sources cite write article arabic"
+  }
+ ]
+}

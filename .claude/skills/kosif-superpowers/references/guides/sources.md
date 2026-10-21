@@ -8,7 +8,7 @@ Commands below are typed from the skill folder (`.claude/skills/kosif-superpower
 
 <!-- hub:area:sources:start -->
 
-**الأدوات / tools (12)** — `python3 scripts/hub.py tool <id>` for every command, requirement and limit:
+**الأدوات / tools (13)** — `python3 scripts/hub.py tool <id>` for every command, requirement and limit:
 
 | tool | what it does | start with | evidence |
 |---|---|---|---|
@@ -24,6 +24,7 @@ Commands below are typed from the skill folder (`.claude/skills/kosif-superpower
 | `source-scout` | Searches a curated offline registry of 31 reviewed GitHub repositories (plus a dated top-10 Python star snapshot) and returns ranked reference sources with licence, caution and code-reuse gates as JSON. | `python3 scripts/source_scout.py check` | tested-here |
 | `superpowers` | Lists, searches and shows the 125 open-source repositories in repos.json, grouped into 15 superpowers with license notes; checks whether 21 local tools such as ffmpeg, Playwright and Whisper are present; and validates or regenerates references/repos.md. | `python3 scripts/superpowers.py list --capability voice --json` | tested-here |
 | `repo-ashell-cinema` (repo root) | An interactive POSIX-sh app for a-Shell on iPhone. It downloads video or audio with yt-dlp (single links, batches, part of a video, subtitles, best-effort Facebook profiles), makes Photos-safe H.264/AAC MP4 copies, and offers an offline ffmpeg Studio (trim, compress to 16/25/50 MB, 9:16 reels with blurred fill, GIF, cover JPG, -14 LUFS loudness, cut pauses, mute, audio only) and an Audio Lab for separating voice and music. | `sh tools/a-shell/Cinema_C_V34_Studio_iPhone.sh "https://www.youtube.com/watch?v=VIDEO_ID"` | tested-elsewhere |
+| `stream-grabber` | Written after a read-only study of IDM 6.43: parses DASH (SegmentTemplate with Number or Timeline, SegmentList, SegmentBase) and HLS (master/media, byte ranges, fMP4 init), downloads segments in parallel with resume and tail probing, picks the best editable video and audio, merges losslessly (MP4, or MKV for VP8/Vorbis), saves WebVTT subtitles and finds manifests in saved pages or HAR exports; refuses encrypted, DRM, live and cookie-header requests. | `python3 scripts/stream_grabber.py find ./saved-page.html` | tested-here |
 
 <!-- hub:area:sources:end -->
 

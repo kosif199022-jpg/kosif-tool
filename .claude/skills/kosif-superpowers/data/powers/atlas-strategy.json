@@ -1688,7 +1688,7 @@
   "requires": [],
   "license": "method paraphrased from Atlas skills under MIT / Apache-2.0; the skills keep their own licenses — see each folder's SOURCE.md",
   "proof": [],
-  "proof_scope": "url",
+  "proof_scope": "none",
   "styles": [],
   "tags": [
    "cloud",
@@ -1857,7 +1857,7 @@
   "requires": [],
   "license": "method paraphrased from Atlas skills under check per-plugin; the skills keep their own licenses — see each folder's SOURCE.md",
   "proof": [],
-  "proof_scope": "url",
+  "proof_scope": "none",
   "styles": [],
   "tags": [
    "incident",
@@ -2592,6 +2592,586 @@
    "kosif_overlap_ids": [],
    "stage": "extracted",
    "verified_by": "b021-compliance-industry-1.json"
+  }
+ },
+ {
+  "id": "ASTRAT-47",
+  "family": "atlas-strategy",
+  "domain": "strategy",
+  "name_ar": "مراجعة التصميم بالقواعد الإرشادية",
+  "name_en": "Design review heuristics and critique",
+  "status": "documented",
+  "what": "إجراء تقييم إرشادي ونقد منظم للتصميم مع نتائج مرتبة الأولوية. — Run a structured heuristic evaluation and design critique with prioritized findings.",
+  "when": "Design review, UX evaluation, handoff readiness, iOS HIG compliance.",
+  "how": "1) State goals and audience. 2) Walk Nielsen-style heuristics per screen. 3) Log issues with severity and evidence. 4) Check platform guidelines (iOS HIG). 5) Give prioritized fixes and handoff notes.",
+  "params": "design files or screenshots",
+  "install": "",
+  "requires": [],
+  "license": "method paraphrased from Atlas skills under MIT; the skills keep their own licenses — see each folder's SOURCE.md",
+  "proof": [
+   "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/3011-uxd-research/12863-uxd-evaluate-design-heuristics",
+   "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/1529-uxdesign/4182-design-critique"
+  ],
+  "proof_scope": "url",
+  "styles": [],
+  "tags": [
+   "heuristics",
+   "critique",
+   "نقد التصميم",
+   "ux"
+  ],
+  "section": "الواجهات والتصميم — Front-end, UI & design systems",
+  "source": "KOSIF Atlas mining 2026-10-20 (https://github.com/kosif199022-jpg/kosif-atlas): uxd-research/uxd-evaluate-design-heuristics (#12863); uxdesign/design-critique (#4182) · theme frontend-ui-design · 7 supporting skills · verifier read: skills/3011-uxd-research/12863-uxd-evaluate-design-heuristics, skills/1529-uxdesign/4182-design-critique",
+  "atlas": {
+   "ids": [
+    "3850",
+    "4182",
+    "12856",
+    "12863",
+    "14119",
+    "14120",
+    "14125"
+   ],
+   "examples": [
+    {
+     "id": "12863",
+     "plugin": "uxd-research",
+     "skill": "uxd-evaluate-design-heuristics",
+     "url": "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/3011-uxd-research/12863-uxd-evaluate-design-heuristics"
+    },
+    {
+     "id": "4182",
+     "plugin": "uxdesign",
+     "skill": "design-critique",
+     "url": "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/1529-uxdesign/4182-design-critique"
+    }
+   ],
+   "theme": "frontend-ui-design",
+   "risk_notes": "none",
+   "kosif_overlap_ids": [],
+   "stage": "extracted",
+   "verified_by": "b039-frontend-ui-design-3.json"
+  }
+ },
+ {
+  "id": "ASTRAT-48",
+  "family": "atlas-strategy",
+  "domain": "strategy",
+  "name_ar": "جولة موازنة اقتصاد اللعبة",
+  "name_en": "Game balance and economy tuning pass",
+  "status": "documented",
+  "what": "تحديد التجربة المقصودة ورسم الاقتصاد وحساب القيمة المتوقعة وجدول ضبط. — Define intended experience, map sources and sinks, compute expected value and output a tuning table with safe ranges.",
+  "when": "Tuning difficulty, loot, rewards, progression.",
+  "how": "1) State target feel. 2) Map currencies, sources, sinks, gates. 3) Hunt dominant strategies and runaway feedback. 4) Run expected_value.py --outcome value:prob. 5) Output Balance Intent, Economy Map, Tuning Table, Risk Review, Validation Plan. 6) Confirm with playtest.",
+  "params": "outcomes",
+  "install": "",
+  "requires": [
+   "python3"
+  ],
+  "license": "method paraphrased from Atlas skills under MIT; the skills keep their own licenses — see each folder's SOURCE.md",
+  "proof": [
+   "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/2199-lvtd-skills/8078-game-balance-economy"
+  ],
+  "proof_scope": "url",
+  "styles": [],
+  "tags": [
+   "balance",
+   "economy",
+   "موازنة",
+   "اقتصاد"
+  ],
+  "section": "تطوير الألعاب — Game development",
+  "source": "KOSIF Atlas mining 2026-10-20 (https://github.com/kosif199022-jpg/kosif-atlas): lvtd-skills/game-balance-economy (#8078) · theme game-dev · 3 supporting skills · verifier read: skills/2199-lvtd-skills/8078-game-balance-economy",
+  "atlas": {
+   "ids": [
+    "8078",
+    "8082",
+    "8139"
+   ],
+   "examples": [
+    {
+     "id": "8078",
+     "plugin": "lvtd-skills",
+     "skill": "game-balance-economy",
+     "url": "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/2199-lvtd-skills/8078-game-balance-economy"
+    }
+   ],
+   "theme": "game-dev",
+   "risk_notes": "Helper py script is pure computation",
+   "kosif_overlap_ids": [],
+   "stage": "extracted",
+   "verified_by": "b040-game-dev-1.json"
+  }
+ },
+ {
+  "id": "ASTRAT-49",
+  "family": "atlas-strategy",
+  "domain": "strategy",
+  "name_ar": "تصميم الآليات وتجربة اللاعب",
+  "name_en": "Game mechanics and player experience design",
+  "status": "documented",
+  "what": "تصميم حلقات اللعب والقواعد ونماذج دافعية اللاعب. — Design core loops, rules and player motivation models with interest curves.",
+  "when": "Starting or repairing a game design.",
+  "how": "1) Define target player, motivations, flow. 2) Specify goal, actions, state, chance, secrets. 3) Check emergent dynamics. 4) Plot interest curve. 5) Plan small slice.",
+  "params": "",
+  "install": "",
+  "requires": [],
+  "license": "method paraphrased from Atlas skills under MIT; the skills keep their own licenses — see each folder's SOURCE.md",
+  "proof": [
+   "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/2199-lvtd-skills/8082-game-mechanics-design",
+   "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/2199-lvtd-skills/8139-player-experience-modeling"
+  ],
+  "proof_scope": "url",
+  "styles": [],
+  "tags": [
+   "design",
+   "mechanics",
+   "تصميم",
+   "لاعب"
+  ],
+  "section": "تطوير الألعاب — Game development",
+  "source": "KOSIF Atlas mining 2026-10-20 (https://github.com/kosif199022-jpg/kosif-atlas): lvtd-skills/game-mechanics-design (#8082); lvtd-skills/player-experience-modeling (#8139) · theme game-dev · 3 supporting skills · verifier read: skills/2199-lvtd-skills/8082-game-mechanics-design, skills/2199-lvtd-skills/8139-player-experience-modeling",
+  "atlas": {
+   "ids": [
+    "3739",
+    "8082",
+    "8139"
+   ],
+   "examples": [
+    {
+     "id": "8082",
+     "plugin": "lvtd-skills",
+     "skill": "game-mechanics-design",
+     "url": "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/2199-lvtd-skills/8082-game-mechanics-design"
+    },
+    {
+     "id": "8139",
+     "plugin": "lvtd-skills",
+     "skill": "player-experience-modeling",
+     "url": "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/2199-lvtd-skills/8139-player-experience-modeling"
+    }
+   ],
+   "theme": "game-dev",
+   "risk_notes": "none",
+   "kosif_overlap_ids": [],
+   "stage": "extracted",
+   "verified_by": "b040-game-dev-1.json"
+  }
+ },
+ {
+  "id": "ASTRAT-50",
+  "family": "atlas-strategy",
+  "domain": "strategy",
+  "name_ar": "تصنيف مؤشرات DORA الأربعة",
+  "name_en": "DORA four keys classification",
+  "status": "documented",
+  "what": "يحسب مؤشرات DORA ويصنفها مع نافذة وخط أساس. — Compute deploy frequency, lead time, change-failure rate and MTTR, classify to bands with windows and baselines.",
+  "when": "Developer-experience or delivery performance measurement.",
+  "how": "1) Pull four keys over a fixed window. 2) Classify elite/high/medium/low via a calc script. 3) Attach window and prior baseline or do not ship. 4) Name the weakest key as binding constraint, paired with survey signal.",
+  "params": "",
+  "install": "",
+  "requires": [],
+  "license": "method paraphrased from Atlas skills under MIT; the skills keep their own licenses — see each folder's SOURCE.md",
+  "proof": [
+   "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/2353-platform-engineering-idp/9055-classify-dora"
+  ],
+  "proof_scope": "url",
+  "styles": [],
+  "tags": [
+   "dora",
+   "metrics",
+   "مقاييس",
+   "devex"
+  ],
+  "section": "سير عمل تطوير عام — General development workflow",
+  "source": "KOSIF Atlas mining 2026-10-20 (https://github.com/kosif199022-jpg/kosif-atlas): platform-engineering-idp/classify-dora (#9055) · theme general-dev-workflow · 2 supporting skills · verifier read: skills/2353-platform-engineering-idp/9055-classify-dora",
+  "atlas": {
+   "ids": [
+    "8917",
+    "9055"
+   ],
+   "examples": [
+    {
+     "id": "9055",
+     "plugin": "platform-engineering-idp",
+     "skill": "classify-dora",
+     "url": "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/2353-platform-engineering-idp/9055-classify-dora"
+    }
+   ],
+   "theme": "general-dev-workflow",
+   "risk_notes": "References a helper python script not read.",
+   "kosif_overlap_ids": [],
+   "stage": "extracted",
+   "verified_by": "b041-general-dev-workflow-1.json"
+  }
+ },
+ {
+  "id": "ASTRAT-51",
+  "family": "atlas-strategy",
+  "domain": "strategy",
+  "name_ar": "قراءة المؤشرات التشغيلية الصناعية",
+  "name_en": "Frequency vs severity operating metrics",
+  "status": "documented",
+  "what": "قراءات مؤشرات مجالية مع خط أساس. — Domain-specific metric reads (utilization, LTV:CAC, absorption, DORA, NDCG) with baselines.",
+  "when": "Business-metric diagnosis questions.",
+  "how": "1) Name the metric and formula. 2) Use a fixed window plus baseline. 3) Segment, never blended. 4) Compare to threshold (e.g. LTV:CAC 3:1, collection 98%). 5) Name the binding lever.",
+  "params": "",
+  "install": "",
+  "requires": [],
+  "license": "method paraphrased from Atlas skills under MIT; the skills keep their own licenses — see each folder's SOURCE.md",
+  "proof": [],
+  "proof_scope": "none",
+  "styles": [],
+  "tags": [
+   "metrics",
+   "kpi",
+   "مؤشرات",
+   "analysis"
+  ],
+  "section": "سير عمل تطوير عام — General development workflow",
+  "source": "KOSIF Atlas mining 2026-10-20 (https://github.com/kosif199022-jpg/kosif-atlas):  · theme general-dev-workflow · 5 supporting skills · verifier read: , ",
+  "atlas": {
+   "ids": [
+    "8506",
+    "8522",
+    "8723",
+    "8910",
+    "9206"
+   ],
+   "examples": [],
+   "theme": "general-dev-workflow",
+   "risk_notes": "Text; vertical noise.",
+   "kosif_overlap_ids": [],
+   "stage": "extracted",
+   "verified_by": "b041-general-dev-workflow-1.json"
+  }
+ },
+ {
+  "id": "ASTRAT-52",
+  "family": "atlas-strategy",
+  "domain": "strategy",
+  "name_ar": "تفكيك المتطلبات لمهام قابلة للتنفيذ",
+  "name_en": "Task breakdown with sizing rules",
+  "status": "documented",
+  "what": "يفكك المتطلبات إلى مهام صغيرة مع تبعيات ومخاطر. — Split requirements into SMART tasks capped at two days, with serial/parallel/blocking dependencies and risk handling.",
+  "when": "Planning work, estimating effort, assessing project risk.",
+  "how": "1) Break via WBS to SMART tasks. 2) Size: small 2-4h, medium 1-2d, large 3-5d; split anything over 2 days. 3) Mark dependencies serial/parallel/blocking and do blockers first. 4) List risks with mitigation. 5) Detect tech stack from config files first.",
+  "params": "",
+  "install": "",
+  "requires": [],
+  "license": "method paraphrased from Atlas skills under MIT; the skills keep their own licenses — see each folder's SOURCE.md",
+  "proof": [
+   "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/1369-boss/3168-scrum-master-task-breakdown"
+  ],
+  "proof_scope": "url",
+  "styles": [],
+  "tags": [
+   "wbs",
+   "planning",
+   "تخطيط",
+   "estimation"
+  ],
+  "section": "سير عمل تطوير عام — General development workflow",
+  "source": "KOSIF Atlas mining 2026-10-20 (https://github.com/kosif199022-jpg/kosif-atlas): boss/scrum-master/task-breakdown (#3168) · theme general-dev-workflow · 3 supporting skills · verifier read: skills/1369-boss/3168-scrum-master-task-breakdown",
+  "atlas": {
+   "ids": [
+    "3167",
+    "3168",
+    "3169"
+   ],
+   "examples": [
+    {
+     "id": "3168",
+     "plugin": "boss",
+     "skill": "scrum-master/task-breakdown",
+     "url": "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/1369-boss/3168-scrum-master-task-breakdown"
+    }
+   ],
+   "theme": "general-dev-workflow",
+   "risk_notes": "Text only.",
+   "kosif_overlap_ids": [],
+   "stage": "extracted",
+   "verified_by": "b041-general-dev-workflow-1.json"
+  }
+ },
+ {
+  "id": "ASTRAT-53",
+  "family": "atlas-strategy",
+  "domain": "strategy",
+  "name_ar": "إصدار أمني منسق",
+  "name_en": "Coordinated security release",
+  "status": "documented",
+  "what": "تنفيذ إصدار ترقيع أمني بشكل خاص مع إفصاح منسق. — Run a private-fix coordinated disclosure release for a reported vulnerability.",
+  "when": "Private vulnerability report, GHSA, CVE.",
+  "how": "1) Private advisory/branch, no public traces. 2) Fix and test privately. 3) Request CVE via GHSA. 4) Backport to supported lines. 5) Release patch and publish advisory same time. 6) Notify downstream.",
+  "params": "",
+  "install": "",
+  "requires": [],
+  "license": "method paraphrased from Atlas skills under MIT; the skills keep their own licenses — see each folder's SOURCE.md",
+  "proof": [
+   "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/2346-open-source-maintenance/9023-coordinate-a-security-release",
+   "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/2346-open-source-maintenance/9025-plan-a-release"
+  ],
+  "proof_scope": "url",
+  "styles": [],
+  "tags": [
+   "security",
+   "advisory",
+   "ثغرة"
+  ],
+  "section": "Git والإصدار — Git, pull requests & releases",
+  "source": "KOSIF Atlas mining 2026-10-20 (https://github.com/kosif199022-jpg/kosif-atlas): open-source-maintenance/coordinate-a-security-release (#9023); open-source-maintenance/plan-a-release (#9025) · theme git-release · 2 supporting skills · verifier read: skills/2346-open-source-maintenance/9023-coordinate-a-security-release, skills/2346-open-source-maintenance/9025-plan-a-release",
+  "atlas": {
+   "ids": [
+    "9023",
+    "9025"
+   ],
+   "examples": [
+    {
+     "id": "9023",
+     "plugin": "open-source-maintenance",
+     "skill": "coordinate-a-security-release",
+     "url": "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/2346-open-source-maintenance/9023-coordinate-a-security-release"
+    },
+    {
+     "id": "9025",
+     "plugin": "open-source-maintenance",
+     "skill": "plan-a-release",
+     "url": "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/2346-open-source-maintenance/9025-plan-a-release"
+    }
+   ],
+   "theme": "git-release",
+   "risk_notes": "Procedural only",
+   "kosif_overlap_ids": [],
+   "stage": "extracted",
+   "verified_by": "b043-git-release-2.json"
+  }
+ },
+ {
+  "id": "ASTRAT-54",
+  "family": "atlas-strategy",
+  "domain": "strategy",
+  "name_ar": "بطاقات أنكي عبر AnkiConnect",
+  "name_en": "Anki flashcards via AnkiConnect",
+  "status": "documented",
+  "what": "ينشئ ويدير مجموعات وبطاقات أنكي عبر واجهة AnkiConnect المحلية. — Create and manage Anki decks and cards through the local AnkiConnect HTTP API.",
+  "when": "User wants flashcards, spaced repetition decks or Anki card changes.",
+  "how": "1) Anki must be running with AnkiConnect (add-on 2055492159). 2) Check: curl -s localhost:8765 -X POST -d '{\"action\":\"requestPermission\",\"version\":6}' expects granted. 3) Create decks and add notes with JSON actions. 4) Keep one atomic fact per card. 5) On macOS disable App Nap.",
+  "params": "deck, note model",
+  "install": "",
+  "requires": [
+   "os:macos",
+   "network"
+  ],
+  "license": "method paraphrased from Atlas skills under MIT; the skills keep their own licenses — see each folder's SOURCE.md",
+  "proof": [
+   "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/1217-anki-flashcards/2899-anki-flashcards",
+   "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/1390-core-learning/3276-learn-core"
+  ],
+  "proof_scope": "url",
+  "styles": [],
+  "tags": [
+   "anki",
+   "flashcards",
+   "spaced repetition",
+   "بطاقات"
+  ],
+  "section": "التعليم والتعلم — Teaching, learning & study",
+  "source": "KOSIF Atlas mining 2026-10-20 (https://github.com/kosif199022-jpg/kosif-atlas): anki-flashcards/anki-flashcards (#2899); core-learning/learn-core (#3276) · theme education-learning · 3 supporting skills · verifier read: skills/1217-anki-flashcards/2899-anki-flashcards, skills/1390-core-learning/3276-learn-core",
+  "atlas": {
+   "ids": [
+    "2899",
+    "3276",
+    "9821"
+   ],
+   "examples": [
+    {
+     "id": "2899",
+     "plugin": "anki-flashcards",
+     "skill": "anki-flashcards",
+     "url": "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/1217-anki-flashcards/2899-anki-flashcards"
+    },
+    {
+     "id": "3276",
+     "plugin": "core-learning",
+     "skill": "learn-core",
+     "url": "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/1390-core-learning/3276-learn-core"
+    }
+   ],
+   "theme": "education-learning",
+   "risk_notes": "Calls localhost:8765 and modifies the user's Anki collection.",
+   "kosif_overlap_ids": [],
+   "stage": "extracted",
+   "verified_by": "b036-education-learning-1.json"
+  }
+ },
+ {
+  "id": "ASTRAT-55",
+  "family": "atlas-strategy",
+  "domain": "strategy",
+  "name_ar": "إعداد دورة Google Classroom والطلاب",
+  "name_en": "Google Classroom course setup and roster",
+  "status": "documented",
+  "what": "ينشئ الفصول ويدعو الطلاب ويدير الواجبات عبر أداة gws. — Create classes, invite students and manage coursework through the gws CLI.",
+  "when": "User manages classes or coursework in Google Classroom.",
+  "how": "1) Use gws classroom commands. 2) Create the course. 3) Invite students. 4) Manage coursework.",
+  "params": "course name",
+  "install": "",
+  "requires": [],
+  "license": "method paraphrased from Atlas skills under Apache-2.0; the skills keep their own licenses — see each folder's SOURCE.md",
+  "proof": [
+   "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/2907-google-workspace/11852-recipe-create-classroom-course",
+   "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/2907-google-workspace/11797-gws-classroom"
+  ],
+  "proof_scope": "url",
+  "styles": [],
+  "tags": [
+   "classroom",
+   "LMS",
+   "فصل",
+   "طلاب"
+  ],
+  "section": "التعليم والتعلم — Teaching, learning & study",
+  "source": "KOSIF Atlas mining 2026-10-20 (https://github.com/kosif199022-jpg/kosif-atlas): google-workspace/recipe-create-classroom-course (#11852); google-workspace/gws-classroom (#11797) · theme education-learning · 3 supporting skills · verifier read: skills/2907-google-workspace/11852-recipe-create-classroom-course, skills/2907-google-workspace/11797-gws-classroom",
+  "atlas": {
+   "ids": [
+    "3049",
+    "11797",
+    "11852"
+   ],
+   "examples": [
+    {
+     "id": "11852",
+     "plugin": "google-workspace",
+     "skill": "recipe-create-classroom-course",
+     "url": "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/2907-google-workspace/11852-recipe-create-classroom-course"
+    },
+    {
+     "id": "11797",
+     "plugin": "google-workspace",
+     "skill": "gws-classroom",
+     "url": "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/2907-google-workspace/11797-gws-classroom"
+    }
+   ],
+   "theme": "education-learning",
+   "risk_notes": "Calls Google APIs, writes to account.",
+   "kosif_overlap_ids": [],
+   "stage": "extracted",
+   "verified_by": "b036-education-learning-1.json"
+  }
+ },
+ {
+  "id": "ASTRAT-56",
+  "family": "atlas-strategy",
+  "domain": "strategy",
+  "name_ar": "مدرب تعلم متعدد الجلسات بحالة محفوظة",
+  "name_en": "Multi-session learning coach with persistent state",
+  "status": "documented",
+  "what": "يدرّب المتعلم عبر جلسات متعددة بملفات هدف ومسرد وسجل تعلم تراكمي. — Coach a learner over several sessions using a mission file, glossary, concept slices and an append-only learning log.",
+  "when": "User says teach me, study session, onboard me to a topic or codebase.",
+  "how": "1) Write MISSION.md (goal, success criteria, constraints). 2) Create per-concept folders with lesson, reference.md and exercise.md. 3) Progress through Knowledge-Skills-Wisdom stages. 4) Add glossary terms only after the learner shows understanding. 5) Append numbered ADR-style learning records. 6) On resume, read state first. Topic mode uses external sources; codebase mode uses repo docs.",
+  "params": "topic|codebase, workspace root",
+  "install": "",
+  "requires": [],
+  "license": "method paraphrased from Atlas skills under MIT; the skills keep their own licenses — see each folder's SOURCE.md",
+  "proof": [
+   "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/2437-education/9463-teach",
+   "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/1390-core-learning/3276-learn-core"
+  ],
+  "proof_scope": "url",
+  "styles": [],
+  "tags": [
+   "tutoring",
+   "teach",
+   "تعليم",
+   "تدريس"
+  ],
+  "section": "التعليم والتعلم — Teaching, learning & study",
+  "source": "KOSIF Atlas mining 2026-10-20 (https://github.com/kosif199022-jpg/kosif-atlas): education/teach (#9463); core-learning/learn-core (#3276) · theme education-learning · 5 supporting skills · verifier read: skills/2437-education/9463-teach, skills/1390-core-learning/3276-learn-core",
+  "atlas": {
+   "ids": [
+    "3276",
+    "7539",
+    "8442",
+    "9463",
+    "9821"
+   ],
+   "examples": [
+    {
+     "id": "9463",
+     "plugin": "education",
+     "skill": "teach",
+     "url": "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/2437-education/9463-teach"
+    },
+    {
+     "id": "3276",
+     "plugin": "core-learning",
+     "skill": "learn-core",
+     "url": "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/1390-core-learning/3276-learn-core"
+    }
+   ],
+   "theme": "education-learning",
+   "risk_notes": "Ships a node lesson-build script that writes files; no network seen.",
+   "kosif_overlap_ids": [],
+   "stage": "extracted",
+   "verified_by": "b036-education-learning-1.json"
+  }
+ },
+ {
+  "id": "ASTRAT-57",
+  "family": "atlas-strategy",
+  "domain": "strategy",
+  "name_ar": "بروتوكول تدريس سقراطي سؤال واحد كل مرة",
+  "name_en": "Socratic one-question-at-a-time tutoring protocol",
+  "status": "documented",
+  "what": "يدير حلقة تدريس بسؤال واحد وتلميحات عند الخطأ ويحكم بالإتقان عبر التطبيق المستقل. — Run a tutor loop with one pending question, hints on errors and mastery judged by independent application.",
+  "when": "Learner wants to master a skill or concept, not just receive an explanation.",
+  "how": "1) State a mode contract each session. 2) Give brief concept plus one question, then stop and wait. 3) On a wrong answer give a minimal hint only, then retry. 4) Follow with a new-conditions question and ask for reasoning. 5) Record untested, hinted, independent, transfer, delayed-recheck. 6) Never simulate the learner's answers. Modes: Socratic, reverse-teach (Feynman), drill, project review, spaced quiz.",
+  "params": "mode, time budget",
+  "install": "",
+  "requires": [],
+  "license": "method paraphrased from Atlas skills under MIT; the skills keep their own licenses — see each folder's SOURCE.md",
+  "proof": [
+   "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/1390-core-learning/3276-learn-core",
+   "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/1097-akbun-learning/2467-akbun-algorithm-tutor"
+  ],
+  "proof_scope": "url",
+  "styles": [],
+  "tags": [
+   "socratic",
+   "tutor",
+   "سقراطي",
+   "تعلم"
+  ],
+  "section": "التعليم والتعلم — Teaching, learning & study",
+  "source": "KOSIF Atlas mining 2026-10-20 (https://github.com/kosif199022-jpg/kosif-atlas): core-learning/learn-core (#3276); akbun-learning/akbun-algorithm-tutor (#2467) · theme education-learning · 5 supporting skills · verifier read: skills/1390-core-learning/3276-learn-core, skills/1097-akbun-learning/2467-akbun-algorithm-tutor",
+  "atlas": {
+   "ids": [
+    "2467",
+    "2470",
+    "2471",
+    "3276",
+    "8442"
+   ],
+   "examples": [
+    {
+     "id": "3276",
+     "plugin": "core-learning",
+     "skill": "learn-core",
+     "url": "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/1390-core-learning/3276-learn-core"
+    },
+    {
+     "id": "2467",
+     "plugin": "akbun-learning",
+     "skill": "akbun-algorithm-tutor",
+     "url": "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/1097-akbun-learning/2467-akbun-algorithm-tutor"
+    }
+   ],
+   "theme": "education-learning",
+   "risk_notes": "Text only.",
+   "kosif_overlap_ids": [],
+   "stage": "extracted",
+   "verified_by": "b036-education-learning-1.json"
   }
  }
 ]

@@ -3,17 +3,19 @@
 
 > **قوتك هنا / what this gives you:** توليد الصور ومعالجتها والصوت والتفريغ ووصفات الفيديو (Remotion وFFmpeg والترجمة) كما تصفها مهارات أطلس. — Image generation/processing, audio, transcription and video recipes (Remotion, FFmpeg, captions) from the Atlas.
 > **أقوى دليل / strongest evidence:** لا قوة مثبتة بعد في هذه العائلة — no ✅ power yet; the strongest badge here is 📄 documented.
-> **11 powers follow** — ✅ 0 · 🟢 0 · 📦 0 · 🔑 0 · 👁 0 · 📄 11 · 💡 0.
+> **14 powers follow** — ✅ 0 · 🟢 0 · 📦 0 · 🔑 0 · 👁 0 · 📄 14 · 💡 0.
 
 **الحالة / status:** ✅ مُثبت (شُغّل فعلًا وله مسار دليل) · 🟢 جاهز (كود موجود يعمل بما هو متاح عادة) · 📦 بأمر تثبيت واحد · 🔑 يحتاج مفتاحًا أو حسابًا أو موصلًا · 👁 شوهد في فيديو مرجعي (للموشن فقط) · 📄 طريقة موثقة · 💡 فكرة. الشارة هي أدنى مستوى صادق — the badge is the lowest level that is true.
 مسارات الدليل نسبية إلى `/home/user/`؛ و`session-<date>:<file>#<section>` تشير إلى تشغيل موثق في جلسة سابقة؛ و`owner-upload:` إلى ملف داخل أرشيف أرسله المالك. Proof paths are relative to `/home/user/`.
 
 **المجال / domain:** الصور والصوت — Image & audio · **البادئة / prefix:** `AMEDIA` · **البيانات / data:** `data/powers/atlas-media.json` · **بحث / search:** `python3 scripts/powers.py family atlas-media`
-**مراجع ذات صلة / related references:** [CLAUDE_3_MINUTE_MAP.md](../CLAUDE_3_MINUTE_MAP.md)
+**مراجع ذات صلة / related references:** [CLAUDE_3_MINUTE_MAP.md](../CLAUDE_3_MINUTE_MAP.md) · [hubs.md](../hubs.md)
 
 ## الفهرس / contents
 
 - **الصوت — Audio, voice & music** — AMEDIA-01 … AMEDIA-11 (11)
+- **تطوير الألعاب — Game development** — AMEDIA-12 … AMEDIA-13 (2)
+- **التعليم والتعلم — Teaching, learning & study** — AMEDIA-14 (1)
 - المصادر والرخص / sources & licences
 
 ## الصوت — Audio, voice & music
@@ -114,9 +116,39 @@
 - **الدليل / proof:** `https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/2261-conversational-ai-voice-engineering/8616-speech-recognition-and-synthesis` · `https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/2721-twilio-developer-kit/10514-twilio-voice-conversation-relay`
 - **المصدر / source:** KOSIF Atlas mining 2026-10-20 (https://github.com/kosif199022-jpg/kosif-atlas): conversational-ai-voice-engineering/speech-recognition-and-synthesis (#8616); twilio-developer-kit/twilio-voice-conversation-relay (#10514) · theme audio-voice · 5 supporting skills · verifier read: skills/2261-conversational-ai-voice-engineering/8616-speech-recognition-and-synthesis, skills/2721-twilio-developer-kit/10514-twilio-voice-conversation-relay
 
+## تطوير الألعاب — Game development
+
+#### AMEDIA-12 · توليد ومعايرة شرائط السبرايت · Anchored sprite strip generation and normalization · 📄 موصوف / documented only
+- **ماذا / what:** توليد شريط حركة كامل من إطار معتمد ومعايرته بمقياس ومرساة موحدين. — Generate a whole animation strip from one approved seed and normalize to fixed frames with shared scale and anchor.
+- **متى أستخدمها / when:** 2D sprite animation or pixel-art sheets.
+- **كيف / how:** 1) Approved seed frame. 2) build_sprite_edit_canvas.py (slots, canvas). 3) One edit request for whole strip, with invariants. 4) normalize_sprite_strip.py: shared scale, bottom-center anchor. 5) Optionally lock frame 1. 6) render preview sheet. **أرقام / params:** frames,slot
+- **يحتاج / needs:** [`python3`](../requirements.md#req-python3)
+- **الرخصة / license:** method paraphrased from Atlas skills under MIT; the skills keep their own licenses — see each folder's SOURCE.md
+- **الدليل / proof:** `https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/2696-game-studio/10368-sprite-pipeline` · `https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/2460-pixel-art/9527-sprite`
+- **المصدر / source:** KOSIF Atlas mining 2026-10-20 (https://github.com/kosif199022-jpg/kosif-atlas): game-studio/sprite-pipeline (#10368); pixel-art/sprite (#9527) · theme game-dev · 5 supporting skills · verifier read: skills/2696-game-studio/10368-sprite-pipeline, skills/2460-pixel-art/9527-sprite
+
+#### AMEDIA-13 · تريلر من لعب آلي حقيقي · Gameplay trailer from bot playthroughs · 📄 موصوف / documented only
+- **ماذا / what:** تسجيل لعب آلي وقص على شبكة إيقاع بـ ffmpeg. — Record bot gameplay in Godot Movie Maker and cut on a beat-aligned grid with ffmpeg into 16:9, 9:16 and GIF.
+- **متى أستخدمها / when:** Promo trailer or devlog clip for a Godot game.
+- **كيف / how:** 1) Beat sheet approved. 2) BPM where bar = whole frames at 60fps (14400/BPM). 3) Render shots, cut by timeline.json. 4) Export 1080p60 H.264, -14 LUFS, vertical, GIF. **أرقام / params:** bpm
+- **يحتاج / needs:** [`ffmpeg`](../requirements.md#req-ffmpeg)
+- **الرخصة / license:** method paraphrased from Atlas skills under MIT; the skills keep their own licenses — see each folder's SOURCE.md
+- **الدليل / proof:** `https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/1526-gamegen/4173-game-trailer`
+- **المصدر / source:** KOSIF Atlas mining 2026-10-20 (https://github.com/kosif199022-jpg/kosif-atlas): gamegen/game-trailer (#4173) · theme game-dev · 3 supporting skills · verifier read: skills/1526-gamegen/4173-game-trailer
+
+## التعليم والتعلم — Teaching, learning & study
+
+#### AMEDIA-14 · صورة شرح تعليمية أحادية اللون · Monochrome learning explainer image · 📄 موصوف / documented only
+- **ماذا / what:** يحول الأوراق والأكواد إلى صور شرح 16:9 بسيطة بالأبيض والأسود. — Turn papers, code or concepts into minimal black-and-white 16:9 explainer images with sparse accent colour.
+- **متى أستخدمها / when:** Need study visuals for a paper, formula or process.
+- **كيف / how:** 1) White background, black/dark-gray titles, mid-gray notes. 2) Accent colour only where needed. 3) Pick layout: figure-centred, equation-centred, process or comparison. 4) Output 16:9. **أرقام / params:** layout
+- **الرخصة / license:** method paraphrased from Atlas skills under MIT; the skills keep their own licenses — see each folder's SOURCE.md
+- **الدليل / proof:** `https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/1094-akbun-draw/2418-akbun-draw-learning-mono`
+- **المصدر / source:** KOSIF Atlas mining 2026-10-20 (https://github.com/kosif199022-jpg/kosif-atlas): akbun-draw/akbun-draw-learning-mono (#2418) · theme education-learning · 2 supporting skills · verifier read: skills/1094-akbun-draw/2418-akbun-draw-learning-mono
+
 ## المصادر والرخص / sources & licences
 
-- الرخص / licences: method paraphrased from Atlas skills under MIT; the skills keep their own licenses — see each folder's SOURCE.md (7) · method paraphrased from Atlas skills under Apache-2.0 / MIT; the skills keep their own licenses — see each folder's SOURCE.md (2) · method paraphrased from Atlas skills under MIT / Apache-2.0; the skills keep their own licenses — see each folder's SOURCE.md (2)
+- الرخص / licences: method paraphrased from Atlas skills under MIT; the skills keep their own licenses — see each folder's SOURCE.md (10) · method paraphrased from Atlas skills under Apache-2.0 / MIT; the skills keep their own licenses — see each folder's SOURCE.md (2) · method paraphrased from Atlas skills under MIT / Apache-2.0; the skills keep their own licenses — see each folder's SOURCE.md (2)
 - الأفكار مكتوبة بكلماتنا مع رابط المصدر؛ لا يُنسخ نص طرف ثالث طويل. Ideas are paraphrased with a link to the source; no long third-party text is copied. `—` = no licence recorded (own method or own wording).
 
 ---

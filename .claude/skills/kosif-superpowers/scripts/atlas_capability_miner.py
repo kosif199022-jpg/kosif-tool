@@ -504,7 +504,8 @@ AR_ALIASES = {
     "مبيعات": "sales", "عملاء": "customer crm", "مالية": "finance", "قانوني": "legal contract", "سيرة": "resume cv", "مقابلة": "interview",
     "توثيق": "documentation", "ملاحظات": "notes", "ذاكرة": "memory", "أداء": "performance", "تحسين": "optimize", "هجرة": "migration",
     "رسم": "diagram chart drawing", "مخطط": "diagram", "لوحة": "dashboard", "ذكاء": "ai llm", "نموذج": "model llm", "برومبت": "prompt",
-    "مهارة": "skill", "إضافة": "plugin", "متصفح": "browser", "أتمتة": "automation", "git": "git", "التزام": "commit",
+    "مهارة": "skill", "شخصية": "character", "كرتونية": "cartoon character", "حركها": "animate", "تحريك": "animate animation",
+    "بصوتي": "voice audio lip", "ارسم": "draw", "رسم": "draw drawing", "شعار": "logo", "خط": "font typography", "إضافة": "plugin", "متصفح": "browser", "أتمتة": "automation", "git": "git", "التزام": "commit",
 }
 
 

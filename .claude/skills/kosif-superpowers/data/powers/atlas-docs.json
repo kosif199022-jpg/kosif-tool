@@ -14,7 +14,7 @@
   "requires": [],
   "license": "method paraphrased from Atlas skills under MIT; the skills keep their own licenses — see each folder's SOURCE.md",
   "proof": [],
-  "proof_scope": "url",
+  "proof_scope": "none",
   "styles": [],
   "tags": [
    "AGENTS.md",
@@ -293,7 +293,7 @@
   "requires": [],
   "license": "method paraphrased from Atlas skills under MIT; the skills keep their own licenses — see each folder's SOURCE.md",
   "proof": [],
-  "proof_scope": "url",
+  "proof_scope": "none",
   "styles": [],
   "tags": [
    "agreements",
@@ -514,7 +514,7 @@
   "requires": [],
   "license": "method paraphrased from Atlas skills under MIT/Apache-2.0; the skills keep their own licenses — see each folder's SOURCE.md",
   "proof": [],
-  "proof_scope": "url",
+  "proof_scope": "none",
   "styles": [],
   "tags": [
    "risk",
@@ -867,6 +867,1384 @@
    "kosif_overlap_ids": [],
    "stage": "extracted",
    "verified_by": "b021-compliance-industry-1.json"
+  }
+ },
+ {
+  "id": "ADOCS-17",
+  "family": "atlas-docs",
+  "domain": "docs",
+  "name_ar": "مخطط AWS بصيغة draw.io بأيقونات رسمية",
+  "name_en": "AWS architecture draw.io with official icons",
+  "status": "documented",
+  "what": "توليد XML لمخطط AWS بأيقونات AWS4 الرسمية. — Generate validated draw.io XML for AWS architectures using AWS4 icons, optionally from IaC.",
+  "when": "User wants cloud infrastructure diagram or Azure resource map.",
+  "how": "1. Mode A scan CloudFormation/CDK/Terraform, or mode B ask 3-5 questions. 2. Confirm architecture. 3. Load XML, style and layout rules. 4. Add title, numbered step badges, legend for 7+ services. 5. Export .drawio, optional png/svg/pdf. Azure variant outputs Mermaid from resource groups.",
+  "params": "sketch, legend, export format",
+  "install": "",
+  "requires": [
+   "npm:mermaid"
+  ],
+  "license": "method paraphrased from Atlas skills under Apache-2.0 / MIT; the skills keep their own licenses — see each folder's SOURCE.md",
+  "proof": [
+   "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/373-deploy-on-aws/1376-aws-architecture-diagram",
+   "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/2511-azure/9715-azure-resource-visualizer"
+  ],
+  "proof_scope": "url",
+  "styles": [],
+  "tags": [
+   "aws",
+   "drawio",
+   "azure",
+   "سحابة"
+  ],
+  "section": "المخططات — Diagrams & visual documentation",
+  "source": "KOSIF Atlas mining 2026-10-20 (https://github.com/kosif199022-jpg/kosif-atlas): deploy-on-aws/aws-architecture-diagram (#1376); azure/azure-resource-visualizer (#9715) · theme diagrams-visual-docs · 3 supporting skills · verifier read: skills/373-deploy-on-aws/1376-aws-architecture-diagram, skills/2511-azure/9715-azure-resource-visualizer",
+  "atlas": {
+   "ids": [
+    "1376",
+    "7964",
+    "9715"
+   ],
+   "examples": [
+    {
+     "id": "1376",
+     "plugin": "deploy-on-aws",
+     "skill": "aws-architecture-diagram",
+     "url": "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/373-deploy-on-aws/1376-aws-architecture-diagram"
+    },
+    {
+     "id": "9715",
+     "plugin": "azure",
+     "skill": "azure-resource-visualizer",
+     "url": "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/2511-azure/9715-azure-resource-visualizer"
+    }
+   ],
+   "theme": "diagrams-visual-docs",
+   "risk_notes": "Reads IaC; azure variant queries cloud resources.",
+   "kosif_overlap_ids": [],
+   "stage": "extracted",
+   "verified_by": "b034-diagrams-visual-docs-1.json"
+  }
+ },
+ {
+  "id": "ADOCS-18",
+  "family": "atlas-docs",
+  "domain": "docs",
+  "name_ar": "اختيار محرك المخططات: PlantUML أو D2 أو Structurizr",
+  "name_en": "Diagram-as-code engine choice: PlantUML, D2, Structurizr",
+  "status": "documented",
+  "what": "اختيار أنسب محرك مخططات نصية وإنتاج أو فحص الشيفرة. — Select the best text-diagram engine for the request and produce or lint the source.",
+  "when": "User asks for UML, C4, Gantt, ERD or polished architecture diagram as code.",
+  "how": "1. Choose mode: create, reference or check. 2. Engine by rule: user-named or existing files first, then project convention. 3. C4 multi-view -> Structurizr; UML/Gantt/mindmap -> PlantUML; architecture/flowchart/ERD (sql_table) -> D2. 4. Consult the engine reference before writing syntax. 5. Render to validate; keep .puml/.d2/.dsl next to docs.",
+  "params": "mode, engine",
+  "install": "",
+  "requires": [
+   "plantuml"
+  ],
+  "license": "method paraphrased from Atlas skills under MIT; the skills keep their own licenses — see each folder's SOURCE.md",
+  "proof": [
+   "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/3135-diagram/13445-diagram",
+   "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/2173-tools-plugin/7914-d2-diagrams",
+   "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/2690-build-web-data-visualization/10334-uml-and-software-architecture-visualizat"
+  ],
+  "proof_scope": "url",
+  "styles": [],
+  "tags": [
+   "plantuml",
+   "d2",
+   "C4",
+   "uml"
+  ],
+  "section": "المخططات — Diagrams & visual documentation",
+  "source": "KOSIF Atlas mining 2026-10-20 (https://github.com/kosif199022-jpg/kosif-atlas): diagram/diagram (#13445); tools-plugin/d2-diagrams (#7914); build-web-data-visualization/uml-and-software-architecture-visualization (#10334) · theme diagrams-visual-docs · 4 supporting skills · verifier read: skills/3135-diagram/13445-diagram, skills/2173-tools-plugin/7914-d2-diagrams, skills/2690-build-web-data-visualization/10334-uml-and-software-architecture-visualizat",
+  "atlas": {
+   "ids": [
+    "1547",
+    "7914",
+    "10334",
+    "13445"
+   ],
+   "examples": [
+    {
+     "id": "13445",
+     "plugin": "diagram",
+     "skill": "diagram",
+     "url": "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/3135-diagram/13445-diagram"
+    },
+    {
+     "id": "7914",
+     "plugin": "tools-plugin",
+     "skill": "d2-diagrams",
+     "url": "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/2173-tools-plugin/7914-d2-diagrams"
+    },
+    {
+     "id": "10334",
+     "plugin": "build-web-data-visualization",
+     "skill": "uml-and-software-architecture-visualization",
+     "url": "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/2690-build-web-data-visualization/10334-uml-and-software-architecture-visualizat"
+    }
+   ],
+   "theme": "diagrams-visual-docs",
+   "risk_notes": "Optional renderer CLIs; writes diagram files.",
+   "kosif_overlap_ids": [],
+   "stage": "extracted",
+   "verified_by": "b034-diagrams-visual-docs-1.json"
+  }
+ },
+ {
+  "id": "ADOCS-19",
+  "family": "atlas-docs",
+  "domain": "docs",
+  "name_ar": "مخطط معماري مبني على الريبو الفعلي",
+  "name_en": "Evidence-grounded architecture diagram from repo",
+  "status": "documented",
+  "what": "استخراج العقد والروابط من ملفات المشروع الفعلية ورسم المخطط. — Derive nodes and edges from manifests, compose, k8s, terraform and imports, then render a diagram.",
+  "when": "User asks to draw the real system, review a PR's structural change, or detect drift.",
+  "how": "1. Scan package manifests, docker-compose, k8s, terraform, import graph. 2. Build a node/edge graph, cite sources. 3. Choose single-SVG hero (<=8 nodes) or widescreen docs layout. 4. Fill HTML template with inline SVG; emit Mermaid copy. 5. Modes: generate, diff a PR, trace a stack into a sequence, watch via fingerprint.",
+  "params": "mode (generate|diff|trace|watch), target path",
+  "install": "",
+  "requires": [
+   "docker",
+   "npm:mermaid"
+  ],
+  "license": "method paraphrased from Atlas skills under MIT; one WTFPL; the skills keep their own licenses — see each folder's SOURCE.md",
+  "proof": [
+   "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/1722-engineer-design-diagram/4729-engineer-design-diagram",
+   "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/2179-architecture-suite/7964-ln-25-architecture-diagram-builder",
+   "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/x4919-visual-gen/x20317-architecture-diagram"
+  ],
+  "proof_scope": "url",
+  "styles": [],
+  "tags": [
+   "architecture",
+   "repo",
+   "معمارية",
+   "drift"
+  ],
+  "section": "المخططات — Diagrams & visual documentation",
+  "source": "KOSIF Atlas mining 2026-10-20 (https://github.com/kosif199022-jpg/kosif-atlas): engineer-design-diagram/engineer-design-diagram (#4729); architecture-suite/ln-25-architecture-diagram-builder (#7964); visual-gen/architecture-diagram (#x20317) · theme diagrams-visual-docs · 4 supporting skills · verifier read: skills/1722-engineer-design-diagram/4729-engineer-design-diagram, skills/2179-architecture-suite/7964-ln-25-architecture-diagram-builder, skills/x4919-visual-gen/x20317-architecture-diagram",
+  "atlas": {
+   "ids": [
+    "2428",
+    "4729",
+    "7964",
+    "x20317"
+   ],
+   "examples": [
+    {
+     "id": "4729",
+     "plugin": "engineer-design-diagram",
+     "skill": "engineer-design-diagram",
+     "url": "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/1722-engineer-design-diagram/4729-engineer-design-diagram"
+    },
+    {
+     "id": "7964",
+     "plugin": "architecture-suite",
+     "skill": "ln-25-architecture-diagram-builder",
+     "url": "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/2179-architecture-suite/7964-ln-25-architecture-diagram-builder"
+    },
+    {
+     "id": "x20317",
+     "plugin": "visual-gen",
+     "skill": "architecture-diagram",
+     "url": "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/x4919-visual-gen/x20317-architecture-diagram"
+    }
+   ],
+   "theme": "diagrams-visual-docs",
+   "risk_notes": "Bash for git/docker/kubectl/terraform reads; writes HTML.",
+   "kosif_overlap_ids": [],
+   "stage": "extracted",
+   "verified_by": "b034-diagrams-visual-docs-1.json"
+  }
+ },
+ {
+  "id": "ADOCS-20",
+  "family": "atlas-docs",
+  "domain": "docs",
+  "name_ar": "رسم Excalidraw يحمل حجة بصرية",
+  "name_en": "Excalidraw diagram that argues visually",
+  "status": "documented",
+  "what": "إنشاء ملف Excalidraw بأشكال معبرة وحلقة تصيير وإصلاح. — Create .excalidraw JSON using shape-as-meaning patterns, palette file and a render-fix loop.",
+  "when": "User asks to visualize a workflow, plan or concept in Excalidraw.",
+  "how": "1. Assess simple vs technical depth. 2. Research real formats for technical ones. 3. Map concepts to visual patterns; apply isomorphism test. 4. Generate JSON section by section using a color palette file. 5. Render, view, fix until clean.",
+  "params": "depth, palette",
+  "install": "",
+  "requires": [],
+  "license": "method paraphrased from Atlas skills under MIT / Apache-2.0; the skills keep their own licenses — see each folder's SOURCE.md",
+  "proof": [
+   "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/2790-work/11181-draw-excalidraw",
+   "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/2966-pwdev-excalidraw/12488-excalidraw"
+  ],
+  "proof_scope": "url",
+  "styles": [],
+  "tags": [
+   "excalidraw",
+   "whiteboard",
+   "سبورة",
+   "workflow"
+  ],
+  "section": "المخططات — Diagrams & visual documentation",
+  "source": "KOSIF Atlas mining 2026-10-20 (https://github.com/kosif199022-jpg/kosif-atlas): work/draw-excalidraw (#11181); pwdev-excalidraw/excalidraw (#12488) · theme diagrams-visual-docs · 2 supporting skills · verifier read: skills/2790-work/11181-draw-excalidraw, skills/2966-pwdev-excalidraw/12488-excalidraw",
+  "atlas": {
+   "ids": [
+    "11181",
+    "12488"
+   ],
+   "examples": [
+    {
+     "id": "11181",
+     "plugin": "work",
+     "skill": "draw-excalidraw",
+     "url": "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/2790-work/11181-draw-excalidraw"
+    },
+    {
+     "id": "12488",
+     "plugin": "pwdev-excalidraw",
+     "skill": "excalidraw",
+     "url": "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/2966-pwdev-excalidraw/12488-excalidraw"
+    }
+   ],
+   "theme": "diagrams-visual-docs",
+   "risk_notes": "Render step runs a Python script with browser.",
+   "kosif_overlap_ids": [],
+   "stage": "extracted",
+   "verified_by": "b034-diagrams-visual-docs-1.json"
+  }
+ },
+ {
+  "id": "ADOCS-21",
+  "family": "atlas-docs",
+  "domain": "docs",
+  "name_ar": "رسم مخططات Mermaid والتحقق منها",
+  "name_en": "Mermaid diagram render and validate loop",
+  "status": "documented",
+  "what": "كتابة Mermaid وتصييره عبر mmdc وإصلاح الأخطاء حتى ينجح. — Write Mermaid markup, render with mmdc to SVG/PNG/PDF and fix syntax errors until it compiles.",
+  "when": "User wants flowchart, sequence, ER, class, state, Gantt or gitGraph as an image or in Markdown.",
+  "how": "1. Pick diagram type matching the question. 2. Write .mmd source. 3. Run mmdc -i in.mmd -o out.svg (or png/pdf). 4. On parse error, fix syntax and rerun. 5. Embed the fenced mermaid block in GitHub Markdown and keep the source versioned.",
+  "params": "type, output format, theme",
+  "install": "npm i -g @mermaid-js/mermaid-cli",
+  "requires": [
+   "npm:mermaid"
+  ],
+  "license": "method paraphrased from Atlas skills under MIT; the skills keep their own licenses — see each folder's SOURCE.md",
+  "proof": [
+   "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/1245-mermaid-cli/2925-mermaid-cli",
+   "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/2173-tools-plugin/7922-mermaid-diagrams",
+   "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/3206-literature-publication/13573-markdown-mermaid-writing"
+  ],
+  "proof_scope": "url",
+  "styles": [],
+  "tags": [
+   "mermaid",
+   "diagram",
+   "مخطط",
+   "render"
+  ],
+  "section": "المخططات — Diagrams & visual documentation",
+  "source": "KOSIF Atlas mining 2026-10-20 (https://github.com/kosif199022-jpg/kosif-atlas): mermaid-cli/mermaid-cli (#2925); tools-plugin/mermaid-diagrams (#7922); literature-publication/markdown-mermaid-writing (#13573) · theme diagrams-visual-docs · 5 supporting skills · verifier read: skills/1245-mermaid-cli/2925-mermaid-cli, skills/2173-tools-plugin/7922-mermaid-diagrams, skills/3206-literature-publication/13573-markdown-mermaid-writing",
+  "atlas": {
+   "ids": [
+    "1547",
+    "2925",
+    "4844",
+    "7922",
+    "13573"
+   ],
+   "examples": [
+    {
+     "id": "2925",
+     "plugin": "mermaid-cli",
+     "skill": "mermaid-cli",
+     "url": "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/1245-mermaid-cli/2925-mermaid-cli"
+    },
+    {
+     "id": "7922",
+     "plugin": "tools-plugin",
+     "skill": "mermaid-diagrams",
+     "url": "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/2173-tools-plugin/7922-mermaid-diagrams"
+    },
+    {
+     "id": "13573",
+     "plugin": "literature-publication",
+     "skill": "markdown-mermaid-writing",
+     "url": "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/3206-literature-publication/13573-markdown-mermaid-writing"
+    }
+   ],
+   "theme": "diagrams-visual-docs",
+   "risk_notes": "Runs mmdc (headless Chromium); writes files.",
+   "kosif_overlap_ids": [],
+   "stage": "extracted",
+   "verified_by": "b034-diagrams-visual-docs-1.json"
+  }
+ },
+ {
+  "id": "ADOCS-22",
+  "family": "atlas-docs",
+  "domain": "docs",
+  "name_ar": "تخطيط الرسوم العقدية وتصميم UML",
+  "name_en": "Node-link layout and UML diagram design",
+  "status": "documented",
+  "what": "اختيار استراتيجية تخطيط لتقليل التقاطعات وفق UML. — Choose auto-layout strategies and notation to reduce crossings in node-link and UML diagrams.",
+  "when": "User asks how to lay out or critique a diagram.",
+  "how": "1. Classify graph (tree, DAG, general). 2. Pick layered, force or tree layout. 3. Minimize crossings, align ranks, group clusters. 4. Use correct UML notation per type. 5. Review readability.",
+  "params": "graph type",
+  "install": "",
+  "requires": [],
+  "license": "method paraphrased from Atlas skills under MIT; the skills keep their own licenses — see each folder's SOURCE.md",
+  "proof": [
+   "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/2690-build-web-data-visualization/10326-node-link-and-diagram-layout",
+   "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/2690-build-web-data-visualization/10334-uml-and-software-architecture-visualizat"
+  ],
+  "proof_scope": "url",
+  "styles": [],
+  "tags": [
+   "layout",
+   "uml",
+   "تخطيط",
+   "graph"
+  ],
+  "section": "المخططات — Diagrams & visual documentation",
+  "source": "KOSIF Atlas mining 2026-10-20 (https://github.com/kosif199022-jpg/kosif-atlas): build-web-data-visualization/node-link-and-diagram-layout (#10326); build-web-data-visualization/uml-and-software-architecture-visualization (#10334) · theme diagrams-visual-docs · 3 supporting skills · verifier read: skills/2690-build-web-data-visualization/10326-node-link-and-diagram-layout, skills/2690-build-web-data-visualization/10334-uml-and-software-architecture-visualizat",
+  "atlas": {
+   "ids": [
+    "8203",
+    "10326",
+    "10334"
+   ],
+   "examples": [
+    {
+     "id": "10326",
+     "plugin": "build-web-data-visualization",
+     "skill": "node-link-and-diagram-layout",
+     "url": "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/2690-build-web-data-visualization/10326-node-link-and-diagram-layout"
+    },
+    {
+     "id": "10334",
+     "plugin": "build-web-data-visualization",
+     "skill": "uml-and-software-architecture-visualization",
+     "url": "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/2690-build-web-data-visualization/10334-uml-and-software-architecture-visualizat"
+    }
+   ],
+   "theme": "diagrams-visual-docs",
+   "risk_notes": "Guidance only.",
+   "kosif_overlap_ids": [],
+   "stage": "extracted",
+   "verified_by": "b034-diagrams-visual-docs-1.json"
+  }
+ },
+ {
+  "id": "ADOCS-23",
+  "family": "atlas-docs",
+  "domain": "docs",
+  "name_ar": "مخطط HTML مستقل بـ SVG مضمن",
+  "name_en": "Self-contained HTML diagram with inline SVG",
+  "status": "documented",
+  "what": "رسم مخطط في ملف HTML واحد بـ SVG مع حد للتعقيد. — Draw a diagram as one HTML file with inline SVG, orthogonal connectors and a complexity budget.",
+  "when": "User needs a shareable explanatory figure or schematic.",
+  "how": "1. Fix the question the figure answers. 2. Cap node count (complexity budget). 3. Use semantic colors, orthogonal arrows, boundaries dashed, store paths solid and lookups dashed. 4. Inline SVG, no external deps. 5. Check labels, contrast and reading order.",
+  "params": "node cap, theme",
+  "install": "",
+  "requires": [],
+  "license": "method paraphrased from Atlas skills under MIT / BSD-3-Clause; the skills keep their own licenses — see each folder's SOURCE.md",
+  "proof": [
+   "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/345-visuals/1242-html-diagram",
+   "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/2657-figures/10113-svg-figure",
+   "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/1095-akbun-draw-architecture/2428-akbun-draw-architecture"
+  ],
+  "proof_scope": "url",
+  "styles": [],
+  "tags": [
+   "svg",
+   "html",
+   "figure",
+   "شكل"
+  ],
+  "section": "المخططات — Diagrams & visual documentation",
+  "source": "KOSIF Atlas mining 2026-10-20 (https://github.com/kosif199022-jpg/kosif-atlas): visuals/html-diagram (#1242); figures/svg-figure (#10113); akbun-draw-architecture/akbun-draw-architecture (#2428) · theme diagrams-visual-docs · 4 supporting skills · verifier read: skills/345-visuals/1242-html-diagram, skills/2657-figures/10113-svg-figure, skills/1095-akbun-draw-architecture/2428-akbun-draw-architecture",
+  "atlas": {
+   "ids": [
+    "1242",
+    "2428",
+    "8300",
+    "10113"
+   ],
+   "examples": [
+    {
+     "id": "1242",
+     "plugin": "visuals",
+     "skill": "html-diagram",
+     "url": "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/345-visuals/1242-html-diagram"
+    },
+    {
+     "id": "10113",
+     "plugin": "figures",
+     "skill": "svg-figure",
+     "url": "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/2657-figures/10113-svg-figure"
+    },
+    {
+     "id": "2428",
+     "plugin": "akbun-draw-architecture",
+     "skill": "akbun-draw-architecture",
+     "url": "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/1095-akbun-draw-architecture/2428-akbun-draw-architecture"
+    }
+   ],
+   "theme": "diagrams-visual-docs",
+   "risk_notes": "Bundled scripts for render checks.",
+   "kosif_overlap_ids": [],
+   "stage": "extracted",
+   "verified_by": "b034-diagrams-visual-docs-1.json"
+  }
+ },
+ {
+  "id": "ADOCS-24",
+  "family": "atlas-docs",
+  "domain": "docs",
+  "name_ar": "خطة تنفيذ مرئية للمراجعة في المتصفح",
+  "name_en": "Visual implementation plan reviewed in browser",
+  "status": "documented",
+  "what": "كتابة الخطة بصيغة ماركداون وعرضها محليا بمخططات وجمع الملاحظات. — Write a plan as markdown, lint, serve locally with diagrams and collect comments.",
+  "when": "User wants to review a plan visually before code.",
+  "how": "1. Research, then inventory components, schema, endpoints. 2. Write markdown with tldr, summary, mermaid architecture, key changes. 3. Lint and fix findings. 4. Self-review rendered page. 5. Serve via bundled node server, read comments, repeat. Write for a non-developer executive.",
+  "params": "doc dir",
+  "install": "",
+  "requires": [
+   "npm:mermaid"
+  ],
+  "license": "method paraphrased from Atlas skills under MIT; the skills keep their own licenses — see each folder's SOURCE.md",
+  "proof": [
+   "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/2865-visual-docs/11574-visual-plan",
+   "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/2199-lvtd-skills/8203-visual-docs-diagrams"
+  ],
+  "proof_scope": "url",
+  "styles": [],
+  "tags": [
+   "plan",
+   "review",
+   "خطة",
+   "docs"
+  ],
+  "section": "المخططات — Diagrams & visual documentation",
+  "source": "KOSIF Atlas mining 2026-10-20 (https://github.com/kosif199022-jpg/kosif-atlas): visual-docs/visual-plan (#11574); lvtd-skills/visual-docs-diagrams (#8203) · theme diagrams-visual-docs · 3 supporting skills · verifier read: skills/2865-visual-docs/11574-visual-plan, skills/2199-lvtd-skills/8203-visual-docs-diagrams",
+  "atlas": {
+   "ids": [
+    "8203",
+    "11574",
+    "13573"
+   ],
+   "examples": [
+    {
+     "id": "11574",
+     "plugin": "visual-docs",
+     "skill": "visual-plan",
+     "url": "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/2865-visual-docs/11574-visual-plan"
+    },
+    {
+     "id": "8203",
+     "plugin": "lvtd-skills",
+     "skill": "visual-docs-diagrams",
+     "url": "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/2199-lvtd-skills/8203-visual-docs-diagrams"
+    }
+   ],
+   "theme": "diagrams-visual-docs",
+   "risk_notes": "Runs local node server and linter.",
+   "kosif_overlap_ids": [],
+   "stage": "extracted",
+   "verified_by": "b034-diagrams-visual-docs-1.json"
+  }
+ },
+ {
+  "id": "ADOCS-25",
+  "family": "atlas-docs",
+  "domain": "docs",
+  "name_ar": "إنشاء ADR وRFC مع ترقيم وربط",
+  "name_en": "ADR/RFC/PRD creation with ID linking",
+  "status": "documented",
+  "what": "تسجيل القرارات كـADR أو RFC وترقيم المستندات وربطها بالمشكلات. — Record decisions as ADR or RFC, assign sequential PRD/ADR/PRP IDs and link documents bidirectionally to issues.",
+  "when": "We decided X; should we switch to Y; documents lack IDs",
+  "how": "1 Classify: settled decision -> ADR, open proposal -> RFC, accepted RFC -> resolve into ADR. 2 Fill context, decision, consequences, status. 3 Scan docs/prds, adrs, prps for missing IDs; assign next number; update manifest. 4 Use --dry-run first. 5 Link ids to GitHub issues; detect opportunities in conversation.",
+  "params": "",
+  "install": "",
+  "requires": [],
+  "license": "method paraphrased from Atlas skills under MIT; the skills keep their own licenses — see each folder's SOURCE.md",
+  "proof": [
+   "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/341-archcore/1209-document"
+  ],
+  "proof_scope": "url",
+  "styles": [],
+  "tags": [
+   "adr",
+   "rfc",
+   "prd",
+   "قرارات معمارية"
+  ],
+  "section": "التوثيق — Documentation",
+  "source": "KOSIF Atlas mining 2026-10-20 (https://github.com/kosif199022-jpg/kosif-atlas): archcore/document (#1209) · theme documentation · 9 supporting skills · verifier read: skills/341-archcore/1209-document, ",
+  "atlas": {
+   "ids": [
+    "1209",
+    "4357",
+    "7505",
+    "7602",
+    "7603",
+    "7610",
+    "7617",
+    "7623",
+    "7624"
+   ],
+   "examples": [
+    {
+     "id": "1209",
+     "plugin": "archcore",
+     "skill": "document",
+     "url": "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/341-archcore/1209-document"
+    }
+   ],
+   "theme": "documentation",
+   "risk_notes": "sync-ids has 2 shell scripts and may create GitHub issues with --link-issues",
+   "kosif_overlap_ids": [],
+   "stage": "extracted",
+   "verified_by": "b035-documentation-1.json"
+  }
+ },
+ {
+  "id": "ADOCS-26",
+  "family": "atlas-docs",
+  "domain": "docs",
+  "name_ar": "تحديث التوثيق بالاعتماد على الكود",
+  "name_en": "Code-grounded doc update and overhaul",
+  "status": "documented",
+  "what": "تحديث أو إعادة كتابة الوثائق لقارئ محدد مع التحقق من كل ادعاء بالكود وفحص الروابط والمخططات. — Update or rewrite docs for a named reader, verifying every claim against code and running link, diagram and prose checks.",
+  "when": "A code change made docs stale; README or guide rewrite; API docs generation",
+  "how": "1 Choose Update vs Overhaul mode; scope from git diff --name-only. 2 Write ownership map: one reader, one job per doc, one owner per fact. 3 Read code/tests/config; docs conform to code unless doc is declared contract. 4 Replace adjectives with measured facts; generate sample output from real code. 5 Render mermaid diagrams and inspect. 6 Run link check and prose lint once. 7 Report unverified claims.",
+  "params": "",
+  "install": "",
+  "requires": [
+   "git",
+   "npm:mermaid"
+  ],
+  "license": "method paraphrased from Atlas skills under MIT; the skills keep their own licenses — see each folder's SOURCE.md",
+  "proof": [
+   "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/113-dev-flow/288-documenting-code"
+  ],
+  "proof_scope": "url",
+  "styles": [],
+  "tags": [
+   "docs-update",
+   "source-grounded",
+   "توثيق",
+   "تحقق"
+  ],
+  "section": "التوثيق — Documentation",
+  "source": "KOSIF Atlas mining 2026-10-20 (https://github.com/kosif199022-jpg/kosif-atlas): dev-flow/documenting-code (#288) · theme documentation · 10 supporting skills · verifier read: skills/113-dev-flow/288-documenting-code, ",
+  "atlas": {
+   "ids": [
+    "95",
+    "96",
+    "288",
+    "959",
+    "1645",
+    "3197",
+    "4581",
+    "7729",
+    "8012",
+    "8398"
+   ],
+   "examples": [
+    {
+     "id": "288",
+     "plugin": "dev-flow",
+     "skill": "documenting-code",
+     "url": "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/113-dev-flow/288-documenting-code"
+    }
+   ],
+   "theme": "documentation",
+   "risk_notes": "Bundled scripts (link check, mermaid render, prose lint) would execute if installed; allowed-tools include git and mmdc",
+   "kosif_overlap_ids": [],
+   "stage": "extracted",
+   "verified_by": "b035-documentation-1.json"
+  }
+ },
+ {
+  "id": "ADOCS-27",
+  "family": "atlas-docs",
+  "domain": "docs",
+  "name_ar": "إعادة هيكلة التوثيق بإطار دياتاكسيس",
+  "name_en": "Diataxis four-kind docs restructuring",
+  "status": "documented",
+  "what": "تصنيف كل صفحة إلى تعليمي أو دليل مهمة أو مرجع أو شرح وفصل الصفحات المختلطة لتتبع رحلة القارئ. — Classify each page as tutorial, how-to, reference or explanation and split mixed pages so the docs set follows reader journeys.",
+  "when": "Docs feel muddled; planning a docs set; auditing information architecture",
+  "how": "1 List audiences (newcomer, integrator, operator). 2 Tag every page with one of four kinds. 3 Split pages mixing kinds. 4 Organize navigation by reader task, not module tree. 5 Keep one fact owner and link elsewhere. 6 Optionally pick a docs-as-code site tool (Docusaurus, Mintlify, MkDocs, Starlight) by needs.",
+  "params": "",
+  "install": "",
+  "requires": [],
+  "license": "method paraphrased from Atlas skills under MIT; the skills keep their own licenses — see each folder's SOURCE.md",
+  "proof": [
+   "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/2395-technical-writing-docs/9273-diataxis-documentation"
+  ],
+  "proof_scope": "url",
+  "styles": [],
+  "tags": [
+   "diataxis",
+   "docs-architecture",
+   "توثيق",
+   "هيكلة"
+  ],
+  "section": "التوثيق — Documentation",
+  "source": "KOSIF Atlas mining 2026-10-20 (https://github.com/kosif199022-jpg/kosif-atlas): technical-writing-docs/diataxis-documentation (#9273) · theme documentation · 7 supporting skills · verifier read: skills/2395-technical-writing-docs/9273-diataxis-documentation, ",
+  "atlas": {
+   "ids": [
+    "7385",
+    "8024",
+    "8025",
+    "8027",
+    "8056",
+    "9273",
+    "9274"
+   ],
+   "examples": [
+    {
+     "id": "9273",
+     "plugin": "technical-writing-docs",
+     "skill": "diataxis-documentation",
+     "url": "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/2395-technical-writing-docs/9273-diataxis-documentation"
+    }
+   ],
+   "theme": "documentation",
+   "risk_notes": "Prompt-only; may edit markdown and run git read commands",
+   "kosif_overlap_ids": [],
+   "stage": "extracted",
+   "verified_by": "b035-documentation-1.json"
+  }
+ },
+ {
+  "id": "ADOCS-28",
+  "family": "atlas-docs",
+  "domain": "docs",
+  "name_ar": "تدقيق انحراف التوثيق عن الكود",
+  "name_en": "Docs drift audit against current code",
+  "status": "documented",
+  "what": "استخراج الادعاءات القابلة للتحقق من الوثائق ومطابقتها بالكود وتقرير التناقضات دون تعديل. — Extract falsifiable claims from README, CLAUDE.md and docs, check each against the repo, and report contradictions, stale items and orphans without editing.",
+  "when": "After many commits; docs may be stale; before release; takeover of unknown repo",
+  "how": "1 Inventory doc files and their reader. 2 Extract claims (paths, counts, commands, badges, versions). 3 Verify each against code/config via grep and git log. 4 Report as audit: inventory, findings, recommendations; user dispositions before any edit. 5 Optionally stamp a .docs-sync file with the audited commit SHA so drift is counted from there.",
+  "params": "",
+  "install": "",
+  "requires": [
+   "git"
+  ],
+  "license": "method paraphrased from Atlas skills under MIT; the skills keep their own licenses — see each folder's SOURCE.md",
+  "proof": [
+   "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/1554-gates/4320-docs-consolidate"
+  ],
+  "proof_scope": "url",
+  "styles": [],
+  "tags": [
+   "docs-audit",
+   "drift",
+   "تدقيق",
+   "توثيق"
+  ],
+  "section": "التوثيق — Documentation",
+  "source": "KOSIF Atlas mining 2026-10-20 (https://github.com/kosif199022-jpg/kosif-atlas): gates/docs-consolidate (#4320) · theme documentation · 9 supporting skills · verifier read: skills/1554-gates/4320-docs-consolidate, ",
+  "atlas": {
+   "ids": [
+    "115",
+    "812",
+    "4320",
+    "4363",
+    "7177",
+    "7732",
+    "10048",
+    "12680",
+    "12918"
+   ],
+   "examples": [
+    {
+     "id": "4320",
+     "plugin": "gates",
+     "skill": "docs-consolidate",
+     "url": "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/1554-gates/4320-docs-consolidate"
+    }
+   ],
+   "theme": "documentation",
+   "risk_notes": "Prompt-only; may edit markdown and run git read commands",
+   "kosif_overlap_ids": [],
+   "stage": "extracted",
+   "verified_by": "b035-documentation-1.json"
+  }
+ },
+ {
+  "id": "ADOCS-29",
+  "family": "atlas-docs",
+  "domain": "docs",
+  "name_ar": "توثيق الدروس المستفادة من المشكلات المحلولة",
+  "name_en": "Durable solved-problem learning notes",
+  "status": "documented",
+  "what": "كتابة درس واحد موثق لكل مشكلة محلولة عندما لا يظهر المنطق في الكود. — Write one validated learning per solved problem under a solutions folder, only when reasoning is not recoverable from code.",
+  "when": "After verifying a non-obvious fix; changelog/knowledge capture",
+  "how": "1 Apply counterfactual bar: would losing this cause recurrence or rediscovery; else write nothing. 2 One learning per run. 3 Resolve docs root from config. 4 Research subagents write scratch only. 5 Orchestrator writes solutions doc with frontmatter, validates claims. 6 Update existing learning rather than duplicate.",
+  "params": "",
+  "install": "",
+  "requires": [
+   "claude:tools"
+  ],
+  "license": "method paraphrased from Atlas skills under MIT; the skills keep their own licenses — see each folder's SOURCE.md",
+  "proof": [
+   "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/1391-compound-engineering/3284-ce-compound"
+  ],
+  "proof_scope": "url",
+  "styles": [],
+  "tags": [
+   "knowledge",
+   "learnings",
+   "معرفة",
+   "تسجيل"
+  ],
+  "section": "التوثيق — Documentation",
+  "source": "KOSIF Atlas mining 2026-10-20 (https://github.com/kosif199022-jpg/kosif-atlas): compound-engineering/ce-compound (#3284) · theme documentation · 7 supporting skills · verifier read: skills/1391-compound-engineering/3284-ce-compound",
+  "atlas": {
+   "ids": [
+    "3284",
+    "4357",
+    "4359",
+    "4845",
+    "9340",
+    "11612",
+    "12441"
+   ],
+   "examples": [
+    {
+     "id": "3284",
+     "plugin": "compound-engineering",
+     "skill": "ce-compound",
+     "url": "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/1391-compound-engineering/3284-ce-compound"
+    }
+   ],
+   "theme": "documentation",
+   "risk_notes": "6 py + 1 sh scripts",
+   "kosif_overlap_ids": [],
+   "stage": "extracted",
+   "verified_by": "b035-documentation-1.json"
+  }
+ },
+ {
+  "id": "ADOCS-30",
+  "family": "atlas-docs",
+  "domain": "docs",
+  "name_ar": "ويكي مترابط تديره النماذج",
+  "name_en": "LLM-maintained interlinked wiki",
+  "status": "documented",
+  "what": "تحويل المصادر إلى قاعدة معرفة ماركداون مترابطة. — Ingest sources into a persistent cross-referenced markdown knowledge base in the Karpathy pattern.",
+  "when": "Second brain; Obsidian vault; knowledge base",
+  "how": "1 Ingest source into raw folder. 2 Write summary notes with wikilinks. 3 Update index and log. 4 Lint for orphans and contradictions.",
+  "params": "",
+  "install": "",
+  "requires": [],
+  "license": "method paraphrased from Atlas skills under MIT; the skills keep their own licenses — see each folder's SOURCE.md",
+  "proof": [],
+  "proof_scope": "none",
+  "styles": [],
+  "tags": [
+   "wiki",
+   "knowledge-base",
+   "ويكي",
+   "معرفة"
+  ],
+  "section": "التوثيق — Documentation",
+  "source": "KOSIF Atlas mining 2026-10-20 (https://github.com/kosif199022-jpg/kosif-atlas):  · theme documentation · 5 supporting skills · verifier read: —",
+  "atlas": {
+   "ids": [
+    "4845",
+    "9942",
+    "12441",
+    "13534",
+    "13927"
+   ],
+   "examples": [],
+   "theme": "documentation",
+   "risk_notes": "one js script",
+   "kosif_overlap_ids": [],
+   "stage": "extracted",
+   "verified_by": "b035-documentation-1.json"
+  }
+ },
+ {
+  "id": "ADOCS-31",
+  "family": "atlas-docs",
+  "domain": "docs",
+  "name_ar": "البحث في توثيق المكتبات بالإصدار الصحيح",
+  "name_en": "Look up version-correct library docs",
+  "status": "documented",
+  "what": "الإجابة عن أسئلة API من التوثيق الرسمي للإصدار المثبت. — Answer API questions from official docs for the installed version via llms.txt or doc MCP rather than memory.",
+  "when": "Using a library; training data may be stale",
+  "how": "1 Read dependency version from lockfile. 2 Fetch official docs or llms.txt. 3 Cite source URL. 4 Record gotchas in a rule file.",
+  "params": "",
+  "install": "",
+  "requires": [],
+  "license": "method paraphrased from Atlas skills under MIT; the skills keep their own licenses — see each folder's SOURCE.md",
+  "proof": [],
+  "proof_scope": "none",
+  "styles": [],
+  "tags": [
+   "docs-lookup",
+   "llms-txt",
+   "توثيق",
+   "مكتبات"
+  ],
+  "section": "التوثيق — Documentation",
+  "source": "KOSIF Atlas mining 2026-10-20 (https://github.com/kosif199022-jpg/kosif-atlas):  · theme documentation · 7 supporting skills · verifier read: , ",
+  "atlas": {
+   "ids": [
+    "296",
+    "2559",
+    "2664",
+    "3105",
+    "3393",
+    "4159",
+    "7597"
+   ],
+   "examples": [],
+   "theme": "documentation",
+   "risk_notes": "network fetch",
+   "kosif_overlap_ids": [],
+   "stage": "extracted",
+   "verified_by": "b035-documentation-1.json"
+  }
+ },
+ {
+  "id": "ADOCS-32",
+  "family": "atlas-docs",
+  "domain": "docs",
+  "name_ar": "ضغط الماركداون دون فقدان المعنى",
+  "name_en": "Lossless markdown compression with semantic-diff gate",
+  "status": "documented",
+  "what": "حذف الحشو والتحوط من الوثائق مع مراجعة فروق تعيد أي معنى مفقود. — Cut filler, hedging and articles from docs while a second-pass diff review reverts any lost directive, threshold or example.",
+  "when": "Instruction files too long; token cost; tighten docs",
+  "how": "1 Snapshot original to temp dir. 2 Compress mechanically (flavor-vs-content matrix: cut filler/hedge/pleasantry, keep directives, qualifiers, numbers, examples). 3 Spawn reviewer comparing original vs condensed, listing semantic loss, ambiguity, false positives with citations. 4 Revert any loss. 5 Keep snapshot only on request.",
+  "params": "",
+  "install": "",
+  "requires": [],
+  "license": "method paraphrased from Atlas skills under MIT; the skills keep their own licenses — see each folder's SOURCE.md",
+  "proof": [
+   "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/2434-docs-hygiene/9448-compress"
+  ],
+  "proof_scope": "url",
+  "styles": [],
+  "tags": [
+   "compression",
+   "tokens",
+   "ضغط",
+   "ماركداون"
+  ],
+  "section": "التوثيق — Documentation",
+  "source": "KOSIF Atlas mining 2026-10-20 (https://github.com/kosif199022-jpg/kosif-atlas): docs-hygiene/compress (#9448) · theme documentation · 4 supporting skills · verifier read: skills/2434-docs-hygiene/9448-compress, ",
+  "atlas": {
+   "ids": [
+    "8404",
+    "9338",
+    "9448",
+    "11559"
+   ],
+   "examples": [
+    {
+     "id": "9448",
+     "plugin": "docs-hygiene",
+     "skill": "compress",
+     "url": "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/2434-docs-hygiene/9448-compress"
+    }
+   ],
+   "theme": "documentation",
+   "risk_notes": "4 shell scripts; uses optional caveman plugin; writes temp files",
+   "kosif_overlap_ids": [],
+   "stage": "extracted",
+   "verified_by": "b035-documentation-1.json"
+  }
+ },
+ {
+  "id": "ADOCS-33",
+  "family": "atlas-docs",
+  "domain": "docs",
+  "name_ar": "كتابة README والتحقق منه",
+  "name_en": "README authoring and verification",
+  "status": "documented",
+  "what": "توليد README بكشف التقنيات والبيانات ثم التحقق من كل ادعاء ومسار وشارة. — Generate a front-door README by detecting stack and metadata, then verify every claim, path, count and badge against the repo.",
+  "when": "New repo; README stale; open-source release",
+  "how": "1 Detect stack, layout, license, scripts. 2 Gather missing metadata (logo, badges, features). 3 Draft sections: tagline, badges, features, install, usage, tech stack. 4 Verify each command and path exists. 5 Re-check after changes.",
+  "params": "",
+  "install": "",
+  "requires": [],
+  "license": "method paraphrased from Atlas skills under MIT; the skills keep their own licenses — see each folder's SOURCE.md",
+  "proof": [],
+  "proof_scope": "none",
+  "styles": [],
+  "tags": [
+   "readme",
+   "badges",
+   "توثيق",
+   "ريدمي"
+  ],
+  "section": "التوثيق — Documentation",
+  "source": "KOSIF Atlas mining 2026-10-20 (https://github.com/kosif199022-jpg/kosif-atlas):  · theme documentation · 6 supporting skills · verifier read: , ",
+  "atlas": {
+   "ids": [
+    "36",
+    "115",
+    "1766",
+    "7697",
+    "9338",
+    "12918"
+   ],
+   "examples": [],
+   "theme": "documentation",
+   "risk_notes": "Prompt-only; may edit markdown and run git read commands",
+   "kosif_overlap_ids": [],
+   "stage": "extracted",
+   "verified_by": "b035-documentation-1.json"
+  }
+ },
+ {
+  "id": "ADOCS-34",
+  "family": "atlas-docs",
+  "domain": "docs",
+  "name_ar": "إزالة التعليقات الزائدة في الكود",
+  "name_en": "Strip AI-slop and zero-info code comments",
+  "status": "documented",
+  "what": "حذف التعليقات التي تكرر الكود أو تصف طبقة أخرى والإبقاء على أسباب القرار. — Delete comments that restate code, describe another layer or narrate unshipped plans, keeping only why-comments and tool directives.",
+  "when": "Reviewer calls comment useless; cleaning agent-written code; PR cleanup",
+  "how": "1 Apply three-clause test: true at this layer, not visible in code, not stated better nearby. 2 Flag wrong-layer (noun absent from signature/body), redundant, planning narration. 3 Dissolve what-comments into better names. 4 Keep license, lint directives, doctests, generated API docs. 5 Do not merely shorten or abstract.",
+  "params": "",
+  "install": "",
+  "requires": [],
+  "license": "method paraphrased from Atlas skills under MIT; the skills keep their own licenses — see each folder's SOURCE.md",
+  "proof": [
+   "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/1221-comment-slop/2903-comment-slop"
+  ],
+  "proof_scope": "url",
+  "styles": [],
+  "tags": [
+   "comments",
+   "cleanup",
+   "تعليقات",
+   "جودة الكود"
+  ],
+  "section": "التوثيق — Documentation",
+  "source": "KOSIF Atlas mining 2026-10-20 (https://github.com/kosif199022-jpg/kosif-atlas): comment-slop/comment-slop (#2903) · theme documentation · 6 supporting skills · verifier read: skills/1221-comment-slop/2903-comment-slop, ",
+  "atlas": {
+   "ids": [
+    "55",
+    "1645",
+    "2903",
+    "9392",
+    "11563",
+    "12090"
+   ],
+   "examples": [
+    {
+     "id": "2903",
+     "plugin": "comment-slop",
+     "skill": "comment-slop",
+     "url": "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/1221-comment-slop/2903-comment-slop"
+    }
+   ],
+   "theme": "documentation",
+   "risk_notes": "code-tidying ships shell scripts (6 sh) that rewrite source; review before running",
+   "kosif_overlap_ids": [],
+   "stage": "extracted",
+   "verified_by": "b035-documentation-1.json"
+  }
+ },
+ {
+  "id": "ADOCS-35",
+  "family": "atlas-docs",
+  "domain": "docs",
+  "name_ar": "كتابة سرد الألعاب المتفرع",
+  "name_en": "Game narrative and branching writing",
+  "status": "documented",
+  "what": "بناء سرد متفرع ومهمات وحوار. — Craft branching structure, quests, dialogue and lore bible.",
+  "when": "Writing game story.",
+  "how": "1) Architecture of branches. 2) Quest design. 3) Dialogue. 4) Lore bible. 5) Avoid AI tells.",
+  "params": "",
+  "install": "",
+  "requires": [],
+  "license": "method paraphrased from Atlas skills under Apache-2.0; the skills keep their own licenses — see each folder's SOURCE.md",
+  "proof": [
+   "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/1376-velith/3219-book-game"
+  ],
+  "proof_scope": "url",
+  "styles": [],
+  "tags": [
+   "narrative",
+   "quest",
+   "سرد",
+   "حوار"
+  ],
+  "section": "تطوير الألعاب — Game development",
+  "source": "KOSIF Atlas mining 2026-10-20 (https://github.com/kosif199022-jpg/kosif-atlas): velith/book-game (#3219) · theme game-dev · 1 supporting skills · verifier read: skills/1376-velith/3219-book-game",
+  "atlas": {
+   "ids": [
+    "3219"
+   ],
+   "examples": [
+    {
+     "id": "3219",
+     "plugin": "velith",
+     "skill": "book-game",
+     "url": "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/1376-velith/3219-book-game"
+    }
+   ],
+   "theme": "game-dev",
+   "risk_notes": "none",
+   "kosif_overlap_ids": [],
+   "stage": "extracted",
+   "verified_by": "b040-game-dev-1.json"
+  }
+ },
+ {
+  "id": "ADOCS-36",
+  "family": "atlas-docs",
+  "domain": "docs",
+  "name_ar": "اختيار رقم الإصدار وكتابة سجل التغييرات",
+  "name_en": "Semver bump and changelog plan",
+  "status": "documented",
+  "what": "تحديد رفع الإصدار من التغييرات وكتابة سجل تغييرات وقائمة تحقق. — Pick the semver bump from the change set and write a Keep-a-Changelog entry plus checklist.",
+  "when": "Is this major/minor/patch, cut release, write changelog.",
+  "how": "1) git log last tag..HEAD. 2) Incompatible API change=major, feature=minor, fixes=patch; 0.x may break. 3) Group Added/Changed/Deprecated/Removed/Fixed/Security, breaking first with migration link. 4) Bump manifests consistently. 5) Checklist: CI green on exact SHA.",
+  "params": "force bump, dry-run, from tag",
+  "install": "",
+  "requires": [
+   "git"
+  ],
+  "license": "method paraphrased from Atlas skills under MIT/Apache; the skills keep their own licenses — see each folder's SOURCE.md",
+  "proof": [
+   "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/2346-open-source-maintenance/9025-plan-a-release",
+   "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/3152-shipwright-changelog/13481-shipwright-changelog",
+   "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/964-release/2248-release"
+  ],
+  "proof_scope": "url",
+  "styles": [],
+  "tags": [
+   "semver",
+   "changelog",
+   "إصدار"
+  ],
+  "section": "Git والإصدار — Git, pull requests & releases",
+  "source": "KOSIF Atlas mining 2026-10-20 (https://github.com/kosif199022-jpg/kosif-atlas): open-source-maintenance/plan-a-release (#9025); shipwright-changelog/shipwright-changelog (#13481); release/release (#2248) · theme git-release · 10 supporting skills · verifier read: skills/2346-open-source-maintenance/9025-plan-a-release, skills/3152-shipwright-changelog/13481-shipwright-changelog, skills/964-release/2248-release",
+  "atlas": {
+   "ids": [
+    "1779",
+    "1888",
+    "2248",
+    "4757",
+    "9025",
+    "9950",
+    "11050",
+    "13481",
+    "13643",
+    "13644"
+   ],
+   "examples": [
+    {
+     "id": "9025",
+     "plugin": "open-source-maintenance",
+     "skill": "plan-a-release",
+     "url": "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/2346-open-source-maintenance/9025-plan-a-release"
+    },
+    {
+     "id": "13481",
+     "plugin": "shipwright-changelog",
+     "skill": "shipwright-changelog",
+     "url": "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/3152-shipwright-changelog/13481-shipwright-changelog"
+    },
+    {
+     "id": "2248",
+     "plugin": "release",
+     "skill": "release",
+     "url": "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/964-release/2248-release"
+    }
+   ],
+   "theme": "git-release",
+   "risk_notes": "Release skills tag and push; shipwright runs uv python",
+   "kosif_overlap_ids": [],
+   "stage": "extracted",
+   "verified_by": "b043-git-release-2.json"
+  }
+ },
+ {
+  "id": "ADOCS-37",
+  "family": "atlas-docs",
+  "domain": "docs",
+  "name_ar": "كتابة الرياضيات وشرحها المطوّل",
+  "name_en": "Math notation and long-form exposition",
+  "status": "documented",
+  "what": "يكتب الرياضيات برموز يونيكود وبراهين مفصلة. — Write math with Unicode notation and detailed understanding-focused proofs.",
+  "when": "Response needs equations in plain text or a deep math explanation.",
+  "how": "1) Prefer Unicode math in chat text. 2) Long-form exposition with motivation before proof. 3) Detailed steps.",
+  "params": "",
+  "install": "",
+  "requires": [],
+  "license": "method paraphrased from Atlas skills under MIT; the skills keep their own licenses — see each folder's SOURCE.md",
+  "proof": [
+   "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/3259-claude-math/13770-math-unicode",
+   "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/1244-long-form-math/2924-long-form-math"
+  ],
+  "proof_scope": "url",
+  "styles": [],
+  "tags": [
+   "math",
+   "unicode",
+   "رياضيات",
+   "كتابة"
+  ],
+  "section": "التعليم والتعلم — Teaching, learning & study",
+  "source": "KOSIF Atlas mining 2026-10-20 (https://github.com/kosif199022-jpg/kosif-atlas): claude-math/math-unicode (#13770); long-form-math/long-form-math (#2924) · theme education-learning · 2 supporting skills · verifier read: skills/3259-claude-math/13770-math-unicode, skills/1244-long-form-math/2924-long-form-math",
+  "atlas": {
+   "ids": [
+    "2924",
+    "13770"
+   ],
+   "examples": [
+    {
+     "id": "13770",
+     "plugin": "claude-math",
+     "skill": "math-unicode",
+     "url": "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/3259-claude-math/13770-math-unicode"
+    },
+    {
+     "id": "2924",
+     "plugin": "long-form-math",
+     "skill": "long-form-math",
+     "url": "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/1244-long-form-math/2924-long-form-math"
+    }
+   ],
+   "theme": "education-learning",
+   "risk_notes": "Text only.",
+   "kosif_overlap_ids": [],
+   "stage": "extracted",
+   "verified_by": "b036-education-learning-1.json"
+  }
+ },
+ {
+  "id": "ADOCS-38",
+  "family": "atlas-docs",
+  "domain": "docs",
+  "name_ar": "تقرير اختبار فهم بعد التغيير",
+  "name_en": "Post-change comprehension quiz report",
+  "status": "documented",
+  "what": "ينتج تقرير HTML لتغيير منجز مع اختبار يتأكد من فهم الإنسان. — Produce an HTML report of a finished change with a quiz checking the human understood it.",
+  "when": "After finishing a change, user says quiz me or asks what was done.",
+  "how": "1) Summarize context, intuition and decisions. 2) Build a self-contained HTML with questions at the bottom. 3) Test whether the user can explain the change to a reviewer. 4) A failed quiz signals intent mismatch before merge. 5) Do not use it to verify the artifact itself.",
+  "params": "change scope",
+  "install": "",
+  "requires": [],
+  "license": "method paraphrased from Atlas skills under MIT; the skills keep their own licenses — see each folder's SOURCE.md",
+  "proof": [
+   "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/2437-education/9461-quiz-me",
+   "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/2437-education/9463-teach"
+  ],
+  "proof_scope": "url",
+  "styles": [],
+  "tags": [
+   "quiz",
+   "review",
+   "اختبار",
+   "فهم"
+  ],
+  "section": "التعليم والتعلم — Teaching, learning & study",
+  "source": "KOSIF Atlas mining 2026-10-20 (https://github.com/kosif199022-jpg/kosif-atlas): education/quiz-me (#9461); education/teach (#9463) · theme education-learning · 3 supporting skills · verifier read: skills/2437-education/9461-quiz-me, skills/2437-education/9463-teach",
+  "atlas": {
+   "ids": [
+    "9459",
+    "9461",
+    "9463"
+   ],
+   "examples": [
+    {
+     "id": "9461",
+     "plugin": "education",
+     "skill": "quiz-me",
+     "url": "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/2437-education/9461-quiz-me"
+    },
+    {
+     "id": "9463",
+     "plugin": "education",
+     "skill": "teach",
+     "url": "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/2437-education/9463-teach"
+    }
+   ],
+   "theme": "education-learning",
+   "risk_notes": "Has a js/sh helper that writes HTML.",
+   "kosif_overlap_ids": [],
+   "stage": "extracted",
+   "verified_by": "b036-education-learning-1.json"
+  }
+ },
+ {
+  "id": "ADOCS-39",
+  "family": "atlas-docs",
+  "domain": "docs",
+  "name_ar": "هيكل منهج ذاتي مع سجل تقييم",
+  "name_en": "Self-study curriculum scaffold with assessment log",
+  "status": "documented",
+  "what": "ينشئ منهجاً من وحدات مع سجل إجابات JSONL وتتبع تقدم. — Generate a modular curriculum with orientation, five-part modules, JSONL answer log and progress tracking.",
+  "when": "User asks for a curriculum, learning path, syllabus or study guide.",
+  "how": "1) Ask topic, goal, emphasis, level, output dir, module count (default 8-12). 2) Propose outline for approval: foundations, tools, application. 3) Scaffold with scripts/scaffold.py: README, 00-orientation, modules, final synthesis. 4) Log answers to responses.jsonl; recompute progress.md and misconceptions.md. 5) Write a synthesis prompt every 3 modules. 6) On return read MEMORY and progress.",
+  "params": "topic, goal, level, modules",
+  "install": "",
+  "requires": [
+   "python3"
+  ],
+  "license": "method paraphrased from Atlas skills under MIT; the skills keep their own licenses — see each folder's SOURCE.md",
+  "proof": [
+   "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/2524-curriculum/9821-curriculum",
+   "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/1120-ambient-library/2575-design-course"
+  ],
+  "proof_scope": "url",
+  "styles": [],
+  "tags": [
+   "curriculum",
+   "syllabus",
+   "منهج",
+   "خطة دراسة"
+  ],
+  "section": "التعليم والتعلم — Teaching, learning & study",
+  "source": "KOSIF Atlas mining 2026-10-20 (https://github.com/kosif199022-jpg/kosif-atlas): curriculum/curriculum (#9821); ambient-library/design-course (#2575) · theme education-learning · 5 supporting skills · verifier read: skills/2524-curriculum/9821-curriculum, skills/1120-ambient-library/2575-design-course",
+  "atlas": {
+   "ids": [
+    "2575",
+    "3049",
+    "7539",
+    "8215",
+    "9821"
+   ],
+   "examples": [
+    {
+     "id": "9821",
+     "plugin": "curriculum",
+     "skill": "curriculum",
+     "url": "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/2524-curriculum/9821-curriculum"
+    },
+    {
+     "id": "2575",
+     "plugin": "ambient-library",
+     "skill": "design-course",
+     "url": "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/1120-ambient-library/2575-design-course"
+    }
+   ],
+   "theme": "education-learning",
+   "risk_notes": "Local python scripts write files.",
+   "kosif_overlap_ids": [],
+   "stage": "extracted",
+   "verified_by": "b036-education-learning-1.json"
+  }
+ },
+ {
+  "id": "ADOCS-40",
+  "family": "atlas-docs",
+  "domain": "docs",
+  "name_ar": "مقال تعليمي من جلسة عمل",
+  "name_en": "Teaching-block article from a working session",
+  "status": "documented",
+  "what": "يحول جلسة عمل إلى مقال تعليمي يحتوي المطالبات والأخطاء والاستدلال. — Convert a session into a publishable walkthrough with real prompts, wrong turns and reasoning.",
+  "when": "User says write this up as a teaching block or debrief this session.",
+  "how": "1) Collect real prompts, outputs and dead ends. 2) Follow instructions.md and references/writing-style.md. 3) Add diagrams and rendered HTML. 4) Keep reflective, educational tone.",
+  "params": "",
+  "install": "",
+  "requires": [],
+  "license": "method paraphrased from Atlas skills under MIT; the skills keep their own licenses — see each folder's SOURCE.md",
+  "proof": [
+   "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/1120-ambient-library/2677-teaching-block-synthesized",
+   "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/1120-ambient-library/2588-teaching-block"
+  ],
+  "proof_scope": "url",
+  "styles": [],
+  "tags": [
+   "writeup",
+   "session",
+   "مقال",
+   "توثيق"
+  ],
+  "section": "التعليم والتعلم — Teaching, learning & study",
+  "source": "KOSIF Atlas mining 2026-10-20 (https://github.com/kosif199022-jpg/kosif-atlas): ambient-library/teaching-block-synthesized (#2677); ambient-library/teaching-block (#2588) · theme education-learning · 3 supporting skills · verifier read: skills/1120-ambient-library/2677-teaching-block-synthesized, skills/1120-ambient-library/2588-teaching-block",
+  "atlas": {
+   "ids": [
+    "2588",
+    "2677",
+    "4466"
+   ],
+   "examples": [
+    {
+     "id": "2677",
+     "plugin": "ambient-library",
+     "skill": "teaching-block-synthesized",
+     "url": "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/1120-ambient-library/2677-teaching-block-synthesized"
+    },
+    {
+     "id": "2588",
+     "plugin": "ambient-library",
+     "skill": "teaching-block",
+     "url": "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/1120-ambient-library/2588-teaching-block"
+    }
+   ],
+   "theme": "education-learning",
+   "risk_notes": "Text only.",
+   "kosif_overlap_ids": [],
+   "stage": "extracted",
+   "verified_by": "b036-education-learning-1.json"
+  }
+ },
+ {
+  "id": "ADOCS-41",
+  "family": "atlas-docs",
+  "domain": "docs",
+  "name_ar": "شرح بصري مبسط جداً بأسلوب طفل",
+  "name_en": "Zero-knowledge visual ELI5 explainer",
+  "status": "documented",
+  "what": "يشرح أي موضوع في صفحة HTML بصرية بنص قليل وفكرة واحدة لكل رسم. — Explain any topic as a minimal-text visual HTML with one idea per diagram.",
+  "when": "User types eli5, asks for dead-simple explanation of how something works.",
+  "how": "1) Assume zero prior knowledge. 2) One idea per diagram. 3) Minimal text and concrete analogies. 4) Render as self-contained HTML. 5) Works on a codebase or concept.",
+  "params": "topic",
+  "install": "",
+  "requires": [],
+  "license": "method paraphrased from Atlas skills under MIT; the skills keep their own licenses — see each folder's SOURCE.md",
+  "proof": [
+   "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/2437-education/9459-eli5",
+   "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/257-eli5/864-eli5"
+  ],
+  "proof_scope": "url",
+  "styles": [],
+  "tags": [
+   "eli5",
+   "explainer",
+   "شرح",
+   "تبسيط"
+  ],
+  "section": "التعليم والتعلم — Teaching, learning & study",
+  "source": "KOSIF Atlas mining 2026-10-20 (https://github.com/kosif199022-jpg/kosif-atlas): education/eli5 (#9459); eli5/eli5 (#864) · theme education-learning · 4 supporting skills · verifier read: skills/2437-education/9459-eli5, skills/257-eli5/864-eli5",
+  "atlas": {
+   "ids": [
+    "864",
+    "2418",
+    "7539",
+    "9459"
+   ],
+   "examples": [
+    {
+     "id": "9459",
+     "plugin": "education",
+     "skill": "eli5",
+     "url": "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/2437-education/9459-eli5"
+    },
+    {
+     "id": "864",
+     "plugin": "eli5",
+     "skill": "eli5",
+     "url": "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/257-eli5/864-eli5"
+    }
+   ],
+   "theme": "education-learning",
+   "risk_notes": "Helper js/sh may write HTML.",
+   "kosif_overlap_ids": [],
+   "stage": "extracted",
+   "verified_by": "b036-education-learning-1.json"
   }
  }
 ]

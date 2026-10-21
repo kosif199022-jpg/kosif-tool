@@ -1,10 +1,10 @@
 {
   "schema": "kosif.smart-capability-index.v1",
   "origin": "data/powers/*.json (catalog); no original records changed",
-  "catalog_powers": 5185,
+  "catalog_powers": 5318,
   "group_count": 15,
-  "family_count": 61,
-  "tool_count": 100,
+  "family_count": 62,
+  "tool_count": 115,
   "groups": [
     {
       "id": "research",
@@ -17,16 +17,16 @@
       ],
       "keywords": "research web source citations evidence knowledge search بحث مصادر مراجع معرفة",
       "workflow": [],
-      "count": 53,
+      "count": 54,
       "status_counts": {
-        "documented": 20,
+        "documented": 21,
         "idea": 1,
         "install": 2,
         "key": 9,
         "proven": 21
       },
       "family_counts": {
-        "atlas-research": 8,
+        "atlas-research": 9,
         "knowledge-graph": 21,
         "web-research": 24
       },
@@ -74,15 +74,15 @@
       ],
       "keywords": "think reasoning idea brainstorm strategy plan finance decision تحليل تخطيط ابتكار قرار",
       "workflow": [],
-      "count": 276,
+      "count": 291,
       "status_counts": {
-        "documented": 257,
+        "documented": 272,
         "install": 2,
         "proven": 17
       },
       "family_counts": {
-        "atlas-mind": 40,
-        "atlas-strategy": 46,
+        "atlas-mind": 44,
+        "atlas-strategy": 57,
         "creativity-engine": 29,
         "mental-models": 63,
         "planning-execution": 12,
@@ -129,17 +129,17 @@
       ],
       "keywords": "agent orchestration tool routing discover automation وكلاء أدوات توجيه بحث",
       "workflow": [],
-      "count": 141,
+      "count": 143,
       "status_counts": {
         "documented": 49,
         "install": 8,
         "key": 2,
-        "proven": 77,
+        "proven": 79,
         "ready": 5
       },
       "family_counts": {
         "agent-orchestration": 38,
-        "runnable-tools": 60,
+        "runnable-tools": 62,
         "self-discovery": 43
       },
       "examples": [
@@ -189,9 +189,9 @@
         "الاختبار",
         "النشر"
       ],
-      "count": 465,
+      "count": 545,
       "status_counts": {
-        "documented": 281,
+        "documented": 361,
         "idea": 2,
         "install": 32,
         "key": 7,
@@ -200,10 +200,10 @@
         "seen": 16
       },
       "family_counts": {
-        "app-feature-transfer": 119,
+        "app-feature-transfer": 139,
         "apps-artifacts": 23,
-        "atlas-build": 30,
-        "atlas-code": 176,
+        "atlas-build": 50,
+        "atlas-code": 216,
         "code-engineering": 24,
         "ui-product-device": 93
       },
@@ -316,9 +316,9 @@
         "التوليد الاختياري",
         "تصدير النتيجة"
       ],
-      "count": 293,
+      "count": 296,
       "status_counts": {
-        "documented": 73,
+        "documented": 76,
         "idea": 2,
         "install": 26,
         "key": 35,
@@ -328,7 +328,7 @@
       },
       "family_counts": {
         "ai-generation": 93,
-        "atlas-media": 11,
+        "atlas-media": 14,
         "color-palette-grading": 87,
         "media-image-audio": 34,
         "photo-video-footage": 68
@@ -670,21 +670,23 @@
       "ar": "المستندات والكتابة",
       "en": "Documents & writing",
       "families": [
+        "atlas-craft",
         "atlas-docs",
         "documents-office",
         "writing-humanizer"
       ],
       "keywords": "document pdf word excel office writing report مستند تقرير كتابة وورد",
       "workflow": [],
-      "count": 78,
+      "count": 110,
       "status_counts": {
-        "documented": 34,
+        "documented": 66,
         "install": 8,
         "key": 4,
         "proven": 32
       },
       "family_counts": {
-        "atlas-docs": 16,
+        "atlas-craft": 7,
+        "atlas-docs": 41,
         "documents-office": 34,
         "writing-humanizer": 28
       },
@@ -6778,6 +6780,332 @@
       "what": "PaintUI.AIFeature = Cocreator، ImageCreator، GenerativeFill، StickerGenerator، Reimagine، ColoringBook؛ ونماذج على الجهاز seg/inseg (تحديد كائن بنقرة) وmager (302 MB) وعلامة Content Credentials. المقابل هنا: coloring-book وsticker وremove-bg وrepair (محو)، والتوليد عبر موصلات الص"
     },
     {
+      "id": "APPX-120",
+      "family": "app-feature-transfer",
+      "group": "software",
+      "domain": "build",
+      "name_en": "Design fidelity contract with a closed deviation list",
+      "name_ar": "عقد الأمانة للتصميم بقائمة انحرافات مغلقة",
+      "status": "documented",
+      "requires": [],
+      "proof": [
+        "kosif-tool/.claude/skills/kosif-superpowers/references/app-studies/magicpath.md"
+      ],
+      "source": "app-feature-transfer.json",
+      "what": "«استخدم هذا التصميم» يعني تطابقًا كاملًا افتراضيًا في البنية والأبعاد والأنماط والأصول والحالات والحركة والاستجابة والسلوك؛ اكتب قبل البناء عقدًا قصيرًا: المصدر بالضبط، ومقاس المرجع، وما يُسمح بتغييره بالاسم فقط — treat 'use this design' as exact parity; write a short contract fi"
+    },
+    {
+      "id": "APPX-121",
+      "family": "app-feature-transfer",
+      "group": "software",
+      "domain": "build",
+      "name_en": "Parity first, adaptation second",
+      "name_ar": "التطابق أولًا ثم التكييف",
+      "status": "documented",
+      "requires": [],
+      "proof": [
+        "kosif-tool/.claude/skills/kosif-superpowers/references/app-studies/magicpath.md"
+      ],
+      "source": "app-feature-transfer.json",
+      "what": "انقل التنفيذ المرجعي كاملًا (الملفات الفرعية والأنماط والخطوط والأصول) وطابقه عند مقاس المرجع ببيانات نموذجية، ثم أعد التسمية أو اربط البيانات الحقيقية؛ فيبقى انحراف المصدر منفصلًا عن أخطاء التكامل — port everything and match at the reference viewport first, refactor and wire rea"
+    },
+    {
+      "id": "APPX-122",
+      "family": "app-feature-transfer",
+      "group": "software",
+      "domain": "build",
+      "name_en": "Visual verification loop for UI against a reference",
+      "name_ar": "حلقة التحقق البصري للواجهة مقابل المرجع",
+      "status": "documented",
+      "requires": [
+        "chromium",
+        "pip:pillow"
+      ],
+      "proof": [
+        "kosif-tool/.claude/skills/kosif-superpowers/references/app-studies/magicpath.md"
+      ],
+      "source": "app-feature-transfer.json",
+      "what": "قارن الواجهة بمرجعها في متصفح حقيقي بنفس المقاس والكثافة والثيم والمحتوى والحالة: جنبًا إلى جنب، ثم تراكب أو فرق بكسلي؛ وعند الاختلاف ابدأ من أول عنصر أب يختلف وقارن أنماطه المحسوبة ومربعاته بدل تحريك الأبناء — side-by-side, then overlay or pixel diff; fix the first diverging anc"
+    },
+    {
+      "id": "APPX-123",
+      "family": "app-feature-transfer",
+      "group": "software",
+      "domain": "build",
+      "name_en": "Import UI from a repository by reading its design foundation first",
+      "name_ar": "استيراد واجهة من مستودع بقراءة أساس التصميم أولًا",
+      "status": "documented",
+      "requires": [
+        "python3",
+        "git"
+      ],
+      "proof": [
+        "kosif-tool/.claude/skills/kosif-superpowers/references/app-studies/magicpath.md"
+      ],
+      "source": "app-feature-transfer.json",
+      "what": "اقرأ طبقة التصميم العامة قبل الهدف: التقنية، وCSS العام، وقيم المتغيرات الفعلية (:root و.dark)، وطريقة تحميل الخطوط، واستراتيجية الثيم، والمكونات المشتركة؛ ثم افتح الهدف وتتبع كل استيراداته والتخطيط الأب — read the global design layer, then the target and all its imports"
+    },
+    {
+      "id": "APPX-124",
+      "family": "app-feature-transfer",
+      "group": "software",
+      "domain": "build",
+      "name_en": "Theme as portable data with a designer-intent field",
+      "name_ar": "الثيم كبيانات قابلة للنقل مع حقل نية المصمم",
+      "status": "documented",
+      "requires": [],
+      "proof": [
+        "kosif-tool/.claude/skills/kosif-superpowers/references/app-studies/magicpath.md"
+      ],
+      "source": "app-feature-transfer.json",
+      "what": "نظام التصميم سجل واحد: خرائط متغيرات الوضعين الفاتح والداكن، والوضع الافتراضي، والخطوط ومصدرها، وسطور قصيرة يكتبها المصمم تلزم الوكلاء (مثل: ظلال لا حدود، ولون العلامة للأزرار فقط)؛ يُنشأ من الصفر أو من متغيرات CSS ملصقة أو من صفحة — one record with light/dark variable maps, defa"
+    },
+    {
+      "id": "APPX-125",
+      "family": "app-feature-transfer",
+      "group": "software",
+      "domain": "build",
+      "name_en": "Default rules for authored interactive UI frames",
+      "name_ar": "قواعد افتراضية لإطارات الواجهات التفاعلية",
+      "status": "documented",
+      "requires": [],
+      "proof": [
+        "kosif-tool/.claude/skills/kosif-superpowers/references/app-studies/magicpath.md"
+      ],
+      "source": "app-feature-transfer.json",
+      "what": "ما لم يُطلب غير ذلك: لا إطار جهاز (الإطار هو الجهاز)، وعرض مرن يتوسط بلا أبعاد خارجية ثابتة، وشاشة واحدة تتنقل حالاتها داخليًا، وأزرار تعمل فعلًا لا معالجات فارغة — no device chrome, fluid and centred, one screen with internal states, no dead buttons"
+    },
+    {
+      "id": "APPX-126",
+      "family": "app-feature-transfer",
+      "group": "software",
+      "domain": "build",
+      "name_en": "Design is the look spec; the old component is the behaviour spec",
+      "name_ar": "التصميم مواصفة الشكل والمكوّن القديم مواصفة السلوك",
+      "status": "documented",
+      "requires": [],
+      "proof": [
+        "kosif-tool/.claude/skills/kosif-superpowers/references/app-studies/magicpath.md"
+      ],
+      "source": "app-feature-transfer.json",
+      "what": "قبل استبدال مكوّن اكتب عقده الحي: الخصائص والاستدعاءات والحالة وطلبات الشبكة والتوجيه والتحقق وحالات التحميل والفراغ والخطأ ولوحة المفاتيح وARIA والقياس والاختبارات؛ ولا تحذف القديم قبل أن ينجح التحقق — list the replaced component's runtime contract and keep it until verification"
+    },
+    {
+      "id": "APPX-127",
+      "family": "app-feature-transfer",
+      "group": "software",
+      "domain": "build",
+      "name_en": "Agent-friendly command contract (JSON, non-interactive, dry-run, explicit states)",
+      "name_ar": "عقد أوامر مريح للوكيل",
+      "status": "documented",
+      "requires": [
+        "python3"
+      ],
+      "proof": [
+        "kosif-tool/.claude/skills/kosif-superpowers/references/app-studies/magicpath.md"
+      ],
+      "source": "app-feature-transfer.json",
+      "what": "كل أمر يعيد بيانات يخرج JSON عند الطلب ويعمل بلا أسئلة تفاعلية؛ وكل أمر يكتب له تجربة جافة تسرد ما سيكتبه ويرفض الكتابة فوق ملف قبل المراجعة؛ والحالات صريحة (تم، بلا تغيير، فشل بسبب) — JSON on request, no prompts, dry-run for writers, refuse silent overwrites, explicit outcome st"
+    },
+    {
+      "id": "APPX-128",
+      "family": "app-feature-transfer",
+      "group": "software",
+      "domain": "build",
+      "name_en": "Preflight probe first: auth, context and version as one JSON",
+      "name_ar": "فحص تمهيدي أولًا للحساب والسياق",
+      "status": "documented",
+      "requires": [
+        "python3"
+      ],
+      "proof": [
+        "kosif-tool/.claude/skills/kosif-superpowers/references/app-studies/magicpath.md"
+      ],
+      "source": "app-feature-transfer.json",
+      "what": "ابدأ كل جلسة بنداء رخيص للقراءة فقط يعيد حالة الدخول والمشروع النشط وإصدار الأداة، وتفرّع عليه (سجّل دخول، اسأل، أو تابع) قبل أي عمل حقيقي — one cheap read-only call that returns auth state, active project and version, then branch"
+    },
+    {
+      "id": "APPX-129",
+      "family": "app-feature-transfer",
+      "group": "software",
+      "domain": "build",
+      "name_en": "Persistent visual board beside the agent",
+      "name_ar": "لوحة بصرية دائمة بجانب الوكيل",
+      "status": "documented",
+      "requires": [],
+      "proof": [
+        "kosif-tool/.claude/skills/kosif-superpowers/references/app-studies/magicpath.md"
+      ],
+      "source": "app-feature-transfer.json",
+      "what": "للعمل البصري افتح من أول المهمة صفحة واحدة على مستوى المشروع بجانب المحادثة يراها المستخدم وهي تمتلئ، وأعد نشرها في نفس الرابط، وأظهر كل عامل وهو يبني بدل مؤشر انتظار — open one project board at task start and keep republishing it; show each worker's progress live"
+    },
+    {
+      "id": "APPX-130",
+      "family": "app-feature-transfer",
+      "group": "software",
+      "domain": "build",
+      "name_en": "Two-phase work session with a baseline manifest and an editable-file allowlist",
+      "name_ar": "جلسة عمل بمرحلتين مع خط أساس وقائمة ملفات مسموحة",
+      "status": "documented",
+      "requires": [
+        "python3"
+      ],
+      "proof": [
+        "kosif-tool/.claude/skills/kosif-superpowers/references/app-studies/magicpath.md"
+      ],
+      "source": "app-feature-transfer.json",
+      "what": "ابدأ بخطوة تسجّل بصمات الملفات القابلة للتعديل، وأنهِ بخطوة تسليم تقارن بها فتعرف المتغير والمحذوف وتعيد «بلا تغيير» إن لم يتغير شيء؛ ولا تقبل التغيير إلا في مسارات معلنة، وارفض لمس ملفات البناء والحزم — start records a baseline, submit diffs against it, and only declared paths m"
+    },
+    {
+      "id": "APPX-131",
+      "family": "app-feature-transfer",
+      "group": "software",
+      "domain": "build",
+      "name_en": "Pin exactly the version the user is looking at",
+      "name_ar": "تثبيت النسخة التي يراها المستخدم بالضبط",
+      "status": "documented",
+      "requires": [
+        "python3"
+      ],
+      "proof": [
+        "kosif-tool/.claude/skills/kosif-superpowers/references/app-studies/magicpath.md"
+      ],
+      "source": "app-feature-transfer.json",
+      "what": "حدّد «هذا» من التحديد أو المفتوح، واحمل معرّف النسخة أو بصمتها في كل خطوة لاحقة حتى لا ينجرف التصدير إلى نسخة أحدث؛ وإن لم يتح إلا «الأحدث» فقل ذلك صراحة — carry the exact version id or hash of the reference through every step, and say so when only 'latest' was available"
+    },
+    {
+      "id": "APPX-132",
+      "family": "app-feature-transfer",
+      "group": "software",
+      "domain": "build",
+      "name_en": "Selection-as-context reference bundle shared by every worker",
+      "name_ar": "حزمة مراجع من التحديد تُعطى لكل العمّال",
+      "status": "documented",
+      "requires": [],
+      "proof": [
+        "kosif-tool/.claude/skills/kosif-superpowers/references/app-studies/magicpath.md"
+      ],
+      "source": "app-feature-transfer.json",
+      "what": "في أفلام KOSIF متعددة المشاهد يُسلَّم ملف مراجع واحد بأدوار (أسلوب، محتوى، بنية) بنفس المسار لكل وكيل مشهد، ويُسأل المستخدم قبل تشغيل عدد كبير من الوكلاء — one roles-tagged refs file passed unchanged to every scene agent; ask before a large fan-out"
+    },
+    {
+      "id": "APPX-133",
+      "family": "app-feature-transfer",
+      "group": "software",
+      "domain": "build",
+      "name_en": "Variant fan-out on named axes, side by side, never overwriting",
+      "name_ar": "تنويعات على محاور مسمّاة جنبًا إلى جنب",
+      "status": "documented",
+      "requires": [
+        "python3"
+      ],
+      "proof": [
+        "kosif-tool/.claude/skills/kosif-superpowers/references/app-studies/magicpath.md"
+      ],
+      "source": "app-feature-transfer.json",
+      "what": "لعرض بدائل مشهد اصنع نسخًا شقيقة تغيّر كل منها محورًا واحدًا مسمّى، والأصل يبقى كما هو — sibling variants of a scene, each changing one named axis, original untouched"
+    },
+    {
+      "id": "APPX-134",
+      "family": "app-feature-transfer",
+      "group": "software",
+      "domain": "build",
+      "name_en": "Deterministic-first edits; the model only for what cannot be rewritten safely",
+      "name_ar": "التعديل الحتمي أولًا والنموذج للباقي فقط",
+      "status": "documented",
+      "requires": [
+        "python3"
+      ],
+      "proof": [
+        "kosif-tool/.claude/skills/kosif-superpowers/references/app-studies/magicpath.md"
+      ],
+      "source": "app-feature-transfer.json",
+      "what": "عدّل مشاهد الموشن بسجل عمليات محددة (نص، لون، توقيت) يطبقه سكربت، ولا تطلب من النموذج إعادة كتابة الملف إلا لما لا يطبقه السجل، وقل ذلك — a scripted edit log first, a model rewrite only for the rest, stated openly"
+    },
+    {
+      "id": "APPX-135",
+      "family": "app-feature-transfer",
+      "group": "software",
+      "domain": "build",
+      "name_en": "Linked instances: shared style, per-record content",
+      "name_ar": "نُسخ مرتبطة: نمط مشترك ومحتوى لكل سجل",
+      "status": "documented",
+      "requires": [],
+      "proof": [
+        "kosif-tool/.claude/skills/kosif-superpowers/references/app-studies/magicpath.md"
+      ],
+      "source": "app-feature-transfer.json",
+      "what": "في البطاقات والقوائم المتكررة: تعديل القالب يغيّر الكل، وتعديل سجل البيانات يغيّر بطاقة واحدة — template edits change every card, data edits change one"
+    },
+    {
+      "id": "APPX-136",
+      "family": "app-feature-transfer",
+      "group": "software",
+      "domain": "build",
+      "name_en": "Per-item revisions: roll back instead of piling on prompts",
+      "name_ar": "نسخ لكل عنصر وارجع للخلف بدل مواصلة التلقين",
+      "status": "documented",
+      "requires": [
+        "python3"
+      ],
+      "proof": [
+        "kosif-tool/.claude/skills/kosif-superpowers/references/app-studies/magicpath.md"
+      ],
+      "source": "app-feature-transfer.json",
+      "what": "احفظ نسخة مرقمة لكل مشهد معتمد، وعند تدهور النتائج ارجع لآخر نسخة جيدة بدل زيادة التعليمات — numbered scene versions; roll back rather than re-prompt"
+    },
+    {
+      "id": "APPX-137",
+      "family": "app-feature-transfer",
+      "group": "software",
+      "domain": "build",
+      "name_en": "Labeled rough sketch for structure; reference for look",
+      "name_ar": "الرسم التقريبي الموسوم للبنية والمرجع للمظهر",
+      "status": "documented",
+      "requires": [
+        "python3"
+      ],
+      "proof": [
+        "kosif-tool/.claude/skills/kosif-superpowers/references/app-studies/magicpath.md"
+      ],
+      "source": "app-feature-transfer.json",
+      "what": "في تخطيط المشاهد يحدد الرسم السريع أماكن العناصر، وتحدد صورة المرجع شكلها — the sketch fixes the layout, the reference fixes the look"
+    },
+    {
+      "id": "APPX-138",
+      "family": "app-feature-transfer",
+      "group": "software",
+      "domain": "build",
+      "name_en": "Two-way MCP bridge with a current-selection hint",
+      "name_ar": "جسر MCP باتجاهين مع تلميح التحديد الحالي",
+      "status": "documented",
+      "requires": [
+        "python3"
+      ],
+      "proof": [
+        "kosif-tool/.claude/skills/kosif-superpowers/references/app-studies/magicpath.md"
+      ],
+      "source": "app-feature-transfer.json",
+      "what": "وسّع خادم MCP في KOSIF ليكتب أيضًا (ينشئ مشروعًا، يعدّل مشهدًا، يعاين) ويعرف المشروع النشط — a write-capable KOSIF MCP server that knows the active project"
+    },
+    {
+      "id": "APPX-139",
+      "family": "app-feature-transfer",
+      "group": "software",
+      "domain": "build",
+      "name_en": "Skills: description-matched loading, explicit pinning, safe text-only import",
+      "name_ar": "المهارات: تحميل بالوصف وتثبيت صريح واستيراد نصي آمن",
+      "status": "documented",
+      "requires": [
+        "python3"
+      ],
+      "proof": [
+        "kosif-tool/.claude/skills/kosif-superpowers/references/app-studies/magicpath.md"
+      ],
+      "source": "app-feature-transfer.json",
+      "what": "افحص أي حزمة مهارة خارجية قبل اعتمادها: نص فقط، حجم محدود، بلا ملفات تنفيذية، ومصدر معروف — vet third-party skill packages before importing them"
+    },
+    {
       "id": "APP-01",
       "family": "apps-artifacts",
       "group": "software",
@@ -8034,6 +8362,350 @@
       ],
       "source": "atlas-build.json",
       "what": "يجرد الموارد ويرسم خط CI/CD ويعد خطة تحسين التكلفة. — Inventory cloud resources, map pipelines and risks, and produce a costed optimization plan."
+    },
+    {
+      "id": "ABUILD-31",
+      "family": "atlas-build",
+      "group": "software",
+      "domain": "build",
+      "name_en": "Accessible-by-default component pattern design",
+      "name_ar": "تصميم مكوّن متاح افتراضيا",
+      "status": "documented",
+      "requires": [
+        "npm:pa11y"
+      ],
+      "proof": [
+        "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/8453",
+        "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/7559"
+      ],
+      "source": "atlas-build.json",
+      "what": "تصميم مكونات بعناصر دلالية أولا وARIA عند الحاجة فقط مع إدارة لوحة المفاتيح والتركيز. — Design components with semantic HTML first, ARIA only where needed, keyboard and focus management."
+    },
+    {
+      "id": "ABUILD-32",
+      "family": "atlas-build",
+      "group": "software",
+      "domain": "build",
+      "name_en": "Brand palette onboarding with WCAG gate",
+      "name_ar": "إعداد هوية العلامة مع فحص التباين",
+      "status": "documented",
+      "requires": [
+        "npm:axe"
+      ],
+      "proof": [
+        "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/191-markdown-html-skills/564-design-system",
+        "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/191-markdown-html-skills/565-markdown-html-orchestrator"
+      ],
+      "source": "atlas-build.json",
+      "what": "التقط ألوان وخطوط العلامة مرة واحدة واشتق لوحة من 12 رمزاً وارفض ما يفشل بتباين AA. — Capture brand colors and fonts once, derive a 12-token palette, and refuse values failing WCAG AA contrast."
+    },
+    {
+      "id": "ABUILD-33",
+      "family": "atlas-build",
+      "group": "software",
+      "domain": "build",
+      "name_en": "Color and CSS layout math with contrast",
+      "name_ar": "حسابات الألوان وتخطيط CSS مع التباين",
+      "status": "documented",
+      "requires": [],
+      "proof": [
+        "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/2199-lvtd-skills/8013-color-math-accessibility",
+        "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/8145"
+      ],
+      "source": "atlas-build.json",
+      "what": "اشتقاق ألوان آمنة للتباين وإحداثيات الشبكة وأحجام clamp مرنة بصيغ صريحة. — Derive OKLCH/contrast-safe palettes, grid coordinates and fluid clamp() sizes with explicit formulas."
+    },
+    {
+      "id": "ABUILD-34",
+      "family": "atlas-build",
+      "group": "software",
+      "domain": "build",
+      "name_en": "Design by explicit spatial and type constraints",
+      "name_ar": "التصميم عبر قيود مكانية وطباعية صريحة",
+      "status": "documented",
+      "requires": [],
+      "proof": [
+        "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/96-design-constraints/205-design-constraints",
+        "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/2905"
+      ],
+      "source": "atlas-build.json",
+      "what": "تثبيت الشبكة والزوايا والحشو والخطوط واللون المميز على قيم قليلة لتجنب الشكل العام الممل. — Lock the grid, radii, padding, fonts and accent to a few legal values so generated UI avoids generic look."
+    },
+    {
+      "id": "ABUILD-35",
+      "family": "atlas-build",
+      "group": "software",
+      "domain": "build",
+      "name_en": "Design critique, handoff and system audit",
+      "name_ar": "نقد التصميم وتسليم المطورين وتدقيق النظام",
+      "status": "documented",
+      "requires": [],
+      "proof": [
+        "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/949",
+        "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/950",
+        "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/3174"
+      ],
+      "source": "atlas-build.json",
+      "what": "نقد منظم للتصميم وإعداد مواصفات التسليم وتدقيق اتساق نظام التصميم. — Run structured design critique, produce developer handoff specs and audit design system consistency."
+    },
+    {
+      "id": "ABUILD-36",
+      "family": "atlas-build",
+      "group": "software",
+      "domain": "build",
+      "name_en": "Design-system retrofit and derivation workflow",
+      "name_ar": "اشتقاق وترقية نظام التصميم",
+      "status": "documented",
+      "requires": [],
+      "proof": [
+        "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/matrize/846-matrize-retrofit",
+        "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/matrize/843-matrize-emit"
+      ],
+      "source": "atlas-build.json",
+      "what": "اشتق نظام تصميم وانقل CSS الحالي إلى تصنيفه دون تغيير بصري. — Derive a design system, lift ad-hoc CSS into its taxonomy, and render to targets without visual change."
+    },
+    {
+      "id": "ABUILD-37",
+      "family": "atlas-build",
+      "group": "software",
+      "domain": "build",
+      "name_en": "DTCG design tokens multi-platform export",
+      "name_ar": "رموز التصميم DTCG لكل المنصات",
+      "status": "documented",
+      "requires": [
+        "npm:react"
+      ],
+      "proof": [
+        "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/1394-stark/3327-design-tokens",
+        "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/3529-ui-design/14307-design-system-patterns"
+      ],
+      "source": "atlas-build.json",
+      "what": "اكتب مصدر رموز DTCG واحد وصدّره إلى Tailwind وCSS وSwiftUI وCompose وWinUI. — Author one W3C DTCG token JSON and export it to Tailwind, CSS variables, SwiftUI, Compose and WinUI."
+    },
+    {
+      "id": "ABUILD-38",
+      "family": "atlas-build",
+      "group": "software",
+      "domain": "build",
+      "name_en": "Evidence-backed frontend design audit",
+      "name_ar": "تدقيق تصميم الواجهة بالأدلة",
+      "status": "documented",
+      "requires": [
+        "npm:react"
+      ],
+      "proof": [
+        "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/3029-memoire/12946-audit-frontend-design",
+        "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/3029-memoire/12950-remember-design-system"
+      ],
+      "source": "atlas-build.json",
+      "what": "نفّذ تدقيقاً حتمياً لمصدر الواجهة وأبلغ بنتائج مرتبطة بالملفات. — Run a deterministic source audit of React/Tailwind UI and report file-anchored findings by user impact."
+    },
+    {
+      "id": "ABUILD-39",
+      "family": "atlas-build",
+      "group": "software",
+      "domain": "build",
+      "name_en": "Extract Design DNA from live website",
+      "name_ar": "استخراج بصمة التصميم من موقع حي",
+      "status": "documented",
+      "requires": [
+        "npm:three"
+      ],
+      "proof": [
+        "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/3594-design-clone/14410-design-clone",
+        "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/2673-claude-octopus/10214-skill-extract",
+        "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/2042"
+      ],
+      "source": "atlas-build.json",
+      "what": "استخراج الأنماط المحسوبة من موقع حي إلى ملف تصميم منظم JSON مع استنساخ اختياري. — Pull exact computed styles from a live site into a structured design profile JSON and optionally clone it."
+    },
+    {
+      "id": "ABUILD-40",
+      "family": "atlas-build",
+      "group": "software",
+      "domain": "build",
+      "name_en": "Figma file to tokens, assets and code",
+      "name_ar": "من ملف Figma إلى رموز وأصول وكود",
+      "status": "documented",
+      "requires": [],
+      "proof": [
+        "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/3252",
+        "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/5606",
+        "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/5625"
+      ],
+      "source": "atlas-build.json",
+      "what": "استخدام واجهة Figma لاستخراج الرموز وتصدير الأصول ثم تنفيذ مكونات من رابط Figma. — Use the Figma REST API to extract tokens and export assets, then implement components from a Figma URL."
+    },
+    {
+      "id": "ABUILD-41",
+      "family": "atlas-build",
+      "group": "software",
+      "domain": "build",
+      "name_en": "Figma read via MCP or REST fallback",
+      "name_ar": "قراءة Figma عبر MCP أو REST",
+      "status": "documented",
+      "requires": [],
+      "proof": [
+        "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/3009-uxd-design/12857-uxd-figma-read"
+      ],
+      "source": "atlas-build.json",
+      "what": "جلب لقطات وبنية ومتغيرات من رابط Figma عبر MCP ثم REST. — Pull screenshots, structure and variables from a Figma URL using MCP first then REST with a token."
+    },
+    {
+      "id": "ABUILD-42",
+      "family": "atlas-build",
+      "group": "software",
+      "domain": "build",
+      "name_en": "Figma to pixel-exact code plan",
+      "name_ar": "من Figma إلى كود مطابق",
+      "status": "documented",
+      "requires": [],
+      "proof": [
+        "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/quiver/14453-design",
+        "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/2998-patternfly/12791-pf-figma-diff"
+      ],
+      "source": "atlas-build.json",
+      "what": "استخرج عقد Figma إلى خطة مقاسة ثم ابنِ وقارن وأصلح. — Extract Figma nodes into a measured plan, build against it, then diff and fix deviations."
+    },
+    {
+      "id": "ABUILD-43",
+      "family": "atlas-build",
+      "group": "software",
+      "domain": "build",
+      "name_en": "Frontend performance and responsive audit",
+      "name_ar": "تدقيق أداء الواجهة والاستجابة",
+      "status": "documented",
+      "requires": [],
+      "proof": [
+        "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/majestic-frontend/8280-frontend-performance",
+        "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/3529-ui-design/14312-responsive-design"
+      ],
+      "source": "atlas-build.json",
+      "what": "شخّص مشاكل LCP وCLS وINP والاستجابة من المصدر والعرض. — Diagnose LCP, CLS, INP regressions and responsive issues from source and rendered output."
+    },
+    {
+      "id": "ABUILD-44",
+      "family": "atlas-build",
+      "group": "software",
+      "domain": "build",
+      "name_en": "Live keyboard accessibility test via browser",
+      "name_ar": "اختبار الوصولية بلوحة المفاتيح مباشرة",
+      "status": "documented",
+      "requires": [
+        "npm:axe"
+      ],
+      "proof": [
+        "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/2998-patternfly/12754-pf-a11y-keyboard",
+        "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/2998-patternfly/12753-pf-a11y-audit"
+      ],
+      "source": "atlas-build.json",
+      "what": "شغّل الواجهة عبر المتصفح لفحص ترتيب Tab ومصائد التركيز وسلوك المفاتيح. — Drive a running UI with browser automation to check tab order, focus traps and component key behavior."
+    },
+    {
+      "id": "ABUILD-45",
+      "family": "atlas-build",
+      "group": "software",
+      "domain": "build",
+      "name_en": "Premium landing page with GSAP scroll motion",
+      "name_ar": "صفحة هبوط فاخرة بحركة GSAP",
+      "status": "documented",
+      "requires": [
+        "npm:gsap"
+      ],
+      "proof": [
+        "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/196-landing/621-landing",
+        "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/14160",
+        "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/4059"
+      ],
+      "source": "atlas-build.json",
+      "what": "بناء صفحة هبوط بهوية العلامة مع CSS ثلاثي الأبعاد وحركة GSAP بعد مقابلة العلامة. — Build a brand-first single-page landing with 3D CSS and GSAP scroll effects after a brand interview."
+    },
+    {
+      "id": "ABUILD-46",
+      "family": "atlas-build",
+      "group": "software",
+      "domain": "build",
+      "name_en": "Screenshot-vs-design pixel diff loop",
+      "name_ar": "حلقة مقارنة لقطة الصفحة بالتصميم",
+      "status": "documented",
+      "requires": [
+        "python3"
+      ],
+      "proof": [
+        "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/890-web/2011-check-web-design",
+        "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/1530-webcraft/4196-ui-screenshots"
+      ],
+      "source": "atlas-build.json",
+      "what": "مقارنة صفحة منفذة بالتصميم المرجعي وربط الفروق بعناصر مسماة. — Compare a built page to a reference, attributing colour and position diffs to named elements."
+    },
+    {
+      "id": "ABUILD-47",
+      "family": "atlas-build",
+      "group": "software",
+      "domain": "build",
+      "name_en": "Screenshot-vs-reference pixel diff loop",
+      "name_ar": "حلقة مقارنة لقطة الشاشة بالمرجع",
+      "status": "documented",
+      "requires": [],
+      "proof": [
+        "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/887-mobile/1996-check-mobile-design",
+        "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/2370-report-regeneration/9165-report-fidelity-harness"
+      ],
+      "source": "atlas-build.json",
+      "what": "قارن الشاشة المبنية بصورة التصميم واحسب فرق اللون الإدراكي لكل عنصر. — Compare a built screen to a design image, mask chrome, and report perceptual delta per element."
+    },
+    {
+      "id": "ABUILD-48",
+      "family": "atlas-build",
+      "group": "software",
+      "domain": "build",
+      "name_en": "Three-tier design token architecture with theming",
+      "name_ar": "معمارية رموز التصميم بثلاث طبقات",
+      "status": "documented",
+      "requires": [],
+      "proof": [
+        "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/2278-design-systems-engineering/8697-design-token-architecture",
+        "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/13267",
+        "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/7560"
+      ],
+      "source": "atlas-build.json",
+      "what": "هيكلة رموز التصميم أولية ودلالية ومكوّنية مع الثيمات كتبديل قيم دلالية وتصديرها لكل منصة. — Structure tokens as primitive, semantic and component tiers with themes as semantic value swaps, emitted per platform."
+    },
+    {
+      "id": "ABUILD-49",
+      "family": "atlas-build",
+      "group": "software",
+      "domain": "build",
+      "name_en": "WCAG 2.2 scan-fix-verify accessibility audit",
+      "name_ar": "تدقيق إتاحة WCAG 2.2: فحص وإصلاح وتحقق",
+      "status": "documented",
+      "requires": [
+        "npm:axe"
+      ],
+      "proof": [
+        "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/149-a11y-audit/492-a11y-audit",
+        "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/13231",
+        "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/948"
+      ],
+      "source": "atlas-build.json",
+      "what": "فحص كود الواجهة لمخالفات WCAG 2.2 وترتيبها بالخطورة وتقديم إصلاحات قبل/بعد ثم إعادة التحقق. — Scan a front-end codebase for WCAG 2.2 A/AA violations, rank by severity, emit before/after fixes and re-verify against a baseline."
+    },
+    {
+      "id": "ABUILD-50",
+      "family": "atlas-build",
+      "group": "software",
+      "domain": "build",
+      "name_en": "Cut a release: tag, GitHub release, verify",
+      "name_ar": "إصدار نسخة: وسم ونشر وتحقق",
+      "status": "documented",
+      "requires": [],
+      "proof": [
+        "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/?/10012-release",
+        "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/?/1238-ship",
+        "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/?/9678-releasing"
+      ],
+      "source": "atlas-build.json",
+      "what": "تنفيذ بوابات الإصدار ثم الوسم والنشر والتحقق من وجود الوسم. — Run release gates, tag, push and publish a GitHub release then prove the tag exists."
     },
     {
       "id": "ACODE-01",
@@ -10959,6 +11631,823 @@
       "what": "استعلام اللوائح وإنشاء المستخدم والمستندات وتقييم الحزمة وتقديمها. — Query regulations, create end-user and documents, evaluate and submit a bundle for international numbers."
     },
     {
+      "id": "ACODE-177",
+      "family": "atlas-code",
+      "group": "software",
+      "domain": "code",
+      "name_en": "Cited sequence diagram from code entry point",
+      "name_ar": "مخطط تسلسل موثق من نقطة دخول الكود",
+      "status": "documented",
+      "requires": [
+        "npm:mermaid"
+      ],
+      "proof": [
+        "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/2415-architecture/9367-map-flow",
+        "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/2690-build-web-data-visualization/10334-uml-and-software-architecture-visualizat"
+      ],
+      "source": "atlas-code.json",
+      "what": "تتبع نقطة دخول عبر مواقع الاستدعاء وإنتاج مخطط تسلسل موثق. — Trace one entry point through tracked call sites into a Mermaid sequence diagram with citations."
+    },
+    {
+      "id": "ACODE-178",
+      "family": "atlas-code",
+      "group": "software",
+      "domain": "code",
+      "name_en": "Component library lookup with helper script",
+      "name_ar": "البحث في مكتبة المكونات بسكربت مساعد",
+      "status": "documented",
+      "requires": [
+        "node"
+      ],
+      "proof": [
+        "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/3419-wix/14004-wix-design-system"
+      ],
+      "source": "atlas-code.json",
+      "what": "البحث في حزمة نظام تصميم عن مكونات وخصائص وأمثلة. — Search a design-system package for components, props, examples and testkits through a bundled Node helper."
+    },
+    {
+      "id": "ACODE-179",
+      "family": "atlas-code",
+      "group": "software",
+      "domain": "code",
+      "name_en": "Design-quality CI gate with SARIF",
+      "name_ar": "بوابة جودة التصميم في CI",
+      "status": "documented",
+      "requires": [],
+      "proof": [
+        "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/3029-memoire/12948-enforce-design-ci"
+      ],
+      "source": "atlas-code.json",
+      "what": "أضف فحصاً في طلبات الدمج يفشل عند تراجع الوصولية والرموز مقابل خط أساس. — Add a pull-request check that fails on new accessibility, token and responsive regressions against a baseline."
+    },
+    {
+      "id": "ACODE-180",
+      "family": "atlas-code",
+      "group": "software",
+      "domain": "code",
+      "name_en": "Design token system scaffold",
+      "name_ar": "بناء نظام رموز التصميم",
+      "status": "documented",
+      "requires": [
+        "npm:react"
+      ],
+      "proof": [
+        "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/2406-web-design/9323-design-tokens-scaffolding",
+        "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/2406-web-design/9322-design-system-audit"
+      ],
+      "source": "atlas-code.json",
+      "what": "بناء رموز التصميم الأولية والدلالية من هوية العلامة إلى JSON ومتغيرات CSS وثيم الإطار. — Scaffold primitive and semantic tokens from a brand spec into JSON, CSS variables and a framework theme."
+    },
+    {
+      "id": "ACODE-181",
+      "family": "atlas-code",
+      "group": "software",
+      "domain": "code",
+      "name_en": "Hardcoded-style scan to design tokens",
+      "name_ar": "فحص القيم الصلبة واستبدالها برموز",
+      "status": "documented",
+      "requires": [],
+      "proof": [
+        "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/2998-patternfly/12762-pf-color-scan",
+        "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/2998-patternfly/12763-pf-css-token-check"
+      ],
+      "source": "atlas-code.json",
+      "what": "افحص الشيفرة عن ألوان ومسافات صلبة واقترح رموزاً بديلة. — Scan code for raw colors, spacing and legacy classes and propose token replacements."
+    },
+    {
+      "id": "ACODE-182",
+      "family": "atlas-code",
+      "group": "software",
+      "domain": "code",
+      "name_en": "React component scaffold with shadcn, Tailwind, Storybook",
+      "name_ar": "هيكلة مكون React مع shadcn وTailwind وStorybook",
+      "status": "documented",
+      "requires": [
+        "npm:react"
+      ],
+      "proof": [
+        "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/7523",
+        "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/7522",
+        "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/10315"
+      ],
+      "source": "atlas-code.json",
+      "what": "إنشاء مجلد مكون بملفات منظمة وvariants وshadcn وقصص Storybook ضمن طبقة FSD. — Scaffold a component folder with kebab-case files, cva variants, shadcn composition and CSF3 stories in an FSD layer."
+    },
+    {
+      "id": "ACODE-183",
+      "family": "atlas-code",
+      "group": "software",
+      "domain": "code",
+      "name_en": "shadcn and UnoCSS component styling setup",
+      "name_ar": "إعداد shadcn وUnoCSS لتنسيق المكونات",
+      "status": "documented",
+      "requires": [
+        "npm:react"
+      ],
+      "proof": [
+        "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/2722-vercel/10555-shadcn",
+        "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/2945-unocss/12211-unocss"
+      ],
+      "source": "atlas-code.json",
+      "what": "تهيئة shadcn/ui دون تفاعل وضبط CSS الذري بشكل متسق. — Initialize shadcn/ui non-interactively and configure atomic CSS (UnoCSS or Tailwind) consistently."
+    },
+    {
+      "id": "ACODE-184",
+      "family": "atlas-code",
+      "group": "software",
+      "domain": "code",
+      "name_en": "shadcn/ui and Tailwind composition rules",
+      "name_ar": "قواعد تركيب shadcn وTailwind",
+      "status": "documented",
+      "requires": [
+        "npm:react"
+      ],
+      "proof": [
+        "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/2935-shadcn-ui/12182-shadcn",
+        "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/tailwind/3674-tailwind-best-practices"
+      ],
+      "source": "atlas-code.json",
+      "what": "طبّق سير shadcn وقواعد Tailwind: ألوان دلالية وgap وحقول منظمة. — Apply the shadcn CLI workflow and Tailwind rules: semantic colors, gap over space, FieldGroup forms."
+    },
+    {
+      "id": "ACODE-185",
+      "family": "atlas-code",
+      "group": "software",
+      "domain": "code",
+      "name_en": "Stdlib HTML accessibility linter with manual residue",
+      "name_ar": "فاحص وصولية HTML مع بقايا يدوية",
+      "status": "documented",
+      "requires": [
+        "npm:axe"
+      ],
+      "proof": [
+        "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/2370-report-regeneration/9164-report-a11y-gate"
+      ],
+      "source": "atlas-code.json",
+      "what": "افحص HTML بقواعد WCAG القابلة للآلة واذكر دائماً ما يحتاج مراجعة بشرية. — Lint output HTML for machine-decidable WCAG rules and always list what needs human review."
+    },
+    {
+      "id": "ACODE-186",
+      "family": "atlas-code",
+      "group": "software",
+      "domain": "code",
+      "name_en": "WCAG four-principle accessibility review",
+      "name_ar": "مراجعة الوصولية وفق WCAG",
+      "status": "documented",
+      "requires": [
+        "npm:axe",
+        "npm:pa11y"
+      ],
+      "proof": [
+        "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/1503-universal-design-principles/3841-accessibility",
+        "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/1530-webcraft/4191-fix-web-accessibility"
+      ],
+      "source": "atlas-code.json",
+      "what": "مراجعة شاشة وفق مبادئ WCAG الأربعة مع إصلاحات محددة. — Review a screen against perceivable, operable, understandable and robust criteria with concrete fixes."
+    },
+    {
+      "id": "ACODE-187",
+      "family": "atlas-code",
+      "group": "software",
+      "domain": "code",
+      "name_en": "Bevy ECS, state flow and asset pipeline",
+      "name_ar": "بيفي: ECS وتدفق الحالات وخط الأصول",
+      "status": "documented",
+      "requires": [],
+      "proof": [
+        "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/2137-bevy-plugin/7587-bevy-ecs-patterns",
+        "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/2199-lvtd-skills/8152-rust-bevy-state-flow"
+      ],
+      "source": "atlas-code.json",
+      "what": "تصميم ألعاب Bevy بنمط ECS وتدفق حالات وكتالوج أصول ومحتوى مبني على بيانات. — Design Bevy games with ECS queries, scheduling, AppState flow, typed asset catalogs and data-driven content."
+    },
+    {
+      "id": "ACODE-188",
+      "family": "atlas-code",
+      "group": "software",
+      "domain": "code",
+      "name_en": "Browser game stack, Phaser and web foundations",
+      "name_ar": "حزمة ألعاب المتصفح وPhaser",
+      "status": "documented",
+      "requires": [
+        "npm:esbuild"
+      ],
+      "proof": [
+        "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/2696-game-studio/10366-phaser-2d-game",
+        "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/2696-game-studio/10371-web-game-foundations"
+      ],
+      "source": "atlas-code.json",
+      "what": "اختيار المحرك ومعمارية ألعاب المتصفح وبناء ثنائي الأبعاد بـ Phaser. — Choose engine and architecture for browser games and implement 2D with Phaser, TypeScript and Vite."
+    },
+    {
+      "id": "ACODE-189",
+      "family": "atlas-code",
+      "group": "software",
+      "domain": "code",
+      "name_en": "Fixed-step physics and collision broadphase",
+      "name_ar": "فيزياء خطوة ثابتة وكشف تصادم",
+      "status": "documented",
+      "requires": [],
+      "proof": [
+        "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/2199-lvtd-skills/8150-rust-bevy-fixed-step-physics",
+        "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/2199-lvtd-skills/8149-rust-bevy-collision-broadphase"
+      ],
+      "source": "atlas-code.json",
+      "what": "فصل المحاكاة الحتمية بخطوة ثابتة عن العرض مع تصادم AABB. — Separate deterministic fixed-step simulation from presentation and add AABB broadphase with swept checks."
+    },
+    {
+      "id": "ACODE-190",
+      "family": "atlas-code",
+      "group": "software",
+      "domain": "code",
+      "name_en": "Geometry, SDF and mesh-voxel conversion choice",
+      "name_ar": "اختيار تمثيل الهندسة وSDF وتحويل الشبكات",
+      "status": "documented",
+      "requires": [],
+      "proof": [
+        "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/2199-lvtd-skills/8087-game-sdf-and-field-modeling"
+      ],
+      "source": "atlas-code.json",
+      "what": "اختيار تمثيل هندسي والتحويل بين شبكات وSDF وفوكسل. — Choose geometric representations and plan conversions among meshes, SDFs, voxels and contours."
+    },
+    {
+      "id": "ACODE-191",
+      "family": "atlas-code",
+      "group": "software",
+      "domain": "code",
+      "name_en": "Godot 4 GDScript architecture patterns",
+      "name_ar": "أنماط معمارية لـ GDScript في Godot 4",
+      "status": "documented",
+      "requires": [
+        "chromium"
+      ],
+      "proof": [
+        "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/3098-game-development/13268-godot-gdscript-patterns",
+        "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/1526-gamegen/4176-godot-gameplay"
+      ],
+      "source": "atlas-code.json",
+      "what": "هيكلة لعبة Godot 4 بالإشارات والمشاهد والموارد وآلات الحالة. — Structure a Godot 4 game with signals, scenes, resources, state machines and typed exports."
+    },
+    {
+      "id": "ACODE-192",
+      "family": "atlas-code",
+      "group": "software",
+      "domain": "code",
+      "name_en": "Godot live-editor inspection via CLI",
+      "name_ar": "فحص محرر Godot الحي عبر سطر الأوامر",
+      "status": "documented",
+      "requires": [],
+      "proof": [
+        "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/2669-hera-godot/10172-live-editor"
+      ],
+      "source": "atlas-code.json",
+      "what": "فحص وتعديل محرر Godot يعمل فعلا مع إثبات النتائج بقراءة الحالة ولقطات الشاشة. — Inspect and mutate a running Godot editor/game through a CLI, proving results with state reads and screenshots."
+    },
+    {
+      "id": "ACODE-193",
+      "family": "atlas-code",
+      "group": "software",
+      "domain": "code",
+      "name_en": "Measured game performance loop",
+      "name_ar": "حلقة قياس أداء اللعبة",
+      "status": "documented",
+      "requires": [],
+      "proof": [
+        "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/1511-homie/3895-perf",
+        "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/2696-game-studio/10363-game-playtest"
+      ],
+      "source": "atlas-code.json",
+      "what": "قياس الأداء ثم تغيير واحد كل مرة والإبقاء على التحسن المثبت فقط. — Baseline frame times on desktop and emulated phone, make one change per trial, keep only measured wins."
+    },
+    {
+      "id": "ACODE-194",
+      "family": "atlas-code",
+      "group": "software",
+      "domain": "code",
+      "name_en": "Unity DOTS ECS and Unreal/Unity automation",
+      "name_ar": "وحدة DOTS وأتمتة محركات Unity وUnreal",
+      "status": "documented",
+      "requires": [
+        "python3"
+      ],
+      "proof": [
+        "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/3098-game-development/13269-unity-ecs-patterns",
+        "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/1372-unreal-engine-skills-for-claude-code/3185-unreal-mcp"
+      ],
+      "source": "atlas-code.json",
+      "what": "تطبيق أنماط Unity DOTS وأتمتة المحررات والبناء الدفعي. — Apply Unity ECS/Jobs/Burst patterns and drive Unity/Unreal editors via batch builds, editor Python or MCP."
+    },
+    {
+      "id": "ACODE-195",
+      "family": "atlas-code",
+      "group": "software",
+      "domain": "code",
+      "name_en": "Classify regex matches before bulk sweep",
+      "name_ar": "تصنيف نتائج regex قبل الاستبدال الجماعي",
+      "status": "documented",
+      "requires": [],
+      "proof": [
+        "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/2140-code-quality-plugin/7627-bulk-sweep-classify"
+      ],
+      "source": "atlas-code.json",
+      "what": "يصنف كل مطابقة قبل الاستبدال الجماعي لتجنب إفساد الملفات المصممة والسجلات التاريخية. — Bucket every match of a bulk find-replace into stale target, false positive, out-of-scope design, or immutable record before editing."
+    },
+    {
+      "id": "ACODE-196",
+      "family": "atlas-code",
+      "group": "software",
+      "domain": "code",
+      "name_en": "Dead code and import cleanup scan",
+      "name_ar": "فحص الكود الميت وتنظيف الاستيراد",
+      "status": "documented",
+      "requires": [],
+      "proof": [
+        "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/510-dead-code/1539-dead-code-scan"
+      ],
+      "source": "atlas-code.json",
+      "what": "يكتشف الكود غير المستخدم ويحذفه. — Find unused functions, imports and variables, then remove them."
+    },
+    {
+      "id": "ACODE-197",
+      "family": "atlas-code",
+      "group": "software",
+      "domain": "code",
+      "name_en": "Diagnostic code catalog entry",
+      "name_ar": "إضافة رمز تشخيص منظم لمكتبة JS",
+      "status": "documented",
+      "requires": [],
+      "proof": [
+        "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/2916-nostics/12103-add-diagnostic"
+      ],
+      "source": "atlas-code.json",
+      "what": "يضيف رمز خطأ منظم بقواعد ثابتة للترقيم والرسالة. — Add a PREFIX_XNNNN diagnostic with why/fix/docs via defineDiagnostics conventions."
+    },
+    {
+      "id": "ACODE-198",
+      "family": "atlas-code",
+      "group": "software",
+      "domain": "code",
+      "name_en": "Markdown todo file task scripts",
+      "name_ar": "إدارة مهام todo.md عبر سكربتات",
+      "status": "documented",
+      "requires": [
+        "python3"
+      ],
+      "proof": [
+        "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/2554-markdown-tasks/9920-tasks"
+      ],
+      "source": "atlas-code.json",
+      "what": "يدير قائمة المهام في ملف markdown عبر سكربتات مع سبب الحظر. — Manage .llm/todo.md through get/add/mark/archive scripts with blocked markers carrying failure reasons."
+    },
+    {
+      "id": "ACODE-199",
+      "family": "atlas-code",
+      "group": "software",
+      "domain": "code",
+      "name_en": "Sync feature tracker with TODO",
+      "name_ar": "مزامنة متتبع الميزات مع TODO",
+      "status": "documented",
+      "requires": [],
+      "proof": [
+        "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/2139-blueprint-plugin/7606-blueprint-feature-tracker-sync"
+      ],
+      "source": "atlas-code.json",
+      "what": "يزامن ملف تتبع الميزات مع TODO.md ويسحب أوامر العمل المنجزة. — Reconcile a feature-tracker JSON with TODO.md checkboxes and drain completed work orders from a sidecar."
+    },
+    {
+      "id": "ACODE-200",
+      "family": "atlas-code",
+      "group": "software",
+      "domain": "code",
+      "name_en": "Atomic commit splitting by purpose",
+      "name_ar": "تقسيم التغييرات إلى commits ذرية",
+      "status": "documented",
+      "requires": [
+        "git"
+      ],
+      "proof": [
+        "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/1232-git-absorb/2912-git-absorb",
+        "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/2546-git/9890-commit-chunks",
+        "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/atomic-commits/13493-atomic-commits"
+      ],
+      "source": "atlas-code.json",
+      "what": "تجميع التغييرات حسب الغرض وإنشاء commits منطقية متعددة أو دمج الإصلاحات في commits سابقة. — Group a dirty working tree by purpose and create several logical commits, or fold fixes into earlier commits."
+    },
+    {
+      "id": "ACODE-201",
+      "family": "atlas-code",
+      "group": "software",
+      "domain": "code",
+      "name_en": "Babysit PR until green and mergeable",
+      "name_ar": "مراقبة PR حتى يصبح جاهزا للدمج",
+      "status": "documented",
+      "requires": [
+        "gh"
+      ],
+      "proof": [
+        "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/2476-source-control/9610-babysit-prs",
+        "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/?/2240-monitor-pr",
+        "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/?/13857"
+      ],
+      "source": "atlas-code.json",
+      "what": "متابعة فحوص PR وتعليقاته وإصلاح الفشل والدمج فقط عند تحقق الجاهزية. — Poll PR checks and review threads, fix failures, and merge only when a gate proves readiness."
+    },
+    {
+      "id": "ACODE-202",
+      "family": "atlas-code",
+      "group": "software",
+      "domain": "code",
+      "name_en": "Changelog from commits, Keep a Changelog",
+      "name_ar": "سجل تغييرات من الكوميتات",
+      "status": "documented",
+      "requires": [
+        "git"
+      ],
+      "proof": [
+        "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/boss/3154-changelog-generation",
+        "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/development-skills/12684-changelog",
+        "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/documentation-gene/13256-changelog-automation"
+      ],
+      "source": "atlas-code.json",
+      "what": "توليد أو تحديث سجل التغييرات من تاريخ الكوميتات بأقسام Keep a Changelog. — Generate or update CHANGELOG.md entries from commit history in Keep a Changelog sections."
+    },
+    {
+      "id": "ACODE-203",
+      "family": "atlas-code",
+      "group": "software",
+      "domain": "code",
+      "name_en": "Conventional commit from staged diff",
+      "name_ar": "رسالة commit بصيغة Conventional من التغييرات",
+      "status": "documented",
+      "requires": [
+        "git"
+      ],
+      "proof": [
+        "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/conventional-commits",
+        "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/commit/10026-commit",
+        "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/epic/3192-commit"
+      ],
+      "source": "atlas-code.json",
+      "what": "توليد رسالة commit بصيغة Conventional Commits من الفروقات المجهزة مع تجهيز ملفات محددة فقط. — Derive a Conventional Commits 1.0 message (type, scope, body) from the staged diff after staging specific files only."
+    },
+    {
+      "id": "ACODE-204",
+      "family": "atlas-code",
+      "group": "software",
+      "domain": "code",
+      "name_en": "Dangerous git command guardrail hooks",
+      "name_ar": "خطافات تمنع أوامر git الخطرة",
+      "status": "documented",
+      "requires": [],
+      "proof": [
+        "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/?/8435",
+        "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/?/13884"
+      ],
+      "source": "atlas-code.json",
+      "what": "تثبيت خطافات تمنع أوامر git المدمرة. — Install Claude Code hooks blocking push, reset --hard, clean, branch -D."
+    },
+    {
+      "id": "ACODE-205",
+      "family": "atlas-code",
+      "group": "software",
+      "domain": "code",
+      "name_en": "Merge queue conflict simulation",
+      "name_ar": "محاكاة تعارضات قائمة الدمج",
+      "status": "documented",
+      "requires": [
+        "git"
+      ],
+      "proof": [
+        "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/3313-git-simulate-sequential-merges/13827-git-simulate-sequential-merges",
+        "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/development-skills/12693-resolve-merge",
+        "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/git-pr-merge-unblo/13825-git-pr-merge-unblock"
+      ],
+      "source": "atlas-code.json",
+      "what": "التنبؤ بالتعارضات بين فروع قائمة الدمج دون لمس المراجع أو شجرة العمل. — Predict which branches in a merge queue conflict without touching refs, index or worktree."
+    },
+    {
+      "id": "ACODE-206",
+      "family": "atlas-code",
+      "group": "software",
+      "domain": "code",
+      "name_en": "PR babysit loop to merge",
+      "name_ar": "مراقبة طلب الدمج حتى الدمج",
+      "status": "documented",
+      "requires": [
+        "mcp:github"
+      ],
+      "proof": [
+        "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/2564-babysit-prs/9931-babysit-prs",
+        "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/delivery/7212-pr-merge-ready",
+        "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/delivery/7216-update-pr-branch"
+      ],
+      "source": "atlas-code.json",
+      "what": "حلقة متابعة لطلب الدمج: جلب المراجعات وCI وفرزها وإصلاحها والرد حتى يدمج بشري. — Loop on a pull request: fetch review threads and CI, triage, fix, reply, resolve, push until merged by a human."
+    },
+    {
+      "id": "ACODE-207",
+      "family": "atlas-code",
+      "group": "software",
+      "domain": "code",
+      "name_en": "PR body from diff using repo template",
+      "name_ar": "وصف PR من الفروقات وقالب المستودع",
+      "status": "documented",
+      "requires": [
+        "git",
+        "gh",
+        "mcp:github"
+      ],
+      "proof": [
+        "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/?/3657-create-pr",
+        "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/?/9946-pr-craft",
+        "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/?/10061-pr-style"
+      ],
+      "source": "atlas-code.json",
+      "what": "إنشاء طلب دمج بعنوان ووصف مستخرجين من الفروقات وقالب المستودع. — Create a pull request whose title and body derive from the branch diff and the repo PR template."
+    },
+    {
+      "id": "ACODE-208",
+      "family": "atlas-code",
+      "group": "software",
+      "domain": "code",
+      "name_en": "PR creation with reviewer-friendly body",
+      "name_ar": "فتح طلب دمج بوصف واضح",
+      "status": "documented",
+      "requires": [
+        "gh"
+      ],
+      "proof": [
+        "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/compound-engineeri/3283-ce-commit-push-pr",
+        "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/1450-chronicle/3542-pr",
+        "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/github-dev/3387-update-pr-summary"
+      ],
+      "source": "atlas-code.json",
+      "what": "إنشاء commit ودفع وفتح طلب دمج بوصف يتبع القالب وتحديثه. — Commit, push and open a PR with a template-aware description and summary kept updated."
+    },
+    {
+      "id": "ACODE-209",
+      "family": "atlas-code",
+      "group": "software",
+      "domain": "code",
+      "name_en": "Purge pushed secrets from hosted history",
+      "name_ar": "إزالة أسرار دُفعت من السجل المستضاف",
+      "status": "documented",
+      "requires": [
+        "git",
+        "gh"
+      ],
+      "proof": [
+        "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/3312-git-rewrite-does-not-unpublish-orphaned/13826-git-rewrite-does-not-unpublish-orphaned",
+        "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/gist-to-repo-migra/13822-gist-to-repo-migration"
+      ],
+      "source": "atlas-code.json",
+      "what": "بعد force-push يجب التحقق من بقاء الكوميتات القديمة وإعادة إنشاء المستودع. — After force-push, verify old commits remain served and recreate repo to truly unpublish."
+    },
+    {
+      "id": "ACODE-210",
+      "family": "atlas-code",
+      "group": "software",
+      "domain": "code",
+      "name_en": "Release cut with changelog and tag",
+      "name_ar": "إصدار نسخة مع سجل التغييرات والوسم",
+      "status": "documented",
+      "requires": [],
+      "proof": [
+        "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/3167-cut-release/13496-cut-release",
+        "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/1450-chronicle/3543-release",
+        "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/container-plugin/7717-deploy-release"
+      ],
+      "source": "atlas-code.json",
+      "what": "إصدار نسخة: تحديد رقم semver وتحديث الملفات والسجل ثم الوسم والنشر. — Cut a release: choose semver bump, update version files and CHANGELOG, tag and publish a GitHub release."
+    },
+    {
+      "id": "ACODE-211",
+      "family": "atlas-code",
+      "group": "software",
+      "domain": "code",
+      "name_en": "Resolve rebase and merge conflicts",
+      "name_ar": "حل تعارضات الدمج وإعادة التأسيس",
+      "status": "documented",
+      "requires": [
+        "git"
+      ],
+      "proof": [
+        "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/?/9614",
+        "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/?/2246",
+        "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/?/8418"
+      ],
+      "source": "atlas-code.json",
+      "what": "دمج أو إعادة تأسيس الفرع وحل التعارضات بفهم نية الطرفين والدفع بأمان. — Merge or rebase onto base, resolve conflicts per commit using both sides' intent, and push safely."
+    },
+    {
+      "id": "ACODE-212",
+      "family": "atlas-code",
+      "group": "software",
+      "domain": "code",
+      "name_en": "Split branch into one-commit branches",
+      "name_ar": "تقسيم فرع إلى فروع بكوميت واحد",
+      "status": "documented",
+      "requires": [
+        "git"
+      ],
+      "proof": [
+        "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/2546-git/9897-split-branch",
+        "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/1233-git-chain/2913-git-chain",
+        "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/adlc-build/13096-small-batch-delivery"
+      ],
+      "source": "atlas-code.json",
+      "what": "تحويل فرع فيه N كوميت إلى N فروع بكوميت واحد عبر cherry-pick دون المساس بالأصلي. — Turn a branch of N commits into N single-commit branches via cherry-pick without touching the original."
+    },
+    {
+      "id": "ACODE-213",
+      "family": "atlas-code",
+      "group": "software",
+      "domain": "code",
+      "name_en": "Stacked PRs with gh stack",
+      "name_ar": "طلبات دمج متراكبة عبر gh stack",
+      "status": "documented",
+      "requires": [],
+      "proof": [
+        "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/2072-github-workflow/7312-github-stack-submit",
+        "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/2072-github-workflow/7313-github-stack-sync",
+        "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/1233-git-chain/2913-git-chain"
+      ],
+      "source": "atlas-code.json",
+      "what": "إرسال ومزامنة وتعديل ودمج طلبات الدمج المتراكبة على GitHub. — Submit, sync, navigate, amend and merge GitHub-native stacked pull requests."
+    },
+    {
+      "id": "ACODE-214",
+      "family": "atlas-code",
+      "group": "software",
+      "domain": "code",
+      "name_en": "Stacked PRs with Graphite or Mergify",
+      "name_ar": "طلبات دمج متراكمة مع Graphite وMergify",
+      "status": "documented",
+      "requires": [
+        "node"
+      ],
+      "proof": [
+        "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/2909-graphite/12079-graphite",
+        "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/2510-mergify/9684-mergify-stack",
+        "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/?/7321-gt-sync"
+      ],
+      "source": "atlas-code.json",
+      "what": "إدارة سلسلة فروع بالتتابع عبر gt أو mergify: إنشاء ورفع وإعادة ترتيب ودمج. — Drive a stack of one-commit branches via gt or mergify stack, submit, sync, restack and merge in order."
+    },
+    {
+      "id": "ACODE-215",
+      "family": "atlas-code",
+      "group": "software",
+      "domain": "code",
+      "name_en": "Worktree-isolated issue-to-PR flow",
+      "name_ar": "مسار من issue إلى PR بأشجار عمل معزولة",
+      "status": "documented",
+      "requires": [
+        "git",
+        "gh"
+      ],
+      "proof": [
+        "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/2631-issueflow/10008-issueflow",
+        "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/?/3661-start-issue",
+        "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/?/9943-parallel-worktrees"
+      ],
+      "source": "atlas-code.json",
+      "what": "تنفيذ issue كاملا في شجرة عمل معزولة مع اختبارات وPR ودمج. — Take a GitHub issue through worktree, TDD implementation, verification, PR and merge."
+    },
+    {
+      "id": "ACODE-216",
+      "family": "atlas-code",
+      "group": "software",
+      "domain": "code",
+      "name_en": "Worktree lifecycle and safe cleanup",
+      "name_ar": "إدارة worktree وتنظيفها بأمان",
+      "status": "documented",
+      "requires": [
+        "git"
+      ],
+      "proof": [
+        "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/2546-git/9889-clean-worktrees",
+        "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/compound-engineeri/3311-ce-worktree",
+        "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/git-worktree-conve/13829-git-worktree-convention"
+      ],
+      "source": "atlas-code.json",
+      "what": "إنشاء worktree لكل مهمة وحذف worktrees والفروع المدموجة دون إجبار. — Create sibling worktrees per task and remove worktrees and merged branches without force."
+    },
+    {
+      "id": "ACRAFT-01",
+      "family": "atlas-craft",
+      "group": "documents",
+      "domain": "craft",
+      "name_en": "Low-fi wireframe and ADHD-friendly visual organizers",
+      "name_ar": "مخطط أولي ومنظمات بصرية ملائمة",
+      "status": "documented",
+      "requires": [
+        "npm:mermaid"
+      ],
+      "proof": [
+        "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/1567-tonone/4396-draft-wireframe",
+        "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/1806-neurodivergent-visual-org/4844-neurodivergent-visual-org",
+        "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/1995-hypotyposis/7163-sketch"
+      ],
+      "source": "atlas-craft.json",
+      "what": "إنتاج مخططات ASCII ومنظمات Mermaid مبسطة. — Produce ASCII or sketch wireframes and simple Mermaid organizers for focus."
+    },
+    {
+      "id": "ACRAFT-02",
+      "family": "atlas-craft",
+      "group": "documents",
+      "domain": "craft",
+      "name_en": "Color system with accessibility and dark mode",
+      "name_ar": "نظام ألوان يدعم الوصولية والوضع الداكن",
+      "status": "documented",
+      "requires": [],
+      "proof": [
+        "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/1503-universal-design-principles/3813-color",
+        "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/1503-universal-design-principles/3814-color-accessibility-and-mode"
+      ],
+      "source": "atlas-craft.json",
+      "what": "تصميم تدرجات ألوان للعلامة والحياد والحالات تحقق التباين في الوضعين الفاتح والداكن. — Design brand, neutral and status colour ramps that meet contrast needs in light and dark modes."
+    },
+    {
+      "id": "ACRAFT-03",
+      "family": "atlas-craft",
+      "group": "documents",
+      "domain": "craft",
+      "name_en": "Content-stress and edge-case UI hardening",
+      "name_ar": "اختبار تحمل الواجهة للمحتوى المتطرف",
+      "status": "documented",
+      "requires": [],
+      "proof": [
+        "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/1503-universal-design-principles/3847-factor-of-safety-content-stress"
+      ],
+      "source": "atlas-craft.json",
+      "what": "اختبار الواجهة بأسماء طويلة وأرقام كبيرة وصور مفقودة ونصوص مترجمة. — Stress UI against long names, big numbers, missing images and localized strings."
+    },
+    {
+      "id": "ACRAFT-04",
+      "family": "atlas-craft",
+      "group": "documents",
+      "domain": "craft",
+      "name_en": "Gestalt layout: grid, alignment, grouping",
+      "name_ar": "تخطيط جشتالت: الشبكة والمحاذاة والتجميع",
+      "status": "documented",
+      "requires": [],
+      "proof": [
+        "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/1503-universal-design-principles/3807-alignment",
+        "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/1503-universal-design-principles/3808-alignment-grid-systems"
+      ],
+      "source": "atlas-craft.json",
+      "what": "تطبيق المحاذاة والشبكات والتقارب والتشابه لتنظيم التخطيط. — Apply alignment, grid systems, proximity and similarity so layouts read as organized groups."
+    },
+    {
+      "id": "ACRAFT-05",
+      "family": "atlas-craft",
+      "group": "documents",
+      "domain": "craft",
+      "name_en": "Refactoring-UI hierarchy and spacing audit",
+      "name_ar": "تدقيق التسلسل البصري والمسافات",
+      "status": "documented",
+      "requires": [],
+      "proof": [
+        "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/3438-ux-design/14122-refactoring-ui",
+        "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/1503-universal-design-principles/3840-snr-emphasis-economy"
+      ],
+      "source": "atlas-craft.json",
+      "what": "تدقيق واجهة من حيث التسلسل والمسافات واللون والعمق وتقييمها بقائمة فحص. — Audit a UI for hierarchy, spacing, color and depth and score it with a yes/no checklist."
+    },
+    {
+      "id": "ACRAFT-06",
+      "family": "atlas-craft",
+      "group": "documents",
+      "domain": "craft",
+      "name_en": "Signal-to-noise decoration audit",
+      "name_ar": "تدقيق الضجيج البصري وإزالة الزخرفة",
+      "status": "documented",
+      "requires": [],
+      "proof": [
+        "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/1503-universal-design-principles/3838-snr-decoration-removal",
+        "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/1503-universal-design-principles/3744-wabi-sabi-restraint"
+      ],
+      "source": "atlas-craft.json",
+      "what": "إزالة الزخرفة الزائدة وتوزيع التأكيد بحيث يكسب كل عنصر مكانه. — Remove or densify decoration and budget emphasis so each cue earns its place."
+    },
+    {
+      "id": "ACRAFT-07",
+      "family": "atlas-craft",
+      "group": "documents",
+      "domain": "craft",
+      "name_en": "Typography and legibility rules for web",
+      "name_ar": "قواعد الخط والمقروئية للويب",
+      "status": "documented",
+      "requires": [],
+      "proof": [
+        "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/3438-ux-design/14126-web-typography",
+        "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/1503-universal-design-principles/3826-legibility-typeface-and-size"
+      ],
+      "source": "atlas-craft.json",
+      "what": "اختيار الخطوط والأحجام والمقاييس وطول السطر لمقروئية أفضل. — Choose typefaces, sizes, scales and line lengths for legible web typography."
+    },
+    {
       "id": "ADATA-01",
       "family": "atlas-data",
       "group": "data",
@@ -11986,6 +13475,416 @@
       "what": "اختيار مسار 510(k) أو De Novo أو PMA حسب وجود جهاز مرجعي ودرجة الخطورة وتخطيط اجتماع ما قبل التقديم. — Choose 510(k) / De Novo / PMA from predicate availability and risk, then plan a Pre-Sub."
     },
     {
+      "id": "ADOCS-17",
+      "family": "atlas-docs",
+      "group": "documents",
+      "domain": "docs",
+      "name_en": "AWS architecture draw.io with official icons",
+      "name_ar": "مخطط AWS بصيغة draw.io بأيقونات رسمية",
+      "status": "documented",
+      "requires": [
+        "npm:mermaid"
+      ],
+      "proof": [
+        "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/373-deploy-on-aws/1376-aws-architecture-diagram",
+        "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/2511-azure/9715-azure-resource-visualizer"
+      ],
+      "source": "atlas-docs.json",
+      "what": "توليد XML لمخطط AWS بأيقونات AWS4 الرسمية. — Generate validated draw.io XML for AWS architectures using AWS4 icons, optionally from IaC."
+    },
+    {
+      "id": "ADOCS-18",
+      "family": "atlas-docs",
+      "group": "documents",
+      "domain": "docs",
+      "name_en": "Diagram-as-code engine choice: PlantUML, D2, Structurizr",
+      "name_ar": "اختيار محرك المخططات: PlantUML أو D2 أو Structurizr",
+      "status": "documented",
+      "requires": [
+        "plantuml"
+      ],
+      "proof": [
+        "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/3135-diagram/13445-diagram",
+        "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/2173-tools-plugin/7914-d2-diagrams",
+        "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/2690-build-web-data-visualization/10334-uml-and-software-architecture-visualizat"
+      ],
+      "source": "atlas-docs.json",
+      "what": "اختيار أنسب محرك مخططات نصية وإنتاج أو فحص الشيفرة. — Select the best text-diagram engine for the request and produce or lint the source."
+    },
+    {
+      "id": "ADOCS-19",
+      "family": "atlas-docs",
+      "group": "documents",
+      "domain": "docs",
+      "name_en": "Evidence-grounded architecture diagram from repo",
+      "name_ar": "مخطط معماري مبني على الريبو الفعلي",
+      "status": "documented",
+      "requires": [
+        "docker",
+        "npm:mermaid"
+      ],
+      "proof": [
+        "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/1722-engineer-design-diagram/4729-engineer-design-diagram",
+        "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/2179-architecture-suite/7964-ln-25-architecture-diagram-builder",
+        "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/x4919-visual-gen/x20317-architecture-diagram"
+      ],
+      "source": "atlas-docs.json",
+      "what": "استخراج العقد والروابط من ملفات المشروع الفعلية ورسم المخطط. — Derive nodes and edges from manifests, compose, k8s, terraform and imports, then render a diagram."
+    },
+    {
+      "id": "ADOCS-20",
+      "family": "atlas-docs",
+      "group": "documents",
+      "domain": "docs",
+      "name_en": "Excalidraw diagram that argues visually",
+      "name_ar": "رسم Excalidraw يحمل حجة بصرية",
+      "status": "documented",
+      "requires": [],
+      "proof": [
+        "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/2790-work/11181-draw-excalidraw",
+        "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/2966-pwdev-excalidraw/12488-excalidraw"
+      ],
+      "source": "atlas-docs.json",
+      "what": "إنشاء ملف Excalidraw بأشكال معبرة وحلقة تصيير وإصلاح. — Create .excalidraw JSON using shape-as-meaning patterns, palette file and a render-fix loop."
+    },
+    {
+      "id": "ADOCS-21",
+      "family": "atlas-docs",
+      "group": "documents",
+      "domain": "docs",
+      "name_en": "Mermaid diagram render and validate loop",
+      "name_ar": "رسم مخططات Mermaid والتحقق منها",
+      "status": "documented",
+      "requires": [
+        "npm:mermaid"
+      ],
+      "proof": [
+        "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/1245-mermaid-cli/2925-mermaid-cli",
+        "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/2173-tools-plugin/7922-mermaid-diagrams",
+        "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/3206-literature-publication/13573-markdown-mermaid-writing"
+      ],
+      "source": "atlas-docs.json",
+      "what": "كتابة Mermaid وتصييره عبر mmdc وإصلاح الأخطاء حتى ينجح. — Write Mermaid markup, render with mmdc to SVG/PNG/PDF and fix syntax errors until it compiles."
+    },
+    {
+      "id": "ADOCS-22",
+      "family": "atlas-docs",
+      "group": "documents",
+      "domain": "docs",
+      "name_en": "Node-link layout and UML diagram design",
+      "name_ar": "تخطيط الرسوم العقدية وتصميم UML",
+      "status": "documented",
+      "requires": [],
+      "proof": [
+        "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/2690-build-web-data-visualization/10326-node-link-and-diagram-layout",
+        "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/2690-build-web-data-visualization/10334-uml-and-software-architecture-visualizat"
+      ],
+      "source": "atlas-docs.json",
+      "what": "اختيار استراتيجية تخطيط لتقليل التقاطعات وفق UML. — Choose auto-layout strategies and notation to reduce crossings in node-link and UML diagrams."
+    },
+    {
+      "id": "ADOCS-23",
+      "family": "atlas-docs",
+      "group": "documents",
+      "domain": "docs",
+      "name_en": "Self-contained HTML diagram with inline SVG",
+      "name_ar": "مخطط HTML مستقل بـ SVG مضمن",
+      "status": "documented",
+      "requires": [],
+      "proof": [
+        "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/345-visuals/1242-html-diagram",
+        "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/2657-figures/10113-svg-figure",
+        "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/1095-akbun-draw-architecture/2428-akbun-draw-architecture"
+      ],
+      "source": "atlas-docs.json",
+      "what": "رسم مخطط في ملف HTML واحد بـ SVG مع حد للتعقيد. — Draw a diagram as one HTML file with inline SVG, orthogonal connectors and a complexity budget."
+    },
+    {
+      "id": "ADOCS-24",
+      "family": "atlas-docs",
+      "group": "documents",
+      "domain": "docs",
+      "name_en": "Visual implementation plan reviewed in browser",
+      "name_ar": "خطة تنفيذ مرئية للمراجعة في المتصفح",
+      "status": "documented",
+      "requires": [
+        "npm:mermaid"
+      ],
+      "proof": [
+        "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/2865-visual-docs/11574-visual-plan",
+        "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/2199-lvtd-skills/8203-visual-docs-diagrams"
+      ],
+      "source": "atlas-docs.json",
+      "what": "كتابة الخطة بصيغة ماركداون وعرضها محليا بمخططات وجمع الملاحظات. — Write a plan as markdown, lint, serve locally with diagrams and collect comments."
+    },
+    {
+      "id": "ADOCS-25",
+      "family": "atlas-docs",
+      "group": "documents",
+      "domain": "docs",
+      "name_en": "ADR/RFC/PRD creation with ID linking",
+      "name_ar": "إنشاء ADR وRFC مع ترقيم وربط",
+      "status": "documented",
+      "requires": [],
+      "proof": [
+        "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/341-archcore/1209-document"
+      ],
+      "source": "atlas-docs.json",
+      "what": "تسجيل القرارات كـADR أو RFC وترقيم المستندات وربطها بالمشكلات. — Record decisions as ADR or RFC, assign sequential PRD/ADR/PRP IDs and link documents bidirectionally to issues."
+    },
+    {
+      "id": "ADOCS-26",
+      "family": "atlas-docs",
+      "group": "documents",
+      "domain": "docs",
+      "name_en": "Code-grounded doc update and overhaul",
+      "name_ar": "تحديث التوثيق بالاعتماد على الكود",
+      "status": "documented",
+      "requires": [
+        "git",
+        "npm:mermaid"
+      ],
+      "proof": [
+        "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/113-dev-flow/288-documenting-code"
+      ],
+      "source": "atlas-docs.json",
+      "what": "تحديث أو إعادة كتابة الوثائق لقارئ محدد مع التحقق من كل ادعاء بالكود وفحص الروابط والمخططات. — Update or rewrite docs for a named reader, verifying every claim against code and running link, diagram and prose checks."
+    },
+    {
+      "id": "ADOCS-27",
+      "family": "atlas-docs",
+      "group": "documents",
+      "domain": "docs",
+      "name_en": "Diataxis four-kind docs restructuring",
+      "name_ar": "إعادة هيكلة التوثيق بإطار دياتاكسيس",
+      "status": "documented",
+      "requires": [],
+      "proof": [
+        "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/2395-technical-writing-docs/9273-diataxis-documentation"
+      ],
+      "source": "atlas-docs.json",
+      "what": "تصنيف كل صفحة إلى تعليمي أو دليل مهمة أو مرجع أو شرح وفصل الصفحات المختلطة لتتبع رحلة القارئ. — Classify each page as tutorial, how-to, reference or explanation and split mixed pages so the docs set follows reader journeys."
+    },
+    {
+      "id": "ADOCS-28",
+      "family": "atlas-docs",
+      "group": "documents",
+      "domain": "docs",
+      "name_en": "Docs drift audit against current code",
+      "name_ar": "تدقيق انحراف التوثيق عن الكود",
+      "status": "documented",
+      "requires": [
+        "git"
+      ],
+      "proof": [
+        "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/1554-gates/4320-docs-consolidate"
+      ],
+      "source": "atlas-docs.json",
+      "what": "استخراج الادعاءات القابلة للتحقق من الوثائق ومطابقتها بالكود وتقرير التناقضات دون تعديل. — Extract falsifiable claims from README, CLAUDE.md and docs, check each against the repo, and report contradictions, stale items and orphans without editing."
+    },
+    {
+      "id": "ADOCS-29",
+      "family": "atlas-docs",
+      "group": "documents",
+      "domain": "docs",
+      "name_en": "Durable solved-problem learning notes",
+      "name_ar": "توثيق الدروس المستفادة من المشكلات المحلولة",
+      "status": "documented",
+      "requires": [
+        "claude:tools"
+      ],
+      "proof": [
+        "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/1391-compound-engineering/3284-ce-compound"
+      ],
+      "source": "atlas-docs.json",
+      "what": "كتابة درس واحد موثق لكل مشكلة محلولة عندما لا يظهر المنطق في الكود. — Write one validated learning per solved problem under a solutions folder, only when reasoning is not recoverable from code."
+    },
+    {
+      "id": "ADOCS-30",
+      "family": "atlas-docs",
+      "group": "documents",
+      "domain": "docs",
+      "name_en": "LLM-maintained interlinked wiki",
+      "name_ar": "ويكي مترابط تديره النماذج",
+      "status": "documented",
+      "requires": [],
+      "proof": [],
+      "source": "atlas-docs.json",
+      "what": "تحويل المصادر إلى قاعدة معرفة ماركداون مترابطة. — Ingest sources into a persistent cross-referenced markdown knowledge base in the Karpathy pattern."
+    },
+    {
+      "id": "ADOCS-31",
+      "family": "atlas-docs",
+      "group": "documents",
+      "domain": "docs",
+      "name_en": "Look up version-correct library docs",
+      "name_ar": "البحث في توثيق المكتبات بالإصدار الصحيح",
+      "status": "documented",
+      "requires": [],
+      "proof": [],
+      "source": "atlas-docs.json",
+      "what": "الإجابة عن أسئلة API من التوثيق الرسمي للإصدار المثبت. — Answer API questions from official docs for the installed version via llms.txt or doc MCP rather than memory."
+    },
+    {
+      "id": "ADOCS-32",
+      "family": "atlas-docs",
+      "group": "documents",
+      "domain": "docs",
+      "name_en": "Lossless markdown compression with semantic-diff gate",
+      "name_ar": "ضغط الماركداون دون فقدان المعنى",
+      "status": "documented",
+      "requires": [],
+      "proof": [
+        "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/2434-docs-hygiene/9448-compress"
+      ],
+      "source": "atlas-docs.json",
+      "what": "حذف الحشو والتحوط من الوثائق مع مراجعة فروق تعيد أي معنى مفقود. — Cut filler, hedging and articles from docs while a second-pass diff review reverts any lost directive, threshold or example."
+    },
+    {
+      "id": "ADOCS-33",
+      "family": "atlas-docs",
+      "group": "documents",
+      "domain": "docs",
+      "name_en": "README authoring and verification",
+      "name_ar": "كتابة README والتحقق منه",
+      "status": "documented",
+      "requires": [],
+      "proof": [],
+      "source": "atlas-docs.json",
+      "what": "توليد README بكشف التقنيات والبيانات ثم التحقق من كل ادعاء ومسار وشارة. — Generate a front-door README by detecting stack and metadata, then verify every claim, path, count and badge against the repo."
+    },
+    {
+      "id": "ADOCS-34",
+      "family": "atlas-docs",
+      "group": "documents",
+      "domain": "docs",
+      "name_en": "Strip AI-slop and zero-info code comments",
+      "name_ar": "إزالة التعليقات الزائدة في الكود",
+      "status": "documented",
+      "requires": [],
+      "proof": [
+        "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/1221-comment-slop/2903-comment-slop"
+      ],
+      "source": "atlas-docs.json",
+      "what": "حذف التعليقات التي تكرر الكود أو تصف طبقة أخرى والإبقاء على أسباب القرار. — Delete comments that restate code, describe another layer or narrate unshipped plans, keeping only why-comments and tool directives."
+    },
+    {
+      "id": "ADOCS-35",
+      "family": "atlas-docs",
+      "group": "documents",
+      "domain": "docs",
+      "name_en": "Game narrative and branching writing",
+      "name_ar": "كتابة سرد الألعاب المتفرع",
+      "status": "documented",
+      "requires": [],
+      "proof": [
+        "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/1376-velith/3219-book-game"
+      ],
+      "source": "atlas-docs.json",
+      "what": "بناء سرد متفرع ومهمات وحوار. — Craft branching structure, quests, dialogue and lore bible."
+    },
+    {
+      "id": "ADOCS-36",
+      "family": "atlas-docs",
+      "group": "documents",
+      "domain": "docs",
+      "name_en": "Semver bump and changelog plan",
+      "name_ar": "اختيار رقم الإصدار وكتابة سجل التغييرات",
+      "status": "documented",
+      "requires": [
+        "git"
+      ],
+      "proof": [
+        "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/2346-open-source-maintenance/9025-plan-a-release",
+        "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/3152-shipwright-changelog/13481-shipwright-changelog",
+        "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/964-release/2248-release"
+      ],
+      "source": "atlas-docs.json",
+      "what": "تحديد رفع الإصدار من التغييرات وكتابة سجل تغييرات وقائمة تحقق. — Pick the semver bump from the change set and write a Keep-a-Changelog entry plus checklist."
+    },
+    {
+      "id": "ADOCS-37",
+      "family": "atlas-docs",
+      "group": "documents",
+      "domain": "docs",
+      "name_en": "Math notation and long-form exposition",
+      "name_ar": "كتابة الرياضيات وشرحها المطوّل",
+      "status": "documented",
+      "requires": [],
+      "proof": [
+        "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/3259-claude-math/13770-math-unicode",
+        "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/1244-long-form-math/2924-long-form-math"
+      ],
+      "source": "atlas-docs.json",
+      "what": "يكتب الرياضيات برموز يونيكود وبراهين مفصلة. — Write math with Unicode notation and detailed understanding-focused proofs."
+    },
+    {
+      "id": "ADOCS-38",
+      "family": "atlas-docs",
+      "group": "documents",
+      "domain": "docs",
+      "name_en": "Post-change comprehension quiz report",
+      "name_ar": "تقرير اختبار فهم بعد التغيير",
+      "status": "documented",
+      "requires": [],
+      "proof": [
+        "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/2437-education/9461-quiz-me",
+        "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/2437-education/9463-teach"
+      ],
+      "source": "atlas-docs.json",
+      "what": "ينتج تقرير HTML لتغيير منجز مع اختبار يتأكد من فهم الإنسان. — Produce an HTML report of a finished change with a quiz checking the human understood it."
+    },
+    {
+      "id": "ADOCS-39",
+      "family": "atlas-docs",
+      "group": "documents",
+      "domain": "docs",
+      "name_en": "Self-study curriculum scaffold with assessment log",
+      "name_ar": "هيكل منهج ذاتي مع سجل تقييم",
+      "status": "documented",
+      "requires": [
+        "python3"
+      ],
+      "proof": [
+        "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/2524-curriculum/9821-curriculum",
+        "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/1120-ambient-library/2575-design-course"
+      ],
+      "source": "atlas-docs.json",
+      "what": "ينشئ منهجاً من وحدات مع سجل إجابات JSONL وتتبع تقدم. — Generate a modular curriculum with orientation, five-part modules, JSONL answer log and progress tracking."
+    },
+    {
+      "id": "ADOCS-40",
+      "family": "atlas-docs",
+      "group": "documents",
+      "domain": "docs",
+      "name_en": "Teaching-block article from a working session",
+      "name_ar": "مقال تعليمي من جلسة عمل",
+      "status": "documented",
+      "requires": [],
+      "proof": [
+        "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/1120-ambient-library/2677-teaching-block-synthesized",
+        "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/1120-ambient-library/2588-teaching-block"
+      ],
+      "source": "atlas-docs.json",
+      "what": "يحول جلسة عمل إلى مقال تعليمي يحتوي المطالبات والأخطاء والاستدلال. — Convert a session into a publishable walkthrough with real prompts, wrong turns and reasoning."
+    },
+    {
+      "id": "ADOCS-41",
+      "family": "atlas-docs",
+      "group": "documents",
+      "domain": "docs",
+      "name_en": "Zero-knowledge visual ELI5 explainer",
+      "name_ar": "شرح بصري مبسط جداً بأسلوب طفل",
+      "status": "documented",
+      "requires": [],
+      "proof": [
+        "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/2437-education/9459-eli5",
+        "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/257-eli5/864-eli5"
+      ],
+      "source": "atlas-docs.json",
+      "what": "يشرح أي موضوع في صفحة HTML بصرية بنص قليل وفكرة واحدة لكل رسم. — Explain any topic as a minimal-text visual HTML with one idea per diagram."
+    },
+    {
       "id": "AMEDIA-01",
       "family": "atlas-media",
       "group": "images",
@@ -12181,6 +14080,56 @@
       ],
       "source": "atlas-media.json",
       "what": "يختار ويربط مزودي التعرف والتوليد الصوتي لوكيل صوتي حسب القناة واللغة والبث. — Choose and wire STT/TTS providers for a voice agent by channel bandwidth, language and streaming needs."
+    },
+    {
+      "id": "AMEDIA-12",
+      "family": "atlas-media",
+      "group": "images",
+      "domain": "media",
+      "name_en": "Anchored sprite strip generation and normalization",
+      "name_ar": "توليد ومعايرة شرائط السبرايت",
+      "status": "documented",
+      "requires": [
+        "python3"
+      ],
+      "proof": [
+        "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/2696-game-studio/10368-sprite-pipeline",
+        "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/2460-pixel-art/9527-sprite"
+      ],
+      "source": "atlas-media.json",
+      "what": "توليد شريط حركة كامل من إطار معتمد ومعايرته بمقياس ومرساة موحدين. — Generate a whole animation strip from one approved seed and normalize to fixed frames with shared scale and anchor."
+    },
+    {
+      "id": "AMEDIA-13",
+      "family": "atlas-media",
+      "group": "images",
+      "domain": "media",
+      "name_en": "Gameplay trailer from bot playthroughs",
+      "name_ar": "تريلر من لعب آلي حقيقي",
+      "status": "documented",
+      "requires": [
+        "ffmpeg"
+      ],
+      "proof": [
+        "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/1526-gamegen/4173-game-trailer"
+      ],
+      "source": "atlas-media.json",
+      "what": "تسجيل لعب آلي وقص على شبكة إيقاع بـ ffmpeg. — Record bot gameplay in Godot Movie Maker and cut on a beat-aligned grid with ffmpeg into 16:9, 9:16 and GIF."
+    },
+    {
+      "id": "AMEDIA-14",
+      "family": "atlas-media",
+      "group": "images",
+      "domain": "media",
+      "name_en": "Monochrome learning explainer image",
+      "name_ar": "صورة شرح تعليمية أحادية اللون",
+      "status": "documented",
+      "requires": [],
+      "proof": [
+        "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/1094-akbun-draw/2418-akbun-draw-learning-mono"
+      ],
+      "source": "atlas-media.json",
+      "what": "يحول الأوراق والأكواد إلى صور شرح 16:9 بسيطة بالأبيض والأسود. — Turn papers, code or concepts into minimal black-and-white 16:9 explainer images with sparse accent colour."
     },
     {
       "id": "AMIND-01",
@@ -12848,6 +14797,73 @@
       "what": "يشترط مسار استعادة مسمى ومجرّبا قبل الحذف أو الدفع القسري أو الترحيل أو الإزالة. — Requires a named, rehearsed restore path (restore to scratch, diff, dry-run) before deletes, force-pushes, migrations or teardowns."
     },
     {
+      "id": "AMIND-41",
+      "family": "atlas-mind",
+      "group": "thinking",
+      "domain": "mind",
+      "name_en": "Interactive mindmap export (force graph, MarkMind)",
+      "name_ar": "تصدير خريطة ذهنية تفاعلية",
+      "status": "documented",
+      "requires": [
+        "python3"
+      ],
+      "proof": [
+        "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/30-learning/39-forcegraph-exporter",
+        "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/30-learning/40-generate-mindmap",
+        "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/30-learning/41-markmind-exporter"
+      ],
+      "source": "atlas-mind.json",
+      "what": "تحويل موضوع إلى مخطط JSON ثم تصديره كصفحة تفاعلية أو لـ Obsidian. — Turn a topic into a Buzan-style JSON outline, then export to force-graph HTML or Obsidian MarkMind."
+    },
+    {
+      "id": "AMIND-42",
+      "family": "atlas-mind",
+      "group": "thinking",
+      "domain": "mind",
+      "name_en": "Challenge approach before commitment",
+      "name_ar": "مراجعة الافتراضات وإعادة التقييم",
+      "status": "documented",
+      "requires": [],
+      "proof": [
+        "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/2215-majestic-reasoning/8355-devils-advocate"
+      ],
+      "source": "atlas-mind.json",
+      "what": "يختبر الافتراضات ويعيد التقييم عند تعثر المنهج. — Stress assumptions, opportunity cost and alternatives, or reset when the current approach fails."
+    },
+    {
+      "id": "AMIND-43",
+      "family": "atlas-mind",
+      "group": "thinking",
+      "domain": "mind",
+      "name_en": "Closing Caveats and status section",
+      "name_ar": "قسم الملاحظات والحالة الختامي",
+      "status": "documented",
+      "requires": [],
+      "proof": [
+        "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/1072-craftsman/2375-caveats-and-status"
+      ],
+      "source": "atlas-mind.json",
+      "what": "يختم تقرير الإنجاز بما تم التحقق منه وما افترض وما لم يغطَّ. — End any nontrivial completion report with Verified / Assumed / Not covered lines backed by commands actually run."
+    },
+    {
+      "id": "AMIND-44",
+      "family": "atlas-mind",
+      "group": "thinking",
+      "domain": "mind",
+      "name_en": "Blind adversarial verification of proofs",
+      "name_ar": "تحقق خصومي أعمى من البراهين",
+      "status": "documented",
+      "requires": [
+        "latex"
+      ],
+      "proof": [
+        "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/295-math-olympiad/907-math-olympiad",
+        "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/296-math-proof/908-siege"
+      ],
+      "source": "atlas-mind.json",
+      "what": "يتحقق من براهين المسابقات بمدقق في سياق جديد وثقة معايرة. — Verify olympiad-level proofs with a fresh-context verifier and calibrated confidence."
+    },
+    {
       "id": "AWEB-01",
       "family": "atlas-research",
       "group": "research",
@@ -12975,6 +14991,25 @@
       ],
       "source": "atlas-research.json",
       "what": "فرض اختيار هدف واحد للبحث والولايات القضائية قبل بدء البحث. — Force a single search purpose and jurisdictions before running prior-art, FTO, landscape, diligence or invalidity searches."
+    },
+    {
+      "id": "AWEB-09",
+      "family": "atlas-research",
+      "group": "research",
+      "domain": "research",
+      "name_en": "Course syllabus to supplementary reading list",
+      "name_ar": "من المنهج الدراسي إلى قائمة قراءات",
+      "status": "documented",
+      "requires": [
+        "node",
+        "pip:office"
+      ],
+      "proof": [
+        "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/227-syllabus/704-syllabus",
+        "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/2451-knowledge/9499-course-digest"
+      ],
+      "source": "atlas-research.json",
+      "what": "يبني قائمة قراءات docx بأحدث الأوراق لكل قسم من المنهج. — Build a docx reading list of recent papers per syllabus section via academic search."
     },
     {
       "id": "ASTRAT-01",
@@ -13718,6 +15753,181 @@
       ],
       "source": "atlas-strategy.json",
       "what": "قراءة الهامش لكل ساعة وسلة المبيعات وسعة التشغيل لأنشطة خدمية. — Read margin per provider-hour, basket, attach and capacity for retail, spa, funeral, pharmacy operations."
+    },
+    {
+      "id": "ASTRAT-47",
+      "family": "atlas-strategy",
+      "group": "thinking",
+      "domain": "strategy",
+      "name_en": "Design review heuristics and critique",
+      "name_ar": "مراجعة التصميم بالقواعد الإرشادية",
+      "status": "documented",
+      "requires": [],
+      "proof": [
+        "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/3011-uxd-research/12863-uxd-evaluate-design-heuristics",
+        "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/1529-uxdesign/4182-design-critique"
+      ],
+      "source": "atlas-strategy.json",
+      "what": "إجراء تقييم إرشادي ونقد منظم للتصميم مع نتائج مرتبة الأولوية. — Run a structured heuristic evaluation and design critique with prioritized findings."
+    },
+    {
+      "id": "ASTRAT-48",
+      "family": "atlas-strategy",
+      "group": "thinking",
+      "domain": "strategy",
+      "name_en": "Game balance and economy tuning pass",
+      "name_ar": "جولة موازنة اقتصاد اللعبة",
+      "status": "documented",
+      "requires": [
+        "python3"
+      ],
+      "proof": [
+        "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/2199-lvtd-skills/8078-game-balance-economy"
+      ],
+      "source": "atlas-strategy.json",
+      "what": "تحديد التجربة المقصودة ورسم الاقتصاد وحساب القيمة المتوقعة وجدول ضبط. — Define intended experience, map sources and sinks, compute expected value and output a tuning table with safe ranges."
+    },
+    {
+      "id": "ASTRAT-49",
+      "family": "atlas-strategy",
+      "group": "thinking",
+      "domain": "strategy",
+      "name_en": "Game mechanics and player experience design",
+      "name_ar": "تصميم الآليات وتجربة اللاعب",
+      "status": "documented",
+      "requires": [],
+      "proof": [
+        "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/2199-lvtd-skills/8082-game-mechanics-design",
+        "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/2199-lvtd-skills/8139-player-experience-modeling"
+      ],
+      "source": "atlas-strategy.json",
+      "what": "تصميم حلقات اللعب والقواعد ونماذج دافعية اللاعب. — Design core loops, rules and player motivation models with interest curves."
+    },
+    {
+      "id": "ASTRAT-50",
+      "family": "atlas-strategy",
+      "group": "thinking",
+      "domain": "strategy",
+      "name_en": "DORA four keys classification",
+      "name_ar": "تصنيف مؤشرات DORA الأربعة",
+      "status": "documented",
+      "requires": [],
+      "proof": [
+        "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/2353-platform-engineering-idp/9055-classify-dora"
+      ],
+      "source": "atlas-strategy.json",
+      "what": "يحسب مؤشرات DORA ويصنفها مع نافذة وخط أساس. — Compute deploy frequency, lead time, change-failure rate and MTTR, classify to bands with windows and baselines."
+    },
+    {
+      "id": "ASTRAT-51",
+      "family": "atlas-strategy",
+      "group": "thinking",
+      "domain": "strategy",
+      "name_en": "Frequency vs severity operating metrics",
+      "name_ar": "قراءة المؤشرات التشغيلية الصناعية",
+      "status": "documented",
+      "requires": [],
+      "proof": [],
+      "source": "atlas-strategy.json",
+      "what": "قراءات مؤشرات مجالية مع خط أساس. — Domain-specific metric reads (utilization, LTV:CAC, absorption, DORA, NDCG) with baselines."
+    },
+    {
+      "id": "ASTRAT-52",
+      "family": "atlas-strategy",
+      "group": "thinking",
+      "domain": "strategy",
+      "name_en": "Task breakdown with sizing rules",
+      "name_ar": "تفكيك المتطلبات لمهام قابلة للتنفيذ",
+      "status": "documented",
+      "requires": [],
+      "proof": [
+        "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/1369-boss/3168-scrum-master-task-breakdown"
+      ],
+      "source": "atlas-strategy.json",
+      "what": "يفكك المتطلبات إلى مهام صغيرة مع تبعيات ومخاطر. — Split requirements into SMART tasks capped at two days, with serial/parallel/blocking dependencies and risk handling."
+    },
+    {
+      "id": "ASTRAT-53",
+      "family": "atlas-strategy",
+      "group": "thinking",
+      "domain": "strategy",
+      "name_en": "Coordinated security release",
+      "name_ar": "إصدار أمني منسق",
+      "status": "documented",
+      "requires": [],
+      "proof": [
+        "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/2346-open-source-maintenance/9023-coordinate-a-security-release",
+        "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/2346-open-source-maintenance/9025-plan-a-release"
+      ],
+      "source": "atlas-strategy.json",
+      "what": "تنفيذ إصدار ترقيع أمني بشكل خاص مع إفصاح منسق. — Run a private-fix coordinated disclosure release for a reported vulnerability."
+    },
+    {
+      "id": "ASTRAT-54",
+      "family": "atlas-strategy",
+      "group": "thinking",
+      "domain": "strategy",
+      "name_en": "Anki flashcards via AnkiConnect",
+      "name_ar": "بطاقات أنكي عبر AnkiConnect",
+      "status": "documented",
+      "requires": [
+        "os:macos",
+        "network"
+      ],
+      "proof": [
+        "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/1217-anki-flashcards/2899-anki-flashcards",
+        "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/1390-core-learning/3276-learn-core"
+      ],
+      "source": "atlas-strategy.json",
+      "what": "ينشئ ويدير مجموعات وبطاقات أنكي عبر واجهة AnkiConnect المحلية. — Create and manage Anki decks and cards through the local AnkiConnect HTTP API."
+    },
+    {
+      "id": "ASTRAT-55",
+      "family": "atlas-strategy",
+      "group": "thinking",
+      "domain": "strategy",
+      "name_en": "Google Classroom course setup and roster",
+      "name_ar": "إعداد دورة Google Classroom والطلاب",
+      "status": "documented",
+      "requires": [],
+      "proof": [
+        "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/2907-google-workspace/11852-recipe-create-classroom-course",
+        "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/2907-google-workspace/11797-gws-classroom"
+      ],
+      "source": "atlas-strategy.json",
+      "what": "ينشئ الفصول ويدعو الطلاب ويدير الواجبات عبر أداة gws. — Create classes, invite students and manage coursework through the gws CLI."
+    },
+    {
+      "id": "ASTRAT-56",
+      "family": "atlas-strategy",
+      "group": "thinking",
+      "domain": "strategy",
+      "name_en": "Multi-session learning coach with persistent state",
+      "name_ar": "مدرب تعلم متعدد الجلسات بحالة محفوظة",
+      "status": "documented",
+      "requires": [],
+      "proof": [
+        "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/2437-education/9463-teach",
+        "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/1390-core-learning/3276-learn-core"
+      ],
+      "source": "atlas-strategy.json",
+      "what": "يدرّب المتعلم عبر جلسات متعددة بملفات هدف ومسرد وسجل تعلم تراكمي. — Coach a learner over several sessions using a mission file, glossary, concept slices and an append-only learning log."
+    },
+    {
+      "id": "ASTRAT-57",
+      "family": "atlas-strategy",
+      "group": "thinking",
+      "domain": "strategy",
+      "name_en": "Socratic one-question-at-a-time tutoring protocol",
+      "name_ar": "بروتوكول تدريس سقراطي سؤال واحد كل مرة",
+      "status": "documented",
+      "requires": [],
+      "proof": [
+        "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/1390-core-learning/3276-learn-core",
+        "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/1097-akbun-learning/2467-akbun-algorithm-tutor"
+      ],
+      "source": "atlas-strategy.json",
+      "what": "يدير حلقة تدريس بسؤال واحد وتلميحات عند الخطأ ويحكم بالإتقان عبر التطبيق المستقل. — Run a tutor loop with one pending question, hints on errors and mastery judged by independent application."
     },
     {
       "id": "SYNC-01",
@@ -63260,7 +65470,6 @@
       "status": "proven",
       "requires": [
         "pip:pillow",
-        "pip:fonttools",
         "fonts:arabic"
       ],
       "proof": [
@@ -63603,6 +65812,44 @@
       ],
       "source": "runnable-tools.json",
       "what": "يقرأ فهرس مكتبة PromptsMotion العامة وصفحات تفاصيلها ويخزّنها مؤقتًا في ‎.cache/promptsmotion/‎، ثم يستخرج البيانات الوصفية الواقعية فقط، ويعيد كتابة catalog/styles.json وcatalog/prompts_motion.json وملف STYLE.json لكل أسلوب، ويضع listed=false على الإدخالات التي خرجت من الفهرس. —"
+    },
+    {
+      "id": "TOOL-61",
+      "family": "runnable-tools",
+      "group": "agents",
+      "domain": "build",
+      "name_en": "KOSIF Telegram Typography Atlas — private-safe font knowledge and idea search",
+      "name_ar": "مكتبة KOSIF الشاملة للخطوط وأفكار التصميم من صادرات تيليجرام",
+      "status": "proven",
+      "requires": [
+        "fonts:arabic"
+      ],
+      "proof": [
+        "kosif-tool/.claude/skills/kosif-superpowers/scripts/test_telegram_typography_atlas.py",
+        "kosif-tool/.claude/skills/kosif-superpowers/scripts/telegram_typography_atlas.py"
+      ],
+      "source": "runnable-tools.json",
+      "what": "ابحث في فهرس بيانات 5,514 خطًا فريدًا من صادرات تيليجرام الخاصة بك (4,634 تدعم العربية): صف لكل عائلة بأوزانها، وكلمات الأنماط بالعربي (كوفي، رقعة، ديواني، ثلث، نسخ) مع تسامح الإملاء، وفلتر للرخص المفتوحة، و16 اتجاهًا تصميميًا أصليًا. الخطوط والرسائل والصور والمسارات تبقى على جها"
+    },
+    {
+      "id": "TOOL-62",
+      "family": "runnable-tools",
+      "group": "agents",
+      "domain": "build",
+      "name_en": "Web app study (public frontend, REA, facts only)",
+      "name_ar": "دراسة تطبيق ويب عام بـ REA (حقائق فقط)",
+      "status": "proven",
+      "requires": [
+        "python3",
+        "chromium",
+        "npm:rea"
+      ],
+      "proof": [
+        "kosif-tool/.claude/skills/kosif-superpowers/evals/test_web_app_study.py",
+        "kosif-tool/.claude/skills/kosif-superpowers/scripts/web_app_study.py"
+      ],
+      "source": "runnable-tools.json",
+      "what": "يدرس صفحة ويب عامة للقراءة فقط: متصفح بلا تسجيل دخول وملف شخصي جديد يُحذف بعد التشغيل، ثم يلتقط REA الصفحة وأدوات WebMCP المعلنة ولقطة شاشة والسكربتات العامة ببصمات SHA-256. التقرير حقائق فقط: الإطار وإصداره، ومكتبات اللوحة والمحرر والتزامن، والخدمات المستنتجة من أسماء مفاتيح الت"
     },
     {
       "id": "SEC-01",

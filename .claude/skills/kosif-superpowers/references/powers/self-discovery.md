@@ -9,7 +9,7 @@
 مسارات الدليل نسبية إلى `/home/user/`؛ و`session-<date>:<file>#<section>` تشير إلى تشغيل موثق في جلسة سابقة؛ و`owner-upload:` إلى ملف داخل أرشيف أرسله المالك. Proof paths are relative to `/home/user/`.
 
 **المجال / domain:** العقل والتفكير — Mind & thinking · **البادئة / prefix:** `SELF` · **البيانات / data:** `data/powers/self-discovery.json` · **بحث / search:** `python3 scripts/powers.py family self-discovery`
-**مراجع ذات صلة / related references:** [CLAUDE_3_MINUTE_MAP.md](../CLAUDE_3_MINUTE_MAP.md) · [arsenal-general.md](../arsenal-general.md) · [arsenal-libraries.md](../arsenal-libraries.md) · [self-discovery.md](../self-discovery.md) · [surfaces.md](../surfaces.md)
+**مراجع ذات صلة / related references:** [CLAUDE_3_MINUTE_MAP.md](../CLAUDE_3_MINUTE_MAP.md) · [arsenal-general.md](../arsenal-general.md) · [arsenal-libraries.md](../arsenal-libraries.md) · [capability-audit.md](../capability-audit.md) · [hubs.md](../hubs.md) · [self-discovery.md](../self-discovery.md) · [surfaces.md](../surfaces.md)
 
 ## الفهرس / contents
 

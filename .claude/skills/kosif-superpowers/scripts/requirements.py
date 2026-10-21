@@ -56,6 +56,14 @@ def derive_one(rec: dict, pats) -> list:
         hits.remove("python3")
     if any(h.startswith("npm:") for h in hits) and "node" in hits:
         hits.remove("node")
+    # a package the install line lists only as optional ("optional: pip:x, …") is not a requirement,
+    # even when the description names it
+    inst = str(rec.get("install", ""))
+    m = re.search(r"optional:\s*([^·]+)", inst)
+    if m:
+        required = " ".join(re.findall(r"pip install ([^·]+)", inst)).lower().split()
+        optional = {x.lower() for x in re.findall(r"pip:([\w.\-\[\]]+)", m.group(1))}
+        hits = [h for h in hits if not (h.startswith("pip:") and h[4:].lower() in optional and h[4:].lower() not in required)]
     if rec.get("status") == "key" and not any(reg_kind(h) in ("key", "service") for h in hits):
         hits.append("key:unspecified")
     return hits

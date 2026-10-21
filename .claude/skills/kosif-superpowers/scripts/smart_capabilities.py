@@ -63,7 +63,7 @@ SPEC = [
   "atlas-data,charts-data-infographic,data-analysis,maps-geo",
   "data chart dashboard graph excel map gis analytics بيانات إكسل رسوم مخطط خرائط"),
  ("documents", "المستندات والكتابة", "Documents & writing",
-  "atlas-docs,documents-office,writing-humanizer",
+  "atlas-craft,atlas-docs,documents-office,writing-humanizer",
   "document pdf word excel office writing report مستند تقرير كتابة وورد"),
  ("quality", "الاختبارات والجودة والأمان", "QA & security",
   "api-testing,qa-verification,security-safety,verification-evals",

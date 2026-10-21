@@ -8,13 +8,14 @@ Commands below are typed from the skill folder (`.claude/skills/kosif-superpower
 
 <!-- hub:area:investigate:start -->
 
-**الأدوات / tools (11)** — `python3 scripts/hub.py tool <id>` for every command, requirement and limit:
+**الأدوات / tools (12)** — `python3 scripts/hub.py tool <id>` for every command, requirement and limit:
 
 | tool | what it does | start with | evidence |
 |---|---|---|---|
 | `installer-triage` | Standard-library triage of Windows installers and desktop apps before REA. It identifies the installer family (NSIS, Inno, WiX Burn, Squirrel, InstallShield, MSI), UPX packing, Electron, .NET and the signature slot, and finds payloads hidden in PE resources. It also lists and fingerprints Electron asar bundles, unpacks payloads with 7-Zip or innoextract on request and maps each artifact to the matching REA command. | `python3 scripts/installer_triage.py scan ./setup.exe` | tested-here |
 | `local-project-audit` | Performs a read-only static inventory of a local folder without executing anything and returns a JSON report of file counts, extensions, routes (source review, Ghidra/REA binary candidates, archives, media), regex indicators, SHA-256 hashes and zip-safety stats. | `python3 scripts/local_project_audit.py ./my-project` | tested-here |
 | `rea-bridge` | Opt-in bridge to the REA reverse-engineering CLI that stays within what the evidence shows. It checks Node and REA readiness, lists the 241 REA power records in the catalog (153 CLI commands, 76 MCP tools, 6 prompts and 6 KOSIF installer-triage additions) and plans an inspection without running it. Only with --authorized does it run one of 14 static local REA inspectors, saving the output to a new JSON file named by the caller. | `python3 scripts/rea_bridge.py doctor` | tested-here |
+| `web-app-study` | Studies one public web page read-only: a logged-out headless Chromium with a fresh profile and background networking off (fresh profile, deleted afterwards), then REA captures the page, page-declared WebMCP tools, a screenshot and the public scripts, with SHA-256 receipts; optional bounded static JavaScript analysis. report turns a study folder into facts only: framework and versions, canvas/editor/realtime libraries, services inferred from storage key NAMES, WebMCP tools and page metrics, each with file-and-identifier evidence and never code. Written for the MagicPath study; runs on any desktop OS. | `python3 scripts/web_app_study.py doctor` | tested-here |
 | `rea-family-router` | Read-only router that maps one target keyword from a fixed 29-word list (dotnet, apk, har, firmware, sqlite and others) to one of 16 REA capability families, giving the upstream tool name and availability status. It also reports whether rea and node are on PATH. | `python3 scripts/rea_family_router.py list` | tested-here |
 | `rea-owned-repo-batch` | Batch static REA analysis of the user's own JavaScript, TypeScript and HTML GitHub repositories. It reads a private inventory (made by rea_creative_research_atlas.py own), shallow-clones the smallest eligible repos under a size cap with git (depth 1, blob:none) and runs REA's analyze-javascript-application on each through node. Clones and evidence stay in a local private folder, and only counts are printed. | `python3 scripts/rea_owned_repo_batch.py --private-output "$HOME/kosif-private" --rea-cli ./node_modules/rea-agents/scripts/rea.mjs --max-repos 16 --max-size-kb 8000` | untested |
 | `repository-capability-packer` | Inspects a local repository folder or source ZIP for languages, capability signals, license files and a per-file SHA-256 manifest. It packs a deterministic, filtered source ZIP plus a JSON capability-transfer report, leaving out build caches, archives, executables, audio and video, keys, databases and files whose names suggest secrets. Nothing is run, imported or installed. | `python3 scripts/repository_capability_packer.py inspect ./repo --out ./repo-report.json` | tested-here |
@@ -30,8 +31,9 @@ Commands below are typed from the skill folder (`.claude/skills/kosif-superpower
 
 1. [فحص البرامج والهندسة العكسية / REA optional integration](#فحص-البرامج-والهندسة-العكسية--rea-optional-integration)
 2. [Repository Capability Transfer — فحص وضغط المستودعات للكود](#repository-capability-transfer--فحص-وضغط-المستودعات-للكود)
-3. [REA v6.7 family router](#rea-v67-family-router)
-4. [REA + Ghidra on an authorized binary (2026-10-20)](#rea--ghidra-on-an-authorized-binary-2026-10-20)
+3. [دراسة تطبيق ويب عام / Public web app study](#دراسة-تطبيق-ويب-عام--public-web-app-study)
+4. [REA v6.7 family router](#rea-v67-family-router)
+5. [REA + Ghidra on an authorized binary (2026-10-20)](#rea--ghidra-on-an-authorized-binary-2026-10-20)
 
 ## فحص البرامج والهندسة العكسية / REA optional integration
 
@@ -56,6 +58,22 @@ Commands below are typed from the skill folder (`.claude/skills/kosif-superpower
     python3 -m unittest discover -s $SKILL_DIR/evals -p test_repository_capability_packer.py -v
 
 قبل نسخ أي كود: اقرأ رخص الملفات والتبعيات والأصول، صمّم Adapter ضيقًا واختبار قبول، ثم تحقّق من تشغيله فعليًا. الفلترة بالاسم لا تُعتبر ماسح أسرار شاملًا؛ افحص ZIP وتقرير البصمات قبل مشاركته.
+
+## دراسة تطبيق ويب عام / Public web app study
+
+لمعرفة «مبني بإيه» واستلهام أفكار تطبيق ويب عام، استخدم أداة واحدة بدل خطوات REA اليدوية:
+
+```bash
+python3 scripts/web_app_study.py run https://www.example.com --out ~/kosif-studies/example --dry-run   # الخطة فقط
+python3 scripts/web_app_study.py run https://www.example.com --out ~/kosif-studies/example             # الدراسة + التقرير
+python3 scripts/web_app_study.py report ~/kosif-studies/example                                       # تقرير الحقائق من جديد
+```
+
+- متصفح معزول بلا تسجيل دخول، بملف شخصي جديد يُحذف بعد التشغيل. يرفض منفذًا مشغولًا حتى لا يتصل بمتصفح آخر عليه حسابك، ولا يتصل إلا بالموقع المدروس.
+- مجلد الدراسة خارج أي مستودع git: فيه سكربتات الموقع، وهي لا تُرفع أبدًا.
+- التقرير حقائق فقط: الإطار والإصدارات والمكتبات بدرجة ثقة (مرصود أو مذكور)، والخدمات من أسماء مفاتيح التخزين لا قيمها، وأدوات WebMCP، وأعداد نقاط الاتصال لا أسماؤها.
+- `--deep` يضيف تحليلًا ثابتًا محدودًا للذاكرة. `analyze-web-bundle` بلا حدود نفدت ذاكرته على حزمة 5.9 MB.
+- الأفكار تُكتب بكلماتك مع ذكر المصدر. مثال كامل: [دراسة MagicPath](../app-studies/magicpath.md) وقدراتها APPX-120…APPX-139.
 
 ## REA v6.7 family router
 

@@ -112,12 +112,14 @@ def live(as_json: bool) -> int:
     if tools:
         print(f"\nrunnable tools: {len(tools)} in {len({t['area'] for t in tools})} areas — python3 scripts/hub.py doctor shows which run here now")
     print("""
+protocol (any substantial request): understand → scan 100% of the catalog → shortlist → 3 plans → wait for "موافق"
+  0. python3 scripts/skill_intelligence.py brief "<task>"  coverage receipt + groups + superpowers + candidates + plan skeleton
 next:
   1. python3 scripts/hub.py find "<task>"             tools to run + powers + guides, in one answer
   2. python3 scripts/hub.py tool <tool-id>            exact commands, requirements, safety, tests
-  3. python3 scripts/think.py ladder "<task>"         how deep to think; think.py frame "<task>" for the contract
-  4. python3 scripts/requirements.py plan "<task>"    what to install first (▶ = can start now)
-index: references/INDEX.md · map: references/capability-graph.html · thinking: references/cognition.md · rules: SKILL.md §6""")
+  3. python3 scripts/capability_mindmap.py task "<task>"  stage-by-stage mind map (understand → … → deliver)
+  4. python3 scripts/think.py ladder "<task>"         how deep to think; think.py frame "<task>" for the contract
+protocol: PROTOCOL.md · index: references/INDEX.md · map: references/capability-graph.html · thinking: references/cognition.md · rules: SKILL.md §6""")
     return 0
 
 

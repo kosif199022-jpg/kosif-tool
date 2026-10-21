@@ -1,0 +1,402 @@
+[
+ {
+  "id": "ACRAFT-01",
+  "family": "atlas-craft",
+  "domain": "craft",
+  "name_ar": "مخطط أولي ومنظمات بصرية ملائمة",
+  "name_en": "Low-fi wireframe and ADHD-friendly visual organizers",
+  "status": "documented",
+  "what": "إنتاج مخططات ASCII ومنظمات Mermaid مبسطة. — Produce ASCII or sketch wireframes and simple Mermaid organizers for focus.",
+  "when": "User wants screen wireframe, whiteboard sketch or task breakdown visual.",
+  "how": "1. Default to ASCII wireframe; hand-drawn HTML on request. 2. Keep few nodes, color-code, chunk steps. 3. Mermaid for timelines, flows, checklists. 4. Iterate sketch until recognized.",
+  "params": "style",
+  "install": "",
+  "requires": [
+   "npm:mermaid"
+  ],
+  "license": "method paraphrased from Atlas skills under MIT; the skills keep their own licenses — see each folder's SOURCE.md",
+  "proof": [
+   "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/1567-tonone/4396-draft-wireframe",
+   "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/1806-neurodivergent-visual-org/4844-neurodivergent-visual-org",
+   "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/1995-hypotyposis/7163-sketch"
+  ],
+  "proof_scope": "url",
+  "styles": [],
+  "tags": [
+   "wireframe",
+   "sketch",
+   "adhd",
+   "نموذج"
+  ],
+  "section": "المخططات — Diagrams & visual documentation",
+  "source": "KOSIF Atlas mining 2026-10-20 (https://github.com/kosif199022-jpg/kosif-atlas): tonone/draft-wireframe (#4396); neurodivergent-visual-org/neurodivergent-visual-org (#4844); hypotyposis/sketch (#7163) · theme diagrams-visual-docs · 4 supporting skills · verifier read: skills/1567-tonone/4396-draft-wireframe, skills/1806-neurodivergent-visual-org/4844-neurodivergent-visual-org, skills/1995-hypotyposis/7163-sketch",
+  "atlas": {
+   "ids": [
+    "4396",
+    "4844",
+    "7163",
+    "8300"
+   ],
+   "examples": [
+    {
+     "id": "4396",
+     "plugin": "tonone",
+     "skill": "draft-wireframe",
+     "url": "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/1567-tonone/4396-draft-wireframe"
+    },
+    {
+     "id": "4844",
+     "plugin": "neurodivergent-visual-org",
+     "skill": "neurodivergent-visual-org",
+     "url": "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/1806-neurodivergent-visual-org/4844-neurodivergent-visual-org"
+    },
+    {
+     "id": "7163",
+     "plugin": "hypotyposis",
+     "skill": "sketch",
+     "url": "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/1995-hypotyposis/7163-sketch"
+    }
+   ],
+   "theme": "diagrams-visual-docs",
+   "risk_notes": "Guidance only.",
+   "kosif_overlap_ids": [],
+   "stage": "extracted",
+   "verified_by": "b034-diagrams-visual-docs-1.json"
+  }
+ },
+ {
+  "id": "ACRAFT-02",
+  "family": "atlas-craft",
+  "domain": "craft",
+  "name_ar": "نظام ألوان يدعم الوصولية والوضع الداكن",
+  "name_en": "Color system with accessibility and dark mode",
+  "status": "documented",
+  "what": "تصميم تدرجات ألوان للعلامة والحياد والحالات تحقق التباين في الوضعين الفاتح والداكن. — Design brand, neutral and status colour ramps that meet contrast needs in light and dark modes.",
+  "when": "Choosing a palette, status semantics, dark-mode, colour-blind support.",
+  "how": "1) Pick brand primary and a neutral ramp. 2) Define success/warning/error semantics with icon or text backup. 3) Check pairs against 4.5:1 text and 3:1 UI. 4) Re-derive dark mode rather than inverting. 5) Test with colour-blind simulation.",
+  "params": "",
+  "install": "",
+  "requires": [],
+  "license": "method paraphrased from Atlas skills under MIT; the skills keep their own licenses — see each folder's SOURCE.md",
+  "proof": [
+   "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/1503-universal-design-principles/3813-color",
+   "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/1503-universal-design-principles/3814-color-accessibility-and-mode"
+  ],
+  "proof_scope": "url",
+  "styles": [],
+  "tags": [
+   "color",
+   "contrast",
+   "ألوان",
+   "dark-mode"
+  ],
+  "section": "الواجهات والتصميم — Front-end, UI & design systems",
+  "source": "KOSIF Atlas mining 2026-10-20 (https://github.com/kosif199022-jpg/kosif-atlas): universal-design-principles/color (#3813); universal-design-principles/color-accessibility-and-mode (#3814) · theme frontend-ui-design · 3 supporting skills · verifier read: skills/1503-universal-design-principles/3813-color, skills/1503-universal-design-principles/3814-color-accessibility-and-mode",
+  "atlas": {
+   "ids": [
+    "3813",
+    "3814",
+    "3843"
+   ],
+   "examples": [
+    {
+     "id": "3813",
+     "plugin": "universal-design-principles",
+     "skill": "color",
+     "url": "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/1503-universal-design-principles/3813-color"
+    },
+    {
+     "id": "3814",
+     "plugin": "universal-design-principles",
+     "skill": "color-accessibility-and-mode",
+     "url": "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/1503-universal-design-principles/3814-color-accessibility-and-mode"
+    }
+   ],
+   "theme": "frontend-ui-design",
+   "risk_notes": "none",
+   "kosif_overlap_ids": [],
+   "stage": "extracted",
+   "verified_by": "b039-frontend-ui-design-3.json"
+  }
+ },
+ {
+  "id": "ACRAFT-03",
+  "family": "atlas-craft",
+  "domain": "craft",
+  "name_ar": "اختبار تحمل الواجهة للمحتوى المتطرف",
+  "name_en": "Content-stress and edge-case UI hardening",
+  "status": "documented",
+  "what": "اختبار الواجهة بأسماء طويلة وأرقام كبيرة وصور مفقودة ونصوص مترجمة. — Stress UI against long names, big numbers, missing images and localized strings.",
+  "when": "Before shipping components, i18n or RTL checks.",
+  "how": "1) List variable content slots. 2) Test extremes: long, empty, huge, multi-line. 3) Define truncation/wrap rules. 4) Provide image fallbacks. 5) Verify RTL and expanded translations.",
+  "params": "",
+  "install": "",
+  "requires": [],
+  "license": "method paraphrased from Atlas skills under MIT; the skills keep their own licenses — see each folder's SOURCE.md",
+  "proof": [
+   "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/1503-universal-design-principles/3847-factor-of-safety-content-stress"
+  ],
+  "proof_scope": "url",
+  "styles": [],
+  "tags": [
+   "edge-cases",
+   "i18n",
+   "حالات حدية",
+   "components"
+  ],
+  "section": "الواجهات والتصميم — Front-end, UI & design systems",
+  "source": "KOSIF Atlas mining 2026-10-20 (https://github.com/kosif199022-jpg/kosif-atlas): universal-design-principles/factor-of-safety-content-stress (#3847) · theme frontend-ui-design · 4 supporting skills · verifier read: skills/1503-universal-design-principles/3847-factor-of-safety-content-stress",
+  "atlas": {
+   "ids": [
+    "3782",
+    "3846",
+    "3847",
+    "3860"
+   ],
+   "examples": [
+    {
+     "id": "3847",
+     "plugin": "universal-design-principles",
+     "skill": "factor-of-safety-content-stress",
+     "url": "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/1503-universal-design-principles/3847-factor-of-safety-content-stress"
+    }
+   ],
+   "theme": "frontend-ui-design",
+   "risk_notes": "none",
+   "kosif_overlap_ids": [],
+   "stage": "extracted",
+   "verified_by": "b039-frontend-ui-design-3.json"
+  }
+ },
+ {
+  "id": "ACRAFT-04",
+  "family": "atlas-craft",
+  "domain": "craft",
+  "name_ar": "تخطيط جشتالت: الشبكة والمحاذاة والتجميع",
+  "name_en": "Gestalt layout: grid, alignment, grouping",
+  "status": "documented",
+  "what": "تطبيق المحاذاة والشبكات والتقارب والتشابه لتنظيم التخطيط. — Apply alignment, grid systems, proximity and similarity so layouts read as organized groups.",
+  "when": "Layout review, form field grouping, picking columns/gutters/breakpoints.",
+  "how": "1) Align every element to shared edges. 2) Choose columns, gutters, breakpoints and a baseline grid. 3) Group by proximity: gap between groups larger than within. 4) Use similarity for same-function items. 5) Keep labels close to their fields.",
+  "params": "",
+  "install": "",
+  "requires": [],
+  "license": "method paraphrased from Atlas skills under MIT; the skills keep their own licenses — see each folder's SOURCE.md",
+  "proof": [
+   "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/1503-universal-design-principles/3807-alignment",
+   "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/1503-universal-design-principles/3808-alignment-grid-systems"
+  ],
+  "proof_scope": "url",
+  "styles": [],
+  "tags": [
+   "grid",
+   "alignment",
+   "شبكة",
+   "gestalt"
+  ],
+  "section": "الواجهات والتصميم — Front-end, UI & design systems",
+  "source": "KOSIF Atlas mining 2026-10-20 (https://github.com/kosif199022-jpg/kosif-atlas): universal-design-principles/alignment (#3807); universal-design-principles/alignment-grid-systems (#3808) · theme frontend-ui-design · 6 supporting skills · verifier read: skills/1503-universal-design-principles/3807-alignment, skills/1503-universal-design-principles/3808-alignment-grid-systems",
+  "atlas": {
+   "ids": [
+    "3807",
+    "3808",
+    "3817",
+    "3827",
+    "3830",
+    "3837"
+   ],
+   "examples": [
+    {
+     "id": "3807",
+     "plugin": "universal-design-principles",
+     "skill": "alignment",
+     "url": "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/1503-universal-design-principles/3807-alignment"
+    },
+    {
+     "id": "3808",
+     "plugin": "universal-design-principles",
+     "skill": "alignment-grid-systems",
+     "url": "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/1503-universal-design-principles/3808-alignment-grid-systems"
+    }
+   ],
+   "theme": "frontend-ui-design",
+   "risk_notes": "none",
+   "kosif_overlap_ids": [],
+   "stage": "extracted",
+   "verified_by": "b039-frontend-ui-design-3.json"
+  }
+ },
+ {
+  "id": "ACRAFT-05",
+  "family": "atlas-craft",
+  "domain": "craft",
+  "name_ar": "تدقيق التسلسل البصري والمسافات",
+  "name_en": "Refactoring-UI hierarchy and spacing audit",
+  "status": "documented",
+  "what": "تدقيق واجهة من حيث التسلسل والمسافات واللون والعمق وتقييمها بقائمة فحص. — Audit a UI for hierarchy, spacing, color and depth and score it with a yes/no checklist.",
+  "when": "UI looks amateur, spacing/colour inconsistency, component styling review.",
+  "how": "1) Judge hierarchy in grayscale/blurred first. 2) Limit emphasis levers (size, weight, colour) to one or two per element. 3) Use spacing scale 4/8/16/24/32/48/64 with group gaps larger than inner gaps. 4) Cap text width at 45-75 chars. 5) Score = round(passed/8*10) from 8 checks. 6) Add colour and shadows last.",
+  "params": "screenshot or code",
+  "install": "",
+  "requires": [],
+  "license": "method paraphrased from Atlas skills under MIT; the skills keep their own licenses — see each folder's SOURCE.md",
+  "proof": [
+   "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/3438-ux-design/14122-refactoring-ui",
+   "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/1503-universal-design-principles/3840-snr-emphasis-economy"
+  ],
+  "proof_scope": "url",
+  "styles": [],
+  "tags": [
+   "hierarchy",
+   "spacing",
+   "تسلسل بصري",
+   "ui-audit"
+  ],
+  "section": "الواجهات والتصميم — Front-end, UI & design systems",
+  "source": "KOSIF Atlas mining 2026-10-20 (https://github.com/kosif199022-jpg/kosif-atlas): ux-design/refactoring-ui (#14122); universal-design-principles/snr-emphasis-economy (#3840) · theme frontend-ui-design · 7 supporting skills · verifier read: skills/3438-ux-design/14122-refactoring-ui, skills/1503-universal-design-principles/3840-snr-emphasis-economy",
+  "atlas": {
+   "ids": [
+    "3820",
+    "3822",
+    "3823",
+    "3838",
+    "3839",
+    "3840",
+    "14122"
+   ],
+   "examples": [
+    {
+     "id": "14122",
+     "plugin": "ux-design",
+     "skill": "refactoring-ui",
+     "url": "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/3438-ux-design/14122-refactoring-ui"
+    },
+    {
+     "id": "3840",
+     "plugin": "universal-design-principles",
+     "skill": "snr-emphasis-economy",
+     "url": "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/1503-universal-design-principles/3840-snr-emphasis-economy"
+    }
+   ],
+   "theme": "frontend-ui-design",
+   "risk_notes": "none",
+   "kosif_overlap_ids": [],
+   "stage": "extracted",
+   "verified_by": "b039-frontend-ui-design-3.json"
+  }
+ },
+ {
+  "id": "ACRAFT-06",
+  "family": "atlas-craft",
+  "domain": "craft",
+  "name_ar": "تدقيق الضجيج البصري وإزالة الزخرفة",
+  "name_en": "Signal-to-noise decoration audit",
+  "status": "documented",
+  "what": "إزالة الزخرفة الزائدة وتوزيع التأكيد بحيث يكسب كل عنصر مكانه. — Remove or densify decoration and budget emphasis so each cue earns its place.",
+  "when": "Cluttered or sterile screens, deciding what to delete.",
+  "how": "1) List each decorative element. 2) Ask what information it carries; delete if none. 3) If too sparse, densify. 4) Allocate emphasis (colour, weight, size, motion) sparingly. 5) Re-check hierarchy.",
+  "params": "",
+  "install": "",
+  "requires": [],
+  "license": "method paraphrased from Atlas skills under MIT; the skills keep their own licenses — see each folder's SOURCE.md",
+  "proof": [
+   "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/1503-universal-design-principles/3838-snr-decoration-removal",
+   "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/1503-universal-design-principles/3744-wabi-sabi-restraint"
+  ],
+  "proof_scope": "url",
+  "styles": [],
+  "tags": [
+   "clutter",
+   "minimalism",
+   "ضجيج بصري",
+   "audit"
+  ],
+  "section": "الواجهات والتصميم — Front-end, UI & design systems",
+  "source": "KOSIF Atlas mining 2026-10-20 (https://github.com/kosif199022-jpg/kosif-atlas): universal-design-principles/snr-decoration-removal (#3838); universal-design-principles/wabi-sabi-restraint (#3744) · theme frontend-ui-design · 6 supporting skills · verifier read: skills/1503-universal-design-principles/3838-snr-decoration-removal, skills/1503-universal-design-principles/3744-wabi-sabi-restraint",
+  "atlas": {
+   "ids": [
+    "3744",
+    "3747",
+    "3835",
+    "3838",
+    "3839",
+    "3840"
+   ],
+   "examples": [
+    {
+     "id": "3838",
+     "plugin": "universal-design-principles",
+     "skill": "snr-decoration-removal",
+     "url": "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/1503-universal-design-principles/3838-snr-decoration-removal"
+    },
+    {
+     "id": "3744",
+     "plugin": "universal-design-principles",
+     "skill": "wabi-sabi-restraint",
+     "url": "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/1503-universal-design-principles/3744-wabi-sabi-restraint"
+    }
+   ],
+   "theme": "frontend-ui-design",
+   "risk_notes": "none",
+   "kosif_overlap_ids": [],
+   "stage": "extracted",
+   "verified_by": "b039-frontend-ui-design-3.json"
+  }
+ },
+ {
+  "id": "ACRAFT-07",
+  "family": "atlas-craft",
+  "domain": "craft",
+  "name_ar": "قواعد الخط والمقروئية للويب",
+  "name_en": "Typography and legibility rules for web",
+  "status": "documented",
+  "what": "اختيار الخطوط والأحجام والمقاييس وطول السطر لمقروئية أفضل. — Choose typefaces, sizes, scales and line lengths for legible web typography.",
+  "when": "Setting type scale, readability complaints, font pairing.",
+  "how": "1) Pick a modular type scale. 2) Body size at least 16px, line-height about 1.5. 3) Line length 45-75 characters. 4) Limit to 1-2 families and few weights. 5) Establish typographic hierarchy via size/weight contrast.",
+  "params": "",
+  "install": "",
+  "requires": [],
+  "license": "method paraphrased from Atlas skills under MIT; the skills keep their own licenses — see each folder's SOURCE.md",
+  "proof": [
+   "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/3438-ux-design/14126-web-typography",
+   "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/1503-universal-design-principles/3826-legibility-typeface-and-size"
+  ],
+  "proof_scope": "url",
+  "styles": [],
+  "tags": [
+   "typography",
+   "legibility",
+   "خطوط",
+   "web"
+  ],
+  "section": "الواجهات والتصميم — Front-end, UI & design systems",
+  "source": "KOSIF Atlas mining 2026-10-20 (https://github.com/kosif199022-jpg/kosif-atlas): ux-design/web-typography (#14126); universal-design-principles/legibility-typeface-and-size (#3826) · theme frontend-ui-design · 4 supporting skills · verifier read: skills/3438-ux-design/14126-web-typography, skills/1503-universal-design-principles/3826-legibility-typeface-and-size",
+  "atlas": {
+   "ids": [
+    "3823",
+    "3824",
+    "3826",
+    "14126"
+   ],
+   "examples": [
+    {
+     "id": "14126",
+     "plugin": "ux-design",
+     "skill": "web-typography",
+     "url": "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/3438-ux-design/14126-web-typography"
+    },
+    {
+     "id": "3826",
+     "plugin": "universal-design-principles",
+     "skill": "legibility-typeface-and-size",
+     "url": "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/1503-universal-design-principles/3826-legibility-typeface-and-size"
+    }
+   ],
+   "theme": "frontend-ui-design",
+   "risk_notes": "none",
+   "kosif_overlap_ids": [],
+   "stage": "extracted",
+   "verified_by": "b039-frontend-ui-design-3.json"
+  }
+ }
+]

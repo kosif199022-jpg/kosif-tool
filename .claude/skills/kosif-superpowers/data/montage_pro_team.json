@@ -1,0 +1,212 @@
+{
+ "schema": "kosif.montage-pro.team.v1",
+ "name": "Montage Pro — فريق المهمة",
+ "roles": [
+  {
+   "id": "director",
+   "ar": "المخرج (قائد الفريق)",
+   "en": "Director / team lead",
+   "hubs": [
+    "thinking"
+   ],
+   "mission": "Turns the brief into a contract: audience, platform, length, tone, acceptance criteria; picks one option from the menu with the user; owns the final call.",
+   "scripts": [
+    "montage_pro.py options",
+    "capability_mindmap.py task",
+    "think.py frame"
+   ],
+   "gate": "A written brief with acceptance criteria before any render."
+  },
+  {
+   "id": "analyst",
+   "ar": "محلل المادة",
+   "en": "Media analyst",
+   "hubs": [
+    "motion",
+    "audio"
+   ],
+   "mission": "Measures the uploaded audio/video: duration, streams, fps, loudness, energy cues, scene cuts, words (when an aligned transcript exists). Never guesses meaning or tempo.",
+   "scripts": [
+    "montage_pro.py intake",
+    "audio_cue_mapper.py",
+    "motion_reference_probe.py",
+    "reference_visual_fingerprint.py",
+    "music_rhythm_engine.py"
+   ],
+   "gate": "intake.json with measured values only."
+  },
+  {
+   "id": "writer",
+   "ar": "كاتب السيناريو والنصوص",
+   "en": "Script & copy writer",
+   "hubs": [
+    "documents",
+    "thinking",
+    "type"
+   ],
+   "mission": "Script beats, on-screen text and Arabic captions in natural Arabic; never splits joined Arabic letters.",
+   "scripts": [
+    "tell_scan.py",
+    "anchor_gate.py"
+   ],
+   "gate": "Every on-screen word traced to the user's audio or approved script."
+  },
+  {
+   "id": "acquirer",
+   "ar": "مسؤول المادة والحقوق (Download Desk)",
+   "en": "Footage & rights desk",
+   "hubs": [
+    "motion"
+   ],
+   "mission": "IDM-style acquisition: segmented resumable downloads with SHA-256, stream grabbing via yt-dlp/ffmpeg, licensed stock search, and a rights manifest for every clip. Refuses DRM bypass and unlicensed use.",
+   "scripts": [
+    "montage_pro.py acquire",
+    "fetch_video.py",
+    "media_sources.py",
+    "app_studio.py download"
+   ],
+   "gate": "rights.json entry (source page, licence, sha256) for every external file."
+  },
+  {
+   "id": "conformer",
+   "ar": "مهندس التحويل (Converter)",
+   "en": "Conform & convert",
+   "hubs": [
+    "quality"
+   ],
+   "mission": "Converts every input to an edit-friendly mezzanine (CFR, H.264/AAC 48 kHz) and light proxies — the role IDM's video converter plays, done with ffmpeg.",
+   "scripts": [
+    "montage_pro.py convert"
+   ],
+   "gate": "All clips share fps, pixel format and audio rate."
+  },
+  {
+   "id": "editor",
+   "ar": "المونتير",
+   "en": "Editor",
+   "hubs": [
+    "motion",
+    "audio"
+   ],
+   "mission": "Cut plan on measured cuts and energy, beat/word-synced edits, reframes for each platform, transitions with purpose.",
+   "scripts": [
+    "cinematic_cut_planner.py",
+    "cinematic_broll_render.py",
+    "reference_edit_engine.py",
+    "montage_pro.py build"
+   ],
+   "gate": "Contiguous EDL, no gaps, no cut inside a word."
+  },
+  {
+   "id": "motion",
+   "ar": "مصمم الموشن جرافيك",
+   "en": "Motion designer",
+   "hubs": [
+    "motion",
+    "type",
+    "data"
+   ],
+   "mission": "Kinetic typography, draw-on, camera moves, easing and glow as real time-based animation (seek(t)), never static slides.",
+   "scripts": [
+    "motion_director.py",
+    "creative_reasoning_bridge.py",
+    "motion_stack.py",
+    "motion_kit_bridge.py"
+   ],
+   "gate": "Deterministic scene: window.__kosif.seek(t) renders the same frame twice."
+  },
+  {
+   "id": "illustrator",
+   "ar": "الرسام وتحريك الشخصيات",
+   "en": "Illustrator & character animator",
+   "hubs": [
+    "drawing"
+   ],
+   "mission": "Original characters, IK gestures, walk/wave/blink cycles and stroke draw-on.",
+   "scripts": [
+    "code_drawing_master.py",
+    "character_fullbody.py",
+    "character_ik.py",
+    "creative_paint.py",
+    "smart_draw.py"
+   ],
+   "gate": "Layered source (SVG/JSON) kept editable."
+  },
+  {
+   "id": "3d",
+   "ar": "فنان ثلاثي الأبعاد",
+   "en": "3D artist",
+   "hubs": [
+    "3d"
+   ],
+   "mission": "Real 3D only when the camera must move around objects: native renderer, GLB export, Blender bridge when installed.",
+   "scripts": [
+    "native_3d.py",
+    "native_glb.py",
+    "blender_bridge.py",
+    "blender_cinema.py",
+    "blender_motion_video.py"
+   ],
+   "gate": "Frames rendered and counted; no Blender claim without Blender."
+  },
+  {
+   "id": "sound",
+   "ar": "مهندس الصوت",
+   "en": "Sound designer",
+   "hubs": [
+    "audio"
+   ],
+   "mission": "Keeps the user's master audio untouched; builds a delivery mix (ducking, -14 LUFS) as a separate file only when asked.",
+   "scripts": [
+    "audio_cue_mapper.py",
+    "music_rhythm_engine.py"
+   ],
+   "gate": "Master audio hash unchanged; delivery loudness measured."
+  },
+  {
+   "id": "colorist",
+   "ar": "الملوّن",
+   "en": "Colourist & look",
+   "hubs": [
+    "motion",
+    "images"
+   ],
+   "mission": "Looks via ffmpeg/OpenCV: grade, contrast, grain, vignette, LUTs; matches a reference palette when given.",
+   "scripts": [
+    "app_studio.py lut",
+    "reference_visual_fingerprint.py",
+    "montage_pro.py build --option look"
+   ],
+   "gate": "Before/after frames saved."
+  },
+  {
+   "id": "render",
+   "ar": "مهندس الرندر",
+   "en": "Render engineer",
+   "hubs": [
+    "quality"
+   ],
+   "mission": "Preview first, then final render (Chromium/Playwright for HTML scenes, ffmpeg, Remotion when installed).",
+   "scripts": [
+    "motion_director.py render",
+    "verify_video.py"
+   ],
+   "gate": "Preview approved before the final render."
+  },
+  {
+   "id": "qa",
+   "ar": "مراقب الجودة",
+   "en": "QA & delivery",
+   "hubs": [
+    "quality",
+    "thinking"
+   ],
+   "mission": "verify_video.py on every output, frame contact sheet, honest report of what was and was not checked.",
+   "scripts": [
+    "verify_video.py",
+    "creative_quality_gate.py"
+   ],
+   "gate": "TEST_REPORT values filled from real measurements."
+  }
+ ]
+}

@@ -51,8 +51,8 @@ jobs:
         run: node --check .claude/skills/kosif-superpowers/assets/motion_engine.js
       - name: Portable KOSIF motion toolkit and SVG seek tests
         run: node --test .claude/skills/kosif-superpowers/evals/test_motion_toolkit.mjs .claude/skills/kosif-superpowers/evals/test_motion_template.mjs
-      - name: Install Creative Paint image dependency
-        run: python3 -m pip install --disable-pip-version-check 'Pillow==12.3.0'
+      - name: Install image, typography atlas and photo-pipeline dependencies
+        run: python3 -m pip install --disable-pip-version-check 'Pillow==12.3.0' 'fonttools[woff]==4.60.1' 'beautifulsoup4==4.15.0' 'opencv-python-headless==4.12.0.88'
       - name: KOSIF Creative Paint PNG/SVG/GIF/MP4 functionality and safety
         run: python3 -m unittest discover -s .claude/skills/kosif-superpowers/evals -p 'test_creative_paint.py' -v
       - name: IK character motion and immutable AAC audio packet tests
@@ -75,6 +75,22 @@ jobs:
         run: python3 -m unittest discover -s .claude/skills/kosif-superpowers/evals -p 'test_browser_scout.py' -v
       - name: Validate external Atlas metadata audit behavior
         run: python3 -m unittest discover -s .claude/skills/kosif-superpowers/evals -p 'test_atlas_metadata_audit.py' -v
+      - name: Skill intelligence protocol
+        run: python3 -m unittest discover -s .claude/skills/kosif-superpowers/evals -p 'test_skill_intelligence.py' -v
+      - name: Superpower fusion, groups and mind map
+        run: python3 -m unittest discover -s .claude/skills/kosif-superpowers/evals -p 'test_superpower_fusion.py' -v
+      - name: Groups index
+        run: python3 -m unittest discover -s .claude/skills/kosif-superpowers/evals -p 'test_kosif_hubs.py' -v
+      - name: Capability mind map
+        run: python3 -m unittest discover -s .claude/skills/kosif-superpowers/evals -p 'test_capability_mindmap.py' -v
+      - name: Atlas capability miner
+        run: python3 -m unittest discover -s .claude/skills/kosif-superpowers/evals -p 'test_atlas_capability_miner.py' -v
+      - name: Montage Pro
+        run: python3 -m unittest discover -s .claude/skills/kosif-superpowers/evals -p 'test_montage_pro.py' -v
+      - name: Stream grabber
+        run: python3 -m unittest discover -s .claude/skills/kosif-superpowers/evals -p 'test_stream_grabber.py' -v
+      - name: Web app study guardrails and facts-only report (live browser part skips without REA)
+        run: python3 -m unittest discover -s .claude/skills/kosif-superpowers/evals -p 'test_web_app_study.py' -v
       - name: Verify Blender-free native Z-buffer rasterizer
         run: python3 -m unittest discover -s .claude/skills/kosif-superpowers/evals -p 'test_native_zbuffer.py' -v
       - name: Verify independent cone and torus rendering

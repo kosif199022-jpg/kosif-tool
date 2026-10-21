@@ -3,13 +3,13 @@
 
 > **قوتك هنا / what this gives you:** كل سكربت في المهارة والمستودع يُشغَّل فعلًا ولم يكن له سجل في الكتالوج: ماذا يفعل، ومتى، وأمره الأول، ومستلزماته، ودليله. مولَّدة من data/tools.json بأمر hub.py build؛ hub.py tool <id> يعطي البطاقة كاملة. — Every script in the skill and repository that really runs and had no catalog record: what it does, when, its first command, requirements and proof. Generated from data/tools.json by hub.py build; hub.py tool <id> gives the full card.
 > **أقوى دليل / strongest evidence:** **TOOL-01** Offline bilingual capability finder (`kosif-tool/.claude/skills/kosif-superpowers/evals/test_ai_tool_discovery.py`) · **TOOL-02** Session boot briefing (`kosif-tool/tests/test_boot.py`)
-> **60 powers follow** — ✅ 50 · 🟢 5 · 📦 5 · 🔑 0 · 👁 0 · 📄 0 · 💡 0.
+> **62 powers follow** — ✅ 52 · 🟢 5 · 📦 5 · 🔑 0 · 👁 0 · 📄 0 · 💡 0.
 
 **الحالة / status:** ✅ مُثبت (شُغّل فعلًا وله مسار دليل) · 🟢 جاهز (كود موجود يعمل بما هو متاح عادة) · 📦 بأمر تثبيت واحد · 🔑 يحتاج مفتاحًا أو حسابًا أو موصلًا · 👁 شوهد في فيديو مرجعي (للموشن فقط) · 📄 طريقة موثقة · 💡 فكرة. الشارة هي أدنى مستوى صادق — the badge is the lowest level that is true.
 مسارات الدليل نسبية إلى `/home/user/`؛ و`session-<date>:<file>#<section>` تشير إلى تشغيل موثق في جلسة سابقة؛ و`owner-upload:` إلى ملف داخل أرشيف أرسله المالك. Proof paths are relative to `/home/user/`.
 
 **المجال / domain:** التطبيقات والواجهات — Apps & artifacts · **البادئة / prefix:** `TOOL` · **البيانات / data:** `data/powers/runnable-tools.json` · **بحث / search:** `python3 scripts/powers.py family runnable-tools`
-**مراجع ذات صلة / related references:** [CLAUDE_3_MINUTE_MAP.md](../CLAUDE_3_MINUTE_MAP.md)
+**مراجع ذات صلة / related references:** [CLAUDE_3_MINUTE_MAP.md](../CLAUDE_3_MINUTE_MAP.md) · [hubs.md](../hubs.md)
 
 ## الفهرس / contents
 
@@ -19,10 +19,10 @@
 - **Editing and reference video / المونتاج والفيديو المرجعي** — TOOL-19 … TOOL-35 (7)
 - **Audio and rhythm / الصوت والإيقاع** — TOOL-25 … TOOL-26 (2)
 - **Drawing and characters / الرسم والشخصيات** — TOOL-27 … TOOL-31 (5)
-- **Software investigation / فحص البرامج** — TOOL-32 … TOOL-54 (4)
+- **Software investigation / فحص البرامج** — TOOL-32 … TOOL-62 (5)
 - **Maintain and build / الصيانة والبناء** — TOOL-33 … TOOL-60 (6)
 - **3D / ثلاثي الأبعاد** — TOOL-36 … TOOL-41 (6)
-- **Image, design and fonts / الصور والتصميم والخطوط** — TOOL-42 (1)
+- **Image, design and fonts / الصور والتصميم والخطوط** — TOOL-42 … TOOL-61 (2)
 - **Sources and references / المصادر والمراجع** — TOOL-43 … TOOL-51 (9)
 - **Local computer / الجهاز المحلي** — TOOL-55 (1)
 - المصادر والرخص / sources & licences
@@ -362,6 +362,15 @@
 - **الدليل / proof:** `kosif-tool/.claude/skills/kosif-superpowers/evals/test_repository_capability_packer.py` · `kosif-tool/.claude/skills/kosif-superpowers/scripts/repository_capability_packer.py`
 - **المصدر / source:** data/tools.json
 
+#### TOOL-62 · دراسة تطبيق ويب عام بـ REA (حقائق فقط) · Web app study (public frontend, REA, facts only) · ✅ مُثبت هنا / proven here
+- **ماذا / what:** يدرس صفحة ويب عامة للقراءة فقط: متصفح بلا تسجيل دخول وملف شخصي جديد يُحذف بعد التشغيل، ثم يلتقط REA الصفحة وأدوات WebMCP المعلنة ولقطة شاشة والسكربتات العامة ببصمات SHA-256. التقرير حقائق فقط: الإطار وإصداره، ومكتبات اللوحة والمحرر والتزامن، والخدمات المستنتجة من أسماء مفاتيح التخزين، بدليل اسم ملف ومعرّف، وبلا أي كود. — Studies one public web page read-only: a logged-out headless Chromium with a fresh profile and background networking off (fresh profile, deleted afterwards), then REA captures the page, page-declared WebMCP tools, a screenshot and the public scripts, with SHA-256 receipts; optional bounded static JavaScript analysis. report turns a study folder into facts only: framework and versions, canvas/editor/realtime libraries, services inferred from storage key NAMES, WebMCP tools and page metrics, each with file-and-identifier evidence and never code. Written for the MagicPath study; runs on any desktop OS.
+- **متى أستخدمها / when:** حلل واجهة موقع MagicPath العامة بـ REA واعرف مبني بإيه / Study a public web app's frontend stack and declared WebMCP tools without logging in
+- **كيف / how:** doctor: `python3 scripts/web_app_study.py doctor`; run (plan only): `python3 scripts/web_app_study.py run https://www.example.com --out ~/kosif-studies/example --dry-run`; run: `python3 scripts/web_app_study.py run https://www.example.com --out ~/kosif-studies/example`; report: `python3 scripts/web_app_study.py report ~/kosif-studies/example`. Full card: `python3 scripts/hub.py tool web-app-study`. Limits: One page per run, logged out, so features behind sign-in are not observed; storage values, cookies and request bodies are never kept; library detection is identifier-based (a name can appear without the library being used — confidence is shown); the unbounded REA bundle analyzer is not used because it ran out of memory (about 8 GB, observed, not receipted) on MagicPath's 5.8 MB bundle. Exit code 2 when a required step failed or the profile could not be deleted. **أرقام / params:** in: One public http(s) URL the user may study, plus optional extra exact origins · out: A study folder outside any git checkout: REA JSON artifacts, screenshot.png, exported public scripts (never commit them), receipts.json with SHA-256, report.json and report.md (facts only)
+- **تثبيت / install:** `needs on PATH: chromium, rea`
+- **يحتاج / needs:** [`python3`](../requirements.md#req-python3) · [`chromium`](../requirements.md#req-chromium) · [`npm:rea`](../requirements.md#req-npm-rea)
+- **الدليل / proof:** `kosif-tool/.claude/skills/kosif-superpowers/evals/test_web_app_study.py` · `kosif-tool/.claude/skills/kosif-superpowers/scripts/web_app_study.py`
+- **المصدر / source:** data/tools.json
+
 ## Maintain and build / الصيانة والبناء
 
 #### TOOL-33 · تدقيق أدلة الكتالوج · Catalog Evidence Audit · 🟢 جاهز / ready
@@ -475,8 +484,17 @@
 - **متى أستخدمها / when:** إيه أقرب خط للكتابة اللي في الصورة دي؟ / Rank my licensed fonts against this cropped Arabic title
 - **كيف / how:** inspect: `python3 scripts/font_fidelity_lab.py inspect proofs/_shared/fonts/Amiri-Regular.ttf --text "جمعة مباركة"`; rank: `python3 scripts/font_fidelity_lab.py rank ./crop.png --text "جمعة مباركة" --fonts proofs/_shared/fonts --top 5`. Full card: `python3 scripts/hub.py tool font-fidelity-lab`. Limits: It ranks how closely each candidate renders one phrase (binary mask IoU at 5 fixed sizes) and does not identify an unknown proprietary typeface or prove an exact match. **أرقام / params:** in: inspect: a font file the user is licensed to use, plus a phrase. rank: a tightly cropped image of the reference text, the exact phrase, and a folder of licensed .ttf/.otf fonts. · out: JSON on stdout only (inspection, or ranking with metric and limitations notes). Exit 2 with 'FONT FIDELITY ERROR' on a wrong extension or missing file/folder.
 - **تثبيت / install:** `pip install Pillow · optional: pip:brotli, pip:fonttools`
-- **يحتاج / needs:** [`pip:pillow`](../requirements.md#req-pip-pillow) · [`pip:fonttools`](../requirements.md#req-pip-fonttools) · [`fonts:arabic`](../requirements.md#req-fonts-arabic)
+- **يحتاج / needs:** [`pip:pillow`](../requirements.md#req-pip-pillow) · [`fonts:arabic`](../requirements.md#req-fonts-arabic)
 - **الدليل / proof:** `kosif-tool/tests/test_font_fidelity_lab.py` · `kosif-tool/.claude/skills/kosif-superpowers/scripts/font_fidelity_lab.py`
+- **المصدر / source:** data/tools.json
+
+#### TOOL-61 · مكتبة KOSIF الشاملة للخطوط وأفكار التصميم من صادرات تيليجرام · KOSIF Telegram Typography Atlas — private-safe font knowledge and idea search · ✅ مُثبت هنا / proven here
+- **ماذا / what:** ابحث في فهرس بيانات 5,514 خطًا فريدًا من صادرات تيليجرام الخاصة بك (4,634 تدعم العربية): صف لكل عائلة بأوزانها، وكلمات الأنماط بالعربي (كوفي، رقعة، ديواني، ثلث، نسخ) مع تسامح الإملاء، وفلتر للرخص المفتوحة، و16 اتجاهًا تصميميًا أصليًا. الخطوط والرسائل والصور والمسارات تبقى على جهازك فقط. — Search a public metadata index of the 5,514 SHA-256-distinct fonts found in the user's own Telegram Desktop exports (4,634 with Arabic letters): one row per family with its styles, Arabic spelling-tolerant style words (كوفي، رقعة، ديواني، ثلث، نسخ), an open-license filter, and 16 original design directions. scan/enrich-zips rebuild the index on the user's machine (bounded, in-memory ZIP reads); refresh re-derives tags, name-based license flags, ideas and counts from the public index alone. Fonts, chats, images and local paths never leave the device.
+- **متى أستخدمها / when:** اختار لي خط رقعة أو كوفي أو ديواني من مكتبة خطوطي لبوستر أو شعار مع حالة الرخصة / Pick an Arabic or Latin font for a logo, poster, brand, reel or kinetic text from the fonts the user already collected
+- **كيف / how:** find: `python3 scripts/telegram_typography_atlas.py find --index data/telegram-typography-catalog-complete-20261020.json "خط رقعة" --arabic-only --limit 15`; find (open licenses only): `python3 scripts/telegram_typography_atlas.py find --index data/telegram-typography-catalog-complete-20261020.json "kufi logo" --arabic-only --latin --license open`; doctor: `python3 scripts/telegram_typography_atlas.py doctor`; refresh: `python3 scripts/telegram_typography_atlas.py refresh --index data/telegram-typography-catalog-complete-20261020.json --out ./refreshed.json`. Full card: `python3 scripts/hub.py tool telegram-typography-atlas`. Limits: Metadata and message keyword themes, not understanding of every photo (2,981 image headers read; 80 photos sampled once). 4 exports, 2,766 messages, 1,269 loose font files and 5,283 font members in 89 ZIPs gave 5,514 distinct font binaries (~2,412 family names). 1 ZIP unreadable and 36 ZIP fonts unparsed; EOT/.glyphs members, RAR, PDF and nested archives not indexed. Message-theme counts come from the original on-device tagger. License labels come from embedded names only and never grant permission (534 flagged restricted, 402 of them by trial/demo/personal-use/unlicensed names). find and refresh need only Python; scan needs fonttools, beautifulsoup4 and Pillow (optional list), WOFF2 in ZIPs needs brotli. **أرقام / params:** in: Authorized user-supplied local Telegram Desktop ChatExport folders and local ZIP font archives; no scripts or executables run. · out: Public metadata index (no font bytes, chats, images, URLs or local paths) with 16 design directions, and a separate private local-only locator. redistribution_approved stays false for every font until a person checks the actual license.
+- **تثبيت / install:** `optional: pip:fonttools, pip:beautifulsoup4, pip:Pillow, pip:lxml, pip:brotli`
+- **يحتاج / needs:** [`fonts:arabic`](../requirements.md#req-fonts-arabic)
+- **الدليل / proof:** `kosif-tool/.claude/skills/kosif-superpowers/scripts/test_telegram_typography_atlas.py` · `kosif-tool/.claude/skills/kosif-superpowers/scripts/telegram_typography_atlas.py`
 - **المصدر / source:** data/tools.json
 
 ## Sources and references / المصادر والمراجع
@@ -571,7 +589,7 @@
 
 ## المصادر والرخص / sources & licences
 
-- الرخص / licences: — (60)
+- الرخص / licences: — (62)
 - الأفكار مكتوبة بكلماتنا مع رابط المصدر؛ لا يُنسخ نص طرف ثالث طويل. Ideas are paraphrased with a link to the source; no long third-party text is copied. `—` = no licence recorded (own method or own wording).
 
 ---

@@ -12,8 +12,14 @@ import math
 import sys
 from pathlib import Path
 
-import bpy
-from mathutils import Vector
+try:
+    import bpy
+    from mathutils import Vector
+except ImportError:  # plain Python: show help instead of crashing
+    if {"-h", "--help"} & set(sys.argv):
+        print(__doc__)
+        raise SystemExit(0)
+    raise SystemExit("Run inside Blender: blender -b --factory-startup --disable-autoexec --python <this file> -- ...")
 
 if "--" not in sys.argv:
     raise SystemExit("Expected -- OUTPUT.blend")

@@ -1782,6 +1782,49 @@
     ],
     "top_k": 8
    }
+  },
+  {
+   "id": 83,
+   "lang": "ar",
+   "domain": "code",
+   "skills": [
+    "kosif-superpowers"
+   ],
+   "query": "حلل واجهة موقع تطبيق ويب عام وقولي مبني بإيه من غير ما تسجل دخول",
+   "files": [],
+   "expected_behavior": [
+    "Runs web_app_study.py run in an isolated logged-out browser with the study folder outside the repo",
+    "Reports facts only (stack, services, WebMCP) with evidence, never the site's code"
+   ],
+   "routing": {
+    "expect_any": [
+     "TOOL",
+     "REA"
+    ],
+    "top_k": 8
+   }
+  },
+  {
+   "id": 84,
+   "lang": "ar",
+   "domain": "craft",
+   "skills": [
+    "kosif-superpowers"
+   ],
+   "query": "اختار لي خط كوفي لشعار من مكتبة خطوطي مع حالة الرخصة",
+   "files": [],
+   "expected_behavior": [
+    "Searches the Telegram typography atlas (TOOL-61) with the kufi style and license filter",
+    "Never presents a font as licensed without checking its official source"
+   ],
+   "routing": {
+    "expect_any": [
+     "TOOL",
+     "ARAB",
+     "TYPE"
+    ],
+    "top_k": 8
+   }
   }
  ]
 }

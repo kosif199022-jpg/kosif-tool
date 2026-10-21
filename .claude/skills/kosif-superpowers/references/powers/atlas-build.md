@@ -3,13 +3,13 @@
 
 > **قوتك هنا / what this gives you:** الواجهات وأنظمة التصميم وبناء التطبيقات وأتمتة المتصفح وتكاملات SaaS والألعاب من أطلس. — UI, design systems, app building, browser automation, SaaS integrations and games from the Atlas.
 > **أقوى دليل / strongest evidence:** لا قوة مثبتة بعد في هذه العائلة — no ✅ power yet; the strongest badge here is 📄 documented.
-> **30 powers follow** — ✅ 0 · 🟢 0 · 📦 0 · 🔑 0 · 👁 0 · 📄 30 · 💡 0.
+> **50 powers follow** — ✅ 0 · 🟢 0 · 📦 0 · 🔑 0 · 👁 0 · 📄 50 · 💡 0.
 
 **الحالة / status:** ✅ مُثبت (شُغّل فعلًا وله مسار دليل) · 🟢 جاهز (كود موجود يعمل بما هو متاح عادة) · 📦 بأمر تثبيت واحد · 🔑 يحتاج مفتاحًا أو حسابًا أو موصلًا · 👁 شوهد في فيديو مرجعي (للموشن فقط) · 📄 طريقة موثقة · 💡 فكرة. الشارة هي أدنى مستوى صادق — the badge is the lowest level that is true.
 مسارات الدليل نسبية إلى `/home/user/`؛ و`session-<date>:<file>#<section>` تشير إلى تشغيل موثق في جلسة سابقة؛ و`owner-upload:` إلى ملف داخل أرشيف أرسله المالك. Proof paths are relative to `/home/user/`.
 
 **المجال / domain:** التطبيقات والواجهات — Apps & artifacts · **البادئة / prefix:** `ABUILD` · **البيانات / data:** `data/powers/atlas-build.json` · **بحث / search:** `python3 scripts/powers.py family atlas-build`
-**مراجع ذات صلة / related references:** [CLAUDE_3_MINUTE_MAP.md](../CLAUDE_3_MINUTE_MAP.md)
+**مراجع ذات صلة / related references:** [CLAUDE_3_MINUTE_MAP.md](../CLAUDE_3_MINUTE_MAP.md) · [hubs.md](../hubs.md)
 
 ## الفهرس / contents
 
@@ -19,6 +19,8 @@
 - **قواعد البيانات — Databases & storage** — ABUILD-24 … ABUILD-27 (4)
 - **التصحيح — Debugging & diagnosis** — ABUILD-28 … ABUILD-29 (2)
 - **DevOps والسحابة — DevOps, CI/CD, cloud & infrastructure** — ABUILD-30 (1)
+- **الواجهات والتصميم — Front-end, UI & design systems** — ABUILD-31 … ABUILD-49 (19)
+- **Git والإصدار — Git, pull requests & releases** — ABUILD-50 (1)
 - المصادر والرخص / sources & licences
 
 ## سير عمل الوكلاء — Agent workflows & orchestration
@@ -292,9 +294,182 @@
 - **الدليل / proof:** `https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/*/4416-forge-recon` · `https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/*/4412-forge-cost` · `https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/*/4497-relay-recon`
 - **المصدر / source:** KOSIF Atlas mining 2026-10-20 (https://github.com/kosif199022-jpg/kosif-atlas): tonone/forge-recon (#4416); tonone/forge-cost (#4412); tonone/relay-recon (#4497) · theme devops-cloud · 6 supporting skills · verifier read: skills/*/4416-forge-recon, skills/*/4412-forge-cost, skills/*/4497-relay-recon
 
+## الواجهات والتصميم — Front-end, UI & design systems
+
+#### ABUILD-31 · تصميم مكوّن متاح افتراضيا · Accessible-by-default component pattern design · 📄 موصوف / documented only
+- **ماذا / what:** تصميم مكونات بعناصر دلالية أولا وARIA عند الحاجة فقط مع إدارة لوحة المفاتيح والتركيز. — Design components with semantic HTML first, ARIA only where needed, keyboard and focus management.
+- **متى أستخدمها / when:** Building dialogs, menus, tabs, forms or reviewing ARIA misuse.
+- **كيف / how:** 1) Pick native element before ARIA. 2) Define roles, name and state. 3) Specify keyboard map and focus trap/return. 4) Check visible focus and 2.5.8 target size. 5) Write tests (axe/pa11y, keyboard walk-through). **أرقام / params:** component type
+- **يحتاج / needs:** [`npm:pa11y`](../requirements.md#req-npm-pa11y)
+- **الرخصة / license:** method paraphrased from Atlas skills under MIT; the skills keep their own licenses — see each folder's SOURCE.md
+- **الدليل / proof:** `https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/8453` · `https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/7559`
+- **المصدر / source:** KOSIF Atlas mining 2026-10-20 (https://github.com/kosif199022-jpg/kosif-atlas): accessibility-engineering/design-accessible-pattern (#8453); accessibility-plugin/accessibility-implementation (#7559) · theme frontend-ui-design · 6 supporting skills · verifier read: skills/8453, skills/7559
+
+#### ABUILD-32 · إعداد هوية العلامة مع فحص التباين · Brand palette onboarding with WCAG gate · 📄 موصوف / documented only
+- **ماذا / what:** التقط ألوان وخطوط العلامة مرة واحدة واشتق لوحة من 12 رمزاً وارفض ما يفشل بتباين AA. — Capture brand colors and fonts once, derive a 12-token palette, and refuse values failing WCAG AA contrast.
+- **متى أستخدمها / when:** Converting markdown or reports to branded HTML, or setting a brand default.
+- **كيف / how:** 1. Ask ~10 questions: output dir, primary/accent HEX, heading/body Google fonts, style (editorial/technical/minimal/playful), code theme, TOC mode. 2. Validate body-text and link contrast >= 4.5:1; reject the save otherwise. 3. Derive 12 CSS custom properties from HSL. 4. Merge config project > global > defaults. 5. Every converter must read the config and visibly change output.
+- **يحتاج / needs:** [`npm:axe`](../requirements.md#req-npm-axe)
+- **الرخصة / license:** method paraphrased from Atlas skills under MIT; the skills keep their own licenses — see each folder's SOURCE.md
+- **الدليل / proof:** `https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/191-markdown-html-skills/564-design-system` · `https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/191-markdown-html-skills/565-markdown-html-orchestrator`
+- **المصدر / source:** KOSIF Atlas mining 2026-10-20 (https://github.com/kosif199022-jpg/kosif-atlas): markdown-html-skills/design-system (#564); markdown-html-skills/markdown-html-orchestrator (#565) · theme frontend-ui-design · 3 supporting skills · verifier read: skills/191-markdown-html-skills/564-design-system, skills/191-markdown-html-skills/565-markdown-html-orchestrator
+
+#### ABUILD-33 · حسابات الألوان وتخطيط CSS مع التباين · Color and CSS layout math with contrast · 📄 موصوف / documented only
+- **ماذا / what:** اشتقاق ألوان آمنة للتباين وإحداثيات الشبكة وأحجام clamp مرنة بصيغ صريحة. — Derive OKLCH/contrast-safe palettes, grid coordinates and fluid clamp() sizes with explicit formulas.
+- **متى أستخدمها / when:** Tuning palettes, fluid type, responsive breakpoints or grid placement.
+- **كيف / how:** 1) Convert colors to OKLCH/LAB, compute luminance contrast (4.5:1 text, 3:1 large/UI). 2) Fluid size: clamp(min, preferred vw+rem, max). 3) Grid line math with negative indexes and spans. 4) Verify at viewport extremes. **أرقام / params:** palette, viewport range
+- **الرخصة / license:** method paraphrased from Atlas skills under MIT; the skills keep their own licenses — see each folder's SOURCE.md
+- **الدليل / proof:** `https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/2199-lvtd-skills/8013-color-math-accessibility` · `https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/8145`
+- **المصدر / source:** KOSIF Atlas mining 2026-10-20 (https://github.com/kosif199022-jpg/kosif-atlas): lvtd-skills/color-math-accessibility (#8013); lvtd-skills/responsive-layout-math (#8145) · theme frontend-ui-design · 6 supporting skills · verifier read: skills/2199-lvtd-skills/8013-color-math-accessibility, skills/8145
+
+#### ABUILD-34 · التصميم عبر قيود مكانية وطباعية صريحة · Design by explicit spatial and type constraints · 📄 موصوف / documented only
+- **ماذا / what:** تثبيت الشبكة والزوايا والحشو والخطوط واللون المميز على قيم قليلة لتجنب الشكل العام الممل. — Lock the grid, radii, padding, fonts and accent to a few legal values so generated UI avoids generic look.
+- **متى أستخدمها / when:** Building or restyling any UI where output looks generic.
+- **كيف / how:** 1) Use project tokens if present. 2) 8px grid, 24px outer padding/radius, 4px half-step only when 8 overflows. 3) Concentric radii: inner = outer - inset (24/8/16). 4) Max 2 families, 2-3 weights and sizes per component; mono only for machine text. 5) One accent per view. 6) Build one component at a time, give feedback as constraints. **أرقام / params:** grid, radius
+- **الرخصة / license:** method paraphrased from Atlas skills under MIT / Apache-2.0; the skills keep their own licenses — see each folder's SOURCE.md
+- **الدليل / proof:** `https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/96-design-constraints/205-design-constraints` · `https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/2905`
+- **المصدر / source:** KOSIF Atlas mining 2026-10-20 (https://github.com/kosif199022-jpg/kosif-atlas): design-constraints/design-constraints (#205); design-principles/design-principles (#2905) · theme frontend-ui-design · 8 supporting skills · verifier read: skills/96-design-constraints/205-design-constraints, skills/2905
+
+#### ABUILD-35 · نقد التصميم وتسليم المطورين وتدقيق النظام · Design critique, handoff and system audit · 📄 موصوف / documented only
+- **ماذا / what:** نقد منظم للتصميم وإعداد مواصفات التسليم وتدقيق اتساق نظام التصميم. — Run structured design critique, produce developer handoff specs and audit design system consistency.
+- **متى أستخدمها / when:** Reviewing mockups, preparing handoff, or checking hardcoded values.
+- **كيف / how:** 1) Critique: usability, hierarchy, consistency with prioritized findings. 2) Handoff: spacing, tokens, states, responsive, edge cases. 3) System audit: naming inconsistencies, hardcoded values, missing states. 4) Component spec: variants, sizes, states. 5) Offer 2-3 variants with tradeoffs. **أرقام / params:** design source
+- **الرخصة / license:** method paraphrased from Atlas skills under Apache-2.0 / MIT; the skills keep their own licenses — see each folder's SOURCE.md
+- **الدليل / proof:** `https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/949` · `https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/950` · `https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/3174`
+- **المصدر / source:** KOSIF Atlas mining 2026-10-20 (https://github.com/kosif199022-jpg/kosif-atlas): design/design-critique (#949); design/design-handoff (#950); boss/ui-designer/design-variants (#3174) · theme frontend-ui-design · 8 supporting skills · verifier read: skills/949, skills/950, skills/3174
+
+#### ABUILD-36 · اشتقاق وترقية نظام التصميم · Design-system retrofit and derivation workflow · 📄 موصوف / documented only
+- **ماذا / what:** اشتق نظام تصميم وانقل CSS الحالي إلى تصنيفه دون تغيير بصري. — Derive a design system, lift ad-hoc CSS into its taxonomy, and render to targets without visual change.
+- **متى أستخدمها / when:** Design direction open or existing CSS needs systematizing.
+- **كيف / how:** 1. Survey current token/tooling state. 2. If direction is open, spread divergent idioms; if settled, echo variations. 3. Retrofit existing CSS into the taxonomy with zero visual change. 4. Emit to targets via committed formatters. 5. Report status of artefacts.
+- **الرخصة / license:** method paraphrased from Atlas skills under MIT; the skills keep their own licenses — see each folder's SOURCE.md
+- **الدليل / proof:** `https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/matrize/846-matrize-retrofit` · `https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/matrize/843-matrize-emit`
+- **المصدر / source:** KOSIF Atlas mining 2026-10-20 (https://github.com/kosif199022-jpg/kosif-atlas): matrize/matrize-retrofit (#846); matrize/matrize-emit (#843) · theme frontend-ui-design · 6 supporting skills · verifier read: skills/matrize/846-matrize-retrofit, skills/matrize/843-matrize-emit
+
+#### ABUILD-37 · رموز التصميم DTCG لكل المنصات · DTCG design tokens multi-platform export · 📄 موصوف / documented only
+- **ماذا / what:** اكتب مصدر رموز DTCG واحد وصدّره إلى Tailwind وCSS وSwiftUI وCompose وWinUI. — Author one W3C DTCG token JSON and export it to Tailwind, CSS variables, SwiftUI, Compose and WinUI.
+- **متى أستخدمها / when:** User asks for design tokens, a theme system, or one token source for web and native.
+- **كيف / how:** 1. Write tokens with $value/$type/$description (color, dimension, fontFamily, duration, shadow, typography). 2. Layer primitive, semantic, component tokens, aliasing via {color.brand.primary}. 3. Translate with a script, never by hand (Tailwind v4 @theme, :root vars, Compose ColorScheme, WinUI ResourceDictionary). 4. Audit for circular refs, raw-vs-semantic naming, single-platform drift. 5. Skip tokens for bespoke art-directed pages.
+- **يحتاج / needs:** [`npm:react`](../requirements.md#req-npm-react)
+- **الرخصة / license:** method paraphrased from Atlas skills under Apache-2.0 / MIT; the skills keep their own licenses — see each folder's SOURCE.md
+- **الدليل / proof:** `https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/1394-stark/3327-design-tokens` · `https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/3529-ui-design/14307-design-system-patterns`
+- **المصدر / source:** KOSIF Atlas mining 2026-10-20 (https://github.com/kosif199022-jpg/kosif-atlas): stark/design-tokens (#3327); ui-design/design-system-patterns (#14307) · theme frontend-ui-design · 4 supporting skills · verifier read: skills/1394-stark/3327-design-tokens, skills/3529-ui-design/14307-design-system-patterns
+
+#### ABUILD-38 · تدقيق تصميم الواجهة بالأدلة · Evidence-backed frontend design audit · 📄 موصوف / documented only
+- **ماذا / what:** نفّذ تدقيقاً حتمياً لمصدر الواجهة وأبلغ بنتائج مرتبطة بالملفات. — Run a deterministic source audit of React/Tailwind UI and report file-anchored findings by user impact.
+- **متى أستخدمها / when:** Reviewing or changing a React, Next.js, Tailwind or shadcn interface.
+- **كيف / how:** 1. Read repo instructions and pick the route/component. 2. Run a static diagnose over the repo with JSON output and no write. 3. Group findings by user impact (a11y, hierarchy, tokens, states, responsive). 4. Verify each fix against the cited file and local tokens. 5. Re-run; report before/after score, omissions, remaining risk as a priority/evidence/change table.
+- **يحتاج / needs:** [`npm:react`](../requirements.md#req-npm-react)
+- **الرخصة / license:** method paraphrased from Atlas skills under MIT; the skills keep their own licenses — see each folder's SOURCE.md
+- **الدليل / proof:** `https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/3029-memoire/12946-audit-frontend-design` · `https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/3029-memoire/12950-remember-design-system`
+- **المصدر / source:** KOSIF Atlas mining 2026-10-20 (https://github.com/kosif199022-jpg/kosif-atlas): memoire/audit-frontend-design (#12946); memoire/remember-design-system (#12950) · theme frontend-ui-design · 5 supporting skills · verifier read: skills/3029-memoire/12946-audit-frontend-design, skills/3029-memoire/12950-remember-design-system
+
+#### ABUILD-39 · استخراج بصمة التصميم من موقع حي · Extract Design DNA from live website · 📄 موصوف / documented only
+- **ماذا / what:** استخراج الأنماط المحسوبة من موقع حي إلى ملف تصميم منظم JSON مع استنساخ اختياري. — Pull exact computed styles from a live site into a structured design profile JSON and optionally clone it.
+- **متى أستخدمها / when:** Asked to replicate, analyze or reverse a site's visual style.
+- **كيف / how:** 1) Open URL in browser tool, inject JS reading getComputedStyle for colors, fonts, spacing, radii, shadows, motion. 2) Scan code for canvas/WebGL/shader effects. 3) Judge mood and layout by eye. 4) Write DNA JSON (150+ field schema), --dna-only stops here. 5) Optionally generate code and compare screenshots. **أرقام / params:** urls, mode
+- **يحتاج / needs:** [`npm:three`](../requirements.md#req-npm-three)
+- **الرخصة / license:** method paraphrased from Atlas skills under MIT; the skills keep their own licenses — see each folder's SOURCE.md
+- **الدليل / proof:** `https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/3594-design-clone/14410-design-clone` · `https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/2673-claude-octopus/10214-skill-extract` · `https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/2042`
+- **المصدر / source:** KOSIF Atlas mining 2026-10-20 (https://github.com/kosif199022-jpg/kosif-atlas): design-clone/design-clone (#14410); claude-octopus/skill-extract (#10214); brightdata-plugin/design-mirror (#2042) · theme frontend-ui-design · 6 supporting skills · verifier read: skills/3594-design-clone/14410-design-clone, skills/2673-claude-octopus/10214-skill-extract, skills/2042
+
+#### ABUILD-40 · من ملف Figma إلى رموز وأصول وكود · Figma file to tokens, assets and code · 📄 موصوف / documented only
+- **ماذا / what:** استخدام واجهة Figma لاستخراج الرموز وتصدير الأصول ثم تنفيذ مكونات من رابط Figma. — Use the Figma REST API to extract tokens and export assets, then implement components from a Figma URL.
+- **متى أستخدمها / when:** Given a Figma URL or asked to sync tokens in CI.
+- **كيف / how:** 1) Auth with scoped token. 2) GET file, walk styles for colors/type/spacing. 3) Export images by node id (svg/png) with batching. 4) Respect rate limits with exponential backoff and caching. 5) Map to tokens and components. 6) Optionally CI sync job. **أرقام / params:** file key
+- **الرخصة / license:** method paraphrased from Atlas skills under MIT; the skills keep their own licenses — see each folder's SOURCE.md
+- **الدليل / proof:** `https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/3252` · `https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/5606` · `https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/5625`
+- **المصدر / source:** KOSIF Atlas mining 2026-10-20 (https://github.com/kosif199022-jpg/kosif-atlas): figma/figma-implementing (#3252); figma-pack/figma-core-workflow-a (#5606); figma-pack/figma-rate-limits (#5625) · theme frontend-ui-design · 8 supporting skills · verifier read: skills/3252, skills/5606, skills/5625
+
+#### ABUILD-41 · قراءة Figma عبر MCP أو REST · Figma read via MCP or REST fallback · 📄 موصوف / documented only
+- **ماذا / what:** جلب لقطات وبنية ومتغيرات من رابط Figma عبر MCP ثم REST. — Pull screenshots, structure and variables from a Figma URL using MCP first then REST with a token.
+- **متى أستخدمها / when:** User supplies Figma link; need tokens or frames for implementation.
+- **كيف / how:** 1) Parse file key and node-id (convert - to :). 2) Try Figma MCP get_metadata; authenticate if needed. 3) Else require FIGMA_PAT (file_content:read) and stop if missing. 4) Discover pages/frames. 5) Export frames and variables for downstream skills. **أرقام / params:** figma url
+- **الرخصة / license:** method paraphrased from Atlas skills under MIT; the skills keep their own licenses — see each folder's SOURCE.md
+- **الدليل / proof:** `https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/3009-uxd-design/12857-uxd-figma-read`
+- **المصدر / source:** KOSIF Atlas mining 2026-10-20 (https://github.com/kosif199022-jpg/kosif-atlas): uxd-design/uxd-figma-read (#12857) · theme frontend-ui-design · 2 supporting skills · verifier read: skills/3009-uxd-design/12857-uxd-figma-read
+
+#### ABUILD-42 · من Figma إلى كود مطابق · Figma to pixel-exact code plan · 📄 موصوف / documented only
+- **ماذا / what:** استخرج عقد Figma إلى خطة مقاسة ثم ابنِ وقارن وأصلح. — Extract Figma nodes into a measured plan, build against it, then diff and fix deviations.
+- **متى أستخدمها / when:** Implementing or syncing a design from Figma.
+- **كيف / how:** 1. Read selected nodes via Figma MCP and write measurements into a plan. 2. Build each node against the embedded specs using project components. 3. Compare the implemented screen with the source and fix deviations. 4. Diff Figma versions to produce a code-update checklist. 5. Map colors/spacing to tokens.
+- **الرخصة / license:** method paraphrased from Atlas skills under MIT; the skills keep their own licenses — see each folder's SOURCE.md
+- **الدليل / proof:** `https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/quiver/14453-design` · `https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/2998-patternfly/12791-pf-figma-diff`
+- **المصدر / source:** KOSIF Atlas mining 2026-10-20 (https://github.com/kosif199022-jpg/kosif-atlas): quiver/design (#14453); patternfly/pf-figma-diff (#12791) · theme frontend-ui-design · 7 supporting skills · verifier read: skills/quiver/14453-design, skills/2998-patternfly/12791-pf-figma-diff
+
+#### ABUILD-43 · تدقيق أداء الواجهة والاستجابة · Frontend performance and responsive audit · 📄 موصوف / documented only
+- **ماذا / what:** شخّص مشاكل LCP وCLS وINP والاستجابة من المصدر والعرض. — Diagnose LCP, CLS, INP regressions and responsive issues from source and rendered output.
+- **متى أستخدمها / when:** Page feels slow, layout shifts, or breakpoints break.
+- **كيف / how:** 1. Check LCP image priority, font loading, layout reservations for CLS, long handlers for INP. 2. Audit CSS for fixed widths and missing breakpoints. 3. Render at several viewports and compare. 4. Prefer container queries and fluid type. 5. Report fixes with evidence.
+- **الرخصة / license:** method paraphrased from Atlas skills under MIT; the skills keep their own licenses — see each folder's SOURCE.md
+- **الدليل / proof:** `https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/majestic-frontend/8280-frontend-performance` · `https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/3529-ui-design/14312-responsive-design`
+- **المصدر / source:** KOSIF Atlas mining 2026-10-20 (https://github.com/kosif199022-jpg/kosif-atlas): majestic-frontend/frontend-performance (#8280); ui-design/responsive-design (#14312) · theme frontend-ui-design · 5 supporting skills · verifier read: skills/majestic-frontend/8280-frontend-performance, skills/3529-ui-design/14312-responsive-design
+
+#### ABUILD-44 · اختبار الوصولية بلوحة المفاتيح مباشرة · Live keyboard accessibility test via browser · 📄 موصوف / documented only
+- **ماذا / what:** شغّل الواجهة عبر المتصفح لفحص ترتيب Tab ومصائد التركيز وسلوك المفاتيح. — Drive a running UI with browser automation to check tab order, focus traps and component key behavior.
+- **متى أستخدمها / when:** Validating keyboard navigation of an app or component demo.
+- **كيف / how:** 1. Open the URL at 1440x900 and screenshot a baseline. 2. Read the accessibility tree; list interactive elements and overlay triggers. 3. Walk ordered criteria: tab order, skip link, focus visible, modal trapping, menu arrows, Escape. 4. Apply component-specific key maps. 5. Report violations with fixes; note manual testing is still needed.
+- **يحتاج / needs:** [`npm:axe`](../requirements.md#req-npm-axe)
+- **الرخصة / license:** method paraphrased from Atlas skills under MIT / Apache-2.0; the skills keep their own licenses — see each folder's SOURCE.md
+- **الدليل / proof:** `https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/2998-patternfly/12754-pf-a11y-keyboard` · `https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/2998-patternfly/12753-pf-a11y-audit`
+- **المصدر / source:** KOSIF Atlas mining 2026-10-20 (https://github.com/kosif199022-jpg/kosif-atlas): patternfly/pf-a11y-keyboard (#12754); patternfly/pf-a11y-audit (#12753) · theme frontend-ui-design · 5 supporting skills · verifier read: skills/2998-patternfly/12754-pf-a11y-keyboard, skills/2998-patternfly/12753-pf-a11y-audit
+
+#### ABUILD-45 · صفحة هبوط فاخرة بحركة GSAP · Premium landing page with GSAP scroll motion · 📄 موصوف / documented only
+- **ماذا / what:** بناء صفحة هبوط بهوية العلامة مع CSS ثلاثي الأبعاد وحركة GSAP بعد مقابلة العلامة. — Build a brand-first single-page landing with 3D CSS and GSAP scroll effects after a brand interview.
+- **متى أستخدمها / when:** Requests for marketing or landing pages.
+- **كيف / how:** 1) Interview: colors, typography, shape language, audience. 2) Choose art direction from product context. 3) Generate single HTML with GSAP ScrollTrigger and 3D CSS. 4) Audit six conversion dimensions (above-fold, trust, form). 5) Deploy optional. **أرقام / params:** brand brief
+- **يحتاج / needs:** [`npm:gsap`](../requirements.md#req-npm-gsap)
+- **الرخصة / license:** method paraphrased from Atlas skills under MIT / Apache-2.0; the skills keep their own licenses — see each folder's SOURCE.md
+- **الدليل / proof:** `https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/196-landing/621-landing` · `https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/14160` · `https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/4059`
+- **المصدر / source:** KOSIF Atlas mining 2026-10-20 (https://github.com/kosif199022-jpg/kosif-atlas): landing/landing (#621); brand-landingpage/brand-landingpage (#14160); digital-marketing-pro/landing-page-audit (#4059) · theme frontend-ui-design · 6 supporting skills · verifier read: skills/196-landing/621-landing, skills/14160, skills/4059
+
+#### ABUILD-46 · حلقة مقارنة لقطة الصفحة بالتصميم · Screenshot-vs-design pixel diff loop · 📄 موصوف / documented only
+- **ماذا / what:** مقارنة صفحة منفذة بالتصميم المرجعي وربط الفروق بعناصر مسماة. — Compare a built page to a reference, attributing colour and position diffs to named elements.
+- **متى أستخدمها / when:** Matching a page to a mockup, figuring out why a build differs.
+- **كيف / how:** 1) Screenshot actual page; save desired.png. 2) Optionally dump DOM bboxes scaled by DPR to elements.json. 3) Run bundled check_design.py with tolerances (deltaE 3, px 2, region 0.5%). 4) Read diff.json: kind color/position per element. 5) Fix, recapture, stop at pass true. **أرقام / params:** actual.png, desired.png
+- **يحتاج / needs:** [`python3`](../requirements.md#req-python3)
+- **الرخصة / license:** method paraphrased from Atlas skills under MIT; the skills keep their own licenses — see each folder's SOURCE.md
+- **الدليل / proof:** `https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/890-web/2011-check-web-design` · `https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/1530-webcraft/4196-ui-screenshots`
+- **المصدر / source:** KOSIF Atlas mining 2026-10-20 (https://github.com/kosif199022-jpg/kosif-atlas): web/check-web-design (#2011); webcraft/ui-screenshots (#4196) · theme frontend-ui-design · 2 supporting skills · verifier read: skills/890-web/2011-check-web-design, skills/1530-webcraft/4196-ui-screenshots
+
+#### ABUILD-47 · حلقة مقارنة لقطة الشاشة بالمرجع · Screenshot-vs-reference pixel diff loop · 📄 موصوف / documented only
+- **ماذا / what:** قارن الشاشة المبنية بصورة التصميم واحسب فرق اللون الإدراكي لكل عنصر. — Compare a built screen to a design image, mask chrome, and report perceptual delta per element.
+- **متى أستخدمها / when:** Matching a screen to a design reference or debugging a mismatch.
+- **كيف / how:** 1. Capture actual screenshot beside the desired one. 2. Optionally export element bboxes (scaled by device scale x2/x3) as JSON. 3. Diff with tolerances (deltaE CIE76 ~3, px ~2, region area 0.5%). 4. Mask status bar (~141px) and home indicator (~102px) at x3. 5. Read diff.json pass flag and heatmap PNG; iterate until pass.
+- **الرخصة / license:** method paraphrased from Atlas skills under MIT; the skills keep their own licenses — see each folder's SOURCE.md
+- **الدليل / proof:** `https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/887-mobile/1996-check-mobile-design` · `https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/2370-report-regeneration/9165-report-fidelity-harness`
+- **المصدر / source:** KOSIF Atlas mining 2026-10-20 (https://github.com/kosif199022-jpg/kosif-atlas): mobile/check-mobile-design (#1996); report-regeneration/report-fidelity-harness (#9165) · theme frontend-ui-design · 5 supporting skills · verifier read: skills/887-mobile/1996-check-mobile-design, skills/2370-report-regeneration/9165-report-fidelity-harness
+
+#### ABUILD-48 · معمارية رموز التصميم بثلاث طبقات · Three-tier design token architecture with theming · 📄 موصوف / documented only
+- **ماذا / what:** هيكلة رموز التصميم أولية ودلالية ومكوّنية مع الثيمات كتبديل قيم دلالية وتصديرها لكل منصة. — Structure tokens as primitive, semantic and component tiers with themes as semantic value swaps, emitted per platform.
+- **متى أستخدمها / when:** Setting up tokens, dark mode or multi-brand.
+- **كيف / how:** 1) One source of truth in W3C DTCG JSON ($value/$type). 2) Primitives: raw palette, never used by products. 3) Semantic tokens name roles (color.bg.surface) referencing primitives. 4) Component tokens only when independent tuning is needed. 5) Themes = semantic maps under [data-brand][data-theme]. 6) Style Dictionary to CSS vars plus typed TS map, build fails on bad names. **أرقام / params:** brands, modes
+- **الرخصة / license:** method paraphrased from Atlas skills under MIT; the skills keep their own licenses — see each folder's SOURCE.md
+- **الدليل / proof:** `https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/2278-design-systems-engineering/8697-design-token-architecture` · `https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/13267` · `https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/7560`
+- **المصدر / source:** KOSIF Atlas mining 2026-10-20 (https://github.com/kosif199022-jpg/kosif-atlas): design-systems-engineering/design-token-architecture (#8697); frontend-mobile-development/tailwind-design-system (#13267); accessibility-plugin/design-tokens (#7560) · theme frontend-ui-design · 7 supporting skills · verifier read: skills/2278-design-systems-engineering/8697-design-token-architecture, skills/13267, skills/7560
+
+#### ABUILD-49 · تدقيق إتاحة WCAG 2.2: فحص وإصلاح وتحقق · WCAG 2.2 scan-fix-verify accessibility audit · 📄 موصوف / documented only
+- **ماذا / what:** فحص كود الواجهة لمخالفات WCAG 2.2 وترتيبها بالخطورة وتقديم إصلاحات قبل/بعد ثم إعادة التحقق. — Scan a front-end codebase for WCAG 2.2 A/AA violations, rank by severity, emit before/after fixes and re-verify against a baseline.
+- **متى أستخدمها / when:** Asked to audit, fix or gate accessibility in React/Vue/Angular/HTML code.
+- **كيف / how:** 1) Detect framework. 2) Scan for criteria (alt 1.1.1, keyboard 2.1.1, labels, contrast 1.4.3). 3) Classify Critical (fix before release) / Major (this sprint) / Minor (2 sprints). 4) Emit framework-specific before/after diffs. 5) Re-run against saved baseline JSON to catch regressions. 6) Output stakeholder report and CI-friendly result. **أرقام / params:** scope dir, severity threshold, framework
+- **يحتاج / needs:** [`npm:axe`](../requirements.md#req-npm-axe)
+- **الرخصة / license:** method paraphrased from Atlas skills under MIT / Apache-2.0; the skills keep their own licenses — see each folder's SOURCE.md
+- **الدليل / proof:** `https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/149-a11y-audit/492-a11y-audit` · `https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/13231` · `https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/948`
+- **المصدر / source:** KOSIF Atlas mining 2026-10-20 (https://github.com/kosif199022-jpg/kosif-atlas): a11y-audit/a11y-audit (#492); accessibility-compliance/wcag-audit-patterns (#13231); design/accessibility-review (#948) · theme frontend-ui-design · 8 supporting skills · verifier read: skills/149-a11y-audit/492-a11y-audit, skills/13231, skills/948
+
+## Git والإصدار — Git, pull requests & releases
+
+#### ABUILD-50 · إصدار نسخة: وسم ونشر وتحقق · Cut a release: tag, GitHub release, verify · 📄 موصوف / documented only
+- **ماذا / what:** تنفيذ بوابات الإصدار ثم الوسم والنشر والتحقق من وجود الوسم. — Run release gates, tag, push and publish a GitHub release then prove the tag exists.
+- **متى أستخدمها / when:** Cut/ship a release, publish version.
+- **كيف / how:** 1) Preflight git status, branch, existing tags. 2) Validate/review gates. 3) Bump, commit release files. 4) git tag vX locally, push tag. 5) gh release create with notes. 6) Verify with git ls-remote --tags. Support --dry-run. **أرقام / params:** version, dry-run
+- **الرخصة / license:** method paraphrased from Atlas skills under MIT/Apache; the skills keep their own licenses — see each folder's SOURCE.md
+- **الدليل / proof:** `https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/?/10012-release` · `https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/?/1238-ship` · `https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/?/9678-releasing`
+- **المصدر / source:** KOSIF Atlas mining 2026-10-20 (https://github.com/kosif199022-jpg/kosif-atlas): release/release (#10012); kernel/ship (#1238); mergify/releasing (#9678) · theme git-release · 10 supporting skills · verifier read: skills/?/10012-release, skills/?/1238-ship, skills/?/9678-releasing
+
 ## المصادر والرخص / sources & licences
 
-- الرخص / licences: method paraphrased from Atlas skills under MIT; the skills keep their own licenses — see each folder's SOURCE.md (24) · method paraphrased from Atlas skills under MIT / Apache-2.0; the skills keep their own licenses — see each folder's SOURCE.md (3) · method paraphrased from Atlas skills under Apache-2.0 / MIT (no copyleft seen among supporting ids); the skills keep their own licenses — see each folder's SOURCE.md (1) · method paraphrased from Atlas skills under Apache-2.0 / MIT; the skills keep their own licenses — see each folder's SOURCE.md (1) · method paraphrased from Atlas skills under MIT AND Apache-2.0; the skills keep their own licenses — see each folder's SOURCE.md (1)
+- الرخص / licences: method paraphrased from Atlas skills under MIT; the skills keep their own licenses — see each folder's SOURCE.md (37) · method paraphrased from Atlas skills under MIT / Apache-2.0; the skills keep their own licenses — see each folder's SOURCE.md (7) · method paraphrased from Atlas skills under Apache-2.0 / MIT; the skills keep their own licenses — see each folder's SOURCE.md (3) · method paraphrased from Atlas skills under Apache-2.0 / MIT (no copyleft seen among supporting ids); the skills keep their own licenses — see each folder's SOURCE.md (1) · method paraphrased from Atlas skills under MIT AND Apache-2.0; the skills keep their own licenses — see each folder's SOURCE.md (1) · method paraphrased from Atlas skills under MIT/Apache; the skills keep their own licenses — see each folder's SOURCE.md (1)
 - الأفكار مكتوبة بكلماتنا مع رابط المصدر؛ لا يُنسخ نص طرف ثالث طويل. Ideas are paraphrased with a link to the source; no long third-party text is copied. `—` = no licence recorded (own method or own wording).
 
 ---

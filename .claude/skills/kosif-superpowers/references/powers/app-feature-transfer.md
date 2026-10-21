@@ -3,13 +3,13 @@
 
 > **قوتك هنا / what this gives you:** مزايا CapCut وCanva وPremiere وDxO PhotoLab وCapture One وJPEGmini وFontLab وAffinity وHoudini وAnimate وIDM التي كشفها التحليل بـ REA، لكل منها وصفة مفتوحة مثبتة (FFmpeg/OpenCV/Pillow/fontTools/Whisper) أو نمط معماري موثّق لتطبيقاتك. — Features found by analysing CapCut, Canva, Premiere Pro, DxO PhotoLab, Capture One, JPEGmini, FontLab, Affinity Designer, Houdini, Animate and IDM with REA, each with a proven open-tool recipe (FFmpeg/OpenCV/Pillow/fontTools/Whisper) or a documented architecture pattern for your own apps.
 > **أقوى دليل / strongest evidence:** **APPX-01** Speed curve (ramp) (`kosif-tool/.claude/skills/kosif-superpowers/proofs/app-feature-transfer/README.md`) · **APPX-02** Chroma key (`kosif-tool/.claude/skills/kosif-superpowers/proofs/app-feature-transfer/README.md`)
-> **119 powers follow** — ✅ 96 · 🟢 1 · 📦 1 · 🔑 0 · 👁 0 · 📄 21 · 💡 0.
+> **139 powers follow** — ✅ 96 · 🟢 1 · 📦 1 · 🔑 0 · 👁 0 · 📄 41 · 💡 0.
 
 **الحالة / status:** ✅ مُثبت (شُغّل فعلًا وله مسار دليل) · 🟢 جاهز (كود موجود يعمل بما هو متاح عادة) · 📦 بأمر تثبيت واحد · 🔑 يحتاج مفتاحًا أو حسابًا أو موصلًا · 👁 شوهد في فيديو مرجعي (للموشن فقط) · 📄 طريقة موثقة · 💡 فكرة. الشارة هي أدنى مستوى صادق — the badge is the lowest level that is true.
 مسارات الدليل نسبية إلى `/home/user/`؛ و`session-<date>:<file>#<section>` تشير إلى تشغيل موثق في جلسة سابقة؛ و`owner-upload:` إلى ملف داخل أرشيف أرسله المالك. Proof paths are relative to `/home/user/`.
 
 **المجال / domain:** التطبيقات والواجهات — Apps & artifacts · **البادئة / prefix:** `APPX` · **البيانات / data:** `data/powers/app-feature-transfer.json` · **بحث / search:** `python3 scripts/powers.py family app-feature-transfer`
-**مراجع ذات صلة / related references:** [CLAUDE_3_MINUTE_MAP.md](../CLAUDE_3_MINUTE_MAP.md) · [app-feature-transfer.md](../app-feature-transfer.md) · [global-video-platforms-2026-10-19.md](../global-video-platforms-2026-10-19.md) · [rea-reverse-engineering.md](../rea-reverse-engineering.md)
+**مراجع ذات صلة / related references:** [CLAUDE_3_MINUTE_MAP.md](../CLAUDE_3_MINUTE_MAP.md) · [app-feature-transfer.md](../app-feature-transfer.md) · [capability-audit.md](../capability-audit.md) · [global-video-platforms-2026-10-19.md](../global-video-platforms-2026-10-19.md) · [hubs.md](../hubs.md) · [rea-reverse-engineering.md](../rea-reverse-engineering.md)
 
 ## الفهرس / contents
 
@@ -27,6 +27,8 @@
 - **Photoshop 2025: أوضاع المزج والطبقات وLUT والسماء والتسييل وتغبيش العدسة (من قائمة الحزمة) — Photoshop compositing** — APPX-105 … APPX-118 (6)
 - **الرسّام Microsoft Paint: الفرش والسطل وصفحات التلوين والملصقات (REA على PaintUI.winmd) — MS Paint** — APPX-110 … APPX-119 (5)
 - **رندر Blender السينمائي (Blender 5.2.2 على الجهاز: REA + bpy، رندرات Cycles حقيقية) — Blender cinematic render** — APPX-114 … APPX-117 (4)
+- **MagicPath — منهج العمل مع التصميمات (أفكار من مهارة MIT بكلماتنا) — MagicPath agent-skills methods, MIT** — APPX-120 … APPX-131 (12)
+- **MagicPath — منهج اللوحة المشتركة (أفكار من الوثائق العامة بكلماتنا، بلا نص منسوخ) — MagicPath public-docs methods** — APPX-132 … APPX-139 (8)
 - المصادر والرخص / sources & licences
 
 ## محررات الفيديو — CapCut وPremiere (مزايا موثّقة من البائع، وصفة مفتوحة مثبتة هنا) — video editors
@@ -1236,9 +1238,185 @@
 - **الدليل / proof:** `kosif-tool/.claude/skills/kosif-superpowers/evals/test_blender_cinema.py` · `kosif-tool/.claude/skills/kosif-superpowers/scripts/blender_cinema.py` · `kosif-tool/.claude/skills/kosif-superpowers/proofs/windows-installers-rea/PAINT_PHOTOSHOP_BLENDER_2026-10-20.md` · `kosif-tool/.claude/skills/kosif-superpowers/proofs/windows-installers-rea/paint_blender_2026-10-20/blender_presets.jpg`
 - **المصدر / source:** Blender 5.2.2 LTS portable on this laptop: REA analyze + inspect-pe-resources, live bpy inventory, Cycles renders (2026-10-20)
 
+## MagicPath — منهج العمل مع التصميمات (أفكار من مهارة MIT بكلماتنا) — MagicPath agent-skills methods, MIT
+
+#### APPX-120 · عقد الأمانة للتصميم بقائمة انحرافات مغلقة · Design fidelity contract with a closed deviation list · 📄 موصوف / documented only
+- **ماذا / what:** «استخدم هذا التصميم» يعني تطابقًا كاملًا افتراضيًا في البنية والأبعاد والأنماط والأصول والحالات والحركة والاستجابة والسلوك؛ اكتب قبل البناء عقدًا قصيرًا: المصدر بالضبط، ومقاس المرجع، وما يُسمح بتغييره بالاسم فقط — treat 'use this design' as exact parity; write a short contract first listing the source, reference viewport and the only allowed deviations
+- **متى أستخدمها / when:** نقل تصميم أو شاشة إلى كود، أو إعادة مونتاج بتعديلات محددة
+- **كيف / how:** اكتب contract.json (المصدر، المقاس، الانحرافات المسموحة) قبل البدء، وطبّق مبدأ STORY-X03 «لا تغيّر إلا المسمّى»، ثم تحقق بحلقة APPX-122 البصرية. الفجوة: لا قالب عقد ولا فاحص له في KOSIF بعد. **أرقام / params:** —
+- **الرخصة / license:** method idea from MagicPathAI/agent-skills (MIT per its plugin manifests; author MagicPath); close paraphrase, credited
+- **الدليل / proof:** `kosif-tool/.claude/skills/kosif-superpowers/references/app-studies/magicpath.md`
+- **المصدر / source:** MagicPath study 2026-10-20: MagicPathAI/agent-skills a1ced96 (license field MIT in 4 plugin manifests, no LICENSE file); close paraphrase with credit
+
+#### APPX-121 · التطابق أولًا ثم التكييف · Parity first, adaptation second · 📄 موصوف / documented only
+- **ماذا / what:** انقل التنفيذ المرجعي كاملًا (الملفات الفرعية والأنماط والخطوط والأصول) وطابقه عند مقاس المرجع ببيانات نموذجية، ثم أعد التسمية أو اربط البيانات الحقيقية؛ فيبقى انحراف المصدر منفصلًا عن أخطاء التكامل — port everything and match at the reference viewport first, refactor and wire real data only after parity
+- **متى أستخدمها / when:** استبدال واجهة قديمة بتصميم جديد
+- **كيف / how:** لا تستبدل القيم بأقرب متغير تصميم أثناء مرحلة التطابق (يعارض نصيحة ACODE-181 في هذه المرحلة فقط)؛ قارن getComputedStyle قبل الاستبدال وبعده واقبل الاستبدال إن لم تتغير القيم المحسوبة. **أرقام / params:** —
+- **الرخصة / license:** method idea from MagicPathAI/agent-skills (MIT per its plugin manifests; author MagicPath); close paraphrase, credited
+- **الدليل / proof:** `kosif-tool/.claude/skills/kosif-superpowers/references/app-studies/magicpath.md`
+- **المصدر / source:** MagicPath study 2026-10-20: MagicPathAI/agent-skills a1ced96 (license field MIT in 4 plugin manifests, no LICENSE file); close paraphrase with credit
+
+#### APPX-122 · حلقة التحقق البصري للواجهة مقابل المرجع · Visual verification loop for UI against a reference · 📄 موصوف / documented only
+- **ماذا / what:** قارن الواجهة بمرجعها في متصفح حقيقي بنفس المقاس والكثافة والثيم والمحتوى والحالة: جنبًا إلى جنب، ثم تراكب أو فرق بكسلي؛ وعند الاختلاف ابدأ من أول عنصر أب يختلف وقارن أنماطه المحسوبة ومربعاته بدل تحريك الأبناء — side-by-side, then overlay or pixel diff; fix the first diverging ancestor using computed styles and boxes
+- **متى أستخدمها / when:** بعد أي تنفيذ لتصميم أو قالب موشن ثابت
+- **كيف / how:** لقطات بـ Chromium عند 1440×900 و390×844، ثم Pillow ImageChops.difference وgetbbox، وتراكب Image.blend بنسبة 0.5 (QA-253). الفجوة: لا أداة واحدة تجمع اللقطة والفرق وتقرير أول عنصر مختلف. **أرقام / params:** —
+- **يحتاج / needs:** [`chromium`](../requirements.md#req-chromium) · [`pip:pillow`](../requirements.md#req-pip-pillow)
+- **الرخصة / license:** method idea from MagicPathAI/agent-skills (MIT per its plugin manifests; author MagicPath); close paraphrase, credited
+- **الدليل / proof:** `kosif-tool/.claude/skills/kosif-superpowers/references/app-studies/magicpath.md`
+- **المصدر / source:** MagicPath study 2026-10-20: MagicPathAI/agent-skills a1ced96 (license field MIT in 4 plugin manifests, no LICENSE file); close paraphrase with credit
+
+#### APPX-123 · استيراد واجهة من مستودع بقراءة أساس التصميم أولًا · Import UI from a repository by reading its design foundation first · 📄 موصوف / documented only
+- **ماذا / what:** اقرأ طبقة التصميم العامة قبل الهدف: التقنية، وCSS العام، وقيم المتغيرات الفعلية (:root و.dark)، وطريقة تحميل الخطوط، واستراتيجية الثيم، والمكونات المشتركة؛ ثم افتح الهدف وتتبع كل استيراداته والتخطيط الأب — read the global design layer, then the target and all its imports
+- **متى أستخدمها / when:** إعادة بناء شاشة من مستودع مرخّص
+- **كيف / how:** git clone --depth 1 لمستودع مرخّص ثم local_project_audit.py للجرد؛ استخرج :root و.dark والخطوط يدويًا. الفجوة: لا قارئ ثابت يرتب الأساس ثم الهدف. **أرقام / params:** —
+- **يحتاج / needs:** [`python3`](../requirements.md#req-python3) · [`git`](../requirements.md#req-git)
+- **الرخصة / license:** method idea from MagicPathAI/agent-skills (MIT per its plugin manifests; author MagicPath); close paraphrase, credited
+- **الدليل / proof:** `kosif-tool/.claude/skills/kosif-superpowers/references/app-studies/magicpath.md`
+- **المصدر / source:** MagicPath study 2026-10-20: MagicPathAI/agent-skills a1ced96 (license field MIT in 4 plugin manifests, no LICENSE file); close paraphrase with credit
+
+#### APPX-124 · الثيم كبيانات قابلة للنقل مع حقل نية المصمم · Theme as portable data with a designer-intent field · 📄 موصوف / documented only
+- **ماذا / what:** نظام التصميم سجل واحد: خرائط متغيرات الوضعين الفاتح والداكن، والوضع الافتراضي، والخطوط ومصدرها، وسطور قصيرة يكتبها المصمم تلزم الوكلاء (مثل: ظلال لا حدود، ولون العلامة للأزرار فقط)؛ يُنشأ من الصفر أو من متغيرات CSS ملصقة أو من صفحة — one record with light/dark variable maps, default mode, fonts with source and written intent agents must follow
+- **متى أستخدمها / when:** هوية عميل أو قالب يتكرر في أعمال كثيرة
+- **كيف / how:** اكتب theme.json وولّد منه :root و.dark، واربط الخطوط بأطلس الخطوط (TOOL-61) مع حالة الرخصة، واجعل حقل النية جزءًا من موجز كل مهمة. الفجوة: لا مخطط ثيم موحّد ولا مدقق له. **أرقام / params:** —
+- **الرخصة / license:** method idea from MagicPathAI/agent-skills (MIT per its plugin manifests; author MagicPath); close paraphrase, credited
+- **الدليل / proof:** `kosif-tool/.claude/skills/kosif-superpowers/references/app-studies/magicpath.md`
+- **المصدر / source:** MagicPath study 2026-10-20: MagicPathAI/agent-skills a1ced96 (license field MIT in 4 plugin manifests, no LICENSE file); close paraphrase with credit
+
+#### APPX-125 · قواعد افتراضية لإطارات الواجهات التفاعلية · Default rules for authored interactive UI frames · 📄 موصوف / documented only
+- **ماذا / what:** ما لم يُطلب غير ذلك: لا إطار جهاز (الإطار هو الجهاز)، وعرض مرن يتوسط بلا أبعاد خارجية ثابتة، وشاشة واحدة تتنقل حالاتها داخليًا، وأزرار تعمل فعلًا لا معالجات فارغة — no device chrome, fluid and centred, one screen with internal states, no dead buttons
+- **متى أستخدمها / when:** نموذج تطبيق تفاعلي أو صفحة هبوط
+- **كيف / how:** فحص نصي بسيط (grep) لمعالجات onClick الفارغة والأبعاد الثابتة بالبكسل، ولقطتان عند 390 و1440 تتحقق أن الجذر في المنتصف. الفجوة: لا قواعد افتراضية ولا فاحص في KOSIF. **أرقام / params:** —
+- **الرخصة / license:** method idea from MagicPathAI/agent-skills (MIT per its plugin manifests; author MagicPath); close paraphrase, credited
+- **الدليل / proof:** `kosif-tool/.claude/skills/kosif-superpowers/references/app-studies/magicpath.md`
+- **المصدر / source:** MagicPath study 2026-10-20: MagicPathAI/agent-skills a1ced96 (license field MIT in 4 plugin manifests, no LICENSE file); close paraphrase with credit
+
+#### APPX-126 · التصميم مواصفة الشكل والمكوّن القديم مواصفة السلوك · Design is the look spec; the old component is the behaviour spec · 📄 موصوف / documented only
+- **ماذا / what:** قبل استبدال مكوّن اكتب عقده الحي: الخصائص والاستدعاءات والحالة وطلبات الشبكة والتوجيه والتحقق وحالات التحميل والفراغ والخطأ ولوحة المفاتيح وARIA والقياس والاختبارات؛ ولا تحذف القديم قبل أن ينجح التحقق — list the replaced component's runtime contract and keep it until verification passes
+- **متى أستخدمها / when:** استبدال واجهة في تطبيق قائم
+- **كيف / how:** قائمة تحقق قبل الاستبدال + اختبارات تكافؤ سلوكي. الفجوة: لا قالب لهذا العقد في KOSIF. **أرقام / params:** —
+- **الرخصة / license:** method idea from MagicPathAI/agent-skills (MIT per its plugin manifests; author MagicPath); close paraphrase, credited
+- **الدليل / proof:** `kosif-tool/.claude/skills/kosif-superpowers/references/app-studies/magicpath.md`
+- **المصدر / source:** MagicPath study 2026-10-20: MagicPathAI/agent-skills a1ced96 (license field MIT in 4 plugin manifests, no LICENSE file); close paraphrase with credit
+
+#### APPX-127 · عقد أوامر مريح للوكيل · Agent-friendly command contract (JSON, non-interactive, dry-run, explicit states) · 📄 موصوف / documented only
+- **ماذا / what:** كل أمر يعيد بيانات يخرج JSON عند الطلب ويعمل بلا أسئلة تفاعلية؛ وكل أمر يكتب له تجربة جافة تسرد ما سيكتبه ويرفض الكتابة فوق ملف قبل المراجعة؛ والحالات صريحة (تم، بلا تغيير، فشل بسبب) — JSON on request, no prompts, dry-run for writers, refuse silent overwrites, explicit outcome states
+- **متى أستخدمها / when:** عند كتابة أي أداة جديدة في KOSIF
+- **كيف / how:** web_app_study.py يطبقه (JSON و--dry-run ورفض المجلدات غير الفارغة). قياس تقريبي لانتشاره: grep -lE -- "[\"']--json[\"']" scripts/*.py. الفجوة: نحو خُمس السكربتات فقط لها --json. **أرقام / params:** —
+- **يحتاج / needs:** [`python3`](../requirements.md#req-python3)
+- **الرخصة / license:** method idea from MagicPathAI/agent-skills (MIT per its plugin manifests; author MagicPath); close paraphrase, credited
+- **الدليل / proof:** `kosif-tool/.claude/skills/kosif-superpowers/references/app-studies/magicpath.md`
+- **المصدر / source:** MagicPath study 2026-10-20: MagicPathAI/agent-skills a1ced96 (license field MIT in 4 plugin manifests, no LICENSE file); close paraphrase with credit
+
+#### APPX-128 · فحص تمهيدي أولًا للحساب والسياق · Preflight probe first: auth, context and version as one JSON · 📄 موصوف / documented only
+- **ماذا / what:** ابدأ كل جلسة بنداء رخيص للقراءة فقط يعيد حالة الدخول والمشروع النشط وإصدار الأداة، وتفرّع عليه (سجّل دخول، اسأل، أو تابع) قبل أي عمل حقيقي — one cheap read-only call that returns auth state, active project and version, then branch
+- **متى أستخدمها / when:** بداية أي مهمة تعتمد على خدمات متصلة
+- **كيف / how:** boot.py وhub.py doctor --json يغطيان الجهاز. الفجوة: لا تقرير واحد لحالة الدخول لكل خدمة (المستودعات ومولدات الوسائط والمتصفح السحابي). **أرقام / params:** —
+- **يحتاج / needs:** [`python3`](../requirements.md#req-python3)
+- **الرخصة / license:** method idea from MagicPathAI/agent-skills (MIT per its plugin manifests; author MagicPath); close paraphrase, credited
+- **الدليل / proof:** `kosif-tool/.claude/skills/kosif-superpowers/references/app-studies/magicpath.md`
+- **المصدر / source:** MagicPath study 2026-10-20: MagicPathAI/agent-skills a1ced96 (license field MIT in 4 plugin manifests, no LICENSE file); close paraphrase with credit
+
+#### APPX-129 · لوحة بصرية دائمة بجانب الوكيل · Persistent visual board beside the agent · 📄 موصوف / documented only
+- **ماذا / what:** للعمل البصري افتح من أول المهمة صفحة واحدة على مستوى المشروع بجانب المحادثة يراها المستخدم وهي تمتلئ، وأعد نشرها في نفس الرابط، وأظهر كل عامل وهو يبني بدل مؤشر انتظار — open one project board at task start and keep republishing it; show each worker's progress live
+- **متى أستخدمها / when:** مشاريع موشن أو تصميم بعدة مشاهد
+- **كيف / how:** انشر صفحة Artifact واحدة عند البدء وحدّثها بنفس المسار، أو المعاينة الحية في starters/html-canvas. الفجوة: لا بروتوكول لوحة مشروع ولا عرض تقدم حي للعمّال المتوازين. **أرقام / params:** —
+- **الرخصة / license:** method idea from MagicPathAI/agent-skills (MIT per its plugin manifests) plus MagicPath public docs (idea only); KOSIF wording
+- **الدليل / proof:** `kosif-tool/.claude/skills/kosif-superpowers/references/app-studies/magicpath.md`
+- **المصدر / source:** MagicPath study 2026-10-20: agent-skills a1ced96 (MIT, close paraphrase) + public docs (idea only)
+
+#### APPX-130 · جلسة عمل بمرحلتين مع خط أساس وقائمة ملفات مسموحة · Two-phase work session with a baseline manifest and an editable-file allowlist · 📄 موصوف / documented only
+- **ماذا / what:** ابدأ بخطوة تسجّل بصمات الملفات القابلة للتعديل، وأنهِ بخطوة تسليم تقارن بها فتعرف المتغير والمحذوف وتعيد «بلا تغيير» إن لم يتغير شيء؛ ولا تقبل التغيير إلا في مسارات معلنة، وارفض لمس ملفات البناء والحزم — start records a baseline, submit diffs against it, and only declared paths may change
+- **متى أستخدمها / when:** أي مهمة إبداعية على قالب أو مشروع قائم
+- **كيف / how:** find … | xargs sha256sum > base.sha عند الاعتماد، ثم sha256sum -c بعد التعديل، وفحص fnmatch للمسارات المتغيرة مقابل قائمة السماح. الفجوة: tools/kosif.py scaffold لا يسجل خط أساس. **أرقام / params:** —
+- **يحتاج / needs:** [`python3`](../requirements.md#req-python3)
+- **الرخصة / license:** method idea from MagicPathAI/agent-skills (MIT per its plugin manifests; author MagicPath); close paraphrase, credited
+- **الدليل / proof:** `kosif-tool/.claude/skills/kosif-superpowers/references/app-studies/magicpath.md`
+- **المصدر / source:** MagicPath study 2026-10-20: MagicPathAI/agent-skills a1ced96 (license field MIT in 4 plugin manifests, no LICENSE file); close paraphrase with credit
+
+#### APPX-131 · تثبيت النسخة التي يراها المستخدم بالضبط · Pin exactly the version the user is looking at · 📄 موصوف / documented only
+- **ماذا / what:** حدّد «هذا» من التحديد أو المفتوح، واحمل معرّف النسخة أو بصمتها في كل خطوة لاحقة حتى لا ينجرف التصدير إلى نسخة أحدث؛ وإن لم يتح إلا «الأحدث» فقل ذلك صراحة — carry the exact version id or hash of the reference through every step, and say so when only 'latest' was available
+- **متى أستخدمها / when:** العمل من مرجع فيديو أو مستودع أو تصميم
+- **كيف / how:** sha256sum للمرجع أو git rev-parse HEAD للمستودع، واكتبه في TEST_REPORT.md؛ web_app_study.py يكتب بصمات كل ملف في receipts.json. الفجوة: fetch_reference.py لا يسجل بصمة. **أرقام / params:** —
+- **يحتاج / needs:** [`python3`](../requirements.md#req-python3)
+- **الرخصة / license:** method idea from MagicPathAI/agent-skills (MIT per its plugin manifests; author MagicPath); close paraphrase, credited
+- **الدليل / proof:** `kosif-tool/.claude/skills/kosif-superpowers/references/app-studies/magicpath.md`
+- **المصدر / source:** MagicPath study 2026-10-20: MagicPathAI/agent-skills a1ced96 (license field MIT in 4 plugin manifests, no LICENSE file); close paraphrase with credit
+
+## MagicPath — منهج اللوحة المشتركة (أفكار من الوثائق العامة بكلماتنا، بلا نص منسوخ) — MagicPath public-docs methods
+
+#### APPX-132 · حزمة مراجع من التحديد تُعطى لكل العمّال · Selection-as-context reference bundle shared by every worker · 📄 موصوف / documented only
+- **ماذا / what:** في أفلام KOSIF متعددة المشاهد يُسلَّم ملف مراجع واحد بأدوار (أسلوب، محتوى، بنية) بنفس المسار لكل وكيل مشهد، ويُسأل المستخدم قبل تشغيل عدد كبير من الوكلاء — one roles-tagged refs file passed unchanged to every scene agent; ask before a large fan-out
+- **متى أستخدمها / when:** مشروع بعدة مشاهد أو تنويعات تُبنى بالتوازي
+- **كيف / how:** refs.json بأدوار لكل ملف يُمرر بنفس المسار في موجز كل وكيل فرعي (THINK-27)، مع قفل الأسلوب والألوان. الفجوة: لا موزّع ينفذ ذلك آليًا. **أرقام / params:** —
+- **الرخصة / license:** method idea inspired by MagicPath public docs (proprietary); idea only, in KOSIF's terms
+- **الدليل / proof:** `kosif-tool/.claude/skills/kosif-superpowers/references/app-studies/magicpath.md`
+- **المصدر / source:** MagicPath study 2026-10-20: magicpath.ai public documentation (proprietary); idea only, restated for KOSIF motion work
+
+#### APPX-133 · تنويعات على محاور مسمّاة جنبًا إلى جنب · Variant fan-out on named axes, side by side, never overwriting · 📄 موصوف / documented only
+- **ماذا / what:** لعرض بدائل مشهد اصنع نسخًا شقيقة تغيّر كل منها محورًا واحدًا مسمّى، والأصل يبقى كما هو — sibling variants of a scene, each changing one named axis, original untouched
+- **متى أستخدمها / when:** عرض بدائل على العميل قبل الاعتماد
+- **كيف / how:** ثلاثة أساليب متباينة من tools/kosif.py search ثم scaffold لكل واحد في مجلد شقيق ومعاينة كل منها. الفجوة: لا مولّد تنويعات بمحاور مسماة. **أرقام / params:** —
+- **يحتاج / needs:** [`python3`](../requirements.md#req-python3)
+- **الرخصة / license:** method idea inspired by MagicPath public docs (proprietary); idea only, in KOSIF's terms
+- **الدليل / proof:** `kosif-tool/.claude/skills/kosif-superpowers/references/app-studies/magicpath.md`
+- **المصدر / source:** MagicPath study 2026-10-20: magicpath.ai public documentation (proprietary); idea only, restated for KOSIF motion work
+
+#### APPX-134 · التعديل الحتمي أولًا والنموذج للباقي فقط · Deterministic-first edits; the model only for what cannot be rewritten safely · 📄 موصوف / documented only
+- **ماذا / what:** عدّل مشاهد الموشن بسجل عمليات محددة (نص، لون، توقيت) يطبقه سكربت، ولا تطلب من النموذج إعادة كتابة الملف إلا لما لا يطبقه السجل، وقل ذلك — a scripted edit log first, a model rewrite only for the rest, stated openly
+- **متى أستخدمها / when:** تعديلات صغيرة متكررة على مشاهد الموشن
+- **كيف / how:** kosif_timeline.py edit يطبق تعديلات حتمية على مشروع JSON مع تراجع وإعادة. الفجوة: مشاهد HTML تُعدَّل بإعادة كتابة النموذج للملف. **أرقام / params:** —
+- **يحتاج / needs:** [`python3`](../requirements.md#req-python3)
+- **الرخصة / license:** method idea inspired by MagicPath public docs (proprietary); idea only, in KOSIF's terms
+- **الدليل / proof:** `kosif-tool/.claude/skills/kosif-superpowers/references/app-studies/magicpath.md`
+- **المصدر / source:** MagicPath study 2026-10-20: magicpath.ai public documentation (proprietary); idea only, restated for KOSIF motion work
+
+#### APPX-135 · نُسخ مرتبطة: نمط مشترك ومحتوى لكل سجل · Linked instances: shared style, per-record content · 📄 موصوف / documented only
+- **ماذا / what:** في البطاقات والقوائم المتكررة: تعديل القالب يغيّر الكل، وتعديل سجل البيانات يغيّر بطاقة واحدة — template edits change every card, data edits change one
+- **متى أستخدمها / when:** بطاقات قوائم أو شرائح متكررة في فيديو
+- **كيف / how:** بطاقات المشاهد كسجلات JSON (STORY-09) تُعرض بقالب HTML واحد. الفجوة: لا مسار تعديل يفصل «نمط القالب» عن «هذا السجل». **أرقام / params:** —
+- **الرخصة / license:** method idea inspired by MagicPath public docs (proprietary); idea only, in KOSIF's terms
+- **الدليل / proof:** `kosif-tool/.claude/skills/kosif-superpowers/references/app-studies/magicpath.md`
+- **المصدر / source:** MagicPath study 2026-10-20: magicpath.ai public documentation (proprietary); idea only, restated for KOSIF motion work
+
+#### APPX-136 · نسخ لكل عنصر وارجع للخلف بدل مواصلة التلقين · Per-item revisions: roll back instead of piling on prompts · 📄 موصوف / documented only
+- **ماذا / what:** احفظ نسخة مرقمة لكل مشهد معتمد، وعند تدهور النتائج ارجع لآخر نسخة جيدة بدل زيادة التعليمات — numbered scene versions; roll back rather than re-prompt
+- **متى أستخدمها / when:** جولات تعديل كثيرة على نفس المشهد
+- **كيف / how:** kosif_timeline.py undo/redo لمشاريع JSON. الفجوة: مشاريع HTML المولّدة بلا قائمة نسخ ولا أمر تراجع. **أرقام / params:** —
+- **يحتاج / needs:** [`python3`](../requirements.md#req-python3)
+- **الرخصة / license:** method idea inspired by MagicPath public docs (proprietary); idea only, in KOSIF's terms
+- **الدليل / proof:** `kosif-tool/.claude/skills/kosif-superpowers/references/app-studies/magicpath.md`
+- **المصدر / source:** MagicPath study 2026-10-20: magicpath.ai public documentation (proprietary); idea only, restated for KOSIF motion work
+
+#### APPX-137 · الرسم التقريبي الموسوم للبنية والمرجع للمظهر · Labeled rough sketch for structure; reference for look · 📄 موصوف / documented only
+- **ماذا / what:** في تخطيط المشاهد يحدد الرسم السريع أماكن العناصر، وتحدد صورة المرجع شكلها — the sketch fixes the layout, the reference fixes the look
+- **متى أستخدمها / when:** تخطيط مشهد أو شاشة من فكرة سريعة
+- **كيف / how:** smart_draw.py analyze يتعرف على الأشكال. الفجوة: لا يقرأ الوسوم ولا يحوّل البنية إلى مواقع بطاقات المشاهد. **أرقام / params:** —
+- **يحتاج / needs:** [`python3`](../requirements.md#req-python3)
+- **الرخصة / license:** method idea inspired by MagicPath public docs (proprietary); idea only, in KOSIF's terms
+- **الدليل / proof:** `kosif-tool/.claude/skills/kosif-superpowers/references/app-studies/magicpath.md`
+- **المصدر / source:** MagicPath study 2026-10-20: magicpath.ai public documentation (proprietary); idea only, restated for KOSIF motion work
+
+#### APPX-138 · جسر MCP باتجاهين مع تلميح التحديد الحالي · Two-way MCP bridge with a current-selection hint · 📄 موصوف / documented only
+- **ماذا / what:** وسّع خادم MCP في KOSIF ليكتب أيضًا (ينشئ مشروعًا، يعدّل مشهدًا، يعاين) ويعرف المشروع النشط — a write-capable KOSIF MCP server that knows the active project
+- **متى أستخدمها / when:** ربط KOSIF بوكلاء آخرين
+- **كيف / how:** kosif_mcp.py --selftest يثبت واجهة القراءة الحالية. الفجوة: لا أدوات كتابة (إنشاء مشروع، تعديل مشهد، معاينة، رندر) ولا مورد «المشروع النشط». **أرقام / params:** —
+- **يحتاج / needs:** [`python3`](../requirements.md#req-python3)
+- **الرخصة / license:** method idea inspired by MagicPath public docs (proprietary); idea only, in KOSIF's terms
+- **الدليل / proof:** `kosif-tool/.claude/skills/kosif-superpowers/references/app-studies/magicpath.md`
+- **المصدر / source:** MagicPath study 2026-10-20: magicpath.ai public documentation (proprietary); idea only, restated for KOSIF motion work
+
+#### APPX-139 · المهارات: تحميل بالوصف وتثبيت صريح واستيراد نصي آمن · Skills: description-matched loading, explicit pinning, safe text-only import · 📄 موصوف / documented only
+- **ماذا / what:** افحص أي حزمة مهارة خارجية قبل اعتمادها: نص فقط، حجم محدود، بلا ملفات تنفيذية، ومصدر معروف — vet third-party skill packages before importing them
+- **متى أستخدمها / when:** قبل اعتماد مهارة خارجية في KOSIF
+- **كيف / how:** skill_intelligence.py brief يرتب بالوصف، وcheck_skill.py يفحص بنية مهارة KOSIF نفسها فقط. الفجوة: لا بوابة تفحص حزمة مهارة خارجية (نص فقط، حجم، بلا تنفيذيات، مصدر). **أرقام / params:** —
+- **يحتاج / needs:** [`python3`](../requirements.md#req-python3)
+- **الرخصة / license:** method idea inspired by MagicPath public docs (proprietary); idea only, in KOSIF's terms
+- **الدليل / proof:** `kosif-tool/.claude/skills/kosif-superpowers/references/app-studies/magicpath.md`
+- **المصدر / source:** MagicPath study 2026-10-20: magicpath.ai public documentation (proprietary); idea only, restated for KOSIF motion work
+
 ## المصادر والرخص / sources & licences
 
-- الرخص / licences: recipe: owner (KOSIF); the tools keep their own licenses (115) · recipe: owner (KOSIF); Blender is GPL-2.0-or-later (run as a tool, not linked) (4)
+- الرخص / licences: recipe: owner (KOSIF); the tools keep their own licenses (115) · method idea from MagicPathAI/agent-skills (MIT per its plugin manifests; author MagicPath); close paraphrase, credited (11) · method idea inspired by MagicPath public docs (proprietary); idea only, in KOSIF's terms (8) · recipe: owner (KOSIF); Blender is GPL-2.0-or-later (run as a tool, not linked) (4) · method idea from MagicPathAI/agent-skills (MIT per its plugin manifests) plus MagicPath public docs (idea only); KOSIF wording (1)
 - الأفكار مكتوبة بكلماتنا مع رابط المصدر؛ لا يُنسخ نص طرف ثالث طويل. Ideas are paraphrased with a link to the source; no long third-party text is copied. `—` = no licence recorded (own method or own wording).
 
 ---
