@@ -1,0 +1,339 @@
+<!doctype html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=1080">
+<title>دعاء يوم الخميس</title>
+<style>
+  @font-face { font-family: Ruqaa; src: url(../fonts/ArefRuqaa-Bold.ttf); font-display: block; }
+  @font-face { font-family: Kufi; src: url(../fonts/ReemKufi-VF.ttf); font-weight: 400 700; font-display: block; }
+  @font-face { font-family: Amiri; src: url(../fonts/Amiri-Bold.ttf); font-display: block; }
+  @font-face { font-family: Jumuah; src: url(../fonts/KOSIFJumuah-Bold.ttf); font-display: block; }
+  html, body { margin: 0; background: #120b05; }
+  canvas { display: block; width: 1080px; height: 1920px; }
+</style>
+<script src="words.js"></script>
+</head>
+<body>
+<canvas id="c" width="1080" height="1920"></canvas>
+<script>
+(() => {
+  const W = 1080, H = 1920, FPS = 30, DURATION = 24.845;
+  const cv = document.getElementById('c'), ctx = cv.getContext('2d');
+  const GOLD = '#f3cf7a', GOLD_HI = '#fff0c2', CREAM = '#fff7ea';
+
+  // ---------- easing / helpers
+  const clamp = (x, a = 0, b = 1) => Math.min(b, Math.max(a, x));
+  const lin = (t, a, b) => clamp((t - a) / (b - a));
+  const easeOut = x => 1 - Math.pow(1 - x, 3);
+  const easeInOut = x => x < .5 ? 4 * x * x * x : 1 - Math.pow(-2 * x + 2, 3) / 2;
+  let seed = 7; const rnd = () => (seed = (seed * 16807) % 2147483647) / 2147483647;
+
+  // ---------- arch (mihrab window)
+  const A = { x0: 110, x1: 970, apex: 505, shoulder: 905, bottom: 1450 };
+  function archPath(d = 0) {
+    const x0 = A.x0 - d, x1 = A.x1 + d, cx = (x0 + x1) / 2, ap = A.apex - d * 1.4, sh = A.shoulder, b = A.bottom + d;
+    ctx.beginPath();
+    ctx.moveTo(x0, b); ctx.lineTo(x0, sh);
+    ctx.bezierCurveTo(x0, sh - 230, cx - 150, ap + 95, cx, ap);
+    ctx.bezierCurveTo(cx + 150, ap + 95, x1, sh - 230, x1, sh);
+    ctx.lineTo(x1, b); ctx.closePath();
+  }
+  const ARCH_LEN = 2 * (A.bottom - A.shoulder) + (A.x1 - A.x0) + 2 * 560 + 600;
+
+  // ---------- frame cache
+  const cache = new Map();
+  function img(src) {
+    if (cache.has(src)) return cache.get(src);
+    const im = new Image(); im.src = src;
+    const p = im.decode().then(() => im, () => null);
+    cache.set(src, p);
+    if (cache.size > 400) cache.delete(cache.keys().next().value);
+    return p;
+  }
+  const pad = n => String(n).padStart(4, '0');
+  function frameOf(s, t) {
+    const k = clamp(Math.floor((t - s.from) * FPS + 1e-6) + 1, 1, s.frames);
+    const dir = '../build/frames/s' + String(s.i).padStart(2, '0') + '/';
+    return { a: dir + 'a_' + pad(k) + '.jpg', b: dir + 'b_' + pad(k) + '.jpg' };
+  }
+  // shot weights: hard switch at the cut, softened by a 0.36 s dissolve
+  function activeShots(t) {
+    const out = [];
+    SHOTS.forEach((s, i) => {
+      const fadeIn = i === 0 ? 1 : easeInOut(lin(t, s.cut - .18, s.cut + .18));
+      const fadeOut = i === SHOTS.length - 1 ? 1 : 1 - easeInOut(lin(t, s.next - .18, s.next + .18));
+      const w = Math.min(fadeIn, fadeOut);
+      if (w > 0.001) out.push({ s, w, p: lin(t, s.cut, s.next) });
+    });
+    return out;
+  }
+
+  // ---------- motes
+  const motes = Array.from({ length: 70 }, () => ({
+    x: rnd() * W, y: rnd() * H, r: 1.2 + rnd() * 3.2, v: 18 + rnd() * 40, ph: rnd() * 6.28, sway: 10 + rnd() * 30,
+  }));
+
+  // ---------- drawing parts
+  function drawBackdrop(list, bgImgs) {
+    ctx.fillStyle = '#120b05'; ctx.fillRect(0, 0, W, H);
+    list.forEach((it, k) => {
+      if (!bgImgs[k]) return;
+      ctx.globalAlpha = it.w;
+      const z = 1.06 + .04 * it.p;
+      ctx.drawImage(bgImgs[k], (W - W * z) / 2, (H - H * z) / 2, W * z, H * z);
+    });
+    ctx.globalAlpha = 1;
+    // warm wash + vignette so type always reads
+    const g = ctx.createLinearGradient(0, 0, 0, H);
+    g.addColorStop(0, 'rgba(18,10,4,.72)'); g.addColorStop(.3, 'rgba(30,16,6,.38)');
+    g.addColorStop(.72, 'rgba(25,13,5,.45)'); g.addColorStop(1, 'rgba(12,7,3,.86)');
+    ctx.fillStyle = g; ctx.fillRect(0, 0, W, H);
+  }
+
+  function drawArchImage(list, aImgs, t) {
+    ctx.save(); archPath(); ctx.clip();
+    const bw = A.x1 - A.x0, bh = A.bottom - A.apex;
+    list.forEach((it, k) => {
+      const im = aImgs[k]; if (!im) return;
+      ctx.globalAlpha = it.w;
+      const base = Math.max(bw / im.width, bh / im.height);
+      const z = base * (1.0 + .075 * easeInOut(it.p));
+      const dir = it.s.i % 2 ? 1 : -1;
+      const dx = dir * 18 * (it.p - .5), dy = -10 * it.p;
+      const w = im.width * z, h = im.height * z;
+      ctx.drawImage(im, A.x0 + (bw - w) / 2 + dx, A.apex + (bh - h) / 2 + dy, w, h);
+    });
+    ctx.globalAlpha = 1;
+    // inner shading: bottom fade for the handle, soft top glow
+    const g = ctx.createLinearGradient(0, A.apex, 0, A.bottom);
+    g.addColorStop(0, 'rgba(255,214,140,.10)'); g.addColorStop(.7, 'rgba(0,0,0,0)'); g.addColorStop(1, 'rgba(10,5,2,.62)');
+    ctx.fillStyle = g; ctx.fillRect(A.x0, A.apex, bw, bh);
+    // the sun line: "لا تغرب شمس هذا اليوم" gets a slow light leak
+    const sun = lin(t, 10.7, 11.6) * (1 - lin(t, 13.2, 13.8));
+    if (sun > 0) {
+      ctx.globalCompositeOperation = 'screen';
+      const sx = 700 - 160 * lin(t, 10.7, 13.8), sy = 760;
+      const rg = ctx.createRadialGradient(sx, sy, 10, sx, sy, 620);
+      rg.addColorStop(0, `rgba(255,214,130,${.75 * sun})`); rg.addColorStop(.35, `rgba(255,150,60,${.32 * sun})`);
+      rg.addColorStop(1, 'rgba(255,120,40,0)');
+      ctx.fillStyle = rg; ctx.fillRect(A.x0, A.apex, bw, bh);
+      ctx.globalCompositeOperation = 'source-over';
+    }
+    ctx.restore();
+  }
+
+  function drawArchFrame(t) {
+    const draw = easeInOut(lin(t, .05, 1.7));
+    const glow = .55 + .45 * lin(t, 23.2, 24.2);
+    ctx.save();
+    ctx.lineJoin = 'round';
+    [[0, 3.2, 1], [16, 1.4, .7]].forEach(([d, lw, al]) => {
+      archPath(d);
+      ctx.setLineDash([ARCH_LEN * draw, ARCH_LEN]);
+      ctx.lineDashOffset = 0;
+      ctx.strokeStyle = `rgba(243,207,122,${al})`; ctx.lineWidth = lw;
+      ctx.shadowColor = 'rgba(255,200,110,.9)'; ctx.shadowBlur = 18 * glow;
+      ctx.stroke();
+    });
+    // a travelling glint around the frame
+    if (draw >= 1) {
+      archPath(0);
+      ctx.setLineDash([140, ARCH_LEN]);
+      ctx.lineDashOffset = -((t * 420) % (ARCH_LEN + 140));
+      ctx.strokeStyle = 'rgba(255,246,214,.95)'; ctx.lineWidth = 4.5; ctx.shadowBlur = 30;
+      ctx.stroke();
+    }
+    ctx.restore();
+    // eight-point star at the apex
+    const sa = easeOut(lin(t, 1.2, 1.9));
+    if (sa > 0) {
+      ctx.save(); ctx.translate(540, A.apex - 40); ctx.rotate(t * .25); ctx.scale(sa, sa);
+      ctx.fillStyle = GOLD; ctx.shadowColor = 'rgba(255,205,110,1)'; ctx.shadowBlur = 24 * glow;
+      for (let k = 0; k < 2; k++) { ctx.rotate(Math.PI / 4); ctx.fillRect(-15, -15, 30, 30); }
+      ctx.fillStyle = '#2a1708'; ctx.beginPath(); ctx.arc(0, 0, 7, 0, 7); ctx.fill();
+      ctx.restore();
+    }
+  }
+
+  function drawMotes(t) {
+    ctx.save(); ctx.globalCompositeOperation = 'lighter';
+    const amp = .5 + .5 * lin(t, 23.3, 24.3);
+    motes.forEach(m => {
+      const y = ((m.y - m.v * t) % H + H) % H, x = m.x + Math.sin(t * .7 + m.ph) * m.sway;
+      const tw = .35 + .65 * Math.abs(Math.sin(t * 1.6 + m.ph));
+      const g = ctx.createRadialGradient(x, y, 0, x, y, m.r * 4);
+      g.addColorStop(0, `rgba(255,226,160,${.55 * tw * amp})`); g.addColorStop(1, 'rgba(255,200,120,0)');
+      ctx.fillStyle = g; ctx.beginPath(); ctx.arc(x, y, m.r * 4, 0, 7); ctx.fill();
+    });
+    ctx.restore();
+  }
+
+  function goldFill(y0, y1) {
+    const g = ctx.createLinearGradient(0, y0, 0, y1);
+    g.addColorStop(0, GOLD_HI); g.addColorStop(.5, GOLD); g.addColorStop(1, '#c08a3a');
+    return g;
+  }
+
+  // "الخميس" is written right to left like a pen stroke
+  function drawTitle(t) {
+    const p = easeInOut(lin(t, .15, 1.35));
+    if (p <= 0) return;
+    ctx.save();
+    ctx.font = '150px Ruqaa'; ctx.textAlign = 'center'; ctx.direction = 'rtl'; ctx.textBaseline = 'alphabetic';
+    const w = ctx.measureText('الخميس').width, right = 540 + w / 2 + 30, left = 540 - w / 2 - 30;
+    const edge = right - (right - left) * p;
+    ctx.beginPath(); ctx.rect(edge, 120, right - edge + 10, 280); ctx.clip();
+    ctx.shadowColor = 'rgba(255,190,90,.85)'; ctx.shadowBlur = 26;
+    ctx.fillStyle = goldFill(200, 345);
+    ctx.fillText('الخميس', 540, 335);
+    ctx.restore();
+    if (p < 1) { // the nib spark
+      ctx.save(); ctx.globalCompositeOperation = 'lighter';
+      const g = ctx.createRadialGradient(edge, 280, 0, edge, 280, 70);
+      g.addColorStop(0, 'rgba(255,240,200,.95)'); g.addColorStop(1, 'rgba(255,190,90,0)');
+      ctx.fillStyle = g; ctx.fillRect(edge - 70, 210, 140, 140); ctx.restore();
+    }
+  }
+
+  // date row: odometer rolls 08 -> 22, the Hijri date settles beside it
+  function drawDate(t) {
+    const a = easeOut(lin(t, .55, 1.0));
+    if (a <= 0) return;
+    ctx.save(); ctx.globalAlpha = a;
+    ctx.font = '600 54px Kufi'; ctx.textBaseline = 'middle'; ctx.direction = 'ltr'; ctx.textAlign = 'left';
+    const y = 425, rest = '.10.2026', dw = ctx.measureText('00').width, rw = ctx.measureText(rest).width;
+    ctx.direction = 'rtl'; ctx.font = '500 48px Kufi';
+    const hij = '١١ جمادى الأولى ١٤٤٨ هـ', hw = ctx.measureText(hij).width;
+    const gap = 70, total = dw + rw + gap + hw, x0 = 540 - total / 2;
+    // Gregorian on the left (reads LTR), Hijri on the right
+    ctx.direction = 'ltr'; ctx.textAlign = 'left'; ctx.font = '600 54px Kufi';
+    ctx.fillStyle = CREAM; ctx.shadowColor = 'rgba(0,0,0,.6)'; ctx.shadowBlur = 12;
+    ctx.fillText(rest, x0 + dw, y);
+    const roll = easeInOut(lin(t, .6, 1.5));
+    const tens = [0, 1, 2], ones = [8, 9, 0, 1, 2];
+    ctx.save(); ctx.beginPath(); ctx.rect(x0 - 4, y - 32, dw + 8, 64); ctx.clip();
+    [[tens, 0], [ones, dw / 2]].forEach(([seq, ox]) => {
+      const pos = roll * (seq.length - 1);
+      seq.forEach((d, k) => {
+        const yy = y + (k - pos) * 60;
+        if (Math.abs(yy - y) < 64) { ctx.fillStyle = roll >= 1 ? GOLD : CREAM; ctx.fillText(String(d), x0 + ox, yy); }
+      });
+    });
+    ctx.restore();
+    // diamond divider
+    const dx = x0 + dw + rw + gap / 2;
+    ctx.save(); ctx.translate(dx, y); ctx.rotate(Math.PI / 4); ctx.fillStyle = GOLD; ctx.fillRect(-7, -7, 14, 14); ctx.restore();
+    // Hijri
+    const ha = easeOut(lin(t, 1.0, 1.6));
+    ctx.globalAlpha = a * ha; ctx.direction = 'rtl'; ctx.textAlign = 'right'; ctx.font = '500 48px Kufi';
+    ctx.fillStyle = CREAM; ctx.fillText(hij, x0 + total, y + 2 + 12 * (1 - ha));
+    ctx.restore();
+  }
+
+  function drawHandle(t) {
+    const a = easeOut(lin(t, 1.6, 2.4));
+    if (a <= 0) return;
+    ctx.save(); ctx.globalAlpha = a * .92;
+    ctx.font = '600 34px Kufi'; ctx.direction = 'ltr'; ctx.textAlign = 'center'; ctx.textBaseline = 'middle';
+    if ('letterSpacing' in ctx) ctx.letterSpacing = '6px';
+    ctx.fillStyle = CREAM; ctx.shadowColor = 'rgba(0,0,0,.7)'; ctx.shadowBlur = 10;
+    ctx.fillText('@OAUN.11', 540, A.bottom - 48);
+    ctx.fillStyle = GOLD; ctx.fillRect(470, A.bottom - 20, 140 * a, 2);
+    ctx.restore();
+  }
+
+  // ---------- the dua, word by word
+  const LINE_H = 104, Y_TEXT = 1590, MAXW = 800;
+  function layout(ph, font) {
+    ctx.font = font;
+    const space = ctx.measureText(' ').width * 1.15;
+    const lines = [[]];
+    ph.words.forEach((w, k) => {
+      const ww = ctx.measureText(w.w).width;
+      let line = lines[lines.length - 1];
+      const cur = line.reduce((s, x) => s + x.ww + space, 0);
+      if ((ph.break && k === ph.break) || (line.length && cur + ww > MAXW)) { lines.push([]); line = lines[lines.length - 1]; }
+      line.push({ ...w, ww });
+    });
+    // RTL placement: each line centred, first word at the right
+    const out = [];
+    lines.forEach((ln, li) => {
+      const lw = ln.reduce((s, x) => s + x.ww, 0) + space * (ln.length - 1);
+      let x = 540 + lw / 2;
+      ln.forEach(w => { out.push({ ...w, cx: x - w.ww / 2, line: li }); x -= w.ww + space; });
+    });
+    return { words: out, n: lines.length };
+  }
+
+  function drawPhrase(ph, t, idx) {
+    const isFinal = idx === WORDS.length - 1;
+    const font = '76px Amiri';
+    const L = layout(ph, font);
+    const next = WORDS[idx + 1];
+    const out = next ? easeInOut(lin(t, next.s - .2, next.s + .05)) : 0;
+    const y0 = Y_TEXT - (L.n - 1) * LINE_H / 2 - 40 * out;
+    ctx.save(); ctx.textAlign = 'center'; ctx.textBaseline = 'middle'; ctx.direction = 'rtl';
+    L.words.forEach(w => {
+      const appear = easeOut(lin(t, w.s - .14, w.s + .16));
+      if (appear <= 0) return;
+      const amen = isFinal && w.w === 'آمين';
+      const active = t >= w.s - .05 && t < w.e + .12;
+      const y = y0 + w.line * LINE_H + 26 * (1 - appear);
+      ctx.globalAlpha = appear * (1 - out);
+      if (amen) {
+        const pulse = 1 + .04 * Math.sin((t - w.s) * 5);
+        const sc = (.75 + .25 * easeOut(lin(t, w.s - .1, w.s + .45))) * pulse;
+        ctx.save(); ctx.translate(540 - 115, y0 + 8); ctx.scale(sc, sc);
+        ctx.font = '150px Jumuah'; ctx.fillStyle = goldFill(-80, 60);
+        ctx.shadowColor = 'rgba(255,190,90,.95)'; ctx.shadowBlur = 40;
+        ctx.fillText('آمين', 0, 0); ctx.restore();
+        return;
+      }
+      ctx.font = font;
+      ctx.shadowColor = active ? 'rgba(255,190,90,.95)' : 'rgba(0,0,0,.75)';
+      ctx.shadowBlur = active ? 34 : 14;
+      ctx.fillStyle = active ? GOLD_HI : CREAM;
+      const cx = isFinal ? 540 + 150 : w.cx;
+      ctx.fillText(w.w, cx, y);
+      if (active) { ctx.shadowBlur = 0; ctx.fillStyle = GOLD; ctx.fillText(w.w, cx, y); }
+    });
+    ctx.restore();
+  }
+
+  function drawDua(t) {
+    WORDS.forEach((ph, i) => {
+      const next = WORDS[i + 1];
+      if (t >= ph.s - .2 && (!next || t < next.s + .1)) drawPhrase(ph, t, i);
+    });
+  }
+
+  // ---------- seek
+  async function seek(t) {
+    t = clamp(t, 0, DURATION);
+    const list = activeShots(t);
+    const files = list.map(it => frameOf(it.s, t));
+    const [aImgs, bImgs] = await Promise.all([
+      Promise.all(files.map(f => img(f.a))), Promise.all(files.map(f => img(f.b))),
+    ]);
+    // prefetch the next frame of each live shot
+    list.forEach(it => { const f = frameOf(it.s, t + 1 / FPS); img(f.a); img(f.b); });
+    drawBackdrop(list, bImgs);
+    drawArchImage(list, aImgs, t);
+    drawMotes(t);
+    drawArchFrame(t);
+    drawTitle(t);
+    drawDate(t);
+    drawHandle(t);
+    drawDua(t);
+  }
+
+  window.__kosif = { duration: DURATION, fps: FPS, seek };
+  window.__kosifReady = Promise.all(['150px Ruqaa', '600 50px Kufi', '76px Amiri', '150px Jumuah']
+    .map(f => document.fonts.load(f, 'الخميس آمين 2026'))).then(() => document.fonts.ready).then(() => true);
+  const t0 = parseFloat(new URLSearchParams(location.search).get('t') || '0') || 0;
+  window.__kosifReady.then(() => seek(t0));
+})();
+</script>
+</body>
+</html>

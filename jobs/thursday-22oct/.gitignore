@@ -3,3 +3,6 @@ source/*.m4a
 source/*.wav
 source/frames/
 source/*.info.json
+stock/
+build/frames/
+out/
