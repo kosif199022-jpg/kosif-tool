@@ -81,18 +81,42 @@ def refresh_index(space):
     return index
 
 def shortlist(query,data,pool):
+    """Rank direct textual hits, then expand a bounded complementary cross-domain graph."""
     q=words(query)
-    ranked=[]
-    for item in data.get("items",[]):
+    items=data.get("items",[])
+    by_id={item["id"]:item for item in items}
+    scores={}
+    for item in items:
         label=" ".join([str(item.get("name_en","")),str(item.get("name_ar","")),
                         " ".join(item.get("focus",[])),
                         " ".join(item.get("families",{}).keys())])
         hits=len(q & words(label))
-        if not hits:
-            continue
-        readiness=float(item.get("ready_now",0))/max(1,float(item.get("size",1)))
-        ranked.append((round(10*hits/max(1,len(q)**0.5)+2*readiness,4),item))
-    return sorted(ranked,key=lambda x:(-x[0],x[1]["id"]))[:pool]
+        if hits:
+            readiness=float(item.get("ready_now",0))/max(1,float(item.get("size",1)))
+            scores[item["id"]]=(round(10*hits/max(1,len(q)**0.5)+2*readiness,4),
+                                "direct_relevance")
+    direct=sorted(((score,bid) for bid,(score,_) in scores.items()),reverse=True)
+    # Progressive graph expansion: explore actual catalog links from strong direct hits.
+    # Non-matching neighbors are only *candidates*, not verified compatible tools.
+    for strength,bid in direct[:min(20,pool)]:
+        origin=by_id[bid]
+        for edge in origin.get("links",[])[:6]:
+            nid=edge.get("id")
+            neighbor=by_id.get(nid)
+            if not neighbor or neighbor.get("domain")==origin.get("domain"):
+                continue
+            try:
+                affinity=max(0.0,min(1.0,float(edge.get("sim",0.0))))
+            except (ValueError,TypeError):
+                continue
+            if affinity<0.12:
+                continue
+            candidate=round(strength*affinity*0.68,4)
+            if candidate>scores.get(nid,(0.0,None))[0]:
+                scores[nid]=(candidate,"catalog_link_cross_domain_unverified")
+    return sorted(((score,by_id[bid]) for bid,(score,why) in scores.items()),
+                  key=lambda x:(-x[0],x[1]["id"]))[:pool]
+
 
 def propose(args):
     data=read(Path(args.catalog_file))
@@ -128,6 +152,14 @@ def propose(args):
             break
     if not selected:
         raise ValueError("No viable distinct candidate superpowers")
+    selected_ids={c["id"] for c in selected}
+    by_catalog_id={s["id"]:s for s in data.get("items",[])}
+    integration_edges=[
+        {"from":c["id"],"to":edge["id"],"catalog_similarity":edge.get("sim"),
+         "relation":"candidate_complement_needs_input_output_validation"}
+        for c in selected for edge in by_catalog_id[c["id"]].get("links",[])
+        if edge.get("id") in selected_ids and edge.get("id") != c["id"]
+    ]
     stages=[{"stage":stage,"capability_ids":[c["id"] for c in selected if c["role"]==stage],
              "input":"task contract or predecessor artifact",
              "output":"observable stage artifact","acceptance":"specific measured check required",
@@ -139,7 +171,7 @@ def propose(args):
         "created_at":now,"updated_at":now,"status":"candidate",
         "goal":args.goal,"goal_sha256":hashlib.sha256(args.goal.encode()).hexdigest(),
         "catalog_sha256":hashlib.sha256(Path(args.catalog_file).read_bytes()).hexdigest(),
-        "scanned_candidates":len(ranked),"capabilities":selected,"workflow":stages,
+        "scanned_candidates":len(ranked),"capabilities":selected,"integration_graph":integration_edges,"workflow":stages,
         "methods":[{"id":"A","method":"minimal reliable workflow"},
                    {"id":"B","method":"cross-domain new composition + synergy test"},
                    {"id":"C","method":"ambitious professional pipeline + stricter gates"}],
