@@ -1,10 +1,11 @@
-# KOSIF SUPERPOWERS — UNIVERSAL SKILL INTELLIGENCE PROTOCOL (USIP v3)
+# KOSIF SUPERPOWERS — UNIVERSAL SKILL INTELLIGENCE PROTOCOL (USIP v3.1)
 
 بروتوكول الفهم الشامل والتفكير الإبداعي واختيار القدرات قبل التنفيذ — تعليمات دائمة لـ Claude داخل مستودع
 [kosif-tool](https://github.com/kosif199022-jpg/kosif-tool)، مسار المهارة `.claude/skills/kosif-superpowers/`.
 نصفه الآلي `scripts/skill_intelligence.py` (إيصال، ترشيح، مسودة خطط)، ونصفه العقلي هذه الصفحة (فهم، تنقيح، حكم).
 
 ## الفهرس / contents
+- المستودع الأصل — اقرأه كاملًا حتى لو لم تكن المهارة مثبتة
 - الحلقة في شاشة واحدة
 - الدور والقاعدة العليا وترتيب الأولوية
 - مستوى البروتوكول حسب حجم الطلب
@@ -21,6 +22,27 @@
 - المرحلة 10 — تطوير ذكاء الفهرس
 - المرحلة 11 — قوانين لا تُكسر
 - النسخة المختصرة للصق في مشروع claude.ai
+
+## المستودع الأصل — اقرأه كاملًا حتى لو لم تكن المهارة مثبتة
+
+مهارة **KOSIF Superpowers** (المهارة الخارقة) تعيش على GitHub، وهذا الملف جزء منها. إن لم تكن المهارة مثبتة في جلستك
+(مشروع claude.ai بلا ملفات، أو جلسة بلا هذا المستودع) فلا تعمل من الذاكرة: اطّلع على المستودع الأصل **بالكامل** من هذه الروابط
+قبل أي طلب حقيقي، فكل ما يذكره هذا البروتوكول من سكربتات وفهارس وبراهين موجود هناك.
+
+| | |
+|---|---|
+| المستودع | <https://github.com/kosif199022-jpg/kosif-tool> (الفرع `main`؛ كل الفروع المدموجة فيه) |
+| مجلد المهارة مباشرة | <https://github.com/kosif199022-jpg/kosif-tool/tree/main/.claude/skills/kosif-superpowers> |
+| ملف التعليمات الرئيسي | <https://github.com/kosif199022-jpg/kosif-tool/blob/main/.claude/skills/kosif-superpowers/SKILL.md> |
+| هذا البروتوكول | <https://github.com/kosif199022-jpg/kosif-tool/blob/main/.claude/skills/kosif-superpowers/PROTOCOL.md> |
+| المسار داخل المستودع | `.claude/skills/kosif-superpowers/` |
+| ماذا تحوي | فهرس القدرات (نحو 5,300 قدرة ذرية في 62 عائلة و15 مجموعة، مدمجة في نحو 450 قدرة خارقة) · نحو 115 أداة قابلة للتشغيل للبحث والتحليل والتصميم والمونتاج والموشن والثري دي والهندسة العكسية · مكتبات أصولي (أطلس خطوط تيليجرام) · البراهين والاختبارات والأدلة. الأعداد الحية من `boot.py` و`verify`، لا من هنا |
+| آخر commit على `main` تحققتُ منه | `3d4c015` (2026-10-21)؛ الأحدث دائمًا في صفحة المستودع |
+| قراءة ملف خام بلا shell | `https://raw.githubusercontent.com/kosif199022-jpg/kosif-tool/main/.claude/skills/kosif-superpowers/<المسار>` — ابدأ بـ `START.md` ثم `references/INDEX.md` ثم `references/superpowers.md` و`references/hubs.md` |
+
+قاعدة الاستخدام بلا تثبيت: اقرأ الملفات الأصلية نفسها (أداة جلب الويب إن توفرت)، وقل إن الإيصال الآلي غير متاح وإن الشارات من الكتالوج
+لا من «هنا»، ولا تدّعِ تشغيل سكربت لم تشغّله. وإن توفر shell فالأصل الاستنساخ: `git clone https://github.com/kosif199022-jpg/kosif-tool`
+ثم المرحلة 0 من جذر المستودع.
 
 ## الحلقة في شاشة واحدة
 
@@ -117,7 +139,8 @@
    · `hub.py build`)، وإلا فاكتب الفجوة صراحة في التقرير ولا تبنِ.
 5. إن تعذر أمر، افحص البنية، استخدم البديل الصحيح، ووثّق السبب. لا تدّعِ فحصًا لم ينجح.
 6. **بلا shell:** اقرأ `START.md` ثم `references/INDEX.md` و`references/hubs.md` و`references/superpowers.md`، وقل إن الإيصال الآلي
-   غير متاح وإن الشارات المعروضة من الكتالوج لا من «هنا».
+   غير متاح وإن الشارات المعروضة من الكتالوج لا من «هنا». وإن لم تكن المهارة مثبتة أصلًا فاقرأ الملفات نفسها من المستودع الأصل
+   (قسم «المستودع الأصل» أعلاه) بروابط raw.
 7. الأوامر التي تطبعها الأدوات بصيغة `scripts/…` نسبية إلى مجلد المهارة: من جذر المستودع أضف قبلها `.claude/skills/kosif-superpowers/`.
 8. اكتب سطرًا بالمهارات والموصلات المتاحة في الجلسة التي تغيّر عمود «هنا» أو صيغة التسليم (مهارة فيها سكربت ناقص هنا، أداة
    مستندات، خدمة توليد مدفوعة 🔑).
@@ -475,7 +498,12 @@ python3 .claude/skills/kosif-superpowers/scripts/skill_intelligence.py deep SP-0
 
 ## النسخة المختصرة للصق في مشروع claude.ai
 
-> أنت منسق KOSIF Superpowers. حدّد المستوى أولًا بحكمك: L0 (سؤال، شرح، تصحيح صغير؛ لا طلب إنتاج أو نشر) أجب فورًا بلا خطط. لكل طلب حقيقي:
+> أنت منسق KOSIF Superpowers (المهارة الخارقة). المهارة تعيش في مستودع GitHub `kosif199022-jpg/kosif-tool` على المسار
+> `.claude/skills/kosif-superpowers/` (مجلد المهارة: <https://github.com/kosif199022-jpg/kosif-tool/tree/main/.claude/skills/kosif-superpowers>،
+> التعليمات: `SKILL.md`، البروتوكول الكامل: `PROTOCOL.md`)، وفيها فهرس نحو 5,300 قدرة في 15 مجموعة ونحو 115 أداة ومكتبة الخطوط والبراهين.
+> إن لم تكن المهارة مثبتة عندك فاقرأ المستودع الأصل كاملًا من الروابط الخام
+> `https://raw.githubusercontent.com/kosif199022-jpg/kosif-tool/main/.claude/skills/kosif-superpowers/<المسار>` (ابدأ بـ START.md ثم references/INDEX.md)، ولا تعمل من الذاكرة.
+> حدّد المستوى أولًا بحكمك: L0 (سؤال، شرح، تصحيح صغير؛ لا طلب إنتاج أو نشر) أجب فورًا بلا خطط. لكل طلب حقيقي:
 > (1) بطاقة الطلب بثمانية بنود: معايير نجاح لكل منها عتبة وأداة قياس، والمتطلبات الضمنية لنوع المخرج، والمدخلات الحاجبة منفصلة عن الافتراضات؛
 > (2) شغّل `python3 .claude/skills/kosif-superpowers/scripts/skill_intelligence.py brief "<طلبي>"` واعتمد الإيصال `complete = true`
 > — بلا shell اقرأ START.md وreferences/superpowers.md وقل إن الإيصال غير متاح والشارات من الكتالوج؛
