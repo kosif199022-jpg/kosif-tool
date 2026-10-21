@@ -1,0 +1,87 @@
+{
+ "$schema": "https://json-schema.org/draft/2020-12/schema",
+ "$id": "https://github.com/kosif199022-jpg/kosif-tool/.claude/skills/kosif-superpowers/schemas/fusionforge.bundle.v2.json",
+ "title": "FusionForge v2 export bundle (<space>/exports/<project>-<YYYYMMDD>.json by default)",
+ "description": "Opt-in persistence of one project's recipes and lessons, redacted (no absolute paths; evidence sources removed, sha256 kept). Never auto-committed. import accepts only a bundle of the same project, keeps each recipe's status with imported: true; evidence that is not on the importing machine is a warning (EVIDENCE_NOT_LOCAL) and reuse weighs imported recipes x0.8. A recipe imported as tested becomes verified only after a verify-node trace with evidence on the importing machine (GATE_EVIDENCE_NOT_LOCAL otherwise), and promote refuses imported recipes that were not verified there (NOT_PROVEN).",
+ "type": "object",
+ "required": [
+  "schema",
+  "project",
+  "exported_at",
+  "recipes"
+ ],
+ "properties": {
+  "schema": {
+   "const": "kosif.fusionforge.bundle.v2"
+  },
+  "engine": {
+   "type": "string"
+  },
+  "project": {
+   "type": "string",
+   "pattern": "^[A-Za-z0-9_-]{1,70}$"
+  },
+  "exported_at": {
+   "type": "string"
+  },
+  "include_candidates": {
+   "type": "boolean"
+  },
+  "recipes": {
+   "type": "array",
+   "items": {
+    "$ref": "fusionforge.recipe.v2.json"
+   }
+  },
+  "lessons": {
+   "type": "array",
+   "items": {
+    "type": "object",
+    "required": [
+     "id",
+     "type",
+     "recipe"
+    ],
+    "properties": {
+     "id": {
+      "type": "string",
+      "pattern": "^LSN-[0-9a-f]{10}$"
+     },
+     "type": {
+      "enum": [
+       "WORKED",
+       "FAILED",
+       "REPLACED",
+       "HANDOFF",
+       "RECIPE_FAILED"
+      ]
+     },
+     "recipe": {
+      "type": "string"
+     },
+     "node": {
+      "type": [
+       "string",
+       "null"
+      ]
+     },
+     "stage": {
+      "type": [
+       "string",
+       "null"
+      ]
+     }
+    }
+   }
+  },
+  "skipped_invalid_files": {
+   "type": "array",
+   "items": {
+    "type": "string"
+   }
+  },
+  "note": {
+   "type": "string"
+  }
+ }
+}

@@ -77,6 +77,12 @@ jobs:
         run: python3 -m unittest discover -s .claude/skills/kosif-superpowers/evals -p 'test_atlas_metadata_audit.py' -v
       - name: Skill intelligence protocol
         run: python3 -m unittest discover -s .claude/skills/kosif-superpowers/evals -p 'test_skill_intelligence.py' -v
+      - name: USIP v5.3 protocol structure, routing quality, FusionForge v2 and shadow evals
+        run: |
+          python3 -m unittest discover -s .claude/skills/kosif-superpowers/evals -p 'test_protocol_structure.py' -v
+          python3 -m unittest discover -s .claude/skills/kosif-superpowers/evals -p 'test_routing_quality.py' -v
+          python3 -m unittest discover -s .claude/skills/kosif-superpowers/evals -p 'test_fusionforge.py' -v
+          python3 -m unittest discover -s .claude/skills/kosif-superpowers/evals -p 'test_usip_shadow.py' -v
       - name: Superpower fusion, groups and mind map
         run: python3 -m unittest discover -s .claude/skills/kosif-superpowers/evals -p 'test_superpower_fusion.py' -v
       - name: Groups index

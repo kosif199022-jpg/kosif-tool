@@ -79,6 +79,10 @@ jobs:
           python3 .claude/skills/kosif-superpowers/scripts/capability_runtime_router.py --task 'كاتانا مونتاج فيديو' --json
       - name: Test measured reference visual fingerprints and Remotion color integration
         run: python3 -m unittest discover -s .claude/skills/kosif-superpowers/evals -p 'test_reference_visual*.py' -v
+      - name: Test the USIP protocol structure and FusionForge v2 before packaging
+        run: |
+          python3 -m unittest discover -s .claude/skills/kosif-superpowers/evals -p 'test_protocol_structure.py' -v
+          python3 -m unittest discover -s .claude/skills/kosif-superpowers/evals -p 'test_fusionforge.py' -v
       - name: Package portable Claude skill
         run: python3 .claude/skills/kosif-superpowers/scripts/package_skill.py --out dist/kosif-superpowers.skill --lite --with-evals
       - name: Verify distributable contains executable capabilities
@@ -185,7 +189,14 @@ jobs:
                   "references/executable-creative-motion.md",
                   "scripts/source_scout.py",
                   "scripts/rea_bridge.py",
-                  "evals/test_motion_director.py"
+                  "evals/test_motion_director.py",
+                  "PROTOCOL.md",
+                  "references/protocol/A4-fusionforge-composition.md",
+                  "scripts/skill_intelligence.py",
+                  "scripts/fusionforge.py",
+                  "scripts/_secrets.py",
+                  "schemas/fusionforge.recipe.v2.json",
+                  "evals/test_fusionforge.py"
               ]
               root = "kosif-superpowers/"
               missing = [name for name in required if root + name not in names]

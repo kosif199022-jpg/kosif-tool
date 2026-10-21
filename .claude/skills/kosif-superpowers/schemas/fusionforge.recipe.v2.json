@@ -1,0 +1,823 @@
+{
+ "$schema": "https://json-schema.org/draft/2020-12/schema",
+ "$id": "https://github.com/kosif199022-jpg/kosif-tool/.claude/skills/kosif-superpowers/schemas/fusionforge.recipe.v2.json",
+ "title": "FusionForge v2 recipe (out/fusionforge/<project>/recipes/FUSE-*.json)",
+ "description": "A project-scoped composite workflow: typed nodes and handoff edges from a USIP brief, plans A/B/C(/D), the user's plan choice, per-node traces with hashed evidence and an enforced status machine (candidate -> planned -> tested -> verified | failed; verified and failed are final). The engine (scripts/fusionforge.py validate, V01-V12) enforces what JSON Schema cannot: handoff kinds, executor resolution, state-log replay, evidence hashes and the verified gate.",
+ "type": "object",
+ "required": [
+  "schema",
+  "id",
+  "project",
+  "goal",
+  "status",
+  "status_log",
+  "nodes",
+  "edges",
+  "plans",
+  "capabilities",
+  "traces",
+  "evidence"
+ ],
+ "properties": {
+  "schema": {
+   "const": "kosif.fusionforge.recipe.v2"
+  },
+  "engine": {
+   "type": "string"
+  },
+  "protocol": {
+   "type": "string"
+  },
+  "id": {
+   "type": "string",
+   "pattern": "^FUSE-[0-9]{8}-[0-9a-f]{10}$"
+  },
+  "project": {
+   "type": "string",
+   "pattern": "^[A-Za-z0-9_-]{1,70}$"
+  },
+  "goal": {
+   "type": "string"
+  },
+  "goal_terms": {
+   "type": "array",
+   "items": {
+    "type": "string"
+   }
+  },
+  "created_at": {
+   "type": [
+    "string",
+    "null"
+   ]
+  },
+  "updated_at": {
+   "type": [
+    "string",
+    "null"
+   ]
+  },
+  "status": {
+   "enum": [
+    "candidate",
+    "planned",
+    "tested",
+    "verified",
+    "failed"
+   ]
+  },
+  "status_log": {
+   "type": "array",
+   "minItems": 1,
+   "items": {
+    "$ref": "#/$defs/status_entry"
+   }
+  },
+  "provenance": {
+   "type": "object",
+   "properties": {
+    "kind": {
+     "enum": [
+      "brief",
+      "fork",
+      "card",
+      "migrated"
+     ]
+    },
+    "forked_from": {
+     "type": [
+      "string",
+      "null"
+     ]
+    }
+   }
+  },
+  "brief": {
+   "type": "object",
+   "description": "source (file | in_process | card | none), sha256, level, primary, deliverables, recommended, catalog_sha256 (the brief's coverage receipt), must_haves, file (recipes/<id>.brief.json)"
+  },
+  "catalog": {
+   "type": "object",
+   "properties": {
+    "file_sha256": {
+     "type": [
+      "string",
+      "null"
+     ]
+    },
+    "items": {
+     "type": [
+      "integer",
+      "null"
+     ]
+    }
+   }
+  },
+  "deliverable_kind": {
+   "$ref": "#/$defs/kind"
+  },
+  "capabilities": {
+   "type": "object",
+   "additionalProperties": {
+    "$ref": "#/$defs/capability"
+   }
+  },
+  "nodes": {
+   "type": "array",
+   "items": {
+    "$ref": "#/$defs/node"
+   }
+  },
+  "edges": {
+   "type": "array",
+   "items": {
+    "$ref": "#/$defs/edge"
+   }
+  },
+  "plans": {
+   "type": "object",
+   "propertyNames": {
+    "enum": [
+     "A",
+     "B",
+     "C",
+     "D"
+    ]
+   },
+   "additionalProperties": {
+    "$ref": "#/$defs/plan"
+   }
+  },
+  "suggested_plan": {
+   "type": [
+    "string",
+    "null"
+   ]
+  },
+  "plan_choice": {
+   "type": [
+    "object",
+    "null"
+   ],
+   "required": [
+    "plan",
+    "why",
+    "nodes",
+    "at"
+   ],
+   "properties": {
+    "plan": {
+     "enum": [
+      "A",
+      "B",
+      "C",
+      "D"
+     ]
+    },
+    "why": {
+     "type": "string"
+    },
+    "nodes": {
+     "type": "array",
+     "items": {
+      "type": "string"
+     }
+    },
+    "at": {
+     "type": [
+      "string",
+      "null"
+     ]
+    },
+    "label": {
+     "type": "string"
+    },
+    "suggested_was": {
+     "type": [
+      "string",
+      "null"
+     ]
+    }
+   }
+  },
+  "tool_states": {
+   "type": "object"
+  },
+  "similar_unverified": {
+   "type": "array",
+   "description": "catalog similarity links to capabilities NOT in the graph: discovery hints only, never handoffs",
+   "items": {
+    "type": "object",
+    "properties": {
+     "from": {
+      "type": "string"
+     },
+     "to": {
+      "type": "string"
+     },
+     "sim": {
+      "type": "number"
+     },
+     "relation": {
+      "const": "similar_unverified"
+     }
+    }
+   }
+  },
+  "recall": {
+   "type": "object",
+   "description": "same-project reuse ranking at propose time: matches (score, factors, sim_basis, reusable), avoid, nodes_with_memory, template (first match scoring >= 0.05; null when evidence was revoked), template_executors (stage -> executors that ran)"
+  },
+  "traces": {
+   "type": "array",
+   "items": {
+    "$ref": "#/$defs/trace"
+   }
+  },
+  "evidence": {
+   "type": "array",
+   "items": {
+    "$ref": "#/$defs/evidence"
+   }
+  },
+  "baseline": {
+   "oneOf": [
+    {
+     "type": "null"
+    },
+    {
+     "$ref": "#/$defs/evidence"
+    }
+   ]
+  },
+  "self_reported": {
+   "type": "array",
+   "description": "results copied from an imported card; never evidence"
+  },
+  "imported": {
+   "type": "boolean"
+  },
+  "imported_at": {
+   "type": [
+    "string",
+    "null"
+   ]
+  },
+  "import_bundle_sha256": {
+   "type": [
+    "string",
+    "null"
+   ]
+  },
+  "import_receipt": {
+   "type": [
+    "object",
+    "null"
+   ],
+   "description": "written by import: only traces with seq > trace_seq and status_log entries after log_len happened on this machine",
+   "properties": {
+    "at": {
+     "type": "string"
+    },
+    "bundle_sha256": {
+     "type": "string"
+    },
+    "status": {
+     "type": [
+      "string",
+      "null"
+     ]
+    },
+    "trace_seq": {
+     "type": "integer"
+    },
+    "log_len": {
+     "type": "integer"
+    }
+   }
+  },
+  "legacy_unproven": {
+   "type": "boolean"
+  },
+  "migrated_from": {
+   "const": "kosif.fusionforge.recipe.v1"
+  },
+  "forked_from": {
+   "type": "string"
+  },
+  "warnings": {
+   "type": "array",
+   "items": {
+    "type": "string"
+   }
+  },
+  "next_step": {
+   "type": "string"
+  }
+ },
+ "$defs": {
+  "stage": {
+   "enum": [
+    "understand",
+    "research",
+    "plan",
+    "build",
+    "create",
+    "refine",
+    "assemble",
+    "verify",
+    "deliver"
+   ],
+   "description": "FusionForge v2 stages in canonical order (skill_intelligence STAGE_ORDER is the subset understand, plan, create, refine, assemble, verify, deliver)."
+  },
+  "kind": {
+   "enum": [
+    "brief",
+    "spec",
+    "plan",
+    "sources",
+    "code",
+    "dataset",
+    "report",
+    "document",
+    "image",
+    "audio",
+    "video",
+    "model3d",
+    "font",
+    "evidence",
+    "package",
+    "any"
+   ],
+   "description": "Artifact kinds exchanged between nodes; 'any' is a wildcard that matches every kind."
+  },
+  "port": {
+   "type": "object",
+   "required": [
+    "name",
+    "kind"
+   ],
+   "properties": {
+    "name": {
+     "type": "string"
+    },
+    "kind": {
+     "$ref": "#/$defs/kind"
+    },
+    "check": {
+     "type": "string"
+    }
+   }
+  },
+  "executor": {
+   "type": "object",
+   "required": [
+    "ref"
+   ],
+   "properties": {
+    "ref": {
+     "type": "string",
+     "pattern": "^(human|tool:.+|bin:[A-Za-z0-9][A-Za-z0-9._+-]{0,63}|mcp:[A-Za-z0-9_.-]{1,64}/[A-Za-z0-9_.-]{1,96}|method:.+)$",
+     "description": "tool:<tools.json id> | bin:<name> | mcp:<server/tool> | method:<catalog atom id> | human; validate resolves it (V05 EXECUTOR_UNKNOWN)."
+    },
+    "runnable": {
+     "enum": [
+      "ready",
+      "missing",
+      "unknown",
+      "method",
+      "human"
+     ]
+    },
+    "source": {
+     "type": "string",
+     "description": "default | catalog_method | brief_tool_family_match | bind | set-graph | migrated"
+    }
+   }
+  },
+  "node": {
+   "type": "object",
+   "required": [
+    "id",
+    "stage",
+    "capability_ids",
+    "inputs",
+    "outputs",
+    "executor",
+    "status"
+   ],
+   "properties": {
+    "id": {
+     "type": "string",
+     "pattern": "^[A-Za-z][A-Za-z0-9_-]{0,23}$"
+    },
+    "stage": {
+     "$ref": "#/$defs/stage"
+    },
+    "capability_ids": {
+     "type": "array",
+     "items": {
+      "type": "string"
+     }
+    },
+    "label": {
+     "type": "string"
+    },
+    "inputs": {
+     "type": "array",
+     "items": {
+      "$ref": "#/$defs/port"
+     }
+    },
+    "outputs": {
+     "type": "array",
+     "minItems": 1,
+     "items": {
+      "$ref": "#/$defs/port"
+     }
+    },
+    "acceptance": {
+     "type": "string"
+    },
+    "contract_source": {
+     "enum": [
+      "default_unconfirmed",
+      "model",
+      "migrated_default"
+     ]
+    },
+    "owner": {
+     "type": "string"
+    },
+    "permission": {
+     "type": "string"
+    },
+    "rollback": {
+     "type": "string"
+    },
+    "optional": {
+     "type": "boolean"
+    },
+    "executor": {
+     "$ref": "#/$defs/executor"
+    },
+    "status": {
+     "enum": [
+      "pending",
+      "passed",
+      "failed",
+      "skipped"
+     ]
+    },
+    "last_trace": {
+     "type": [
+      "integer",
+      "null"
+     ],
+     "description": "seq of the trace that set the status"
+    },
+    "memory": {
+     "type": "object",
+     "description": "same-project recall, never an automatic swap: worked_in (executor reported by --tool), ran_in (passed with the planned executor assumed), failed_in, error_classes, replacement_hint, proven_capabilities (reported by a passed trace with evidence), stage_worked / stage_failed / stage_replacements (other executors in the same stage on overlapping capabilities)"
+    }
+   }
+  },
+  "edge": {
+   "type": "object",
+   "required": [
+    "id",
+    "from",
+    "to",
+    "kind",
+    "relation"
+   ],
+   "properties": {
+    "id": {
+     "type": "string"
+    },
+    "from": {
+     "type": "string"
+    },
+    "to": {
+     "type": "string"
+    },
+    "kind": {
+     "$ref": "#/$defs/kind",
+     "description": "must be compatible with an output of 'from' and an input of 'to' (V03 HANDOFF_KIND_MISMATCH)"
+    },
+    "relation": {
+     "enum": [
+      "sequence",
+      "parallel",
+      "complement",
+      "substitute",
+      "verify",
+      "refine",
+      "fallback"
+     ],
+     "description": "only 'refine' edges may form a loop"
+    }
+   }
+  },
+  "plan": {
+   "type": "object",
+   "required": [
+    "nodes"
+   ],
+   "properties": {
+    "name": {
+     "enum": [
+      "A",
+      "B",
+      "C",
+      "D"
+     ]
+    },
+    "label": {
+     "type": "string"
+    },
+    "idea": {
+     "type": "string"
+    },
+    "nodes": {
+     "type": "array",
+     "minItems": 1,
+     "items": {
+      "type": "string"
+     }
+    },
+    "tools": {
+     "type": "array",
+     "items": {
+      "type": "object",
+      "properties": {
+       "id": {
+        "type": "string"
+       },
+       "state": {
+        "type": [
+         "string",
+         "null"
+        ]
+       }
+      }
+     }
+    }
+   }
+  },
+  "capability": {
+   "type": "object",
+   "required": [
+    "atoms",
+    "atoms_sha256",
+    "known"
+   ],
+   "properties": {
+    "name_en": {
+     "type": "string"
+    },
+    "name_ar": {
+     "type": "string"
+    },
+    "atoms": {
+     "type": "array",
+     "items": {
+      "type": "string"
+     },
+     "description": "sorted atom IDs of the superpower's pipeline: the stable fingerprint (SP ids are positional)"
+    },
+    "atoms_sha256": {
+     "type": [
+      "string",
+      "null"
+     ]
+    },
+    "known": {
+     "type": "boolean"
+    }
+   }
+  },
+  "evidence": {
+   "type": "object",
+   "required": [
+    "sha256"
+   ],
+   "properties": {
+    "sha256": {
+     "type": "string",
+     "pattern": "^[0-9a-f]{64}$"
+    },
+    "size": {
+     "type": [
+      "integer",
+      "null"
+     ]
+    },
+    "suffix": {
+     "type": "string"
+    },
+    "stored": {
+     "type": [
+      "string",
+      "null"
+     ],
+     "pattern": "^evidence/[0-9a-f]{64}(\\.[a-z0-9]{1,10})?$",
+     "description": "content-addressed copy under <space>/ for files up to 5 MB"
+    },
+    "source": {
+     "type": [
+      "string",
+      "null"
+     ],
+     "description": "relative path under source_base; never absolute"
+    },
+    "source_base": {
+     "enum": [
+      "git",
+      "repo",
+      "root",
+      "cwd",
+      null
+     ]
+    },
+    "root_rel": {
+     "type": "string",
+     "description": "files over 5 MB only (not copied): path relative to the FusionForge root, a second locator; never exported"
+    },
+    "legacy": {
+     "type": "boolean"
+    },
+    "status": {
+     "type": "string"
+    },
+    "qa_pass": {
+     "type": "boolean"
+    },
+    "note": {
+     "type": "string"
+    },
+    "at": {
+     "type": [
+      "string",
+      "null"
+     ]
+    },
+    "imported": {
+     "type": "boolean",
+     "description": "arrived in a bundle; its paths were dropped and only the hash travels"
+    }
+   }
+  },
+  "status_entry": {
+   "type": "object",
+   "required": [
+    "from",
+    "to",
+    "at",
+    "cmd"
+   ],
+   "properties": {
+    "from": {
+     "enum": [
+      "candidate",
+      "planned",
+      "tested",
+      "verified",
+      "failed",
+      null
+     ]
+    },
+    "to": {
+     "enum": [
+      "candidate",
+      "planned",
+      "tested",
+      "verified",
+      "failed"
+     ]
+    },
+    "at": {
+     "type": [
+      "string",
+      "null"
+     ]
+    },
+    "cmd": {
+     "type": "string"
+    },
+    "note": {
+     "type": "string"
+    },
+    "evidence_sha256": {
+     "type": [
+      "string",
+      "null"
+     ]
+    }
+   }
+  },
+  "trace": {
+   "type": "object",
+   "required": [
+    "seq",
+    "at",
+    "stage",
+    "action",
+    "tool"
+   ],
+   "properties": {
+    "seq": {
+     "type": "integer"
+    },
+    "at": {
+     "type": [
+      "string",
+      "null"
+     ]
+    },
+    "stage": {
+     "$ref": "#/$defs/stage"
+    },
+    "node": {
+     "type": [
+      "string",
+      "null"
+     ]
+    },
+    "result": {
+     "enum": [
+      "passed",
+      "failed",
+      "skipped",
+      null
+     ]
+    },
+    "action": {
+     "type": "string"
+    },
+    "tool": {
+     "type": "string"
+    },
+    "tool_reported": {
+     "type": "boolean",
+     "description": "false when --tool was omitted and 'tool' is the planned executor (lessons mark it assumed)"
+    },
+    "input": {
+     "type": "string"
+    },
+    "output": {
+     "type": "string"
+    },
+    "observed": {
+     "type": "string"
+    },
+    "capabilities": {
+     "type": "array",
+     "items": {
+      "type": "string"
+     }
+    },
+    "error_class": {
+     "enum": [
+      "missing_dependency",
+      "wrong_input_kind",
+      "quality_below_threshold",
+      "timeout",
+      "permission_denied",
+      "license_blocked",
+      "tool_error",
+      "other",
+      null
+     ]
+    },
+    "evidence": {
+     "oneOf": [
+      {
+       "type": "null"
+      },
+      {
+       "$ref": "#/$defs/evidence"
+      }
+     ]
+    },
+    "substitution": {
+     "type": [
+      "object",
+      "null"
+     ],
+     "properties": {
+      "planned": {
+       "type": "string"
+      },
+      "used": {
+       "type": "string"
+      }
+     }
+    },
+    "legacy": {
+     "type": "boolean"
+    }
+   }
+  }
+ }
+}

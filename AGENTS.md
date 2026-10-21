@@ -24,7 +24,7 @@ what this repository can do, and the motion-graphics production rules.
 3. Open the referenced source page and video if tools permit; never claim to have seen a video you could not access. Unless its note says it was revised against frames sampled from the reference video, the brief was written without watching the video: treat it as a director's proposal and verify against the reference.
 4. Create fresh original assets and animation; no redistribution of external clips, prompts or music.
 5. For user-supplied audio, transcribe to `words.json` and align actions to word timings (≤ 100 ms on key words). For a user video, study cuts, movement and voice first.
-6. Scaffold a project with `python3 tools/kosif.py scaffold <id> <dir> --starter html-canvas|remotion`, fill `STYLE.md` (observed versus assumed) and `PLAN.md` (scene by scene), build the film in the starter, preview with `node tools/render_html.cjs --preview` or Remotion, and only then render.
+6. Scaffold a project with `python3 tools/kosif.py scaffold <id> <dir> --starter html-canvas|remotion`, fill `STYLE.md` (observed versus assumed) and `PLAN.md` (scene by scene), build the film in the starter, preview with `node tools/render_html.cjs --in <scene.html> --out <film.mp4> --preview` or Remotion, and only then render.
 7. Deliver: STYLE.md, PLAN.md, editable sources, a preview, the filled TEST_REPORT.md and the rendered MP4 after approval.
 8. Preserve licenses, content rights, source attribution, secrets and platform terms.
 9. If a style appears as an external-only example, use its brief as a creative direction, not proof of an existing tested implementation.
