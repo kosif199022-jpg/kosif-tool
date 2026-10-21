@@ -4,7 +4,7 @@
 
 ---
 
-فعّل بروتوكول **KOSIF Superpowers × KOSIF SEE — USIP v5.1** باعتباره منهج العمل الأساسي في هذا المشروع.
+فعّل بروتوكول **KOSIF Superpowers × KOSIF SEE — USIP v5.2** باعتباره منهج العمل الأساسي في هذا المشروع.
 
 اقرأ النسخة الأحدث كاملة من المستودع (إن لم يكن مستنسخًا عندك فاستنسخه أو اقرأه من الروابط الخام):
 - البروتوكول: https://github.com/kosif199022-jpg/kosif-tool/blob/main/.claude/skills/kosif-superpowers/PROTOCOL.md
@@ -37,6 +37,17 @@
 
 **تفعيل SEE Pro:** استخدم مسار Full Pro فقط إن كان مضيف هذه الجلسة يعرض منفّذه وبمخرجات request-bound موثقة؛ وإلا استخدم Deep مُسمى بصدق. استغل المجلس للانتقاد والابتكار، لا لادعاء تنفيذ 500 وكيل.
 
+
+
+## تكامل الجسور في USIP v5.2 — واجهة واحدة وملاك تنفيذ منفصلون
+
+- KOSIF SEE هي واجهة التوجيه الوحيدة: Registry → Stage-0 → أقل حزم محلية لازمة، وسجل M01–M28 انتقائيًا ضمن ThinkPro 10، دون تحميل كل legacy.
+- عند Full Pro الصريح: ثبّت FULL_PRO_REQUIRED، وافحص direct kosif_full_pro_execute ثم modern mobile capabilities/call ثم جسر KOSIF_FULL_PRO_MOBILE_V1: عبر Think بعد status حديث؛ من غير receipts لنفس الطلب أعلن BLOCKED أو UNVERIFIED، ولا تعرض Deep على أنه Pro.
+- Legacy — KOSIF Mobile Compatibility للحفاظ على أولوية Source ThinkPro 10 والبوابة الخفيفة للهاتف؛ لا MCP stdio على iPhone ولا واجهة KOSIF إضافية.
+- عند FlagshipRouter/Astra: يلزم سطح مكتب مكشوف مع flagship_status ثم flagship_models ثم flagship_ask بعد إذن المستخدم؛ منفذ محلي فقط لا يضغط أزرار Windows ولا يُرسل بيانات خاصة دون موافقة مشاركة.
+- عند إرسال تغيير إلى مستودع أو إنتاج: KOSIF Release Bridge يعمل مستقلًا عن Think/Computer؛ لا تعلن نجاح النشر قبل ربط GitHub commit SHA بتعديل Cloudflare ثم اختبار الوظيفة من live URL. تحديث دليل source-only يُبلّغ مصدرًا محدثًا، لا deployment حيًا.
+- كل تنفيذ يحفظ owner/permission/tenant/postcondition/receipt/idempotency/rollback، ويفصل method_loaded عن executed عن verified. اختبار 30 حالة R01–R30 في البروتوكول لا يعد ناجحًا قبل تشغيله.
+- لا أسرار في السياق أو السجل أو GitHub؛ لا خلط شركات ولا تجاوز لحواجز دفع/نشر/حذف. احفظ جميع أحكام USIP v5.1 وFusionForge دون إزالتها.
 
 ## ما تعلمناه في الجلسات السابقة ويجب أن تعرفه
 
