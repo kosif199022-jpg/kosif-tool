@@ -52,6 +52,21 @@ python3 -m unittest discover -s "$SK/evals" -p 'test_creative_principles.py' -v
 
 تنسيق `frame-tone-ratios.json` هو قائمة كائنات `[{"time_seconds":0,"tone_ratio":{"0":0.2,"127":0.3,"255":0.5}},...]`، ويجب أن يكون مجموع القيم 1، والأزمنة متزايدة. إذا لم تتوفر العينات الفعلية من الفيديو فلا يصح تقديم التحليل كأنه مراجعة مقطع.
 
+## C-SPACE-01 و C-COLOR-01 — قدرات المصدر العملية
+
+**C-SPACE-01: Two-point perspective.** Original, geometric two-point SVG perspective from user-defined horizon, vanishing points, front edge and receding depths. Every receding edge is generated as a collinear interpolation toward its source vanishing point and checked with numeric tests. Based on public-domain G. A. Storey's discussion of sightline, horizon, and angular perspective: https://www.gutenberg.org/ebooks/20165. This is a constrained 2D schematic, not a general 3D modeler.
+
+**C-COLOR-01: palette contrast analysis.** Input 2–16 distinct hex colors, output hue angle, HSV value/saturation, WCAG relative luminance and pairwise ratios. Influenced by the **principle** of separating hue/value/chroma from A. H. Munsell, https://www.gutenberg.org/ebooks/26054; mathematically **NOT the Munsell system**. Do not claim aesthetic quality or exact Munsell chroma.
+
+    python scripts/perspective_color_lab.py perspective --input perspective-scene.json --out perspective.svg
+    python scripts/perspective_color_lab.py palette --input brand-colors.json --out palette.json
+    python -m unittest discover -s evals -p test_perspective_color_lab.py -v
+
+Perspective input example: {"width":800,"height":800,"horizon_y":300,"left_vp_x":30,"right_vp_x":760,"front_bottom":[400,650],"front_height":240,"depth_left":0.4,"depth_right":0.5}
+
+Palette input example: {"colors":["#18392E","#F5E5C4","#AC8136"]}
+
+**Verification state as of 22-10-2026:** 7 construction/tonal tests + 7 source-aware academy tests + 8 projection/color tests passed on authorized Windows laptop (22 total). The wider legacy v5.2 fixture-reproduction test had a preexisting hash-parsing drift: manual retention report showed 0 missing v5.2 units, but historic fixture hashes did not reproduce. Do not count this as a clean complete protocol run. Fetching all 8 public-domain source texts to the laptop hit SSL CERTIFICATE_VERIFY_FAILED; TLS checks were not bypassed. Source anchors from verified texts and selected sections are not a full-text review of 200 books.
 ## حلقة التعليم للفن الإبداعي
 
 **A: مصادر موثوقة** → B: محضر مصادر مع مقاطع/صفحات وحقوق → C: قدرة `method card` أصلية بمدخلات ومخرجات محددة → D: تمارين رسم أو إعداد لقطة → E: معاينة حقيقية وأدلة بصريّة → F: نقد على النسب والتكوين والقيم الضوئية والاتساق عبر الإطارات → G: تحسين ثم مقارنة مسار قديم/جديد وإيصال نتائج. اربط بالمحركات المثبتة، ولا تُسند لها وظيفة خارج نطاقها: `code_drawing_master.py` للشخصيات الأصلية، `unified_draw.py` للرسم الحركي، `montage_pro.py` للمونتاج، `verify_video.py` لفحص MP4. قبل الإدعاء بأن Claude «تعلّم» طبّق تمارين غير موجودة في المصادر، وحكماً مستقلاً، وقارن المخرجات بطريقة عادلة.
