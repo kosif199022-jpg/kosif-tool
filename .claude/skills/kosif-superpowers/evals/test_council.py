@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Regression tests for scripts/council.py (KOSIF Pro Council, USIP appendix A12). Temp dirs only."""
+"""Regression tests for scripts/council.py (KOSIF Pro Council, USIP appendix A13). Temp dirs only."""
 from __future__ import annotations
 
 import json

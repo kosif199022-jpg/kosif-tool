@@ -1,0 +1,96 @@
+name: KOSIF Tool Registry Deterministic Rebuild
+on:
+  push:
+    branches:
+      - main
+    paths:
+      - ".github/workflows/tool-registry-sync.yml"
+      - ".claude/skills/kosif-superpowers/data/tools.json"
+  workflow_dispatch:
+permissions:
+  contents: write
+concurrency:
+  group: kosif-tool-registry-sync
+  cancel-in-progress: false
+jobs:
+  sync:
+    if: github.actor != 'github-actions[bot]'
+    runs-on: ubuntu-24.04
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          persist-credentials: true
+      - name: Verify Python
+        run: python3 --version
+      - name: Regenerate all derived capability and tool indexes
+        working-directory: .claude/skills/kosif-superpowers
+        run: |
+          set -euo pipefail
+          python3 scripts/hub.py build
+          python3 scripts/build_chapters.py
+          python3 scripts/requirements.py index
+          python3 scripts/capability_graph.py build
+          python3 scripts/capability_atlas.py build
+          python3 scripts/powers.py mindmap --html references/capability-map.html
+          python3 scripts/powers.py mindmap --update-md references/capability-map.md
+          python3 scripts/hub.py build
+          python3 scripts/boot.py --static --write
+      - name: Refresh exact skill count marker and nearby summary
+        run: |
+          python3 - <<'PY'
+          import sys,re
+          from pathlib import Path
+          sk=Path(".claude/skills/kosif-superpowers")
+          sys.path.insert(0,str(sk/"scripts"))
+          import check_skill as checks
+          live=checks.live_counts()
+          target=sk/"SKILL.md"
+          text=target.read_text(encoding="utf-8")
+          count_marker=checks.marker_line(live)
+          text,n=re.subn(r'<!-- counts:[^>]+-->',lambda _:count_marker,text,count=1)
+          if n!=1: raise RuntimeError("Count marker absent or malformed")
+          line=("**الأرقام / counts:** {powers:,} قدرة في {families} عائلة و{domains} مجالات "
+                "— ✅ {proven:,} · 🟢 {ready:,} · 📦 {install:,} · 🔑 {key:,} · "
+                "👁 {seen:,} · 📄 {documented:,} · 💡 {idea:,} · {styles} أسلوبًا "
+                "مرجعيًا ({watched} منها شوهد فيديوها). "+chr(96)+"python3 $SKILL_DIR/scripts/powers.py stats"+chr(96)).format(**live)
+          text,n=re.subn(r'(?m)^\*\*الأرقام / counts:\*\*.*$',lambda _:line,text,count=1)
+          if n!=1: raise RuntimeError("Visible skill summary absent or malformed")
+          target.write_text(text,encoding="utf-8")
+          PY
+      - name: Run SEE Pro and FusionForge checks
+        run: |
+          python3 .claude/skills/kosif-superpowers/scripts/see_pro_cognitive_gate.py --self-test
+          python3 -m unittest discover -s .claude/skills/kosif-superpowers/evals -p test_see_pro_cognitive_gate.py -v
+          python3 -m unittest discover -s .claude/skills/kosif-superpowers/evals -p test_protocol_structure.py -v
+          python3 -m unittest discover -s .claude/skills/kosif-superpowers/evals -p test_fusionforge_shared.py -v
+          python3 .claude/skills/kosif-superpowers/scripts/check_skill.py
+      - name: Commit regenerated tracked artifacts only
+        run: |
+          set -euo pipefail
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add -A -- \
+            .claude/skills/kosif-superpowers/SKILL.md \
+            .claude/skills/kosif-superpowers/manifest.json \
+            .claude/skills/kosif-superpowers/data/powers/runnable-tools.json \
+            .claude/skills/kosif-superpowers/data/capability_graph.json \
+            .claude/skills/kosif-superpowers/data/capability_atlas_index.json \
+            .claude/skills/kosif-superpowers/references/ \
+            CAPABILITIES.md llms.txt
+          OTHER=$(git ls-files -m --others --exclude-standard | grep -vE '^(\.claude/skills/kosif-superpowers/(SKILL\.md|manifest\.json|data/powers/runnable-tools\.json|data/capability_graph\.json|data/capability_atlas_index\.json|references/)|CAPABILITIES\.md|llms\.txt)$' || true)
+          if [ -n "$OTHER" ]; then
+            echo "Unexpected generated changes (not committing):"
+            echo "$OTHER"
+            exit 1
+          fi
+          if git diff --cached --quiet; then
+            echo "Generated files already up to date."
+            exit 0
+          fi
+          git diff --cached --stat
+          git commit -m "build(kosif): synchronize derived tool registry and capability indexes"
+          git fetch origin main
+          git rebase origin/main
+          python3 .claude/skills/kosif-superpowers/scripts/check_skill.py
+          git push origin HEAD:main

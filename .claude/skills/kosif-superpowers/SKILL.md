@@ -6,7 +6,18 @@ claude_ai_description: "Shows Claude its real powers in this session and how to 
 
 # قواك الخارقة — KOSIF Superpowers
 
+**Katana / Higgsfield — ANALYSIS ONLY (user constraint):** Use for image/reference-video analysis and textual responses only if a verified read-only, no-generation-credit analysis endpoint actually exists; otherwise analyze with native vision/FFmpeg/KOSIF and say Katana was not called. **Never** invoke Katana recreate/remix/render/generate, never spend Katana/Higgsfield image/video generation credits, never upload private reference assets without permission. See [A8 policy](references/protocol/A8-motion-brain.md#katana--higgsfield--سياسة-التحليل-فقط-وحفظ-الرصيد). This does not prohibit independent authorized rendering tools.
+
+## SEE Pro Cognitive Fusion — bounded reasoning, typed skill synthesis
+
+Trigger: substantial L2/L3 task requiring deeper reasoning, explicit @kosif see Pro, or user requests merging SEE capabilities. After reading the single canonical PROTOCOL.md and its trigger matrix, open references/protocol/A12-see-pro-cognitive-fusion.md. Integrate SEE 11 Stage-0 lenses, all nine *covered-by-routing* method domains, independent critical review, causal assumption tests, three distinct plans, numeric determinism and project-isolated FusionForge evidence memory. Load only smallest relevant SEE packs (normal <=2 total, <=1 dynamic; Deep/Full Pro <=4, <=2 dynamic). One method pack never proves an executor or Full Pro. C500 roster metadata/Einstein/Jev are external roles with request-bound receipts, not installed in this repository. For complex structured decision packets use scripts/see_pro_cognitive_gate.py --self-test or check --file PACKET.json; a PASS checks structure and evidence metadata only. Never auto-copy proprietary SEE plugin code, private payloads or cross-company knowledge. 
+
+
 **الفكرة:** أنت تقدر أكثر مما تتذكر. هذه المهارة تعرّفك بقدراتك الحقيقية في هذه الجلسة، وبالمكتبات التي تثبّتها بأمر واحد، وبطرق تفكير وإبداع وتحقق مجرَّبة، ثم بكتالوج من 5,318 قدرة لكل منها وصفة ومستلزمات ودليل. اعرف قوتك، ثم استخدمها بثقة وصدق.
+
+## FusionForge Shared Memory v1 — cross-project structural learning (opt-in only)
+
+`scripts/fusionforge_shared.py audit` evaluates *already promoted and locally proven* project-private recipe graphs without reading other tenants into an active project's request. The stages are 1 unique verified QA = experimental, 2 = local_trusted, 3 distinct verified QA artifacts from 3 separate projects = shared_eligible. None is publication. A human must approve privacy, security, catalog collision, three independent scenarios and measured improvement against baseline in `out/fusionforge/_shared/reviews/<signature>.json`; only then `fusionforge_shared.py approve --signature <signature>` can add a strictly allowlisted topology to `_shared/registry.json`. Use `fusionforge_shared.py recall --kind video` (or an artifact kind) to recommend general structures, not to claim the user project's hidden context has been inspected or the recipe executed. Run `python3 -m unittest discover -s .claude/skills/kosif-superpowers/evals -p test_fusionforge_shared.py` for isolated synthetic boundary tests. See the stage-10 extension in PROTOCOL.md. No cloud persistence or model-weight training is implied.
 
 ## FusionForge v2 (USIP v5.3) — project-scoped composite workflow recipes
 
@@ -203,8 +214,8 @@ python3 $SKILL_DIR/scripts/hub.py doctor               # ما يعمل على ه
 <!-- hub:tools:start -->
 | المجال / area | الأدوات / tools (`hub.py tool <id>`) |
 |---|---|
-| Discover and route / اكتشاف القدرات والتوجيه | `ai-tool-discovery` · `boot` · `capability-atlas` · `capability-graph` · `capability-runtime-router` · `hub` · `kosif-mcp` · `local-first` · `powers` · `probe-env` · `python-package-probe` · `requirements` · `superpowers-unified` · `repo-kosif` · `atlas-capability-miner` · `atlas-task-method-router` · `smart-capabilities` · `skill-intelligence` · `fusionforge` · `superpower-fusion` · `kosif-groups` |
-| Think, ideate and write / التفكير والأفكار والكتابة | `anchor-gate` · `architecture-sizer` · `invention-lab` · `tell-scan` · `think` · `council` · `capability-mindmap` |
+| Discover and route / اكتشاف القدرات والتوجيه | `ai-tool-discovery` · `boot` · `capability-atlas` · `capability-graph` · `capability-runtime-router` · `hub` · `kosif-mcp` · `local-first` · `powers` · `probe-env` · `python-package-probe` · `requirements` · `superpowers-unified` · `repo-kosif` · `atlas-capability-miner` · `atlas-task-method-router` · `smart-capabilities` · `skill-intelligence` · `fusionforge` · `fusionforge-shared` · `superpower-fusion` · `kosif-groups` |
+| Think, ideate and write / التفكير والأفكار والكتابة | `anchor-gate` · `architecture-sizer` · `invention-lab` · `tell-scan` · `think` · `council` · `see-pro-cognitive-gate` · `capability-mindmap` |
 | Motion graphics and rendering / الموشن والرندر | `aspects` · `creative-reasoning-bridge` · `motion-director` · `motion-engine-js` · `motion-kit-bridge` · `motion-runtime` · `motion-stack` · `motion-toolkit` · `render-html` · `verify-video` · `repo-aspects` · `repo-render-html` · `repo-verify-video` · `starter-html-canvas` · `starter-remotion` · `unified-cinematic` |
 | Editing and reference video / المونتاج والفيديو المرجعي | `cinematic-broll-render` · `cinematic-cut-planner` · `creative-quality-gate` · `mimic` · `motion-reference-probe` · `reference-edit-engine` · `reference-visual-fingerprint` · `video-workflow-bridge` · `kosif-timeline` · `kosif-timeline-demo` · `montage-pro` |
 | Audio and rhythm / الصوت والإيقاع | `audio-cue-mapper` · `music-rhythm-engine` · `repo-words-convert` |

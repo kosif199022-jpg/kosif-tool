@@ -8,7 +8,7 @@ Commands below are typed from the skill folder (`.claude/skills/kosif-superpower
 
 <!-- hub:area:discover:start -->
 
-**الأدوات / tools (21)** — `python3 scripts/hub.py tool <id>` for every command, requirement and limit:
+**الأدوات / tools (22)** — `python3 scripts/hub.py tool <id>` for every command, requirement and limit:
 
 | tool | what it does | start with | evidence |
 |---|---|---|---|
@@ -31,6 +31,7 @@ Commands below are typed from the skill folder (`.claude/skills/kosif-superpower
 | `smart-capabilities` | Deterministically classifies all 5,185 KOSIF power IDs into 15 task-based integration candidate groups, finds matches for Arabic or English prompts, and checks source-to-index completeness without claiming runtime fusion. | `python3 scripts/smart_capabilities.py groups` | tested-here |
 | `skill-intelligence` | Before any substantial request: scans 100% of the catalog records with a SHA-256 coverage receipt that fails closed on unreadable or unclassified records, checks that every derived index is fresh, drafts a request analysis, ranks groups, fused superpowers, powers and runnable tools, scores candidates (fit 35, integration 20, feasibility 15, evidence 10, cost 10, creativity 10) and drafts plans A/B/C with a recommendation and the approval question. | `python3 scripts/skill_intelligence.py brief "مونتاج ريلز على الإيقاع بترجمة عربية"` | tested-here |
 | `fusionforge` | Turns the USIP brief (skill_intelligence is the single ranker) into a project-scoped candidate recipe: typed workflow nodes per stage holding catalog superpowers fingerprinted by their atom IDs, input/output artifact kinds, an executor reference and handoff edges, with plans A/B/C taken from the brief. It then records the approved plan, per-node traces with hashed evidence and every status change through an enforced state machine (candidate, planned, tested, then verified or failed) whose verified gate checks the records; validate runs checks V01-V12, and lessons, reuse and propose's recall rank the same project's earlier recipes. Cards and redacted bundles carry recipes to another session. Writes only under out/fusionforge/<project>/; it never executes a power, installs, publishes or edits the catalog. | `python3 scripts/fusionforge.py propose "مونتاج ريلز بترجمة عربية" --project demo_project --from-brief out/20261021-reel/brief.json` | tested-here |
+| `fusionforge-shared` | Audits verified project-private FusionForge v2 promotion proposals; counts independent QA proofs across distinct projects, requires separate human privacy/security/collision and baseline-improvement review before exporting only allowlisted structural skill graphs. Never exports client objectives, transcripts, evidence, secrets or project names. | `python3 scripts/fusionforge_shared.py audit` | untested |
 | `superpower-fusion` | Partitions every catalog power into exactly one fused superpower (per-family TF-IDF k-means, near-identical powers unified, tiny groups absorbed), marks twin powers that do the same job, links each superpower to its nearest neighbours in one connected graph, and reports an honest status mix. | `python3 scripts/superpower_fusion.py build` | tested-here |
 | `kosif-groups` | For each of the 15 smart groups lists its fused superpowers ordered by readiness, entry scripts, a start command, linked groups and a per-group install plan that separates pip/npm lines (run with --apply) from system tools and keys that need the user's approval. | `python3 scripts/kosif_hubs.py` | tested-here |
 
@@ -38,7 +39,7 @@ Commands below are typed from the skill folder (`.claude/skills/kosif-superpower
 
 <!-- hub:area:think:start -->
 
-**الأدوات / tools (7)** — `python3 scripts/hub.py tool <id>` for every command, requirement and limit:
+**الأدوات / tools (8)** — `python3 scripts/hub.py tool <id>` for every command, requirement and limit:
 
 | tool | what it does | start with | evidence |
 |---|---|---|---|
@@ -48,6 +49,7 @@ Commands below are typed from the skill folder (`.claude/skills/kosif-superpower
 | `tell-scan` | Scans English and Arabic (MSA and Egyptian) prose for stock 'AI-sounding' writing habits and tool leftovers, and reports each hit with its line, strength and an overall verdict (EDIT/REVIEW/LOOK/LEAVE/CLEAN). | `python3 scripts/tell_scan.py proofs/general-writing/samples/en_ai.txt` | tested-here |
 | `think` | Turns thinking procedures into checkable text scaffolds. It picks a reasoning level (L0–L6), writes a task contract, ranks 63 mental models, drafts a backcast plan, builds an idea matrix from catalog powers, scores a weighted decision with sensitivity, runs a Monte-Carlo Fermi estimate and flags weak wording in a draft. | `python3 scripts/think.py ladder "design a 30-day plan for a course launch"` | tested-here |
 | `council` | Plans a five-member adversarial council for a request (Visionary, Skeptic, Builder, Audience, Guardian, each with its own evidence lane and a specialisation from the brief's deliverable), writes every member's prompt for each round (independent positions, cross-examination, scored vote), validates and fingerprints each answer, refuses secrets, and computes a Borda verdict with recorded dissent, warnings and a SHA-256 receipt. It never calls a model: Claude runs the members as separate agents, or labels them COUNCIL_SIMULATED. | `python3 scripts/council.py plan "اعمل ريلز دعاء" --dir out/demo/council --options A,B,C` | tested-here |
+| `see-pro-cognitive-gate` | Validates cognitive-packet metadata: bounded SEE method packs, typed capability handoffs, genuinely distinct A/B/C planning keys, evidence provenance, deterministic numeric checks, cross-company isolation, and receipt-based truth for Full Pro execution and Council reviewer counts. | `python3 scripts/see_pro_cognitive_gate.py --self-test` | tested-here |
 | `capability-mindmap` | Orders every superpower by task stage (understand, plan, create, refine, assemble, verify, deliver), builds stage plans for any request and 12 ready task maps with Mermaid flowcharts, and audits same-name groups, twins, cross-superpower look-alikes and pairs to develop together. | `python3 scripts/capability_mindmap.py build` | tested-here |
 
 <!-- hub:area:think:end -->

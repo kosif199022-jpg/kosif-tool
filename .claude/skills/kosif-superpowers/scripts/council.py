@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""KOSIF Pro Council — a five-member adversarial council for USIP Pro mode (USIP v5.3, appendix A12).
+"""KOSIF Pro Council — a five-member adversarial council for USIP Pro mode (USIP v5.3, appendix A13).
 
 The script does not call any model. It plans the council, writes the exact prompt for every member and round,
 checks what each member returned, and computes a deterministic verdict with a receipt. The members are run by
@@ -154,10 +154,10 @@ def cmd_plan(a) -> dict:
 
 def member_prompt(c: dict, m: dict, rnd: int) -> str:
     who = m["persona"] + (f" — {m['specialist']}" if m.get("specialist") else "")
-    head = (f"You are council member {m['id']} «{who}» ({m['en']}) in a five-member KOSIF Pro council (USIP v5.3, appendix A12).\n"
+    head = (f"You are council member {m['id']} «{who}» ({m['en']}) in a five-member KOSIF Pro council (USIP v5.3, appendix A13).\n"
             f"Your stance: {m['stance']}.\nYour evidence lane: {m['evidence']}. Gather real evidence in that lane before you claim anything;"
             " label anything without evidence as 'opinion'. Never spend money, publish, or generate images or video "
-            "(Higgsfield/Katana only for analysis, and only if the user approved its cost).\n"
+            "(Katana only through a verified zero-credit read-only analysis, never generation; other Higgsfield analysis only if the user approved its cost).\n"
             f"Request: «{c['request']}»\nOptions under debate: {', '.join(c['options'])}"
             + (f" (the USIP brief recommends {c['brief']['recommended']})" if c.get("brief") and c["brief"].get("recommended") else "") + ".\n")
     if rnd == 1:

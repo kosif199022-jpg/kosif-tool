@@ -1,0 +1,109 @@
+{
+  "schema": "kosif.seepro.cognitive-packet.v1",
+  "level": "L3",
+  "mode": "deep",
+  "phase": "planning",
+  "stage0": {
+    "goal": "ابتكار Workflow جديد يجمع مراجعة البرمجيات وتوليف المهارات واختبارات رجوع",
+    "artifact": "document",
+    "success_criteria": [
+      "خطة تحتوي 3 معماريات مختلفة فعلاً",
+      "مدخلات ومخرجات مترابطة بأنواع واضحة",
+      "اختبار اختراق/رجوع محدد",
+      "لا ادعاء تنفيذ قبل إيصالات حقيقية"
+    ],
+    "constraints": [
+      "لا بيانات سرية",
+      "لا صلاحية نشر ضمنية",
+      "لا تغيير لأوزان النموذج"
+    ]
+  },
+  "methods": [
+    {
+      "name": "kosif-skill-orchestrator",
+      "type": "local"
+    },
+    {
+      "name": "kosif-eval-trust",
+      "type": "local"
+    },
+    {
+      "name": "kosif-agent-contracts",
+      "type": "local"
+    }
+  ],
+  "composition": {
+    "nodes": [
+      {
+        "id": "N1",
+        "input_kind": "brief",
+        "output_kind": "plan",
+        "executor_state": "proposed"
+      },
+      {
+        "id": "N2",
+        "input_kind": "plan",
+        "output_kind": "document",
+        "executor_state": "proposed"
+      },
+      {
+        "id": "N3",
+        "input_kind": "document",
+        "output_kind": "report",
+        "executor_state": "proposed"
+      }
+    ],
+    "edges": [
+      {
+        "from": "N1",
+        "to": "N2",
+        "kind": "plan",
+        "relation": "sequence"
+      },
+      {
+        "from": "N2",
+        "to": "N3",
+        "kind": "document",
+        "relation": "verify"
+      }
+    ]
+  },
+  "options": [
+    {
+      "id": "A",
+      "strategy_key": "single-verified-method-chain",
+      "description": "أبسط خط يعتمد على سلسلة تحقق واحدة"
+    },
+    {
+      "id": "B",
+      "strategy_key": "cross-domain-fusionforge-adapters",
+      "description": "تركيب توليف ذكي عبر تخصصات متعددة"
+    },
+    {
+      "id": "C",
+      "strategy_key": "independent-engines-adversarial-evals",
+      "description": "محرك بديل مع مراجعة خصومية مستقلة"
+    }
+  ],
+  "facts": [
+    {
+      "status": "supported",
+      "claim": "مستودع KOSIF Superpowers يحتوي على بروتوكول USIP v5.3",
+      "source": "PROTOCOL.md"
+    }
+  ],
+  "numeric": {
+    "exact_claim": false
+  },
+  "privacy": {
+    "cross_tenant_data": false,
+    "export_raw_client_data": false
+  },
+  "claims": {
+    "executed": false,
+    "verified": false,
+    "full_pro_completed": false,
+    "reviewers_executed": 0
+  },
+  "receipts": {}
+}

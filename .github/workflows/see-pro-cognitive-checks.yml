@@ -1,0 +1,60 @@
+name: SEE Pro Cognitive Fusion Checks
+on:
+  push:
+    branches:
+      - main
+    paths:
+      - ".github/workflows/see-pro-cognitive-checks.yml"
+      - ".claude/skills/kosif-superpowers/scripts/see_pro_cognitive_gate.py"
+      - ".claude/skills/kosif-superpowers/data/tools.json"
+      - ".claude/skills/kosif-superpowers/evals/test_see_pro_cognitive_gate.py"
+      - ".claude/skills/kosif-superpowers/references/protocol/A10-self-evolution.md"
+      - ".claude/skills/kosif-superpowers/references/protocol/A12-see-pro-cognitive-fusion.md"
+      - ".claude/skills/kosif-superpowers/evals/test_katana_analysis_policy.py"
+      - ".claude/skills/kosif-superpowers/references/protocol/A8-motion-brain.md"
+      - ".claude/skills/kosif-superpowers/references/guides/edit.md"
+      - ".claude/skills/kosif-superpowers/PROTOCOL.md"
+      - ".claude/skills/kosif-superpowers/SESSION_PROMPT.md"
+      - ".claude/skills/kosif-superpowers/SKILL.md"
+      - "CLAUDE.md"
+  workflow_dispatch:
+permissions:
+  contents: write
+jobs:
+  cognitive-gates:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+      - name: Python version
+        run: python3 --version
+      - name: SEE Pro cognitive self-test
+        run: python3 .claude/skills/kosif-superpowers/scripts/see_pro_cognitive_gate.py --self-test
+      - name: SEE Pro deterministic unit and shadow cases
+        run: python3 -m unittest discover -s .claude/skills/kosif-superpowers/evals -p test_see_pro_cognitive_gate.py -v
+      - name: Katana analysis-only generation-credit and media policy
+        run: python3 -m unittest discover -s .claude/skills/kosif-superpowers/evals -p test_katana_analysis_policy.py -v
+      - name: USIP protocol structure and back-compatibility
+        run: python3 -m unittest discover -s .claude/skills/kosif-superpowers/evals -p test_protocol_structure.py -v
+      - name: Rebuild canonical KOSIF tool registry outputs
+        run: python3 .claude/skills/kosif-superpowers/scripts/hub.py build
+      - name: SKILL / catalog / protocol integrity checks
+        run: python3 .claude/skills/kosif-superpowers/scripts/check_skill.py
+      - name: Verify deterministic generated diff and publish to main
+        if: github.event_name == 'push' && github.ref == 'refs/heads/main'
+        run: |
+          git add -- \
+            .claude/skills/kosif-superpowers/manifest.json \
+            .claude/skills/kosif-superpowers/references/INDEX.md \
+            .claude/skills/kosif-superpowers/SKILL.md \
+            .claude/skills/kosif-superpowers/data/powers/runnable-tools.json \
+            .claude/skills/kosif-superpowers/references/guides/
+          git diff --cached --check
+          if ! git diff --cached --quiet; then
+            git config user.name 'github-actions[bot]'
+            git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+            git commit -m 'build(kosif): refresh generated tool registry outputs for SEE Pro'
+            git push origin HEAD:main
+          else
+            echo 'Generated outputs already current'
+          fi
