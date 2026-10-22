@@ -1,0 +1,104 @@
+{
+  "schema": "kosif.prompt_engines.v1",
+  "note": "Delivery adapters for scripts/prompt_pack.py. Each entry only APPENDS a documented suffix after the user's prompt text; the prompt words are never changed. Syntax marked version_sensitive was written from public documentation for the named version and has not been run against the engine here (badge: documented). Check the engine's current docs before relying on a flag.",
+  "default_engine": "generic-image",
+  "engines": {
+    "midjourney": {
+      "label": "Midjourney",
+      "medium": "image",
+      "version": "7",
+      "version_sensitive": true,
+      "evidence": "documented",
+      "negative": "flag",
+      "negative_flag": "--no",
+      "version_flag": "--v 7",
+      "params": {
+        "ar": "--ar {v}",
+        "aspect": "--ar {v}",
+        "stylize": "--stylize {v}",
+        "chaos": "--chaos {v}",
+        "seed": "--seed {v}",
+        "weird": "--weird {v}",
+        "quality": "--quality {v}",
+        "raw": "--raw",
+        "draft": "--draft",
+        "tile": "--tile"
+      },
+      "suffix_join": " ",
+      "doc_note": "Parameters go at the very end of the prompt, after the text, separated by spaces (V7 syntax). --no takes a comma-separated list."
+    },
+    "generic-image": {
+      "label": "Generic image model (Flux, SDXL, Imagen, GPT-image, ...)",
+      "medium": "image",
+      "version": null,
+      "version_sensitive": false,
+      "evidence": "documented",
+      "negative": "line",
+      "negative_label": "Negative prompt:",
+      "params": {
+        "ar": "Aspect ratio {v}.",
+        "aspect": "Aspect ratio {v}.",
+        "seed": "Seed {v}."
+      },
+      "suffix_join": "\n\n",
+      "doc_note": "Plain text. If the tool has a separate negative-prompt field, paste the 'Negative prompt:' line there instead."
+    },
+    "generic-video": {
+      "label": "Generic video model (Veo, Runway, Pika, Kling, Sora, ...)",
+      "medium": "video",
+      "version": null,
+      "version_sensitive": false,
+      "evidence": "documented",
+      "negative": "line",
+      "negative_label": "Avoid:",
+      "fixed_suffix": "No subtitles or on-screen text.",
+      "params": {
+        "ar": "Aspect ratio {v}.",
+        "aspect": "Aspect ratio {v}.",
+        "duration": "Duration {v} seconds.",
+        "camera": "Camera: {v}."
+      },
+      "suffix_join": "\n\n",
+      "doc_note": "Plain text; titles and Arabic typography are added later in the edit (clean plate), never generated inside the clip."
+    }
+  },
+  "aliases": {
+    "mj": "midjourney",
+    "midjourney-v7": "midjourney",
+    "image": "generic-image",
+    "flux": "generic-image",
+    "sdxl": "generic-image",
+    "stable-diffusion": "generic-image",
+    "imagen": "generic-image",
+    "gpt-image": "generic-image",
+    "generic": "generic-image",
+    "video": "generic-video",
+    "veo": "generic-video",
+    "runway": "generic-video",
+    "pika": "generic-video",
+    "kling": "generic-video",
+    "sora": "generic-video"
+  },
+  "lint": {
+    "contradictions": [
+      ["day", "night"],
+      ["daytime", "nighttime"],
+      ["sunrise", "sunset"],
+      ["indoor", "outdoor"],
+      ["indoors", "outdoors"],
+      ["black and white", "vibrant colors"],
+      ["monochrome", "colorful"],
+      ["static camera", "tracking shot"],
+      ["dolly in", "dolly out"],
+      ["zoom in", "zoom out"],
+      ["pan left", "pan right"],
+      ["close-up", "wide shot"],
+      ["summer", "winter"]
+    ],
+    "subject_nouns": ["man", "woman", "boy", "girl", "child", "kid", "old man", "old woman", "person", "character", "warrior", "king", "queen", "soldier", "robot", "cat", "dog", "horse", "bird", "lion"],
+    "separation_cues": ["on the left", "on the right", "left side", "right side", "in the foreground", "in the background", "foreground", "background", "behind", "next to", "beside", "facing each other", "across from", "frame left", "frame right"],
+    "names": ["Pixar", "Disney", "Studio Ghibli", "Ghibli", "DreamWorks", "Marvel", "DC Comics", "Illumination", "Aardman", "Miyazaki", "Greg Rutkowski", "Wes Anderson", "Tim Burton", "Makoto Shinkai", "Artgerm", "Nike", "Adidas", "Coca-Cola", "Apple", "Lego", "Barbie", "Pokemon", "Unreal Engine"],
+    "hype_tokens": ["8k", "4k", "16k", "uhd", "ultra realistic", "ultra-realistic", "hyperrealistic", "hyper-detailed", "masterpiece", "best quality", "trending on artstation", "award winning", "award-winning", "insanely detailed"],
+    "text_cues": ["text that says", "text saying", "with the words", "the words", "written", "caption", "title text", "headline", "logo with", "sign that reads", "that reads", "typography", "lettering", "subtitle", "label reading"]
+  }
+}

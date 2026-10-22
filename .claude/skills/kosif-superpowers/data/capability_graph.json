@@ -15,7 +15,7 @@
    "id": "root",
    "kind": "root",
    "label": "KOSIF Superpowers",
-   "count": 5318
+   "count": 5331
   },
   {
    "id": "dom:motion",
@@ -1169,13 +1169,29 @@
    "label": "Image & audio",
    "ar": "الصور والصوت",
    "prefix": "MEDIA",
-   "count": 34,
+   "count": 41,
    "proven": 24,
    "status": {
     "proven": 24,
-    "install": 8,
-    "key": 2
+    "install": 9,
+    "key": 2,
+    "ready": 3,
+    "documented": 3
    }
+  },
+  {
+   "id": "req:pip:onnxruntime",
+   "kind": "requirement",
+   "label": "pip:onnxruntime",
+   "ar": "تشغيل النماذج المحلية على المعالج",
+   "en": "run local models on CPU",
+   "install": "pip install onnxruntime",
+   "req_kind": "pip"
+  },
+  {
+   "id": "script:scripts/image_local_ai.py",
+   "kind": "script",
+   "label": "scripts/image_local_ai.py"
   },
   {
    "id": "fam:mental-models",
@@ -1480,10 +1496,10 @@
    "label": "Software investigation (REA)",
    "ar": "فحص البرامج والهندسة العكسية",
    "prefix": "REA",
-   "count": 241,
+   "count": 245,
    "proven": 30,
    "status": {
-    "documented": 163,
+    "documented": 167,
     "proven": 30,
     "install": 48
    }
@@ -1628,13 +1644,13 @@
    "label": "Arabic typography",
    "ar": "الخط العربي المتحرك",
    "prefix": "ARAB",
-   "count": 96,
+   "count": 98,
    "proven": 22,
    "status": {
     "proven": 22,
-    "documented": 20,
+    "documented": 21,
     "ready": 36,
-    "install": 6,
+    "install": 7,
     "seen": 11,
     "idea": 1
    }
@@ -1916,6 +1932,16 @@
    "label": "scripts/creative_paint.py"
   },
   {
+   "id": "script:scripts/charter_ingest.py",
+   "kind": "script",
+   "label": "scripts/charter_ingest.py"
+  },
+  {
+   "id": "script:scripts/_secrets.py",
+   "kind": "script",
+   "label": "scripts/_secrets.py"
+  },
+  {
    "id": "script:scripts/check_skill.py",
    "kind": "script",
    "label": "scripts/check_skill.py"
@@ -1934,11 +1960,6 @@
    "id": "script:scripts/council.py",
    "kind": "script",
    "label": "scripts/council.py"
-  },
-  {
-   "id": "script:scripts/_secrets.py",
-   "kind": "script",
-   "label": "scripts/_secrets.py"
   },
   {
    "id": "script:scripts/skill_intelligence.py",
@@ -2022,6 +2043,11 @@
    "label": "scripts/package_skill.py"
   },
   {
+   "id": "script:scripts/prompt_pack.py",
+   "kind": "script",
+   "label": "scripts/prompt_pack.py"
+  },
+  {
    "id": "script:scripts/rebalance_creative_repos.py",
    "kind": "script",
    "label": "scripts/rebalance_creative_repos.py"
@@ -2070,6 +2096,11 @@
    "id": "script:scripts/smart_draw.py",
    "kind": "script",
    "label": "scripts/smart_draw.py"
+  },
+  {
+   "id": "script:scripts/sources_index.py",
+   "kind": "script",
+   "label": "scripts/sources_index.py"
   },
   {
    "id": "script:scripts/test_atlas_reviewed_methods_v3.py",
@@ -2237,6 +2268,11 @@
    "label": ".claude/skills/kosif-superpowers/evals/test_character_fullbody.py"
   },
   {
+   "id": "test:.claude/skills/kosif-superpowers/evals/test_charter_index.py",
+   "kind": "test",
+   "label": ".claude/skills/kosif-superpowers/evals/test_charter_index.py"
+  },
+  {
    "id": "test:.claude/skills/kosif-superpowers/evals/test_check_skill_json.py",
    "kind": "test",
    "label": ".claude/skills/kosif-superpowers/evals/test_check_skill_json.py"
@@ -2277,9 +2313,19 @@
    "label": "tests/test_media_sources_gateway.py"
   },
   {
+   "id": "test:.claude/skills/kosif-superpowers/evals/test_prompt_pack.py",
+   "kind": "test",
+   "label": ".claude/skills/kosif-superpowers/evals/test_prompt_pack.py"
+  },
+  {
    "id": "test:.claude/skills/kosif-superpowers/evals/test_fusionforge_shared.py",
    "kind": "test",
    "label": ".claude/skills/kosif-superpowers/evals/test_fusionforge_shared.py"
+  },
+  {
+   "id": "test:.claude/skills/kosif-superpowers/evals/test_image_local_ai.py",
+   "kind": "test",
+   "label": ".claude/skills/kosif-superpowers/evals/test_image_local_ai.py"
   },
   {
    "id": "test:.claude/skills/kosif-superpowers/evals/test_installer_triage.py",
@@ -2365,6 +2411,11 @@
    "id": "test:.claude/skills/kosif-superpowers/evals/test_skill_intelligence.py",
    "kind": "test",
    "label": ".claude/skills/kosif-superpowers/evals/test_skill_intelligence.py"
+  },
+  {
+   "id": "test:.claude/skills/kosif-superpowers/evals/test_sources_index.py",
+   "kind": "test",
+   "label": ".claude/skills/kosif-superpowers/evals/test_sources_index.py"
   },
   {
    "id": "test:.claude/skills/kosif-superpowers/evals/test_superpower_fusion.py",
@@ -4401,13 +4452,13 @@
    "from": "dom:media",
    "to": "fam:media-image-audio",
    "rel": "has",
-   "w": 34
+   "w": 41
   },
   {
    "from": "fam:media-image-audio",
    "to": "req:pip:pillow",
    "rel": "needs",
-   "w": 6
+   "w": 8
   },
   {
    "from": "fam:media-image-audio",
@@ -4423,6 +4474,12 @@
   },
   {
    "from": "fam:media-image-audio",
+   "to": "req:python3",
+   "rel": "needs",
+   "w": 5
+  },
+  {
+   "from": "fam:media-image-audio",
    "to": "req:tesseract",
    "rel": "needs",
    "w": 5
@@ -4435,21 +4492,21 @@
   },
   {
    "from": "fam:media-image-audio",
-   "to": "req:python3",
+   "to": "req:pip:numpy",
    "rel": "needs",
-   "w": 4
+   "w": 5
   },
   {
    "from": "fam:media-image-audio",
-   "to": "req:pip:numpy",
+   "to": "req:pip:onnxruntime",
    "rel": "needs",
    "w": 3
   },
   {
    "from": "fam:media-image-audio",
-   "to": "req:fonts:arabic",
-   "rel": "needs",
-   "w": 2
+   "to": "script:scripts/image_local_ai.py",
+   "rel": "runs",
+   "w": 6
   },
   {
    "from": "root",
@@ -5283,19 +5340,19 @@
    "from": "dom:code",
    "to": "fam:software-investigation",
    "rel": "has",
-   "w": 241
+   "w": 245
   },
   {
    "from": "fam:software-investigation",
    "to": "req:npm:rea",
    "rel": "needs",
-   "w": 241
+   "w": 245
   },
   {
    "from": "fam:software-investigation",
    "to": "req:engine:ghidra",
    "rel": "needs",
-   "w": 75
+   "w": 76
   },
   {
    "from": "fam:software-investigation",
@@ -5679,19 +5736,19 @@
    "from": "dom:motion",
    "to": "fam:typography-arabic",
    "rel": "has",
-   "w": 96
+   "w": 98
   },
   {
    "from": "fam:typography-arabic",
    "to": "req:fonts:arabic",
    "rel": "needs",
-   "w": 25
+   "w": 26
   },
   {
    "from": "fam:typography-arabic",
    "to": "req:pip:pillow",
    "rel": "needs",
-   "w": 8
+   "w": 9
   },
   {
    "from": "fam:typography-arabic",
@@ -6312,6 +6369,12 @@
    "w": 1
   },
   {
+   "from": "script:scripts/charter_ingest.py",
+   "to": "script:scripts/_secrets.py",
+   "rel": "imports",
+   "w": 1
+  },
+  {
    "from": "script:scripts/check_skill.py",
    "to": "script:scripts/build_chapters.py",
    "rel": "imports",
@@ -6338,6 +6401,12 @@
   {
    "from": "script:scripts/council.py",
    "to": "script:scripts/_secrets.py",
+   "rel": "imports",
+   "w": 1
+  },
+  {
+   "from": "script:scripts/council.py",
+   "to": "script:scripts/charter_ingest.py",
    "rel": "imports",
    "w": 1
   },
@@ -6702,6 +6771,12 @@
    "w": 1
   },
   {
+   "from": "script:scripts/prompt_pack.py",
+   "to": "script:scripts/_secrets.py",
+   "rel": "imports",
+   "w": 1
+  },
+  {
    "from": "script:scripts/rebalance_creative_repos.py",
    "to": "script:scripts/rea_creative_research_atlas.py",
    "rel": "imports",
@@ -6764,6 +6839,12 @@
   {
    "from": "script:scripts/smart_draw.py",
    "to": "script:scripts/creative_paint.py",
+   "rel": "imports",
+   "w": 1
+  },
+  {
+   "from": "script:scripts/sources_index.py",
+   "to": "script:scripts/_secrets.py",
    "rel": "imports",
    "w": 1
   },
@@ -7068,6 +7149,12 @@
    "w": 1
   },
   {
+   "from": "script:scripts/charter_ingest.py",
+   "to": "test:.claude/skills/kosif-superpowers/evals/test_charter_index.py",
+   "rel": "tested_by",
+   "w": 1
+  },
+  {
    "from": "script:scripts/check_skill.py",
    "to": "test:.claude/skills/kosif-superpowers/evals/test_check_skill_json.py",
    "rel": "tested_by",
@@ -7088,6 +7175,12 @@
   {
    "from": "script:scripts/code_drawing_master.py",
    "to": "test:.claude/skills/kosif-superpowers/evals/test_code_drawing_master.py",
+   "rel": "tested_by",
+   "w": 1
+  },
+  {
+   "from": "script:scripts/council.py",
+   "to": "test:.claude/skills/kosif-superpowers/evals/test_charter_index.py",
    "rel": "tested_by",
    "w": 1
   },
@@ -7129,6 +7222,12 @@
   },
   {
    "from": "script:scripts/fusionforge.py",
+   "to": "test:.claude/skills/kosif-superpowers/evals/test_prompt_pack.py",
+   "rel": "tested_by",
+   "w": 1
+  },
+  {
+   "from": "script:scripts/fusionforge.py",
    "to": "test:.claude/skills/kosif-superpowers/evals/test_protocol_structure.py",
    "rel": "tested_by",
    "w": 1
@@ -7154,6 +7253,12 @@
   {
    "from": "script:scripts/hub.py",
    "to": "test:.claude/skills/kosif-superpowers/evals/test_protocol_structure.py",
+   "rel": "tested_by",
+   "w": 1
+  },
+  {
+   "from": "script:scripts/image_local_ai.py",
+   "to": "test:.claude/skills/kosif-superpowers/evals/test_image_local_ai.py",
    "rel": "tested_by",
    "w": 1
   },
@@ -7290,6 +7395,12 @@
    "w": 1
   },
   {
+   "from": "script:scripts/prompt_pack.py",
+   "to": "test:.claude/skills/kosif-superpowers/evals/test_prompt_pack.py",
+   "rel": "tested_by",
+   "w": 1
+  },
+  {
    "from": "script:scripts/python_package_probe.py",
    "to": "test:.claude/skills/kosif-superpowers/evals/test_system_python.py",
    "rel": "tested_by",
@@ -7364,6 +7475,12 @@
   {
    "from": "script:scripts/smart_capabilities.py",
    "to": "test:.claude/skills/kosif-superpowers/evals/test_protocol_structure.py",
+   "rel": "tested_by",
+   "w": 1
+  },
+  {
+   "from": "script:scripts/sources_index.py",
+   "to": "test:.claude/skills/kosif-superpowers/evals/test_sources_index.py",
    "rel": "tested_by",
    "w": 1
   },

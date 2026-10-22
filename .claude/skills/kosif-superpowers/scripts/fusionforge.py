@@ -93,7 +93,7 @@ TRANSITIONS = {"candidate": ("planned", "failed"), "planned": ("tested", "failed
                "tested": ("tested", "verified", "failed"), "verified": (), "failed": ()}
 TERMINAL = ("verified", "failed")
 KINDS = ("brief", "spec", "plan", "sources", "code", "dataset", "report", "document", "image", "audio", "video",
-         "model3d", "font", "evidence", "package", "any")
+         "model3d", "font", "prompt", "evidence", "package", "any")
 RELATIONS = ("sequence", "parallel", "complement", "substitute", "verify", "refine", "fallback")
 NODE_STATUSES = ("pending", "passed", "failed", "skipped")
 RESULTS = ("passed", "failed", "skipped")

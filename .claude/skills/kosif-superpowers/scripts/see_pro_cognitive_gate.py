@@ -27,7 +27,7 @@ PACKS = {
 LEVELS = {"L0", "L1", "L2", "L3"}
 MODES = {"fast", "standard", "deep", "full_pro"}
 KINDS = {"any", "brief", "spec", "plan", "sources", "code", "dataset", "report",
-         "document", "image", "audio", "video", "model3d", "font", "evidence", "package"}
+         "document", "image", "audio", "video", "model3d", "font", "prompt", "evidence", "package"}
 RELATIONS = {"sequence", "parallel", "complement", "substitute", "verify", "refine", "fallback"}
 STATUS = {"proposed", "method_loaded", "executor_exposed", "executed", "verified"}
 SECRET = re.compile(r"(?i)(?:sk-proj-[a-z0-9_-]{12,}|gh[pousr]_[a-z0-9]{20,}"

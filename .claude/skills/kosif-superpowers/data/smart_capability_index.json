@@ -1,10 +1,10 @@
 {
   "schema": "kosif.smart-capability-index.v1",
   "origin": "data/powers/*.json (catalog); no original records changed",
-  "catalog_powers": 5318,
+  "catalog_powers": 5331,
   "group_count": 15,
   "family_count": 62,
-  "tool_count": 115,
+  "tool_count": 126,
   "groups": [
     {
       "id": "research",
@@ -316,21 +316,21 @@
         "التوليد الاختياري",
         "تصدير النتيجة"
       ],
-      "count": 296,
+      "count": 303,
       "status_counts": {
-        "documented": 76,
+        "documented": 79,
         "idea": 2,
-        "install": 26,
+        "install": 27,
         "key": 35,
         "proven": 96,
-        "ready": 39,
+        "ready": 42,
         "seen": 22
       },
       "family_counts": {
         "ai-generation": 93,
         "atlas-media": 14,
         "color-palette-grading": 87,
-        "media-image-audio": 34,
+        "media-image-audio": 41,
         "photo-video-footage": 68
       },
       "examples": [
@@ -561,11 +561,11 @@
       ],
       "keywords": "arabic text typography font subtitle rtl letter line خط خطوط عربي كتابة تنسيق نص",
       "workflow": [],
-      "count": 210,
+      "count": 212,
       "status_counts": {
-        "documented": 43,
+        "documented": 44,
         "idea": 3,
-        "install": 30,
+        "install": 31,
         "key": 1,
         "proven": 38,
         "ready": 49,
@@ -573,7 +573,7 @@
       },
       "family_counts": {
         "arabic-language": 22,
-        "typography-arabic": 96,
+        "typography-arabic": 98,
         "typography-latin": 92
       },
       "examples": [
@@ -788,14 +788,14 @@
       ],
       "keywords": "reverse engineering ghidra rea binary executable forensic تحليل عكسي جفرا ريش",
       "workflow": [],
-      "count": 241,
+      "count": 245,
       "status_counts": {
-        "documented": 163,
+        "documented": 167,
         "install": 48,
         "proven": 30
       },
       "family_counts": {
-        "software-investigation": 241
+        "software-investigation": 245
       },
       "examples": [
         {
@@ -47917,6 +47917,131 @@
       "what": "تحديد من تحدث ومتى لبناء ترجمة لكل متحدث. — Label who spoke when, for per-speaker captions. (pyannote.audio, ★10.7k, MIT)."
     },
     {
+      "id": "MEDIA-35",
+      "family": "media-image-audio",
+      "group": "images",
+      "domain": "media",
+      "name_en": "Remove a background offline with a user-supplied ONNX matte model",
+      "name_ar": "إزالة الخلفية محليًا بنموذج ONNX تختاره أنت",
+      "status": "ready",
+      "requires": [
+        "pip:numpy",
+        "pip:pillow",
+        "pip:onnxruntime"
+      ],
+      "proof": [
+        "kosif-tool/.claude/skills/kosif-superpowers/scripts/image_local_ai.py",
+        "kosif-tool/.claude/skills/kosif-superpowers/evals/test_image_local_ai.py"
+      ],
+      "source": "media-image-audio.json",
+      "what": "قناع موضوع بأسلوب BiRefNet (تحجيم، تطبيع ImageNet، sigmoid) يتحول إلى PNG بقناة ألفا ناعمة، بلا شبكة ولا تنزيل. — BiRefNet-style subject matte (resize, ImageNet normalisation, sigmoid) turned into an RGBA PNG with a soft alpha; no network, no download."
+    },
+    {
+      "id": "MEDIA-36",
+      "family": "media-image-audio",
+      "group": "images",
+      "domain": "media",
+      "name_en": "Smart fill a masked area offline (MI-GAN-style ONNX)",
+      "name_ar": "ملء ذكي محلي لمنطقة محددة بقناع",
+      "status": "ready",
+      "requires": [
+        "pip:numpy",
+        "pip:pillow",
+        "pip:onnxruntime"
+      ],
+      "proof": [
+        "kosif-tool/.claude/skills/kosif-superpowers/scripts/image_local_ai.py",
+        "kosif-tool/.claude/skills/kosif-superpowers/evals/test_image_local_ai.py"
+      ],
+      "source": "media-image-audio.json",
+      "what": "يملأ المنطقة البيضاء من القناع بنموذج بمدخلات MI-GAN (image/mask uint8 → result)، يوسّع الثقب قليلًا للنموذج ثم يلصق فقط ثقب المستخدم. — Fills the white area of a mask with an MI-GAN-I/O model, grows the hole for the model, then pastes back only the user's own hole."
+    },
+    {
+      "id": "MEDIA-37",
+      "family": "media-image-audio",
+      "group": "images",
+      "domain": "media",
+      "name_en": "Commit-pinned models: verify SHA-256 before use",
+      "name_ar": "نماذج مثبتة بالبصمة: تحقق قبل التشغيل",
+      "status": "ready",
+      "requires": [
+        "pip:onnxruntime"
+      ],
+      "proof": [
+        "kosif-tool/.claude/skills/kosif-superpowers/scripts/image_local_ai.py",
+        "kosif-tool/.claude/skills/kosif-superpowers/evals/test_image_local_ai.py"
+      ],
+      "source": "media-image-audio.json",
+      "what": "جدول بالنماذج الثلاثة المفتوحة (BiRefNet lite MIT، SAM 2.1 tiny Apache-2.0، MI-GAN MIT) بروابط مثبتة على commit وأحجام وبصمات SHA-256 كما نشرها مصمم، وأمر يتحقق من ملف منزّل. — The three open models with commit-pinned URLs, sizes and SHA-256 as Mosamem publishes them, plus a comm"
+    },
+    {
+      "id": "MEDIA-38",
+      "family": "media-image-audio",
+      "group": "images",
+      "domain": "media",
+      "name_en": "Mosamem: Arabic-first image editor with layers, masks and non-destructive adjustments",
+      "name_ar": "مصمم: محرر صور عربي أولًا بطبقات وأقنعة وتعديلات غير مدمّرة",
+      "status": "documented",
+      "requires": [
+        "node"
+      ],
+      "proof": [
+        "https://github.com/motalim-ai/mosamem"
+      ],
+      "source": "media-image-audio.json",
+      "what": "محرر سطح مكتب مفتوح (Rust/Tauri، ماك وويندوز): طبقات ومجموعات وأنماط دمج وأقنعة وقص، طبقات تعديل (Levels وCurves وHue/Saturation…)، أنماط طبقات، فلاتر، قلم وأشكال قابلة للتعديل، واجهة عربية من اليمين. — Open desktop editor (Rust/Tauri, Mac and Windows): layers, groups, blend mode"
+    },
+    {
+      "id": "MEDIA-39",
+      "family": "media-image-audio",
+      "group": "images",
+      "domain": "media",
+      "name_en": "Mosamem: open layered PSD files and save a layered copy",
+      "name_ar": "مصمم: فتح PSD بطبقاته وحفظ نسخة بطبقات",
+      "status": "documented",
+      "requires": [],
+      "proof": [
+        "https://github.com/motalim-ai/mosamem/blob/main/docs/psd-report.md"
+      ],
+      "source": "media-image-audio.json",
+      "what": "يقرأ ملفات Photoshop بطبقاتها ويكتب نسخة بطبقات عبر ag-psd (MIT)، مع تقرير توافق في docs/psd-report.md. — Reads layered Photoshop files and writes a layered copy through ag-psd (MIT), with a compatibility report in docs/psd-report.md."
+    },
+    {
+      "id": "MEDIA-40",
+      "family": "media-image-audio",
+      "group": "images",
+      "domain": "media",
+      "name_en": "Mosamem: select an object from a click or a box (SAM 2.1 tiny, local)",
+      "name_ar": "مصمم: تحديد عنصر بنقرة أو مربع (SAM 2.1 محليًا)",
+      "status": "documented",
+      "requires": [
+        "python3"
+      ],
+      "proof": [
+        "https://huggingface.co/onnx-community/sam2.1-hiera-tiny-ONNX"
+      ],
+      "source": "media-image-audio.json",
+      "what": "تحديد الكائن بنقرات إضافة/حذف أو مربع عبر SAM 2.1 hiera-tiny (Apache-2.0) على الجهاز بعد تنزيل لمرة واحدة بموافقة المستخدم ثم بلا شبكة. — Object selection from add/remove clicks or a box with SAM 2.1 hiera-tiny (Apache-2.0), on-device after a one-time consented download."
+    },
+    {
+      "id": "MEDIA-41",
+      "family": "media-image-audio",
+      "group": "images",
+      "domain": "media",
+      "name_en": "Mosamem core: tested pixel math (blend modes, adjustments, selection, painting)",
+      "name_ar": "مصمم: نواة البكسل مختبرة (دمج وتعديلات وتحديد ورسم)",
+      "status": "install",
+      "requires": [
+        "git"
+      ],
+      "proof": [
+        "run here 2026-10-22: cargo test -p mosamem-core on Mosamem becfbe8 (outside the repo, cargo 1.97.0) → 95 passed, 0 failed (86 unit incl. 13 text shaping/layout goldens, 9 blend-formula); offline attempt failed (crates not cached)",
+        "https://github.com/motalim-ai/mosamem"
+      ],
+      "source": "media-image-audio.json",
+      "what": "نواة mosamem-core بنيت واختبرت هنا خارج المستودع: 95 اختبارًا ناجحًا تشمل معادلات أنماط الدمج المرجعية والتعديلات والفلاتر والتحديد السريع والملء والرسم والمتجهات. — mosamem-core built and tested here outside the repo: 95 passing tests covering reference blend formulas, adjustmen"
+    },
+    {
       "id": "MODEL-01",
       "family": "mental-models",
       "group": "thinking",
@@ -65742,7 +65867,7 @@
         "kosif-tool/.claude/skills/kosif-superpowers/scripts/check_skill.py"
       ],
       "source": "runnable-tools.json",
-      "what": "يفحص مهارة kosif-superpowers باثني عشر فحصًا لا تكتب شيئًا: ترويسة ملف SKILL.md، وسجلات القدرات، ومسارات الأدلة، وروابط Markdown النسبية، وعناوين المحتويات، والفصول المولَّدة، وعلامة العدّادات، وأسماء النماذج، والأسرار ومسارات الجلسات المسرَّبة، وملف evals/evals.json، وسجل الأدوا"
+      "what": "يفحص مهارة kosif-superpowers بثلاثة عشر فحصًا لا تكتب شيئًا: ترويسة ملف SKILL.md، وسجلات القدرات، ومسارات الأدلة، وروابط Markdown النسبية، وعناوين المحتويات، والفصول المولَّدة، وعلامة العدّادات، وأسماء النماذج، والأسرار ومسارات الجلسات المسرَّبة، وملف evals/evals.json، وسجل الأدو"
     },
     {
       "id": "TOOL-57",
@@ -72894,6 +73019,75 @@
       ],
       "source": "software-investigation.json",
       "what": "الجسر يستبدل rea.cmd بـ node rea-agents/scripts/rea.mjs (عبر REA_BIN أو PATH)، مع --timeout (600 ث افتراضيًا) و--source-path للتحليل المحدود — Run REA on Windows without cmd.exe."
+    },
+    {
+      "id": "REA-242",
+      "family": "software-investigation",
+      "group": "reverse",
+      "domain": "code",
+      "name_en": "REA skill: optimize analysis cost while preserving correctness and Evidence",
+      "name_ar": "REA: تحسين أداء التحليل مع الحفاظ على الأدلة",
+      "status": "documented",
+      "requires": [
+        "npm:rea",
+        "engine:ghidra"
+      ],
+      "proof": [
+        "https://github.com/morluto/rea/tree/main/.agents/skills/rea-analysis-optimization"
+      ],
+      "source": "software-investigation.json",
+      "what": "مهارة rea-analysis-optimization: ثبّت السؤال ومرجع صحة مستقلًا، قس كل مرحلة (القبول، التحليل الأصلي، فك الترميز، الإسقاط، التسلسل)، ثم أصغر تصحيح بنيوي عند المالك؛ القرار المقاس بعدم التغيير نتيجة مقبولة. — Pin the question and an independent oracle, measure each phase, apply the"
+    },
+    {
+      "id": "REA-243",
+      "family": "software-investigation",
+      "group": "reverse",
+      "domain": "code",
+      "name_en": "REA skill: design investigation tools, CLI/MCP contracts and Evidence semantics",
+      "name_ar": "REA: تصميم أداة تحقيق وعقد CLI/MCP",
+      "status": "documented",
+      "requires": [
+        "npm:rea"
+      ],
+      "proof": [
+        "https://github.com/morluto/rea/tree/main/.agents/skills/rea-tool-design"
+      ],
+      "source": "software-investigation.json",
+      "what": "مهارة rea-tool-design: لكل طلب تصميم أعد الحدود المقترحة وشكل المدخل/النتيجة ودلالات الأدلة وأقرب بديل موجود وطريقة التحقق؛ نفّذ فقط إن طُلب. — Return the proposed boundary, input/result shape, Evidence semantics, nearest existing alternative and verification approach; implement "
+    },
+    {
+      "id": "REA-244",
+      "family": "software-investigation",
+      "group": "reverse",
+      "domain": "code",
+      "name_en": "REA skill: audit CI and test suites for fixture drift, false passes and measured cost",
+      "name_ar": "REA: تدقيق CI والاختبارات (انحراف التجهيزات والنجاح الكاذب)",
+      "status": "documented",
+      "requires": [
+        "npm:rea"
+      ],
+      "proof": [
+        "https://github.com/morluto/rea/tree/main/.agents/skills/rea-ci-tests-audit"
+      ],
+      "source": "software-investigation.json",
+      "what": "مهارة rea-ci-tests-audit: ثبّت SHA الأساس، تتبّع المشغلات حتى الأوامر المنفذة فعلًا، أثبت كل حماية بإفساد متحكم به في نسخة معزولة، واحذف الكلفة فقط حين لا تضيع الحماية. — Pin the baseline SHA, trace triggers to executed commands, prove each protection by a controlled perturbation"
+    },
+    {
+      "id": "REA-245",
+      "family": "software-investigation",
+      "group": "reverse",
+      "domain": "code",
+      "name_en": "REA skill: release changelog from pinned Git history with verified contributor thanks",
+      "name_ar": "REA: كتابة سجل التغييرات من تاريخ Git مثبت مع شكر موثق",
+      "status": "documented",
+      "requires": [
+        "npm:rea"
+      ],
+      "proof": [
+        "https://github.com/morluto/rea/tree/main/.agents/skills/rea-changelog-update"
+      ],
+      "source": "software-investigation.json",
+      "what": "مهارة rea-changelog-update: جرد قبل النثر (scripts/release-notes.mjs inventory/record)، أقسام Highlights/Changes/Fixes/BREAKING، شكر كل مساهمة مرة بحسابها المؤكد وعدم تخمين الهويات. — Inventory before prose, user-facing sections, credit each contribution once to its verified auth"
     },
     {
       "id": "STORY-01",
@@ -86902,6 +87096,41 @@
       ],
       "source": "typography-arabic.json",
       "what": "لا يوجد خط ثلث مفتوح الرخصة؛ ابنِ إيماءة العنوان من حدود حروف Amiri Bold: مطّ الألف واللام، تكبير الجيم حول مفصلها، كشيدة بعد الميم والعين، إمالة مجموعة «لجمعة» المتصلة لينحدر السطر مع بقاء الأعمدة رأسية، وتشكيل يوضع يدويًا؛ مسار لكل حرف ليُرسم تدريجيًا. — No open Thuluth exists;"
+    },
+    {
+      "id": "ARAB-91",
+      "family": "typography-arabic",
+      "group": "type",
+      "domain": "craft",
+      "name_en": "Mosamem: editable Arabic text with HarfRust shaping and kashida justification",
+      "name_ar": "مصمم: نص عربي قابل للتعديل بتشكيل HarfRust وكشيدة",
+      "status": "install",
+      "requires": [
+        "pip:pillow"
+      ],
+      "proof": [
+        "run here 2026-10-22: cargo test -p mosamem-core on Mosamem becfbe8 (outside the repo, cargo 1.97.0) → 95 passed, 0 failed (86 unit incl. 13 text shaping/layout goldens, 9 blend-formula); offline attempt failed (crates not cached)",
+        "https://github.com/motalim-ai/mosamem"
+      ],
+      "source": "typography-arabic.json",
+      "what": "محرك نص يشكّل العربية بـ HarfRust (أشكال الاتصال، لام ألف، التشكيل)، ويخلط العربية واللاتينية باتجاه صحيح، ويعكس الأقواس، ويضبط بالكشيدة، ويستعير الحرف الناقص من خط مرفق آخر؛ اختبارات التشكيل الذهبية نجحت هنا. — HarfRust shaping (joining forms, lam-alef, stacked marks), correct m"
+    },
+    {
+      "id": "ARAB-92",
+      "family": "typography-arabic",
+      "group": "type",
+      "domain": "craft",
+      "name_en": "Four open Arabic fonts bundled by Mosamem (IBM Plex Sans Arabic, Cairo, Tajawal, Amiri)",
+      "name_ar": "أربعة خطوط عربية مفتوحة يرفقها مصمم",
+      "status": "documented",
+      "requires": [
+        "fonts:arabic"
+      ],
+      "proof": [
+        "https://github.com/motalim-ai/mosamem/blob/main/THIRD-PARTY-NOTICES.md"
+      ],
+      "source": "typography-arabic.json",
+      "what": "IBM Plex Sans Arabic وCairo وTajawal وAmiri، كلها برخصة SIL OFL 1.1، ويمكن جلبها من مستودعاتها الأصلية لا من مصمم. — All four are SIL OFL 1.1; fetch them from their own upstream repositories, not from Mosamem."
     },
     {
       "id": "TYPE-01",

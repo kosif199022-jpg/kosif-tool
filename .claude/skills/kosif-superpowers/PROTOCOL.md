@@ -49,7 +49,8 @@
 | [A13 مجلس البرو](references/protocol/A13-pro-council.md) | مجلس Pro | جديد | `council.py` |
 | [A14 أكاديمية الرسم والمونتاج](references/protocol/A14-drawing-cinematic-academy.md) | دراسة كتب الرسم، التكوين، الإضاءة، وتطوير تصميم الفيديو | جديد | `drawing_academy.py` و`creative_principles.py` (اختبارات جزئية) |
 | [A15 Futurepedia Style Atlas 15](references/protocol/A15-futurepedia-style-atlas.md) | طلب أسلوب بصري أو دمج أساليب الرسم/المونتاج من Futurepedia، سبورة، نيون، نوير، أيزومتري | قدرة طرق جديدة؛ 15 وصفًا عامًا فقط | `style_atlas_bridge.py` (فهرسة، وصفة توليف، عينات SVG ثابتة؛ لا فيديو تلقائي) |
-| [A16 Mosamem × REA](references/protocol/A16-mosamem-rea-capability-fusion.md) | دمج Mosamem وREA؛ صور، PSD، تحليل تطبيقات | جديد | فحص صور وتخطيط؛ البرنامج الخارجي لا يُنفَّذ تلقائيًا |
+| [A16 Mosamem × REA](references/protocol/A16-mosamem-rea-capability-fusion.md) | Mosamem وREA؛ صور، PSD، تحليل برامج | جديد | فحص وتخطيط بلا تشغيل آلي |
+| [A17 القصة](references/protocol/A17-story-scene-charter.md) | قصة وبرومنتات | جديد | `prompt_pack.py` |
 | [CHANGELOG](references/protocol/CHANGELOG.md) | تبحث عن قسم قديم برقمه أو عن تاريخ الإصدارات | خريطة كل قسم قديم إلى مكانه | — |
 
 ## المستودع الأصل — اقرأه كاملًا حتى لو لم تكن المهارة مثبتة

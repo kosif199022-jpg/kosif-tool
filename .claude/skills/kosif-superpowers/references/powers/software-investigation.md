@@ -3,13 +3,13 @@
 
 > **قوتك هنا / what this gives you:** كل أوامر REA v6.7.0 الـ153 وأدوات MCP وفرز مثبّتات Windows قبلها: فحص تطبيقات جافاسكربت وElectron والثنائيات الأصلية و.NET وأندرويد وApple والفيرموير والمواقع مع أدلة JSON وحدود صريحة؛ بإذن قانوني فقط. — All 153 REA v6.7.0 commands, its MCP tools and Windows installer triage: evidence-first inspection of JavaScript/Electron apps, native binaries, .NET, Android, Apple, firmware and websites, with explicit limitations; lawful targets only.
 > **أقوى دليل / strongest evidence:** **REA-003** Statically reconstruct a local JavaScript/Electron application (`kosif-tool/.claude/skills/kosif-superpowers/proofs/rea-static-runs/README.md`) · **REA-004** Capture and statically analyze a page bundle, defaulting to the selected target origin (`kosif-tool/.claude/skills/kosif-superpowers/proofs/rea-static-runs/README.md`)
-> **241 powers follow** — ✅ 30 · 🟢 0 · 📦 48 · 🔑 0 · 👁 0 · 📄 163 · 💡 0.
+> **245 powers follow** — ✅ 30 · 🟢 0 · 📦 48 · 🔑 0 · 👁 0 · 📄 167 · 💡 0.
 
 **الحالة / status:** ✅ مُثبت (شُغّل فعلًا وله مسار دليل) · 🟢 جاهز (كود موجود يعمل بما هو متاح عادة) · 📦 بأمر تثبيت واحد · 🔑 يحتاج مفتاحًا أو حسابًا أو موصلًا · 👁 شوهد في فيديو مرجعي (للموشن فقط) · 📄 طريقة موثقة · 💡 فكرة. الشارة هي أدنى مستوى صادق — the badge is the lowest level that is true.
 مسارات الدليل نسبية إلى `/home/user/`؛ و`session-<date>:<file>#<section>` تشير إلى تشغيل موثق في جلسة سابقة؛ و`owner-upload:` إلى ملف داخل أرشيف أرسله المالك. Proof paths are relative to `/home/user/`.
 
 **المجال / domain:** الهندسة والكود — Code & engineering · **البادئة / prefix:** `REA` · **البيانات / data:** `data/powers/software-investigation.json` · **بحث / search:** `python3 scripts/powers.py family software-investigation`
-**مراجع ذات صلة / related references:** [CLAUDE_3_MINUTE_MAP.md](../CLAUDE_3_MINUTE_MAP.md) · [capability-audit.md](../capability-audit.md) · [hubs.md](../hubs.md) · [rea-reverse-engineering.md](../rea-reverse-engineering.md)
+**مراجع ذات صلة / related references:** [CLAUDE_3_MINUTE_MAP.md](../CLAUDE_3_MINUTE_MAP.md) · [hubs.md](../hubs.md) · [rea-reverse-engineering.md](../rea-reverse-engineering.md) · [rea-upstream-capabilities.md](../rea-upstream-capabilities.md)
 
 ## الفهرس / contents
 
@@ -38,6 +38,7 @@
 - **REA MCP tools (v6.7.0)** — REA-154 … REA-229 (76)
 - **REA MCP prompts (v6.7.0)** — REA-230 … REA-235 (6)
 - **فرز مثبّتات Windows — Windows installer triage (KOSIF addition)** — REA-236 … REA-241 (6)
+- **مهارات REA الجديدة — REA upstream agent skills (6.7.0, checked 2026-10-22)** — REA-242 … REA-245 (4)
 - المصادر والرخص / sources & licences
 
 ## الثنائيات الأصلية — native binaries
@@ -2500,9 +2501,51 @@
 - **الدليل / proof:** `kosif-tool/.claude/skills/kosif-superpowers/proofs/windows-installers-rea/README.md`
 - **المصدر / source:** https://github.com/morluto/rea
 
+## مهارات REA الجديدة — REA upstream agent skills (6.7.0, checked 2026-10-22)
+
+#### REA-242 · REA: تحسين أداء التحليل مع الحفاظ على الأدلة · REA skill: optimize analysis cost while preserving correctness and Evidence · 📄 موصوف / documented only
+- **ماذا / what:** مهارة rea-analysis-optimization: ثبّت السؤال ومرجع صحة مستقلًا، قس كل مرحلة (القبول، التحليل الأصلي، فك الترميز، الإسقاط، التسلسل)، ثم أصغر تصحيح بنيوي عند المالك؛ القرار المقاس بعدم التغيير نتيجة مقبولة. — Pin the question and an independent oracle, measure each phase, apply the smallest structural fix at its owner; a measured 'leave it' is a valid result.
+- **متى أستخدمها / when:** تحليل REA بطيء أو يستهلك ذاكرة / an REA analysis is slow or memory-heavy
+- **كيف / how:** Read .agents/skills/rea-analysis-optimization/SKILL.md and references/kuna-case-study.md in the REA checkout matching your installed version. It grants no permission to execute targets, publish or merge. CI/test-suite speed belongs to REA-244.
+- **تثبيت / install:** `REA source checkout (read only)`
+- **يحتاج / needs:** [`npm:rea`](../requirements.md#req-npm-rea) · [`engine:ghidra`](../requirements.md#req-engine-ghidra)
+- **الرخصة / license:** MIT © 2026 morluto
+- **الدليل / proof:** `https://github.com/morluto/rea/tree/main/.agents/skills/rea-analysis-optimization`
+- **المصدر / source:** https://github.com/morluto/rea
+
+#### REA-243 · REA: تصميم أداة تحقيق وعقد CLI/MCP · REA skill: design investigation tools, CLI/MCP contracts and Evidence semantics · 📄 موصوف / documented only
+- **ماذا / what:** مهارة rea-tool-design: لكل طلب تصميم أعد الحدود المقترحة وشكل المدخل/النتيجة ودلالات الأدلة وأقرب بديل موجود وطريقة التحقق؛ نفّذ فقط إن طُلب. — Return the proposed boundary, input/result shape, Evidence semantics, nearest existing alternative and verification approach; implement only when asked.
+- **متى أستخدمها / when:** إضافة أداة أو مزود جديد إلى REA / adding a new REA tool or provider
+- **كيف / how:** Read .agents/skills/rea-tool-design/SKILL.md, then docs/tool-design.md, docs/testing.md and CONTRIBUTING.md in the REA checkout. Useful as a template for designing any KOSIF evidence-bounded tool too.
+- **تثبيت / install:** `REA source checkout (read only)`
+- **يحتاج / needs:** [`npm:rea`](../requirements.md#req-npm-rea)
+- **الرخصة / license:** MIT © 2026 morluto
+- **الدليل / proof:** `https://github.com/morluto/rea/tree/main/.agents/skills/rea-tool-design`
+- **المصدر / source:** https://github.com/morluto/rea
+
+#### REA-244 · REA: تدقيق CI والاختبارات (انحراف التجهيزات والنجاح الكاذب) · REA skill: audit CI and test suites for fixture drift, false passes and measured cost · 📄 موصوف / documented only
+- **ماذا / what:** مهارة rea-ci-tests-audit: ثبّت SHA الأساس، تتبّع المشغلات حتى الأوامر المنفذة فعلًا، أثبت كل حماية بإفساد متحكم به في نسخة معزولة، واحذف الكلفة فقط حين لا تضيع الحماية. — Pin the baseline SHA, trace triggers to executed commands, prove each protection by a controlled perturbation in an isolated copy, cut cost only without losing protection.
+- **متى أستخدمها / when:** اختبار أخضر مشكوك فيه أو CI بطيء / a suspicious green test or a slow CI
+- **كيف / how:** Read .agents/skills/rea-ci-tests-audit/SKILL.md and references/measurement-and-ci.md. The method transfers to auditing this repo's evals: perturb the behaviour and confirm the test turns red. Investigation alone does not authorise edits, issues, pushes or merges.
+- **تثبيت / install:** `REA source checkout (read only)`
+- **يحتاج / needs:** [`npm:rea`](../requirements.md#req-npm-rea)
+- **الرخصة / license:** MIT © 2026 morluto
+- **الدليل / proof:** `https://github.com/morluto/rea/tree/main/.agents/skills/rea-ci-tests-audit`
+- **المصدر / source:** https://github.com/morluto/rea
+
+#### REA-245 · REA: كتابة سجل التغييرات من تاريخ Git مثبت مع شكر موثق · REA skill: release changelog from pinned Git history with verified contributor thanks · 📄 موصوف / documented only
+- **ماذا / what:** مهارة rea-changelog-update: جرد قبل النثر (scripts/release-notes.mjs inventory/record)، أقسام Highlights/Changes/Fixes/BREAKING، شكر كل مساهمة مرة بحسابها المؤكد وعدم تخمين الهويات. — Inventory before prose, user-facing sections, credit each contribution once to its verified author, never guess identities.
+- **متى أستخدمها / when:** تجهيز ملاحظات إصدار / preparing release notes
+- **كيف / how:** Read .agents/skills/rea-changelog-update/SKILL.md and docs/releasing.md in the REA checkout. Applies to REA's own releases (Release Please, rea-agents-VERSION tags); it prepares notes and does not authorise merging, tagging or publishing.
+- **تثبيت / install:** `REA source checkout; node; GitHub access for the inventory`
+- **يحتاج / needs:** [`npm:rea`](../requirements.md#req-npm-rea)
+- **الرخصة / license:** MIT © 2026 morluto
+- **الدليل / proof:** `https://github.com/morluto/rea/tree/main/.agents/skills/rea-changelog-update`
+- **المصدر / source:** https://github.com/morluto/rea
+
 ## المصادر والرخص / sources & licences
 
-- الرخص / licences: MIT (REA code, © 2026 morluto); bring-your-own engines keep their own terms (THIRD_PARTY_NOTICES.md) (153) · MIT (REA); bring-your-own engines keep their own terms (76) · MIT (REA) (6) · owner (KOSIF); REA MIT © 2026 morluto; 7-Zip LGPL (6)
+- الرخص / licences: MIT (REA code, © 2026 morluto); bring-your-own engines keep their own terms (THIRD_PARTY_NOTICES.md) (153) · MIT (REA); bring-your-own engines keep their own terms (76) · MIT (REA) (6) · owner (KOSIF); REA MIT © 2026 morluto; 7-Zip LGPL (6) · MIT © 2026 morluto (4)
 - الأفكار مكتوبة بكلماتنا مع رابط المصدر؛ لا يُنسخ نص طرف ثالث طويل. Ideas are paraphrased with a link to the source; no long third-party text is copied. `—` = no licence recorded (own method or own wording).
 
 ---

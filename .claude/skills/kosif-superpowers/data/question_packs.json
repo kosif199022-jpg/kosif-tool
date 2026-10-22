@@ -1,0 +1,28 @@
+{
+  "schema": "kosif.question_packs.v1",
+  "as_of": "2026-10-22",
+  "source": "user charter (story/scene intake, الباب الأول والخامس) reconciled with USIP v5.3 «قاعدة الأسئلة»; see references/protocol/A17-story-scene-charter.md",
+  "rule": "Questions live inside the one plans report (المرحلة 7) with a suggested default each; never a blocking round. L0 asks nothing. «موافق» accepts every default; «نفّذ مباشرة» skips the wait. A money/publish/rights question carries only the safe default.",
+  "packs": {
+    "story": {
+      "title_ar": "حزمة أسئلة القصة والسيناريو وتسلسل المشاهد",
+      "title_en": "Story / screenplay / scene-sequence intake",
+      "appendix": "references/protocol/A17-story-scene-charter.md",
+      "match_rx": "(?<![ء-ي])(?:[وبلف]|ال|بال|وال|لل|فال)?(?:قصه|قصص|قصتي|سيناريو|سيناريوهات|سكريبت فيلم|حلقه|حلقات|ستوري ?بورد|حدوته|حكايه)(?![ء-ي])|\\d+\\s*(?:مشاهد|مشهد)|(?:تسلسل|سلسله) (?:ال)?مشاهد|\\b(?:story|stories|screenplay|screenplays|storyboard|storyboards|script for (?:a|the|my) (?:film|movie|short|episode)|scene sequence|short film)\\b",
+      "exclude_rx": "\\buser stor(?:y|ies)\\b|instagram stor|\\bhistory\\b|قصه شعر|قصات شعر|حلقه (?:تكرار|لا نهائيه|نقاش|بودكاست|podcast)|\\b(?:for|while) loop\\b|ستوري (?:انستا|انستجرام|انستغرام|سناب)",
+      "levels": {"L0": 0, "L1": 5, "L2": 10, "L3": 10},
+      "questions": [
+        {"id": "scenes", "tier": "core", "question": "كم عدد المشاهد أو المدة؟", "question_en": "How many scenes, or what duration?", "suggested_default": "5 مشاهد ≈ 60 ثانية", "changes": "طول الخطة وعدد برومنتات المشاهد وقائمة اللقطات (STORY-11)"},
+        {"id": "characters", "tier": "core", "question": "كم عدد الشخصيات ومن هي؟", "question_en": "How many characters, and who?", "suggested_default": "شخصيتان رئيسيتان", "changes": "عدد بطاقات المرجع (CHAR-45/CHAR-06) وخطر تداخل المفاهيم في الكادر"},
+        {"id": "genre", "tier": "core", "question": "ما نوع القصة؟ (رعب، أكشن، غموض، رومانسي، عاطفي، مغامرة، كوميدي…)", "question_en": "Genre?", "suggested_default": "دراما", "changes": "البنية والإيقاع والنبرة والإضاءة"},
+        {"id": "visual_style", "tier": "core", "question": "ما الأسلوب البصري؟ (واقعي سينمائي، ثلاثي الأبعاد مرسوم، أنمي، كرتون مسطح… بالسمات لا بأسماء استوديوهات)", "question_en": "Visual style (described by traits, not studio names)?", "suggested_default": "واقعي سينمائي (إضاءة طبيعية، عمق ميدان ضحل، ألوان مضبوطة)", "changes": "قفل الأسلوب (GEN-22) والسالب الأساسي (GEN-03) وصيغة البرومنت"},
+        {"id": "atmosphere", "tier": "core", "question": "ما أجواء القصة؟ (ممطرة، مشمسة، ليلية، ضبابية، عاصفة، غروب)", "question_en": "Atmosphere / weather / time of day?", "suggested_default": "مشمسة نهارًا", "changes": "الإضاءة واللون والاستمرارية بين المشاهد"},
+        {"id": "audience", "tier": "extended", "question": "من الجمهور؟", "question_en": "Audience?", "suggested_default": "جمهور عام", "changes": "اللغة والحدّة والمدة والمنصة"},
+        {"id": "message", "tier": "extended", "question": "ما الهدف أو الرسالة؟", "question_en": "Goal or message?", "suggested_default": "رسالة واحدة واضحة أستنتجها من طلبك وأكتبها في الملخص", "changes": "القوس الدرامي والمشهد الختامي"},
+        {"id": "dialogue_language", "tier": "extended", "question": "لغة الحوار ولهجته؟ (مصرية، فصحى، لهجة أخرى، إنجليزية، بلا حوار)", "question_en": "Dialogue language / dialect?", "suggested_default": "العربية بلهجة مصرية (اقتراح قابل للتغيير، لا قاعدة)", "changes": "نص الحوار داخل وصف المشهد؛ النص الظاهر على الشاشة يُضاف في المونتاج لا في التوليد"},
+        {"id": "ending", "tier": "extended", "question": "نوع النهاية؟ (سعيدة، حزينة، مفتوحة، مفاجئة)", "question_en": "Ending?", "suggested_default": "مفتوحة", "changes": "المشهد الأخير والإيقاع العاطفي"},
+        {"id": "reference_policy", "tier": "extended", "question": "سياسة المراجع والتوليد: برومنتات فقط، أم توليد فعلي لبطاقات المرجع والمشاهد؟", "question_en": "Reference sheets and generation policy?", "suggested_default": "برومنتات قابلة للنسخ فقط، صفر صرف؛ أي توليد يحتاج إذنك الصريح لكل استدعاء", "changes": "التكلفة وما يُسلَّم (نص أم وسائط)", "sensitive": "money"}
+      ]
+    }
+  }
+}
