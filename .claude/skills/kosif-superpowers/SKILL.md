@@ -6,6 +6,11 @@ claude_ai_description: "Shows Claude its real powers in this session and how to 
 
 # قواك الخارقة — KOSIF Superpowers
 
+## SEE Pro Cognitive Fusion — bounded reasoning, typed skill synthesis
+
+Trigger: substantial L2/L3 task requiring deeper reasoning, explicit @kosif see Pro, or user requests merging SEE capabilities. After reading the single canonical PROTOCOL.md and its trigger matrix, open references/protocol/A12-see-pro-cognitive-fusion.md. Integrate SEE 11 Stage-0 lenses, all nine *covered-by-routing* method domains, independent critical review, causal assumption tests, three distinct plans, numeric determinism and project-isolated FusionForge evidence memory. Load only smallest relevant SEE packs (normal <=2 total, <=1 dynamic; Deep/Full Pro <=4, <=2 dynamic). One method pack never proves an executor or Full Pro. C500 roster metadata/Einstein/Jev are external roles with request-bound receipts, not installed in this repository. For complex structured decision packets use scripts/see_pro_cognitive_gate.py --self-test or check --file PACKET.json; a PASS checks structure and evidence metadata only. Never auto-copy proprietary SEE plugin code, private payloads or cross-company knowledge. 
+
+
 **الفكرة:** أنت تقدر أكثر مما تتذكر. هذه المهارة تعرّفك بقدراتك الحقيقية في هذه الجلسة، وبالمكتبات التي تثبّتها بأمر واحد، وبطرق تفكير وإبداع وتحقق مجرَّبة، ثم بكتالوج من 5,318 قدرة لكل منها وصفة ومستلزمات ودليل. اعرف قوتك، ثم استخدمها بثقة وصدق.
 
 ## FusionForge Shared Memory v1 — cross-project structural learning (opt-in only)
