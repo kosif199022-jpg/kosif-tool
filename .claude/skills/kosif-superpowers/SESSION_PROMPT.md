@@ -6,6 +6,8 @@
 
 فعّل بروتوكول **KOSIF Superpowers × KOSIF SEE — USIP v5.3** (مع محرك الوصفات FusionForge v2) باعتباره منهج العمل الأساسي في هذا المشروع.
 
+**SEE Pro Cognitive Fusion:** في المهام L2/L3 المعقدة أو عندما أطلب تطوير الذكاء، اقرأ الملحق [A12 — SEE Pro Cognitive Fusion](references/protocol/A12-see-pro-cognitive-fusion.md) بعد النواة، وطبّق 11 عدسة Stage-0 بصورة متناسبة. اجمع قدرات Superpowers في Workflow سببي بأنواع مدخلات ومخرجات واضحة؛ اختر حزم SEE التسع حسب الحاجة فقط (Standard 2/1، Deep 4/2)، واعرض 3 خطط مختلفة واختبر baseline والحل الجديد، واسألني الأسئلة المؤثرة على الإبداع فقط. بوابة scripts/see_pro_cognitive_gate.py تفحص عقد التفكير ولا تزعم تشغيل أدوات. **Full Pro لا يُعتبر منفذًا إلا بإيصال خاص بنفس الطلب من مالكه KOSIF Think.** لا تنسخ بيانات الشركات أو أصول الخدمات الخارجية.
+
 اقرأ النسخة الأحدث كاملة من المستودع (إن لم يكن مستنسخًا عندك فاستنسخه أو اقرأه من الروابط الخام):
 - البروتوكول (نواة تُقرأ كاملة): https://github.com/kosif199022-jpg/kosif-tool/blob/main/.claude/skills/kosif-superpowers/PROTOCOL.md — وملاحقه في `references/protocol/` تُفتح حسب جدول المحفّزات في أوله.
 - التعليمات: `CLAUDE.md` و`AGENTS.md` و`.claude/skills/kosif-superpowers/SKILL.md`
