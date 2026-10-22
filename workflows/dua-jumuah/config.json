@@ -1,0 +1,60 @@
+{
+  "name": "dua-jumuah",
+  "title": "دعاء ليلة الجمعة",
+  "date": "23.10.2026",
+  "handle": "@elkosif",
+  "size": [720, 1280],
+  "fps": 30,
+  "frames": 464,
+  "reference": {
+    "url": "https://www.tiktok.com/@elkosif/video/7540978274306952466",
+    "sha256": "9d5deb5828094a357b9c949de818b5b7cc858ac6017582bc40c8e06af96bcefa",
+    "note": "مصدر الصوت (الماستر يُنسخ -c:a copy) ومصدر عنوان «الجُمُعَة» و«ليلة جمعة مباركة» المستخرجين في assets/"
+  },
+  "segments": [
+    {"start": 0,   "end": 51,  "pexels_id": 8165472,  "in": 0.5, "credit": "Alena Darmel",      "what": "مصحف مفتوح على حامل"},
+    {"start": 51,  "end": 137, "pexels_id": 8063975,  "in": 0.0, "credit": "Roman Odintsov",    "what": "ورد أحمر في فازة بيضاء"},
+    {"start": 137, "end": 190, "pexels_id": 8165766,  "in": 2.5, "credit": "Alena Darmel",      "what": "غلاف مصحف ومسبحة"},
+    {"start": 190, "end": 242, "pexels_id": 7685287,  "in": 0.5, "credit": "RDNE Stock project", "what": "بخور وشموع"},
+    {"start": 242, "end": 293, "pexels_id": 35801980, "in": 1.0, "credit": "yasminizm",         "what": "قهوة وتوليب وأباجورة"},
+    {"start": 293, "end": 337, "pexels_id": 35897501, "in": 0.5, "credit": "Mohammad Kheir",    "what": "مصحف في اليد عند نافذة"},
+    {"start": 337, "end": 427, "pexels_id": 17928738, "in": 2.0, "credit": "yossrytop abdo",    "what": "مبخرة نحاس بدخان"},
+    {"start": 427, "end": 464, "pexels_id": 30912265, "in": 0.5, "credit": "Bilakis",           "what": "أباجورة دافئة"}
+  ],
+  "dua": [
+    ["اللَّهُمَّ في ليلة الجمعة"],
+    ["اللهم صل وسلم وبارك على", "نبينا محمد ﷺ"],
+    ["صلاة تغفر بها ذنوبنا"],
+    ["وتهدي بها قلوبنا"],
+    ["وتفرج بها همومنا"],
+    ["وتصلح بها أعمالنا"],
+    ["وترزقنا ببركتها دعوة مستجابة لنا"],
+    ["اللَّهُمَّ ــآمين"]
+  ],
+  "emoji_last_line": "1f932",
+  "transitions_out": {
+    "2": {"W": 7, "s": 0.85, "dy": 420},
+    "3": {"W": 5, "s": 0.9, "dy": -380},
+    "4": {"W": 7, "s": 0.55},
+    "5": {"W": 8, "s": 0.6},
+    "6": {"W": 6, "s": 0.9, "dx": 380},
+    "7": {"W": 8, "s": 1.1, "ang": 60},
+    "end": {"W": 12, "s": 0.85, "dy": 500}
+  },
+  "transitions_in": {
+    "1": {"W": 5, "dx": -260},
+    "2": {"W": 5, "dx": 260},
+    "3": {"W": 5, "dx": -260},
+    "4": {"W": 4, "s": 1.25},
+    "5": {"W": 4, "s": 1.6},
+    "6": {"W": 6, "dx": -300, "s": 1.15},
+    "7": {"W": 5, "s": 1.6}
+  },
+  "layout": {
+    "date_right": 637.5, "date_baseline": 378.75, "date_width": 342.5, "date_size": 73,
+    "day_fly_from": [340, 700], "day_fly_frames": 45, "day_end_shift": -14,
+    "wm_center_x": 358.75, "wm_baseline": 778.75, "wm_size": 28,
+    "dua_center": [367.5, 653.75], "dua_two_lines_y": [611.25, 693.75], "dua_size": 58,
+    "fade_in_black_frames": 12, "dua_fade_in": 5, "dua_fade_out": 4, "end_fade_start": 452
+  }
+}
