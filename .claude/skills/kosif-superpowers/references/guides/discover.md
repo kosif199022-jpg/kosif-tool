@@ -38,7 +38,7 @@ Commands below are typed from the skill folder (`.claude/skills/kosif-superpower
 
 <!-- hub:area:think:start -->
 
-**الأدوات / tools (6)** — `python3 scripts/hub.py tool <id>` for every command, requirement and limit:
+**الأدوات / tools (7)** — `python3 scripts/hub.py tool <id>` for every command, requirement and limit:
 
 | tool | what it does | start with | evidence |
 |---|---|---|---|
@@ -47,6 +47,7 @@ Commands below are typed from the skill folder (`.claude/skills/kosif-superpower
 | `invention-lab` | Turns one problem statement into a reproducible, ranked JSON list of falsifiable engineering ideas (16 TRIZ-style inventive methods × 4 lenses), each with a hypothesis, test, success metric and rejection threshold. | `python3 scripts/invention_lab.py methods` | tested-here |
 | `tell-scan` | Scans English and Arabic (MSA and Egyptian) prose for stock 'AI-sounding' writing habits and tool leftovers, and reports each hit with its line, strength and an overall verdict (EDIT/REVIEW/LOOK/LEAVE/CLEAN). | `python3 scripts/tell_scan.py proofs/general-writing/samples/en_ai.txt` | tested-here |
 | `think` | Turns thinking procedures into checkable text scaffolds. It picks a reasoning level (L0–L6), writes a task contract, ranks 63 mental models, drafts a backcast plan, builds an idea matrix from catalog powers, scores a weighted decision with sensitivity, runs a Monte-Carlo Fermi estimate and flags weak wording in a draft. | `python3 scripts/think.py ladder "design a 30-day plan for a course launch"` | tested-here |
+| `council` | Plans a five-member adversarial council for a request (Visionary, Skeptic, Builder, Audience, Guardian, each with its own evidence lane and a specialisation from the brief's deliverable), writes every member's prompt for each round (independent positions, cross-examination, scored vote), validates and fingerprints each answer, refuses secrets, and computes a Borda verdict with recorded dissent, warnings and a SHA-256 receipt. It never calls a model: Claude runs the members as separate agents, or labels them COUNCIL_SIMULATED. | `python3 scripts/council.py plan "اعمل ريلز دعاء" --dir out/demo/council --options A,B,C` | tested-here |
 | `capability-mindmap` | Orders every superpower by task stage (understand, plan, create, refine, assemble, verify, deliver), builds stage plans for any request and 12 ready task maps with Mermaid flowcharts, and audits same-name groups, twins, cross-superpower look-alikes and pairs to develop together. | `python3 scripts/capability_mindmap.py build` | tested-here |
 
 <!-- hub:area:think:end -->

@@ -1931,14 +1931,9 @@
    "label": "scripts/cinematic_cut_planner.py"
   },
   {
-   "id": "script:scripts/creative_reasoning_bridge.py",
+   "id": "script:scripts/council.py",
    "kind": "script",
-   "label": "scripts/creative_reasoning_bridge.py"
-  },
-  {
-   "id": "script:scripts/fusionforge.py",
-   "kind": "script",
-   "label": "scripts/fusionforge.py"
+   "label": "scripts/council.py"
   },
   {
    "id": "script:scripts/_secrets.py",
@@ -1949,6 +1944,16 @@
    "id": "script:scripts/skill_intelligence.py",
    "kind": "script",
    "label": "scripts/skill_intelligence.py"
+  },
+  {
+   "id": "script:scripts/creative_reasoning_bridge.py",
+   "kind": "script",
+   "label": "scripts/creative_reasoning_bridge.py"
+  },
+  {
+   "id": "script:scripts/fusionforge.py",
+   "kind": "script",
+   "label": "scripts/fusionforge.py"
   },
   {
    "id": "script:scripts/relabel_proofs.py",
@@ -2230,6 +2235,11 @@
    "id": "test:.claude/skills/kosif-superpowers/evals/test_code_drawing_master.py",
    "kind": "test",
    "label": ".claude/skills/kosif-superpowers/evals/test_code_drawing_master.py"
+  },
+  {
+   "id": "test:.claude/skills/kosif-superpowers/evals/test_council.py",
+   "kind": "test",
+   "label": ".claude/skills/kosif-superpowers/evals/test_council.py"
   },
   {
    "id": "test:.claude/skills/kosif-superpowers/evals/test_creative_paint.py",
@@ -6296,6 +6306,18 @@
    "w": 1
   },
   {
+   "from": "script:scripts/council.py",
+   "to": "script:scripts/_secrets.py",
+   "rel": "imports",
+   "w": 1
+  },
+  {
+   "from": "script:scripts/council.py",
+   "to": "script:scripts/skill_intelligence.py",
+   "rel": "imports",
+   "w": 1
+  },
+  {
    "from": "script:scripts/creative_reasoning_bridge.py",
    "to": "script:scripts/audio_cue_mapper.py",
    "rel": "imports",
@@ -7028,6 +7050,12 @@
    "w": 1
   },
   {
+   "from": "script:scripts/council.py",
+   "to": "test:.claude/skills/kosif-superpowers/evals/test_council.py",
+   "rel": "tested_by",
+   "w": 1
+  },
+  {
    "from": "script:scripts/creative_paint.py",
    "to": "test:.claude/skills/kosif-superpowers/evals/test_creative_paint.py",
    "rel": "tested_by",
@@ -7318,6 +7346,12 @@
   {
    "from": "script:scripts/think.py",
    "to": "test:tests/test_think.py",
+   "rel": "tested_by",
+   "w": 1
+  },
+  {
+   "from": "script:scripts/verify_video.py",
+   "to": "test:.claude/skills/kosif-superpowers/evals/test_council.py",
    "rel": "tested_by",
    "w": 1
   },

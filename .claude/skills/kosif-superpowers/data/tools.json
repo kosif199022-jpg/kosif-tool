@@ -1792,6 +1792,90 @@
    ]
   },
   {
+   "id": "council",
+   "path": "scripts/council.py",
+   "root": "skill",
+   "kind": "cli",
+   "area": "think",
+   "title_en": "Pro Council: five opposing members, three rounds, a scored verdict",
+   "title_ar": "مجلس البرو: خمسة أعضاء متعارضين وثلاث جولات وحكم بالدرجات",
+   "summary_en": "Plans a five-member adversarial council for a request (Visionary, Skeptic, Builder, Audience, Guardian, each with its own evidence lane and a specialisation from the brief's deliverable), writes every member's prompt for each round (independent positions, cross-examination, scored vote), validates and fingerprints each answer, refuses secrets, and computes a Borda verdict with recorded dissent, warnings and a SHA-256 receipt. It never calls a model: Claude runs the members as separate agents, or labels them COUNCIL_SIMULATED.",
+   "summary_ar": "يخطط لمجلس من خمسة أعضاء متعارضين (المبتكر، محامي الشيطان، المهندس العملي، صوت الجمهور، الحارس)، لكل منهم مسار أدلة مختلف وتخصص حسب مخرج الطلب، ويكتب مطالبة كل عضو في كل جولة (مواقف مستقلة، استجواب متبادل، تصويت بالدرجات)، ويتحقق من كل رد ويبصمه ويرفض الأسرار، ثم يحسب حكمًا بطريقة بوردا مع الرأي المخالف والتحذيرات وإيصال SHA-256. لا يستدعي أي نموذج: Claude يشغّل الأعضاء وكلاء منفصلين، أو يسميهم COUNCIL_SIMULATED.",
+   "use_when": [
+    "اعمل مجلس خمسة يتناقشوا في الفكرة دي قبل ما تقرر",
+    "وضع البرو: عايز نقاش بين آراء متعارضة",
+    "Run a five-member adversarial council on these three plans",
+    "Debate this decision with opposing experts and give me the verdict and the dissent"
+   ],
+   "keywords": [
+    "council",
+    "pro mode",
+    "debate",
+    "adversarial",
+    "devil's advocate",
+    "verdict",
+    "dissent",
+    "مجلس",
+    "وضع البرو",
+    "عصف ذهني",
+    "نقاش",
+    "محامي الشيطان",
+    "رأي مخالف"
+   ],
+   "commands": [
+    {
+     "name": "plan",
+     "example": "python3 scripts/council.py plan \"اعمل ريلز دعاء\" --dir out/demo/council --options A,B,C",
+     "does": "Writes council.json: five members with stances, evidence lanes and a specialisation, the options and the session rules."
+    },
+    {
+     "name": "prompts",
+     "example": "python3 scripts/council.py prompts --dir out/demo/council --round 1",
+     "does": "Writes prompts_r<N>.json with one prompt per member; round 2 and 3 include the earlier rounds and refuse to run before the previous round is complete."
+    },
+    {
+     "name": "ingest",
+     "example": "python3 scripts/council.py ingest --dir out/demo/council --round 1 --member M1 --file m1.json",
+     "does": "Validates one member's JSON answer for a round, refuses secrets, fingerprints it and records it (--simulated marks a voice written in Claude's own context)."
+    },
+    {
+     "name": "status",
+     "example": "python3 scripts/council.py status --dir out/demo/council",
+     "does": "Shows which members answered which rounds."
+    },
+    {
+     "name": "verdict",
+     "example": "python3 scripts/council.py verdict --dir out/demo/council",
+     "does": "Sums round-3 scores per option, records the dissent and warnings (NO_DISSENT, CLOSE_CALL, WEAK_EVIDENCE), and writes verdict.json and minutes.md with a SHA-256 receipt."
+    }
+   ],
+   "inputs": "A request in the user's words, an optional USIP brief.json (options = its plans), and per-member JSON answers.",
+   "outputs": "council.json, prompts_r1..3.json, verdict.json and minutes.md in the --dir folder; JSON on stdout; exit 2 with one line on stderr on any refusal.",
+   "requires": {
+    "python": [],
+    "binaries": [],
+    "node": [],
+    "optional": [],
+    "network": false
+   },
+   "safety": "writes-files",
+   "consent": "Writes only inside the --dir folder; it runs no model, spends nothing and publishes nothing.",
+   "limits": "The council's quality depends on the members Claude runs; the script checks structure, evidence fields and votes, not whether an argument is correct, and a council without separate agents is only COUNCIL_SIMULATED.",
+   "tests": [
+    ".claude/skills/kosif-superpowers/evals/test_council.py"
+   ],
+   "docs": [
+    ".claude/skills/kosif-superpowers/references/protocol/A12-pro-council.md"
+   ],
+   "families": [
+    "agent-orchestration",
+    "planning-execution",
+    "verification-evals"
+   ],
+   "evidence": "tested-here",
+   "evidence_note": "evals/test_council.py 6/6 passed on this checkout; one real five-agent council run on 22-10 (proofs/pro-council-20261022: COUNCIL_RUN, B 25 / A 17 / C 10)."
+  },
+  {
    "id": "aspects",
    "path": "scripts/aspects.py",
    "root": "skill",
