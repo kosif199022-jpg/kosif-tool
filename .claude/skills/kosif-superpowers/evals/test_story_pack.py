@@ -1,4 +1,4 @@
-"""Story / screenplay / scene-sequence question pack (data/question_packs.json, A16) in the USIP brief.
+"""Story / screenplay / scene-sequence question pack (data/question_packs.json, A17) in the USIP brief.
 
 The pack adds questions WITH suggested defaults inside the one report: the core five at L1, all ten at L2/L3, none
 at L0; it never blocks, never makes a dialect a rule and never defaults to spending.

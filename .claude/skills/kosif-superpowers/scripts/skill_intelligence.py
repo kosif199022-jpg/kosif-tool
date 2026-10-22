@@ -59,7 +59,7 @@ SMART = SKILL / "data" / "smart_capability_index.json"
 SP = SKILL / "data" / "superpowers.json"
 TOOLS = SKILL / "data" / "tools.json"
 MIND = SKILL / "data" / "capability_mindmap.json"
-QPACKS = SKILL / "data" / "question_packs.json"   # story/scene intake (A16): questions with defaults, inside the report
+QPACKS = SKILL / "data" / "question_packs.json"   # story/scene intake (A17): questions with defaults, inside the report
 WEIGHTS = {"fit": 35, "integration": 20, "feasibility": 15, "evidence": 10, "cost": 10, "creativity": 10}
 LOCAL_RANK = ["✅", "🟢", "📦", "🔑", "📄", "💡"]
 LOCAL_EVIDENCE = {"✅": 1.0, "🟢": 0.8, "📦": 0.55, "🔑": 0.4, "📄": 0.25, "💡": 0.1}
@@ -674,7 +674,7 @@ def produces(low: str) -> bool:
 
 
 def story_questions(low: str, level: str) -> list:
-    """[(question, suggested_default)] of the story pack (data/question_packs.json, A16) for a story, screenplay or
+    """[(question, suggested_default)] of the story pack (data/question_packs.json, A17) for a story, screenplay or
     scene-sequence request: the core five at L1, all ten at L2/L3, none at L0 or when the pack file is missing."""
     pack = ((jload(QPACKS, {}) or {}).get("packs") or {}).get("story") or {}
     try:

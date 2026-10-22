@@ -1,13 +1,13 @@
 {
   "schema": "kosif.question_packs.v1",
   "as_of": "2026-10-22",
-  "source": "user charter (story/scene intake, الباب الأول والخامس) reconciled with USIP v5.3 «قاعدة الأسئلة»; see references/protocol/A16-story-scene-charter.md",
+  "source": "user charter (story/scene intake, الباب الأول والخامس) reconciled with USIP v5.3 «قاعدة الأسئلة»; see references/protocol/A17-story-scene-charter.md",
   "rule": "Questions live inside the one plans report (المرحلة 7) with a suggested default each; never a blocking round. L0 asks nothing. «موافق» accepts every default; «نفّذ مباشرة» skips the wait. A money/publish/rights question carries only the safe default.",
   "packs": {
     "story": {
       "title_ar": "حزمة أسئلة القصة والسيناريو وتسلسل المشاهد",
       "title_en": "Story / screenplay / scene-sequence intake",
-      "appendix": "references/protocol/A16-story-scene-charter.md",
+      "appendix": "references/protocol/A17-story-scene-charter.md",
       "match_rx": "(?<![ء-ي])(?:[وبلف]|ال|بال|وال|لل|فال)?(?:قصه|قصص|قصتي|سيناريو|سيناريوهات|سكريبت فيلم|حلقه|حلقات|ستوري ?بورد|حدوته|حكايه)(?![ء-ي])|\\d+\\s*(?:مشاهد|مشهد)|(?:تسلسل|سلسله) (?:ال)?مشاهد|\\b(?:story|stories|screenplay|screenplays|storyboard|storyboards|script for (?:a|the|my) (?:film|movie|short|episode)|scene sequence|short film)\\b",
       "exclude_rx": "\\buser stor(?:y|ies)\\b|instagram stor|\\bhistory\\b|قصه شعر|قصات شعر|حلقه (?:تكرار|لا نهائيه|نقاش|بودكاست|podcast)|\\b(?:for|while) loop\\b|ستوري (?:انستا|انستجرام|انستغرام|سناب)",
       "levels": {"L0": 0, "L1": 5, "L2": 10, "L3": 10},

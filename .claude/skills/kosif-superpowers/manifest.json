@@ -18,7 +18,7 @@
   "powers": 5331,
   "families": 62,
   "domains": 10,
-  "tools": 129,
+  "tools": 130,
   "guides": 96,
   "statuses": {
    "documented": 1937,
@@ -12006,6 +12006,99 @@
    "evidence_note": "CI acceptance pending; tested methods must be measured before claiming ready."
   },
   {
+   "id": "mosamem-rea-fusion",
+   "path": "scripts/mosamem_rea_fusion.py",
+   "root": "skill",
+   "kind": "cli",
+   "area": "image",
+   "title_en": "Mosamem x REA source-safe image preflight and capability fusion",
+   "title_ar": "تكامل مصمم وREA: فحص صور وتوليف مهارات آمن",
+   "summary_en": "Independent, standard-library Mosamem v0.1.0/REA workflow bridge: 19 upstream-anchored methodology nodes, actual read-only PSD/PSB/PNG/JPEG header preflight and SHA256, consent-gated REA plan via existing bridge. Does not install or control Mosamem, run REA or import GPL code.",
+   "summary_ar": "جسر أصلي يربط أساليب مصمم v0.1.0 ومسارات REA: 19 عقدة موثقة، فحص ترويسة PSD وPNG وJPEG والبصمة، والتخطيط لتحليل REA بعد الإذن. لا يشغّل مصمم ولا ينسخ كوده.",
+   "use_when": [
+    "ادمج إمكانيات Mosamem وREA في KOSIF Superpowers",
+    "عايز أشوف PSD عندي متوافق مع مصمم؟",
+    "استخدم مهارات الطبقات والنص العربي مع تحريك فيديو",
+    "inspect PSD header before opening in an image editor",
+    "plan an authorized REA analysis before trying to modify a program"
+   ],
+   "keywords": [
+    "mosamem",
+    "مصمم",
+    "REA",
+    "PSD",
+    "PSB",
+    "PNG",
+    "JPEG",
+    "Arabic RTL",
+    "طبقات",
+    "إزالة خلفية",
+    "هندسة عكسية",
+    "preflight",
+    "license",
+    "workflow",
+    "fusion"
+   ],
+   "commands": [
+    {
+     "name": "doctor",
+     "example": "python3 scripts/mosamem_rea_fusion.py doctor",
+     "does": "Checks known Mosamem installed paths and calls existing rea_bridge.environment() (node --version only); no third-party binaries invoked."
+    },
+    {
+     "name": "catalog",
+     "example": "python3 scripts/mosamem_rea_fusion.py catalog",
+     "does": "Returns 19 source-anchored potential handoffs with truthful implementation status."
+    },
+    {
+     "name": "inspect",
+     "example": "python3 scripts/mosamem_rea_fusion.py inspect picture.psd --out ./preflight.json",
+     "does": "Parses file headers, SHA-256 and known Mosamem PSD compatibility warnings; writes new JSON only when requested."
+    },
+    {
+     "name": "plan",
+     "example": "python3 scripts/mosamem_rea_fusion.py plan \"تحرير صورة بالعربية وإزالة خلفية\" --domain image",
+     "does": "Builds typed, non-executed workflow with QA and permission gates."
+    },
+    {
+     "name": "rea-plan",
+     "example": "python3 scripts/mosamem_rea_fusion.py rea-plan javascript ./my-authorized-app",
+     "does": "Calls the existing REA static inspection planner on the supplied path; no target execution."
+    }
+   ],
+   "inputs": "Subcommand doctor|catalog|inspect PATH|plan GOAL --domain auto|image|motion|investigation|rea-plan KIND PATH; optional --out JSON in existing directory. inspect supports bounded regular files up to 512MiB. Does not decode images, or inspect PSD layers.",
+   "outputs": "JSON method registry, read-only image header report with SHA-256, or a no-execution creative/investigation workflow; --out is exclusive-create.",
+   "requires": {
+    "python": [],
+    "binaries": [
+     "python3"
+    ],
+    "node": [],
+    "optional": [
+     "bin:node",
+     "bin:rea",
+     "external Mosamem GUI, not automated"
+    ],
+    "network": false
+   },
+   "safety": "writes-files",
+   "consent": "The bridge itself never installs, uploads, renders, invokes REA analysis or controls Mosamem. Using Mosamem GUI, downloading model weights or executing REA via rea_bridge.py run requires separate approval and correct licenses.",
+   "limits": "Standard-library header preflight only; does not edit or decode PSD, PNG/JPEG; Mosamem v0.1.0 GUI has no verified headless API; external GPL code is not embedded and source-described capabilities are not installed inside KOSIF.",
+   "evidence": "tested-here",
+   "evidence_note": "15/15 test_mosamem_rea_fusion.py passed on Windows laptop 2026-10-23; 10/10 existing rea_bridge regression tests passed; upstream Mosamem app not installed/demonstrated.",
+   "tests": [
+    ".claude/skills/kosif-superpowers/evals/test_mosamem_rea_fusion.py"
+   ],
+   "docs": [
+    ".claude/skills/kosif-superpowers/references/protocol/A16-mosamem-rea-capability-fusion.md"
+   ],
+   "families": [
+    "software-investigation",
+    "media-image-audio",
+    "apps-artifacts"
+   ]
+  },
+  {
    "id": "charter-ingest",
    "path": "scripts/charter_ingest.py",
    "root": "skill",
@@ -12215,7 +12308,7 @@
     ".claude/skills/kosif-superpowers/evals/test_prompt_pack.py"
    ],
    "docs": [
-    ".claude/skills/kosif-superpowers/references/protocol/A16-story-scene-charter.md",
+    ".claude/skills/kosif-superpowers/references/protocol/A17-story-scene-charter.md",
     ".claude/skills/kosif-superpowers/references/protocol/A4-fusionforge-composition.md"
    ],
    "families": [
@@ -12294,7 +12387,7 @@
     ".claude/skills/kosif-superpowers/evals/test_sources_index.py"
    ],
    "docs": [
-    ".claude/skills/kosif-superpowers/references/protocol/A16-story-scene-charter.md"
+    ".claude/skills/kosif-superpowers/references/protocol/A17-story-scene-charter.md"
    ],
    "families": [
     "web-research",
@@ -12370,24 +12463,6 @@
    "path": "references/guides/sources.md",
    "title": "المصادر والمراجع والتحميل — Sources, references and media",
    "area": "sources",
-   "summary": ""
-  },
-  {
-   "path": "references/CLAUDE_3_MINUTE_MAP.md",
-   "title": "Claude: understand KOSIF in under three minutes",
-   "area": "discover",
-   "summary": ""
-  },
-  {
-   "path": "references/REA_CREATIVE_DISCOVERY_2000_20261019.md",
-   "title": "KOSIF 2,000-Source Creative Discovery and REA Evidence Audit",
-   "area": "sources",
-   "summary": ""
-  },
-  {
-   "path": "references/SMART_CAPABILITY_GROUPS.md",
-   "title": "KOSIF unified capability groups",
-   "area": "discover",
    "summary": ""
   },
   {
@@ -12531,6 +12606,12 @@
   {
    "path": "references/claude-auto-local-first.md",
    "title": "Claude Auto Mode: local-first KOSIF Superpowers",
+   "area": "discover",
+   "summary": ""
+  },
+  {
+   "path": "references/CLAUDE_3_MINUTE_MAP.md",
+   "title": "Claude: understand KOSIF in under three minutes",
    "area": "discover",
    "summary": ""
   },
@@ -12745,6 +12826,12 @@
    "summary": ""
   },
   {
+   "path": "references/REA_CREATIVE_DISCOVERY_2000_20261019.md",
+   "title": "KOSIF 2,000-Source Creative Discovery and REA Evidence Audit",
+   "area": "sources",
+   "summary": ""
+  },
+  {
    "path": "references/reference-edit-execution.md",
    "title": "KOSIF Reference Edit Engine — executable source-style-to-timeline transfer",
    "area": "edit",
@@ -12789,6 +12876,12 @@
   {
    "path": "references/self-discovery.md",
    "title": "اكتشف قدراتك الحقيقية — Self-discovery protocol",
+   "area": "discover",
+   "summary": ""
+  },
+  {
+   "path": "references/SMART_CAPABILITY_GROUPS.md",
+   "title": "KOSIF unified capability groups",
    "area": "discover",
    "summary": ""
   },

@@ -31,7 +31,7 @@
 ## 2. الأرقام / numbers
 
 **5,331** قدرة · **62** عائلة · **10** مجالات · ✅ 920 مُثبتة بتشغيل فعلي · 🟢 645 جاهزة · 📦 973 بأمر تثبيت · 🔑 176 بمفتاح أو حساب · 👁 609 شوهدت في فيديو مرجعي · 📄 1937 طريقة موصوفة · 💡 71 فكرة.
-المستلزمات المسجّلة: **122** (أدوات، حزم، مفاتيح، منصات، خطوط، نماذج)؛ النماذج الذهنية: **63**؛ خريطة الأدوات: **125** مستودعًا موثّق الترخيص؛ أطلس الموشن: **289** أسلوبًا؛ الأدوات القابلة للتشغيل: **129**.
+المستلزمات المسجّلة: **122** (أدوات، حزم، مفاتيح، منصات، خطوط، نماذج)؛ النماذج الذهنية: **63**؛ خريطة الأدوات: **125** مستودعًا موثّق الترخيص؛ أطلس الموشن: **289** أسلوبًا؛ الأدوات القابلة للتشغيل: **130**.
 
 <a id="tools"></a>
 ## 3. الأدوات حسب المجال / tools by area
@@ -47,7 +47,7 @@
 | [Audio and rhythm / الصوت والإيقاع](https://github.com/kosif199022-jpg/kosif-tool/blob/main/.claude/skills/kosif-superpowers/references/guides/audio.md) | `audio-cue-mapper` · `music-rhythm-engine` · `repo-words-convert` |
 | [Drawing and characters / الرسم والشخصيات](https://github.com/kosif199022-jpg/kosif-tool/blob/main/.claude/skills/kosif-superpowers/references/guides/draw.md) | `character-fullbody` · `character-ik` · `code-drawing-master` · `creative-paint` · `smart-draw` · `unified-draw` · `creative-principles` · `drawing-academy` · `perspective-color-lab` |
 | [3D / ثلاثي الأبعاد](https://github.com/kosif199022-jpg/kosif-tool/blob/main/.claude/skills/kosif-superpowers/references/guides/3d.md) | `blender-api-audit` · `blender-bridge` · `blender-cinema` · `blender-cycles-render` · `blender-worker` · `native-3d` · `native-glb` · `blender-motion-video` · `blender-cinematic-bridge` · `blender-rescue-scene` · `blender-cat-fur-upgrade` |
-| [Image, design and fonts / الصور والتصميم والخطوط](https://github.com/kosif199022-jpg/kosif-tool/blob/main/.claude/skills/kosif-superpowers/references/guides/image.md) | `app-studio` · `app-studio-paint` · `font-fidelity-lab` · `render-text` · `unified-media` · `telegram-typography-atlas` · `image-local-ai` · `prompt-pack` |
+| [Image, design and fonts / الصور والتصميم والخطوط](https://github.com/kosif199022-jpg/kosif-tool/blob/main/.claude/skills/kosif-superpowers/references/guides/image.md) | `app-studio` · `app-studio-paint` · `font-fidelity-lab` · `render-text` · `unified-media` · `telegram-typography-atlas` · `mosamem-rea-fusion` · `image-local-ai` · `prompt-pack` |
 | [Sources and references / المصادر والمراجع](https://github.com/kosif199022-jpg/kosif-tool/blob/main/.claude/skills/kosif-superpowers/references/guides/sources.md) | `atlas-external-bridge` · `atlas-metadata-audit` · `browser-scout` · `creative-external-search` · `fetch-reference` · `fetch-video` · `stock-fetch` · `media-sources` · `rea-creative-research-atlas` · `rebalance-creative-repos` · `source-scout` · `superpowers` · `repo-ashell-cinema` · `stream-grabber` · `sources-index` |
 | [Software investigation / فحص البرامج](https://github.com/kosif199022-jpg/kosif-tool/blob/main/.claude/skills/kosif-superpowers/references/guides/investigate.md) | `installer-triage` · `local-project-audit` · `rea-bridge` · `web-app-study` · `rea-family-router` · `rea-owned-repo-batch` · `repository-capability-packer` · `atlas-bulk-source-audit` · `atlas-deep-fusion` · `atlas-review-summary` · `atlas-reviewed-methods-v3` · `atlas-transfer` |
 | [Local computer / الجهاز المحلي](https://github.com/kosif199022-jpg/kosif-tool/blob/main/.claude/skills/kosif-superpowers/references/guides/local-computer.md) | `kosif-remote-commander` |
