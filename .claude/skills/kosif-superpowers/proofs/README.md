@@ -4,7 +4,7 @@
 > **Open it when:** you need to show that a power really ran, re-run a proof on a new machine, or copy a working starting point. Each folder's README holds the exact commands, numbers and limits.
 
 ## الفهرس / contents
-1. أفلام الحركة — Motion proof films (15)
+1. أفلام الحركة — Motion proof films (16)
 2. إثباتات عامة — General proofs (7)
 3. تشغيلات إضافات الحركة v2 — Runs behind the v2 motion additions
 4. ملاحظات — Notes
@@ -31,6 +31,7 @@ Original films rendered with `render_html.cjs` and checked with `verify_video.py
 | [transitions-reel](transitions-reel/README.md) | ثمانية انتقالات مسمّاة بين بطاقات عربية (iris، wipe، zoom-through، glitch، whip، light-leak…)؛ 13/13 | 1080×1920 |
 | [three-bloom-scene](three-bloom-scene/README.md) | بلّورة ضوء ثلاثية الأبعاد بـThree.js: عقدة زجاج فيزيائي بخيط مضيء يُرسم، حلقات مدارية متوهجة، 2,600 جسيم، UnrealBloom، كاميرا تقترب وتدور وتفسح مكانًا لعنوان عربي (صامت، WebGL برمجي) | 1920×1080 |
 | [whiteboard-draw](whiteboard-draw/README.md) | شرح على سبورة بقلم ماركر بترتيب يد إنسان: عنوان عربي يُكتب من اليمين، شمس وقطرة وأسهم سببية، تظليل مقصوص على الشكل، القلم يُرفع بين الضربات، صوت صرير مولّد من جدول الضربات؛ 13/13 | 1080×1920 |
+| [style-atlas-86](style-atlas-86/README.md) | محرك الشرح الأصلي A15 لأطلس الأساليب (86 أسلوبًا): سبورة طباشير عربية «كيف يتعلّم الذكاء الاصطناعي؟» بست لقطات، كاميرا تمشي على سبورة طويلة، رسم يظهر تدريجيًا، عدّاد، منحنى دقة، صوت مُركّب متزامن؛ حتمي 29 ms/إطار، 510 إطارًا | 1280×720 |
 
 الخطوط المشتركة في [`_shared/fonts`](_shared/fonts) (رخصة OFL: Amiri، Cairo، Reem Kufi، Aref Ruqaa، Tajawal، Lalezar، Space Grotesk، JetBrains Mono). / Shared fonts live in `_shared/fonts` (OFL); each family's licence travels next to it as `OFL-<Family>.txt`.
 

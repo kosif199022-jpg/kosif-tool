@@ -1,0 +1,2959 @@
+{
+ "schema": "kosif.business.workflows.v1",
+ "as_of": "2026-10-23",
+ "sources": {
+  "business": "https://www.futurepedia.io/business",
+  "workflows": "https://www.futurepedia.io/workflows",
+  "directory": "https://www.futurepedia.io/ai-tools",
+  "courses": "https://www.futurepedia.io/courses",
+  "whats_new": "https://www.futurepedia.io/whats-new"
+ },
+ "rights_note": "Facts only: function names, adoption percentages, category names/counts, workflow names, goals, durations, step titles and the third-party tool each step names. No workflow prompts, tips, course lessons or editorial text are stored. Courses are paid (Skill Leap) and were not opened.",
+ "workflow_anatomy": "goal + role + time + difficulty + 3-6 steps; each step = title + one tool + a copy-ready structured prompt + a one-line rule of thumb. Creator playbooks add safety habits: consent before recording, test with non-sensitive/redacted data, review before sending, verify every claim, choose one reversible next action.",
+ "routes": {
+  "write": {
+   "tools": [
+    "Claude",
+    "ChatGPT",
+    "Jasper",
+    "Anyword",
+    "Grammarly",
+    "Codex"
+   ],
+   "executor": "Claude (native writing/reasoning; my-writing-style when drafting as the user)",
+   "ar": "كتابة وتفكير داخل Claude"
+  },
+  "research": {
+   "tools": [
+    "Perplexity",
+    "Google Gemini",
+    "NotebookLM",
+    "Do Anything",
+    "Semrush One",
+    "Surfer",
+    "Brandwatch",
+    "Browse AI"
+   ],
+   "executor": "WebSearch/WebFetch + anthropic-skills:deep-research (cited sources); rank/monitoring data needs a connector",
+   "ar": "بحث بمصادر موثقة"
+  },
+  "data": {
+   "tools": [
+    "Julius AI",
+    "Rows AI"
+   ],
+   "executor": "python (pandas/duckdb) + charts (dataviz) + Sheets artifact or xlsx skill",
+   "ar": "تحليل بيانات وجداول ورسوم"
+  },
+  "slides": {
+   "tools": [
+    "Gamma"
+   ],
+   "executor": "Slides artifact type (or pptx skill when a .pptx is named)",
+   "ar": "عرض تقديمي"
+  },
+  "design": {
+   "tools": [
+    "Canva",
+    "Figma AI",
+    "Leonardo AI",
+    "Uizard"
+   ],
+   "executor": "Design artifact / creative_paint.py / unified_draw.py; paid image generation (Higgsfield) only with explicit approval",
+   "ar": "تصميم ومرئيات"
+  },
+  "docs": {
+   "tools": [
+    "Notion AI"
+   ],
+   "executor": "Claude Docs (living doc) or Notion connector when the user asks for Notion",
+   "ar": "مستند حي"
+  },
+  "transcribe": {
+   "tools": [
+    "Descript",
+    "Otter.ai",
+    "Fireflies.ai",
+    "Granola",
+    "Whisper",
+    "Wispr Flow"
+   ],
+   "executor": "faster-whisper via montage_pro.py intake (consent of every participant first)",
+   "ar": "تفريغ صوتي"
+  },
+  "video": {
+   "tools": [
+    "Opus Clip",
+    "VEED.IO"
+   ],
+   "executor": "montage_pro.py / kosif-montage-motion (clips, captions, 9:16)",
+   "ar": "مونتاج وقص مقاطع وترجمة"
+  },
+  "voice_avatar": {
+   "tools": [
+    "ElevenLabs",
+    "HeyGen",
+    "OpenAI API"
+   ],
+   "executor": "local TTS (Piper) or a connected voice/avatar service; consent + spend approval required",
+   "ar": "صوت أو أفاتار"
+  },
+  "build": {
+   "tools": [
+    "Lovable",
+    "Hostinger AI Website Builder"
+   ],
+   "executor": "Artifact (hosted page/app) or code in the repo; test with non-sensitive sample data",
+   "ar": "بناء موقع أو تطبيق"
+  },
+  "automate": {
+   "tools": [
+    "Zapier",
+    "Make",
+    "n8n",
+    "MagicForm AI"
+   ],
+   "executor": "scheduled tasks (create_trigger/send_later) + local scripts; third-party automations through their connector",
+   "ar": "أتمتة وجدولة"
+  },
+  "crm_comms": {
+   "tools": [
+    "Superhuman",
+    "HubSpot",
+    "Apollo",
+    "Outreach",
+    "Gong",
+    "Intercom",
+    "Zendesk",
+    "Hootsuite",
+    "Asana",
+    "Motion",
+    "Reclaim.ai",
+    "Reclaim",
+    "Lindy.ai",
+    "Fyxer",
+    "Howie"
+   ],
+   "executor": "connector via SearchMcpRegistry; Claude drafts, the user approves every send/post/update",
+   "ar": "بريد وCRM وجدولة ونشر عبر موصّل"
+  },
+  "manual": {
+   "tools": [
+    "-"
+   ],
+   "executor": "the user does this step (export, payment, real-world action)",
+   "ar": "خطوة يدوية للمستخدم"
+  }
+ },
+ "business_functions": [
+  {
+   "id": "writing-editing",
+   "name": "Writing & Editing",
+   "name_ar": "الكتابة والتحرير",
+   "adoption_pct": 85,
+   "use": "generate, edit and rephrase content",
+   "tool_categories": [
+    "Prompt Generators",
+    "Writing Generators",
+    "Paraphrasing",
+    "Storyteller",
+    "Copywriting",
+    "Summarizer"
+   ],
+   "example_companies": [
+    "Grammarly",
+    "ChatGPT"
+   ],
+   "kosif_workflows": [
+    "content-creation-pipeline",
+    "content-repurposing-engine",
+    "customer-case-study-builder",
+    "reusable-customer-reply-skill"
+   ]
+  },
+  {
+   "id": "design-creative",
+   "name": "Design & Creative",
+   "name_ar": "التصميم والإبداع",
+   "adoption_pct": 83,
+   "use": "graphics, video editing and content creation",
+   "tool_categories": [
+    "Cartoon Generators",
+    "Portrait Generators",
+    "Image Generators",
+    "Video Enhancer",
+    "Audio Editing",
+    "Image Editing",
+    "Avatars",
+    "Text To Speech",
+    "Music",
+    "Video Editing",
+    "Video Generators",
+    "Text To Image",
+    "Text To Video",
+    "Transcriber",
+    "3D"
+   ],
+   "example_companies": [
+    "Canva",
+    "Runway"
+   ],
+   "kosif_workflows": [
+    "ai-powered-design-sprint",
+    "brand-identity-generator",
+    "video-content-repurposing",
+    "create-explainer-graphics-and-video-inserts",
+    "compare-image-tools-with-real-tests"
+   ]
+  },
+  {
+   "id": "customer-service",
+   "name": "Customer Service & Support",
+   "name_ar": "خدمة العملاء والدعم",
+   "adoption_pct": 80,
+   "use": "chatbots, automated responses, sentiment analysis",
+   "tool_categories": [
+    "Customer Support",
+    "AI Chatbots"
+   ],
+   "example_companies": [
+    "Bank of America (Erica)",
+    "Sephora"
+   ],
+   "kosif_workflows": [
+    "customer-support-automation",
+    "route-customer-support-with-ai",
+    "reusable-customer-reply-skill"
+   ]
+  },
+  {
+   "id": "growth-marketing",
+   "name": "Growth & Marketing",
+   "name_ar": "النمو والتسويق",
+   "adoption_pct": 69,
+   "use": "campaign optimisation, customer data, personalisation",
+   "tool_categories": [
+    "Design Generators",
+    "Marketing",
+    "Social Media",
+    "SEO",
+    "Sales Assistant",
+    "Presentations",
+    "Logo Generator"
+   ],
+   "example_companies": [
+    "Netflix",
+    "HubSpot"
+   ],
+   "kosif_workflows": [
+    "seo-content-strategy",
+    "social-media-campaign-launch",
+    "email-marketing-automation",
+    "webinar-funnel-builder",
+    "landing-page-optimization",
+    "influencer-collaboration-pipeline"
+   ]
+  },
+  {
+   "id": "technology-it",
+   "name": "Technology & IT",
+   "name_ar": "التقنية",
+   "adoption_pct": 63,
+   "use": "website builders, e-commerce, code assistants",
+   "tool_categories": [
+    "Website Builders",
+    "E-Commerce",
+    "Code Assistant",
+    "Low-Code/No-Code",
+    "SQL",
+    "Search Engine"
+   ],
+   "example_companies": [
+    "GitHub Copilot",
+    "IBM watsonx"
+   ],
+   "kosif_workflows": [
+    "build-an-internal-tool-with-codex",
+    "client-micro-app-in-a-day",
+    "pick-the-right-no-code-ai-build-path",
+    "research-led-landing-page"
+   ]
+  },
+  {
+   "id": "workflow-automation",
+   "name": "Workflow Automation",
+   "name_ar": "أتمتة سير العمل",
+   "adoption_pct": 60,
+   "use": "agents run multi-step work with a human checking the result",
+   "tool_categories": [
+    "Workflows",
+    "AI Agents"
+   ],
+   "example_companies": [
+    "Zapier",
+    "UiPath"
+   ],
+   "kosif_workflows": [
+    "agency-operations-autopilot",
+    "document-processing-pipeline",
+    "automate-a-purchase-to-subscriber-handoff",
+    "delegate-a-research-task-to-an-ai-agent"
+   ]
+  },
+  {
+   "id": "back-office",
+   "name": "Back Office",
+   "name_ar": "المكتب الخلفي",
+   "adoption_pct": 20,
+   "use": "HR, accounting and document management",
+   "tool_categories": [
+    "Finance",
+    "Human Resources",
+    "Stock Trading",
+    "Legal"
+   ],
+   "example_companies": [
+    "ADP",
+    "Expensify"
+   ],
+   "kosif_workflows": [
+    "document-processing-pipeline",
+    "investor-update-automation",
+    "hiring-pipeline-kickoff"
+   ]
+  },
+  {
+   "id": "operations",
+   "name": "Operations",
+   "name_ar": "العمليات",
+   "adoption_pct": 25,
+   "use": "scheduling, prioritisation, forecasting",
+   "tool_categories": [
+    "Project Management",
+    "Personal Assistant",
+    "Research",
+    "Spreadsheets",
+    "Translator",
+    "AI Detection",
+    "Email Assistant",
+    "Startup Tools"
+   ],
+   "example_companies": [
+    "Monday.com",
+    "Tesla"
+   ],
+   "kosif_workflows": [
+    "meeting-notes-and-action-items",
+    "weekly-kpi-dashboard",
+    "okr-planning-sprint",
+    "personal-productivity-reset",
+    "prepare-a-pre-meeting-brief"
+   ]
+  },
+  {
+   "id": "sales",
+   "name": "Sales",
+   "name_ar": "المبيعات",
+   "adoption_pct": 33,
+   "use": "CRM prediction, automated outreach, personalised pitches",
+   "tool_categories": [
+    "Sales Assistant"
+   ],
+   "example_companies": [
+    "Gong"
+   ],
+   "kosif_workflows": [
+    "lead-generation-automation",
+    "deal-intelligence-pipeline",
+    "cold-outreach-at-scale",
+    "outbound-avatar-video-funnel"
+   ]
+  }
+ ],
+ "directory": {
+  "groups": {
+   "Productivity": {
+    "total": 596,
+    "cats": {
+     "Personal Assistant": 205,
+     "Research": 273,
+     "Spreadsheets": 36,
+     "Translator": 47,
+     "Presentations": 35
+    }
+   },
+   "Video": {
+    "total": 320,
+    "cats": {
+     "Video Enhancer": 26,
+     "Video Editing": 100,
+     "Video Generators": 128,
+     "Text To Video": 66
+    }
+   },
+   "Text Generators": {
+    "total": 300,
+    "cats": {
+     "Prompt Generators": 19,
+     "Writing Generators": 142,
+     "Paraphrasing": 28,
+     "Storyteller": 23,
+     "Copywriting": 88
+    }
+   },
+   "Business": {
+    "total": 871,
+    "cats": {
+     "Website Builders": 42,
+     "Marketing": 392,
+     "Finance": 139,
+     "Project Management": 126,
+     "Social Media": 172
+    }
+   },
+   "Image": {
+    "total": 461,
+    "cats": {
+     "Design Generators": 158,
+     "Image Generators": 137,
+     "Image Editing": 124,
+     "Text To Image": 42
+    }
+   },
+   "Automation": {
+    "total": 623,
+    "cats": {
+     "Workflows": 294,
+     "AI Agents": 329
+    }
+   },
+   "Art Generators": {
+    "total": null,
+    "cats": {
+     "Cartoon Generators": 11,
+     "Portrait Generators": 31,
+     "Avatars": 32,
+     "Logo Generator": 15,
+     "3D": 42
+    }
+   },
+   "Audio": {
+    "total": 218,
+    "cats": {
+     "Audio Editing": 45,
+     "Text To Speech": 55,
+     "Music": 45,
+     "Transcriber": 73
+    }
+   },
+   "Misc": {
+    "total": 106,
+    "cats": {
+     "Fitness": 17,
+     "Religion": 7,
+     "Students": 58,
+     "Fashion": 15,
+     "Gift Ideas": 9
+    }
+   },
+   "Code": {
+    "total": 219,
+    "cats": {
+     "Code Assistant": 81,
+     "Low-code/no-code": 124,
+     "SQL": 14
+    }
+   }
+  },
+  "tools_total_note": "category counts as shown on /ai-tools on 2026-10-23"
+ },
+ "workflows": [
+  {
+   "id": "FW-01",
+   "kind": "library",
+   "slug": "client-deliverable-factory",
+   "name": "Client Deliverable Factory",
+   "role": "agency_owner",
+   "role_ar": "صاحب وكالة",
+   "creator": null,
+   "goal": "Scale client work",
+   "duration": "90min",
+   "difficulty": "intermediate",
+   "steps": [
+    {
+     "title": "Build a reusable client brief template",
+     "source_tool": "Notion AI",
+     "route": "docs"
+    },
+    {
+     "title": "Generate content drafts at scale",
+     "source_tool": "Jasper",
+     "route": "write"
+    },
+    {
+     "title": "Design assets on-brand",
+     "source_tool": "Canva",
+     "route": "design"
+    },
+    {
+     "title": "Build the report deliverable",
+     "source_tool": "Gamma",
+     "route": "slides"
+    },
+    {
+     "title": "QA before delivery",
+     "source_tool": "Grammarly",
+     "route": "write"
+    },
+    {
+     "title": "Auto-send via the client portal",
+     "source_tool": "Asana",
+     "route": "crm_comms"
+    }
+   ],
+   "source_url": "https://www.futurepedia.io/workflows",
+   "role_source": "site"
+  },
+  {
+   "id": "FW-02",
+   "kind": "library",
+   "slug": "agency-operations-autopilot",
+   "name": "Agency Operations Autopilot",
+   "role": "agency_owner",
+   "role_ar": "صاحب وكالة",
+   "creator": null,
+   "goal": "Run agency on autopilot",
+   "duration": "2hour",
+   "difficulty": "advanced",
+   "steps": [
+    {
+     "title": "Set up the client intake form",
+     "source_tool": "MagicForm AI",
+     "route": "automate"
+    },
+    {
+     "title": "Auto-create the project in your tracker",
+     "source_tool": "Asana",
+     "route": "crm_comms"
+    },
+    {
+     "title": "Generate the project timeline",
+     "source_tool": "Motion",
+     "route": "crm_comms"
+    },
+    {
+     "title": "Set up automated status updates",
+     "source_tool": "Zapier",
+     "route": "automate"
+    },
+    {
+     "title": "Configure time tracking automation",
+     "source_tool": "Motion",
+     "route": "crm_comms"
+    },
+    {
+     "title": "Auto-generate invoices from tracked time",
+     "source_tool": "Zapier",
+     "route": "automate"
+    }
+   ],
+   "source_url": "https://www.futurepedia.io/workflows",
+   "role_source": "site"
+  },
+  {
+   "id": "FW-03",
+   "kind": "library",
+   "slug": "data-analysis-and-reporting",
+   "name": "Data Analysis & Reporting",
+   "role": "analyst",
+   "role_ar": "محلل",
+   "creator": null,
+   "goal": "Get insights faster",
+   "duration": "60min",
+   "difficulty": "intermediate",
+   "steps": [
+    {
+     "title": "Import, inspect, and clean the data",
+     "source_tool": "Julius AI",
+     "route": "data"
+    },
+    {
+     "title": "Run exploratory analysis",
+     "source_tool": "Julius AI",
+     "route": "data"
+    },
+    {
+     "title": "Write the executive summary",
+     "source_tool": "ChatGPT",
+     "route": "write"
+    },
+    {
+     "title": "Build an interactive dashboard",
+     "source_tool": "Rows AI",
+     "route": "data"
+    }
+   ],
+   "source_url": "https://www.futurepedia.io/workflows",
+   "role_source": "site"
+  },
+  {
+   "id": "FW-04",
+   "kind": "library",
+   "slug": "market-research-deep-dive",
+   "name": "Market Research Deep Dive",
+   "role": "analyst",
+   "role_ar": "محلل",
+   "creator": null,
+   "goal": "Understand market trends",
+   "duration": "90min",
+   "difficulty": "advanced",
+   "steps": [
+    {
+     "title": "Define the research questions",
+     "source_tool": "Claude",
+     "route": "write"
+    },
+    {
+     "title": "Pull industry reports and citations",
+     "source_tool": "Perplexity",
+     "route": "research"
+    },
+    {
+     "title": "Analyze trends and build forecasts",
+     "source_tool": "Julius AI",
+     "route": "data"
+    },
+    {
+     "title": "Present findings with narrative",
+     "source_tool": "Gamma",
+     "route": "slides"
+    }
+   ],
+   "source_url": "https://www.futurepedia.io/workflows",
+   "role_source": "site"
+  },
+  {
+   "id": "FW-05",
+   "kind": "library",
+   "slug": "content-creation-pipeline",
+   "name": "Content Creation Pipeline",
+   "role": "creator",
+   "role_ar": "صانع محتوى",
+   "creator": null,
+   "goal": "Create content faster",
+   "duration": "30min",
+   "difficulty": "beginner",
+   "steps": [
+    {
+     "title": "Research the topic with citations",
+     "source_tool": "Perplexity",
+     "route": "research"
+    },
+    {
+     "title": "Draft an outline with a strong hook",
+     "source_tool": "ChatGPT",
+     "route": "write"
+    },
+    {
+     "title": "Write the long-form draft",
+     "source_tool": "Claude",
+     "route": "write"
+    },
+    {
+     "title": "Generate hero and inline visuals",
+     "source_tool": "ChatGPT",
+     "route": "write"
+    },
+    {
+     "title": "Schedule across channels",
+     "source_tool": "Hootsuite",
+     "route": "crm_comms"
+    }
+   ],
+   "source_url": "https://www.futurepedia.io/workflows",
+   "role_source": "site"
+  },
+  {
+   "id": "FW-06",
+   "kind": "library",
+   "slug": "video-content-repurposing",
+   "name": "Video Content Repurposing",
+   "role": "creator",
+   "role_ar": "صانع محتوى",
+   "creator": null,
+   "goal": "Create videos faster",
+   "duration": "60min",
+   "difficulty": "intermediate",
+   "steps": [
+    {
+     "title": "Transcribe and clean up the source video",
+     "source_tool": "Descript",
+     "route": "transcribe"
+    },
+    {
+     "title": "Pull the most clippable moments",
+     "source_tool": "Opus Clip",
+     "route": "video"
+    },
+    {
+     "title": "Write platform-specific captions",
+     "source_tool": "Claude",
+     "route": "write"
+    },
+    {
+     "title": "Add captions and brand styling",
+     "source_tool": "VEED.IO",
+     "route": "video"
+    },
+    {
+     "title": "Schedule the staggered drop",
+     "source_tool": "Hootsuite",
+     "route": "crm_comms"
+    }
+   ],
+   "source_url": "https://www.futurepedia.io/workflows",
+   "role_source": "site"
+  },
+  {
+   "id": "FW-07",
+   "kind": "library",
+   "slug": "podcast-to-content-empire",
+   "name": "Podcast to Content Empire",
+   "role": "creator",
+   "role_ar": "صانع محتوى",
+   "creator": null,
+   "goal": "Maximize content output",
+   "duration": "45min",
+   "difficulty": "intermediate",
+   "steps": [
+    {
+     "title": "Import and transcribe the episode",
+     "source_tool": "Descript",
+     "route": "transcribe"
+    },
+    {
+     "title": "Extract the 10 most quotable moments",
+     "source_tool": "Claude",
+     "route": "write"
+    },
+    {
+     "title": "Cut short clips for socials",
+     "source_tool": "Opus Clip",
+     "route": "video"
+    },
+    {
+     "title": "Draft a long-form blog post from the transcript",
+     "source_tool": "Claude",
+     "route": "write"
+    },
+    {
+     "title": "Generate social graphics and a carousel",
+     "source_tool": "Canva",
+     "route": "design"
+    }
+   ],
+   "source_url": "https://www.futurepedia.io/workflows",
+   "role_source": "site"
+  },
+  {
+   "id": "FW-08",
+   "kind": "library",
+   "slug": "ai-powered-design-sprint",
+   "name": "AI-Powered Design Sprint",
+   "role": "designer",
+   "role_ar": "مصمم",
+   "creator": null,
+   "goal": "Design faster",
+   "duration": "2hour",
+   "difficulty": "intermediate",
+   "steps": [
+    {
+     "title": "Generate a mood board",
+     "source_tool": "Google Gemini",
+     "route": "research"
+    },
+    {
+     "title": "Sketch wireframes from a written brief",
+     "source_tool": "Uizard",
+     "route": "design"
+    },
+    {
+     "title": "Build high-fidelity mockups",
+     "source_tool": "Figma AI",
+     "route": "design"
+    },
+    {
+     "title": "Generate asset variations",
+     "source_tool": "Leonardo AI",
+     "route": "design"
+    },
+    {
+     "title": "Build the stakeholder presentation",
+     "source_tool": "Gamma",
+     "route": "slides"
+    }
+   ],
+   "source_url": "https://www.futurepedia.io/workflows",
+   "role_source": "site"
+  },
+  {
+   "id": "FW-09",
+   "kind": "library",
+   "slug": "brand-identity-generator",
+   "name": "Brand Identity Generator",
+   "role": "designer",
+   "role_ar": "مصمم",
+   "creator": null,
+   "goal": "Build brand assets",
+   "duration": "3hour",
+   "difficulty": "advanced",
+   "steps": [
+    {
+     "title": "Generate logo concepts",
+     "source_tool": "ChatGPT",
+     "route": "write"
+    },
+    {
+     "title": "Build a color palette",
+     "source_tool": "Claude",
+     "route": "write"
+    },
+    {
+     "title": "Design the typography system",
+     "source_tool": "Figma AI",
+     "route": "design"
+    },
+    {
+     "title": "Document brand guidelines",
+     "source_tool": "Notion AI",
+     "route": "docs"
+    },
+    {
+     "title": "Generate social media templates",
+     "source_tool": "Canva",
+     "route": "design"
+    },
+    {
+     "title": "Create the brand asset library",
+     "source_tool": "Figma AI",
+     "route": "design"
+    }
+   ],
+   "source_url": "https://www.futurepedia.io/workflows",
+   "role_source": "site"
+  },
+  {
+   "id": "FW-10",
+   "kind": "library",
+   "slug": "meeting-notes-and-action-items",
+   "name": "Meeting Notes & Action Items",
+   "role": "founder",
+   "role_ar": "مؤسس/مدير",
+   "creator": null,
+   "goal": "Automate admin tasks",
+   "duration": "20min",
+   "difficulty": "beginner",
+   "steps": [
+    {
+     "title": "Record and transcribe the meeting",
+     "source_tool": "Fireflies.ai",
+     "route": "transcribe"
+    },
+    {
+     "title": "Summarize and extract action items",
+     "source_tool": "Claude",
+     "route": "write"
+    },
+    {
+     "title": "Send a recap email to attendees",
+     "source_tool": "Superhuman",
+     "route": "crm_comms"
+    },
+    {
+     "title": "Sync tasks into the team's tracker",
+     "source_tool": "Asana",
+     "route": "crm_comms"
+    }
+   ],
+   "source_url": "https://www.futurepedia.io/workflows",
+   "role_source": "site"
+  },
+  {
+   "id": "FW-11",
+   "kind": "library",
+   "slug": "investor-update-automation",
+   "name": "Investor Update Automation",
+   "role": "founder",
+   "role_ar": "مؤسس/مدير",
+   "creator": null,
+   "goal": "Save time on reporting",
+   "duration": "45min",
+   "difficulty": "intermediate",
+   "steps": [
+    {
+     "title": "Pull metrics into a single sheet",
+     "source_tool": "Rows AI",
+     "route": "data"
+    },
+    {
+     "title": "Calculate growth, burn, and runway",
+     "source_tool": "Julius AI",
+     "route": "data"
+    },
+    {
+     "title": "Draft the narrative",
+     "source_tool": "ChatGPT",
+     "route": "write"
+    },
+    {
+     "title": "Generate trend charts",
+     "source_tool": "Julius AI",
+     "route": "data"
+    },
+    {
+     "title": "Design the final report",
+     "source_tool": "Gamma",
+     "route": "slides"
+    },
+    {
+     "title": "Send and track replies",
+     "source_tool": "Superhuman",
+     "route": "crm_comms"
+    }
+   ],
+   "source_url": "https://www.futurepedia.io/workflows",
+   "role_source": "site"
+  },
+  {
+   "id": "FW-12",
+   "kind": "library",
+   "slug": "competitive-intelligence-tracker",
+   "name": "Competitive Intelligence Tracker",
+   "role": "founder",
+   "role_ar": "مؤسس/مدير",
+   "creator": null,
+   "goal": "Stay ahead of competition",
+   "duration": "60min",
+   "difficulty": "intermediate",
+   "steps": [
+    {
+     "title": "List your top 5 competitors and the pages that matter",
+     "source_tool": "Notion AI",
+     "route": "docs"
+    },
+    {
+     "title": "Set up automated page monitoring",
+     "source_tool": "Browse AI",
+     "route": "research"
+    },
+    {
+     "title": "Track social and news mentions",
+     "source_tool": "Brandwatch",
+     "route": "research"
+    },
+    {
+     "title": "Collect all changes in one place",
+     "source_tool": "Make",
+     "route": "automate"
+    },
+    {
+     "title": "Generate the weekly briefing",
+     "source_tool": "Claude",
+     "route": "write"
+    },
+    {
+     "title": "Share in Slack with named owners",
+     "source_tool": "Zapier",
+     "route": "automate"
+    }
+   ],
+   "source_url": "https://www.futurepedia.io/workflows",
+   "role_source": "site"
+  },
+  {
+   "id": "FW-13",
+   "kind": "library",
+   "slug": "fundraising-pipeline-manager",
+   "name": "Fundraising Pipeline Manager",
+   "role": "founder",
+   "role_ar": "مؤسس/مدير",
+   "creator": null,
+   "goal": "Close your next round faster",
+   "duration": "90min",
+   "difficulty": "advanced",
+   "steps": [
+    {
+     "title": "Build a target investor list",
+     "source_tool": "Rows AI",
+     "route": "data"
+    },
+    {
+     "title": "Research each fund and partner",
+     "source_tool": "Perplexity",
+     "route": "research"
+    },
+    {
+     "title": "Draft personalized outreach",
+     "source_tool": "Claude",
+     "route": "write"
+    },
+    {
+     "title": "Track pipeline and record calls",
+     "source_tool": "HubSpot",
+     "route": "crm_comms"
+    },
+    {
+     "title": "Send weekly warm-lead updates",
+     "source_tool": "Superhuman",
+     "route": "crm_comms"
+    }
+   ],
+   "source_url": "https://www.futurepedia.io/workflows",
+   "role_source": "site"
+  },
+  {
+   "id": "FW-14",
+   "kind": "library",
+   "slug": "customer-discovery-synthesis",
+   "name": "Customer Discovery Synthesis",
+   "role": "founder",
+   "role_ar": "مؤسس/مدير",
+   "creator": null,
+   "goal": "Find product-market fit faster",
+   "duration": "2hour",
+   "difficulty": "advanced",
+   "steps": [
+    {
+     "title": "Recruit interviewees",
+     "source_tool": "Superhuman",
+     "route": "crm_comms"
+    },
+    {
+     "title": "Run interviews with a structured script",
+     "source_tool": "Notion AI",
+     "route": "docs"
+    },
+    {
+     "title": "Record and transcribe every call",
+     "source_tool": "Otter.ai",
+     "route": "transcribe"
+    },
+    {
+     "title": "Tag quotes by theme and pain",
+     "source_tool": "Claude",
+     "route": "write"
+    },
+    {
+     "title": "Synthesize the insights report",
+     "source_tool": "Claude",
+     "route": "write"
+    },
+    {
+     "title": "Translate insights into a prioritized roadmap",
+     "source_tool": "Asana",
+     "route": "crm_comms"
+    }
+   ],
+   "source_url": "https://www.futurepedia.io/workflows",
+   "role_source": "site"
+  },
+  {
+   "id": "FW-15",
+   "kind": "library",
+   "slug": "weekly-kpi-dashboard",
+   "name": "Weekly KPI Dashboard",
+   "role": "founder",
+   "role_ar": "مؤسس/مدير",
+   "creator": null,
+   "goal": "Stay on top of the numbers",
+   "duration": "30min",
+   "difficulty": "beginner",
+   "steps": [
+    {
+     "title": "Set up your KPI tracking sheet",
+     "source_tool": "Rows AI",
+     "route": "data"
+    },
+    {
+     "title": "Write the weekly narrative",
+     "source_tool": "Claude",
+     "route": "write"
+    },
+    {
+     "title": "Send the update to your team",
+     "source_tool": "Superhuman",
+     "route": "crm_comms"
+    }
+   ],
+   "source_url": "https://www.futurepedia.io/workflows",
+   "role_source": "site"
+  },
+  {
+   "id": "FW-16",
+   "kind": "library",
+   "slug": "board-meeting-prep",
+   "name": "Board Meeting Prep",
+   "role": "founder",
+   "role_ar": "مؤسس/مدير",
+   "creator": null,
+   "goal": "Prepare for board meetings faster",
+   "duration": "90min",
+   "difficulty": "advanced",
+   "steps": [
+    {
+     "title": "Pull financials and operating metrics",
+     "source_tool": "Julius AI",
+     "route": "data"
+    },
+    {
+     "title": "Write the CEO narrative",
+     "source_tool": "Claude",
+     "route": "write"
+    },
+    {
+     "title": "Build the board deck",
+     "source_tool": "Gamma",
+     "route": "slides"
+    },
+    {
+     "title": "Distribute and collect pre-reads",
+     "source_tool": "Superhuman",
+     "route": "crm_comms"
+    }
+   ],
+   "source_url": "https://www.futurepedia.io/workflows",
+   "role_source": "site"
+  },
+  {
+   "id": "FW-17",
+   "kind": "library",
+   "slug": "product-launch-checklist",
+   "name": "Product Launch Checklist",
+   "role": "founder",
+   "role_ar": "مؤسس/مدير",
+   "creator": null,
+   "goal": "Launch without chaos",
+   "duration": "60min",
+   "difficulty": "intermediate",
+   "steps": [
+    {
+     "title": "Write the launch brief",
+     "source_tool": "Claude",
+     "route": "write"
+    },
+    {
+     "title": "Create the launch timeline and task list",
+     "source_tool": "Asana",
+     "route": "crm_comms"
+    },
+    {
+     "title": "Draft the announcement email",
+     "source_tool": "Claude",
+     "route": "write"
+    },
+    {
+     "title": "Build launch day social posts",
+     "source_tool": "Canva",
+     "route": "design"
+    }
+   ],
+   "source_url": "https://www.futurepedia.io/workflows",
+   "role_source": "site"
+  },
+  {
+   "id": "FW-18",
+   "kind": "library",
+   "slug": "hiring-pipeline-kickoff",
+   "name": "Hiring Pipeline Kickoff",
+   "role": "founder",
+   "role_ar": "مؤسس/مدير",
+   "creator": null,
+   "goal": "Start hiring faster",
+   "duration": "45min",
+   "difficulty": "beginner",
+   "steps": [
+    {
+     "title": "Define the role and what success looks like",
+     "source_tool": "Claude",
+     "route": "write"
+    },
+    {
+     "title": "Write the job post",
+     "source_tool": "ChatGPT",
+     "route": "write"
+    },
+    {
+     "title": "Build the sourcing search",
+     "source_tool": "Apollo",
+     "route": "crm_comms"
+    },
+    {
+     "title": "Create the interview scorecard",
+     "source_tool": "Notion AI",
+     "route": "docs"
+    }
+   ],
+   "source_url": "https://www.futurepedia.io/workflows",
+   "role_source": "site"
+  },
+  {
+   "id": "FW-19",
+   "kind": "library",
+   "slug": "okr-planning-sprint",
+   "name": "OKR Planning Sprint",
+   "role": "founder",
+   "role_ar": "مؤسس/مدير",
+   "creator": null,
+   "goal": "Plan the quarter with clarity",
+   "duration": "60min",
+   "difficulty": "intermediate",
+   "steps": [
+    {
+     "title": "Review last quarter's results",
+     "source_tool": "Claude",
+     "route": "write"
+    },
+    {
+     "title": "Draft this quarter's OKRs",
+     "source_tool": "Claude",
+     "route": "write"
+    },
+    {
+     "title": "Build the tracking dashboard",
+     "source_tool": "Rows AI",
+     "route": "data"
+    },
+    {
+     "title": "Share with the team and get buy-in",
+     "source_tool": "Gamma",
+     "route": "slides"
+    }
+   ],
+   "source_url": "https://www.futurepedia.io/workflows",
+   "role_source": "site"
+  },
+  {
+   "id": "FW-20",
+   "kind": "library",
+   "slug": "seo-content-strategy",
+   "name": "SEO Content Strategy",
+   "role": "marketer",
+   "role_ar": "مسوّق",
+   "creator": null,
+   "goal": "Get more leads",
+   "duration": "90min",
+   "difficulty": "intermediate",
+   "steps": [
+    {
+     "title": "Research keywords with intent",
+     "source_tool": "Semrush One",
+     "route": "research"
+    },
+    {
+     "title": "Analyze the top-ranking competitors",
+     "source_tool": "Perplexity",
+     "route": "research"
+    },
+    {
+     "title": "Write a content brief",
+     "source_tool": "Claude",
+     "route": "write"
+    },
+    {
+     "title": "Write and optimize the draft",
+     "source_tool": "Surfer",
+     "route": "research"
+    },
+    {
+     "title": "Track rankings and iterate monthly",
+     "source_tool": "Semrush One",
+     "route": "research"
+    }
+   ],
+   "source_url": "https://www.futurepedia.io/workflows",
+   "role_source": "site"
+  },
+  {
+   "id": "FW-21",
+   "kind": "library",
+   "slug": "social-media-campaign-launch",
+   "name": "Social Media Campaign Launch",
+   "role": "marketer",
+   "role_ar": "مسوّق",
+   "creator": null,
+   "goal": "Boost brand awareness",
+   "duration": "60min",
+   "difficulty": "intermediate",
+   "steps": [
+    {
+     "title": "Define the campaign brief",
+     "source_tool": "Notion AI",
+     "route": "docs"
+    },
+    {
+     "title": "Generate copy variations",
+     "source_tool": "Jasper",
+     "route": "write"
+    },
+    {
+     "title": "Create matching visuals",
+     "source_tool": "Canva",
+     "route": "design"
+    },
+    {
+     "title": "Schedule across channels",
+     "source_tool": "Hootsuite",
+     "route": "crm_comms"
+    },
+    {
+     "title": "Set up tracking and dashboards",
+     "source_tool": "Make",
+     "route": "automate"
+    },
+    {
+     "title": "Analyze campaign performance weekly",
+     "source_tool": "Julius AI",
+     "route": "data"
+    }
+   ],
+   "source_url": "https://www.futurepedia.io/workflows",
+   "role_source": "site"
+  },
+  {
+   "id": "FW-22",
+   "kind": "library",
+   "slug": "email-marketing-automation",
+   "name": "Email Marketing Automation",
+   "role": "marketer",
+   "role_ar": "مسوّق",
+   "creator": null,
+   "goal": "Increase conversions",
+   "duration": "75min",
+   "difficulty": "intermediate",
+   "steps": [
+    {
+     "title": "Segment your audience by behavior",
+     "source_tool": "HubSpot",
+     "route": "crm_comms"
+    },
+    {
+     "title": "Generate email copy for each segment",
+     "source_tool": "Anyword",
+     "route": "write"
+    },
+    {
+     "title": "Design the on-brand template",
+     "source_tool": "Canva",
+     "route": "design"
+    },
+    {
+     "title": "Set up automation triggers",
+     "source_tool": "Zapier",
+     "route": "automate"
+    },
+    {
+     "title": "A/B test subjects and CTAs",
+     "source_tool": "Anyword",
+     "route": "write"
+    },
+    {
+     "title": "Analyze results and iterate weekly",
+     "source_tool": "Julius AI",
+     "route": "data"
+    }
+   ],
+   "source_url": "https://www.futurepedia.io/workflows",
+   "role_source": "site"
+  },
+  {
+   "id": "FW-23",
+   "kind": "library",
+   "slug": "webinar-funnel-builder",
+   "name": "Webinar Funnel Builder",
+   "role": "marketer",
+   "role_ar": "مسوّق",
+   "creator": null,
+   "goal": "Generate leads from webinars",
+   "duration": "75min",
+   "difficulty": "intermediate",
+   "steps": [
+    {
+     "title": "Write the webinar brief and landing page copy",
+     "source_tool": "Claude",
+     "route": "write"
+    },
+    {
+     "title": "Build the promotion calendar",
+     "source_tool": "Hootsuite",
+     "route": "crm_comms"
+    },
+    {
+     "title": "Create social promo graphics",
+     "source_tool": "Canva",
+     "route": "design"
+    },
+    {
+     "title": "Write the post-webinar follow-up sequence",
+     "source_tool": "Claude",
+     "route": "write"
+    }
+   ],
+   "source_url": "https://www.futurepedia.io/workflows",
+   "role_source": "site"
+  },
+  {
+   "id": "FW-24",
+   "kind": "library",
+   "slug": "landing-page-optimization",
+   "name": "Landing Page Optimization",
+   "role": "marketer",
+   "role_ar": "مسوّق",
+   "creator": null,
+   "goal": "Increase conversion rates",
+   "duration": "45min",
+   "difficulty": "intermediate",
+   "steps": [
+    {
+     "title": "Audit the current page",
+     "source_tool": "ChatGPT",
+     "route": "write"
+    },
+    {
+     "title": "Rewrite the hero section",
+     "source_tool": "Claude",
+     "route": "write"
+    },
+    {
+     "title": "Analyze competitor landing pages",
+     "source_tool": "Perplexity",
+     "route": "research"
+    },
+    {
+     "title": "Build a test plan",
+     "source_tool": "Notion AI",
+     "route": "docs"
+    }
+   ],
+   "source_url": "https://www.futurepedia.io/workflows",
+   "role_source": "site"
+  },
+  {
+   "id": "FW-25",
+   "kind": "library",
+   "slug": "influencer-collaboration-pipeline",
+   "name": "Influencer Collaboration Pipeline",
+   "role": "marketer",
+   "role_ar": "مسوّق",
+   "creator": null,
+   "goal": "Drive awareness through creators",
+   "duration": "60min",
+   "difficulty": "intermediate",
+   "steps": [
+    {
+     "title": "Define your ideal creator profile",
+     "source_tool": "Claude",
+     "route": "write"
+    },
+    {
+     "title": "Research and vet candidates",
+     "source_tool": "Perplexity",
+     "route": "research"
+    },
+    {
+     "title": "Write the outreach message",
+     "source_tool": "Claude",
+     "route": "write"
+    },
+    {
+     "title": "Track campaigns and measure ROI",
+     "source_tool": "Rows AI",
+     "route": "data"
+    }
+   ],
+   "source_url": "https://www.futurepedia.io/workflows",
+   "role_source": "site"
+  },
+  {
+   "id": "FW-26",
+   "kind": "library",
+   "slug": "content-repurposing-engine",
+   "name": "Content Repurposing Engine",
+   "role": "marketer",
+   "role_ar": "مسوّق",
+   "creator": null,
+   "goal": "Get more mileage from every piece of content",
+   "duration": "45min",
+   "difficulty": "beginner",
+   "steps": [
+    {
+     "title": "Break down the source content into atomic insights",
+     "source_tool": "Claude",
+     "route": "write"
+    },
+    {
+     "title": "Write platform-specific posts",
+     "source_tool": "ChatGPT",
+     "route": "write"
+    },
+    {
+     "title": "Create visual assets for each post",
+     "source_tool": "Canva",
+     "route": "design"
+    },
+    {
+     "title": "Schedule the full week",
+     "source_tool": "Hootsuite",
+     "route": "crm_comms"
+    }
+   ],
+   "source_url": "https://www.futurepedia.io/workflows",
+   "role_source": "site"
+  },
+  {
+   "id": "FW-27",
+   "kind": "library",
+   "slug": "customer-case-study-builder",
+   "name": "Customer Case Study Builder",
+   "role": "marketer",
+   "role_ar": "مسوّق",
+   "creator": null,
+   "goal": "Build sales proof points",
+   "duration": "60min",
+   "difficulty": "beginner",
+   "steps": [
+    {
+     "title": "Prepare the interview questions",
+     "source_tool": "Claude",
+     "route": "write"
+    },
+    {
+     "title": "Record and transcribe the interview",
+     "source_tool": "Otter.ai",
+     "route": "transcribe"
+    },
+    {
+     "title": "Write the case study",
+     "source_tool": "Claude",
+     "route": "write"
+    },
+    {
+     "title": "Design the case study PDF",
+     "source_tool": "Canva",
+     "route": "design"
+    },
+    {
+     "title": "Distribute across channels",
+     "source_tool": "Hootsuite",
+     "route": "crm_comms"
+    }
+   ],
+   "source_url": "https://www.futurepedia.io/workflows",
+   "role_source": "site"
+  },
+  {
+   "id": "FW-28",
+   "kind": "library",
+   "slug": "customer-support-automation",
+   "name": "Customer Support Automation",
+   "role": "operations",
+   "role_ar": "عمليات",
+   "creator": null,
+   "goal": "Improve customer support",
+   "duration": "2hour",
+   "difficulty": "advanced",
+   "steps": [
+    {
+     "title": "Document the top 50 questions and answers",
+     "source_tool": "Notion AI",
+     "route": "docs"
+    },
+    {
+     "title": "Build and train the AI chat agent",
+     "source_tool": "Intercom",
+     "route": "crm_comms"
+    },
+    {
+     "title": "Configure handoff rules to humans",
+     "source_tool": "Zendesk",
+     "route": "crm_comms"
+    },
+    {
+     "title": "Review bot performance weekly",
+     "source_tool": "ChatGPT",
+     "route": "write"
+    }
+   ],
+   "source_url": "https://www.futurepedia.io/workflows",
+   "role_source": "site"
+  },
+  {
+   "id": "FW-29",
+   "kind": "library",
+   "slug": "document-processing-pipeline",
+   "name": "Document Processing Pipeline",
+   "role": "operations",
+   "role_ar": "عمليات",
+   "creator": null,
+   "goal": "Eliminate manual data entry",
+   "duration": "90min",
+   "difficulty": "advanced",
+   "steps": [
+    {
+     "title": "Set up a single document intake",
+     "source_tool": "Make",
+     "route": "automate"
+    },
+    {
+     "title": "Extract data from documents with AI",
+     "source_tool": "ChatGPT",
+     "route": "write"
+    },
+    {
+     "title": "Map extracted fields to your spreadsheet or system",
+     "source_tool": "Rows AI",
+     "route": "data"
+    },
+    {
+     "title": "Set up validation and routing rules",
+     "source_tool": "Make",
+     "route": "automate"
+    },
+    {
+     "title": "Generate weekly processing reports",
+     "source_tool": "Julius AI",
+     "route": "data"
+    }
+   ],
+   "source_url": "https://www.futurepedia.io/workflows",
+   "role_source": "site"
+  },
+  {
+   "id": "FW-30",
+   "kind": "library",
+   "slug": "learn-any-new-skill-with-ai",
+   "name": "Learn Any New Skill with AI",
+   "role": "other",
+   "role_ar": "عام",
+   "creator": null,
+   "goal": "Learn new skills faster",
+   "duration": "25min",
+   "difficulty": "beginner",
+   "steps": [
+    {
+     "title": "Define what good looks like",
+     "source_tool": "Claude",
+     "route": "write"
+    },
+    {
+     "title": "Find the best free resources",
+     "source_tool": "Perplexity",
+     "route": "research"
+    },
+    {
+     "title": "Set up a practice feedback loop",
+     "source_tool": "ChatGPT",
+     "route": "write"
+    },
+    {
+     "title": "Schedule practice so it actually happens",
+     "source_tool": "Reclaim.ai",
+     "route": "crm_comms"
+    }
+   ],
+   "source_url": "https://www.futurepedia.io/workflows",
+   "role_source": "site"
+  },
+  {
+   "id": "FW-31",
+   "kind": "library",
+   "slug": "personal-productivity-reset",
+   "name": "Personal Productivity Reset",
+   "role": "other",
+   "role_ar": "عام",
+   "creator": null,
+   "goal": "Save time on repetitive work",
+   "duration": "20min",
+   "difficulty": "beginner",
+   "steps": [
+    {
+     "title": "Do a full brain dump",
+     "source_tool": "ChatGPT",
+     "route": "write"
+    },
+    {
+     "title": "Turn the list into a weekly plan",
+     "source_tool": "Claude",
+     "route": "write"
+    },
+    {
+     "title": "Time-block the plan on your calendar",
+     "source_tool": "Reclaim.ai",
+     "route": "crm_comms"
+    },
+    {
+     "title": "Capture notes and follow-ups in one place",
+     "source_tool": "Notion AI",
+     "route": "docs"
+    }
+   ],
+   "source_url": "https://www.futurepedia.io/workflows",
+   "role_source": "site"
+  },
+  {
+   "id": "FW-32",
+   "kind": "library",
+   "slug": "ai-powered-talent-sourcing",
+   "name": "AI-Powered Talent Sourcing",
+   "role": "recruiter",
+   "role_ar": "توظيف",
+   "creator": null,
+   "goal": "Hire faster",
+   "duration": "45min",
+   "difficulty": "intermediate",
+   "steps": [
+    {
+     "title": "Define the ideal candidate profile",
+     "source_tool": "Claude",
+     "route": "write"
+    },
+    {
+     "title": "Source candidates with AI search",
+     "source_tool": "Apollo",
+     "route": "crm_comms"
+    },
+    {
+     "title": "Screen resumes against your candidate profile",
+     "source_tool": "ChatGPT",
+     "route": "write"
+    },
+    {
+     "title": "Generate personalized outreach",
+     "source_tool": "Claude",
+     "route": "write"
+    },
+    {
+     "title": "Schedule interviews with calendar AI",
+     "source_tool": "Reclaim",
+     "route": "crm_comms"
+    },
+    {
+     "title": "Standardize the scorecard",
+     "source_tool": "Notion AI",
+     "route": "docs"
+    }
+   ],
+   "source_url": "https://www.futurepedia.io/workflows",
+   "role_source": "site"
+  },
+  {
+   "id": "FW-33",
+   "kind": "library",
+   "slug": "interview-prep-and-debrief-pipeline",
+   "name": "Interview Prep & Debrief Pipeline",
+   "role": "recruiter",
+   "role_ar": "توظيف",
+   "creator": null,
+   "goal": "Improve hiring decisions",
+   "duration": "30min",
+   "difficulty": "beginner",
+   "steps": [
+    {
+     "title": "Generate role-specific interview questions",
+     "source_tool": "Claude",
+     "route": "write"
+    },
+    {
+     "title": "Create the structured scorecard",
+     "source_tool": "Notion AI",
+     "route": "docs"
+    },
+    {
+     "title": "Record the interview",
+     "source_tool": "Otter.ai",
+     "route": "transcribe"
+    },
+    {
+     "title": "Summarize candidate responses",
+     "source_tool": "ChatGPT",
+     "route": "write"
+    },
+    {
+     "title": "Compare candidates objectively",
+     "source_tool": "Rows AI",
+     "route": "data"
+    },
+    {
+     "title": "Draft offer or rejection emails",
+     "source_tool": "Claude",
+     "route": "write"
+    }
+   ],
+   "source_url": "https://www.futurepedia.io/workflows",
+   "role_source": "site"
+  },
+  {
+   "id": "FW-34",
+   "kind": "library",
+   "slug": "lead-generation-automation",
+   "name": "Lead Generation Automation",
+   "role": "sales",
+   "role_ar": "مبيعات",
+   "creator": null,
+   "goal": "Get more leads",
+   "duration": "45min",
+   "difficulty": "intermediate",
+   "steps": [
+    {
+     "title": "Define your ideal customer and build a prospect list",
+     "source_tool": "Apollo",
+     "route": "crm_comms"
+    },
+    {
+     "title": "Enrich each account with research",
+     "source_tool": "Perplexity",
+     "route": "research"
+    },
+    {
+     "title": "Write personalized opening lines",
+     "source_tool": "Claude",
+     "route": "write"
+    },
+    {
+     "title": "Build a 3-touch sequence",
+     "source_tool": "Outreach",
+     "route": "crm_comms"
+    },
+    {
+     "title": "Review replies and book meetings",
+     "source_tool": "Superhuman",
+     "route": "crm_comms"
+    }
+   ],
+   "source_url": "https://www.futurepedia.io/workflows",
+   "role_source": "site"
+  },
+  {
+   "id": "FW-35",
+   "kind": "library",
+   "slug": "deal-intelligence-pipeline",
+   "name": "Deal Intelligence Pipeline",
+   "role": "sales",
+   "role_ar": "مبيعات",
+   "creator": null,
+   "goal": "Close more deals",
+   "duration": "30min",
+   "difficulty": "intermediate",
+   "steps": [
+    {
+     "title": "Research the prospect company",
+     "source_tool": "Perplexity",
+     "route": "research"
+    },
+    {
+     "title": "Profile the buyer and their style",
+     "source_tool": "ChatGPT",
+     "route": "write"
+    },
+    {
+     "title": "Generate talking points and a discovery script",
+     "source_tool": "Claude",
+     "route": "write"
+    },
+    {
+     "title": "Record the call with AI notes",
+     "source_tool": "Gong",
+     "route": "crm_comms"
+    },
+    {
+     "title": "Send a personalized follow-up summary",
+     "source_tool": "Claude",
+     "route": "write"
+    },
+    {
+     "title": "Update the CRM with structured notes",
+     "source_tool": "HubSpot",
+     "route": "crm_comms"
+    }
+   ],
+   "source_url": "https://www.futurepedia.io/workflows",
+   "role_source": "site"
+  },
+  {
+   "id": "FW-36",
+   "kind": "library",
+   "slug": "cold-outreach-at-scale",
+   "name": "Cold Outreach at Scale",
+   "role": "sales",
+   "role_ar": "مبيعات",
+   "creator": null,
+   "goal": "Book more meetings",
+   "duration": "60min",
+   "difficulty": "advanced",
+   "steps": [
+    {
+     "title": "Build a tight prospect list",
+     "source_tool": "Apollo",
+     "route": "crm_comms"
+    },
+    {
+     "title": "Auto-research each company",
+     "source_tool": "Perplexity",
+     "route": "research"
+    },
+    {
+     "title": "Write personalized emails with subject line variants",
+     "source_tool": "Claude",
+     "route": "write"
+    },
+    {
+     "title": "Track responses and iterate weekly",
+     "source_tool": "HubSpot",
+     "route": "crm_comms"
+    }
+   ],
+   "source_url": "https://www.futurepedia.io/workflows",
+   "role_source": "site"
+  },
+  {
+   "id": "FP-01",
+   "kind": "creator_playbook",
+   "slug": "reusable-customer-reply-skill",
+   "name": "Reusable Customer Reply Skill",
+   "role": "operations",
+   "role_ar": "عمليات",
+   "creator": "Kevin (Futurepedia)",
+   "goal": "Draft consistent customer replies you can review before sending",
+   "duration": "30min",
+   "difficulty": "intermediate",
+   "steps": [
+    {
+     "title": "Create a customer-reply skill",
+     "source_tool": "Codex",
+     "route": "write"
+    },
+    {
+     "title": "Attach your real policies and test edge cases",
+     "source_tool": "Codex",
+     "route": "write"
+    },
+    {
+     "title": "Create a writing-style skill from your examples",
+     "source_tool": "Codex",
+     "route": "write"
+    },
+    {
+     "title": "Combine both skills and review the draft",
+     "source_tool": "Codex",
+     "route": "write"
+    }
+   ],
+   "source_url": "https://www.futurepedia.io/workflows",
+   "role_source": "assigned_by_kosif"
+  },
+  {
+   "id": "FP-02",
+   "kind": "creator_playbook",
+   "slug": "compare-image-tools-with-real-tests",
+   "name": "Compare Image Tools with Real Tests",
+   "role": "designer",
+   "role_ar": "مصمم",
+   "creator": "Kevin (Futurepedia)",
+   "goal": "Choose the right image tool based on your own results",
+   "duration": "45min",
+   "difficulty": "beginner",
+   "steps": [
+    {
+     "title": "Define a shared evaluation brief",
+     "source_tool": "Codex",
+     "route": "write"
+    },
+    {
+     "title": "Run the same briefs in Gemini",
+     "source_tool": "Google Gemini",
+     "route": "research"
+    },
+    {
+     "title": "Run identical briefs in ChatGPT",
+     "source_tool": "ChatGPT",
+     "route": "write"
+    },
+    {
+     "title": "Score outputs and choose by task",
+     "source_tool": "Codex",
+     "route": "write"
+    }
+   ],
+   "source_url": "https://www.futurepedia.io/workflows",
+   "role_source": "assigned_by_kosif"
+  },
+  {
+   "id": "FP-03",
+   "kind": "creator_playbook",
+   "slug": "research-into-a-reusable-knowledge-base",
+   "name": "Research into a Reusable Knowledge Base",
+   "role": "analyst",
+   "role_ar": "محلل",
+   "creator": "Kevin (Futurepedia)",
+   "goal": "Save a reusable, source-linked research note",
+   "duration": "30min",
+   "difficulty": "beginner",
+   "steps": [
+    {
+     "title": "Research a specific question with source links",
+     "source_tool": "Perplexity",
+     "route": "research"
+    },
+    {
+     "title": "Structure approved findings into a local research note",
+     "source_tool": "Codex",
+     "route": "write"
+    },
+    {
+     "title": "Create an index and check for duplicates",
+     "source_tool": "Codex",
+     "route": "write"
+    },
+    {
+     "title": "Save the reviewed note in Notion",
+     "source_tool": "Notion AI",
+     "route": "docs"
+    }
+   ],
+   "source_url": "https://www.futurepedia.io/workflows",
+   "role_source": "assigned_by_kosif"
+  },
+  {
+   "id": "FP-04",
+   "kind": "creator_playbook",
+   "slug": "build-an-internal-tool-with-codex",
+   "name": "Build an Internal Tool with Codex",
+   "role": "operations",
+   "role_ar": "عمليات",
+   "creator": "Kevin (Futurepedia)",
+   "goal": "Test one useful internal tool with real sample data",
+   "duration": "60min",
+   "difficulty": "intermediate",
+   "steps": [
+    {
+     "title": "Define one small tool and its acceptance checks",
+     "source_tool": "Codex",
+     "route": "write"
+    },
+    {
+     "title": "Build a working first version in a local project",
+     "source_tool": "Codex",
+     "route": "write"
+    },
+    {
+     "title": "Test with real, non-sensitive sample data",
+     "source_tool": "Codex",
+     "route": "write"
+    },
+    {
+     "title": "Review the interface and iterate",
+     "source_tool": "Codex",
+     "route": "write"
+    }
+   ],
+   "source_url": "https://www.futurepedia.io/workflows",
+   "role_source": "assigned_by_kosif"
+  },
+  {
+   "id": "FP-05",
+   "kind": "creator_playbook",
+   "slug": "automate-a-purchase-to-subscriber-handoff",
+   "name": "Automate a Purchase-to-Subscriber Handoff",
+   "role": "operations",
+   "role_ar": "عمليات",
+   "creator": "Kevin (Futurepedia)",
+   "goal": "Test a purchase event updating the correct subscriber status",
+   "duration": "45min",
+   "difficulty": "intermediate",
+   "steps": [
+    {
+     "title": "Define the event and allowed data mapping",
+     "source_tool": "Codex",
+     "route": "write"
+    },
+    {
+     "title": "Configure the supported trigger and action in Zapier",
+     "source_tool": "Zapier",
+     "route": "automate"
+    },
+    {
+     "title": "Validate a redacted sample payload with Codex",
+     "source_tool": "Codex",
+     "route": "write"
+    },
+    {
+     "title": "Test the Zap and inspect the destination record",
+     "source_tool": "Zapier",
+     "route": "automate"
+    }
+   ],
+   "source_url": "https://www.futurepedia.io/workflows",
+   "role_source": "assigned_by_kosif"
+  },
+  {
+   "id": "FP-06",
+   "kind": "creator_playbook",
+   "slug": "create-explainer-graphics-and-video-inserts",
+   "name": "Create Explainer Graphics and Video Inserts",
+   "role": "creator",
+   "role_ar": "صانع محتوى",
+   "creator": "Kevin (Futurepedia)",
+   "goal": "Produce a checked diagram or visual insert for a video",
+   "duration": "30min",
+   "difficulty": "beginner",
+   "steps": [
+    {
+     "title": "Turn a script segment into a visual asset brief",
+     "source_tool": "Codex",
+     "route": "write"
+    },
+    {
+     "title": "Generate the graphic in Gemini",
+     "source_tool": "Google Gemini",
+     "route": "research"
+    },
+    {
+     "title": "Make focused natural-language edits in Gemini",
+     "source_tool": "Google Gemini",
+     "route": "research"
+    },
+    {
+     "title": "Check labels and export the chosen result",
+     "source_tool": "Google Gemini",
+     "route": "research"
+    }
+   ],
+   "source_url": "https://www.futurepedia.io/workflows",
+   "role_source": "assigned_by_kosif"
+  },
+  {
+   "id": "FP-07",
+   "kind": "creator_playbook",
+   "slug": "turn-meeting-notes-into-reviewed-actions",
+   "name": "Turn Meeting Notes into Reviewed Actions",
+   "role": "founder",
+   "role_ar": "مؤسس/مدير",
+   "creator": "Kevin (Futurepedia)",
+   "goal": "Save a reviewed action list without losing uncertainty",
+   "duration": "20min",
+   "difficulty": "beginner",
+   "steps": [
+    {
+     "title": "Capture a meeting with participant consent",
+     "source_tool": "Granola",
+     "route": "transcribe"
+    },
+    {
+     "title": "Review notes and supply an approved local copy",
+     "source_tool": "Granola",
+     "route": "transcribe"
+    },
+    {
+     "title": "Extract decisions, actions, owners, and open questions",
+     "source_tool": "Codex",
+     "route": "write"
+    },
+    {
+     "title": "Add a dictated clarification and save the reviewed list",
+     "source_tool": "Wispr Flow",
+     "route": "transcribe"
+    }
+   ],
+   "source_url": "https://www.futurepedia.io/workflows",
+   "role_source": "assigned_by_kosif"
+  },
+  {
+   "id": "FP-08",
+   "kind": "creator_playbook",
+   "slug": "turn-shorts-into-posts-for-every-platform",
+   "name": "Turn Shorts into Posts for Every Platform",
+   "role": "creator",
+   "role_ar": "صانع محتوى",
+   "creator": "Saj (Skill Leap AI)",
+   "goal": "Prepare a complete social-post package from one short video",
+   "duration": "60min",
+   "difficulty": "intermediate",
+   "steps": [
+    {
+     "title": "Record a real business task and save the edited short",
+     "source_tool": "ChatGPT",
+     "route": "write"
+    },
+    {
+     "title": "Transcribe the short with Whisper and review the captions",
+     "source_tool": "Whisper",
+     "route": "transcribe"
+    },
+    {
+     "title": "Create or apply your Shorts to Posts skill in Claude",
+     "source_tool": "Claude",
+     "route": "write"
+    },
+    {
+     "title": "Review and save the post package beside the video",
+     "source_tool": "Claude",
+     "route": "write"
+    }
+   ],
+   "source_url": "https://www.futurepedia.io/workflows",
+   "role_source": "assigned_by_kosif"
+  },
+  {
+   "id": "FP-09",
+   "kind": "creator_playbook",
+   "slug": "meeting-notes-to-an-actionable-recap",
+   "name": "Meeting Notes to an Actionable Recap",
+   "role": "founder",
+   "role_ar": "مؤسس/مدير",
+   "creator": "Saj (Skill Leap AI)",
+   "goal": "Prepare a reviewed meeting recap with clear owners and due dates",
+   "duration": "15min",
+   "difficulty": "beginner",
+   "steps": [
+    {
+     "title": "Capture the meeting in Granola",
+     "source_tool": "Granola",
+     "route": "transcribe"
+    },
+    {
+     "title": "Retrieve the correct meeting and summarize it in Claude",
+     "source_tool": "Claude",
+     "route": "write"
+    },
+    {
+     "title": "Apply your Meeting Transcript Recap skill",
+     "source_tool": "Claude",
+     "route": "write"
+    },
+    {
+     "title": "Review ownership and prepare the follow-up email",
+     "source_tool": "Claude",
+     "route": "write"
+    }
+   ],
+   "source_url": "https://www.futurepedia.io/workflows",
+   "role_source": "assigned_by_kosif"
+  },
+  {
+   "id": "FP-10",
+   "kind": "creator_playbook",
+   "slug": "creating-courses-and-presentations",
+   "name": "Creating Courses and Presentations",
+   "role": "creator",
+   "role_ar": "صانع محتوى",
+   "creator": "Saj (Skill Leap AI)",
+   "goal": "Create a reviewed lesson outline, teaching deck, and learner handout",
+   "duration": "90min",
+   "difficulty": "beginner",
+   "steps": [
+    {
+     "title": "Research the topic and define learning outcomes",
+     "source_tool": "ChatGPT",
+     "route": "write"
+    },
+    {
+     "title": "Organize the research into lessons and teaching resources",
+     "source_tool": "Claude",
+     "route": "write"
+    },
+    {
+     "title": "Create the visual teaching presentation in Gamma",
+     "source_tool": "Gamma",
+     "route": "slides"
+    },
+    {
+     "title": "Prepare the learner handout and review the final materials",
+     "source_tool": "Gamma",
+     "route": "slides"
+    }
+   ],
+   "source_url": "https://www.futurepedia.io/workflows",
+   "role_source": "assigned_by_kosif"
+  },
+  {
+   "id": "FP-11",
+   "kind": "creator_playbook",
+   "slug": "client-micro-app-in-a-day",
+   "name": "Client Micro-App in a Day",
+   "role": "agency_owner",
+   "role_ar": "صاحب وكالة",
+   "creator": "Saj (Skill Leap AI)",
+   "goal": "Ship a paid AI tool fast",
+   "duration": "6hour",
+   "difficulty": "intermediate",
+   "steps": [
+    {
+     "title": "Write a 1-page project brief with the client",
+     "source_tool": "Claude",
+     "route": "write"
+    },
+    {
+     "title": "Build the app's screens and core functionality",
+     "source_tool": "Lovable",
+     "route": "build"
+    },
+    {
+     "title": "Wire up the backend and any integrations",
+     "source_tool": "Lovable",
+     "route": "build"
+    },
+    {
+     "title": "Pitch deck + handover",
+     "source_tool": "Claude",
+     "route": "write"
+    }
+   ],
+   "source_url": "https://www.futurepedia.io/workflows",
+   "role_source": "assigned_by_kosif"
+  },
+  {
+   "id": "FP-12",
+   "kind": "creator_playbook",
+   "slug": "outbound-avatar-video-funnel",
+   "name": "Outbound Avatar Video Funnel",
+   "role": "sales",
+   "role_ar": "مبيعات",
+   "creator": "Saj (Skill Leap AI)",
+   "goal": "Book real sales calls with the right people",
+   "duration": "2hour",
+   "difficulty": "intermediate",
+   "steps": [
+    {
+     "title": "Research target accounts and angles",
+     "source_tool": "Perplexity",
+     "route": "research"
+    },
+    {
+     "title": "Write personalized scripts",
+     "source_tool": "Claude",
+     "route": "write"
+    },
+    {
+     "title": "Generate an avatar video for every prospect",
+     "source_tool": "HeyGen",
+     "route": "voice_avatar"
+    },
+    {
+     "title": "Set up the send and follow-up schedule",
+     "source_tool": "Zapier",
+     "route": "automate"
+    }
+   ],
+   "source_url": "https://www.futurepedia.io/workflows",
+   "role_source": "assigned_by_kosif"
+  },
+  {
+   "id": "FP-13",
+   "kind": "creator_playbook",
+   "slug": "pick-the-right-no-code-ai-build-path",
+   "name": "Pick the Right No-Code AI Build Path",
+   "role": "founder",
+   "role_ar": "مؤسس/مدير",
+   "creator": "Saj (Skill Leap AI)",
+   "goal": "Ship the simplest tool that actually does the job",
+   "duration": "15min",
+   "difficulty": "beginner",
+   "steps": [
+    {
+     "title": "Score the project on 3 questions",
+     "source_tool": "ChatGPT",
+     "route": "write"
+    },
+    {
+     "title": "Build the fast path first (questionnaire to live site)",
+     "source_tool": "Hostinger AI Website Builder",
+     "route": "build"
+    },
+    {
+     "title": "Move up to a real app only if you need logins or a chatbot",
+     "source_tool": "Lovable",
+     "route": "build"
+    },
+    {
+     "title": "Connect ChatGPT to your builder for on-the-fly edits",
+     "source_tool": "ChatGPT",
+     "route": "write"
+    }
+   ],
+   "source_url": "https://www.futurepedia.io/workflows",
+   "role_source": "assigned_by_kosif"
+  },
+  {
+   "id": "FP-14",
+   "kind": "creator_playbook",
+   "slug": "clarify-your-goals-with-chatgpt",
+   "name": "Clarify Your Goals with ChatGPT",
+   "role": "other",
+   "role_ar": "عام",
+   "creator": "My First Million",
+   "goal": "Choose realistic priorities and next-week actions",
+   "duration": "25min",
+   "difficulty": "beginner",
+   "steps": [
+    {
+     "title": "Explain your goals and constraints",
+     "source_tool": "ChatGPT",
+     "route": "write"
+    },
+    {
+     "title": "Challenge and rank your priorities",
+     "source_tool": "ChatGPT",
+     "route": "write"
+    },
+    {
+     "title": "Turn your priorities into next-week actions",
+     "source_tool": "ChatGPT",
+     "route": "write"
+    }
+   ],
+   "source_url": "https://www.futurepedia.io/workflows",
+   "role_source": "assigned_by_kosif"
+  },
+  {
+   "id": "FP-15",
+   "kind": "creator_playbook",
+   "slug": "turn-a-voice-note-into-an-action-brief",
+   "name": "Turn a Voice Note into an Action Brief",
+   "role": "founder",
+   "role_ar": "مؤسس/مدير",
+   "creator": "My First Million",
+   "goal": "Capture an idea and create a usable action brief",
+   "duration": "15min",
+   "difficulty": "beginner",
+   "steps": [
+    {
+     "title": "Dictate a rough idea into a private draft",
+     "source_tool": "Wispr Flow",
+     "route": "transcribe"
+    },
+    {
+     "title": "Structure the voice note without adding facts",
+     "source_tool": "Claude",
+     "route": "write"
+    },
+    {
+     "title": "Choose one reversible next action",
+     "source_tool": "Claude",
+     "route": "write"
+    }
+   ],
+   "source_url": "https://www.futurepedia.io/workflows",
+   "role_source": "assigned_by_kosif"
+  },
+  {
+   "id": "FP-16",
+   "kind": "creator_playbook",
+   "slug": "prepare-a-pre-meeting-brief",
+   "name": "Prepare a Pre-Meeting Brief",
+   "role": "founder",
+   "role_ar": "مؤسس/مدير",
+   "creator": "My First Million",
+   "goal": "Receive a concise brief before one test meeting",
+   "duration": "45min",
+   "difficulty": "intermediate",
+   "steps": [
+    {
+     "title": "Connect a test calendar and approved email context",
+     "source_tool": "Lindy.ai",
+     "route": "crm_comms"
+    },
+    {
+     "title": "Configure a brief before the meeting",
+     "source_tool": "Lindy.ai",
+     "route": "crm_comms"
+    },
+    {
+     "title": "Send the brief to a private destination",
+     "source_tool": "Lindy.ai",
+     "route": "crm_comms"
+    },
+    {
+     "title": "Test the event and verify every claim",
+     "source_tool": "Lindy.ai",
+     "route": "crm_comms"
+    }
+   ],
+   "source_url": "https://www.futurepedia.io/workflows",
+   "role_source": "assigned_by_kosif"
+  },
+  {
+   "id": "FP-17",
+   "kind": "creator_playbook",
+   "slug": "triage-your-inbox-and-schedule-a-follow-up",
+   "name": "Triage Your Inbox and Schedule a Follow-Up",
+   "role": "founder",
+   "role_ar": "مؤسس/مدير",
+   "creator": "My First Million",
+   "goal": "Review reply drafts and coordinate one meeting",
+   "duration": "30min",
+   "difficulty": "intermediate",
+   "steps": [
+    {
+     "title": "Connect Fyxer and inspect its inbox categories",
+     "source_tool": "Fyxer",
+     "route": "crm_comms"
+    },
+    {
+     "title": "Review a reply drafted in your writing style",
+     "source_tool": "Fyxer",
+     "route": "crm_comms"
+    },
+    {
+     "title": "Polish an unusual reply when needed",
+     "source_tool": "Claude",
+     "route": "write"
+    },
+    {
+     "title": "Coordinate an approved follow-up through Howie",
+     "source_tool": "Howie",
+     "route": "crm_comms"
+    }
+   ],
+   "source_url": "https://www.futurepedia.io/workflows",
+   "role_source": "assigned_by_kosif"
+  },
+  {
+   "id": "FP-18",
+   "kind": "creator_playbook",
+   "slug": "build-a-source-grounded-business-biography",
+   "name": "Build a Source-Grounded Business Biography",
+   "role": "founder",
+   "role_ar": "مؤسس/مدير",
+   "creator": "My First Million",
+   "goal": "Create a cited founder timeline and lessons for your own situation",
+   "duration": "40min",
+   "difficulty": "beginner",
+   "steps": [
+    {
+     "title": "Collect biographies and primary sources you may use",
+     "source_tool": "NotebookLM",
+     "route": "research"
+    },
+    {
+     "title": "Extract a timeline with citations",
+     "source_tool": "NotebookLM",
+     "route": "research"
+    },
+    {
+     "title": "Compare recurring challenges and decisions",
+     "source_tool": "NotebookLM",
+     "route": "research"
+    },
+    {
+     "title": "Apply the evidence to your situation",
+     "source_tool": "Claude",
+     "route": "write"
+    }
+   ],
+   "source_url": "https://www.futurepedia.io/workflows",
+   "role_source": "assigned_by_kosif"
+  },
+  {
+   "id": "FP-19",
+   "kind": "creator_playbook",
+   "slug": "delegate-a-research-task-to-an-ai-agent",
+   "name": "Delegate a Research Task to an AI Agent",
+   "role": "other",
+   "role_ar": "عام",
+   "creator": "My First Million",
+   "goal": "Receive a research deliverable you can inspect before acting",
+   "duration": "30min",
+   "difficulty": "beginner",
+   "steps": [
+    {
+     "title": "Choose a bounded task with a clear deliverable",
+     "source_tool": "Do Anything",
+     "route": "research"
+    },
+    {
+     "title": "Define access and approval boundaries",
+     "source_tool": "Do Anything",
+     "route": "research"
+    },
+    {
+     "title": "Inspect sources and check the deliverable",
+     "source_tool": "Do Anything",
+     "route": "research"
+    },
+    {
+     "title": "Choose the next action yourself",
+     "source_tool": "Do Anything",
+     "route": "research"
+    }
+   ],
+   "source_url": "https://www.futurepedia.io/workflows",
+   "role_source": "assigned_by_kosif"
+  },
+  {
+   "id": "FP-20",
+   "kind": "creator_playbook",
+   "slug": "research-to-an-interactive-audio-brief",
+   "name": "Research to an Interactive Audio Brief",
+   "role": "analyst",
+   "role_ar": "محلل",
+   "creator": "Marketing Against the Grain",
+   "goal": "Create a source-grounded briefing on one topic",
+   "duration": "30min",
+   "difficulty": "beginner",
+   "steps": [
+    {
+     "title": "Run a focused Deep Research project",
+     "source_tool": "Google Gemini",
+     "route": "research"
+    },
+    {
+     "title": "Export and inspect the research",
+     "source_tool": "Google Gemini",
+     "route": "research"
+    },
+    {
+     "title": "Add the report and supporting sources to NotebookLM",
+     "source_tool": "NotebookLM",
+     "route": "research"
+    },
+    {
+     "title": "Generate an audio overview and explore questions",
+     "source_tool": "NotebookLM",
+     "route": "research"
+    }
+   ],
+   "source_url": "https://www.futurepedia.io/workflows",
+   "role_source": "assigned_by_kosif"
+  },
+  {
+   "id": "FP-21",
+   "kind": "creator_playbook",
+   "slug": "research-led-landing-page",
+   "name": "Research-Led Landing Page",
+   "role": "marketer",
+   "role_ar": "مسوّق",
+   "creator": "Marketing Against the Grain",
+   "goal": "Create a landing-page draft grounded in real product information",
+   "duration": "60min",
+   "difficulty": "beginner",
+   "steps": [
+    {
+     "title": "Research a page framework and brand direction",
+     "source_tool": "Google Gemini",
+     "route": "research"
+    },
+    {
+     "title": "Turn the research into a detailed page outline",
+     "source_tool": "Google Gemini",
+     "route": "research"
+    },
+    {
+     "title": "Build the first version in Lovable",
+     "source_tool": "Lovable",
+     "route": "build"
+    },
+    {
+     "title": "Compare brand styling and revise the final page",
+     "source_tool": "Claude",
+     "route": "write"
+    }
+   ],
+   "source_url": "https://www.futurepedia.io/workflows",
+   "role_source": "assigned_by_kosif"
+  },
+  {
+   "id": "FP-22",
+   "kind": "creator_playbook",
+   "slug": "test-every-tool-friday",
+   "name": "Test-Every-Tool Friday",
+   "role": "creator",
+   "role_ar": "صانع محتوى",
+   "creator": "Matt Wolfe",
+   "goal": "Stay first to cover new tools",
+   "duration": "5hour",
+   "difficulty": "intermediate",
+   "steps": [
+    {
+     "title": "Scan launches and pick 5 candidates",
+     "source_tool": "Perplexity",
+     "route": "research"
+    },
+    {
+     "title": "Run a standard prompt suite on each",
+     "source_tool": "Claude",
+     "route": "write"
+    },
+    {
+     "title": "Draft commentary and ranking",
+     "source_tool": "Claude",
+     "route": "write"
+    },
+    {
+     "title": "Record the live demos, then cut by editing the transcript",
+     "source_tool": "Descript",
+     "route": "transcribe"
+    }
+   ],
+   "source_url": "https://www.futurepedia.io/workflows",
+   "role_source": "assigned_by_kosif"
+  },
+  {
+   "id": "FP-23",
+   "kind": "creator_playbook",
+   "slug": "build-your-own-channel-producer-ai",
+   "name": "Build Your Own Channel Producer AI",
+   "role": "creator",
+   "role_ar": "صانع محتوى",
+   "creator": "Matt Wolfe",
+   "goal": "Make every title and thumbnail call with real data, not a gut feeling",
+   "duration": "45min",
+   "difficulty": "intermediate",
+   "steps": [
+    {
+     "title": "Export your real analytics as spreadsheet files (CSVs)",
+     "source_tool": "-",
+     "route": "manual"
+    },
+    {
+     "title": "Create a dedicated Claude Project and load the data",
+     "source_tool": "Claude",
+     "route": "write"
+    },
+    {
+     "title": "Write your content rules once, reuse forever",
+     "source_tool": "Claude",
+     "route": "write"
+    },
+    {
+     "title": "Bring every new title/thumbnail idea back to the same project",
+     "source_tool": "Claude",
+     "route": "write"
+    }
+   ],
+   "source_url": "https://www.futurepedia.io/workflows",
+   "role_source": "assigned_by_kosif"
+  },
+  {
+   "id": "FP-24",
+   "kind": "creator_playbook",
+   "slug": "one-person-saas-validation-sprint",
+   "name": "One-Person SaaS Validation Sprint",
+   "role": "founder",
+   "role_ar": "مؤسس/مدير",
+   "creator": "Starter Story",
+   "goal": "Test the idea before you build it",
+   "duration": "1week",
+   "difficulty": "beginner",
+   "steps": [
+    {
+     "title": "Research underserved niches and pain points",
+     "source_tool": "Perplexity",
+     "route": "research"
+    },
+    {
+     "title": "Run 10 customer-style interview simulations",
+     "source_tool": "Claude",
+     "route": "write"
+    },
+    {
+     "title": "Write the landing page copy",
+     "source_tool": "Claude",
+     "route": "write"
+    },
+    {
+     "title": "Build and deploy the landing page",
+     "source_tool": "Lovable",
+     "route": "build"
+    },
+    {
+     "title": "Automate lead capture and follow-up",
+     "source_tool": "Zapier",
+     "route": "automate"
+    }
+   ],
+   "source_url": "https://www.futurepedia.io/workflows",
+   "role_source": "assigned_by_kosif"
+  },
+  {
+   "id": "FP-25",
+   "kind": "creator_playbook",
+   "slug": "faceless-youtube-channel-engine",
+   "name": "Faceless YouTube Channel Engine",
+   "role": "creator",
+   "role_ar": "صانع محتوى",
+   "creator": "Starter Story",
+   "goal": "Build a steady stream of content without filming",
+   "duration": "3hour",
+   "difficulty": "intermediate",
+   "steps": [
+    {
+     "title": "Pick a high-paying niche and topic cluster",
+     "source_tool": "Perplexity",
+     "route": "research"
+    },
+    {
+     "title": "Script videos with proven hooks",
+     "source_tool": "Claude",
+     "route": "write"
+    },
+    {
+     "title": "Generate voiceover",
+     "source_tool": "ElevenLabs",
+     "route": "voice_avatar"
+    },
+    {
+     "title": "Cut and assemble in Descript",
+     "source_tool": "Descript",
+     "route": "transcribe"
+    },
+    {
+     "title": "Write step-by-step instructions for a virtual assistant",
+     "source_tool": "Claude",
+     "route": "write"
+    }
+   ],
+   "source_url": "https://www.futurepedia.io/workflows",
+   "role_source": "assigned_by_kosif"
+  },
+  {
+   "id": "FP-26",
+   "kind": "creator_playbook",
+   "slug": "2-week-ai-build-accelerator",
+   "name": "2-Week AI Build Accelerator",
+   "role": "founder",
+   "role_ar": "مؤسس/مدير",
+   "creator": "Starter Story",
+   "goal": "Ship a working product in under 2 weeks",
+   "duration": "2week",
+   "difficulty": "intermediate",
+   "steps": [
+    {
+     "title": "Study real case studies to find a proven business model first",
+     "source_tool": "Perplexity",
+     "route": "research"
+    },
+    {
+     "title": "Plan the smallest version that proves the idea",
+     "source_tool": "Claude",
+     "route": "write"
+    },
+    {
+     "title": "Build the working product",
+     "source_tool": "Lovable",
+     "route": "build"
+    },
+    {
+     "title": "Get the first real payment before building anything else",
+     "source_tool": "-",
+     "route": "manual"
+    }
+   ],
+   "source_url": "https://www.futurepedia.io/workflows",
+   "role_source": "assigned_by_kosif"
+  },
+  {
+   "id": "FP-27",
+   "kind": "creator_playbook",
+   "slug": "research-to-an-audio-learning-brief",
+   "name": "Research to an Audio Learning Brief",
+   "role": "analyst",
+   "role_ar": "محلل",
+   "creator": "Tina Huang",
+   "goal": "Create a sourced audio brief on a topic you want to learn",
+   "duration": "45min",
+   "difficulty": "intermediate",
+   "steps": [
+    {
+     "title": "Create a topic-and-timeframe form in n8n",
+     "source_tool": "n8n",
+     "route": "automate"
+    },
+    {
+     "title": "Connect an OpenAI chat model and a Perplexity research tool",
+     "source_tool": "Perplexity",
+     "route": "research"
+    },
+    {
+     "title": "Test the summary and inspect the agent logs",
+     "source_tool": "n8n",
+     "route": "automate"
+    },
+    {
+     "title": "Generate audio from the verified summary",
+     "source_tool": "OpenAI API",
+     "route": "voice_avatar"
+    }
+   ],
+   "source_url": "https://www.futurepedia.io/workflows",
+   "role_source": "assigned_by_kosif"
+  },
+  {
+   "id": "FP-28",
+   "kind": "creator_playbook",
+   "slug": "route-customer-support-with-ai",
+   "name": "Route Customer Support with AI",
+   "role": "operations",
+   "role_ar": "عمليات",
+   "creator": "Tina Huang",
+   "goal": "Test a support-routing workflow with safe escalation",
+   "duration": "60min",
+   "difficulty": "intermediate",
+   "steps": [
+    {
+     "title": "Connect a test inbox to an n8n email trigger",
+     "source_tool": "n8n",
+     "route": "automate"
+    },
+    {
+     "title": "Classify the inquiry into support branches",
+     "source_tool": "OpenAI API",
+     "route": "voice_avatar"
+    },
+    {
+     "title": "Draft policy-grounded replies for each branch",
+     "source_tool": "n8n",
+     "route": "automate"
+    },
+    {
+     "title": "Escalate unresolved cases and test every route",
+     "source_tool": "n8n",
+     "route": "automate"
+    }
+   ],
+   "source_url": "https://www.futurepedia.io/workflows",
+   "role_source": "assigned_by_kosif"
+  }
+ ],
+ "courses": {
+  "provider": "Skill Leap AI (paid; free tier: 14-Day AI Boot Camp + Prompting Essentials)",
+  "count": 27,
+  "slugs": [
+   "ai-risk-management",
+   "chatgpt-for-everyday-business-tasks",
+   "ai-powered-digital-marketing",
+   "google-nano-banana-create-and-edit-in-minutes",
+   "ai-copywriters-playbook",
+   "google-gemini-complete-beginners-guide",
+   "14-day-ai-boot-camp",
+   "ai-website-builder-crash-course",
+   "ultimate-guide-to-generative-ai",
+   "prompting-essentials-learn-to-use-chatgpt-like-a-pro",
+   "introduction-to-ai-agents",
+   "ai-coding-for-entrepreneurs",
+   "custom-gpts-for-entrepreneurs",
+   "midjourney-mastery",
+   "google-notebooklm-complete-course",
+   "ai-for-seo-content-creation",
+   "ai-powered-presentations",
+   "notion-ai",
+   "canva-magic-studio",
+   "ai-powered-image-creation-with-chatgpt",
+   "generative-ai-for-content-creators",
+   "build-launch-ai-chatbot-your-website",
+   "creating-movies-with-ai-complete-course",
+   "private-ai-chatbot-your-computer",
+   "microsoft-365-copilot-pro",
+   "visual-communication-for-entrepreneurs",
+   "ai-powered-podcasting"
+  ]
+ }
+}
