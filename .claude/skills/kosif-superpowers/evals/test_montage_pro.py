@@ -400,6 +400,20 @@ class TranscribeReviewTests(unittest.TestCase):
         self.assertEqual(M.tidy_words(one, offset=0.5)[0][0], {"word": "one", "start": 0.5, "end": 0.9})
 
     @unittest.skipUnless(HAVE, "ffmpeg/ffprobe not installed")
+    @unittest.skipUnless(HAVE, "ffmpeg/ffprobe not installed")
+    def test_transcribe_job_after_intake_refreshes_the_cue_map(self):  # review: the words_hint's first remedy must work
+        job = self.tmp / "hint_job"
+        rc, out, err = self.cli(self.media, "--job", job, cmd="intake", fake=False)
+        self.assertEqual(rc, 0, err)
+        self.assertEqual(json.loads(out)["audio_cues"]["aligned_words"], 0)
+        rc, out, err = self.cli(self.media, "--job", job)
+        self.assertEqual(rc, 0, err)
+        r = json.loads(out)
+        self.assertEqual(r["status"], "written")
+        self.assertGreater(r["audio_cues"]["aligned_words"], 0, r)
+        cues = json.loads((job / "work" / "cues.json").read_text(encoding="utf-8"))
+        self.assertEqual(len(cues["words"]), r["audio_cues"]["aligned_words"])
+
     def test_intake_transcribe_accepts_force(self):  # finding 4: intake --transcribe had no --force
         job = self.tmp / "jobF"
         job.mkdir()

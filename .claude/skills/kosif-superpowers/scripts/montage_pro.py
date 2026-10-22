@@ -161,22 +161,12 @@ def intake(media: Path, job: Path, transcribe_opts: dict = None) -> dict:
         pad = ["-af", f"adelay={int(round(offset * 1000))}:all=1"] if offset and offset > 0.0005 else []
         sh(["ffmpeg", "-y", "-loglevel", "error", "-i", str(media), "-vn", *pad, "-ac", "1", "-ar", "44100", "-c:a", "pcm_s16le", str(wav)], 900)
         res["loudness"] = loudness(media)
-        cues = job / "work" / "cues.json"
         words = job / "words.json"
-        if cues.exists():  # the mapper opens its output exclusively; a stale map must not survive a re-intake
-            cues.unlink()
-        cmd = [PY, str(HERE / "audio_cue_mapper.py"), str(wav), "--out", str(cues)]
-        if words.exists():
-            cmd[3:3] = ["--aligned-words", str(words)]
-        rc, out, err = sh(cmd, 900)
-        c = jload(cues, {}) or {}
-        res["audio_cues"] = {"file": str(cues), "onset_candidates": len(c.get("onset_candidates_seconds") or []),
-                             "aligned_words": len(c.get("words") or []), "ok": rc == 0}
+        res["audio_cues"], err = cue_map(job, wav, words)
         if offset and offset > 0.0005:
             res["audio_cues"]["audio_offset"] = round(offset, 3)
         if transcribe_opts is not None and (res.get("transcribe") or {}).get("ok") and words.exists() and not res["audio_cues"]["aligned_words"]:
-            res["warning"] = ("transcribed words were not imported into the cue map: " + (err or out).strip().splitlines()[-1]
-                              if (err or out).strip() else "transcribed words were not imported into the cue map")
+            res["warning"] = "transcribed words were not imported into the cue map" + (f": {err}" if err else "")
         if not words.exists():
             res["words_hint"] = ("no words.json: run montage_pro.py transcribe MEDIA --job JOB (or intake --transcribe), "
                                  "or put WhisperX/faster-whisper aligned words at JOB/words.json for word-synced text")
@@ -489,6 +479,22 @@ def transcribe(media: Path, out: Path, model: str = "medium", language: str = "a
     return res
 
 
+def cue_map(job: Path, wav: Path, words: Path):
+    """(Re)build JOB/work/cues.json from master.wav, importing JOB/words.json when it exists. The mapper opens its output
+    exclusively, so a stale map is removed first. Returns (summary, last error line or None)."""
+    cues = job / "work" / "cues.json"
+    if cues.exists():
+        cues.unlink()
+    cmd = [PY, str(HERE / "audio_cue_mapper.py"), str(wav), "--out", str(cues)]
+    if words.exists():
+        cmd[3:3] = ["--aligned-words", str(words)]
+    rc, out, err = sh(cmd, 900)
+    c = jload(cues, {}) or {}
+    last = (err or out).strip().splitlines()[-1] if (err or out).strip() else None
+    return ({"file": str(cues), "onset_candidates": len(c.get("onset_candidates_seconds") or []),
+             "aligned_words": len(c.get("words") or []), "ok": rc == 0}, None if rc == 0 else last)
+
+
 def transcribe_job(media: Path, job: Path, out: Path = None, model: str = "medium", language: str = "ar",
                    local_only: bool = False, force: bool = False, vad: bool = True, no_speech_threshold: float = NO_SPEECH_MAX,
                    allow_tracked: bool = False) -> dict:
@@ -501,6 +507,12 @@ def transcribe_job(media: Path, job: Path, out: Path = None, model: str = "mediu
         return {"ok": False, "error": str(exc)}
     rec = {k: r.get(k) for k in ("status", "file", "words", "model", "language", "elapsed_s")}
     report(job, "transcribe", {**rec, "warning": r["warning"]} if r.get("warning") else rec)
+    wav, words = job / "work" / "master.wav", Path(out or job / "words.json")
+    if r.get("status") == "written" and wav.exists() and words == job / "words.json":
+        # after an earlier intake: refresh the cue map so a later build sees the new words (not a stale cues.json)
+        r["audio_cues"], err = cue_map(job, wav, words)
+        if err:
+            r["warning"] = (r.get("warning") + "; " if r.get("warning") else "") + "cue map not refreshed: " + err
     return {"ok": True, **r}
 
 
