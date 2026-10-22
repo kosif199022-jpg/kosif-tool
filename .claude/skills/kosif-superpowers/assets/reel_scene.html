@@ -213,7 +213,7 @@ function breakLines(items, gap, maxW) {
 }
 
 // Word-by-word kinetic Arabic: each word rises and fades in at its spoken time; the word being spoken is
-// highlighted. leave (0..1) draws a finished phrase leaving upward during the next phrase's first 0.25 s.
+// highlighted. leave (0..1) draws a finished phrase leaving upward just before the next phrase starts.
 function drawPhrase(ph, t, leave) {
   let size = ph.big ? 112 : 80;
   g.save(); g.direction = "rtl"; g.textBaseline = "alphabetic"; g.font = `${size}px "Ruqaa"`;
@@ -227,7 +227,7 @@ function drawPhrase(ph, t, leave) {
   const lines = lay.lines, lh = size * 1.3;
   const top = L.text_cy - ((lines.length - 1) * lh) / 2 + size * 0.3;
   if (leave !== undefined) g.globalAlpha = 1 - leave;
-  const lift = leave !== undefined ? -30 * leave : 0;
+  const lift = leave !== undefined ? -64 * leave : 0;
   lines.forEach((ln, li) => {
     const total = ln.reduce((a, x) => a + x.ww, 0) + gap * (ln.length - 1);
     let x = W / 2 + total / 2;  // right edge (RTL)
@@ -247,13 +247,19 @@ function drawPhrase(ph, t, leave) {
   g.restore();
 }
 
+// One phrase at a time: the current phrase leaves (fades and lifts) during the LEAVE window that ends exactly
+// when the next phrase starts, so two phrases are never drawn together in the caption box.
+const LEAVE = 0.2;
 function captions(t) {
   let i = -1;
   for (let k = 0; k < PHRASES.length; k++) if (t >= PHRASES[k].s) i = k;
   if (i < 0) return;
-  const q = (t - PHRASES[i].s) / 0.25;
-  if (i > 0 && q < 1) drawPhrase(PHRASES[i - 1], t, clamp(q));
-  drawPhrase(PHRASES[i], t);
+  const ph = PHRASES[i], nxt = PHRASES[i + 1];
+  if (nxt) {
+    const leave = Math.min(LEAVE, (nxt.s - ph.s) * 0.4);
+    if (t >= nxt.s - leave) { drawPhrase(ph, t, clamp((t - (nxt.s - leave)) / leave)); return; }
+  }
+  drawPhrase(ph, t);
 }
 
 // Signature handle and optional credit (inside the safe band, on the scrim).

@@ -364,6 +364,19 @@ class TranscribeReviewTests(unittest.TestCase):
         self.assertEqual(d["source"]["duration"], 2.5)
         if HAVE_NUMPY:  # the premise: decoded sample 0 is the first audio sample, not file time 0
             self.assertLess(len(M.decode_16k(late)) / 16000.0, 1.6)
+        # intake --transcribe on the same file: master.wav is padded to the file timeline, so the cue map imports the words
+        job = self.tmp / "late_job"
+        rc, out, err = self.cli(late, "--job", job, "--transcribe", cmd="intake", fake=f)
+        self.assertEqual(rc, 0, err)
+        res = json.loads(out)
+        self.assertEqual(res["audio_cues"]["aligned_words"], 1, res["audio_cues"])
+        self.assertEqual(res["audio_cues"]["audio_offset"], round(start, 3))
+        wav_len = float(subprocess.run(["ffprobe", "-v", "error", "-show_entries", "format=duration", "-of", "csv=p=0",
+                                        str(job / "work" / "master.wav")], capture_output=True, text=True, check=True).stdout)
+        self.assertGreater(wav_len, start + 1.4)
+        rc, out, err = self.cli(late, "--job", job, "--transcribe", cmd="intake", fake=f)  # re-intake: no stale cues.json
+        self.assertEqual(rc, 0, err)
+        self.assertEqual(json.loads(out)["audio_cues"]["aligned_words"], 1)
 
     def test_tidy_words_keeps_segment_order(self):  # finding 3: overlapping phrase ranges / stale phrase text
         segs = [{"text": "a b", "words": [{"word": "a", "start": 0.0, "end": 0.5}, {"word": "b", "start": 1.0, "end": 1.4}]},

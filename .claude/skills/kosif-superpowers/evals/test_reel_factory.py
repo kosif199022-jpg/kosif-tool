@@ -186,6 +186,14 @@ class PlanMathTests(unittest.TestCase):
         self.assertEqual(starts, sorted(starts))
         self.assertTrue(ph["start"] <= starts[0] and est[-1][2] <= ph["end"] + 1e-9)
 
+    def test_seeded_styles_never_copy_a_preset_and_no_dissolve(self):
+        presets = set(RF.PRESETS.values())
+        for seed in range(0, 300):
+            st = RF.resolve_style(str(seed))
+            self.assertFalse((st["palette"], st["transitions"], st["frame"]) in presets and st["transition_cycle"] == RF.TRANSITION_SETS[st["transitions"]], seed)
+        for name, cyc in RF.TRANSITION_SETS.items():
+            self.assertNotIn("dissolve", cyc, name)  # random pixel switching reads as noise after the JPG plate
+
     def test_style_determinism(self):
         self.assertEqual(RF.resolve_style("7"), RF.resolve_style("7"))
         self.assertEqual(RF.resolve_style("gold-night")["palette"], "gold-night")
@@ -565,6 +573,16 @@ class CliTests(unittest.TestCase):
         self.assertIn("symlink", err)
         self.assertFalse((elsewhere / "rights.json").exists())
         self.assertEqual(list(elsewhere.iterdir()), [])
+        # a link planted deep inside a reused OUT (a font file, a plate frame, the reel itself) is refused the same way
+        (self.out / "build").unlink(); (self.out / "rights.json").unlink()
+        for planted in (self.out / "build" / "fonts" / "OFL-ReemKufi.txt", self.out / "build" / "plate" / "0001.jpg", self.out / "reel.mp4"):
+            planted.parent.mkdir(parents=True, exist_ok=True)
+            planted.symlink_to(elsewhere / "victim")
+            code, _, err = call(self.base("owned"))
+            self.assertEqual(code, 2, err)
+            self.assertIn(str(planted), err)
+            self.assertFalse((elsewhere / "victim").exists())
+            planted.unlink()
 
     def test_out_inside_the_skill_is_always_refused(self):
         target = SK / "out" / "reels" / "reel-factory-test"  # git-ignored by the root out/ pattern, but ships with the skill

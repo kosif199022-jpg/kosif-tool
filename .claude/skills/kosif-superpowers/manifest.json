@@ -3967,7 +3967,7 @@
    "consent": "",
    "limits": "Checks technical delivery specs only; it does not judge visual content, caption correctness or word-level audio sync. --source-audio compares the first audio stream only (an extra stream fails the separate one-stream check).",
    "evidence": "tested-here",
-   "evidence_note": "tests/test_verify_source_audio.py 13/13 and tests.test_tools_extra VerifyVideoTests passed here (they run the byte-identical repo copy; evals/test_hub.py BundledCopiesTest enforces the match). Without --source-audio stdout and JSON were byte-identical to the previous version on 4 test files. On 22-10 a reel_factory build muxed with -c copy matched its AAC source (packet MD5) and scored 12/12.",
+   "evidence_note": "tests/test_verify_source_audio.py 10/10 and tests.test_tools_extra VerifyVideoTests passed here (they run the byte-identical repo copy; evals/test_hub.py BundledCopiesTest enforces the match). Without --source-audio stdout and JSON were byte-identical to the previous version on 4 test files. On 22-10 a reel_factory build muxed with -c copy matched its AAC source (packet MD5) and scored 12/12.",
    "tests": [
     "tests/test_tools_extra.py",
     "tests/test_verify_source_audio.py"
@@ -4257,7 +4257,7 @@
    "consent": "--json overwrites the named report file; otherwise it only reads the video and master audio with local ffprobe/ffmpeg.",
    "limits": "Checks technical delivery specs only; it does not judge visual content, caption correctness or word-level audio sync. --source-audio compares the first audio stream only (an extra stream fails the separate one-stream check).",
    "evidence": "tested-here",
-   "evidence_note": "tests/test_verify_source_audio.py 13/13 and tests.test_tools_extra 4/4 OK here (ffmpeg/ffprobe present). --source-audio: ADTS .aac and MP4 AAC sources muxed with -c copy match; an AAC re-encode, an extra audio stream or Opus/PCM fail; output without the flag is byte-identical to the previous version.",
+   "evidence_note": "tests/test_verify_source_audio.py 10/10 and tests.test_tools_extra 7/7 OK here (ffmpeg/ffprobe present). --source-audio: ADTS .aac and MP4 AAC sources muxed with -c copy match; an AAC re-encode, an extra audio stream or Opus/PCM fail; output without the flag is byte-identical to the previous version.",
    "tests": [
     "tests/test_tools_extra.py",
     "tests/test_verify_source_audio.py"
@@ -11569,7 +11569,7 @@
     "formats-platforms"
    ],
    "evidence": "tested-here",
-   "evidence_note": "evals/test_montage_pro.py 24/24 OK here (transcribe tests use the KOSIF_TRANSCRIBE_FAKE hook; 6 skip without ffmpeg). Real model on 22-10: jobs/20261022-tiktok-reel/source/audio.m4a → 34 words, 2 phrases, three runs byte-identical; silence and a 220 Hz tone → 0 words with a warning."
+   "evidence_note": "evals/test_montage_pro.py 24/24 OK here (transcribe tests use the KOSIF_TRANSCRIBE_FAKE hook; 9 skip without ffmpeg, 5 of them transcribe tests). Real model on 22-10: jobs/20261022-tiktok-reel/source/audio.m4a → 34 words, 2 phrases, three runs byte-identical; silence and a 220 Hz tone → 0 words with a warning."
   },
   {
    "id": "reel-factory",
@@ -11639,7 +11639,7 @@
    },
    "safety": "runs-external-programs",
    "consent": "It never fetches or publishes anything; the rights you declare for the audio and the shots are recorded in rights.json with any gaps (by the owner's decision this is advisory and never stops a build), it writes only under the chosen out folder (never jobs/, tracked paths or the skill folder unless --allow-tracked), and it never re-encodes the user's audio.",
-   "limits": "The rights record only checks that declarations and evidence were supplied in the right shape; it does not verify a permission or licence and does not stop a build that lacks them. Word-timing accuracy is not measured against a reference. One template family (four palettes, three transition sets, three frames); about 0.26 s per 1080x1920 frame here, so about 2 min for a 15 s reel.",
+   "limits": "The rights record only checks that declarations and evidence were supplied in the right shape; it does not verify a permission or licence and does not stop a build that lacks them. Word-timing accuracy is not measured against a reference. One template family (four palettes, three transition sets, three frames; a numeric seed never repeats a preset exactly); about 0.26 s per 1080x1920 frame here, so about 2 min for a 15 s reel.",
    "tests": [
     ".claude/skills/kosif-superpowers/evals/test_reel_factory.py"
    ],
@@ -11655,7 +11655,7 @@
     "qa-verification"
    ],
    "evidence": "tested-here",
-   "evidence_note": "evals/test_reel_factory.py 32/32 OK here (the build smoke test renders a tiny draft reel; it skips without ffmpeg, node or Chromium). On 22-10 the real dua audio declared as direct-permission without evidence planned with rights.json status incomplete and one RIGHTS_NOTE; an owned 6 s voice with three Pexels shots built a 1080x1920 reel that verify_video --source-audio passed 12/12 (packet MD5 equal to the source)."
+   "evidence_note": "evals/test_reel_factory.py 34/34 OK here (the build smoke test renders a tiny draft reel; it skips without ffmpeg, node or Chromium). On 22-10 the real dua audio declared as direct-permission without evidence planned with rights.json status incomplete and one RIGHTS_NOTE; an owned 6 s voice with three Pexels shots built a 1080x1920 reel that verify_video --source-audio passed 12/12 (packet MD5 equal to the source)."
   },
   {
    "id": "stream-grabber",

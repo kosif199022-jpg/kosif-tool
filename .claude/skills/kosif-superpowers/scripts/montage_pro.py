@@ -155,10 +155,16 @@ def intake(media: Path, job: Path, transcribe_opts: dict = None) -> dict:
     if info["audio"]:
         wav = job / "work" / "master.wav"
         wav.parent.mkdir(parents=True, exist_ok=True)
-        sh(["ffmpeg", "-y", "-loglevel", "error", "-i", str(media), "-vn", "-ac", "1", "-ar", "44100", "-c:a", "pcm_s16le", str(wav)], 900)
+        # master.wav sits on the file timeline: when the audio stream starts late (a video whose sound begins after
+        # frame 0) the lead-in is padded with silence, so words.json (file timeline) and the cue map line up.
+        offset = (res.get("transcribe") or {}).get("audio_offset") or (media_timing(media)[1] if info["video"] else 0.0)
+        pad = ["-af", f"adelay={int(round(offset * 1000))}:all=1"] if offset and offset > 0.0005 else []
+        sh(["ffmpeg", "-y", "-loglevel", "error", "-i", str(media), "-vn", *pad, "-ac", "1", "-ar", "44100", "-c:a", "pcm_s16le", str(wav)], 900)
         res["loudness"] = loudness(media)
         cues = job / "work" / "cues.json"
         words = job / "words.json"
+        if cues.exists():  # the mapper opens its output exclusively; a stale map must not survive a re-intake
+            cues.unlink()
         cmd = [PY, str(HERE / "audio_cue_mapper.py"), str(wav), "--out", str(cues)]
         if words.exists():
             cmd[3:3] = ["--aligned-words", str(words)]
@@ -166,6 +172,11 @@ def intake(media: Path, job: Path, transcribe_opts: dict = None) -> dict:
         c = jload(cues, {}) or {}
         res["audio_cues"] = {"file": str(cues), "onset_candidates": len(c.get("onset_candidates_seconds") or []),
                              "aligned_words": len(c.get("words") or []), "ok": rc == 0}
+        if offset and offset > 0.0005:
+            res["audio_cues"]["audio_offset"] = round(offset, 3)
+        if transcribe_opts is not None and (res.get("transcribe") or {}).get("ok") and words.exists() and not res["audio_cues"]["aligned_words"]:
+            res["warning"] = ("transcribed words were not imported into the cue map: " + (err or out).strip().splitlines()[-1]
+                              if (err or out).strip() else "transcribed words were not imported into the cue map")
         if not words.exists():
             res["words_hint"] = ("no words.json: run montage_pro.py transcribe MEDIA --job JOB (or intake --transcribe), "
                                  "or put WhisperX/faster-whisper aligned words at JOB/words.json for word-synced text")
@@ -391,6 +402,9 @@ def transcribe(media: Path, out: Path, model: str = "medium", language: str = "a
     old = jload(out)
     eng = old.get("engine") if isinstance(old, dict) else None
     ours = isinstance(eng, dict) and old.get("schema") == WORDS_SCHEMA and eng.get("name") in WRITERS
+    placeholder = (isinstance(eng, dict) and eng.get("name") == "hand-timed example"
+                   and not (old.get("source") or {}).get("sha256"))  # templates/words.example.json copied by a scaffold
+    ours = ours or placeholder
     if out.exists() and not ours and not force:  # hand-made or another tool's timings are never overwritten silently
         raise TranscribeError(f"{out} exists and was not written by transcribe; pass --force to replace it or --out another path")
     installed = None if fake else _fw_version()
@@ -844,6 +858,9 @@ def main(argv=None):
         if topts is not None and not r["transcribe"]["ok"]:
             print("transcribe: " + r["transcribe"]["error"], file=sys.stderr)
             return 2
+        if r.get("warning"):  # --transcribe wrote words that never reached the cue map: say it and fail
+            print("intake: " + r["warning"], file=sys.stderr)
+            return 1
         return 0
     if x.cmd == "transcribe":
         if not (x.job or x.out):

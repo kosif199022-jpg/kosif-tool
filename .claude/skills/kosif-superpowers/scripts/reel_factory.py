@@ -105,7 +105,7 @@ PALETTES = {
 }
 TRANSITION_SETS = {  # xfade names present since ffmpeg 4.3
     "reveal": ["fade", "circleopen", "wipedown", "fadewhite", "smoothup"],
-    "soft": ["fade", "dissolve", "fadewhite", "fadeblack"],
+    "soft": ["fade", "smoothdown", "fadewhite", "fadeblack"],  # no "dissolve": it switches pixels at random and reads as noise after the JPG plate
     "glide": ["smoothleft", "smoothup", "smoothright", "fade"],
 }
 FRAMES = ("rounded", "arch", "square")
@@ -161,6 +161,20 @@ def inside_out(p: Path):
         if walk.is_symlink():
             return f"{walk} is a symlink (nothing is written through links inside {OUT_ROOT})"
     return None
+
+
+def refuse_symlinks(out: Path):
+    """OUT is the factory's own folder: a symlink anywhere inside it (file or folder) is refused before any write,
+    so no write — jsave/tsave, the plate JPGs, fonts, scene, render, mux or verify output — can land elsewhere."""
+    if out.is_symlink():
+        raise Fail(2, f"refused to use {out}: it is a symlink")
+    if not out.is_dir():
+        return
+    for root, dirs, files in os.walk(out, followlinks=False):
+        for name in dirs + files:
+            q = Path(root) / name
+            if q.is_symlink():
+                raise Fail(2, f"refused to use {out}: {q} is a symlink (nothing is written through links inside the out folder)")
 
 
 def tsave(p: Path, text: str):
@@ -390,7 +404,7 @@ def _phrase(text: str, members, words):
     return {"text": text or " ".join(w["w"] for w in ws), "start": ws[0]["s"], "end": ws[-1]["e"], "words": ws}
 
 
-def parse_words(doc):
+def parse_words(doc, warning=None):
     """kosif-words/1, {"words": [...]}, a bare word list, or whisper segments (a list or {"segments": [...]})
     → (words, phrases|None, source).
     words: [{"w", "s", "e"[, "p"]}] sorted, ends clamped to the next start, 3 decimals; p = whisper's own word
@@ -433,7 +447,7 @@ def parse_words(doc):
         if isinstance(prob, (int, float)) and not isinstance(prob, bool) and math.isfinite(prob):
             words[-1]["p"] = round(float(prob), 3)
     if not words:
-        raise Fail(2, "words: no timed words found")
+        raise Fail(2, "words: no timed words found" + (f" — transcribe said: {warning}" if warning else ""))
     phrases, source = None, None
     if groups is not None:
         phrases, source = [_phrase(t, [pos[i] for i in idx if i in pos], words) for t, idx in groups], "whisper segments"
@@ -531,11 +545,14 @@ def resolve_style(spec) -> dict:
     seed, rot = None, 0
     if re.fullmatch(r"-?\d+", spec):
         seed = int(spec)
-        h = hashlib.sha256(f"kosif-reel-style/{seed}".encode()).digest()
-        pal = sorted(PALETTES)[h[0] % len(PALETTES)]
-        tr = sorted(TRANSITION_SETS)[h[1] % len(TRANSITION_SETS)]
-        fr = FRAMES[h[2] % len(FRAMES)]
-        rot = h[3] % len(TRANSITION_SETS[tr])
+        for salt in range(64):  # a seed never lands on a preset's exact look: re-hash until the tuple differs
+            h = hashlib.sha256(f"kosif-reel-style/{seed}/{salt}".encode()).digest()
+            pal = sorted(PALETTES)[h[0] % len(PALETTES)]
+            tr = sorted(TRANSITION_SETS)[h[1] % len(TRANSITION_SETS)]
+            fr = FRAMES[h[2] % len(FRAMES)]
+            rot = h[3] % len(TRANSITION_SETS[tr])
+            if (pal, tr, fr) not in PRESETS.values() or rot:
+                break
     else:
         parts = spec.split(":")
         if parts[0] not in PRESETS:
@@ -738,10 +755,7 @@ def build(a, out: Path, plan: dict, rights: dict) -> dict:
     audio = Path(plan["audio"]["path"])
     bdir, steps = out / "build", []
     plate_dir = bdir / "plate"
-    for d in (bdir, plate_dir, bdir / "fonts"):
-        why = inside_out(d)
-        if why:
-            raise Fail(2, f"refused to use {d}: {why}")
+    refuse_symlinks(out)  # again right before the build's own writes (plate, fonts, scene, render, mux, verify)
     plate_dir.mkdir(parents=True, exist_ok=True)
     for old in plate_dir.glob("*.jpg"):
         if not old.is_symlink():
@@ -898,6 +912,7 @@ def run(a) -> dict:
         why = out_problem(out)
         if why:
             raise Fail(2, f"--out refused: {why}; pass --allow-tracked to override")
+    refuse_symlinks(Path(a.out) if a.out else out)
     out = out.resolve()
     global OUT_ROOT
     OUT_ROOT = out
@@ -934,7 +949,7 @@ def run(a) -> dict:
         wpath = Path(a.words).resolve()
         winfo = {"source": "file", "path": str(wpath), "sha256": sha256(wpath)}
     doc = jread(wpath, "words")
-    words, phrases, source = parse_words(doc)
+    words, phrases, source = parse_words(doc, (winfo.get("transcribe") or {}).get("warning"))
     winfo["schema"] = doc.get("schema") if isinstance(doc, dict) else "list"
     if isinstance(doc, dict) and isinstance(doc.get("engine"), dict):
         winfo["engine"] = doc["engine"]
