@@ -2,7 +2,7 @@
 
 بروتوكول الفهم الشامل والتفكير الإبداعي واختيار القدرات قبل التنفيذ — تعليمات دائمة لـ Claude داخل مستودع [kosif-tool](https://github.com/kosif199022-jpg/kosif-tool)، مسار المهارة `.claude/skills/kosif-superpowers/`. نصفه الآلي `scripts/skill_intelligence.py` (إيصال، ترشيح، مسودة خطط وأسئلة) و`scripts/fusionforge.py` (وصفة المشروع وسجل التجربة)، ونصفه العقلي هذه الصفحة (فهم، تنقيح، حكم).
 
-> **USIP v5.3 — 21-10-2026.** نواة تُقرأ كاملة؛ الملاحق تستعاد حسب جدول المحفزات، والمسار القانوني واحد، وFusionForge v2 للتوليف والتعلم الإجرائي. تفاصيل ترحيل v5.2 محفوظة في [CHANGELOG](references/protocol/CHANGELOG.md)، من دون ادعاء تثبيت SEE أو تشغيل Full Pro.
+> **USIP v5.3 — 21-10-2026.** نواة تُقرأ كاملة؛ الملاحق تستعاد حسب جدول المحفزات، والمسار القانوني واحد، وFusionForge v2 للتوليف والتعلم الإجرائي. تفاصيل ترحيل v5.2 محفوظة في [الأرشيف النصي](references/protocol/usip-v53-original-introduction-20261023.txt)، من دون ادعاء تثبيت SEE أو تشغيل Full Pro.
 
 ## الفهرس / contents
 
