@@ -1792,6 +1792,57 @@
    ]
   },
   {
+   "id": "see-pro-cognitive-gate",
+   "path": "scripts/see_pro_cognitive_gate.py",
+   "area": "think",
+   "title_en": "SEE Pro Cognitive Fusion contract verifier",
+   "title_ar": "فاحص عقود التفكير والتوليف KOSIF SEE Pro",
+   "summary_en": "Validates cognitive-packet metadata: bounded SEE method packs, typed capability handoffs, genuinely distinct A/B/C planning keys, evidence provenance, deterministic numeric checks, cross-company isolation, and receipt-based truth for Full Pro execution and Council reviewer counts.",
+   "summary_ar": "يفحص عقد التفكير المركب: حدود حزم SEE، وتوافق مخارج ومدخلات المهارات، واختلاف معماريات الخطط، وتوثيق الأدلة والحسابات وعزل الشركات، ويمنع وصف Full Pro أو مجلس الخبراء بأنه نُفذ من دون إيصالات طلب حقيقية.",
+   "use_when": [
+    "راجع التوليفة الذكية وتأكد أن بروتوكول SEE Pro ملتزم بشروطه",
+    "افحص هل خطة Full Pro أو مجلس الخبراء لها إثبات تشغيل",
+    "Validate proposed cognitive packet before executing a composite workflow"
+   ],
+   "keywords": [
+    "SEE Pro",
+    "cognitive",
+    "reasoning",
+    "Full Pro",
+    "typed handoff",
+    "evidence gate",
+    "intelligence",
+    "تفكير",
+    "ذكاء",
+    "عقود",
+    "تحقق",
+    "مجلس"
+   ],
+   "commands": [
+    {
+     "name": "--self-test",
+     "example": "python3 scripts/see_pro_cognitive_gate.py --self-test",
+     "does": "Runs deterministic in-process shadow checks for Full Pro claim truth, incompatible typed edges, privacy and planning limits."
+    },
+    {
+     "name": "check",
+     "example": "python3 scripts/see_pro_cognitive_gate.py check --file .claude/skills/kosif-superpowers/examples/see_pro_cognitive_packet.example.json",
+     "does": "Checks a JSON reasoning packet and emits PASS/HARD_FAIL with concrete contract errors."
+    }
+   ],
+   "inputs": "A cognitive-packet JSON meeting schema kosif.seepro.cognitive-packet.v1; optional self-test flag.",
+   "outputs": "Read-only JSON status with errors and warnings. It does not run Full Pro, Council, Jev, or any model, and does not modify model weights.",
+   "safety": "read-only",
+   "limits": "Metadata consistency check only, not independent proof of artifact quality or external Full Pro availability.",
+   "tests": [
+    ".claude/skills/kosif-superpowers/evals/test_see_pro_cognitive_gate.py"
+   ],
+   "docs": [
+    ".claude/skills/kosif-superpowers/references/protocol/A12-see-pro-cognitive-fusion.md"
+   ],
+   "evidence_note": "13/13 deterministic cognitive unit tests and built-in self-tests passed in the first GitHub Actions run; no full-pro production execution claim."
+  },
+  {
    "id": "aspects",
    "path": "scripts/aspects.py",
    "root": "skill",
@@ -9912,6 +9963,65 @@
     "validate",
     "reuse"
    ]
+  },
+  {
+   "id": "fusionforge-shared",
+   "path": "scripts/fusionforge_shared.py",
+   "area": "discover",
+   "title_en": "FusionForge Shared Memory: reviewed cross-project skill structures",
+   "title_ar": "ذاكرة FusionForge المشتركة بوصفات مهارات معزولة",
+   "summary_en": "Audits verified project-private FusionForge v2 promotion proposals; counts independent QA proofs across distinct projects, requires separate human privacy/security/collision and baseline-improvement review before exporting only allowlisted structural skill graphs. Never exports client objectives, transcripts, evidence, secrets or project names.",
+   "summary_ar": "يفحص وصفات FusionForge v2 المُثبتة محليًا، ويشترط أدلة اختبار مستقلة عبر مشاريع مختلفة ثم مراجعة الخصوصية والأمان وتعارض الكتالوج والتفوق على خط الأساس قبل حفظ مخطط هيكلي مجرد؛ لا ينقل أسماء الشركات أو الملفات أو الأسرار.",
+   "use_when": [
+    "استدعِ توليفة مهارات مشتركة آمنة متحققة من مشاريع سابقة",
+    "افحص هل يمكن ترقية وصفة FusionForge بين مشاريع مستقلة",
+    "Audit cross-project workflow promotion with three independent QA proofs"
+   ],
+   "keywords": [
+    "shared memory",
+    "fusionforge",
+    "promotion",
+    "cross-project",
+    "privacy",
+    "QA",
+    "skill reuse",
+    "ذاكرة مشتركة",
+    "توليف",
+    "عزل الشركات"
+   ],
+   "commands": [
+    {
+     "name": "audit",
+     "example": "python3 scripts/fusionforge_shared.py audit",
+     "does": "Read-only: examines local independent verified promotion proposals and prints eligibility tiers; does not approve."
+    },
+    {
+     "name": "recall",
+     "example": "python3 scripts/fusionforge_shared.py recall --kind video",
+     "does": "Read-only: returns only explicitly approved, allowlisted structural graphs for the named output kind."
+    },
+    {
+     "name": "review-template",
+     "example": "python3 scripts/fusionforge_shared.py review-template --signature <sha256>",
+     "does": "Prints the independent privacy/security/QA and baseline comparison review template without approving."
+    },
+    {
+     "name": "approve",
+     "example": "python3 scripts/fusionforge_shared.py approve --signature <sha256>",
+     "does": "Writes a sanitized graph into the project-local shared registry only after independent test, review and security gates."
+    }
+   ],
+   "inputs": "Project-local verified FusionForge v2 recipes, signed promotion proposals, and when approving an independently authorized human review file.",
+   "outputs": "Audit eligibility JSON, strictly allowlisted reusable typed graph metadata, or an approval status; approve may write only out/fusionforge/_shared/registry.json.",
+   "safety": "writes-files",
+   "limits": "Does not execute methods or prove human review by itself. 3 distinct reviewed projects and quality improvement required before shared approval; paths remain local and unshared.",
+   "tests": [
+    ".claude/skills/kosif-superpowers/evals/test_fusionforge_shared.py"
+   ],
+   "docs": [
+    ".claude/skills/kosif-superpowers/references/protocol/A10-self-evolution.md"
+   ],
+   "evidence_note": "Deterministic synthetic boundary regression suite documented; real three-project production promotion not yet demonstrated."
   },
   {
    "id": "superpower-fusion",
