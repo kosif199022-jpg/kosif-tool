@@ -163,7 +163,8 @@ def collect(root: Path) -> dict:
                 if not qa_hash:
                     continue
                 check = engine.validate_recipe(ctx,space,recipe)
-                if check['errors']:
+                drift=check.get('drift') or {}
+                if check['errors'] or drift.get('stale') or drift.get('unknown'):
                     continue
                 engine.proven_here(ctx,space,recipe,check)
                 groups[sig].append({'project':space.name,'id':rid,'qa_hash':qa_hash,'proposal':prop})
