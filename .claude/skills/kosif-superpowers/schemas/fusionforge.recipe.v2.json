@@ -345,6 +345,7 @@
     "video",
     "model3d",
     "font",
+    "prompt",
     "evidence",
     "package",
     "any"

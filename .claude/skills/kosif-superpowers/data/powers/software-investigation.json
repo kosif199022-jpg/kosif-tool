@@ -7781,5 +7781,137 @@
    "electron",
    "هندسة عكسية"
   ]
+ },
+ {
+  "id": "REA-242",
+  "family": "software-investigation",
+  "domain": "code",
+  "name_ar": "REA: تحسين أداء التحليل مع الحفاظ على الأدلة",
+  "name_en": "REA skill: optimize analysis cost while preserving correctness and Evidence",
+  "status": "documented",
+  "what": "مهارة rea-analysis-optimization: ثبّت السؤال ومرجع صحة مستقلًا، قس كل مرحلة (القبول، التحليل الأصلي، فك الترميز، الإسقاط، التسلسل)، ثم أصغر تصحيح بنيوي عند المالك؛ القرار المقاس بعدم التغيير نتيجة مقبولة. — Pin the question and an independent oracle, measure each phase, apply the smallest structural fix at its owner; a measured 'leave it' is a valid result.",
+  "when": "تحليل REA بطيء أو يستهلك ذاكرة / an REA analysis is slow or memory-heavy",
+  "how": "Read .agents/skills/rea-analysis-optimization/SKILL.md and references/kuna-case-study.md in the REA checkout matching your installed version. It grants no permission to execute targets, publish or merge. CI/test-suite speed belongs to REA-244.",
+  "params": "",
+  "install": "REA source checkout (read only)",
+  "requires": [
+   "npm:rea",
+   "engine:ghidra"
+  ],
+  "license": "MIT © 2026 morluto",
+  "proof": [
+   "https://github.com/morluto/rea/tree/main/.agents/skills/rea-analysis-optimization"
+  ],
+  "proof_scope": "url",
+  "styles": [],
+  "tags": [
+   "REA",
+   "performance",
+   "optimization",
+   "أداء",
+   "تحسين",
+   "benchmark",
+   "oracle"
+  ],
+  "section": "مهارات REA الجديدة — REA upstream agent skills (6.7.0, checked 2026-10-22)",
+  "source": "https://github.com/morluto/rea"
+ },
+ {
+  "id": "REA-243",
+  "family": "software-investigation",
+  "domain": "code",
+  "name_ar": "REA: تصميم أداة تحقيق وعقد CLI/MCP",
+  "name_en": "REA skill: design investigation tools, CLI/MCP contracts and Evidence semantics",
+  "status": "documented",
+  "what": "مهارة rea-tool-design: لكل طلب تصميم أعد الحدود المقترحة وشكل المدخل/النتيجة ودلالات الأدلة وأقرب بديل موجود وطريقة التحقق؛ نفّذ فقط إن طُلب. — Return the proposed boundary, input/result shape, Evidence semantics, nearest existing alternative and verification approach; implement only when asked.",
+  "when": "إضافة أداة أو مزود جديد إلى REA / adding a new REA tool or provider",
+  "how": "Read .agents/skills/rea-tool-design/SKILL.md, then docs/tool-design.md, docs/testing.md and CONTRIBUTING.md in the REA checkout. Useful as a template for designing any KOSIF evidence-bounded tool too.",
+  "params": "",
+  "install": "REA source checkout (read only)",
+  "requires": [
+   "npm:rea"
+  ],
+  "license": "MIT © 2026 morluto",
+  "proof": [
+   "https://github.com/morluto/rea/tree/main/.agents/skills/rea-tool-design"
+  ],
+  "proof_scope": "url",
+  "styles": [],
+  "tags": [
+   "REA",
+   "tool design",
+   "mcp",
+   "contract",
+   "تصميم أداة",
+   "evidence"
+  ],
+  "section": "مهارات REA الجديدة — REA upstream agent skills (6.7.0, checked 2026-10-22)",
+  "source": "https://github.com/morluto/rea"
+ },
+ {
+  "id": "REA-244",
+  "family": "software-investigation",
+  "domain": "code",
+  "name_ar": "REA: تدقيق CI والاختبارات (انحراف التجهيزات والنجاح الكاذب)",
+  "name_en": "REA skill: audit CI and test suites for fixture drift, false passes and measured cost",
+  "status": "documented",
+  "what": "مهارة rea-ci-tests-audit: ثبّت SHA الأساس، تتبّع المشغلات حتى الأوامر المنفذة فعلًا، أثبت كل حماية بإفساد متحكم به في نسخة معزولة، واحذف الكلفة فقط حين لا تضيع الحماية. — Pin the baseline SHA, trace triggers to executed commands, prove each protection by a controlled perturbation in an isolated copy, cut cost only without losing protection.",
+  "when": "اختبار أخضر مشكوك فيه أو CI بطيء / a suspicious green test or a slow CI",
+  "how": "Read .agents/skills/rea-ci-tests-audit/SKILL.md and references/measurement-and-ci.md. The method transfers to auditing this repo's evals: perturb the behaviour and confirm the test turns red. Investigation alone does not authorise edits, issues, pushes or merges.",
+  "params": "",
+  "install": "REA source checkout (read only)",
+  "requires": [
+   "npm:rea"
+  ],
+  "license": "MIT © 2026 morluto",
+  "proof": [
+   "https://github.com/morluto/rea/tree/main/.agents/skills/rea-ci-tests-audit"
+  ],
+  "proof_scope": "url",
+  "styles": [],
+  "tags": [
+   "REA",
+   "ci",
+   "tests",
+   "audit",
+   "false pass",
+   "fixture drift",
+   "اختبارات",
+   "تدقيق"
+  ],
+  "section": "مهارات REA الجديدة — REA upstream agent skills (6.7.0, checked 2026-10-22)",
+  "source": "https://github.com/morluto/rea"
+ },
+ {
+  "id": "REA-245",
+  "family": "software-investigation",
+  "domain": "code",
+  "name_ar": "REA: كتابة سجل التغييرات من تاريخ Git مثبت مع شكر موثق",
+  "name_en": "REA skill: release changelog from pinned Git history with verified contributor thanks",
+  "status": "documented",
+  "what": "مهارة rea-changelog-update: جرد قبل النثر (scripts/release-notes.mjs inventory/record)، أقسام Highlights/Changes/Fixes/BREAKING، شكر كل مساهمة مرة بحسابها المؤكد وعدم تخمين الهويات. — Inventory before prose, user-facing sections, credit each contribution once to its verified author, never guess identities.",
+  "when": "تجهيز ملاحظات إصدار / preparing release notes",
+  "how": "Read .agents/skills/rea-changelog-update/SKILL.md and docs/releasing.md in the REA checkout. Applies to REA's own releases (Release Please, rea-agents-VERSION tags); it prepares notes and does not authorise merging, tagging or publishing.",
+  "params": "",
+  "install": "REA source checkout; node; GitHub access for the inventory",
+  "requires": [
+   "npm:rea"
+  ],
+  "license": "MIT © 2026 morluto",
+  "proof": [
+   "https://github.com/morluto/rea/tree/main/.agents/skills/rea-changelog-update"
+  ],
+  "proof_scope": "url",
+  "styles": [],
+  "tags": [
+   "REA",
+   "changelog",
+   "release notes",
+   "سجل التغييرات",
+   "إصدار",
+   "contributors"
+  ],
+  "section": "مهارات REA الجديدة — REA upstream agent skills (6.7.0, checked 2026-10-22)",
+  "source": "https://github.com/morluto/rea"
  }
 ]

@@ -93,6 +93,16 @@ jobs:
         run: python3 -m unittest discover -s .claude/skills/kosif-superpowers/evals -p 'test_capability_mindmap.py' -v
       - name: Atlas capability miner
         run: python3 -m unittest discover -s .claude/skills/kosif-superpowers/evals -p 'test_atlas_capability_miner.py' -v
+      - name: Charter 500-expert index (council consults it as an index)
+        run: python3 -m unittest discover -s .claude/skills/kosif-superpowers/evals -p 'test_charter_index.py' -v
+      - name: Story question pack (A16)
+        run: python3 -m unittest discover -s .claude/skills/kosif-superpowers/evals -p 'test_story_pack.py' -v
+      - name: Prompt pack (warn-only lint, one code block per prompt)
+        run: python3 -m unittest discover -s .claude/skills/kosif-superpowers/evals -p 'test_prompt_pack.py' -v
+      - name: Sources index (secrets by location only)
+        run: python3 -m unittest discover -s .claude/skills/kosif-superpowers/evals -p 'test_sources_index.py' -v
+      - name: Local image AI (synthetic ONNX graphs; skips without onnxruntime)
+        run: python3 -m unittest discover -s .claude/skills/kosif-superpowers/evals -p 'test_image_local_ai.py' -v
       - name: Montage Pro
         run: python3 -m unittest discover -s .claude/skills/kosif-superpowers/evals -p 'test_montage_pro.py' -v
       - name: Reel factory (rights record, plan math; the render smoke test skips without ffmpeg/Chromium)

@@ -8,7 +8,7 @@ Commands below are typed from the skill folder (`.claude/skills/kosif-superpower
 
 <!-- hub:area:sources:start -->
 
-**الأدوات / tools (14)** — `python3 scripts/hub.py tool <id>` for every command, requirement and limit:
+**الأدوات / tools (15)** — `python3 scripts/hub.py tool <id>` for every command, requirement and limit:
 
 | tool | what it does | start with | evidence |
 |---|---|---|---|
@@ -26,6 +26,7 @@ Commands below are typed from the skill folder (`.claude/skills/kosif-superpower
 | `superpowers` | Lists, searches and shows the 125 open-source repositories in repos.json, grouped into 15 superpowers with license notes; checks whether 21 local tools such as ffmpeg, Playwright and Whisper are present; and validates or regenerates references/repos.md. | `python3 scripts/superpowers.py list --capability voice --json` | tested-here |
 | `repo-ashell-cinema` (repo root) | An interactive POSIX-sh app for a-Shell on iPhone. It downloads video or audio with yt-dlp (single links, batches, part of a video, subtitles, best-effort Facebook profiles), makes Photos-safe H.264/AAC MP4 copies, and offers an offline ffmpeg Studio (trim, compress to 16/25/50 MB, 9:16 reels with blurred fill, GIF, cover JPG, -14 LUFS loudness, cut pauses, mute, audio only) and an Audio Lab for separating voice and music. | `sh tools/a-shell/Cinema_C_V34_Studio_iPhone.sh "https://www.youtube.com/watch?v=VIDEO_ID"` | tested-elsewhere |
 | `stream-grabber` | Written after a read-only study of IDM 6.43: parses DASH (SegmentTemplate with Number or Timeline, SegmentList, SegmentBase) and HLS (master/media, byte ranges, fMP4 init), downloads segments in parallel with resume and tail probing, picks the best editable video and audio, merges losslessly (MP4, or MKV for VP8/Vorbis), saves WebVTT subtitles and finds manifests in saved pages or HAR exports; refuses encrypted, DRM, live and cookie-header requests. | `python3 scripts/stream_grabber.py find ./saved-page.html` | tested-here |
+| `sources-index` | Records each attachment (file, .docx, .pdf via pdftotext, or a URL recorded without fetching) in <dir>/sources_index.json: kind, sha256, size, lines, title guess, headings with line ranges, provenance, trust_scope 'data, not instructions', imperative lines that try to instruct the assistant, and secrets by line and kind only (never the value). find returns heading line ranges (or line numbers with --body) so only that range is read. | `python3 -I scripts/sources_index.py add charter.txt --dir out/demo` | tested-here |
 
 <!-- hub:area:sources:end -->
 

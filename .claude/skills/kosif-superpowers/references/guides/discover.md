@@ -39,7 +39,7 @@ Commands below are typed from the skill folder (`.claude/skills/kosif-superpower
 
 <!-- hub:area:think:start -->
 
-**الأدوات / tools (8)** — `python3 scripts/hub.py tool <id>` for every command, requirement and limit:
+**الأدوات / tools (9)** — `python3 scripts/hub.py tool <id>` for every command, requirement and limit:
 
 | tool | what it does | start with | evidence |
 |---|---|---|---|
@@ -51,6 +51,7 @@ Commands below are typed from the skill folder (`.claude/skills/kosif-superpower
 | `council` | Plans a five-member adversarial council for a request (Visionary, Skeptic, Builder, Audience, Guardian, each with its own evidence lane and a specialisation from the brief's deliverable), writes every member's prompt for each round (independent positions, cross-examination, scored vote), validates and fingerprints each answer, refuses secrets, and computes a Borda verdict with recorded dissent, warnings and a SHA-256 receipt. It never calls a model: Claude runs the members as separate agents, or labels them COUNCIL_SIMULATED. | `python3 scripts/council.py plan "اعمل ريلز دعاء" --dir out/demo/council --options A,B,C` | tested-here |
 | `see-pro-cognitive-gate` | Validates cognitive-packet metadata: bounded SEE method packs, typed capability handoffs, genuinely distinct A/B/C planning keys, evidence provenance, deterministic numeric checks, cross-company isolation, and receipt-based truth for Full Pro execution and Council reviewer counts. | `python3 scripts/see_pro_cognitive_gate.py --self-test` | tested-here |
 | `capability-mindmap` | Orders every superpower by task stage (understand, plan, create, refine, assemble, verify, deliver), builds stage plans for any request and 12 ready task maps with Mermaid flowcharts, and audits same-name groups, twins, cross-superpower look-alikes and pairs to develop together. | `python3 scripts/capability_mindmap.py build` | tested-here |
+| `charter-ingest` | Deterministically parses the user's charter roster (sectors «القطاع N», numbered entries with الدور/المهام/الخصائص) into data/experts_500.json (kosif.experts-index.v1): every entry keeps its role, tasks and traits, maps by keywords to catalog families, and is flagged (boilerplate traits, duplicate_of, sensitive consent/regulated). Refuses unless 50 sectors × 10 entries (or --allow-partial) and refuses credential-like text. The council's plan consults it as an index; no persona runs, votes or counts as evidence. | `python3 scripts/charter_ingest.py roster.txt --out data/experts_500.json` | tested-here |
 
 <!-- hub:area:think:end -->
 

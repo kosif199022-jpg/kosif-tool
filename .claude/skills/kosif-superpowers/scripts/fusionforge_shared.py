@@ -31,7 +31,7 @@ RX_PROOF = re.compile(r'evidence/[0-9a-f]{64}(?:\.[a-z0-9]{1,10})?\Z')
 RX_EXEC = re.compile(r'(?:human|(?:tool|bin|method|mcp):[A-Za-z0-9_./+-]{1,110})\Z')
 STAGES = {'understand','research','plan','build','create','refine','assemble','verify','deliver'}
 KINDS = {'brief','spec','plan','sources','code','dataset','report','document','image','audio','video',
-         'model3d','font','evidence','package','any'}
+         'model3d','font','prompt','evidence','package','any'}
 RELATIONS = {'sequence','parallel','complement','substitute','verify','refine','fallback'}
 
 

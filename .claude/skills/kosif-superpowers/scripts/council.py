@@ -8,6 +8,7 @@ simulated voices in one context, which the minutes then label SIMULATED.
 
 From the repository root:
   python3 .claude/skills/kosif-superpowers/scripts/council.py plan "<the request>" --dir out/<work>/council [--from-brief brief.json] [--options A,B,C]
+        [--roster data/experts_500.json | --no-roster]   (default: the roster index is consulted when the file exists)
   python3 .claude/skills/kosif-superpowers/scripts/council.py prompts --dir out/<work>/council --round 1
   python3 .claude/skills/kosif-superpowers/scripts/council.py ingest --dir out/<work>/council --round 1 --member M1 --file m1_r1.json [--simulated]
   python3 .claude/skills/kosif-superpowers/scripts/council.py status --dir out/<work>/council
@@ -17,6 +18,11 @@ Rounds: 1 independent positions (no member sees another) · 2 cross-examination 
 opposing claim and steelmans one) · 3 revised proposal and a score from 1 to 5 for every option. The verdict is
 a Borda-style sum of the round-3 scores; it needs at least one recorded objection (dissent), and it is
 COUNCIL_RUN only when all five members answered all three rounds as real agents with evidence.
+
+Roster index (data/experts_500.json, built by charter_ingest.py from the user's 500-expert charter): the plan picks up
+to three persona cards per member by the request/deliverable keywords and the member's lane (M5 the Guardian gets the
+consent/regulated cards and a governance card from sector 50). They are an INDEX to consult, not extra members: they
+never run, vote or count as evidence, and the verdict says "index consulted: N personas", never that experts ran.
 Python stdlib only.
 """
 from __future__ import annotations
@@ -34,6 +40,33 @@ sys.path.insert(0, str(HERE))
 import _secrets  # noqa: E402
 
 SCHEMA = "kosif.council.v1"
+DEFAULT_ROSTER = HERE.parent / "data" / "experts_500.json"
+ROSTER_SCHEMA = "kosif.experts-index.v1"
+PER_MEMBER = 3
+# Lane affinity: keywords in a persona card and sectors of the charter that suit each evidence lane.
+LANE_KEYS = {
+    "cross_domain": ("ابتكار", "innovation", "مستقبل", "future", "إبداع", "creative", "تجريب", "experiment", "trend", "اتجاهات", "دمج"),
+    "verification": ("جودة", "quality", "qa", "مراجع", "reviewer", "فاحص", "inspector", "مراقب", "monitor", "اختبار", "test",
+                     "دقة", "accuracy", "اتساق", "consistency"),
+    "feasibility": ("أدوات", "tools", "سير العمل", "workflow", "أتمتة", "automation", "render", "رندر", "تصدير", "إعدادات",
+                    "pipeline", "api", "مقارن", "comparator", "تقني", "مهندس", "engineer"),
+    "audience": ("جمهور", "audience", "تسويق", "marketing", "منصات", "platform", "تفاعل", "engagement", "مشاهد", "viewer",
+                 "social", "نشر", "tiktok", "reels", "عمرية", "أطفال"),
+    "guardrails": ("حقوق", "rights", "ملكية", "قانون", "legal", "مخاطر", "risk", "سلامة", "safety", "أصالة", "originality",
+                   "ترخيص", "license", "ذوق", "taste"),
+}
+LANE_SECTORS = {"cross_domain": {24, 29, 49}, "verification": {5, 17}, "feasibility": {11, 12, 13, 14, 15, 16, 26},
+                "audience": {18, 35}, "guardrails": {50}}
+PRIMARY_KEYS = {
+    "video": ("فيديو", "video", "مونتاج", "editing", "مقطع", "scene", "لقطة"),
+    "motion": ("حركة", "motion", "أنيميشن", "animation", "انتقال", "transition"),
+    "code": ("برمجة", "code", "programming", "automation", "api"),
+    "data": ("بيانات", "data", "تحليل", "analytics"),
+    "image": ("صور", "صورة", "image", "تصميم", "design"),
+    "document": ("كتابة", "writing", "نصوص", "مستند", "document", "مقال", "article"),
+    "research": ("بحث", "research", "مصادر"),
+}
+GOVERNANCE_SECTOR = 50
 PROTOCOL = "USIP v5.3"
 ROUNDS = (1, 2, 3)
 
@@ -120,6 +153,101 @@ def roster(primary: str) -> list:
     return out
 
 
+def _ci():
+    import charter_ingest  # same folder; shared normalisation and keyword matching
+    return charter_ingest
+
+
+def _stems(text: str) -> set:
+    """Light-stemmed tokens plus an internal-alef-free variant (مشاهد ~ مشهد)."""
+    ci = _ci()
+    out = set()
+    for t in ci.name_tokens(text):
+        if t.isdigit():
+            continue
+        out.add(t)
+        if t.isascii() or len(t) < 3:
+            continue
+        if len(t) > 3:
+            out.add(t[0] + t[1:].replace("ا", ""))  # broken plurals: مشاهد ~ مشهد
+        if t.endswith("ه"):
+            out.add(t[:-1])  # قصه ~ قص
+        if t[-1] == t[-2]:
+            out.add(t[:-1])  # قصص ~ قص
+    return out
+
+
+def load_roster(path: Path) -> dict:
+    idx = load(path)
+    if idx.get("schema") != ROSTER_SCHEMA or not isinstance(idx.get("sectors"), list):
+        raise CouncilError("ROSTER_INVALID", f"{path.name} is not a {ROSTER_SCHEMA} index")
+    return idx
+
+
+def consult_index(idx: dict, request: str, primary: str, topics: list, members: list) -> list:
+    """Pick up to PER_MEMBER persona cards per member; each card goes to one member only. Deterministic."""
+    ci = _ci()
+    req = _stems(request + " " + " ".join(topics))
+    prim = set()
+    for k in PRIMARY_KEYS.get(primary, ()):
+        prim |= _stems(k)
+    cards = []
+    for s in idx["sectors"]:
+        for e in s.get("experts", []):
+            fl = e.get("flags") or {}
+            if fl.get("duplicate_of"):
+                continue  # the earlier card of the same role stands for it
+            core_text = " ".join(str(e.get(k, "")) for k in ("name_ar", "name_en", "role"))
+            sec_text = s.get("name_ar", "") + " " + s.get("name_en", "")
+            text = core_text + " " + str(e.get("tasks", "")) + " " + sec_text
+            core, sec, st = _stems(core_text), _stems(sec_text), _stems(text)
+            core_rel = len(req & core)
+            rel = 3 * core_rel + 3 * len(req & sec) + len(req & _stems(str(e.get("tasks", "")))) + len(prim & st)
+            padded = " " + ci.norm(text) + " "
+            cards.append({"sector": s["id"], "n": e["n"], "name_ar": e.get("name_ar", ""), "role": e.get("role", ""),
+                          "sensitive": fl.get("sensitive"), "boilerplate": bool(fl.get("boilerplate")), "rel": rel, "core": core_rel,
+                          "lane": {lane: sum(1 for k in keys if ci._key_hit(padded, k)) + (2 if s["id"] in LANE_SECTORS[lane] else 0)
+                                   for lane, keys in LANE_KEYS.items()}})
+    best = max([c["rel"] for c in cards] or [0])
+    floor = max(1, -(-best // 3))  # weak matches (one shared word in the tasks) do not count as relevant
+    for c in cards:
+        if c["rel"] < floor:
+            c["rel"] = 0
+    taken, picks = set(), []
+
+    def score(c, lane):
+        return 3 * c["rel"] + c["lane"][lane] - (2 if c["boilerplate"] else 0)
+
+    guard = [m for m in members if m["lane"] == "guardrails"]
+    for m in guard:  # the Guardian first: consent/regulated cards that touch the request, then a governance card
+        # a consent/regulated card needs the request itself to name its role; guardrail cards need ordinary relevance
+        pool = [c for c in cards if (c["sensitive"] and c["core"] > 0) or (not c["sensitive"] and c["rel"] > 0 and c["lane"]["guardrails"] > 0)]
+        pool.sort(key=lambda c: (-(score(c, "guardrails") + (4 if c["sensitive"] else 0)), c["n"]))
+        chosen = [c for c in pool if c["sector"] != GOVERNANCE_SECTOR][:PER_MEMBER - 1]
+        regulated = any(c["sensitive"] == "regulated" for c in chosen)
+        gov = [c for c in cards if c["sector"] == GOVERNANCE_SECTOR]
+        want = "قانون" if regulated else "مخاطر"  # legal counsel for regulated topics, otherwise the risk manager
+        gov.sort(key=lambda c: (-(c["lane"]["guardrails"] + (5 if want in ci.norm(c["name_ar"]) else 0)), c["n"]))
+        chosen += gov[:1]
+        for c in chosen:
+            taken.add(c["n"])
+            picks.append((m["id"], c))
+    others = [m for m in members if m["lane"] != "guardrails"]  # consent/regulated cards stay with the Guardian
+    pairs = sorted(((score(c, m["lane"]), i, c["n"], m, c) for i, m in enumerate(others) for c in cards if c["rel"] > 0 and not c["sensitive"]),
+                   key=lambda t: (-t[0], t[1], t[2]))
+    count = {m["id"]: 0 for m in others}
+    for _sc, _i, _n, m, c in pairs:
+        if c["n"] in taken or count[m["id"]] >= PER_MEMBER:
+            continue
+        taken.add(c["n"])
+        count[m["id"]] += 1
+        picks.append((m["id"], c))
+    order = {m["id"]: i for i, m in enumerate(members)}
+    picks.sort(key=lambda p: (order[p[0]], p[1]["n"]))
+    return [{"member": mid, "sector": c["sector"], "n": c["n"], "name_ar": c["name_ar"], "role": c["role"],
+             "sensitive": c["sensitive"]} for mid, c in picks]
+
+
 def cmd_plan(a) -> dict:
     _secrets.refuse_secrets(request=a.request)
     d = Path(a.dir)
@@ -134,21 +262,36 @@ def cmd_plan(a) -> dict:
     if not options:
         options = ["A", "B", "C"]
     primary = primary_of(a.request, brief)
+    members = roster(primary)
+    roster_path = None if a.no_roster else (Path(a.roster) if a.roster else (DEFAULT_ROSTER if DEFAULT_ROSTER.exists() else None))
+    consulted, index_meta = [], None
+    if roster_path is not None:
+        if not roster_path.exists():
+            raise CouncilError("ROSTER_MISSING", f"{roster_path} does not exist")
+        idx = load_roster(roster_path)
+        topics = [str(t) for t in ((brief or {}).get("analysis") or {}).get("topics") or []]
+        consulted = consult_index(idx, a.request, primary, topics, members)
+        index_meta = {"file": str(roster_path), "schema": idx.get("schema"),
+                      "source_sha256": (idx.get("source") or {}).get("sha256"),
+                      "note": "index, not executed experts: persona cards consulted by members; none ran, reviewed or voted"}
     council = {
         "schema": SCHEMA, "protocol": PROTOCOL, "created_at": now_iso(), "request": a.request,
         "request_sha256": sha256_bytes(a.request.encode("utf-8")), "primary": primary, "options": options,
         "brief": {"file": a.from_brief, "recommended": brief.get("recommended")} if brief else None,
-        "roster": roster(primary), "rounds": {str(r): {} for r in ROUNDS},
+        "roster": members, "rounds": {str(r): {} for r in ROUNDS},
+        "consulted_index": consulted, "roster_index": index_meta,
         "rules": [
             "Round 1 members answer independently: never show one member another's answer in round 1.",
             "Every claim names its evidence (a command run, a file read, a URL, a measurement) or says 'opinion'.",
             "Round 2 attacks the strongest opposing claim and steelmans one other member's position.",
             "Round 3 scores every option from 1 to 5 and states one remaining objection (or 'none').",
             "No member spends money, publishes, or generates media: paid or irreversible steps go to the user.",
+            "Consulted persona cards are an index, not members: they never vote, run or count as evidence.",
         ],
     }
     save(d / "council.json", council)
     return {"dir": str(d), "primary": primary, "options": options,
+            "index_consulted": f"index consulted: {len(consulted)} personas (an index, not executed experts)",
             "members": [f"{m['id']} {m['persona']}" + (f" ({m['specialist']})" if m["specialist"] else "") for m in council["roster"]]}
 
 
@@ -159,7 +302,8 @@ def member_prompt(c: dict, m: dict, rnd: int) -> str:
             " label anything without evidence as 'opinion'. Never spend money, publish, or generate images or video "
             "(Katana only through a verified zero-credit read-only analysis, never generation; other Higgsfield analysis only if the user approved its cost).\n"
             f"Request: «{c['request']}»\nOptions under debate: {', '.join(c['options'])}"
-            + (f" (the USIP brief recommends {c['brief']['recommended']})" if c.get("brief") and c["brief"].get("recommended") else "") + ".\n")
+            + (f" (the USIP brief recommends {c['brief']['recommended']})" if c.get("brief") and c["brief"].get("recommended") else "") + ".\n"
+            + personas_line(c, m))
     if rnd == 1:
         body = ("ROUND 1 — independent position. You have not seen the other members. Return ONLY JSON:\n"
                 '{"position": "<your thesis in one sentence>", "claims": [{"claim": "...", "evidence": "<command/file/url/measurement or opinion>", '
@@ -180,6 +324,20 @@ def member_prompt(c: dict, m: dict, rnd: int) -> str:
                 '{"final_proposal": "...", "scores": {"<option>": 1}, "changed_mind": "<what changed your view, or none>", '
                 '"remaining_objection": "<your strongest objection that still stands, or none>"}')
     return head + body
+
+
+def personas_line(c: dict, m: dict) -> str:
+    mine = [p for p in c.get("consulted_index") or [] if p.get("member") == m["id"]]
+    if not mine:
+        return ""
+    cards = "; ".join(f"#{p['n']} {p['name_ar']} (sector {p['sector']}): {p.get('role', '')}"
+                      + (f" [{p['sensitive']}]" if p.get("sensitive") else "") for p in mine)
+    line = ("Personas to consult (an index, not extra members): " + cards + ". They are cards from the user's charter roster: "
+            "use them as checklists for your lane; they did not run, review or vote, and they are not evidence.\n")
+    if m.get("lane") == "guardrails" and any(p.get("sensitive") for p in mine):
+        line += ("Sensitive cards: 'consent' needs the depicted or cloned person's documented consent and disclosure; "
+                 "'regulated' (medical, legal, financial, tax, IP) needs a qualified-review disclaimer, never advice.\n")
+    return line
 
 
 def cmd_prompts(a) -> dict:
@@ -245,7 +403,8 @@ def cmd_ingest(a) -> dict:
 def cmd_status(a) -> dict:
     c = load(Path(a.dir) / "council.json")
     return {"primary": c["primary"], "options": c["options"],
-            "rounds": {r: sorted(v) for r, v in c["rounds"].items()}}
+            "rounds": {r: sorted(v) for r, v in c["rounds"].items()},
+            "index_consulted": len(c.get("consulted_index") or [])}
 
 
 def evidence_ratio(c: dict) -> float:
@@ -288,9 +447,12 @@ def cmd_verdict(a) -> dict:
     status = ("COUNCIL_SIMULATED" if simulated else
               "COUNCIL_PARTIAL" if missing else "COUNCIL_RUN")
     receipt = sha256_bytes(json.dumps(c["rounds"], ensure_ascii=False, sort_keys=True).encode("utf-8"))
+    n_index = len(c.get("consulted_index") or [])
     verdict = {"schema": "kosif.council.verdict.v1", "status": status, "winner": winner, "totals": dict(ranked),
                "margin": margin, "dissent": dissent, "attacks": attacks, "evidence_ratio": er,
-               "warnings": warnings, "missing": missing, "rounds_sha256": receipt, "decided_at": now_iso()}
+               "warnings": warnings, "missing": missing, "rounds_sha256": receipt, "decided_at": now_iso(),
+               "index_consulted": n_index,
+               "index_note": f"index consulted: {n_index} personas (cards read by the five members, not experts that ran or voted)"}
     save(d / "verdict.json", verdict)
     lines = [f"# محضر المجلس — {c['request']}", "",
              f"**الحالة:** {status} · **الفائز:** {winner} · **الفارق:** {margin} · **الإيصال:** `{receipt[:16]}`", "",
@@ -300,6 +462,8 @@ def cmd_verdict(a) -> dict:
         p3 = r3.get(m["id"], {})
         sc = " · ".join(f"{o}={p3['scores'][o]}" for o in c["options"]) if p3 else "—"
         lines.append(f"| {m['id']} {m['persona']} | {p1} | {p3.get('final_proposal', '—')} | {sc} |")
+    lines += ["", f"**الفهرس:** index consulted: {n_index} personas — بطاقات من فهرس الخبراء قرأها الأعضاء الخمسة؛ "
+              "لم يُشغَّل أي خبير منها ولم يصوّت (فهرس، لا أعضاء)."]
     lines += ["", "**الرأي المخالف:**"] + ([f"- {x['member']}: {x['objection']}" for x in dissent] or ["- لا يوجد (تحذير NO_DISSENT)"])
     if warnings:
         lines += ["", "**تحذيرات:** " + " · ".join(warnings)]
@@ -314,6 +478,8 @@ def main(argv=None) -> int:
     s.add_argument("request"); s.add_argument("--dir", required=True); s.add_argument("--from-brief")
     s.add_argument("--options", help="comma-separated options to score (default: the brief's plans, else A,B,C)")
     s.add_argument("--force", action="store_true")
+    s.add_argument("--roster", help="experts index JSON to consult (default: data/experts_500.json when it exists)")
+    s.add_argument("--no-roster", action="store_true", help="do not consult the experts index")
     s = sub.add_parser("prompts", help="write the prompts for one round")
     s.add_argument("--dir", required=True); s.add_argument("--round", type=int, choices=ROUNDS, required=True)
     s = sub.add_parser("ingest", help="record one member's answer for one round")
