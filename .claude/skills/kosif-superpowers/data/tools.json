@@ -1840,7 +1840,26 @@
    "docs": [
     ".claude/skills/kosif-superpowers/references/protocol/A12-see-pro-cognitive-fusion.md"
    ],
-   "evidence_note": "13/13 deterministic cognitive unit tests and built-in self-tests passed in the first GitHub Actions run; no full-pro production execution claim."
+   "evidence_note": "13/13 deterministic cognitive unit tests and built-in self-tests passed in the first GitHub Actions run; no full-pro production execution claim.",
+   "root": "skill",
+   "kind": "cli",
+   "evidence": "tested-here",
+   "families": [
+    "reasoning",
+    "skill-integration",
+    "eval-trust"
+   ],
+   "requires": {
+    "python": [],
+    "binaries": [],
+    "node": [],
+    "optional": [],
+    "network": false
+   },
+   "consent": "No approval required; read-only cognitive packet validation.",
+   "safe_commands": [
+    "check"
+   ]
   },
   {
    "id": "aspects",
@@ -10021,7 +10040,28 @@
    "docs": [
     ".claude/skills/kosif-superpowers/references/protocol/A10-self-evolution.md"
    ],
-   "evidence_note": "Deterministic synthetic boundary regression suite documented; real three-project production promotion not yet demonstrated."
+   "evidence_note": "Deterministic synthetic boundary regression suite documented; real three-project production promotion not yet demonstrated.",
+   "root": "skill",
+   "kind": "cli",
+   "evidence": "untested",
+   "families": [
+    "skill-integration",
+    "learning",
+    "privacy"
+   ],
+   "requires": {
+    "python": [],
+    "binaries": [],
+    "node": [],
+    "optional": [],
+    "network": false
+   },
+   "consent": "Approval command requires explicit authorized human review and writes only sanitized generic graphs into the local shared registry.",
+   "safe_commands": [
+    "audit",
+    "recall",
+    "review-template"
+   ]
   },
   {
    "id": "superpower-fusion",
