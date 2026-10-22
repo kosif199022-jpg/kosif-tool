@@ -10631,6 +10631,278 @@
     "photo-video-footage"
    ],
    "evidence": "tested-here"
+  },
+  {
+   "id": "creative-principles",
+   "path": "scripts/creative_principles.py",
+   "root": "skill",
+   "kind": "cli",
+   "area": "draw",
+   "title_en": "Staged drawing and original three-value visual studies",
+   "title_ar": "دراسة الرسم التدريجي والظل الأصلي",
+   "summary_en": "Builds original SVG drawing stages, three-value tone breakdown, and intercut tonal distribution flags from supplied arrays.",
+   "summary_ar": "دراسة الرسم التدريجي والظل الأصلي؛ Builds original SVG drawing stages, three-value tone breakdown, and intercut tonal distribution flags from supplied arrays.",
+   "use_when": [
+    "رسم تدريجي من أشكال أصلية",
+    "احسب توزيع الظل في الرسم",
+    "Construct layered SVG doodles",
+    "Review a cut's value distribution"
+   ],
+   "keywords": [
+    "رسم تدريجي من أشكال أصلية",
+    "احسب توزيع الظل في الرسم",
+    "Construct layered SVG doodles",
+    "Review a cut's value distribution",
+    "creative",
+    "principles",
+    "فن",
+    "visual",
+    "رسم",
+    "مصادر",
+    "أسلوب"
+   ],
+   "commands": [
+    {
+     "name": "command 1",
+     "example": "python3 scripts/creative_principles.py construct --input original-shapes.json --out-prefix out/stage",
+     "does": "Executes a local deterministic method only; no web or model spend."
+    },
+    {
+     "name": "command 2",
+     "example": "python3 scripts/creative_principles.py values --input gray.pgm --out out/tonal.pgm",
+     "does": "Run on user-supplied or local authorized input."
+    }
+   ],
+   "inputs": "Original JSON shapes/ASCII-PGM or verified frame-tone arrays",
+   "outputs": "Staged SVG, PGM or measured cut-tone JSON",
+   "requires": {
+    "python": [],
+    "binaries": [],
+    "node": [],
+    "optional": [],
+    "network": false
+   },
+   "safety": "writes-files",
+   "consent": "Writes new output files in explicitly selected locations only; refuses overwrite; no network, paid tools or private downloads.",
+   "limits": "Construct/values/cut-tones are narrow deterministic exercises, not content understanding or an automatic professional drawing engine.",
+   "tests": [
+    ".claude/skills/kosif-superpowers/evals/test_creative_principles.py"
+   ],
+   "docs": [
+    ".claude/skills/kosif-superpowers/references/protocol/A14-drawing-cinematic-academy.md"
+   ],
+   "families": [
+    "hand-drawn-draw-on",
+    "story-direction-ideas"
+   ],
+   "evidence": "tested-elsewhere",
+   "evidence_note": "22 narrow tests previously passed on authorized Windows laptop (7+7+8), not full professional quality proof."
+  },
+  {
+   "id": "drawing-academy",
+   "path": "scripts/drawing_academy.py",
+   "root": "skill",
+   "kind": "cli",
+   "area": "draw",
+   "title_en": "Source-aware drawing school and user-authorized book audits",
+   "title_ar": "أكاديمية الرسم والدروس المبنية على مصادر",
+   "summary_en": "Eight source-anchored skill lessons, rights-scoped text keyword scans, scores tied to actual artifacts and provenance.",
+   "summary_ar": "أكاديمية الرسم والدروس المبنية على مصادر؛ Eight source-anchored skill lessons, rights-scoped text keyword scans, scores tied to actual artifacts and provenance.",
+   "use_when": [
+    "علم كلود الرسم من الكتب",
+    "درس عن الظل والإضاءة",
+    "Drawing book curriculum",
+    "Audit my own art book text"
+   ],
+   "keywords": [
+    "علم كلود الرسم من الكتب",
+    "درس عن الظل والإضاءة",
+    "Drawing book curriculum",
+    "Audit my own art book text",
+    "drawing",
+    "academy",
+    "فن",
+    "visual",
+    "رسم",
+    "مصادر",
+    "أسلوب"
+   ],
+   "commands": [
+    {
+     "name": "command 1",
+     "example": "python3 scripts/drawing_academy.py index",
+     "does": "Executes a local deterministic method only; no web or model spend."
+    },
+    {
+     "name": "command 2",
+     "example": "python3 scripts/drawing_academy.py lesson --id build_shapes --out out/lesson.json",
+     "does": "Run on user-supplied or local authorized input."
+    }
+   ],
+   "inputs": "Source-aware curriculum JSON and user-authorized local books",
+   "outputs": "Lesson packets, source metadata, and conditional artifact rubric",
+   "requires": {
+    "python": [],
+    "binaries": [],
+    "node": [],
+    "optional": [],
+    "network": false
+   },
+   "safety": "writes-files",
+   "consent": "Writes new output files in explicitly selected locations only; refuses overwrite; no network, paid tools or private downloads.",
+   "limits": "Not 200 fully-read books, not model training and not evidence of visual mastery.",
+   "tests": [
+    ".claude/skills/kosif-superpowers/evals/test_drawing_academy.py"
+   ],
+   "docs": [
+    ".claude/skills/kosif-superpowers/references/protocol/A14-drawing-cinematic-academy.md"
+   ],
+   "families": [
+    "hand-drawn-draw-on",
+    "story-direction-ideas"
+   ],
+   "evidence": "tested-elsewhere",
+   "evidence_note": "22 narrow tests previously passed on authorized Windows laptop (7+7+8), not full professional quality proof."
+  },
+  {
+   "id": "perspective-color-lab",
+   "path": "scripts/perspective_color_lab.py",
+   "root": "skill",
+   "kind": "cli",
+   "area": "draw",
+   "title_en": "Original two-point perspective and numeric palette analysis",
+   "title_ar": "منظور هندسي ومقاييس التباين اللوني",
+   "summary_en": "Draws a geometrically constrained two-vanishing-point SVG and measures HSV/WCAG contrast of brand color swatches.",
+   "summary_ar": "منظور هندسي ومقاييس التباين اللوني؛ Draws a geometrically constrained two-vanishing-point SVG and measures HSV/WCAG contrast of brand color swatches.",
+   "use_when": [
+    "ارسم المنظور بنقطتين تلاشي",
+    "اختبر التباين اللوني",
+    "Two point vanishing perspective",
+    "Palette HSV color ratios"
+   ],
+   "keywords": [
+    "ارسم المنظور بنقطتين تلاشي",
+    "اختبر التباين اللوني",
+    "Two point vanishing perspective",
+    "Palette HSV color ratios",
+    "perspective",
+    "color",
+    "lab",
+    "فن",
+    "visual",
+    "رسم",
+    "مصادر",
+    "أسلوب"
+   ],
+   "commands": [
+    {
+     "name": "command 1",
+     "example": "python3 scripts/perspective_color_lab.py perspective --input scene.json --out out/scene.svg",
+     "does": "Executes a local deterministic method only; no web or model spend."
+    },
+    {
+     "name": "command 2",
+     "example": "python3 scripts/perspective_color_lab.py palette --input colors.json --out out/palette.json",
+     "does": "Run on user-supplied or local authorized input."
+    }
+   ],
+   "inputs": "Geometry spec JSON or 2-16 HEX colors",
+   "outputs": "Original SVG scene with vertices receipt, or numeric palette report",
+   "requires": {
+    "python": [],
+    "binaries": [],
+    "node": [],
+    "optional": [],
+    "network": false
+   },
+   "safety": "writes-files",
+   "consent": "Writes new output files in explicitly selected locations only; refuses overwrite; no network, paid tools or private downloads.",
+   "limits": "HSV is not native Munsell color; these are geometric/color metrics, not image beautification.",
+   "tests": [
+    ".claude/skills/kosif-superpowers/evals/test_perspective_color_lab.py"
+   ],
+   "docs": [
+    ".claude/skills/kosif-superpowers/references/protocol/A14-drawing-cinematic-academy.md"
+   ],
+   "families": [
+    "hand-drawn-draw-on",
+    "story-direction-ideas"
+   ],
+   "evidence": "tested-elsewhere",
+   "evidence_note": "22 narrow tests previously passed on authorized Windows laptop (7+7+8), not full professional quality proof."
+  },
+  {
+   "id": "style-atlas-bridge",
+   "path": "scripts/style_atlas_bridge.py",
+   "root": "skill",
+   "kind": "cli",
+   "area": "motion",
+   "title_en": "Futurepedia 15-source visual styles: discovery, cross-style recipes, and original SVG studies",
+   "title_ar": "محرك توليف 15 أسلوبًا بصريًا للرسم والموشن",
+   "summary_en": "Selects from 15 public-description derived style methods, fuses up to two with a five-stage typed graph, and generates one original static SVG study per style.",
+   "summary_ar": "محرك توليف 15 أسلوبًا بصريًا للرسم والموشن؛ Selects from 15 public-description derived style methods, fuses up to two with a five-stage typed graph, and generates one original static SVG study per style.",
+   "use_when": [
+    "ادمج أساليب Futurepedia في الرسم",
+    "توليفة سبورة ونيون لموشن جرافيك",
+    "Find Futurepedia AI Style Atlas methods",
+    "Create one static SVG style-study"
+   ],
+   "keywords": [
+    "ادمج أساليب Futurepedia في الرسم",
+    "توليفة سبورة ونيون لموشن جرافيك",
+    "Find Futurepedia AI Style Atlas methods",
+    "Create one static SVG style-study",
+    "style",
+    "atlas",
+    "bridge",
+    "فن",
+    "visual",
+    "رسم",
+    "مصادر",
+    "أسلوب"
+   ],
+   "commands": [
+    {
+     "name": "command 1",
+     "example": "python3 scripts/style_atlas_bridge.py search \"سبورة\"",
+     "does": "Executes a local deterministic method only; no web or model spend."
+    },
+    {
+     "name": "command 2",
+     "example": "python3 scripts/style_atlas_bridge.py plan --topic \"كيف يتعلم الذكاء\" --style FA-04 --accent FA-06 --out out/fusion.json",
+     "does": "Run on user-supplied or local authorized input."
+    },
+    {
+     "name": "command 3",
+     "example": "python3 scripts/style_atlas_bridge.py study-svg --style FA-15 --topic \"original\" --out out/study.svg",
+     "does": "Executes a local deterministic method only; no web or model spend."
+    }
+   ],
+   "inputs": "Registered public 15-style method JSON and user topic",
+   "outputs": "Search results, typed unrendered style-fusion plan or original static SVG study",
+   "requires": {
+    "python": [],
+    "binaries": [],
+    "node": [],
+    "optional": [],
+    "network": false
+   },
+   "safety": "writes-files",
+   "consent": "Writes new output files in explicitly selected locations only; refuses overwrite; no network, paid tools or private downloads.",
+   "limits": "Only the 15 publicly visible descriptions were read out of advertised 86. Plans and SVG schematics are not original videos, copied vendor prompts, or runtime-verified media editors.",
+   "tests": [
+    ".claude/skills/kosif-superpowers/evals/test_style_atlas_bridge.py"
+   ],
+   "docs": [
+    ".claude/skills/kosif-superpowers/references/protocol/A14-drawing-cinematic-academy.md",
+    ".claude/skills/kosif-superpowers/references/protocol/A15-futurepedia-style-atlas.md"
+   ],
+   "families": [
+    "hand-drawn-draw-on",
+    "story-direction-ideas"
+   ],
+   "evidence": "untested",
+   "evidence_note": "CI acceptance pending; tested methods must be measured before claiming ready."
   }
  ]
 }

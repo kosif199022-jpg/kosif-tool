@@ -2,7 +2,7 @@
 
 بروتوكول الفهم الشامل والتفكير الإبداعي واختيار القدرات قبل التنفيذ — تعليمات دائمة لـ Claude داخل مستودع [kosif-tool](https://github.com/kosif199022-jpg/kosif-tool)، مسار المهارة `.claude/skills/kosif-superpowers/`. نصفه الآلي `scripts/skill_intelligence.py` (إيصال، ترشيح، مسودة خطط وأسئلة) و`scripts/fusionforge.py` (وصفة المشروع وسجل التجربة)، ونصفه العقلي هذه الصفحة (فهم، تنقيح، حكم).
 
-> **USIP v5.3 — 21-10-2026 · محرك الوصفات FusionForge v2.** ما تغيّر عن v5.2: صارت هذه الصفحة نواة قصيرة تُقرأ كاملة دائمًا، ونُقلت مواد «المرحلة -1» كلها (-1.1…-1.48) بنصها وبأرقامها إلى ملاحق موضوعية يفتحها [جدول المحفّزات](#متى-تفتح-الملاحق--appendix-triggers)؛ وصار هنا مسار قانوني واحد بدل ستة، وترتيب أولوية واحد في أعلاه طبقة المنصة، وجدول واحد يربط L0–L3 بأوضاع SEE وسقوفها، و[مسرد](#المسرد--glossary) واحد لمعاني A/B/C/D وكلمات الرد وسلالم الحالة؛ وصارت الأسئلة التي تغيّر النتيجة داخل تقرير الخطط بإجابات مقترحة؛ ورُبط FusionForge v2 بالمراحل 2 و6 و7 و8 و9 و10، وأُضيف القانون 25. لم يُحذف حكم (يفرضه اختبار الاحتفاظ في `evals/test_protocol_structure.py`): مكان كل قسم قديم في [CHANGELOG](references/protocol/CHANGELOG.md). **هذا تطوير للوثيقة داخل Superpowers** وليس تحديثاً لإضافة KOSIF SEE أو إثبات تنفيذ Full Pro.
+> **USIP v5.3 — 21-10-2026.** نواة تُقرأ كاملة؛ الملاحق تستعاد حسب جدول المحفزات، والمسار القانوني واحد، وFusionForge v2 للتوليف والتعلم الإجرائي. تفاصيل ترحيل v5.2 محفوظة في [الأرشيف النصي](references/protocol/usip-v53-original-introduction-20261023.txt)، من دون ادعاء تثبيت SEE أو تشغيل Full Pro.
 
 ## الفهرس / contents
 
@@ -45,8 +45,10 @@
 | [A9 Shadow Evals](references/protocol/A9-shadow-evals.md) | تعديل البروتوكول أو المهارة، أو قبل نشرهما | -1.11، -1.16، -1.32، -1.38، -1.47 في جدول موحد | مواصفات؛ المختبر منها آليًا مسمّى في الجدول |
 | [A10 التطور الذاتي](references/protocol/A10-self-evolution.md) | تطوير SEE أو هذا البروتوكول أو المهارة | -1.10، -1.34، جسر المرحلة 10 | موثَّق + `check_skill.py` و`evals/test_protocol_structure.py` |
 | [A11 لقطات 21-10-2026](references/protocol/A11-snapshots-20261021.md) | سؤال عن حالة SEE أو Think المسجلة يومها | لقطات مؤرخة من -1.1 و-1.18 و-1.20 و-1.21 والمستودع الأصل، وسطر عنوان v5.2 | تاريخية؛ أعد الفحص حيًا |
-| [A12 SEE Pro Cognitive Fusion](references/protocol/A12-see-pro-cognitive-fusion.md) | تطوير الذكاء والتفكير، أو دمج SEE Pro، أو تأليف قدرات كثيرة في حل مركّب L2/L3 | Stage-0 (11 عدسة)، 9 حزم، Full Pro truth، Fusion Intelligence، عقود تحقق | منهج موثّق + بوابة قراءة فقط: scripts/see_pro_cognitive_gate.py؛ Full Pro خارجي |
-| [A13 مجلس البرو](references/protocol/A13-pro-council.md) | L2/L3 أو «برو»/«مجلس» أو قبل أداة Higgsfield | جديد | مختبر: `scripts/council.py` |
+| [A12 SEE Pro Cognitive Fusion](references/protocol/A12-see-pro-cognitive-fusion.md) | تفكير SEE Pro وL2/L3 | جديد | `see_pro_cognitive_gate.py`؛ Full Pro خارجي |
+| [A13 مجلس البرو](references/protocol/A13-pro-council.md) | مجلس Pro | جديد | `council.py` |
+| [A14 أكاديمية الرسم والمونتاج](references/protocol/A14-drawing-cinematic-academy.md) | دراسة كتب الرسم، التكوين، الإضاءة، وتطوير تصميم الفيديو | جديد | `drawing_academy.py` و`creative_principles.py` (اختبارات جزئية) |
+| [A15 Futurepedia Style Atlas 15](references/protocol/A15-futurepedia-style-atlas.md) | طلب أسلوب بصري أو دمج أساليب الرسم/المونتاج من Futurepedia، سبورة، نيون، نوير، أيزومتري | قدرة طرق جديدة؛ 15 وصفًا عامًا فقط | `style_atlas_bridge.py` (فهرسة، وصفة توليف، عينات SVG ثابتة؛ لا فيديو تلقائي) |
 | [CHANGELOG](references/protocol/CHANGELOG.md) | تبحث عن قسم قديم برقمه أو عن تاريخ الإصدارات | خريطة كل قسم قديم إلى مكانه | — |
 
 ## المستودع الأصل — اقرأه كاملًا حتى لو لم تكن المهارة مثبتة
