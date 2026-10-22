@@ -1,0 +1,423 @@
+{
+  "schema": "kosif.drawing.academy.v1",
+  "revision": "2026-10-22",
+  "status": "source_anchored_curriculum_NOT_model_finetuning",
+  "notes": [
+    "Lessons are original pedagogical syntheses; source anchors and review depth are explicit.",
+    "No full copyrighted books or illustration facsimiles are bundled.",
+    "Book listings mark US public domain only; consult local law and edition rights before reproducing pages.",
+    "This is a reasoning-and-practice layer over existing engines, not evidence of professional art competence."
+  ],
+  "sources": [
+    {
+      "id": "ruskin-elements",
+      "title": "The Elements of Drawing",
+      "author": "John Ruskin",
+      "domain": "observation",
+      "lesson_id": "observe_contour",
+      "source_url": "https://www.gutenberg.org/ebooks/30325",
+      "rights": "Project Gutenberg: public domain in the USA; verify rights in country of use before copying/redistribution",
+      "review_status": "selected_text_and_catalog",
+      "ingested_full_text": false
+    },
+    {
+      "id": "lutz-how",
+      "title": "What to Draw and How to Draw It",
+      "author": "E. G. Lutz",
+      "domain": "construction",
+      "lesson_id": "build_shapes",
+      "source_url": "https://www.gutenberg.org/ebooks/74518",
+      "rights": "Project Gutenberg: public domain in the USA; verify rights in country of use before copying/redistribution",
+      "review_status": "instructions_read",
+      "ingested_full_text": false
+    },
+    {
+      "id": "speed-practice",
+      "title": "The Practice and Science of Drawing",
+      "author": "Harold Speed",
+      "domain": "gesture_and_values",
+      "lesson_id": "gesture_rhythm",
+      "source_url": "https://www.gutenberg.org/ebooks/14264",
+      "rights": "Project Gutenberg: public domain in the USA; verify rights in country of use before copying/redistribution",
+      "review_status": "preface_read",
+      "ingested_full_text": false
+    },
+    {
+      "id": "storey-perspective",
+      "title": "The Theory and Practice of Perspective",
+      "author": "G. A. Storey",
+      "domain": "perspective",
+      "lesson_id": "perspective_space",
+      "source_url": "https://www.gutenberg.org/ebooks/20165",
+      "rights": "Project Gutenberg: public domain in the USA; verify rights in country of use before copying/redistribution",
+      "review_status": "catalog_review",
+      "ingested_full_text": false
+    },
+    {
+      "id": "duval-anatomy",
+      "title": "Duval's Artistic Anatomy",
+      "author": "Mathias Duval",
+      "domain": "anatomy",
+      "lesson_id": "anatomy_pose",
+      "source_url": "https://www.gutenberg.org/ebooks/77743",
+      "rights": "Project Gutenberg: public domain in the USA; verify rights in country of use before copying/redistribution",
+      "review_status": "catalog_review",
+      "ingested_full_text": false
+    },
+    {
+      "id": "crane-line",
+      "title": "Line and Form",
+      "author": "Walter Crane",
+      "domain": "linework",
+      "lesson_id": "expressive_line",
+      "source_url": "https://www.gutenberg.org/ebooks/25290",
+      "rights": "Project Gutenberg: public domain in the USA; verify rights in country of use before copying/redistribution",
+      "review_status": "catalog_review",
+      "ingested_full_text": false
+    },
+    {
+      "id": "dow-composition",
+      "title": "Composition",
+      "author": "Arthur W. Dow",
+      "domain": "composition",
+      "lesson_id": "notan_composition",
+      "source_url": "https://www.gutenberg.org/ebooks/45410",
+      "rights": "Project Gutenberg: public domain in the USA; verify rights in country of use before copying/redistribution",
+      "review_status": "catalog_review",
+      "ingested_full_text": false
+    },
+    {
+      "id": "munsell-color",
+      "title": "A Color Notation",
+      "author": "A. H. Munsell",
+      "domain": "color",
+      "lesson_id": "color_hvc",
+      "source_url": "https://www.gutenberg.org/ebooks/26054",
+      "rights": "Project Gutenberg: public domain in the USA; verify rights in country of use before copying/redistribution",
+      "review_status": "catalog_review",
+      "ingested_full_text": false
+    }
+  ],
+  "lessons": [
+    {
+      "id": "observe_contour",
+      "level": 1,
+      "title_ar": "الملاحظة ورسم المحيط",
+      "source_id": "ruskin-elements",
+      "source_anchor": "Letter I — On First Practice; Letter II — Sketching from Nature",
+      "concept_ar": "راقب النِّسب واتجاهات الحواف والمساحات السالبة قبل رسم التفاصيل.",
+      "steps": [
+        "حدد إطار الجسم وأعلى وأسفل ويسار ويمين الشكل.",
+        "ارسم محيطًا متصلًا من نقاط مرجعية.",
+        "قارن المسافات والزوايا بالشكل المرصود.",
+        "أصلح الانحرافات قبل التظليل."
+      ],
+      "exercise_ar": "ارسم كوبًا من الملاحظة بثلاثة أحجام ومن زوايا مختلفة دون استنساخ لوحة الكتاب.",
+      "rubric": [
+        "silhouette_accuracy",
+        "proportion_consistency",
+        "negative_space_alignment"
+      ],
+      "engine": "scripts/unified_draw.py",
+      "tags": [
+        "sketch",
+        "outline",
+        "observation"
+      ],
+      "metrics": [
+        {
+          "id": "silhouette_accuracy",
+          "weight": 33
+        },
+        {
+          "id": "proportion_consistency",
+          "weight": 33
+        },
+        {
+          "id": "negative_space_alignment",
+          "weight": 34
+        }
+      ]
+    },
+    {
+      "id": "build_shapes",
+      "level": 1,
+      "title_ar": "البناء بالأشكال الأولية",
+      "source_id": "lutz-how",
+      "source_anchor": "INSTRUCTIONS: numbered stages and light/dotted construction lines",
+      "concept_ar": "ابدأ بدوائر وصناديق ومحاور خفيفة، ثم صِل الكتل بخطوط واضحة وأخفِ خطوط البناء.",
+      "steps": [
+        "حلّل المرجع إلى كتل دائرة/أسطوانة/صندوق.",
+        "حدد محاور الرأس والجذع والأطراف.",
+        "اربط الكتل بالتدريج وأظهر ترتيب الضربات.",
+        "أزل خطوط المساعدة وأضف التفاصيل مع الحفاظ على النِّسب."
+      ],
+      "exercise_ar": "صمّم شخصية كرتونية أصلية من ثلاثة أشكال، وقدّم أربع مراحل لرسمها.",
+      "rubric": [
+        "shape_hierarchy",
+        "stroke_order",
+        "landmark_consistency"
+      ],
+      "engine": "scripts/code_drawing_master.py",
+      "tags": [
+        "character",
+        "cartoon",
+        "construction"
+      ],
+      "metrics": [
+        {
+          "id": "shape_hierarchy",
+          "weight": 33
+        },
+        {
+          "id": "stroke_order",
+          "weight": 33
+        },
+        {
+          "id": "landmark_consistency",
+          "weight": 34
+        }
+      ]
+    },
+    {
+      "id": "gesture_rhythm",
+      "level": 2,
+      "title_ar": "الإيقاع والحركة وكتل الظل",
+      "source_id": "speed-practice",
+      "source_anchor": "PREFACE and mass drawing / line drawing sections",
+      "concept_ar": "حافظ على فعل الشخصية وإيقاع الخط وتوزيع كتل الضوء والظل، لا الدقة الآلية وحدها.",
+      "steps": [
+        "حدد خط الحركة الرئيسي واتجاه الطاقة.",
+        "ضع كتل الجسد الكبرى حول الخط.",
+        "اضبط إيقاع المحيط وتفاوت سمك الخط.",
+        "قارن تعبير الوقفة وتوزيع الظلال."
+      ],
+      "exercise_ar": "ارسم ثلاث وضعيات أصلية لشخصية تمشي وتجري وتشير، مع إظهار خط الحركة في معاينة منفصلة.",
+      "rubric": [
+        "gesture_clarity",
+        "pose_balance",
+        "value_grouping"
+      ],
+      "engine": "scripts/code_drawing_master.py",
+      "tags": [
+        "gesture",
+        "acting",
+        "motion"
+      ],
+      "metrics": [
+        {
+          "id": "gesture_clarity",
+          "weight": 33
+        },
+        {
+          "id": "pose_balance",
+          "weight": 33
+        },
+        {
+          "id": "value_grouping",
+          "weight": 34
+        }
+      ]
+    },
+    {
+      "id": "perspective_space",
+      "level": 2,
+      "title_ar": "المنظور وبناء المشهد",
+      "source_id": "storey-perspective",
+      "source_anchor": "Perspective principles (source catalog; full text not yet read)",
+      "concept_ar": "استخدم خط الأفق ونقاط التلاشي لضبط اتجاه الحواف والأبعاد في الفراغ.",
+      "steps": [
+        "حدد موضع عين الكاميرا وخط الأفق.",
+        "اختر نقطة تلاشي واحدة أو اثنتين.",
+        "اربط الحواف المتوازية في العالم بنقطة تلاشي مناسبة.",
+        "اختبر توافق العمق مع حجم الشخصية والأجسام."
+      ],
+      "exercise_ar": "ارسم شارعًا بواجهات ومصابيح من نقطتي تلاشي وقارن الحواف الممدودة.",
+      "rubric": [
+        "vanishing_point_consistency",
+        "depth_scale",
+        "camera_horizon"
+      ],
+      "engine": "scripts/unified_draw.py",
+      "tags": [
+        "perspective",
+        "camera",
+        "environment"
+      ],
+      "metrics": [
+        {
+          "id": "vanishing_point_consistency",
+          "weight": 33
+        },
+        {
+          "id": "depth_scale",
+          "weight": 33
+        },
+        {
+          "id": "camera_horizon",
+          "weight": 34
+        }
+      ]
+    },
+    {
+      "id": "anatomy_pose",
+      "level": 3,
+      "title_ar": "التشريح الفني والمفاصل",
+      "source_id": "duval-anatomy",
+      "source_anchor": "Skeleton, joints, muscles, surface landmarks (catalog description)",
+      "concept_ar": "تُحدد العظام والمفاصل حركة الكتل وتغيّر ملامح السطح؛ لا ترسم العضلات كزخارف ثابتة.",
+      "steps": [
+        "حدد النسب الأساسية والهيكل المبسط.",
+        "ارسم نقاط الدوران للكتف والمرفق والحوض والركبة.",
+        "عدّل أحجام الأجزاء وفق حركة المفاصل والمنظور.",
+        "قارن السطح الخارجي بخط الهيكل."
+      ],
+      "exercise_ar": "صمم شخصية من الأمام والجانب وفي وضعية جلوس متسقة بمفاصل محددة.",
+      "rubric": [
+        "joint_plausibility",
+        "anatomical_proportions",
+        "turnaround_identity"
+      ],
+      "engine": "scripts/code_drawing_master.py",
+      "tags": [
+        "anatomy",
+        "human",
+        "rig"
+      ],
+      "metrics": [
+        {
+          "id": "joint_plausibility",
+          "weight": 33
+        },
+        {
+          "id": "anatomical_proportions",
+          "weight": 33
+        },
+        {
+          "id": "turnaround_identity",
+          "weight": 34
+        }
+      ]
+    },
+    {
+      "id": "expressive_line",
+      "level": 2,
+      "title_ar": "لغة الخط والشكل",
+      "source_id": "crane-line",
+      "source_anchor": "Line and Form: outline and language of line (catalog description)",
+      "concept_ar": "سمك الخط واتجاهه والإيقاع البصري تغيّر الإحساس بالحركة والوزن.",
+      "steps": [
+        "صمّم ثلاث عينات من نفس الموضوع بخطوط متنوعة.",
+        "فرّق بين حدود الظل والخطوط الإنشائية.",
+        "استخدم إيقاع الخط لتوجيه العين.",
+        "اختر الأنسب لإحساس المشهد."
+      ],
+      "exercise_ar": "ارسم شجرة أصلية بأساليب خطية هادئة وحادة وانسيابية ثم قارن وضوحها.",
+      "rubric": [
+        "line_hierarchy",
+        "stroke_intent",
+        "visual_rhythm"
+      ],
+      "engine": "scripts/unified_draw.py",
+      "tags": [
+        "line",
+        "style",
+        "inking"
+      ],
+      "metrics": [
+        {
+          "id": "line_hierarchy",
+          "weight": 33
+        },
+        {
+          "id": "stroke_intent",
+          "weight": 33
+        },
+        {
+          "id": "visual_rhythm",
+          "weight": 34
+        }
+      ]
+    },
+    {
+      "id": "notan_composition",
+      "level": 2,
+      "title_ar": "التكوين والكتل الفاتحة والداكنة",
+      "source_id": "dow-composition",
+      "source_anchor": "Introductory line, notan, color principles (catalog description)",
+      "concept_ar": "اجعل توزيع الكتل والإيقاع والتباين يدعم مركز الانتباه قبل إضافة الألوان والتفاصيل.",
+      "steps": [
+        "وزّع عناصر المشهد ككتل بسيطة.",
+        "اختبر الصورة بالأبيض والأسود.",
+        "وازن الحجوم والتباين والمناطق الساكنة.",
+        "أضف اللون مع الحفاظ على التسلسل البصري."
+      ],
+      "exercise_ar": "اصنع ثلاث نسخ أصلية لتكوين بوستر، مع نسخة أسود/أبيض لكل منها.",
+      "rubric": [
+        "focal_hierarchy",
+        "notan_balance",
+        "spacing"
+      ],
+      "engine": "scripts/unified_draw.py",
+      "tags": [
+        "composition",
+        "poster",
+        "layout"
+      ],
+      "metrics": [
+        {
+          "id": "focal_hierarchy",
+          "weight": 33
+        },
+        {
+          "id": "notan_balance",
+          "weight": 33
+        },
+        {
+          "id": "spacing",
+          "weight": 34
+        }
+      ]
+    },
+    {
+      "id": "color_hvc",
+      "level": 2,
+      "title_ar": "الألوان: الصبغة والقيمة والتشبع",
+      "source_id": "munsell-color",
+      "source_anchor": "Hue, Value, Chroma (catalog description)",
+      "concept_ar": "قيّم درجة اللون وقيمته الضوئية وتشبعه بشكل مستقل عند اختيار لوحة ألوان.",
+      "steps": [
+        "حدد المزاج ومصدر الإضاءة.",
+        "اختر عددًا محدودًا من الألوان الأساسية.",
+        "اختبر الفصل بين القيم الضوئية قبل التشبع.",
+        "راجع القراءة والتباين بعد تحويل الصورة إلى تدرج رمادي."
+      ],
+      "exercise_ar": "اصنع أربع لوحات ألوان أصلية لنفس مشهد نهاري وليلِي مع درجات قيمة واضحة.",
+      "rubric": [
+        "value_separation",
+        "palette_coherence",
+        "contrast_readability"
+      ],
+      "engine": "scripts/unified_draw.py",
+      "tags": [
+        "color",
+        "lighting",
+        "palette"
+      ],
+      "metrics": [
+        {
+          "id": "value_separation",
+          "weight": 33
+        },
+        {
+          "id": "palette_coherence",
+          "weight": 33
+        },
+        {
+          "id": "contrast_readability",
+          "weight": 34
+        }
+      ]
+    }
+  ]
+}
