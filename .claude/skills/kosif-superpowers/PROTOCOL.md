@@ -48,7 +48,7 @@
 | [A12 SEE Pro Cognitive Fusion](references/protocol/A12-see-pro-cognitive-fusion.md) | تفكير SEE Pro وL2/L3 | جديد | `see_pro_cognitive_gate.py`؛ Full Pro خارجي |
 | [A13 مجلس البرو](references/protocol/A13-pro-council.md) | مجلس Pro | جديد | `council.py` |
 | [A14 أكاديمية الرسم والمونتاج](references/protocol/A14-drawing-cinematic-academy.md) | دراسة كتب الرسم، التكوين، الإضاءة، وتطوير تصميم الفيديو | جديد | `drawing_academy.py` و`creative_principles.py` (اختبارات جزئية) |
-| [A15 Futurepedia Style Atlas 15](references/protocol/A15-futurepedia-style-atlas.md) | طلب أسلوب بصري أو دمج أساليب الرسم/المونتاج من Futurepedia، سبورة، نيون، نوير، أيزومتري | قدرة طرق جديدة؛ 15 وصفًا عامًا فقط | `style_atlas_bridge.py` (فهرسة، وصفة توليف، عينات SVG ثابتة؛ لا فيديو تلقائي) |
+| [A15 Style Atlas 86](references/protocol/A15-futurepedia-style-atlas.md) | أسلوب بصري أو فيلم شرح؛ سبورة، نيون، نوار، أيزومتري، بكسل، صلصال، مانغا… | 86 طريقة في 14 عائلة + محرك أصلي | `style_atlas_bridge.py` و`atlas_render.py` (→ MP4) |
 | [A16 Mosamem × REA](references/protocol/A16-mosamem-rea-capability-fusion.md) | Mosamem وREA؛ صور، PSD، تحليل برامج | جديد | فحص وتخطيط بلا تشغيل آلي |
 | [A17 القصة](references/protocol/A17-story-scene-charter.md) | قصة وبرومنتات | جديد | `prompt_pack.py` |
 | [CHANGELOG](references/protocol/CHANGELOG.md) | تبحث عن قسم قديم برقمه أو عن تاريخ الإصدارات | خريطة كل قسم قديم إلى مكانه | — |

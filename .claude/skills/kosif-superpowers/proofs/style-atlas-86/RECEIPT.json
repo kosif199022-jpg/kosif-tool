@@ -1,0 +1,46 @@
+{
+  "schema": "kosif.proof.receipt.v1",
+  "date": "2026-10-23",
+  "what": "A15 v2: full Futurepedia AI Style Atlas review (86/86 styles) + original KOSIF explainer engine rendered to a real MP4",
+  "source_review": {
+    "page": "https://www.futurepedia.io/resources/ai-style-atlas/view",
+    "styles_reviewed": 86,
+    "families": 14,
+    "copy_prompts_analysed": 86,
+    "method": "browser session: public listing API (6 pages x 15) for style cards; each 'Copy prompt' payload (67-124k chars: shared workflow text, a style card, a shared helper library ~7k chars, a shared synth sound kit ~22k chars, and a per-style reference source 31-87k chars) analysed in-page for fonts, frequent colours, compositing modes, render techniques, sound names and helper names",
+    "copied_into_repo": "nothing verbatim: cards paraphrased, engine written from scratch"
+  },
+  "engine_run": {
+    "page": "templates/atlas_explainer.html (FA-23 Chalkboard Lesson method, Arabic topic)",
+    "check": {
+      "duration": 17.0,
+      "deterministic": true,
+      "ms_per_frame": 29.3,
+      "beats": 6
+    },
+    "render": {
+      "frames": 510,
+      "fps": 30,
+      "size": "1280x720",
+      "video": "h264",
+      "audio": "aac 48k stereo",
+      "seconds": 17.0,
+      "mean_volume_db": -23.4,
+      "max_volume_db": -7.0
+    },
+    "proof_files": {
+      "sheet.jpg": "67cc3db895ca818291e7185f4d31d4e8aa18cf61e51956913c4ee38166f5f97a",
+      "fa23-storyboard.jpg": "76d20e5b01f8468123d8c6ce320a4d7adf4a9a84ea0a9157ed7098cd7a1f65f1"
+    },
+    "note": "MP4s are not committed (repo .gitignore); re-render with the commands in README.md"
+  },
+  "tests": [
+    "evals/test_style_atlas_bridge.py",
+    "evals/test_atlas_render.py"
+  ],
+  "not_claimed": [
+    "the other 85 styles each have a hand-built renderer",
+    "pixel-identical reproduction of any Futurepedia clip",
+    "Katana/Higgsfield use"
+  ]
+}

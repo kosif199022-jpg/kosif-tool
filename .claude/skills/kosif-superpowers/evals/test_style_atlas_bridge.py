@@ -1,4 +1,4 @@
-"""Offline acceptance tests for 15 original visual-style workflow methods."""
+"""Offline acceptance tests for the 86 original visual-style workflow methods (A15 v2)."""
 import json
 import math
 import sys
@@ -17,9 +17,26 @@ class StyleBridgeTests(unittest.TestCase):
         cls.styles=cls.data["styles"]
 
     def test_exact_source_scope(self):
-        self.assertEqual(len(self.styles),15)
-        self.assertEqual([x["id"] for x in self.styles],["FA-"+str(i).zfill(2) for i in range(1,16)])
-        self.assertIn("FIRST_15",self.data["scope"])
+        self.assertEqual(len(self.styles),86)
+        self.assertEqual([x["id"] for x in self.styles],["FA-"+str(i).zfill(2) for i in range(1,87)])
+        self.assertEqual(self.data["scope"],"ALL_86_OF_86")
+        self.assertEqual(len({s["slug"] for s in self.styles}),86)
+        fam={k:v["count"] for k,v in self.data["families"].items()}
+        self.assertEqual(sum(fam.values()),86)
+        self.assertEqual(fam,{"Hand-Drawn":7,"Painterly":6,"Print":6,"Paper & Craft":7,"Illustration":7,"Art & Design Movements":6,
+                              "Retro Digital":7,"Retro UI & Neon":6,"Dimensional":6,"Light & Imaging":7,"Data & Information":6,
+                              "Generative & Type":6,"Popular Explainer Looks":7,"Cosmic & Psychedelic":2})
+
+    def test_legacy_15_still_valid_and_matches(self):
+        old=A.registry(A.DATA_LEGACY_15)["styles"]
+        self.assertEqual([s["slug"] for s in old],[s["slug"] for s in self.styles[:15]])
+
+    def test_cards_are_complete_and_paraphrased(self):
+        for s in self.styles:
+            for k in ("look","motion","explainer_grammar","capability_ar"):
+                self.assertTrue(len(s[k])>10,(s["id"],k))
+            self.assertEqual(s["source_review"],"style_card+reference_code_analyzed_not_copied")
+            self.assertIn("medium reads as real",s["acceptance_checks"][0])
         self.assertTrue(all(s["executor_verified"] is False for s in self.styles))
 
     def test_reference_selector_all(self):
@@ -33,9 +50,27 @@ class StyleBridgeTests(unittest.TestCase):
         self.assertEqual(A.search(self.styles,"مائي")[0]["slug"],"watercolor-wash")
         self.assertEqual(A.search(self.styles,"منظور")[0]["slug"],"isometric-pastel")
 
+    def test_more_arabic_aliases(self):
+        self.assertEqual(A.search(self.styles,"طباشير")[0]["id"],"FA-23")
+        self.assertEqual(A.search(self.styles,"فسيفساء")[0]["slug"],"byzantine-mosaic")
+        self.assertEqual(A.search(self.styles,"تيليتكست")[0]["slug"],"teletext-page")
+
+    def test_brief_and_scaffold(self):
+        b=A.brief("كيف تعمل البطارية",A.resolve(self.styles,"FA-45"),A.resolve(self.styles,"FA-16"),duration=20)
+        for k in A.PRODUCTION_CONTRACT: self.assertIn(k,b)
+        self.assertIn("BRIEF_ONLY",b)
+        with tempfile.TemporaryDirectory() as d:
+            r=A.scaffold(A.resolve(self.styles,"FA-45"),Path(d)/"x")
+            page=Path(r["page"]).read_text(encoding="utf-8")
+            self.assertIn('const STYLE_ID = "FA-45"',page)
+            self.assertIn("const PALETTE =",page)
+            self.assertIn('src="assets/atlas_harness.js"',page)
+            self.assertTrue((Path(d)/"x"/"assets"/"atlas_sound.js").exists())
+            with self.assertRaises(ValueError): A.scaffold(self.styles[0],Path(d)/"x")
+
     def test_all_fifteen_generate_valid_distinct_svg(self):
         unique=set()
-        for style in self.styles:
+        for style in self.styles[:15]:
             svg=A.svg_study(style,"تعلم فن الرسم")
             root=ET.fromstring(svg)
             self.assertEqual(root.attrib["width"],"440")
@@ -43,6 +78,9 @@ class StyleBridgeTests(unittest.TestCase):
             self.assertIn("original procedural schematic",svg)
             unique.add(svg)
         self.assertEqual(len(unique),15)
+        allsvg={A.svg_study(s,"x") for s in self.styles}
+        self.assertEqual(len(allsvg),86)
+        for svg in allsvg: ET.fromstring(svg)
 
     def test_svg_escapes_hostile_input(self):
         svg=A.svg_study(self.styles[0],'</text><script>alert(1)</script>')
@@ -73,7 +111,7 @@ class StyleBridgeTests(unittest.TestCase):
             with self.assertRaises(ValueError):
                 A.plan("test",[self.styles[0]],duration=x)
         with self.assertRaises(ValueError):
-            A.resolve(self.styles,"FA-86")
+            A.resolve(self.styles,"FA-87")
 
     def test_cli_safe_no_overwrite(self):
         with tempfile.TemporaryDirectory() as d:

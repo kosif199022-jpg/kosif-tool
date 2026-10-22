@@ -18,7 +18,7 @@
   "powers": 5331,
   "families": 62,
   "domains": 10,
-  "tools": 130,
+  "tools": 131,
   "guides": 96,
   "statuses": {
    "documented": 1937,
@@ -11938,15 +11938,15 @@
    "root": "skill",
    "kind": "cli",
    "area": "motion",
-   "title_en": "Futurepedia 15-source visual styles: discovery, cross-style recipes, and original SVG studies",
-   "title_ar": "محرك توليف 15 أسلوبًا بصريًا للرسم والموشن",
-   "summary_en": "Selects from 15 public-description derived style methods, fuses up to two with a five-stage typed graph, and generates one original static SVG study per style.",
-   "summary_ar": "محرك توليف 15 أسلوبًا بصريًا للرسم والموشن؛ Selects from 15 public-description derived style methods, fuses up to two with a five-stage typed graph, and generates one original static SVG study per style.",
+   "title_en": "Futurepedia AI Style Atlas — all 86 methods: search, fusion, storyboard-first briefs and engine scaffolds",
+   "title_ar": "أطلس الأساليب الكامل (86 طريقة): بحث وتوليف وموجز إنتاج وهيكل مشروع شرح",
+   "summary_en": "Searches the 86 paraphrased Futurepedia AI Style Atlas methods in 14 families (look, motion, explainer grammar, fonts, palette, techniques, sounds), fuses up to two (85/15), writes a storyboard-first production brief, scaffolds an explainer project on the original KOSIF engine, and draws static SVG studies.",
+   "summary_ar": "يبحث في 86 طريقة من أطلس Futurepedia في 14 عائلة (الشكل، الحركة، قواعد الشرح، الخطوط، الألوان، التقنيات، الأصوات)، ويدمج طريقتين 85/15، ويكتب موجز إنتاج بستوريبورد أولًا، ويُنشئ مشروع شرح جاهزًا على محرك KOSIF الأصلي.",
    "use_when": [
     "ادمج أساليب Futurepedia في الرسم",
-    "توليفة سبورة ونيون لموشن جرافيك",
+    "اعمل فيلم شرح بأسلوب الطباشير",
     "Find Futurepedia AI Style Atlas methods",
-    "Create one static SVG style-study"
+    "Make an animated explainer in a retro CRT style"
    ],
    "keywords": [
     "ادمج أساليب Futurepedia في الرسم",
@@ -11960,27 +11960,53 @@
     "visual",
     "رسم",
     "مصادر",
-    "أسلوب"
+    "أسلوب",
+    "explainer",
+    "storyboard",
+    "طباشير",
+    "شرح",
+    "أطلس",
+    "86"
    ],
    "commands": [
     {
-     "name": "command 1",
+     "name": "families",
+     "example": "python3 scripts/style_atlas_bridge.py families",
+     "does": "Lists the 14 families and their 86 methods."
+    },
+    {
+     "name": "search",
      "example": "python3 scripts/style_atlas_bridge.py search \"سبورة\"",
-     "does": "Executes a local deterministic method only; no web or model spend."
+     "does": "Ranks methods by Arabic/English words over name, look, motion, grammar, fonts and hints."
     },
     {
-     "name": "command 2",
+     "name": "show",
+     "example": "python3 scripts/style_atlas_bridge.py show FA-45",
+     "does": "Prints one full method card."
+    },
+    {
+     "name": "brief",
+     "example": "python3 scripts/style_atlas_bridge.py brief --topic \"كيف تعمل البطارية\" --style FA-45 --accent FA-16 --out out/atlas/brief.md",
+     "does": "Writes a storyboard-first production brief (style card, contract, steps, acceptance)."
+    },
+    {
+     "name": "scaffold",
+     "example": "python3 scripts/style_atlas_bridge.py scaffold --style FA-45 --out out/atlas/battery",
+     "does": "Copies the original engine, font and style card into a new explainer project."
+    },
+    {
+     "name": "plan",
      "example": "python3 scripts/style_atlas_bridge.py plan --topic \"كيف يتعلم الذكاء\" --style FA-04 --accent FA-06 --out out/fusion.json",
-     "does": "Run on user-supplied or local authorized input."
+     "does": "Writes a typed 85/15 fusion recipe with the production contract."
     },
     {
-     "name": "command 3",
+     "name": "study-svg",
      "example": "python3 scripts/style_atlas_bridge.py study-svg --style FA-15 --topic \"original\" --out out/study.svg",
-     "does": "Executes a local deterministic method only; no web or model spend."
+     "does": "Draws a static original SVG study for any of the 86 methods."
     }
    ],
-   "inputs": "Registered public 15-style method JSON and user topic",
-   "outputs": "Search results, typed unrendered style-fusion plan or original static SVG study",
+   "inputs": "data/futurepedia_style_atlas_86.json and a user topic",
+   "outputs": "Search results, method cards, briefs, fusion recipes, scaffolded explainer projects, SVG studies",
    "requires": {
     "python": [],
     "binaries": [],
@@ -11990,7 +12016,7 @@
    },
    "safety": "writes-files",
    "consent": "Writes new output files in explicitly selected locations only; refuses overwrite; no network, paid tools or private downloads.",
-   "limits": "Only the 15 publicly visible descriptions were read out of advertised 86. Plans and SVG schematics are not original videos, copied vendor prompts, or runtime-verified media editors.",
+   "limits": "Method cards are paraphrases; a scaffold starts from the FA-23 chalkboard demo, so each other method's medium must still be drawn per project before rendering. Nothing is rendered until atlas_render.py runs.",
    "tests": [
     ".claude/skills/kosif-superpowers/evals/test_style_atlas_bridge.py"
    ],
@@ -12002,8 +12028,8 @@
     "hand-drawn-draw-on",
     "story-direction-ideas"
    ],
-   "evidence": "untested",
-   "evidence_note": "CI acceptance pending; tested methods must be measured before claiming ready."
+   "evidence": "tested-here",
+   "evidence_note": "evals/test_style_atlas_bridge.py passed on 2026-10-23 in a Claude cloud container (86 methods, brief, scaffold, 86 distinct SVG studies)."
   },
   {
    "id": "mosamem-rea-fusion",
@@ -12396,6 +12422,86 @@
    ],
    "evidence": "tested-here",
    "evidence_note": "evals/test_sources_index.py 6/6 passed on this checkout; real run on a 24,257-line attachment (22-10): key at line 405 reported as google_api_key by location only, 0 'AIza' matches in the 35 KB index."
+  },
+  {
+   "id": "atlas-render",
+   "path": "scripts/atlas_render.py",
+   "root": "skill",
+   "kind": "cli",
+   "area": "motion",
+   "title_en": "Atlas explainer renderer: storyboard, determinism check and real MP4 with synthesized score",
+   "title_ar": "رندر أفلام الشرح: ستوريبورد وفحص حتمية وMP4 حقيقي بصوت مُركّب",
+   "summary_en": "Drives an A15 explainer page (window.seek/DURATION/scoreSound) in headless Chromium: storyboard grid PNG, single stills, a determinism and speed check, frame-by-frame H.264 render with the KSound score rendered offline and muxed as AAC, and a single-file HTML bundle.",
+   "summary_ar": "يشغّل صفحة شرح A15 في متصفح بلا واجهة: لوحة ستوريبورد، لقطات، فحص حتمية وسرعة، رندر MP4 إطارًا بإطار مع صوت مُركّب متزامن، وحزمة HTML واحدة.",
+   "use_when": [
+    "رندر فيلم الشرح إلى MP4",
+    "اعرض لي الستوريبورد قبل الفيلم",
+    "Render the explainer page to video",
+    "Check the explainer is deterministic"
+   ],
+   "keywords": [
+    "render",
+    "explainer",
+    "storyboard",
+    "mp4",
+    "رندر",
+    "ستوريبورد",
+    "فيلم شرح",
+    "atlas",
+    "canvas",
+    "seek"
+   ],
+   "commands": [
+    {
+     "name": "check",
+     "example": "python3 scripts/atlas_render.py check",
+     "does": "Same t -> same pixels at 4 probes, ms per frame, beats, scoreSound present."
+    },
+    {
+     "name": "storyboard",
+     "example": "python3 scripts/atlas_render.py storyboard --out out/atlas/storyboard.png",
+     "does": "PNG of the ?storyboard=1 grid."
+    },
+    {
+     "name": "render",
+     "example": "python3 scripts/atlas_render.py render --fps 30 --out out/atlas/film.mp4",
+     "does": "H.264 frames + offline-rendered AAC score."
+    },
+    {
+     "name": "bundle",
+     "example": "python3 scripts/atlas_render.py bundle --out out/atlas/single.html",
+     "does": "Inlines scripts and the font into one HTML file."
+    }
+   ],
+   "inputs": "An explainer HTML page following the A15 contract (default: templates/atlas_explainer.html)",
+   "outputs": "PNG storyboard/stills, MP4 (h264+aac), single-file HTML, JSON reports",
+   "requires": {
+    "python": [
+     "playwright"
+    ],
+    "binaries": [
+     "ffmpeg"
+    ],
+    "node": [],
+    "optional": [],
+    "network": false
+   },
+   "safety": "writes-files",
+   "consent": "Writes only the --out path; refuses to overwrite without --force; no network.",
+   "limits": "Needs Playwright with Chromium and ffmpeg; frame capture is ~4-6 fps of wall time at 1280x720; audio is the page's synthesized score (no voice-over mixing yet).",
+   "tests": [
+    ".claude/skills/kosif-superpowers/evals/test_atlas_render.py"
+   ],
+   "docs": [
+    ".claude/skills/kosif-superpowers/references/protocol/A15-futurepedia-style-atlas.md",
+    ".claude/skills/kosif-superpowers/proofs/style-atlas-86/README.md"
+   ],
+   "families": [
+    "hand-drawn-draw-on",
+    "story-direction-ideas"
+   ],
+   "evidence": "tested-here",
+   "evidence_note": "evals/test_atlas_render.py passed on 2026-10-23; full 17 s render: 510 frames 1280x720 h264 + aac, deterministic, 29 ms/frame (proofs/style-atlas-86)."
   }
  ],
  "guides": [
