@@ -158,7 +158,7 @@ def _jpeg_header(f):
 def inspect_asset(path):
     p, n = _checked_file(path)
     with p.open("rb") as f:
-        magic=f.read(12)
+        magic=f.read(16)
         f.seek(0)
         if magic.startswith(b"8BPS"):
             report=_psd_header(f)
