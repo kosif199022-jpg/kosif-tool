@@ -414,6 +414,7 @@ class TranscribeReviewTests(unittest.TestCase):
         cues = json.loads((job / "work" / "cues.json").read_text(encoding="utf-8"))
         self.assertEqual(len(cues["words"]), r["audio_cues"]["aligned_words"])
 
+    @unittest.skipUnless(HAVE, "ffmpeg/ffprobe not installed")
     def test_intake_transcribe_accepts_force(self):  # finding 4: intake --transcribe had no --force
         job = self.tmp / "jobF"
         job.mkdir()
