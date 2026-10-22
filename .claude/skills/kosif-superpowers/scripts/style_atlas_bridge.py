@@ -1,9 +1,13 @@
 #!/usr/bin/env python3
-"""KOSIF Style Atlas bridge: offline discovery, synthesis and ORIGINAL SVG sketches.
+"""KOSIF Style Atlas bridge v2: all 86 Futurepedia AI Style Atlas methods, offline.
 
-15 independently expressed technique presets from the publicly readable part of
-Futurepedia AI Style Atlas, not a model, prompt clone, or full animation renderer.
-Never downloads, executes an external generator, or calls Katana.
+86 independently paraphrased method cards (look, motion, explainer grammar, fonts, palette,
+compositing modes, render flags, sound palette) distilled from the full public atlas.
+Commands: list, families, search, show, plan (85/15 fusion recipe), brief (storyboard-first
+production brief), scaffold (ready explainer project on the original KOSIF engine:
+assets/atlas_harness.js + atlas_sound.js + templates/atlas_explainer.html, rendered by
+scripts/atlas_render.py), study-svg (static original study).
+Never downloads, mirrors third-party prompts/code/media, runs an external generator, or calls Katana.
 """
 import argparse
 import hashlib
@@ -15,18 +19,40 @@ import sys
 from pathlib import Path
 
 SKILL = Path(__file__).resolve().parents[1]
-DATA = SKILL / "data" / "futurepedia_style_methods_15.json"
+DATA = SKILL / "data" / "futurepedia_style_atlas_86.json"
+DATA_LEGACY_15 = SKILL / "data" / "futurepedia_style_methods_15.json"
+TEMPLATE = SKILL / "templates" / "atlas_explainer.html"
+ASSETS = ("atlas_harness.js", "atlas_sound.js")
+FAMILIES_AR = {"Hand-Drawn": "رسم يدوي", "Painterly": "تصوير زيتي/مائي", "Print": "طباعة", "Paper & Craft": "ورق وحِرف",
+               "Illustration": "رسم توضيحي", "Art & Design Movements": "حركات فنية وتصميم", "Retro Digital": "رقمي كلاسيكي",
+               "Retro UI & Neon": "واجهات قديمة ونيون", "Dimensional": "أبعاد ثلاثية", "Light & Imaging": "ضوء وتصوير",
+               "Data & Information": "بيانات ومعلومات", "Generative & Type": "توليدي وطباعة حروف",
+               "Popular Explainer Looks": "أشكال الشرح الشائعة", "Cosmic & Psychedelic": "كوني وسايكيديلك"}
+# The explainer production contract (KOSIF wording) distilled from studying the atlas workflow.
+PRODUCTION_CONTRACT = {
+    "storyboard_first": "6-10 beats; one key-frame panel per beat drawn with the real style functions; caption = beat no., start-end, on-screen text, how it connects to the previous beat (continuous carry-over or a scene change and why), key sounds; list assumed facts; wait for approval, then reuse the same drawing code for the film.",
+    "canvas": "1280x720 logical canvas, letterboxed player with play/pause, scrub, time, sound toggle, loop on; expose window.seek(t), window.DURATION, window.scoreSound for frame-by-frame rendering.",
+    "determinism": "every frame is a pure function of t; seeded random/noise only (never Math.random in a frame); static textures may be cached.",
+    "legibility": "phone-first: headlines >=44px, any label the story needs >=28px, key numbers >=64px; each beat fills most of the frame; frames well under 100 ms.",
+    "medium_truth": "keep the medium (surface texture + finishing passes on every frame: grain, paper, ink pooling, misregistration, glow, scanlines); change only story, text and subjects; draw subjects accurately and check facts.",
+    "structure": "hook out of the way in ~2 s; something changes every 1-2 s; arrows draw on to show cause/flow; labels land on what they name; numbers count (<=12 ticks/s, easing into the final value).",
+    "flow": "build-on ideas stay continuous (elements move, grow, transform, camera travels the same world); real topic jumps get a full scene change done the medium's own way; mix both, never a cut every beat nor one forced shot.",
+    "sound": "frame-exact sync with picture times; score landings (pops, stamps, labels, counters, strokes matched to draw-on length); quiet medium-true bed; music <=0.6 only if it suits; <=3 sounds at once with small silences; voice-over mode ducks to ~60%.",
+    "render": "headless Chromium -> seek(i/fps) -> canvas frames -> ffmpeg H.264; offline-render the score to WAV and mux (scripts/atlas_render.py render).",
+}
 ALLOWED = ("9:16", "16:9", "1:1", "4:5")
 HEX = re.compile(r"^#[0-9A-Fa-f]{6}$")
 
 
 def registry(path=DATA):
     obj = json.loads(Path(path).read_text(encoding="utf-8"))
-    if obj.get("schema") != "kosif.style.atlas.v1":
+    schema = obj.get("schema")
+    expected = {"kosif.style.atlas.v1": 15, "kosif.style.atlas.v2": 86}.get(schema)
+    if expected is None:
         raise ValueError("unexpected registry schema")
     items = obj.get("styles")
-    if not isinstance(items, list) or len(items) != 15:
-        raise ValueError("only the 15 public, reviewed style summaries are registered")
+    if not isinstance(items, list) or len(items) != expected:
+        raise ValueError("registry must hold exactly %d reviewed style methods" % expected)
     ids = set()
     for i, item in enumerate(items, 1):
         if item.get("id") != "FA-" + str(i).zfill(2) or item.get("id") in ids:
@@ -34,7 +60,7 @@ def registry(path=DATA):
         ids.add(item["id"])
         if not isinstance(item.get("technique_cues"), list) or not item["technique_cues"]:
             raise ValueError("empty techniques")
-        if len(item.get("palette", [])) != 4 or any(not isinstance(c, str) or not HEX.fullmatch(c) for c in item["palette"]):
+        if not 2 <= len(item.get("palette", [])) <= 8 or any(not isinstance(c, str) or not HEX.fullmatch(c) for c in item["palette"]):
             raise ValueError("invalid HEX palette")
         if item.get("executor_verified") is not False:
             raise ValueError("style technique cannot imply a verified executor")
@@ -59,7 +85,14 @@ def search(items, query):
         raise ValueError("search must be 1-200 characters")
     aliases = {"سبورة": "whiteboard", "ألوان": "color", "مائي": "watercolor",
                "نيون": "glow", "منتج": "product", "منظور": "isometric",
-               "رياضيات": "math", "ظل": "shadow", "كرتون": "pop", "سينما": "film"}
+               "رياضيات": "math", "ظل": "shadow", "كرتون": "pop", "سينما": "film",
+               "طباشير": "chalkboard", "بكسل": "pixel", "صلصال": "claymation", "ورق": "paper",
+               "أوريغامي": "origami", "مانغا": "manga", "أنمي": "kawaii", "زيت": "impasto",
+               "حبر": "ink", "خط": "type", "خريطة": "map", "بيانات": "chart", "فضاء": "cosmic",
+               "نجوم": "star", "بحر": "deep-sea", "طباعة": "print", "زجاج": "glass", "فسيفساء": "mosaic",
+               "تطريز": "cross-stitch", "ريترو": "retro", "ثلاثي": "3d", "أيزومتري": "isometric",
+               "تيليتكست": "teletext", "ويندوز": "win95", "ماك": "mac", "ذهب": "gold", "رصاص": "pencil",
+               "قلم": "pen", "كولاج": "collage", "مخطط": "blueprint", "أشعة": "x-ray", "حراري": "thermal"}
     for word, meaning in aliases.items():
         if word in q:
             q += " " + meaning
@@ -67,7 +100,9 @@ def search(items, query):
     ranked = []
     for s in items:
         hay = " ".join([s["id"], s["slug"], s["name"], s["category"], s["capability_ar"],
-                        " ".join(s["technique_cues"]), s["motion_direction"]]).casefold()
+                        " ".join(s["technique_cues"]), s["motion_direction"], s.get("look", ""),
+                        s.get("motion", ""), s.get("explainer_grammar", ""), " ".join(s.get("fonts", [])),
+                        " ".join(s.get("recipe_hints", [])), FAMILIES_AR.get(s["category"], "")]).casefold()
         score = sum(3 if w in s["slug"] else 1 for w in words if w in hay)
         if score:
             ranked.append((score, s["id"], s))
@@ -97,11 +132,16 @@ def plan(topic, styles, *, duration=15, aspect="9:16"):
         {"node": "N05", "role": "independent_verification", "input": "candidate_video + source audio",
          "output": "qa_receipt", "owner": "verify_video.py + visual review", "verified": False}
     ]
-    palette = a["palette"][:3] + ([b["palette"][2]] if b else [a["palette"][3]])
+    palette = a["palette"][:3] + ([b["palette"][min(2, len(b["palette"]) - 1)]] if b else a["palette"][3:4])
     return {"schema": "kosif.style.fusion_recipe.v1", "status": "PLAN_ONLY_NOT_RENDERED",
             "topic": topic.strip(), "duration_seconds": duration, "aspect": aspect,
-            "source": a["source_url"], "source_review": "15 public descriptions, not all 86",
+            "source": a["source_url"], "source_review": "86 of 86 method cards (paraphrased); reference code studied, not copied",
+            "production_contract": PRODUCTION_CONTRACT,
+            "engine": {"template": "templates/atlas_explainer.html", "harness": "assets/atlas_harness.js",
+                       "sound": "assets/atlas_sound.js", "render": "scripts/atlas_render.py"},
             "styles": [{"id":s["id"], "name":s["name"], "techniques":s["technique_cues"],
+                        "explainer_grammar": s.get("explainer_grammar"), "fonts": s.get("fonts", []),
+                        "sound_palette": s.get("sound_palette", []), "render_flags": s.get("render_flags", []),
                         "motion":s["motion_direction"], "qa":s["acceptance_checks"],
                         "suggested_tools":s["suggested_tools"], "mix_weight": .85 if s == a and b else .15 if b else 1.0}
                        for s in styles],
@@ -113,7 +153,7 @@ def plan(topic, styles, *, duration=15, aspect="9:16"):
                                "real audio word timing if sync requested", "video dimensions / fps / duration",
                                "original audio integrity", "visual inspection of result"],
             "katana_policy": "ANALYSIS_ONLY_IF_VERIFIED_FREE_READ_ONLY; never generate or spend credits",
-            "claim_boundary": "Method recipe is executable planning output, not proof 15 full render engines run."}
+            "claim_boundary": "Method recipe is executable planning output; only a scaffolded page rendered by atlas_render.py is a real film."}
 
 
 def svg_study(style, topic):
@@ -201,7 +241,7 @@ def svg_study(style, topic):
         body.append('<polygon points="95,211 218,285 218,377 95,303" fill="%s"/>'%p[2])
         body.append('<polygon points="218,285 342,211 342,303 218,377" fill="%s"/>'%p[3])
     else:
-        raise ValueError("unknown technique preview")
+        _generic_motif(style, p, body, circle, rect, line)
     safe_title=html.escape(topic.strip(),quote=True)
     safe_name=html.escape(style["name"],quote=True)
     body.append('<rect x="20" y="20" width="400" height="58" rx="13" fill="%s" opacity=".92"/>'%p[1])
@@ -211,6 +251,130 @@ def svg_study(style, topic):
     return ('<svg xmlns="http://www.w3.org/2000/svg" width="440" height="500" viewBox="0 0 440 500" role="img">'
             '<title>%s — original procedural schematic</title>'%safe_name+
             '<rect width="440" height="500" fill="%s"/>'%p[0]+''.join(body)+'</svg>\n')
+
+
+def _generic_motif(style, p, body, circle, rect, line):
+    """Family-driven original motif for methods without a hand-tuned study; seeded by the style id."""
+    seed = int(hashlib.sha256(style["id"].encode()).hexdigest()[:8], 16)
+    rnd = lambda k: ((seed >> (k % 24)) & 255) / 255.0
+    fam = style["category"]; c = lambda i: p[i % len(p)]
+    if fam in ("Retro Digital", "Retro UI & Neon"):
+        for i in range(12):
+            for j in range(9):
+                if (i * 7 + j * 3 + seed) % 5 < 2: rect(70 + i * 25, 110 + j * 25, 22, 22, c(1 + (i + j) % 3))
+    elif fam in ("Dimensional",):
+        for k in range(4):
+            x, y = 120 + k * 55, 300 - k * 35
+            body.append('<polygon points="%d,%d %d,%d %d,%d %d,%d" fill="%s"/>' % (x, y, x + 60, y - 34, x + 120, y, x + 60, y + 34, c(k + 1)))
+    elif fam in ("Data & Information",):
+        for k in range(7):
+            h = 40 + int(220 * ((k + 1) / 7) * (0.6 + 0.4 * rnd(k * 3)))
+            rect(70 + k * 44, 360 - h, 30, h, c(1 + k % 3))
+        line(60, 362, 380, 362, c(2), 3)
+    elif fam in ("Generative & Type",):
+        for k in range(28):
+            r = 12 + k * 6
+            body.append('<circle cx="220" cy="240" r="%d" fill="none" stroke="%s" stroke-width="2" opacity=".7" transform="rotate(%d 220 240) scale(1 %.2f)"/>' % (r, c(1 + k % 3), k * 13, 0.55 + 0.4 * rnd(k)))
+    elif fam in ("Light & Imaging", "Cosmic & Psychedelic"):
+        for k in range(10):
+            circle(110 + int(220 * rnd(k * 2)), 120 + int(230 * rnd(k * 2 + 1)), 18 + k * 3, c(1 + k % 3), .18)
+        circle(220, 240, 46, c(2), .9)
+    elif fam in ("Print", "Art & Design Movements"):
+        rect(60, 110, 320, 260, c(1)); circle(250, 220, 80, c(2), .9)
+        body.append('<polygon points="70,360 380,160 380,200 70,370" fill="%s"/>' % c(3))
+    else:  # hand-drawn, painterly, paper & craft, illustration, explainer looks
+        for k in range(6):
+            body.append('<path d="M %d %d Q %d %d %d %d" fill="none" stroke="%s" stroke-width="%d" stroke-linecap="round" opacity=".85"/>' % (
+                70, 140 + k * 40, 220, 100 + k * 46 + int(60 * rnd(k)), 370, 150 + k * 38, c(1 + k % 3), 4 + k % 3))
+        circle(220, 250, 54, c(2), .55)
+
+
+def families(items):
+    out = {}
+    for s in items:
+        out.setdefault(s["category"], []).append({"id": s["id"], "name": s["name"]})
+    return [{"family": k, "family_ar": FAMILIES_AR.get(k, k), "count": len(v), "styles": v} for k, v in out.items()]
+
+
+def brief(topic, style, accent=None, *, duration=20, lang="ar"):
+    """Storyboard-first production brief (original wording) that any Claude session can execute."""
+    if not isinstance(topic, str) or not 1 <= len(topic.strip()) <= 2000:
+        raise ValueError("topic must have 1-2000 characters")
+    if type(duration) not in (int, float) or not 6 <= duration <= 180:
+        raise ValueError("duration must be 6-180 seconds")
+    a, b = style, accent
+    L = []
+    L.append("# KOSIF explainer brief — %s (%s · %s)" % (a["name"], a["id"], a["category"]))
+    L.append("")
+    L.append("**المحتوى / content:** " + topic.strip())
+    L.append("**المدة / duration:** %g s · **canvas:** 1280x720 · **engine:** templates/atlas_explainer.html + assets/atlas_harness.js + assets/atlas_sound.js" % duration)
+    L.append("")
+    L.append("## Style card (KOSIF paraphrase)")
+    L.append("- **Look:** " + a.get("look", ""))
+    L.append("- **Motion:** " + a.get("motion", ""))
+    L.append("- **How it explains:** " + a.get("explainer_grammar", ""))
+    L.append("- **Fonts:** " + (", ".join(a.get("fonts", [])) or "hand-built / pixel font") + " · Arabic text: KOSIFJumuah (fonts/kosif-jumuah, OFL)")
+    L.append("- **Palette:** " + " ".join(a["palette"]))
+    L.append("- **Compositing:** " + (", ".join(a.get("composite_ops", [])) or "source-over only"))
+    L.append("- **Render techniques:** " + ", ".join("%s (%s)" % (f, a.get("render_flag_meaning", {}).get(f, "")) for f in a.get("render_flags", [])))
+    L.append("- **Sound palette:** " + (", ".join(a.get("sound_palette", [])) or "medium-true synth set") +
+             " · beds: " + (", ".join(a.get("beds", [])) or "none") + " · music: " + (", ".join(a.get("music", [])) or "none"))
+    L.append("- **Recipe helpers to write:** " + ", ".join(a.get("recipe_hints", [])))
+    if b:
+        L.append("")
+        L.append("## Accent (max 15%%): %s (%s)" % (b["name"], b["id"]))
+        L.append("- Borrow only: " + b.get("explainer_grammar", "").split(";")[0] + "; palette accent " + b["palette"][min(2, len(b["palette"]) - 1)])
+        L.append("- Never let the accent change the primary medium or hide text.")
+    L.append("")
+    L.append("## Production contract")
+    for k, v in PRODUCTION_CONTRACT.items():
+        L.append("- **%s:** %s" % (k, v))
+    L.append("")
+    L.append("## Steps")
+    L.append("1. `python3 scripts/style_atlas_bridge.py scaffold --style %s --out <work>/explainer` then edit BEATS, explainer(), scoreSound()." % a["id"])
+    L.append("2. Storyboard: `python3 scripts/atlas_render.py storyboard --in <work>/explainer/explainer.html --out <work>/storyboard.png` → show it, wait for OK.")
+    L.append("3. `python3 scripts/atlas_render.py check --in <work>/explainer/explainer.html` (deterministic, <100 ms/frame).")
+    L.append("4. `python3 scripts/atlas_render.py render --in <work>/explainer/explainer.html --out <work>/film.mp4` then look at stills and listen before delivery.")
+    L.append("5. `python3 scripts/atlas_render.py bundle --in <work>/explainer/explainer.html --out <work>/explainer_single.html` to share one file.")
+    L.append("")
+    L.append("## Acceptance")
+    for c in a["acceptance_checks"]:
+        L.append("- [ ] " + c)
+    L.append("- [ ] facts and drawn subjects checked for the user's topic (no leftover props from other stories)")
+    L.append("")
+    L.append("_Status: BRIEF_ONLY — no frame has been rendered until atlas_render.py runs._")
+    return "\n".join(L) + "\n"
+
+
+def scaffold(style, out_dir):
+    """Copy the original engine into out_dir with the style's id, palette and font list wired in."""
+    out = Path(out_dir)
+    if out.exists() and any(out.iterdir()):
+        raise ValueError("scaffold target must be empty or new: " + str(out))
+    (out / "assets").mkdir(parents=True, exist_ok=True)
+    for name in ASSETS:
+        (out / "assets" / name).write_text((SKILL / "assets" / name).read_text(encoding="utf-8"), encoding="utf-8")
+    page = TEMPLATE.read_text(encoding="utf-8").replace('src="../assets/', 'src="assets/')
+    font = (SKILL.parents[2] / "fonts" / "kosif-jumuah" / "KOSIFJumuah-Bold.woff2")
+    if font.exists():
+        (out / "fonts").mkdir(exist_ok=True)
+        (out / "fonts" / font.name).write_bytes(font.read_bytes())
+        ofl = font.parent / "OFL.txt"
+        if ofl.exists():
+            (out / "fonts" / "OFL.txt").write_bytes(ofl.read_bytes())
+        page = page.replace("../../../../fonts/kosif-jumuah/", "fonts/")
+    page = page.replace('const STYLE_ID = "FA-23";            // atlas method: Chalkboard Lesson',
+                        'const STYLE_ID = "%s";            // atlas method: %s' % (style["id"], style["name"].replace('"', "'")))
+    note = ("<!-- STYLE %s %s (%s)\n     look: %s\n     motion: %s\n     explains: %s\n     fonts: %s | palette: %s | flags: %s | sounds: %s\n"
+            "     The chalkboard demo below is only a working example of the contract: replace slate(), chalk*() and the story with this style's medium. -->\n") % (
+        style["id"], style["name"], style["category"], style.get("look", ""), style.get("motion", ""), style.get("explainer_grammar", ""),
+        ", ".join(style.get("fonts", [])), " ".join(style["palette"]), ",".join(style.get("render_flags", [])), ",".join(style.get("sound_palette", [])))
+    page = page.replace("<style>", note.replace("--", "-") + "<style>", 1)
+    pal = "const PALETTE = %s; // %s palette (most frequent colours)\n" % (json.dumps(style["palette"]), style["id"])
+    page = page.replace("const C = {", pal + "const C = {", 1)
+    (out / "explainer.html").write_text(page, encoding="utf-8")
+    (out / "STYLE.json").write_text(json.dumps(style, ensure_ascii=False, indent=1) + "\n", encoding="utf-8")
+    return {"status": "SCAFFOLDED_NOT_RENDERED", "dir": str(out), "page": str(out / "explainer.html"), "style": style["id"]}
 
 
 def fresh_write(path, content):
@@ -224,7 +388,12 @@ def main(argv=None):
     ap=argparse.ArgumentParser(description=__doc__)
     sub=ap.add_subparsers(dest="command",required=True)
     sub.add_parser("list")
+    sub.add_parser("families")
     sr=sub.add_parser("search");sr.add_argument("query")
+    sh=sub.add_parser("show");sh.add_argument("style")
+    br=sub.add_parser("brief");br.add_argument("--topic",required=True);br.add_argument("--style",required=True)
+    br.add_argument("--accent");br.add_argument("--duration",type=float,default=20);br.add_argument("--out",required=True)
+    sc=sub.add_parser("scaffold");sc.add_argument("--style",required=True);sc.add_argument("--out",required=True)
     pl=sub.add_parser("plan");pl.add_argument("--topic",required=True)
     pl.add_argument("--style",required=True);pl.add_argument("--accent")
     pl.add_argument("--duration",type=float,default=15);pl.add_argument("--aspect",default="9:16")
@@ -236,7 +405,18 @@ def main(argv=None):
         data=registry()
         items=data["styles"]
         if args.command=="list":
-            print(json.dumps({"scope":data["scope"],"styles":[{"id":s["id"],"name":s["name"],"area":s["primary_area"]} for s in items]},ensure_ascii=False,indent=2))
+            print(json.dumps({"scope":data["scope"],"styles":[{"id":s["id"],"name":s["name"],"family":s["category"],"area":s["primary_area"]} for s in items]},ensure_ascii=False,indent=2))
+        elif args.command=="families":
+            print(json.dumps({"scope":data["scope"],"families":families(items)},ensure_ascii=False,indent=2))
+        elif args.command=="show":
+            print(json.dumps(resolve(items,args.style),ensure_ascii=False,indent=2))
+        elif args.command=="brief":
+            a=resolve(items,args.style); b=resolve(items,args.accent) if args.accent else None
+            if b and b["id"]==a["id"]: raise ValueError("accent must differ from the primary style")
+            fresh_write(args.out,brief(args.topic,a,b,duration=args.duration))
+            print(json.dumps({"status":"BRIEF_CREATED_NOT_RENDERED","file":args.out,"style":a["id"]}))
+        elif args.command=="scaffold":
+            print(json.dumps(scaffold(resolve(items,args.style),args.out),ensure_ascii=False))
         elif args.command=="search":
             print(json.dumps({"matches":[{"id":s["id"],"name":s["name"]} for s in search(items,args.query)]},ensure_ascii=False,indent=2))
         elif args.command=="plan":

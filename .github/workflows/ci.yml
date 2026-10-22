@@ -39,6 +39,8 @@ jobs:
         run: python3 -m unittest discover -s .claude/skills/kosif-superpowers/evals -p 'test_creative_quality_gate.py' -v
       - name: Measured music hypotheses and audio-reactive visuals tests
         run: python3 -m unittest discover -s .claude/skills/kosif-superpowers/evals -p 'test_music_rhythm_engine.py' -v
+      - name: Style atlas 86 + explainer engine (static; browser tests skip without Playwright)
+        run: python3 -m unittest discover -s .claude/skills/kosif-superpowers/evals -p 'test_*atlas_*.py' -v
       - name: Reference visual observation and color-to-edit integration tests
         run: python3 -m unittest discover -s .claude/skills/kosif-superpowers/evals -p 'test_reference_visual*.py' -v
       - name: Reference Edit Engine Python and project generation tests

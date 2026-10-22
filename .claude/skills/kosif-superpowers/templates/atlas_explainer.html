@@ -1,0 +1,193 @@
+<!doctype html>
+<html lang="ar">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>KOSIF Atlas Explainer</title>
+<!-- KOSIF A15 explainer template (original). Style demo: FA-23 Chalkboard Lesson method.
+     Replace STYLE_ID, BEATS, explainer() and scoreSound() to retell any topic in any of the 86 atlas methods.
+     ?storyboard=1 shows the storyboard grid (one key frame per beat) for approval before the full build. -->
+<style>
+  @font-face { font-family: "KOSIFJumuah"; src: url("../../../../fonts/kosif-jumuah/KOSIFJumuah-Bold.woff2") format("woff2"); font-weight: 700; }
+  :root { --bg: #101213; --fg: #e9ece6; --muted: #8b918a; }
+  html, body { margin: 0; height: 100%; background: var(--bg); color: var(--fg); font: 14px system-ui, sans-serif; }
+  #stage { position: fixed; inset: 0 0 48px 0; display: flex; align-items: center; justify-content: center; }
+  canvas#c { background: #000; max-width: 100%; max-height: 100%; aspect-ratio: 16/9; }
+  #bar { position: fixed; left: 0; right: 0; bottom: 0; height: 48px; display: flex; gap: 10px; align-items: center; padding: 0 16px; background: #1a1d1e; }
+  #bar button { background: #2a2f30; color: var(--fg); border: 0; border-radius: 6px; padding: 6px 12px; cursor: pointer; }
+  #scrub { flex: 1; }
+  #time { font-variant-numeric: tabular-nums; color: var(--muted); min-width: 92px; }
+  #sb { display: none; padding: 16px; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); gap: 14px; }
+  #sb figure { margin: 0; background: #1a1d1e; border-radius: 8px; overflow: hidden; }
+  #sb canvas { width: 100%; display: block; }
+  #sb figcaption { padding: 8px 10px; direction: rtl; line-height: 1.5; }
+  body.storyboard #stage, body.storyboard #bar { display: none; }
+  body.storyboard #sb { display: grid; }
+</style>
+</head>
+<body>
+<div id="stage"><canvas id="c" width="1280" height="720"></canvas></div>
+<div id="bar">
+  <button id="play">▶</button>
+  <input id="scrub" type="range" min="0" max="1000" value="0">
+  <span id="time">0.00 / 0.00</span>
+  <button id="snd">صوت: تشغيل</button>
+  <label><input id="loop" type="checkbox" checked> تكرار</label>
+</div>
+<div id="sb"></div>
+<script src="../assets/atlas_harness.js"></script>
+<script src="../assets/atlas_sound.js"></script>
+<script>
+"use strict";
+// ======================= STYLE + STORY (edit this block) =======================
+const STYLE_ID = "FA-23";            // atlas method: Chalkboard Lesson
+const FONT = "KOSIFJumuah, 'DejaVu Sans', sans-serif";
+const DURATION = 17;                 // seconds
+window.DURATION = DURATION;
+const C = { slate: "#2c4639", chalk: "#ecece4", pink: "#f29ab8", yellow: "#f3dd7a", blue: "#9fd3ef", wood: "#8a5a30" };
+// One beat per idea; something changes every 1-2 s inside each beat.
+const BEATS = [
+  { at: 0.0,  dur: 2.2, title: "الخطّاف: السؤال يُكتب بالطباشير", text: "كيف يتعلّم الذكاء الاصطناعي؟", sound: "chalk stroke + tick" },
+  { at: 2.2,  dur: 3.0, title: "الأمثلة: قطة وكلب يدخلان النموذج", text: "أمثلة مُعلَّمة → النموذج", sound: "chalk strokes + tock" },
+  { at: 5.2,  dur: 3.0, title: "التخمين: إجابة خاطئة تُحاط بالوردي", text: "يخمّن: «كلب» ✗", sound: "error + chalk ring" },
+  { at: 8.2,  dur: 3.0, title: "التصحيح: المقابض (الأوزان) تدور والعدّاد يكبر", text: "يعدّل أوزانه", sound: "count ticks" },
+  { at: 11.2, dur: 3.8, title: "الدقة ترتفع على السبورة التالية", text: "61% → 97%", sound: "chalk + ding" },
+  { at: 15.0, dur: 2.0, title: "الخلاصة", text: "أمثلة + تصحيح = تعلّم", sound: "success" },
+];
+// camera keys along one long slate (world 4000 x 720)
+const CAM = [ { t: 0, x: 640, y: 360, zoom: 1 }, { t: 2.0, x: 640, y: 360, zoom: 1 }, { t: 2.8, x: 1500, y: 360, zoom: 1 },
+  { t: 7.9, x: 1500, y: 360, zoom: 1.04 }, { t: 8.6, x: 1520, y: 380, zoom: 1.1 }, { t: 10.9, x: 1520, y: 380, zoom: 1.1 },
+  { t: 11.8, x: 2500, y: 360, zoom: 1 }, { t: 14.8, x: 2500, y: 360, zoom: 1 }, { t: 15.6, x: 3240, y: 360, zoom: 1 } ];
+
+function slate(ctx) { // cached static board texture: slate + eraser clouds from past lessons
+  const tex = KH.cached("slate", 4000, 720, (g, w, h) => {
+    g.fillStyle = C.slate; g.fillRect(0, 0, w, h);
+    const n = KH.noise(4), r = KH.rng("slate"), img = g.getImageData(0, 0, w, h);
+    for (let y = 0; y < h; y += 1) for (let x = 0; x < w; x += 1) { const i = (y * w + x) * 4, m = 1 + n.fbm2(x / 260, y / 260, 3) * 0.12 + (r() - 0.5) * 0.06; img.data[i] *= m; img.data[i + 1] *= m; img.data[i + 2] *= m; }
+    g.putImageData(img, 0, 0);
+    for (let k = 0; k < 22; k++) { const cx = r() * w, cy = r() * h, rx = 120 + r() * 260; const gr = g.createRadialGradient(cx, cy, 10, cx, cy, rx); gr.addColorStop(0, "rgba(236,236,228,0.07)"); gr.addColorStop(1, "rgba(236,236,228,0)"); g.fillStyle = gr; g.beginPath(); g.ellipse(cx, cy, rx, rx * (0.3 + r() * 0.4), r() * 3, 0, 7); g.fill(); }
+  });
+  ctx.drawImage(tex, 0, 0);
+}
+function chalkText(ctx, s, x, y, p, size, color, seed) { // chalk lettering revealed right-to-left
+  ctx.save(); ctx.font = "700 " + size + "px " + FONT; ctx.direction = "rtl"; ctx.textAlign = "center"; ctx.textBaseline = "middle";
+  const w = ctx.measureText(s).width + 20; ctx.beginPath(); ctx.rect(x + w / 2 - w * KH.clamp(p), y - size, w * KH.clamp(p), size * 2); ctx.clip();
+  const r = KH.rng(seed || s); ctx.fillStyle = color || C.chalk;
+  for (let k = 0; k < 3; k++) { ctx.globalAlpha = 0.45 + r() * 0.3; ctx.fillText(s, x + r.range(-1, 1), y + r.range(-1, 1)); }
+  ctx.restore();
+}
+function chalkLine(ctx, pts, p, color, w, seed) { return KH.roughStroke(ctx, pts, p, { color: color || C.chalk, width: w || 5, passes: 4, wobble: 1.3, seed: seed || 1, alpha: 0.85 }); }
+function animal(ctx, x, y, kind, p, seed) { // simple chalk cat / dog icon
+  const head = KH.arcPts(x, y, 46, 0, Math.PI * 2, 60); chalkLine(ctx, head, KH.span(p, 0, 0.5), C.chalk, 5, seed);
+  const ears = kind === "cat" ? [[[x - 40, y - 22], [x - 30, y - 70], [x - 10, y - 44]], [[x + 40, y - 22], [x + 30, y - 70], [x + 10, y - 44]]]
+                              : [[[x - 38, y - 30], [x - 64, y + 10], [x - 44, y + 20]], [[x + 38, y - 30], [x + 64, y + 10], [x + 44, y + 20]]];
+  ears.forEach((e, i) => chalkLine(ctx, e, KH.span(p, 0.45, 0.75), C.chalk, 5, seed + i + 3));
+  ctx.save(); ctx.fillStyle = C.chalk; ctx.globalAlpha = 0.8 * KH.span(p, 0.7, 0.85); [[-16, -6], [16, -6]].forEach(([dx, dy]) => { ctx.beginPath(); ctx.arc(x + dx, y + dy, 5, 0, 7); ctx.fill(); }); ctx.restore();
+  chalkLine(ctx, kind === "cat" ? [[x - 10, y + 14], [x, y + 20], [x + 10, y + 14]] : [[x - 12, y + 16], [x, y + 26], [x + 12, y + 16]], KH.span(p, 0.8, 1), C.chalk, 4, seed + 9);
+}
+function ring(ctx, x, y, rx, ry, p, color, seed) { return chalkLine(ctx, KH.sample((u) => [x + Math.cos(-1 + u * 7.2) * rx * (1 + u * 0.06), y + Math.sin(-1 + u * 7.2) * ry], 80), p, color || C.pink, 6, seed || 7); }
+
+// ---------------- the explainer: a pure function of t ----------------
+function explainer(ctx, W, H_, t) {
+  ctx.save(); KH.camera(ctx, KH.camAt(t, CAM)); slate(ctx);
+  // beat 1: hook
+  chalkText(ctx, "كيف يتعلّم الذكاء الاصطناعي؟", 640, 330, KH.span(t, 0.2, 1.8, "out"), 64, C.chalk, "q");
+  chalkLine(ctx, KH.lineTo([360, 400], [920, 400]), KH.span(t, 1.4, 2.0), C.yellow, 4, 21);
+  // beat 2: examples -> model
+  animal(ctx, 1080, 260, "cat", KH.span(t, 2.4, 3.4), 30); chalkText(ctx, "قطة", 1080, 350, KH.span(t, 3.2, 3.6), 34, C.blue, "c");
+  animal(ctx, 1080, 500, "dog", KH.span(t, 3.0, 4.0), 40); chalkText(ctx, "كلب", 1080, 590, KH.span(t, 3.8, 4.2), 34, C.blue, "d");
+  const a1 = KH.quadPts([1160, 270], [1300, 300], [1400, 360]), a2 = KH.quadPts([1160, 500], [1300, 470], [1400, 400]);
+  ctx.save(); ctx.strokeStyle = C.chalk; ctx.lineWidth = 4; KH.arrowHead(ctx, chalkLine(ctx, a1, KH.span(t, 4.0, 4.6), C.chalk, 5, 51), a1[a1.length - 3]); KH.arrowHead(ctx, chalkLine(ctx, a2, KH.span(t, 4.2, 4.8), C.chalk, 5, 52), a2[a2.length - 3]); ctx.restore();
+  const box = [[1420, 280], [1720, 280], [1720, 480], [1420, 480], [1420, 280]];
+  chalkLine(ctx, box, KH.span(t, 3.4, 4.4), C.chalk, 6, 60); chalkLine(ctx, KH.wobble(box, 3, 61), KH.span(t, 3.6, 4.6), C.chalk, 3, 62);
+  chalkText(ctx, "النموذج", 1570, 330, KH.span(t, 4.4, 4.9), 44, C.yellow, "m");
+  // beat 3: guess (wrong) + pink ring + error arrow back
+  if (t > 5.2) {
+    chalkText(ctx, "؟", 1385, 110, KH.span(t, 5.2, 5.5), 60, C.chalk, "qq");
+    animal(ctx, 1300, 160, "cat", KH.span(t, 5.3, 6.0), 70);
+    const fadeGuess = 1 - KH.span(t, 8.2, 8.6); // the wrong guess is wiped before the knobs appear
+    if (fadeGuess > 0) { ctx.save(); ctx.globalAlpha = fadeGuess;
+      chalkText(ctx, "يخمّن: «كلب»", 1570, 420, KH.span(t, 6.0, 6.6), 40, C.chalk, "g");
+      ring(ctx, 1575, 420, 140, 46, KH.span(t, 6.7, 7.3), C.pink, 71); ctx.restore(); }
+    const back = KH.quadPts([1500, 500], [1460, 640], [1160, 640]); ctx.save(); ctx.strokeStyle = C.pink; ctx.lineWidth = 4;
+    KH.arrowHead(ctx, chalkLine(ctx, back, KH.span(t, 7.3, 8.0), C.pink, 5, 72), back[back.length - 3]); ctx.restore();
+    chalkText(ctx, "الخطأ يعود للنموذج", 1330, 680, KH.span(t, 7.6, 8.1), 30, C.pink, "e");
+  }
+  // beat 4: knobs (weights) turn + counter
+  if (t > 8.5) {
+    for (let i = 0; i < 3; i++) { const kx = 1480 + i * 90, ky = 435, ang = -2 + KH.ease.back(KH.span(t, 8.6 + i * 0.3, 9.4 + i * 0.3)) * (1.2 + i * 0.5);
+      ring(ctx, kx, ky, 28, 28, KH.span(t, 8.6 + i * 0.1, 9.1 + i * 0.1), C.chalk, 80 + i);
+      chalkLine(ctx, [[kx, ky], [kx + Math.cos(ang) * 24, ky + Math.sin(ang) * 24]], KH.span(t, 8.9, 9.1), C.yellow, 5, 90 + i); }
+    const n = KH.counter(t, 8.8, 10.8, 0, 1000000);
+    chalkText(ctx, n.toLocaleString("ar-EG") + " مثال", 1570, 230, KH.span(t, 8.6, 8.9), 48, C.yellow, "n");
+  }
+  // beat 5: accuracy chart on the next stretch of board
+  if (t > 11.0) {
+    chalkLine(ctx, [[2170, 170], [2170, 600], [2860, 600]], KH.span(t, 11.4, 12.2), C.chalk, 5, 100);
+    chalkText(ctx, "الدقة", 2200, 140, KH.span(t, 11.8, 12.2), 36, C.blue, "acc");
+    const vals = [0.61, 0.7, 0.77, 0.9, 0.97], pts = vals.map((v, i) => [2230 + i * 140, 600 - (v - 0.5) * 820]);
+    const curve = []; for (let i = 0; i < pts.length - 1; i++) curve.push(...KH.lineTo(pts[i], pts[i + 1], 18));
+    const tip = chalkLine(ctx, curve, KH.span(t, 12.2, 14.0, "inOut"), C.yellow, 6, 101);
+    if (tip) { const pct = Math.round(61 + (97 - 61) * KH.span(KH.onFps(t, 12), 12.2, 14.0, "inOut")); chalkText(ctx, pct + "%", tip[0] + 10, tip[1] - 54, 1, 64, C.chalk, "p" + pct); }
+    ring(ctx, pts[4][0] + 10, pts[4][1] - 54, 92, 52, KH.span(t, 14.1, 14.7), C.pink, 102);
+  }
+  // beat 6: takeaway
+  chalkText(ctx, "أمثلة + تصحيح = تعلّم", 3240, 360, KH.span(t, 15.6, 16.6, "out"), 72, C.chalk, "take");
+  chalkLine(ctx, KH.lineTo([2930, 430], [3550, 430]), KH.span(t, 16.3, 16.9), C.pink, 5, 110);
+  ctx.restore();
+  // screen-space finishing: worn wood frame + chalk-dust grain + vignette (every frame)
+  ctx.save(); ctx.strokeStyle = C.wood; ctx.lineWidth = 26; ctx.strokeRect(0, 0, W, H_); ctx.strokeStyle = "rgba(0,0,0,0.35)"; ctx.lineWidth = 3; ctx.strokeRect(13, 13, W - 26, H_ - 26); ctx.restore();
+  KH.grain(ctx, t, 0.06); KH.vignette(ctx, 0.38);
+}
+
+// sound score: events land on the same times the picture uses
+function scoreSound(k) {
+  k.bed("room", 0, DURATION);
+  k.play("stroke", 0.2, { material: "chalk", dur: 1.6 }); k.play("stroke", 1.4, { material: "chalk", dur: 0.6, gain: 0.7 });
+  k.play("stroke", 2.4, { material: "chalk", dur: 1.0 }); k.play("stroke", 3.0, { material: "chalk", dur: 1.0 });
+  k.play("stroke", 3.4, { material: "chalk", dur: 1.2 }); k.play("tock", 4.6); k.play("tock", 4.8, { pitch: 1.2 });
+  k.play("stroke", 6.0, { material: "chalk", dur: 0.6 }); k.play("error", 6.6); k.play("erase", 8.2, { dur: 0.4 }); k.play("stroke", 6.7, { material: "chalk", dur: 0.6 });
+  k.play("stroke", 7.3, { material: "chalk", dur: 0.7, gain: 0.8 });
+  [8.6, 8.9, 9.2].forEach((x, i) => k.play("click", x + 0.8, { gain: 0.8 - i * 0.1 }));
+  k.play("count", 8.8, { dur: 2.0, n: 22 });
+  k.play("stroke", 11.4, { material: "chalk", dur: 0.8 }); k.play("stroke", 12.2, { material: "chalk", dur: 1.8 });
+  k.play("ding", 14.0); k.play("stroke", 14.1, { material: "chalk", dur: 0.6 });
+  k.play("whoosh", 15.0, { dur: 0.6 }); k.play("stroke", 15.6, { material: "chalk", dur: 1.0 }); k.play("success", 16.4, { gain: 0.8 });
+}
+window.scoreSound = scoreSound;
+
+// ======================= player (generic, keep) =======================
+const cv = document.getElementById("c"), ctx = cv.getContext("2d");
+function drawFrame(t) { ctx.setTransform(1, 0, 0, 1, 0, 0); ctx.clearRect(0, 0, 1280, 720); explainer(ctx, 1280, 720, KH.clamp(t, 0, DURATION)); }
+let playing = false, t0 = 0, start = 0, stopSound = null, soundOn = true;
+// seek pauses the player and pins the clock, so a frame-by-frame renderer always captures exactly t
+window.seek = (t) => { if (playing) pause(); t0 = t; drawFrame(t); };
+const $ = (id) => document.getElementById(id), scrub = $("scrub"), timeEl = $("time");
+function now() { return playing ? (performance.now() - start) / 1000 + t0 : t0; }
+function stopSnd() { if (stopSound) { stopSound(); stopSound = null; } }
+function play() { playing = true; start = performance.now(); $("play").textContent = "❚❚"; stopSnd(); if (soundOn) stopSound = KSound.live(scoreSound, t0); }
+function pause() { t0 = now(); playing = false; $("play").textContent = "▶"; stopSnd(); }
+$("play").onclick = () => (playing ? pause() : play());
+$("snd").onclick = () => { soundOn = !soundOn; $("snd").textContent = "صوت: " + (soundOn ? "تشغيل" : "إيقاف"); if (playing) { pause(); play(); } };
+scrub.oninput = () => { const wasPlaying = playing; if (playing) pause(); t0 = (scrub.value / 1000) * DURATION; drawFrame(t0); if (wasPlaying) play(); };
+function loop() {
+  let t = now();
+  if (playing && t >= DURATION) { if ($("loop").checked) { t0 = 0; play(); t = 0; } else { pause(); t0 = DURATION; t = DURATION; } }
+  drawFrame(t); scrub.value = Math.round((t / DURATION) * 1000); timeEl.textContent = t.toFixed(2) + " / " + DURATION.toFixed(2);
+  requestAnimationFrame(loop);
+}
+function storyboard() {
+  document.body.classList.add("storyboard"); const sb = $("sb");
+  BEATS.forEach((b, i) => {
+    const f = document.createElement("figure"), c = document.createElement("canvas"); c.width = 1280; c.height = 720;
+    explainer(c.getContext("2d"), 1280, 720, Math.min(DURATION, b.at + b.dur * 0.85));
+    const cap = document.createElement("figcaption");
+    cap.textContent = (i + 1) + " · " + b.at.toFixed(1) + "–" + (b.at + b.dur).toFixed(1) + "ث · " + b.title + " · النص: " + b.text + " · الصوت: " + b.sound;
+    f.append(c, cap); sb.append(f);
+  });
+}
+window.ATLAS = { STYLE_ID, BEATS, DURATION };
+KH.ready(["KOSIFJumuah"]).then(() => { window.__ready = true; if (/storyboard=1/.test(location.search)) storyboard(); else { drawFrame(0); requestAnimationFrame(loop); } });
+</script>
+</body>
+</html>
