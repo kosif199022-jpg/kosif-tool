@@ -1,0 +1,32 @@
+name: SEE Pro Cognitive Fusion Checks
+on:
+  push:
+    branches:
+      - main
+    paths:
+      - ".github/workflows/see-pro-cognitive-checks.yml"
+      - ".claude/skills/kosif-superpowers/scripts/see_pro_cognitive_gate.py"
+      - ".claude/skills/kosif-superpowers/evals/test_see_pro_cognitive_gate.py"
+      - ".claude/skills/kosif-superpowers/references/protocol/A12-see-pro-cognitive-fusion.md"
+      - ".claude/skills/kosif-superpowers/PROTOCOL.md"
+      - ".claude/skills/kosif-superpowers/SESSION_PROMPT.md"
+      - "CLAUDE.md"
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  cognitive-gates:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+      - name: Python version
+        run: python3 --version
+      - name: SEE Pro cognitive self-test
+        run: python3 .claude/skills/kosif-superpowers/scripts/see_pro_cognitive_gate.py --self-test
+      - name: SEE Pro deterministic unit and shadow cases
+        run: python3 -m unittest discover -s .claude/skills/kosif-superpowers/evals -p test_see_pro_cognitive_gate.py -v
+      - name: USIP protocol structure and back-compatibility
+        run: python3 -m unittest discover -s .claude/skills/kosif-superpowers/evals -p test_protocol_structure.py -v
+      - name: SKILL / catalog / protocol integrity checks
+        run: python3 .claude/skills/kosif-superpowers/scripts/check_skill.py
