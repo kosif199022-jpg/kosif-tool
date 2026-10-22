@@ -1845,9 +1845,8 @@
    "kind": "cli",
    "evidence": "tested-here",
    "families": [
-    "reasoning",
-    "skill-integration",
-    "eval-trust"
+    "planning-execution",
+    "self-discovery"
    ],
    "requires": {
     "python": [],
@@ -10045,9 +10044,8 @@
    "kind": "cli",
    "evidence": "untested",
    "families": [
-    "skill-integration",
-    "learning",
-    "privacy"
+    "self-discovery",
+    "planning-execution"
    ],
    "requires": {
     "python": [],
