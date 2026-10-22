@@ -10,6 +10,9 @@ on:
       - ".claude/skills/kosif-superpowers/evals/test_see_pro_cognitive_gate.py"
       - ".claude/skills/kosif-superpowers/references/protocol/A10-self-evolution.md"
       - ".claude/skills/kosif-superpowers/references/protocol/A12-see-pro-cognitive-fusion.md"
+      - ".claude/skills/kosif-superpowers/evals/test_katana_analysis_policy.py"
+      - ".claude/skills/kosif-superpowers/references/protocol/A8-motion-brain.md"
+      - ".claude/skills/kosif-superpowers/references/guides/edit.md"
       - ".claude/skills/kosif-superpowers/PROTOCOL.md"
       - ".claude/skills/kosif-superpowers/SESSION_PROMPT.md"
       - ".claude/skills/kosif-superpowers/SKILL.md"
@@ -29,6 +32,8 @@ jobs:
         run: python3 .claude/skills/kosif-superpowers/scripts/see_pro_cognitive_gate.py --self-test
       - name: SEE Pro deterministic unit and shadow cases
         run: python3 -m unittest discover -s .claude/skills/kosif-superpowers/evals -p test_see_pro_cognitive_gate.py -v
+      - name: Katana analysis-only generation-credit and media policy
+        run: python3 -m unittest discover -s .claude/skills/kosif-superpowers/evals -p test_katana_analysis_policy.py -v
       - name: USIP protocol structure and back-compatibility
         run: python3 -m unittest discover -s .claude/skills/kosif-superpowers/evals -p test_protocol_structure.py -v
       - name: Rebuild canonical KOSIF tool registry outputs
