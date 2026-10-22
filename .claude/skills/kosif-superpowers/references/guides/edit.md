@@ -36,6 +36,8 @@ Commands below are typed from the skill folder (`.claude/skills/kosif-superpower
 6. [Footage-first FFmpeg film rendering and REA-derived editor benchmark (2026-10-19)](#footage-first-ffmpeg-film-rendering-and-rea-derived-editor-benchmark-2026-10-19)
 7. [Global Video Platform Intelligence / Video Workflow Bridge (2026-10-19)](#global-video-platform-intelligence--video-workflow-bridge-2026-10-19)
 
+**Katana analysis-only policy:** إذا طلب المستخدم تحليل صور/مقاطع أو مرجع مونتاج، طبّق [سياسة Katana في A8](../protocol/A8-motion-brain.md#katana--higgsfield--سياسة-التحليل-فقط-وحفظ-الرصيد): النتيجة ردود وتحليل نصي، وليس إعادة إنشاء/إخراج صور أو فيديو عبر Katana، ولا استخدام أرصدة توليد Higgsfield. لا تفترض أن Katana لديها واجهة تحليل read-only؛ عند عدم إثباتها استخدم أدوات فحص KOSIF/FFmpeg أو الرؤية مباشرة مع تمييز المصدر.
+
 ## KOSIF Reference Edit Engine — إعادة بناء المونتاج قابل للتعديل
 
 عندما يطلب المستخدم محاكاة **طريقة مونتاج فيديو مرجعي** أو Kit شبيه بفكرة Katana، افتح [قدرة إعادة بناء المونتاج التنفيذية](../reference-edit-execution.md)، ولا تكتفِ بعرض المستودعات. المحرك الجديد يستخرج من تقرير FFmpeg توقيت القطعات، ويحوّلها إلى لقطات بإطارات دقيقة ومشروع Remotion بملفات React أصلية، ويتيح نسخ **لقطات المالك فقط** من Manifest محمي. يدعم إيقاع الصوت وتوقيت الكلمات المراجع، دون اختلاق تفسير للأغنية.
