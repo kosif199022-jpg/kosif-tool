@@ -224,6 +224,8 @@ def approved_review(path: Path, sig: str) -> dict:
 
 
 def write_atomic(path: Path, obj: dict) -> None:
+    if path.parent.is_symlink():
+        raise ValueError('refusing symlinked registry parent')
     path.parent.mkdir(parents=True,exist_ok=True)
     if path.is_symlink():
         raise ValueError('refusing symlinked registry')
@@ -242,6 +244,8 @@ def write_atomic(path: Path, obj: dict) -> None:
 
 def registry(root: Path) -> dict:
     p=root/'_shared'/'registry.json'
+    if p.parent.is_symlink():
+        raise ValueError('refusing symlinked shared folder')
     if not p.exists():
         return {'schema':SCHEMA,'items':{}}
     obj=read(p)
@@ -283,6 +287,8 @@ def main(argv=None) -> int:
         if sig not in found or report[sig]['tier']!='shared_eligible':
             raise ValueError('need three independently proven recipes in three isolated projects')
         review=root/'_shared'/'reviews'/f'{sig}.json'
+        if review.parent.is_symlink() or review.parent.parent.is_symlink():
+            raise ValueError('refusing symlinked review folder')
         approved_review(review,sig)
         # Match invariant: all proposals under one signature have the same typed graph.
         graphs=[public_graph(r['proposal']) for r in found[sig]]
