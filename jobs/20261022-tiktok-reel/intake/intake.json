@@ -1,0 +1,42 @@
+{
+ "source": "/home/user/kosif-tool/jobs/20261022-tiktok-reel/source/src.mp4",
+ "sha256": "bdb1d09d24ea7e7e35f8233402f10f2ccc0c174771011f88f16fcf3b269a619e",
+ "kind": "video",
+ "probe": {
+  "duration": 14.7,
+  "size_bytes": 1133627,
+  "container": "mov,mp4,m4a,3gp,3g2,mj2",
+  "video": {
+   "codec": "hevc",
+   "width": 720,
+   "height": 1280,
+   "fps": 30.0
+  },
+  "audio": {
+   "codec": "aac",
+   "sample_rate": 44100,
+   "channels": 2
+  }
+ },
+ "measured_at": "2026-10-22T05:52:42Z",
+ "loudness": {
+  "integrated_lufs": -16.9,
+  "true_peak_dbfs": -4.4
+ },
+ "audio_cues": {
+  "file": "intake/work/cues.json",
+  "onset_candidates": 5,
+  "aligned_words": 0,
+  "ok": true
+ },
+ "words_hint": "no words.json: put WhisperX/faster-whisper aligned words at JOB/words.json for word-synced text",
+ "cuts": {
+  "file": "intake/work/cuts.json",
+  "count": 1,
+  "seconds": [
+   13.433
+  ],
+  "ok": true
+ },
+ "contact_sheet": "intake/work/contact.jpg"
+}
