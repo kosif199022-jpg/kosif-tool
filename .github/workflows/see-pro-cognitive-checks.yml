@@ -6,6 +6,7 @@ on:
     paths:
       - ".github/workflows/see-pro-cognitive-checks.yml"
       - ".claude/skills/kosif-superpowers/scripts/see_pro_cognitive_gate.py"
+      - ".claude/skills/kosif-superpowers/data/tools.json"
       - ".claude/skills/kosif-superpowers/evals/test_see_pro_cognitive_gate.py"
       - ".claude/skills/kosif-superpowers/references/protocol/A10-self-evolution.md"
       - ".claude/skills/kosif-superpowers/references/protocol/A12-see-pro-cognitive-fusion.md"
@@ -15,7 +16,7 @@ on:
       - "CLAUDE.md"
   workflow_dispatch:
 permissions:
-  contents: read
+  contents: write
 jobs:
   cognitive-gates:
     runs-on: ubuntu-24.04
@@ -30,5 +31,25 @@ jobs:
         run: python3 -m unittest discover -s .claude/skills/kosif-superpowers/evals -p test_see_pro_cognitive_gate.py -v
       - name: USIP protocol structure and back-compatibility
         run: python3 -m unittest discover -s .claude/skills/kosif-superpowers/evals -p test_protocol_structure.py -v
+      - name: Rebuild canonical KOSIF tool registry outputs
+        run: python3 .claude/skills/kosif-superpowers/scripts/hub.py build
       - name: SKILL / catalog / protocol integrity checks
         run: python3 .claude/skills/kosif-superpowers/scripts/check_skill.py
+      - name: Verify deterministic generated diff and publish to main
+        if: github.event_name == 'push' && github.ref == 'refs/heads/main'
+        run: |
+          git add -- \
+            .claude/skills/kosif-superpowers/manifest.json \
+            .claude/skills/kosif-superpowers/references/INDEX.md \
+            .claude/skills/kosif-superpowers/SKILL.md \
+            .claude/skills/kosif-superpowers/data/powers/runnable-tools.json \
+            .claude/skills/kosif-superpowers/references/guides/
+          git diff --cached --check
+          if ! git diff --cached --quiet; then
+            git config user.name 'github-actions[bot]'
+            git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+            git commit -m 'build(kosif): refresh generated tool registry outputs for SEE Pro'
+            git push origin HEAD:main
+          else
+            echo 'Generated outputs already current'
+          fi
