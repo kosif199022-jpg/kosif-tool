@@ -12271,24 +12271,6 @@
    "summary": ""
   },
   {
-   "path": "references/CLAUDE_3_MINUTE_MAP.md",
-   "title": "Claude: understand KOSIF in under three minutes",
-   "area": "discover",
-   "summary": ""
-  },
-  {
-   "path": "references/REA_CREATIVE_DISCOVERY_2000_20261019.md",
-   "title": "KOSIF 2,000-Source Creative Discovery and REA Evidence Audit",
-   "area": "sources",
-   "summary": ""
-  },
-  {
-   "path": "references/SMART_CAPABILITY_GROUPS.md",
-   "title": "KOSIF unified capability groups",
-   "area": "discover",
-   "summary": ""
-  },
-  {
    "path": "references/app-feature-transfer.md",
    "title": "قدرات التطبيقات المحللة — Analyzed app capabilities (APPX)",
    "area": "image",
@@ -12429,6 +12411,12 @@
   {
    "path": "references/claude-auto-local-first.md",
    "title": "Claude Auto Mode: local-first KOSIF Superpowers",
+   "area": "discover",
+   "summary": ""
+  },
+  {
+   "path": "references/CLAUDE_3_MINUTE_MAP.md",
+   "title": "Claude: understand KOSIF in under three minutes",
    "area": "discover",
    "summary": ""
   },
@@ -12637,6 +12625,12 @@
    "summary": ""
   },
   {
+   "path": "references/REA_CREATIVE_DISCOVERY_2000_20261019.md",
+   "title": "KOSIF 2,000-Source Creative Discovery and REA Evidence Audit",
+   "area": "sources",
+   "summary": ""
+  },
+  {
    "path": "references/reference-edit-execution.md",
    "title": "KOSIF Reference Edit Engine — executable source-style-to-timeline transfer",
    "area": "edit",
@@ -12681,6 +12675,12 @@
   {
    "path": "references/self-discovery.md",
    "title": "اكتشف قدراتك الحقيقية — Self-discovery protocol",
+   "area": "discover",
+   "summary": ""
+  },
+  {
+   "path": "references/SMART_CAPABILITY_GROUPS.md",
+   "title": "KOSIF unified capability groups",
    "area": "discover",
    "summary": ""
   },
