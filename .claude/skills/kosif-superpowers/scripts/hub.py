@@ -23,6 +23,7 @@ read-only except `build` (writes the three generated files) and `run` (runs the 
 from __future__ import annotations
 
 import argparse
+import difflib
 import importlib.metadata
 import importlib.util
 import json
@@ -853,6 +854,16 @@ def cmd_build(a) -> int:
     if a.check:
         if stale:
             print("stale: " + ", ".join(p.relative_to(SKILL).as_posix() for p in stale) + " — run: python3 scripts/hub.py build", file=sys.stderr)
+            for p in stale:
+                if p in (MANIFEST, INDEX):
+                    previous = p.read_text(encoding="utf-8") if p.is_file() else ""
+                    lines = list(difflib.unified_diff(previous.splitlines(), outs[p].splitlines(),
+                                                     fromfile="committed/" + p.name,
+                                                     tofile="generated/" + p.name, n=1))
+                    for line in lines[:24]:
+                        print(line, file=sys.stderr)
+                    if len(lines) > 24:
+                        print("... diff truncated", file=sys.stderr)
             return 1
         print(f"hub build --check: manifest.json, references/INDEX.md and the SKILL.md tool block are current ({len(reg['tools'])} tools)")
         return 0
