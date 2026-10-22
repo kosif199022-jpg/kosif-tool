@@ -3501,5 +3501,75 @@
   ],
   "section": "إضافات v3 — v3 additions",
   "source": ""
+ },
+ {
+  "id": "ARAB-91",
+  "family": "typography-arabic",
+  "domain": "craft",
+  "name_ar": "مصمم: نص عربي قابل للتعديل بتشكيل HarfRust وكشيدة",
+  "name_en": "Mosamem: editable Arabic text with HarfRust shaping and kashida justification",
+  "status": "install",
+  "what": "محرك نص يشكّل العربية بـ HarfRust (أشكال الاتصال، لام ألف، التشكيل)، ويخلط العربية واللاتينية باتجاه صحيح، ويعكس الأقواس، ويضبط بالكشيدة، ويستعير الحرف الناقص من خط مرفق آخر؛ اختبارات التشكيل الذهبية نجحت هنا. — HarfRust shaping (joining forms, lam-alef, stacked marks), correct mixed Arabic/Latin order, mirrored brackets, kashida justification and fallback between bundled fonts; its shaping goldens passed here.",
+  "when": "كتابة عربية صحيحة على صورة أو تصميم / correct Arabic text on an image or design",
+  "how": "In the app: the Text tool keeps text editable. Evidence: the 13 text tests (lam_alef_becomes_a_ligature, letters_take_their_joining_forms, justification_with_spaces_and_with_kashida, mixed_arabic_and_latin_read_correctly, diacritics_stack_and_nothing_is_missing …) passed in `cargo test -p mosamem-core`. For rendering inside this repo use the existing KOSIF Arabic text routes (HarfBuzz/Pillow-raqm); link Mosamem, do not copy its code.",
+  "params": "",
+  "install": "Mosamem app, or Rust toolchain to run its tests",
+  "requires": [
+   "pip:pillow"
+  ],
+  "license": "GPL-3.0-or-later (Mosamem; link only, no code copied); HarfRust MIT/Apache-2.0",
+  "proof": [
+   "run here 2026-10-22: cargo test -p mosamem-core on Mosamem becfbe8 (outside the repo, cargo 1.97.0) → 95 passed, 0 failed (86 unit incl. 13 text shaping/layout goldens, 9 blend-formula); offline attempt failed (crates not cached)",
+   "https://github.com/motalim-ai/mosamem"
+  ],
+  "proof_scope": "receipt",
+  "styles": [],
+  "tags": [
+   "harfrust",
+   "shaping",
+   "تشكيل",
+   "kashida",
+   "كشيدة",
+   "arabic text",
+   "نص عربي",
+   "bidi",
+   "mosamem",
+   "مصمم"
+  ],
+  "section": "مصمم — Mosamem (2026-10-22)",
+  "source": "https://github.com/motalim-ai/mosamem"
+ },
+ {
+  "id": "ARAB-92",
+  "family": "typography-arabic",
+  "domain": "craft",
+  "name_ar": "أربعة خطوط عربية مفتوحة يرفقها مصمم",
+  "name_en": "Four open Arabic fonts bundled by Mosamem (IBM Plex Sans Arabic, Cairo, Tajawal, Amiri)",
+  "status": "documented",
+  "what": "IBM Plex Sans Arabic وCairo وTajawal وAmiri، كلها برخصة SIL OFL 1.1، ويمكن جلبها من مستودعاتها الأصلية لا من مصمم. — All four are SIL OFL 1.1; fetch them from their own upstream repositories, not from Mosamem.",
+  "when": "اختيار خط عربي مفتوح الرخصة / pick an openly licensed Arabic font",
+  "how": "Upstreams: github.com/IBM/plex, github.com/Gue3bara/Cairo, github.com/googlefonts/tajawal, github.com/aliftype/amiri. Keep each OFL.txt with the font file. The every_bundled_font_loads_and_weights_resolve test passed in the Mosamem cargo run.",
+  "params": "",
+  "install": "",
+  "requires": [
+   "fonts:arabic"
+  ],
+  "license": "SIL OFL 1.1",
+  "proof": [
+   "https://github.com/motalim-ai/mosamem/blob/main/THIRD-PARTY-NOTICES.md"
+  ],
+  "proof_scope": "url",
+  "styles": [],
+  "tags": [
+   "خطوط عربية",
+   "arabic fonts",
+   "cairo",
+   "tajawal",
+   "amiri",
+   "plex",
+   "ofl"
+  ],
+  "section": "مصمم — Mosamem (2026-10-22)",
+  "source": "https://github.com/motalim-ai/mosamem"
  }
 ]

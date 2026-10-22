@@ -3,13 +3,13 @@
 
 > **قوتك هنا / what this gives you:** معالجة الصور والصوت: التحويل والقص وقراءة النص من الصور والتفريغ والتوليد. — Process images and audio: convert, crop, OCR, transcribe and generate.
 > **أقوى دليل / strongest evidence:** **MEDIA-01** Arabic text on images with Pillow (raqm) (`kosif-tool/.claude/skills/kosif-superpowers/proofs/general-media/README.md`) · **MEDIA-02** Never double-shape Arabic (`kosif-tool/.claude/skills/kosif-superpowers/proofs/general-media/README.md`)
-> **34 powers follow** — ✅ 24 · 🟢 0 · 📦 8 · 🔑 2 · 👁 0 · 📄 0 · 💡 0.
+> **41 powers follow** — ✅ 24 · 🟢 3 · 📦 9 · 🔑 2 · 👁 0 · 📄 3 · 💡 0.
 
 **الحالة / status:** ✅ مُثبت (شُغّل فعلًا وله مسار دليل) · 🟢 جاهز (كود موجود يعمل بما هو متاح عادة) · 📦 بأمر تثبيت واحد · 🔑 يحتاج مفتاحًا أو حسابًا أو موصلًا · 👁 شوهد في فيديو مرجعي (للموشن فقط) · 📄 طريقة موثقة · 💡 فكرة. الشارة هي أدنى مستوى صادق — the badge is the lowest level that is true.
 مسارات الدليل نسبية إلى `/home/user/`؛ و`session-<date>:<file>#<section>` تشير إلى تشغيل موثق في جلسة سابقة؛ و`owner-upload:` إلى ملف داخل أرشيف أرسله المالك. Proof paths are relative to `/home/user/`.
 
 **المجال / domain:** الصور والصوت — Image & audio · **البادئة / prefix:** `MEDIA` · **البيانات / data:** `data/powers/media-image-audio.json` · **بحث / search:** `python3 scripts/powers.py family media-image-audio`
-**مراجع ذات صلة / related references:** [CLAUDE_3_MINUTE_MAP.md](../CLAUDE_3_MINUTE_MAP.md) · [creativity.md](../creativity.md) · [hubs.md](../hubs.md)
+**مراجع ذات صلة / related references:** [CLAUDE_3_MINUTE_MAP.md](../CLAUDE_3_MINUTE_MAP.md) · [creativity.md](../creativity.md) · [hubs.md](../hubs.md) · [mosamem-arabic-image-editor.md](../mosamem-arabic-image-editor.md)
 
 ## الفهرس / contents
 
@@ -19,6 +19,8 @@
 - **الصوت — Audio** — MEDIA-15 … MEDIA-24 (10)
 - **خدمات وأدوات ثقيلة — Services & heavy tools** — MEDIA-25 … MEDIA-30 (6)
 - **Extended toolbelt (2026-10-18)** — MEDIA-31 … MEDIA-34 (4)
+- **ذكاء الصور المحلي — Local image AI (2026-10-22)** — MEDIA-35 … MEDIA-37 (3)
+- **مصمم — Mosamem Arabic image editor (2026-10-22)** — MEDIA-38 … MEDIA-41 (4)
 - المصادر والرخص / sources & licences
 
 ## النص العربي على الصور — Arabic text on images
@@ -363,9 +365,82 @@
 - **الدليل / proof:** — (لا دليل تشغيل بعد / no run proof yet)
 - **المصدر / source:** https://github.com/pyannote/pyannote-audio
 
+## ذكاء الصور المحلي — Local image AI (2026-10-22)
+
+#### MEDIA-35 · إزالة الخلفية محليًا بنموذج ONNX تختاره أنت · Remove a background offline with a user-supplied ONNX matte model · 🟢 جاهز / ready
+- **ماذا / what:** قناع موضوع بأسلوب BiRefNet (تحجيم، تطبيع ImageNet، sigmoid) يتحول إلى PNG بقناة ألفا ناعمة، بلا شبكة ولا تنزيل. — BiRefNet-style subject matte (resize, ImageNet normalisation, sigmoid) turned into an RGBA PNG with a soft alpha; no network, no download.
+- **متى أستخدمها / when:** قص الخلفية أو عزل الموضوع على الجهاز / remove a background or cut out a subject on-device
+- **كيف / how:** `python3 scripts/image_local_ai.py remove-bg --model birefnet_lite_fp16.onnx in.png out.png --mask-out matte.png`. The model is never fetched by the tool: `models` prints the commit-pinned URL; verify it with `verify-model` first. Tested here with a synthetic ONNX graph only; quality with the real BiRefNet lite is upstream's claim (Mosamem), not measured here. **أرقام / params:** --size (model side, default from the model or 1024), --activation sigmoid|none
+- **تثبيت / install:** `pip install onnxruntime numpy pillow  + a model file the user downloads`
+- **يحتاج / needs:** [`pip:numpy`](../requirements.md#req-pip-numpy) · [`pip:pillow`](../requirements.md#req-pip-pillow) · [`pip:onnxruntime`](../requirements.md#req-pip-onnxruntime)
+- **الرخصة / license:** MIT (this script); BiRefNet lite MIT
+- **الدليل / proof:** `kosif-tool/.claude/skills/kosif-superpowers/scripts/image_local_ai.py` · `kosif-tool/.claude/skills/kosif-superpowers/evals/test_image_local_ai.py`
+- **المصدر / source:** https://huggingface.co/onnx-community/BiRefNet_lite-ONNX
+
+#### MEDIA-36 · ملء ذكي محلي لمنطقة محددة بقناع · Smart fill a masked area offline (MI-GAN-style ONNX) · 🟢 جاهز / ready
+- **ماذا / what:** يملأ المنطقة البيضاء من القناع بنموذج بمدخلات MI-GAN (image/mask uint8 → result)، يوسّع الثقب قليلًا للنموذج ثم يلصق فقط ثقب المستخدم. — Fills the white area of a mask with an MI-GAN-I/O model, grows the hole for the model, then pastes back only the user's own hole.
+- **متى أستخدمها / when:** حذف عنصر أو كتابة أو شخص من صورة / remove an object, text or person from a photo
+- **كيف / how:** `python3 scripts/image_local_ai.py inpaint --model migan_pipeline_v2.onnx --mask hole.png in.png out.png` (white = fill). Tested here with a synthetic graph that has MI-GAN's input/output names; real-model quality not measured here. **أرقام / params:** --grow px (default ceil(2·max(w,h)/512)+1)
+- **تثبيت / install:** `pip install onnxruntime numpy pillow  + migan_pipeline_v2.onnx fetched by the user`
+- **يحتاج / needs:** [`pip:numpy`](../requirements.md#req-pip-numpy) · [`pip:pillow`](../requirements.md#req-pip-pillow) · [`pip:onnxruntime`](../requirements.md#req-pip-onnxruntime)
+- **الرخصة / license:** MIT (this script); MI-GAN MIT (code and weights)
+- **الدليل / proof:** `kosif-tool/.claude/skills/kosif-superpowers/scripts/image_local_ai.py` · `kosif-tool/.claude/skills/kosif-superpowers/evals/test_image_local_ai.py`
+- **المصدر / source:** https://github.com/Picsart-AI-Research/MI-GAN
+
+#### MEDIA-37 · نماذج مثبتة بالبصمة: تحقق قبل التشغيل · Commit-pinned models: verify SHA-256 before use · 🟢 جاهز / ready
+- **ماذا / what:** جدول بالنماذج الثلاثة المفتوحة (BiRefNet lite MIT، SAM 2.1 tiny Apache-2.0، MI-GAN MIT) بروابط مثبتة على commit وأحجام وبصمات SHA-256 كما نشرها مصمم، وأمر يتحقق من ملف منزّل. — The three open models with commit-pinned URLs, sizes and SHA-256 as Mosamem publishes them, plus a command that checks a downloaded file.
+- **متى أستخدمها / when:** قبل استخدام أي نموذج منزّل / before running any downloaded model
+- **كيف / how:** `python3 scripts/image_local_ai.py models [--json]`, then `verify-model <file> [--sha256 <hex>]` (defaults to the known pin by file name; exit 1 on mismatch). Nothing is downloaded; the user fetches the URL after agreeing.
+- **تثبيت / install:** `python 3.9+ (standard library only)`
+- **يحتاج / needs:** [`pip:onnxruntime`](../requirements.md#req-pip-onnxruntime)
+- **الرخصة / license:** MIT (this script); facts from Mosamem models.rs (GPL project, no code copied)
+- **الدليل / proof:** `kosif-tool/.claude/skills/kosif-superpowers/scripts/image_local_ai.py` · `kosif-tool/.claude/skills/kosif-superpowers/evals/test_image_local_ai.py`
+- **المصدر / source:** https://github.com/motalim-ai/mosamem
+
+## مصمم — Mosamem Arabic image editor (2026-10-22)
+
+#### MEDIA-38 · مصمم: محرر صور عربي أولًا بطبقات وأقنعة وتعديلات غير مدمّرة · Mosamem: Arabic-first image editor with layers, masks and non-destructive adjustments · 📄 موصوف / documented only
+- **ماذا / what:** محرر سطح مكتب مفتوح (Rust/Tauri، ماك وويندوز): طبقات ومجموعات وأنماط دمج وأقنعة وقص، طبقات تعديل (Levels وCurves وHue/Saturation…)، أنماط طبقات، فلاتر، قلم وأشكال قابلة للتعديل، واجهة عربية من اليمين. — Open desktop editor (Rust/Tauri, Mac and Windows): layers, groups, blend modes, masks, clipping, adjustment layers, layer styles, filters, editable shapes and the Pen, Arabic RTL interface.
+- **متى أستخدمها / when:** تصميم بوست أو غلاف بالعربي بدون فوتوشوب / design an Arabic post or thumbnail without Photoshop
+- **كيف / how:** Point the user to the release (Mosamem.dmg / Mosamem-Setup-x64.exe) or `npx tauri build` from source. First beta 0.1, built in a day: check docs/status.md for what is unfinished. KOSIF links and credits only; it ships no Mosamem code.
+- **تثبيت / install:** `download the release or build from source (Rust + Node 20)`
+- **يحتاج / needs:** [`node`](../requirements.md#req-node)
+- **الرخصة / license:** GPL-3.0-or-later (Mosamem; link only, no code copied)
+- **الدليل / proof:** `https://github.com/motalim-ai/mosamem`
+- **المصدر / source:** https://github.com/motalim-ai/mosamem
+
+#### MEDIA-39 · مصمم: فتح PSD بطبقاته وحفظ نسخة بطبقات · Mosamem: open layered PSD files and save a layered copy · 📄 موصوف / documented only
+- **ماذا / what:** يقرأ ملفات Photoshop بطبقاتها ويكتب نسخة بطبقات عبر ag-psd (MIT)، مع تقرير توافق في docs/psd-report.md. — Reads layered Photoshop files and writes a layered copy through ag-psd (MIT), with a compatibility report in docs/psd-report.md.
+- **متى أستخدمها / when:** عميل أرسل PSD وليس لديك فوتوشوب / a client sent a PSD and there is no Photoshop
+- **كيف / how:** Open the PSD in Mosamem and export PNG/JPEG/WebP/TIFF per layer or whole. Check docs/psd-report.md for unsupported features before promising fidelity. For scripted PSD work in this repo, use a permissive library directly (e.g. psd-tools, MIT) rather than Mosamem code.
+- **تثبيت / install:** `Mosamem app`
+- **الرخصة / license:** GPL-3.0-or-later (Mosamem; link only, no code copied); ag-psd MIT
+- **الدليل / proof:** `https://github.com/motalim-ai/mosamem/blob/main/docs/psd-report.md`
+- **المصدر / source:** https://github.com/motalim-ai/mosamem
+
+#### MEDIA-40 · مصمم: تحديد عنصر بنقرة أو مربع (SAM 2.1 محليًا) · Mosamem: select an object from a click or a box (SAM 2.1 tiny, local) · 📄 موصوف / documented only
+- **ماذا / what:** تحديد الكائن بنقرات إضافة/حذف أو مربع عبر SAM 2.1 hiera-tiny (Apache-2.0) على الجهاز بعد تنزيل لمرة واحدة بموافقة المستخدم ثم بلا شبكة. — Object selection from add/remove clicks or a box with SAM 2.1 hiera-tiny (Apache-2.0), on-device after a one-time consented download.
+- **متى أستخدمها / when:** تحديد عنصر معقّد في صورة / select a complex object in a photo
+- **كيف / how:** Use Mosamem's Object Selection tool. image_local_ai.py lists the four pinned SAM files (`models`) but does not wrap SAM's decoder yet; do not claim it does.
+- **تثبيت / install:** `Mosamem app; model ~88 MB downloaded once by the app after consent`
+- **يحتاج / needs:** [`python3`](../requirements.md#req-python3)
+- **الرخصة / license:** GPL-3.0-or-later (Mosamem; link only, no code copied); SAM 2.1 Apache-2.0
+- **الدليل / proof:** `https://huggingface.co/onnx-community/sam2.1-hiera-tiny-ONNX`
+- **المصدر / source:** https://github.com/motalim-ai/mosamem
+
+#### MEDIA-41 · مصمم: نواة البكسل مختبرة (دمج وتعديلات وتحديد ورسم) · Mosamem core: tested pixel math (blend modes, adjustments, selection, painting) · 📦 بأمر تثبيت / one install
+- **ماذا / what:** نواة mosamem-core بنيت واختبرت هنا خارج المستودع: 95 اختبارًا ناجحًا تشمل معادلات أنماط الدمج المرجعية والتعديلات والفلاتر والتحديد السريع والملء والرسم والمتجهات. — mosamem-core built and tested here outside the repo: 95 passing tests covering reference blend formulas, adjustments, filters, quick selection, fill, painting and vectors.
+- **متى أستخدمها / when:** مرجع رياضيات أنماط الدمج والتعديلات / a reference for blend-mode and adjustment math
+- **كيف / how:** `git clone https://github.com/motalim-ai/mosamem && cd mosamem && cargo test -p mosamem-core` (needs network once for crates). Read its tests as a specification; do not copy its GPL code into MIT projects.
+- **تثبيت / install:** `Rust toolchain + network once for crates`
+- **يحتاج / needs:** [`git`](../requirements.md#req-git)
+- **الرخصة / license:** GPL-3.0-or-later (Mosamem; link only, no code copied)
+- **الدليل / proof:** `run here 2026-10-22: cargo test -p mosamem-core on Mosamem becfbe8 (outside the repo, cargo 1.97.0) → 95 passed, 0 failed (86 unit incl. 13 text shaping/layout goldens, 9 blend-formula); offline attempt failed (crates not cached)` · `https://github.com/motalim-ai/mosamem`
+- **المصدر / source:** https://github.com/motalim-ai/mosamem
+
 ## المصادر والرخص / sources & licences
 
-- الرخص / licences: Apache-2.0 (6) · MIT (5) · — (5) · BSD-3-Clause (3) · LGPL/GPL (3) · ISC (2) · AGPL-3.0 (1) · Artistic/GPL (exiftool) (1) · BSD / MIT / Apache-2.0 (1) · GPL-3.0 (1) · ImageMagick License (Apache-2.0-style) (1) · LGPL-3.0-or-later (1) · LGPL/GPL (ffmpeg build) (1) · MIT / PSF (1) · MIT-CMU (1) · MIT-CMU / BSD-3-Clause / Apache-2.0 (1)
+- الرخص / licences: Apache-2.0 (6) · MIT (5) · — (5) · BSD-3-Clause (3) · LGPL/GPL (3) · GPL-3.0-or-later (Mosamem; link only, no code copied) (2) · ISC (2) · AGPL-3.0 (1) · Artistic/GPL (exiftool) (1) · BSD / MIT / Apache-2.0 (1) · GPL-3.0 (1) · GPL-3.0-or-later (Mosamem; link only, no code copied); SAM 2.1 Apache-2.0 (1) · GPL-3.0-or-later (Mosamem; link only, no code copied); ag-psd MIT (1) · ImageMagick License (Apache-2.0-style) (1) · LGPL-3.0-or-later (1) · LGPL/GPL (ffmpeg build) (1) · MIT (this script); BiRefNet lite MIT (1) · MIT (this script); MI-GAN MIT (code and weights) (1) · MIT (this script); facts from Mosamem models.rs (GPL project, no code copied) (1) · MIT / PSF (1) · MIT-CMU (1) · MIT-CMU / BSD-3-Clause / Apache-2.0 (1)
 - الأفكار مكتوبة بكلماتنا مع رابط المصدر؛ لا يُنسخ نص طرف ثالث طويل. Ideas are paraphrased with a link to the source; no long third-party text is copied. `—` = no licence recorded (own method or own wording).
 
 ---

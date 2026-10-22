@@ -59,6 +59,7 @@ SMART = SKILL / "data" / "smart_capability_index.json"
 SP = SKILL / "data" / "superpowers.json"
 TOOLS = SKILL / "data" / "tools.json"
 MIND = SKILL / "data" / "capability_mindmap.json"
+QPACKS = SKILL / "data" / "question_packs.json"   # story/scene intake (A16): questions with defaults, inside the report
 WEIGHTS = {"fit": 35, "integration": 20, "feasibility": 15, "evidence": 10, "cost": 10, "creativity": 10}
 LOCAL_RANK = ["✅", "🟢", "📦", "🔑", "📄", "💡"]
 LOCAL_EVIDENCE = {"✅": 1.0, "🟢": 0.8, "📦": 0.55, "🔑": 0.4, "📄": 0.25, "💡": 0.1}
@@ -672,6 +673,27 @@ def produces(low: str) -> bool:
     return False
 
 
+def story_questions(low: str, level: str) -> list:
+    """[(question, suggested_default)] of the story pack (data/question_packs.json, A16) for a story, screenplay or
+    scene-sequence request: the core five at L1, all ten at L2/L3, none at L0 or when the pack file is missing."""
+    pack = ((jload(QPACKS, {}) or {}).get("packs") or {}).get("story") or {}
+    try:
+        hit = re.search(pack["match_rx"], low) and not re.search(pack.get("exclude_rx") or r"(?!x)x", low)
+    except (KeyError, re.error):
+        return []
+    n = (pack.get("levels") or {}).get(level, 0)
+    if not hit or not n:
+        return []
+    scenes = re.search(r"(\d+)\s*(مشاهد|مشهد|scenes?|ثانيه|ثواني|دقيقه|دقائق|sec\w*|min\w*)", low)
+    out = []
+    for q in (pack.get("questions") or [])[:n]:
+        d = q["suggested_default"]
+        if q.get("id") == "scenes" and scenes:
+            d = f"{scenes.group(1)} {scenes.group(2)} (من طلبك)"
+        out.append((q["question"], d))
+    return out
+
+
 def analyse(task: str) -> dict:
     low = norm_ar(task.lower())
     deliver = [k for k, rx in DELIVERABLES if re.search(rx, low)]
@@ -754,6 +776,9 @@ def analyse(task: str) -> dict:
     if any(m["need"].startswith("رفع على GitHub") for m in musts) and not re.search(BRANCH_NAMED_RX, low):
         questions.append("إلى أي فرع يُرفع العمل؟ (فرع جديد + طلب دمج، أم الفرع الحالي)")
         qdefaults.append("فرع جديد + طلب دمج؛ لا دفع إلى main بلا إذن صريح")
+    for q_, d_ in story_questions(low, level):
+        questions.append(q_)
+        qdefaults.append(d_)
     if level == "L0":
         questions, qdefaults, musts = [], [], []   # L0 gets no plans, no questions and no must-haves
     still = primary == "image" and not set(deliver) & {"video", "audio"}

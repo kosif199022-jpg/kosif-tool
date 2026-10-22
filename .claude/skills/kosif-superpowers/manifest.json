@@ -15,18 +15,18 @@
  },
  "paths_note": "Tool paths and examples are relative to their root: 'skill' = this folder, 'repo' = the kosif-tool repository root.",
  "counts": {
-  "powers": 5318,
+  "powers": 5331,
   "families": 62,
   "domains": 10,
-  "tools": 125,
-  "guides": 95,
+  "tools": 129,
+  "guides": 96,
   "statuses": {
-   "documented": 1929,
+   "documented": 1937,
    "idea": 71,
-   "install": 971,
+   "install": 973,
    "key": 176,
    "proven": 920,
-   "ready": 642,
+   "ready": 645,
    "seen": 609
   }
  },
@@ -719,11 +719,13 @@
    "domain": "media",
    "title_ar": "الصور والصوت",
    "title_en": "Image & audio",
-   "count": 34,
+   "count": 41,
    "statuses": {
-    "install": 8,
+    "documented": 3,
+    "install": 9,
     "key": 2,
-    "proven": 24
+    "proven": 24,
+    "ready": 3
    },
    "chapter": "references/powers/media-image-audio.md",
    "data": "data/powers/media-image-audio.json"
@@ -948,9 +950,9 @@
    "domain": "code",
    "title_ar": "فحص البرامج والهندسة العكسية",
    "title_en": "Software investigation (REA)",
-   "count": 241,
+   "count": 245,
    "statuses": {
-    "documented": 163,
+    "documented": 167,
     "install": 48,
     "proven": 30
    },
@@ -1047,11 +1049,11 @@
    "domain": "motion",
    "title_ar": "الخط العربي المتحرك",
    "title_en": "Arabic typography",
-   "count": 96,
+   "count": 98,
    "statuses": {
-    "documented": 20,
+    "documented": 21,
     "idea": 1,
-    "install": 6,
+    "install": 7,
     "proven": 22,
     "ready": 36,
     "seen": 11
@@ -12002,6 +12004,305 @@
    ],
    "evidence": "untested",
    "evidence_note": "CI acceptance pending; tested methods must be measured before claiming ready."
+  },
+  {
+   "id": "charter-ingest",
+   "path": "scripts/charter_ingest.py",
+   "root": "skill",
+   "kind": "cli",
+   "area": "think",
+   "title_en": "Charter roster ingest: the 500-expert council as a consultable index",
+   "title_ar": "إدخال قائمة الميثاق: مجلس الخبراء 500 فهرسًا للاستشارة",
+   "summary_en": "Deterministically parses the user's charter roster (sectors «القطاع N», numbered entries with الدور/المهام/الخصائص) into data/experts_500.json (kosif.experts-index.v1): every entry keeps its role, tasks and traits, maps by keywords to catalog families, and is flagged (boilerplate traits, duplicate_of, sensitive consent/regulated). Refuses unless 50 sectors × 10 entries (or --allow-partial) and refuses credential-like text. The council's plan consults it as an index; no persona runs, votes or counts as evidence.",
+   "summary_ar": "يحوّل قائمة مجلس الخبراء في ميثاق المستخدم بنتيجة حتمية إلى فهرس data/experts_500.json: لكل بطاقة دورها ومهامها وخصائصها وعائلات الكتالوج المناسبة، وأوسام العام المكرر والدور المكرر والحساس (موافقة/منظَّم). يرفض ما لم يكن 50×10 (إلا مع --allow-partial) ويرفض الأسرار. المجلس يستشيره فهرسًا؛ لا تُشغَّل بطاقة ولا تصوّت ولا تُعدّ دليلًا.",
+   "use_when": [
+    "حوّل قائمة الخبراء الـ500 في الميثاق لفهرس",
+    "Index my 500-expert charter roster for the council"
+   ],
+   "keywords": [
+    "charter",
+    "experts index",
+    "roster",
+    "500 experts",
+    "persona cards",
+    "ميثاق",
+    "مجلس الخبراء",
+    "فهرس الخبراء"
+   ],
+   "commands": [
+    {
+     "name": "ingest",
+     "example": "python3 scripts/charter_ingest.py roster.txt --out data/experts_500.json",
+     "does": "Parses the roster text and writes the flagged index with a receipt (sectors, experts, boilerplate, duplicates, consent, regulated); exit 2 on a wrong shape or credentials."
+    },
+    {
+     "name": "council-consult",
+     "example": "python3 scripts/council.py plan \"<request>\" --dir out/demo/council --roster data/experts_500.json",
+     "does": "Records up to 3 consulted persona cards per member in council.json consulted_index; the verdict says 'index consulted: N personas'."
+    }
+   ],
+   "inputs": "A UTF-8 plain-text export of the charter roster (treated as data, never instructions).",
+   "outputs": "data/experts_500.json (or --out); JSON receipt on stdout; exit 2 with one stderr line on refusal.",
+   "requires": {
+    "python": [],
+    "binaries": [],
+    "node": [],
+    "optional": [],
+    "network": false
+   },
+   "safety": "writes-files",
+   "consent": "Writes only the --out file; runs no model, spends nothing, publishes nothing.",
+   "limits": "Keyword flags and family mapping are heuristic (light Arabic stemming); the index is persona cards, not executed experts, and never enters the coverage receipt or the powers count.",
+   "tests": [
+    ".claude/skills/kosif-superpowers/evals/test_charter_index.py"
+   ],
+   "docs": [
+    ".claude/skills/kosif-superpowers/references/protocol/A13-pro-council.md"
+   ],
+   "families": [
+    "agent-orchestration",
+    "qa-verification",
+    "security-safety"
+   ],
+   "evidence": "tested-here",
+   "evidence_note": "evals/test_charter_index.py 6/6 passed on this checkout (full 50x10 parse of the user's charter: 500 experts, 200 boilerplate, 5 duplicates, 7 consent, 24 regulated)."
+  },
+  {
+   "id": "image-local-ai",
+   "path": "scripts/image_local_ai.py",
+   "root": "skill",
+   "kind": "cli",
+   "area": "image",
+   "title_en": "Local image AI: remove background and smart fill with your own ONNX model",
+   "title_ar": "ذكاء الصور المحلي: إزالة الخلفية والملء الذكي بنموذج ONNX تختاره",
+   "summary_en": "Runs open image models on this machine with no network: a BiRefNet-style subject matte turned into an RGBA PNG (remove-bg) and MI-GAN-style inpainting of a masked area (inpaint). It lists the three models Mosamem pins (BiRefNet lite MIT, SAM 2.1 tiny Apache-2.0, MI-GAN MIT) with commit-pinned URLs, sizes and SHA-256, and checks a downloaded file against its pin. It never downloads: with no model it prints the URL and asks the user to fetch it.",
+   "summary_ar": "يشغّل نماذج صور مفتوحة على الجهاز بلا شبكة: قناع موضوع بأسلوب BiRefNet يتحول إلى PNG شفاف (remove-bg) وملء ذكي بأسلوب MI-GAN لمنطقة محددة بقناع (inpaint). يعرض النماذج الثلاثة التي يثبتها مصمم (BiRefNet lite وSAM 2.1 tiny وMI-GAN) بروابط مثبتة وأحجام وبصمات SHA-256، ويتحقق من الملف المنزّل. لا ينزّل شيئًا أبدًا: إن غاب النموذج يطبع الرابط ويطلب من المستخدم تنزيله.",
+   "use_when": [
+    "شيل الخلفية من الصورة على جهازي من غير نت",
+    "امسح الشخص ده من الصورة واملأ مكانه",
+    "Remove the background offline with a local model",
+    "Inpaint the masked area of this photo without uploading it"
+   ],
+   "keywords": [
+    "remove background",
+    "background removal",
+    "inpaint",
+    "smart fill",
+    "object removal",
+    "onnx",
+    "birefnet",
+    "mi-gan",
+    "sam",
+    "offline",
+    "sha256",
+    "إزالة الخلفية",
+    "قص الخلفية",
+    "ملء ذكي",
+    "حذف عنصر",
+    "مصمم",
+    "mosamem"
+   ],
+   "commands": [
+    {
+     "name": "models",
+     "example": "python3 scripts/image_local_ai.py models --json",
+     "does": "Lists the three pinned open models with licence, source, size, URL and SHA-256 (facts from Mosamem's models.rs); downloads nothing."
+    },
+    {
+     "name": "verify-model",
+     "example": "python3 scripts/image_local_ai.py verify-model birefnet_lite_fp16.onnx",
+     "does": "SHA-256 of a local file against --sha256 or the known pin for its file name; exit 1 on mismatch, 2 if missing."
+    },
+    {
+     "name": "remove-bg",
+     "example": "python3 scripts/image_local_ai.py remove-bg --model birefnet_lite_fp16.onnx in.png out.png --mask-out matte.png",
+     "does": "ImageNet-normalised input at the model's side, sigmoid matte, soft alpha; writes an RGBA PNG and prints JSON with coverage."
+    },
+    {
+     "name": "inpaint",
+     "example": "python3 scripts/image_local_ai.py inpaint --model migan_pipeline_v2.onnx --mask hole.png in.png out.png",
+     "does": "Grows the white mask area ~2 model px, runs an image/mask uint8 model, pastes back only the user's hole; prints JSON."
+    }
+   ],
+   "inputs": "A PNG/JPEG image, a mask PNG (white = fill) for inpaint, and a local ONNX model file the user downloaded themselves.",
+   "outputs": "out.png (RGBA for remove-bg, RGB for inpaint), optional matte PNG, one JSON summary on stdout; exit 2 with one line on stderr when a dependency or the model is missing.",
+   "requires": {
+    "python": [],
+    "binaries": [],
+    "node": [],
+    "optional": [
+     "pip:numpy",
+     "pip:onnxruntime",
+     "pip:pillow"
+    ],
+    "network": false
+   },
+   "safety": "writes-files",
+   "safe_commands": [
+    "models",
+    "verify-model"
+   ],
+   "consent": "Writes only the named output files. It never downloads; fetching a model (28–115 MB) from the printed URL is the user's own decision.",
+   "limits": "Tested here only with synthetic ONNX graphs, so it checks I/O and behaviour, not BiRefNet or MI-GAN quality; SAM 2.1 is listed but not wrapped; CPU only.",
+   "tests": [
+    ".claude/skills/kosif-superpowers/evals/test_image_local_ai.py"
+   ],
+   "docs": [
+    ".claude/skills/kosif-superpowers/references/mosamem-arabic-image-editor.md"
+   ],
+   "families": [
+    "media-image-audio",
+    "typography-arabic"
+   ],
+   "evidence": "tested-here",
+   "evidence_note": "evals/test_image_local_ai.py 8 passed, 1 skipped (onnx.checker; onnx not installed) on this checkout, 2026-10-22; remove-bg and inpaint ran end to end on hand-encoded synthetic ONNX graphs with onnxruntime 1.29. No real model was downloaded."
+  },
+  {
+   "id": "prompt-pack",
+   "path": "scripts/prompt_pack.py",
+   "root": "skill",
+   "kind": "cli",
+   "area": "image",
+   "title_en": "Prompt pack: copyable prompts, one code block each, with a warn-only lint",
+   "title_ar": "حزمة المطالبات: كل مطالبة في كتلة كود قابلة للنسخ مع فحص يحذّر فقط",
+   "summary_en": "Turns a list of prompts or a scene/story spec into PACK.md and pack.json: every English prompt in ONE fenced block (wrapped in dir=\"ltr\" for RTL pages), the Arabic explanation outside it, and a per-engine suffix from data/prompt_engines.json (Midjourney V7 flags marked version-sensitive, generic image negative line, generic video 'No subtitles or on-screen text.'). The lint only warns (contradictions, unseparated subjects, studio/artist/brand names, quality hype, text-in-image, missing negative baseline) and never rewrites a word; credential-like values are refused. It calls no engine.",
+   "summary_ar": "يحوّل قائمة مطالبات أو مواصفة مشاهد/قصة إلى PACK.md وpack.json: كل مطالبة إنجليزية في كتلة كود واحدة (داخل dir=\"ltr\" للصفحات العربية) والشرح العربي خارجها، مع لاحقة لكل محرك من data/prompt_engines.json. الفحص يحذّر فقط (تناقضات، شخصيات بلا فصل، أسماء استوديوهات/فنانين/علامات، مبالغات الجودة، نص داخل الصورة، غياب السلبيات) ولا يغيّر أي كلمة؛ ويرفض ما يشبه الأسرار. لا يستدعي أي محرك.",
+   "use_when": [
+    "اكتب البرومبتات على شكل كود أقدر أنسخه",
+    "جهّز برومبتات المشاهد لميدجورني وفيو",
+    "Give me the scene prompts as copyable code blocks for Midjourney and Veo",
+    "Lint these prompts for contradictions without changing them"
+   ],
+   "keywords": [
+    "prompt",
+    "prompt pack",
+    "midjourney",
+    "veo",
+    "runway",
+    "code block",
+    "negative prompt",
+    "lint",
+    "برومبت",
+    "مطالبات",
+    "كود قابل للنسخ",
+    "ميدجورني"
+   ],
+   "commands": [
+    {
+     "name": "build",
+     "example": "python3 scripts/prompt_pack.py build prompts.json --out out/demo/prompts --engine midjourney",
+     "does": "Writes PACK.md (one fenced block per prompt, Arabic explanation outside, engine suffix appended once), pack.json with the lint warnings, and START-HERE.md when prompts list refs; --strict exits 2 on warnings."
+    },
+    {
+     "name": "lint",
+     "example": "python3 scripts/prompt_pack.py lint prompts.json",
+     "does": "Prints warn-only findings as JSON (exit 2 when any, 3 when a credential-like value is found); the input is never modified."
+    }
+   ],
+   "inputs": "A JSON list of prompts {id, engine, text, negative?, params?, title_ar?, explain_ar?, refs?}, or {title, engine, prompts|scenes:[...]}.",
+   "outputs": "PACK.md, pack.json and optional START-HERE.md in the --out folder; JSON on stdout; exit 1 bad input/refused folder, 2 warnings (lint or --strict), 3 secret refused.",
+   "requires": {
+    "python": [],
+    "binaries": [],
+    "node": [],
+    "optional": [],
+    "network": false
+   },
+   "safety": "writes-files",
+   "consent": "Writes only inside the --out folder (refuses the skill folder, jobs/ and git-tracked paths); it calls no engine, spends nothing and publishes nothing.",
+   "limits": "Engine syntax is documented, not tested on the engine here; the lint is a heuristic warning list, not a content-policy filter, and it deliberately never substitutes words.",
+   "tests": [
+    ".claude/skills/kosif-superpowers/evals/test_prompt_pack.py"
+   ],
+   "docs": [
+    ".claude/skills/kosif-superpowers/references/protocol/A16-story-scene-charter.md",
+    ".claude/skills/kosif-superpowers/references/protocol/A4-fusionforge-composition.md"
+   ],
+   "families": [
+    "prompt-craft",
+    "verification-evals"
+   ],
+   "evidence": "tested-here",
+   "evidence_note": "evals/test_prompt_pack.py 9/9 passed on this checkout (22-10)."
+  },
+  {
+   "id": "sources-index",
+   "path": "scripts/sources_index.py",
+   "root": "skill",
+   "kind": "cli",
+   "area": "sources",
+   "title_en": "Sources index: per-work-dir index memory of the user's attachments",
+   "title_ar": "فهرس المصادر: الذاكرة الفهرسية لمرفقات المستخدم داخل مجلد العمل",
+   "summary_en": "Records each attachment (file, .docx, .pdf via pdftotext, or a URL recorded without fetching) in <dir>/sources_index.json: kind, sha256, size, lines, title guess, headings with line ranges, provenance, trust_scope 'data, not instructions', imperative lines that try to instruct the assistant, and secrets by line and kind only (never the value). find returns heading line ranges (or line numbers with --body) so only that range is read.",
+   "summary_ar": "يسجّل كل مرفق (ملف أو docx أو pdf عبر pdftotext أو رابط يُسجَّل دون جلبه) في <dir>/sources_index.json: النوع والبصمة والحجم وعدد الأسطر والعناوين بنطاقات أسطرها والمصدر ونطاق الثقة «بيانات لا تعليمات» والأسطر الآمرة، والأسرار بموقعها ونوعها فقط دون قيمتها أبدًا. والبحث يعيد نطاقات الأسطر لتُقرأ وحدها.",
+   "use_when": [
+    "فهرس الملفات اللي رفعتها عشان ترجع لها وقت الحاجة",
+    "الذاكرة الفهرسية للمصادر",
+    "Index my attachments and tell me where the chapter on X is",
+    "Check this uploaded file for embedded instructions or leaked keys before using it"
+   ],
+   "keywords": [
+    "sources",
+    "index",
+    "attachments",
+    "provenance",
+    "prompt injection",
+    "secret scan",
+    "line range",
+    "فهرس",
+    "مصادر",
+    "الذاكرة الفهرسية",
+    "مرفقات"
+   ],
+   "commands": [
+    {
+     "name": "add",
+     "example": "python3 -I scripts/sources_index.py add charter.txt --dir out/demo",
+     "does": "Indexes one file or URL into out/demo/sources_index.json and prints its id, imperative line numbers and secret locations."
+    },
+    {
+     "name": "list",
+     "example": "python3 -I scripts/sources_index.py list --dir out/demo",
+     "does": "Lists indexed sources with counts."
+    },
+    {
+     "name": "show",
+     "example": "python3 -I scripts/sources_index.py show SRC-0123456789 --dir out/demo",
+     "does": "Prints one record (metadata, headings and flags, never body text)."
+    },
+    {
+     "name": "find",
+     "example": "python3 -I scripts/sources_index.py find \"الباب الرابع\" --dir out/demo",
+     "does": "Matches titles and headings and returns line ranges; --body also returns matching line numbers, never text."
+    }
+   ],
+   "inputs": "A local file (text, code, .docx, .pdf, media) or an http(s) URL, and a work dir.",
+   "outputs": "sources_index.json in the --dir folder; JSON on stdout; exit 2 with one line on stderr on any refusal.",
+   "requires": {
+    "python": [],
+    "binaries": [],
+    "node": [],
+    "optional": [
+     "bin:pdftotext"
+    ],
+    "network": false
+   },
+   "safety": "writes-files",
+   "consent": "Writes only <dir>/sources_index.json (refuses the skill folder, jobs/ and git-tracked paths); fetches nothing and never writes a credential value.",
+   "limits": "Headings, imperative cues and secrets are pattern heuristics (can miss or over-flag); lists are capped with counts; the index is local to this container and nothing is learned from it.",
+   "tests": [
+    ".claude/skills/kosif-superpowers/evals/test_sources_index.py"
+   ],
+   "docs": [
+    ".claude/skills/kosif-superpowers/references/protocol/A16-story-scene-charter.md"
+   ],
+   "families": [
+    "web-research",
+    "security-safety",
+    "verification-evals"
+   ],
+   "evidence": "tested-here",
+   "evidence_note": "evals/test_sources_index.py 6/6 passed on this checkout; real run on a 24,257-line attachment (22-10): key at line 405 reported as google_api_key by location only, 0 'AIza' matches in the 35 KB index."
   }
  ],
  "guides": [
@@ -12369,6 +12670,12 @@
    "path": "references/mimic.md",
    "title": "KOSIF Mimic — إعادة بناء فيديو مرجعي بلقطات جديدة / rebuild a reference video with new footage",
    "area": "edit",
+   "summary": ""
+  },
+  {
+   "path": "references/mosamem-arabic-image-editor.md",
+   "title": "مصمم — محرر صور عربي أولًا / Mosamem, the Arabic-first image editor",
+   "area": "image",
    "summary": ""
   },
   {
