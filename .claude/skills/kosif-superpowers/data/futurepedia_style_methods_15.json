@@ -1,0 +1,554 @@
+{
+  "schema": "kosif.style.atlas.v1",
+  "as_of": "2026-10-23",
+  "scope": "ONLY_FIRST_15_OF_86_VISIBLE",
+  "source_url": "https://www.futurepedia.io/resources/ai-style-atlas/view",
+  "rights_note": "Independent methods distilled from short public style descriptions; no paid prompts, video assets, or source code copied.",
+  "execution_note": "Offline selection and composition only. Suggested executor paths do not prove each visual style was rendered.",
+  "styles": [
+    {
+      "id": "FA-01",
+      "slug": "flat-vector-science",
+      "name": "Flat-Vector Science",
+      "category": "explainer",
+      "capability_ar": "أشكال علمية مبسطة مع تدرجات وظلال لطيفة",
+      "technique_cues": [
+        "space gradients",
+        "rounded characters",
+        "planets",
+        "radial glow"
+      ],
+      "palette": [
+        "#111A37",
+        "#5645BD",
+        "#47A8D5",
+        "#F0D5A5"
+      ],
+      "tone": "navy",
+      "primary_area": "draw",
+      "motion_direction": "pan / orbit",
+      "acceptance_checks": [
+        "shape hierarchy",
+        "readable graph"
+      ],
+      "suggested_tools": [
+        "creative_principles.py",
+        "unified_draw.py",
+        "motion_director.py"
+      ],
+      "prompt_license": "independent_summary",
+      "source_url": "https://www.futurepedia.io/resources/ai-style-atlas/view",
+      "source_review": "public_description_only",
+      "executor_verified": false,
+      "stage": "METHOD_PRESET"
+    },
+    {
+      "id": "FA-02",
+      "slug": "watercolor-wash",
+      "name": "Watercolor Wash",
+      "category": "painterly",
+      "capability_ar": "تدرجات شفافة وآثار حواف الصبغة على خلفية ورق",
+      "technique_cues": [
+        "transparent pigment layers",
+        "organic edge",
+        "paper texture",
+        "reserved highlights"
+      ],
+      "palette": [
+        "#F6E9D4",
+        "#BFD6CA",
+        "#769FA6",
+        "#594A42"
+      ],
+      "tone": "beige",
+      "primary_area": "draw",
+      "motion_direction": "soft dissolve / pigment reveal",
+      "acceptance_checks": [
+        "light preservation",
+        "layering"
+      ],
+      "suggested_tools": [
+        "creative_principles.py",
+        "unified_draw.py",
+        "motion_director.py"
+      ],
+      "prompt_license": "independent_summary",
+      "source_url": "https://www.futurepedia.io/resources/ai-style-atlas/view",
+      "source_review": "public_description_only",
+      "executor_verified": false,
+      "stage": "METHOD_PRESET"
+    },
+    {
+      "id": "FA-03",
+      "slug": "shadow-puppet-theatre",
+      "name": "Shadow Puppet Theatre",
+      "category": "paper-craft",
+      "capability_ar": "ظلال قصاصات سوداء ومفاصل داخل مسرح مضاء من الخلف",
+      "technique_cues": [
+        "cutout silhouette",
+        "lace openings",
+        "pinned joints",
+        "warm translucent backdrop"
+      ],
+      "palette": [
+        "#291710",
+        "#9A432D",
+        "#E7AC60",
+        "#F7DFA8"
+      ],
+      "tone": "amber",
+      "primary_area": "draw",
+      "motion_direction": "hinge rotation / parallax",
+      "acceptance_checks": [
+        "articulated silhouette",
+        "readable contrast"
+      ],
+      "suggested_tools": [
+        "creative_principles.py",
+        "unified_draw.py",
+        "motion_director.py"
+      ],
+      "prompt_license": "independent_summary",
+      "source_url": "https://www.futurepedia.io/resources/ai-style-atlas/view",
+      "source_review": "public_description_only",
+      "executor_verified": false,
+      "stage": "METHOD_PRESET"
+    },
+    {
+      "id": "FA-04",
+      "slug": "whiteboard-explainer",
+      "name": "Whiteboard Explainer",
+      "category": "hand-drawn",
+      "capability_ar": "رسم أقلام السبورة خطوة بخطوة مع آثار المحو",
+      "technique_cues": [
+        "dry marker strokes",
+        "handwriting",
+        "double-traced borders",
+        "draw-on lines"
+      ],
+      "palette": [
+        "#F8F7EF",
+        "#343A3D",
+        "#579C91",
+        "#E2E4DA"
+      ],
+      "tone": "ivory",
+      "primary_area": "draw",
+      "motion_direction": "path reveal synchronized to words",
+      "acceptance_checks": [
+        "stroke order",
+        "RTL",
+        "narration alignment"
+      ],
+      "suggested_tools": [
+        "creative_principles.py",
+        "unified_draw.py",
+        "motion_director.py"
+      ],
+      "prompt_license": "independent_summary",
+      "source_url": "https://www.futurepedia.io/resources/ai-style-atlas/view",
+      "source_review": "public_description_only",
+      "executor_verified": false,
+      "stage": "METHOD_PRESET"
+    },
+    {
+      "id": "FA-05",
+      "slug": "psychedelic-poster",
+      "name": "Psychedelic Poster",
+      "category": "print",
+      "capability_ar": "ملصقات متداخلة بألوان متكاملة قوية وعناصر متموجة",
+      "technique_cues": [
+        "swirling bands",
+        "symmetric flower",
+        "saturated opposite hues",
+        "bulbous lettering"
+      ],
+      "palette": [
+        "#FAD047",
+        "#C7349F",
+        "#5333A1",
+        "#1E897E"
+      ],
+      "tone": "magenta",
+      "primary_area": "image",
+      "motion_direction": "swirl / elastic morph",
+      "acceptance_checks": [
+        "reading contrast",
+        "color vibration"
+      ],
+      "suggested_tools": [
+        "creative_paint.py",
+        "font_fidelity_lab.py",
+        "render_html.cjs"
+      ],
+      "prompt_license": "independent_summary",
+      "source_url": "https://www.futurepedia.io/resources/ai-style-atlas/view",
+      "source_review": "public_description_only",
+      "executor_verified": false,
+      "stage": "METHOD_PRESET"
+    },
+    {
+      "id": "FA-06",
+      "slug": "tech-glow-explainer",
+      "name": "Tech Glow Explainer",
+      "category": "explainer",
+      "capability_ar": "شبكات معلومات وواجهات ذات توهج تقني",
+      "technique_cues": [
+        "neon node graph",
+        "perspective grid",
+        "glowing edge",
+        "data pulses"
+      ],
+      "palette": [
+        "#111A37",
+        "#5645BD",
+        "#47A8D5",
+        "#F0D5A5"
+      ],
+      "tone": "navy",
+      "primary_area": "motion",
+      "motion_direction": "node pulses / tracked camera",
+      "acceptance_checks": [
+        "legibility",
+        "restrained bloom"
+      ],
+      "suggested_tools": [
+        "motion_director.py",
+        "creative_reasoning_bridge.py",
+        "verify_video.py"
+      ],
+      "prompt_license": "independent_summary",
+      "source_url": "https://www.futurepedia.io/resources/ai-style-atlas/view",
+      "source_review": "public_description_only",
+      "executor_verified": false,
+      "stage": "METHOD_PRESET"
+    },
+    {
+      "id": "FA-07",
+      "slug": "papercraft-models",
+      "name": "Papercraft Models",
+      "category": "paper-craft",
+      "capability_ar": "نماذج ورقية مطوية بحواف ومواضع لصق",
+      "technique_cues": [
+        "cardstock faces",
+        "fold dashes",
+        "glue tab",
+        "paper seams",
+        "mat backdrop"
+      ],
+      "palette": [
+        "#D5E0BF",
+        "#5D8364",
+        "#F0CC92",
+        "#4B4C48"
+      ],
+      "tone": "sage",
+      "primary_area": "3d",
+      "motion_direction": "fold / unfold",
+      "acceptance_checks": [
+        "fold continuity",
+        "shadows match faces"
+      ],
+      "suggested_tools": [
+        "native_3d.py",
+        "blender_bridge.py",
+        "verify_video.py"
+      ],
+      "prompt_license": "independent_summary",
+      "source_url": "https://www.futurepedia.io/resources/ai-style-atlas/view",
+      "source_review": "public_description_only",
+      "executor_verified": false,
+      "stage": "METHOD_PRESET"
+    },
+    {
+      "id": "FA-08",
+      "slug": "1940s-film-noir",
+      "name": "1940s Film Noir",
+      "category": "light",
+      "capability_ar": "إضاءة أحادية درامية وظلال شرائح السينما القديمة",
+      "technique_cues": [
+        "monochrome hard light",
+        "blind shadows",
+        "haze",
+        "grain"
+      ],
+      "palette": [
+        "#0D0E0F",
+        "#383B40",
+        "#979A9F",
+        "#F2F2F0"
+      ],
+      "tone": "black",
+      "primary_area": "edit",
+      "motion_direction": "slow reveal / lateral tracking",
+      "acceptance_checks": [
+        "highlights not clipped",
+        "intentional blacks"
+      ],
+      "suggested_tools": [
+        "cinematic_cut_planner.py",
+        "montage_pro.py",
+        "verify_video.py"
+      ],
+      "prompt_license": "independent_summary",
+      "source_url": "https://www.futurepedia.io/resources/ai-style-atlas/view",
+      "source_review": "public_description_only",
+      "executor_verified": false,
+      "stage": "METHOD_PRESET"
+    },
+    {
+      "id": "FA-09",
+      "slug": "manim-style-math",
+      "name": "Manim-Style Math",
+      "category": "explainer",
+      "capability_ar": "معادلات ورسوم بيانية واضحة بأسلوب متجهات",
+      "technique_cues": [
+        "axes",
+        "curves",
+        "braces",
+        "precise vector diagrams",
+        "serif mathematics"
+      ],
+      "palette": [
+        "#0D0E0F",
+        "#383B40",
+        "#979A9F",
+        "#F2F2F0"
+      ],
+      "tone": "black",
+      "primary_area": "motion",
+      "motion_direction": "proof-step construction",
+      "acceptance_checks": [
+        "correct equations",
+        "readable ticks"
+      ],
+      "suggested_tools": [
+        "motion_director.py",
+        "creative_reasoning_bridge.py",
+        "verify_video.py"
+      ],
+      "prompt_license": "independent_summary",
+      "source_url": "https://www.futurepedia.io/resources/ai-style-atlas/view",
+      "source_review": "public_description_only",
+      "executor_verified": false,
+      "stage": "METHOD_PRESET"
+    },
+    {
+      "id": "FA-10",
+      "slug": "illuminated-manuscript",
+      "name": "Illuminated Manuscript",
+      "category": "illustration",
+      "capability_ar": "ورق قديم وزخارف هوامش وحرف أول كبير",
+      "technique_cues": [
+        "vellum",
+        "gold initial",
+        "botanical margins",
+        "rubric style"
+      ],
+      "palette": [
+        "#E7D3A9",
+        "#A77A39",
+        "#7A3B33",
+        "#38484C"
+      ],
+      "tone": "parchment",
+      "primary_area": "image",
+      "motion_direction": "ink reveal / camera glide",
+      "acceptance_checks": [
+        "ornament never hides meaning"
+      ],
+      "suggested_tools": [
+        "creative_paint.py",
+        "font_fidelity_lab.py",
+        "render_html.cjs"
+      ],
+      "prompt_license": "independent_summary",
+      "source_url": "https://www.futurepedia.io/resources/ai-style-atlas/view",
+      "source_review": "public_description_only",
+      "executor_verified": false,
+      "stage": "METHOD_PRESET"
+    },
+    {
+      "id": "FA-11",
+      "slug": "editorial-essay-collage",
+      "name": "Editorial Essay Collage",
+      "category": "edit",
+      "capability_ar": "قصاصات تحريرية وصور حبيبية وعناوين تتحرك",
+      "technique_cues": [
+        "torn paper",
+        "halftone",
+        "archival frame",
+        "tape",
+        "highlighter sweep"
+      ],
+      "palette": [
+        "#F8F0DE",
+        "#292D31",
+        "#D7AB55",
+        "#9C343F"
+      ],
+      "tone": "cream",
+      "primary_area": "edit",
+      "motion_direction": "paper slide / cutout parallax",
+      "acceptance_checks": [
+        "citation visibility",
+        "source rights"
+      ],
+      "suggested_tools": [
+        "cinematic_cut_planner.py",
+        "montage_pro.py",
+        "verify_video.py"
+      ],
+      "prompt_license": "independent_summary",
+      "source_url": "https://www.futurepedia.io/resources/ai-style-atlas/view",
+      "source_review": "public_description_only",
+      "executor_verified": false,
+      "stage": "METHOD_PRESET"
+    },
+    {
+      "id": "FA-12",
+      "slug": "bioluminescent-deep-sea",
+      "name": "Bioluminescent Deep Sea",
+      "category": "light",
+      "capability_ar": "أضواء مخلوقات بحرية في أعماق داكنة",
+      "technique_cues": [
+        "marine particles",
+        "cyan emission",
+        "jellyfish filaments",
+        "depth haze"
+      ],
+      "palette": [
+        "#04111B",
+        "#052B3D",
+        "#18B8BD",
+        "#DB66AF"
+      ],
+      "tone": "abyss",
+      "primary_area": "motion",
+      "motion_direction": "organic pulsation / slow drift",
+      "acceptance_checks": [
+        "preserve deep-sea darkness",
+        "legible title"
+      ],
+      "suggested_tools": [
+        "motion_director.py",
+        "creative_reasoning_bridge.py",
+        "verify_video.py"
+      ],
+      "prompt_license": "independent_summary",
+      "source_url": "https://www.futurepedia.io/resources/ai-style-atlas/view",
+      "source_review": "public_description_only",
+      "executor_verified": false,
+      "stage": "METHOD_PRESET"
+    },
+    {
+      "id": "FA-13",
+      "slug": "product-launch-reveal",
+      "name": "Product Launch Reveal",
+      "category": "product",
+      "capability_ar": "إظهار منتج بإضاءة استوديو وخلفية داكنة",
+      "technique_cues": [
+        "key rim light",
+        "specular sweep",
+        "floor reflection",
+        "hero object",
+        "spec callouts"
+      ],
+      "palette": [
+        "#0E1219",
+        "#25354A",
+        "#9EB3CE",
+        "#ECECEC"
+      ],
+      "tone": "charcoal",
+      "primary_area": "3d",
+      "motion_direction": "hero turntable / macro push",
+      "acceptance_checks": [
+        "accurate product geometry",
+        "brand marks"
+      ],
+      "suggested_tools": [
+        "native_3d.py",
+        "blender_bridge.py",
+        "verify_video.py"
+      ],
+      "prompt_license": "independent_summary",
+      "source_url": "https://www.futurepedia.io/resources/ai-style-atlas/view",
+      "source_review": "public_description_only",
+      "executor_verified": false,
+      "stage": "METHOD_PRESET"
+    },
+    {
+      "id": "FA-14",
+      "slug": "halftone-pop-panel",
+      "name": "Halftone Pop Panel",
+      "category": "print",
+      "capability_ar": "لوحات قصص مصورة بنقاط طباعة وحدود سوداء",
+      "technique_cues": [
+        "Ben-Day dots",
+        "thick tapered outlines",
+        "primary panels",
+        "speech balloon"
+      ],
+      "palette": [
+        "#FCDF49",
+        "#1E437F",
+        "#D64539",
+        "#12151D"
+      ],
+      "tone": "primary",
+      "primary_area": "image",
+      "motion_direction": "panel snap / speech pop",
+      "acceptance_checks": [
+        "safe text margins",
+        "dot-density clarity"
+      ],
+      "suggested_tools": [
+        "creative_paint.py",
+        "font_fidelity_lab.py",
+        "render_html.cjs"
+      ],
+      "prompt_license": "independent_summary",
+      "source_url": "https://www.futurepedia.io/resources/ai-style-atlas/view",
+      "source_review": "public_description_only",
+      "executor_verified": false,
+      "stage": "METHOD_PRESET"
+    },
+    {
+      "id": "FA-15",
+      "slug": "isometric-pastel",
+      "name": "Isometric Pastel",
+      "category": "dimensional",
+      "capability_ar": "مجسمات هندسية بإسقاط أيزومتري وألوان باستيل",
+      "technique_cues": [
+        "30-degree vector faces",
+        "three-tone shading",
+        "long soft shadow",
+        "floating platform"
+      ],
+      "palette": [
+        "#F2E7EC",
+        "#A9CFE0",
+        "#D0D9B3",
+        "#F19A87"
+      ],
+      "tone": "pastel",
+      "primary_area": "3d",
+      "motion_direction": "tilt-free parallax / object assembly",
+      "acceptance_checks": [
+        "consistent 30-degree projection",
+        "depth order"
+      ],
+      "suggested_tools": [
+        "native_3d.py",
+        "blender_bridge.py",
+        "verify_video.py"
+      ],
+      "prompt_license": "independent_summary",
+      "source_url": "https://www.futurepedia.io/resources/ai-style-atlas/view",
+      "source_review": "public_description_only",
+      "executor_verified": false,
+      "stage": "METHOD_PRESET"
+    }
+  ]
+}
