@@ -33,7 +33,7 @@ def shape_markup(shape, width, height):
             raise ValueError("rectangle leaves canvas")
         return f'<rect x="{x}" y="{y}" width="{w}" height="{h}"/>'
     if kind == "line":
-        pts = [finite(shape.get(k), 0, width if k.endswith("x") else height)
+        pts = [finite(shape.get(k), 0, width if k.startswith("x") else height)
                for k in ("x1", "y1", "x2", "y2")]
         return '<line x1="{0}" y1="{1}" x2="{2}" y2="{3}"/>'.format(*pts)
     raise ValueError("shapes must be circle/rect/line")
