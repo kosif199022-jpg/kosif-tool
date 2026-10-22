@@ -8,7 +8,7 @@ Commands below are typed from the skill folder (`.claude/skills/kosif-superpower
 
 <!-- hub:area:image:start -->
 
-**الأدوات / tools (6)** — `python3 scripts/hub.py tool <id>` for every command, requirement and limit:
+**الأدوات / tools (7)** — `python3 scripts/hub.py tool <id>` for every command, requirement and limit:
 
 | tool | what it does | start with | evidence |
 |---|---|---|---|
@@ -18,6 +18,7 @@ Commands below are typed from the skill folder (`.claude/skills/kosif-superpower
 | `render-text` | Renders text samples in candidate font files through headless Chromium (HarfBuzz shaping) and saves one tightly cropped PNG per item plus a renders.json of box sizes, so the candidates can be compared side by side against a reference typeface. | `node scripts/render_text.cjs ./spec.json ./out/` | tested-elsewhere |
 | `unified-media` | One CLI links App Studio authorized local photo processing, Unified Draw freehand/geometric layers and Creative Paint keyframe animation for composited PNG/GIF/MP4. | `python3 scripts/unified_media.py doctor` | tested-here |
 | `telegram-typography-atlas` | Search a public metadata index of the 5,514 SHA-256-distinct fonts found in the user's own Telegram Desktop exports (4,634 with Arabic letters): one row per family with its styles, Arabic spelling-tolerant style words (كوفي، رقعة، ديواني، ثلث، نسخ), an open-license filter, and 16 original design directions. scan/enrich-zips rebuild the index on the user's machine (bounded, in-memory ZIP reads); refresh re-derives tags, name-based license flags, ideas and counts from the public index alone. Fonts, chats, images and local paths never leave the device. | `python3 scripts/telegram_typography_atlas.py find --index data/telegram-typography-catalog-complete-20261020.json "خط رقعة" --arabic-only --limit 15` | tested-here |
+| `mosamem-rea-fusion` | Independent, standard-library Mosamem v0.1.0/REA workflow bridge: 19 upstream-anchored methodology nodes, actual read-only PSD/PSB/PNG/JPEG header preflight and SHA256, consent-gated REA plan via existing bridge. Does not install or control Mosamem, run REA or import GPL code. | `python3 scripts/mosamem_rea_fusion.py doctor` | tested-here |
 
 <!-- hub:area:image:end -->
 
