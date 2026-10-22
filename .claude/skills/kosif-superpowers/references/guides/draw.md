@@ -8,7 +8,7 @@ Commands below are typed from the skill folder (`.claude/skills/kosif-superpower
 
 <!-- hub:area:draw:start -->
 
-**الأدوات / tools (6)** — `python3 scripts/hub.py tool <id>` for every command, requirement and limit:
+**الأدوات / tools (9)** — `python3 scripts/hub.py tool <id>` for every command, requirement and limit:
 
 | tool | what it does | start with | evidence |
 |---|---|---|---|
@@ -18,6 +18,9 @@ Commands below are typed from the skill folder (`.claude/skills/kosif-superpower
 | `creative-paint` | Paints a strict JSON layered scene (rectangles, ellipses, lines, polygons, pressure brush strokes, text) with Pillow into PNG/SVG stills, or animates whole layers with keyframes into a GIF or H.264 MP4. | `python3 scripts/creative_paint.py doctor` | tested-here |
 | `smart-draw` | Turns freehand stroke JSON into a layered drawing, optionally snapping each stroke to a rectangle, ellipse or straight line with deterministic geometry, then reports the recognized shapes or renders the drawing to PNG/SVG. | `python3 scripts/smart_draw.py doctor` | tested-here |
 | `unified-draw` | Combines Smart Draw freehand stroke snapping, Creative Paint layered shapes and text, and keyframed GIF/MP4 animation behind one ordered scene and CLI. | `python3 scripts/unified_draw.py doctor` | tested-here |
+| `creative-principles` | Builds original SVG drawing stages, three-value tone breakdown, and intercut tonal distribution flags from supplied arrays. | `python3 scripts/creative_principles.py construct --input original-shapes.json --out-prefix out/stage` | tested-elsewhere |
+| `drawing-academy` | Eight source-anchored skill lessons, rights-scoped text keyword scans, scores tied to actual artifacts and provenance. | `python3 scripts/drawing_academy.py index` | tested-elsewhere |
+| `perspective-color-lab` | Draws a geometrically constrained two-vanishing-point SVG and measures HSV/WCAG contrast of brand color swatches. | `python3 scripts/perspective_color_lab.py perspective --input scene.json --out out/scene.svg` | tested-elsewhere |
 
 <!-- hub:area:draw:end -->
 
