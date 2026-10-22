@@ -1,0 +1,30 @@
+{
+  "status": "reference_timing_observed_not_animation_reconstructed",
+  "target": "/home/user/kosif-tool/jobs/20261022-tiktok-reel/source/src.mp4",
+  "width": 720,
+  "height": 1280,
+  "fps_rational": "30/1",
+  "duration_seconds": 14.7,
+  "audio_present": true,
+  "cut_detection_run": true,
+  "cut_candidates_seconds": [
+    13.433
+  ],
+  "segments": [
+    {
+      "start": 0.0,
+      "end": 13.433
+    },
+    {
+      "start": 13.433,
+      "end": 14.7
+    }
+  ],
+  "important_limitations": [
+    "cuts are heuristic visual-change candidates",
+    "no object/pose/motion-vector tracking",
+    "no audio word-level alignment",
+    "no copying proprietary visuals"
+  ],
+  "next": "Review sampled keyframes and map observed motion to original motion_director scenes"
+}

@@ -1931,14 +1931,9 @@
    "label": "scripts/cinematic_cut_planner.py"
   },
   {
-   "id": "script:scripts/creative_reasoning_bridge.py",
+   "id": "script:scripts/council.py",
    "kind": "script",
-   "label": "scripts/creative_reasoning_bridge.py"
-  },
-  {
-   "id": "script:scripts/fusionforge.py",
-   "kind": "script",
-   "label": "scripts/fusionforge.py"
+   "label": "scripts/council.py"
   },
   {
    "id": "script:scripts/_secrets.py",
@@ -1949,6 +1944,16 @@
    "id": "script:scripts/skill_intelligence.py",
    "kind": "script",
    "label": "scripts/skill_intelligence.py"
+  },
+  {
+   "id": "script:scripts/creative_reasoning_bridge.py",
+   "kind": "script",
+   "label": "scripts/creative_reasoning_bridge.py"
+  },
+  {
+   "id": "script:scripts/fusionforge.py",
+   "kind": "script",
+   "label": "scripts/fusionforge.py"
   },
   {
    "id": "script:scripts/fusionforge_shared.py",
@@ -2025,6 +2030,16 @@
    "id": "script:scripts/rea_creative_research_atlas.py",
    "kind": "script",
    "label": "scripts/rea_creative_research_atlas.py"
+  },
+  {
+   "id": "script:scripts/reel_factory.py",
+   "kind": "script",
+   "label": "scripts/reel_factory.py"
+  },
+  {
+   "id": "script:scripts/media_sources.py",
+   "kind": "script",
+   "label": "scripts/media_sources.py"
   },
   {
    "id": "script:scripts/reference_edit_engine.py",
@@ -2237,6 +2252,11 @@
    "label": ".claude/skills/kosif-superpowers/evals/test_code_drawing_master.py"
   },
   {
+   "id": "test:.claude/skills/kosif-superpowers/evals/test_council.py",
+   "kind": "test",
+   "label": ".claude/skills/kosif-superpowers/evals/test_council.py"
+  },
+  {
    "id": "test:.claude/skills/kosif-superpowers/evals/test_creative_paint.py",
    "kind": "test",
    "label": ".claude/skills/kosif-superpowers/evals/test_creative_paint.py"
@@ -2332,6 +2352,11 @@
    "label": "tests/test_creative_external_research.py"
   },
   {
+   "id": "test:.claude/skills/kosif-superpowers/evals/test_reel_factory.py",
+   "kind": "test",
+   "label": ".claude/skills/kosif-superpowers/evals/test_reel_factory.py"
+  },
+  {
    "id": "test:tests/test_requirements.py",
    "kind": "test",
    "label": "tests/test_requirements.py"
@@ -2355,6 +2380,11 @@
    "id": "test:tests/test_tools_extra.py",
    "kind": "test",
    "label": "tests/test_tools_extra.py"
+  },
+  {
+   "id": "test:tests/test_verify_source_audio.py",
+   "kind": "test",
+   "label": "tests/test_verify_source_audio.py"
   },
   {
    "id": "test:.claude/skills/kosif-superpowers/evals/test_web_app_study.py",
@@ -6306,6 +6336,18 @@
    "w": 1
   },
   {
+   "from": "script:scripts/council.py",
+   "to": "script:scripts/_secrets.py",
+   "rel": "imports",
+   "w": 1
+  },
+  {
+   "from": "script:scripts/council.py",
+   "to": "script:scripts/skill_intelligence.py",
+   "rel": "imports",
+   "w": 1
+  },
+  {
    "from": "script:scripts/creative_reasoning_bridge.py",
    "to": "script:scripts/audio_cue_mapper.py",
    "rel": "imports",
@@ -6662,6 +6704,12 @@
   {
    "from": "script:scripts/rebalance_creative_repos.py",
    "to": "script:scripts/rea_creative_research_atlas.py",
+   "rel": "imports",
+   "w": 1
+  },
+  {
+   "from": "script:scripts/reel_factory.py",
+   "to": "script:scripts/media_sources.py",
    "rel": "imports",
    "w": 1
   },
@@ -7044,6 +7092,12 @@
    "w": 1
   },
   {
+   "from": "script:scripts/council.py",
+   "to": "test:.claude/skills/kosif-superpowers/evals/test_council.py",
+   "rel": "tested_by",
+   "w": 1
+  },
+  {
    "from": "script:scripts/creative_paint.py",
    "to": "test:.claude/skills/kosif-superpowers/evals/test_creative_paint.py",
    "rel": "tested_by",
@@ -7130,6 +7184,12 @@
   {
    "from": "script:scripts/local_first.py",
    "to": "test:.claude/skills/kosif-superpowers/evals/test_local_first.py",
+   "rel": "tested_by",
+   "w": 1
+  },
+  {
+   "from": "script:scripts/media_sources.py",
+   "to": "test:tests/test_media_sources_gateway.py",
    "rel": "tested_by",
    "w": 1
   },
@@ -7248,6 +7308,12 @@
    "w": 1
   },
   {
+   "from": "script:scripts/reel_factory.py",
+   "to": "test:.claude/skills/kosif-superpowers/evals/test_reel_factory.py",
+   "rel": "tested_by",
+   "w": 1
+  },
+  {
    "from": "script:scripts/reference_edit_engine.py",
    "to": "test:.claude/skills/kosif-superpowers/evals/test_capability_runtime_router.py",
    "rel": "tested_by",
@@ -7345,6 +7411,12 @@
   },
   {
    "from": "script:scripts/verify_video.py",
+   "to": "test:.claude/skills/kosif-superpowers/evals/test_council.py",
+   "rel": "tested_by",
+   "w": 1
+  },
+  {
+   "from": "script:scripts/verify_video.py",
    "to": "test:.claude/skills/kosif-superpowers/evals/test_hub.py",
    "rel": "tested_by",
    "w": 1
@@ -7364,6 +7436,12 @@
   {
    "from": "script:scripts/verify_video.py",
    "to": "test:tests/test_tools_extra.py",
+   "rel": "tested_by",
+   "w": 1
+  },
+  {
+   "from": "script:scripts/verify_video.py",
+   "to": "test:tests/test_verify_source_audio.py",
    "rel": "tested_by",
    "w": 1
   },

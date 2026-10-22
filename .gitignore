@@ -11,3 +11,11 @@ outputs/
 *.mov
 starters/remotion/out/
 .kosif-cache/
+
+# Derived from other accounts' audio/video (transcripts, lyrics, contact sheets): never published (owner decision 2026-10-22)
+jobs/**/words*.json
+jobs/**/words.js
+jobs/**/lyrics.json
+jobs/**/data.json
+jobs/**/data.js
+jobs/**/contact.jpg

@@ -5,7 +5,15 @@ Upload an audio or a video, get a team, a menu of strong options, and a real ren
 
   python3 montage_pro.py doctor                                  # tools present/missing for the team
   python3 montage_pro.py team                                    # the 13 roles, their scripts and gates
-  python3 montage_pro.py intake MEDIA --job JOB                  # analyst: measure the file (ffprobe, loudness, energy cues, cuts)
+  python3 montage_pro.py intake MEDIA --job JOB [--transcribe]   # analyst: measure the file (ffprobe, loudness, energy cues, cuts)
+                                                                 # --transcribe (opt-in, takes the transcribe options) writes
+                                                                 # JOB/words.json after probing, before the cue mapper imports it
+  python3 montage_pro.py transcribe MEDIA --job JOB [--model medium] [--language ar|auto] [--local-only] [--force] [--out PATH]
+                                    [--no-vad] [--no-speech-threshold 0.6] [--allow-tracked]
+                                                                 # transcriber: faster-whisper word timings → JOB/words.json (kosif-words/1);
+                                                                 # Silero VAD + no_speech_prob drop silence/music guesses; times are on the
+                                                                 # file timeline (audio start offset added); refuses jobs/, git-tracked or
+                                                                 # unignored repo paths (use out/…) unless --allow-tracked
   python3 montage_pro.py options JOB [--brief "..."]             # director: option menu for this material + stage plan
   python3 montage_pro.py acquire URL --job JOB --license "CC0 / owner / …" --source-page URL [--owner]
                                                                  # IDM-style desk: segmented resumable file download, DASH/HLS manifest grab
@@ -15,7 +23,8 @@ Upload an audio or a video, get a team, a menu of strong options, and a real ren
 
 Every output is verified with verify_video.py; results land in JOB/report.json. The user's master audio is never
 modified (its SHA-256 is recorded and re-checked). Nothing is downloaded without a licence note.
-Python 3.8+ stdlib; uses ffmpeg/ffprobe, node+Chromium (HTML scenes) and yt-dlp when present.
+Python 3.8+ stdlib; uses ffmpeg/ffprobe, node+Chromium (HTML scenes) and yt-dlp when present; transcribe also needs
+faster-whisper (pip install faster-whisper, numpy comes with it), imported only by that command.
 """
 from __future__ import annotations
 
@@ -128,7 +137,9 @@ def loudness(media: Path) -> dict:
     return {"integrated_lufs": float(i.group(1)) if i else None, "true_peak_dbfs": float(tp.group(1)) if tp else None}
 
 
-def intake(media: Path, job: Path) -> dict:
+def intake(media: Path, job: Path, transcribe_opts: dict = None) -> dict:
+    """Measure MEDIA into JOB. transcribe_opts (opt-in, e.g. {"model": "medium", "language": "ar"}) first writes
+    JOB/words.json with `transcribe` so the cue mapper below imports the aligned words; None keeps the old intake."""
     need("ffmpeg")
     media = media.resolve()
     if not media.is_file():
@@ -138,22 +149,27 @@ def intake(media: Path, job: Path) -> dict:
     kind = "video" if info["video"] else ("audio" if info["audio"] else "unknown")
     res = {"source": str(media), "sha256": sha256(media), "kind": kind, "probe": info,
            "measured_at": time.strftime("%Y-%m-%dT%H:%M:%SZ", time.gmtime())}
+    if transcribe_opts is not None:
+        res["transcribe"] = (transcribe_job(media, job, job / "words.json", **transcribe_opts) if info["audio"]
+                             else {"ok": False, "error": "no audio stream to transcribe"})
     if info["audio"]:
         wav = job / "work" / "master.wav"
         wav.parent.mkdir(parents=True, exist_ok=True)
-        sh(["ffmpeg", "-y", "-loglevel", "error", "-i", str(media), "-vn", "-ac", "1", "-ar", "44100", "-c:a", "pcm_s16le", str(wav)], 900)
+        # master.wav sits on the file timeline: when the audio stream starts late (a video whose sound begins after
+        # frame 0) the lead-in is padded with silence, so words.json (file timeline) and the cue map line up.
+        offset = (res.get("transcribe") or {}).get("audio_offset") or (media_timing(media)[1] if info["video"] else 0.0)
+        pad = ["-af", f"adelay={int(round(offset * 1000))}:all=1"] if offset and offset > 0.0005 else []
+        sh(["ffmpeg", "-y", "-loglevel", "error", "-i", str(media), "-vn", *pad, "-ac", "1", "-ar", "44100", "-c:a", "pcm_s16le", str(wav)], 900)
         res["loudness"] = loudness(media)
-        cues = job / "work" / "cues.json"
         words = job / "words.json"
-        cmd = [PY, str(HERE / "audio_cue_mapper.py"), str(wav), "--out", str(cues)]
-        if words.exists():
-            cmd[3:3] = ["--aligned-words", str(words)]
-        rc, out, err = sh(cmd, 900)
-        c = jload(cues, {}) or {}
-        res["audio_cues"] = {"file": str(cues), "onset_candidates": len(c.get("onset_candidates_seconds") or []),
-                             "aligned_words": len(c.get("words") or []), "ok": rc == 0}
+        res["audio_cues"], err = cue_map(job, wav, words)
+        if offset and offset > 0.0005:
+            res["audio_cues"]["audio_offset"] = round(offset, 3)
+        if transcribe_opts is not None and (res.get("transcribe") or {}).get("ok") and words.exists() and not res["audio_cues"]["aligned_words"]:
+            res["warning"] = "transcribed words were not imported into the cue map" + (f": {err}" if err else "")
         if not words.exists():
-            res["words_hint"] = "no words.json: put WhisperX/faster-whisper aligned words at JOB/words.json for word-synced text"
+            res["words_hint"] = ("no words.json: run montage_pro.py transcribe MEDIA --job JOB (or intake --transcribe), "
+                                 "or put WhisperX/faster-whisper aligned words at JOB/words.json for word-synced text")
     if kind == "video":
         cuts = job / "work" / "cuts.json"
         rc, out, err = sh([PY, str(HERE / "motion_reference_probe.py"), str(media), "--cuts", "--out", str(cuts)], 1800)
@@ -167,6 +183,337 @@ def intake(media: Path, job: Path) -> dict:
     jsave(job / "intake.json", res)
     report(job, "intake", {"kind": kind, "duration": info["duration"], "sha256": res["sha256"]})
     return res
+
+
+# ------------------------------------------------------------------ transcribe (word timings → words.json, schema kosif-words/1)
+WORDS_SCHEMA = "kosif-words/1"
+FAKE_ENV = "KOSIF_TRANSCRIBE_FAKE"  # test hook: a JSON file {"segments": [...], "language": "ar"} replaces the model
+WRITERS = ("faster-whisper", "fake")  # engine names this command writes (the fake hook never passes for a real run)
+NO_SPEECH_MAX = 0.6  # whisper's own no_speech_threshold: a segment above it is dropped as non-speech (silence/music)
+REPO = SKILL.parents[2]
+
+
+class TranscribeError(Exception):
+    """A clean one-line transcription failure: the CLI prints it on stderr and exits 2."""
+
+
+def _one_line(exc) -> str:
+    return (type(exc).__name__ + ": " + (str(exc).strip().splitlines() or [""])[0])[:200]
+
+
+def _field(o, key, default=None):
+    return o.get(key, default) if isinstance(o, dict) else getattr(o, key, default)
+
+
+def _num(v):
+    try:
+        v = float(v)
+    except (TypeError, ValueError):
+        return None
+    return v if math.isfinite(v) else None
+
+
+def _fw_version():
+    """Installed faster-whisper version from package metadata (no import), or None."""
+    try:
+        from importlib.metadata import version
+        return version("faster-whisper")
+    except Exception:  # noqa: BLE001 - not installed or no metadata
+        return None
+
+
+def target_problem(path: Path):
+    """Why transcribe must not write PATH, or None. Same rule as reel_factory.out_problem: generated transcripts
+    belong under out/ (git-ignored), never inside jobs/, a file tracked by git or an unignored repository path."""
+    p = Path(path).resolve()
+    try:
+        p.relative_to(SKILL)
+        return f"{p} is inside the skill folder {SKILL} (its files ship with the skill; transcripts go under <repo>/out/…)"
+    except ValueError:
+        pass
+    try:
+        in_repo = p.relative_to(REPO).parts
+    except ValueError:
+        in_repo = None
+    jobs = f"{p} is inside jobs/ (job folders are tracked sources; transcripts go under out/)"
+    if in_repo and in_repo[0] == "jobs":
+        return jobs
+    unchecked = f"{p} is inside this repository and git cannot check it (use out/…)" if in_repo is not None and in_repo[:1] != ("out",) else None
+    anc = p.parent
+    while not anc.exists() and anc != anc.parent:
+        anc = anc.parent
+    if not shutil.which("git"):
+        return unchecked
+    try:
+        rc, top, _ = sh(["git", "-C", str(anc), "rev-parse", "--show-toplevel"], 30)
+        if rc:
+            return unchecked  # not inside a git work tree
+        top = Path(top.strip()).resolve()
+        rel = p.relative_to(top)
+        if rel.parts[:1] == ("jobs",):
+            return jobs
+        _, files, _ = sh(["git", "--literal-pathspecs", "-C", str(top), "ls-files", "--", rel.as_posix()], 60)
+        if files.strip():
+            return f"{p} is tracked by git"
+        rc, _, _ = sh(["git", "-C", str(top), "check-ignore", "-q", rel.as_posix()], 30)
+    except ValueError:
+        return None
+    except (OSError, subprocess.SubprocessError):
+        return unchecked
+    return f"{p} is inside a git repository but not git-ignored (use out/…)" if rc == 1 else None
+
+
+def guard_targets(paths, allow_tracked: bool = False):
+    """TranscribeError for the first PATH that target_problem refuses, unless allow_tracked."""
+    for p in [] if allow_tracked else paths:
+        why = target_problem(p)
+        if why:
+            raise TranscribeError(f"refusing to write {Path(p).name}: {why}; pass --allow-tracked to override")
+
+
+def media_timing(media: Path):
+    """(container duration, audio offset) in seconds via ffprobe. The offset is where the first audio sample sits on the
+    file timeline (audio stream start_time minus the container start_time, e.g. 0.776 s for a video whose audio starts
+    late); the decoded samples start there, so word times get it added. (None, 0.0) when ffprobe is missing or fails."""
+    if not shutil.which("ffprobe"):
+        return None, 0.0
+    try:
+        rc, out, _ = sh(["ffprobe", "-v", "error", "-select_streams", "a:0", "-show_entries", "format=duration,start_time:stream=start_time",
+                         "-of", "json", str(media)], 120)
+        d = json.loads(out) if rc == 0 else {}
+    except (OSError, subprocess.SubprocessError, ValueError):
+        return None, 0.0
+    fmt, st = d.get("format") or {}, (d.get("streams") or [{}])[0]
+    dur, a0, f0 = _num(fmt.get("duration")), _num(st.get("start_time")), _num(fmt.get("start_time"))
+    off = max(0.0, a0 - (f0 or 0.0)) if a0 is not None else 0.0
+    return (dur if dur and dur > 0 else None), off
+
+
+def media_duration(media: Path):
+    """Container duration in seconds via ffprobe, or None when ffprobe is missing or cannot read the file."""
+    return media_timing(media)[0]
+
+
+def decode_16k(media: Path, timeout: int = 3600):
+    """ffmpeg → mono 16 kHz float32 through a pipe (no PyAV: avoids the av 19 + faster-whisper 1.2.1 metadata_errors TypeError).
+    Sample 0 is the first audio sample, i.e. media_timing()'s offset on the file timeline."""
+    try:
+        import numpy as np  # lazy: only transcribe needs numpy
+    except Exception as exc:  # noqa: BLE001 - a broken numpy raises more than ImportError
+        raise TranscribeError(f"numpy cannot be imported: {_one_line(exc)} (pip install faster-whisper)") from None
+    try:
+        r = subprocess.run(["ffmpeg", "-loglevel", "error", "-i", str(media), "-vn", "-f", "f32le", "-ac", "1", "-ar", "16000", "-"],
+                           capture_output=True, stdin=subprocess.DEVNULL, timeout=timeout)
+    except subprocess.TimeoutExpired:
+        raise TranscribeError(f"decoding {media.name} timed out after {timeout} s") from None
+    except OSError as exc:
+        raise TranscribeError(f"cannot run ffmpeg: {_one_line(exc)}") from None
+    if r.returncode or len(r.stdout) < 4:
+        tail = (r.stderr.decode("utf-8", "replace").strip().splitlines() or ["no audio stream"])[-1]
+        raise TranscribeError(f"cannot decode {media.name}: {tail[:200]}")
+    return np.frombuffer(r.stdout[:len(r.stdout) // 4 * 4], dtype=np.float32)
+
+
+def tidy_words(segments, limit=None, offset=0.0):
+    """Whisper segments → (words, phrases) for kosif-words/1. `offset` seconds are added to every time (file timeline).
+    Words are stripped (empty ones dropped), kept in segment order (segments by their first word, words by start inside a
+    segment, so a phrase is always one contiguous index range), timed in whole milliseconds (3 decimals), starts strictly
+    increasing (a word that starts before the previous one moves 1 ms after it), each end clamped to the next start and to
+    `limit` seconds, so every word keeps a positive length. One phrase per segment that kept words, with the inclusive word
+    index range; its text is the segment text, or the kept words when any timed word was dropped (limit or bad times)."""
+    groups = []
+    for si, seg in enumerate(segments):
+        rows, lost = [], False
+        for w in _field(seg, "words") or []:
+            text = str(_field(w, "word", "") or "").strip()
+            s, e = _num(_field(w, "start")), _num(_field(w, "end"))
+            if not text:
+                continue
+            if s is None or e is None:
+                lost = True
+                continue
+            p = _field(w, "probability", _field(w, "prob"))
+            rows.append([int(round(max(0.0, s + offset) * 1000)), int(round(max(0.0, e + offset) * 1000)), text, p])
+        if rows:
+            rows.sort(key=lambda r: (r[0], r[1]))
+            groups.append((rows[0][0], si, rows, lost))
+    groups.sort(key=lambda g: (g[0], g[1]))
+    flat = [(r, gi) for gi, g in enumerate(groups) for r in g[2]]
+    for k in range(1, len(flat)):
+        flat[k][0][0] = max(flat[k][0][0], flat[k - 1][0][0] + 1)
+    lim = None if limit is None else int(math.floor(limit * 1000 + 1e-6))
+    if lim is not None:
+        flat = [f for f in flat if f[0][0] < lim]  # past the end of the audio (starts increase, so this cuts a tail)
+    words, members = [], {}
+    for k, ((s, e, text, p), gi) in enumerate(flat):
+        nxt = flat[k + 1][0][0] if k + 1 < len(flat) else lim
+        e = max(e, s + 1) if nxt is None else min(max(e, s + 1), nxt)
+        w = {"word": text, "start": round(s / 1000, 3), "end": round(e / 1000, 3)}
+        if _num(p) is not None:
+            w["prob"] = round(float(p), 3)
+        words.append(w)
+        members.setdefault(gi, []).append(k)
+    phrases = []
+    for gi, (_, si, rows, lost) in enumerate(groups):
+        idx = members.get(gi)
+        if not idx:
+            continue
+        a, b = idx[0], idx[-1]
+        seg = segments[si]
+        text = "" if lost or len(idx) < len(rows) else str(_field(seg, "text", "") or "").strip()
+        ph = {"text": text or " ".join(words[i]["word"] for i in range(a, b + 1)), "start": words[a]["start"], "end": words[b]["end"],
+              "words": [a, b]}
+        for key in ("no_speech_prob", "avg_logprob"):  # whisper's own confidence, so a reader can tell speech from a guess
+            v = _num(_field(seg, key))
+            if v is not None:
+                ph[key] = round(v, 3)
+        phrases.append(ph)
+    return words, phrases
+
+
+def transcribe(media: Path, out: Path, model: str = "medium", language: str = "ar", local_only: bool = False,
+               force: bool = False, vad: bool = True, no_speech_threshold: float = NO_SPEECH_MAX, allow_tracked: bool = False) -> dict:
+    """Write word timings for MEDIA to OUT (kosif-words/1). Skips when OUT already holds the same source sha256, model,
+    engine (name, version, vad, threshold) and language (unless "auto") unless force. Silero VAD (vad) keeps silence and
+    music out of the model, and segments whose no_speech_prob exceeds no_speech_threshold are dropped (listed in
+    dropped_segments and a warning), so Whisper's "subscribe to the channel" guesses never become captions. OUT must
+    not be inside jobs/, tracked by git or an unignored repository path unless allow_tracked. The file holds no clock
+    time, so a rerun on the same input is diffable."""
+    t0 = time.time()
+    media, out = Path(media), Path(out)
+    if not media.is_file():
+        raise TranscribeError(f"no such media file: {media}")
+    guard_targets([out], allow_tracked)
+    lang = None if language in (None, "", "auto") else language
+    fake = os.environ.get(FAKE_ENV)
+    name = "fake" if fake else "faster-whisper"
+    thr = round(float(no_speech_threshold), 3)
+    digest = sha256(media)
+    old = jload(out)
+    eng = old.get("engine") if isinstance(old, dict) else None
+    ours = isinstance(eng, dict) and old.get("schema") == WORDS_SCHEMA and eng.get("name") in WRITERS
+    placeholder = (isinstance(eng, dict) and eng.get("name") == "hand-timed example"
+                   and not (old.get("source") or {}).get("sha256"))  # templates/words.example.json copied by a scaffold
+    ours = ours or placeholder
+    if out.exists() and not ours and not force:  # hand-made or another tool's timings are never overwritten silently
+        raise TranscribeError(f"{out} exists and was not written by transcribe; pass --force to replace it or --out another path")
+    installed = None if fake else _fw_version()
+    if (not force and ours and (old.get("source") or {}).get("sha256") == digest and eng.get("name") == name
+            and eng.get("model") == model and (lang is None or eng.get("language") == lang)
+            and eng.get("vad_filter") is bool(vad) and eng.get("no_speech_threshold") == thr
+            and (eng.get("version") == "fake" if fake else (eng.get("version") != "fake" and installed in (None, eng.get("version"))))):
+        return {"status": "up to date", "file": str(out), "words": len(old.get("words") or []),
+                "elapsed_s": round(time.time() - t0, 3)}
+    decoded = None
+    if fake:
+        data = jload(Path(fake))
+        if not isinstance(data, dict) or not isinstance(data.get("segments"), list):
+            raise TranscribeError(f"{FAKE_ENV}={fake} must be a JSON file with segments[]")
+        segments, detected, version = data["segments"], data.get("language"), "fake"
+    else:
+        try:
+            import faster_whisper  # lazy: optional dependency
+        except ImportError:
+            raise TranscribeError("faster_whisper not installed: pip install faster-whisper") from None
+        except Exception as exc:  # noqa: BLE001 - a broken install (missing ctranslate2 library, numpy ABI) raises OSError & co
+            raise TranscribeError(f"faster_whisper cannot be imported: {_one_line(exc)} (pip install faster-whisper)") from None
+        if not shutil.which("ffmpeg"):
+            raise TranscribeError("ffmpeg not found; install ffmpeg (see montage_pro.py doctor)")
+        audio = decode_16k(media)
+        decoded = len(audio) / 16000.0
+        try:
+            wm = faster_whisper.WhisperModel(model, device="cpu", compute_type="int8", local_files_only=local_only)
+        except Exception as exc:  # noqa: BLE001 - huggingface_hub/ctranslate2 raise many types
+            if local_only and isinstance(exc, OSError):
+                raise TranscribeError(f"model '{model}' is not cached locally (--local-only); run once without --local-only to download it") from None
+            raise TranscribeError(f"cannot load model '{model}': {_one_line(exc)}") from None
+        try:
+            segs, info = wm.transcribe(audio, language=lang, word_timestamps=True, beam_size=5, vad_filter=bool(vad))
+            segments = list(segs)
+        except Exception as exc:  # noqa: BLE001
+            raise TranscribeError(f"transcription failed: {_one_line(exc)}") from None
+        detected = getattr(info, "language", None)
+        version = installed or getattr(faster_whisper, "__version__", None) or "unknown"
+    probed, offset = media_timing(media)
+    kept, dropped = [], []
+    for seg in segments:
+        nsp = _num(_field(seg, "no_speech_prob"))
+        if nsp is not None and nsp > thr:
+            s, e = _num(_field(seg, "start")), _num(_field(seg, "end"))
+            dropped.append({"text": str(_field(seg, "text", "") or "").strip(), "start": None if s is None else round(s + offset, 3),
+                            "end": None if e is None else round(e + offset, 3), "no_speech_prob": round(nsp, 3)})
+        else:
+            kept.append(seg)
+    known = [d for d in (probed, None if decoded is None else offset + decoded) if d]
+    # 1 ms under the shortest measured end, so readers that check end <= decoded duration (audio_cue_mapper) accept the last word
+    words, phrases = tidy_words(kept, (min(known) - 0.001) if known else None, offset)
+    duration = probed or (offset + decoded if decoded else None) or (words[-1]["end"] if words else 0.0)
+    source = {"file": media.name, "sha256": digest, "duration": round(duration, 3)}
+    if round(offset, 3):
+        source["audio_offset"] = round(offset, 3)
+    doc = {"schema": WORDS_SCHEMA, "source": source,
+           "engine": {"name": name, "version": version, "model": model, "compute_type": "int8",
+                      "language": lang or detected, "device": "cpu", "beam_size": 5, "word_timestamps": True,
+                      "vad_filter": bool(vad), "no_speech_threshold": thr},
+           "words": words, "phrases": phrases}
+    if dropped:
+        doc["dropped_segments"] = dropped
+    try:
+        jsave(out, doc)
+    except OSError as exc:
+        raise TranscribeError(f"cannot write {out}: {_one_line(exc)}") from None
+    res = {"status": "written", "file": str(out), "words": len(words), "phrases": len(phrases),
+           "duration": source["duration"], "model": model, "language": doc["engine"]["language"], "engine": name,
+           "engine_version": version, "vad_filter": bool(vad), "elapsed_s": round(time.time() - t0, 3)}
+    if source.get("audio_offset"):
+        res["audio_offset"] = source["audio_offset"]
+    warn = []
+    if dropped:
+        res["dropped_segments"] = len(dropped)
+        warn.append(f"dropped {len(dropped)} segment(s) with no_speech_prob > {thr} (likely silence/music, not speech): "
+                    + " | ".join(d["text"][:40] for d in dropped)[:200])
+    if not words:
+        warn.append("no words recognised (silence, music or wrong --language?)")
+    if warn:
+        res["warning"] = "; ".join(warn)
+    return res
+
+
+def cue_map(job: Path, wav: Path, words: Path):
+    """(Re)build JOB/work/cues.json from master.wav, importing JOB/words.json when it exists. The mapper opens its output
+    exclusively, so a stale map is removed first. Returns (summary, last error line or None)."""
+    cues = job / "work" / "cues.json"
+    if cues.exists():
+        cues.unlink()
+    cmd = [PY, str(HERE / "audio_cue_mapper.py"), str(wav), "--out", str(cues)]
+    if words.exists():
+        cmd[3:3] = ["--aligned-words", str(words)]
+    rc, out, err = sh(cmd, 900)
+    c = jload(cues, {}) or {}
+    last = (err or out).strip().splitlines()[-1] if (err or out).strip() else None
+    return ({"file": str(cues), "onset_candidates": len(c.get("onset_candidates_seconds") or []),
+             "aligned_words": len(c.get("words") or []), "ok": rc == 0}, None if rc == 0 else last)
+
+
+def transcribe_job(media: Path, job: Path, out: Path = None, model: str = "medium", language: str = "ar",
+                   local_only: bool = False, force: bool = False, vad: bool = True, no_speech_threshold: float = NO_SPEECH_MAX,
+                   allow_tracked: bool = False) -> dict:
+    """transcribe() for a job: never raises, records the result in JOB/report.json; ok=False carries the one-line error.
+    JOB/report.json passes the same path guard as the words file."""
+    try:
+        guard_targets([job / "report.json"], allow_tracked)
+        r = transcribe(media, out or job / "words.json", model, language, local_only, force, vad, no_speech_threshold, allow_tracked)
+    except TranscribeError as exc:
+        return {"ok": False, "error": str(exc)}
+    rec = {k: r.get(k) for k in ("status", "file", "words", "model", "language", "elapsed_s")}
+    report(job, "transcribe", {**rec, "warning": r["warning"]} if r.get("warning") else rec)
+    wav, words = job / "work" / "master.wav", Path(out or job / "words.json")
+    if r.get("status") == "written" and wav.exists() and words == job / "words.json":
+        # after an earlier intake: refresh the cue map so a later build sees the new words (not a stale cues.json)
+        r["audio_cues"], err = cue_map(job, wav, words)
+        if err:
+            r["warning"] = (r.get("warning") + "; " if r.get("warning") else "") + "cue map not refreshed: " + err
+    return {"ok": True, **r}
 
 
 # ------------------------------------------------------------------ options
@@ -304,7 +651,7 @@ def verify(job: Path, out: Path, aspect=None, master=None) -> dict:
         cmd += ["--aspect", aspect]
     if master:
         cmd += ["--audio", str(master)]
-    rc, o, e = sh(cmd, 900)
+    rc, o, e = sh(cmd, 900, encoding="utf-8")
     lines = [l for l in o.splitlines() if l.startswith("[")]
     return {"exit": rc, "checks": lines[-12:], "summary": (o.strip().splitlines() or [""])[-1]}
 
@@ -471,6 +818,19 @@ def main(argv=None):
     sub.add_parser("doctor")
     sub.add_parser("team")
     i = sub.add_parser("intake"); i.add_argument("media", type=Path); i.add_argument("--job", type=Path, required=True)
+    i.add_argument("--transcribe", action="store_true", help="opt-in: also write JOB/words.json (see transcribe) before the cue mapper")
+    tr = sub.add_parser("transcribe", help="faster-whisper word timings → words.json (kosif-words/1)")
+    tr.add_argument("media", type=Path); tr.add_argument("--job", type=Path, help="job dir: writes JOB/words.json and JOB/report.json")
+    tr.add_argument("--out", type=Path, help="words.json path (default JOB/words.json)")
+    for q in (i, tr):  # transcription settings (intake uses them only with --transcribe)
+        q.add_argument("--model", default="medium", help="faster-whisper model (default medium)")
+        q.add_argument("--language", default="ar", help="language code, or auto to detect (default ar)")
+        q.add_argument("--local-only", action="store_true", help="never download the model; fail if it is not cached")
+        q.add_argument("--force", action="store_true", help="rewrite words.json even when up to date or not written by transcribe")
+        q.add_argument("--no-vad", action="store_true", help="feed silence/music to the model too (default: Silero VAD skips them)")
+        q.add_argument("--no-speech-threshold", type=float, default=NO_SPEECH_MAX,
+                       help=f"drop segments whose no_speech_prob is above this (default {NO_SPEECH_MAX}; 1 keeps all)")
+        q.add_argument("--allow-tracked", action="store_true", help="allow words.json/report.json inside jobs/, tracked by git or not git-ignored")
     o = sub.add_parser("options"); o.add_argument("job", type=Path); o.add_argument("--brief", default="")
     a = sub.add_parser("acquire"); a.add_argument("url"); a.add_argument("--job", type=Path, required=True)
     a.add_argument("--license", default=""); a.add_argument("--source-page", default=""); a.add_argument("--owner", action="store_true")
@@ -480,6 +840,8 @@ def main(argv=None):
     b.add_argument("--style"); b.add_argument("--title", default="")
     b.add_argument("--deliver-mix", action="store_true", help="also write a -14 LUFS delivery copy (master untouched)")
     x = ap.parse_args(argv)
+    if x.cmd in ("intake", "transcribe") and not 0.0 <= x.no_speech_threshold <= 1.0:
+        ap.error("--no-speech-threshold must be between 0 and 1")
     if x.cmd == "doctor":
         r = doctor()
         for k, v in r["tools"].items():
@@ -494,8 +856,40 @@ def main(argv=None):
             print(f"  [{r['id']}] {r['ar']} — {r['en']}\n      {r['mission']}\n      tools: {', '.join(r['scripts'])} · gate: {r['gate']}")
         return 0
     if x.cmd == "intake":
-        r = intake(x.media, x.job)
+        topts = None
+        if x.transcribe:
+            topts = {"model": x.model, "language": x.language, "local_only": x.local_only, "force": x.force, "vad": not x.no_vad,
+                     "no_speech_threshold": x.no_speech_threshold, "allow_tracked": x.allow_tracked}
+            try:  # fail before any intake work when the transcript could not be written there anyway
+                guard_targets([x.job / "words.json", x.job / "report.json"], x.allow_tracked)
+            except TranscribeError as exc:
+                print("transcribe: " + str(exc), file=sys.stderr)
+                return 2
+        r = intake(x.media, x.job, topts)
         print(json.dumps({k: r[k] for k in r if k not in ("source",)}, ensure_ascii=False, indent=1))
+        if topts is not None and not r["transcribe"]["ok"]:
+            print("transcribe: " + r["transcribe"]["error"], file=sys.stderr)
+            return 2
+        if r.get("warning"):  # --transcribe wrote words that never reached the cue map: say it and fail
+            print("intake: " + r["warning"], file=sys.stderr)
+            return 1
+        return 0
+    if x.cmd == "transcribe":
+        if not (x.job or x.out):
+            ap.error("transcribe needs --job JOB or --out PATH")
+        tkw = {"vad": not x.no_vad, "no_speech_threshold": x.no_speech_threshold, "allow_tracked": x.allow_tracked}
+        if x.job:
+            r = transcribe_job(x.media, x.job, x.out, x.model, x.language, x.local_only, x.force, **tkw)
+            err = None if r.pop("ok") else r["error"]
+        else:  # --out alone: no job, so no report.json is written anywhere
+            try:
+                r, err = transcribe(x.media, x.out, x.model, x.language, x.local_only, x.force, **tkw), None
+            except TranscribeError as exc:
+                err = str(exc)
+        if err:
+            print("transcribe: " + err, file=sys.stderr)
+            return 2
+        print(json.dumps(r, ensure_ascii=False))
         return 0
     if x.cmd == "options":
         r = options(x.job, x.brief)

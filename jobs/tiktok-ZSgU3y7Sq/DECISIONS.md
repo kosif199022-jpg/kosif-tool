@@ -7,3 +7,8 @@
 - مفتاح Pexels غير متاح: إصدار المفاتيح الجديدة متوقف من Pexels (لقطة شاشة من المستخدم، 21-10-2026). البدائل: يرفع المستخدم اللقطات بنفسه، أو أنيميشن مرسوم
 - الحل: Claude يحمّل من Pexels مباشرة برقم الفيديو (رابط التحميل العام، بلا مفتاح)، والأرقام من بحث الويب. حمّل 17 لقطة (`build/pexels_urls.txt`)، منها 14 للحرم، ومطر حقيقي على خلفية سوداء (36344044) يُدمج فوق اللقطات
 - الحالة: بانتظار موافقة المستخدم على الخطة B والاقتراحات
+
+## إزالة الملفات المشتقة / derived files removed (2026-10-22)
+
+بقرار المالك أُزيلت من الريبو العام الملفات المشتقة من صوت أو فيديو حسابات أخرى (نص مفرّغ بتوقيت الكلمات، كلمات الأغنية، ورقة إطارات المصدر). تبقى محليًا فقط وصارت متجاهَلة في `.gitignore`. لإعادة توليد التوقيت محليًا: `python3 .claude/skills/kosif-superpowers/scripts/montage_pro.py transcribe <audio> --out out/<job>/words.json`.
+By the owner's decision, files derived from other accounts' audio or video (word-timed transcripts, lyrics, source contact sheets) were removed from the public repo; they stay local only and are now git-ignored. The film HTML that loaded them needs a regenerated words file next to it.

@@ -6,6 +6,7 @@
 - كيف يعمل / how it works
 - الفريق / the team
 - قائمة الخيارات / the option menu
+- التفريغ ومصنع الريلز / transcription and the reel factory
 - مكتب التحميل والحقوق (فكرة IDM) / the download desk
 - ما تعلمناه من IDM بـ REA وGhidra / what we learnt from IDM
 - قواعد لا تُكسر / rules
@@ -57,6 +58,21 @@ python3 $SKILL_DIR/scripts/montage_pro.py build job1 --option reframe --style 9:
 | `3d-scene` | صوت/فيديو | 🧩 يحتاج مشهد JSON | مشهد ثلاثي الأبعاد بحركة كاميرا |
 
 «شُغّل» = جُرّب على وسائط اصطناعية في هذه الحاوية (`evals/test_montage_pro.py`). فشل فحص الجهارة الوحيد في الاختبارات سببه هدوء ملف الاختبار، وتحله نسخة `--deliver-mix` (8/8).
+
+## التفريغ ومصنع الريلز / transcription and the reel factory
+
+اختيار مجلس البرو في 22-10 ([المحضر](../proofs/pro-council-20261022/README.md)): مسار تحليل محلي أولًا، ثم غلاف رفيع للريلز. (المجلس اقترح بوابة حقوق مانعة؛ قرار المالك في 22-10: تسجيل الحقوق إرشاديًا بلا منع.)
+
+```bash
+python3 $SKILL_DIR/scripts/montage_pro.py transcribe voice.m4a --job out/job1 --language ar --local-only   # words.json (kosif-words/1)
+python3 $SKILL_DIR/scripts/reel_factory.py build --audio voice.m4a --audio-rights owned --words out/job1/words.json \
+  --shots-manifest stock/manifest.json --shot-ids 17928486,8165467,20382699 --title "دعاء يوم الخميس" --handle @kosif
+python3 $SKILL_DIR/scripts/verify_video.py reel.mp4 --aspect 9:16 --fps 30 --duration 15 --source-audio voice.m4a
+```
+
+- **`transcribe`:** faster-whisper محليًا (CPU، int8، توقيت لكل كلمة، VAD يتخطى الصمت والموسيقى) إلى `words.json` بصيغة `kosif-words/1`: بصمة المصدر والمحرك والكلمات والجمل. لا يكتب داخل `jobs/` أو ملف متتبَّع إلا بـ `--allow-tracked`. `intake --transcribe` يفرّغ قبل خريطة الإشارات. دقة التوقيت **لم تُقَس** مقابل مرجع؛ المقاس: 34 كلمة في 14–28 ثانية لمقطع 14.7 ث، وثلاث مرات بنتيجة متطابقة بايتًا ببايت.
+- **`verify_video.py --source-audio`:** يطابق بصمة MD5 لحزم الصوت مع المصدر؛ عند التطابق تصبح الجهارة والذروة `[INFO]` «الصوت الأصلي محفوظ» بدل الفشل، لأن صوت المستخدم لا يُعاد ضبطه.
+- **`reel_factory.py plan|build`:** يسجّل الحقوق المعلنة للصوت ورخصة كل لقطة في `rights.json` (الفجوات تُدرج وتُذكر مرة في `RIGHTS_NOTE` ولا توقف البناء)، ثم لقطة لكل جملة وانتقالات على القطع، ولوحة 4:5، ومشهد عربي كلمة بكلمة داخل المنطقة الآمنة، ودمج الصوت بلا إعادة ترميز، وفحص بالبصمة. المخرجات في `out/reels/<slug>` (متجاهَل من git).
 
 ## مكتب التحميل والحقوق (فكرة IDM) / the download desk
 

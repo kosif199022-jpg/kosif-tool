@@ -1,0 +1,17 @@
+# DECISIONS — ريلز دعاء يوم الخميس (20261022)
+
+- المصدر: https://www.tiktok.com/@roouf44/video/7699144334771277076 (الناشر @roouf44 — Abu Rakan Al-Yamani، ليس حساب المستخدم). الصوت يُكتب على الشاشة «الصوت: @roouf44»؛ النشر قرار المستخدم بعد التأكد من الإذن.
+- الصوت: 14.7 ث، AAC استريو 44.1 kHz، −16.9 LUFS، MD5 audio.m4a = f29343ab60253fee002b4657723ef358 (نسخ تيار بلا إعادة ترميز).
+- التفريغ: faster-whisper medium بتوقيت الكلمات → source/words.json.
+- وصفة FusionForge: FUSE-20261022-43cda4d9e3 (project kosif_dua_reels، candidate).
+- الحالة: تقرير الخطط عُرض (الموصى بها B)، بانتظار رد المستخدم.
+- 22-10: اعتمد المستخدم الخطة B بالإجابات المقترحة (حق الصوت: إظهار «الصوت: @roouf44» والنشر قراره؛ @kosif أسفل الإطار ويكبر في الختام؛ «دعاء يوم الخميس» بلا تاريخ؛ الصوت كما هو دون تطبيع؛ Aref Ruqaa للدعاء وReem Kufi للعنوان).
+- اللقطات: 12 مرشحًا من Pexels راجعتها بلوحات؛ استُبعد 2846300 (صليب كنيسة في الخلفية) واستُبدل بـ 11803764.
+- البناء: لوح لقطات 4:5 بانتقالات ffmpeg على حدود الجمل + مشهد Canvas (`build/scene.html`) بكلمات تظهر بتوقيتها، وإطار ذهبي يُرسم، وومضة نور في نوافذ الانتقال فقط؛ الصوت بنسخ التيار (MD5 مطابق).
+- التسليم: verify_video 11/12 (الجهارة −16.9 LUFS مقصودة).
+- 22-10 v2: المستخدم طلب لقطات تشبه الأصل (مبخرة، مصحف…). بحثت في Pexels وPinterest ومواقع أخرى؛ استُخدمت 7 لقطات Pexels مرخّصة فقط (مقاطع Pinterest/Snapchat بلا رخصة). make_plate.sh صار v2 (v1 محفوظ في make_plate_v1.sh).
+
+## إزالة الملفات المشتقة / derived files removed (2026-10-22)
+
+بقرار المالك أُزيلت من الريبو العام الملفات المشتقة من صوت أو فيديو حسابات أخرى (نص مفرّغ بتوقيت الكلمات، كلمات الأغنية، ورقة إطارات المصدر). تبقى محليًا فقط وصارت متجاهَلة في `.gitignore`. لإعادة توليد التوقيت محليًا: `python3 .claude/skills/kosif-superpowers/scripts/montage_pro.py transcribe <audio> --out out/<job>/words.json`.
+By the owner's decision, files derived from other accounts' audio or video (word-timed transcripts, lyrics, source contact sheets) were removed from the public repo; they stay local only and are now git-ignored. The film HTML that loaded them needs a regenerated words file next to it.

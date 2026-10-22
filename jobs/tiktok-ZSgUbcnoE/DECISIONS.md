@@ -7,3 +7,8 @@
 - القرارات (اعتمدها المستخدم بـ«زي ما انت عايز»): الخطة B «خط النور»؛ رفع الصوت +5 dB بالتساوي فقط؛ التاريخ 22.10.2026 · ١١ جمادى الأولى ١٤٤٨ هـ؛ الاسم @kosif؛ لقطات مساجد وصباح ومعنى الكلام؛ الآية بخط مميز وتشكيل كامل
 - التصميم: لوحة فيديو صافية 1000×926 بإطار ذهبي، والنص خارجها؛ المؤثرات وقت الانتقالات فقط
 - الحالة: تم الرندر والتسليم، والتقرير في TEST_REPORT.md
+
+## إزالة الملفات المشتقة / derived files removed (2026-10-22)
+
+بقرار المالك أُزيلت من الريبو العام الملفات المشتقة من صوت أو فيديو حسابات أخرى (نص مفرّغ بتوقيت الكلمات، كلمات الأغنية، ورقة إطارات المصدر). تبقى محليًا فقط وصارت متجاهَلة في `.gitignore`. لإعادة توليد التوقيت محليًا: `python3 .claude/skills/kosif-superpowers/scripts/montage_pro.py transcribe <audio> --out out/<job>/words.json`.
+By the owner's decision, files derived from other accounts' audio or video (word-timed transcripts, lyrics, source contact sheets) were removed from the public repo; they stay local only and are now git-ignored. The film HTML that loaded them needs a regenerated words file next to it.

@@ -1,0 +1,201 @@
+<!doctype html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="utf-8">
+<title>دعاء يوم الخميس — @kosif</title>
+<style>
+  @font-face { font-family: "Ruqaa"; src: url("fonts/ArefRuqaa-Bold.ttf"); }
+  @font-face { font-family: "Kufi"; src: url("fonts/ReemKufi.ttf"); }
+  html, body { margin: 0; background: #050a17; }
+  canvas { display: block; }
+</style>
+</head>
+<body>
+<canvas id="c" width="1080" height="1920"></canvas>
+<script>
+// KOSIF dua reel: 1080x1920, 30 fps. Every visual is a pure function of t (seek-driven).
+// The footage plate (960x1200 JPG sequence) is built by make_plate.sh; the dua audio is muxed
+// afterwards by stream copy, so nothing here touches the sound.
+const W = 1080, H = 1920, FPS = 30, DURATION = 15.7, FRAMES = 471;
+const PANEL = { x: 60, y: 236, w: 960, h: 1200, r: 34 };
+const GOLD = "#f2c46d", CREAM = "#fbf3df";
+// Shot cuts in film time (phrase starts) — transitions are centred on them (±0.2 s).
+const CUTS = [1.90, 4.18, 6.86, 8.20, 9.74, 13.10];
+// Screen phrases with per-word start times from faster-whisper word timestamps (source/words.json).
+const PHRASES = [
+  { t0: 0.00, t1: 1.90, words: [["اللَّهُمَّ", 0.00], ["في", 0.68], ["يومِ", 0.92], ["الخميس", 1.18]] },
+  { t0: 1.90, t1: 4.18, words: [["اللَّهُمَّ", 1.90], ["ارزقنا", 2.40], ["بركةً", 3.00], ["في", 3.60], ["العُمر", 3.76]] },
+  { t0: 4.18, t1: 6.86, words: [["ونورًا", 4.18], ["في", 4.88], ["القلب", 5.00], ["وضياءً", 5.46], ["في", 6.14], ["الوجه", 6.38]] },
+  { t0: 6.86, t1: 9.74, words: [["وسعةً", 6.86], ["في", 7.42], ["الرزق", 7.70], ["وثباتًا", 8.20], ["على", 9.00], ["الحق", 9.14]] },
+  { t0: 9.74, t1: 13.10, words: [["ارزقنا", 9.74], ["رضا", 10.38], ["النفس", 10.62], ["ومحبةً", 10.96], ["في", 11.64], ["قلوب", 11.96], ["الخلق", 12.34]] },
+  { t0: 13.10, t1: 99, big: true, words: [["اللَّهُمَّ", 13.10], ["آمين", 13.84]] },
+];
+
+const cv = document.getElementById("c"), g = cv.getContext("2d");
+const clamp = (v, a = 0, b = 1) => Math.max(a, Math.min(b, v));
+const ease = (x) => { x = clamp(x); return x < 0.5 ? 4 * x * x * x : 1 - Math.pow(-2 * x + 2, 3) / 2; };
+const outBack = (x) => { x = clamp(x); const c1 = 1.4, c3 = c1 + 1; return 1 + c3 * Math.pow(x - 1, 3) + c1 * Math.pow(x - 1, 2); };
+
+const plate = new Array(FRAMES);
+function frameImage(i) {
+  if (!plate[i]) {
+    plate[i] = new Promise((res, rej) => {
+      const im = new Image();
+      im.onload = () => res(im); im.onerror = rej;
+      im.src = "plate/" + String(i + 1).padStart(4, "0") + ".jpg";
+    });
+  }
+  return plate[i];
+}
+const fontsReady = Promise.all([
+  document.fonts.load('80px "Ruqaa"', "اللَّهُمَّ"), document.fonts.load('64px "Kufi"', "دعاء kosif"),
+]);
+
+function roundRect(x, y, w, h, r) {
+  g.beginPath(); g.moveTo(x + r, y); g.arcTo(x + w, y, x + w, y + h, r); g.arcTo(x + w, y + h, x, y + h, r);
+  g.arcTo(x, y + h, x, y, r); g.arcTo(x, y, x + w, y, r); g.closePath();
+}
+
+// Background: deep night gradient + a slowly turning 8-point star lattice (outside the shot only).
+function background(t) {
+  const bg = g.createRadialGradient(W / 2, 760, 120, W / 2, 900, 1300);
+  bg.addColorStop(0, "#14244a"); bg.addColorStop(1, "#050a17");
+  g.fillStyle = bg; g.fillRect(0, 0, W, H);
+  g.save(); g.strokeStyle = "rgba(242,196,109,0.075)"; g.lineWidth = 1.4;
+  const step = 120, drift = (t * 6) % step;
+  for (let y = -step; y < H + step; y += step) for (let x = -step; x < W + step; x += step) {
+    const cx = x + drift, cy = y + ((x / step) % 2 ? step / 2 : 0);
+    for (let k = 0; k < 2; k++) {
+      g.beginPath();
+      for (let j = 0; j < 4; j++) {
+        const a = k * Math.PI / 4 + j * Math.PI / 2 + t * 0.05, s = 26;
+        const px = cx + Math.cos(a) * s, py = cy + Math.sin(a) * s;
+        j ? g.lineTo(px, py) : g.moveTo(px, py);
+      }
+      g.closePath(); g.stroke();
+    }
+  }
+  g.restore();
+}
+
+// Title with a gold ornament line drawn on from the centre outwards.
+function title(t) {
+  const a = ease((t - 0.15) / 0.8);
+  g.save(); g.globalAlpha = a; g.fillStyle = GOLD; g.textAlign = "center"; g.direction = "rtl";
+  g.font = '600 62px "Kufi"';
+  g.translate(W / 2, 128 + (1 - a) * 18); g.fillText("دعاء يوم الخميس", 0, 0); g.restore();
+  const d = ease(t / 1.1) * 330;
+  g.save(); g.strokeStyle = GOLD; g.lineWidth = 2.5; g.lineCap = "round";
+  g.beginPath(); g.moveTo(W / 2 - d, 168); g.lineTo(W / 2 + d, 168); g.stroke();
+  if (d > 4) {  // diamond at the centre
+    g.fillStyle = GOLD; g.beginPath(); g.moveTo(W / 2, 160); g.lineTo(W / 2 + 8, 168); g.lineTo(W / 2, 176); g.lineTo(W / 2 - 8, 168); g.fill();
+  }
+  g.restore();
+}
+
+// Shot index and its local progress (for the slow push-in), from the cut list.
+function shotAt(t) {
+  let i = 0; while (i < CUTS.length && t >= CUTS[i]) i++;
+  const a = i ? CUTS[i - 1] : 0, b = i < CUTS.length ? CUTS[i] : DURATION;
+  return { i, p: (t - a) / (b - a) };
+}
+
+async function panel(t) {
+  const n = Math.min(FRAMES - 1, Math.round(t * FPS));
+  const im = await frameImage(n);
+  const { p } = shotAt(t);
+  const s = 1 + 0.035 * ease(p);  // push-in ≤ 1.035 so 720p-derived shots stay sharp
+  g.save(); roundRect(PANEL.x, PANEL.y, PANEL.w, PANEL.h, PANEL.r); g.clip();
+  const w = PANEL.w * s, h = PANEL.h * s;
+  g.drawImage(im, PANEL.x - (w - PANEL.w) / 2, PANEL.y - (h - PANEL.h) / 2, w, h);
+  g.restore();
+  // Gold frame drawn on during the first 1.3 s (perimeter progress), then held.
+  const per = 2 * (PANEL.w + PANEL.h), prog = ease(t / 1.3);
+  g.save(); g.strokeStyle = GOLD; g.lineWidth = 4; roundRect(PANEL.x, PANEL.y, PANEL.w, PANEL.h, PANEL.r);
+  g.setLineDash([per * prog, per]); g.stroke(); g.restore();
+  // Transition accent: a light sweep along the frame inside each ±0.25 s cut window only.
+  for (const c of CUTS) {
+    const q = (t - (c - 0.25)) / 0.5;
+    if (q <= 0 || q >= 1) continue;
+    const gx = PANEL.x + PANEL.w * (1 - q);
+    const sweep = g.createLinearGradient(gx - 160, 0, gx + 160, 0);
+    sweep.addColorStop(0, "rgba(255,226,150,0)"); sweep.addColorStop(0.5, "rgba(255,236,180,0.95)"); sweep.addColorStop(1, "rgba(255,226,150,0)");
+    g.save(); g.strokeStyle = sweep; g.lineWidth = 7; g.shadowColor = GOLD; g.shadowBlur = 18;
+    roundRect(PANEL.x, PANEL.y, PANEL.w, PANEL.h, PANEL.r); g.stroke(); g.restore();
+  }
+}
+
+// Word-by-word kinetic Arabic: each word rises and fades in at its spoken time; the word being
+// spoken is gold, earlier words cream. Lines are laid out right-to-left by hand.
+function dua(t) {
+  const ph = PHRASES.find((x) => t >= x.t0 && t < x.t1) || PHRASES[PHRASES.length - 1];
+  const prev = PHRASES[PHRASES.indexOf(ph) - 1];
+  const size = ph.big ? 118 : 84, maxW = 940, gap = size * 0.32;
+  g.save(); g.font = `${size}px "Ruqaa"`; g.direction = "rtl"; g.textBaseline = "alphabetic";
+  // Balanced line breaking: one line if it fits, otherwise the two-line split with the shortest longest line.
+  const items = ph.words.map(([w, s]) => ({ w, s, ww: g.measureText(w).width }));
+  const width = (arr) => arr.reduce((a, x) => a + x.ww, 0) + gap * Math.max(0, arr.length - 1);
+  let lines = [items];
+  if (width(items) > maxW) {
+    let best = null;
+    for (let k = 1; k < items.length; k++) {
+      const m = Math.max(width(items.slice(0, k)), width(items.slice(k)));
+      if (!best || m < best.m) best = { k, m };
+    }
+    lines = [items.slice(0, best.k), items.slice(best.k)];
+  }
+  const lh = size * 1.3, top = 1585 - ((lines.length - 1) * lh) / 2 + size * 0.3;  // block centred at y≈1585, clear of the panel
+  // Previous phrase leaves upward in the first 0.2 s of this one (transition window only).
+  if (prev && t - ph.t0 < 0.2) {
+    g.globalAlpha = 1 - (t - ph.t0) / 0.2;
+  }
+  lines.forEach((ln, li) => {
+    const total = ln.reduce((a, x) => a + x.ww, 0) + gap * (ln.length - 1);
+    let x = W / 2 + total / 2;  // right edge, RTL
+    for (const it of ln) {
+      const k = (t - it.s) / 0.28, a = clamp(k);
+      if (a > 0) {
+        const speaking = t >= it.s && t < it.s + 0.55;
+        g.save(); g.globalAlpha *= a; g.textAlign = "right";
+        g.fillStyle = speaking ? GOLD : CREAM;
+        if (speaking) { g.shadowColor = "rgba(242,196,109,0.65)"; g.shadowBlur = 22; }
+        g.translate(x, top + li * lh + (1 - outBack(k)) * 26);
+        g.fillText(it.w, 0, 0); g.restore();
+      }
+      x -= it.ww + gap;
+    }
+  });
+  g.restore();
+}
+
+// Signature and audio credit (outside the shot, above the platform UI zone).
+function signature(t) {
+  const a = ease((t - 0.6) / 0.6);
+  const end = ease((t - 14.4) / 0.7);  // outro: the name grows and glows
+  g.save(); g.textAlign = "center"; g.direction = "ltr";
+  g.globalAlpha = a; g.fillStyle = GOLD; g.font = `600 ${46 + 26 * end}px "Kufi"`;
+  if (end > 0) { g.shadowColor = "rgba(242,196,109,0.8)"; g.shadowBlur = 30 * end; }
+  g.fillText("@kosif", W / 2, 1768 - 10 * end);
+  g.shadowBlur = 0; g.globalAlpha = a * (1 - end) * 0.72; g.fillStyle = CREAM; g.direction = "rtl";
+  // Credit drawn as two runs so the Latin handle never reorders the Arabic label.
+  g.font = '28px "Kufi"';
+  const lab = "الصوت:", hnd = "@roouf44", gp = 10;
+  g.direction = "rtl"; const lw = g.measureText(lab).width;
+  g.direction = "ltr"; const hw = g.measureText(hnd).width;
+  const right = W / 2 + (lw + gp + hw) / 2;
+  g.textAlign = "right"; g.direction = "rtl"; g.fillText(lab, right, 1814);
+  g.textAlign = "left"; g.direction = "ltr"; g.fillText(hnd, right - lw - gp - hw, 1814);
+  g.restore();
+}
+
+async function draw(t) {
+  t = clamp(t, 0, DURATION - 1 / FPS);
+  await fontsReady;
+  background(t); title(t); await panel(t); dua(t); signature(t);
+}
+
+window.__kosif = { duration: DURATION, fps: FPS, width: W, height: H, seek: (t) => draw(t) };
+draw(0);
+</script>
+</body>
+</html>
