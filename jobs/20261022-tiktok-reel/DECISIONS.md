@@ -10,3 +10,8 @@
 - البناء: لوح لقطات 4:5 بانتقالات ffmpeg على حدود الجمل + مشهد Canvas (`build/scene.html`) بكلمات تظهر بتوقيتها، وإطار ذهبي يُرسم، وومضة نور في نوافذ الانتقال فقط؛ الصوت بنسخ التيار (MD5 مطابق).
 - التسليم: verify_video 11/12 (الجهارة −16.9 LUFS مقصودة).
 - 22-10 v2: المستخدم طلب لقطات تشبه الأصل (مبخرة، مصحف…). بحثت في Pexels وPinterest ومواقع أخرى؛ استُخدمت 7 لقطات Pexels مرخّصة فقط (مقاطع Pinterest/Snapchat بلا رخصة). make_plate.sh صار v2 (v1 محفوظ في make_plate_v1.sh).
+
+## إزالة الملفات المشتقة / derived files removed (2026-10-22)
+
+بقرار المالك أُزيلت من الريبو العام الملفات المشتقة من صوت أو فيديو حسابات أخرى (نص مفرّغ بتوقيت الكلمات، كلمات الأغنية، ورقة إطارات المصدر). تبقى محليًا فقط وصارت متجاهَلة في `.gitignore`. لإعادة توليد التوقيت محليًا: `python3 .claude/skills/kosif-superpowers/scripts/montage_pro.py transcribe <audio> --out out/<job>/words.json`.
+By the owner's decision, files derived from other accounts' audio or video (word-timed transcripts, lyrics, source contact sheets) were removed from the public repo; they stay local only and are now git-ignored. The film HTML that loaded them needs a regenerated words file next to it.

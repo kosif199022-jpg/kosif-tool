@@ -12,3 +12,8 @@
 - الخطة المعتمدة: B «نور الكلمة» (21-10-2026)
 - الحالة: تم الرندر والتسليم، والتقرير في TEST_REPORT.md
 - تعديل 1: لقطة سقف المسجد (15694) استُبدلت بلقطة سجود داخل مسجد (34223) لأنها كانت ملتبسة؛ والاسم صار @kosif
+
+## إزالة الملفات المشتقة / derived files removed (2026-10-22)
+
+بقرار المالك أُزيلت من الريبو العام الملفات المشتقة من صوت أو فيديو حسابات أخرى (نص مفرّغ بتوقيت الكلمات، كلمات الأغنية، ورقة إطارات المصدر). تبقى محليًا فقط وصارت متجاهَلة في `.gitignore`. لإعادة توليد التوقيت محليًا: `python3 .claude/skills/kosif-superpowers/scripts/montage_pro.py transcribe <audio> --out out/<job>/words.json`.
+By the owner's decision, files derived from other accounts' audio or video (word-timed transcripts, lyrics, source contact sheets) were removed from the public repo; they stay local only and are now git-ignored. The film HTML that loaded them needs a regenerated words file next to it.
