@@ -68,7 +68,7 @@ class SourceAudioTests(unittest.TestCase):
         if out.exists():
             out.unlink()
         base = ["--fps", "30", "--duration", "2"] if timing else ["--fps", "30"]
-        r = subprocess.run([PY, str(TOOL), str(video), *base, *extra, "--json", str(out)], capture_output=True, text=True, timeout=120)
+        r = subprocess.run([PY, str(TOOL), str(video), *base, *extra, "--json", str(out)], capture_output=True, text=True, encoding="utf-8", timeout=120)
         report = json.loads(out.read_text(encoding="utf-8")) if out.exists() else None
         return r, report
 
