@@ -18,7 +18,7 @@
   "powers": 5331,
   "families": 62,
   "domains": 10,
-  "tools": 131,
+  "tools": 132,
   "guides": 96,
   "statuses": {
    "documented": 1937,
@@ -12502,6 +12502,84 @@
    ],
    "evidence": "tested-here",
    "evidence_note": "evals/test_atlas_render.py passed on 2026-10-23; full 17 s render: 510 frames 1280x720 h264 + aac, deterministic, 29 ms/frame (proofs/style-atlas-86)."
+  },
+  {
+   "id": "business-workflows",
+   "path": "scripts/business_workflows.py",
+   "root": "skill",
+   "kind": "cli",
+   "area": "think",
+   "title_en": "AI for business: 9 functions, 64 workflows, Claude-native gated runbooks",
+   "title_ar": "الذكاء الاصطناعي في الأعمال: 9 وظائف و64 خطة عمل بخطط تشغيل لClaude",
+   "summary_en": "Searches Futurepedia's business adoption index and 64 workflow playbooks (36 library + 28 creator), re-routes every step from the named third-party tool to what Claude can do in the session or to a connector, measures native coverage, and writes an Arabic runbook with approval gates for send, post, spend and recording.",
+   "summary_ar": "يبحث في مؤشر تبني الذكاء الاصطناعي لـ9 وظائف و64 خطة عمل، ويعيد توجيه كل خطوة إلى ما ينفذه Claude بنفسه أو إلى موصّل، ويكتب خطة تشغيل عربية ببوابات موافقة.",
+   "use_when": [
+    "اعمل لي workflow للمبيعات بالذكاء الاصطناعي",
+    "أي أداة ذكاء اصطناعي أستخدم في التسويق",
+    "Turn a podcast into a content plan with AI",
+    "Plan an AI workflow for my sales team"
+   ],
+   "keywords": [
+    "business",
+    "workflow",
+    "sales",
+    "marketing",
+    "support",
+    "operations",
+    "فور بيزنس",
+    "أعمال",
+    "مبيعات",
+    "تسويق",
+    "خطة عمل",
+    "أتمتة",
+    "futurepedia"
+   ],
+   "commands": [
+    {
+     "name": "functions",
+     "example": "python3 scripts/business_workflows.py functions",
+     "does": "Business functions by adoption with matching workflows."
+    },
+    {
+     "name": "search",
+     "example": "python3 scripts/business_workflows.py search \"بودكاست\"",
+     "does": "Arabic/English workflow search."
+    },
+    {
+     "name": "coverage",
+     "example": "python3 scripts/business_workflows.py coverage",
+     "does": "Native vs connector/approval steps per workflow."
+    },
+    {
+     "name": "plan",
+     "example": "python3 scripts/business_workflows.py plan --workflow FW-07 --context \"حلقة بودكاست عربية\" --out out/biz/plan.md",
+     "does": "Writes a gated Claude-native runbook."
+    }
+   ],
+   "inputs": "data/futurepedia_business_workflows.json and the user's situation",
+   "outputs": "JSON listings and a Markdown runbook",
+   "requires": {
+    "python": [],
+    "binaries": [],
+    "node": [],
+    "optional": [],
+    "network": false
+   },
+   "safety": "writes-files",
+   "consent": "Writes only the new --out file; never sends, posts, spends or records; plans mark every such step as needing explicit approval.",
+   "limits": "Facts only from the site (no prompts); third-party tool features and prices change; connector availability is checked at run time, not here.",
+   "tests": [
+    ".claude/skills/kosif-superpowers/evals/test_business_workflows.py"
+   ],
+   "docs": [
+    ".claude/skills/kosif-superpowers/references/protocol/A18-futurepedia-business-workflows.md"
+   ],
+   "families": [
+    "planning-execution",
+    "agent-orchestration"
+   ],
+   "evidence": "tested-here",
+   "evidence_note": "evals/test_business_workflows.py passed on 2026-10-23 (64 workflows, 286 steps, 220 native)."
   }
  ],
  "guides": [

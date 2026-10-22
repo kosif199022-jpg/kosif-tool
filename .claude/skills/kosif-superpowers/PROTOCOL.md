@@ -47,10 +47,11 @@
 | [A11 لقطات 21-10-2026](references/protocol/A11-snapshots-20261021.md) | سؤال عن حالة SEE أو Think المسجلة يومها | لقطات مؤرخة من -1.1 و-1.18 و-1.20 و-1.21 والمستودع الأصل، وسطر عنوان v5.2 | تاريخية؛ أعد الفحص حيًا |
 | [A12 SEE Pro Cognitive Fusion](references/protocol/A12-see-pro-cognitive-fusion.md) | تفكير SEE Pro وL2/L3 | جديد | `see_pro_cognitive_gate.py`؛ Full Pro خارجي |
 | [A13 مجلس البرو](references/protocol/A13-pro-council.md) | مجلس Pro | جديد | `council.py` |
-| [A14 أكاديمية الرسم والمونتاج](references/protocol/A14-drawing-cinematic-academy.md) | دراسة كتب الرسم، التكوين، الإضاءة، وتطوير تصميم الفيديو | جديد | `drawing_academy.py` و`creative_principles.py` (اختبارات جزئية) |
-| [A15 Style Atlas 86](references/protocol/A15-futurepedia-style-atlas.md) | أسلوب بصري أو فيلم شرح؛ سبورة، نيون، نوار، أيزومتري، بكسل، صلصال، مانغا… | 86 طريقة في 14 عائلة + محرك أصلي | `style_atlas_bridge.py` و`atlas_render.py` (→ MP4) |
-| [A16 Mosamem × REA](references/protocol/A16-mosamem-rea-capability-fusion.md) | Mosamem وREA؛ صور، PSD، تحليل برامج | جديد | فحص وتخطيط بلا تشغيل آلي |
+| [A14 أكاديمية الرسم والمونتاج](references/protocol/A14-drawing-cinematic-academy.md) | كتب الرسم والإضاءة وتصميم الفيديو | جديد | `drawing_academy.py` و`creative_principles.py` (جزئي) |
+| [A15 Style Atlas 86](references/protocol/A15-futurepedia-style-atlas.md) | أسلوب بصري أو فيلم شرح (سبورة، نيون، بكسل…) | 86 طريقة + محرك أصلي | `style_atlas_bridge.py` و`atlas_render.py` (→ MP4) |
+| [A16 Mosamem × REA](references/protocol/A16-mosamem-rea-capability-fusion.md) | صور، PSD، تحليل برامج | جديد | تخطيط فقط |
 | [A17 القصة](references/protocol/A17-story-scene-charter.md) | قصة وبرومنتات | جديد | `prompt_pack.py` |
+| [A18 For Business](references/protocol/A18-futurepedia-business-workflows.md) | AI لوظيفة عمل أو workflow | 64 خطة ببوابات | `business_workflows.py` |
 | [CHANGELOG](references/protocol/CHANGELOG.md) | تبحث عن قسم قديم برقمه أو عن تاريخ الإصدارات | خريطة كل قسم قديم إلى مكانه | — |
 
 ## المستودع الأصل — اقرأه كاملًا حتى لو لم تكن المهارة مثبتة
