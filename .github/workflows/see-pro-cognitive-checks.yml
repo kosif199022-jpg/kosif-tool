@@ -7,9 +7,11 @@ on:
       - ".github/workflows/see-pro-cognitive-checks.yml"
       - ".claude/skills/kosif-superpowers/scripts/see_pro_cognitive_gate.py"
       - ".claude/skills/kosif-superpowers/evals/test_see_pro_cognitive_gate.py"
+      - ".claude/skills/kosif-superpowers/references/protocol/A10-self-evolution.md"
       - ".claude/skills/kosif-superpowers/references/protocol/A12-see-pro-cognitive-fusion.md"
       - ".claude/skills/kosif-superpowers/PROTOCOL.md"
       - ".claude/skills/kosif-superpowers/SESSION_PROMPT.md"
+      - ".claude/skills/kosif-superpowers/SKILL.md"
       - "CLAUDE.md"
   workflow_dispatch:
 permissions:
