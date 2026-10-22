@@ -1,6 +1,6 @@
 # A15 — Futurepedia AI Style Atlas: 15 verified-description method routes
 
-> **Trigger / متى تقرأه:** ابتكار أسلوب بصري جديد للرسم أو الموشن أو المونتاج؛ fusion / دمج أكثر من أسلوب؛ طلب "أساليب Futurepedia"، رسوم explainer، أسلوب السبورة البيضاء، الإضاءة السينمائية، منظور أيزومتري.
+> **متى تقرأه / when to read:** ابتكار أسلوب بصري جديد للرسم أو الموشن أو المونتاج؛ fusion / دمج أكثر من أسلوب؛ طلب "أساليب Futurepedia"، رسوم explainer، أسلوب السبورة البيضاء، الإضاءة السينمائية، منظور أيزومتري.
 >
 > **Canonical routing:** [PROTOCOL.md](../../PROTOCOL.md) → [A14 drawing academy](A14-drawing-cinematic-academy.md) → [A8 motion brain](A8-motion-brain.md).
 
