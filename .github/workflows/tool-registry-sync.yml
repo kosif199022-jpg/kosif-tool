@@ -90,4 +90,7 @@ jobs:
           fi
           git diff --cached --stat
           git commit -m "build(kosif): synchronize derived tool registry and capability indexes"
+          git fetch origin main
+          git rebase origin/main
+          python3 .claude/skills/kosif-superpowers/scripts/check_skill.py
           git push origin HEAD:main
