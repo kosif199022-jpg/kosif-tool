@@ -1951,6 +1951,11 @@
    "label": "scripts/skill_intelligence.py"
   },
   {
+   "id": "script:scripts/fusionforge_shared.py",
+   "kind": "script",
+   "label": "scripts/fusionforge_shared.py"
+  },
+  {
    "id": "script:scripts/relabel_proofs.py",
    "kind": "script",
    "label": "scripts/relabel_proofs.py"
@@ -2250,6 +2255,11 @@
    "id": "test:tests/test_media_sources_gateway.py",
    "kind": "test",
    "label": "tests/test_media_sources_gateway.py"
+  },
+  {
+   "id": "test:.claude/skills/kosif-superpowers/evals/test_fusionforge_shared.py",
+   "kind": "test",
+   "label": ".claude/skills/kosif-superpowers/evals/test_fusionforge_shared.py"
   },
   {
    "id": "test:.claude/skills/kosif-superpowers/evals/test_installer_triage.py",
@@ -6320,6 +6330,12 @@
    "w": 1
   },
   {
+   "from": "script:scripts/fusionforge_shared.py",
+   "to": "script:scripts/fusionforge.py",
+   "rel": "imports",
+   "w": 1
+  },
+  {
    "from": "script:scripts/hub.py",
    "to": "script:scripts/powers.py",
    "rel": "imports",
@@ -7066,6 +7082,12 @@
   {
    "from": "script:scripts/fusionforge.py",
    "to": "test:.claude/skills/kosif-superpowers/evals/test_usip_shadow.py",
+   "rel": "tested_by",
+   "w": 1
+  },
+  {
+   "from": "script:scripts/fusionforge_shared.py",
+   "to": "test:.claude/skills/kosif-superpowers/evals/test_fusionforge_shared.py",
    "rel": "tested_by",
    "w": 1
   },
