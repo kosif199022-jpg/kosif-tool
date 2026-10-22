@@ -19,7 +19,7 @@ class KatanaAnalysisOnlyPolicyTests(unittest.TestCase):
         self.assertIn("26. **Katana لتحليل الصور والفيديوهات المرجعية في الردود فقط**", text)
         self.assertIn("ممنوع استدعاؤها لتوليد/إعادة إنشاء صور أو فيديو", text)
         self.assertIn("رصيد إنتاج", text)
-        self.assertIn("18–26", text)
+        self.assertIn("18–25", text)
         self.assertIn("Katana تحليل فقط", text)
 
     def test_analysis_contract_excludes_generating_media(self):
