@@ -7,3 +7,11 @@ intake/work/*.wav
 stock/
 build/frames/
 out/
+build/plate/
+build/fonts/*.ttf
+review/n*.png
+review/s1.png
+review/s2.png
+review/all.jpg
+review/[0-9]*.jpg
+review/[0-9]*.png
