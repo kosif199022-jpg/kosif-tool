@@ -651,7 +651,7 @@ def verify(job: Path, out: Path, aspect=None, master=None) -> dict:
         cmd += ["--aspect", aspect]
     if master:
         cmd += ["--audio", str(master)]
-    rc, o, e = sh(cmd, 900)
+    rc, o, e = sh(cmd, 900, encoding="utf-8")
     lines = [l for l in o.splitlines() if l.startswith("[")]
     return {"exit": rc, "checks": lines[-12:], "summary": (o.strip().splitlines() or [""])[-1]}
 
