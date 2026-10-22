@@ -8,7 +8,7 @@ Commands below are typed from the skill folder (`.claude/skills/kosif-superpower
 
 <!-- hub:area:edit:start -->
 
-**الأدوات / tools (11)** — `python3 scripts/hub.py tool <id>` for every command, requirement and limit:
+**الأدوات / tools (12)** — `python3 scripts/hub.py tool <id>` for every command, requirement and limit:
 
 | tool | what it does | start with | evidence |
 |---|---|---|---|
@@ -22,7 +22,8 @@ Commands below are typed from the skill folder (`.claude/skills/kosif-superpower
 | `video-workflow-bridge` | Generates deterministic, non-destructive JSON for two editor workflows: a text-based paper edit that turns selected word ranges into frame-bounded video-only segments, and frame-accurate review markers with timecodes and optional pixel anchors; it never reads, cuts or renders media. | `python3 scripts/video_workflow_bridge.py paper-edit templates/ik-wave-words.json --keep "1-3,5" --fps 30 --out ./out/paper-edit.json` | tested-here |
 | `kosif-timeline` | Original non-destructive JSON timeline with trimmed sources, ordered video/image layers, per-clip alpha fades, independent audio mixing, reversible move/trim/fade edits, H264/AAC export via FFmpeg and FFprobe verification. | `python3 scripts/kosif_timeline.py doctor` | tested-here |
 | `kosif-timeline-demo` | Generate fresh, synthetic H264 video, PCM WAV and PNG media, a complete editable 3-track timeline JSON and a verified 36-frame H264/AAC MP4 in a new folder. | `python3 scripts/kosif_timeline_demo.py --dir ./fresh-kosif-timeline-demo` | tested-here |
-| `montage-pro` | A 13-role team over an uploaded audio or video: measures it (ffprobe, loudness, energy cues, cuts, contact sheet), offers an option menu with a stage plan, acquires licensed footage IDM-style (segmented resumable download, DASH/HLS grab, rights.json), conforms to an edit mezzanine with proxies, and builds a kinetic film, visualizer, reframe, highlight reel, look or a reference-remix Remotion project, each verified with verify_video.py; the master audio is never modified. | `python3 scripts/montage_pro.py doctor` | tested-here |
+| `montage-pro` | A 13-role team over an uploaded audio or video: measures it (ffprobe, loudness, energy cues, cuts, contact sheet), offers an option menu with a stage plan, acquires licensed footage IDM-style (segmented resumable download, DASH/HLS grab, rights.json), conforms to an edit mezzanine with proxies, and builds a kinetic film, visualizer, reframe, highlight reel, look or a reference-remix Remotion project, each verified with verify_video.py; the master audio is never modified; its transcribe command writes word timings (kosif-words/1 words.json) locally with faster-whisper, skipping silence and refusing to write into jobs/ or tracked paths. | `python3 scripts/montage_pro.py doctor` | tested-here |
+| `reel-factory` | A thin wrapper over existing tools: records the audio's declared rights and every shot's licence in rights.json (advisory, never blocking — gaps are listed and said once), takes words.json or runs montage_pro transcribe, plans one shot per phrase with xfades centred on the cuts (duration = audio + 1 s), builds a 4:5 footage plate with ffmpeg, renders a word-by-word Arabic scene (Aref Ruqaa / Reem Kufi, gold frame draw-on, handle and credit inside the safe zone, parametric styles) through tools/render_html.cjs, muxes the original audio with -c copy and gates the result with verify_video.py --source-audio. Outputs go to the git-ignored out/reels/<slug>. | `python3 scripts/reel_factory.py plan --audio ./voice.m4a --audio-rights owned --words ./words.json --shots-manifest ./stock/manifest.json --shot-ids 17928486,8165467,20382699 --title "دعاء يوم الخميس" --handle @kosif` | tested-here |
 
 <!-- hub:area:edit:end -->
 

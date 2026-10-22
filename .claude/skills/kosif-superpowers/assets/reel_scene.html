@@ -1,0 +1,297 @@
+<!doctype html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="utf-8">
+<title>KOSIF reel scene</title>
+<style>
+  /* Fonts are copied next to the scene by reel_factory.py build (OFL texts included). */
+  @font-face { font-family: "Ruqaa"; src: url("fonts/ArefRuqaa-Bold.ttf"); }
+  @font-face { font-family: "Kufi"; src: url("fonts/ReemKufi.ttf"); }
+  html, body { margin: 0; background: #050a17; overflow: hidden; }
+  canvas { display: block; width: 100vw; height: 100vh; }
+</style>
+</head>
+<body>
+<canvas id="c" width="1080" height="1920"></canvas>
+<script>
+"use strict";
+// KOSIF reel scene (template). reel_factory.py build replaces the token below with the scene data
+// (title, palette, phrases with word timings, cut times, handle, credit, plate frame count, layout).
+// Opened alone it falls back to DEMO so the template can be previewed.
+// Every pixel is a pure function of t: no wall clock, no random numbers, no frame-callback state.
+const INJECTED = /*KOSIF_SCENE_DATA*/null;
+
+const DEMO = {
+  W: 1080, H: 1920, fps: 30, duration: 4, title: "دعاء", handle: "@kosif",
+  credit: { label: "الصوت:", latin: "@demo" }, frame: "rounded", cuts: [2.0], xfade: 0.4,
+  palette: { bg0: "#14244a", bg1: "#050a17", lattice: "rgba(242,196,109,0.075)", accent: "#f2c46d", title: "#f2c46d",
+             text: "#fbf3df", speak: "#f2c46d", scrim: "5,10,23", sweep: "255,236,180" },
+  phrases: [
+    { s: 0.2, e: 2.0, big: false, words: [["اللَّهُمَّ", 0.2, 0.8], ["في", 0.8, 1.0], ["يومِ", 1.0, 1.3], ["الخميس", 1.3, 1.9]] },
+    { s: 2.0, e: 4.0, big: true, words: [["آمين", 2.1, 2.9]] },
+  ],
+  plate: { dir: "plate", frames: 0, digits: 4 },
+};
+
+const D = INJECTED || DEMO;
+const W = D.W || 1080, H = D.H || 1920, FPS = D.fps || 30, DURATION = D.duration;
+// Layout keeps every caption, the title, the handle and the credit inside the safe band
+// (y 220..1500 of 1920: platform UI covers the top ~220 px and the bottom ~420 px).
+const L = Object.assign({ panel: [90, 352, 900, 1125], radius: 34, title_y: 292, ornament_y: 322, text_cy: 1180,
+                          text_max_w: 820, handle_y: 1398, credit_y: 1446 }, D.layout || {});
+const P = { x: L.panel[0], y: L.panel[1], w: L.panel[2], h: L.panel[3] };
+const C = D.palette;
+const CUTS = D.cuts || [];
+const PHRASES = D.phrases || [];
+const PLATE = D.plate || { dir: "plate", frames: 0, digits: 4 };
+
+const cv = document.getElementById("c"), g = cv.getContext("2d");
+cv.width = W; cv.height = H;
+const clamp = (v, a = 0, b = 1) => Math.max(a, Math.min(b, v));
+const ease = (x) => { x = clamp(x); return x < 0.5 ? 4 * x * x * x : 1 - Math.pow(-2 * x + 2, 3) / 2; };
+const outBack = (x) => { x = clamp(x); const c1 = 1.4, c3 = c1 + 1; return 1 + c3 * Math.pow(x - 1, 3) + c1 * Math.pow(x - 1, 2); };
+
+// ---------------------------------------------------------------- footage plate (JPG sequence)
+const plate = new Map();
+function frameImage(i) {
+  if (!plate.has(i)) {
+    plate.set(i, new Promise((res, rej) => {
+      const im = new Image();
+      im.onload = () => res(im); im.onerror = () => rej(new Error("plate frame " + (i + 1) + " missing"));
+      im.src = PLATE.dir + "/" + String(i + 1).padStart(PLATE.digits || 4, "0") + ".jpg";
+    }));
+  }
+  return plate.get(i);
+}
+const fontsReady = Promise.all([
+  document.fonts.load('80px "Ruqaa"', "اللَّهُمَّ"), document.fonts.load('600 60px "Kufi"', "دعاء kosif @"),
+]);
+
+// ---------------------------------------------------------------- frame shapes (polylines, so draw-on is exact)
+function arcPts(pts, cx, cy, rx, ry, a0, a1) {
+  const n = Math.max(2, Math.ceil(Math.abs(a1 - a0) / (Math.PI / 48)));
+  for (let i = 0; i <= n; i++) { const a = a0 + (a1 - a0) * i / n; pts.push([cx + rx * Math.cos(a), cy + ry * Math.sin(a)]); }
+}
+// Closed outline starting at the top centre, clockwise.
+function shapePoints(kind, x, y, w, h, r) {
+  const pts = [], cx = x + w / 2;
+  if (kind === "arch") {
+    const ah = Math.min(w * 0.42, h * 0.28), rb = Math.min(r, 26);
+    arcPts(pts, cx, y + ah, w / 2, ah, -Math.PI / 2, 0);
+    pts.push([x + w, y + h - rb]); arcPts(pts, x + w - rb, y + h - rb, rb, rb, 0, Math.PI / 2);
+    pts.push([x + rb, y + h]); arcPts(pts, x + rb, y + h - rb, rb, rb, Math.PI / 2, Math.PI);
+    pts.push([x, y + ah]); arcPts(pts, cx, y + ah, w / 2, ah, Math.PI, Math.PI * 1.5);
+  } else {
+    r = kind === "square" ? 6 : r;
+    pts.push([cx, y]); pts.push([x + w - r, y]); arcPts(pts, x + w - r, y + r, r, r, -Math.PI / 2, 0);
+    pts.push([x + w, y + h - r]); arcPts(pts, x + w - r, y + h - r, r, r, 0, Math.PI / 2);
+    pts.push([x + r, y + h]); arcPts(pts, x + r, y + h - r, r, r, Math.PI / 2, Math.PI);
+    pts.push([x, y + r]); arcPts(pts, x + r, y + r, r, r, Math.PI, Math.PI * 1.5); pts.push([cx, y]);
+  }
+  const cum = [0];
+  for (let i = 1; i < pts.length; i++) cum.push(cum[i - 1] + Math.hypot(pts[i][0] - pts[i - 1][0], pts[i][1] - pts[i - 1][1]));
+  const path = new Path2D(); pts.forEach(([px, py], i) => (i ? path.lineTo(px, py) : path.moveTo(px, py))); path.closePath();
+  return { pts, cum, len: cum[cum.length - 1], path };
+}
+function pointAt(S, d) {
+  let i = 1; while (i < S.cum.length - 1 && S.cum[i] < d) i++;
+  const a = S.cum[i - 1], b = S.cum[i], q = b > a ? (d - a) / (b - a) : 0;
+  return [S.pts[i - 1][0] + (S.pts[i][0] - S.pts[i - 1][0]) * q, S.pts[i - 1][1] + (S.pts[i][1] - S.pts[i - 1][1]) * q];
+}
+function strokePart(S, a, b) {  // stroke the outline between arc lengths a and b
+  if (b <= a) return;
+  g.beginPath(); const p0 = pointAt(S, a); g.moveTo(p0[0], p0[1]);
+  for (let i = 1; i < S.pts.length; i++) if (S.cum[i] > a && S.cum[i] < b) g.lineTo(S.pts[i][0], S.pts[i][1]);
+  const p1 = pointAt(S, b); g.lineTo(p1[0], p1[1]); g.stroke();
+}
+// Draw-on from the top centre outwards in both directions, meeting at the bottom.
+function drawOn(S, prog) {
+  if (prog >= 1) { g.stroke(S.path); return; }
+  const half = S.len / 2 * prog; strokePart(S, 0, half); strokePart(S, S.len - half, S.len);
+}
+const OUTER = shapePoints(D.frame || "rounded", P.x, P.y, P.w, P.h, L.radius);
+const INNER = (D.frame === "square") ? shapePoints("square", P.x + 14, P.y + 14, P.w - 28, P.h - 28, 6) : null;
+
+// ---------------------------------------------------------------- layers
+function background(t) {
+  const bg = g.createRadialGradient(W / 2, 760, 120, W / 2, 900, 1300);
+  bg.addColorStop(0, C.bg0); bg.addColorStop(1, C.bg1);
+  g.fillStyle = bg; g.fillRect(0, 0, W, H);
+  g.save(); g.strokeStyle = C.lattice; g.lineWidth = 1.4;
+  const step = 120, drift = (t * 6) % step;
+  for (let y = -step; y < H + step; y += step) for (let x = -step; x < W + step; x += step) {
+    const cx = x + drift, cy = y + ((x / step) % 2 ? step / 2 : 0);
+    for (let k = 0; k < 2; k++) {
+      g.beginPath();
+      for (let j = 0; j < 4; j++) {
+        const a = k * Math.PI / 4 + j * Math.PI / 2 + t * 0.05, s = 26;
+        const px = cx + Math.cos(a) * s, py = cy + Math.sin(a) * s;
+        j ? g.lineTo(px, py) : g.moveTo(px, py);
+      }
+      g.closePath(); g.stroke();
+    }
+  }
+  g.restore();
+}
+
+function title(t) {
+  const d = ease(t / 1.1) * 330, oy = L.ornament_y;
+  if (D.title) {
+    const a = ease((t - 0.15) / 0.8);
+    g.save(); g.globalAlpha = a; g.fillStyle = C.title; g.textAlign = "center"; g.direction = "rtl";
+    g.font = '600 58px "Kufi"'; g.translate(W / 2, L.title_y + (1 - a) * 18); g.fillText(D.title, 0, 0); g.restore();
+  }
+  g.save(); g.strokeStyle = C.accent; g.lineWidth = 2.5; g.lineCap = "round";
+  g.beginPath(); g.moveTo(W / 2 - d, oy); g.lineTo(W / 2 + d, oy); g.stroke();
+  if (d > 4) { g.fillStyle = C.accent; g.beginPath(); g.moveTo(W / 2, oy - 8); g.lineTo(W / 2 + 8, oy); g.lineTo(W / 2, oy + 8); g.lineTo(W / 2 - 8, oy); g.fill(); }
+  g.restore();
+}
+
+function shotAt(t) {
+  let i = 0; while (i < CUTS.length && t >= CUTS[i]) i++;
+  const a = i ? CUTS[i - 1] : 0, b = i < CUTS.length ? CUTS[i] : DURATION;
+  return { i, p: b > a ? (t - a) / (b - a) : 1 };
+}
+
+// Gentle camera on the plate, ≤ 1.035 so the 960x1200 plate stays sharp: even shots push in (1 → 1.035), odd shots
+// pull back (1.035 → 1). Each shot ends at the scale the next one starts from, and ease() has zero speed at both
+// ends, so the scale is continuous (no zoom jump) through every cut and its cross-fade.
+const PUSH = 0.035;
+function pushScale(t) {
+  const sh = shotAt(t), q = ease(sh.p);
+  return 1 + PUSH * (sh.i % 2 ? 1 - q : q);
+}
+
+function panel(t, im) {
+  g.save(); g.clip(OUTER.path);
+  if (im) {
+    const s = pushScale(t);
+    const w = P.w * s, h = P.h * s;
+    g.drawImage(im, P.x - (w - P.w) / 2, P.y - (h - P.h) / 2, w, h);
+  } else {
+    const ph = g.createLinearGradient(0, P.y, 0, P.y + P.h);
+    ph.addColorStop(0, C.bg0); ph.addColorStop(1, C.bg1); g.fillStyle = ph; g.fillRect(P.x, P.y, P.w, P.h);
+  }
+  // Scrim under the captions, handle and credit (lower part of the panel only).
+  const sc = g.createLinearGradient(0, P.y + P.h * 0.42, 0, P.y + P.h);
+  sc.addColorStop(0, `rgba(${C.scrim},0)`); sc.addColorStop(0.55, `rgba(${C.scrim},0.62)`); sc.addColorStop(1, `rgba(${C.scrim},0.86)`);
+  g.fillStyle = sc; g.fillRect(P.x, P.y, P.w, P.h);
+  g.restore();
+  // Frame drawn on during the first 1.3 s, then held.
+  const prog = ease(t / 1.3);
+  g.save(); g.strokeStyle = C.accent; g.lineWidth = 4; g.lineJoin = "round"; drawOn(OUTER, prog);
+  if (INNER) { g.lineWidth = 1.5; g.globalAlpha = 0.7; drawOn(INNER, ease((t - 0.3) / 1.3)); }
+  g.restore();
+  // Light sweep along the frame inside each ±0.25 s cut window only.
+  for (const c of CUTS) {
+    const q = (t - (c - 0.25)) / 0.5;
+    if (q <= 0 || q >= 1) continue;
+    const gx = P.x + P.w * (1 - q);
+    const sweep = g.createLinearGradient(gx - 160, 0, gx + 160, 0);
+    sweep.addColorStop(0, `rgba(${C.sweep},0)`); sweep.addColorStop(0.5, `rgba(${C.sweep},0.95)`); sweep.addColorStop(1, `rgba(${C.sweep},0)`);
+    g.save(); g.strokeStyle = sweep; g.lineWidth = 7; g.shadowColor = C.accent; g.shadowBlur = 18; g.stroke(OUTER.path); g.restore();
+  }
+}
+
+// Balanced line breaking: 1, 2 or 3 lines, whichever first fits; the font shrinks if 3 lines still overflow.
+function breakLines(items, gap, maxW) {
+  const width = (a) => a.reduce((s, x) => s + x.ww, 0) + gap * Math.max(0, a.length - 1);
+  let best = { lines: [items], m: width(items) };
+  if (best.m <= maxW || items.length < 2) return best;
+  for (let k = 1; k < items.length; k++) {
+    const m = Math.max(width(items.slice(0, k)), width(items.slice(k)));
+    if (best.lines.length === 1 || m < best.m) best = { lines: [items.slice(0, k), items.slice(k)], m };
+  }
+  if (best.m <= maxW || items.length < 3) return best;
+  let b3 = null;
+  for (let a = 1; a < items.length - 1; a++) for (let b = a + 1; b < items.length; b++) {
+    const parts = [items.slice(0, a), items.slice(a, b), items.slice(b)];
+    const m = Math.max(...parts.map(width));
+    if (!b3 || m < b3.m) b3 = { lines: parts, m };
+  }
+  return b3;
+}
+
+// Word-by-word kinetic Arabic: each word rises and fades in at its spoken time; the word being spoken is
+// highlighted. leave (0..1) draws a finished phrase leaving upward during the next phrase's first 0.25 s.
+function drawPhrase(ph, t, leave) {
+  let size = ph.big ? 112 : 80;
+  g.save(); g.direction = "rtl"; g.textBaseline = "alphabetic"; g.font = `${size}px "Ruqaa"`;
+  let gap = size * 0.32;
+  let items = ph.words.map(([w, s, e]) => ({ w, s, e, ww: g.measureText(w).width }));
+  let lay = breakLines(items, gap, L.text_max_w);
+  if (lay.m > L.text_max_w) {
+    const k = L.text_max_w / lay.m; size *= k; gap *= k; g.font = `${size}px "Ruqaa"`;
+    items.forEach((x) => { x.ww *= k; }); lay = breakLines(items, gap, L.text_max_w);
+  }
+  const lines = lay.lines, lh = size * 1.3;
+  const top = L.text_cy - ((lines.length - 1) * lh) / 2 + size * 0.3;
+  if (leave !== undefined) g.globalAlpha = 1 - leave;
+  const lift = leave !== undefined ? -30 * leave : 0;
+  lines.forEach((ln, li) => {
+    const total = ln.reduce((a, x) => a + x.ww, 0) + gap * (ln.length - 1);
+    let x = W / 2 + total / 2;  // right edge (RTL)
+    for (const it of ln) {
+      const k = leave !== undefined ? 1 : (t - it.s) / 0.28, a = clamp(k);
+      if (a > 0) {
+        const speaking = leave === undefined && t >= it.s && t < Math.max(it.e, it.s + 0.35);
+        g.save(); g.globalAlpha *= a; g.textAlign = "right";
+        g.fillStyle = speaking ? C.speak : C.text;
+        g.shadowColor = speaking ? C.speak : "rgba(0,0,0,0.55)"; g.shadowBlur = speaking ? 22 : 12;
+        g.translate(x, top + li * lh + (1 - outBack(k)) * 26 + lift);
+        g.fillText(it.w, 0, 0); g.restore();
+      }
+      x -= it.ww + gap;
+    }
+  });
+  g.restore();
+}
+
+function captions(t) {
+  let i = -1;
+  for (let k = 0; k < PHRASES.length; k++) if (t >= PHRASES[k].s) i = k;
+  if (i < 0) return;
+  const q = (t - PHRASES[i].s) / 0.25;
+  if (i > 0 && q < 1) drawPhrase(PHRASES[i - 1], t, clamp(q));
+  drawPhrase(PHRASES[i], t);
+}
+
+// Signature handle and optional credit (inside the safe band, on the scrim).
+function signature(t) {
+  const a = ease((t - 0.6) / 0.6), end = ease((t - (DURATION - 1.3)) / 0.7);  // outro: the name grows and glows
+  g.save(); g.textAlign = "center";
+  if (D.handle) {
+    g.direction = "ltr"; g.globalAlpha = a; g.fillStyle = C.speak; g.font = `600 ${46 + 18 * end}px "Kufi"`;
+    g.shadowColor = C.speak; g.shadowBlur = 8 + 24 * end;
+    g.fillText(D.handle, W / 2, L.handle_y - 6 * end);
+  }
+  const cr = D.credit;
+  if (cr && (cr.label || cr.latin)) {
+    // Drawn as two runs so a Latin handle never reorders the Arabic label.
+    g.shadowBlur = 0; g.globalAlpha = a * (1 - end) * 0.8; g.fillStyle = C.text; g.font = '26px "Kufi"';
+    const gp = cr.label && cr.latin ? 10 : 0;
+    g.direction = "rtl"; const lw = cr.label ? g.measureText(cr.label).width : 0;
+    g.direction = "ltr"; const hw = cr.latin ? g.measureText(cr.latin).width : 0;
+    const right = W / 2 + (lw + gp + hw) / 2;
+    if (cr.label) { g.textAlign = "right"; g.direction = "rtl"; g.fillText(cr.label, right, L.credit_y); }
+    if (cr.latin) { g.textAlign = "left"; g.direction = "ltr"; g.fillText(cr.latin, right - lw - gp - hw, L.credit_y); }
+  }
+  g.restore();
+}
+
+let ticket = 0;
+async function draw(t) {
+  const mine = ++ticket;
+  t = clamp(t, 0, Math.max(0, DURATION - 1 / FPS));
+  await fontsReady;
+  const im = PLATE.frames > 0 ? await frameImage(Math.min(PLATE.frames - 1, Math.round(t * FPS))) : null;
+  if (mine !== ticket) return;  // a newer seek superseded this one
+  background(t); title(t); panel(t, im); captions(t); signature(t);
+}
+
+window.__kosifReady = fontsReady.then(() => (PLATE.frames > 0 ? frameImage(0) : null)).then(() => true);
+window.__kosif = { duration: DURATION, fps: FPS, width: W, height: H, seek: (t) => draw(t) };
+draw(0);
+</script>
+</body>
+</html>

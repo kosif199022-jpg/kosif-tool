@@ -2032,6 +2032,16 @@
    "label": "scripts/rea_creative_research_atlas.py"
   },
   {
+   "id": "script:scripts/reel_factory.py",
+   "kind": "script",
+   "label": "scripts/reel_factory.py"
+  },
+  {
+   "id": "script:scripts/media_sources.py",
+   "kind": "script",
+   "label": "scripts/media_sources.py"
+  },
+  {
    "id": "script:scripts/reference_edit_engine.py",
    "kind": "script",
    "label": "scripts/reference_edit_engine.py"
@@ -2342,6 +2352,11 @@
    "label": "tests/test_creative_external_research.py"
   },
   {
+   "id": "test:.claude/skills/kosif-superpowers/evals/test_reel_factory.py",
+   "kind": "test",
+   "label": ".claude/skills/kosif-superpowers/evals/test_reel_factory.py"
+  },
+  {
    "id": "test:tests/test_requirements.py",
    "kind": "test",
    "label": "tests/test_requirements.py"
@@ -2365,6 +2380,11 @@
    "id": "test:tests/test_tools_extra.py",
    "kind": "test",
    "label": "tests/test_tools_extra.py"
+  },
+  {
+   "id": "test:tests/test_verify_source_audio.py",
+   "kind": "test",
+   "label": "tests/test_verify_source_audio.py"
   },
   {
    "id": "test:.claude/skills/kosif-superpowers/evals/test_web_app_study.py",
@@ -6688,6 +6708,12 @@
    "w": 1
   },
   {
+   "from": "script:scripts/reel_factory.py",
+   "to": "script:scripts/media_sources.py",
+   "rel": "imports",
+   "w": 1
+  },
+  {
    "from": "script:scripts/reference_edit_engine.py",
    "to": "script:scripts/creative_quality_gate.py",
    "rel": "imports",
@@ -7162,6 +7188,12 @@
    "w": 1
   },
   {
+   "from": "script:scripts/media_sources.py",
+   "to": "test:tests/test_media_sources_gateway.py",
+   "rel": "tested_by",
+   "w": 1
+  },
+  {
    "from": "script:scripts/mimic/mm_analyze.py",
    "to": "test:tests/test_mimic.py",
    "rel": "tested_by",
@@ -7272,6 +7304,12 @@
   {
    "from": "script:scripts/rea_creative_research_atlas.py",
    "to": "test:tests/test_creative_external_research.py",
+   "rel": "tested_by",
+   "w": 1
+  },
+  {
+   "from": "script:scripts/reel_factory.py",
+   "to": "test:.claude/skills/kosif-superpowers/evals/test_reel_factory.py",
    "rel": "tested_by",
    "w": 1
   },
@@ -7398,6 +7436,12 @@
   {
    "from": "script:scripts/verify_video.py",
    "to": "test:tests/test_tools_extra.py",
+   "rel": "tested_by",
+   "w": 1
+  },
+  {
+   "from": "script:scripts/verify_video.py",
+   "to": "test:tests/test_verify_source_audio.py",
    "rel": "tested_by",
    "w": 1
   },

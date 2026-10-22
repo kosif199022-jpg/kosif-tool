@@ -21,6 +21,10 @@ Two members changed their round-1 choice after cross-examination (the Guardian f
 
 The members' raw answers stay in the session's work folder (`out/`, git-ignored); `council.json` is not copied here because its evidence strings name local machine paths.
 
+## What was built from it
+
+The recommendation was carried out on 22-10 (FusionForge recipe FUSE-20261022-03faa8bf1c, plan B): `montage_pro.py transcribe` (kosif-words/1 words.json, local faster-whisper), `verify_video.py --source-audio` (packet-MD5 gate, loudness reported as INFO when the source is preserved) and `reel_factory.py` (outputs under `out/`). The council's blocking rights gate was built and then, at the owner's explicit request on the same day, made advisory: rights are recorded in `rights.json` with any gaps, and never stop a build. See [montage-pro/README.md](../../montage-pro/README.md#التفريغ-ومصنع-الريلز--transcription-and-the-reel-factory).
+
 ## Re-run
 
 ```bash

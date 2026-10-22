@@ -2837,6 +2837,11 @@
      "does": "Runs the codec/size/aspect/fps/duration/frame-count/audio/loudness checks and writes a JSON report; exit 0 if all pass, 1 if any fail."
     },
     {
+     "name": "verify source-preserved audio",
+     "example": "python3 scripts/verify_video.py ./out/reel.mp4 --aspect 9:16 --fps 30 --duration 15 --source-audio ./voice.m4a --json ./out/report.json",
+     "does": "Requires the first audio stream's packet MD5 (ADTS-normalised for AAC) to equal the source's and no other audio stream; when both hold, loudness, true peak, a sample rate under 44.1 kHz and an MP3 codec are [INFO] 'source preserved … (not normalised by design)' instead of failures; JSON gains source_audio and a status on every check."
+    },
+    {
      "name": "verify with master audio",
      "example": "python3 scripts/verify_video.py ./in.mp4 --aspect reel --fps 30 --duration 15 --audio ./voice.wav --lufs -14",
      "does": "Adds a check that the delivered audio length matches the master audio within 50 ms."
@@ -2847,8 +2852,8 @@
      "does": "Requires that the deliverable has no audio stream and skips the audio and loudness checks."
     }
    ],
-   "inputs": "A rendered video file; optional --aspect (W:H, WxH or a name such as reel/cinema/ريلز), --fps, --duration, --audio master file, --lufs target (default -14, ±1.5 LU), --no-audio, --json path.",
-   "outputs": "[PASS]/[FAIL] lines and an N/M summary on stdout; exit 0 when all pass, 1 when any fail (also 1, with a Python traceback, when the video or --audio file is missing/unreadable or --aspect is unreadable), 2 if ffmpeg/ffprobe is missing; optional JSON report (codec, size, fps, frames, pix_fmt, audio, loudness, checks).",
+   "inputs": "A rendered video file; optional --aspect (W:H, WxH or a name such as reel/cinema/ريلز), --fps, --duration, --audio master file, --lufs target (default -14, ±1.5 LU), --no-audio, --json path, --source-audio <the untouched source audio>.",
+   "outputs": "[PASS]/[FAIL]/[INFO] lines and an 'N/M checks passed' summary (INFO is never scored) on stdout; an optional JSON report (codec, size, fps, frames, pix_fmt, audio, loudness, checks; with --source-audio a status on every check and source_audio {md5_match, video_md5, source_md5}). Exit 0 when all scored checks pass, 1 when any fails, 2 when ffmpeg/ffprobe is missing or an input cannot be read (missing video, --audio or --source-audio file, a source without audio, an unreadable --aspect).",
    "requires": {
     "python": [],
     "binaries": [
@@ -2861,11 +2866,12 @@
    },
    "safety": "runs-external-programs",
    "consent": "",
-   "limits": "Checks technical delivery specs only; it does not judge visual content, caption correctness or word-level audio sync.",
+   "limits": "Checks technical delivery specs only; it does not judge visual content, caption correctness or word-level audio sync. --source-audio compares the first audio stream only (an extra stream fails the separate one-stream check).",
    "evidence": "tested-here",
-   "evidence_note": "tests.test_tools_extra.VerifyVideoTests 1/1 passed (runs the byte-identical repo copy tools/verify_video.py; evals/test_hub.py BundledCopiesTest, which passed, enforces that the two copies match). Also ran the skill copy on synthetic 540x960 and 1920x1080 clips in scratch: verify 11/12 (loudness -21.8 LUFS vs -14 failed as expected), with master audio 12/13, silent 5/5 exit 0; a missing video, a missing --audio file and --aspect foo each crashed with a traceback (exit 1).",
+   "evidence_note": "tests/test_verify_source_audio.py 13/13 and tests.test_tools_extra VerifyVideoTests passed here (they run the byte-identical repo copy; evals/test_hub.py BundledCopiesTest enforces the match). Without --source-audio stdout and JSON were byte-identical to the previous version on 4 test files. On 22-10 a reel_factory build muxed with -c copy matched its AAC source (packet MD5) and scored 12/12.",
    "tests": [
-    "tests/test_tools_extra.py"
+    "tests/test_tools_extra.py",
+    "tests/test_verify_source_audio.py"
    ],
    "docs": [
     ".claude/skills/kosif-superpowers/references/verification.md",
@@ -3115,6 +3121,11 @@
      "does": "Runs every check (13 when all options are given), including that the delivered audio length matches the master file; prints PASS/FAIL lines and 'N/M checks passed' and writes the JSON report."
     },
     {
+     "name": "verify source-preserved audio",
+     "example": "python3 tools/verify_video.py ./out/reel.mp4 --aspect 9:16 --fps 30 --duration 15 --source-audio ./voice.m4a --json ./out/report.json",
+     "does": "Requires the first audio stream's packet MD5 (ADTS-normalised for AAC) to equal the source's and no other audio stream; when both hold, loudness, true peak, a sample rate under 44.1 kHz and an MP3 codec are [INFO] 'source preserved … (not normalised by design)' instead of failures; JSON gains source_audio and a status on every check."
+    },
+    {
      "name": "silent",
      "example": "python3 tools/verify_video.py ./out/film.mp4 --aspect 16:9 --fps 30 --duration 6 --no-audio",
      "does": "Checks an intentionally silent deliverable: requires that there is no audio stream and skips the audio checks."
@@ -3130,8 +3141,8 @@
      "does": "Shows usage and the list of checks."
     }
    ],
-   "inputs": "A video file path. Optional: --aspect (W:H, WxH or a name, resolved through tools/aspects.py), --fps, --duration in seconds, --audio <master audio file>, --lufs <target, default -14>, --no-audio and --json <report path>.",
-   "outputs": "[PASS]/[FAIL] lines and 'N/M checks passed' on stdout; an optional JSON report with codec, width, height, fps, frames, duration_s, pix_fmt, audio codec, channels, sample rate, loudness (integrated LUFS, LRA, true peak), master_audio_s and the checks. Exit 0 when all checks pass, 1 when any fails or there is no video stream, 2 when ffmpeg/ffprobe is missing; an unreadable --aspect or a missing input/master file ends in a Python traceback (exit 1).",
+   "inputs": "A video file path. Optional: --aspect (W:H, WxH or a name, resolved through tools/aspects.py), --fps, --duration in seconds, --audio <master audio file>, --lufs <target, default -14>, --no-audio and --json <report path>, --source-audio <the untouched source audio>.",
+   "outputs": "[PASS]/[FAIL]/[INFO] lines and an 'N/M checks passed' summary (INFO is never scored) on stdout; an optional JSON report (codec, size, fps, frames, pix_fmt, audio, loudness, checks; with --source-audio a status on every check and source_audio {md5_match, video_md5, source_md5}). Exit 0 when all scored checks pass, 1 when any fails, 2 when ffmpeg/ffprobe is missing or an input cannot be read (missing video, --audio or --source-audio file, a source without audio, an unreadable --aspect).",
    "requires": {
     "python": [],
     "binaries": [
@@ -3145,11 +3156,12 @@
    },
    "safety": "runs-external-programs",
    "consent": "--json overwrites the named report file; otherwise it only reads the video and master audio with local ffprobe/ffmpeg.",
-   "limits": "It checks technical delivery specs only (always expecting H.264 + AAC) and does not judge visual content, caption correctness or word-level audio sync.",
+   "limits": "Checks technical delivery specs only; it does not judge visual content, caption correctness or word-level audio sync. --source-audio compares the first audio stream only (an extra stream fails the separate one-stream check).",
    "evidence": "tested-here",
-   "evidence_note": "tests.test_tools_extra 4/4 OK, including VerifyVideoTests 1/1 (ffmpeg/ffprobe present: a synthetic 540x960 clip passes 9:16 and fails 16:9 with exit 1). Live on a synthetic clip in scratch: the verify example gave 12/13 (only loudness failed, -21.8 LUFS for a test tone), --lufs -16 and --no-audio paths ran as described.",
+   "evidence_note": "tests/test_verify_source_audio.py 13/13 and tests.test_tools_extra 4/4 OK here (ffmpeg/ffprobe present). --source-audio: ADTS .aac and MP4 AAC sources muxed with -c copy match; an AAC re-encode, an extra audio stream or Opus/PCM fail; output without the flag is byte-identical to the previous version.",
    "tests": [
-    "tests/test_tools_extra.py"
+    "tests/test_tools_extra.py",
+    "tests/test_verify_source_audio.py"
    ],
    "docs": [
     "playbooks/render-pipeline.md",
@@ -10356,13 +10368,15 @@
    "area": "edit",
    "title_en": "Montage Pro task force (audio/video to montage or motion)",
    "title_ar": "فريق مونتاج برو (صوت أو فيديو إلى مونتاج أو موشن)",
-   "summary_en": "A 13-role team over an uploaded audio or video: measures it (ffprobe, loudness, energy cues, cuts, contact sheet), offers an option menu with a stage plan, acquires licensed footage IDM-style (segmented resumable download, DASH/HLS grab, rights.json), conforms to an edit mezzanine with proxies, and builds a kinetic film, visualizer, reframe, highlight reel, look or a reference-remix Remotion project, each verified with verify_video.py; the master audio is never modified.",
-   "summary_ar": "فريق من 13 دورًا لملف صوت أو فيديو مرفوع: يقيس المادة، ويعرض قائمة خيارات وخطة مراحل، ويجلب لقطات مرخصة بأسلوب IDM مع سجل حقوق، ويوحد الصيغ، وينتج فيلم موشن أو مصوّرًا صوتيًا أو إعادة تأطير أو ريلًا مختصرًا أو لوكًا سينمائيًا أو مشروع Remotion، مع فحص كل ناتج والحفاظ على الصوت الأصلي.",
+   "summary_en": "A 13-role team over an uploaded audio or video: measures it (ffprobe, loudness, energy cues, cuts, contact sheet), offers an option menu with a stage plan, acquires licensed footage IDM-style (segmented resumable download, DASH/HLS grab, rights.json), conforms to an edit mezzanine with proxies, and builds a kinetic film, visualizer, reframe, highlight reel, look or a reference-remix Remotion project, each verified with verify_video.py; the master audio is never modified; its transcribe command writes word timings (kosif-words/1 words.json) locally with faster-whisper, skipping silence and refusing to write into jobs/ or tracked paths.",
+   "summary_ar": "فريق من 13 دورًا لملف صوت أو فيديو مرفوع: يقيس المادة، ويعرض قائمة خيارات وخطة مراحل، ويجلب لقطات مرخصة بأسلوب IDM مع سجل حقوق، ويوحد الصيغ، وينتج فيلم موشن أو مصوّرًا صوتيًا أو إعادة تأطير أو ريلًا مختصرًا أو لوكًا سينمائيًا أو مشروع Remotion، مع فحص كل ناتج والحفاظ على الصوت الأصلي، وأمر transcribe يكتب توقيت الكلمات (words.json بصيغة kosif-words/1) محليًا بـ faster-whisper مع تخطي الصمت ورفض الكتابة داخل jobs/ أو الملفات المتتبعة.",
    "use_when": [
     "رفعت فويس اعمل له موشن جرافيك",
     "اعمل ريلز من الفيديو ده على أقوى اللقطات",
     "Turn this interview into a 9:16 reel with a cinematic look",
-    "حمّل اللقطة دي برخصتها وجهزها للمونتاج"
+    "حمّل اللقطة دي برخصتها وجهزها للمونتاج",
+    "فرّغ الصوت ده كلمة كلمة بتوقيتها عشان الكتابة تمشي مع الصوت",
+    "Transcribe my Arabic voice-over into word timings for captions"
    ],
    "keywords": [
     "montage",
@@ -10376,7 +10390,13 @@
     "موشن",
     "ريلز",
     "فريق",
-    "تحويل"
+    "تحويل",
+    "transcribe",
+    "word timings",
+    "faster-whisper",
+    "words.json",
+    "تفريغ",
+    "توقيت الكلمات"
    ],
    "commands": [
     {
@@ -10388,6 +10408,16 @@
      "name": "intake",
      "example": "python3 scripts/montage_pro.py intake ./voice.wav --job ./job1",
      "does": "Measures the media into job1/intake.json."
+    },
+    {
+     "name": "transcribe",
+     "example": "python3 scripts/montage_pro.py transcribe ./voice.m4a --job ./out/job1 --language ar --local-only",
+     "does": "Decodes the audio with ffmpeg to 16 kHz mono and runs faster-whisper (CPU, int8, word timestamps, Silero VAD) into job1/words.json in schema kosif-words/1 (source sha256, engine, words, phrases); drops segments above --no-speech-threshold and lists them; skips when the source and engine are unchanged unless --force; refuses jobs/, git-tracked or un-ignored targets unless --allow-tracked; exit 2 with one line when ffmpeg, faster-whisper or the cached model is missing."
+    },
+    {
+     "name": "intake with transcription",
+     "example": "python3 scripts/montage_pro.py intake ./voice.m4a --job ./out/job1 --transcribe --local-only",
+     "does": "Opt-in: transcribes right after the probe so the cue mapper imports the aligned words; plain intake is unchanged."
     },
     {
      "name": "options",
@@ -10405,8 +10435,8 @@
      "does": "Licence-gated download or stream grab into job1/footage with rights.json."
     }
    ],
-   "inputs": "A local audio or video file; optional licensed URLs; optional words.json",
-   "outputs": "JOB/intake.json, options.json, out/*.mp4, rights.json, report.json and verify JSON",
+   "inputs": "A local audio or video file; optional licensed URLs; optional words.json (or transcribe makes one)",
+   "outputs": "JOB/intake.json, words.json (kosif-words/1), options.json, out/*.mp4, rights.json, report.json and verify JSON",
    "requires": {
     "python": [],
     "binaries": [
@@ -10415,15 +10445,17 @@
     ],
     "node": [],
     "optional": [
-     "bin:node",
      "bin:chromium",
-     "bin:yt-dlp"
+     "bin:node",
+     "bin:yt-dlp",
+     "pip:faster-whisper",
+     "pip:numpy"
     ],
     "network": false
    },
    "safety": "runs-external-programs",
    "consent": "build runs ffmpeg/Chromium and writes new files in the job folder; acquire downloads only with a licence note and refuses DRM sources",
-   "limits": "broll-documentary, character and 3d-scene need words.json, clips or a scene JSON first; tests use synthetic media, not real user footage.",
+   "limits": "broll-documentary, character and 3d-scene need words.json, clips or a scene JSON first; tests use synthetic media, not real user footage. Transcription word-timing accuracy is not measured against a reference: on the 14.7 s Arabic dua audio (medium, int8, 4 CPU cores) it took 14–28 s per run and three runs gave byte-identical words.json.",
    "tests": [
     ".claude/skills/kosif-superpowers/evals/test_montage_pro.py"
    ],
@@ -10437,7 +10469,94 @@
     "photo-video-footage",
     "formats-platforms"
    ],
-   "evidence": "tested-here"
+   "evidence": "tested-here",
+   "evidence_note": "evals/test_montage_pro.py 24/24 OK here (transcribe tests use the KOSIF_TRANSCRIBE_FAKE hook; 6 skip without ffmpeg). Real model on 22-10: jobs/20261022-tiktok-reel/source/audio.m4a → 34 words, 2 phrases, three runs byte-identical; silence and a 220 Hz tone → 0 words with a warning."
+  },
+  {
+   "id": "reel-factory",
+   "path": "scripts/reel_factory.py",
+   "root": "skill",
+   "kind": "cli",
+   "area": "edit",
+   "title_en": "Reel factory: voice + word timings + licensed shots → verified 9:16 reel",
+   "title_ar": "مصنع الريلز: صوت وتوقيت كلمات ولقطات مرخصة ← ريلز 9:16 مفحوص",
+   "summary_en": "A thin wrapper over existing tools: records the audio's declared rights and every shot's licence in rights.json (advisory, never blocking — gaps are listed and said once), takes words.json or runs montage_pro transcribe, plans one shot per phrase with xfades centred on the cuts (duration = audio + 1 s), builds a 4:5 footage plate with ffmpeg, renders a word-by-word Arabic scene (Aref Ruqaa / Reem Kufi, gold frame draw-on, handle and credit inside the safe zone, parametric styles) through tools/render_html.cjs, muxes the original audio with -c copy and gates the result with verify_video.py --source-audio. Outputs go to the git-ignored out/reels/<slug>.",
+   "summary_ar": "غلاف رفيع فوق الأدوات الموجودة: يسجّل حقوق الصوت المعلنة ورخصة كل لقطة في rights.json (إرشادي لا يمنع — الفجوات تُسجَّل وتُذكر مرة)، ويأخذ words.json أو يشغّل transcribe، ويخطط لقطة لكل جملة مع انتقالات متمركزة على القطع (المدة = الصوت + ثانية)، ويبني لوحة لقطات 4:5 بـ ffmpeg، ويرسم مشهدًا عربيًا كلمة بكلمة (رقعة وكوفي، إطار ذهبي يُرسم، التوقيع والإشادة داخل المنطقة الآمنة، أنماط متغيرة) عبر render_html.cjs، ثم يدمج الصوت الأصلي بلا إعادة ترميز ويفحص الناتج بـ verify_video.py --source-audio. المخرجات في out/reels/<slug> المتجاهَل من git.",
+   "use_when": [
+    "اعمل ريلز دعاء من صوتي ولقطات Pexels دي بتوقيت الكلمات",
+    "حوّل التسجيل ده لريلز 9:16 عليه الكلام كلمة كلمة واسمي",
+    "Make a 9:16 Arabic word-synced reel from my voice and these licensed clips",
+    "Make a reel and keep a record of the audio and footage rights beside it"
+   ],
+   "keywords": [
+    "reel",
+    "reels factory",
+    "word-synced",
+    "kinetic arabic",
+    "9:16",
+    "dua reel",
+    "ريلز",
+    "مصنع الريلز",
+    "كلمة بكلمة",
+    "دعاء",
+    "مونتاج تلقائي",
+    "rights record",
+    "سجل الحقوق"
+   ],
+   "commands": [
+    {
+     "name": "plan",
+     "example": "python3 scripts/reel_factory.py plan --audio ./voice.m4a --audio-rights owned --words ./words.json --shots-manifest ./stock/manifest.json --shot-ids 17928486,8165467,20382699 --title \"دعاء يوم الخميس\" --handle @kosif",
+     "does": "Runs the input checks, writes OUT/rights.json (declared rights and any gaps) and OUT/plan.json (phrases, cuts, transitions, style, duration, words check) without rendering."
+    },
+    {
+     "name": "build",
+     "example": "python3 scripts/reel_factory.py build --audio ./voice.m4a --audio-rights direct-permission --audio-rights-evidence https://example.com/permission --transcribe --local-only --shots ./shots.json --credit \"الصوت: @x\" --style rose-dusk",
+     "does": "Plan, plate, scene, render, -c copy mux and verify_video --source-audio; writes OUT/reel.mp4, TEST_REPORT.md and build.json (inputs sha256, commands, results). Exit 4 when the build or the verification fails."
+    },
+    {
+     "name": "draft",
+     "example": "python3 scripts/reel_factory.py build ... --draft",
+     "does": "Renders a 540x960 check copy with the same 9:16 checks."
+    }
+   ],
+   "inputs": "An AAC or MP3 voice (never re-encoded); optional --audio-rights (and evidence) recorded in rights.json; --words words.json or --transcribe; --shots shots.json or a stock_fetch manifest with --shot-ids; optional --title, --handle, --credit, --phrases (text overrides), --style (preset or seed), --min-shot, --out, --allow-tracked, --draft.",
+   "outputs": "OUT/rights.json, plan.json, words.json (with --transcribe), build/ (plate JPGs, scene.html, fonts with OFL texts), reel.mp4, TEST_REPORT.md and build.json. Exit 0 ok, 2 usage/input error or missing tool, 4 BUILD_FAILED/VERIFY_FAILED; rights gaps never change the exit code.",
+   "requires": {
+    "python": [],
+    "binaries": [
+     "ffmpeg",
+     "ffprobe",
+     "node"
+    ],
+    "node": [
+     "playwright"
+    ],
+    "optional": [
+     "pip:faster-whisper",
+     "pip:numpy"
+    ],
+    "network": false
+   },
+   "safety": "runs-external-programs",
+   "consent": "It never fetches or publishes anything; the rights you declare for the audio and the shots are recorded in rights.json with any gaps (by the owner's decision this is advisory and never stops a build), it writes only under the chosen out folder (never jobs/, tracked paths or the skill folder unless --allow-tracked), and it never re-encodes the user's audio.",
+   "limits": "The rights record only checks that declarations and evidence were supplied in the right shape; it does not verify a permission or licence and does not stop a build that lacks them. Word-timing accuracy is not measured against a reference. One template family (four palettes, three transition sets, three frames); about 0.26 s per 1080x1920 frame here, so about 2 min for a 15 s reel.",
+   "tests": [
+    ".claude/skills/kosif-superpowers/evals/test_reel_factory.py"
+   ],
+   "docs": [
+    ".claude/skills/kosif-superpowers/montage-pro/README.md",
+    ".claude/skills/kosif-superpowers/proofs/pro-council-20261022/README.md"
+   ],
+   "families": [
+    "transitions-cuts",
+    "audio-sync-captions",
+    "typography-arabic",
+    "formats-platforms",
+    "qa-verification"
+   ],
+   "evidence": "tested-here",
+   "evidence_note": "evals/test_reel_factory.py 32/32 OK here (the build smoke test renders a tiny draft reel; it skips without ffmpeg, node or Chromium). On 22-10 the real dua audio declared as direct-permission without evidence planned with rights.json status incomplete and one RIGHTS_NOTE; an owned 6 s voice with three Pexels shots built a 1080x1920 reel that verify_video --source-audio passed 12/12 (packet MD5 equal to the source)."
   },
   {
    "id": "stream-grabber",

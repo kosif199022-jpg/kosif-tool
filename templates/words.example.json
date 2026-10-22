@@ -1,13 +1,15 @@
 {
   "schema": "kosif-words/1",
-  "note_ar": "مثال على توقيت الكلمات لجملة عربية. استبدله بتفريغ الصوت المرفق: لكل كلمة بداية ونهاية بالثواني من بداية الملف، والكلمات المفتاحية تحمل emphasis = true وتقود لحظات التأكيد في PLAN.md. الكلمات مرتبة زمنيًا ولا تتداخل.",
-  "note_en": "Word-timing example for an Arabic sentence. Replace it with the transcription of the supplied audio: each word has a start and an end in seconds from the file start; key words carry emphasis = true and drive the accent moments in PLAN.md. Words are in time order and never overlap.",
+  "note_ar": "مثال على توقيت الكلمات لجملة عربية. استبدله بتفريغ الصوت المرفق: لكل كلمة بداية ونهاية بالثواني من بداية الملف، والكلمات المفتاحية تحمل emphasis = true وتقود لحظات التأكيد في PLAN.md. الكلمات مرتبة زمنيًا ولا تتداخل. الأمر python3 .claude/skills/kosif-superpowers/scripts/montage_pro.py transcribe <الملف> --job <المجلد> يكتب هذا الشكل آليًا (source وengine وphrases، ونطاق phrases[].words شامل لطرفيه).",
+  "note_en": "Word-timing example for an Arabic sentence. Replace it with the transcription of the supplied audio: each word has a start and an end in seconds from the file start; key words carry emphasis = true and drive the accent moments in PLAN.md. Words are in time order and never overlap. python3 .claude/skills/kosif-superpowers/scripts/montage_pro.py transcribe <media> --job <dir> writes this shape automatically (source, engine, phrases; phrases[].words is an inclusive word index range).",
   "language": "ar",
   "direction": "rtl",
   "audio": "voice.mp3",
   "sample_rate": 48000,
   "duration_s": 4.2,
   "text": "الحركة تبدأ مع أول كلمة وتنتهي مع آخر نبضة",
+  "source": {"file": "voice.mp3", "sha256": null, "duration": 4.2},
+  "engine": {"name": "hand-timed example", "version": null, "model": null, "compute_type": null, "language": "ar"},
   "words": [
     {"word": "الحركة", "start": 0.12, "end": 0.58, "emphasis": true, "scene": 1},
     {"word": "تبدأ", "start": 0.62, "end": 0.94, "emphasis": false, "scene": 1},
@@ -18,5 +20,9 @@
     {"word": "مع", "start": 2.82, "end": 2.96, "emphasis": false, "scene": 3},
     {"word": "آخر", "start": 3.00, "end": 3.30, "emphasis": false, "scene": 3},
     {"word": "نبضة", "start": 3.34, "end": 3.86, "emphasis": true, "scene": 3}
+  ],
+  "phrases": [
+    {"text": "الحركة تبدأ مع أول كلمة", "start": 0.12, "end": 1.92, "words": [0, 4]},
+    {"text": "وتنتهي مع آخر نبضة", "start": 2.24, "end": 3.86, "words": [5, 8]}
   ]
 }
