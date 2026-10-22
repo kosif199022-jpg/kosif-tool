@@ -243,4 +243,9 @@ def run_checks(args: argparse.Namespace) -> int:
 
 
 if __name__ == "__main__":
+    # Windows consoles often use cp1256/cp1252; preserve diagnostics even when
+    # a report contains symbols (e.g. >= as the Unicode greater-equal sign).
+    for stream in (sys.stdout, sys.stderr):
+        if hasattr(stream, "reconfigure"):
+            stream.reconfigure(errors="backslashreplace")
     sys.exit(main())
