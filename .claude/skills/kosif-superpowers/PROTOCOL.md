@@ -45,7 +45,6 @@
 | [A9 Shadow Evals](references/protocol/A9-shadow-evals.md) | تعديل البروتوكول أو المهارة، أو قبل نشرهما | -1.11، -1.16، -1.32، -1.38، -1.47 في جدول موحد | مواصفات؛ المختبر منها آليًا مسمّى في الجدول |
 | [A10 التطور الذاتي](references/protocol/A10-self-evolution.md) | تطوير SEE أو هذا البروتوكول أو المهارة | -1.10، -1.34، جسر المرحلة 10 | موثَّق + `check_skill.py` و`evals/test_protocol_structure.py` |
 | [A11 لقطات 21-10-2026](references/protocol/A11-snapshots-20261021.md) | سؤال عن حالة SEE أو Think المسجلة يومها | لقطات مؤرخة من -1.1 و-1.18 و-1.20 و-1.21 والمستودع الأصل، وسطر عنوان v5.2 | تاريخية؛ أعد الفحص حيًا |
-| [A12 SEE Pro Cognitive Fusion](references/protocol/A12-see-pro-cognitive-fusion.md) | تطوير التفكير العميق/دمج جميع مناهج SEE Pro/توليفات قدرات معقدة/نقد القرار | Stage-0 × 11 · 9 Method Packs · Council/Einstein/Jev truth · Creative Fusion · Cognitive Packet | توجيه منهجي + فاحص عقد حتمي `scripts/see_pro_cognitive_gate.py`، **ليس** تشغيل Full Pro |
 | [A12 SEE Pro Cognitive Fusion](references/protocol/A12-see-pro-cognitive-fusion.md) | تطوير الذكاء والتفكير، أو دمج SEE Pro، أو تأليف قدرات كثيرة في حل مركّب L2/L3 | Stage-0 (11 عدسة)، 9 حزم، Full Pro truth، Fusion Intelligence، عقود تحقق | منهج موثّق + بوابة قراءة فقط: scripts/see_pro_cognitive_gate.py؛ Full Pro خارجي |
 | [CHANGELOG](references/protocol/CHANGELOG.md) | تبحث عن قسم قديم برقمه أو عن تاريخ الإصدارات | خريطة كل قسم قديم إلى مكانه | — |
 
@@ -287,7 +286,7 @@ python3 .claude/skills/kosif-superpowers/scripts/fusionforge.py propose "<اله
 
 ## المرحلة 4 — العصف الذهني متعدد الزوايا والنقد
 
-**طبقة الدمج المعرفي SEE Pro:** عند طلب «كل قدرات التفكير والذكاء» افتح [A12](references/protocol/A12-see-pro-cognitive-fusion.md) مع A1 ثم A4 عند الحاجة؛ استخدم 11 عدسة Stage-0 وتوليف سببي typed I/O وتحليل اعتراض مضاد. `see_pro_cognitive_gate.py` يفحص عقد القرار والأدلة فقط ولا يزيد قدرة النموذج أو يثبت تشغيل Full Pro.
+**SEE Pro:** للمهام المعرفية المعقدة افتح [A12](references/protocol/A12-see-pro-cognitive-fusion.md)، واعتبر الأدلة معيار الحكم.
 
 **SEE Pro Cognitive Fusion:** عند طلب ترقية التفكير أو مشروع L2/L3 معقد اقرأ [A12](references/protocol/A12-see-pro-cognitive-fusion.md). طبّق 11 عدسة Stage-0 حسب الحاجة، وخمسة مناهج مبتكرة مع baseline ومعارض مستقل وتجربة قابلة للدحض. لا تدّعِ «استخدام كل أدوات SEE Pro»؛ التكامل بين المناهج يُثبت بالـI/O والأدلة، أما Full Pro فله مُنفذه وإيصالاته المستقلة. للتحقق الشكلي من Packet استخدم scripts/see_pro_cognitive_gate.py --self-test أو check --file PACKET.json، ولا تعتبر اجتياز التحقق دليلاً على جودة الأفكار.
 
@@ -406,11 +405,11 @@ python3 .claude/skills/kosif-superpowers/scripts/fusionforge.py propose "<اله
 
 في GitHub: افحص الفروع والتغييرات الجارية، لا تستبدل عمل وكيل آخر، اعمل على فرع منفصل، راجع التعارضات والاختبارات قبل الدمج، وتحقق من الـ commit بعد الرفع. والدفع إلى `main` هنا نشر عام لأنه ينشر الموقع، فلا يكون إلا بإذن صريح به (القانون 17)؛ وبرهان الإصدار في [A3](references/protocol/A3-release-bridge.md). ملفات الشركات والعملاء معزولة بين المشاريع. الهندسة العكسية لفهم البنية وبناء وظائف أصلية فقط، باحترام الحقوق وأمن الجهاز. فريق مونتاج برو (`montage_pro.py`، الدليل `montage-pro/README.md`): لصوت أو فيديو مرفوع، `intake` (القياس) أول خطوة في كل خطة كما يطلب `CLAUDE.md`؛ والمحرك بعدها حسب الخطة (`options` ثم `build`، أو عدّة الأسلوب، أو محركك) بشرط أن يحقق المتطلبات الإلزامية.
 
-**FusionForge Shared Memory v1 — جسر الخبرة المشتركة (إضافة اختيارية بجانب FusionForge v2):** كل وصفة وتجاربها وملفاتها تبقى خاصة بمشروعها في `out/fusionforge/<project>/`. بعد `verified` و`fusionforge.py promote --project <slug> --id <FUSE-ID>` تُراجع الوصفة محليًا فقط؛ لا تُنقل بيانات المشروع إلى فهرس عام. الأمر `python3 .claude/skills/kosif-superpowers/scripts/fusionforge_shared.py audit` يفحص مقترحات حقيقية متوافقة مع الوصفات وأدلة QA المحلية وV01–V12: نجاح واحد = experimental، اختباران مستقلا الدليل = local_trusted، وثلاثة اختبارات مستقلة في ثلاثة مشاريع = shared_eligible **وليس اعتمادًا أو نشرًا تلقائيًا**. المراجعة المستقلة/الأمان/الخصوصية/تصادم الكتالوج وثلاثة سيناريوهات ومقارنة baseline أفضل مُلزمة للترقية عبر `review-template --signature <sha>` ثم ملف `out/fusionforge/_shared/reviews/<sha>.json` و`approve --signature <sha>`. الناتج فقط مخطط مهارات مُجرد من أسماء المشاريع والأهداف والنتائج والأدلة والملاحظات؛ `recall --kind video|code|dataset|...` يستدعي الهياكل المُعتمدة فقط، ولا يشغّل الأدوات أو يغيّر النموذج. إذا تعذرت بيئة ملفات محلية أو فشل التحقق فلا تدّعِ حصول تعلّم مشترك أو اعتماد.
+**FusionForge Shared Memory v1:** الاستدعاء عبر المشاريع يقتصر على وصفات مُعمّمة مُعتمدة؛ التفاصيل والإذن والعزل في [A10](references/protocol/A10-self-evolution.md).
 
 ## المرحلة 10 — تطوير ذكاء الفهرس
 
-**اختبار الدمج SEE Pro:** بعد تغيير عقد التفكير، شغّل `python3 .claude/skills/kosif-superpowers/scripts/see_pro_cognitive_gate.py --self-test` ثم `evals/test_see_pro_cognitive_gate.py` مع فحص بنية البروتوكول؛ لا تعتبر وصف المنهج أو قيم status نجاح تنفيذ حقيقي.
+**اختبار SEE Pro:** فاحص `see_pro_cognitive_gate.py` موثّق في [A12](references/protocol/A12-see-pro-cognitive-fusion.md).
 
 **إضافة SEE Pro المعرفية:** عند تطوير هذا البروتوكول احتفظ بالنواة USIP v5.3 وبحدود الـ9 packs، وراجِع A12 وA10 وA9؛ اختبر حدود Full Pro/المجلس وتطابق نوع الواجهات وعزل العملاء والحساب الدقيق. سكربت cognitive gate فحص عقود فقط؛ معيار الترقية هو مقارنة baseline/candidate واختبارات الانحدار والمخرجات الحقيقية، وليس طول البروتوكول.
 
