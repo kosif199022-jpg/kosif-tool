@@ -1,0 +1,216 @@
+{
+  "schema": "kosif.mosamem_rea_capabilities.v1",
+  "scope": "method-transfer and independent execution bridge, NO Mosamem GPL source vendored",
+  "sources": {
+    "mosamem": {
+      "repository": "https://github.com/motalim-ai/mosamem",
+      "release": "https://github.com/motalim-ai/mosamem/releases/tag/v0.1.0",
+      "ref": "v0.1.0",
+      "license": "GPL-3.0-or-later",
+      "notes": "source-authored README, milestone status, PSD report, third-party notices; reported behavior not independently measured on this laptop"
+    },
+    "rea": {
+      "repository": "https://github.com/morluto/rea",
+      "ref": "main",
+      "npm": "rea-agents",
+      "observed_version": "6.7.0",
+      "license": "MIT with separate third-party licenses",
+      "notes": "Existing KOSIF REA bridge and catalog; no new reverse-engineering execution asserted"
+    }
+  },
+  "capabilities": [
+    {
+      "id": "MSM-01",
+      "domain": "image",
+      "feature_ar": "طبقات ومجموعات و27 نمط مزج وأقنعة وقصّ",
+      "source_evidence": "Mosamem v0.1.0 README; docs/status.md M2",
+      "handoff": "Open locally in Mosamem GUI; verify exported flattened pixels and unchanged originals",
+      "implementation": "external_app_gui",
+      "risks": []
+    },
+    {
+      "id": "MSM-02",
+      "domain": "image",
+      "feature_ar": "نص عربي RTL قابل للتحرير مع تشكيل وكشيدة وخطوط متعددة",
+      "source_evidence": "Mosamem v0.1.0 README; docs/status.md Arabic shaping",
+      "handoff": "Mosamem typography panel; use existing KOSIF font-fidelity tools for QA",
+      "implementation": "external_app_gui",
+      "risks": []
+    },
+    {
+      "id": "MSM-03",
+      "domain": "image",
+      "feature_ar": "ضبط غير هدّام: Curves Levels Hue/Sat Exposure",
+      "source_evidence": "Mosamem v0.1.0 README",
+      "handoff": "Apply adjustment layer manually; verify tone/contrast with KOSIF value checker",
+      "implementation": "external_app_gui",
+      "risks": []
+    },
+    {
+      "id": "MSM-04",
+      "domain": "image",
+      "feature_ar": "فرشاة وممحاة واستنساخ ومعالجة وتدرجات",
+      "source_evidence": "Mosamem v0.1.0 README",
+      "handoff": "Use GUI for painting; existing KOSIF creative_paint.py for original vector experiments",
+      "implementation": "external_app_gui",
+      "risks": []
+    },
+    {
+      "id": "MSM-05",
+      "domain": "image",
+      "feature_ar": "مسارات بالقلم وأشكال وتحديد وتحويل منظور",
+      "source_evidence": "Mosamem v0.1.0 README",
+      "handoff": "Use GUI for complex vectors; existing KOSIF perspective_color_lab.py for 2-point study",
+      "implementation": "external_app_gui",
+      "risks": []
+    },
+    {
+      "id": "MSM-06",
+      "domain": "image",
+      "feature_ar": "فلاتر تمويه وتوضيح وضجيج وبكسلة",
+      "source_evidence": "Mosamem v0.1.0 README",
+      "handoff": "Use locally; verify before/after pixels independently",
+      "implementation": "external_app_gui",
+      "risks": []
+    },
+    {
+      "id": "MSM-07",
+      "domain": "image",
+      "feature_ar": "تحديد كائن وإزالة خلفية محليًا عبر BiRefNet",
+      "source_evidence": "Mosamem v0.1.0 README; THIRD-PARTY-NOTICES.md",
+      "handoff": "Explicit local model download approval, user operates GUI, check edges and rights",
+      "implementation": "external_app_ai_manual",
+      "risks": []
+    },
+    {
+      "id": "MSM-08",
+      "domain": "image",
+      "feature_ar": "تحديد بالنقر أو الصندوق عبر SAM 2.1",
+      "source_evidence": "Mosamem v0.1.0 README; THIRD-PARTY-NOTICES.md",
+      "handoff": "Locally installed model under license; manually inspect mask boundary",
+      "implementation": "external_app_ai_manual",
+      "risks": []
+    },
+    {
+      "id": "MSM-09",
+      "domain": "image",
+      "feature_ar": "ملء ذكي عبر MI-GAN",
+      "source_evidence": "Mosamem v0.1.0 README; THIRD-PARTY-NOTICES.md",
+      "handoff": "Manual GUI operation; check artifacts, no automated integration API claimed",
+      "implementation": "external_app_ai_manual",
+      "risks": []
+    },
+    {
+      "id": "MSM-10",
+      "domain": "image",
+      "feature_ar": "فتح PSD وإعادة تصديره مع قياس خسائر التوافق",
+      "source_evidence": "Mosamem v0.1.0 docs/psd-report.md 87/90 open; 50/90 exact-near threshold, 20 differ",
+      "handoff": "Run mosamem_rea_fusion.py inspect FILE.psd; GUI roundtrip requires manual screenshot/pixel QA",
+      "implementation": "native_metadata_plus_external_gui",
+      "risks": [
+        "CMYK_UNSUPPORTED_BY_UPSTREAM_BENCHMARK",
+        "UNSUPPORTED_ADJUSTMENTS",
+        "PSD_ROUNDTRIP_MISMATCH_POSSIBLE"
+      ]
+    },
+    {
+      "id": "MSM-11",
+      "domain": "image",
+      "feature_ar": "PNG/JPEG/WebP/TIFF وتصدير مخصص",
+      "source_evidence": "Mosamem v0.1.0 README",
+      "handoff": "Run header preflight for PNG/JPEG; use GUI for actual export and compare original hashes",
+      "implementation": "native_metadata_plus_external_gui",
+      "risks": []
+    },
+    {
+      "id": "MSM-12",
+      "domain": "motion",
+      "feature_ar": "أصول مرسومة متعددة الطبقات للفيديو والموشن",
+      "source_evidence": "Mosamem v0.1.0 image export features, combined with native KOSIF motion workflow",
+      "handoff": "Design frames in Mosamem, export authorized PNG layers, then render with existing KOSIF motion runtime",
+      "implementation": "composition_method",
+      "risks": []
+    },
+    {
+      "id": "MSM-13",
+      "domain": "motion",
+      "feature_ar": "حروف عربية قابلة للتحرير لتترات الفيديو",
+      "source_evidence": "Mosamem v0.1.0 Arabic text; KOSIF existing Arabic kinetic type tool",
+      "handoff": "Inspect text shaping in Mosamem; let KOSIF timeline animate with original audio timing",
+      "implementation": "composition_method",
+      "risks": []
+    },
+    {
+      "id": "REA-01",
+      "domain": "investigation",
+      "feature_ar": "تحليل JS/Electron وخرائط الوحدات وIPC",
+      "source_evidence": "REA main README; existing KOSIF rea_bridge.py",
+      "handoff": "rea_bridge.py plan javascript TARGET; authorized run only; independent verification",
+      "implementation": "existing_opt_in_bridge",
+      "risks": [
+        "REQUIRES_OWNERSHIP_OR_AUTHORIZATION",
+        "NOT_INSTALLED_OR_EXECUTED_BY_CATALOG"
+      ]
+    },
+    {
+      "id": "REA-02",
+      "domain": "investigation",
+      "feature_ar": "تفكيك .NET metadata وCIL والاعتماديات",
+      "source_evidence": "REA main README; existing KOSIF rea_bridge.py",
+      "handoff": "rea_bridge.py plan dotnet TARGET; authorized run only",
+      "implementation": "existing_opt_in_bridge",
+      "risks": [
+        "REQUIRES_OWNERSHIP_OR_AUTHORIZATION",
+        "NOT_INSTALLED_OR_EXECUTED_BY_CATALOG"
+      ]
+    },
+    {
+      "id": "REA-03",
+      "domain": "investigation",
+      "feature_ar": "تحليل الملفات الثنائية عبر Ghidra/Hopper/IDA",
+      "source_evidence": "REA main README native provider support; existing KOSIF rea-family-router",
+      "handoff": "Require provider readiness, explicit scope, consent; no unverified native engine calls",
+      "implementation": "external_provider_manual",
+      "risks": [
+        "REQUIRES_OWNERSHIP_OR_AUTHORIZATION",
+        "NOT_INSTALLED_OR_EXECUTED_BY_CATALOG"
+      ]
+    },
+    {
+      "id": "REA-04",
+      "domain": "investigation",
+      "feature_ar": "فحص الأدوات المكتبية وحزم الصور والمستندات",
+      "source_evidence": "REA main README desktop installations and packages",
+      "handoff": "Use read-only scoped artifact planning and user-owned targets",
+      "implementation": "existing_opt_in_bridge",
+      "risks": [
+        "REQUIRES_OWNERSHIP_OR_AUTHORIZATION",
+        "NOT_INSTALLED_OR_EXECUTED_BY_CATALOG"
+      ]
+    },
+    {
+      "id": "REA-05",
+      "domain": "investigation",
+      "feature_ar": "فحص مواقع التطبيقات والمتصفحات المسجلّة بإذن",
+      "source_evidence": "REA main README Chrome-family CDP observation",
+      "handoff": "Origin-approved passive session only; do not attach without separate authorization",
+      "implementation": "external_runtime_manual",
+      "risks": [
+        "REQUIRES_OWNERSHIP_OR_AUTHORIZATION",
+        "NOT_INSTALLED_OR_EXECUTED_BY_CATALOG"
+      ]
+    },
+    {
+      "id": "REA-06",
+      "domain": "investigation",
+      "feature_ar": "فحص ملفات SQLite/HAR ولقطات الشبكة المحفوظة",
+      "source_evidence": "REA main README static sqlite and saved captures",
+      "handoff": "rea_bridge.py plan sqlite TARGET for authorized local file; never log secret payloads",
+      "implementation": "existing_opt_in_bridge",
+      "risks": [
+        "REQUIRES_OWNERSHIP_OR_AUTHORIZATION",
+        "NOT_INSTALLED_OR_EXECUTED_BY_CATALOG"
+      ]
+    }
+  ]
+}
