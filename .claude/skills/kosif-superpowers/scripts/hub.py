@@ -307,7 +307,9 @@ def doc_entries(reg: dict = None) -> list:
         for d in t.get("docs", []):
             area_votes.setdefault(d, Counter())[t["area"]] += 1
     out = []
-    files = sorted((SKILL / "references" / "guides").glob("*.md")) + sorted((SKILL / "references").glob("*.md"))
+    # pathlib path ordering differs between Windows (casefolded) and POSIX; make generated docs deterministic.
+    order = lambda p: (p.name.casefold(), p.name)
+    files = sorted((SKILL / "references" / "guides").glob("*.md"), key=order) + sorted((SKILL / "references").glob("*.md"), key=order)
     for p in files:
         if p.name == "INDEX.md":
             continue
