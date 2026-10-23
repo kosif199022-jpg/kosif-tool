@@ -225,10 +225,12 @@ def main():
              "powers":idx["catalog_powers"],"groups":idx["group_count"],"families":idx["family_count"]}
     elif a.action=="verify":
         disk=json.loads(OUT.read_text(encoding="utf-8")) if OUT.exists() else {}
-        out={"pass":disk.get("powers")==idx["powers"] and disk.get("groups")==idx["groups"],
+        keys=("powers","groups","catalog_powers","family_count","group_count","tool_count")
+        stale=[k for k in keys if disk.get(k)!=idx[k]]
+        out={"pass":not stale,"stale":stale,
              "powers":len(idx["powers"]),"groups":idx["group_count"],
-             "families":idx["family_count"]}
-        if not out["pass"]: sys.exit("Smart index is stale; run build.")
+             "families":idx["family_count"],"tools":idx["tool_count"]}
+        if not out["pass"]: sys.exit("Smart index is stale ("+", ".join(stale)+"); run build.")
     elif a.action=="groups":
         out=[{"group":g["id"],"ar":g["ar"],"powers":g["count"],
               "families":len(g["families"]),"status_counts":g["status_counts"]} for g in idx["groups"]]

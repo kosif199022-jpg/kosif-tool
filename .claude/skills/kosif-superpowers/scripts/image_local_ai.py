@@ -131,7 +131,12 @@ def load_deps():
 def open_session(ort, model):
     opts = ort.SessionOptions()
     opts.log_severity_level = 3
-    return ort.InferenceSession(str(model), sess_options=opts, providers=["CPUExecutionProvider"])
+    try:
+        return ort.InferenceSession(str(model), sess_options=opts, providers=["CPUExecutionProvider"])
+    except Exception as e:
+        print(f"cannot load {model} as an ONNX model ({type(e).__name__}); the file may be incomplete or not ONNX. "
+              "Check it with: python3 scripts/image_local_ai.py verify-model <file> --sha256 <hex>", file=sys.stderr)
+        return None
 
 
 # ---- commands ----
@@ -189,6 +194,8 @@ def cmd_remove_bg(a):
     img = Image.open(a.input).convert("RGBA")
     w, h = img.size
     sess = open_session(ort, a.model)
+    if sess is None:
+        return 2
     inp = sess.get_inputs()[0]
     size = a.size
     shape = inp.shape
@@ -245,6 +252,8 @@ def cmd_inpaint(a):
     known = 255 - np.asarray(model_hole, dtype=np.uint8)  # 255 keep, 0 fill
     chw = np.asarray(img, dtype=np.uint8).transpose(2, 0, 1)[None, ...]
     sess = open_session(ort, a.model)
+    if sess is None:
+        return 2
     ins = sess.get_inputs()
     by = {i.name: i for i in ins}
     img_in = by.get("image", ins[0])
