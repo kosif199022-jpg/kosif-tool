@@ -52,6 +52,8 @@ def main(argv=None):
     p.add_argument("--query",default="")
     p.add_argument("--top",type=int,default=20)
     p.add_argument("--skill-root",default=None)
+    p.add_argument("--audit-records",default=None,help="Private content-review receipts JSON; never executes referenced skill code")
+    p.add_argument("--reviewed-manifest",default=str(Path(__file__).resolve().parent.parent / "data" / "atlas-reviewed" / "manifest.json"),help="Committed metadata-only reviewed skill receipts")
     a=p.parse_args(argv)
     if not a.index:p.error("pass --index or set KOSIF_ATLAS_INDEX")
     rows=load(a.index)
@@ -62,6 +64,20 @@ def main(argv=None):
         for x in extra:
             if isinstance(x,dict):x["_scope"]="copyleft_reference_only"
         rows+=extra
+    audit={}
+    if a.reviewed_manifest and Path(a.reviewed_manifest).is_file():
+        for receipt in json.loads(Path(a.reviewed_manifest).read_text(encoding="utf-8")).get("skills",[]):
+            audit[str(receipt["id"])]={"skill_body_read":bool(receipt.get("document_sha256")),
+              "code_files_read":receipt.get("code_files_read",0),
+              "review_indicators":set(receipt.get("content_indicators",[]))}
+    if a.audit_records:
+        for record in json.loads(Path(a.audit_records).read_text(encoding="utf-8")):
+            key=str(record.get("skill_id"))
+            entry=audit.setdefault(key,{"skill_body_read":False,"code_files_read":0,"review_indicators":set()})
+            if record.get("status")=="FETCHED":
+                if record.get("kind")=="skill":entry["skill_body_read"]=True
+                if record.get("kind")=="code":entry["code_files_read"]+=1
+            entry["review_indicators"].update(record.get("details",{}).get("indicators",{}).keys())
     if a.action=="stats":
         data={"entries":len(rows),
               "scopes":dict(collections.Counter(str(x.get("_scope","unknown")) for x in rows if isinstance(x,dict))),
@@ -69,16 +85,18 @@ def main(argv=None):
               "risk_flagged":sum(bool(x.get("risk_flags")) for x in rows if isinstance(x,dict)),
               "verdicts":dict(collections.Counter(str(x.get("verdict","unknown")) for x in rows if isinstance(x,dict))),
               "domains":dict(collections.Counter(family(x) for x in rows if isinstance(x,dict))),
+              "audit_skills_with_bodies":sum(x["skill_body_read"] for x in audit.values()),
               "proof_status":"INDEX_ONLY_NOT_RUNTIME_TESTED"}
     else:
         if not a.query:p.error("--query required")
         matches=sorted((x for x in rows if isinstance(x,dict)),key=lambda x:(-score(x,a.query),str(x.get("id",""))))
         matches=[x for x in matches if score(x,a.query)>0][:max(1,min(a.top,100))]
-        data={"matches":[{"id":x.get("id"),"skill":x.get("skill"),"description":str(x.get("description") or "")[:300],
+        data={"matches":[{"id":x.get("id"),"skill":x.get("skill"),"description":str(x.get("description",""))[:300],
                           "license":x.get("license"),"source":x.get("source"),"path":x.get("path"),
                           "risk_flags":x.get("risk_flags"),"verdict":x.get("verdict"),
                           "license_scope":x.get("_scope"),
-                          "category":family(x),"inspection":inspect_skill(a.skill_root,x),
+                          "category":family(x),"inspection":(inspect_skill(a.skill_root,x) if a.skill_root else ("SOURCE_BODY_RECEIPT" if audit.get(str(x["id"]),{}).get("skill_body_read") else "NOT_READ")),
+                          "content_audit":({**audit[str(x["id"])],"review_indicators":sorted(audit[str(x["id"])]["review_indicators"])} if str(x["id"]) in audit else {"skill_body_read":False}),
                           "execution":"NOT_EXECUTED"} for x in matches],
               "total_entries":len(rows),"query":a.query}
     print(json.dumps(data,ensure_ascii=False,indent=2))
