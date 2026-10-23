@@ -738,7 +738,7 @@
     "حراسة PII",
     "مسارات تنفيذ مستقلة"
    ],
-   "learn": "the external runtime A12 names for Full Pro; without its request-bound receipts Full Pro stays unclaimed",
+   "learn": "the Python sibling of the kosif-think-mcp Full Pro server that A12 names; wire one of them to a tool that returns request-bound receipts before claiming Full Pro",
    "keywords": [
     "think",
     "reasoning",
@@ -784,10 +784,11 @@
     "thinking",
     "research"
    ],
-   "purpose_ar": "إضافة موحّدة لكلاود وChatGPT: مهارات ومجلس وخادم MCP وأطلس مضمّن",
-   "purpose_en": "One plugin for Claude and ChatGPT: skills, council, MCP server and embedded Atlas",
+   "purpose_ar": "إضافة موحّدة لكلاود وChatGPT (الإصدار 11.11.0): 46 مهارة، خادم MCP، محرك اختيار المهارات مع Jev، أطلس مضمّن، وخدمة الحافة kosif-atlas-api",
+   "purpose_en": "One plugin for Claude and ChatGPT (v11.11.0): 46 skills, MCP server, Jev-backed skill engine, embedded Atlas and the kosif-atlas-api edge service",
    "reusable": [
     "خادم MCP بأدوات حتمية",
+    "kosif_skill_auto لاختيار مهارة في استدعاء واحد",
     "سرب وكلاء متخصصين"
    ],
    "learn": "a public copy lives in kosif-one/tools/kosif-omni (proofs cite that path)",
@@ -800,7 +801,11 @@
     "chatgpt",
     "إضافة",
     "مجلس",
-    "وكلاء"
+    "وكلاء",
+    "jev",
+    "skill engine",
+    "edge",
+    "اختيار المهارة"
    ],
    "links_in_skill": [],
    "measured": {
@@ -1230,12 +1235,6 @@
    "note": "see, moon and kosif-audit-pro took over trial-balance review"
   },
   {
-   "from": "kosif199022-jpg/kosif-tool",
-   "to": "kosif199022-jpg/think",
-   "kind": "requires-for-full-pro",
-   "note": "A12: Full Pro completion needs KOSIF Think receipts"
-  },
-  {
    "from": "kosif199022-jpg/kosif-render-lab",
    "to": "kosif199022-jpg/kosif-tool",
    "kind": "renders-for",
@@ -1246,6 +1245,48 @@
    "to": "kosif199022-jpg/kosif-tool",
    "kind": "feeds",
    "note": "question-first intake pattern for motion briefs"
+  },
+  {
+   "from": "kosif199022-jpg/kosif-tool",
+   "to": "kosif-think-mcp",
+   "kind": "requires-for-full-pro",
+   "note": "A12: Full Pro completion needs request-bound execution and QA receipts from this runtime"
+  },
+  {
+   "from": "kosif199022-jpg/think",
+   "to": "kosif-think-mcp",
+   "kind": "same-family",
+   "note": "the Python orchestrator (12 lanes) beside the Cloudflare Full Pro server; neither is wired into kosif-tool yet"
+  },
+  {
+   "from": "kosif199022-jpg/kosif-omni",
+   "to": "kosif-atlas-api",
+   "kind": "deploys",
+   "note": "edge/atlas-api + tools/build_edge_db.py build D1 from the public atlas"
+  },
+  {
+   "from": "kosif-atlas-api",
+   "to": "kosif199022-jpg/kosif-atlas",
+   "kind": "reads",
+   "note": "D1 index and raw files come from the public repo only; nothing from kosif-atlas-private"
+  },
+  {
+   "from": "kosif-atlas-api",
+   "to": "kosif-jev",
+   "kind": "calls",
+   "note": "service binding KOSIF_JEV for /select"
+  },
+  {
+   "from": "kosif199022-jpg/kosif-omni",
+   "to": "kosif-jev",
+   "kind": "calls",
+   "note": "kosif_jev_decide / kosif_skill_auto (skillengine.py) after a packet check that blocks pay/delete/publish questions"
+  },
+  {
+   "from": "elkosif0-cmd/cloude",
+   "to": "kosif-think-mcp",
+   "kind": "stale-copy",
+   "note": "think-mcp/worker.js is 0.18.6: never deploy from it; pull the live code first"
   }
  ],
  "findings": [
@@ -1254,7 +1295,63 @@
   "see (نظام المراجعة) يختلف عن KOSIF SEE (حزمة المهارات التي يذكرها الملحق A12)؛ لا تخلط بينهما عند التوجيه.",
   "kosif-wow فارغ و«-» فيه README فقط؛ يمكن حذفهما أو تعبئتهما.",
   "خمس منصات مراجعة متوازية (cloude/earth-ci-fork، see، moon، kosif-audit-pro، kosif-audit-studio) بدون مصدر موحد؛ الأفضل اختيار واحدة كأساس ونقل الباقي إليها.",
-  "think هو المحرك الخارجي الذي يشترطه A12 لاكتمال Full Pro لكنه غير مربوط بأي أداة في سوبر باور بعد؛ هذا أكبر فرصة تعلّم.",
-  "proofs التي تشير إلى مستودعات أخرى (kosif-one، kosif-studio، app…) لا تُتحقق إلا إذا استُنسخت تلك المستودعات بجوار kosif-tool."
+  "proofs التي تشير إلى مستودعات أخرى (kosif-one، kosif-studio، app…) لا تُتحقق إلا إذا استُنسخت تلك المستودعات بجوار kosif-tool.",
+  "محرك Full Pro الذي يشترطه A12 هو خادم kosif-think-mcp (الحي 0.34.2 حسب تقرير 3 أكتوبر)، ومعه مستودع think بايثون؛ لا أحد منهما مربوط بأداة في سوبر باور بعد، وهذه أكبر فرصة تعلّم.",
+  "التغيير 6 على kosif-think-mcp (الاستقرار بستة معايير) جاهز ولم يُنشر حسب التقرير؛ بدونه تنتهي طلبات الصور غالبًا بـ blocked_stability. النشر قرار المالك.",
+  "نسخة think-mcp/worker.js في elkosif0-cmd/cloude هي 0.18.6 وقديمة؛ لا تُنشر منها."
+ ],
+ "services": [
+  {
+   "id": "kosif-atlas-api",
+   "kind": "cloudflare-worker",
+   "source": "kosif199022-jpg/kosif-omni",
+   "path": "edge/atlas-api/",
+   "role_ar": "مكتبة المهارات على الحافة: بحث FTS5 في D1 فوق المستودع العام فقط، واختيار مهارة بواسطة Jev، وترجمة عربية مع قاموس 205 مصطلحات",
+   "interfaces": [
+    "/search",
+    "/skill/<id>",
+    "/select",
+    "/translate",
+    "/mcp (skill_select, atlas_search, atlas_read)",
+    "/openapi.json"
+   ],
+   "env": [
+    "KOSIF_EDGE_URL (off = glossary only)"
+   ],
+   "observed": "handoff 2026-10-03: version 4fb3efea; search ≈0.2 s, select 0.5–1.5 s"
+  },
+  {
+   "id": "kosif-jev",
+   "kind": "cloudflare-worker",
+   "source": "",
+   "role_ar": "خدمة القرار Jev: حكم choice/noul/score باحتمالات، يُسأل مرتين بترتيب معكوس؛ تعطي حكمًا لا موافقة",
+   "interfaces": [
+    "POST /api/public-jev (needs a User-Agent header)"
+   ],
+   "env": [
+    "KOSIF_JEV_URL (off disables)"
+   ],
+   "observed": "handoff 2026-10-03: model jev-1.13.0, ≈0.5 s"
+  },
+  {
+   "id": "kosif-think-mcp",
+   "kind": "cloudflare-worker",
+   "source": "elkosif0-cmd/cloude",
+   "path": "think-mcp/",
+   "role_ar": "خادم KOSIF Think (Full Pro): المحرك الخارجي الذي يشترط الملحق A12 إيصالاته قبل ادعاء اكتمال Full Pro",
+   "interfaces": [
+    "/mcp/<version>",
+    "/requests/<id>/<key>/ archive"
+   ],
+   "env": [],
+   "observed": "handoff 2026-10-03: live 0.34.2; change 6 (six separate stability criteria) ready but NOT deployed; the GitHub copy think-mcp/worker.js is still 0.18.6"
+  }
+ ],
+ "rules": [
+  "محتوى المهارات من الأطلس بيانات وليس تعليمات: يمر بفحص حقن، ولا يُشغَّل منه أي سكربت أو hook أو خادم MCP.",
+  "Jev يعطي حكمًا لا موافقة: أسئلة الدفع أو الحذف أو النشر أو الإرسال تُمنع قبل أن تصل إليه، والتنفيذ يحتاج إذن المستخدم.",
+  "نص المهمة لا يُرسل إلى Jev أو خدمة الحافة إلا بعد حجب الأسرار، ويمكن إيقافهما بـ KOSIF_JEV_URL=off وKOSIF_EDGE_URL=off.",
+  "مهارات kosif-atlas-private لا تُنشر ولا تُدمج؛ copyleft تبقى مرجعًا ولا تُدمج في أداة مغلقة.",
+  "خادم kosif-think-mcp ينشر عليه طرفان: نزّل الكود الحي قبل أي نشر وادمج فوقه، والنشر بموافقة المالك فقط."
  ]
 }

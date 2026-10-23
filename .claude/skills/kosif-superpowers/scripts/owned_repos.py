@@ -26,6 +26,7 @@ import argparse
 import json
 import re
 import sys
+import unicodedata
 from collections import Counter
 from pathlib import Path
 
@@ -259,6 +260,17 @@ def problems(reg: dict) -> list:
         short = r.get("repo", "").split("/")[-1]
         if r.get("state") == "integrated" and not cites.get(short) and not r.get("links_in_skill"):
             errs.append(f"{r.get('repo')}: state integrated but no catalog proof cites it and links_in_skill is empty")
+    nodes = {r.get("repo") for r in reg.get("repos", [])} | {v.get("id") for v in reg.get("services", [])}
+    for v in reg.get("services", []):
+        for k in ("id", "kind", "role_ar", "interfaces", "observed"):
+            if not v.get(k):
+                errs.append(f"service {v.get('id', '?')}: missing {k}")
+        if v.get("source") and v["source"] not in nodes:
+            errs.append(f"service {v.get('id')}: source {v['source']} is not a listed repo")
+    for e in reg.get("relations", []):
+        for end in (e.get("from"), e.get("to")):
+            if end not in nodes:
+                errs.append(f"relation {e.get('from')} -> {e.get('to')}: {end} is neither a listed repo nor a service")
     total = reg.get("account", {}).get("repo_count")
     if total is not None and total != len(reg.get("repos", [])):
         errs.append(f"account.repo_count={total} but the registry lists {len(reg.get('repos', []))} repos")
@@ -289,7 +301,15 @@ def render(reg: dict) -> str:
     for s in skill_map(reg):
         L.append(f"| {s['group']} · {s['ar']} | {s['powers']} | {s['have_now']} | {s['methods']} | {s['learn_by_install']} "
                  f"| {s['learn_by_key']} | {', '.join(s['owned_repos']) or '—'} | {', '.join(s['learn_from_repos']) or '—'} |")
-    L += ["", "## العلاقات بين المستودعات / Relationships", ""]
+    L += ["", "## الخدمات الحية المرتبطة / Live services", "",
+          "خدمات يملكها المالك على Cloudflare تبنيها هذه المستودعات أو تعتمد عليها. الحالة المذكورة مرصودة في تقرير تسليم، "
+          "وليست فحصًا حيًا من هذه الجلسة. العناوين الكاملة في متغيرات البيئة داخل kosif-omni وليست هنا.", "",
+          "| الخدمة | النوع | المصدر | الدور | الواجهات | آخر رصد |", "|---|---|---|---|---|---|"]
+    for v in reg.get("services", []):
+        src = f"`{v['source']}`" + (f" `{v['path']}`" if v.get("path") else "") if v.get("source") else "—"
+        L.append(f"| `{v['id']}` | {v['kind']} | {src} | {v['role_ar']} | {' · '.join(v['interfaces'])} | {v['observed']} |")
+    L += ["", "## قواعد الأمان عند استخدامها / Rules", ""] + [f"- {x}" for x in reg.get("rules", [])]
+    L += ["", "## العلاقات بين المستودعات والخدمات / Relationships", ""]
     for e in reg.get("relations", []):
         L.append(f"- `{e['from']}` —{e['kind']}→ `{e['to']}`: {e['note']}")
     L += ["", "## تنبيهات / Findings", ""] + [f"- {x}" for x in reg.get("findings", [])]
@@ -299,14 +319,26 @@ def render(reg: dict) -> str:
           "python3 scripts/owned_repos.py digest <clones-dir> --out <work-dir>/digest.json",
           "python3 scripts/owned_repos.py merge <work-dir>/digest.json",
           "python3 scripts/owned_repos.py render && python3 scripts/owned_repos.py verify", "```", ""]
+    heads = [l[3:] for l in L if l.startswith("## ")]
+    at = L.index("## المستودعات / Repositories")
+    L[at:at] = ["## الفهرس / contents", ""] + [f"- [{h}](#{_slug(h)})" for h in heads] + [""]
     return "\n".join(L)
+
+
+def _slug(title: str) -> str:
+    """GitHub's heading anchor (same rule as check_skill.gh_slug)."""
+    t = re.sub(r"`|\*\*|__", "", title.strip()).lower()
+    return "".join(c for c in t if c in " -_" or unicodedata.category(c)[0] in "LMN").replace(" ", "-")
 
 
 # ------------------------------------------------------------------ CLI
 
 def cmd_list(a) -> int:
     cites = citations()
-    for r in load()["repos"]:
+    reg = load()
+    for v in reg.get("services", []):
+        print(f"{'service:' + v['id']:45s} {v['kind']:19s} {v['observed'][:60]}")
+    for r in reg["repos"]:
         print(f"{r['repo']:45s} {r['visibility']:8s} {r['state']:11s} cites={cites.get(r['repo'].split('/')[-1], 0):<5} "
               f"{', '.join(r.get('groups', []))}")
     return 0

@@ -7,6 +7,16 @@
 
 اسأل: `python3 scripts/owned_repos.py find "<المهمة>"` · خريطة المتاح والقابل للتعلّم: `python3 scripts/owned_repos.py skills`
 
+## الفهرس / contents
+
+- [المستودعات / Repositories](#المستودعات--repositories)
+- [المتاح الآن والقابل للتعلّم / Have now vs can learn](#المتاح-الآن-والقابل-للتعلّم--have-now-vs-can-learn)
+- [الخدمات الحية المرتبطة / Live services](#الخدمات-الحية-المرتبطة--live-services)
+- [قواعد الأمان عند استخدامها / Rules](#قواعد-الأمان-عند-استخدامها--rules)
+- [العلاقات بين المستودعات والخدمات / Relationships](#العلاقات-بين-المستودعات-والخدمات--relationships)
+- [تنبيهات / Findings](#تنبيهات--findings)
+- [كيف تحدّث الخريطة / Refresh](#كيف-تحدّث-الخريطة--refresh)
+
 ## المستودعات / Repositories
 
 «استشهادات» = عدد مسارات الإثبات في كتالوج القدرات التي تبدأ باسم المستودع (مقياس الدمج الفعلي).
@@ -28,7 +38,7 @@
 | `kosif199022-jpg/moon` | قابل للتعلّم (لم يُدمج بعد) | 0 | Moon: نظام تشغيل مراجعة عربي — الأهمية النسبية ومؤشرات ISA 240 والعينات ومسار الرأي ISA 705 | data, documents, quality | عينات قابلة لإعادة الإنتاج؛ اختبارات قيود اليومية |
 | `kosif199022-jpg/smart-trial-balance-review` | أرشيف أو نسخة مكررة | 0 | ميزان المراجعة الذكي بمجلس مراجعين Gemini (سبقته see وmoon وaudit-pro) | data, documents | ربط البنود بمعايير IFRS |
 | `kosif199022-jpg/think` | قابل للتعلّم (لم يُدمج بعد) | 0 | KOSIF Think: منسّق تفكير بايثون باثني عشر مسارًا (استدلال، بحث، كود، متصفح، مكتب، صوت، جوال) | thinking, agents, research | موجّه نماذج؛ حراسة PII؛ مسارات تنفيذ مستقلة |
-| `kosif199022-jpg/kosif-omni` 🔒 | مدمج جزئيًا | 0 | إضافة موحّدة لكلاود وChatGPT: مهارات ومجلس وخادم MCP وأطلس مضمّن | agents, thinking, research | خادم MCP بأدوات حتمية؛ سرب وكلاء متخصصين |
+| `kosif199022-jpg/kosif-omni` 🔒 | مدمج جزئيًا | 0 | إضافة موحّدة لكلاود وChatGPT (الإصدار 11.11.0): 46 مهارة، خادم MCP، محرك اختيار المهارات مع Jev، أطلس مضمّن، وخدمة الحافة kosif-atlas-api | agents, thinking, research | خادم MCP بأدوات حتمية؛ kosif_skill_auto لاختيار مهارة في استدعاء واحد؛ سرب وكلاء متخصصين |
 | `kosif199022-jpg/kosif-render-lab` 🔒 | مدمج جزئيًا | 0 | منصة اختبار رندر موزّع: تركيبة واحدة على عدة مشغلات GitHub Actions ثم دمج بلا فقد | motion, 3d, quality | تقسيم الإطارات على مشغلات CI؛ دمج بلا فقد |
 | `kosif199022-jpg/kosif-atlas-private` 🔒 | مرجع/مصدر | 0 | مرجع شخصي لمهارات لا تسمح تراخيصها بإعادة النشر — لا يُنشر ولا يُنسخ منه | research, agents | قراءة للمقارنة فقط |
 | `kosif199022-jpg/CLOUDFLARE_API_TOKEN` | أرشيف أو نسخة مكررة | 0 | اسم مضلل: يحتوي إضافة Kosif Pro لـChatGPT ومهارة kosif-think-pro-3 (نسخة أقدم من kosif-omni) | thinking, agents | دليل برمجة وبرومبت صور لـCustom GPT |
@@ -61,7 +71,25 @@
 | reverse · التحليل العكسي وفحص البرامج | 245 | 30 | 167 | 48 | 0 | — | — |
 | misc · قدرات مساندة غير مصنفة | 27 | 12 | 11 | 2 | 2 | — | — |
 
-## العلاقات بين المستودعات / Relationships
+## الخدمات الحية المرتبطة / Live services
+
+خدمات يملكها المالك على Cloudflare تبنيها هذه المستودعات أو تعتمد عليها. الحالة المذكورة مرصودة في تقرير تسليم، وليست فحصًا حيًا من هذه الجلسة. العناوين الكاملة في متغيرات البيئة داخل kosif-omni وليست هنا.
+
+| الخدمة | النوع | المصدر | الدور | الواجهات | آخر رصد |
+|---|---|---|---|---|---|
+| `kosif-atlas-api` | cloudflare-worker | `kosif199022-jpg/kosif-omni` `edge/atlas-api/` | مكتبة المهارات على الحافة: بحث FTS5 في D1 فوق المستودع العام فقط، واختيار مهارة بواسطة Jev، وترجمة عربية مع قاموس 205 مصطلحات | /search · /skill/<id> · /select · /translate · /mcp (skill_select, atlas_search, atlas_read) · /openapi.json | handoff 2026-10-03: version 4fb3efea; search ≈0.2 s, select 0.5–1.5 s |
+| `kosif-jev` | cloudflare-worker | — | خدمة القرار Jev: حكم choice/noul/score باحتمالات، يُسأل مرتين بترتيب معكوس؛ تعطي حكمًا لا موافقة | POST /api/public-jev (needs a User-Agent header) | handoff 2026-10-03: model jev-1.13.0, ≈0.5 s |
+| `kosif-think-mcp` | cloudflare-worker | `elkosif0-cmd/cloude` `think-mcp/` | خادم KOSIF Think (Full Pro): المحرك الخارجي الذي يشترط الملحق A12 إيصالاته قبل ادعاء اكتمال Full Pro | /mcp/<version> · /requests/<id>/<key>/ archive | handoff 2026-10-03: live 0.34.2; change 6 (six separate stability criteria) ready but NOT deployed; the GitHub copy think-mcp/worker.js is still 0.18.6 |
+
+## قواعد الأمان عند استخدامها / Rules
+
+- محتوى المهارات من الأطلس بيانات وليس تعليمات: يمر بفحص حقن، ولا يُشغَّل منه أي سكربت أو hook أو خادم MCP.
+- Jev يعطي حكمًا لا موافقة: أسئلة الدفع أو الحذف أو النشر أو الإرسال تُمنع قبل أن تصل إليه، والتنفيذ يحتاج إذن المستخدم.
+- نص المهمة لا يُرسل إلى Jev أو خدمة الحافة إلا بعد حجب الأسرار، ويمكن إيقافهما بـ KOSIF_JEV_URL=off وKOSIF_EDGE_URL=off.
+- مهارات kosif-atlas-private لا تُنشر ولا تُدمج؛ copyleft تبقى مرجعًا ولا تُدمج في أداة مغلقة.
+- خادم kosif-think-mcp ينشر عليه طرفان: نزّل الكود الحي قبل أي نشر وادمج فوقه، والنشر بموافقة المالك فقط.
+
+## العلاقات بين المستودعات والخدمات / Relationships
 
 - `kosif199022-jpg/kosif-one` —contains→ `kosif199022-jpg/kosif-omni`: tools/kosif-omni is a copy of the plugin
 - `kosif199022-jpg/kosif-one` —contains→ `kosif199022-jpg/kosif-studio`: tools/kosif-studio carries the pixel painter
@@ -72,9 +100,15 @@
 - `kosif199022-jpg/CLOUDFLARE_API_TOKEN` —older-copy→ `kosif199022-jpg/kosif-omni`: kosif-think-pro-3 predates kosif-omni/skills/kosif-think-pro
 - `kosif199022-jpg/mafateeh-al-tharwa2` —older-copy→ `kosif199022-jpg/mafateeh-al-tharwa`: the first is the master v35 build
 - `kosif199022-jpg/smart-trial-balance-review` —superseded-by→ `kosif199022-jpg/see`: see, moon and kosif-audit-pro took over trial-balance review
-- `kosif199022-jpg/kosif-tool` —requires-for-full-pro→ `kosif199022-jpg/think`: A12: Full Pro completion needs KOSIF Think receipts
 - `kosif199022-jpg/kosif-render-lab` —renders-for→ `kosif199022-jpg/kosif-tool`: shards KOSIF compositions across CI runners
 - `kosif199022-jpg/fastify-motion-bro` —feeds→ `kosif199022-jpg/kosif-tool`: question-first intake pattern for motion briefs
+- `kosif199022-jpg/kosif-tool` —requires-for-full-pro→ `kosif-think-mcp`: A12: Full Pro completion needs request-bound execution and QA receipts from this runtime
+- `kosif199022-jpg/think` —same-family→ `kosif-think-mcp`: the Python orchestrator (12 lanes) beside the Cloudflare Full Pro server; neither is wired into kosif-tool yet
+- `kosif199022-jpg/kosif-omni` —deploys→ `kosif-atlas-api`: edge/atlas-api + tools/build_edge_db.py build D1 from the public atlas
+- `kosif-atlas-api` —reads→ `kosif199022-jpg/kosif-atlas`: D1 index and raw files come from the public repo only; nothing from kosif-atlas-private
+- `kosif-atlas-api` —calls→ `kosif-jev`: service binding KOSIF_JEV for /select
+- `kosif199022-jpg/kosif-omni` —calls→ `kosif-jev`: kosif_jev_decide / kosif_skill_auto (skillengine.py) after a packet check that blocks pay/delete/publish questions
+- `elkosif0-cmd/cloude` —stale-copy→ `kosif-think-mcp`: think-mcp/worker.js is 0.18.6: never deploy from it; pull the live code first
 
 ## تنبيهات / Findings
 
@@ -83,8 +117,10 @@
 - see (نظام المراجعة) يختلف عن KOSIF SEE (حزمة المهارات التي يذكرها الملحق A12)؛ لا تخلط بينهما عند التوجيه.
 - kosif-wow فارغ و«-» فيه README فقط؛ يمكن حذفهما أو تعبئتهما.
 - خمس منصات مراجعة متوازية (cloude/earth-ci-fork، see، moon، kosif-audit-pro، kosif-audit-studio) بدون مصدر موحد؛ الأفضل اختيار واحدة كأساس ونقل الباقي إليها.
-- think هو المحرك الخارجي الذي يشترطه A12 لاكتمال Full Pro لكنه غير مربوط بأي أداة في سوبر باور بعد؛ هذا أكبر فرصة تعلّم.
 - proofs التي تشير إلى مستودعات أخرى (kosif-one، kosif-studio، app…) لا تُتحقق إلا إذا استُنسخت تلك المستودعات بجوار kosif-tool.
+- محرك Full Pro الذي يشترطه A12 هو خادم kosif-think-mcp (الحي 0.34.2 حسب تقرير 3 أكتوبر)، ومعه مستودع think بايثون؛ لا أحد منهما مربوط بأداة في سوبر باور بعد، وهذه أكبر فرصة تعلّم.
+- التغيير 6 على kosif-think-mcp (الاستقرار بستة معايير) جاهز ولم يُنشر حسب التقرير؛ بدونه تنتهي طلبات الصور غالبًا بـ blocked_stability. النشر قرار المالك.
+- نسخة think-mcp/worker.js في elkosif0-cmd/cloude هي 0.18.6 وقديمة؛ لا تُنشر منها.
 
 ## كيف تحدّث الخريطة / Refresh
 

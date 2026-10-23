@@ -36,6 +36,12 @@ class OwnedReposTests(unittest.TestCase):
         top = O.rank("audit materiality sampling", self.reg)
         self.assertEqual(top[0]["repo"], "kosif199022-jpg/moon")
 
+    def test_services_connected(self):
+        ids = {v["id"] for v in self.reg["services"]}
+        self.assertIn("kosif-think-mcp", ids)
+        self.assertTrue(any(e["to"] == "kosif-think-mcp" and e["kind"] == "requires-for-full-pro" for e in self.reg["relations"]))
+        self.assertNotIn("workers.dev", O.DOC.read_text(encoding="utf-8"))
+
     def test_digest_never_writes_secret_values(self):
         with tempfile.TemporaryDirectory() as t:
             root = Path(t) / "o_r"

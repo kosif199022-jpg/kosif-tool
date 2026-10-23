@@ -11491,8 +11491,8 @@
    "area": "discover",
    "title_en": "Owned-repositories map and skill map",
    "title_ar": "خريطة مستودعات المالك وخريطة المهارات",
-   "summary_en": "Joins every repository on the owner's GitHub account to the 15 smart capability groups: a curated purpose and state (integrated, partial, learnable, reference, archive, empty) per repo, a static gitingest-style digest of shallow clones (files, languages, SKILL.md, tests, CI, manifests, secret-like pattern counts without values), live catalog proof citations per repo, repo-to-repo relations, and a have-now vs learnable table per capability group.",
-   "summary_ar": "يربط كل مستودع على حساب المالك بمجموعات القدرات الخمس عشرة: غرض وحالة لكل مستودع (مدمج، جزئي، قابل للتعلّم، مرجع، أرشيف، فارغ)، ومسحًا ساكنًا بنمط gitingest للنسخ الضحلة (ملفات، لغات، مهارات، اختبارات، CI، ملفات تعريف، وعدد أنماط تشبه المفاتيح بلا قيمها)، وعدد استشهادات الكتالوج لكل مستودع، والعلاقات بين المستودعات، وجدول المتاح الآن والقابل للتعلّم لكل مجموعة.",
+   "summary_en": "Joins every repository on the owner's GitHub account to the 15 smart capability groups: a curated purpose and state (integrated, partial, learnable, reference, archive, empty) per repo, a static gitingest-style digest of shallow clones (files, languages, SKILL.md, tests, CI, manifests, secret-like pattern counts without values), live catalog proof citations per repo, relations between repos and the live Cloudflare services they build (atlas edge API, Jev decision service, KOSIF Think Full Pro server) with their safety rules, and a have-now vs learnable table per capability group.",
+   "summary_ar": "يربط كل مستودع على حساب المالك بمجموعات القدرات الخمس عشرة: غرض وحالة لكل مستودع (مدمج، جزئي، قابل للتعلّم، مرجع، أرشيف، فارغ)، ومسحًا ساكنًا بنمط gitingest للنسخ الضحلة (ملفات، لغات، مهارات، اختبارات، CI، ملفات تعريف، وعدد أنماط تشبه المفاتيح بلا قيمها)، وعدد استشهادات الكتالوج لكل مستودع، والعلاقات بين المستودعات والخدمات الحية التي تبنيها على Cloudflare (مكتبة الحافة، Jev، خادم KOSIF Think) مع قواعد أمانها، وجدول المتاح الآن والقابل للتعلّم لكل مجموعة.",
    "use_when": [
     "راجع كل مستودعاتي واعرف إيه اللي ممكن نستفيد منه",
     "ايه المهارات اللي عندي واللي ممكن اتعلمها؟",
@@ -11578,7 +11578,7 @@
    "consent": "Cloning private repositories needs the owner's access in the session; never commit private repo content to a public repo.",
    "limits": "Purposes and states are curated judgements refreshed by hand; the digest is a static file count, not a test run, and a secret-like hit is a pattern match to check, not proof of a live key.",
    "evidence": "tested-here",
-   "evidence_note": "6/6 passed",
+   "evidence_note": "7/7 passed",
    "tests": [
     ".claude/skills/kosif-superpowers/evals/test_owned_repos.py"
    ],
