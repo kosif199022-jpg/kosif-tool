@@ -831,7 +831,7 @@ def _arc_points(p0, p1, rx, ry, phi, large, sweep, steps):
 
 
 def _path_points(d, steps=12):
-    toks = re.findall(r"[A-Za-z]|-?\d*\.?\d+(?:e-?\d+)?", d)
+    toks = re.findall(r"[+-]?(?:\d+\.?\d*|\.\d+)(?:[eE][+-]?\d+)?|[A-Za-z]", d)
     out, cur, start, i, cmd, last_ctrl = [], (0.0, 0.0), (0.0, 0.0), 0, "M", None
     while i < len(toks):
         if re.match(r"[A-Za-z]", toks[i]):

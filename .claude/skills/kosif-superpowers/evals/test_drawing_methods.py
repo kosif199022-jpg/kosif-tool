@@ -231,6 +231,8 @@ class ReviewGateTests(unittest.TestCase):
         arc = '<path d="M100 55 A 20 20 0 0 1 100 120 L100 160" fill="none" stroke="#000" stroke-width="2"/>'
         self.assertEqual(g(arc, dot.format(132, 88)), 0.0)
         self.assertGreater(g(arc, dot.format(60, 88)), 30)
+        # every SVG number form parses: exponents in either case, explicit +, a leading dot
+        self.assertEqual(dm._path_points("M1E2,+1e1 L.5E2 -1.0e+1"), [(100.0, 10.0), (50.0, -10.0)])
 
     def test_unreadable_path_is_an_error_not_a_pass(self):
         with tempfile.TemporaryDirectory() as tmp:
