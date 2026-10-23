@@ -12,7 +12,7 @@
 
 ## ما هذه المكتبة
 
-بطاقة بروتوكول لكل قدرة في الكتالوج (5,468) ولكل أداة قابلة للتشغيل (142)، في 78 ملفًا و407,386 سطرًا تقريبًا مع هذا الفهرس. كل بطاقة تجمع سجل القدرة نفسه (ما هي، متى، كيف، التثبيت، المتطلبات، الأدلة، الرخصة) مع قواعد البروتوكول مطبّقة عليها: خانات الاستقبال (A25)، والجاهزية والشارة الصادقة (A28)، وموضعها عقدةً منمّطة في الخطة (A26)، وبوابة التحقق لنوع مخرجها (A27)، وسلم التعافي لأخطائها المرجحة (A29). القواعد العامة تتكرر عمدًا في كل بطاقة لتُقرأ البطاقة وحدها؛ والمعرفة الفريدة في سجلات الكتالوج والملاحق. حالة الكتالوج ليست حالة الجلسة: افحص قبل أي شارة.
+بطاقة بروتوكول لكل قدرة في الكتالوج (5,480) ولكل أداة قابلة للتشغيل (143)، في 78 ملفًا و408,252 سطرًا تقريبًا مع هذا الفهرس. كل بطاقة تجمع سجل القدرة نفسه (ما هي، متى، كيف، التثبيت، المتطلبات، الأدلة، الرخصة) مع قواعد البروتوكول مطبّقة عليها: خانات الاستقبال (A25)، والجاهزية والشارة الصادقة (A28)، وموضعها عقدةً منمّطة في الخطة (A26)، وبوابة التحقق لنوع مخرجها (A27)، وسلم التعافي لأخطائها المرجحة (A29). القواعد العامة تتكرر عمدًا في كل بطاقة لتُقرأ البطاقة وحدها؛ والمعرفة الفريدة في سجلات الكتالوج والملاحق. حالة الكتالوج ليست حالة الجلسة: افحص قبل أي شارة.
 
 ## بطاقات القدرات
 
@@ -23,8 +23,8 @@
 | الثري دي والمحاكاة والرندر | `light-glow-bloom` | 87 | 6,191 | [cards/3d/light-glow-bloom.md](cards/3d/light-glow-bloom.md) |
 | الثري دي والمحاكاة والرندر | `particles-fluids-physics` | 77 | 5,293 | [cards/3d/particles-fluids-physics.md](cards/3d/particles-fluids-physics.md) |
 | الثري دي والمحاكاة والرندر | `texture-material` | 96 | 6,666 | [cards/3d/texture-material.md](cards/3d/texture-material.md) |
-| الوكلاء والتوجيه الذكي | `agent-orchestration` | 38 | 2,632 | [cards/agents/agent-orchestration.md](cards/agents/agent-orchestration.md) |
-| الوكلاء والتوجيه الذكي | `runnable-tools` | 66 | 4,699 | [cards/agents/runnable-tools.md](cards/agents/runnable-tools.md) |
+| الوكلاء والتوجيه الذكي | `agent-orchestration` | 46 | 3,169 | [cards/agents/agent-orchestration.md](cards/agents/agent-orchestration.md) |
+| الوكلاء والتوجيه الذكي | `runnable-tools` | 67 | 4,769 | [cards/agents/runnable-tools.md](cards/agents/runnable-tools.md) |
 | الوكلاء والتوجيه الذكي | `self-discovery` | 43 | 3,070 | [cards/agents/self-discovery.md](cards/agents/self-discovery.md) |
 | الصوت والموسيقى والتعليق | `audio-sync-captions` | 61 | 4,404 | [cards/audio/audio-sync-captions.md](cards/audio/audio-sync-captions.md) |
 | الصوت والموسيقى والتعليق | `music-beat-sound` | 306 | 21,436 | [cards/audio/music-beat-sound.md](cards/audio/music-beat-sound.md) |
@@ -57,13 +57,13 @@
 | الموشن والمونتاج والسينما | `video-download` | 11 | 856 | [cards/motion/video-download.md](cards/motion/video-download.md) |
 | الاختبارات والجودة والأمان | `api-testing` | 22 | 1,577 | [cards/quality/api-testing.md](cards/quality/api-testing.md) |
 | الاختبارات والجودة والأمان | `qa-verification` | 384 | 27,964 | [cards/quality/qa-verification.md](cards/quality/qa-verification.md) |
-| الاختبارات والجودة والأمان | `security-safety` | 19 | 1,355 | [cards/quality/security-safety.md](cards/quality/security-safety.md) |
-| الاختبارات والجودة والأمان | `verification-evals` | 30 | 2,194 | [cards/quality/verification-evals.md](cards/quality/verification-evals.md) |
+| الاختبارات والجودة والأمان | `security-safety` | 23 | 1,636 | [cards/quality/security-safety.md](cards/quality/security-safety.md) |
+| الاختبارات والجودة والأمان | `verification-evals` | 35 | 2,548 | [cards/quality/verification-evals.md](cards/quality/verification-evals.md) |
 | البحث والمعرفة | `atlas-research` | 11 | 757 | [cards/research/atlas-research.md](cards/research/atlas-research.md) |
 | البحث والمعرفة | `knowledge-graph` | 21 | 1,507 | [cards/research/knowledge-graph.md](cards/research/knowledge-graph.md) |
 | البحث والمعرفة | `web-research` | 24 | 1,655 | [cards/research/web-research.md](cards/research/web-research.md) |
 | التحليل العكسي وفحص البرامج | `software-investigation` | 258 | 19,140 | [cards/reverse/software-investigation.md](cards/reverse/software-investigation.md) |
-| البرمجة وبناء التطبيقات | `app-feature-transfer` | 145 | 10,846 | [cards/software/app-feature-transfer.md](cards/software/app-feature-transfer.md) |
+| البرمجة وبناء التطبيقات | `app-feature-transfer` | 139 | 10,422 | [cards/software/app-feature-transfer.md](cards/software/app-feature-transfer.md) |
 | البرمجة وبناء التطبيقات | `apps-artifacts` | 23 | 1,649 | [cards/software/apps-artifacts.md](cards/software/apps-artifacts.md) |
 | البرمجة وبناء التطبيقات | `atlas-build` | 52 | 3,767 | [cards/software/atlas-build.md](cards/software/atlas-build.md) |
 | البرمجة وبناء التطبيقات | `atlas-code` | 237 | 17,013 | [cards/software/atlas-code.md](cards/software/atlas-code.md) |
@@ -91,7 +91,7 @@
 | `draw` | 11 | 549 | [tools/draw.md](tools/draw.md) |
 | `edit` | 13 | 661 | [tools/edit.md](tools/edit.md) |
 | `image` | 9 | 495 | [tools/image.md](tools/image.md) |
-| `investigate` | 12 | 549 | [tools/investigate.md](tools/investigate.md) |
+| `investigate` | 13 | 597 | [tools/investigate.md](tools/investigate.md) |
 | `local-computer` | 1 | 53 | [tools/local-computer.md](tools/local-computer.md) |
 | `maintain` | 12 | 603 | [tools/maintain.md](tools/maintain.md) |
 | `motion` | 18 | 978 | [tools/motion.md](tools/motion.md) |

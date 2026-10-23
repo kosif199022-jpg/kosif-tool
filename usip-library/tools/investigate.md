@@ -1,4 +1,4 @@
-# أدوات المجال `investigate` (12 أداة)
+# أدوات المجال `investigate` (13 أداة)
 
 > مولّد من `data/tools.json`. [الفهرس الرئيسي](../README.md) · `python3 scripts/hub.py tool <id>` للبطاقة الحية.
 
@@ -201,6 +201,54 @@
 #### عند الفشل (A29)
 
 - ابدأ بـ `think.py recover --message "<نص الخطأ>"`، ثم سجّل `fusionforge.py trace --project <slug> --id <FUSE-ID> --stage <stage> --node <N> --action "<ما جُرّب>" --result failed --error-class <الصنف> --tool tool:atlas-transfer --evidence <ملف>`.
+
+### `differential-exam` — مصحّح الامتحان الخفي التفاضلي / Differential hidden-exam scorer
+
+| الحقل | القيمة |
+|---|---|
+| المسار | `scripts/differential_exam.py` (جذر: skill) |
+| المجال | `investigate` |
+| الدليل | `tested-here` |
+| العائلات | `verification-evals`, `software-investigation` |
+
+**ما تفعله:** يقارن تشغيلًا مرشحًا بتشغيل مرجعي سيناريو سيناريو وملفًا ملفًا (<run>/<scenario>/<files>)، فيقارن JSON وJSONL كبيانات وباقي الملفات كنص بعد إخفاء القيم المتغيرة (المعرّفات والأختام الزمنية والمسارات المؤقتة والأزمنة والمفاتيح المستبعدة). ويختم الامتحان ببصمات SHA-256 قبل بدء العمل ويتحقق من الختم لاحقًا، ولا يثق في المصحّح حتى يعطي المرجع ضد نفسه 100%. مكتبة Python القياسية فقط، ولا يشغّل شيئًا.
+
+**What it does:** Scores a candidate run against a reference run folder by folder and file by file (<run>/<scenario>/<files>), comparing JSON and JSONL as data and other files as text after masking volatile values (UUIDs, timestamps, epochs, temp names, long hex ids, durations, named root paths and dropped keys). It seals an exam with SHA-256 hashes before the work starts and verifies the seal later, and its self-check refuses to trust the scorer until reference against reference scores 100%. Stdlib only; it runs nothing.
+
+#### متى تُستدعى
+
+- «قارن مخرجات النسخة المستنسخة بالأصل سيناريو سيناريو»
+- «اختم الامتحان الخفي قبل ما يبدأ الشغل»
+- «compare a clone's recorded requests and outputs with the original»
+- «check my scorer gives 100% on the reference against itself»
+
+#### الأوامر
+
+- **seal**: Hashes every file under the exam folder into a seal JSON written outside it, before the builder starts.
+  - `python3 scripts/differential_exam.py seal ./exam --out ./exam-seal.json`
+- **verify-seal**: Lists changed, missing and added exam files; exits 1 when the seal is broken.
+  - `python3 scripts/differential_exam.py verify-seal ./exam ./exam-seal.json`
+- **self-check**: Scores reference against itself or a second reference run; exits 1 and prints the remaining differences until it reaches 100% (add --rule REGEX=>TOKEN, --root, --skip-key).
+  - `python3 scripts/differential_exam.py self-check ./real-run-1 ./real-run-2 --root /tmp/work`
+- **compare**: Prints per-scenario ok/total, the first difference of each failed file and TOTAL ok/total = percent; --min makes it exit 1 below that percentage.
+  - `python3 scripts/differential_exam.py compare ./real-run ./clone-run --min 95 --json`
+
+#### المتطلبات والأمان
+
+- binaries: python3
+- الأمان: read-only
+- الموافقة: seal writes only the --out file, which must be outside the exam folder.
+- الحدود: It compares files that already exist: it does not run the reference or the candidate, does not build the mock model server, and cannot tell whether the scenarios cover enough behaviour. The default masks can hide a real difference in a long hex value or a duration; use --no-default-masks when those matter.
+
+#### الاختبارات والأدلة
+
+- `.claude/skills/kosif-superpowers/evals/test_differential_exam.py`
+- مرجع: `.claude/skills/kosif-superpowers/references/codex-agent-harness.md`
+- مرجع: `.claude/skills/kosif-superpowers/references/guides/investigate.md`
+
+#### عند الفشل (A29)
+
+- ابدأ بـ `think.py recover --message "<نص الخطأ>"`، ثم سجّل `fusionforge.py trace --project <slug> --id <FUSE-ID> --stage <stage> --node <N> --action "<ما جُرّب>" --result failed --error-class <الصنف> --tool tool:differential-exam --evidence <ملف>`.
 
 ### `installer-triage` — فرز المثبّتات / Installer Triage
 

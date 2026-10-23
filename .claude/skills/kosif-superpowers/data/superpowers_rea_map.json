@@ -471,20 +471,20 @@
  },
  "counts": {
   "broken_links": 0,
-  "evals": 93,
+  "evals": 94,
   "families": 62,
   "gaps": {
    "family_without_tool": 22
   },
-  "powers": 5468,
-  "py_edges": 251,
+  "powers": 5480,
+  "py_edges": 252,
   "repo_tests": 34,
   "roles": {
    "helper": 2,
-   "registered": 124
+   "registered": 125
   },
-  "scripts": 126,
-  "tools": 142
+  "scripts": 127,
+  "tools": 143
  },
  "families": [
   {
@@ -494,7 +494,7 @@
   },
   {
    "id": "agent-orchestration",
-   "powers": 38,
+   "powers": 46,
    "tools": 9
   },
   {
@@ -509,7 +509,7 @@
   },
   {
    "id": "app-feature-transfer",
-   "powers": 145,
+   "powers": 139,
    "tools": 7
   },
   {
@@ -709,12 +709,12 @@
   },
   {
    "id": "runnable-tools",
-   "powers": 66,
+   "powers": 67,
    "tools": 0
   },
   {
    "id": "security-safety",
-   "powers": 19,
+   "powers": 23,
    "tools": 11
   },
   {
@@ -730,7 +730,7 @@
   {
    "id": "software-investigation",
    "powers": 258,
-   "tools": 19
+   "tools": 20
   },
   {
    "id": "story-direction-ideas",
@@ -774,8 +774,8 @@
   },
   {
    "id": "verification-evals",
-   "powers": 30,
-   "tools": 12
+   "powers": 35,
+   "tools": 13
   },
   {
    "id": "video-download",
@@ -890,7 +890,7 @@
    "kind": "family_without_tool"
   },
   {
-   "detail": "66 powers, no tools.json entry lists this family",
+   "detail": "67 powers, no tools.json entry lists this family",
    "id": "runnable-tools",
    "kind": "family_without_tool"
   },
@@ -1708,6 +1708,11 @@
    "from": "test_creative_quality_gate",
    "kind": "imports",
    "to": "reference_edit_engine"
+  },
+  {
+   "from": "test_differential_exam",
+   "kind": "imports",
+   "to": "differential_exam"
   },
   {
    "from": "test_drawing_academy",
@@ -3627,6 +3632,25 @@
   },
   {
    "ci": false,
+   "id": "differential_exam",
+   "imported_by": [],
+   "path": "scripts/differential_exam.py",
+   "power_count": 3,
+   "powers": [
+    "CHECK-31",
+    "CHECK-34",
+    "TOOL-67"
+   ],
+   "role": "registered",
+   "tests": [
+    "evals/test_differential_exam.py"
+   ],
+   "tools": [
+    "differential-exam"
+   ]
+  },
+  {
+   "ci": false,
    "id": "drawing_academy",
    "imported_by": [],
    "path": "scripts/drawing_academy.py",
@@ -3793,7 +3817,7 @@
     "smart_capabilities"
    ],
    "path": "scripts/hub.py",
-   "power_count": 66,
+   "power_count": 67,
    "powers": [
     "TOOL-01",
     "TOOL-02",
@@ -5034,18 +5058,18 @@
    "assets": 4,
    "data": 113,
    "dua-wednesday": 10,
-   "evals": 86,
+   "evals": 87,
    "examples": 12,
    "montage-pro": 2,
    "proofs": 237,
-   "references": 213,
+   "references": 215,
    "resources": 3,
    "schemas": 5,
-   "scripts": 157,
+   "scripts": 158,
    "templates": 16,
    "vendor": 76
   },
-  "bytes": 54319605,
+  "bytes": 54424083,
   "extensions": {
    "(none)": 8,
    ".bru": 7,
@@ -5054,16 +5078,16 @@
    ".jpg": 23,
    ".js": 14,
    ".json": 169,
-   ".md": 327,
+   ".md": 329,
    ".mjs": 9,
    ".png": 6,
-   ".py": 265,
+   ".py": 267,
    ".sh": 5,
    ".ttf": 14,
    ".txt": 54,
    ".woff2": 8
   },
-  "files": 942,
+  "files": 946,
   "symlinks": 0
  }
 }

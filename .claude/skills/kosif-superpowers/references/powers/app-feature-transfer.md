@@ -3,13 +3,13 @@
 
 > **قوتك هنا / what this gives you:** مزايا CapCut وCanva وPremiere وDxO PhotoLab وCapture One وJPEGmini وFontLab وAffinity وHoudini وAnimate وIDM التي كشفها التحليل بـ REA، لكل منها وصفة مفتوحة مثبتة (FFmpeg/OpenCV/Pillow/fontTools/Whisper) أو نمط معماري موثّق لتطبيقاتك. — Features found by analysing CapCut, Canva, Premiere Pro, DxO PhotoLab, Capture One, JPEGmini, FontLab, Affinity Designer, Houdini, Animate and IDM with REA, each with a proven open-tool recipe (FFmpeg/OpenCV/Pillow/fontTools/Whisper) or a documented architecture pattern for your own apps.
 > **أقوى دليل / strongest evidence:** **APPX-01** Speed curve (ramp) (`kosif-tool/.claude/skills/kosif-superpowers/proofs/app-feature-transfer/README.md`) · **APPX-02** Chroma key (`kosif-tool/.claude/skills/kosif-superpowers/proofs/app-feature-transfer/README.md`)
-> **145 powers follow** — ✅ 96 · 🟢 1 · 📦 1 · 🔑 0 · 👁 0 · 📄 47 · 💡 0.
+> **139 powers follow** — ✅ 96 · 🟢 1 · 📦 1 · 🔑 0 · 👁 0 · 📄 41 · 💡 0.
 
 **الحالة / status:** ✅ مُثبت (شُغّل فعلًا وله مسار دليل) · 🟢 جاهز (كود موجود يعمل بما هو متاح عادة) · 📦 بأمر تثبيت واحد · 🔑 يحتاج مفتاحًا أو حسابًا أو موصلًا · 👁 شوهد في فيديو مرجعي (للموشن فقط) · 📄 طريقة موثقة · 💡 فكرة. الشارة هي أدنى مستوى صادق — the badge is the lowest level that is true.
 مسارات الدليل نسبية إلى `/home/user/`؛ و`session-<date>:<file>#<section>` تشير إلى تشغيل موثق في جلسة سابقة؛ و`owner-upload:` إلى ملف داخل أرشيف أرسله المالك. Proof paths are relative to `/home/user/`.
 
 **المجال / domain:** التطبيقات والواجهات — Apps & artifacts · **البادئة / prefix:** `APPX` · **البيانات / data:** `data/powers/app-feature-transfer.json` · **بحث / search:** `python3 scripts/powers.py family app-feature-transfer`
-**مراجع ذات صلة / related references:** [CLAUDE_3_MINUTE_MAP.md](../CLAUDE_3_MINUTE_MAP.md) · [app-feature-transfer.md](../app-feature-transfer.md) · [capability-audit.md](../capability-audit.md) · [global-video-platforms-2026-10-19.md](../global-video-platforms-2026-10-19.md) · [hubs.md](../hubs.md) · [rea-reverse-engineering.md](../rea-reverse-engineering.md) · [rea-superpowers-frontier-20261023.md](../rea-superpowers-frontier-20261023.md)
+**مراجع ذات صلة / related references:** [CLAUDE_3_MINUTE_MAP.md](../CLAUDE_3_MINUTE_MAP.md) · [app-feature-transfer.md](../app-feature-transfer.md) · [capability-audit.md](../capability-audit.md) · [global-video-platforms-2026-10-19.md](../global-video-platforms-2026-10-19.md) · [hubs.md](../hubs.md) · [rea-reverse-engineering.md](../rea-reverse-engineering.md)
 
 ## الفهرس / contents
 
@@ -29,7 +29,6 @@
 - **رندر Blender السينمائي (Blender 5.2.2 على الجهاز: REA + bpy، رندرات Cycles حقيقية) — Blender cinematic render** — APPX-114 … APPX-117 (4)
 - **MagicPath — منهج العمل مع التصميمات (أفكار من مهارة MIT بكلماتنا) — MagicPath agent-skills methods, MIT** — APPX-120 … APPX-131 (12)
 - **MagicPath — منهج اللوحة المشتركة (أفكار من الوثائق العامة بكلماتنا، بلا نص منسوخ) — MagicPath public-docs methods** — APPX-132 … APPX-139 (8)
-- **نقل قدرات الوكلاء — Agent-clone acceptance tests & Codex CLI patterns (2026-10-23)** — APPX-140 … APPX-145 (6)
 - المصادر والرخص / sources & licences
 
 ## محررات الفيديو — CapCut وPremiere (مزايا موثّقة من البائع، وصفة مفتوحة مثبتة هنا) — video editors
@@ -1415,61 +1414,9 @@
 - **الدليل / proof:** `kosif-tool/.claude/skills/kosif-superpowers/references/app-studies/magicpath.md`
 - **المصدر / source:** MagicPath study 2026-10-20: magicpath.ai public documentation (proprietary); idea only, restated for KOSIF motion work
 
-## نقل قدرات الوكلاء — Agent-clone acceptance tests & Codex CLI patterns (2026-10-23)
-
-#### APPX-140 · اختبار قبول مخفي يُكتب قبل الاستنساخ · Hidden acceptance test written before cloning · 📄 موصوف / documented only
-- **ماذا / what:** قبل أن يبدأ الوكيل نسخ برنامج، يُكتب اختبار مخفي عنه يشغّل الأصل والنسخة على نفس المهام ويقارن المخرجات، فلا يفصّل الوكيل الحل على الاختبار. — Before an agent starts cloning a program, write a test it cannot see that runs the original and the copy on the same tasks and compares them, so the agent cannot tailor itself to the test.
-- **متى أستخدمها / when:** إعادة بناء أداة أو ميزة من برنامج قائم، 'هل النسخة مطابقة فعلًا؟' / rebuilding a tool or feature from an existing program, 'is the copy really equivalent'
-- **كيف / how:** 1) Freeze scenarios and scoring before the build starts and keep them outside the agent's workspace. 2) Run the original against the scenarios and store its recorded behaviour as the reference. 3) Give the agent only the allowed inputs (e.g. installed files), never the test. 4) Score the copy with the same harness; report ok/total per check and per task. 5) List what was not tested (real sandbox, interactive screen, real model) next to the score.
-- **الرخصة / license:** summarised in our own words and linked; the kit has no license file, so no code, prompt or text is copied
-- **الدليل / proof:** `https://github.com/softsweb/codex-clone-hidden-test-kit` · `https://github.com/softsweb/codex-clone-hidden-test-kit/blob/main/README.md`
-- **المصدر / source:** https://github.com/softsweb/codex-clone-hidden-test-kit @ ce932ac2 (README, RESULTS.md)
-
-#### APPX-141 · خادم نموذج وهمي يسجل كل طلب · Mock model server that records every request · 📄 موصوف / documented only
-- **ماذا / what:** خادم صغير يتظاهر بواجهة النموذج، يرد بما يمليه ملف سيناريو، ويكتب كل طلب يصله في سجل؛ فيصبح سلوك الوكيل (التعليمات والأدوات والرسائل) قابلًا للمقارنة دون حساب أو مفتاح. — A tiny server that imitates the model API, answers from a scenario file and logs every request, so an agent's behaviour (instructions, tools, messages) becomes comparable without an account or key.
-- **متى أستخدمها / when:** اختبار وكيل أو أداة CLI تستدعي نموذجًا، دون تكلفة أو شبكة / testing an agent or CLI that calls a model, with no cost or network
-- **كيف / how:** 1) Point the client's base URL at a loopback server. 2) Script replies per scenario (text, tool calls, errors, streaming events). 3) Log each request body and headers to a per-run folder. 4) Normalise volatile fields (ids, timestamps, absolute paths) before comparing. 5) Keep the server tiny and deterministic so it is itself trustworthy.
-- **الرخصة / license:** summarised in our own words and linked; the kit has no license file, so no code, prompt or text is copied
-- **الدليل / proof:** `https://github.com/softsweb/codex-clone-hidden-test-kit/tree/main/exam`
-- **المصدر / source:** https://github.com/softsweb/codex-clone-hidden-test-kit @ ce932ac2 (exam/mock_model.py described, not copied)
-
-#### APPX-142 · تقييم التطابق بثلاث عشرة نقطة فحص، ومعايرة المقيّم أولًا · Multi-check parity scoring, calibrated original-vs-original first · 📄 موصوف / documented only
-- **ماذا / what:** يقارن الأصل والنسخة في كل مهمة على فحوص مستقلة: عدد الطلبات وشكلها، التعليمات، الأدوات، البيئة، رسائل المستخدم، نتائج الأدوات، آثار الملفات، الإجابة النهائية، أحداث JSON، كود الخروج، أخطاء stderr، الترويسات؛ ويُعاير المقيّم بمقارنة الأصل بنفسه حتى 100%. — Compares original and copy per task on independent checks and calibrates the scorer by running the original against itself until it reaches 100%.
-- **متى أستخدمها / when:** قياس مدى تطابق نسخة أو إعادة كتابة / measuring how faithful a clone or rewrite is
-- **كيف / how:** 1) Define one check per observable surface (requests, instructions, tools, env, messages, tool results, file effects, final answer, JSON events, exit code, stderr, headers). 2) Score original vs original first: in the kit this started at 84.5% and 95.7% until random ids, timestamps and paths were normalised, then reached 100%. 3) Only then score the copy, as TOTAL ok/total. 4) Report per-check failures, not just the total. Kit result: hard test 245/325 (75.4%) without mandatory REA, 320/325 (98.5%) with REA mandatory.
-- **يحتاج / needs:** [`npm:rea`](../requirements.md#req-npm-rea)
-- **الرخصة / license:** summarised in our own words and linked; the kit has no license file, so no code, prompt or text is copied
-- **الدليل / proof:** `https://github.com/softsweb/codex-clone-hidden-test-kit/blob/main/RESULTS.md`
-- **المصدر / source:** https://github.com/softsweb/codex-clone-hidden-test-kit @ ce932ac2 (RESULTS.md, exam/compare2.py described)
-
-#### APPX-143 · تشغيل الوكيل بلا واجهة بعقد مخرجات ثابت · Non-interactive agent run with a fixed output contract · 📄 موصوف / documented only
-- **ماذا / what:** نمط codex exec: تشغيل الوكيل مرة واحدة من سكربت أو CI، أحداث JSONL على stdout، مخطط JSON لشكل الإجابة النهائية، ملف لآخر رسالة، وجلسة لا تُحفظ عند الحاجة. — The codex exec pattern: run the agent once from a script or CI, JSONL events on stdout, a JSON Schema for the final answer, a file for the last message, and an ephemeral session when needed.
-- **متى أستخدمها / when:** أتمتة وكيل في CI أو سكربت ومعالجة نتيجته آليًا / automating an agent in CI or a script and parsing its result
-- **كيف / how:** 1) Prompt from an argument or stdin (piped stdin is appended as a block). 2) `--json` for machine-readable events; `--output-schema FILE` to pin the final response shape; `--output-last-message FILE` for the answer alone. 3) `--ephemeral` to avoid writing session files; `resume --last` or by id to continue; `review --base/--uncommitted/--commit` for code review. 4) `--skip-git-repo-check` only deliberately; `--ignore-user-config` and `--ignore-rules` for reproducible runs. 5) Treat exit code plus schema validation as the pass signal. In KOSIF, Claude Code's own headless mode plays this role; keep the same contract.
-- **يحتاج / needs:** [`chromium`](../requirements.md#req-chromium)
-- **الرخصة / license:** ideas adapted with attribution from openai/codex (Apache-2.0); no code copied
-- **الدليل / proof:** `https://github.com/openai/codex/blob/main/codex-rs/exec/src/cli.rs`
-- **المصدر / source:** https://github.com/openai/codex @ e6ebdfe0 (codex-rs/exec/src/cli.rs)
-
-#### APPX-144 · تعليمات AGENTS.md الهرمية من جذر المشروع إلى المجلد الحالي · Hierarchical AGENTS.md from project root down to the working folder · 📄 موصوف / documented only
-- **ماذا / what:** يجد جذر المشروع بالصعود حتى علامة (افتراضيًا .git)، ثم يجمع كل AGENTS.md من الجذر نزولًا إلى المجلد الحالي بالترتيب، مع ملف تجاوز محلي AGENTS.override.md، ولا يصعد فوق الجذر. — Finds the project root by walking up to a marker (.git by default), then concatenates every AGENTS.md from the root down to the current folder, with a local AGENTS.override.md, never above the root.
-- **متى أستخدمها / when:** تنظيم تعليمات الوكلاء في مستودع متعدد المجلدات / organising agent instructions in a multi-folder repo
-- **كيف / how:** 1) Put shared rules in the root AGENTS.md and narrower rules in subfolders; deeper files are read later, so they refine. 2) Use the override file for local, uncommitted variations. 3) Keep each file short; the concatenation is always-on context. 4) An empty marker list disables parent traversal; no marker found means only the current folder counts. KOSIF note: this repo's root AGENTS.md and CLAUDE.md already follow the root-first idea; audit them with ADOCS-02.
-- **الرخصة / license:** ideas adapted with attribution from openai/codex (Apache-2.0); no code copied
-- **الدليل / proof:** `https://github.com/openai/codex/blob/main/codex-rs/core/src/agents_md.rs`
-- **المصدر / source:** https://github.com/openai/codex @ e6ebdfe0 (codex-rs/core/src/agents_md.rs)
-
-#### APPX-145 · مصفوفة العزل والموافقات وقواعد أوامر لها أمثلة تُختبر · Sandbox x approval matrix with command rules whose examples are tested · 📄 موصوف / documented only
-- **ماذا / what:** ثلاثة أوضاع عزل (قراءة فقط، كتابة في مساحة العمل، وصول كامل خطر) مع سياسات موافقة (غير موثوق، عند الطلب، دقيقة، أبدًا)، وقواعد بادئة للأوامر allow/prompt/forbidden تحمل أمثلة match/not_match تُفحص عند التحميل كاختبارات. — Three sandbox modes with approval policies, plus prefix rules for commands (allow/prompt/forbidden) carrying match/not_match examples validated at load time like unit tests.
-- **متى أستخدمها / when:** تحديد صلاحيات وكيل يشغّل أوامر، كتابة قواعد سماح ومنع / setting permissions for an agent that runs commands, writing allow/deny rules
-- **كيف / how:** 1) Default to read-only; widen to workspace-write for edits; full access only with explicit user consent. 2) Pick an approval policy: untrusted (ask unless a rule allows), on-request (model asks), granular per category, never (failures return to the model). 3) Write command rules as ordered token prefixes with alternatives; give every forbidden rule a justification naming the alternative. 4) Attach match and not_match examples and fail the load if they disagree, so rules cannot silently drift. 5) Pin absolute executable paths when basename fallback would be unsafe.
-- **الرخصة / license:** ideas adapted with attribution from openai/codex (Apache-2.0); no code copied
-- **الدليل / proof:** `https://github.com/openai/codex/blob/main/codex-rs/execpolicy/README.md` · `https://github.com/openai/codex/blob/main/codex-rs/protocol/src/config_types.rs`
-- **المصدر / source:** https://github.com/openai/codex @ e6ebdfe0 (codex-rs/execpolicy/README.md, protocol config_types.rs)
-
 ## المصادر والرخص / sources & licences
 
-- الرخص / licences: recipe: owner (KOSIF); the tools keep their own licenses (115) · method idea from MagicPathAI/agent-skills (MIT per its plugin manifests; author MagicPath); close paraphrase, credited (11) · method idea inspired by MagicPath public docs (proprietary); idea only, in KOSIF's terms (8) · recipe: owner (KOSIF); Blender is GPL-2.0-or-later (run as a tool, not linked) (4) · ideas adapted with attribution from openai/codex (Apache-2.0); no code copied (3) · summarised in our own words and linked; the kit has no license file, so no code, prompt or text is copied (3) · method idea from MagicPathAI/agent-skills (MIT per its plugin manifests) plus MagicPath public docs (idea only); KOSIF wording (1)
+- الرخص / licences: recipe: owner (KOSIF); the tools keep their own licenses (115) · method idea from MagicPathAI/agent-skills (MIT per its plugin manifests; author MagicPath); close paraphrase, credited (11) · method idea inspired by MagicPath public docs (proprietary); idea only, in KOSIF's terms (8) · recipe: owner (KOSIF); Blender is GPL-2.0-or-later (run as a tool, not linked) (4) · method idea from MagicPathAI/agent-skills (MIT per its plugin manifests) plus MagicPath public docs (idea only); KOSIF wording (1)
 - الأفكار مكتوبة بكلماتنا مع رابط المصدر؛ لا يُنسخ نص طرف ثالث طويل. Ideas are paraphrased with a link to the source; no long third-party text is copied. `—` = no licence recorded (own method or own wording).
 
 ---

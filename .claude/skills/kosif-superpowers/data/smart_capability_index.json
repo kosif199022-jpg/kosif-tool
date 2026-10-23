@@ -1,10 +1,10 @@
 {
   "schema": "kosif.smart-capability-index.v1",
   "origin": "data/powers/*.json (catalog); no original records changed",
-  "catalog_powers": 5468,
+  "catalog_powers": 5480,
   "group_count": 15,
   "family_count": 62,
-  "tool_count": 142,
+  "tool_count": 143,
   "groups": [
     {
       "id": "research",
@@ -129,17 +129,17 @@
       ],
       "keywords": "agent orchestration tool routing discover automation وكلاء أدوات توجيه بحث",
       "workflow": [],
-      "count": 147,
+      "count": 156,
       "status_counts": {
-        "documented": 49,
+        "documented": 57,
         "install": 8,
         "key": 2,
-        "proven": 83,
+        "proven": 84,
         "ready": 5
       },
       "family_counts": {
-        "agent-orchestration": 38,
-        "runnable-tools": 66,
+        "agent-orchestration": 46,
+        "runnable-tools": 67,
         "self-discovery": 43
       },
       "examples": [
@@ -189,9 +189,9 @@
         "الاختبار",
         "النشر"
       ],
-      "count": 574,
+      "count": 568,
       "status_counts": {
-        "documented": 390,
+        "documented": 384,
         "idea": 2,
         "install": 32,
         "key": 7,
@@ -200,7 +200,7 @@
         "seen": 16
       },
       "family_counts": {
-        "app-feature-transfer": 145,
+        "app-feature-transfer": 139,
         "apps-artifacts": 23,
         "atlas-build": 52,
         "atlas-code": 237,
@@ -735,9 +735,9 @@
         "اختبارات الانحدار",
         "إثبات النتائج"
       ],
-      "count": 455,
+      "count": 464,
       "status_counts": {
-        "documented": 186,
+        "documented": 195,
         "idea": 5,
         "install": 94,
         "key": 15,
@@ -748,8 +748,8 @@
       "family_counts": {
         "api-testing": 22,
         "qa-verification": 384,
-        "security-safety": 19,
-        "verification-evals": 30
+        "security-safety": 23,
+        "verification-evals": 35
       },
       "examples": [
         {
@@ -2364,6 +2364,112 @@
       "proof": [],
       "source": "agent-orchestration.json",
       "what": "ربط خوادم MCP المرجعية (ملفات، git، جلب، ذاكرة) بالوكيل كأدوات. — Wire reference MCP servers (filesystem, git, fetch, memory) into an agent as tools. (MCP reference servers, ★91.3k, MIT → Apache-2.0)."
+    },
+    {
+      "id": "AGENT-39",
+      "family": "agent-orchestration",
+      "group": "agents",
+      "domain": "mind",
+      "name_en": "Instruction layering and AGENTS.md scope",
+      "name_ar": "طبقات التعليمات ونطاق AGENTS.md",
+      "status": "documented",
+      "requires": [],
+      "proof": [],
+      "source": "agent-orchestration.json",
+      "what": "ملف التعليمات يحكم شجرة مجلده، والأعمق يغلب، وتعليمات المستخدم المباشرة تغلب كل الملفات. — An instruction file governs its folder's tree, the nearest file wins on conflict, and direct user instructions beat every file."
+    },
+    {
+      "id": "AGENT-40",
+      "family": "agent-orchestration",
+      "group": "agents",
+      "domain": "mind",
+      "name_en": "Context compaction as a handoff",
+      "name_ar": "ضغط السياق بملخص تسليم",
+      "status": "documented",
+      "requires": [],
+      "proof": [],
+      "source": "agent-orchestration.json",
+      "what": "حين يمتلئ السياق اكتب ملخص تسليم يكمل منه وكيل آخر دون سؤال. — When context fills, write a handoff another agent can resume from without asking."
+    },
+    {
+      "id": "AGENT-41",
+      "family": "agent-orchestration",
+      "group": "agents",
+      "domain": "mind",
+      "name_en": "Non-mutating plan mode",
+      "name_ar": "وضع التخطيط غير المعدِّل",
+      "status": "documented",
+      "requires": [],
+      "proof": [],
+      "source": "agent-orchestration.json",
+      "what": "في التخطيط اجمع الحقيقة دون تغيير الملفات المتتبعة، واستكشف قبل أن تسأل، وسلّم خطة مكتملة القرار. — While planning, gather truth without changing tracked files, explore before asking, and deliver a decision-complete plan."
+    },
+    {
+      "id": "AGENT-42",
+      "family": "agent-orchestration",
+      "group": "agents",
+      "domain": "mind",
+      "name_en": "Plan checklist discipline",
+      "name_ar": "انضباط قائمة الخطوات",
+      "status": "documented",
+      "requires": [],
+      "proof": [],
+      "source": "agent-orchestration.json",
+      "what": "خطوات ذات معنى قابلة للتحقق بالترتيب، واحدة قيد التنفيذ، وكل تغيير بسببه. — Meaningful, verifiable, ordered steps, one in progress, every change with its reason."
+    },
+    {
+      "id": "AGENT-43",
+      "family": "agent-orchestration",
+      "group": "agents",
+      "domain": "mind",
+      "name_en": "Persistent goal and completion audit",
+      "name_ar": "الهدف المستمر وتدقيق الإكمال",
+      "status": "documented",
+      "requires": [],
+      "proof": [],
+      "source": "agent-orchestration.json",
+      "what": "أبقِ الهدف كاملًا عبر الأدوار، وصنّف كل دور، ولا تعلن الإكمال إلا بدليل لكل متطلب. — Keep the full goal across turns, classify every turn, and claim completion only with evidence per requirement."
+    },
+    {
+      "id": "AGENT-44",
+      "family": "agent-orchestration",
+      "group": "agents",
+      "domain": "mind",
+      "name_en": "Bounded proactive follow-up",
+      "name_ar": "المتابعة الاستباقية المحدودة",
+      "status": "documented",
+      "requires": [],
+      "proof": [],
+      "source": "agent-orchestration.json",
+      "what": "بعد التسليم تابع فقط ما يغلق حلقة أو يثبت أن التغيير سرى، بشرط توقف، ودون توسيع الصلاحية. — After delivery, follow up only to close a loop or confirm a change took effect, with a stop condition and no wider authority."
+    },
+    {
+      "id": "AGENT-45",
+      "family": "agent-orchestration",
+      "group": "agents",
+      "domain": "mind",
+      "name_en": "Tool result envelope and typed event stream",
+      "name_ar": "غلاف نتيجة الأداة وتيار الأحداث",
+      "status": "documented",
+      "requires": [
+        "chromium"
+      ],
+      "proof": [],
+      "source": "agent-orchestration.json",
+      "what": "كل نتيجة أداة بغلاف ثابت (زمن، رمز خروج، حجم أصلي، مخرج مقتطع بإعلان)، وكل تشغيل بلا واجهة يطبع أحداث JSON بأنواع محدودة. — Every tool result in a fixed envelope (time, exit code, original size, announced truncation), every headless run as typed JSON events."
+    },
+    {
+      "id": "AGENT-46",
+      "family": "agent-orchestration",
+      "group": "agents",
+      "domain": "mind",
+      "name_en": "Two-phase memory with leased jobs",
+      "name_ar": "ذاكرة على مرحلتين بعقود إيجار",
+      "status": "documented",
+      "requires": [],
+      "proof": [],
+      "source": "agent-orchestration.json",
+      "what": "استخرج ذاكرة من كل جلسة منتهية خاملة ثم ادمج، بمهام محجوزة وسقف توازٍ وتنقيح أسرار. — Extract a memory from each idle finished session, then consolidate, with leased jobs, a concurrency cap and secret redaction."
     },
     {
       "id": "GEN-01",
@@ -7104,102 +7210,6 @@
       ],
       "source": "app-feature-transfer.json",
       "what": "افحص أي حزمة مهارة خارجية قبل اعتمادها: نص فقط، حجم محدود، بلا ملفات تنفيذية، ومصدر معروف — vet third-party skill packages before importing them"
-    },
-    {
-      "id": "APPX-140",
-      "family": "app-feature-transfer",
-      "group": "software",
-      "domain": "build",
-      "name_en": "Hidden acceptance test written before cloning",
-      "name_ar": "اختبار قبول مخفي يُكتب قبل الاستنساخ",
-      "status": "documented",
-      "requires": [],
-      "proof": [
-        "https://github.com/softsweb/codex-clone-hidden-test-kit",
-        "https://github.com/softsweb/codex-clone-hidden-test-kit/blob/main/README.md"
-      ],
-      "source": "app-feature-transfer.json",
-      "what": "قبل أن يبدأ الوكيل نسخ برنامج، يُكتب اختبار مخفي عنه يشغّل الأصل والنسخة على نفس المهام ويقارن المخرجات، فلا يفصّل الوكيل الحل على الاختبار. — Before an agent starts cloning a program, write a test it cannot see that runs the original and the copy on the same tasks and compares t"
-    },
-    {
-      "id": "APPX-141",
-      "family": "app-feature-transfer",
-      "group": "software",
-      "domain": "build",
-      "name_en": "Mock model server that records every request",
-      "name_ar": "خادم نموذج وهمي يسجل كل طلب",
-      "status": "documented",
-      "requires": [],
-      "proof": [
-        "https://github.com/softsweb/codex-clone-hidden-test-kit/tree/main/exam"
-      ],
-      "source": "app-feature-transfer.json",
-      "what": "خادم صغير يتظاهر بواجهة النموذج، يرد بما يمليه ملف سيناريو، ويكتب كل طلب يصله في سجل؛ فيصبح سلوك الوكيل (التعليمات والأدوات والرسائل) قابلًا للمقارنة دون حساب أو مفتاح. — A tiny server that imitates the model API, answers from a scenario file and logs every request, so an agent's"
-    },
-    {
-      "id": "APPX-142",
-      "family": "app-feature-transfer",
-      "group": "software",
-      "domain": "build",
-      "name_en": "Multi-check parity scoring, calibrated original-vs-original first",
-      "name_ar": "تقييم التطابق بثلاث عشرة نقطة فحص، ومعايرة المقيّم أولًا",
-      "status": "documented",
-      "requires": [
-        "npm:rea"
-      ],
-      "proof": [
-        "https://github.com/softsweb/codex-clone-hidden-test-kit/blob/main/RESULTS.md"
-      ],
-      "source": "app-feature-transfer.json",
-      "what": "يقارن الأصل والنسخة في كل مهمة على فحوص مستقلة: عدد الطلبات وشكلها، التعليمات، الأدوات، البيئة، رسائل المستخدم، نتائج الأدوات، آثار الملفات، الإجابة النهائية، أحداث JSON، كود الخروج، أخطاء stderr، الترويسات؛ ويُعاير المقيّم بمقارنة الأصل بنفسه حتى 100%. — Compares original and co"
-    },
-    {
-      "id": "APPX-143",
-      "family": "app-feature-transfer",
-      "group": "software",
-      "domain": "build",
-      "name_en": "Non-interactive agent run with a fixed output contract",
-      "name_ar": "تشغيل الوكيل بلا واجهة بعقد مخرجات ثابت",
-      "status": "documented",
-      "requires": [
-        "chromium"
-      ],
-      "proof": [
-        "https://github.com/openai/codex/blob/main/codex-rs/exec/src/cli.rs"
-      ],
-      "source": "app-feature-transfer.json",
-      "what": "نمط codex exec: تشغيل الوكيل مرة واحدة من سكربت أو CI، أحداث JSONL على stdout، مخطط JSON لشكل الإجابة النهائية، ملف لآخر رسالة، وجلسة لا تُحفظ عند الحاجة. — The codex exec pattern: run the agent once from a script or CI, JSONL events on stdout, a JSON Schema for the final answer,"
-    },
-    {
-      "id": "APPX-144",
-      "family": "app-feature-transfer",
-      "group": "software",
-      "domain": "build",
-      "name_en": "Hierarchical AGENTS.md from project root down to the working folder",
-      "name_ar": "تعليمات AGENTS.md الهرمية من جذر المشروع إلى المجلد الحالي",
-      "status": "documented",
-      "requires": [],
-      "proof": [
-        "https://github.com/openai/codex/blob/main/codex-rs/core/src/agents_md.rs"
-      ],
-      "source": "app-feature-transfer.json",
-      "what": "يجد جذر المشروع بالصعود حتى علامة (افتراضيًا .git)، ثم يجمع كل AGENTS.md من الجذر نزولًا إلى المجلد الحالي بالترتيب، مع ملف تجاوز محلي AGENTS.override.md، ولا يصعد فوق الجذر. — Finds the project root by walking up to a marker (.git by default), then concatenates every AGENTS.md f"
-    },
-    {
-      "id": "APPX-145",
-      "family": "app-feature-transfer",
-      "group": "software",
-      "domain": "build",
-      "name_en": "Sandbox x approval matrix with command rules whose examples are tested",
-      "name_ar": "مصفوفة العزل والموافقات وقواعد أوامر لها أمثلة تُختبر",
-      "status": "documented",
-      "requires": [],
-      "proof": [
-        "https://github.com/openai/codex/blob/main/codex-rs/execpolicy/README.md",
-        "https://github.com/openai/codex/blob/main/codex-rs/protocol/src/config_types.rs"
-      ],
-      "source": "app-feature-transfer.json",
-      "what": "ثلاثة أوضاع عزل (قراءة فقط، كتابة في مساحة العمل، وصول كامل خطر) مع سياسات موافقة (غير موثوق، عند الطلب، دقيقة، أبدًا)، وقواعد بادئة للأوامر allow/prompt/forbidden تحمل أمثلة match/not_match تُفحص عند التحميل كاختبارات. — Three sandbox modes with approval policies, plus prefix ru"
     },
     {
       "id": "APP-01",
@@ -67848,6 +67858,24 @@
       "what": "يبحث في 45 منهجًا مستخلصًا بكلماتنا من عشرة ملفات PDF، ويشغّل خمسة مساعدين: كلمات عشوائية محفّزة، وحساب بايزي بسجل أدلة بالديسيبل، وبوابة وضوح البرومنت، وفاحص قيود محاسبية، وبطاقة شخصية بالعوامل الخمسة. — Searches 45 methods distilled in our own words from ten uploaded PDFs (late"
     },
     {
+      "id": "TOOL-67",
+      "family": "runnable-tools",
+      "group": "agents",
+      "domain": "build",
+      "name_en": "Differential hidden-exam scorer",
+      "name_ar": "مصحّح الامتحان الخفي التفاضلي",
+      "status": "proven",
+      "requires": [
+        "python3"
+      ],
+      "proof": [
+        "kosif-tool/.claude/skills/kosif-superpowers/evals/test_differential_exam.py",
+        "kosif-tool/.claude/skills/kosif-superpowers/scripts/differential_exam.py"
+      ],
+      "source": "runnable-tools.json",
+      "what": "يقارن تشغيلًا مرشحًا بتشغيل مرجعي سيناريو سيناريو وملفًا ملفًا (<run>/<scenario>/<files>)، فيقارن JSON وJSONL كبيانات وباقي الملفات كنص بعد إخفاء القيم المتغيرة (المعرّفات والأختام الزمنية والمسارات المؤقتة والأزمنة والمفاتيح المستبعدة). ويختم الامتحان ببصمات SHA-256 قبل بدء العم"
+    },
+    {
       "id": "SEC-01",
       "family": "security-safety",
       "group": "quality",
@@ -68121,6 +68149,60 @@
       "proof": [],
       "source": "security-safety.json",
       "what": "فحص ملفات القفل والحاويات والبنية ككود بحثًا عن ثغرات. — Scan lockfiles, containers and IaC for CVEs and misconfigurations. (Trivy, ★38.5k, Apache-2.0)."
+    },
+    {
+      "id": "SEC-20",
+      "family": "security-safety",
+      "group": "quality",
+      "domain": "code",
+      "name_en": "Approval ladder and least escalation",
+      "name_ar": "سلّم الموافقة وأقل تصعيد",
+      "status": "documented",
+      "requires": [],
+      "proof": [],
+      "source": "security-safety.json",
+      "what": "سياسة موافقة صريحة (أبدًا / عند الطلب / إلا الموثوق) ووضع عزل صريح، وطلب أضيق إذن إضافي قبل الخروج الكامل. — An explicit approval policy and sandbox mode, and the narrowest extra permission before full escalation."
+    },
+    {
+      "id": "SEC-21",
+      "family": "security-safety",
+      "group": "quality",
+      "domain": "code",
+      "name_en": "Command segmentation and tested prefix rules",
+      "name_ar": "تقطيع الأوامر وقواعد بادئة مختبرة",
+      "status": "documented",
+      "requires": [],
+      "proof": [],
+      "source": "security-safety.json",
+      "what": "قطّع الأمر المركب قبل الحكم عليه، واكتب كل قاعدة سماح مع أمثلة تطابق وأمثلة لا تطابق. — Split a compound command before judging it, and write every allow rule with matching and non-matching examples."
+    },
+    {
+      "id": "SEC-22",
+      "family": "security-safety",
+      "group": "quality",
+      "domain": "code",
+      "name_en": "Guardian risk taxonomy before acting",
+      "name_ar": "تصنيف مخاطر الحارس قبل الفعل",
+      "status": "documented",
+      "requires": [],
+      "proof": [],
+      "source": "security-safety.json",
+      "what": "قبل أي خروج للبيانات أو فعل مدمر اكتب الحمولة والوجهة ومصدر الإذن. — Before any data egress or destructive action, write the payload, the destination and who authorized it."
+    },
+    {
+      "id": "SEC-23",
+      "family": "security-safety",
+      "group": "quality",
+      "domain": "code",
+      "name_en": "Honest sandbox degradation",
+      "name_ar": "صدق تدهور العزل",
+      "status": "documented",
+      "requires": [
+        "python3"
+      ],
+      "proof": [],
+      "source": "security-safety.json",
+      "what": "افحص هل يعمل العزل أو التبعية فعلًا عند البدء، وأعلن البديل حين ترجع إليه. — Probe at start whether the sandbox or dependency really works, and announce any fallback."
     },
     {
       "id": "SELF-01",
@@ -93107,6 +93189,83 @@
       "proof": [],
       "source": "verification-evals.json",
       "what": "لاختيار بين مرشحين (مهارة، خطة، أداة) اسأل الحكم بخيارات مغلقة ومعها «لا شيء»، مرتين بالتوازي والترتيب معكوس في الثانية؛ الاتفاق = حكم ثابت، الاختلاف = متوسط الترتيبين، غياب الحكم = الترتيب الحتمي، وسجّل decided_by. — Pick among candidates with a closed-set judge asked twice (opt"
+    },
+    {
+      "id": "CHECK-31",
+      "family": "verification-evals",
+      "group": "quality",
+      "domain": "mind",
+      "name_en": "Exam sealed before the work",
+      "name_ar": "امتحان مختوم قبل العمل",
+      "status": "documented",
+      "requires": [
+        "python3"
+      ],
+      "proof": [
+        "kosif-tool/.claude/skills/kosif-superpowers/evals/test_differential_exam.py"
+      ],
+      "source": "verification-evals.json",
+      "what": "اكتب الامتحان قبل أن يبدأ المنفّذ، وأخفه عنه، واختمه ببصمات الملفات. — Write the exam before the builder starts, hide it, and seal it with file hashes."
+    },
+    {
+      "id": "CHECK-32",
+      "family": "verification-evals",
+      "group": "quality",
+      "domain": "mind",
+      "name_en": "Recording mock model server",
+      "name_ar": "خادم نموذج وهمي مسجِّل",
+      "status": "documented",
+      "requires": [
+        "python3"
+      ],
+      "proof": [],
+      "source": "verification-evals.json",
+      "what": "لاختبار حزام وكيل لا نموذجه: خادم يرد من سيناريو مكتوب ويحفظ كل طلب يصله. — To test an agent harness, not its model: a server that answers from a script and saves every request it receives."
+    },
+    {
+      "id": "CHECK-33",
+      "family": "verification-evals",
+      "group": "quality",
+      "domain": "mind",
+      "name_en": "Observable-surface checklist",
+      "name_ar": "قائمة سطح الملاحظة",
+      "status": "documented",
+      "requires": [],
+      "proof": [],
+      "source": "verification-evals.json",
+      "what": "لكل سيناريو فحوص مسماة لكل ما يرسله البرنامج وما يفعله، لا حكم واحد. — Per scenario, named checks for everything the program sends and does, not one verdict."
+    },
+    {
+      "id": "CHECK-34",
+      "family": "verification-evals",
+      "group": "quality",
+      "domain": "mind",
+      "name_en": "Scorer must score 100% on itself first",
+      "name_ar": "المصحّح يعطي 100% على نفسه أولًا",
+      "status": "documented",
+      "requires": [
+        "python3"
+      ],
+      "proof": [
+        "kosif-tool/.claude/skills/kosif-superpowers/evals/test_differential_exam.py"
+      ],
+      "source": "verification-evals.json",
+      "what": "لا تثق في المصحّح قبل أن يعطي الأصل ضد نفسه 100% بعد إخفاء القيم المتغيرة. — Do not trust a scorer until the reference against itself scores 100% after masking volatile values."
+    },
+    {
+      "id": "CHECK-35",
+      "family": "verification-evals",
+      "group": "quality",
+      "domain": "mind",
+      "name_en": "Honest recovery notes and a measured baseline",
+      "name_ar": "ملاحظات استرداد صادقة وخط أساس",
+      "status": "documented",
+      "requires": [
+        "npm:rea"
+      ],
+      "proof": [],
+      "source": "verification-evals.json",
+      "what": "لكل ما استُرد: الأداة التي أظهرته وما تغيّر وما تُحقق منه وما بقي، مع رقم قبل ورقم بعد على الامتحان نفسه. — For every recovery: the tool call that showed it, what changed, what was verified, what is missing, plus before/after numbers on the same exam."
     },
     {
       "id": "DL-01",

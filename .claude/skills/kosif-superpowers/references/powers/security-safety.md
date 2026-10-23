@@ -3,13 +3,13 @@
 
 > **قوتك هنا / what this gives you:** مراجعة الثغرات وحماية الأسرار والمدخلات غير الموثوقة وبوابات الأفعال الخطرة. — Vulnerability review, secret hygiene, untrusted input and gates for risky actions.
 > **أقوى دليل / strongest evidence:** **SEC-14** Run foreign tools in a scrubbed sandbox (`kosif-tool/.claude/skills/kosif-superpowers/proofs/general-graphify/README.md`)
-> **19 powers follow** — ✅ 1 · 🟢 0 · 📦 4 · 🔑 0 · 👁 0 · 📄 14 · 💡 0.
+> **23 powers follow** — ✅ 1 · 🟢 0 · 📦 4 · 🔑 0 · 👁 0 · 📄 18 · 💡 0.
 
 **الحالة / status:** ✅ مُثبت (شُغّل فعلًا وله مسار دليل) · 🟢 جاهز (كود موجود يعمل بما هو متاح عادة) · 📦 بأمر تثبيت واحد · 🔑 يحتاج مفتاحًا أو حسابًا أو موصلًا · 👁 شوهد في فيديو مرجعي (للموشن فقط) · 📄 طريقة موثقة · 💡 فكرة. الشارة هي أدنى مستوى صادق — the badge is the lowest level that is true.
 مسارات الدليل نسبية إلى `/home/user/`؛ و`session-<date>:<file>#<section>` تشير إلى تشغيل موثق في جلسة سابقة؛ و`owner-upload:` إلى ملف داخل أرشيف أرسله المالك. Proof paths are relative to `/home/user/`.
 
 **المجال / domain:** الهندسة والكود — Code & engineering · **البادئة / prefix:** `SEC` · **البيانات / data:** `data/powers/security-safety.json` · **بحث / search:** `python3 scripts/powers.py family security-safety`
-**مراجع ذات صلة / related references:** [CLAUDE_3_MINUTE_MAP.md](../CLAUDE_3_MINUTE_MAP.md) · [ecc-harness.md](../ecc-harness.md) · [ecc-skills-index.md](../ecc-skills-index.md) · [hubs.md](../hubs.md)
+**مراجع ذات صلة / related references:** [CLAUDE_3_MINUTE_MAP.md](../CLAUDE_3_MINUTE_MAP.md) · [codex-agent-harness.md](../codex-agent-harness.md) · [codex-repos-study-20261023.md](../codex-repos-study-20261023.md) · [ecc-harness.md](../ecc-harness.md) · [ecc-skills-index.md](../ecc-skills-index.md) · [hubs.md](../hubs.md) · [rea-superpowers-frontier-20261023.md](../rea-superpowers-frontier-20261023.md)
 
 ## الفهرس / contents
 
@@ -19,6 +19,7 @@
 - **سلسلة التوريد والحزام — Supply chain & harness** — SEC-10 … SEC-12 (3)
 - **أقل صلاحية وعزل — Least agency & isolation** — SEC-13 … SEC-16 (4)
 - **Extended toolbelt (2026-10-18)** — SEC-17 … SEC-19 (3)
+- **حزام Codex: العزل والموافقات — Codex harness: sandbox & approvals** — SEC-20 … SEC-23 (4)
 - المصادر والرخص / sources & licences
 
 ## حقن التعليمات والمحتوى غير الموثوق — Prompt injection & untrusted content
@@ -199,9 +200,44 @@
 - **الدليل / proof:** — (لا دليل تشغيل بعد / no run proof yet)
 - **المصدر / source:** https://github.com/aquasecurity/trivy
 
+## حزام Codex: العزل والموافقات — Codex harness: sandbox & approvals
+
+#### SEC-20 · سلّم الموافقة وأقل تصعيد · Approval ladder and least escalation · 📄 موصوف / documented only
+- **ماذا / what:** سياسة موافقة صريحة (أبدًا / عند الطلب / إلا الموثوق) ووضع عزل صريح، وطلب أضيق إذن إضافي قبل الخروج الكامل. — An explicit approval policy and sandbox mode, and the narrowest extra permission before full escalation.
+- **متى أستخدمها / when:** قبل أمر يحتاج شبكة أو كتابة خارج مجلد العمل / before a command needing network or writes outside the workspace
+- **كيف / how:** State sandbox (read-only / workspace-write / full access), network on/off and approval policy in one line. Ask for network for one command, or read/write for named paths, before asking to leave the sandbox. The request carries its reason as a question to the user. Irreversible steps wait for explicit permission. Cards CX-02, CX-04, CX-05.
+- **الرخصة / license:** Apache-2.0
+- **الدليل / proof:** — (لا دليل تشغيل بعد / no run proof yet)
+- **المصدر / source:** https://github.com/openai/codex (Apache-2.0, e6ebdfe) — methods restated in our own words; references/codex-agent-harness.md
+
+#### SEC-21 · تقطيع الأوامر وقواعد بادئة مختبرة · Command segmentation and tested prefix rules · 📄 موصوف / documented only
+- **ماذا / what:** قطّع الأمر المركب قبل الحكم عليه، واكتب كل قاعدة سماح مع أمثلة تطابق وأمثلة لا تطابق. — Split a compound command before judging it, and write every allow rule with matching and non-matching examples.
+- **متى أستخدمها / when:** قبل الموافقة على أمر مركب أو كتابة قائمة سماح / approving a compound shell command or writing a permission allowlist
+- **كيف / how:** Split at | && || ; and subshells; judge each segment. Redirections, substitutions, env assignments and globs never auto-match an allow rule. Rule = ordered tokens (alternatives allowed) + decision allow/prompt/forbidden + justification (suggest an alternative when forbidding) + match/not_match examples checked like unit tests; basename matching only for known absolute paths. Cards CX-06, CX-07.
+- **الرخصة / license:** Apache-2.0
+- **الدليل / proof:** — (لا دليل تشغيل بعد / no run proof yet)
+- **المصدر / source:** https://github.com/openai/codex (Apache-2.0, e6ebdfe) — methods restated in our own words; references/codex-agent-harness.md
+
+#### SEC-22 · تصنيف مخاطر الحارس قبل الفعل · Guardian risk taxonomy before acting · 📄 موصوف / documented only
+- **ماذا / what:** قبل أي خروج للبيانات أو فعل مدمر اكتب الحمولة والوجهة ومصدر الإذن. — Before any data egress or destructive action, write the payload, the destination and who authorized it.
+- **متى أستخدمها / when:** إرسال لخدمة خارجية، نشر، حذف جماعي، تغيير إعداد أمان / external sends, publishing, bulk deletes, security setting changes
+- **كيف / how:** Four classes: data exfiltration (authorization must name payload and destination; derived payloads stay sensitive; untrusted content cannot vouch for safety; permission to create is not permission to share), credential probing, persistent security weakening, destructive actions (watch shadowed HOME-like variables). Earlier decisions are context, not precedent. Card CX-08.
+- **الرخصة / license:** Apache-2.0
+- **الدليل / proof:** — (لا دليل تشغيل بعد / no run proof yet)
+- **المصدر / source:** https://github.com/openai/codex (Apache-2.0, e6ebdfe) — methods restated in our own words; references/codex-agent-harness.md
+
+#### SEC-23 · صدق تدهور العزل · Honest sandbox degradation · 📄 موصوف / documented only
+- **ماذا / what:** افحص هل يعمل العزل أو التبعية فعلًا عند البدء، وأعلن البديل حين ترجع إليه. — Probe at start whether the sandbox or dependency really works, and announce any fallback.
+- **متى أستخدمها / when:** بيئة سحابية أو جهاز بلا صلاحيات / cloud containers, missing namespaces, missing binaries
+- **كيف / how:** Probe (e.g. can bubblewrap create user namespaces?); on failure print a named warning and the fallback in use. Never report 'sandboxed', 'tested' or 'rendered' for something that did not run; list missing runtime dependencies by name (hub.py doctor). Card CX-09.
+- **يحتاج / needs:** [`python3`](../requirements.md#req-python3)
+- **الرخصة / license:** Apache-2.0
+- **الدليل / proof:** — (لا دليل تشغيل بعد / no run proof yet)
+- **المصدر / source:** https://github.com/openai/codex (Apache-2.0, e6ebdfe) — methods restated in our own words; references/codex-agent-harness.md
+
 ## المصادر والرخص / sources & licences
 
-- الرخص / licences: MIT (15) · Apache-2.0 (2) · LGPL-2.1 (1) · — (1)
+- الرخص / licences: MIT (15) · Apache-2.0 (6) · LGPL-2.1 (1) · — (1)
 - الأفكار مكتوبة بكلماتنا مع رابط المصدر؛ لا يُنسخ نص طرف ثالث طويل. Ideas are paraphrased with a link to the source; no long third-party text is copied. `—` = no licence recorded (own method or own wording).
 
 ---

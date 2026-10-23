@@ -24,12 +24,12 @@
 |---|---:|---|
 | `proven` | 94 | ✅ proven: a proof exists in the catalog; still check its requirements here before calling it ready |
 | `ready` | 58 | 🟢 ready: runnable without setup according to the catalog |
-| `documented` | 186 | 📄 documented: a described method; needs building or wiring before it runs |
+| `documented` | 195 | 📄 documented: a described method; needs building or wiring before it runs |
 | `seen` | 3 | 👁 seen: observed in a reference or demo, not executed here |
 | `install` | 94 | 📦 install: needs a package, binary or model first |
 | `key` | 15 | 🔑 key: needs an account, key or paid service (ask before any spend) |
 | `idea` | 5 | 💡 idea: not built |
-| **المجموع** | **455** | |
+| **المجموع** | **464** | |
 
 ## الأدوات القابلة للتشغيل / runnable tools
 
@@ -50,6 +50,7 @@
 | `cinematic-broll-render` | تصيير لقطات B-roll بحركة كاميرا | `python3 scripts/cinematic_broll_render.py --edl ./edl.json --manifest ./clips.json --audio ./voice.wav --out ./out/master.mkv --width 1080 --height 1920` | tested-here |
 | `council` | مجلس البرو: خمسة أعضاء متعارضين وثلاث جولات وحكم بالدرجات | `python3 scripts/council.py plan "اعمل ريلز دعاء" --dir out/demo/council --options A,B,C` | tested-here |
 | `creative-quality-gate` | بوابة جودة خطة المونتاج | `python3 scripts/creative_quality_gate.py ./my-project/src/plan.json --out ./out/quality-audit.json` | tested-here |
+| `differential-exam` | مصحّح الامتحان الخفي التفاضلي | `python3 scripts/differential_exam.py seal ./exam --out ./exam-seal.json` | tested-here |
 | `kosif-remote-commander` | خادم KOSIF Remote Commander | `python3 scripts/kosif_remote_superpowers.py doctor` | tested-here |
 | `local-project-audit` | فحص المشروع المحلي دون تشغيل | `python3 scripts/local_project_audit.py ./my-project` | tested-here |
 | `package-skill` | تحزيم المهارة للرفع إلى claude.ai | `python3 scripts/package_skill.py` | tested-here |
@@ -77,8 +78,8 @@
 |---|---:|---|
 | `api-testing` | 22 | [api-testing.md](../powers/api-testing.md) |
 | `qa-verification` | 384 | [qa-verification.md](../powers/qa-verification.md) |
-| `security-safety` | 19 | [security-safety.md](../powers/security-safety.md) |
-| `verification-evals` | 30 | [verification-evals.md](../powers/verification-evals.md) |
+| `security-safety` | 23 | [security-safety.md](../powers/security-safety.md) |
+| `verification-evals` | 35 | [verification-evals.md](../powers/verification-evals.md) |
 
 ## كل القدرات / every power
 
@@ -398,6 +399,10 @@
 | `SEC-13` | أقل قدر من الصلاحية | Least agency | documented |  |
 | `SEC-15` | حارس الأوامر المدمّرة | Destructive-command guard | documented |  |
 | `SEC-16` | حلقة الموافقة على الرسائل الصادرة | Outbound approval loop | documented |  |
+| `SEC-20` | سلّم الموافقة وأقل تصعيد | Approval ladder and least escalation | documented |  |
+| `SEC-21` | تقطيع الأوامر وقواعد بادئة مختبرة | Command segmentation and tested prefix rules | documented |  |
+| `SEC-22` | تصنيف مخاطر الحارس قبل الفعل | Guardian risk taxonomy before acting | documented |  |
+| `SEC-23` | صدق تدهور العزل | Honest sandbox degradation | documented | python3 |
 | `CHECK-01` | حلقة التحقق الثمانية | Verification loop (8 steps until done-criteria pass) | documented | ffmpeg |
 | `CHECK-04` | التقييم الذاتي بخمسة محاور | Five-axis self-evaluation (accuracy, completeness, clarity, actionability, concision) | documented |  |
 | `CHECK-05` | هاجم مخرَجك بنفسك | Red-team your own output (edge inputs + sceptical expert) | documented |  |
@@ -424,6 +429,11 @@
 | `CHECK-28` | سجل الحادثة | Incident record: expected vs actual vs evidence | documented | ffmpeg, pip:pillow |
 | `CHECK-29` | قواعد الإصلاح الذاتي | Self-repair rules: retry once, narrower; never relax a safety gate | documented |  |
 | `CHECK-30` | حَكَم مغلق الخيارات مرتين بترتيب معكوس | Closed-set judge asked twice with reversed options, a 'none' option and a declared fallback | documented |  |
+| `CHECK-31` | امتحان مختوم قبل العمل | Exam sealed before the work | documented | python3 |
+| `CHECK-32` | خادم نموذج وهمي مسجِّل | Recording mock model server | documented | python3 |
+| `CHECK-33` | قائمة سطح الملاحظة | Observable-surface checklist | documented |  |
+| `CHECK-34` | المصحّح يعطي 100% على نفسه أولًا | Scorer must score 100% on itself first | documented | python3 |
+| `CHECK-35` | ملاحظات استرداد صادقة وخط أساس | Honest recovery notes and a measured baseline | documented | npm:rea |
 | `QA-228` | تعاقب حلقات تشغيل المعاينات في الشبكة | Staggered loop phases for live grids | seen |  |
 | `QA-229` | مقارنة إعادة بناء لقطة بلقطة | Shot-for-shot remake comparison | seen | ffmpeg |
 | `QA-230` | إغلاق حلقة بلا تقطيع | Seamless loop closure | seen |  |

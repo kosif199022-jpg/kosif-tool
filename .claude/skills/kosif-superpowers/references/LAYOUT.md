@@ -279,7 +279,7 @@ Font matching and fidelity, the private typography library index and the Arabic-
 
 Reverse engineering, code graphs, harnesses, repository and app capability transfer, library arsenals and community sources.
 
-`engineering` · 11 file(s) · planned folder `references/engineering/`
+`engineering` · 12 file(s) · planned folder `references/engineering/`
 
 - [references/rea-reverse-engineering.md](rea-reverse-engineering.md)
 - [references/rea-upstream-capabilities.md](rea-upstream-capabilities.md)
@@ -291,13 +291,14 @@ Reverse engineering, code graphs, harnesses, repository and app capability trans
 - [references/arsenal-general.md](arsenal-general.md)
 - [references/arsenal-libraries.md](arsenal-libraries.md)
 - [references/community-source-atlas.md](community-source-atlas.md)
+- [references/codex-agent-harness.md](codex-agent-harness.md)
 - [references/app-studies/magicpath.md](app-studies/magicpath.md)
 
 ## 11. الدراسات والإيصالات المؤرخة / Dated studies and receipts
 
 Point-in-time research and audit receipts. Evidence, not instructions: re-check live before relying on a number.
 
-`studies` · 18 file(s) · planned folder `references/studies/`
+`studies` · 19 file(s) · planned folder `references/studies/`
 
 - [references/REA_CREATIVE_DISCOVERY_2000_20261019.md](REA_CREATIVE_DISCOVERY_2000_20261019.md)
 - [references/atlas-deep-fusion-20261020.md](atlas-deep-fusion-20261020.md)
@@ -316,4 +317,5 @@ Point-in-time research and audit receipts. Evidence, not instructions: re-check 
 - [references/atlas-5000-mining-20261023.md](atlas-5000-mining-20261023.md)
 - [references/atlas-reviewed-audit.md](atlas-reviewed-audit.md)
 - [references/owner-uploads-review-20261023.md](owner-uploads-review-20261023.md)
+- [references/codex-repos-study-20261023.md](codex-repos-study-20261023.md)
 - [references/rea-superpowers-frontier-20261023.md](rea-superpowers-frontier-20261023.md)

@@ -30,8 +30,8 @@
 <a id="numbers"></a>
 ## 2. الأرقام / numbers
 
-**5,468** قدرة · **62** عائلة · **10** مجالات · ✅ 929 مُثبتة بتشغيل فعلي · 🟢 645 جاهزة · 📦 973 بأمر تثبيت · 🔑 176 بمفتاح أو حساب · 👁 609 شوهدت في فيديو مرجعي · 📄 2065 طريقة موصوفة · 💡 71 فكرة.
-المستلزمات المسجّلة: **122** (أدوات، حزم، مفاتيح، منصات، خطوط، نماذج)؛ النماذج الذهنية: **63**؛ خريطة الأدوات: **125** مستودعًا موثّق الترخيص؛ أطلس الموشن: **289** أسلوبًا؛ الأدوات القابلة للتشغيل: **142**.
+**5,480** قدرة · **62** عائلة · **10** مجالات · ✅ 930 مُثبتة بتشغيل فعلي · 🟢 645 جاهزة · 📦 973 بأمر تثبيت · 🔑 176 بمفتاح أو حساب · 👁 609 شوهدت في فيديو مرجعي · 📄 2076 طريقة موصوفة · 💡 71 فكرة.
+المستلزمات المسجّلة: **122** (أدوات، حزم، مفاتيح، منصات، خطوط، نماذج)؛ النماذج الذهنية: **63**؛ خريطة الأدوات: **125** مستودعًا موثّق الترخيص؛ أطلس الموشن: **289** أسلوبًا؛ الأدوات القابلة للتشغيل: **143**.
 
 <a id="tools"></a>
 ## 3. الأدوات حسب المجال / tools by area
@@ -49,7 +49,7 @@
 | [3D / ثلاثي الأبعاد](https://github.com/kosif199022-jpg/kosif-tool/blob/main/.claude/skills/kosif-superpowers/references/guides/3d.md) | `blender-api-audit` · `blender-bridge` · `blender-cinema` · `blender-cycles-render` · `blender-worker` · `native-3d` · `native-glb` · `blender-motion-video` · `blender-cinematic-bridge` · `blender-rescue-scene` · `blender-cat-fur-upgrade` |
 | [Image, design and fonts / الصور والتصميم والخطوط](https://github.com/kosif199022-jpg/kosif-tool/blob/main/.claude/skills/kosif-superpowers/references/guides/image.md) | `app-studio` · `app-studio-paint` · `font-fidelity-lab` · `render-text` · `unified-media` · `telegram-typography-atlas` · `mosamem-rea-fusion` · `image-local-ai` · `prompt-pack` |
 | [Sources and references / المصادر والمراجع](https://github.com/kosif199022-jpg/kosif-tool/blob/main/.claude/skills/kosif-superpowers/references/guides/sources.md) | `atlas-external-bridge` · `atlas-body-audit` · `atlas-audit-synthesis` · `atlas-metadata-audit` · `browser-scout` · `creative-external-search` · `fetch-reference` · `fetch-video` · `stock-fetch` · `media-sources` · `rea-creative-research-atlas` · `rebalance-creative-repos` · `source-scout` · `superpowers` · `repo-ashell-cinema` · `stream-grabber` · `sources-index` |
-| [Software investigation / فحص البرامج](https://github.com/kosif199022-jpg/kosif-tool/blob/main/.claude/skills/kosif-superpowers/references/guides/investigate.md) | `installer-triage` · `local-project-audit` · `rea-bridge` · `web-app-study` · `rea-family-router` · `rea-owned-repo-batch` · `repository-capability-packer` · `atlas-bulk-source-audit` · `atlas-deep-fusion` · `atlas-review-summary` · `atlas-reviewed-methods-v3` · `atlas-transfer` |
+| [Software investigation / فحص البرامج](https://github.com/kosif199022-jpg/kosif-tool/blob/main/.claude/skills/kosif-superpowers/references/guides/investigate.md) | `installer-triage` · `local-project-audit` · `rea-bridge` · `web-app-study` · `rea-family-router` · `rea-owned-repo-batch` · `repository-capability-packer` · `atlas-bulk-source-audit` · `atlas-deep-fusion` · `atlas-review-summary` · `atlas-reviewed-methods-v3` · `atlas-transfer` · `differential-exam` |
 | [Local computer / الجهاز المحلي](https://github.com/kosif199022-jpg/kosif-tool/blob/main/.claude/skills/kosif-superpowers/references/guides/local-computer.md) | `kosif-remote-commander` |
 | [Maintain and build / الصيانة والبناء](https://github.com/kosif199022-jpg/kosif-tool/blob/main/.claude/skills/kosif-superpowers/references/guides/maintain.md) | `build-chapters` · `catalog-evidence-audit` · `check-skill` · `skill-layout` · `package-skill` · `relabel-proofs` · `repo-build` · `repo-check-originality` · `repo-import-briefs` · `repo-sync-catalog` · `repo-validate` · `rea-superpowers-map` |
 
@@ -91,36 +91,36 @@
 | [قدرات مساندة — Supporting powers](https://github.com/kosif199022-jpg/kosif-tool/blob/main/.claude/skills/kosif-superpowers/references/powers/other.md) | MISC | 27 | 5 | MISC-01 Style catalogue search · list · show; MISC-04 Auto skill selection & deterministic capabilit; MISC-05 Studio MCP server for Claude Code (22 tools) |
 | [تحميل الفيديو من الروابط — Video download](https://github.com/kosif199022-jpg/kosif-tool/blob/main/.claude/skills/kosif-superpowers/references/powers/video-download.md) | DL | 11 | 5 | DL-01 Download video from any URL; DL-02 Batch of links from a file; DL-03 Quality cap or audio-only |
 
-### الهندسة والكود / code — 581 powers · ✅ 60
+### الهندسة والكود / code — 585 powers · ✅ 60
 
 | family | prefix | powers | ✅ | examples (proven first) |
 |---|---|---|---|---|
 | [فحص البرامج والهندسة العكسية — Software investigation (REA)](https://github.com/kosif199022-jpg/kosif-tool/blob/main/.claude/skills/kosif-superpowers/references/powers/software-investigation.md) | REA | 258 | 30 | REA-003 Statically reconstruct a local JavaScript/Elec; REA-004 Capture and statically analyze a page bundle, ; REA-007 List provider capabilities and side effects |
 | [أطلس: الهندسة والكود — Atlas: engineering & code](https://github.com/kosif199022-jpg/kosif-tool/blob/main/.claude/skills/kosif-superpowers/references/powers/atlas-code.md) | ACODE | 237 | 0 | ACODE-01 Agent injection boundary and human-handoff tes; ACODE-02 Agent safety preflight with Green/Yellow/Red r; ACODE-03 Audit agent transcripts for leaked credentials |
 | [هندسة البرمجيات — Code engineering](https://github.com/kosif199022-jpg/kosif-tool/blob/main/.claude/skills/kosif-superpowers/references/powers/code-engineering.md) | CODE | 24 | 3 | CODE-03 Prove a package in an isolated venv; CODE-23 Hypothesis: Property-based tests that generate; CODE-24 Pandera: Declare and enforce schemas on pandas |
+| [الأمان والسلامة — Security & safety](https://github.com/kosif199022-jpg/kosif-tool/blob/main/.claude/skills/kosif-superpowers/references/powers/security-safety.md) | SEC | 23 | 1 | SEC-14 Run foreign tools in a scrubbed sandbox; SEC-01 Untrusted content is data, not instructions; SEC-02 Hidden-text and payload scan |
 | [اختبار واجهات API — API testing (Bruno)](https://github.com/kosif199022-jpg/kosif-tool/blob/main/.claude/skills/kosif-superpowers/references/powers/api-testing.md) | API | 22 | 15 | API-01 Author an API collection as git-tracked Bru fi; API-02 Run a collection as automated acceptance tests; API-03 Declarative response assertions |
 | [الرسم المعرفي والخرائط الذهنية — Knowledge graph & mind maps](https://github.com/kosif199022-jpg/kosif-tool/blob/main/.claude/skills/kosif-superpowers/references/powers/knowledge-graph.md) | GRAPH | 21 | 11 | GRAPH-01 Install Graphify locally (venv); GRAPH-02 Map a codebase offline; GRAPH-03 Query the graph instead of reading files |
-| [الأمان والسلامة — Security & safety](https://github.com/kosif199022-jpg/kosif-tool/blob/main/.claude/skills/kosif-superpowers/references/powers/security-safety.md) | SEC | 19 | 1 | SEC-14 Run foreign tools in a scrubbed sandbox; SEC-01 Untrusted content is data, not instructions; SEC-02 Hidden-text and payload scan |
 
-### العقل والتفكير / mind — 315 powers · ✅ 42
+### العقل والتفكير / mind — 328 powers · ✅ 42
 
 | family | prefix | powers | ✅ | examples (proven first) |
 |---|---|---|---|---|
 | [النماذج الذهنية — Mental models](https://github.com/kosif199022-jpg/kosif-tool/blob/main/.claude/skills/kosif-superpowers/references/powers/mental-models.md) | MODEL | 63 | 0 | MODEL-01 First principles; MODEL-02 Inversion; MODEL-03 Second-order effects |
 | [أطلس: الوكلاء والتخطيط والمراجعة — Atlas: agent workflows, planning & review](https://github.com/kosif199022-jpg/kosif-tool/blob/main/.claude/skills/kosif-superpowers/references/powers/atlas-mind.md) | AMIND | 54 | 0 | AMIND-01 Agent memory design, eval and poisoning audit; AMIND-02 Agentic approach triage, tool design and eval ; AMIND-03 Auto-memory curation and promotion |
+| [تنسيق الوكلاء — Agent orchestration](https://github.com/kosif199022-jpg/kosif-tool/blob/main/.claude/skills/kosif-superpowers/references/powers/agent-orchestration.md) | AGENT | 46 | 1 | AGENT-37 Chroma: Index documents into a vector store an; AGENT-01 Delegate or do it yourself; AGENT-02 Execution packet (delegation brief) |
 | [نواة التفكير — Thinking core](https://github.com/kosif199022-jpg/kosif-tool/blob/main/.claude/skills/kosif-superpowers/references/powers/thinking-core.md) | THINK | 46 | 7 | THINK-04 Recall powers from the catalog (powers.py sugg; THINK-35 Cognition ladder L0–L6; THINK-36 Auto-framed task contract |
 | [اكتشاف القدرات — Self-discovery & capability inventory](https://github.com/kosif199022-jpg/kosif-tool/blob/main/.claude/skills/kosif-superpowers/references/powers/self-discovery.md) | SELF | 43 | 26 | SELF-05 Read your own tool list; SELF-06 Load deferred tools with ToolSearch; SELF-07 MCP server inventory with cost flags |
-| [تنسيق الوكلاء — Agent orchestration](https://github.com/kosif199022-jpg/kosif-tool/blob/main/.claude/skills/kosif-superpowers/references/powers/agent-orchestration.md) | AGENT | 38 | 1 | AGENT-37 Chroma: Index documents into a vector store an; AGENT-01 Delegate or do it yourself; AGENT-02 Execution packet (delegation brief) |
-| [التحقق والتقييم — Verification & evals](https://github.com/kosif199022-jpg/kosif-tool/blob/main/.claude/skills/kosif-superpowers/references/powers/verification-evals.md) | CHECK | 30 | 4 | CHECK-02 Postcondition gate on the delivered file (ffpr; CHECK-03 Look at the output: contact sheets, frames, sc; CHECK-22 Catalog snapshot: powers.py stats + repo valid |
+| [التحقق والتقييم — Verification & evals](https://github.com/kosif199022-jpg/kosif-tool/blob/main/.claude/skills/kosif-superpowers/references/powers/verification-evals.md) | CHECK | 35 | 4 | CHECK-02 Postcondition gate on the delivered file (ffpr; CHECK-03 Look at the output: contact sheets, frames, sc; CHECK-22 Catalog snapshot: powers.py stats + repo valid |
 | [محرك الإبداع — Creativity engine](https://github.com/kosif199022-jpg/kosif-tool/blob/main/.claude/skills/kosif-superpowers/references/powers/creativity-engine.md) | IDEA | 29 | 2 | IDEA-26 Idea matrix: operators × powers; IDEA-29 Feasibility from requirements, not optimism; IDEA-01 Diverge → converge protocol |
 | [التخطيط والتنفيذ — Planning & execution](https://github.com/kosif199022-jpg/kosif-tool/blob/main/.claude/skills/kosif-superpowers/references/powers/planning-execution.md) | PLAN | 12 | 2 | PLAN-01 Full plan scaffold from a goal; PLAN-05 Requirements gate before scheduling; PLAN-02 Backcasting from the end state |
 
-### التطبيقات والواجهات / build — 286 powers · ✅ 158
+### التطبيقات والواجهات / build — 281 powers · ✅ 159
 
 | family | prefix | powers | ✅ | examples (proven first) |
 |---|---|---|---|---|
-| [قدرات التطبيقات المحللة — Analyzed app capabilities](https://github.com/kosif199022-jpg/kosif-tool/blob/main/.claude/skills/kosif-superpowers/references/powers/app-feature-transfer.md) | APPX | 145 | 96 | APPX-01 Speed curve (ramp); APPX-02 Chroma key; APPX-03 Auto reframe to 9:16 |
-| [الأدوات القابلة للتشغيل — Runnable KOSIF tools](https://github.com/kosif199022-jpg/kosif-tool/blob/main/.claude/skills/kosif-superpowers/references/powers/runnable-tools.md) | TOOL | 66 | 56 | TOOL-01 Offline bilingual capability finder; TOOL-02 Session boot briefing; TOOL-03 Capability Atlas search and planner |
+| [قدرات التطبيقات المحللة — Analyzed app capabilities](https://github.com/kosif199022-jpg/kosif-tool/blob/main/.claude/skills/kosif-superpowers/references/powers/app-feature-transfer.md) | APPX | 139 | 96 | APPX-01 Speed curve (ramp); APPX-02 Chroma key; APPX-03 Auto reframe to 9:16 |
+| [الأدوات القابلة للتشغيل — Runnable KOSIF tools](https://github.com/kosif199022-jpg/kosif-tool/blob/main/.claude/skills/kosif-superpowers/references/powers/runnable-tools.md) | TOOL | 67 | 57 | TOOL-01 Offline bilingual capability finder; TOOL-02 Session boot briefing; TOOL-03 Capability Atlas search and planner |
 | [أطلس: التطبيقات والواجهات والتكاملات — Atlas: apps, UI & integrations](https://github.com/kosif199022-jpg/kosif-tool/blob/main/.claude/skills/kosif-superpowers/references/powers/atlas-build.md) | ABUILD | 52 | 0 | ABUILD-01 Autonomous phase-per-PR roadmap execution loop; ABUILD-02 Observation-only run telemetry recorder; ABUILD-03 Role-squad agent pipeline with stages, locks a |
 | [التطبيقات والواجهات — Apps & artifacts](https://github.com/kosif199022-jpg/kosif-tool/blob/main/.claude/skills/kosif-superpowers/references/powers/apps-artifacts.md) | APP | 23 | 6 | APP-04 Dependency-free RTL dashboard page; APP-05 Phone-viewport screenshot + overflow check; APP-06 HTML to MP4 renderer (repo tool) |
 
@@ -176,7 +176,7 @@
 
 | requirement | kind | powers | install |
 |---|---|---|---|
-| `python3` | bin | 672 | `apt-get install -y python3 python3-pip python3-venv` |
+| `python3` | bin | 677 | `apt-get install -y python3 python3-pip python3-venv` |
 | `npm:hyperframes` | npm | 461 | `npm i -D hyperframes@0.8.164  (Apache-2.0; some components load GSAP from a CDN)` |
 | `ffmpeg` | bin | 424 | `apt-get install -y ffmpeg  (or: conda install ffmpeg)` |
 | `chromium` | bin | 351 | `npm i playwright && npx playwright install chromium  (cloud: pre-installed at /opt/pw-browsers)` |

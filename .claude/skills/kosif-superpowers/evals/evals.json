@@ -2020,24 +2020,63 @@
    "skills": [
     "kosif-superpowers"
    ],
-   "query": "اكتب اختبار قبول مخفي قبل ما الوكيل يستنسخ أداة سطر أوامر وقارن النسخة بالأصل",
+   "query": "اختم الامتحان الخفي وقارن النسخة المستنسخة بالأصل",
    "files": [],
    "expected_behavior": [
-    "Routes to the agent-clone acceptance cards (APPX-140..142) and states they are documented methods, not a run",
-    "Freezes scenarios and the scorer before the build, calibrates the scorer original-vs-original to 100% first, then scores the copy as ok/total per check",
-    "Lists what was not tested next to the score and copies no code or text from the unlicensed kit"
+    "Routes to the differential hidden-exam scorer (TOOL-67) or the sealed-exam method (CHECK-31)",
+    "Seals the exam before the work and runs self-check to 100% before trusting any score"
    ],
    "routing": {
     "expect_any": [
-     "APPX"
+     "TOOL",
+     "CHECK"
     ],
-    "expect_domain": "code",
-    "top_k": 8,
-    "motion_output": false
+    "top_k": 3
    }
   },
   {
    "id": 95,
+   "lang": "en",
+   "domain": "code",
+   "skills": [
+    "kosif-superpowers"
+   ],
+   "query": "compare a clone against the original with a hidden test and a mock model server",
+   "files": [],
+   "expected_behavior": [
+    "Routes to the differential exam scorer or the recording mock model server method (CHECK-32)",
+    "Does not claim a match percentage before the scorer scores 100% on reference vs reference"
+   ],
+   "routing": {
+    "expect_any": [
+     "TOOL",
+     "CHECK"
+    ],
+    "top_k": 3
+   }
+  },
+  {
+   "id": 96,
+   "lang": "ar",
+   "domain": "code",
+   "skills": [
+    "kosif-superpowers"
+   ],
+   "query": "قطّع الأمر المركب قبل الموافقة واكتب قاعدة سماح باختبارات",
+   "files": [],
+   "expected_behavior": [
+    "Routes to command segmentation and tested prefix rules (SEC-21)",
+    "Judges each segment of the compound command and gives every allow rule match and not-match examples"
+   ],
+   "routing": {
+    "expect_any": [
+     "SEC"
+    ],
+    "top_k": 3
+   }
+  },
+  {
+   "id": 97,
    "lang": "en",
    "domain": "code",
    "skills": [
@@ -2053,6 +2092,28 @@
    "routing": {
     "expect_any": [
      "REA"
+    ],
+    "expect_domain": "code",
+    "top_k": 8,
+    "motion_output": false
+   }
+  },
+  {
+   "id": 98,
+   "lang": "ar",
+   "domain": "code",
+   "skills": [
+    "kosif-superpowers"
+   ],
+   "query": "اعمل خريطة لسوبر باور ووريني السكربتات اللي ملهاش اختبار والفجوات",
+   "files": [],
+   "expected_behavior": [
+    "Runs or names the rea-superpowers-map tool (scripts/rea_superpowers_map.py gaps) and reports gap kinds with counts",
+    "Says import edges are static and a test reference is not measured coverage"
+   ],
+   "routing": {
+    "expect_any": [
+     "TOOL"
     ],
     "expect_domain": "code",
     "top_k": 8,

@@ -22,12 +22,12 @@
 
 | الحالة | العدد | المعنى |
 |---|---:|---|
-| `proven` | 83 | ✅ proven: a proof exists in the catalog; still check its requirements here before calling it ready |
+| `proven` | 84 | ✅ proven: a proof exists in the catalog; still check its requirements here before calling it ready |
 | `ready` | 5 | 🟢 ready: runnable without setup according to the catalog |
-| `documented` | 49 | 📄 documented: a described method; needs building or wiring before it runs |
+| `documented` | 57 | 📄 documented: a described method; needs building or wiring before it runs |
 | `install` | 8 | 📦 install: needs a package, binary or model first |
 | `key` | 2 | 🔑 key: needs an account, key or paid service (ask before any spend) |
-| **المجموع** | **147** | |
+| **المجموع** | **156** | |
 
 ## الأدوات القابلة للتشغيل / runnable tools
 
@@ -76,8 +76,8 @@
 
 | العائلة | القدرات | الفصل |
 |---|---:|---|
-| `agent-orchestration` | 38 | [agent-orchestration.md](../powers/agent-orchestration.md) |
-| `runnable-tools` | 66 | [runnable-tools.md](../powers/runnable-tools.md) |
+| `agent-orchestration` | 46 | [agent-orchestration.md](../powers/agent-orchestration.md) |
+| `runnable-tools` | 67 | [runnable-tools.md](../powers/runnable-tools.md) |
 | `self-discovery` | 43 | [self-discovery.md](../powers/self-discovery.md) |
 
 ## كل القدرات / every power
@@ -143,6 +143,7 @@
 | `TOOL-64` | رندر أفلام الشرح: ستوريبورد وفحص حتمية وMP4 حقيقي بصوت مُركّب | Atlas explainer renderer: storyboard, determinism check and real MP4 with synthesized score | proven | ffmpeg, python3, chromium |
 | `TOOL-65` | الذكاء الاصطناعي في الأعمال: 9 وظائف و64 خطة عمل بخطط تشغيل لClaude | AI for business: 9 functions, 64 workflows, Claude-native gated runbooks | proven | python3, key:unspecified |
 | `TOOL-66` | مناهج مستخلصة من الكتب: التفكير الجانبي والهندسة العملية والأدلة البايزية والشخصية وفحوص المحاسبة ووضوح البرومنت | Book-distilled methods: lateral ideas, pragmatic engineering, Bayesian evidence, personality, accounting checks, prompt clarity | proven | python3 |
+| `TOOL-67` | مصحّح الامتحان الخفي التفاضلي | Differential hidden-exam scorer | proven | python3 |
 | `SELF-05` | اقرأ قائمة أدواتك | Read your own tool list | proven | pip:higgsfield, key:graphify |
 | `SELF-06` | حمّل الأدوات المؤجلة بـToolSearch | Load deferred tools with ToolSearch | proven | claude:tools |
 | `SELF-07` | جرد خوادم MCP وتكلفتها | MCP server inventory with cost flags | proven | pip:higgsfield, key:unspecified |
@@ -207,6 +208,14 @@
 | `AGENT-32` | تعلم بإذن وعلى مستوى المشروع | Consent-gated lessons | documented |  |
 | `AGENT-33` | خريطة أسطح الذاكرة | Memory surfaces map | documented | key:graphify |
 | `AGENT-35` | دليل ECC السريع: أي وكيل لأي مهمة | ECC roster quick map | documented |  |
+| `AGENT-39` | طبقات التعليمات ونطاق AGENTS.md | Instruction layering and AGENTS.md scope | documented |  |
+| `AGENT-40` | ضغط السياق بملخص تسليم | Context compaction as a handoff | documented |  |
+| `AGENT-41` | وضع التخطيط غير المعدِّل | Non-mutating plan mode | documented |  |
+| `AGENT-42` | انضباط قائمة الخطوات | Plan checklist discipline | documented |  |
+| `AGENT-43` | الهدف المستمر وتدقيق الإكمال | Persistent goal and completion audit | documented |  |
+| `AGENT-44` | المتابعة الاستباقية المحدودة | Bounded proactive follow-up | documented |  |
+| `AGENT-45` | غلاف نتيجة الأداة وتيار الأحداث | Tool result envelope and typed event stream | documented | chromium |
+| `AGENT-46` | ذاكرة على مرحلتين بعقود إيجار | Two-phase memory with leased jobs | documented |  |
 | `SELF-01` | اعرف قبل أن تقول لا | Registry before no | documented | node, python3, claude:tools |
 | `SELF-02` | سُلَّم حقيقة القدرة | Capability-truth ladder | documented | ffmpeg, key:unspecified |
 | `SELF-03` | الإثبات له تاريخ صلاحية | Proofs are dated leases | documented | tesseract |

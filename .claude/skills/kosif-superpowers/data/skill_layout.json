@@ -100,7 +100,8 @@
    "target": null,
    "files": [],
    "globs": [
-    "references/powers/*", "references/library/*"
+    "references/powers/*",
+    "references/library/*"
    ]
   },
   {
@@ -196,7 +197,8 @@
     "references/app-feature-transfer.md",
     "references/arsenal-general.md",
     "references/arsenal-libraries.md",
-    "references/community-source-atlas.md"
+    "references/community-source-atlas.md",
+    "references/codex-agent-harness.md"
    ],
    "globs": [
     "references/app-studies/*"
@@ -226,6 +228,7 @@
     "references/atlas-5000-mining-20261023.md",
     "references/atlas-reviewed-audit.md",
     "references/owner-uploads-review-20261023.md",
+    "references/codex-repos-study-20261023.md",
     "references/rea-superpowers-frontier-20261023.md"
    ],
    "globs": []

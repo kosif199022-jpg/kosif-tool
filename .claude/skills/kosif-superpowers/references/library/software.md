@@ -24,12 +24,12 @@
 |---|---:|---|
 | `proven` | 111 | ✅ proven: a proof exists in the catalog; still check its requirements here before calling it ready |
 | `ready` | 16 | 🟢 ready: runnable without setup according to the catalog |
-| `documented` | 390 | 📄 documented: a described method; needs building or wiring before it runs |
+| `documented` | 384 | 📄 documented: a described method; needs building or wiring before it runs |
 | `seen` | 16 | 👁 seen: observed in a reference or demo, not executed here |
 | `install` | 32 | 📦 install: needs a package, binary or model first |
 | `key` | 7 | 🔑 key: needs an account, key or paid service (ask before any spend) |
 | `idea` | 2 | 💡 idea: not built |
-| **المجموع** | **574** | |
+| **المجموع** | **568** | |
 
 ## الأدوات القابلة للتشغيل / runnable tools
 
@@ -57,7 +57,7 @@
 
 | العائلة | القدرات | الفصل |
 |---|---:|---|
-| `app-feature-transfer` | 145 | [app-feature-transfer.md](../powers/app-feature-transfer.md) |
+| `app-feature-transfer` | 139 | [app-feature-transfer.md](../powers/app-feature-transfer.md) |
 | `apps-artifacts` | 23 | [apps-artifacts.md](../powers/apps-artifacts.md) |
 | `atlas-build` | 52 | [atlas-build.md](../powers/atlas-build.md) |
 | `atlas-code` | 237 | [atlas-code.md](../powers/atlas-code.md) |
@@ -219,12 +219,6 @@
 | `APPX-137` | الرسم التقريبي الموسوم للبنية والمرجع للمظهر | Labeled rough sketch for structure; reference for look | documented | python3 |
 | `APPX-138` | جسر MCP باتجاهين مع تلميح التحديد الحالي | Two-way MCP bridge with a current-selection hint | documented | python3 |
 | `APPX-139` | المهارات: تحميل بالوصف وتثبيت صريح واستيراد نصي آمن | Skills: description-matched loading, explicit pinning, safe text-only import | documented | python3 |
-| `APPX-140` | اختبار قبول مخفي يُكتب قبل الاستنساخ | Hidden acceptance test written before cloning | documented |  |
-| `APPX-141` | خادم نموذج وهمي يسجل كل طلب | Mock model server that records every request | documented |  |
-| `APPX-142` | تقييم التطابق بثلاث عشرة نقطة فحص، ومعايرة المقيّم أولًا | Multi-check parity scoring, calibrated original-vs-original first | documented | npm:rea |
-| `APPX-143` | تشغيل الوكيل بلا واجهة بعقد مخرجات ثابت | Non-interactive agent run with a fixed output contract | documented | chromium |
-| `APPX-144` | تعليمات AGENTS.md الهرمية من جذر المشروع إلى المجلد الحالي | Hierarchical AGENTS.md from project root down to the working folder | documented |  |
-| `APPX-145` | مصفوفة العزل والموافقات وقواعد أوامر لها أمثلة تُختبر | Sandbox x approval matrix with command rules whose examples are tested | documented |  |
 | `APPX-18` | منتقي الشاشة للتسجيل | Display-media picker for screen recording | documented |  |
 | `APPX-19` | غرفة تحكم التسجيل | Recording mission-control and overlay windows | documented |  |
 | `APPX-20` | واجهة احتياطية بلا إنترنت | Offline fallback renderer | documented |  |

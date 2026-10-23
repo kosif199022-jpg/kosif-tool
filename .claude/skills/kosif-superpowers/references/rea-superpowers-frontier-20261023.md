@@ -114,16 +114,10 @@ Skipped after checking against main:
 
 ## Lessons from the Codex clone kit and openai/codex
 
-softsweb/codex-clone-hidden-test-kit has no license file, so its method is summarised and linked only. openai/codex is Apache-2.0; ideas are adapted with attribution and no code is copied.
+Both repositories were studied here too, but a parallel batch (PR #104) already added their lessons to the catalog, so this batch adds no duplicate cards. Use those records:
 
-| Power | Name | Source |
-|---|---|---|
-| APPX-140 | Hidden acceptance test written before cloning | https://github.com/softsweb/codex-clone-hidden-test-kit |
-| APPX-141 | Mock model server that records every request | https://github.com/softsweb/codex-clone-hidden-test-kit |
-| APPX-142 | Multi-check parity scoring, calibrated original-vs-original first | https://github.com/softsweb/codex-clone-hidden-test-kit |
-| APPX-143 | Non-interactive agent run with a fixed output contract | https://github.com/openai/codex |
-| APPX-144 | Hierarchical AGENTS.md from project root down to the working folder | https://github.com/openai/codex |
-| APPX-145 | Sandbox x approval matrix with command rules whose examples are tested | https://github.com/openai/codex |
+- softsweb/codex-clone-hidden-test-kit (no license file, summarised only): CHECK-31 exam sealed before the work, CHECK-32 recording mock model server, CHECK-33 observable-surface checklist, CHECK-34 scorer must score 100% on itself first, CHECK-35 honest recovery notes, and the runnable `differential-exam` tool. The kit's own numbers show why REA matters for clone work: the hard test scored 245/325 (75.4%) without mandatory REA and 320/325 (98.5%) with it.
+- openai/codex (Apache-2.0, ideas only): AGENT-39 instruction layering and AGENTS.md scope, AGENT-45 tool result envelope and typed event stream, SEC-20 approval ladder, SEC-21 command segmentation and tested prefix rules.
 
 ## Boundaries
 
