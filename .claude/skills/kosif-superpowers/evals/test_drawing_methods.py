@@ -152,5 +152,75 @@ class DrawTests(unittest.TestCase):
         self.assertEqual(json.loads(r.stdout)["results"][0]["id"], "DM-24")
 
 
+SCENE = """<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 400" data-floating="ground">
+<rect id="ground" data-part="ground" x="0" y="360" width="400" height="40"/>
+<g data-figure="man" transform="translate(100,0)">
+<circle data-part="head" cx="100" cy="100" r="20"/>
+<path data-part="torso" d="M85,118 Q100,112 115,118 L118,{waist} Q100,{waist_low} 82,{waist}z"/>
+<ellipse data-part="hips" cx="100" cy="{hips}" rx="20" ry="12"/>
+<polyline data-part="leg" points="92,{hips} 90,300 88,{foot}" stroke-width="10" fill="none"/>
+<g transform="rotate(10 100 130)"><polyline data-part="arm" data-contact="pole" points="115,130 150,120 175,100" stroke-width="8" fill="none"/></g>
+<rect data-part="shoe" data-contact="ground" x="76" y="{shoe}" width="24" height="8"/>
+</g>
+<g data-figure="pole"><line id="pole" data-part="pole" data-contact="ground" x1="280" y1="40" x2="280" y2="360" stroke-width="10"/></g>
+</svg>"""
+
+
+class ReviewGateTests(unittest.TestCase):
+    """Law 27: a drawing is not sent until every body is one piece and every rest touches its support."""
+
+    def review(self, **kw):
+        geo = dict(waist=190, waist_low=198, hips=200, foot=348, shoe=352)
+        geo.update(kw)
+        with tempfile.TemporaryDirectory() as tmp:
+            p = Path(tmp) / "scene.svg"
+            p.write_text(SCENE.format(**geo), encoding="utf-8")
+            return dm.review_svg(p)
+
+    def failing(self, res):
+        return {c["id"]: c["observed"] for c in res["checks"] if not c["pass"]}
+
+    def test_connected_scene_passes(self):
+        res = self.review()
+        self.assertEqual(res["status"], "PASS", self.failing(res))
+        self.assertIn("one-body:man", {c["id"] for c in res["checks"]})
+        self.assertTrue(res["visual_review_still_required"])
+
+    def test_detached_hips_fail_and_name_the_piece(self):
+        res = self.review(hips=225, foot=348)
+        bad = self.failing(res)
+        self.assertEqual(res["status"], "FAIL")
+        self.assertIn("one-body:man", bad)
+        self.assertEqual(bad["one-body:man"]["pieces"], 2)
+        self.assertGreater(min(bad["one-body:man"]["nearest_gap_px"].values()), 1.5)
+
+    def test_floating_foot_fails_its_contact(self):
+        res = self.review(shoe=330, foot=328)
+        self.assertIn("contact:man.shoe->ground", self.failing(res))
+
+    def test_transforms_are_applied_before_measuring(self):
+        # the arm group is rotated: unrotated it would end 10px short of the pole
+        svg = SCENE.replace('<g transform="rotate(10 100 130)">', '<g>').replace("175,100", "165,100")
+        with tempfile.TemporaryDirectory() as tmp:
+            p = Path(tmp) / "s.svg"
+            p.write_text(svg.format(waist=190, waist_low=198, hips=200, foot=348, shoe=352), encoding="utf-8")
+            self.assertIn("contact:man.arm->pole", self.failing(dm.review_svg(p)))
+
+    def test_cli_exit_codes(self):
+        with tempfile.TemporaryDirectory() as tmp:
+            p = Path(tmp) / "s.svg"
+            p.write_text(SCENE.format(waist=190, waist_low=198, hips=230, foot=348, shoe=352), encoding="utf-8")
+            r = subprocess.run([sys.executable, str(SK / "scripts" / "drawing_methods.py"), "review", "--svg", str(p)],
+                               capture_output=True, text=True)
+            self.assertEqual(r.returncode, 1, r.stderr)
+            self.assertEqual(json.loads(r.stdout)["status"], "FAIL")
+
+    def test_protocol_and_portable_require_the_gate(self):
+        core = (SK / "PROTOCOL.md").read_text(encoding="utf-8")
+        self.assertRegex(core, r"\n27\. \*\*مراجعة الرسم قبل الإرسال")
+        self.assertIn("drawing_methods.py review", core)
+        self.assertIn("بوابة مراجعة الرسم", (SK / "USIP_PORTABLE.md").read_text(encoding="utf-8"))
+
+
 if __name__ == "__main__":
     unittest.main()

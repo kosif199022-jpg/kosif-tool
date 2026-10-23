@@ -5,7 +5,8 @@
 taught in drawing books; no book text or images). `prompt` turns chosen methods into an
 image-generation prompt without calling any model. `draw head|figure|character|forms|bounce|shadow` writes a
 deterministic, editable SVG whose groups are the method's stages (guide, construction, final,
-silhouette), and `check` reads such an SVG back and measures it against the cards' checks.
+silhouette), and `check` reads such an SVG back and measures it against the cards' checks. `review` is the
+gate before delivery: every <g data-figure> must be one connected body and every data-contact must touch.
 
 Pure stdlib; no network, no credits. Not model training and not proof of professional art quality.
 """
@@ -768,6 +769,232 @@ def check_svg(path):
     return res
 
 
+# ------------------------------------------------------------------ review (anatomy and contact gate before delivery)
+
+def _mat_mul(a, b):
+    return (a[0] * b[0] + a[2] * b[1], a[1] * b[0] + a[3] * b[1], a[0] * b[2] + a[2] * b[3],
+            a[1] * b[2] + a[3] * b[3], a[0] * b[4] + a[2] * b[5] + a[4], a[1] * b[4] + a[3] * b[5] + a[5])
+
+
+def _transform(text):
+    m = (1, 0, 0, 1, 0, 0)
+    for name, args in re.findall(r"(\w+)\s*\(([^)]*)\)", text or ""):
+        v = [float(x) for x in re.findall(r"-?[\d.]+(?:e-?\d+)?", args)]
+        if name == "translate":
+            t = (1, 0, 0, 1, v[0], v[1] if len(v) > 1 else 0)
+        elif name == "scale":
+            t = (v[0], 0, 0, v[1] if len(v) > 1 else v[0], 0, 0)
+        elif name == "rotate":
+            a = math.radians(v[0])
+            c, s_ = math.cos(a), math.sin(a)
+            t = (c, s_, -s_, c, 0, 0)
+            if len(v) == 3:
+                t = _mat_mul(_mat_mul((1, 0, 0, 1, v[1], v[2]), t), (1, 0, 0, 1, -v[1], -v[2]))
+        elif name == "matrix":
+            t = tuple(v[:6])
+        else:
+            continue
+        m = _mat_mul(m, t)
+    return m
+
+
+def _apply(m, p):
+    return (m[0] * p[0] + m[2] * p[1] + m[4], m[1] * p[0] + m[3] * p[1] + m[5])
+
+
+def _path_points(d, steps=12):
+    toks = re.findall(r"[MmLlHhVvQqTtCcSsZz]|-?\d*\.?\d+(?:e-?\d+)?", d)
+    out, cur, start, i, cmd, last_ctrl = [], (0.0, 0.0), (0.0, 0.0), 0, "M", None
+    while i < len(toks):
+        if re.match(r"[A-Za-z]", toks[i]):
+            cmd = toks[i]
+            i += 1
+            if cmd in "Zz":
+                out.append(start)
+                cur = start
+                continue
+        rel = cmd.islower()
+        n = {"M": 2, "L": 2, "H": 1, "V": 1, "Q": 4, "T": 2, "C": 6, "S": 4}[cmd.upper()]
+        v = [float(t) for t in toks[i:i + n]]
+        i += n
+        ox, oy = cur if rel else (0.0, 0.0)
+        u = cmd.upper()
+        if u == "H":
+            pts_ = [(v[0] + ox, cur[1])]
+        elif u == "V":
+            pts_ = [(cur[0], v[0] + oy)]
+        else:
+            pts_ = [(v[k] + ox, v[k + 1] + oy) for k in range(0, n, 2)]
+        if u == "M":
+            start = pts_[0]
+            out.append(pts_[0])
+            cmd = "l" if rel else "L"
+        elif u in "LHV":
+            out.append(pts_[0])
+        else:
+            if u == "T":
+                pts_ = [(2 * cur[0] - last_ctrl[0], 2 * cur[1] - last_ctrl[1]) if last_ctrl else cur] + pts_
+            if u == "S":
+                pts_ = [(2 * cur[0] - last_ctrl[0], 2 * cur[1] - last_ctrl[1]) if last_ctrl else cur] + pts_
+            ctrl = [cur] + pts_
+            for k in range(1, steps + 1):
+                t = k / steps
+                q = ctrl
+                while len(q) > 1:
+                    q = [((1 - t) * a[0] + t * b[0], (1 - t) * a[1] + t * b[1]) for a, b in zip(q, q[1:])]
+                out.append(q[0])
+            last_ctrl = pts_[-2]
+            cur = pts_[-1]
+            continue
+        last_ctrl = None
+        cur = out[-1]
+    return out
+
+
+def _geometry(e, m):
+    """Outline of one SVG element in page space: (points, closed, filled, half stroke width)."""
+    tag = e.tag.split("}")[-1]
+    g = lambda k, d=0.0: float(e.get(k, d))
+    if tag in ("circle", "ellipse"):
+        rx = g("r") if tag == "circle" else g("rx")
+        ry = g("r") if tag == "circle" else g("ry")
+        pts_ = [(g("cx") + rx * math.cos(a), g("cy") + ry * math.sin(a)) for a in (i * math.pi / 24 for i in range(48))]
+        closed = True
+    elif tag == "rect":
+        x, y, w, h = g("x"), g("y"), g("width"), g("height")
+        pts_, closed = [(x, y), (x + w, y), (x + w, y + h), (x, y + h)], True
+    elif tag == "line":
+        pts_, closed = [(g("x1"), g("y1")), (g("x2"), g("y2"))], False
+    elif tag in ("polyline", "polygon"):
+        v = [float(t) for t in re.findall(r"-?[\d.]+", e.get("points", ""))]
+        pts_, closed = list(zip(v[::2], v[1::2])), tag == "polygon"
+    elif tag == "path":
+        pts_ = _path_points(e.get("d", ""))
+        closed = bool(re.search(r"[Zz]\s*$", e.get("d", "")))
+    else:
+        return None
+    fill = e.get("data-fill", e.get("fill"))
+    filled = closed or (fill not in (None, "none") and tag in ("path", "polyline"))
+    scale = math.sqrt(abs(m[0] * m[3] - m[1] * m[2])) or 1.0
+    half = float(e.get("stroke-width", "0") or 0) * scale / 2
+    return [_apply(m, p) for p in pts_], filled, half
+
+
+def _inside(p, poly):
+    hit, j = False, len(poly) - 1
+    for i in range(len(poly)):
+        (xi, yi), (xj, yj) = poly[i], poly[j]
+        if (yi > p[1]) != (yj > p[1]) and p[0] < (xj - xi) * (p[1] - yi) / ((yj - yi) or 1e-9) + xi:
+            hit = not hit
+        j = i
+    return hit
+
+
+def _seg_dist(p, a, b):
+    dx, dy = b[0] - a[0], b[1] - a[1]
+    t = max(0.0, min(1.0, ((p[0] - a[0]) * dx + (p[1] - a[1]) * dy) / ((dx * dx + dy * dy) or 1e-9)))
+    return math.dist(p, (a[0] + t * dx, a[1] + t * dy))
+
+
+def _gap(a, b):
+    """Pixels of empty space between two parts; 0 when they touch or overlap."""
+    (pa, fa, ha), (pb, fb, hb) = a, b
+    if (fb and any(_inside(p, pb) for p in pa)) or (fa and any(_inside(p, pa) for p in pb)):
+        return 0.0
+    segs = lambda pts_: list(zip(pts_, pts_[1:] + pts_[:1])) if len(pts_) > 2 else [(pts_[0], pts_[-1])]
+    best = min(min(_seg_dist(p, s0, s1) for s0, s1 in segs(pb)) for p in pa)
+    best = min(best, min(min(_seg_dist(p, s0, s1) for s0, s1 in segs(pa)) for p in pb))
+    return max(0.0, best - ha - hb)
+
+
+def review_svg(path, tolerance=1.5):
+    """Anatomy and contact gate: every figure is one connected body, every declared contact touches.
+
+    Mark each body (person, animal, prop) as <g data-figure="name"> and each of its pieces with data-part;
+    a piece that must rest on something else carries data-contact="<other part id or figure name>".
+    """
+    root = ET.parse(path).getroot()
+    res = {"schema": "kosif.drawing.review.v1", "file": str(path), "tolerance_px": tolerance, "checks": []}
+
+    def add(cid, ok, observed, method):
+        res["checks"].append({"id": cid, "pass": bool(ok), "observed": observed, "method": method})
+
+    figures, parts_by_id, contacts = {}, {}, []
+
+    def walk(node, m, fig):
+        m = _mat_mul(m, _transform(node.get("transform")))
+        if node.get("data-figure"):
+            fig = node.get("data-figure")
+            figures.setdefault(fig, [])
+        geo = _geometry(node, m) if node.get("data-part") else None
+        if geo and geo[0]:
+            name = node.get("data-part")
+            if fig:
+                figures[fig].append((name, geo))
+            parts_by_id[node.get("id") or name] = geo
+            if node.get("data-contact"):
+                contacts.append((fig, name, node.get("data-contact"), geo))
+        for child in node:
+            walk(child, m, fig)
+
+    walk(root, (1, 0, 0, 1, 0, 0), None)
+    if not figures:
+        add("figures-declared", False, "no <g data-figure> groups with data-part pieces", "DM-08")
+    for fig, parts in figures.items():
+        n = len(parts)
+        link = {i: {i} for i in range(n)}
+        for i in range(n):
+            for j in range(i + 1, n):
+                if _gap(parts[i][1], parts[j][1]) <= tolerance:
+                    link[i].add(j)
+                    link[j].add(i)
+        seen, groups = set(), []
+        for i in range(n):
+            if i in seen:
+                continue
+            stack, comp = [i], []
+            while stack:
+                k = stack.pop()
+                if k in seen:
+                    continue
+                seen.add(k)
+                comp.append(parts[k][0])
+                stack.extend(link[k] - seen)
+            groups.append(sorted(comp))
+        obs = {"parts": n, "pieces": len(groups)}
+        if len(groups) > 1:
+            main = max(groups, key=len)
+            obs["detached"] = [g for g in groups if g is not main]
+            obs["nearest_gap_px"] = {",".join(g): round(min(_gap(p[1], q[1]) for p in parts if p[0] in g
+                                                            for q in parts if q[0] in main), 1)
+                                     for g in obs["detached"]}
+        add(f"one-body:{fig}", len(groups) == 1, obs, "DM-08")
+    figure_geo = {f: [g for _, g in ps] for f, ps in figures.items()}
+    for fig, name, target, geo in contacts:
+        others = figure_geo.get(target) or ([parts_by_id[target]] if target in parts_by_id else [])
+        if not others:
+            add(f"contact:{fig}.{name}->{target}", False, "target not found", "DM-12")
+            continue
+        gap = min(_gap(geo, o) for o in others)
+        add(f"contact:{fig}.{name}->{target}", gap <= tolerance, {"gap_px": round(gap, 1)}, "DM-12")
+    supported = {f for f, _, _, _ in contacts if f}
+    for fig in figures:
+        if fig not in root.get("data-floating", "").split() and fig not in supported and not any(t == fig for _, _, t, _ in contacts):
+            add(f"supported:{fig}", False, "nothing holds this figure up (add data-contact or data-floating)", "DM-12")
+    res["passed"] = sum(c["pass"] for c in res["checks"])
+    res["total"] = len(res["checks"])
+    res["status"] = "PASS" if res["checks"] and res["passed"] == res["total"] else "FAIL"
+    res["visual_review_still_required"] = [
+        "Open the rendered PNG and look at it before sending",
+        "Each body reads as one piece: neck joins head to chest, waist joins chest to hips, limbs start at joints",
+        "Limb count, bend direction and lengths are plausible for the pose",
+        "Hands and feet rest on what holds them; nothing hangs in the air without a reason",
+        "Scale and perspective agree between figures and props; shadows follow one light",
+    ]
+    res["scope"] = "Touch geometry between declared parts only; it does not see the picture, judge anatomy beyond contact, or judge beauty."
+    return res
+
+
 # ------------------------------------------------------------------ cli
 
 def emit(obj, out=None, force=False):
@@ -823,6 +1050,10 @@ def main(argv=None):
     ck = sub.add_parser("check", help="measure a drawn SVG against its method cards")
     ck.add_argument("--svg", required=True)
     ck.add_argument("--out")
+    rv = sub.add_parser("review", help="anatomy and contact gate: one connected body per figure, declared contacts touch")
+    rv.add_argument("--svg", required=True)
+    rv.add_argument("--tolerance", type=float, default=1.5, help="largest gap in px still counted as touching")
+    rv.add_argument("--out")
     args = ap.parse_args(argv)
     try:
         if args.cmd == "draw":
@@ -842,6 +1073,10 @@ def main(argv=None):
             return 0
         if args.cmd == "check":
             res = check_svg(args.svg)
+            emit(res, args.out)
+            return 0 if res["status"] == "PASS" else 1
+        if args.cmd == "review":
+            res = review_svg(args.svg, args.tolerance)
             emit(res, args.out)
             return 0 if res["status"] == "PASS" else 1
         data = load_atlas(args.atlas)
