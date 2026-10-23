@@ -613,3 +613,15 @@ _قدرات أُضيفت في الإصدار الثاني من حزم المال
 - **الرخصة / license:** owner (no LICENSE file)
 - **المصدر / source:** `owner-upload:motion-saas_skill/higgsfield-motion-saas/references/code-engine.md`
 - **الدليل / proof:** `owner-upload:motion-saas_skill/higgsfield-motion-saas/references/code-engine.md`
+
+## إضافات مرفقات 2026-10-23 — 2026-10-23 upload additions
+
+_من مراجعة مرفقات المالك: [owner-uploads-review-20261023.md](../owner-uploads-review-20261023.md). — From the owner-upload review._
+
+
+#### PART-U01 · حقل كشف بالضجيج والمسافة من المركز · Noise + centre-distance reveal field · ✅ مُثبت هنا / proven here
+- **ماذا / what:** field = 0.55·noise + 0.45·|x−0.5|·2 و alpha = clip((p·1.15 − field)/0.12) مع شريط مضيء على الجبهة؛ الجسيمات تبدأ قبل الجبهة بـ0.2 ث فقط (110–340 px إزاحة، مسارات منحنية) وتصل مع مرورها. — Organic dissolve that reveals from the centre outward; particles arrive with the front.
+- **متى أستخدمها / when:** ظهور عنصر أو شاشة بتفكك عضوي / an element materialising with an organic dissolve
+- **كيف / how:** أضف حدًا (edge) إلى الحقل لرسم الخطوط أولًا؛ للخروج اعكس p. **أرقام / params:** threshold 0.12; overshoot 1.15; particles start ≤0.2 s early
+- **الرخصة / license:** Claude AI Motion Graphics (Tao Prompts) — ideas and numbers only, code not copied
+- **الدليل / proof:** `kosif-tool/.claude/skills/kosif-superpowers/proofs/owner-uploads-20261023/proof_uploads.py` · `kosif-tool/.claude/skills/kosif-superpowers/proofs/owner-uploads-20261023/receipt.json`

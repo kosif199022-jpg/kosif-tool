@@ -2405,3 +2405,15 @@ _قدرات أُضيفت في الإصدار الثاني من حزم المال
 - **الرخصة / license:** owner (no LICENSE file)
 - **المصدر / source:** `owner-upload:motion-skill-claude/higgsfield-motion-claude/references/production-lessons.md`
 - **الدليل / proof:** `owner-upload:motion-skill-claude/higgsfield-motion-claude/references/production-lessons.md`
+
+## إضافات مرفقات 2026-10-23 — 2026-10-23 upload additions
+
+_من مراجعة مرفقات المالك: [owner-uploads-review-20261023.md](../owner-uploads-review-20261023.md). — From the owner-upload review._
+
+
+#### CAM-U01 · تتبع الأرض بالهوموغرافيا ولوحات مثبتة في العالم · Ground homography chain and world-anchored billboards · 📄 موصوف / documented
+- **ماذا / what:** SIFT (2500 نقطة) بنصف الدقة، اختبار نسبة 0.72، RANSAC 5 px، وسلسلة مصفوفات تنقل أي نقطة أرضية لأي إطار؛ اللوحة = المرساة + الإزاحة × المقياس^0.6 وتواجه الكاميرا؛ التتبع الكامل يجعل النص ينزلق ويصعب قراءته فخفّفه أو استخدم مساحة الشاشة. — Planar tracking for tabletop/diorama footage with readable labels.
+- **متى أستخدمها / when:** تسمية أشياء متحركة داخل لقطة / labelling objects in moving footage
+- **كيف / how:** تتبع الأجسام: وسيط LK في نصف قطر 60 px مع فحص ذهاب/إياب < 1.5 px. **أرقام / params:** ratio 0.72; RANSAC 5 px; offset × scale^0.6
+- **الرخصة / license:** Claude AI Motion Graphics (Tao Prompts) — ideas and numbers only, code not copied
+- **الدليل / proof:** `kosif-tool/.claude/skills/kosif-superpowers/references/owner-uploads-review-20261023.md`

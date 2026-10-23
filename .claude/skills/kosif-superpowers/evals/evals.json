@@ -1905,6 +1905,113 @@
     ],
     "top_k": 3
    }
+  },
+  {
+   "id": 89,
+   "lang": "ar",
+   "domain": "craft",
+   "skills": [
+    "kosif-superpowers"
+   ],
+   "query": "ارسم قصة ويبتون بنفس الشخصية في كل المشاهد",
+   "files": [],
+   "expected_behavior": [
+    "Routes to the Atlas-5000 drawing cards (ACRAFT-09/10) and states their badge is documented, not run",
+    "Asks for the story details before drawing when they are missing, and writes one CHARACTER sentence reused verbatim in every scene prompt",
+    "Delivers a scene table plus one prompt per scene (or renders with a KOSIF drawing tool) and never claims an image was produced without a file"
+   ],
+   "routing": {
+    "expect_any": [
+     "ACRAFT"
+    ],
+    "expect_domain": "craft",
+    "top_k": 8,
+    "motion_output": false
+   }
+  },
+  {
+   "id": 90,
+   "lang": "ar",
+   "domain": "media",
+   "skills": [
+    "kosif-superpowers"
+   ],
+   "query": "اعمل تأثير شيدر حراري يتبع الإصبع على الويب",
+   "files": [],
+   "expected_behavior": [
+    "Routes to AMEDIA-18 (thermal finger trail) or AMEDIA-16 (R3F shader model)",
+    "Builds one fragment shader with the documented defaults and previews it in a browser before claiming it works"
+   ],
+   "routing": {
+    "expect_any": [
+     "AMEDIA"
+    ],
+    "top_k": 8
+   }
+  },
+  {
+   "id": 91,
+   "lang": "ar",
+   "domain": "motion",
+   "skills": [
+    "kosif-superpowers"
+   ],
+   "query": "اعمل فيديو أغنية كرتوني بشخصيات متزامن مع أغنيتي",
+   "files": [],
+   "expected_behavior": [
+    "Routes to the cartoon music-video pipeline (STORY-U01) or a song-sync route",
+    "Repaints generated sheets in code instead of pasting them and keeps the user's song untouched"
+   ],
+   "routing": {
+    "expect_any": [
+     "STORY",
+     "GEN",
+     "BEAT",
+     "SYNC"
+    ],
+    "top_k": 3
+   }
+  },
+  {
+   "id": 92,
+   "lang": "ar",
+   "domain": "motion",
+   "skills": [
+    "kosif-superpowers"
+   ],
+   "query": "عنوان عربي أنيق بخط المسيري",
+   "files": [],
+   "expected_behavior": [
+    "Finds the bundled OFL El Messiri font (ARAB-U01) and renders the title with RTL shaping"
+   ],
+   "routing": {
+    "expect_any": [
+     "ARAB",
+     "TOOL"
+    ],
+    "top_k": 3
+   }
+  },
+  {
+   "id": 93,
+   "lang": "ar",
+   "domain": "motion",
+   "skills": [
+    "kosif-superpowers"
+   ],
+   "query": "سكربت Cinema C على الآيفون مش بيحفظ الفيديو في الصور",
+   "files": [],
+   "expected_behavior": [
+    "Routes to the Cinema C iPhone studio (TOOL-51) or its lineage ledger (DL-11)",
+    "Suggests the PhotosSafe copy (H.264/AAC/yuv420p/faststart) and a one-frame decode check instead of ffprobe"
+   ],
+   "routing": {
+    "expect_any": [
+     "TOOL",
+     "DL"
+    ],
+    "top_k": 3
+   }
   }
  ]
 }

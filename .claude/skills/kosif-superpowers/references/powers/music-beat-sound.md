@@ -1846,3 +1846,15 @@ _قدرات أُضيفت في الإصدار الثاني من حزم المال
 - **الرخصة / license:** owner
 - **المصدر / source:** `owner-upload:KOSIF_SEE_Humanizer_Optimize_Graphify_v1.7.5/skills/kosif-media-motion/references/SUNO_SONGWRITING_CORE.md`
 - **الدليل / proof:** `owner-upload:KOSIF_SEE_Humanizer_Optimize_Graphify_v1.7.5/skills/kosif-media-motion/references/SUNO_SONGWRITING_CORE.md`
+
+## إضافات مرفقات 2026-10-23 — 2026-10-23 upload additions
+
+_من مراجعة مرفقات المالك: [owner-uploads-review-20261023.md](../owner-uploads-review-20261023.md). — From the owner-upload review._
+
+
+#### BEAT-U01 · لوحة مؤثرات بلا whoosh وفراش صوت اللقطات · Subtle SFX palette without whooshes · 📄 موصوف / documented
+- **ماذا / what:** الصوت البشري سائد؛ المؤثرات 0.02–0.06 مقابل قمة صوت ~0.5؛ pop للنصوص والبطاقات، swell نغمي للكلمات الكبيرة وتغيير المشهد، glass للوحات، tick للنقر والكتابة، chime عند الاكتمال؛ بلا whoosh؛ صوت اللقطات نفسها فراشًا بنحو −16 dB في مواضعها؛ صدّر مسار مؤثرات منفصلًا وأعد توقيته مع كل تعديل بصري. — Sound-design defaults learned from creator revisions.
+- **متى أستخدمها / when:** إضافة مؤثرات صوتية لفيديو شرح / adding SFX to an explainer
+- **كيف / how:** ولّد المؤثرات بـnumpy (لا خدمات مدفوعة) واكتب mix.wav وsfx_stem.wav. **أرقام / params:** SFX gain 0.02–0.06; shot beds ≈ −16 dB
+- **الرخصة / license:** Claude AI Motion Graphics (Tao Prompts) — ideas and numbers only, code not copied
+- **الدليل / proof:** `kosif-tool/.claude/skills/kosif-superpowers/references/owner-uploads-review-20261023.md`

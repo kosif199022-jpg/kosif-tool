@@ -10864,5 +10864,37 @@
   ],
   "section": "إضافات v3 — v3 additions",
   "source": ""
+ },
+ {
+  "id": "QA-U01",
+  "family": "qa-verification",
+  "domain": "motion",
+  "name_ar": "طبقة الرسوم وحدها من رندرين",
+  "name_en": "Graphics-only layer from two aligned renders",
+  "status": "proven",
+  "what": "diff = max_channel|graphics − original| و alpha = clip((diff − 0.10)/0.12) ثم توسيع 3 px وتنعيم 1 px: يعطي طبقة RGBA للرسوم وحدها لتسليمها للمحرر أو لفحص ما أُضيف. — Recover an RGBA graphics layer from a with/without render pair.",
+  "how": "قسّمها بالمناطق (شريط النص، كتلة الرسم) إن احتجت طبقات منفصلة.",
+  "params": "IoU 1.0 on a synthetic pair (receipt)",
+  "install": "",
+  "requires": [],
+  "license": "Claude AI Motion Graphics (Tao Prompts) — ideas and numbers only, code not copied",
+  "proof": [
+   "kosif-tool/.claude/skills/kosif-superpowers/proofs/owner-uploads-20261023/proof_uploads.py",
+   "kosif-tool/.claude/skills/kosif-superpowers/proofs/owner-uploads-20261023/receipt.json"
+  ],
+  "proof_scope": "repo",
+  "styles": [],
+  "tags": [
+   "alpha",
+   "layer",
+   "طبقة",
+   "diff",
+   "graphics only",
+   "overlay",
+   "تسليم"
+  ],
+  "when": "تسليم طبقة رسوم شفافة أو فحص ما أضافه الرندر / delivering a transparent graphics layer",
+  "section": "إضافات مرفقات 2026-10-23 — 2026-10-23 upload additions",
+  "source": "owner-upload:2026-10-23"
  }
 ]

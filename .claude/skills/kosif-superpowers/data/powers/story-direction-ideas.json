@@ -3362,5 +3362,40 @@
   ],
   "section": "إضافات v2 — v2 additions",
   "source": "https://github.com/affaan-m/ECC/tree/main/skills/frontend-slides/SKILL.md"
+ },
+ {
+  "id": "STORY-U01",
+  "family": "story-direction-ideas",
+  "domain": "motion",
+  "name_ar": "خط فيلم الأغنية الكرتوني",
+  "name_en": "Cartoon music-video pipeline",
+  "status": "documented",
+  "what": "أغنية ~40 ث (مقطع بين شخصيتين ولازمة واحدة معًا، سطور حرفية بسيطة) ← صفحة شخصيات وبيئات 2×2 ومؤثرات 5×2 مولّدة ← تُعاد رسمها بالكود ولا تُلصق ← رندر بقطع متداخلة قابلة للاستئناف ← لقطات ثابتة بأفواه مغلقة لمزامنة الشفاه. — Song → sheets → repaint in code → resumable render → lip-sync plates.",
+  "how": "لكل قسم من الأغنية بيئة؛ كلمات بأسلوب «كود» متوهج؛ كاميرا مدارية.",
+  "params": "~40 s; env sheet 2×2; props 5×2",
+  "install": "",
+  "requires": [
+   "key:video-gen"
+  ],
+  "license": "Claude AI Motion Graphics (Tao Prompts) — ideas and numbers only, code not copied",
+  "proof": [
+   "kosif-tool/.claude/skills/kosif-superpowers/references/owner-uploads-review-20261023.md"
+  ],
+  "proof_scope": "repo",
+  "styles": [],
+  "tags": [
+   "music video",
+   "فيديو أغنية",
+   "cartoon",
+   "كرتون",
+   "characters",
+   "شخصيات",
+   "lyrics",
+   "كلمات",
+   "suno"
+  ],
+  "when": "فيديو أغنية كرتوني من الصفر / a cartoon music video from nothing",
+  "section": "إضافات مرفقات 2026-10-23 — 2026-10-23 upload additions",
+  "source": "owner-upload:2026-10-23"
  }
 ]

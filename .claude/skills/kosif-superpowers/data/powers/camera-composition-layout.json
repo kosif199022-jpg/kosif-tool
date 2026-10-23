@@ -11884,5 +11884,36 @@
   ],
   "section": "إضافات v2 — v2 additions",
   "source": "owner-upload:motion-skill-claude/higgsfield-motion-claude/references/production-lessons.md"
+ },
+ {
+  "id": "CAM-U01",
+  "family": "camera-composition-layout",
+  "domain": "motion",
+  "name_ar": "تتبع الأرض بالهوموغرافيا ولوحات مثبتة في العالم",
+  "name_en": "Ground homography chain and world-anchored billboards",
+  "status": "documented",
+  "what": "SIFT (2500 نقطة) بنصف الدقة، اختبار نسبة 0.72، RANSAC 5 px، وسلسلة مصفوفات تنقل أي نقطة أرضية لأي إطار؛ اللوحة = المرساة + الإزاحة × المقياس^0.6 وتواجه الكاميرا؛ التتبع الكامل يجعل النص ينزلق ويصعب قراءته فخفّفه أو استخدم مساحة الشاشة. — Planar tracking for tabletop/diorama footage with readable labels.",
+  "how": "تتبع الأجسام: وسيط LK في نصف قطر 60 px مع فحص ذهاب/إياب < 1.5 px.",
+  "params": "ratio 0.72; RANSAC 5 px; offset × scale^0.6",
+  "install": "",
+  "requires": [],
+  "license": "Claude AI Motion Graphics (Tao Prompts) — ideas and numbers only, code not copied",
+  "proof": [
+   "kosif-tool/.claude/skills/kosif-superpowers/references/owner-uploads-review-20261023.md"
+  ],
+  "proof_scope": "repo",
+  "styles": [],
+  "tags": [
+   "tracking",
+   "تتبع",
+   "homography",
+   "billboard",
+   "label",
+   "لوحة",
+   "sift"
+  ],
+  "when": "تسمية أشياء متحركة داخل لقطة / labelling objects in moving footage",
+  "section": "إضافات مرفقات 2026-10-23 — 2026-10-23 upload additions",
+  "source": "owner-upload:2026-10-23"
  }
 ]

@@ -3571,5 +3571,39 @@
   ],
   "section": "مصمم — Mosamem (2026-10-22)",
   "source": "https://github.com/motalim-ai/mosamem"
+ },
+ {
+  "id": "ARAB-U01",
+  "family": "typography-arabic",
+  "domain": "motion",
+  "name_ar": "خط El Messiri العربي مضمّن",
+  "name_en": "El Messiri Arabic display font bundled (OFL)",
+  "status": "proven",
+  "what": "El Messiri متغير (Regular–Bold، v2.020) مضمّن في proofs/_shared/fonts مع OFL-ElMessiri.txt؛ رسمتُه بتشكيل raqm صحيح في إثبات الرفع. خط عرض عربي أنيق للعناوين والأفلام الغنائية. — Elegant Arabic display face for titles and lyric films.",
+  "how": "ImageFont.truetype('proofs/_shared/fonts/ElMessiri[wght].ttf', size) مع direction='rtl', language='ar'",
+  "params": "",
+  "install": "",
+  "requires": [
+   "pip:pillow",
+   "fonts:arabic"
+  ],
+  "license": "SIL OFL 1.1",
+  "proof": [
+   "kosif-tool/.claude/skills/kosif-superpowers/proofs/_shared/fonts/ElMessiri[wght].ttf",
+   "kosif-tool/.claude/skills/kosif-superpowers/proofs/_shared/fonts/OFL-ElMessiri.txt",
+   "kosif-tool/.claude/skills/kosif-superpowers/proofs/owner-uploads-20261023/sheet.jpg"
+  ],
+  "proof_scope": "repo",
+  "styles": [],
+  "tags": [
+   "el messiri",
+   "المسيري",
+   "messiri",
+   "مسيري",
+   "ofl"
+  ],
+  "when": "عنوان عربي أنيق أو فيلم أغنية / an elegant Arabic title or lyric film",
+  "section": "إضافات مرفقات 2026-10-23 — 2026-10-23 upload additions",
+  "source": "owner-upload:2026-10-23"
  }
 ]

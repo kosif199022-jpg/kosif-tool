@@ -15,17 +15,17 @@
  },
  "paths_note": "Tool paths and examples are relative to their root: 'skill' = this folder, 'repo' = the kosif-tool repository root.",
  "counts": {
-  "powers": 5335,
+  "powers": 5408,
   "families": 62,
   "domains": 10,
-  "tools": 139,
-  "guides": 99,
+  "tools": 140,
+  "guides": 101,
   "statuses": {
-   "documented": 1937,
+   "documented": 2005,
    "idea": 71,
    "install": 973,
    "key": 176,
-   "proven": 924,
+   "proven": 929,
    "ready": 645,
    "seen": 609
   }
@@ -302,9 +302,9 @@
    "domain": "code",
    "title_ar": "أطلس: الهندسة والكود",
    "title_en": "Atlas: engineering & code",
-   "count": 216,
+   "count": 226,
    "statuses": {
-    "documented": 216
+    "documented": 226
    },
    "chapter": "references/powers/atlas-code.md",
    "data": "data/powers/atlas-code.json"
@@ -315,9 +315,9 @@
    "domain": "craft",
    "title_ar": "أطلس: الكتابة والبرومبت والترجمة",
    "title_en": "Atlas: writing, prompts & languages",
-   "count": 7,
+   "count": 24,
    "statuses": {
-    "documented": 7
+    "documented": 24
    },
    "chapter": "references/powers/atlas-craft.md",
    "data": "data/powers/atlas-craft.json"
@@ -341,9 +341,9 @@
    "domain": "docs",
    "title_ar": "أطلس: المستندات والمخططات",
    "title_en": "Atlas: documents & diagrams",
-   "count": 41,
+   "count": 45,
    "statuses": {
-    "documented": 41
+    "documented": 45
    },
    "chapter": "references/powers/atlas-docs.md",
    "data": "data/powers/atlas-docs.json"
@@ -354,9 +354,9 @@
    "domain": "media",
    "title_ar": "أطلس: الصور والصوت والفيديو",
    "title_en": "Atlas: images, audio & video",
-   "count": 14,
+   "count": 27,
    "statuses": {
-    "documented": 14
+    "documented": 27
    },
    "chapter": "references/powers/atlas-media.md",
    "data": "data/powers/atlas-media.json"
@@ -367,9 +367,9 @@
    "domain": "mind",
    "title_ar": "أطلس: الوكلاء والتخطيط والمراجعة",
    "title_en": "Atlas: agent workflows, planning & review",
-   "count": 44,
+   "count": 50,
    "statuses": {
-    "documented": 44
+    "documented": 50
    },
    "chapter": "references/powers/atlas-mind.md",
    "data": "data/powers/atlas-mind.json"
@@ -393,9 +393,9 @@
    "domain": "strategy",
    "title_ar": "أطلس: المنتج والتسويق والأعمال",
    "title_en": "Atlas: product, marketing & business",
-   "count": 57,
+   "count": 62,
    "statuses": {
-    "documented": 57
+    "documented": 62
    },
    "chapter": "references/powers/atlas-strategy.md",
    "data": "data/powers/atlas-strategy.json"
@@ -406,9 +406,9 @@
    "domain": "motion",
    "title_ar": "التزامن مع الكلام والترجمة",
    "title_en": "Audio sync & captions",
-   "count": 60,
+   "count": 61,
    "statuses": {
-    "documented": 18,
+    "documented": 19,
     "install": 7,
     "key": 1,
     "proven": 20,
@@ -443,9 +443,9 @@
    "domain": "motion",
    "title_ar": "الكاميرا والتكوين",
    "title_en": "Camera & composition",
-   "count": 424,
+   "count": 425,
    "statuses": {
-    "documented": 70,
+    "documented": 71,
     "idea": 15,
     "install": 122,
     "key": 14,
@@ -561,9 +561,9 @@
    "domain": "motion",
    "title_ar": "المخططات والشرح والكود",
    "title_en": "Diagrams, explainers & code",
-   "count": 65,
+   "count": 67,
    "statuses": {
-    "documented": 26,
+    "documented": 28,
     "idea": 2,
     "install": 11,
     "key": 1,
@@ -650,9 +650,9 @@
    "domain": "motion",
    "title_ar": "الرسم اليدوي والرسم الحي",
    "title_en": "Hand-drawn & draw-on",
-   "count": 62,
+   "count": 63,
    "statuses": {
-    "documented": 18,
+    "documented": 19,
     "install": 6,
     "proven": 17,
     "ready": 15,
@@ -749,9 +749,9 @@
    "domain": "motion",
    "title_ar": "الموسيقى والإيقاع والمؤثرات",
    "title_en": "Music, beat & sound",
-   "count": 305,
+   "count": 306,
    "statuses": {
-    "documented": 79,
+    "documented": 80,
     "idea": 12,
     "install": 74,
     "key": 22,
@@ -785,13 +785,13 @@
    "domain": "motion",
    "title_ar": "الجسيمات والسوائل والفيزياء",
    "title_en": "Particles, fluids & physics",
-   "count": 76,
+   "count": 77,
    "statuses": {
     "documented": 11,
     "idea": 1,
     "install": 13,
     "key": 1,
-    "proven": 17,
+    "proven": 18,
     "ready": 13,
     "seen": 20
    },
@@ -804,9 +804,9 @@
    "domain": "motion",
    "title_ar": "الصور والفيديو الخام",
    "title_en": "Photos & footage",
-   "count": 68,
+   "count": 71,
    "statuses": {
-    "documented": 19,
+    "documented": 22,
     "install": 7,
     "key": 3,
     "proven": 20,
@@ -868,13 +868,13 @@
    "domain": "motion",
    "title_ar": "الجودة والتحقق",
    "title_en": "QA & verification",
-   "count": 383,
+   "count": 384,
    "statuses": {
     "documented": 142,
     "idea": 5,
     "install": 88,
     "key": 14,
-    "proven": 73,
+    "proven": 74,
     "ready": 58,
     "seen": 3
    },
@@ -965,9 +965,9 @@
    "domain": "motion",
    "title_ar": "القصة والإخراج",
    "title_en": "Story & direction",
-   "count": 94,
+   "count": 95,
    "statuses": {
-    "documented": 46,
+    "documented": 47,
     "install": 2,
     "key": 1,
     "proven": 14,
@@ -1030,13 +1030,13 @@
    "domain": "motion",
    "title_ar": "الانتقالات والقطعات",
    "title_en": "Transitions & cuts",
-   "count": 473,
+   "count": 474,
    "statuses": {
     "documented": 79,
     "idea": 18,
     "install": 175,
     "key": 1,
-    "proven": 28,
+    "proven": 29,
     "ready": 58,
     "seen": 114
    },
@@ -1049,12 +1049,12 @@
    "domain": "motion",
    "title_ar": "الخط العربي المتحرك",
    "title_en": "Arabic typography",
-   "count": 98,
+   "count": 99,
    "statuses": {
     "documented": 21,
     "idea": 1,
     "install": 7,
-    "proven": 22,
+    "proven": 23,
     "ready": 36,
     "seen": 11
    },
@@ -1067,13 +1067,13 @@
    "domain": "motion",
    "title_ar": "التايبوغرافي اللاتيني والحركي",
    "title_en": "Latin & kinetic typography",
-   "count": 92,
+   "count": 94,
    "statuses": {
-    "documented": 19,
+    "documented": 20,
     "idea": 2,
     "install": 20,
     "key": 1,
-    "proven": 2,
+    "proven": 3,
     "ready": 13,
     "seen": 35
    },
@@ -1105,9 +1105,9 @@
    "domain": "mind",
    "title_ar": "التحقق والتقييم",
    "title_en": "Verification & evals",
-   "count": 29,
+   "count": 30,
    "statuses": {
-    "documented": 25,
+    "documented": 26,
     "proven": 4
    },
    "chapter": "references/powers/verification-evals.md",
@@ -1119,9 +1119,9 @@
    "domain": "motion",
    "title_ar": "تحميل الفيديو من الروابط",
    "title_en": "Video download",
-   "count": 10,
+   "count": 11,
    "statuses": {
-    "documented": 2,
+    "documented": 3,
     "proven": 5,
     "ready": 3
    },
@@ -9838,6 +9838,85 @@
    "evidence_note": "Eight focused unit tests passed locally on Windows for the Atlas miner."
   },
   {
+   "id": "atlas-5000",
+   "path": "scripts/atlas_5000.py",
+   "root": "skill",
+   "kind": "cli",
+   "area": "discover",
+   "title_en": "Atlas-5000 coverage map",
+   "title_ar": "خريطة تغطية أطلس الـ5000 مهارة",
+   "summary_en": "Maps the 5,116-skill safe core of KOSIF Atlas (READ_ONLY_OK, permissive license, no risk flags) against the KOSIF catalog: per-theme coverage, the themes with the most undistilled skills and their next candidates, and a bilingual search that shows which power already covers each Atlas skill.",
+   "summary_ar": "يقارن النواة الآمنة لأطلس KOSIF (5,116 مهارة بحكم READ_ONLY_OK وترخيص مفتوح وبلا علامات خطر) بكتالوج القدرات: التغطية لكل موضوع، والمواضيع الأكثر مهارات غير مستخرجة مع المرشحين التاليين، وبحث عربي وإنجليزي يبيّن أي قدرة تغطي كل مهارة.",
+   "use_when": [
+    "ايه المهارات اللي في أطلس الـ5000 ولسه ما اتعلمتهاش؟",
+    "دوّر في الأطلس على مهارات رسم ويبتون وشخصيات",
+    "Which Atlas themes are least covered by KOSIF powers?",
+    "Find Atlas skills for storyboard drawing and show which power covers them"
+   ],
+   "keywords": [
+    "atlas 5000",
+    "5000 skills",
+    "skill atlas",
+    "coverage",
+    "gaps",
+    "learnable skills",
+    "أطلس الـ5000",
+    "أطلس المهارات",
+    "تغطية",
+    "فجوات",
+    "مهارات يمكن تعلمها"
+   ],
+   "commands": [
+    {
+     "name": "stats",
+     "example": "python3 scripts/atlas_5000.py stats --json",
+     "does": "Prints the Atlas total, the safe-core size, and per theme how many safe skills a KOSIF power already cites (covered) with the coverage percentage."
+    },
+    {
+     "name": "gaps",
+     "example": "python3 scripts/atlas_5000.py gaps --top 8 --per-theme 3",
+     "does": "Ranks themes by safe skills no power cites yet and lists up to --per-theme candidates per theme (one per plugin, no duplicate descriptions)."
+    },
+    {
+     "name": "find",
+     "example": "python3 scripts/atlas_5000.py find \"storyboard character webtoon\" --top 10 --json",
+     "does": "Searches the safe core by name, theme and description with a few Arabic-to-English aliases; each hit lists covered_by power IDs. --uncovered keeps only skills not yet distilled."
+    },
+    {
+     "name": "show",
+     "example": "python3 scripts/atlas_5000.py show 2425 --json",
+     "does": "Prints one Atlas skill's metadata, whether it is in the safe core and which powers cite it; an unknown id exits 2."
+    }
+   ],
+   "inputs": "data/atlas_capability_index.json.gz (metadata of 14,793 Atlas skills) and data/powers/*.json.",
+   "outputs": "Text or JSON on stdout; writes nothing.",
+   "requires": {
+    "python": [],
+    "binaries": [
+     "python3"
+    ],
+    "node": [],
+    "optional": [],
+    "network": false
+   },
+   "safety": "read-only",
+   "consent": "None needed: it only reads two local data files.",
+   "limits": "covered means a power's proof or source cites the Atlas folder, not that the skill was run or verified; search is keyword overlap on metadata, and Atlas themes come from a keyword taxonomy that can misfile a skill.",
+   "evidence": "tested-here",
+   "evidence_note": "6/6 passed (evals/test_atlas_5000.py)",
+   "tests": [
+    ".claude/skills/kosif-superpowers/evals/test_atlas_5000.py"
+   ],
+   "docs": [
+    ".claude/skills/kosif-superpowers/references/atlas-5000-mining-20261023.md",
+    ".claude/skills/kosif-superpowers/references/guides/discover.md"
+   ],
+   "families": [
+    "self-discovery",
+    "software-investigation"
+   ]
+  },
+  {
    "id": "atlas-deep-fusion",
    "path": "scripts/atlas_deep_fusion.py",
    "root": "skill",
@@ -12115,14 +12194,17 @@
    "area": "draw",
    "title_en": "Drawing-book methods atlas with layered construction SVGs",
    "title_ar": "أطلس مناهج كتب الرسم مع رسم بنائي بالطبقات",
-   "summary_en": "26 original method cards distilled from well-known drawing books (gesture, proportion, Loomis-style head, mannequin, shape language, silhouette, expression, light, value, colour, composition, inking); ranks them for an Arabic or English request, builds an ordered drawing plan or an image prompt, draws a head, figure, character or forms as a deterministic layered SVG (guide, construction, final, silhouette) and checks the drawing's geometry against the cards.",
-   "summary_ar": "26 بطاقة منهج أصلية مستخلصة من أشهر كتب الرسم (الإيماءة، النسب، رأس لوميس، المانيكان، لغة الأشكال، السيلويت، التعبير، الضوء، القيم، اللون، التكوين، التحبير)؛ يرتبها لطلبك بالعربي أو الإنجليزي، ويبني خطة رسم أو برومبت صورة، ويرسم رأسًا أو جسمًا أو شخصية أو أشكالًا SVG بطبقات، ثم يفحص هندستها مقابل البطاقات.",
+   "summary_en": "47 original method cards distilled from drawing books, including 41 books from the user's own library read in this session (gesture, proportion, Loomis head, mannequin, shape language, silhouette, expression, light, cast shadows, hatching, anime heads, hair and cel shading, animation timing, walks, urban sketching, plants, products, creatures, practice); ranks them for an Arabic or English request, builds an ordered drawing plan or an image prompt, draws a head, figure, character, forms, a bouncing ball or a constructed cast shadow as a deterministic layered SVG (guide, construction, final, silhouette) and checks the drawing's geometry against the cards.",
+   "summary_ar": "47 بطاقة منهج أصلية مستخلصة من كتب الرسم، ومنها 41 كتابًا من مكتبة المستخدم قُرئت في هذه الجلسة (الإيماءة، النسب، رأس لوميس، المانيكان، لغة الأشكال، السيلويت، التعبير، الضوء، الظل الساقط، التهشير، رأس الأنمي وشعره وتلوينه، توقيت التحريك، المشي، رسم المدن، النبات، المنتجات، المخلوقات، التمرين)؛ يرتبها لطلبك، ويبني خطة رسم أو برومبت صورة، ويرسم رأسًا أو جسمًا أو شخصية أو أشكالًا أو كرة تنط أو ظلًا ساقطًا مبنيًا SVG بطبقات، ثم يفحص هندستها مقابل البطاقات.",
    "use_when": [
     "ارسم شخصية كرتونية بلغة أشكال واضحة",
     "علمني أرسم الوجه من زاوية",
     "ارسم جسم بنسب صحيحة ووضعية ديناميكية",
     "Draw a character using drawing-book methods",
-    "Plan a figure drawing with gesture and proportion"
+    "Plan a figure drawing with gesture and proportion",
+    "اعمل انيميشن كرة بتنط بالانضغاط والتمدد",
+    "ارسم ظل ساقط صح من مصباح",
+    "Plan an anime head at a low angle with cel shading"
    ],
    "keywords": [
     "drawing books",
@@ -12148,7 +12230,22 @@
     "figure drawing",
     "رسم الجسم",
     "svg",
-    "رسم"
+    "رسم",
+    "animation",
+    "انيميشن",
+    "bouncing ball",
+    "cast shadow",
+    "ظل ساقط",
+    "anime",
+    "أنمي",
+    "manga",
+    "مانجا",
+    "walk cycle",
+    "دورة مشي",
+    "hatching",
+    "تهشير",
+    "urban sketching",
+    "رسم المدن"
    ],
    "commands": [
     {
@@ -12169,15 +12266,25 @@
     {
      "name": "draw",
      "example": "python3 scripts/drawing_methods.py draw character --shape circle --age child --expression happy --out out/character.svg",
-     "does": "Writes a layered SVG (head, figure, character or forms); refuses to overwrite without --force."
+     "does": "Writes a layered SVG (head, figure, character, forms, bounce or shadow); refuses to overwrite without --force."
+    },
+    {
+     "name": "draw-bounce",
+     "example": "python3 scripts/drawing_methods.py draw bounce --frames 13 --out out/bounce.svg",
+     "does": "Bouncing-ball key drawings on an arc with gravity spacing, stretch near contact and a constant-area squash."
+    },
+    {
+     "name": "draw-shadow",
+     "example": "python3 scripts/drawing_methods.py draw shadow --light-x 0.15 --light-height 0.4 --out out/shadow.svg",
+     "does": "A box and a pole with cast shadows built by intersecting rays from a point light and its foot."
     },
     {
      "name": "check",
      "example": "python3 scripts/drawing_methods.py check --svg out/character.svg",
-     "does": "Measures the SVG's stages, proportions, tilts, shapes and expression against the cards; exits 1 on a failed check."
+     "does": "Measures the SVG's stages, proportions, tilts, shapes, expression, ball volume and spacing, and shadow-ray intersections against the cards; exits 1 on a failed check."
     }
    ],
-   "inputs": "A request in Arabic or English, method ids, or draw parameters (yaw/pitch, heads, pose, shape, age, expression, eye level)",
+   "inputs": "A request in Arabic or English, method ids, or draw parameters (yaw/pitch, heads, pose, shape, age, expression, eye level, frames, bounce height, light position)",
    "outputs": "JSON method lists, plans, prompts and check reports; editable layered SVG drawings",
    "requires": {
     "python": [],
@@ -12188,7 +12295,7 @@
    },
    "safety": "writes-files",
    "consent": "Writes only the SVG or JSON path you pass; refuses to overwrite without --force; no network, model calls or spend.",
-   "limits": "Method cards summarise widely taught book methods in original words; the books' full texts were not read here. The SVGs are construction demonstrations, and check measures geometry only, not artistic quality.",
+   "limits": "Method cards paraphrase methods in original words. Cards marked user_copy_read_paraphrased rest on the user's own books read in this session through their text layer, OCR or sample pages (not a line-by-line study; some OCR was garbled); the others summarise widely taught methods. The SVGs are construction demonstrations, and check measures geometry only, not artistic quality.",
    "tests": [
     ".claude/skills/kosif-superpowers/evals/test_drawing_methods.py"
    ],
@@ -13303,6 +13410,12 @@
    "summary": ""
   },
   {
+   "path": "references/atlas-5000-mining-20261023.md",
+   "title": "أطلس الـ5000 مهارة — Atlas-5000 mining (23 October 2026)",
+   "area": "discover",
+   "summary": ""
+  },
+  {
    "path": "references/atlas-deep-fusion-20261020.md",
    "title": "KOSIF Atlas Deep Fusion — 2026-10-20",
    "area": "general",
@@ -13636,6 +13749,12 @@
    "path": "references/owned-repos-map.md",
    "title": "خريطة مستودعات المالك ← سوبر باور / Owned repositories map",
    "area": "discover",
+   "summary": ""
+  },
+  {
+   "path": "references/owner-uploads-review-20261023.md",
+   "title": "مراجعة مرفقات المالك — Owner uploads review (2026-10-23)",
+   "area": "general",
    "summary": ""
   },
   {

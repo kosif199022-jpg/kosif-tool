@@ -2834,3 +2834,15 @@ _قدرات أُثبتت في هذه الجلسة: خط أنابيب المحا�
 - **كيف / how:** `mm_analyze.analyze(ref, work)` → `spec.json: transitions[{type, params, ts, te, progress, confidence, alternatives}]`; replay with `mm_transitions.render(kind, A, B, p, **params)`. The xfade port is LGPL-2.1-or-later (notice at the top of `mm_transitions.py`); custom kinds need OpenCV or SciPy. **أرقام / params:** score = colour error + gradient error + small complexity prior; 25 progress samples; span grown/trimmed with the same model
 - **الرخصة / license:** LGPL-2.1-or-later (xfade port) / owner (custom kinds)
 - **الدليل / proof:** `kosif-tool/.claude/skills/kosif-superpowers/scripts/mimic/mm_transitions.py` · `kosif-tool/.claude/skills/kosif-superpowers/scripts/mimic/mm_analyze.py` · `kosif-tool/.claude/skills/kosif-superpowers/proofs/mimic-synthetic/README.md`
+
+## إضافات مرفقات 2026-10-23 — 2026-10-23 upload additions
+
+_من مراجعة مرفقات المالك: [owner-uploads-review-20261023.md](../owner-uploads-review-20261023.md). — From the owner-upload review._
+
+
+#### TRANS-U01 · منحنى منزلق قبل/بعد: انزلاق ثم زحف ثم كشف · Before/after slider: glide → crawl → reveal · ✅ مُثبت هنا / proven here
+- **ماذا / what:** p = 0.46·easeOut((t−t0)/0.8) + 0.10·smoothstep((t−t0−0.5)/2.05) + 0.44·easeInOut((t−t0−2.3)/0.95): ينزلق سريعًا إلى المنتصف، يزحف ببطء دون توقف ~1.5–2 ث للمقارنة، ثم يتسارع إلى كشف كامل. — Fast glide to the middle, a slow never-stopping crawl for comparison, then an accelerating full reveal.
+- **متى أستخدمها / when:** مقارنة قبل/بعد في فيديو / a before/after comparison
+- **كيف / how:** img[:, :x] = graphics[:, :x] مع x = W·p؛ فاصل أبيض 1–2 px بتوهج ومقبض زجاجي ≈52×128 وبطاقتا تسمية تتلاشيان مع تقلص جانبهما. **أرقام / params:** crawl 0.47→0.55 between 0.9 and 2.2 s (measured)
+- **الرخصة / license:** Claude AI Motion Graphics (Tao Prompts) — ideas and numbers only, code not copied
+- **الدليل / proof:** `kosif-tool/.claude/skills/kosif-superpowers/proofs/owner-uploads-20261023/proof_uploads.py` · `kosif-tool/.claude/skills/kosif-superpowers/proofs/owner-uploads-20261023/receipt.json` · `kosif-tool/.claude/skills/kosif-superpowers/proofs/owner-uploads-20261023/sheet.jpg`
