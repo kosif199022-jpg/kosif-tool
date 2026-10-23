@@ -12,7 +12,7 @@
 
 ## ما هذه المكتبة
 
-بطاقة بروتوكول لكل قدرة في الكتالوج (5,512) ولكل أداة قابلة للتشغيل (147)، في 78 ملفًا و410,981 سطرًا تقريبًا مع هذا الفهرس. كل بطاقة تجمع سجل القدرة نفسه (ما هي، متى، كيف، التثبيت، المتطلبات، الأدلة، الرخصة) مع قواعد البروتوكول مطبّقة عليها: خانات الاستقبال (A25)، والجاهزية والشارة الصادقة (A28)، وموضعها عقدةً منمّطة في الخطة (A26)، وبوابة التحقق لنوع مخرجها (A27)، وسلم التعافي لأخطائها المرجحة (A29). القواعد العامة تتكرر عمدًا في كل بطاقة لتُقرأ البطاقة وحدها؛ والمعرفة الفريدة في سجلات الكتالوج والملاحق. حالة الكتالوج ليست حالة الجلسة: افحص قبل أي شارة.
+بطاقة بروتوكول لكل قدرة في الكتالوج (5,521) ولكل أداة قابلة للتشغيل (148)، في 78 ملفًا و411,669 سطرًا تقريبًا مع هذا الفهرس. كل بطاقة تجمع سجل القدرة نفسه (ما هي، متى، كيف، التثبيت، المتطلبات، الأدلة، الرخصة) مع قواعد البروتوكول مطبّقة عليها: خانات الاستقبال (A25)، والجاهزية والشارة الصادقة (A28)، وموضعها عقدةً منمّطة في الخطة (A26)، وبوابة التحقق لنوع مخرجها (A27)، وسلم التعافي لأخطائها المرجحة (A29). القواعد العامة تتكرر عمدًا في كل بطاقة لتُقرأ البطاقة وحدها؛ والمعرفة الفريدة في سجلات الكتالوج والملاحق. حالة الكتالوج ليست حالة الجلسة: افحص قبل أي شارة.
 
 ## بطاقات القدرات
 
@@ -58,13 +58,13 @@
 | الاختبارات والجودة والأمان | `api-testing` | 22 | 1,577 | [cards/quality/api-testing.md](cards/quality/api-testing.md) |
 | الاختبارات والجودة والأمان | `qa-verification` | 384 | 27,964 | [cards/quality/qa-verification.md](cards/quality/qa-verification.md) |
 | الاختبارات والجودة والأمان | `security-safety` | 23 | 1,636 | [cards/quality/security-safety.md](cards/quality/security-safety.md) |
-| الاختبارات والجودة والأمان | `verification-evals` | 35 | 2,548 | [cards/quality/verification-evals.md](cards/quality/verification-evals.md) |
+| الاختبارات والجودة والأمان | `verification-evals` | 40 | 2,902 | [cards/quality/verification-evals.md](cards/quality/verification-evals.md) |
 | البحث والمعرفة | `atlas-research` | 11 | 757 | [cards/research/atlas-research.md](cards/research/atlas-research.md) |
 | البحث والمعرفة | `knowledge-graph` | 21 | 1,507 | [cards/research/knowledge-graph.md](cards/research/knowledge-graph.md) |
 | البحث والمعرفة | `web-research` | 24 | 1,655 | [cards/research/web-research.md](cards/research/web-research.md) |
 | التحليل العكسي وفحص البرامج | `software-investigation` | 258 | 19,140 | [cards/reverse/software-investigation.md](cards/reverse/software-investigation.md) |
 | البرمجة وبناء التطبيقات | `app-feature-transfer` | 139 | 10,422 | [cards/software/app-feature-transfer.md](cards/software/app-feature-transfer.md) |
-| البرمجة وبناء التطبيقات | `apps-artifacts` | 23 | 1,649 | [cards/software/apps-artifacts.md](cards/software/apps-artifacts.md) |
+| البرمجة وبناء التطبيقات | `apps-artifacts` | 27 | 1,932 | [cards/software/apps-artifacts.md](cards/software/apps-artifacts.md) |
 | البرمجة وبناء التطبيقات | `atlas-build` | 52 | 3,767 | [cards/software/atlas-build.md](cards/software/atlas-build.md) |
 | البرمجة وبناء التطبيقات | `atlas-code` | 247 | 17,988 | [cards/software/atlas-code.md](cards/software/atlas-code.md) |
 | البرمجة وبناء التطبيقات | `code-engineering` | 24 | 1,726 | [cards/software/code-engineering.md](cards/software/code-engineering.md) |
@@ -96,7 +96,7 @@
 | `maintain` | 12 | 603 | [tools/maintain.md](tools/maintain.md) |
 | `motion` | 18 | 978 | [tools/motion.md](tools/motion.md) |
 | `sources` | 18 | 904 | [tools/sources.md](tools/sources.md) |
-| `think` | 12 | 634 | [tools/think.md](tools/think.md) |
+| `think` | 13 | 685 | [tools/think.md](tools/think.md) |
 
 ## المناهج
 

@@ -15,7 +15,7 @@
    "id": "root",
    "kind": "root",
    "label": "KOSIF Superpowers",
-   "count": 5512
+   "count": 5521
   },
   {
    "id": "dom:motion",
@@ -342,13 +342,13 @@
    "label": "Apps & artifacts",
    "ar": "التطبيقات والواجهات",
    "prefix": "APP",
-   "count": 23,
+   "count": 27,
    "proven": 6,
    "status": {
     "key": 5,
     "proven": 6,
     "install": 7,
-    "documented": 5
+    "documented": 9
    }
   },
   {
@@ -368,6 +368,11 @@
    "en": "call Claude from code",
    "install": "pip install anthropic  (needs ANTHROPIC_API_KEY)",
    "req_kind": "pip"
+  },
+  {
+   "id": "script:scripts/lesson_integrity.py",
+   "kind": "script",
+   "label": "scripts/lesson_integrity.py"
   },
   {
    "id": "dom:craft",
@@ -1744,10 +1749,10 @@
    "label": "Verification & evals",
    "ar": "التحقق والتقييم",
    "prefix": "CHECK",
-   "count": 35,
+   "count": 40,
    "proven": 4,
    "status": {
-    "documented": 31,
+    "documented": 36,
     "proven": 4
    }
   },
@@ -2842,13 +2847,13 @@
    "from": "dom:build",
    "to": "fam:apps-artifacts",
    "rel": "has",
-   "w": 23
+   "w": 27
   },
   {
    "from": "fam:apps-artifacts",
    "to": "req:python3",
    "rel": "needs",
-   "w": 6
+   "w": 8
   },
   {
    "from": "fam:apps-artifacts",
@@ -2891,6 +2896,12 @@
    "to": "req:pip:anthropic",
    "rel": "needs",
    "w": 1
+  },
+  {
+   "from": "fam:apps-artifacts",
+   "to": "script:scripts/lesson_integrity.py",
+   "rel": "runs",
+   "w": 2
   },
   {
    "from": "root",
@@ -6124,13 +6135,13 @@
    "from": "dom:mind",
    "to": "fam:verification-evals",
    "rel": "has",
-   "w": 35
+   "w": 40
   },
   {
    "from": "fam:verification-evals",
    "to": "req:python3",
    "rel": "needs",
-   "w": 7
+   "w": 11
   },
   {
    "from": "fam:verification-evals",
@@ -6173,6 +6184,12 @@
    "to": "req:git",
    "rel": "needs",
    "w": 1
+  },
+  {
+   "from": "fam:verification-evals",
+   "to": "script:scripts/lesson_integrity.py",
+   "rel": "runs",
+   "w": 3
   },
   {
    "from": "fam:verification-evals",

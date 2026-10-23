@@ -77,7 +77,7 @@ USIP appendices A1… and the CHANGELOG, opened only by the core's trigger table
 
 How to think, ideate, decide, write and check before and after acting. A24 is the router into this section.
 
-`cognition` · 9 file(s) · planned folder `references/cognition/`
+`cognition` · 10 file(s) · planned folder `references/cognition/`
 
 - [references/cognition.md](cognition.md)
 - [references/thinking.md](thinking.md)
@@ -88,6 +88,7 @@ How to think, ideate, decide, write and check before and after acting. A24 is th
 - [references/prompt-optimizer.md](prompt-optimizer.md)
 - [references/humanizer.md](humanizer.md)
 - [references/creative-quality-gates.md](creative-quality-gates.md)
+- [references/lesson-integrity-methods.md](lesson-integrity-methods.md)
 
 ## 4. الفهرس والخرائط / Catalog, maps and environment
 
@@ -301,7 +302,7 @@ Reverse engineering, code graphs, harnesses, repository and app capability trans
 
 Point-in-time research and audit receipts. Evidence, not instructions: re-check live before relying on a number.
 
-`studies` · 20 file(s) · planned folder `references/studies/`
+`studies` · 21 file(s) · planned folder `references/studies/`
 
 - [references/REA_CREATIVE_DISCOVERY_2000_20261019.md](REA_CREATIVE_DISCOVERY_2000_20261019.md)
 - [references/atlas-deep-fusion-20261020.md](atlas-deep-fusion-20261020.md)
@@ -323,3 +324,4 @@ Point-in-time research and audit receipts. Evidence, not instructions: re-check 
 - [references/codex-repos-study-20261023.md](codex-repos-study-20261023.md)
 - [references/rea-superpowers-frontier-20261023.md](rea-superpowers-frontier-20261023.md)
 - [references/atlas-ledger-20261023.md](atlas-ledger-20261023.md)
+- [references/every-joule-study-20261023.md](every-joule-study-20261023.md)

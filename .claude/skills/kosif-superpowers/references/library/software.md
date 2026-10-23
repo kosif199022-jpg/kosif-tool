@@ -24,12 +24,12 @@
 |---|---:|---|
 | `proven` | 111 | ✅ proven: a proof exists in the catalog; still check its requirements here before calling it ready |
 | `ready` | 16 | 🟢 ready: runnable without setup according to the catalog |
-| `documented` | 394 | 📄 documented: a described method; needs building or wiring before it runs |
+| `documented` | 398 | 📄 documented: a described method; needs building or wiring before it runs |
 | `seen` | 16 | 👁 seen: observed in a reference or demo, not executed here |
 | `install` | 32 | 📦 install: needs a package, binary or model first |
 | `key` | 7 | 🔑 key: needs an account, key or paid service (ask before any spend) |
 | `idea` | 2 | 💡 idea: not built |
-| **المجموع** | **578** | |
+| **المجموع** | **582** | |
 
 ## الأدوات القابلة للتشغيل / runnable tools
 
@@ -43,6 +43,7 @@
 | `capability-graph` | باني خريطة القدرات المترابطة | `python3 scripts/capability_graph.py build` | tested-here |
 | `installer-triage` | فرز المثبّتات | `python3 scripts/installer_triage.py scan ./setup.exe` | tested-here |
 | `kosif-remote-commander` | خادم KOSIF Remote Commander | `python3 scripts/kosif_remote_superpowers.py doctor` | tested-here |
+| `lesson-integrity` | فاحص أرقام الدروس والشروح | `python3 scripts/lesson_integrity.py values --registry values.json` | tested-here |
 | `mosamem-rea-fusion` | تكامل مصمم وREA: فحص صور وتوليف مهارات آمن | `python3 scripts/mosamem_rea_fusion.py doctor` | tested-here |
 | `motion-kit-bridge` | جسر توقيتات Motion Starter Kit | `python3 scripts/motion_kit_bridge.py styles` | tested-here |
 | `motion-stack` | مولّد مشاريع بداية لمحركات الحركة | `python3 scripts/motion_stack.py list` | tested-here |
@@ -59,7 +60,7 @@
 | العائلة | القدرات | الفصل |
 |---|---:|---|
 | `app-feature-transfer` | 139 | [app-feature-transfer.md](../powers/app-feature-transfer.md) |
-| `apps-artifacts` | 23 | [apps-artifacts.md](../powers/apps-artifacts.md) |
+| `apps-artifacts` | 27 | [apps-artifacts.md](../powers/apps-artifacts.md) |
 | `atlas-build` | 52 | [atlas-build.md](../powers/atlas-build.md) |
 | `atlas-code` | 247 | [atlas-code.md](../powers/atlas-code.md) |
 | `code-engineering` | 24 | [code-engineering.md](../powers/code-engineering.md) |
@@ -244,6 +245,10 @@
 | `APP-17` | اعرض ثلاثة خيارات بدل الأسئلة | Show three previews instead of asking | documented |  |
 | `APP-18` | فصل المنشئ عن الناقد | Separate maker from critic | documented | chromium, git |
 | `APP-19` | بوابة الإنهاء المرئية | Rendered finish gate | documented |  |
+| `APP-24` | تحدٍّ قابل للحل قبل عرضه | Check an interactive challenge is solvable before posing it | documented |  |
+| `APP-25` | مقياس 1-2-5 وتعريف بطولين | A 1-2-5 gauge scale and a two-length glossary | documented | python3 |
+| `APP-26` | مؤثرات من تسجيلات حقيقية في ملف واحد | One sound sprite cut from real CC0 recordings | documented | python3 |
+| `APP-27` | تفضيلات الحركة والعرض وشاشة تحميل فورية | Motion and display preferences and an inline loader | documented | npm:three |
 | `ABUILD-01` | تنفيذ خارطة الطريق تلقائياً: مرحلة لكل طلب دمج | Autonomous phase-per-PR roadmap execution loop | documented | claude:tools |
 | `ABUILD-02` | مسجل قياس تشغيل بالملاحظة فقط | Observation-only run telemetry recorder | documented |  |
 | `ABUILD-03` | خط وكلاء بأدوار ومراحل وأقفال كتابة واستئناف | Role-squad agent pipeline with stages, locks and resume | documented |  |

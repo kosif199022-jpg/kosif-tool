@@ -24,12 +24,12 @@
 |---|---:|---|
 | `proven` | 94 | ✅ proven: a proof exists in the catalog; still check its requirements here before calling it ready |
 | `ready` | 58 | 🟢 ready: runnable without setup according to the catalog |
-| `documented` | 195 | 📄 documented: a described method; needs building or wiring before it runs |
+| `documented` | 200 | 📄 documented: a described method; needs building or wiring before it runs |
 | `seen` | 3 | 👁 seen: observed in a reference or demo, not executed here |
 | `install` | 94 | 📦 install: needs a package, binary or model first |
 | `key` | 15 | 🔑 key: needs an account, key or paid service (ask before any spend) |
 | `idea` | 5 | 💡 idea: not built |
-| **المجموع** | **464** | |
+| **المجموع** | **469** | |
 
 ## الأدوات القابلة للتشغيل / runnable tools
 
@@ -52,6 +52,7 @@
 | `creative-quality-gate` | بوابة جودة خطة المونتاج | `python3 scripts/creative_quality_gate.py ./my-project/src/plan.json --out ./out/quality-audit.json` | tested-here |
 | `differential-exam` | مصحّح الامتحان الخفي التفاضلي | `python3 scripts/differential_exam.py seal ./exam --out ./exam-seal.json` | tested-here |
 | `kosif-remote-commander` | خادم KOSIF Remote Commander | `python3 scripts/kosif_remote_superpowers.py doctor` | tested-here |
+| `lesson-integrity` | فاحص أرقام الدروس والشروح | `python3 scripts/lesson_integrity.py values --registry values.json` | tested-here |
 | `local-project-audit` | فحص المشروع المحلي دون تشغيل | `python3 scripts/local_project_audit.py ./my-project` | tested-here |
 | `package-skill` | تحزيم المهارة للرفع إلى claude.ai | `python3 scripts/package_skill.py` | tested-here |
 | `prompt-lab` | مختبر البرومبت | `python3 scripts/prompt_lab.py kinds` | tested-here |
@@ -80,7 +81,7 @@
 | `api-testing` | 22 | [api-testing.md](../powers/api-testing.md) |
 | `qa-verification` | 384 | [qa-verification.md](../powers/qa-verification.md) |
 | `security-safety` | 23 | [security-safety.md](../powers/security-safety.md) |
-| `verification-evals` | 35 | [verification-evals.md](../powers/verification-evals.md) |
+| `verification-evals` | 40 | [verification-evals.md](../powers/verification-evals.md) |
 
 ## كل القدرات / every power
 
@@ -435,6 +436,11 @@
 | `CHECK-33` | قائمة سطح الملاحظة | Observable-surface checklist | documented |  |
 | `CHECK-34` | المصحّح يعطي 100% على نفسه أولًا | Scorer must score 100% on itself first | documented | python3 |
 | `CHECK-35` | ملاحظات استرداد صادقة وخط أساس | Honest recovery notes and a measured baseline | documented | npm:rea |
+| `CHECK-36` | سجل قيم بمصدر واقتباس لكل رقم | One value registry: a source and the supporting sentence for every number | documented | python3 |
+| `CHECK-37` | النص يشير إلى الرقم بمعرّفه ويفشل مغلقًا | Text refers to numbers by id and fails closed | documented | python3 |
+| `CHECK-38` | ملف فجوات بدل اختراع رقم | An explicit gaps list instead of an invented number | documented |  |
+| `CHECK-39` | مراجعة حقائق تعيد الرقم المنشور | A fact-check pass that restores the published figure | documented | python3 |
+| `CHECK-40` | دفتر حفظ: ابحث عن كل وحدة | A conservation ledger: account for every unit | documented | python3 |
 | `QA-228` | تعاقب حلقات تشغيل المعاينات في الشبكة | Staggered loop phases for live grids | seen |  |
 | `QA-229` | مقارنة إعادة بناء لقطة بلقطة | Shot-for-shot remake comparison | seen | ffmpeg |
 | `QA-230` | إغلاق حلقة بلا تقطيع | Seamless loop closure | seen |  |

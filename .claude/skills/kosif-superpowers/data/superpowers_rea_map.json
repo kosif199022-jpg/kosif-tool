@@ -471,20 +471,20 @@
  },
  "counts": {
   "broken_links": 0,
-  "evals": 96,
+  "evals": 99,
   "families": 62,
   "gaps": {
    "family_without_tool": 21
   },
-  "powers": 5496,
-  "py_edges": 257,
+  "powers": 5521,
+  "py_edges": 262,
   "repo_tests": 35,
   "roles": {
    "helper": 2,
-   "registered": 127
+   "registered": 130
   },
-  "scripts": 129,
-  "tools": 145
+  "scripts": 132,
+  "tools": 148
  },
  "families": [
   {
@@ -514,8 +514,8 @@
   },
   {
    "id": "apps-artifacts",
-   "powers": 23,
-   "tools": 1
+   "powers": 27,
+   "tools": 2
   },
   {
    "id": "arabic-language",
@@ -699,8 +699,8 @@
   },
   {
    "id": "prompt-craft",
-   "powers": 25,
-   "tools": 4
+   "powers": 41,
+   "tools": 5
   },
   {
    "id": "qa-verification",
@@ -720,7 +720,7 @@
   {
    "id": "self-discovery",
    "powers": 43,
-   "tools": 33
+   "tools": 34
   },
   {
    "id": "shapes-morph-geometry",
@@ -774,8 +774,8 @@
   },
   {
    "id": "verification-evals",
-   "powers": 35,
-   "tools": 13
+   "powers": 40,
+   "tools": 15
   },
   {
    "id": "video-download",
@@ -790,7 +790,7 @@
   {
    "id": "web-research",
    "powers": 24,
-   "tools": 10
+   "tools": 11
   },
   {
    "id": "writing-humanizer",
@@ -1760,6 +1760,16 @@
    "to": "fusionforge"
   },
   {
+   "from": "test_github_top_repos",
+   "kind": "imports",
+   "to": "github_top_repos"
+  },
+  {
+   "from": "test_github_top_repos",
+   "kind": "invokes",
+   "to": "github_top_repos"
+  },
+  {
    "from": "test_hub",
    "kind": "imports",
    "to": "hub"
@@ -1803,6 +1813,11 @@
    "from": "test_kosif_hubs",
    "kind": "imports",
    "to": "powers"
+  },
+  {
+   "from": "test_lesson_integrity",
+   "kind": "imports",
+   "to": "lesson_integrity"
   },
   {
    "from": "test_local_first",
@@ -1878,6 +1893,16 @@
    "from": "test_perspective_color_lab",
    "kind": "imports",
    "to": "perspective_color_lab"
+  },
+  {
+   "from": "test_prompt_lab",
+   "kind": "imports",
+   "to": "prompt_lab"
+  },
+  {
+   "from": "test_prompt_lab",
+   "kind": "invokes",
+   "to": "prompt_lab"
   },
   {
    "from": "test_prompt_pack",
@@ -3819,8 +3844,10 @@
     "fusionforge_shared"
    ],
    "path": "scripts/fusionforge.py",
-   "power_count": 0,
-   "powers": [],
+   "power_count": 1,
+   "powers": [
+    "PROMPT-31"
+   ],
    "role": "registered",
    "tests": [
     "evals/test_fusionforge.py",
@@ -3845,6 +3872,21 @@
    ],
    "tools": [
     "fusionforge-shared"
+   ]
+  },
+  {
+   "ci": false,
+   "id": "github_top_repos",
+   "imported_by": [],
+   "path": "scripts/github_top_repos.py",
+   "power_count": 0,
+   "powers": [],
+   "role": "registered",
+   "tests": [
+    "evals/test_github_top_repos.py"
+   ],
+   "tools": [
+    "github-top-repos"
    ]
   },
   {
@@ -4031,6 +4073,27 @@
    ],
    "tools": [
     "kosif-timeline-demo"
+   ]
+  },
+  {
+   "ci": false,
+   "id": "lesson_integrity",
+   "imported_by": [],
+   "path": "scripts/lesson_integrity.py",
+   "power_count": 5,
+   "powers": [
+    "APP-25",
+    "APP-26",
+    "CHECK-36",
+    "CHECK-37",
+    "CHECK-40"
+   ],
+   "role": "registered",
+   "tests": [
+    "evals/test_lesson_integrity.py"
+   ],
+   "tools": [
+    "lesson-integrity"
    ]
   },
   {
@@ -4386,6 +4449,27 @@
    ],
    "tools": [
     "probe-env"
+   ]
+  },
+  {
+   "ci": false,
+   "id": "prompt_lab",
+   "imported_by": [],
+   "path": "scripts/prompt_lab.py",
+   "power_count": 5,
+   "powers": [
+    "PROMPT-34",
+    "PROMPT-35",
+    "PROMPT-39",
+    "PROMPT-40",
+    "PROMPT-41"
+   ],
+   "role": "registered",
+   "tests": [
+    "evals/test_prompt_lab.py"
+   ],
+   "tools": [
+    "prompt-lab"
    ]
   },
   {
@@ -5122,20 +5206,20 @@
   "areas": {
    "(root)": 8,
    "assets": 4,
-   "data": 118,
+   "data": 121,
    "dua-wednesday": 10,
-   "evals": 89,
+   "evals": 92,
    "examples": 12,
    "montage-pro": 2,
    "proofs": 239,
-   "references": 217,
+   "references": 221,
    "resources": 3,
    "schemas": 5,
-   "scripts": 160,
+   "scripts": 163,
    "templates": 16,
    "vendor": 76
   },
-  "bytes": 55636565,
+  "bytes": 56917716,
   "extensions": {
    "(none)": 8,
    ".bru": 7,
@@ -5143,17 +5227,17 @@
    ".html": 22,
    ".jpg": 23,
    ".js": 14,
-   ".json": 174,
-   ".md": 332,
+   ".json": 177,
+   ".md": 336,
    ".mjs": 9,
    ".png": 6,
-   ".py": 271,
+   ".py": 277,
    ".sh": 5,
    ".ttf": 14,
    ".txt": 54,
    ".woff2": 8
   },
-  "files": 959,
+  "files": 972,
   "symlinks": 0
  }
 }

@@ -2250,6 +2250,48 @@
     "top_k": 8,
     "motion_output": false
    }
+  },
+  {
+   "id": 154,
+   "lang": "ar",
+   "domain": "research",
+   "skills": [
+    "kosif-superpowers"
+   ],
+   "query": "اتأكد إن كل رقم في سكربت الفيديو التعليمي ليه مصدر ومفيش رقم متألف",
+   "files": [],
+   "expected_behavior": [
+    "Routes to the lesson integrity checker (lesson-integrity) or the value-registry method (CHECK-36)",
+    "Leaves an unsourced number as a gap instead of inventing one"
+   ],
+   "routing": {
+    "expect_any": [
+     "TOOL",
+     "CHECK"
+    ],
+    "top_k": 5
+   }
+  },
+  {
+   "id": 155,
+   "lang": "en",
+   "domain": "research",
+   "skills": [
+    "kosif-superpowers"
+   ],
+   "query": "check the energy Sankey of my explainer balances, every joule in equals out",
+   "files": [],
+   "expected_behavior": [
+    "Routes to lesson_integrity.py ledger or the conservation ledger method (CHECK-40)",
+    "Reports the unaccounted amount instead of drawing an unbalanced diagram"
+   ],
+   "routing": {
+    "expect_any": [
+     "TOOL",
+     "CHECK"
+    ],
+    "top_k": 5
+   }
   }
  ]
 }

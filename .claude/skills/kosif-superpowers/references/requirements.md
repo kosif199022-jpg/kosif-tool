@@ -14,13 +14,13 @@
 
 | # | requirement | kind | powers unlocked | families | here now |
 |---|---|---|---|---|---|
-| 1 | [`python3`](#req-python3) | bin | 695 | engines-render-pipeline, qa-verification, mental-models, runnable-tools, music-beat-sound |  |
+| 1 | [`python3`](#req-python3) | bin | 701 | engines-render-pipeline, qa-verification, mental-models, runnable-tools, music-beat-sound |  |
 | 2 | [`npm:hyperframes`](#req-npm-hyperframes) | npm | 461 | transitions-cuts, engines-render-pipeline, camera-composition-layout, typography-latin, qa-verification |  |
 | 3 | [`ffmpeg`](#req-ffmpeg) | bin | 424 | engines-render-pipeline, qa-verification, transitions-cuts, music-beat-sound, photo-video-footage |  |
 | 4 | [`chromium`](#req-chromium) | bin | 353 | engines-render-pipeline, software-investigation, app-feature-transfer, qa-verification, transitions-cuts |  |
 | 5 | [`npm:rea`](#req-npm-rea) | npm | 270 | software-investigation, runnable-tools, app-feature-transfer, verification-evals |  |
 | 6 | [`npm:gsap`](#req-npm-gsap) | npm | 238 | transitions-cuts, engines-render-pipeline, camera-composition-layout, easing-timing-rhythm, typography-latin |  |
-| 7 | [`npm:three`](#req-npm-three) | npm | 176 | transitions-cuts, engines-render-pipeline, light-glow-bloom, texture-material, 3d-spatial |  |
+| 7 | [`npm:three`](#req-npm-three) | npm | 177 | transitions-cuts, engines-render-pipeline, light-glow-bloom, texture-material, 3d-spatial |  |
 | 8 | [`key:unspecified`](#req-key-unspecified) | key | 175 | engines-render-pipeline, atlas-code, ai-generation, camera-composition-layout, qa-verification |  |
 | 9 | [`node`](#req-node) | bin | 169 | qa-verification, atlas-code, engines-render-pipeline, color-palette-grading, ui-product-device |  |
 | 10 | [`pip:numpy`](#req-pip-numpy) | pip | 131 | app-feature-transfer, music-beat-sound, qa-verification, transitions-cuts, media-image-audio |  |
@@ -145,8 +145,8 @@
 
 - **النوع / kind:** bin (أداة)
 - **التثبيت / install:** `apt-get install -y python3 python3-pip python3-venv`
-- **يفتح / unlocks:** 695 powers
-- **بالحالة / by status:** proven 240 · documented 191 · ready 148 · install 100 · key 13 · seen 3
+- **يفتح / unlocks:** 701 powers
+- **بالحالة / by status:** proven 240 · documented 197 · ready 148 · install 100 · key 13 · seen 3
 - **العائلات / families:** engines-render-pipeline (97), qa-verification (79), mental-models (61), runnable-tools (57), music-beat-sound (45), app-feature-transfer (24), atlas-code (18), photo-video-footage (16)
 - **أمثلة / examples:** `ANLY-08` statsmodels OLS and time-series models · `ANLY-14` altair / Vega-Lite chart specs · `ANLY-17` Gradient boosting (XGBoost, LightGBM) · `ANLY-21` Convex optimisation with cvxpy · `ANLY-23` Graph algorithms with networkx · `APP-06` HTML to MP4 renderer (repo tool)
 
@@ -205,8 +205,8 @@
 
 - **النوع / kind:** npm (حزمة npm)
 - **التثبيت / install:** `npm i three@0.186.1 esbuild`
-- **يفتح / unlocks:** 176 powers
-- **بالحالة / by status:** install 99 · documented 26 · ready 26 · proven 18 · seen 3 · idea 2 · key 2
+- **يفتح / unlocks:** 177 powers
+- **بالحالة / by status:** install 99 · documented 27 · ready 26 · proven 18 · seen 3 · idea 2 · key 2
 - **العائلات / families:** transitions-cuts (46), engines-render-pipeline (29), light-glow-bloom (18), texture-material (15), 3d-spatial (11), color-palette-grading (10), particles-fluids-physics (10), maps-geo (5)
 - **أمثلة / examples:** `3D-18` Raw-WebGL procedural crystal shards · `COLOR-36` Shader palettes as uniforms (Crystal World) · `COLOR-50` Harmony generator 2D/3D + harmony detector · `COLOR-64` Vignette in every engine · `EASE-01` Everything is a function of t · `ENG-04` WebGL robustness guards
 
@@ -1357,4 +1357,4 @@
 <a id="none"></a>
 ## قدرات بلا مستلزمات خارجية / no external requirement
 
-2489 powers need only Claude and this skill (thinking, writing, planning, review protocols). The rest name at least one requirement above.
+2491 powers need only Claude and this skill (thinking, writing, planning, review protocols). The rest name at least one requirement above.
