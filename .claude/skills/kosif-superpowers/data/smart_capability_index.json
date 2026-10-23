@@ -1,10 +1,10 @@
 {
   "schema": "kosif.smart-capability-index.v1",
   "origin": "data/powers/*.json (catalog); no original records changed",
-  "catalog_powers": 5512,
+  "catalog_powers": 5545,
   "group_count": 15,
   "family_count": 62,
-  "tool_count": 147,
+  "tool_count": 150,
   "groups": [
     {
       "id": "research",
@@ -17,9 +17,9 @@
       ],
       "keywords": "research web source citations evidence knowledge search بحث مصادر مراجع معرفة",
       "workflow": [],
-      "count": 56,
+      "count": 60,
       "status_counts": {
-        "documented": 23,
+        "documented": 27,
         "idea": 1,
         "install": 2,
         "key": 9,
@@ -27,8 +27,8 @@
       },
       "family_counts": {
         "atlas-research": 11,
-        "knowledge-graph": 21,
-        "web-research": 24
+        "knowledge-graph": 23,
+        "web-research": 26
       },
       "examples": [
         {
@@ -74,9 +74,9 @@
       ],
       "keywords": "think reasoning idea brainstorm strategy plan finance decision تحليل تخطيط ابتكار قرار",
       "workflow": [],
-      "count": 335,
+      "count": 338,
       "status_counts": {
-        "documented": 308,
+        "documented": 311,
         "install": 2,
         "proven": 17,
         "ready": 8
@@ -86,10 +86,10 @@
         "atlas-strategy": 72,
         "creativity-engine": 29,
         "mental-models": 63,
-        "planning-execution": 12,
+        "planning-execution": 14,
         "prompt-craft": 41,
         "strategy-finance": 18,
-        "thinking-core": 46
+        "thinking-core": 47
       },
       "examples": [
         {
@@ -130,16 +130,16 @@
       ],
       "keywords": "agent orchestration tool routing discover automation وكلاء أدوات توجيه بحث",
       "workflow": [],
-      "count": 159,
+      "count": 168,
       "status_counts": {
-        "documented": 57,
+        "documented": 65,
         "install": 8,
         "key": 2,
         "proven": 87,
-        "ready": 5
+        "ready": 6
       },
       "family_counts": {
-        "agent-orchestration": 46,
+        "agent-orchestration": 55,
         "runnable-tools": 70,
         "self-discovery": 43
       },
@@ -190,14 +190,14 @@
         "الاختبار",
         "النشر"
       ],
-      "count": 578,
+      "count": 580,
       "status_counts": {
-        "documented": 394,
+        "documented": 395,
         "idea": 2,
         "install": 32,
         "key": 7,
         "proven": 111,
-        "ready": 16,
+        "ready": 17,
         "seen": 16
       },
       "family_counts": {
@@ -205,7 +205,7 @@
         "apps-artifacts": 23,
         "atlas-build": 52,
         "atlas-code": 247,
-        "code-engineering": 24,
+        "code-engineering": 26,
         "ui-product-device": 93
       },
       "examples": [
@@ -254,9 +254,9 @@
         "الدمج في مشهد/لوحة",
         "التصدير والتحقق"
       ],
-      "count": 300,
+      "count": 306,
       "status_counts": {
-        "documented": 83,
+        "documented": 89,
         "idea": 8,
         "install": 31,
         "key": 4,
@@ -266,10 +266,10 @@
       },
       "family_counts": {
         "brand-logo-identity": 43,
-        "diagrams-explainers-code": 67,
-        "hand-drawn-draw-on": 63,
+        "diagrams-explainers-code": 69,
+        "hand-drawn-draw-on": 65,
         "pixel-retro-stylized": 32,
-        "shapes-morph-geometry": 95
+        "shapes-morph-geometry": 97
       },
       "examples": [
         {
@@ -317,9 +317,9 @@
         "التوليد الاختياري",
         "تصدير النتيجة"
       ],
-      "count": 319,
+      "count": 320,
       "status_counts": {
-        "documented": 95,
+        "documented": 96,
         "idea": 2,
         "install": 27,
         "key": 35,
@@ -328,7 +328,7 @@
         "seen": 22
       },
       "family_counts": {
-        "ai-generation": 93,
+        "ai-generation": 94,
         "atlas-media": 27,
         "color-palette-grading": 87,
         "media-image-audio": 41,
@@ -380,9 +380,9 @@
         "المحاكاة/التحريك",
         "الرندر والتحقق"
       ],
-      "count": 755,
+      "count": 758,
       "status_counts": {
-        "documented": 125,
+        "documented": 128,
         "idea": 4,
         "install": 258,
         "key": 31,
@@ -391,8 +391,8 @@
         "seen": 74
       },
       "family_counts": {
-        "3d-spatial": 52,
-        "engines-render-pipeline": 443,
+        "3d-spatial": 53,
+        "engines-render-pipeline": 445,
         "light-glow-bloom": 87,
         "particles-fluids-physics": 77,
         "texture-material": 96
@@ -445,23 +445,23 @@
         "التحريك والمونتاج",
         "التصدير"
       ],
-      "count": 1228,
+      "count": 1233,
       "status_counts": {
-        "documented": 269,
+        "documented": 271,
         "idea": 33,
         "install": 314,
         "key": 23,
         "proven": 117,
-        "ready": 180,
+        "ready": 183,
         "seen": 292
       },
       "family_counts": {
         "camera-composition-layout": 425,
         "characters-rigs": 51,
-        "easing-timing-rhythm": 102,
+        "easing-timing-rhythm": 106,
         "formats-platforms": 70,
         "story-direction-ideas": 95,
-        "transitions-cuts": 474,
+        "transitions-cuts": 475,
         "video-download": 11
       },
       "examples": [
@@ -1811,6 +1811,23 @@
       "what": "كاميرا مشي بمنظور الشخص الأول داخل لوحة، مجرة نقاط المعاني، مشهد «مجرة المراجعة»، وسرد ثلاثي بالتمرير / أفكار بلا كود جاهز. — First-person walks, embedding galaxies, an audit galaxy and scroll-driven 3D — no ready code."
     },
     {
+      "id": "3D-G01",
+      "family": "3d-spatial",
+      "group": "3d",
+      "domain": "motion",
+      "name_en": "Deterministic three.js render loop",
+      "name_ar": "حلقة رندر three.js حتمية",
+      "status": "documented",
+      "requires": [
+        "python3",
+        "chromium",
+        "npm:three"
+      ],
+      "proof": [],
+      "source": "3d-spatial.json",
+      "what": "حرّك المشهد بالزمن لا بعدد الإطارات، واضبط الألوان والدقة مرة واحدة، وفي التصدير اجعل الزمن مدخلًا تبحث إليه لا ساعة حقيقية. — Drive the scene by time, not frame count, set colour and resolution once, and for export make time an input you seek to, not the wall clock."
+    },
+    {
       "id": "AGENT-01",
       "family": "agent-orchestration",
       "group": "agents",
@@ -2471,6 +2488,132 @@
       "proof": [],
       "source": "agent-orchestration.json",
       "what": "استخرج ذاكرة من كل جلسة منتهية خاملة ثم ادمج، بمهام محجوزة وسقف توازٍ وتنقيح أسرار. — Extract a memory from each idle finished session, then consolidate, with leased jobs, a concurrency cap and secret redaction."
+    },
+    {
+      "id": "AGENT-47",
+      "family": "agent-orchestration",
+      "group": "agents",
+      "domain": "mind",
+      "name_en": "Checkpointed state graph with resume and approval interrupts",
+      "name_ar": "رسم حالة بنقاط حفظ واستئناف",
+      "status": "documented",
+      "requires": [],
+      "proof": [],
+      "source": "agent-orchestration.json",
+      "what": "اكتب سير العمل كعقد وحواف على حالة مشتركة، واحفظ نقطة بعد كل عقدة، وتوقف قبل العقد الخطرة لموافقة المستخدم. — Model the workflow as nodes and edges over one shared state, checkpoint after every node, and pause before risky nodes for the user's approval."
+    },
+    {
+      "id": "AGENT-48",
+      "family": "agent-orchestration",
+      "group": "agents",
+      "domain": "mind",
+      "name_en": "Role-goal crew with expected outputs",
+      "name_ar": "فريق بأدوار ومهام ومخرج متوقع",
+      "status": "documented",
+      "requires": [],
+      "proof": [],
+      "source": "agent-orchestration.json",
+      "what": "لكل وكيل دور وهدف وحدود، ولكل مهمة وصف ومخرج متوقع مكتوب ووكيل مسؤول ومهام سابقة تغذيها. — Each agent has a role, a goal and limits; each task has a description, a written expected output, one owner and the earlier tasks that feed it."
+    },
+    {
+      "id": "AGENT-49",
+      "family": "agent-orchestration",
+      "group": "agents",
+      "domain": "mind",
+      "name_en": "SOP assembly line with document handoffs",
+      "name_ar": "خط إنتاج بإجراءات قياسية ووثائق تسليم",
+      "status": "documented",
+      "requires": [],
+      "proof": [],
+      "source": "agent-orchestration.json",
+      "what": "كل دور ينشر وثيقة منظمة بقالب ثابت (متطلبات، تصميم، قائمة مهام، كود، تقرير اختبار)، والدور التالي يقرأ الوثيقة لا المحادثة. — Each role publishes a structured document from a fixed template, and the next role reads the document, not the chat."
+    },
+    {
+      "id": "AGENT-50",
+      "family": "agent-orchestration",
+      "group": "agents",
+      "domain": "mind",
+      "name_en": "Memory decision step: add, update, delete or no-op",
+      "name_ar": "قرار الذاكرة: إضافة أو تحديث أو حذف أو لا شيء",
+      "status": "ready",
+      "requires": [
+        "python3"
+      ],
+      "proof": [
+        "kosif-tool/.claude/skills/kosif-superpowers/scripts/memory_ops.py",
+        "kosif-tool/.claude/skills/kosif-superpowers/evals/test_memory_ops.py"
+      ],
+      "source": "agent-orchestration.json",
+      "what": "قبل حفظ أي معلومة قارنها بالمحفوظ: جديدة تُضاف، وتعديل لقيمة قديمة يُحدّث مع حفظ القديم في السجل، والتراجع يحذف، والمكرر لا يُحفظ. — Before storing a fact compare it with the store: new is added, a changed value updates with the old one kept in history, a retraction deletes, a du"
+    },
+    {
+      "id": "AGENT-51",
+      "family": "agent-orchestration",
+      "group": "agents",
+      "domain": "mind",
+      "name_en": "Tiered self-editing memory",
+      "name_ar": "ذاكرة بطبقات يحررها الوكيل",
+      "status": "documented",
+      "requires": [],
+      "proof": [],
+      "source": "agent-orchestration.json",
+      "what": "كتل صغيرة دائمة في السياق (من المستخدم، ما المشروع) بحد حجم، ومخزن أرشيفي يُبحث فيه عند الحاجة، والوكيل يعدّل الكتل بأدوات صريحة. — Small always-in-context blocks with size limits, an archival store searched on demand, and explicit tools for the agent to edit the blocks."
+    },
+    {
+      "id": "AGENT-52",
+      "family": "agent-orchestration",
+      "group": "agents",
+      "domain": "mind",
+      "name_en": "Session observation capture and injection",
+      "name_ar": "التقاط ملاحظات الجلسة وحقنها في التالية",
+      "status": "documented",
+      "requires": [],
+      "proof": [],
+      "source": "agent-orchestration.json",
+      "what": "سجّل ما فعله الوكيل في الجلسة (أوامر، ملفات، قرارات) واضغطه في ملخص عند الانتهاء، واحقن الملخص المناسب في بداية الجلسة التالية. — Record what the agent did (commands, files, decisions), compress it into a summary at the end, and inject the relevant summary at the next session's s"
+    },
+    {
+      "id": "AGENT-53",
+      "family": "agent-orchestration",
+      "group": "agents",
+      "domain": "mind",
+      "name_en": "Code-as-action agent",
+      "name_ar": "وكيل يتصرف بالكود",
+      "status": "documented",
+      "requires": [
+        "python3"
+      ],
+      "proof": [],
+      "source": "agent-orchestration.json",
+      "what": "بدل أن يطلب الوكيل أداة واحدة كل خطوة، يكتب مقطع بايثون يستدعي الأدوات كدوال ويجمع نتائجها، ويُنفَّذ في بيئة معزولة بحدود. — Instead of one tool call per step the agent writes a Python snippet that calls tools as functions and combines their results, run in a sandbox with limits."
+    },
+    {
+      "id": "AGENT-54",
+      "family": "agent-orchestration",
+      "group": "agents",
+      "domain": "mind",
+      "name_en": "Tripwire guardrails and specialist handoffs",
+      "name_ar": "حواجز تفعيل وتسليم لمتخصص",
+      "status": "documented",
+      "requires": [
+        "key:openai"
+      ],
+      "proof": [],
+      "source": "agent-orchestration.json",
+      "what": "فحص دخول يعمل بالتوازي مع الوكيل ويوقفه فورًا إن انطلق، وفحص خروج على الناتج النهائي، وتسليم المهمة لوكيل متخصص كاستدعاء أداة بسجل مفلتر. — An input check that runs alongside the agent and halts it when tripped, an output check on the final result, and handoff to a specialist as "
+    },
+    {
+      "id": "AGENT-55",
+      "family": "agent-orchestration",
+      "group": "agents",
+      "domain": "mind",
+      "name_en": "Replayable event-stream agent",
+      "name_ar": "تيار أحداث قابل لإعادة التشغيل",
+      "status": "documented",
+      "requires": [],
+      "proof": [],
+      "source": "agent-orchestration.json",
+      "what": "كل فعل وكل ملاحظة يُضاف إلى تيار أحداث واحد مرتب، والتنفيذ في بيئة معزولة، والأحداث القديمة تُلخَّص لا تُحذف. — Every action and observation is appended to one ordered event stream, execution happens in a sandbox, and old events are condensed, not dropped."
     },
     {
       "id": "GEN-01",
@@ -4214,6 +4357,23 @@
       ],
       "source": "ai-generation.json",
       "what": "ولّد لقطة طويلة متصلة ثم قصّها على إيقاع المرجع، بدل توليد كل لقطة وحدها. — Generate one long continuous take and cut it to the reference rhythm instead of generating every shot separately."
+    },
+    {
+      "id": "GEN-G01",
+      "family": "ai-generation",
+      "group": "images",
+      "domain": "motion",
+      "name_en": "Topic-to-short pipeline with reviewable stages",
+      "name_ar": "خط إنتاج من موضوع إلى فيديو قصير",
+      "status": "documented",
+      "requires": [
+        "node",
+        "python3",
+        "chromium"
+      ],
+      "proof": [],
+      "source": "ai-generation.json",
+      "what": "موضوع ← نص ← كلمات بحث لكل جملة ← لقطات مرخصة ← صوت ← ترجمة بتوقيت الكلمات ← تجميع مع خفض الموسيقى، وكل مرحلة ملف يُراجع قبل التالية. — Topic → script → search terms per sentence → licensed clips → voice → word-timed subtitles → assembly with ducked music, each stage a file revie"
     },
     {
       "id": "API-01",
@@ -29519,6 +29679,37 @@
       "what": "تعريف عقود بيانات لإطارات pandas وPolars وفرضها. — Declare and enforce schemas on pandas/Polars dataframes (data contracts). (Pandera, ★4.5k, MIT)."
     },
     {
+      "id": "CODE-25",
+      "family": "code-engineering",
+      "group": "software",
+      "domain": "code",
+      "name_en": "Ranked repository map",
+      "name_ar": "خريطة مستودع مرتبة بالأهمية",
+      "status": "ready",
+      "requires": [
+        "python3"
+      ],
+      "proof": [
+        "kosif-tool/.claude/skills/kosif-superpowers/scripts/repo_map.py",
+        "kosif-tool/.claude/skills/kosif-superpowers/evals/test_repo_map.py"
+      ],
+      "source": "code-engineering.json",
+      "what": "أهم الملفات والتعريفات في مستودع ضمن ميزانية صغيرة، مرتبة بمن يشير إليها أكثر. — The most important files and definitions of a repository within a small budget, ranked by how much the rest of the code refers to them."
+    },
+    {
+      "id": "CODE-26",
+      "family": "code-engineering",
+      "group": "software",
+      "domain": "code",
+      "name_en": "Search/replace edit blocks",
+      "name_ar": "تعديلات بكتل بحث واستبدال",
+      "status": "documented",
+      "requires": [],
+      "proof": [],
+      "source": "code-engineering.json",
+      "what": "عبّر عن كل تعديل كنص أصلي حرفي ونص بديل، واشترط أن يطابق الأصلي موضعًا واحدًا، وافشل بصوت عالٍ إن لم يوجد، ثم شغّل الفحص بعد كل تعديل. — Express each edit as an exact original block and its replacement, require the original to match exactly once, fail loudly when it does not, and"
+    },
+    {
       "id": "COLOR-01",
       "family": "color-palette-grading",
       "group": "images",
@@ -33425,6 +33616,32 @@
       "what": "للحظة «التحليل» جمّد إطارًا حادًا واحدًا بدل الإبطاء، عتّمه 30٪ وانزع إشباعه 40٪، ثم شبكة أرض بيضاء بحد داكن، 20–30 نقطة مميزة، و3–4 صناديق بأقواس زوايا سميكة وبطاقات اسم وإحداثيات. — Hold one sharp frame, dim 30 % and desaturate 40 %, then grid, 20–30 feature points and 3–4 brac"
     },
     {
+      "id": "EXPL-G01",
+      "family": "diagrams-explainers-code",
+      "group": "drawing",
+      "domain": "motion",
+      "name_en": "Explainer scene grammar",
+      "name_ar": "قواعد مشهد الشرح الرياضي",
+      "status": "documented",
+      "requires": [],
+      "proof": [],
+      "source": "diagrams-explainers-code.json",
+      "what": "فكرة واحدة لكل مشهد: اكتب أو ارسم العنصر عند تقديمه، حوّله عند تغيّر معناه، تتابع بنسبة تأخير للمجموعات، حرّك الكاميرا نحو التفصيلة، واترك وقفة بعد كل خطوة. — One idea per scene: write or draw an element when it is introduced, transform it when its meaning changes, lag groups, mo"
+    },
+    {
+      "id": "EXPL-G02",
+      "family": "diagrams-explainers-code",
+      "group": "drawing",
+      "domain": "motion",
+      "name_en": "Architecture diagram as code, revealed by cluster",
+      "name_ar": "مخطط بنية سحابية بالكود ثم كشفه",
+      "status": "documented",
+      "requires": [],
+      "proof": [],
+      "source": "diagrams-explainers-code.json",
+      "what": "اكتب مخطط البنية كودًا (عُقد بأيقونات مزود الخدمة ومجموعات وحواف)، ولّده صورة متجهة، ثم اكشفه مجموعة بعد مجموعة مع السرد. — Write the architecture as code (provider-icon nodes, clusters, edges), render it to a vector image, then reveal it cluster by cluster with the narration."
+    },
+    {
       "id": "DOC-01",
       "family": "documents-office",
       "group": "documents",
@@ -35806,6 +36023,78 @@
       ],
       "source": "easing-timing-rhythm.json",
       "what": "الضربة الكبرى في الفيلم تُبنى: تراجع تمهيدي ثم دفع متسارع ثم تركيز ثم ارتطام، مع اهتزاز بتردد عالٍ قصير العمر. — Build the film's main hit: anticipation dip, accelerating push, rack focus, snap, with a short high-frequency shake."
+    },
+    {
+      "id": "EASE-G01",
+      "family": "easing-timing-rhythm",
+      "group": "motion",
+      "domain": "motion",
+      "name_en": "Spring solved frame by frame",
+      "name_ar": "نابض بالفيزياء يطبع كل إطار",
+      "status": "ready",
+      "requires": [
+        "python3",
+        "npm:react"
+      ],
+      "proof": [
+        "kosif-tool/.claude/skills/kosif-superpowers/scripts/motion_physics.py",
+        "kosif-tool/.claude/skills/kosif-superpowers/evals/test_motion_physics.py"
+      ],
+      "source": "easing-timing-rhythm.json",
+      "what": "احسب النابض من الكتلة والصلابة والتخميد لا من مدة، واطبع قيمته في كل إطار وزمن استقراره ونسبة تجاوزه، أو كإطارات CSS. — Solve the spring from mass, stiffness and damping instead of a duration, and print its value every frame, its settle time and overshoot, or CSS @keyframes."
+    },
+    {
+      "id": "EASE-G02",
+      "family": "easing-timing-rhythm",
+      "group": "motion",
+      "domain": "motion",
+      "name_en": "Browser-exact cubic-bezier sampling",
+      "name_ar": "منحنى CSS محسوب كما يحسبه المتصفح",
+      "status": "ready",
+      "requires": [
+        "python3"
+      ],
+      "proof": [
+        "kosif-tool/.claude/skills/kosif-superpowers/scripts/motion_physics.py",
+        "kosif-tool/.claude/skills/kosif-superpowers/evals/test_motion_physics.py"
+      ],
+      "source": "easing-timing-rhythm.json",
+      "what": "حوّل أي cubic-bezier أو اسم تسهيل CSS إلى قيم لكل إطار بنفس حل المتصفح، لتطابق الحركة في الفيديو ما يظهر في الصفحة. — Turn any cubic-bezier or named CSS easing into per-frame values with the browser's solution, so the rendered film matches the page."
+    },
+    {
+      "id": "EASE-G03",
+      "family": "easing-timing-rhythm",
+      "group": "motion",
+      "domain": "motion",
+      "name_en": "Stagger from an origin on a grid",
+      "name_ar": "تتابع من نقطة أصل على شبكة",
+      "status": "ready",
+      "requires": [
+        "python3",
+        "npm:animejs"
+      ],
+      "proof": [
+        "kosif-tool/.claude/skills/kosif-superpowers/scripts/motion_physics.py",
+        "kosif-tool/.claude/skills/kosif-superpowers/evals/test_motion_physics.py"
+      ],
+      "source": "easing-timing-rhythm.json",
+      "what": "وزّع التأخير على العناصر حسب بعدها عن نقطة أصل (الأول، الأخير، المنتصف، الأطراف، عنصر بعينه) في صف أو شبكة، مع منحنى للتأخير نفسه. — Spread delays by each element's distance from an origin (first, last, center, edges, a given index) in a row or grid, with an easing on the delays "
+    },
+    {
+      "id": "EASE-G04",
+      "family": "easing-timing-rhythm",
+      "group": "motion",
+      "domain": "motion",
+      "name_en": "Timeline with relative offsets and labels",
+      "name_ar": "خط زمني بإزاحات نسبية وعلامات",
+      "status": "documented",
+      "requires": [
+        "npm:gsap",
+        "npm:animejs"
+      ],
+      "proof": [],
+      "source": "easing-timing-rhythm.json",
+      "what": "ابنِ المشهد كخط زمني واحد تُوضع فيه كل حركة بإزاحة نسبية من السابقة أو عند علامة مسماة، فيتغير التوقيت كله بتعديل رقم واحد. — Build the scene as one timeline where each move is placed by a relative offset from the previous one or at a named label, so retiming means editing one nu"
     },
     {
       "id": "ENG-01",
@@ -43732,6 +44021,34 @@
       "what": "خط أنابيب بايثون كامل داخل المهارة: تحليل المرجع (لقطات، انتقالات، طبقة نص بألفا حقيقية وظل بالمربعات الصغرى، مطابقة خط، مظهر لوني) ثم بناء بإطار واحد لكل إطار مرجعي: نقل لوني Reinhard كـLUT، كين بيرنز، الانتقال بمنحناه المقاس، تعتيم وحبيبات معايرة، والنص بالخط المطابَق وحركته ال"
     },
     {
+      "id": "ENG-G01",
+      "family": "engines-render-pipeline",
+      "group": "3d",
+      "domain": "motion",
+      "name_en": "Lottie export that plays everywhere",
+      "name_ar": "تصدير لوتي يعمل في كل مشغل",
+      "status": "documented",
+      "requires": [
+        "npm:lottie"
+      ],
+      "proof": [],
+      "source": "engines-render-pipeline.json",
+      "what": "صمم بطبقات أشكال متجهة فقط، وتجنب المؤثرات والتعبيرات غير المدعومة، وضع علامات للمقاطع، واختبر في المشغل قبل التسليم. — Design with vector shape layers only, avoid unsupported effects and expressions, add markers for segments, and test in the player before delivery."
+    },
+    {
+      "id": "ENG-G02",
+      "family": "engines-render-pipeline",
+      "group": "3d",
+      "domain": "motion",
+      "name_en": "2D scenes with thousands of sprites",
+      "name_ar": "رسم ثنائي الأبعاد بآلاف العناصر",
+      "status": "documented",
+      "requires": [],
+      "proof": [],
+      "source": "engines-render-pipeline.json",
+      "what": "اجمع الصور في أطلس واحد، وارسم العناصر الكثيرة في حاوية جسيمات، وحرّك بفرق الزمن، فتبقى آلاف العناصر سلسة. — Pack images into one atlas, draw many elements in a particle container and move them by time delta, so thousands stay smooth."
+    },
+    {
       "id": "FMT-01",
       "family": "formats-platforms",
       "group": "motion",
@@ -46112,6 +46429,32 @@
       "what": "كل إطار يُحسب من الزمن المطلق (لا ساعة متراكمة): القفز والإعادة بلا انجراف والرندر المتوازي ممكن؛ سنّ القلم مربوط بنهاية الخط النشط وكشف الحبر على المسار وملمس ورق؛ الصوت الأصلي مسار رئيسي. اذكر دقة الرسم الأصلية (720×1280 مكبّرة إلى 1080×1920 في المشروع) وأن المشاهد تقريبية حين "
     },
     {
+      "id": "DRAW-G01",
+      "family": "hand-drawn-draw-on",
+      "group": "drawing",
+      "domain": "motion",
+      "name_en": "Seeded rough hand-drawn rendering",
+      "name_ar": "رسم يدوي خشن ثابت البذرة",
+      "status": "documented",
+      "requires": [],
+      "proof": [],
+      "source": "hand-drawn-draw-on.json",
+      "what": "ارسم الأشكال بمظهر يدوي (خشونة، انحناء، تهشير) ببذرة ثابتة لكل شكل حتى لا يرتعش عند إعادة الرسم، ثم اكشفه بطول المسار. — Draw shapes with a hand-made look (roughness, bowing, hachure) with one fixed seed per shape so it does not jitter on redraw, then reveal it by path length."
+    },
+    {
+      "id": "DRAW-G02",
+      "family": "hand-drawn-draw-on",
+      "group": "drawing",
+      "domain": "motion",
+      "name_en": "Drag momentum and rubber-band edges",
+      "name_ar": "زخم السحب والارتداد المطاطي",
+      "status": "documented",
+      "requires": [],
+      "proof": [],
+      "source": "hand-drawn-draw-on.json",
+      "what": "بعد إفلات السحب تستمر الحركة بسرعتها ثم تتباطأ أسيًا، وعند الحافة تقاوم بمعامل مطاطي ثم ترتد. — After a drag is released motion continues at its speed and decays exponentially; at the edge it resists with a rubber-band factor and springs back."
+    },
+    {
       "id": "GRAPH-01",
       "family": "knowledge-graph",
       "group": "research",
@@ -46484,6 +46827,36 @@
       ],
       "source": "knowledge-graph.json",
       "what": "حين يكون commit الفهرس المستضاف أحدث من نسختك، تكشف rank_files وfile_neighbors ملفات لا تملكها محليًا: اجلب الفرع الرئيسي وادمجه ثم أعد الاستعلام؛ واحفظ القرارات بـ remember() لمراجعة الفريق. — When the hosted index is ahead of your checkout, rank_files/file_neighbors surface fil"
+    },
+    {
+      "id": "GRAPH-22",
+      "family": "knowledge-graph",
+      "group": "research",
+      "domain": "code",
+      "name_en": "Graph RAG with community summaries",
+      "name_ar": "استرجاع بالرسم المعرفي وملخصات المجتمعات",
+      "status": "documented",
+      "requires": [
+        "pip:chromadb"
+      ],
+      "proof": [],
+      "source": "knowledge-graph.json",
+      "what": "استخرج الكيانات والعلاقات من كل مقطع، وجمّعها في مجتمعات، ولخص كل مجتمع؛ الأسئلة العامة تُجاب بتجميع ملخصات المجتمعات، والمحددة من جوار الكيان. — Extract entities and relations per chunk, cluster them into communities, summarise each; global questions map-reduce over community su"
+    },
+    {
+      "id": "GRAPH-23",
+      "family": "knowledge-graph",
+      "group": "research",
+      "domain": "code",
+      "name_en": "Dual-level retrieval with incremental graph updates",
+      "name_ar": "استرجاع بمستويين وتحديث تدريجي",
+      "status": "documented",
+      "requires": [
+        "pip:chromadb"
+      ],
+      "proof": [],
+      "source": "knowledge-graph.json",
+      "what": "قسّم كلمات السؤال إلى مستوى منخفض (كيانات محددة) ومرتفع (موضوعات)، واسترجع بالاثنين، وأضف المستندات الجديدة للرسم دون إعادة بنائه. — Split the query's keywords into low-level (specific entities) and high-level (themes), retrieve with both, and add new documents to the graph witho"
     },
     {
       "id": "GLOW-01",
@@ -59879,6 +60252,34 @@
       "what": "The last milestone names the verification receipt: fps, duration, audio, tests, links — what the user can check."
     },
     {
+      "id": "PLAN-13",
+      "family": "planning-execution",
+      "group": "thinking",
+      "domain": "mind",
+      "name_en": "Spec-driven development",
+      "name_ar": "تطوير يقوده المواصفات",
+      "status": "documented",
+      "requires": [],
+      "proof": [],
+      "source": "planning-execution.json",
+      "what": "مبادئ ثابتة أولًا، ثم مواصفة تقول ماذا ولماذا دون كيف، ثم توضيح المبهم، ثم خطة تقنية، ثم مهام مرتبة بالاختبار أولًا، ثم التنفيذ، مع فحص اتساق بينها. — Fixed principles first, then a spec of what and why without how, then clarification, a technical plan, ordered test-first tasks, "
+    },
+    {
+      "id": "PLAN-14",
+      "family": "planning-execution",
+      "group": "thinking",
+      "domain": "mind",
+      "name_en": "Brainstorm, plan, then a test-first subagent per task",
+      "name_ar": "عصف ثم خطة ثم وكيل لكل مهمة بالاختبار أولًا",
+      "status": "documented",
+      "requires": [
+        "claude:tools"
+      ],
+      "proof": [],
+      "source": "planning-execution.json",
+      "what": "صمّم بالأسئلة قبل الكود، واكتب خطة مهام صغيرة بملفاتها وطريقة تحققها، وأعطِ كل مهمة لوكيل فرعي جديد، وراجع بين المهام، ولا تقل «تم» قبل التحقق. — Design by questions before code, write a plan of small tasks with files and verification, give each task to a fresh subagent, review b"
+    },
+    {
       "id": "PROMPT-01",
       "family": "prompt-craft",
       "group": "thinking",
@@ -71099,6 +71500,32 @@
       "what": "العناصر نفسها تعيد ترتيب نفسها من شكل إلى آخر (مروحة ثم رسم بياني ثم حلقة) فتصنع فيلمًا بلا قطع. — The same elements rearrange from one formation to the next (fan, then graph, then ring), making a film with no cuts."
     },
     {
+      "id": "SHAPE-G01",
+      "family": "shapes-morph-geometry",
+      "group": "drawing",
+      "domain": "motion",
+      "name_en": "One animated value drives every dependent shape",
+      "name_ar": "رقم متحرك واحد يقود كل الأشكال",
+      "status": "documented",
+      "requires": [],
+      "proof": [],
+      "source": "shapes-morph-geometry.json",
+      "what": "حرّك قيمة واحدة (متتبع) واجعل كل شكل يعتمد عليها يُعاد رسمه من دالة في كل إطار، بدل تحريك كل شكل وحده. — Animate one value (a tracker) and redraw every dependent shape from a function of it each frame, instead of animating each shape alone."
+    },
+    {
+      "id": "SHAPE-G02",
+      "family": "shapes-morph-geometry",
+      "group": "drawing",
+      "domain": "motion",
+      "name_en": "Morph that matches shared parts",
+      "name_ar": "تحويل يطابق الأجزاء المشتركة",
+      "status": "documented",
+      "requires": [],
+      "proof": [],
+      "source": "shapes-morph-geometry.json",
+      "what": "عند تحويل معادلة أو نص أو شكل إلى آخر، أبقِ الأجزاء المتطابقة في مكانها وحرّكها، وحوّل المختلف فقط، بدل ذوبان كل شيء في كل شيء. — When morphing one equation, text or shape into another, keep matching parts and move them, morph only what differs, instead of melting everything into"
+    },
+    {
       "id": "REA-001",
       "family": "software-investigation",
       "group": "reverse",
@@ -80093,6 +80520,21 @@
       "what": "Problem finding, reframing, quantity first, distant analogy, combinatorial play, simplicity after mastery, taste, obsessive verification, long horizon, honesty — each with a check."
     },
     {
+      "id": "THINK-47",
+      "family": "thinking-core",
+      "group": "thinking",
+      "domain": "mind",
+      "name_en": "Anonymous peer-ranked council",
+      "name_ar": "مجلس بتقييم متبادل مجهول الهوية",
+      "status": "documented",
+      "requires": [
+        "python3"
+      ],
+      "proof": [],
+      "source": "thinking-core.json",
+      "what": "عدة نماذج تجيب، ثم كل نموذج يرتب إجابات الآخرين بعد إخفاء أصحابها، ثم رئيس يكتب الإجابة النهائية مستعينًا بالترتيب. — Several models answer, each ranks the others' answers with authors hidden, then a chair writes the final answer using the rankings."
+    },
+    {
       "id": "TRANS-01",
       "family": "transitions-cuts",
       "group": "motion",
@@ -88110,6 +88552,19 @@
       "what": "p = 0.46·easeOut((t−t0)/0.8) + 0.10·smoothstep((t−t0−0.5)/2.05) + 0.44·easeInOut((t−t0−2.3)/0.95): ينزلق سريعًا إلى المنتصف، يزحف ببطء دون توقف ~1.5–2 ث للمقارنة، ثم يتسارع إلى كشف كامل. — Fast glide to the middle, a slow never-stopping crawl for comparison, then an accelerating "
     },
     {
+      "id": "TRANS-G01",
+      "family": "transitions-cuts",
+      "group": "motion",
+      "domain": "motion",
+      "name_en": "Auto-animate between two states (magic move)",
+      "name_ar": "انتقال سحري بين حالتين",
+      "status": "documented",
+      "requires": [],
+      "proof": [],
+      "source": "transitions-cuts.json",
+      "what": "طابق العناصر بين حالتين بمعرّف ثابت، وحرّك الموضع والحجم واللون للمتطابق، وأظهر أو أخفِ غير المتطابق، فيبدو الانتقال حركة واحدة. — Match elements between two states by a stable id, tween position, size and colour of matches, and fade the rest, so the change reads as one move."
+    },
+    {
       "id": "ARAB-01",
       "family": "typography-arabic",
       "group": "type",
@@ -95380,6 +95835,32 @@
       "proof": [],
       "source": "web-research.json",
       "what": "قيادة متصفح بلا واجهة لإنجاز مهام ويب متعددة الخطوات من هدف لغوي. — Drive a headless browser through multi-step web tasks from a goal. (browser-use, ★118.4k, MIT)."
+    },
+    {
+      "id": "WEB-25",
+      "family": "web-research",
+      "group": "research",
+      "domain": "research",
+      "name_en": "Perspective-guided research, outline, then cited writing",
+      "name_ar": "بحث بوجهات نظر ثم مخطط ثم كتابة بمصادر",
+      "status": "documented",
+      "requires": [],
+      "proof": [],
+      "source": "web-research.json",
+      "what": "اكتشف وجهات النظر حول الموضوع، واسأل من كل وجهة أسئلة يجيب عنها بحث حقيقي، واجمع المقاطع بمصادرها، ثم ابنِ المخطط، ثم اكتب كل قسم بمراجعه. — Discover the perspectives on a topic, ask questions from each perspective answered by real search, collect cited snippets, build the outlin"
+    },
+    {
+      "id": "WEB-26",
+      "family": "web-research",
+      "group": "research",
+      "domain": "research",
+      "name_en": "Planner, parallel researchers, then report",
+      "name_ar": "مخطِّط وباحثون متوازيون ثم تقرير",
+      "status": "documented",
+      "requires": [],
+      "proof": [],
+      "source": "web-research.json",
+      "what": "قسّم السؤال إلى أسئلة فرعية، ووزعها على باحثين متوازيين يبحث كل منهم ويلخص بمصادره، ثم يجمع محرر واحد التقرير بقائمة مصادر. — Split the question into sub-questions, give each to a parallel researcher that searches and summarises with sources, then one editor writes the report wit"
     },
     {
       "id": "WRITE-01",

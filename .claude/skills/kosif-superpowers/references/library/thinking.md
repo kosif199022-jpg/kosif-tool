@@ -24,9 +24,9 @@
 |---|---:|---|
 | `proven` | 17 | ✅ proven: a proof exists in the catalog; still check its requirements here before calling it ready |
 | `ready` | 8 | 🟢 ready: runnable without setup according to the catalog |
-| `documented` | 308 | 📄 documented: a described method; needs building or wiring before it runs |
+| `documented` | 311 | 📄 documented: a described method; needs building or wiring before it runs |
 | `install` | 2 | 📦 install: needs a package, binary or model first |
-| **المجموع** | **335** | |
+| **المجموع** | **338** | |
 
 ## الأدوات القابلة للتشغيل / runnable tools
 
@@ -63,10 +63,10 @@
 | `atlas-strategy` | 72 | [atlas-strategy.md](../powers/atlas-strategy.md) |
 | `creativity-engine` | 29 | [creativity-engine.md](../powers/creativity-engine.md) |
 | `mental-models` | 63 | [mental-models.md](../powers/mental-models.md) |
-| `planning-execution` | 12 | [planning-execution.md](../powers/planning-execution.md) |
+| `planning-execution` | 14 | [planning-execution.md](../powers/planning-execution.md) |
 | `prompt-craft` | 41 | [prompt-craft.md](../powers/prompt-craft.md) |
 | `strategy-finance` | 18 | [strategy-finance.md](../powers/strategy-finance.md) |
-| `thinking-core` | 46 | [thinking-core.md](../powers/thinking-core.md) |
+| `thinking-core` | 47 | [thinking-core.md](../powers/thinking-core.md) |
 
 ## كل القدرات / every power
 
@@ -325,6 +325,8 @@
 | `PLAN-10` | توزيع العمل على وكلاء متوازيين | Parallel lanes for agents and workflows | documented | claude:tools |
 | `PLAN-11` | مراجعة الخطة كل مرحلة | Phase-boundary plan review | documented |  |
 | `PLAN-12` | خطة تسليم بإيصال | Delivery plan with a receipt | documented |  |
+| `PLAN-13` | تطوير يقوده المواصفات | Spec-driven development | documented |  |
+| `PLAN-14` | عصف ثم خطة ثم وكيل لكل مهمة بالاختبار أولًا | Brainstorm, plan, then a test-first subagent per task | documented | claude:tools |
 | `PROMPT-01` | توجيه الطلب: تحسين فقط أم تنفيذ | Route the request: optimize-only, do, both, or Claude-authored | documented | claude:tools |
 | `PROMPT-03` | الخانات الثماني لأي برومبت | Eight core slots | documented |  |
 | `PROMPT-04` | الملء الأمين: افتراض مكتوب أو سؤال واحد | Fill honestly: stated assumption or one question | documented |  |
@@ -407,5 +409,6 @@
 | `THINK-44` | نموذج القارئ البشري | Reader model (theory of mind) | documented |  |
 | `THINK-45` | المراقبة الذاتية عند الحدود | Metacognition checkpoint | documented |  |
 | `THINK-46` | عادات العبقرية العشر | Ten genius habits as procedures | documented |  |
+| `THINK-47` | مجلس بتقييم متبادل مجهول الهوية | Anonymous peer-ranked council | documented | python3 |
 | `PROD-15` | بيانات الأسواق (غير رسمية) | Market data libraries (unofficial sources) | install | pip:pandas |
 | `PROD-18` | MuJoCo: محاكاة ديناميكيات الأجسام الصلبة والروبوتات وتسجيل المسارات | MuJoCo: Simulate rigid-body and robot dynamics and log trajectories | install | pip:mujoco |

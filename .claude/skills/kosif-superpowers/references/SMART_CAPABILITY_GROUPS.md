@@ -1,19 +1,19 @@
 # KOSIF unified capability groups
 
-Source: 5,512 powers / 62 families / 15 integrated-domain candidates.
+Source: 5,545 powers / 62 families / 15 integrated-domain candidates.
 
 > These are navigation/integration **candidates**, not evidence that all tools were merged into one runtime.
 
 | Group | Arabic | Powers | Families |
 |---|---|---:|---:|
-| `research` | البحث والمعرفة | 56 | 3 |
-| `thinking` | التفكير والتخطيط والاستراتيجية | 335 | 8 |
-| `agents` | الوكلاء والتوجيه الذكي | 159 | 3 |
-| `software` | البرمجة وبناء التطبيقات | 578 | 6 |
-| `drawing` | الرسم والأشكال والتصميم | 300 | 5 |
-| `images` | الصور والتحرير والتوليد | 319 | 5 |
-| `3d` | الثري دي والمحاكاة والرندر | 755 | 5 |
-| `motion` | الموشن والمونتاج والسينما | 1,228 | 7 |
+| `research` | البحث والمعرفة | 60 | 3 |
+| `thinking` | التفكير والتخطيط والاستراتيجية | 338 | 8 |
+| `agents` | الوكلاء والتوجيه الذكي | 168 | 3 |
+| `software` | البرمجة وبناء التطبيقات | 580 | 6 |
+| `drawing` | الرسم والأشكال والتصميم | 306 | 5 |
+| `images` | الصور والتحرير والتوليد | 320 | 5 |
+| `3d` | الثري دي والمحاكاة والرندر | 758 | 5 |
+| `motion` | الموشن والمونتاج والسينما | 1,233 | 7 |
 | `audio` | الصوت والموسيقى والتعليق | 422 | 3 |
 | `type` | الخطوط والنصوص العربية واللاتينية | 215 | 3 |
 | `data` | البيانات والرسوم والمواقع | 258 | 4 |

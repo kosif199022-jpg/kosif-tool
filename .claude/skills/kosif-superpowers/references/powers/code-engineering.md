@@ -248,7 +248,7 @@
 #### CODE-25 · خريطة مستودع مرتبة بالأهمية · Ranked repository map · 🟢 جاهز / ready
 - **ماذا / what:** أهم الملفات والتعريفات في مستودع ضمن ميزانية صغيرة، مرتبة بمن يشير إليها أكثر. — The most important files and definitions of a repository within a small budget, ranked by how much the rest of the code refers to them.
 - **متى أستخدمها / when:** قبل تعديل مستودع غريب أو تكليف وكيل بكود / before editing an unfamiliar repo or briefing a coding agent
-- **كيف / how:** `python3 scripts/repo_map.py map <dir> --budget 6000 [--focus <file-or-word> …] [--json]` parses Python with ast and JS/TS, Go and Rust by line patterns, builds a reference graph (who mentions whose definitions, damped for generic names), ranks files with PageRank (pulled toward --focus), and prints each top file with its definition lines. `python3 scripts/repo_map.py defs <dir> <name>` shows where a name is defined and who mentions it. Read-only: it never imports or runs the target, so it is safe on untrusted checkouts. Paste the map into a code brief (PROMPT-37, kind code).
+- **كيف / how:** `python3 scripts/repo_map.py map <dir> --budget 6000 [--focus <file-or-word> …] [--json]` parses Python with ast and JS/TS, Go and Rust by line patterns, builds a reference graph (who mentions whose definitions, damped for generic names), ranks files with PageRank (pulled toward --focus), and prints each top file with its definition lines. `python3 scripts/repo_map.py defs <dir> <name>` shows where a name is defined and who mentions it. Read-only: it never imports or runs the target, so it is safe on untrusted checkouts. Paste the map into a code brief (PROMPT-40, kind code).
 - **يحتاج / needs:** [`python3`](../requirements.md#req-python3)
 - **الرخصة / license:** Apache-2.0
 - **الدليل / proof:** `kosif-tool/.claude/skills/kosif-superpowers/scripts/repo_map.py` · `kosif-tool/.claude/skills/kosif-superpowers/evals/test_repo_map.py`
@@ -257,7 +257,7 @@
 #### CODE-26 · تعديلات بكتل بحث واستبدال · Search/replace edit blocks · 📄 موصوف / documented only
 - **ماذا / what:** عبّر عن كل تعديل كنص أصلي حرفي ونص بديل، واشترط أن يطابق الأصلي موضعًا واحدًا، وافشل بصوت عالٍ إن لم يوجد، ثم شغّل الفحص بعد كل تعديل. — Express each edit as an exact original block and its replacement, require the original to match exactly once, fail loudly when it does not, and run checks after every edit.
 - **متى أستخدمها / when:** تعديل كود بنموذج أو وكيل / editing code through a model or agent
-- **كيف / how:** Block: file path, SEARCH (copied verbatim, enough lines to be unique), REPLACE. Reject when SEARCH matches 0 or >1 times and show the nearest lines instead of guessing. Never rewrite a whole file for a small change. After applying: lint/tests; on failure feed the exact error back once (PROMPT-33). Commit each logical change with a message that says why.
+- **كيف / how:** Block: file path, SEARCH (copied verbatim, enough lines to be unique), REPLACE. Reject when SEARCH matches 0 or >1 times and show the nearest lines instead of guessing. Never rewrite a whole file for a small change. After applying: lint/tests; on failure feed the exact error back once (PROMPT-36). Commit each logical change with a message that says why.
 - **الرخصة / license:** Apache-2.0
 - **الدليل / proof:** — (لا دليل تشغيل بعد / no run proof yet)
 - **المصدر / source:** https://github.com/Aider-AI/aider (Apache-2.0; edit formats) — restated in our own words

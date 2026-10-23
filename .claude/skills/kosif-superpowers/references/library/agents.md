@@ -23,11 +23,11 @@
 | الحالة | العدد | المعنى |
 |---|---:|---|
 | `proven` | 87 | ✅ proven: a proof exists in the catalog; still check its requirements here before calling it ready |
-| `ready` | 5 | 🟢 ready: runnable without setup according to the catalog |
-| `documented` | 57 | 📄 documented: a described method; needs building or wiring before it runs |
+| `ready` | 6 | 🟢 ready: runnable without setup according to the catalog |
+| `documented` | 65 | 📄 documented: a described method; needs building or wiring before it runs |
 | `install` | 8 | 📦 install: needs a package, binary or model first |
 | `key` | 2 | 🔑 key: needs an account, key or paid service (ask before any spend) |
-| **المجموع** | **159** | |
+| **المجموع** | **168** | |
 
 ## الأدوات القابلة للتشغيل / runnable tools
 
@@ -54,6 +54,7 @@
 | `kosif-mcp` | خادم MCP لكتالوج KOSIF | `python3 scripts/kosif_mcp.py` | tested-here |
 | `kosif-remote-commander` | خادم KOSIF Remote Commander | `python3 scripts/kosif_remote_superpowers.py doctor` | tested-here |
 | `local-first` | مدخل محلي بلا استنساخ | `python3 scripts/local_first.py doctor` | tested-here |
+| `memory-ops` | عمليات الذاكرة | `python3 scripts/memory_ops.py propose --store memory.json --facts facts.json --out plan.json` | tested-here |
 | `owned-repos` | خريطة مستودعات المالك وخريطة المهارات | `python3 scripts/owned_repos.py find "رسم شخصيات"` | tested-here |
 | `powers` | البحث في كتالوج القدرات | `python3 scripts/powers.py stats --domain motion --json` | tested-here |
 | `probe-env` | فحص قدرات الجهاز | `python3 scripts/probe_env.py` | tested-elsewhere |
@@ -78,7 +79,7 @@
 
 | العائلة | القدرات | الفصل |
 |---|---:|---|
-| `agent-orchestration` | 46 | [agent-orchestration.md](../powers/agent-orchestration.md) |
+| `agent-orchestration` | 55 | [agent-orchestration.md](../powers/agent-orchestration.md) |
 | `runnable-tools` | 70 | [runnable-tools.md](../powers/runnable-tools.md) |
 | `self-discovery` | 43 | [self-discovery.md](../powers/self-discovery.md) |
 
@@ -175,6 +176,7 @@
 | `SELF-32` | التوثيق الحي لا الذاكرة | Live docs over memory | proven | node, claude:tools |
 | `SELF-33` | واجهات الذاكرة قديمة | Training-data APIs are stale | proven | chromium, libreoffice, pip:numpy, pip:opencv |
 | `SELF-36` | حدود جلسة Claude Code السحابية | Claude Code cloud session limits | proven | python3, docker, npm:p5 |
+| `AGENT-50` | قرار الذاكرة: إضافة أو تحديث أو حذف أو لا شيء | Memory decision step: add, update, delete or no-op | ready | python3 |
 | `TOOL-33` | تدقيق أدلة الكتالوج | Catalog Evidence Audit | ready | python3 |
 | `TOOL-56` | فحص سلامة المهارة | Skill Health Check | ready | python3 |
 | `TOOL-58` | إعادة تصنيف نطاق الأدلة | Proof Scope Relabeler | ready | python3 |
@@ -221,6 +223,14 @@
 | `AGENT-44` | المتابعة الاستباقية المحدودة | Bounded proactive follow-up | documented |  |
 | `AGENT-45` | غلاف نتيجة الأداة وتيار الأحداث | Tool result envelope and typed event stream | documented | chromium |
 | `AGENT-46` | ذاكرة على مرحلتين بعقود إيجار | Two-phase memory with leased jobs | documented |  |
+| `AGENT-47` | رسم حالة بنقاط حفظ واستئناف | Checkpointed state graph with resume and approval interrupts | documented |  |
+| `AGENT-48` | فريق بأدوار ومهام ومخرج متوقع | Role-goal crew with expected outputs | documented |  |
+| `AGENT-49` | خط إنتاج بإجراءات قياسية ووثائق تسليم | SOP assembly line with document handoffs | documented |  |
+| `AGENT-51` | ذاكرة بطبقات يحررها الوكيل | Tiered self-editing memory | documented |  |
+| `AGENT-52` | التقاط ملاحظات الجلسة وحقنها في التالية | Session observation capture and injection | documented |  |
+| `AGENT-53` | وكيل يتصرف بالكود | Code-as-action agent | documented | python3 |
+| `AGENT-54` | حواجز تفعيل وتسليم لمتخصص | Tripwire guardrails and specialist handoffs | documented | key:openai |
+| `AGENT-55` | تيار أحداث قابل لإعادة التشغيل | Replayable event-stream agent | documented |  |
 | `SELF-01` | اعرف قبل أن تقول لا | Registry before no | documented | node, python3, claude:tools |
 | `SELF-02` | سُلَّم حقيقة القدرة | Capability-truth ladder | documented | ffmpeg, key:unspecified |
 | `SELF-03` | الإثبات له تاريخ صلاحية | Proofs are dated leases | documented | tesseract |

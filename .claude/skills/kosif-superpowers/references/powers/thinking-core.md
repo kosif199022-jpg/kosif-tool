@@ -425,7 +425,7 @@
 #### THINK-47 · مجلس بتقييم متبادل مجهول الهوية · Anonymous peer-ranked council · 📄 موصوف / documented only
 - **ماذا / what:** عدة نماذج تجيب، ثم كل نموذج يرتب إجابات الآخرين بعد إخفاء أصحابها، ثم رئيس يكتب الإجابة النهائية مستعينًا بالترتيب. — Several models answer, each ranks the others' answers with authors hidden, then a chair writes the final answer using the rankings.
 - **متى أستخدمها / when:** سؤال صعب تريد له أكثر من رأي / a hard question that deserves more than one view
-- **كيف / how:** Stage 1: N independent answers (different models or framings). Stage 2: label them A, B, C… in shuffled order; each member ranks all but its own with one line per rank. Stage 3: aggregate (Borda count), the chair synthesises from the top answers and states remaining disagreement. Shuffle order per member to cancel position bias (PROMPT-38). In this skill the five-lane version is scripts/council.py. Licence of the source not stated: idea only.
+- **كيف / how:** Stage 1: N independent answers (different models or framings). Stage 2: label them A, B, C… in shuffled order; each member ranks all but its own with one line per rank. Stage 3: aggregate (Borda count), the chair synthesises from the top answers and states remaining disagreement. Shuffle order per member to cancel position bias (PROMPT-41). In this skill the five-lane version is scripts/council.py. Licence of the source not stated: idea only.
 - **يحتاج / needs:** [`python3`](../requirements.md#req-python3)
 - **الرخصة / license:** none (idea only)
 - **الدليل / proof:** — (لا دليل تشغيل بعد / no run proof yet)

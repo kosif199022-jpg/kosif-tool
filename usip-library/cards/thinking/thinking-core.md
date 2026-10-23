@@ -3231,7 +3231,7 @@
 
 **متى:** سؤال صعب تريد له أكثر من رأي / a hard question that deserves more than one view
 
-**كيف:** Stage 1: N independent answers (different models or framings). Stage 2: label them A, B, C… in shuffled order; each member ranks all but its own with one line per rank. Stage 3: aggregate (Borda count), the chair synthesises from the top answers and states remaining disagreement. Shuffle order per member to cancel position bias (PROMPT-38). In this skill the five-lane version is scripts/council.py. Licence of the source not stated: idea only.
+**كيف:** Stage 1: N independent answers (different models or framings). Stage 2: label them A, B, C… in shuffled order; each member ranks all but its own with one line per rank. Stage 3: aggregate (Borda count), the chair synthesises from the top answers and states remaining disagreement. Shuffle order per member to cancel position bias (PROMPT-41). In this skill the five-lane version is scripts/council.py. Licence of the source not stated: idea only.
 
 **التثبيت:** لا خطوة تثبيت مسجلة
 

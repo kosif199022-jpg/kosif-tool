@@ -15,18 +15,18 @@
  },
  "paths_note": "Tool paths and examples are relative to their root: 'skill' = this folder, 'repo' = the kosif-tool repository root.",
  "counts": {
-  "powers": 5512,
+  "powers": 5545,
   "families": 62,
   "domains": 10,
-  "tools": 147,
-  "guides": 108,
+  "tools": 150,
+  "guides": 109,
   "statuses": {
-   "documented": 2097,
+   "documented": 2125,
    "idea": 71,
    "install": 973,
    "key": 176,
    "proven": 933,
-   "ready": 653,
+   "ready": 658,
    "seen": 609
   }
  },
@@ -172,9 +172,9 @@
    "domain": "motion",
    "title_ar": "الأبعاد الثلاثية",
    "title_en": "3D & spatial",
-   "count": 52,
+   "count": 53,
    "statuses": {
-    "documented": 8,
+    "documented": 9,
     "idea": 1,
     "install": 4,
     "key": 2,
@@ -191,12 +191,13 @@
    "domain": "mind",
    "title_ar": "تنسيق الوكلاء",
    "title_en": "Agent orchestration",
-   "count": 46,
+   "count": 55,
    "statuses": {
-    "documented": 41,
+    "documented": 49,
     "install": 3,
     "key": 1,
-    "proven": 1
+    "proven": 1,
+    "ready": 1
    },
    "chapter": "references/powers/agent-orchestration.md",
    "data": "data/powers/agent-orchestration.json"
@@ -207,9 +208,9 @@
    "domain": "motion",
    "title_ar": "التوليد بالذكاء الاصطناعي",
    "title_en": "AI generation",
-   "count": 93,
+   "count": 94,
    "statuses": {
-    "documented": 31,
+    "documented": 32,
     "idea": 1,
     "install": 3,
     "key": 30,
@@ -499,11 +500,12 @@
    "domain": "code",
    "title_ar": "هندسة البرمجيات",
    "title_en": "Code engineering",
-   "count": 24,
+   "count": 26,
    "statuses": {
-    "documented": 20,
+    "documented": 21,
     "key": 1,
-    "proven": 3
+    "proven": 3,
+    "ready": 1
    },
    "chapter": "references/powers/code-engineering.md",
    "data": "data/powers/code-engineering.json"
@@ -561,9 +563,9 @@
    "domain": "motion",
    "title_ar": "المخططات والشرح والكود",
    "title_en": "Diagrams, explainers & code",
-   "count": 67,
+   "count": 69,
    "statuses": {
-    "documented": 28,
+    "documented": 30,
     "idea": 2,
     "install": 11,
     "key": 1,
@@ -596,12 +598,12 @@
    "domain": "motion",
    "title_ar": "التوقيت والإيقاع والتسهيل",
    "title_en": "Easing, timing & rhythm",
-   "count": 102,
+   "count": 106,
    "statuses": {
-    "documented": 32,
+    "documented": 33,
     "install": 7,
     "proven": 27,
-    "ready": 26,
+    "ready": 29,
     "seen": 10
    },
    "chapter": "references/powers/easing-timing-rhythm.md",
@@ -613,9 +615,9 @@
    "domain": "motion",
    "title_ar": "المحركات وخط الرندر",
    "title_en": "Engines & render pipeline",
-   "count": 443,
+   "count": 445,
    "statuses": {
-    "documented": 83,
+    "documented": 85,
     "idea": 1,
     "install": 209,
     "key": 27,
@@ -650,9 +652,9 @@
    "domain": "motion",
    "title_ar": "الرسم اليدوي والرسم الحي",
    "title_en": "Hand-drawn & draw-on",
-   "count": 63,
+   "count": 65,
    "statuses": {
-    "documented": 19,
+    "documented": 21,
     "install": 6,
     "proven": 17,
     "ready": 15,
@@ -667,9 +669,9 @@
    "domain": "code",
    "title_ar": "الرسم المعرفي والخرائط الذهنية",
    "title_en": "Knowledge graph & mind maps",
-   "count": 21,
+   "count": 23,
    "statuses": {
-    "documented": 4,
+    "documented": 6,
     "idea": 1,
     "key": 5,
     "proven": 11
@@ -840,9 +842,9 @@
    "domain": "mind",
    "title_ar": "التخطيط والتنفيذ",
    "title_en": "Planning & execution",
-   "count": 12,
+   "count": 14,
    "statuses": {
-    "documented": 10,
+    "documented": 12,
     "proven": 2
    },
    "chapter": "references/powers/planning-execution.md",
@@ -933,9 +935,9 @@
    "domain": "motion",
    "title_ar": "الأشكال والتحوّل",
    "title_en": "Shapes & morphing",
-   "count": 95,
+   "count": 97,
    "statuses": {
-    "documented": 19,
+    "documented": 21,
     "idea": 4,
     "install": 7,
     "proven": 16,
@@ -1017,9 +1019,9 @@
    "domain": "mind",
    "title_ar": "نواة التفكير",
    "title_en": "Thinking core",
-   "count": 46,
+   "count": 47,
    "statuses": {
-    "documented": 39,
+    "documented": 40,
     "proven": 7
    },
    "chapter": "references/powers/thinking-core.md",
@@ -1031,9 +1033,9 @@
    "domain": "motion",
    "title_ar": "الانتقالات والقطعات",
    "title_en": "Transitions & cuts",
-   "count": 474,
+   "count": 475,
    "statuses": {
-    "documented": 79,
+    "documented": 80,
     "idea": 18,
     "install": 175,
     "key": 1,
@@ -1153,9 +1155,9 @@
    "domain": "research",
    "title_ar": "البحث على الويب",
    "title_en": "Web research",
-   "count": 24,
+   "count": 26,
    "statuses": {
-    "documented": 8,
+    "documented": 10,
     "install": 2,
     "key": 4,
     "proven": 10
@@ -14096,6 +14098,246 @@
     "web-research",
     "self-discovery"
    ]
+  },
+  {
+   "root": "skill",
+   "kind": "cli",
+   "consent": "",
+   "evidence": "tested-here",
+   "id": "repo-map",
+   "path": "scripts/repo_map.py",
+   "area": "investigate",
+   "title_en": "Repo Map",
+   "title_ar": "خريطة المستودع",
+   "summary_en": "Gives a coding agent the shape of a codebase in a small budget: it parses Python with ast and JavaScript/TypeScript, Go and Rust by line patterns, finds where each name is defined and which files mention it, ranks files with PageRank over that reference graph (optionally pulled toward focus files or words), and prints the top files with their definition lines until a character budget is spent. defs shows where one name is defined and who uses it. It reads text only and never imports, runs or builds the target.",
+   "summary_ar": "يعطي وكيل الكود شكل المستودع في ميزانية صغيرة: يحلل بايثون بـ ast وجافاسكربت/تايبسكربت وGo وRust بأنماط الأسطر، ويعرف أين يُعرَّف كل اسم ومن يذكره، ويرتب الملفات بـ PageRank على رسم الإشارات (مع إمكانية التركيز على ملفات أو كلمات)، ويطبع أهم الملفات بأسطر تعريفاتها حتى تنفد الميزانية. defs يبين أين يُعرَّف اسم ومن يستخدمه. يقرأ النص فقط ولا يستورد ولا يشغّل ولا يبني شيئًا من المستودع.",
+   "use_when": [
+    "فهمني المستودع ده بسرعة قبل ما نعدل فيه",
+    "إيه أهم الملفات والدوال في الكود ده؟",
+    "give me a compact map of this repo for a coding agent",
+    "where is load_scene defined and who calls it?"
+   ],
+   "keywords": [
+    "repo map",
+    "codebase map",
+    "pagerank",
+    "symbols",
+    "definitions",
+    "code navigation",
+    "aider",
+    "خريطة المستودع",
+    "فهم الكود",
+    "أهم الملفات",
+    "تعريفات"
+   ],
+   "commands": [
+    {
+     "name": "map",
+     "example": "python3 scripts/repo_map.py map scripts --budget 3000 --focus prompt",
+     "does": "Ranked files with their definition lines within --budget characters; --json for the ranking and counts"
+    },
+    {
+     "name": "defs",
+     "example": "python3 scripts/repo_map.py defs scripts lint",
+     "does": "Where a name is defined and which files mention it"
+    },
+    {
+     "name": "--self-test",
+     "example": "python3 scripts/repo_map.py --self-test",
+     "does": "Builds a small mixed Python/TypeScript tree and checks ranking, budget, focus and skips"
+    }
+   ],
+   "inputs": "A local folder.",
+   "outputs": "Text or JSON on stdout; it writes no files.",
+   "requires": {
+    "python": [],
+    "binaries": [
+     "python3"
+    ],
+    "node": [],
+    "optional": [],
+    "network": false
+   },
+   "safety": "read-only",
+   "limits": "Non-Python languages are read by line patterns, so unusual syntax can be missed; mentions are matched by name, not resolved by scope, so two functions with one name share credit; files over 400 KB and vendor/build folders are skipped.",
+   "evidence_note": "4/4 passed (python3 -m unittest evals.test_repo_map) and --self-test OK on 2026-10-23",
+   "tests": [
+    ".claude/skills/kosif-superpowers/evals/test_repo_map.py"
+   ],
+   "docs": [
+    ".claude/skills/kosif-superpowers/references/agents-memory-reasoning-repos.md",
+    ".claude/skills/kosif-superpowers/references/guides/investigate.md"
+   ],
+   "families": [
+    "code-engineering",
+    "software-investigation"
+   ]
+  },
+  {
+   "root": "skill",
+   "kind": "cli",
+   "consent": "apply writes the memory file the user names; what may be remembered is still the user's and the project's call.",
+   "evidence": "tested-here",
+   "id": "memory-ops",
+   "path": "scripts/memory_ops.py",
+   "area": "think",
+   "title_en": "Memory Ops",
+   "title_ar": "عمليات الذاكرة",
+   "summary_en": "Keeps a local long-term memory file free of contradictions: for every candidate fact it proposes one operation with its reason (ADD when nothing similar is stored, UPDATE when the same subject and attribute get a new value or a closer restatement adds detail, DELETE when the fact retracts a stored one, NOOP for duplicates), refuses facts that contain a secret, applies an approved plan while keeping every old value in history, and searches the store. English and Arabic text is normalised before comparison.",
+   "summary_ar": "يحفظ ملف ذاكرة محليًا طويل المدى بلا تناقضات: لكل معلومة مرشحة يقترح عملية واحدة بسببها (إضافة إن لم يوجد مثلها، تحديث إن تغيرت قيمة لنفس الموضوع والخاصية أو أضافت صياغة أدق تفصيلًا، حذف إن تراجعت عن محفوظ، ولا شيء للمكرر)، ويرفض المعلومات التي فيها أسرار، وينفذ الخطة المعتمدة مع حفظ كل قيمة قديمة في السجل، ويبحث في المخزن. يوحّد النص العربي والإنجليزي قبل المقارنة.",
+   "use_when": [
+    "احفظ تفضيلاتي دي من غير ما تتكرر أو تتناقض مع القديم",
+    "المستخدم غير رأيه في اللهجة، حدّث الذاكرة",
+    "decide whether these new facts should update or replace what we stored",
+    "search the project memory for the export settings"
+   ],
+   "keywords": [
+    "memory",
+    "long-term memory",
+    "preferences",
+    "add update delete",
+    "consolidation",
+    "mem0",
+    "ذاكرة",
+    "تفضيلات",
+    "تحديث الذاكرة",
+    "دمج الذاكرة"
+   ],
+   "commands": [
+    {
+     "name": "propose",
+     "example": "python3 scripts/memory_ops.py propose --store memory.json --facts facts.json --out plan.json",
+     "does": "One ADD/UPDATE/DELETE/NOOP/REFUSE per fact with its reason; nothing is written to the store"
+    },
+    {
+     "name": "apply",
+     "example": "python3 scripts/memory_ops.py apply --store memory.json --plan plan.json --when 2026-10-23",
+     "does": "Writes the store from an approved plan; replaced and deleted memories go to history"
+    },
+    {
+     "name": "search",
+     "example": "python3 scripts/memory_ops.py search --store memory.json \"export settings\"",
+     "does": "BM25-style ranked memories"
+    },
+    {
+     "name": "--self-test",
+     "example": "python3 scripts/memory_ops.py --self-test",
+     "does": "Runs the built-in decision cases"
+    }
+   ],
+   "inputs": "memory.json (created when missing) and facts.json.",
+   "outputs": "plan.json (propose --out), memory.json (apply), or text on stdout.",
+   "requires": {
+    "python": [],
+    "binaries": [
+     "python3"
+    ],
+    "node": [],
+    "optional": [],
+    "network": false
+   },
+   "safety": "writes-files",
+   "limits": "Decisions use word overlap and subject/attribute keys, not meaning, so a paraphrase with different words can be added twice and a short unrelated sentence with shared words can be merged; review the plan before apply.",
+   "evidence_note": "4/4 passed (python3 -m unittest evals.test_memory_ops) and --self-test OK on 2026-10-23",
+   "tests": [
+    ".claude/skills/kosif-superpowers/evals/test_memory_ops.py"
+   ],
+   "docs": [
+    ".claude/skills/kosif-superpowers/references/agents-memory-reasoning-repos.md",
+    ".claude/skills/kosif-superpowers/references/guides/discover.md"
+   ],
+   "families": [
+    "agent-orchestration",
+    "self-discovery"
+   ]
+  },
+  {
+   "root": "skill",
+   "kind": "cli",
+   "consent": "",
+   "evidence": "tested-here",
+   "id": "motion-physics",
+   "path": "scripts/motion_physics.py",
+   "area": "motion",
+   "title_en": "Motion Physics",
+   "title_ar": "فيزياء الحركة",
+   "summary_en": "Computes motion numbers instead of guessing them: a spring from stiffness, damping and mass (value per frame, damping ratio, settle time, overshoot, or CSS @keyframes), any CSS cubic-bezier or named easing sampled exactly as a browser does, stagger delays from an origin (first, last, center, edges or an index) on a row or a grid, and a keyframe track sampled per frame with an easing. Pure standard library; prints JSON or CSS and writes no files.",
+   "summary_ar": "يحسب أرقام الحركة بدل تخمينها: نابض من الصلابة والتخميد والكتلة (القيمة في كل إطار ونسبة التخميد وزمن الاستقرار والتجاوز، أو إطارات CSS)، وأي منحنى cubic-bezier أو تسهيل CSS مسمى بنفس حساب المتصفح، وتأخيرات التتابع من نقطة أصل (الأول أو الأخير أو المنتصف أو الأطراف أو عنصر بعينه) في صف أو شبكة، وعينات خط مفاتيح لكل إطار بتسهيل. مكتبة بايثون القياسية فقط؛ يطبع JSON أو CSS ولا يكتب ملفات.",
+   "use_when": [
+    "عايز ارتداد نابض طبيعي للعنوان، اطلعلي القيم لكل فريم",
+    "حوّل cubic-bezier ده لقيم لكل فريم",
+    "give me stagger delays from the center of a 4x3 grid",
+    "spring keyframes with stiffness 180 and damping 12 as CSS"
+   ],
+   "keywords": [
+    "spring",
+    "spring physics",
+    "cubic-bezier",
+    "easing",
+    "stagger",
+    "keyframes",
+    "overshoot",
+    "settle time",
+    "react-spring",
+    "anime.js",
+    "نابض",
+    "ارتداد",
+    "تسهيل",
+    "تتابع",
+    "فيزياء الحركة",
+    "فريمات"
+   ],
+   "commands": [
+    {
+     "name": "spring",
+     "example": "python3 scripts/motion_physics.py spring --from 0 --to 1 --stiffness 170 --damping 26 --fps 30",
+     "does": "Values per frame, damping ratio, regime, settle time and overshoot; --css NAME prints @keyframes"
+    },
+    {
+     "name": "bezier",
+     "example": "python3 scripts/motion_physics.py bezier 0.25 0.1 0.25 1 --frames 30",
+     "does": "A CSS cubic-bezier sampled at --frames + 1 evenly spaced points"
+    },
+    {
+     "name": "stagger",
+     "example": "python3 scripts/motion_physics.py stagger --count 12 --each 0.06 --from center --grid 4x3 --ease out",
+     "does": "Delay in seconds for each element from an origin on a row or a grid"
+    },
+    {
+     "name": "keyframes",
+     "example": "python3 scripts/motion_physics.py keyframes --track 0:0,0.5:120,1.2:100 --ease out --fps 30",
+     "does": "A time:value track sampled per frame with an easing"
+    },
+    {
+     "name": "--self-test",
+     "example": "python3 scripts/motion_physics.py --self-test",
+     "does": "Checks spring regimes, the CSS 'ease' value at 0.5, stagger origins and track sampling"
+    }
+   ],
+   "inputs": "Numbers on the command line.",
+   "outputs": "JSON or CSS on stdout; it writes no files.",
+   "requires": {
+    "python": [],
+    "binaries": [
+     "python3"
+    ],
+    "node": [],
+    "optional": [],
+    "network": false
+   },
+   "safety": "read-only",
+   "limits": "The spring is integrated numerically (16 sub-steps per frame), so values match an analytic spring to about 1e-3, not exactly; one dimension at a time; settle uses a 0.1 % rest threshold; easing names cover the CSS keywords plus a few common curves, not every library's presets.",
+   "evidence_note": "5/5 passed (python3 -m unittest evals.test_motion_physics) and --self-test OK on 2026-10-23",
+   "tests": [
+    ".claude/skills/kosif-superpowers/evals/test_motion_physics.py"
+   ],
+   "docs": [
+    ".claude/skills/kosif-superpowers/references/powers/easing-timing-rhythm.md",
+    ".claude/skills/kosif-superpowers/references/guides/motion.md"
+   ],
+   "families": [
+    "easing-timing-rhythm"
+   ]
   }
  ],
  "guides": [
@@ -14163,6 +14405,12 @@
    "path": "references/guides/sources.md",
    "title": "المصادر والمراجع والتحميل — Sources, references and media",
    "area": "sources",
+   "summary": ""
+  },
+  {
+   "path": "references/agents-memory-reasoning-repos.md",
+   "title": "الوكلاء والذاكرة والاستدلال من أكبر المستودعات / Agents, memory and reasoning from the top repositories",
+   "area": "investigate",
    "summary": ""
   },
   {
