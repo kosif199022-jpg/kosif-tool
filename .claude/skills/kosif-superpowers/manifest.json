@@ -15,13 +15,13 @@
  },
  "paths_note": "Tool paths and examples are relative to their root: 'skill' = this folder, 'repo' = the kosif-tool repository root.",
  "counts": {
-  "powers": 5482,
+  "powers": 5492,
   "families": 62,
   "domains": 10,
-  "tools": 143,
-  "guides": 106,
+  "tools": 144,
+  "guides": 107,
   "statuses": {
-   "documented": 2076,
+   "documented": 2086,
    "idea": 71,
    "install": 973,
    "key": 176,
@@ -302,9 +302,9 @@
    "domain": "code",
    "title_ar": "أطلس: الهندسة والكود",
    "title_en": "Atlas: engineering & code",
-   "count": 237,
+   "count": 247,
    "statuses": {
-    "documented": 237
+    "documented": 247
    },
    "chapter": "references/powers/atlas-code.md",
    "data": "data/powers/atlas-code.json"
@@ -10101,6 +10101,93 @@
    ]
   },
   {
+   "id": "atlas-ledger",
+   "path": "scripts/atlas_ledger.py",
+   "root": "skill",
+   "kind": "cli",
+   "area": "discover",
+   "title_en": "Atlas ledger: one status for every Atlas skill",
+   "title_ar": "سجل الأطلس: حالة واحدة لكل مهارة",
+   "summary_en": "Gives every one of the 14,793 KOSIF Atlas skills exactly one review status: covered (a power cites it), pattern (one vendor's instance of a method a power already holds), duplicate, excluded (needs install review, copyleft or risk-flagged) or pending (safe, unique and not yet decided). Built from the inert Atlas metadata index, the power files and the reviewed rules in data/atlas-ledger-decisions.json; REA's hash receipt for the whole Atlas is in proofs/atlas-rea/.",
+   "summary_ar": "يعطي كل مهارة من مهارات أطلس KOSIF الـ14,793 حالة مراجعة واحدة: مغطاة (قدرة تستشهد بها)، أو نمط (نسخة مزوّد من منهج تملكه قدرة)، أو مكررة، أو مستبعدة (تحتاج مراجعة تثبيت أو رخصة copyleft أو علامات خطر)، أو معلّقة (آمنة وفريدة ولم يُقرر فيها بعد). يُبنى من فهرس الأطلس الوصفي وملفات القدرات وقواعد المراجعة، وإيصال REA لبصمات الأطلس كله في proofs/atlas-rea/.",
+   "use_when": [
+    "كل مهارة في الأطلس حصل لها ايه؟ كام اتنقلت وكام اتسابت وليه؟",
+    "ايه مهارات الأطلس الآمنة اللي لسه ما اتراجعتش في موضوع الأمان؟",
+    "What happened to each Atlas skill: covered, duplicate, excluded or pending?",
+    "List pending safe Atlas skills for the next transfer batch"
+   ],
+   "keywords": [
+    "atlas ledger",
+    "atlas review",
+    "pending skills",
+    "transferred",
+    "skipped",
+    "excluded",
+    "duplicate",
+    "سجل الأطلس",
+    "مراجعة الأطلس",
+    "اتنقلت",
+    "اتسابت",
+    "مهارات معلقة"
+   ],
+   "commands": [
+    {
+     "name": "stats",
+     "example": "python3 scripts/atlas_ledger.py stats --json",
+     "does": "Counts per status, overall and per theme."
+    },
+    {
+     "name": "show",
+     "example": "python3 scripts/atlas_ledger.py show 6802",
+     "does": "One Atlas skill's status, covering powers, reason and folder link; unknown exits 2."
+    },
+    {
+     "name": "list",
+     "example": "python3 scripts/atlas_ledger.py list --status pending --theme security --top 20",
+     "does": "Skills with one status, optionally one theme."
+    },
+    {
+     "name": "build",
+     "example": "python3 scripts/atlas_ledger.py build",
+     "does": "Writes data/atlas_ledger.json.gz; --check exits 1 when it is stale."
+    },
+    {
+     "name": "self-test",
+     "example": "python3 scripts/atlas_ledger.py --self-test",
+     "does": "Synthetic index covering every status; prints ok or FAIL per check."
+    }
+   ],
+   "inputs": "data/atlas_capability_index.json.gz, data/powers/*.json and data/atlas-ledger-decisions.json.",
+   "outputs": "build writes data/atlas_ledger.json.gz; other commands print to stdout.",
+   "requires": {
+    "python": [],
+    "binaries": [
+     "python3"
+    ],
+    "node": [],
+    "optional": [
+     "rea (only to refresh proofs/atlas-rea/receipt.json, run separately)"
+    ],
+    "network": false
+   },
+   "safety": "read-only",
+   "consent": "None needed.",
+   "limits": "A status is a review decision over metadata and SKILL.md text read as data, not an execution receipt; pattern means the method is held, while vendor endpoints and limits still live in the Atlas folder and must be re-checked against current vendor docs.",
+   "evidence": "tested-here",
+   "evidence_note": "evals/test_atlas_ledger.py and the built-in --self-test",
+   "tests": [
+    ".claude/skills/kosif-superpowers/evals/test_atlas_ledger.py"
+   ],
+   "docs": [
+    ".claude/skills/kosif-superpowers/references/atlas-ledger-20261023.md",
+    ".claude/skills/kosif-superpowers/references/guides/discover.md"
+   ],
+   "families": [
+    "self-discovery",
+    "atlas-code"
+   ]
+  },
+  {
    "id": "rea-superpowers-map",
    "path": "scripts/rea_superpowers_map.py",
    "root": "skill",
@@ -13810,6 +13897,12 @@
    "path": "references/atlas-distilled-operating-methods-20261020.md",
    "title": "KOSIF Superpowers — Distilled Atlas Methods v2 (20 Oct 2026)",
    "area": "general",
+   "summary": ""
+  },
+  {
+   "path": "references/atlas-ledger-20261023.md",
+   "title": "Atlas ledger: every Atlas skill reviewed — سجل مراجعة الأطلس كاملًا (2026-10-23)",
+   "area": "discover",
    "summary": ""
   },
   {

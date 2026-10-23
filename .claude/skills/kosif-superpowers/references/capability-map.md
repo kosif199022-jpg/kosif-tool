@@ -1,6 +1,6 @@
 # خريطة القدرات الذهنية — Capability mind map
 
-> **ما هذه؟** خريطة ذهنية لكل قواك: 10 مجالات → 62 عائلة → 5,482 قدرة، مع أقوى شارة دليل في كل فرع. افتحها حين تبدأ مهمة كبيرة أو حين يسألك المستخدم «تقدر تعمل إيه؟»، ثم انزل من المجال إلى العائلة إلى القدرة.
+> **ما هذه؟** خريطة ذهنية لكل قواك: 10 مجالات → 62 عائلة → 5,492 قدرة، مع أقوى شارة دليل في كل فرع. افتحها حين تبدأ مهمة كبيرة أو حين يسألك المستخدم «تقدر تعمل إيه؟»، ثم انزل من المجال إلى العائلة إلى القدرة.
 > **What it gives you:** one picture of everything you can do, so you combine powers across domains instead of reaching for the first tool you remember. Regenerate after any catalog change: `python3 scripts/powers.py mindmap` (Mermaid text) or `--html references/capability-map.html` (standalone page). Drill into one domain with `--domain mind`.
 
 > **الخريطة المترابطة / connected graph:** [capability-graph.html](capability-graph.html) تربط كل عائلة بمستلزماتها والسكربتات التي تنفذها والاختبارات التي تثبتها (طبقة الكود من Graphify + تحليل محلي). `python3 scripts/capability_graph.py build`
@@ -17,7 +17,7 @@
 
 ```mermaid
 mindmap
-  root((Kosif superpowers · 5482))
+  root((Kosif superpowers · 5492))
     n1["`328 · ✅42
 العقل والتفكير`"]
       n2["`MODEL · 63 · 📄63
@@ -46,11 +46,11 @@ mindmap
 اللغة العربية`"]
       n14["`PROMPT · 22 · ✅1
 صناعة البرومبت`"]
-    n15["`585 · ✅60
+    n15["`595 · ✅60
 الهندسة والكود`"]
       n16["`REA · 258 · ✅30
 فحص البرامج والهندسة العكسية`"]
-      n17["`ACODE · 237 · 📄237
+      n17["`ACODE · 247 · 📄247
 أطلس: الهندسة والكود`"]
       n18["`CODE · 24 · ✅3
 هندسة البرمجيات`"]

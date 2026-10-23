@@ -18,23 +18,23 @@ python3 $SKILL_DIR/scripts/capability_mindmap.py task "<المهمة>" # 3. رت
 python3 $SKILL_DIR/scripts/kosif_hubs.py install <hub>        # 4. ثبّت الناقص (--apply لـ pip/npm فقط، واسأل قبل النظام والمفاتيح)
 ```
 
-الهيكل: **15 مجموعة** ← **454 قدرة خارقة مدمجة** ← **5,482 قدرة ذرية** بأدلتها. التفاصيل في [references/hubs.md](references/hubs.md) و[references/superpowers.md](references/superpowers.md) و[references/capability-mindmap.md](references/capability-mindmap.md)، والقواعد في [SKILL.md](SKILL.md).
+الهيكل: **15 مجموعة** ← **454 قدرة خارقة مدمجة** ← **5,492 قدرة ذرية** بأدلتها. التفاصيل في [references/hubs.md](references/hubs.md) و[references/superpowers.md](references/superpowers.md) و[references/capability-mindmap.md](references/capability-mindmap.md)، والقواعد في [SKILL.md](SKILL.md).
 
 | المجموعة | ماذا تغطي | قدرات | جاهز الآن | أول أمر |
 |---|---|---|---|---|
 | `research` | البحث والمعرفة — Research & knowledge | 57 | 21 | `python3 scripts/source_scout.py check` |
-| `thinking` | التفكير والتخطيط والاستراتيجية — Reasoning & strategy | 305 | 17 | `python3 scripts/think.py ladder "<المهمة>"` |
-| `agents` | الوكلاء والتوجيه الذكي — Agents & routing | 167 | 91 | `python3 scripts/hub.py doctor` |
-| `software` | البرمجة وبناء التطبيقات — Software & applications | 549 | 127 | `python3 scripts/hub.py find "<المهمة>"` |
+| `thinking` | التفكير والتخطيط والاستراتيجية — Reasoning & strategy | 307 | 17 | `python3 scripts/think.py ladder "<المهمة>"` |
+| `agents` | الوكلاء والتوجيه الذكي — Agents & routing | 166 | 91 | `python3 scripts/hub.py doctor` |
+| `software` | البرمجة وبناء التطبيقات — Software & applications | 558 | 127 | `python3 scripts/hub.py find "<المهمة>"` |
 | `drawing` | الرسم والأشكال والتصميم — Drawing & visual composition | 301 | 107 | `python3 scripts/creative_paint.py doctor` |
 | `images` | الصور والتحرير والتوليد — Images & photo editing | 324 | 140 | `python3 scripts/app_studio.py doctor` |
-| `3d` | الثري دي والمحاكاة والرندر — 3D & rendering | 761 | 266 | `python3 scripts/native_3d.py doctor` |
-| `motion` | الموشن والمونتاج والسينما — Motion & video editing | 1218 | 294 | `python3 scripts/montage_pro.py doctor` |
+| `3d` | الثري دي والمحاكاة والرندر — 3D & rendering | 763 | 267 | `python3 scripts/native_3d.py doctor` |
+| `motion` | الموشن والمونتاج والسينما — Motion & video editing | 1216 | 293 | `python3 scripts/montage_pro.py doctor` |
 | `audio` | الصوت والموسيقى والتعليق — Audio & voice | 420 | 133 | `python3 scripts/audio_cue_mapper.py --help` |
 | `type` | الخطوط والنصوص العربية واللاتينية — Typography & localization | 212 | 88 | `python3 scripts/font_fidelity_lab.py --help` |
-| `data` | البيانات والرسوم والمواقع — Data & visual analytics | 262 | 67 | `python3 scripts/powers.py family data-analysis` |
+| `data` | البيانات والرسوم والمواقع — Data & visual analytics | 261 | 67 | `python3 scripts/powers.py family data-analysis` |
 | `documents` | المستندات والكتابة — Documents & writing | 137 | 32 | `python3 scripts/tell_scan.py --help` |
-| `quality` | الاختبارات والجودة والأمان — QA & security | 480 | 152 | `python3 scripts/verify_video.py --help` |
+| `quality` | الاختبارات والجودة والأمان — QA & security | 481 | 152 | `python3 scripts/verify_video.py --help` |
 | `reverse` | التحليل العكسي وفحص البرامج — Reverse engineering | 262 | 30 | `python3 scripts/rea_bridge.py doctor` |
 | `misc` | قدرات مساندة غير مصنفة — Other supporting capabilities | 27 | 12 | `python3 scripts/powers.py family other` |
 

@@ -69,6 +69,7 @@ python3 scripts/smart_capabilities.py cards     # usip-library/ (repo root): a p
 python3 scripts/hub.py build                    # again: manifest.json, references/INDEX.md, SKILL.md and guide tool blocks
 python3 scripts/boot.py --static --write        # CAPABILITIES.md + llms.txt at the repo root
 python3 scripts/rea_superpowers_map.py build    # data/superpowers_rea_map.json + references/superpowers-rea-map.{md,html} (not CI-checked)
+python3 scripts/atlas_ledger.py build           # data/atlas_ledger.json.gz, after powers that cite Atlas folders change (not CI-checked)
 python3 scripts/check_skill.py --print-counts   # paste the marker line into SKILL.md if any count changed
 python3 scripts/check_skill.py --evals          # structure, links, proofs, counts, registry, secrets + routing evals
 ```

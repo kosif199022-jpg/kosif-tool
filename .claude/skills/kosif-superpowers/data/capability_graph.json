@@ -15,7 +15,7 @@
    "id": "root",
    "kind": "root",
    "label": "KOSIF Superpowers",
-   "count": 5482
+   "count": 5492
   },
   {
    "id": "dom:motion",
@@ -483,10 +483,10 @@
    "label": "Atlas: engineering & code",
    "ar": "أطلس: الهندسة والكود",
    "prefix": "ACODE",
-   "count": 237,
+   "count": 247,
    "proven": 0,
    "status": {
-    "documented": 237
+    "documented": 247
    }
   },
   {
@@ -497,6 +497,11 @@
    "en": "GitHub from the shell",
    "install": "https://cli.github.com  (cloud sessions: use the GitHub MCP tools instead)",
    "req_kind": "bin"
+  },
+  {
+   "id": "script:scripts/atlas_5000.py",
+   "kind": "script",
+   "label": "scripts/atlas_5000.py"
   },
   {
    "id": "fam:atlas-craft",
@@ -1871,6 +1876,11 @@
    "label": "scripts/atlas_deep_fusion.py"
   },
   {
+   "id": "script:scripts/atlas_ledger.py",
+   "kind": "script",
+   "label": "scripts/atlas_ledger.py"
+  },
+  {
    "id": "script:scripts/atlas_transfer.py",
    "kind": "script",
    "label": "scripts/atlas_transfer.py"
@@ -2082,11 +2092,6 @@
    "label": "scripts/rea_superpowers_map.py"
   },
   {
-   "id": "script:scripts/atlas_5000.py",
-   "kind": "script",
-   "label": "scripts/atlas_5000.py"
-  },
-  {
    "id": "script:scripts/rebalance_creative_repos.py",
    "kind": "script",
    "label": "scripts/rebalance_creative_repos.py"
@@ -2255,6 +2260,11 @@
    "id": "test:.claude/skills/kosif-superpowers/evals/test_atlas_capability_miner.py",
    "kind": "test",
    "label": ".claude/skills/kosif-superpowers/evals/test_atlas_capability_miner.py"
+  },
+  {
+   "id": "test:.claude/skills/kosif-superpowers/evals/test_atlas_ledger.py",
+   "kind": "test",
+   "label": ".claude/skills/kosif-superpowers/evals/test_atlas_ledger.py"
   },
   {
    "id": "test:.claude/skills/kosif-superpowers/evals/test_blender_cinema.py",
@@ -3002,7 +3012,7 @@
    "from": "dom:code",
    "to": "fam:atlas-code",
    "rel": "has",
-   "w": 237
+   "w": 247
   },
   {
    "from": "fam:atlas-code",
@@ -3014,13 +3024,13 @@
    "from": "fam:atlas-code",
    "to": "req:python3",
    "rel": "needs",
-   "w": 17
+   "w": 18
   },
   {
    "from": "fam:atlas-code",
    "to": "req:key:unspecified",
    "rel": "needs",
-   "w": 16
+   "w": 17
   },
   {
    "from": "fam:atlas-code",
@@ -3051,6 +3061,12 @@
    "to": "req:chromium",
    "rel": "needs",
    "w": 4
+  },
+  {
+   "from": "fam:atlas-code",
+   "to": "script:scripts/atlas_5000.py",
+   "rel": "runs",
+   "w": 1
   },
   {
    "from": "root",
@@ -6371,6 +6387,12 @@
    "w": 1
   },
   {
+   "from": "script:scripts/atlas_ledger.py",
+   "to": "script:scripts/atlas_5000.py",
+   "rel": "imports",
+   "w": 1
+  },
+  {
    "from": "script:scripts/atlas_transfer.py",
    "to": "script:scripts/atlas_capability_miner.py",
    "rel": "imports",
@@ -7231,6 +7253,12 @@
   {
    "from": "script:scripts/atlas_deep_fusion.py",
    "to": "test:.claude/skills/kosif-superpowers/evals/test_script_smoke.py",
+   "rel": "tested_by",
+   "w": 1
+  },
+  {
+   "from": "script:scripts/atlas_ledger.py",
+   "to": "test:.claude/skills/kosif-superpowers/evals/test_atlas_ledger.py",
    "rel": "tested_by",
    "w": 1
   },

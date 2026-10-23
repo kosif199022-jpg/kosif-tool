@@ -2141,6 +2141,28 @@
     "top_k": 8,
     "motion_output": false
    }
+  },
+  {
+   "id": 100,
+   "lang": "ar",
+   "domain": "build",
+   "skills": [
+    "kosif-superpowers"
+   ],
+   "query": "كل مهارة في الأطلس حصل لها ايه؟ كام مهارة اتنقلت وكام اتسابت وليه؟",
+   "files": [],
+   "expected_behavior": [
+    "Runs or names the atlas-ledger tool (scripts/atlas_ledger.py stats) and reports counts per status",
+    "Says a status is a review decision over metadata and SKILL.md text, not an execution receipt, and names why excluded skills were skipped"
+   ],
+   "routing": {
+    "expect_any": [
+     "TOOL"
+    ],
+    "expect_domain": "build",
+    "top_k": 8,
+    "motion_output": false
+   }
   }
  ]
 }

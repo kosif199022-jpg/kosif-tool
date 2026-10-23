@@ -1,0 +1,66 @@
+{
+ "schema": "kosif.rea-receipt.v1",
+ "date": "2026-10-23",
+ "tool": "rea-agents 6.7.0 import-reference-source",
+ "target": "https://github.com/kosif199022-jpg/kosif-atlas",
+ "vcs_head": "99bb108dff169880dd531359f474a01b73c4b233",
+ "authority": "historical-reference",
+ "executed_target_code": false,
+ "runs": [
+  {
+   "root": "kosif-atlas (repository root)",
+   "detail": "summary",
+   "manifest_id": "hsm_c7246468946e82a755d151d0be6b8f368b5933aab15e27bf347316a1e2d71e6a",
+   "graph_sha256": "3e12e2d1ab97cc888cb803f0c82f3e21a10a20a8022ea6b1f0c8f48fcf587519",
+   "root_sha256": "7b80aa25bc5beb68dd001d3c8c87264eb6f56440d50df26aec6028f89edcf82e",
+   "counts": {
+    "entries": 107474,
+    "files": 72479,
+    "directories": 34995,
+    "symlinks": 0,
+    "unknown": 0,
+    "relationships": 10427,
+    "parse_failures": 1,
+    "exclusions": 8
+   },
+   "inventory_state": "partial"
+  },
+  {
+   "root": "kosif-atlas/skills",
+   "detail": "full",
+   "root_sha256": "0b06f83e946d10d43c444c051e608a0114300dc7d08b19c7da6de7256c4e244b",
+   "entries": 107453,
+   "files": 72464,
+   "relationships": 10427,
+   "parse_failures": 1,
+   "exclusions": 7,
+   "inventory_state": "partial"
+  }
+ ],
+ "skills_in_index": 14793,
+ "skill_md_hashed_by_rea": 14793,
+ "skill_md_missing": [],
+ "skill_md_digest": {
+  "algorithm": "sha256 over sorted lines '<atlas id>:<REA sha256 of SKILL.md>\\n' (file name matched case-insensitively)",
+  "value": "84aaca538df76e63ab290742822bc2d9af316125230b7a5c943df9364ab9e5a5"
+ },
+ "spot_check": "5 random SKILL.md hashes recomputed with hashlib matched REA's sha256",
+ "languages_by_file": {
+  "Markdown": 55288,
+  "JSON": 3821,
+  "Python": 3272,
+  "None": 2830,
+  "YAML": 2448,
+  "JavaScript": 1825,
+  "Shell": 1205,
+  "TypeScript": 802,
+  "Text": 254,
+  "HTML": 211,
+  "TSX": 149,
+  "JSX": 70
+ },
+ "limitations": [
+  "Path identity is revalidated around operations; Node lacks portable descriptor-relative openat traversal, so a syscall-boundary pathname race remains."
+ ],
+ "note": "REA hashed every file of the Atlas without running any of it. Its relationship edges cover JavaScript/TypeScript imports only. The per-skill status is in data/atlas_ledger.json.gz."
+}

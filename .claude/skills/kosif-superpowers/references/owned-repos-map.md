@@ -58,7 +58,7 @@
 | research · البحث والمعرفة | 56 | 21 | 23 | 2 | 9 | kosif-atlas, think, kosif-omni, kosif-atlas-private | think, kosif-omni |
 | thinking · التفكير والتخطيط والاستراتيجية | 316 | 17 | 297 | 2 | 0 | 100-superskills, think, kosif-omni, CLOUDFLARE_API_TOKEN, new | think, kosif-omni |
 | agents · الوكلاء والتوجيه الذكي | 158 | 91 | 57 | 8 | 2 | kosif-tool, kosif-one, kosif-atlas, fastify-motion-bro, cloude, see, think, kosif-omni, kosif-atlas-private, CLOUDFLARE_API_TOKEN, whatsapp-personal-bridge | cloude, see, think, kosif-omni |
-| software · البرمجة وبناء التطبيقات | 568 | 127 | 400 | 32 | 7 | kosif-atlas, 100-superskills, kosif-earth-ci-fork, cloude, kosif-audit-pro, see, whatsapp-personal-bridge, mafateeh-al-tharwa | kosif-earth-ci-fork, cloude, kosif-audit-pro, see, mafateeh-al-tharwa |
+| software · البرمجة وبناء التطبيقات | 578 | 127 | 410 | 32 | 7 | kosif-atlas, 100-superskills, kosif-earth-ci-fork, cloude, kosif-audit-pro, see, whatsapp-personal-bridge, mafateeh-al-tharwa | kosif-earth-ci-fork, cloude, kosif-audit-pro, see, mafateeh-al-tharwa |
 | drawing · الرسم والأشكال والتصميم | 300 | 108 | 149 | 31 | 4 | kosif-tool, kosif-studio, fastify-motion-bro | — |
 | images · الصور والتحرير والتوليد | 319 | 138 | 117 | 27 | 35 | 100-superskills, kosif-studio | — |
 | 3d · الثري دي والمحاكاة والرندر | 755 | 263 | 199 | 258 | 31 | kosif-tool, kosif-one, kosif-render-lab | kosif-render-lab |

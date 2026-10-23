@@ -2,8 +2,8 @@
  "atlas": {
   "atlas_total": 14793,
   "available": true,
-  "coverage_pct": 6.5,
-  "covered": 332,
+  "coverage_pct": 6.8,
+  "covered": 350,
   "next_candidates": [
    {
     "next": [
@@ -108,7 +108,7 @@
      }
     ],
     "theme": "mcp-tooling",
-    "uncovered": 263
+    "uncovered": 262
    },
    {
     "next": [
@@ -129,7 +129,7 @@
      }
     ],
     "theme": "debugging",
-    "uncovered": 258
+    "uncovered": 255
    },
    {
     "next": [
@@ -150,7 +150,7 @@
      }
     ],
     "theme": "refactoring-architecture",
-    "uncovered": 218
+    "uncovered": 214
    },
    {
     "next": [
@@ -171,7 +171,7 @@
      }
     ],
     "theme": "productivity-integrations",
-    "uncovered": 193
+    "uncovered": 192
    }
   ],
   "safe_core": 5116,
@@ -181,18 +181,6 @@
     "covered": 0,
     "safe": 6,
     "theme": "hardware-embedded"
-   },
-   {
-    "coverage_pct": 1.0,
-    "covered": 2,
-    "safe": 195,
-    "theme": "productivity-integrations"
-   },
-   {
-    "coverage_pct": 1.0,
-    "covered": 1,
-    "safe": 101,
-    "theme": "web-research"
    },
    {
     "coverage_pct": 1.2,
@@ -207,34 +195,28 @@
     "theme": "web-frameworks"
    },
    {
-    "coverage_pct": 1.4,
+    "coverage_pct": 1.5,
     "covered": 3,
-    "safe": 221,
-    "theme": "refactoring-architecture"
+    "safe": 195,
+    "theme": "productivity-integrations"
    },
    {
-    "coverage_pct": 1.5,
-    "covered": 4,
+    "coverage_pct": 1.9,
+    "covered": 5,
     "safe": 267,
     "theme": "mcp-tooling"
+   },
+   {
+    "coverage_pct": 2.0,
+    "covered": 2,
+    "safe": 101,
+    "theme": "web-research"
    },
    {
     "coverage_pct": 2.3,
     "covered": 3,
     "safe": 129,
     "theme": "prompt-skill-engineering"
-   },
-   {
-    "coverage_pct": 2.5,
-    "covered": 2,
-    "safe": 79,
-    "theme": "knowledge-management"
-   },
-   {
-    "coverage_pct": 2.6,
-    "covered": 4,
-    "safe": 156,
-    "theme": "security"
    },
    {
     "coverage_pct": 2.8,
@@ -247,6 +229,24 @@
     "covered": 3,
     "safe": 104,
     "theme": "performance"
+   },
+   {
+    "coverage_pct": 3.2,
+    "covered": 7,
+    "safe": 221,
+    "theme": "refactoring-architecture"
+   },
+   {
+    "coverage_pct": 3.8,
+    "covered": 6,
+    "safe": 156,
+    "theme": "security"
+   },
+   {
+    "coverage_pct": 3.8,
+    "covered": 3,
+    "safe": 79,
+    "theme": "knowledge-management"
    },
    {
     "coverage_pct": 3.8,
@@ -297,12 +297,6 @@
     "theme": "mobile"
    },
    {
-    "coverage_pct": 5.0,
-    "covered": 9,
-    "safe": 179,
-    "theme": "app-building"
-   },
-   {
     "coverage_pct": 5.4,
     "covered": 3,
     "safe": 56,
@@ -321,16 +315,16 @@
     "theme": "personal-lifestyle"
    },
    {
+    "coverage_pct": 6.7,
+    "covered": 12,
+    "safe": 179,
+    "theme": "app-building"
+   },
+   {
     "coverage_pct": 6.8,
     "covered": 8,
     "safe": 118,
     "theme": "business-finance"
-   },
-   {
-    "coverage_pct": 6.9,
-    "covered": 19,
-    "safe": 277,
-    "theme": "debugging"
    },
    {
     "coverage_pct": 7.1,
@@ -343,6 +337,12 @@
     "covered": 2,
     "safe": 28,
     "theme": "sales-customer"
+   },
+   {
+    "coverage_pct": 7.9,
+    "covered": 22,
+    "safe": 277,
+    "theme": "debugging"
    },
    {
     "coverage_pct": 8.0,
@@ -381,8 +381,8 @@
     "theme": "hr-career"
    },
    {
-    "coverage_pct": 11.1,
-    "covered": 8,
+    "coverage_pct": 13.9,
+    "covered": 10,
     "safe": 72,
     "theme": "data-analysis"
    },
@@ -471,20 +471,20 @@
  },
  "counts": {
   "broken_links": 0,
-  "evals": 94,
+  "evals": 95,
   "families": 62,
   "gaps": {
-   "family_without_tool": 22
+   "family_without_tool": 21
   },
-  "powers": 5480,
-  "py_edges": 252,
+  "powers": 5490,
+  "py_edges": 255,
   "repo_tests": 34,
   "roles": {
    "helper": 2,
-   "registered": 125
+   "registered": 126
   },
-  "scripts": 127,
-  "tools": 143
+  "scripts": 128,
+  "tools": 144
  },
  "families": [
   {
@@ -529,8 +529,8 @@
   },
   {
    "id": "atlas-code",
-   "powers": 237,
-   "tools": 0
+   "powers": 247,
+   "tools": 1
   },
   {
    "id": "atlas-craft",
@@ -720,7 +720,7 @@
   {
    "id": "self-discovery",
    "powers": 43,
-   "tools": 32
+   "tools": 33
   },
   {
    "id": "shapes-morph-geometry",
@@ -812,11 +812,6 @@
   {
    "detail": "52 powers, no tools.json entry lists this family",
    "id": "atlas-build",
-   "kind": "family_without_tool"
-  },
-  {
-   "detail": "237 powers, no tools.json entry lists this family",
-   "id": "atlas-code",
    "kind": "family_without_tool"
   },
   {
@@ -948,6 +943,11 @@
    "from": "atlas_bulk_source_audit",
    "kind": "imports",
    "to": "atlas_deep_fusion"
+  },
+  {
+   "from": "atlas_ledger",
+   "kind": "imports",
+   "to": "atlas_5000"
   },
   {
    "from": "atlas_transfer",
@@ -1573,6 +1573,16 @@
    "from": "test_atlas_capability_miner",
    "kind": "imports",
    "to": "atlas_capability_miner"
+  },
+  {
+   "from": "test_atlas_ledger",
+   "kind": "imports",
+   "to": "atlas_ledger"
+  },
+  {
+   "from": "test_atlas_ledger",
+   "kind": "invokes",
+   "to": "atlas_ledger"
   },
   {
    "from": "test_atlas_metadata_audit",
@@ -2824,11 +2834,14 @@
    "ci": false,
    "id": "atlas_5000",
    "imported_by": [
+    "atlas_ledger",
     "rea_superpowers_map"
    ],
    "path": "scripts/atlas_5000.py",
-   "power_count": 0,
-   "powers": [],
+   "power_count": 1,
+   "powers": [
+    "ACODE-247"
+   ],
    "role": "registered",
    "tests": [
     "evals/test_atlas_5000.py"
@@ -2932,6 +2945,21 @@
    ],
    "tools": [
     "atlas-external-bridge"
+   ]
+  },
+  {
+   "ci": false,
+   "id": "atlas_ledger",
+   "imported_by": [],
+   "path": "scripts/atlas_ledger.py",
+   "power_count": 0,
+   "powers": [],
+   "role": "registered",
+   "tests": [
+    "evals/test_atlas_ledger.py"
+   ],
+   "tools": [
+    "atlas-ledger"
    ]
   },
   {
@@ -5056,20 +5084,20 @@
   "areas": {
    "(root)": 8,
    "assets": 4,
-   "data": 113,
+   "data": 116,
    "dua-wednesday": 10,
-   "evals": 87,
+   "evals": 88,
    "examples": 12,
    "montage-pro": 2,
-   "proofs": 237,
-   "references": 215,
+   "proofs": 239,
+   "references": 216,
    "resources": 3,
    "schemas": 5,
-   "scripts": 158,
+   "scripts": 159,
    "templates": 16,
    "vendor": 76
   },
-  "bytes": 54442909,
+  "bytes": 54712058,
   "extensions": {
    "(none)": 8,
    ".bru": 7,
@@ -5077,17 +5105,17 @@
    ".html": 22,
    ".jpg": 23,
    ".js": 14,
-   ".json": 169,
-   ".md": 329,
+   ".json": 172,
+   ".md": 331,
    ".mjs": 9,
    ".png": 6,
-   ".py": 267,
+   ".py": 269,
    ".sh": 5,
    ".ttf": 14,
    ".txt": 54,
    ".woff2": 8
   },
-  "files": 946,
+  "files": 954,
   "symlinks": 0
  }
 }
