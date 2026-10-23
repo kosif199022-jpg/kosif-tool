@@ -3,13 +3,13 @@
 
 > **قوتك هنا / what this gives you:** تقسيم العمل على وكلاء فرعيين ومسارات متوازية ومهام مجدولة مع بوابات أمان. — Split work across subagents, parallel tracks and scheduled tasks, with safety gates.
 > **أقوى دليل / strongest evidence:** **AGENT-37** Chroma: Index documents into a vector store and answer semantic queries (RAG) (`kosif-tool/.claude/skills/kosif-superpowers/proofs/toolbelt-smoke/README.md`)
-> **38 powers follow** — ✅ 1 · 🟢 0 · 📦 3 · 🔑 1 · 👁 0 · 📄 33 · 💡 0.
+> **46 powers follow** — ✅ 1 · 🟢 0 · 📦 3 · 🔑 1 · 👁 0 · 📄 41 · 💡 0.
 
 **الحالة / status:** ✅ مُثبت (شُغّل فعلًا وله مسار دليل) · 🟢 جاهز (كود موجود يعمل بما هو متاح عادة) · 📦 بأمر تثبيت واحد · 🔑 يحتاج مفتاحًا أو حسابًا أو موصلًا · 👁 شوهد في فيديو مرجعي (للموشن فقط) · 📄 طريقة موثقة · 💡 فكرة. الشارة هي أدنى مستوى صادق — the badge is the lowest level that is true.
 مسارات الدليل نسبية إلى `/home/user/`؛ و`session-<date>:<file>#<section>` تشير إلى تشغيل موثق في جلسة سابقة؛ و`owner-upload:` إلى ملف داخل أرشيف أرسله المالك. Proof paths are relative to `/home/user/`.
 
 **المجال / domain:** العقل والتفكير — Mind & thinking · **البادئة / prefix:** `AGENT` · **البيانات / data:** `data/powers/agent-orchestration.json` · **بحث / search:** `python3 scripts/powers.py family agent-orchestration`
-**مراجع ذات صلة / related references:** [CLAUDE_3_MINUTE_MAP.md](../CLAUDE_3_MINUTE_MAP.md) · [atlas-source-review-20261020.md](../atlas-source-review-20261020.md) · [capability-audit.md](../capability-audit.md) · [ecc-harness.md](../ecc-harness.md) · [ecc-skills-index.md](../ecc-skills-index.md) · [hubs.md](../hubs.md)
+**مراجع ذات صلة / related references:** [CLAUDE_3_MINUTE_MAP.md](../CLAUDE_3_MINUTE_MAP.md) · [atlas-source-review-20261020.md](../atlas-source-review-20261020.md) · [capability-audit.md](../capability-audit.md) · [codex-agent-harness.md](../codex-agent-harness.md) · [codex-repos-study-20261023.md](../codex-repos-study-20261023.md) · [ecc-harness.md](../ecc-harness.md) · [ecc-skills-index.md](../ecc-skills-index.md) · [hubs.md](../hubs.md)
 
 ## الفهرس / contents
 
@@ -23,6 +23,7 @@
 - **الذاكرة والتعلم بإذن — Memory & consent-gated learning** — AGENT-31 … AGENT-33 (3)
 - **حزمة ECC — The ECC harness** — AGENT-34 … AGENT-35 (2)
 - **Extended toolbelt (2026-10-18)** — AGENT-36 … AGENT-38 (3)
+- **حزام Codex: حلقة الوكيل — Codex harness: agent loop** — AGENT-39 … AGENT-46 (8)
 - المصادر والرخص / sources & licences
 
 ## التفويض والوكلاء الفرعيون — Delegation & subagents
@@ -374,9 +375,76 @@
 - **الدليل / proof:** — (لا دليل تشغيل بعد / no run proof yet)
 - **المصدر / source:** https://github.com/modelcontextprotocol/servers
 
+## حزام Codex: حلقة الوكيل — Codex harness: agent loop
+
+#### AGENT-39 · طبقات التعليمات ونطاق AGENTS.md · Instruction layering and AGENTS.md scope · 📄 موصوف / documented only
+- **ماذا / what:** ملف التعليمات يحكم شجرة مجلده، والأعمق يغلب، وتعليمات المستخدم المباشرة تغلب كل الملفات. — An instruction file governs its folder's tree, the nearest file wins on conflict, and direct user instructions beat every file.
+- **متى أستخدمها / when:** قبل تعديل ملف في مجلد فرعي / before editing a file in a subfolder of a repo with AGENTS.md or CLAUDE.md files
+- **كيف / how:** 1) Root-to-cwd instruction files are already loaded. 2) For a file outside cwd or deeper, search for a nearer AGENTS.md/CLAUDE.md. 3) Style rules apply only inside their scope. 4) User/system messages override all files. Check: name the nearest instruction file for every file you changed. Card CX-01.
+- **الرخصة / license:** Apache-2.0
+- **الدليل / proof:** — (لا دليل تشغيل بعد / no run proof yet)
+- **المصدر / source:** https://github.com/openai/codex (Apache-2.0, e6ebdfe) — methods restated in our own words; references/codex-agent-harness.md
+
+#### AGENT-40 · ضغط السياق بملخص تسليم · Context compaction as a handoff · 📄 موصوف / documented only
+- **ماذا / what:** حين يمتلئ السياق اكتب ملخص تسليم يكمل منه وكيل آخر دون سؤال. — When context fills, write a handoff another agent can resume from without asking.
+- **متى أستخدمها / when:** سياق طويل أو تسليم لخيط أو وكيل آخر / long sessions, handing work to another thread or subagent, saving project memory
+- **كيف / how:** Four fields: progress and key decisions; constraints and user preferences; remaining work as clear next steps; critical data, examples and references. Check: a reader of the summary alone can continue. Card CX-03.
+- **الرخصة / license:** Apache-2.0
+- **الدليل / proof:** — (لا دليل تشغيل بعد / no run proof yet)
+- **المصدر / source:** https://github.com/openai/codex (Apache-2.0, e6ebdfe) — methods restated in our own words; references/codex-agent-harness.md
+
+#### AGENT-41 · وضع التخطيط غير المعدِّل · Non-mutating plan mode · 📄 موصوف / documented only
+- **ماذا / what:** في التخطيط اجمع الحقيقة دون تغيير الملفات المتتبعة، واستكشف قبل أن تسأل، وسلّم خطة مكتملة القرار. — While planning, gather truth without changing tracked files, explore before asking, and deliver a decision-complete plan.
+- **متى أستخدمها / when:** قبل تقرير الخطط A/B/C أو حين يطلب المستخدم خطة فقط / before the USIP plan report or when the user asks for a plan only
+- **كيف / how:** Allowed: read, search, static analysis, dry runs, tests that write only caches. Not allowed: edits, rewriting formatters, patches, migrations. An execution request in plan mode means 'plan the execution'. Ask only what the repo cannot answer. Check: no question in the report is answerable from a file. Card CX-10.
+- **الرخصة / license:** Apache-2.0
+- **الدليل / proof:** — (لا دليل تشغيل بعد / no run proof yet)
+- **المصدر / source:** https://github.com/openai/codex (Apache-2.0, e6ebdfe) — methods restated in our own words; references/codex-agent-harness.md
+
+#### AGENT-42 · انضباط قائمة الخطوات · Plan checklist discipline · 📄 موصوف / documented only
+- **ماذا / what:** خطوات ذات معنى قابلة للتحقق بالترتيب، واحدة قيد التنفيذ، وكل تغيير بسببه. — Meaningful, verifiable, ordered steps, one in progress, every change with its reason.
+- **متى أستخدمها / when:** مهمة متعددة المراحل / any multi-phase task with a visible progress checklist
+- **كيف / how:** No filler steps, no plan for single-step work, no step you cannot do (e.g. untestable tests). Mark a step done before starting the next; when the plan changes, say why; do not repeat the whole plan in the reply. Check: each step has a visible result. Card CX-11.
+- **الرخصة / license:** Apache-2.0
+- **الدليل / proof:** — (لا دليل تشغيل بعد / no run proof yet)
+- **المصدر / source:** https://github.com/openai/codex (Apache-2.0, e6ebdfe) — methods restated in our own words; references/codex-agent-harness.md
+
+#### AGENT-43 · الهدف المستمر وتدقيق الإكمال · Persistent goal and completion audit · 📄 موصوف / documented only
+- **ماذا / what:** أبقِ الهدف كاملًا عبر الأدوار، وصنّف كل دور، ولا تعلن الإكمال إلا بدليل لكل متطلب. — Keep the full goal across turns, classify every turn, and claim completion only with evidence per requirement.
+- **متى أستخدمها / when:** مهمة طويلة عبر أدوار أو بعد استيقاظ تلقائي / long work across turns, automatic continuations, before marking anything done or verified
+- **كيف / how:** Turn = progress (state changed or evidence changed the next action) / verified wait (a live handle polled now) / no progress (restated status, unexecuted plan). Completion: requirement → evidence → proves/contradicts/incomplete/weak/missing; weak = not done; scope of the check must match the claim. 'Blocked' only after the same blocker repeats three consecutive turns; never because work is hard; never pause on your own initiative. Card CX-12.
+- **الرخصة / license:** Apache-2.0
+- **الدليل / proof:** — (لا دليل تشغيل بعد / no run proof yet)
+- **المصدر / source:** https://github.com/openai/codex (Apache-2.0, e6ebdfe) — methods restated in our own words; references/codex-agent-harness.md
+
+#### AGENT-44 · المتابعة الاستباقية المحدودة · Bounded proactive follow-up · 📄 موصوف / documented only
+- **ماذا / what:** بعد التسليم تابع فقط ما يغلق حلقة أو يثبت أن التغيير سرى، بشرط توقف، ودون توسيع الصلاحية. — After delivery, follow up only to close a loop or confirm a change took effect, with a stop condition and no wider authority.
+- **متى أستخدمها / when:** بعد تسليم PR أو نشر أو مهمة خلفية / after a PR, a deploy or a background job
+- **كيف / how:** Write scope, wanted outcome, evidence and stop condition first. Prefer completion notifications to polling; back off waits. Anything needing new authority is proposed, not done. Never resend a message already delivered. Card CX-13.
+- **الرخصة / license:** Apache-2.0
+- **الدليل / proof:** — (لا دليل تشغيل بعد / no run proof yet)
+- **المصدر / source:** https://github.com/openai/codex (Apache-2.0, e6ebdfe) — methods restated in our own words; references/codex-agent-harness.md
+
+#### AGENT-45 · غلاف نتيجة الأداة وتيار الأحداث · Tool result envelope and typed event stream · 📄 موصوف / documented only
+- **ماذا / what:** كل نتيجة أداة بغلاف ثابت (زمن، رمز خروج، حجم أصلي، مخرج مقتطع بإعلان)، وكل تشغيل بلا واجهة يطبع أحداث JSON بأنواع محدودة. — Every tool result in a fixed envelope (time, exit code, original size, announced truncation), every headless run as typed JSON events.
+- **متى أستخدمها / when:** عند كتابة أداة أو إيصال trace / writing a new tool, a FusionForge trace, or anything a test must compare
+- **كيف / how:** Envelope: id, wall time, exit code, original token/byte count, output; truncate with a header, never silently. Fixed, matchable error strings. Events: thread/turn started, item started/updated/completed (message, reasoning, command, file change, search, todo), turn completed with usage or failed. Give JSON outputs a 'schema' field. Cards CX-16, CX-17.
+- **يحتاج / needs:** [`chromium`](../requirements.md#req-chromium)
+- **الرخصة / license:** Apache-2.0
+- **الدليل / proof:** — (لا دليل تشغيل بعد / no run proof yet)
+- **المصدر / source:** https://github.com/openai/codex (Apache-2.0, e6ebdfe) — methods restated in our own words; references/codex-agent-harness.md
+
+#### AGENT-46 · ذاكرة على مرحلتين بعقود إيجار · Two-phase memory with leased jobs · 📄 موصوف / documented only
+- **ماذا / what:** استخرج ذاكرة من كل جلسة منتهية خاملة ثم ادمج، بمهام محجوزة وسقف توازٍ وتنقيح أسرار. — Extract a memory from each idle finished session, then consolidate, with leased jobs, a concurrency cap and secret redaction.
+- **متى أستخدمها / when:** تصميم ذاكرة مشروع أو تعلّم بإذن / designing project memory or consent-gated learning
+- **كيف / how:** Phase 1 per session: detailed memory + short summary; skip ephemeral and sub-agent sessions; claim each job with a lease; failures retry with backoff; 'succeeded, no output' is valid. Phase 2 consolidates. Redact secrets before storing. KOSIF analogue: FusionForge shared memory (opt-in, reviewed promotion). Card CX-21.
+- **الرخصة / license:** Apache-2.0
+- **الدليل / proof:** — (لا دليل تشغيل بعد / no run proof yet)
+- **المصدر / source:** https://github.com/openai/codex (Apache-2.0, e6ebdfe) — methods restated in our own words; references/codex-agent-harness.md
+
 ## المصادر والرخص / sources & licences
 
-- الرخص / licences: MIT (26) · owner (6) · — (4) · Apache-2.0 (1) · MIT → Apache-2.0 (1)
+- الرخص / licences: MIT (26) · Apache-2.0 (9) · owner (6) · — (4) · MIT → Apache-2.0 (1)
 - الأفكار مكتوبة بكلماتنا مع رابط المصدر؛ لا يُنسخ نص طرف ثالث طويل. Ideas are paraphrased with a link to the source; no long third-party text is copied. `—` = no licence recorded (own method or own wording).
 
 ---

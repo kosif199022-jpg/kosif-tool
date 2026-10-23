@@ -15,7 +15,7 @@
    "id": "root",
    "kind": "root",
    "label": "KOSIF Superpowers",
-   "count": 5408
+   "count": 5426
   },
   {
    "id": "dom:motion",
@@ -123,10 +123,10 @@
    "label": "Agent orchestration",
    "ar": "تنسيق الوكلاء",
    "prefix": "AGENT",
-   "count": 38,
+   "count": 46,
    "proven": 1,
    "status": {
-    "documented": 33,
+    "documented": 41,
     "key": 1,
     "install": 3,
     "proven": 1
@@ -1367,10 +1367,10 @@
    "label": "Runnable KOSIF tools",
    "ar": "الأدوات القابلة للتشغيل",
    "prefix": "TOOL",
-   "count": 66,
-   "proven": 56,
+   "count": 67,
+   "proven": 57,
    "status": {
-    "proven": 56,
+    "proven": 57,
     "ready": 5,
     "install": 5
    }
@@ -1433,10 +1433,10 @@
    "label": "Security & safety",
    "ar": "الأمان والسلامة",
    "prefix": "SEC",
-   "count": 19,
+   "count": 23,
    "proven": 1,
    "status": {
-    "documented": 14,
+    "documented": 18,
     "install": 4,
     "proven": 1
    }
@@ -1728,12 +1728,17 @@
    "label": "Verification & evals",
    "ar": "التحقق والتقييم",
    "prefix": "CHECK",
-   "count": 30,
+   "count": 35,
    "proven": 4,
    "status": {
-    "documented": 26,
+    "documented": 31,
     "proven": 4
    }
+  },
+  {
+   "id": "script:scripts/differential_exam.py",
+   "kind": "script",
+   "label": "scripts/differential_exam.py"
   },
   {
    "id": "script:scripts/build_chapters.py",
@@ -2558,7 +2563,7 @@
    "from": "dom:mind",
    "to": "fam:agent-orchestration",
    "rel": "has",
-   "w": 38
+   "w": 46
   },
   {
    "from": "fam:agent-orchestration",
@@ -2588,7 +2593,7 @@
    "from": "fam:agent-orchestration",
    "to": "req:chromium",
    "rel": "needs",
-   "w": 1
+   "w": 2
   },
   {
    "from": "fam:agent-orchestration",
@@ -5102,13 +5107,13 @@
    "from": "dom:build",
    "to": "fam:runnable-tools",
    "rel": "has",
-   "w": 66
+   "w": 67
   },
   {
    "from": "fam:runnable-tools",
    "to": "req:python3",
    "rel": "needs",
-   "w": 53
+   "w": 54
   },
   {
    "from": "fam:runnable-tools",
@@ -5156,7 +5161,7 @@
    "from": "fam:runnable-tools",
    "to": "script:scripts/hub.py",
    "rel": "runs",
-   "w": 71
+   "w": 72
   },
   {
    "from": "fam:runnable-tools",
@@ -5222,7 +5227,7 @@
    "from": "dom:code",
    "to": "fam:security-safety",
    "rel": "has",
-   "w": 19
+   "w": 23
   },
   {
    "from": "fam:security-safety",
@@ -5250,6 +5255,12 @@
   },
   {
    "from": "fam:security-safety",
+   "to": "req:python3",
+   "rel": "needs",
+   "w": 2
+  },
+  {
+   "from": "fam:security-safety",
    "to": "req:claude:tools",
    "rel": "needs",
    "w": 1
@@ -5263,12 +5274,6 @@
   {
    "from": "fam:security-safety",
    "to": "req:mcp:github",
-   "rel": "needs",
-   "w": 1
-  },
-  {
-   "from": "fam:security-safety",
-   "to": "req:python3",
    "rel": "needs",
    "w": 1
   },
@@ -6026,19 +6031,19 @@
    "from": "dom:mind",
    "to": "fam:verification-evals",
    "rel": "has",
-   "w": 30
+   "w": 35
+  },
+  {
+   "from": "fam:verification-evals",
+   "to": "req:python3",
+   "rel": "needs",
+   "w": 7
   },
   {
    "from": "fam:verification-evals",
    "to": "req:ffmpeg",
    "rel": "needs",
    "w": 6
-  },
-  {
-   "from": "fam:verification-evals",
-   "to": "req:python3",
-   "rel": "needs",
-   "w": 4
   },
   {
    "from": "fam:verification-evals",
@@ -6079,6 +6084,12 @@
   {
    "from": "fam:verification-evals",
    "to": "script:scripts/powers.py",
+   "rel": "runs",
+   "w": 2
+  },
+  {
+   "from": "fam:verification-evals",
+   "to": "script:scripts/differential_exam.py",
    "rel": "runs",
    "w": 2
   },

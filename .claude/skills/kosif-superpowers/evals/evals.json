@@ -2012,6 +2012,68 @@
     ],
     "top_k": 3
    }
+  },
+  {
+   "id": 94,
+   "lang": "ar",
+   "domain": "code",
+   "skills": [
+    "kosif-superpowers"
+   ],
+   "query": "اختم الامتحان الخفي وقارن النسخة المستنسخة بالأصل",
+   "files": [],
+   "expected_behavior": [
+    "Routes to the differential hidden-exam scorer (TOOL-67) or the sealed-exam method (CHECK-31)",
+    "Seals the exam before the work and runs self-check to 100% before trusting any score"
+   ],
+   "routing": {
+    "expect_any": [
+     "TOOL",
+     "CHECK"
+    ],
+    "top_k": 3
+   }
+  },
+  {
+   "id": 95,
+   "lang": "en",
+   "domain": "code",
+   "skills": [
+    "kosif-superpowers"
+   ],
+   "query": "compare a clone against the original with a hidden test and a mock model server",
+   "files": [],
+   "expected_behavior": [
+    "Routes to the differential exam scorer or the recording mock model server method (CHECK-32)",
+    "Does not claim a match percentage before the scorer scores 100% on reference vs reference"
+   ],
+   "routing": {
+    "expect_any": [
+     "TOOL",
+     "CHECK"
+    ],
+    "top_k": 3
+   }
+  },
+  {
+   "id": 96,
+   "lang": "ar",
+   "domain": "code",
+   "skills": [
+    "kosif-superpowers"
+   ],
+   "query": "قطّع الأمر المركب قبل الموافقة واكتب قاعدة سماح باختبارات",
+   "files": [],
+   "expected_behavior": [
+    "Routes to command segmentation and tested prefix rules (SEC-21)",
+    "Judges each segment of the compound command and gives every allow rule match and not-match examples"
+   ],
+   "routing": {
+    "expect_any": [
+     "SEC"
+    ],
+    "top_k": 3
+   }
   }
  ]
 }

@@ -3,13 +3,13 @@
 
 > **قوتك هنا / what this gives you:** أثبت قبل أن تدّعي: اختبارات وتقييمات ومعايير قبول وإيصالات تشغيل. — Prove before claiming: tests, evals, acceptance criteria and run receipts.
 > **أقوى دليل / strongest evidence:** **CHECK-02** Postcondition gate on the delivered file (ffprobe / verify_video.py / measured sync) (`kosif-tool/.claude/skills/kosif-superpowers/proofs/README.md`) · **CHECK-03** Look at the output: contact sheets, frames, screenshots (`kosif-tool/.claude/skills/kosif-superpowers/proofs/beat-sync/sheet.jpg`)
-> **30 powers follow** — ✅ 4 · 🟢 0 · 📦 0 · 🔑 0 · 👁 0 · 📄 26 · 💡 0.
+> **35 powers follow** — ✅ 4 · 🟢 0 · 📦 0 · 🔑 0 · 👁 0 · 📄 31 · 💡 0.
 
 **الحالة / status:** ✅ مُثبت (شُغّل فعلًا وله مسار دليل) · 🟢 جاهز (كود موجود يعمل بما هو متاح عادة) · 📦 بأمر تثبيت واحد · 🔑 يحتاج مفتاحًا أو حسابًا أو موصلًا · 👁 شوهد في فيديو مرجعي (للموشن فقط) · 📄 طريقة موثقة · 💡 فكرة. الشارة هي أدنى مستوى صادق — the badge is the lowest level that is true.
 مسارات الدليل نسبية إلى `/home/user/`؛ و`session-<date>:<file>#<section>` تشير إلى تشغيل موثق في جلسة سابقة؛ و`owner-upload:` إلى ملف داخل أرشيف أرسله المالك. Proof paths are relative to `/home/user/`.
 
 **المجال / domain:** العقل والتفكير — Mind & thinking · **البادئة / prefix:** `CHECK` · **البيانات / data:** `data/powers/verification-evals.json` · **بحث / search:** `python3 scripts/powers.py family verification-evals`
-**مراجع ذات صلة / related references:** [CLAUDE_3_MINUTE_MAP.md](../CLAUDE_3_MINUTE_MAP.md) · [capability-audit.md](../capability-audit.md) · [cinematic-director-pro.md](../cinematic-director-pro.md) · [hubs.md](../hubs.md) · [owner-uploads-review-20261023.md](../owner-uploads-review-20261023.md) · [thinking.md](../thinking.md) · [verification.md](../verification.md)
+**مراجع ذات صلة / related references:** [CLAUDE_3_MINUTE_MAP.md](../CLAUDE_3_MINUTE_MAP.md) · [capability-audit.md](../capability-audit.md) · [cinematic-director-pro.md](../cinematic-director-pro.md) · [codex-agent-harness.md](../codex-agent-harness.md) · [codex-repos-study-20261023.md](../codex-repos-study-20261023.md) · [hubs.md](../hubs.md) · [owner-uploads-review-20261023.md](../owner-uploads-review-20261023.md) · [thinking.md](../thinking.md) · [verification.md](../verification.md)
 
 ## الفهرس / contents
 
@@ -20,6 +20,7 @@
 - **تطوير المهارة ذاتيًا — Skill self-evolution** — CHECK-21 … CHECK-26 (6)
 - **تصنيف الأعطال — Failure taxonomy** — CHECK-27 … CHECK-29 (3)
 - **إضافات مرفقات 2026-10-23 — 2026-10-23 upload additions** — CHECK-30 (1)
+- **الاختبار الخفي التفاضلي — Differential hidden exam** — CHECK-31 … CHECK-35 (5)
 - المصادر والرخص / sources & licences
 
 ## حلقة التحقق — Verification loop
@@ -288,9 +289,55 @@
 - **الدليل / proof:** — (لا دليل تشغيل بعد / no run proof yet)
 - **المصدر / source:** owner-upload:KOSIF-handoff-2026-10-03-v3 §3 and §5 (kosif_jev_decide, kosif_skill_auto; owner; rewritten, no code copied)
 
+## الاختبار الخفي التفاضلي — Differential hidden exam
+
+#### CHECK-31 · امتحان مختوم قبل العمل · Exam sealed before the work · 📄 موصوف / documented only
+- **ماذا / what:** اكتب الامتحان قبل أن يبدأ المنفّذ، وأخفه عنه، واختمه ببصمات الملفات. — Write the exam before the builder starts, hide it, and seal it with file hashes.
+- **متى أستخدمها / when:** إعادة بناء أداة أو استنساخ سلوك أو أي ادعاء «مطابق للأصل» / rebuilding a tool, cloning behaviour, any 'matches the original' claim
+- **كيف / how:** python3 scripts/differential_exam.py seal EXAM --out seal.json before the work; verify-seal EXAM seal.json at grading time (exit 1 if any file changed, vanished or appeared). Keep the seal outside the exam folder. Card HX-01.
+- **يحتاج / needs:** [`python3`](../requirements.md#req-python3)
+- **الرخصة / license:** owner
+- **الدليل / proof:** `kosif-tool/.claude/skills/kosif-superpowers/evals/test_differential_exam.py`
+- **المصدر / source:** https://github.com/softsweb/codex-clone-hidden-test-kit (no licence: methods only, no files copied); references/codex-agent-harness.md
+
+#### CHECK-32 · خادم نموذج وهمي مسجِّل · Recording mock model server · 📄 موصوف / documented only
+- **ماذا / what:** لاختبار حزام وكيل لا نموذجه: خادم يرد من سيناريو مكتوب ويحفظ كل طلب يصله. — To test an agent harness, not its model: a server that answers from a script and saves every request it receives.
+- **متى أستخدمها / when:** اختبار CLI أو وكيل يتصل بواجهة نموذج / testing a CLI or agent that calls a model API
+- **كيف / how:** Script the model's replies per scenario (text, tool calls, server errors 500/401, bad JSON). Save every request body and headers to the scenario folder; save stdout, stderr, exit code and the workdir effects. Then compare runs with differential_exam.py. Card HX-02.
+- **يحتاج / needs:** [`python3`](../requirements.md#req-python3)
+- **الرخصة / license:** owner
+- **الدليل / proof:** — (لا دليل تشغيل بعد / no run proof yet)
+- **المصدر / source:** https://github.com/softsweb/codex-clone-hidden-test-kit (no licence: methods only, no files copied); references/codex-agent-harness.md
+
+#### CHECK-33 · قائمة سطح الملاحظة · Observable-surface checklist · 📄 موصوف / documented only
+- **ماذا / what:** لكل سيناريو فحوص مسماة لكل ما يرسله البرنامج وما يفعله، لا حكم واحد. — Per scenario, named checks for everything the program sends and does, not one verdict.
+- **متى أستخدمها / when:** تصميم امتحان مقارنة / designing a comparison exam
+- **كيف / how:** Thirteen checks: request count, request shape, instructions, tools, environment context, user messages, tool results, file effects, final answer, JSON events, exit code, stderr errors, headers. Cover hard paths too: model matrix, stdin, -C, images, env/PATH, server errors, unknown tool, long output truncation, non-zero exit. Cards HX-03, HX-05.
+- **الرخصة / license:** owner
+- **الدليل / proof:** — (لا دليل تشغيل بعد / no run proof yet)
+- **المصدر / source:** https://github.com/softsweb/codex-clone-hidden-test-kit (no licence: methods only, no files copied); references/codex-agent-harness.md
+
+#### CHECK-34 · المصحّح يعطي 100% على نفسه أولًا · Scorer must score 100% on itself first · 📄 موصوف / documented only
+- **ماذا / what:** لا تثق في المصحّح قبل أن يعطي الأصل ضد نفسه 100% بعد إخفاء القيم المتغيرة. — Do not trust a scorer until the reference against itself scores 100% after masking volatile values.
+- **متى أستخدمها / when:** قبل نشر أي نسبة مطابقة / before reporting any match percentage
+- **كيف / how:** python3 scripts/differential_exam.py self-check REF REF2 (two reference runs) — exits 1 and prints the remaining differences until ids, timestamps and paths are masked with --rule REGEX=>TOKEN, --root PATH or --skip-key KEY; then compare REF CAND [--min N]. In the test kit the reference first scored 84.5%/95.7% against itself. Card HX-04.
+- **يحتاج / needs:** [`python3`](../requirements.md#req-python3)
+- **الرخصة / license:** owner
+- **الدليل / proof:** `kosif-tool/.claude/skills/kosif-superpowers/evals/test_differential_exam.py`
+- **المصدر / source:** https://github.com/softsweb/codex-clone-hidden-test-kit (no licence: methods only, no files copied); references/codex-agent-harness.md
+
+#### CHECK-35 · ملاحظات استرداد صادقة وخط أساس · Honest recovery notes and a measured baseline · 📄 موصوف / documented only
+- **ماذا / what:** لكل ما استُرد: الأداة التي أظهرته وما تغيّر وما تُحقق منه وما بقي، مع رقم قبل ورقم بعد على الامتحان نفسه. — For every recovery: the tool call that showed it, what changed, what was verified, what is missing, plus before/after numbers on the same exam.
+- **متى أستخدمها / when:** تقرير هندسة عكسية أو استنساخ أو تحسين / reverse-engineering, cloning or improvement reports
+- **كيف / how:** Separate what came from the tool (e.g. REA reads) from what came from your own scripts. List what was not tested. When a tool chokes on a huge target, shrink the target (carve one section) and confirm bulk findings with tool reads. Report baseline vs upgrade (kit: 75.4% → 98.5% with REA mandatory). Cards HX-06…HX-08.
+- **يحتاج / needs:** [`npm:rea`](../requirements.md#req-npm-rea)
+- **الرخصة / license:** owner
+- **الدليل / proof:** — (لا دليل تشغيل بعد / no run proof yet)
+- **المصدر / source:** https://github.com/softsweb/codex-clone-hidden-test-kit (no licence: methods only, no files copied); references/codex-agent-harness.md
+
 ## المصادر والرخص / sources & licences
 
-- الرخص / licences: owner (16) · MIT (12) · — (2)
+- الرخص / licences: owner (21) · MIT (12) · — (2)
 - الأفكار مكتوبة بكلماتنا مع رابط المصدر؛ لا يُنسخ نص طرف ثالث طويل. Ideas are paraphrased with a link to the source; no long third-party text is copied. `—` = no licence recorded (own method or own wording).
 
 ---

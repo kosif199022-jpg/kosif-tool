@@ -14,11 +14,11 @@
 
 | # | requirement | kind | powers unlocked | families | here now |
 |---|---|---|---|---|---|
-| 1 | [`python3`](#req-python3) | bin | 667 | engines-render-pipeline, qa-verification, mental-models, runnable-tools, music-beat-sound |  |
+| 1 | [`python3`](#req-python3) | bin | 672 | engines-render-pipeline, qa-verification, mental-models, runnable-tools, music-beat-sound |  |
 | 2 | [`npm:hyperframes`](#req-npm-hyperframes) | npm | 461 | transitions-cuts, engines-render-pipeline, camera-composition-layout, typography-latin, qa-verification |  |
 | 3 | [`ffmpeg`](#req-ffmpeg) | bin | 424 | engines-render-pipeline, qa-verification, transitions-cuts, music-beat-sound, photo-video-footage |  |
-| 4 | [`chromium`](#req-chromium) | bin | 348 | engines-render-pipeline, software-investigation, app-feature-transfer, qa-verification, transitions-cuts |  |
-| 5 | [`npm:rea`](#req-npm-rea) | npm | 256 | software-investigation, runnable-tools, app-feature-transfer |  |
+| 4 | [`chromium`](#req-chromium) | bin | 349 | engines-render-pipeline, software-investigation, app-feature-transfer, qa-verification, transitions-cuts |  |
+| 5 | [`npm:rea`](#req-npm-rea) | npm | 257 | software-investigation, runnable-tools, app-feature-transfer, verification-evals |  |
 | 6 | [`npm:gsap`](#req-npm-gsap) | npm | 238 | transitions-cuts, engines-render-pipeline, camera-composition-layout, easing-timing-rhythm, typography-latin |  |
 | 7 | [`npm:three`](#req-npm-three) | npm | 176 | transitions-cuts, engines-render-pipeline, light-glow-bloom, texture-material, 3d-spatial |  |
 | 8 | [`key:unspecified`](#req-key-unspecified) | key | 173 | engines-render-pipeline, ai-generation, atlas-code, camera-composition-layout, qa-verification |  |
@@ -145,9 +145,9 @@
 
 - **النوع / kind:** bin (أداة)
 - **التثبيت / install:** `apt-get install -y python3 python3-pip python3-venv`
-- **يفتح / unlocks:** 667 powers
-- **بالحالة / by status:** proven 236 · documented 175 · ready 140 · install 100 · key 13 · seen 3
-- **العائلات / families:** engines-render-pipeline (97), qa-verification (79), mental-models (61), runnable-tools (53), music-beat-sound (45), app-feature-transfer (24), photo-video-footage (16), formats-platforms (15)
+- **يفتح / unlocks:** 672 powers
+- **بالحالة / by status:** proven 237 · documented 179 · ready 140 · install 100 · key 13 · seen 3
+- **العائلات / families:** engines-render-pipeline (97), qa-verification (79), mental-models (61), runnable-tools (54), music-beat-sound (45), app-feature-transfer (24), photo-video-footage (16), formats-platforms (15)
 - **أمثلة / examples:** `ANLY-08` statsmodels OLS and time-series models · `ANLY-14` altair / Vega-Lite chart specs · `ANLY-17` Gradient boosting (XGBoost, LightGBM) · `ANLY-21` Convex optimisation with cvxpy · `ANLY-23` Graph algorithms with networkx · `APP-06` HTML to MP4 renderer (repo tool)
 
 <a id="req-npm-hyperframes"></a>
@@ -175,8 +175,8 @@
 
 - **النوع / kind:** bin (أداة)
 - **التثبيت / install:** `npm i playwright && npx playwright install chromium  (cloud: pre-installed at /opt/pw-browsers)`
-- **يفتح / unlocks:** 348 powers
-- **بالحالة / by status:** install 111 · proven 109 · documented 93 · ready 26 · key 6 · idea 2 · seen 1
+- **يفتح / unlocks:** 349 powers
+- **بالحالة / by status:** install 111 · proven 109 · documented 94 · ready 26 · key 6 · idea 2 · seen 1
 - **العائلات / families:** engines-render-pipeline (59), software-investigation (56), app-feature-transfer (33), qa-verification (24), transitions-cuts (22), camera-composition-layout (15), atlas-build (12), ui-product-device (12)
 - **أمثلة / examples:** `APP-05` Phone-viewport screenshot + overflow check · `APP-06` HTML to MP4 renderer (repo tool) · `APPX-31` Dehaze (ClearView-style) · `APPX-32` Tiered noise reduction · `APPX-33` Auto keystone / perspective · `APPX-34` Lens distortion correction
 
@@ -185,9 +185,9 @@
 
 - **النوع / kind:** npm (حزمة npm)
 - **التثبيت / install:** `npm install -g rea-agents@6.7.0  (Node 22.19+/24.11+/26+)`
-- **يفتح / unlocks:** 256 powers
-- **بالحالة / by status:** documented 168 · install 51 · proven 37
-- **العائلات / families:** software-investigation (245), runnable-tools (7), app-feature-transfer (4)
+- **يفتح / unlocks:** 257 powers
+- **بالحالة / by status:** documented 169 · install 51 · proven 37
+- **العائلات / families:** software-investigation (245), runnable-tools (7), app-feature-transfer (4), verification-evals (1)
 - **أمثلة / examples:** `APPX-117` Live Blender capability inventory · `APPX-24` Electron fuse hardening · `APPX-57` Hidden installer payload detection · `REA-003` Statically reconstruct a local JavaScript/Electr · `REA-004` Capture and statically analyze a page bundle, de · `REA-007` List provider capabilities and side effects
 
 <a id="req-npm-gsap"></a>
@@ -1357,4 +1357,4 @@
 <a id="none"></a>
 ## قدرات بلا مستلزمات خارجية / no external requirement
 
-2439 powers need only Claude and this skill (thinking, writing, planning, review protocols). The rest name at least one requirement above.
+2450 powers need only Claude and this skill (thinking, writing, planning, review protocols). The rest name at least one requirement above.
