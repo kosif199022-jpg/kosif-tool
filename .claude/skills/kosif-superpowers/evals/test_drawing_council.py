@@ -31,7 +31,9 @@ def answer(eid, verdict="pass", beauty=4, fix=True):
     a = {"expert": eid, "verdict": verdict, "scores": {"correctness": 4, "craft": 4, "beauty": beauty},
          "findings": [], "evidence": ["opened the PNG"]}
     if verdict != "pass":
-        a["findings"] = [{"check": "DM-08", "observed": "waist gap", **({"fix": "join hips to chest"} if fix else {})}]
+        a["findings"] = [{"check": "DM-08", "observed": "waist gap",
+                          **({"fix": "join hips to chest", "code": {"where": "s.svg:3 man/hips", "cause": "y=95 leaves a gap",
+                                                                    "change": "y=80"}} if fix else {})}]
     return a
 
 
@@ -70,11 +72,11 @@ class FlowTests(unittest.TestCase):
     def tearDown(self):
         self.tmp.cleanup()
 
-    def plan(self, body_y=80, name="c"):
+    def plan(self, body_y=80, name="c", extra=()):
         (self.t / "s.svg").write_text(SVG.format(body_y=body_y), encoding="utf-8")
         d = self.t / name
         r = subprocess.run([sys.executable, str(SCRIPT), "plan", "--png", str(self.t / "s.png"), "--svg", str(self.t / "s.svg"),
-                            "--brief", "رجل واقف", "--dir", str(d)], capture_output=True, text=True)
+                            "--brief", "رجل واقف", "--dir", str(d), *extra], capture_output=True, text=True)
         self.assertEqual(r.returncode, 0, r.stderr)
         return d
 
@@ -139,6 +141,35 @@ class FlowTests(unittest.TestCase):
         self.assertIn("concrete fix", r.stderr)
         r = self.ingest(d, dict(answer("E02"), expert="E99"))
         self.assertEqual(r.returncode, 2)
+
+    def test_fixes_must_name_the_code_that_causes_them(self):
+        d = self.plan()
+        prompt = (d / "prompts" / "E02.md").read_text(encoding="utf-8")
+        self.assertIn("name the cause, not only the symptom", prompt)
+        self.assertIn("· man · body ·", prompt)
+        a = answer("E02", verdict="fix")
+        del a["findings"][0]["code"]
+        r = self.ingest(d, a)
+        self.assertEqual(r.returncode, 2)
+        self.assertIn("code.where", r.stderr)
+        self.assertEqual(self.ingest(d, answer("E02", verdict="fix")).returncode, 0)
+        dc.cmd_verdict(type("A", (), {"dir": str(d)})())
+        self.assertIn("الكود: `s.svg:3 man/hips`", (d / "minutes.md").read_text(encoding="utf-8"))
+
+    def test_style_lock_and_a_worse_round_than_the_baseline_fails(self):
+        png(self.t / "base.png", shade=120)
+        d = self.plan(extra=["--style", "flat cartoon, bold outlines", "--baseline", str(self.t / "base.png")])
+        prompt = (d / "prompts" / "E06.md").read_text(encoding="utf-8")
+        self.assertIn("Style lock", prompt)
+        self.assertIn("vs_baseline", prompt)
+        r = self.ingest(d, answer("E01"))
+        self.assertEqual(r.returncode, 2)
+        self.assertIn("vs_baseline", r.stderr)
+        for i, e in enumerate(dc.EXPERTS):
+            self.ingest(d, dict(answer(e["id"]), vs_baseline="worse" if i < 6 else "better"))
+        v = dc.verdict(d)
+        self.assertEqual(v["status"], "FAIL")
+        self.assertTrue(any("worse than the baseline" in r for r in v["reasons"]))
 
     def test_protocol_requires_the_council(self):
         core = (SK / "PROTOCOL.md").read_text(encoding="utf-8")

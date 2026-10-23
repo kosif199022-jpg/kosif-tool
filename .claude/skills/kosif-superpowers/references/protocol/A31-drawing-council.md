@@ -42,7 +42,8 @@ SK=.claude/skills/kosif-superpowers
 # 1. القانون 27 أولًا: review حتى PASS، ثم صيّر PNG وافتحه
 python3 $SK/scripts/drawing_methods.py review --svg scene.svg
 # 2. خطط المجلس: يشغّل review ومقاييس النغمة ويكتب prompts/E01..E11.md
-python3 $SK/scripts/drawing_council.py plan --png scene.png --svg scene.svg --brief "<الطلب>" --dir out/<work>/council-r1
+python3 $SK/scripts/drawing_council.py plan --png scene.png --svg scene.svg --source gen.py --style "<الستايل>" --brief "<الطلب>" --dir out/<work>/council-r1
+# من الجولة الثانية: --baseline <أحسن PNG سابق> (كل خبير يقول better/same/worse)
 # 3. شغّل الخبراء: وكيل مستقل لكل برومبت يفتح الصورة ويعيد JSON، ثم سجّل كل إجابة
 python3 $SK/scripts/drawing_council.py ingest --dir out/<work>/council-r1 --expert E04 --file e04.json
 # 4. الحكم: verdict.json وminutes.md؛ الرمز 0 = PASS
@@ -50,6 +51,11 @@ python3 $SK/scripts/drawing_council.py verdict --dir out/<work>/council-r1
 ```
 
 إن خرج FAIL: نفّذ `required_fixes` كلها، وأعد التصيير والفحص، وخطط مجلسًا جديدًا في مجلد جديد (`council-r2`)؛ الإجابات مربوطة ببصمة PNG، فلا تُحسب إجابة عن صورة قديمة.
+
+ثلاث قواعد تمنع أن تسوء الرسمة وهي تُصلَّح (درس الجولات الأولى لرسمة الرجل والقطة: كل جولة أُعيد فيها بناء المشهد لإرضاء كل خبير وحده فخرجت أسوأ من الأولى):
+- **ملاحظة بكودها:** حين يكون للرسمة SVG أو مولّد (`--svg` و`--source`) فكل ملاحظة فيها fix تحمل `code`: `where` (الملف:السطر والعنصر بـdata-figure/data-part أو id، أو دالة المولّد) و`cause` (القيمة أو الإحداثي أو المنطق المسبِّب) و`change` (التعديل نفسه)، و`ingest` يرفض ما ينقصه ذلك. والبرومبت يحمل خريطة الأجزاء المسمّاة بأسطرها.
+- **تثبيت الستايل (`--style`):** كل تصليح داخل ستايل الرسمة وألوانها وتكوينها؛ لا يُشدّ الكرتون المسطح نحو شبه الواقعية.
+- **المقارنة بأحسن نسخة (`--baseline`):** كل خبير يقول `vs_baseline` (better/same/worse)، وإن قال أكثر من نصفهم worse فالجولة FAIL مهما أصلحت: تُحفظ النسخة الأحسن ويُصلَّح عيبها هي. وأصلح ملف الرسمة نفسه ولا تعد بناءها من الصفر.
 
 ## الحكم والإيصال
 

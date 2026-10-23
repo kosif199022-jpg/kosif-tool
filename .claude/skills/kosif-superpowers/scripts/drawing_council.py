@@ -27,6 +27,7 @@ import argparse
 import datetime as dt
 import hashlib
 import json
+import re
 import subprocess
 import sys
 from pathlib import Path
@@ -184,6 +185,29 @@ def visual_metrics(png: Path) -> dict:
             "approx_hsv_saturation_mean": d.get("approx_hsv_saturation_mean"), "warnings": d.get("warnings", [])}
 
 
+CODE_MAP_LIMIT = 240
+_TAG = re.compile(r"<([A-Za-z][\w:-]*)\b([^>]*)>")
+_ATTR = re.compile(r'\b(id|data-figure|data-part|data-contact)="([^"]*)"')
+
+
+def code_map(svg: str) -> list:
+    """Where each named piece of the drawing lives in the SVG source: line, tag, figure, part, id.
+    The experts use it to point every defect at the code that draws it."""
+    text = Path(svg).read_text(encoding="utf-8")
+    rows, figure = [], None
+    for m in _TAG.finditer(text):
+        attrs = dict(_ATTR.findall(m.group(2)))
+        if "data-figure" in attrs:
+            figure = attrs["data-figure"]
+        if not ({"data-part", "data-figure"} & attrs.keys() or (attrs.get("id") and m.group(1) not in ("clipPath", "path", "circle"))):
+            continue
+        rows.append({"line": text.count("\n", 0, m.start()) + 1, "tag": m.group(1), "figure": figure,
+                     **{k.replace("data-", ""): v for k, v in attrs.items()}})
+        if len(rows) >= CODE_MAP_LIMIT:
+            break
+    return rows
+
+
 def expert_prompt(c: dict, e: dict) -> str:
     auto = c["automated"]
     lines = [f"# {e['id']} — {e['name_en']} / {e['name_ar']}", "",
@@ -200,11 +224,35 @@ def expert_prompt(c: dict, e: dict) -> str:
     if e.get("automated") == "visual_metrics":
         lines += ["", "## Measured tone and saturation (advisory, not a beauty judgement)", "```json",
                   json.dumps(auto["visual_metrics"], ensure_ascii=False), "```"]
+    if c.get("style"):
+        lines += ["", "## Style lock", f"The drawing's chosen style is: «{c['style']}». Judge within it: every fix must keep this style, "
+                  "palette and composition. Do not push it toward another style (for example a flat cartoon toward semi-realism); "
+                  "fix what is wrong inside the style."]
+    if c.get("baseline"):
+        lines += ["", "## Compare with the best earlier version",
+                  f"Also open `{c['baseline']}`, the best version so far. Say in `vs_baseline` whether this image is "
+                  "`better`, `same` or `worse` overall in your lane. A round that most experts call worse is rejected and the "
+                  "baseline is kept, however many single fixes it made."]
+    code = c.get("code_required")
+    if code:
+        src = [f"- the SVG: `{c['svg']}`"] if c.get("svg") else []
+        src += [f"- the generator that writes it: `{c['source']}`"] if c.get("source") else []
+        lines += ["", "## The drawing's code: name the cause, not only the symptom",
+                  "Open the source and find what draws each defect. Every finding with a fix must carry `code`: "
+                  "`where` (file:line, and the element's data-figure/data-part or id, or the generator's function/constant), "
+                  "`cause` (the attribute, value, coordinate or logic that produces the defect) and `change` "
+                  "(the exact new value or the code edit). Say so when you could not trace it.", *src]
+        if c.get("code_map"):
+            lines += ["", "Named parts in the SVG (line · tag · figure · part · id):", "```"]
+            lines += [f"{r['line']} · {r['tag']} · {r.get('figure') or '-'} · {r.get('part') or '-'} · {r.get('id') or '-'}" for r in c["code_map"]]
+            lines.append("```")
     lines += ["", "## Answer", "Return only JSON:",
               '{"expert": "%s", "verdict": "pass|fix|veto", "scores": {"correctness": 1-5, "craft": 1-5, "beauty": 1-5},' % e["id"],
-              ' "findings": [{"check": "<card id or veto>", "observed": "<what you saw, where>", "fix": "<concrete change>"}],',
-              ' "evidence": ["<what you looked at, e.g. zoom on the man\'s waist>"]}',
-              "`fix` and `veto` need at least one finding with a concrete fix. Do not pass what you did not look at."]
+              ' "findings": [{"check": "<card id or veto>", "observed": "<what you saw, where>", "fix": "<concrete change>"'
+              + (', "code": {"where": "<file:line, element or function>", "cause": "<attribute/value/logic>", "change": "<exact edit>"}' if code else "") + '}],',
+              ' "evidence": ["<what you looked at, e.g. zoom on the man\'s waist>"]' + (', "vs_baseline": "better|same|worse"' if c.get("baseline") else "") + '}',
+              "`fix` and `veto` need at least one finding with a concrete fix"
+              + (", and every finding with a fix needs its `code`" if code else "") + ". Do not pass what you did not look at."]
     return "\n".join(lines) + "\n"
 
 
@@ -219,6 +267,8 @@ def cmd_roster(a) -> int:
 
 def cmd_plan(a) -> int:
     d, png = Path(a.dir), Path(a.png)
+    if a.baseline and not Path(a.baseline).is_file():
+        raise CouncilError(f"no baseline image at {a.baseline}")
     if not png.is_file():
         raise CouncilError(f"no rendered image at {png}: render the PNG first and look at it")
     if (d / "council.json").exists() and not a.force:
@@ -236,7 +286,9 @@ def cmd_plan(a) -> int:
         automated["law27_review"] = {"status": "NOT_RUN", "reason": "no SVG: the logic guardian judges from the image alone"}
     experts = roster()
     c = {"schema": SCHEMA, "created": now_iso(), "brief": a.brief, "png": str(png), "png_sha256": sha256(png),
-         "svg": a.svg, "automated": automated, "experts": experts,
+         "svg": a.svg, "source": a.source, "style": a.style,
+         "baseline": a.baseline, "baseline_sha256": sha256(Path(a.baseline)) if a.baseline else None, "code_required": bool(a.svg or a.source),
+         "code_map": code_map(a.svg) if a.svg else [], "automated": automated, "experts": experts,
          "thresholds": {"min_score": MIN_SCORE, "min_beauty_mean": MIN_BEAUTY_MEAN}}
     save(d / "council.json", c)
     for e in experts:
@@ -249,7 +301,7 @@ def cmd_plan(a) -> int:
     return 0
 
 
-def check_answer(obj: dict, eid: str) -> list:
+def check_answer(obj: dict, eid: str, code_required: bool = False, baseline: bool = False) -> list:
     probs = []
     if obj.get("expert") != eid:
         probs.append(f"expert is {obj.get('expert')!r}, expected {eid}")
@@ -268,6 +320,13 @@ def check_answer(obj: dict, eid: str) -> list:
             probs.append(f"findings[{i}] needs check and observed")
     if obj.get("verdict") in ("fix", "veto") and not any(isinstance(f, dict) and f.get("fix") for f in fs):
         probs.append("a fix or veto verdict needs at least one finding with a concrete fix")
+    if code_required and obj.get("verdict") in ("fix", "veto"):
+        for i, f in enumerate(fs):
+            cd = f.get("code") if isinstance(f, dict) else None
+            if isinstance(f, dict) and f.get("fix") and not (isinstance(cd, dict) and all(str(cd.get(k) or "").strip() for k in ("where", "cause", "change"))):
+                probs.append(f"findings[{i}] needs code.where, code.cause and code.change: point the fix at the drawing's source")
+    if baseline and obj.get("vs_baseline") not in ("better", "same", "worse"):
+        probs.append("vs_baseline must be better, same or worse: compare with the baseline image")
     if not obj.get("evidence"):
         probs.append("evidence must say what was looked at")
     return probs
@@ -280,7 +339,7 @@ def cmd_ingest(a) -> int:
     if a.expert not in ids:
         raise CouncilError(f"unknown expert {a.expert}")
     obj = load(Path(a.file))
-    probs = check_answer(obj, a.expert)
+    probs = check_answer(obj, a.expert, bool(c.get("code_required")), bool(c.get("baseline")))
     if probs:
         raise CouncilError("; ".join(probs))
     obj.update({"schema": ANSWER_SCHEMA, "simulated": bool(a.simulated), "recorded": now_iso(),
@@ -321,6 +380,9 @@ def verdict(d: Path) -> dict:
         reasons.append(f"fixes required by: {', '.join(open_fix)}")
     if low:
         reasons.append(f"a score below {MIN_SCORE}: {', '.join(x['expert'] for x in low)}")
+    worse = sorted(k for k, v in answers.items() if v.get("vs_baseline") == "worse")
+    if c.get("baseline") and answers and len(worse) * 2 > len(answers):
+        reasons.append(f"worse than the baseline for {len(worse)} of {len(answers)} experts: keep the baseline and fix it instead")
     if beauty_mean is not None and beauty_mean < MIN_BEAUTY_MEAN:
         reasons.append(f"mean beauty {beauty_mean} below {MIN_BEAUTY_MEAN}")
     status = "INCOMPLETE" if missing and not (auto_fail or vetoes) else ("PASS" if not reasons else "FAIL")
@@ -330,7 +392,8 @@ def verdict(d: Path) -> dict:
             "simulated_experts": simulated, "reasons": reasons, "required_fixes": fixes,
             "scores": {k: v["scores"] for k, v in sorted(answers.items())}, "beauty_mean": beauty_mean,
             "automated": {k: v.get("status") for k, v in c["automated"].items()},
-            "png": c["png"], "png_sha256": c["png_sha256"], "brief": c["brief"],
+            "png": c["png"], "png_sha256": c["png_sha256"], "brief": c["brief"], "style": c.get("style"),
+            "baseline": c.get("baseline"), "vs_baseline": {k: v.get("vs_baseline") for k, v in sorted(answers.items()) if v.get("vs_baseline")},
             "scope": ("Automated gates measure geometry and tone; the scores are the experts' recorded judgements "
                       "against their method cards, not a proof of beauty. SIMULATED means one context played the experts.")}
 
@@ -342,11 +405,19 @@ def minutes(v: dict, c: dict) -> str:
     out += ["", "## الدرجات (صحة · حِرفة · جمال)", ""]
     out += [f"- {names[k]}: {s['correctness']} · {s['craft']} · {s['beauty']}" for k, s in v["scores"].items()]
     out += ["", f"متوسط الجمال: {v['beauty_mean']}", ""]
+    if v.get("style"):
+        out += [f"الستايل المثبّت: {v['style']}", ""]
+    if v.get("vs_baseline"):
+        out += [f"مقارنة بأحسن نسخة سابقة (`{v['baseline']}`): " + "، ".join(f"{k} {x}" for k, x in v["vs_baseline"].items()), ""]
     if v["reasons"]:
         out += ["## أسباب عدم القبول", ""] + [f"- {r}" for r in v["reasons"]] + [""]
     if v["required_fixes"]:
         out += ["## التصليحات المطلوبة", ""]
-        out += [f"- {names[f['expert']]} ({f['verdict']}) · {f['check']}: {f['observed']} ← {f['fix']}" for f in v["required_fixes"]]
+        for f in v["required_fixes"]:
+            out.append(f"- {names[f['expert']]} ({f['verdict']}) · {f['check']}: {f['observed']} ← {f['fix']}")
+            if isinstance(f.get("code"), dict):
+                cd = f["code"]
+                out.append(f"  - الكود: `{cd.get('where')}` · السبب: {cd.get('cause')} · التعديل: {cd.get('change')}")
         out.append("")
     out += ["", v["scope"]]
     return "\n".join(out) + "\n"
@@ -370,6 +441,9 @@ def main(argv=None) -> int:
     s = sub.add_parser("plan", help="run the automated gates and write one prompt per expert")
     s.add_argument("--png", required=True)
     s.add_argument("--svg")
+    s.add_argument("--source", help="the generator that writes the SVG (experts trace defects into it too)")
+    s.add_argument("--style", help="lock the drawing's style: experts fix within it, never toward another style")
+    s.add_argument("--baseline", help="the best earlier version: each expert says better/same/worse, and a majority 'worse' fails the round")
     s.add_argument("--brief", required=True)
     s.add_argument("--dir", required=True)
     s.add_argument("--force", action="store_true")
