@@ -112,7 +112,7 @@ def live(as_json: bool) -> int:
     if tools:
         print(f"\nrunnable tools: {len(tools)} in {len({t['area'] for t in tools})} areas — python3 scripts/hub.py doctor shows which run here now")
     print("""
-protocol USIP v5.4 (any substantial request; L0 is answered at once): level → request card → brief (100% receipt)
+protocol USIP v5.5 (any substantial request; L0 is answered at once): level → request card → brief (100% receipt)
   → [L2/L3] FusionForge reuse + propose → plans A/B/C with the questions and suggested defaults in ONE report → wait for the user's word
   0. mkdir -p <repo>/out/<job> && python3 scripts/skill_intelligence.py brief "<task>" --out <repo>/out/<job>/brief.json   receipt + candidates + plans + questions
   0b. python3 scripts/fusionforge.py propose "<task>" --project <slug> --from-brief <repo>/out/<job>/brief.json   L2/L3 recipe; validate/choose/trace/record after approval

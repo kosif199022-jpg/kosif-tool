@@ -1,0 +1,280 @@
+{
+ "schema": "kosif.usip-intelligence.v1",
+ "protocol": "USIP v5.5 appendices A25-A29",
+ "note": "Scaffolds for think.py intake / decompose / qa / recover. Keyword detection is a hint; the level, the questions and the verdict stay Claude's judgement. Nothing here executes a tool or proves a result.",
+ "question_budget": {"L0": 0, "L1": 3, "L2": 5, "L3": 7},
+ "safe_default_markers": ["publish", "post", "send", "pay", "buy", "spend", "delete", "deploy", "credit", "personal", "نشر", "انشر", "ارسل", "أرسل", "ادفع", "شراء", "صرف", "رصيد", "احذف", "حذف", "بيانات شخصية"],
+ "kinds": {
+  "video": {
+   "ar": "فيديو وموشن ومونتاج", "en": "video, motion and montage",
+   "keywords": ["video", "reel", "reels", "tiktok", "motion", "montage", "edit", "animation", "film", "short", "فيديو", "ريلز", "ريل", "تيك", "موشن", "مونتاج", "انميشن", "أنميشن", "فيلم", "مقطع"],
+   "slots": [
+    {"id": "aspect", "ar": "المقاس والمنصة", "present": "(9:16|16:9|1:1|4:5|ريلز|reels?|tiktok|تيك ?توك|يوتيوب|youtube|instagram|انستا)", "severity": "assume", "default": "9:16 لمنصات المقاطع القصيرة"},
+    {"id": "duration", "ar": "المدة", "present": "(\\d+\\s*(ث|ثانية|ثواني|ثوان|s|sec|seconds?|د|دقيقة|دقائق|min|minutes?))", "severity": "assume", "default": "مدة الصوت المرفوع، وإلا 30 ثانية"},
+    {"id": "audio", "ar": "الصوت المصدر", "present": "(صوت|صوتي|تعليق|voice|audio|mp3|wav|m4a|اغنية|أغنية|نشيد|دعاء)", "severity": "ask", "default": "بلا صوت مرفوع: موسيقى مرخصة هادئة أو صمت، يُسأل عنها"},
+    {"id": "assets", "ar": "اللقطات والأصول", "present": "(لقطات|صور|footage|clips?|b-?roll|مرفق|attached|رفعت)", "severity": "assume", "default": "لقطات مجانية مرخصة مع تسجيل رخصة كل لقطة"},
+    {"id": "style", "ar": "الأسلوب البصري", "present": "(اسلوب|أسلوب|ستايل|style|سينمائي|cinematic|كرتون|minimal|بسيط|فخم)", "severity": "assume", "default": "أسلوب واحد متسق يقترحه التقرير"},
+    {"id": "text", "ar": "النص الظاهر واللغة", "present": "(عربي|عربية|arabic|english|انجليزي|إنجليزي|ترجمة|captions?|سبتايتل|نص)", "severity": "assume", "default": "عربية RTL بلغة الطلب"}
+   ],
+   "quality": [
+    {"id": "spec", "ar": "المدة والمقاس وfps مطابقة بالقياس", "hard": true, "tool": "tools/verify_video.py أو ffprobe"},
+    {"id": "audio_intact", "ar": "صوت المستخدم منسوخ بلا تعديل (MD5 مطابق)", "hard": true, "tool": "ffmpeg -f md5"},
+    {"id": "sync", "ar": "تزامن الكلمات ضمن ±2 إطار من words.json", "hard": false, "tool": "سجل seek"},
+    {"id": "arabic", "ar": "العربية متصلة الحروف وصحيحة الاتجاه", "hard": true, "tool": "لوحة لقطات"},
+    {"id": "motion", "ar": "حركة حقيقية (كاميرا أو رسم أو تحويل) لا شرائح ثابتة", "hard": true, "tool": "لوحة لقطات كل ثانيتين"},
+    {"id": "safe_area", "ar": "النص داخل المنطقة الآمنة للمنصة", "hard": false, "tool": "لقطة بإطار المنطقة الآمنة"},
+    {"id": "rights", "ar": "رخصة كل لقطة وموسيقى وخط مسجلة", "hard": true, "tool": "rights.json أو جدول المصادر"},
+    {"id": "preview", "ar": "معاينة رخيصة قبل الرندر الكامل", "hard": false, "tool": "render_html.cjs --preview"}
+   ]
+  },
+  "audio": {
+   "ar": "صوت وتفريغ وموسيقى", "en": "audio, transcription and music",
+   "keywords": ["audio", "voice", "podcast", "transcribe", "transcript", "music", "loudness", "صوت", "تفريغ", "تعليق", "بودكاست", "موسيقى", "جهارة"],
+   "slots": [
+    {"id": "source", "ar": "الملف المصدر", "present": "(mp3|wav|m4a|ملف|مرفق|attached|رفعت)", "severity": "blocker", "default": "لا يُفترض: المدخل مطلوب"},
+    {"id": "dialect", "ar": "اللغة واللهجة", "present": "(فصحى|مصري|خليجي|شامي|مغربي|english|انجليزي|إنجليزي|عربي)", "severity": "assume", "default": "تُكتشف من الملف وتُذكر"},
+    {"id": "output", "ar": "صيغة المخرج", "present": "(srt|vtt|words\\.json|txt|docx|نص|ترجمة)", "severity": "assume", "default": "نص مع توقيت الكلمات words.json"}
+   ],
+   "quality": [
+    {"id": "original_kept", "ar": "التسجيل الأصلي محفوظ وأي معالجة على نسخة", "hard": true, "tool": "MD5 قبل وبعد"},
+    {"id": "loudness", "ar": "الجهارة والذروة مقيسة ومبلغة", "hard": false, "tool": "ffmpeg ebur128"},
+    {"id": "timing", "ar": "توقيت الكلمات متسق مع الموجة", "hard": false, "tool": "عينات استماع عند 5 نقاط"},
+    {"id": "verses", "ar": "الآيات من المصحف لا من التفريغ", "hard": true, "tool": "مطابقة مع نص المصحف"}
+   ]
+  },
+  "image": {
+   "ar": "صور وتصميم وشعار", "en": "images, design and logos",
+   "keywords": ["image", "photo", "logo", "poster", "design", "thumbnail", "banner", "icon", "صورة", "صور", "شعار", "بوستر", "تصميم", "غلاف", "ثمبنيل", "أيقونة", "بانر"],
+   "slots": [
+    {"id": "size", "ar": "المقاس والاستخدام", "present": "(\\d{3,4}\\s*[x×]\\s*\\d{3,4}|a4|a3|1:1|16:9|9:16|غلاف|ثمبنيل|thumbnail|بوستر|poster)", "severity": "assume", "default": "مقاس منصة الاستخدام المذكورة"},
+    {"id": "brand", "ar": "الهوية والألوان والخطوط", "present": "(الوان|ألوان|هوية|brand|خط|font|لون)", "severity": "assume", "default": "لوحة ألوان مقترحة بتباين WCAG AA"},
+    {"id": "editable", "ar": "صيغة قابلة للتعديل", "present": "(svg|psd|figma|pdf|متجه|vector)", "severity": "assume", "default": "SVG أو مصدر قابل للتعديل مع PNG"}
+   ],
+   "quality": [
+    {"id": "legible_small", "ar": "مقروء بمقاس صغير (اختبار التصغير)", "hard": true, "tool": "تصغير إلى 15%"},
+    {"id": "contrast", "ar": "تباين النص ≥ 4.5:1", "hard": true, "tool": "حساب نسبة التباين"},
+    {"id": "font_license", "ar": "رخصة كل خط مؤكدة من مصدره", "hard": true, "tool": "ملف الرخصة"},
+    {"id": "original", "ar": "أصالة بلا نسخ لعمل آخر", "hard": true, "tool": "مقارنة بالمراجع"},
+    {"id": "arabic_shaping", "ar": "تشكيل الحروف العربية واتصالها صحيح", "hard": true, "tool": "رندر فعلي ونظرة"}
+   ]
+  },
+  "code": {
+   "ar": "كود وتطبيقات ومواقع", "en": "code, apps and sites",
+   "keywords": ["code", "app", "api", "bug", "fix", "script", "website", "site", "function", "refactor", "test", "repo", "كود", "برمجة", "تطبيق", "موقع", "سكربت", "خطأ", "باج", "اختبار", "دالة", "ريبو"],
+   "slots": [
+    {"id": "stack", "ar": "اللغة والإطار", "present": "(python|بايثون|javascript|typescript|react|node|html|css|swift|kotlin|java|go|rust|sql|php|flutter)", "severity": "assume", "default": "لغة المستودع الموجود، وإلا Python أو HTML/JS بلا اعتماديات"},
+    {"id": "runtime", "ar": "أين يعمل", "present": "(ويب|web|موبايل|mobile|ios|android|سيرفر|server|cli|سطر الأوامر|desktop)", "severity": "assume", "default": "المتصفح أو سطر الأوامر حسب المخرج"},
+    {"id": "repo", "ar": "مستودع أو ملفات موجودة", "present": "(github|repo|ريبو|مستودع|ملفات|كود موجود|existing)", "severity": "ask", "default": "مشروع جديد مستقل"},
+    {"id": "acceptance", "ar": "متى يكون ناجحًا", "present": "(يشتغل|يعمل|test|اختبار|يمر|passes|يقبل)", "severity": "assume", "default": "الاختبارات الموجودة تمر + اختبار لكل سلوك جديد"}
+   ],
+   "quality": [
+    {"id": "tests_before_after", "ar": "الاختبارات الموجودة تمر قبل التعديل وبعده", "hard": true, "tool": "أمر الاختبار"},
+    {"id": "new_test", "ar": "اختبار لكل سلوك جديد أو خطأ مُصلح", "hard": true, "tool": "الاختبار الجديد يفشل قبل الإصلاح"},
+    {"id": "no_secrets", "ar": "لا أسرار ولا مسارات جلسة في الشيفرة", "hard": true, "tool": "بحث أنماط الأسرار"},
+    {"id": "style_match", "ar": "يطابق أسلوب الكود المحيط وتسمياته", "hard": false, "tool": "مراجعة الفرق"},
+    {"id": "run_doc", "ar": "طريقة تشغيل مكتوبة ومجرَّبة", "hard": false, "tool": "تشغيل الأمر المكتوب"},
+    {"id": "minimal_diff", "ar": "الفرق أصغر ما يحقق الطلب بلا إعادة كتابة غير مطلوبة", "hard": false, "tool": "git diff --stat"},
+    {"id": "errors_handled", "ar": "المدخل الخاطئ يعطي خطأ واضحًا لا انهيارًا صامتًا", "hard": false, "tool": "تشغيل بمدخل خاطئ"}
+   ]
+  },
+  "data": {
+   "ar": "بيانات وجداول ورسوم", "en": "data, spreadsheets and charts",
+   "keywords": ["data", "csv", "excel", "xlsx", "sheet", "chart", "dashboard", "analysis", "statistics", "بيانات", "جدول", "اكسل", "إكسل", "رسم بياني", "تحليل", "إحصاء", "داشبورد", "لوحة"],
+   "slots": [
+    {"id": "source", "ar": "مصدر البيانات", "present": "(csv|xlsx|excel|اكسل|إكسل|ملف|مرفق|database|قاعدة|api|رابط)", "severity": "blocker", "default": "لا يُفترض: البيانات مطلوبة أو مصدر عام مسمى"},
+    {"id": "question", "ar": "السؤال الذي تجيب عنه البيانات", "present": "(لماذا|كم|مقارنة|اتجاه|trend|compare|why|how many|توقع|forecast)", "severity": "ask", "default": "وصف عام: توزيع واتجاه وأعلى خمس فئات"},
+    {"id": "period", "ar": "الفترة والوحدات", "present": "(20\\d\\d|شهر|سنة|ربع|quarter|month|year|يوم|أسبوع)", "severity": "assume", "default": "كل الفترة الموجودة في الملف، مع ذكرها"}
+   ],
+   "quality": [
+    {"id": "reconcile", "ar": "المجاميع تطابق المصدر (تسوية)", "hard": true, "tool": "حساب بالكود"},
+    {"id": "units", "ar": "الوحدات والفترات مكتوبة على كل رقم ورسم", "hard": true, "tool": "مراجعة المحاور"},
+    {"id": "deterministic", "ar": "كل رقم من حساب حتمي لا من تقدير النموذج", "hard": true, "tool": "سكربت قابل لإعادة التشغيل"},
+    {"id": "chart_fit", "ar": "نوع الرسم يناسب السؤال ولا يشوّه المقياس", "hard": false, "tool": "المحور يبدأ من الصفر للأعمدة"},
+    {"id": "nulls", "ar": "القيم المفقودة والشاذة معالجة ومذكورة", "hard": false, "tool": "عدّ القيم الفارغة"}
+   ]
+  },
+  "research": {
+   "ar": "بحث وتقرير ومقارنة", "en": "research, reports and comparisons",
+   "keywords": ["research", "report", "compare", "comparison", "sources", "study", "market", "analysis", "بحث", "تقرير", "قارن", "مقارنة", "مصادر", "دراسة", "سوق", "ابحث"],
+   "slots": [
+    {"id": "scope", "ar": "النطاق والسؤال الدقيق", "present": "(عن|حول|about|between|بين|في مجال)", "severity": "assume", "default": "السؤال كما كُتب مع حدود مكتوبة"},
+    {"id": "recency", "ar": "حداثة المصادر", "present": "(20\\d\\d|أحدث|latest|current|الآن|حاليا|حاليًا)", "severity": "assume", "default": "آخر 24 شهرًا للحقائق المتغيرة"},
+    {"id": "depth", "ar": "الطول والعمق", "present": "(ملخص|summary|مفصل|detailed|صفحة|صفحات|كلمة|words)", "severity": "assume", "default": "خلاصة في أعلى الصفحة ثم تفصيل"}
+   ],
+   "quality": [
+    {"id": "cited", "ar": "كل حقيقة غير بديهية لها مصدر مفتوح فعلًا", "hard": true, "tool": "رابط لكل ادعاء"},
+    {"id": "dated", "ar": "تاريخ كل معلومة متغيرة مكتوب", "hard": true, "tool": "مراجعة"},
+    {"id": "counter", "ar": "أقوى رأي مخالف مذكور ومردود عليه", "hard": false, "tool": "قسم الاعتراضات"},
+    {"id": "answer_first", "ar": "الجواب في أول سطرين", "hard": false, "tool": "قراءة الافتتاح"},
+    {"id": "unknowns", "ar": "ما لم يُعرف أو لم يُفتح مكتوب صراحة", "hard": true, "tool": "قسم الحدود"}
+   ]
+  },
+  "document": {
+   "ar": "مستند وكتابة ومحتوى", "en": "documents, writing and content",
+   "keywords": ["write", "article", "post", "email", "letter", "document", "doc", "docx", "pdf", "essay", "caption", "script", "اكتب", "مقال", "منشور", "بوست", "ايميل", "إيميل", "رسالة", "خطاب", "مستند", "سكريبت", "كابشن", "نص"],
+   "slots": [
+    {"id": "audience", "ar": "الجمهور", "present": "(جمهور|audience|عملاء|customers|مدير|طلاب|متابعين|followers)", "severity": "assume", "default": "قارئ عام ذكي غير متخصص"},
+    {"id": "tone", "ar": "النبرة واللهجة", "present": "(رسمي|formal|ودود|friendly|مصري|فصحى|خليجي|حماسي|هادئ)", "severity": "assume", "default": "لغة الطلب ولهجته"},
+    {"id": "length", "ar": "الطول", "present": "(\\d+\\s*(كلمة|words?|سطر|lines?|صفحة|pages?|حرف|characters?))", "severity": "assume", "default": "أقصر طول يحقق الغرض"},
+    {"id": "format", "ar": "الصيغة", "present": "(docx|word|pdf|markdown|md|google doc|جوجل)", "severity": "assume", "default": "نص في الرد، أو مستند إن طُلب ملف"}
+   ],
+   "quality": [
+    {"id": "purpose", "ar": "يحقق الغرض في أول فقرة", "hard": true, "tool": "قراءة الافتتاح"},
+    {"id": "arabic_correct", "ar": "عربية سليمة إملاءً ونحوًا", "hard": true, "tool": "مراجعة سطر بسطر"},
+    {"id": "no_filler", "ar": "بلا حشو ولا عبارات عامة بلا مضمون", "hard": false, "tool": "think.py critic"},
+    {"id": "facts_checked", "ar": "كل رقم أو اسم أو تاريخ متحقق منه", "hard": true, "tool": "مصدر لكل حقيقة"},
+    {"id": "opens", "ar": "الملف المطلوب يُفتح فعلًا بصيغته", "hard": true, "tool": "فتح الملف"}
+   ]
+  },
+  "translation": {
+   "ar": "ترجمة وتعريب", "en": "translation and localisation",
+   "keywords": ["translate", "translation", "localize", "localise", "subtitle", "ترجم", "ترجمة", "تعريب", "عرّب"],
+   "slots": [
+    {"id": "pair", "ar": "اللغتان", "present": "(الى|إلى|to|from|من).{0,20}(عربي|عربية|english|انجليزي|إنجليزي|فرنسي|french|تركي|اسباني|spanish|german|ألماني)", "severity": "assume", "default": "إلى لغة رسالة المستخدم"},
+    {"id": "register", "ar": "المستوى اللغوي", "present": "(فصحى|عامية|رسمي|formal|تسويقي|قانوني|legal|طبي|medical)", "severity": "assume", "default": "فصحى معاصرة بسيطة"},
+    {"id": "glossary", "ar": "مصطلحات ثابتة", "present": "(مصطلح|glossary|term)", "severity": "assume", "default": "المصطلح الشائع مع الإنجليزي بين قوسين عند أول ذكر"}
+   ],
+   "quality": [
+    {"id": "meaning", "ar": "المعنى كاملًا بلا حذف ولا إضافة", "hard": true, "tool": "مقابلة جملة بجملة"},
+    {"id": "numbers_names", "ar": "الأرقام والأسماء والتواريخ مطابقة", "hard": true, "tool": "مقارنة آلية للأرقام"},
+    {"id": "natural", "ar": "تُقرأ طبيعية لا حرفية", "hard": false, "tool": "قراءة بصوت مسموع"},
+    {"id": "consistent_terms", "ar": "المصطلح الواحد مترجم بطريقة واحدة", "hard": false, "tool": "بحث المصطلحات"}
+   ]
+  },
+  "slides": {
+   "ar": "عرض تقديمي", "en": "slide decks",
+   "keywords": ["slides", "deck", "presentation", "pptx", "powerpoint", "pitch", "عرض", "شرائح", "سلايد", "بريزنتيشن", "تقديمي"],
+   "slots": [
+    {"id": "count", "ar": "عدد الشرائح والمدة", "present": "(\\d+\\s*(شريحة|شرائح|slides?|دقيقة|دقائق|minutes?))", "severity": "assume", "default": "10 شرائح لعرض 10 دقائق"},
+    {"id": "audience", "ar": "الجمهور والهدف", "present": "(مستثمر|investor|عميل|client|إدارة|management|طلاب|students|فريق|team)", "severity": "ask", "default": "صانع قرار يحتاج توصية واضحة"},
+    {"id": "content", "ar": "المادة المصدر", "present": "(ملف|مرفق|تقرير|report|بيانات|data|ملاحظات|notes)", "severity": "assume", "default": "تُبنى من الطلب مع وسم كل رقم مفترض"}
+   ],
+   "quality": [
+    {"id": "one_idea", "ar": "فكرة واحدة لكل شريحة وعنوانها جملة الخلاصة", "hard": false, "tool": "قراءة العناوين وحدها"},
+    {"id": "story", "ar": "العناوين وحدها تحكي القصة", "hard": true, "tool": "قراءة العناوين متتالية"},
+    {"id": "legible", "ar": "النص ≥ 24pt ولا فقرات طويلة", "hard": false, "tool": "مراجعة"},
+    {"id": "numbers_sourced", "ar": "كل رقم بمصدره", "hard": true, "tool": "حاشية مصدر"}
+   ]
+  },
+  "model3d": {
+   "ar": "ثلاثي الأبعاد", "en": "3D",
+   "keywords": ["3d", "blender", "glb", "gltf", "render", "mesh", "scene", "ثري دي", "ثلاثي", "بلندر", "مجسم", "رندر"],
+   "slots": [
+    {"id": "deliverable", "ar": "صيغة التسليم", "present": "(glb|gltf|obj|fbx|mp4|png|blend)", "severity": "assume", "default": "GLB للمجسم أو MP4 للرندر"},
+    {"id": "hardware", "ar": "العتاد وزمن الرندر", "present": "(gpu|cpu|كرت|ساعة|hours?|دقيقة|minutes?)", "severity": "assume", "default": "CPU بلا GPU، بمعاينة منخفضة أولًا"}
+   ],
+   "quality": [
+    {"id": "scale", "ar": "المقياس والوحدات صحيحة", "hard": true, "tool": "قياس الأبعاد"},
+    {"id": "opens", "ar": "الملف يُفتح في عارض مستقل", "hard": true, "tool": "عارض glTF"},
+    {"id": "lighting", "ar": "الإضاءة والكاميرا تخدم القراءة", "hard": false, "tool": "لقطات ثابتة"},
+    {"id": "render_budget", "ar": "زمن الرندر ضمن المتاح، بمعاينة قبله", "hard": false, "tool": "توقيت إطار واحد × عدد الإطارات"}
+   ]
+  },
+  "finance": {
+   "ar": "حسابات ومال ومحاسبة", "en": "finance, accounting and exact numbers",
+   "keywords": ["invoice", "budget", "price", "cost", "accounting", "tax", "salary", "profit", "loan", "فاتورة", "ميزانية", "سعر", "تكلفة", "محاسبة", "ضريبة", "راتب", "ربح", "قرض", "حساب", "زكاة"],
+   "slots": [
+    {"id": "currency", "ar": "العملة", "present": "(ريال|جنيه|دولار|درهم|دينار|يورو|sar|egp|usd|aed|eur|\\$|€)", "severity": "assume", "default": "عملة الطلب أو المستخدم، مكتوبة على كل رقم"},
+    {"id": "rules", "ar": "القواعد المرجعية", "present": "(ifrs|gaap|ضريبة|vat|قانون|نظام|معيار)", "severity": "ask", "default": "يُذكر المعيار المفترض صراحة"},
+    {"id": "period", "ar": "الفترة", "present": "(20\\d\\d|شهر|سنة|ربع|quarter|month|year)", "severity": "assume", "default": "الفترة الواردة في المدخل"}
+   ],
+   "quality": [
+    {"id": "deterministic", "ar": "كل مبلغ من حساب حتمي (كود) لا تقدير", "hard": true, "tool": "سكربت"},
+    {"id": "integer_minor", "ar": "المبالغ بأصغر وحدة (هللة/قرش) أعدادًا صحيحة", "hard": true, "tool": "الحساب بالأعداد الصحيحة"},
+    {"id": "reconciled", "ar": "المجاميع والأرصدة متوازنة", "hard": true, "tool": "ميزان مراجعة"},
+    {"id": "standard_named", "ar": "كل معالجة مربوطة بمعيارها", "hard": false, "tool": "حاشية"},
+    {"id": "not_advice", "ar": "حدود المشورة المهنية مكتوبة حين يلزم", "hard": false, "tool": "سطر تنبيه"}
+   ]
+  },
+  "plan": {
+   "ar": "خطة واستراتيجية وقرار", "en": "plans, strategy and decisions",
+   "keywords": ["plan", "strategy", "roadmap", "decide", "decision", "should", "launch", "project", "خطة", "استراتيجية", "قرار", "أقرر", "اختار", "خارطة", "مشروع", "إطلاق", "نمو"],
+   "slots": [
+    {"id": "goal", "ar": "الهدف القابل للقياس", "present": "(\\d+\\s*%|هدف|goal|target|kpi|مؤشر)", "severity": "ask", "default": "هدف مقترح بعتبة رقمية يُعرض للتعديل"},
+    {"id": "horizon", "ar": "الأفق الزمني", "present": "(أسبوع|اسبوع|شهر|سنة|ربع|week|month|year|quarter|يوم)", "severity": "assume", "default": "90 يومًا"},
+    {"id": "resources", "ar": "الموارد والميزانية", "present": "(ميزانية|budget|فريق|team|وقت|time|موارد)", "severity": "assume", "default": "شخص واحد بلا صرف"}
+   ],
+   "quality": [
+    {"id": "measurable", "ar": "لكل هدف مؤشر وعتبة وتاريخ", "hard": true, "tool": "جدول المؤشرات"},
+    {"id": "options", "ar": "ثلاثة خيارات مختلفة المنهج مع توصية", "hard": true, "tool": "جدول المقارنة"},
+    {"id": "premortem", "ar": "تشريح مسبق بأهم أسباب الفشل والوقاية", "hard": false, "tool": "think.py plan"},
+    {"id": "gates", "ar": "بوابات go/pivot/kill مكتوبة قبل النتائج", "hard": false, "tool": "think.py gate"},
+    {"id": "first_step", "ar": "خطوة أولى صغيرة قابلة للتراجع هذا الأسبوع", "hard": true, "tool": "مراجعة"}
+   ]
+  }
+ },
+ "recovery": {
+  "missing_dependency": {
+   "ar": "اعتمادية مفقودة", "signals": ["ModuleNotFoundError", "command not found", "No such file", "not installed", "غير مثبت"],
+   "diagnose": ["سمِّ الاعتمادية بالضبط (حزمة، برنامج، خط، نموذج)", "افحص وجودها بأمر واحد (import أو --version أو ls)", "افحص هل يوجد بديل مثبت يؤدي الشيء نفسه"],
+   "fix": ["ثبّت محليًا في بيئة العمل إن كان مجانيًا ومسموحًا (pip --user أو venv أو npm محلي)", "استعمل البديل المثبت وسجّله استبدالًا"],
+   "fallback": "مسار المكتبة القياسية أو أداة أخرى من نفس المجموعة",
+   "escalate": "تثبيت نظامي أو مدفوع أو يحتاج مفتاحًا: توقف واسأل",
+   "budget": 2
+  },
+  "wrong_input_kind": {
+   "ar": "نوع مدخل خاطئ", "signals": ["Invalid data", "codec", "unsupported format", "decode error", "صيغة غير مدعومة"],
+   "diagnose": ["افحص المدخل الفعلي (file، ffprobe، أول بايتات، ترميز النص)", "قارن نوعه بما تتوقعه العقدة التالية في الرسم"],
+   "fix": ["أضف محوّلًا صريحًا بين العقدتين (مثلًا ffmpeg لتحويل الصيغة) واحفظ الأصل كما هو", "صحّح نوع الحافة في الرسم إن كان الخطأ في التخطيط"],
+   "fallback": "اطلب المدخل بالصيغة الصحيحة مع أمر تحويل جاهز",
+   "escalate": "إن كان التحويل يفقد جودة أو بيانات: اسأل قبل التحويل",
+   "budget": 2
+  },
+  "quality_below_threshold": {
+   "ar": "جودة دون العتبة", "signals": ["below threshold", "FAIL", "drift", "out of sync", "blurry", "دون العتبة"],
+   "diagnose": ["أي معيار فشل وبكم (المقيس مقابل العتبة)", "هل العتبة نفسها صحيحة ومقيسة بالأداة الصحيحة", "هل السبب في المدخل أم في المعالجة أم في القياس"],
+   "fix": ["عالج السبب الأكبر وحده ثم أعد القياس", "خفّض الطموح في المعيار غير الإلزامي فقط وبإعلان"],
+   "fallback": "المنهج البديل المكتوب للمرحلة في الخطة",
+   "escalate": "معيار إلزامي لا يتحقق بعد البديل: توقف وأبلغ بالأرقام",
+   "budget": 3
+  },
+  "timeout": {
+   "ar": "تجاوز الوقت", "signals": ["timed out", "Timeout", "killed", "took too long", "انتهت المهلة"],
+   "diagnose": ["قس زمن وحدة واحدة (إطار، ملف، طلب) واضربه في العدد", "حدد هل الاختناق في المعالج أم الشبكة أم القرص"],
+   "fix": ["قسّم العمل دفعات قابلة للاستئناف مع نقاط حفظ", "خفّض الدقة في المعاينة وأبقِ الكاملة للتسليم", "شغّل في الخلفية مع مراقبة لا حلقة انتظار"],
+   "fallback": "معاينة قصيرة تمثل النتيجة ثم قرار المستخدم في الكامل",
+   "escalate": "ما يتجاوز زمن الجلسة أو يحتاج عتادًا مدفوعًا: اسأل",
+   "budget": 2
+  },
+  "permission_denied": {
+   "ar": "صلاحية مرفوضة", "signals": ["Permission denied", "403", "401", "EACCES", "denied", "مرفوض"],
+   "diagnose": ["من رفض: نظام الملفات أم الخدمة أم المستخدم في نافذة الإذن", "هل الرفض قرار مستخدم (لا تعِده كما هو) أم إعداد"],
+   "fix": ["اكتب في مسار مسموح (مجلد مؤقت أو مجلد العمل)", "استعمل الطريق الموثق للمنصة لطلب الوصول"],
+   "fallback": "سلّم الأمر جاهزًا ليشغّله المستخدم بنفسه",
+   "escalate": "لا تتجاوز أي رفض بحيلة؛ اشرح ما يلزم وانتظر",
+   "budget": 1
+  },
+  "license_blocked": {
+   "ar": "رخصة تمنع", "signals": ["license", "copyright", "rights", "All rights reserved", "رخصة", "حقوق"],
+   "diagnose": ["اقرأ الرخصة من مصدرها الأصلي", "حدد ما تسمح به بالضبط (استخدام تجاري، تعديل، نسب)"],
+   "fix": ["استبدل الأصل بآخر مرخص ترخيصًا متوافقًا وسجّل المصدر", "اربط وانسب بدل النسخ"],
+   "fallback": "أصل أصلي تصنعه أنت (رسم بالكود، صوت مولّد محليًا)",
+   "escalate": "أصل يصر عليه المستخدم ورخصته تمنع: اشرح ولا تنسخ",
+   "budget": 1
+  },
+  "tool_error": {
+   "ar": "خطأ أداة", "signals": ["Traceback", "Error", "exit code", "segfault", "خطأ"],
+   "diagnose": ["اقرأ آخر سطر في الخطأ ثم أول سطر من كودك فيه", "أعد إنتاج الخطأ بأصغر أمر ممكن", "فرضيات ثلاث على الأقل، واختبار يفصل بينها"],
+   "fix": ["أصلح السبب المثبت وحده، ثم شغّل الاختبار المتعلق", "حوّل إعادة الإنتاج إلى اختبار يبقى"],
+   "fallback": "أداة أخرى أو مسار يدوي للمرحلة نفسها",
+   "escalate": "خطأ في أداة خارجية لا تملكها: بلّغ بإعادة الإنتاج ولا تخفه",
+   "budget": 3
+  },
+  "other": {
+   "ar": "سبب آخر (سوء فهم الطلب، فقدان السياق، تعارض المواصفات، نتيجة متقلبة)", "signals": ["unexpected", "flaky", "mismatch", "غير متوقع"],
+   "diagnose": ["صنّف: هل فهمتُ الطلب خطأ؟ هل فقدتُ سياقًا (ملخص، جلسة جديدة)؟ هل المواصفات متعارضة؟ هل النتيجة متقلبة بين تشغيلين؟", "ارجع إلى بطاقة الطلب والمعايير المكتوبة"],
+   "fix": ["سوء فهم: أعد صياغة الطلب بسطر واعرضه قبل إعادة العمل", "فقدان سياق: أعد قراءة الملفات والسجل لا الذاكرة", "تعارض: طبّق ترتيب الأولوية واذكره", "تقلب: ثبّت البذرة والإصدارات وشغّل مرتين"],
+   "fallback": "أصغر ناتج صحيح مؤكد مع قائمة ما بقي",
+   "escalate": "تعارض يغيّر الهدف: قرار المستخدم",
+   "budget": 2
+  }
+ },
+ "verification_ladder": [
+  {"id": "V0", "ar": "لم يُنتج شيء بعد", "status": "PLAN_ONLY"},
+  {"id": "V1", "ar": "كُتب الناتج ولم يُشغّل أو يُفتح", "status": "PLAN_ONLY"},
+  {"id": "V2", "ar": "شُغّل أو فُتح بلا خطأ ظاهر (لم يُقس معيار)", "status": "EXECUTED_UNVERIFIED"},
+  {"id": "V3", "ar": "بعض المعايير مقيسة بأداة ودليل", "status": "PARTIALLY_VERIFIED"},
+  {"id": "V4", "ar": "كل المعايير مقيسة بأداة ودليل", "status": "DONE_VERIFIED"},
+  {"id": "V5", "ar": "V4 + مراجعة مستقلة أو مقارنة بخط أساس", "status": "DONE_VERIFIED"}
+ ]
+}

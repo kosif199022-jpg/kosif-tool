@@ -2790,8 +2790,8 @@
    "area": "think",
    "title_en": "Thinking engine scaffolds",
    "title_ar": "محرك التفكير وقوالبه",
-   "summary_en": "Turns thinking procedures into checkable text scaffolds. It picks a reasoning level (L0–L6), writes a task contract, ranks 63 mental models, drafts a backcast plan, builds an idea matrix from catalog powers, scores a weighted decision with sensitivity, runs a Monte-Carlo Fermi estimate and flags weak wording in a draft. USIP v5.4 adds four reasoning tools: it ranks eight reasoning modes for a task, updates a belief by likelihood ratios with a halve/double sensitivity, gives a GO/PIVOT/KILL/HOLD verdict from thresholds written in advance, and builds a claim-to-evidence ledger for a draft.",
-   "summary_ar": "يحوّل إجراءات التفكير إلى قوالب نصية قابلة للفحص. يختار مستوى التفكير (L0–L6)، ويكتب عقد المهمة، ويرتّب 63 نموذجًا ذهنيًا، ويصوغ خطة بالتخطيط العكسي، ويبني مصفوفة أفكار من قدرات الكتالوج، ويقيّم قرارًا موزونًا مع اختبار الحساسية، ويجري تقدير فيرمي بطريقة مونت كارلو، ويرصد الصياغات الضعيفة في المسودة. وأضاف USIP v5.4 أربع أدوات استدلال: ترتيب ثمانية أنماط استدلال للمهمة، وتحديث الاعتقاد بنسب الأرجحية مع اختبار حساسية بالتنصيف والمضاعفة، وحكم استمر/حوّل/أوقف/انتظر من عتبات مكتوبة مسبقًا، ودفتر ادعاء ← دليل للمسودة.",
+   "summary_en": "Turns thinking procedures into checkable text scaffolds. It picks a reasoning level (L0–L6), writes a task contract, ranks 63 mental models, drafts a backcast plan, builds an idea matrix from catalog powers, scores a weighted decision with sensitivity, runs a Monte-Carlo Fermi estimate and flags weak wording in a draft. USIP v5.4 adds four reasoning tools: it ranks eight reasoning modes for a task, updates a belief by likelihood ratios with a halve/double sensitivity, gives a GO/PIVOT/KILL/HOLD verdict from thresholds written in advance, and builds a claim-to-evidence ledger for a draft. USIP v5.5 adds four intelligence scaffolds: it detects a request's deliverable kind and sorts its slots into filled, assumed, asked (within the level's question budget) and blocking; checks a task DAG and computes its order, optimistic and pessimistic critical path and one-way doors; prints the quality bar of twelve deliverable kinds and gives PASS, FAIL or INCOMPLETE from answers; and prints the recovery ladder for a FusionForge error class with an attempt budget.",
+   "summary_ar": "يحوّل إجراءات التفكير إلى قوالب نصية قابلة للفحص. يختار مستوى التفكير (L0–L6)، ويكتب عقد المهمة، ويرتّب 63 نموذجًا ذهنيًا، ويصوغ خطة بالتخطيط العكسي، ويبني مصفوفة أفكار من قدرات الكتالوج، ويقيّم قرارًا موزونًا مع اختبار الحساسية، ويجري تقدير فيرمي بطريقة مونت كارلو، ويرصد الصياغات الضعيفة في المسودة. وأضاف USIP v5.4 أربع أدوات استدلال: ترتيب ثمانية أنماط استدلال للمهمة، وتحديث الاعتقاد بنسب الأرجحية مع اختبار حساسية بالتنصيف والمضاعفة، وحكم استمر/حوّل/أوقف/انتظر من عتبات مكتوبة مسبقًا، ودفتر ادعاء ← دليل للمسودة. وأضاف USIP v5.5 أربعة قوالب ذكاء: كشف نوع مخرج الطلب وتصنيف خاناته إلى مملوءة ومفترضة ومسؤولة (بميزانية أسئلة المستوى) وحاجبة، وفحص رسم المهام وحساب ترتيبه ومساره الحرج المتفائل والمتشائم وأبوابه التي لا رجعة فيها، ومعايير الجودة لاثني عشر نوع مخرج مع حكم ناجح/فاشل/ناقص من الإجابات، وسلم التعافي لكل صنف خطأ في FusionForge بميزانية محاولات.",
    "use_when": [
     "فكّر بعمق في المهمة دي قبل ما تبدأ",
     "اعطني أفكار مبتكرة لريل الجمعة",
@@ -2801,7 +2801,11 @@
     "Plan the course launch over 6 weeks",
     "أي طريقة تفكير تناسب المشكلة دي؟",
     "Update my confidence with these two pieces of evidence",
-    "راجع تقريري: أي ادعاء ما عليه دليل؟"
+    "راجع تقريري: أي ادعاء ما عليه دليل؟",
+    "افهم طلبي ده: إيه اللي ناقص وإيه اللي تفترضه؟",
+    "Check my task plan for cycles and the critical path",
+    "What quality checks does a video deliverable need?",
+    "الأمر فشل بخطأ، أعمل إيه؟"
    ],
    "keywords": [
     "thinking",
@@ -2890,6 +2894,26 @@
      "name": "audit",
      "example": "python3 scripts/think.py audit report.md --strict",
      "does": "Self-audit: lists every line with a number, strong claim or superlative and no evidence on the same line (a command, link, file path or '(evidence: …)'), then five calibration questions; --strict exits 1 when a claim is unsupported"
+    },
+    {
+     "name": "intake",
+     "example": "python3 scripts/think.py intake \"اعمل لي ريلز 30 ثانية من صوتي\" --level L2",
+     "does": "Detects the deliverable kind(s) from data/usip_intelligence.json and lists filled, assumed (with the suggested default), asked (capped by the level's question budget) and blocking slots, and flags spend/publish/personal-data words for the safe default"
+    },
+    {
+     "name": "decompose",
+     "example": "python3 scripts/think.py decompose plan.json",
+     "does": "Checks a task DAG (unique ids, known deps, no cycle, done and verify on every task, valid [low, high] estimates) and prints the topological order, optimistic and pessimistic critical path, one-way doors and risk-first advice; --template prints an example; exit 0 OK, 1 FIX, 2 invalid"
+    },
+    {
+     "name": "qa",
+     "example": "python3 scripts/think.py qa video --answers qa.json",
+     "does": "Prints the quality bar of a deliverable kind (hard and soft checks with the tool that measures each); with answers it returns PASS, FAIL (a hard check failed) or INCOMPLETE (a hard check unmeasured or n/a)"
+    },
+    {
+     "name": "recover",
+     "example": "python3 scripts/think.py recover --message \"ModuleNotFoundError: No module named cv2\" --attempts 1",
+     "does": "Prints the diagnose / fix / fallback / escalate ladder for one of the eight FusionForge error classes (guessed from the message when not given) and says STOP when the attempt budget is spent"
     }
    ],
    "inputs": "A task, problem, goal or seed sentence. decide takes a JSON file {\"criteria\": {name: weight}, \"scores\": {option: {criterion: score}}}. fermi takes an arithmetic expression plus --range name=lo:hi for every name. critic takes a text or Markdown file. bayes takes --prior and --lr NAME=RATIO items, or --json spec.json. gate takes a JSON file with go/pivot/kill criteria (name, op, threshold, observed). audit takes a Markdown report.",
@@ -2910,14 +2934,19 @@
    "evidence_note": "9/9 passed (python3 -m unittest tests.test_think); 15/15 passed (python3 -m unittest tests.test_think_reasoning) on 2026-10-23",
    "tests": [
     "tests/test_think.py",
-    "tests/test_think_reasoning.py"
+    "tests/test_think_reasoning.py",
+    "tests/test_think_intel.py"
    ],
    "docs": [
     ".claude/skills/kosif-superpowers/references/protocol/A24-reasoning-modes-decision-gates.md",
     ".claude/skills/kosif-superpowers/references/cognition.md",
     ".claude/skills/kosif-superpowers/references/guides/discover.md",
     "CAPABILITIES.md",
-    "README.md"
+    "README.md",
+    ".claude/skills/kosif-superpowers/references/protocol/A25-task-intake-clarification.md",
+    ".claude/skills/kosif-superpowers/references/protocol/A26-planning-decomposition.md",
+    ".claude/skills/kosif-superpowers/references/protocol/A27-verification-quality-standards.md",
+    ".claude/skills/kosif-superpowers/references/protocol/A29-failure-recovery.md"
    ],
    "families": [
     "thinking-core",
@@ -10459,8 +10488,8 @@
    "area": "discover",
    "title_en": "Smart capability index for Claude",
    "title_ar": "فهرس ذكي للقدرات من أجل Claude",
-   "summary_en": "Deterministically classifies all 5,185 KOSIF power IDs into 15 task-based integration candidate groups, finds matches for Arabic or English prompts, and checks source-to-index completeness without claiming runtime fusion.",
-   "summary_ar": "يصنف جميع القدرات إلى 15 مجموعة ويبحث بالعربية والإنجليزية مع حفظ المعرّفات والأدلة والمتطلبات.",
+   "summary_en": "Deterministically classifies every KOSIF power ID into 15 task-based integration candidate groups, finds matches for Arabic or English prompts, and checks source-to-index completeness without claiming runtime fusion. It also generates the USIP v5.5 protocol library references/library/ (an index plus one routing chapter per group: status counts, the runnable tools serving the group's families, its families and every power with its status and requirements) and checks it for staleness. With cards it writes the full USIP v5.5 protocol library usip-library/ at the repo root (over 400,000 lines): a protocol card per catalog power and per runnable tool that applies the intake, readiness, planning, verification and recovery rules of appendices A25-A29 to that record, plus reasoning-mode, mental-model and quality pages and a master index; --single writes the whole library as one file.",
+   "summary_ar": "يصنف جميع القدرات إلى 15 مجموعة ويبحث بالعربية والإنجليزية مع حفظ المعرّفات والأدلة والمتطلبات. ويولّد مكتبة بروتوكول USIP v5.5 في references/library/ (فهرس وفصل توجيه لكل مجموعة: أعداد الحالات، والأدوات القابلة للتشغيل لعائلاتها، وعائلاتها، وكل قدرة بحالتها ومتطلباتها) ويفحص تقادمها. وبأمر cards يكتب مكتبة بروتوكول USIP v5.5 الكاملة usip-library/ في جذر المستودع (أكثر من 400,000 سطر): بطاقة بروتوكول لكل قدرة ولكل أداة تطبّق عليها قواعد الاستقبال والجاهزية والتخطيط والتحقق والتعافي من الملاحق A25–A29، مع صفحات أنماط الاستدلال والنماذج الذهنية والجودة وفهرس رئيسي؛ و--single يكتبها ملفًا واحدًا.",
    "use_when": [
     "Give Claude an overview of the entire repository quickly",
     "Find related power groups and candidate IDs for a task",
@@ -10499,6 +10528,26 @@
      "name": "build",
      "example": "python3 scripts/smart_capabilities.py build",
      "does": "Rebuild source-derived JSON index and two compact reference documents."
+    },
+    {
+     "name": "library",
+     "example": "python3 scripts/smart_capabilities.py library",
+     "does": "Writes references/library/INDEX.md and one chapter per group from data/powers/*.json and data/tools.json (deterministic), removing orphaned chapters"
+    },
+    {
+     "name": "library-check",
+     "example": "python3 scripts/smart_capabilities.py library-check",
+     "does": "Exits 1 when a library chapter is stale, missing or orphaned; writes nothing"
+    },
+    {
+     "name": "cards",
+     "example": "python3 scripts/smart_capabilities.py cards --single out/USIP_LIBRARY_FULL.md",
+     "does": "Writes usip-library/ (README index, cards/<group>/<family>.md, tools/<area>.md, methods/*.md) deterministically from data/powers/*.json, data/tools.json and data/usip_intelligence.json, removes orphaned files, and with --single also writes the concatenated library"
+    },
+    {
+     "name": "cards-check",
+     "example": "python3 scripts/smart_capabilities.py cards-check",
+     "does": "Exits 1 when a usip-library/ file is stale, missing or orphaned; writes nothing"
     }
    ],
    "inputs": "Read-only catalog data/powers/*.json, manifest.json and a free-text Arabic/English task for find.",
@@ -10515,10 +10564,13 @@
    "limits": "Logical group recommendations only; not execution proof or REA/Ghidra analysis; no promise that all 5,185 tools are executable.",
    "evidence": "tested-here",
    "evidence_note": "2026-10-20 local source-to-index verification passed for 5,185 powers / 61 families / 15 candidate groups. Arabic and English search tested.",
-   "tests": [],
+   "tests": [
+    "tests/test_protocol_library.py"
+   ],
    "docs": [
     ".claude/skills/kosif-superpowers/references/CLAUDE_3_MINUTE_MAP.md",
-    ".claude/skills/kosif-superpowers/references/SMART_CAPABILITY_GROUPS.md"
+    ".claude/skills/kosif-superpowers/references/SMART_CAPABILITY_GROUPS.md",
+    ".claude/skills/kosif-superpowers/references/protocol/A28-capability-routing.md"
    ],
    "families": [
     "self-discovery"
