@@ -11093,14 +11093,17 @@
    "area": "draw",
    "title_en": "Drawing-book methods atlas with layered construction SVGs",
    "title_ar": "أطلس مناهج كتب الرسم مع رسم بنائي بالطبقات",
-   "summary_en": "26 original method cards distilled from well-known drawing books (gesture, proportion, Loomis-style head, mannequin, shape language, silhouette, expression, light, value, colour, composition, inking); ranks them for an Arabic or English request, builds an ordered drawing plan or an image prompt, draws a head, figure, character or forms as a deterministic layered SVG (guide, construction, final, silhouette) and checks the drawing's geometry against the cards.",
-   "summary_ar": "26 بطاقة منهج أصلية مستخلصة من أشهر كتب الرسم (الإيماءة، النسب، رأس لوميس، المانيكان، لغة الأشكال، السيلويت، التعبير، الضوء، القيم، اللون، التكوين، التحبير)؛ يرتبها لطلبك بالعربي أو الإنجليزي، ويبني خطة رسم أو برومبت صورة، ويرسم رأسًا أو جسمًا أو شخصية أو أشكالًا SVG بطبقات، ثم يفحص هندستها مقابل البطاقات.",
+   "summary_en": "47 original method cards distilled from drawing books, including 41 books from the user's own library read in this session (gesture, proportion, Loomis head, mannequin, shape language, silhouette, expression, light, cast shadows, hatching, anime heads, hair and cel shading, animation timing, walks, urban sketching, plants, products, creatures, practice); ranks them for an Arabic or English request, builds an ordered drawing plan or an image prompt, draws a head, figure, character, forms, a bouncing ball or a constructed cast shadow as a deterministic layered SVG (guide, construction, final, silhouette) and checks the drawing's geometry against the cards.",
+   "summary_ar": "47 بطاقة منهج أصلية مستخلصة من كتب الرسم، ومنها 41 كتابًا من مكتبة المستخدم قُرئت في هذه الجلسة (الإيماءة، النسب، رأس لوميس، المانيكان، لغة الأشكال، السيلويت، التعبير، الضوء، الظل الساقط، التهشير، رأس الأنمي وشعره وتلوينه، توقيت التحريك، المشي، رسم المدن، النبات، المنتجات، المخلوقات، التمرين)؛ يرتبها لطلبك، ويبني خطة رسم أو برومبت صورة، ويرسم رأسًا أو جسمًا أو شخصية أو أشكالًا أو كرة تنط أو ظلًا ساقطًا مبنيًا SVG بطبقات، ثم يفحص هندستها مقابل البطاقات.",
    "use_when": [
     "ارسم شخصية كرتونية بلغة أشكال واضحة",
     "علمني أرسم الوجه من زاوية",
     "ارسم جسم بنسب صحيحة ووضعية ديناميكية",
     "Draw a character using drawing-book methods",
-    "Plan a figure drawing with gesture and proportion"
+    "Plan a figure drawing with gesture and proportion",
+    "اعمل انيميشن كرة بتنط بالانضغاط والتمدد",
+    "ارسم ظل ساقط صح من مصباح",
+    "Plan an anime head at a low angle with cel shading"
    ],
    "keywords": [
     "drawing books",
@@ -11126,7 +11129,22 @@
     "figure drawing",
     "رسم الجسم",
     "svg",
-    "رسم"
+    "رسم",
+    "animation",
+    "انيميشن",
+    "bouncing ball",
+    "cast shadow",
+    "ظل ساقط",
+    "anime",
+    "أنمي",
+    "manga",
+    "مانجا",
+    "walk cycle",
+    "دورة مشي",
+    "hatching",
+    "تهشير",
+    "urban sketching",
+    "رسم المدن"
    ],
    "commands": [
     {
@@ -11147,15 +11165,25 @@
     {
      "name": "draw",
      "example": "python3 scripts/drawing_methods.py draw character --shape circle --age child --expression happy --out out/character.svg",
-     "does": "Writes a layered SVG (head, figure, character or forms); refuses to overwrite without --force."
+     "does": "Writes a layered SVG (head, figure, character, forms, bounce or shadow); refuses to overwrite without --force."
+    },
+    {
+     "name": "draw-bounce",
+     "example": "python3 scripts/drawing_methods.py draw bounce --frames 13 --out out/bounce.svg",
+     "does": "Bouncing-ball key drawings on an arc with gravity spacing, stretch near contact and a constant-area squash."
+    },
+    {
+     "name": "draw-shadow",
+     "example": "python3 scripts/drawing_methods.py draw shadow --light-x 0.15 --light-height 0.4 --out out/shadow.svg",
+     "does": "A box and a pole with cast shadows built by intersecting rays from a point light and its foot."
     },
     {
      "name": "check",
      "example": "python3 scripts/drawing_methods.py check --svg out/character.svg",
-     "does": "Measures the SVG's stages, proportions, tilts, shapes and expression against the cards; exits 1 on a failed check."
+     "does": "Measures the SVG's stages, proportions, tilts, shapes, expression, ball volume and spacing, and shadow-ray intersections against the cards; exits 1 on a failed check."
     }
    ],
-   "inputs": "A request in Arabic or English, method ids, or draw parameters (yaw/pitch, heads, pose, shape, age, expression, eye level)",
+   "inputs": "A request in Arabic or English, method ids, or draw parameters (yaw/pitch, heads, pose, shape, age, expression, eye level, frames, bounce height, light position)",
    "outputs": "JSON method lists, plans, prompts and check reports; editable layered SVG drawings",
    "requires": {
     "python": [],
@@ -11166,7 +11194,7 @@
    },
    "safety": "writes-files",
    "consent": "Writes only the SVG or JSON path you pass; refuses to overwrite without --force; no network, model calls or spend.",
-   "limits": "Method cards summarise widely taught book methods in original words; the books' full texts were not read here. The SVGs are construction demonstrations, and check measures geometry only, not artistic quality.",
+   "limits": "Method cards paraphrase methods in original words. Cards marked user_copy_read_paraphrased rest on the user's own books read in this session through their text layer, OCR or sample pages (not a line-by-line study; some OCR was garbled); the others summarise widely taught methods. The SVGs are construction demonstrations, and check measures geometry only, not artistic quality.",
    "tests": [
     ".claude/skills/kosif-superpowers/evals/test_drawing_methods.py"
    ],

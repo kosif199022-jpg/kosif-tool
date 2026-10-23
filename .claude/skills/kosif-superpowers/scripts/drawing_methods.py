@@ -1,9 +1,9 @@
 #!/usr/bin/env python3
 """KOSIF Drawing Methods Atlas: drawing-book method cards and layered SVG construction demos.
 
-`list`, `find`, `show` and `plan` read data/drawing_methods_atlas.json (26 original summaries of methods
-taught in well-known drawing books; no book text or images). `prompt` turns chosen methods into an
-image-generation prompt without calling any model. `draw head|figure|character|forms` writes a
+`list`, `find`, `show` and `plan` read data/drawing_methods_atlas.json (original summaries of methods
+taught in drawing books; no book text or images). `prompt` turns chosen methods into an
+image-generation prompt without calling any model. `draw head|figure|character|forms|bounce|shadow` writes a
 deterministic, editable SVG whose groups are the method's stages (guide, construction, final,
 silhouette), and `check` reads such an SVG back and measures it against the cards' checks.
 
@@ -24,11 +24,14 @@ SCHEMA = "kosif.drawing.methods_atlas.v1"
 SVG_NS = "http://www.w3.org/2000/svg"
 STAGES = ("guide", "construction", "final", "silhouette")
 KIND_METHODS = {"head": ["DM-09", "DM-03", "DM-24"], "figure": ["DM-06", "DM-07", "DM-08", "DM-12"],
-                "character": ["DM-13", "DM-14", "DM-15", "DM-16"], "forms": ["DM-03", "DM-04", "DM-19"]}
+                "character": ["DM-13", "DM-14", "DM-15", "DM-16"], "forms": ["DM-03", "DM-04", "DM-19"],
+                "bounce": ["DM-27", "DM-28"], "shadow": ["DM-32", "DM-19"]}
 KIND_WORDS = {"head": ["head", "face", "portrait", "رأس", "وجه", "بورتريه", "ملامح"],
               "figure": ["figure", "pose", "body", "gesture", "جسم", "وضعية", "جسد", "حركة", "إيماءة"],
               "character": ["character", "cartoon", "mascot", "شخصية", "كرتون", "ماسكوت"],
-              "forms": ["shape", "form", "sphere", "cylinder", "شكل", "أشكال", "كرة", "أسطوانة"]}
+              "forms": ["shape", "form", "sphere", "cylinder", "شكل", "أشكال", "كرة", "أسطوانة"],
+              "bounce": ["animation", "animate", "bounce", "timing", "انيميشن", "تحريك", "رسوم متحركة", "تنط", "توقيت"],
+              "shadow": ["cast shadow", "shadow construction", "ظل ساقط", "بناء الظل"]}
 
 
 # ------------------------------------------------------------------ atlas
@@ -41,6 +44,11 @@ def load_atlas(path=ATLAS):
     if len(ids) != len(set(ids)):
         raise ValueError("duplicate method id")
     known = set(ids)
+    library = {b["id"] for b in data.get("user_library", [])}
+    for m in data["methods"]:
+        missing = [b for b in m["books"] if b.startswith("UBK-") and b not in library]
+        if missing:
+            raise ValueError(f"{m['id']} names books missing from user_library: {', '.join(missing)}")
     for stage in data["pipeline"]:
         for mid in stage["methods"]:
             if mid not in known:
@@ -60,8 +68,11 @@ def norm(text):
     return re.sub(r"[ً-ْ]", "", text)
 
 
+STOP = {"ارسم", "رسم", "ارسملي", "عايز", "عاوز", "اريد", "اعمل", "draw", "drawing", "make", "want", "the", "and"}
+
+
 def words(text):
-    return [w for w in re.findall(r"[\w؀-ۿ]+", norm(text)) if len(w) > 1]
+    return [w for w in re.findall(r"[\w؀-ۿ]+", norm(text)) if len(w) > 1 and w not in STOP]
 
 
 def score(method, query):
@@ -514,6 +525,133 @@ def draw_forms(eye_level=0.45, width=900, height=600):
     return svg_doc("forms", width, height, layers, attrs, "Sphere, cylinder and cone under one light"), attrs
 
 
+# ------------------------------------------------------------------ bounce (DM-27, DM-28)
+
+def draw_bounce(frames=13, height_frac=0.55, width=900, height=600):
+    """One bounce, apex to apex, timed on even frames: gravity gives the slow-in/slow-out spacing (close drawings
+    at the top, wide near the ground); stretch along the path near contact, squash on contact, constant area."""
+    if frames % 2 == 0 or not 7 <= frames <= 25:
+        raise ValueError("frames must be odd and between 7 and 25")
+    if not 0.2 <= height_frac <= 0.8:
+        raise ValueError("bounce-height must be a fraction of the height between 0.2 and 0.8")
+    ground, r = height * 0.85, height * 0.045
+    top = ground - r - height * height_frac
+    mid, x0, x1 = frames // 2, width * 0.08, width * 0.92
+    vx = (x1 - x0) / (frames - 1)
+    fall = ground - r - top
+    centres = []
+    for i in range(frames):
+        s = abs(i - mid) / mid                             # 0 on contact, 1 at either apex
+        centres.append((x0 + vx * i, ground - r - fall * s * (2 - s)))   # height = H(1 - t^2), t = time from the apex
+    guide = [el("line", x1=0, y1=round(ground, 2), x2=width, y2=round(ground, 2), data_part="ground"),
+             el("polyline", points=pts([(round(x, 2), round(y, 2)) for x, y in centres]), stroke_dasharray="5 6",
+                data_part="arc")]
+    cons, final, sil = [], [], []
+    for i, (x, y) in enumerate(centres):
+        cons.append(el("line", x1=round(x, 2), y1=round(ground + 14, 2), x2=round(x, 2), y2=round(ground + 30, 2),
+                       data_part="spacing-tick", data_frame=i))
+        cons.append(f'<text x="{f(round(x - 4, 2))}" y="{f(round(ground + 46, 2))}" font-size="12" fill="#c0623b" stroke="none">{i}</text>')
+    for i, (x, y) in enumerate(centres):
+        contact = i == mid
+        if contact:
+            k = 1.45                                       # squash: wider and flatter, same area
+            rx, ry, ang, cy = r * k, r / k, 0.0, ground - r / k
+        else:
+            near = 1 - abs(i - mid) / mid                  # 0 at the apex, ->1 next to the ground
+            k = 1 + 0.5 * near ** 2                         # stretch grows with speed
+            (ax, ay), (bx, by) = centres[max(i - 1, 0)], centres[min(i + 1, frames - 1)]
+            ang = math.degrees(math.atan2(by - ay, bx - ax)) - 90   # long axis along the direction of travel
+            rx, ry, cy = r / k, r * k, y
+        final.append(el("ellipse", cx=round(x, 2), cy=round(cy, 2), rx=round(rx, 3), ry=round(ry, 3),
+                        transform=f"rotate({f(round(ang, 2))} {f(round(x, 2))} {f(round(cy, 2))})" if ang else None,
+                        data_part="ball", data_frame=i, data_contact=int(contact)))
+        sil.append(el("ellipse", cx=round(x, 2), cy=round(cy, 2), rx=round(rx, 3), ry=round(ry, 3)))
+    attrs = {"frames": frames, "radius": f(round(r, 3)), "ground": f(round(ground, 2)), "methods": "DM-27 DM-28"}
+    layers = {"guide": guide, "construction": cons, "final": final, "silhouette": thumbnail(sil, width, height, 0.14)}
+    return svg_doc("bounce", width, height, layers, attrs, "Bouncing ball: arc, spacing, squash and stretch"), attrs
+
+
+# ------------------------------------------------------------------ cast shadow (DM-32)
+
+def _meet(p1, p2, p3, p4):
+    """Intersection of line p1-p2 with line p3-p4."""
+    d = (p1[0] - p2[0]) * (p3[1] - p4[1]) - (p1[1] - p2[1]) * (p3[0] - p4[0])
+    if abs(d) < 1e-9:
+        raise ValueError("light and object edge are parallel; move the light")
+    a, b = p1[0] * p2[1] - p1[1] * p2[0], p3[0] * p4[1] - p3[1] * p4[0]
+    return ((a * (p3[0] - p4[0]) - (p1[0] - p2[0]) * b) / d, (a * (p3[1] - p4[1]) - (p1[1] - p2[1]) * b) / d)
+
+
+def draw_shadow(light_x=0.15, light_h=0.4, width=900, height=600):
+    """Point-light cast shadow built the way perspective courses teach it: the foot of the light on the ground is the
+    shadow's vanishing point; each shadow corner is where the ray from that foot through a base point meets the ray
+    from the light through the matching top point."""
+    if not 0.05 <= light_x <= 0.95 or not 0.1 <= light_h <= 0.45:
+        raise ValueError("light-x must be in [0.05, 0.95] and light-height in [0.1, 0.45] (fractions of the frame)")
+    hz = height * 0.38
+    foot = (width * light_x, height * 0.6)
+    light = (foot[0], foot[1] - height * light_h)
+    base = [(width * 0.44, height * 0.74), (width * 0.56, height * 0.77), (width * 0.62, height * 0.69), (width * 0.50, height * 0.67)]
+    hgt = [height * 0.13 * (b[1] - hz) / (height * 0.84 - hz) * 1.25 for b in base]   # nearer corners stand taller
+    tops = [(b[0], b[1] - hh) for b, hh in zip(base, hgt)]
+    shadow_tops = []
+    for b, t in zip(base, tops):
+        s = _meet(foot, b, light, t)
+        if (s[0] - foot[0]) * (b[0] - foot[0]) + (s[1] - foot[1]) * (b[1] - foot[1]) <= 0:
+            raise ValueError("the light is not above the ground in front of the object; raise or move it")
+        shadow_tops.append(s)
+    pole_b, pole_t = (width * 0.32, height * 0.78), (width * 0.32, height * 0.6)
+    pole_s = _meet(foot, pole_b, light, pole_t)
+    guide = [el("line", x1=0, y1=round(hz, 2), x2=width, y2=round(hz, 2), stroke_dasharray="8 6", data_part="horizon"),
+             el("line", x1=round(light[0], 2), y1=round(light[1], 2), x2=round(foot[0], 2), y2=round(foot[1], 2), data_part="light-drop")]
+    cons, final = [], []
+    for (b, t, s, name) in [*((b, t, s, f"corner-{i}") for i, (b, t, s) in enumerate(zip(base, tops, shadow_tops))),
+                            (pole_b, pole_t, pole_s, "pole")]:
+        cons.append(el("line", x1=round(foot[0], 2), y1=round(foot[1], 2), x2=round(s[0], 2), y2=round(s[1], 2), data_part="ground-ray"))
+        cons.append(el("line", x1=round(light[0], 2), y1=round(light[1], 2), x2=round(s[0], 2), y2=round(s[1], 2), data_part="light-ray"))
+        cons.append(el("circle", class_="sh", cx=round(s[0], 2), cy=round(s[1], 2), r=4, data_name=name,
+                       data_base=f"{f(round(b[0], 2))},{f(round(b[1], 2))}", data_top=f"{f(round(t[0], 2))},{f(round(t[1], 2))}"))
+    # shadow shape: convex hull of the base and the projected tops (the box sits on its own shadow)
+    hull_pts = _hull(base + shadow_tops)
+    final.append(el("polygon", points=pts([(round(x, 2), round(y, 2)) for x, y in hull_pts]), fill="#3a3a46", opacity="0.6",
+                    stroke="none", data_part="cast-shadow"))
+    final.append(el("polygon", points=pts([(round(pole_b[0] - 3, 2), round(pole_b[1], 2)), (round(pole_b[0] + 3, 2), round(pole_b[1], 2)),
+                                           (round(pole_s[0], 2), round(pole_s[1], 2))]), fill="#3a3a46", opacity="0.6", stroke="none",
+                    data_part="cast-shadow"))
+    near = [0, 1, 2]
+    final.append(el("polygon", points=pts([(round(x, 2), round(y, 2)) for x, y in tops]), fill="#f3e3c8", data_part="box-top"))
+    for i, j in zip(near, near[1:]):
+        final.append(el("polygon", points=pts([(round(p[0], 2), round(p[1], 2)) for p in (base[i], base[j], tops[j], tops[i])]),
+                        fill="#c9a77f" if i == 0 else "#8e6f55", data_part="box-side"))
+    final.append(el("line", x1=round(pole_b[0], 2), y1=round(pole_b[1], 2), x2=round(pole_t[0], 2), y2=round(pole_t[1], 2), data_part="pole"))
+    final.append(el("circle", cx=round(light[0], 2), cy=round(light[1], 2), r=9, fill="#ffd25e", data_part="light"))
+    sil = [el("polygon", points=pts(_hull(base + tops))), el("rect", x=round(pole_b[0] - 3, 2), y=round(pole_t[1], 2), width=6,
+                                                           height=round(pole_b[1] - pole_t[1], 2))]
+    attrs = {"light": f"{f(round(light[0], 2))},{f(round(light[1], 2))}", "light-foot": f"{f(round(foot[0], 2))},{f(round(foot[1], 2))}",
+             "methods": "DM-32 DM-19"}
+    layers = {"guide": guide, "construction": cons, "final": final, "silhouette": thumbnail(sil, width, height, 0.14)}
+    return svg_doc("shadow", width, height, layers, attrs, "Cast shadow from a point light"), attrs
+
+
+def _hull(points):
+    p = sorted(set(points))
+    if len(p) < 3:
+        return p
+
+    def cross(o, a, b):
+        return (a[0] - o[0]) * (b[1] - o[1]) - (a[1] - o[1]) * (b[0] - o[0])
+    lower, upper = [], []
+    for q in p:
+        while len(lower) >= 2 and cross(lower[-2], lower[-1], q) <= 0:
+            lower.pop()
+        lower.append(q)
+    for q in reversed(p):
+        while len(upper) >= 2 and cross(upper[-2], upper[-1], q) <= 0:
+            upper.pop()
+        upper.append(q)
+    return lower[:-1] + upper[:-1]
+
+
 # ------------------------------------------------------------------ check
 
 def _q(tag):
@@ -587,6 +725,40 @@ def check_svg(path):
         ok = len(rings) >= 2 and all(b[1] >= a[1] for a, b in zip(rings, rings[1:]))
         add("ellipses-widen-from-eye-level", ok, [[round(d, 1), round(r, 3)] for d, r in rings], "DM-04")
         add("single-light", root.get("data-light") is not None, root.get("data-light"), "DM-19")
+    elif kind == "bounce":
+        balls = sorted(((int(e.get("data-frame")), e) for e in root.iter(_q("ellipse")) if e.get("data-part") == "ball"),
+                       key=lambda t: t[0])
+        r = float(root.get("data-radius"))
+        ground = float(root.get("data-ground"))
+        areas = [float(e.get("rx")) * float(e.get("ry")) / (r * r) for _, e in balls]
+        add("volume-preserved", bool(areas) and max(abs(a - 1) for a in areas) <= 0.03,
+            {"area_ratio_min": round(min(areas), 3), "area_ratio_max": round(max(areas), 3)}, "DM-27")
+        cxy = [(float(e.get("cx")), float(e.get("cy"))) for _, e in balls]
+        gaps = [math.dist(a, b) for a, b in zip(cxy, cxy[1:])]
+        n = len(gaps)
+        add("slow-in-slow-out", n >= 4 and gaps[0] < gaps[n // 2 - 1] and gaps[-1] < gaps[n // 2],
+            {"first": round(gaps[0], 1), "before_contact": round(gaps[n // 2 - 1], 1), "last": round(gaps[-1], 1)}, "DM-28")
+        hit = [e for _, e in balls if e.get("data-contact") == "1"]
+        ok = len(hit) == 1 and float(hit[0].get("rx")) > float(hit[0].get("ry")) and \
+            abs(float(hit[0].get("cy")) + float(hit[0].get("ry")) - ground) <= 0.5
+        add("squash-on-contact", ok, "contact frame wider than tall and touching the ground" if ok else "missing or floating", "DM-27")
+        stretch = [e for _, e in balls if e.get("data-contact") == "0" and float(e.get("ry")) > float(e.get("rx")) * 1.05]
+        add("stretch-near-contact", len(stretch) >= 2, len(stretch), "DM-27")
+    elif kind == "shadow":
+        light = [float(v) for v in root.get("data-light").split(",")]
+        foot = [float(v) for v in root.get("data-light-foot").split(",")]
+        worst = 0.0
+        marks = [c for c in root.iter(_q("circle")) if c.get("class") == "sh"]
+        for c in marks:
+            s = (float(c.get("cx")), float(c.get("cy")))
+            b = [float(v) for v in c.get("data-base").split(",")]
+            t = [float(v) for v in c.get("data-top").split(",")]
+            for p0, p1 in ((foot, b), (light, t)):
+                ln = math.dist(p0, s) or 1.0
+                worst = max(worst, abs((p1[0] - p0[0]) * (s[1] - p0[1]) - (p1[1] - p0[1]) * (s[0] - p0[0])) / ln)
+        add("shadow-rays-meet", len(marks) >= 2 and worst <= 1.0, {"points": len(marks), "max_offset_px": round(worst, 3)}, "DM-32")
+        add("light-above-its-foot", light[1] < foot[1] and abs(light[0] - foot[0]) < 0.5, {"light": light, "foot": foot}, "DM-32")
+        add("cast-shadow-drawn", any(e.get("data-part") == "cast-shadow" for e in root.iter()), "polygon", "DM-19")
     else:
         add("kind", False, kind, "-")
     res["passed"] = sum(c["pass"] for c in res["checks"])
@@ -633,7 +805,7 @@ def main(argv=None):
     pr.add_argument("--methods", help="comma-separated ids, e.g. DM-13,DM-16")
     pr.add_argument("--style", default="")
     dr = sub.add_parser("draw", help="write a layered construction SVG")
-    dr.add_argument("kind", choices=["head", "figure", "character", "forms"])
+    dr.add_argument("kind", choices=["head", "figure", "character", "forms", "bounce", "shadow"])
     dr.add_argument("--out", required=True)
     dr.add_argument("--force", action="store_true")
     dr.add_argument("--yaw", type=float, default=30.0)
@@ -644,6 +816,10 @@ def main(argv=None):
     dr.add_argument("--age", default="child", choices=sorted(AGES))
     dr.add_argument("--expression", default="happy", choices=sorted(EXPRESSIONS))
     dr.add_argument("--eye-level", type=float, default=0.45)
+    dr.add_argument("--frames", type=int, default=13, help="bounce: odd frame count, apex to apex")
+    dr.add_argument("--bounce-height", type=float, default=0.55)
+    dr.add_argument("--light-x", type=float, default=0.15, help="shadow: light position across the frame")
+    dr.add_argument("--light-height", type=float, default=0.4)
     ck = sub.add_parser("check", help="measure a drawn SVG against its method cards")
     ck.add_argument("--svg", required=True)
     ck.add_argument("--out")
@@ -656,6 +832,10 @@ def main(argv=None):
                 svg, _ = draw_figure(args.heads, args.pose)
             elif args.kind == "character":
                 svg, _ = draw_character(args.shape, args.age, args.expression)
+            elif args.kind == "bounce":
+                svg, _ = draw_bounce(args.frames, args.bounce_height)
+            elif args.kind == "shadow":
+                svg, _ = draw_shadow(args.light_x, args.light_height)
             else:
                 svg, _ = draw_forms(args.eye_level)
             emit(svg, args.out, args.force)

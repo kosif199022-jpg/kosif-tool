@@ -1,17 +1,19 @@
 {
   "schema": "kosif.drawing.methods_atlas.v1",
-  "revision": "2026-10-23",
-  "status": "original_method_summaries_NOT_fulltext_review_NOT_model_training",
+  "revision": "2026-10-23b",
+  "status": "original_method_summaries_NOT_fulltext_copy_NOT_model_training",
   "notes": [
-    "Each card restates, in original words, a teaching method that the listed books are widely known for. No book text, page, diagram or illustration is copied or bundled.",
-    "Book references point at data/creative_books_200_index.json ids (ART-xxx) or, for titles outside that index, at bibliographic metadata only. review_status says how much was really read.",
+    "Each card restates a teaching method in original words. No book text, page, diagram or illustration is copied or bundled.",
+    "Book references point at data/creative_books_200_index.json ids (ART-xxx), at the user's own library (UBK-xx, read in this session from the user's copies) or, for other titles, at bibliographic metadata only (EXT-xxx). review_status says how much was really read.",
+    "user_copy_read_paraphrased means the card was written after reading that book's text (text layer or OCR) or, for picture books, its rendered sample pages; it does not mean every page was studied line by line, and nothing from the book is redistributed.",
     "A card is guidance for planning and checking a drawing. It does not prove that Claude draws at a professional level; only rendered artifacts checked against the card's checks can show that.",
-    "Executable demonstrations live in scripts/drawing_methods.py (draw head|figure|character|forms). They are original code, deterministic, and write editable layered SVG."
+    "Executable demonstrations live in scripts/drawing_methods.py (draw head|figure|character|forms|bounce|shadow). They are original code, deterministic, and write editable layered SVG."
   ],
   "review_status_levels": {
     "general_teaching_knowledge": "Method summarised from the widely taught content associated with the book; the book's full text was not read in this session.",
     "public_domain_section_read": "A public-domain section was read (see A14 for the anchors).",
-    "bibliographic_metadata_only": "External book entries only: title and author are recorded; no content was reviewed."
+    "bibliographic_metadata_only": "External book entries only: title and author are recorded; no content was reviewed.",
+    "user_copy_read_paraphrased": "The user's own copy was read in this session (text layer, OCR or rendered sample pages) and the method was paraphrased; no text or image is kept or redistributed."
   },
   "pipeline": [
     {
@@ -37,7 +39,9 @@
       "ar": "الحركة: خط الفعل والإيقاع قبل أي تفصيل",
       "en": "Gesture: line of action and rhythm before any detail",
       "methods": [
-        "DM-06"
+        "DM-06",
+        "DM-29",
+        "DM-30"
       ]
     },
     {
@@ -50,7 +54,13 @@
         "DM-05",
         "DM-07",
         "DM-08",
-        "DM-09"
+        "DM-09",
+        "DM-42",
+        "DM-34",
+        "DM-39",
+        "DM-31",
+        "DM-37",
+        "DM-38"
       ]
     },
     {
@@ -60,7 +70,11 @@
       "methods": [
         "DM-13",
         "DM-14",
-        "DM-15"
+        "DM-15",
+        "DM-43",
+        "DM-40",
+        "DM-35",
+        "DM-46"
       ]
     },
     {
@@ -68,7 +82,9 @@
       "ar": "الخط: أوزان خط تفصل القريب عن البعيد",
       "en": "Line: weights that separate near from far",
       "methods": [
-        "DM-24"
+        "DM-24",
+        "DM-33",
+        "DM-47"
       ]
     },
     {
@@ -78,7 +94,20 @@
       "methods": [
         "DM-19",
         "DM-20",
-        "DM-21"
+        "DM-21",
+        "DM-32",
+        "DM-36",
+        "DM-44"
+      ]
+    },
+    {
+      "stage": "motion",
+      "ar": "الحركة الزمنية: توقيت وتباعد وأقواس ومشي وجري (للتحريك فقط)",
+      "en": "Motion: timing, spacing, arcs, walks and runs (animation only)",
+      "methods": [
+        "DM-27",
+        "DM-28",
+        "DM-45"
       ]
     },
     {
@@ -87,7 +116,8 @@
       "en": "Verify: flip, shrink, test silhouette and proportions",
       "methods": [
         "DM-02",
-        "DM-14"
+        "DM-14",
+        "DM-41"
       ]
     }
   ],
@@ -144,7 +174,9 @@
       "books": [
         "ART-001",
         "ART-002",
-        "ART-006"
+        "ART-006",
+        "UBK-17",
+        "UBK-31"
       ],
       "principle_ar": "ارسم ما تراه لا ما تعرفه: تتبّع حافة الشكل ببطء كأن القلم يلمسه، وارسم الفراغات بين الأشياء كأشكال مستقلة؛ الفراغ السالب يكشف أخطاء النسب التي يخفيها الرمز الذهني.",
       "principle_en": "Draw what you see, not the symbol you know: trace the edge slowly as if touching it, and draw the gaps between things as shapes of their own; negative shapes expose proportion errors that the mental symbol hides.",
@@ -152,7 +184,9 @@
         "Pick one edge and follow it continuously",
         "Draw the shape of the empty space between two forms",
         "Compare each negative shape's width to its height",
-        "Only then connect contours into the object"
+        "Only then connect contours into the object",
+        "Draw shapes, not things: large shapes first, then secondary, then enrichment shapes such as reflections and labels",
+        "Keep restating searching lines instead of erasing every first attempt"
       ],
       "code_recipe": "Build the outline as one continuous SVG path; draw negative-space polygons on a separate 'guide' layer and compare their bounding boxes with the reference.",
       "prompt_terms": [
@@ -177,7 +211,7 @@
         "ملاحظة",
         "رسم من الواقع"
       ],
-      "review_status": "general_teaching_knowledge"
+      "review_status": "user_copy_read_paraphrased"
     },
     {
       "id": "DM-02",
@@ -187,7 +221,11 @@
       "books": [
         "ART-004",
         "ART-001",
-        "ART-018"
+        "ART-018",
+        "UBK-37",
+        "UBK-41",
+        "UBK-31",
+        "UBK-17"
       ],
       "principle_ar": "اختر وحدة قياس واحدة (طول الرأس مثلًا) وقِس بها كل شيء، وأسقط خطوطًا رأسية وأفقية وهمية لتعرف ما يقع فوق ما؛ الزوايا تقاس بالنسبة للرأسي والأفقي لا بالتخمين.",
       "principle_en": "Choose one unit (often the head) and measure everything with it; drop imaginary vertical and horizontal lines to see what aligns with what, and read angles against true vertical and horizontal.",
@@ -195,7 +233,10 @@
         "Set the unit and mark the top and bottom of the subject",
         "Place landmarks by unit counts",
         "Check alignments with vertical and horizontal plumb lines",
-        "Correct before rendering"
+        "Correct before rendering",
+        "Lock the arm, keep the pencil parallel to the picture plane, close one eye",
+        "Read angles like clock hands and drop plumb lines from key landmarks",
+        "Use trapped (negative) shapes and the head as units to cross-check lengths"
       ],
       "code_recipe": "Store a 'unit' in the SVG metadata, place landmarks at unit multiples, and draw plumb lines on the guide layer; the checker reads the unit back.",
       "prompt_terms": [
@@ -205,7 +246,8 @@
       ],
       "checks": [
         "Landmarks fall within 0.1 unit of the planned positions",
-        "Key alignments (eye–ear, knee–elbow) are true"
+        "Key alignments (eye–ear, knee–elbow) are true",
+        "Key landmarks stack as observed on plumb lines"
       ],
       "common_errors": [
         "Changing the unit mid-drawing",
@@ -220,7 +262,7 @@
         "شاقول",
         "محاذاة"
       ],
-      "review_status": "general_teaching_knowledge"
+      "review_status": "user_copy_read_paraphrased"
     },
     {
       "id": "DM-03",
@@ -274,7 +316,10 @@
       "books": [
         "ART-047",
         "ART-053",
-        "ART-030"
+        "ART-030",
+        "UBK-25",
+        "UBK-38",
+        "UBK-17"
       ],
       "principle_ar": "الشكل يصير ثلاثي الأبعاد حين تحدده علبة في منظور وقطوع ناقصة تتسع كلما ابتعدت عن مستوى العين، وخطوط عرضية تلتف حول السطح فتبين انحناءه.",
       "principle_en": "A form reads as 3D when it sits in a box in perspective, its ellipses open wider the further they are from eye level, and cross-contour lines wrap the surface to show curvature.",
@@ -282,7 +327,10 @@
         "Box the object",
         "Set the eye level",
         "Draw ellipses whose minor axis follows the form's axis",
-        "Wrap cross-contours to describe the surface"
+        "Wrap cross-contours to describe the surface",
+        "Count the form's vertices, edges and planes; add variables only when detail needs them",
+        "Leave a small gap in a line where it passes behind a nearer form",
+        "Ellipses close toward eye level and their ends are always round, never pointed"
       ],
       "code_recipe": "Compute ellipse ry = rx * |sin(tilt)| from the angle to eye level; draw cross-contours as arcs of those ellipses on the construction layer.",
       "prompt_terms": [
@@ -307,7 +355,7 @@
         "حجم",
         "علبة منظور"
       ],
-      "review_status": "general_teaching_knowledge"
+      "review_status": "user_copy_read_paraphrased"
     },
     {
       "id": "DM-05",
@@ -408,7 +456,10 @@
       "books": [
         "ART-021",
         "ART-086",
-        "ART-034"
+        "ART-034",
+        "UBK-01",
+        "UBK-30",
+        "UBK-02"
       ],
       "principle_ar": "قِس الجسم برؤوس: البطل المثالي نحو 8 رؤوس، الواقعي 7.5، الطفل 4–5، والشخصيات الكرتونية 2–4؛ منتصف الجسم عند الحوض، والركبة عند الربع السفلي تقريبًا، والذراع المرتخية تصل منتصف الفخذ.",
       "principle_en": "Measure the body in heads: idealised hero about 8, realistic adult 7.5, child 4–5, cartoon 2–4; the midpoint sits at the pelvis, the knee near the lower quarter, and the relaxed arm reaches mid-thigh.",
@@ -416,7 +467,9 @@
         "Choose the canon from age and style",
         "Mark head units down the figure",
         "Place pelvis at the midpoint, nipples at 2, navel near 3, knees near 6 (8-head canon)",
-        "Adjust for character exaggeration on purpose, not by accident"
+        "Adjust for character exaggeration on purpose, not by accident",
+        "Note the type: about 7.5 heads average, 8 ideal, 9 heroic; women about half a head shorter",
+        "Anime adult about 6.5 heads: crotch at half height, waist at elbow level, waist width about one head"
       ],
       "code_recipe": "drawing_methods.py draw figure --heads N marks every head unit on the guide layer and stores heads_tall in data attributes for the checker.",
       "prompt_terms": [
@@ -439,9 +492,10 @@
         "نسب الجسم",
         "رؤوس",
         "طول الشخصية",
-        "تشيبي"
+        "تشيبي",
+        "أنمي"
       ],
-      "review_status": "general_teaching_knowledge"
+      "review_status": "user_copy_read_paraphrased"
     },
     {
       "id": "DM-08",
@@ -452,7 +506,10 @@
         "ART-030",
         "ART-027",
         "ART-026",
-        "EXT-005"
+        "EXT-005",
+        "UBK-25",
+        "UBK-38",
+        "UBK-28"
       ],
       "principle_ar": "اختزل الجذع إلى كتلتين صلبتين (القفص الصدري والحوض) يربطهما وسط مرن ينضغط ويتمدد كحبة فاصوليا، والأطراف أسطوانات مستدقة بين مفاصل كروية؛ الكتل تتداخل وتتعاشق ولا تتجاور فقط.",
       "principle_en": "Reduce the torso to two rigid masses (rib cage and pelvis) joined by a flexible middle that squashes and stretches like a bean; limbs are tapered cylinders between ball joints, and masses overlap and wedge rather than just touch.",
@@ -460,7 +517,9 @@
         "Rib cage as an egg, pelvis as a box or bowl",
         "Twist and bend the bean between them",
         "Ball joints at shoulder, elbow, wrist, hip, knee, ankle",
-        "Tapered limb cylinders with overlaps where they turn toward the viewer"
+        "Tapered limb cylinders with overlaps where they turn toward the viewer",
+        "Keep the rib cage a rigid box; bending happens in the abdomen, which bulges or sucks in",
+        "Shoulder blades rise and slide with the arms; the trapezius rounds out when they lift"
       ],
       "code_recipe": "Rib cage and pelvis as rotated ellipses, the bean as a path between them, joints as circles; limb segments as quads tapering from proximal to distal width.",
       "prompt_terms": [
@@ -470,7 +529,8 @@
       ],
       "checks": [
         "Rib cage and pelvis have independent tilt",
-        "Each limb tapers toward the extremity"
+        "Each limb tapers toward the extremity",
+        "Rib cage and pelvis keep their size while the waist bends"
       ],
       "common_errors": [
         "Tube torso with no rib-cage/pelvis separation",
@@ -488,7 +548,7 @@
         "حوض",
         "مفاصل"
       ],
-      "review_status": "general_teaching_knowledge"
+      "review_status": "user_copy_read_paraphrased"
     },
     {
       "id": "DM-09",
@@ -498,7 +558,10 @@
       "books": [
         "ART-022",
         "ART-044",
-        "EXT-005"
+        "EXT-005",
+        "UBK-01",
+        "UBK-37",
+        "UBK-38"
       ],
       "principle_ar": "الجمجمة كرة يُقطع جانباها مستويين مسطحين، ويُعلَّق تحتها الفك؛ خط منتصف رأسي وخط الحاجب يلتفّان حول الكرة مع دوران الرأس، والوجه يُقسم إلى ثلاثة أجزاء متساوية تقريبًا: منبت الشعر للحاجب، الحاجب لقاعدة الأنف، الأنف للذقن.",
       "principle_en": "The cranium is a ball with its sides sliced flat; the jaw hangs below it. A vertical centre line and a brow line wrap around the ball as the head turns, and the face splits into roughly equal thirds: hairline to brow, brow to nose base, nose to chin.",
@@ -506,7 +569,9 @@
         "Draw the ball and the side-plane ellipse",
         "Wrap the centre line and brow line to show yaw and pitch",
         "Drop the face thirds and hang the jaw",
-        "Place eyes on a line halfway down the full head, ears between brow and nose base"
+        "Place eyes on a line halfway down the full head, ears between brow and nose base",
+        "Treat the mouth as wrapping the cylinder of the teeth, not a flat line",
+        "Ear sits between the brow line and the nose line; hairline sets the tilt"
       ],
       "code_recipe": "drawing_methods.py draw head --yaw D --pitch D rotates the centre line as a vertical ellipse and the brow line as a horizontal ellipse on the ball, then places thirds and features.",
       "prompt_terms": [
@@ -535,7 +600,7 @@
         "ملامح",
         "زاوية الوجه"
       ],
-      "review_status": "general_teaching_knowledge"
+      "review_status": "user_copy_read_paraphrased"
     },
     {
       "id": "DM-10",
@@ -545,7 +610,10 @@
       "books": [
         "ART-029",
         "ART-042",
-        "ART-022"
+        "ART-022",
+        "UBK-25",
+        "UBK-33",
+        "UBK-02"
       ],
       "principle_ar": "كف اليد علبة مسطحة مائلة الحافة، والإبهام كتلة منفصلة لها قاعدة كبيرة، ومفاصل الأصابع تقع على أقواس لا على خط مستقيم؛ ارسم اتجاه الإيماءة أولًا ثم أطوال الأصابع.",
       "principle_en": "The palm is a flat box with a slanted knuckle edge, the thumb a separate mass with a big base, and finger joints sit on arcs, not straight lines; draw the gesture of the hand before the finger lengths.",
@@ -553,7 +621,9 @@
         "Box the palm and set its tilt",
         "Arc the knuckle lines",
         "Attach the thumb mass at the wrist side",
-        "Taper fingers in three segments"
+        "Taper fingers in three segments",
+        "Palm block with cut corners; thumb as two segments plus a wedge",
+        "Foot from the side is about three squares long and one high; the big toe moves most"
       ],
       "code_recipe": "Palm as a skewed quad, knuckle arcs as concentric arcs from a point near the wrist, fingers as three-segment chains (reuse two-bone IK from character_ik.py for the poses).",
       "prompt_terms": [
@@ -574,9 +644,11 @@
         "fingers",
         "يد",
         "أصابع",
-        "كف"
+        "كف",
+        "قدم",
+        "أقدام"
       ],
-      "review_status": "general_teaching_knowledge"
+      "review_status": "user_copy_read_paraphrased"
     },
     {
       "id": "DM-11",
@@ -585,7 +657,10 @@
       "name_ar": "القماش وأنواع الطيات",
       "books": [
         "ART-043",
-        "ART-012"
+        "ART-012",
+        "UBK-23",
+        "UBK-02",
+        "UBK-28"
       ],
       "principle_ar": "القماش يتدلى من نقاط ارتكاز (كتف، كوع، ركبة) وينضغط أو يلتف حولها؛ صنّف كل طية (أنبوبية، حلزونية، نصف قفل، متعرجة، متساقطة) وارسمها كاستجابة للشد والجاذبية لا كخطوط عشوائية.",
       "principle_en": "Cloth hangs from support points (shoulder, elbow, knee) and compresses or spirals around them; classify each fold (pipe, spiral, half-lock, zigzag, drop) and draw it as a response to tension and gravity, not random lines.",
@@ -593,7 +668,10 @@
         "Mark support points",
         "Draw tension lines between them",
         "Choose fold types where cloth compresses",
-        "Keep the body form readable under the cloth"
+        "Keep the body form readable under the cloth",
+        "Name each wrinkle type: gravity, gathered, pulled (between two points), diamond, tuck",
+        "Use an island shadow (a floating shadow shape) instead of drawing every crease line",
+        "Learn the basic fold set (pipe, diaper — cloth hung from two points — and the rest) before free drapery"
       ],
       "code_recipe": "Generate fold strokes radiating from support points along tension vectors; hide folds that would cross the silhouette of the body mass.",
       "prompt_terms": [
@@ -603,7 +681,8 @@
       ],
       "checks": [
         "Every fold traces back to a support point or compression zone",
-        "Body volume still reads"
+        "Body volume still reads",
+        "Every fold starts at a joint, a contact point or a gathering point"
       ],
       "common_errors": [
         "Uniform parallel wrinkles",
@@ -616,9 +695,12 @@
         "clothes",
         "قماش",
         "طيات",
-        "ملابس"
+        "ملابس",
+        "تجاعيد الملابس",
+        "ظل الجزيرة",
+        "shimakage"
       ],
-      "review_status": "general_teaching_knowledge"
+      "review_status": "user_copy_read_paraphrased"
     },
     {
       "id": "DM-12",
@@ -628,7 +710,10 @@
       "books": [
         "ART-021",
         "ART-013",
-        "ART-040"
+        "ART-040",
+        "UBK-01",
+        "UBK-37",
+        "UBK-29"
       ],
       "principle_ar": "خط الجاذبية من عظمة الرقبة يسقط على القدم الحاملة للوزن؛ حين يحمل الوزن ساق واحدة يرتفع حوضها وينخفض الكتف المقابل، فتتعاكس زاويتا الكتفين والحوض.",
       "principle_en": "The gravity line from the pit of the neck falls on the weight-bearing foot; when one leg takes the weight its hip rises and the opposite shoulder drops, so shoulder and hip lines tilt against each other.",
@@ -636,7 +721,8 @@
         "Drop the gravity line",
         "Put the weight foot under it",
         "Tilt pelvis up on the weight side",
-        "Counter-tilt the shoulders"
+        "Counter-tilt the shoulders",
+        "Break a static stance: weight on one leg, turn the torso, tilt the head or lean on support"
       ],
       "code_recipe": "In draw figure --pose contrapposto the support foot x equals the neck x; pelvis and shoulder angles are set with opposite signs.",
       "prompt_terms": [
@@ -660,7 +746,7 @@
         "وزن",
         "وقفة"
       ],
-      "review_status": "general_teaching_knowledge"
+      "review_status": "user_copy_read_paraphrased"
     },
     {
       "id": "DM-13",
@@ -717,7 +803,10 @@
       "books": [
         "EXT-001",
         "ART-093",
-        "ART-092"
+        "ART-092",
+        "UBK-18",
+        "UBK-29",
+        "UBK-10"
       ],
       "principle_ar": "املأ الرسم بالأسود: إن لم تُفهم الشخصية ووضعيتها من الظل وحده فالتصميم ضعيف؛ أبعد الأطراف عن الجذع في الوضعيات المهمة، وأعطِ كل شخصية في المجموعة سيلويت مختلفًا.",
       "principle_en": "Fill the drawing black: if the character and pose do not read from the silhouette alone, the design is weak. Pull limbs away from the torso in key poses and give each member of a cast a distinct silhouette.",
@@ -725,7 +814,8 @@
         "Render a solid-black version",
         "Look at it at thumbnail size",
         "Open up overlapping limbs",
-        "Compare cast silhouettes side by side"
+        "Compare cast silhouettes side by side",
+        "Stage one idea at a time; keep hands off the face so the silhouette reads"
       ],
       "code_recipe": "Every draw command also emits a 'silhouette' layer (same shapes, solid fill) as a small inset thumbnail, so the pose is judged at thumbnail size; drawing_methods.py check confirms the layer exists.",
       "prompt_terms": [
@@ -748,7 +838,7 @@
         "ظل خارجي",
         "وضوح"
       ],
-      "review_status": "general_teaching_knowledge"
+      "review_status": "user_copy_read_paraphrased"
     },
     {
       "id": "DM-15",
@@ -758,7 +848,9 @@
       "books": [
         "ART-093",
         "ART-086",
-        "ART-094"
+        "ART-094",
+        "UBK-18",
+        "UBK-02"
       ],
       "principle_ar": "الجاذبية تأتي من وضوح وتبسيط ومبالغة مقصودة: رأس أكبر وعينان أوسع وأدنى في الوجه تعطي صغرًا وبراءة، ووجه أطول وعينان أصغر وأعلى تعطي نضجًا؛ بالغ في السمة التي تحمل الشخصية لا في كل شيء.",
       "principle_en": "Appeal comes from clarity, simplification and deliberate exaggeration: a larger head and bigger, lower-set eyes read young and innocent; a longer face and smaller, higher eyes read mature. Exaggerate the trait that carries the character, not everything.",
@@ -766,7 +858,8 @@
         "Pick the age and the one defining trait",
         "Set head-to-body ratio and eye placement from the age",
         "Push the defining trait 20–50%",
-        "Simplify everything else"
+        "Simplify everything else",
+        "Exaggerate as a caricature of reality: sadder, brighter, wilder, never distorted for its own sake"
       ],
       "code_recipe": "draw character --age child|teen|adult|elder sets heads-tall (3/4.5/6/5.5 in cartoon scale) and eye line height on the face.",
       "prompt_terms": [
@@ -794,7 +887,7 @@
         "عمر الشخصية",
         "طفل"
       ],
-      "review_status": "general_teaching_knowledge"
+      "review_status": "user_copy_read_paraphrased"
     },
     {
       "id": "DM-16",
@@ -804,7 +897,10 @@
       "books": [
         "EXT-003",
         "ART-094",
-        "ART-095"
+        "ART-095",
+        "UBK-18",
+        "UBK-15",
+        "UBK-02"
       ],
       "principle_ar": "أغلب التعبير في ثلاث أدوات: زاوية الحاجبين، انفتاح الجفنين، وشكل الفم؛ الفرح يرفع الوجنتين ويضيّق العين، الحزن يرفع الطرف الداخلي للحاجب، الغضب يخفضه ويضغط الشفتين، والدهشة ترفع الحاجبين وتفتح الفم.",
       "principle_en": "Most expression comes from three tools: brow angle, eyelid opening and mouth shape. Joy lifts the cheeks and narrows the eyes, sadness lifts the inner brow, anger lowers it and presses the lips, surprise raises the brows and opens the mouth.",
@@ -812,7 +908,9 @@
         "Choose the emotion and its intensity",
         "Set brow angles",
         "Set lid opening",
-        "Shape the mouth; let the cheeks follow"
+        "Shape the mouth; let the cheeks follow",
+        "Show the change of expression, not only the end state; one eye slightly wider adds life",
+        "Cheeks keep their volume when the eye squints"
       ],
       "code_recipe": "draw character --expression happy|sad|angry|surprised|neutral sets brow rotation, lid height and mouth curve from one table.",
       "prompt_terms": [
@@ -852,7 +950,7 @@
         "sad",
         "angry"
       ],
-      "review_status": "general_teaching_knowledge"
+      "review_status": "user_copy_read_paraphrased"
     },
     {
       "id": "DM-17",
@@ -862,7 +960,9 @@
       "books": [
         "ART-094",
         "ART-093",
-        "ART-092"
+        "ART-092",
+        "UBK-18",
+        "UBK-15"
       ],
       "principle_ar": "الشخصية الكرتونية تُبنى من كرات وكمثريات مرنة تحفظ حجمها: إن انضغطت عرضت وإن تمددت نحفت؛ ثبّت الحجم تقريبًا في كل إطار ليبقى الجسم مقنعًا.",
       "principle_en": "Cartoon characters are built from soft balls and pears that keep their volume: squash widens, stretch thins. Keep the area roughly constant across frames so the body stays believable.",
@@ -870,7 +970,8 @@
         "Construct with soft primitives",
         "Pick the squash or stretch factor",
         "Scale the other axis by its inverse",
-        "Check area is preserved"
+        "Check area is preserved",
+        "Test with the flour-sack: the attitude must read with no interior lines"
       ],
       "code_recipe": "Apply scale(sx, 1/sx) around the contact point; the checker compares ellipse areas between keyframes.",
       "prompt_terms": [
@@ -894,7 +995,7 @@
         "تمدد",
         "أنيميشن"
       ],
-      "review_status": "general_teaching_knowledge"
+      "review_status": "user_copy_read_paraphrased"
     },
     {
       "id": "DM-18",
@@ -948,7 +1049,11 @@
       "books": [
         "ART-048",
         "ART-061",
-        "ART-012"
+        "ART-012",
+        "UBK-01",
+        "UBK-37",
+        "UBK-04",
+        "UBK-17"
       ],
       "principle_ar": "افصل الضوء عن الظل أولًا بحد واضح (خط الانتهاء)، ثم قسّم: إضاءة عالية، نصف ضوء، خط انتهاء، ظل ذاتي، ضوء منعكس خافت، ظل ملقى أغمق عند نقطة التلامس؛ لا تجعل الضوء المنعكس أفتح من أي جزء مضاء.",
       "principle_en": "Separate light from shadow first with a clear terminator, then subdivide: highlight, half-tone, terminator, form shadow, faint reflected light, and a cast shadow darkest at the contact point. Reflected light never gets brighter than any lit area.",
@@ -956,7 +1061,11 @@
         "Place the light source",
         "Draw the terminator on each form",
         "Fill shadow as one value",
-        "Add half-tones, highlight and occlusion at contacts"
+        "Add half-tones, highlight and occlusion at contacts",
+        "Order the planes: light, halftone, shadow (where the plane runs parallel to the light), reflected light, cast shadow",
+        "Nothing in the shadow family may be as light as anything in the light family",
+        "Map light and shadow as territories with definite borders; contrast is greatest where the form turns",
+        "The cast shadow carries the darkest dark where it meets the object and a sharper edge than the form shadow"
       ],
       "code_recipe": "Shade spheres and cylinders with a two-stop split at the terminator angle plus a radial gradient; cast shadows as skewed ellipses away from the light vector.",
       "prompt_terms": [
@@ -967,7 +1076,8 @@
       ],
       "checks": [
         "One consistent light direction",
-        "Every shadow value darker than every light value"
+        "Every shadow value darker than every light value",
+        "Reflected light stays darker than the darkest halftone"
       ],
       "common_errors": [
         "Shadows on different sides of different objects",
@@ -981,9 +1091,11 @@
         "ضوء",
         "ظل",
         "تظليل",
-        "إضاءة"
+        "إضاءة",
+        "ضوء منعكس",
+        "نصف ظل"
       ],
-      "review_status": "general_teaching_knowledge"
+      "review_status": "user_copy_read_paraphrased"
     },
     {
       "id": "DM-20",
@@ -993,7 +1105,9 @@
       "books": [
         "ART-071",
         "ART-012",
-        "ART-100"
+        "ART-100",
+        "UBK-03",
+        "UBK-04"
       ],
       "principle_ar": "صمّم الصورة بثلاث قيم أو أربع فقط (فاتح، متوسط، داكن) في كتل كبيرة متصلة قبل اللون؛ أقوى تباين يوضع عند نقطة التركيز.",
       "principle_en": "Design the picture with only three or four values (light, mid, dark) in large connected masses before any colour; put the strongest contrast at the focal point.",
@@ -1001,7 +1115,8 @@
         "Squint and merge small values",
         "Build a 3-value thumbnail",
         "Place maximum contrast at the focus",
-        "Keep that value plan through colour"
+        "Keep that value plan through colour",
+        "Reduce a photo to 3–5 flat greys before rendering, and check it from a distance"
       ],
       "code_recipe": "creative_principles.py values reduces a greyscale study to three values; compare the plan's dark ratio with the final.",
       "prompt_terms": [
@@ -1027,7 +1142,7 @@
         "تباين",
         "أبيض وأسود"
       ],
-      "review_status": "public_domain_section_read"
+      "review_status": "user_copy_read_paraphrased"
     },
     {
       "id": "DM-21",
@@ -1038,7 +1153,10 @@
         "ART-061",
         "ART-063",
         "ART-069",
-        "ART-073"
+        "ART-073",
+        "UBK-30",
+        "UBK-21",
+        "UBK-31"
       ],
       "principle_ar": "اللون نسبي: نفس اللون يتغير بجيرانه؛ إن كان الضوء دافئًا فالظل يميل للبرودة والعكس، واختر لوحة محدودة (لون غالب + مكمّل صغير + محايدات) بدل كل الألوان.",
       "principle_en": "Colour is relative: the same colour shifts with its neighbours. A warm light gives cool shadows and vice versa; choose a limited palette (dominant hue, a small complement, neutrals) rather than every hue.",
@@ -1046,7 +1164,9 @@
         "Decide light temperature",
         "Shift shadows the opposite way",
         "Pick dominant/accent/neutral roles",
-        "Check value still works in greyscale"
+        "Check value still works in greyscale",
+        "Split the palette roughly 70 / 25 / 5 between main, secondary and accent colours",
+        "Light colour tints the whole lit side; the halftone holds the most saturation"
       ],
       "code_recipe": "Derive shadow hex by rotating hue toward blue (or orange) and lowering value; validate contrast with perspective_color_lab.py palette.",
       "prompt_terms": [
@@ -1071,9 +1191,10 @@
         "ألوان",
         "باليتة",
         "دافئ",
-        "بارد"
+        "بارد",
+        "نسب الألوان"
       ],
-      "review_status": "general_teaching_knowledge"
+      "review_status": "user_copy_read_paraphrased"
     },
     {
       "id": "DM-22",
@@ -1084,7 +1205,10 @@
         "ART-081",
         "ART-082",
         "ART-099",
-        "ART-100"
+        "ART-100",
+        "UBK-04",
+        "UBK-41",
+        "UBK-30"
       ],
       "principle_ar": "قبل الرسم الكبير ارسم مصغرات سريعة تجرب الكادر والزاوية ومكان البطل؛ قُد العين بخطوط وتباين واتجاه نظرات نحو نقطة تركيز واحدة، واترك فراغًا للتنفس.",
       "principle_en": "Before the big drawing, make quick thumbnails that test the frame, angle and hero placement; lead the eye with lines, contrast and gaze direction toward one focal point, and leave breathing space.",
@@ -1092,7 +1216,8 @@
         "Make 3–6 thumbnails",
         "Pick the clearest one",
         "Place the focal point off-centre (thirds or golden ratio)",
-        "Route leading lines and gazes to it"
+        "Route leading lines and gazes to it",
+        "Give the focal area the highest value and saturation contrast and the most detail"
       ],
       "code_recipe": "Generate thumbnails as small SVG frames with grey blocks; score focal point distance to the thirds intersections.",
       "prompt_terms": [
@@ -1118,7 +1243,7 @@
         "مصغرات",
         "نقطة تركيز"
       ],
-      "review_status": "general_teaching_knowledge"
+      "review_status": "user_copy_read_paraphrased"
     },
     {
       "id": "DM-23",
@@ -1168,7 +1293,10 @@
       "books": [
         "ART-059",
         "ART-088",
-        "ART-089"
+        "ART-089",
+        "UBK-21",
+        "UBK-30",
+        "UBK-39"
       ],
       "principle_ar": "الخط الأسمك للخارج والقريب ومناطق الظل ونقاط الارتكاز، والأنحف للداخل والبعيد والجهة المضاءة؛ الخط يبدأ ويختم برقة (تستدق النهايات)، والتهشير يتبع اتجاه السطح.",
       "principle_en": "Heavier lines for the outer silhouette, near forms, shadow sides and contact points; thinner for interior, far and lit edges. Strokes taper at both ends and hatching follows the surface direction.",
@@ -1176,7 +1304,8 @@
         "Set three line weights",
         "Assign silhouette = heavy, interior = light",
         "Thicken on the shadow side",
-        "Taper stroke ends"
+        "Taper stroke ends",
+        "Silhouette and overlapping contours heaviest, inner lines thinner; lighten lines next to light areas"
       ],
       "code_recipe": "Assign stroke-width per layer (silhouette 3x, interior 1x); for tapered strokes use creative_paint.py pressure brush strokes.",
       "prompt_terms": [
@@ -1202,7 +1331,7 @@
         "لاين آرت",
         "تهشير"
       ],
-      "review_status": "general_teaching_knowledge"
+      "review_status": "user_copy_read_paraphrased"
     },
     {
       "id": "DM-25",
@@ -1212,7 +1341,11 @@
       "books": [
         "ART-084",
         "ART-087",
-        "ART-033"
+        "ART-033",
+        "UBK-27",
+        "UBK-11",
+        "UBK-15",
+        "UBK-05"
       ],
       "principle_ar": "ابدأ الحيوان بخط العمود الفقري وكتلتي الصدر والحوض، ثم الأرجل كزوايا (الحيوان يمشي على أصابعه غالبًا فالكعب مرتفع)، والرأس كتلة جمجمة وخطم؛ الإيماءة قبل الفراء.",
       "principle_en": "Start an animal with the spine line and the chest and hip masses, then legs as angled segments (most mammals walk on their toes, so the heel sits high), and the head as cranium plus muzzle; gesture before fur.",
@@ -1220,7 +1353,10 @@
         "Spine curve",
         "Chest and hip masses",
         "Zig-zag legs with high heels",
-        "Cranium and muzzle, then ears and tail"
+        "Cranium and muzzle, then ears and tail",
+        "Fit the whole animal under one big arc of the spine",
+        "Even rounded animals have angular masses (a horse's rump is a box, not a ball)",
+        "Coat strokes follow the fur direction from head to tail"
       ],
       "code_recipe": "Reuse the figure pipeline with a horizontal line of action, two ellipses for chest/hips and three-segment legs; code_drawing_master.py already draws a procedural cat.",
       "prompt_terms": [
@@ -1230,7 +1366,8 @@
       ],
       "checks": [
         "Back leg shows the raised heel (hock)",
-        "Chest mass larger than hip mass for most quadrupeds"
+        "Chest mass larger than hip mass for most quadrupeds",
+        "Head-to-body ratio kept in every pose"
       ],
       "common_errors": [
         "Human-like knees on hind legs",
@@ -1244,9 +1381,10 @@
         "حيوان",
         "قطة",
         "كلب",
-        "حصان"
+        "حصان",
+        "فرو"
       ],
-      "review_status": "general_teaching_knowledge"
+      "review_status": "user_copy_read_paraphrased"
     },
     {
       "id": "DM-26",
@@ -1256,7 +1394,8 @@
       "books": [
         "ART-089",
         "ART-090",
-        "ART-081"
+        "ART-081",
+        "UBK-14"
       ],
       "principle_ar": "القارئ يكمل ما بين اللوحات بعقله؛ اختر الانتقال (لحظة للحظة، فعل لفعل، موضوع لموضوع، مشهد لمشهد) حسب الإيقاع، وحافظ على خط المحور واتجاه النظرات لتبقى الجغرافيا واضحة.",
       "principle_en": "Readers fill the gap between panels themselves; choose the transition type (moment, action, subject, scene) for the rhythm, and keep the 180° axis and gaze directions so the geography stays clear.",
@@ -1264,7 +1403,10 @@
         "Beat the story into moments",
         "Pick the transition type per beat",
         "Keep screen direction consistent",
-        "Vary shot size for rhythm"
+        "Vary shot size for rhythm",
+        "Stage drama with strong foreground angles; stage comedy flat, symmetrical and clear",
+        "Go from script to thumbnail panels before any finished drawing",
+        "The setup line carries the joke: keep balloons to about 18 words and hold the camera angle until the punch line"
       ],
       "code_recipe": "Plan panels as JSON (shot size, angle, transition) and feed them to storyboard/motion tools; check screen direction per character across panels.",
       "prompt_terms": [
@@ -1288,9 +1430,1471 @@
         "story",
         "كوميكس",
         "ستوري بورد",
-        "قصة مصورة"
+        "قصة مصورة",
+        "كوميك",
+        "نكتة"
       ],
-      "review_status": "general_teaching_knowledge"
+      "review_status": "user_copy_read_paraphrased"
+    },
+    {
+      "id": "DM-27",
+      "domain": "animation",
+      "name_en": "Squash, stretch, anticipation and follow-through",
+      "name_ar": "الانضغاط والتمدد والتحضير والاستمرار",
+      "books": [
+        "ART-093",
+        "ART-092",
+        "ART-097",
+        "UBK-15"
+      ],
+      "principle_ar": "أي شكل حي يتصرف ككيس دقيق نصف ممتلئ: ينضغط ويتمدد ويحتفظ بحجمه دائمًا. قبل كل فعل كبير حركة صغيرة عكسه (تحضير) تُعلن ما سيحدث، وبعده تكمل الأطراف والشعر والقماش حركتها وتتوقف أجزاء الجسم في أوقات مختلفة؛ والوقفة لا تموت بل تنجرف ببطء نحو نسخة أقوى منها.",
+      "principle_en": "Every living shape behaves like a half-filled flour sack: it squashes and stretches but keeps its volume. Before each big action comes a small move the opposite way (anticipation) that tells the viewer what is coming; afterwards the appendages, hair and cloth keep going and body parts settle at different times; a held pose never freezes but drifts into a stronger version of itself (moving hold).",
+      "steps": [
+        "Draw the key pose, then the anticipation pose leaning the opposite way",
+        "Stretch along the path of fast motion, squash on impact, keep the area constant",
+        "Let loose parts (hair, ears, tail, cloth) arrive later than the body and overshoot",
+        "Stop the head and chest first, the appendages last",
+        "On a hold, keep a few frames of drift toward a stronger version of the pose",
+        "Break joints in succession: the wrist leads and the fingertips drag, and big body moves start in the hips"
+      ],
+      "code_recipe": "Scale each drawing along the motion direction by k and across it by 1/k so rx*ry stays constant; delay secondary parts by 2-4 frames behind the main mass. `drawing_methods.py draw bounce` demonstrates the volume rule and checks it.",
+      "prompt_terms": [
+        "squash and stretch",
+        "strong anticipation pose",
+        "follow-through on hair and cloth",
+        "appealing animation key pose"
+      ],
+      "checks": [
+        "Volume (area) constant within 3% across squash and stretch",
+        "Anticipation moves opposite to the main action",
+        "Secondary parts lag the main mass and settle last"
+      ],
+      "common_errors": [
+        "Squash that shrinks the shape (volume lost)",
+        "Action without anticipation reads as a teleport",
+        "Everything stops on the same frame (dead, mechanical)"
+      ],
+      "tags": [
+        "animation",
+        "squash",
+        "stretch",
+        "anticipation",
+        "follow through",
+        "overlapping action",
+        "moving hold",
+        "bouncing ball",
+        "انيميشن",
+        "تحريك",
+        "رسوم متحركة",
+        "كرة تنط",
+        "تنطيط",
+        "انضغاط",
+        "تمدد",
+        "تحضير",
+        "استمرار الحركة",
+        "كيس الدقيق"
+      ],
+      "review_status": "user_copy_read_paraphrased"
+    },
+    {
+      "id": "DM-28",
+      "domain": "animation",
+      "name_en": "Timing, spacing, slow in/out and arcs",
+      "name_ar": "التوقيت والتباعد والتباطؤ والأقواس",
+      "books": [
+        "ART-093",
+        "ART-092"
+      ],
+      "principle_ar": "التوقيت هو عدد الرسوم بين وضعيتين، والتباعد هو المسافة بين كل رسمة والتالية. رسوم متقاربة عند البداية والنهاية تعطي بطئًا طبيعيًا، ومتباعدة في الوسط تعطي سرعة. الكائن الحي يتحرك على أقواس لا خطوط مستقيمة، والعمل على «اثنين» (كل رسمة لإطارين) كافٍ لمعظم الحركة بينما «واحد» للحركات السريعة وتحريك الكاميرا.",
+      "principle_en": "Timing is how many drawings sit between two poses; spacing is how far apart each drawing is from the next. Drawings bunched near the extremes and spread in the middle read as natural easing; even spacing reads as a machine. Living things travel on arcs, not straight lines. Shooting on twos covers most action; ones are for fast accents, pans and camera moves.",
+      "steps": [
+        "Pick the extremes (keys) and decide the frame count between them",
+        "Draw a spacing chart: ticks bunched toward the slow end",
+        "Plot the path of action as an arc through the keys",
+        "Use few inbetweens for a hit, many for a deliberate or lazy move",
+        "Lead dialogue accents by about two to three frames",
+        "Place the breakdown (passing) drawing first: it decides the arc and the character of the move"
+      ],
+      "code_recipe": "Position_i = ease(i/n) along an arc; for gravity use height = H(1 - t^2) per frame. The bounce demo checks that spacing near the apex is smaller than near contact.",
+      "prompt_terms": [
+        "clear path of action on an arc",
+        "animation spacing chart",
+        "slow in and slow out"
+      ],
+      "checks": [
+        "Spacing chart is uneven where motion speeds up or slows down",
+        "Path of action is an arc, not a straight line",
+        "Frame count matches the intended weight and mood"
+      ],
+      "common_errors": [
+        "Inbetweening lines instead of volumes so features slide around the head",
+        "Even spacing everywhere (robotic)",
+        "Straight-line inbetweens that flatten an arc",
+        "Holding the contact frame too long so the object hops"
+      ],
+      "tags": [
+        "timing",
+        "spacing",
+        "slow in",
+        "slow out",
+        "ease",
+        "arcs",
+        "inbetween",
+        "ones",
+        "twos",
+        "frames",
+        "توقيت",
+        "تباعد",
+        "إطارات",
+        "أقواس",
+        "تسهيل الحركة",
+        "رسوم وسيطة"
+      ],
+      "review_status": "user_copy_read_paraphrased"
+    },
+    {
+      "id": "DM-29",
+      "domain": "figure",
+      "name_en": "Tipped line of balance and sweep",
+      "name_ar": "خط التوازن المائل وأثر الاندفاع",
+      "books": [
+        "ART-021",
+        "UBK-37",
+        "ART-097"
+      ],
+      "principle_ar": "في أي حركة إلى الأمام يسبق أعلى الجسم قاعدته كعصا تحاول موازنتها على كفّك: خط التوازن يميل في اتجاه الحركة، والقدم الدافعة خلفه، والكعب لا يقع أبدًا تحت الرأس. الوقفة الجيدة تحمل أثر الحركة التي سبقتها (الاندفاع)، ومن يدفع شيئًا بقوة ينحني خط توازنه كالزنبرك. الرأس بين القدمين يعني ثباتًا، وخارجهما يعني حركة.",
+      "principle_en": "In any forward movement the top of the body leads the base, like a pole balanced on your palm: the line of balance tips toward the motion, the pushing foot stays behind it and a heel never sits right under the head. A good action pose still carries the movement that came before it (sweep); a figure pushing hard bends its balance line like a spring. Head between the feet reads as stable; head outside the base reads as motion.",
+      "steps": [
+        "Draw the balance line tipped in the direction of travel",
+        "Place the head ahead of the supporting foot",
+        "Put the pushing foot behind the line",
+        "Add one hint of the previous movement (trailing arm, hair, cloth)",
+        "Compensate any lean with a limb on the opposite side when the figure must stay balanced"
+      ],
+      "code_recipe": "For a running or walking pose set the line from support foot to head at 5-20 degrees off vertical toward the motion; the head x must lie ahead of the support-foot x.",
+      "prompt_terms": [
+        "dynamic forward lean",
+        "tipped line of balance",
+        "sense of momentum"
+      ],
+      "checks": [
+        "Head is ahead of the support foot in forward motion",
+        "Pushing foot lies behind the balance line",
+        "Static poses keep the head between the feet"
+      ],
+      "common_errors": [
+        "Upright runner who looks like he is standing",
+        "Heel directly under the head in a stride",
+        "Lean with no counterweight in a static pose"
+      ],
+      "tags": [
+        "balance",
+        "line of balance",
+        "forward movement",
+        "running",
+        "momentum",
+        "sweep",
+        "توازن",
+        "خط التوازن",
+        "ميل",
+        "جري",
+        "اندفاع",
+        "حركة للأمام"
+      ],
+      "review_status": "user_copy_read_paraphrased"
+    },
+    {
+      "id": "DM-30",
+      "domain": "figure",
+      "name_en": "Draw verbs: tension, straight against curve, angles",
+      "name_ar": "ارسم الفعل لا الاسم: الشد والمستقيم مقابل المنحنى والزوايا",
+      "books": [
+        "ART-097",
+        "ART-098",
+        "UBK-37",
+        "UBK-35"
+      ],
+      "principle_ar": "سمِّ الفعل قبل أن ترسم (ينحني، يشد، يدفع) وارسم القصة لا التشريح. الجانب المشدود من الجسم خط مستقيم والجانب المنضغط منحنٍ؛ كل الخطوط منحنية تعني رسمة رخوة. تخيّل شريطًا مطاطيًا بين اليد واليد والقدم والقدم والرأس والقدم وارسم الشد بينها. ضع زاوية مقابل زاوية (الكتفان ضد الحوض، الرأس ضد الكتفين) وشدّة الزاوية تتبع شدة الشعور.",
+      "principle_en": "Name the verb before drawing (bending, pulling, pushing) and draw the story, not the anatomy. The stretched side of the body is a straight line and the pinched side a curve; all curves make a limp drawing. Imagine a rubber band between hand and hand, foot and foot, head and foot, and draw the tension between parts rather than the parts. Set angle against angle (shoulders against hips, head against shoulders); the steeper the angle, the stronger the feeling.",
+      "steps": [
+        "Write or say the action verb",
+        "Find the stretched side (straight) and the squashed side (curve)",
+        "Relate every hand, elbow, knee and foot to its opposite",
+        "Tilt shoulders and hips against each other",
+        "Discard 90% of detail; keep the 10% that tells the action",
+        "Before each sketch ask what the pose is for and what the viewer should feel"
+      ],
+      "code_recipe": "Represent each limb pair as a constraint; tag contours as 'stretch' (straight) or 'squash' (curved) and make sure both appear in the figure's outline.",
+      "prompt_terms": [
+        "expressive gesture drawing",
+        "straight versus curve design",
+        "strong pose with tension"
+      ],
+      "checks": [
+        "One side of the torso straight, the other curved",
+        "Shoulder and hip lines are not parallel in an action pose",
+        "No twins: paired limbs do different things"
+      ],
+      "common_errors": [
+        "Symmetric twin limbs",
+        "Drawing anatomy details before the action reads",
+        "Lazy lines that describe nothing"
+      ],
+      "tags": [
+        "gesture",
+        "tension",
+        "straight vs curve",
+        "angles",
+        "verbs",
+        "action",
+        "twins",
+        "إيماءة",
+        "شد",
+        "مستقيم ومنحنى",
+        "زوايا",
+        "فعل",
+        "وضعية معبرة"
+      ],
+      "review_status": "user_copy_read_paraphrased"
+    },
+    {
+      "id": "DM-31",
+      "domain": "perspective",
+      "name_en": "Horizon rule for placing figures in depth",
+      "name_ar": "قاعدة الأفق لوضع الأشخاص في العمق",
+      "books": [
+        "ART-021",
+        "UBK-13",
+        "UBK-04"
+      ],
+      "principle_ar": "على أرض مستوية يقطع خط الأفق كل الأشخاص المتماثلين عند النقطة نفسها من أجسامهم أينما وقفوا: إذا كانت العين على ارتفاع رأس واقف فكل الرؤوس على الأفق. ارسم شخصًا مرجعيًا ثم انقل ارتفاعه إلى أي عمق بخطين إلى نقطة على الأفق. تصلح القاعدة للخيل والكراسي والسيارات.",
+      "principle_en": "On level ground the horizon crosses every figure of the same size at the same point of the body, wherever they stand: with the eye at a standing person's head height every head sits on the horizon. Draw one key figure, then carry its height to any depth with two lines meeting at a point on the horizon. The rule works for horses, chairs and cars too.",
+      "steps": [
+        "Draw the horizon at the viewer's eye height",
+        "Draw a key figure and note where the horizon cuts it",
+        "Pick a new foot position; run lines from the key figure's head and feet to a point on the horizon",
+        "Transfer the height across with horizontals",
+        "Cut every similar figure at the same body point"
+      ],
+      "code_recipe": "Given horizon y_h, key figure feet y_f and height H: a figure with feet at y has height H*(y - y_h)/(y_f - y_h).",
+      "prompt_terms": [
+        "consistent eye level",
+        "figures scaled correctly in depth",
+        "crowd in perspective"
+      ],
+      "checks": [
+        "All standing adults are cut by the horizon at the same body point",
+        "Sizes shrink toward the horizon, not randomly"
+      ],
+      "common_errors": [
+        "Background people floating or giant",
+        "Viewpoint drawn too high in street scenes"
+      ],
+      "tags": [
+        "horizon",
+        "eye level",
+        "crowd",
+        "scale",
+        "depth",
+        "people in perspective",
+        "أفق",
+        "مستوى العين",
+        "حشد",
+        "حجم",
+        "عمق",
+        "أشخاص في المنظور"
+      ],
+      "review_status": "user_copy_read_paraphrased"
+    },
+    {
+      "id": "DM-32",
+      "domain": "light",
+      "name_en": "Cast-shadow construction from a light source",
+      "name_ar": "بناء الظل الساقط من مصدر ضوء",
+      "books": [
+        "UBK-04",
+        "ART-009",
+        "UBK-13",
+        "UBK-23"
+      ],
+      "principle_ar": "الظل الساقط يُبنى ولا يُخمَّن. لمصباح قريب: أسقط عمودًا من المصباح إلى الأرض؛ تلك النقطة هي نقطة تلاشي الظلال على الأرض. كل زاوية في الظل تقع حيث يلتقي شعاع من قدم المصباح عبر قاعدة الحافة مع شعاع من المصباح عبر أعلاها. للشمس: الأشعة متوازية، وظلال الحواف تتلاشى إلى نقطة أسفل الشمس على الأفق. الظل أغمق وأحدّ عند نقطة التلامس ويلين كلما ابتعد.",
+      "principle_en": "A cast shadow is constructed, not guessed. For a near lamp drop a vertical from the lamp to the ground: that foot is the vanishing point of the ground shadows. Each shadow corner lies where a ray from the foot through an edge's base meets a ray from the lamp through the edge's top. For sunlight the rays are parallel and shadow edges converge to the point under the sun on the horizon. The shadow is darkest and sharpest at the contact point and softens as it travels away.",
+      "steps": [
+        "Mark the light and drop its foot to the ground plane",
+        "For each vertical edge, ray from the foot through the base",
+        "Ray from the light through the top; the crossing is the shadow corner",
+        "Join the corners; the object stands on its shadow",
+        "Darken and sharpen at contact, soften with distance"
+      ],
+      "code_recipe": "`drawing_methods.py draw shadow` builds the shadow by line intersection and `check` verifies every shadow point lies on both rays (offset < 1 px).",
+      "prompt_terms": [
+        "accurate cast shadows",
+        "single point light",
+        "grounded objects with contact shadows"
+      ],
+      "checks": [
+        "Every shadow corner lies on both its light ray and its ground ray",
+        "All shadows share one light",
+        "Contact shadow is the darkest part"
+      ],
+      "common_errors": [
+        "Shadows pointing different ways",
+        "Floating objects without a contact shadow",
+        "Shadow the same length regardless of light height"
+      ],
+      "tags": [
+        "cast shadow",
+        "shadow construction",
+        "light source",
+        "contact shadow",
+        "sun",
+        "lamp",
+        "ظل ساقط",
+        "بناء الظل",
+        "مصدر ضوء",
+        "ظل التلامس",
+        "شمس",
+        "مصباح"
+      ],
+      "review_status": "user_copy_read_paraphrased"
+    },
+    {
+      "id": "DM-33",
+      "domain": "line",
+      "name_en": "Tone from marks: hatching, stipple and grey-to-ink",
+      "name_ar": "القيمة من العلامات: التظليل الخطي والتنقيط وتحويل الرمادي إلى حبر",
+      "books": [
+        "UBK-04",
+        "UBK-03",
+        "UBK-13",
+        "UBK-41",
+        "UBK-08"
+      ],
+      "principle_ar": "في الرصاص والحبر تصنع القيمة من كثافة العلامات: المسافة بين الخطوط وسمكها وعدد الاتجاهات وسرعتها. ابدأ الضربة من الحافة المهمة (حافة الظل الأمامية) واتركها تتلاشى، واجعل الخطوط تلتف مع سطح الشكل. قبل الحبر حوّل المشهد إلى 3–5 درجات رمادية مسطحة، ثم ترجم كل درجة إلى كثافة تهشير أو تنقيط.",
+      "principle_en": "In pencil and ink value comes from mark density: spacing, thickness, number of directions and speed of the strokes. Start each stroke at the important edge (the leading edge of a shadow) and let it trail off, and let strokes wrap the surface like cross-contours. Before inking, reduce the scene to 3–5 flat greys, then translate each grey into a hatching or stipple density.",
+      "steps": [
+        "Make a 3–5 value breakdown of the subject",
+        "Assign one mark density per value",
+        "Lay parallel hatching for the first value, cross it for darker",
+        "Start strokes at the shadow edge and flick away",
+        "Keep the paper white for the lightest value"
+      ],
+      "code_recipe": "Map each value band to hatch spacing s = s0 * (1 - v) and add a second direction when v > 0.5; clip hatch groups to the value shape.",
+      "prompt_terms": [
+        "pen and ink crosshatching",
+        "clean hatching that follows form",
+        "stipple shading"
+      ],
+      "checks": [
+        "No more than 5 distinct densities",
+        "Hatching direction follows or wraps the form",
+        "Lightest areas left as untouched paper"
+      ],
+      "common_errors": [
+        "Fuzzy back-and-forth sketchy strokes",
+        "Uniform hatching with no value plan",
+        "Outlining every shape heavily instead of using tone"
+      ],
+      "tags": [
+        "hatching",
+        "crosshatching",
+        "stipple",
+        "pen and ink",
+        "marks",
+        "tone",
+        "texture",
+        "تهشير",
+        "تظليل خطي",
+        "تنقيط",
+        "حبر",
+        "قلم",
+        "علامات",
+        "ملمس"
+      ],
+      "review_status": "user_copy_read_paraphrased"
+    },
+    {
+      "id": "DM-34",
+      "domain": "head",
+      "name_en": "Anime and manga head angles with cross-lines",
+      "name_ar": "زوايا رأس الأنمي والمانجا بخطوط التقاطع",
+      "books": [
+        "UBK-02",
+        "UBK-10",
+        "UBK-21",
+        "UBK-30",
+        "UBK-28",
+        "UBK-33"
+      ],
+      "principle_ar": "خطا التقاطع (المحور الرأسي وخط العينين) يقرران تصميم الوجه قبل أي ملامح. في الزاوية المنخفضة ينحني خط العينين لأعلى ويظهر أسفل الفك، وفي العالية ينحني لأسفل ويظهر أعلى الرأس. المسافة بين خط الحاجب وخط العين تحدد حجم العين، والعيون الأدنى تعطي وجهًا أصغر سنًا. ميل محور الرأس على محور الجذع وخط الكتفين يصنع الدراما.",
+      "principle_en": "The two cross-lines (vertical centre axis and eye line) decide the face's design before any feature. From a low angle the eye line arcs upward and the underside of the jaw shows; from a high angle it arcs downward and the crown shows. The gap between brow line and eye line sets eye size; lower-set eyes read younger. Tilting the head axis against the torso axis and shoulder line creates drama.",
+      "steps": [
+        "Draw the head as a ball or box and choose its turn and tilt",
+        "Wrap the centre axis and eye line around it",
+        "Set brow and eye lines to choose eye size and age",
+        "Place the nose base below the eye line and the mouth on its own line",
+        "Check that inner eye corner and nose bridge share a contour in three-quarter view",
+        "Eyes sit in a V-shaped indent; the mouth is slightly above halfway from nose base to chin"
+      ],
+      "code_recipe": "Use the head demo's yaw/pitch to place the eye-line curve; for anime push the eye line slightly below mid-height and enlarge the brow-to-eye gap.",
+      "prompt_terms": [
+        "anime character head at three-quarter view",
+        "consistent manga facial proportions",
+        "dynamic head tilt"
+      ],
+      "checks": [
+        "Eye line curvature matches the camera angle",
+        "Both eyes sit on one wrapped eye line",
+        "Far eye narrowed by the nose bridge"
+      ],
+      "common_errors": [
+        "Front-view features pasted on a turned head",
+        "Head too small or too thin for the body",
+        "Nose base drawn from the eye line"
+      ],
+      "tags": [
+        "anime",
+        "manga",
+        "head angle",
+        "cross lines",
+        "eye line",
+        "three quarter",
+        "low angle",
+        "high angle",
+        "أنمي",
+        "مانجا",
+        "زاوية الرأس",
+        "خطوط التقاطع",
+        "خط العين",
+        "ثلاثة أرباع",
+        "زاوية منخفضة"
+      ],
+      "review_status": "user_copy_read_paraphrased"
+    },
+    {
+      "id": "DM-35",
+      "domain": "head",
+      "name_en": "Hair as masses that grow and move",
+      "name_ar": "الشعر ككتل تنمو وتتحرك",
+      "books": [
+        "UBK-26",
+        "UBK-02",
+        "UBK-21",
+        "UBK-38"
+      ],
+      "principle_ar": "الشعر ينمو من الدوامة وخط الفرق ويتبع الجمجمة مع فراغ ثابت فوقها. ارسم الكتلة الخارجية أولًا ثم قسّمها إلى خصلات كبيرة ثم أصغر، وظلّل حيث تتراكب الخصلات فقط. الجاذبية تشد الأطراف لأسفل مهما مال الرأس؛ الريح والجري والقفز والسقوط تغيّر الشكل بقوانين ثابتة، وحالة الشعر تحكي الشعور (متهدّل حزين، مرفوع غاضب أو قوي).",
+      "principle_en": "Hair grows from the crown whorl and the parting and follows the skull with a constant volume gap. Draw the outer mass first, divide it into big locks, then smaller ones, and shade only where locks overlap. Gravity pulls the ends straight down however the head tilts; wind, running, jumping and falling reshape it by fixed rules, and the hair's state tells the emotion (limp = sad, lifted = anger or power).",
+      "steps": [
+        "Mark crown and parting on the head",
+        "Draw the silhouette of the whole hair mass outside the skull",
+        "Split into big groups (fringe, sides, back), then locks",
+        "Shade only overlaps and the underside of the back mass",
+        "Apply the force: gravity, wind direction, motion"
+      ],
+      "code_recipe": "Model each lock as a curve rooted on the skull whose tip vector = gravity + wind + inertia; keep roots on a circle offset from the skull by a fixed gap.",
+      "prompt_terms": [
+        "hair drawn in clear locks",
+        "flowing anime hair in the wind",
+        "hair volume follows the skull"
+      ],
+      "checks": [
+        "Gap between skull and hair outline is consistent",
+        "All loose ends obey one force direction",
+        "Locks radiate from crown or parting"
+      ],
+      "common_errors": [
+        "Strands before the mass",
+        "Hair stuck flat to the skull",
+        "Wind blowing two ways at once"
+      ],
+      "tags": [
+        "hair",
+        "hairstyle",
+        "locks",
+        "wind",
+        "hair motion",
+        "ponytail",
+        "شعر",
+        "تسريحة",
+        "خصلات",
+        "ريح",
+        "حركة الشعر",
+        "ذيل حصان"
+      ],
+      "review_status": "user_copy_read_paraphrased"
+    },
+    {
+      "id": "DM-36",
+      "domain": "color",
+      "name_en": "Anime skin and cel-shading layer stack",
+      "name_ar": "طبقات تلوين بشرة الأنمي والتظليل الخلوي",
+      "books": [
+        "UBK-22",
+        "UBK-21",
+        "UBK-10",
+        "UBK-30",
+        "UBK-28"
+      ],
+      "principle_ar": "رتّب الطبقات: لون أساسي مسطح، ظل أول بحدود واضحة يتبع الشكل، ظل ثانٍ أغمق في التجاويف، طبقة ضوء محيط باردة، ضوء منعكس على الحواف داخل الظل، ثم لمعات صغيرة، وأخيرًا تلوين الخط نفسه. في البشرة لا تُغمِّق بالأسود: الظل الأول أعلى تشبعًا بنفس السطوع ويميل للأحمر، والثاني أغمق ويميل للبنفسجي. الضوء القوي حدود حادة مع تشبع عند الحد، والضوء الغائم تدرج ناعم.",
+      "principle_en": "Order the layers: flat base, first shadow with a clean edge that follows the form, a darker second shadow in the recesses, a cool ambient layer, reflected light along edges inside the shadow, small highlights, and finally recolour the line art. For skin never darken with black: the first shadow is more saturated at the same brightness and shifts toward red; the second is darker and shifts toward violet. Hard light gives sharp edges with extra saturation at the border; overcast light gives a soft gradient.",
+      "steps": [
+        "Flat base colours on separate layers",
+        "Shadow 1: same value, higher saturation, hue toward red",
+        "Shadow 2: darker, hue toward violet, only in deep recesses",
+        "Reflected light along the shadow-side contour, never brighter than the lit side",
+        "Highlights last; recolour lines (lighter near light, darker in shadow)",
+        "Skin shadows get warmer and more saturated toward the terminator (light scattering under the skin)"
+      ],
+      "code_recipe": "Shadow1 = HSV(h - 8deg, s + 0.25, v); Shadow2 = HSV(h - 20deg toward magenta, s + 0.15, v - 0.2); multiply-free palette ramps per material.",
+      "prompt_terms": [
+        "clean anime cel shading",
+        "warm saturated skin shadows",
+        "soft reflected light on skin"
+      ],
+      "checks": [
+        "No grey or black used in skin shadows",
+        "Reflected light dimmer than any lit area",
+        "One light direction for all shadow edges"
+      ],
+      "common_errors": [
+        "Muddy grey shadows",
+        "Pure black line art on soft skin",
+        "Reflected light as bright as the key light"
+      ],
+      "tags": [
+        "anime coloring",
+        "cel shading",
+        "skin",
+        "skin tones",
+        "rendering",
+        "layers",
+        "blush",
+        "تلوين أنمي",
+        "تظليل خلوي",
+        "بشرة",
+        "لون البشرة",
+        "طبقات",
+        "تلوين ديجيتال"
+      ],
+      "review_status": "user_copy_read_paraphrased"
+    },
+    {
+      "id": "DM-37",
+      "domain": "environment",
+      "name_en": "Urban sketching: setup lines then forced values",
+      "name_ar": "رسم المدن: خطوط إعداد ثم قيم مضخّمة",
+      "books": [
+        "UBK-13",
+        "UBK-41",
+        "ART-047"
+      ],
+      "principle_ar": "خطوتان: أولًا رسم إعداد خفيف يبدأ بنقطة التركيز ثم خط الأفق وخطين متقاربين يحددان نقاط التلاشي، ثم الرأسيات، وشبكات النوافذ بخطوط إرشاد طويلة لا نافذة نافذة. ثانيًا القيم: ارسم الظلال واحفظ الأضواء، و«ضخّم الظلال» بأعلى تباين عند حافتها الأمامية مع ضوء منعكس أخف في عمقها. الأشخاص رؤوسهم على الأفق، والسيارات صناديق بسيطة، والأشجار بأنماط تهشير متنوعة.",
+      "principle_en": "Two steps. First a light setup sketch: focal point, horizon, two converging lines that fix the vanishing points, verticals, and window grids from long guidelines across many windows rather than window by window. Second the values: draw the darks and reserve the lights, and force the shadows: highest contrast at the shadow's leading edge, lighter reflected light deeper inside. People's heads go on the horizon, cars are simple boxes, trees are varied hatch patterns.",
+      "steps": [
+        "Stand, sight the focal point and the horizon",
+        "Two converging lines -> vanishing points; then verticals",
+        "Long guidelines for repeated windows and floors",
+        "Block the shadow shapes; darkest at the light/shadow border",
+        "Add entourage: heads on the horizon, box cars, varied trees"
+      ],
+      "code_recipe": "Generate facade grids by dividing two edges toward one VP; shade planes facing away from the sun at value 0.7 with a darker 0.85 strip along the leading edge.",
+      "prompt_terms": [
+        "urban sketch in pen and wash",
+        "two-point perspective street scene",
+        "strong sunlit shadows on buildings"
+      ],
+      "checks": [
+        "All facade lines reach their vanishing points",
+        "Shadow sides share one sun direction",
+        "Entourage heads align with the horizon"
+      ],
+      "common_errors": [
+        "Fuzzy back-and-forth lines",
+        "Drawing every window instead of guidelines",
+        "Subject entirely in shade goes muddy"
+      ],
+      "tags": [
+        "urban sketching",
+        "buildings",
+        "city",
+        "architecture",
+        "street",
+        "facade",
+        "رسم المدن",
+        "مباني",
+        "مدينة",
+        "عمارة",
+        "شارع",
+        "واجهة"
+      ],
+      "review_status": "user_copy_read_paraphrased"
+    },
+    {
+      "id": "DM-38",
+      "domain": "nature",
+      "name_en": "Flowers, leaves and trees from simple shapes",
+      "name_ar": "الزهور والأوراق والأشجار من أشكال بسيطة",
+      "books": [
+        "UBK-20",
+        "UBK-40",
+        "UBK-41"
+      ],
+      "principle_ar": "كل زهرة أو وردة تبدأ بأشكال بسيطة (دوائر، بيضاوي، أقواس، قطرات، قلوب) ثم تُحدَّد البتلات بحواف مموجة أو مسننة. البتلة الملتوية تظهر بخط ثانٍ داخل الأول، والورقة المطوية بحافة ناعمة خارج حافة متموجة، والسمك بخط موازٍ. التظليل يتبع السطح: خطوط قصيرة قرب العروق وأطراف البتلات، وطويلة منحنية بمحاذاة جوانب الورقة. الشجرة جذع وكتلة أوراق، والفروع تتفرع كحروف Y وV.",
+      "principle_en": "Every flower starts as simple shapes (circles, ovals, arcs, teardrops, hearts), then petals get scalloped or jagged edges. A curled petal shows as a second line inside the first, a folded leaf as a smooth edge outside a wavy one, thickness as a parallel line. Shading follows the surface: short strokes near veins and petal tips, long curves along leaf sides. A tree is a trunk plus a foliage mass, branches split like Y and V.",
+      "steps": [
+        "Block the flower head and stem with simple shapes",
+        "Cut petal edges; add turned edges and folds",
+        "Draw veins as branching double lines",
+        "Shade undersides and the side of each stem",
+        "For trees: mass first, then Y-shaped branching, then texture by mark type"
+      ],
+      "code_recipe": "Petals as rotated teardrop paths around a centre; a second inset offset path marks curls; leaf vein = midline with alternating V branches.",
+      "prompt_terms": [
+        "botanical line drawing",
+        "delicate flower with curled petals",
+        "tree with clear foliage masses"
+      ],
+      "checks": [
+        "Petals radiate from one centre",
+        "Curled edges shown by double lines",
+        "Foliage reads as a few masses before texture"
+      ],
+      "common_errors": [
+        "Outlining every leaf of a tree",
+        "Flat petals with no turn",
+        "Shading strokes that ignore the surface"
+      ],
+      "tags": [
+        "flowers",
+        "rose",
+        "plants",
+        "leaves",
+        "trees",
+        "botanical",
+        "nature",
+        "زهور",
+        "نباتات",
+        "أوراق",
+        "أشجار",
+        "طبيعة",
+        "ورد",
+        "وردة",
+        "زهرة"
+      ],
+      "review_status": "user_copy_read_paraphrased"
+    },
+    {
+      "id": "DM-39",
+      "domain": "design",
+      "name_en": "Products and vehicles from orthographic views",
+      "name_ar": "رسم المنتجات والسيارات من المساقط",
+      "books": [
+        "ART-047",
+        "UBK-38",
+        "UBK-04"
+      ],
+      "principle_ar": "خطط الشكل في مساقط جانبية وعلوية وأمامية داخل مستطيلات حاوية، ثم انقلها إلى المنظور عبر صندوق حاوٍ. ارسم من الكتف، جرّب الضربة في الهواء ثم ارسمها مرة واحدة، وأدر الورقة. للقطع الناقص صحح المحور الأصغر أولًا ليطابق محور الأسطوانة ثم الدرجة التي تنفتح بالابتعاد عن الأفق. خطوط المقاطع X-Y-Z تصف الأسطح المنحنية، وخط السيلويت هو الأسمك.",
+      "principle_en": "Plan the form in side, top and front views inside bounding rectangles, then carry it into perspective through a bounding box. Draw from the shoulder, ghost the stroke, then commit once, and rotate the paper. For ellipses fix the minor axis first so it lines up with the cylinder's axis, then the degree, which opens with distance from the horizon. X-Y-Z section lines describe curved surfaces, and the silhouette line is the heaviest.",
+      "steps": [
+        "Side view in a bounding rectangle with proportions",
+        "Perspective box at the same proportions",
+        "Transfer key points through the box",
+        "Wheels and holes: minor axis on the axle line",
+        "Section lines on curved surfaces; heavy silhouette, lighter inner lines"
+      ],
+      "code_recipe": "Project orthographic key points (x, y, z) through a 2-point camera; draw wheel ellipses with minor axis along the projected axle direction.",
+      "prompt_terms": [
+        "industrial design sketch",
+        "vehicle in two-point perspective with section lines",
+        "ballpoint product sketch"
+      ],
+      "checks": [
+        "Ellipse minor axes align with their axles",
+        "Both sides of a symmetric object share vanishing points",
+        "Silhouette heavier than inner lines"
+      ],
+      "common_errors": [
+        "Wheels that tilt off the axle",
+        "Re-traced hairy lines",
+        "Starting details before the box is right"
+      ],
+      "tags": [
+        "industrial design",
+        "product design",
+        "vehicle",
+        "car",
+        "ellipse",
+        "orthographic",
+        "تصميم صناعي",
+        "منتج",
+        "سيارة",
+        "مركبة",
+        "قطع ناقص",
+        "مساقط"
+      ],
+      "review_status": "user_copy_read_paraphrased"
+    },
+    {
+      "id": "DM-40",
+      "domain": "character",
+      "name_en": "Cartoon motion symbols and expression shorthand",
+      "name_ar": "رموز الحركة واختصارات التعبير في الكرتون",
+      "books": [
+        "UBK-15",
+        "UBK-14",
+        "UBK-40",
+        "ART-021"
+      ],
+      "principle_ar": "الكرتون يضيف إلى الرسم لغة رموز: خطوط سرعة خلف الجسم، خطوط اهتزاز موازية للشيء المهتز، عيون متعددة لالتفاتة سريعة، حدود متقطعة للارتجاف، نجوم ودوامات للدوار، قطرات عرق، علامات استفهام وتعجب. ولكل شعور اختصار: الغضب حواجب تنحدر نحو الأنف وأسنان مطبقة، الملل جفون ثقيلة وفم مستقيم مائل، المكر جفون نصف مغلقة وحاجب مرفوع وبؤبؤ في الزاوية.",
+      "principle_en": "Cartoons add a symbol language to the drawing: speed lines behind the body, wobble lines parallel to a shaking object, multiple eyes for a fast head turn, broken outlines for trembling, stars and swirls for dizziness, sweat beads, question and exclamation marks. Each feeling has a shorthand: anger = brows sloping down to the nose and gritted teeth, boredom = heavy lids and a flat slanted mouth, slyness = half-closed lids, one raised brow, pupils in the corner.",
+      "steps": [
+        "Get the pose and expression right first",
+        "Add one motion symbol that matches the direction of movement",
+        "Use the expression shorthand consistently on brows, lids and mouth",
+        "Keep symbols light and fewer than the main lines",
+        "Use one basic head shape for every character in a strip and swap only the features",
+        "Every feature must support the personality; revise the rough until none contradicts it"
+      ],
+      "code_recipe": "Speed lines = 3-6 strokes parallel to the motion vector behind the silhouette, tapering away; wobble lines = short arcs offset on both sides of the moving edge.",
+      "prompt_terms": [
+        "classic cartoon motion lines",
+        "exaggerated cartoon expression",
+        "comic sweat drops and impact stars"
+      ],
+      "checks": [
+        "Motion lines are parallel to the movement",
+        "Brows, lids and mouth agree on one emotion",
+        "Symbols never cover the face"
+      ],
+      "common_errors": [
+        "Speed lines pointing the wrong way",
+        "Symbol overload that hides the pose",
+        "Mixed signals between brows and mouth"
+      ],
+      "tags": [
+        "cartoon",
+        "motion lines",
+        "speed lines",
+        "comic symbols",
+        "expression",
+        "exaggeration",
+        "كرتون",
+        "خطوط سرعة",
+        "رموز كوميكس",
+        "تعبير",
+        "مبالغة",
+        "كاريكاتير"
+      ],
+      "review_status": "user_copy_read_paraphrased"
+    },
+    {
+      "id": "DM-41",
+      "domain": "practice",
+      "name_en": "Practice regimen and seeing drills",
+      "name_ar": "نظام التمرين وتدريبات الرؤية",
+      "books": [
+        "UBK-31",
+        "UBK-08",
+        "UBK-30",
+        "UBK-05",
+        "UBK-41"
+      ],
+      "principle_ar": "التحسن يأتي من عشر دقائق يوميًا لا من ساعات نادرة. بدّل بين أيام الرسم من الملاحظة وأيام الرسم من الذاكرة، وسخّن بالخط المتصل والرسم الأعمى والرسم المقلوب والفراغ السالب، وارسم الموضوع نفسه بتقنيات مختلفة لتكتشف أسلوبك. للنقل الدقيق استخدم شبكة مربعات خفيفة وارسم مربعًا مربعًا ثم امسحها. راجع العمل بالترتيب: السيلويت ثم الحجم والتفاصيل ثم التكوين.",
+      "principle_en": "Progress comes from ten minutes a day, not rare long sessions. Alternate observation days with drawing-from-memory days; warm up with continuous-line, blind contour, upside-down copying and negative space; redraw the same subject in many techniques to find a personal style. For an accurate transfer use a light grid and copy cell by cell, then erase it. Review in order: silhouette, then volume and details, then composition.",
+      "steps": [
+        "Three-minute warm-up: continuous or blind contour",
+        "Main study from observation, or from memory on alternate days",
+        "Compare memory drawing with the reference and list two fixes",
+        "Weekly: one subject in five techniques",
+        "Use a grid only for likeness-critical copies, then remove it"
+      ],
+      "code_recipe": "Track sessions as a dated log; a grid overlay = N x N lines drawn at 20% opacity on both reference and canvas.",
+      "prompt_terms": [
+        "daily sketchbook practice page",
+        "blind contour study",
+        "grid method portrait study"
+      ],
+      "checks": [
+        "Memory drawings are compared against references",
+        "Warm-up and study separated",
+        "Grid lines removed from finished work"
+      ],
+      "common_errors": [
+        "Only copying, never drawing from memory",
+        "Waiting for free hours",
+        "Leaving grid lines visible"
+      ],
+      "tags": [
+        "practice",
+        "exercises",
+        "daily drawing",
+        "sketchbook",
+        "blind contour",
+        "grid method",
+        "upside down",
+        "تمرين",
+        "تدريب",
+        "رسم يومي",
+        "كراسة رسم",
+        "شبكة",
+        "رسم أعمى",
+        "رسم مقلوب"
+      ],
+      "review_status": "user_copy_read_paraphrased"
+    },
+    {
+      "id": "DM-42",
+      "domain": "construction",
+      "name_en": "Blueprint, shape, erase, shade, ground",
+      "name_ar": "المخطط ثم التشكيل ثم المسح ثم التظليل ثم التثبيت بالظل",
+      "books": [
+        "ART-009",
+        "ART-008",
+        "UBK-40",
+        "UBK-11",
+        "UBK-06",
+        "UBK-24",
+        "UBK-32",
+        "UBK-12",
+        "UBK-16"
+      ],
+      "principle_ar": "طريقة البناء التدريجي للمبتدئ: مخطط خفيف من أشكال هندسية، ثم «شكّل الأشكال» بإضافة السمك والانحناء، ثم امسح الخطوط الزائدة، ثم اختر مصدر ضوء وظلّل الجانب المقابل، ثم ثبّت الشيء بظل ساقط هو نسخة مضغوطة منه على الأرض، وأخيرًا أغمق قيمة حيث تتداخل الأشكال. كل شكل يحدد حجم ومكان الشكل التالي.",
+      "principle_en": "A step-by-step build for beginners: a light blueprint of geometric shapes, then shape the shapes (add thickness and curve), erase the extra lines, choose a light source and shade the opposite side, ground the object with a cast shadow that is a squashed copy of it on the floor, and put the darkest darks where shapes overlap. Each shape sets the size and place of the next one.",
+      "steps": [
+        "Blueprint with light geometric shapes",
+        "Refine contours and add thickness",
+        "Erase construction lines",
+        "Light source -> shade the far side, blend",
+        "Cast shadow + darkest accents in overlaps",
+        "Teach it by progressive disclosure: show only the new strokes of each step over the previous ones",
+        "Check the nine laws on every drawing: foreshortening, placement, size, overlap, shading, shadow, contour, horizon, density",
+        "Copy one reference cube's receding directions for every parallel edge, and give every opening a thickness line",
+        "Add a 3D edge by drawing a second line that follows the contour, then lift highlights with a kneaded eraser"
+      ],
+      "code_recipe": "Matches the stage groups of the SVG demos: guide (blueprint), construction, final; add a cast-shadow polygon offset away from the light.",
+      "prompt_terms": [
+        "simple 3D cartoon object with cast shadow",
+        "step-by-step construction drawing"
+      ],
+      "checks": [
+        "Blueprint stage exists before final lines",
+        "Shadow side opposite the chosen light",
+        "Object touches its cast shadow",
+        "Flat faces turned from the light get one even value; curved faces get a blended gradient"
+      ],
+      "common_errors": [
+        "Copying a known character feature by feature with no structure, which fails at any new angle",
+        "Pressing hard on the blueprint so it cannot be erased",
+        "Shading both sides equally",
+        "No cast shadow (floating)"
+      ],
+      "tags": [
+        "step by step",
+        "beginner",
+        "blueprint",
+        "3d object",
+        "kids drawing",
+        "خطوة بخطوة",
+        "مبتدئ",
+        "مخطط",
+        "مجسم",
+        "رسم أطفال"
+      ],
+      "review_status": "user_copy_read_paraphrased"
+    },
+    {
+      "id": "DM-43",
+      "domain": "character",
+      "name_en": "Anime character types and body ratios by role",
+      "name_ar": "أنماط شخصيات الأنمي ونسب الجسم حسب الدور",
+      "books": [
+        "UBK-02",
+        "UBK-30",
+        "UBK-10",
+        "UBK-28"
+      ],
+      "principle_ar": "حدد النمط قبل الرسم: شخصية «SD» صغيرة (2–3 رؤوس)، عادية (حوالي 7 رؤوس)، بطولية (7.5–8 وقد تصل 9 بكتفين بعرض ثلاثة رؤوس). الطفل ساقاه إلى الجذع 6:4 ولا يُرسم بوجه بالغ، والمسن خصره أطول. هوية الشخصية ثابتة عبر شكل العين والتسريحة ونسبة الرأس للجسم وسيلويت الملابس، والإكسسوار رمز يستحق أكبر عناية. الوقفة والتعبير يجب أن يتفقا.",
+      "principle_en": "Pick the type before drawing: super-deformed (2–3 heads), normal (about 7 heads), heroic (7.5–8, up to 9 with shoulders three head-widths wide). A child has legs to upper body about 6:4 and never an adult face; an elder has a longer waist. Identity stays constant through eye shape, hairstyle, head-to-body ratio and costume silhouette, and the signature accessory deserves the most care. Pose and expression must agree.",
+      "steps": [
+        "Choose type and head count",
+        "Fix the identity set: eyes, hair, ratio, costume silhouette",
+        "Design supporting cast with contrasting heights and shapes",
+        "Check pose and expression agree",
+        "Make a character sheet and an expression sheet"
+      ],
+      "code_recipe": "Use `draw figure --heads N` for the ratio and `draw character --age` for age proportions; store the identity set as JSON with the sheet.",
+      "prompt_terms": [
+        "anime character sheet",
+        "consistent character design",
+        "chibi super-deformed version"
+      ],
+      "checks": [
+        "Head count matches the chosen type",
+        "Identity set identical across views",
+        "Expression fits the pose"
+      ],
+      "common_errors": [
+        "Adult face on a child body",
+        "Equal line weight and symmetry (paper doll)",
+        "Sad face on a heroic pose"
+      ],
+      "tags": [
+        "anime character",
+        "chibi",
+        "super deformed",
+        "character sheet",
+        "body ratio",
+        "شخصية أنمي",
+        "تشيبي",
+        "نسب الجسم",
+        "ورقة شخصية"
+      ],
+      "review_status": "user_copy_read_paraphrased"
+    },
+    {
+      "id": "DM-44",
+      "domain": "observation",
+      "name_en": "Realistic graphite: grid accuracy, blending and lifted lights",
+      "name_ar": "الرصاص الواقعي: دقة الشبكة والدمج والإضاءة بالممحاة",
+      "books": [
+        "UBK-05",
+        "UBK-19",
+        "UBK-03"
+      ],
+      "principle_ar": "في الرسم الواقعي الشكل أولًا: لا تقنية تنقذ شكلًا خاطئًا. حدد مساحات الظل كأشكال في مرحلة الخط، ثم ابنِ القيمة بطبقات وادمجها بأداة دمج، وارفع الأضواء بممحاة عجين مدببة. الشعر والحواجب والرموش ضربات مستدقة في اتجاه النمو لا خطوط صلبة، ولا تحيط العين بخط رموش سفلية. الخط الخارجي لا يكون أغمق من الظلال.",
+      "principle_en": "In realistic drawing shape comes first: no technique saves a wrong shape. Map the shadow areas as shapes during the line stage, build value in layers, blend with a stump, and lift lights with a pointed kneaded eraser. Hair, brows and lashes are tapered strokes in the growth direction, never hard lines, and the eye is never ringed by a line of lower lashes. An outline is never darker than the shadows.",
+      "steps": [
+        "Accurate line drawing (grid if needed) including shadow shapes",
+        "Block shadows lightly, then deepen in layers",
+        "Blend toward smooth gradients",
+        "Lift highlights and light hairs with the eraser",
+        "Final darks only in the deepest accents"
+      ],
+      "code_recipe": "Use value bands from the reference (posterise to 5 levels) as the shadow-shape layer before any gradient.",
+      "prompt_terms": [
+        "realistic graphite portrait",
+        "smooth blended pencil shading",
+        "fine hair strokes"
+      ],
+      "checks": [
+        "Shadow shapes match the reference",
+        "No hard outline around soft forms",
+        "Brightest lights are lifted or reserved, not drawn"
+      ],
+      "common_errors": [
+        "Hard straight eyebrow lines",
+        "Outline darker than the shadow",
+        "Over-blending that removes texture"
+      ],
+      "tags": [
+        "realistic drawing",
+        "graphite",
+        "pencil",
+        "blending",
+        "portrait",
+        "eyes",
+        "eyebrows",
+        "رسم واقعي",
+        "رصاص",
+        "دمج",
+        "بورتريه",
+        "عيون",
+        "حواجب"
+      ],
+      "review_status": "user_copy_read_paraphrased"
+    },
+    {
+      "id": "DM-45",
+      "domain": "animation",
+      "name_en": "Walks and runs: contact, down, passing, up",
+      "name_ar": "المشي والجري: التلامس ثم الهبوط ثم العبور ثم الصعود",
+      "books": [
+        "ART-092",
+        "ART-093",
+        "UBK-29"
+      ],
+      "principle_ar": "الخطوة أربع وضعيات: تلامس الكعب، ثم «الهبوط» حيث تنثني الساق وتمتص الوزن (أدنى نقطة للجسم)، ثم «العبور» حين تمر الساق الحرة بجوار الحاملة، ثم «الصعود» قبل التلامس التالي. أول ما تراقبه صعود الرأس وهبوطه. الذراعان عكس الساقين على أقواس، والكتفان عكس الحوض، والرأس يتأخر قليلًا. المشي العادي خطوة كل نصف ثانية (12 إطارًا)، والجري جسم مائل للأمام برسمة واحدة على الأقل في الهواء ولا يرتفع أكثر من نصف رأس.",
+      "principle_en": "A step is four poses: heel contact; the down position where the leg bends and absorbs the weight (the body's lowest point); the passing position where the free leg passes the supporting one; and the up position before the next contact. The first thing to watch is the head's rise and fall. Arms swing opposite to the legs on arcs, shoulders oppose hips, the head trails slightly. A normal walk takes a step every half second (12 frames); a run leans forward, has at least one drawing off the ground and lifts the body no more than half a head.",
+      "steps": [
+        "Draw both contacts, then the passing position between them",
+        "Add the down (lowest) and up (highest) positions",
+        "Swing arms opposite to legs; hands lowest at passing",
+        "Tilt shoulders against hips; delay the head a frame or two",
+        "Time it: 12 frames per step for a normal walk, fewer for a run; vary per character"
+      ],
+      "code_recipe": "Body height per frame = base - drop*[0,1,0.3,-0.4,0] over contact/down/passing/up/contact; place feet by IK with the support foot fixed while it is on the ground.",
+      "prompt_terms": [
+        "walk cycle key poses",
+        "contact down passing up poses",
+        "dynamic run with airborne frame"
+      ],
+      "checks": [
+        "The lowest body position is just after contact, the highest just after passing",
+        "Arms swing opposite to legs",
+        "A run has at least one airborne drawing"
+      ],
+      "common_errors": [
+        "Body moving at one height (gliding)",
+        "Same-side arm and leg forward",
+        "Circular body cycles that look like a pigeon"
+      ],
+      "tags": [
+        "walk cycle",
+        "run cycle",
+        "walk",
+        "run",
+        "contact",
+        "passing position",
+        "مشي",
+        "دورة مشي",
+        "جري",
+        "خطوة",
+        "وضعية العبور"
+      ],
+      "review_status": "user_copy_read_paraphrased"
+    },
+    {
+      "id": "DM-46",
+      "domain": "character",
+      "name_en": "Creature and game character design pipeline",
+      "name_ar": "خط تصميم المخلوقات وشخصيات الألعاب",
+      "books": [
+        "UBK-36",
+        "UBK-21",
+        "UBK-38"
+      ],
+      "principle_ar": "التصميم يبدأ بكمية: عشرات السيلويتات الصغيرة حول موضوع (وحش، نبات حي، آلي، بشري) ثم اختيار الأقوى، ثم رسم بنائي يحفظ هيكلًا ومفاصل معقولة حتى للخيالي، ثم ألوان أساسية مسطحة، ثم تجسيد كل خامة على حدة (ريش، فرو، خشب، معدن) بضوء واحد. الأسلحة والدروع والإكسسوار تُصمَّم كقطع مستقلة بعدة نسخ ومن أكثر من زاوية، والشكل يتبع الوظيفة.",
+      "principle_en": "Design starts with quantity: dozens of small silhouettes around a theme (beast, living plant, mech, humanoid), pick the strongest, then a constructed drawing that keeps a plausible skeleton and joints even for fantasy, then flat base colours, then each material rendered on its own (feathers, fur, wood, metal) under one light. Weapons, armour and props are designed as separate pieces in several versions and from more than one view, and form follows function.",
+      "steps": [
+        "Write a one-line concept (role, world, ability)",
+        "Thumbnail 12–30 silhouettes; pick by readability",
+        "Construct the chosen one on a plausible skeleton",
+        "Flat colours: main, secondary, accent",
+        "Render material by material; design props separately in A/B versions and a second view"
+      ],
+      "code_recipe": "Generate silhouette variants by mutating primitive sizes/positions; score readability by filled-area compactness and unique outline features; keep a JSON spec per prop.",
+      "prompt_terms": [
+        "game creature concept sheet",
+        "strong readable silhouette",
+        "material rendering of fur metal and feathers"
+      ],
+      "checks": [
+        "Silhouette reads at thumbnail size",
+        "Joints and limbs could plausibly move",
+        "Every material keeps the same light direction"
+      ],
+      "common_errors": [
+        "Rendering before the silhouette works",
+        "Decoration with no function",
+        "Fantasy anatomy that could not bear weight"
+      ],
+      "tags": [
+        "creature design",
+        "monster",
+        "game character",
+        "concept art",
+        "props",
+        "weapons",
+        "armor",
+        "تصميم مخلوقات",
+        "وحش",
+        "شخصية لعبة",
+        "كونسبت آرت",
+        "أسلحة",
+        "دروع"
+      ],
+      "review_status": "user_copy_read_paraphrased"
+    },
+    {
+      "id": "DM-47",
+      "domain": "line",
+      "name_en": "Graphite textures: grazing, push-pull and foliage",
+      "name_ar": "ملمس الرصاص: الضربة العريضة والدفع والسحب وأوراق الشجر",
+      "books": [
+        "UBK-34",
+        "UBK-05",
+        "UBK-03",
+        "UBK-08"
+      ],
+      "principle_ar": "لكل ملمس حركة يد: «الضربة العريضة» بجانب سن القلم لأسطح مسطحة أو منحنية، و«ضع وادفع واسحب» بضربات قصيرة لكتل الأوراق والأرض الحجرية، والتعرج لأوراق الشجر ثم بناء الهيكل بأشكال سالبة فاتحة ثم كتلة الأوراق. احتفظ بمكتبة علامات لكل خامة، واستخدم إطار رؤية لاختيار جزء من مشهد مزدحم. الفرو والريش ضربات اتجاهية مع إضاءة مرفوعة بالممحاة.",
+      "principle_en": "Each texture has a hand movement: the grazing stroke with the side of the lead for flat or curved surfaces, put-push-pull short strokes for foliage masses and stony ground, zigzags for foliage, then structure with light negative leaf shapes, then the foliage mass. Keep a mark library per medium, and use a viewfinder to pick an area of interest in a busy scene. Fur and feathers are directional strokes with lights lifted by the eraser.",
+      "steps": [
+        "Test marks for the medium on a swatch page",
+        "Lay a tonal block for the mass",
+        "Add texture strokes in the surface direction",
+        "Cut light negative shapes to show structure",
+        "Lift highlights; keep the darkest darks for depth behind light shapes"
+      ],
+      "code_recipe": "Texture brush = stochastic short strokes with direction field from the surface normal; foliage = blue-noise points expanded into zigzag clusters masked by the mass shape.",
+      "prompt_terms": [
+        "graphite pencil textures",
+        "detailed foliage in pencil",
+        "directional fur strokes"
+      ],
+      "checks": [
+        "Strokes follow the surface or growth direction",
+        "Light negative shapes break up dark masses",
+        "Different materials use different marks"
+      ],
+      "common_errors": [
+        "Outlining each leaf",
+        "One stroke type for every material",
+        "Smudging texture into flat grey"
+      ],
+      "tags": [
+        "texture",
+        "foliage",
+        "fur",
+        "feathers",
+        "stone",
+        "pencil techniques",
+        "ملمس",
+        "أوراق شجر",
+        "فرو",
+        "ريش",
+        "حجر",
+        "تقنيات الرصاص"
+      ],
+      "review_status": "user_copy_read_paraphrased"
+    }
+  ],
+  "user_library": [
+    {
+      "id": "UBK-01",
+      "title": "Figure Drawing for All It's Worth",
+      "author": "Andrew Loomis",
+      "pages": 198,
+      "read_via": "ocr",
+      "index_id": "ART-021",
+      "review_status": "user_copy_read_paraphrased"
+    },
+    {
+      "id": "UBK-02",
+      "title": "How to Draw Anime & Game Characters Vol. 1",
+      "author": "Tadashi Ozawa",
+      "pages": 155,
+      "read_via": "ocr",
+      "review_status": "user_copy_read_paraphrased"
+    },
+    {
+      "id": "UBK-03",
+      "title": "Pen & Pencil Drawing Techniques",
+      "author": "Harry Borgman",
+      "pages": 220,
+      "read_via": "ocr_partial+sample_pages",
+      "review_status": "user_copy_read_paraphrased"
+    },
+    {
+      "id": "UBK-04",
+      "title": "How to Draw (The Great Courses, 36 lectures)",
+      "author": "David Brody",
+      "pages": 676,
+      "read_via": "text",
+      "review_status": "user_copy_read_paraphrased"
+    },
+    {
+      "id": "UBK-05",
+      "title": "Lee Hammond's Big Book of Drawing",
+      "author": "Lee Hammond",
+      "pages": 208,
+      "read_via": "ocr",
+      "review_status": "user_copy_read_paraphrased"
+    },
+    {
+      "id": "UBK-06",
+      "title": "Draw and Color Sea Creatures",
+      "author": "Russell Farrell (Walter Foster)",
+      "pages": 42,
+      "read_via": "ocr",
+      "review_status": "user_copy_read_paraphrased"
+    },
+    {
+      "id": "UBK-07",
+      "title": "The Animator's Survival Kit",
+      "author": "Richard Williams",
+      "pages": 346,
+      "read_via": "ocr",
+      "index_id": "ART-092",
+      "review_status": "user_copy_read_paraphrased"
+    },
+    {
+      "id": "UBK-08",
+      "title": "Fearless Drawing",
+      "author": "Kerry Lemon",
+      "pages": 131,
+      "read_via": "text",
+      "review_status": "user_copy_read_paraphrased"
+    },
+    {
+      "id": "UBK-09",
+      "title": "You Can Draw in Just 30 Minutes",
+      "author": "Mark Kistler",
+      "pages": 405,
+      "read_via": "text",
+      "index_id": "ART-009",
+      "review_status": "user_copy_read_paraphrased"
+    },
+    {
+      "id": "UBK-10",
+      "title": "How to Draw Manga: Sketching Manga-Style Vol. 3 — Unforgettable Characters",
+      "author": "Kazuaki Morita et al.",
+      "pages": 184,
+      "read_via": "text",
+      "review_status": "user_copy_read_paraphrased"
+    },
+    {
+      "id": "UBK-11",
+      "title": "Big Book of Drawing Animals",
+      "author": "Rodriguez & Beaudenon",
+      "pages": 194,
+      "read_via": "sample_pages",
+      "review_status": "user_copy_read_paraphrased"
+    },
+    {
+      "id": "UBK-12",
+      "title": "You Can Draw in 30 Days",
+      "author": "Mark Kistler",
+      "pages": 257,
+      "read_via": "ocr",
+      "index_id": "ART-008",
+      "review_status": "user_copy_read_paraphrased"
+    },
+    {
+      "id": "UBK-13",
+      "title": "Draw Buildings and Cities in 15 Minutes",
+      "author": "Matthew Brehm",
+      "pages": 201,
+      "read_via": "text",
+      "review_status": "user_copy_read_paraphrased"
+    },
+    {
+      "id": "UBK-14",
+      "title": "Cartoons: Drawing Funny",
+      "author": "not printed in the pages read",
+      "pages": 162,
+      "read_via": "ocr",
+      "review_status": "user_copy_read_paraphrased"
+    },
+    {
+      "id": "UBK-15",
+      "title": "The Cartoonist's Bible",
+      "author": "Franklin Bishop",
+      "pages": 195,
+      "read_via": "text",
+      "review_status": "user_copy_read_paraphrased"
+    },
+    {
+      "id": "UBK-16",
+      "title": "How to Draw Cool Stuff: The 5-Minute Workbook",
+      "author": "Catherine V. Holmes",
+      "pages": 287,
+      "read_via": "ocr",
+      "review_status": "user_copy_read_paraphrased"
+    },
+    {
+      "id": "UBK-17",
+      "title": "Keys to Drawing",
+      "author": "Bert Dodson",
+      "pages": 226,
+      "read_via": "ocr",
+      "index_id": "ART-004",
+      "review_status": "user_copy_read_paraphrased"
+    },
+    {
+      "id": "UBK-18",
+      "title": "The Illusion of Life: Disney Animation",
+      "author": "Frank Thomas & Ollie Johnston",
+      "pages": 546,
+      "read_via": "text",
+      "index_id": "ART-093",
+      "review_status": "user_copy_read_paraphrased"
+    },
+    {
+      "id": "UBK-19",
+      "title": "Sketching People: Basics of Drawing the Human",
+      "author": "Karen Reed",
+      "pages": 74,
+      "read_via": "text",
+      "review_status": "user_copy_read_paraphrased"
+    },
+    {
+      "id": "UBK-20",
+      "title": "How to Draw Flowers and Plants",
+      "author": "unknown (workbook)",
+      "pages": 133,
+      "read_via": "text",
+      "review_status": "user_copy_read_paraphrased"
+    },
+    {
+      "id": "UBK-21",
+      "title": "Ultimate Guide to Manga Art (2022)",
+      "author": "ImagineFX (anthology)",
+      "pages": 134,
+      "read_via": "text",
+      "review_status": "user_copy_read_paraphrased"
+    },
+    {
+      "id": "UBK-22",
+      "title": "How to Paint Realistic Skin of a Beautiful Girl",
+      "author": "Japanese anthology (machine translation)",
+      "pages": 148,
+      "read_via": "text",
+      "review_status": "user_copy_read_paraphrased"
+    },
+    {
+      "id": "UBK-23",
+      "title": "How to Draw Clothing for Manga",
+      "author": "unknown (Japanese)",
+      "pages": 348,
+      "read_via": "text",
+      "review_status": "user_copy_read_paraphrased"
+    },
+    {
+      "id": "UBK-24",
+      "title": "Cartoons Drawing Worksheets",
+      "author": "howtodrawforkids.com",
+      "pages": 216,
+      "read_via": "sample_pages",
+      "review_status": "user_copy_read_paraphrased"
+    },
+    {
+      "id": "UBK-25",
+      "title": "Anatomy for Artists: Drawing Form & Pose",
+      "author": "Tom Fox",
+      "pages": 297,
+      "read_via": "ocr",
+      "review_status": "user_copy_read_paraphrased"
+    },
+    {
+      "id": "UBK-26",
+      "title": "How to Draw Hairstyles for Manga",
+      "author": "Studio Hard Deluxe",
+      "pages": 391,
+      "read_via": "text",
+      "review_status": "user_copy_read_paraphrased"
+    },
+    {
+      "id": "UBK-27",
+      "title": "How to Draw Animals: A Visual Reference Guide to Sketching 100 Animals",
+      "author": "Japanese anatomist",
+      "pages": 178,
+      "read_via": "text",
+      "review_status": "user_copy_read_paraphrased"
+    },
+    {
+      "id": "UBK-28",
+      "title": "Anime Academy: How to Draw Manga",
+      "author": "unknown",
+      "pages": 134,
+      "read_via": "ocr",
+      "review_status": "user_copy_read_paraphrased"
+    },
+    {
+      "id": "UBK-29",
+      "title": "Drawn to Life Vol. 1 (Portuguese translation)",
+      "author": "Walt Stanchfield",
+      "pages": 493,
+      "read_via": "text",
+      "index_id": "ART-097",
+      "review_status": "user_copy_read_paraphrased"
+    },
+    {
+      "id": "UBK-30",
+      "title": "A Comprehensive 13-Week Art Course (65 daily lessons)",
+      "author": "Date Naoto",
+      "pages": 194,
+      "read_via": "text",
+      "review_status": "user_copy_read_paraphrased"
+    },
+    {
+      "id": "UBK-31",
+      "title": "365 Days of Drawing",
+      "author": "Lorna Scobey",
+      "pages": 322,
+      "read_via": "text",
+      "review_status": "user_copy_read_paraphrased"
+    },
+    {
+      "id": "UBK-32",
+      "title": "How to Draw Disney Characters for Kids",
+      "author": "unknown",
+      "pages": 234,
+      "read_via": "sample_pages",
+      "review_status": "user_copy_read_paraphrased"
+    },
+    {
+      "id": "UBK-33",
+      "title": "Point Character Drawing Vol. 2 (Chinese edition)",
+      "author": "Taco",
+      "pages": 223,
+      "read_via": "ocr",
+      "review_status": "user_copy_read_paraphrased"
+    },
+    {
+      "id": "UBK-34",
+      "title": "Drawing: The Complete Question Handbook",
+      "author": "Trudy Friend",
+      "pages": 131,
+      "read_via": "ocr",
+      "review_status": "user_copy_read_paraphrased"
+    },
+    {
+      "id": "UBK-35",
+      "title": "Drawn to Life Vol. 2 (Chinese edition)",
+      "author": "Walt Stanchfield",
+      "pages": 346,
+      "read_via": "ocr",
+      "index_id": "ART-098",
+      "review_status": "user_copy_read_paraphrased"
+    },
+    {
+      "id": "UBK-36",
+      "title": "How to Character Design for Games",
+      "author": "unknown",
+      "pages": 276,
+      "read_via": "ocr",
+      "review_status": "user_copy_read_paraphrased"
+    },
+    {
+      "id": "UBK-37",
+      "title": "Debt-Free Art Degree: Foundations in Drawing",
+      "author": "Quarry Books",
+      "pages": 332,
+      "read_via": "text",
+      "review_status": "user_copy_read_paraphrased"
+    },
+    {
+      "id": "UBK-38",
+      "title": "Human Anatomy for Artists",
+      "author": "Xiao Weichun",
+      "pages": 328,
+      "read_via": "text",
+      "review_status": "user_copy_read_paraphrased"
+    },
+    {
+      "id": "UBK-39",
+      "title": "How to Draw (Portuguese edition)",
+      "author": "Scott Robertson & Thomas Bertling",
+      "pages": 211,
+      "read_via": "text",
+      "index_id": "ART-047",
+      "review_status": "user_copy_read_paraphrased"
+    },
+    {
+      "id": "UBK-40",
+      "title": "How to Draw: Easy Techniques and Step-by-Step",
+      "author": "Aaria Baid",
+      "pages": 374,
+      "read_via": "text",
+      "review_status": "user_copy_read_paraphrased"
+    },
+    {
+      "id": "UBK-41",
+      "title": "How to Draw Anything",
+      "author": "Angela Gair",
+      "pages": 168,
+      "read_via": "ocr",
+      "review_status": "user_copy_read_paraphrased"
     }
   ]
 }
