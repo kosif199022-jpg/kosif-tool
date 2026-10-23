@@ -1,10 +1,10 @@
 {
   "schema": "kosif.smart-capability-index.v1",
   "origin": "data/powers/*.json (catalog); no original records changed",
-  "catalog_powers": 5480,
+  "catalog_powers": 5490,
   "group_count": 15,
   "family_count": 62,
-  "tool_count": 143,
+  "tool_count": 144,
   "groups": [
     {
       "id": "research",
@@ -189,9 +189,9 @@
         "الاختبار",
         "النشر"
       ],
-      "count": 568,
+      "count": 578,
       "status_counts": {
-        "documented": 384,
+        "documented": 394,
         "idea": 2,
         "install": 32,
         "key": 7,
@@ -203,7 +203,7 @@
         "app-feature-transfer": 139,
         "apps-artifacts": 23,
         "atlas-build": 52,
-        "atlas-code": 237,
+        "atlas-code": 247,
         "code-engineering": 24,
         "ui-product-device": 93
       },
@@ -12805,6 +12805,175 @@
       ],
       "source": "atlas-code.json",
       "what": "يثبت كل مرجع إصدار في المستودع: إجراءات CI ببصمة SHA، وقت التشغيل عبر ملف إصدار واحد، اعتماديات التطبيق بإصدار دقيق، وأوامر التثبيت بإصدار صريح. — Pins every version reference: CI actions to a commit SHA, runtimes through one version file, application dependencies exactly, instal"
+    },
+    {
+      "id": "ACODE-238",
+      "family": "atlas-code",
+      "group": "software",
+      "domain": "code",
+      "name_en": "Layer-by-layer deep debugging of a stubborn SaaS integration",
+      "name_ar": "تشخيص أعطال تكامل SaaS المستعصية طبقةً طبقة",
+      "status": "documented",
+      "requires": [],
+      "proof": [
+        "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/1836-clay-pack/5262-clay-advanced-troubleshooting",
+        "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/1905-shopify-pack/6771-shopify-advanced-troubleshooting"
+      ],
+      "source": "atlas-code.json",
+      "what": "يعزل العطل المتقطع أو الغامض في تكامل مع خدمة خارجية بفحص كل طبقة على حدة حتى أول طبقة تفشل، ويجمع أدلة جاهزة للتصعيد للمزوّد. — Isolates an intermittent or puzzling third-party integration failure by testing each layer independently until the first failing one, and packages esca"
+    },
+    {
+      "id": "ACODE-239",
+      "family": "atlas-code",
+      "group": "software",
+      "domain": "code",
+      "name_en": "Data lifecycle governance for data sent through a SaaS vendor",
+      "name_ar": "دورة حياة البيانات المارّة بخدمة خارجية: تصنيف واحتفاظ وحذف",
+      "status": "documented",
+      "requires": [],
+      "proof": [
+        "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/1836-clay-pack/5269-clay-data-handling",
+        "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/1869-ideogram-pack/5949-ideogram-data-handling"
+      ],
+      "source": "atlas-code.json",
+      "what": "يجرد كل صنف بيانات يعبر تكاملًا خارجيًا (مدخلات، مخرجات، روابط مؤقتة، سجلات) ويحدد لكل صنف المالك والأساس القانوني ومدة الاحتفاظ ومسار الحذف ويختبر الحذف فعلًا. — Inventories every data class crossing a vendor integration and fixes owner, legal basis, retention and deletion path "
+    },
+    {
+      "id": "ACODE-240",
+      "family": "atlas-code",
+      "group": "software",
+      "domain": "code",
+      "name_en": "Map vendor roles to application RBAC and scoped service keys",
+      "name_ar": "ربط أدوار المزوّد بصلاحيات التطبيق ومفاتيح الخدمة",
+      "status": "documented",
+      "requires": [],
+      "proof": [
+        "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/1841-cohere-pack/5396-cohere-enterprise-rbac",
+        "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/1894-posthog-pack/6533-posthog-enterprise-rbac"
+      ],
+      "source": "atlas-code.json",
+      "what": "يفصل إدارة المزوّد البشرية (المالك، المسؤول، العضو) عن هويات التشغيل، ويطبّق صلاحيات دقيقة لكل مستأجر داخل التطبيق لأن أدوار المزوّد وحدها ليست RBAC. — Separates human vendor administration from runtime identities and enforces tenant-level authorisation in the application, becaus"
+    },
+    {
+      "id": "ACODE-241",
+      "family": "atlas-code",
+      "group": "software",
+      "domain": "code",
+      "name_en": "Recurring integration pitfall audit before release",
+      "name_ar": "مراجعة مطبات التكامل المتكررة قبل الإصدار",
+      "status": "documented",
+      "requires": [],
+      "proof": [
+        "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/1887-notion-pack/6390-notion-known-pitfalls",
+        "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/1915-windsurf-pack/7023-windsurf-known-pitfalls"
+      ],
+      "source": "atlas-code.json",
+      "what": "يراجع كود التكامل مقابل قائمة المطبات المتكررة: الهوية والصلاحيات، إصدار الـAPI، الترقيم، الـwebhooks، والكتابة دون idempotency، ويرتب النتائج حسب الأثر. — Audits integration code against the recurring pitfalls (identity vs access, API version, pagination, webhooks, non-idempoten"
+    },
+    {
+      "id": "ACODE-242",
+      "family": "atlas-code",
+      "group": "software",
+      "domain": "code",
+      "name_en": "Prove dev/staging/production isolation for an integration",
+      "name_ar": "عزل بيئات التطوير والتجربة والإنتاج في التكامل",
+      "status": "documented",
+      "requires": [
+        "key:unspecified"
+      ],
+      "proof": [
+        "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/1878-linear-pack/6189-linear-multi-env-setup",
+        "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/1854-fireflies-pack/5694-fireflies-multi-env-setup"
+      ],
+      "source": "atlas-code.json",
+      "what": "يجعل حدود البيئات صريحة بحيث لا يستهلك اختبار محلي مفاتيح أو أحداث أو بيانات الإنتاج، ويثبت العزل بأدلة الفشل لا بأسماء البيئات. — Makes environment boundaries explicit so local or PR jobs can never reach production credentials, events or data, proven by failure-path tests rather"
+    },
+    {
+      "id": "ACODE-243",
+      "family": "atlas-code",
+      "group": "software",
+      "domain": "code",
+      "name_en": "Integration observability with explicit denominators",
+      "name_ar": "قياس صحة تكامل خارجي ونتائجه بمقامات صريحة",
+      "status": "documented",
+      "requires": [],
+      "proof": [
+        "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/1840-coderabbit-pack/5379-coderabbit-observability",
+        "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/1890-openevidence-pack/6464-openevidence-observability"
+      ],
+      "source": "atlas-code.json",
+      "what": "يعرّف مقاييس تكامل خارجي (تبنٍّ، زمن، جودة، استخدام، حوادث) من مصادر موثقة للمزوّد مع حفظ المقام لكل نسبة، ولا يستنتج أكثر مما تسمح به العينة. — Defines integration metrics from documented vendor sources, keeps the denominator of every rate, and does not infer beyond the sample."
+    },
+    {
+      "id": "ACODE-244",
+      "family": "atlas-code",
+      "group": "software",
+      "domain": "code",
+      "name_en": "Reference architecture for a vendor integration: policy gateway, adapter, reconciliation",
+      "name_ar": "معمارية مرجعية لتكامل خارجي: بوابة سياسات ومحوّل وتسوية",
+      "status": "documented",
+      "requires": [],
+      "proof": [
+        "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/1821-algolia-pack/4955-algolia-reference-architecture",
+        "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/1885-mistral-pack/6344-mistral-reference-architecture"
+      ],
+      "source": "atlas-code.json",
+      "what": "يصمم أو يراجع معمارية تكامل مع خدمة خارجية مبنية على أدلة المستودع: النظام المصدر هو المرجع، بوابة سياسات للهوية والمستأجر والميزانية، محوّلات typed للمزوّد، وطوابير وتسوية للأعمال غير المتزامنة. — Designs or reviews a repo-grounded vendor architecture: source of truth stays your"
+    },
+    {
+      "id": "ACODE-245",
+      "family": "atlas-code",
+      "group": "software",
+      "domain": "code",
+      "name_en": "Integration reliability: one idempotency model for every retry path",
+      "name_ar": "أنماط موثوقية تكامل خارجي: هوية عمل واحدة لكل إعادة",
+      "status": "documented",
+      "requires": [],
+      "proof": [
+        "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/1853-firecrawl-pack/5675-firecrawl-reliability-patterns",
+        "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/1905-shopify-pack/6802-shopify-reliability-patterns"
+      ],
+      "source": "atlas-code.json",
+      "what": "يجعل كل وحدة عمل قابلة للاسترداد بلا تكرار: هوية عمل ثابتة، فصل الإرسال عن الإكمال، إعادة محاولة للأخطاء القابلة فقط، قاطع دائرة، تدهور سلس، وتسوية دورية. — Makes every unit of work recoverable without duplicates: stable work identity, submit/complete split, retries only for retr"
+    },
+    {
+      "id": "ACODE-246",
+      "family": "atlas-code",
+      "group": "software",
+      "domain": "code",
+      "name_en": "Vendor API contract migration with traffic evidence and dual reads",
+      "name_ar": "ترحيل عقد API لدى المزوّد بأدلة الحركة والقراءة المزدوجة",
+      "status": "documented",
+      "requires": [],
+      "proof": [
+        "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/1818-abridge-pack/4886-abridge-upgrade-migration",
+        "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/1895-procore-pack/6571-procore-upgrade-migration"
+      ],
+      "source": "atlas-code.json",
+      "what": "يرحّل عملية محددة من عقد API قديم إلى بديله الموثّق: إثبات من يستدعي القديم، مقارنة العقدين، محوّل توافق، تحقق جنبًا إلى جنب، طرح تدريجي، ثم حذف المسار القديم عند صفر حركة. — Migrates one concrete vendor operation to its documented replacement: prove callers, diff contracts, comp"
+    },
+    {
+      "id": "ACODE-247",
+      "family": "atlas-code",
+      "group": "software",
+      "domain": "code",
+      "name_en": "SaaS integration lifecycle map: install to incident",
+      "name_ar": "خريطة دورة حياة تكامل SaaS: من التثبيت إلى الحوادث",
+      "status": "documented",
+      "requires": [
+        "python3"
+      ],
+      "proof": [
+        "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/1836-clay-pack/5262-clay-advanced-troubleshooting",
+        "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/1905-shopify-pack/6771-shopify-advanced-troubleshooting",
+        "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/1836-clay-pack/5269-clay-data-handling",
+        "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/1887-notion-pack/6390-notion-known-pitfalls",
+        "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/1878-linear-pack/6189-linear-multi-env-setup",
+        "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/1853-firecrawl-pack/5675-firecrawl-reliability-patterns",
+        "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/1818-abridge-pack/4886-abridge-upgrade-migration"
+      ],
+      "source": "atlas-code.json",
+      "what": "خريطة توجيه لنحو 30 مرحلة تتكرر في حزم تكامل الخدمات بالأطلس (أكثر من 90 مزوّدًا): لكل مرحلة القدرة المقابلة في سوبر باور، والتفاصيل الخاصة بالمزوّد تبقى في مجلد الأطلس. — A routing map of the ~30 stages that repeat across the Atlas vendor packs (90+ vendors): each stage points t"
     },
     {
       "id": "ACRAFT-01",

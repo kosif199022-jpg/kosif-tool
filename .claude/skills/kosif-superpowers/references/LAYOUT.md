@@ -298,7 +298,7 @@ Reverse engineering, code graphs, harnesses, repository and app capability trans
 
 Point-in-time research and audit receipts. Evidence, not instructions: re-check live before relying on a number.
 
-`studies` · 19 file(s) · planned folder `references/studies/`
+`studies` · 20 file(s) · planned folder `references/studies/`
 
 - [references/REA_CREATIVE_DISCOVERY_2000_20261019.md](REA_CREATIVE_DISCOVERY_2000_20261019.md)
 - [references/atlas-deep-fusion-20261020.md](atlas-deep-fusion-20261020.md)
@@ -319,3 +319,4 @@ Point-in-time research and audit receipts. Evidence, not instructions: re-check 
 - [references/owner-uploads-review-20261023.md](owner-uploads-review-20261023.md)
 - [references/codex-repos-study-20261023.md](codex-repos-study-20261023.md)
 - [references/rea-superpowers-frontier-20261023.md](rea-superpowers-frontier-20261023.md)
+- [references/atlas-ledger-20261023.md](atlas-ledger-20261023.md)
