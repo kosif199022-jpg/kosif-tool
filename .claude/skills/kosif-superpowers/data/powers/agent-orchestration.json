@@ -1589,15 +1589,13 @@
   "how": "Input tripwire: cheap classifier for out-of-scope, unsafe or secret-bearing input; on trip stop and say why. Output check: schema, policy, numbers-from-runs. Handoff: 'transfer_to_<specialist>' with only the turns it needs. Trace every span (agent, tool, handoff, guardrail) so a failure can be located.",
   "params": "",
   "install": "",
-  "requires": [
-   "key:openai"
-  ],
+  "requires": [],
   "license": "MIT",
   "proof": [],
   "proof_scope": "none",
   "styles": [],
   "tags": [
-   "openai agents sdk",
+   "agents sdk",
    "guardrails",
    "tripwire",
    "handoff",

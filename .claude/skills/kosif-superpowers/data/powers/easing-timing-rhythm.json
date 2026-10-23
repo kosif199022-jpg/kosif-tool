@@ -3083,11 +3083,10 @@
   "what": "احسب النابض من الكتلة والصلابة والتخميد لا من مدة، واطبع قيمته في كل إطار وزمن استقراره ونسبة تجاوزه، أو كإطارات CSS. — Solve the spring from mass, stiffness and damping instead of a duration, and print its value every frame, its settle time and overshoot, or CSS @keyframes.",
   "when": "حركة دخول أو ارتداد طبيعية في HTML أو Remotion أو After Effects / a natural entrance or bounce in HTML, Remotion or After Effects",
   "how": "`python3 scripts/motion_physics.py spring --from 0 --to 1 --stiffness 170 --damping 26 --fps 30` → JSON with damping_ratio, regime, settled, seconds, overshoot_pct and values per frame; `--css pop` prints @keyframes. Damping ratio ζ = damping / (2√(stiffness·mass)): ζ<1 bounces, ζ≈1 settles fastest without overshoot. Measured here: 170/26 settles in 0.73 s with 0 % overshoot (ζ≈1.0); 180/8 overshoots 37 % and settles in 1.6 s. Paste the values array instead of hand-keying a bounce.",
-  "params": "stiffness 170 · damping 26 · mass 1 (react-spring defaults); sub-step 1/16 frame",
+  "params": "stiffness 170 · damping 26 · mass 1 (common UI spring defaults); sub-step 1/16 frame",
   "install": "",
   "requires": [
-   "python3",
-   "npm:react"
+   "python3"
   ],
   "license": "MIT",
   "proof": [
@@ -3157,8 +3156,7 @@
   "params": "each 0.03-0.08 s for letters; total ≤ 40 % of the move",
   "install": "",
   "requires": [
-   "python3",
-   "npm:animejs"
+   "python3"
   ],
   "license": "MIT",
   "proof": [
@@ -3170,7 +3168,7 @@
   "tags": [
    "stagger",
    "grid",
-   "anime.js",
+   "stagger origin",
    "choreography",
    "delay",
    "تتابع",

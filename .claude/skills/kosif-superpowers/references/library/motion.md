@@ -307,9 +307,9 @@
 | `EASE-82` | زمن الرسم حسب حجم الخطوة | Drawing-time model | ready |  |
 | `EASE-83` | تفاعلات الضغط والمرور والنوافذ | Press, hover & dialog entrances | ready |  |
 | `EASE-85` | زر تهدئة الحركة وتقليلها | Quiet-motion toggle & reduced motion | ready |  |
-| `EASE-G01` | نابض بالفيزياء يطبع كل إطار | Spring solved frame by frame | ready | python3, npm:react |
+| `EASE-G01` | نابض بالفيزياء يطبع كل إطار | Spring solved frame by frame | ready | python3 |
 | `EASE-G02` | منحنى CSS محسوب كما يحسبه المتصفح | Browser-exact cubic-bezier sampling | ready | python3 |
-| `EASE-G03` | تتابع من نقطة أصل على شبكة | Stagger from an origin on a grid | ready | python3, npm:animejs |
+| `EASE-G03` | تتابع من نقطة أصل على شبكة | Stagger from an origin on a grid | ready | python3 |
 | `FMT-01` | المقاس من الوجهة | Derive the canvas from the destination | ready | python3 |
 | `FMT-11` | قواعد المقروئية على الهاتف | Phone legibility gate | ready | imagemagick |
 | `FMT-15` | تحجيم مع حشو لأي إطار | Scale + pad / centre crop | ready |  |

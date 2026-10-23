@@ -229,7 +229,7 @@
 | `AGENT-51` | ذاكرة بطبقات يحررها الوكيل | Tiered self-editing memory | documented |  |
 | `AGENT-52` | التقاط ملاحظات الجلسة وحقنها في التالية | Session observation capture and injection | documented |  |
 | `AGENT-53` | وكيل يتصرف بالكود | Code-as-action agent | documented | python3 |
-| `AGENT-54` | حواجز تفعيل وتسليم لمتخصص | Tripwire guardrails and specialist handoffs | documented | key:openai |
+| `AGENT-54` | حواجز تفعيل وتسليم لمتخصص | Tripwire guardrails and specialist handoffs | documented |  |
 | `AGENT-55` | تيار أحداث قابل لإعادة التشغيل | Replayable event-stream agent | documented |  |
 | `SELF-01` | اعرف قبل أن تقول لا | Registry before no | documented | node, python3, claude:tools |
 | `SELF-02` | سُلَّم حقيقة القدرة | Capability-truth ladder | documented | ffmpeg, key:unspecified |

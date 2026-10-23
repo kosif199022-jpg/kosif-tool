@@ -7241,7 +7241,7 @@
 
 **كيف:** `python3 scripts/motion_physics.py spring --from 0 --to 1 --stiffness 170 --damping 26 --fps 30` → JSON with damping_ratio, regime, settled, seconds, overshoot_pct and values per frame; `--css pop` prints @keyframes. Damping ratio ζ = damping / (2√(stiffness·mass)): ζ<1 bounces, ζ≈1 settles fastest without overshoot. Measured here: 170/26 settles in 0.73 s with 0 % overshoot (ζ≈1.0); 180/8 overshoots 37 % and settles in 1.6 s. Paste the values array instead of hand-keying a bounce.
 
-**المعاملات:** stiffness 170 · damping 26 · mass 1 (react-spring defaults); sub-step 1/16 frame
+**المعاملات:** stiffness 170 · damping 26 · mass 1 (common UI spring defaults); sub-step 1/16 frame
 
 **التثبيت:** لا خطوة تثبيت مسجلة
 
@@ -7260,7 +7260,6 @@
 #### 2. الجاهزية والشارة (A28)
 
 - `python3` ← افحص وجوده بأمر واحد قبل كتابة الشارة
-- `npm:react` ← npm ls react أو وجود node_modules/react
 - الوضع 1: شارة «هنا الآن» بعد الفحص، لا 🟢 الكتالوج تلقائيًا · الوضع 2: `كتالوج: 🟢 · هنا: غير مفحوص` · الوضع 3: بلا شارة ولا معرّف.
 
 #### 3. موضعها في الخطة (A26)
@@ -7400,7 +7399,7 @@
 
 **التثبيت:** لا خطوة تثبيت مسجلة
 
-**الوسوم:** stagger · grid · anime.js · choreography · delay · تتابع · شبكة · تأخير
+**الوسوم:** stagger · grid · stagger origin · choreography · delay · تتابع · شبكة · تأخير
 
 #### 1. الاستقبال (A25)
 
@@ -7415,7 +7414,6 @@
 #### 2. الجاهزية والشارة (A28)
 
 - `python3` ← افحص وجوده بأمر واحد قبل كتابة الشارة
-- `npm:animejs` ← npm ls animejs أو وجود node_modules/animejs
 - الوضع 1: شارة «هنا الآن» بعد الفحص، لا 🟢 الكتالوج تلقائيًا · الوضع 2: `كتالوج: 🟢 · هنا: غير مفحوص` · الوضع 3: بلا شارة ولا معرّف.
 
 #### 3. موضعها في الخطة (A26)

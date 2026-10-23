@@ -4234,13 +4234,13 @@
   },
   {
    "from": "fam:easing-timing-rhythm",
-   "to": "req:npm:animejs",
+   "to": "req:ffmpeg",
    "rel": "needs",
-   "w": 4
+   "w": 3
   },
   {
    "from": "fam:easing-timing-rhythm",
-   "to": "req:ffmpeg",
+   "to": "req:npm:animejs",
    "rel": "needs",
    "w": 3
   },

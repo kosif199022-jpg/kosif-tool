@@ -507,7 +507,6 @@
 - **ماذا / what:** فحص دخول يعمل بالتوازي مع الوكيل ويوقفه فورًا إن انطلق، وفحص خروج على الناتج النهائي، وتسليم المهمة لوكيل متخصص كاستدعاء أداة بسجل مفلتر. — An input check that runs alongside the agent and halts it when tripped, an output check on the final result, and handoff to a specialist as a tool call with filtered history.
 - **متى أستخدمها / when:** مساعد يخدم طلبات متنوعة أو حساسة / an assistant serving varied or sensitive requests
 - **كيف / how:** Input tripwire: cheap classifier for out-of-scope, unsafe or secret-bearing input; on trip stop and say why. Output check: schema, policy, numbers-from-runs. Handoff: 'transfer_to_<specialist>' with only the turns it needs. Trace every span (agent, tool, handoff, guardrail) so a failure can be located.
-- **يحتاج / needs:** [`key:openai`](../requirements.md#req-key-openai)
 - **الرخصة / license:** MIT
 - **الدليل / proof:** — (لا دليل تشغيل بعد / no run proof yet)
 - **المصدر / source:** https://github.com/openai/openai-agents-python (MIT) — restated in our own words

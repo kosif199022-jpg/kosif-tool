@@ -12,7 +12,7 @@
 
 ## ما هذه المكتبة
 
-بطاقة بروتوكول لكل قدرة في الكتالوج (5,545) ولكل أداة قابلة للتشغيل (150)، في 78 ملفًا و413,426 سطرًا تقريبًا مع هذا الفهرس. كل بطاقة تجمع سجل القدرة نفسه (ما هي، متى، كيف، التثبيت، المتطلبات، الأدلة، الرخصة) مع قواعد البروتوكول مطبّقة عليها: خانات الاستقبال (A25)، والجاهزية والشارة الصادقة (A28)، وموضعها عقدةً منمّطة في الخطة (A26)، وبوابة التحقق لنوع مخرجها (A27)، وسلم التعافي لأخطائها المرجحة (A29). القواعد العامة تتكرر عمدًا في كل بطاقة لتُقرأ البطاقة وحدها؛ والمعرفة الفريدة في سجلات الكتالوج والملاحق. حالة الكتالوج ليست حالة الجلسة: افحص قبل أي شارة.
+بطاقة بروتوكول لكل قدرة في الكتالوج (5,545) ولكل أداة قابلة للتشغيل (150)، في 78 ملفًا و413,422 سطرًا تقريبًا مع هذا الفهرس. كل بطاقة تجمع سجل القدرة نفسه (ما هي، متى، كيف، التثبيت، المتطلبات، الأدلة، الرخصة) مع قواعد البروتوكول مطبّقة عليها: خانات الاستقبال (A25)، والجاهزية والشارة الصادقة (A28)، وموضعها عقدةً منمّطة في الخطة (A26)، وبوابة التحقق لنوع مخرجها (A27)، وسلم التعافي لأخطائها المرجحة (A29). القواعد العامة تتكرر عمدًا في كل بطاقة لتُقرأ البطاقة وحدها؛ والمعرفة الفريدة في سجلات الكتالوج والملاحق. حالة الكتالوج ليست حالة الجلسة: افحص قبل أي شارة.
 
 ## بطاقات القدرات
 
@@ -23,7 +23,7 @@
 | الثري دي والمحاكاة والرندر | `light-glow-bloom` | 87 | 6,191 | [cards/3d/light-glow-bloom.md](cards/3d/light-glow-bloom.md) |
 | الثري دي والمحاكاة والرندر | `particles-fluids-physics` | 77 | 5,293 | [cards/3d/particles-fluids-physics.md](cards/3d/particles-fluids-physics.md) |
 | الثري دي والمحاكاة والرندر | `texture-material` | 96 | 6,666 | [cards/3d/texture-material.md](cards/3d/texture-material.md) |
-| الوكلاء والتوجيه الذكي | `agent-orchestration` | 55 | 3,777 | [cards/agents/agent-orchestration.md](cards/agents/agent-orchestration.md) |
+| الوكلاء والتوجيه الذكي | `agent-orchestration` | 55 | 3,775 | [cards/agents/agent-orchestration.md](cards/agents/agent-orchestration.md) |
 | الوكلاء والتوجيه الذكي | `runnable-tools` | 70 | 4,983 | [cards/agents/runnable-tools.md](cards/agents/runnable-tools.md) |
 | الوكلاء والتوجيه الذكي | `self-discovery` | 43 | 3,070 | [cards/agents/self-discovery.md](cards/agents/self-discovery.md) |
 | الصوت والموسيقى والتعليق | `audio-sync-captions` | 61 | 4,404 | [cards/audio/audio-sync-captions.md](cards/audio/audio-sync-captions.md) |
@@ -50,7 +50,7 @@
 | قدرات مساندة غير مصنفة | `other` | 27 | 1,904 | [cards/misc/other.md](cards/misc/other.md) |
 | الموشن والمونتاج والسينما | `camera-composition-layout` | 425 | 32,479 | [cards/motion/camera-composition-layout.md](cards/motion/camera-composition-layout.md) |
 | الموشن والمونتاج والسينما | `characters-rigs` | 51 | 4,026 | [cards/motion/characters-rigs.md](cards/motion/characters-rigs.md) |
-| الموشن والمونتاج والسينما | `easing-timing-rhythm` | 106 | 8,373 | [cards/motion/easing-timing-rhythm.md](cards/motion/easing-timing-rhythm.md) |
+| الموشن والمونتاج والسينما | `easing-timing-rhythm` | 106 | 8,371 | [cards/motion/easing-timing-rhythm.md](cards/motion/easing-timing-rhythm.md) |
 | الموشن والمونتاج والسينما | `formats-platforms` | 70 | 5,549 | [cards/motion/formats-platforms.md](cards/motion/formats-platforms.md) |
 | الموشن والمونتاج والسينما | `story-direction-ideas` | 95 | 7,557 | [cards/motion/story-direction-ideas.md](cards/motion/story-direction-ideas.md) |
 | الموشن والمونتاج والسينما | `transitions-cuts` | 475 | 36,623 | [cards/motion/transitions-cuts.md](cards/motion/transitions-cuts.md) |

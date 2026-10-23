@@ -2595,9 +2595,7 @@
       "name_en": "Tripwire guardrails and specialist handoffs",
       "name_ar": "حواجز تفعيل وتسليم لمتخصص",
       "status": "documented",
-      "requires": [
-        "key:openai"
-      ],
+      "requires": [],
       "proof": [],
       "source": "agent-orchestration.json",
       "what": "فحص دخول يعمل بالتوازي مع الوكيل ويوقفه فورًا إن انطلق، وفحص خروج على الناتج النهائي، وتسليم المهمة لوكيل متخصص كاستدعاء أداة بسجل مفلتر. — An input check that runs alongside the agent and halts it when tripped, an output check on the final result, and handoff to a specialist as "
@@ -36033,8 +36031,7 @@
       "name_ar": "نابض بالفيزياء يطبع كل إطار",
       "status": "ready",
       "requires": [
-        "python3",
-        "npm:react"
+        "python3"
       ],
       "proof": [
         "kosif-tool/.claude/skills/kosif-superpowers/scripts/motion_physics.py",
@@ -36070,8 +36067,7 @@
       "name_ar": "تتابع من نقطة أصل على شبكة",
       "status": "ready",
       "requires": [
-        "python3",
-        "npm:animejs"
+        "python3"
       ],
       "proof": [
         "kosif-tool/.claude/skills/kosif-superpowers/scripts/motion_physics.py",

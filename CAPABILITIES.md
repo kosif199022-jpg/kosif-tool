@@ -194,7 +194,7 @@
 | `engine:ghidra` | bin | 77 | `Ghidra 12.1 from github.com/NationalSecurityAgency/ghidra + GHIDRA_INSTALL_DIR; or Hopper (rea setup), IDA MCP` |
 | `claude:tools` | service | 75 | `Claude Code (CLI, desktop, web) — Agent, Workflow, Artifact, WebFetch/WebSearch, ToolSearch` |
 | `key:video-gen` | service | 66 | `an account on the named generator (Runway, Kling, Veo, Pika, Luma…) — paid credits` |
-| `npm:react` | npm | 57 | `npm i react react-dom  (or next, svelte, vue)` |
+| `npm:react` | npm | 56 | `npm i react react-dom  (or next, svelte, vue)` |
 | `git` | bin | 49 | `apt-get install -y git` |
 | `pip:faster-whisper` | model | 48 | `pip install faster-whisper  (models from huggingface.co: small 466 MB, large-v3 3.1 GB; CPU works)` |
 | `pip:office` | pip | 39 | `pip install python-docx openpyxl python-pptx reportlab pypdf` |

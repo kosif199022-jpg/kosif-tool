@@ -32,7 +32,7 @@
 | 16 | [`engine:ghidra`](#req-engine-ghidra) | bin | 77 | software-investigation, runnable-tools |  |
 | 17 | [`claude:tools`](#req-claude-tools) | service | 75 | agent-orchestration, thinking-core, atlas-mind, atlas-code, self-discovery |  |
 | 18 | [`key:video-gen`](#req-key-video-gen) | service | 66 | ai-generation, music-beat-sound, camera-composition-layout, atlas-strategy, prompt-craft |  |
-| 19 | [`npm:react`](#req-npm-react) | npm | 57 | engines-render-pipeline, atlas-code, transitions-cuts, atlas-build, 3d-spatial |  |
+| 19 | [`npm:react`](#req-npm-react) | npm | 56 | engines-render-pipeline, atlas-code, transitions-cuts, atlas-build, 3d-spatial |  |
 | 20 | [`git`](#req-git) | bin | 49 | atlas-code, agent-orchestration, atlas-mind, atlas-docs, code-engineering |  |
 | 21 | [`pip:faster-whisper`](#req-pip-faster-whisper) | model | 48 | audio-sync-captions, qa-verification, engines-render-pipeline, photo-video-footage, runnable-tools |  |
 | 22 | [`pip:office`](#req-pip-office) | pip | 39 | documents-office, atlas-docs, self-discovery, app-feature-transfer, arabic-language |  |
@@ -47,9 +47,9 @@
 | 31 | [`network`](#req-network) | os | 22 | self-discovery, audio-sync-captions, web-research, media-image-audio, security-safety |  |
 | 32 | [`npm:bruno`](#req-npm-bruno) | npm | 22 | api-testing |  |
 | 33 | [`tesseract`](#req-tesseract) | apt | 21 | media-image-audio, arabic-language, other, self-discovery, ai-generation |  |
-| 34 | [`key:openai`](#req-key-openai) | key | 21 | ai-generation, atlas-code, agent-orchestration, audio-sync-captions, characters-rigs |  |
-| 35 | [`pip:scipy`](#req-pip-scipy) | pip | 20 | transitions-cuts, data-analysis, music-beat-sound, self-discovery, atlas-media |  |
-| 36 | [`npm:d3`](#req-npm-d3) | npm | 20 | maps-geo, engines-render-pipeline, knowledge-graph, atlas-strategy, charts-data-infographic |  |
+| 34 | [`pip:scipy`](#req-pip-scipy) | pip | 20 | transitions-cuts, data-analysis, music-beat-sound, self-discovery, atlas-media |  |
+| 35 | [`npm:d3`](#req-npm-d3) | npm | 20 | maps-geo, engines-render-pipeline, knowledge-graph, atlas-strategy, charts-data-infographic |  |
+| 36 | [`key:openai`](#req-key-openai) | key | 20 | ai-generation, atlas-code, audio-sync-captions, characters-rigs, prompt-craft |  |
 | 37 | [`yt-dlp`](#req-yt-dlp) | pip | 19 | video-download, runnable-tools, atlas-media, audio-sync-captions, engines-render-pipeline |  |
 | 38 | [`key:elevenlabs`](#req-key-elevenlabs) | key | 19 | music-beat-sound, voice-tts, atlas-media, audio-sync-captions, formats-platforms |  |
 | 39 | [`pip:matplotlib`](#req-pip-matplotlib) | pip | 18 | engines-render-pipeline, data-analysis, media-image-audio, qa-verification, self-discovery |  |
@@ -61,9 +61,9 @@
 | 45 | [`engine:rizin`](#req-engine-rizin) | bin | 16 | software-investigation |  |
 | 46 | [`pip:torch`](#req-pip-torch) | pip | 15 | self-discovery, arabic-language, ai-generation, media-image-audio, atlas-strategy |  |
 | 47 | [`npm:p5`](#req-npm-p5) | npm | 15 | self-discovery, engines-render-pipeline, atlas-data, characters-rigs, data-analysis |  |
-| 48 | [`npm:animejs`](#req-npm-animejs) | npm | 14 | engines-render-pipeline, easing-timing-rhythm, atlas-media, qa-verification, transitions-cuts |  |
-| 49 | [`pip:pandas`](#req-pip-pandas) | pip | 13 | self-discovery, atlas-data, data-analysis, atlas-strategy, code-engineering |  |
-| 50 | [`pip:librosa`](#req-pip-librosa) | pip | 13 | music-beat-sound, media-image-audio, qa-verification, self-discovery, video-download |  |
+| 48 | [`pip:pandas`](#req-pip-pandas) | pip | 13 | self-discovery, atlas-data, data-analysis, atlas-strategy, code-engineering |  |
+| 49 | [`pip:librosa`](#req-pip-librosa) | pip | 13 | music-beat-sound, media-image-audio, qa-verification, self-discovery, video-download |  |
+| 50 | [`npm:animejs`](#req-npm-animejs) | npm | 13 | engines-render-pipeline, easing-timing-rhythm, atlas-media, qa-verification, transitions-cuts |  |
 | 51 | [`pip:hypothesis`](#req-pip-hypothesis) | pip | 13 | atlas-code, code-engineering, mental-models, agent-orchestration, atlas-mind |  |
 | 52 | [`pip:piper`](#req-pip-piper) | model | 12 | voice-tts, audio-sync-captions, self-discovery, creativity-engine |  |
 | 53 | [`libreoffice`](#req-libreoffice) | bin | 11 | documents-office, self-discovery, data-analysis, media-image-audio, strategy-finance |  |
@@ -325,8 +325,8 @@
 
 - **النوع / kind:** npm (حزمة npm)
 - **التثبيت / install:** `npm i react react-dom  (or next, svelte, vue)`
-- **يفتح / unlocks:** 57 powers
-- **بالحالة / by status:** install 26 · documented 19 · proven 4 · ready 4 · key 2 · seen 2
+- **يفتح / unlocks:** 56 powers
+- **بالحالة / by status:** install 26 · documented 19 · proven 4 · ready 3 · key 2 · seen 2
 - **العائلات / families:** engines-render-pipeline (17), atlas-code (7), transitions-cuts (4), atlas-build (3), 3d-spatial (2), apps-artifacts (2), atlas-media (2), music-beat-sound (2)
 - **أمثلة / examples:** `DATA-92` Chart palettes (categorical, sequential, semanti · `TOOL-17` Third-party motion engine scaffolder · `TOOL-22` Reference Edit Engine · `TRANS-07` Scene enter on view change · `3D-16` Remotion ThreeCanvas · `3D-17` Portals & render-to-texture
 
@@ -470,16 +470,6 @@
 - **العائلات / families:** media-image-audio (5), arabic-language (3), other (2), self-discovery (2), ai-generation (1), atlas-data (1), atlas-docs (1), documents-office (1)
 - **أمثلة / examples:** `ARAB-84` Text-style capture & compositing · `ARL-14` Arabic OCR with tesseract · `ARL-15` Verify OCR numbers with the anchor gate · `DOC-17` OCR for scanned PDF pages · `MEDIA-03` Arabic + English OCR with tesseract · `MEDIA-04` Arabic OCR weak spots (digits, display fonts)
 
-<a id="req-key-openai"></a>
-### `key:openai` — نماذج OpenAI / OpenAI models
-
-- **النوع / kind:** key (مفتاح/حساب)
-- **التثبيت / install:** `OPENAI_API_KEY (paid)`
-- **يفتح / unlocks:** 21 powers
-- **بالحالة / by status:** documented 7 · key 6 · proven 5 · ready 2 · install 1
-- **العائلات / families:** ai-generation (10), atlas-code (3), agent-orchestration (1), audio-sync-captions (1), characters-rigs (1), prompt-craft (1), qa-verification (1), typography-latin (1)
-- **أمثلة / examples:** `GEN-10` Prompt forge: one spec → 9 generator prompts · `GEN-11` Video-model platform DNA (Veo / Runway / Kling / · `GEN-13` Shot list → 7 video-platform prompts with durati · `GEN-14` kmotion aiprompts: 7-layer per-shot prompts · `WRITE-15` Tool-artifact and placeholder cleanup · `ACODE-158` Agent SDK app and hooks design
-
 <a id="req-pip-scipy"></a>
 ### `pip:scipy` — مرشحات الإشارة والتحسين / signal filters and optimisation
 
@@ -499,6 +489,16 @@
 - **بالحالة / by status:** install 9 · documented 7 · proven 1 · idea 1 · key 1 · seen 1
 - **العائلات / families:** maps-geo (8), engines-render-pipeline (4), knowledge-graph (2), atlas-strategy (1), charts-data-infographic (1), creativity-engine (1), diagrams-explainers-code (1), music-beat-sound (1)
 - **أمثلة / examples:** `GRAPH-08` Exports and visual map pages · `ASTRAT-67` Gated 8D investigation coach · `BEAT-144` Hijaz synth soundtrack (numpy/scipy, no samples) · `DATA-96` Chart libraries as video frames · `ENG-149` Declarative grammars (Vega-Lite / Observable Plo · `ENG-150` D3 as math and geometry engine
+
+<a id="req-key-openai"></a>
+### `key:openai` — نماذج OpenAI / OpenAI models
+
+- **النوع / kind:** key (مفتاح/حساب)
+- **التثبيت / install:** `OPENAI_API_KEY (paid)`
+- **يفتح / unlocks:** 20 powers
+- **بالحالة / by status:** key 6 · documented 6 · proven 5 · ready 2 · install 1
+- **العائلات / families:** ai-generation (10), atlas-code (3), audio-sync-captions (1), characters-rigs (1), prompt-craft (1), qa-verification (1), typography-latin (1), voice-tts (1)
+- **أمثلة / examples:** `GEN-10` Prompt forge: one spec → 9 generator prompts · `GEN-11` Video-model platform DNA (Veo / Runway / Kling / · `GEN-13` Shot list → 7 video-platform prompts with durati · `GEN-14` kmotion aiprompts: 7-layer per-shot prompts · `WRITE-15` Tool-artifact and placeholder cleanup · `ACODE-158` Agent SDK app and hooks design
 
 <a id="req-yt-dlp"></a>
 ### `yt-dlp` — تحميل وسائط مرخّصة أو مملوكة من روابط / download licensed or owned media from links
@@ -610,16 +610,6 @@
 - **العائلات / families:** self-discovery (4), engines-render-pipeline (3), atlas-data (1), characters-rigs (1), data-analysis (1), particles-fluids-physics (1), qa-verification (1), runnable-tools (1)
 - **أمثلة / examples:** `ANLY-09` Seeded Monte Carlo risk check · `PROD-03` Risk as a distribution (Monte Carlo) · `SELF-13` Manual shell probe · `SELF-14` No GPU: plan for CPU · `SELF-19` Node globals and bundled browser · `SELF-36` Claude Code cloud session limits
 
-<a id="req-npm-animejs"></a>
-### `npm:animejs` — محركات تحريك خفيفة / lightweight animation engines
-
-- **النوع / kind:** npm (حزمة npm)
-- **التثبيت / install:** `npm i animejs motion`
-- **يفتح / unlocks:** 14 powers
-- **بالحالة / by status:** install 8 · documented 3 · ready 3
-- **العائلات / families:** engines-render-pipeline (6), easing-timing-rhythm (4), atlas-media (1), qa-verification (1), transitions-cuts (1), ui-product-device (1)
-- **أمثلة / examples:** `AMEDIA-15` Spring-physics motion and a layered glass surfac · `EASE-26` Spring preset tables · `EASE-91` Extra timing libraries · `EASE-G03` Stagger from an origin on a grid · `EASE-G04` Timeline with relative offsets and labels · `ENG-126` Framer Motion layout & spring
-
 <a id="req-pip-pandas"></a>
 ### `pip:pandas` — جداول وتحليل بيانات / tables and data analysis
 
@@ -639,6 +629,16 @@
 - **بالحالة / by status:** documented 5 · proven 3 · install 3 · idea 1 · ready 1
 - **العائلات / families:** music-beat-sound (6), media-image-audio (2), qa-verification (2), self-discovery (1), video-download (1), web-research (1)
 - **أمثلة / examples:** `MEDIA-16` Pitch tracking (librosa YIN) · `MEDIA-17` Onset and tempo detection · `SELF-18` Python import probe · `BEAT-129` Beat-grid analyzer (audiomap.json) · `BEAT-159` Measured beat detection · `BEAT-217` Beat-grid trailer from a capture
+
+<a id="req-npm-animejs"></a>
+### `npm:animejs` — محركات تحريك خفيفة / lightweight animation engines
+
+- **النوع / kind:** npm (حزمة npm)
+- **التثبيت / install:** `npm i animejs motion`
+- **يفتح / unlocks:** 13 powers
+- **بالحالة / by status:** install 8 · documented 3 · ready 2
+- **العائلات / families:** engines-render-pipeline (6), easing-timing-rhythm (3), atlas-media (1), qa-verification (1), transitions-cuts (1), ui-product-device (1)
+- **أمثلة / examples:** `AMEDIA-15` Spring-physics motion and a layered glass surfac · `EASE-26` Spring preset tables · `EASE-91` Extra timing libraries · `EASE-G04` Timeline with relative offsets and labels · `ENG-126` Framer Motion layout & spring · `ENG-132` Animated component library catalog with licenses
 
 <a id="req-pip-hypothesis"></a>
 ### `pip:hypothesis` — اختبارات الخصائص / property-based tests
@@ -1357,4 +1357,4 @@
 <a id="none"></a>
 ## قدرات بلا مستلزمات خارجية / no external requirement
 
-2507 powers need only Claude and this skill (thinking, writing, planning, review protocols). The rest name at least one requirement above.
+2508 powers need only Claude and this skill (thinking, writing, planning, review protocols). The rest name at least one requirement above.
