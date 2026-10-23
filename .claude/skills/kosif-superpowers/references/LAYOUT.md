@@ -41,7 +41,7 @@ Read first: what the skill is, the protocol, the one-file copy and the maps. Sta
 
 USIP appendices A1… and the CHANGELOG, opened only by the core's trigger table.
 
-`protocol` · 28 file(s)
+`protocol` · 30 file(s)
 
 - [references/protocol/A1-see-thinking.md](protocol/A1-see-thinking.md)
 - [references/protocol/A10-self-evolution.md](protocol/A10-self-evolution.md)
@@ -64,6 +64,8 @@ USIP appendices A1… and the CHANGELOG, opened only by the core's trigger table
 - [references/protocol/A29-failure-recovery.md](protocol/A29-failure-recovery.md)
 - [references/protocol/A3-release-bridge.md](protocol/A3-release-bridge.md)
 - [references/protocol/A30-council-100.md](protocol/A30-council-100.md)
+- [references/protocol/A31-drawing-council.md](protocol/A31-drawing-council.md)
+- [references/protocol/A33-open-source-mining-prompts.md](protocol/A33-open-source-mining-prompts.md)
 - [references/protocol/A4-fusionforge-composition.md](protocol/A4-fusionforge-composition.md)
 - [references/protocol/A5-state-receipts.md](protocol/A5-state-receipts.md)
 - [references/protocol/A6-evidence-security-numbers.md](protocol/A6-evidence-security-numbers.md)
@@ -92,7 +94,7 @@ How to think, ideate, decide, write and check before and after acting. A24 is th
 
 The capability catalog in human form: fused superpowers, hubs, groups, maps, audits, requirements and what this machine can run.
 
-`catalog` · 21 file(s) · planned folder `references/catalog/`
+`catalog` · 22 file(s) · planned folder `references/catalog/`
 
 - [references/superpowers.md](superpowers.md) · pinned (fixed path)
 - [references/hubs.md](hubs.md) · pinned (fixed path)
@@ -115,6 +117,7 @@ The capability catalog in human form: fused superpowers, hubs, groups, maps, aud
 - [references/owned-repos-map.md](owned-repos-map.md)
 - [references/superpowers-rea-map.md](superpowers-rea-map.md)
 - [references/superpowers-rea-map.html](superpowers-rea-map.html)
+- [references/github-top-1000.md](github-top-1000.md)
 
 ## 5. فصول القدرات المولّدة / Generated power chapters
 

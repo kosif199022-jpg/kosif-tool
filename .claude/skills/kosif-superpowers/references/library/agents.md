@@ -48,6 +48,7 @@
 | `council` | مجلس البرو: خمسة متعارضين أو مجلس مناسب من 100 شخصية، ثلاث جولات وحكم بالدرجات | `python3 scripts/council.py plan "اعمل ريلز دعاء" --dir out/demo/council --options A,B,C` | tested-here |
 | `fusionforge` | FusionForge v2 لوصفات الـWorkflow المركبة داخل المشروع | `python3 scripts/fusionforge.py propose "مونتاج ريلز بترجمة عربية" --project demo_project --from-brief out/20261021-reel/brief.json` | tested-here |
 | `fusionforge-shared` | ذاكرة FusionForge المشتركة بوصفات مهارات معزولة | `python3 scripts/fusionforge_shared.py audit` | untested |
+| `github-top-repos` | متابعة أشهر 1000 مستودع | `python3 scripts/github_top_repos.py build` | tested-here |
 | `hub` | بوابة KOSIF الموحّدة | `python3 scripts/hub.py find "اعمل فيديو موشن عربي متزامن مع صوتي"` | tested-here |
 | `kosif-groups` | خريطة المجموعات مع القدرات الخارقة والسكربتات وخطط التثبيت | `python3 scripts/kosif_hubs.py` | tested-here |
 | `kosif-mcp` | خادم MCP لكتالوج KOSIF | `python3 scripts/kosif_mcp.py` | tested-here |

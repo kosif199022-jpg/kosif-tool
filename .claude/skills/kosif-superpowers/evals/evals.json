@@ -2186,7 +2186,73 @@
    }
   },
   {
-   "id": 102,
+   "id": 151,
+   "lang": "ar",
+   "domain": "craft",
+   "skills": [
+    "kosif-superpowers"
+   ],
+   "query": "افحص البرومبت ده وقولي ناقصه إيه وإزاي أخليه دقيق جدًا",
+   "files": [],
+   "expected_behavior": [
+    "Runs or names prompt_lab.py lint/refine for the prompt's kind and reports the score, band and missing slots",
+    "Says the score is a text proxy and that eval on real outputs proves an improvement"
+   ],
+   "routing": {
+    "expect_any": [
+     "TOOL",
+     "PROMPT"
+    ],
+    "expect_domain": "craft",
+    "top_k": 8,
+    "motion_output": false
+   }
+  },
+  {
+   "id": 152,
+   "lang": "en",
+   "domain": "craft",
+   "skills": [
+    "kosif-superpowers"
+   ],
+   "query": "is my new system prompt actually better than the old one? I have outputs from both",
+   "files": [],
+   "expected_behavior": [
+    "Uses prompt_lab.py eval with a baseline and keeps the new prompt only with a gain and no regression",
+    "Uses the order-swapped pairwise judge for qualities no assertion measures"
+   ],
+   "routing": {
+    "expect_any": [
+     "TOOL",
+     "PROMPT"
+    ],
+    "top_k": 8,
+    "motion_output": false
+   }
+  },
+  {
+   "id": 153,
+   "lang": "ar",
+   "domain": "research",
+   "skills": [
+    "kosif-superpowers"
+   ],
+   "query": "وريني أشهر مستودعات جيت هاب اللي ليها علاقة بالوكلاء وإيه اللي اتنقل منها",
+   "files": [],
+   "expected_behavior": [
+    "Runs or names github_top_repos.py find/show and reports decisions, licences and transferred ids",
+    "Says the top 1,000 is a merged ranking, not a census of GitHub"
+   ],
+   "routing": {
+    "expect_any": [
+     "TOOL"
+    ],
+    "top_k": 8,
+    "motion_output": false
+   }
+  },
+  {
+   "id": 154,
    "lang": "ar",
    "domain": "build",
    "skills": [
@@ -2207,7 +2273,7 @@
    }
   },
   {
-   "id": 103,
+   "id": 155,
    "lang": "en",
    "domain": "build",
    "skills": [

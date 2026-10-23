@@ -12,7 +12,7 @@
 
 ## ما هذه المكتبة
 
-بطاقة بروتوكول لكل قدرة في الكتالوج (5,512) ولكل أداة قابلة للتشغيل (147)، في 78 ملفًا و411,020 سطرًا تقريبًا مع هذا الفهرس. كل بطاقة تجمع سجل القدرة نفسه (ما هي، متى، كيف، التثبيت، المتطلبات، الأدلة، الرخصة) مع قواعد البروتوكول مطبّقة عليها: خانات الاستقبال (A25)، والجاهزية والشارة الصادقة (A28)، وموضعها عقدةً منمّطة في الخطة (A26)، وبوابة التحقق لنوع مخرجها (A27)، وسلم التعافي لأخطائها المرجحة (A29). القواعد العامة تتكرر عمدًا في كل بطاقة لتُقرأ البطاقة وحدها؛ والمعرفة الفريدة في سجلات الكتالوج والملاحق. حالة الكتالوج ليست حالة الجلسة: افحص قبل أي شارة.
+بطاقة بروتوكول لكل قدرة في الكتالوج (5,528) ولكل أداة قابلة للتشغيل (150)، في 78 ملفًا و412,279 سطرًا تقريبًا مع هذا الفهرس. كل بطاقة تجمع سجل القدرة نفسه (ما هي، متى، كيف، التثبيت، المتطلبات، الأدلة، الرخصة) مع قواعد البروتوكول مطبّقة عليها: خانات الاستقبال (A25)، والجاهزية والشارة الصادقة (A28)، وموضعها عقدةً منمّطة في الخطة (A26)، وبوابة التحقق لنوع مخرجها (A27)، وسلم التعافي لأخطائها المرجحة (A29). القواعد العامة تتكرر عمدًا في كل بطاقة لتُقرأ البطاقة وحدها؛ والمعرفة الفريدة في سجلات الكتالوج والملاحق. حالة الكتالوج ليست حالة الجلسة: افحص قبل أي شارة.
 
 ## بطاقات القدرات
 
@@ -74,7 +74,7 @@
 | التفكير والتخطيط والاستراتيجية | `creativity-engine` | 29 | 2,024 | [cards/thinking/creativity-engine.md](cards/thinking/creativity-engine.md) |
 | التفكير والتخطيط والاستراتيجية | `mental-models` | 63 | 4,414 | [cards/thinking/mental-models.md](cards/thinking/mental-models.md) |
 | التفكير والتخطيط والاستراتيجية | `planning-execution` | 12 | 820 | [cards/thinking/planning-execution.md](cards/thinking/planning-execution.md) |
-| التفكير والتخطيط والاستراتيجية | `prompt-craft` | 25 | 1,734 | [cards/thinking/prompt-craft.md](cards/thinking/prompt-craft.md) |
+| التفكير والتخطيط والاستراتيجية | `prompt-craft` | 41 | 2,840 | [cards/thinking/prompt-craft.md](cards/thinking/prompt-craft.md) |
 | التفكير والتخطيط والاستراتيجية | `strategy-finance` | 18 | 1,209 | [cards/thinking/strategy-finance.md](cards/thinking/strategy-finance.md) |
 | التفكير والتخطيط والاستراتيجية | `thinking-core` | 46 | 3,214 | [cards/thinking/thinking-core.md](cards/thinking/thinking-core.md) |
 | الخطوط والنصوص العربية واللاتينية | `arabic-language` | 22 | 1,525 | [cards/type/arabic-language.md](cards/type/arabic-language.md) |
@@ -88,15 +88,15 @@
 | `3d` | 11 | 521 | [tools/3d.md](tools/3d.md) |
 | `audio` | 4 | 199 | [tools/audio.md](tools/audio.md) |
 | `discover` | 25 | 1,298 | [tools/discover.md](tools/discover.md) |
-| `draw` | 11 | 549 | [tools/draw.md](tools/draw.md) |
+| `draw` | 12 | 596 | [tools/draw.md](tools/draw.md) |
 | `edit` | 14 | 708 | [tools/edit.md](tools/edit.md) |
 | `image` | 10 | 550 | [tools/image.md](tools/image.md) |
 | `investigate` | 13 | 597 | [tools/investigate.md](tools/investigate.md) |
 | `local-computer` | 1 | 53 | [tools/local-computer.md](tools/local-computer.md) |
 | `maintain` | 12 | 603 | [tools/maintain.md](tools/maintain.md) |
 | `motion` | 18 | 978 | [tools/motion.md](tools/motion.md) |
-| `sources` | 17 | 852 | [tools/sources.md](tools/sources.md) |
-| `think` | 11 | 580 | [tools/think.md](tools/think.md) |
+| `sources` | 18 | 904 | [tools/sources.md](tools/sources.md) |
+| `think` | 12 | 634 | [tools/think.md](tools/think.md) |
 
 ## المناهج
 

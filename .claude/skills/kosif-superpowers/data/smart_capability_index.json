@@ -1,10 +1,10 @@
 {
   "schema": "kosif.smart-capability-index.v1",
   "origin": "data/powers/*.json (catalog); no original records changed",
-  "catalog_powers": 5512,
+  "catalog_powers": 5528,
   "group_count": 15,
   "family_count": 62,
-  "tool_count": 147,
+  "tool_count": 150,
   "groups": [
     {
       "id": "research",
@@ -74,12 +74,12 @@
       ],
       "keywords": "think reasoning idea brainstorm strategy plan finance decision تحليل تخطيط ابتكار قرار",
       "workflow": [],
-      "count": 319,
+      "count": 335,
       "status_counts": {
-        "documented": 297,
+        "documented": 308,
         "install": 2,
         "proven": 17,
-        "ready": 3
+        "ready": 8
       },
       "family_counts": {
         "atlas-mind": 54,
@@ -87,7 +87,7 @@
         "creativity-engine": 29,
         "mental-models": 63,
         "planning-execution": 12,
-        "prompt-craft": 25,
+        "prompt-craft": 41,
         "strategy-finance": 18,
         "thinking-core": 46
       },
@@ -60508,6 +60508,254 @@
       ],
       "source": "prompt-craft.json",
       "what": "كتالوج A4 فيه اسم كل أسلوب بالعربي والإنجليزي ورقمه وعينة إجرائية أصلية، مقسوم بالمجموعات وقابل للتقسيم ملفًا لكل مجموعة. — An A4 catalog with each style's id, Arabic and English name and an original procedural swatch, grouped, optionally one PDF per group."
+    },
+    {
+      "id": "PROMPT-26",
+      "family": "prompt-craft",
+      "group": "thinking",
+      "domain": "craft",
+      "name_en": "Signature-first prompt",
+      "name_ar": "برومبت يبدأ بالتوقيع",
+      "status": "documented",
+      "requires": [],
+      "proof": [],
+      "source": "prompt-craft.json",
+      "what": "اكتب أولًا الحقول الداخلة والخارجة بأسمائها وأنواعها وجملة قصد واحدة، ثم النثر. — Declare the named input and output fields with types and a one-line intent before any prose."
+    },
+    {
+      "id": "PROMPT-27",
+      "family": "prompt-craft",
+      "group": "thinking",
+      "domain": "craft",
+      "name_en": "Metric-compiled few-shot",
+      "name_ar": "تجميع البرومبت بمقياس",
+      "status": "documented",
+      "requires": [
+        "python3"
+      ],
+      "proof": [],
+      "source": "prompt-craft.json",
+      "what": "عرّف مقياس نجاح ومجموعة صغيرة معلَّمة، وجرّب صيغًا مرشحة، واحتفظ بالأمثلة المأخوذة من المحاولات الناجحة فقط. — Define a pass metric and a small labelled set, try candidate prompts, and keep only examples harvested from passing runs."
+    },
+    {
+      "id": "PROMPT-28",
+      "family": "prompt-craft",
+      "group": "thinking",
+      "domain": "craft",
+      "name_en": "Technique picker by failure mode",
+      "name_ar": "اختيار التقنية حسب نوع الفشل",
+      "status": "documented",
+      "requires": [
+        "npm:react",
+        "pip:chromadb"
+      ],
+      "proof": [],
+      "source": "prompt-craft.json",
+      "what": "لا تضف تقنية لأنها مشهورة؛ شخّص الفشل أولًا ثم اختر التقنية التي تعالجه. — Diagnose the failure first, then add only the technique that treats it."
+    },
+    {
+      "id": "PROMPT-29",
+      "family": "prompt-craft",
+      "group": "thinking",
+      "domain": "craft",
+      "name_en": "Self-consistency vote",
+      "name_ar": "تصويت الاتساق الذاتي",
+      "status": "documented",
+      "requires": [],
+      "proof": [],
+      "source": "prompt-craft.json",
+      "what": "اطلب عدة إجابات مستقلة ثم خذ الأغلبية على الإجابة النهائية فقط، وأبلغ بنسبة الاتفاق. — Sample several independent answers, take the majority on the final answer only, and report the agreement ratio."
+    },
+    {
+      "id": "PROMPT-30",
+      "family": "prompt-craft",
+      "group": "thinking",
+      "domain": "craft",
+      "name_en": "Program-aided answer",
+      "name_ar": "الإجابة عبر برنامج",
+      "status": "documented",
+      "requires": [
+        "python3"
+      ],
+      "proof": [],
+      "source": "prompt-craft.json",
+      "what": "اجعل النموذج يكتب كودًا للحساب، ثم شغّله، وابنِ الإجابة من الناتج لا من الحساب الذهني. — Have the model write code for the computation, run it, and answer from the output, not from mental arithmetic."
+    },
+    {
+      "id": "PROMPT-31",
+      "family": "prompt-craft",
+      "group": "thinking",
+      "domain": "craft",
+      "name_en": "Reflexion lesson memory",
+      "name_ar": "ذاكرة الدروس بعد الفشل",
+      "status": "documented",
+      "requires": [
+        "python3"
+      ],
+      "proof": [],
+      "source": "prompt-craft.json",
+      "what": "بعد كل محاولة فاشلة اكتب درسًا من سطر واحد (السبب ← القاعدة) وضعه قبل المحاولة التالية. — After each failed attempt write a one-line lesson (cause → rule) and put it in front of the next attempt."
+    },
+    {
+      "id": "PROMPT-32",
+      "family": "prompt-craft",
+      "group": "thinking",
+      "domain": "craft",
+      "name_en": "Pattern file with fixed sections",
+      "name_ar": "ملف نمط بأقسام ثابتة",
+      "status": "documented",
+      "requires": [
+        "python3"
+      ],
+      "proof": [],
+      "source": "prompt-craft.json",
+      "what": "احفظ كل برومبت متكرر كملف نمط له أقسام ثابتة، مهمة واحدة لكل نمط، وركّب الأنماط بالتسلسل. — Save each recurring prompt as a pattern file with fixed sections, one job per pattern, and compose patterns in sequence."
+    },
+    {
+      "id": "PROMPT-33",
+      "family": "prompt-craft",
+      "group": "thinking",
+      "domain": "craft",
+      "name_en": "Cache-friendly prompt layout",
+      "name_ar": "ترتيب يناسب التخزين المؤقت",
+      "status": "documented",
+      "requires": [],
+      "proof": [],
+      "source": "prompt-craft.json",
+      "what": "ضع الثابت أولًا (النظام، الأدوات، المستندات، الأمثلة) والمتغير أخيرًا (طلب المستخدم)، فتقل التكلفة والزمن. — Put stable content first (system, tools, documents, examples) and volatile content last (the user turn) so caching cuts cost and latency."
+    },
+    {
+      "id": "PROMPT-34",
+      "family": "prompt-craft",
+      "group": "thinking",
+      "domain": "craft",
+      "name_en": "Assertion matrix eval",
+      "name_ar": "مصفوفة تقييم بالتأكيدات",
+      "status": "ready",
+      "requires": [
+        "python3"
+      ],
+      "proof": [
+        "kosif-tool/.claude/skills/kosif-superpowers/scripts/prompt_lab.py",
+        "kosif-tool/.claude/skills/kosif-superpowers/evals/test_prompt_lab.py"
+      ],
+      "source": "prompt-craft.json",
+      "what": "اختبر كل نسخة برومبت على نفس الحالات بتأكيدات حتمية (يحتوي، تعبير نمطي، JSON، طول) واحتفظ بالجديدة فقط إن فازت بلا تراجع. — Test every prompt variant on the same cases with deterministic assertions and keep the new one only if it wins with no regression."
+    },
+    {
+      "id": "PROMPT-35",
+      "family": "prompt-craft",
+      "group": "thinking",
+      "domain": "craft",
+      "name_en": "Parameterized image prompt template",
+      "name_ar": "قالب صورة بمتغيرات وأقفال",
+      "status": "ready",
+      "requires": [
+        "python3"
+      ],
+      "proof": [
+        "kosif-tool/.claude/skills/kosif-superpowers/scripts/prompt_lab.py",
+        "kosif-tool/.claude/skills/kosif-superpowers/evals/test_prompt_lab.py"
+      ],
+      "source": "prompt-craft.json",
+      "what": "اكتب برومبت الصور كقالب بخانات مسماة وسطر قفل ثابت لكل السلسلة، وغيّر محورًا واحدًا لكل نسخة. — Write image prompts as a template with named slots and one lock line repeated across the series, changing one axis per variant."
+    },
+    {
+      "id": "PROMPT-36",
+      "family": "prompt-craft",
+      "group": "thinking",
+      "domain": "craft",
+      "name_en": "Constrained output with validate-and-retry",
+      "name_ar": "مخرجات مقيدة مع تحقق وإعادة",
+      "status": "documented",
+      "requires": [],
+      "proof": [],
+      "source": "prompt-craft.json",
+      "what": "أعطِ مخططًا، وتحقق من الناتج، وعند الفشل أعد رسالة الخطأ نفسها مرة واحدة، ثم توقف. — Give a schema, validate the output, on failure send the validation error back once, then stop."
+    },
+    {
+      "id": "PROMPT-37",
+      "family": "prompt-craft",
+      "group": "thinking",
+      "domain": "craft",
+      "name_en": "Short-prompt expansion with locked user words",
+      "name_ar": "توسيع البرومبت القصير مع قفل كلمات المستخدم",
+      "status": "documented",
+      "requires": [
+        "python3"
+      ],
+      "proof": [],
+      "source": "prompt-craft.json",
+      "what": "وسّع وصف المستخدم القصير إلى برومبت كامل، لكن انسخ كلماته حرفيًا كقفل وعلّم كل إضافة. — Expand a short user description into a full prompt, but keep the user's own words verbatim as a lock and mark every addition."
+    },
+    {
+      "id": "PROMPT-38",
+      "family": "prompt-craft",
+      "group": "thinking",
+      "domain": "craft",
+      "name_en": "Meta-prompting with a test gate",
+      "name_ar": "برومبت يكتب برومبت ثم يُختبر",
+      "status": "documented",
+      "requires": [
+        "python3"
+      ],
+      "proof": [],
+      "source": "prompt-craft.json",
+      "what": "اطلب من النموذج اقتراح عدة صيغ للتعليمات، ثم قيّمها كلها على نفس الحالات، ولا تشحن صيغة لم تُختبر. — Ask the model for several candidate instructions, score them all on the same cases, and never ship an untested one."
+    },
+    {
+      "id": "PROMPT-39",
+      "family": "prompt-craft",
+      "group": "thinking",
+      "domain": "craft",
+      "name_en": "Deterministic prompt lint",
+      "name_ar": "فحص البرومبت الحتمي",
+      "status": "ready",
+      "requires": [
+        "python3"
+      ],
+      "proof": [
+        "kosif-tool/.claude/skills/kosif-superpowers/scripts/prompt_lab.py",
+        "kosif-tool/.claude/skills/kosif-superpowers/evals/test_prompt_lab.py"
+      ],
+      "source": "prompt-craft.json",
+      "what": "يقيس البرومبت على 20 نقطة: وجود الخانات المطلوبة لنوعه، والأنماط الضارة، وبوابات الرفض (سر، طلب سلسلة التفكير، بيانات بلا فواصل). — Scores a prompt out of 20: the slots its kind needs, anti-patterns, and hard gates (a secret, a chain-of-thought request, undelimited pasted data)."
+    },
+    {
+      "id": "PROMPT-40",
+      "family": "prompt-craft",
+      "group": "thinking",
+      "domain": "craft",
+      "name_en": "Prompt templates by kind",
+      "name_ar": "قوالب حسب نوع البرومبت",
+      "status": "ready",
+      "requires": [
+        "python3"
+      ],
+      "proof": [
+        "kosif-tool/.claude/skills/kosif-superpowers/scripts/prompt_lab.py",
+        "kosif-tool/.claude/skills/kosif-superpowers/evals/test_prompt_lab.py"
+      ],
+      "source": "prompt-craft.json",
+      "what": "ثمانية أنواع (نظام، وكيل، كود، بحث، كتابة، حَكَم، صورة، فيديو) لكل منها خاناته بالترتيب، والخانة الناقصة تظهر سؤالًا لا تخمينًا. — Eight kinds, each with its slots in order; an unfilled slot is shown as a question, never guessed."
+    },
+    {
+      "id": "PROMPT-41",
+      "family": "prompt-craft",
+      "group": "thinking",
+      "domain": "craft",
+      "name_en": "Order-swapped pairwise judge (Jev method)",
+      "name_ar": "حَكَم مقارن بترتيب معكوس (طريقة Jev)",
+      "status": "ready",
+      "requires": [
+        "python3"
+      ],
+      "proof": [
+        "kosif-tool/.claude/skills/kosif-superpowers/scripts/prompt_lab.py",
+        "kosif-tool/.claude/skills/kosif-superpowers/evals/test_prompt_lab.py"
+      ],
+      "source": "prompt-craft.json",
+      "what": "قارن ناتجي نسختين مرتين مع عكس الترتيب، ولا تحتسب إلا الحكم المتفق عليه، وأبلغ بحالات انحياز الموضع. — Judge two outputs twice with their order swapped, count only agreeing verdicts, and report position-bias cases."
     },
     {
       "id": "QA-01",
