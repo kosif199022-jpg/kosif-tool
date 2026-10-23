@@ -38,6 +38,7 @@
 | tool | ID | الأداة / tool | أمر أول / first command | tests |
 |---|---|---|---|---|
 | `audio-cue-mapper` | TOOL-25 | مستخرج إشارات التوقيت من الصوت · WAV audio cue mapper | `python3 scripts/audio_cue_mapper.py ./voice.wav --out ./out/cues.json` | 1 |
+| `caption-lines` | TOOL-165 | سطور الترجمة: من توقيت الكلمات إلى ترجمة مقروءة · Caption lines: word timings to readable SRT/VTT | `python3 scripts/caption_lines.py group words.json -o captions.srt --r…` | 1 |
 | `music-rhythm-engine` | TOOL-26 | فرضيات إيقاع الموسيقى · Music rhythm hypotheses | `python3 scripts/music_rhythm_engine.py ./out/cues.json --out ./out/rh…` | 1 |
 | `repo-words-convert` | TOOL-86 | محوّل الترجمات إلى توقيت الكلمات · Subtitle to words.json converter | `python3 tools/words_convert.py ./captions.srt ./words.json` | 1 |
 | `tts-script` | TOOL-152 | تجهيز نص التعليق الصوتي: تقطيع آمن وتقدير المدة وSSML · TTS script prep: prosody-safe chunks, duration estimate and SSML | `printf 'مرحبا بكم في KOSIF Studio. هذا اختبار، قصير جدا!\n\nفقرة ثاني…` | 1 |
@@ -81,6 +82,7 @@
 | `character-fullbody` | TOOL-27 | تحريك الشخصية بكامل الجسم · Full-body character animator | `python3 scripts/character_fullbody.py doctor` | 1 |
 | `character-ik` | TOOL-28 | تحريك ذراع الشخصية بالحركية العكسية · Character IK arm animator | `python3 scripts/character_ik.py doctor` | 2 |
 | `code-drawing-master` | TOOL-29 | رسم الشخصيات والمشاهد بالكود · Code Drawing Master storyboards | `python3 scripts/code_drawing_master.py --cast human+cat --expression…` | 1 |
+| `color-media` | TOOL-169 | محرك الخامات الملوّنة: ألوان خشبية وفرشاة زيت وألوان مائية لأي صورة · Colour media engine: coloured pencil, oil brush and watercolour painting of a photo | `python3 scripts/color_media.py draw --photo in.png --out out/x --medi…` | 1 |
 | `creative-paint` | TOOL-30 | الرسم الإبداعي بالطبقات · Creative Paint layered renderer | `python3 scripts/creative_paint.py doctor` | 3 |
 | `creative-principles` | TOOL-134 | دراسة الرسم التدريجي والظل الأصلي · Staged drawing and original three-value visual studies | `python3 scripts/creative_principles.py construct --input original-sha…` | 1 |
 | `diagram-layout` | TOOL-149 | تخطيط المخططات: فحص الرسم البياني وتخطيط طبقي حتمي وSVG جاهز للعربية · Diagram layout: graph lint, deterministic layered layout and RTL-ready SVG | `python3 scripts/diagram_layout.py lint /tmp/graph.json --max-label 24…` | 1 |
@@ -90,7 +92,7 @@
 | `drawing-visual-qa` | TOOL-144 | مدرب الرسم من فصول الكتب والتشخيص البصري المستقل · Book-chapter drawing coach and independent raster visual QA | `python3 scripts/drawing_visual_qa.py curriculum "ارسم شخصية كرتونية ب…` | 1 |
 | `geo-plate` | TOOL-147 | لوح الخرائط: إسقاط الإحداثيات إلى بكسلات وتصنيف الخرائط الملونة وسجل المصادر · Map plate: projection to pixels, choropleth classes and source ledger | `python3 scripts/geo_plate.py project --proj equirect --size 2000x1000…` | 1 |
 | `perspective-color-lab` | TOOL-137 | منظور هندسي ومقاييس التباين اللوني · Original two-point perspective and numeric palette analysis | `python3 scripts/perspective_color_lab.py perspective --input scene.js…` | 1 |
-| `portrait-pipeline` | TOOL-157 | رسم يدوي المظهر بالرصاص أو الفحم أو الحبر لأي صورة أو مشهد متخيَّل، خطًا بخط · Hand-drawn pencil, charcoal or ink drawing of any photo or imagined scene, built stroke by stroke | `python3 scripts/portrait_pipeline.py draw --photo photo.png --out out…` | 1 |
+| `portrait-pipeline` | TOOL-157 | نسخة مرسومة أو ملوّنة باليد لأي صورة أو مشهد متخيَّل: رصاص، فحم، حبر، ألوان خشبية، فرشاة زيت أو ألوان مائية · Hand-drawn or hand-painted version of any photo or imagined scene: pencil, charcoal, ink, coloured pencil, oil brush or watercolour | `python3 scripts/portrait_pipeline.py draw --photo photo.png --out out…` | 1 |
 | `smart-draw` | TOOL-31 | الرسم الذكي ومساعد الأشكال · Smart Draw shape assist | `python3 scripts/smart_draw.py doctor` | 1 |
 | `unified-draw` | TOOL-115 | الرسم الموحد: خطوط وأشكال وطبقات وتصدير · Unified Draw: freehand + geometry + layered export | `python3 scripts/unified_draw.py doctor` | 2 |
 
@@ -102,8 +104,10 @@
 | `cinematic-cut-planner` | TOOL-20 | مُخطِّط قطعات اللقطات الحقيقية · Footage-First Cut Planner | `python3 scripts/cinematic_cut_planner.py --words ./words.json --clips…` | 2 |
 | `creative-quality-gate` | TOOL-35 | بوابة جودة خطة المونتاج · Reference-edit structural quality gate | `python3 scripts/creative_quality_gate.py ./my-project/src/plan.json -…` | 1 |
 | `dua-wednesday` | TOOL-132 | دعاء يوم الأربعاء — محرك ريل دعاء موشن جرافيك 9:16 · Wednesday-morning dua reel (دعاء يوم الأربعاء) — 9:16 motion-graphics dua engine | `python3 scripts/dua_wednesday.py doctor` | 1 |
+| `fast-edit` | TOOL-168 | التعديل السريع: قص فوري يعرف الإطارات المفتاحية، مغيّر صوت، تفتيح الفيديو المظلم، استخراج الصوت · Fast Edit: keyframe-aware instant cut, voice presets, low-light lift, audio extract | `python3 scripts/fast_edit.py doctor` | 1 |
 | `kosif-timeline` | TOOL-122 | محرر KOSIF Timeline: مونتاج متعدد المسارات مع تراجع وإعادة · KOSIF Timeline: genuine multitrack video, image and audio editor | `python3 scripts/kosif_timeline.py doctor` | 1 |
 | `kosif-timeline-demo` | TOOL-123 | تجربة مونتاج KOSIF Timeline تلقائية بملفات أصلية مولدة · KOSIF Timeline one-command synthetic media demo | `python3 scripts/kosif_timeline_demo.py --dir ./fresh-kosif-timeline-d…` | 1 |
+| `look-pipeline` | TOOL-166 | خط اللوك: تلوين واحد لـ ffmpeg وSVG وGLSL · Look pipeline: one colour grade for ffmpeg, SVG/CSS and GLSL | `python3 scripts/look_pipeline.py presets` | 1 |
 | `mimic` | TOOL-85 | محرك محاكاة الفيديو المرجعي · KOSIF Mimic reference rebuilder | `python3 -c "import sys; sys.path.insert(0,'scripts/mimic'); import mm…` | 1 |
 | `montage-pro` | TOOL-130 | فريق مونتاج برو (صوت أو فيديو إلى مونتاج أو موشن) · Montage Pro task force (audio/video to montage or motion) | `python3 scripts/montage_pro.py doctor` | 1 |
 | `motion-reference-probe` | TOOL-21 | فاحص توقيت الفيديو المرجعي · Reference Video Timing Probe | `python3 scripts/motion_reference_probe.py ./in.mp4` | 2 |
@@ -143,6 +147,7 @@
 | `rea-bridge` | TOOL-98 | جسر أوامر REA · REA CLI Bridge | `python3 scripts/rea_bridge.py doctor` | 1 |
 | `rea-family-router` | TOOL-52 | موجّه عائلات REA · REA Family Router | `python3 scripts/rea_family_router.py list` | 1 |
 | `rea-owned-repo-batch` | TOOL-53 | تحليل REA لمستودعات المالك دفعةً واحدة · REA Owned-Repo Batch | `python3 scripts/rea_owned_repo_batch.py --private-output "$HOME/kosif…` | 0 |
+| `repo-map` | TOOL-162 | خريطة المستودع · Repo Map | `python3 scripts/repo_map.py map scripts --budget 3000 --focus prompt` | 1 |
 | `repository-capability-packer` | TOOL-54 | فحص المستودعات وحزمها · Repository Capability Packer | `python3 scripts/repository_capability_packer.py inspect ./repo --out…` | 1 |
 | `web-app-study` | TOOL-62 | دراسة تطبيق ويب عام بـ REA (حقائق فقط) · Web app study (public frontend, REA, facts only) | `python3 scripts/web_app_study.py doctor` | 1 |
 
@@ -180,6 +185,7 @@
 | `motion-director` | TOOL-13 | مُصرِّف حركة SVG المتزامنة مع الصوت · Audio-timed SVG motion compiler | `python3 scripts/motion_director.py doctor` | 2 |
 | `motion-engine-js` | TOOL-14 | محرك حركة SVG · SVG motion engine runtime | `python3 scripts/motion_director.py compile ./scene.json --out ./out/f…` | 3 |
 | `motion-kit-bridge` | TOOL-15 | جسر توقيتات Motion Starter Kit · Motion Starter Kit timing bridge | `python3 scripts/motion_kit_bridge.py styles` | 1 |
+| `motion-physics` | TOOL-164 | فيزياء الحركة · Motion Physics | `python3 scripts/motion_physics.py spring --from 0 --to 1 --stiffness…` | 1 |
 | `motion-runtime` | TOOL-16 | إنشاء فيلم سبورة مرسوم وتصييره · Doodle film runtime and renderer | `python3 scripts/motion_runtime.py doctor` | 1 |
 | `motion-stack` | TOOL-17 | مولّد مشاريع بداية لمحركات الحركة · Third-party motion engine scaffolder | `python3 scripts/motion_stack.py list` | 1 |
 | `motion-toolkit` | TOOL-18 | مكتبة رياضيات الحركة · Motion math toolkit | `node --input-type=module -e "import {ease, timeCode} from './resource…` | 1 |
@@ -231,6 +237,8 @@
 | `council` | TOOL-68 | مجلس البرو: خمسة متعارضين أو مجلس مناسب من 100 شخصية، ثلاث جولات وحكم بالدرجات · Pro Council: five opposing members or a task-fitted council from 100 personas, three rounds, a scored verdict | `python3 scripts/council.py plan "اعمل ريلز دعاء" --dir out/demo/counc…` | 1 |
 | `decision-math` | TOOL-145 | رياضيات القرار: نطاقات مونت كارلو ونقطة التعادل وترتيب ICE والقيمة الحالية ونقطة انقلاب القرار · Decision math: Monte Carlo ranges, break-even, ICE, NPV/IRR and flip thresholds | `echo '{"inputs":{"price":{"dist":"triangular","low":8,"mode":10,"high…` | 1 |
 | `invention-lab` | TOOL-11 | مختبر الابتكار الهندسي · Invention Lab Candidates | `python3 scripts/invention_lab.py methods` | 1 |
+| `lesson-integrity` | TOOL-167 | فاحص أرقام الدروس والشروح · Lesson number integrity checker | `python3 scripts/lesson_integrity.py values --registry values.json` | 1 |
+| `memory-ops` | TOOL-163 | عمليات الذاكرة · Memory Ops | `python3 scripts/memory_ops.py propose --store memory.json --facts fac…` | 1 |
 | `prompt-lab` | TOOL-159 | مختبر البرومبت · Prompt Lab | `python3 scripts/prompt_lab.py kinds` | 1 |
 | `see-pro-cognitive-gate` | TOOL-76 | فاحص عقود التفكير والتوليف KOSIF SEE Pro · SEE Pro Cognitive Fusion contract verifier | `python3 scripts/see_pro_cognitive_gate.py --self-test` | 1 |
 | `stats-lab` | TOOL-151 | مختبر الإحصاء: اختبار A/B وحجم العينة ووصف عمود وأرباح الدفعات · Stats lab: A/B test, sample size, column statistics and FIFO/LIFO gains | `python3 scripts/stats_lab.py abtest --a 1000,100 --b 1000,130` | 1 |
