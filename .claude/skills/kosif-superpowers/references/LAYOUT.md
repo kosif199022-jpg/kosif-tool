@@ -280,7 +280,7 @@ Font matching and fidelity, the private typography library index and the Arabic-
 
 Reverse engineering, code graphs, harnesses, repository and app capability transfer, library arsenals and community sources.
 
-`engineering` · 12 file(s) · planned folder `references/engineering/`
+`engineering` · 13 file(s) · planned folder `references/engineering/`
 
 - [references/rea-reverse-engineering.md](rea-reverse-engineering.md)
 - [references/rea-upstream-capabilities.md](rea-upstream-capabilities.md)
@@ -294,6 +294,7 @@ Reverse engineering, code graphs, harnesses, repository and app capability trans
 - [references/community-source-atlas.md](community-source-atlas.md)
 - [references/codex-agent-harness.md](codex-agent-harness.md)
 - [references/app-studies/magicpath.md](app-studies/magicpath.md)
+- [references/app-studies/montaji.md](app-studies/montaji.md)
 
 ## 11. الدراسات والإيصالات المؤرخة / Dated studies and receipts
 

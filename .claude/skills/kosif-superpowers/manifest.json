@@ -15,17 +15,17 @@
  },
  "paths_note": "Tool paths and examples are relative to their root: 'skill' = this folder, 'repo' = the kosif-tool repository root.",
  "counts": {
-  "powers": 5496,
+  "powers": 5512,
   "families": 62,
   "domains": 10,
-  "tools": 145,
+  "tools": 147,
   "guides": 107,
   "statuses": {
-   "documented": 2086,
+   "documented": 2098,
    "idea": 71,
    "install": 973,
    "key": 176,
-   "proven": 933,
+   "proven": 937,
    "ready": 648,
    "seen": 609
   }
@@ -242,11 +242,11 @@
    "domain": "build",
    "title_ar": "قدرات التطبيقات المحللة",
    "title_en": "Analyzed app capabilities",
-   "count": 139,
+   "count": 155,
    "statuses": {
-    "documented": 41,
+    "documented": 53,
     "install": 1,
-    "proven": 96,
+    "proven": 100,
     "ready": 1
    },
    "chapter": "references/powers/app-feature-transfer.md",
@@ -13904,6 +13904,157 @@
     "software-investigation"
    ],
    "power_id": "TOOL-67"
+  },
+  {
+   "id": "caption-lines",
+   "path": "scripts/caption_lines.py",
+   "root": "skill",
+   "kind": "cli",
+   "area": "audio",
+   "title_en": "Caption lines: word timings to readable SRT/VTT",
+   "title_ar": "سطور الترجمة: من توقيت الكلمات إلى ترجمة مقروءة",
+   "summary_en": "Written after a read-only study of the Montaji Arabic video editor: groups word timings (atlas words.json, whisper.cpp -oj or faster-whisper JSON) into short caption lines by word count, characters, time on screen, pauses, sentence ends (including ؟ and ؛) and commas; closes short holes, extends short lines only into silence, can add a right-to-left mark for Arabic, and drops and lists phrases speech models invent (subtitle credits, subscribe outros, sound tags, punctuation-only and looping lines). lint checks any SRT/VTT/JSON for overlaps, durations, reading speed and the same phrases.",
+   "summary_ar": "كُتبت بعد دراسة «مونتاجي»: تقسم توقيت الكلمات إلى سطور ترجمة قصيرة بحد للكلمات والحروف والمدة، وتكسر عند الوقفة ونهاية الجملة والفاصلة، وتسد الفجوات القصيرة، وتضيف علامة الاتجاه للعربي، وتحذف ما يخترعه نموذج التفريغ مثل «ترجمة نانسي» و«اشتركوا في القناة» مع سرده؛ وlint يفحص أي ملف ترجمة.",
+   "use_when": [
+    "قسّم التفريغ ده لسطور ترجمة قصيرة SRT",
+    "Turn these Whisper word timestamps into readable captions",
+    "نظّف الترجمة من الهلوسة زي ترجمة نانسي واشتركوا في القناة",
+    "Lint this SRT for overlaps and reading speed"
+   ],
+   "keywords": [
+    "captions",
+    "subtitles",
+    "srt",
+    "vtt",
+    "whisper",
+    "word timestamps",
+    "hallucination",
+    "reading speed",
+    "ترجمة",
+    "سطور",
+    "تفريغ",
+    "هلوسة",
+    "سبتايتل"
+   ],
+   "commands": [
+    {
+     "name": "group",
+     "example": "python3 scripts/caption_lines.py group words.json -o captions.srt --rlm",
+     "does": "Words to SRT, VTT or JSON lines; reports the suspect lines it dropped."
+    },
+    {
+     "name": "lint",
+     "example": "python3 scripts/caption_lines.py lint captions.srt",
+     "does": "Overlaps, too-short lines, reading speed above 17 chars/s and suspect phrases; exits 1 on any issue."
+    }
+   ],
+   "inputs": "Word timings: atlas words.json, {\"words\": [...]}, whisper.cpp -oj JSON (one word per entry with -ml 1) or faster-whisper/openai segments[].words; or an SRT/VTT/JSON caption file for lint.",
+   "outputs": "captions .srt, .vtt or kosif.caption-lines.v1 JSON (lines, the rule that broke each line, dropped lines with the reason).",
+   "requires": {
+    "python": [],
+    "binaries": [],
+    "node": [],
+    "optional": [],
+    "network": false
+   },
+   "safety": "writes-files",
+   "consent": "Reads and writes local files only; captions of someone else's speech follow the media's rights.",
+   "limits": "Does not transcribe: pair it with whisper.cpp or faster-whisper. The suspect-phrase list is short and generic, so a real spoken 'subscribe' is dropped too (use --keep-suspect). Line breaking counts characters, not rendered width.",
+   "evidence": "tested-here",
+   "evidence_note": "2026-10-23: evals/test_caption_lines.py 8/8 on this checkout (rules, screening, four input shapes, SRT/VTT/JSON round trip, lint).",
+   "tests": [
+    ".claude/skills/kosif-superpowers/evals/test_caption_lines.py"
+   ],
+   "docs": [
+    ".claude/skills/kosif-superpowers/references/app-studies/montaji.md"
+   ],
+   "families": [
+    "audio-sync-captions",
+    "app-feature-transfer",
+    "typography-arabic"
+   ]
+  },
+  {
+   "id": "look-pipeline",
+   "path": "scripts/look_pipeline.py",
+   "root": "skill",
+   "kind": "cli",
+   "area": "edit",
+   "title_en": "Look pipeline: one colour grade for ffmpeg, SVG/CSS and GLSL",
+   "title_ar": "خط اللوك: تلوين واحد لـ ffmpeg وSVG وGLSL",
+   "summary_en": "Written after a read-only study of the Montaji Arabic video editor: eleven colour looks (natural, vivid, bright, warm, cool, cinematic, vintage, faded, dramatic, mono, night-dua) and eight parameters become one per-channel affine step plus one 3x3 matrix, emitted with the same numbers as an ffmpeg chain (lutrgb + colorchannelmixer + vignette), an SVG filter, CSS and a GLSL shader. verify pushes a test frame through ffmpeg and compares every pixel with the reference maths; apply grades a video into a new file.",
+   "summary_ar": "كُتبت بعد دراسة «مونتاجي»: 11 لوكًا وثمانية معاملات تصبح خطوة خطية ومصفوفة 3×3، تخرج بالأرقام نفسها لـ ffmpeg وSVG وCSS وGLSL فتتطابق المعاينة والتصدير؛ verify يقيس الفرق بكسلًا بكسلًا، وapply يلوّن فيديو في ملف جديد.",
+   "use_when": [
+    "لوّن الفيديو ده لوك سينمائي وخلي المعاينة زي التصدير",
+    "Give me the same warm grade as an ffmpeg filter and a CSS filter",
+    "Check that my web preview colour matches the exported MP4",
+    "عايز فلتر أبيض وأسود للفيديو"
+   ],
+   "keywords": [
+    "color grade",
+    "colour",
+    "look",
+    "lut",
+    "filter",
+    "preset",
+    "svg filter",
+    "glsl",
+    "shader",
+    "colorchannelmixer",
+    "تلوين",
+    "لوك",
+    "فلتر",
+    "سينمائي"
+   ],
+   "commands": [
+    {
+     "name": "presets",
+     "example": "python3 scripts/look_pipeline.py presets",
+     "does": "The eleven looks and their parameters."
+    },
+    {
+     "name": "build",
+     "example": "python3 scripts/look_pipeline.py build --preset cinematic --amount 0.8 --target ffmpeg",
+     "does": "Emit one look for ffmpeg, svg, css, glsl or json, with --set overrides."
+    },
+    {
+     "name": "verify",
+     "example": "python3 scripts/look_pipeline.py verify --all",
+     "does": "ffmpeg output vs the reference maths on a 64x36 test frame; exits 1 above the tolerance."
+    },
+    {
+     "name": "apply",
+     "example": "python3 scripts/look_pipeline.py apply in.mp4 graded.mp4 --preset warm --amount 0.6",
+     "does": "Grade a video into a new H.264 file, audio copied; refuses to overwrite."
+    }
+   ],
+   "inputs": "A preset name, a 0..1 amount and optional KEY=VALUE overrides; a video file for apply.",
+   "outputs": "Filter text for the chosen renderer, kosif.look.v1 JSON, a PASS/FAIL parity table, or a new graded MP4.",
+   "requires": {
+    "python": [],
+    "binaries": [
+     "ffmpeg"
+    ],
+    "node": [],
+    "optional": [],
+    "network": false
+   },
+   "safety": "writes-files",
+   "consent": "apply writes a new file next to the user's media and never overwrites the source.",
+   "limits": "Per-pixel looks only (no curves, LUT files or skin masks); vignette is emitted for every renderer but left out of the parity check; SVG and GLSL parity follow from the same numbers and are not rendered here.",
+   "evidence": "tested-here",
+   "evidence_note": "2026-10-23: evals/test_look_pipeline.py 6/6; verify --all: 11/11 looks within 1/255 of the reference maths on this checkout (ffmpeg 6).",
+   "tests": [
+    ".claude/skills/kosif-superpowers/evals/test_look_pipeline.py"
+   ],
+   "docs": [
+    ".claude/skills/kosif-superpowers/references/app-studies/montaji.md"
+   ],
+   "families": [
+    "color-palette-grading",
+    "app-feature-transfer",
+    "photo-video-footage"
+   ]
   }
  ],
  "guides": [

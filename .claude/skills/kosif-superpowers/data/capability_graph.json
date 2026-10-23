@@ -15,7 +15,7 @@
    "id": "root",
    "kind": "root",
    "label": "KOSIF Superpowers",
-   "count": 5496
+   "count": 5512
   },
   {
    "id": "dom:motion",
@@ -271,11 +271,11 @@
    "label": "Analyzed app capabilities",
    "ar": "قدرات التطبيقات المحللة",
    "prefix": "APPX",
-   "count": 139,
-   "proven": 96,
+   "count": 155,
+   "proven": 100,
    "status": {
-    "proven": 96,
-    "documented": 41,
+    "proven": 100,
+    "documented": 53,
     "install": 1,
     "ready": 1
    }
@@ -308,13 +308,13 @@
    "req_kind": "pip"
   },
   {
-   "id": "req:npm:rea",
+   "id": "req:pip:faster-whisper",
    "kind": "requirement",
-   "label": "npm:rea",
-   "ar": "فحص البرامج والهندسة العكسية القانونية",
-   "en": "lawful software inspection (REA)",
-   "install": "npm install -g rea-agents@6.7.0  (Node 22.19+/24.11+/26+)",
-   "req_kind": "npm"
+   "label": "pip:faster-whisper",
+   "ar": "تفريغ الصوت مع توقيت كل كلمة (عربي)",
+   "en": "speech-to-text with word timestamps (Arabic)",
+   "install": "pip install faster-whisper  (models from huggingface.co: small 466 MB, large-v3 3.1 GB; CPU works)",
+   "req_kind": "model"
   },
   {
    "id": "script:scripts/app_studio.py",
@@ -330,6 +330,16 @@
    "id": "script:scripts/blender_cinema.py",
    "kind": "script",
    "label": "scripts/blender_cinema.py"
+  },
+  {
+   "id": "script:scripts/look_pipeline.py",
+   "kind": "script",
+   "label": "scripts/look_pipeline.py"
+  },
+  {
+   "id": "script:scripts/caption_lines.py",
+   "kind": "script",
+   "label": "scripts/caption_lines.py"
   },
   {
    "id": "script:scripts/installer_triage.py",
@@ -736,15 +746,6 @@
     "install": 7,
     "seen": 5
    }
-  },
-  {
-   "id": "req:pip:faster-whisper",
-   "kind": "requirement",
-   "label": "pip:faster-whisper",
-   "ar": "تفريغ الصوت مع توقيت كل كلمة (عربي)",
-   "en": "speech-to-text with word timestamps (Arabic)",
-   "install": "pip install faster-whisper  (models from huggingface.co: small 466 MB, large-v3 3.1 GB; CPU works)",
-   "req_kind": "model"
   },
   {
    "id": "req:network",
@@ -1385,6 +1386,15 @@
     "ready": 5,
     "install": 5
    }
+  },
+  {
+   "id": "req:npm:rea",
+   "kind": "requirement",
+   "label": "npm:rea",
+   "ar": "فحص البرامج والهندسة العكسية القانونية",
+   "en": "lawful software inspection (REA)",
+   "install": "npm install -g rea-agents@6.7.0  (Node 22.19+/24.11+/26+)",
+   "req_kind": "npm"
   },
   {
    "id": "script:scripts/hub.py",
@@ -2748,7 +2758,7 @@
    "from": "dom:build",
    "to": "fam:app-feature-transfer",
    "rel": "has",
-   "w": 139
+   "w": 155
   },
   {
    "from": "fam:app-feature-transfer",
@@ -2776,15 +2786,15 @@
   },
   {
    "from": "fam:app-feature-transfer",
-   "to": "req:python3",
+   "to": "req:ffmpeg",
    "rel": "needs",
-   "w": 24
+   "w": 27
   },
   {
    "from": "fam:app-feature-transfer",
-   "to": "req:ffmpeg",
+   "to": "req:python3",
    "rel": "needs",
-   "w": 19
+   "w": 27
   },
   {
    "from": "fam:app-feature-transfer",
@@ -2794,7 +2804,7 @@
   },
   {
    "from": "fam:app-feature-transfer",
-   "to": "req:npm:rea",
+   "to": "req:pip:faster-whisper",
    "rel": "needs",
    "w": 4
   },
@@ -2815,6 +2825,18 @@
    "to": "script:scripts/blender_cinema.py",
    "rel": "runs",
    "w": 7
+  },
+  {
+   "from": "fam:app-feature-transfer",
+   "to": "script:scripts/look_pipeline.py",
+   "rel": "runs",
+   "w": 4
+  },
+  {
+   "from": "fam:app-feature-transfer",
+   "to": "script:scripts/caption_lines.py",
+   "rel": "runs",
+   "w": 3
   },
   {
    "from": "fam:app-feature-transfer",

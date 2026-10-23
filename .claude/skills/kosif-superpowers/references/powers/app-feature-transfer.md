@@ -3,7 +3,7 @@
 
 > **قوتك هنا / what this gives you:** مزايا CapCut وCanva وPremiere وDxO PhotoLab وCapture One وJPEGmini وFontLab وAffinity وHoudini وAnimate وIDM التي كشفها التحليل بـ REA، لكل منها وصفة مفتوحة مثبتة (FFmpeg/OpenCV/Pillow/fontTools/Whisper) أو نمط معماري موثّق لتطبيقاتك. — Features found by analysing CapCut, Canva, Premiere Pro, DxO PhotoLab, Capture One, JPEGmini, FontLab, Affinity Designer, Houdini, Animate and IDM with REA, each with a proven open-tool recipe (FFmpeg/OpenCV/Pillow/fontTools/Whisper) or a documented architecture pattern for your own apps.
 > **أقوى دليل / strongest evidence:** **APPX-01** Speed curve (ramp) (`kosif-tool/.claude/skills/kosif-superpowers/proofs/app-feature-transfer/README.md`) · **APPX-02** Chroma key (`kosif-tool/.claude/skills/kosif-superpowers/proofs/app-feature-transfer/README.md`)
-> **139 powers follow** — ✅ 96 · 🟢 1 · 📦 1 · 🔑 0 · 👁 0 · 📄 41 · 💡 0.
+> **155 powers follow** — ✅ 100 · 🟢 1 · 📦 1 · 🔑 0 · 👁 0 · 📄 53 · 💡 0.
 
 **الحالة / status:** ✅ مُثبت (شُغّل فعلًا وله مسار دليل) · 🟢 جاهز (كود موجود يعمل بما هو متاح عادة) · 📦 بأمر تثبيت واحد · 🔑 يحتاج مفتاحًا أو حسابًا أو موصلًا · 👁 شوهد في فيديو مرجعي (للموشن فقط) · 📄 طريقة موثقة · 💡 فكرة. الشارة هي أدنى مستوى صادق — the badge is the lowest level that is true.
 مسارات الدليل نسبية إلى `/home/user/`؛ و`session-<date>:<file>#<section>` تشير إلى تشغيل موثق في جلسة سابقة؛ و`owner-upload:` إلى ملف داخل أرشيف أرسله المالك. Proof paths are relative to `/home/user/`.
@@ -29,6 +29,7 @@
 - **رندر Blender السينمائي (Blender 5.2.2 على الجهاز: REA + bpy، رندرات Cycles حقيقية) — Blender cinematic render** — APPX-114 … APPX-117 (4)
 - **MagicPath — منهج العمل مع التصميمات (أفكار من مهارة MIT بكلماتنا) — MagicPath agent-skills methods, MIT** — APPX-120 … APPX-131 (12)
 - **MagicPath — منهج اللوحة المشتركة (أفكار من الوثائق العامة بكلماتنا، بلا نص منسوخ) — MagicPath public-docs methods** — APPX-132 … APPX-139 (8)
+- **مونتاجي — محرر فيديو عربي للماك (دراسة قراءة فقط، أفكار بكلماتنا) — Montaji study** — APPX-140 … APPX-155 (16)
 - المصادر والرخص / sources & licences
 
 ## محررات الفيديو — CapCut وPremiere (مزايا موثّقة من البائع، وصفة مفتوحة مثبتة هنا) — video editors
@@ -1414,9 +1415,159 @@
 - **الدليل / proof:** `kosif-tool/.claude/skills/kosif-superpowers/references/app-studies/magicpath.md`
 - **المصدر / source:** MagicPath study 2026-10-20: magicpath.ai public documentation (proprietary); idea only, restated for KOSIF motion work
 
+## مونتاجي — محرر فيديو عربي للماك (دراسة قراءة فقط، أفكار بكلماتنا) — Montaji study
+
+#### APPX-140 · سطور ترجمة بقواعد قراءة · Caption lines with reading rules · ✅ مُثبت هنا / proven here
+- **ماذا / what:** يحوّل توقيت الكلمات إلى سطور ترجمة قصيرة مقروءة: حد للكلمات والحروف والمدة، وكسر عند الوقفة ونهاية الجملة (؟ ؛ . !) وعند الفاصلة بعد كلمتين، وسد الفجوات القصيرة، وحد أدنى للمدة بلا تداخل — word timings to readable SRT/VTT/JSON lines.
+- **متى أستخدمها / when:** ترجمة تلقائية لريل أو فيديو بعد التفريغ / auto captions after transcription
+- **كيف / how:** `python3 $SKILL_DIR/scripts/caption_lines.py group words.json -o captions.srt --rlm` (atlas words.json, whisper.cpp -oj, faster-whisper) **أرقام / params:** --max-words 4 --max-chars 32 --max-dur 3.2 --gap 0.6 --min-dur 0.4 --bridge 0.3 --rlm
+- **يحتاج / needs:** [`pip:faster-whisper`](../requirements.md#req-pip-faster-whisper)
+- **الرخصة / license:** recipe and code: owner (KOSIF); idea from Montaji (no licence, private) — idea only, no code copied
+- **الدليل / proof:** `kosif-tool/.claude/skills/kosif-superpowers/scripts/caption_lines.py` · `kosif-tool/.claude/skills/kosif-superpowers/evals/test_caption_lines.py` · `kosif-tool/.claude/skills/kosif-superpowers/references/app-studies/montaji.md`
+- **المصدر / source:** Montaji 1.0.0 macOS DMG shared by the owner, unpacked and read as text without running it (2026-10-23)
+
+#### APPX-141 · تنقية هلوسة نموذج التفريغ · Screen speech-model inventions · ✅ مُثبت هنا / proven here
+- **ماذا / what:** يحذف من الترجمة ما يخترعه نموذج الكلام فوق الصمت أو الموسيقى: حقوق الترجمة، و«اشتركوا في القناة»، و«شكرا للمشاهدة»، ووسوم الصوت، والنقط وحدها، وتكرار السطر نفسه ثلاث مرات — ويسرد المحذوف ليرجعه إنسان.
+- **متى أستخدمها / when:** بعد Whisper وقبل نشر الترجمة / after Whisper, before publishing captions
+- **كيف / how:** `caption_lines.py group … --keep-suspect` يعلّمها بدل حذفها؛ `caption_lines.py lint captions.srt` يفحص أي ملف ترجمة **أرقام / params:** --keep-suspect · lint --max-cps 17
+- **يحتاج / needs:** [`pip:faster-whisper`](../requirements.md#req-pip-faster-whisper)
+- **الرخصة / license:** recipe and code: owner (KOSIF); idea from Montaji (no licence, private) — idea only, no code copied
+- **الدليل / proof:** `kosif-tool/.claude/skills/kosif-superpowers/scripts/caption_lines.py` · `kosif-tool/.claude/skills/kosif-superpowers/evals/test_caption_lines.py` · `kosif-tool/.claude/skills/kosif-superpowers/references/app-studies/montaji.md`
+- **المصدر / source:** Montaji 1.0.0 macOS DMG shared by the owner, unpacked and read as text without running it (2026-10-23)
+
+#### APPX-142 · لوك ألوان واحد لكل المحركات · One colour look for every renderer · ✅ مُثبت هنا / proven here
+- **ماذا / what:** اللوك أرقام: خطوة خطية لكل قناة ثم مصفوفة 3×3، تخرج منها فلاتر ffmpeg (lutrgb + colorchannelmixer) وSVG/CSS وGLSL بالأرقام نفسها؛ 11 لوك (سينمائي، دافئ، أبيض وأسود، ليلي هادئ…) مع شدة وتعديل يدوي.
+- **متى أستخدمها / when:** تلوين فيديو مع معاينة في المتصفح تطابق التصدير / grade with a browser preview that matches the export
+- **كيف / how:** `python3 $SKILL_DIR/scripts/look_pipeline.py build --preset cinematic --amount 0.8 --target ffmpeg|svg|css|glsl|json` ; `apply in.mp4 out.mp4 --preset warm` **أرقام / params:** brightness contrast saturation temperature (-1..1) · fade sepia teal vignette (0..1)
+- **تثبيت / install:** `ffmpeg (apply/verify only)`
+- **يحتاج / needs:** [`ffmpeg`](../requirements.md#req-ffmpeg) · [`python3`](../requirements.md#req-python3)
+- **الرخصة / license:** recipe and code: owner (KOSIF); idea from Montaji (no licence, private) — idea only, no code copied
+- **الدليل / proof:** `kosif-tool/.claude/skills/kosif-superpowers/scripts/look_pipeline.py` · `kosif-tool/.claude/skills/kosif-superpowers/evals/test_look_pipeline.py` · `kosif-tool/.claude/skills/kosif-superpowers/references/app-studies/montaji.md`
+- **المصدر / source:** Montaji 1.0.0 macOS DMG shared by the owner, unpacked and read as text without running it (2026-10-23)
+
+#### APPX-143 · إثبات تطابق المعاينة والتصدير بالقياس · Measured preview/export colour parity · ✅ مُثبت هنا / proven here
+- **ماذا / what:** يمرّر إطار اختبار في ffmpeg ويقارن كل بكسل بالمعادلة المرجعية؛ أقصى فرق هنا 1 من 255 في كل اللوكات — قياس لا ادعاء.
+- **متى أستخدمها / when:** قبل الاعتماد على معاينة لون في محرر ويب / before trusting a web preview's colour
+- **كيف / how:** `python3 $SKILL_DIR/scripts/look_pipeline.py verify --all --tolerance 3` **أرقام / params:** --preset · --all · --tolerance
+- **تثبيت / install:** `ffmpeg`
+- **يحتاج / needs:** [`ffmpeg`](../requirements.md#req-ffmpeg) · [`python3`](../requirements.md#req-python3)
+- **الرخصة / license:** recipe and code: owner (KOSIF); idea from Montaji (no licence, private) — idea only, no code copied
+- **الدليل / proof:** `kosif-tool/.claude/skills/kosif-superpowers/scripts/look_pipeline.py` · `kosif-tool/.claude/skills/kosif-superpowers/evals/test_look_pipeline.py` · `kosif-tool/.claude/skills/kosif-superpowers/references/app-studies/montaji.md`
+- **المصدر / source:** Montaji 1.0.0 macOS DMG shared by the owner, unpacked and read as text without running it (2026-10-23)
+
+#### APPX-144 · مسار رئيسي مغناطيسي بانتقالات محسوبة · Magnetic main track with clamped transitions · 📄 موصوف / documented only
+- **ماذا / what:** اللقطات تتبع بعضها بلا فراغ؛ الانتقال يُخزَّن على اللقطة الخارجة ولا يزيد على نصف أي من الجارتين؛ في ffmpeg: xfade بإزاحة = الطول المتراكم − مدة الانتقال، وacrossfade للصوت، وconcat عند غياب الانتقال.
+- **متى أستخدمها / when:** تصدير تايملاين فيه انتقالات بين اللقطات / exporting a cut list with transitions
+- **كيف / how:** `[v0][v1]xfade=transition=fade:duration=T:offset=ACC-T` ثم ACC = ACC + dur − T؛ `[a0][a1]acrossfade=d=T`؛ قرّب كل الأزمنة لإطار (round(t·fps)/fps). الفجوة: kosif_timeline.py يدعم التلاشي بالشفافية فقط. **أرقام / params:** T ≤ min(dur_a, dur_b)/2
+- **تثبيت / install:** `ffmpeg`
+- **يحتاج / needs:** [`ffmpeg`](../requirements.md#req-ffmpeg) · [`python3`](../requirements.md#req-python3)
+- **الرخصة / license:** method idea from Montaji (no licence, private); idea only, in KOSIF's terms
+- **الدليل / proof:** `kosif-tool/.claude/skills/kosif-superpowers/references/app-studies/montaji.md`
+- **المصدر / source:** Montaji 1.0.0 macOS DMG shared by the owner, unpacked and read as text without running it (2026-10-23)
+
+#### APPX-145 · أي سرعة صوت بسلسلة atempo · Any audio speed with an atempo chain · 📄 موصوف / documented only
+- **ماذا / what:** atempo يقبل 0.5 إلى 100 فقط؛ قسّم المعامل إلى خطوات (0.25 = 0.5×0.5) ليبقى الصوت متزامنًا مع setpts للفيديو.
+- **متى أستخدمها / when:** تسريع أو إبطاء مقطع بصوته / speed change with sound
+- **كيف / how:** فيديو: `setpts=PTS/S`؛ صوت: كرر atempo=0.5 حتى يصبح الباقي ≥ 0.5 (و100 للأعلى) ثم atempo=الباقي. **أرقام / params:** S = speed
+- **تثبيت / install:** `ffmpeg`
+- **يحتاج / needs:** [`ffmpeg`](../requirements.md#req-ffmpeg)
+- **الرخصة / license:** method idea from Montaji (no licence, private); idea only, in KOSIF's terms
+- **الدليل / proof:** `kosif-tool/.claude/skills/kosif-superpowers/references/app-studies/montaji.md`
+- **المصدر / source:** Montaji 1.0.0 macOS DMG shared by the owner, unpacked and read as text without running it (2026-10-23)
+
+#### APPX-146 · خلفية مموهة رخيصة للمقاس العمودي · Cheap blurred background fill · 📄 موصوف / documented only
+- **ماذا / what:** لملء 9:16 بلقطة أفقية: صغّر نسخة إلى ربع المقاس، املأ وقص، طبّق gblur، ثم كبّر — أسرع بكثير من التمويه بالحجم الكامل والنتيجة نفسها بصريًا.
+- **متى أستخدمها / when:** فيديو أفقي في ريل عمودي / landscape clip in a vertical reel
+- **كيف / how:** `split[a][b];[b]scale=W/4:H/4:force_original_aspect_ratio=increase,crop=W/4:H/4,gblur=sigma=s,scale=W:H[bg];[bg][a]overlay=(W-w)/2:(H-h)/2` **أرقام / params:** sigma ≈ 3% of the short side / 4
+- **تثبيت / install:** `ffmpeg`
+- **يحتاج / needs:** [`ffmpeg`](../requirements.md#req-ffmpeg)
+- **الرخصة / license:** method idea from Montaji (no licence, private); idea only, in KOSIF's terms
+- **الدليل / proof:** `kosif-tool/.claude/skills/kosif-superpowers/references/app-studies/montaji.md`
+- **المصدر / source:** Montaji 1.0.0 macOS DMG shared by the owner, unpacked and read as text without running it (2026-10-23)
+
+#### APPX-147 · نص عربي مرسوم بوحدات مرجعية · Arabic text raster in reference units · 📄 موصوف / documented only
+- **ماذا / what:** ارسم النص في المتصفح (تشكيل عربي صحيح وحدّ وظل وخلفية مستديرة) بقياسات مرجعية للضلع القصير 1080 ثم كبّر مرة واحدة، فتبقى فواصل الأسطر واحدة في كل مقاس؛ قص الصورة على حدود النص بعد الدوران، ودع ffmpeg يحرّكها ويخفيها بتعابير تطابق منحنى المعاينة.
+- **متى أستخدمها / when:** نصوص عربية في فيديو مصدَّر بمقاسات مختلفة / Arabic titles exported at several sizes
+- **كيف / how:** Canvas: layout at short=1080, ctx.scale(k); export PNG cropped to rotated bounds; ffmpeg `loop`, `fade=alpha=1`, `overlay=x='X+dx*pow(1-p,2)'`. انظر playbooks/arabic-typography.md. **أرقام / params:** k = short side / 1080
+- **يحتاج / needs:** [`ffmpeg`](../requirements.md#req-ffmpeg)
+- **الرخصة / license:** method idea from Montaji (no licence, private); idea only, in KOSIF's terms
+- **الدليل / proof:** `kosif-tool/.claude/skills/kosif-superpowers/references/app-studies/montaji.md`
+- **المصدر / source:** Montaji 1.0.0 macOS DMG shared by the owner, unpacked and read as text without running it (2026-10-23)
+
+#### APPX-148 · تجهيز الوسائط لمحرر · Media prep for an editor · 📄 موصوف / documented only
+- **ماذا / what:** عند الاستيراد: افحص بـ ffprobe (الدوران 90° يبدّل العرض والارتفاع)، صورة غلاف عند 10% (حتى ثانية)، شريط مصغرات من لقطات بحث سريع على دفعات ثم tile، غلاف موجة 50 قيمة/ث بجذر تربيعي، وبروكسي فقط إذا كان الترميز أو صيغة البكسل أو الحاوية لا تعمل في المتصفح.
+- **متى أستخدمها / when:** بناء تايملاين أو واجهة مونتاج / building a timeline UI
+- **كيف / how:** `-noaccurate_seek -ss t -i src` × 8 per call → `tile=Nx1`؛ peaks: s16le 4 kHz → max per 80 samples → sqrt(v/max)·255؛ proxy if not (h264|hevc|vp9|av1 in yuv420p in mp4/mov/webm).
+- **تثبيت / install:** `ffmpeg`
+- **يحتاج / needs:** [`ffmpeg`](../requirements.md#req-ffmpeg)
+- **الرخصة / license:** method idea from Montaji (no licence, private); idea only, in KOSIF's terms
+- **الدليل / proof:** `kosif-tool/.claude/skills/kosif-superpowers/references/app-studies/montaji.md`
+- **المصدر / source:** Montaji 1.0.0 macOS DMG shared by the owner, unpacked and read as text without running it (2026-10-23)
+
+#### APPX-149 · ترميز بالعتاد مع رجوع للبرمجي · Hardware encoder with software fallback · 📄 موصوف / documented only
+- **ماذا / what:** جرّب مرمّز العتاد أولًا (VideoToolbox/NVENC) بمعدل بت = بت لكل بكسل × العرض × الارتفاع × الإطارات، وإن فشل فتح المرمّز أعد المحاولة بـ libx264/libx265 بـ CRF؛ احذف الملف الناقص عند الفشل.
+- **متى أستخدمها / when:** تصدير سريع على أجهزة مختلفة / fast export on unknown machines
+- **كيف / how:** bpp: normal 0.07 · high 0.12 · max 0.2 (H.264)، HEVC × 0.65؛ retry only on encoder-open errors; `-movflags +faststart`.
+- **تثبيت / install:** `ffmpeg`
+- **يحتاج / needs:** [`ffmpeg`](../requirements.md#req-ffmpeg)
+- **الرخصة / license:** method idea from Montaji (no licence, private); idea only, in KOSIF's terms
+- **الدليل / proof:** `kosif-tool/.claude/skills/kosif-superpowers/references/app-studies/montaji.md`
+- **المصدر / source:** Montaji 1.0.0 macOS DMG shared by the owner, unpacked and read as text without running it (2026-10-23)
+
+#### APPX-150 · خادم محلي آمن لأداة مونتاج · A safe local editor server · 📄 موصوف / documented only
+- **ماذا / what:** لأي أداة تفتح واجهة على localhost: استمع على 127.0.0.1 فقط، اقبل Host معروفًا فقط (ضد DNS rebinding)، واطلب رأسًا خاصًا في كل طلب يغيّر شيئًا ليجبر المتصفح على preflight فلا تتحكم مواقع أخرى بالأداة، وطبّع المسارات، وتحقق من المعرّفات بنمط، واخرج عند الخمول أو موت العملية الأم.
+- **متى أستخدمها / when:** عند بناء أداة ويب محلية / building any loopback web tool
+- **كيف / how:** checklist: bind 127.0.0.1 · Host allowlist · X-<app>: 1 on non-GET · path.normalize + prefix check · id regex · idle exit · ppid==1 exit.
+- **الرخصة / license:** method idea from Montaji (no licence, private); idea only, in KOSIF's terms
+- **الدليل / proof:** `kosif-tool/.claude/skills/kosif-superpowers/references/app-studies/montaji.md`
+- **المصدر / source:** Montaji 1.0.0 macOS DMG shared by the owner, unpacked and read as text without running it (2026-10-23)
+
+#### APPX-151 · تنزيل نماذج موثَّق · Verified model downloads · 📄 موصوف / documented only
+- **ماذا / what:** نزّل النموذج إلى ملف .part مع تقدم مرئي وإلغاء، احسب SHA-256 أثناء التنزيل وقارنه ببصمة مثبتة، ثم أعد التسمية ذريًا؛ مرآة محلية للاختبارات فقط.
+- **متى أستخدمها / when:** أول استعمال لنموذج ذكاء اصطناعي محلي / first use of a local AI model
+- **كيف / how:** stream → hashlib.sha256().update(chunk) → compare → os.replace(part, final); remove .part on error or cancel.
+- **يحتاج / needs:** [`network`](../requirements.md#req-network)
+- **الرخصة / license:** method idea from Montaji (no licence, private); idea only, in KOSIF's terms
+- **الدليل / proof:** `kosif-tool/.claude/skills/kosif-superpowers/references/app-studies/montaji.md`
+- **المصدر / source:** Montaji 1.0.0 macOS DMG shared by the owner, unpacked and read as text without running it (2026-10-23)
+
+#### APPX-152 · تراجع يجمع سحب المنزلقات · Undo that groups slider drags · 📄 موصوف / documented only
+- **ماذا / what:** كل تعديل يمر بدالة واحدة تحفظ لقطة JSON (حتى 150)؛ التعديلات المتتالية بالمفتاح نفسه خلال ثانية ونصف خطوة واحدة؛ حفظ تلقائي مؤجل 0.7 ث بكتابة ذرية ونسخة .bak.
+- **متى أستخدمها / when:** محرر تفاعلي أو ملف مشروع يُعدَّل كثيرًا / interactive editors
+- **كيف / how:** change(fn, {merge:key}) → push snapshot unless same key within 1.5 s; save: write tmp → rename; keep project.json.bak.
+- **الرخصة / license:** method idea from Montaji (no licence, private); idea only, in KOSIF's terms
+- **الدليل / proof:** `kosif-tool/.claude/skills/kosif-superpowers/references/app-studies/montaji.md`
+- **المصدر / source:** Montaji 1.0.0 macOS DMG shared by the owner, unpacked and read as text without running it (2026-10-23)
+
+#### APPX-153 · اختبار ذاتي داخل المضيف الحقيقي · Self-test inside the real host · 📄 موصوف / documented only
+- **ماذا / what:** افتح الواجهة بمعامل selftest فتجري خطوات حقيقية (لون، نص عربي، مشروع، استيراد، فك ترميز، فلتر، تصدير، ترجمة) داخل المتصفح الفعلي، كل خطوة ok/error، مع فحص بكسلات (نسبة الإضاءة، رمادية الأبيض والأسود)، ويُكتب التقرير إلى ملف.
+- **متى أستخدمها / when:** قبل تسليم أداة تعمل في WebKit أو Chromium / before shipping a web-view tool
+- **كيف / how:** ?selftest=1 → steps → JSON report → POST to a local file; pixel probes: lit ratio > 0.2, |r−g|<4 for mono.
+- **الرخصة / license:** method idea from Montaji (no licence, private); idea only, in KOSIF's terms
+- **الدليل / proof:** `kosif-tool/.claude/skills/kosif-superpowers/references/app-studies/montaji.md`
+- **المصدر / source:** Montaji 1.0.0 macOS DMG shared by the owner, unpacked and read as text without running it (2026-10-23)
+
+#### APPX-154 · ذاكرة وسائط بالمحتوى واستئناف · Content-addressed media cache with resume · 📄 موصوف / documented only
+- **ماذا / what:** معرّف الوسائط = بصمة (المسار، الحجم، وقت التعديل)، فلا يُعاد تجهيز ملف لم يتغير؛ طابور عمل باثنين معًا، ويستأنف عند التشغيل التالي ما انقطع؛ الأصل لا يُنسخ ولا يُعدَّل.
+- **متى أستخدمها / when:** استيراد ملفات كثيرة أو كبيرة / importing many or large files
+- **كيف / how:** id = sha1(f'{path}|{size}|{mtime}')[:16]; index.json written atomically and debounced; on start re-queue status=processing.
+- **الرخصة / license:** method idea from Montaji (no licence, private); idea only, in KOSIF's terms
+- **الدليل / proof:** `kosif-tool/.claude/skills/kosif-superpowers/references/app-studies/montaji.md`
+- **المصدر / source:** Montaji 1.0.0 macOS DMG shared by the owner, unpacked and read as text without running it (2026-10-23)
+
+#### APPX-155 · تفريغ عربي محلي بلا إنترنت · Offline Arabic speech stack · 📄 موصوف / documented only
+- **ماذا / what:** whisper.cpp مع large-v3-turbo-q5_0 (574 ميجا، الأدق للعربي) أو small-q5_1 (190 ميجا) وSilero VAD، بكلمة لكل مدخل؛ يُمزج صوت التايملاين إلى 16 كيلوهرتز أحادي قبل التفريغ.
+- **متى أستخدمها / when:** ترجمة عربية على الجهاز / Arabic captions on the device
+- **كيف / how:** `whisper-cli -m ggml-large-v3-turbo-q5_0.bin -f audio.wav -l ar -ml 1 -sow -oj --vad -vm ggml-silero-v5.1.2.bin` ثم `caption_lines.py group audio.json -o captions.srt`. **أرقام / params:** -l ar -ml 1 -sow -oj --vad
+- **تثبيت / install:** `whisper.cpp (MIT) + models from huggingface.co/ggerganov/whisper.cpp`
+- **يحتاج / needs:** [`pip:faster-whisper`](../requirements.md#req-pip-faster-whisper) · [`network`](../requirements.md#req-network)
+- **الرخصة / license:** method idea from Montaji (no licence, private); idea only, in KOSIF's terms
+- **الدليل / proof:** `kosif-tool/.claude/skills/kosif-superpowers/references/app-studies/montaji.md`
+- **المصدر / source:** Montaji 1.0.0 macOS DMG shared by the owner, unpacked and read as text without running it (2026-10-23)
+
 ## المصادر والرخص / sources & licences
 
-- الرخص / licences: recipe: owner (KOSIF); the tools keep their own licenses (115) · method idea from MagicPathAI/agent-skills (MIT per its plugin manifests; author MagicPath); close paraphrase, credited (11) · method idea inspired by MagicPath public docs (proprietary); idea only, in KOSIF's terms (8) · recipe: owner (KOSIF); Blender is GPL-2.0-or-later (run as a tool, not linked) (4) · method idea from MagicPathAI/agent-skills (MIT per its plugin manifests) plus MagicPath public docs (idea only); KOSIF wording (1)
+- الرخص / licences: recipe: owner (KOSIF); the tools keep their own licenses (115) · method idea from Montaji (no licence, private); idea only, in KOSIF's terms (12) · method idea from MagicPathAI/agent-skills (MIT per its plugin manifests; author MagicPath); close paraphrase, credited (11) · method idea inspired by MagicPath public docs (proprietary); idea only, in KOSIF's terms (8) · recipe and code: owner (KOSIF); idea from Montaji (no licence, private) — idea only, no code copied (4) · recipe: owner (KOSIF); Blender is GPL-2.0-or-later (run as a tool, not linked) (4) · method idea from MagicPathAI/agent-skills (MIT per its plugin manifests) plus MagicPath public docs (idea only); KOSIF wording (1)
 - الأفكار مكتوبة بكلماتنا مع رابط المصدر؛ لا يُنسخ نص طرف ثالث طويل. Ideas are paraphrased with a link to the source; no long third-party text is copied. `—` = no licence recorded (own method or own wording).
 
 ---

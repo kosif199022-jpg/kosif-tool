@@ -471,20 +471,20 @@
  },
  "counts": {
   "broken_links": 0,
-  "evals": 96,
+  "evals": 98,
   "families": 62,
   "gaps": {
    "family_without_tool": 21
   },
-  "powers": 5496,
-  "py_edges": 257,
+  "powers": 5512,
+  "py_edges": 259,
   "repo_tests": 35,
   "roles": {
    "helper": 2,
-   "registered": 127
+   "registered": 129
   },
-  "scripts": 129,
-  "tools": 145
+  "scripts": 131,
+  "tools": 147
  },
  "families": [
   {
@@ -509,8 +509,8 @@
   },
   {
    "id": "app-feature-transfer",
-   "powers": 139,
-   "tools": 7
+   "powers": 155,
+   "tools": 9
   },
   {
    "id": "apps-artifacts",
@@ -570,7 +570,7 @@
   {
    "id": "audio-sync-captions",
    "powers": 61,
-   "tools": 21
+   "tools": 22
   },
   {
    "id": "brand-logo-identity",
@@ -600,7 +600,7 @@
   {
    "id": "color-palette-grading",
    "powers": 87,
-   "tools": 6
+   "tools": 7
   },
   {
    "id": "creativity-engine",
@@ -685,7 +685,7 @@
   {
    "id": "photo-video-footage",
    "powers": 71,
-   "tools": 21
+   "tools": 22
   },
   {
    "id": "pixel-retro-stylized",
@@ -760,7 +760,7 @@
   {
    "id": "typography-arabic",
    "powers": 99,
-   "tools": 10
+   "tools": 11
   },
   {
    "id": "typography-latin",
@@ -1650,6 +1650,11 @@
    "to": "reference_visual_fingerprint"
   },
   {
+   "from": "test_caption_lines",
+   "kind": "imports",
+   "to": "caption_lines"
+  },
+  {
    "from": "test_catalog_evidence_audit",
    "kind": "imports",
    "to": "catalog_evidence_audit"
@@ -1813,6 +1818,11 @@
    "from": "test_local_project_audit",
    "kind": "imports",
    "to": "local_project_audit"
+  },
+  {
+   "from": "test_look_pipeline",
+   "kind": "imports",
+   "to": "look_pipeline"
   },
   {
    "from": "test_montage_pro",
@@ -3412,6 +3422,24 @@
   },
   {
    "ci": false,
+   "id": "caption_lines",
+   "imported_by": [],
+   "path": "scripts/caption_lines.py",
+   "power_count": 2,
+   "powers": [
+    "APPX-140",
+    "APPX-141"
+   ],
+   "role": "registered",
+   "tests": [
+    "evals/test_caption_lines.py"
+   ],
+   "tools": [
+    "caption-lines"
+   ]
+  },
+  {
+   "ci": false,
    "id": "catalog_evidence_audit",
    "imported_by": [],
    "path": "scripts/catalog_evidence_audit.py",
@@ -4065,6 +4093,24 @@
    ],
    "tools": [
     "local-project-audit"
+   ]
+  },
+  {
+   "ci": false,
+   "id": "look_pipeline",
+   "imported_by": [],
+   "path": "scripts/look_pipeline.py",
+   "power_count": 2,
+   "powers": [
+    "APPX-142",
+    "APPX-143"
+   ],
+   "role": "registered",
+   "tests": [
+    "evals/test_look_pipeline.py"
+   ],
+   "tools": [
+    "look-pipeline"
    ]
   },
   {
@@ -5124,18 +5170,18 @@
    "assets": 4,
    "data": 118,
    "dua-wednesday": 10,
-   "evals": 89,
+   "evals": 91,
    "examples": 12,
    "montage-pro": 2,
    "proofs": 239,
-   "references": 217,
+   "references": 218,
    "resources": 3,
    "schemas": 5,
-   "scripts": 160,
+   "scripts": 162,
    "templates": 16,
    "vendor": 76
   },
-  "bytes": 55636565,
+  "bytes": 55783174,
   "extensions": {
    "(none)": 8,
    ".bru": 7,
@@ -5144,16 +5190,16 @@
    ".jpg": 23,
    ".js": 14,
    ".json": 174,
-   ".md": 332,
+   ".md": 333,
    ".mjs": 9,
    ".png": 6,
-   ".py": 271,
+   ".py": 275,
    ".sh": 5,
    ".ttf": 14,
    ".txt": 54,
    ".woff2": 8
   },
-  "files": 959,
+  "files": 964,
   "symlinks": 0
  }
 }

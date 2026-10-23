@@ -1,4 +1,4 @@
-# أدوات المجال `edit` (13 أداة)
+# أدوات المجال `edit` (14 أداة)
 
 > مولّد من `data/tools.json`. [الفهرس الرئيسي](../README.md) · `python3 scripts/hub.py tool <id>` للبطاقة الحية.
 
@@ -290,6 +290,53 @@
 #### عند الفشل (A29)
 
 - ابدأ بـ `think.py recover --message "<نص الخطأ>"`، ثم سجّل `fusionforge.py trace --project <slug> --id <FUSE-ID> --stage <stage> --node <N> --action "<ما جُرّب>" --result failed --error-class <الصنف> --tool tool:kosif-timeline-demo --evidence <ملف>`.
+
+### `look-pipeline` — خط اللوك: تلوين واحد لـ ffmpeg وSVG وGLSL / Look pipeline: one colour grade for ffmpeg, SVG/CSS and GLSL
+
+| الحقل | القيمة |
+|---|---|
+| المسار | `scripts/look_pipeline.py` (جذر: skill) |
+| المجال | `edit` |
+| الدليل | `tested-here` |
+| العائلات | `color-palette-grading`, `app-feature-transfer`, `photo-video-footage` |
+
+**ما تفعله:** كُتبت بعد دراسة «مونتاجي»: 11 لوكًا وثمانية معاملات تصبح خطوة خطية ومصفوفة 3×3، تخرج بالأرقام نفسها لـ ffmpeg وSVG وCSS وGLSL فتتطابق المعاينة والتصدير؛ verify يقيس الفرق بكسلًا بكسلًا، وapply يلوّن فيديو في ملف جديد.
+
+**What it does:** Written after a read-only study of the Montaji Arabic video editor: eleven colour looks (natural, vivid, bright, warm, cool, cinematic, vintage, faded, dramatic, mono, night-dua) and eight parameters become one per-channel affine step plus one 3x3 matrix, emitted with the same numbers as an ffmpeg chain (lutrgb + colorchannelmixer + vignette), an SVG filter, CSS and a GLSL shader. verify pushes a test frame through ffmpeg and compares every pixel with the reference maths; apply grades a video into a new file.
+
+#### متى تُستدعى
+
+- «لوّن الفيديو ده لوك سينمائي وخلي المعاينة زي التصدير»
+- «Give me the same warm grade as an ffmpeg filter and a CSS filter»
+- «Check that my web preview colour matches the exported MP4»
+- «عايز فلتر أبيض وأسود للفيديو»
+
+#### الأوامر
+
+- **presets**: The eleven looks and their parameters.
+  - `python3 scripts/look_pipeline.py presets`
+- **build**: Emit one look for ffmpeg, svg, css, glsl or json, with --set overrides.
+  - `python3 scripts/look_pipeline.py build --preset cinematic --amount 0.8 --target ffmpeg`
+- **verify**: ffmpeg output vs the reference maths on a 64x36 test frame; exits 1 above the tolerance.
+  - `python3 scripts/look_pipeline.py verify --all`
+- **apply**: Grade a video into a new H.264 file, audio copied; refuses to overwrite.
+  - `python3 scripts/look_pipeline.py apply in.mp4 graded.mp4 --preset warm --amount 0.6`
+
+#### المتطلبات والأمان
+
+- binaries: ffmpeg
+- الأمان: writes-files
+- الموافقة: apply writes a new file next to the user's media and never overwrites the source.
+- الحدود: Per-pixel looks only (no curves, LUT files or skin masks); vignette is emitted for every renderer but left out of the parity check; SVG and GLSL parity follow from the same numbers and are not rendered here.
+
+#### الاختبارات والأدلة
+
+- `.claude/skills/kosif-superpowers/evals/test_look_pipeline.py`
+- مرجع: `.claude/skills/kosif-superpowers/references/app-studies/montaji.md`
+
+#### عند الفشل (A29)
+
+- ابدأ بـ `think.py recover --message "<نص الخطأ>"`، ثم سجّل `fusionforge.py trace --project <slug> --id <FUSE-ID> --stage <stage> --node <N> --action "<ما جُرّب>" --result failed --error-class <الصنف> --tool tool:look-pipeline --evidence <ملف>`.
 
 ### `mimic` — محرك محاكاة الفيديو المرجعي / KOSIF Mimic reference rebuilder
 

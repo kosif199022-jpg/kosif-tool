@@ -1,4 +1,4 @@
-# أدوات المجال `audio` (3 أداة)
+# أدوات المجال `audio` (4 أداة)
 
 > مولّد من `data/tools.json`. [الفهرس الرئيسي](../README.md) · `python3 scripts/hub.py tool <id>` للبطاقة الحية.
 
@@ -52,6 +52,48 @@
 #### عند الفشل (A29)
 
 - ابدأ بـ `think.py recover --message "<نص الخطأ>"`، ثم سجّل `fusionforge.py trace --project <slug> --id <FUSE-ID> --stage <stage> --node <N> --action "<ما جُرّب>" --result failed --error-class <الصنف> --tool tool:audio-cue-mapper --evidence <ملف>`.
+
+### `caption-lines` — سطور الترجمة: من توقيت الكلمات إلى ترجمة مقروءة / Caption lines: word timings to readable SRT/VTT
+
+| الحقل | القيمة |
+|---|---|
+| المسار | `scripts/caption_lines.py` (جذر: skill) |
+| المجال | `audio` |
+| الدليل | `tested-here` |
+| العائلات | `audio-sync-captions`, `app-feature-transfer`, `typography-arabic` |
+
+**ما تفعله:** كُتبت بعد دراسة «مونتاجي»: تقسم توقيت الكلمات إلى سطور ترجمة قصيرة بحد للكلمات والحروف والمدة، وتكسر عند الوقفة ونهاية الجملة والفاصلة، وتسد الفجوات القصيرة، وتضيف علامة الاتجاه للعربي، وتحذف ما يخترعه نموذج التفريغ مثل «ترجمة نانسي» و«اشتركوا في القناة» مع سرده؛ وlint يفحص أي ملف ترجمة.
+
+**What it does:** Written after a read-only study of the Montaji Arabic video editor: groups word timings (atlas words.json, whisper.cpp -oj or faster-whisper JSON) into short caption lines by word count, characters, time on screen, pauses, sentence ends (including ؟ and ؛) and commas; closes short holes, extends short lines only into silence, can add a right-to-left mark for Arabic, and drops and lists phrases speech models invent (subtitle credits, subscribe outros, sound tags, punctuation-only and looping lines). lint checks any SRT/VTT/JSON for overlaps, durations, reading speed and the same phrases.
+
+#### متى تُستدعى
+
+- «قسّم التفريغ ده لسطور ترجمة قصيرة SRT»
+- «Turn these Whisper word timestamps into readable captions»
+- «نظّف الترجمة من الهلوسة زي ترجمة نانسي واشتركوا في القناة»
+- «Lint this SRT for overlaps and reading speed»
+
+#### الأوامر
+
+- **group**: Words to SRT, VTT or JSON lines; reports the suspect lines it dropped.
+  - `python3 scripts/caption_lines.py group words.json -o captions.srt --rlm`
+- **lint**: Overlaps, too-short lines, reading speed above 17 chars/s and suspect phrases; exits 1 on any issue.
+  - `python3 scripts/caption_lines.py lint captions.srt`
+
+#### المتطلبات والأمان
+
+- الأمان: writes-files
+- الموافقة: Reads and writes local files only; captions of someone else's speech follow the media's rights.
+- الحدود: Does not transcribe: pair it with whisper.cpp or faster-whisper. The suspect-phrase list is short and generic, so a real spoken 'subscribe' is dropped too (use --keep-suspect). Line breaking counts characters, not rendered width.
+
+#### الاختبارات والأدلة
+
+- `.claude/skills/kosif-superpowers/evals/test_caption_lines.py`
+- مرجع: `.claude/skills/kosif-superpowers/references/app-studies/montaji.md`
+
+#### عند الفشل (A29)
+
+- ابدأ بـ `think.py recover --message "<نص الخطأ>"`، ثم سجّل `fusionforge.py trace --project <slug> --id <FUSE-ID> --stage <stage> --node <N> --action "<ما جُرّب>" --result failed --error-class <الصنف> --tool tool:caption-lines --evidence <ملف>`.
 
 ### `music-rhythm-engine` — فرضيات إيقاع الموسيقى / Music rhythm hypotheses
 

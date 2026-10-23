@@ -2184,6 +2184,47 @@
     ],
     "top_k": 8
    }
+  },
+  {
+   "id": 102,
+   "lang": "ar",
+   "domain": "build",
+   "skills": [
+    "kosif-superpowers"
+   ],
+   "query": "قسّم تفريغ ويسبر لسطور ترجمة قصيرة واحذف الهلوسة زي ترجمة نانسي",
+   "files": [],
+   "expected_behavior": [
+    "Uses caption-lines (APPX-140/141): group words.json into SRT and report dropped suspect lines, then lint the result"
+   ],
+   "routing": {
+    "expect_any": [
+     "APPX",
+     "TOOL",
+     "SYNC"
+    ],
+    "top_k": 8
+   }
+  },
+  {
+   "id": 103,
+   "lang": "en",
+   "domain": "build",
+   "skills": [
+    "kosif-superpowers"
+   ],
+   "query": "give me one cinematic colour look that matches in the browser preview and the ffmpeg export",
+   "files": [],
+   "expected_behavior": [
+    "Uses look-pipeline (APPX-142/143): build the look for svg/css and ffmpeg, then verify parity"
+   ],
+   "routing": {
+    "expect_any": [
+     "APPX",
+     "TOOL"
+    ],
+    "top_k": 8
+   }
   }
  ]
 }

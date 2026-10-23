@@ -14,9 +14,9 @@
 
 | # | requirement | kind | powers unlocked | families | here now |
 |---|---|---|---|---|---|
-| 1 | [`python3`](#req-python3) | bin | 684 | engines-render-pipeline, qa-verification, mental-models, runnable-tools, music-beat-sound |  |
+| 1 | [`python3`](#req-python3) | bin | 687 | engines-render-pipeline, qa-verification, mental-models, runnable-tools, music-beat-sound |  |
 | 2 | [`npm:hyperframes`](#req-npm-hyperframes) | npm | 461 | transitions-cuts, engines-render-pipeline, camera-composition-layout, typography-latin, qa-verification |  |
-| 3 | [`ffmpeg`](#req-ffmpeg) | bin | 424 | engines-render-pipeline, qa-verification, transitions-cuts, music-beat-sound, photo-video-footage |  |
+| 3 | [`ffmpeg`](#req-ffmpeg) | bin | 432 | engines-render-pipeline, qa-verification, transitions-cuts, music-beat-sound, app-feature-transfer |  |
 | 4 | [`chromium`](#req-chromium) | bin | 353 | engines-render-pipeline, software-investigation, app-feature-transfer, qa-verification, transitions-cuts |  |
 | 5 | [`npm:rea`](#req-npm-rea) | npm | 270 | software-investigation, runnable-tools, app-feature-transfer, verification-evals |  |
 | 6 | [`npm:gsap`](#req-npm-gsap) | npm | 238 | transitions-cuts, engines-render-pipeline, camera-composition-layout, easing-timing-rhythm, typography-latin |  |
@@ -33,18 +33,18 @@
 | 17 | [`claude:tools`](#req-claude-tools) | service | 74 | agent-orchestration, thinking-core, atlas-mind, atlas-code, self-discovery |  |
 | 18 | [`key:video-gen`](#req-key-video-gen) | service | 66 | ai-generation, music-beat-sound, camera-composition-layout, atlas-strategy, prompt-craft |  |
 | 19 | [`npm:react`](#req-npm-react) | npm | 55 | engines-render-pipeline, atlas-code, transitions-cuts, atlas-build, 3d-spatial |  |
-| 20 | [`git`](#req-git) | bin | 49 | atlas-code, agent-orchestration, atlas-mind, atlas-docs, code-engineering |  |
-| 21 | [`pip:faster-whisper`](#req-pip-faster-whisper) | model | 48 | audio-sync-captions, qa-verification, engines-render-pipeline, photo-video-footage, runnable-tools |  |
+| 20 | [`pip:faster-whisper`](#req-pip-faster-whisper) | model | 51 | audio-sync-captions, qa-verification, app-feature-transfer, engines-render-pipeline, photo-video-footage |  |
+| 21 | [`git`](#req-git) | bin | 49 | atlas-code, agent-orchestration, atlas-mind, atlas-docs, code-engineering |  |
 | 22 | [`pip:office`](#req-pip-office) | pip | 39 | documents-office, atlas-docs, self-discovery, app-feature-transfer, arabic-language |  |
 | 23 | [`os:macos`](#req-os-macos) | os | 37 | software-investigation, ui-product-device, atlas-code, engines-render-pipeline, atlas-build |  |
 | 24 | [`engine:android`](#req-engine-android) | bin | 36 | software-investigation, runnable-tools |  |
 | 25 | [`npm:axe`](#req-npm-axe) | npm | 26 | qa-verification, atlas-build, atlas-code, color-palette-grading, app-feature-transfer |  |
 | 26 | [`npm:esbuild`](#req-npm-esbuild) | npm | 25 | engines-render-pipeline, light-glow-bloom, particles-fluids-physics, texture-material, atlas-code |  |
-| 27 | [`blender`](#req-blender) | apt | 23 | runnable-tools, app-feature-transfer, engines-render-pipeline, 3d-spatial, self-discovery |  |
-| 28 | [`engine:wakaru`](#req-engine-wakaru) | bin | 23 | software-investigation |  |
-| 29 | [`npm:mermaid`](#req-npm-mermaid) | npm | 22 | atlas-docs, atlas-code, diagrams-explainers-code, atlas-craft, knowledge-graph |  |
-| 30 | [`key:graphify`](#req-key-graphify) | service | 22 | knowledge-graph, code-engineering, agent-orchestration, runnable-tools, security-safety |  |
-| 31 | [`network`](#req-network) | os | 22 | self-discovery, audio-sync-captions, web-research, media-image-audio, security-safety |  |
+| 27 | [`network`](#req-network) | os | 24 | self-discovery, audio-sync-captions, web-research, app-feature-transfer, media-image-audio |  |
+| 28 | [`blender`](#req-blender) | apt | 23 | runnable-tools, app-feature-transfer, engines-render-pipeline, 3d-spatial, self-discovery |  |
+| 29 | [`engine:wakaru`](#req-engine-wakaru) | bin | 23 | software-investigation |  |
+| 30 | [`npm:mermaid`](#req-npm-mermaid) | npm | 22 | atlas-docs, atlas-code, diagrams-explainers-code, atlas-craft, knowledge-graph |  |
+| 31 | [`key:graphify`](#req-key-graphify) | service | 22 | knowledge-graph, code-engineering, agent-orchestration, runnable-tools, security-safety |  |
 | 32 | [`npm:bruno`](#req-npm-bruno) | npm | 22 | api-testing |  |
 | 33 | [`tesseract`](#req-tesseract) | apt | 21 | media-image-audio, arabic-language, other, self-discovery, ai-generation |  |
 | 34 | [`pip:scipy`](#req-pip-scipy) | pip | 20 | transitions-cuts, data-analysis, music-beat-sound, self-discovery, atlas-media |  |
@@ -145,9 +145,9 @@
 
 - **النوع / kind:** bin (أداة)
 - **التثبيت / install:** `apt-get install -y python3 python3-pip python3-venv`
-- **يفتح / unlocks:** 684 powers
-- **بالحالة / by status:** proven 240 · documented 185 · ready 143 · install 100 · key 13 · seen 3
-- **العائلات / families:** engines-render-pipeline (97), qa-verification (79), mental-models (61), runnable-tools (57), music-beat-sound (45), app-feature-transfer (24), atlas-code (18), photo-video-footage (16)
+- **يفتح / unlocks:** 687 powers
+- **بالحالة / by status:** proven 242 · documented 186 · ready 143 · install 100 · key 13 · seen 3
+- **العائلات / families:** engines-render-pipeline (97), qa-verification (79), mental-models (61), runnable-tools (57), music-beat-sound (45), app-feature-transfer (27), atlas-code (18), photo-video-footage (16)
 - **أمثلة / examples:** `ANLY-08` statsmodels OLS and time-series models · `ANLY-14` altair / Vega-Lite chart specs · `ANLY-17` Gradient boosting (XGBoost, LightGBM) · `ANLY-21` Convex optimisation with cvxpy · `ANLY-23` Graph algorithms with networkx · `APP-06` HTML to MP4 renderer (repo tool)
 
 <a id="req-npm-hyperframes"></a>
@@ -165,9 +165,9 @@
 
 - **النوع / kind:** bin (أداة)
 - **التثبيت / install:** `apt-get install -y ffmpeg  (or: conda install ffmpeg)`
-- **يفتح / unlocks:** 424 powers
-- **بالحالة / by status:** documented 152 · proven 126 · ready 71 · install 52 · key 10 · seen 9 · idea 4
-- **العائلات / families:** engines-render-pipeline (68), qa-verification (63), transitions-cuts (54), music-beat-sound (49), photo-video-footage (22), app-feature-transfer (19), color-palette-grading (15), formats-platforms (14)
+- **يفتح / unlocks:** 432 powers
+- **بالحالة / by status:** documented 158 · proven 128 · ready 71 · install 52 · key 10 · seen 9 · idea 4
+- **العائلات / families:** engines-render-pipeline (68), qa-verification (63), transitions-cuts (54), music-beat-sound (49), app-feature-transfer (27), photo-video-footage (22), color-palette-grading (15), formats-platforms (14)
 - **أمثلة / examples:** `APPX-01` Speed curve (ramp) · `APPX-02` Chroma key · `APPX-03` Auto reframe to 9:16 · `APPX-04` Scene edit detection · `APPX-05` Loudness normalisation (-14 LUFS) · `APPX-06` Colour look from a .cube LUT
 
 <a id="req-chromium"></a>
@@ -330,6 +330,16 @@
 - **العائلات / families:** engines-render-pipeline (17), atlas-code (7), transitions-cuts (4), atlas-build (3), 3d-spatial (2), apps-artifacts (2), atlas-media (2), music-beat-sound (2)
 - **أمثلة / examples:** `DATA-92` Chart palettes (categorical, sequential, semanti · `TOOL-17` Third-party motion engine scaffolder · `TOOL-22` Reference Edit Engine · `TRANS-07` Scene enter on view change · `3D-16` Remotion ThreeCanvas · `3D-17` Portals & render-to-texture
 
+<a id="req-pip-faster-whisper"></a>
+### `pip:faster-whisper` — تفريغ الصوت مع توقيت كل كلمة (عربي) / speech-to-text with word timestamps (Arabic)
+
+- **النوع / kind:** model (نموذج/أوزان)
+- **التثبيت / install:** `pip install faster-whisper  (models from huggingface.co: small 466 MB, large-v3 3.1 GB; CPU works)`
+- **يفتح / unlocks:** 51 powers
+- **بالحالة / by status:** proven 16 · install 11 · documented 10 · ready 7 · key 4 · seen 2 · idea 1
+- **العائلات / families:** audio-sync-captions (13), qa-verification (7), app-feature-transfer (4), engines-render-pipeline (4), photo-video-footage (2), runnable-tools (2), self-discovery (2), voice-tts (2)
+- **أمثلة / examples:** `APPX-13` Word-timed auto captions · `APPX-140` Caption lines with reading rules · `APPX-141` Screen speech-model inventions · `ENG-X06` Tool-map doctor before promising a stack · `FOOT-D03` Measure a reel's style from its frames · `SELF-14` No GPU: plan for CPU
+
 <a id="req-git"></a>
 ### `git` — إدارة الإصدارات / version control
 
@@ -339,16 +349,6 @@
 - **بالحالة / by status:** documented 45 · proven 2 · install 2
 - **العائلات / families:** atlas-code (24), agent-orchestration (4), atlas-mind (4), atlas-docs (3), code-engineering (3), knowledge-graph (2), self-discovery (2), app-feature-transfer (1)
 - **أمثلة / examples:** `GRAPH-21` Reconcile a diverged branch with the hosted inde · `SELF-23` GitHub access in cloud sessions · `ACODE-05` Benchmark Claude Code vs Codex in isolated workt · `ACODE-07` Competing worktree candidates, judged, one lande · `ACODE-08` Coordinate worktree coding agents via mail and r · `ACODE-09` Delegate to Codex or Claude with review gate
-
-<a id="req-pip-faster-whisper"></a>
-### `pip:faster-whisper` — تفريغ الصوت مع توقيت كل كلمة (عربي) / speech-to-text with word timestamps (Arabic)
-
-- **النوع / kind:** model (نموذج/أوزان)
-- **التثبيت / install:** `pip install faster-whisper  (models from huggingface.co: small 466 MB, large-v3 3.1 GB; CPU works)`
-- **يفتح / unlocks:** 48 powers
-- **بالحالة / by status:** proven 14 · install 11 · documented 9 · ready 7 · key 4 · seen 2 · idea 1
-- **العائلات / families:** audio-sync-captions (13), qa-verification (7), engines-render-pipeline (4), photo-video-footage (2), runnable-tools (2), self-discovery (2), voice-tts (2), ai-generation (1)
-- **أمثلة / examples:** `APPX-13` Word-timed auto captions · `ENG-X06` Tool-map doctor before promising a stack · `FOOT-D03` Measure a reel's style from its frames · `SELF-14` No GPU: plan for CPU · `SELF-28` Heavy ML is possible on CPU · `STORY-59` Directed edit of a talking clip
 
 <a id="req-pip-office"></a>
 ### `pip:office` — إنشاء وقراءة Word وExcel وPowerPoint وPDF / create and read Word, Excel, PowerPoint and PDF
@@ -400,6 +400,16 @@
 - **العائلات / families:** engines-render-pipeline (6), light-glow-bloom (5), particles-fluids-physics (4), texture-material (3), atlas-code (2), 3d-spatial (1), apps-artifacts (1), color-palette-grading (1)
 - **أمثلة / examples:** `ENG-12` Pre-bundled 3D kit (window.K3) · `QA-17` CI and regression tests · `TOOL-17` Third-party motion engine scaffolder · `3D-14` KOSIF three-kit 3D project · `ACODE-188` Browser game stack, Phaser and web foundations · `ACODE-61` MCP App tool plus UI resource
 
+<a id="req-network"></a>
+### `network` — اتصال بالشبكة للتثبيت والتحميل / outbound network for installs and downloads
+
+- **النوع / kind:** os (منصة)
+- **التثبيت / install:** `outbound network (cloud sessions: the environment's network policy; registries pypi/npm/huggingface must be allowed)`
+- **يفتح / unlocks:** 24 powers
+- **بالحالة / by status:** proven 10 · install 7 · documented 7
+- **العائلات / families:** self-discovery (5), audio-sync-captions (3), web-research (3), app-feature-transfer (2), media-image-audio (2), security-safety (2), voice-tts (2), ai-generation (1)
+- **أمثلة / examples:** `SELF-15` Network test ladder · `SELF-24` Registry lookup before saying no · `SELF-25` Python-version compatibility check · `SELF-28` Heavy ML is possible on CPU · `SELF-29` License gate before adopting · `SYNC-07` Local Arabic word-timed transcription (faster-wh
+
 <a id="req-blender"></a>
 ### `blender` — ثلاثي الأبعاد: نمذجة ورندر بالكود / 3D modelling and scripted renders
 
@@ -439,16 +449,6 @@
 - **بالحالة / by status:** proven 14 · documented 4 · key 3 · idea 1
 - **العائلات / families:** knowledge-graph (16), code-engineering (2), agent-orchestration (1), runnable-tools (1), security-safety (1), self-discovery (1)
 - **أمثلة / examples:** `GRAPH-01` Install Graphify locally (venv) · `GRAPH-02` Map a codebase offline · `GRAPH-03` Query the graph instead of reading files · `GRAPH-04` Blast radius before a change · `GRAPH-05` Keep the map fresh · `GRAPH-06` Graph-backed lessons
-
-<a id="req-network"></a>
-### `network` — اتصال بالشبكة للتثبيت والتحميل / outbound network for installs and downloads
-
-- **النوع / kind:** os (منصة)
-- **التثبيت / install:** `outbound network (cloud sessions: the environment's network policy; registries pypi/npm/huggingface must be allowed)`
-- **يفتح / unlocks:** 22 powers
-- **بالحالة / by status:** proven 10 · install 7 · documented 5
-- **العائلات / families:** self-discovery (5), audio-sync-captions (3), web-research (3), media-image-audio (2), security-safety (2), voice-tts (2), ai-generation (1), atlas-build (1)
-- **أمثلة / examples:** `SELF-15` Network test ladder · `SELF-24` Registry lookup before saying no · `SELF-25` Python-version compatibility check · `SELF-28` Heavy ML is possible on CPU · `SELF-29` License gate before adopting · `SYNC-07` Local Arabic word-timed transcription (faster-wh
 
 <a id="req-npm-bruno"></a>
 ### `npm:bruno` — اختبار API بمجموعات نصية في git / API testing with git-tracked collections (Bruno CLI)
@@ -1357,4 +1357,4 @@
 <a id="none"></a>
 ## قدرات بلا مستلزمات خارجية / no external requirement
 
-2485 powers need only Claude and this skill (thinking, writing, planning, review protocols). The rest name at least one requirement above.
+2489 powers need only Claude and this skill (thinking, writing, planning, review protocols). The rest name at least one requirement above.

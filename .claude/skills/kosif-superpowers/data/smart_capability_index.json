@@ -1,10 +1,10 @@
 {
   "schema": "kosif.smart-capability-index.v1",
   "origin": "data/powers/*.json (catalog); no original records changed",
-  "catalog_powers": 5496,
+  "catalog_powers": 5512,
   "group_count": 15,
   "family_count": 62,
-  "tool_count": 145,
+  "tool_count": 147,
   "groups": [
     {
       "id": "research",
@@ -190,18 +190,18 @@
         "الاختبار",
         "النشر"
       ],
-      "count": 578,
+      "count": 594,
       "status_counts": {
-        "documented": 394,
+        "documented": 406,
         "idea": 2,
         "install": 32,
         "key": 7,
-        "proven": 111,
+        "proven": 115,
         "ready": 16,
         "seen": 16
       },
       "family_counts": {
-        "app-feature-transfer": 139,
+        "app-feature-transfer": 155,
         "apps-artifacts": 23,
         "atlas-build": 52,
         "atlas-code": 247,
@@ -7211,6 +7211,282 @@
       ],
       "source": "app-feature-transfer.json",
       "what": "افحص أي حزمة مهارة خارجية قبل اعتمادها: نص فقط، حجم محدود، بلا ملفات تنفيذية، ومصدر معروف — vet third-party skill packages before importing them"
+    },
+    {
+      "id": "APPX-140",
+      "family": "app-feature-transfer",
+      "group": "software",
+      "domain": "build",
+      "name_en": "Caption lines with reading rules",
+      "name_ar": "سطور ترجمة بقواعد قراءة",
+      "status": "proven",
+      "requires": [
+        "pip:faster-whisper"
+      ],
+      "proof": [
+        "kosif-tool/.claude/skills/kosif-superpowers/scripts/caption_lines.py",
+        "kosif-tool/.claude/skills/kosif-superpowers/evals/test_caption_lines.py",
+        "kosif-tool/.claude/skills/kosif-superpowers/references/app-studies/montaji.md"
+      ],
+      "source": "app-feature-transfer.json",
+      "what": "يحوّل توقيت الكلمات إلى سطور ترجمة قصيرة مقروءة: حد للكلمات والحروف والمدة، وكسر عند الوقفة ونهاية الجملة (؟ ؛ . !) وعند الفاصلة بعد كلمتين، وسد الفجوات القصيرة، وحد أدنى للمدة بلا تداخل — word timings to readable SRT/VTT/JSON lines."
+    },
+    {
+      "id": "APPX-141",
+      "family": "app-feature-transfer",
+      "group": "software",
+      "domain": "build",
+      "name_en": "Screen speech-model inventions",
+      "name_ar": "تنقية هلوسة نموذج التفريغ",
+      "status": "proven",
+      "requires": [
+        "pip:faster-whisper"
+      ],
+      "proof": [
+        "kosif-tool/.claude/skills/kosif-superpowers/scripts/caption_lines.py",
+        "kosif-tool/.claude/skills/kosif-superpowers/evals/test_caption_lines.py",
+        "kosif-tool/.claude/skills/kosif-superpowers/references/app-studies/montaji.md"
+      ],
+      "source": "app-feature-transfer.json",
+      "what": "يحذف من الترجمة ما يخترعه نموذج الكلام فوق الصمت أو الموسيقى: حقوق الترجمة، و«اشتركوا في القناة»، و«شكرا للمشاهدة»، ووسوم الصوت، والنقط وحدها، وتكرار السطر نفسه ثلاث مرات — ويسرد المحذوف ليرجعه إنسان."
+    },
+    {
+      "id": "APPX-142",
+      "family": "app-feature-transfer",
+      "group": "software",
+      "domain": "build",
+      "name_en": "One colour look for every renderer",
+      "name_ar": "لوك ألوان واحد لكل المحركات",
+      "status": "proven",
+      "requires": [
+        "ffmpeg",
+        "python3"
+      ],
+      "proof": [
+        "kosif-tool/.claude/skills/kosif-superpowers/scripts/look_pipeline.py",
+        "kosif-tool/.claude/skills/kosif-superpowers/evals/test_look_pipeline.py",
+        "kosif-tool/.claude/skills/kosif-superpowers/references/app-studies/montaji.md"
+      ],
+      "source": "app-feature-transfer.json",
+      "what": "اللوك أرقام: خطوة خطية لكل قناة ثم مصفوفة 3×3، تخرج منها فلاتر ffmpeg (lutrgb + colorchannelmixer) وSVG/CSS وGLSL بالأرقام نفسها؛ 11 لوك (سينمائي، دافئ، أبيض وأسود، ليلي هادئ…) مع شدة وتعديل يدوي."
+    },
+    {
+      "id": "APPX-143",
+      "family": "app-feature-transfer",
+      "group": "software",
+      "domain": "build",
+      "name_en": "Measured preview/export colour parity",
+      "name_ar": "إثبات تطابق المعاينة والتصدير بالقياس",
+      "status": "proven",
+      "requires": [
+        "ffmpeg",
+        "python3"
+      ],
+      "proof": [
+        "kosif-tool/.claude/skills/kosif-superpowers/scripts/look_pipeline.py",
+        "kosif-tool/.claude/skills/kosif-superpowers/evals/test_look_pipeline.py",
+        "kosif-tool/.claude/skills/kosif-superpowers/references/app-studies/montaji.md"
+      ],
+      "source": "app-feature-transfer.json",
+      "what": "يمرّر إطار اختبار في ffmpeg ويقارن كل بكسل بالمعادلة المرجعية؛ أقصى فرق هنا 1 من 255 في كل اللوكات — قياس لا ادعاء."
+    },
+    {
+      "id": "APPX-144",
+      "family": "app-feature-transfer",
+      "group": "software",
+      "domain": "build",
+      "name_en": "Magnetic main track with clamped transitions",
+      "name_ar": "مسار رئيسي مغناطيسي بانتقالات محسوبة",
+      "status": "documented",
+      "requires": [
+        "ffmpeg",
+        "python3"
+      ],
+      "proof": [
+        "kosif-tool/.claude/skills/kosif-superpowers/references/app-studies/montaji.md"
+      ],
+      "source": "app-feature-transfer.json",
+      "what": "اللقطات تتبع بعضها بلا فراغ؛ الانتقال يُخزَّن على اللقطة الخارجة ولا يزيد على نصف أي من الجارتين؛ في ffmpeg: xfade بإزاحة = الطول المتراكم − مدة الانتقال، وacrossfade للصوت، وconcat عند غياب الانتقال."
+    },
+    {
+      "id": "APPX-145",
+      "family": "app-feature-transfer",
+      "group": "software",
+      "domain": "build",
+      "name_en": "Any audio speed with an atempo chain",
+      "name_ar": "أي سرعة صوت بسلسلة atempo",
+      "status": "documented",
+      "requires": [
+        "ffmpeg"
+      ],
+      "proof": [
+        "kosif-tool/.claude/skills/kosif-superpowers/references/app-studies/montaji.md"
+      ],
+      "source": "app-feature-transfer.json",
+      "what": "atempo يقبل 0.5 إلى 100 فقط؛ قسّم المعامل إلى خطوات (0.25 = 0.5×0.5) ليبقى الصوت متزامنًا مع setpts للفيديو."
+    },
+    {
+      "id": "APPX-146",
+      "family": "app-feature-transfer",
+      "group": "software",
+      "domain": "build",
+      "name_en": "Cheap blurred background fill",
+      "name_ar": "خلفية مموهة رخيصة للمقاس العمودي",
+      "status": "documented",
+      "requires": [
+        "ffmpeg"
+      ],
+      "proof": [
+        "kosif-tool/.claude/skills/kosif-superpowers/references/app-studies/montaji.md"
+      ],
+      "source": "app-feature-transfer.json",
+      "what": "لملء 9:16 بلقطة أفقية: صغّر نسخة إلى ربع المقاس، املأ وقص، طبّق gblur، ثم كبّر — أسرع بكثير من التمويه بالحجم الكامل والنتيجة نفسها بصريًا."
+    },
+    {
+      "id": "APPX-147",
+      "family": "app-feature-transfer",
+      "group": "software",
+      "domain": "build",
+      "name_en": "Arabic text raster in reference units",
+      "name_ar": "نص عربي مرسوم بوحدات مرجعية",
+      "status": "documented",
+      "requires": [
+        "ffmpeg"
+      ],
+      "proof": [
+        "kosif-tool/.claude/skills/kosif-superpowers/references/app-studies/montaji.md"
+      ],
+      "source": "app-feature-transfer.json",
+      "what": "ارسم النص في المتصفح (تشكيل عربي صحيح وحدّ وظل وخلفية مستديرة) بقياسات مرجعية للضلع القصير 1080 ثم كبّر مرة واحدة، فتبقى فواصل الأسطر واحدة في كل مقاس؛ قص الصورة على حدود النص بعد الدوران، ودع ffmpeg يحرّكها ويخفيها بتعابير تطابق منحنى المعاينة."
+    },
+    {
+      "id": "APPX-148",
+      "family": "app-feature-transfer",
+      "group": "software",
+      "domain": "build",
+      "name_en": "Media prep for an editor",
+      "name_ar": "تجهيز الوسائط لمحرر",
+      "status": "documented",
+      "requires": [
+        "ffmpeg"
+      ],
+      "proof": [
+        "kosif-tool/.claude/skills/kosif-superpowers/references/app-studies/montaji.md"
+      ],
+      "source": "app-feature-transfer.json",
+      "what": "عند الاستيراد: افحص بـ ffprobe (الدوران 90° يبدّل العرض والارتفاع)، صورة غلاف عند 10% (حتى ثانية)، شريط مصغرات من لقطات بحث سريع على دفعات ثم tile، غلاف موجة 50 قيمة/ث بجذر تربيعي، وبروكسي فقط إذا كان الترميز أو صيغة البكسل أو الحاوية لا تعمل في المتصفح."
+    },
+    {
+      "id": "APPX-149",
+      "family": "app-feature-transfer",
+      "group": "software",
+      "domain": "build",
+      "name_en": "Hardware encoder with software fallback",
+      "name_ar": "ترميز بالعتاد مع رجوع للبرمجي",
+      "status": "documented",
+      "requires": [
+        "ffmpeg"
+      ],
+      "proof": [
+        "kosif-tool/.claude/skills/kosif-superpowers/references/app-studies/montaji.md"
+      ],
+      "source": "app-feature-transfer.json",
+      "what": "جرّب مرمّز العتاد أولًا (VideoToolbox/NVENC) بمعدل بت = بت لكل بكسل × العرض × الارتفاع × الإطارات، وإن فشل فتح المرمّز أعد المحاولة بـ libx264/libx265 بـ CRF؛ احذف الملف الناقص عند الفشل."
+    },
+    {
+      "id": "APPX-150",
+      "family": "app-feature-transfer",
+      "group": "software",
+      "domain": "build",
+      "name_en": "A safe local editor server",
+      "name_ar": "خادم محلي آمن لأداة مونتاج",
+      "status": "documented",
+      "requires": [],
+      "proof": [
+        "kosif-tool/.claude/skills/kosif-superpowers/references/app-studies/montaji.md"
+      ],
+      "source": "app-feature-transfer.json",
+      "what": "لأي أداة تفتح واجهة على localhost: استمع على 127.0.0.1 فقط، اقبل Host معروفًا فقط (ضد DNS rebinding)، واطلب رأسًا خاصًا في كل طلب يغيّر شيئًا ليجبر المتصفح على preflight فلا تتحكم مواقع أخرى بالأداة، وطبّع المسارات، وتحقق من المعرّفات بنمط، واخرج عند الخمول أو موت العملية الأم."
+    },
+    {
+      "id": "APPX-151",
+      "family": "app-feature-transfer",
+      "group": "software",
+      "domain": "build",
+      "name_en": "Verified model downloads",
+      "name_ar": "تنزيل نماذج موثَّق",
+      "status": "documented",
+      "requires": [
+        "network"
+      ],
+      "proof": [
+        "kosif-tool/.claude/skills/kosif-superpowers/references/app-studies/montaji.md"
+      ],
+      "source": "app-feature-transfer.json",
+      "what": "نزّل النموذج إلى ملف .part مع تقدم مرئي وإلغاء، احسب SHA-256 أثناء التنزيل وقارنه ببصمة مثبتة، ثم أعد التسمية ذريًا؛ مرآة محلية للاختبارات فقط."
+    },
+    {
+      "id": "APPX-152",
+      "family": "app-feature-transfer",
+      "group": "software",
+      "domain": "build",
+      "name_en": "Undo that groups slider drags",
+      "name_ar": "تراجع يجمع سحب المنزلقات",
+      "status": "documented",
+      "requires": [],
+      "proof": [
+        "kosif-tool/.claude/skills/kosif-superpowers/references/app-studies/montaji.md"
+      ],
+      "source": "app-feature-transfer.json",
+      "what": "كل تعديل يمر بدالة واحدة تحفظ لقطة JSON (حتى 150)؛ التعديلات المتتالية بالمفتاح نفسه خلال ثانية ونصف خطوة واحدة؛ حفظ تلقائي مؤجل 0.7 ث بكتابة ذرية ونسخة .bak."
+    },
+    {
+      "id": "APPX-153",
+      "family": "app-feature-transfer",
+      "group": "software",
+      "domain": "build",
+      "name_en": "Self-test inside the real host",
+      "name_ar": "اختبار ذاتي داخل المضيف الحقيقي",
+      "status": "documented",
+      "requires": [],
+      "proof": [
+        "kosif-tool/.claude/skills/kosif-superpowers/references/app-studies/montaji.md"
+      ],
+      "source": "app-feature-transfer.json",
+      "what": "افتح الواجهة بمعامل selftest فتجري خطوات حقيقية (لون، نص عربي، مشروع، استيراد، فك ترميز، فلتر، تصدير، ترجمة) داخل المتصفح الفعلي، كل خطوة ok/error، مع فحص بكسلات (نسبة الإضاءة، رمادية الأبيض والأسود)، ويُكتب التقرير إلى ملف."
+    },
+    {
+      "id": "APPX-154",
+      "family": "app-feature-transfer",
+      "group": "software",
+      "domain": "build",
+      "name_en": "Content-addressed media cache with resume",
+      "name_ar": "ذاكرة وسائط بالمحتوى واستئناف",
+      "status": "documented",
+      "requires": [],
+      "proof": [
+        "kosif-tool/.claude/skills/kosif-superpowers/references/app-studies/montaji.md"
+      ],
+      "source": "app-feature-transfer.json",
+      "what": "معرّف الوسائط = بصمة (المسار، الحجم، وقت التعديل)، فلا يُعاد تجهيز ملف لم يتغير؛ طابور عمل باثنين معًا، ويستأنف عند التشغيل التالي ما انقطع؛ الأصل لا يُنسخ ولا يُعدَّل."
+    },
+    {
+      "id": "APPX-155",
+      "family": "app-feature-transfer",
+      "group": "software",
+      "domain": "build",
+      "name_en": "Offline Arabic speech stack",
+      "name_ar": "تفريغ عربي محلي بلا إنترنت",
+      "status": "documented",
+      "requires": [
+        "pip:faster-whisper",
+        "network"
+      ],
+      "proof": [
+        "kosif-tool/.claude/skills/kosif-superpowers/references/app-studies/montaji.md"
+      ],
+      "source": "app-feature-transfer.json",
+      "what": "whisper.cpp مع large-v3-turbo-q5_0 (574 ميجا، الأدق للعربي) أو small-q5_1 (190 ميجا) وSilero VAD، بكلمة لكل مدخل؛ يُمزج صوت التايملاين إلى 16 كيلوهرتز أحادي قبل التفريغ."
     },
     {
       "id": "APP-01",
