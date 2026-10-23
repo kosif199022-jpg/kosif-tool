@@ -1,0 +1,96 @@
+{
+ "schema": "kosif.atlas-5000.mining-receipt.v1",
+ "date": "2026-10-23",
+ "batch": "batch3-strategy",
+ "atlas": "https://github.com/kosif199022-jpg/kosif-atlas",
+ "atlas_commit": "99bb108dff169880dd531359f474a01b73c4b233",
+ "powers_added": 7,
+ "sources_read": 7,
+ "scope_note": "Each SKILL.md was read in full as inert text and its method summarised in our own words on the card; with the owner's approval the whole skill folder (text files only) is also copied verbatim with its license into vendor/kosif-atlas. Nothing from the Atlas was executed. Only READ_ONLY_OK, permissive-license, no-risk-flag skills were used.",
+ "sources": [
+  {
+   "atlas_id": 8317,
+   "plugin": "majestic-product",
+   "skill": "workflow-opportunity-mapping",
+   "license": "MIT",
+   "theme": "agent-workflow",
+   "path": "skills/2213-majestic-product/8317-workflow-opportunity-mapping",
+   "skill_md_sha256": "96ee2b91a2edad0db5a5d8b177daf9bd0ab0db6f572d7082defb5e67193b119e",
+   "bytes": 5687,
+   "read_in_full": true,
+   "power": "ASTRAT-88"
+  },
+  {
+   "atlas_id": 8362,
+   "plugin": "majestic-sales",
+   "skill": "pipeline-analysis",
+   "license": "MIT",
+   "theme": "agent-workflow",
+   "path": "skills/2216-majestic-sales/8362-pipeline-analysis",
+   "skill_md_sha256": "c32de493b189911456bf90e6d6c9ef61f469b418bbffb967ee5c544225d8ab5d",
+   "bytes": 1732,
+   "read_in_full": true,
+   "power": "ASTRAT-89"
+  },
+  {
+   "atlas_id": 8860,
+   "plugin": "grants-management",
+   "skill": "build-grant-pipeline-and-prospect-fit",
+   "license": "MIT",
+   "theme": "agent-workflow",
+   "path": "skills/2308-grants-management/8860-build-grant-pipeline-and-prospect-fit",
+   "skill_md_sha256": "53f370f32f3a3fd2a250187e2bd0c02233e511d725864bca3ece345b8f516f14",
+   "bytes": 5728,
+   "read_in_full": true,
+   "power": "ASTRAT-90"
+  },
+  {
+   "atlas_id": 9170,
+   "plugin": "residential-real-estate-brokerage",
+   "skill": "commission-split-and-cap-economics",
+   "license": "MIT",
+   "theme": "agent-workflow",
+   "path": "skills/2371-residential-real-estate-brokerage/9170-commission-split-and-cap-economics",
+   "skill_md_sha256": "dadcbee9da54b762789121139f89851887621906b58e8dada7d6dc44352828d5",
+   "bytes": 2995,
+   "read_in_full": true,
+   "power": "ASTRAT-91"
+  },
+  {
+   "atlas_id": 9296,
+   "plugin": "ux-research",
+   "skill": "run-usability-and-interview-sessions",
+   "license": "MIT",
+   "theme": "agent-workflow",
+   "path": "skills/2401-ux-research/9296-run-usability-and-interview-sessions",
+   "skill_md_sha256": "e6ffc54ecdd12cb08931d45138307b3a03c4815bc890b2d9411c09953e00ebda",
+   "bytes": 6145,
+   "read_in_full": true,
+   "power": "ASTRAT-92"
+  },
+  {
+   "atlas_id": 9305,
+   "plugin": "waste-recycling-operations",
+   "skill": "optimize-collection-routes-and-fleet",
+   "license": "MIT",
+   "theme": "agent-workflow",
+   "path": "skills/2403-waste-recycling-operations/9305-optimize-collection-routes-and-fleet",
+   "skill_md_sha256": "e988a2e8befe4132b3636cd763acf24727bad0ad8e5dec23d3506a9f86dacc16",
+   "bytes": 5651,
+   "read_in_full": true,
+   "power": "ASTRAT-93"
+  },
+  {
+   "atlas_id": 13117,
+   "plugin": "adlc-foundations",
+   "skill": "sdlc-to-adlc-mapping",
+   "license": "MIT",
+   "theme": "agent-workflow",
+   "path": "skills/3048-adlc-foundations/13117-sdlc-to-adlc-mapping",
+   "skill_md_sha256": "40549e335101b999418dc9c0fb629b0c043c788d60981f3537f776f26e1f95e3",
+   "bytes": 3789,
+   "read_in_full": true,
+   "power": "ASTRAT-94"
+  }
+ ]
+}

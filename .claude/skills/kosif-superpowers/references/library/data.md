@@ -24,12 +24,12 @@
 |---|---:|---|
 | `proven` | 49 | ✅ proven: a proof exists in the catalog; still check its requirements here before calling it ready |
 | `ready` | 18 | 🟢 ready: runnable without setup according to the catalog |
-| `documented` | 105 | 📄 documented: a described method; needs building or wiring before it runs |
+| `documented` | 111 | 📄 documented: a described method; needs building or wiring before it runs |
 | `seen` | 48 | 👁 seen: observed in a reference or demo, not executed here |
 | `install` | 34 | 📦 install: needs a package, binary or model first |
 | `key` | 7 | 🔑 key: needs an account, key or paid service (ask before any spend) |
 | `idea` | 1 | 💡 idea: not built |
-| **المجموع** | **262** | |
+| **المجموع** | **268** | |
 
 ## الأدوات القابلة للتشغيل / runnable tools
 
@@ -46,7 +46,7 @@
 
 | العائلة | القدرات | الفصل |
 |---|---:|---|
-| `atlas-data` | 56 | [atlas-data.md](../powers/atlas-data.md) |
+| `atlas-data` | 62 | [atlas-data.md](../powers/atlas-data.md) |
 | `charts-data-infographic` | 105 | [charts-data-infographic.md](../powers/charts-data-infographic.md) |
 | `data-analysis` | 39 | [data-analysis.md](../powers/data-analysis.md) |
 | `maps-geo` | 62 | [maps-geo.md](../powers/maps-geo.md) |
@@ -180,6 +180,12 @@
 | `ADATA-54` | تقييم أنظمة التوصية: تقسيم زمني وخط أساس شعبية والحكم للـA/B | Recommender evaluation: temporal split, popularity baseline, A/B as verdict | documented |  |
 | `ADATA-55` | تدقيق مصدر الأصفار في مقاييس متعددة المصادر قبل تصديقها | Zero-provenance audit for multi-source metrics before believing a 0 | documented |  |
 | `ADATA-56` | اختيار منهج جودة البيانات: اختبارات للقواعد المعروفة ومراقبة للمجهول وعقود عند المنتِج | Choose a data-quality approach: tests, monitors and contracts, and where each runs | documented | python3, npm:three |
+| `ADATA-57` | اختيار وبناء خط تحليل جينومي قابل للتكرار: المحرك والمرجع والأدوات والتحقق بمجموعة حقيقة | Choose and build a reproducible genomics pipeline: engine, reference, tools, truth-set validation | documented | python3 |
+| `ADATA-58` | انضباط خط تعلم الآلة: لا تدريب قبل اكتمال الخطوات السابقة وموافقة صريحة عند كل بوابة | ML pipeline discipline: no training before earlier steps and explicit approval at each gate | documented |  |
+| `ADATA-59` | بناء التوأم الرقمي من البيانات الحية: ربط القياسات بالنموذج، ومحاكاة من الحالة الحالية، والتحقق من الدقة ومراقبة الانحراف | Build a digital twin from live data: bind telemetry to the model, simulate from current state, validate fidelity and monitor drift | documented |  |
+| `ADATA-60` | استخراج بيانات الويب بمرونة: البيانات المنظمة قبل المحددات، وبدائل لكل حقل، ومخطط يُتحقق منه، وأعطال مرئية | Resilient web data extraction: structured data before selectors, a fallback per field, a validated schema, and observable breakage | documented |  |
+| `ADATA-61` | اختيار منسق خطوط البيانات: بوابة زمن الاستجابة أولًا، ثم الأصول أم المهام، وحجم فريق التشغيل، والسحابة الحالية | Choose a data pipeline orchestrator: gate on latency first, then asset vs task model, ops capacity and current cloud | documented | python3 |
+| `ADATA-62` | تصميم خطة تتبع الأحداث من الأسئلة: أحداث بصيغة كائن ثم فعل، وخصائص بدل تكرار الأحداث، ونموذج الهوية أولًا | Design an event tracking plan from questions: object-action events, properties instead of event variants, the identity model first | documented |  |
 | `DATA-01` | اختيار المخطط حسب السؤال | Chart choice by analytical question | documented |  |
 | `DATA-02` | المسار أم الميل | Line path vs slope net-change | documented |  |
 | `DATA-03` | اختيار مخطط التوزيع | Distribution chart choice | documented |  |

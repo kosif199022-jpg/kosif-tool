@@ -107,11 +107,11 @@ class RoutingQuality(unittest.TestCase):
             picks = [names_of.get(i, i) for i in cov["superpowers"]]
             for k in bad:
                 self.assertFalse(has(picks, k), (tag, pre, k, picks))
-        if e.get("rec_include_any"):
-            self.assertTrue(any(has(rec_names, k) for k in e["rec_include_any"]), (tag, rec, e["rec_include_any"], rec_names))
         # A superpower's display name is its medoid member, which can flip between near-tied members when the
         # catalog grows; "the plan includes X" therefore also counts the members the brief says it matched.
         rec_seen = rec_names + [c for x in b["plans"][rec]["superpowers"] for c in x.get("contains", [])] if rec else []
+        if e.get("rec_include_any"):
+            self.assertTrue(any(has(rec_seen, k) for k in e["rec_include_any"]), (tag, rec, e["rec_include_any"], rec_seen))
         for k in e.get("rec_include_all", []):
             self.assertTrue(has(rec_seen, k), (tag, rec, k, rec_seen))
         for k in e.get("rec_exclude", []):

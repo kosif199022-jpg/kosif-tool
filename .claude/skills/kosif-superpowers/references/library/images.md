@@ -24,12 +24,12 @@
 |---|---:|---|
 | `proven` | 96 | ✅ proven: a proof exists in the catalog; still check its requirements here before calling it ready |
 | `ready` | 42 | 🟢 ready: runnable without setup according to the catalog |
-| `documented` | 96 | 📄 documented: a described method; needs building or wiring before it runs |
+| `documented` | 99 | 📄 documented: a described method; needs building or wiring before it runs |
 | `seen` | 22 | 👁 seen: observed in a reference or demo, not executed here |
 | `install` | 27 | 📦 install: needs a package, binary or model first |
 | `key` | 35 | 🔑 key: needs an account, key or paid service (ask before any spend) |
 | `idea` | 2 | 💡 idea: not built |
-| **المجموع** | **320** | |
+| **المجموع** | **323** | |
 
 ## الأدوات القابلة للتشغيل / runnable tools
 
@@ -73,7 +73,7 @@
 | العائلة | القدرات | الفصل |
 |---|---:|---|
 | `ai-generation` | 94 | [ai-generation.md](../powers/ai-generation.md) |
-| `atlas-media` | 27 | [atlas-media.md](../powers/atlas-media.md) |
+| `atlas-media` | 30 | [atlas-media.md](../powers/atlas-media.md) |
 | `color-palette-grading` | 87 | [color-palette-grading.md](../powers/color-palette-grading.md) |
 | `media-image-audio` | 41 | [media-image-audio.md](../powers/media-image-audio.md) |
 | `photo-video-footage` | 71 | [photo-video-footage.md](../powers/photo-video-footage.md) |
@@ -281,6 +281,9 @@
 | `AMEDIA-25` | تغليف الفيديو: عنوان ونص مصغّرة لا يتكرران | Video packaging: title and thumbnail text that never overlap | documented |  |
 | `AMEDIA-26` | Substance Painter: مساحة لون PBR وخبز الخرائط | Substance Painter PBR colour space and baking | documented | python3, chromium |
 | `AMEDIA-27` | Godot 4: سكربت مُنمّط وفيزياء وتصدير بلا واجهة | Godot 4: typed GDScript, physics timing, headless export | documented | chromium |
+| `AMEDIA-28` | توليد خط زمني لـFinal Cut Pro برمجيًا عبر FCPXML وتصدير دفعي بـCompressor | Programmatic Final Cut Pro timelines via FCPXML and batch export with Compressor | documented | imagemagick |
+| `AMEDIA-29` | أتمتة برامج ثلاثية الأبعاد والتصميم الهندسي دون واجهة: خبز المحاكاة، تقليل المضلعات، واستخراج الخصائص | Headless automation of 3D and CAD apps: simulation baking, batch decimation, property extraction | documented | python3, chromium |
+| `AMEDIA-30` | ربط الوكيل الصوتي بالهاتف وتقييمه: SIP وDTMF والتحويل الدافئ ونجاح المهمة كمقياس أول | Telephony and call-flow integration for a voice agent: SIP, DTMF, warm transfer, and task success as the primary metric | documented |  |
 | `COLOR-08` | مكتبة اللوكات المسماة | Named film-stock and photo looks library | documented | pip:numpy, key:unspecified |
 | `COLOR-13` | ترتيب عقد التلوين | Grade order: technical before creative | documented | ffmpeg |
 | `COLOR-20` | لوكات مقاسة بأهداف السكوب | Scope-target looks (Japan summer, New York, Still, Tokyo night) | documented |  |

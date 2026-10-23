@@ -1,0 +1,48 @@
+{
+ "schema": "kosif.atlas-5000.mining-receipt.v1",
+ "date": "2026-10-23",
+ "batch": "batch3-data",
+ "atlas": "https://github.com/kosif199022-jpg/kosif-atlas",
+ "atlas_commit": "99bb108dff169880dd531359f474a01b73c4b233",
+ "powers_added": 2,
+ "sources_read": 3,
+ "scope_note": "Each SKILL.md was read in full as inert text and its method summarised in our own words on the card; with the owner's approval the whole skill folder (text files only) is also copied verbatim with its license into vendor/kosif-atlas. Nothing from the Atlas was executed. Only READ_ONLY_OK, permissive-license, no-risk-flag skills were used.",
+ "sources": [
+  {
+   "atlas_id": 8549,
+   "plugin": "bioinformatics-engineering",
+   "skill": "choose-bioinformatics-pipeline-and-stack",
+   "license": "MIT",
+   "theme": "agent-workflow",
+   "path": "skills/2246-bioinformatics-engineering/8549-choose-bioinformatics-pipeline-and-stack",
+   "skill_md_sha256": "8ef3f2709adade5b57cf9f9f27ec1efd923b78400793ab97e78771a03240ecf7",
+   "bytes": 7006,
+   "read_in_full": true,
+   "power": "ADATA-57"
+  },
+  {
+   "atlas_id": 8551,
+   "plugin": "bioinformatics-engineering",
+   "skill": "implement-and-scale-bioinformatics-pipeline",
+   "license": "MIT",
+   "theme": "agent-workflow",
+   "path": "skills/2246-bioinformatics-engineering/8551-implement-and-scale-bioinformatics-pipel",
+   "skill_md_sha256": "deef1cf03aa088175b3200362b7ee0b81a634dabdc8a718a6f0397e48feeefd0",
+   "bytes": 6413,
+   "read_in_full": true,
+   "power": "ADATA-57"
+  },
+  {
+   "atlas_id": 4304,
+   "plugin": "ml-pipeline",
+   "skill": "ml-pipeline",
+   "license": "Apache-2.0",
+   "theme": "agent-workflow",
+   "path": "skills/1550-ml-pipeline/4304-ml-pipeline",
+   "skill_md_sha256": "07dd4658ecbd577e47b9ddfba5fce3e7885c40056dda0258ad0eb324f1e09dd1",
+   "bytes": 13255,
+   "read_in_full": true,
+   "power": "ADATA-58"
+  }
+ ]
+}

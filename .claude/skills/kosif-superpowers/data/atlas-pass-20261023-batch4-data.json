@@ -1,0 +1,24 @@
+{
+ "schema": "kosif.atlas-5000.mining-receipt.v1",
+ "date": "2026-10-23",
+ "batch": "batch4-data",
+ "atlas": "https://github.com/kosif199022-jpg/kosif-atlas",
+ "atlas_commit": "99bb108dff169880dd531359f474a01b73c4b233",
+ "powers_added": 1,
+ "sources_read": 1,
+ "scope_note": "Each SKILL.md was read in full as inert text and its method summarised in our own words on the card; with the owner's approval the whole skill folder (text files only) is also copied verbatim with its license into vendor/kosif-atlas. Nothing from the Atlas was executed. Only READ_ONLY_OK, permissive-license, no-risk-flag skills were used.",
+ "sources": [
+  {
+   "atlas_id": 8718,
+   "plugin": "digital-twin-engineering",
+   "skill": "implement-twin-integration-and-simulation",
+   "license": "MIT",
+   "theme": "mcp-tooling",
+   "path": "skills/2283-digital-twin-engineering/8718-implement-twin-integration-and-simulatio",
+   "skill_md_sha256": "dc9a2aa0c4dad9b827ba865ae3693411c7b32ab8a0ce73156da873799c5eb8fd",
+   "bytes": 6227,
+   "read_in_full": true,
+   "power": "ADATA-59"
+  }
+ ]
+}

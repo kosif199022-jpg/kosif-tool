@@ -1,0 +1,60 @@
+{
+ "schema": "kosif.atlas-5000.mining-receipt.v1",
+ "date": "2026-10-23",
+ "batch": "batch4-mind",
+ "atlas": "https://github.com/kosif199022-jpg/kosif-atlas",
+ "atlas_commit": "99bb108dff169880dd531359f474a01b73c4b233",
+ "powers_added": 3,
+ "sources_read": 4,
+ "scope_note": "Each SKILL.md was read in full as inert text and its method summarised in our own words on the card; with the owner's approval the whole skill folder (text files only) is also copied verbatim with its license into vendor/kosif-atlas. Nothing from the Atlas was executed. Only READ_ONLY_OK, permissive-license, no-risk-flag skills were used.",
+ "sources": [
+  {
+   "atlas_id": 9418,
+   "plugin": "discipline",
+   "skill": "pick-for-the-problem",
+   "license": "MIT",
+   "theme": "mcp-tooling",
+   "path": "skills/2431-discipline/9418-pick-for-the-problem",
+   "skill_md_sha256": "1f7b492fb9c2b52eb5372a1c90801564b6d0b3dad9285f8640bffb89b60370e9",
+   "bytes": 7048,
+   "read_in_full": true,
+   "power": "AMIND-68"
+  },
+  {
+   "atlas_id": 9424,
+   "plugin": "discipline",
+   "skill": "script-the-deterministic-work",
+   "license": "MIT",
+   "theme": "mcp-tooling",
+   "path": "skills/2431-discipline/9424-script-the-deterministic-work",
+   "skill_md_sha256": "0ccb1561c2c3c9555fad96fcf851d1a4d818abea13872e8d23dbb11d1baf4ab9",
+   "bytes": 8710,
+   "read_in_full": true,
+   "power": "AMIND-69"
+  },
+  {
+   "atlas_id": 901,
+   "plugin": "claude-code-setup",
+   "skill": "claude-automation-recommender",
+   "license": "Apache-2.0",
+   "theme": "mcp-tooling",
+   "path": "skills/278-claude-code-setup/901-claude-automation-recommender",
+   "skill_md_sha256": "441c57e26f0931b64dd085deaad9213c4e3efea27d916dd7443cd33c7e338227",
+   "bytes": 10995,
+   "read_in_full": true,
+   "power": "AMIND-70"
+  },
+  {
+   "atlas_id": 3094,
+   "plugin": "tool-advisor",
+   "skill": "tool-advisor",
+   "license": "MIT",
+   "theme": "mcp-tooling",
+   "path": "skills/1362-tool-advisor/3094-tool-advisor",
+   "skill_md_sha256": "408c1e82512c52d9f4a8e61fe068b8e612916db348db444f0768cc3802e2fda6",
+   "bytes": 11175,
+   "read_in_full": true,
+   "power": "AMIND-70"
+  }
+ ]
+}

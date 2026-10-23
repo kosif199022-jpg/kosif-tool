@@ -1,0 +1,48 @@
+{
+ "schema": "kosif.atlas-5000.mining-receipt.v1",
+ "date": "2026-10-23",
+ "batch": "batch5-data",
+ "atlas": "https://github.com/kosif199022-jpg/kosif-atlas",
+ "atlas_commit": "99bb108dff169880dd531359f474a01b73c4b233",
+ "powers_added": 3,
+ "sources_read": 3,
+ "scope_note": "Each SKILL.md was read in full as inert text and its method summarised in our own words on the card; with the owner's approval the whole skill folder (text files only) is also copied verbatim with its license into vendor/kosif-atlas. Nothing from the Atlas was executed. Only READ_ONLY_OK, permissive-license, no-risk-flag skills were used.",
+ "sources": [
+  {
+   "atlas_id": 9332,
+   "plugin": "web-scraping-data-extraction",
+   "skill": "resilient-extraction-and-parsing",
+   "license": "MIT",
+   "theme": "planning-specs",
+   "path": "skills/2407-web-scraping-data-extraction/9332-resilient-extraction-and-parsing",
+   "skill_md_sha256": "4d19b92cb87acc09427d8379b5d0e3bab2ca7715ae94a582d7d81e60f9004995",
+   "bytes": 5104,
+   "read_in_full": true,
+   "power": "ADATA-60"
+  },
+  {
+   "atlas_id": 8648,
+   "plugin": "data-orchestration",
+   "skill": "choose-orchestrator",
+   "license": "MIT",
+   "theme": "planning-specs",
+   "path": "skills/2269-data-orchestration/8648-choose-orchestrator",
+   "skill_md_sha256": "0cad88734e60a89a2fd74c6cc3eb2a775c8b3bab87a0fd04c09426a79fd4b41c",
+   "bytes": 4751,
+   "read_in_full": true,
+   "power": "ADATA-61"
+  },
+  {
+   "atlas_id": 8953,
+   "plugin": "martech-event-instrumentation",
+   "skill": "design-a-tracking-plan",
+   "license": "MIT",
+   "theme": "planning-specs",
+   "path": "skills/2332-martech-event-instrumentation/8953-design-a-tracking-plan",
+   "skill_md_sha256": "6d30acab1b43a60e53d68c03be644bf4a61566d8160f2e2f11675a731ed00e66",
+   "bytes": 4965,
+   "read_in_full": true,
+   "power": "ADATA-62"
+  }
+ ]
+}

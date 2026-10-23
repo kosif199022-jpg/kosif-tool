@@ -23,10 +23,10 @@
 | الحالة | العدد | المعنى |
 |---|---:|---|
 | `proven` | 32 | ✅ proven: a proof exists in the catalog; still check its requirements here before calling it ready |
-| `documented` | 99 | 📄 documented: a described method; needs building or wiring before it runs |
+| `documented` | 104 | 📄 documented: a described method; needs building or wiring before it runs |
 | `install` | 8 | 📦 install: needs a package, binary or model first |
 | `key` | 4 | 🔑 key: needs an account, key or paid service (ask before any spend) |
-| **المجموع** | **143** | |
+| **المجموع** | **148** | |
 
 ## الأدوات القابلة للتشغيل / runnable tools
 
@@ -42,7 +42,7 @@
 | العائلة | القدرات | الفصل |
 |---|---:|---|
 | `atlas-craft` | 26 | [atlas-craft.md](../powers/atlas-craft.md) |
-| `atlas-docs` | 55 | [atlas-docs.md](../powers/atlas-docs.md) |
+| `atlas-docs` | 60 | [atlas-docs.md](../powers/atlas-docs.md) |
 | `documents-office` | 34 | [documents-office.md](../powers/documents-office.md) |
 | `writing-humanizer` | 28 | [writing-humanizer.md](../powers/writing-humanizer.md) |
 
@@ -165,6 +165,11 @@
 | `ADOCS-53` | مخطط كتاب بمواصفة لكل فصل و'كتاب مرجعي' يحفظ الاتساق | Book outline with per-chapter specs and a series bible | documented |  |
 | `ADOCS-54` | بناء ونشر كتاب: EPUB وPDF عبر Pandoc مع epubcheck وبيانات النشر | Book publishing build: EPUB/PDF via Pandoc, epubcheck and metadata | documented | pandoc |
 | `ADOCS-55` | نشر مجموعة رقمية بعد بوابتي الحقوق والحساسية الثقافية | Publish a digital collection through rights and cultural-sensitivity gates | documented |  |
+| `ADOCS-56` | صفحة حالة المشروع بتبويبات: تحديث بالفروق لا إعادة سرد، وكتلة حالة مضمنة في كل نسخة | Tabbed project status page: refresh by deltas, not re-narration, with a state block embedded in every render | documented |  |
+| `ADOCS-57` | من محضر الاجتماع إلى سجل قرارات: القرار والسبب والبدائل المرفوضة والمسؤول والأسئلة المفتوحة | From meeting transcript to decision record: decision, rationale, rejected options, owner and open questions | documented |  |
+| `ADOCS-58` | من المتطلبات إلى قصص جاهزة للتذاكر بسيناريوهات Gherkin، مع تدقيق جودة المتطلبات قبل التسليم | Requirements to ticket-ready stories with Gherkin scenarios, plus a requirements quality audit before handoff | documented |  |
+| `ADOCS-59` | التطوير بالمواصفة للوكلاء: دستور ثم مواصفة بلا تقنية ثم صيد الغموض ثم خطة ثم مهام، ودمج تغييرات المواصفة في الأساس | Spec-driven development for coding agents: constitution, tech-free spec, ambiguity hunt, plan, tasks, and merging delta specs into the baseline | documented |  |
+| `ADOCS-60` | قائمة الأعمال المؤجلة في المستودع: ملف لكل بند، وحقل يستحق نعم أو لا أو لاحقًا، والإغلاق بحذف الملف في git | In-repo backlog of deferred work: one file per item, a worth yes/no/later field, closed by deleting the file in git | documented |  |
 | `DOC-24` | مراجعة المستند قبل التسليم | Document delivery gate | documented |  |
 | `WRITE-01` | سؤال واحد لكل جملة: هل تضيف جديدًا للقارئ؟ | One-question causal model for every sentence | documented |  |
 | `WRITE-06` | إعادة الصياغة في أربع خطوات | Four-step rewrite: mark, draft, check, final | documented | python3 |

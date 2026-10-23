@@ -1,4 +1,4 @@
-# `atlas-docs` — المستندات والكتابة (55 بطاقة)
+# `atlas-docs` — المستندات والكتابة (60 بطاقة)
 
 > مكتبة بروتوكول USIP v5.6 الكاملة، مولّدة بـ `smart_capabilities.py cards` من `data/powers/atlas-docs.json` وقواعد الملاحق A25–A29؛ لا تُحرَّر يدويًا. [الفهرس الرئيسي](../../README.md) · [فصل المجموعة](../../../.claude/skills/kosif-superpowers/references/library/documents.md) · [النواة](../../../.claude/skills/kosif-superpowers/PROTOCOL.md)
 
@@ -59,6 +59,11 @@
 - [`ADOCS-53` مخطط كتاب بمواصفة لكل فصل و'كتاب مرجعي' يحفظ الاتساق](#adocs-53--مخطط-كتاب-بمواصفة-لكل-فصل-وكتاب-مرجعي-يحفظ-الاتساق--book-outline-with-per-chapter-specs-and-a-series-bible)
 - [`ADOCS-54` بناء ونشر كتاب: EPUB وPDF عبر Pandoc مع epubcheck وبيانات النشر](#adocs-54--بناء-ونشر-كتاب-epub-وpdf-عبر-pandoc-مع-epubcheck-وبيانات-النشر--book-publishing-build-epubpdf-via-pandoc-epubcheck-and-metadata)
 - [`ADOCS-55` نشر مجموعة رقمية بعد بوابتي الحقوق والحساسية الثقافية](#adocs-55--نشر-مجموعة-رقمية-بعد-بوابتي-الحقوق-والحساسية-الثقافية--publish-a-digital-collection-through-rights-and-cultural-sensitivity-gates)
+- [`ADOCS-56` صفحة حالة المشروع بتبويبات: تحديث بالفروق لا إعادة سرد، وكتلة حالة مضمنة في كل نسخة](#adocs-56--صفحة-حالة-المشروع-بتبويبات-تحديث-بالفروق-لا-إعادة-سرد-وكتلة-حالة-مضمنة-في-كل-نسخة--tabbed-project-status-page-refresh-by-deltas-not-re-narration-with-a-state-block-embedded-in-every-render)
+- [`ADOCS-57` من محضر الاجتماع إلى سجل قرارات: القرار والسبب والبدائل المرفوضة والمسؤول والأسئلة المفتوحة](#adocs-57--من-محضر-الاجتماع-إلى-سجل-قرارات-القرار-والسبب-والبدائل-المرفوضة-والمسؤول-والأسئلة-المفتوحة--from-meeting-transcript-to-decision-record-decision-rationale-rejected-options-owner-and-open-questions)
+- [`ADOCS-58` من المتطلبات إلى قصص جاهزة للتذاكر بسيناريوهات Gherkin، مع تدقيق جودة المتطلبات قبل التسليم](#adocs-58--من-المتطلبات-إلى-قصص-جاهزة-للتذاكر-بسيناريوهات-gherkin-مع-تدقيق-جودة-المتطلبات-قبل-التسليم--requirements-to-ticket-ready-stories-with-gherkin-scenarios-plus-a-requirements-quality-audit-before-handoff)
+- [`ADOCS-59` التطوير بالمواصفة للوكلاء: دستور ثم مواصفة بلا تقنية ثم صيد الغموض ثم خطة ثم مهام، ودمج تغييرات المواصفة في الأساس](#adocs-59--التطوير-بالمواصفة-للوكلاء-دستور-ثم-مواصفة-بلا-تقنية-ثم-صيد-الغموض-ثم-خطة-ثم-مهام-ودمج-تغييرات-المواصفة-في-الأساس--spec-driven-development-for-coding-agents-constitution-tech-free-spec-ambiguity-hunt-plan-tasks-and-merging-delta-specs-into-the-baseline)
+- [`ADOCS-60` قائمة الأعمال المؤجلة في المستودع: ملف لكل بند، وحقل يستحق نعم أو لا أو لاحقًا، والإغلاق بحذف الملف في git](#adocs-60--قائمة-الأعمال-المؤجلة-في-المستودع-ملف-لكل-بند-وحقل-يستحق-نعم-أو-لا-أو-لاحقًا-والإغلاق-بحذف-الملف-في-git--in-repo-backlog-of-deferred-work-one-file-per-item-a-worth-yesnolater-field-closed-by-deleting-the-file-in-git)
 
 ## البطاقات / cards
 
@@ -3754,6 +3759,7 @@
 - `ADOCS-52` تدقيق نصوص التعليمات الموجهة للنموذج: نواهٍ تلفت الانتباه وأمثلة تقيّد / LLM-facing prose audit: priming prohibitions and anchoring examples (documented)
 - `ADOCS-53` مخطط كتاب بمواصفة لكل فصل و'كتاب مرجعي' يحفظ الاتساق / Book outline with per-chapter specs and a series bible (documented)
 - `ADOCS-55` نشر مجموعة رقمية بعد بوابتي الحقوق والحساسية الثقافية / Publish a digital collection through rights and cultural-sensitivity gates (documented)
+- `ADOCS-56` صفحة حالة المشروع بتبويبات: تحديث بالفروق لا إعادة سرد، وكتلة حالة مضمنة في كل نسخة / Tabbed project status page: refresh by deltas, not re-narration, with a state block embedded in every render (documented)
 
 ### `ADOCS-55` — نشر مجموعة رقمية بعد بوابتي الحقوق والحساسية الثقافية / Publish a digital collection through rights and cultural-sensitivity gates
 
@@ -3821,4 +3827,356 @@
 
 - `ADOCS-53` مخطط كتاب بمواصفة لكل فصل و'كتاب مرجعي' يحفظ الاتساق / Book outline with per-chapter specs and a series bible (documented)
 - `ADOCS-54` بناء ونشر كتاب: EPUB وPDF عبر Pandoc مع epubcheck وبيانات النشر / Book publishing build: EPUB/PDF via Pandoc, epubcheck and metadata (documented)
+- `ADOCS-56` صفحة حالة المشروع بتبويبات: تحديث بالفروق لا إعادة سرد، وكتلة حالة مضمنة في كل نسخة / Tabbed project status page: refresh by deltas, not re-narration, with a state block embedded in every render (documented)
+- `ADOCS-57` من محضر الاجتماع إلى سجل قرارات: القرار والسبب والبدائل المرفوضة والمسؤول والأسئلة المفتوحة / From meeting transcript to decision record: decision, rationale, rejected options, owner and open questions (documented)
+
+### `ADOCS-56` — صفحة حالة المشروع بتبويبات: تحديث بالفروق لا إعادة سرد، وكتلة حالة مضمنة في كل نسخة / Tabbed project status page: refresh by deltas, not re-narration, with a state block embedded in every render
+
+| الحقل | القيمة |
+|---|---|
+| العائلة | `atlas-docs` ([فصل العائلة](../../../.claude/skills/kosif-superpowers/references/powers/atlas-docs.md)) |
+| المجموعة | المستندات والكتابة (`documents`) |
+| نوع المخرج (A25، A27) | مستند وكتابة ومحتوى (`document`) |
+| الحالة في الكتالوج | 📄 `documented`: منهج موصوف يحتاج بناءً أو ربطًا قبل التشغيل |
+| سقف التحقق قبل العمل (A27) | V1 حتى تُبنى وتُشغَّل؛ لا تقدَّم جاهزة أبدًا |
+| نطاق الدليل | `url` |
+| الرخصة | card in our own words; the original skill folders are copied verbatim with their Apache-2.0 license and SOURCE.md under vendor/kosif-atlas |
+
+**ما هي:** صفحة حالة لمشروع أكبر من أن يتابَع من الذاكرة: نظرة عامة ومسارات عمل كعمود فقري، وتبويبات للقرارات والأسئلة فقط حين يوجد محتوى حقيقي، وملف إعداد لكل مشروع بمصادر الحالة الحية والمسؤولين، وتحديث يقرأ النسخة السابقة ويغير ما تغير فقط. — A living status artifact.
+
+**متى:** صفحة حالة للمشروع، تقرير تقدم أسبوعي، تحديث لوحة المشروع / project status page or weekly update
+
+**كيف:** 1) Keep one config per project: name, slug, one-line description, audience, the page URL after first publish, live sources (repos and queries, trackers, docs), owners per workstream and where to ask, dated notes for future refreshes. 2) Pick tabs with real content only: Overview and Workstreams are the spine; Decisions, FAQ, Risks or Timeline earn a tab only when substantive. 3) Generate from one template, then reread the render for cut-off text and overflow before publishing. 4) Embed a JSON state block (as_of plus the facts shown) in every render. 5) Refresh: read the previous render, parse its state block, gather live again, update in place, and report what changed since as_of instead of rewriting the story. 6) Publish privately first, say who can open it, update the same URL on every refresh, and optionally register it on a project hub. 7) Reply with the link and the deltas. Full original skill(s) with license: vendor/kosif-atlas/skills/303-project-artifact/921-project-artifact.
+
+**المعاملات:** project config, sources
+
+**التثبيت:** mkdir -p ~/.claude/skills && cp -r .claude/skills/kosif-superpowers/vendor/kosif-atlas/skills/303-project-artifact/921-project-artifact ~/.claude/skills/project-artifact
+
+**الوسوم:** status page · project status · artifact · weekly update · صفحة الحالة · تقرير المشروع
+
+#### 1. الاستقبال (A25)
+
+- الجمهور: افتراض مكتوب ← قارئ عام ذكي غير متخصص
+- النبرة واللهجة: افتراض مكتوب ← لغة الطلب ولهجته
+- الطول: افتراض مكتوب ← أقصر طول يحقق الغرض
+- الصيغة: افتراض مكتوب ← نص في الرد، أو مستند إن طُلب ملف
+- لا تُفترض أبدًا: مادة الإنتاج نفسها، والإذن بخطوة مدفوعة أو منشورة أو لا رجعة فيها، والهوية والحقوق.
+
+#### 2. الجاهزية والشارة (A28)
+
+- لا متطلبات مسجلة؛ افحص المسار والأداة بـ `hub.py doctor` قبل الشارة.
+- الوضع 1: شارة «هنا الآن» بعد الفحص، لا 📄 الكتالوج تلقائيًا · الوضع 2: `كتالوج: 📄 · هنا: غير مفحوص` · الوضع 3: بلا شارة ولا معرّف.
+
+#### 3. موضعها في الخطة (A26)
+
+- عقدة منمّطة: المدخل `brief` ← المخرج `document`، والمنفّذ `method:ADOCS-56` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
+- لا أداة مسجلة تخدم عائلتها: التنفيذ بالمكتبات أو بأداة من مجموعة أخرى.
+- مراحل النوع: الغرض والقارئ ← هيكل العناوين ← مسودة ← مراجعة الحقائق ← تحرير اللغة ← فتح الملف بصيغته ← تسليم.
+- إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
+
+#### 4. بوابة التحقق (A27)
+
+- إلزامي: يحقق الغرض في أول فقرة ← قراءة الافتتاح
+- إلزامي: عربية سليمة إملاءً ونحوًا ← مراجعة سطر بسطر
+- جودة: بلا حشو ولا عبارات عامة بلا مضمون ← think.py critic
+- إلزامي: كل رقم أو اسم أو تاريخ متحقق منه ← مصدر لكل حقيقة
+- إلزامي: الملف المطلوب يُفتح فعلًا بصيغته ← فتح الملف
+- أمر الحكم في الوضع 1: `think.py qa document --answers qa.json` (PASS / FAIL / INCOMPLETE).
+
+#### 5. التعافي (A29)
+
+- `missing_dependency` (اعتمادية مفقودة، ميزانية 2): سمِّ الاعتمادية بالضبط (حزمة، برنامج، خط، نموذج) ← ثبّت محليًا في بيئة العمل إن كان مجانيًا ومسموحًا (pip --user أو venv أو npm محلي) · البديل: مسار المكتبة القياسية أو أداة أخرى من نفس المجموعة · تصعيد: تثبيت نظامي أو مدفوع أو يحتاج مفتاحًا: توقف واسأل
+- `quality_below_threshold` (جودة دون العتبة، ميزانية 3): أي معيار فشل وبكم (المقيس مقابل العتبة) ← عالج السبب الأكبر وحده ثم أعد القياس · البديل: المنهج البديل المكتوب للمرحلة في الخطة · تصعيد: معيار إلزامي لا يتحقق بعد البديل: توقف وأبلغ بالأرقام
+
+#### 6. الأدلة
+
+- `https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/303-project-artifact/921-project-artifact`
+
+#### 7. قدرات قريبة في العائلة
+
+- `ADOCS-54` بناء ونشر كتاب: EPUB وPDF عبر Pandoc مع epubcheck وبيانات النشر / Book publishing build: EPUB/PDF via Pandoc, epubcheck and metadata (documented)
+- `ADOCS-55` نشر مجموعة رقمية بعد بوابتي الحقوق والحساسية الثقافية / Publish a digital collection through rights and cultural-sensitivity gates (documented)
+- `ADOCS-57` من محضر الاجتماع إلى سجل قرارات: القرار والسبب والبدائل المرفوضة والمسؤول والأسئلة المفتوحة / From meeting transcript to decision record: decision, rationale, rejected options, owner and open questions (documented)
+- `ADOCS-58` من المتطلبات إلى قصص جاهزة للتذاكر بسيناريوهات Gherkin، مع تدقيق جودة المتطلبات قبل التسليم / Requirements to ticket-ready stories with Gherkin scenarios, plus a requirements quality audit before handoff (documented)
+
+### `ADOCS-57` — من محضر الاجتماع إلى سجل قرارات: القرار والسبب والبدائل المرفوضة والمسؤول والأسئلة المفتوحة / From meeting transcript to decision record: decision, rationale, rejected options, owner and open questions
+
+| الحقل | القيمة |
+|---|---|
+| العائلة | `atlas-docs` ([فصل العائلة](../../../.claude/skills/kosif-superpowers/references/powers/atlas-docs.md)) |
+| المجموعة | المستندات والكتابة (`documents`) |
+| نوع المخرج (A25، A27) | مستند وكتابة ومحتوى (`document`) |
+| الحالة في الكتالوج | 📄 `documented`: منهج موصوف يحتاج بناءً أو ربطًا قبل التشغيل |
+| سقف التحقق قبل العمل (A27) | V1 حتى تُبنى وتُشغَّل؛ لا تقدَّم جاهزة أبدًا |
+| نطاق الدليل | `url` |
+| الرخصة | card in our own words; the original skill folders are copied verbatim with their MIT license and SOURCE.md under vendor/kosif-atlas |
+
+**ما هي:** بدل ملخص يسرد ما قيل بالترتيب، يستخرج من النص ما تقرر فعلًا مع سببه، والخيارات التي رُفضت صراحة ولماذا، ومن يملك كل إجراء وموعده، وما بقي معلقًا؛ وما لم يُحسم يُكتب معلقًا ولا يُخترع له قرار. — A decision log, not a chronological recap.
+
+**متى:** لخص الاجتماع، محضر اجتماع، ماذا قررنا، تفريغ اجتماع إلى مهام / meeting notes to decisions
+
+**كيف:** 1) Read the whole transcript before writing. 2) Extract each decision with the exact numbers, dates and scope as stated, and the rationale given. 3) List options explicitly rejected and why, so they are not re-argued. 4) Assign each action an owner and a due date only when the transcript names them; otherwise mark owner or date missing. 5) Collect unresolved questions and who must answer them. 6) Flag conflicts between speakers instead of picking a side. 7) Order the output: decisions, rejected options, actions, open questions, then a two-line context; quote the source line for anything contested. Full original skill(s) with license: vendor/kosif-atlas/skills/231-mas-common-sense-pack/733-summarize-meetings-into-decisions.
+
+**المعاملات:** transcript
+
+**التثبيت:** mkdir -p ~/.claude/skills && cp -r .claude/skills/kosif-superpowers/vendor/kosif-atlas/skills/231-mas-common-sense-pack/733-summarize-meetings-into-decisions ~/.claude/skills/summarize-meetings-into-decisions
+
+**الوسوم:** meeting notes · decision log · action items · transcript · محضر اجتماع · سجل القرارات
+
+#### 1. الاستقبال (A25)
+
+- الجمهور: افتراض مكتوب ← قارئ عام ذكي غير متخصص
+- النبرة واللهجة: افتراض مكتوب ← لغة الطلب ولهجته
+- الطول: افتراض مكتوب ← أقصر طول يحقق الغرض
+- الصيغة: افتراض مكتوب ← نص في الرد، أو مستند إن طُلب ملف
+- لا تُفترض أبدًا: مادة الإنتاج نفسها، والإذن بخطوة مدفوعة أو منشورة أو لا رجعة فيها، والهوية والحقوق.
+
+#### 2. الجاهزية والشارة (A28)
+
+- لا متطلبات مسجلة؛ افحص المسار والأداة بـ `hub.py doctor` قبل الشارة.
+- الوضع 1: شارة «هنا الآن» بعد الفحص، لا 📄 الكتالوج تلقائيًا · الوضع 2: `كتالوج: 📄 · هنا: غير مفحوص` · الوضع 3: بلا شارة ولا معرّف.
+
+#### 3. موضعها في الخطة (A26)
+
+- عقدة منمّطة: المدخل `brief` ← المخرج `document`، والمنفّذ `method:ADOCS-57` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
+- لا أداة مسجلة تخدم عائلتها: التنفيذ بالمكتبات أو بأداة من مجموعة أخرى.
+- مراحل النوع: الغرض والقارئ ← هيكل العناوين ← مسودة ← مراجعة الحقائق ← تحرير اللغة ← فتح الملف بصيغته ← تسليم.
+- إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
+
+#### 4. بوابة التحقق (A27)
+
+- إلزامي: يحقق الغرض في أول فقرة ← قراءة الافتتاح
+- إلزامي: عربية سليمة إملاءً ونحوًا ← مراجعة سطر بسطر
+- جودة: بلا حشو ولا عبارات عامة بلا مضمون ← think.py critic
+- إلزامي: كل رقم أو اسم أو تاريخ متحقق منه ← مصدر لكل حقيقة
+- إلزامي: الملف المطلوب يُفتح فعلًا بصيغته ← فتح الملف
+- أمر الحكم في الوضع 1: `think.py qa document --answers qa.json` (PASS / FAIL / INCOMPLETE).
+
+#### 5. التعافي (A29)
+
+- `missing_dependency` (اعتمادية مفقودة، ميزانية 2): سمِّ الاعتمادية بالضبط (حزمة، برنامج، خط، نموذج) ← ثبّت محليًا في بيئة العمل إن كان مجانيًا ومسموحًا (pip --user أو venv أو npm محلي) · البديل: مسار المكتبة القياسية أو أداة أخرى من نفس المجموعة · تصعيد: تثبيت نظامي أو مدفوع أو يحتاج مفتاحًا: توقف واسأل
+- `quality_below_threshold` (جودة دون العتبة، ميزانية 3): أي معيار فشل وبكم (المقيس مقابل العتبة) ← عالج السبب الأكبر وحده ثم أعد القياس · البديل: المنهج البديل المكتوب للمرحلة في الخطة · تصعيد: معيار إلزامي لا يتحقق بعد البديل: توقف وأبلغ بالأرقام
+
+#### 6. الأدلة
+
+- `https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/231-mas-common-sense-pack/733-summarize-meetings-into-decisions`
+
+#### 7. قدرات قريبة في العائلة
+
+- `ADOCS-55` نشر مجموعة رقمية بعد بوابتي الحقوق والحساسية الثقافية / Publish a digital collection through rights and cultural-sensitivity gates (documented)
+- `ADOCS-56` صفحة حالة المشروع بتبويبات: تحديث بالفروق لا إعادة سرد، وكتلة حالة مضمنة في كل نسخة / Tabbed project status page: refresh by deltas, not re-narration, with a state block embedded in every render (documented)
+- `ADOCS-58` من المتطلبات إلى قصص جاهزة للتذاكر بسيناريوهات Gherkin، مع تدقيق جودة المتطلبات قبل التسليم / Requirements to ticket-ready stories with Gherkin scenarios, plus a requirements quality audit before handoff (documented)
+- `ADOCS-59` التطوير بالمواصفة للوكلاء: دستور ثم مواصفة بلا تقنية ثم صيد الغموض ثم خطة ثم مهام، ودمج تغييرات المواصفة في الأساس / Spec-driven development for coding agents: constitution, tech-free spec, ambiguity hunt, plan, tasks, and merging delta specs into the baseline (documented)
+
+### `ADOCS-58` — من المتطلبات إلى قصص جاهزة للتذاكر بسيناريوهات Gherkin، مع تدقيق جودة المتطلبات قبل التسليم / Requirements to ticket-ready stories with Gherkin scenarios, plus a requirements quality audit before handoff
+
+| الحقل | القيمة |
+|---|---|
+| العائلة | `atlas-docs` ([فصل العائلة](../../../.claude/skills/kosif-superpowers/references/powers/atlas-docs.md)) |
+| المجموعة | المستندات والكتابة (`documents`) |
+| نوع المخرج (A25، A27) | مستند وكتابة ومحتوى (`document`) |
+| الحالة في الكتالوج | 📄 `documented`: منهج موصوف يحتاج بناءً أو ربطًا قبل التشغيل |
+| سقف التحقق قبل العمل (A27) | V1 حتى تُبنى وتُشغَّل؛ لا تقدَّم جاهزة أبدًا |
+| نطاق الدليل | `url` |
+| الرخصة | card in our own words; the original skill folders are copied verbatim with their MIT license and SOURCE.md under vendor/kosif-atlas |
+
+**ما هي:** يفكك المتطلب المعتمد إلى أصغر قصص تحفظ النية (من أنا وماذا أريد ولماذا، وفق INVEST)، ويكتب لكل قصة سيناريو رئيسيًا يكون فيه Given حقيقة وWhen فعلًا واحدًا وThen نتيجة ملحوظة من الخارج، ويستبدل كلمات مثل 'بشكل صحيح' بنتيجة محددة، ويضيف أخطر الحالات البديلة؛ ويدقق المتطلبات في الغموض والاتساق وقابلية التتبع والاختبار. — Atomic stories and testable requirements.
+
+**متى:** اكتب user stories، معايير قبول، Gherkin، راجع المتطلبات قبل التطوير / writing stories or auditing requirements
+
+**كيف:** 1) Set the evidence boundary: sources, stable requirement IDs, authoritative rules, assumptions, missing evidence. 2) Inventory actors, triggers, states, outcomes, constraints and unresolved decisions before rewriting anything. 3) Split into the smallest stories that keep the approved intent; check variations of actor or permission, state, validity or timing, repetition, empty input, cancellation, failure. 4) Each story: title, 'as a role I want an action so that a benefit', a link to the design, and acceptance criteria; it must be independent, negotiable, valuable, estimable, small and testable. 5) Primary Gherkin scenario: factual Given, a single When, an externally observable Then; replace 'gracefully', 'properly', 'successfully' with the concrete result. 6) Add the highest-risk alternate, failure and boundary scenarios, not every permutation. 7) For backlog items written as Why-What-Acceptance, tie the why to an objective and keep acceptance high-level. 8) Audit requirements: classify as business, stakeholder or solution level, trace each to its source and to a test, and mark each check pass, fail, unknown or not applicable with blocker, major or minor severity for ambiguity, conflicts, missing conditions and untestable wording. Full original skill(s) with license: vendor/kosif-atlas/skills/2213-majestic-product/8305-gherkin-stories, vendor/kosif-atlas/skills/2878-pm-execution/11619-user-stories, vendor/kosif-atlas/skills/2878-pm-execution/11620-wwas, vendor/kosif-atlas/skills/2213-majestic-product/8315-requirements-quality.
+
+**المعاملات:** requirements, design links
+
+**التثبيت:** mkdir -p ~/.claude/skills && cp -r .claude/skills/kosif-superpowers/vendor/kosif-atlas/skills/2213-majestic-product/8305-gherkin-stories ~/.claude/skills/gherkin-stories ; mkdir -p ~/.claude/skills && cp -r .claude/skills/kosif-superpowers/vendor/kosif-atlas/skills/2878-pm-execution/11619-user-stories ~/.claude/skills/user-stories ; mkdir -p ~/.claude/skills && cp -r .claude/skills/kosif-superpowers/vendor/kosif-atlas/skills/2878-pm-execution/11620-wwas ~/.claude/skills/wwas ; mkdir -p ~/.claude/skills && cp -r .claude/skills/kosif-superpowers/vendor/kosif-atlas/skills/2213-majestic-product/8315-requirements-quality ~/.claude/skills/requirements-quality
+
+**الوسوم:** user stories · Gherkin · acceptance criteria · INVEST · requirements quality · قصص المستخدم · معايير القبول
+
+#### 1. الاستقبال (A25)
+
+- الجمهور: افتراض مكتوب ← قارئ عام ذكي غير متخصص
+- النبرة واللهجة: افتراض مكتوب ← لغة الطلب ولهجته
+- الطول: افتراض مكتوب ← أقصر طول يحقق الغرض
+- الصيغة: افتراض مكتوب ← نص في الرد، أو مستند إن طُلب ملف
+- لا تُفترض أبدًا: مادة الإنتاج نفسها، والإذن بخطوة مدفوعة أو منشورة أو لا رجعة فيها، والهوية والحقوق.
+
+#### 2. الجاهزية والشارة (A28)
+
+- لا متطلبات مسجلة؛ افحص المسار والأداة بـ `hub.py doctor` قبل الشارة.
+- الوضع 1: شارة «هنا الآن» بعد الفحص، لا 📄 الكتالوج تلقائيًا · الوضع 2: `كتالوج: 📄 · هنا: غير مفحوص` · الوضع 3: بلا شارة ولا معرّف.
+
+#### 3. موضعها في الخطة (A26)
+
+- عقدة منمّطة: المدخل `brief` ← المخرج `document`، والمنفّذ `method:ADOCS-58` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
+- لا أداة مسجلة تخدم عائلتها: التنفيذ بالمكتبات أو بأداة من مجموعة أخرى.
+- مراحل النوع: الغرض والقارئ ← هيكل العناوين ← مسودة ← مراجعة الحقائق ← تحرير اللغة ← فتح الملف بصيغته ← تسليم.
+- إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
+
+#### 4. بوابة التحقق (A27)
+
+- إلزامي: يحقق الغرض في أول فقرة ← قراءة الافتتاح
+- إلزامي: عربية سليمة إملاءً ونحوًا ← مراجعة سطر بسطر
+- جودة: بلا حشو ولا عبارات عامة بلا مضمون ← think.py critic
+- إلزامي: كل رقم أو اسم أو تاريخ متحقق منه ← مصدر لكل حقيقة
+- إلزامي: الملف المطلوب يُفتح فعلًا بصيغته ← فتح الملف
+- أمر الحكم في الوضع 1: `think.py qa document --answers qa.json` (PASS / FAIL / INCOMPLETE).
+
+#### 5. التعافي (A29)
+
+- `missing_dependency` (اعتمادية مفقودة، ميزانية 2): سمِّ الاعتمادية بالضبط (حزمة، برنامج، خط، نموذج) ← ثبّت محليًا في بيئة العمل إن كان مجانيًا ومسموحًا (pip --user أو venv أو npm محلي) · البديل: مسار المكتبة القياسية أو أداة أخرى من نفس المجموعة · تصعيد: تثبيت نظامي أو مدفوع أو يحتاج مفتاحًا: توقف واسأل
+- `quality_below_threshold` (جودة دون العتبة، ميزانية 3): أي معيار فشل وبكم (المقيس مقابل العتبة) ← عالج السبب الأكبر وحده ثم أعد القياس · البديل: المنهج البديل المكتوب للمرحلة في الخطة · تصعيد: معيار إلزامي لا يتحقق بعد البديل: توقف وأبلغ بالأرقام
+
+#### 6. الأدلة
+
+- `https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/2213-majestic-product/8305-gherkin-stories`
+- `https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/2878-pm-execution/11619-user-stories`
+- `https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/2878-pm-execution/11620-wwas`
+- `https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/2213-majestic-product/8315-requirements-quality`
+
+#### 7. قدرات قريبة في العائلة
+
+- `ADOCS-56` صفحة حالة المشروع بتبويبات: تحديث بالفروق لا إعادة سرد، وكتلة حالة مضمنة في كل نسخة / Tabbed project status page: refresh by deltas, not re-narration, with a state block embedded in every render (documented)
+- `ADOCS-57` من محضر الاجتماع إلى سجل قرارات: القرار والسبب والبدائل المرفوضة والمسؤول والأسئلة المفتوحة / From meeting transcript to decision record: decision, rationale, rejected options, owner and open questions (documented)
+- `ADOCS-59` التطوير بالمواصفة للوكلاء: دستور ثم مواصفة بلا تقنية ثم صيد الغموض ثم خطة ثم مهام، ودمج تغييرات المواصفة في الأساس / Spec-driven development for coding agents: constitution, tech-free spec, ambiguity hunt, plan, tasks, and merging delta specs into the baseline (documented)
+- `ADOCS-60` قائمة الأعمال المؤجلة في المستودع: ملف لكل بند، وحقل يستحق نعم أو لا أو لاحقًا، والإغلاق بحذف الملف في git / In-repo backlog of deferred work: one file per item, a worth yes/no/later field, closed by deleting the file in git (documented)
+
+### `ADOCS-59` — التطوير بالمواصفة للوكلاء: دستور ثم مواصفة بلا تقنية ثم صيد الغموض ثم خطة ثم مهام، ودمج تغييرات المواصفة في الأساس / Spec-driven development for coding agents: constitution, tech-free spec, ambiguity hunt, plan, tasks, and merging delta specs into the baseline
+
+| الحقل | القيمة |
+|---|---|
+| العائلة | `atlas-docs` ([فصل العائلة](../../../.claude/skills/kosif-superpowers/references/powers/atlas-docs.md)) |
+| المجموعة | المستندات والكتابة (`documents`) |
+| نوع المخرج (A25، A27) | مستند وكتابة ومحتوى (`document`) |
+| الحالة في الكتالوج | 📄 `documented`: منهج موصوف يحتاج بناءً أو ربطًا قبل التشغيل |
+| سقف التحقق قبل العمل (A27) | V1 حتى تُبنى وتُشغَّل؛ لا تقدَّم جاهزة أبدًا |
+| نطاق الدليل | `url` |
+| الرخصة | card in our own words; the original skill folders are copied verbatim with their MIT license and SOURCE.md under vendor/kosif-atlas |
+
+**ما هي:** المواصفة لا الـprompt هي مصدر الحقيقة الدائم: مبادئ المشروع غير القابلة للتفاوض، ثم مواصفة تقول ماذا ولماذا دون تقنية بمعايير قبول بصيغة EARS، ثم صيد الغموض بأسئلة مع افتراض موصى به، ثم خطة تُفحص مقابل المبادئ، ثم مهام صغيرة مرتبة، ثم مزامنة المواصفة مع ما بُني فعلًا؛ ومواصفة جاهزة للوكيل في صفحة إلى ثلاث صفحات. — Tool-agnostic SDD loop with human gates.
+
+**متى:** اكتب مواصفة لميزة، جهّز المتطلبات لوكيل برمجة، Spec Kit أو Kiro، الوكيل بنى الشيء الخطأ / spec-first work with coding agents
+
+**كيف:** 1) Detect the toolchain (.specify for Spec Kit, .kiro/specs for Kiro, AI-DLC rules) and follow it; otherwise create specs/<feature>/. 2) Constitution once per project: 5 to 9 principles drawn from the repo (test commands, architecture patterns, banned practices), approved by the tech lead. 3) Specify what and why with no technology; move tech choices to the plan. Write user stories with EARS criteria (WHEN a trigger, the system SHALL a response; WHILE a state; IF an unwanted condition THEN), non-functional needs and explicit out-of-scope. 4) Agent-ready spec: intent over instructions, explicit non-goals and forbidden actions, every requirement mapped to a check an agent can run, point to files and ADRs by path, 1 to 3 pages. 5) Clarify before planning: model actors, entities, states and external systems, then hunt scope, data, states and errors, permissions, concurrency, non-functional (including RTL), compatibility and contradictions; each finding becomes a question with a recommended default and the impact if wrong, ranked blocking, important, minor; check the code before asking; record answers in a dated Clarifications section. 6) Plan with a constitution check that lists each principle and compliance. 7) Tasks of 1 to 4 hours each with a verification step, independent ones marked [P], ordered by dependency with tests first. 8) Implement task by task and verify each. 9) Converge: merge delta specs into the main spec by operation (added appends, modified replaces by requirement name, removed deletes, renamed checks for collisions), flag conflicts for the owner, and archive only when clean. Full original skill(s) with license: vendor/kosif-atlas/skills/1497-spec-driven/3713-spec-workflow, vendor/kosif-atlas/skills/3050-adlc-intent/13135-spec-driven-development, vendor/kosif-atlas/skills/3050-adlc-intent/13134-spec-clarification, vendor/kosif-atlas/skills/3050-adlc-intent/13132-agentic-prd, vendor/kosif-atlas/skills/2200-spec-superflow/8211-spec-writer, vendor/kosif-atlas/skills/2200-spec-superflow/8210-spec-merger.
+
+**المعاملات:** feature idea, repository
+
+**التثبيت:** mkdir -p ~/.claude/skills && cp -r .claude/skills/kosif-superpowers/vendor/kosif-atlas/skills/1497-spec-driven/3713-spec-workflow ~/.claude/skills/spec-workflow ; mkdir -p ~/.claude/skills && cp -r .claude/skills/kosif-superpowers/vendor/kosif-atlas/skills/3050-adlc-intent/13135-spec-driven-development ~/.claude/skills/spec-driven-development ; mkdir -p ~/.claude/skills && cp -r .claude/skills/kosif-superpowers/vendor/kosif-atlas/skills/3050-adlc-intent/13134-spec-clarification ~/.claude/skills/spec-clarification ; mkdir -p ~/.claude/skills && cp -r .claude/skills/kosif-superpowers/vendor/kosif-atlas/skills/3050-adlc-intent/13132-agentic-prd ~/.claude/skills/agentic-prd ; mkdir -p ~/.claude/skills && cp -r .claude/skills/kosif-superpowers/vendor/kosif-atlas/skills/2200-spec-superflow/8211-spec-writer ~/.claude/skills/spec-writer ; mkdir -p ~/.claude/skills && cp -r .claude/skills/kosif-superpowers/vendor/kosif-atlas/skills/2200-spec-superflow/8210-spec-merger ~/.claude/skills/spec-merger
+
+**الوسوم:** spec-driven development · EARS · Spec Kit · Kiro · agentic PRD · ambiguity · المواصفة · التطوير بالمواصفة
+
+#### 1. الاستقبال (A25)
+
+- الجمهور: افتراض مكتوب ← قارئ عام ذكي غير متخصص
+- النبرة واللهجة: افتراض مكتوب ← لغة الطلب ولهجته
+- الطول: افتراض مكتوب ← أقصر طول يحقق الغرض
+- الصيغة: افتراض مكتوب ← نص في الرد، أو مستند إن طُلب ملف
+- لا تُفترض أبدًا: مادة الإنتاج نفسها، والإذن بخطوة مدفوعة أو منشورة أو لا رجعة فيها، والهوية والحقوق.
+
+#### 2. الجاهزية والشارة (A28)
+
+- لا متطلبات مسجلة؛ افحص المسار والأداة بـ `hub.py doctor` قبل الشارة.
+- الوضع 1: شارة «هنا الآن» بعد الفحص، لا 📄 الكتالوج تلقائيًا · الوضع 2: `كتالوج: 📄 · هنا: غير مفحوص` · الوضع 3: بلا شارة ولا معرّف.
+
+#### 3. موضعها في الخطة (A26)
+
+- عقدة منمّطة: المدخل `brief` ← المخرج `document`، والمنفّذ `method:ADOCS-59` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
+- لا أداة مسجلة تخدم عائلتها: التنفيذ بالمكتبات أو بأداة من مجموعة أخرى.
+- مراحل النوع: الغرض والقارئ ← هيكل العناوين ← مسودة ← مراجعة الحقائق ← تحرير اللغة ← فتح الملف بصيغته ← تسليم.
+- إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
+
+#### 4. بوابة التحقق (A27)
+
+- إلزامي: يحقق الغرض في أول فقرة ← قراءة الافتتاح
+- إلزامي: عربية سليمة إملاءً ونحوًا ← مراجعة سطر بسطر
+- جودة: بلا حشو ولا عبارات عامة بلا مضمون ← think.py critic
+- إلزامي: كل رقم أو اسم أو تاريخ متحقق منه ← مصدر لكل حقيقة
+- إلزامي: الملف المطلوب يُفتح فعلًا بصيغته ← فتح الملف
+- أمر الحكم في الوضع 1: `think.py qa document --answers qa.json` (PASS / FAIL / INCOMPLETE).
+
+#### 5. التعافي (A29)
+
+- `missing_dependency` (اعتمادية مفقودة، ميزانية 2): سمِّ الاعتمادية بالضبط (حزمة، برنامج، خط، نموذج) ← ثبّت محليًا في بيئة العمل إن كان مجانيًا ومسموحًا (pip --user أو venv أو npm محلي) · البديل: مسار المكتبة القياسية أو أداة أخرى من نفس المجموعة · تصعيد: تثبيت نظامي أو مدفوع أو يحتاج مفتاحًا: توقف واسأل
+- `quality_below_threshold` (جودة دون العتبة، ميزانية 3): أي معيار فشل وبكم (المقيس مقابل العتبة) ← عالج السبب الأكبر وحده ثم أعد القياس · البديل: المنهج البديل المكتوب للمرحلة في الخطة · تصعيد: معيار إلزامي لا يتحقق بعد البديل: توقف وأبلغ بالأرقام
+
+#### 6. الأدلة
+
+- `https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/1497-spec-driven/3713-spec-workflow`
+- `https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/3050-adlc-intent/13135-spec-driven-development`
+- `https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/3050-adlc-intent/13134-spec-clarification`
+- `https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/3050-adlc-intent/13132-agentic-prd`
+- `https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/2200-spec-superflow/8211-spec-writer`
+- `https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/2200-spec-superflow/8210-spec-merger`
+
+#### 7. قدرات قريبة في العائلة
+
+- `ADOCS-57` من محضر الاجتماع إلى سجل قرارات: القرار والسبب والبدائل المرفوضة والمسؤول والأسئلة المفتوحة / From meeting transcript to decision record: decision, rationale, rejected options, owner and open questions (documented)
+- `ADOCS-58` من المتطلبات إلى قصص جاهزة للتذاكر بسيناريوهات Gherkin، مع تدقيق جودة المتطلبات قبل التسليم / Requirements to ticket-ready stories with Gherkin scenarios, plus a requirements quality audit before handoff (documented)
+- `ADOCS-60` قائمة الأعمال المؤجلة في المستودع: ملف لكل بند، وحقل يستحق نعم أو لا أو لاحقًا، والإغلاق بحذف الملف في git / In-repo backlog of deferred work: one file per item, a worth yes/no/later field, closed by deleting the file in git (documented)
+
+### `ADOCS-60` — قائمة الأعمال المؤجلة في المستودع: ملف لكل بند، وحقل يستحق نعم أو لا أو لاحقًا، والإغلاق بحذف الملف في git / In-repo backlog of deferred work: one file per item, a worth yes/no/later field, closed by deleting the file in git
+
+| الحقل | القيمة |
+|---|---|
+| العائلة | `atlas-docs` ([فصل العائلة](../../../.claude/skills/kosif-superpowers/references/powers/atlas-docs.md)) |
+| المجموعة | المستندات والكتابة (`documents`) |
+| نوع المخرج (A25، A27) | مستند وكتابة ومحتوى (`document`) |
+| الحالة في الكتالوج | 📄 `documented`: منهج موصوف يحتاج بناءً أو ربطًا قبل التشغيل |
+| سقف التحقق قبل العمل (A27) | V1 حتى تُبنى وتُشغَّل؛ لا تقدَّم جاهزة أبدًا |
+| نطاق الدليل | `url` |
+| الرخصة | card in our own words; the original skill folders are copied verbatim with their MIT license and SOURCE.md under vendor/kosif-atlas |
+
+**ما هي:** مجلد docs/backlog يحفظ العمل الحقيقي غير المنفذ الآن: عيب لم يُدخله التغيير الحالي، انحراف بلا عرض ظاهر، إصلاح أكبر من قيمته، فكرة تستحق الحفظ؛ لكل بند ملف باسم العيب نفسه، وثلاثة حقول فقط، و'لا' تُحفظ حتى لا يُكتشف البند ويُناقش من جديد. — A dedupe-friendly backlog that never gates work.
+
+**متى:** سجل المهام المؤجلة، ماذا على قائمتي، أجّل هذا الإصلاح، اكتشاف مكرر لنفس المشكلة في كل مراجعة / tracking deferred work in a repo
+
+**كيف:** 1) Store items at docs/backlog/<slug>.md, where the slug names the defect (not the file), so commits can cite it and dedupe is a filename check. 2) Three front-matter fields: worth (yes = agreed it should be fixed, regardless of schedule; later = the value decision itself is open, and the body must name the unknown that settles it; no = decided not to fix, with the reason, kept only while that reason still matters), where (path:line when anchored; the line is only a navigation hint), added (YYYY-MM-DD, never updated, so it reads as age). 3) The H1 is the title; the body is free-form (repro, what was tried, links). 4) Before adding, search slugs and where paths for an existing item and append to it instead. 5) Close an item by git rm in the commit that fixes it. 6) List items ordered by worth then age. 7) It is the maintainer's own list; it never blocks a change or reaches contributors. Full original skill(s) with license: vendor/kosif-atlas/skills/3234-workflow/13651-backlog.
+
+**المعاملات:** repository
+
+**التثبيت:** mkdir -p ~/.claude/skills && cp -r .claude/skills/kosif-superpowers/vendor/kosif-atlas/skills/3234-workflow/13651-backlog ~/.claude/skills/backlog
+
+**الوسوم:** backlog · deferred work · tech debt · triage · قائمة مؤجلة · الدين التقني
+
+#### 1. الاستقبال (A25)
+
+- الجمهور: افتراض مكتوب ← قارئ عام ذكي غير متخصص
+- النبرة واللهجة: افتراض مكتوب ← لغة الطلب ولهجته
+- الطول: افتراض مكتوب ← أقصر طول يحقق الغرض
+- الصيغة: افتراض مكتوب ← نص في الرد، أو مستند إن طُلب ملف
+- لا تُفترض أبدًا: مادة الإنتاج نفسها، والإذن بخطوة مدفوعة أو منشورة أو لا رجعة فيها، والهوية والحقوق.
+
+#### 2. الجاهزية والشارة (A28)
+
+- لا متطلبات مسجلة؛ افحص المسار والأداة بـ `hub.py doctor` قبل الشارة.
+- الوضع 1: شارة «هنا الآن» بعد الفحص، لا 📄 الكتالوج تلقائيًا · الوضع 2: `كتالوج: 📄 · هنا: غير مفحوص` · الوضع 3: بلا شارة ولا معرّف.
+
+#### 3. موضعها في الخطة (A26)
+
+- عقدة منمّطة: المدخل `brief` ← المخرج `document`، والمنفّذ `method:ADOCS-60` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
+- لا أداة مسجلة تخدم عائلتها: التنفيذ بالمكتبات أو بأداة من مجموعة أخرى.
+- مراحل النوع: الغرض والقارئ ← هيكل العناوين ← مسودة ← مراجعة الحقائق ← تحرير اللغة ← فتح الملف بصيغته ← تسليم.
+- إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
+
+#### 4. بوابة التحقق (A27)
+
+- إلزامي: يحقق الغرض في أول فقرة ← قراءة الافتتاح
+- إلزامي: عربية سليمة إملاءً ونحوًا ← مراجعة سطر بسطر
+- جودة: بلا حشو ولا عبارات عامة بلا مضمون ← think.py critic
+- إلزامي: كل رقم أو اسم أو تاريخ متحقق منه ← مصدر لكل حقيقة
+- إلزامي: الملف المطلوب يُفتح فعلًا بصيغته ← فتح الملف
+- أمر الحكم في الوضع 1: `think.py qa document --answers qa.json` (PASS / FAIL / INCOMPLETE).
+
+#### 5. التعافي (A29)
+
+- `missing_dependency` (اعتمادية مفقودة، ميزانية 2): سمِّ الاعتمادية بالضبط (حزمة، برنامج، خط، نموذج) ← ثبّت محليًا في بيئة العمل إن كان مجانيًا ومسموحًا (pip --user أو venv أو npm محلي) · البديل: مسار المكتبة القياسية أو أداة أخرى من نفس المجموعة · تصعيد: تثبيت نظامي أو مدفوع أو يحتاج مفتاحًا: توقف واسأل
+- `quality_below_threshold` (جودة دون العتبة، ميزانية 3): أي معيار فشل وبكم (المقيس مقابل العتبة) ← عالج السبب الأكبر وحده ثم أعد القياس · البديل: المنهج البديل المكتوب للمرحلة في الخطة · تصعيد: معيار إلزامي لا يتحقق بعد البديل: توقف وأبلغ بالأرقام
+
+#### 6. الأدلة
+
+- `https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/3234-workflow/13651-backlog`
+
+#### 7. قدرات قريبة في العائلة
+
+- `ADOCS-58` من المتطلبات إلى قصص جاهزة للتذاكر بسيناريوهات Gherkin، مع تدقيق جودة المتطلبات قبل التسليم / Requirements to ticket-ready stories with Gherkin scenarios, plus a requirements quality audit before handoff (documented)
+- `ADOCS-59` التطوير بالمواصفة للوكلاء: دستور ثم مواصفة بلا تقنية ثم صيد الغموض ثم خطة ثم مهام، ودمج تغييرات المواصفة في الأساس / Spec-driven development for coding agents: constitution, tech-free spec, ambiguity hunt, plan, tasks, and merging delta specs into the baseline (documented)
 

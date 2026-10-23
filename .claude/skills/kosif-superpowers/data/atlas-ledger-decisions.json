@@ -5,6 +5,1460 @@
   {
    "match": {
     "ids": [
+     10628,
+     10630,
+     10632,
+     10637,
+     10669,
+     10674,
+     10728,
+     10729,
+     10763,
+     10777,
+     10788,
+     10791,
+     10810,
+     10811,
+     10814,
+     10871
+    ]
+   },
+   "status": "skipped",
+   "reason": "product-specific: one commercial agent product's commands (charly-*)"
+  },
+  {
+   "match": {
+    "ids": [
+     1274,
+     1288,
+     2396,
+     3237,
+     3692,
+     3699,
+     3948,
+     4326,
+     4634,
+     7126,
+     7546,
+     8872,
+     11588,
+     11739,
+     12901,
+     14302,
+     14331,
+     13805,
+     13812
+    ]
+   },
+   "status": "skipped",
+   "reason": "product-specific: bound to one named tool, service or app's CLI; no portable method beyond existing powers"
+  },
+  {
+   "match": {
+    "ids": [
+     177,
+     2711,
+     2717,
+     2720,
+     2728,
+     2729,
+     2738,
+     2755,
+     2793,
+     2798,
+     9923,
+     9924,
+     11440,
+     11441,
+     11442,
+     11443,
+     11444,
+     11538,
+     13091,
+     13097,
+     13118,
+     13146,
+     13326,
+     11829,
+     11830,
+     11831,
+     11833,
+     11834,
+     11837,
+     11839
+    ]
+   },
+   "status": "skipped",
+   "reason": "stub or thin wrapper: delegates to another file or command, or holds only a few lines"
+  },
+  {
+   "match": {
+    "ids": [
+     196,
+     7721,
+     7808,
+     10028,
+     2956
+    ]
+   },
+   "status": "skipped",
+   "reason": "single-tool or single-setting reference; too narrow for a power"
+  },
+  {
+   "match": {
+    "ids": [
+     8883,
+     8884,
+     9259
+    ]
+   },
+   "status": "skipped",
+   "reason": "jurisdiction-specific US practice workflow (HOA covenants, home-health EVV, tax preparation); would mislead elsewhere"
+  },
+  {
+   "match": {
+    "ids": [
+     4649
+    ]
+   },
+   "status": "skipped",
+   "reason": "health-behaviour coaching persona; out of scope for a production toolkit and sensitive"
+  },
+  {
+   "match": {
+    "ids": [
+     5
+    ]
+   },
+   "status": "skipped",
+   "reason": "vocabulary filter for one Chinese workflow system's internal terms"
+  },
+  {
+   "match": {
+    "ids": [
+     14280,
+     14304,
+     13266
+    ]
+   },
+   "status": "skipped",
+   "reason": "general overview of a well-known topic with no distinct method beyond standard references"
+  },
+  {
+   "match": {
+    "ids": [
+     4
+    ]
+   },
+   "status": "pattern",
+   "powers": [
+    "ASTRAT-56"
+   ],
+   "reason": "diagnose, practise, feedback and review learning coach"
+  },
+  {
+   "match": {
+    "ids": [
+     2122
+    ]
+   },
+   "status": "pattern",
+   "powers": [
+    "ABUILD-01"
+   ],
+   "reason": "autonomous phase-per-PR roadmap execution"
+  },
+  {
+   "match": {
+    "ids": [
+     2162,
+     2167,
+     8208
+    ]
+   },
+   "status": "pattern",
+   "powers": [
+    "AMIND-47"
+   ],
+   "reason": "requirements discovery and elicitation before implementation"
+  },
+  {
+   "match": {
+    "ids": [
+     2027,
+     2028,
+     2031,
+     7787,
+     7790,
+     4559
+    ]
+   },
+   "status": "pattern",
+   "powers": [
+    "ACODE-165",
+    "ACODE-158"
+   ],
+   "reason": "agent framework scaffolding (schemas, state graph, context providers)"
+  },
+  {
+   "match": {
+    "ids": [
+     2840,
+     9114
+    ]
+   },
+   "status": "pattern",
+   "powers": [
+    "THINK-33",
+    "AGENT-29"
+   ],
+   "reason": "context-window budgeting and just-in-time packing"
+  },
+  {
+   "match": {
+    "ids": [
+     3220,
+     3224,
+     3226,
+     3232
+    ]
+   },
+   "status": "pattern",
+   "powers": [
+    "ADOCS-53",
+    "ADOCS-54"
+   ],
+   "reason": "book project routing and genre craft; the outline and publishing methods are held"
+  },
+  {
+   "match": {
+    "ids": [
+     3390,
+     3392
+    ]
+   },
+   "status": "pattern",
+   "powers": [
+    "ACODE-281"
+   ],
+   "reason": "build and operate a LiveKit agent; the debug and simulation method is held"
+  },
+  {
+   "match": {
+    "ids": [
+     4183
+    ]
+   },
+   "status": "pattern",
+   "powers": [
+    "ABUILD-35"
+   ],
+   "reason": "design-to-developer handoff spec"
+  },
+  {
+   "match": {
+    "ids": [
+     5450
+    ]
+   },
+   "status": "pattern",
+   "powers": [
+    "ACODE-247"
+   ],
+   "reason": "one vendor's primary workflow stage"
+  },
+  {
+   "match": {
+    "ids": [
+     7585
+    ]
+   },
+   "status": "pattern",
+   "powers": [
+    "ASTRAT-01"
+   ],
+   "reason": "audit agent topology for sub-agent opportunities"
+  },
+  {
+   "match": {
+    "ids": [
+     9657
+    ]
+   },
+   "status": "pattern",
+   "powers": [
+    "AGENT-17"
+   ],
+   "reason": "scheduled agent tasks"
+  },
+  {
+   "match": {
+    "ids": [
+     10053
+    ]
+   },
+   "status": "pattern",
+   "powers": [
+    "CODE-11"
+   ],
+   "reason": "capture the full log, read all of it, report by severity with quoted lines"
+  },
+  {
+   "match": {
+    "ids": [
+     11445
+    ]
+   },
+   "status": "pattern",
+   "powers": [
+    "ENG-152",
+    "GEN-48"
+   ],
+   "reason": "ComfyUI workflow JSON design"
+  },
+  {
+   "match": {
+    "ids": [
+     12249
+    ]
+   },
+   "status": "pattern",
+   "powers": [
+    "ACODE-285"
+   ],
+   "reason": "durable-workflow SDK reference; the migration method is held"
+  },
+  {
+   "match": {
+    "ids": [
+     13244
+    ]
+   },
+   "status": "pattern",
+   "powers": [
+    "ADOCS-01"
+   ],
+   "reason": "project context files for AI-assisted development"
+  },
+  {
+   "match": {
+    "ids": [
+     13246
+    ]
+   },
+   "status": "pattern",
+   "powers": [
+    "CODE-09"
+   ],
+   "reason": "phased TDD verification workflow"
+  },
+  {
+   "match": {
+    "ids": [
+     13649
+    ]
+   },
+   "status": "pattern",
+   "powers": [
+    "MODEL-45"
+   ],
+   "reason": "thesis and antithesis agents then verify against the code"
+  },
+  {
+   "match": {
+    "ids": [
+     14295
+    ]
+   },
+   "status": "pattern",
+   "powers": [
+    "THINK-30"
+   ],
+   "reason": "minimal targeted edits from visual selection"
+  },
+  {
+   "match": {
+    "ids": [
+     14487
+    ]
+   },
+   "status": "pattern",
+   "powers": [
+    "AMIND-18"
+   ],
+   "reason": "parallel agent dispatch for independent tasks"
+  },
+  {
+   "match": {
+    "ids": [
+     9831
+    ]
+   },
+   "status": "pattern",
+   "powers": [
+    "ACODE-61",
+    "APP-11"
+   ],
+   "reason": "adding MCP App UI views to an existing server's tools; same tool-plus-UI-resource method as ACODE-61; mcp-tooling batch, SKILL.md read as inert text"
+  },
+  {
+   "match": {
+    "ids": [
+     13499,
+     148
+    ]
+   },
+   "status": "pattern",
+   "powers": [
+    "FMT-50",
+    "ABUILD-09"
+   ],
+   "reason": "favicon, maskable icon and PWA manifest set; covered by the identity export set and PWA generation powers; mcp-tooling batch, SKILL.md read as inert text"
+  },
+  {
+   "match": {
+    "ids": [
+     7858,
+     7859,
+     2531
+    ]
+   },
+   "status": "pattern",
+   "powers": [
+    "ACODE-228"
+   ],
+   "reason": "uv run with inline script dependencies, uv tool installs and zero-setup system Python scripts; covered by the uv power; mcp-tooling batch, SKILL.md read as inert text"
+  },
+  {
+   "match": {
+    "ids": [
+     753
+    ]
+   },
+   "status": "pattern",
+   "powers": [
+    "QA-225",
+    "ENG-346"
+   ],
+   "reason": "DaVinci Resolve scripting and render jobs; covered by the existing Resolve powers; mcp-tooling batch, SKILL.md read as inert text"
+  },
+  {
+   "match": {
+    "ids": [
+     752
+    ]
+   },
+   "status": "pattern",
+   "powers": [
+    "ENG-326"
+   ],
+   "reason": "Premiere Pro sequences, markers and EDL/XML exchange; covered by the existing Premiere power; mcp-tooling batch, SKILL.md read as inert text"
+  },
+  {
+   "match": {
+    "ids": [
+     748
+    ]
+   },
+   "status": "pattern",
+   "powers": [
+    "AGENT-06"
+   ],
+   "reason": "batch independent tool calls in parallel while keeping dependencies ordered; covered by the parallel lane matrix; mcp-tooling batch, SKILL.md read as inert text"
+  },
+  {
+   "match": {
+    "ids": [
+     7551,
+     2953
+    ]
+   },
+   "status": "pattern",
+   "powers": [
+    "AMIND-19",
+    "ACODE-234"
+   ],
+   "reason": "driving tmux or zellij sessions to test CLIs and agent sessions; covered by the tmux-pane and exploratory QA powers; mcp-tooling batch, SKILL.md read as inert text"
+  },
+  {
+   "match": {
+    "ids": [
+     3223
+    ]
+   },
+   "status": "pattern",
+   "powers": [
+    "ADOCS-53"
+   ],
+   "reason": "book onboarding: genre, reader, scope and voice before outlining; covered by the book outline power; mcp-tooling batch, SKILL.md read as inert text"
+  },
+  {
+   "match": {
+    "ids": [
+     2933,
+     2936
+    ]
+   },
+   "status": "pattern",
+   "powers": [
+    "ADATA-43",
+    "ACODE-96"
+   ],
+   "reason": "psql client and Postgres extensions; covered by the Postgres diagnosis and migration powers; mcp-tooling batch, SKILL.md read as inert text"
+  },
+  {
+   "match": {
+    "ids": [
+     10338
+    ]
+   },
+   "status": "pattern",
+   "powers": [
+    "ACODE-305"
+   ],
+   "reason": "CircleCI CLI operations; folded into the CircleCI optimisation card; mcp-tooling batch, SKILL.md read as inert text"
+  },
+  {
+   "match": {
+    "ids": [
+     7862
+    ]
+   },
+   "status": "pattern",
+   "powers": [
+    "ABUILD-54"
+   ],
+   "reason": "scaffold a Rust project from a cargo-generate template; folded into the repository bootstrap card; mcp-tooling batch, SKILL.md read as inert text"
+  },
+  {
+   "match": {
+    "ids": [
+     2030
+    ]
+   },
+   "status": "pattern",
+   "powers": [
+    "ACODE-293"
+   ],
+   "reason": "typed input/output schemas for an agent tool class; covered by the agent tool contract card; mcp-tooling batch, SKILL.md read as inert text"
+  },
+  {
+   "match": {
+    "ids": [
+     7757
+    ]
+   },
+   "status": "pattern",
+   "powers": [
+    "AGENT-22",
+    "ACODE-299"
+   ],
+   "reason": "MCP server config with tool permissions and env vars; covered by the MCP add/vet/budget power and the MCP config slice card; mcp-tooling batch, SKILL.md read as inert text"
+  },
+  {
+   "match": {
+    "ids": [
+     7772
+    ]
+   },
+   "status": "pattern",
+   "powers": [
+    "ACODE-276"
+   ],
+   "reason": "Home Assistant YAML configuration; covered by the Home Assistant config check power; mcp-tooling batch, SKILL.md read as inert text"
+  },
+  {
+   "match": {
+    "ids": [
+     10629,
+     10633,
+     10635,
+     10639,
+     10642,
+     10644,
+     10646,
+     10652,
+     10656,
+     10663,
+     10667,
+     10676,
+     10713,
+     10715,
+     10739,
+     10752,
+     10776,
+     10780,
+     10790,
+     10794,
+     10798,
+     10805,
+     10812,
+     10816,
+     10862,
+     10869,
+     10870,
+     10923,
+     10924,
+     10926,
+     10932,
+     10934,
+     10940
+    ]
+   },
+   "status": "skipped",
+   "reason": "product-specific: one commercial agent product's commands (charly-*)"
+  },
+  {
+   "match": {
+    "ids": [
+     48,
+     1273,
+     2842,
+     3399,
+     3414,
+     3689,
+     3698,
+     4150,
+     4156,
+     4620,
+     4648,
+     4752,
+     4847,
+     7141,
+     7534,
+     7816,
+     7823,
+     7824,
+     7831,
+     8450,
+     9343,
+     11816,
+     11853,
+     11868,
+     12438,
+     12439,
+     12631,
+     12899,
+     12904,
+     13319,
+     13324,
+     13328,
+     13431,
+     13676,
+     13766,
+     13807,
+     14375,
+     14481
+    ]
+   },
+   "status": "skipped",
+   "reason": "product-specific: bound to one named tool, service or app's CLI; no portable method beyond existing powers"
+  },
+  {
+   "match": {
+    "ids": [
+     2714,
+     9883,
+     4625,
+     7933,
+     10040
+    ]
+   },
+   "status": "skipped",
+   "reason": "stub or thin wrapper: a few lines that only point at a tool or another skill"
+  },
+  {
+   "match": {
+    "ids": [
+     80,
+     9884,
+     9906,
+     10035,
+     10077,
+     11679,
+     7854
+    ]
+   },
+   "status": "skipped",
+   "reason": "vendor or language reference: library API notes, one language rule or one author's personal conventions; nothing to transfer beyond the upstream docs"
+  },
+  {
+   "match": {
+    "ids": [
+     69
+    ]
+   },
+   "status": "pattern",
+   "powers": [
+    "APPX-75"
+   ],
+   "reason": "folder reorganisation behind approval gates with duplicate finding; covered by the duplicate finder, planning-specs batch, SKILL.md read as inert text"
+  },
+  {
+   "match": {
+    "ids": [
+     459
+    ]
+   },
+   "status": "pattern",
+   "powers": [
+    "ASTRAT-84",
+    "MODEL-55"
+   ],
+   "reason": "CFO forcing questions (runway, unit economics, dilution, bear case); same family as the C-suite forcing questions, planning-specs batch, SKILL.md read as inert text"
+  },
+  {
+   "match": {
+    "ids": [
+     8289,
+     13064
+    ]
+   },
+   "status": "pattern",
+   "powers": [
+    "STORY-83"
+   ],
+   "reason": "editorial and social content calendars; covered by content pillars and publishing calendar, planning-specs batch, SKILL.md read as inert text"
+  },
+  {
+   "match": {
+    "ids": [
+     8303,
+     13500,
+     2736
+    ]
+   },
+   "status": "pattern",
+   "powers": [
+    "ASTRAT-57",
+    "AMIND-47"
+   ],
+   "reason": "one-question-at-a-time interviewing to a written artifact; covered by Socratic questioning and requirements elicitation, planning-specs batch, SKILL.md read as inert text"
+  },
+  {
+   "match": {
+    "ids": [
+     8312,
+     11547,
+     11609
+    ]
+   },
+   "status": "pattern",
+   "powers": [
+    "AMIND-50"
+   ],
+   "reason": "Now/Next/Later and outcome roadmaps from evidence; covered by the evidence-based roadmap power, planning-specs batch, SKILL.md read as inert text"
+  },
+  {
+   "match": {
+    "ids": [
+     8313,
+     11606
+    ]
+   },
+   "status": "pattern",
+   "powers": [
+    "PROD-08"
+   ],
+   "reason": "PRD templates; covered by the measurable PRD power, planning-specs batch, SKILL.md read as inert text"
+  },
+  {
+   "match": {
+    "ids": [
+     8356
+    ]
+   },
+   "status": "pattern",
+   "powers": [
+    "PROD-04",
+    "THINK-06"
+   ],
+   "reason": "premortem before committing; covered by the premortem powers, planning-specs batch, SKILL.md read as inert text"
+  },
+  {
+   "match": {
+    "ids": [
+     9648
+    ]
+   },
+   "status": "pattern",
+   "powers": [
+    "ASTRAT-71",
+    "ADOCS-42"
+   ],
+   "reason": "concise, bottom-line-first prose; covered by action-first replies and plain writing review, planning-specs batch, SKILL.md read as inert text"
+  },
+  {
+   "match": {
+    "ids": [
+     11613,
+     14320
+    ]
+   },
+   "status": "pattern",
+   "powers": [
+    "ADOCS-12",
+    "ASTRAT-95"
+   ],
+   "reason": "sprint and personal retrospectives; covered by blameless postmortem and the decision retrospective card, planning-specs batch, SKILL.md read as inert text"
+  },
+  {
+   "match": {
+    "ids": [
+     11614
+    ]
+   },
+   "status": "pattern",
+   "powers": [
+    "PLAN-03",
+    "PLAN-05"
+   ],
+   "reason": "sprint planning with capacity and dependencies; covered by work breakdown and the requirements gate, planning-specs batch, SKILL.md read as inert text"
+  },
+  {
+   "match": {
+    "ids": [
+     12666
+    ]
+   },
+   "status": "pattern",
+   "powers": [
+    "ASTRAT-77"
+   ],
+   "reason": "AIAG-VDA action priority ratings; covered by the FMEA gap review, planning-specs batch, SKILL.md read as inert text"
+  },
+  {
+   "match": {
+    "ids": [
+     12669
+    ]
+   },
+   "status": "pattern",
+   "powers": [
+    "ASTRAT-68",
+    "ASTRAT-83"
+   ],
+   "reason": "supplier corrective action requests with 8D evaluation; covered by the CAPA and double-zero powers, planning-specs batch, SKILL.md read as inert text"
+  },
+  {
+   "match": {
+    "ids": [
+     13255
+    ]
+   },
+   "status": "pattern",
+   "powers": [
+    "CODE-19"
+   ],
+   "reason": "ADR templates and lifecycle; covered by the architecture decision record power, planning-specs batch, SKILL.md read as inert text"
+  },
+  {
+   "match": {
+    "ids": [
+     13599,
+     13600
+    ]
+   },
+   "status": "pattern",
+   "powers": [
+    "ADOCS-24"
+   ],
+   "reason": "reviewable HTML plan previews and design docs; covered by the visual implementation plan power, planning-specs batch, SKILL.md read as inert text"
+  },
+  {
+   "match": {
+    "ids": [
+     14532
+    ]
+   },
+   "status": "pattern",
+   "powers": [
+    "AMIND-72"
+   ],
+   "reason": "split a broad brief into dependency-ordered specs; covered by the plan-then-implement card, planning-specs batch, SKILL.md read as inert text"
+  },
+  {
+   "match": {
+    "ids": [
+     8519,
+     8579,
+     8839,
+     8885,
+     8956,
+     9257,
+     9258,
+     9281,
+     9282
+    ]
+   },
+   "status": "skipped",
+   "reason": "single-industry practice operations (auto repair, chiropractic, funeral, home health, med spa, tax practice, title escrow) bound to local regulation; no portable method beyond existing powers"
+  },
+  {
+   "match": {
+    "ids": [
+     1275,
+     2501,
+     3045,
+     4157,
+     9339,
+     9944,
+     10783,
+     10832,
+     10858,
+     11345,
+     12898,
+     14363,
+     14384
+    ]
+   },
+   "status": "skipped",
+   "reason": "product-specific: bound to one named tool, service or app's CLI; no portable method beyond existing powers"
+  },
+  {
+   "match": {
+    "ids": [
+     2950,
+     2712,
+     2713,
+     10273,
+     13520,
+     13099,
+     13119,
+     13137,
+     13138,
+     13139,
+     13148
+    ]
+   },
+   "status": "skipped",
+   "reason": "stub or thin wrapper: a few lines that only point at a tool or another skill"
+  },
+  {
+   "match": {
+    "ids": [
+     24,
+     85
+    ]
+   },
+   "status": "pattern",
+   "powers": [
+    "PROMPT-01",
+    "PROMPT-12",
+    "PROMPT-05"
+   ],
+   "reason": "prompt optimisation with a model-class gate and labelled efficiency/effectiveness variants; covered by the prompt routing, /optimize and technique-ladder powers, prompt-skill-engineering batch, SKILL.md read as inert text"
+  },
+  {
+   "match": {
+    "ids": [
+     9116
+    ]
+   },
+   "status": "pattern",
+   "powers": [
+    "PROMPT-28",
+    "PROMPT-05"
+   ],
+   "reason": "choose zero-shot, few-shot, CoT, decomposition or self-consistency by failure type; covered by the technique picker, prompt-skill-engineering batch, SKILL.md read as inert text"
+  },
+  {
+   "match": {
+    "ids": [
+     746
+    ]
+   },
+   "status": "pattern",
+   "powers": [
+    "PROMPT-33",
+    "ACODE-170"
+   ],
+   "reason": "stable cached prefix before variable input; covered by the cache-friendly layout and cache audit powers, prompt-skill-engineering batch, SKILL.md read as inert text"
+  },
+  {
+   "match": {
+    "ids": [
+     13126,
+     13239
+    ]
+   },
+   "status": "pattern",
+   "powers": [
+    "AGENT-20",
+    "ACODE-204"
+   ],
+   "reason": "guardrail hooks, including blocking --no-verify; covered by hooks-as-guardrails and the dangerous git command hooks, prompt-skill-engineering batch, SKILL.md read as inert text"
+  },
+  {
+   "match": {
+    "ids": [
+     13639
+    ]
+   },
+   "status": "pattern",
+   "powers": [
+    "AMIND-76",
+    "AMIND-47"
+   ],
+   "reason": "prompt prep by known/unknown quadrants and a blind-spot pass; covered by the decision elicitation card, prompt-skill-engineering batch, SKILL.md read as inert text"
+  },
+  {
+   "match": {
+    "ids": [
+     2170
+    ]
+   },
+   "status": "pattern",
+   "powers": [
+    "PROMPT-07",
+    "PROMPT-40"
+   ],
+   "reason": "short interview turned into a copy-paste system prompt; covered by the system prompt and template powers, prompt-skill-engineering batch, SKILL.md read as inert text"
+  },
+  {
+   "match": {
+    "ids": [
+     2745
+    ]
+   },
+   "status": "pattern",
+   "powers": [
+    "THINK-11"
+   ],
+   "reason": "map the answer space along independent dimensions before converging; covered by lenses and pivots, prompt-skill-engineering batch, SKILL.md read as inert text"
+  },
+  {
+   "match": {
+    "ids": [
+     7076
+    ]
+   },
+   "status": "pattern",
+   "powers": [
+    "PROMPT-39",
+    "AMIND-79"
+   ],
+   "reason": "score a skill or command prompt on clarity, safety, effectiveness, completeness and concision; covered by the prompt lint and skill authoring card, prompt-skill-engineering batch, SKILL.md read as inert text"
+  },
+  {
+   "match": {
+    "ids": [
+     7535
+    ]
+   },
+   "status": "pattern",
+   "powers": [
+    "ASTRAT-68"
+   ],
+   "reason": "corrective and preventive action for a broken process; covered by the closable CAPA power, prompt-skill-engineering batch, SKILL.md read as inert text"
+  },
+  {
+   "match": {
+    "ids": [
+     9429,
+     4160
+    ]
+   },
+   "status": "pattern",
+   "powers": [
+    "SELF-31",
+    "MISC-04"
+   ],
+   "reason": "actually use the session's skills and discover new ones; covered by the skill scout and auto skill selection powers, prompt-skill-engineering batch, SKILL.md read as inert text"
+  },
+  {
+   "match": {
+    "ids": [
+     11338,
+     11341,
+     11343
+    ]
+   },
+   "status": "pattern",
+   "powers": [
+    "AMIND-79"
+   ],
+   "reason": "house standards for authoring skills and agent prompts; covered by the skill authoring and library card, prompt-skill-engineering batch, SKILL.md read as inert text"
+  },
+  {
+   "match": {
+    "ids": [
+     11349
+    ]
+   },
+   "status": "pattern",
+   "powers": [
+    "ADOCS-42"
+   ],
+   "reason": "prose rules banning filler adverbs and overused vocabulary; covered by the plain writing review, prompt-skill-engineering batch, SKILL.md read as inert text"
+  },
+  {
+   "match": {
+    "ids": [
+     931,
+     932,
+     2234
+    ]
+   },
+   "status": "pattern",
+   "powers": [
+    "ACODE-311",
+    "AGENT-24"
+   ],
+   "reason": "create or customise a plugin from a template; covered by the plugin engineering card and plugins power, prompt-skill-engineering batch, SKILL.md read as inert text"
+  },
+  {
+   "match": {
+    "ids": [
+     2407
+    ]
+   },
+   "status": "pattern",
+   "powers": [
+    "AMIND-66"
+   ],
+   "reason": "mine a session transcript with parallel reviewers for lessons worth keeping; covered by the transcript mining card, prompt-skill-engineering batch, SKILL.md read as inert text"
+  },
+  {
+   "match": {
+    "ids": [
+     13502
+    ]
+   },
+   "status": "pattern",
+   "powers": [
+    "APPX-139",
+    "SELF-31"
+   ],
+   "reason": "import a skill from a GitHub folder or pasted text; covered by the safe skill import power, prompt-skill-engineering batch, SKILL.md read as inert text"
+  },
+  {
+   "match": {
+    "ids": [
+     11023
+    ]
+   },
+   "status": "pattern",
+   "powers": [
+    "SELF-09"
+   ],
+   "reason": "turn plugins and skills on per project; covered by the plugins and marketplace check, prompt-skill-engineering batch, SKILL.md read as inert text"
+  },
+  {
+   "match": {
+    "ids": [
+     14081
+    ]
+   },
+   "status": "pattern",
+   "powers": [
+    "ABUILD-59"
+   ],
+   "reason": "grow a site with traffic by converting more before buying more; covered by the website journey card, prompt-skill-engineering batch, SKILL.md read as inert text"
+  },
+  {
+   "match": {
+    "ids": [
+     2930
+    ]
+   },
+   "status": "pattern",
+   "powers": [
+    "ACODE-300"
+   ],
+   "reason": "oxlint configuration traps; covered by the linter stack card, prompt-skill-engineering batch, SKILL.md read as inert text"
+  },
+  {
+   "match": {
+    "ids": [
+     9963
+    ]
+   },
+   "status": "pattern",
+   "powers": [
+    "ABUILD-56"
+   ],
+   "reason": "pfSense and OPNsense pf rules (last match wins); covered by the network config validation card, prompt-skill-engineering batch, SKILL.md read as inert text"
+  },
+  {
+   "match": {
+    "ids": [
+     2395,
+     2426,
+     2427,
+     3257,
+     3258,
+     3259,
+     4197,
+     4226,
+     4230,
+     4231,
+     7818,
+     7970,
+     10175,
+     10337,
+     10756,
+     10823,
+     10825,
+     10826,
+     10829,
+     11784,
+     11817,
+     12636,
+     12637,
+     13065,
+     13869,
+     14484,
+     14497,
+     47
+    ]
+   },
+   "status": "skipped",
+   "reason": "product-specific: bound to one named tool, service or app's CLI; no portable method beyond existing powers"
+  },
+  {
+   "match": {
+    "ids": [
+     1277,
+     2702,
+     2727,
+     2756,
+     8451,
+     9550,
+     9925,
+     13106,
+     13325,
+     13521,
+     13708
+    ]
+   },
+   "status": "skipped",
+   "reason": "stub or thin wrapper: a few lines that only point at a tool or another skill"
+  },
+  {
+   "match": {
+    "ids": [
+     2398
+    ]
+   },
+   "status": "skipped",
+   "reason": "auto-installs third-party skills from a stated intent, which the supply-chain rule (SEC-10) forbids; skill discovery is covered by SELF-31"
+  },
+  {
+   "match": {
+    "ids": [
+     3415,
+     7848
+    ]
+   },
+   "status": "pattern",
+   "powers": [
+    "ACODE-319",
+    "ACODE-227"
+   ],
+   "reason": "Python idioms and guidelines; covered by the per-language toolchain defaults card and ruff powers, web-frameworks batch, SKILL.md read as inert text"
+  },
+  {
+   "match": {
+    "ids": [
+     7857,
+     7860,
+     7849
+    ]
+   },
+   "status": "pattern",
+   "powers": [
+    "ACODE-228"
+   ],
+   "reason": "uv interpreter versions, workspaces and packaging; covered by the uv projects power, web-frameworks batch, SKILL.md read as inert text"
+  },
+  {
+   "match": {
+    "ids": [
+     7944
+    ]
+   },
+   "status": "pattern",
+   "powers": [
+    "ACODE-319",
+    "ENG-421"
+   ],
+   "reason": "strict tsconfig flags and moduleResolution choice; covered by the toolchain defaults card and TypeScript & Node Pro, web-frameworks batch, SKILL.md read as inert text"
+  },
+  {
+   "match": {
+    "ids": [
+     7941
+    ]
+   },
+   "status": "pattern",
+   "powers": [
+    "ACODE-325",
+    "ENG-421"
+   ],
+   "reason": "Node with Bun, Vite and Vue; covered by the Bun/pnpm and TypeScript powers, web-frameworks batch, SKILL.md read as inert text"
+  },
+  {
+   "match": {
+    "ids": [
+     9935
+    ]
+   },
+   "status": "pattern",
+   "powers": [
+    "ACODE-319"
+   ],
+   "reason": "per-language idiom reader and reviewer; covered by the toolchain defaults card, web-frameworks batch, SKILL.md read as inert text"
+  },
+  {
+   "match": {
+    "ids": [
+     38,
+     12089,
+     12091,
+     12092
+    ]
+   },
+   "status": "pattern",
+   "powers": [
+    "ACODE-319",
+    "API-11"
+   ],
+   "reason": "Kotlin, Spring Boot and JUnit 5 practices; covered by the toolchain defaults card and test report powers, web-frameworks batch, SKILL.md read as inert text"
+  },
+  {
+   "match": {
+    "ids": [
+     13238
+    ]
+   },
+   "status": "pattern",
+   "powers": [
+    "APP-09"
+   ],
+   "reason": "FastAPI project templates; covered by the tested FastAPI power, web-frameworks batch, SKILL.md read as inert text"
+  },
+  {
+   "match": {
+    "ids": [
+     10301,
+     10307
+    ]
+   },
+   "status": "pattern",
+   "powers": [
+    "ACODE-257",
+    "ACODE-226"
+   ],
+   "reason": "macOS SwiftUI and AppKit bridging; covered by the Apple platform powers, web-frameworks batch, SKILL.md read as inert text"
+  },
+  {
+   "match": {
+    "ids": [
+     11707
+    ]
+   },
+   "status": "pattern",
+   "powers": [
+    "ACODE-39",
+    "ACODE-30"
+   ],
+   "reason": "better-auth flows; covered by the auth powers, web-frameworks batch, SKILL.md read as inert text"
+  },
+  {
+   "match": {
+    "ids": [
+     4195
+    ]
+   },
+   "status": "pattern",
+   "powers": [
+    "ACODE-317",
+    "ACODE-329"
+   ],
+   "reason": "React Router mode-specific references; covered by the React correctness card and the version-drift guard, web-frameworks batch, SKILL.md read as inert text"
+  },
+  {
+   "match": {
+    "ids": [
+     727
+    ]
+   },
+   "status": "pattern",
+   "powers": [
+    "AMEDIA-29"
+   ],
+   "reason": "Siemens NX Open automation; covered by the CAD automation card, web-frameworks batch, SKILL.md read as inert text"
+  },
+  {
+   "match": {
+    "ids": [
+     8298
+    ]
+   },
+   "status": "pattern",
+   "powers": [
+    "WRITE-13"
+   ],
+   "reason": "answer-first actionable communication; covered by the reply-first rewrite power, web-frameworks batch, SKILL.md read as inert text"
+  },
+  {
+   "match": {
+    "ids": [
+     7162
+    ]
+   },
+   "status": "pattern",
+   "powers": [
+    "THINK-10",
+    "THINK-45"
+   ],
+   "reason": "conducting the order and routing of cognitive moves; covered by the Stage-0 checklist and metacognition checkpoint, web-frameworks batch, SKILL.md read as inert text"
+  },
+  {
+   "match": {
+    "ids": [
+     13473
+    ]
+   },
+   "status": "skipped",
+   "reason": "third-party coverage SaaS CLI that uploads source for scoring; the measure-one-test-rerun loop is covered by CODE-08, web-frameworks batch"
+  },
+  {
+   "match": {
+    "ids": [
+     10819,
+     10855,
+     3044,
+     13809,
+     12248,
+     10031,
+     10033,
+     10044,
+     11326,
+     11328,
+     11329,
+     11330,
+     11331,
+     11332,
+     11333,
+     11334,
+     11359,
+     11361,
+     11362,
+     11363,
+     11364,
+     11365,
+     11366,
+     11367
+    ]
+   },
+   "status": "skipped",
+   "reason": "product- or house-specific (charly internals, Frappe stub, cmux guard, Vercel Workflow SDK init, a personal Haskell prelude, spec-tree Go/Rust house standards), web-frameworks batch"
+  },
+  {
+   "match": {
+    "ids": [
      10636,
      10647,
      10660,

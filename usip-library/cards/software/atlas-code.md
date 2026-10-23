@@ -1,4 +1,4 @@
-# `atlas-code` — البرمجة وبناء التطبيقات (277 بطاقة)
+# `atlas-code` — البرمجة وبناء التطبيقات (331 بطاقة)
 
 > مكتبة بروتوكول USIP v5.6 الكاملة، مولّدة بـ `smart_capabilities.py cards` من `data/powers/atlas-code.json` وقواعد الملاحق A25–A29؛ لا تُحرَّر يدويًا. [الفهرس الرئيسي](../../README.md) · [فصل المجموعة](../../../.claude/skills/kosif-superpowers/references/library/software.md) · [النواة](../../../.claude/skills/kosif-superpowers/PROTOCOL.md)
 
@@ -209,12 +209,66 @@
 - [`ACODE-275` فرز فحص CI أحمر لمراجعة يقوم بها ذكاء اصطناعي: أربعة أسباب مختلفة](#acode-275--فرز-فحص-ci-أحمر-لمراجعة-يقوم-بها-ذكاء-اصطناعي-أربعة-أسباب-مختلفة--triage-a-red-ai-review-ci-check-four-causes-with-opposite-responses)
 - [`ACODE-276` التحقق من إعدادات Home Assistant: YAML والأسرار والمفاتيح المكررة](#acode-276--التحقق-من-إعدادات-home-assistant-yaml-والأسرار-والمفاتيح-المكررة--home-assistant-configuration-validation-yaml-secrets-duplicate-keys)
 - [`ACODE-277` تدقيق طبقات التعليمات كلها: هل طُبّقت القاعدة يومًا؟ وأين تتعارض الطبقات؟](#acode-277--تدقيق-طبقات-التعليمات-كلها-هل-طُبّقت-القاعدة-يومًا-وأين-تتعارض-الطبقات--cross-layer-instruction-stack-audit-rule-firing-evidence-conflicts-permission-bypasses)
+- [`ACODE-278` تنظيف مساحة العمل القابل للتراجع: كشف افتراضي وحجر بدل الحذف](#acode-278--تنظيف-مساحة-العمل-القابل-للتراجع-كشف-افتراضي-وحجر-بدل-الحذف--reversible-workspace-hygiene-detect-by-default-quarantine-instead-of-delete)
+- [`ACODE-279` لا تعديل بلا دليل على المالك: إثبات سلسلة من يرسم الناتج المرئي قبل إصلاحه](#acode-279--لا-تعديل-بلا-دليل-على-المالك-إثبات-سلسلة-من-يرسم-الناتج-المرئي-قبل-إصلاحه--no-proof-no-edit-prove-the-owner-chain-of-visible-output-before-fixing-it)
 - [`ACODE-28` استخراج عميل API مستقل من تسجيل HAR](#acode-28--استخراج-عميل-api-مستقل-من-تسجيل-har--derive-standalone-api-client-from-har-recording)
+- [`ACODE-280` تصميم حزام الوكيل لا موجّهه فقط: عشر طبقات من تجميع الطلب إلى الاسترداد](#acode-280--تصميم-حزام-الوكيل-لا-موجّهه-فقط-عشر-طبقات-من-تجميع-الطلب-إلى-الاسترداد--design-the-agent-harness-not-just-the-prompt-ten-part-blueprint)
+- [`ACODE-281` تصحيح وكيل محادثة صوتي أو نصي دورًا بدور، ومحاكاة المحادثات الكاملة كاختبار انحدار](#acode-281--تصحيح-وكيل-محادثة-صوتي-أو-نصي-دورًا-بدور-ومحاكاة-المحادثات-الكاملة-كاختبار-انحدار--debug-a-conversational-agent-turn-by-turn-and-regression-test-whole-conversations-by-simulation)
+- [`ACODE-282` إصلاح فشل CI آليًا بـClaude Code: سير عمل لمستودع واحد أو قالب مشترك، مع حلقة من الاختبار إلى طلب الدمج](#acode-282--إصلاح-فشل-ci-آليًا-بـclaude-code-سير-عمل-لمستودع-واحد-أو-قالب-مشترك-مع-حلقة-من-الاختبار-إلى-طلب-الدمج--automated-ci-failure-fixing-with-an-ai-agent-inline-or-reusable-workflow-and-the-issue-to-pr-loop)
+- [`ACODE-283` معمارية وكيل صوتي وميزانية الزمن: سلسلة STT→LLM→TTS أم كلام إلى كلام](#acode-283--معمارية-وكيل-صوتي-وميزانية-الزمن-سلسلة-sttllmtts-أم-كلام-إلى-كلام--voice-agent-architecture-and-latency-budget-cascade-vs-speech-to-speech)
+- [`ACODE-284` العمل الطويل داخل حدود الاستخدام: موجات محدودة، قراءة الاستخدام الحقيقي، وإيقاظ متسلسل](#acode-284--العمل-الطويل-داخل-حدود-الاستخدام-موجات-محدودة-قراءة-الاستخدام-الحقيقي-وإيقاظ-متسلسل--long-agent-work-inside-usage-windows-bounded-waves-real-usage-reads-chained-wake-ups)
+- [`ACODE-285` ترحيل منسق سير عمل دائم: جرد البنى ثم فصل التنسيق عن الآثار الجانبية](#acode-285--ترحيل-منسق-سير-عمل-دائم-جرد-البنى-ثم-فصل-التنسيق-عن-الآثار-الجانبية--migrate-a-durable-workflow-orchestrator-inventory-constructs-split-orchestration-from-side-effects)
+- [`ACODE-286` وكلاء الخلفية في المستودع: مخرجاتهم اقتراحات لا دمج، وأول المرشحين الآمنين](#acode-286--وكلاء-الخلفية-في-المستودع-مخرجاتهم-اقتراحات-لا-دمج-وأول-المرشحين-الآمنين--continuous-ai-background-repository-agents-whose-output-is-a-proposal-never-a-merge)
+- [`ACODE-287` تسليم المناوبة: خمسة أقسام إلزامية وتجربة تنبيه قبل خروج المناوب](#acode-287--تسليم-المناوبة-خمسة-أقسام-إلزامية-وتجربة-تنبيه-قبل-خروج-المناوب--on-call-shift-handoff-five-mandatory-sections-and-a-test-alert-before-sign-off)
+- [`ACODE-288` ترقية نقطة تدريب نموذج: أربع بوابات بالترتيب من جودة البيانات إلى الإطلاق التدريجي](#acode-288--ترقية-نقطة-تدريب-نموذج-أربع-بوابات-بالترتيب-من-جودة-البيانات-إلى-الإطلاق-التدريجي--fine-tuned-checkpoint-promotion-four-ordered-gates-from-data-quality-to-canary)
+- [`ACODE-289` خط التوصية والترتيب بست مراحل: مصادر، إثراء، تصفية، تقييم، اختيار، آثار غير متزامنة](#acode-289--خط-التوصية-والترتيب-بست-مراحل-مصادر-إثراء-تصفية-تقييم-اختيار-آثار-غير-متزامنة--six-stage-recommendation-and-ranking-pipeline-source-hydrate-filter-score-select-side-effects)
 - [`ACODE-29` قائمة تحصين نقطة GraphQL](#acode-29--قائمة-تحصين-نقطة-graphql--graphql-endpoint-hardening-checklist)
+- [`ACODE-290` مضيف مريض واحد أم الأسطول كله؟ وحدة المقياس ونسبة الحد الأقصى إلى المجموع](#acode-290--مضيف-مريض-واحد-أم-الأسطول-كله-وحدة-المقياس-ونسبة-الحد-الأقصى-إلى-المجموع--one-sick-host-or-the-whole-fleet-get-the-metric-unit-and-the-maximum-to-sum-ratio)
+- [`ACODE-291` مزوّد مخصص لا يُستدعى أبدًا: التوجيه على اسم النموذج يسبق المزوّد في LiteLLM](#acode-291--مزوّد-مخصص-لا-يُستدعى-أبدًا-التوجيه-على-اسم-النموذج-يسبق-المزوّد-في-litellm--a-custom-llm-provider-that-never-runs-dispatch-on-the-bare-model-name-wins-first)
+- [`ACODE-292` مزامنة متغيرات البيئة إلى launchd تسرّب متغيرات الجلسة: قائمة حظر قبل المزامنة](#acode-292--مزامنة-متغيرات-البيئة-إلى-launchd-تسرّب-متغيرات-الجلسة-قائمة-حظر-قبل-المزامنة--login-environment-sync-to-launchd-leaks-the-current-sessions-variables)
+- [`ACODE-293` عقد أداة الوكيل: واجهة تُكتب كأنها prompt، وأخطاء مصنفة تعلّم التعافي، ومخرجات مقتصدة مع ترقيم بالمؤشر](#acode-293--عقد-أداة-الوكيل-واجهة-تُكتب-كأنها-prompt-وأخطاء-مصنفة-تعلّم-التعافي-ومخرجات-مقتصدة-مع-ترقيم-بالمؤشر--agent-tool-contract-interface-written-as-a-prompt-classified-errors-that-teach-recovery-lean-paginated-output)
+- [`ACODE-294` تنفيذ أدوات الوكيل وتركيبها: مهلة محددة، ومهام غير متزامنة بمقبض، وقابلية التكرار الآمن، والتعويض، وسلم التجريد](#acode-294--تنفيذ-أدوات-الوكيل-وتركيبها-مهلة-محددة-ومهام-غير-متزامنة-بمقبض-وقابلية-التكرار-الآمن-والتعويض-وسلم-التجريد--agent-tool-execution-and-composition-bounded-time-async-job-handles-safe-retries-compensation-the-abstraction-ladder)
+- [`ACODE-295` واجهة أوامر للوكلاء أولًا: مخرجات منظمة كعقد بإصدار، وتحقق عند الحدود، ومقياس من 21 نقطة](#acode-295--واجهة-أوامر-للوكلاء-أولًا-مخرجات-منظمة-كعقد-بإصدار-وتحقق-عند-الحدود-ومقياس-من-21-نقطة--agent-first-cli-structured-output-as-a-versioned-contract-validation-at-the-boundary-a-21-point-score)
+- [`ACODE-296` واجهة أوامر ودودة للبشر: شكل ثابت للمساعدة والأخطاء، وتلوين يحترم الطرفية، ومقياس من 21 نقطة](#acode-296--واجهة-أوامر-ودودة-للبشر-شكل-ثابت-للمساعدة-والأخطاء-وتلوين-يحترم-الطرفية-ومقياس-من-21-نقطة--human-friendly-cli-fixed-help-and-error-layouts-tty-aware-visuals-a-21-point-score)
+- [`ACODE-297` حزمة MCPB لخادم MCP محلي: ملف التعريف وإعدادات التثبيت والأمان الذي يقع على عاتقك](#acode-297--حزمة-mcpb-لخادم-mcp-محلي-ملف-التعريف-وإعدادات-التثبيت-والأمان-الذي-يقع-على-عاتقك--mcpb-bundle-for-a-local-mcp-server-manifest-install-time-config-and-the-security-you-own)
+- [`ACODE-298` فحص الإضافات قبل التثبيت وخطة ربط MCP بأقل صلاحية: أنماط هجوم 2026 وقرار ثبّت أو قيّد أو ارفض](#acode-298--فحص-الإضافات-قبل-التثبيت-وخطة-ربط-mcp-بأقل-صلاحية-أنماط-هجوم-2026-وقرار-ثبّت-أو-قيّد-أو-ارفض--extension-vetting-before-install-and-a-least-privilege-mcp-integration-plan-2026-attack-patterns-and-an-installrestrictreject-verdict)
+- [`ACODE-299` نقل إعداد MCP في Claude Code بين الأجهزة: أربعة مفاتيح فقط من ~/.claude.json](#acode-299--نقل-إعداد-mcp-في-claude-code-بين-الأجهزة-أربعة-مفاتيح-فقط-من-claudejson--move-claude-codes-mcp-setup-between-machines-exactly-four-keys-of-claudejson)
 - [`ACODE-30` مصادقة JWT مع تدوير التحديث وصلاحيات الأدوار](#acode-30--مصادقة-jwt-مع-تدوير-التحديث-وصلاحيات-الأدوار--jwt-auth-with-refresh-rotation-and-rbac)
+- [`ACODE-300` اختيار طقم المدققات والمنسقات من الملفات الموجودة فعلًا، مع ShellCheck وBiome وClippy](#acode-300--اختيار-طقم-المدققات-والمنسقات-من-الملفات-الموجودة-فعلًا-مع-shellcheck-وbiome-وclippy--pick-the-linter-and-formatter-stack-from-the-files-that-actually-exist-with-shellcheck-biome-and-clippy)
+- [`ACODE-301` الانتقال بين أداتين: لا تحذف القديمة إلا بإشارة تشغيل فعلية من الجديدة، ولا تتأخر في حذفها](#acode-301--الانتقال-بين-أداتين-لا-تحذف-القديمة-إلا-بإشارة-تشغيل-فعلية-من-الجديدة-ولا-تتأخر-في-حذفها--tool-migration-cutover-remove-the-incumbent-only-on-an-operational-signal-from-the-replacement-and-not-too-late)
+- [`ACODE-302` بحث الطرفية السريع: ripgrep وfd للمسح ثم fzf --filter للترتيب الضبابي دون تفاعل](#acode-302--بحث-الطرفية-السريع-ripgrep-وfd-للمسح-ثم-fzf---filter-للترتيب-الضبابي-دون-تفاعل--fast-terminal-search-ripgrep-and-fd-to-scan-then-fzf---filter-to-fuzzy-rank-non-interactively)
+- [`ACODE-303` تنظيف ملفات الإعداد الطبقية: احذف من ملف البيئة ما يطابق الأساس، وأثبت أن الإعداد الفعلي لم يتغير](#acode-303--تنظيف-ملفات-الإعداد-الطبقية-احذف-من-ملف-البيئة-ما-يطابق-الأساس-وأثبت-أن-الإعداد-الفعلي-لم-يتغير--deduplicate-layered-config-overlays-and-prove-the-effective-config-did-not-change)
+- [`ACODE-304` نفاد جدول الملفات على مستوى النظام بسبب عمليات يتيمة: ENFILE أم EMFILE يحدد التشخيص كله](#acode-304--نفاد-جدول-الملفات-على-مستوى-النظام-بسبب-عمليات-يتيمة-enfile-أم-emfile-يحدد-التشخيص-كله--system-wide-file-table-exhaustion-from-orphaned-helper-processes-enfile-vs-emfile-decides-the-diagnosis)
+- [`ACODE-305` تحسين إعداد CircleCI بدءًا من خط أساس مقاس: الهدر أولًا ثم الذاكرة المؤقتة ثم التوازي الآمن](#acode-305--تحسين-إعداد-circleci-بدءًا-من-خط-أساس-مقاس-الهدر-أولًا-ثم-الذاكرة-المؤقتة-ثم-التوازي-الآمن--circleci-config-optimisation-from-a-measured-baseline-waste-first-then-caching-then-safe-parallelism)
+- [`ACODE-306` TLS المتبادل بين الخدمات: سلسلة الشهادات والتدوير وتشخيص فشل المصافحة](#acode-306--tls-المتبادل-بين-الخدمات-سلسلة-الشهادات-والتدوير-وتشخيص-فشل-المصافحة--mutual-tls-between-services-certificate-hierarchy-rotation-and-handshake-debugging)
+- [`ACODE-307` قِس فجوة التوافق قبل التثبيت: عدّد ما تطلبه الأداة، واقرأ العقد المعلن، وجرّب الأوامر الآمنة فقط](#acode-307--قِس-فجوة-التوافق-قبل-التثبيت-عدّد-ما-تطلبه-الأداة-واقرأ-العقد-المعلن-وجرّب-الأوامر-الآمنة-فقط--measure-a-compatibility-gap-before-installing-enumerate-what-the-tool-needs-read-the-declared-contract-probe-read-only-verbs)
+- [`ACODE-308` مراجعة جاهزية الخطة قبل بدء العمل بأدلة المستودع: تحقق من كل ادعاء عن الحالة الحالية، والعيوب الحقيقية فقط](#acode-308--مراجعة-جاهزية-الخطة-قبل-بدء-العمل-بأدلة-المستودع-تحقق-من-كل-ادعاء-عن-الحالة-الحالية-والعيوب-الحقيقية-فقط--plan-readiness-review-against-repository-evidence-before-work-starts-verify-every-claim-about-current-state-report-real-gaps-only)
+- [`ACODE-309` استرجاع عقد إعداد غير موثق من الملف التنفيذي المشحون: strings إلى ملف أولًا، ونص التعليمات ودوال التحقق معًا](#acode-309--استرجاع-عقد-إعداد-غير-موثق-من-الملف-التنفيذي-المشحون-strings-إلى-ملف-أولًا-ونص-التعليمات-ودوال-التحقق-معًا--recover-an-undocumented-settings-contract-from-a-shipped-binary-strings-to-a-file-first-and-read-both-the-prompt-text-and-the-validator-bodies)
 - [`ACODE-31` إعداد مصادقة API بأقل صلاحيات والتحقق منها](#acode-31--إعداد-مصادقة-api-بأقل-صلاحيات-والتحقق-منها--least-privilege-api-auth-setup-and-verification)
+- [`ACODE-310` تحقق من مهارة أو سوق إضافات مقابل الوثائق الحالية المجلوبة حيًا: المطابقة والحداثة والصلاحية والانحراف عن الأصل](#acode-310--تحقق-من-مهارة-أو-سوق-إضافات-مقابل-الوثائق-الحالية-المجلوبة-حيًا-المطابقة-والحداثة-والصلاحية-والانحراف-عن-الأصل--verify-a-skill-or-plugin-marketplace-against-current-docs-fetched-live-conformance-currency-freshness-and-upstream-drift)
+- [`ACODE-311` هندسة إضافات Claude Code: تحويل مستودع أوامر وخطافات إلى إضافة، والتوافق مع Codex، والنشر، والتحديث برفع الإصدار، والنسخ الشخصية التي تحجب الحزمة](#acode-311--هندسة-إضافات-claude-code-تحويل-مستودع-أوامر-وخطافات-إلى-إضافة-والتوافق-مع-codex-والنشر-والتحديث-برفع-الإصدار-والنسخ-الشخصية-التي-تحجب-الحزمة--claude-code-plugin-engineering-convert-a-commands-and-hooks-repo-port-to-codex-publish-ship-updates-by-bumping-the-version-and-audit-personal-copies-that-shadow-the-bundle)
+- [`ACODE-312` جعل أي وكيل آخر يحمّل ملفات SKILL.md: قائمة سطر لكل مهارة في التعليمات، وأداة load_skill للنص الكامل، وأولوية مسارات معلنة](#acode-312--جعل-أي-وكيل-آخر-يحمّل-ملفات-skillmd-قائمة-سطر-لكل-مهارة-في-التعليمات-وأداة-load_skill-للنص-الكامل-وأولوية-مسارات-معلنة--make-any-other-agent-host-load-skillmd-files-a-one-line-menu-in-the-system-prompt-a-load_skill-tool-for-the-full-body-declared-path-precedence)
+- [`ACODE-313` البرومبت ككود: ملفات في المستودع، وقوالب بمتغيرات صريحة، ومراجعة بنتائج تقييم قبل وبعد، وتثبيت إصدار النموذج، وطرح تدريجي](#acode-313--البرومبت-ككود-ملفات-في-المستودع-وقوالب-بمتغيرات-صريحة-ومراجعة-بنتائج-تقييم-قبل-وبعد-وتثبيت-إصدار-النموذج-وطرح-تدريجي--prompts-as-code-files-in-the-repo-explicit-variable-templates-review-with-before-and-after-evals-pinned-model-versions-staged-rollout)
+- [`ACODE-314` تنفيذ هجمات الفريق الأحمر على نظام ذكاء اصطناعي ضمن قواعد اشتباك: حقن مباشر وغير مباشر واستخراج وإساءة استخدام الأدوات](#acode-314--تنفيذ-هجمات-الفريق-الأحمر-على-نظام-ذكاء-اصطناعي-ضمن-قواعد-اشتباك-حقن-مباشر-وغير-مباشر-واستخراج-وإساءة-استخدام-الأدوات--run-red-team-attacks-on-an-ai-system-under-rules-of-engagement-direct-and-indirect-injection-extraction-and-tool-abuse)
+- [`ACODE-315` تقييم جاهزية المستودع للوكلاء: مدخل واحد معتمد، وأدوار الحزام (حالة العمل، السجل، العقود، التحقق، الأدلة)، وأصغر تحسين تالٍ](#acode-315--تقييم-جاهزية-المستودع-للوكلاء-مدخل-واحد-معتمد-وأدوار-الحزام-حالة-العمل-السجل-العقود-التحقق-الأدلة-وأصغر-تحسين-تالٍ--assess-a-repositorys-agent-harness-one-canonical-entrypoint-harness-roles-work-state-ledger-contracts-validation-evidence-and-the-next-smallest-improvement)
+- [`ACODE-316` أداء React وNext.js بالأولوية: اقتل الشلالات والحزمة أولًا، ثم الخادم، ثم إعادة الرسم، ومراجعة بنمط diff أو كامل مع ESLint كحقيقة أرضية](#acode-316--أداء-react-وnextjs-بالأولوية-اقتل-الشلالات-والحزمة-أولًا-ثم-الخادم-ثم-إعادة-الرسم-ومراجعة-بنمط-diff-أو-كامل-مع-eslint-كحقيقة-أرضية--react-and-nextjs-performance-by-impact-kill-waterfalls-and-bundle-bloat-first-then-server-work-then-re-renders-review-in-diff-or-full-mode-with-eslint-as-ground-truth)
+- [`ACODE-317` صحة مكونات React: عقد المشروع أولًا، الحالة عند مالكها، الاشتقاق أثناء الرسم، Effect فقط لمزامنة نظام خارجي داخل hook مسمى، وref كملاذ أخير](#acode-317--صحة-مكونات-react-عقد-المشروع-أولًا-الحالة-عند-مالكها-الاشتقاق-أثناء-الرسم-effect-فقط-لمزامنة-نظام-خارجي-داخل-hook-مسمى-وref-كملاذ-أخير--react-component-correctness-local-contract-first-state-at-its-owner-derive-during-render-effects-only-to-sync-an-external-system-inside-a-named-hook-refs-as-a-last-resort)
+- [`ACODE-318` Next.js App Router (حتى v16): اكتشف الراوتر والنسخة وcacheComponents قبل الكتابة، مكونات خادم افتراضيًا، 'use client' عند الحد فقط، و'use cache' بدل خيارات fetch](#acode-318--nextjs-app-router-حتى-v16-اكتشف-الراوتر-والنسخة-وcachecomponents-قبل-الكتابة-مكونات-خادم-افتراضيًا-use-client-عند-الحد-فقط-وuse-cache-بدل-خيارات-fetch--nextjs-app-router-up-to-v16-detect-router-version-and-cachecomponents-before-writing-server-components-by-default-use-client-only-at-the-boundary-use-cache-instead-of-fetch-options)
+- [`ACODE-319` اكتب بلغة المشروع حسب ملفات أدواته: اقرأ go.mod وpyproject وCargo.toml وtsconfig وcsproj والـCI قبل أي API مقيدة بنسخة، ثم افتراضيات كل لغة، و'تم' فقط بعد الفحوص أو بتسمية ما لم يعمل](#acode-319--اكتب-بلغة-المشروع-حسب-ملفات-أدواته-اقرأ-gomod-وpyproject-وcargotoml-وtsconfig-وcsproj-والـci-قبل-أي-api-مقيدة-بنسخة-ثم-افتراضيات-كل-لغة-وتم-فقط-بعد-الفحوص-أو-بتسمية-ما-لم-يعمل--write-each-language-from-its-toolchain-files-read-gomod-pyproject-cargotoml-tsconfig-csproj-and-ci-before-any-version-gated-api-then-per-language-defaults-done-only-when-checks-pass-or-each-unrun-check-is-named)
 - [`ACODE-32` استقبال OAuth محلي مع ملفات رموز محمية](#acode-32--استقبال-oauth-محلي-مع-ملفات-رموز-محمية--local-oauth-callback-with-0600-token-files)
+- [`ACODE-320` Go الاصطلاحي والتزامن: الوضوح ثم البساطة ثم الإيجاز، أخطاء مبكرة بلا تداخل، ولكل goroutine مالك وسياق إلغاء ومخرج، وerrgroup للأخطاء المشتركة](#acode-320--go-الاصطلاحي-والتزامن-الوضوح-ثم-البساطة-ثم-الإيجاز-أخطاء-مبكرة-بلا-تداخل-ولكل-goroutine-مالك-وسياق-إلغاء-ومخرج-وerrgroup-للأخطاء-المشتركة--idiomatic-go-and-concurrency-clarity-then-simplicity-then-concision-early-error-returns-every-goroutine-has-an-owner-a-context-and-an-exit-errgroup-for-shared-errors)
+- [`ACODE-321` Rust اصطلاحي: صمم البيانات قبل الكود، ملكية واستعارة قبل clone، Tokio وSerde بحدود واضحة، وclippy وrustfmt وnextest وllvm-cov كبوابات](#acode-321--rust-اصطلاحي-صمم-البيانات-قبل-الكود-ملكية-واستعارة-قبل-clone-tokio-وserde-بحدود-واضحة-وclippy-وrustfmt-وnextest-وllvm-cov-كبوابات--idiomatic-rust-model-data-before-code-ownership-and-borrowing-before-clone-tokio-and-serde-with-clear-boundaries-clippy-rustfmt-nextest-and-llvm-cov-as-gates)
+- [`ACODE-322` صور حاويات حسب اللغة: Go ثابت على scratch مع شهادات CA، وNode متعدد المراحل بذاكرة BuildKit واعتماديات إنتاج فقط، وPython على slim لا Alpine بنسخة واحدة للمرحلتين](#acode-322--صور-حاويات-حسب-اللغة-go-ثابت-على-scratch-مع-شهادات-ca-وnode-متعدد-المراحل-بذاكرة-buildkit-واعتماديات-إنتاج-فقط-وpython-على-slim-لا-alpine-بنسخة-واحدة-للمرحلتين--language-specific-container-images-static-go-on-scratch-with-ca-certs-multi-stage-node-with-buildkit-cache-and-production-only-deps-python-on-slim-not-alpine-with-one-version-for-both-stages)
+- [`ACODE-323` فحوص Python السريعة من Astral وأخواتها: ty كمدقق أنواع تجريبي بنسخة مثبتة، وترحيل mypy إلى ty وblack إلى ruff format بخطاف محلي، وvulture للكود الميت بقائمة سماح](#acode-323--فحوص-python-السريعة-من-astral-وأخواتها-ty-كمدقق-أنواع-تجريبي-بنسخة-مثبتة-وترحيل-mypy-إلى-ty-وblack-إلى-ruff-format-بخطاف-محلي-وvulture-للكود-الميت-بقائمة-سماح--fast-python-checks-ty-as-a-pinned-beta-type-checker-mypy-to-ty-and-black-to-ruff-format-migrations-with-a-local-pre-commit-hook-vulture-for-dead-code-with-a-whitelist)
+- [`ACODE-324` سكربت Python مساعد أصغر ما يمكن مقابل سكربت تسليمي: مكتبة قياسية وبلا تهيئة مشروع للمساعد، وحدود مكتوبة الأنواع تبدأ من object ثم تضيّق](#acode-324--سكربت-python-مساعد-أصغر-ما-يمكن-مقابل-سكربت-تسليمي-مكتبة-قياسية-وبلا-تهيئة-مشروع-للمساعد-وحدود-مكتوبة-الأنواع-تبدأ-من-object-ثم-تضيّق--smallest-trustworthy-python-helper-versus-a-deliverable-script-stdlib-and-no-project-scaffolding-for-helpers-typed-boundaries-that-start-from-object-and-narrow)
+- [`ACODE-325` مديرا الحزم Bun وpnpm: إضافة مثبتة لا تتجاوز ملف القفل، تحديث آمن أو انتقائي، فحص القديم، ونشر npm بمعاينة dry-run وتوقيع provenance، وإعدادات pnpm في pnpm-workspace.yaml](#acode-325--مديرا-الحزم-bun-وpnpm-إضافة-مثبتة-لا-تتجاوز-ملف-القفل-تحديث-آمن-أو-انتقائي-فحص-القديم-ونشر-npm-بمعاينة-dry-run-وتوقيع-provenance-وإعدادات-pnpm-في-pnpm-workspaceyaml--bun-and-pnpm-package-management-pinned-adds-that-do-not-bypass-the-lockfile-safe-or-selective-updates-outdated-audits-npm-publishing-with-dry-run-and-provenance-pnpm-settings-in-pnpm-workspaceyaml)
+- [`ACODE-326` Deno كبديل متوافق مع npm: تثبيت وتشغيل بلا إعادة كتابة، deno ci بالقفل، ترحيل على درجات قابلة للتراجع، صلاحيات ضيقة، وصناديق Deno المعزولة لتشغيل كود غير موثوق](#acode-326--deno-كبديل-متوافق-مع-npm-تثبيت-وتشغيل-بلا-إعادة-كتابة-deno-ci-بالقفل-ترحيل-على-درجات-قابلة-للتراجع-صلاحيات-ضيقة-وصناديق-deno-المعزولة-لتشغيل-كود-غير-موثوق--deno-as-an-npm-compatible-runtime-install-and-run-without-rewrites-deno-ci-from-the-lock-migration-in-reversible-rungs-narrow-permissions-and-deno-sandboxes-for-untrusted-code)
+- [`ACODE-327` التواريخ في TypeScript بـ Temporal: اختر النوع حسب المعنى، حوّل الطابع الزمني إلى تاريخ مرة واحدة عند الحد وبمنطقة زمنية مسماة، وخزّن نصوص ISO](#acode-327--التواريخ-في-typescript-بـ-temporal-اختر-النوع-حسب-المعنى-حوّل-الطابع-الزمني-إلى-تاريخ-مرة-واحدة-عند-الحد-وبمنطقة-زمنية-مسماة-وخزّن-نصوص-iso--dates-in-typescript-with-temporal-pick-the-type-by-meaning-convert-a-timestamp-to-a-date-once-at-the-boundary-in-a-named-zone-store-iso-strings)
+- [`ACODE-328` تحقق من نوع TypeScript دون تثبيت المستودع الضخم: اقرأ رمز الخروج لا غياب الأخطاء، مترجم حقيقي بنسخة المستودع، رسم أنواع مصغر، خيارات tsconfig الأصلية، وثلاث نسخ](#acode-328--تحقق-من-نوع-typescript-دون-تثبيت-المستودع-الضخم-اقرأ-رمز-الخروج-لا-غياب-الأخطاء-مترجم-حقيقي-بنسخة-المستودع-رسم-أنواع-مصغر-خيارات-tsconfig-الأصلية-وثلاث-نسخ--verify-a-typescript-fix-without-installing-a-huge-monorepo-read-the-exit-status-not-absent-errors-a-real-compiler-at-the-repos-version-a-minimal-type-graph-the-repos-tsconfig-options-three-variants)
+- [`ACODE-329` حارس انجراف نسخ المكتبات: اقرأ النسخة المثبتة من ملف القفل، حمّل المهارات والمراجع التي تشحنها الحزمة نفسها، ولا تثق بالذاكرة في Zod 4 وVite 8 وAstro 7 وAngular 20 وTanStack وtsdown](#acode-329--حارس-انجراف-نسخ-المكتبات-اقرأ-النسخة-المثبتة-من-ملف-القفل-حمّل-المهارات-والمراجع-التي-تشحنها-الحزمة-نفسها-ولا-تثق-بالذاكرة-في-zod-4-وvite-8-وastro-7-وangular-20-وtanstack-وtsdown--library-version-drift-guard-read-the-installed-version-from-the-lockfile-load-the-skills-and-docs-the-package-itself-ships-and-do-not-trust-memory-for-zod-4-vite-8-astro-7-angular-20-tanstack-or-tsdown)
 - [`ACODE-33` فوترة بالاستهلاك مع تسجيل غير مكرر](#acode-33--فوترة-بالاستهلاك-مع-تسجيل-غير-مكرر--metered-billing-with-idempotent-usage)
+- [`ACODE-330` Vue 3 بخريطة مكونات قبل الكود: Composition API مع script setup وTypeScript، حالة واحدة مصدرية والباقي مشتق، props للأسفل وevents للأعلى، Pinia وVue Router بحراسة واضحة](#acode-330--vue-3-بخريطة-مكونات-قبل-الكود-composition-api-مع-script-setup-وtypescript-حالة-واحدة-مصدرية-والباقي-مشتق-props-للأسفل-وevents-للأعلى-pinia-وvue-router-بحراسة-واضحة--vue-3-with-a-component-map-before-code-composition-api-with-script-setup-and-typescript-one-source-of-truth-and-derived-state-props-down-and-events-up-pinia-and-vue-router-with-clear-guards)
+- [`ACODE-331` jq للـ JSON وyq للـ YAML وTOML وXML بدل مفسر عام: أدوات ضيقة الصلاحية يسهل اعتمادها، تمرير القيم بـ --arg، والتحقق من أي تطبيق yq وصيغة الإدخال](#acode-331--jq-للـ-json-وyq-للـ-yaml-وtoml-وxml-بدل-مفسر-عام-أدوات-ضيقة-الصلاحية-يسهل-اعتمادها-تمرير-القيم-بـ---arg-والتحقق-من-أي-تطبيق-yq-وصيغة-الإدخال--jq-for-json-and-yq-for-yaml-toml-and-xml-instead-of-a-general-interpreter-narrow-tools-that-are-easy-to-approve-values-passed-with---arg-and-checks-for-which-yq-and-which-input-format)
 - [`ACODE-34` مدفوعات آمنة: دفتر مزدوج وتسوية](#acode-34--مدفوعات-آمنة-دفتر-مزدوج-وتسوية--money-safe-payments-ledger-idempotency-reconciliation)
 - [`ACODE-35` تخطيط نمط OAuth والصلاحيات وتجديد الرموز](#acode-35--تخطيط-نمط-oauth-والصلاحيات-وتجديد-الرموز--oauth-grant-scope-and-token-refresh-planning)
 - [`ACODE-36` اختبار تكامل يعدّ عدد إصدارات التوكن](#acode-36--اختبار-تكامل-يعدّ-عدد-إصدارات-التوكن--oauth-token-mint-counting-integration-test)
@@ -14948,7 +15002,7 @@
 - `ACODE-274` تثبيت قوائم مراجعة موحّدة يقرؤها Copilot وCodex وClaude عند مراجعة طلبات الدمج / Install shared review checklists for Copilot, Codex and Claude PR reviewers (documented)
 - `ACODE-275` فرز فحص CI أحمر لمراجعة يقوم بها ذكاء اصطناعي: أربعة أسباب مختلفة / Triage a red AI-review CI check: four causes with opposite responses (documented)
 - `ACODE-277` تدقيق طبقات التعليمات كلها: هل طُبّقت القاعدة يومًا؟ وأين تتعارض الطبقات؟ / Cross-layer instruction-stack audit: rule-firing evidence, conflicts, permission bypasses (documented)
-- `ACODE-28` استخراج عميل API مستقل من تسجيل HAR / Derive standalone API client from HAR recording (documented)
+- `ACODE-278` تنظيف مساحة العمل القابل للتراجع: كشف افتراضي وحجر بدل الحذف / Reversible workspace hygiene: detect by default, quarantine instead of delete (documented)
 
 ### `ACODE-277` — تدقيق طبقات التعليمات كلها: هل طُبّقت القاعدة يومًا؟ وأين تتعارض الطبقات؟ / Cross-layer instruction-stack audit: rule-firing evidence, conflicts, permission bypasses
 
@@ -15019,8 +15073,152 @@
 
 - `ACODE-275` فرز فحص CI أحمر لمراجعة يقوم بها ذكاء اصطناعي: أربعة أسباب مختلفة / Triage a red AI-review CI check: four causes with opposite responses (documented)
 - `ACODE-276` التحقق من إعدادات Home Assistant: YAML والأسرار والمفاتيح المكررة / Home Assistant configuration validation: YAML, secrets, duplicate keys (documented)
+- `ACODE-278` تنظيف مساحة العمل القابل للتراجع: كشف افتراضي وحجر بدل الحذف / Reversible workspace hygiene: detect by default, quarantine instead of delete (documented)
+- `ACODE-279` لا تعديل بلا دليل على المالك: إثبات سلسلة من يرسم الناتج المرئي قبل إصلاحه / No proof, no edit: prove the owner chain of visible output before fixing it (documented)
+
+### `ACODE-278` — تنظيف مساحة العمل القابل للتراجع: كشف افتراضي وحجر بدل الحذف / Reversible workspace hygiene: detect by default, quarantine instead of delete
+
+| الحقل | القيمة |
+|---|---|
+| العائلة | `atlas-code` ([فصل العائلة](../../../.claude/skills/kosif-superpowers/references/powers/atlas-code.md)) |
+| المجموعة | البرمجة وبناء التطبيقات (`software`) |
+| نوع المخرج (A25، A27) | كود وتطبيقات ومواقع (`code`) |
+| الحالة في الكتالوج | 📄 `documented`: منهج موصوف يحتاج بناءً أو ربطًا قبل التشغيل |
+| سقف التحقق قبل العمل (A27) | V1 حتى تُبنى وتُشغَّل؛ لا تقدَّم جاهزة أبدًا |
+| نطاق الدليل | `url` |
+| الرخصة | card in our own words; the original skill folders are copied verbatim with their MIT license and SOURCE.md under vendor/kosif-atlas |
+
+**ما هي:** ينظف المستودع مما يقرره نظام الملفات وgit دون قراءة الشيفرة: ملفات قمامة، مخرجات بناء متتبعة في git، فجوات وقواعد قديمة في .gitignore، مجلدات تجريبية، أصول توثيق يتيمة، وحالة git مساعدة؛ يعرض فقط ما لم يُطلب التطبيق، وكل تغيير قابل للتراجع. — Workspace clean-up the filesystem and git can decide: detect by default, every change reversible, untracked files quarantined, never rm.
+
+**متى:** مستودع مليء بملفات مؤقتة ومخرجات بناء متتبعة، .gitignore ناقص، قبل نشر المستودع / a cluttered repo, tracked build outputs, gitignore gaps
+
+**كيف:** 1) Default is detection only; --fix leaves changes uncommitted for review, --commit adds one commit per phase. 2) Scope: confirm the path is inside a git work tree, or stop. 3) Detect seven classes: filesystem garbage (editor swap, OS metadata), generated artefacts tracked in git, .gitignore gaps, stale .gitignore rules that match nothing, scratch directories, doc assets nothing links to, and leftover git state (stale worktrees, rebase or merge leftovers). 4) Before untracking a tracked build output, check whether it is published on purpose (a docs site, a release asset). Before calling a doc asset orphaned, search for non-Markdown references (HTML, templates, code). 5) Apply only findings that quote the command output that produced them. 6) Tracked files go through git (so history keeps them); untracked files move to a quarantine directory, never rm; refs and branches are never touched. 7) Anything whose removal could change what the build sees is out of scope: hand it to code review instead. Full original skill(s) with license: vendor/kosif-atlas/skills/83-repo-hygiene/166-tidy-workflow.
+
+**المعاملات:** path, phases
+
+**التثبيت:** mkdir -p ~/.claude/skills && cp -r .claude/skills/kosif-superpowers/vendor/kosif-atlas/skills/83-repo-hygiene/166-tidy-workflow ~/.claude/skills/tidy-workflow
+
+**الوسوم:** git · repository hygiene · gitignore · cleanup · safety · تنظيف المستودع
+
+#### 1. الاستقبال (A25)
+
+- اللغة والإطار: افتراض مكتوب ← لغة المستودع الموجود، وإلا Python أو HTML/JS بلا اعتماديات
+- أين يعمل: افتراض مكتوب ← المتصفح أو سطر الأوامر حسب المخرج
+- مستودع أو ملفات موجودة: سؤال بإجابة مقترحة ← مشروع جديد مستقل
+- متى يكون ناجحًا: افتراض مكتوب ← الاختبارات الموجودة تمر + اختبار لكل سلوك جديد
+- لا تُفترض أبدًا: مادة الإنتاج نفسها، والإذن بخطوة مدفوعة أو منشورة أو لا رجعة فيها، والهوية والحقوق.
+
+#### 2. الجاهزية والشارة (A28)
+
+- لا متطلبات مسجلة؛ افحص المسار والأداة بـ `hub.py doctor` قبل الشارة.
+- الوضع 1: شارة «هنا الآن» بعد الفحص، لا 📄 الكتالوج تلقائيًا · الوضع 2: `كتالوج: 📄 · هنا: غير مفحوص` · الوضع 3: بلا شارة ولا معرّف.
+
+#### 3. موضعها في الخطة (A26)
+
+- عقدة منمّطة: المدخل `spec` ← المخرج `code`، والمنفّذ `method:ACODE-278` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `atlas-ledger`.
+- مراحل النوع: قراءة الكود والاختبارات ← إعادة إنتاج أو اختبار جديد ← أصغر تغيير ← الاختبارات ← مراجعة الفرق ← فرع وPR.
+- إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
+
+#### 4. بوابة التحقق (A27)
+
+- إلزامي: الاختبارات الموجودة تمر قبل التعديل وبعده ← أمر الاختبار
+- إلزامي: اختبار لكل سلوك جديد أو خطأ مُصلح ← الاختبار الجديد يفشل قبل الإصلاح
+- إلزامي: لا أسرار ولا مسارات جلسة في الشيفرة ← بحث أنماط الأسرار
+- جودة: يطابق أسلوب الكود المحيط وتسمياته ← مراجعة الفرق
+- جودة: طريقة تشغيل مكتوبة ومجرَّبة ← تشغيل الأمر المكتوب
+- جودة: الفرق أصغر ما يحقق الطلب بلا إعادة كتابة غير مطلوبة ← git diff --stat
+- جودة: المدخل الخاطئ يعطي خطأ واضحًا لا انهيارًا صامتًا ← تشغيل بمدخل خاطئ
+- أمر الحكم في الوضع 1: `think.py qa code --answers qa.json` (PASS / FAIL / INCOMPLETE).
+
+#### 5. التعافي (A29)
+
+- `missing_dependency` (اعتمادية مفقودة، ميزانية 2): سمِّ الاعتمادية بالضبط (حزمة، برنامج، خط، نموذج) ← ثبّت محليًا في بيئة العمل إن كان مجانيًا ومسموحًا (pip --user أو venv أو npm محلي) · البديل: مسار المكتبة القياسية أو أداة أخرى من نفس المجموعة · تصعيد: تثبيت نظامي أو مدفوع أو يحتاج مفتاحًا: توقف واسأل
+- `quality_below_threshold` (جودة دون العتبة، ميزانية 3): أي معيار فشل وبكم (المقيس مقابل العتبة) ← عالج السبب الأكبر وحده ثم أعد القياس · البديل: المنهج البديل المكتوب للمرحلة في الخطة · تصعيد: معيار إلزامي لا يتحقق بعد البديل: توقف وأبلغ بالأرقام
+- `tool_error` (خطأ أداة، ميزانية 3): اقرأ آخر سطر في الخطأ ثم أول سطر من كودك فيه ← أصلح السبب المثبت وحده، ثم شغّل الاختبار المتعلق · البديل: أداة أخرى أو مسار يدوي للمرحلة نفسها · تصعيد: خطأ في أداة خارجية لا تملكها: بلّغ بإعادة الإنتاج ولا تخفه
+
+#### 6. الأدلة
+
+- `https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/83-repo-hygiene/166-tidy-workflow`
+
+#### 7. قدرات قريبة في العائلة
+
+- `ACODE-276` التحقق من إعدادات Home Assistant: YAML والأسرار والمفاتيح المكررة / Home Assistant configuration validation: YAML, secrets, duplicate keys (documented)
+- `ACODE-277` تدقيق طبقات التعليمات كلها: هل طُبّقت القاعدة يومًا؟ وأين تتعارض الطبقات؟ / Cross-layer instruction-stack audit: rule-firing evidence, conflicts, permission bypasses (documented)
+- `ACODE-279` لا تعديل بلا دليل على المالك: إثبات سلسلة من يرسم الناتج المرئي قبل إصلاحه / No proof, no edit: prove the owner chain of visible output before fixing it (documented)
 - `ACODE-28` استخراج عميل API مستقل من تسجيل HAR / Derive standalone API client from HAR recording (documented)
-- `ACODE-29` قائمة تحصين نقطة GraphQL / GraphQL endpoint hardening checklist (documented)
+
+### `ACODE-279` — لا تعديل بلا دليل على المالك: إثبات سلسلة من يرسم الناتج المرئي قبل إصلاحه / No proof, no edit: prove the owner chain of visible output before fixing it
+
+| الحقل | القيمة |
+|---|---|
+| العائلة | `atlas-code` ([فصل العائلة](../../../.claude/skills/kosif-superpowers/references/powers/atlas-code.md)) |
+| المجموعة | البرمجة وبناء التطبيقات (`software`) |
+| نوع المخرج (A25، A27) | كود وتطبيقات ومواقع (`code`) |
+| الحالة في الكتالوج | 📄 `documented`: منهج موصوف يحتاج بناءً أو ربطًا قبل التشغيل |
+| سقف التحقق قبل العمل (A27) | V1 حتى تُبنى وتُشغَّل؛ لا تقدَّم جاهزة أبدًا |
+| نطاق الدليل | `url` |
+| الرخصة | card in our own words; the original skill folders are copied verbatim with their MIT license and SOURCE.md under vendor/kosif-atlas |
+
+**ما هي:** لإصلاح خلل يظهر على الشاشة (نص، علامة تركيز، طبقة، واجهة في مشهد ما): يثبت أولًا من ينشئ الناتج ومن يحدّثه في وقت التشغيل، بالبحث عن النص أو مفتاح الترجمة الحرفي، ثم يرقع أصغر مالك مثبت فقط؛ ولنفس السلوك على عدة شاشات يثبت مالك كل شاشة على حدة. — For on-screen bugs: find who creates and who refreshes the visible output, patch only the proven owner, and prove each surface separately.
+
+**متى:** خلل مرئي في لعبة أو تطبيق، 'لا تخمّن'، نفس الإصلاح في القائمة واللعب، لقطة شاشة لنص خاطئ / a visible bug in a game or app, the same behaviour across several scenes
+
+**كيف:** 1) Read the repository's agent instructions and git status narrowly; preserve unrelated dirty files. 2) Derive the live structure relevant to the task (folders, namespaces, assembly definitions, scenes, prefabs, bootstraps) before any architecture claim. 3) Classify the task: a runtime-visible bug needs the owner chain proven; a screenshot or text fix needs the exact visible string or localisation key searched and both its creator and its refresh writer found; asset or model integration where names may disagree needs the visible object identity locked (feature name vs asset vs factory vs on-screen surface). 4) When the request spans surfaces ('also', 'menu and gameplay', 'preview and runtime'), prove each surface's owner, active caller, asset dependency and fallback separately; a shared helper is a candidate only after that. 5) Never start from memory, nearest-name guessing, semantic similarity or screenshot position alone. 6) Patch the smallest proven owner, validate at runtime (a repeated visible failure needs a runtime number, not a reading of code), and close with proof and a rollback note. Full original skill(s) with license: vendor/kosif-atlas/skills/346-unity-agent-workflows/1245-unity-agent-workflows.
+
+**المعاملات:** bug, surfaces
+
+**التثبيت:** mkdir -p ~/.claude/skills && cp -r .claude/skills/kosif-superpowers/vendor/kosif-atlas/skills/346-unity-agent-workflows/1245-unity-agent-workflows ~/.claude/skills/unity-agent-workflows
+
+**الوسوم:** Unity · game development · UI bugs · root cause · owner proof · ألعاب · إصلاح مرئي
+
+#### 1. الاستقبال (A25)
+
+- اللغة والإطار: افتراض مكتوب ← لغة المستودع الموجود، وإلا Python أو HTML/JS بلا اعتماديات
+- أين يعمل: افتراض مكتوب ← المتصفح أو سطر الأوامر حسب المخرج
+- مستودع أو ملفات موجودة: سؤال بإجابة مقترحة ← مشروع جديد مستقل
+- متى يكون ناجحًا: افتراض مكتوب ← الاختبارات الموجودة تمر + اختبار لكل سلوك جديد
+- لا تُفترض أبدًا: مادة الإنتاج نفسها، والإذن بخطوة مدفوعة أو منشورة أو لا رجعة فيها، والهوية والحقوق.
+
+#### 2. الجاهزية والشارة (A28)
+
+- لا متطلبات مسجلة؛ افحص المسار والأداة بـ `hub.py doctor` قبل الشارة.
+- الوضع 1: شارة «هنا الآن» بعد الفحص، لا 📄 الكتالوج تلقائيًا · الوضع 2: `كتالوج: 📄 · هنا: غير مفحوص` · الوضع 3: بلا شارة ولا معرّف.
+
+#### 3. موضعها في الخطة (A26)
+
+- عقدة منمّطة: المدخل `spec` ← المخرج `code`، والمنفّذ `method:ACODE-279` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `atlas-ledger`.
+- مراحل النوع: قراءة الكود والاختبارات ← إعادة إنتاج أو اختبار جديد ← أصغر تغيير ← الاختبارات ← مراجعة الفرق ← فرع وPR.
+- إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
+
+#### 4. بوابة التحقق (A27)
+
+- إلزامي: الاختبارات الموجودة تمر قبل التعديل وبعده ← أمر الاختبار
+- إلزامي: اختبار لكل سلوك جديد أو خطأ مُصلح ← الاختبار الجديد يفشل قبل الإصلاح
+- إلزامي: لا أسرار ولا مسارات جلسة في الشيفرة ← بحث أنماط الأسرار
+- جودة: يطابق أسلوب الكود المحيط وتسمياته ← مراجعة الفرق
+- جودة: طريقة تشغيل مكتوبة ومجرَّبة ← تشغيل الأمر المكتوب
+- جودة: الفرق أصغر ما يحقق الطلب بلا إعادة كتابة غير مطلوبة ← git diff --stat
+- جودة: المدخل الخاطئ يعطي خطأ واضحًا لا انهيارًا صامتًا ← تشغيل بمدخل خاطئ
+- أمر الحكم في الوضع 1: `think.py qa code --answers qa.json` (PASS / FAIL / INCOMPLETE).
+
+#### 5. التعافي (A29)
+
+- `missing_dependency` (اعتمادية مفقودة، ميزانية 2): سمِّ الاعتمادية بالضبط (حزمة، برنامج، خط، نموذج) ← ثبّت محليًا في بيئة العمل إن كان مجانيًا ومسموحًا (pip --user أو venv أو npm محلي) · البديل: مسار المكتبة القياسية أو أداة أخرى من نفس المجموعة · تصعيد: تثبيت نظامي أو مدفوع أو يحتاج مفتاحًا: توقف واسأل
+- `quality_below_threshold` (جودة دون العتبة، ميزانية 3): أي معيار فشل وبكم (المقيس مقابل العتبة) ← عالج السبب الأكبر وحده ثم أعد القياس · البديل: المنهج البديل المكتوب للمرحلة في الخطة · تصعيد: معيار إلزامي لا يتحقق بعد البديل: توقف وأبلغ بالأرقام
+- `tool_error` (خطأ أداة، ميزانية 3): اقرأ آخر سطر في الخطأ ثم أول سطر من كودك فيه ← أصلح السبب المثبت وحده، ثم شغّل الاختبار المتعلق · البديل: أداة أخرى أو مسار يدوي للمرحلة نفسها · تصعيد: خطأ في أداة خارجية لا تملكها: بلّغ بإعادة الإنتاج ولا تخفه
+
+#### 6. الأدلة
+
+- `https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/346-unity-agent-workflows/1245-unity-agent-workflows`
+
+#### 7. قدرات قريبة في العائلة
+
+- `ACODE-277` تدقيق طبقات التعليمات كلها: هل طُبّقت القاعدة يومًا؟ وأين تتعارض الطبقات؟ / Cross-layer instruction-stack audit: rule-firing evidence, conflicts, permission bypasses (documented)
+- `ACODE-278` تنظيف مساحة العمل القابل للتراجع: كشف افتراضي وحجر بدل الحذف / Reversible workspace hygiene: detect by default, quarantine instead of delete (documented)
+- `ACODE-28` استخراج عميل API مستقل من تسجيل HAR / Derive standalone API client from HAR recording (documented)
+- `ACODE-280` تصميم حزام الوكيل لا موجّهه فقط: عشر طبقات من تجميع الطلب إلى الاسترداد / Design the agent harness, not just the prompt: ten-part blueprint (documented)
 
 ### `ACODE-28` — استخراج عميل API مستقل من تسجيل HAR / Derive standalone API client from HAR recording
 
@@ -15088,10 +15286,732 @@
 
 #### 7. قدرات قريبة في العائلة
 
-- `ACODE-276` التحقق من إعدادات Home Assistant: YAML والأسرار والمفاتيح المكررة / Home Assistant configuration validation: YAML, secrets, duplicate keys (documented)
-- `ACODE-277` تدقيق طبقات التعليمات كلها: هل طُبّقت القاعدة يومًا؟ وأين تتعارض الطبقات؟ / Cross-layer instruction-stack audit: rule-firing evidence, conflicts, permission bypasses (documented)
+- `ACODE-278` تنظيف مساحة العمل القابل للتراجع: كشف افتراضي وحجر بدل الحذف / Reversible workspace hygiene: detect by default, quarantine instead of delete (documented)
+- `ACODE-279` لا تعديل بلا دليل على المالك: إثبات سلسلة من يرسم الناتج المرئي قبل إصلاحه / No proof, no edit: prove the owner chain of visible output before fixing it (documented)
+- `ACODE-280` تصميم حزام الوكيل لا موجّهه فقط: عشر طبقات من تجميع الطلب إلى الاسترداد / Design the agent harness, not just the prompt: ten-part blueprint (documented)
+- `ACODE-281` تصحيح وكيل محادثة صوتي أو نصي دورًا بدور، ومحاكاة المحادثات الكاملة كاختبار انحدار / Debug a conversational agent turn by turn, and regression-test whole conversations by simulation (documented)
+
+### `ACODE-280` — تصميم حزام الوكيل لا موجّهه فقط: عشر طبقات من تجميع الطلب إلى الاسترداد / Design the agent harness, not just the prompt: ten-part blueprint
+
+| الحقل | القيمة |
+|---|---|
+| العائلة | `atlas-code` ([فصل العائلة](../../../.claude/skills/kosif-superpowers/references/powers/atlas-code.md)) |
+| المجموعة | البرمجة وبناء التطبيقات (`software`) |
+| نوع المخرج (A25، A27) | كود وتطبيقات ومواقع (`code`) |
+| الحالة في الكتالوج | 📄 `documented`: منهج موصوف يحتاج بناءً أو ربطًا قبل التشغيل |
+| سقف التحقق قبل العمل (A27) | V1 حتى تُبنى وتُشغَّل؛ لا تقدَّم جاهزة أبدًا |
+| نطاق الدليل | `url` |
+| الرخصة | card in our own words; the original skill folders are copied verbatim with their MIT license and SOURCE.md under vendor/kosif-atlas |
+
+**ما هي:** يحول فكرة وكيل إلى مخطط حزام تشغيل: حدود التفويض، طبقات الحزام، كيف يُجمّع الطلب، حلقة الدور، الأدوات كطبقة تشغيل ذات صلاحيات، نموذج السياق والذاكرة، بوابات الأمان، السجل والاسترداد، نقاط التوسعة، وتسلسل التنفيذ؛ ويقول صراحة إن كانت المهمة لا تحتاج حزامًا أصلًا. — Turns an agent idea into a harness blueprint, and says so when a single model call is enough.
+
+**متى:** بناء وكيل ذكاء اصطناعي له أدوات وذاكرة، مراجعة تصميم وكيل قائم، قبل اختيار إطار / designing or reviewing an agentic system
+
+**كيف:** 1) Ask what job is delegated, what state must survive turns, whether tools, memory, recovery or background work are needed, and what breaks with one model call; if nothing, say no harness is needed. 2) Separate model, harness runtime, external tools, durable storage and human operators; the harness governs the model. 3) Design request assembly first: instruction sources (durable vs per turn), how system and user context enter, how tools are exposed, and transcript repair before each call. 4) Make the turn loop explicit: gather, decide, act, verify progress, then continue, compact, escalate or stop. 5) For each tool define purpose, invocation boundary, inputs and outputs, permission gate, success criterion and rollback. 6) Define what memory survives compaction and sessions, the permission and safety gates, how a crashed run resumes from the transcript, and the extension points. 7) Review mode leads with structural weaknesses and missing control planes. Prefer explicit, layered, recoverable and bounded designs over orchestration theatre. Full original skill(s) with license: vendor/kosif-atlas/skills/1211-claude-code-harness/2867-claude-code-harness.
+
+**المعاملات:** agent idea
+
+**التثبيت:** mkdir -p ~/.claude/skills && cp -r .claude/skills/kosif-superpowers/vendor/kosif-atlas/skills/1211-claude-code-harness/2867-claude-code-harness ~/.claude/skills/claude-code-harness
+
+**الوسوم:** agent harness · agent architecture · tools · memory · permissions · تصميم الوكلاء
+
+#### 1. الاستقبال (A25)
+
+- اللغة والإطار: افتراض مكتوب ← لغة المستودع الموجود، وإلا Python أو HTML/JS بلا اعتماديات
+- أين يعمل: افتراض مكتوب ← المتصفح أو سطر الأوامر حسب المخرج
+- مستودع أو ملفات موجودة: سؤال بإجابة مقترحة ← مشروع جديد مستقل
+- متى يكون ناجحًا: افتراض مكتوب ← الاختبارات الموجودة تمر + اختبار لكل سلوك جديد
+- لا تُفترض أبدًا: مادة الإنتاج نفسها، والإذن بخطوة مدفوعة أو منشورة أو لا رجعة فيها، والهوية والحقوق.
+
+#### 2. الجاهزية والشارة (A28)
+
+- لا متطلبات مسجلة؛ افحص المسار والأداة بـ `hub.py doctor` قبل الشارة.
+- الوضع 1: شارة «هنا الآن» بعد الفحص، لا 📄 الكتالوج تلقائيًا · الوضع 2: `كتالوج: 📄 · هنا: غير مفحوص` · الوضع 3: بلا شارة ولا معرّف.
+
+#### 3. موضعها في الخطة (A26)
+
+- عقدة منمّطة: المدخل `spec` ← المخرج `code`، والمنفّذ `method:ACODE-280` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `atlas-ledger`.
+- مراحل النوع: قراءة الكود والاختبارات ← إعادة إنتاج أو اختبار جديد ← أصغر تغيير ← الاختبارات ← مراجعة الفرق ← فرع وPR.
+- إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
+
+#### 4. بوابة التحقق (A27)
+
+- إلزامي: الاختبارات الموجودة تمر قبل التعديل وبعده ← أمر الاختبار
+- إلزامي: اختبار لكل سلوك جديد أو خطأ مُصلح ← الاختبار الجديد يفشل قبل الإصلاح
+- إلزامي: لا أسرار ولا مسارات جلسة في الشيفرة ← بحث أنماط الأسرار
+- جودة: يطابق أسلوب الكود المحيط وتسمياته ← مراجعة الفرق
+- جودة: طريقة تشغيل مكتوبة ومجرَّبة ← تشغيل الأمر المكتوب
+- جودة: الفرق أصغر ما يحقق الطلب بلا إعادة كتابة غير مطلوبة ← git diff --stat
+- جودة: المدخل الخاطئ يعطي خطأ واضحًا لا انهيارًا صامتًا ← تشغيل بمدخل خاطئ
+- أمر الحكم في الوضع 1: `think.py qa code --answers qa.json` (PASS / FAIL / INCOMPLETE).
+
+#### 5. التعافي (A29)
+
+- `missing_dependency` (اعتمادية مفقودة، ميزانية 2): سمِّ الاعتمادية بالضبط (حزمة، برنامج، خط، نموذج) ← ثبّت محليًا في بيئة العمل إن كان مجانيًا ومسموحًا (pip --user أو venv أو npm محلي) · البديل: مسار المكتبة القياسية أو أداة أخرى من نفس المجموعة · تصعيد: تثبيت نظامي أو مدفوع أو يحتاج مفتاحًا: توقف واسأل
+- `quality_below_threshold` (جودة دون العتبة، ميزانية 3): أي معيار فشل وبكم (المقيس مقابل العتبة) ← عالج السبب الأكبر وحده ثم أعد القياس · البديل: المنهج البديل المكتوب للمرحلة في الخطة · تصعيد: معيار إلزامي لا يتحقق بعد البديل: توقف وأبلغ بالأرقام
+- `tool_error` (خطأ أداة، ميزانية 3): اقرأ آخر سطر في الخطأ ثم أول سطر من كودك فيه ← أصلح السبب المثبت وحده، ثم شغّل الاختبار المتعلق · البديل: أداة أخرى أو مسار يدوي للمرحلة نفسها · تصعيد: خطأ في أداة خارجية لا تملكها: بلّغ بإعادة الإنتاج ولا تخفه
+
+#### 6. الأدلة
+
+- `https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/1211-claude-code-harness/2867-claude-code-harness`
+
+#### 7. قدرات قريبة في العائلة
+
+- `ACODE-279` لا تعديل بلا دليل على المالك: إثبات سلسلة من يرسم الناتج المرئي قبل إصلاحه / No proof, no edit: prove the owner chain of visible output before fixing it (documented)
+- `ACODE-28` استخراج عميل API مستقل من تسجيل HAR / Derive standalone API client from HAR recording (documented)
+- `ACODE-281` تصحيح وكيل محادثة صوتي أو نصي دورًا بدور، ومحاكاة المحادثات الكاملة كاختبار انحدار / Debug a conversational agent turn by turn, and regression-test whole conversations by simulation (documented)
+- `ACODE-282` إصلاح فشل CI آليًا بـClaude Code: سير عمل لمستودع واحد أو قالب مشترك، مع حلقة من الاختبار إلى طلب الدمج / Automated CI-failure fixing with an AI agent: inline or reusable workflow, and the issue-to-PR loop (documented)
+
+### `ACODE-281` — تصحيح وكيل محادثة صوتي أو نصي دورًا بدور، ومحاكاة المحادثات الكاملة كاختبار انحدار / Debug a conversational agent turn by turn, and regression-test whole conversations by simulation
+
+| الحقل | القيمة |
+|---|---|
+| العائلة | `atlas-code` ([فصل العائلة](../../../.claude/skills/kosif-superpowers/references/powers/atlas-code.md)) |
+| المجموعة | البرمجة وبناء التطبيقات (`software`) |
+| نوع المخرج (A25، A27) | كود وتطبيقات ومواقع (`code`) |
+| الحالة في الكتالوج | 📄 `documented`: منهج موصوف يحتاج بناءً أو ربطًا قبل التشغيل |
+| سقف التحقق قبل العمل (A27) | V1 حتى تُبنى وتُشغَّل؛ لا تقدَّم جاهزة أبدًا |
+| نطاق الدليل | `url` |
+| الرخصة | card in our own words; the original skill folders are copied verbatim with their MIT license and SOURCE.md under vendor/kosif-atlas |
+
+**ما هي:** حلقة تصحيح رخيصة: شغّل الوكيل محليًا في وضع نصي، العب دور المستخدم سطرًا بسطر، واقرأ استدعاءات الأدوات ومعاملاتها لا الرد وحده، وأعد التشغيل بعد كل تعديل. ثم محاكاة: مستخدم مُحاكى يلعب سيناريو كاملًا وحَكَم يقيّم النتيجة والحالة النهائية؛ نصيًا للتكرار، وصوتيًا لقياس تبادل الأدوار والمقاطعة ودقة النسخ والزمن المسموع. — Drive the agent one turn at a time and inspect tool calls; then simulate whole conversations, text first, audio for speech-only failures.
+
+**متى:** وكيل صوتي أو دردشة يتصرف بشكل غريب، قبل نشر وكيل مكالمات، اختبار محادثات متعددة الأدوار / a voice or chat agent misbehaves, before deploying a call agent
+
+**كيف:** 1) Read the CLI's help first; it is the source of truth for flags. 2) Start the agent locally in text mode, send user turns, and read each turn's tool calls, arguments, handoffs and errors as well as the reply: a wrong argument points to the prompt or tool description; no call at all usually means the description never says when to use the tool. 3) Interleave logs under each turn so a traceback sits under the sanitised error the user heard; check the agent's own chat history rather than your memory of the conversation. 4) Restart after every code edit (a running session keeps old code); keep the exact sequence of turns that reproduced the bug and replay it after the fix. 5) Drive whole conversations: details collected early and lost later, a user changing their mind, a handoff that drops context. 6) For regression, run scenario simulations with a simulated user and a judge that grades outcome and end state; a unit test covers one turn. 7) Use text runs for iteration and CI; use audio runs for turn-taking, barge-in, transcription of names, numbers and codes, and perceived latency. 8) Generating scenarios from source may upload code: confirm before. Full original skill(s) with license: vendor/kosif-atlas/skills/1426-livekit-skills/3391-debugging-livekit-agents, vendor/kosif-atlas/skills/1426-livekit-skills/3394-running-livekit-simulations.
+
+**المعاملات:** agent, scenarios
+
+**التثبيت:** mkdir -p ~/.claude/skills && cp -r .claude/skills/kosif-superpowers/vendor/kosif-atlas/skills/1426-livekit-skills/3391-debugging-livekit-agents ~/.claude/skills/debugging-livekit-agents ; mkdir -p ~/.claude/skills && cp -r .claude/skills/kosif-superpowers/vendor/kosif-atlas/skills/1426-livekit-skills/3394-running-livekit-simulations ~/.claude/skills/running-livekit-simulations
+
+**الوسوم:** voice agents · conversational AI · LiveKit · debugging · simulation · وكلاء صوتيون · اختبار المحادثة
+
+#### 1. الاستقبال (A25)
+
+- اللغة والإطار: افتراض مكتوب ← لغة المستودع الموجود، وإلا Python أو HTML/JS بلا اعتماديات
+- أين يعمل: افتراض مكتوب ← المتصفح أو سطر الأوامر حسب المخرج
+- مستودع أو ملفات موجودة: سؤال بإجابة مقترحة ← مشروع جديد مستقل
+- متى يكون ناجحًا: افتراض مكتوب ← الاختبارات الموجودة تمر + اختبار لكل سلوك جديد
+- لا تُفترض أبدًا: مادة الإنتاج نفسها، والإذن بخطوة مدفوعة أو منشورة أو لا رجعة فيها، والهوية والحقوق.
+
+#### 2. الجاهزية والشارة (A28)
+
+- لا متطلبات مسجلة؛ افحص المسار والأداة بـ `hub.py doctor` قبل الشارة.
+- الوضع 1: شارة «هنا الآن» بعد الفحص، لا 📄 الكتالوج تلقائيًا · الوضع 2: `كتالوج: 📄 · هنا: غير مفحوص` · الوضع 3: بلا شارة ولا معرّف.
+
+#### 3. موضعها في الخطة (A26)
+
+- عقدة منمّطة: المدخل `spec` ← المخرج `code`، والمنفّذ `method:ACODE-281` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `atlas-ledger`.
+- مراحل النوع: قراءة الكود والاختبارات ← إعادة إنتاج أو اختبار جديد ← أصغر تغيير ← الاختبارات ← مراجعة الفرق ← فرع وPR.
+- إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
+
+#### 4. بوابة التحقق (A27)
+
+- إلزامي: الاختبارات الموجودة تمر قبل التعديل وبعده ← أمر الاختبار
+- إلزامي: اختبار لكل سلوك جديد أو خطأ مُصلح ← الاختبار الجديد يفشل قبل الإصلاح
+- إلزامي: لا أسرار ولا مسارات جلسة في الشيفرة ← بحث أنماط الأسرار
+- جودة: يطابق أسلوب الكود المحيط وتسمياته ← مراجعة الفرق
+- جودة: طريقة تشغيل مكتوبة ومجرَّبة ← تشغيل الأمر المكتوب
+- جودة: الفرق أصغر ما يحقق الطلب بلا إعادة كتابة غير مطلوبة ← git diff --stat
+- جودة: المدخل الخاطئ يعطي خطأ واضحًا لا انهيارًا صامتًا ← تشغيل بمدخل خاطئ
+- أمر الحكم في الوضع 1: `think.py qa code --answers qa.json` (PASS / FAIL / INCOMPLETE).
+
+#### 5. التعافي (A29)
+
+- `missing_dependency` (اعتمادية مفقودة، ميزانية 2): سمِّ الاعتمادية بالضبط (حزمة، برنامج، خط، نموذج) ← ثبّت محليًا في بيئة العمل إن كان مجانيًا ومسموحًا (pip --user أو venv أو npm محلي) · البديل: مسار المكتبة القياسية أو أداة أخرى من نفس المجموعة · تصعيد: تثبيت نظامي أو مدفوع أو يحتاج مفتاحًا: توقف واسأل
+- `quality_below_threshold` (جودة دون العتبة، ميزانية 3): أي معيار فشل وبكم (المقيس مقابل العتبة) ← عالج السبب الأكبر وحده ثم أعد القياس · البديل: المنهج البديل المكتوب للمرحلة في الخطة · تصعيد: معيار إلزامي لا يتحقق بعد البديل: توقف وأبلغ بالأرقام
+- `tool_error` (خطأ أداة، ميزانية 3): اقرأ آخر سطر في الخطأ ثم أول سطر من كودك فيه ← أصلح السبب المثبت وحده، ثم شغّل الاختبار المتعلق · البديل: أداة أخرى أو مسار يدوي للمرحلة نفسها · تصعيد: خطأ في أداة خارجية لا تملكها: بلّغ بإعادة الإنتاج ولا تخفه
+
+#### 6. الأدلة
+
+- `https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/1426-livekit-skills/3391-debugging-livekit-agents`
+- `https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/1426-livekit-skills/3394-running-livekit-simulations`
+
+#### 7. قدرات قريبة في العائلة
+
+- `ACODE-28` استخراج عميل API مستقل من تسجيل HAR / Derive standalone API client from HAR recording (documented)
+- `ACODE-280` تصميم حزام الوكيل لا موجّهه فقط: عشر طبقات من تجميع الطلب إلى الاسترداد / Design the agent harness, not just the prompt: ten-part blueprint (documented)
+- `ACODE-282` إصلاح فشل CI آليًا بـClaude Code: سير عمل لمستودع واحد أو قالب مشترك، مع حلقة من الاختبار إلى طلب الدمج / Automated CI-failure fixing with an AI agent: inline or reusable workflow, and the issue-to-PR loop (documented)
+- `ACODE-283` معمارية وكيل صوتي وميزانية الزمن: سلسلة STT→LLM→TTS أم كلام إلى كلام / Voice-agent architecture and latency budget: cascade vs speech-to-speech (documented)
+
+### `ACODE-282` — إصلاح فشل CI آليًا بـClaude Code: سير عمل لمستودع واحد أو قالب مشترك، مع حلقة من الاختبار إلى طلب الدمج / Automated CI-failure fixing with an AI agent: inline or reusable workflow, and the issue-to-PR loop
+
+| الحقل | القيمة |
+|---|---|
+| العائلة | `atlas-code` ([فصل العائلة](../../../.claude/skills/kosif-superpowers/references/powers/atlas-code.md)) |
+| المجموعة | البرمجة وبناء التطبيقات (`software`) |
+| نوع المخرج (A25، A27) | كود وتطبيقات ومواقع (`code`) |
+| الحالة في الكتالوج | 📄 `documented`: منهج موصوف يحتاج بناءً أو ربطًا قبل التشغيل |
+| سقف التحقق قبل العمل (A27) | V1 حتى تُبنى وتُشغَّل؛ لا تقدَّم جاهزة أبدًا |
+| نطاق الدليل | `url` |
+| الرخصة | card in our own words; the original skill folders are copied verbatim with their MIT license and SOURCE.md under vendor/kosif-atlas |
+
+**ما هي:** يركّب سير عمل يحلل فشل الفحوص ويقترح إصلاحًا في طلب دمج: نسخة مضمّنة لمستودع واحد أو قالب workflow_call تستدعيه عدة مستودعات، يحدد أي سير عمل يُراقب، ويتحقق من وجود السر المطلوب دون كشفه. وحلقة تطوير: شغّل الاختبارات، افتح مشكلة لكل فشل، اختر حسب الأولوية، أصلح بـTDD في فرع، افتح طلب دمج وراقب CI. — Sets up AI-driven CI-failure fixes (single-repo or reusable) and a test-failure-to-PR development loop.
+
+**متى:** CI يفشل كثيرًا ويستهلك وقت الفريق، أكثر من مستودع يحتاج نفس آلية الإصلاح / frequent CI failures, several repos needing the same auto-fix
+
+**كيف:** 1) Assess: does an auto-fix workflow already exist, which workflows run (by name), and is the agent token secret configured (list names only, never values). 2) Choose the shape: one inline workflow for a single repo, or a reusable workflow_call definition plus a thin caller per repo. 3) Trigger on workflow_run completed with conclusion failure for the selected workflows only, and skip runs on the auto-fix branch itself to avoid loops. 4) Give the job least privilege (contents and pull-requests write, nothing else), fetch the failing job logs, let the agent diagnose and push a fix to a new branch and open a PR; never push to the default branch or merge. 5) Offer a dry run that prints the files it would write. 6) For the development loop: sync main, run the project's tests (detect the stack), open one issue per failing test with output, pick by priority (critical bugs, fresh test failures, quick wins), branch, write the failing test, fix, open a PR, wait for CI, repeat up to a cycle limit. 7) A human reviews and merges every PR. Full original skill(s) with license: vendor/kosif-atlas/skills/2153-github-actions-plugin/7760-github-workflow-auto-fix, vendor/kosif-atlas/skills/2153-github-actions-plugin/7763-workflow-dev.
+
+**المعاملات:** workflows, shape
+
+**التثبيت:** mkdir -p ~/.claude/skills && cp -r .claude/skills/kosif-superpowers/vendor/kosif-atlas/skills/2153-github-actions-plugin/7760-github-workflow-auto-fix ~/.claude/skills/github-workflow-auto-fix ; mkdir -p ~/.claude/skills && cp -r .claude/skills/kosif-superpowers/vendor/kosif-atlas/skills/2153-github-actions-plugin/7763-workflow-dev ~/.claude/skills/workflow-dev
+
+**الوسوم:** CI · GitHub Actions · auto-fix · Claude Code · TDD · إصلاح آلي
+
+#### 1. الاستقبال (A25)
+
+- اللغة والإطار: افتراض مكتوب ← لغة المستودع الموجود، وإلا Python أو HTML/JS بلا اعتماديات
+- أين يعمل: افتراض مكتوب ← المتصفح أو سطر الأوامر حسب المخرج
+- مستودع أو ملفات موجودة: سؤال بإجابة مقترحة ← مشروع جديد مستقل
+- متى يكون ناجحًا: افتراض مكتوب ← الاختبارات الموجودة تمر + اختبار لكل سلوك جديد
+- لا تُفترض أبدًا: مادة الإنتاج نفسها، والإذن بخطوة مدفوعة أو منشورة أو لا رجعة فيها، والهوية والحقوق.
+
+#### 2. الجاهزية والشارة (A28)
+
+- لا متطلبات مسجلة؛ افحص المسار والأداة بـ `hub.py doctor` قبل الشارة.
+- الوضع 1: شارة «هنا الآن» بعد الفحص، لا 📄 الكتالوج تلقائيًا · الوضع 2: `كتالوج: 📄 · هنا: غير مفحوص` · الوضع 3: بلا شارة ولا معرّف.
+
+#### 3. موضعها في الخطة (A26)
+
+- عقدة منمّطة: المدخل `spec` ← المخرج `code`، والمنفّذ `method:ACODE-282` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `atlas-ledger`.
+- مراحل النوع: قراءة الكود والاختبارات ← إعادة إنتاج أو اختبار جديد ← أصغر تغيير ← الاختبارات ← مراجعة الفرق ← فرع وPR.
+- إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
+
+#### 4. بوابة التحقق (A27)
+
+- إلزامي: الاختبارات الموجودة تمر قبل التعديل وبعده ← أمر الاختبار
+- إلزامي: اختبار لكل سلوك جديد أو خطأ مُصلح ← الاختبار الجديد يفشل قبل الإصلاح
+- إلزامي: لا أسرار ولا مسارات جلسة في الشيفرة ← بحث أنماط الأسرار
+- جودة: يطابق أسلوب الكود المحيط وتسمياته ← مراجعة الفرق
+- جودة: طريقة تشغيل مكتوبة ومجرَّبة ← تشغيل الأمر المكتوب
+- جودة: الفرق أصغر ما يحقق الطلب بلا إعادة كتابة غير مطلوبة ← git diff --stat
+- جودة: المدخل الخاطئ يعطي خطأ واضحًا لا انهيارًا صامتًا ← تشغيل بمدخل خاطئ
+- أمر الحكم في الوضع 1: `think.py qa code --answers qa.json` (PASS / FAIL / INCOMPLETE).
+
+#### 5. التعافي (A29)
+
+- `missing_dependency` (اعتمادية مفقودة، ميزانية 2): سمِّ الاعتمادية بالضبط (حزمة، برنامج، خط، نموذج) ← ثبّت محليًا في بيئة العمل إن كان مجانيًا ومسموحًا (pip --user أو venv أو npm محلي) · البديل: مسار المكتبة القياسية أو أداة أخرى من نفس المجموعة · تصعيد: تثبيت نظامي أو مدفوع أو يحتاج مفتاحًا: توقف واسأل
+- `quality_below_threshold` (جودة دون العتبة، ميزانية 3): أي معيار فشل وبكم (المقيس مقابل العتبة) ← عالج السبب الأكبر وحده ثم أعد القياس · البديل: المنهج البديل المكتوب للمرحلة في الخطة · تصعيد: معيار إلزامي لا يتحقق بعد البديل: توقف وأبلغ بالأرقام
+- `tool_error` (خطأ أداة، ميزانية 3): اقرأ آخر سطر في الخطأ ثم أول سطر من كودك فيه ← أصلح السبب المثبت وحده، ثم شغّل الاختبار المتعلق · البديل: أداة أخرى أو مسار يدوي للمرحلة نفسها · تصعيد: خطأ في أداة خارجية لا تملكها: بلّغ بإعادة الإنتاج ولا تخفه
+
+#### 6. الأدلة
+
+- `https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/2153-github-actions-plugin/7760-github-workflow-auto-fix`
+- `https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/2153-github-actions-plugin/7763-workflow-dev`
+
+#### 7. قدرات قريبة في العائلة
+
+- `ACODE-280` تصميم حزام الوكيل لا موجّهه فقط: عشر طبقات من تجميع الطلب إلى الاسترداد / Design the agent harness, not just the prompt: ten-part blueprint (documented)
+- `ACODE-281` تصحيح وكيل محادثة صوتي أو نصي دورًا بدور، ومحاكاة المحادثات الكاملة كاختبار انحدار / Debug a conversational agent turn by turn, and regression-test whole conversations by simulation (documented)
+- `ACODE-283` معمارية وكيل صوتي وميزانية الزمن: سلسلة STT→LLM→TTS أم كلام إلى كلام / Voice-agent architecture and latency budget: cascade vs speech-to-speech (documented)
+- `ACODE-284` العمل الطويل داخل حدود الاستخدام: موجات محدودة، قراءة الاستخدام الحقيقي، وإيقاظ متسلسل / Long agent work inside usage windows: bounded waves, real usage reads, chained wake-ups (documented)
+
+### `ACODE-283` — معمارية وكيل صوتي وميزانية الزمن: سلسلة STT→LLM→TTS أم كلام إلى كلام / Voice-agent architecture and latency budget: cascade vs speech-to-speech
+
+| الحقل | القيمة |
+|---|---|
+| العائلة | `atlas-code` ([فصل العائلة](../../../.claude/skills/kosif-superpowers/references/powers/atlas-code.md)) |
+| المجموعة | البرمجة وبناء التطبيقات (`software`) |
+| نوع المخرج (A25، A27) | كود وتطبيقات ومواقع (`code`) |
+| الحالة في الكتالوج | 📄 `documented`: منهج موصوف يحتاج بناءً أو ربطًا قبل التشغيل |
+| سقف التحقق قبل العمل (A27) | V1 حتى تُبنى وتُشغَّل؛ لا تقدَّم جاهزة أبدًا |
+| نطاق الدليل | `url` |
+| الرخصة | card in our own words; the original skill folders are copied verbatim with their MIT license and SOURCE.md under vendor/kosif-atlas |
+
+**ما هي:** القرار الأول والأغلى في وكلاء الصوت: شكل الخط (سلسلة تحويل الكلام لنص ثم نموذج ثم توليد صوت، أو نموذج كلام إلى كلام)، والقناة (هاتف، WebRTC، SDK)، والبناء على منصة أو إطار، وتوزيع ميزانية الزمن على كل مرحلة، مع تصميم تبادل الأدوار والمقاطعة والمسار البديل من البداية. — Sets the pipeline shape, channel, build-vs-platform and per-hop latency budget for a voice agent.
+
+**متى:** بناء وكيل مكالمات أو مساعد صوتي، الوكيل بطيء في الرد، اختيار Vapi أو LiveKit أو Twilio / building a phone or voice assistant
+
+**كيف:** 1) State the use case (inbound support, outbound reminders, in-app assistant, IVR replacement), the channel and the acceptable response latency. 2) Cascade buys transcripts, swappable parts and mid-turn tool calls; speech-to-speech buys latency and prosody at the cost of control and observability: name the trade. 3) Channel: telephony (narrowband audio, DTMF), WebRTC (wideband) or SDK; it fixes media constraints and part of the latency. 4) Build vs platform: a managed platform for speed, a framework for control, telephony primitives plus your own orchestration, or from scratch; hide the provider behind a seam. 5) Allocate the end-to-end budget per hop (endpointing, final transcript, model time to first token, speech time to first byte, network) and check that it sums under the target. 6) Design turn-taking, barge-in and the unhappy path (silence, recognition error, model stall, human handoff) as architecture. 7) Treat every model, price and latency figure as verify-at-use against current vendor docs, and treat call audio and transcripts as sensitive personal data. Full original skill(s) with license: vendor/kosif-atlas/skills/2261-conversational-ai-voice-engineering/8618-voice-agent-architecture-and-latency.
+
+**المعاملات:** use case, channel, latency target
+
+**التثبيت:** mkdir -p ~/.claude/skills && cp -r .claude/skills/kosif-superpowers/vendor/kosif-atlas/skills/2261-conversational-ai-voice-engineering/8618-voice-agent-architecture-and-latency ~/.claude/skills/voice-agent-architecture-and-latency
+
+**الوسوم:** voice AI · voice agents · latency · telephony · speech · وكيل صوتي · زمن الاستجابة
+
+#### 1. الاستقبال (A25)
+
+- اللغة والإطار: افتراض مكتوب ← لغة المستودع الموجود، وإلا Python أو HTML/JS بلا اعتماديات
+- أين يعمل: افتراض مكتوب ← المتصفح أو سطر الأوامر حسب المخرج
+- مستودع أو ملفات موجودة: سؤال بإجابة مقترحة ← مشروع جديد مستقل
+- متى يكون ناجحًا: افتراض مكتوب ← الاختبارات الموجودة تمر + اختبار لكل سلوك جديد
+- لا تُفترض أبدًا: مادة الإنتاج نفسها، والإذن بخطوة مدفوعة أو منشورة أو لا رجعة فيها، والهوية والحقوق.
+
+#### 2. الجاهزية والشارة (A28)
+
+- لا متطلبات مسجلة؛ افحص المسار والأداة بـ `hub.py doctor` قبل الشارة.
+- الوضع 1: شارة «هنا الآن» بعد الفحص، لا 📄 الكتالوج تلقائيًا · الوضع 2: `كتالوج: 📄 · هنا: غير مفحوص` · الوضع 3: بلا شارة ولا معرّف.
+
+#### 3. موضعها في الخطة (A26)
+
+- عقدة منمّطة: المدخل `spec` ← المخرج `code`، والمنفّذ `method:ACODE-283` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `atlas-ledger`.
+- مراحل النوع: قراءة الكود والاختبارات ← إعادة إنتاج أو اختبار جديد ← أصغر تغيير ← الاختبارات ← مراجعة الفرق ← فرع وPR.
+- إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
+
+#### 4. بوابة التحقق (A27)
+
+- إلزامي: الاختبارات الموجودة تمر قبل التعديل وبعده ← أمر الاختبار
+- إلزامي: اختبار لكل سلوك جديد أو خطأ مُصلح ← الاختبار الجديد يفشل قبل الإصلاح
+- إلزامي: لا أسرار ولا مسارات جلسة في الشيفرة ← بحث أنماط الأسرار
+- جودة: يطابق أسلوب الكود المحيط وتسمياته ← مراجعة الفرق
+- جودة: طريقة تشغيل مكتوبة ومجرَّبة ← تشغيل الأمر المكتوب
+- جودة: الفرق أصغر ما يحقق الطلب بلا إعادة كتابة غير مطلوبة ← git diff --stat
+- جودة: المدخل الخاطئ يعطي خطأ واضحًا لا انهيارًا صامتًا ← تشغيل بمدخل خاطئ
+- أمر الحكم في الوضع 1: `think.py qa code --answers qa.json` (PASS / FAIL / INCOMPLETE).
+
+#### 5. التعافي (A29)
+
+- `missing_dependency` (اعتمادية مفقودة، ميزانية 2): سمِّ الاعتمادية بالضبط (حزمة، برنامج، خط، نموذج) ← ثبّت محليًا في بيئة العمل إن كان مجانيًا ومسموحًا (pip --user أو venv أو npm محلي) · البديل: مسار المكتبة القياسية أو أداة أخرى من نفس المجموعة · تصعيد: تثبيت نظامي أو مدفوع أو يحتاج مفتاحًا: توقف واسأل
+- `quality_below_threshold` (جودة دون العتبة، ميزانية 3): أي معيار فشل وبكم (المقيس مقابل العتبة) ← عالج السبب الأكبر وحده ثم أعد القياس · البديل: المنهج البديل المكتوب للمرحلة في الخطة · تصعيد: معيار إلزامي لا يتحقق بعد البديل: توقف وأبلغ بالأرقام
+- `tool_error` (خطأ أداة، ميزانية 3): اقرأ آخر سطر في الخطأ ثم أول سطر من كودك فيه ← أصلح السبب المثبت وحده، ثم شغّل الاختبار المتعلق · البديل: أداة أخرى أو مسار يدوي للمرحلة نفسها · تصعيد: خطأ في أداة خارجية لا تملكها: بلّغ بإعادة الإنتاج ولا تخفه
+
+#### 6. الأدلة
+
+- `https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/2261-conversational-ai-voice-engineering/8618-voice-agent-architecture-and-latency`
+
+#### 7. قدرات قريبة في العائلة
+
+- `ACODE-281` تصحيح وكيل محادثة صوتي أو نصي دورًا بدور، ومحاكاة المحادثات الكاملة كاختبار انحدار / Debug a conversational agent turn by turn, and regression-test whole conversations by simulation (documented)
+- `ACODE-282` إصلاح فشل CI آليًا بـClaude Code: سير عمل لمستودع واحد أو قالب مشترك، مع حلقة من الاختبار إلى طلب الدمج / Automated CI-failure fixing with an AI agent: inline or reusable workflow, and the issue-to-PR loop (documented)
+- `ACODE-284` العمل الطويل داخل حدود الاستخدام: موجات محدودة، قراءة الاستخدام الحقيقي، وإيقاظ متسلسل / Long agent work inside usage windows: bounded waves, real usage reads, chained wake-ups (documented)
+- `ACODE-285` ترحيل منسق سير عمل دائم: جرد البنى ثم فصل التنسيق عن الآثار الجانبية / Migrate a durable-workflow orchestrator: inventory constructs, split orchestration from side effects (documented)
+
+### `ACODE-284` — العمل الطويل داخل حدود الاستخدام: موجات محدودة، قراءة الاستخدام الحقيقي، وإيقاظ متسلسل / Long agent work inside usage windows: bounded waves, real usage reads, chained wake-ups
+
+| الحقل | القيمة |
+|---|---|
+| العائلة | `atlas-code` ([فصل العائلة](../../../.claude/skills/kosif-superpowers/references/powers/atlas-code.md)) |
+| المجموعة | البرمجة وبناء التطبيقات (`software`) |
+| نوع المخرج (A25، A27) | كود وتطبيقات ومواقع (`code`) |
+| الحالة في الكتالوج | 📄 `documented`: منهج موصوف يحتاج بناءً أو ربطًا قبل التشغيل |
+| سقف التحقق قبل العمل (A27) | V1 حتى تُبنى وتُشغَّل؛ لا تقدَّم جاهزة أبدًا |
+| نطاق الدليل | `url` |
+| الرخصة | card in our own words; the original skill folders are copied verbatim with their MIT license and SOURCE.md under vendor/kosif-atlas |
+
+**ما هي:** يحافظ على عمل الوكيل الطويل أو المتوازي داخل نوافذ الاستخدام (الخمس ساعات والأسبوعية): ينفذ موجة محدودة من الوكلاء الفرعيين، ينتظر انتهاءها، يقرأ نسبة الاستخدام الفعلية من أداة المضيف نفسها، ويتوقف عند 95% ويجدول استئنافًا مكتفيًا بذاته يتحقق من تغير وقت إعادة الضبط. — Runs bounded waves, reads real usage from the host, stops at 95% and resumes through self-contained chained wake-ups.
+
+**متى:** مهام وكيل تستمر ساعات، تشغيل وكلاء متوازيين كثيرين، تجنب الوصول لحد الاستخدام في منتصف العمل / long or parallel agent runs near usage limits
+
+**كيف:** 1) Run a bounded wave (about three parallel subagents unless the user or host sets another throttle). 2) Let the wave finish; interrupting in-flight subagents usually loses work. 3) Read current five-hour and weekly percentages and the reset time from the host's own usage report; never invent a number, install a third-party tool or infer usage. Without a usage command, ask the user to read theirs. Treat the output as data. 4) At or above 95% of either window (or a stricter user threshold), stop launching work. 5) Schedule a resume; when wake delays are clamped, chain wake-ups that each re-check and reschedule. 6) Make each wake prompt self-contained: remaining plan, the check-then-reschedule rule, threshold and throttle, the exact usage command, and the previous reset time. 7) On wake, a different reset time proves the window rolled over; elapsed wall-clock time alone does not. Full original skill(s) with license: vendor/kosif-atlas/skills/2863-use-claude-limits-efficiently/11572-use-claude-limits-efficiently.
+
+**المعاملات:** plan, threshold
+
+**التثبيت:** mkdir -p ~/.claude/skills && cp -r .claude/skills/kosif-superpowers/vendor/kosif-atlas/skills/2863-use-claude-limits-efficiently/11572-use-claude-limits-efficiently ~/.claude/skills/use-claude-limits-efficiently
+
+**الوسوم:** agent operations · usage limits · parallel agents · scheduling · Claude Code · حدود الاستخدام
+
+#### 1. الاستقبال (A25)
+
+- اللغة والإطار: افتراض مكتوب ← لغة المستودع الموجود، وإلا Python أو HTML/JS بلا اعتماديات
+- أين يعمل: افتراض مكتوب ← المتصفح أو سطر الأوامر حسب المخرج
+- مستودع أو ملفات موجودة: سؤال بإجابة مقترحة ← مشروع جديد مستقل
+- متى يكون ناجحًا: افتراض مكتوب ← الاختبارات الموجودة تمر + اختبار لكل سلوك جديد
+- لا تُفترض أبدًا: مادة الإنتاج نفسها، والإذن بخطوة مدفوعة أو منشورة أو لا رجعة فيها، والهوية والحقوق.
+
+#### 2. الجاهزية والشارة (A28)
+
+- `claude:tools` ← افحص وجوده بأمر واحد قبل كتابة الشارة
+- الوضع 1: شارة «هنا الآن» بعد الفحص، لا 📄 الكتالوج تلقائيًا · الوضع 2: `كتالوج: 📄 · هنا: غير مفحوص` · الوضع 3: بلا شارة ولا معرّف.
+
+#### 3. موضعها في الخطة (A26)
+
+- عقدة منمّطة: المدخل `spec` ← المخرج `code`، والمنفّذ `method:ACODE-284` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `atlas-ledger`.
+- مراحل النوع: قراءة الكود والاختبارات ← إعادة إنتاج أو اختبار جديد ← أصغر تغيير ← الاختبارات ← مراجعة الفرق ← فرع وPR.
+- إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
+
+#### 4. بوابة التحقق (A27)
+
+- إلزامي: الاختبارات الموجودة تمر قبل التعديل وبعده ← أمر الاختبار
+- إلزامي: اختبار لكل سلوك جديد أو خطأ مُصلح ← الاختبار الجديد يفشل قبل الإصلاح
+- إلزامي: لا أسرار ولا مسارات جلسة في الشيفرة ← بحث أنماط الأسرار
+- جودة: يطابق أسلوب الكود المحيط وتسمياته ← مراجعة الفرق
+- جودة: طريقة تشغيل مكتوبة ومجرَّبة ← تشغيل الأمر المكتوب
+- جودة: الفرق أصغر ما يحقق الطلب بلا إعادة كتابة غير مطلوبة ← git diff --stat
+- جودة: المدخل الخاطئ يعطي خطأ واضحًا لا انهيارًا صامتًا ← تشغيل بمدخل خاطئ
+- أمر الحكم في الوضع 1: `think.py qa code --answers qa.json` (PASS / FAIL / INCOMPLETE).
+
+#### 5. التعافي (A29)
+
+- `missing_dependency` (اعتمادية مفقودة، ميزانية 2): سمِّ الاعتمادية بالضبط (حزمة، برنامج، خط، نموذج) ← ثبّت محليًا في بيئة العمل إن كان مجانيًا ومسموحًا (pip --user أو venv أو npm محلي) · البديل: مسار المكتبة القياسية أو أداة أخرى من نفس المجموعة · تصعيد: تثبيت نظامي أو مدفوع أو يحتاج مفتاحًا: توقف واسأل
+- `quality_below_threshold` (جودة دون العتبة، ميزانية 3): أي معيار فشل وبكم (المقيس مقابل العتبة) ← عالج السبب الأكبر وحده ثم أعد القياس · البديل: المنهج البديل المكتوب للمرحلة في الخطة · تصعيد: معيار إلزامي لا يتحقق بعد البديل: توقف وأبلغ بالأرقام
+- `tool_error` (خطأ أداة، ميزانية 3): اقرأ آخر سطر في الخطأ ثم أول سطر من كودك فيه ← أصلح السبب المثبت وحده، ثم شغّل الاختبار المتعلق · البديل: أداة أخرى أو مسار يدوي للمرحلة نفسها · تصعيد: خطأ في أداة خارجية لا تملكها: بلّغ بإعادة الإنتاج ولا تخفه
+
+#### 6. الأدلة
+
+- `https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/2863-use-claude-limits-efficiently/11572-use-claude-limits-efficiently`
+
+#### 7. قدرات قريبة في العائلة
+
+- `ACODE-282` إصلاح فشل CI آليًا بـClaude Code: سير عمل لمستودع واحد أو قالب مشترك، مع حلقة من الاختبار إلى طلب الدمج / Automated CI-failure fixing with an AI agent: inline or reusable workflow, and the issue-to-PR loop (documented)
+- `ACODE-283` معمارية وكيل صوتي وميزانية الزمن: سلسلة STT→LLM→TTS أم كلام إلى كلام / Voice-agent architecture and latency budget: cascade vs speech-to-speech (documented)
+- `ACODE-285` ترحيل منسق سير عمل دائم: جرد البنى ثم فصل التنسيق عن الآثار الجانبية / Migrate a durable-workflow orchestrator: inventory constructs, split orchestration from side effects (documented)
+- `ACODE-286` وكلاء الخلفية في المستودع: مخرجاتهم اقتراحات لا دمج، وأول المرشحين الآمنين / Continuous AI: background repository agents whose output is a proposal, never a merge (documented)
+
+### `ACODE-285` — ترحيل منسق سير عمل دائم: جرد البنى ثم فصل التنسيق عن الآثار الجانبية / Migrate a durable-workflow orchestrator: inventory constructs, split orchestration from side effects
+
+| الحقل | القيمة |
+|---|---|
+| العائلة | `atlas-code` ([فصل العائلة](../../../.claude/skills/kosif-superpowers/references/powers/atlas-code.md)) |
+| المجموعة | البرمجة وبناء التطبيقات (`software`) |
+| نوع المخرج (A25، A27) | كود وتطبيقات ومواقع (`code`) |
+| الحالة في الكتالوج | 📄 `documented`: منهج موصوف يحتاج بناءً أو ربطًا قبل التشغيل |
+| سقف التحقق قبل العمل (A27) | V1 حتى تُبنى وتُشغَّل؛ لا تقدَّم جاهزة أبدًا |
+| نطاق الدليل | `url` |
+| الرخصة | card in our own words; the original skill folders are copied verbatim with their Apache-2.0 license and SOURCE.md under vendor/kosif-atlas |
+
+**ما هي:** لترحيل سير عمل من Temporal أو Inngest أو Trigger.dev أو Step Functions إلى منصة سير عمل دائمة أخرى: يجرد البنى (نقطة الدخول، الانتظار والمؤقتات، استدعاءات وموافقات خارجية، إعادة المحاولة، سير عمل فرعي وتفرع، بث التقدم، الآثار الخارجية)، يضع التنسيق في دوال حتمية والآثار في خطوات، ويختار سطح استئناف واحدًا لكل انتظار، ومفتاح عدم تكرار لكل كتابة خارجية. — Inventories orchestration constructs, keeps orchestration deterministic and side effects in steps, one resume surface per wait.
+
+**متى:** نقل سير عمل دائم إلى منصة جديدة، إعادة كتابة مهام طويلة بخطوات وانتظار وموافقات / moving long-running workflows between orchestration platforms
+
+**كيف:** 1) Identify the source system and the target runtime (managed or self-hosted; self-hosted keeps workflow code but needs its own runtime bootstrap). 2) Extract every construct: entrypoint, waits and timers, external callbacks and approvals, retries and failure handling, child workflows and fan-out, progress streaming, external side effects. 3) Put orchestration in deterministic workflow functions and all I/O (HTTP, database, SDK calls, stream writes) in step functions; sleep only in workflow context. 4) For each signal, event wait or task token choose exactly one resume surface: an internal hook keyed by a deterministic business token, or a generated callback URL; do not mix them. 5) Start and query child runs from inside steps. 6) Use the step's stable identifier as the idempotency key for external writes, and model multi-step compensation as a rollback stack. 7) Keep app-boundary code framework-agnostic unless a framework is named, and list assumptions as open questions. 8) Verify each migrated workflow by replaying a recorded run's inputs and comparing end state. Full original skill(s) with license: vendor/kosif-atlas/skills/2954-workflow-sdk/12247-migrating-to-workflow-sdk.
+
+**المعاملات:** source system, target
+
+**التثبيت:** mkdir -p ~/.claude/skills && cp -r .claude/skills/kosif-superpowers/vendor/kosif-atlas/skills/2954-workflow-sdk/12247-migrating-to-workflow-sdk ~/.claude/skills/migrating-to-workflow-sdk
+
+**الوسوم:** workflows · Temporal · Step Functions · durable execution · migration · سير العمل · ترحيل
+
+#### 1. الاستقبال (A25)
+
+- اللغة والإطار: افتراض مكتوب ← لغة المستودع الموجود، وإلا Python أو HTML/JS بلا اعتماديات
+- أين يعمل: افتراض مكتوب ← المتصفح أو سطر الأوامر حسب المخرج
+- مستودع أو ملفات موجودة: سؤال بإجابة مقترحة ← مشروع جديد مستقل
+- متى يكون ناجحًا: افتراض مكتوب ← الاختبارات الموجودة تمر + اختبار لكل سلوك جديد
+- لا تُفترض أبدًا: مادة الإنتاج نفسها، والإذن بخطوة مدفوعة أو منشورة أو لا رجعة فيها، والهوية والحقوق.
+
+#### 2. الجاهزية والشارة (A28)
+
+- لا متطلبات مسجلة؛ افحص المسار والأداة بـ `hub.py doctor` قبل الشارة.
+- الوضع 1: شارة «هنا الآن» بعد الفحص، لا 📄 الكتالوج تلقائيًا · الوضع 2: `كتالوج: 📄 · هنا: غير مفحوص` · الوضع 3: بلا شارة ولا معرّف.
+
+#### 3. موضعها في الخطة (A26)
+
+- عقدة منمّطة: المدخل `spec` ← المخرج `code`، والمنفّذ `method:ACODE-285` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `atlas-ledger`.
+- مراحل النوع: قراءة الكود والاختبارات ← إعادة إنتاج أو اختبار جديد ← أصغر تغيير ← الاختبارات ← مراجعة الفرق ← فرع وPR.
+- إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
+
+#### 4. بوابة التحقق (A27)
+
+- إلزامي: الاختبارات الموجودة تمر قبل التعديل وبعده ← أمر الاختبار
+- إلزامي: اختبار لكل سلوك جديد أو خطأ مُصلح ← الاختبار الجديد يفشل قبل الإصلاح
+- إلزامي: لا أسرار ولا مسارات جلسة في الشيفرة ← بحث أنماط الأسرار
+- جودة: يطابق أسلوب الكود المحيط وتسمياته ← مراجعة الفرق
+- جودة: طريقة تشغيل مكتوبة ومجرَّبة ← تشغيل الأمر المكتوب
+- جودة: الفرق أصغر ما يحقق الطلب بلا إعادة كتابة غير مطلوبة ← git diff --stat
+- جودة: المدخل الخاطئ يعطي خطأ واضحًا لا انهيارًا صامتًا ← تشغيل بمدخل خاطئ
+- أمر الحكم في الوضع 1: `think.py qa code --answers qa.json` (PASS / FAIL / INCOMPLETE).
+
+#### 5. التعافي (A29)
+
+- `missing_dependency` (اعتمادية مفقودة، ميزانية 2): سمِّ الاعتمادية بالضبط (حزمة، برنامج، خط، نموذج) ← ثبّت محليًا في بيئة العمل إن كان مجانيًا ومسموحًا (pip --user أو venv أو npm محلي) · البديل: مسار المكتبة القياسية أو أداة أخرى من نفس المجموعة · تصعيد: تثبيت نظامي أو مدفوع أو يحتاج مفتاحًا: توقف واسأل
+- `quality_below_threshold` (جودة دون العتبة، ميزانية 3): أي معيار فشل وبكم (المقيس مقابل العتبة) ← عالج السبب الأكبر وحده ثم أعد القياس · البديل: المنهج البديل المكتوب للمرحلة في الخطة · تصعيد: معيار إلزامي لا يتحقق بعد البديل: توقف وأبلغ بالأرقام
+- `tool_error` (خطأ أداة، ميزانية 3): اقرأ آخر سطر في الخطأ ثم أول سطر من كودك فيه ← أصلح السبب المثبت وحده، ثم شغّل الاختبار المتعلق · البديل: أداة أخرى أو مسار يدوي للمرحلة نفسها · تصعيد: خطأ في أداة خارجية لا تملكها: بلّغ بإعادة الإنتاج ولا تخفه
+
+#### 6. الأدلة
+
+- `https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/2954-workflow-sdk/12247-migrating-to-workflow-sdk`
+
+#### 7. قدرات قريبة في العائلة
+
+- `ACODE-283` معمارية وكيل صوتي وميزانية الزمن: سلسلة STT→LLM→TTS أم كلام إلى كلام / Voice-agent architecture and latency budget: cascade vs speech-to-speech (documented)
+- `ACODE-284` العمل الطويل داخل حدود الاستخدام: موجات محدودة، قراءة الاستخدام الحقيقي، وإيقاظ متسلسل / Long agent work inside usage windows: bounded waves, real usage reads, chained wake-ups (documented)
+- `ACODE-286` وكلاء الخلفية في المستودع: مخرجاتهم اقتراحات لا دمج، وأول المرشحين الآمنين / Continuous AI: background repository agents whose output is a proposal, never a merge (documented)
+- `ACODE-287` تسليم المناوبة: خمسة أقسام إلزامية وتجربة تنبيه قبل خروج المناوب / On-call shift handoff: five mandatory sections and a test alert before sign-off (documented)
+
+### `ACODE-286` — وكلاء الخلفية في المستودع: مخرجاتهم اقتراحات لا دمج، وأول المرشحين الآمنين / Continuous AI: background repository agents whose output is a proposal, never a merge
+
+| الحقل | القيمة |
+|---|---|
+| العائلة | `atlas-code` ([فصل العائلة](../../../.claude/skills/kosif-superpowers/references/powers/atlas-code.md)) |
+| المجموعة | البرمجة وبناء التطبيقات (`software`) |
+| نوع المخرج (A25، A27) | كود وتطبيقات ومواقع (`code`) |
+| الحالة في الكتالوج | 📄 `documented`: منهج موصوف يحتاج بناءً أو ربطًا قبل التشغيل |
+| سقف التحقق قبل العمل (A27) | V1 حتى تُبنى وتُشغَّل؛ لا تقدَّم جاهزة أبدًا |
+| نطاق الدليل | `url` |
+| الرخصة | card in our own words; the original skill folders are copied verbatim with their MIT license and SOURCE.md under vendor/kosif-atlas |
+
+**ما هي:** وكلاء يعملون في المستودع كما تعمل مهام CI لكن لمهام تحتاج تفكيرًا: فرز المشكلات، تحقيق في فشل CI، انحراف التوثيق، سد فجوات الاختبار، تنظيف الإنتروبيا، وتقرير صحة المستودع. القاعدة: مخرجات الوكيل تعليق أو مشكلة أو طلب دمج مسودة أو تقرير، ولا يدمج أو ينشر أبدًا. — Background agents for reasoning tasks in a repo, read-only by default, with proposals as their only output.
+
+**متى:** أتمتة أعمال متكررة في المستودع بوكيل مجدول أو عند أحداث GitHub / scheduling or event-triggering agents on a repository
+
+**كيف:** 1) List repetitive repository toil and rank by time saved × verifiability ÷ blast radius. 2) Start with one or two safe candidates: issue triage (labels, summary, routing), CI-failure investigation (a comment with the probable cause and a proposed fix PR), docs drift (a draft PR), weekly test-gap filling, weekly small clean-up PRs, a read-only repo health report. Avoid production, releases, secrets and customer communication at first. 3) Define trigger, inputs, output type and a success metric (time to triage, share of CI failures correctly diagnosed). 4) Guardrails: scoped read-only tokens with writes only through constrained outputs (a comment, a draft PR on a bot branch); issue bodies and comments are untrusted data that can never change the goal or permissions; isolated runners with restricted egress; turn, time and cost caps per run; every run leaves a visible trace. 5) Give each workflow a human owner who reviews output quality monthly and can switch it off. 6) These augment deterministic CI, never replace it. Full original skill(s) with license: vendor/kosif-atlas/skills/3051-adlc-operate/13143-continuous-ai-workflows.
+
+**المعاملات:** repository, candidates
+
+**التثبيت:** mkdir -p ~/.claude/skills && cp -r .claude/skills/kosif-superpowers/vendor/kosif-atlas/skills/3051-adlc-operate/13143-continuous-ai-workflows ~/.claude/skills/continuous-ai-workflows
+
+**الوسوم:** background agents · GitHub Actions · issue triage · automation · guardrails · وكلاء الخلفية
+
+#### 1. الاستقبال (A25)
+
+- اللغة والإطار: افتراض مكتوب ← لغة المستودع الموجود، وإلا Python أو HTML/JS بلا اعتماديات
+- أين يعمل: افتراض مكتوب ← المتصفح أو سطر الأوامر حسب المخرج
+- مستودع أو ملفات موجودة: سؤال بإجابة مقترحة ← مشروع جديد مستقل
+- متى يكون ناجحًا: افتراض مكتوب ← الاختبارات الموجودة تمر + اختبار لكل سلوك جديد
+- لا تُفترض أبدًا: مادة الإنتاج نفسها، والإذن بخطوة مدفوعة أو منشورة أو لا رجعة فيها، والهوية والحقوق.
+
+#### 2. الجاهزية والشارة (A28)
+
+- لا متطلبات مسجلة؛ افحص المسار والأداة بـ `hub.py doctor` قبل الشارة.
+- الوضع 1: شارة «هنا الآن» بعد الفحص، لا 📄 الكتالوج تلقائيًا · الوضع 2: `كتالوج: 📄 · هنا: غير مفحوص` · الوضع 3: بلا شارة ولا معرّف.
+
+#### 3. موضعها في الخطة (A26)
+
+- عقدة منمّطة: المدخل `spec` ← المخرج `code`، والمنفّذ `method:ACODE-286` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `atlas-ledger`.
+- مراحل النوع: قراءة الكود والاختبارات ← إعادة إنتاج أو اختبار جديد ← أصغر تغيير ← الاختبارات ← مراجعة الفرق ← فرع وPR.
+- إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
+
+#### 4. بوابة التحقق (A27)
+
+- إلزامي: الاختبارات الموجودة تمر قبل التعديل وبعده ← أمر الاختبار
+- إلزامي: اختبار لكل سلوك جديد أو خطأ مُصلح ← الاختبار الجديد يفشل قبل الإصلاح
+- إلزامي: لا أسرار ولا مسارات جلسة في الشيفرة ← بحث أنماط الأسرار
+- جودة: يطابق أسلوب الكود المحيط وتسمياته ← مراجعة الفرق
+- جودة: طريقة تشغيل مكتوبة ومجرَّبة ← تشغيل الأمر المكتوب
+- جودة: الفرق أصغر ما يحقق الطلب بلا إعادة كتابة غير مطلوبة ← git diff --stat
+- جودة: المدخل الخاطئ يعطي خطأ واضحًا لا انهيارًا صامتًا ← تشغيل بمدخل خاطئ
+- أمر الحكم في الوضع 1: `think.py qa code --answers qa.json` (PASS / FAIL / INCOMPLETE).
+
+#### 5. التعافي (A29)
+
+- `missing_dependency` (اعتمادية مفقودة، ميزانية 2): سمِّ الاعتمادية بالضبط (حزمة، برنامج، خط، نموذج) ← ثبّت محليًا في بيئة العمل إن كان مجانيًا ومسموحًا (pip --user أو venv أو npm محلي) · البديل: مسار المكتبة القياسية أو أداة أخرى من نفس المجموعة · تصعيد: تثبيت نظامي أو مدفوع أو يحتاج مفتاحًا: توقف واسأل
+- `quality_below_threshold` (جودة دون العتبة، ميزانية 3): أي معيار فشل وبكم (المقيس مقابل العتبة) ← عالج السبب الأكبر وحده ثم أعد القياس · البديل: المنهج البديل المكتوب للمرحلة في الخطة · تصعيد: معيار إلزامي لا يتحقق بعد البديل: توقف وأبلغ بالأرقام
+- `tool_error` (خطأ أداة، ميزانية 3): اقرأ آخر سطر في الخطأ ثم أول سطر من كودك فيه ← أصلح السبب المثبت وحده، ثم شغّل الاختبار المتعلق · البديل: أداة أخرى أو مسار يدوي للمرحلة نفسها · تصعيد: خطأ في أداة خارجية لا تملكها: بلّغ بإعادة الإنتاج ولا تخفه
+
+#### 6. الأدلة
+
+- `https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/3051-adlc-operate/13143-continuous-ai-workflows`
+
+#### 7. قدرات قريبة في العائلة
+
+- `ACODE-284` العمل الطويل داخل حدود الاستخدام: موجات محدودة، قراءة الاستخدام الحقيقي، وإيقاظ متسلسل / Long agent work inside usage windows: bounded waves, real usage reads, chained wake-ups (documented)
+- `ACODE-285` ترحيل منسق سير عمل دائم: جرد البنى ثم فصل التنسيق عن الآثار الجانبية / Migrate a durable-workflow orchestrator: inventory constructs, split orchestration from side effects (documented)
+- `ACODE-287` تسليم المناوبة: خمسة أقسام إلزامية وتجربة تنبيه قبل خروج المناوب / On-call shift handoff: five mandatory sections and a test alert before sign-off (documented)
+- `ACODE-288` ترقية نقطة تدريب نموذج: أربع بوابات بالترتيب من جودة البيانات إلى الإطلاق التدريجي / Fine-tuned checkpoint promotion: four ordered gates from data quality to canary (documented)
+
+### `ACODE-287` — تسليم المناوبة: خمسة أقسام إلزامية وتجربة تنبيه قبل خروج المناوب / On-call shift handoff: five mandatory sections and a test alert before sign-off
+
+| الحقل | القيمة |
+|---|---|
+| العائلة | `atlas-code` ([فصل العائلة](../../../.claude/skills/kosif-superpowers/references/powers/atlas-code.md)) |
+| المجموعة | البرمجة وبناء التطبيقات (`software`) |
+| نوع المخرج (A25، A27) | كود وتطبيقات ومواقع (`code`) |
+| الحالة في الكتالوج | 📄 `documented`: منهج موصوف يحتاج بناءً أو ربطًا قبل التشغيل |
+| سقف التحقق قبل العمل (A27) | V1 حتى تُبنى وتُشغَّل؛ لا تقدَّم جاهزة أبدًا |
+| نطاق الدليل | `url` |
+| الرخصة | card in our own words; the original skill folders are copied verbatim with their MIT license and SOURCE.md under vendor/kosif-atlas |
+
+**ما هي:** تسليم مناوبة لا يضيع فيه شيء: الحوادث النشطة، التحقيقات الجارية، التغييرات الأخيرة، المشكلات المعروفة وحلولها المؤقتة، والأحداث القادمة؛ كل قسم فيه بند أو 'لا شيء' صريحة قبل اعتبار التسليم مكتملًا، مع تجربة تنبيه تصل للمستلم قبل انتهاء فترة التداخل. — A handoff gate where every section has an entry or an explicit none, plus a test alert before the overlap ends.
+
+**متى:** نهاية مناوبة، تسليم حادث جارٍ لفريق آخر، فرق في مناطق زمنية مختلفة / ending an on-call shift, handing over a live incident
+
+**كيف:** 1) Fill five sections: active incidents (what is broken, impact, current owner), ongoing investigations (hypotheses ruled in and out, next step), recent changes (deploys, config, flags), known issues with workarounds in place, upcoming events (maintenance, releases). 2) Treat the checklist as a gate: the handoff is not complete until each section has at least one entry or an explicit 'none'; an incomplete handoff that causes a miss becomes a blameless postmortem action. 3) Prefer a short sync call; across time zones use the async template plus a brief voice or video walk-through of the watch list, and give a direct contact for questions. 4) For a mid-incident handoff use the incident template; the outgoing engineer stays reachable for about fifteen minutes after. 5) Before the overlap ends, fire a test alert and confirm the incoming engineer receives it on every paging channel. 6) Store handoffs in one shared place linked from the schedule. Full original skill(s) with license: vendor/kosif-atlas/skills/3101-incident-response/13272-on-call-handoff-patterns.
+
+**المعاملات:** shift, incidents
+
+**التثبيت:** mkdir -p ~/.claude/skills && cp -r .claude/skills/kosif-superpowers/vendor/kosif-atlas/skills/3101-incident-response/13272-on-call-handoff-patterns ~/.claude/skills/on-call-handoff-patterns
+
+**الوسوم:** on-call · incident response · SRE · handoff · operations · المناوبة · تسليم
+
+#### 1. الاستقبال (A25)
+
+- اللغة والإطار: افتراض مكتوب ← لغة المستودع الموجود، وإلا Python أو HTML/JS بلا اعتماديات
+- أين يعمل: افتراض مكتوب ← المتصفح أو سطر الأوامر حسب المخرج
+- مستودع أو ملفات موجودة: سؤال بإجابة مقترحة ← مشروع جديد مستقل
+- متى يكون ناجحًا: افتراض مكتوب ← الاختبارات الموجودة تمر + اختبار لكل سلوك جديد
+- لا تُفترض أبدًا: مادة الإنتاج نفسها، والإذن بخطوة مدفوعة أو منشورة أو لا رجعة فيها، والهوية والحقوق.
+
+#### 2. الجاهزية والشارة (A28)
+
+- لا متطلبات مسجلة؛ افحص المسار والأداة بـ `hub.py doctor` قبل الشارة.
+- الوضع 1: شارة «هنا الآن» بعد الفحص، لا 📄 الكتالوج تلقائيًا · الوضع 2: `كتالوج: 📄 · هنا: غير مفحوص` · الوضع 3: بلا شارة ولا معرّف.
+
+#### 3. موضعها في الخطة (A26)
+
+- عقدة منمّطة: المدخل `spec` ← المخرج `code`، والمنفّذ `method:ACODE-287` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `atlas-ledger`.
+- مراحل النوع: قراءة الكود والاختبارات ← إعادة إنتاج أو اختبار جديد ← أصغر تغيير ← الاختبارات ← مراجعة الفرق ← فرع وPR.
+- إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
+
+#### 4. بوابة التحقق (A27)
+
+- إلزامي: الاختبارات الموجودة تمر قبل التعديل وبعده ← أمر الاختبار
+- إلزامي: اختبار لكل سلوك جديد أو خطأ مُصلح ← الاختبار الجديد يفشل قبل الإصلاح
+- إلزامي: لا أسرار ولا مسارات جلسة في الشيفرة ← بحث أنماط الأسرار
+- جودة: يطابق أسلوب الكود المحيط وتسمياته ← مراجعة الفرق
+- جودة: طريقة تشغيل مكتوبة ومجرَّبة ← تشغيل الأمر المكتوب
+- جودة: الفرق أصغر ما يحقق الطلب بلا إعادة كتابة غير مطلوبة ← git diff --stat
+- جودة: المدخل الخاطئ يعطي خطأ واضحًا لا انهيارًا صامتًا ← تشغيل بمدخل خاطئ
+- أمر الحكم في الوضع 1: `think.py qa code --answers qa.json` (PASS / FAIL / INCOMPLETE).
+
+#### 5. التعافي (A29)
+
+- `missing_dependency` (اعتمادية مفقودة، ميزانية 2): سمِّ الاعتمادية بالضبط (حزمة، برنامج، خط، نموذج) ← ثبّت محليًا في بيئة العمل إن كان مجانيًا ومسموحًا (pip --user أو venv أو npm محلي) · البديل: مسار المكتبة القياسية أو أداة أخرى من نفس المجموعة · تصعيد: تثبيت نظامي أو مدفوع أو يحتاج مفتاحًا: توقف واسأل
+- `quality_below_threshold` (جودة دون العتبة، ميزانية 3): أي معيار فشل وبكم (المقيس مقابل العتبة) ← عالج السبب الأكبر وحده ثم أعد القياس · البديل: المنهج البديل المكتوب للمرحلة في الخطة · تصعيد: معيار إلزامي لا يتحقق بعد البديل: توقف وأبلغ بالأرقام
+- `tool_error` (خطأ أداة، ميزانية 3): اقرأ آخر سطر في الخطأ ثم أول سطر من كودك فيه ← أصلح السبب المثبت وحده، ثم شغّل الاختبار المتعلق · البديل: أداة أخرى أو مسار يدوي للمرحلة نفسها · تصعيد: خطأ في أداة خارجية لا تملكها: بلّغ بإعادة الإنتاج ولا تخفه
+
+#### 6. الأدلة
+
+- `https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/3101-incident-response/13272-on-call-handoff-patterns`
+
+#### 7. قدرات قريبة في العائلة
+
+- `ACODE-285` ترحيل منسق سير عمل دائم: جرد البنى ثم فصل التنسيق عن الآثار الجانبية / Migrate a durable-workflow orchestrator: inventory constructs, split orchestration from side effects (documented)
+- `ACODE-286` وكلاء الخلفية في المستودع: مخرجاتهم اقتراحات لا دمج، وأول المرشحين الآمنين / Continuous AI: background repository agents whose output is a proposal, never a merge (documented)
+- `ACODE-288` ترقية نقطة تدريب نموذج: أربع بوابات بالترتيب من جودة البيانات إلى الإطلاق التدريجي / Fine-tuned checkpoint promotion: four ordered gates from data quality to canary (documented)
+- `ACODE-289` خط التوصية والترتيب بست مراحل: مصادر، إثراء، تصفية، تقييم، اختيار، آثار غير متزامنة / Six-stage recommendation and ranking pipeline: source, hydrate, filter, score, select, side effects (documented)
+
+### `ACODE-288` — ترقية نقطة تدريب نموذج: أربع بوابات بالترتيب من جودة البيانات إلى الإطلاق التدريجي / Fine-tuned checkpoint promotion: four ordered gates from data quality to canary
+
+| الحقل | القيمة |
+|---|---|
+| العائلة | `atlas-code` ([فصل العائلة](../../../.claude/skills/kosif-superpowers/references/powers/atlas-code.md)) |
+| المجموعة | البرمجة وبناء التطبيقات (`software`) |
+| نوع المخرج (A25، A27) | كود وتطبيقات ومواقع (`code`) |
+| الحالة في الكتالوج | 📄 `documented`: منهج موصوف يحتاج بناءً أو ربطًا قبل التشغيل |
+| سقف التحقق قبل العمل (A27) | V1 حتى تُبنى وتُشغَّل؛ لا تقدَّم جاهزة أبدًا |
+| نطاق الدليل | `url` |
+| الرخصة | card in our own words; the original skill folders are copied verbatim with their MIT license and SOURCE.md under vendor/kosif-atlas |
+
+**ما هي:** نقطة تدريب تتفوق على مقياس المهمة لا تُشحن قبل أربع بوابات بالترتيب: جودة بيانات التدريب (تكرار، تسرب إجابات التقييم، ضجيج التسميات)، مجموعة انحراف قدرات مجمّدة مقارنة بخط أساس مع ميزانية انحراف، مقارنة مزدوجة مع النموذج الأساسي، ثم إطلاق تدريجي بنسبة صغيرة مع تراجع آلي. — Four ordered gates for a fine-tuned checkpoint with a drift budget and a terminal promote/reject verdict.
+
+**متى:** بعد ضبط نموذج دقيق، قبل استبدال النموذج في الإنتاج، 'تحسن على مهمتنا لكن هل خرّب شيئًا آخر؟' / before promoting a fine-tuned model
+
+**كيف:** 1) Data-quality gate first: deduplicate the training set, check for leakage of evaluation goldens, scan for label noise; leakage invalidates every later stage. 2) Re-run the frozen capability-drift suite (general benchmarks plus a few hundred domain-adjacent items) and diff per benchmark against the recorded baseline: drift of one point or less is noise, two to five means rerun with seed variation, more than five is a hard fail. 3) Paired comparison against the base model on the same prompts, with position randomisation when a model judge is used; a held-out win that loses the paired comparison does not ship. 4) Canary five to ten percent of stratified traffic with automatic rollback; a local-only deployment correctly stops after stage 3. 5) Each stage gates the next; with deterministic graders stages 2 and 3 may share one inference pass. 6) Write a promotion report with the evidence per stage and a terminal PROMOTE or REJECT. Full original skill(s) with license: vendor/kosif-atlas/skills/3104-llm-finetuning/13286-checkpoint-promotion.
+
+**المعاملات:** checkpoint, baseline, drift suite
+
+**التثبيت:** mkdir -p ~/.claude/skills && cp -r .claude/skills/kosif-superpowers/vendor/kosif-atlas/skills/3104-llm-finetuning/13286-checkpoint-promotion ~/.claude/skills/checkpoint-promotion
+
+**الوسوم:** fine-tuning · LLM evaluation · model release · drift · MLOps · ضبط النماذج
+
+#### 1. الاستقبال (A25)
+
+- اللغة والإطار: افتراض مكتوب ← لغة المستودع الموجود، وإلا Python أو HTML/JS بلا اعتماديات
+- أين يعمل: افتراض مكتوب ← المتصفح أو سطر الأوامر حسب المخرج
+- مستودع أو ملفات موجودة: سؤال بإجابة مقترحة ← مشروع جديد مستقل
+- متى يكون ناجحًا: افتراض مكتوب ← الاختبارات الموجودة تمر + اختبار لكل سلوك جديد
+- لا تُفترض أبدًا: مادة الإنتاج نفسها، والإذن بخطوة مدفوعة أو منشورة أو لا رجعة فيها، والهوية والحقوق.
+
+#### 2. الجاهزية والشارة (A28)
+
+- لا متطلبات مسجلة؛ افحص المسار والأداة بـ `hub.py doctor` قبل الشارة.
+- الوضع 1: شارة «هنا الآن» بعد الفحص، لا 📄 الكتالوج تلقائيًا · الوضع 2: `كتالوج: 📄 · هنا: غير مفحوص` · الوضع 3: بلا شارة ولا معرّف.
+
+#### 3. موضعها في الخطة (A26)
+
+- عقدة منمّطة: المدخل `spec` ← المخرج `code`، والمنفّذ `method:ACODE-288` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `atlas-ledger`.
+- مراحل النوع: قراءة الكود والاختبارات ← إعادة إنتاج أو اختبار جديد ← أصغر تغيير ← الاختبارات ← مراجعة الفرق ← فرع وPR.
+- إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
+
+#### 4. بوابة التحقق (A27)
+
+- إلزامي: الاختبارات الموجودة تمر قبل التعديل وبعده ← أمر الاختبار
+- إلزامي: اختبار لكل سلوك جديد أو خطأ مُصلح ← الاختبار الجديد يفشل قبل الإصلاح
+- إلزامي: لا أسرار ولا مسارات جلسة في الشيفرة ← بحث أنماط الأسرار
+- جودة: يطابق أسلوب الكود المحيط وتسمياته ← مراجعة الفرق
+- جودة: طريقة تشغيل مكتوبة ومجرَّبة ← تشغيل الأمر المكتوب
+- جودة: الفرق أصغر ما يحقق الطلب بلا إعادة كتابة غير مطلوبة ← git diff --stat
+- جودة: المدخل الخاطئ يعطي خطأ واضحًا لا انهيارًا صامتًا ← تشغيل بمدخل خاطئ
+- أمر الحكم في الوضع 1: `think.py qa code --answers qa.json` (PASS / FAIL / INCOMPLETE).
+
+#### 5. التعافي (A29)
+
+- `missing_dependency` (اعتمادية مفقودة، ميزانية 2): سمِّ الاعتمادية بالضبط (حزمة، برنامج، خط، نموذج) ← ثبّت محليًا في بيئة العمل إن كان مجانيًا ومسموحًا (pip --user أو venv أو npm محلي) · البديل: مسار المكتبة القياسية أو أداة أخرى من نفس المجموعة · تصعيد: تثبيت نظامي أو مدفوع أو يحتاج مفتاحًا: توقف واسأل
+- `quality_below_threshold` (جودة دون العتبة، ميزانية 3): أي معيار فشل وبكم (المقيس مقابل العتبة) ← عالج السبب الأكبر وحده ثم أعد القياس · البديل: المنهج البديل المكتوب للمرحلة في الخطة · تصعيد: معيار إلزامي لا يتحقق بعد البديل: توقف وأبلغ بالأرقام
+- `tool_error` (خطأ أداة، ميزانية 3): اقرأ آخر سطر في الخطأ ثم أول سطر من كودك فيه ← أصلح السبب المثبت وحده، ثم شغّل الاختبار المتعلق · البديل: أداة أخرى أو مسار يدوي للمرحلة نفسها · تصعيد: خطأ في أداة خارجية لا تملكها: بلّغ بإعادة الإنتاج ولا تخفه
+
+#### 6. الأدلة
+
+- `https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/3104-llm-finetuning/13286-checkpoint-promotion`
+
+#### 7. قدرات قريبة في العائلة
+
+- `ACODE-286` وكلاء الخلفية في المستودع: مخرجاتهم اقتراحات لا دمج، وأول المرشحين الآمنين / Continuous AI: background repository agents whose output is a proposal, never a merge (documented)
+- `ACODE-287` تسليم المناوبة: خمسة أقسام إلزامية وتجربة تنبيه قبل خروج المناوب / On-call shift handoff: five mandatory sections and a test alert before sign-off (documented)
+- `ACODE-289` خط التوصية والترتيب بست مراحل: مصادر، إثراء، تصفية، تقييم، اختيار، آثار غير متزامنة / Six-stage recommendation and ranking pipeline: source, hydrate, filter, score, select, side effects (documented)
 - `ACODE-29` قائمة تحصين نقطة GraphQL / GraphQL endpoint hardening checklist (documented)
-- `ACODE-30` مصادقة JWT مع تدوير التحديث وصلاحيات الأدوار / JWT auth with refresh rotation and RBAC (documented)
+
+### `ACODE-289` — خط التوصية والترتيب بست مراحل: مصادر، إثراء، تصفية، تقييم، اختيار، آثار غير متزامنة / Six-stage recommendation and ranking pipeline: source, hydrate, filter, score, select, side effects
+
+| الحقل | القيمة |
+|---|---|
+| العائلة | `atlas-code` ([فصل العائلة](../../../.claude/skills/kosif-superpowers/references/powers/atlas-code.md)) |
+| المجموعة | البرمجة وبناء التطبيقات (`software`) |
+| نوع المخرج (A25، A27) | كود وتطبيقات ومواقع (`code`) |
+| الحالة في الكتالوج | 📄 `documented`: منهج موصوف يحتاج بناءً أو ربطًا قبل التشغيل |
+| سقف التحقق قبل العمل (A27) | V1 حتى تُبنى وتُشغَّل؛ لا تقدَّم جاهزة أبدًا |
+| نطاق الدليل | `url` |
+| الرخصة | card in our own words; the original skill folders are copied verbatim with their MIT license and SOURCE.md under vendor/kosif-atlas |
+
+**ما هي:** معظم أنظمة 'أفضل K عناصر لمستخدم وسياق' ليست تعلم آلة غريبًا بل خطًا: جلب المرشحين من مصادر متوازية، إثراؤهم بالبيانات، إسقاط غير المؤهلين قبل التقييم المكلف، سلسلة مقيّمين (نموذج، تنويع، قواعد عمل)، اختيار الأعلى، ثم آثار جانبية غير متزامنة لا تعطل الرد. — The universal shape for feeds, rerankers, alert triage and task prioritisers.
+
+**متى:** تغذية مخصصة، إعادة ترتيب نتائج بحث أو RAG، ترتيب تنبيهات أو مهام، تغليف مقيّم LLM في خط حقيقي / building a feed, reranker or prioritiser
+
+**كيف:** 1) Sources: fetch candidates from one or more origins in parallel. 2) Hydrators: enrich candidates with the metadata filters and scorers need, independent hydrators in parallel. 3) Filters: drop blocked, expired, duplicate and ineligible items sequentially, before the expensive stage. 4) Scorers: a chain where later scorers see earlier scores (model relevance, then diversity reranking, then business rules); predict several actions with tunable weights instead of a single relevance number. 5) Selector: sort by final score and return the top K, keeping scoring deterministic and cacheable. 6) Side effects: cache, log, emit events and update served history asynchronously so they never block the response. 7) Keep each stage a typed, testable component and measure latency per stage; evaluate offline with a temporal split and a popularity baseline before trusting gains. Full original skill(s) with license: vendor/kosif-atlas/skills/3105-machine-learning-ops/13297-recsys-pipeline-architect.
+
+**المعاملات:** items, users, scorer
+
+**التثبيت:** mkdir -p ~/.claude/skills && cp -r .claude/skills/kosif-superpowers/vendor/kosif-atlas/skills/3105-machine-learning-ops/13297-recsys-pipeline-architect ~/.claude/skills/recsys-pipeline-architect
+
+**الوسوم:** recommender systems · ranking · feeds · RAG reranking · architecture · أنظمة التوصية · الترتيب
+
+#### 1. الاستقبال (A25)
+
+- اللغة والإطار: افتراض مكتوب ← لغة المستودع الموجود، وإلا Python أو HTML/JS بلا اعتماديات
+- أين يعمل: افتراض مكتوب ← المتصفح أو سطر الأوامر حسب المخرج
+- مستودع أو ملفات موجودة: سؤال بإجابة مقترحة ← مشروع جديد مستقل
+- متى يكون ناجحًا: افتراض مكتوب ← الاختبارات الموجودة تمر + اختبار لكل سلوك جديد
+- لا تُفترض أبدًا: مادة الإنتاج نفسها، والإذن بخطوة مدفوعة أو منشورة أو لا رجعة فيها، والهوية والحقوق.
+
+#### 2. الجاهزية والشارة (A28)
+
+- `pip:chromadb` ← python3 -c "import chromadb" (اسم الاستيراد قد يختلف عن اسم الحزمة)
+- الوضع 1: شارة «هنا الآن» بعد الفحص، لا 📄 الكتالوج تلقائيًا · الوضع 2: `كتالوج: 📄 · هنا: غير مفحوص` · الوضع 3: بلا شارة ولا معرّف.
+
+#### 3. موضعها في الخطة (A26)
+
+- عقدة منمّطة: المدخل `spec` ← المخرج `code`، والمنفّذ `method:ACODE-289` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `atlas-ledger`.
+- مراحل النوع: قراءة الكود والاختبارات ← إعادة إنتاج أو اختبار جديد ← أصغر تغيير ← الاختبارات ← مراجعة الفرق ← فرع وPR.
+- إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
+
+#### 4. بوابة التحقق (A27)
+
+- إلزامي: الاختبارات الموجودة تمر قبل التعديل وبعده ← أمر الاختبار
+- إلزامي: اختبار لكل سلوك جديد أو خطأ مُصلح ← الاختبار الجديد يفشل قبل الإصلاح
+- إلزامي: لا أسرار ولا مسارات جلسة في الشيفرة ← بحث أنماط الأسرار
+- جودة: يطابق أسلوب الكود المحيط وتسمياته ← مراجعة الفرق
+- جودة: طريقة تشغيل مكتوبة ومجرَّبة ← تشغيل الأمر المكتوب
+- جودة: الفرق أصغر ما يحقق الطلب بلا إعادة كتابة غير مطلوبة ← git diff --stat
+- جودة: المدخل الخاطئ يعطي خطأ واضحًا لا انهيارًا صامتًا ← تشغيل بمدخل خاطئ
+- أمر الحكم في الوضع 1: `think.py qa code --answers qa.json` (PASS / FAIL / INCOMPLETE).
+
+#### 5. التعافي (A29)
+
+- `missing_dependency` (اعتمادية مفقودة، ميزانية 2): سمِّ الاعتمادية بالضبط (حزمة، برنامج، خط، نموذج) ← ثبّت محليًا في بيئة العمل إن كان مجانيًا ومسموحًا (pip --user أو venv أو npm محلي) · البديل: مسار المكتبة القياسية أو أداة أخرى من نفس المجموعة · تصعيد: تثبيت نظامي أو مدفوع أو يحتاج مفتاحًا: توقف واسأل
+- `quality_below_threshold` (جودة دون العتبة، ميزانية 3): أي معيار فشل وبكم (المقيس مقابل العتبة) ← عالج السبب الأكبر وحده ثم أعد القياس · البديل: المنهج البديل المكتوب للمرحلة في الخطة · تصعيد: معيار إلزامي لا يتحقق بعد البديل: توقف وأبلغ بالأرقام
+- `tool_error` (خطأ أداة، ميزانية 3): اقرأ آخر سطر في الخطأ ثم أول سطر من كودك فيه ← أصلح السبب المثبت وحده، ثم شغّل الاختبار المتعلق · البديل: أداة أخرى أو مسار يدوي للمرحلة نفسها · تصعيد: خطأ في أداة خارجية لا تملكها: بلّغ بإعادة الإنتاج ولا تخفه
+
+#### 6. الأدلة
+
+- `https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/3105-machine-learning-ops/13297-recsys-pipeline-architect`
+
+#### 7. قدرات قريبة في العائلة
+
+- `ACODE-287` تسليم المناوبة: خمسة أقسام إلزامية وتجربة تنبيه قبل خروج المناوب / On-call shift handoff: five mandatory sections and a test alert before sign-off (documented)
+- `ACODE-288` ترقية نقطة تدريب نموذج: أربع بوابات بالترتيب من جودة البيانات إلى الإطلاق التدريجي / Fine-tuned checkpoint promotion: four ordered gates from data quality to canary (documented)
+- `ACODE-29` قائمة تحصين نقطة GraphQL / GraphQL endpoint hardening checklist (documented)
+- `ACODE-290` مضيف مريض واحد أم الأسطول كله؟ وحدة المقياس ونسبة الحد الأقصى إلى المجموع / One sick host or the whole fleet? Get the metric unit and the Maximum-to-Sum ratio (documented)
 
 ### `ACODE-29` — قائمة تحصين نقطة GraphQL / GraphQL endpoint hardening checklist
 
@@ -15159,10 +16079,738 @@
 
 #### 7. قدرات قريبة في العائلة
 
-- `ACODE-277` تدقيق طبقات التعليمات كلها: هل طُبّقت القاعدة يومًا؟ وأين تتعارض الطبقات؟ / Cross-layer instruction-stack audit: rule-firing evidence, conflicts, permission bypasses (documented)
-- `ACODE-28` استخراج عميل API مستقل من تسجيل HAR / Derive standalone API client from HAR recording (documented)
+- `ACODE-288` ترقية نقطة تدريب نموذج: أربع بوابات بالترتيب من جودة البيانات إلى الإطلاق التدريجي / Fine-tuned checkpoint promotion: four ordered gates from data quality to canary (documented)
+- `ACODE-289` خط التوصية والترتيب بست مراحل: مصادر، إثراء، تصفية، تقييم، اختيار، آثار غير متزامنة / Six-stage recommendation and ranking pipeline: source, hydrate, filter, score, select, side effects (documented)
+- `ACODE-290` مضيف مريض واحد أم الأسطول كله؟ وحدة المقياس ونسبة الحد الأقصى إلى المجموع / One sick host or the whole fleet? Get the metric unit and the Maximum-to-Sum ratio (documented)
+- `ACODE-291` مزوّد مخصص لا يُستدعى أبدًا: التوجيه على اسم النموذج يسبق المزوّد في LiteLLM / A custom LLM provider that never runs: dispatch on the bare model name wins first (documented)
+
+### `ACODE-290` — مضيف مريض واحد أم الأسطول كله؟ وحدة المقياس ونسبة الحد الأقصى إلى المجموع / One sick host or the whole fleet? Get the metric unit and the Maximum-to-Sum ratio
+
+| الحقل | القيمة |
+|---|---|
+| العائلة | `atlas-code` ([فصل العائلة](../../../.claude/skills/kosif-superpowers/references/powers/atlas-code.md)) |
+| المجموعة | البرمجة وبناء التطبيقات (`software`) |
+| نوع المخرج (A25، A27) | كود وتطبيقات ومواقع (`code`) |
+| الحالة في الكتالوج | 📄 `documented`: منهج موصوف يحتاج بناءً أو ربطًا قبل التشغيل |
+| سقف التحقق قبل العمل (A27) | V1 حتى تُبنى وتُشغَّل؛ لا تقدَّم جاهزة أبدًا |
+| نطاق الدليل | `url` |
+| الرخصة | card in our own words; the original skill folders are copied verbatim with their MIT license and SOURCE.md under vendor/kosif-atlas |
+
+**ما هي:** مقاييس كل مضيف حين تُجمّع في سلسلة واحدة تخدع بطريقتين: المتوسط غير موزون عبر المضيفين فيجعل مضيفًا واحدًا بطيئًا يبدو انهيارًا عامًا، والوحدة ليست في اسم المقياس ولا يعيدها استعلام البيانات المجمّع. يحصل على الوحدة أولًا، ثم يحسب نسبة الحد الأقصى إلى المجموع ليعرف كم مضيفًا متأثرًا فعلًا. — Fetches the unit first and uses Maximum/Sum to tell a single-host episode from a fleet-wide one.
+
+**متى:** تنبيه على مقياس لكل مضيف (زمن، طوابير، اتصالات) بقيم ضخمة بينما الإنتاجية والأخطاء مستقرة / a per-host alarm spikes while throughput and errors are flat
+
+**كيف:** 1) Suspect this when the average or maximum jumps by orders of magnitude while request throughput and error counters stay flat and the alarm self-resolves within minutes. 2) Get the unit from an API that returns it per datapoint; the batch metric-data call does not return units, and the name ('.rate') does not tell you. Quote no magnitude before this. 3) Pull SampleCount, Sum and Maximum at the same period with start times aligned to a period boundary, so buckets line up. 4) For an additive per-host stat (in-flight count, active threads, queue depth) compute Maximum/Sum: near 100% means one host holds it all; near 1/N means evenly spread across N hosts; in between estimates how many hosts are involved. 5) Confirm with the per-host dimension when published. 6) Write the incident as what the data shows ('one host reached 21 s for four minutes'), never 'fleet-wide' from an unweighted average. Full original skill(s) with license: vendor/kosif-atlas/skills/3289-cloudwatch-per-host-stat-single-host-vs/13803-cloudwatch-per-host-stat-single-host-vs.
+
+**المعاملات:** metric, period
+
+**التثبيت:** mkdir -p ~/.claude/skills && cp -r .claude/skills/kosif-superpowers/vendor/kosif-atlas/skills/3289-cloudwatch-per-host-stat-single-host-vs/13803-cloudwatch-per-host-stat-single-host-vs ~/.claude/skills/cloudwatch-per-host-stat-single-host-vs
+
+**الوسوم:** CloudWatch · monitoring · incident analysis · metrics · SRE · observability · المراقبة
+
+#### 1. الاستقبال (A25)
+
+- اللغة والإطار: افتراض مكتوب ← لغة المستودع الموجود، وإلا Python أو HTML/JS بلا اعتماديات
+- أين يعمل: افتراض مكتوب ← المتصفح أو سطر الأوامر حسب المخرج
+- مستودع أو ملفات موجودة: سؤال بإجابة مقترحة ← مشروع جديد مستقل
+- متى يكون ناجحًا: افتراض مكتوب ← الاختبارات الموجودة تمر + اختبار لكل سلوك جديد
+- لا تُفترض أبدًا: مادة الإنتاج نفسها، والإذن بخطوة مدفوعة أو منشورة أو لا رجعة فيها، والهوية والحقوق.
+
+#### 2. الجاهزية والشارة (A28)
+
+- لا متطلبات مسجلة؛ افحص المسار والأداة بـ `hub.py doctor` قبل الشارة.
+- الوضع 1: شارة «هنا الآن» بعد الفحص، لا 📄 الكتالوج تلقائيًا · الوضع 2: `كتالوج: 📄 · هنا: غير مفحوص` · الوضع 3: بلا شارة ولا معرّف.
+
+#### 3. موضعها في الخطة (A26)
+
+- عقدة منمّطة: المدخل `spec` ← المخرج `code`، والمنفّذ `method:ACODE-290` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `atlas-ledger`.
+- مراحل النوع: قراءة الكود والاختبارات ← إعادة إنتاج أو اختبار جديد ← أصغر تغيير ← الاختبارات ← مراجعة الفرق ← فرع وPR.
+- إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
+
+#### 4. بوابة التحقق (A27)
+
+- إلزامي: الاختبارات الموجودة تمر قبل التعديل وبعده ← أمر الاختبار
+- إلزامي: اختبار لكل سلوك جديد أو خطأ مُصلح ← الاختبار الجديد يفشل قبل الإصلاح
+- إلزامي: لا أسرار ولا مسارات جلسة في الشيفرة ← بحث أنماط الأسرار
+- جودة: يطابق أسلوب الكود المحيط وتسمياته ← مراجعة الفرق
+- جودة: طريقة تشغيل مكتوبة ومجرَّبة ← تشغيل الأمر المكتوب
+- جودة: الفرق أصغر ما يحقق الطلب بلا إعادة كتابة غير مطلوبة ← git diff --stat
+- جودة: المدخل الخاطئ يعطي خطأ واضحًا لا انهيارًا صامتًا ← تشغيل بمدخل خاطئ
+- أمر الحكم في الوضع 1: `think.py qa code --answers qa.json` (PASS / FAIL / INCOMPLETE).
+
+#### 5. التعافي (A29)
+
+- `missing_dependency` (اعتمادية مفقودة، ميزانية 2): سمِّ الاعتمادية بالضبط (حزمة، برنامج، خط، نموذج) ← ثبّت محليًا في بيئة العمل إن كان مجانيًا ومسموحًا (pip --user أو venv أو npm محلي) · البديل: مسار المكتبة القياسية أو أداة أخرى من نفس المجموعة · تصعيد: تثبيت نظامي أو مدفوع أو يحتاج مفتاحًا: توقف واسأل
+- `quality_below_threshold` (جودة دون العتبة، ميزانية 3): أي معيار فشل وبكم (المقيس مقابل العتبة) ← عالج السبب الأكبر وحده ثم أعد القياس · البديل: المنهج البديل المكتوب للمرحلة في الخطة · تصعيد: معيار إلزامي لا يتحقق بعد البديل: توقف وأبلغ بالأرقام
+- `tool_error` (خطأ أداة، ميزانية 3): اقرأ آخر سطر في الخطأ ثم أول سطر من كودك فيه ← أصلح السبب المثبت وحده، ثم شغّل الاختبار المتعلق · البديل: أداة أخرى أو مسار يدوي للمرحلة نفسها · تصعيد: خطأ في أداة خارجية لا تملكها: بلّغ بإعادة الإنتاج ولا تخفه
+
+#### 6. الأدلة
+
+- `https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/3289-cloudwatch-per-host-stat-single-host-vs/13803-cloudwatch-per-host-stat-single-host-vs`
+
+#### 7. قدرات قريبة في العائلة
+
+- `ACODE-289` خط التوصية والترتيب بست مراحل: مصادر، إثراء، تصفية، تقييم، اختيار، آثار غير متزامنة / Six-stage recommendation and ranking pipeline: source, hydrate, filter, score, select, side effects (documented)
+- `ACODE-29` قائمة تحصين نقطة GraphQL / GraphQL endpoint hardening checklist (documented)
+- `ACODE-291` مزوّد مخصص لا يُستدعى أبدًا: التوجيه على اسم النموذج يسبق المزوّد في LiteLLM / A custom LLM provider that never runs: dispatch on the bare model name wins first (documented)
+- `ACODE-292` مزامنة متغيرات البيئة إلى launchd تسرّب متغيرات الجلسة: قائمة حظر قبل المزامنة / Login-environment sync to launchd leaks the current session's variables (documented)
+
+### `ACODE-291` — مزوّد مخصص لا يُستدعى أبدًا: التوجيه على اسم النموذج يسبق المزوّد في LiteLLM / A custom LLM provider that never runs: dispatch on the bare model name wins first
+
+| الحقل | القيمة |
+|---|---|
+| العائلة | `atlas-code` ([فصل العائلة](../../../.claude/skills/kosif-superpowers/references/powers/atlas-code.md)) |
+| المجموعة | البرمجة وبناء التطبيقات (`software`) |
+| نوع المخرج (A25، A27) | كود وتطبيقات ومواقع (`code`) |
+| الحالة في الكتالوج | 📄 `documented`: منهج موصوف يحتاج بناءً أو ربطًا قبل التشغيل |
+| سقف التحقق قبل العمل (A27) | V1 حتى تُبنى وتُشغَّل؛ لا تقدَّم جاهزة أبدًا |
+| نطاق الدليل | `url` |
+| الرخصة | card in our own words; the original skill folders are copied verbatim with their MIT license and SOURCE.md under vendor/kosif-atlas |
+
+**ما هي:** عند ربط خلفية بـLiteLLM كمزود مخصص واستدعائها باسم نموذج معروف (مثل اسم نموذج OpenAI)، تلتقط فروع سابقة في سلسلة التوجيه الاسم المجرد وترسله لمزود آخر، والاستثناء يحمل اسم مزودك فيبدو كأنه معطل؛ وإن كان مفتاح المزود الآخر صالحًا يأتي رد معقول مدفوع من حساب لم تقصده. — Diagnoses silent provider bypass and the fix: unique model names and a proof the handler ran.
+
+**متى:** المزود المخصص في LiteLLM لا يُدخل، رسوم غير متوقعة من OpenAI، خطأ من خدمة لم تُعد / a LiteLLM custom provider is bypassed
+
+**كيف:** 1) Confirm the symptom: your handler is never entered, the error comes from a service you did not configure, yet the exception name carries your provider label. 2) Search the installed library's completion function for branches that test the bare model name against built-in model lists and sit before the custom-provider branch; line numbers move between releases, the shape does not. 3) Fix by giving models routed through the bridge names no built-in list can contain (a private prefix or suffix) and translating to the upstream name inside your handler. 4) Add a test that asserts the handler was entered (a counter or log line) and fails if any other provider served the call. 5) Run that test after every library upgrade, because new model ids join the built-in lists routinely. 6) Remove unrelated provider keys from environments where the bridge runs so a bypass fails loudly instead of billing quietly. Full original skill(s) with license: vendor/kosif-atlas/skills/3326-litellm-custom-provider-dispatch-order/13840-litellm-custom-provider-dispatch-order.
+
+**المعاملات:** provider, model ids
+
+**التثبيت:** mkdir -p ~/.claude/skills && cp -r .claude/skills/kosif-superpowers/vendor/kosif-atlas/skills/3326-litellm-custom-provider-dispatch-order/13840-litellm-custom-provider-dispatch-order ~/.claude/skills/litellm-custom-provider-dispatch-order
+
+**الوسوم:** LiteLLM · LLM gateway · debugging · billing · providers · بوابة النماذج
+
+#### 1. الاستقبال (A25)
+
+- اللغة والإطار: افتراض مكتوب ← لغة المستودع الموجود، وإلا Python أو HTML/JS بلا اعتماديات
+- أين يعمل: افتراض مكتوب ← المتصفح أو سطر الأوامر حسب المخرج
+- مستودع أو ملفات موجودة: سؤال بإجابة مقترحة ← مشروع جديد مستقل
+- متى يكون ناجحًا: افتراض مكتوب ← الاختبارات الموجودة تمر + اختبار لكل سلوك جديد
+- لا تُفترض أبدًا: مادة الإنتاج نفسها، والإذن بخطوة مدفوعة أو منشورة أو لا رجعة فيها، والهوية والحقوق.
+
+#### 2. الجاهزية والشارة (A28)
+
+- `key:openai` ← حساب أو مفتاح: لا تطلب لصقه في المحادثة، واسأل قبل أي صرف
+- الوضع 1: شارة «هنا الآن» بعد الفحص، لا 📄 الكتالوج تلقائيًا · الوضع 2: `كتالوج: 📄 · هنا: غير مفحوص` · الوضع 3: بلا شارة ولا معرّف.
+
+#### 3. موضعها في الخطة (A26)
+
+- عقدة منمّطة: المدخل `spec` ← المخرج `code`، والمنفّذ `method:ACODE-291` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `atlas-ledger`.
+- مراحل النوع: قراءة الكود والاختبارات ← إعادة إنتاج أو اختبار جديد ← أصغر تغيير ← الاختبارات ← مراجعة الفرق ← فرع وPR.
+- إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
+
+#### 4. بوابة التحقق (A27)
+
+- إلزامي: الاختبارات الموجودة تمر قبل التعديل وبعده ← أمر الاختبار
+- إلزامي: اختبار لكل سلوك جديد أو خطأ مُصلح ← الاختبار الجديد يفشل قبل الإصلاح
+- إلزامي: لا أسرار ولا مسارات جلسة في الشيفرة ← بحث أنماط الأسرار
+- جودة: يطابق أسلوب الكود المحيط وتسمياته ← مراجعة الفرق
+- جودة: طريقة تشغيل مكتوبة ومجرَّبة ← تشغيل الأمر المكتوب
+- جودة: الفرق أصغر ما يحقق الطلب بلا إعادة كتابة غير مطلوبة ← git diff --stat
+- جودة: المدخل الخاطئ يعطي خطأ واضحًا لا انهيارًا صامتًا ← تشغيل بمدخل خاطئ
+- أمر الحكم في الوضع 1: `think.py qa code --answers qa.json` (PASS / FAIL / INCOMPLETE).
+
+#### 5. التعافي (A29)
+
+- `missing_dependency` (اعتمادية مفقودة، ميزانية 2): سمِّ الاعتمادية بالضبط (حزمة، برنامج، خط، نموذج) ← ثبّت محليًا في بيئة العمل إن كان مجانيًا ومسموحًا (pip --user أو venv أو npm محلي) · البديل: مسار المكتبة القياسية أو أداة أخرى من نفس المجموعة · تصعيد: تثبيت نظامي أو مدفوع أو يحتاج مفتاحًا: توقف واسأل
+- `quality_below_threshold` (جودة دون العتبة، ميزانية 3): أي معيار فشل وبكم (المقيس مقابل العتبة) ← عالج السبب الأكبر وحده ثم أعد القياس · البديل: المنهج البديل المكتوب للمرحلة في الخطة · تصعيد: معيار إلزامي لا يتحقق بعد البديل: توقف وأبلغ بالأرقام
+- `tool_error` (خطأ أداة، ميزانية 3): اقرأ آخر سطر في الخطأ ثم أول سطر من كودك فيه ← أصلح السبب المثبت وحده، ثم شغّل الاختبار المتعلق · البديل: أداة أخرى أو مسار يدوي للمرحلة نفسها · تصعيد: خطأ في أداة خارجية لا تملكها: بلّغ بإعادة الإنتاج ولا تخفه
+- `permission_denied` (صلاحية مرفوضة، ميزانية 1): من رفض: نظام الملفات أم الخدمة أم المستخدم في نافذة الإذن ← اكتب في مسار مسموح (مجلد مؤقت أو مجلد العمل) · البديل: سلّم الأمر جاهزًا ليشغّله المستخدم بنفسه · تصعيد: لا تتجاوز أي رفض بحيلة؛ اشرح ما يلزم وانتظر
+
+#### 6. الأدلة
+
+- `https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/3326-litellm-custom-provider-dispatch-order/13840-litellm-custom-provider-dispatch-order`
+
+#### 7. قدرات قريبة في العائلة
+
+- `ACODE-29` قائمة تحصين نقطة GraphQL / GraphQL endpoint hardening checklist (documented)
+- `ACODE-290` مضيف مريض واحد أم الأسطول كله؟ وحدة المقياس ونسبة الحد الأقصى إلى المجموع / One sick host or the whole fleet? Get the metric unit and the Maximum-to-Sum ratio (documented)
+- `ACODE-292` مزامنة متغيرات البيئة إلى launchd تسرّب متغيرات الجلسة: قائمة حظر قبل المزامنة / Login-environment sync to launchd leaks the current session's variables (documented)
+- `ACODE-293` عقد أداة الوكيل: واجهة تُكتب كأنها prompt، وأخطاء مصنفة تعلّم التعافي، ومخرجات مقتصدة مع ترقيم بالمؤشر / Agent tool contract: interface written as a prompt, classified errors that teach recovery, lean paginated output (documented)
+
+### `ACODE-292` — مزامنة متغيرات البيئة إلى launchd تسرّب متغيرات الجلسة: قائمة حظر قبل المزامنة / Login-environment sync to launchd leaks the current session's variables
+
+| الحقل | القيمة |
+|---|---|
+| العائلة | `atlas-code` ([فصل العائلة](../../../.claude/skills/kosif-superpowers/references/powers/atlas-code.md)) |
+| المجموعة | البرمجة وبناء التطبيقات (`software`) |
+| نوع المخرج (A25، A27) | كود وتطبيقات ومواقع (`code`) |
+| الحالة في الكتالوج | 📄 `documented`: منهج موصوف يحتاج بناءً أو ربطًا قبل التشغيل |
+| سقف التحقق قبل العمل (A27) | V1 حتى تُبنى وتُشغَّل؛ لا تقدَّم جاهزة أبدًا |
+| نطاق الدليل | `url` |
+| الرخصة | card in our own words; the original skill folders are copied verbatim with their MIT license and SOURCE.md under vendor/kosif-atlas |
+
+**ما هي:** سكربت ينقل متغيرات بيئة الطرفية إلى launchd على macOS لتراها التطبيقات والخدمات، إن قرأ البيئة الحية بدل ملف التعريف ينقل أيضًا متغيرات الجلسة التي شُغّل منها (معرفات جلسة الوكيل، مقبس الطرفية، مسارات مؤقتة، رموز)، فتظهر في كل تطبيق يُفتح بعدها. يشخص التسرب ويتراجع عنه ويضيف قائمة حظر. — Diagnose and undo session variables pushed into launchd, then filter by a deny list.
+
+**متى:** تطبيقات macOS ترى متغيرات غريبة من جلسة طرفية، أداة تتصرف كأنها داخل جلسة وكيل، بعد تشغيل سكربت مزامنة البيئة / macOS apps inherit stray session variables
+
+**كيف:** 1) Reading the live environment is right (a text grep of export lines misses sourced files) but it includes the session the script runs in. 2) List what launchd now holds and compare with a clean login shell's environment; the difference is the leak. 3) Typical families: terminal multiplexer and pane identifiers, agent session ids and entry points, socket paths, temporary directories, shell level and prompt variables, and any tokens a session exported. 4) Undo each leaked name with launchctl unsetenv, then restart affected apps (they captured the old environment at launch). 5) Fix the sync script with an explicit deny list by prefix and exact name, and prefer an allow list for secrets-bearing variables. 6) Run the sync only from a fresh login shell, and print the exact names it will set before setting them; never print values. Full original skill(s) with license: vendor/kosif-atlas/skills/3324-launchd-env-sync-session-leak/13838-launchd-env-sync-session-leak.
+
+**المعاملات:** sync script
+
+**التثبيت:** mkdir -p ~/.claude/skills && cp -r .claude/skills/kosif-superpowers/vendor/kosif-atlas/skills/3324-launchd-env-sync-session-leak/13838-launchd-env-sync-session-leak ~/.claude/skills/launchd-env-sync-session-leak
+
+**الوسوم:** macOS · launchd · environment variables · shell · debugging · متغيرات البيئة
+
+#### 1. الاستقبال (A25)
+
+- اللغة والإطار: افتراض مكتوب ← لغة المستودع الموجود، وإلا Python أو HTML/JS بلا اعتماديات
+- أين يعمل: افتراض مكتوب ← المتصفح أو سطر الأوامر حسب المخرج
+- مستودع أو ملفات موجودة: سؤال بإجابة مقترحة ← مشروع جديد مستقل
+- متى يكون ناجحًا: افتراض مكتوب ← الاختبارات الموجودة تمر + اختبار لكل سلوك جديد
+- لا تُفترض أبدًا: مادة الإنتاج نفسها، والإذن بخطوة مدفوعة أو منشورة أو لا رجعة فيها، والهوية والحقوق.
+
+#### 2. الجاهزية والشارة (A28)
+
+- `os:macos` ← افحص وجوده بأمر واحد قبل كتابة الشارة
+- الوضع 1: شارة «هنا الآن» بعد الفحص، لا 📄 الكتالوج تلقائيًا · الوضع 2: `كتالوج: 📄 · هنا: غير مفحوص` · الوضع 3: بلا شارة ولا معرّف.
+
+#### 3. موضعها في الخطة (A26)
+
+- عقدة منمّطة: المدخل `spec` ← المخرج `code`، والمنفّذ `method:ACODE-292` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `atlas-ledger`.
+- مراحل النوع: قراءة الكود والاختبارات ← إعادة إنتاج أو اختبار جديد ← أصغر تغيير ← الاختبارات ← مراجعة الفرق ← فرع وPR.
+- إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
+
+#### 4. بوابة التحقق (A27)
+
+- إلزامي: الاختبارات الموجودة تمر قبل التعديل وبعده ← أمر الاختبار
+- إلزامي: اختبار لكل سلوك جديد أو خطأ مُصلح ← الاختبار الجديد يفشل قبل الإصلاح
+- إلزامي: لا أسرار ولا مسارات جلسة في الشيفرة ← بحث أنماط الأسرار
+- جودة: يطابق أسلوب الكود المحيط وتسمياته ← مراجعة الفرق
+- جودة: طريقة تشغيل مكتوبة ومجرَّبة ← تشغيل الأمر المكتوب
+- جودة: الفرق أصغر ما يحقق الطلب بلا إعادة كتابة غير مطلوبة ← git diff --stat
+- جودة: المدخل الخاطئ يعطي خطأ واضحًا لا انهيارًا صامتًا ← تشغيل بمدخل خاطئ
+- أمر الحكم في الوضع 1: `think.py qa code --answers qa.json` (PASS / FAIL / INCOMPLETE).
+
+#### 5. التعافي (A29)
+
+- `missing_dependency` (اعتمادية مفقودة، ميزانية 2): سمِّ الاعتمادية بالضبط (حزمة، برنامج، خط، نموذج) ← ثبّت محليًا في بيئة العمل إن كان مجانيًا ومسموحًا (pip --user أو venv أو npm محلي) · البديل: مسار المكتبة القياسية أو أداة أخرى من نفس المجموعة · تصعيد: تثبيت نظامي أو مدفوع أو يحتاج مفتاحًا: توقف واسأل
+- `quality_below_threshold` (جودة دون العتبة، ميزانية 3): أي معيار فشل وبكم (المقيس مقابل العتبة) ← عالج السبب الأكبر وحده ثم أعد القياس · البديل: المنهج البديل المكتوب للمرحلة في الخطة · تصعيد: معيار إلزامي لا يتحقق بعد البديل: توقف وأبلغ بالأرقام
+- `tool_error` (خطأ أداة، ميزانية 3): اقرأ آخر سطر في الخطأ ثم أول سطر من كودك فيه ← أصلح السبب المثبت وحده، ثم شغّل الاختبار المتعلق · البديل: أداة أخرى أو مسار يدوي للمرحلة نفسها · تصعيد: خطأ في أداة خارجية لا تملكها: بلّغ بإعادة الإنتاج ولا تخفه
+
+#### 6. الأدلة
+
+- `https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/3324-launchd-env-sync-session-leak/13838-launchd-env-sync-session-leak`
+
+#### 7. قدرات قريبة في العائلة
+
+- `ACODE-290` مضيف مريض واحد أم الأسطول كله؟ وحدة المقياس ونسبة الحد الأقصى إلى المجموع / One sick host or the whole fleet? Get the metric unit and the Maximum-to-Sum ratio (documented)
+- `ACODE-291` مزوّد مخصص لا يُستدعى أبدًا: التوجيه على اسم النموذج يسبق المزوّد في LiteLLM / A custom LLM provider that never runs: dispatch on the bare model name wins first (documented)
+- `ACODE-293` عقد أداة الوكيل: واجهة تُكتب كأنها prompt، وأخطاء مصنفة تعلّم التعافي، ومخرجات مقتصدة مع ترقيم بالمؤشر / Agent tool contract: interface written as a prompt, classified errors that teach recovery, lean paginated output (documented)
+- `ACODE-294` تنفيذ أدوات الوكيل وتركيبها: مهلة محددة، ومهام غير متزامنة بمقبض، وقابلية التكرار الآمن، والتعويض، وسلم التجريد / Agent tool execution and composition: bounded time, async job handles, safe retries, compensation, the abstraction ladder (documented)
+
+### `ACODE-293` — عقد أداة الوكيل: واجهة تُكتب كأنها prompt، وأخطاء مصنفة تعلّم التعافي، ومخرجات مقتصدة مع ترقيم بالمؤشر / Agent tool contract: interface written as a prompt, classified errors that teach recovery, lean paginated output
+
+| الحقل | القيمة |
+|---|---|
+| العائلة | `atlas-code` ([فصل العائلة](../../../.claude/skills/kosif-superpowers/references/powers/atlas-code.md)) |
+| المجموعة | البرمجة وبناء التطبيقات (`software`) |
+| نوع المخرج (A25، A27) | كود وتطبيقات ومواقع (`code`) |
+| الحالة في الكتالوج | 📄 `documented`: منهج موصوف يحتاج بناءً أو ربطًا قبل التشغيل |
+| سقف التحقق قبل العمل (A27) | V1 حتى تُبنى وتُشغَّل؛ لا تقدَّم جاهزة أبدًا |
+| نطاق الدليل | `url` |
+| الرخصة | card in our own words; the original skill folders are copied verbatim with their MIT license and SOURCE.md under vendor/kosif-atlas |
+
+**ما هي:** ثلاثة أجزاء من عقد أي أداة يستدعيها نموذج: الاسم والوصف والمعاملات (الوصف من أربعة أجزاء: ماذا تفعل، ومتى تُستخدم ومتى لا، وماذا يُستدعى أولًا، وماذا تعيد)، وتصنيف كل خطأ في فئة واحدة مع نص تعافٍ دقيق، وشكل نتيجة مسطح ثابت بأقل الحقول وترقيم بالمؤشر ونجاح جزئي لكل عنصر وتلميح بالخطوة التالية. — Interface, error and output rules for model-facing tools, each with named patterns and anti-patterns.
+
+**متى:** تصميم أو مراجعة أداة MCP أو دالة يستدعيها الوكيل، الوكيل يختار الأداة الخطأ أو يمرر قيمًا غلط، نتائج الأدوات تملأ السياق / designing or auditing agent tools, wrong tool selection, bloated tool results
+
+**كيف:** 1) Interface: verb-object names (send_email), one responsibility, the same verb means the same thing across the set (list_* pages, get_* one, search_* takes a query). 2) Description in four parts: what, when and when not (name the alternative), the prerequisite call, what it returns; mark read-only tools as safe to retry and put irreversibility in the first sentence of destructive ones. 3) Constrain every parameter (enums, ranges, patterns), keep required ones few with documented context-aware defaults, never default a destructive option on, accept the identifier a person has (email, @handle) and resolve it, coerce benign variation (dates, numbers as strings, one item vs array) and log the received format, state 'exactly one of' rules and enforce them first, say which path is faster or cheaper, and never take stringified JSON in a string parameter. 4) Errors: list every failure, give each exactly one class (bad input, missing prerequisite, not found, conflict, permission, rate limit, retryable, permanent), write what went wrong, why and the exact next call; on ambiguous identifiers return candidates instead of guessing, with thresholds for when to ask; degrade gracefully by returning what worked and naming a fallback tool. 5) Output: list only the fields the agent needs for its next step, flatten and rename the upstream payload (ISO dates, readable states), truncate long text at a stated length with a flag, make expensive sections opt-in, paginate by cursor with an explicit hasMore even when false, offer summary vs full detail, return viewUrl links, report batch results per item with counts and a retry hint for the failures, pass large blobs as typed references, and keep one field vocabulary across all tools. 6) Verify cold: read each error with only the description and check an agent could recover; run the tool and read the raw result; run the agent and measure how much context tool results take. Full original skill(s) with license: vendor/kosif-atlas/skills/3017-runtype-skills/12909-tool-design-interface, vendor/kosif-atlas/skills/3017-runtype-skills/12907-tool-design-errors, vendor/kosif-atlas/skills/3017-runtype-skills/12910-tool-design-output.
+
+**المعاملات:** tool set, sample prompts, raw results
+
+**التثبيت:** mkdir -p ~/.claude/skills && cp -r .claude/skills/kosif-superpowers/vendor/kosif-atlas/skills/3017-runtype-skills/12909-tool-design-interface ~/.claude/skills/tool-design-interface ; mkdir -p ~/.claude/skills && cp -r .claude/skills/kosif-superpowers/vendor/kosif-atlas/skills/3017-runtype-skills/12907-tool-design-errors ~/.claude/skills/tool-design-errors ; mkdir -p ~/.claude/skills && cp -r .claude/skills/kosif-superpowers/vendor/kosif-atlas/skills/3017-runtype-skills/12910-tool-design-output ~/.claude/skills/tool-design-output
+
+**الوسوم:** tool design · MCP tool · function calling · tool errors · pagination · tool output · تصميم الأدوات · أدوات الوكيل
+
+#### 1. الاستقبال (A25)
+
+- اللغة والإطار: افتراض مكتوب ← لغة المستودع الموجود، وإلا Python أو HTML/JS بلا اعتماديات
+- أين يعمل: افتراض مكتوب ← المتصفح أو سطر الأوامر حسب المخرج
+- مستودع أو ملفات موجودة: سؤال بإجابة مقترحة ← مشروع جديد مستقل
+- متى يكون ناجحًا: افتراض مكتوب ← الاختبارات الموجودة تمر + اختبار لكل سلوك جديد
+- لا تُفترض أبدًا: مادة الإنتاج نفسها، والإذن بخطوة مدفوعة أو منشورة أو لا رجعة فيها، والهوية والحقوق.
+
+#### 2. الجاهزية والشارة (A28)
+
+- `claude:tools` ← افحص وجوده بأمر واحد قبل كتابة الشارة
+- `lean` ← افحص وجوده بأمر واحد قبل كتابة الشارة
+- الوضع 1: شارة «هنا الآن» بعد الفحص، لا 📄 الكتالوج تلقائيًا · الوضع 2: `كتالوج: 📄 · هنا: غير مفحوص` · الوضع 3: بلا شارة ولا معرّف.
+
+#### 3. موضعها في الخطة (A26)
+
+- عقدة منمّطة: المدخل `spec` ← المخرج `code`، والمنفّذ `method:ACODE-293` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `atlas-ledger`.
+- مراحل النوع: قراءة الكود والاختبارات ← إعادة إنتاج أو اختبار جديد ← أصغر تغيير ← الاختبارات ← مراجعة الفرق ← فرع وPR.
+- إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
+
+#### 4. بوابة التحقق (A27)
+
+- إلزامي: الاختبارات الموجودة تمر قبل التعديل وبعده ← أمر الاختبار
+- إلزامي: اختبار لكل سلوك جديد أو خطأ مُصلح ← الاختبار الجديد يفشل قبل الإصلاح
+- إلزامي: لا أسرار ولا مسارات جلسة في الشيفرة ← بحث أنماط الأسرار
+- جودة: يطابق أسلوب الكود المحيط وتسمياته ← مراجعة الفرق
+- جودة: طريقة تشغيل مكتوبة ومجرَّبة ← تشغيل الأمر المكتوب
+- جودة: الفرق أصغر ما يحقق الطلب بلا إعادة كتابة غير مطلوبة ← git diff --stat
+- جودة: المدخل الخاطئ يعطي خطأ واضحًا لا انهيارًا صامتًا ← تشغيل بمدخل خاطئ
+- أمر الحكم في الوضع 1: `think.py qa code --answers qa.json` (PASS / FAIL / INCOMPLETE).
+
+#### 5. التعافي (A29)
+
+- `missing_dependency` (اعتمادية مفقودة، ميزانية 2): سمِّ الاعتمادية بالضبط (حزمة، برنامج، خط، نموذج) ← ثبّت محليًا في بيئة العمل إن كان مجانيًا ومسموحًا (pip --user أو venv أو npm محلي) · البديل: مسار المكتبة القياسية أو أداة أخرى من نفس المجموعة · تصعيد: تثبيت نظامي أو مدفوع أو يحتاج مفتاحًا: توقف واسأل
+- `quality_below_threshold` (جودة دون العتبة، ميزانية 3): أي معيار فشل وبكم (المقيس مقابل العتبة) ← عالج السبب الأكبر وحده ثم أعد القياس · البديل: المنهج البديل المكتوب للمرحلة في الخطة · تصعيد: معيار إلزامي لا يتحقق بعد البديل: توقف وأبلغ بالأرقام
+- `tool_error` (خطأ أداة، ميزانية 3): اقرأ آخر سطر في الخطأ ثم أول سطر من كودك فيه ← أصلح السبب المثبت وحده، ثم شغّل الاختبار المتعلق · البديل: أداة أخرى أو مسار يدوي للمرحلة نفسها · تصعيد: خطأ في أداة خارجية لا تملكها: بلّغ بإعادة الإنتاج ولا تخفه
+
+#### 6. الأدلة
+
+- `https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/3017-runtype-skills/12909-tool-design-interface`
+- `https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/3017-runtype-skills/12907-tool-design-errors`
+- `https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/3017-runtype-skills/12910-tool-design-output`
+
+#### 7. قدرات قريبة في العائلة
+
+- `ACODE-291` مزوّد مخصص لا يُستدعى أبدًا: التوجيه على اسم النموذج يسبق المزوّد في LiteLLM / A custom LLM provider that never runs: dispatch on the bare model name wins first (documented)
+- `ACODE-292` مزامنة متغيرات البيئة إلى launchd تسرّب متغيرات الجلسة: قائمة حظر قبل المزامنة / Login-environment sync to launchd leaks the current session's variables (documented)
+- `ACODE-294` تنفيذ أدوات الوكيل وتركيبها: مهلة محددة، ومهام غير متزامنة بمقبض، وقابلية التكرار الآمن، والتعويض، وسلم التجريد / Agent tool execution and composition: bounded time, async job handles, safe retries, compensation, the abstraction ladder (documented)
+- `ACODE-295` واجهة أوامر للوكلاء أولًا: مخرجات منظمة كعقد بإصدار، وتحقق عند الحدود، ومقياس من 21 نقطة / Agent-first CLI: structured output as a versioned contract, validation at the boundary, a 21-point score (documented)
+
+### `ACODE-294` — تنفيذ أدوات الوكيل وتركيبها: مهلة محددة، ومهام غير متزامنة بمقبض، وقابلية التكرار الآمن، والتعويض، وسلم التجريد / Agent tool execution and composition: bounded time, async job handles, safe retries, compensation, the abstraction ladder
+
+| الحقل | القيمة |
+|---|---|
+| العائلة | `atlas-code` ([فصل العائلة](../../../.claude/skills/kosif-superpowers/references/powers/atlas-code.md)) |
+| المجموعة | البرمجة وبناء التطبيقات (`software`) |
+| نوع المخرج (A25، A27) | كود وتطبيقات ومواقع (`code`) |
+| الحالة في الكتالوج | 📄 `documented`: منهج موصوف يحتاج بناءً أو ربطًا قبل التشغيل |
+| سقف التحقق قبل العمل (A27) | V1 حتى تُبنى وتُشغَّل؛ لا تقدَّم جاهزة أبدًا |
+| نطاق الدليل | `url` |
+| الرخصة | card in our own words; the original skill folders are copied verbatim with their MIT license and SOURCE.md under vendor/kosif-atlas |
+
+**ما هي:** الوكلاء يعيدون المحاولة دائمًا، فيجب أن يكون التكرار آمنًا والزمن محدودًا والحالة متسقة إذا فشلت عملية متعددة الخطوات في منتصفها؛ ثم يُرتب طقم الأدوات نفسه: عرض القدرة بأكثر من مستوى، وتجميع التسلسل المتكرر في أداة، وقبول القوائم، ووضع معاينة افتراضي، وتلميحات بما يُستدعى أولًا. — Run-time and set-level design for agent tools.
+
+**متى:** أداة تستغرق دقائق، أمر create قد يتكرر مرتين، عملية عبر أكثر من نظام، طقم أدوات كبير يتوه فيه الوكيل / long-running tools, duplicate side effects on retry, multi-system operations, large tool sets
+
+**كيف:** 1) Measure p50 and p99 wall-clock time; synchronous only for bounded seconds with an explicit timeout, an async job for minutes (start_* returns an id, an estimate and the names of check_job_status and get_job_result, plus cancel_job when cancellable), streaming when partial output is useful, events behind a subscription. 2) Give every command tool a retry story: a natural key the caller supplies, an idempotencyKey whose first result is stored for a documented window, or deduplication; otherwise document 'not safe to retry' and gate it on confirmation. Never let a retry send a second payment, message or ticket. 3) Consistency: a short transaction when one system owns every step; across systems record each completed step with a compensating action, run them in reverse on failure, log every compensation and say which steps cannot be undone (a sent email). 4) On timeout clean up, return partial results and a retryable error that names the limit and the async alternative; a rising timeout rate means the tool should become a job. Polling results carry nextAction and an interval so the agent does not spin. 5) Composition: map the tools and the sequences agents really run; bundle a sequence repeated across runs into one task tool, add batch inputs where the same tool is called in a loop, offer high-level and low-level tools for one capability, add a mode parameter that defaults to preview on every writer, add dependency hints, a registry or schema explorer when the set is large, and a health check; merge near-duplicates and retire unused tools. 6) Verify with a slow and a failing input: the timeout names its limit, and a second identical call changes nothing; then read the agent's trace to confirm it picks the new tools. Full original skill(s) with license: vendor/kosif-atlas/skills/3017-runtype-skills/12908-tool-design-execution, vendor/kosif-atlas/skills/3017-runtype-skills/12906-tool-design-composition.
+
+**المعاملات:** p50/p99 timing, retry and consistency story per tool
+
+**التثبيت:** mkdir -p ~/.claude/skills && cp -r .claude/skills/kosif-superpowers/vendor/kosif-atlas/skills/3017-runtype-skills/12908-tool-design-execution ~/.claude/skills/tool-design-execution ; mkdir -p ~/.claude/skills && cp -r .claude/skills/kosif-superpowers/vendor/kosif-atlas/skills/3017-runtype-skills/12906-tool-design-composition ~/.claude/skills/tool-design-composition
+
+**الوسوم:** idempotency · async job · timeout · compensation · saga · tool composition · قابلية التكرار · مهلة
+
+#### 1. الاستقبال (A25)
+
+- اللغة والإطار: افتراض مكتوب ← لغة المستودع الموجود، وإلا Python أو HTML/JS بلا اعتماديات
+- أين يعمل: افتراض مكتوب ← المتصفح أو سطر الأوامر حسب المخرج
+- مستودع أو ملفات موجودة: سؤال بإجابة مقترحة ← مشروع جديد مستقل
+- متى يكون ناجحًا: افتراض مكتوب ← الاختبارات الموجودة تمر + اختبار لكل سلوك جديد
+- لا تُفترض أبدًا: مادة الإنتاج نفسها، والإذن بخطوة مدفوعة أو منشورة أو لا رجعة فيها، والهوية والحقوق.
+
+#### 2. الجاهزية والشارة (A28)
+
+- `claude:tools` ← افحص وجوده بأمر واحد قبل كتابة الشارة
+- الوضع 1: شارة «هنا الآن» بعد الفحص، لا 📄 الكتالوج تلقائيًا · الوضع 2: `كتالوج: 📄 · هنا: غير مفحوص` · الوضع 3: بلا شارة ولا معرّف.
+
+#### 3. موضعها في الخطة (A26)
+
+- عقدة منمّطة: المدخل `spec` ← المخرج `code`، والمنفّذ `method:ACODE-294` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `atlas-ledger`.
+- مراحل النوع: قراءة الكود والاختبارات ← إعادة إنتاج أو اختبار جديد ← أصغر تغيير ← الاختبارات ← مراجعة الفرق ← فرع وPR.
+- إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
+
+#### 4. بوابة التحقق (A27)
+
+- إلزامي: الاختبارات الموجودة تمر قبل التعديل وبعده ← أمر الاختبار
+- إلزامي: اختبار لكل سلوك جديد أو خطأ مُصلح ← الاختبار الجديد يفشل قبل الإصلاح
+- إلزامي: لا أسرار ولا مسارات جلسة في الشيفرة ← بحث أنماط الأسرار
+- جودة: يطابق أسلوب الكود المحيط وتسمياته ← مراجعة الفرق
+- جودة: طريقة تشغيل مكتوبة ومجرَّبة ← تشغيل الأمر المكتوب
+- جودة: الفرق أصغر ما يحقق الطلب بلا إعادة كتابة غير مطلوبة ← git diff --stat
+- جودة: المدخل الخاطئ يعطي خطأ واضحًا لا انهيارًا صامتًا ← تشغيل بمدخل خاطئ
+- أمر الحكم في الوضع 1: `think.py qa code --answers qa.json` (PASS / FAIL / INCOMPLETE).
+
+#### 5. التعافي (A29)
+
+- `missing_dependency` (اعتمادية مفقودة، ميزانية 2): سمِّ الاعتمادية بالضبط (حزمة، برنامج، خط، نموذج) ← ثبّت محليًا في بيئة العمل إن كان مجانيًا ومسموحًا (pip --user أو venv أو npm محلي) · البديل: مسار المكتبة القياسية أو أداة أخرى من نفس المجموعة · تصعيد: تثبيت نظامي أو مدفوع أو يحتاج مفتاحًا: توقف واسأل
+- `quality_below_threshold` (جودة دون العتبة، ميزانية 3): أي معيار فشل وبكم (المقيس مقابل العتبة) ← عالج السبب الأكبر وحده ثم أعد القياس · البديل: المنهج البديل المكتوب للمرحلة في الخطة · تصعيد: معيار إلزامي لا يتحقق بعد البديل: توقف وأبلغ بالأرقام
+- `tool_error` (خطأ أداة، ميزانية 3): اقرأ آخر سطر في الخطأ ثم أول سطر من كودك فيه ← أصلح السبب المثبت وحده، ثم شغّل الاختبار المتعلق · البديل: أداة أخرى أو مسار يدوي للمرحلة نفسها · تصعيد: خطأ في أداة خارجية لا تملكها: بلّغ بإعادة الإنتاج ولا تخفه
+
+#### 6. الأدلة
+
+- `https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/3017-runtype-skills/12908-tool-design-execution`
+- `https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/3017-runtype-skills/12906-tool-design-composition`
+
+#### 7. قدرات قريبة في العائلة
+
+- `ACODE-292` مزامنة متغيرات البيئة إلى launchd تسرّب متغيرات الجلسة: قائمة حظر قبل المزامنة / Login-environment sync to launchd leaks the current session's variables (documented)
+- `ACODE-293` عقد أداة الوكيل: واجهة تُكتب كأنها prompt، وأخطاء مصنفة تعلّم التعافي، ومخرجات مقتصدة مع ترقيم بالمؤشر / Agent tool contract: interface written as a prompt, classified errors that teach recovery, lean paginated output (documented)
+- `ACODE-295` واجهة أوامر للوكلاء أولًا: مخرجات منظمة كعقد بإصدار، وتحقق عند الحدود، ومقياس من 21 نقطة / Agent-first CLI: structured output as a versioned contract, validation at the boundary, a 21-point score (documented)
+- `ACODE-296` واجهة أوامر ودودة للبشر: شكل ثابت للمساعدة والأخطاء، وتلوين يحترم الطرفية، ومقياس من 21 نقطة / Human-friendly CLI: fixed help and error layouts, TTY-aware visuals, a 21-point score (documented)
+
+### `ACODE-295` — واجهة أوامر للوكلاء أولًا: مخرجات منظمة كعقد بإصدار، وتحقق عند الحدود، ومقياس من 21 نقطة / Agent-first CLI: structured output as a versioned contract, validation at the boundary, a 21-point score
+
+| الحقل | القيمة |
+|---|---|
+| العائلة | `atlas-code` ([فصل العائلة](../../../.claude/skills/kosif-superpowers/references/powers/atlas-code.md)) |
+| المجموعة | البرمجة وبناء التطبيقات (`software`) |
+| نوع المخرج (A25، A27) | كود وتطبيقات ومواقع (`code`) |
+| الحالة في الكتالوج | 📄 `documented`: منهج موصوف يحتاج بناءً أو ربطًا قبل التشغيل |
+| سقف التحقق قبل العمل (A27) | V1 حتى تُبنى وتُشغَّل؛ لا تقدَّم جاهزة أبدًا |
+| نطاق الدليل | `url` |
+| الرخصة | card in our own words; the original skill folders are copied verbatim with their MIT license and SOURCE.md under vendor/kosif-atlas |
+
+**ما هي:** طريقة بناء أو تقييم أداة سطر أوامر يستهلكها وكيل: الوكيل ليس مشغلًا موثوقًا فيُتحقق من كل مدخل ويُرفض عند الشك، وكل مخرج (نجاح أو فشل أو جزئي) يقول ما الخطوة التالية، وJSON عقد له إصدار، والطرفية تحدد الوضع، ثم حزمة معرفة للوكيل (CONTEXT.md وAGENTS.md وllms.txt) ومقياس من سبعة محاور. — Build or score a CLI for agent consumption.
+
+**متى:** بناء أداة CLI يستدعيها وكيل، إضافة --json، تقييم أداة موجودة لاستخدام الوكلاء / building or auditing a CLI that agents call
+
+**كيف:** 1) Commands: consistent noun-verb grammar, no interactive prompt without a flag to skip it, every flag also settable non-interactively. 2) Output: --json (or auto when not a TTY) with a stable envelope of data, errors and next-step hints; adding an optional field is safe, removing or renaming one is a breaking change; stdout for data, stderr for logs; exit codes documented and distinct. 3) Input: validate at the boundary and fail closed, accept stdin and files, sandbox output paths, refuse path traversal. 4) Discoverability: machine-readable schema or 'describe' command, examples in help, errors that list valid values. 5) Safety and composition: --dry-run on every writer, explicit confirmation flags for destructive actions, idempotent re-runs, explicit states (done, unchanged, failed because). 6) Package knowledge for agents: CONTEXT.md (purpose, auth, commands, workflows, error codes, limits, under about 3,000 words), AGENTS.md pointing to it, llms.txt for orientation. 7) Evaluate on seven axes scored 0 to 3 for a 0 to 21 total: 0-5 human-only, 6-10 agent-tolerant, 11-15 agent-ready, 16-21 agent-first; report the lowest axes as the fix list. Full original skill(s) with license: vendor/kosif-atlas/skills/3387-agent-cli/13909-agent-cli, vendor/kosif-atlas/skills/1216-ai-friendly-cli/2898-ai-friendly-cli.
+
+**المعاملات:** CLI, mode build or evaluate
+
+**التثبيت:** mkdir -p ~/.claude/skills && cp -r .claude/skills/kosif-superpowers/vendor/kosif-atlas/skills/3387-agent-cli/13909-agent-cli ~/.claude/skills/agent-cli ; mkdir -p ~/.claude/skills && cp -r .claude/skills/kosif-superpowers/vendor/kosif-atlas/skills/1216-ai-friendly-cli/2898-ai-friendly-cli ~/.claude/skills/ai-friendly-cli
+
+**الوسوم:** CLI · agent-friendly CLI · json output · dry-run · exit codes · واجهة أوامر · الوكلاء
+
+#### 1. الاستقبال (A25)
+
+- اللغة والإطار: افتراض مكتوب ← لغة المستودع الموجود، وإلا Python أو HTML/JS بلا اعتماديات
+- أين يعمل: افتراض مكتوب ← المتصفح أو سطر الأوامر حسب المخرج
+- مستودع أو ملفات موجودة: سؤال بإجابة مقترحة ← مشروع جديد مستقل
+- متى يكون ناجحًا: افتراض مكتوب ← الاختبارات الموجودة تمر + اختبار لكل سلوك جديد
+- لا تُفترض أبدًا: مادة الإنتاج نفسها، والإذن بخطوة مدفوعة أو منشورة أو لا رجعة فيها، والهوية والحقوق.
+
+#### 2. الجاهزية والشارة (A28)
+
+- لا متطلبات مسجلة؛ افحص المسار والأداة بـ `hub.py doctor` قبل الشارة.
+- الوضع 1: شارة «هنا الآن» بعد الفحص، لا 📄 الكتالوج تلقائيًا · الوضع 2: `كتالوج: 📄 · هنا: غير مفحوص` · الوضع 3: بلا شارة ولا معرّف.
+
+#### 3. موضعها في الخطة (A26)
+
+- عقدة منمّطة: المدخل `spec` ← المخرج `code`، والمنفّذ `method:ACODE-295` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `atlas-ledger`.
+- مراحل النوع: قراءة الكود والاختبارات ← إعادة إنتاج أو اختبار جديد ← أصغر تغيير ← الاختبارات ← مراجعة الفرق ← فرع وPR.
+- إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
+
+#### 4. بوابة التحقق (A27)
+
+- إلزامي: الاختبارات الموجودة تمر قبل التعديل وبعده ← أمر الاختبار
+- إلزامي: اختبار لكل سلوك جديد أو خطأ مُصلح ← الاختبار الجديد يفشل قبل الإصلاح
+- إلزامي: لا أسرار ولا مسارات جلسة في الشيفرة ← بحث أنماط الأسرار
+- جودة: يطابق أسلوب الكود المحيط وتسمياته ← مراجعة الفرق
+- جودة: طريقة تشغيل مكتوبة ومجرَّبة ← تشغيل الأمر المكتوب
+- جودة: الفرق أصغر ما يحقق الطلب بلا إعادة كتابة غير مطلوبة ← git diff --stat
+- جودة: المدخل الخاطئ يعطي خطأ واضحًا لا انهيارًا صامتًا ← تشغيل بمدخل خاطئ
+- أمر الحكم في الوضع 1: `think.py qa code --answers qa.json` (PASS / FAIL / INCOMPLETE).
+
+#### 5. التعافي (A29)
+
+- `missing_dependency` (اعتمادية مفقودة، ميزانية 2): سمِّ الاعتمادية بالضبط (حزمة، برنامج، خط، نموذج) ← ثبّت محليًا في بيئة العمل إن كان مجانيًا ومسموحًا (pip --user أو venv أو npm محلي) · البديل: مسار المكتبة القياسية أو أداة أخرى من نفس المجموعة · تصعيد: تثبيت نظامي أو مدفوع أو يحتاج مفتاحًا: توقف واسأل
+- `quality_below_threshold` (جودة دون العتبة، ميزانية 3): أي معيار فشل وبكم (المقيس مقابل العتبة) ← عالج السبب الأكبر وحده ثم أعد القياس · البديل: المنهج البديل المكتوب للمرحلة في الخطة · تصعيد: معيار إلزامي لا يتحقق بعد البديل: توقف وأبلغ بالأرقام
+- `tool_error` (خطأ أداة، ميزانية 3): اقرأ آخر سطر في الخطأ ثم أول سطر من كودك فيه ← أصلح السبب المثبت وحده، ثم شغّل الاختبار المتعلق · البديل: أداة أخرى أو مسار يدوي للمرحلة نفسها · تصعيد: خطأ في أداة خارجية لا تملكها: بلّغ بإعادة الإنتاج ولا تخفه
+
+#### 6. الأدلة
+
+- `https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/3387-agent-cli/13909-agent-cli`
+- `https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/1216-ai-friendly-cli/2898-ai-friendly-cli`
+
+#### 7. قدرات قريبة في العائلة
+
+- `ACODE-293` عقد أداة الوكيل: واجهة تُكتب كأنها prompt، وأخطاء مصنفة تعلّم التعافي، ومخرجات مقتصدة مع ترقيم بالمؤشر / Agent tool contract: interface written as a prompt, classified errors that teach recovery, lean paginated output (documented)
+- `ACODE-294` تنفيذ أدوات الوكيل وتركيبها: مهلة محددة، ومهام غير متزامنة بمقبض، وقابلية التكرار الآمن، والتعويض، وسلم التجريد / Agent tool execution and composition: bounded time, async job handles, safe retries, compensation, the abstraction ladder (documented)
+- `ACODE-296` واجهة أوامر ودودة للبشر: شكل ثابت للمساعدة والأخطاء، وتلوين يحترم الطرفية، ومقياس من 21 نقطة / Human-friendly CLI: fixed help and error layouts, TTY-aware visuals, a 21-point score (documented)
+- `ACODE-297` حزمة MCPB لخادم MCP محلي: ملف التعريف وإعدادات التثبيت والأمان الذي يقع على عاتقك / MCPB bundle for a local MCP server: manifest, install-time config, and the security you own (documented)
+
+### `ACODE-296` — واجهة أوامر ودودة للبشر: شكل ثابت للمساعدة والأخطاء، وتلوين يحترم الطرفية، ومقياس من 21 نقطة / Human-friendly CLI: fixed help and error layouts, TTY-aware visuals, a 21-point score
+
+| الحقل | القيمة |
+|---|---|
+| العائلة | `atlas-code` ([فصل العائلة](../../../.claude/skills/kosif-superpowers/references/powers/atlas-code.md)) |
+| المجموعة | البرمجة وبناء التطبيقات (`software`) |
+| نوع المخرج (A25، A27) | كود وتطبيقات ومواقع (`code`) |
+| الحالة في الكتالوج | 📄 `documented`: منهج موصوف يحتاج بناءً أو ربطًا قبل التشغيل |
+| سقف التحقق قبل العمل (A27) | V1 حتى تُبنى وتُشغَّل؛ لا تقدَّم جاهزة أبدًا |
+| نطاق الدليل | `url` |
+| الرخصة | card in our own words; the original skill folders are copied verbatim with their MIT license and SOURCE.md under vendor/kosif-atlas |
+
+**ما هي:** النظير البشري لتصميم أداة الأوامر: أسماء سهلة التذكر، ومساعدة بترتيب واحد مع أمثلة، وكل خطأ يقول ماذا تفعل بعده، وتلوين وجداول تتوقف عند التوجيه إلى ملف أو مع NO_COLOR، ومؤشر تقدم لأي عملية أبطأ من ثانية، ومسارات XDG، وجسر للجمهورين حين يستخدمها بشر ووكلاء معًا. — Build or score a CLI for people.
+
+**متى:** تحسين تجربة أداة سطر أوامر، رسائل خطأ مربكة، إضافة ألوان أو أسئلة تفاعلية، تقييم أداة / improving CLI UX for humans
+
+**كيف:** 1) Ergonomics: kebab-case commands, one grammar (verb-noun or noun-verb) everywhere, short aliases for frequent commands. 2) Hard gate for help: usage line, one-sentence description, arguments, flags, then examples, the same order on every command; add shell completions and a man page. 3) Hard gate for errors: what failed, why, and the exact command to fix it; no stack trace by default. 4) Visuals: rich colour, tables and icons only on a TTY, plain when piped, --json overrides both, honour NO_COLOR, one semantic palette (error, warning, success). 5) Prompts: confirm, select and input prompts for people, always bypassable with --yes or --force for scripts. 6) Responsiveness: lazy-load to keep startup fast, a spinner past about one second, progress bars for file and network work. 7) Polish: config precedence flags > env > file > defaults, XDG paths, graceful Ctrl-C, semver. 8) Dual audience: keep the human layer on top of the agent contract rather than replacing it. 9) Score seven axes 0 to 3 (0-21): 0-5 hostile, 6-10 functional, 11-15 comfortable, 16-21 delightful. Full original skill(s) with license: vendor/kosif-atlas/skills/3390-human-cli/13926-human-cli.
+
+**المعاملات:** CLI, mode build or evaluate
+
+**التثبيت:** mkdir -p ~/.claude/skills && cp -r .claude/skills/kosif-superpowers/vendor/kosif-atlas/skills/3390-human-cli/13926-human-cli ~/.claude/skills/human-cli
+
+**الوسوم:** CLI UX · help text · error messages · NO_COLOR · shell completion · تجربة الطرفية · رسائل الخطأ
+
+#### 1. الاستقبال (A25)
+
+- اللغة والإطار: افتراض مكتوب ← لغة المستودع الموجود، وإلا Python أو HTML/JS بلا اعتماديات
+- أين يعمل: افتراض مكتوب ← المتصفح أو سطر الأوامر حسب المخرج
+- مستودع أو ملفات موجودة: سؤال بإجابة مقترحة ← مشروع جديد مستقل
+- متى يكون ناجحًا: افتراض مكتوب ← الاختبارات الموجودة تمر + اختبار لكل سلوك جديد
+- لا تُفترض أبدًا: مادة الإنتاج نفسها، والإذن بخطوة مدفوعة أو منشورة أو لا رجعة فيها، والهوية والحقوق.
+
+#### 2. الجاهزية والشارة (A28)
+
+- لا متطلبات مسجلة؛ افحص المسار والأداة بـ `hub.py doctor` قبل الشارة.
+- الوضع 1: شارة «هنا الآن» بعد الفحص، لا 📄 الكتالوج تلقائيًا · الوضع 2: `كتالوج: 📄 · هنا: غير مفحوص` · الوضع 3: بلا شارة ولا معرّف.
+
+#### 3. موضعها في الخطة (A26)
+
+- عقدة منمّطة: المدخل `spec` ← المخرج `code`، والمنفّذ `method:ACODE-296` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `atlas-ledger`.
+- مراحل النوع: قراءة الكود والاختبارات ← إعادة إنتاج أو اختبار جديد ← أصغر تغيير ← الاختبارات ← مراجعة الفرق ← فرع وPR.
+- إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
+
+#### 4. بوابة التحقق (A27)
+
+- إلزامي: الاختبارات الموجودة تمر قبل التعديل وبعده ← أمر الاختبار
+- إلزامي: اختبار لكل سلوك جديد أو خطأ مُصلح ← الاختبار الجديد يفشل قبل الإصلاح
+- إلزامي: لا أسرار ولا مسارات جلسة في الشيفرة ← بحث أنماط الأسرار
+- جودة: يطابق أسلوب الكود المحيط وتسمياته ← مراجعة الفرق
+- جودة: طريقة تشغيل مكتوبة ومجرَّبة ← تشغيل الأمر المكتوب
+- جودة: الفرق أصغر ما يحقق الطلب بلا إعادة كتابة غير مطلوبة ← git diff --stat
+- جودة: المدخل الخاطئ يعطي خطأ واضحًا لا انهيارًا صامتًا ← تشغيل بمدخل خاطئ
+- أمر الحكم في الوضع 1: `think.py qa code --answers qa.json` (PASS / FAIL / INCOMPLETE).
+
+#### 5. التعافي (A29)
+
+- `missing_dependency` (اعتمادية مفقودة، ميزانية 2): سمِّ الاعتمادية بالضبط (حزمة، برنامج، خط، نموذج) ← ثبّت محليًا في بيئة العمل إن كان مجانيًا ومسموحًا (pip --user أو venv أو npm محلي) · البديل: مسار المكتبة القياسية أو أداة أخرى من نفس المجموعة · تصعيد: تثبيت نظامي أو مدفوع أو يحتاج مفتاحًا: توقف واسأل
+- `quality_below_threshold` (جودة دون العتبة، ميزانية 3): أي معيار فشل وبكم (المقيس مقابل العتبة) ← عالج السبب الأكبر وحده ثم أعد القياس · البديل: المنهج البديل المكتوب للمرحلة في الخطة · تصعيد: معيار إلزامي لا يتحقق بعد البديل: توقف وأبلغ بالأرقام
+- `tool_error` (خطأ أداة، ميزانية 3): اقرأ آخر سطر في الخطأ ثم أول سطر من كودك فيه ← أصلح السبب المثبت وحده، ثم شغّل الاختبار المتعلق · البديل: أداة أخرى أو مسار يدوي للمرحلة نفسها · تصعيد: خطأ في أداة خارجية لا تملكها: بلّغ بإعادة الإنتاج ولا تخفه
+
+#### 6. الأدلة
+
+- `https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/3390-human-cli/13926-human-cli`
+
+#### 7. قدرات قريبة في العائلة
+
+- `ACODE-294` تنفيذ أدوات الوكيل وتركيبها: مهلة محددة، ومهام غير متزامنة بمقبض، وقابلية التكرار الآمن، والتعويض، وسلم التجريد / Agent tool execution and composition: bounded time, async job handles, safe retries, compensation, the abstraction ladder (documented)
+- `ACODE-295` واجهة أوامر للوكلاء أولًا: مخرجات منظمة كعقد بإصدار، وتحقق عند الحدود، ومقياس من 21 نقطة / Agent-first CLI: structured output as a versioned contract, validation at the boundary, a 21-point score (documented)
+- `ACODE-297` حزمة MCPB لخادم MCP محلي: ملف التعريف وإعدادات التثبيت والأمان الذي يقع على عاتقك / MCPB bundle for a local MCP server: manifest, install-time config, and the security you own (documented)
+- `ACODE-298` فحص الإضافات قبل التثبيت وخطة ربط MCP بأقل صلاحية: أنماط هجوم 2026 وقرار ثبّت أو قيّد أو ارفض / Extension vetting before install, and a least-privilege MCP integration plan: 2026 attack patterns and an install/restrict/reject verdict (documented)
+
+### `ACODE-297` — حزمة MCPB لخادم MCP محلي: ملف التعريف وإعدادات التثبيت والأمان الذي يقع على عاتقك / MCPB bundle for a local MCP server: manifest, install-time config, and the security you own
+
+| الحقل | القيمة |
+|---|---|
+| العائلة | `atlas-code` ([فصل العائلة](../../../.claude/skills/kosif-superpowers/references/powers/atlas-code.md)) |
+| المجموعة | البرمجة وبناء التطبيقات (`software`) |
+| نوع المخرج (A25، A27) | كود وتطبيقات ومواقع (`code`) |
+| الحالة في الكتالوج | 📄 `documented`: منهج موصوف يحتاج بناءً أو ربطًا قبل التشغيل |
+| سقف التحقق قبل العمل (A27) | V1 حتى تُبنى وتُشغَّل؛ لا تقدَّم جاهزة أبدًا |
+| نطاق الدليل | `url` |
+| الرخصة | card in our own words; the original skill folders are copied verbatim with their Apache-2.0 license and SOURCE.md under vendor/kosif-atlas |
+
+**ما هي:** تغليف خادم MCP يجب أن يعمل على جهاز المستخدم (ملفات محلية، تطبيق سطح مكتب، خدمات localhost) في حزمة واحدة يثبتها المضيف، مع إعدادات تُسأل عند التثبيت ومفاتيح تُحفظ في سلسلة مفاتيح النظام، والتنبيه أن الحزمة بلا عزل فالتحقق من المسارات والأوامر مسؤوليتك. — Package a local stdio MCP server as an installable bundle.
+
+**متى:** تغليف خادم MCP محلي للتوزيع، المستخدم يريد تثبيته بنقرة، الخادم يقرأ ملفات الجهاز / package a local MCP server
+
+**كيف:** 1) Decide first: a server that only calls cloud APIs should be a remote server, not a bundle. 2) Write the manifest: server.type (node, python or binary) is informational; server.mcp_config holds the literal command, args and env, using ${__dirname} for bundle paths and ${user_config.<key>} for install-time values (no automatic env prefix). 3) Declare user_config fields: a directory type renders a folder picker, sensitive: true stores the value in the OS keychain. 4) Server code is an ordinary stdio server; bundle its dependencies (node_modules or a vendored Python environment) so it runs without network installs. 5) Security is entirely yours: the process runs with the user's full privileges, so resolve and confine every path under the configured root, allowlist anything it spawns, and never pass user text to a shell. 6) Test by installing the bundle in a host, calling each tool, and trying a path outside the root to confirm refusal. Full original skill(s) with license: vendor/kosif-atlas/skills/297-mcp-server-dev/912-build-mcpb.
+
+**المعاملات:** server runtime, user_config fields
+
+**التثبيت:** mkdir -p ~/.claude/skills && cp -r .claude/skills/kosif-superpowers/vendor/kosif-atlas/skills/297-mcp-server-dev/912-build-mcpb ~/.claude/skills/build-mcpb
+
+**الوسوم:** MCPB · MCP bundle · local MCP server · manifest · تغليف · خادم MCP
+
+#### 1. الاستقبال (A25)
+
+- اللغة والإطار: افتراض مكتوب ← لغة المستودع الموجود، وإلا Python أو HTML/JS بلا اعتماديات
+- أين يعمل: افتراض مكتوب ← المتصفح أو سطر الأوامر حسب المخرج
+- مستودع أو ملفات موجودة: سؤال بإجابة مقترحة ← مشروع جديد مستقل
+- متى يكون ناجحًا: افتراض مكتوب ← الاختبارات الموجودة تمر + اختبار لكل سلوك جديد
+- لا تُفترض أبدًا: مادة الإنتاج نفسها، والإذن بخطوة مدفوعة أو منشورة أو لا رجعة فيها، والهوية والحقوق.
+
+#### 2. الجاهزية والشارة (A28)
+
+- `python3` ← افحص وجوده بأمر واحد قبل كتابة الشارة
+- الوضع 1: شارة «هنا الآن» بعد الفحص، لا 📄 الكتالوج تلقائيًا · الوضع 2: `كتالوج: 📄 · هنا: غير مفحوص` · الوضع 3: بلا شارة ولا معرّف.
+
+#### 3. موضعها في الخطة (A26)
+
+- عقدة منمّطة: المدخل `spec` ← المخرج `code`، والمنفّذ `method:ACODE-297` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `atlas-ledger`.
+- مراحل النوع: قراءة الكود والاختبارات ← إعادة إنتاج أو اختبار جديد ← أصغر تغيير ← الاختبارات ← مراجعة الفرق ← فرع وPR.
+- إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
+
+#### 4. بوابة التحقق (A27)
+
+- إلزامي: الاختبارات الموجودة تمر قبل التعديل وبعده ← أمر الاختبار
+- إلزامي: اختبار لكل سلوك جديد أو خطأ مُصلح ← الاختبار الجديد يفشل قبل الإصلاح
+- إلزامي: لا أسرار ولا مسارات جلسة في الشيفرة ← بحث أنماط الأسرار
+- جودة: يطابق أسلوب الكود المحيط وتسمياته ← مراجعة الفرق
+- جودة: طريقة تشغيل مكتوبة ومجرَّبة ← تشغيل الأمر المكتوب
+- جودة: الفرق أصغر ما يحقق الطلب بلا إعادة كتابة غير مطلوبة ← git diff --stat
+- جودة: المدخل الخاطئ يعطي خطأ واضحًا لا انهيارًا صامتًا ← تشغيل بمدخل خاطئ
+- أمر الحكم في الوضع 1: `think.py qa code --answers qa.json` (PASS / FAIL / INCOMPLETE).
+
+#### 5. التعافي (A29)
+
+- `missing_dependency` (اعتمادية مفقودة، ميزانية 2): سمِّ الاعتمادية بالضبط (حزمة، برنامج، خط، نموذج) ← ثبّت محليًا في بيئة العمل إن كان مجانيًا ومسموحًا (pip --user أو venv أو npm محلي) · البديل: مسار المكتبة القياسية أو أداة أخرى من نفس المجموعة · تصعيد: تثبيت نظامي أو مدفوع أو يحتاج مفتاحًا: توقف واسأل
+- `quality_below_threshold` (جودة دون العتبة، ميزانية 3): أي معيار فشل وبكم (المقيس مقابل العتبة) ← عالج السبب الأكبر وحده ثم أعد القياس · البديل: المنهج البديل المكتوب للمرحلة في الخطة · تصعيد: معيار إلزامي لا يتحقق بعد البديل: توقف وأبلغ بالأرقام
+- `tool_error` (خطأ أداة، ميزانية 3): اقرأ آخر سطر في الخطأ ثم أول سطر من كودك فيه ← أصلح السبب المثبت وحده، ثم شغّل الاختبار المتعلق · البديل: أداة أخرى أو مسار يدوي للمرحلة نفسها · تصعيد: خطأ في أداة خارجية لا تملكها: بلّغ بإعادة الإنتاج ولا تخفه
+
+#### 6. الأدلة
+
+- `https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/297-mcp-server-dev/912-build-mcpb`
+
+#### 7. قدرات قريبة في العائلة
+
+- `ACODE-295` واجهة أوامر للوكلاء أولًا: مخرجات منظمة كعقد بإصدار، وتحقق عند الحدود، ومقياس من 21 نقطة / Agent-first CLI: structured output as a versioned contract, validation at the boundary, a 21-point score (documented)
+- `ACODE-296` واجهة أوامر ودودة للبشر: شكل ثابت للمساعدة والأخطاء، وتلوين يحترم الطرفية، ومقياس من 21 نقطة / Human-friendly CLI: fixed help and error layouts, TTY-aware visuals, a 21-point score (documented)
+- `ACODE-298` فحص الإضافات قبل التثبيت وخطة ربط MCP بأقل صلاحية: أنماط هجوم 2026 وقرار ثبّت أو قيّد أو ارفض / Extension vetting before install, and a least-privilege MCP integration plan: 2026 attack patterns and an install/restrict/reject verdict (documented)
+- `ACODE-299` نقل إعداد MCP في Claude Code بين الأجهزة: أربعة مفاتيح فقط من ~/.claude.json / Move Claude Code's MCP setup between machines: exactly four keys of ~/.claude.json (documented)
+
+### `ACODE-298` — فحص الإضافات قبل التثبيت وخطة ربط MCP بأقل صلاحية: أنماط هجوم 2026 وقرار ثبّت أو قيّد أو ارفض / Extension vetting before install, and a least-privilege MCP integration plan: 2026 attack patterns and an install/restrict/reject verdict
+
+| الحقل | القيمة |
+|---|---|
+| العائلة | `atlas-code` ([فصل العائلة](../../../.claude/skills/kosif-superpowers/references/powers/atlas-code.md)) |
+| المجموعة | البرمجة وبناء التطبيقات (`software`) |
+| نوع المخرج (A25، A27) | كود وتطبيقات ومواقع (`code`) |
+| الحالة في الكتالوج | 📄 `documented`: منهج موصوف يحتاج بناءً أو ربطًا قبل التشغيل |
+| سقف التحقق قبل العمل (A27) | V1 حتى تُبنى وتُشغَّل؛ لا تقدَّم جاهزة أبدًا |
+| نطاق الدليل | `url` |
+| الرخصة | card in our own words; the original skill folders are copied verbatim with their MIT license and SOURCE.md under vendor/kosif-atlas |
+
+**ما هي:** مراجعة أي مهارة أو إضافة أو خادم MCP أو خطاف بقدر ما يستطيع فعله: المصدر والقدرات المطلوبة وقراءة كل ملف، مع فحص صريح لأنماط هجوم حديثة (تضخيم التقييمات، أسماء قريبة من المشهورة، نص مخفي بمحارف صفرية العرض أو ثنائية الاتجاه، تعليمات بلا كود، إصلاحات مزيفة بلصق base64، محفزات نائمة)، ثم خطة ربط أنظمة الشركة بالوكلاء تبدأ بالقراءة فقط. — Vet extensions and plan MCP access together.
+
+**متى:** هل هذه المهارة أو الإضافة آمنة للتثبيت، أي أنظمة داخلية نربطها بالوكلاء عبر MCP / is this extension safe, which systems should agents reach
+
+**كيف:** 1) Provenance: publisher, repository age and commit history; stars and download counts are weak signals and can be bot-inflated, so popularity is not provenance; licence compatible with policy. 2) Capabilities: instructions only, or code (hooks, MCP servers, scripts, binaries); allowed-tools, network endpoints, filesystem reach, credentials requested. 3) Read every SKILL.md, command, agent and hook; look for exfiltration, disabling safety checks, fetch-and-run of remote code, unknown URLs, reading secrets, overriding the user, and descriptions that trigger too broadly; in scripts look for obfuscation, curl \| sh, eval of downloads, writes outside the workspace. 4) Check the 2026 patterns explicitly: name squatting one character off a popular name, zero-width or bidirectional Unicode in instruction files and tool descriptions (scan, they are invisible in editors), payload-less natural-language attacks, fake-fix instructions, dormant triggers. 5) Verdict: install, install restricted (named limits), or reject, with the evidence. 6) For MCP access: list what knowledge agents lack and where it lives, map each source to an official, self-hosted or read-only server, start read-only and project-scoped with per-user auth, never give production write access without a human gate, mark sources carrying third-party text as injection-exposed and require confirmation before acting on instructions found there, roll out highest value times lowest risk first, check the configuration into the repo, and keep a 'do not connect' list with reasons. Full original skill(s) with license: vendor/kosif-atlas/skills/3049-adlc-govern/13125-extension-vetting, vendor/kosif-atlas/skills/3049-adlc-govern/13130-vet-extension, vendor/kosif-atlas/skills/3047-adlc-context/13104-mcp-integration-plan.
+
+**المعاملات:** extension URL or folder; list of candidate systems
+
+**التثبيت:** mkdir -p ~/.claude/skills && cp -r .claude/skills/kosif-superpowers/vendor/kosif-atlas/skills/3049-adlc-govern/13125-extension-vetting ~/.claude/skills/extension-vetting ; mkdir -p ~/.claude/skills && cp -r .claude/skills/kosif-superpowers/vendor/kosif-atlas/skills/3049-adlc-govern/13130-vet-extension ~/.claude/skills/vet-extension ; mkdir -p ~/.claude/skills && cp -r .claude/skills/kosif-superpowers/vendor/kosif-atlas/skills/3047-adlc-context/13104-mcp-integration-plan ~/.claude/skills/mcp-integration-plan
+
+**الوسوم:** extension vetting · supply chain · MCP security · hidden unicode · least privilege · فحص الإضافات · سلسلة التوريد
+
+#### 1. الاستقبال (A25)
+
+- اللغة والإطار: افتراض مكتوب ← لغة المستودع الموجود، وإلا Python أو HTML/JS بلا اعتماديات
+- أين يعمل: افتراض مكتوب ← المتصفح أو سطر الأوامر حسب المخرج
+- مستودع أو ملفات موجودة: سؤال بإجابة مقترحة ← مشروع جديد مستقل
+- متى يكون ناجحًا: افتراض مكتوب ← الاختبارات الموجودة تمر + اختبار لكل سلوك جديد
+- لا تُفترض أبدًا: مادة الإنتاج نفسها، والإذن بخطوة مدفوعة أو منشورة أو لا رجعة فيها، والهوية والحقوق.
+
+#### 2. الجاهزية والشارة (A28)
+
+- لا متطلبات مسجلة؛ افحص المسار والأداة بـ `hub.py doctor` قبل الشارة.
+- الوضع 1: شارة «هنا الآن» بعد الفحص، لا 📄 الكتالوج تلقائيًا · الوضع 2: `كتالوج: 📄 · هنا: غير مفحوص` · الوضع 3: بلا شارة ولا معرّف.
+
+#### 3. موضعها في الخطة (A26)
+
+- عقدة منمّطة: المدخل `spec` ← المخرج `code`، والمنفّذ `method:ACODE-298` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `atlas-ledger`.
+- مراحل النوع: قراءة الكود والاختبارات ← إعادة إنتاج أو اختبار جديد ← أصغر تغيير ← الاختبارات ← مراجعة الفرق ← فرع وPR.
+- إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
+
+#### 4. بوابة التحقق (A27)
+
+- إلزامي: الاختبارات الموجودة تمر قبل التعديل وبعده ← أمر الاختبار
+- إلزامي: اختبار لكل سلوك جديد أو خطأ مُصلح ← الاختبار الجديد يفشل قبل الإصلاح
+- إلزامي: لا أسرار ولا مسارات جلسة في الشيفرة ← بحث أنماط الأسرار
+- جودة: يطابق أسلوب الكود المحيط وتسمياته ← مراجعة الفرق
+- جودة: طريقة تشغيل مكتوبة ومجرَّبة ← تشغيل الأمر المكتوب
+- جودة: الفرق أصغر ما يحقق الطلب بلا إعادة كتابة غير مطلوبة ← git diff --stat
+- جودة: المدخل الخاطئ يعطي خطأ واضحًا لا انهيارًا صامتًا ← تشغيل بمدخل خاطئ
+- أمر الحكم في الوضع 1: `think.py qa code --answers qa.json` (PASS / FAIL / INCOMPLETE).
+
+#### 5. التعافي (A29)
+
+- `missing_dependency` (اعتمادية مفقودة، ميزانية 2): سمِّ الاعتمادية بالضبط (حزمة، برنامج، خط، نموذج) ← ثبّت محليًا في بيئة العمل إن كان مجانيًا ومسموحًا (pip --user أو venv أو npm محلي) · البديل: مسار المكتبة القياسية أو أداة أخرى من نفس المجموعة · تصعيد: تثبيت نظامي أو مدفوع أو يحتاج مفتاحًا: توقف واسأل
+- `quality_below_threshold` (جودة دون العتبة، ميزانية 3): أي معيار فشل وبكم (المقيس مقابل العتبة) ← عالج السبب الأكبر وحده ثم أعد القياس · البديل: المنهج البديل المكتوب للمرحلة في الخطة · تصعيد: معيار إلزامي لا يتحقق بعد البديل: توقف وأبلغ بالأرقام
+- `tool_error` (خطأ أداة، ميزانية 3): اقرأ آخر سطر في الخطأ ثم أول سطر من كودك فيه ← أصلح السبب المثبت وحده، ثم شغّل الاختبار المتعلق · البديل: أداة أخرى أو مسار يدوي للمرحلة نفسها · تصعيد: خطأ في أداة خارجية لا تملكها: بلّغ بإعادة الإنتاج ولا تخفه
+
+#### 6. الأدلة
+
+- `https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/3049-adlc-govern/13125-extension-vetting`
+- `https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/3049-adlc-govern/13130-vet-extension`
+- `https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/3047-adlc-context/13104-mcp-integration-plan`
+
+#### 7. قدرات قريبة في العائلة
+
+- `ACODE-296` واجهة أوامر ودودة للبشر: شكل ثابت للمساعدة والأخطاء، وتلوين يحترم الطرفية، ومقياس من 21 نقطة / Human-friendly CLI: fixed help and error layouts, TTY-aware visuals, a 21-point score (documented)
+- `ACODE-297` حزمة MCPB لخادم MCP محلي: ملف التعريف وإعدادات التثبيت والأمان الذي يقع على عاتقك / MCPB bundle for a local MCP server: manifest, install-time config, and the security you own (documented)
+- `ACODE-299` نقل إعداد MCP في Claude Code بين الأجهزة: أربعة مفاتيح فقط من ~/.claude.json / Move Claude Code's MCP setup between machines: exactly four keys of ~/.claude.json (documented)
 - `ACODE-30` مصادقة JWT مع تدوير التحديث وصلاحيات الأدوار / JWT auth with refresh rotation and RBAC (documented)
-- `ACODE-31` إعداد مصادقة API بأقل صلاحيات والتحقق منها / Least-privilege API auth setup and verification (documented)
+
+### `ACODE-299` — نقل إعداد MCP في Claude Code بين الأجهزة: أربعة مفاتيح فقط من ~/.claude.json / Move Claude Code's MCP setup between machines: exactly four keys of ~/.claude.json
+
+| الحقل | القيمة |
+|---|---|
+| العائلة | `atlas-code` ([فصل العائلة](../../../.claude/skills/kosif-superpowers/references/powers/atlas-code.md)) |
+| المجموعة | البرمجة وبناء التطبيقات (`software`) |
+| نوع المخرج (A25، A27) | كود وتطبيقات ومواقع (`code`) |
+| الحالة في الكتالوج | 📄 `documented`: منهج موصوف يحتاج بناءً أو ربطًا قبل التشغيل |
+| سقف التحقق قبل العمل (A27) | V1 حتى تُبنى وتُشغَّل؛ لا تقدَّم جاهزة أبدًا |
+| نطاق الدليل | `url` |
+| الرخصة | card in our own words; the original skill folders are copied verbatim with their MIT license and SOURCE.md under vendor/kosif-atlas |
+
+**ما هي:** ملف ~/.claude.json يحمل إعداد MCP ومعه سجل المشاريع وتلميحات المحادثات والعدادات؛ نسخه كاملًا يسرّب حالة شخصية، ونسخ mcpServers العلوي وحده يسقط حالة المشروع. الشريحة الصحيحة أربعة مفاتيح في نطاقين. — The exact MCP slice of the Claude Code config.
+
+**متى:** مزامنة إعدادات Claude Code أو مشاركتها مع زميل، أداة نسخ ملف التعريف، مقارنة إعداد MCP بين جهازين / sharing or syncing MCP setup without personal state
+
+**كيف:** 1) User scope: copy the top-level mcpServers map. 2) Project scope, for each projects[<absolute path>]: mcpServers (servers added inside that project), enabledMcpjsonServers (the approved names from the repo's checked-in .mcp.json; without it the team servers stay disabled on the new machine), disabledMcpjsonServers (keep the same disabled state). 3) Drop everything else (history hints, counters, caches, onboarding flags). 4) Remap project keys when absolute paths differ between machines. 5) Strip or re-enter secrets inside server env blocks instead of carrying them in a shared file. 6) Verify on the target with claude mcp list in each project and compare the active set with the source. Full original skill(s) with license: vendor/kosif-atlas/skills/3282-claude-json-mcp-migration-slice/13793-claude-json-mcp-migration-slice.
+
+**المعاملات:** source and target paths
+
+**التثبيت:** mkdir -p ~/.claude/skills && cp -r .claude/skills/kosif-superpowers/vendor/kosif-atlas/skills/3282-claude-json-mcp-migration-slice/13793-claude-json-mcp-migration-slice ~/.claude/skills/claude-json-mcp-migration-slice
+
+**الوسوم:** Claude Code · MCP config · .claude.json · migration · إعداد MCP · نقل الإعدادات
+
+#### 1. الاستقبال (A25)
+
+- اللغة والإطار: افتراض مكتوب ← لغة المستودع الموجود، وإلا Python أو HTML/JS بلا اعتماديات
+- أين يعمل: افتراض مكتوب ← المتصفح أو سطر الأوامر حسب المخرج
+- مستودع أو ملفات موجودة: سؤال بإجابة مقترحة ← مشروع جديد مستقل
+- متى يكون ناجحًا: افتراض مكتوب ← الاختبارات الموجودة تمر + اختبار لكل سلوك جديد
+- لا تُفترض أبدًا: مادة الإنتاج نفسها، والإذن بخطوة مدفوعة أو منشورة أو لا رجعة فيها، والهوية والحقوق.
+
+#### 2. الجاهزية والشارة (A28)
+
+- لا متطلبات مسجلة؛ افحص المسار والأداة بـ `hub.py doctor` قبل الشارة.
+- الوضع 1: شارة «هنا الآن» بعد الفحص، لا 📄 الكتالوج تلقائيًا · الوضع 2: `كتالوج: 📄 · هنا: غير مفحوص` · الوضع 3: بلا شارة ولا معرّف.
+
+#### 3. موضعها في الخطة (A26)
+
+- عقدة منمّطة: المدخل `spec` ← المخرج `code`، والمنفّذ `method:ACODE-299` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `atlas-ledger`.
+- مراحل النوع: قراءة الكود والاختبارات ← إعادة إنتاج أو اختبار جديد ← أصغر تغيير ← الاختبارات ← مراجعة الفرق ← فرع وPR.
+- إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
+
+#### 4. بوابة التحقق (A27)
+
+- إلزامي: الاختبارات الموجودة تمر قبل التعديل وبعده ← أمر الاختبار
+- إلزامي: اختبار لكل سلوك جديد أو خطأ مُصلح ← الاختبار الجديد يفشل قبل الإصلاح
+- إلزامي: لا أسرار ولا مسارات جلسة في الشيفرة ← بحث أنماط الأسرار
+- جودة: يطابق أسلوب الكود المحيط وتسمياته ← مراجعة الفرق
+- جودة: طريقة تشغيل مكتوبة ومجرَّبة ← تشغيل الأمر المكتوب
+- جودة: الفرق أصغر ما يحقق الطلب بلا إعادة كتابة غير مطلوبة ← git diff --stat
+- جودة: المدخل الخاطئ يعطي خطأ واضحًا لا انهيارًا صامتًا ← تشغيل بمدخل خاطئ
+- أمر الحكم في الوضع 1: `think.py qa code --answers qa.json` (PASS / FAIL / INCOMPLETE).
+
+#### 5. التعافي (A29)
+
+- `missing_dependency` (اعتمادية مفقودة، ميزانية 2): سمِّ الاعتمادية بالضبط (حزمة، برنامج، خط، نموذج) ← ثبّت محليًا في بيئة العمل إن كان مجانيًا ومسموحًا (pip --user أو venv أو npm محلي) · البديل: مسار المكتبة القياسية أو أداة أخرى من نفس المجموعة · تصعيد: تثبيت نظامي أو مدفوع أو يحتاج مفتاحًا: توقف واسأل
+- `quality_below_threshold` (جودة دون العتبة، ميزانية 3): أي معيار فشل وبكم (المقيس مقابل العتبة) ← عالج السبب الأكبر وحده ثم أعد القياس · البديل: المنهج البديل المكتوب للمرحلة في الخطة · تصعيد: معيار إلزامي لا يتحقق بعد البديل: توقف وأبلغ بالأرقام
+- `tool_error` (خطأ أداة، ميزانية 3): اقرأ آخر سطر في الخطأ ثم أول سطر من كودك فيه ← أصلح السبب المثبت وحده، ثم شغّل الاختبار المتعلق · البديل: أداة أخرى أو مسار يدوي للمرحلة نفسها · تصعيد: خطأ في أداة خارجية لا تملكها: بلّغ بإعادة الإنتاج ولا تخفه
+
+#### 6. الأدلة
+
+- `https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/3282-claude-json-mcp-migration-slice/13793-claude-json-mcp-migration-slice`
+
+#### 7. قدرات قريبة في العائلة
+
+- `ACODE-297` حزمة MCPB لخادم MCP محلي: ملف التعريف وإعدادات التثبيت والأمان الذي يقع على عاتقك / MCPB bundle for a local MCP server: manifest, install-time config, and the security you own (documented)
+- `ACODE-298` فحص الإضافات قبل التثبيت وخطة ربط MCP بأقل صلاحية: أنماط هجوم 2026 وقرار ثبّت أو قيّد أو ارفض / Extension vetting before install, and a least-privilege MCP integration plan: 2026 attack patterns and an install/restrict/reject verdict (documented)
+- `ACODE-30` مصادقة JWT مع تدوير التحديث وصلاحيات الأدوار / JWT auth with refresh rotation and RBAC (documented)
+- `ACODE-300` اختيار طقم المدققات والمنسقات من الملفات الموجودة فعلًا، مع ShellCheck وBiome وClippy / Pick the linter and formatter stack from the files that actually exist, with ShellCheck, Biome and Clippy (documented)
 
 ### `ACODE-30` — مصادقة JWT مع تدوير التحديث وصلاحيات الأدوار / JWT auth with refresh rotation and RBAC
 
@@ -15232,10 +16880,737 @@
 
 #### 7. قدرات قريبة في العائلة
 
-- `ACODE-28` استخراج عميل API مستقل من تسجيل HAR / Derive standalone API client from HAR recording (documented)
-- `ACODE-29` قائمة تحصين نقطة GraphQL / GraphQL endpoint hardening checklist (documented)
+- `ACODE-298` فحص الإضافات قبل التثبيت وخطة ربط MCP بأقل صلاحية: أنماط هجوم 2026 وقرار ثبّت أو قيّد أو ارفض / Extension vetting before install, and a least-privilege MCP integration plan: 2026 attack patterns and an install/restrict/reject verdict (documented)
+- `ACODE-299` نقل إعداد MCP في Claude Code بين الأجهزة: أربعة مفاتيح فقط من ~/.claude.json / Move Claude Code's MCP setup between machines: exactly four keys of ~/.claude.json (documented)
+- `ACODE-300` اختيار طقم المدققات والمنسقات من الملفات الموجودة فعلًا، مع ShellCheck وBiome وClippy / Pick the linter and formatter stack from the files that actually exist, with ShellCheck, Biome and Clippy (documented)
+- `ACODE-301` الانتقال بين أداتين: لا تحذف القديمة إلا بإشارة تشغيل فعلية من الجديدة، ولا تتأخر في حذفها / Tool migration cutover: remove the incumbent only on an operational signal from the replacement, and not too late (documented)
+
+### `ACODE-300` — اختيار طقم المدققات والمنسقات من الملفات الموجودة فعلًا، مع ShellCheck وBiome وClippy / Pick the linter and formatter stack from the files that actually exist, with ShellCheck, Biome and Clippy
+
+| الحقل | القيمة |
+|---|---|
+| العائلة | `atlas-code` ([فصل العائلة](../../../.claude/skills/kosif-superpowers/references/powers/atlas-code.md)) |
+| المجموعة | البرمجة وبناء التطبيقات (`software`) |
+| نوع المخرج (A25، A27) | كود وتطبيقات ومواقع (`code`) |
+| الحالة في الكتالوج | 📄 `documented`: منهج موصوف يحتاج بناءً أو ربطًا قبل التشغيل |
+| سقف التحقق قبل العمل (A27) | V1 حتى تُبنى وتُشغَّل؛ لا تقدَّم جاهزة أبدًا |
+| نطاق الدليل | `url` |
+| الرخصة | card in our own words; the original skill folders are copied verbatim with their MIT license and SOURCE.md under vendor/kosif-atlas |
+
+**ما هي:** يكتشف نوع المشروع ومدققاته الحالية (حتى التي تعمل في CI بلا ملف إعداد) ثم يقترح طقمًا بحسب أنواع الملفات الموجودة: مدقق لكل لغة، ومنسق مشترك، وEditorConfig، ومدققات Markdown وCSS وDockerfile وworkflows وTOML وYAML، ومدقق إملاء. — Detection-driven linter setup.
+
+**متى:** إعداد مدققات ومنسقات لمشروع، إضافة prettier أو biome، ضبط ShellCheck أو Clippy / set up linters and formatters
+
+**كيف:** 1) Detect the project type, and verify real sources exist (a package.json with no .js or .ts files outside node_modules is not a JS project). 2) Detect existing linters from config files and from CI steps that run a tool without a config (shellcheck in a workflow counts). 3) Recommend by detected files: the language linter, a cross-language formatter, EditorConfig, markdownlint for Markdown, Stylelint for CSS, Knip when JS or TS sources exist, Hadolint for Dockerfiles, actionlint for workflows, Taplo for extra TOML, yamllint for many YAML files, cspell for all; Lean uses lake lint. 4) JS or TS can take Biome as a single fast formatter plus linter instead of ESLint plus Prettier; do not run both on the same files. 5) Rust: Clippy with a clippy.toml, pedantic or nursery groups enabled deliberately with per-lint allows, and -D warnings in CI. 6) Shell: ShellCheck with a .shellcheckrc, a severity floor, and inline disables that name the rule and the reason. 7) Wire one lint command locally and in CI, run it once, and fix or baseline existing findings before making it blocking. Full original skill(s) with license: vendor/kosif-atlas/skills/978-set-up-linters/2262-set-up-linters, vendor/kosif-atlas/skills/3519-shell-scripting/14290-shellcheck-configuration, vendor/kosif-atlas/skills/2174-typescript-plugin/7928-biome-tooling, vendor/kosif-atlas/skills/2167-rust-plugin/7867-clippy-advanced.
+
+**المعاملات:** repository
+
+**التثبيت:** mkdir -p ~/.claude/skills && cp -r .claude/skills/kosif-superpowers/vendor/kosif-atlas/skills/978-set-up-linters/2262-set-up-linters ~/.claude/skills/set-up-linters ; mkdir -p ~/.claude/skills && cp -r .claude/skills/kosif-superpowers/vendor/kosif-atlas/skills/3519-shell-scripting/14290-shellcheck-configuration ~/.claude/skills/shellcheck-configuration ; mkdir -p ~/.claude/skills && cp -r .claude/skills/kosif-superpowers/vendor/kosif-atlas/skills/2174-typescript-plugin/7928-biome-tooling ~/.claude/skills/biome-tooling ; mkdir -p ~/.claude/skills && cp -r .claude/skills/kosif-superpowers/vendor/kosif-atlas/skills/2167-rust-plugin/7867-clippy-advanced ~/.claude/skills/clippy-advanced
+
+**الوسوم:** linters · formatters · ShellCheck · Biome · Clippy · actionlint · المدققات · التنسيق
+
+#### 1. الاستقبال (A25)
+
+- اللغة والإطار: افتراض مكتوب ← لغة المستودع الموجود، وإلا Python أو HTML/JS بلا اعتماديات
+- أين يعمل: افتراض مكتوب ← المتصفح أو سطر الأوامر حسب المخرج
+- مستودع أو ملفات موجودة: سؤال بإجابة مقترحة ← مشروع جديد مستقل
+- متى يكون ناجحًا: افتراض مكتوب ← الاختبارات الموجودة تمر + اختبار لكل سلوك جديد
+- لا تُفترض أبدًا: مادة الإنتاج نفسها، والإذن بخطوة مدفوعة أو منشورة أو لا رجعة فيها، والهوية والحقوق.
+
+#### 2. الجاهزية والشارة (A28)
+
+- `lean` ← افحص وجوده بأمر واحد قبل كتابة الشارة
+- الوضع 1: شارة «هنا الآن» بعد الفحص، لا 📄 الكتالوج تلقائيًا · الوضع 2: `كتالوج: 📄 · هنا: غير مفحوص` · الوضع 3: بلا شارة ولا معرّف.
+
+#### 3. موضعها في الخطة (A26)
+
+- عقدة منمّطة: المدخل `spec` ← المخرج `code`، والمنفّذ `method:ACODE-300` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `atlas-ledger`.
+- مراحل النوع: قراءة الكود والاختبارات ← إعادة إنتاج أو اختبار جديد ← أصغر تغيير ← الاختبارات ← مراجعة الفرق ← فرع وPR.
+- إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
+
+#### 4. بوابة التحقق (A27)
+
+- إلزامي: الاختبارات الموجودة تمر قبل التعديل وبعده ← أمر الاختبار
+- إلزامي: اختبار لكل سلوك جديد أو خطأ مُصلح ← الاختبار الجديد يفشل قبل الإصلاح
+- إلزامي: لا أسرار ولا مسارات جلسة في الشيفرة ← بحث أنماط الأسرار
+- جودة: يطابق أسلوب الكود المحيط وتسمياته ← مراجعة الفرق
+- جودة: طريقة تشغيل مكتوبة ومجرَّبة ← تشغيل الأمر المكتوب
+- جودة: الفرق أصغر ما يحقق الطلب بلا إعادة كتابة غير مطلوبة ← git diff --stat
+- جودة: المدخل الخاطئ يعطي خطأ واضحًا لا انهيارًا صامتًا ← تشغيل بمدخل خاطئ
+- أمر الحكم في الوضع 1: `think.py qa code --answers qa.json` (PASS / FAIL / INCOMPLETE).
+
+#### 5. التعافي (A29)
+
+- `missing_dependency` (اعتمادية مفقودة، ميزانية 2): سمِّ الاعتمادية بالضبط (حزمة، برنامج، خط، نموذج) ← ثبّت محليًا في بيئة العمل إن كان مجانيًا ومسموحًا (pip --user أو venv أو npm محلي) · البديل: مسار المكتبة القياسية أو أداة أخرى من نفس المجموعة · تصعيد: تثبيت نظامي أو مدفوع أو يحتاج مفتاحًا: توقف واسأل
+- `quality_below_threshold` (جودة دون العتبة، ميزانية 3): أي معيار فشل وبكم (المقيس مقابل العتبة) ← عالج السبب الأكبر وحده ثم أعد القياس · البديل: المنهج البديل المكتوب للمرحلة في الخطة · تصعيد: معيار إلزامي لا يتحقق بعد البديل: توقف وأبلغ بالأرقام
+- `tool_error` (خطأ أداة، ميزانية 3): اقرأ آخر سطر في الخطأ ثم أول سطر من كودك فيه ← أصلح السبب المثبت وحده، ثم شغّل الاختبار المتعلق · البديل: أداة أخرى أو مسار يدوي للمرحلة نفسها · تصعيد: خطأ في أداة خارجية لا تملكها: بلّغ بإعادة الإنتاج ولا تخفه
+
+#### 6. الأدلة
+
+- `https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/978-set-up-linters/2262-set-up-linters`
+- `https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/3519-shell-scripting/14290-shellcheck-configuration`
+- `https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/2174-typescript-plugin/7928-biome-tooling`
+- `https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/2167-rust-plugin/7867-clippy-advanced`
+
+#### 7. قدرات قريبة في العائلة
+
+- `ACODE-299` نقل إعداد MCP في Claude Code بين الأجهزة: أربعة مفاتيح فقط من ~/.claude.json / Move Claude Code's MCP setup between machines: exactly four keys of ~/.claude.json (documented)
+- `ACODE-30` مصادقة JWT مع تدوير التحديث وصلاحيات الأدوار / JWT auth with refresh rotation and RBAC (documented)
+- `ACODE-301` الانتقال بين أداتين: لا تحذف القديمة إلا بإشارة تشغيل فعلية من الجديدة، ولا تتأخر في حذفها / Tool migration cutover: remove the incumbent only on an operational signal from the replacement, and not too late (documented)
+- `ACODE-302` بحث الطرفية السريع: ripgrep وfd للمسح ثم fzf --filter للترتيب الضبابي دون تفاعل / Fast terminal search: ripgrep and fd to scan, then fzf --filter to fuzzy-rank non-interactively (documented)
+
+### `ACODE-301` — الانتقال بين أداتين: لا تحذف القديمة إلا بإشارة تشغيل فعلية من الجديدة، ولا تتأخر في حذفها / Tool migration cutover: remove the incumbent only on an operational signal from the replacement, and not too late
+
+| الحقل | القيمة |
+|---|---|
+| العائلة | `atlas-code` ([فصل العائلة](../../../.claude/skills/kosif-superpowers/references/powers/atlas-code.md)) |
+| المجموعة | البرمجة وبناء التطبيقات (`software`) |
+| نوع المخرج (A25، A27) | كود وتطبيقات ومواقع (`code`) |
+| الحالة في الكتالوج | 📄 `documented`: منهج موصوف يحتاج بناءً أو ربطًا قبل التشغيل |
+| سقف التحقق قبل العمل (A27) | V1 حتى تُبنى وتُشغَّل؛ لا تقدَّم جاهزة أبدًا |
+| نطاق الدليل | `url` |
+| الرخصة | card in our own words; the original skill folders are copied verbatim with their MIT license and SOURCE.md under vendor/kosif-atlas |
+
+**ما هي:** الفشل الشائع: إعداد الأداة الجديدة موجود ويبدو صحيحًا فيُحذف القديم، والجديد لم يعمل قط بسبب صلاحيات أو أسرار ناقصة، ولا يصدر أي خطأ عن 'لا شيء يحدّث التبعيات'. والفشل المعاكس: القديم يبقى في خطاف ما قبل الالتزام فيعيد تنسيق الكود بالأسلوب الخطأ في كل commit. — Gate removal of the old tool on evidence, and sweep every wiring.
+
+**متى:** استبدال Dependabot بـRenovate، أو PAT بتطبيق GitHub، أو منسق بآخر، أو أي أداة بأخرى / replacing one tool with another
+
+**كيف:** 1) Never treat config presence as operation. 2) Gate removal of the incumbent on positive signals: the replacement's runner ran and succeeded (recent runs listed), its side effects appeared on the target (dashboard issue, branches, PRs), and the credentials it needs exist where it consumes them. 3) Only then remove the incumbent, in a commit that cites the evidence. 4) The mirror failure: after switching scripts and CI, sweep every other wiring (pre-commit and lint-staged hooks, editor settings, Makefile targets, docs) for the old tool. 5) Decide which tool is canonical mechanically (which config the CI job really loads), not by reasoning. 6) Simulate the real hook on a staged change rather than just swapping the command, and confirm a correctly formatted file stays unchanged. Full original skill(s) with license: vendor/kosif-atlas/skills/2160-migration-patterns-plugin/7805-tool-migration-cutover.
+
+**المعاملات:** incumbent, replacement
+
+**التثبيت:** mkdir -p ~/.claude/skills && cp -r .claude/skills/kosif-superpowers/vendor/kosif-atlas/skills/2160-migration-patterns-plugin/7805-tool-migration-cutover ~/.claude/skills/tool-migration-cutover
+
+**الوسوم:** migration · cutover · Renovate · Dependabot · pre-commit · ترحيل الأدوات · استبدال أداة
+
+#### 1. الاستقبال (A25)
+
+- اللغة والإطار: افتراض مكتوب ← لغة المستودع الموجود، وإلا Python أو HTML/JS بلا اعتماديات
+- أين يعمل: افتراض مكتوب ← المتصفح أو سطر الأوامر حسب المخرج
+- مستودع أو ملفات موجودة: سؤال بإجابة مقترحة ← مشروع جديد مستقل
+- متى يكون ناجحًا: افتراض مكتوب ← الاختبارات الموجودة تمر + اختبار لكل سلوك جديد
+- لا تُفترض أبدًا: مادة الإنتاج نفسها، والإذن بخطوة مدفوعة أو منشورة أو لا رجعة فيها، والهوية والحقوق.
+
+#### 2. الجاهزية والشارة (A28)
+
+- لا متطلبات مسجلة؛ افحص المسار والأداة بـ `hub.py doctor` قبل الشارة.
+- الوضع 1: شارة «هنا الآن» بعد الفحص، لا 📄 الكتالوج تلقائيًا · الوضع 2: `كتالوج: 📄 · هنا: غير مفحوص` · الوضع 3: بلا شارة ولا معرّف.
+
+#### 3. موضعها في الخطة (A26)
+
+- عقدة منمّطة: المدخل `spec` ← المخرج `code`، والمنفّذ `method:ACODE-301` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `atlas-ledger`.
+- مراحل النوع: قراءة الكود والاختبارات ← إعادة إنتاج أو اختبار جديد ← أصغر تغيير ← الاختبارات ← مراجعة الفرق ← فرع وPR.
+- إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
+
+#### 4. بوابة التحقق (A27)
+
+- إلزامي: الاختبارات الموجودة تمر قبل التعديل وبعده ← أمر الاختبار
+- إلزامي: اختبار لكل سلوك جديد أو خطأ مُصلح ← الاختبار الجديد يفشل قبل الإصلاح
+- إلزامي: لا أسرار ولا مسارات جلسة في الشيفرة ← بحث أنماط الأسرار
+- جودة: يطابق أسلوب الكود المحيط وتسمياته ← مراجعة الفرق
+- جودة: طريقة تشغيل مكتوبة ومجرَّبة ← تشغيل الأمر المكتوب
+- جودة: الفرق أصغر ما يحقق الطلب بلا إعادة كتابة غير مطلوبة ← git diff --stat
+- جودة: المدخل الخاطئ يعطي خطأ واضحًا لا انهيارًا صامتًا ← تشغيل بمدخل خاطئ
+- أمر الحكم في الوضع 1: `think.py qa code --answers qa.json` (PASS / FAIL / INCOMPLETE).
+
+#### 5. التعافي (A29)
+
+- `missing_dependency` (اعتمادية مفقودة، ميزانية 2): سمِّ الاعتمادية بالضبط (حزمة، برنامج، خط، نموذج) ← ثبّت محليًا في بيئة العمل إن كان مجانيًا ومسموحًا (pip --user أو venv أو npm محلي) · البديل: مسار المكتبة القياسية أو أداة أخرى من نفس المجموعة · تصعيد: تثبيت نظامي أو مدفوع أو يحتاج مفتاحًا: توقف واسأل
+- `quality_below_threshold` (جودة دون العتبة، ميزانية 3): أي معيار فشل وبكم (المقيس مقابل العتبة) ← عالج السبب الأكبر وحده ثم أعد القياس · البديل: المنهج البديل المكتوب للمرحلة في الخطة · تصعيد: معيار إلزامي لا يتحقق بعد البديل: توقف وأبلغ بالأرقام
+- `tool_error` (خطأ أداة، ميزانية 3): اقرأ آخر سطر في الخطأ ثم أول سطر من كودك فيه ← أصلح السبب المثبت وحده، ثم شغّل الاختبار المتعلق · البديل: أداة أخرى أو مسار يدوي للمرحلة نفسها · تصعيد: خطأ في أداة خارجية لا تملكها: بلّغ بإعادة الإنتاج ولا تخفه
+
+#### 6. الأدلة
+
+- `https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/2160-migration-patterns-plugin/7805-tool-migration-cutover`
+
+#### 7. قدرات قريبة في العائلة
+
+- `ACODE-30` مصادقة JWT مع تدوير التحديث وصلاحيات الأدوار / JWT auth with refresh rotation and RBAC (documented)
+- `ACODE-300` اختيار طقم المدققات والمنسقات من الملفات الموجودة فعلًا، مع ShellCheck وBiome وClippy / Pick the linter and formatter stack from the files that actually exist, with ShellCheck, Biome and Clippy (documented)
+- `ACODE-302` بحث الطرفية السريع: ripgrep وfd للمسح ثم fzf --filter للترتيب الضبابي دون تفاعل / Fast terminal search: ripgrep and fd to scan, then fzf --filter to fuzzy-rank non-interactively (documented)
+- `ACODE-303` تنظيف ملفات الإعداد الطبقية: احذف من ملف البيئة ما يطابق الأساس، وأثبت أن الإعداد الفعلي لم يتغير / Deduplicate layered config overlays, and prove the effective config did not change (documented)
+
+### `ACODE-302` — بحث الطرفية السريع: ripgrep وfd للمسح ثم fzf --filter للترتيب الضبابي دون تفاعل / Fast terminal search: ripgrep and fd to scan, then fzf --filter to fuzzy-rank non-interactively
+
+| الحقل | القيمة |
+|---|---|
+| العائلة | `atlas-code` ([فصل العائلة](../../../.claude/skills/kosif-superpowers/references/powers/atlas-code.md)) |
+| المجموعة | البرمجة وبناء التطبيقات (`software`) |
+| نوع المخرج (A25، A27) | كود وتطبيقات ومواقع (`code`) |
+| الحالة في الكتالوج | 📄 `documented`: منهج موصوف يحتاج بناءً أو ربطًا قبل التشغيل |
+| سقف التحقق قبل العمل (A27) | V1 حتى تُبنى وتُشغَّل؛ لا تقدَّم جاهزة أبدًا |
+| نطاق الدليل | `url` |
+| الرخصة | card in our own words; the original skill folders are copied verbatim with their MIT license and SOURCE.md under vendor/kosif-atlas |
+
+**ما هي:** مرحلتان: أداة regex تمشي الشجرة وتحترم .gitignore وتخرج الأسطر أو المسارات، ثم fzf --filter يبقي ما يطابق ضبابيًا ويرتبه، وrga لملفات PDF والمستندات والأرشيف؛ مع متى يكفي regex وحده ومتى نحتاج الاختيار التفاعلي. — A two-stage scan-then-rank search pipeline an agent can run.
+
+**متى:** البحث عن ملف لا تعرف اسمه بالضبط، البحث في الكود أو المستندات بكلمات تقريبية، استبدال find وgrep بأدوات أسرع / fuzzy file or content search
+
+**كيف:** 1) If a regex answers the question use rg or fd alone; add fuzzy ranking only for approximate queries. 2) Files: fd (or rg --files) \| fzf --filter '<query>' --scheme=path so path structure weighs in; use -0 with --read0 for paths with spaces or newlines. 3) Content: rg --line-number --no-heading --color=never '<regex>' \| fzf --filter '<fuzzy query>'; color must be off before filtering or escape codes pollute the match; to ignore the path, scope fzf to the text field with --delimiter : --nth '3..'. 4) Documents and PDFs: rga '<regex>' then fzf --filter, and open the hit page with pdftotext or PyMuPDF. 5) fzf query syntax: space is AND (escape it for a literal space), 'exact, ^prefix, suffix$, !negation, \| for OR; . * [ are literals, not regex. 6) ripgrep habits: -t type filters, -g globs, --hidden and -uu only when ignored files matter, -F for fixed strings. 7) Interactive selection (previews, Ctrl-R history, Ctrl-T files) is a separate use of fzf for people at a terminal. Full original skill(s) with license: vendor/kosif-atlas/skills/1228-fuzzy-filter/2909-fuzzy-filter, vendor/kosif-atlas/skills/1261-ripgrep/2941-ripgrep, vendor/kosif-atlas/skills/1226-fd/2908-fd, vendor/kosif-atlas/skills/1230-fzf/2910-fzf.
+
+**المعاملات:** query, path
+
+**التثبيت:** mkdir -p ~/.claude/skills && cp -r .claude/skills/kosif-superpowers/vendor/kosif-atlas/skills/1228-fuzzy-filter/2909-fuzzy-filter ~/.claude/skills/fuzzy-filter ; mkdir -p ~/.claude/skills && cp -r .claude/skills/kosif-superpowers/vendor/kosif-atlas/skills/1261-ripgrep/2941-ripgrep ~/.claude/skills/ripgrep ; mkdir -p ~/.claude/skills && cp -r .claude/skills/kosif-superpowers/vendor/kosif-atlas/skills/1226-fd/2908-fd ~/.claude/skills/fd ; mkdir -p ~/.claude/skills && cp -r .claude/skills/kosif-superpowers/vendor/kosif-atlas/skills/1230-fzf/2910-fzf ~/.claude/skills/fzf
+
+**الوسوم:** ripgrep · fd · fzf · rga · fuzzy search · بحث ضبابي · البحث في الملفات
+
+#### 1. الاستقبال (A25)
+
+- اللغة والإطار: افتراض مكتوب ← لغة المستودع الموجود، وإلا Python أو HTML/JS بلا اعتماديات
+- أين يعمل: افتراض مكتوب ← المتصفح أو سطر الأوامر حسب المخرج
+- مستودع أو ملفات موجودة: سؤال بإجابة مقترحة ← مشروع جديد مستقل
+- متى يكون ناجحًا: افتراض مكتوب ← الاختبارات الموجودة تمر + اختبار لكل سلوك جديد
+- لا تُفترض أبدًا: مادة الإنتاج نفسها، والإذن بخطوة مدفوعة أو منشورة أو لا رجعة فيها، والهوية والحقوق.
+
+#### 2. الجاهزية والشارة (A28)
+
+- لا متطلبات مسجلة؛ افحص المسار والأداة بـ `hub.py doctor` قبل الشارة.
+- الوضع 1: شارة «هنا الآن» بعد الفحص، لا 📄 الكتالوج تلقائيًا · الوضع 2: `كتالوج: 📄 · هنا: غير مفحوص` · الوضع 3: بلا شارة ولا معرّف.
+
+#### 3. موضعها في الخطة (A26)
+
+- عقدة منمّطة: المدخل `spec` ← المخرج `code`، والمنفّذ `method:ACODE-302` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `atlas-ledger`.
+- مراحل النوع: قراءة الكود والاختبارات ← إعادة إنتاج أو اختبار جديد ← أصغر تغيير ← الاختبارات ← مراجعة الفرق ← فرع وPR.
+- إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
+
+#### 4. بوابة التحقق (A27)
+
+- إلزامي: الاختبارات الموجودة تمر قبل التعديل وبعده ← أمر الاختبار
+- إلزامي: اختبار لكل سلوك جديد أو خطأ مُصلح ← الاختبار الجديد يفشل قبل الإصلاح
+- إلزامي: لا أسرار ولا مسارات جلسة في الشيفرة ← بحث أنماط الأسرار
+- جودة: يطابق أسلوب الكود المحيط وتسمياته ← مراجعة الفرق
+- جودة: طريقة تشغيل مكتوبة ومجرَّبة ← تشغيل الأمر المكتوب
+- جودة: الفرق أصغر ما يحقق الطلب بلا إعادة كتابة غير مطلوبة ← git diff --stat
+- جودة: المدخل الخاطئ يعطي خطأ واضحًا لا انهيارًا صامتًا ← تشغيل بمدخل خاطئ
+- أمر الحكم في الوضع 1: `think.py qa code --answers qa.json` (PASS / FAIL / INCOMPLETE).
+
+#### 5. التعافي (A29)
+
+- `missing_dependency` (اعتمادية مفقودة، ميزانية 2): سمِّ الاعتمادية بالضبط (حزمة، برنامج، خط، نموذج) ← ثبّت محليًا في بيئة العمل إن كان مجانيًا ومسموحًا (pip --user أو venv أو npm محلي) · البديل: مسار المكتبة القياسية أو أداة أخرى من نفس المجموعة · تصعيد: تثبيت نظامي أو مدفوع أو يحتاج مفتاحًا: توقف واسأل
+- `quality_below_threshold` (جودة دون العتبة، ميزانية 3): أي معيار فشل وبكم (المقيس مقابل العتبة) ← عالج السبب الأكبر وحده ثم أعد القياس · البديل: المنهج البديل المكتوب للمرحلة في الخطة · تصعيد: معيار إلزامي لا يتحقق بعد البديل: توقف وأبلغ بالأرقام
+- `tool_error` (خطأ أداة، ميزانية 3): اقرأ آخر سطر في الخطأ ثم أول سطر من كودك فيه ← أصلح السبب المثبت وحده، ثم شغّل الاختبار المتعلق · البديل: أداة أخرى أو مسار يدوي للمرحلة نفسها · تصعيد: خطأ في أداة خارجية لا تملكها: بلّغ بإعادة الإنتاج ولا تخفه
+
+#### 6. الأدلة
+
+- `https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/1228-fuzzy-filter/2909-fuzzy-filter`
+- `https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/1261-ripgrep/2941-ripgrep`
+- `https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/1226-fd/2908-fd`
+- `https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/1230-fzf/2910-fzf`
+
+#### 7. قدرات قريبة في العائلة
+
+- `ACODE-300` اختيار طقم المدققات والمنسقات من الملفات الموجودة فعلًا، مع ShellCheck وBiome وClippy / Pick the linter and formatter stack from the files that actually exist, with ShellCheck, Biome and Clippy (documented)
+- `ACODE-301` الانتقال بين أداتين: لا تحذف القديمة إلا بإشارة تشغيل فعلية من الجديدة، ولا تتأخر في حذفها / Tool migration cutover: remove the incumbent only on an operational signal from the replacement, and not too late (documented)
+- `ACODE-303` تنظيف ملفات الإعداد الطبقية: احذف من ملف البيئة ما يطابق الأساس، وأثبت أن الإعداد الفعلي لم يتغير / Deduplicate layered config overlays, and prove the effective config did not change (documented)
+- `ACODE-304` نفاد جدول الملفات على مستوى النظام بسبب عمليات يتيمة: ENFILE أم EMFILE يحدد التشخيص كله / System-wide file table exhaustion from orphaned helper processes: ENFILE vs EMFILE decides the diagnosis (documented)
+
+### `ACODE-303` — تنظيف ملفات الإعداد الطبقية: احذف من ملف البيئة ما يطابق الأساس، وأثبت أن الإعداد الفعلي لم يتغير / Deduplicate layered config overlays, and prove the effective config did not change
+
+| الحقل | القيمة |
+|---|---|
+| العائلة | `atlas-code` ([فصل العائلة](../../../.claude/skills/kosif-superpowers/references/powers/atlas-code.md)) |
+| المجموعة | البرمجة وبناء التطبيقات (`software`) |
+| نوع المخرج (A25، A27) | كود وتطبيقات ومواقع (`code`) |
+| الحالة في الكتالوج | 📄 `documented`: منهج موصوف يحتاج بناءً أو ربطًا قبل التشغيل |
+| سقف التحقق قبل العمل (A27) | V1 حتى تُبنى وتُشغَّل؛ لا تقدَّم جاهزة أبدًا |
+| نطاق الدليل | `url` |
+| الرخصة | card in our own words; the original skill folders are copied verbatim with their MIT license and SOURCE.md under vendor/kosif-atlas |
+
+**ما هي:** ملف إعداد خاص ببيئة (مثل application-prod.yml فوق application.yml) يتراكم فيه نسخ من قيم الأساس؛ يحذفها بعد التأكد أن الطبقات تُدمج فعلًا، ثم يقارن الإعداد المحسوب قبل وبعد ليثبت أن شيئًا لم يتغير. — Strip an overlay to the values that really differ.
+
+**متى:** ملفات إعداد البيئات مكررة، Spring profiles، Helm values أو أي إعداد بطبقات / redundant per-environment config
+
+**كيف:** 1) Confirm the files really layer (the profile is activated and loads after the base); if not, nothing is duplicate. 2) List the overlay keys whose value equals the base exactly; those are inert. 3) Keep a duplicate on purpose when the base value is about to change and the environment must keep the old one, and say so in a comment. 4) Lists do not merge in Spring: a list in the overlay replaces the whole base list, so compare lists as a whole. 5) Render the effective configuration for each environment before and after (the framework's own resolver or actuator endpoint), diff them, and require an empty diff. 6) Commit the strip with the empty-diff evidence. Full original skill(s) with license: vendor/kosif-atlas/skills/3359-spring-profile-config-overlay-dedupe/13874-spring-profile-config-overlay-dedupe.
+
+**المعاملات:** base file, overlay files
+
+**التثبيت:** mkdir -p ~/.claude/skills && cp -r .claude/skills/kosif-superpowers/vendor/kosif-atlas/skills/3359-spring-profile-config-overlay-dedupe/13874-spring-profile-config-overlay-dedupe ~/.claude/skills/spring-profile-config-overlay-dedupe
+
+**الوسوم:** config · Spring profiles · overlay · deduplicate · تكرار الإعدادات · إعداد البيئات
+
+#### 1. الاستقبال (A25)
+
+- اللغة والإطار: افتراض مكتوب ← لغة المستودع الموجود، وإلا Python أو HTML/JS بلا اعتماديات
+- أين يعمل: افتراض مكتوب ← المتصفح أو سطر الأوامر حسب المخرج
+- مستودع أو ملفات موجودة: سؤال بإجابة مقترحة ← مشروع جديد مستقل
+- متى يكون ناجحًا: افتراض مكتوب ← الاختبارات الموجودة تمر + اختبار لكل سلوك جديد
+- لا تُفترض أبدًا: مادة الإنتاج نفسها، والإذن بخطوة مدفوعة أو منشورة أو لا رجعة فيها، والهوية والحقوق.
+
+#### 2. الجاهزية والشارة (A28)
+
+- لا متطلبات مسجلة؛ افحص المسار والأداة بـ `hub.py doctor` قبل الشارة.
+- الوضع 1: شارة «هنا الآن» بعد الفحص، لا 📄 الكتالوج تلقائيًا · الوضع 2: `كتالوج: 📄 · هنا: غير مفحوص` · الوضع 3: بلا شارة ولا معرّف.
+
+#### 3. موضعها في الخطة (A26)
+
+- عقدة منمّطة: المدخل `spec` ← المخرج `code`، والمنفّذ `method:ACODE-303` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `atlas-ledger`.
+- مراحل النوع: قراءة الكود والاختبارات ← إعادة إنتاج أو اختبار جديد ← أصغر تغيير ← الاختبارات ← مراجعة الفرق ← فرع وPR.
+- إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
+
+#### 4. بوابة التحقق (A27)
+
+- إلزامي: الاختبارات الموجودة تمر قبل التعديل وبعده ← أمر الاختبار
+- إلزامي: اختبار لكل سلوك جديد أو خطأ مُصلح ← الاختبار الجديد يفشل قبل الإصلاح
+- إلزامي: لا أسرار ولا مسارات جلسة في الشيفرة ← بحث أنماط الأسرار
+- جودة: يطابق أسلوب الكود المحيط وتسمياته ← مراجعة الفرق
+- جودة: طريقة تشغيل مكتوبة ومجرَّبة ← تشغيل الأمر المكتوب
+- جودة: الفرق أصغر ما يحقق الطلب بلا إعادة كتابة غير مطلوبة ← git diff --stat
+- جودة: المدخل الخاطئ يعطي خطأ واضحًا لا انهيارًا صامتًا ← تشغيل بمدخل خاطئ
+- أمر الحكم في الوضع 1: `think.py qa code --answers qa.json` (PASS / FAIL / INCOMPLETE).
+
+#### 5. التعافي (A29)
+
+- `missing_dependency` (اعتمادية مفقودة، ميزانية 2): سمِّ الاعتمادية بالضبط (حزمة، برنامج، خط، نموذج) ← ثبّت محليًا في بيئة العمل إن كان مجانيًا ومسموحًا (pip --user أو venv أو npm محلي) · البديل: مسار المكتبة القياسية أو أداة أخرى من نفس المجموعة · تصعيد: تثبيت نظامي أو مدفوع أو يحتاج مفتاحًا: توقف واسأل
+- `quality_below_threshold` (جودة دون العتبة، ميزانية 3): أي معيار فشل وبكم (المقيس مقابل العتبة) ← عالج السبب الأكبر وحده ثم أعد القياس · البديل: المنهج البديل المكتوب للمرحلة في الخطة · تصعيد: معيار إلزامي لا يتحقق بعد البديل: توقف وأبلغ بالأرقام
+- `tool_error` (خطأ أداة، ميزانية 3): اقرأ آخر سطر في الخطأ ثم أول سطر من كودك فيه ← أصلح السبب المثبت وحده، ثم شغّل الاختبار المتعلق · البديل: أداة أخرى أو مسار يدوي للمرحلة نفسها · تصعيد: خطأ في أداة خارجية لا تملكها: بلّغ بإعادة الإنتاج ولا تخفه
+
+#### 6. الأدلة
+
+- `https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/3359-spring-profile-config-overlay-dedupe/13874-spring-profile-config-overlay-dedupe`
+
+#### 7. قدرات قريبة في العائلة
+
+- `ACODE-301` الانتقال بين أداتين: لا تحذف القديمة إلا بإشارة تشغيل فعلية من الجديدة، ولا تتأخر في حذفها / Tool migration cutover: remove the incumbent only on an operational signal from the replacement, and not too late (documented)
+- `ACODE-302` بحث الطرفية السريع: ripgrep وfd للمسح ثم fzf --filter للترتيب الضبابي دون تفاعل / Fast terminal search: ripgrep and fd to scan, then fzf --filter to fuzzy-rank non-interactively (documented)
+- `ACODE-304` نفاد جدول الملفات على مستوى النظام بسبب عمليات يتيمة: ENFILE أم EMFILE يحدد التشخيص كله / System-wide file table exhaustion from orphaned helper processes: ENFILE vs EMFILE decides the diagnosis (documented)
+- `ACODE-305` تحسين إعداد CircleCI بدءًا من خط أساس مقاس: الهدر أولًا ثم الذاكرة المؤقتة ثم التوازي الآمن / CircleCI config optimisation from a measured baseline: waste first, then caching, then safe parallelism (documented)
+
+### `ACODE-304` — نفاد جدول الملفات على مستوى النظام بسبب عمليات يتيمة: ENFILE أم EMFILE يحدد التشخيص كله / System-wide file table exhaustion from orphaned helper processes: ENFILE vs EMFILE decides the diagnosis
+
+| الحقل | القيمة |
+|---|---|
+| العائلة | `atlas-code` ([فصل العائلة](../../../.claude/skills/kosif-superpowers/references/powers/atlas-code.md)) |
+| المجموعة | البرمجة وبناء التطبيقات (`software`) |
+| نوع المخرج (A25، A27) | كود وتطبيقات ومواقع (`code`) |
+| الحالة في الكتالوج | 📄 `documented`: منهج موصوف يحتاج بناءً أو ربطًا قبل التشغيل |
+| سقف التحقق قبل العمل (A27) | V1 حتى تُبنى وتُشغَّل؛ لا تقدَّم جاهزة أبدًا |
+| نطاق الدليل | `url` |
+| الرخصة | card in our own words; the original skill folders are copied verbatim with their MIT license and SOURCE.md under vendor/kosif-atlas |
+
+**ما هي:** حين يرفض كل برنامج فتح ملف، فالجدول العام للنواة ممتلئ وليس حد عملية واحدة؛ المذنب عادة عمليات مساعدة (مثل خوادم لغة يشغلها خادم MCP) بقيت بعد موت أبيها. ثلاثة أوامر للتشخيص ثم إنهاء اليتامى. — Diagnose and clear orphaned processes holding descriptors.
+
+**متى:** Too many open files في كل البرامج معًا، الجهاز يتعطل بعد جلسات وكيل طويلة، عمليات خوادم لغة متراكمة / too many open files everywhere
+
+**كيف:** 1) Read the error: EMFILE is one process's limit (raise ulimit or fix that process); ENFILE is the whole system's table, and raising ulimit will not help. 2) Is the table full: compare the open-file count with the kernel limit (sysctl kern.num_files vs kern.maxfiles on macOS, /proc/sys/fs/file-nr on Linux). 3) Who holds them: count descriptors per process with lsof and sort. 4) Are they orphans: check the parent id; a parent of 1 (launchd or init) for a helper that should belong to an editor or agent session means it outlived its owner. 5) Terminate the orphans by name and parent, confirm the count drops, then fix the spawner so children die with their parent (process groups, cleanup on exit). 6) Add a periodic check for the same orphans after long agent sessions. Full original skill(s) with license: vendor/kosif-atlas/skills/3330-mcp-language-server-orphan-fd-exhaustion/13844-mcp-language-server-orphan-fd-exhaustion.
+
+**المعاملات:** error code, process name
+
+**التثبيت:** mkdir -p ~/.claude/skills && cp -r .claude/skills/kosif-superpowers/vendor/kosif-atlas/skills/3330-mcp-language-server-orphan-fd-exhaustion/13844-mcp-language-server-orphan-fd-exhaustion ~/.claude/skills/mcp-language-server-orphan-fd-exhaustion
+
+**الوسوم:** file descriptors · ENFILE · orphan processes · lsof · language server · عمليات يتيمة · نفاد الملفات
+
+#### 1. الاستقبال (A25)
+
+- اللغة والإطار: افتراض مكتوب ← لغة المستودع الموجود، وإلا Python أو HTML/JS بلا اعتماديات
+- أين يعمل: افتراض مكتوب ← المتصفح أو سطر الأوامر حسب المخرج
+- مستودع أو ملفات موجودة: سؤال بإجابة مقترحة ← مشروع جديد مستقل
+- متى يكون ناجحًا: افتراض مكتوب ← الاختبارات الموجودة تمر + اختبار لكل سلوك جديد
+- لا تُفترض أبدًا: مادة الإنتاج نفسها، والإذن بخطوة مدفوعة أو منشورة أو لا رجعة فيها، والهوية والحقوق.
+
+#### 2. الجاهزية والشارة (A28)
+
+- `os:macos` ← افحص وجوده بأمر واحد قبل كتابة الشارة
+- الوضع 1: شارة «هنا الآن» بعد الفحص، لا 📄 الكتالوج تلقائيًا · الوضع 2: `كتالوج: 📄 · هنا: غير مفحوص` · الوضع 3: بلا شارة ولا معرّف.
+
+#### 3. موضعها في الخطة (A26)
+
+- عقدة منمّطة: المدخل `spec` ← المخرج `code`، والمنفّذ `method:ACODE-304` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `atlas-ledger`.
+- مراحل النوع: قراءة الكود والاختبارات ← إعادة إنتاج أو اختبار جديد ← أصغر تغيير ← الاختبارات ← مراجعة الفرق ← فرع وPR.
+- إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
+
+#### 4. بوابة التحقق (A27)
+
+- إلزامي: الاختبارات الموجودة تمر قبل التعديل وبعده ← أمر الاختبار
+- إلزامي: اختبار لكل سلوك جديد أو خطأ مُصلح ← الاختبار الجديد يفشل قبل الإصلاح
+- إلزامي: لا أسرار ولا مسارات جلسة في الشيفرة ← بحث أنماط الأسرار
+- جودة: يطابق أسلوب الكود المحيط وتسمياته ← مراجعة الفرق
+- جودة: طريقة تشغيل مكتوبة ومجرَّبة ← تشغيل الأمر المكتوب
+- جودة: الفرق أصغر ما يحقق الطلب بلا إعادة كتابة غير مطلوبة ← git diff --stat
+- جودة: المدخل الخاطئ يعطي خطأ واضحًا لا انهيارًا صامتًا ← تشغيل بمدخل خاطئ
+- أمر الحكم في الوضع 1: `think.py qa code --answers qa.json` (PASS / FAIL / INCOMPLETE).
+
+#### 5. التعافي (A29)
+
+- `missing_dependency` (اعتمادية مفقودة، ميزانية 2): سمِّ الاعتمادية بالضبط (حزمة، برنامج، خط، نموذج) ← ثبّت محليًا في بيئة العمل إن كان مجانيًا ومسموحًا (pip --user أو venv أو npm محلي) · البديل: مسار المكتبة القياسية أو أداة أخرى من نفس المجموعة · تصعيد: تثبيت نظامي أو مدفوع أو يحتاج مفتاحًا: توقف واسأل
+- `quality_below_threshold` (جودة دون العتبة، ميزانية 3): أي معيار فشل وبكم (المقيس مقابل العتبة) ← عالج السبب الأكبر وحده ثم أعد القياس · البديل: المنهج البديل المكتوب للمرحلة في الخطة · تصعيد: معيار إلزامي لا يتحقق بعد البديل: توقف وأبلغ بالأرقام
+- `tool_error` (خطأ أداة، ميزانية 3): اقرأ آخر سطر في الخطأ ثم أول سطر من كودك فيه ← أصلح السبب المثبت وحده، ثم شغّل الاختبار المتعلق · البديل: أداة أخرى أو مسار يدوي للمرحلة نفسها · تصعيد: خطأ في أداة خارجية لا تملكها: بلّغ بإعادة الإنتاج ولا تخفه
+
+#### 6. الأدلة
+
+- `https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/3330-mcp-language-server-orphan-fd-exhaustion/13844-mcp-language-server-orphan-fd-exhaustion`
+
+#### 7. قدرات قريبة في العائلة
+
+- `ACODE-302` بحث الطرفية السريع: ripgrep وfd للمسح ثم fzf --filter للترتيب الضبابي دون تفاعل / Fast terminal search: ripgrep and fd to scan, then fzf --filter to fuzzy-rank non-interactively (documented)
+- `ACODE-303` تنظيف ملفات الإعداد الطبقية: احذف من ملف البيئة ما يطابق الأساس، وأثبت أن الإعداد الفعلي لم يتغير / Deduplicate layered config overlays, and prove the effective config did not change (documented)
+- `ACODE-305` تحسين إعداد CircleCI بدءًا من خط أساس مقاس: الهدر أولًا ثم الذاكرة المؤقتة ثم التوازي الآمن / CircleCI config optimisation from a measured baseline: waste first, then caching, then safe parallelism (documented)
+- `ACODE-306` TLS المتبادل بين الخدمات: سلسلة الشهادات والتدوير وتشخيص فشل المصافحة / Mutual TLS between services: certificate hierarchy, rotation and handshake debugging (documented)
+
+### `ACODE-305` — تحسين إعداد CircleCI بدءًا من خط أساس مقاس: الهدر أولًا ثم الذاكرة المؤقتة ثم التوازي الآمن / CircleCI config optimisation from a measured baseline: waste first, then caching, then safe parallelism
+
+| الحقل | القيمة |
+|---|---|
+| العائلة | `atlas-code` ([فصل العائلة](../../../.claude/skills/kosif-superpowers/references/powers/atlas-code.md)) |
+| المجموعة | البرمجة وبناء التطبيقات (`software`) |
+| نوع المخرج (A25، A27) | كود وتطبيقات ومواقع (`code`) |
+| الحالة في الكتالوج | 📄 `documented`: منهج موصوف يحتاج بناءً أو ربطًا قبل التشغيل |
+| سقف التحقق قبل العمل (A27) | V1 حتى تُبنى وتُشغَّل؛ لا تقدَّم جاهزة أبدًا |
+| نطاق الدليل | `url` |
+| الرخصة | card in our own words; the original skill folders are copied verbatim with their MIT license and SOURCE.md under vendor/kosif-atlas |
+
+**ما هي:** يحسن سرعة واستقرار خط CI دون تغيير سلوك المنتج: يقيس أبطأ المهام وأكثرها تقلبًا، ويحذف المكرر، ويصمم مفاتيح الذاكرة المؤقتة والمساحات المشتركة، ثم يقسم الاختبارات بالتوقيت، ويسلم خطة تحقق وتراجع. — Baseline-first CI tuning, written for CircleCI and portable to other runners.
+
+**متى:** CI بطيء أو متقلب أو مكلف، إعداد .circleci/config.yml، ذاكرة مؤقتة لا تصيب / slow or flaky CircleCI pipelines
+
+**كيف:** 1) Baseline: the 1 to 3 longest jobs and the flakiest ones, with duration, pass rate and retries. 2) Remove waste: duplicate jobs and workflows, steps that persist data nobody attaches. 3) Data flow: cache dependencies with keys built from the lockfile checksum plus a fallback prefix, use workspaces to pass build outputs between jobs in one workflow, artifacts only for files people read; keep caches small. 4) Parallelism: split tests by timing data with JUnit XML results stored so splitting and flaky-test views work; raise parallelism only where the split is balanced. 5) Keep approvals, branch and tag filters and schedules explicit for deploys. 6) Deliver the bottleneck summary, the changes with reasons, the expected impact, and a validation and rollback note; then remeasure against the baseline. Full original skill(s) with license: vendor/kosif-atlas/skills/2691-circleci/10339-circleci-config.
+
+**المعاملات:** config files, baseline metrics
+
+**التثبيت:** mkdir -p ~/.claude/skills && cp -r .claude/skills/kosif-superpowers/vendor/kosif-atlas/skills/2691-circleci/10339-circleci-config ~/.claude/skills/circleci-config
+
+**الوسوم:** CircleCI · CI optimisation · cache keys · test splitting · تسريع CI · خط التكامل
+
+#### 1. الاستقبال (A25)
+
+- اللغة والإطار: افتراض مكتوب ← لغة المستودع الموجود، وإلا Python أو HTML/JS بلا اعتماديات
+- أين يعمل: افتراض مكتوب ← المتصفح أو سطر الأوامر حسب المخرج
+- مستودع أو ملفات موجودة: سؤال بإجابة مقترحة ← مشروع جديد مستقل
+- متى يكون ناجحًا: افتراض مكتوب ← الاختبارات الموجودة تمر + اختبار لكل سلوك جديد
+- لا تُفترض أبدًا: مادة الإنتاج نفسها، والإذن بخطوة مدفوعة أو منشورة أو لا رجعة فيها، والهوية والحقوق.
+
+#### 2. الجاهزية والشارة (A28)
+
+- لا متطلبات مسجلة؛ افحص المسار والأداة بـ `hub.py doctor` قبل الشارة.
+- الوضع 1: شارة «هنا الآن» بعد الفحص، لا 📄 الكتالوج تلقائيًا · الوضع 2: `كتالوج: 📄 · هنا: غير مفحوص` · الوضع 3: بلا شارة ولا معرّف.
+
+#### 3. موضعها في الخطة (A26)
+
+- عقدة منمّطة: المدخل `spec` ← المخرج `code`، والمنفّذ `method:ACODE-305` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `atlas-ledger`.
+- مراحل النوع: قراءة الكود والاختبارات ← إعادة إنتاج أو اختبار جديد ← أصغر تغيير ← الاختبارات ← مراجعة الفرق ← فرع وPR.
+- إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
+
+#### 4. بوابة التحقق (A27)
+
+- إلزامي: الاختبارات الموجودة تمر قبل التعديل وبعده ← أمر الاختبار
+- إلزامي: اختبار لكل سلوك جديد أو خطأ مُصلح ← الاختبار الجديد يفشل قبل الإصلاح
+- إلزامي: لا أسرار ولا مسارات جلسة في الشيفرة ← بحث أنماط الأسرار
+- جودة: يطابق أسلوب الكود المحيط وتسمياته ← مراجعة الفرق
+- جودة: طريقة تشغيل مكتوبة ومجرَّبة ← تشغيل الأمر المكتوب
+- جودة: الفرق أصغر ما يحقق الطلب بلا إعادة كتابة غير مطلوبة ← git diff --stat
+- جودة: المدخل الخاطئ يعطي خطأ واضحًا لا انهيارًا صامتًا ← تشغيل بمدخل خاطئ
+- أمر الحكم في الوضع 1: `think.py qa code --answers qa.json` (PASS / FAIL / INCOMPLETE).
+
+#### 5. التعافي (A29)
+
+- `missing_dependency` (اعتمادية مفقودة، ميزانية 2): سمِّ الاعتمادية بالضبط (حزمة، برنامج، خط، نموذج) ← ثبّت محليًا في بيئة العمل إن كان مجانيًا ومسموحًا (pip --user أو venv أو npm محلي) · البديل: مسار المكتبة القياسية أو أداة أخرى من نفس المجموعة · تصعيد: تثبيت نظامي أو مدفوع أو يحتاج مفتاحًا: توقف واسأل
+- `quality_below_threshold` (جودة دون العتبة، ميزانية 3): أي معيار فشل وبكم (المقيس مقابل العتبة) ← عالج السبب الأكبر وحده ثم أعد القياس · البديل: المنهج البديل المكتوب للمرحلة في الخطة · تصعيد: معيار إلزامي لا يتحقق بعد البديل: توقف وأبلغ بالأرقام
+- `tool_error` (خطأ أداة، ميزانية 3): اقرأ آخر سطر في الخطأ ثم أول سطر من كودك فيه ← أصلح السبب المثبت وحده، ثم شغّل الاختبار المتعلق · البديل: أداة أخرى أو مسار يدوي للمرحلة نفسها · تصعيد: خطأ في أداة خارجية لا تملكها: بلّغ بإعادة الإنتاج ولا تخفه
+
+#### 6. الأدلة
+
+- `https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/2691-circleci/10339-circleci-config`
+
+#### 7. قدرات قريبة في العائلة
+
+- `ACODE-303` تنظيف ملفات الإعداد الطبقية: احذف من ملف البيئة ما يطابق الأساس، وأثبت أن الإعداد الفعلي لم يتغير / Deduplicate layered config overlays, and prove the effective config did not change (documented)
+- `ACODE-304` نفاد جدول الملفات على مستوى النظام بسبب عمليات يتيمة: ENFILE أم EMFILE يحدد التشخيص كله / System-wide file table exhaustion from orphaned helper processes: ENFILE vs EMFILE decides the diagnosis (documented)
+- `ACODE-306` TLS المتبادل بين الخدمات: سلسلة الشهادات والتدوير وتشخيص فشل المصافحة / Mutual TLS between services: certificate hierarchy, rotation and handshake debugging (documented)
+- `ACODE-307` قِس فجوة التوافق قبل التثبيت: عدّد ما تطلبه الأداة، واقرأ العقد المعلن، وجرّب الأوامر الآمنة فقط / Measure a compatibility gap before installing: enumerate what the tool needs, read the declared contract, probe read-only verbs (documented)
+
+### `ACODE-306` — TLS المتبادل بين الخدمات: سلسلة الشهادات والتدوير وتشخيص فشل المصافحة / Mutual TLS between services: certificate hierarchy, rotation and handshake debugging
+
+| الحقل | القيمة |
+|---|---|
+| العائلة | `atlas-code` ([فصل العائلة](../../../.claude/skills/kosif-superpowers/references/powers/atlas-code.md)) |
+| المجموعة | البرمجة وبناء التطبيقات (`software`) |
+| نوع المخرج (A25، A27) | كود وتطبيقات ومواقع (`code`) |
+| الحالة في الكتالوج | 📄 `documented`: منهج موصوف يحتاج بناءً أو ربطًا قبل التشغيل |
+| سقف التحقق قبل العمل (A27) | V1 حتى تُبنى وتُشغَّل؛ لا تقدَّم جاهزة أبدًا |
+| نطاق الدليل | `url` |
+| الرخصة | card in our own words; the original skill folders are copied verbatim with their MIT license and SOURCE.md under vendor/kosif-atlas |
+
+**ما هي:** يطبق التحقق المتبادل بالشهادات بين الخدمات في شبكة انعدام الثقة: جذر وسيط وشهادات خدمات قصيرة العمر، وتدوير آلي، وخطوات تشخيص فشل المصافحة. — mTLS setup and troubleshooting.
+
+**متى:** تأمين اتصال الخدمات ببعضها، شبكة خدمات (service mesh)، متطلبات امتثال، فشل مصافحة TLS / securing service-to-service traffic
+
+**كيف:** 1) Hierarchy: an offline root CA, an intermediate that signs workload certificates, and short-lived leaf certificates whose identity (SAN, or a SPIFFE ID in a mesh) names the service. 2) Both sides present and verify: the server requires a client certificate signed by the trusted chain, the client verifies the server name. 3) Rotate automatically before expiry (a mesh or cert-manager), with overlap so old and new chains are both trusted during the switch. 4) Roll out in permissive mode first, watch for plaintext callers, then switch to strict. 5) Debug a failed handshake in order: clock skew, an expired or not-yet-valid certificate, a missing intermediate in the presented chain, a name mismatch, the wrong trust bundle; openssl s_client -connect host:port -cert -key shows each step. 6) Keep private keys out of images and repos. Full original skill(s) with license: vendor/kosif-atlas/skills/3458-cloud-infrastructure/14171-mtls-configuration.
+
+**المعاملات:** services, CA
+
+**التثبيت:** mkdir -p ~/.claude/skills && cp -r .claude/skills/kosif-superpowers/vendor/kosif-atlas/skills/3458-cloud-infrastructure/14171-mtls-configuration ~/.claude/skills/mtls-configuration
+
+**الوسوم:** mTLS · zero trust · certificates · service mesh · TLS handshake · الشهادات · انعدام الثقة
+
+#### 1. الاستقبال (A25)
+
+- اللغة والإطار: افتراض مكتوب ← لغة المستودع الموجود، وإلا Python أو HTML/JS بلا اعتماديات
+- أين يعمل: افتراض مكتوب ← المتصفح أو سطر الأوامر حسب المخرج
+- مستودع أو ملفات موجودة: سؤال بإجابة مقترحة ← مشروع جديد مستقل
+- متى يكون ناجحًا: افتراض مكتوب ← الاختبارات الموجودة تمر + اختبار لكل سلوك جديد
+- لا تُفترض أبدًا: مادة الإنتاج نفسها، والإذن بخطوة مدفوعة أو منشورة أو لا رجعة فيها، والهوية والحقوق.
+
+#### 2. الجاهزية والشارة (A28)
+
+- لا متطلبات مسجلة؛ افحص المسار والأداة بـ `hub.py doctor` قبل الشارة.
+- الوضع 1: شارة «هنا الآن» بعد الفحص، لا 📄 الكتالوج تلقائيًا · الوضع 2: `كتالوج: 📄 · هنا: غير مفحوص` · الوضع 3: بلا شارة ولا معرّف.
+
+#### 3. موضعها في الخطة (A26)
+
+- عقدة منمّطة: المدخل `spec` ← المخرج `code`، والمنفّذ `method:ACODE-306` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `atlas-ledger`.
+- مراحل النوع: قراءة الكود والاختبارات ← إعادة إنتاج أو اختبار جديد ← أصغر تغيير ← الاختبارات ← مراجعة الفرق ← فرع وPR.
+- إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
+
+#### 4. بوابة التحقق (A27)
+
+- إلزامي: الاختبارات الموجودة تمر قبل التعديل وبعده ← أمر الاختبار
+- إلزامي: اختبار لكل سلوك جديد أو خطأ مُصلح ← الاختبار الجديد يفشل قبل الإصلاح
+- إلزامي: لا أسرار ولا مسارات جلسة في الشيفرة ← بحث أنماط الأسرار
+- جودة: يطابق أسلوب الكود المحيط وتسمياته ← مراجعة الفرق
+- جودة: طريقة تشغيل مكتوبة ومجرَّبة ← تشغيل الأمر المكتوب
+- جودة: الفرق أصغر ما يحقق الطلب بلا إعادة كتابة غير مطلوبة ← git diff --stat
+- جودة: المدخل الخاطئ يعطي خطأ واضحًا لا انهيارًا صامتًا ← تشغيل بمدخل خاطئ
+- أمر الحكم في الوضع 1: `think.py qa code --answers qa.json` (PASS / FAIL / INCOMPLETE).
+
+#### 5. التعافي (A29)
+
+- `missing_dependency` (اعتمادية مفقودة، ميزانية 2): سمِّ الاعتمادية بالضبط (حزمة، برنامج، خط، نموذج) ← ثبّت محليًا في بيئة العمل إن كان مجانيًا ومسموحًا (pip --user أو venv أو npm محلي) · البديل: مسار المكتبة القياسية أو أداة أخرى من نفس المجموعة · تصعيد: تثبيت نظامي أو مدفوع أو يحتاج مفتاحًا: توقف واسأل
+- `quality_below_threshold` (جودة دون العتبة، ميزانية 3): أي معيار فشل وبكم (المقيس مقابل العتبة) ← عالج السبب الأكبر وحده ثم أعد القياس · البديل: المنهج البديل المكتوب للمرحلة في الخطة · تصعيد: معيار إلزامي لا يتحقق بعد البديل: توقف وأبلغ بالأرقام
+- `tool_error` (خطأ أداة، ميزانية 3): اقرأ آخر سطر في الخطأ ثم أول سطر من كودك فيه ← أصلح السبب المثبت وحده، ثم شغّل الاختبار المتعلق · البديل: أداة أخرى أو مسار يدوي للمرحلة نفسها · تصعيد: خطأ في أداة خارجية لا تملكها: بلّغ بإعادة الإنتاج ولا تخفه
+
+#### 6. الأدلة
+
+- `https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/3458-cloud-infrastructure/14171-mtls-configuration`
+
+#### 7. قدرات قريبة في العائلة
+
+- `ACODE-304` نفاد جدول الملفات على مستوى النظام بسبب عمليات يتيمة: ENFILE أم EMFILE يحدد التشخيص كله / System-wide file table exhaustion from orphaned helper processes: ENFILE vs EMFILE decides the diagnosis (documented)
+- `ACODE-305` تحسين إعداد CircleCI بدءًا من خط أساس مقاس: الهدر أولًا ثم الذاكرة المؤقتة ثم التوازي الآمن / CircleCI config optimisation from a measured baseline: waste first, then caching, then safe parallelism (documented)
+- `ACODE-307` قِس فجوة التوافق قبل التثبيت: عدّد ما تطلبه الأداة، واقرأ العقد المعلن، وجرّب الأوامر الآمنة فقط / Measure a compatibility gap before installing: enumerate what the tool needs, read the declared contract, probe read-only verbs (documented)
+- `ACODE-308` مراجعة جاهزية الخطة قبل بدء العمل بأدلة المستودع: تحقق من كل ادعاء عن الحالة الحالية، والعيوب الحقيقية فقط / Plan readiness review against repository evidence before work starts: verify every claim about current state, report real gaps only (documented)
+
+### `ACODE-307` — قِس فجوة التوافق قبل التثبيت: عدّد ما تطلبه الأداة، واقرأ العقد المعلن، وجرّب الأوامر الآمنة فقط / Measure a compatibility gap before installing: enumerate what the tool needs, read the declared contract, probe read-only verbs
+
+| الحقل | القيمة |
+|---|---|
+| العائلة | `atlas-code` ([فصل العائلة](../../../.claude/skills/kosif-superpowers/references/powers/atlas-code.md)) |
+| المجموعة | البرمجة وبناء التطبيقات (`software`) |
+| نوع المخرج (A25، A27) | كود وتطبيقات ومواقع (`code`) |
+| الحالة في الكتالوج | 📄 `documented`: منهج موصوف يحتاج بناءً أو ربطًا قبل التشغيل |
+| سقف التحقق قبل العمل (A27) | V1 حتى تُبنى وتُشغَّل؛ لا تقدَّم جاهزة أبدًا |
+| نطاق الدليل | `url` |
+| الرخصة | card in our own words; the original skill folders are copied verbatim with their MIT license and SOURCE.md under vendor/kosif-atlas |
+
+**ما هي:** حين تقلد طبقة ما برنامجًا آخر جزئيًا (مثل طرفية تدّعي أنها tmux)، فتثبيت أداة تعتمد عليه وتشغيلها يكشف أول أمر ناقص فقط ويترك أثرًا على الجهاز. الأسلم: استخرج كل الأوامر التي تستدعيها الأداة من مصدرها، وقارنها بما تعلنه الطبقة، وجرّب الأوامر غير المغيرة حيًا، واكتب الفرق في ثلاث خانات. — Enumerate the whole gap from source and safe probes.
+
+**متى:** أداة تعتمد على tmux أو git أو docker مع بديل يدّعي التوافق، قبل تثبيت أداة على بيئة غير قياسية / before installing a tool onto a compatibility shim
+
+**كيف:** 1) From the tool's source, list every verb and flag it invokes on the dependency (grep the spawn calls). 2) Read the shim's declared contract: its compatibility table, its 'unsupported command' path in source. 3) Probe each read-only verb live (list, show, version, display) and record the response; never run mutating verbs on a real setup to learn the gap. 4) Write three buckets: supported and verified live, unsupported (each one a hard failure point), supported but semantically shifted (for example sessions mapped to workspaces). 5) Decide from the buckets: install, install with a wrapper for the shifted verbs, or do not install. 6) Leave no hooks or state files behind from the probe. Full original skill(s) with license: vendor/kosif-atlas/skills/3300-cmux-tmux-compat-gap-probe/13814-cmux-tmux-compat-gap-probe.
+
+**المعاملات:** tool, shim
+
+**التثبيت:** mkdir -p ~/.claude/skills && cp -r .claude/skills/kosif-superpowers/vendor/kosif-atlas/skills/3300-cmux-tmux-compat-gap-probe/13814-cmux-tmux-compat-gap-probe ~/.claude/skills/cmux-tmux-compat-gap-probe
+
+**الوسوم:** compatibility · tmux · shim · probe · read-only · فجوة التوافق · قبل التثبيت
+
+#### 1. الاستقبال (A25)
+
+- اللغة والإطار: افتراض مكتوب ← لغة المستودع الموجود، وإلا Python أو HTML/JS بلا اعتماديات
+- أين يعمل: افتراض مكتوب ← المتصفح أو سطر الأوامر حسب المخرج
+- مستودع أو ملفات موجودة: سؤال بإجابة مقترحة ← مشروع جديد مستقل
+- متى يكون ناجحًا: افتراض مكتوب ← الاختبارات الموجودة تمر + اختبار لكل سلوك جديد
+- لا تُفترض أبدًا: مادة الإنتاج نفسها، والإذن بخطوة مدفوعة أو منشورة أو لا رجعة فيها، والهوية والحقوق.
+
+#### 2. الجاهزية والشارة (A28)
+
+- لا متطلبات مسجلة؛ افحص المسار والأداة بـ `hub.py doctor` قبل الشارة.
+- الوضع 1: شارة «هنا الآن» بعد الفحص، لا 📄 الكتالوج تلقائيًا · الوضع 2: `كتالوج: 📄 · هنا: غير مفحوص` · الوضع 3: بلا شارة ولا معرّف.
+
+#### 3. موضعها في الخطة (A26)
+
+- عقدة منمّطة: المدخل `spec` ← المخرج `code`، والمنفّذ `method:ACODE-307` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `atlas-ledger`.
+- مراحل النوع: قراءة الكود والاختبارات ← إعادة إنتاج أو اختبار جديد ← أصغر تغيير ← الاختبارات ← مراجعة الفرق ← فرع وPR.
+- إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
+
+#### 4. بوابة التحقق (A27)
+
+- إلزامي: الاختبارات الموجودة تمر قبل التعديل وبعده ← أمر الاختبار
+- إلزامي: اختبار لكل سلوك جديد أو خطأ مُصلح ← الاختبار الجديد يفشل قبل الإصلاح
+- إلزامي: لا أسرار ولا مسارات جلسة في الشيفرة ← بحث أنماط الأسرار
+- جودة: يطابق أسلوب الكود المحيط وتسمياته ← مراجعة الفرق
+- جودة: طريقة تشغيل مكتوبة ومجرَّبة ← تشغيل الأمر المكتوب
+- جودة: الفرق أصغر ما يحقق الطلب بلا إعادة كتابة غير مطلوبة ← git diff --stat
+- جودة: المدخل الخاطئ يعطي خطأ واضحًا لا انهيارًا صامتًا ← تشغيل بمدخل خاطئ
+- أمر الحكم في الوضع 1: `think.py qa code --answers qa.json` (PASS / FAIL / INCOMPLETE).
+
+#### 5. التعافي (A29)
+
+- `missing_dependency` (اعتمادية مفقودة، ميزانية 2): سمِّ الاعتمادية بالضبط (حزمة، برنامج، خط، نموذج) ← ثبّت محليًا في بيئة العمل إن كان مجانيًا ومسموحًا (pip --user أو venv أو npm محلي) · البديل: مسار المكتبة القياسية أو أداة أخرى من نفس المجموعة · تصعيد: تثبيت نظامي أو مدفوع أو يحتاج مفتاحًا: توقف واسأل
+- `quality_below_threshold` (جودة دون العتبة، ميزانية 3): أي معيار فشل وبكم (المقيس مقابل العتبة) ← عالج السبب الأكبر وحده ثم أعد القياس · البديل: المنهج البديل المكتوب للمرحلة في الخطة · تصعيد: معيار إلزامي لا يتحقق بعد البديل: توقف وأبلغ بالأرقام
+- `tool_error` (خطأ أداة، ميزانية 3): اقرأ آخر سطر في الخطأ ثم أول سطر من كودك فيه ← أصلح السبب المثبت وحده، ثم شغّل الاختبار المتعلق · البديل: أداة أخرى أو مسار يدوي للمرحلة نفسها · تصعيد: خطأ في أداة خارجية لا تملكها: بلّغ بإعادة الإنتاج ولا تخفه
+
+#### 6. الأدلة
+
+- `https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/3300-cmux-tmux-compat-gap-probe/13814-cmux-tmux-compat-gap-probe`
+
+#### 7. قدرات قريبة في العائلة
+
+- `ACODE-305` تحسين إعداد CircleCI بدءًا من خط أساس مقاس: الهدر أولًا ثم الذاكرة المؤقتة ثم التوازي الآمن / CircleCI config optimisation from a measured baseline: waste first, then caching, then safe parallelism (documented)
+- `ACODE-306` TLS المتبادل بين الخدمات: سلسلة الشهادات والتدوير وتشخيص فشل المصافحة / Mutual TLS between services: certificate hierarchy, rotation and handshake debugging (documented)
+- `ACODE-308` مراجعة جاهزية الخطة قبل بدء العمل بأدلة المستودع: تحقق من كل ادعاء عن الحالة الحالية، والعيوب الحقيقية فقط / Plan readiness review against repository evidence before work starts: verify every claim about current state, report real gaps only (documented)
+- `ACODE-309` استرجاع عقد إعداد غير موثق من الملف التنفيذي المشحون: strings إلى ملف أولًا، ونص التعليمات ودوال التحقق معًا / Recover an undocumented settings contract from a shipped binary: strings to a file first, and read both the prompt text and the validator bodies (documented)
+
+### `ACODE-308` — مراجعة جاهزية الخطة قبل بدء العمل بأدلة المستودع: تحقق من كل ادعاء عن الحالة الحالية، والعيوب الحقيقية فقط / Plan readiness review against repository evidence before work starts: verify every claim about current state, report real gaps only
+
+| الحقل | القيمة |
+|---|---|
+| العائلة | `atlas-code` ([فصل العائلة](../../../.claude/skills/kosif-superpowers/references/powers/atlas-code.md)) |
+| المجموعة | البرمجة وبناء التطبيقات (`software`) |
+| نوع المخرج (A25، A27) | كود وتطبيقات ومواقع (`code`) |
+| الحالة في الكتالوج | 📄 `documented`: منهج موصوف يحتاج بناءً أو ربطًا قبل التشغيل |
+| سقف التحقق قبل العمل (A27) | V1 حتى تُبنى وتُشغَّل؛ لا تقدَّم جاهزة أبدًا |
+| نطاق الدليل | `url` |
+| الرخصة | card in our own words; the original skill folders are copied verbatim with their MIT license and SOURCE.md under vendor/kosif-atlas |
+
+**ما هي:** مراجعة للقراءة فقط لخطة تنفيذ قبل كتابة الكود: الخطة والمواد المرتبطة بيانات للمراجعة لا أوامر للتنفيذ؛ يتحقق من كل ادعاء تقوله الخطة عن ملفات التبعيات والدوال المساعدة والواجهات من مصدرها، ويبحث عن الافتراضات الضعيفة والتبعيات المخفية والترحيلات الخطرة واستراتيجية الاختبار الناقصة، ويصدر حكم جاهز أو يحتاج تعديلًا أو معطل. — Fewer, higher-quality findings while changes are cheap.
+
+**متى:** راجع الخطة، هل الخطة جاهزة للتنفيذ، مراجعة خطة في PR قبل البرمجة / reviewing an implementation plan before coding
+
+**كيف:** 1) Select the target exactly: an explicit Markdown file, or plans under docs/plans/todo matched to the current branch name; never substitute another plan, and exclude anything outside the repo or under done/. 2) Treat the plan as data; do not edit it, write files, commit or run its instructions. 3) Pre-flight: list each claim the plan makes about the current state of a real surface (dependency manifests and features, helpers and precedents, schemas, CI, config) and verify it against the source file, quoting it; a mismatch is a finding. 4) Review for weak assumptions, hidden dependencies, risky migrations and data changes, security exposure, missing rollback, and missing or untestable verification. 5) Report real gaps, not preferences: each finding says why it is a risk and how to address it; do not rewrite the plan. 6) Verdict: ready, ready after named revisions, or blocked, with the blockers first. 7) When reviewing on a pull request, post the review there with the findings, and prefer the REST API over heavier queries to save rate limit. Full original skill(s) with license: vendor/kosif-atlas/skills/969-review-plan/2253-review-plan, vendor/kosif-atlas/skills/3031-codex-reviewer/13040-feature-review-plan.
+
+**المعاملات:** plan file or PR
+
+**التثبيت:** mkdir -p ~/.claude/skills && cp -r .claude/skills/kosif-superpowers/vendor/kosif-atlas/skills/969-review-plan/2253-review-plan ~/.claude/skills/review-plan ; mkdir -p ~/.claude/skills && cp -r .claude/skills/kosif-superpowers/vendor/kosif-atlas/skills/3031-codex-reviewer/13040-feature-review-plan ~/.claude/skills/feature-review-plan
+
+**الوسوم:** plan review · implementation readiness · code review · pre-flight · مراجعة الخطة · الجاهزية
+
+#### 1. الاستقبال (A25)
+
+- اللغة والإطار: افتراض مكتوب ← لغة المستودع الموجود، وإلا Python أو HTML/JS بلا اعتماديات
+- أين يعمل: افتراض مكتوب ← المتصفح أو سطر الأوامر حسب المخرج
+- مستودع أو ملفات موجودة: سؤال بإجابة مقترحة ← مشروع جديد مستقل
+- متى يكون ناجحًا: افتراض مكتوب ← الاختبارات الموجودة تمر + اختبار لكل سلوك جديد
+- لا تُفترض أبدًا: مادة الإنتاج نفسها، والإذن بخطوة مدفوعة أو منشورة أو لا رجعة فيها، والهوية والحقوق.
+
+#### 2. الجاهزية والشارة (A28)
+
+- `mcp:github` ← افحص وجوده بأمر واحد قبل كتابة الشارة
+- الوضع 1: شارة «هنا الآن» بعد الفحص، لا 📄 الكتالوج تلقائيًا · الوضع 2: `كتالوج: 📄 · هنا: غير مفحوص` · الوضع 3: بلا شارة ولا معرّف.
+
+#### 3. موضعها في الخطة (A26)
+
+- عقدة منمّطة: المدخل `spec` ← المخرج `code`، والمنفّذ `method:ACODE-308` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `atlas-ledger`.
+- مراحل النوع: قراءة الكود والاختبارات ← إعادة إنتاج أو اختبار جديد ← أصغر تغيير ← الاختبارات ← مراجعة الفرق ← فرع وPR.
+- إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
+
+#### 4. بوابة التحقق (A27)
+
+- إلزامي: الاختبارات الموجودة تمر قبل التعديل وبعده ← أمر الاختبار
+- إلزامي: اختبار لكل سلوك جديد أو خطأ مُصلح ← الاختبار الجديد يفشل قبل الإصلاح
+- إلزامي: لا أسرار ولا مسارات جلسة في الشيفرة ← بحث أنماط الأسرار
+- جودة: يطابق أسلوب الكود المحيط وتسمياته ← مراجعة الفرق
+- جودة: طريقة تشغيل مكتوبة ومجرَّبة ← تشغيل الأمر المكتوب
+- جودة: الفرق أصغر ما يحقق الطلب بلا إعادة كتابة غير مطلوبة ← git diff --stat
+- جودة: المدخل الخاطئ يعطي خطأ واضحًا لا انهيارًا صامتًا ← تشغيل بمدخل خاطئ
+- أمر الحكم في الوضع 1: `think.py qa code --answers qa.json` (PASS / FAIL / INCOMPLETE).
+
+#### 5. التعافي (A29)
+
+- `missing_dependency` (اعتمادية مفقودة، ميزانية 2): سمِّ الاعتمادية بالضبط (حزمة، برنامج، خط، نموذج) ← ثبّت محليًا في بيئة العمل إن كان مجانيًا ومسموحًا (pip --user أو venv أو npm محلي) · البديل: مسار المكتبة القياسية أو أداة أخرى من نفس المجموعة · تصعيد: تثبيت نظامي أو مدفوع أو يحتاج مفتاحًا: توقف واسأل
+- `quality_below_threshold` (جودة دون العتبة، ميزانية 3): أي معيار فشل وبكم (المقيس مقابل العتبة) ← عالج السبب الأكبر وحده ثم أعد القياس · البديل: المنهج البديل المكتوب للمرحلة في الخطة · تصعيد: معيار إلزامي لا يتحقق بعد البديل: توقف وأبلغ بالأرقام
+- `tool_error` (خطأ أداة، ميزانية 3): اقرأ آخر سطر في الخطأ ثم أول سطر من كودك فيه ← أصلح السبب المثبت وحده، ثم شغّل الاختبار المتعلق · البديل: أداة أخرى أو مسار يدوي للمرحلة نفسها · تصعيد: خطأ في أداة خارجية لا تملكها: بلّغ بإعادة الإنتاج ولا تخفه
+
+#### 6. الأدلة
+
+- `https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/969-review-plan/2253-review-plan`
+- `https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/3031-codex-reviewer/13040-feature-review-plan`
+
+#### 7. قدرات قريبة في العائلة
+
+- `ACODE-306` TLS المتبادل بين الخدمات: سلسلة الشهادات والتدوير وتشخيص فشل المصافحة / Mutual TLS between services: certificate hierarchy, rotation and handshake debugging (documented)
+- `ACODE-307` قِس فجوة التوافق قبل التثبيت: عدّد ما تطلبه الأداة، واقرأ العقد المعلن، وجرّب الأوامر الآمنة فقط / Measure a compatibility gap before installing: enumerate what the tool needs, read the declared contract, probe read-only verbs (documented)
+- `ACODE-309` استرجاع عقد إعداد غير موثق من الملف التنفيذي المشحون: strings إلى ملف أولًا، ونص التعليمات ودوال التحقق معًا / Recover an undocumented settings contract from a shipped binary: strings to a file first, and read both the prompt text and the validator bodies (documented)
 - `ACODE-31` إعداد مصادقة API بأقل صلاحيات والتحقق منها / Least-privilege API auth setup and verification (documented)
-- `ACODE-32` استقبال OAuth محلي مع ملفات رموز محمية / Local OAuth callback with 0600 token files (documented)
+
+### `ACODE-309` — استرجاع عقد إعداد غير موثق من الملف التنفيذي المشحون: strings إلى ملف أولًا، ونص التعليمات ودوال التحقق معًا / Recover an undocumented settings contract from a shipped binary: strings to a file first, and read both the prompt text and the validator bodies
+
+| الحقل | القيمة |
+|---|---|
+| العائلة | `atlas-code` ([فصل العائلة](../../../.claude/skills/kosif-superpowers/references/powers/atlas-code.md)) |
+| المجموعة | البرمجة وبناء التطبيقات (`software`) |
+| نوع المخرج (A25، A27) | كود وتطبيقات ومواقع (`code`) |
+| الحالة في الكتالوج | 📄 `documented`: منهج موصوف يحتاج بناءً أو ربطًا قبل التشغيل |
+| سقف التحقق قبل العمل (A27) | V1 حتى تُبنى وتُشغَّل؛ لا تقدَّم جاهزة أبدًا |
+| نطاق الدليل | `url` |
+| الرخصة | card in our own words; the original skill folders are copied verbatim with their MIT license and SOURCE.md under vendor/kosif-atlas |
+
+**ما هي:** حين يوجد مفتاح إعداد على القرص ولا يصفه أي مخطط منشور، فالعقد كاملًا مضمّن في الملف التنفيذي مرتين: نص التعليمات الذي يولد الكتلة، ودوال التحقق التي ترفض الخاطئة. الأول يعطي النية والخانات، والثاني يعطي الحدود المطبقة فعلًا. مكتوب لإعدادات Claude Code وقابل للنقل لأي أداة. — Read the contract from the binary safely and fast.
+
+**متى:** مفتاح إعداد غير موثق، ما الحد الأقصى المطبق، هل هذه الكتلة من نسخة أقدم أم تالفة / undocumented config keys in a CLI
+
+**كيف:** 1) Find the real binary, not a wrapper: which often resolves to a shim; follow the version symlink and sanity-check the size (hundreds of megabytes, not kilobytes). 2) Run strings -n 10 once into a text file; never run regexes directly over the binary, which is pathologically slow. 3) Search the extract by key name, read by line number, and always truncate the output. 4) Read both sources: the generating prompt (intent and the full slot or label list) and the validator (max entries, max length, forbidden characters, required literals). 5) Find the guard condition before quoting a branch, so you know when it applies. 6) Label sets drift between versions; record the version you read. 7) This gives the contract, not runtime behaviour; test behaviour separately, and prefer the published schema when the key is in it. Full original skill(s) with license: vendor/kosif-atlas/skills/3281-claude-code-settings-spec-from-binary/13792-claude-code-settings-spec-from-binary.
+
+**المعاملات:** key name, binary path
+
+**التثبيت:** mkdir -p ~/.claude/skills && cp -r .claude/skills/kosif-superpowers/vendor/kosif-atlas/skills/3281-claude-code-settings-spec-from-binary/13792-claude-code-settings-spec-from-binary ~/.claude/skills/claude-code-settings-spec-from-binary
+
+**الوسوم:** reverse engineering · strings · undocumented settings · Claude Code · CLI config · إعدادات غير موثقة
+
+#### 1. الاستقبال (A25)
+
+- اللغة والإطار: افتراض مكتوب ← لغة المستودع الموجود، وإلا Python أو HTML/JS بلا اعتماديات
+- أين يعمل: افتراض مكتوب ← المتصفح أو سطر الأوامر حسب المخرج
+- مستودع أو ملفات موجودة: سؤال بإجابة مقترحة ← مشروع جديد مستقل
+- متى يكون ناجحًا: افتراض مكتوب ← الاختبارات الموجودة تمر + اختبار لكل سلوك جديد
+- لا تُفترض أبدًا: مادة الإنتاج نفسها، والإذن بخطوة مدفوعة أو منشورة أو لا رجعة فيها، والهوية والحقوق.
+
+#### 2. الجاهزية والشارة (A28)
+
+- لا متطلبات مسجلة؛ افحص المسار والأداة بـ `hub.py doctor` قبل الشارة.
+- الوضع 1: شارة «هنا الآن» بعد الفحص، لا 📄 الكتالوج تلقائيًا · الوضع 2: `كتالوج: 📄 · هنا: غير مفحوص` · الوضع 3: بلا شارة ولا معرّف.
+
+#### 3. موضعها في الخطة (A26)
+
+- عقدة منمّطة: المدخل `spec` ← المخرج `code`، والمنفّذ `method:ACODE-309` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `atlas-ledger`.
+- مراحل النوع: قراءة الكود والاختبارات ← إعادة إنتاج أو اختبار جديد ← أصغر تغيير ← الاختبارات ← مراجعة الفرق ← فرع وPR.
+- إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
+
+#### 4. بوابة التحقق (A27)
+
+- إلزامي: الاختبارات الموجودة تمر قبل التعديل وبعده ← أمر الاختبار
+- إلزامي: اختبار لكل سلوك جديد أو خطأ مُصلح ← الاختبار الجديد يفشل قبل الإصلاح
+- إلزامي: لا أسرار ولا مسارات جلسة في الشيفرة ← بحث أنماط الأسرار
+- جودة: يطابق أسلوب الكود المحيط وتسمياته ← مراجعة الفرق
+- جودة: طريقة تشغيل مكتوبة ومجرَّبة ← تشغيل الأمر المكتوب
+- جودة: الفرق أصغر ما يحقق الطلب بلا إعادة كتابة غير مطلوبة ← git diff --stat
+- جودة: المدخل الخاطئ يعطي خطأ واضحًا لا انهيارًا صامتًا ← تشغيل بمدخل خاطئ
+- أمر الحكم في الوضع 1: `think.py qa code --answers qa.json` (PASS / FAIL / INCOMPLETE).
+
+#### 5. التعافي (A29)
+
+- `missing_dependency` (اعتمادية مفقودة، ميزانية 2): سمِّ الاعتمادية بالضبط (حزمة، برنامج، خط، نموذج) ← ثبّت محليًا في بيئة العمل إن كان مجانيًا ومسموحًا (pip --user أو venv أو npm محلي) · البديل: مسار المكتبة القياسية أو أداة أخرى من نفس المجموعة · تصعيد: تثبيت نظامي أو مدفوع أو يحتاج مفتاحًا: توقف واسأل
+- `quality_below_threshold` (جودة دون العتبة، ميزانية 3): أي معيار فشل وبكم (المقيس مقابل العتبة) ← عالج السبب الأكبر وحده ثم أعد القياس · البديل: المنهج البديل المكتوب للمرحلة في الخطة · تصعيد: معيار إلزامي لا يتحقق بعد البديل: توقف وأبلغ بالأرقام
+- `tool_error` (خطأ أداة، ميزانية 3): اقرأ آخر سطر في الخطأ ثم أول سطر من كودك فيه ← أصلح السبب المثبت وحده، ثم شغّل الاختبار المتعلق · البديل: أداة أخرى أو مسار يدوي للمرحلة نفسها · تصعيد: خطأ في أداة خارجية لا تملكها: بلّغ بإعادة الإنتاج ولا تخفه
+
+#### 6. الأدلة
+
+- `https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/3281-claude-code-settings-spec-from-binary/13792-claude-code-settings-spec-from-binary`
+
+#### 7. قدرات قريبة في العائلة
+
+- `ACODE-307` قِس فجوة التوافق قبل التثبيت: عدّد ما تطلبه الأداة، واقرأ العقد المعلن، وجرّب الأوامر الآمنة فقط / Measure a compatibility gap before installing: enumerate what the tool needs, read the declared contract, probe read-only verbs (documented)
+- `ACODE-308` مراجعة جاهزية الخطة قبل بدء العمل بأدلة المستودع: تحقق من كل ادعاء عن الحالة الحالية، والعيوب الحقيقية فقط / Plan readiness review against repository evidence before work starts: verify every claim about current state, report real gaps only (documented)
+- `ACODE-31` إعداد مصادقة API بأقل صلاحيات والتحقق منها / Least-privilege API auth setup and verification (documented)
+- `ACODE-310` تحقق من مهارة أو سوق إضافات مقابل الوثائق الحالية المجلوبة حيًا: المطابقة والحداثة والصلاحية والانحراف عن الأصل / Verify a skill or plugin marketplace against current docs fetched live: conformance, currency, freshness and upstream drift (documented)
 
 ### `ACODE-31` — إعداد مصادقة API بأقل صلاحيات والتحقق منها / Least-privilege API auth setup and verification
 
@@ -15305,10 +17680,751 @@
 
 #### 7. قدرات قريبة في العائلة
 
-- `ACODE-29` قائمة تحصين نقطة GraphQL / GraphQL endpoint hardening checklist (documented)
-- `ACODE-30` مصادقة JWT مع تدوير التحديث وصلاحيات الأدوار / JWT auth with refresh rotation and RBAC (documented)
+- `ACODE-308` مراجعة جاهزية الخطة قبل بدء العمل بأدلة المستودع: تحقق من كل ادعاء عن الحالة الحالية، والعيوب الحقيقية فقط / Plan readiness review against repository evidence before work starts: verify every claim about current state, report real gaps only (documented)
+- `ACODE-309` استرجاع عقد إعداد غير موثق من الملف التنفيذي المشحون: strings إلى ملف أولًا، ونص التعليمات ودوال التحقق معًا / Recover an undocumented settings contract from a shipped binary: strings to a file first, and read both the prompt text and the validator bodies (documented)
+- `ACODE-310` تحقق من مهارة أو سوق إضافات مقابل الوثائق الحالية المجلوبة حيًا: المطابقة والحداثة والصلاحية والانحراف عن الأصل / Verify a skill or plugin marketplace against current docs fetched live: conformance, currency, freshness and upstream drift (documented)
+- `ACODE-311` هندسة إضافات Claude Code: تحويل مستودع أوامر وخطافات إلى إضافة، والتوافق مع Codex، والنشر، والتحديث برفع الإصدار، والنسخ الشخصية التي تحجب الحزمة / Claude Code plugin engineering: convert a commands-and-hooks repo, port to Codex, publish, ship updates by bumping the version, and audit personal copies that shadow the bundle (documented)
+
+### `ACODE-310` — تحقق من مهارة أو سوق إضافات مقابل الوثائق الحالية المجلوبة حيًا: المطابقة والحداثة والصلاحية والانحراف عن الأصل / Verify a skill or plugin marketplace against current docs fetched live: conformance, currency, freshness and upstream drift
+
+| الحقل | القيمة |
+|---|---|
+| العائلة | `atlas-code` ([فصل العائلة](../../../.claude/skills/kosif-superpowers/references/powers/atlas-code.md)) |
+| المجموعة | البرمجة وبناء التطبيقات (`software`) |
+| نوع المخرج (A25، A27) | كود وتطبيقات ومواقع (`code`) |
+| الحالة في الكتالوج | 📄 `documented`: منهج موصوف يحتاج بناءً أو ربطًا قبل التشغيل |
+| سقف التحقق قبل العمل (A27) | V1 حتى تُبنى وتُشغَّل؛ لا تقدَّم جاهزة أبدًا |
+| نطاق الدليل | `url` |
+| الرخصة | card in our own words; the original skill folders are copied verbatim with their MIT license and SOURCE.md under vendor/kosif-atlas |
+
+**ما هي:** المهارات والأسواق تتقادم بصمت: حقول أُهملت، وميزات أصبحت مدمجة، وروابط ماتت، ونسخ مستوردة ابتعدت عن مصدرها. يجلب الإرشادات الحالية أولًا ثم يفحص على أربعة محاور، ويجمع الأدلة الآلية قبل الحكم. — Freshness audit for skills and marketplaces.
+
+**متى:** هل هذه المهارة ما زالت صحيحة، راجع سوق الإضافات قبل النشر، مهارة مستوردة قديمة / auditing a skill or marketplace for staleness
+
+**كيف:** 1) Resolve the target (a skill folder, or a marketplace repo with its catalog and plugins). 2) Fetch the current specification and host documentation live; do not rely on memory. 3) Collect mechanical evidence first: parse front matter and manifests, list files, check every URL. 4) Skill axes: conformance to the current spec and authoring guidance; currency of the host features it uses (deprecated fields, fields it should use such as allowed-tools, hand-rolled mechanisms that are now native); freshness of facts it states (versions, commands, prices); upstream drift for an imported skill, diffed against its source repository. 5) Marketplace axes: the catalog matches the plugins on disk; each plugin manifest and layout fits the hosts it targets; README, licence, CI and cross-file consistency; the commands, fields and URLs it relies on still exist upstream, with dead links listed. 6) Report findings per axis with evidence and a fix, highest impact first; change nothing without approval. Full original skill(s) with license: vendor/kosif-atlas/skills/3179-verify-skill/13525-verify-skill, vendor/kosif-atlas/skills/3178-verify-marketplace/13524-verify-marketplace.
+
+**المعاملات:** skill folder or marketplace repo
+
+**التثبيت:** mkdir -p ~/.claude/skills && cp -r .claude/skills/kosif-superpowers/vendor/kosif-atlas/skills/3179-verify-skill/13525-verify-skill ~/.claude/skills/verify-skill ; mkdir -p ~/.claude/skills && cp -r .claude/skills/kosif-superpowers/vendor/kosif-atlas/skills/3178-verify-marketplace/13524-verify-marketplace ~/.claude/skills/verify-marketplace
+
+**الوسوم:** verify skill · marketplace · plugin manifest · staleness · dead links · التحقق من المهارات · سوق الإضافات
+
+#### 1. الاستقبال (A25)
+
+- اللغة والإطار: افتراض مكتوب ← لغة المستودع الموجود، وإلا Python أو HTML/JS بلا اعتماديات
+- أين يعمل: افتراض مكتوب ← المتصفح أو سطر الأوامر حسب المخرج
+- مستودع أو ملفات موجودة: سؤال بإجابة مقترحة ← مشروع جديد مستقل
+- متى يكون ناجحًا: افتراض مكتوب ← الاختبارات الموجودة تمر + اختبار لكل سلوك جديد
+- لا تُفترض أبدًا: مادة الإنتاج نفسها، والإذن بخطوة مدفوعة أو منشورة أو لا رجعة فيها، والهوية والحقوق.
+
+#### 2. الجاهزية والشارة (A28)
+
+- لا متطلبات مسجلة؛ افحص المسار والأداة بـ `hub.py doctor` قبل الشارة.
+- الوضع 1: شارة «هنا الآن» بعد الفحص، لا 📄 الكتالوج تلقائيًا · الوضع 2: `كتالوج: 📄 · هنا: غير مفحوص` · الوضع 3: بلا شارة ولا معرّف.
+
+#### 3. موضعها في الخطة (A26)
+
+- عقدة منمّطة: المدخل `spec` ← المخرج `code`، والمنفّذ `method:ACODE-310` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `atlas-ledger`.
+- مراحل النوع: قراءة الكود والاختبارات ← إعادة إنتاج أو اختبار جديد ← أصغر تغيير ← الاختبارات ← مراجعة الفرق ← فرع وPR.
+- إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
+
+#### 4. بوابة التحقق (A27)
+
+- إلزامي: الاختبارات الموجودة تمر قبل التعديل وبعده ← أمر الاختبار
+- إلزامي: اختبار لكل سلوك جديد أو خطأ مُصلح ← الاختبار الجديد يفشل قبل الإصلاح
+- إلزامي: لا أسرار ولا مسارات جلسة في الشيفرة ← بحث أنماط الأسرار
+- جودة: يطابق أسلوب الكود المحيط وتسمياته ← مراجعة الفرق
+- جودة: طريقة تشغيل مكتوبة ومجرَّبة ← تشغيل الأمر المكتوب
+- جودة: الفرق أصغر ما يحقق الطلب بلا إعادة كتابة غير مطلوبة ← git diff --stat
+- جودة: المدخل الخاطئ يعطي خطأ واضحًا لا انهيارًا صامتًا ← تشغيل بمدخل خاطئ
+- أمر الحكم في الوضع 1: `think.py qa code --answers qa.json` (PASS / FAIL / INCOMPLETE).
+
+#### 5. التعافي (A29)
+
+- `missing_dependency` (اعتمادية مفقودة، ميزانية 2): سمِّ الاعتمادية بالضبط (حزمة، برنامج، خط، نموذج) ← ثبّت محليًا في بيئة العمل إن كان مجانيًا ومسموحًا (pip --user أو venv أو npm محلي) · البديل: مسار المكتبة القياسية أو أداة أخرى من نفس المجموعة · تصعيد: تثبيت نظامي أو مدفوع أو يحتاج مفتاحًا: توقف واسأل
+- `quality_below_threshold` (جودة دون العتبة، ميزانية 3): أي معيار فشل وبكم (المقيس مقابل العتبة) ← عالج السبب الأكبر وحده ثم أعد القياس · البديل: المنهج البديل المكتوب للمرحلة في الخطة · تصعيد: معيار إلزامي لا يتحقق بعد البديل: توقف وأبلغ بالأرقام
+- `tool_error` (خطأ أداة، ميزانية 3): اقرأ آخر سطر في الخطأ ثم أول سطر من كودك فيه ← أصلح السبب المثبت وحده، ثم شغّل الاختبار المتعلق · البديل: أداة أخرى أو مسار يدوي للمرحلة نفسها · تصعيد: خطأ في أداة خارجية لا تملكها: بلّغ بإعادة الإنتاج ولا تخفه
+
+#### 6. الأدلة
+
+- `https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/3179-verify-skill/13525-verify-skill`
+- `https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/3178-verify-marketplace/13524-verify-marketplace`
+
+#### 7. قدرات قريبة في العائلة
+
+- `ACODE-309` استرجاع عقد إعداد غير موثق من الملف التنفيذي المشحون: strings إلى ملف أولًا، ونص التعليمات ودوال التحقق معًا / Recover an undocumented settings contract from a shipped binary: strings to a file first, and read both the prompt text and the validator bodies (documented)
+- `ACODE-31` إعداد مصادقة API بأقل صلاحيات والتحقق منها / Least-privilege API auth setup and verification (documented)
+- `ACODE-311` هندسة إضافات Claude Code: تحويل مستودع أوامر وخطافات إلى إضافة، والتوافق مع Codex، والنشر، والتحديث برفع الإصدار، والنسخ الشخصية التي تحجب الحزمة / Claude Code plugin engineering: convert a commands-and-hooks repo, port to Codex, publish, ship updates by bumping the version, and audit personal copies that shadow the bundle (documented)
+- `ACODE-312` جعل أي وكيل آخر يحمّل ملفات SKILL.md: قائمة سطر لكل مهارة في التعليمات، وأداة load_skill للنص الكامل، وأولوية مسارات معلنة / Make any other agent host load SKILL.md files: a one-line menu in the system prompt, a load_skill tool for the full body, declared path precedence (documented)
+
+### `ACODE-311` — هندسة إضافات Claude Code: تحويل مستودع أوامر وخطافات إلى إضافة، والتوافق مع Codex، والنشر، والتحديث برفع الإصدار، والنسخ الشخصية التي تحجب الحزمة / Claude Code plugin engineering: convert a commands-and-hooks repo, port to Codex, publish, ship updates by bumping the version, and audit personal copies that shadow the bundle
+
+| الحقل | القيمة |
+|---|---|
+| العائلة | `atlas-code` ([فصل العائلة](../../../.claude/skills/kosif-superpowers/references/powers/atlas-code.md)) |
+| المجموعة | البرمجة وبناء التطبيقات (`software`) |
+| نوع المخرج (A25، A27) | كود وتطبيقات ومواقع (`code`) |
+| الحالة في الكتالوج | 📄 `documented`: منهج موصوف يحتاج بناءً أو ربطًا قبل التشغيل |
+| سقف التحقق قبل العمل (A27) | V1 حتى تُبنى وتُشغَّل؛ لا تقدَّم جاهزة أبدًا |
+| نطاق الدليل | `url` |
+| الرخصة | card in our own words; the original skill folders are copied verbatim with their MIT license and SOURCE.md under vendor/kosif-atlas |
+
+**ما هي:** دليل عملي لدورة حياة الإضافة: هيكل يسمح بالتعايش مع الطريقة القديمة، وملف السوق في جذر المستودع، وعدم تعريف الخطافات مرتين، والفرق الحقيقي مع Codex في بروتوكول الخطافات، ونموذج التقديم للسوق الرسمي، وأن التحديث مقارنة نص الإصدار فقط فلا يصل أي تغيير دون رفع الرقم، وتثبيت تبعيات بايثون من سكربت الخطاف، ونسخ ~/.claude/skills القديمة التي تُحمّل بدل نسخة الحزمة الأحدث. — End-to-end plugin authoring and maintenance.
+
+**متى:** تحويل أوامري إلى إضافة، نقل إضافة إلى Codex، نشر إضافة، المستخدمون لا يحصلون على التحديث، الإضافة تتصرف كالنسخة القديمة / building, porting, publishing or updating a plugin
+
+**كيف:** 1) Convert: put .claude-plugin/marketplace.json at the repo root with source relative to the root pointing at the plugin folder; the plugin folder holds .claude-plugin/plugin.json, commands, skills and hooks/hooks.json; do not also declare hooks in plugin.json when the file sits at the auto-load path; use the plugin-root variable in hook commands, not a home path; keep the old install method working beside it. 2) Verify from a fresh session in another directory: add the marketplace, install, see the commands and fire a hook. 3) Codex parity: mirror the manifest as .codex-plugin/plugin.json; most files copy as is; check the hook runtime protocol (payload and output keys, which decisions PreToolUse accepts) and hook trust gating, reading the shipped binary's strings when docs are thin. 4) Publish: validate locally, then submit through the marketplace form (not a pull request) with name, description and example use cases; approved entries sync on a schedule. 5) Updates: the installed copy lives in a cache keyed by version, so an update is a string comparison; bump plugin.json version on every merge that changes runtime behaviour (patch for invisible changes, minor for visible behaviour, major for format stability or breaks), and tell users to update then restart. 6) Python dependencies: install from the hook wrapper once into the user site with a marker file per version, then run; avoid vendoring wheels or forking a venv per hook call. 7) Shadow audit: list personal ~/.claude/skills copies that the bundle also ships, back them up, diff them, keep personal-only lines that matter by moving them upstream, and remove stale shadows. Full original skill(s) with license: vendor/kosif-atlas/skills/3276-claude-code-plugin-from-existing-repo/13787-claude-code-plugin-from-existing-repo, vendor/kosif-atlas/skills/3274-claude-code-codex-plugin-parity/13785-claude-code-codex-plugin-parity, vendor/kosif-atlas/skills/3277-claude-code-plugin-publish-anthropic-mar/13788-claude-code-plugin-publish-anthropic-mar, vendor/kosif-atlas/skills/3280-claude-code-plugin-update-flow/13791-claude-code-plugin-update-flow, vendor/kosif-atlas/skills/3278-claude-code-plugin-python-bootstrap/13789-claude-code-plugin-python-bootstrap, vendor/kosif-atlas/skills/3302-codex-hook-wire-schema-from-binary/13816-codex-hook-wire-schema-from-binary, vendor/kosif-atlas/skills/3341-personal-skills-shadow-bundle-audit/13855-personal-skills-shadow-bundle-audit.
+
+**المعاملات:** repository, target hosts
+
+**التثبيت:** mkdir -p ~/.claude/skills && cp -r .claude/skills/kosif-superpowers/vendor/kosif-atlas/skills/3276-claude-code-plugin-from-existing-repo/13787-claude-code-plugin-from-existing-repo ~/.claude/skills/claude-code-plugin-from-existing-repo ; mkdir -p ~/.claude/skills && cp -r .claude/skills/kosif-superpowers/vendor/kosif-atlas/skills/3274-claude-code-codex-plugin-parity/13785-claude-code-codex-plugin-parity ~/.claude/skills/claude-code-codex-plugin-parity ; mkdir -p ~/.claude/skills && cp -r .claude/skills/kosif-superpowers/vendor/kosif-atlas/skills/3277-claude-code-plugin-publish-anthropic-mar/13788-claude-code-plugin-publish-anthropic-mar ~/.claude/skills/claude-code-plugin-publish-anthropic-mar ; mkdir -p ~/.claude/skills && cp -r .claude/skills/kosif-superpowers/vendor/kosif-atlas/skills/3280-claude-code-plugin-update-flow/13791-claude-code-plugin-update-flow ~/.claude/skills/claude-code-plugin-update-flow ; mkdir -p ~/.claude/skills && cp -r .claude/skills/kosif-superpowers/vendor/kosif-atlas/skills/3278-claude-code-plugin-python-bootstrap/13789-claude-code-plugin-python-bootstrap ~/.claude/skills/claude-code-plugin-python-bootstrap ; mkdir -p ~/.claude/skills && cp -r .claude/skills/kosif-superpowers/vendor/kosif-atlas/skills/3302-codex-hook-wire-schema-from-binary/13816-codex-hook-wire-schema-from-binary ~/.claude/skills/codex-hook-wire-schema-from-binary ; mkdir -p ~/.claude/skills && cp -r .claude/skills/kosif-superpowers/vendor/kosif-atlas/skills/3341-personal-skills-shadow-bundle-audit/13855-personal-skills-shadow-bundle-audit ~/.claude/skills/personal-skills-shadow-bundle-audit
+
+**الوسوم:** Claude Code plugin · marketplace · Codex plugin · hooks · plugin update · versioning · إضافات Claude Code · النشر
+
+#### 1. الاستقبال (A25)
+
+- اللغة والإطار: افتراض مكتوب ← لغة المستودع الموجود، وإلا Python أو HTML/JS بلا اعتماديات
+- أين يعمل: افتراض مكتوب ← المتصفح أو سطر الأوامر حسب المخرج
+- مستودع أو ملفات موجودة: سؤال بإجابة مقترحة ← مشروع جديد مستقل
+- متى يكون ناجحًا: افتراض مكتوب ← الاختبارات الموجودة تمر + اختبار لكل سلوك جديد
+- لا تُفترض أبدًا: مادة الإنتاج نفسها، والإذن بخطوة مدفوعة أو منشورة أو لا رجعة فيها، والهوية والحقوق.
+
+#### 2. الجاهزية والشارة (A28)
+
+- `python3` ← افحص وجوده بأمر واحد قبل كتابة الشارة
+- `mcp:github` ← افحص وجوده بأمر واحد قبل كتابة الشارة
+- الوضع 1: شارة «هنا الآن» بعد الفحص، لا 📄 الكتالوج تلقائيًا · الوضع 2: `كتالوج: 📄 · هنا: غير مفحوص` · الوضع 3: بلا شارة ولا معرّف.
+
+#### 3. موضعها في الخطة (A26)
+
+- عقدة منمّطة: المدخل `spec` ← المخرج `code`، والمنفّذ `method:ACODE-311` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `atlas-ledger`.
+- مراحل النوع: قراءة الكود والاختبارات ← إعادة إنتاج أو اختبار جديد ← أصغر تغيير ← الاختبارات ← مراجعة الفرق ← فرع وPR.
+- إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
+
+#### 4. بوابة التحقق (A27)
+
+- إلزامي: الاختبارات الموجودة تمر قبل التعديل وبعده ← أمر الاختبار
+- إلزامي: اختبار لكل سلوك جديد أو خطأ مُصلح ← الاختبار الجديد يفشل قبل الإصلاح
+- إلزامي: لا أسرار ولا مسارات جلسة في الشيفرة ← بحث أنماط الأسرار
+- جودة: يطابق أسلوب الكود المحيط وتسمياته ← مراجعة الفرق
+- جودة: طريقة تشغيل مكتوبة ومجرَّبة ← تشغيل الأمر المكتوب
+- جودة: الفرق أصغر ما يحقق الطلب بلا إعادة كتابة غير مطلوبة ← git diff --stat
+- جودة: المدخل الخاطئ يعطي خطأ واضحًا لا انهيارًا صامتًا ← تشغيل بمدخل خاطئ
+- أمر الحكم في الوضع 1: `think.py qa code --answers qa.json` (PASS / FAIL / INCOMPLETE).
+
+#### 5. التعافي (A29)
+
+- `missing_dependency` (اعتمادية مفقودة، ميزانية 2): سمِّ الاعتمادية بالضبط (حزمة، برنامج، خط، نموذج) ← ثبّت محليًا في بيئة العمل إن كان مجانيًا ومسموحًا (pip --user أو venv أو npm محلي) · البديل: مسار المكتبة القياسية أو أداة أخرى من نفس المجموعة · تصعيد: تثبيت نظامي أو مدفوع أو يحتاج مفتاحًا: توقف واسأل
+- `quality_below_threshold` (جودة دون العتبة، ميزانية 3): أي معيار فشل وبكم (المقيس مقابل العتبة) ← عالج السبب الأكبر وحده ثم أعد القياس · البديل: المنهج البديل المكتوب للمرحلة في الخطة · تصعيد: معيار إلزامي لا يتحقق بعد البديل: توقف وأبلغ بالأرقام
+- `tool_error` (خطأ أداة، ميزانية 3): اقرأ آخر سطر في الخطأ ثم أول سطر من كودك فيه ← أصلح السبب المثبت وحده، ثم شغّل الاختبار المتعلق · البديل: أداة أخرى أو مسار يدوي للمرحلة نفسها · تصعيد: خطأ في أداة خارجية لا تملكها: بلّغ بإعادة الإنتاج ولا تخفه
+
+#### 6. الأدلة
+
+- `https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/3276-claude-code-plugin-from-existing-repo/13787-claude-code-plugin-from-existing-repo`
+- `https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/3274-claude-code-codex-plugin-parity/13785-claude-code-codex-plugin-parity`
+- `https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/3277-claude-code-plugin-publish-anthropic-mar/13788-claude-code-plugin-publish-anthropic-mar`
+- `https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/3280-claude-code-plugin-update-flow/13791-claude-code-plugin-update-flow`
+- `https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/3278-claude-code-plugin-python-bootstrap/13789-claude-code-plugin-python-bootstrap`
+- `https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/3302-codex-hook-wire-schema-from-binary/13816-codex-hook-wire-schema-from-binary`
+- `https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/3341-personal-skills-shadow-bundle-audit/13855-personal-skills-shadow-bundle-audit`
+
+#### 7. قدرات قريبة في العائلة
+
+- `ACODE-31` إعداد مصادقة API بأقل صلاحيات والتحقق منها / Least-privilege API auth setup and verification (documented)
+- `ACODE-310` تحقق من مهارة أو سوق إضافات مقابل الوثائق الحالية المجلوبة حيًا: المطابقة والحداثة والصلاحية والانحراف عن الأصل / Verify a skill or plugin marketplace against current docs fetched live: conformance, currency, freshness and upstream drift (documented)
+- `ACODE-312` جعل أي وكيل آخر يحمّل ملفات SKILL.md: قائمة سطر لكل مهارة في التعليمات، وأداة load_skill للنص الكامل، وأولوية مسارات معلنة / Make any other agent host load SKILL.md files: a one-line menu in the system prompt, a load_skill tool for the full body, declared path precedence (documented)
+- `ACODE-313` البرومبت ككود: ملفات في المستودع، وقوالب بمتغيرات صريحة، ومراجعة بنتائج تقييم قبل وبعد، وتثبيت إصدار النموذج، وطرح تدريجي / Prompts as code: files in the repo, explicit-variable templates, review with before-and-after evals, pinned model versions, staged rollout (documented)
+
+### `ACODE-312` — جعل أي وكيل آخر يحمّل ملفات SKILL.md: قائمة سطر لكل مهارة في التعليمات، وأداة load_skill للنص الكامل، وأولوية مسارات معلنة / Make any other agent host load SKILL.md files: a one-line menu in the system prompt, a load_skill tool for the full body, declared path precedence
+
+| الحقل | القيمة |
+|---|---|
+| العائلة | `atlas-code` ([فصل العائلة](../../../.claude/skills/kosif-superpowers/references/powers/atlas-code.md)) |
+| المجموعة | البرمجة وبناء التطبيقات (`software`) |
+| نوع المخرج (A25، A27) | كود وتطبيقات ومواقع (`code`) |
+| الحالة في الكتالوج | 📄 `documented`: منهج موصوف يحتاج بناءً أو ربطًا قبل التشغيل |
+| سقف التحقق قبل العمل (A27) | V1 حتى تُبنى وتُشغَّل؛ لا تقدَّم جاهزة أبدًا |
+| نطاق الدليل | `url` |
+| الرخصة | card in our own words; the original skill folders are copied verbatim with their MIT license and SOURCE.md under vendor/kosif-atlas |
+
+**ما هي:** لتصل إجراءات مكتوبة مرة واحدة إلى كل وكيل تشغله، يقرأ المضيف الترويسة بمحلل YAML حقيقي، ويضع قائمة قصيرة (الاسم والوصف) في تعليمات النظام، ويعطي أداة تعيد المهارة كاملة عند الطلب، ويرتب مسارات البحث صراحة، ويعيد التحميل عند حدود الدور. — Skill loading for custom agent runtimes.
+
+**متى:** بناء وكيل خاص يستخدم نفس مهاراتي، دعم صيغة المهارات في إطار وكلاء آخر / adding skill support to a custom agent loop
+
+**كيف:** 1) Parse front matter by splitting on the fence and running a YAML parser on that block only; descriptions use block scalars that regexes break. 2) Deliver in two parts: the menu (one line per skill, name plus description) in the system prompt, and a load_skill(name) tool returning the SKILL.md in full; reference files load on demand by path. 3) Search ordered paths (project, then user, then bundled) and log which one won when names collide. 4) Refresh the skill list at a turn boundary: most loops build the tool schema once per turn, so a mid-turn reload is invisible until the next turn. 5) Gate reloads to changed files to keep them cheap, and cost nothing when no skills exist. 6) Verify with a skill whose description should trigger, one that should not, and a name collision. Full original skill(s) with license: vendor/kosif-atlas/skills/3261-agent-host-skill-loading/13772-agent-host-skill-loading.
+
+**المعاملات:** agent loop, skill paths
+
+**التثبيت:** mkdir -p ~/.claude/skills && cp -r .claude/skills/kosif-superpowers/vendor/kosif-atlas/skills/3261-agent-host-skill-loading/13772-agent-host-skill-loading ~/.claude/skills/agent-host-skill-loading
+
+**الوسوم:** agent skills · SKILL.md · skill loading · agent runtime · تحميل المهارات
+
+#### 1. الاستقبال (A25)
+
+- اللغة والإطار: افتراض مكتوب ← لغة المستودع الموجود، وإلا Python أو HTML/JS بلا اعتماديات
+- أين يعمل: افتراض مكتوب ← المتصفح أو سطر الأوامر حسب المخرج
+- مستودع أو ملفات موجودة: سؤال بإجابة مقترحة ← مشروع جديد مستقل
+- متى يكون ناجحًا: افتراض مكتوب ← الاختبارات الموجودة تمر + اختبار لكل سلوك جديد
+- لا تُفترض أبدًا: مادة الإنتاج نفسها، والإذن بخطوة مدفوعة أو منشورة أو لا رجعة فيها، والهوية والحقوق.
+
+#### 2. الجاهزية والشارة (A28)
+
+- لا متطلبات مسجلة؛ افحص المسار والأداة بـ `hub.py doctor` قبل الشارة.
+- الوضع 1: شارة «هنا الآن» بعد الفحص، لا 📄 الكتالوج تلقائيًا · الوضع 2: `كتالوج: 📄 · هنا: غير مفحوص` · الوضع 3: بلا شارة ولا معرّف.
+
+#### 3. موضعها في الخطة (A26)
+
+- عقدة منمّطة: المدخل `spec` ← المخرج `code`، والمنفّذ `method:ACODE-312` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `atlas-ledger`.
+- مراحل النوع: قراءة الكود والاختبارات ← إعادة إنتاج أو اختبار جديد ← أصغر تغيير ← الاختبارات ← مراجعة الفرق ← فرع وPR.
+- إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
+
+#### 4. بوابة التحقق (A27)
+
+- إلزامي: الاختبارات الموجودة تمر قبل التعديل وبعده ← أمر الاختبار
+- إلزامي: اختبار لكل سلوك جديد أو خطأ مُصلح ← الاختبار الجديد يفشل قبل الإصلاح
+- إلزامي: لا أسرار ولا مسارات جلسة في الشيفرة ← بحث أنماط الأسرار
+- جودة: يطابق أسلوب الكود المحيط وتسمياته ← مراجعة الفرق
+- جودة: طريقة تشغيل مكتوبة ومجرَّبة ← تشغيل الأمر المكتوب
+- جودة: الفرق أصغر ما يحقق الطلب بلا إعادة كتابة غير مطلوبة ← git diff --stat
+- جودة: المدخل الخاطئ يعطي خطأ واضحًا لا انهيارًا صامتًا ← تشغيل بمدخل خاطئ
+- أمر الحكم في الوضع 1: `think.py qa code --answers qa.json` (PASS / FAIL / INCOMPLETE).
+
+#### 5. التعافي (A29)
+
+- `missing_dependency` (اعتمادية مفقودة، ميزانية 2): سمِّ الاعتمادية بالضبط (حزمة، برنامج، خط، نموذج) ← ثبّت محليًا في بيئة العمل إن كان مجانيًا ومسموحًا (pip --user أو venv أو npm محلي) · البديل: مسار المكتبة القياسية أو أداة أخرى من نفس المجموعة · تصعيد: تثبيت نظامي أو مدفوع أو يحتاج مفتاحًا: توقف واسأل
+- `quality_below_threshold` (جودة دون العتبة، ميزانية 3): أي معيار فشل وبكم (المقيس مقابل العتبة) ← عالج السبب الأكبر وحده ثم أعد القياس · البديل: المنهج البديل المكتوب للمرحلة في الخطة · تصعيد: معيار إلزامي لا يتحقق بعد البديل: توقف وأبلغ بالأرقام
+- `tool_error` (خطأ أداة، ميزانية 3): اقرأ آخر سطر في الخطأ ثم أول سطر من كودك فيه ← أصلح السبب المثبت وحده، ثم شغّل الاختبار المتعلق · البديل: أداة أخرى أو مسار يدوي للمرحلة نفسها · تصعيد: خطأ في أداة خارجية لا تملكها: بلّغ بإعادة الإنتاج ولا تخفه
+
+#### 6. الأدلة
+
+- `https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/3261-agent-host-skill-loading/13772-agent-host-skill-loading`
+
+#### 7. قدرات قريبة في العائلة
+
+- `ACODE-310` تحقق من مهارة أو سوق إضافات مقابل الوثائق الحالية المجلوبة حيًا: المطابقة والحداثة والصلاحية والانحراف عن الأصل / Verify a skill or plugin marketplace against current docs fetched live: conformance, currency, freshness and upstream drift (documented)
+- `ACODE-311` هندسة إضافات Claude Code: تحويل مستودع أوامر وخطافات إلى إضافة، والتوافق مع Codex، والنشر، والتحديث برفع الإصدار، والنسخ الشخصية التي تحجب الحزمة / Claude Code plugin engineering: convert a commands-and-hooks repo, port to Codex, publish, ship updates by bumping the version, and audit personal copies that shadow the bundle (documented)
+- `ACODE-313` البرومبت ككود: ملفات في المستودع، وقوالب بمتغيرات صريحة، ومراجعة بنتائج تقييم قبل وبعد، وتثبيت إصدار النموذج، وطرح تدريجي / Prompts as code: files in the repo, explicit-variable templates, review with before-and-after evals, pinned model versions, staged rollout (documented)
+- `ACODE-314` تنفيذ هجمات الفريق الأحمر على نظام ذكاء اصطناعي ضمن قواعد اشتباك: حقن مباشر وغير مباشر واستخراج وإساءة استخدام الأدوات / Run red-team attacks on an AI system under rules of engagement: direct and indirect injection, extraction, and tool abuse (documented)
+
+### `ACODE-313` — البرومبت ككود: ملفات في المستودع، وقوالب بمتغيرات صريحة، ومراجعة بنتائج تقييم قبل وبعد، وتثبيت إصدار النموذج، وطرح تدريجي / Prompts as code: files in the repo, explicit-variable templates, review with before-and-after evals, pinned model versions, staged rollout
+
+| الحقل | القيمة |
+|---|---|
+| العائلة | `atlas-code` ([فصل العائلة](../../../.claude/skills/kosif-superpowers/references/powers/atlas-code.md)) |
+| المجموعة | البرمجة وبناء التطبيقات (`software`) |
+| نوع المخرج (A25، A27) | كود وتطبيقات ومواقع (`code`) |
+| الحالة في الكتالوج | 📄 `documented`: منهج موصوف يحتاج بناءً أو ربطًا قبل التشغيل |
+| سقف التحقق قبل العمل (A27) | V1 حتى تُبنى وتُشغَّل؛ لا تقدَّم جاهزة أبدًا |
+| نطاق الدليل | `url` |
+| الرخصة | card in our own words; the original skill folders are copied verbatim with their MIT license and SOURCE.md under vendor/kosif-atlas |
+
+**ما هي:** البرومبتات وأوصاف الأدوات وإعدادات النموذج التي تعيش في لوحات أو محادثات بلا تاريخ تكسر الإنتاج دون أثر. تُخزن بجانب الكود، وتُقولب، وتُراجع في PR مع نتائج التقييم، ويُثبت إصدار النموذج فترقيته تغيير يمر بمجموعة الانحدار، وتُطرح التغييرات الخطرة خلف علم وتُعاد بسرعة. — Version control for prompts and model settings.
+
+**متى:** تغيير برومبت كسر السلوك، البرومبت في لوحة تحكم بلا تاريخ، ترقية النموذج / managing prompt and model changes
+
+**كيف:** 1) Store prompts, tool descriptions and model or parameter configs as files next to the code that uses them. 2) Template with explicit variables; no ad-hoc string concatenation across files. 3) Review prompt changes in pull requests with eval results before and after. 4) Pin model versions; a model upgrade is a change that runs the regression suite. 5) Roll out risky changes behind a flag or to a share of traffic and watch quality metrics. 6) Keep rollback to one revert. 7) Log the prompt version with each production call so incidents trace to a version. Full original skill(s) with license: vendor/kosif-atlas/skills/3045-adlc-agent-engineering/13088-prompt-versioning.
+
+**المعاملات:** prompts, eval suite
+
+**التثبيت:** mkdir -p ~/.claude/skills && cp -r .claude/skills/kosif-superpowers/vendor/kosif-atlas/skills/3045-adlc-agent-engineering/13088-prompt-versioning ~/.claude/skills/prompt-versioning
+
+**الوسوم:** prompt versioning · prompts as code · model pinning · regression eval · إصدارات البرومبت
+
+#### 1. الاستقبال (A25)
+
+- اللغة والإطار: افتراض مكتوب ← لغة المستودع الموجود، وإلا Python أو HTML/JS بلا اعتماديات
+- أين يعمل: افتراض مكتوب ← المتصفح أو سطر الأوامر حسب المخرج
+- مستودع أو ملفات موجودة: سؤال بإجابة مقترحة ← مشروع جديد مستقل
+- متى يكون ناجحًا: افتراض مكتوب ← الاختبارات الموجودة تمر + اختبار لكل سلوك جديد
+- لا تُفترض أبدًا: مادة الإنتاج نفسها، والإذن بخطوة مدفوعة أو منشورة أو لا رجعة فيها، والهوية والحقوق.
+
+#### 2. الجاهزية والشارة (A28)
+
+- لا متطلبات مسجلة؛ افحص المسار والأداة بـ `hub.py doctor` قبل الشارة.
+- الوضع 1: شارة «هنا الآن» بعد الفحص، لا 📄 الكتالوج تلقائيًا · الوضع 2: `كتالوج: 📄 · هنا: غير مفحوص` · الوضع 3: بلا شارة ولا معرّف.
+
+#### 3. موضعها في الخطة (A26)
+
+- عقدة منمّطة: المدخل `spec` ← المخرج `code`، والمنفّذ `method:ACODE-313` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `atlas-ledger`.
+- مراحل النوع: قراءة الكود والاختبارات ← إعادة إنتاج أو اختبار جديد ← أصغر تغيير ← الاختبارات ← مراجعة الفرق ← فرع وPR.
+- إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
+
+#### 4. بوابة التحقق (A27)
+
+- إلزامي: الاختبارات الموجودة تمر قبل التعديل وبعده ← أمر الاختبار
+- إلزامي: اختبار لكل سلوك جديد أو خطأ مُصلح ← الاختبار الجديد يفشل قبل الإصلاح
+- إلزامي: لا أسرار ولا مسارات جلسة في الشيفرة ← بحث أنماط الأسرار
+- جودة: يطابق أسلوب الكود المحيط وتسمياته ← مراجعة الفرق
+- جودة: طريقة تشغيل مكتوبة ومجرَّبة ← تشغيل الأمر المكتوب
+- جودة: الفرق أصغر ما يحقق الطلب بلا إعادة كتابة غير مطلوبة ← git diff --stat
+- جودة: المدخل الخاطئ يعطي خطأ واضحًا لا انهيارًا صامتًا ← تشغيل بمدخل خاطئ
+- أمر الحكم في الوضع 1: `think.py qa code --answers qa.json` (PASS / FAIL / INCOMPLETE).
+
+#### 5. التعافي (A29)
+
+- `missing_dependency` (اعتمادية مفقودة، ميزانية 2): سمِّ الاعتمادية بالضبط (حزمة، برنامج، خط، نموذج) ← ثبّت محليًا في بيئة العمل إن كان مجانيًا ومسموحًا (pip --user أو venv أو npm محلي) · البديل: مسار المكتبة القياسية أو أداة أخرى من نفس المجموعة · تصعيد: تثبيت نظامي أو مدفوع أو يحتاج مفتاحًا: توقف واسأل
+- `quality_below_threshold` (جودة دون العتبة، ميزانية 3): أي معيار فشل وبكم (المقيس مقابل العتبة) ← عالج السبب الأكبر وحده ثم أعد القياس · البديل: المنهج البديل المكتوب للمرحلة في الخطة · تصعيد: معيار إلزامي لا يتحقق بعد البديل: توقف وأبلغ بالأرقام
+- `tool_error` (خطأ أداة، ميزانية 3): اقرأ آخر سطر في الخطأ ثم أول سطر من كودك فيه ← أصلح السبب المثبت وحده، ثم شغّل الاختبار المتعلق · البديل: أداة أخرى أو مسار يدوي للمرحلة نفسها · تصعيد: خطأ في أداة خارجية لا تملكها: بلّغ بإعادة الإنتاج ولا تخفه
+
+#### 6. الأدلة
+
+- `https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/3045-adlc-agent-engineering/13088-prompt-versioning`
+
+#### 7. قدرات قريبة في العائلة
+
+- `ACODE-311` هندسة إضافات Claude Code: تحويل مستودع أوامر وخطافات إلى إضافة، والتوافق مع Codex، والنشر، والتحديث برفع الإصدار، والنسخ الشخصية التي تحجب الحزمة / Claude Code plugin engineering: convert a commands-and-hooks repo, port to Codex, publish, ship updates by bumping the version, and audit personal copies that shadow the bundle (documented)
+- `ACODE-312` جعل أي وكيل آخر يحمّل ملفات SKILL.md: قائمة سطر لكل مهارة في التعليمات، وأداة load_skill للنص الكامل، وأولوية مسارات معلنة / Make any other agent host load SKILL.md files: a one-line menu in the system prompt, a load_skill tool for the full body, declared path precedence (documented)
+- `ACODE-314` تنفيذ هجمات الفريق الأحمر على نظام ذكاء اصطناعي ضمن قواعد اشتباك: حقن مباشر وغير مباشر واستخراج وإساءة استخدام الأدوات / Run red-team attacks on an AI system under rules of engagement: direct and indirect injection, extraction, and tool abuse (documented)
+- `ACODE-315` تقييم جاهزية المستودع للوكلاء: مدخل واحد معتمد، وأدوار الحزام (حالة العمل، السجل، العقود، التحقق، الأدلة)، وأصغر تحسين تالٍ / Assess a repository's agent harness: one canonical entrypoint, harness roles (work state, ledger, contracts, validation, evidence), and the next smallest improvement (documented)
+
+### `ACODE-314` — تنفيذ هجمات الفريق الأحمر على نظام ذكاء اصطناعي ضمن قواعد اشتباك: حقن مباشر وغير مباشر واستخراج وإساءة استخدام الأدوات / Run red-team attacks on an AI system under rules of engagement: direct and indirect injection, extraction, and tool abuse
+
+| الحقل | القيمة |
+|---|---|
+| العائلة | `atlas-code` ([فصل العائلة](../../../.claude/skills/kosif-superpowers/references/powers/atlas-code.md)) |
+| المجموعة | البرمجة وبناء التطبيقات (`software`) |
+| نوع المخرج (A25، A27) | كود وتطبيقات ومواقع (`code`) |
+| الحالة في الكتالوج | 📄 `documented`: منهج موصوف يحتاج بناءً أو ربطًا قبل التشغيل |
+| سقف التحقق قبل العمل (A27) | V1 حتى تُبنى وتُشغَّل؛ لا تقدَّم جاهزة أبدًا |
+| نطاق الدليل | `url` |
+| الرخصة | card in our own words; the original skill folders are copied verbatim with their MIT license and SOURCE.md under vendor/kosif-atlas |
+
+**ما هي:** للاختبار الأمني المصرح به لنظام ذكاء اصطناعي: لا اختبار بلا قواعد اشتباك (النطاق، الممنوع، أسرار وهمية بدل بيانات حقيقية، مفتاح إيقاف، الإفصاح)، ثم تصنيف مرتب بالأولوية، وكل نتيجة تُسجل بالحمولة والمحادثة والسلوك والتصنيف والخطورة، وما يتكرر يصبح حزمة آلية مع بوابة انحدار في CI. — Authorised AI red teaming, reproducibly.
+
+**متى:** اختبر النظام ضد حقن البرومبت، هل يمكن خداعه لاستدعاء أداة، حزمة فريق أحمر آلية / authorised testing of an LLM application
+
+**كيف:** 1) Confirm the rules of engagement first: scope, in and out of bounds, canary secrets instead of real personal data, a kill switch, disclosure; without them, stop. 2) Work the prioritised classes in order: direct injection and jailbreaks (persona, encoding, many-shot, crescendo, payload splitting); indirect injection planted in content the model reads (retrieved chunks, web pages, emails, tool results), the highest-yield and most-missed class, tested at every untrusted seam; disclosure and extraction (secrets, cross-tenant data, the system prompt); agentic tool abuse (unauthorised calls, privilege escalation, exfiltration through a tool, confused-deputy chains), hardest where the system can act; multimodal injection in images, audio or files. 3) Record each attempt: payload, full transcript, observed behaviour, OWASP LLM or ATLAS class, severity, and whether it reproduces. 4) Automate what repeats: a harness with a scorer and a regression gate in CI. 5) Report findings with fixes (input wrapping, permission checks in code, output filtering) and retest after fixes. Full original skill(s) with license: vendor/kosif-atlas/skills/2232-ai-red-teaming/8482-run-adversarial-attacks-and-jailbreaks.
+
+**المعاملات:** target system, rules of engagement
+
+**التثبيت:** mkdir -p ~/.claude/skills && cp -r .claude/skills/kosif-superpowers/vendor/kosif-atlas/skills/2232-ai-red-teaming/8482-run-adversarial-attacks-and-jailbreaks ~/.claude/skills/run-adversarial-attacks-and-jailbreaks
+
+**الوسوم:** AI red teaming · prompt injection · jailbreak · OWASP LLM · tool abuse · الفريق الأحمر · حقن البرومبت
+
+#### 1. الاستقبال (A25)
+
+- اللغة والإطار: افتراض مكتوب ← لغة المستودع الموجود، وإلا Python أو HTML/JS بلا اعتماديات
+- أين يعمل: افتراض مكتوب ← المتصفح أو سطر الأوامر حسب المخرج
+- مستودع أو ملفات موجودة: سؤال بإجابة مقترحة ← مشروع جديد مستقل
+- متى يكون ناجحًا: افتراض مكتوب ← الاختبارات الموجودة تمر + اختبار لكل سلوك جديد
+- لا تُفترض أبدًا: مادة الإنتاج نفسها، والإذن بخطوة مدفوعة أو منشورة أو لا رجعة فيها، والهوية والحقوق.
+
+#### 2. الجاهزية والشارة (A28)
+
+- لا متطلبات مسجلة؛ افحص المسار والأداة بـ `hub.py doctor` قبل الشارة.
+- الوضع 1: شارة «هنا الآن» بعد الفحص، لا 📄 الكتالوج تلقائيًا · الوضع 2: `كتالوج: 📄 · هنا: غير مفحوص` · الوضع 3: بلا شارة ولا معرّف.
+
+#### 3. موضعها في الخطة (A26)
+
+- عقدة منمّطة: المدخل `spec` ← المخرج `code`، والمنفّذ `method:ACODE-314` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `atlas-ledger`.
+- مراحل النوع: قراءة الكود والاختبارات ← إعادة إنتاج أو اختبار جديد ← أصغر تغيير ← الاختبارات ← مراجعة الفرق ← فرع وPR.
+- إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
+
+#### 4. بوابة التحقق (A27)
+
+- إلزامي: الاختبارات الموجودة تمر قبل التعديل وبعده ← أمر الاختبار
+- إلزامي: اختبار لكل سلوك جديد أو خطأ مُصلح ← الاختبار الجديد يفشل قبل الإصلاح
+- إلزامي: لا أسرار ولا مسارات جلسة في الشيفرة ← بحث أنماط الأسرار
+- جودة: يطابق أسلوب الكود المحيط وتسمياته ← مراجعة الفرق
+- جودة: طريقة تشغيل مكتوبة ومجرَّبة ← تشغيل الأمر المكتوب
+- جودة: الفرق أصغر ما يحقق الطلب بلا إعادة كتابة غير مطلوبة ← git diff --stat
+- جودة: المدخل الخاطئ يعطي خطأ واضحًا لا انهيارًا صامتًا ← تشغيل بمدخل خاطئ
+- أمر الحكم في الوضع 1: `think.py qa code --answers qa.json` (PASS / FAIL / INCOMPLETE).
+
+#### 5. التعافي (A29)
+
+- `missing_dependency` (اعتمادية مفقودة، ميزانية 2): سمِّ الاعتمادية بالضبط (حزمة، برنامج، خط، نموذج) ← ثبّت محليًا في بيئة العمل إن كان مجانيًا ومسموحًا (pip --user أو venv أو npm محلي) · البديل: مسار المكتبة القياسية أو أداة أخرى من نفس المجموعة · تصعيد: تثبيت نظامي أو مدفوع أو يحتاج مفتاحًا: توقف واسأل
+- `quality_below_threshold` (جودة دون العتبة، ميزانية 3): أي معيار فشل وبكم (المقيس مقابل العتبة) ← عالج السبب الأكبر وحده ثم أعد القياس · البديل: المنهج البديل المكتوب للمرحلة في الخطة · تصعيد: معيار إلزامي لا يتحقق بعد البديل: توقف وأبلغ بالأرقام
+- `tool_error` (خطأ أداة، ميزانية 3): اقرأ آخر سطر في الخطأ ثم أول سطر من كودك فيه ← أصلح السبب المثبت وحده، ثم شغّل الاختبار المتعلق · البديل: أداة أخرى أو مسار يدوي للمرحلة نفسها · تصعيد: خطأ في أداة خارجية لا تملكها: بلّغ بإعادة الإنتاج ولا تخفه
+
+#### 6. الأدلة
+
+- `https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/2232-ai-red-teaming/8482-run-adversarial-attacks-and-jailbreaks`
+
+#### 7. قدرات قريبة في العائلة
+
+- `ACODE-312` جعل أي وكيل آخر يحمّل ملفات SKILL.md: قائمة سطر لكل مهارة في التعليمات، وأداة load_skill للنص الكامل، وأولوية مسارات معلنة / Make any other agent host load SKILL.md files: a one-line menu in the system prompt, a load_skill tool for the full body, declared path precedence (documented)
+- `ACODE-313` البرومبت ككود: ملفات في المستودع، وقوالب بمتغيرات صريحة، ومراجعة بنتائج تقييم قبل وبعد، وتثبيت إصدار النموذج، وطرح تدريجي / Prompts as code: files in the repo, explicit-variable templates, review with before-and-after evals, pinned model versions, staged rollout (documented)
+- `ACODE-315` تقييم جاهزية المستودع للوكلاء: مدخل واحد معتمد، وأدوار الحزام (حالة العمل، السجل، العقود، التحقق، الأدلة)، وأصغر تحسين تالٍ / Assess a repository's agent harness: one canonical entrypoint, harness roles (work state, ledger, contracts, validation, evidence), and the next smallest improvement (documented)
+- `ACODE-316` أداء React وNext.js بالأولوية: اقتل الشلالات والحزمة أولًا، ثم الخادم، ثم إعادة الرسم، ومراجعة بنمط diff أو كامل مع ESLint كحقيقة أرضية / React and Next.js performance by impact: kill waterfalls and bundle bloat first, then server work, then re-renders; review in diff or full mode with ESLint as ground truth (documented)
+
+### `ACODE-315` — تقييم جاهزية المستودع للوكلاء: مدخل واحد معتمد، وأدوار الحزام (حالة العمل، السجل، العقود، التحقق، الأدلة)، وأصغر تحسين تالٍ / Assess a repository's agent harness: one canonical entrypoint, harness roles (work state, ledger, contracts, validation, evidence), and the next smallest improvement
+
+| الحقل | القيمة |
+|---|---|
+| العائلة | `atlas-code` ([فصل العائلة](../../../.claude/skills/kosif-superpowers/references/powers/atlas-code.md)) |
+| المجموعة | البرمجة وبناء التطبيقات (`software`) |
+| نوع المخرج (A25، A27) | كود وتطبيقات ومواقع (`code`) |
+| الحالة في الكتالوج | 📄 `documented`: منهج موصوف يحتاج بناءً أو ربطًا قبل التشغيل |
+| سقف التحقق قبل العمل (A27) | V1 حتى تُبنى وتُشغَّل؛ لا تقدَّم جاهزة أبدًا |
+| نطاق الدليل | `url` |
+| الرخصة | card in our own words; the original skill folders are copied verbatim with their MIT license and SOURCE.md under vendor/kosif-atlas |
+
+**ما هي:** يقيس قدرة المستودع على أن يجد الوكيل قواعده ويغير بأمان ويتحقق وينتج أدلة قابلة للمراجعة: يحدد ملف تعليمات واحدًا معتمدًا ويصنف البقية (تجاوز لمجلد، رابط، نسخة مولدة، إشارة قصيرة)، ويبقي الجذر قصيرًا، ويربط الملفات الموجودة بأدوار الحزام، ويقترح أصغر خطوة مفيدة وما لا يُبنى الآن. — Harness maturity and entrypoint design.
+
+**متى:** ما الذي ينقص مستودعي ليعمل معه الوكلاء، AGENTS.md وCLAUDE.md متعارضان، تقليص ملف التعليمات / agent readiness of a repo
+
+**كيف:** 1) List agent instruction files, docs, scripts, CI, work-state surfaces, ledgers, reports and runtime artifacts (rg --files). 2) Pick one canonical entrypoint and classify every other instruction file as a subtree override, symlink, generated mirror or short pointer; resolve conflicts. 3) Keep the root entrypoint to scope, source-of-truth navigation, hard boundaries and minimum commands; move procedures to linked docs. 4) Map artifacts to roles: entrypoint, work state, ledger, contracts, validation commands, runtime evidence, delivery records, quality gates. 5) Check precedence, mirrors, that validation commands run, and that evidence is produced where reviewers look. 6) Report a maturity level, the entrypoint actions, the single next smallest improvement (an entrypoint, a validation script, an evidence bundle, a ledger, a contract check or a gate), and what not to build yet. Full original skill(s) with license: vendor/kosif-atlas/skills/3604-agent-harness-skills/14469-repo-harness-assessment.
+
+**المعاملات:** repository, scope
+
+**التثبيت:** mkdir -p ~/.claude/skills && cp -r .claude/skills/kosif-superpowers/vendor/kosif-atlas/skills/3604-agent-harness-skills/14469-repo-harness-assessment ~/.claude/skills/repo-harness-assessment
+
+**الوسوم:** agent readiness · AGENTS.md · CLAUDE.md · harness · repository · جاهزية المستودع · ملفات التعليمات
+
+#### 1. الاستقبال (A25)
+
+- اللغة والإطار: افتراض مكتوب ← لغة المستودع الموجود، وإلا Python أو HTML/JS بلا اعتماديات
+- أين يعمل: افتراض مكتوب ← المتصفح أو سطر الأوامر حسب المخرج
+- مستودع أو ملفات موجودة: سؤال بإجابة مقترحة ← مشروع جديد مستقل
+- متى يكون ناجحًا: افتراض مكتوب ← الاختبارات الموجودة تمر + اختبار لكل سلوك جديد
+- لا تُفترض أبدًا: مادة الإنتاج نفسها، والإذن بخطوة مدفوعة أو منشورة أو لا رجعة فيها، والهوية والحقوق.
+
+#### 2. الجاهزية والشارة (A28)
+
+- لا متطلبات مسجلة؛ افحص المسار والأداة بـ `hub.py doctor` قبل الشارة.
+- الوضع 1: شارة «هنا الآن» بعد الفحص، لا 📄 الكتالوج تلقائيًا · الوضع 2: `كتالوج: 📄 · هنا: غير مفحوص` · الوضع 3: بلا شارة ولا معرّف.
+
+#### 3. موضعها في الخطة (A26)
+
+- عقدة منمّطة: المدخل `spec` ← المخرج `code`، والمنفّذ `method:ACODE-315` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `atlas-ledger`.
+- مراحل النوع: قراءة الكود والاختبارات ← إعادة إنتاج أو اختبار جديد ← أصغر تغيير ← الاختبارات ← مراجعة الفرق ← فرع وPR.
+- إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
+
+#### 4. بوابة التحقق (A27)
+
+- إلزامي: الاختبارات الموجودة تمر قبل التعديل وبعده ← أمر الاختبار
+- إلزامي: اختبار لكل سلوك جديد أو خطأ مُصلح ← الاختبار الجديد يفشل قبل الإصلاح
+- إلزامي: لا أسرار ولا مسارات جلسة في الشيفرة ← بحث أنماط الأسرار
+- جودة: يطابق أسلوب الكود المحيط وتسمياته ← مراجعة الفرق
+- جودة: طريقة تشغيل مكتوبة ومجرَّبة ← تشغيل الأمر المكتوب
+- جودة: الفرق أصغر ما يحقق الطلب بلا إعادة كتابة غير مطلوبة ← git diff --stat
+- جودة: المدخل الخاطئ يعطي خطأ واضحًا لا انهيارًا صامتًا ← تشغيل بمدخل خاطئ
+- أمر الحكم في الوضع 1: `think.py qa code --answers qa.json` (PASS / FAIL / INCOMPLETE).
+
+#### 5. التعافي (A29)
+
+- `missing_dependency` (اعتمادية مفقودة، ميزانية 2): سمِّ الاعتمادية بالضبط (حزمة، برنامج، خط، نموذج) ← ثبّت محليًا في بيئة العمل إن كان مجانيًا ومسموحًا (pip --user أو venv أو npm محلي) · البديل: مسار المكتبة القياسية أو أداة أخرى من نفس المجموعة · تصعيد: تثبيت نظامي أو مدفوع أو يحتاج مفتاحًا: توقف واسأل
+- `quality_below_threshold` (جودة دون العتبة، ميزانية 3): أي معيار فشل وبكم (المقيس مقابل العتبة) ← عالج السبب الأكبر وحده ثم أعد القياس · البديل: المنهج البديل المكتوب للمرحلة في الخطة · تصعيد: معيار إلزامي لا يتحقق بعد البديل: توقف وأبلغ بالأرقام
+- `tool_error` (خطأ أداة، ميزانية 3): اقرأ آخر سطر في الخطأ ثم أول سطر من كودك فيه ← أصلح السبب المثبت وحده، ثم شغّل الاختبار المتعلق · البديل: أداة أخرى أو مسار يدوي للمرحلة نفسها · تصعيد: خطأ في أداة خارجية لا تملكها: بلّغ بإعادة الإنتاج ولا تخفه
+
+#### 6. الأدلة
+
+- `https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/3604-agent-harness-skills/14469-repo-harness-assessment`
+
+#### 7. قدرات قريبة في العائلة
+
+- `ACODE-313` البرومبت ككود: ملفات في المستودع، وقوالب بمتغيرات صريحة، ومراجعة بنتائج تقييم قبل وبعد، وتثبيت إصدار النموذج، وطرح تدريجي / Prompts as code: files in the repo, explicit-variable templates, review with before-and-after evals, pinned model versions, staged rollout (documented)
+- `ACODE-314` تنفيذ هجمات الفريق الأحمر على نظام ذكاء اصطناعي ضمن قواعد اشتباك: حقن مباشر وغير مباشر واستخراج وإساءة استخدام الأدوات / Run red-team attacks on an AI system under rules of engagement: direct and indirect injection, extraction, and tool abuse (documented)
+- `ACODE-316` أداء React وNext.js بالأولوية: اقتل الشلالات والحزمة أولًا، ثم الخادم، ثم إعادة الرسم، ومراجعة بنمط diff أو كامل مع ESLint كحقيقة أرضية / React and Next.js performance by impact: kill waterfalls and bundle bloat first, then server work, then re-renders; review in diff or full mode with ESLint as ground truth (documented)
+- `ACODE-317` صحة مكونات React: عقد المشروع أولًا، الحالة عند مالكها، الاشتقاق أثناء الرسم، Effect فقط لمزامنة نظام خارجي داخل hook مسمى، وref كملاذ أخير / React component correctness: local contract first, state at its owner, derive during render, Effects only to sync an external system inside a named hook, refs as a last resort (documented)
+
+### `ACODE-316` — أداء React وNext.js بالأولوية: اقتل الشلالات والحزمة أولًا، ثم الخادم، ثم إعادة الرسم، ومراجعة بنمط diff أو كامل مع ESLint كحقيقة أرضية / React and Next.js performance by impact: kill waterfalls and bundle bloat first, then server work, then re-renders; review in diff or full mode with ESLint as ground truth
+
+| الحقل | القيمة |
+|---|---|
+| العائلة | `atlas-code` ([فصل العائلة](../../../.claude/skills/kosif-superpowers/references/powers/atlas-code.md)) |
+| المجموعة | البرمجة وبناء التطبيقات (`software`) |
+| نوع المخرج (A25، A27) | كود وتطبيقات ومواقع (`code`) |
+| الحالة في الكتالوج | 📄 `documented`: منهج موصوف يحتاج بناءً أو ربطًا قبل التشغيل |
+| سقف التحقق قبل العمل (A27) | V1 حتى تُبنى وتُشغَّل؛ لا تقدَّم جاهزة أبدًا |
+| نطاق الدليل | `url` |
+| الرخصة | card in our own words; the original skill folders are copied verbatim with their MIT license and SOURCE.md under vendor/kosif-atlas |
+
+**ما هي:** ترتيب قواعد أداء React حسب الأثر: (1) الشلالات غير المتزامنة و(2) حجم الحزمة حرجان، ثم أداء الخادم، ثم جلب العميل، ثم إعادة الرسم، ثم الرسم، ثم JavaScript الخام. المراجعة تبدأ من الملفات المتغيرة فقط ما لم يُطلب فحص كامل، وتأخذ ناتج ESLint كدليل لا يُتجاوز. — Impact-ordered React performance rules and a scoped review.
+
+**متى:** React بطيء، حجم الحزمة كبير، راجع أداء React، Next.js تحميل بطيء / React or Next.js performance review or refactor
+
+**كيف:** 1) Scope: if React files changed and no --full flag, review only `git diff HEAD -- <react files>`; otherwise scan src/, app/, components/, pages/. Stop and say so if no React files exist. 2) Run the project's ESLint (react-hooks, react-compiler rules if configured) first and pass its output as ground truth. 3) Waterfalls (critical): check cheap sync conditions before awaiting remote values; move await into the branch that uses it; Promise.all independent work; in API routes start promises early, await late; stream slow parts behind Suspense. 4) Bundle (critical): import from the module, not a barrel file; keep import paths statically analysable; next/dynamic for heavy components; load analytics and logging after hydration; load a module only when its feature is on; preload on hover or focus. 5) Server: authenticate server actions like API routes; React.cache() for per-request dedupe and an LRU for cross-request; never keep request state in module-level mutables in RSC/SSR; pass the minimum data across the server-client boundary and do not serialise the same object twice; hoist static I/O to module scope. 6) Only then re-render and rendering rules (stable identities where measured, derived state, virtualise long lists) and JS micro-optimisations. 7) Report per finding: file and line, rule prefix (async-, bundle-, server-, client-, rerender-, rendering-, js-), impact level, the fix, and whether it was measured. Full original skill(s) with license: vendor/kosif-atlas/skills/42-react-development/63-react-best-practices, vendor/kosif-atlas/skills/1434-react-skills/3417-vercel-react-best-practices, vendor/kosif-atlas/skills/82-react-development/164-review-react-workflow.
+
+**المعاملات:** src path, --full, framework (Next.js or plain React)
+
+**التثبيت:** mkdir -p ~/.claude/skills && cp -r .claude/skills/kosif-superpowers/vendor/kosif-atlas/skills/42-react-development/63-react-best-practices ~/.claude/skills/react-best-practices ; mkdir -p ~/.claude/skills && cp -r .claude/skills/kosif-superpowers/vendor/kosif-atlas/skills/1434-react-skills/3417-vercel-react-best-practices ~/.claude/skills/vercel-react-best-practices ; mkdir -p ~/.claude/skills && cp -r .claude/skills/kosif-superpowers/vendor/kosif-atlas/skills/82-react-development/164-review-react-workflow ~/.claude/skills/review-react-workflow
+
+**الوسوم:** React performance · Next.js · waterfall · bundle size · RSC · أداء React · حجم الحزمة
+
+#### 1. الاستقبال (A25)
+
+- اللغة والإطار: افتراض مكتوب ← لغة المستودع الموجود، وإلا Python أو HTML/JS بلا اعتماديات
+- أين يعمل: افتراض مكتوب ← المتصفح أو سطر الأوامر حسب المخرج
+- مستودع أو ملفات موجودة: سؤال بإجابة مقترحة ← مشروع جديد مستقل
+- متى يكون ناجحًا: افتراض مكتوب ← الاختبارات الموجودة تمر + اختبار لكل سلوك جديد
+- لا تُفترض أبدًا: مادة الإنتاج نفسها، والإذن بخطوة مدفوعة أو منشورة أو لا رجعة فيها، والهوية والحقوق.
+
+#### 2. الجاهزية والشارة (A28)
+
+- `git` ← افحص وجوده بأمر واحد قبل كتابة الشارة
+- `npm:react` ← npm ls react أو وجود node_modules/react
+- الوضع 1: شارة «هنا الآن» بعد الفحص، لا 📄 الكتالوج تلقائيًا · الوضع 2: `كتالوج: 📄 · هنا: غير مفحوص` · الوضع 3: بلا شارة ولا معرّف.
+
+#### 3. موضعها في الخطة (A26)
+
+- عقدة منمّطة: المدخل `spec` ← المخرج `code`، والمنفّذ `method:ACODE-316` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `atlas-ledger`.
+- مراحل النوع: قراءة الكود والاختبارات ← إعادة إنتاج أو اختبار جديد ← أصغر تغيير ← الاختبارات ← مراجعة الفرق ← فرع وPR.
+- إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
+
+#### 4. بوابة التحقق (A27)
+
+- إلزامي: الاختبارات الموجودة تمر قبل التعديل وبعده ← أمر الاختبار
+- إلزامي: اختبار لكل سلوك جديد أو خطأ مُصلح ← الاختبار الجديد يفشل قبل الإصلاح
+- إلزامي: لا أسرار ولا مسارات جلسة في الشيفرة ← بحث أنماط الأسرار
+- جودة: يطابق أسلوب الكود المحيط وتسمياته ← مراجعة الفرق
+- جودة: طريقة تشغيل مكتوبة ومجرَّبة ← تشغيل الأمر المكتوب
+- جودة: الفرق أصغر ما يحقق الطلب بلا إعادة كتابة غير مطلوبة ← git diff --stat
+- جودة: المدخل الخاطئ يعطي خطأ واضحًا لا انهيارًا صامتًا ← تشغيل بمدخل خاطئ
+- أمر الحكم في الوضع 1: `think.py qa code --answers qa.json` (PASS / FAIL / INCOMPLETE).
+
+#### 5. التعافي (A29)
+
+- `missing_dependency` (اعتمادية مفقودة، ميزانية 2): سمِّ الاعتمادية بالضبط (حزمة، برنامج، خط، نموذج) ← ثبّت محليًا في بيئة العمل إن كان مجانيًا ومسموحًا (pip --user أو venv أو npm محلي) · البديل: مسار المكتبة القياسية أو أداة أخرى من نفس المجموعة · تصعيد: تثبيت نظامي أو مدفوع أو يحتاج مفتاحًا: توقف واسأل
+- `quality_below_threshold` (جودة دون العتبة، ميزانية 3): أي معيار فشل وبكم (المقيس مقابل العتبة) ← عالج السبب الأكبر وحده ثم أعد القياس · البديل: المنهج البديل المكتوب للمرحلة في الخطة · تصعيد: معيار إلزامي لا يتحقق بعد البديل: توقف وأبلغ بالأرقام
+- `tool_error` (خطأ أداة، ميزانية 3): اقرأ آخر سطر في الخطأ ثم أول سطر من كودك فيه ← أصلح السبب المثبت وحده، ثم شغّل الاختبار المتعلق · البديل: أداة أخرى أو مسار يدوي للمرحلة نفسها · تصعيد: خطأ في أداة خارجية لا تملكها: بلّغ بإعادة الإنتاج ولا تخفه
+
+#### 6. الأدلة
+
+- `https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/42-react-development/63-react-best-practices`
+- `https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/1434-react-skills/3417-vercel-react-best-practices`
+- `https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/82-react-development/164-review-react-workflow`
+
+#### 7. قدرات قريبة في العائلة
+
+- `ACODE-314` تنفيذ هجمات الفريق الأحمر على نظام ذكاء اصطناعي ضمن قواعد اشتباك: حقن مباشر وغير مباشر واستخراج وإساءة استخدام الأدوات / Run red-team attacks on an AI system under rules of engagement: direct and indirect injection, extraction, and tool abuse (documented)
+- `ACODE-315` تقييم جاهزية المستودع للوكلاء: مدخل واحد معتمد، وأدوار الحزام (حالة العمل، السجل، العقود، التحقق، الأدلة)، وأصغر تحسين تالٍ / Assess a repository's agent harness: one canonical entrypoint, harness roles (work state, ledger, contracts, validation, evidence), and the next smallest improvement (documented)
+- `ACODE-317` صحة مكونات React: عقد المشروع أولًا، الحالة عند مالكها، الاشتقاق أثناء الرسم، Effect فقط لمزامنة نظام خارجي داخل hook مسمى، وref كملاذ أخير / React component correctness: local contract first, state at its owner, derive during render, Effects only to sync an external system inside a named hook, refs as a last resort (documented)
+- `ACODE-318` Next.js App Router (حتى v16): اكتشف الراوتر والنسخة وcacheComponents قبل الكتابة، مكونات خادم افتراضيًا، 'use client' عند الحد فقط، و'use cache' بدل خيارات fetch / Next.js App Router up to v16: detect router, version and cacheComponents before writing; Server Components by default, 'use client' only at the boundary, 'use cache' instead of fetch options (documented)
+
+### `ACODE-317` — صحة مكونات React: عقد المشروع أولًا، الحالة عند مالكها، الاشتقاق أثناء الرسم، Effect فقط لمزامنة نظام خارجي داخل hook مسمى، وref كملاذ أخير / React component correctness: local contract first, state at its owner, derive during render, Effects only to sync an external system inside a named hook, refs as a last resort
+
+| الحقل | القيمة |
+|---|---|
+| العائلة | `atlas-code` ([فصل العائلة](../../../.claude/skills/kosif-superpowers/references/powers/atlas-code.md)) |
+| المجموعة | البرمجة وبناء التطبيقات (`software`) |
+| نوع المخرج (A25، A27) | كود وتطبيقات ومواقع (`code`) |
+| الحالة في الكتالوج | 📄 `documented`: منهج موصوف يحتاج بناءً أو ربطًا قبل التشغيل |
+| سقف التحقق قبل العمل (A27) | V1 حتى تُبنى وتُشغَّل؛ لا تقدَّم جاهزة أبدًا |
+| نطاق الدليل | `url` |
+| الرخصة | card in our own words; the original skill folders are copied verbatim with their Apache-2.0, MIT license and SOURCE.md under vendor/kosif-atlas |
+
+**ما هي:** قواعد React العملية: افحص النسخ والمكان (خادم أو عميل) وReact Compiler قبل التعديل، احفظ تصميم وAPI المكونات، اتبع Rules of React، لا تنسخ الحالة نسختين، واجعل useEffect للمزامنة مع نظام خارجي فقط ومعزولًا في hook باسم مسؤوليته. ويشمل ترحيل الأصناف إلى hooks وترقيات React 17/18. — Rules of React applied to real edits.
+
+**متى:** مكون React فيه باغ، useEffect كثير، حالة متزامنة مرتين، ترقية React، تحويل class إلى hooks / React component bugs, effects, refs, upgrades
+
+**كيف:** 1) Establish the contract: installed React and framework versions, whether the code runs on server, client or both, whether React Compiler is on, existing state and data libraries; preserve design, component APIs and styling unless the task says otherwise; read the official docs for the installed version before changing an API contract. 2) Keep rendering pure and props and state immutable; fix the cause of a hooks lint error, never suppress it. 3) Put each piece of state with its consumers or their nearest shared owner; reuse router state, server caches and store selectors; an editable draft is a separate value with an explicit save or reset. 4) Replace Effects: compute derived data during render, put user-action work in the event handler, reset state on entity change with a `key`, cache expensive computation with useMemo, fetch through the project's data library. 5) Keep useEffect only for browser APIs (IntersectionObserver, ResizeObserver), third-party widget setup and teardown, or external connections; pair every subscription or timer with cleanup that survives dependency changes and remounts; extract it into a hook named for its job (useDocumentTitle, useWindowResize). 6) Before useRef try native HTML (details, dialog, popover, input type=date), a declarative library, state, or a closure; when a ref is truly needed (canvas, scroll position, a third-party instance) hide it in a custom hook. 7) File hygiene where the project agrees: styles, then Props type, then the component; one component per file except a tiny commented render-prop helper; split when logic before the JSX passes about 30 lines or the JSX branches become hard to track. 8) Upgrades: React 17 (event delegation, no pooling, new JSX transform), React 18 (createRoot, automatic batching, StrictMode double invoke, transitions, Suspense); migrate class lifecycles to hooks one component at a time and use the official codemods. 9) Verify with the project's typecheck, lint and tests, and say which did not run. Full original skill(s) with license: vendor/kosif-atlas/skills/1530-webcraft/4194-react-development, vendor/kosif-atlas/skills/2654-web-tasuke/10087-react-use-effect, vendor/kosif-atlas/skills/2654-web-tasuke/10088-react-use-ref, vendor/kosif-atlas/skills/2654-web-tasuke/10085-react-component-convention, vendor/kosif-atlas/skills/3095-framework-migration/13263-react-modernization.
+
+**المعاملات:** component path, React version, compiler on/off
+
+**التثبيت:** mkdir -p ~/.claude/skills && cp -r .claude/skills/kosif-superpowers/vendor/kosif-atlas/skills/1530-webcraft/4194-react-development ~/.claude/skills/react-development ; mkdir -p ~/.claude/skills && cp -r .claude/skills/kosif-superpowers/vendor/kosif-atlas/skills/2654-web-tasuke/10087-react-use-effect ~/.claude/skills/react-use-effect ; mkdir -p ~/.claude/skills && cp -r .claude/skills/kosif-superpowers/vendor/kosif-atlas/skills/2654-web-tasuke/10088-react-use-ref ~/.claude/skills/react-use-ref ; mkdir -p ~/.claude/skills && cp -r .claude/skills/kosif-superpowers/vendor/kosif-atlas/skills/2654-web-tasuke/10085-react-component-convention ~/.claude/skills/react-component-convention ; mkdir -p ~/.claude/skills && cp -r .claude/skills/kosif-superpowers/vendor/kosif-atlas/skills/3095-framework-migration/13263-react-modernization ~/.claude/skills/react-modernization
+
+**الوسوم:** React · useEffect · useRef · hooks · React 18 · مكونات React · ترقية React
+
+#### 1. الاستقبال (A25)
+
+- اللغة والإطار: افتراض مكتوب ← لغة المستودع الموجود، وإلا Python أو HTML/JS بلا اعتماديات
+- أين يعمل: افتراض مكتوب ← المتصفح أو سطر الأوامر حسب المخرج
+- مستودع أو ملفات موجودة: سؤال بإجابة مقترحة ← مشروع جديد مستقل
+- متى يكون ناجحًا: افتراض مكتوب ← الاختبارات الموجودة تمر + اختبار لكل سلوك جديد
+- لا تُفترض أبدًا: مادة الإنتاج نفسها، والإذن بخطوة مدفوعة أو منشورة أو لا رجعة فيها، والهوية والحقوق.
+
+#### 2. الجاهزية والشارة (A28)
+
+- `npm:react` ← npm ls react أو وجود node_modules/react
+- الوضع 1: شارة «هنا الآن» بعد الفحص، لا 📄 الكتالوج تلقائيًا · الوضع 2: `كتالوج: 📄 · هنا: غير مفحوص` · الوضع 3: بلا شارة ولا معرّف.
+
+#### 3. موضعها في الخطة (A26)
+
+- عقدة منمّطة: المدخل `spec` ← المخرج `code`، والمنفّذ `method:ACODE-317` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `atlas-ledger`.
+- مراحل النوع: قراءة الكود والاختبارات ← إعادة إنتاج أو اختبار جديد ← أصغر تغيير ← الاختبارات ← مراجعة الفرق ← فرع وPR.
+- إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
+
+#### 4. بوابة التحقق (A27)
+
+- إلزامي: الاختبارات الموجودة تمر قبل التعديل وبعده ← أمر الاختبار
+- إلزامي: اختبار لكل سلوك جديد أو خطأ مُصلح ← الاختبار الجديد يفشل قبل الإصلاح
+- إلزامي: لا أسرار ولا مسارات جلسة في الشيفرة ← بحث أنماط الأسرار
+- جودة: يطابق أسلوب الكود المحيط وتسمياته ← مراجعة الفرق
+- جودة: طريقة تشغيل مكتوبة ومجرَّبة ← تشغيل الأمر المكتوب
+- جودة: الفرق أصغر ما يحقق الطلب بلا إعادة كتابة غير مطلوبة ← git diff --stat
+- جودة: المدخل الخاطئ يعطي خطأ واضحًا لا انهيارًا صامتًا ← تشغيل بمدخل خاطئ
+- أمر الحكم في الوضع 1: `think.py qa code --answers qa.json` (PASS / FAIL / INCOMPLETE).
+
+#### 5. التعافي (A29)
+
+- `missing_dependency` (اعتمادية مفقودة، ميزانية 2): سمِّ الاعتمادية بالضبط (حزمة، برنامج، خط، نموذج) ← ثبّت محليًا في بيئة العمل إن كان مجانيًا ومسموحًا (pip --user أو venv أو npm محلي) · البديل: مسار المكتبة القياسية أو أداة أخرى من نفس المجموعة · تصعيد: تثبيت نظامي أو مدفوع أو يحتاج مفتاحًا: توقف واسأل
+- `quality_below_threshold` (جودة دون العتبة، ميزانية 3): أي معيار فشل وبكم (المقيس مقابل العتبة) ← عالج السبب الأكبر وحده ثم أعد القياس · البديل: المنهج البديل المكتوب للمرحلة في الخطة · تصعيد: معيار إلزامي لا يتحقق بعد البديل: توقف وأبلغ بالأرقام
+- `tool_error` (خطأ أداة، ميزانية 3): اقرأ آخر سطر في الخطأ ثم أول سطر من كودك فيه ← أصلح السبب المثبت وحده، ثم شغّل الاختبار المتعلق · البديل: أداة أخرى أو مسار يدوي للمرحلة نفسها · تصعيد: خطأ في أداة خارجية لا تملكها: بلّغ بإعادة الإنتاج ولا تخفه
+
+#### 6. الأدلة
+
+- `https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/1530-webcraft/4194-react-development`
+- `https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/2654-web-tasuke/10087-react-use-effect`
+- `https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/2654-web-tasuke/10088-react-use-ref`
+- `https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/2654-web-tasuke/10085-react-component-convention`
+- `https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/3095-framework-migration/13263-react-modernization`
+
+#### 7. قدرات قريبة في العائلة
+
+- `ACODE-315` تقييم جاهزية المستودع للوكلاء: مدخل واحد معتمد، وأدوار الحزام (حالة العمل، السجل، العقود، التحقق، الأدلة)، وأصغر تحسين تالٍ / Assess a repository's agent harness: one canonical entrypoint, harness roles (work state, ledger, contracts, validation, evidence), and the next smallest improvement (documented)
+- `ACODE-316` أداء React وNext.js بالأولوية: اقتل الشلالات والحزمة أولًا، ثم الخادم، ثم إعادة الرسم، ومراجعة بنمط diff أو كامل مع ESLint كحقيقة أرضية / React and Next.js performance by impact: kill waterfalls and bundle bloat first, then server work, then re-renders; review in diff or full mode with ESLint as ground truth (documented)
+- `ACODE-318` Next.js App Router (حتى v16): اكتشف الراوتر والنسخة وcacheComponents قبل الكتابة، مكونات خادم افتراضيًا، 'use client' عند الحد فقط، و'use cache' بدل خيارات fetch / Next.js App Router up to v16: detect router, version and cacheComponents before writing; Server Components by default, 'use client' only at the boundary, 'use cache' instead of fetch options (documented)
+- `ACODE-319` اكتب بلغة المشروع حسب ملفات أدواته: اقرأ go.mod وpyproject وCargo.toml وtsconfig وcsproj والـCI قبل أي API مقيدة بنسخة، ثم افتراضيات كل لغة، و'تم' فقط بعد الفحوص أو بتسمية ما لم يعمل / Write each language from its toolchain files: read go.mod, pyproject, Cargo.toml, tsconfig, csproj and CI before any version-gated API, then per-language defaults; done only when checks pass or each unrun check is named (documented)
+
+### `ACODE-318` — Next.js App Router (حتى v16): اكتشف الراوتر والنسخة وcacheComponents قبل الكتابة، مكونات خادم افتراضيًا، 'use client' عند الحد فقط، و'use cache' بدل خيارات fetch / Next.js App Router up to v16: detect router, version and cacheComponents before writing; Server Components by default, 'use client' only at the boundary, 'use cache' instead of fetch options
+
+| الحقل | القيمة |
+|---|---|
+| العائلة | `atlas-code` ([فصل العائلة](../../../.claude/skills/kosif-superpowers/references/powers/atlas-code.md)) |
+| المجموعة | البرمجة وبناء التطبيقات (`software`) |
+| نوع المخرج (A25، A27) | كود وتطبيقات ومواقع (`code`) |
+| الحالة في الكتالوج | 📄 `documented`: منهج موصوف يحتاج بناءً أو ربطًا قبل التشغيل |
+| سقف التحقق قبل العمل (A27) | V1 حتى تُبنى وتُشغَّل؛ لا تقدَّم جاهزة أبدًا |
+| نطاق الدليل | `url` |
+| الرخصة | card in our own words; the original skill folders are copied verbatim with their MIT license and SOURCE.md under vendor/kosif-atlas |
+
+**ما هي:** سلوك Next.js يختلف جذريًا بين 14 و15 و16 وبين App وPages Router، وتفعيل cacheComponents يغير نموذج التخزين المؤقت كله. البطاقة تفرض اكتشاف السياق ثم قواعد الحدود بين الخادم والعميل والتخزين المؤقت والتوجيه المتوازي. — Next.js routing, rendering and caching without version mix-ups.
+
+**متى:** مشروع Next.js، App Router، Server Actions، use cache، ترحيل من pages إلى app / building or migrating a Next.js app
+
+**كيف:** 1) Detect before writing: app/ or pages/ router (ask if unclear), Next version from package.json, `cacheComponents: true` in next.config, TS or JS. 2) Start with Server Components; add 'use client' only at the interactive boundary, since its children become client code; props crossing it must be serialisable (no functions, class instances or Symbols). 3) Mutations through 'use server' Server Actions, authenticated and validated like an API route. 4) With cacheComponents on, cache routes, components or functions with 'use cache'; the key is build ID plus function ID plus serialisable arguments including captured variables; do not read cookies or headers inside a cached scope. 5) Without it, follow the installed version's fetch caching defaults; check them, they changed between 14 and 15. 6) Colocate data fetching, wrap slow parts in Suspense or loading.tsx, use parallel routes for independent loading states and intercepting routes for modals. 7) Migrate Pages to App one route at a time; both routers can coexist. 8) Verify with next build (it type-checks and reports static vs dynamic per route) and the project's tests. Full original skill(s) with license: vendor/kosif-atlas/skills/3096-frontend-mobile-development/13264-nextjs-app-router-patterns, vendor/kosif-atlas/skills/3063-nextjs-developer/13220-nextjs-developer.
+
+**المعاملات:** router, Next version, cacheComponents
+
+**التثبيت:** mkdir -p ~/.claude/skills && cp -r .claude/skills/kosif-superpowers/vendor/kosif-atlas/skills/3096-frontend-mobile-development/13264-nextjs-app-router-patterns ~/.claude/skills/nextjs-app-router-patterns ; mkdir -p ~/.claude/skills && cp -r .claude/skills/kosif-superpowers/vendor/kosif-atlas/skills/3063-nextjs-developer/13220-nextjs-developer ~/.claude/skills/nextjs-developer
+
+**الوسوم:** Next.js · App Router · Server Components · use cache · Server Actions · نكست
+
+#### 1. الاستقبال (A25)
+
+- اللغة والإطار: افتراض مكتوب ← لغة المستودع الموجود، وإلا Python أو HTML/JS بلا اعتماديات
+- أين يعمل: افتراض مكتوب ← المتصفح أو سطر الأوامر حسب المخرج
+- مستودع أو ملفات موجودة: سؤال بإجابة مقترحة ← مشروع جديد مستقل
+- متى يكون ناجحًا: افتراض مكتوب ← الاختبارات الموجودة تمر + اختبار لكل سلوك جديد
+- لا تُفترض أبدًا: مادة الإنتاج نفسها، والإذن بخطوة مدفوعة أو منشورة أو لا رجعة فيها، والهوية والحقوق.
+
+#### 2. الجاهزية والشارة (A28)
+
+- `npm:react` ← npm ls react أو وجود node_modules/react
+- الوضع 1: شارة «هنا الآن» بعد الفحص، لا 📄 الكتالوج تلقائيًا · الوضع 2: `كتالوج: 📄 · هنا: غير مفحوص` · الوضع 3: بلا شارة ولا معرّف.
+
+#### 3. موضعها في الخطة (A26)
+
+- عقدة منمّطة: المدخل `spec` ← المخرج `code`، والمنفّذ `method:ACODE-318` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `atlas-ledger`.
+- مراحل النوع: قراءة الكود والاختبارات ← إعادة إنتاج أو اختبار جديد ← أصغر تغيير ← الاختبارات ← مراجعة الفرق ← فرع وPR.
+- إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
+
+#### 4. بوابة التحقق (A27)
+
+- إلزامي: الاختبارات الموجودة تمر قبل التعديل وبعده ← أمر الاختبار
+- إلزامي: اختبار لكل سلوك جديد أو خطأ مُصلح ← الاختبار الجديد يفشل قبل الإصلاح
+- إلزامي: لا أسرار ولا مسارات جلسة في الشيفرة ← بحث أنماط الأسرار
+- جودة: يطابق أسلوب الكود المحيط وتسمياته ← مراجعة الفرق
+- جودة: طريقة تشغيل مكتوبة ومجرَّبة ← تشغيل الأمر المكتوب
+- جودة: الفرق أصغر ما يحقق الطلب بلا إعادة كتابة غير مطلوبة ← git diff --stat
+- جودة: المدخل الخاطئ يعطي خطأ واضحًا لا انهيارًا صامتًا ← تشغيل بمدخل خاطئ
+- أمر الحكم في الوضع 1: `think.py qa code --answers qa.json` (PASS / FAIL / INCOMPLETE).
+
+#### 5. التعافي (A29)
+
+- `missing_dependency` (اعتمادية مفقودة، ميزانية 2): سمِّ الاعتمادية بالضبط (حزمة، برنامج، خط، نموذج) ← ثبّت محليًا في بيئة العمل إن كان مجانيًا ومسموحًا (pip --user أو venv أو npm محلي) · البديل: مسار المكتبة القياسية أو أداة أخرى من نفس المجموعة · تصعيد: تثبيت نظامي أو مدفوع أو يحتاج مفتاحًا: توقف واسأل
+- `quality_below_threshold` (جودة دون العتبة، ميزانية 3): أي معيار فشل وبكم (المقيس مقابل العتبة) ← عالج السبب الأكبر وحده ثم أعد القياس · البديل: المنهج البديل المكتوب للمرحلة في الخطة · تصعيد: معيار إلزامي لا يتحقق بعد البديل: توقف وأبلغ بالأرقام
+- `tool_error` (خطأ أداة، ميزانية 3): اقرأ آخر سطر في الخطأ ثم أول سطر من كودك فيه ← أصلح السبب المثبت وحده، ثم شغّل الاختبار المتعلق · البديل: أداة أخرى أو مسار يدوي للمرحلة نفسها · تصعيد: خطأ في أداة خارجية لا تملكها: بلّغ بإعادة الإنتاج ولا تخفه
+
+#### 6. الأدلة
+
+- `https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/3096-frontend-mobile-development/13264-nextjs-app-router-patterns`
+- `https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/3063-nextjs-developer/13220-nextjs-developer`
+
+#### 7. قدرات قريبة في العائلة
+
+- `ACODE-316` أداء React وNext.js بالأولوية: اقتل الشلالات والحزمة أولًا، ثم الخادم، ثم إعادة الرسم، ومراجعة بنمط diff أو كامل مع ESLint كحقيقة أرضية / React and Next.js performance by impact: kill waterfalls and bundle bloat first, then server work, then re-renders; review in diff or full mode with ESLint as ground truth (documented)
+- `ACODE-317` صحة مكونات React: عقد المشروع أولًا، الحالة عند مالكها، الاشتقاق أثناء الرسم، Effect فقط لمزامنة نظام خارجي داخل hook مسمى، وref كملاذ أخير / React component correctness: local contract first, state at its owner, derive during render, Effects only to sync an external system inside a named hook, refs as a last resort (documented)
+- `ACODE-319` اكتب بلغة المشروع حسب ملفات أدواته: اقرأ go.mod وpyproject وCargo.toml وtsconfig وcsproj والـCI قبل أي API مقيدة بنسخة، ثم افتراضيات كل لغة، و'تم' فقط بعد الفحوص أو بتسمية ما لم يعمل / Write each language from its toolchain files: read go.mod, pyproject, Cargo.toml, tsconfig, csproj and CI before any version-gated API, then per-language defaults; done only when checks pass or each unrun check is named (documented)
 - `ACODE-32` استقبال OAuth محلي مع ملفات رموز محمية / Local OAuth callback with 0600 token files (documented)
-- `ACODE-33` فوترة بالاستهلاك مع تسجيل غير مكرر / Metered billing with idempotent usage (documented)
+
+### `ACODE-319` — اكتب بلغة المشروع حسب ملفات أدواته: اقرأ go.mod وpyproject وCargo.toml وtsconfig وcsproj والـCI قبل أي API مقيدة بنسخة، ثم افتراضيات كل لغة، و'تم' فقط بعد الفحوص أو بتسمية ما لم يعمل / Write each language from its toolchain files: read go.mod, pyproject, Cargo.toml, tsconfig, csproj and CI before any version-gated API, then per-language defaults; done only when checks pass or each unrun check is named
+
+| الحقل | القيمة |
+|---|---|
+| العائلة | `atlas-code` ([فصل العائلة](../../../.claude/skills/kosif-superpowers/references/powers/atlas-code.md)) |
+| المجموعة | البرمجة وبناء التطبيقات (`software`) |
+| نوع المخرج (A25، A27) | كود وتطبيقات ومواقع (`code`) |
+| الحالة في الكتالوج | 📄 `documented`: منهج موصوف يحتاج بناءً أو ربطًا قبل التشغيل |
+| سقف التحقق قبل العمل (A27) | V1 حتى تُبنى وتُشغَّل؛ لا تقدَّم جاهزة أبدًا |
+| نطاق الدليل | `url` |
+| الرخصة | card in our own words; the original skill folders are copied verbatim with their MIT license and SOURCE.md under vendor/kosif-atlas |
+
+**ما هي:** مجموعة افتراضيات مختصرة لـ Go وPython وRust وTypeScript وC#/.NET وJava/Kotlin، يحكمها مبدأ واحد: أعراف المشروع وملفات نسخته تتقدم على الافتراضيات، ولا تُستخدم ميزة لغة أحدث من المعلن. — Per-language defaults gated by the project's declared versions.
+
+**متى:** اكتب كود Go أو Python أو Rust أو TypeScript أو C# أو Kotlin في مستودع قائم / writing code in an existing repo of these languages
+
+**كيف:** 1) Read the version sources first: Go `go.mod` go and toolchain lines; Python `pyproject.toml`, `.python-version`; Rust `Cargo.toml` rust-version and edition, `rust-toolchain.toml`; TypeScript nearest package.json and tsconfig (name the package in a monorepo); C# `*.csproj`, `Directory.Build.props`, `global.json` (TargetFramework, LangVersion, nullable); JVM build files; plus the CI matrix. 2) Stdlib and existing dependencies first; ask before adding a schema, form, query or state library the project lacks. 3) Go: concrete types, small consumer-owned interfaces, cmd/<name> plus internal/, no package stutter, every goroutine with an owner and a cancel and completion path, main calls run(ctx, args, stdin, stdout, stderr) error, no log.Fatal; 1.24+ t.Context(), 1.25+ WaitGroup.Go. 4) Python: uv for env and commands, ruff, pyright or ty if adopted, pytest; 3.12+ typing only on 3.12+ modules; frozen slotted dataclasses, TypedDict at JSON edges, `raise ... from exc`, TaskGroup and asyncio.timeout, explicit encoding, sorted globs; main(argv) -> int. 5) Rust: stay within MSRV and edition; newtypes and enums; From/TryFrom/FromStr/Display before ad-hoc methods; typed Result errors, unwrap only with a named invariant; fix data flow before clone(); never hold a blocking guard across .await; bound queues; `// SAFETY:` on small unsafe blocks; never cargo clean as a routine fix. 6) TypeScript: never weaken compiler options; new configs get strict, noUncheckedIndexedAccess, exactOptionalPropertyTypes, noImplicitOverride, noFallthroughCasesInSwitch; moduleResolution Bundler for bundled apps, NodeNext for Node libraries and servers; treat JSON, env, storage and SDK output as unknown and narrow at the boundary; discriminated unions with exhaustive never; thread AbortSignal; plain function components, memo only for measured cost. 7) C#: nullable on, async end to end with CancellationToken, no singleton capturing a scoped service, validate DTOs at the handler, ValidateOnStart options, background services honour the stopping token. 8) CLIs in every language: thin entry point, test the run seam, assert exit code and stderr on bad input; config precedence flag, env, file, default. 9) Done only when the relevant build, test and lint checks pass on what changed, or each check that did not run is named with the reason. Full original skill(s) with license: vendor/kosif-atlas/skills/117-programming/304-writing-csharp, vendor/kosif-atlas/skills/117-programming/305-writing-go, vendor/kosif-atlas/skills/117-programming/306-writing-java-kotlin, vendor/kosif-atlas/skills/117-programming/307-writing-python, vendor/kosif-atlas/skills/117-programming/308-writing-rust, vendor/kosif-atlas/skills/117-programming/310-writing-typescript.
+
+**المعاملات:** language, package path in a monorepo
+
+**التثبيت:** mkdir -p ~/.claude/skills && cp -r .claude/skills/kosif-superpowers/vendor/kosif-atlas/skills/117-programming/304-writing-csharp ~/.claude/skills/writing-csharp ; mkdir -p ~/.claude/skills && cp -r .claude/skills/kosif-superpowers/vendor/kosif-atlas/skills/117-programming/305-writing-go ~/.claude/skills/writing-go ; mkdir -p ~/.claude/skills && cp -r .claude/skills/kosif-superpowers/vendor/kosif-atlas/skills/117-programming/306-writing-java-kotlin ~/.claude/skills/writing-java-kotlin ; mkdir -p ~/.claude/skills && cp -r .claude/skills/kosif-superpowers/vendor/kosif-atlas/skills/117-programming/307-writing-python ~/.claude/skills/writing-python ; mkdir -p ~/.claude/skills && cp -r .claude/skills/kosif-superpowers/vendor/kosif-atlas/skills/117-programming/308-writing-rust ~/.claude/skills/writing-rust ; mkdir -p ~/.claude/skills && cp -r .claude/skills/kosif-superpowers/vendor/kosif-atlas/skills/117-programming/310-writing-typescript ~/.claude/skills/writing-typescript
+
+**الوسوم:** Go · Python · Rust · TypeScript · C# · Kotlin · toolchain version · أعراف اللغة
+
+#### 1. الاستقبال (A25)
+
+- اللغة والإطار: افتراض مكتوب ← لغة المستودع الموجود، وإلا Python أو HTML/JS بلا اعتماديات
+- أين يعمل: افتراض مكتوب ← المتصفح أو سطر الأوامر حسب المخرج
+- مستودع أو ملفات موجودة: سؤال بإجابة مقترحة ← مشروع جديد مستقل
+- متى يكون ناجحًا: افتراض مكتوب ← الاختبارات الموجودة تمر + اختبار لكل سلوك جديد
+- لا تُفترض أبدًا: مادة الإنتاج نفسها، والإذن بخطوة مدفوعة أو منشورة أو لا رجعة فيها، والهوية والحقوق.
+
+#### 2. الجاهزية والشارة (A28)
+
+- `python3` ← افحص وجوده بأمر واحد قبل كتابة الشارة
+- الوضع 1: شارة «هنا الآن» بعد الفحص، لا 📄 الكتالوج تلقائيًا · الوضع 2: `كتالوج: 📄 · هنا: غير مفحوص` · الوضع 3: بلا شارة ولا معرّف.
+
+#### 3. موضعها في الخطة (A26)
+
+- عقدة منمّطة: المدخل `spec` ← المخرج `code`، والمنفّذ `method:ACODE-319` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `atlas-ledger`.
+- مراحل النوع: قراءة الكود والاختبارات ← إعادة إنتاج أو اختبار جديد ← أصغر تغيير ← الاختبارات ← مراجعة الفرق ← فرع وPR.
+- إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
+
+#### 4. بوابة التحقق (A27)
+
+- إلزامي: الاختبارات الموجودة تمر قبل التعديل وبعده ← أمر الاختبار
+- إلزامي: اختبار لكل سلوك جديد أو خطأ مُصلح ← الاختبار الجديد يفشل قبل الإصلاح
+- إلزامي: لا أسرار ولا مسارات جلسة في الشيفرة ← بحث أنماط الأسرار
+- جودة: يطابق أسلوب الكود المحيط وتسمياته ← مراجعة الفرق
+- جودة: طريقة تشغيل مكتوبة ومجرَّبة ← تشغيل الأمر المكتوب
+- جودة: الفرق أصغر ما يحقق الطلب بلا إعادة كتابة غير مطلوبة ← git diff --stat
+- جودة: المدخل الخاطئ يعطي خطأ واضحًا لا انهيارًا صامتًا ← تشغيل بمدخل خاطئ
+- أمر الحكم في الوضع 1: `think.py qa code --answers qa.json` (PASS / FAIL / INCOMPLETE).
+
+#### 5. التعافي (A29)
+
+- `missing_dependency` (اعتمادية مفقودة، ميزانية 2): سمِّ الاعتمادية بالضبط (حزمة، برنامج، خط، نموذج) ← ثبّت محليًا في بيئة العمل إن كان مجانيًا ومسموحًا (pip --user أو venv أو npm محلي) · البديل: مسار المكتبة القياسية أو أداة أخرى من نفس المجموعة · تصعيد: تثبيت نظامي أو مدفوع أو يحتاج مفتاحًا: توقف واسأل
+- `quality_below_threshold` (جودة دون العتبة، ميزانية 3): أي معيار فشل وبكم (المقيس مقابل العتبة) ← عالج السبب الأكبر وحده ثم أعد القياس · البديل: المنهج البديل المكتوب للمرحلة في الخطة · تصعيد: معيار إلزامي لا يتحقق بعد البديل: توقف وأبلغ بالأرقام
+- `tool_error` (خطأ أداة، ميزانية 3): اقرأ آخر سطر في الخطأ ثم أول سطر من كودك فيه ← أصلح السبب المثبت وحده، ثم شغّل الاختبار المتعلق · البديل: أداة أخرى أو مسار يدوي للمرحلة نفسها · تصعيد: خطأ في أداة خارجية لا تملكها: بلّغ بإعادة الإنتاج ولا تخفه
+
+#### 6. الأدلة
+
+- `https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/117-programming/304-writing-csharp`
+- `https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/117-programming/305-writing-go`
+- `https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/117-programming/306-writing-java-kotlin`
+- `https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/117-programming/307-writing-python`
+- `https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/117-programming/308-writing-rust`
+- `https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/117-programming/310-writing-typescript`
+
+#### 7. قدرات قريبة في العائلة
+
+- `ACODE-317` صحة مكونات React: عقد المشروع أولًا، الحالة عند مالكها، الاشتقاق أثناء الرسم، Effect فقط لمزامنة نظام خارجي داخل hook مسمى، وref كملاذ أخير / React component correctness: local contract first, state at its owner, derive during render, Effects only to sync an external system inside a named hook, refs as a last resort (documented)
+- `ACODE-318` Next.js App Router (حتى v16): اكتشف الراوتر والنسخة وcacheComponents قبل الكتابة، مكونات خادم افتراضيًا، 'use client' عند الحد فقط، و'use cache' بدل خيارات fetch / Next.js App Router up to v16: detect router, version and cacheComponents before writing; Server Components by default, 'use client' only at the boundary, 'use cache' instead of fetch options (documented)
+- `ACODE-32` استقبال OAuth محلي مع ملفات رموز محمية / Local OAuth callback with 0600 token files (documented)
+- `ACODE-320` Go الاصطلاحي والتزامن: الوضوح ثم البساطة ثم الإيجاز، أخطاء مبكرة بلا تداخل، ولكل goroutine مالك وسياق إلغاء ومخرج، وerrgroup للأخطاء المشتركة / Idiomatic Go and concurrency: clarity, then simplicity, then concision; early error returns; every goroutine has an owner, a context and an exit; errgroup for shared errors (documented)
 
 ### `ACODE-32` — استقبال OAuth محلي مع ملفات رموز محمية / Local OAuth callback with 0600 token files
 
@@ -15378,10 +18494,760 @@
 
 #### 7. قدرات قريبة في العائلة
 
-- `ACODE-30` مصادقة JWT مع تدوير التحديث وصلاحيات الأدوار / JWT auth with refresh rotation and RBAC (documented)
-- `ACODE-31` إعداد مصادقة API بأقل صلاحيات والتحقق منها / Least-privilege API auth setup and verification (documented)
+- `ACODE-318` Next.js App Router (حتى v16): اكتشف الراوتر والنسخة وcacheComponents قبل الكتابة، مكونات خادم افتراضيًا، 'use client' عند الحد فقط، و'use cache' بدل خيارات fetch / Next.js App Router up to v16: detect router, version and cacheComponents before writing; Server Components by default, 'use client' only at the boundary, 'use cache' instead of fetch options (documented)
+- `ACODE-319` اكتب بلغة المشروع حسب ملفات أدواته: اقرأ go.mod وpyproject وCargo.toml وtsconfig وcsproj والـCI قبل أي API مقيدة بنسخة، ثم افتراضيات كل لغة، و'تم' فقط بعد الفحوص أو بتسمية ما لم يعمل / Write each language from its toolchain files: read go.mod, pyproject, Cargo.toml, tsconfig, csproj and CI before any version-gated API, then per-language defaults; done only when checks pass or each unrun check is named (documented)
+- `ACODE-320` Go الاصطلاحي والتزامن: الوضوح ثم البساطة ثم الإيجاز، أخطاء مبكرة بلا تداخل، ولكل goroutine مالك وسياق إلغاء ومخرج، وerrgroup للأخطاء المشتركة / Idiomatic Go and concurrency: clarity, then simplicity, then concision; early error returns; every goroutine has an owner, a context and an exit; errgroup for shared errors (documented)
+- `ACODE-321` Rust اصطلاحي: صمم البيانات قبل الكود، ملكية واستعارة قبل clone، Tokio وSerde بحدود واضحة، وclippy وrustfmt وnextest وllvm-cov كبوابات / Idiomatic Rust: model data before code, ownership and borrowing before clone, Tokio and Serde with clear boundaries, clippy, rustfmt, nextest and llvm-cov as gates (documented)
+
+### `ACODE-320` — Go الاصطلاحي والتزامن: الوضوح ثم البساطة ثم الإيجاز، أخطاء مبكرة بلا تداخل، ولكل goroutine مالك وسياق إلغاء ومخرج، وerrgroup للأخطاء المشتركة / Idiomatic Go and concurrency: clarity, then simplicity, then concision; early error returns; every goroutine has an owner, a context and an exit; errgroup for shared errors
+
+| الحقل | القيمة |
+|---|---|
+| العائلة | `atlas-code` ([فصل العائلة](../../../.claude/skills/kosif-superpowers/references/powers/atlas-code.md)) |
+| المجموعة | البرمجة وبناء التطبيقات (`software`) |
+| نوع المخرج (A25، A27) | كود وتطبيقات ومواقع (`code`) |
+| الحالة في الكتالوج | 📄 `documented`: منهج موصوف يحتاج بناءً أو ربطًا قبل التشغيل |
+| سقف التحقق قبل العمل (A27) | V1 حتى تُبنى وتُشغَّل؛ لا تقدَّم جاهزة أبدًا |
+| نطاق الدليل | `url` |
+| الرخصة | card in our own words; the original skill folders are copied verbatim with their MIT license and SOURCE.md under vendor/kosif-atlas |
+
+**ما هي:** قواعد Go من Effective Go ودليل Google وCode Review Comments بترتيب حسم واضح عند التعارض (وضوح، بساطة، إيجاز، قابلية صيانة، اتساق)، مع أنماط التزامن الآمنة: من يرسل يغلق القناة، لا تسرب goroutines، context للإلغاء والمهل، والإيقاف اللطيف. — Go style and concurrency rules with a conflict order.
+
+**متى:** اكتب أو راجع كود Go، goroutine تتسرب، race condition، worker pool، إيقاف لطيف، Cobra CLI / writing or reviewing Go
+
+**كيف:** 1) Run the project's checks first (make lint or fmt, gofmt, goimports, golangci-lint, go vet) and keep their output as evidence. 2) Resolve style conflicts in this order: clarity to a reader who did not write the code, simplicity, concision, maintainability, consistency with surrounding code. 3) Handle errors early and keep the happy path unindented; wrap with %w and context, check with errors.Is/As, never both log and return the same error. 4) Concurrency: pass context.Context first for cancellation and deadlines; only the sender closes a channel; every goroutine has an exit path; use errgroup when siblings share errors or cancellation; buffer a channel only when the count is known; prefer channels for ownership hand-off and a mutex for small shared state; run tests with -race. 5) Worker pools and pipelines: bounded workers, a done or ctx case in every select, drain or cancel on early return. 6) Graceful shutdown: signal.NotifyContext, stop accepting, wait for in-flight work with a timeout. 7) Cobra roots: SilenceUsage on runtime errors, RunE not Run, errors to stderr with a non-zero exit. 8) Tests: table-driven with t.Run names, compare with cmp.Diff, small Fn-field fakes instead of mock frameworks. 9) Done when a checklist review passes, not just when it compiles. Full original skill(s) with license: vendor/kosif-atlas/skills/987-write-go-code/2271-write-go-code, vendor/kosif-atlas/skills/2858-effective-go/11567-effective-go, vendor/kosif-atlas/skills/3526-systems-programming/14303-go-concurrency-patterns.
+
+**المعاملات:** package path, Go version
+
+**التثبيت:** mkdir -p ~/.claude/skills && cp -r .claude/skills/kosif-superpowers/vendor/kosif-atlas/skills/987-write-go-code/2271-write-go-code ~/.claude/skills/write-go-code ; mkdir -p ~/.claude/skills && cp -r .claude/skills/kosif-superpowers/vendor/kosif-atlas/skills/2858-effective-go/11567-effective-go ~/.claude/skills/effective-go ; mkdir -p ~/.claude/skills && cp -r .claude/skills/kosif-superpowers/vendor/kosif-atlas/skills/3526-systems-programming/14303-go-concurrency-patterns ~/.claude/skills/go-concurrency-patterns
+
+**الوسوم:** Go · goroutine · errgroup · context · race · Effective Go · جو
+
+#### 1. الاستقبال (A25)
+
+- اللغة والإطار: افتراض مكتوب ← لغة المستودع الموجود، وإلا Python أو HTML/JS بلا اعتماديات
+- أين يعمل: افتراض مكتوب ← المتصفح أو سطر الأوامر حسب المخرج
+- مستودع أو ملفات موجودة: سؤال بإجابة مقترحة ← مشروع جديد مستقل
+- متى يكون ناجحًا: افتراض مكتوب ← الاختبارات الموجودة تمر + اختبار لكل سلوك جديد
+- لا تُفترض أبدًا: مادة الإنتاج نفسها، والإذن بخطوة مدفوعة أو منشورة أو لا رجعة فيها، والهوية والحقوق.
+
+#### 2. الجاهزية والشارة (A28)
+
+- لا متطلبات مسجلة؛ افحص المسار والأداة بـ `hub.py doctor` قبل الشارة.
+- الوضع 1: شارة «هنا الآن» بعد الفحص، لا 📄 الكتالوج تلقائيًا · الوضع 2: `كتالوج: 📄 · هنا: غير مفحوص` · الوضع 3: بلا شارة ولا معرّف.
+
+#### 3. موضعها في الخطة (A26)
+
+- عقدة منمّطة: المدخل `spec` ← المخرج `code`، والمنفّذ `method:ACODE-320` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `atlas-ledger`.
+- مراحل النوع: قراءة الكود والاختبارات ← إعادة إنتاج أو اختبار جديد ← أصغر تغيير ← الاختبارات ← مراجعة الفرق ← فرع وPR.
+- إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
+
+#### 4. بوابة التحقق (A27)
+
+- إلزامي: الاختبارات الموجودة تمر قبل التعديل وبعده ← أمر الاختبار
+- إلزامي: اختبار لكل سلوك جديد أو خطأ مُصلح ← الاختبار الجديد يفشل قبل الإصلاح
+- إلزامي: لا أسرار ولا مسارات جلسة في الشيفرة ← بحث أنماط الأسرار
+- جودة: يطابق أسلوب الكود المحيط وتسمياته ← مراجعة الفرق
+- جودة: طريقة تشغيل مكتوبة ومجرَّبة ← تشغيل الأمر المكتوب
+- جودة: الفرق أصغر ما يحقق الطلب بلا إعادة كتابة غير مطلوبة ← git diff --stat
+- جودة: المدخل الخاطئ يعطي خطأ واضحًا لا انهيارًا صامتًا ← تشغيل بمدخل خاطئ
+- أمر الحكم في الوضع 1: `think.py qa code --answers qa.json` (PASS / FAIL / INCOMPLETE).
+
+#### 5. التعافي (A29)
+
+- `missing_dependency` (اعتمادية مفقودة، ميزانية 2): سمِّ الاعتمادية بالضبط (حزمة، برنامج، خط، نموذج) ← ثبّت محليًا في بيئة العمل إن كان مجانيًا ومسموحًا (pip --user أو venv أو npm محلي) · البديل: مسار المكتبة القياسية أو أداة أخرى من نفس المجموعة · تصعيد: تثبيت نظامي أو مدفوع أو يحتاج مفتاحًا: توقف واسأل
+- `quality_below_threshold` (جودة دون العتبة، ميزانية 3): أي معيار فشل وبكم (المقيس مقابل العتبة) ← عالج السبب الأكبر وحده ثم أعد القياس · البديل: المنهج البديل المكتوب للمرحلة في الخطة · تصعيد: معيار إلزامي لا يتحقق بعد البديل: توقف وأبلغ بالأرقام
+- `tool_error` (خطأ أداة، ميزانية 3): اقرأ آخر سطر في الخطأ ثم أول سطر من كودك فيه ← أصلح السبب المثبت وحده، ثم شغّل الاختبار المتعلق · البديل: أداة أخرى أو مسار يدوي للمرحلة نفسها · تصعيد: خطأ في أداة خارجية لا تملكها: بلّغ بإعادة الإنتاج ولا تخفه
+
+#### 6. الأدلة
+
+- `https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/987-write-go-code/2271-write-go-code`
+- `https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/2858-effective-go/11567-effective-go`
+- `https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/3526-systems-programming/14303-go-concurrency-patterns`
+
+#### 7. قدرات قريبة في العائلة
+
+- `ACODE-319` اكتب بلغة المشروع حسب ملفات أدواته: اقرأ go.mod وpyproject وCargo.toml وtsconfig وcsproj والـCI قبل أي API مقيدة بنسخة، ثم افتراضيات كل لغة، و'تم' فقط بعد الفحوص أو بتسمية ما لم يعمل / Write each language from its toolchain files: read go.mod, pyproject, Cargo.toml, tsconfig, csproj and CI before any version-gated API, then per-language defaults; done only when checks pass or each unrun check is named (documented)
+- `ACODE-32` استقبال OAuth محلي مع ملفات رموز محمية / Local OAuth callback with 0600 token files (documented)
+- `ACODE-321` Rust اصطلاحي: صمم البيانات قبل الكود، ملكية واستعارة قبل clone، Tokio وSerde بحدود واضحة، وclippy وrustfmt وnextest وllvm-cov كبوابات / Idiomatic Rust: model data before code, ownership and borrowing before clone, Tokio and Serde with clear boundaries, clippy, rustfmt, nextest and llvm-cov as gates (documented)
+- `ACODE-322` صور حاويات حسب اللغة: Go ثابت على scratch مع شهادات CA، وNode متعدد المراحل بذاكرة BuildKit واعتماديات إنتاج فقط، وPython على slim لا Alpine بنسخة واحدة للمرحلتين / Language-specific container images: static Go on scratch with CA certs, multi-stage Node with BuildKit cache and production-only deps, Python on slim not Alpine with one version for both stages (documented)
+
+### `ACODE-321` — Rust اصطلاحي: صمم البيانات قبل الكود، ملكية واستعارة قبل clone، Tokio وSerde بحدود واضحة، وclippy وrustfmt وnextest وllvm-cov كبوابات / Idiomatic Rust: model data before code, ownership and borrowing before clone, Tokio and Serde with clear boundaries, clippy, rustfmt, nextest and llvm-cov as gates
+
+| الحقل | القيمة |
+|---|---|
+| العائلة | `atlas-code` ([فصل العائلة](../../../.claude/skills/kosif-superpowers/references/powers/atlas-code.md)) |
+| المجموعة | البرمجة وبناء التطبيقات (`software`) |
+| نوع المخرج (A25، A27) | كود وتطبيقات ومواقع (`code`) |
+| الحالة في الكتالوج | 📄 `documented`: منهج موصوف يحتاج بناءً أو ربطًا قبل التشغيل |
+| سقف التحقق قبل العمل (A27) | V1 حتى تُبنى وتُشغَّل؛ لا تقدَّم جاهزة أبدًا |
+| نطاق الدليل | `url` |
+| الرخصة | card in our own words; the original skill folders are copied verbatim with their MIT license and SOURCE.md under vendor/kosif-atlas |
+
+**ما هي:** منهج كتابة Rust: افهم الطلب، خطط هياكل البيانات بدقة (structs وenums وtraits)، اكتب تنفيذًا اصطلاحيًا موثقًا، استخدم الماكرو بحذر، واهتم بزمن البناء وتقسيم الوحدات، مع أدوات النظام البيئي الحديث وإصدار 2024. — Rust design and tooling workflow.
+
+**متى:** اكتب كود Rust، صمم crate، async مع Tokio، مشاكل borrow checker، تحسين زمن البناء / writing Rust
+
+**كيف:** 1) Restate the request and its constraints (performance, no_std, MSRV, edition). 2) Model with types: newtypes for IDs and validated values, enums for states, traits only for real polymorphism; make illegal states unrepresentable. 3) Write ownership-first code: borrow where possible, return owned values at API edges, lifetimes only for real zero-copy. 4) Async: Tokio only at the I/O boundary; spawn with JoinSet; never block the runtime (spawn_blocking); bounded mpsc channels. 5) Serde derives with explicit rename and deny_unknown_fields at untrusted boundaries. 6) Document public items with examples that run as doctests; follow rustfmt; fix clippy pedantic findings that apply rather than allow-listing. 7) Macros only when they remove real repetition; prefer generics. 8) Build speed: split crates in a workspace, trim features, use cargo check while editing, sccache or mold where allowed. 9) Gates before finishing: cargo fmt --check, cargo clippy --all-targets -- -D warnings, cargo nextest run (or cargo test), cargo llvm-cov when coverage matters, cargo machete for unused deps. 10) Offer an alternative design when a trade-off is real. Full original skill(s) with license: vendor/kosif-atlas/skills/1113-rust-coding/2535-rust-coding, vendor/kosif-atlas/skills/2167-rust-plugin/7869-rust-development.
+
+**المعاملات:** crate path, edition, MSRV
+
+**التثبيت:** mkdir -p ~/.claude/skills && cp -r .claude/skills/kosif-superpowers/vendor/kosif-atlas/skills/1113-rust-coding/2535-rust-coding ~/.claude/skills/rust-coding ; mkdir -p ~/.claude/skills && cp -r .claude/skills/kosif-superpowers/vendor/kosif-atlas/skills/2167-rust-plugin/7869-rust-development ~/.claude/skills/rust-development
+
+**الوسوم:** Rust · cargo · clippy · Tokio · Serde · borrow checker · رست
+
+#### 1. الاستقبال (A25)
+
+- اللغة والإطار: افتراض مكتوب ← لغة المستودع الموجود، وإلا Python أو HTML/JS بلا اعتماديات
+- أين يعمل: افتراض مكتوب ← المتصفح أو سطر الأوامر حسب المخرج
+- مستودع أو ملفات موجودة: سؤال بإجابة مقترحة ← مشروع جديد مستقل
+- متى يكون ناجحًا: افتراض مكتوب ← الاختبارات الموجودة تمر + اختبار لكل سلوك جديد
+- لا تُفترض أبدًا: مادة الإنتاج نفسها، والإذن بخطوة مدفوعة أو منشورة أو لا رجعة فيها، والهوية والحقوق.
+
+#### 2. الجاهزية والشارة (A28)
+
+- لا متطلبات مسجلة؛ افحص المسار والأداة بـ `hub.py doctor` قبل الشارة.
+- الوضع 1: شارة «هنا الآن» بعد الفحص، لا 📄 الكتالوج تلقائيًا · الوضع 2: `كتالوج: 📄 · هنا: غير مفحوص` · الوضع 3: بلا شارة ولا معرّف.
+
+#### 3. موضعها في الخطة (A26)
+
+- عقدة منمّطة: المدخل `spec` ← المخرج `code`، والمنفّذ `method:ACODE-321` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `atlas-ledger`.
+- مراحل النوع: قراءة الكود والاختبارات ← إعادة إنتاج أو اختبار جديد ← أصغر تغيير ← الاختبارات ← مراجعة الفرق ← فرع وPR.
+- إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
+
+#### 4. بوابة التحقق (A27)
+
+- إلزامي: الاختبارات الموجودة تمر قبل التعديل وبعده ← أمر الاختبار
+- إلزامي: اختبار لكل سلوك جديد أو خطأ مُصلح ← الاختبار الجديد يفشل قبل الإصلاح
+- إلزامي: لا أسرار ولا مسارات جلسة في الشيفرة ← بحث أنماط الأسرار
+- جودة: يطابق أسلوب الكود المحيط وتسمياته ← مراجعة الفرق
+- جودة: طريقة تشغيل مكتوبة ومجرَّبة ← تشغيل الأمر المكتوب
+- جودة: الفرق أصغر ما يحقق الطلب بلا إعادة كتابة غير مطلوبة ← git diff --stat
+- جودة: المدخل الخاطئ يعطي خطأ واضحًا لا انهيارًا صامتًا ← تشغيل بمدخل خاطئ
+- أمر الحكم في الوضع 1: `think.py qa code --answers qa.json` (PASS / FAIL / INCOMPLETE).
+
+#### 5. التعافي (A29)
+
+- `missing_dependency` (اعتمادية مفقودة، ميزانية 2): سمِّ الاعتمادية بالضبط (حزمة، برنامج، خط، نموذج) ← ثبّت محليًا في بيئة العمل إن كان مجانيًا ومسموحًا (pip --user أو venv أو npm محلي) · البديل: مسار المكتبة القياسية أو أداة أخرى من نفس المجموعة · تصعيد: تثبيت نظامي أو مدفوع أو يحتاج مفتاحًا: توقف واسأل
+- `quality_below_threshold` (جودة دون العتبة، ميزانية 3): أي معيار فشل وبكم (المقيس مقابل العتبة) ← عالج السبب الأكبر وحده ثم أعد القياس · البديل: المنهج البديل المكتوب للمرحلة في الخطة · تصعيد: معيار إلزامي لا يتحقق بعد البديل: توقف وأبلغ بالأرقام
+- `tool_error` (خطأ أداة، ميزانية 3): اقرأ آخر سطر في الخطأ ثم أول سطر من كودك فيه ← أصلح السبب المثبت وحده، ثم شغّل الاختبار المتعلق · البديل: أداة أخرى أو مسار يدوي للمرحلة نفسها · تصعيد: خطأ في أداة خارجية لا تملكها: بلّغ بإعادة الإنتاج ولا تخفه
+
+#### 6. الأدلة
+
+- `https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/1113-rust-coding/2535-rust-coding`
+- `https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/2167-rust-plugin/7869-rust-development`
+
+#### 7. قدرات قريبة في العائلة
+
+- `ACODE-32` استقبال OAuth محلي مع ملفات رموز محمية / Local OAuth callback with 0600 token files (documented)
+- `ACODE-320` Go الاصطلاحي والتزامن: الوضوح ثم البساطة ثم الإيجاز، أخطاء مبكرة بلا تداخل، ولكل goroutine مالك وسياق إلغاء ومخرج، وerrgroup للأخطاء المشتركة / Idiomatic Go and concurrency: clarity, then simplicity, then concision; early error returns; every goroutine has an owner, a context and an exit; errgroup for shared errors (documented)
+- `ACODE-322` صور حاويات حسب اللغة: Go ثابت على scratch مع شهادات CA، وNode متعدد المراحل بذاكرة BuildKit واعتماديات إنتاج فقط، وPython على slim لا Alpine بنسخة واحدة للمرحلتين / Language-specific container images: static Go on scratch with CA certs, multi-stage Node with BuildKit cache and production-only deps, Python on slim not Alpine with one version for both stages (documented)
+- `ACODE-323` فحوص Python السريعة من Astral وأخواتها: ty كمدقق أنواع تجريبي بنسخة مثبتة، وترحيل mypy إلى ty وblack إلى ruff format بخطاف محلي، وvulture للكود الميت بقائمة سماح / Fast Python checks: ty as a pinned beta type checker, mypy to ty and black to ruff-format migrations with a local pre-commit hook, vulture for dead code with a whitelist (documented)
+
+### `ACODE-322` — صور حاويات حسب اللغة: Go ثابت على scratch مع شهادات CA، وNode متعدد المراحل بذاكرة BuildKit واعتماديات إنتاج فقط، وPython على slim لا Alpine بنسخة واحدة للمرحلتين / Language-specific container images: static Go on scratch with CA certs, multi-stage Node with BuildKit cache and production-only deps, Python on slim not Alpine with one version for both stages
+
+| الحقل | القيمة |
+|---|---|
+| العائلة | `atlas-code` ([فصل العائلة](../../../.claude/skills/kosif-superpowers/references/powers/atlas-code.md)) |
+| المجموعة | البرمجة وبناء التطبيقات (`software`) |
+| نوع المخرج (A25، A27) | كود وتطبيقات ومواقع (`code`) |
+| الحالة في الكتالوج | 📄 `documented`: منهج موصوف يحتاج بناءً أو ربطًا قبل التشغيل |
+| سقف التحقق قبل العمل (A27) | V1 حتى تُبنى وتُشغَّل؛ لا تقدَّم جاهزة أبدًا |
+| نطاق الدليل | `url` |
+| الرخصة | card in our own words; the original skill folders are copied verbatim with their MIT license and SOURCE.md under vendor/kosif-atlas |
+
+**ما هي:** تحسينات خاصة بكل لغة فوق نمط البناء متعدد المراحل العام: Go من 846MB إلى بضعة MB، وNode بين 100-150MB، وPython بين 80-120MB، مع فخاخ حقيقية: venv لا ينتقل بين نسخ Python الصغرى، وAlpine يكسر عجلات numpy/pandas، وdistroless بلا shell. — Per-language Dockerfile optimisation with the traps that bite.
+
+**متى:** صورة Docker كبيرة، Dockerfile لـ Go أو Node أو Python، ModuleNotFoundError في الحاوية، تقليل حجم الصورة / optimising a Go, Node or Python image
+
+**كيف:** 1) Go: build with CGO_ENABLED=0, -trimpath and -ldflags='-s -w' in a golang builder; run on scratch or distroless/static; copy /etc/ssl/certs/ca-certificates.crt (and zoneinfo if used) for HTTPS; USER a non-root UID; if CGO is required, use distroless/base or a glibc base instead. 2) Node: multi-stage, install with the lockfile's manager (npm ci, yarn --immutable, pnpm --frozen-lockfile) using a BuildKit cache mount; build in one stage, copy only production node_modules and the build output into the runtime stage; Next.js serves .next/standalone with Node even when Bun built it; a distroless runtime has no shell, so code that shells out to CLIs fails there. 3) Never re-add a package after a frozen install with an unpinned `add`, which resolves the registry's latest tag outside the lockfile; pin it or move it to dependencies. 4) Python: python:<ver>-slim, not Alpine (musl breaks many wheels and forces source builds); uv sync --frozen --no-dev into /app/.venv in the builder, copy the venv to the runtime. 5) Drive both FROM lines from one ARG PYTHON_VERSION: a venv copied to a different minor version drops out of sys.path entirely, and the symptom is ModuleNotFoundError on the first non-stdlib import. 6) Check it with a build-time assertion that runs the entrypoint's imports in the final stage, and group Renovate updates for both stages. 7) Measure: docker image ls size before and after, docker history for fat layers, and a smoke run of the real entrypoint. Full original skill(s) with license: vendor/kosif-atlas/skills/2146-container-plugin/7718-go-containers, vendor/kosif-atlas/skills/2146-container-plugin/7719-nodejs-containers, vendor/kosif-atlas/skills/2146-container-plugin/7720-python-containers.
+
+**المعاملات:** language, base image, package manager
+
+**التثبيت:** mkdir -p ~/.claude/skills && cp -r .claude/skills/kosif-superpowers/vendor/kosif-atlas/skills/2146-container-plugin/7718-go-containers ~/.claude/skills/go-containers ; mkdir -p ~/.claude/skills && cp -r .claude/skills/kosif-superpowers/vendor/kosif-atlas/skills/2146-container-plugin/7719-nodejs-containers ~/.claude/skills/nodejs-containers ; mkdir -p ~/.claude/skills && cp -r .claude/skills/kosif-superpowers/vendor/kosif-atlas/skills/2146-container-plugin/7720-python-containers ~/.claude/skills/python-containers
+
+**الوسوم:** Docker · Go container · Node container · Python container · distroless · multi-stage · حاويات
+
+#### 1. الاستقبال (A25)
+
+- اللغة والإطار: افتراض مكتوب ← لغة المستودع الموجود، وإلا Python أو HTML/JS بلا اعتماديات
+- أين يعمل: افتراض مكتوب ← المتصفح أو سطر الأوامر حسب المخرج
+- مستودع أو ملفات موجودة: سؤال بإجابة مقترحة ← مشروع جديد مستقل
+- متى يكون ناجحًا: افتراض مكتوب ← الاختبارات الموجودة تمر + اختبار لكل سلوك جديد
+- لا تُفترض أبدًا: مادة الإنتاج نفسها، والإذن بخطوة مدفوعة أو منشورة أو لا رجعة فيها، والهوية والحقوق.
+
+#### 2. الجاهزية والشارة (A28)
+
+- `docker` ← افحص وجوده بأمر واحد قبل كتابة الشارة
+- `pip:numpy` ← python3 -c "import numpy" (اسم الاستيراد قد يختلف عن اسم الحزمة)
+- `pip:pandas` ← python3 -c "import pandas" (اسم الاستيراد قد يختلف عن اسم الحزمة)
+- `npm:react` ← npm ls react أو وجود node_modules/react
+- الوضع 1: شارة «هنا الآن» بعد الفحص، لا 📄 الكتالوج تلقائيًا · الوضع 2: `كتالوج: 📄 · هنا: غير مفحوص` · الوضع 3: بلا شارة ولا معرّف.
+
+#### 3. موضعها في الخطة (A26)
+
+- عقدة منمّطة: المدخل `spec` ← المخرج `code`، والمنفّذ `method:ACODE-322` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `atlas-ledger`.
+- مراحل النوع: قراءة الكود والاختبارات ← إعادة إنتاج أو اختبار جديد ← أصغر تغيير ← الاختبارات ← مراجعة الفرق ← فرع وPR.
+- إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
+
+#### 4. بوابة التحقق (A27)
+
+- إلزامي: الاختبارات الموجودة تمر قبل التعديل وبعده ← أمر الاختبار
+- إلزامي: اختبار لكل سلوك جديد أو خطأ مُصلح ← الاختبار الجديد يفشل قبل الإصلاح
+- إلزامي: لا أسرار ولا مسارات جلسة في الشيفرة ← بحث أنماط الأسرار
+- جودة: يطابق أسلوب الكود المحيط وتسمياته ← مراجعة الفرق
+- جودة: طريقة تشغيل مكتوبة ومجرَّبة ← تشغيل الأمر المكتوب
+- جودة: الفرق أصغر ما يحقق الطلب بلا إعادة كتابة غير مطلوبة ← git diff --stat
+- جودة: المدخل الخاطئ يعطي خطأ واضحًا لا انهيارًا صامتًا ← تشغيل بمدخل خاطئ
+- أمر الحكم في الوضع 1: `think.py qa code --answers qa.json` (PASS / FAIL / INCOMPLETE).
+
+#### 5. التعافي (A29)
+
+- `missing_dependency` (اعتمادية مفقودة، ميزانية 2): سمِّ الاعتمادية بالضبط (حزمة، برنامج، خط، نموذج) ← ثبّت محليًا في بيئة العمل إن كان مجانيًا ومسموحًا (pip --user أو venv أو npm محلي) · البديل: مسار المكتبة القياسية أو أداة أخرى من نفس المجموعة · تصعيد: تثبيت نظامي أو مدفوع أو يحتاج مفتاحًا: توقف واسأل
+- `quality_below_threshold` (جودة دون العتبة، ميزانية 3): أي معيار فشل وبكم (المقيس مقابل العتبة) ← عالج السبب الأكبر وحده ثم أعد القياس · البديل: المنهج البديل المكتوب للمرحلة في الخطة · تصعيد: معيار إلزامي لا يتحقق بعد البديل: توقف وأبلغ بالأرقام
+- `tool_error` (خطأ أداة، ميزانية 3): اقرأ آخر سطر في الخطأ ثم أول سطر من كودك فيه ← أصلح السبب المثبت وحده، ثم شغّل الاختبار المتعلق · البديل: أداة أخرى أو مسار يدوي للمرحلة نفسها · تصعيد: خطأ في أداة خارجية لا تملكها: بلّغ بإعادة الإنتاج ولا تخفه
+
+#### 6. الأدلة
+
+- `https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/2146-container-plugin/7718-go-containers`
+- `https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/2146-container-plugin/7719-nodejs-containers`
+- `https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/2146-container-plugin/7720-python-containers`
+
+#### 7. قدرات قريبة في العائلة
+
+- `ACODE-320` Go الاصطلاحي والتزامن: الوضوح ثم البساطة ثم الإيجاز، أخطاء مبكرة بلا تداخل، ولكل goroutine مالك وسياق إلغاء ومخرج، وerrgroup للأخطاء المشتركة / Idiomatic Go and concurrency: clarity, then simplicity, then concision; early error returns; every goroutine has an owner, a context and an exit; errgroup for shared errors (documented)
+- `ACODE-321` Rust اصطلاحي: صمم البيانات قبل الكود، ملكية واستعارة قبل clone، Tokio وSerde بحدود واضحة، وclippy وrustfmt وnextest وllvm-cov كبوابات / Idiomatic Rust: model data before code, ownership and borrowing before clone, Tokio and Serde with clear boundaries, clippy, rustfmt, nextest and llvm-cov as gates (documented)
+- `ACODE-323` فحوص Python السريعة من Astral وأخواتها: ty كمدقق أنواع تجريبي بنسخة مثبتة، وترحيل mypy إلى ty وblack إلى ruff format بخطاف محلي، وvulture للكود الميت بقائمة سماح / Fast Python checks: ty as a pinned beta type checker, mypy to ty and black to ruff-format migrations with a local pre-commit hook, vulture for dead code with a whitelist (documented)
+- `ACODE-324` سكربت Python مساعد أصغر ما يمكن مقابل سكربت تسليمي: مكتبة قياسية وبلا تهيئة مشروع للمساعد، وحدود مكتوبة الأنواع تبدأ من object ثم تضيّق / Smallest trustworthy Python helper versus a deliverable script: stdlib and no project scaffolding for helpers, typed boundaries that start from object and narrow (documented)
+
+### `ACODE-323` — فحوص Python السريعة من Astral وأخواتها: ty كمدقق أنواع تجريبي بنسخة مثبتة، وترحيل mypy إلى ty وblack إلى ruff format بخطاف محلي، وvulture للكود الميت بقائمة سماح / Fast Python checks: ty as a pinned beta type checker, mypy to ty and black to ruff-format migrations with a local pre-commit hook, vulture for dead code with a whitelist
+
+| الحقل | القيمة |
+|---|---|
+| العائلة | `atlas-code` ([فصل العائلة](../../../.claude/skills/kosif-superpowers/references/powers/atlas-code.md)) |
+| المجموعة | البرمجة وبناء التطبيقات (`software`) |
+| نوع المخرج (A25، A27) | كود وتطبيقات ومواقع (`code`) |
+| الحالة في الكتالوج | 📄 `documented`: منهج موصوف يحتاج بناءً أو ربطًا قبل التشغيل |
+| سقف التحقق قبل العمل (A27) | V1 حتى تُبنى وتُشغَّل؛ لا تقدَّم جاهزة أبدًا |
+| نطاق الدليل | `url` |
+| الرخصة | card in our own words; the original skill folders are copied verbatim with their MIT license and SOURCE.md under vendor/kosif-atlas |
+
+**ما هي:** ty سريع جدًا ويعمل على كود جزئي الأنواع، لكنه 0.0.x تتغير أعلامه وأسماء قواعده بين الإصدارات الصغيرة، فيجب تثبيت النسخة والتحقق من --help. الترحيلات تتم بتدقيق الإعداد الحالي ثم الاستبدال ثم التحقق، مع إبقاء mypy حين يعتمد المشروع على إضافاته. — Adopting ty, ruff-format and vulture safely.
+
+**متى:** استخدم ty، انقل من mypy، استبدل black بـ ruff، كود ميت في Python / Python type checking, formatting or dead-code cleanup
+
+**كيف:** 1) Confirm the build: `ty --version`; pin it in the hook or dev dependencies; check `ty check --help` and `ty explain rule <name>` instead of recalled rule names. 2) Mental model: inference-first, unannotated symbols are Unknown, no --strict (defaults are already strict), each rule is error, warn or ignore, set per rule and per file pattern with [[overrides]]. 3) Most failures are environment discovery: point ty at the project venv (uv run ty check, or configure the python environment) before judging errors. 4) Suppress with ty's bracketed rule code, not a blanket ignore; adopt on an existing codebase by starting noisy rules at warn and ratcheting. 5) mypy to ty: audit .pre-commit-config.yaml, [tool.mypy] and mypy.ini; keep mypy if the project relies on mypy plugins, dmypy or mypy-specific exit codes; otherwise replace the mirrors-mypy hook with a `repo: local` hook running `uvx ty@<pin> check`, translate config into [tool.ty], run both once and compare. 6) black to ruff format: move [tool.black] line-length and target into [tool.ruff] / [tool.ruff.format], replace the psf/black hook with ruff-format, drop black from dependencies, run ruff format --check and expect a near-empty diff. 7) Dead code: vulture with --min-confidence 80 for gradual cleanup and a generated whitelist for framework entry points, or deadcode for strict new projects; unused imports alone belong to ruff F401. 8) Report the before and after counts per check. Full original skill(s) with license: vendor/kosif-atlas/skills/1271-ty/2949-ty, vendor/kosif-atlas/skills/2166-python-plugin/7853-ty-type-checking, vendor/kosif-atlas/skills/2160-migration-patterns-plugin/7803-mypy-to-ty, vendor/kosif-atlas/skills/2160-migration-patterns-plugin/7799-black-to-ruff-format, vendor/kosif-atlas/skills/2166-python-plugin/7851-ruff-formatting, vendor/kosif-atlas/skills/2166-python-plugin/7861-vulture-dead-code.
+
+**المعاملات:** pyproject path, pinned versions
+
+**التثبيت:** mkdir -p ~/.claude/skills && cp -r .claude/skills/kosif-superpowers/vendor/kosif-atlas/skills/1271-ty/2949-ty ~/.claude/skills/ty ; mkdir -p ~/.claude/skills && cp -r .claude/skills/kosif-superpowers/vendor/kosif-atlas/skills/2166-python-plugin/7853-ty-type-checking ~/.claude/skills/ty-type-checking ; mkdir -p ~/.claude/skills && cp -r .claude/skills/kosif-superpowers/vendor/kosif-atlas/skills/2160-migration-patterns-plugin/7803-mypy-to-ty ~/.claude/skills/mypy-to-ty ; mkdir -p ~/.claude/skills && cp -r .claude/skills/kosif-superpowers/vendor/kosif-atlas/skills/2160-migration-patterns-plugin/7799-black-to-ruff-format ~/.claude/skills/black-to-ruff-format ; mkdir -p ~/.claude/skills && cp -r .claude/skills/kosif-superpowers/vendor/kosif-atlas/skills/2166-python-plugin/7851-ruff-formatting ~/.claude/skills/ruff-formatting ; mkdir -p ~/.claude/skills && cp -r .claude/skills/kosif-superpowers/vendor/kosif-atlas/skills/2166-python-plugin/7861-vulture-dead-code ~/.claude/skills/vulture-dead-code
+
+**الوسوم:** ty · mypy · ruff format · black · vulture · dead code · مدقق الأنواع
+
+#### 1. الاستقبال (A25)
+
+- اللغة والإطار: افتراض مكتوب ← لغة المستودع الموجود، وإلا Python أو HTML/JS بلا اعتماديات
+- أين يعمل: افتراض مكتوب ← المتصفح أو سطر الأوامر حسب المخرج
+- مستودع أو ملفات موجودة: سؤال بإجابة مقترحة ← مشروع جديد مستقل
+- متى يكون ناجحًا: افتراض مكتوب ← الاختبارات الموجودة تمر + اختبار لكل سلوك جديد
+- لا تُفترض أبدًا: مادة الإنتاج نفسها، والإذن بخطوة مدفوعة أو منشورة أو لا رجعة فيها، والهوية والحقوق.
+
+#### 2. الجاهزية والشارة (A28)
+
+- `python3` ← افحص وجوده بأمر واحد قبل كتابة الشارة
+- الوضع 1: شارة «هنا الآن» بعد الفحص، لا 📄 الكتالوج تلقائيًا · الوضع 2: `كتالوج: 📄 · هنا: غير مفحوص` · الوضع 3: بلا شارة ولا معرّف.
+
+#### 3. موضعها في الخطة (A26)
+
+- عقدة منمّطة: المدخل `spec` ← المخرج `code`، والمنفّذ `method:ACODE-323` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `atlas-ledger`.
+- مراحل النوع: قراءة الكود والاختبارات ← إعادة إنتاج أو اختبار جديد ← أصغر تغيير ← الاختبارات ← مراجعة الفرق ← فرع وPR.
+- إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
+
+#### 4. بوابة التحقق (A27)
+
+- إلزامي: الاختبارات الموجودة تمر قبل التعديل وبعده ← أمر الاختبار
+- إلزامي: اختبار لكل سلوك جديد أو خطأ مُصلح ← الاختبار الجديد يفشل قبل الإصلاح
+- إلزامي: لا أسرار ولا مسارات جلسة في الشيفرة ← بحث أنماط الأسرار
+- جودة: يطابق أسلوب الكود المحيط وتسمياته ← مراجعة الفرق
+- جودة: طريقة تشغيل مكتوبة ومجرَّبة ← تشغيل الأمر المكتوب
+- جودة: الفرق أصغر ما يحقق الطلب بلا إعادة كتابة غير مطلوبة ← git diff --stat
+- جودة: المدخل الخاطئ يعطي خطأ واضحًا لا انهيارًا صامتًا ← تشغيل بمدخل خاطئ
+- أمر الحكم في الوضع 1: `think.py qa code --answers qa.json` (PASS / FAIL / INCOMPLETE).
+
+#### 5. التعافي (A29)
+
+- `missing_dependency` (اعتمادية مفقودة، ميزانية 2): سمِّ الاعتمادية بالضبط (حزمة، برنامج، خط، نموذج) ← ثبّت محليًا في بيئة العمل إن كان مجانيًا ومسموحًا (pip --user أو venv أو npm محلي) · البديل: مسار المكتبة القياسية أو أداة أخرى من نفس المجموعة · تصعيد: تثبيت نظامي أو مدفوع أو يحتاج مفتاحًا: توقف واسأل
+- `quality_below_threshold` (جودة دون العتبة، ميزانية 3): أي معيار فشل وبكم (المقيس مقابل العتبة) ← عالج السبب الأكبر وحده ثم أعد القياس · البديل: المنهج البديل المكتوب للمرحلة في الخطة · تصعيد: معيار إلزامي لا يتحقق بعد البديل: توقف وأبلغ بالأرقام
+- `tool_error` (خطأ أداة، ميزانية 3): اقرأ آخر سطر في الخطأ ثم أول سطر من كودك فيه ← أصلح السبب المثبت وحده، ثم شغّل الاختبار المتعلق · البديل: أداة أخرى أو مسار يدوي للمرحلة نفسها · تصعيد: خطأ في أداة خارجية لا تملكها: بلّغ بإعادة الإنتاج ولا تخفه
+
+#### 6. الأدلة
+
+- `https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/1271-ty/2949-ty`
+- `https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/2166-python-plugin/7853-ty-type-checking`
+- `https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/2160-migration-patterns-plugin/7803-mypy-to-ty`
+- `https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/2160-migration-patterns-plugin/7799-black-to-ruff-format`
+- `https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/2166-python-plugin/7851-ruff-formatting`
+- `https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/2166-python-plugin/7861-vulture-dead-code`
+
+#### 7. قدرات قريبة في العائلة
+
+- `ACODE-321` Rust اصطلاحي: صمم البيانات قبل الكود، ملكية واستعارة قبل clone، Tokio وSerde بحدود واضحة، وclippy وrustfmt وnextest وllvm-cov كبوابات / Idiomatic Rust: model data before code, ownership and borrowing before clone, Tokio and Serde with clear boundaries, clippy, rustfmt, nextest and llvm-cov as gates (documented)
+- `ACODE-322` صور حاويات حسب اللغة: Go ثابت على scratch مع شهادات CA، وNode متعدد المراحل بذاكرة BuildKit واعتماديات إنتاج فقط، وPython على slim لا Alpine بنسخة واحدة للمرحلتين / Language-specific container images: static Go on scratch with CA certs, multi-stage Node with BuildKit cache and production-only deps, Python on slim not Alpine with one version for both stages (documented)
+- `ACODE-324` سكربت Python مساعد أصغر ما يمكن مقابل سكربت تسليمي: مكتبة قياسية وبلا تهيئة مشروع للمساعد، وحدود مكتوبة الأنواع تبدأ من object ثم تضيّق / Smallest trustworthy Python helper versus a deliverable script: stdlib and no project scaffolding for helpers, typed boundaries that start from object and narrow (documented)
+- `ACODE-325` مديرا الحزم Bun وpnpm: إضافة مثبتة لا تتجاوز ملف القفل، تحديث آمن أو انتقائي، فحص القديم، ونشر npm بمعاينة dry-run وتوقيع provenance، وإعدادات pnpm في pnpm-workspace.yaml / Bun and pnpm package management: pinned adds that do not bypass the lockfile, safe or selective updates, outdated audits, npm publishing with dry-run and provenance, pnpm settings in pnpm-workspace.yaml (documented)
+
+### `ACODE-324` — سكربت Python مساعد أصغر ما يمكن مقابل سكربت تسليمي: مكتبة قياسية وبلا تهيئة مشروع للمساعد، وحدود مكتوبة الأنواع تبدأ من object ثم تضيّق / Smallest trustworthy Python helper versus a deliverable script: stdlib and no project scaffolding for helpers, typed boundaries that start from object and narrow
+
+| الحقل | القيمة |
+|---|---|
+| العائلة | `atlas-code` ([فصل العائلة](../../../.claude/skills/kosif-superpowers/references/powers/atlas-code.md)) |
+| المجموعة | البرمجة وبناء التطبيقات (`software`) |
+| نوع المخرج (A25، A27) | كود وتطبيقات ومواقع (`code`) |
+| الحالة في الكتالوج | 📄 `documented`: منهج موصوف يحتاج بناءً أو ربطًا قبل التشغيل |
+| سقف التحقق قبل العمل (A27) | V1 حتى تُبنى وتُشغَّل؛ لا تقدَّم جاهزة أبدًا |
+| نطاق الدليل | `url` |
+| الرخصة | card in our own words; the original skill folders are copied verbatim with their MIT license and SOURCE.md under vendor/kosif-atlas |
+
+**ما هي:** يفرق بين سكربت مساعد مؤقت يستعمله الوكيل وسكربت مطلوب كتسليم في المستودع. المساعد يستخدم المفسر المتاح والمكتبة القياسية ولا ينشئ pyproject أو venv أو lockfile ولا يترك ملفات cache، والتسليمي يتبع أعراف المشروع. والمدخلات غير الموثوقة تُعامل كـ object وتُضيّق بـ isinstance لا كـ Any. — Python helpers and typed boundaries done minimally.
+
+**متى:** سكربت بايثون سريع، مساعد مؤقت، تحليل JSON في بايثون، تحقق من المدخلات / writing a quick Python helper or typing a script boundary
+
+**كيف:** 1) Decide: incidental helper or repository deliverable. If the command only runs an existing script, module or test suite, keep it and write nothing new. 2) Helper: use the interpreter already present, stdlib only, no pyproject, package, lockfile, venv or tool installs; run with `python3 -B` to keep caches out of the tree; keep it temporary and report its path if kept. 3) Deliverable: follow the project's Python conventions and checks instead. 4) Type the boundary first: annotate every parameter and return (including -> None); treat JSON, plist, env and other untrusted input as object, narrow with isinstance, and validate container shape and each required value before building the internal type. 5) bool is an int subclass: reject it explicitly where a true integer is required. 6) Pick the smallest model: TypedDict for dict-shaped validated data, a frozen dataclass for a value object, Literal or Enum for a closed set; no Pydantic just for a script. 7) Parse CLI and text input at the edge and pass typed values inward. 8) Run it once on a real input and show the output. Full original skill(s) with license: vendor/kosif-atlas/skills/1112-python-scripting/2533-python-simple-scripts, vendor/kosif-atlas/skills/1112-python-scripting/2534-python-typing.
+
+**المعاملات:** helper or deliverable, Python version
+
+**التثبيت:** mkdir -p ~/.claude/skills && cp -r .claude/skills/kosif-superpowers/vendor/kosif-atlas/skills/1112-python-scripting/2533-python-simple-scripts ~/.claude/skills/python-simple-scripts ; mkdir -p ~/.claude/skills && cp -r .claude/skills/kosif-superpowers/vendor/kosif-atlas/skills/1112-python-scripting/2534-python-typing ~/.claude/skills/python-typing
+
+**الوسوم:** Python script · stdlib · typing · TypedDict · boundary validation · سكربت بايثون
+
+#### 1. الاستقبال (A25)
+
+- اللغة والإطار: افتراض مكتوب ← لغة المستودع الموجود، وإلا Python أو HTML/JS بلا اعتماديات
+- أين يعمل: افتراض مكتوب ← المتصفح أو سطر الأوامر حسب المخرج
+- مستودع أو ملفات موجودة: سؤال بإجابة مقترحة ← مشروع جديد مستقل
+- متى يكون ناجحًا: افتراض مكتوب ← الاختبارات الموجودة تمر + اختبار لكل سلوك جديد
+- لا تُفترض أبدًا: مادة الإنتاج نفسها، والإذن بخطوة مدفوعة أو منشورة أو لا رجعة فيها، والهوية والحقوق.
+
+#### 2. الجاهزية والشارة (A28)
+
+- `python3` ← افحص وجوده بأمر واحد قبل كتابة الشارة
+- `os:macos` ← افحص وجوده بأمر واحد قبل كتابة الشارة
+- الوضع 1: شارة «هنا الآن» بعد الفحص، لا 📄 الكتالوج تلقائيًا · الوضع 2: `كتالوج: 📄 · هنا: غير مفحوص` · الوضع 3: بلا شارة ولا معرّف.
+
+#### 3. موضعها في الخطة (A26)
+
+- عقدة منمّطة: المدخل `spec` ← المخرج `code`، والمنفّذ `method:ACODE-324` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `atlas-ledger`.
+- مراحل النوع: قراءة الكود والاختبارات ← إعادة إنتاج أو اختبار جديد ← أصغر تغيير ← الاختبارات ← مراجعة الفرق ← فرع وPR.
+- إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
+
+#### 4. بوابة التحقق (A27)
+
+- إلزامي: الاختبارات الموجودة تمر قبل التعديل وبعده ← أمر الاختبار
+- إلزامي: اختبار لكل سلوك جديد أو خطأ مُصلح ← الاختبار الجديد يفشل قبل الإصلاح
+- إلزامي: لا أسرار ولا مسارات جلسة في الشيفرة ← بحث أنماط الأسرار
+- جودة: يطابق أسلوب الكود المحيط وتسمياته ← مراجعة الفرق
+- جودة: طريقة تشغيل مكتوبة ومجرَّبة ← تشغيل الأمر المكتوب
+- جودة: الفرق أصغر ما يحقق الطلب بلا إعادة كتابة غير مطلوبة ← git diff --stat
+- جودة: المدخل الخاطئ يعطي خطأ واضحًا لا انهيارًا صامتًا ← تشغيل بمدخل خاطئ
+- أمر الحكم في الوضع 1: `think.py qa code --answers qa.json` (PASS / FAIL / INCOMPLETE).
+
+#### 5. التعافي (A29)
+
+- `missing_dependency` (اعتمادية مفقودة، ميزانية 2): سمِّ الاعتمادية بالضبط (حزمة، برنامج، خط، نموذج) ← ثبّت محليًا في بيئة العمل إن كان مجانيًا ومسموحًا (pip --user أو venv أو npm محلي) · البديل: مسار المكتبة القياسية أو أداة أخرى من نفس المجموعة · تصعيد: تثبيت نظامي أو مدفوع أو يحتاج مفتاحًا: توقف واسأل
+- `quality_below_threshold` (جودة دون العتبة، ميزانية 3): أي معيار فشل وبكم (المقيس مقابل العتبة) ← عالج السبب الأكبر وحده ثم أعد القياس · البديل: المنهج البديل المكتوب للمرحلة في الخطة · تصعيد: معيار إلزامي لا يتحقق بعد البديل: توقف وأبلغ بالأرقام
+- `tool_error` (خطأ أداة، ميزانية 3): اقرأ آخر سطر في الخطأ ثم أول سطر من كودك فيه ← أصلح السبب المثبت وحده، ثم شغّل الاختبار المتعلق · البديل: أداة أخرى أو مسار يدوي للمرحلة نفسها · تصعيد: خطأ في أداة خارجية لا تملكها: بلّغ بإعادة الإنتاج ولا تخفه
+
+#### 6. الأدلة
+
+- `https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/1112-python-scripting/2533-python-simple-scripts`
+- `https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/1112-python-scripting/2534-python-typing`
+
+#### 7. قدرات قريبة في العائلة
+
+- `ACODE-322` صور حاويات حسب اللغة: Go ثابت على scratch مع شهادات CA، وNode متعدد المراحل بذاكرة BuildKit واعتماديات إنتاج فقط، وPython على slim لا Alpine بنسخة واحدة للمرحلتين / Language-specific container images: static Go on scratch with CA certs, multi-stage Node with BuildKit cache and production-only deps, Python on slim not Alpine with one version for both stages (documented)
+- `ACODE-323` فحوص Python السريعة من Astral وأخواتها: ty كمدقق أنواع تجريبي بنسخة مثبتة، وترحيل mypy إلى ty وblack إلى ruff format بخطاف محلي، وvulture للكود الميت بقائمة سماح / Fast Python checks: ty as a pinned beta type checker, mypy to ty and black to ruff-format migrations with a local pre-commit hook, vulture for dead code with a whitelist (documented)
+- `ACODE-325` مديرا الحزم Bun وpnpm: إضافة مثبتة لا تتجاوز ملف القفل، تحديث آمن أو انتقائي، فحص القديم، ونشر npm بمعاينة dry-run وتوقيع provenance، وإعدادات pnpm في pnpm-workspace.yaml / Bun and pnpm package management: pinned adds that do not bypass the lockfile, safe or selective updates, outdated audits, npm publishing with dry-run and provenance, pnpm settings in pnpm-workspace.yaml (documented)
+- `ACODE-326` Deno كبديل متوافق مع npm: تثبيت وتشغيل بلا إعادة كتابة، deno ci بالقفل، ترحيل على درجات قابلة للتراجع، صلاحيات ضيقة، وصناديق Deno المعزولة لتشغيل كود غير موثوق / Deno as an npm-compatible runtime: install and run without rewrites, deno ci from the lock, migration in reversible rungs, narrow permissions, and Deno Sandboxes for untrusted code (documented)
+
+### `ACODE-325` — مديرا الحزم Bun وpnpm: إضافة مثبتة لا تتجاوز ملف القفل، تحديث آمن أو انتقائي، فحص القديم، ونشر npm بمعاينة dry-run وتوقيع provenance، وإعدادات pnpm في pnpm-workspace.yaml / Bun and pnpm package management: pinned adds that do not bypass the lockfile, safe or selective updates, outdated audits, npm publishing with dry-run and provenance, pnpm settings in pnpm-workspace.yaml
+
+| الحقل | القيمة |
+|---|---|
+| العائلة | `atlas-code` ([فصل العائلة](../../../.claude/skills/kosif-superpowers/references/powers/atlas-code.md)) |
+| المجموعة | البرمجة وبناء التطبيقات (`software`) |
+| نوع المخرج (A25، A27) | كود وتطبيقات ومواقع (`code`) |
+| الحالة في الكتالوج | 📄 `documented`: منهج موصوف يحتاج بناءً أو ربطًا قبل التشغيل |
+| سقف التحقق قبل العمل (A27) | V1 حتى تُبنى وتُشغَّل؛ لا تقدَّم جاهزة أبدًا |
+| نطاق الدليل | `url` |
+| الرخصة | card in our own words; the original skill folders are copied verbatim with their MIT license and SOURCE.md under vendor/kosif-atlas |
+
+**ما هي:** إدارة اعتماديات JavaScript بـ Bun (add، update، outdated، publish) وpnpm 11/12. أهم فخ: `bun add` بلا نسخة بعد تثبيت مجمد يأخذ وسم latest من السجل خارج ملف القفل. وفي pnpm الحديث الإعدادات بمفاتيح camelCase في pnpm-workspace.yaml و.npmrc للمصادقة فقط. — JS package manager hygiene and publishing.
+
+**متى:** bun add، تحديث bun.lock، تعارض ملف القفل، نشر حزمة npm، إعداد pnpm workspace / managing Bun or pnpm dependencies or publishing
+
+**كيف:** 1) Detect the manager from the lockfile (bun.lock or bun.lockb, pnpm-lock.yaml, package-lock.json, yarn.lock) and use only that one. 2) Add: `bun add [--dev] [--exact] PACKAGE`; ask for the package name rather than guessing; afterwards report the version added, `bun why <pkg>`, and run the tests. 3) Never follow a frozen or production install with an unpinned add (common in Dockerfiles); pin the version or move the package to dependencies. 4) Updates: safe `bun update` within semver ranges for routine work, `--latest` only for planned major upgrades on a branch, or selective `bun update <pkg>` for a security patch; resolve a lockfile merge conflict by regenerating from package.json, then review the diff. 5) `bun outdated` to audit before deciding. 6) Publish: set files whitelist, type, exports or main, engines, publishConfig.access public for scoped packages, a shebang and executable bit for bin entries; inspect the tarball with a pack or `--dry-run` first; publish with provenance from CI with id-token permission; automate versions with release-please; publishing itself needs the user's go-ahead. 7) pnpm 11/12: settings live in pnpm-workspace.yaml (camelCase), .npmrc holds only registry auth; approve dependency build scripts explicitly (allowBuilds) instead of enabling all; use `pnpm install --frozen-lockfile` in CI. Full original skill(s) with license: vendor/kosif-atlas/skills/2174-typescript-plugin/7929-bun-add, vendor/kosif-atlas/skills/2174-typescript-plugin/7932-bun-development, vendor/kosif-atlas/skills/2174-typescript-plugin/7934-bun-lockfile-update, vendor/kosif-atlas/skills/2174-typescript-plugin/7935-bun-outdated, vendor/kosif-atlas/skills/2174-typescript-plugin/7936-bun-package-manager, vendor/kosif-atlas/skills/2174-typescript-plugin/7937-bun-publish, vendor/kosif-atlas/skills/2174-typescript-plugin/7938-bun-publishing, vendor/kosif-atlas/skills/2926-pnpm/12141-pnpm.
+
+**المعاملات:** package manager, package, flags
+
+**التثبيت:** mkdir -p ~/.claude/skills && cp -r .claude/skills/kosif-superpowers/vendor/kosif-atlas/skills/2174-typescript-plugin/7929-bun-add ~/.claude/skills/bun-add ; mkdir -p ~/.claude/skills && cp -r .claude/skills/kosif-superpowers/vendor/kosif-atlas/skills/2174-typescript-plugin/7932-bun-development ~/.claude/skills/bun-development ; mkdir -p ~/.claude/skills && cp -r .claude/skills/kosif-superpowers/vendor/kosif-atlas/skills/2174-typescript-plugin/7934-bun-lockfile-update ~/.claude/skills/bun-lockfile-update ; mkdir -p ~/.claude/skills && cp -r .claude/skills/kosif-superpowers/vendor/kosif-atlas/skills/2174-typescript-plugin/7935-bun-outdated ~/.claude/skills/bun-outdated ; mkdir -p ~/.claude/skills && cp -r .claude/skills/kosif-superpowers/vendor/kosif-atlas/skills/2174-typescript-plugin/7936-bun-package-manager ~/.claude/skills/bun-package-manager ; mkdir -p ~/.claude/skills && cp -r .claude/skills/kosif-superpowers/vendor/kosif-atlas/skills/2174-typescript-plugin/7937-bun-publish ~/.claude/skills/bun-publish ; mkdir -p ~/.claude/skills && cp -r .claude/skills/kosif-superpowers/vendor/kosif-atlas/skills/2174-typescript-plugin/7938-bun-publishing ~/.claude/skills/bun-publishing ; mkdir -p ~/.claude/skills && cp -r .claude/skills/kosif-superpowers/vendor/kosif-atlas/skills/2926-pnpm/12141-pnpm ~/.claude/skills/pnpm
+
+**الوسوم:** Bun · pnpm · lockfile · npm publish · provenance · bun.lock · مدير الحزم
+
+#### 1. الاستقبال (A25)
+
+- اللغة والإطار: افتراض مكتوب ← لغة المستودع الموجود، وإلا Python أو HTML/JS بلا اعتماديات
+- أين يعمل: افتراض مكتوب ← المتصفح أو سطر الأوامر حسب المخرج
+- مستودع أو ملفات موجودة: سؤال بإجابة مقترحة ← مشروع جديد مستقل
+- متى يكون ناجحًا: افتراض مكتوب ← الاختبارات الموجودة تمر + اختبار لكل سلوك جديد
+- لا تُفترض أبدًا: مادة الإنتاج نفسها، والإذن بخطوة مدفوعة أو منشورة أو لا رجعة فيها، والهوية والحقوق.
+
+#### 2. الجاهزية والشارة (A28)
+
+- `node` ← افحص وجوده بأمر واحد قبل كتابة الشارة
+- الوضع 1: شارة «هنا الآن» بعد الفحص، لا 📄 الكتالوج تلقائيًا · الوضع 2: `كتالوج: 📄 · هنا: غير مفحوص` · الوضع 3: بلا شارة ولا معرّف.
+
+#### 3. موضعها في الخطة (A26)
+
+- عقدة منمّطة: المدخل `spec` ← المخرج `code`، والمنفّذ `method:ACODE-325` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `atlas-ledger`.
+- مراحل النوع: قراءة الكود والاختبارات ← إعادة إنتاج أو اختبار جديد ← أصغر تغيير ← الاختبارات ← مراجعة الفرق ← فرع وPR.
+- إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
+
+#### 4. بوابة التحقق (A27)
+
+- إلزامي: الاختبارات الموجودة تمر قبل التعديل وبعده ← أمر الاختبار
+- إلزامي: اختبار لكل سلوك جديد أو خطأ مُصلح ← الاختبار الجديد يفشل قبل الإصلاح
+- إلزامي: لا أسرار ولا مسارات جلسة في الشيفرة ← بحث أنماط الأسرار
+- جودة: يطابق أسلوب الكود المحيط وتسمياته ← مراجعة الفرق
+- جودة: طريقة تشغيل مكتوبة ومجرَّبة ← تشغيل الأمر المكتوب
+- جودة: الفرق أصغر ما يحقق الطلب بلا إعادة كتابة غير مطلوبة ← git diff --stat
+- جودة: المدخل الخاطئ يعطي خطأ واضحًا لا انهيارًا صامتًا ← تشغيل بمدخل خاطئ
+- أمر الحكم في الوضع 1: `think.py qa code --answers qa.json` (PASS / FAIL / INCOMPLETE).
+
+#### 5. التعافي (A29)
+
+- `missing_dependency` (اعتمادية مفقودة، ميزانية 2): سمِّ الاعتمادية بالضبط (حزمة، برنامج، خط، نموذج) ← ثبّت محليًا في بيئة العمل إن كان مجانيًا ومسموحًا (pip --user أو venv أو npm محلي) · البديل: مسار المكتبة القياسية أو أداة أخرى من نفس المجموعة · تصعيد: تثبيت نظامي أو مدفوع أو يحتاج مفتاحًا: توقف واسأل
+- `quality_below_threshold` (جودة دون العتبة، ميزانية 3): أي معيار فشل وبكم (المقيس مقابل العتبة) ← عالج السبب الأكبر وحده ثم أعد القياس · البديل: المنهج البديل المكتوب للمرحلة في الخطة · تصعيد: معيار إلزامي لا يتحقق بعد البديل: توقف وأبلغ بالأرقام
+- `tool_error` (خطأ أداة، ميزانية 3): اقرأ آخر سطر في الخطأ ثم أول سطر من كودك فيه ← أصلح السبب المثبت وحده، ثم شغّل الاختبار المتعلق · البديل: أداة أخرى أو مسار يدوي للمرحلة نفسها · تصعيد: خطأ في أداة خارجية لا تملكها: بلّغ بإعادة الإنتاج ولا تخفه
+
+#### 6. الأدلة
+
+- `https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/2174-typescript-plugin/7929-bun-add`
+- `https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/2174-typescript-plugin/7932-bun-development`
+- `https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/2174-typescript-plugin/7934-bun-lockfile-update`
+- `https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/2174-typescript-plugin/7935-bun-outdated`
+- `https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/2174-typescript-plugin/7936-bun-package-manager`
+- `https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/2174-typescript-plugin/7937-bun-publish`
+- `https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/2174-typescript-plugin/7938-bun-publishing`
+- `https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/2926-pnpm/12141-pnpm`
+
+#### 7. قدرات قريبة في العائلة
+
+- `ACODE-323` فحوص Python السريعة من Astral وأخواتها: ty كمدقق أنواع تجريبي بنسخة مثبتة، وترحيل mypy إلى ty وblack إلى ruff format بخطاف محلي، وvulture للكود الميت بقائمة سماح / Fast Python checks: ty as a pinned beta type checker, mypy to ty and black to ruff-format migrations with a local pre-commit hook, vulture for dead code with a whitelist (documented)
+- `ACODE-324` سكربت Python مساعد أصغر ما يمكن مقابل سكربت تسليمي: مكتبة قياسية وبلا تهيئة مشروع للمساعد، وحدود مكتوبة الأنواع تبدأ من object ثم تضيّق / Smallest trustworthy Python helper versus a deliverable script: stdlib and no project scaffolding for helpers, typed boundaries that start from object and narrow (documented)
+- `ACODE-326` Deno كبديل متوافق مع npm: تثبيت وتشغيل بلا إعادة كتابة، deno ci بالقفل، ترحيل على درجات قابلة للتراجع، صلاحيات ضيقة، وصناديق Deno المعزولة لتشغيل كود غير موثوق / Deno as an npm-compatible runtime: install and run without rewrites, deno ci from the lock, migration in reversible rungs, narrow permissions, and Deno Sandboxes for untrusted code (documented)
+- `ACODE-327` التواريخ في TypeScript بـ Temporal: اختر النوع حسب المعنى، حوّل الطابع الزمني إلى تاريخ مرة واحدة عند الحد وبمنطقة زمنية مسماة، وخزّن نصوص ISO / Dates in TypeScript with Temporal: pick the type by meaning, convert a timestamp to a date once at the boundary in a named zone, store ISO strings (documented)
+
+### `ACODE-326` — Deno كبديل متوافق مع npm: تثبيت وتشغيل بلا إعادة كتابة، deno ci بالقفل، ترحيل على درجات قابلة للتراجع، صلاحيات ضيقة، وصناديق Deno المعزولة لتشغيل كود غير موثوق / Deno as an npm-compatible runtime: install and run without rewrites, deno ci from the lock, migration in reversible rungs, narrow permissions, and Deno Sandboxes for untrusted code
+
+| الحقل | القيمة |
+|---|---|
+| العائلة | `atlas-code` ([فصل العائلة](../../../.claude/skills/kosif-superpowers/references/powers/atlas-code.md)) |
+| المجموعة | البرمجة وبناء التطبيقات (`software`) |
+| نوع المخرج (A25، A27) | كود وتطبيقات ومواقع (`code`) |
+| الحالة في الكتالوج | 📄 `documented`: منهج موصوف يحتاج بناءً أو ربطًا قبل التشغيل |
+| سقف التحقق قبل العمل (A27) | V1 حتى تُبنى وتُشغَّل؛ لا تقدَّم جاهزة أبدًا |
+| نطاق الدليل | `url` |
+| الرخصة | card in our own words; the original skill folders are copied verbatim with their MIT license and SOURCE.md under vendor/kosif-atlas |
+
+**ما هي:** Deno 2.9+ يقرأ package.json ويكتب node_modules حقيقيًا ويشغل نفس السكربتات ووحدات node:، فالترحيل غالبًا لا يحتاج تعديل كود. الفرقان الحقيقيان: الصلاحيات، وسكربتات دورة حياة npm لا تعمل افتراضيًا. وDeno Sandbox يشغل كودًا غير موثوق في microVM معزول يُتخلص منه بـ await using. — Deno adoption without rewrites, plus isolated execution.
+
+**متى:** شغل المشروع بـ Deno، انقل من Node إلى Deno، deno.json، تشغيل كود المستخدم أو كود مولد بأمان / adopting Deno or sandboxing untrusted code
+
+**كيف:** 1) Check `deno --version` is 2.9 or later. 2) Do not propose rewriting imports to jsr:, swapping dependencies or restructuring as a precondition. 3) Rung 1, package manager only: `deno install` reads package.json, writes node_modules and seeds deno.lock from the existing lockfile so pins carry over; the app still runs on node; back out by deleting deno.lock and node_modules. 4) Rung 2: run with `deno run -A` to confirm behaviour, changing one thing at a time. 5) Rung 3: replace -A with the narrowest --allow-net/read/env/run set that works. 6) Rung 4, optional: deno fmt, lint, test. 7) Fix the four real breakages: a 'Requires net access' prompt means a missing permission; 'require is not defined' means CommonJS in an ESM context; a broken dependency usually needs its postinstall approved; a tool that cannot see node_modules needs nodeModulesDir set. 8) CI uses `deno ci` (requires deno.lock, fails if stale; --prod skips dev deps); `deno task` runs package.json scripts and deno.json tasks win on name clashes. 9) Sandboxes: only when the user asks for Deno Sandbox or builds code execution in a Deno project; otherwise answer with their chosen isolation technology; create with `await using` so the microVM is disposed, stream stdout and stderr, set timeouts and kill on overrun, and keep secrets out of the sandbox. Full original skill(s) with license: vendor/kosif-atlas/skills/2898-deno/11717-deno, vendor/kosif-atlas/skills/2898-deno/11718-migrate-to-deno, vendor/kosif-atlas/skills/2898-deno/11715-deno-frontend, vendor/kosif-atlas/skills/2898-deno/11716-deno-sandbox.
+
+**المعاملات:** Deno version, project type
+
+**التثبيت:** mkdir -p ~/.claude/skills && cp -r .claude/skills/kosif-superpowers/vendor/kosif-atlas/skills/2898-deno/11717-deno ~/.claude/skills/deno ; mkdir -p ~/.claude/skills && cp -r .claude/skills/kosif-superpowers/vendor/kosif-atlas/skills/2898-deno/11718-migrate-to-deno ~/.claude/skills/migrate-to-deno ; mkdir -p ~/.claude/skills && cp -r .claude/skills/kosif-superpowers/vendor/kosif-atlas/skills/2898-deno/11715-deno-frontend ~/.claude/skills/deno-frontend ; mkdir -p ~/.claude/skills && cp -r .claude/skills/kosif-superpowers/vendor/kosif-atlas/skills/2898-deno/11716-deno-sandbox ~/.claude/skills/deno-sandbox
+
+**الوسوم:** Deno · migrate to Deno · deno.lock · permissions · sandbox · microVM · دينو
+
+#### 1. الاستقبال (A25)
+
+- اللغة والإطار: افتراض مكتوب ← لغة المستودع الموجود، وإلا Python أو HTML/JS بلا اعتماديات
+- أين يعمل: افتراض مكتوب ← المتصفح أو سطر الأوامر حسب المخرج
+- مستودع أو ملفات موجودة: سؤال بإجابة مقترحة ← مشروع جديد مستقل
+- متى يكون ناجحًا: افتراض مكتوب ← الاختبارات الموجودة تمر + اختبار لكل سلوك جديد
+- لا تُفترض أبدًا: مادة الإنتاج نفسها، والإذن بخطوة مدفوعة أو منشورة أو لا رجعة فيها، والهوية والحقوق.
+
+#### 2. الجاهزية والشارة (A28)
+
+- `node` ← افحص وجوده بأمر واحد قبل كتابة الشارة
+- الوضع 1: شارة «هنا الآن» بعد الفحص، لا 📄 الكتالوج تلقائيًا · الوضع 2: `كتالوج: 📄 · هنا: غير مفحوص` · الوضع 3: بلا شارة ولا معرّف.
+
+#### 3. موضعها في الخطة (A26)
+
+- عقدة منمّطة: المدخل `spec` ← المخرج `code`، والمنفّذ `method:ACODE-326` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `atlas-ledger`.
+- مراحل النوع: قراءة الكود والاختبارات ← إعادة إنتاج أو اختبار جديد ← أصغر تغيير ← الاختبارات ← مراجعة الفرق ← فرع وPR.
+- إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
+
+#### 4. بوابة التحقق (A27)
+
+- إلزامي: الاختبارات الموجودة تمر قبل التعديل وبعده ← أمر الاختبار
+- إلزامي: اختبار لكل سلوك جديد أو خطأ مُصلح ← الاختبار الجديد يفشل قبل الإصلاح
+- إلزامي: لا أسرار ولا مسارات جلسة في الشيفرة ← بحث أنماط الأسرار
+- جودة: يطابق أسلوب الكود المحيط وتسمياته ← مراجعة الفرق
+- جودة: طريقة تشغيل مكتوبة ومجرَّبة ← تشغيل الأمر المكتوب
+- جودة: الفرق أصغر ما يحقق الطلب بلا إعادة كتابة غير مطلوبة ← git diff --stat
+- جودة: المدخل الخاطئ يعطي خطأ واضحًا لا انهيارًا صامتًا ← تشغيل بمدخل خاطئ
+- أمر الحكم في الوضع 1: `think.py qa code --answers qa.json` (PASS / FAIL / INCOMPLETE).
+
+#### 5. التعافي (A29)
+
+- `missing_dependency` (اعتمادية مفقودة، ميزانية 2): سمِّ الاعتمادية بالضبط (حزمة، برنامج، خط، نموذج) ← ثبّت محليًا في بيئة العمل إن كان مجانيًا ومسموحًا (pip --user أو venv أو npm محلي) · البديل: مسار المكتبة القياسية أو أداة أخرى من نفس المجموعة · تصعيد: تثبيت نظامي أو مدفوع أو يحتاج مفتاحًا: توقف واسأل
+- `quality_below_threshold` (جودة دون العتبة، ميزانية 3): أي معيار فشل وبكم (المقيس مقابل العتبة) ← عالج السبب الأكبر وحده ثم أعد القياس · البديل: المنهج البديل المكتوب للمرحلة في الخطة · تصعيد: معيار إلزامي لا يتحقق بعد البديل: توقف وأبلغ بالأرقام
+- `tool_error` (خطأ أداة، ميزانية 3): اقرأ آخر سطر في الخطأ ثم أول سطر من كودك فيه ← أصلح السبب المثبت وحده، ثم شغّل الاختبار المتعلق · البديل: أداة أخرى أو مسار يدوي للمرحلة نفسها · تصعيد: خطأ في أداة خارجية لا تملكها: بلّغ بإعادة الإنتاج ولا تخفه
+
+#### 6. الأدلة
+
+- `https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/2898-deno/11717-deno`
+- `https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/2898-deno/11718-migrate-to-deno`
+- `https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/2898-deno/11715-deno-frontend`
+- `https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/2898-deno/11716-deno-sandbox`
+
+#### 7. قدرات قريبة في العائلة
+
+- `ACODE-324` سكربت Python مساعد أصغر ما يمكن مقابل سكربت تسليمي: مكتبة قياسية وبلا تهيئة مشروع للمساعد، وحدود مكتوبة الأنواع تبدأ من object ثم تضيّق / Smallest trustworthy Python helper versus a deliverable script: stdlib and no project scaffolding for helpers, typed boundaries that start from object and narrow (documented)
+- `ACODE-325` مديرا الحزم Bun وpnpm: إضافة مثبتة لا تتجاوز ملف القفل، تحديث آمن أو انتقائي، فحص القديم، ونشر npm بمعاينة dry-run وتوقيع provenance، وإعدادات pnpm في pnpm-workspace.yaml / Bun and pnpm package management: pinned adds that do not bypass the lockfile, safe or selective updates, outdated audits, npm publishing with dry-run and provenance, pnpm settings in pnpm-workspace.yaml (documented)
+- `ACODE-327` التواريخ في TypeScript بـ Temporal: اختر النوع حسب المعنى، حوّل الطابع الزمني إلى تاريخ مرة واحدة عند الحد وبمنطقة زمنية مسماة، وخزّن نصوص ISO / Dates in TypeScript with Temporal: pick the type by meaning, convert a timestamp to a date once at the boundary in a named zone, store ISO strings (documented)
+- `ACODE-328` تحقق من نوع TypeScript دون تثبيت المستودع الضخم: اقرأ رمز الخروج لا غياب الأخطاء، مترجم حقيقي بنسخة المستودع، رسم أنواع مصغر، خيارات tsconfig الأصلية، وثلاث نسخ / Verify a TypeScript fix without installing a huge monorepo: read the exit status, not absent errors; a real compiler at the repo's version; a minimal type graph; the repo's tsconfig options; three variants (documented)
+
+### `ACODE-327` — التواريخ في TypeScript بـ Temporal: اختر النوع حسب المعنى، حوّل الطابع الزمني إلى تاريخ مرة واحدة عند الحد وبمنطقة زمنية مسماة، وخزّن نصوص ISO / Dates in TypeScript with Temporal: pick the type by meaning, convert a timestamp to a date once at the boundary in a named zone, store ISO strings
+
+| الحقل | القيمة |
+|---|---|
+| العائلة | `atlas-code` ([فصل العائلة](../../../.claude/skills/kosif-superpowers/references/powers/atlas-code.md)) |
+| المجموعة | البرمجة وبناء التطبيقات (`software`) |
+| نوع المخرج (A25، A27) | كود وتطبيقات ومواقع (`code`) |
+| الحالة في الكتالوج | 📄 `documented`: منهج موصوف يحتاج بناءً أو ربطًا قبل التشغيل |
+| سقف التحقق قبل العمل (A27) | V1 حتى تُبنى وتُشغَّل؛ لا تقدَّم جاهزة أبدًا |
+| نطاق الدليل | `url` |
+| الرخصة | card in our own words; the original skill folders are copied verbatim with their MIT license and SOURCE.md under vendor/kosif-atlas |
+
+**ما هي:** Date يجمع تاريخًا تقويميًا ولحظة ومنطقة المضيف في كائن واحد قابل للتغيير، فتنتج أخطاء تمر من فاحص الأنواع (تاريخ الأمس بعد منتصف الليل، يوم ناقص غرب UTC). Temporal يعطي كل معنى نوعًا: PlainDate وPlainYearMonth وPlainTime وInstant وZonedDateTime وDuration. — Temporal types that make date bugs compile errors.
+
+**متى:** تواريخ ومناطق زمنية في JavaScript، باغ يوم ناقص، مقارنة تواريخ، تنسيق التاريخ / date and time handling in TS or JS
+
+**كيف:** 1) Choose by meaning: calendar date with no zone (due date, holiday) PlainDate; month PlainYearMonth; wall-clock time PlainTime or PlainDateTime; a moment Instant; a moment shown in a place ZonedDateTime with an explicit IANA zone; a length Duration. If deciding the day needs a zone, it is not a PlainDate yet. 2) Convert timestamps once, at the boundary, passing the zone explicitly; Temporal.Now.plainDateISO() without a zone uses the host zone, usually UTC on servers and CI. 3) Keep calendar dates out of Date: a UTC-midnight Date read with getDate() shifts a day west of UTC and the type checker cannot see it. 4) Store and send ISO 8601 strings; parse with Temporal.<Type>.from(str) and emit with toString(); impossible string dates throw RangeError, while property bags clamp unless overflow: 'reject'. 5) Port from Date file by file, at boundaries first. 6) Test with TZ set to a zone west of UTC and one east, plus DST transition days. 7) Availability: native in current engines; temporal-polyfill for older targets; TypeScript types from 6.0 with ESNext in lib. Full original skill(s) with license: vendor/kosif-atlas/skills/2174-typescript-plugin/7945-typescript-temporal.
+
+**المعاملات:** runtime targets, time zones
+
+**التثبيت:** mkdir -p ~/.claude/skills && cp -r .claude/skills/kosif-superpowers/vendor/kosif-atlas/skills/2174-typescript-plugin/7945-typescript-temporal ~/.claude/skills/typescript-temporal
+
+**الوسوم:** Temporal · dates · time zone · TypeScript · PlainDate · التواريخ · المنطقة الزمنية
+
+#### 1. الاستقبال (A25)
+
+- اللغة والإطار: افتراض مكتوب ← لغة المستودع الموجود، وإلا Python أو HTML/JS بلا اعتماديات
+- أين يعمل: افتراض مكتوب ← المتصفح أو سطر الأوامر حسب المخرج
+- مستودع أو ملفات موجودة: سؤال بإجابة مقترحة ← مشروع جديد مستقل
+- متى يكون ناجحًا: افتراض مكتوب ← الاختبارات الموجودة تمر + اختبار لكل سلوك جديد
+- لا تُفترض أبدًا: مادة الإنتاج نفسها، والإذن بخطوة مدفوعة أو منشورة أو لا رجعة فيها، والهوية والحقوق.
+
+#### 2. الجاهزية والشارة (A28)
+
+- لا متطلبات مسجلة؛ افحص المسار والأداة بـ `hub.py doctor` قبل الشارة.
+- الوضع 1: شارة «هنا الآن» بعد الفحص، لا 📄 الكتالوج تلقائيًا · الوضع 2: `كتالوج: 📄 · هنا: غير مفحوص` · الوضع 3: بلا شارة ولا معرّف.
+
+#### 3. موضعها في الخطة (A26)
+
+- عقدة منمّطة: المدخل `spec` ← المخرج `code`، والمنفّذ `method:ACODE-327` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `atlas-ledger`.
+- مراحل النوع: قراءة الكود والاختبارات ← إعادة إنتاج أو اختبار جديد ← أصغر تغيير ← الاختبارات ← مراجعة الفرق ← فرع وPR.
+- إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
+
+#### 4. بوابة التحقق (A27)
+
+- إلزامي: الاختبارات الموجودة تمر قبل التعديل وبعده ← أمر الاختبار
+- إلزامي: اختبار لكل سلوك جديد أو خطأ مُصلح ← الاختبار الجديد يفشل قبل الإصلاح
+- إلزامي: لا أسرار ولا مسارات جلسة في الشيفرة ← بحث أنماط الأسرار
+- جودة: يطابق أسلوب الكود المحيط وتسمياته ← مراجعة الفرق
+- جودة: طريقة تشغيل مكتوبة ومجرَّبة ← تشغيل الأمر المكتوب
+- جودة: الفرق أصغر ما يحقق الطلب بلا إعادة كتابة غير مطلوبة ← git diff --stat
+- جودة: المدخل الخاطئ يعطي خطأ واضحًا لا انهيارًا صامتًا ← تشغيل بمدخل خاطئ
+- أمر الحكم في الوضع 1: `think.py qa code --answers qa.json` (PASS / FAIL / INCOMPLETE).
+
+#### 5. التعافي (A29)
+
+- `missing_dependency` (اعتمادية مفقودة، ميزانية 2): سمِّ الاعتمادية بالضبط (حزمة، برنامج، خط، نموذج) ← ثبّت محليًا في بيئة العمل إن كان مجانيًا ومسموحًا (pip --user أو venv أو npm محلي) · البديل: مسار المكتبة القياسية أو أداة أخرى من نفس المجموعة · تصعيد: تثبيت نظامي أو مدفوع أو يحتاج مفتاحًا: توقف واسأل
+- `quality_below_threshold` (جودة دون العتبة، ميزانية 3): أي معيار فشل وبكم (المقيس مقابل العتبة) ← عالج السبب الأكبر وحده ثم أعد القياس · البديل: المنهج البديل المكتوب للمرحلة في الخطة · تصعيد: معيار إلزامي لا يتحقق بعد البديل: توقف وأبلغ بالأرقام
+- `tool_error` (خطأ أداة، ميزانية 3): اقرأ آخر سطر في الخطأ ثم أول سطر من كودك فيه ← أصلح السبب المثبت وحده، ثم شغّل الاختبار المتعلق · البديل: أداة أخرى أو مسار يدوي للمرحلة نفسها · تصعيد: خطأ في أداة خارجية لا تملكها: بلّغ بإعادة الإنتاج ولا تخفه
+
+#### 6. الأدلة
+
+- `https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/2174-typescript-plugin/7945-typescript-temporal`
+
+#### 7. قدرات قريبة في العائلة
+
+- `ACODE-325` مديرا الحزم Bun وpnpm: إضافة مثبتة لا تتجاوز ملف القفل، تحديث آمن أو انتقائي، فحص القديم، ونشر npm بمعاينة dry-run وتوقيع provenance، وإعدادات pnpm في pnpm-workspace.yaml / Bun and pnpm package management: pinned adds that do not bypass the lockfile, safe or selective updates, outdated audits, npm publishing with dry-run and provenance, pnpm settings in pnpm-workspace.yaml (documented)
+- `ACODE-326` Deno كبديل متوافق مع npm: تثبيت وتشغيل بلا إعادة كتابة، deno ci بالقفل، ترحيل على درجات قابلة للتراجع، صلاحيات ضيقة، وصناديق Deno المعزولة لتشغيل كود غير موثوق / Deno as an npm-compatible runtime: install and run without rewrites, deno ci from the lock, migration in reversible rungs, narrow permissions, and Deno Sandboxes for untrusted code (documented)
+- `ACODE-328` تحقق من نوع TypeScript دون تثبيت المستودع الضخم: اقرأ رمز الخروج لا غياب الأخطاء، مترجم حقيقي بنسخة المستودع، رسم أنواع مصغر، خيارات tsconfig الأصلية، وثلاث نسخ / Verify a TypeScript fix without installing a huge monorepo: read the exit status, not absent errors; a real compiler at the repo's version; a minimal type graph; the repo's tsconfig options; three variants (documented)
+- `ACODE-329` حارس انجراف نسخ المكتبات: اقرأ النسخة المثبتة من ملف القفل، حمّل المهارات والمراجع التي تشحنها الحزمة نفسها، ولا تثق بالذاكرة في Zod 4 وVite 8 وAstro 7 وAngular 20 وTanStack وtsdown / Library version-drift guard: read the installed version from the lockfile, load the skills and docs the package itself ships, and do not trust memory for Zod 4, Vite 8, Astro 7, Angular 20, TanStack or tsdown (documented)
+
+### `ACODE-328` — تحقق من نوع TypeScript دون تثبيت المستودع الضخم: اقرأ رمز الخروج لا غياب الأخطاء، مترجم حقيقي بنسخة المستودع، رسم أنواع مصغر، خيارات tsconfig الأصلية، وثلاث نسخ / Verify a TypeScript fix without installing a huge monorepo: read the exit status, not absent errors; a real compiler at the repo's version; a minimal type graph; the repo's tsconfig options; three variants
+
+| الحقل | القيمة |
+|---|---|
+| العائلة | `atlas-code` ([فصل العائلة](../../../.claude/skills/kosif-superpowers/references/powers/atlas-code.md)) |
+| المجموعة | البرمجة وبناء التطبيقات (`software`) |
+| نوع المخرج (A25، A27) | كود وتطبيقات ومواقع (`code`) |
+| الحالة في الكتالوج | 📄 `documented`: منهج موصوف يحتاج بناءً أو ربطًا قبل التشغيل |
+| سقف التحقق قبل العمل (A27) | V1 حتى تُبنى وتُشغَّل؛ لا تقدَّم جاهزة أبدًا |
+| نطاق الدليل | `url` |
+| الرخصة | card in our own words; the original skill folders are copied verbatim with their MIT license and SOURCE.md under vendor/kosif-atlas |
+
+**ما هي:** حين لا يوجد node_modules والتثبيت بطيء أو يفشل بسبب نسخة Node، لا تدفع وتنتظر CI. أخطر خطأ هو grep على 'error TS' فإذا لم يعمل المترجم أصلًا بدا الفشل نجاحًا. — Offline typecheck reproduction that cannot fake a pass.
+
+**متى:** تحقق من إصلاح نوع TypeScript قبل الدفع، worktree بلا node_modules، CI أظهر خطأ نوع / confirming a TS type fix without a full install
+
+**كيف:** 1) Never infer success from missing output: capture the compiler's own exit status (`tsc ...; echo $?` or PIPESTATUS), not a pipeline's. 2) Get a real binary: `npx -y -p typescript@<repo version> tsc --version`, or install into a scratch directory; always print the version line. 3) Copy exactly the declarations the error message names and anything structural they reference; stub everything else with one-line placeholders. 4) Read compiler options from the repo's tsconfig (strict, strictNullChecks, useDefineForClassFields and target matter); do not guess. 5) Run three variants: the original code (must reproduce the CI error), the fix (must pass with exit 0), and a deliberately broken control (must fail), so the harness is proven to detect errors. 6) Runtime behaviour is a separate question; test it separately if it matters. 7) Report the compiler version, options, the three exit codes and the scratch path. Full original skill(s) with license: vendor/kosif-atlas/skills/3360-standalone-typecheck-repro/13875-standalone-typecheck-repro.
+
+**المعاملات:** error text, TypeScript version, tsconfig
+
+**التثبيت:** mkdir -p ~/.claude/skills && cp -r .claude/skills/kosif-superpowers/vendor/kosif-atlas/skills/3360-standalone-typecheck-repro/13875-standalone-typecheck-repro ~/.claude/skills/standalone-typecheck-repro
+
+**الوسوم:** TypeScript · typecheck · tsc · exit code · monorepo · تحقق الأنواع
+
+#### 1. الاستقبال (A25)
+
+- اللغة والإطار: افتراض مكتوب ← لغة المستودع الموجود، وإلا Python أو HTML/JS بلا اعتماديات
+- أين يعمل: افتراض مكتوب ← المتصفح أو سطر الأوامر حسب المخرج
+- مستودع أو ملفات موجودة: سؤال بإجابة مقترحة ← مشروع جديد مستقل
+- متى يكون ناجحًا: افتراض مكتوب ← الاختبارات الموجودة تمر + اختبار لكل سلوك جديد
+- لا تُفترض أبدًا: مادة الإنتاج نفسها، والإذن بخطوة مدفوعة أو منشورة أو لا رجعة فيها، والهوية والحقوق.
+
+#### 2. الجاهزية والشارة (A28)
+
+- `node` ← افحص وجوده بأمر واحد قبل كتابة الشارة
+- الوضع 1: شارة «هنا الآن» بعد الفحص، لا 📄 الكتالوج تلقائيًا · الوضع 2: `كتالوج: 📄 · هنا: غير مفحوص` · الوضع 3: بلا شارة ولا معرّف.
+
+#### 3. موضعها في الخطة (A26)
+
+- عقدة منمّطة: المدخل `spec` ← المخرج `code`، والمنفّذ `method:ACODE-328` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `atlas-ledger`.
+- مراحل النوع: قراءة الكود والاختبارات ← إعادة إنتاج أو اختبار جديد ← أصغر تغيير ← الاختبارات ← مراجعة الفرق ← فرع وPR.
+- إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
+
+#### 4. بوابة التحقق (A27)
+
+- إلزامي: الاختبارات الموجودة تمر قبل التعديل وبعده ← أمر الاختبار
+- إلزامي: اختبار لكل سلوك جديد أو خطأ مُصلح ← الاختبار الجديد يفشل قبل الإصلاح
+- إلزامي: لا أسرار ولا مسارات جلسة في الشيفرة ← بحث أنماط الأسرار
+- جودة: يطابق أسلوب الكود المحيط وتسمياته ← مراجعة الفرق
+- جودة: طريقة تشغيل مكتوبة ومجرَّبة ← تشغيل الأمر المكتوب
+- جودة: الفرق أصغر ما يحقق الطلب بلا إعادة كتابة غير مطلوبة ← git diff --stat
+- جودة: المدخل الخاطئ يعطي خطأ واضحًا لا انهيارًا صامتًا ← تشغيل بمدخل خاطئ
+- أمر الحكم في الوضع 1: `think.py qa code --answers qa.json` (PASS / FAIL / INCOMPLETE).
+
+#### 5. التعافي (A29)
+
+- `missing_dependency` (اعتمادية مفقودة، ميزانية 2): سمِّ الاعتمادية بالضبط (حزمة، برنامج، خط، نموذج) ← ثبّت محليًا في بيئة العمل إن كان مجانيًا ومسموحًا (pip --user أو venv أو npm محلي) · البديل: مسار المكتبة القياسية أو أداة أخرى من نفس المجموعة · تصعيد: تثبيت نظامي أو مدفوع أو يحتاج مفتاحًا: توقف واسأل
+- `quality_below_threshold` (جودة دون العتبة، ميزانية 3): أي معيار فشل وبكم (المقيس مقابل العتبة) ← عالج السبب الأكبر وحده ثم أعد القياس · البديل: المنهج البديل المكتوب للمرحلة في الخطة · تصعيد: معيار إلزامي لا يتحقق بعد البديل: توقف وأبلغ بالأرقام
+- `tool_error` (خطأ أداة، ميزانية 3): اقرأ آخر سطر في الخطأ ثم أول سطر من كودك فيه ← أصلح السبب المثبت وحده، ثم شغّل الاختبار المتعلق · البديل: أداة أخرى أو مسار يدوي للمرحلة نفسها · تصعيد: خطأ في أداة خارجية لا تملكها: بلّغ بإعادة الإنتاج ولا تخفه
+
+#### 6. الأدلة
+
+- `https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/3360-standalone-typecheck-repro/13875-standalone-typecheck-repro`
+
+#### 7. قدرات قريبة في العائلة
+
+- `ACODE-326` Deno كبديل متوافق مع npm: تثبيت وتشغيل بلا إعادة كتابة، deno ci بالقفل، ترحيل على درجات قابلة للتراجع، صلاحيات ضيقة، وصناديق Deno المعزولة لتشغيل كود غير موثوق / Deno as an npm-compatible runtime: install and run without rewrites, deno ci from the lock, migration in reversible rungs, narrow permissions, and Deno Sandboxes for untrusted code (documented)
+- `ACODE-327` التواريخ في TypeScript بـ Temporal: اختر النوع حسب المعنى، حوّل الطابع الزمني إلى تاريخ مرة واحدة عند الحد وبمنطقة زمنية مسماة، وخزّن نصوص ISO / Dates in TypeScript with Temporal: pick the type by meaning, convert a timestamp to a date once at the boundary in a named zone, store ISO strings (documented)
+- `ACODE-329` حارس انجراف نسخ المكتبات: اقرأ النسخة المثبتة من ملف القفل، حمّل المهارات والمراجع التي تشحنها الحزمة نفسها، ولا تثق بالذاكرة في Zod 4 وVite 8 وAstro 7 وAngular 20 وTanStack وtsdown / Library version-drift guard: read the installed version from the lockfile, load the skills and docs the package itself ships, and do not trust memory for Zod 4, Vite 8, Astro 7, Angular 20, TanStack or tsdown (documented)
 - `ACODE-33` فوترة بالاستهلاك مع تسجيل غير مكرر / Metered billing with idempotent usage (documented)
-- `ACODE-34` مدفوعات آمنة: دفتر مزدوج وتسوية / Money-safe payments: ledger, idempotency, reconciliation (documented)
+
+### `ACODE-329` — حارس انجراف نسخ المكتبات: اقرأ النسخة المثبتة من ملف القفل، حمّل المهارات والمراجع التي تشحنها الحزمة نفسها، ولا تثق بالذاكرة في Zod 4 وVite 8 وAstro 7 وAngular 20 وTanStack وtsdown / Library version-drift guard: read the installed version from the lockfile, load the skills and docs the package itself ships, and do not trust memory for Zod 4, Vite 8, Astro 7, Angular 20, TanStack or tsdown
+
+| الحقل | القيمة |
+|---|---|
+| العائلة | `atlas-code` ([فصل العائلة](../../../.claude/skills/kosif-superpowers/references/powers/atlas-code.md)) |
+| المجموعة | البرمجة وبناء التطبيقات (`software`) |
+| نوع المخرج (A25، A27) | كود وتطبيقات ومواقع (`code`) |
+| الحالة في الكتالوج | 📄 `documented`: منهج موصوف يحتاج بناءً أو ربطًا قبل التشغيل |
+| سقف التحقق قبل العمل (A27) | V1 حتى تُبنى وتُشغَّل؛ لا تقدَّم جاهزة أبدًا |
+| نطاق الدليل | `url` |
+| الرخصة | card in our own words; the original skill folders are copied verbatim with their MIT license and SOURCE.md under vendor/kosif-atlas |
+
+**ما هي:** مكتبات الويب تتغير بسرعة بين الإصدارات الصغيرة، والمعرفة المخزنة تكتب واجهات محذوفة. البطاقة تجمع أمثلة كسر حقيقية وتفرض: نسخة مثبتة أولًا، مراجع رسمية للنسخة، وتحقق بالبناء. — Version-accurate code for fast-moving web libraries.
+
+**متى:** اكتب كود Zod أو TanStack أو Vite أو Astro أو Angular أو tsdown، خطأ API غير موجود، ترقية مكتبة ويب / writing code for a fast-moving web library
+
+**كيف:** 1) Read the exact installed version from the lockfile (pnpm-lock.yaml, bun.lock, package-lock.json, yarn.lock) and the package's own package.json; detect the package manager from the lockfile; install only what the task needs if missing. 2) Prefer docs shipped with the installed package: TanStack ships agent skills inside its npm packages; run `@tanstack/intent` list after install, load the [core] skill then only matching sub-skills, and treat that output as authoritative. Astro has a docs MCP server; Angular and Vite publish versioned docs. 3) Known drift to check against: Zod 4 replaced err.format()/flatten() with z.treeifyError()/z.flattenError() and merged message/errorMap into one error param, while superRefine stays recommended; Vite 8 builds with Rolldown and Oxc instead of esbuild and Rollup, so plugin and config options changed; Astro 7 uses only the Rust compiler (unclosed tags are build errors), a new default Markdown pipeline that needs remark/rehype plugins re-enabled, and removed @astrojs/db; Angular 20 centres on signals (signal, computed, effect, linkedSignal, resource, httpResource) and standalone components; tsdown needs Node 22.18+ to build but can target older Node via target, so test the packed tarball on each supported Node. 4) Write the change against the installed version only; do not upgrade as a side effect. 5) Verify with the project's build and typecheck, and quote the version used in the report. Full original skill(s) with license: vendor/kosif-atlas/skills/2955-zod/12256-use-zod, vendor/kosif-atlas/skills/2940-tanstack/12197-use-tanstack, vendor/kosif-atlas/skills/2948-vite/12220-vite, vendor/kosif-atlas/skills/2943-tsdown/12203-tsdown, vendor/kosif-atlas/skills/3163-astro/13492-astro, vendor/kosif-atlas/skills/3061-angular-developer/13218-angular-developer.
+
+**المعاملات:** library, installed version
+
+**التثبيت:** mkdir -p ~/.claude/skills && cp -r .claude/skills/kosif-superpowers/vendor/kosif-atlas/skills/2955-zod/12256-use-zod ~/.claude/skills/use-zod ; mkdir -p ~/.claude/skills && cp -r .claude/skills/kosif-superpowers/vendor/kosif-atlas/skills/2940-tanstack/12197-use-tanstack ~/.claude/skills/use-tanstack ; mkdir -p ~/.claude/skills && cp -r .claude/skills/kosif-superpowers/vendor/kosif-atlas/skills/2948-vite/12220-vite ~/.claude/skills/vite ; mkdir -p ~/.claude/skills && cp -r .claude/skills/kosif-superpowers/vendor/kosif-atlas/skills/2943-tsdown/12203-tsdown ~/.claude/skills/tsdown ; mkdir -p ~/.claude/skills && cp -r .claude/skills/kosif-superpowers/vendor/kosif-atlas/skills/3163-astro/13492-astro ~/.claude/skills/astro ; mkdir -p ~/.claude/skills && cp -r .claude/skills/kosif-superpowers/vendor/kosif-atlas/skills/3061-angular-developer/13218-angular-developer ~/.claude/skills/angular-developer
+
+**الوسوم:** Zod · TanStack · Vite · Astro · Angular · tsdown · version drift · انجراف النسخ
+
+#### 1. الاستقبال (A25)
+
+- اللغة والإطار: افتراض مكتوب ← لغة المستودع الموجود، وإلا Python أو HTML/JS بلا اعتماديات
+- أين يعمل: افتراض مكتوب ← المتصفح أو سطر الأوامر حسب المخرج
+- مستودع أو ملفات موجودة: سؤال بإجابة مقترحة ← مشروع جديد مستقل
+- متى يكون ناجحًا: افتراض مكتوب ← الاختبارات الموجودة تمر + اختبار لكل سلوك جديد
+- لا تُفترض أبدًا: مادة الإنتاج نفسها، والإذن بخطوة مدفوعة أو منشورة أو لا رجعة فيها، والهوية والحقوق.
+
+#### 2. الجاهزية والشارة (A28)
+
+- `npm:esbuild` ← npm ls esbuild أو وجود node_modules/esbuild
+- الوضع 1: شارة «هنا الآن» بعد الفحص، لا 📄 الكتالوج تلقائيًا · الوضع 2: `كتالوج: 📄 · هنا: غير مفحوص` · الوضع 3: بلا شارة ولا معرّف.
+
+#### 3. موضعها في الخطة (A26)
+
+- عقدة منمّطة: المدخل `spec` ← المخرج `code`، والمنفّذ `method:ACODE-329` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `atlas-ledger`.
+- مراحل النوع: قراءة الكود والاختبارات ← إعادة إنتاج أو اختبار جديد ← أصغر تغيير ← الاختبارات ← مراجعة الفرق ← فرع وPR.
+- إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
+
+#### 4. بوابة التحقق (A27)
+
+- إلزامي: الاختبارات الموجودة تمر قبل التعديل وبعده ← أمر الاختبار
+- إلزامي: اختبار لكل سلوك جديد أو خطأ مُصلح ← الاختبار الجديد يفشل قبل الإصلاح
+- إلزامي: لا أسرار ولا مسارات جلسة في الشيفرة ← بحث أنماط الأسرار
+- جودة: يطابق أسلوب الكود المحيط وتسمياته ← مراجعة الفرق
+- جودة: طريقة تشغيل مكتوبة ومجرَّبة ← تشغيل الأمر المكتوب
+- جودة: الفرق أصغر ما يحقق الطلب بلا إعادة كتابة غير مطلوبة ← git diff --stat
+- جودة: المدخل الخاطئ يعطي خطأ واضحًا لا انهيارًا صامتًا ← تشغيل بمدخل خاطئ
+- أمر الحكم في الوضع 1: `think.py qa code --answers qa.json` (PASS / FAIL / INCOMPLETE).
+
+#### 5. التعافي (A29)
+
+- `missing_dependency` (اعتمادية مفقودة، ميزانية 2): سمِّ الاعتمادية بالضبط (حزمة، برنامج، خط، نموذج) ← ثبّت محليًا في بيئة العمل إن كان مجانيًا ومسموحًا (pip --user أو venv أو npm محلي) · البديل: مسار المكتبة القياسية أو أداة أخرى من نفس المجموعة · تصعيد: تثبيت نظامي أو مدفوع أو يحتاج مفتاحًا: توقف واسأل
+- `quality_below_threshold` (جودة دون العتبة، ميزانية 3): أي معيار فشل وبكم (المقيس مقابل العتبة) ← عالج السبب الأكبر وحده ثم أعد القياس · البديل: المنهج البديل المكتوب للمرحلة في الخطة · تصعيد: معيار إلزامي لا يتحقق بعد البديل: توقف وأبلغ بالأرقام
+- `tool_error` (خطأ أداة، ميزانية 3): اقرأ آخر سطر في الخطأ ثم أول سطر من كودك فيه ← أصلح السبب المثبت وحده، ثم شغّل الاختبار المتعلق · البديل: أداة أخرى أو مسار يدوي للمرحلة نفسها · تصعيد: خطأ في أداة خارجية لا تملكها: بلّغ بإعادة الإنتاج ولا تخفه
+
+#### 6. الأدلة
+
+- `https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/2955-zod/12256-use-zod`
+- `https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/2940-tanstack/12197-use-tanstack`
+- `https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/2948-vite/12220-vite`
+- `https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/2943-tsdown/12203-tsdown`
+- `https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/3163-astro/13492-astro`
+- `https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/3061-angular-developer/13218-angular-developer`
+
+#### 7. قدرات قريبة في العائلة
+
+- `ACODE-327` التواريخ في TypeScript بـ Temporal: اختر النوع حسب المعنى، حوّل الطابع الزمني إلى تاريخ مرة واحدة عند الحد وبمنطقة زمنية مسماة، وخزّن نصوص ISO / Dates in TypeScript with Temporal: pick the type by meaning, convert a timestamp to a date once at the boundary in a named zone, store ISO strings (documented)
+- `ACODE-328` تحقق من نوع TypeScript دون تثبيت المستودع الضخم: اقرأ رمز الخروج لا غياب الأخطاء، مترجم حقيقي بنسخة المستودع، رسم أنواع مصغر، خيارات tsconfig الأصلية، وثلاث نسخ / Verify a TypeScript fix without installing a huge monorepo: read the exit status, not absent errors; a real compiler at the repo's version; a minimal type graph; the repo's tsconfig options; three variants (documented)
+- `ACODE-33` فوترة بالاستهلاك مع تسجيل غير مكرر / Metered billing with idempotent usage (documented)
+- `ACODE-330` Vue 3 بخريطة مكونات قبل الكود: Composition API مع script setup وTypeScript، حالة واحدة مصدرية والباقي مشتق، props للأسفل وevents للأعلى، Pinia وVue Router بحراسة واضحة / Vue 3 with a component map before code: Composition API with script setup and TypeScript, one source of truth and derived state, props down and events up, Pinia and Vue Router with clear guards (documented)
 
 ### `ACODE-33` — فوترة بالاستهلاك مع تسجيل غير مكرر / Metered billing with idempotent usage
 
@@ -15450,8 +19316,157 @@
 
 #### 7. قدرات قريبة في العائلة
 
-- `ACODE-31` إعداد مصادقة API بأقل صلاحيات والتحقق منها / Least-privilege API auth setup and verification (documented)
-- `ACODE-32` استقبال OAuth محلي مع ملفات رموز محمية / Local OAuth callback with 0600 token files (documented)
+- `ACODE-328` تحقق من نوع TypeScript دون تثبيت المستودع الضخم: اقرأ رمز الخروج لا غياب الأخطاء، مترجم حقيقي بنسخة المستودع، رسم أنواع مصغر، خيارات tsconfig الأصلية، وثلاث نسخ / Verify a TypeScript fix without installing a huge monorepo: read the exit status, not absent errors; a real compiler at the repo's version; a minimal type graph; the repo's tsconfig options; three variants (documented)
+- `ACODE-329` حارس انجراف نسخ المكتبات: اقرأ النسخة المثبتة من ملف القفل، حمّل المهارات والمراجع التي تشحنها الحزمة نفسها، ولا تثق بالذاكرة في Zod 4 وVite 8 وAstro 7 وAngular 20 وTanStack وtsdown / Library version-drift guard: read the installed version from the lockfile, load the skills and docs the package itself ships, and do not trust memory for Zod 4, Vite 8, Astro 7, Angular 20, TanStack or tsdown (documented)
+- `ACODE-330` Vue 3 بخريطة مكونات قبل الكود: Composition API مع script setup وTypeScript، حالة واحدة مصدرية والباقي مشتق، props للأسفل وevents للأعلى، Pinia وVue Router بحراسة واضحة / Vue 3 with a component map before code: Composition API with script setup and TypeScript, one source of truth and derived state, props down and events up, Pinia and Vue Router with clear guards (documented)
+- `ACODE-331` jq للـ JSON وyq للـ YAML وTOML وXML بدل مفسر عام: أدوات ضيقة الصلاحية يسهل اعتمادها، تمرير القيم بـ --arg، والتحقق من أي تطبيق yq وصيغة الإدخال / jq for JSON and yq for YAML, TOML and XML instead of a general interpreter: narrow tools that are easy to approve, values passed with --arg, and checks for which yq and which input format (documented)
+
+### `ACODE-330` — Vue 3 بخريطة مكونات قبل الكود: Composition API مع script setup وTypeScript، حالة واحدة مصدرية والباقي مشتق، props للأسفل وevents للأعلى، Pinia وVue Router بحراسة واضحة / Vue 3 with a component map before code: Composition API with script setup and TypeScript, one source of truth and derived state, props down and events up, Pinia and Vue Router with clear guards
+
+| الحقل | القيمة |
+|---|---|
+| العائلة | `atlas-code` ([فصل العائلة](../../../.claude/skills/kosif-superpowers/references/powers/atlas-code.md)) |
+| المجموعة | البرمجة وبناء التطبيقات (`software`) |
+| نوع المخرج (A25، A27) | كود وتطبيقات ومواقع (`code`) |
+| الحالة في الكتالوج | 📄 `documented`: منهج موصوف يحتاج بناءً أو ربطًا قبل التشغيل |
+| سقف التحقق قبل العمل (A27) | V1 حتى تُبنى وتُشغَّل؛ لا تقدَّم جاهزة أبدًا |
+| نطاق الدليل | `url` |
+| الرخصة | card in our own words; the original skill folders are copied verbatim with their MIT license and SOURCE.md under vendor/kosif-atlas |
+
+**ما هي:** سير عمل Vue مرتب: أكد البنية (Composition أو Options أو JSX)، اقرأ مراجع التفاعلية وSFC وتدفق البيانات وcomposables، ارسم خريطة مكونات بمسؤولية جملة واحدة وعقود props/emits، ثم نفذ. — Vue 3 feature workflow with explicit data flow.
+
+**متى:** مشروع Vue، مكون Vue جديد، Pinia store، Vue Router guards / building a Vue 3 feature
+
+**كيف:** 1) Confirm the stack: default Vue 3 + Composition API + `<script setup lang="ts">`; follow Options API or JSX only if the project already uses it. 2) Keep the reactivity, SFC, component data flow and composables guidance in working context for the whole task. 3) For any non-trivial feature, write a component map first: one-sentence responsibility per component, props and emits contracts, root and route views kept as composition surfaces, feature UI in components/<feature>/ and logic in composables/use<Feature>. 4) One source of truth; derive with computed; use watch only for side effects with an external system; props down, events up; provide/inject or Pinia only for genuinely shared state. 5) Pinia: setup stores with refs and computed, storeToRefs when destructuring, actions for mutations, no store access at module scope during SSR. 6) Vue Router 4: typed route params, global guards return a value or redirect instead of calling next twice, and watch params when the same component is reused across routes. 7) Verify with vue-tsc, the linter and component tests. Full original skill(s) with license: vendor/kosif-atlas/skills/2951-vue/12229-vue-best-practices, vendor/kosif-atlas/skills/2951-vue/12230-vue-router-best-practices, vendor/kosif-atlas/skills/2951-vue/12232-vue, vendor/kosif-atlas/skills/2922-pinia/12131-pinia.
+
+**المعاملات:** API style, state library
+
+**التثبيت:** mkdir -p ~/.claude/skills && cp -r .claude/skills/kosif-superpowers/vendor/kosif-atlas/skills/2951-vue/12229-vue-best-practices ~/.claude/skills/vue-best-practices ; mkdir -p ~/.claude/skills && cp -r .claude/skills/kosif-superpowers/vendor/kosif-atlas/skills/2951-vue/12230-vue-router-best-practices ~/.claude/skills/vue-router-best-practices ; mkdir -p ~/.claude/skills && cp -r .claude/skills/kosif-superpowers/vendor/kosif-atlas/skills/2951-vue/12232-vue ~/.claude/skills/vue ; mkdir -p ~/.claude/skills && cp -r .claude/skills/kosif-superpowers/vendor/kosif-atlas/skills/2922-pinia/12131-pinia ~/.claude/skills/pinia
+
+**الوسوم:** Vue · Composition API · Pinia · Vue Router · script setup · فيو
+
+#### 1. الاستقبال (A25)
+
+- اللغة والإطار: افتراض مكتوب ← لغة المستودع الموجود، وإلا Python أو HTML/JS بلا اعتماديات
+- أين يعمل: افتراض مكتوب ← المتصفح أو سطر الأوامر حسب المخرج
+- مستودع أو ملفات موجودة: سؤال بإجابة مقترحة ← مشروع جديد مستقل
+- متى يكون ناجحًا: افتراض مكتوب ← الاختبارات الموجودة تمر + اختبار لكل سلوك جديد
+- لا تُفترض أبدًا: مادة الإنتاج نفسها، والإذن بخطوة مدفوعة أو منشورة أو لا رجعة فيها، والهوية والحقوق.
+
+#### 2. الجاهزية والشارة (A28)
+
+- `npm:react` ← npm ls react أو وجود node_modules/react
+- الوضع 1: شارة «هنا الآن» بعد الفحص، لا 📄 الكتالوج تلقائيًا · الوضع 2: `كتالوج: 📄 · هنا: غير مفحوص` · الوضع 3: بلا شارة ولا معرّف.
+
+#### 3. موضعها في الخطة (A26)
+
+- عقدة منمّطة: المدخل `spec` ← المخرج `code`، والمنفّذ `method:ACODE-330` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `atlas-ledger`.
+- مراحل النوع: قراءة الكود والاختبارات ← إعادة إنتاج أو اختبار جديد ← أصغر تغيير ← الاختبارات ← مراجعة الفرق ← فرع وPR.
+- إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
+
+#### 4. بوابة التحقق (A27)
+
+- إلزامي: الاختبارات الموجودة تمر قبل التعديل وبعده ← أمر الاختبار
+- إلزامي: اختبار لكل سلوك جديد أو خطأ مُصلح ← الاختبار الجديد يفشل قبل الإصلاح
+- إلزامي: لا أسرار ولا مسارات جلسة في الشيفرة ← بحث أنماط الأسرار
+- جودة: يطابق أسلوب الكود المحيط وتسمياته ← مراجعة الفرق
+- جودة: طريقة تشغيل مكتوبة ومجرَّبة ← تشغيل الأمر المكتوب
+- جودة: الفرق أصغر ما يحقق الطلب بلا إعادة كتابة غير مطلوبة ← git diff --stat
+- جودة: المدخل الخاطئ يعطي خطأ واضحًا لا انهيارًا صامتًا ← تشغيل بمدخل خاطئ
+- أمر الحكم في الوضع 1: `think.py qa code --answers qa.json` (PASS / FAIL / INCOMPLETE).
+
+#### 5. التعافي (A29)
+
+- `missing_dependency` (اعتمادية مفقودة، ميزانية 2): سمِّ الاعتمادية بالضبط (حزمة، برنامج، خط، نموذج) ← ثبّت محليًا في بيئة العمل إن كان مجانيًا ومسموحًا (pip --user أو venv أو npm محلي) · البديل: مسار المكتبة القياسية أو أداة أخرى من نفس المجموعة · تصعيد: تثبيت نظامي أو مدفوع أو يحتاج مفتاحًا: توقف واسأل
+- `quality_below_threshold` (جودة دون العتبة، ميزانية 3): أي معيار فشل وبكم (المقيس مقابل العتبة) ← عالج السبب الأكبر وحده ثم أعد القياس · البديل: المنهج البديل المكتوب للمرحلة في الخطة · تصعيد: معيار إلزامي لا يتحقق بعد البديل: توقف وأبلغ بالأرقام
+- `tool_error` (خطأ أداة، ميزانية 3): اقرأ آخر سطر في الخطأ ثم أول سطر من كودك فيه ← أصلح السبب المثبت وحده، ثم شغّل الاختبار المتعلق · البديل: أداة أخرى أو مسار يدوي للمرحلة نفسها · تصعيد: خطأ في أداة خارجية لا تملكها: بلّغ بإعادة الإنتاج ولا تخفه
+
+#### 6. الأدلة
+
+- `https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/2951-vue/12229-vue-best-practices`
+- `https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/2951-vue/12230-vue-router-best-practices`
+- `https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/2951-vue/12232-vue`
+- `https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/2922-pinia/12131-pinia`
+
+#### 7. قدرات قريبة في العائلة
+
+- `ACODE-329` حارس انجراف نسخ المكتبات: اقرأ النسخة المثبتة من ملف القفل، حمّل المهارات والمراجع التي تشحنها الحزمة نفسها، ولا تثق بالذاكرة في Zod 4 وVite 8 وAstro 7 وAngular 20 وTanStack وtsdown / Library version-drift guard: read the installed version from the lockfile, load the skills and docs the package itself ships, and do not trust memory for Zod 4, Vite 8, Astro 7, Angular 20, TanStack or tsdown (documented)
+- `ACODE-33` فوترة بالاستهلاك مع تسجيل غير مكرر / Metered billing with idempotent usage (documented)
+- `ACODE-331` jq للـ JSON وyq للـ YAML وTOML وXML بدل مفسر عام: أدوات ضيقة الصلاحية يسهل اعتمادها، تمرير القيم بـ --arg، والتحقق من أي تطبيق yq وصيغة الإدخال / jq for JSON and yq for YAML, TOML and XML instead of a general interpreter: narrow tools that are easy to approve, values passed with --arg, and checks for which yq and which input format (documented)
+- `ACODE-34` مدفوعات آمنة: دفتر مزدوج وتسوية / Money-safe payments: ledger, idempotency, reconciliation (documented)
+
+### `ACODE-331` — jq للـ JSON وyq للـ YAML وTOML وXML بدل مفسر عام: أدوات ضيقة الصلاحية يسهل اعتمادها، تمرير القيم بـ --arg، والتحقق من أي تطبيق yq وصيغة الإدخال / jq for JSON and yq for YAML, TOML and XML instead of a general interpreter: narrow tools that are easy to approve, values passed with --arg, and checks for which yq and which input format
+
+| الحقل | القيمة |
+|---|---|
+| العائلة | `atlas-code` ([فصل العائلة](../../../.claude/skills/kosif-superpowers/references/powers/atlas-code.md)) |
+| المجموعة | البرمجة وبناء التطبيقات (`software`) |
+| نوع المخرج (A25، A27) | كود وتطبيقات ومواقع (`code`) |
+| الحالة في الكتالوج | 📄 `documented`: منهج موصوف يحتاج بناءً أو ربطًا قبل التشغيل |
+| سقف التحقق قبل العمل (A27) | V1 حتى تُبنى وتُشغَّل؛ لا تقدَّم جاهزة أبدًا |
+| نطاق الدليل | `url` |
+| الرخصة | card in our own words; the original skill folders are copied verbatim with their Apache-2.0 license and SOURCE.md under vendor/kosif-atlas |
+
+**ما هي:** المفسر العام (python -c، node -e) يستطيع أي شيء، فيجب على من يوافق على الأمر قراءة كل سكربت، وتتصادم علامات الاقتباس فيكثر الإعادة. jq وyq محصوران في تحويل البيانات فيسهل منحهما إذنًا عامًا، وyq يفهم البنية فلا يستبدل مفتاحًا في المستوى الخطأ كما يفعل sed. — Data-only CLI tools for structured data.
+
+**متى:** استخرج قيمة من JSON أو YAML، عدّل ملف YAML، حوّل TOML إلى JSON / reading or transforming structured data from the shell
+
+**كيف:** 1) JSON: use jq, not python -c, node -e, ruby -e or perl -e one-liners. 2) Useful flags: -r for raw strings into shell variables, -e to turn false/null/no output into a non-zero exit for conditions, -n to build JSON from nothing, -s to slurp several inputs into one array, --arg and --argjson to pass shell values safely; never concatenate shell values into a filter string. 3) YAML, XML, TOML, CSV, properties: use yq; keep JSON on jq so the intent is clear. 4) Check the implementation with `yq --version`: mikefarah/yq (Go) and kislyuk/yq (a Python jq wrapper) have incompatible syntax; suspect the wrong one when a filter fails to parse. 5) Pass -p explicitly when the input format cannot be inferred from the extension (stdin, .txt), because unknown input is silently read as YAML; use -o for output format. 6) For edits to repository files prefer the editor tool for a readable diff; use `yq -i` (keeps comments) only for structured bulk edits. 7) A general interpreter is fine when the real work is I/O or network, the math gets extreme, the code belongs to an existing Python project, or jq/yq is not installed. Full original skill(s) with license: vendor/kosif-atlas/skills/2650-programming-tasuke/10068-prefer-jq, vendor/kosif-atlas/skills/2650-programming-tasuke/10069-prefer-yq.
+
+**المعاملات:** format, filter
+
+**التثبيت:** mkdir -p ~/.claude/skills && cp -r .claude/skills/kosif-superpowers/vendor/kosif-atlas/skills/2650-programming-tasuke/10068-prefer-jq ~/.claude/skills/prefer-jq ; mkdir -p ~/.claude/skills && cp -r .claude/skills/kosif-superpowers/vendor/kosif-atlas/skills/2650-programming-tasuke/10069-prefer-yq ~/.claude/skills/prefer-yq
+
+**الوسوم:** jq · yq · YAML · TOML · shell · structured data · تحويل البيانات
+
+#### 1. الاستقبال (A25)
+
+- اللغة والإطار: افتراض مكتوب ← لغة المستودع الموجود، وإلا Python أو HTML/JS بلا اعتماديات
+- أين يعمل: افتراض مكتوب ← المتصفح أو سطر الأوامر حسب المخرج
+- مستودع أو ملفات موجودة: سؤال بإجابة مقترحة ← مشروع جديد مستقل
+- متى يكون ناجحًا: افتراض مكتوب ← الاختبارات الموجودة تمر + اختبار لكل سلوك جديد
+- لا تُفترض أبدًا: مادة الإنتاج نفسها، والإذن بخطوة مدفوعة أو منشورة أو لا رجعة فيها، والهوية والحقوق.
+
+#### 2. الجاهزية والشارة (A28)
+
+- `node` ← افحص وجوده بأمر واحد قبل كتابة الشارة
+- `python3` ← افحص وجوده بأمر واحد قبل كتابة الشارة
+- الوضع 1: شارة «هنا الآن» بعد الفحص، لا 📄 الكتالوج تلقائيًا · الوضع 2: `كتالوج: 📄 · هنا: غير مفحوص` · الوضع 3: بلا شارة ولا معرّف.
+
+#### 3. موضعها في الخطة (A26)
+
+- عقدة منمّطة: المدخل `spec` ← المخرج `code`، والمنفّذ `method:ACODE-331` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `atlas-ledger`.
+- مراحل النوع: قراءة الكود والاختبارات ← إعادة إنتاج أو اختبار جديد ← أصغر تغيير ← الاختبارات ← مراجعة الفرق ← فرع وPR.
+- إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
+
+#### 4. بوابة التحقق (A27)
+
+- إلزامي: الاختبارات الموجودة تمر قبل التعديل وبعده ← أمر الاختبار
+- إلزامي: اختبار لكل سلوك جديد أو خطأ مُصلح ← الاختبار الجديد يفشل قبل الإصلاح
+- إلزامي: لا أسرار ولا مسارات جلسة في الشيفرة ← بحث أنماط الأسرار
+- جودة: يطابق أسلوب الكود المحيط وتسمياته ← مراجعة الفرق
+- جودة: طريقة تشغيل مكتوبة ومجرَّبة ← تشغيل الأمر المكتوب
+- جودة: الفرق أصغر ما يحقق الطلب بلا إعادة كتابة غير مطلوبة ← git diff --stat
+- جودة: المدخل الخاطئ يعطي خطأ واضحًا لا انهيارًا صامتًا ← تشغيل بمدخل خاطئ
+- أمر الحكم في الوضع 1: `think.py qa code --answers qa.json` (PASS / FAIL / INCOMPLETE).
+
+#### 5. التعافي (A29)
+
+- `missing_dependency` (اعتمادية مفقودة، ميزانية 2): سمِّ الاعتمادية بالضبط (حزمة، برنامج، خط، نموذج) ← ثبّت محليًا في بيئة العمل إن كان مجانيًا ومسموحًا (pip --user أو venv أو npm محلي) · البديل: مسار المكتبة القياسية أو أداة أخرى من نفس المجموعة · تصعيد: تثبيت نظامي أو مدفوع أو يحتاج مفتاحًا: توقف واسأل
+- `quality_below_threshold` (جودة دون العتبة، ميزانية 3): أي معيار فشل وبكم (المقيس مقابل العتبة) ← عالج السبب الأكبر وحده ثم أعد القياس · البديل: المنهج البديل المكتوب للمرحلة في الخطة · تصعيد: معيار إلزامي لا يتحقق بعد البديل: توقف وأبلغ بالأرقام
+- `tool_error` (خطأ أداة، ميزانية 3): اقرأ آخر سطر في الخطأ ثم أول سطر من كودك فيه ← أصلح السبب المثبت وحده، ثم شغّل الاختبار المتعلق · البديل: أداة أخرى أو مسار يدوي للمرحلة نفسها · تصعيد: خطأ في أداة خارجية لا تملكها: بلّغ بإعادة الإنتاج ولا تخفه
+
+#### 6. الأدلة
+
+- `https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/2650-programming-tasuke/10068-prefer-jq`
+- `https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/2650-programming-tasuke/10069-prefer-yq`
+
+#### 7. قدرات قريبة في العائلة
+
+- `ACODE-33` فوترة بالاستهلاك مع تسجيل غير مكرر / Metered billing with idempotent usage (documented)
+- `ACODE-330` Vue 3 بخريطة مكونات قبل الكود: Composition API مع script setup وTypeScript، حالة واحدة مصدرية والباقي مشتق، props للأسفل وevents للأعلى، Pinia وVue Router بحراسة واضحة / Vue 3 with a component map before code: Composition API with script setup and TypeScript, one source of truth and derived state, props down and events up, Pinia and Vue Router with clear guards (documented)
 - `ACODE-34` مدفوعات آمنة: دفتر مزدوج وتسوية / Money-safe payments: ledger, idempotency, reconciliation (documented)
 - `ACODE-35` تخطيط نمط OAuth والصلاحيات وتجديد الرموز / OAuth grant, scope and token-refresh planning (documented)
 
@@ -15521,8 +19536,8 @@
 
 #### 7. قدرات قريبة في العائلة
 
-- `ACODE-32` استقبال OAuth محلي مع ملفات رموز محمية / Local OAuth callback with 0600 token files (documented)
-- `ACODE-33` فوترة بالاستهلاك مع تسجيل غير مكرر / Metered billing with idempotent usage (documented)
+- `ACODE-330` Vue 3 بخريطة مكونات قبل الكود: Composition API مع script setup وTypeScript، حالة واحدة مصدرية والباقي مشتق، props للأسفل وevents للأعلى، Pinia وVue Router بحراسة واضحة / Vue 3 with a component map before code: Composition API with script setup and TypeScript, one source of truth and derived state, props down and events up, Pinia and Vue Router with clear guards (documented)
+- `ACODE-331` jq للـ JSON وyq للـ YAML وTOML وXML بدل مفسر عام: أدوات ضيقة الصلاحية يسهل اعتمادها، تمرير القيم بـ --arg، والتحقق من أي تطبيق yq وصيغة الإدخال / jq for JSON and yq for YAML, TOML and XML instead of a general interpreter: narrow tools that are easy to approve, values passed with --arg, and checks for which yq and which input format (documented)
 - `ACODE-35` تخطيط نمط OAuth والصلاحيات وتجديد الرموز / OAuth grant, scope and token-refresh planning (documented)
 - `ACODE-36` اختبار تكامل يعدّ عدد إصدارات التوكن / OAuth token-mint counting integration test (documented)
 
@@ -15595,7 +19610,7 @@
 
 #### 7. قدرات قريبة في العائلة
 
-- `ACODE-33` فوترة بالاستهلاك مع تسجيل غير مكرر / Metered billing with idempotent usage (documented)
+- `ACODE-331` jq للـ JSON وyq للـ YAML وTOML وXML بدل مفسر عام: أدوات ضيقة الصلاحية يسهل اعتمادها، تمرير القيم بـ --arg، والتحقق من أي تطبيق yq وصيغة الإدخال / jq for JSON and yq for YAML, TOML and XML instead of a general interpreter: narrow tools that are easy to approve, values passed with --arg, and checks for which yq and which input format (documented)
 - `ACODE-34` مدفوعات آمنة: دفتر مزدوج وتسوية / Money-safe payments: ledger, idempotency, reconciliation (documented)
 - `ACODE-36` اختبار تكامل يعدّ عدد إصدارات التوكن / OAuth token-mint counting integration test (documented)
 - `ACODE-37` اختيار تدفق OAuth/OIDC حسب نوع العميل / OAuth2/OIDC flow selection by client type (documented)

@@ -1,23 +1,23 @@
 # KOSIF unified capability groups
 
-Source: 5,728 powers / 62 families / 15 integrated-domain candidates.
+Source: 5,847 powers / 62 families / 15 integrated-domain candidates.
 
 > These are navigation/integration **candidates**, not evidence that all tools were merged into one runtime.
 
 | Group | Arabic | Powers | Families |
 |---|---|---:|---:|
 | `research` | البحث والمعرفة | 60 | 3 |
-| `thinking` | التفكير والتخطيط والاستراتيجية | 359 | 8 |
+| `thinking` | التفكير والتخطيط والاستراتيجية | 402 | 8 |
 | `agents` | الوكلاء والتوجيه الذكي | 266 | 3 |
-| `software` | البرمجة وبناء التطبيقات | 630 | 6 |
+| `software` | البرمجة وبناء التطبيقات | 692 | 6 |
 | `drawing` | الرسم والأشكال والتصميم | 306 | 5 |
-| `images` | الصور والتحرير والتوليد | 320 | 5 |
+| `images` | الصور والتحرير والتوليد | 323 | 5 |
 | `3d` | الثري دي والمحاكاة والرندر | 758 | 5 |
 | `motion` | الموشن والمونتاج والسينما | 1,233 | 7 |
 | `audio` | الصوت والموسيقى والتعليق | 422 | 3 |
 | `type` | الخطوط والنصوص العربية واللاتينية | 215 | 3 |
-| `data` | البيانات والرسوم والمواقع | 262 | 4 |
-| `documents` | المستندات والكتابة | 143 | 4 |
+| `data` | البيانات والرسوم والمواقع | 268 | 4 |
+| `documents` | المستندات والكتابة | 148 | 4 |
 | `quality` | الاختبارات والجودة والأمان | 469 | 4 |
 | `reverse` | التحليل العكسي وفحص البرامج | 258 | 1 |
 | `misc` | قدرات مساندة غير مصنفة | 27 | 1 |

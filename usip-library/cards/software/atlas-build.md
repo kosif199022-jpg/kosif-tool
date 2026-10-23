@@ -1,4 +1,4 @@
-# `atlas-build` — البرمجة وبناء التطبيقات (52 بطاقة)
+# `atlas-build` — البرمجة وبناء التطبيقات (60 بطاقة)
 
 > مكتبة بروتوكول USIP v5.6 الكاملة، مولّدة بـ `smart_capabilities.py cards` من `data/powers/atlas-build.json` وقواعد الملاحق A25–A29؛ لا تُحرَّر يدويًا. [الفهرس الرئيسي](../../README.md) · [فصل المجموعة](../../../.claude/skills/kosif-superpowers/references/library/software.md) · [النواة](../../../.claude/skills/kosif-superpowers/PROTOCOL.md)
 
@@ -56,6 +56,14 @@
 - [`ABUILD-50` إصدار نسخة: وسم ونشر وتحقق](#abuild-50--إصدار-نسخة-وسم-ونشر-وتحقق--cut-a-release-tag-github-release-verify)
 - [`ABUILD-51` صياغة التذاكر وأوصاف PR بهيكل ماذا/لماذا/كيف](#abuild-51--صياغة-التذاكر-وأوصاف-pr-بهيكل-ماذالماذاكيف--whatwhyhow-ticket-and-pr-drafting)
 - [`ABUILD-52` فرز أعطال الاتصال حسب مجال الخطأ دون تغيير الإعدادات](#abuild-52--فرز-أعطال-الاتصال-حسب-مجال-الخطأ-دون-تغيير-الإعدادات--fault-domain-connectivity-triage-without-touching-config)
+- [`ABUILD-53` الإدراك وتقدير الحالة للروبوت: مزامنة الزمن والإطارات أولًا ثم دمج حساسات تغطي أعطال بعضها](#abuild-53--الإدراك-وتقدير-الحالة-للروبوت-مزامنة-الزمن-والإطارات-أولًا-ثم-دمج-حساسات-تغطي-أعطال-بعضها--robot-perception-and-state-estimation-time-and-frames-first-fuse-complementary-sensors-fail-safe)
+- [`ABUILD-54` تجهيز مستودع جديد أو تحديث قديم بترتيب ثابت للخطوات: الأساس ثم هيكل اللغة ثم CI والمدققات والأسرار والإصدار](#abuild-54--تجهيز-مستودع-جديد-أو-تحديث-قديم-بترتيب-ثابت-للخطوات-الأساس-ثم-هيكل-اللغة-ثم-ci-والمدققات-والأسرار-والإصدار--bootstrap-a-new-repository-or-refresh-an-old-one-in-a-fixed-order-foundation-language-scaffold-ci-linters-secrets-release)
+- [`ABUILD-55` اختيار أداة المستودع الأحادي من القياس: اللغات والحجم والألم والحاجة للإحكام، وقائمة ما لا نتبناه الآن](#abuild-55--اختيار-أداة-المستودع-الأحادي-من-القياس-اللغات-والحجم-والألم-والحاجة-للإحكام-وقائمة-ما-لا-نتبناه-الآن--choose-monorepo-tooling-from-measurements-language-mix-scale-pain-and-hermeticity-plus-a-do-not-adopt-yet-list)
+- [`ABUILD-56` إعداد أجهزة الشبكة: تحقق قبل التطبيق، وترجمة بين لهجات المصنعين عبر المفاهيم، وقوالب آمنة](#abuild-56--إعداد-أجهزة-الشبكة-تحقق-قبل-التطبيق-وترجمة-بين-لهجات-المصنعين-عبر-المفاهيم-وقوالب-آمنة--network-device-config-validate-before-applying-translate-between-vendor-dialects-through-concepts-safe-templates)
+- [`ABUILD-57` ملعب HTML تفاعلي في ملف واحد: أدوات تحكم ومعاينة حية وprompt جاهز للنسخ](#abuild-57--ملعب-html-تفاعلي-في-ملف-واحد-أدوات-تحكم-ومعاينة-حية-وprompt-جاهز-للنسخ--single-file-interactive-html-playground-controls-live-preview-and-a-ready-to-copy-prompt)
+- [`ABUILD-58` تحديد معمارية جهاز إلكتروني قبل أي مخطط: المتطلبات قبل القطع، ووحدة جاهزة أم لوحة مخصصة، وشجرة الطاقة، والتوافق الكهرومغناطيسي](#abuild-58--تحديد-معمارية-جهاز-إلكتروني-قبل-أي-مخطط-المتطلبات-قبل-القطع-ووحدة-جاهزة-أم-لوحة-مخصصة-وشجرة-الطاقة-والتوافق-الكهرومغناطيسي--scope-a-hardware-design-before-any-schematic-requirements-before-parts-module-vs-custom-pcb-the-power-tree-emc-posture)
+- [`ABUILD-59` رحلة بناء موقع أو تحسينه بترتيب ثابت: الرسالة ثم التصميم ثم التحويل، وكل إصلاح فرضية قابلة للاختبار، وملف تتبع يستأنف منه](#abuild-59--رحلة-بناء-موقع-أو-تحسينه-بترتيب-ثابت-الرسالة-ثم-التصميم-ثم-التحويل-وكل-إصلاح-فرضية-قابلة-للاختبار-وملف-تتبع-يستأنف-منه--website-creation-or-improvement-as-a-fixed-order-journey-message-then-design-then-conversion-every-fix-a-testable-hypothesis-a-tracker-to-resume-from)
+- [`ABUILD-60` إعداد طرق التثبيت لأداة CLI: صيغة Homebrew tap وgo install وcargo install مع كشف اللغة وGoReleaser والقيود الخاصة بالمنصة](#abuild-60--إعداد-طرق-التثبيت-لأداة-cli-صيغة-homebrew-tap-وgo-install-وcargo-install-مع-كشف-اللغة-وgoreleaser-والقيود-الخاصة-بالمنصة--set-up-installers-for-a-cli-a-homebrew-tap-formula-plus-go-install-and-cargo-install-support-with-language-goreleaser-and-platform-detection)
 
 ## البطاقات / cards
 
@@ -3696,6 +3704,7 @@
 - `ABUILD-49` تدقيق إتاحة WCAG 2.2: فحص وإصلاح وتحقق / WCAG 2.2 scan-fix-verify accessibility audit (documented)
 - `ABUILD-50` إصدار نسخة: وسم ونشر وتحقق / Cut a release: tag, GitHub release, verify (documented)
 - `ABUILD-52` فرز أعطال الاتصال حسب مجال الخطأ دون تغيير الإعدادات / Fault-domain connectivity triage without touching config (documented)
+- `ABUILD-53` الإدراك وتقدير الحالة للروبوت: مزامنة الزمن والإطارات أولًا ثم دمج حساسات تغطي أعطال بعضها / Robot perception and state estimation: time and frames first, fuse complementary sensors, fail safe (documented)
 
 ### `ABUILD-52` — فرز أعطال الاتصال حسب مجال الخطأ دون تغيير الإعدادات / Fault-domain connectivity triage without touching config
 
@@ -3764,4 +3773,580 @@
 
 - `ABUILD-50` إصدار نسخة: وسم ونشر وتحقق / Cut a release: tag, GitHub release, verify (documented)
 - `ABUILD-51` صياغة التذاكر وأوصاف PR بهيكل ماذا/لماذا/كيف / What/Why/How ticket and PR drafting (documented)
+- `ABUILD-53` الإدراك وتقدير الحالة للروبوت: مزامنة الزمن والإطارات أولًا ثم دمج حساسات تغطي أعطال بعضها / Robot perception and state estimation: time and frames first, fuse complementary sensors, fail safe (documented)
+- `ABUILD-54` تجهيز مستودع جديد أو تحديث قديم بترتيب ثابت للخطوات: الأساس ثم هيكل اللغة ثم CI والمدققات والأسرار والإصدار / Bootstrap a new repository or refresh an old one in a fixed order: foundation, language scaffold, CI, linters, secrets, release (documented)
+
+### `ABUILD-53` — الإدراك وتقدير الحالة للروبوت: مزامنة الزمن والإطارات أولًا ثم دمج حساسات تغطي أعطال بعضها / Robot perception and state estimation: time and frames first, fuse complementary sensors, fail safe
+
+| الحقل | القيمة |
+|---|---|
+| العائلة | `atlas-build` ([فصل العائلة](../../../.claude/skills/kosif-superpowers/references/powers/atlas-build.md)) |
+| المجموعة | البرمجة وبناء التطبيقات (`software`) |
+| نوع المخرج (A25، A27) | كود وتطبيقات ومواقع (`code`) |
+| الحالة في الكتالوج | 📄 `documented`: منهج موصوف يحتاج بناءً أو ربطًا قبل التشغيل |
+| سقف التحقق قبل العمل (A27) | V1 حتى تُبنى وتُشغَّل؛ لا تقدَّم جاهزة أبدًا |
+| نطاق الدليل | `url` |
+| الرخصة | card in our own words; the original skill folders are copied verbatim with their MIT license and SOURCE.md under vendor/kosif-atlas |
+
+**ما هي:** يبني تقدير حالة مستقرًا لروبوت: يوحد الزمن والإطارات المرجعية قبل الدمج، يختار حساسات يغطي كل منها أعطال الآخر، يختار المرشح حسب اللاخطية (EKF، UKF، مرشح جسيمات)، يقرر بين SLAM وتحديد الموقع على خريطة معروفة، يمرر عدم اليقين للمخطط، ويصمم الاستقلالية بفروع آمنة. — Builds a stable state estimate: sync, complementary fusion, the right filter, propagated uncertainty and fail-safe autonomy.
+
+**متى:** المرشح 'معطل'، انجراف في الموقع، تصميم مكدس إدراك لروبوت أو مركبة ذاتية / localisation drift, designing a perception stack
+
+**كيف:** 1) Timestamp every measurement in one time base and express it in the correct frame; most broken-filter bugs are a timestamp or a frame. 2) Choose modalities that cover each other: lidar for geometry, camera for semantics, IMU for high-rate motion, wheel odometry for scale, GNSS for a global fix. 3) Pick the estimator by nonlinearity: EKF for mild, UKF when linearisation hurts, a particle filter for map-based localisation with multimodal belief; tune process and measurement noise and gate outliers. 4) Build a map online with loop closure when none exists; localise against a known map when you have one. 5) Pass detection confidence and covariance to the planner and safety monitor instead of thresholding and forgetting. 6) Structure autonomy as a behaviour tree or hierarchical state machine with recover, degraded and safe-stop branches reachable from every state. 7) Measure drift against ground truth, filter consistency (NEES or NIS) before swapping filters, detection precision and recall on your own data, and time-sync skew; benchmark numbers do not transfer. Full original skill(s) with license: vendor/kosif-atlas/skills/2374-robotics-autonomous-systems-engineering/9182-perception-and-state-estimation.
+
+**المعاملات:** sensors, platform
+
+**التثبيت:** mkdir -p ~/.claude/skills && cp -r .claude/skills/kosif-superpowers/vendor/kosif-atlas/skills/2374-robotics-autonomous-systems-engineering/9182-perception-and-state-estimation ~/.claude/skills/perception-and-state-estimation
+
+**الوسوم:** robotics · sensor fusion · state estimation · SLAM · autonomy · روبوتات · دمج الحساسات
+
+#### 1. الاستقبال (A25)
+
+- اللغة والإطار: افتراض مكتوب ← لغة المستودع الموجود، وإلا Python أو HTML/JS بلا اعتماديات
+- أين يعمل: افتراض مكتوب ← المتصفح أو سطر الأوامر حسب المخرج
+- مستودع أو ملفات موجودة: سؤال بإجابة مقترحة ← مشروع جديد مستقل
+- متى يكون ناجحًا: افتراض مكتوب ← الاختبارات الموجودة تمر + اختبار لكل سلوك جديد
+- لا تُفترض أبدًا: مادة الإنتاج نفسها، والإذن بخطوة مدفوعة أو منشورة أو لا رجعة فيها، والهوية والحقوق.
+
+#### 2. الجاهزية والشارة (A28)
+
+- لا متطلبات مسجلة؛ افحص المسار والأداة بـ `hub.py doctor` قبل الشارة.
+- الوضع 1: شارة «هنا الآن» بعد الفحص، لا 📄 الكتالوج تلقائيًا · الوضع 2: `كتالوج: 📄 · هنا: غير مفحوص` · الوضع 3: بلا شارة ولا معرّف.
+
+#### 3. موضعها في الخطة (A26)
+
+- عقدة منمّطة: المدخل `spec` ← المخرج `code`، والمنفّذ `method:ABUILD-53` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
+- لا أداة مسجلة تخدم عائلتها: التنفيذ بالمكتبات أو بأداة من مجموعة أخرى.
+- مراحل النوع: قراءة الكود والاختبارات ← إعادة إنتاج أو اختبار جديد ← أصغر تغيير ← الاختبارات ← مراجعة الفرق ← فرع وPR.
+- إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
+
+#### 4. بوابة التحقق (A27)
+
+- إلزامي: الاختبارات الموجودة تمر قبل التعديل وبعده ← أمر الاختبار
+- إلزامي: اختبار لكل سلوك جديد أو خطأ مُصلح ← الاختبار الجديد يفشل قبل الإصلاح
+- إلزامي: لا أسرار ولا مسارات جلسة في الشيفرة ← بحث أنماط الأسرار
+- جودة: يطابق أسلوب الكود المحيط وتسمياته ← مراجعة الفرق
+- جودة: طريقة تشغيل مكتوبة ومجرَّبة ← تشغيل الأمر المكتوب
+- جودة: الفرق أصغر ما يحقق الطلب بلا إعادة كتابة غير مطلوبة ← git diff --stat
+- جودة: المدخل الخاطئ يعطي خطأ واضحًا لا انهيارًا صامتًا ← تشغيل بمدخل خاطئ
+- أمر الحكم في الوضع 1: `think.py qa code --answers qa.json` (PASS / FAIL / INCOMPLETE).
+
+#### 5. التعافي (A29)
+
+- `missing_dependency` (اعتمادية مفقودة، ميزانية 2): سمِّ الاعتمادية بالضبط (حزمة، برنامج، خط، نموذج) ← ثبّت محليًا في بيئة العمل إن كان مجانيًا ومسموحًا (pip --user أو venv أو npm محلي) · البديل: مسار المكتبة القياسية أو أداة أخرى من نفس المجموعة · تصعيد: تثبيت نظامي أو مدفوع أو يحتاج مفتاحًا: توقف واسأل
+- `quality_below_threshold` (جودة دون العتبة، ميزانية 3): أي معيار فشل وبكم (المقيس مقابل العتبة) ← عالج السبب الأكبر وحده ثم أعد القياس · البديل: المنهج البديل المكتوب للمرحلة في الخطة · تصعيد: معيار إلزامي لا يتحقق بعد البديل: توقف وأبلغ بالأرقام
+
+#### 6. الأدلة
+
+- `https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/2374-robotics-autonomous-systems-engineering/9182-perception-and-state-estimation`
+
+#### 7. قدرات قريبة في العائلة
+
+- `ABUILD-51` صياغة التذاكر وأوصاف PR بهيكل ماذا/لماذا/كيف / What/Why/How ticket and PR drafting (documented)
+- `ABUILD-52` فرز أعطال الاتصال حسب مجال الخطأ دون تغيير الإعدادات / Fault-domain connectivity triage without touching config (documented)
+- `ABUILD-54` تجهيز مستودع جديد أو تحديث قديم بترتيب ثابت للخطوات: الأساس ثم هيكل اللغة ثم CI والمدققات والأسرار والإصدار / Bootstrap a new repository or refresh an old one in a fixed order: foundation, language scaffold, CI, linters, secrets, release (documented)
+- `ABUILD-55` اختيار أداة المستودع الأحادي من القياس: اللغات والحجم والألم والحاجة للإحكام، وقائمة ما لا نتبناه الآن / Choose monorepo tooling from measurements: language mix, scale, pain and hermeticity, plus a do-not-adopt-yet list (documented)
+
+### `ABUILD-54` — تجهيز مستودع جديد أو تحديث قديم بترتيب ثابت للخطوات: الأساس ثم هيكل اللغة ثم CI والمدققات والأسرار والإصدار / Bootstrap a new repository or refresh an old one in a fixed order: foundation, language scaffold, CI, linters, secrets, release
+
+| الحقل | القيمة |
+|---|---|
+| العائلة | `atlas-build` ([فصل العائلة](../../../.claude/skills/kosif-superpowers/references/powers/atlas-build.md)) |
+| المجموعة | البرمجة وبناء التطبيقات (`software`) |
+| نوع المخرج (A25، A27) | كود وتطبيقات ومواقع (`code`) |
+| الحالة في الكتالوج | 📄 `documented`: منهج موصوف يحتاج بناءً أو ربطًا قبل التشغيل |
+| سقف التحقق قبل العمل (A27) | V1 حتى تُبنى وتُشغَّل؛ لا تقدَّم جاهزة أبدًا |
+| نطاق الدليل | `url` |
+| الرخصة | card in our own words; the original skill folders are copied verbatim with their MIT license and SOURCE.md under vendor/kosif-atlas |
+
+**ما هي:** منسق يكتشف نوع المشروع والبنية الموجودة، ويبني خطة بترتيب محدد لمهارات الإعداد، ويعرضها قبل التنفيذ؛ ونسخة تحديث تقارن الملفات الموجودة بأحدث القوالب ولا تضيف أدوات لم تُستخدم؛ مع قوالب أساس مستقلة عن اللغة وهياكل Go وRust وZig وLean. — Ordered, plan-first repository setup and refresh.
+
+**متى:** جهّز المشروع، ابدأ مستودعًا جديدًا، حدّث الهيكل وCI لآخر قالب، هيكل أداة Go أو Rust / bootstrap or refresh a repository
+
+**كيف:** 1) Detect the project type (go.mod, Cargo.toml, package.json, lakefile, build.zig, pyproject) and the infrastructure already present. 2) Plan in this order, skipping covered steps: foundation files (LICENSE, README, CHANGELOG, .gitignore, agent config, plans), the language scaffold (Go CLI with Cobra and GoReleaser, Go library with changelog-only releases, Rust CLI with cargo-deny, nextest and git-cliff, Zig CLI with cross-compiled releases, Lean library with Lake tests), CI, linters, secret scanning, release packaging for CLIs, community files (CONTRIBUTING, code of conduct, SECURITY, PR template), installers and CLI tests for CLIs, review checklists after the file types and CI checks are final, and dependency-update config last so it sees every workflow and manifest. 3) Present the plan and wait for confirmation. 4) Execute each step through its own skill; if that skill is missing, record it as skipped rather than improvising another setup. 5) Derive the project name from the git remote, then the README heading, and ask only when both fail; never from the directory or branch name. 6) Refresh mode: detect which tools were really used, compare their files with current templates, restore missing expected files for partly configured tools, never set up a tool that was never used, but treat a missing dependency-update config as actionable because pinned action SHAs go stale without it. 7) Report every step as done, unchanged, skipped or failed. Full original skill(s) with license: vendor/kosif-atlas/skills/943-bootstrap-project/2228-bootstrap-project, vendor/kosif-atlas/skills/963-refresh-project-scaffolding/2247-refresh-project-scaffolding, vendor/kosif-atlas/skills/973-scaffold-new-repo/2257-scaffold-new-repo, vendor/kosif-atlas/skills/970-scaffold-go-cli/2254-scaffold-go-cli, vendor/kosif-atlas/skills/971-scaffold-go-library/2255-scaffold-go-library, vendor/kosif-atlas/skills/974-scaffold-rust-cli/2258-scaffold-rust-cli, vendor/kosif-atlas/skills/975-scaffold-zig-cli/2259-scaffold-zig-cli, vendor/kosif-atlas/skills/972-scaffold-lean-library/2256-scaffold-lean-library.
+
+**المعاملات:** repository, project type
+
+**التثبيت:** mkdir -p ~/.claude/skills && cp -r .claude/skills/kosif-superpowers/vendor/kosif-atlas/skills/943-bootstrap-project/2228-bootstrap-project ~/.claude/skills/bootstrap-project ; mkdir -p ~/.claude/skills && cp -r .claude/skills/kosif-superpowers/vendor/kosif-atlas/skills/963-refresh-project-scaffolding/2247-refresh-project-scaffolding ~/.claude/skills/refresh-project-scaffolding ; mkdir -p ~/.claude/skills && cp -r .claude/skills/kosif-superpowers/vendor/kosif-atlas/skills/973-scaffold-new-repo/2257-scaffold-new-repo ~/.claude/skills/scaffold-new-repo ; mkdir -p ~/.claude/skills && cp -r .claude/skills/kosif-superpowers/vendor/kosif-atlas/skills/970-scaffold-go-cli/2254-scaffold-go-cli ~/.claude/skills/scaffold-go-cli ; mkdir -p ~/.claude/skills && cp -r .claude/skills/kosif-superpowers/vendor/kosif-atlas/skills/971-scaffold-go-library/2255-scaffold-go-library ~/.claude/skills/scaffold-go-library ; mkdir -p ~/.claude/skills && cp -r .claude/skills/kosif-superpowers/vendor/kosif-atlas/skills/974-scaffold-rust-cli/2258-scaffold-rust-cli ~/.claude/skills/scaffold-rust-cli ; mkdir -p ~/.claude/skills && cp -r .claude/skills/kosif-superpowers/vendor/kosif-atlas/skills/975-scaffold-zig-cli/2259-scaffold-zig-cli ~/.claude/skills/scaffold-zig-cli ; mkdir -p ~/.claude/skills && cp -r .claude/skills/kosif-superpowers/vendor/kosif-atlas/skills/972-scaffold-lean-library/2256-scaffold-lean-library ~/.claude/skills/scaffold-lean-library
+
+**الوسوم:** scaffold · bootstrap · new repository · Go CLI · Rust CLI · project template · تجهيز مستودع · هيكل المشروع
+
+#### 1. الاستقبال (A25)
+
+- اللغة والإطار: افتراض مكتوب ← لغة المستودع الموجود، وإلا Python أو HTML/JS بلا اعتماديات
+- أين يعمل: افتراض مكتوب ← المتصفح أو سطر الأوامر حسب المخرج
+- مستودع أو ملفات موجودة: سؤال بإجابة مقترحة ← مشروع جديد مستقل
+- متى يكون ناجحًا: افتراض مكتوب ← الاختبارات الموجودة تمر + اختبار لكل سلوك جديد
+- لا تُفترض أبدًا: مادة الإنتاج نفسها، والإذن بخطوة مدفوعة أو منشورة أو لا رجعة فيها، والهوية والحقوق.
+
+#### 2. الجاهزية والشارة (A28)
+
+- `lean` ← افحص وجوده بأمر واحد قبل كتابة الشارة
+- الوضع 1: شارة «هنا الآن» بعد الفحص، لا 📄 الكتالوج تلقائيًا · الوضع 2: `كتالوج: 📄 · هنا: غير مفحوص` · الوضع 3: بلا شارة ولا معرّف.
+
+#### 3. موضعها في الخطة (A26)
+
+- عقدة منمّطة: المدخل `spec` ← المخرج `code`، والمنفّذ `method:ABUILD-54` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
+- لا أداة مسجلة تخدم عائلتها: التنفيذ بالمكتبات أو بأداة من مجموعة أخرى.
+- مراحل النوع: قراءة الكود والاختبارات ← إعادة إنتاج أو اختبار جديد ← أصغر تغيير ← الاختبارات ← مراجعة الفرق ← فرع وPR.
+- إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
+
+#### 4. بوابة التحقق (A27)
+
+- إلزامي: الاختبارات الموجودة تمر قبل التعديل وبعده ← أمر الاختبار
+- إلزامي: اختبار لكل سلوك جديد أو خطأ مُصلح ← الاختبار الجديد يفشل قبل الإصلاح
+- إلزامي: لا أسرار ولا مسارات جلسة في الشيفرة ← بحث أنماط الأسرار
+- جودة: يطابق أسلوب الكود المحيط وتسمياته ← مراجعة الفرق
+- جودة: طريقة تشغيل مكتوبة ومجرَّبة ← تشغيل الأمر المكتوب
+- جودة: الفرق أصغر ما يحقق الطلب بلا إعادة كتابة غير مطلوبة ← git diff --stat
+- جودة: المدخل الخاطئ يعطي خطأ واضحًا لا انهيارًا صامتًا ← تشغيل بمدخل خاطئ
+- أمر الحكم في الوضع 1: `think.py qa code --answers qa.json` (PASS / FAIL / INCOMPLETE).
+
+#### 5. التعافي (A29)
+
+- `missing_dependency` (اعتمادية مفقودة، ميزانية 2): سمِّ الاعتمادية بالضبط (حزمة، برنامج، خط، نموذج) ← ثبّت محليًا في بيئة العمل إن كان مجانيًا ومسموحًا (pip --user أو venv أو npm محلي) · البديل: مسار المكتبة القياسية أو أداة أخرى من نفس المجموعة · تصعيد: تثبيت نظامي أو مدفوع أو يحتاج مفتاحًا: توقف واسأل
+- `quality_below_threshold` (جودة دون العتبة، ميزانية 3): أي معيار فشل وبكم (المقيس مقابل العتبة) ← عالج السبب الأكبر وحده ثم أعد القياس · البديل: المنهج البديل المكتوب للمرحلة في الخطة · تصعيد: معيار إلزامي لا يتحقق بعد البديل: توقف وأبلغ بالأرقام
+
+#### 6. الأدلة
+
+- `https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/943-bootstrap-project/2228-bootstrap-project`
+- `https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/963-refresh-project-scaffolding/2247-refresh-project-scaffolding`
+- `https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/973-scaffold-new-repo/2257-scaffold-new-repo`
+- `https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/970-scaffold-go-cli/2254-scaffold-go-cli`
+- `https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/971-scaffold-go-library/2255-scaffold-go-library`
+- `https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/974-scaffold-rust-cli/2258-scaffold-rust-cli`
+- `https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/975-scaffold-zig-cli/2259-scaffold-zig-cli`
+- `https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/972-scaffold-lean-library/2256-scaffold-lean-library`
+
+#### 7. قدرات قريبة في العائلة
+
+- `ABUILD-52` فرز أعطال الاتصال حسب مجال الخطأ دون تغيير الإعدادات / Fault-domain connectivity triage without touching config (documented)
+- `ABUILD-53` الإدراك وتقدير الحالة للروبوت: مزامنة الزمن والإطارات أولًا ثم دمج حساسات تغطي أعطال بعضها / Robot perception and state estimation: time and frames first, fuse complementary sensors, fail safe (documented)
+- `ABUILD-55` اختيار أداة المستودع الأحادي من القياس: اللغات والحجم والألم والحاجة للإحكام، وقائمة ما لا نتبناه الآن / Choose monorepo tooling from measurements: language mix, scale, pain and hermeticity, plus a do-not-adopt-yet list (documented)
+- `ABUILD-56` إعداد أجهزة الشبكة: تحقق قبل التطبيق، وترجمة بين لهجات المصنعين عبر المفاهيم، وقوالب آمنة / Network device config: validate before applying, translate between vendor dialects through concepts, safe templates (documented)
+
+### `ABUILD-55` — اختيار أداة المستودع الأحادي من القياس: اللغات والحجم والألم والحاجة للإحكام، وقائمة ما لا نتبناه الآن / Choose monorepo tooling from measurements: language mix, scale, pain and hermeticity, plus a do-not-adopt-yet list
+
+| الحقل | القيمة |
+|---|---|
+| العائلة | `atlas-build` ([فصل العائلة](../../../.claude/skills/kosif-superpowers/references/powers/atlas-build.md)) |
+| المجموعة | البرمجة وبناء التطبيقات (`software`) |
+| نوع المخرج (A25، A27) | كود وتطبيقات ومواقع (`code`) |
+| الحالة في الكتالوج | 📄 `documented`: منهج موصوف يحتاج بناءً أو ربطًا قبل التشغيل |
+| سقف التحقق قبل العمل (A27) | V1 حتى تُبنى وتُشغَّل؛ لا تقدَّم جاهزة أبدًا |
+| نطاق الدليل | `url` |
+| الرخصة | card in our own words; the original skill folders are copied verbatim with their MIT license and SOURCE.md under vendor/kosif-atlas |
+
+**ما هي:** لا توصية من اسم الأداة في الطلب: يجمع مزيج اللغات وعدد الحزم وزمن البناء الحالي ونوع الألم وهل نحتاج بناءً قابلًا للتكرار بايتًا ببايت، ثم يمشي شجرة قرار إلى أداة ومدير حزم، ويذكر الكلفة، وأهم مخرج غالبًا 'لا تتبنَّ Bazel الآن'. مع إعداد Turborepo وتشخيصه. — Measured monorepo tool choice.
+
+**متى:** أي أداة نستخدم Nx أم Turborepo أم Bazel، هل نحتاج مستودعًا أحاديًا، CI بطيء لأن كل شيء يُبنى / monorepo tool choice
+
+**كيف:** 1) Measure: language mix (JS or TS only, or polyglot), scale (packages, repo size, build wall-clock, team size), the pain (slow CI, broken caching, cross-package coordination, release versioning), and the hermeticity need (byte-reproducible cross-language builds, or task-level caching is enough). 2) Walk the tree language mix, then scale, then hermeticity, to a leaf: JS or TS mid-scale usually a pnpm workspace plus Turborepo or Nx; polyglot with strict reproducibility Bazel or a similar hermetic tool; Moon in between. 3) Choose the package manager separately (pnpm by default, yarn or npm with a reason). 4) State the tradeoff against the measured pain: config tax, lock-in, learning curve, who maintains it. 5) List what not to adopt yet; a tool that solves a pain you do not have is a net cost. 6) Turborepo specifics: define tasks and dependsOn in turbo.json, declare outputs so caching works, add env inputs that change results, enable remote cache, and read a miss with --summarize or --dry. 7) Hand pipeline-shaped pain (runner config, cache hosting) to CI work. Full original skill(s) with license: vendor/kosif-atlas/skills/2281-developer-tooling/8708-choose-monorepo-tooling, vendor/kosif-atlas/skills/2944-turborepo/12208-turborepo.
+
+**المعاملات:** repository measurements
+
+**التثبيت:** mkdir -p ~/.claude/skills && cp -r .claude/skills/kosif-superpowers/vendor/kosif-atlas/skills/2281-developer-tooling/8708-choose-monorepo-tooling ~/.claude/skills/choose-monorepo-tooling ; mkdir -p ~/.claude/skills && cp -r .claude/skills/kosif-superpowers/vendor/kosif-atlas/skills/2944-turborepo/12208-turborepo ~/.claude/skills/turborepo
+
+**الوسوم:** monorepo · Turborepo · Nx · Bazel · pnpm · build tooling · مستودع أحادي
+
+#### 1. الاستقبال (A25)
+
+- اللغة والإطار: افتراض مكتوب ← لغة المستودع الموجود، وإلا Python أو HTML/JS بلا اعتماديات
+- أين يعمل: افتراض مكتوب ← المتصفح أو سطر الأوامر حسب المخرج
+- مستودع أو ملفات موجودة: سؤال بإجابة مقترحة ← مشروع جديد مستقل
+- متى يكون ناجحًا: افتراض مكتوب ← الاختبارات الموجودة تمر + اختبار لكل سلوك جديد
+- لا تُفترض أبدًا: مادة الإنتاج نفسها، والإذن بخطوة مدفوعة أو منشورة أو لا رجعة فيها، والهوية والحقوق.
+
+#### 2. الجاهزية والشارة (A28)
+
+- `node` ← افحص وجوده بأمر واحد قبل كتابة الشارة
+- الوضع 1: شارة «هنا الآن» بعد الفحص، لا 📄 الكتالوج تلقائيًا · الوضع 2: `كتالوج: 📄 · هنا: غير مفحوص` · الوضع 3: بلا شارة ولا معرّف.
+
+#### 3. موضعها في الخطة (A26)
+
+- عقدة منمّطة: المدخل `spec` ← المخرج `code`، والمنفّذ `method:ABUILD-55` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
+- لا أداة مسجلة تخدم عائلتها: التنفيذ بالمكتبات أو بأداة من مجموعة أخرى.
+- مراحل النوع: قراءة الكود والاختبارات ← إعادة إنتاج أو اختبار جديد ← أصغر تغيير ← الاختبارات ← مراجعة الفرق ← فرع وPR.
+- إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
+
+#### 4. بوابة التحقق (A27)
+
+- إلزامي: الاختبارات الموجودة تمر قبل التعديل وبعده ← أمر الاختبار
+- إلزامي: اختبار لكل سلوك جديد أو خطأ مُصلح ← الاختبار الجديد يفشل قبل الإصلاح
+- إلزامي: لا أسرار ولا مسارات جلسة في الشيفرة ← بحث أنماط الأسرار
+- جودة: يطابق أسلوب الكود المحيط وتسمياته ← مراجعة الفرق
+- جودة: طريقة تشغيل مكتوبة ومجرَّبة ← تشغيل الأمر المكتوب
+- جودة: الفرق أصغر ما يحقق الطلب بلا إعادة كتابة غير مطلوبة ← git diff --stat
+- جودة: المدخل الخاطئ يعطي خطأ واضحًا لا انهيارًا صامتًا ← تشغيل بمدخل خاطئ
+- أمر الحكم في الوضع 1: `think.py qa code --answers qa.json` (PASS / FAIL / INCOMPLETE).
+
+#### 5. التعافي (A29)
+
+- `missing_dependency` (اعتمادية مفقودة، ميزانية 2): سمِّ الاعتمادية بالضبط (حزمة، برنامج، خط، نموذج) ← ثبّت محليًا في بيئة العمل إن كان مجانيًا ومسموحًا (pip --user أو venv أو npm محلي) · البديل: مسار المكتبة القياسية أو أداة أخرى من نفس المجموعة · تصعيد: تثبيت نظامي أو مدفوع أو يحتاج مفتاحًا: توقف واسأل
+- `quality_below_threshold` (جودة دون العتبة، ميزانية 3): أي معيار فشل وبكم (المقيس مقابل العتبة) ← عالج السبب الأكبر وحده ثم أعد القياس · البديل: المنهج البديل المكتوب للمرحلة في الخطة · تصعيد: معيار إلزامي لا يتحقق بعد البديل: توقف وأبلغ بالأرقام
+
+#### 6. الأدلة
+
+- `https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/2281-developer-tooling/8708-choose-monorepo-tooling`
+- `https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/2944-turborepo/12208-turborepo`
+
+#### 7. قدرات قريبة في العائلة
+
+- `ABUILD-53` الإدراك وتقدير الحالة للروبوت: مزامنة الزمن والإطارات أولًا ثم دمج حساسات تغطي أعطال بعضها / Robot perception and state estimation: time and frames first, fuse complementary sensors, fail safe (documented)
+- `ABUILD-54` تجهيز مستودع جديد أو تحديث قديم بترتيب ثابت للخطوات: الأساس ثم هيكل اللغة ثم CI والمدققات والأسرار والإصدار / Bootstrap a new repository or refresh an old one in a fixed order: foundation, language scaffold, CI, linters, secrets, release (documented)
+- `ABUILD-56` إعداد أجهزة الشبكة: تحقق قبل التطبيق، وترجمة بين لهجات المصنعين عبر المفاهيم، وقوالب آمنة / Network device config: validate before applying, translate between vendor dialects through concepts, safe templates (documented)
+- `ABUILD-57` ملعب HTML تفاعلي في ملف واحد: أدوات تحكم ومعاينة حية وprompt جاهز للنسخ / Single-file interactive HTML playground: controls, live preview and a ready-to-copy prompt (documented)
+
+### `ABUILD-56` — إعداد أجهزة الشبكة: تحقق قبل التطبيق، وترجمة بين لهجات المصنعين عبر المفاهيم، وقوالب آمنة / Network device config: validate before applying, translate between vendor dialects through concepts, safe templates
+
+| الحقل | القيمة |
+|---|---|
+| العائلة | `atlas-build` ([فصل العائلة](../../../.claude/skills/kosif-superpowers/references/powers/atlas-build.md)) |
+| المجموعة | البرمجة وبناء التطبيقات (`software`) |
+| نوع المخرج (A25، A27) | كود وتطبيقات ومواقع (`code`) |
+| الحالة في الكتالوج | 📄 `documented`: منهج موصوف يحتاج بناءً أو ربطًا قبل التشغيل |
+| سقف التحقق قبل العمل (A27) | V1 حتى تُبنى وتُشغَّل؛ لا تقدَّم جاهزة أبدًا |
+| نطاق الدليل | `url` |
+| الرخصة | card in our own words; the original skill folders are copied verbatim with their MIT license and SOURCE.md under vendor/kosif-atlas |
+
+**ما هي:** كل إعداد مولد أو منقول يمر بفحوص قبل اعتباره قابلًا للتطبيق: الأوامر الخطرة التي قد تقطع الاتصال، وتداخل الشبكات الفرعية، وتكرار العناوين والـVLAN، ومنطق قوائم التحكم، واكتمال خطوة الحفظ؛ والترجمة بين Cisco وRouterOS وPAN-OS وJunos وAruba تمر بطبقة المفهوم لا سطرًا بسطر. — Pre-deployment validation for router, switch and firewall config.
+
+**متى:** كتابة أو نقل إعداد راوتر أو سويتش أو جدار ناري، تحويل إعداد Cisco إلى MikroTik، مراجعة قبل التطبيق / generating or porting network config
+
+**كيف:** 1) Never write vendor CLI from memory; check syntax for the vendor and version in its reference. 2) Validate every config before output and list findings: dangerous commands (shutdown on the management or uplink path, removing an active ACL or NAT rule, routing or default-route changes, erase or reset, AAA changes that affect your own access), ordered so your own path is touched last; subnet overlaps and prefix conflicts; duplicate IPs, VLAN IDs, VRRP or HSRP addresses and DHCP scopes; ACL logic (first match wins, implicit deny at the end, direction, a rule under a broader match is dead); completeness (the save step: write memory on Cisco, commit on PAN-OS and Junos, RouterOS persists automatically; a route without its return route, a trunk without allowed VLANs). 3) Translate through concepts: the config model (line-based and live vs object or menu based vs commit-based), VLANs and bridging, firewall zones and policies, and flag what has no one-to-one equivalent on the target. 4) Templates: access ports with a fixed VLAN, edge or portfast and BPDU guard; trunks with explicit allowed VLANs and no auto-negotiated trunk mode; default-deny zones with specific-to-general allow rules and logging; SSH not Telnet and management access limited to the admin network. 5) Applying on a live device is a separate, confirmed step with a rollback timer. Full original skill(s) with license: vendor/kosif-atlas/skills/2591-bertram/9958-net-config.
+
+**المعاملات:** vendor, version, existing config
+
+**التثبيت:** mkdir -p ~/.claude/skills && cp -r .claude/skills/kosif-superpowers/vendor/kosif-atlas/skills/2591-bertram/9958-net-config ~/.claude/skills/net-config
+
+**الوسوم:** network config · Cisco · MikroTik · firewall · VLAN · ACL · إعداد الشبكات · جدار ناري
+
+#### 1. الاستقبال (A25)
+
+- اللغة والإطار: افتراض مكتوب ← لغة المستودع الموجود، وإلا Python أو HTML/JS بلا اعتماديات
+- أين يعمل: افتراض مكتوب ← المتصفح أو سطر الأوامر حسب المخرج
+- مستودع أو ملفات موجودة: سؤال بإجابة مقترحة ← مشروع جديد مستقل
+- متى يكون ناجحًا: افتراض مكتوب ← الاختبارات الموجودة تمر + اختبار لكل سلوك جديد
+- لا تُفترض أبدًا: مادة الإنتاج نفسها، والإذن بخطوة مدفوعة أو منشورة أو لا رجعة فيها، والهوية والحقوق.
+
+#### 2. الجاهزية والشارة (A28)
+
+- لا متطلبات مسجلة؛ افحص المسار والأداة بـ `hub.py doctor` قبل الشارة.
+- الوضع 1: شارة «هنا الآن» بعد الفحص، لا 📄 الكتالوج تلقائيًا · الوضع 2: `كتالوج: 📄 · هنا: غير مفحوص` · الوضع 3: بلا شارة ولا معرّف.
+
+#### 3. موضعها في الخطة (A26)
+
+- عقدة منمّطة: المدخل `spec` ← المخرج `code`، والمنفّذ `method:ABUILD-56` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
+- لا أداة مسجلة تخدم عائلتها: التنفيذ بالمكتبات أو بأداة من مجموعة أخرى.
+- مراحل النوع: قراءة الكود والاختبارات ← إعادة إنتاج أو اختبار جديد ← أصغر تغيير ← الاختبارات ← مراجعة الفرق ← فرع وPR.
+- إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
+
+#### 4. بوابة التحقق (A27)
+
+- إلزامي: الاختبارات الموجودة تمر قبل التعديل وبعده ← أمر الاختبار
+- إلزامي: اختبار لكل سلوك جديد أو خطأ مُصلح ← الاختبار الجديد يفشل قبل الإصلاح
+- إلزامي: لا أسرار ولا مسارات جلسة في الشيفرة ← بحث أنماط الأسرار
+- جودة: يطابق أسلوب الكود المحيط وتسمياته ← مراجعة الفرق
+- جودة: طريقة تشغيل مكتوبة ومجرَّبة ← تشغيل الأمر المكتوب
+- جودة: الفرق أصغر ما يحقق الطلب بلا إعادة كتابة غير مطلوبة ← git diff --stat
+- جودة: المدخل الخاطئ يعطي خطأ واضحًا لا انهيارًا صامتًا ← تشغيل بمدخل خاطئ
+- أمر الحكم في الوضع 1: `think.py qa code --answers qa.json` (PASS / FAIL / INCOMPLETE).
+
+#### 5. التعافي (A29)
+
+- `missing_dependency` (اعتمادية مفقودة، ميزانية 2): سمِّ الاعتمادية بالضبط (حزمة، برنامج، خط، نموذج) ← ثبّت محليًا في بيئة العمل إن كان مجانيًا ومسموحًا (pip --user أو venv أو npm محلي) · البديل: مسار المكتبة القياسية أو أداة أخرى من نفس المجموعة · تصعيد: تثبيت نظامي أو مدفوع أو يحتاج مفتاحًا: توقف واسأل
+- `quality_below_threshold` (جودة دون العتبة، ميزانية 3): أي معيار فشل وبكم (المقيس مقابل العتبة) ← عالج السبب الأكبر وحده ثم أعد القياس · البديل: المنهج البديل المكتوب للمرحلة في الخطة · تصعيد: معيار إلزامي لا يتحقق بعد البديل: توقف وأبلغ بالأرقام
+
+#### 6. الأدلة
+
+- `https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/2591-bertram/9958-net-config`
+
+#### 7. قدرات قريبة في العائلة
+
+- `ABUILD-54` تجهيز مستودع جديد أو تحديث قديم بترتيب ثابت للخطوات: الأساس ثم هيكل اللغة ثم CI والمدققات والأسرار والإصدار / Bootstrap a new repository or refresh an old one in a fixed order: foundation, language scaffold, CI, linters, secrets, release (documented)
+- `ABUILD-55` اختيار أداة المستودع الأحادي من القياس: اللغات والحجم والألم والحاجة للإحكام، وقائمة ما لا نتبناه الآن / Choose monorepo tooling from measurements: language mix, scale, pain and hermeticity, plus a do-not-adopt-yet list (documented)
+- `ABUILD-57` ملعب HTML تفاعلي في ملف واحد: أدوات تحكم ومعاينة حية وprompt جاهز للنسخ / Single-file interactive HTML playground: controls, live preview and a ready-to-copy prompt (documented)
+- `ABUILD-58` تحديد معمارية جهاز إلكتروني قبل أي مخطط: المتطلبات قبل القطع، ووحدة جاهزة أم لوحة مخصصة، وشجرة الطاقة، والتوافق الكهرومغناطيسي / Scope a hardware design before any schematic: requirements before parts, module vs custom PCB, the power tree, EMC posture (documented)
+
+### `ABUILD-57` — ملعب HTML تفاعلي في ملف واحد: أدوات تحكم ومعاينة حية وprompt جاهز للنسخ / Single-file interactive HTML playground: controls, live preview and a ready-to-copy prompt
+
+| الحقل | القيمة |
+|---|---|
+| العائلة | `atlas-build` ([فصل العائلة](../../../.claude/skills/kosif-superpowers/references/powers/atlas-build.md)) |
+| المجموعة | البرمجة وبناء التطبيقات (`software`) |
+| نوع المخرج (A25، A27) | كود وتطبيقات ومواقع (`code`) |
+| الحالة في الكتالوج | 📄 `documented`: منهج موصوف يحتاج بناءً أو ربطًا قبل التشغيل |
+| سقف التحقق قبل العمل (A27) | V1 حتى تُبنى وتُشغَّل؛ لا تقدَّم جاهزة أبدًا |
+| نطاق الدليل | `url` |
+| الرخصة | card in our own words; the original skill folders are copied verbatim with their Apache-2.0 license and SOURCE.md under vendor/kosif-atlas |
+
+**ما هي:** صفحة واحدة يضبط فيها المستخدم شيئًا بصريًا (تصميم، ألوان، حركة، بنية بيانات، مفهوم) بأدوات تحكم، فتتحدث المعاينة فورًا ويتولد نص طلب طبيعي يذكر الخيارات غير الافتراضية فقط، مع زر نسخ وإعدادات مسبقة. — Configure visually, then copy a precise prompt.
+
+**متى:** المستخدم لا يعرف كيف يصف ما يريد، استكشاف خيارات تصميم أو حركة، تحويل إعدادات إلى طلب دقيق / exploring options visually before asking for the build
+
+**كيف:** 1) Identify the playground type (design or style, data explorer, concept map, code or config, document critique) and start from the closest template. 2) One HTML file with inline CSS and JS and no external dependencies. 3) Live preview on every control change, no Apply button. 4) Keep one state object; every control writes to it and one render function reads it. 5) Prompt output in natural language that mentions only non-default choices and carries enough context to act on without seeing the page; it updates live. 6) A copy button with brief 'Copied' feedback. 7) Sensible defaults that look good on first load, and 3 to 5 named presets that set every control to a coherent combination. 8) Dark theme, system font for UI, monospace for values. 9) Open it in the browser, or publish it as a private page when no local browser exists. Full original skill(s) with license: vendor/kosif-atlas/skills/300-playground/913-playground.
+
+**المعاملات:** topic, controls
+
+**التثبيت:** mkdir -p ~/.claude/skills && cp -r .claude/skills/kosif-superpowers/vendor/kosif-atlas/skills/300-playground/913-playground ~/.claude/skills/playground
+
+**الوسوم:** playground · interactive HTML · prompt builder · presets · live preview · صفحة تفاعلية · منشئ الطلب
+
+#### 1. الاستقبال (A25)
+
+- اللغة والإطار: افتراض مكتوب ← لغة المستودع الموجود، وإلا Python أو HTML/JS بلا اعتماديات
+- أين يعمل: افتراض مكتوب ← المتصفح أو سطر الأوامر حسب المخرج
+- مستودع أو ملفات موجودة: سؤال بإجابة مقترحة ← مشروع جديد مستقل
+- متى يكون ناجحًا: افتراض مكتوب ← الاختبارات الموجودة تمر + اختبار لكل سلوك جديد
+- لا تُفترض أبدًا: مادة الإنتاج نفسها، والإذن بخطوة مدفوعة أو منشورة أو لا رجعة فيها، والهوية والحقوق.
+
+#### 2. الجاهزية والشارة (A28)
+
+- لا متطلبات مسجلة؛ افحص المسار والأداة بـ `hub.py doctor` قبل الشارة.
+- الوضع 1: شارة «هنا الآن» بعد الفحص، لا 📄 الكتالوج تلقائيًا · الوضع 2: `كتالوج: 📄 · هنا: غير مفحوص` · الوضع 3: بلا شارة ولا معرّف.
+
+#### 3. موضعها في الخطة (A26)
+
+- عقدة منمّطة: المدخل `spec` ← المخرج `code`، والمنفّذ `method:ABUILD-57` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
+- لا أداة مسجلة تخدم عائلتها: التنفيذ بالمكتبات أو بأداة من مجموعة أخرى.
+- مراحل النوع: قراءة الكود والاختبارات ← إعادة إنتاج أو اختبار جديد ← أصغر تغيير ← الاختبارات ← مراجعة الفرق ← فرع وPR.
+- إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
+
+#### 4. بوابة التحقق (A27)
+
+- إلزامي: الاختبارات الموجودة تمر قبل التعديل وبعده ← أمر الاختبار
+- إلزامي: اختبار لكل سلوك جديد أو خطأ مُصلح ← الاختبار الجديد يفشل قبل الإصلاح
+- إلزامي: لا أسرار ولا مسارات جلسة في الشيفرة ← بحث أنماط الأسرار
+- جودة: يطابق أسلوب الكود المحيط وتسمياته ← مراجعة الفرق
+- جودة: طريقة تشغيل مكتوبة ومجرَّبة ← تشغيل الأمر المكتوب
+- جودة: الفرق أصغر ما يحقق الطلب بلا إعادة كتابة غير مطلوبة ← git diff --stat
+- جودة: المدخل الخاطئ يعطي خطأ واضحًا لا انهيارًا صامتًا ← تشغيل بمدخل خاطئ
+- أمر الحكم في الوضع 1: `think.py qa code --answers qa.json` (PASS / FAIL / INCOMPLETE).
+
+#### 5. التعافي (A29)
+
+- `missing_dependency` (اعتمادية مفقودة، ميزانية 2): سمِّ الاعتمادية بالضبط (حزمة، برنامج، خط، نموذج) ← ثبّت محليًا في بيئة العمل إن كان مجانيًا ومسموحًا (pip --user أو venv أو npm محلي) · البديل: مسار المكتبة القياسية أو أداة أخرى من نفس المجموعة · تصعيد: تثبيت نظامي أو مدفوع أو يحتاج مفتاحًا: توقف واسأل
+- `quality_below_threshold` (جودة دون العتبة، ميزانية 3): أي معيار فشل وبكم (المقيس مقابل العتبة) ← عالج السبب الأكبر وحده ثم أعد القياس · البديل: المنهج البديل المكتوب للمرحلة في الخطة · تصعيد: معيار إلزامي لا يتحقق بعد البديل: توقف وأبلغ بالأرقام
+
+#### 6. الأدلة
+
+- `https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/300-playground/913-playground`
+
+#### 7. قدرات قريبة في العائلة
+
+- `ABUILD-55` اختيار أداة المستودع الأحادي من القياس: اللغات والحجم والألم والحاجة للإحكام، وقائمة ما لا نتبناه الآن / Choose monorepo tooling from measurements: language mix, scale, pain and hermeticity, plus a do-not-adopt-yet list (documented)
+- `ABUILD-56` إعداد أجهزة الشبكة: تحقق قبل التطبيق، وترجمة بين لهجات المصنعين عبر المفاهيم، وقوالب آمنة / Network device config: validate before applying, translate between vendor dialects through concepts, safe templates (documented)
+- `ABUILD-58` تحديد معمارية جهاز إلكتروني قبل أي مخطط: المتطلبات قبل القطع، ووحدة جاهزة أم لوحة مخصصة، وشجرة الطاقة، والتوافق الكهرومغناطيسي / Scope a hardware design before any schematic: requirements before parts, module vs custom PCB, the power tree, EMC posture (documented)
+- `ABUILD-59` رحلة بناء موقع أو تحسينه بترتيب ثابت: الرسالة ثم التصميم ثم التحويل، وكل إصلاح فرضية قابلة للاختبار، وملف تتبع يستأنف منه / Website creation or improvement as a fixed-order journey: message, then design, then conversion; every fix a testable hypothesis; a tracker to resume from (documented)
+
+### `ABUILD-58` — تحديد معمارية جهاز إلكتروني قبل أي مخطط: المتطلبات قبل القطع، ووحدة جاهزة أم لوحة مخصصة، وشجرة الطاقة، والتوافق الكهرومغناطيسي / Scope a hardware design before any schematic: requirements before parts, module vs custom PCB, the power tree, EMC posture
+
+| الحقل | القيمة |
+|---|---|
+| العائلة | `atlas-build` ([فصل العائلة](../../../.claude/skills/kosif-superpowers/references/powers/atlas-build.md)) |
+| المجموعة | البرمجة وبناء التطبيقات (`software`) |
+| نوع المخرج (A25، A27) | كود وتطبيقات ومواقع (`code`) |
+| الحالة في الكتالوج | 📄 `documented`: منهج موصوف يحتاج بناءً أو ربطًا قبل التشغيل |
+| سقف التحقق قبل العمل (A27) | V1 حتى تُبنى وتُشغَّل؛ لا تقدَّم جاهزة أبدًا |
+| نطاق الدليل | `url` |
+| الرخصة | card in our own words; the original skill folders are copied verbatim with their MIT license and SOURCE.md under vendor/kosif-atlas |
+
+**ما هي:** قرار الشراء أم البناء أعلى قرار أثرًا في العتاد: تُسمى الوظيفة والطاقة والحجم والبيئة والواجهات والكمية والجدول والشهادات قبل اختيار المتحكم، ثم يُقرر بين وحدة جاهزة ولوحة مخصصة (ووحدة لاسلكية معتمدة مسبقًا تعيد استخدام شهادتها)، وتُرسم شجرة الطاقة وخطة الواجهات ووضعية ما قبل الامتثال. — An architecture brief for electronics.
+
+**متى:** فكرة منتج إلكتروني، أي متحكم نختار، نبني لوحة أم نشتري وحدة، تجهيز للشهادات / scoping an electronics product
+
+**كيف:** 1) Name the requirements first: function, compute and peripherals, power envelope and battery, size and enclosure, environment (temperature, humidity, vibration), interfaces, volume, schedule and certification; parts are conclusions of these. 2) Decide module or custom PCB on volume times cost times size times certification times time to market; a pre-certified radio module reuses its approval, a discrete radio means your own intentional-radiator certification; state the crossover. 3) Sketch the power tree: rails and loads, LDO or switching regulator per rail (noise vs efficiency vs size), a power budget, sequencing, protection, battery and thermal. 4) Plan interfaces: buses (I2C, SPI, UART, USB), analogue front ends, wireless, connectors and their protection. 5) EMC posture: the likely regulatory regime and the design-for-EMC choices to make now (grounding, filtering, clock management, shielding); certification is a test-lab verdict, not a claim. 6) Output the brief: build-vs-buy verdict, requirements, component direction, power tree, interface plan, pre-compliance posture and flip conditions, then hand off to component selection and schematic review. Full original skill(s) with license: vendor/kosif-atlas/skills/2313-hardware-electronics-engineering/8875-scope-a-hardware-design.
+
+**المعاملات:** product idea, volume, certification targets
+
+**التثبيت:** mkdir -p ~/.claude/skills && cp -r .claude/skills/kosif-superpowers/vendor/kosif-atlas/skills/2313-hardware-electronics-engineering/8875-scope-a-hardware-design ~/.claude/skills/scope-a-hardware-design
+
+**الوسوم:** hardware design · PCB · power tree · EMC · embedded · electronics · تصميم العتاد · إلكترونيات
+
+#### 1. الاستقبال (A25)
+
+- اللغة والإطار: افتراض مكتوب ← لغة المستودع الموجود، وإلا Python أو HTML/JS بلا اعتماديات
+- أين يعمل: افتراض مكتوب ← المتصفح أو سطر الأوامر حسب المخرج
+- مستودع أو ملفات موجودة: سؤال بإجابة مقترحة ← مشروع جديد مستقل
+- متى يكون ناجحًا: افتراض مكتوب ← الاختبارات الموجودة تمر + اختبار لكل سلوك جديد
+- لا تُفترض أبدًا: مادة الإنتاج نفسها، والإذن بخطوة مدفوعة أو منشورة أو لا رجعة فيها، والهوية والحقوق.
+
+#### 2. الجاهزية والشارة (A28)
+
+- لا متطلبات مسجلة؛ افحص المسار والأداة بـ `hub.py doctor` قبل الشارة.
+- الوضع 1: شارة «هنا الآن» بعد الفحص، لا 📄 الكتالوج تلقائيًا · الوضع 2: `كتالوج: 📄 · هنا: غير مفحوص` · الوضع 3: بلا شارة ولا معرّف.
+
+#### 3. موضعها في الخطة (A26)
+
+- عقدة منمّطة: المدخل `spec` ← المخرج `code`، والمنفّذ `method:ABUILD-58` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
+- لا أداة مسجلة تخدم عائلتها: التنفيذ بالمكتبات أو بأداة من مجموعة أخرى.
+- مراحل النوع: قراءة الكود والاختبارات ← إعادة إنتاج أو اختبار جديد ← أصغر تغيير ← الاختبارات ← مراجعة الفرق ← فرع وPR.
+- إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
+
+#### 4. بوابة التحقق (A27)
+
+- إلزامي: الاختبارات الموجودة تمر قبل التعديل وبعده ← أمر الاختبار
+- إلزامي: اختبار لكل سلوك جديد أو خطأ مُصلح ← الاختبار الجديد يفشل قبل الإصلاح
+- إلزامي: لا أسرار ولا مسارات جلسة في الشيفرة ← بحث أنماط الأسرار
+- جودة: يطابق أسلوب الكود المحيط وتسمياته ← مراجعة الفرق
+- جودة: طريقة تشغيل مكتوبة ومجرَّبة ← تشغيل الأمر المكتوب
+- جودة: الفرق أصغر ما يحقق الطلب بلا إعادة كتابة غير مطلوبة ← git diff --stat
+- جودة: المدخل الخاطئ يعطي خطأ واضحًا لا انهيارًا صامتًا ← تشغيل بمدخل خاطئ
+- أمر الحكم في الوضع 1: `think.py qa code --answers qa.json` (PASS / FAIL / INCOMPLETE).
+
+#### 5. التعافي (A29)
+
+- `missing_dependency` (اعتمادية مفقودة، ميزانية 2): سمِّ الاعتمادية بالضبط (حزمة، برنامج، خط، نموذج) ← ثبّت محليًا في بيئة العمل إن كان مجانيًا ومسموحًا (pip --user أو venv أو npm محلي) · البديل: مسار المكتبة القياسية أو أداة أخرى من نفس المجموعة · تصعيد: تثبيت نظامي أو مدفوع أو يحتاج مفتاحًا: توقف واسأل
+- `quality_below_threshold` (جودة دون العتبة، ميزانية 3): أي معيار فشل وبكم (المقيس مقابل العتبة) ← عالج السبب الأكبر وحده ثم أعد القياس · البديل: المنهج البديل المكتوب للمرحلة في الخطة · تصعيد: معيار إلزامي لا يتحقق بعد البديل: توقف وأبلغ بالأرقام
+
+#### 6. الأدلة
+
+- `https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/2313-hardware-electronics-engineering/8875-scope-a-hardware-design`
+
+#### 7. قدرات قريبة في العائلة
+
+- `ABUILD-56` إعداد أجهزة الشبكة: تحقق قبل التطبيق، وترجمة بين لهجات المصنعين عبر المفاهيم، وقوالب آمنة / Network device config: validate before applying, translate between vendor dialects through concepts, safe templates (documented)
+- `ABUILD-57` ملعب HTML تفاعلي في ملف واحد: أدوات تحكم ومعاينة حية وprompt جاهز للنسخ / Single-file interactive HTML playground: controls, live preview and a ready-to-copy prompt (documented)
+- `ABUILD-59` رحلة بناء موقع أو تحسينه بترتيب ثابت: الرسالة ثم التصميم ثم التحويل، وكل إصلاح فرضية قابلة للاختبار، وملف تتبع يستأنف منه / Website creation or improvement as a fixed-order journey: message, then design, then conversion; every fix a testable hypothesis; a tracker to resume from (documented)
+- `ABUILD-60` إعداد طرق التثبيت لأداة CLI: صيغة Homebrew tap وgo install وcargo install مع كشف اللغة وGoReleaser والقيود الخاصة بالمنصة / Set up installers for a CLI: a Homebrew tap formula plus go install and cargo install support, with language, GoReleaser and platform detection (documented)
+
+### `ABUILD-59` — رحلة بناء موقع أو تحسينه بترتيب ثابت: الرسالة ثم التصميم ثم التحويل، وكل إصلاح فرضية قابلة للاختبار، وملف تتبع يستأنف منه / Website creation or improvement as a fixed-order journey: message, then design, then conversion; every fix a testable hypothesis; a tracker to resume from
+
+| الحقل | القيمة |
+|---|---|
+| العائلة | `atlas-build` ([فصل العائلة](../../../.claude/skills/kosif-superpowers/references/powers/atlas-build.md)) |
+| المجموعة | البرمجة وبناء التطبيقات (`software`) |
+| نوع المخرج (A25، A27) | كود وتطبيقات ومواقع (`code`) |
+| الحالة في الكتالوج | 📄 `documented`: منهج موصوف يحتاج بناءً أو ربطًا قبل التشغيل |
+| سقف التحقق قبل العمل (A27) | V1 حتى تُبنى وتُشغَّل؛ لا تقدَّم جاهزة أبدًا |
+| نطاق الدليل | `url` |
+| الرخصة | card in our own words; the original skill folders are copied verbatim with their MIT license and SOURCE.md under vendor/kosif-atlas |
+
+**ما هي:** الزائر يقرر في خمس ثوانٍ هل يبقى، وهذا يعتمد على فهمه الفوري لما تقدمه ولماذا يهمه، فالوضوح أولًا والتصميم يخدمه. البناء عشر مراحل (التسويق في صفحة، الرسالة بالعميل بطلًا، جعلها لا تُنسى، تصميم لافت، طباعة مقروءة، تصميم منظم، سهولة الاستخدام، التحويل، جمع غير الجاهزين للشراء، مراجعة قاسية)، والتحسين ثماني مراحل تبدأ بأدلة الزوار. — Resumable website journeys with gates.
+
+**متى:** ابنِ لي موقعًا من الصفر، موقعي لا يحول، تحسين صفحة الهبوط / building or fixing a marketing website
+
+**كيف:** 1) Resume first: read the tracker file (for example docs/CREATE-WEBSITE-PLAN.md) and every artifact; summarise the journey state in 3 to 5 lines and ask which phase to enter. 2) First run only: an intake, then create the tracker with each phase marked pending, in progress, awaiting evidence, done, deferred with a reason, or skipped with a reason. 3) Create order: who it is for and the site's one job, the message with the customer as hero, making it memorable, a distinctive visual direction, readable typography, a consistent design system, usability heuristics, conversion (why visitors do not act and what answers them), capturing visitors not ready to buy, and a final quality gate that can send work back. 4) Improve order: diagnose conversion from real visitor evidence first (a gate), then usability, visual hierarchy, typography, the five-second message test, speed, memorability, and error tolerance. 5) Each phase announces what it does, the decision it forces and the artifact it writes (marketing, positioning, design, website and experiments docs), and asks before each decision. 6) Big changes ship as experiments with a hypothesis and a metric; record the result in the experiments file. 7) Never design before the message is settled. Full original skill(s) with license: vendor/kosif-atlas/skills/3431-metaskills/14077-create-website, vendor/kosif-atlas/skills/3431-metaskills/14085-improve-website.
+
+**المعاملات:** site or brief, analytics access
+
+**التثبيت:** mkdir -p ~/.claude/skills && cp -r .claude/skills/kosif-superpowers/vendor/kosif-atlas/skills/3431-metaskills/14077-create-website ~/.claude/skills/create-website ; mkdir -p ~/.claude/skills && cp -r .claude/skills/kosif-superpowers/vendor/kosif-atlas/skills/3431-metaskills/14085-improve-website ~/.claude/skills/improve-website
+
+**الوسوم:** website · landing page · conversion · CRO · messaging · web design · موقع إلكتروني · التحويل
+
+#### 1. الاستقبال (A25)
+
+- اللغة والإطار: افتراض مكتوب ← لغة المستودع الموجود، وإلا Python أو HTML/JS بلا اعتماديات
+- أين يعمل: افتراض مكتوب ← المتصفح أو سطر الأوامر حسب المخرج
+- مستودع أو ملفات موجودة: سؤال بإجابة مقترحة ← مشروع جديد مستقل
+- متى يكون ناجحًا: افتراض مكتوب ← الاختبارات الموجودة تمر + اختبار لكل سلوك جديد
+- لا تُفترض أبدًا: مادة الإنتاج نفسها، والإذن بخطوة مدفوعة أو منشورة أو لا رجعة فيها، والهوية والحقوق.
+
+#### 2. الجاهزية والشارة (A28)
+
+- `pip:hypothesis` ← python3 -c "import hypothesis" (اسم الاستيراد قد يختلف عن اسم الحزمة)
+- الوضع 1: شارة «هنا الآن» بعد الفحص، لا 📄 الكتالوج تلقائيًا · الوضع 2: `كتالوج: 📄 · هنا: غير مفحوص` · الوضع 3: بلا شارة ولا معرّف.
+
+#### 3. موضعها في الخطة (A26)
+
+- عقدة منمّطة: المدخل `spec` ← المخرج `code`، والمنفّذ `method:ABUILD-59` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
+- لا أداة مسجلة تخدم عائلتها: التنفيذ بالمكتبات أو بأداة من مجموعة أخرى.
+- مراحل النوع: قراءة الكود والاختبارات ← إعادة إنتاج أو اختبار جديد ← أصغر تغيير ← الاختبارات ← مراجعة الفرق ← فرع وPR.
+- إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
+
+#### 4. بوابة التحقق (A27)
+
+- إلزامي: الاختبارات الموجودة تمر قبل التعديل وبعده ← أمر الاختبار
+- إلزامي: اختبار لكل سلوك جديد أو خطأ مُصلح ← الاختبار الجديد يفشل قبل الإصلاح
+- إلزامي: لا أسرار ولا مسارات جلسة في الشيفرة ← بحث أنماط الأسرار
+- جودة: يطابق أسلوب الكود المحيط وتسمياته ← مراجعة الفرق
+- جودة: طريقة تشغيل مكتوبة ومجرَّبة ← تشغيل الأمر المكتوب
+- جودة: الفرق أصغر ما يحقق الطلب بلا إعادة كتابة غير مطلوبة ← git diff --stat
+- جودة: المدخل الخاطئ يعطي خطأ واضحًا لا انهيارًا صامتًا ← تشغيل بمدخل خاطئ
+- أمر الحكم في الوضع 1: `think.py qa code --answers qa.json` (PASS / FAIL / INCOMPLETE).
+
+#### 5. التعافي (A29)
+
+- `missing_dependency` (اعتمادية مفقودة، ميزانية 2): سمِّ الاعتمادية بالضبط (حزمة، برنامج، خط، نموذج) ← ثبّت محليًا في بيئة العمل إن كان مجانيًا ومسموحًا (pip --user أو venv أو npm محلي) · البديل: مسار المكتبة القياسية أو أداة أخرى من نفس المجموعة · تصعيد: تثبيت نظامي أو مدفوع أو يحتاج مفتاحًا: توقف واسأل
+- `quality_below_threshold` (جودة دون العتبة، ميزانية 3): أي معيار فشل وبكم (المقيس مقابل العتبة) ← عالج السبب الأكبر وحده ثم أعد القياس · البديل: المنهج البديل المكتوب للمرحلة في الخطة · تصعيد: معيار إلزامي لا يتحقق بعد البديل: توقف وأبلغ بالأرقام
+
+#### 6. الأدلة
+
+- `https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/3431-metaskills/14077-create-website`
+- `https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/3431-metaskills/14085-improve-website`
+
+#### 7. قدرات قريبة في العائلة
+
+- `ABUILD-57` ملعب HTML تفاعلي في ملف واحد: أدوات تحكم ومعاينة حية وprompt جاهز للنسخ / Single-file interactive HTML playground: controls, live preview and a ready-to-copy prompt (documented)
+- `ABUILD-58` تحديد معمارية جهاز إلكتروني قبل أي مخطط: المتطلبات قبل القطع، ووحدة جاهزة أم لوحة مخصصة، وشجرة الطاقة، والتوافق الكهرومغناطيسي / Scope a hardware design before any schematic: requirements before parts, module vs custom PCB, the power tree, EMC posture (documented)
+- `ABUILD-60` إعداد طرق التثبيت لأداة CLI: صيغة Homebrew tap وgo install وcargo install مع كشف اللغة وGoReleaser والقيود الخاصة بالمنصة / Set up installers for a CLI: a Homebrew tap formula plus go install and cargo install support, with language, GoReleaser and platform detection (documented)
+
+### `ABUILD-60` — إعداد طرق التثبيت لأداة CLI: صيغة Homebrew tap وgo install وcargo install مع كشف اللغة وGoReleaser والقيود الخاصة بالمنصة / Set up installers for a CLI: a Homebrew tap formula plus go install and cargo install support, with language, GoReleaser and platform detection
+
+| الحقل | القيمة |
+|---|---|
+| العائلة | `atlas-build` ([فصل العائلة](../../../.claude/skills/kosif-superpowers/references/powers/atlas-build.md)) |
+| المجموعة | البرمجة وبناء التطبيقات (`software`) |
+| نوع المخرج (A25، A27) | كود وتطبيقات ومواقع (`code`) |
+| الحالة في الكتالوج | 📄 `documented`: منهج موصوف يحتاج بناءً أو ربطًا قبل التشغيل |
+| سقف التحقق قبل العمل (A27) | V1 حتى تُبنى وتُشغَّل؛ لا تقدَّم جاهزة أبدًا |
+| نطاق الدليل | `url` |
+| الرخصة | card in our own words; the original skill folders are copied verbatim with their MIT license and SOURCE.md under vendor/kosif-atlas |
+
+**ما هي:** يجهز توزيع أداة سطر أوامر مكتوبة بـ Go أو Swift أو Rust أو Zig: يكتشف اللغة من go.mod وPackage.swift وCargo.toml وbuild.zig، يلاحظ وجود GoReleaser، يكشف قيود macOS فقط في Swift، ثم يكتب صيغة Homebrew وتعليمات README لطرق التثبيت المناسبة. — Distribution setup for Go, Swift, Rust and Zig CLIs.
+
+**متى:** اجعل الأداة تُثبت بـ brew، go install، cargo install، توزيع CLI / making a CLI installable
+
+**كيف:** 1) Detect the language from go.mod, Package.swift, Cargo.toml or build.zig; note a Makefile; read the repo owner and name from git remote or the GitHub CLI. 2) Go: if .goreleaser.yml exists, let GoReleaser generate the brew formula; make sure the module path matches the repo for `go install module/cmd/name@latest`. 3) Rust: confirm a [[bin]] target and that `cargo install --git` or crates.io install works. 4) Swift: grep for AppKit or Cocoa imports to mark the formula macOS-only. 5) Write the formula in a separate tap repo (homebrew-<name>) with url, sha256 from the release tarball, a build or install block and a `test do` that runs `--version`. 6) Add README install sections for each supported method. 7) Verify locally: `brew install --build-from-source ./Formula/<name>.rb` and `brew test`, `go install` in a clean GOPATH, `cargo install --path .`. 8) Creating the tap repo, tagging or publishing a release needs the user's explicit go-ahead. Full original skill(s) with license: vendor/kosif-atlas/skills/977-set-up-installers/2261-set-up-installers.
+
+**المعاملات:** language, repo, release tag
+
+**التثبيت:** mkdir -p ~/.claude/skills && cp -r .claude/skills/kosif-superpowers/vendor/kosif-atlas/skills/977-set-up-installers/2261-set-up-installers ~/.claude/skills/set-up-installers
+
+**الوسوم:** Homebrew · go install · cargo install · GoReleaser · CLI distribution · توزيع الأداة
+
+#### 1. الاستقبال (A25)
+
+- اللغة والإطار: افتراض مكتوب ← لغة المستودع الموجود، وإلا Python أو HTML/JS بلا اعتماديات
+- أين يعمل: افتراض مكتوب ← المتصفح أو سطر الأوامر حسب المخرج
+- مستودع أو ملفات موجودة: سؤال بإجابة مقترحة ← مشروع جديد مستقل
+- متى يكون ناجحًا: افتراض مكتوب ← الاختبارات الموجودة تمر + اختبار لكل سلوك جديد
+- لا تُفترض أبدًا: مادة الإنتاج نفسها، والإذن بخطوة مدفوعة أو منشورة أو لا رجعة فيها، والهوية والحقوق.
+
+#### 2. الجاهزية والشارة (A28)
+
+- `os:macos` ← افحص وجوده بأمر واحد قبل كتابة الشارة
+- الوضع 1: شارة «هنا الآن» بعد الفحص، لا 📄 الكتالوج تلقائيًا · الوضع 2: `كتالوج: 📄 · هنا: غير مفحوص` · الوضع 3: بلا شارة ولا معرّف.
+
+#### 3. موضعها في الخطة (A26)
+
+- عقدة منمّطة: المدخل `spec` ← المخرج `code`، والمنفّذ `method:ABUILD-60` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
+- لا أداة مسجلة تخدم عائلتها: التنفيذ بالمكتبات أو بأداة من مجموعة أخرى.
+- مراحل النوع: قراءة الكود والاختبارات ← إعادة إنتاج أو اختبار جديد ← أصغر تغيير ← الاختبارات ← مراجعة الفرق ← فرع وPR.
+- إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
+
+#### 4. بوابة التحقق (A27)
+
+- إلزامي: الاختبارات الموجودة تمر قبل التعديل وبعده ← أمر الاختبار
+- إلزامي: اختبار لكل سلوك جديد أو خطأ مُصلح ← الاختبار الجديد يفشل قبل الإصلاح
+- إلزامي: لا أسرار ولا مسارات جلسة في الشيفرة ← بحث أنماط الأسرار
+- جودة: يطابق أسلوب الكود المحيط وتسمياته ← مراجعة الفرق
+- جودة: طريقة تشغيل مكتوبة ومجرَّبة ← تشغيل الأمر المكتوب
+- جودة: الفرق أصغر ما يحقق الطلب بلا إعادة كتابة غير مطلوبة ← git diff --stat
+- جودة: المدخل الخاطئ يعطي خطأ واضحًا لا انهيارًا صامتًا ← تشغيل بمدخل خاطئ
+- أمر الحكم في الوضع 1: `think.py qa code --answers qa.json` (PASS / FAIL / INCOMPLETE).
+
+#### 5. التعافي (A29)
+
+- `missing_dependency` (اعتمادية مفقودة، ميزانية 2): سمِّ الاعتمادية بالضبط (حزمة، برنامج، خط، نموذج) ← ثبّت محليًا في بيئة العمل إن كان مجانيًا ومسموحًا (pip --user أو venv أو npm محلي) · البديل: مسار المكتبة القياسية أو أداة أخرى من نفس المجموعة · تصعيد: تثبيت نظامي أو مدفوع أو يحتاج مفتاحًا: توقف واسأل
+- `quality_below_threshold` (جودة دون العتبة، ميزانية 3): أي معيار فشل وبكم (المقيس مقابل العتبة) ← عالج السبب الأكبر وحده ثم أعد القياس · البديل: المنهج البديل المكتوب للمرحلة في الخطة · تصعيد: معيار إلزامي لا يتحقق بعد البديل: توقف وأبلغ بالأرقام
+
+#### 6. الأدلة
+
+- `https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/977-set-up-installers/2261-set-up-installers`
+
+#### 7. قدرات قريبة في العائلة
+
+- `ABUILD-58` تحديد معمارية جهاز إلكتروني قبل أي مخطط: المتطلبات قبل القطع، ووحدة جاهزة أم لوحة مخصصة، وشجرة الطاقة، والتوافق الكهرومغناطيسي / Scope a hardware design before any schematic: requirements before parts, module vs custom PCB, the power tree, EMC posture (documented)
+- `ABUILD-59` رحلة بناء موقع أو تحسينه بترتيب ثابت: الرسالة ثم التصميم ثم التحويل، وكل إصلاح فرضية قابلة للاختبار، وملف تتبع يستأنف منه / Website creation or improvement as a fixed-order journey: message, then design, then conversion; every fix a testable hypothesis; a tracker to resume from (documented)
 

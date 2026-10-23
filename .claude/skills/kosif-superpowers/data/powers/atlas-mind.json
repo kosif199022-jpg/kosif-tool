@@ -3428,5 +3428,1439 @@
     "vendor/kosif-atlas/skills/3113-estregenesis/13330-feeda"
    ]
   }
+ },
+ {
+  "id": "AMIND-61",
+  "family": "atlas-mind",
+  "domain": "mind",
+  "name_ar": "مدقق الانحراف للقراءة فقط: مقارنة العمل بملفات الحقيقة وإشارات الزمن وسلم تصعيد",
+  "name_en": "Read-only drift audit against truth files, with time signals and an escalation ladder",
+  "status": "documented",
+  "what": "دور مدقق لا يعدّل شيئًا: يقارن ما يحدث في المشروع بملفات الحقيقة (المشروع، طابور المهام، القرارات، لقطة الحالة) ليكشف اتساع النطاق وتعدد المهام المتزامنة وتغيير التسميات أو المعمارية خفية والقرارات غير المسجلة وتحول الإصلاح إلى إعادة كتابة، ويضيف إشارات زمنية للمهام والقرارات الراكدة، ويختم بتوصية واحدة واضحة. — An auditor that never edits: compares work with the project's truth files, adds staleness signals and ends with one clear recommendation.",
+  "when": "المشروع تشتت، الوكيل عدّل أكثر مما طُلب، خطط متعارضة، 'حاسس إننا خرجنا عن المسار' / a project feels off-track, the agent changed more than asked, competing plans",
+  "how": "1) Read only: the project definition, the task queue, the decision log and the current state snapshot. 2) Check each drift type against its source: scope grew (project file), several tasks in flight (queue), naming or architecture changed without a decision (decision log), duplicate approaches, undecided choices, a bug fix that became a rewrite, learning that became endless explanation. 3) Add code checks: matches the spec, no copied blocks over three lines, naming follows recorded conventions, no injection, path traversal, privilege or hard-coded secret risk. 4) Time signals: a task idle over three days (stuck or parked?), a phase with no progress over three days (split or shrink), a decision older than seven days on active work (re-confirm). 5) Grade findings critical (blocks delivery), warning (log it), info. 6) Escalate by level: self-correct, auditor note, roll back to the last valid state and pause, freeze the queue with a full report, lock and ask a human. 7) Output one screen: where it drifted, severity, cause traced through evidence, rollback or fix, files to update, and one verdict (continue, split, pause, decision gate). The fixer role it hands to repairs one issue: reproduce, root cause, a failing test first, the smallest fix, no refactor or feature, then report residual risk. Full original skill(s) with license: vendor/kosif-atlas/skills/2-agent-workflow-system/3-agent-drift-auditor, vendor/kosif-atlas/skills/2-agent-workflow-system/2-agent-debug-fixer.",
+  "params": "truth files",
+  "install": "mkdir -p ~/.claude/skills && cp -r .claude/skills/kosif-superpowers/vendor/kosif-atlas/skills/2-agent-workflow-system/3-agent-drift-auditor ~/.claude/skills/agent-drift-auditor ; mkdir -p ~/.claude/skills && cp -r .claude/skills/kosif-superpowers/vendor/kosif-atlas/skills/2-agent-workflow-system/2-agent-debug-fixer ~/.claude/skills/agent-debug-fixer",
+  "requires": [],
+  "license": "card in our own words; the original skill folders are copied verbatim with their MIT license and SOURCE.md under vendor/kosif-atlas",
+  "proof": [
+   "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/2-agent-workflow-system/3-agent-drift-auditor",
+   "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/2-agent-workflow-system/2-agent-debug-fixer"
+  ],
+  "proof_scope": "url",
+  "styles": [],
+  "tags": [
+   "agent workflow",
+   "drift",
+   "scope creep",
+   "audit",
+   "project control",
+   "انحراف المشروع",
+   "تدقيق"
+  ],
+  "section": "سير عمل الوكلاء — Agent workflows & orchestration",
+  "source": "KOSIF Atlas exhaustive pass 2026-10-23, batch batch3-mind (https://github.com/kosif199022-jpg/kosif-atlas @ 99bb108d): agent-workflow-system/agent-drift-auditor (#3); agent-workflow-system/agent-debug-fixer (#2) · SKILL.md read in full as inert text",
+  "atlas": {
+   "ids": [
+    "3",
+    "2"
+   ],
+   "examples": [
+    {
+     "id": "3",
+     "plugin": "agent-workflow-system",
+     "skill": "agent-drift-auditor",
+     "url": "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/2-agent-workflow-system/3-agent-drift-auditor"
+    },
+    {
+     "id": "2",
+     "plugin": "agent-workflow-system",
+     "skill": "agent-debug-fixer",
+     "url": "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/2-agent-workflow-system/2-agent-debug-fixer"
+    }
+   ],
+   "theme": "agent-workflow",
+   "risk_notes": "Method guidance only; no Atlas code imported or executed.",
+   "kosif_overlap_ids": [
+    "CODE-11",
+    "ACODE-117"
+   ],
+   "stage": "extracted",
+   "verified_by": "atlas-pass-20261023-batch3-mind.json",
+   "skill_md_sha256": {
+    "3": "b63de8ef3c5fb1e02a80a0b25d7d88b335f290510239c7c35dfe8596473cdda7",
+    "2": "fa515d47e9619eb5f30418dcae050456680251a3fd8300aedd40706bc7988263"
+   },
+   "vendored": [
+    "vendor/kosif-atlas/skills/2-agent-workflow-system/3-agent-drift-auditor",
+    "vendor/kosif-atlas/skills/2-agent-workflow-system/2-agent-debug-fixer"
+   ]
+  }
+ },
+ {
+  "id": "AMIND-62",
+  "family": "atlas-mind",
+  "domain": "mind",
+  "name_ar": "تقرير ما ساهم به الوكيل في الجلسة: مستوى الإشارة أولًا ثم ما يستحق التسجيل",
+  "name_en": "Session contribution evidence: grade the signal first, record only what earns it",
+  "status": "documented",
+  "what": "يقرر إن كانت الجلسة تستحق التوثيق قبل كتابة أي شيء: إشارة عالية (ملف جديد، أربعة ملفات أو أكثر، مقارنة بدائل صريحة، نقاش طويل، أو خطأ شُرح سببه الجذري ولو في ملف واحد) تستحق سجل قرارات وتاريخ جلسة، متوسطة تستحق سطرًا في سجل العمل، ومنخفضة لا شيء. ثم يقيس أبعاد القصد (تعقيد تقني، شك، تفرع قرار) ليفصل ما قاده الإنسان عما ساهم به الوكيل. — Decide whether a session is worth recording before writing anything, then separate what the human drove from what the agent contributed.",
+  "when": "ما الذي فعله الوكيل فعلًا في هذه الجلسة؟ مراجعة جلسة، إثبات تعاون، سجل قرارات / what did the agent actually contribute, session retrospective",
+  "how": "1) Read the recent commits and diff stat. 2) Grade signal: HIGH if a new file, four or more files changed, alternatives explicitly compared, a long design discussion, or a bug whose root cause was explained (a well-diagnosed one-file fix outranks a ten-file feature with no discussion); MEDIUM for one to three files with no rationale; LOW for planning only or a trivial edit, and then record nothing and say so. 3) Score frames 0 to 1: technical complexity (new module or novel logic vs a typo), uncertainty (rollbacks, doubt, repeated revisions), fork (alternatives compared), plus who proposed each decisive idea. 4) HIGH writes a decision record (the options, the choice, why), a session-history entry and a work-log line; MEDIUM writes the work-log line only. 5) Quote the evidence for each attribution; never claim authorship the transcript does not show. Full original skill(s) with license: vendor/kosif-atlas/skills/163-collab-proof/532-collab-proof.",
+  "params": "session, git range",
+  "install": "mkdir -p ~/.claude/skills && cp -r .claude/skills/kosif-superpowers/vendor/kosif-atlas/skills/163-collab-proof/532-collab-proof ~/.claude/skills/collab-proof",
+  "requires": [],
+  "license": "card in our own words; the original skill folders are copied verbatim with their MIT license and SOURCE.md under vendor/kosif-atlas",
+  "proof": [
+   "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/163-collab-proof/532-collab-proof"
+  ],
+  "proof_scope": "url",
+  "styles": [],
+  "tags": [
+   "session retrospective",
+   "decision log",
+   "AI collaboration",
+   "worklog",
+   "سجل القرارات",
+   "مراجعة الجلسة"
+  ],
+  "section": "سير عمل الوكلاء — Agent workflows & orchestration",
+  "source": "KOSIF Atlas exhaustive pass 2026-10-23, batch batch3-mind (https://github.com/kosif199022-jpg/kosif-atlas @ 99bb108d): collab-proof/collab-proof (#532) · SKILL.md read in full as inert text",
+  "atlas": {
+   "ids": [
+    "532"
+   ],
+   "examples": [
+    {
+     "id": "532",
+     "plugin": "collab-proof",
+     "skill": "collab-proof",
+     "url": "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/163-collab-proof/532-collab-proof"
+    }
+   ],
+   "theme": "agent-workflow",
+   "risk_notes": "Method guidance only; no Atlas code imported or executed.",
+   "kosif_overlap_ids": [
+    "AMIND-27"
+   ],
+   "stage": "extracted",
+   "verified_by": "atlas-pass-20261023-batch3-mind.json",
+   "skill_md_sha256": {
+    "532": "0a06dd8a7db057c9bf3c3bcf054927e1e39f0e837fcb7867df4f2d6ac95c5f8d"
+   },
+   "vendored": [
+    "vendor/kosif-atlas/skills/163-collab-proof/532-collab-proof"
+   ]
+  }
+ },
+ {
+  "id": "AMIND-63",
+  "family": "atlas-mind",
+  "domain": "mind",
+  "name_ar": "فهم مؤكد لا شرح فقط: مداخل حسب نية المستخدم واختبارات سيناريو تكشف سوء الفهم",
+  "name_en": "Verified comprehension: intent-scented entry points and scenario probes",
+  "status": "documented",
+  "what": "حين يريد المستخدم أن يفهم فعلًا شيئًا أمامه (شيفرة، مستند، نتيجة كتبها الوكيل): يعرض حتى ثلاثة مداخل حسب ما سيفهمه أو يقرره (التوجّه، المبرر، الأثر، الموافقة، النقل)، ثم يسأل أسئلة سيناريو ملموسة فيها مسار صحيح وجزئي وخاطئ بعواقب حقيقية، ويصحح الجزء الخاطئ فقط مستشهدًا بمواضع محددة في المادة. — Builds verified understanding of an artefact through intent-based entry points and scenario probes, correcting only what the material settles.",
+  "when": "'اشرح لي هذا الكود فعلًا'، قبل الموافقة على تغيير كبير كتبه الوكيل، تسليم معرفة لزميل / the user wants to truly understand code or a result before approving it",
+  "how": "1) Activate only when the user asks to understand something already in context and quotable; not for unrelated questions or trivial results. 2) Offer up to three entry labels phrased as what the user will understand or decide (orientation, rationale, impact, approval, transfer); a list of concerns the user already named becomes the order directly. 3) Before each probe show the relevant excerpt and a concrete scenario ('a request arrives with an empty cart: what happens?'). 4) For classification probes show recognisable correct, partial and misconception paths with their domain consequences; for open probes invite the user's own reasoning; always allow a free answer. 5) Correct only the part the material settles, keep what the answer got right, and cite exact locations. 6) Advance when the answer shows understanding; stop when the user can explain the target in their own words or declines. Full original skill(s) with license: vendor/kosif-atlas/skills/1996-katalepsis/7164-grasp.",
+  "params": "artefact",
+  "install": "mkdir -p ~/.claude/skills && cp -r .claude/skills/kosif-superpowers/vendor/kosif-atlas/skills/1996-katalepsis/7164-grasp ~/.claude/skills/grasp",
+  "requires": [],
+  "license": "card in our own words; the original skill folders are copied verbatim with their MIT license and SOURCE.md under vendor/kosif-atlas",
+  "proof": [
+   "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/1996-katalepsis/7164-grasp"
+  ],
+  "proof_scope": "url",
+  "styles": [],
+  "tags": [
+   "understanding",
+   "teaching",
+   "code comprehension",
+   "review",
+   "approval",
+   "فهم الشيفرة",
+   "تعليم"
+  ],
+  "section": "سير عمل الوكلاء — Agent workflows & orchestration",
+  "source": "KOSIF Atlas exhaustive pass 2026-10-23, batch batch3-mind (https://github.com/kosif199022-jpg/kosif-atlas @ 99bb108d): katalepsis/grasp (#7164) · SKILL.md read in full as inert text",
+  "atlas": {
+   "ids": [
+    "7164"
+   ],
+   "examples": [
+    {
+     "id": "7164",
+     "plugin": "katalepsis",
+     "skill": "grasp",
+     "url": "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/1996-katalepsis/7164-grasp"
+    }
+   ],
+   "theme": "agent-workflow",
+   "risk_notes": "Method guidance only; no Atlas code imported or executed.",
+   "kosif_overlap_ids": [],
+   "stage": "extracted",
+   "verified_by": "atlas-pass-20261023-batch3-mind.json",
+   "skill_md_sha256": {
+    "7164": "4c050d691ad9bdbfc3f4bc7f1f673314017d8b65522356ac8057ead68e678bda"
+   },
+   "vendored": [
+    "vendor/kosif-atlas/skills/1996-katalepsis/7164-grasp"
+   ]
+  }
+ },
+ {
+  "id": "AMIND-64",
+  "family": "atlas-mind",
+  "domain": "mind",
+  "name_ar": "حلقة التعلم من رفض طلبات الدمج: الخطأ الذي يتكرر مرتين يصبح أداة دائمة",
+  "name_en": "Learning loop from rejected agent PRs: a mistake that happens twice becomes an artefact",
+  "status": "documented",
+  "what": "يجمع إشارات شهر (طلبات دمج مرفوضة أو متروكة، تعليقات مراجعة متكررة، تراجعات خلال أسبوعين، تعديلات بشرية على فروع الوكيل، أفعال محجوبة، حوادث)، يجمعها حسب السبب الجذري، ويحول كل عنقود إلى أرخص إصلاح دائم: سطر سياق، مهارة أو قاعدة lint، خطاف أو صلاحية، اختبار، حالة تقييم، أو تعديل قالب المواصفة؛ ثم يتحقق ويقلّم. — Mines rejections and repeated review comments and converts each recurring cause into the cheapest durable fix.",
+  "when": "الوكيل يكرر نفس الأخطاء، المراجعون يكتبون نفس التعليق، كثير من طلبات الوكيل لا تُقبل / an agent keeps repeating mistakes across PRs",
+  "how": "1) Collect a month of signals, starting with rejected agent PRs and review comments on agent PRs; add early reverts, human edits before merge, blocked actions and incidents. 2) Cluster by root cause: missing context, unclear spec, unwritten convention, verification gap, permission boundary, model limitation. 3) Convert each recurring cluster to the cheapest durable artefact: missing context → a context-file line or linked doc; convention → a skill or linter rule; must-never-happen → a hook or permission rule; broken behaviour → a test; quality regression → an eval case; unclear spec → a spec-template change. 4) Verify by re-running a representative past task or eval and confirming the mistake no longer occurs. 5) Prune quarterly; context bloat is also a failure, so not everything goes into the instruction file. 6) Report the top causes, artefacts shipped with links and the trend in rejection or rework rate; anything that reached production gets a full incident review. Full original skill(s) with license: vendor/kosif-atlas/skills/3051-adlc-operate/13144-learning-loop, vendor/kosif-atlas/skills/3051-adlc-operate/13147-mine-rejections.",
+  "params": "repository, period",
+  "install": "mkdir -p ~/.claude/skills && cp -r .claude/skills/kosif-superpowers/vendor/kosif-atlas/skills/3051-adlc-operate/13144-learning-loop ~/.claude/skills/learning-loop ; mkdir -p ~/.claude/skills && cp -r .claude/skills/kosif-superpowers/vendor/kosif-atlas/skills/3051-adlc-operate/13147-mine-rejections ~/.claude/skills/mine-rejections",
+  "requires": [],
+  "license": "card in our own words; the original skill folders are copied verbatim with their MIT license and SOURCE.md under vendor/kosif-atlas",
+  "proof": [
+   "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/3051-adlc-operate/13144-learning-loop",
+   "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/3051-adlc-operate/13147-mine-rejections"
+  ],
+  "proof_scope": "url",
+  "styles": [],
+  "tags": [
+   "learning loop",
+   "code review",
+   "agent quality",
+   "postmortem",
+   "continuous improvement",
+   "التعلم من الأخطاء"
+  ],
+  "section": "سير عمل الوكلاء — Agent workflows & orchestration",
+  "source": "KOSIF Atlas exhaustive pass 2026-10-23, batch batch3-mind (https://github.com/kosif199022-jpg/kosif-atlas @ 99bb108d): adlc-operate/learning-loop (#13144); adlc-operate/mine-rejections (#13147) · SKILL.md read in full as inert text",
+  "atlas": {
+   "ids": [
+    "13144",
+    "13147"
+   ],
+   "examples": [
+    {
+     "id": "13144",
+     "plugin": "adlc-operate",
+     "skill": "learning-loop",
+     "url": "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/3051-adlc-operate/13144-learning-loop"
+    },
+    {
+     "id": "13147",
+     "plugin": "adlc-operate",
+     "skill": "mine-rejections",
+     "url": "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/3051-adlc-operate/13147-mine-rejections"
+    }
+   ],
+   "theme": "agent-workflow",
+   "risk_notes": "Method guidance only; no Atlas code imported or executed.",
+   "kosif_overlap_ids": [
+    "AMIND-06"
+   ],
+   "stage": "extracted",
+   "verified_by": "atlas-pass-20261023-batch3-mind.json",
+   "skill_md_sha256": {
+    "13144": "c0971a2760969a25139cca7d04404ecd89e3830298a81b6d848a7e74854d8fe2",
+    "13147": "07e63b8d1496da26f1984cb1f02d6c10d047eb504cc76cc0c37f1f532cabd378"
+   },
+   "vendored": [
+    "vendor/kosif-atlas/skills/3051-adlc-operate/13144-learning-loop",
+    "vendor/kosif-atlas/skills/3051-adlc-operate/13147-mine-rejections"
+   ]
+  }
+ },
+ {
+  "id": "AMIND-65",
+  "family": "atlas-mind",
+  "domain": "mind",
+  "name_ar": "مطابقة ذاكرة الوكيل مع وثائق المشروع في الاتجاهين: خمسة أنواع انحراف",
+  "name_en": "Reconcile agent memory with project docs in both directions: five kinds of drift",
+  "status": "documented",
+  "what": "ذاكرة الوكيل ووثائق الحوكمة (AGENTS.md وCLAUDE.md وملفات القواعد) تنحرف في الاتجاهين: الذاكرة تستوعب التصحيحات أسرع فتبقى الوثيقة على سياسة قديمة، والوثائق تتقدم فتبقى الذاكرة على حالة قديمة. يقرأ الطرفين كاملين ثم يبحث عن خمسة أنواع انحراف ويقترح لكل واحد تصحيحًا في الجهة الصحيحة. — Full read of both corpora, five drift kinds, and a fix on the side that should win.",
+  "when": "ذاكرة الوكيل تناقض ملف التعليمات، مراجعة دورية لملفات الحوكمة، قبل ترقية قاعدة من الذاكرة إلى الوثائق / periodic true-up of memory and instruction files",
+  "how": "1) Locate both corpora: the project's memory store with its index, and the governance docs; with no memory store, say so and stop. 2) Read both fully before judging; partial reads give false confidence. 3) Sweep for: (a) memory supersedes doc (a dated memory revised a policy the doc still states, often while citing that memory by name); (b) dangling references (a cited file, folder or link that does not exist); (c) durable policy that lives only in memory (promotion candidates); (d) the same fact in both places with different values, including index summaries of an older revision; (e) outdated identifiers (versions, dates, paths, counts) and contradictions inside one doc. 4) For each finding say which side is authoritative and why, with dates. 5) Propose exact edits; promote memory-only rules to docs only with the owner's approval; never delete a memory the user wrote without asking. 6) Report counts per kind and what was left unresolved. Full original skill(s) with license: vendor/kosif-atlas/skills/3113-estregenesis/13321-eg-memsync.",
+  "params": "memory store, docs",
+  "install": "mkdir -p ~/.claude/skills && cp -r .claude/skills/kosif-superpowers/vendor/kosif-atlas/skills/3113-estregenesis/13321-eg-memsync ~/.claude/skills/eg-memsync",
+  "requires": [],
+  "license": "card in our own words; the original skill folders are copied verbatim with their Apache-2.0 license and SOURCE.md under vendor/kosif-atlas",
+  "proof": [
+   "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/3113-estregenesis/13321-eg-memsync"
+  ],
+  "proof_scope": "url",
+  "styles": [],
+  "tags": [
+   "agent memory",
+   "AGENTS.md",
+   "CLAUDE.md",
+   "documentation drift",
+   "governance",
+   "ذاكرة الوكيل"
+  ],
+  "section": "سير عمل الوكلاء — Agent workflows & orchestration",
+  "source": "KOSIF Atlas exhaustive pass 2026-10-23, batch batch3-mind (https://github.com/kosif199022-jpg/kosif-atlas @ 99bb108d): estregenesis/eg-memsync (#13321) · SKILL.md read in full as inert text",
+  "atlas": {
+   "ids": [
+    "13321"
+   ],
+   "examples": [
+    {
+     "id": "13321",
+     "plugin": "estregenesis",
+     "skill": "eg-memsync",
+     "url": "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/3113-estregenesis/13321-eg-memsync"
+    }
+   ],
+   "theme": "agent-workflow",
+   "risk_notes": "Method guidance only; no Atlas code imported or executed.",
+   "kosif_overlap_ids": [
+    "ADOCS-03",
+    "ACODE-277"
+   ],
+   "stage": "extracted",
+   "verified_by": "atlas-pass-20261023-batch3-mind.json",
+   "skill_md_sha256": {
+    "13321": "267d4c7df62970eb11e5dff0a029aaf7590571972bfc83bac76310b9fefd9f9f"
+   },
+   "vendored": [
+    "vendor/kosif-atlas/skills/3113-estregenesis/13321-eg-memsync"
+   ]
+  }
+ },
+ {
+  "id": "AMIND-66",
+  "family": "atlas-mind",
+  "domain": "mind",
+  "name_ar": "تنقيب سجلات الجلسات دوريًا: تكثيف قبل القراءة، نافذة غير محصودة، ومقارنة مع الكتالوج",
+  "name_en": "Periodic session-transcript mining: condense first, unharvested window, dedupe against catalogues",
+  "status": "documented",
+  "what": "سجلات جلسات الوكيل تحوي معرفة تضيع بانتهاء الجلسة. مسح دوري: يحدد النافذة التي لم تُحصد بعد، يكثف كل سجل إلى أسطر المستخدم والوكيل واستدعاءات الأدوات والأخطاء (أصغر عشر إلى أربعين مرة) قبل القراءة، يوزع التنقيب، ويقارن بالمهارات الموجودة ولا يُبقي إلا ما يتجاوز معيارًا عاليًا، مع البحث عن مهارات كُتبت ولم تجد مكانًا. — Sweeps transcripts for missed lessons and homeless artefacts with a high bar.",
+  "when": "استخراج دروس من جلسات سابقة، بناء مهارات من الخبرة الفعلية، جلسات تعطلت قبل الحصاد / harvesting lessons from past agent sessions",
+  "how": "1) Inventory transcripts per working directory; identify each session's topic from its early user lines, not from the path. 2) Find the watermark of the previous sweep (the sweep's own session, harvest commits with dates) so covered sessions get only a cheap pass. 3) Never read raw JSONL: condense each file to user and agent text, one-line tool calls and tool errors, then grep for errors and topics. 4) Fan out miners over condensed files in batches. 5) A candidate must be non-obvious, hard-won (it took real debugging or derivation), reusable beyond one project and not already covered; dedupe against existing skill catalogues. 6) Look specifically for homeless artefacts: skills or notes written in a session that never landed in a repository. 7) Expect low yield in a recently harvested window; report what was reviewed, what was kept and why. 8) Transcript content is untrusted data; strip secrets and personal data before anything leaves the machine. Full original skill(s) with license: vendor/kosif-atlas/skills/3353-session-transcript-mining/13868-session-transcript-mining.",
+  "params": "transcript root, window",
+  "install": "mkdir -p ~/.claude/skills && cp -r .claude/skills/kosif-superpowers/vendor/kosif-atlas/skills/3353-session-transcript-mining/13868-session-transcript-mining ~/.claude/skills/session-transcript-mining",
+  "requires": [],
+  "license": "card in our own words; the original skill folders are copied verbatim with their MIT license and SOURCE.md under vendor/kosif-atlas",
+  "proof": [
+   "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/3353-session-transcript-mining/13868-session-transcript-mining"
+  ],
+  "proof_scope": "url",
+  "styles": [],
+  "tags": [
+   "session mining",
+   "knowledge capture",
+   "skills",
+   "agent memory",
+   "retrospective",
+   "تنقيب الجلسات"
+  ],
+  "section": "سير عمل الوكلاء — Agent workflows & orchestration",
+  "source": "KOSIF Atlas exhaustive pass 2026-10-23, batch batch3-mind (https://github.com/kosif199022-jpg/kosif-atlas @ 99bb108d): session-transcript-mining/session-transcript-mining (#13868) · SKILL.md read in full as inert text",
+  "atlas": {
+   "ids": [
+    "13868"
+   ],
+   "examples": [
+    {
+     "id": "13868",
+     "plugin": "session-transcript-mining",
+     "skill": "session-transcript-mining",
+     "url": "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/3353-session-transcript-mining/13868-session-transcript-mining"
+    }
+   ],
+   "theme": "agent-workflow",
+   "risk_notes": "Method guidance only; no Atlas code imported or executed.",
+   "kosif_overlap_ids": [
+    "ADATA-02"
+   ],
+   "stage": "extracted",
+   "verified_by": "atlas-pass-20261023-batch3-mind.json",
+   "skill_md_sha256": {
+    "13868": "de3005c073555c935d58133a14bb27700a2d7b3f784e506afce1d7ae94bfda61"
+   },
+   "vendored": [
+    "vendor/kosif-atlas/skills/3353-session-transcript-mining/13868-session-transcript-mining"
+   ]
+  }
+ },
+ {
+  "id": "AMIND-67",
+  "family": "atlas-mind",
+  "domain": "mind",
+  "name_ar": "مالك واحد لكل نوع حقيقة: التصميم، حالة العمل، خطة التنفيذ، ودليل التسليم",
+  "name_en": "One owner per kind of truth: design, work state, execution plan, delivery evidence",
+  "status": "documented",
+  "what": "يربط النية وحالة العمل ومعايير القبول ودليل التسليم دون مصادر حقيقة مكررة: يرسم كل سطح قائم حسب مسؤوليته لا اسم ملفه (التصميم يشرح لماذا وكيف، حالة العمل تملك الوضع والقبول، خطة التنفيذ تنسق العمل المعقد، دليل التسليم يسجل ما تغير وما أُثبت)، ويضيف الحد الأدنى فقط لما ينقص، ويحدد ترتيب التحديث وربط الالتزامات. — Assigns one owner per kind of truth and the update order, adding only missing surfaces.",
+  "when": "وثائق التصميم ولوحة المهام وسجل التسليم تتناقض، أين نكتب المتطلبات والقرارات؟ سياسة ربط الالتزامات بالمهام / design docs, task boards and ledgers contradict each other",
+  "how": "1) Search for design docs, task files, tracker references, execution plans, review templates, ledgers, release notes and commit guidance. 2) Map each by responsibility: design (why and how), work state (current status and acceptance), execution plan (coordination of complex work), delivery evidence (what changed and what was proved). 3) Where a role is missing, add the minimum surface; do not add a local task file when an external tracker already fills the role. 4) Define the update order: design decision first, then work state and acceptance, then implementation, then delivery evidence. 5) Define coupling: commits reference task ids, staging by exact path, and when an artefact may be skipped and why. 6) Redact secrets and personal data from evidence. 7) Do not invoke this for an ordinary commit in a repo whose rules are already clear. Full original skill(s) with license: vendor/kosif-atlas/skills/3604-agent-harness-skills/14472-work-state-and-delivery.",
+  "params": "repository surfaces",
+  "install": "mkdir -p ~/.claude/skills && cp -r .claude/skills/kosif-superpowers/vendor/kosif-atlas/skills/3604-agent-harness-skills/14472-work-state-and-delivery ~/.claude/skills/work-state-and-delivery",
+  "requires": [],
+  "license": "card in our own words; the original skill folders are copied verbatim with their MIT license and SOURCE.md under vendor/kosif-atlas",
+  "proof": [
+   "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/3604-agent-harness-skills/14472-work-state-and-delivery"
+  ],
+  "proof_scope": "url",
+  "styles": [],
+  "tags": [
+   "project governance",
+   "task tracking",
+   "traceability",
+   "documentation",
+   "delivery",
+   "مصدر الحقيقة"
+  ],
+  "section": "سير عمل الوكلاء — Agent workflows & orchestration",
+  "source": "KOSIF Atlas exhaustive pass 2026-10-23, batch batch3-mind (https://github.com/kosif199022-jpg/kosif-atlas @ 99bb108d): agent-harness-skills/work-state-and-delivery (#14472) · SKILL.md read in full as inert text",
+  "atlas": {
+   "ids": [
+    "14472"
+   ],
+   "examples": [
+    {
+     "id": "14472",
+     "plugin": "agent-harness-skills",
+     "skill": "work-state-and-delivery",
+     "url": "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/3604-agent-harness-skills/14472-work-state-and-delivery"
+    }
+   ],
+   "theme": "agent-workflow",
+   "risk_notes": "Method guidance only; no Atlas code imported or executed.",
+   "kosif_overlap_ids": [
+    "AMIND-31"
+   ],
+   "stage": "extracted",
+   "verified_by": "atlas-pass-20261023-batch3-mind.json",
+   "skill_md_sha256": {
+    "14472": "fb89e7903a0cd17611f0c7aca57af3f8c481977ad339ed638731812495ae6ad3"
+   },
+   "vendored": [
+    "vendor/kosif-atlas/skills/3604-agent-harness-skills/14472-work-state-and-delivery"
+   ]
+  }
+ },
+ {
+  "id": "AMIND-68",
+  "family": "atlas-mind",
+  "domain": "mind",
+  "name_ar": "اختر الأداة للمشكلة لا بالعادة: أربع خطايا اختيار، وسلم أصلي ثم رسمي ثم طرف ثالث موثوق",
+  "name_en": "Pick for the problem, not the reflex: four selection sins and a native, official, vetted ladder",
+  "status": "documented",
+  "what": "مصحح انحراف لاختيار أداة أو مكتبة أو إطار أو لغة: معظم الاختيارات غير المفحوصة ترجع إلى العادة أو المتاح أو الموجود سلفًا أو الحكم المسبق؛ البديل تعريف المشكلة أولًا ومسح أكثر من مرشح وصعود سلم التفضيل، وكل تبعية نقطة اقتران لها كلفة لاحقة. — A re-anchor for technology selection.",
+  "when": "اختيار مكتبة أو إطار أو أداة، 'نستخدم X لأننا دائمًا نستخدمه'، مراجعة قرار تبعية / choosing a dependency or approach",
+  "how": "1) If the project states its own selection or dependency rule, re-anchor that first. 2) Name which sin drove the current choice: habit (I always use X), availability (X is at hand), incumbency (the repo already uses X so new work assumes it), preconception (the verdict came before the problem). 3) Define the problem and requirements before any candidate, including plausible future requirements that could turn a choice into pain. 4) Survey more than one candidate against them. 5) Walk the ladder, an earlier rung wins when it covers the requirements: native (what the platform or language already gives), official or first-party, then a vetted third party that is maintained, known, safe and secure. 6) Weigh each dependency's coupling cost now: abandonment, pricing pivot, licence change, security exposure, lock-in. 7) Re-implementing something already solved is itself a finding. 8) Load-bearing evaluations route to current research, not memory. 9) Do not churn a choice that already fits the problem, and do not invent a finding where the choice was derived properly; report and correct forward. Full original skill(s) with license: vendor/kosif-atlas/skills/2431-discipline/9418-pick-for-the-problem.",
+  "params": "choice under review",
+  "install": "mkdir -p ~/.claude/skills && cp -r .claude/skills/kosif-superpowers/vendor/kosif-atlas/skills/2431-discipline/9418-pick-for-the-problem ~/.claude/skills/pick-for-the-problem",
+  "requires": [],
+  "license": "card in our own words; the original skill folders are copied verbatim with their MIT license and SOURCE.md under vendor/kosif-atlas",
+  "proof": [
+   "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/2431-discipline/9418-pick-for-the-problem"
+  ],
+  "proof_scope": "url",
+  "styles": [],
+  "tags": [
+   "technology selection",
+   "dependency",
+   "native first",
+   "incumbency",
+   "اختيار الأدوات",
+   "التبعيات"
+  ],
+  "section": "أدوات MCP والتكاملات — MCP servers, tools & integrations",
+  "source": "KOSIF Atlas exhaustive pass 2026-10-23, batch batch4-mind (https://github.com/kosif199022-jpg/kosif-atlas @ 99bb108d): discipline/pick-for-the-problem (#9418) · SKILL.md read in full as inert text",
+  "atlas": {
+   "ids": [
+    "9418"
+   ],
+   "examples": [
+    {
+     "id": "9418",
+     "plugin": "discipline",
+     "skill": "pick-for-the-problem",
+     "url": "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/2431-discipline/9418-pick-for-the-problem"
+    }
+   ],
+   "theme": "mcp-tooling",
+   "risk_notes": "Method guidance only; no Atlas code imported or executed.",
+   "kosif_overlap_ids": [
+    "AMIND-49",
+    "ACODE-248"
+   ],
+   "stage": "extracted",
+   "verified_by": "atlas-pass-20261023-batch4-mind.json",
+   "skill_md_sha256": {
+    "9418": "1f7b492fb9c2b52eb5372a1c90801564b6d0b3dad9285f8640bffb89b60370e9"
+   },
+   "vendored": [
+    "vendor/kosif-atlas/skills/2431-discipline/9418-pick-for-the-problem"
+   ]
+  }
+ },
+ {
+  "id": "AMIND-69",
+  "family": "atlas-mind",
+  "domain": "mind",
+  "name_ar": "انقل العمل الحتمي إلى سكربت: ثلاث طبقات (حتمي، اكتشف ثم احكم، تفكير فقط)",
+  "name_en": "Script the deterministic work: three tiers, deterministic, detect-then-judge, reasoning-only",
+  "status": "documented",
+  "what": "النموذج حاسبة ضعيفة وعدّاد أسطر أضعف؛ كل ما يُحسب أو يُعدّ أو يُقارن أو يُرتب أو يُحوّل آليًا يُكتب له سكربت ويُشغّل ثم يُفكَّر فوق مخرجه. وما يحتاج حكمًا يُسكربَت نصف الاكتشاف منه فقط، وما هو معنى أو نية لا يُسكربَت أبدًا. — Tiered rule for what to offload to code.",
+  "when": "عدّ أو مقارنة أو تحويل أو مسح عبر ملفات، أرقام في تقرير، 'احسبها بنفسك' / counts, diffs, sweeps, arithmetic",
+  "how": "1) Classify each sub-task. Deterministic: pass or fail, exact or countable with no judgment; write a script or use a tool, run it, read the output, reason only after. 2) Detect-then-judge: a mechanical pass narrows candidates but the verdict needs context; script only the detect half and treat each flag as a candidate, never the ruling. 3) Reasoning-only: meaning, intent, fit, abstraction quality; never script it, because a script there dresses a judgment as a computed fact. 4) Apply it to generation too: build repetitive files, tables or reports from data with code rather than by hand. 5) Audit the reverse over-reach as well: an existing script that decides a judgment call. 6) A one-off can be a throwaway command; it does not need a permanent tool. 7) Record the command beside the number it produced so the result can be rerun. Full original skill(s) with license: vendor/kosif-atlas/skills/2431-discipline/9424-script-the-deterministic-work.",
+  "params": "task",
+  "install": "mkdir -p ~/.claude/skills && cp -r .claude/skills/kosif-superpowers/vendor/kosif-atlas/skills/2431-discipline/9424-script-the-deterministic-work ~/.claude/skills/script-the-deterministic-work",
+  "requires": [],
+  "license": "card in our own words; the original skill folders are copied verbatim with their MIT license and SOURCE.md under vendor/kosif-atlas",
+  "proof": [
+   "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/2431-discipline/9424-script-the-deterministic-work"
+  ],
+  "proof_scope": "url",
+  "styles": [],
+  "tags": [
+   "deterministic",
+   "scripting",
+   "counting",
+   "detect then judge",
+   "سكربت",
+   "الأرقام الحتمية"
+  ],
+  "section": "أدوات MCP والتكاملات — MCP servers, tools & integrations",
+  "source": "KOSIF Atlas exhaustive pass 2026-10-23, batch batch4-mind (https://github.com/kosif199022-jpg/kosif-atlas @ 99bb108d): discipline/script-the-deterministic-work (#9424) · SKILL.md read in full as inert text",
+  "atlas": {
+   "ids": [
+    "9424"
+   ],
+   "examples": [
+    {
+     "id": "9424",
+     "plugin": "discipline",
+     "skill": "script-the-deterministic-work",
+     "url": "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/2431-discipline/9424-script-the-deterministic-work"
+    }
+   ],
+   "theme": "mcp-tooling",
+   "risk_notes": "Method guidance only; no Atlas code imported or executed.",
+   "kosif_overlap_ids": [
+    "AMIND-49"
+   ],
+   "stage": "extracted",
+   "verified_by": "atlas-pass-20261023-batch4-mind.json",
+   "skill_md_sha256": {
+    "9424": "0ccb1561c2c3c9555fad96fcf851d1a4d818abea13872e8d23dbb11d1baf4ab9"
+   },
+   "vendored": [
+    "vendor/kosif-atlas/skills/2431-discipline/9424-script-the-deterministic-work"
+   ]
+  }
+ },
+ {
+  "id": "AMIND-70",
+  "family": "atlas-mind",
+  "domain": "mind",
+  "name_ar": "مستشار الأتمتة والأدوات للقراءة فقط: ماذا يناسب هذا المستودع من خوادم MCP ومهارات وخطافات ووكلاء فرعيين وإضافات",
+  "name_en": "Read-only automation and tool advisor: which MCP servers, skills, hooks, subagents and plugins fit this repository",
+  "status": "documented",
+  "what": "يفحص المستودع والبيئة دون تعديل أي شيء، ثم يوصي بأفضل واحد أو اثنين من كل نوع أتمتة مع السبب، ويعرض للمهمة الحالية تركيبة الأدوات الأنسب وجملة 'تم حين...' وجدول خطوات أولى جاهزة للنسخ، ولا يثبت شيئًا دون موافقة. — Analyse first, recommend few, never execute.",
+  "when": "ما الأتمتة المناسبة لمشروعي، أي أدوات أستخدم لهذه المهمة، إعداد Claude Code لمستودع / which automations or tools fit this repo",
+  "how": "1) Read only: languages, frameworks, package files, CI, existing .claude settings, tests, docs; enumerate native tools, then discover installed MCP servers, skills, plugins and CLIs in one scan. 2) Classify the task: type (creation, modification, investigation, research, review, data), scale (small 1-3 files, medium 3-10, large 10+), and one 'done when' sentence. 3) Recommend one or two per category: MCP servers for repeated external systems, skills for repeatable workflows with templates or scripts, hooks for checks that must always run (format after edit, block edits to protected files), subagents for isolated parallel or specialised work, plugins for bundles; give 3-5 only when the user asks for one category. 4) Match capabilities to the task and suggest a composition (which tool for which step), scaled to the task size. 5) Ask at most three questions in one message, then proceed with defaults. 6) End with a quick-action table of copy-paste first steps; installs are left to the user. 7) Team tips: check .mcp.json into the repo, use headless mode for CI. Full original skill(s) with license: vendor/kosif-atlas/skills/278-claude-code-setup/901-claude-automation-recommender, vendor/kosif-atlas/skills/1362-tool-advisor/3094-tool-advisor.",
+  "params": "repository, task",
+  "install": "mkdir -p ~/.claude/skills && cp -r .claude/skills/kosif-superpowers/vendor/kosif-atlas/skills/278-claude-code-setup/901-claude-automation-recommender ~/.claude/skills/claude-automation-recommender ; mkdir -p ~/.claude/skills && cp -r .claude/skills/kosif-superpowers/vendor/kosif-atlas/skills/1362-tool-advisor/3094-tool-advisor ~/.claude/skills/tool-advisor",
+  "requires": [
+   "chromium",
+   "claude:tools"
+  ],
+  "license": "card in our own words; the original skill folders are copied verbatim with their Apache-2.0, MIT license and SOURCE.md under vendor/kosif-atlas",
+  "proof": [
+   "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/278-claude-code-setup/901-claude-automation-recommender",
+   "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/1362-tool-advisor/3094-tool-advisor"
+  ],
+  "proof_scope": "url",
+  "styles": [],
+  "tags": [
+   "Claude Code setup",
+   "automation",
+   "hooks",
+   "subagents",
+   "tool advisor",
+   "أتمتة",
+   "اختيار الأدوات"
+  ],
+  "section": "أدوات MCP والتكاملات — MCP servers, tools & integrations",
+  "source": "KOSIF Atlas exhaustive pass 2026-10-23, batch batch4-mind (https://github.com/kosif199022-jpg/kosif-atlas @ 99bb108d): claude-code-setup/claude-automation-recommender (#901); tool-advisor/tool-advisor (#3094) · SKILL.md read in full as inert text",
+  "atlas": {
+   "ids": [
+    "901",
+    "3094"
+   ],
+   "examples": [
+    {
+     "id": "901",
+     "plugin": "claude-code-setup",
+     "skill": "claude-automation-recommender",
+     "url": "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/278-claude-code-setup/901-claude-automation-recommender"
+    },
+    {
+     "id": "3094",
+     "plugin": "tool-advisor",
+     "skill": "tool-advisor",
+     "url": "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/1362-tool-advisor/3094-tool-advisor"
+    }
+   ],
+   "theme": "mcp-tooling",
+   "risk_notes": "Method guidance only; no Atlas code imported or executed.",
+   "kosif_overlap_ids": [
+    "AGENT-04",
+    "SELF-31",
+    "AGENT-23"
+   ],
+   "stage": "extracted",
+   "verified_by": "atlas-pass-20261023-batch4-mind.json",
+   "skill_md_sha256": {
+    "901": "441c57e26f0931b64dd085deaad9213c4e3efea27d916dd7443cd33c7e338227",
+    "3094": "408c1e82512c52d9f4a8e61fe068b8e612916db348db444f0768cc3802e2fda6"
+   },
+   "vendored": [
+    "vendor/kosif-atlas/skills/278-claude-code-setup/901-claude-automation-recommender",
+    "vendor/kosif-atlas/skills/1362-tool-advisor/3094-tool-advisor"
+   ]
+  }
+ },
+ {
+  "id": "AMIND-71",
+  "family": "atlas-mind",
+  "domain": "mind",
+  "name_ar": "خطة ينفذها نموذج أضعف دون حضورك: اتخذ كل قرار، واكتب أقل قدر ممكن",
+  "name_en": "A plan a weaker model will execute without you: make every decision, write as little as possible",
+  "status": "documented",
+  "what": "حين تخطط لنفسك تختصر ('اتبع النمط الموجود'، 'عالج الأخطاء بشكل مناسب')، وكل اختصار قرار سيتخذه منفذ أضعف بثقة وخطأ. والفشل المعاكس خطة أطول من المهمة. القاعدة: كل قرار يُتخذ في الخطة، والكلمات تُصرف فقط حيث يكون سوء الفهم واردًا، والخطة أقصر من الفرق الذي تنتجه. — Delegation plans for subagents or cheaper models.",
+  "when": "تفويض مهمة لوكيل فرعي أو نموذج أرخص، كتابة خطة تنفيذ لغيرك / delegating implementation to a subagent or smaller model",
+  "how": "1) Check it is delegable: work needing judgment throughout (open-ended debugging, design exploration) is not; do that part yourself and delegate the mechanical remainder. 2) Investigate until you can name every file that changes and every decision is made: exact paths, symbol names, signatures, config keys, the test command, the existing code to mirror by file and symbol, and any surprise as a 'Watch out' line. 3) Check the task's claims against HEAD; a prerequisite already landed or a missing symbol is your decision now. 4) Scan the draft for TBD, consider, decide whether, could, might, either; each is a decision pushed onto the weaker model, so decide it or ask the user. 5) Budget about 50 lines at 80 columns; past 100, split and plan only the first delegable slice, titled 'N of M', with a 'Not in this plan' list. 6) Never write function bodies; write literal signatures, schemas, config keys and error strings once for every symbol the plan introduces. 7) Refer to code by path and symbol, never by line number. 8) Name the library and the exact version from the lockfile when a step calls an API. 9) No vague words (appropriately, as needed, etc.). 10) End with the exact verification command and what passing looks like; a strong model reviews the result afterwards. Full original skill(s) with license: vendor/kosif-atlas/skills/243-plan-for-dummies/780-plan-for-dummies.",
+  "params": "task, repository",
+  "install": "mkdir -p ~/.claude/skills && cp -r .claude/skills/kosif-superpowers/vendor/kosif-atlas/skills/243-plan-for-dummies/780-plan-for-dummies ~/.claude/skills/plan-for-dummies",
+  "requires": [
+   "claude:tools"
+  ],
+  "license": "card in our own words; the original skill folders are copied verbatim with their MIT license and SOURCE.md under vendor/kosif-atlas",
+  "proof": [
+   "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/243-plan-for-dummies/780-plan-for-dummies"
+  ],
+  "proof_scope": "url",
+  "styles": [],
+  "tags": [
+   "delegation",
+   "implementation plan",
+   "subagent",
+   "planning",
+   "التفويض",
+   "خطة التنفيذ"
+  ],
+  "section": "التخطيط والمواصفات — Planning, specs & decisions",
+  "source": "KOSIF Atlas exhaustive pass 2026-10-23, batch batch5-mind (https://github.com/kosif199022-jpg/kosif-atlas @ 99bb108d): plan-for-dummies/plan-for-dummies (#780) · SKILL.md read in full as inert text",
+  "atlas": {
+   "ids": [
+    "780"
+   ],
+   "examples": [
+    {
+     "id": "780",
+     "plugin": "plan-for-dummies",
+     "skill": "plan-for-dummies",
+     "url": "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/243-plan-for-dummies/780-plan-for-dummies"
+    }
+   ],
+   "theme": "planning-specs",
+   "risk_notes": "Method guidance only; no Atlas code imported or executed.",
+   "kosif_overlap_ids": [
+    "PLAN-03",
+    "AMIND-11"
+   ],
+   "stage": "extracted",
+   "verified_by": "atlas-pass-20261023-batch5-mind.json",
+   "skill_md_sha256": {
+    "780": "146be2623bac6074d9d04229ebd3c90be5841ff054f130e0d7620bd190b26fd0"
+   },
+   "vendored": [
+    "vendor/kosif-atlas/skills/243-plan-for-dummies/780-plan-for-dummies"
+   ]
+  }
+ },
+ {
+  "id": "AMIND-72",
+  "family": "atlas-mind",
+  "domain": "mind",
+  "name_ar": "من التخطيط إلى التنفيذ بسلطتين: التوجيه التقني لك ويُسجل، والوظيفي والتشغيلي للمستخدم ويُسأل، والخطة هي المواصفة",
+  "name_en": "Plan, then implement, under two authorities: technical direction is yours and logged, functional and operational direction is the user's and asked; the plan is the spec",
+  "status": "documented",
+  "what": "التخطيط ينتج خطة واحدة حالية تُعاد كتابتها في مكانها، لقارئ لم يرَ الكود، تجد فيها الحقائق بنفسك وتسأل المستخدم فقط ما لا يجيب عنه الكود، سؤالًا واحدًا في كل رسالة؛ والتنفيذ يقيس العمل بندًا بندًا مقابل الخطة المتفق عليها، ويقسمها لشرائح ويرسل منفذين ويراجع المطابقة ويجري مراجعة عدائية واحدة، ويواصل دون توقف إلا عند البوابات المسماة. — An end-to-end plan and execute discipline.",
+  "when": "خطط لهذا التغيير، كيف نبني كذا، نفّذ الخطة المتفق عليها / planning a coding change or executing an agreed plan",
+  "how": "1) The plan never describes its own earlier versions: revise in place, and keep the past only in a decisions section (choice, alternative, reason). 2) Write for a reader who has not seen the code: explain each named function or file in plain words. 3) Authority table: technical direction (structure, libraries, internal names) is yours and logged; functional and operational direction (behaviour users see, data retention, cost, rollout) is the user's and asked; never re-ask a decided question. 4) Find facts yourself; ask only what the codebase cannot answer, one question per message in a fixed shape (situation, options, cost, your recommendation), after the questions it depends on. 5) Plan the simplest thing that works, as one document (diagrams and file trees welcome); spikes are throwaway probes deleted before presenting. 6) Execution: measure work against the plan item by item, not 'does it look right'. 7) Split into slices, give each executor a handoff packet (scope, tests first, the test map, documentation rule, stop conditions), and require a short mini-plan and minimum sufficient change. 8) Run a conformance review of plan against work, then the one adversarial review the user chose, and fix its findings. 9) Keep going; stop only at named gates, where one word resumes. 10) Execution labels (gate ids, wave names, finding numbers) never appear in code, comments, tests or commit messages. 11) For linear execution, check out a branch or worktree first and pause for human checkpoints between batches with typed verification per step. Full original skill(s) with license: vendor/kosif-atlas/skills/2860-planning-flow/11569-planning-flow, vendor/kosif-atlas/skills/2859-implement-plan/11568-implement-plan, vendor/kosif-atlas/skills/3612-zagrosi-forge/14531-zagrosi-plan, vendor/kosif-atlas/skills/3606-hotl/14489-executing-plans.",
+  "params": "request or agreed plan, repository",
+  "install": "mkdir -p ~/.claude/skills && cp -r .claude/skills/kosif-superpowers/vendor/kosif-atlas/skills/2860-planning-flow/11569-planning-flow ~/.claude/skills/planning-flow ; mkdir -p ~/.claude/skills && cp -r .claude/skills/kosif-superpowers/vendor/kosif-atlas/skills/2859-implement-plan/11568-implement-plan ~/.claude/skills/implement-plan ; mkdir -p ~/.claude/skills && cp -r .claude/skills/kosif-superpowers/vendor/kosif-atlas/skills/3612-zagrosi-forge/14531-zagrosi-plan ~/.claude/skills/zagrosi-plan ; mkdir -p ~/.claude/skills && cp -r .claude/skills/kosif-superpowers/vendor/kosif-atlas/skills/3606-hotl/14489-executing-plans ~/.claude/skills/executing-plans",
+  "requires": [
+   "git"
+  ],
+  "license": "card in our own words; the original skill folders are copied verbatim with their MIT license and SOURCE.md under vendor/kosif-atlas",
+  "proof": [
+   "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/2860-planning-flow/11569-planning-flow",
+   "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/2859-implement-plan/11568-implement-plan",
+   "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/3612-zagrosi-forge/14531-zagrosi-plan",
+   "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/3606-hotl/14489-executing-plans"
+  ],
+  "proof_scope": "url",
+  "styles": [],
+  "tags": [
+   "planning",
+   "implementation",
+   "plan execution",
+   "conformance review",
+   "adversarial review",
+   "التخطيط",
+   "التنفيذ"
+  ],
+  "section": "التخطيط والمواصفات — Planning, specs & decisions",
+  "source": "KOSIF Atlas exhaustive pass 2026-10-23, batch batch5-mind (https://github.com/kosif199022-jpg/kosif-atlas @ 99bb108d): planning-flow/planning-flow (#11569); implement-plan/implement-plan (#11568); zagrosi-forge/zagrosi-plan (#14531); hotl/executing-plans (#14489) · SKILL.md read in full as inert text",
+  "atlas": {
+   "ids": [
+    "11569",
+    "11568",
+    "14531",
+    "14489"
+   ],
+   "examples": [
+    {
+     "id": "11569",
+     "plugin": "planning-flow",
+     "skill": "planning-flow",
+     "url": "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/2860-planning-flow/11569-planning-flow"
+    },
+    {
+     "id": "11568",
+     "plugin": "implement-plan",
+     "skill": "implement-plan",
+     "url": "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/2859-implement-plan/11568-implement-plan"
+    },
+    {
+     "id": "14531",
+     "plugin": "zagrosi-forge",
+     "skill": "zagrosi-plan",
+     "url": "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/3612-zagrosi-forge/14531-zagrosi-plan"
+    },
+    {
+     "id": "14489",
+     "plugin": "hotl",
+     "skill": "executing-plans",
+     "url": "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/3606-hotl/14489-executing-plans"
+    }
+   ],
+   "theme": "planning-specs",
+   "risk_notes": "Method guidance only; no Atlas code imported or executed.",
+   "kosif_overlap_ids": [
+    "AMIND-11",
+    "PLAN-11",
+    "ABUILD-01"
+   ],
+   "stage": "extracted",
+   "verified_by": "atlas-pass-20261023-batch5-mind.json",
+   "skill_md_sha256": {
+    "11569": "05103f26ef08789910293697f109fdf7b83582015a354f19857b5c9c5602e94c",
+    "11568": "b9230e89ca769d94eac12aaccf6ef18fbd046a71ab75cff22e182ac33bae762a",
+    "14531": "4e598a0eb969fa7b64aba915ae39f8d4e2272d85cb280400bbf86c311753d38c",
+    "14489": "0ce9ded0721e6f29bbfe6674be30c25dbf532c2dc6a13bbacb537d501c4389e6"
+   },
+   "vendored": [
+    "vendor/kosif-atlas/skills/2860-planning-flow/11569-planning-flow",
+    "vendor/kosif-atlas/skills/2859-implement-plan/11568-implement-plan",
+    "vendor/kosif-atlas/skills/3612-zagrosi-forge/14531-zagrosi-plan",
+    "vendor/kosif-atlas/skills/3606-hotl/14489-executing-plans"
+   ]
+  }
+ },
+ {
+  "id": "AMIND-73",
+  "family": "atlas-mind",
+  "domain": "mind",
+  "name_ar": "مدقق الاستدلال: مصفوفة تتبع من الشروط الأصلية إلى الاستنتاج، وتصنيف كل افتراض معطى أو مُثبت أو مستنتج أو مخترع أو مجهول",
+  "name_en": "Reasoning verifier: a traceability matrix from the original conditions to the conclusion, with each assumption classed given, verified, deduced, invented or unknown",
+  "status": "documented",
+  "what": "يفحص تحليلًا مكتملًا قبل تسليمه: يستخرج شروط الطلب الأصلية، ويعيد بناء سلسلة الاستدلال، ويربط كل شرط بما يغطيه، ويصنف الافتراضات، ويختبر كل حلقة منطقية وحساسية الاستنتاج، ثم يرتب العيوب حرجة أو كبيرة أو صغيرة. — Check an analysis before trusting its conclusion.",
+  "when": "راجع هذا التحليل، هل الاستنتاج صحيح، قبل تسليم توصية / verifying a completed analysis or recommendation",
+  "how": "1) Extract the original conditions: requirements, decision criteria, constraints on scope, time, cost and risk. 2) Reconstruct the proposed reasoning as numbered steps. 3) Build a traceability matrix: each condition against the step that satisfies it, or a gap. 4) Class every assumption: given (explicit in the source), verified (supported by cited evidence), deduced (follows from supported premises), invented (needed by the answer but unsupported), unknown (cannot be checked). 5) Test each link for leaps, circularity and confusing correlation with cause. 6) Test sensitivity: which assumption, if false, flips the conclusion. 7) Rate findings: critical reverses the conclusion or makes it unknown, major narrows or removes support, minor is presentation. 8) Report the matrix, findings and a corrected or qualified conclusion. Full original skill(s) with license: vendor/kosif-atlas/skills/2215-majestic-reasoning/8357-reasoning-verifier.",
+  "params": "request, analysis, evidence",
+  "install": "mkdir -p ~/.claude/skills && cp -r .claude/skills/kosif-superpowers/vendor/kosif-atlas/skills/2215-majestic-reasoning/8357-reasoning-verifier ~/.claude/skills/reasoning-verifier",
+  "requires": [],
+  "license": "card in our own words; the original skill folders are copied verbatim with their MIT license and SOURCE.md under vendor/kosif-atlas",
+  "proof": [
+   "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/2215-majestic-reasoning/8357-reasoning-verifier"
+  ],
+  "proof_scope": "url",
+  "styles": [],
+  "tags": [
+   "reasoning check",
+   "traceability",
+   "assumptions",
+   "verification",
+   "تدقيق الاستدلال",
+   "الافتراضات"
+  ],
+  "section": "التخطيط والمواصفات — Planning, specs & decisions",
+  "source": "KOSIF Atlas exhaustive pass 2026-10-23, batch batch5-mind (https://github.com/kosif199022-jpg/kosif-atlas @ 99bb108d): majestic-reasoning/reasoning-verifier (#8357) · SKILL.md read in full as inert text",
+  "atlas": {
+   "ids": [
+    "8357"
+   ],
+   "examples": [
+    {
+     "id": "8357",
+     "plugin": "majestic-reasoning",
+     "skill": "reasoning-verifier",
+     "url": "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/2215-majestic-reasoning/8357-reasoning-verifier"
+    }
+   ],
+   "theme": "planning-specs",
+   "risk_notes": "Method guidance only; no Atlas code imported or executed.",
+   "kosif_overlap_ids": [
+    "THINK-18",
+    "PROD-02"
+   ],
+   "stage": "extracted",
+   "verified_by": "atlas-pass-20261023-batch5-mind.json",
+   "skill_md_sha256": {
+    "8357": "2cd10758d428d0bc2f1cb23300230adcdbb9cc359c46da5076670922d5261d3e"
+   },
+   "vendored": [
+    "vendor/kosif-atlas/skills/2215-majestic-reasoning/8357-reasoning-verifier"
+   ]
+  }
+ },
+ {
+  "id": "AMIND-74",
+  "family": "atlas-mind",
+  "domain": "mind",
+  "name_ar": "استدل ولا تردد: الموروث يصف ما هو كائن ولا يبرر نفسه، فأعد اشتقاق القرارات التي تعيش على السابقة",
+  "name_en": "Reason, don't recite: inherited content describes what is and does not justify itself, so re-derive decisions coasting on precedent",
+  "status": "documented",
+  "what": "مصحح انحراف: البنية الموجودة والقواعد المكتوبة والتعليقات دليل على الحال، لا سلطة تبرر نفسها. القاعدة التي سندها الوحيد 'هكذا هي' تستحق التحدي، والعرف الذي يستطيع أحد أن يشرح سببه الحي يختلف عن القصور الذاتي، وغياب الشيء اليوم لا يعني أنه خارج النطاق. — Re-anchor on reasons, not precedent.",
+  "when": "لماذا هي هكذا، 'لأننا دائمًا نفعل ذلك'، نسخ نمط قديم دون فهم / decisions justified only by precedent",
+  "how": "1) If the project states its own rule about challenging precedent, re-anchor that first. 2) For each inherited rule, boundary or convention ask what live reason supports it; descriptive support only ('the code does it') earns a challenge. 3) Distinguish a live rationale someone can state from inertia. 4) Do not dismiss a concern because it is absent today. 5) Re-derive the decision from the current problem; often it confirms the precedent, which is fine and should be said. 6) For shared standards, raise a challenge with the owner instead of diverging locally. 7) Do not treat challenge as rejection and do not invent a finding where the precedent stands on a live reason; correct forward and report. Full original skill(s) with license: vendor/kosif-atlas/skills/2431-discipline/9420-reason-dont-recite.",
+  "params": "decision or rule under review",
+  "install": "mkdir -p ~/.claude/skills && cp -r .claude/skills/kosif-superpowers/vendor/kosif-atlas/skills/2431-discipline/9420-reason-dont-recite ~/.claude/skills/reason-dont-recite",
+  "requires": [],
+  "license": "card in our own words; the original skill folders are copied verbatim with their MIT license and SOURCE.md under vendor/kosif-atlas",
+  "proof": [
+   "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/2431-discipline/9420-reason-dont-recite"
+  ],
+  "proof_scope": "url",
+  "styles": [],
+  "tags": [
+   "first principles",
+   "precedent",
+   "convention",
+   "re-derive",
+   "التفكير من الأساس",
+   "الموروث"
+  ],
+  "section": "التخطيط والمواصفات — Planning, specs & decisions",
+  "source": "KOSIF Atlas exhaustive pass 2026-10-23, batch batch5-mind (https://github.com/kosif199022-jpg/kosif-atlas @ 99bb108d): discipline/reason-dont-recite (#9420) · SKILL.md read in full as inert text",
+  "atlas": {
+   "ids": [
+    "9420"
+   ],
+   "examples": [
+    {
+     "id": "9420",
+     "plugin": "discipline",
+     "skill": "reason-dont-recite",
+     "url": "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/2431-discipline/9420-reason-dont-recite"
+    }
+   ],
+   "theme": "planning-specs",
+   "risk_notes": "Method guidance only; no Atlas code imported or executed.",
+   "kosif_overlap_ids": [
+    "AMIND-49",
+    "THINK-11"
+   ],
+   "stage": "extracted",
+   "verified_by": "atlas-pass-20261023-batch5-mind.json",
+   "skill_md_sha256": {
+    "9420": "06b3513689f1be9061da76bad76920cf84a3deec1f05b8ec4b3633cea8cc07d3"
+   },
+   "vendored": [
+    "vendor/kosif-atlas/skills/2431-discipline/9420-reason-dont-recite"
+   ]
+  }
+ },
+ {
+  "id": "AMIND-75",
+  "family": "atlas-mind",
+  "domain": "mind",
+  "name_ar": "عصف ذهني بقدر الحاجة: فرز بسيط أو مضغوط أو كامل، وكبسولة قرار من خمسة أسطر، وفحص سياق رخيص قبل الأسئلة",
+  "name_en": "Brainstorm only as much as needed: minimal, compact or full triage, a five-line decision capsule, and a cheap context preflight before questions",
+  "status": "documented",
+  "what": "اختر أقل قدر من عمل التصميم يزيل عدم اليقين المهم؛ العمل الروتيني لا يتحول إلى مقابلة. العمل الآلي يُسجل ويُنفذ، والمحدود بافتراض مهم ينتج كبسولة قصيرة، والكامل فقط للعمل الشامل أو الواجهات العامة أو الترحيل أو الأمان أو الكلفة أو الهدف الغامض. — Default-and-proceed design thinking.",
+  "when": "فكّر في هذا قبل البناء، brainstorm، ما البدائل، قبل أي ميزة جديدة / thinking a change through before building",
+  "how": "1) Cheap preflight: glob the project for design docs, sources and config (README and LICENSE do not count); read the latest one or two design docs and recent commits if relevant, or say it is greenfield. 2) Triage: minimal (mechanical, no design decision: record outcome, convention, the direct check, proceed), compact (a material default or small compatibility risk), full (cross-cutting, public interface, persistence or migration, security or privacy, external cost, unclear goal). 3) Search memory and the repo once for an existing decision or convention and reuse it when it settles the choice. 4) Set material defaults and proceed; ask one structured question with 2 or 3 options only for a goal-defining or hard-to-reverse fork evidence cannot settle. 5) For full triage compare only genuinely distinct alternatives on the relevant axes. 6) Write the capsule: outcome, material defaults and non-goals, repository evidence, remaining risk, handoff. 7) Standalone brainstorming never edits code; it suggests the next step. Full original skill(s) with license: vendor/kosif-atlas/skills/1397-brainstorm/3333-brainstorm, vendor/kosif-atlas/skills/3606-hotl/14485-brainstorming.",
+  "params": "request, repository",
+  "install": "mkdir -p ~/.claude/skills && cp -r .claude/skills/kosif-superpowers/vendor/kosif-atlas/skills/1397-brainstorm/3333-brainstorm ~/.claude/skills/brainstorm ; mkdir -p ~/.claude/skills && cp -r .claude/skills/kosif-superpowers/vendor/kosif-atlas/skills/3606-hotl/14485-brainstorming ~/.claude/skills/brainstorming",
+  "requires": [],
+  "license": "card in our own words; the original skill folders are copied verbatim with their MIT license and SOURCE.md under vendor/kosif-atlas",
+  "proof": [
+   "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/1397-brainstorm/3333-brainstorm",
+   "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/3606-hotl/14485-brainstorming"
+  ],
+  "proof_scope": "url",
+  "styles": [],
+  "tags": [
+   "brainstorm",
+   "design decision",
+   "triage",
+   "defaults",
+   "عصف ذهني",
+   "قرار التصميم"
+  ],
+  "section": "التخطيط والمواصفات — Planning, specs & decisions",
+  "source": "KOSIF Atlas exhaustive pass 2026-10-23, batch batch5-mind (https://github.com/kosif199022-jpg/kosif-atlas @ 99bb108d): brainstorm/brainstorm (#3333); hotl/brainstorming (#14485) · SKILL.md read in full as inert text",
+  "atlas": {
+   "ids": [
+    "3333",
+    "14485"
+   ],
+   "examples": [
+    {
+     "id": "3333",
+     "plugin": "brainstorm",
+     "skill": "brainstorm",
+     "url": "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/1397-brainstorm/3333-brainstorm"
+    },
+    {
+     "id": "14485",
+     "plugin": "hotl",
+     "skill": "brainstorming",
+     "url": "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/3606-hotl/14485-brainstorming"
+    }
+   ],
+   "theme": "planning-specs",
+   "risk_notes": "Method guidance only; no Atlas code imported or executed.",
+   "kosif_overlap_ids": [
+    "THINK-02",
+    "AMIND-47"
+   ],
+   "stage": "extracted",
+   "verified_by": "atlas-pass-20261023-batch5-mind.json",
+   "skill_md_sha256": {
+    "3333": "f000e218eca720d03de7b1c87b3b89a7cb7904b36c6288902d1a8be5693e3c75",
+    "14485": "e76db7491a418c833489179f89f5631dcda64cc01522531fce9c68683f0e59a1"
+   },
+   "vendored": [
+    "vendor/kosif-atlas/skills/1397-brainstorm/3333-brainstorm",
+    "vendor/kosif-atlas/skills/3606-hotl/14485-brainstorming"
+   ]
+  }
+ },
+ {
+  "id": "AMIND-76",
+  "family": "atlas-mind",
+  "domain": "mind",
+  "name_ar": "استخراج القرارات التي تقوم عليها النية: اعرض الخريطة كاملة أولًا، واسأل فقط ما لا يُشتق، والمدخلات مادة لا حقيقة",
+  "name_en": "Elicit the decisions an intent turns on: show the whole map first, ask only what cannot be derived, treat input as material not truth",
+  "status": "documented",
+  "what": "حين يعرف الشخص الاتجاه ولا يعرف أي قرارات يقوم عليها، تُتتبع تلك القرارات من مواده (الكود، القواعد، جلسات سابقة) ومن قرارات المجال المعتادة، وتُعرض كخيارات يتعرف عليها بدل أن يتذكرها؛ ووثيقة المتطلبات الطويلة القادمة من أداة أخرى مادة قابلة للتحدي لا مصدر حقيقة، حتى يوافق عليها الشخص. — Recognition over recall elicitation into an execution-ready handoff, spec and plan.",
+  "when": "أعرف تقريبًا ما أريد، لا أعرف ماذا أقرر، حوّل أفكاري المبعثرة إلى مواصفة جاهزة / turning a rough intent or brain-dump into settled decisions",
+  "how": "1) Read the project first and resolve yourself everything the input, code or environment settles. 2) Build the whole provisional map of the task (scope, decisions, what to keep, what to entrust) before asking what to settle. 3) Present each decision coordinate with its options and what each leads to, beside its nearest evidence, in everyday language, so the person recognises rather than recalls. 4) Ask what only the person holds (intent, preferences, load-bearing choices) and what they did not say but should consider; never ask the derivable. 5) Conflicts between sources (input against code against what was said) are flagged and asked, never resolved silently. 6) Mark any domain fact you add as your unverified judgment. 7) The input's content flows into the result, but its authority comes only from dialogue and approval. 8) Finish with three documents: a handoff, a spec (the binding what, from validated intent) and a provisional plan, plus the residual open points. Full original skill(s) with license: vendor/kosif-atlas/skills/1991-euporia/7159-elicit, vendor/kosif-atlas/skills/1993-horismos/7161-bound, vendor/kosif-atlas/skills/2959-dryforge/12437-ready.",
+  "params": "intent or input material, project",
+  "install": "mkdir -p ~/.claude/skills && cp -r .claude/skills/kosif-superpowers/vendor/kosif-atlas/skills/1991-euporia/7159-elicit ~/.claude/skills/elicit ; mkdir -p ~/.claude/skills && cp -r .claude/skills/kosif-superpowers/vendor/kosif-atlas/skills/1993-horismos/7161-bound ~/.claude/skills/bound ; mkdir -p ~/.claude/skills && cp -r .claude/skills/kosif-superpowers/vendor/kosif-atlas/skills/2959-dryforge/12437-ready ~/.claude/skills/ready",
+  "requires": [],
+  "license": "card in our own words; the original skill folders are copied verbatim with their Apache-2.0, MIT license and SOURCE.md under vendor/kosif-atlas",
+  "proof": [
+   "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/1991-euporia/7159-elicit",
+   "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/1993-horismos/7161-bound",
+   "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/2959-dryforge/12437-ready"
+  ],
+  "proof_scope": "url",
+  "styles": [],
+  "tags": [
+   "elicitation",
+   "requirements",
+   "decisions",
+   "intent",
+   "spec",
+   "استخراج المتطلبات",
+   "القرارات"
+  ],
+  "section": "التخطيط والمواصفات — Planning, specs & decisions",
+  "source": "KOSIF Atlas exhaustive pass 2026-10-23, batch batch5-mind (https://github.com/kosif199022-jpg/kosif-atlas @ 99bb108d): euporia/elicit (#7159); horismos/bound (#7161); dryforge/ready (#12437) · SKILL.md read in full as inert text",
+  "atlas": {
+   "ids": [
+    "7159",
+    "7161",
+    "12437"
+   ],
+   "examples": [
+    {
+     "id": "7159",
+     "plugin": "euporia",
+     "skill": "elicit",
+     "url": "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/1991-euporia/7159-elicit"
+    },
+    {
+     "id": "7161",
+     "plugin": "horismos",
+     "skill": "bound",
+     "url": "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/1993-horismos/7161-bound"
+    },
+    {
+     "id": "12437",
+     "plugin": "dryforge",
+     "skill": "ready",
+     "url": "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/2959-dryforge/12437-ready"
+    }
+   ],
+   "theme": "planning-specs",
+   "risk_notes": "Method guidance only; no Atlas code imported or executed.",
+   "kosif_overlap_ids": [
+    "AMIND-47",
+    "THINK-02"
+   ],
+   "stage": "extracted",
+   "verified_by": "atlas-pass-20261023-batch5-mind.json",
+   "skill_md_sha256": {
+    "7159": "a0df1e32eb172ce82598c669f2492c1a9e136ca7a51b512d50a9a7be5563e41f",
+    "7161": "15b1ba13ecd1a5550617234f75a2e278b5d6de7182f51768239acaec30123f85",
+    "12437": "938eea8536a55cbb68df983b76a0af08794fea7637960416224b11d160752b6b"
+   },
+   "vendored": [
+    "vendor/kosif-atlas/skills/1991-euporia/7159-elicit",
+    "vendor/kosif-atlas/skills/1993-horismos/7161-bound",
+    "vendor/kosif-atlas/skills/2959-dryforge/12437-ready"
+   ]
+  }
+ },
+ {
+  "id": "AMIND-77",
+  "family": "atlas-mind",
+  "domain": "mind",
+  "name_ar": "اختيار مسار تنفيذ الوكلاء: مالك واحد لكل خانة (المواصفة، انضباط التنفيذ، المراجعة، أمان الكود، حوكمة الإعداد)",
+  "name_en": "Choose agent execution rails: one owner per slot (spec, execution discipline, review, code security, setup governance)",
+  "status": "documented",
+  "what": "أطر العمل الجاهزة للوكلاء (Superpowers وSpec Kit وGSD وBMAD ووضع التخطيط المدمج) تتصارع إذا ادعى اثنان منها نفس الخانة على نفس ملفات الحالة؛ يجرد المثبت، ويسأل ثلاثة أسئلة، ويعين مالكًا واحدًا لكل خانة، ويوصل المواصفات والمهام وتعريف الإنجاز بها. — Avoid two frameworks fighting over planning or execution.",
+  "when": "أي إطار عمل للوكلاء نستخدم، إطاران مثبتان يتعارضان، إعداد فريق لاستخدام الوكلاء / choosing or combining agentic coding frameworks",
+  "how": "1) Inventory what is installed (plugin list, .claude, .specify, .planning, .gsd, _bmad) and flag any slot with two owners. 2) Ask: team size and seniority; the main failure today (wrong thing built, broken code, context loss, review overload); one agent tool or several. 3) Assign one owner per slot: spec and plan, execution discipline (TDD, review, debugging, worktrees), review, security review of code, governance of the agent setup. 4) Typical picks: a team new to agents uses built-in plan mode with a feature workflow plus a light spec skill; quality problems call for an execution-discipline framework with enforced tests and two-stage review; several agent tools across an organisation call for a tool-agnostic spec format; a solo builder on long projects needs context-rot control and milestones; enterprises with role handoffs pair a structured spec framework with an execution one. 5) Remove or disable the losing owner of a contested slot. 6) Wire the specs, tasks and definition of done into the chosen rail. 7) Note that generic coding skills often add little on top of a strong model, so measure before adding more. Full original skill(s) with license: vendor/kosif-atlas/skills/3046-adlc-build/13093-execution-rail-selection.",
+  "params": "installed frameworks, team context",
+  "install": "mkdir -p ~/.claude/skills && cp -r .claude/skills/kosif-superpowers/vendor/kosif-atlas/skills/3046-adlc-build/13093-execution-rail-selection ~/.claude/skills/execution-rail-selection",
+  "requires": [
+   "claude:tools"
+  ],
+  "license": "card in our own words; the original skill folders are copied verbatim with their MIT license and SOURCE.md under vendor/kosif-atlas",
+  "proof": [
+   "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/3046-adlc-build/13093-execution-rail-selection"
+  ],
+  "proof_scope": "url",
+  "styles": [],
+  "tags": [
+   "agent frameworks",
+   "Superpowers",
+   "Spec Kit",
+   "execution rail",
+   "أطر الوكلاء"
+  ],
+  "section": "التخطيط والمواصفات — Planning, specs & decisions",
+  "source": "KOSIF Atlas exhaustive pass 2026-10-23, batch batch5-mind (https://github.com/kosif199022-jpg/kosif-atlas @ 99bb108d): adlc-build/execution-rail-selection (#13093) · SKILL.md read in full as inert text",
+  "atlas": {
+   "ids": [
+    "13093"
+   ],
+   "examples": [
+    {
+     "id": "13093",
+     "plugin": "adlc-build",
+     "skill": "execution-rail-selection",
+     "url": "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/3046-adlc-build/13093-execution-rail-selection"
+    }
+   ],
+   "theme": "planning-specs",
+   "risk_notes": "Method guidance only; no Atlas code imported or executed.",
+   "kosif_overlap_ids": [
+    "AGENT-23",
+    "SELF-31"
+   ],
+   "stage": "extracted",
+   "verified_by": "atlas-pass-20261023-batch5-mind.json",
+   "skill_md_sha256": {
+    "13093": "4e540fc2e4e15423c785bc4ddcc4ed0f40ed4b9e0524a8b82b23eecad16d52ed"
+   },
+   "vendored": [
+    "vendor/kosif-atlas/skills/3046-adlc-build/13093-execution-rail-selection"
+   ]
+  }
+ },
+ {
+  "id": "AMIND-78",
+  "family": "atlas-mind",
+  "domain": "mind",
+  "name_ar": "تقييم مهارة كدالة تحت الاختبار: تشغيل أعمى بوكيل جديد لكل حالة، وحكم منفصل يطبق المعيار، وسقاطة لا تقبل تراجع الدرجة",
+  "name_en": "Evaluate a skill like a function under test: a blind fresh agent per case, a separate judge applying the bar, and a ratchet that never accepts a lower score",
+  "status": "documented",
+  "what": "التقييم صادق فقط إذا كان أعمى: الوكيل المنفذ لا يحمل سياق المحادثة ولا يرى الناتج المتوقع. يحتاج ثلاثة مدخلات قبل البدء (مهارة حقيقية، حالة ذهبية واحدة على الأقل بمدخل فعلي، ومعيار لكل حالة يصف النتيجة الجيدة وروائح الفشل)، ثم حكمًا مستقلًا، ثم تعديلات تقودها الإخفاقات، مع مقارنة 'بالمهارة' و'بدونها' وحكمين ووسيط. — Honest skill evals and improvement loops.",
+  "when": "قيّم هذه المهارة، حسّن مهارة، هل المهارة تفيد أصلًا، درجة المهارة نزلت بعد التعديل / evaluating or improving a skill",
+  "how": "1) Settle three inputs or stop and say which is missing: a target that resolves to a real SKILL.md, at least one golden case with a concrete input the skill will really receive, and a bar per case stating what a good artifact achieves and which smells make it bad (not an exhaustive parts list, unless the skill is conformance-style). 2) Run each case blind in a fresh, context-free agent given only the input and the instruction to use the skill; never show it the bar. 3) Grade with a separate judge that applies judgment to the artifact against the bar; use two independent judges and take the median when scores matter. 4) Also run the same cases without the skill; a skill must show a positive delta or it is noise. 5) Grade transcripts too: flag unsupported claims and steps the skill pushed that were unnecessary. 6) Edit the skill from the failures, one change at a time, then rerun; if the score drops, roll back (a ratchet), so scores only rise. 7) Add one off-domain prompt to check it does not trigger where it should not. 8) Report per case: pass or fail, the evidence, the change made, before and after scores. Full original skill(s) with license: vendor/kosif-atlas/skills/360-skill-authoring/1290-eval-skills, vendor/kosif-atlas/skills/2212-majestic-misc/8301-skill-grader, vendor/kosif-atlas/skills/3601-skill-evolve/14445-skill-evolve.",
+  "params": "skill, golden cases, bar per case",
+  "install": "mkdir -p ~/.claude/skills && cp -r .claude/skills/kosif-superpowers/vendor/kosif-atlas/skills/360-skill-authoring/1290-eval-skills ~/.claude/skills/eval-skills ; mkdir -p ~/.claude/skills && cp -r .claude/skills/kosif-superpowers/vendor/kosif-atlas/skills/2212-majestic-misc/8301-skill-grader ~/.claude/skills/skill-grader ; mkdir -p ~/.claude/skills && cp -r .claude/skills/kosif-superpowers/vendor/kosif-atlas/skills/3601-skill-evolve/14445-skill-evolve ~/.claude/skills/skill-evolve",
+  "requires": [],
+  "license": "card in our own words; the original skill folders are copied verbatim with their MIT license and SOURCE.md under vendor/kosif-atlas",
+  "proof": [
+   "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/360-skill-authoring/1290-eval-skills",
+   "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/2212-majestic-misc/8301-skill-grader",
+   "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/3601-skill-evolve/14445-skill-evolve"
+  ],
+  "proof_scope": "url",
+  "styles": [],
+  "tags": [
+   "skill eval",
+   "golden cases",
+   "blind run",
+   "LLM judge",
+   "baseline",
+   "تقييم المهارة",
+   "تطوير المهارات"
+  ],
+  "section": "هندسة البرومبت والمهارات — Prompt, skill & plugin engineering",
+  "source": "KOSIF Atlas exhaustive pass 2026-10-23, batch batch6-mind (https://github.com/kosif199022-jpg/kosif-atlas @ 99bb108d): skill-authoring/eval-skills (#1290); majestic-misc/skill-grader (#8301); skill-evolve/skill-evolve (#14445) · SKILL.md read in full as inert text",
+  "atlas": {
+   "ids": [
+    "1290",
+    "8301",
+    "14445"
+   ],
+   "examples": [
+    {
+     "id": "1290",
+     "plugin": "skill-authoring",
+     "skill": "eval-skills",
+     "url": "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/360-skill-authoring/1290-eval-skills"
+    },
+    {
+     "id": "8301",
+     "plugin": "majestic-misc",
+     "skill": "skill-grader",
+     "url": "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/2212-majestic-misc/8301-skill-grader"
+    },
+    {
+     "id": "14445",
+     "plugin": "skill-evolve",
+     "skill": "skill-evolve",
+     "url": "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/3601-skill-evolve/14445-skill-evolve"
+    }
+   ],
+   "theme": "prompt-skill-engineering",
+   "risk_notes": "Method guidance only; no Atlas code imported or executed.",
+   "kosif_overlap_ids": [
+    "CHECK-21",
+    "CHECK-24",
+    "AGENT-27"
+   ],
+   "stage": "extracted",
+   "verified_by": "atlas-pass-20261023-batch6-mind.json",
+   "skill_md_sha256": {
+    "1290": "9717619a5ad9a00e1a95810e4682d63f5b5d608b9d402ab54f80374c8264b7b4",
+    "8301": "5d5638c4df4befc293186dbdf4d3ed5d6c50fa55dce477f9a7d79c043850f91e",
+    "14445": "a7e17a413f6a3b5c635fb4f327154fec9bb63ea564313e678ad9a631dacac059"
+   },
+   "vendored": [
+    "vendor/kosif-atlas/skills/360-skill-authoring/1290-eval-skills",
+    "vendor/kosif-atlas/skills/2212-majestic-misc/8301-skill-grader",
+    "vendor/kosif-atlas/skills/3601-skill-evolve/14445-skill-evolve"
+   ]
+  }
+ },
+ {
+  "id": "AMIND-79",
+  "family": "atlas-mind",
+  "domain": "mind",
+  "name_ar": "تأليف المهارات وإدارة مكتبتها: هل هي مهارة أصلًا، ووصف يقول متى لا ماذا، وإبقاء أو إصلاح أو حذف حسب الفرق المقاس",
+  "name_en": "Authoring skills and curating the library: is it a skill at all, a description that says when not what, and keep/fix/cut by measured delta",
+  "status": "documented",
+  "what": "المهارة ليست مجانية: المهارات المركزة الخاصة بالمؤسسة تفيد، والعامة كثيرًا لا تضيف شيئًا وقد تدفع الوكيل لعمل زائد، ومجموعات صغيرة من مهارتين أو ثلاث تتفوق على الحزم الكبيرة. قبل الكتابة: هل الأنسب مهارة أم مرجع أم سكربت أم prompt أم لا شيء؟ ثم وصف يبدأ بـ'Use when' ويذكر المواقف لا ملخص الخطوات، وإجراءات لا مقالات، وكشف تدريجي، وتحقق بالاستخدام. — Skill design and library hygiene.",
+  "when": "اكتب مهارة، حسّن وصف مهارة، المهارة لا تُستدعى أو تُستدعى خطأ، تنظيف مكتبة المهارات / writing skills or pruning a skill library",
+  "how": "1) Capability test: choose between a skill, a reference file, a script, a prompt, or nothing; a deterministic step belongs in a script, an always-relevant short rule in the context file. 2) Duplicate check: search existing names, descriptions and bodies for the same trigger and output; improve an existing skill rather than add one users cannot tell apart; split only when start conditions, workflow or deliverable really differ. 3) Description: when to use, not what it does; start with 'Use when', list situations and symptoms, front-load the trigger words, third person; a workflow summary in the description lets the agent act on the summary and skip the body. Respect length budgets (for example description up to about 500 characters, whole front matter about 1,024) and quote YAML only where needed. 4) Body: boundary and exclusions, required inputs, ordered steps with decision points, the output shape, a verification gate, links to resources only where needed; procedures and decision tables, not essays; examples show the problem, not the solution. 5) Progressive disclosure: keep SKILL.md short, move long material to references and scripts. 6) Encode what the model cannot know (conventions, thresholds, approval rules); generic advice the model already follows is cut. 7) Library test: positive delta on evals and natural triggering, keep; near-zero delta, cut or narrow to the org-specific part; no trigger on realistic prompts, fix the description; triggers on unrelated prompts, narrow it and add a negative case; negative delta or heavy token overhead, cut or rewrite; duplicates an installed framework, pick one owner. 8) After changes update routing indexes and any mirrors, then verify by use. Full original skill(s) with license: vendor/kosif-atlas/skills/360-skill-authoring/1291-write-skills, vendor/kosif-atlas/skills/2212-majestic-misc/8302-skill-structure, vendor/kosif-atlas/skills/3047-adlc-context/13105-skill-library-management, vendor/kosif-atlas/skills/3606-hotl/14498-skill-authoring, vendor/kosif-atlas/skills/2588-write-a-skill/9955-write-a-skill, vendor/kosif-atlas/skills/1543-toolkit-ops/4233-toolkit-skill-standards.",
+  "params": "skill or library",
+  "install": "mkdir -p ~/.claude/skills && cp -r .claude/skills/kosif-superpowers/vendor/kosif-atlas/skills/360-skill-authoring/1291-write-skills ~/.claude/skills/write-skills ; mkdir -p ~/.claude/skills && cp -r .claude/skills/kosif-superpowers/vendor/kosif-atlas/skills/2212-majestic-misc/8302-skill-structure ~/.claude/skills/skill-structure ; mkdir -p ~/.claude/skills && cp -r .claude/skills/kosif-superpowers/vendor/kosif-atlas/skills/3047-adlc-context/13105-skill-library-management ~/.claude/skills/skill-library-management ; mkdir -p ~/.claude/skills && cp -r .claude/skills/kosif-superpowers/vendor/kosif-atlas/skills/3606-hotl/14498-skill-authoring ~/.claude/skills/skill-authoring ; mkdir -p ~/.claude/skills && cp -r .claude/skills/kosif-superpowers/vendor/kosif-atlas/skills/2588-write-a-skill/9955-write-a-skill ~/.claude/skills/write-a-skill ; mkdir -p ~/.claude/skills && cp -r .claude/skills/kosif-superpowers/vendor/kosif-atlas/skills/1543-toolkit-ops/4233-toolkit-skill-standards ~/.claude/skills/toolkit-skill-standards",
+  "requires": [],
+  "license": "card in our own words; the original skill folders are copied verbatim with their MIT license and SOURCE.md under vendor/kosif-atlas",
+  "proof": [
+   "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/360-skill-authoring/1291-write-skills",
+   "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/2212-majestic-misc/8302-skill-structure",
+   "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/3047-adlc-context/13105-skill-library-management",
+   "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/3606-hotl/14498-skill-authoring",
+   "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/2588-write-a-skill/9955-write-a-skill",
+   "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/1543-toolkit-ops/4233-toolkit-skill-standards"
+  ],
+  "proof_scope": "url",
+  "styles": [],
+  "tags": [
+   "write a skill",
+   "SKILL.md",
+   "skill description",
+   "skill library",
+   "progressive disclosure",
+   "تأليف المهارات",
+   "مكتبة المهارات"
+  ],
+  "section": "هندسة البرومبت والمهارات — Prompt, skill & plugin engineering",
+  "source": "KOSIF Atlas exhaustive pass 2026-10-23, batch batch6-mind (https://github.com/kosif199022-jpg/kosif-atlas @ 99bb108d): skill-authoring/write-skills (#1291); majestic-misc/skill-structure (#8302); adlc-context/skill-library-management (#13105); hotl/skill-authoring (#14498); write-a-skill/write-a-skill (#9955); toolkit-ops/toolkit-skill-standards (#4233) · SKILL.md read in full as inert text",
+  "atlas": {
+   "ids": [
+    "1291",
+    "8302",
+    "13105",
+    "14498",
+    "9955",
+    "4233"
+   ],
+   "examples": [
+    {
+     "id": "1291",
+     "plugin": "skill-authoring",
+     "skill": "write-skills",
+     "url": "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/360-skill-authoring/1291-write-skills"
+    },
+    {
+     "id": "8302",
+     "plugin": "majestic-misc",
+     "skill": "skill-structure",
+     "url": "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/2212-majestic-misc/8302-skill-structure"
+    },
+    {
+     "id": "13105",
+     "plugin": "adlc-context",
+     "skill": "skill-library-management",
+     "url": "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/3047-adlc-context/13105-skill-library-management"
+    },
+    {
+     "id": "14498",
+     "plugin": "hotl",
+     "skill": "skill-authoring",
+     "url": "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/3606-hotl/14498-skill-authoring"
+    },
+    {
+     "id": "9955",
+     "plugin": "write-a-skill",
+     "skill": "write-a-skill",
+     "url": "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/2588-write-a-skill/9955-write-a-skill"
+    },
+    {
+     "id": "4233",
+     "plugin": "toolkit-ops",
+     "skill": "toolkit-skill-standards",
+     "url": "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/1543-toolkit-ops/4233-toolkit-skill-standards"
+    }
+   ],
+   "theme": "prompt-skill-engineering",
+   "risk_notes": "Method guidance only; no Atlas code imported or executed.",
+   "kosif_overlap_ids": [
+    "AGENT-25",
+    "PROMPT-22",
+    "CHECK-21"
+   ],
+   "stage": "extracted",
+   "verified_by": "atlas-pass-20261023-batch6-mind.json",
+   "skill_md_sha256": {
+    "1291": "8ff17e7af015fa7e2cbae662f7643f75607884917564b5fd84eb8e4972dda9bd",
+    "8302": "5f2cf93c446f7980f38468164861680f607ce4875c7f42e44619c570c6a5537e",
+    "13105": "a3a18e089c38daeefbbcede2e57cf53e99daae8ee970dfbe066bea0c302552ea",
+    "14498": "679ba5c6b5f41b9bdae5aadfbd8e171b905ebbb09e044ef1cfe046b9b927996f",
+    "9955": "be8f20e66309258034b82a7db5040b03798aa40546f9d387662c2bd86be23123",
+    "4233": "aaeb251bbbe2137b4576596d2f8898efcb97cefbbe234a7ba0a50a82185ae217"
+   },
+   "vendored": [
+    "vendor/kosif-atlas/skills/360-skill-authoring/1291-write-skills",
+    "vendor/kosif-atlas/skills/2212-majestic-misc/8302-skill-structure",
+    "vendor/kosif-atlas/skills/3047-adlc-context/13105-skill-library-management",
+    "vendor/kosif-atlas/skills/3606-hotl/14498-skill-authoring",
+    "vendor/kosif-atlas/skills/2588-write-a-skill/9955-write-a-skill",
+    "vendor/kosif-atlas/skills/1543-toolkit-ops/4233-toolkit-skill-standards"
+   ]
+  }
+ },
+ {
+  "id": "AMIND-80",
+  "family": "atlas-mind",
+  "domain": "mind",
+  "name_ar": "حوّل التصحيح المتكرر للوكيل إلى قاعدة في المكان الصحيح: ملف سياق أو مهارة أو قاعدة لمسار أو خطاف أو اختبار",
+  "name_en": "Turn a repeated correction into a rule in the right place: context file, skill, path rule, hook or test",
+  "status": "documented",
+  "what": "كل تصحيح يتكرر للوكيل عرف لم يُكتب في مكانه. القصير الدائم في ملف السياق، والإجراء متعدد الخطوات المستخدم أحيانًا في مهارة، والخاص بمجلد أو نوع ملف في قاعدة لمسار، وما يجب أن يحدث كل مرة في خطاف أو مدقق أو فحص CI، وخاصية الصحة في اختبار. إذا كان كسره مكلفًا فلا تعتمد على التعليمات وحدها. — Feedforward and feedback controls.",
+  "when": "الوكيل يكرر نفس الخطأ، 'نحن دائمًا نفعلها هكذا'، حوّل هذا إلى مهارة أو قاعدة / an agent keeps making the same mistake",
+  "how": "1) Collect two or three concrete examples of the mistake or desired behaviour. 2) Classify: short and always relevant goes in the context file; a multi-step procedure or occasional domain knowledge becomes a skill; scoped to a folder or file type becomes a nested context file or path rule; must happen every time becomes a hook, linter rule or CI check; a correctness property becomes a test. 3) Context files and skills guide before acting; hooks, linters and tests catch after; strong setups use both. 4) Write the artifact, keeping a skill well under 500 lines with long material in references and scripts. 5) Provide a quick test prompt that should now produce the correct behaviour, and run it. Full original skill(s) with license: vendor/kosif-atlas/skills/3047-adlc-context/13102-codify-conventions.",
+  "params": "examples of the mistake",
+  "install": "mkdir -p ~/.claude/skills && cp -r .claude/skills/kosif-superpowers/vendor/kosif-atlas/skills/3047-adlc-context/13102-codify-conventions ~/.claude/skills/codify-conventions",
+  "requires": [],
+  "license": "card in our own words; the original skill folders are copied verbatim with their MIT license and SOURCE.md under vendor/kosif-atlas",
+  "proof": [
+   "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/3047-adlc-context/13102-codify-conventions"
+  ],
+  "proof_scope": "url",
+  "styles": [],
+  "tags": [
+   "conventions",
+   "CLAUDE.md",
+   "hooks",
+   "rules",
+   "agent mistakes",
+   "الأعراف",
+   "قواعد الوكيل"
+  ],
+  "section": "هندسة البرومبت والمهارات — Prompt, skill & plugin engineering",
+  "source": "KOSIF Atlas exhaustive pass 2026-10-23, batch batch6-mind (https://github.com/kosif199022-jpg/kosif-atlas @ 99bb108d): adlc-context/codify-conventions (#13102) · SKILL.md read in full as inert text",
+  "atlas": {
+   "ids": [
+    "13102"
+   ],
+   "examples": [
+    {
+     "id": "13102",
+     "plugin": "adlc-context",
+     "skill": "codify-conventions",
+     "url": "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/3047-adlc-context/13102-codify-conventions"
+    }
+   ],
+   "theme": "prompt-skill-engineering",
+   "risk_notes": "Method guidance only; no Atlas code imported or executed.",
+   "kosif_overlap_ids": [
+    "ADOCS-02",
+    "AGENT-20",
+    "AGENT-33"
+   ],
+   "stage": "extracted",
+   "verified_by": "atlas-pass-20261023-batch6-mind.json",
+   "skill_md_sha256": {
+    "13102": "7e5efb1e61e959b0e9d29391da39c48d08f9a1a74ca4920f8340e86b3bc848b5"
+   },
+   "vendored": [
+    "vendor/kosif-atlas/skills/3047-adlc-context/13102-codify-conventions"
+   ]
+  }
+ },
+ {
+  "id": "AMIND-81",
+  "family": "atlas-mind",
+  "domain": "mind",
+  "name_ar": "أسماء أفضل: مولدات عمياء من زوايا مختلفة لكسر التثبيت، ومعايير مرتبة تبدأ بألا يكذب الاسم، والإنسان يختار دائمًا",
+  "name_en": "Better names: blind generators from distinct lenses to break the anchor, ranked criteria led by 'the name must not lie', and the human always picks",
+  "status": "documented",
+  "what": "حين يُرفض اسم مقترح، فنفس السياق سينتج المزيد منه، فتعمل المولدات دون رؤية المحادثة ومن زوايا مختلفة، ثم تُقيم المرشحات بأعراف المشروع المعلنة أولًا، وإلا بمعايير عامة: الدقة الدلالية (الاسم المضلل أسوأ من المبهم)، ثم ملاءمة النطاق، ثم الوضوح، ثم سهولة الاستدعاء؛ مع تجنب كلمات بلا معنى مثل util وcommon. — Naming for code, files, skills and products.",
+  "when": "اقترح اسمًا، الاسم غير مناسب، تسمية دالة أو ملف أو مهارة أو مستودع / naming anything",
+  "how": "1) If the project declares naming conventions (context file, rules, a standards source), score against those; a missing criterion goes into those conventions, not into this method. 2) Otherwise rank: semantic accuracy first (the name must not mislead about what the thing does), then scope fit (length scales with scope and lifetime; do not repeat what the package or type already says), comprehensibility (full intention-revealing words, allowing established short idioms), and recall or evocative value. 3) Ban empty words such as common, util, helper, manager, misc, and prefer singular base forms. 4) Generate candidates blind to the conversation from several lenses (what it does, what it returns, the domain term users say, a metaphor) so the rejected name does not anchor them. 5) Apply the syntactic layer last: casing and form for the language or platform. 6) Present a short scored list with the trade of each and a recommendation; never lock a name without the person choosing. Full original skill(s) with license: vendor/kosif-atlas/skills/2457-naming/9514-name-it-better, vendor/kosif-atlas/skills/2650-programming-tasuke/10067-naming-rule.",
+  "params": "thing to name, context",
+  "install": "mkdir -p ~/.claude/skills && cp -r .claude/skills/kosif-superpowers/vendor/kosif-atlas/skills/2457-naming/9514-name-it-better ~/.claude/skills/name-it-better ; mkdir -p ~/.claude/skills && cp -r .claude/skills/kosif-superpowers/vendor/kosif-atlas/skills/2650-programming-tasuke/10067-naming-rule ~/.claude/skills/naming-rule",
+  "requires": [],
+  "license": "card in our own words; the original skill folders are copied verbatim with their Apache-2.0, MIT license and SOURCE.md under vendor/kosif-atlas",
+  "proof": [
+   "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/2457-naming/9514-name-it-better",
+   "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/2650-programming-tasuke/10067-naming-rule"
+  ],
+  "proof_scope": "url",
+  "styles": [],
+  "tags": [
+   "naming",
+   "variable names",
+   "domain language",
+   "التسمية",
+   "أسماء"
+  ],
+  "section": "هندسة البرومبت والمهارات — Prompt, skill & plugin engineering",
+  "source": "KOSIF Atlas exhaustive pass 2026-10-23, batch batch6-mind (https://github.com/kosif199022-jpg/kosif-atlas @ 99bb108d): naming/name-it-better (#9514); programming-tasuke/naming-rule (#10067) · SKILL.md read in full as inert text",
+  "atlas": {
+   "ids": [
+    "9514",
+    "10067"
+   ],
+   "examples": [
+    {
+     "id": "9514",
+     "plugin": "naming",
+     "skill": "name-it-better",
+     "url": "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/2457-naming/9514-name-it-better"
+    },
+    {
+     "id": "10067",
+     "plugin": "programming-tasuke",
+     "skill": "naming-rule",
+     "url": "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/2650-programming-tasuke/10067-naming-rule"
+    }
+   ],
+   "theme": "prompt-skill-engineering",
+   "risk_notes": "Method guidance only; no Atlas code imported or executed.",
+   "kosif_overlap_ids": [],
+   "stage": "extracted",
+   "verified_by": "atlas-pass-20261023-batch6-mind.json",
+   "skill_md_sha256": {
+    "9514": "80e68d90bdbe7544b0c1d3b0a71ccc254a30d8a237045397d91f4e1c70274461",
+    "10067": "3a2ab2d0f7fecab2e5f63be75d009094f3078b7ff6471d97cb0d47ede30cc4ec"
+   },
+   "vendored": [
+    "vendor/kosif-atlas/skills/2457-naming/9514-name-it-better",
+    "vendor/kosif-atlas/skills/2650-programming-tasuke/10067-naming-rule"
+   ]
+  }
+ },
+ {
+  "id": "AMIND-82",
+  "family": "atlas-mind",
+  "domain": "mind",
+  "name_ar": "حلقة تحسين بسقاطة يقودها الهدف: حدد النهاية لا الطريق، وافصل الحكم عن المنفذ، واستبدل الوكيل العالق",
+  "name_en": "Goal-driven ratchet optimisation loop: define the end, not the route; separate judge from worker; replace a stuck worker",
+  "status": "documented",
+  "what": "نظام متعدد الوكلاء للتحسين المستمر: يُعرَّف ما يعتبر إنجازًا بشروط يمكن فحصها آليًا، فالرئيس يقيّم فقط ولا يعمل، والمنفذون يعملون ولا يقيّمون أنفسهم، وكل تحسن يُثبت ولا يُقبل تراجع، ومن يتوقف أو يدعي الانتهاء دون بلوغ المعيار يُستبدل بآخر جديد. — Independent evaluation, kept gains, restarted workers.",
+  "when": "حسّن الأداء حتى يصل لرقم، مهمة تحسين طويلة بوكلاء، الوكيل يدعي الانتهاء والنتيجة لم تتحسن / long optimisation tasks with agents",
+  "how": "1) Clarify the goal with three questions: what final result, how it is judged (machine-checkable conditions), what the agent may and may not touch. 2) Gather context: the files and stack, existing tests, benchmarks and CI to reuse, and any reference implementation for differential testing, the strongest criterion. 3) Design criteria as Given (input assumptions), When (the trigger), Then (output properties) plus invariants, and ask what result would look good but not be. 4) The master only evaluates against the criteria; workers only do the work and never grade themselves. 5) Keep a score; accept a change only when it improves without breaking invariants, otherwise revert (the ratchet). 6) Kill and restart a worker that goes quiet or claims done below the bar, with the current best state and the failure notes. 7) Stop at the goal, a budget, or a plateau, and report the trajectory. Full original skill(s) with license: vendor/kosif-atlas/skills/3600-ratchet/14444-ratchet.",
+  "params": "goal, criteria, scope, budget",
+  "install": "mkdir -p ~/.claude/skills && cp -r .claude/skills/kosif-superpowers/vendor/kosif-atlas/skills/3600-ratchet/14444-ratchet ~/.claude/skills/ratchet",
+  "requires": [],
+  "license": "card in our own words; the original skill folders are copied verbatim with their MIT license and SOURCE.md under vendor/kosif-atlas",
+  "proof": [
+   "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/3600-ratchet/14444-ratchet"
+  ],
+  "proof_scope": "url",
+  "styles": [],
+  "tags": [
+   "optimisation loop",
+   "multi-agent",
+   "ratchet",
+   "evaluation",
+   "goal-driven",
+   "حلقة التحسين",
+   "وكلاء متعددون"
+  ],
+  "section": "هندسة البرومبت والمهارات — Prompt, skill & plugin engineering",
+  "source": "KOSIF Atlas exhaustive pass 2026-10-23, batch batch6-mind (https://github.com/kosif199022-jpg/kosif-atlas @ 99bb108d): ratchet/ratchet (#14444) · SKILL.md read in full as inert text",
+  "atlas": {
+   "ids": [
+    "14444"
+   ],
+   "examples": [
+    {
+     "id": "14444",
+     "plugin": "ratchet",
+     "skill": "ratchet",
+     "url": "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/3600-ratchet/14444-ratchet"
+    }
+   ],
+   "theme": "prompt-skill-engineering",
+   "risk_notes": "Method guidance only; no Atlas code imported or executed.",
+   "kosif_overlap_ids": [
+    "ACODE-14",
+    "AGENT-16"
+   ],
+   "stage": "extracted",
+   "verified_by": "atlas-pass-20261023-batch6-mind.json",
+   "skill_md_sha256": {
+    "14444": "7018d6f7f6810c2710c31fd235b43fe6d4d6c74f1ff368ec90a73401ee6dfd71"
+   },
+   "vendored": [
+    "vendor/kosif-atlas/skills/3600-ratchet/14444-ratchet"
+   ]
+  }
  }
 ]

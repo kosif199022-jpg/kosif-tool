@@ -1,0 +1,24 @@
+{
+ "schema": "kosif.atlas-5000.mining-receipt.v1",
+ "date": "2026-10-23",
+ "batch": "batch7-build",
+ "atlas": "https://github.com/kosif199022-jpg/kosif-atlas",
+ "atlas_commit": "99bb108dff169880dd531359f474a01b73c4b233",
+ "powers_added": 1,
+ "sources_read": 1,
+ "scope_note": "Each SKILL.md was read in full as inert text and its method summarised in our own words on the card; with the owner's approval the whole skill folder (text files only) is also copied verbatim with its license into vendor/kosif-atlas. Nothing from the Atlas was executed. Only READ_ONLY_OK, permissive-license, no-risk-flag skills were used.",
+ "sources": [
+  {
+   "atlas_id": 2261,
+   "plugin": "set-up-installers",
+   "skill": "set-up-installers",
+   "license": "MIT",
+   "theme": "web-frameworks",
+   "path": "skills/977-set-up-installers/2261-set-up-installers",
+   "skill_md_sha256": "5bbd4dde6a52031a8b1e759e2143692672194aea6e5d079b0be24a19d7ece6ae",
+   "bytes": 28856,
+   "read_in_full": true,
+   "power": "ABUILD-60"
+  }
+ ]
+}
