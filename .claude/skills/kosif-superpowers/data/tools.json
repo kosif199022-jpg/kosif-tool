@@ -12099,7 +12099,7 @@
     "optional": [],
     "network": false
    },
-   "safety": "reads-local-data-writes-files",
+   "safety": "writes-files",
    "consent": "Only reads paths supplied by the user or explicit workspace; outputs a new JSON report and refuses overwrites. Never uploads photos.",
    "limits": "The four named Gutenberg chapters were reviewed; the 200-index is not fully read. HSV is not Munsell HVC. Pixel changes do not establish beauty, facial identity, Arabic spelling or semantic faithfulness.",
    "tests": [
