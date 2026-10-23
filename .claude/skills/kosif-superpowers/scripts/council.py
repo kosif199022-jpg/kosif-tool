@@ -1,5 +1,9 @@
 #!/usr/bin/env python3
-"""KOSIF Pro Council — a five-member adversarial council for USIP Pro mode (USIP v5.5, appendix A13).
+"""KOSIF Pro Council — an adversarial council for USIP Pro mode (USIP v5.5, appendices A13 and A30).
+
+By default five opposing members; with --seats N (5–15) a task-fitted council drawn from the 100 unique personas of
+data/council_100.json (at least one per evidence lane, the rest by request relevance), with --personas P001,P044 a
+hand-picked one, and with --full all 100 (only when the user asks for the whole council).
 
 The script does not call any model. It plans the council, writes the exact prompt for every member and round,
 checks what each member returned, and computes a deterministic verdict with a receipt. The members are run by
@@ -8,7 +12,9 @@ simulated voices in one context, which the minutes then label SIMULATED.
 
 From the repository root:
   python3 .claude/skills/kosif-superpowers/scripts/council.py plan "<the request>" --dir out/<work>/council [--from-brief brief.json] [--options A,B,C]
+        [--seats 7 | --personas P001,P022 | --full] [--personas-file data/council_100.json]
         [--roster data/experts_500.json | --no-roster]   (default: the roster index is consulted when the file exists)
+  python3 .claude/skills/kosif-superpowers/scripts/council.py personas [--find "<the request>"] [--lane guardrails] [--id P021] [--seats 7]
   python3 .claude/skills/kosif-superpowers/scripts/council.py prompts --dir out/<work>/council --round 1
   python3 .claude/skills/kosif-superpowers/scripts/council.py ingest --dir out/<work>/council --round 1 --member M1 --file m1_r1.json [--simulated]
   python3 .claude/skills/kosif-superpowers/scripts/council.py status --dir out/<work>/council
@@ -41,6 +47,13 @@ import _secrets  # noqa: E402
 
 SCHEMA = "kosif.council.v1"
 DEFAULT_ROSTER = HERE.parent / "data" / "experts_500.json"
+DEFAULT_PERSONAS = HERE.parent / "data" / "council_100.json"
+PERSONAS_SCHEMA = "kosif.council-personas.v1"
+LANES = ("cross_domain", "verification", "feasibility", "audience", "guardrails")
+MIN_SEATS, MAX_SEATS = 5, 15
+# the brief's primary deliverable as a persona domain
+PRIMARY_DOMAIN = {"reverse": "code", "text": "document"}
+DIGEST_OVER = 9  # above this many members, later rounds show the others as a digest, not their full JSON
 ROSTER_SCHEMA = "kosif.experts-index.v1"
 PER_MEMBER = 3
 # Lane affinity: keywords in a persona card and sectors of the charter that suit each evidence lane.
@@ -223,9 +236,9 @@ def consult_index(idx: dict, request: str, primary: str, topics: list, members: 
         # a consent/regulated card needs the request itself to name its role; guardrail cards need ordinary relevance
         pool = [c for c in cards if (c["sensitive"] and c["core"] > 0) or (not c["sensitive"] and c["rel"] > 0 and c["lane"]["guardrails"] > 0)]
         pool.sort(key=lambda c: (-(score(c, "guardrails") + (4 if c["sensitive"] else 0)), c["n"]))
-        chosen = [c for c in pool if c["sector"] != GOVERNANCE_SECTOR][:PER_MEMBER - 1]
+        chosen = [c for c in pool if c["sector"] != GOVERNANCE_SECTOR and c["n"] not in taken][:PER_MEMBER - 1]
         regulated = any(c["sensitive"] == "regulated" for c in chosen)
-        gov = [c for c in cards if c["sector"] == GOVERNANCE_SECTOR]
+        gov = [c for c in cards if c["sector"] == GOVERNANCE_SECTOR and c["n"] not in taken]
         want = "قانون" if regulated else "مخاطر"  # legal counsel for regulated topics, otherwise the risk manager
         gov.sort(key=lambda c: (-(c["lane"]["guardrails"] + (5 if want in ci.norm(c["name_ar"]) else 0)), c["n"]))
         chosen += gov[:1]
@@ -262,14 +275,44 @@ def cmd_plan(a) -> dict:
     if not options:
         options = ["A", "B", "C"]
     primary = primary_of(a.request, brief)
-    members = roster(primary)
+    topics = [str(t) for t in ((brief or {}).get("analysis") or {}).get("topics") or []]
+    picked = [x.strip().upper() for x in (a.personas or "").split(",") if x.strip()]
+    if sum(bool(x) for x in (a.seats, picked, a.full)) > 1:
+        raise CouncilError("MODE_CONFLICT", "choose one of --seats, --personas or --full")
+    mode, personas_meta = "classic5", None
+    if a.seats or picked or a.full:
+        ppath = Path(a.personas_file) if a.personas_file else DEFAULT_PERSONAS
+        if not ppath.exists():
+            raise CouncilError("PERSONAS_MISSING", f"{ppath} does not exist")
+        pool = load_personas(ppath)
+        if a.full:
+            mode, chosen = "full", select_personas(pool, a.request, primary, len(pool), topics)
+        elif picked:
+            byid = {p["id"]: p for p in pool}
+            bad = [x for x in picked if x not in byid]
+            if bad:
+                raise CouncilError("UNKNOWN_PERSONA", ", ".join(bad))
+            if len(set(picked)) != len(picked) or not MIN_SEATS <= len(picked) <= MAX_SEATS:
+                raise CouncilError("SEATS_RANGE", f"--personas needs {MIN_SEATS}–{MAX_SEATS} distinct ids")
+            sc = persona_scores(pool, a.request, primary, topics)
+            mode, chosen = "picked", [dict(byid[x], score=sc[x]) for x in picked]
+        else:
+            if not MIN_SEATS <= a.seats <= MAX_SEATS:
+                raise CouncilError("SEATS_RANGE", f"--seats must be {MIN_SEATS}–{MAX_SEATS} (use --full for the whole council)")
+            mode, chosen = "seats", select_personas(pool, a.request, primary, a.seats, topics)
+        members = persona_members(chosen)
+        personas_meta = {"file": str(ppath), "schema": PERSONAS_SCHEMA, "pool": len(pool),
+                         "chosen": [{"member": m["id"], "persona": m["persona_id"], "lane": m["lane"], "score": p["score"]}
+                                    for m, p in zip(members, chosen)],
+                         "lanes": sorted({m["lane"] for m in members})}
+    else:
+        members = roster(primary)
     roster_path = None if a.no_roster else (Path(a.roster) if a.roster else (DEFAULT_ROSTER if DEFAULT_ROSTER.exists() else None))
     consulted, index_meta = [], None
     if roster_path is not None:
         if not roster_path.exists():
             raise CouncilError("ROSTER_MISSING", f"{roster_path} does not exist")
         idx = load_roster(roster_path)
-        topics = [str(t) for t in ((brief or {}).get("analysis") or {}).get("topics") or []]
         consulted = consult_index(idx, a.request, primary, topics, members)
         index_meta = {"file": str(roster_path), "schema": idx.get("schema"),
                       "source_sha256": (idx.get("source") or {}).get("sha256"),
@@ -278,7 +321,8 @@ def cmd_plan(a) -> dict:
         "schema": SCHEMA, "protocol": PROTOCOL, "created_at": now_iso(), "request": a.request,
         "request_sha256": sha256_bytes(a.request.encode("utf-8")), "primary": primary, "options": options,
         "brief": {"file": a.from_brief, "recommended": brief.get("recommended")} if brief else None,
-        "roster": members, "rounds": {str(r): {} for r in ROUNDS},
+        "roster": members, "rounds": {str(r): {} for r in ROUNDS}, "mode": mode, "seats": len(members),
+        "personas": personas_meta,
         "consulted_index": consulted, "roster_index": index_meta,
         "rules": [
             "Round 1 members answer independently: never show one member another's answer in round 1.",
@@ -287,18 +331,21 @@ def cmd_plan(a) -> dict:
             "Round 3 scores every option from 1 to 5 and states one remaining objection (or 'none').",
             "No member spends money, publishes, or generates media: paid or irreversible steps go to the user.",
             "Consulted persona cards are an index, not members: they never vote, run or count as evidence.",
+            "A council persona is a stance prompt: the member only counts when Claude ran it as an agent (else SIMULATED).",
         ],
     }
     save(d / "council.json", council)
-    return {"dir": str(d), "primary": primary, "options": options,
+    return {"dir": str(d), "primary": primary, "options": options, "mode": mode, "seats": len(members),
             "index_consulted": f"index consulted: {len(consulted)} personas (an index, not executed experts)",
             "members": [f"{m['id']} {m['persona']}" + (f" ({m['specialist']})" if m["specialist"] else "") for m in council["roster"]]}
 
 
 def member_prompt(c: dict, m: dict, rnd: int) -> str:
     who = m["persona"] + (f" — {m['specialist']}" if m.get("specialist") else "")
-    head = (f"You are council member {m['id']} «{who}» ({m['en']}) in a five-member KOSIF Pro council (USIP v5.5, appendix A13).\n"
-            f"Your stance: {m['stance']}.\nYour evidence lane: {m['evidence']}. Gather real evidence in that lane before you claim anything;"
+    n = len(c["roster"])
+    head = (f"You are council member {m['id']} «{who}» ({m['en']}) in a {n}-member KOSIF Pro council (USIP v5.5, appendices A13/A30).\n"
+            f"Your stance: {m['stance']}.\n" + persona_block(c, m) +
+            f"Your evidence lane: {m['evidence']}. Gather real evidence in that lane before you claim anything;"
             " label anything without evidence as 'opinion'. Never spend money, publish, or generate images or video "
             "(Katana only through a verified zero-credit read-only analysis, never generation; other Higgsfield analysis only if the user approved its cost).\n"
             f"Request: «{c['request']}»\nOptions under debate: {', '.join(c['options'])}"
@@ -310,20 +357,114 @@ def member_prompt(c: dict, m: dict, rnd: int) -> str:
                 '"confidence": 0.0}], "proposal": "<what you would do, concretely>", "risks": ["..."]}')
     elif rnd == 2:
         others = {k: v for k, v in c["rounds"]["1"].items() if k != m["id"]}
+        if n > DIGEST_OVER:
+            others = digest_r1(others)
         body = ("ROUND 2 — cross-examination. These are the other members' round-1 answers:\n"
-                + json.dumps(others, ensure_ascii=False, indent=1) +
+                + json.dumps(others, ensure_ascii=False, indent=1) + counterpart_line(c, m) +
                 "\nAttack the strongest claim that contradicts you (with evidence), steelman one other member, and concede what you must. Return ONLY JSON:\n"
                 '{"attacks": [{"target": "M?", "claim": "...", "counter": "...", "evidence": "..."}], "steelman": {"target": "M?", "why_strong": "..."}, '
                 '"concessions": ["..."]}')
     else:
         r1 = c["rounds"]["1"]
         r2 = c["rounds"]["2"]
+        if n > DIGEST_OVER:
+            r1, r2 = digest_r1(r1), digest_r2(r2)
         body = ("ROUND 3 — convergence and vote. Round 1 positions and round 2 cross-examination:\n"
                 + json.dumps({"round1": r1, "round2": r2}, ensure_ascii=False, indent=1) +
                 f"\nGive your revised proposal and score EVERY option ({', '.join(c['options'])}) from 1 (worst) to 5 (best). Return ONLY JSON:\n"
                 '{"final_proposal": "...", "scores": {"<option>": 1}, "changed_mind": "<what changed your view, or none>", '
                 '"remaining_objection": "<your strongest objection that still stands, or none>"}')
     return head + body
+
+
+def persona_block(c: dict, m: dict) -> str:
+    """The persona card of a member drawn from the 100-persona roster (empty for the classic five)."""
+    p = m.get("card")
+    if not p:
+        return ""
+    return (f"Your character ({p['id']} {p['name_en']}, {p['title_en']}): {p['character_ar']}\n"
+            f"Your lens: {p['lens_en']}. Your superpowers: " + "; ".join(p["superpowers"]) + ".\n"
+            "Ask these signature questions of the request and of every option: " + " / ".join(p["signature_questions"]) + "\n"
+            f"Your known blind spot (guard against it, and say so if it shaped your view): {p['blind_spot']}.\n"
+            f"The evidence you demand before you accept a claim: {p['evidence_demand']}.\n")
+
+
+def counterpart_line(c: dict, m: dict) -> str:
+    p = m.get("card") or {}
+    rival = next((x for x in c["roster"] if (x.get("card") or {}).get("id") == p.get("counterpart")), None)
+    if not rival:
+        return ""
+    return (f"\nYour counterpart in this council is {rival['id']} «{rival['persona']}»: answer its strongest claim first "
+            "(attack it with evidence or concede it).")
+
+
+def digest_r1(r1: dict) -> dict:
+    """Round-1 answers as position, proposal and evidenced claims only (keeps large-council prompts readable)."""
+    return {k: {"position": v.get("position"), "proposal": v.get("proposal"),
+                "claims": [{"claim": cl.get("claim"), "evidence": cl.get("evidence")} for cl in v.get("claims", [])[:3] if isinstance(cl, dict)]}
+            for k, v in sorted(r1.items())}
+
+
+def digest_r2(r2: dict) -> dict:
+    return {k: {"attacks": [{"target": a.get("target"), "counter": a.get("counter")} for a in v.get("attacks", [])[:2] if isinstance(a, dict)],
+                "steelman": (v.get("steelman") or {}).get("target")} for k, v in sorted(r2.items())}
+
+
+def load_personas(path: Path) -> list:
+    doc = load(path)
+    ps = doc.get("personas")
+    if doc.get("schema") != PERSONAS_SCHEMA or not isinstance(ps, list) or not ps:
+        raise CouncilError("PERSONAS_INVALID", f"{path.name} is not a {PERSONAS_SCHEMA} roster")
+    ids = [p.get("id") for p in ps]
+    if len(set(ids)) != len(ids):
+        raise CouncilError("PERSONAS_INVALID", f"{path.name} repeats a persona id")
+    for p in ps:
+        if p.get("lane") not in LANES:
+            raise CouncilError("PERSONAS_INVALID", f"{p.get('id')}: unknown lane {p.get('lane')!r}")
+    return ps
+
+
+def persona_scores(personas: list, request: str, primary: str, topics=()) -> dict:
+    """Relevance of every persona to a request: trigger words (x3), the primary deliverable's domain (+2), general (+1)."""
+    req = _stems(request + " " + " ".join(topics))
+    dom = PRIMARY_DOMAIN.get(primary, primary)
+    out = {}
+    for p in personas:
+        hits = sum(1 for t in p.get("triggers", []) if _stems(t) and _stems(t) <= req)
+        out[p["id"]] = 3 * hits + (2 if dom in p.get("domains", []) else 0) + (1 if "general" in p.get("domains", []) else 0)
+    return out
+
+
+def select_personas(personas: list, request: str, primary: str, seats: int, topics=()) -> list:
+    """Deterministic task-fitted council: the best persona of every lane first, then the most relevant of the rest."""
+    sc = persona_scores(personas, request, primary, topics)
+    rank = sorted(personas, key=lambda p: (-sc[p["id"]], p["id"]))
+    chosen, seen = [], set()
+    for lane in LANES:
+        best = next((p for p in rank if p["lane"] == lane), None)
+        if best:
+            chosen.append(best); seen.add(best["id"])
+    for p in rank:
+        if len(chosen) >= seats:
+            break
+        if p["id"] not in seen:
+            chosen.append(p); seen.add(p["id"])
+    order = {lane: i for i, lane in enumerate(LANES)}
+    return [dict(p, score=sc[p["id"]]) for p in sorted(chosen[:seats] if seats >= len(LANES) else chosen,
+                                                       key=lambda p: (order[p["lane"]], -sc[p["id"]], p["id"]))]
+
+
+def persona_members(chosen: list) -> list:
+    lane_base = {b["lane"]: b for b in BASE}
+    out = []
+    for i, p in enumerate(chosen, 1):
+        b = lane_base[p["lane"]]
+        card = {k: p[k] for k in ("id", "name_ar", "name_en", "title_ar", "title_en", "character_ar", "lens_en", "superpowers",
+                                  "signature_questions", "blind_spot", "evidence_demand", "counterpart") if k in p}
+        out.append({"id": f"M{i}", "persona": f"{p['name_ar']} — {p['title_ar']}", "en": f"{p['name_en']}, {p['title_en']}",
+                    "stance": b["stance"], "lane": p["lane"], "evidence": b["evidence"], "specialist": None,
+                    "persona_id": p["id"], "card": card})
+    return out
 
 
 def personas_line(c: dict, m: dict) -> str:
@@ -442,7 +583,8 @@ def cmd_verdict(a) -> dict:
     er = evidence_ratio(c)
     if er < 0.5:
         warnings.append(f"WEAK_EVIDENCE: only {er:.0%} of round-1 claims cite evidence")
-    if margin is not None and margin <= 2:
+    close = max(2.0, round(0.4 * len(ids), 2))  # five members: 2 points, as before; larger councils scale
+    if margin is not None and margin <= close:
         warnings.append(f"CLOSE_CALL: {ranked[0][0]} leads {ranked[1][0]} by {margin}")
     status = ("COUNCIL_SIMULATED" if simulated else
               "COUNCIL_PARTIAL" if missing else "COUNCIL_RUN")
@@ -451,11 +593,12 @@ def cmd_verdict(a) -> dict:
     verdict = {"schema": "kosif.council.verdict.v1", "status": status, "winner": winner, "totals": dict(ranked),
                "margin": margin, "dissent": dissent, "attacks": attacks, "evidence_ratio": er,
                "warnings": warnings, "missing": missing, "rounds_sha256": receipt, "decided_at": now_iso(),
-               "index_consulted": n_index,
+               "index_consulted": n_index, "mode": c.get("mode", "classic5"), "seats": len(ids),
+               "personas": [m.get("persona_id") for m in c["roster"] if m.get("persona_id")],
                "index_note": f"index consulted: {n_index} personas (cards read by the five members, not experts that ran or voted)"}
     save(d / "verdict.json", verdict)
     lines = [f"# محضر المجلس — {c['request']}", "",
-             f"**الحالة:** {status} · **الفائز:** {winner} · **الفارق:** {margin} · **الإيصال:** `{receipt[:16]}`", "",
+             f"**الحالة:** {status} · **الفائز:** {winner} · **الفارق:** {margin} · **المقاعد:** {len(ids)} · **الإيصال:** `{receipt[:16]}`", "",
              "| العضو | الموقف (جولة 1) | الاقتراح النهائي (جولة 3) | الدرجات |", "|---|---|---|---|"]
     for m in c["roster"]:
         p1 = c["rounds"]["1"].get(m["id"], {}).get("position", "—")
@@ -471,6 +614,23 @@ def cmd_verdict(a) -> dict:
     return verdict
 
 
+def cmd_personas(a) -> dict:
+    pool = load_personas(Path(a.personas_file) if a.personas_file else DEFAULT_PERSONAS)
+    if a.id:
+        hit = [p for p in pool if p["id"] == a.id.upper()]
+        if not hit:
+            raise CouncilError("UNKNOWN_PERSONA", a.id)
+        return hit[0]
+    if a.find:
+        primary = primary_of(a.find, None)
+        chosen = select_personas(pool, a.find, primary, a.seats, ())
+        return {"request": a.find, "primary": primary, "seats": len(chosen),
+                "council": [f"{p['id']} {p['name_ar']} — {p['title_ar']} [{p['lane']}] score={p['score']}" for p in chosen]}
+    rows = [p for p in pool if not a.lane or p["lane"] == a.lane]
+    return {"count": len(rows), "lanes": {l: sum(1 for p in pool if p["lane"] == l) for l in LANES},
+            "personas": [f"{p['id']} {p['name_ar']} — {p['title_ar']} ({p['title_en']}) [{p['lane']}]" for p in rows]}
+
+
 def main(argv=None) -> int:
     p = argparse.ArgumentParser(description=__doc__, formatter_class=argparse.RawDescriptionHelpFormatter)
     sub = p.add_subparsers(dest="cmd", required=True)
@@ -480,6 +640,14 @@ def main(argv=None) -> int:
     s.add_argument("--force", action="store_true")
     s.add_argument("--roster", help="experts index JSON to consult (default: data/experts_500.json when it exists)")
     s.add_argument("--no-roster", action="store_true", help="do not consult the experts index")
+    s.add_argument("--seats", type=int, help=f"a task-fitted council of N ({MIN_SEATS}-{MAX_SEATS}) personas from the 100-persona roster")
+    s.add_argument("--personas", help="comma-separated persona ids to seat (5-15), e.g. P001,P021,P041,P061,P081")
+    s.add_argument("--full", action="store_true", help="seat all personas of the roster (only when the user asks for the whole council)")
+    s.add_argument("--personas-file", help="persona roster JSON (default: data/council_100.json)")
+    s = sub.add_parser("personas", help="list, search or show the 100 council personas")
+    s.add_argument("--find", help="a request: show the task-fitted council it would seat")
+    s.add_argument("--seats", type=int, default=7); s.add_argument("--lane", choices=LANES); s.add_argument("--id")
+    s.add_argument("--personas-file")
     s = sub.add_parser("prompts", help="write the prompts for one round")
     s.add_argument("--dir", required=True); s.add_argument("--round", type=int, choices=ROUNDS, required=True)
     s = sub.add_parser("ingest", help="record one member's answer for one round")
@@ -492,7 +660,8 @@ def main(argv=None) -> int:
     s.add_argument("--dir", required=True); s.add_argument("--partial", action="store_true")
     a = p.parse_args(argv)
     try:
-        res = {"plan": cmd_plan, "prompts": cmd_prompts, "ingest": cmd_ingest, "status": cmd_status, "verdict": cmd_verdict}[a.cmd](a)
+        res = {"plan": cmd_plan, "prompts": cmd_prompts, "ingest": cmd_ingest, "status": cmd_status, "verdict": cmd_verdict,
+               "personas": cmd_personas}[a.cmd](a)
     except _secrets.SecretError as exc:
         print(f"council: error: SECRET: {exc}", file=sys.stderr)
         return 2

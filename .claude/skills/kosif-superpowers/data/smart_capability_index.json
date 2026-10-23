@@ -1,7 +1,7 @@
 {
   "schema": "kosif.smart-capability-index.v1",
   "origin": "data/powers/*.json (catalog); no original records changed",
-  "catalog_powers": 5490,
+  "catalog_powers": 5492,
   "group_count": 15,
   "family_count": 62,
   "tool_count": 144,
@@ -129,17 +129,17 @@
       ],
       "keywords": "agent orchestration tool routing discover automation وكلاء أدوات توجيه بحث",
       "workflow": [],
-      "count": 156,
+      "count": 158,
       "status_counts": {
         "documented": 57,
         "install": 8,
         "key": 2,
-        "proven": 84,
+        "proven": 86,
         "ready": 5
       },
       "family_counts": {
         "agent-orchestration": 46,
-        "runnable-tools": 67,
+        "runnable-tools": 69,
         "self-discovery": 43
       },
       "examples": [
@@ -68043,6 +68043,45 @@
       ],
       "source": "runnable-tools.json",
       "what": "يقارن تشغيلًا مرشحًا بتشغيل مرجعي سيناريو سيناريو وملفًا ملفًا (<run>/<scenario>/<files>)، فيقارن JSON وJSONL كبيانات وباقي الملفات كنص بعد إخفاء القيم المتغيرة (المعرّفات والأختام الزمنية والمسارات المؤقتة والأزمنة والمفاتيح المستبعدة). ويختم الامتحان ببصمات SHA-256 قبل بدء العم"
+    },
+    {
+      "id": "TOOL-68",
+      "family": "runnable-tools",
+      "group": "agents",
+      "domain": "build",
+      "name_en": "Pro Council: five opposing members or a task-fitted council from 100 personas, three rounds, a scored verdict",
+      "name_ar": "مجلس البرو: خمسة متعارضين أو مجلس مناسب من 100 شخصية، ثلاث جولات وحكم بالدرجات",
+      "status": "proven",
+      "requires": [
+        "python3"
+      ],
+      "proof": [
+        "kosif-tool/.claude/skills/kosif-superpowers/evals/test_council.py",
+        "kosif-tool/.claude/skills/kosif-superpowers/scripts/council.py"
+      ],
+      "source": "runnable-tools.json",
+      "what": "يخطط لمجلس من خمسة أعضاء متعارضين (المبتكر، محامي الشيطان، المهندس العملي، صوت الجمهور، الحارس)، لكل منهم مسار أدلة مختلف وتخصص حسب مخرج الطلب، ويكتب مطالبة كل عضو في كل جولة (مواقف مستقلة، استجواب متبادل، تصويت بالدرجات)، ويتحقق من كل رد ويبصمه ويرفض الأسرار، ثم يحسب حكمًا بطريق"
+    },
+    {
+      "id": "TOOL-69",
+      "family": "runnable-tools",
+      "group": "agents",
+      "domain": "build",
+      "name_en": "Thinking engine scaffolds",
+      "name_ar": "محرك التفكير وقوالبه",
+      "status": "proven",
+      "requires": [
+        "python3"
+      ],
+      "proof": [
+        "kosif-tool/tests/test_think.py",
+        "kosif-tool/tests/test_think_reasoning.py",
+        "kosif-tool/tests/test_think_intel.py",
+        "kosif-tool/tests/test_think_pro.py",
+        "kosif-tool/.claude/skills/kosif-superpowers/scripts/think.py"
+      ],
+      "source": "runnable-tools.json",
+      "what": "يحوّل إجراءات التفكير إلى قوالب نصية قابلة للفحص. يختار مستوى التفكير (L0–L6)، ويكتب عقد المهمة، ويرتّب 63 نموذجًا ذهنيًا، ويصوغ خطة بالتخطيط العكسي، ويبني مصفوفة أفكار من قدرات الكتالوج، ويقيّم قرارًا موزونًا مع اختبار الحساسية، ويجري تقدير فيرمي بطريقة مونت كارلو، ويرصد الصياغا"
     },
     {
       "id": "SEC-01",

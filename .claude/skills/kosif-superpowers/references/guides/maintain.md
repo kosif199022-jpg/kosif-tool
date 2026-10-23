@@ -60,6 +60,10 @@ python3 scripts/capability_atlas.py build       # data/capability_atlas_index.js
 python3 scripts/powers.py mindmap --html references/capability-map.html
 python3 scripts/powers.py mindmap --update-md references/capability-map.md   # map block + counts, prose kept
 python3 scripts/smart_capabilities.py build     # data/smart_capability_index.json + the group maps
+python3 scripts/superpower_fusion.py build      # data/superpowers.json + references/superpowers.md (fused superpowers)
+python3 scripts/kosif_hubs.py build             # data/hubs_index.json, references/hubs.md, START.md
+python3 scripts/capability_mindmap.py build     # data/capability_mindmap.json + references/capability-mindmap.md
+python3 scripts/owned_repos.py render           # references/owned-repos-map.md (its counts follow the catalog)
 python3 scripts/smart_capabilities.py library   # references/library/: one routing chapter per group (USIP v5.5, A28)
 python3 scripts/smart_capabilities.py cards     # usip-library/ (repo root): a protocol card per power and tool
 python3 scripts/hub.py build                    # again: manifest.json, references/INDEX.md, SKILL.md and guide tool blocks

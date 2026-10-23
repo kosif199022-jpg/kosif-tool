@@ -1,6 +1,6 @@
 {
  "schema": "kosif.usip-intelligence.v1",
- "protocol": "USIP v5.5 appendices A25-A29",
+ "protocol": "USIP v5.5 appendices A25-A30",
  "note": "Scaffolds for think.py intake / decompose / qa / recover. Keyword detection is a hint; the level, the questions and the verdict stay Claude's judgement. Nothing here executes a tool or proves a result.",
  "question_budget": {"L0": 0, "L1": 3, "L2": 5, "L3": 7},
  "safe_default_markers": ["publish", "post", "send", "pay", "buy", "spend", "delete", "deploy", "credit", "personal", "نشر", "انشر", "ارسل", "أرسل", "ادفع", "شراء", "صرف", "رصيد", "احذف", "حذف", "بيانات شخصية"],
@@ -276,5 +276,20 @@
   {"id": "V3", "ar": "بعض المعايير مقيسة بأداة ودليل", "status": "PARTIALLY_VERIFIED"},
   {"id": "V4", "ar": "كل المعايير مقيسة بأداة ودليل", "status": "DONE_VERIFIED"},
   {"id": "V5", "ar": "V4 + مراجعة مستقلة أو مقارنة بخط أساس", "status": "DONE_VERIFIED"}
- ]
+ ],
+ "pro_passes": [
+  {"id": "PP01", "depth": "standard", "ar": "إعادة صياغة المشكلة مرتين", "en": "Reframe twice", "question": "What is the problem really, stated two different ways (the user's goal and the hidden constraint)?", "artifact": "two one-sentence problem statements and the one chosen", "falsifier": "both statements say the same thing in different words", "tool": "think.py frame \"<task>\""},
+  {"id": "PP02", "depth": "standard", "ar": "المبادئ الأولى والحد الأدنى النظري", "en": "First principles and the theoretical minimum", "question": "Which assumptions are laws and which are habits; what is the least time, cost or steps this could take?", "artifact": "assumption list marked law/habit and the theoretical minimum", "falsifier": "no assumption was removed or challenged", "tool": "think.py models \"<task>\""},
+  {"id": "PP03", "depth": "standard", "ar": "ثلاثة خيارات حقيقية ولا شيء", "en": "Three real options plus do-nothing", "question": "What are A (simplest), B (balanced), C (a different engine or source) and the cost of doing nothing?", "artifact": "A/B/C with one recommendation and the do-nothing cost", "falsifier": "C is B with extras, not a different method", "tool": "skill_intelligence.py brief"},
+  {"id": "PP04", "depth": "standard", "ar": "دليل لكل ادعاء", "en": "Evidence for every claim", "question": "Which claim in the plan has no command run, file read, URL or measurement behind it?", "artifact": "claim → evidence ledger", "falsifier": "a claim marked verified has no receipt", "tool": "think.py audit report.md"},
+  {"id": "PP05", "depth": "deep", "ar": "ما قبل الوفاة", "en": "Pre-mortem", "question": "It is a month later and this failed: what are the three most likely reasons?", "artifact": "three failure stories, each with an early warning sign and a guard", "falsifier": "no guard was added to the plan", "tool": "think.py plan \"<goal>\""},
+  {"id": "PP06", "depth": "deep", "ar": "أقوى حجة ضد التوصية", "en": "Steelman the opposite", "question": "What is the strongest case against the recommended option, argued by its best advocate?", "artifact": "one paragraph steelman and the answer to it", "falsifier": "the steelman is a strawman that is easy to dismiss", "tool": "council.py plan --seats 9"},
+  {"id": "PP07", "depth": "deep", "ar": "الحقائق المضادة", "en": "Counterfactuals", "question": "If the key input were different (no audio, ten times the data, a different audience), would the plan still hold?", "artifact": "three what-if rows with the plan change each forces", "falsifier": "every what-if leaves the plan unchanged without a reason", "tool": "think.py modes \"<task>\""},
+  {"id": "PP08", "depth": "deep", "ar": "تحديث الثقة بالأدلة", "en": "Calibrated belief update", "question": "How confident are we, and how much should each new piece of evidence move that?", "artifact": "prior, likelihood ratios and posterior with a halve/double sensitivity", "falsifier": "the decision flips under a halved ratio and nobody noticed", "tool": "think.py bayes --prior 0.5 --lr \"<evidence>=2\""},
+  {"id": "PP09", "depth": "max", "ar": "الآثار من الدرجة الثانية والثالثة", "en": "Second- and third-order effects", "question": "And then what? What happens when this is repeated a thousand times or by everyone?", "artifact": "a consequence chain three steps deep", "falsifier": "the chain stops at the first effect", "tool": "council.py personas --lane guardrails"},
+  {"id": "PP10", "depth": "max", "ar": "نقل آلية من مجال بعيد", "en": "Far-domain transfer", "question": "Who solved a problem of the same shape in an unrelated field, and what transfers?", "artifact": "one borrowed mechanism with its transfer condition", "falsifier": "the analogy breaks on the one difference that matters", "tool": "think.py ideas \"<seed>\""},
+  {"id": "PP11", "depth": "max", "ar": "الاختبار الحاسم الأرخص", "en": "The cheapest decisive test", "question": "What is the cheapest experiment that would prove the plan wrong, and has it been run?", "artifact": "the test, its pass/fail threshold written in advance, and its result", "falsifier": "the threshold was written after the result", "tool": "think.py gate gate.json"},
+  {"id": "PP12", "depth": "max", "ar": "مراجع مستقل لم يرَ البناء", "en": "Independent blind review", "question": "Would a reviewer who never saw the build reach the same verdict from the evidence alone?", "artifact": "an independent review (a real agent when one exists) and the findings that survived verification", "falsifier": "the reviewer was given the conclusion instead of the evidence", "tool": "council.py plan --seats 15 (or --full on request)"}
+ ],
+ "pro_depths": {"standard": {"passes": 4, "seats": 5, "ar": "برو قياسي"}, "deep": {"passes": 8, "seats": 9, "ar": "برو عميق"}, "max": {"passes": 12, "seats": 15, "ar": "برو بأقصى قوة (نفّذ بأقصى قوة)"}}
 }
