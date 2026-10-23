@@ -109,7 +109,7 @@
 - [`ASTRAT-94` من دورة تطوير البرمجيات إلى دورة تطوير بالوكلاء: من ينفذ كل مرحلة وأين تبقى البوابات البشرية](#astrat-94--من-دورة-تطوير-البرمجيات-إلى-دورة-تطوير-بالوكلاء-من-ينفذ-كل-مرحلة-وأين-تبقى-البوابات-البشرية--sdlc-to-agentic-development-lifecycle-who-executes-each-stage-and-where-human-gates-stay)
 - [`ASTRAT-95` دورة حياة القرار بعد اعتماده: خطة 90 يومًا، وتجميد يمنع التراجع المتسرع، ومراجعة تفصل جودة العملية عن النتيجة](#astrat-95--دورة-حياة-القرار-بعد-اعتماده-خطة-90-يومًا-وتجميد-يمنع-التراجع-المتسرع-ومراجعة-تفصل-جودة-العملية-عن-النتيجة--decision-lifecycle-after-approval-a-90-day-execution-plan-a-cooldown-freeze-and-a-retrospective-that-separates-process-from-outcome)
 - [`ASTRAT-96` قيم الشركة من وقائع حقيقية لا من شعارات: سلوك ملحوظ ومعايير توظيف وأنماط مرفوضة](#astrat-96--قيم-الشركة-من-وقائع-حقيقية-لا-من-شعارات-سلوك-ملحوظ-ومعايير-توظيف-وأنماط-مرفوضة--company-values-derived-from-real-episodes-not-slogans-observable-behaviour-hiring-criteria-and-anti-patterns)
-- [`ASTRAT-97` مراجعة خطة عمل أو منتج بأربعة مواقف: توسيع، توسيع انتقائي، تثبيت النطاق، تقليص](#astrat-97--مراجعة-خطة-عمل-أو-منتج-بأربعة-مواقف-توسيع-توسيع-انتقائي-تثبيت-النطاق-تقليص--business-or-product-plan-review-under-one-of-four-postures-expand-selectively-expand-hold-scope-reduce)
+- [`ASTRAT-97` مراجعة خطة عمل أو منتج بأربعة مواقف: توسيع، توسيع انتقائي، تثبيت النطاق، تقليص](#astrat-97--مراجعة-خطة-عمل-أو-منتج-بأربعة-مواقف-توسيع-توسيع-انتقائي-تثبيت-النطاق-تقليص--business-plan-review-under-one-of-four-postures-expand-selectively-expand-hold-scope-reduce)
 - [`ASTRAT-98` بداية الوصول للسوق: خطة تسويق عضوية، وقرار صريح عن الإعلان المدفوع، وأول العملاء بطريق دافئ أو مجتمعي أو بارد](#astrat-98--بداية-الوصول-للسوق-خطة-تسويق-عضوية-وقرار-صريح-عن-الإعلان-المدفوع-وأول-العملاء-بطريق-دافئ-أو-مجتمعي-أو-بارد--early-go-to-market-an-organic-marketing-plan-an-explicit-paid-spend-decision-and-first-customers-by-a-warm-community-or-cold-route)
 - [`ASTRAT-99` تشخيص تعطل قرارات المنتج بين الفرق: جملة القرار وخريطة الصلاحية وستة شروط للمحاذاة](#astrat-99--تشخيص-تعطل-قرارات-المنتج-بين-الفرق-جملة-القرار-وخريطة-الصلاحية-وستة-شروط-للمحاذاة--diagnose-product-decision-deadlocks-across-teams-the-decision-sentence-the-authority-map-and-six-alignment-conditions)
 
@@ -1017,7 +1017,7 @@
 | نطاق الدليل | `url` |
 | الرخصة | card in our own words; the original skill folders are copied verbatim with their MIT license and SOURCE.md under vendor/kosif-atlas |
 
-**ما هي:** خطة التحكم (نموذج أولي أو ما قبل الإطلاق أو إنتاج) تُبنى صفًا صفًا من خطوات العملية وضوابط PFMEA: الخاصية المضبوطة والمواصفة والمقياس وحجم العينة وتكرارها وطريقة التحكم وخطة رد الفعل؛ وخطة التحقق DVP&R تربط كل نمط فشل عالي الأولوية في DFMEA باختبار محدد بمعيار نجاح وعينة وجدول وتسجيل النتيجة. — Build and audit CP and DVP&R.
+**ما هي:** خطة التحكم (نموذج أولي أو ما قبل الإنتاج التسلسلي أو إنتاج) تُبنى صفًا صفًا من خطوات العملية وضوابط PFMEA: الخاصية المضبوطة والمواصفة والمقياس وحجم العينة وتكرارها وطريقة التحكم وخطة رد الفعل؛ وخطة التحقق DVP&R تربط كل نمط فشل عالي الأولوية في DFMEA باختبار محدد بمعيار نجاح وعينة وجدول وتسجيل النتيجة. — Build and audit CP and DVP&R.
 
 **متى:** إعداد Control Plan أو مراجعته، خطة اختبارات التصميم DVP&R، متطلبات APQP أو PPAP / building or auditing a control plan or DVP&R
 
@@ -7244,7 +7244,7 @@
 - `ASTRAT-93` تحسين مسارات الجمع والأسطول: كثافة المحطات ووقت القيادة غير المنتج وكلفة المحطة / Route and fleet optimisation for collection services: density, windshield time, cost per stop (documented)
 - `ASTRAT-94` من دورة تطوير البرمجيات إلى دورة تطوير بالوكلاء: من ينفذ كل مرحلة وأين تبقى البوابات البشرية / SDLC to agentic development lifecycle: who executes each stage and where human gates stay (documented)
 - `ASTRAT-96` قيم الشركة من وقائع حقيقية لا من شعارات: سلوك ملحوظ ومعايير توظيف وأنماط مرفوضة / Company values derived from real episodes, not slogans: observable behaviour, hiring criteria and anti-patterns (documented)
-- `ASTRAT-97` مراجعة خطة عمل أو منتج بأربعة مواقف: توسيع، توسيع انتقائي، تثبيت النطاق، تقليص / Business or product plan review under one of four postures: expand, selectively expand, hold scope, reduce (documented)
+- `ASTRAT-97` مراجعة خطة عمل أو منتج بأربعة مواقف: توسيع، توسيع انتقائي، تثبيت النطاق، تقليص / Business plan review under one of four postures: expand, selectively expand, hold scope, reduce (documented)
 
 ### `ASTRAT-96` — قيم الشركة من وقائع حقيقية لا من شعارات: سلوك ملحوظ ومعايير توظيف وأنماط مرفوضة / Company values derived from real episodes, not slogans: observable behaviour, hiring criteria and anti-patterns
 
@@ -7312,10 +7312,10 @@
 
 - `ASTRAT-94` من دورة تطوير البرمجيات إلى دورة تطوير بالوكلاء: من ينفذ كل مرحلة وأين تبقى البوابات البشرية / SDLC to agentic development lifecycle: who executes each stage and where human gates stay (documented)
 - `ASTRAT-95` دورة حياة القرار بعد اعتماده: خطة 90 يومًا، وتجميد يمنع التراجع المتسرع، ومراجعة تفصل جودة العملية عن النتيجة / Decision lifecycle after approval: a 90-day execution plan, a cooldown freeze, and a retrospective that separates process from outcome (documented)
-- `ASTRAT-97` مراجعة خطة عمل أو منتج بأربعة مواقف: توسيع، توسيع انتقائي، تثبيت النطاق، تقليص / Business or product plan review under one of four postures: expand, selectively expand, hold scope, reduce (documented)
+- `ASTRAT-97` مراجعة خطة عمل أو منتج بأربعة مواقف: توسيع، توسيع انتقائي، تثبيت النطاق، تقليص / Business plan review under one of four postures: expand, selectively expand, hold scope, reduce (documented)
 - `ASTRAT-98` بداية الوصول للسوق: خطة تسويق عضوية، وقرار صريح عن الإعلان المدفوع، وأول العملاء بطريق دافئ أو مجتمعي أو بارد / Early go-to-market: an organic marketing plan, an explicit paid-spend decision, and first customers by a warm, community or cold route (documented)
 
-### `ASTRAT-97` — مراجعة خطة عمل أو منتج بأربعة مواقف: توسيع، توسيع انتقائي، تثبيت النطاق، تقليص / Business or product plan review under one of four postures: expand, selectively expand, hold scope, reduce
+### `ASTRAT-97` — مراجعة خطة عمل أو منتج بأربعة مواقف: توسيع، توسيع انتقائي، تثبيت النطاق، تقليص / Business plan review under one of four postures: expand, selectively expand, hold scope, reduce
 
 | الحقل | القيمة |
 |---|---|
@@ -7450,7 +7450,7 @@
 #### 7. قدرات قريبة في العائلة
 
 - `ASTRAT-96` قيم الشركة من وقائع حقيقية لا من شعارات: سلوك ملحوظ ومعايير توظيف وأنماط مرفوضة / Company values derived from real episodes, not slogans: observable behaviour, hiring criteria and anti-patterns (documented)
-- `ASTRAT-97` مراجعة خطة عمل أو منتج بأربعة مواقف: توسيع، توسيع انتقائي، تثبيت النطاق، تقليص / Business or product plan review under one of four postures: expand, selectively expand, hold scope, reduce (documented)
+- `ASTRAT-97` مراجعة خطة عمل أو منتج بأربعة مواقف: توسيع، توسيع انتقائي، تثبيت النطاق، تقليص / Business plan review under one of four postures: expand, selectively expand, hold scope, reduce (documented)
 - `ASTRAT-99` تشخيص تعطل قرارات المنتج بين الفرق: جملة القرار وخريطة الصلاحية وستة شروط للمحاذاة / Diagnose product decision deadlocks across teams: the decision sentence, the authority map and six alignment conditions (documented)
 
 ### `ASTRAT-99` — تشخيص تعطل قرارات المنتج بين الفرق: جملة القرار وخريطة الصلاحية وستة شروط للمحاذاة / Diagnose product decision deadlocks across teams: the decision sentence, the authority map and six alignment conditions
@@ -7517,6 +7517,6 @@
 
 #### 7. قدرات قريبة في العائلة
 
-- `ASTRAT-97` مراجعة خطة عمل أو منتج بأربعة مواقف: توسيع، توسيع انتقائي، تثبيت النطاق، تقليص / Business or product plan review under one of four postures: expand, selectively expand, hold scope, reduce (documented)
+- `ASTRAT-97` مراجعة خطة عمل أو منتج بأربعة مواقف: توسيع، توسيع انتقائي، تثبيت النطاق، تقليص / Business plan review under one of four postures: expand, selectively expand, hold scope, reduce (documented)
 - `ASTRAT-98` بداية الوصول للسوق: خطة تسويق عضوية، وقرار صريح عن الإعلان المدفوع، وأول العملاء بطريق دافئ أو مجتمعي أو بارد / Early go-to-market: an organic marketing plan, an explicit paid-spend decision, and first customers by a warm, community or cold route (documented)
 

@@ -335,11 +335,11 @@
 "deliver": 2,
 "understand": 9,
 "create": 6,
-"plan": 10,
+"plan": 11,
 "assemble": 2,
 "verify": 6
 },
-"size": 35,
+"size": 36,
 "best": "documented",
 "ready_now": 0,
 "links": [
@@ -348,7 +348,7 @@
 "SP-0137",
 "SP-0057"
 ],
-"text": "cross-project agent messaging via terminal panes مراسلة وكلاء مشاريع أخرى عبر الألواح herdr cross-session fleet مراسلة keep credentials out of agent transcripts إبقاء الأسرار خارج سجلات الوكلاء secrets security أسرار أمان faithful relay of agent results نقل نتائج الوكلاء بأمانة summary fidelity تلخيص أمانة strategy-based multi-agent orchestration patterns أنماط تنسيق وكلاء متعددين بحسب الاستراتيجية orchestration تنسيق debate tournament peer agent messaging over tmux panes مراسلة الوكلاء عبر لوحات tmux tmux orchestrator منسق لوحات file-based multi-agent inbox and control protocol بروتوكول صندوق وارد وتحكم بالملفات بين الوكلاء inbox control status تحكم scope-fenced worker lane contract عقد مسار عمل للوكيل بحدود نطاق صارمة orchestration lanes contracts تنسيق peer messaging between running claude code sessions مراسلة مباشرة بين جلسات claude code العاملة listagents sendmessage multi-session مراسلة-الوكلاء a2a session recap from claude and codex logs ملخص الجلسة من سجلات الوكيل recap ملخص logs subagent configuration standards and audit معايير تدقيق إعداد الوكلاء الفرعيين subagent audit standards وكيل cross-session task-state journal سجل حالة المهام عبر الجلسات handoff memory جلسات ذاكرة verify-first workflow resume from sidecar state استئناف سير عمل متوقف بالتحقق أولاً resume state verify استئناف loop-break self-diagnosis and verification discipline تشخيص ذاتي لكسر الحلقات وانضباط التحقق introspection loop self-check تشخيص evidence-based checkpoint manifest for resume نقطة حفظ مدعومة بالأدلة لاستئناف المهمة checkpoint resume نقطة-حفظ periodic session-transcript mining: condense first, unharvested window, dedupe against catalogues تنقيب سجلات الجلسات دوريًا: تكثيف قبل القراءة، نافذة غير محصودة، ومقارنة مع الكتالوج session mining knowledge capture skills agent memory retrospective تنقيب الجلسات doubt-driven development for non-trivial decisions تطوير قائم على الشك: مراجعة عدائية للقرارات غير البديهية doubt review مراجعة شك assumptions افتراضات recover silent subagent results before respawning استرجاع نتائج الوكيل الصامت قبل إعادة إطلاقه debugging subagent وكيل استرجاع agentic approach triage, tool design and eval hardening فرز النهج الوكيلي وتصميم الأدوات وتحصين التقييم agent-design tool-design evals تصميم الوكلاء axi prompt-injection fencing for untrusted content تسييج حقن الأوامر في المحتوى غير الموثوق injection security أمان stage-gated clarify-decompose-execute-revise solve pipeline خط حل مرحلي: توضيح فتفكيك فتنفيذ فمراجعة pipeline decompose تفكيك bounded retr"
+"text": "cross-project agent messaging via terminal panes مراسلة وكلاء مشاريع أخرى عبر الألواح herdr cross-session fleet مراسلة keep credentials out of agent transcripts إبقاء الأسرار خارج سجلات الوكلاء secrets security أسرار أمان faithful relay of agent results نقل نتائج الوكلاء بأمانة summary fidelity تلخيص أمانة strategy-based multi-agent orchestration patterns أنماط تنسيق وكلاء متعددين بحسب الاستراتيجية orchestration تنسيق debate tournament peer agent messaging over tmux panes مراسلة الوكلاء عبر لوحات tmux tmux orchestrator منسق لوحات file-based multi-agent inbox and control protocol بروتوكول صندوق وارد وتحكم بالملفات بين الوكلاء inbox control status تحكم scope-fenced worker lane contract عقد مسار عمل للوكيل بحدود نطاق صارمة orchestration lanes contracts تنسيق peer messaging between running claude code sessions مراسلة مباشرة بين جلسات claude code العاملة listagents sendmessage multi-session مراسلة-الوكلاء a2a subagent configuration standards and audit معايير تدقيق إعداد الوكلاء الفرعيين subagent audit standards وكيل session recap from claude and codex logs ملخص الجلسة من سجلات الوكيل recap ملخص logs cross-session task-state journal سجل حالة المهام عبر الجلسات handoff memory جلسات ذاكرة verify-first workflow resume from sidecar state استئناف سير عمل متوقف بالتحقق أولاً resume state verify استئناف loop-break self-diagnosis and verification discipline تشخيص ذاتي لكسر الحلقات وانضباط التحقق introspection loop self-check تشخيص doubt-driven development for non-trivial decisions تطوير قائم على الشك: مراجعة عدائية للقرارات غير البديهية doubt review مراجعة شك assumptions افتراضات recover silent subagent results before respawning استرجاع نتائج الوكيل الصامت قبل إعادة إطلاقه debugging subagent وكيل استرجاع periodic session-transcript mining: condense first, unharvested window, dedupe against catalogues تنقيب سجلات الجلسات دوريًا: تكثيف قبل القراءة، نافذة غير محصودة، ومقارنة مع الكتالوج session mining knowledge capture skills agent memory retrospective تنقيب الجلسات evidence-based checkpoint manifest for resume نقطة حفظ مدعومة بالأدلة لاستئناف المهمة checkpoint resume نقطة-حفظ agentic approach triage, tool design and eval hardening فرز النهج الوكيلي وتصميم الأدوات وتحصين التقييم agent-design tool-design evals تصميم الوكلاء axi prompt-injection fencing for untrusted content تسييج حقن الأوامر في المحتوى غير الموثوق injection security أمان bounded retry loop with stop-report حلقة محاولات محدودة مع تقرير توقف retry halting حلقة توقف session contribution evidence: grade the sig"
 },
 "SP-0007": {
 "id": "SP-0007",
@@ -546,7 +546,7 @@
 "SP-0017",
 "SP-0039"
 ],
-"text": "ooda loop حلقة أودا decision mental model نموذج ذهني fast competition react live calibration المعايرة epistemics mental model نموذج ذهني confidence sure certain متأكد map is not the territory الخريطة ليست الأرض epistemics mental model نموذج ذهني model assumption data metric falsifiability قابلية الدحض epistemics mental model نموذج ذهني hypothesis claim theory test leverage points نقاط الرافعة systems mental model نموذج ذهني change system intervene strategy تأثير regret minimisation تقليل الندم decision mental model نموذج ذهني life decision career big choice قرار كبير chesterton's fence سياج تشسترتون engineering mental model نموذج ذهني remove refactor legacy delete circle of competence دائرة الكفاءة epistemics mental model نموذج ذهني expert unsure domain outside combinatorial creativity الإبداع التركيبي creativity mental model نموذج ذهني combine new idea mashup دمج inversion العكس reasoning mental model نموذج ذهني fail avoid risk mistake socratic questioning التساؤل السقراطي learning mental model نموذج ذهني clarify assumption deep توضيح cynefin إطار كنفين complexity mental model نموذج ذهني unclear complex chaos new problem sunk cost check فحص التكلفة الغارقة biases mental model نموذج ذهني already spent continue abandon صرفنا survivorship bias انحياز الناجين biases mental model نموذج ذهني success story best practices winners قصة نجاح expected value القيمة المتوقعة decision mental model نموذج ذهني bet worth it gamble option lindy effect تأثير ليندي forecasting mental model نموذج ذهني new tech trend library choice مكتبة feedback loops حلقات التغذية الراجعة systems mental model نموذج ذهني growth spiral stable viral pre-mortem التشريح المسبق planning mental model نموذج ذهني plan project launch risk anchoring check فحص الإرساء biases mental model نموذج ذهني estimate price number رقم deliberate practice loop الممارسة المتعمدة learning mental model نموذج ذهني improve skill quality تحسين analogy transfer نقل التشبيه creativity mental model نموذج ذهني idea inspiration creative new approach confirmation bias check فحص انحياز التأكيد biases mental model نموذج ذهني my idea prove agree أثبت stocks and flows المخزون والتدفق systems mental model نموذج ذهني accumulate backlog inventory debt theory of constraints نظرية القيود systems mental model نموذج ذهني bottleneck slow throughput pipeline weighted decision matrix مصفوفة القرار الموزونة decision mental model نموذج ذهني compare choose options vendor work breakdown تفكيك العمل planning mental model نموذج ذهني big task break"
+"text": "ooda loop حلقة أودا decision mental model نموذج ذهني fast competition react live calibration المعايرة epistemics mental model نموذج ذهني confidence sure certain متأكد map is not the territory الخريطة ليست الأرض epistemics mental model نموذج ذهني model assumption data metric falsifiability قابلية الدحض epistemics mental model نموذج ذهني hypothesis claim theory test leverage points نقاط الرافعة systems mental model نموذج ذهني change system intervene strategy تأثير regret minimisation تقليل الندم decision mental model نموذج ذهني life decision career big choice قرار كبير chesterton's fence سياج تشسترتون engineering mental model نموذج ذهني remove refactor legacy delete circle of competence دائرة الكفاءة epistemics mental model نموذج ذهني expert unsure domain outside combinatorial creativity الإبداع التركيبي creativity mental model نموذج ذهني combine new idea mashup دمج inversion العكس reasoning mental model نموذج ذهني fail avoid risk mistake socratic questioning التساؤل السقراطي learning mental model نموذج ذهني clarify assumption deep توضيح cynefin إطار كنفين complexity mental model نموذج ذهني unclear complex chaos new problem sunk cost check فحص التكلفة الغارقة biases mental model نموذج ذهني already spent continue abandon صرفنا survivorship bias انحياز الناجين biases mental model نموذج ذهني success story best practices winners قصة نجاح expected value القيمة المتوقعة decision mental model نموذج ذهني bet worth it gamble option lindy effect تأثير ليندي forecasting mental model نموذج ذهني new tech trend library choice مكتبة feedback loops حلقات التغذية الراجعة systems mental model نموذج ذهني growth spiral stable viral pre-mortem التشريح المسبق planning mental model نموذج ذهني plan project launch risk anchoring check فحص الإرساء biases mental model نموذج ذهني estimate price number رقم deliberate practice loop الممارسة المتعمدة learning mental model نموذج ذهني improve skill quality تحسين analogy transfer نقل التشبيه creativity mental model نموذج ذهني idea inspiration creative new approach stocks and flows المخزون والتدفق systems mental model نموذج ذهني accumulate backlog inventory debt confirmation bias check فحص انحياز التأكيد biases mental model نموذج ذهني my idea prove agree أثبت theory of constraints نظرية القيود systems mental model نموذج ذهني bottleneck slow throughput pipeline weighted decision matrix مصفوفة القرار الموزونة decision mental model نموذج ذهني compare choose options vendor work breakdown تفكيك العمل planning mental model نموذج ذهني big task break"
 },
 "SP-0016": {
 "id": "SP-0016",
@@ -618,10 +618,10 @@
 "hub": "thinking",
 "stage": "plan",
 "stages": {
-"plan": 13,
+"plan": 12,
 "verify": 2
 },
-"size": 15,
+"size": 14,
 "best": "proven",
 "ready_now": 2,
 "links": [
@@ -630,7 +630,7 @@
 "SP-0197",
 "SP-0411"
 ],
-"text": "full plan scaffold from a goal مخطط الخطة الكاملة من الهدف plan تخطيط planning requirements gate before scheduling بوابة المستلزمات قبل الجدولة plan تخطيط planning delivery plan with a receipt خطة تسليم بإيصال plan تخطيط planning phase-boundary plan review مراجعة الخطة كل مرحلة plan تخطيط planning pre-mortem with early-warning signals التشريح المسبق بإشارات إنذار plan تخطيط planning kill and pivot criteria معايير الإيقاف والتحول plan تخطيط planning critical path and date protection المسار الحرج وحماية الموعد plan تخطيط planning first visible thin slice الشريحة الأولى المرئية plan تخطيط planning backcasting from the end state التخطيط العكسي من الحالة النهائية plan تخطيط planning heuer-style structured planning with tested premises تخطيط بأسلوب heuer: اختبار الافتراضات دون مجاملة planning تخطيط assumptions heuer critique نقد parallel lanes for agents and workflows توزيع العمل على وكلاء متوازيين plan تخطيط planning scenario grid and robust moves سيناريوهات المستقبل والحركات المتينة plan تخطيط planning work breakdown into checkable deliverables تفكيك العمل إلى مخرجات قابلة للفحص plan تخطيط planning plan, then implement, under two authorities: technical direction is yours and logged, functional and operational direction is the user's and asked; the plan is the spec من التخطيط إلى التنفيذ بسلطتين: التوجيه التقني لك ويُسجل، والوظيفي والتشغيلي للمستخدم ويُسأل، والخطة هي المواصفة planning implementation plan execution conformance review adversarial review التخطيط التنفيذ a plan a weaker model will execute without you: make every decision, write as little as possible خطة ينفذها نموذج أضعف دون حضورك: اتخذ كل قرار، واكتب أقل قدر ممكن delegation implementation plan subagent planning التفويض خطة التنفيذ"
+"text": "full plan scaffold from a goal مخطط الخطة الكاملة من الهدف plan تخطيط planning requirements gate before scheduling بوابة المستلزمات قبل الجدولة plan تخطيط planning delivery plan with a receipt خطة تسليم بإيصال plan تخطيط planning phase-boundary plan review مراجعة الخطة كل مرحلة plan تخطيط planning pre-mortem with early-warning signals التشريح المسبق بإشارات إنذار plan تخطيط planning kill and pivot criteria معايير الإيقاف والتحول plan تخطيط planning critical path and date protection المسار الحرج وحماية الموعد plan تخطيط planning first visible thin slice الشريحة الأولى المرئية plan تخطيط planning backcasting from the end state التخطيط العكسي من الحالة النهائية plan تخطيط planning scenario grid and robust moves سيناريوهات المستقبل والحركات المتينة plan تخطيط planning parallel lanes for agents and workflows توزيع العمل على وكلاء متوازيين plan تخطيط planning heuer-style structured planning with tested premises تخطيط بأسلوب heuer: اختبار الافتراضات دون مجاملة planning تخطيط assumptions heuer critique نقد work breakdown into checkable deliverables تفكيك العمل إلى مخرجات قابلة للفحص plan تخطيط planning plan, then implement, under two authorities: technical direction is yours and logged, functional and operational direction is the user's and asked; the plan is the spec من التخطيط إلى التنفيذ بسلطتين: التوجيه التقني لك ويُسجل، والوظيفي والتشغيلي للمستخدم ويُسأل، والخطة هي المواصفة planning implementation plan execution conformance review adversarial review التخطيط التنفيذ"
 },
 "SP-0020": {
 "id": "SP-0020",
@@ -646,8 +646,8 @@
 "best": "documented",
 "ready_now": 0,
 "links": [
-"SP-0037",
 "SP-0003",
+"SP-0037",
 "SP-0006",
 "SP-0137"
 ],
@@ -2512,7 +2512,7 @@
 "SP-0062",
 "SP-0107",
 "SP-0100",
-"SP-0109"
+"SP-0159"
 ],
 "text": "crypto tax gains with fifo lifo hifo ضرائب الكريبتو بطرق fifo وlifo وhifo tax fifo ضرائب small-business bookkeeping: payroll, tax, invoice chase محاسبة الأعمال الصغيرة: رواتب وضرائب وتحصيل payroll tax prep invoice رواتب ضرائب crypto market and defi analytics cli suite أدوات تحليل سوق الكريبتو وdefi defi arbitrage تحليل"
 },
@@ -2633,7 +2633,7 @@
 "SP-0053",
 "SP-0048"
 ],
-"text": "per-dimension documentation drift audit تدقيق انحراف التوثيق عن الكود لكل بُعد documentation توثيق readme drift docs docs drift audit against current code تدقيق انحراف التوثيق عن الكود docs-audit drift تدقيق توثيق code-grounded doc update and overhaul تحديث التوثيق بالاعتماد على الكود docs-update source-grounded توثيق تحقق diataxis four-kind docs restructuring إعادة هيكلة التوثيق بإطار دياتاكسيس diataxis docs-architecture توثيق هيكلة readme authoring and verification كتابة readme والتحقق منه readme badges توثيق ريدمي readme that hooks in 3 seconds and runs in 60 كتابة readme يجذب المطور في ثلاث ثوانٍ ويشغله في دقيقة readme documentation open source توثيق ملف التعريف quick start look up version-correct library docs البحث في توثيق المكتبات بالإصدار الصحيح docs-lookup llms-txt توثيق مكتبات mermaid diagram render and validate loop رسم مخططات mermaid والتحقق منها mermaid diagram مخطط render strip ai-slop and zero-info code comments إزالة التعليقات الزائدة في الكود comments cleanup تعليقات جودة الكود evidence-grounded architecture diagram from repo مخطط معماري مبني على الريبو الفعلي architecture repo معمارية drift appropriate code comments: information the code cannot carry تعليقات الكود الملائمة: معلومة لا يحملها الكود code comments code review clean code تعليقات الكود مراجعة invariant tests audit claude.md and agents.md for context diet تدقيق claude.md وagents.md وتخفيف السياق claude.md agents.md context-budget سياق الوكيل prompt-hygiene llm-maintained interlinked wiki ويكي مترابط تديره النماذج wiki knowledge-base ويكي معرفة agent-ready agents.md and claude.md authoring كتابة agents.md وclaude.md جاهزة للوكلاء agents.md claude.md توجيه self-contained html diagram with inline svg مخطط html مستقل بـ svg مضمن svg html figure شكل visual implementation plan reviewed in browser خطة تنفيذ مرئية للمراجعة في المتصفح plan review خطة docs offline er diagram from schema declarations مخطط علاقات الكيانات من ملفات المخطط erd schema mermaid مخطط توثيق excalidraw diagram that argues visually رسم excalidraw يحمل حجة بصرية excalidraw whiteboard سبورة workflow lossless markdown compression with semantic-diff gate ضغط الماركداون دون فقدان المعنى compression tokens ضغط ماركداون durable solved-problem learning notes توثيق الدروس المستفادة من المشكلات المحلولة knowledge learnings معرفة تسجيل plain writing: everyday words, complete sentences الكتابة البسيطة: كلمات يومية وجمل كاملة writing كتابة plain بسيط clarity وضوح node-link layout and uml diagram design تخطيط الرسوم العقدية وتصمي"
+"text": "per-dimension documentation drift audit تدقيق انحراف التوثيق عن الكود لكل بُعد documentation توثيق readme drift docs docs drift audit against current code تدقيق انحراف التوثيق عن الكود docs-audit drift تدقيق توثيق code-grounded doc update and overhaul تحديث التوثيق بالاعتماد على الكود docs-update source-grounded توثيق تحقق diataxis four-kind docs restructuring إعادة هيكلة التوثيق بإطار دياتاكسيس diataxis docs-architecture توثيق هيكلة readme authoring and verification كتابة readme والتحقق منه readme badges توثيق ريدمي readme that hooks in 3 seconds and runs in 60 كتابة readme يجذب المطور في ثلاث ثوانٍ ويشغله في دقيقة readme documentation open source توثيق ملف التعريف quick start look up version-correct library docs البحث في توثيق المكتبات بالإصدار الصحيح docs-lookup llms-txt توثيق مكتبات mermaid diagram render and validate loop رسم مخططات mermaid والتحقق منها mermaid diagram مخطط render strip ai-slop and zero-info code comments إزالة التعليقات الزائدة في الكود comments cleanup تعليقات جودة الكود evidence-grounded architecture diagram from repo مخطط معماري مبني على الريبو الفعلي architecture repo معمارية drift appropriate code comments: information the code cannot carry تعليقات الكود الملائمة: معلومة لا يحملها الكود code comments code review clean code تعليقات الكود مراجعة invariant tests audit claude.md and agents.md for context diet تدقيق claude.md وagents.md وتخفيف السياق claude.md agents.md context-budget سياق الوكيل prompt-hygiene llm-maintained interlinked wiki ويكي مترابط تديره النماذج wiki knowledge-base ويكي معرفة agent-ready agents.md and claude.md authoring كتابة agents.md وclaude.md جاهزة للوكلاء agents.md claude.md توجيه self-contained html diagram with inline svg مخطط html مستقل بـ svg مضمن svg html figure شكل offline er diagram from schema declarations مخطط علاقات الكيانات من ملفات المخطط erd schema mermaid مخطط توثيق visual implementation plan reviewed in browser خطة تنفيذ مرئية للمراجعة في المتصفح plan review خطة docs excalidraw diagram that argues visually رسم excalidraw يحمل حجة بصرية excalidraw whiteboard سبورة workflow lossless markdown compression with semantic-diff gate ضغط الماركداون دون فقدان المعنى compression tokens ضغط ماركداون durable solved-problem learning notes توثيق الدروس المستفادة من المشكلات المحلولة knowledge learnings معرفة تسجيل plain writing: everyday words, complete sentences الكتابة البسيطة: كلمات يومية وجمل كاملة writing كتابة plain بسيط clarity وضوح node-link layout and uml diagram design تخطيط الرسوم العقدية وتصمي"
 },
 "SP-0107": {
 "id": "SP-0107",
@@ -3296,7 +3296,7 @@
 "SP-0298",
 "SP-0120"
 ],
-"text": "throwaway prototype to answer one question نموذج أولي مؤقت للإجابة عن سؤال prototype spec نموذج أولي mockup phased full-stack app build orchestration تنسيق بناء تطبيق كامل على مراحل orchestration work-plan بناء تطبيق phases saas boilerplate scaffold spec هيكلة مشروع saas جاهز saas scaffold nextjs سااس هيكل open-question html prototype spike نموذج html تجريبي يجيب أسئلة مفتوحة prototype spike html نموذج أولي تصميم subscription store state and paywall ui حالة الاشتراكات وواجهة إدارة الاشتراك subscriptions billing revenuecat اشتراكات فوترة prototype evaluation vs acceptance criteria تقييم النموذج مقابل معايير القبول usability playwright evaluation اختبار تجربة المستخدم mobile and desktop release signing pipeline مسار توقيع وإصدار تطبيقات الجوال والمكتب signing release notarization توقيع التطبيقات wix headless site build from sdk recipes بناء موقع wix هيدلس من وصفات sdk wix headless migration ويكس ترحيل pwa manifest and service worker generation توليد pwa مع service worker pwa service-worker manifest تطبيق ويب عمل دون اتصال bootstrap a new repository or refresh an old one in a fixed order: foundation, language scaffold, ci, linters, secrets, release تجهيز مستودع جديد أو تحديث قديم بترتيب ثابت للخطوات: الأساس ثم هيكل اللغة ثم ci والمدققات والأسرار والإصدار scaffold bootstrap new repository go cli rust cli project template تجهيز مستودع هيكل المشروع choose monorepo tooling from measurements: language mix, scale, pain and hermeticity, plus a do-not-adopt-yet list اختيار أداة المستودع الأحادي من القياس: اللغات والحجم والألم والحاجة للإحكام، وقائمة ما لا نتبناه الآن monorepo turborepo nx bazel pnpm build tooling مستودع أحادي"
+"text": "throwaway prototype to answer one question نموذج أولي مؤقت للإجابة عن سؤال prototype spec نموذج أولي mockup phased full-stack app build orchestration تنسيق بناء تطبيق كامل على مراحل orchestration work-plan بناء تطبيق phases open-question html prototype spike نموذج html تجريبي يجيب أسئلة مفتوحة prototype spike html نموذج أولي تصميم saas boilerplate scaffold spec هيكلة مشروع saas جاهز saas scaffold nextjs سااس هيكل subscription store state and paywall ui حالة الاشتراكات وواجهة إدارة الاشتراك subscriptions billing revenuecat اشتراكات فوترة prototype evaluation vs acceptance criteria تقييم النموذج مقابل معايير القبول usability playwright evaluation اختبار تجربة المستخدم mobile and desktop release signing pipeline مسار توقيع وإصدار تطبيقات الجوال والمكتب signing release notarization توقيع التطبيقات wix headless site build from sdk recipes بناء موقع wix هيدلس من وصفات sdk wix headless migration ويكس ترحيل pwa manifest and service worker generation توليد pwa مع service worker pwa service-worker manifest تطبيق ويب عمل دون اتصال bootstrap a new repository or refresh an old one in a fixed order: foundation, language scaffold, ci, linters, secrets, release تجهيز مستودع جديد أو تحديث قديم بترتيب ثابت للخطوات: الأساس ثم هيكل اللغة ثم ci والمدققات والأسرار والإصدار scaffold bootstrap new repository go cli rust cli project template تجهيز مستودع هيكل المشروع choose monorepo tooling from measurements: language mix, scale, pain and hermeticity, plus a do-not-adopt-yet list اختيار أداة المستودع الأحادي من القياس: اللغات والحجم والألم والحاجة للإحكام، وقائمة ما لا نتبناه الآن monorepo turborepo nx bazel pnpm build tooling مستودع أحادي"
 },
 "SP-0136": {
 "id": "SP-0136",
@@ -3848,7 +3848,7 @@
 "SP-0100",
 "SP-0366"
 ],
-"text": "subtractive design review from the customer backwards مراجعة تصميم بأسلوب الطرح حتى الجوهر design review مراجعة تصميم simplicity بساطة product founder business building and fundraising review بناء الأعمال ومراجعة طلب التمويل للمؤسسين startup founder ريادة fundraising pricing and monetization strategy design تصميم استراتيجية التسعير والربحية pricing monetization تسعير شرائح ربحية jobs to be done with all three dimensions الوظائف المطلوب إنجازها بأبعادها الثلاثة jtbd customer عميل product منتج needs multi-role board deliberation protocol بروتوكول مداولات مجلس إدارة متعدد الأدوار board strategy قرارات c-suite strategy canvases, swot and red-team لوحات الاستراتيجية وswot وفحص الافتراضات swot canvas strategy استراتيجية تحليل business or product plan review under one of four postures: expand, selectively expand, hold scope, reduce مراجعة خطة عمل أو منتج بأربعة مواقف: توسيع، توسيع انتقائي، تثبيت النطاق، تقليص plan review strategy review scope premise مراجعة الخطة النطاق independent-contractor agreement review from the freelancer's side مراجعة عقد مستقل من وجهة نظر المستقل contract freelance sow ip assignment negotiation عقد عمل حر enterprise risk register with scoring سجل مخاطر مؤسسي مع التقييم risk register erm 5x5 سجل المخاطر امتثال defensible dcf valuation with cross-checks تقييم dcf متين مع فحوص تقاطعية valuation dcf تقييم finance m&a positioning as context (obviously awesome canvas) التموضع: السياق قبل الرسالة positioning تموضع marketing تسويق competitors executive forcing questions: six per c-suite lens to pressure-test a plan أسئلة الإجبار التنفيذية: ستة أسئلة لكل دور قيادي تختبر الخطة strategy executive review plan review retention dora pipeline c-suite أسئلة القيادة مراجعة خطة design review heuristics and critique مراجعة التصميم بالقواعد الإرشادية heuristics critique نقد التصميم ux quality-system internal audit: iso 9001, iatf 16949 supplements, vda 6.3 process audit تدقيق داخلي لنظام الجودة: iso 9001 وإضافات iatf 16949 وتدقيق عملية vda 6.3 iso 9001 iatf 16949 vda 6.3 internal audit quality management تدقيق داخلي أيزو conversion optimisation: discover, do not guess تحسين التحويل: اكتشف ولا تخمّن cro conversion تحويل landing page a/b startup cap table and dilution model نموذج جدول الملكية وتخفيف الحصص cap table safe fundraising جدول الملكية تمويل seo, answer-engine and generative-engine visibility تحسين الظهور في البحث ومحركات الإجابة والذكاء التوليدي seo سيو aeo geo search بحث write and rate internal-audit findings on the five cs كتابة وتقييم نتائج التدق"
+"text": "subtractive design review from the customer backwards مراجعة تصميم بأسلوب الطرح حتى الجوهر design review مراجعة تصميم simplicity بساطة product founder business building and fundraising review بناء الأعمال ومراجعة طلب التمويل للمؤسسين startup founder ريادة fundraising pricing and monetization strategy design تصميم استراتيجية التسعير والربحية pricing monetization تسعير شرائح ربحية jobs to be done with all three dimensions الوظائف المطلوب إنجازها بأبعادها الثلاثة jtbd customer عميل product منتج needs multi-role board deliberation protocol بروتوكول مداولات مجلس إدارة متعدد الأدوار board strategy قرارات c-suite strategy canvases, swot and red-team لوحات الاستراتيجية وswot وفحص الافتراضات swot canvas strategy استراتيجية تحليل independent-contractor agreement review from the freelancer's side مراجعة عقد مستقل من وجهة نظر المستقل contract freelance sow ip assignment negotiation عقد عمل حر enterprise risk register with scoring سجل مخاطر مؤسسي مع التقييم risk register erm 5x5 سجل المخاطر امتثال defensible dcf valuation with cross-checks تقييم dcf متين مع فحوص تقاطعية valuation dcf تقييم finance m&a business plan review under one of four postures: expand, selectively expand, hold scope, reduce مراجعة خطة عمل أو منتج بأربعة مواقف: توسيع، توسيع انتقائي، تثبيت النطاق، تقليص plan review strategy review scope premise مراجعة الخطة النطاق positioning as context (obviously awesome canvas) التموضع: السياق قبل الرسالة positioning تموضع marketing تسويق competitors executive forcing questions: six per c-suite lens to pressure-test a plan أسئلة الإجبار التنفيذية: ستة أسئلة لكل دور قيادي تختبر الخطة strategy executive review plan review retention dora pipeline c-suite أسئلة القيادة مراجعة خطة design review heuristics and critique مراجعة التصميم بالقواعد الإرشادية heuristics critique نقد التصميم ux quality-system internal audit: iso 9001, iatf 16949 supplements, vda 6.3 process audit تدقيق داخلي لنظام الجودة: iso 9001 وإضافات iatf 16949 وتدقيق عملية vda 6.3 iso 9001 iatf 16949 vda 6.3 internal audit quality management تدقيق داخلي أيزو conversion optimisation: discover, do not guess تحسين التحويل: اكتشف ولا تخمّن cro conversion تحويل landing page a/b startup cap table and dilution model نموذج جدول الملكية وتخفيف الحصص cap table safe fundraising جدول الملكية تمويل seo, answer-engine and generative-engine visibility تحسين الظهور في البحث ومحركات الإجابة والذكاء التوليدي seo سيو aeo geo search بحث write and rate internal-audit findings on the five cs كتابة وتقييم نتائج التدقيق الداخلي "
 },
 "SP-0160": {
 "id": "SP-0160",
@@ -4727,9 +4727,9 @@
 "ready_now": 4,
 "links": [
 "SP-0205",
+"SP-0019",
 "SP-0286",
-"SP-0357",
-"SP-0019"
+"SP-0357"
 ],
 "text": "aspect-specific kinetic layout تخطيط حسب المقاس مقاس الفيديو توزيع العناصر ريلز aspect ratio safe margins negative space rtl logical-property layout تخطيط بخصائص منطقية للاتجاه من اليمين لليسار اتجاه الصفحة تعريب الواجهة right-to-left mirroring three-column rtl workspace shell هيكل مساحة عمل بثلاثة أعمدة واجهة تطبيق تخطيط متجاوب شريط تنقل سفلي responsive layout bottom nav phone-safe vertical layout تخطيط آمن للهاتف فيديو عمودي هوامش آمنة ريلز vertical video mobile layout obstacle-aware type layout نص يتفادى العناصر حروف متحركة فيزياء تصادم matter.js physics text collision example project: swiss-grid الشبكة السويسرية تصميم سويسري شبكة تخطيط قالب بداية grid layout helvetica starter center-outward expansion انتشار من المركز إلى الخارج تفرق العناصر توزيع من المنتصف تمدد spread out expand layout split text/ui layout تخطيط نص وواجهة تقسيم الشاشة نص وصورة تنسيق المشهد split layout two column feature beat split layout تخطيط ميزة: نص يسار ونافذة يمين عرض ميزة تقسيم الشاشة نافذة متصفح feature layout browser window headline + proof layout عنوان مع دليل بصري تخطيط دليل بصري عنوان وصورة layout proof shot instrument tier diagram layout تخطيط صفوف الآلات آلات موسيقية نوتات مخطط موسيقي music diagram instrument layout editorial split feature beat لقطة ميزة بتقسيم تحريري شاشة مقسومة عرض ميزة بطاقة واجهة split layout feature reveal stage-set side-view layout تكوين خشبة مسرح جانبي سرد بصري سبب ومشكلة وحل منظر جانبي side view storytelling layout layout-before-animation (hero frame first) التخطيط قبل التحريك تخطيط المشهد تداخل العناصر ترتيب العناصر scene layout element overlap layout-before-motion (hero frame) التخطيط قبل الحركة تخطيط ثابت دخول وخروج تحريك العناصر gsap css layout demo scene zoning 15/65/20 تقسيم مشهد العرض 15/65/20 عرض توضيحي ديمو لقطة شاشة تقسيم الشاشة demo layout cta 3-30-300 attention tiers قاعدة 3-30-300 لمستويات الانتباه داشبورد عرض البيانات ترتيب المعلومات power bi dashboard layout spacing token set مسافات معتمدة مسافات هوامش حشو الأزرار spacing padding"
 },
@@ -12551,8 +12551,8 @@
 ],
 "plan": [
 "SP-0025",
-"SP-0019",
-"SP-0009"
+"SP-0009",
+"SP-0163"
 ],
 "create": [
 "SP-0041",
@@ -13096,7 +13096,7 @@
 {
 "a": "SP-0006",
 "b": "SP-0047",
-"sim": 0.568,
+"sim": 0.565,
 "hubs": [
 "thinking",
 "software"
@@ -13159,7 +13159,7 @@
 {
 "a": "SP-0006",
 "b": "SP-0137",
-"sim": 0.462,
+"sim": 0.456,
 "hubs": [
 "thinking",
 "software"
@@ -13204,7 +13204,7 @@
 {
 "a": "SP-0006",
 "b": "SP-0057",
-"sim": 0.431,
+"sim": 0.429,
 "hubs": [
 "thinking",
 "software"
@@ -13355,6 +13355,15 @@
 ]
 },
 {
+"a": "SP-0109",
+"b": "SP-0159",
+"sim": 0.384,
+"hubs": [
+"documents",
+"thinking"
+]
+},
+{
 "a": "SP-0330",
 "b": "SP-0376",
 "sim": 0.384,
@@ -13373,20 +13382,20 @@
 ]
 },
 {
-"a": "SP-0109",
+"a": "SP-0048",
 "b": "SP-0159",
-"sim": 0.382,
+"sim": 0.379,
 "hubs": [
-"documents",
+"software",
 "thinking"
 ]
 },
 {
-"a": "SP-0048",
-"b": "SP-0159",
-"sim": 0.377,
+"a": "SP-0001",
+"b": "SP-0006",
+"sim": 0.375,
 "hubs": [
-"software",
+"agents",
 "thinking"
 ]
 },
@@ -13397,15 +13406,6 @@
 "hubs": [
 "agents",
 "software"
-]
-},
-{
-"a": "SP-0001",
-"b": "SP-0006",
-"sim": 0.372,
-"hubs": [
-"agents",
-"thinking"
 ]
 },
 {

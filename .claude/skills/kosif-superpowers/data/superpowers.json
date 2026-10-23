@@ -6,7 +6,7 @@
 "superpowers": 480,
 "per_target": 12,
 "fusion_ratio": 12.18,
-"atlas_folded_into_native": 72,
+"atlas_folded_into_native": 71,
 "tiny_absorbed": 28,
 "lookalikes_unified": 8,
 "graph_components": 1,
@@ -268,7 +268,7 @@
 "links": [
 {
 "id": "SP-0006",
-"sim": 0.372
+"sim": 0.375
 },
 {
 "id": "SP-0160",
@@ -494,19 +494,19 @@
 "links": [
 {
 "id": "SP-0006",
-"sim": 0.278
+"sim": 0.298
 },
 {
 "id": "SP-0047",
-"sim": 0.212
+"sim": 0.232
 },
 {
 "id": "SP-0057",
-"sim": 0.2
+"sim": 0.206
 },
 {
 "id": "SP-0137",
-"sim": 0.17
+"sim": 0.179
 }
 ]
 },
@@ -599,7 +599,7 @@
 },
 {
 "id": "SP-0006",
-"sim": 0.188
+"sim": 0.183
 },
 {
 "id": "SP-0160",
@@ -725,16 +725,16 @@
 "workflows",
 "subagent"
 ],
-"size": 35,
+"size": 36,
 "best": "documented",
 "status_mix": {
-"documented": 35
+"documented": 36
 },
 "ready_now": 0,
 "families": {
-"atlas-mind": 35
+"atlas-mind": 36
 },
-"atlas_folded": 35,
+"atlas_folded": 36,
 "requires": [
 "claude:tools",
 "git",
@@ -790,16 +790,16 @@
 "name_ar": "مراسلة مباشرة بين جلسات Claude Code العاملة"
 },
 {
-"id": "AMIND-30",
-"status": "documented",
-"name_en": "Session recap from Claude and Codex logs",
-"name_ar": "ملخص الجلسة من سجلات الوكيل"
-},
-{
 "id": "AMIND-34",
 "status": "documented",
 "name_en": "Subagent configuration standards and audit",
 "name_ar": "معايير تدقيق إعداد الوكلاء الفرعيين"
+},
+{
+"id": "AMIND-30",
+"status": "documented",
+"name_en": "Session recap from Claude and Codex logs",
+"name_ar": "ملخص الجلسة من سجلات الوكيل"
 },
 {
 "id": "AMIND-08",
@@ -820,18 +820,6 @@
 "name_ar": "تشخيص ذاتي لكسر الحلقات وانضباط التحقق"
 },
 {
-"id": "AMIND-10",
-"status": "documented",
-"name_en": "Evidence-based checkpoint manifest for resume",
-"name_ar": "نقطة حفظ مدعومة بالأدلة لاستئناف المهمة"
-},
-{
-"id": "AMIND-66",
-"status": "documented",
-"name_en": "Periodic session-transcript mining: condense first, unharvested window, dedupe against catalogues",
-"name_ar": "تنقيب سجلات الجلسات دوريًا: تكثيف قبل القراءة، نافذة غير محصودة، ومقارنة مع الكتالوج"
-},
-{
 "id": "AMIND-45",
 "status": "documented",
 "name_en": "Doubt-driven development for non-trivial decisions",
@@ -842,6 +830,18 @@
 "status": "documented",
 "name_en": "Recover silent subagent results before respawning",
 "name_ar": "استرجاع نتائج الوكيل الصامت قبل إعادة إطلاقه"
+},
+{
+"id": "AMIND-66",
+"status": "documented",
+"name_en": "Periodic session-transcript mining: condense first, unharvested window, dedupe against catalogues",
+"name_ar": "تنقيب سجلات الجلسات دوريًا: تكثيف قبل القراءة، نافذة غير محصودة، ومقارنة مع الكتالوج"
+},
+{
+"id": "AMIND-10",
+"status": "documented",
+"name_en": "Evidence-based checkpoint manifest for resume",
+"name_ar": "نقطة حفظ مدعومة بالأدلة لاستئناف المهمة"
 },
 {
 "id": "AMIND-02",
@@ -856,22 +856,10 @@
 "name_ar": "تسييج حقن الأوامر في المحتوى غير الموثوق"
 },
 {
-"id": "AMIND-32",
-"status": "documented",
-"name_en": "Stage-gated clarify-decompose-execute-revise solve pipeline",
-"name_ar": "خط حل مرحلي: توضيح فتفكيك فتنفيذ فمراجعة"
-},
-{
 "id": "AMIND-05",
 "status": "documented",
 "name_en": "Bounded retry loop with stop-report",
 "name_ar": "حلقة محاولات محدودة مع تقرير توقف"
-},
-{
-"id": "AMIND-64",
-"status": "documented",
-"name_en": "Learning loop from rejected agent PRs: a mistake that happens twice becomes an artefact",
-"name_ar": "حلقة التعلم من رفض طلبات الدمج: الخطأ الذي يتكرر مرتين يصبح أداة دائمة"
 },
 {
 "id": "AMIND-62",
@@ -880,16 +868,28 @@
 "name_ar": "تقرير ما ساهم به الوكيل في الجلسة: مستوى الإشارة أولًا ثم ما يستحق التسجيل"
 },
 {
-"id": "AMIND-48",
+"id": "AMIND-64",
 "status": "documented",
-"name_en": "Route to one specialist, read before answering",
-"name_ar": "توجيه إلى أخصائي واحد مع إلزام القراءة"
+"name_en": "Learning loop from rejected agent PRs: a mistake that happens twice becomes an artefact",
+"name_ar": "حلقة التعلم من رفض طلبات الدمج: الخطأ الذي يتكرر مرتين يصبح أداة دائمة"
+},
+{
+"id": "AMIND-32",
+"status": "documented",
+"name_en": "Stage-gated clarify-decompose-execute-revise solve pipeline",
+"name_ar": "خط حل مرحلي: توضيح فتفكيك فتنفيذ فمراجعة"
 },
 {
 "id": "AMIND-77",
 "status": "documented",
 "name_en": "Choose agent execution rails: one owner per slot (spec, execution discipline, review, code security, setup governance)",
 "name_ar": "اختيار مسار تنفيذ الوكلاء: مالك واحد لكل خانة (المواصفة، انضباط التنفيذ، المراجعة، أمان الكود، حوكمة الإعداد)"
+},
+{
+"id": "AMIND-48",
+"status": "documented",
+"name_en": "Route to one specialist, read before answering",
+"name_ar": "توجيه إلى أخصائي واحد مع إلزام القراءة"
 },
 {
 "id": "AMIND-61",
@@ -904,16 +904,16 @@
 "name_ar": "استخراج المتطلبات: اسأل ولا تخترع"
 },
 {
-"id": "AMIND-17",
-"status": "documented",
-"name_en": "One-decision-at-a-time clarification of dense messages",
-"name_ar": "توضيح الرسائل المعقدة قرارًا قرارًا"
-},
-{
 "id": "AMIND-21",
 "status": "documented",
 "name_en": "Phase-boundary tree: continue, clear, handoff, delegate, compact",
 "name_ar": "شجرة قرار حدود المراحل والتسليم بين الجلسات"
+},
+{
+"id": "AMIND-17",
+"status": "documented",
+"name_en": "One-decision-at-a-time clarification of dense messages",
+"name_ar": "توضيح الرسائل المعقدة قرارًا قرارًا"
 },
 {
 "id": "AMIND-50",
@@ -946,6 +946,12 @@
 "name_ar": "تنقيح المواصفات بتحليل الفجوات وأسئلة متتابعة مرجّحة"
 },
 {
+"id": "AMIND-71",
+"status": "documented",
+"name_en": "A plan a weaker model will execute without you: make every decision, write as little as possible",
+"name_ar": "تفويض التنفيذ لنموذج أضعف دون حضورك: اتخذ كل قرار مسبقًا، واكتب أقل قدر ممكن"
+},
+{
 "id": "AMIND-80",
 "status": "documented",
 "name_en": "Turn a repeated correction into a rule in the right place: context file, skill, path rule, hook or test",
@@ -954,23 +960,23 @@
 ],
 "proof": [],
 "twins": [],
-"distinct_methods": 35,
+"distinct_methods": 36,
 "links": [
 {
 "id": "SP-0160",
-"sim": 0.593
+"sim": 0.582
 },
 {
 "id": "SP-0047",
-"sim": 0.568
+"sim": 0.565
 },
 {
 "id": "SP-0137",
-"sim": 0.462
+"sim": 0.456
 },
 {
 "id": "SP-0057",
-"sim": 0.431
+"sim": 0.429
 }
 ]
 },
@@ -1085,7 +1091,7 @@
 },
 {
 "id": "SP-0159",
-"sim": 0.176
+"sim": 0.177
 }
 ]
 },
@@ -1154,7 +1160,7 @@
 },
 {
 "id": "SP-0364",
-"sim": 0.137
+"sim": 0.138
 },
 {
 "id": "SP-0159",
@@ -1162,7 +1168,7 @@
 },
 {
 "id": "SP-0072",
-"sim": 0.121
+"sim": 0.12
 }
 ]
 },
@@ -1862,16 +1868,16 @@
 "name_ar": "نقل التشبيه"
 },
 {
-"id": "MODEL-45",
-"status": "documented",
-"name_en": "Confirmation bias check",
-"name_ar": "فحص انحياز التأكيد"
-},
-{
 "id": "MODEL-18",
 "status": "documented",
 "name_en": "Stocks and flows",
 "name_ar": "المخزون والتدفق"
+},
+{
+"id": "MODEL-45",
+"status": "documented",
+"name_en": "Confirmation bias check",
+"name_ar": "فحص انحياز التأكيد"
 },
 {
 "id": "MODEL-16",
@@ -2064,7 +2070,7 @@
 },
 {
 "id": "SP-0018",
-"sim": 0.464
+"sim": 0.465
 },
 {
 "id": "SP-0017",
@@ -2268,7 +2274,7 @@
 "links": [
 {
 "id": "SP-0015",
-"sim": 0.464
+"sim": 0.465
 },
 {
 "id": "SP-0016",
@@ -2296,18 +2302,18 @@
 "critical",
 "date"
 ],
-"size": 15,
+"size": 14,
 "best": "proven",
 "status_mix": {
 "proven": 2,
-"documented": 13
+"documented": 12
 },
 "ready_now": 2,
 "families": {
 "planning-execution": 12,
-"atlas-mind": 3
+"atlas-mind": 2
 },
-"atlas_folded": 3,
+"atlas_folded": 2,
 "requires": [
 "python3",
 "claude:tools",
@@ -2370,10 +2376,10 @@
 "name_ar": "التخطيط العكسي من الحالة النهائية"
 },
 {
-"id": "AMIND-46",
+"id": "PLAN-09",
 "status": "documented",
-"name_en": "Heuer-style structured planning with tested premises",
-"name_ar": "تخطيط بأسلوب Heuer: اختبار الافتراضات دون مجاملة"
+"name_en": "Scenario grid and robust moves",
+"name_ar": "سيناريوهات المستقبل والحركات المتينة"
 },
 {
 "id": "PLAN-10",
@@ -2382,10 +2388,10 @@
 "name_ar": "توزيع العمل على وكلاء متوازيين"
 },
 {
-"id": "PLAN-09",
+"id": "AMIND-46",
 "status": "documented",
-"name_en": "Scenario grid and robust moves",
-"name_ar": "سيناريوهات المستقبل والحركات المتينة"
+"name_en": "Heuer-style structured planning with tested premises",
+"name_ar": "تخطيط بأسلوب Heuer: اختبار الافتراضات دون مجاملة"
 },
 {
 "id": "PLAN-03",
@@ -2398,12 +2404,6 @@
 "status": "documented",
 "name_en": "Plan, then implement, under two authorities: technical direction is yours and logged, functional and operational direction is the user's and asked; the plan is the spec",
 "name_ar": "من التخطيط إلى التنفيذ بسلطتين: التوجيه التقني لك ويُسجل، والوظيفي والتشغيلي للمستخدم ويُسأل، والخطة هي المواصفة"
-},
-{
-"id": "AMIND-71",
-"status": "documented",
-"name_en": "A plan a weaker model will execute without you: make every decision, write as little as possible",
-"name_ar": "خطة ينفذها نموذج أضعف دون حضورك: اتخذ كل قرار، واكتب أقل قدر ممكن"
 }
 ],
 "proof": [
@@ -2412,23 +2412,23 @@
 "kosif-tool/.claude/skills/kosif-superpowers/references/cognition.md"
 ],
 "twins": [],
-"distinct_methods": 15,
+"distinct_methods": 14,
 "links": [
 {
 "id": "SP-0163",
-"sim": 0.372
+"sim": 0.364
 },
 {
 "id": "SP-0026",
-"sim": 0.131
+"sim": 0.129
 },
 {
 "id": "SP-0197",
-"sim": 0.118
+"sim": 0.122
 },
 {
 "id": "SP-0411",
-"sim": 0.099
+"sim": 0.101
 }
 ]
 },
@@ -2483,16 +2483,16 @@
 "distinct_methods": 3,
 "links": [
 {
+"id": "SP-0003",
+"sim": 0.139
+},
+{
 "id": "SP-0037",
 "sim": 0.137
 },
 {
-"id": "SP-0003",
-"sim": 0.136
-},
-{
 "id": "SP-0006",
-"sim": 0.133
+"sim": 0.137
 },
 {
 "id": "SP-0137",
@@ -3304,7 +3304,7 @@
 },
 {
 "id": "SP-0019",
-"sim": 0.131
+"sim": 0.129
 },
 {
 "id": "SP-0143",
@@ -6160,7 +6160,7 @@
 "links": [
 {
 "id": "SP-0006",
-"sim": 0.568
+"sim": 0.565
 },
 {
 "id": "SP-0160",
@@ -6329,7 +6329,7 @@
 "links": [
 {
 "id": "SP-0159",
-"sim": 0.377
+"sim": 0.379
 },
 {
 "id": "SP-0366",
@@ -6895,7 +6895,7 @@
 },
 {
 "id": "SP-0006",
-"sim": 0.146
+"sim": 0.145
 },
 {
 "id": "SP-0071",
@@ -7486,7 +7486,7 @@
 "links": [
 {
 "id": "SP-0006",
-"sim": 0.431
+"sim": 0.429
 },
 {
 "id": "SP-0047",
@@ -8961,7 +8961,7 @@
 },
 {
 "id": "SP-0008",
-"sim": 0.121
+"sim": 0.12
 },
 {
 "id": "SP-0106",
@@ -12893,7 +12893,7 @@
 "links": [
 {
 "id": "SP-0006",
-"sim": 0.371
+"sim": 0.347
 },
 {
 "id": "SP-0160",
@@ -12972,7 +12972,7 @@
 "links": [
 {
 "id": "SP-0159",
-"sim": 0.245
+"sim": 0.246
 },
 {
 "id": "SP-0109",
@@ -13050,8 +13050,8 @@
 "sim": 0.118
 },
 {
-"id": "SP-0109",
-"sim": 0.071
+"id": "SP-0159",
+"sim": 0.072
 }
 ]
 },
@@ -13682,16 +13682,16 @@
 "name_ar": "مخطط HTML مستقل بـ SVG مضمن"
 },
 {
-"id": "ADOCS-24",
-"status": "documented",
-"name_en": "Visual implementation plan reviewed in browser",
-"name_ar": "خطة تنفيذ مرئية للمراجعة في المتصفح"
-},
-{
 "id": "ADOCS-11",
 "status": "documented",
 "name_en": "Offline ER diagram from schema declarations",
 "name_ar": "مخطط علاقات الكيانات من ملفات المخطط"
+},
+{
+"id": "ADOCS-24",
+"status": "documented",
+"name_en": "Visual implementation plan reviewed in browser",
+"name_ar": "خطة تنفيذ مرئية للمراجعة في المتصفح"
 },
 {
 "id": "ADOCS-20",
@@ -14094,7 +14094,7 @@
 "links": [
 {
 "id": "SP-0159",
-"sim": 0.382
+"sim": 0.384
 },
 {
 "id": "SP-0100",
@@ -17278,7 +17278,7 @@
 },
 {
 "id": "SP-0149",
-"sim": 0.137
+"sim": 0.138
 }
 ]
 },
@@ -17326,16 +17326,16 @@
 "name_ar": "تنسيق بناء تطبيق كامل على مراحل"
 },
 {
-"id": "ABUILD-10",
-"status": "documented",
-"name_en": "SaaS boilerplate scaffold spec",
-"name_ar": "هيكلة مشروع SaaS جاهز"
-},
-{
 "id": "ABUILD-06",
 "status": "documented",
 "name_en": "Open-question HTML prototype spike",
 "name_ar": "نموذج HTML تجريبي يجيب أسئلة مفتوحة"
+},
+{
+"id": "ABUILD-10",
+"status": "documented",
+"name_en": "SaaS boilerplate scaffold spec",
+"name_ar": "هيكلة مشروع SaaS جاهز"
 },
 {
 "id": "ABUILD-11",
@@ -17591,7 +17591,7 @@
 "links": [
 {
 "id": "SP-0006",
-"sim": 0.462
+"sim": 0.456
 },
 {
 "id": "SP-0047",
@@ -20425,12 +20425,6 @@
 "name_ar": "لوحات الاستراتيجية وSWOT وفحص الافتراضات"
 },
 {
-"id": "ASTRAT-97",
-"status": "documented",
-"name_en": "Business or product plan review under one of four postures: expand, selectively expand, hold scope, reduce",
-"name_ar": "مراجعة خطة عمل أو منتج بأربعة مواقف: توسيع، توسيع انتقائي، تثبيت النطاق، تقليص"
-},
-{
 "id": "ASTRAT-74",
 "status": "documented",
 "name_en": "Independent-contractor agreement review from the freelancer's side",
@@ -20447,6 +20441,12 @@
 "status": "documented",
 "name_en": "Defensible DCF valuation with cross-checks",
 "name_ar": "تقييم DCF متين مع فحوص تقاطعية"
+},
+{
+"id": "ASTRAT-97",
+"status": "documented",
+"name_en": "Business plan review under one of four postures: expand, selectively expand, hold scope, reduce",
+"name_ar": "مراجعة خطة عمل أو منتج بأربعة مواقف: توسيع، توسيع انتقائي، تثبيت النطاق، تقليص"
 },
 {
 "id": "ASTRAT-59",
@@ -20611,19 +20611,19 @@
 "links": [
 {
 "id": "SP-0109",
-"sim": 0.382
+"sim": 0.384
 },
 {
 "id": "SP-0048",
-"sim": 0.377
+"sim": 0.379
 },
 {
 "id": "SP-0100",
-"sim": 0.245
+"sim": 0.246
 },
 {
 "id": "SP-0366",
-"sim": 0.192
+"sim": 0.193
 }
 ]
 },
@@ -20730,7 +20730,7 @@
 "links": [
 {
 "id": "SP-0006",
-"sim": 0.593
+"sim": 0.582
 },
 {
 "id": "SP-0047",
@@ -20861,7 +20861,7 @@
 },
 {
 "id": "SP-0159",
-"sim": 0.115
+"sim": 0.116
 }
 ]
 },
@@ -21073,7 +21073,7 @@
 "links": [
 {
 "id": "SP-0019",
-"sim": 0.372
+"sim": 0.364
 },
 {
 "id": "SP-0288",
@@ -21575,7 +21575,7 @@
 "links": [
 {
 "id": "SP-0159",
-"sim": 0.1
+"sim": 0.095
 },
 {
 "id": "SP-0103",
@@ -25991,16 +25991,16 @@
 "sim": 0.126
 },
 {
+"id": "SP-0019",
+"sim": 0.122
+},
+{
 "id": "SP-0286",
 "sim": 0.12
 },
 {
 "id": "SP-0357",
 "sim": 0.119
-},
-{
-"id": "SP-0019",
-"sim": 0.118
 }
 ]
 },
@@ -34393,7 +34393,7 @@
 "links": [
 {
 "id": "SP-0355",
-"sim": 0.317
+"sim": 0.316
 },
 {
 "id": "SP-0142",
@@ -36868,7 +36868,7 @@
 },
 {
 "id": "SP-0186",
-"sim": 0.181
+"sim": 0.18
 },
 {
 "id": "SP-0360",
@@ -46778,7 +46778,7 @@
 },
 {
 "id": "SP-0262",
-"sim": 0.317
+"sim": 0.316
 }
 ]
 },
@@ -48624,7 +48624,7 @@
 },
 {
 "id": "SP-0159",
-"sim": 0.192
+"sim": 0.193
 },
 {
 "id": "SP-0379",
@@ -51873,7 +51873,7 @@
 },
 {
 "id": "SP-0019",
-"sim": 0.072
+"sim": 0.069
 },
 {
 "id": "SP-0373",
@@ -54174,7 +54174,7 @@
 },
 {
 "id": "SP-0019",
-"sim": 0.099
+"sim": 0.101
 },
 {
 "id": "SP-0390",

@@ -19102,7 +19102,7 @@
       "group": "thinking",
       "domain": "mind",
       "name_en": "A plan a weaker model will execute without you: make every decision, write as little as possible",
-      "name_ar": "خطة ينفذها نموذج أضعف دون حضورك: اتخذ كل قرار، واكتب أقل قدر ممكن",
+      "name_ar": "تفويض التنفيذ لنموذج أضعف دون حضورك: اتخذ كل قرار مسبقًا، واكتب أقل قدر ممكن",
       "status": "documented",
       "requires": [
         "claude:tools"
@@ -21013,7 +21013,7 @@
       "family": "atlas-strategy",
       "group": "thinking",
       "domain": "strategy",
-      "name_en": "Business or product plan review under one of four postures: expand, selectively expand, hold scope, reduce",
+      "name_en": "Business plan review under one of four postures: expand, selectively expand, hold scope, reduce",
       "name_ar": "مراجعة خطة عمل أو منتج بأربعة مواقف: توسيع، توسيع انتقائي، تثبيت النطاق، تقليص",
       "status": "documented",
       "requires": [],
@@ -21115,7 +21115,7 @@
         "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/2989-quality-engineering-skills/12657-dvp-test-plan"
       ],
       "source": "atlas-strategy.json",
-      "what": "خطة التحكم (نموذج أولي أو ما قبل الإطلاق أو إنتاج) تُبنى صفًا صفًا من خطوات العملية وضوابط PFMEA: الخاصية المضبوطة والمواصفة والمقياس وحجم العينة وتكرارها وطريقة التحكم وخطة رد الفعل؛ وخطة التحقق DVP&R تربط كل نمط فشل عالي الأولوية في DFMEA باختبار محدد بمعيار نجاح وعينة وجدول وت"
+      "what": "خطة التحكم (نموذج أولي أو ما قبل الإنتاج التسلسلي أو إنتاج) تُبنى صفًا صفًا من خطوات العملية وضوابط PFMEA: الخاصية المضبوطة والمواصفة والمقياس وحجم العينة وتكرارها وطريقة التحكم وخطة رد الفعل؛ وخطة التحقق DVP&R تربط كل نمط فشل عالي الأولوية في DFMEA باختبار محدد بمعيار نجاح وعينة"
     },
     {
       "id": "ASTRAT-104",

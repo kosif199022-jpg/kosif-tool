@@ -58,11 +58,11 @@
 | SP-0168 السعر الأمثل ونقطة التعادل · Optimal price and break-even | 12 | ✅ | 4 |
 | SP-0038 اطلب أي أسلوب بصري بالاسم من مكتبة 586 أسلوبًا · Ask for any visual style by name from a 586-style library | 4 | 🟢 | 3 |
 | SP-0012 سكامبر (SCAMPER) · SCAMPER | 21 | ✅ | 2 |
-| SP-0019 خطة تسليم بإيصال · Delivery plan with a receipt | 15 | ✅ | 2 |
+| SP-0019 خطة تسليم بإيصال · Delivery plan with a receipt | 14 | ✅ | 2 |
 | SP-0169 ثلاثة خيارات حقيقية وعدم الفعل · Three real options plus do-nothing | 6 | ✅ | 1 |
 | SP-0015 حلقة أودا · OODA loop | 53 | 📄 | 0 |
+| SP-0006 مراسلة وكلاء مشاريع أخرى عبر الألواح · Cross-project agent messaging via terminal panes | 36 | 📄 | 0 |
 | SP-0159 مراجعة تصميم بأسلوب الطرح حتى الجوهر · Subtractive design review from the customer backwards | 36 | 📄 | 0 |
-| SP-0006 مراسلة وكلاء مشاريع أخرى عبر الألواح · Cross-project agent messaging via terminal panes | 35 | 📄 | 0 |
 | SP-0026 قائمة المرحلة صفر (12 وحدة) · Stage-0 checklist (12 modules) | 13 | 📄 | 0 |
 | SP-0160 حلقة مستقلة لتصريف قائمة المهام · Autonomous backlog-draining loop and single-task ralph loop | 12 | 📄 | 0 |
 
@@ -292,7 +292,7 @@
 - **السكربتات / scripts:** — (وصفات في الفصول)
 - **العائلات / families:** [atlas-data](powers/atlas-data.md) · [charts-data-infographic](powers/charts-data-infographic.md) · [data-analysis](powers/data-analysis.md) · [maps-geo](powers/maps-geo.md)
 - **المستلزمات / needs:** `python3` · `npm:hyperframes` · `npm:maplibre` · `key:unspecified` · `fonts:arabic` · `node` · `npm:d3` · `chromium` · `npm:three` · `pip:duckdb` · `npm:remotion` · `pip:pandas` · `pip:sympy` · `pip:matplotlib`
-- **يتصل بـ / links:** [software](#hub-software) · [thinking](#hub-thinking) · [motion](#hub-motion) · [3d](#hub-3d)
+- **يتصل بـ / links:** [thinking](#hub-thinking) · [software](#hub-software) · [motion](#hub-motion) · [3d](#hub-3d)
 
 | القدرة الخارقة | حجم | أفضل | جاهز |
 |---|---|---|---|

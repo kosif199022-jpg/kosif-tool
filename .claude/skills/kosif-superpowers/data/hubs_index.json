@@ -189,8 +189,8 @@
     "SP-0019",
     "SP-0169",
     "SP-0015",
-    "SP-0159",
     "SP-0006",
+    "SP-0159",
     "SP-0026",
     "SP-0160",
     "SP-0007",
@@ -261,7 +261,7 @@
      "id": "SP-0019",
      "name_ar": "خطة تسليم بإيصال",
      "name_en": "Delivery plan with a receipt",
-     "size": 15,
+     "size": 14,
      "best": "proven",
      "ready_now": 2
     },
@@ -282,18 +282,18 @@
      "ready_now": 0
     },
     {
-     "id": "SP-0159",
-     "name_ar": "مراجعة تصميم بأسلوب الطرح حتى الجوهر",
-     "name_en": "Subtractive design review from the customer backwards",
+     "id": "SP-0006",
+     "name_ar": "مراسلة وكلاء مشاريع أخرى عبر الألواح",
+     "name_en": "Cross-project agent messaging via terminal panes",
      "size": 36,
      "best": "documented",
      "ready_now": 0
     },
     {
-     "id": "SP-0006",
-     "name_ar": "مراسلة وكلاء مشاريع أخرى عبر الألواح",
-     "name_en": "Cross-project agent messaging via terminal panes",
-     "size": 35,
+     "id": "SP-0159",
+     "name_ar": "مراجعة تصميم بأسلوب الطرح حتى الجوهر",
+     "name_en": "Subtractive design review from the customer backwards",
+     "size": 36,
      "best": "documented",
      "ready_now": 0
     },
@@ -2525,8 +2525,8 @@
     "pip:office"
    ],
    "links": [
-    "software",
     "thinking",
+    "software",
     "motion",
     "3d"
    ]

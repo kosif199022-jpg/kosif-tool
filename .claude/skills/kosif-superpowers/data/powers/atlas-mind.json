@@ -4032,7 +4032,7 @@
   "id": "AMIND-71",
   "family": "atlas-mind",
   "domain": "mind",
-  "name_ar": "خطة ينفذها نموذج أضعف دون حضورك: اتخذ كل قرار، واكتب أقل قدر ممكن",
+  "name_ar": "تفويض التنفيذ لنموذج أضعف دون حضورك: اتخذ كل قرار مسبقًا، واكتب أقل قدر ممكن",
   "name_en": "A plan a weaker model will execute without you: make every decision, write as little as possible",
   "status": "documented",
   "what": "حين تخطط لنفسك تختصر ('اتبع النمط الموجود'، 'عالج الأخطاء بشكل مناسب')، وكل اختصار قرار سيتخذه منفذ أضعف بثقة وخطأ. والفشل المعاكس خطة أطول من المهمة. القاعدة: كل قرار يُتخذ في الخطة، والكلمات تُصرف فقط حيث يكون سوء الفهم واردًا، والخطة أقصر من الفرق الذي تنتجه. — Delegation plans for subagents or cheaper models.",
@@ -4051,11 +4051,10 @@
   "styles": [],
   "tags": [
    "delegation",
-   "implementation plan",
+   "handoff spec",
    "subagent",
-   "planning",
    "التفويض",
-   "خطة التنفيذ"
+   "مواصفة التسليم"
   ],
   "section": "التخطيط والمواصفات — Planning, specs & decisions",
   "source": "KOSIF Atlas exhaustive pass 2026-10-23, batch batch5-mind (https://github.com/kosif199022-jpg/kosif-atlas @ 99bb108d): plan-for-dummies/plan-for-dummies (#780) · SKILL.md read in full as inert text",

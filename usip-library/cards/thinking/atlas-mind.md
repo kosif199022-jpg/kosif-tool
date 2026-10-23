@@ -74,7 +74,7 @@
 - [`AMIND-68` اختر الأداة للمشكلة لا بالعادة: أربع خطايا اختيار، وسلم أصلي ثم رسمي ثم طرف ثالث موثوق](#amind-68--اختر-الأداة-للمشكلة-لا-بالعادة-أربع-خطايا-اختيار-وسلم-أصلي-ثم-رسمي-ثم-طرف-ثالث-موثوق--pick-for-the-problem-not-the-reflex-four-selection-sins-and-a-native-official-vetted-ladder)
 - [`AMIND-69` انقل العمل الحتمي إلى سكربت: ثلاث طبقات (حتمي، اكتشف ثم احكم، تفكير فقط)](#amind-69--انقل-العمل-الحتمي-إلى-سكربت-ثلاث-طبقات-حتمي-اكتشف-ثم-احكم-تفكير-فقط--script-the-deterministic-work-three-tiers-deterministic-detect-then-judge-reasoning-only)
 - [`AMIND-70` مستشار الأتمتة والأدوات للقراءة فقط: ماذا يناسب هذا المستودع من خوادم MCP ومهارات وخطافات ووكلاء فرعيين وإضافات](#amind-70--مستشار-الأتمتة-والأدوات-للقراءة-فقط-ماذا-يناسب-هذا-المستودع-من-خوادم-mcp-ومهارات-وخطافات-ووكلاء-فرعيين-وإضافات--read-only-automation-and-tool-advisor-which-mcp-servers-skills-hooks-subagents-and-plugins-fit-this-repository)
-- [`AMIND-71` خطة ينفذها نموذج أضعف دون حضورك: اتخذ كل قرار، واكتب أقل قدر ممكن](#amind-71--خطة-ينفذها-نموذج-أضعف-دون-حضورك-اتخذ-كل-قرار-واكتب-أقل-قدر-ممكن--a-plan-a-weaker-model-will-execute-without-you-make-every-decision-write-as-little-as-possible)
+- [`AMIND-71` تفويض التنفيذ لنموذج أضعف دون حضورك: اتخذ كل قرار مسبقًا، واكتب أقل قدر ممكن](#amind-71--تفويض-التنفيذ-لنموذج-أضعف-دون-حضورك-اتخذ-كل-قرار-مسبقًا-واكتب-أقل-قدر-ممكن--a-plan-a-weaker-model-will-execute-without-you-make-every-decision-write-as-little-as-possible)
 - [`AMIND-72` من التخطيط إلى التنفيذ بسلطتين: التوجيه التقني لك ويُسجل، والوظيفي والتشغيلي للمستخدم ويُسأل، والخطة هي المواصفة](#amind-72--من-التخطيط-إلى-التنفيذ-بسلطتين-التوجيه-التقني-لك-ويُسجل-والوظيفي-والتشغيلي-للمستخدم-ويُسأل-والخطة-هي-المواصفة--plan-then-implement-under-two-authorities-technical-direction-is-yours-and-logged-functional-and-operational-direction-is-the-users-and-asked-the-plan-is-the-spec)
 - [`AMIND-73` مدقق الاستدلال: مصفوفة تتبع من الشروط الأصلية إلى الاستنتاج، وتصنيف كل افتراض معطى أو مُثبت أو مستنتج أو مخترع أو مجهول](#amind-73--مدقق-الاستدلال-مصفوفة-تتبع-من-الشروط-الأصلية-إلى-الاستنتاج-وتصنيف-كل-افتراض-معطى-أو-مُثبت-أو-مستنتج-أو-مخترع-أو-مجهول--reasoning-verifier-a-traceability-matrix-from-the-original-conditions-to-the-conclusion-with-each-assumption-classed-given-verified-deduced-invented-or-unknown)
 - [`AMIND-74` استدل ولا تردد: الموروث يصف ما هو كائن ولا يبرر نفسه، فأعد اشتقاق القرارات التي تعيش على السابقة](#amind-74--استدل-ولا-تردد-الموروث-يصف-ما-هو-كائن-ولا-يبرر-نفسه-فأعد-اشتقاق-القرارات-التي-تعيش-على-السابقة--reason-dont-recite-inherited-content-describes-what-is-and-does-not-justify-itself-so-re-derive-decisions-coasting-on-precedent)
@@ -4729,7 +4729,7 @@
 - `AMIND-67` مالك واحد لكل نوع حقيقة: التصميم، حالة العمل، خطة التنفيذ، ودليل التسليم / One owner per kind of truth: design, work state, execution plan, delivery evidence (documented)
 - `AMIND-68` اختر الأداة للمشكلة لا بالعادة: أربع خطايا اختيار، وسلم أصلي ثم رسمي ثم طرف ثالث موثوق / Pick for the problem, not the reflex: four selection sins and a native, official, vetted ladder (documented)
 - `AMIND-70` مستشار الأتمتة والأدوات للقراءة فقط: ماذا يناسب هذا المستودع من خوادم MCP ومهارات وخطافات ووكلاء فرعيين وإضافات / Read-only automation and tool advisor: which MCP servers, skills, hooks, subagents and plugins fit this repository (documented)
-- `AMIND-71` خطة ينفذها نموذج أضعف دون حضورك: اتخذ كل قرار، واكتب أقل قدر ممكن / A plan a weaker model will execute without you: make every decision, write as little as possible (documented)
+- `AMIND-71` تفويض التنفيذ لنموذج أضعف دون حضورك: اتخذ كل قرار مسبقًا، واكتب أقل قدر ممكن / A plan a weaker model will execute without you: make every decision, write as little as possible (documented)
 
 ### `AMIND-70` — مستشار الأتمتة والأدوات للقراءة فقط: ماذا يناسب هذا المستودع من خوادم MCP ومهارات وخطافات ووكلاء فرعيين وإضافات / Read-only automation and tool advisor: which MCP servers, skills, hooks, subagents and plugins fit this repository
 
@@ -4798,10 +4798,10 @@
 
 - `AMIND-68` اختر الأداة للمشكلة لا بالعادة: أربع خطايا اختيار، وسلم أصلي ثم رسمي ثم طرف ثالث موثوق / Pick for the problem, not the reflex: four selection sins and a native, official, vetted ladder (documented)
 - `AMIND-69` انقل العمل الحتمي إلى سكربت: ثلاث طبقات (حتمي، اكتشف ثم احكم، تفكير فقط) / Script the deterministic work: three tiers, deterministic, detect-then-judge, reasoning-only (documented)
-- `AMIND-71` خطة ينفذها نموذج أضعف دون حضورك: اتخذ كل قرار، واكتب أقل قدر ممكن / A plan a weaker model will execute without you: make every decision, write as little as possible (documented)
+- `AMIND-71` تفويض التنفيذ لنموذج أضعف دون حضورك: اتخذ كل قرار مسبقًا، واكتب أقل قدر ممكن / A plan a weaker model will execute without you: make every decision, write as little as possible (documented)
 - `AMIND-72` من التخطيط إلى التنفيذ بسلطتين: التوجيه التقني لك ويُسجل، والوظيفي والتشغيلي للمستخدم ويُسأل، والخطة هي المواصفة / Plan, then implement, under two authorities: technical direction is yours and logged, functional and operational direction is the user's and asked; the plan is the spec (documented)
 
-### `AMIND-71` — خطة ينفذها نموذج أضعف دون حضورك: اتخذ كل قرار، واكتب أقل قدر ممكن / A plan a weaker model will execute without you: make every decision, write as little as possible
+### `AMIND-71` — تفويض التنفيذ لنموذج أضعف دون حضورك: اتخذ كل قرار مسبقًا، واكتب أقل قدر ممكن / A plan a weaker model will execute without you: make every decision, write as little as possible
 
 | الحقل | القيمة |
 |---|---|
@@ -4823,7 +4823,7 @@
 
 **التثبيت:** mkdir -p ~/.claude/skills && cp -r .claude/skills/kosif-superpowers/vendor/kosif-atlas/skills/243-plan-for-dummies/780-plan-for-dummies ~/.claude/skills/plan-for-dummies
 
-**الوسوم:** delegation · implementation plan · subagent · planning · التفويض · خطة التنفيذ
+**الوسوم:** delegation · handoff spec · subagent · التفويض · مواصفة التسليم
 
 #### 1. الاستقبال (A25)
 
@@ -4936,7 +4936,7 @@
 #### 7. قدرات قريبة في العائلة
 
 - `AMIND-70` مستشار الأتمتة والأدوات للقراءة فقط: ماذا يناسب هذا المستودع من خوادم MCP ومهارات وخطافات ووكلاء فرعيين وإضافات / Read-only automation and tool advisor: which MCP servers, skills, hooks, subagents and plugins fit this repository (documented)
-- `AMIND-71` خطة ينفذها نموذج أضعف دون حضورك: اتخذ كل قرار، واكتب أقل قدر ممكن / A plan a weaker model will execute without you: make every decision, write as little as possible (documented)
+- `AMIND-71` تفويض التنفيذ لنموذج أضعف دون حضورك: اتخذ كل قرار مسبقًا، واكتب أقل قدر ممكن / A plan a weaker model will execute without you: make every decision, write as little as possible (documented)
 - `AMIND-73` مدقق الاستدلال: مصفوفة تتبع من الشروط الأصلية إلى الاستنتاج، وتصنيف كل افتراض معطى أو مُثبت أو مستنتج أو مخترع أو مجهول / Reasoning verifier: a traceability matrix from the original conditions to the conclusion, with each assumption classed given, verified, deduced, invented or unknown (documented)
 - `AMIND-74` استدل ولا تردد: الموروث يصف ما هو كائن ولا يبرر نفسه، فأعد اشتقاق القرارات التي تعيش على السابقة / Reason, don't recite: inherited content describes what is and does not justify itself, so re-derive decisions coasting on precedent (documented)
 
@@ -5003,7 +5003,7 @@
 
 #### 7. قدرات قريبة في العائلة
 
-- `AMIND-71` خطة ينفذها نموذج أضعف دون حضورك: اتخذ كل قرار، واكتب أقل قدر ممكن / A plan a weaker model will execute without you: make every decision, write as little as possible (documented)
+- `AMIND-71` تفويض التنفيذ لنموذج أضعف دون حضورك: اتخذ كل قرار مسبقًا، واكتب أقل قدر ممكن / A plan a weaker model will execute without you: make every decision, write as little as possible (documented)
 - `AMIND-72` من التخطيط إلى التنفيذ بسلطتين: التوجيه التقني لك ويُسجل، والوظيفي والتشغيلي للمستخدم ويُسأل، والخطة هي المواصفة / Plan, then implement, under two authorities: technical direction is yours and logged, functional and operational direction is the user's and asked; the plan is the spec (documented)
 - `AMIND-74` استدل ولا تردد: الموروث يصف ما هو كائن ولا يبرر نفسه، فأعد اشتقاق القرارات التي تعيش على السابقة / Reason, don't recite: inherited content describes what is and does not justify itself, so re-derive decisions coasting on precedent (documented)
 - `AMIND-75` عصف ذهني بقدر الحاجة: فرز بسيط أو مضغوط أو كامل، وكبسولة قرار من خمسة أسطر، وفحص سياق رخيص قبل الأسئلة / Brainstorm only as much as needed: minimal, compact or full triage, a five-line decision capsule, and a cheap context preflight before questions (documented)
