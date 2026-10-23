@@ -18,8 +18,8 @@
   "powers": 5335,
   "families": 62,
   "domains": 10,
-  "tools": 137,
-  "guides": 98,
+  "tools": 138,
+  "guides": 99,
   "statuses": {
    "documented": 1937,
    "idea": 71,
@@ -12108,6 +12108,101 @@
    "evidence_note": "22 narrow tests previously passed on authorized Windows laptop (7+7+8), not full professional quality proof."
   },
   {
+   "id": "drawing-methods",
+   "path": "scripts/drawing_methods.py",
+   "root": "skill",
+   "kind": "cli",
+   "area": "draw",
+   "title_en": "Drawing-book methods atlas with layered construction SVGs",
+   "title_ar": "أطلس مناهج كتب الرسم مع رسم بنائي بالطبقات",
+   "summary_en": "26 original method cards distilled from well-known drawing books (gesture, proportion, Loomis-style head, mannequin, shape language, silhouette, expression, light, value, colour, composition, inking); ranks them for an Arabic or English request, builds an ordered drawing plan or an image prompt, draws a head, figure, character or forms as a deterministic layered SVG (guide, construction, final, silhouette) and checks the drawing's geometry against the cards.",
+   "summary_ar": "26 بطاقة منهج أصلية مستخلصة من أشهر كتب الرسم (الإيماءة، النسب، رأس لوميس، المانيكان، لغة الأشكال، السيلويت، التعبير، الضوء، القيم، اللون، التكوين، التحبير)؛ يرتبها لطلبك بالعربي أو الإنجليزي، ويبني خطة رسم أو برومبت صورة، ويرسم رأسًا أو جسمًا أو شخصية أو أشكالًا SVG بطبقات، ثم يفحص هندستها مقابل البطاقات.",
+   "use_when": [
+    "ارسم شخصية كرتونية بلغة أشكال واضحة",
+    "علمني أرسم الوجه من زاوية",
+    "ارسم جسم بنسب صحيحة ووضعية ديناميكية",
+    "Draw a character using drawing-book methods",
+    "Plan a figure drawing with gesture and proportion"
+   ],
+   "keywords": [
+    "drawing books",
+    "كتب الرسم",
+    "loomis",
+    "لوميس",
+    "gesture",
+    "إيماءة",
+    "proportion",
+    "نسب",
+    "shape language",
+    "لغة الأشكال",
+    "silhouette",
+    "سيلويت",
+    "character design",
+    "تصميم شخصيات",
+    "expression",
+    "تعبير",
+    "head construction",
+    "رسم الوجه",
+    "mannequin",
+    "مانيكان",
+    "figure drawing",
+    "رسم الجسم",
+    "svg",
+    "رسم"
+   ],
+   "commands": [
+    {
+     "name": "find",
+     "example": "python3 scripts/drawing_methods.py find \"ارسم وش شخصية بتضحك\"",
+     "does": "Ranks the method cards for a request; prints JSON."
+    },
+    {
+     "name": "plan",
+     "example": "python3 scripts/drawing_methods.py plan \"ارسم شخصية كرتونية طفل سعيد\"",
+     "does": "Ordered intent-to-verify drawing plan with the chosen cards' steps and checks, plus the demo and check commands."
+    },
+    {
+     "name": "prompt",
+     "example": "python3 scripts/drawing_methods.py prompt \"a brave girl explorer\" --methods DM-13,DM-16",
+     "does": "Image-generation prompt and review checks from the cards; calls no model."
+    },
+    {
+     "name": "draw",
+     "example": "python3 scripts/drawing_methods.py draw character --shape circle --age child --expression happy --out out/character.svg",
+     "does": "Writes a layered SVG (head, figure, character or forms); refuses to overwrite without --force."
+    },
+    {
+     "name": "check",
+     "example": "python3 scripts/drawing_methods.py check --svg out/character.svg",
+     "does": "Measures the SVG's stages, proportions, tilts, shapes and expression against the cards; exits 1 on a failed check."
+    }
+   ],
+   "inputs": "A request in Arabic or English, method ids, or draw parameters (yaw/pitch, heads, pose, shape, age, expression, eye level)",
+   "outputs": "JSON method lists, plans, prompts and check reports; editable layered SVG drawings",
+   "requires": {
+    "python": [],
+    "binaries": [],
+    "node": [],
+    "optional": [],
+    "network": false
+   },
+   "safety": "writes-files",
+   "consent": "Writes only the SVG or JSON path you pass; refuses to overwrite without --force; no network, model calls or spend.",
+   "limits": "Method cards summarise widely taught book methods in original words; the books' full texts were not read here. The SVGs are construction demonstrations, and check measures geometry only, not artistic quality.",
+   "tests": [
+    ".claude/skills/kosif-superpowers/evals/test_drawing_methods.py"
+   ],
+   "docs": [
+    ".claude/skills/kosif-superpowers/references/drawing-methods-atlas.md"
+   ],
+   "families": [
+    "hand-drawn-draw-on",
+    "story-direction-ideas"
+   ],
+   "evidence": "tested-here",
+   "evidence_note": "10 unit tests passed on this checkout (cloud container, 2026-10-23), including draw+check of 9 variants and a rendered visual review of head, figure, character and forms SVGs."
+  },
+  {
    "id": "perspective-color-lab",
    "path": "scripts/perspective_color_lab.py",
    "root": "skill",
@@ -13304,6 +13399,12 @@
    "path": "references/creativity.md",
    "title": "الإبداع — Creativity engine (IDEA)",
    "area": "think",
+   "summary": ""
+  },
+  {
+   "path": "references/drawing-methods-atlas.md",
+   "title": "أطلس مناهج كتب الرسم — Drawing Methods Atlas",
+   "area": "draw",
    "summary": ""
   },
   {
