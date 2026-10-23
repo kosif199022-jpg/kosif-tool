@@ -525,7 +525,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `audio` ← المخرج `video`، والمنفّذ `method:TRANS-01` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `cinematic-cut-planner` · `creative-quality-gate` · `dua-wednesday` · `fetch-reference` · `kosif-timeline` · `kosif-timeline-demo`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `cinematic-cut-planner` · `creative-quality-gate` · `dua-wednesday` · `fast-edit` · `fetch-reference` · `kosif-timeline`.
 - مراحل النوع: قياس الصوت والأصول ← ستوريبورد ← بناء المشهد ← معاينة رخيصة ← رندر ← تحقق ← تسليم.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -600,7 +600,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `audio` ← المخرج `video`، والمنفّذ `method:TRANS-02` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `cinematic-cut-planner` · `creative-quality-gate` · `dua-wednesday` · `fetch-reference` · `kosif-timeline` · `kosif-timeline-demo`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `cinematic-cut-planner` · `creative-quality-gate` · `dua-wednesday` · `fast-edit` · `fetch-reference` · `kosif-timeline`.
 - مراحل النوع: قياس الصوت والأصول ← ستوريبورد ← بناء المشهد ← معاينة رخيصة ← رندر ← تحقق ← تسليم.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -676,7 +676,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `audio` ← المخرج `video`، والمنفّذ `method:TRANS-03` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `cinematic-cut-planner` · `creative-quality-gate` · `dua-wednesday` · `fetch-reference` · `kosif-timeline` · `kosif-timeline-demo`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `cinematic-cut-planner` · `creative-quality-gate` · `dua-wednesday` · `fast-edit` · `fetch-reference` · `kosif-timeline`.
 - مراحل النوع: قياس الصوت والأصول ← ستوريبورد ← بناء المشهد ← معاينة رخيصة ← رندر ← تحقق ← تسليم.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -752,7 +752,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `audio` ← المخرج `video`، والمنفّذ `method:TRANS-04` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `cinematic-cut-planner` · `creative-quality-gate` · `dua-wednesday` · `fetch-reference` · `kosif-timeline` · `kosif-timeline-demo`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `cinematic-cut-planner` · `creative-quality-gate` · `dua-wednesday` · `fast-edit` · `fetch-reference` · `kosif-timeline`.
 - مراحل النوع: قياس الصوت والأصول ← ستوريبورد ← بناء المشهد ← معاينة رخيصة ← رندر ← تحقق ← تسليم.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -829,7 +829,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `audio` ← المخرج `video`، والمنفّذ `method:TRANS-05` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `cinematic-cut-planner` · `creative-quality-gate` · `dua-wednesday` · `fetch-reference` · `kosif-timeline` · `kosif-timeline-demo`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `cinematic-cut-planner` · `creative-quality-gate` · `dua-wednesday` · `fast-edit` · `fetch-reference` · `kosif-timeline`.
 - مراحل النوع: قياس الصوت والأصول ← ستوريبورد ← بناء المشهد ← معاينة رخيصة ← رندر ← تحقق ← تسليم.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -906,7 +906,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `audio` ← المخرج `video`، والمنفّذ `method:TRANS-06` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `cinematic-cut-planner` · `creative-quality-gate` · `dua-wednesday` · `fetch-reference` · `kosif-timeline` · `kosif-timeline-demo`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `cinematic-cut-planner` · `creative-quality-gate` · `dua-wednesday` · `fast-edit` · `fetch-reference` · `kosif-timeline`.
 - مراحل النوع: قياس الصوت والأصول ← ستوريبورد ← بناء المشهد ← معاينة رخيصة ← رندر ← تحقق ← تسليم.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -983,7 +983,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `audio` ← المخرج `video`، والمنفّذ `method:TRANS-07` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `cinematic-cut-planner` · `creative-quality-gate` · `dua-wednesday` · `fetch-reference` · `kosif-timeline` · `kosif-timeline-demo`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `cinematic-cut-planner` · `creative-quality-gate` · `dua-wednesday` · `fast-edit` · `fetch-reference` · `kosif-timeline`.
 - مراحل النوع: قياس الصوت والأصول ← ستوريبورد ← بناء المشهد ← معاينة رخيصة ← رندر ← تحقق ← تسليم.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -1061,7 +1061,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `audio` ← المخرج `video`، والمنفّذ `method:TRANS-08` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `cinematic-cut-planner` · `creative-quality-gate` · `dua-wednesday` · `fetch-reference` · `kosif-timeline` · `kosif-timeline-demo`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `cinematic-cut-planner` · `creative-quality-gate` · `dua-wednesday` · `fast-edit` · `fetch-reference` · `kosif-timeline`.
 - مراحل النوع: قياس الصوت والأصول ← ستوريبورد ← بناء المشهد ← معاينة رخيصة ← رندر ← تحقق ← تسليم.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -1134,7 +1134,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `audio` ← المخرج `video`، والمنفّذ `method:TRANS-09` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `cinematic-cut-planner` · `creative-quality-gate` · `dua-wednesday` · `fetch-reference` · `kosif-timeline` · `kosif-timeline-demo`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `cinematic-cut-planner` · `creative-quality-gate` · `dua-wednesday` · `fast-edit` · `fetch-reference` · `kosif-timeline`.
 - مراحل النوع: قياس الصوت والأصول ← ستوريبورد ← بناء المشهد ← معاينة رخيصة ← رندر ← تحقق ← تسليم.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -1209,7 +1209,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `audio` ← المخرج `video`، والمنفّذ `method:TRANS-10` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `cinematic-cut-planner` · `creative-quality-gate` · `dua-wednesday` · `fetch-reference` · `kosif-timeline` · `kosif-timeline-demo`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `cinematic-cut-planner` · `creative-quality-gate` · `dua-wednesday` · `fast-edit` · `fetch-reference` · `kosif-timeline`.
 - مراحل النوع: قياس الصوت والأصول ← ستوريبورد ← بناء المشهد ← معاينة رخيصة ← رندر ← تحقق ← تسليم.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -1284,7 +1284,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `audio` ← المخرج `video`، والمنفّذ `method:TRANS-100` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `cinematic-cut-planner` · `creative-quality-gate` · `dua-wednesday` · `fetch-reference` · `kosif-timeline` · `kosif-timeline-demo`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `cinematic-cut-planner` · `creative-quality-gate` · `dua-wednesday` · `fast-edit` · `fetch-reference` · `kosif-timeline`.
 - مراحل النوع: قياس الصوت والأصول ← ستوريبورد ← بناء المشهد ← معاينة رخيصة ← رندر ← تحقق ← تسليم.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -1360,7 +1360,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `audio` ← المخرج `video`، والمنفّذ `method:TRANS-101` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `cinematic-cut-planner` · `creative-quality-gate` · `dua-wednesday` · `fetch-reference` · `kosif-timeline` · `kosif-timeline-demo`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `cinematic-cut-planner` · `creative-quality-gate` · `dua-wednesday` · `fast-edit` · `fetch-reference` · `kosif-timeline`.
 - مراحل النوع: قياس الصوت والأصول ← ستوريبورد ← بناء المشهد ← معاينة رخيصة ← رندر ← تحقق ← تسليم.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -1436,7 +1436,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `audio` ← المخرج `video`، والمنفّذ `method:TRANS-102` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `cinematic-cut-planner` · `creative-quality-gate` · `dua-wednesday` · `fetch-reference` · `kosif-timeline` · `kosif-timeline-demo`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `cinematic-cut-planner` · `creative-quality-gate` · `dua-wednesday` · `fast-edit` · `fetch-reference` · `kosif-timeline`.
 - مراحل النوع: قياس الصوت والأصول ← ستوريبورد ← بناء المشهد ← معاينة رخيصة ← رندر ← تحقق ← تسليم.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -1512,7 +1512,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `audio` ← المخرج `video`، والمنفّذ `method:TRANS-103` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `cinematic-cut-planner` · `creative-quality-gate` · `dua-wednesday` · `fetch-reference` · `kosif-timeline` · `kosif-timeline-demo`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `cinematic-cut-planner` · `creative-quality-gate` · `dua-wednesday` · `fast-edit` · `fetch-reference` · `kosif-timeline`.
 - مراحل النوع: قياس الصوت والأصول ← ستوريبورد ← بناء المشهد ← معاينة رخيصة ← رندر ← تحقق ← تسليم.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -1589,7 +1589,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `audio` ← المخرج `video`، والمنفّذ `method:TRANS-104` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `cinematic-cut-planner` · `creative-quality-gate` · `dua-wednesday` · `fetch-reference` · `kosif-timeline` · `kosif-timeline-demo`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `cinematic-cut-planner` · `creative-quality-gate` · `dua-wednesday` · `fast-edit` · `fetch-reference` · `kosif-timeline`.
 - مراحل النوع: قياس الصوت والأصول ← ستوريبورد ← بناء المشهد ← معاينة رخيصة ← رندر ← تحقق ← تسليم.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -1664,7 +1664,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `audio` ← المخرج `video`، والمنفّذ `method:TRANS-105` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `cinematic-cut-planner` · `creative-quality-gate` · `dua-wednesday` · `fetch-reference` · `kosif-timeline` · `kosif-timeline-demo`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `cinematic-cut-planner` · `creative-quality-gate` · `dua-wednesday` · `fast-edit` · `fetch-reference` · `kosif-timeline`.
 - مراحل النوع: قياس الصوت والأصول ← ستوريبورد ← بناء المشهد ← معاينة رخيصة ← رندر ← تحقق ← تسليم.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -1739,7 +1739,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `audio` ← المخرج `video`، والمنفّذ `method:TRANS-106` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `cinematic-cut-planner` · `creative-quality-gate` · `dua-wednesday` · `fetch-reference` · `kosif-timeline` · `kosif-timeline-demo`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `cinematic-cut-planner` · `creative-quality-gate` · `dua-wednesday` · `fast-edit` · `fetch-reference` · `kosif-timeline`.
 - مراحل النوع: قياس الصوت والأصول ← ستوريبورد ← بناء المشهد ← معاينة رخيصة ← رندر ← تحقق ← تسليم.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -1814,7 +1814,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `audio` ← المخرج `video`، والمنفّذ `method:TRANS-107` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `cinematic-cut-planner` · `creative-quality-gate` · `dua-wednesday` · `fetch-reference` · `kosif-timeline` · `kosif-timeline-demo`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `cinematic-cut-planner` · `creative-quality-gate` · `dua-wednesday` · `fast-edit` · `fetch-reference` · `kosif-timeline`.
 - مراحل النوع: قياس الصوت والأصول ← ستوريبورد ← بناء المشهد ← معاينة رخيصة ← رندر ← تحقق ← تسليم.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -1889,7 +1889,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `audio` ← المخرج `video`، والمنفّذ `method:TRANS-108` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `cinematic-cut-planner` · `creative-quality-gate` · `dua-wednesday` · `fetch-reference` · `kosif-timeline` · `kosif-timeline-demo`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `cinematic-cut-planner` · `creative-quality-gate` · `dua-wednesday` · `fast-edit` · `fetch-reference` · `kosif-timeline`.
 - مراحل النوع: قياس الصوت والأصول ← ستوريبورد ← بناء المشهد ← معاينة رخيصة ← رندر ← تحقق ← تسليم.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -1964,7 +1964,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `audio` ← المخرج `video`، والمنفّذ `method:TRANS-109` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `cinematic-cut-planner` · `creative-quality-gate` · `dua-wednesday` · `fetch-reference` · `kosif-timeline` · `kosif-timeline-demo`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `cinematic-cut-planner` · `creative-quality-gate` · `dua-wednesday` · `fast-edit` · `fetch-reference` · `kosif-timeline`.
 - مراحل النوع: قياس الصوت والأصول ← ستوريبورد ← بناء المشهد ← معاينة رخيصة ← رندر ← تحقق ← تسليم.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -2040,7 +2040,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `audio` ← المخرج `video`، والمنفّذ `method:TRANS-11` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `cinematic-cut-planner` · `creative-quality-gate` · `dua-wednesday` · `fetch-reference` · `kosif-timeline` · `kosif-timeline-demo`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `cinematic-cut-planner` · `creative-quality-gate` · `dua-wednesday` · `fast-edit` · `fetch-reference` · `kosif-timeline`.
 - مراحل النوع: قياس الصوت والأصول ← ستوريبورد ← بناء المشهد ← معاينة رخيصة ← رندر ← تحقق ← تسليم.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -2115,7 +2115,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `audio` ← المخرج `video`، والمنفّذ `method:TRANS-110` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `cinematic-cut-planner` · `creative-quality-gate` · `dua-wednesday` · `fetch-reference` · `kosif-timeline` · `kosif-timeline-demo`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `cinematic-cut-planner` · `creative-quality-gate` · `dua-wednesday` · `fast-edit` · `fetch-reference` · `kosif-timeline`.
 - مراحل النوع: قياس الصوت والأصول ← ستوريبورد ← بناء المشهد ← معاينة رخيصة ← رندر ← تحقق ← تسليم.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -2190,7 +2190,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `audio` ← المخرج `video`، والمنفّذ `method:TRANS-111` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `cinematic-cut-planner` · `creative-quality-gate` · `dua-wednesday` · `fetch-reference` · `kosif-timeline` · `kosif-timeline-demo`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `cinematic-cut-planner` · `creative-quality-gate` · `dua-wednesday` · `fast-edit` · `fetch-reference` · `kosif-timeline`.
 - مراحل النوع: قياس الصوت والأصول ← ستوريبورد ← بناء المشهد ← معاينة رخيصة ← رندر ← تحقق ← تسليم.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -2265,7 +2265,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `audio` ← المخرج `video`، والمنفّذ `method:TRANS-112` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `cinematic-cut-planner` · `creative-quality-gate` · `dua-wednesday` · `fetch-reference` · `kosif-timeline` · `kosif-timeline-demo`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `cinematic-cut-planner` · `creative-quality-gate` · `dua-wednesday` · `fast-edit` · `fetch-reference` · `kosif-timeline`.
 - مراحل النوع: قياس الصوت والأصول ← ستوريبورد ← بناء المشهد ← معاينة رخيصة ← رندر ← تحقق ← تسليم.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -2340,7 +2340,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `audio` ← المخرج `video`، والمنفّذ `method:TRANS-113` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `cinematic-cut-planner` · `creative-quality-gate` · `dua-wednesday` · `fetch-reference` · `kosif-timeline` · `kosif-timeline-demo`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `cinematic-cut-planner` · `creative-quality-gate` · `dua-wednesday` · `fast-edit` · `fetch-reference` · `kosif-timeline`.
 - مراحل النوع: قياس الصوت والأصول ← ستوريبورد ← بناء المشهد ← معاينة رخيصة ← رندر ← تحقق ← تسليم.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -2415,7 +2415,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `audio` ← المخرج `video`، والمنفّذ `method:TRANS-114` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `cinematic-cut-planner` · `creative-quality-gate` · `dua-wednesday` · `fetch-reference` · `kosif-timeline` · `kosif-timeline-demo`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `cinematic-cut-planner` · `creative-quality-gate` · `dua-wednesday` · `fast-edit` · `fetch-reference` · `kosif-timeline`.
 - مراحل النوع: قياس الصوت والأصول ← ستوريبورد ← بناء المشهد ← معاينة رخيصة ← رندر ← تحقق ← تسليم.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -2490,7 +2490,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `audio` ← المخرج `video`، والمنفّذ `method:TRANS-115` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `cinematic-cut-planner` · `creative-quality-gate` · `dua-wednesday` · `fetch-reference` · `kosif-timeline` · `kosif-timeline-demo`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `cinematic-cut-planner` · `creative-quality-gate` · `dua-wednesday` · `fast-edit` · `fetch-reference` · `kosif-timeline`.
 - مراحل النوع: قياس الصوت والأصول ← ستوريبورد ← بناء المشهد ← معاينة رخيصة ← رندر ← تحقق ← تسليم.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -2565,7 +2565,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `audio` ← المخرج `video`، والمنفّذ `method:TRANS-116` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `cinematic-cut-planner` · `creative-quality-gate` · `dua-wednesday` · `fetch-reference` · `kosif-timeline` · `kosif-timeline-demo`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `cinematic-cut-planner` · `creative-quality-gate` · `dua-wednesday` · `fast-edit` · `fetch-reference` · `kosif-timeline`.
 - مراحل النوع: قياس الصوت والأصول ← ستوريبورد ← بناء المشهد ← معاينة رخيصة ← رندر ← تحقق ← تسليم.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -2640,7 +2640,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `audio` ← المخرج `video`، والمنفّذ `method:TRANS-117` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `cinematic-cut-planner` · `creative-quality-gate` · `dua-wednesday` · `fetch-reference` · `kosif-timeline` · `kosif-timeline-demo`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `cinematic-cut-planner` · `creative-quality-gate` · `dua-wednesday` · `fast-edit` · `fetch-reference` · `kosif-timeline`.
 - مراحل النوع: قياس الصوت والأصول ← ستوريبورد ← بناء المشهد ← معاينة رخيصة ← رندر ← تحقق ← تسليم.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -2715,7 +2715,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `audio` ← المخرج `video`، والمنفّذ `method:TRANS-118` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `cinematic-cut-planner` · `creative-quality-gate` · `dua-wednesday` · `fetch-reference` · `kosif-timeline` · `kosif-timeline-demo`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `cinematic-cut-planner` · `creative-quality-gate` · `dua-wednesday` · `fast-edit` · `fetch-reference` · `kosif-timeline`.
 - مراحل النوع: قياس الصوت والأصول ← ستوريبورد ← بناء المشهد ← معاينة رخيصة ← رندر ← تحقق ← تسليم.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -2791,7 +2791,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `audio` ← المخرج `video`، والمنفّذ `method:TRANS-119` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `cinematic-cut-planner` · `creative-quality-gate` · `dua-wednesday` · `fetch-reference` · `kosif-timeline` · `kosif-timeline-demo`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `cinematic-cut-planner` · `creative-quality-gate` · `dua-wednesday` · `fast-edit` · `fetch-reference` · `kosif-timeline`.
 - مراحل النوع: قياس الصوت والأصول ← ستوريبورد ← بناء المشهد ← معاينة رخيصة ← رندر ← تحقق ← تسليم.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -2869,7 +2869,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `audio` ← المخرج `video`، والمنفّذ `method:TRANS-12` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `cinematic-cut-planner` · `creative-quality-gate` · `dua-wednesday` · `fetch-reference` · `kosif-timeline` · `kosif-timeline-demo`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `cinematic-cut-planner` · `creative-quality-gate` · `dua-wednesday` · `fast-edit` · `fetch-reference` · `kosif-timeline`.
 - مراحل النوع: قياس الصوت والأصول ← ستوريبورد ← بناء المشهد ← معاينة رخيصة ← رندر ← تحقق ← تسليم.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -2946,7 +2946,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `audio` ← المخرج `video`، والمنفّذ `method:TRANS-120` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `cinematic-cut-planner` · `creative-quality-gate` · `dua-wednesday` · `fetch-reference` · `kosif-timeline` · `kosif-timeline-demo`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `cinematic-cut-planner` · `creative-quality-gate` · `dua-wednesday` · `fast-edit` · `fetch-reference` · `kosif-timeline`.
 - مراحل النوع: قياس الصوت والأصول ← ستوريبورد ← بناء المشهد ← معاينة رخيصة ← رندر ← تحقق ← تسليم.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -3025,7 +3025,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `audio` ← المخرج `video`، والمنفّذ `method:TRANS-121` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `cinematic-cut-planner` · `creative-quality-gate` · `dua-wednesday` · `fetch-reference` · `kosif-timeline` · `kosif-timeline-demo`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `cinematic-cut-planner` · `creative-quality-gate` · `dua-wednesday` · `fast-edit` · `fetch-reference` · `kosif-timeline`.
 - مراحل النوع: قياس الصوت والأصول ← ستوريبورد ← بناء المشهد ← معاينة رخيصة ← رندر ← تحقق ← تسليم.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -3104,7 +3104,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `audio` ← المخرج `video`، والمنفّذ `method:TRANS-122` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `cinematic-cut-planner` · `creative-quality-gate` · `dua-wednesday` · `fetch-reference` · `kosif-timeline` · `kosif-timeline-demo`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `cinematic-cut-planner` · `creative-quality-gate` · `dua-wednesday` · `fast-edit` · `fetch-reference` · `kosif-timeline`.
 - مراحل النوع: قياس الصوت والأصول ← ستوريبورد ← بناء المشهد ← معاينة رخيصة ← رندر ← تحقق ← تسليم.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -3183,7 +3183,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `audio` ← المخرج `video`، والمنفّذ `method:TRANS-123` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `cinematic-cut-planner` · `creative-quality-gate` · `dua-wednesday` · `fetch-reference` · `kosif-timeline` · `kosif-timeline-demo`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `cinematic-cut-planner` · `creative-quality-gate` · `dua-wednesday` · `fast-edit` · `fetch-reference` · `kosif-timeline`.
 - مراحل النوع: قياس الصوت والأصول ← ستوريبورد ← بناء المشهد ← معاينة رخيصة ← رندر ← تحقق ← تسليم.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -3260,7 +3260,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `audio` ← المخرج `video`، والمنفّذ `method:TRANS-124` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `cinematic-cut-planner` · `creative-quality-gate` · `dua-wednesday` · `fetch-reference` · `kosif-timeline` · `kosif-timeline-demo`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `cinematic-cut-planner` · `creative-quality-gate` · `dua-wednesday` · `fast-edit` · `fetch-reference` · `kosif-timeline`.
 - مراحل النوع: قياس الصوت والأصول ← ستوريبورد ← بناء المشهد ← معاينة رخيصة ← رندر ← تحقق ← تسليم.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -3339,7 +3339,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `audio` ← المخرج `video`، والمنفّذ `method:TRANS-125` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `cinematic-cut-planner` · `creative-quality-gate` · `dua-wednesday` · `fetch-reference` · `kosif-timeline` · `kosif-timeline-demo`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `cinematic-cut-planner` · `creative-quality-gate` · `dua-wednesday` · `fast-edit` · `fetch-reference` · `kosif-timeline`.
 - مراحل النوع: قياس الصوت والأصول ← ستوريبورد ← بناء المشهد ← معاينة رخيصة ← رندر ← تحقق ← تسليم.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -3418,7 +3418,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `audio` ← المخرج `video`، والمنفّذ `method:TRANS-126` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `cinematic-cut-planner` · `creative-quality-gate` · `dua-wednesday` · `fetch-reference` · `kosif-timeline` · `kosif-timeline-demo`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `cinematic-cut-planner` · `creative-quality-gate` · `dua-wednesday` · `fast-edit` · `fetch-reference` · `kosif-timeline`.
 - مراحل النوع: قياس الصوت والأصول ← ستوريبورد ← بناء المشهد ← معاينة رخيصة ← رندر ← تحقق ← تسليم.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -3497,7 +3497,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `audio` ← المخرج `video`، والمنفّذ `method:TRANS-127` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `cinematic-cut-planner` · `creative-quality-gate` · `dua-wednesday` · `fetch-reference` · `kosif-timeline` · `kosif-timeline-demo`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `cinematic-cut-planner` · `creative-quality-gate` · `dua-wednesday` · `fast-edit` · `fetch-reference` · `kosif-timeline`.
 - مراحل النوع: قياس الصوت والأصول ← ستوريبورد ← بناء المشهد ← معاينة رخيصة ← رندر ← تحقق ← تسليم.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -3576,7 +3576,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `audio` ← المخرج `video`، والمنفّذ `method:TRANS-128` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `cinematic-cut-planner` · `creative-quality-gate` · `dua-wednesday` · `fetch-reference` · `kosif-timeline` · `kosif-timeline-demo`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `cinematic-cut-planner` · `creative-quality-gate` · `dua-wednesday` · `fast-edit` · `fetch-reference` · `kosif-timeline`.
 - مراحل النوع: قياس الصوت والأصول ← ستوريبورد ← بناء المشهد ← معاينة رخيصة ← رندر ← تحقق ← تسليم.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -3655,7 +3655,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `audio` ← المخرج `video`، والمنفّذ `method:TRANS-129` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `cinematic-cut-planner` · `creative-quality-gate` · `dua-wednesday` · `fetch-reference` · `kosif-timeline` · `kosif-timeline-demo`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `cinematic-cut-planner` · `creative-quality-gate` · `dua-wednesday` · `fast-edit` · `fetch-reference` · `kosif-timeline`.
 - مراحل النوع: قياس الصوت والأصول ← ستوريبورد ← بناء المشهد ← معاينة رخيصة ← رندر ← تحقق ← تسليم.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -3734,7 +3734,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `audio` ← المخرج `video`، والمنفّذ `method:TRANS-13` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `cinematic-cut-planner` · `creative-quality-gate` · `dua-wednesday` · `fetch-reference` · `kosif-timeline` · `kosif-timeline-demo`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `cinematic-cut-planner` · `creative-quality-gate` · `dua-wednesday` · `fast-edit` · `fetch-reference` · `kosif-timeline`.
 - مراحل النوع: قياس الصوت والأصول ← ستوريبورد ← بناء المشهد ← معاينة رخيصة ← رندر ← تحقق ← تسليم.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -3811,7 +3811,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `audio` ← المخرج `video`، والمنفّذ `method:TRANS-130` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `cinematic-cut-planner` · `creative-quality-gate` · `dua-wednesday` · `fetch-reference` · `kosif-timeline` · `kosif-timeline-demo`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `cinematic-cut-planner` · `creative-quality-gate` · `dua-wednesday` · `fast-edit` · `fetch-reference` · `kosif-timeline`.
 - مراحل النوع: قياس الصوت والأصول ← ستوريبورد ← بناء المشهد ← معاينة رخيصة ← رندر ← تحقق ← تسليم.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -3890,7 +3890,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `audio` ← المخرج `video`، والمنفّذ `method:TRANS-131` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `cinematic-cut-planner` · `creative-quality-gate` · `dua-wednesday` · `fetch-reference` · `kosif-timeline` · `kosif-timeline-demo`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `cinematic-cut-planner` · `creative-quality-gate` · `dua-wednesday` · `fast-edit` · `fetch-reference` · `kosif-timeline`.
 - مراحل النوع: قياس الصوت والأصول ← ستوريبورد ← بناء المشهد ← معاينة رخيصة ← رندر ← تحقق ← تسليم.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -3969,7 +3969,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `audio` ← المخرج `video`، والمنفّذ `method:TRANS-132` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `cinematic-cut-planner` · `creative-quality-gate` · `dua-wednesday` · `fetch-reference` · `kosif-timeline` · `kosif-timeline-demo`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `cinematic-cut-planner` · `creative-quality-gate` · `dua-wednesday` · `fast-edit` · `fetch-reference` · `kosif-timeline`.
 - مراحل النوع: قياس الصوت والأصول ← ستوريبورد ← بناء المشهد ← معاينة رخيصة ← رندر ← تحقق ← تسليم.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -4048,7 +4048,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `audio` ← المخرج `video`، والمنفّذ `method:TRANS-133` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `cinematic-cut-planner` · `creative-quality-gate` · `dua-wednesday` · `fetch-reference` · `kosif-timeline` · `kosif-timeline-demo`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `cinematic-cut-planner` · `creative-quality-gate` · `dua-wednesday` · `fast-edit` · `fetch-reference` · `kosif-timeline`.
 - مراحل النوع: قياس الصوت والأصول ← ستوريبورد ← بناء المشهد ← معاينة رخيصة ← رندر ← تحقق ← تسليم.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -4127,7 +4127,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `audio` ← المخرج `video`، والمنفّذ `method:TRANS-134` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `cinematic-cut-planner` · `creative-quality-gate` · `dua-wednesday` · `fetch-reference` · `kosif-timeline` · `kosif-timeline-demo`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `cinematic-cut-planner` · `creative-quality-gate` · `dua-wednesday` · `fast-edit` · `fetch-reference` · `kosif-timeline`.
 - مراحل النوع: قياس الصوت والأصول ← ستوريبورد ← بناء المشهد ← معاينة رخيصة ← رندر ← تحقق ← تسليم.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -4206,7 +4206,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `audio` ← المخرج `video`، والمنفّذ `method:TRANS-135` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `cinematic-cut-planner` · `creative-quality-gate` · `dua-wednesday` · `fetch-reference` · `kosif-timeline` · `kosif-timeline-demo`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `cinematic-cut-planner` · `creative-quality-gate` · `dua-wednesday` · `fast-edit` · `fetch-reference` · `kosif-timeline`.
 - مراحل النوع: قياس الصوت والأصول ← ستوريبورد ← بناء المشهد ← معاينة رخيصة ← رندر ← تحقق ← تسليم.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -4284,7 +4284,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `audio` ← المخرج `video`، والمنفّذ `method:TRANS-136` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `cinematic-cut-planner` · `creative-quality-gate` · `dua-wednesday` · `fetch-reference` · `kosif-timeline` · `kosif-timeline-demo`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `cinematic-cut-planner` · `creative-quality-gate` · `dua-wednesday` · `fast-edit` · `fetch-reference` · `kosif-timeline`.
 - مراحل النوع: قياس الصوت والأصول ← ستوريبورد ← بناء المشهد ← معاينة رخيصة ← رندر ← تحقق ← تسليم.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -4364,7 +4364,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `audio` ← المخرج `video`، والمنفّذ `method:TRANS-137` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `cinematic-cut-planner` · `creative-quality-gate` · `dua-wednesday` · `fetch-reference` · `kosif-timeline` · `kosif-timeline-demo`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `cinematic-cut-planner` · `creative-quality-gate` · `dua-wednesday` · `fast-edit` · `fetch-reference` · `kosif-timeline`.
 - مراحل النوع: قياس الصوت والأصول ← ستوريبورد ← بناء المشهد ← معاينة رخيصة ← رندر ← تحقق ← تسليم.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -4444,7 +4444,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `audio` ← المخرج `video`، والمنفّذ `method:TRANS-138` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `cinematic-cut-planner` · `creative-quality-gate` · `dua-wednesday` · `fetch-reference` · `kosif-timeline` · `kosif-timeline-demo`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `cinematic-cut-planner` · `creative-quality-gate` · `dua-wednesday` · `fast-edit` · `fetch-reference` · `kosif-timeline`.
 - مراحل النوع: قياس الصوت والأصول ← ستوريبورد ← بناء المشهد ← معاينة رخيصة ← رندر ← تحقق ← تسليم.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -4524,7 +4524,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `audio` ← المخرج `video`، والمنفّذ `method:TRANS-139` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `cinematic-cut-planner` · `creative-quality-gate` · `dua-wednesday` · `fetch-reference` · `kosif-timeline` · `kosif-timeline-demo`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `cinematic-cut-planner` · `creative-quality-gate` · `dua-wednesday` · `fast-edit` · `fetch-reference` · `kosif-timeline`.
 - مراحل النوع: قياس الصوت والأصول ← ستوريبورد ← بناء المشهد ← معاينة رخيصة ← رندر ← تحقق ← تسليم.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -4603,7 +4603,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `audio` ← المخرج `video`، والمنفّذ `method:TRANS-14` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `cinematic-cut-planner` · `creative-quality-gate` · `dua-wednesday` · `fetch-reference` · `kosif-timeline` · `kosif-timeline-demo`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `cinematic-cut-planner` · `creative-quality-gate` · `dua-wednesday` · `fast-edit` · `fetch-reference` · `kosif-timeline`.
 - مراحل النوع: قياس الصوت والأصول ← ستوريبورد ← بناء المشهد ← معاينة رخيصة ← رندر ← تحقق ← تسليم.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -4681,7 +4681,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `audio` ← المخرج `video`، والمنفّذ `method:TRANS-140` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `cinematic-cut-planner` · `creative-quality-gate` · `dua-wednesday` · `fetch-reference` · `kosif-timeline` · `kosif-timeline-demo`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `cinematic-cut-planner` · `creative-quality-gate` · `dua-wednesday` · `fast-edit` · `fetch-reference` · `kosif-timeline`.
 - مراحل النوع: قياس الصوت والأصول ← ستوريبورد ← بناء المشهد ← معاينة رخيصة ← رندر ← تحقق ← تسليم.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -4761,7 +4761,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `audio` ← المخرج `video`، والمنفّذ `method:TRANS-141` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `cinematic-cut-planner` · `creative-quality-gate` · `dua-wednesday` · `fetch-reference` · `kosif-timeline` · `kosif-timeline-demo`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `cinematic-cut-planner` · `creative-quality-gate` · `dua-wednesday` · `fast-edit` · `fetch-reference` · `kosif-timeline`.
 - مراحل النوع: قياس الصوت والأصول ← ستوريبورد ← بناء المشهد ← معاينة رخيصة ← رندر ← تحقق ← تسليم.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -4841,7 +4841,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `audio` ← المخرج `video`، والمنفّذ `method:TRANS-142` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `cinematic-cut-planner` · `creative-quality-gate` · `dua-wednesday` · `fetch-reference` · `kosif-timeline` · `kosif-timeline-demo`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `cinematic-cut-planner` · `creative-quality-gate` · `dua-wednesday` · `fast-edit` · `fetch-reference` · `kosif-timeline`.
 - مراحل النوع: قياس الصوت والأصول ← ستوريبورد ← بناء المشهد ← معاينة رخيصة ← رندر ← تحقق ← تسليم.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -4921,7 +4921,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `audio` ← المخرج `video`، والمنفّذ `method:TRANS-143` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `cinematic-cut-planner` · `creative-quality-gate` · `dua-wednesday` · `fetch-reference` · `kosif-timeline` · `kosif-timeline-demo`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `cinematic-cut-planner` · `creative-quality-gate` · `dua-wednesday` · `fast-edit` · `fetch-reference` · `kosif-timeline`.
 - مراحل النوع: قياس الصوت والأصول ← ستوريبورد ← بناء المشهد ← معاينة رخيصة ← رندر ← تحقق ← تسليم.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -5001,7 +5001,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `audio` ← المخرج `video`، والمنفّذ `method:TRANS-144` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `cinematic-cut-planner` · `creative-quality-gate` · `dua-wednesday` · `fetch-reference` · `kosif-timeline` · `kosif-timeline-demo`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `cinematic-cut-planner` · `creative-quality-gate` · `dua-wednesday` · `fast-edit` · `fetch-reference` · `kosif-timeline`.
 - مراحل النوع: قياس الصوت والأصول ← ستوريبورد ← بناء المشهد ← معاينة رخيصة ← رندر ← تحقق ← تسليم.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -5080,7 +5080,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `audio` ← المخرج `video`، والمنفّذ `method:TRANS-145` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `cinematic-cut-planner` · `creative-quality-gate` · `dua-wednesday` · `fetch-reference` · `kosif-timeline` · `kosif-timeline-demo`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `cinematic-cut-planner` · `creative-quality-gate` · `dua-wednesday` · `fast-edit` · `fetch-reference` · `kosif-timeline`.
 - مراحل النوع: قياس الصوت والأصول ← ستوريبورد ← بناء المشهد ← معاينة رخيصة ← رندر ← تحقق ← تسليم.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -5160,7 +5160,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `audio` ← المخرج `video`، والمنفّذ `method:TRANS-146` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `cinematic-cut-planner` · `creative-quality-gate` · `dua-wednesday` · `fetch-reference` · `kosif-timeline` · `kosif-timeline-demo`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `cinematic-cut-planner` · `creative-quality-gate` · `dua-wednesday` · `fast-edit` · `fetch-reference` · `kosif-timeline`.
 - مراحل النوع: قياس الصوت والأصول ← ستوريبورد ← بناء المشهد ← معاينة رخيصة ← رندر ← تحقق ← تسليم.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -5240,7 +5240,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `audio` ← المخرج `video`، والمنفّذ `method:TRANS-147` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `cinematic-cut-planner` · `creative-quality-gate` · `dua-wednesday` · `fetch-reference` · `kosif-timeline` · `kosif-timeline-demo`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `cinematic-cut-planner` · `creative-quality-gate` · `dua-wednesday` · `fast-edit` · `fetch-reference` · `kosif-timeline`.
 - مراحل النوع: قياس الصوت والأصول ← ستوريبورد ← بناء المشهد ← معاينة رخيصة ← رندر ← تحقق ← تسليم.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -5320,7 +5320,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `audio` ← المخرج `video`، والمنفّذ `method:TRANS-148` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `cinematic-cut-planner` · `creative-quality-gate` · `dua-wednesday` · `fetch-reference` · `kosif-timeline` · `kosif-timeline-demo`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `cinematic-cut-planner` · `creative-quality-gate` · `dua-wednesday` · `fast-edit` · `fetch-reference` · `kosif-timeline`.
 - مراحل النوع: قياس الصوت والأصول ← ستوريبورد ← بناء المشهد ← معاينة رخيصة ← رندر ← تحقق ← تسليم.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -5400,7 +5400,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `audio` ← المخرج `video`، والمنفّذ `method:TRANS-149` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `cinematic-cut-planner` · `creative-quality-gate` · `dua-wednesday` · `fetch-reference` · `kosif-timeline` · `kosif-timeline-demo`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `cinematic-cut-planner` · `creative-quality-gate` · `dua-wednesday` · `fast-edit` · `fetch-reference` · `kosif-timeline`.
 - مراحل النوع: قياس الصوت والأصول ← ستوريبورد ← بناء المشهد ← معاينة رخيصة ← رندر ← تحقق ← تسليم.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -5479,7 +5479,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `audio` ← المخرج `video`، والمنفّذ `method:TRANS-15` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `cinematic-cut-planner` · `creative-quality-gate` · `dua-wednesday` · `fetch-reference` · `kosif-timeline` · `kosif-timeline-demo`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `cinematic-cut-planner` · `creative-quality-gate` · `dua-wednesday` · `fast-edit` · `fetch-reference` · `kosif-timeline`.
 - مراحل النوع: قياس الصوت والأصول ← ستوريبورد ← بناء المشهد ← معاينة رخيصة ← رندر ← تحقق ← تسليم.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -5557,7 +5557,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `audio` ← المخرج `video`، والمنفّذ `method:TRANS-150` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `cinematic-cut-planner` · `creative-quality-gate` · `dua-wednesday` · `fetch-reference` · `kosif-timeline` · `kosif-timeline-demo`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `cinematic-cut-planner` · `creative-quality-gate` · `dua-wednesday` · `fast-edit` · `fetch-reference` · `kosif-timeline`.
 - مراحل النوع: قياس الصوت والأصول ← ستوريبورد ← بناء المشهد ← معاينة رخيصة ← رندر ← تحقق ← تسليم.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -5636,7 +5636,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `audio` ← المخرج `video`، والمنفّذ `method:TRANS-151` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `cinematic-cut-planner` · `creative-quality-gate` · `dua-wednesday` · `fetch-reference` · `kosif-timeline` · `kosif-timeline-demo`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `cinematic-cut-planner` · `creative-quality-gate` · `dua-wednesday` · `fast-edit` · `fetch-reference` · `kosif-timeline`.
 - مراحل النوع: قياس الصوت والأصول ← ستوريبورد ← بناء المشهد ← معاينة رخيصة ← رندر ← تحقق ← تسليم.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -5715,7 +5715,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `audio` ← المخرج `video`، والمنفّذ `method:TRANS-152` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `cinematic-cut-planner` · `creative-quality-gate` · `dua-wednesday` · `fetch-reference` · `kosif-timeline` · `kosif-timeline-demo`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `cinematic-cut-planner` · `creative-quality-gate` · `dua-wednesday` · `fast-edit` · `fetch-reference` · `kosif-timeline`.
 - مراحل النوع: قياس الصوت والأصول ← ستوريبورد ← بناء المشهد ← معاينة رخيصة ← رندر ← تحقق ← تسليم.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -5794,7 +5794,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `audio` ← المخرج `video`، والمنفّذ `method:TRANS-153` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `cinematic-cut-planner` · `creative-quality-gate` · `dua-wednesday` · `fetch-reference` · `kosif-timeline` · `kosif-timeline-demo`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `cinematic-cut-planner` · `creative-quality-gate` · `dua-wednesday` · `fast-edit` · `fetch-reference` · `kosif-timeline`.
 - مراحل النوع: قياس الصوت والأصول ← ستوريبورد ← بناء المشهد ← معاينة رخيصة ← رندر ← تحقق ← تسليم.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -5873,7 +5873,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `audio` ← المخرج `video`، والمنفّذ `method:TRANS-154` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `cinematic-cut-planner` · `creative-quality-gate` · `dua-wednesday` · `fetch-reference` · `kosif-timeline` · `kosif-timeline-demo`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `cinematic-cut-planner` · `creative-quality-gate` · `dua-wednesday` · `fast-edit` · `fetch-reference` · `kosif-timeline`.
 - مراحل النوع: قياس الصوت والأصول ← ستوريبورد ← بناء المشهد ← معاينة رخيصة ← رندر ← تحقق ← تسليم.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -5952,7 +5952,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `audio` ← المخرج `video`، والمنفّذ `method:TRANS-155` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `cinematic-cut-planner` · `creative-quality-gate` · `dua-wednesday` · `fetch-reference` · `kosif-timeline` · `kosif-timeline-demo`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `cinematic-cut-planner` · `creative-quality-gate` · `dua-wednesday` · `fast-edit` · `fetch-reference` · `kosif-timeline`.
 - مراحل النوع: قياس الصوت والأصول ← ستوريبورد ← بناء المشهد ← معاينة رخيصة ← رندر ← تحقق ← تسليم.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -6031,7 +6031,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `audio` ← المخرج `video`، والمنفّذ `method:TRANS-156` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `cinematic-cut-planner` · `creative-quality-gate` · `dua-wednesday` · `fetch-reference` · `kosif-timeline` · `kosif-timeline-demo`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `cinematic-cut-planner` · `creative-quality-gate` · `dua-wednesday` · `fast-edit` · `fetch-reference` · `kosif-timeline`.
 - مراحل النوع: قياس الصوت والأصول ← ستوريبورد ← بناء المشهد ← معاينة رخيصة ← رندر ← تحقق ← تسليم.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -6110,7 +6110,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `audio` ← المخرج `video`، والمنفّذ `method:TRANS-157` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `cinematic-cut-planner` · `creative-quality-gate` · `dua-wednesday` · `fetch-reference` · `kosif-timeline` · `kosif-timeline-demo`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `cinematic-cut-planner` · `creative-quality-gate` · `dua-wednesday` · `fast-edit` · `fetch-reference` · `kosif-timeline`.
 - مراحل النوع: قياس الصوت والأصول ← ستوريبورد ← بناء المشهد ← معاينة رخيصة ← رندر ← تحقق ← تسليم.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -6189,7 +6189,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `audio` ← المخرج `video`، والمنفّذ `method:TRANS-158` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `cinematic-cut-planner` · `creative-quality-gate` · `dua-wednesday` · `fetch-reference` · `kosif-timeline` · `kosif-timeline-demo`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `cinematic-cut-planner` · `creative-quality-gate` · `dua-wednesday` · `fast-edit` · `fetch-reference` · `kosif-timeline`.
 - مراحل النوع: قياس الصوت والأصول ← ستوريبورد ← بناء المشهد ← معاينة رخيصة ← رندر ← تحقق ← تسليم.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -6268,7 +6268,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `audio` ← المخرج `video`، والمنفّذ `method:TRANS-159` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `cinematic-cut-planner` · `creative-quality-gate` · `dua-wednesday` · `fetch-reference` · `kosif-timeline` · `kosif-timeline-demo`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `cinematic-cut-planner` · `creative-quality-gate` · `dua-wednesday` · `fast-edit` · `fetch-reference` · `kosif-timeline`.
 - مراحل النوع: قياس الصوت والأصول ← ستوريبورد ← بناء المشهد ← معاينة رخيصة ← رندر ← تحقق ← تسليم.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -6347,7 +6347,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `audio` ← المخرج `video`، والمنفّذ `method:TRANS-16` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `cinematic-cut-planner` · `creative-quality-gate` · `dua-wednesday` · `fetch-reference` · `kosif-timeline` · `kosif-timeline-demo`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `cinematic-cut-planner` · `creative-quality-gate` · `dua-wednesday` · `fast-edit` · `fetch-reference` · `kosif-timeline`.
 - مراحل النوع: قياس الصوت والأصول ← ستوريبورد ← بناء المشهد ← معاينة رخيصة ← رندر ← تحقق ← تسليم.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -6424,7 +6424,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `audio` ← المخرج `video`، والمنفّذ `method:TRANS-160` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `cinematic-cut-planner` · `creative-quality-gate` · `dua-wednesday` · `fetch-reference` · `kosif-timeline` · `kosif-timeline-demo`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `cinematic-cut-planner` · `creative-quality-gate` · `dua-wednesday` · `fast-edit` · `fetch-reference` · `kosif-timeline`.
 - مراحل النوع: قياس الصوت والأصول ← ستوريبورد ← بناء المشهد ← معاينة رخيصة ← رندر ← تحقق ← تسليم.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -6503,7 +6503,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `audio` ← المخرج `video`، والمنفّذ `method:TRANS-161` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `cinematic-cut-planner` · `creative-quality-gate` · `dua-wednesday` · `fetch-reference` · `kosif-timeline` · `kosif-timeline-demo`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `cinematic-cut-planner` · `creative-quality-gate` · `dua-wednesday` · `fast-edit` · `fetch-reference` · `kosif-timeline`.
 - مراحل النوع: قياس الصوت والأصول ← ستوريبورد ← بناء المشهد ← معاينة رخيصة ← رندر ← تحقق ← تسليم.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -6582,7 +6582,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `audio` ← المخرج `video`، والمنفّذ `method:TRANS-162` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `cinematic-cut-planner` · `creative-quality-gate` · `dua-wednesday` · `fetch-reference` · `kosif-timeline` · `kosif-timeline-demo`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `cinematic-cut-planner` · `creative-quality-gate` · `dua-wednesday` · `fast-edit` · `fetch-reference` · `kosif-timeline`.
 - مراحل النوع: قياس الصوت والأصول ← ستوريبورد ← بناء المشهد ← معاينة رخيصة ← رندر ← تحقق ← تسليم.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -6661,7 +6661,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `audio` ← المخرج `video`، والمنفّذ `method:TRANS-163` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `cinematic-cut-planner` · `creative-quality-gate` · `dua-wednesday` · `fetch-reference` · `kosif-timeline` · `kosif-timeline-demo`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `cinematic-cut-planner` · `creative-quality-gate` · `dua-wednesday` · `fast-edit` · `fetch-reference` · `kosif-timeline`.
 - مراحل النوع: قياس الصوت والأصول ← ستوريبورد ← بناء المشهد ← معاينة رخيصة ← رندر ← تحقق ← تسليم.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -6742,7 +6742,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `audio` ← المخرج `video`، والمنفّذ `method:TRANS-164` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `cinematic-cut-planner` · `creative-quality-gate` · `dua-wednesday` · `fetch-reference` · `kosif-timeline` · `kosif-timeline-demo`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `cinematic-cut-planner` · `creative-quality-gate` · `dua-wednesday` · `fast-edit` · `fetch-reference` · `kosif-timeline`.
 - مراحل النوع: قياس الصوت والأصول ← ستوريبورد ← بناء المشهد ← معاينة رخيصة ← رندر ← تحقق ← تسليم.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -6823,7 +6823,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `audio` ← المخرج `video`، والمنفّذ `method:TRANS-165` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `cinematic-cut-planner` · `creative-quality-gate` · `dua-wednesday` · `fetch-reference` · `kosif-timeline` · `kosif-timeline-demo`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `cinematic-cut-planner` · `creative-quality-gate` · `dua-wednesday` · `fast-edit` · `fetch-reference` · `kosif-timeline`.
 - مراحل النوع: قياس الصوت والأصول ← ستوريبورد ← بناء المشهد ← معاينة رخيصة ← رندر ← تحقق ← تسليم.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -6903,7 +6903,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `audio` ← المخرج `video`، والمنفّذ `method:TRANS-166` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `cinematic-cut-planner` · `creative-quality-gate` · `dua-wednesday` · `fetch-reference` · `kosif-timeline` · `kosif-timeline-demo`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `cinematic-cut-planner` · `creative-quality-gate` · `dua-wednesday` · `fast-edit` · `fetch-reference` · `kosif-timeline`.
 - مراحل النوع: قياس الصوت والأصول ← ستوريبورد ← بناء المشهد ← معاينة رخيصة ← رندر ← تحقق ← تسليم.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -6982,7 +6982,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `audio` ← المخرج `video`، والمنفّذ `method:TRANS-167` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `cinematic-cut-planner` · `creative-quality-gate` · `dua-wednesday` · `fetch-reference` · `kosif-timeline` · `kosif-timeline-demo`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `cinematic-cut-planner` · `creative-quality-gate` · `dua-wednesday` · `fast-edit` · `fetch-reference` · `kosif-timeline`.
 - مراحل النوع: قياس الصوت والأصول ← ستوريبورد ← بناء المشهد ← معاينة رخيصة ← رندر ← تحقق ← تسليم.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -7060,7 +7060,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `audio` ← المخرج `video`، والمنفّذ `method:TRANS-168` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `cinematic-cut-planner` · `creative-quality-gate` · `dua-wednesday` · `fetch-reference` · `kosif-timeline` · `kosif-timeline-demo`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `cinematic-cut-planner` · `creative-quality-gate` · `dua-wednesday` · `fast-edit` · `fetch-reference` · `kosif-timeline`.
 - مراحل النوع: قياس الصوت والأصول ← ستوريبورد ← بناء المشهد ← معاينة رخيصة ← رندر ← تحقق ← تسليم.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -7136,7 +7136,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `audio` ← المخرج `video`، والمنفّذ `method:TRANS-169` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `cinematic-cut-planner` · `creative-quality-gate` · `dua-wednesday` · `fetch-reference` · `kosif-timeline` · `kosif-timeline-demo`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `cinematic-cut-planner` · `creative-quality-gate` · `dua-wednesday` · `fast-edit` · `fetch-reference` · `kosif-timeline`.
 - مراحل النوع: قياس الصوت والأصول ← ستوريبورد ← بناء المشهد ← معاينة رخيصة ← رندر ← تحقق ← تسليم.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -7213,7 +7213,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `audio` ← المخرج `video`، والمنفّذ `method:TRANS-17` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `cinematic-cut-planner` · `creative-quality-gate` · `dua-wednesday` · `fetch-reference` · `kosif-timeline` · `kosif-timeline-demo`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `cinematic-cut-planner` · `creative-quality-gate` · `dua-wednesday` · `fast-edit` · `fetch-reference` · `kosif-timeline`.
 - مراحل النوع: قياس الصوت والأصول ← ستوريبورد ← بناء المشهد ← معاينة رخيصة ← رندر ← تحقق ← تسليم.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -7290,7 +7290,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `audio` ← المخرج `video`، والمنفّذ `method:TRANS-170` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `cinematic-cut-planner` · `creative-quality-gate` · `dua-wednesday` · `fetch-reference` · `kosif-timeline` · `kosif-timeline-demo`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `cinematic-cut-planner` · `creative-quality-gate` · `dua-wednesday` · `fast-edit` · `fetch-reference` · `kosif-timeline`.
 - مراحل النوع: قياس الصوت والأصول ← ستوريبورد ← بناء المشهد ← معاينة رخيصة ← رندر ← تحقق ← تسليم.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -7368,7 +7368,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `audio` ← المخرج `video`، والمنفّذ `method:TRANS-171` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `cinematic-cut-planner` · `creative-quality-gate` · `dua-wednesday` · `fetch-reference` · `kosif-timeline` · `kosif-timeline-demo`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `cinematic-cut-planner` · `creative-quality-gate` · `dua-wednesday` · `fast-edit` · `fetch-reference` · `kosif-timeline`.
 - مراحل النوع: قياس الصوت والأصول ← ستوريبورد ← بناء المشهد ← معاينة رخيصة ← رندر ← تحقق ← تسليم.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -7446,7 +7446,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `audio` ← المخرج `video`، والمنفّذ `method:TRANS-172` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `cinematic-cut-planner` · `creative-quality-gate` · `dua-wednesday` · `fetch-reference` · `kosif-timeline` · `kosif-timeline-demo`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `cinematic-cut-planner` · `creative-quality-gate` · `dua-wednesday` · `fast-edit` · `fetch-reference` · `kosif-timeline`.
 - مراحل النوع: قياس الصوت والأصول ← ستوريبورد ← بناء المشهد ← معاينة رخيصة ← رندر ← تحقق ← تسليم.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -7524,7 +7524,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `audio` ← المخرج `video`، والمنفّذ `method:TRANS-173` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `cinematic-cut-planner` · `creative-quality-gate` · `dua-wednesday` · `fetch-reference` · `kosif-timeline` · `kosif-timeline-demo`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `cinematic-cut-planner` · `creative-quality-gate` · `dua-wednesday` · `fast-edit` · `fetch-reference` · `kosif-timeline`.
 - مراحل النوع: قياس الصوت والأصول ← ستوريبورد ← بناء المشهد ← معاينة رخيصة ← رندر ← تحقق ← تسليم.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -7602,7 +7602,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `audio` ← المخرج `video`، والمنفّذ `method:TRANS-174` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `cinematic-cut-planner` · `creative-quality-gate` · `dua-wednesday` · `fetch-reference` · `kosif-timeline` · `kosif-timeline-demo`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `cinematic-cut-planner` · `creative-quality-gate` · `dua-wednesday` · `fast-edit` · `fetch-reference` · `kosif-timeline`.
 - مراحل النوع: قياس الصوت والأصول ← ستوريبورد ← بناء المشهد ← معاينة رخيصة ← رندر ← تحقق ← تسليم.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -7680,7 +7680,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `audio` ← المخرج `video`، والمنفّذ `method:TRANS-175` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `cinematic-cut-planner` · `creative-quality-gate` · `dua-wednesday` · `fetch-reference` · `kosif-timeline` · `kosif-timeline-demo`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `cinematic-cut-planner` · `creative-quality-gate` · `dua-wednesday` · `fast-edit` · `fetch-reference` · `kosif-timeline`.
 - مراحل النوع: قياس الصوت والأصول ← ستوريبورد ← بناء المشهد ← معاينة رخيصة ← رندر ← تحقق ← تسليم.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -7758,7 +7758,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `audio` ← المخرج `video`، والمنفّذ `method:TRANS-176` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `cinematic-cut-planner` · `creative-quality-gate` · `dua-wednesday` · `fetch-reference` · `kosif-timeline` · `kosif-timeline-demo`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `cinematic-cut-planner` · `creative-quality-gate` · `dua-wednesday` · `fast-edit` · `fetch-reference` · `kosif-timeline`.
 - مراحل النوع: قياس الصوت والأصول ← ستوريبورد ← بناء المشهد ← معاينة رخيصة ← رندر ← تحقق ← تسليم.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -7836,7 +7836,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `audio` ← المخرج `video`، والمنفّذ `method:TRANS-177` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `cinematic-cut-planner` · `creative-quality-gate` · `dua-wednesday` · `fetch-reference` · `kosif-timeline` · `kosif-timeline-demo`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `cinematic-cut-planner` · `creative-quality-gate` · `dua-wednesday` · `fast-edit` · `fetch-reference` · `kosif-timeline`.
 - مراحل النوع: قياس الصوت والأصول ← ستوريبورد ← بناء المشهد ← معاينة رخيصة ← رندر ← تحقق ← تسليم.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -7914,7 +7914,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `audio` ← المخرج `video`، والمنفّذ `method:TRANS-178` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `cinematic-cut-planner` · `creative-quality-gate` · `dua-wednesday` · `fetch-reference` · `kosif-timeline` · `kosif-timeline-demo`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `cinematic-cut-planner` · `creative-quality-gate` · `dua-wednesday` · `fast-edit` · `fetch-reference` · `kosif-timeline`.
 - مراحل النوع: قياس الصوت والأصول ← ستوريبورد ← بناء المشهد ← معاينة رخيصة ← رندر ← تحقق ← تسليم.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -7992,7 +7992,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `audio` ← المخرج `video`، والمنفّذ `method:TRANS-179` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `cinematic-cut-planner` · `creative-quality-gate` · `dua-wednesday` · `fetch-reference` · `kosif-timeline` · `kosif-timeline-demo`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `cinematic-cut-planner` · `creative-quality-gate` · `dua-wednesday` · `fast-edit` · `fetch-reference` · `kosif-timeline`.
 - مراحل النوع: قياس الصوت والأصول ← ستوريبورد ← بناء المشهد ← معاينة رخيصة ← رندر ← تحقق ← تسليم.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -8070,7 +8070,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `audio` ← المخرج `video`، والمنفّذ `method:TRANS-18` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `cinematic-cut-planner` · `creative-quality-gate` · `dua-wednesday` · `fetch-reference` · `kosif-timeline` · `kosif-timeline-demo`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `cinematic-cut-planner` · `creative-quality-gate` · `dua-wednesday` · `fast-edit` · `fetch-reference` · `kosif-timeline`.
 - مراحل النوع: قياس الصوت والأصول ← ستوريبورد ← بناء المشهد ← معاينة رخيصة ← رندر ← تحقق ← تسليم.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -8147,7 +8147,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `audio` ← المخرج `video`، والمنفّذ `method:TRANS-180` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `cinematic-cut-planner` · `creative-quality-gate` · `dua-wednesday` · `fetch-reference` · `kosif-timeline` · `kosif-timeline-demo`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `cinematic-cut-planner` · `creative-quality-gate` · `dua-wednesday` · `fast-edit` · `fetch-reference` · `kosif-timeline`.
 - مراحل النوع: قياس الصوت والأصول ← ستوريبورد ← بناء المشهد ← معاينة رخيصة ← رندر ← تحقق ← تسليم.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -8225,7 +8225,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `audio` ← المخرج `video`، والمنفّذ `method:TRANS-181` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `cinematic-cut-planner` · `creative-quality-gate` · `dua-wednesday` · `fetch-reference` · `kosif-timeline` · `kosif-timeline-demo`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `cinematic-cut-planner` · `creative-quality-gate` · `dua-wednesday` · `fast-edit` · `fetch-reference` · `kosif-timeline`.
 - مراحل النوع: قياس الصوت والأصول ← ستوريبورد ← بناء المشهد ← معاينة رخيصة ← رندر ← تحقق ← تسليم.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -8303,7 +8303,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `audio` ← المخرج `video`، والمنفّذ `method:TRANS-182` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `cinematic-cut-planner` · `creative-quality-gate` · `dua-wednesday` · `fetch-reference` · `kosif-timeline` · `kosif-timeline-demo`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `cinematic-cut-planner` · `creative-quality-gate` · `dua-wednesday` · `fast-edit` · `fetch-reference` · `kosif-timeline`.
 - مراحل النوع: قياس الصوت والأصول ← ستوريبورد ← بناء المشهد ← معاينة رخيصة ← رندر ← تحقق ← تسليم.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -8381,7 +8381,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `audio` ← المخرج `video`، والمنفّذ `method:TRANS-183` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `cinematic-cut-planner` · `creative-quality-gate` · `dua-wednesday` · `fetch-reference` · `kosif-timeline` · `kosif-timeline-demo`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `cinematic-cut-planner` · `creative-quality-gate` · `dua-wednesday` · `fast-edit` · `fetch-reference` · `kosif-timeline`.
 - مراحل النوع: قياس الصوت والأصول ← ستوريبورد ← بناء المشهد ← معاينة رخيصة ← رندر ← تحقق ← تسليم.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -8459,7 +8459,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `audio` ← المخرج `video`، والمنفّذ `method:TRANS-184` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `cinematic-cut-planner` · `creative-quality-gate` · `dua-wednesday` · `fetch-reference` · `kosif-timeline` · `kosif-timeline-demo`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `cinematic-cut-planner` · `creative-quality-gate` · `dua-wednesday` · `fast-edit` · `fetch-reference` · `kosif-timeline`.
 - مراحل النوع: قياس الصوت والأصول ← ستوريبورد ← بناء المشهد ← معاينة رخيصة ← رندر ← تحقق ← تسليم.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -8537,7 +8537,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `audio` ← المخرج `video`، والمنفّذ `method:TRANS-185` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `cinematic-cut-planner` · `creative-quality-gate` · `dua-wednesday` · `fetch-reference` · `kosif-timeline` · `kosif-timeline-demo`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `cinematic-cut-planner` · `creative-quality-gate` · `dua-wednesday` · `fast-edit` · `fetch-reference` · `kosif-timeline`.
 - مراحل النوع: قياس الصوت والأصول ← ستوريبورد ← بناء المشهد ← معاينة رخيصة ← رندر ← تحقق ← تسليم.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -8615,7 +8615,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `audio` ← المخرج `video`، والمنفّذ `method:TRANS-186` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `cinematic-cut-planner` · `creative-quality-gate` · `dua-wednesday` · `fetch-reference` · `kosif-timeline` · `kosif-timeline-demo`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `cinematic-cut-planner` · `creative-quality-gate` · `dua-wednesday` · `fast-edit` · `fetch-reference` · `kosif-timeline`.
 - مراحل النوع: قياس الصوت والأصول ← ستوريبورد ← بناء المشهد ← معاينة رخيصة ← رندر ← تحقق ← تسليم.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -8693,7 +8693,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `audio` ← المخرج `video`، والمنفّذ `method:TRANS-187` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `cinematic-cut-planner` · `creative-quality-gate` · `dua-wednesday` · `fetch-reference` · `kosif-timeline` · `kosif-timeline-demo`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `cinematic-cut-planner` · `creative-quality-gate` · `dua-wednesday` · `fast-edit` · `fetch-reference` · `kosif-timeline`.
 - مراحل النوع: قياس الصوت والأصول ← ستوريبورد ← بناء المشهد ← معاينة رخيصة ← رندر ← تحقق ← تسليم.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -8771,7 +8771,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `audio` ← المخرج `video`، والمنفّذ `method:TRANS-188` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `cinematic-cut-planner` · `creative-quality-gate` · `dua-wednesday` · `fetch-reference` · `kosif-timeline` · `kosif-timeline-demo`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `cinematic-cut-planner` · `creative-quality-gate` · `dua-wednesday` · `fast-edit` · `fetch-reference` · `kosif-timeline`.
 - مراحل النوع: قياس الصوت والأصول ← ستوريبورد ← بناء المشهد ← معاينة رخيصة ← رندر ← تحقق ← تسليم.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -8849,7 +8849,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `audio` ← المخرج `video`، والمنفّذ `method:TRANS-189` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `cinematic-cut-planner` · `creative-quality-gate` · `dua-wednesday` · `fetch-reference` · `kosif-timeline` · `kosif-timeline-demo`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `cinematic-cut-planner` · `creative-quality-gate` · `dua-wednesday` · `fast-edit` · `fetch-reference` · `kosif-timeline`.
 - مراحل النوع: قياس الصوت والأصول ← ستوريبورد ← بناء المشهد ← معاينة رخيصة ← رندر ← تحقق ← تسليم.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -8927,7 +8927,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `audio` ← المخرج `video`، والمنفّذ `method:TRANS-19` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `cinematic-cut-planner` · `creative-quality-gate` · `dua-wednesday` · `fetch-reference` · `kosif-timeline` · `kosif-timeline-demo`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `cinematic-cut-planner` · `creative-quality-gate` · `dua-wednesday` · `fast-edit` · `fetch-reference` · `kosif-timeline`.
 - مراحل النوع: قياس الصوت والأصول ← ستوريبورد ← بناء المشهد ← معاينة رخيصة ← رندر ← تحقق ← تسليم.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -9004,7 +9004,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `audio` ← المخرج `video`، والمنفّذ `method:TRANS-190` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `cinematic-cut-planner` · `creative-quality-gate` · `dua-wednesday` · `fetch-reference` · `kosif-timeline` · `kosif-timeline-demo`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `cinematic-cut-planner` · `creative-quality-gate` · `dua-wednesday` · `fast-edit` · `fetch-reference` · `kosif-timeline`.
 - مراحل النوع: قياس الصوت والأصول ← ستوريبورد ← بناء المشهد ← معاينة رخيصة ← رندر ← تحقق ← تسليم.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -9082,7 +9082,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `audio` ← المخرج `video`، والمنفّذ `method:TRANS-191` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `cinematic-cut-planner` · `creative-quality-gate` · `dua-wednesday` · `fetch-reference` · `kosif-timeline` · `kosif-timeline-demo`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `cinematic-cut-planner` · `creative-quality-gate` · `dua-wednesday` · `fast-edit` · `fetch-reference` · `kosif-timeline`.
 - مراحل النوع: قياس الصوت والأصول ← ستوريبورد ← بناء المشهد ← معاينة رخيصة ← رندر ← تحقق ← تسليم.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -9160,7 +9160,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `audio` ← المخرج `video`، والمنفّذ `method:TRANS-192` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `cinematic-cut-planner` · `creative-quality-gate` · `dua-wednesday` · `fetch-reference` · `kosif-timeline` · `kosif-timeline-demo`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `cinematic-cut-planner` · `creative-quality-gate` · `dua-wednesday` · `fast-edit` · `fetch-reference` · `kosif-timeline`.
 - مراحل النوع: قياس الصوت والأصول ← ستوريبورد ← بناء المشهد ← معاينة رخيصة ← رندر ← تحقق ← تسليم.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -9238,7 +9238,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `audio` ← المخرج `video`، والمنفّذ `method:TRANS-193` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `cinematic-cut-planner` · `creative-quality-gate` · `dua-wednesday` · `fetch-reference` · `kosif-timeline` · `kosif-timeline-demo`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `cinematic-cut-planner` · `creative-quality-gate` · `dua-wednesday` · `fast-edit` · `fetch-reference` · `kosif-timeline`.
 - مراحل النوع: قياس الصوت والأصول ← ستوريبورد ← بناء المشهد ← معاينة رخيصة ← رندر ← تحقق ← تسليم.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -9316,7 +9316,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `audio` ← المخرج `video`، والمنفّذ `method:TRANS-194` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `cinematic-cut-planner` · `creative-quality-gate` · `dua-wednesday` · `fetch-reference` · `kosif-timeline` · `kosif-timeline-demo`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `cinematic-cut-planner` · `creative-quality-gate` · `dua-wednesday` · `fast-edit` · `fetch-reference` · `kosif-timeline`.
 - مراحل النوع: قياس الصوت والأصول ← ستوريبورد ← بناء المشهد ← معاينة رخيصة ← رندر ← تحقق ← تسليم.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -9394,7 +9394,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `audio` ← المخرج `video`، والمنفّذ `method:TRANS-195` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `cinematic-cut-planner` · `creative-quality-gate` · `dua-wednesday` · `fetch-reference` · `kosif-timeline` · `kosif-timeline-demo`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `cinematic-cut-planner` · `creative-quality-gate` · `dua-wednesday` · `fast-edit` · `fetch-reference` · `kosif-timeline`.
 - مراحل النوع: قياس الصوت والأصول ← ستوريبورد ← بناء المشهد ← معاينة رخيصة ← رندر ← تحقق ← تسليم.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -9472,7 +9472,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `audio` ← المخرج `video`، والمنفّذ `method:TRANS-196` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `cinematic-cut-planner` · `creative-quality-gate` · `dua-wednesday` · `fetch-reference` · `kosif-timeline` · `kosif-timeline-demo`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `cinematic-cut-planner` · `creative-quality-gate` · `dua-wednesday` · `fast-edit` · `fetch-reference` · `kosif-timeline`.
 - مراحل النوع: قياس الصوت والأصول ← ستوريبورد ← بناء المشهد ← معاينة رخيصة ← رندر ← تحقق ← تسليم.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -9550,7 +9550,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `audio` ← المخرج `video`، والمنفّذ `method:TRANS-197` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `cinematic-cut-planner` · `creative-quality-gate` · `dua-wednesday` · `fetch-reference` · `kosif-timeline` · `kosif-timeline-demo`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `cinematic-cut-planner` · `creative-quality-gate` · `dua-wednesday` · `fast-edit` · `fetch-reference` · `kosif-timeline`.
 - مراحل النوع: قياس الصوت والأصول ← ستوريبورد ← بناء المشهد ← معاينة رخيصة ← رندر ← تحقق ← تسليم.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -9628,7 +9628,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `audio` ← المخرج `video`، والمنفّذ `method:TRANS-198` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `cinematic-cut-planner` · `creative-quality-gate` · `dua-wednesday` · `fetch-reference` · `kosif-timeline` · `kosif-timeline-demo`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `cinematic-cut-planner` · `creative-quality-gate` · `dua-wednesday` · `fast-edit` · `fetch-reference` · `kosif-timeline`.
 - مراحل النوع: قياس الصوت والأصول ← ستوريبورد ← بناء المشهد ← معاينة رخيصة ← رندر ← تحقق ← تسليم.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -9706,7 +9706,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `audio` ← المخرج `video`، والمنفّذ `method:TRANS-199` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `cinematic-cut-planner` · `creative-quality-gate` · `dua-wednesday` · `fetch-reference` · `kosif-timeline` · `kosif-timeline-demo`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `cinematic-cut-planner` · `creative-quality-gate` · `dua-wednesday` · `fast-edit` · `fetch-reference` · `kosif-timeline`.
 - مراحل النوع: قياس الصوت والأصول ← ستوريبورد ← بناء المشهد ← معاينة رخيصة ← رندر ← تحقق ← تسليم.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -9784,7 +9784,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `audio` ← المخرج `video`، والمنفّذ `method:TRANS-20` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `cinematic-cut-planner` · `creative-quality-gate` · `dua-wednesday` · `fetch-reference` · `kosif-timeline` · `kosif-timeline-demo`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `cinematic-cut-planner` · `creative-quality-gate` · `dua-wednesday` · `fast-edit` · `fetch-reference` · `kosif-timeline`.
 - مراحل النوع: قياس الصوت والأصول ← ستوريبورد ← بناء المشهد ← معاينة رخيصة ← رندر ← تحقق ← تسليم.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -9861,7 +9861,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `audio` ← المخرج `video`، والمنفّذ `method:TRANS-200` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `cinematic-cut-planner` · `creative-quality-gate` · `dua-wednesday` · `fetch-reference` · `kosif-timeline` · `kosif-timeline-demo`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `cinematic-cut-planner` · `creative-quality-gate` · `dua-wednesday` · `fast-edit` · `fetch-reference` · `kosif-timeline`.
 - مراحل النوع: قياس الصوت والأصول ← ستوريبورد ← بناء المشهد ← معاينة رخيصة ← رندر ← تحقق ← تسليم.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -9939,7 +9939,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `audio` ← المخرج `video`، والمنفّذ `method:TRANS-201` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `cinematic-cut-planner` · `creative-quality-gate` · `dua-wednesday` · `fetch-reference` · `kosif-timeline` · `kosif-timeline-demo`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `cinematic-cut-planner` · `creative-quality-gate` · `dua-wednesday` · `fast-edit` · `fetch-reference` · `kosif-timeline`.
 - مراحل النوع: قياس الصوت والأصول ← ستوريبورد ← بناء المشهد ← معاينة رخيصة ← رندر ← تحقق ← تسليم.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -10017,7 +10017,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `audio` ← المخرج `video`، والمنفّذ `method:TRANS-202` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `cinematic-cut-planner` · `creative-quality-gate` · `dua-wednesday` · `fetch-reference` · `kosif-timeline` · `kosif-timeline-demo`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `cinematic-cut-planner` · `creative-quality-gate` · `dua-wednesday` · `fast-edit` · `fetch-reference` · `kosif-timeline`.
 - مراحل النوع: قياس الصوت والأصول ← ستوريبورد ← بناء المشهد ← معاينة رخيصة ← رندر ← تحقق ← تسليم.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -10095,7 +10095,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `audio` ← المخرج `video`، والمنفّذ `method:TRANS-203` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `cinematic-cut-planner` · `creative-quality-gate` · `dua-wednesday` · `fetch-reference` · `kosif-timeline` · `kosif-timeline-demo`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `cinematic-cut-planner` · `creative-quality-gate` · `dua-wednesday` · `fast-edit` · `fetch-reference` · `kosif-timeline`.
 - مراحل النوع: قياس الصوت والأصول ← ستوريبورد ← بناء المشهد ← معاينة رخيصة ← رندر ← تحقق ← تسليم.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -10173,7 +10173,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `audio` ← المخرج `video`، والمنفّذ `method:TRANS-204` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `cinematic-cut-planner` · `creative-quality-gate` · `dua-wednesday` · `fetch-reference` · `kosif-timeline` · `kosif-timeline-demo`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `cinematic-cut-planner` · `creative-quality-gate` · `dua-wednesday` · `fast-edit` · `fetch-reference` · `kosif-timeline`.
 - مراحل النوع: قياس الصوت والأصول ← ستوريبورد ← بناء المشهد ← معاينة رخيصة ← رندر ← تحقق ← تسليم.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -10251,7 +10251,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `audio` ← المخرج `video`، والمنفّذ `method:TRANS-205` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `cinematic-cut-planner` · `creative-quality-gate` · `dua-wednesday` · `fetch-reference` · `kosif-timeline` · `kosif-timeline-demo`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `cinematic-cut-planner` · `creative-quality-gate` · `dua-wednesday` · `fast-edit` · `fetch-reference` · `kosif-timeline`.
 - مراحل النوع: قياس الصوت والأصول ← ستوريبورد ← بناء المشهد ← معاينة رخيصة ← رندر ← تحقق ← تسليم.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -10329,7 +10329,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `audio` ← المخرج `video`، والمنفّذ `method:TRANS-206` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `cinematic-cut-planner` · `creative-quality-gate` · `dua-wednesday` · `fetch-reference` · `kosif-timeline` · `kosif-timeline-demo`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `cinematic-cut-planner` · `creative-quality-gate` · `dua-wednesday` · `fast-edit` · `fetch-reference` · `kosif-timeline`.
 - مراحل النوع: قياس الصوت والأصول ← ستوريبورد ← بناء المشهد ← معاينة رخيصة ← رندر ← تحقق ← تسليم.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -10407,7 +10407,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `audio` ← المخرج `video`، والمنفّذ `method:TRANS-207` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `cinematic-cut-planner` · `creative-quality-gate` · `dua-wednesday` · `fetch-reference` · `kosif-timeline` · `kosif-timeline-demo`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `cinematic-cut-planner` · `creative-quality-gate` · `dua-wednesday` · `fast-edit` · `fetch-reference` · `kosif-timeline`.
 - مراحل النوع: قياس الصوت والأصول ← ستوريبورد ← بناء المشهد ← معاينة رخيصة ← رندر ← تحقق ← تسليم.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -10485,7 +10485,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `audio` ← المخرج `video`، والمنفّذ `method:TRANS-208` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `cinematic-cut-planner` · `creative-quality-gate` · `dua-wednesday` · `fetch-reference` · `kosif-timeline` · `kosif-timeline-demo`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `cinematic-cut-planner` · `creative-quality-gate` · `dua-wednesday` · `fast-edit` · `fetch-reference` · `kosif-timeline`.
 - مراحل النوع: قياس الصوت والأصول ← ستوريبورد ← بناء المشهد ← معاينة رخيصة ← رندر ← تحقق ← تسليم.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -10563,7 +10563,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `audio` ← المخرج `video`، والمنفّذ `method:TRANS-209` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `cinematic-cut-planner` · `creative-quality-gate` · `dua-wednesday` · `fetch-reference` · `kosif-timeline` · `kosif-timeline-demo`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `cinematic-cut-planner` · `creative-quality-gate` · `dua-wednesday` · `fast-edit` · `fetch-reference` · `kosif-timeline`.
 - مراحل النوع: قياس الصوت والأصول ← ستوريبورد ← بناء المشهد ← معاينة رخيصة ← رندر ← تحقق ← تسليم.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -10641,7 +10641,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `audio` ← المخرج `video`، والمنفّذ `method:TRANS-21` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `cinematic-cut-planner` · `creative-quality-gate` · `dua-wednesday` · `fetch-reference` · `kosif-timeline` · `kosif-timeline-demo`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `cinematic-cut-planner` · `creative-quality-gate` · `dua-wednesday` · `fast-edit` · `fetch-reference` · `kosif-timeline`.
 - مراحل النوع: قياس الصوت والأصول ← ستوريبورد ← بناء المشهد ← معاينة رخيصة ← رندر ← تحقق ← تسليم.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -10718,7 +10718,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `audio` ← المخرج `video`، والمنفّذ `method:TRANS-210` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `cinematic-cut-planner` · `creative-quality-gate` · `dua-wednesday` · `fetch-reference` · `kosif-timeline` · `kosif-timeline-demo`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `cinematic-cut-planner` · `creative-quality-gate` · `dua-wednesday` · `fast-edit` · `fetch-reference` · `kosif-timeline`.
 - مراحل النوع: قياس الصوت والأصول ← ستوريبورد ← بناء المشهد ← معاينة رخيصة ← رندر ← تحقق ← تسليم.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -10796,7 +10796,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `audio` ← المخرج `video`، والمنفّذ `method:TRANS-211` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `cinematic-cut-planner` · `creative-quality-gate` · `dua-wednesday` · `fetch-reference` · `kosif-timeline` · `kosif-timeline-demo`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `cinematic-cut-planner` · `creative-quality-gate` · `dua-wednesday` · `fast-edit` · `fetch-reference` · `kosif-timeline`.
 - مراحل النوع: قياس الصوت والأصول ← ستوريبورد ← بناء المشهد ← معاينة رخيصة ← رندر ← تحقق ← تسليم.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -10874,7 +10874,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `audio` ← المخرج `video`، والمنفّذ `method:TRANS-212` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `cinematic-cut-planner` · `creative-quality-gate` · `dua-wednesday` · `fetch-reference` · `kosif-timeline` · `kosif-timeline-demo`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `cinematic-cut-planner` · `creative-quality-gate` · `dua-wednesday` · `fast-edit` · `fetch-reference` · `kosif-timeline`.
 - مراحل النوع: قياس الصوت والأصول ← ستوريبورد ← بناء المشهد ← معاينة رخيصة ← رندر ← تحقق ← تسليم.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -10952,7 +10952,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `audio` ← المخرج `video`، والمنفّذ `method:TRANS-213` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `cinematic-cut-planner` · `creative-quality-gate` · `dua-wednesday` · `fetch-reference` · `kosif-timeline` · `kosif-timeline-demo`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `cinematic-cut-planner` · `creative-quality-gate` · `dua-wednesday` · `fast-edit` · `fetch-reference` · `kosif-timeline`.
 - مراحل النوع: قياس الصوت والأصول ← ستوريبورد ← بناء المشهد ← معاينة رخيصة ← رندر ← تحقق ← تسليم.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -11030,7 +11030,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `audio` ← المخرج `video`، والمنفّذ `method:TRANS-214` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `cinematic-cut-planner` · `creative-quality-gate` · `dua-wednesday` · `fetch-reference` · `kosif-timeline` · `kosif-timeline-demo`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `cinematic-cut-planner` · `creative-quality-gate` · `dua-wednesday` · `fast-edit` · `fetch-reference` · `kosif-timeline`.
 - مراحل النوع: قياس الصوت والأصول ← ستوريبورد ← بناء المشهد ← معاينة رخيصة ← رندر ← تحقق ← تسليم.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -11108,7 +11108,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `audio` ← المخرج `video`، والمنفّذ `method:TRANS-215` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `cinematic-cut-planner` · `creative-quality-gate` · `dua-wednesday` · `fetch-reference` · `kosif-timeline` · `kosif-timeline-demo`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `cinematic-cut-planner` · `creative-quality-gate` · `dua-wednesday` · `fast-edit` · `fetch-reference` · `kosif-timeline`.
 - مراحل النوع: قياس الصوت والأصول ← ستوريبورد ← بناء المشهد ← معاينة رخيصة ← رندر ← تحقق ← تسليم.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -11186,7 +11186,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `audio` ← المخرج `video`، والمنفّذ `method:TRANS-216` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `cinematic-cut-planner` · `creative-quality-gate` · `dua-wednesday` · `fetch-reference` · `kosif-timeline` · `kosif-timeline-demo`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `cinematic-cut-planner` · `creative-quality-gate` · `dua-wednesday` · `fast-edit` · `fetch-reference` · `kosif-timeline`.
 - مراحل النوع: قياس الصوت والأصول ← ستوريبورد ← بناء المشهد ← معاينة رخيصة ← رندر ← تحقق ← تسليم.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -11264,7 +11264,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `audio` ← المخرج `video`، والمنفّذ `method:TRANS-217` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `cinematic-cut-planner` · `creative-quality-gate` · `dua-wednesday` · `fetch-reference` · `kosif-timeline` · `kosif-timeline-demo`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `cinematic-cut-planner` · `creative-quality-gate` · `dua-wednesday` · `fast-edit` · `fetch-reference` · `kosif-timeline`.
 - مراحل النوع: قياس الصوت والأصول ← ستوريبورد ← بناء المشهد ← معاينة رخيصة ← رندر ← تحقق ← تسليم.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -11341,7 +11341,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `audio` ← المخرج `video`، والمنفّذ `method:TRANS-218` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `cinematic-cut-planner` · `creative-quality-gate` · `dua-wednesday` · `fetch-reference` · `kosif-timeline` · `kosif-timeline-demo`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `cinematic-cut-planner` · `creative-quality-gate` · `dua-wednesday` · `fast-edit` · `fetch-reference` · `kosif-timeline`.
 - مراحل النوع: قياس الصوت والأصول ← ستوريبورد ← بناء المشهد ← معاينة رخيصة ← رندر ← تحقق ← تسليم.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -11417,7 +11417,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `audio` ← المخرج `video`، والمنفّذ `method:TRANS-219` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `cinematic-cut-planner` · `creative-quality-gate` · `dua-wednesday` · `fetch-reference` · `kosif-timeline` · `kosif-timeline-demo`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `cinematic-cut-planner` · `creative-quality-gate` · `dua-wednesday` · `fast-edit` · `fetch-reference` · `kosif-timeline`.
 - مراحل النوع: قياس الصوت والأصول ← ستوريبورد ← بناء المشهد ← معاينة رخيصة ← رندر ← تحقق ← تسليم.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -11496,7 +11496,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `audio` ← المخرج `video`، والمنفّذ `method:TRANS-22` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `cinematic-cut-planner` · `creative-quality-gate` · `dua-wednesday` · `fetch-reference` · `kosif-timeline` · `kosif-timeline-demo`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `cinematic-cut-planner` · `creative-quality-gate` · `dua-wednesday` · `fast-edit` · `fetch-reference` · `kosif-timeline`.
 - مراحل النوع: قياس الصوت والأصول ← ستوريبورد ← بناء المشهد ← معاينة رخيصة ← رندر ← تحقق ← تسليم.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -11570,7 +11570,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `audio` ← المخرج `video`، والمنفّذ `method:TRANS-220` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `cinematic-cut-planner` · `creative-quality-gate` · `dua-wednesday` · `fetch-reference` · `kosif-timeline` · `kosif-timeline-demo`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `cinematic-cut-planner` · `creative-quality-gate` · `dua-wednesday` · `fast-edit` · `fetch-reference` · `kosif-timeline`.
 - مراحل النوع: قياس الصوت والأصول ← ستوريبورد ← بناء المشهد ← معاينة رخيصة ← رندر ← تحقق ← تسليم.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -11646,7 +11646,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `audio` ← المخرج `video`، والمنفّذ `method:TRANS-221` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `cinematic-cut-planner` · `creative-quality-gate` · `dua-wednesday` · `fetch-reference` · `kosif-timeline` · `kosif-timeline-demo`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `cinematic-cut-planner` · `creative-quality-gate` · `dua-wednesday` · `fast-edit` · `fetch-reference` · `kosif-timeline`.
 - مراحل النوع: قياس الصوت والأصول ← ستوريبورد ← بناء المشهد ← معاينة رخيصة ← رندر ← تحقق ← تسليم.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -11723,7 +11723,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `audio` ← المخرج `video`، والمنفّذ `method:TRANS-222` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `cinematic-cut-planner` · `creative-quality-gate` · `dua-wednesday` · `fetch-reference` · `kosif-timeline` · `kosif-timeline-demo`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `cinematic-cut-planner` · `creative-quality-gate` · `dua-wednesday` · `fast-edit` · `fetch-reference` · `kosif-timeline`.
 - مراحل النوع: قياس الصوت والأصول ← ستوريبورد ← بناء المشهد ← معاينة رخيصة ← رندر ← تحقق ← تسليم.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -11800,7 +11800,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `audio` ← المخرج `video`، والمنفّذ `method:TRANS-223` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `cinematic-cut-planner` · `creative-quality-gate` · `dua-wednesday` · `fetch-reference` · `kosif-timeline` · `kosif-timeline-demo`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `cinematic-cut-planner` · `creative-quality-gate` · `dua-wednesday` · `fast-edit` · `fetch-reference` · `kosif-timeline`.
 - مراحل النوع: قياس الصوت والأصول ← ستوريبورد ← بناء المشهد ← معاينة رخيصة ← رندر ← تحقق ← تسليم.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -11877,7 +11877,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `audio` ← المخرج `video`، والمنفّذ `method:TRANS-224` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `cinematic-cut-planner` · `creative-quality-gate` · `dua-wednesday` · `fetch-reference` · `kosif-timeline` · `kosif-timeline-demo`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `cinematic-cut-planner` · `creative-quality-gate` · `dua-wednesday` · `fast-edit` · `fetch-reference` · `kosif-timeline`.
 - مراحل النوع: قياس الصوت والأصول ← ستوريبورد ← بناء المشهد ← معاينة رخيصة ← رندر ← تحقق ← تسليم.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -11954,7 +11954,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `audio` ← المخرج `video`، والمنفّذ `method:TRANS-225` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `cinematic-cut-planner` · `creative-quality-gate` · `dua-wednesday` · `fetch-reference` · `kosif-timeline` · `kosif-timeline-demo`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `cinematic-cut-planner` · `creative-quality-gate` · `dua-wednesday` · `fast-edit` · `fetch-reference` · `kosif-timeline`.
 - مراحل النوع: قياس الصوت والأصول ← ستوريبورد ← بناء المشهد ← معاينة رخيصة ← رندر ← تحقق ← تسليم.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -12031,7 +12031,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `audio` ← المخرج `video`، والمنفّذ `method:TRANS-226` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `cinematic-cut-planner` · `creative-quality-gate` · `dua-wednesday` · `fetch-reference` · `kosif-timeline` · `kosif-timeline-demo`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `cinematic-cut-planner` · `creative-quality-gate` · `dua-wednesday` · `fast-edit` · `fetch-reference` · `kosif-timeline`.
 - مراحل النوع: قياس الصوت والأصول ← ستوريبورد ← بناء المشهد ← معاينة رخيصة ← رندر ← تحقق ← تسليم.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -12108,7 +12108,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `audio` ← المخرج `video`، والمنفّذ `method:TRANS-227` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `cinematic-cut-planner` · `creative-quality-gate` · `dua-wednesday` · `fetch-reference` · `kosif-timeline` · `kosif-timeline-demo`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `cinematic-cut-planner` · `creative-quality-gate` · `dua-wednesday` · `fast-edit` · `fetch-reference` · `kosif-timeline`.
 - مراحل النوع: قياس الصوت والأصول ← ستوريبورد ← بناء المشهد ← معاينة رخيصة ← رندر ← تحقق ← تسليم.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -12185,7 +12185,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `audio` ← المخرج `video`، والمنفّذ `method:TRANS-228` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `cinematic-cut-planner` · `creative-quality-gate` · `dua-wednesday` · `fetch-reference` · `kosif-timeline` · `kosif-timeline-demo`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `cinematic-cut-planner` · `creative-quality-gate` · `dua-wednesday` · `fast-edit` · `fetch-reference` · `kosif-timeline`.
 - مراحل النوع: قياس الصوت والأصول ← ستوريبورد ← بناء المشهد ← معاينة رخيصة ← رندر ← تحقق ← تسليم.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -12262,7 +12262,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `audio` ← المخرج `video`، والمنفّذ `method:TRANS-229` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `cinematic-cut-planner` · `creative-quality-gate` · `dua-wednesday` · `fetch-reference` · `kosif-timeline` · `kosif-timeline-demo`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `cinematic-cut-planner` · `creative-quality-gate` · `dua-wednesday` · `fast-edit` · `fetch-reference` · `kosif-timeline`.
 - مراحل النوع: قياس الصوت والأصول ← ستوريبورد ← بناء المشهد ← معاينة رخيصة ← رندر ← تحقق ← تسليم.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -12341,7 +12341,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `audio` ← المخرج `video`، والمنفّذ `method:TRANS-23` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `cinematic-cut-planner` · `creative-quality-gate` · `dua-wednesday` · `fetch-reference` · `kosif-timeline` · `kosif-timeline-demo`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `cinematic-cut-planner` · `creative-quality-gate` · `dua-wednesday` · `fast-edit` · `fetch-reference` · `kosif-timeline`.
 - مراحل النوع: قياس الصوت والأصول ← ستوريبورد ← بناء المشهد ← معاينة رخيصة ← رندر ← تحقق ← تسليم.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -12418,7 +12418,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `audio` ← المخرج `video`، والمنفّذ `method:TRANS-230` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `cinematic-cut-planner` · `creative-quality-gate` · `dua-wednesday` · `fetch-reference` · `kosif-timeline` · `kosif-timeline-demo`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `cinematic-cut-planner` · `creative-quality-gate` · `dua-wednesday` · `fast-edit` · `fetch-reference` · `kosif-timeline`.
 - مراحل النوع: قياس الصوت والأصول ← ستوريبورد ← بناء المشهد ← معاينة رخيصة ← رندر ← تحقق ← تسليم.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -12496,7 +12496,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `audio` ← المخرج `video`، والمنفّذ `method:TRANS-231` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `cinematic-cut-planner` · `creative-quality-gate` · `dua-wednesday` · `fetch-reference` · `kosif-timeline` · `kosif-timeline-demo`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `cinematic-cut-planner` · `creative-quality-gate` · `dua-wednesday` · `fast-edit` · `fetch-reference` · `kosif-timeline`.
 - مراحل النوع: قياس الصوت والأصول ← ستوريبورد ← بناء المشهد ← معاينة رخيصة ← رندر ← تحقق ← تسليم.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -12574,7 +12574,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `audio` ← المخرج `video`، والمنفّذ `method:TRANS-232` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `cinematic-cut-planner` · `creative-quality-gate` · `dua-wednesday` · `fetch-reference` · `kosif-timeline` · `kosif-timeline-demo`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `cinematic-cut-planner` · `creative-quality-gate` · `dua-wednesday` · `fast-edit` · `fetch-reference` · `kosif-timeline`.
 - مراحل النوع: قياس الصوت والأصول ← ستوريبورد ← بناء المشهد ← معاينة رخيصة ← رندر ← تحقق ← تسليم.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -12652,7 +12652,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `audio` ← المخرج `video`، والمنفّذ `method:TRANS-233` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `cinematic-cut-planner` · `creative-quality-gate` · `dua-wednesday` · `fetch-reference` · `kosif-timeline` · `kosif-timeline-demo`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `cinematic-cut-planner` · `creative-quality-gate` · `dua-wednesday` · `fast-edit` · `fetch-reference` · `kosif-timeline`.
 - مراحل النوع: قياس الصوت والأصول ← ستوريبورد ← بناء المشهد ← معاينة رخيصة ← رندر ← تحقق ← تسليم.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -12728,7 +12728,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `audio` ← المخرج `video`، والمنفّذ `method:TRANS-234` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `cinematic-cut-planner` · `creative-quality-gate` · `dua-wednesday` · `fetch-reference` · `kosif-timeline` · `kosif-timeline-demo`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `cinematic-cut-planner` · `creative-quality-gate` · `dua-wednesday` · `fast-edit` · `fetch-reference` · `kosif-timeline`.
 - مراحل النوع: قياس الصوت والأصول ← ستوريبورد ← بناء المشهد ← معاينة رخيصة ← رندر ← تحقق ← تسليم.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -12805,7 +12805,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `audio` ← المخرج `video`، والمنفّذ `method:TRANS-235` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `cinematic-cut-planner` · `creative-quality-gate` · `dua-wednesday` · `fetch-reference` · `kosif-timeline` · `kosif-timeline-demo`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `cinematic-cut-planner` · `creative-quality-gate` · `dua-wednesday` · `fast-edit` · `fetch-reference` · `kosif-timeline`.
 - مراحل النوع: قياس الصوت والأصول ← ستوريبورد ← بناء المشهد ← معاينة رخيصة ← رندر ← تحقق ← تسليم.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -12880,7 +12880,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `audio` ← المخرج `video`، والمنفّذ `method:TRANS-236` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `cinematic-cut-planner` · `creative-quality-gate` · `dua-wednesday` · `fetch-reference` · `kosif-timeline` · `kosif-timeline-demo`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `cinematic-cut-planner` · `creative-quality-gate` · `dua-wednesday` · `fast-edit` · `fetch-reference` · `kosif-timeline`.
 - مراحل النوع: قياس الصوت والأصول ← ستوريبورد ← بناء المشهد ← معاينة رخيصة ← رندر ← تحقق ← تسليم.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -12955,7 +12955,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `audio` ← المخرج `video`، والمنفّذ `method:TRANS-237` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `cinematic-cut-planner` · `creative-quality-gate` · `dua-wednesday` · `fetch-reference` · `kosif-timeline` · `kosif-timeline-demo`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `cinematic-cut-planner` · `creative-quality-gate` · `dua-wednesday` · `fast-edit` · `fetch-reference` · `kosif-timeline`.
 - مراحل النوع: قياس الصوت والأصول ← ستوريبورد ← بناء المشهد ← معاينة رخيصة ← رندر ← تحقق ← تسليم.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -13030,7 +13030,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `audio` ← المخرج `video`، والمنفّذ `method:TRANS-238` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `cinematic-cut-planner` · `creative-quality-gate` · `dua-wednesday` · `fetch-reference` · `kosif-timeline` · `kosif-timeline-demo`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `cinematic-cut-planner` · `creative-quality-gate` · `dua-wednesday` · `fast-edit` · `fetch-reference` · `kosif-timeline`.
 - مراحل النوع: قياس الصوت والأصول ← ستوريبورد ← بناء المشهد ← معاينة رخيصة ← رندر ← تحقق ← تسليم.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -13105,7 +13105,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `audio` ← المخرج `video`، والمنفّذ `method:TRANS-239` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `cinematic-cut-planner` · `creative-quality-gate` · `dua-wednesday` · `fetch-reference` · `kosif-timeline` · `kosif-timeline-demo`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `cinematic-cut-planner` · `creative-quality-gate` · `dua-wednesday` · `fast-edit` · `fetch-reference` · `kosif-timeline`.
 - مراحل النوع: قياس الصوت والأصول ← ستوريبورد ← بناء المشهد ← معاينة رخيصة ← رندر ← تحقق ← تسليم.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -13183,7 +13183,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `audio` ← المخرج `video`، والمنفّذ `method:TRANS-24` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `cinematic-cut-planner` · `creative-quality-gate` · `dua-wednesday` · `fetch-reference` · `kosif-timeline` · `kosif-timeline-demo`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `cinematic-cut-planner` · `creative-quality-gate` · `dua-wednesday` · `fast-edit` · `fetch-reference` · `kosif-timeline`.
 - مراحل النوع: قياس الصوت والأصول ← ستوريبورد ← بناء المشهد ← معاينة رخيصة ← رندر ← تحقق ← تسليم.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -13259,7 +13259,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `audio` ← المخرج `video`، والمنفّذ `method:TRANS-240` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `cinematic-cut-planner` · `creative-quality-gate` · `dua-wednesday` · `fetch-reference` · `kosif-timeline` · `kosif-timeline-demo`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `cinematic-cut-planner` · `creative-quality-gate` · `dua-wednesday` · `fast-edit` · `fetch-reference` · `kosif-timeline`.
 - مراحل النوع: قياس الصوت والأصول ← ستوريبورد ← بناء المشهد ← معاينة رخيصة ← رندر ← تحقق ← تسليم.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -13335,7 +13335,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `audio` ← المخرج `video`، والمنفّذ `method:TRANS-241` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `cinematic-cut-planner` · `creative-quality-gate` · `dua-wednesday` · `fetch-reference` · `kosif-timeline` · `kosif-timeline-demo`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `cinematic-cut-planner` · `creative-quality-gate` · `dua-wednesday` · `fast-edit` · `fetch-reference` · `kosif-timeline`.
 - مراحل النوع: قياس الصوت والأصول ← ستوريبورد ← بناء المشهد ← معاينة رخيصة ← رندر ← تحقق ← تسليم.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -13411,7 +13411,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `audio` ← المخرج `video`، والمنفّذ `method:TRANS-242` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `cinematic-cut-planner` · `creative-quality-gate` · `dua-wednesday` · `fetch-reference` · `kosif-timeline` · `kosif-timeline-demo`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `cinematic-cut-planner` · `creative-quality-gate` · `dua-wednesday` · `fast-edit` · `fetch-reference` · `kosif-timeline`.
 - مراحل النوع: قياس الصوت والأصول ← ستوريبورد ← بناء المشهد ← معاينة رخيصة ← رندر ← تحقق ← تسليم.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -13489,7 +13489,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `audio` ← المخرج `video`، والمنفّذ `method:TRANS-243` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `cinematic-cut-planner` · `creative-quality-gate` · `dua-wednesday` · `fetch-reference` · `kosif-timeline` · `kosif-timeline-demo`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `cinematic-cut-planner` · `creative-quality-gate` · `dua-wednesday` · `fast-edit` · `fetch-reference` · `kosif-timeline`.
 - مراحل النوع: قياس الصوت والأصول ← ستوريبورد ← بناء المشهد ← معاينة رخيصة ← رندر ← تحقق ← تسليم.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -13564,7 +13564,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `audio` ← المخرج `video`، والمنفّذ `method:TRANS-244` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `cinematic-cut-planner` · `creative-quality-gate` · `dua-wednesday` · `fetch-reference` · `kosif-timeline` · `kosif-timeline-demo`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `cinematic-cut-planner` · `creative-quality-gate` · `dua-wednesday` · `fast-edit` · `fetch-reference` · `kosif-timeline`.
 - مراحل النوع: قياس الصوت والأصول ← ستوريبورد ← بناء المشهد ← معاينة رخيصة ← رندر ← تحقق ← تسليم.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -13639,7 +13639,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `audio` ← المخرج `video`، والمنفّذ `method:TRANS-245` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `cinematic-cut-planner` · `creative-quality-gate` · `dua-wednesday` · `fetch-reference` · `kosif-timeline` · `kosif-timeline-demo`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `cinematic-cut-planner` · `creative-quality-gate` · `dua-wednesday` · `fast-edit` · `fetch-reference` · `kosif-timeline`.
 - مراحل النوع: قياس الصوت والأصول ← ستوريبورد ← بناء المشهد ← معاينة رخيصة ← رندر ← تحقق ← تسليم.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -13715,7 +13715,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `audio` ← المخرج `video`، والمنفّذ `method:TRANS-246` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `cinematic-cut-planner` · `creative-quality-gate` · `dua-wednesday` · `fetch-reference` · `kosif-timeline` · `kosif-timeline-demo`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `cinematic-cut-planner` · `creative-quality-gate` · `dua-wednesday` · `fast-edit` · `fetch-reference` · `kosif-timeline`.
 - مراحل النوع: قياس الصوت والأصول ← ستوريبورد ← بناء المشهد ← معاينة رخيصة ← رندر ← تحقق ← تسليم.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -13792,7 +13792,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `audio` ← المخرج `video`، والمنفّذ `method:TRANS-247` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `cinematic-cut-planner` · `creative-quality-gate` · `dua-wednesday` · `fetch-reference` · `kosif-timeline` · `kosif-timeline-demo`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `cinematic-cut-planner` · `creative-quality-gate` · `dua-wednesday` · `fast-edit` · `fetch-reference` · `kosif-timeline`.
 - مراحل النوع: قياس الصوت والأصول ← ستوريبورد ← بناء المشهد ← معاينة رخيصة ← رندر ← تحقق ← تسليم.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -13869,7 +13869,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `audio` ← المخرج `video`، والمنفّذ `method:TRANS-248` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `cinematic-cut-planner` · `creative-quality-gate` · `dua-wednesday` · `fetch-reference` · `kosif-timeline` · `kosif-timeline-demo`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `cinematic-cut-planner` · `creative-quality-gate` · `dua-wednesday` · `fast-edit` · `fetch-reference` · `kosif-timeline`.
 - مراحل النوع: قياس الصوت والأصول ← ستوريبورد ← بناء المشهد ← معاينة رخيصة ← رندر ← تحقق ← تسليم.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -13943,7 +13943,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `audio` ← المخرج `video`، والمنفّذ `method:TRANS-249` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `cinematic-cut-planner` · `creative-quality-gate` · `dua-wednesday` · `fetch-reference` · `kosif-timeline` · `kosif-timeline-demo`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `cinematic-cut-planner` · `creative-quality-gate` · `dua-wednesday` · `fast-edit` · `fetch-reference` · `kosif-timeline`.
 - مراحل النوع: قياس الصوت والأصول ← ستوريبورد ← بناء المشهد ← معاينة رخيصة ← رندر ← تحقق ← تسليم.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -14020,7 +14020,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `audio` ← المخرج `video`، والمنفّذ `method:TRANS-25` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `cinematic-cut-planner` · `creative-quality-gate` · `dua-wednesday` · `fetch-reference` · `kosif-timeline` · `kosif-timeline-demo`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `cinematic-cut-planner` · `creative-quality-gate` · `dua-wednesday` · `fast-edit` · `fetch-reference` · `kosif-timeline`.
 - مراحل النوع: قياس الصوت والأصول ← ستوريبورد ← بناء المشهد ← معاينة رخيصة ← رندر ← تحقق ← تسليم.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -14095,7 +14095,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `audio` ← المخرج `video`، والمنفّذ `method:TRANS-250` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `cinematic-cut-planner` · `creative-quality-gate` · `dua-wednesday` · `fetch-reference` · `kosif-timeline` · `kosif-timeline-demo`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `cinematic-cut-planner` · `creative-quality-gate` · `dua-wednesday` · `fast-edit` · `fetch-reference` · `kosif-timeline`.
 - مراحل النوع: قياس الصوت والأصول ← ستوريبورد ← بناء المشهد ← معاينة رخيصة ← رندر ← تحقق ← تسليم.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -14169,7 +14169,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `audio` ← المخرج `video`، والمنفّذ `method:TRANS-251` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `cinematic-cut-planner` · `creative-quality-gate` · `dua-wednesday` · `fetch-reference` · `kosif-timeline` · `kosif-timeline-demo`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `cinematic-cut-planner` · `creative-quality-gate` · `dua-wednesday` · `fast-edit` · `fetch-reference` · `kosif-timeline`.
 - مراحل النوع: قياس الصوت والأصول ← ستوريبورد ← بناء المشهد ← معاينة رخيصة ← رندر ← تحقق ← تسليم.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -14243,7 +14243,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `audio` ← المخرج `video`، والمنفّذ `method:TRANS-252` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `cinematic-cut-planner` · `creative-quality-gate` · `dua-wednesday` · `fetch-reference` · `kosif-timeline` · `kosif-timeline-demo`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `cinematic-cut-planner` · `creative-quality-gate` · `dua-wednesday` · `fast-edit` · `fetch-reference` · `kosif-timeline`.
 - مراحل النوع: قياس الصوت والأصول ← ستوريبورد ← بناء المشهد ← معاينة رخيصة ← رندر ← تحقق ← تسليم.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -14319,7 +14319,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `audio` ← المخرج `video`، والمنفّذ `method:TRANS-253` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `cinematic-cut-planner` · `creative-quality-gate` · `dua-wednesday` · `fetch-reference` · `kosif-timeline` · `kosif-timeline-demo`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `cinematic-cut-planner` · `creative-quality-gate` · `dua-wednesday` · `fast-edit` · `fetch-reference` · `kosif-timeline`.
 - مراحل النوع: قياس الصوت والأصول ← ستوريبورد ← بناء المشهد ← معاينة رخيصة ← رندر ← تحقق ← تسليم.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -14395,7 +14395,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `audio` ← المخرج `video`، والمنفّذ `method:TRANS-254` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `cinematic-cut-planner` · `creative-quality-gate` · `dua-wednesday` · `fetch-reference` · `kosif-timeline` · `kosif-timeline-demo`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `cinematic-cut-planner` · `creative-quality-gate` · `dua-wednesday` · `fast-edit` · `fetch-reference` · `kosif-timeline`.
 - مراحل النوع: قياس الصوت والأصول ← ستوريبورد ← بناء المشهد ← معاينة رخيصة ← رندر ← تحقق ← تسليم.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -14471,7 +14471,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `audio` ← المخرج `video`، والمنفّذ `method:TRANS-255` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `cinematic-cut-planner` · `creative-quality-gate` · `dua-wednesday` · `fetch-reference` · `kosif-timeline` · `kosif-timeline-demo`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `cinematic-cut-planner` · `creative-quality-gate` · `dua-wednesday` · `fast-edit` · `fetch-reference` · `kosif-timeline`.
 - مراحل النوع: قياس الصوت والأصول ← ستوريبورد ← بناء المشهد ← معاينة رخيصة ← رندر ← تحقق ← تسليم.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -14547,7 +14547,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `audio` ← المخرج `video`، والمنفّذ `method:TRANS-256` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `cinematic-cut-planner` · `creative-quality-gate` · `dua-wednesday` · `fetch-reference` · `kosif-timeline` · `kosif-timeline-demo`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `cinematic-cut-planner` · `creative-quality-gate` · `dua-wednesday` · `fast-edit` · `fetch-reference` · `kosif-timeline`.
 - مراحل النوع: قياس الصوت والأصول ← ستوريبورد ← بناء المشهد ← معاينة رخيصة ← رندر ← تحقق ← تسليم.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -14623,7 +14623,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `audio` ← المخرج `video`، والمنفّذ `method:TRANS-257` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `cinematic-cut-planner` · `creative-quality-gate` · `dua-wednesday` · `fetch-reference` · `kosif-timeline` · `kosif-timeline-demo`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `cinematic-cut-planner` · `creative-quality-gate` · `dua-wednesday` · `fast-edit` · `fetch-reference` · `kosif-timeline`.
 - مراحل النوع: قياس الصوت والأصول ← ستوريبورد ← بناء المشهد ← معاينة رخيصة ← رندر ← تحقق ← تسليم.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -14701,7 +14701,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `audio` ← المخرج `video`، والمنفّذ `method:TRANS-258` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `cinematic-cut-planner` · `creative-quality-gate` · `dua-wednesday` · `fetch-reference` · `kosif-timeline` · `kosif-timeline-demo`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `cinematic-cut-planner` · `creative-quality-gate` · `dua-wednesday` · `fast-edit` · `fetch-reference` · `kosif-timeline`.
 - مراحل النوع: قياس الصوت والأصول ← ستوريبورد ← بناء المشهد ← معاينة رخيصة ← رندر ← تحقق ← تسليم.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -14778,7 +14778,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `audio` ← المخرج `video`، والمنفّذ `method:TRANS-259` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `cinematic-cut-planner` · `creative-quality-gate` · `dua-wednesday` · `fetch-reference` · `kosif-timeline` · `kosif-timeline-demo`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `cinematic-cut-planner` · `creative-quality-gate` · `dua-wednesday` · `fast-edit` · `fetch-reference` · `kosif-timeline`.
 - مراحل النوع: قياس الصوت والأصول ← ستوريبورد ← بناء المشهد ← معاينة رخيصة ← رندر ← تحقق ← تسليم.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -14855,7 +14855,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `audio` ← المخرج `video`، والمنفّذ `method:TRANS-26` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `cinematic-cut-planner` · `creative-quality-gate` · `dua-wednesday` · `fetch-reference` · `kosif-timeline` · `kosif-timeline-demo`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `cinematic-cut-planner` · `creative-quality-gate` · `dua-wednesday` · `fast-edit` · `fetch-reference` · `kosif-timeline`.
 - مراحل النوع: قياس الصوت والأصول ← ستوريبورد ← بناء المشهد ← معاينة رخيصة ← رندر ← تحقق ← تسليم.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -14933,7 +14933,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `audio` ← المخرج `video`، والمنفّذ `method:TRANS-260` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `cinematic-cut-planner` · `creative-quality-gate` · `dua-wednesday` · `fetch-reference` · `kosif-timeline` · `kosif-timeline-demo`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `cinematic-cut-planner` · `creative-quality-gate` · `dua-wednesday` · `fast-edit` · `fetch-reference` · `kosif-timeline`.
 - مراحل النوع: قياس الصوت والأصول ← ستوريبورد ← بناء المشهد ← معاينة رخيصة ← رندر ← تحقق ← تسليم.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -15009,7 +15009,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `audio` ← المخرج `video`، والمنفّذ `method:TRANS-261` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `cinematic-cut-planner` · `creative-quality-gate` · `dua-wednesday` · `fetch-reference` · `kosif-timeline` · `kosif-timeline-demo`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `cinematic-cut-planner` · `creative-quality-gate` · `dua-wednesday` · `fast-edit` · `fetch-reference` · `kosif-timeline`.
 - مراحل النوع: قياس الصوت والأصول ← ستوريبورد ← بناء المشهد ← معاينة رخيصة ← رندر ← تحقق ← تسليم.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -15087,7 +15087,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `audio` ← المخرج `video`، والمنفّذ `method:TRANS-262` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `cinematic-cut-planner` · `creative-quality-gate` · `dua-wednesday` · `fetch-reference` · `kosif-timeline` · `kosif-timeline-demo`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `cinematic-cut-planner` · `creative-quality-gate` · `dua-wednesday` · `fast-edit` · `fetch-reference` · `kosif-timeline`.
 - مراحل النوع: قياس الصوت والأصول ← ستوريبورد ← بناء المشهد ← معاينة رخيصة ← رندر ← تحقق ← تسليم.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -15162,7 +15162,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `audio` ← المخرج `video`، والمنفّذ `method:TRANS-263` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `cinematic-cut-planner` · `creative-quality-gate` · `dua-wednesday` · `fetch-reference` · `kosif-timeline` · `kosif-timeline-demo`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `cinematic-cut-planner` · `creative-quality-gate` · `dua-wednesday` · `fast-edit` · `fetch-reference` · `kosif-timeline`.
 - مراحل النوع: قياس الصوت والأصول ← ستوريبورد ← بناء المشهد ← معاينة رخيصة ← رندر ← تحقق ← تسليم.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -15237,7 +15237,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `audio` ← المخرج `video`، والمنفّذ `method:TRANS-264` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `cinematic-cut-planner` · `creative-quality-gate` · `dua-wednesday` · `fetch-reference` · `kosif-timeline` · `kosif-timeline-demo`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `cinematic-cut-planner` · `creative-quality-gate` · `dua-wednesday` · `fast-edit` · `fetch-reference` · `kosif-timeline`.
 - مراحل النوع: قياس الصوت والأصول ← ستوريبورد ← بناء المشهد ← معاينة رخيصة ← رندر ← تحقق ← تسليم.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -15312,7 +15312,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `audio` ← المخرج `video`، والمنفّذ `method:TRANS-265` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `cinematic-cut-planner` · `creative-quality-gate` · `dua-wednesday` · `fetch-reference` · `kosif-timeline` · `kosif-timeline-demo`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `cinematic-cut-planner` · `creative-quality-gate` · `dua-wednesday` · `fast-edit` · `fetch-reference` · `kosif-timeline`.
 - مراحل النوع: قياس الصوت والأصول ← ستوريبورد ← بناء المشهد ← معاينة رخيصة ← رندر ← تحقق ← تسليم.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -15387,7 +15387,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `audio` ← المخرج `video`، والمنفّذ `method:TRANS-266` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `cinematic-cut-planner` · `creative-quality-gate` · `dua-wednesday` · `fetch-reference` · `kosif-timeline` · `kosif-timeline-demo`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `cinematic-cut-planner` · `creative-quality-gate` · `dua-wednesday` · `fast-edit` · `fetch-reference` · `kosif-timeline`.
 - مراحل النوع: قياس الصوت والأصول ← ستوريبورد ← بناء المشهد ← معاينة رخيصة ← رندر ← تحقق ← تسليم.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -15462,7 +15462,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `audio` ← المخرج `video`، والمنفّذ `method:TRANS-267` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `cinematic-cut-planner` · `creative-quality-gate` · `dua-wednesday` · `fetch-reference` · `kosif-timeline` · `kosif-timeline-demo`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `cinematic-cut-planner` · `creative-quality-gate` · `dua-wednesday` · `fast-edit` · `fetch-reference` · `kosif-timeline`.
 - مراحل النوع: قياس الصوت والأصول ← ستوريبورد ← بناء المشهد ← معاينة رخيصة ← رندر ← تحقق ← تسليم.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -15537,7 +15537,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `audio` ← المخرج `video`، والمنفّذ `method:TRANS-268` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `cinematic-cut-planner` · `creative-quality-gate` · `dua-wednesday` · `fetch-reference` · `kosif-timeline` · `kosif-timeline-demo`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `cinematic-cut-planner` · `creative-quality-gate` · `dua-wednesday` · `fast-edit` · `fetch-reference` · `kosif-timeline`.
 - مراحل النوع: قياس الصوت والأصول ← ستوريبورد ← بناء المشهد ← معاينة رخيصة ← رندر ← تحقق ← تسليم.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -15610,7 +15610,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `audio` ← المخرج `video`، والمنفّذ `method:TRANS-269` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `cinematic-cut-planner` · `creative-quality-gate` · `dua-wednesday` · `fetch-reference` · `kosif-timeline` · `kosif-timeline-demo`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `cinematic-cut-planner` · `creative-quality-gate` · `dua-wednesday` · `fast-edit` · `fetch-reference` · `kosif-timeline`.
 - مراحل النوع: قياس الصوت والأصول ← ستوريبورد ← بناء المشهد ← معاينة رخيصة ← رندر ← تحقق ← تسليم.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -15685,7 +15685,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `audio` ← المخرج `video`، والمنفّذ `method:TRANS-27` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `cinematic-cut-planner` · `creative-quality-gate` · `dua-wednesday` · `fetch-reference` · `kosif-timeline` · `kosif-timeline-demo`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `cinematic-cut-planner` · `creative-quality-gate` · `dua-wednesday` · `fast-edit` · `fetch-reference` · `kosif-timeline`.
 - مراحل النوع: قياس الصوت والأصول ← ستوريبورد ← بناء المشهد ← معاينة رخيصة ← رندر ← تحقق ← تسليم.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -15760,7 +15760,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `audio` ← المخرج `video`، والمنفّذ `method:TRANS-270` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `cinematic-cut-planner` · `creative-quality-gate` · `dua-wednesday` · `fetch-reference` · `kosif-timeline` · `kosif-timeline-demo`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `cinematic-cut-planner` · `creative-quality-gate` · `dua-wednesday` · `fast-edit` · `fetch-reference` · `kosif-timeline`.
 - مراحل النوع: قياس الصوت والأصول ← ستوريبورد ← بناء المشهد ← معاينة رخيصة ← رندر ← تحقق ← تسليم.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -15833,7 +15833,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `audio` ← المخرج `video`، والمنفّذ `method:TRANS-271` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `cinematic-cut-planner` · `creative-quality-gate` · `dua-wednesday` · `fetch-reference` · `kosif-timeline` · `kosif-timeline-demo`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `cinematic-cut-planner` · `creative-quality-gate` · `dua-wednesday` · `fast-edit` · `fetch-reference` · `kosif-timeline`.
 - مراحل النوع: قياس الصوت والأصول ← ستوريبورد ← بناء المشهد ← معاينة رخيصة ← رندر ← تحقق ← تسليم.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -15906,7 +15906,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `audio` ← المخرج `video`، والمنفّذ `method:TRANS-272` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `cinematic-cut-planner` · `creative-quality-gate` · `dua-wednesday` · `fetch-reference` · `kosif-timeline` · `kosif-timeline-demo`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `cinematic-cut-planner` · `creative-quality-gate` · `dua-wednesday` · `fast-edit` · `fetch-reference` · `kosif-timeline`.
 - مراحل النوع: قياس الصوت والأصول ← ستوريبورد ← بناء المشهد ← معاينة رخيصة ← رندر ← تحقق ← تسليم.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -15981,7 +15981,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `audio` ← المخرج `video`، والمنفّذ `method:TRANS-273` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `cinematic-cut-planner` · `creative-quality-gate` · `dua-wednesday` · `fetch-reference` · `kosif-timeline` · `kosif-timeline-demo`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `cinematic-cut-planner` · `creative-quality-gate` · `dua-wednesday` · `fast-edit` · `fetch-reference` · `kosif-timeline`.
 - مراحل النوع: قياس الصوت والأصول ← ستوريبورد ← بناء المشهد ← معاينة رخيصة ← رندر ← تحقق ← تسليم.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -16056,7 +16056,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `audio` ← المخرج `video`، والمنفّذ `method:TRANS-274` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `cinematic-cut-planner` · `creative-quality-gate` · `dua-wednesday` · `fetch-reference` · `kosif-timeline` · `kosif-timeline-demo`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `cinematic-cut-planner` · `creative-quality-gate` · `dua-wednesday` · `fast-edit` · `fetch-reference` · `kosif-timeline`.
 - مراحل النوع: قياس الصوت والأصول ← ستوريبورد ← بناء المشهد ← معاينة رخيصة ← رندر ← تحقق ← تسليم.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -16129,7 +16129,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `audio` ← المخرج `video`، والمنفّذ `method:TRANS-275` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `cinematic-cut-planner` · `creative-quality-gate` · `dua-wednesday` · `fetch-reference` · `kosif-timeline` · `kosif-timeline-demo`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `cinematic-cut-planner` · `creative-quality-gate` · `dua-wednesday` · `fast-edit` · `fetch-reference` · `kosif-timeline`.
 - مراحل النوع: قياس الصوت والأصول ← ستوريبورد ← بناء المشهد ← معاينة رخيصة ← رندر ← تحقق ← تسليم.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -16204,7 +16204,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `audio` ← المخرج `video`، والمنفّذ `method:TRANS-276` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `cinematic-cut-planner` · `creative-quality-gate` · `dua-wednesday` · `fetch-reference` · `kosif-timeline` · `kosif-timeline-demo`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `cinematic-cut-planner` · `creative-quality-gate` · `dua-wednesday` · `fast-edit` · `fetch-reference` · `kosif-timeline`.
 - مراحل النوع: قياس الصوت والأصول ← ستوريبورد ← بناء المشهد ← معاينة رخيصة ← رندر ← تحقق ← تسليم.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -16279,7 +16279,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `audio` ← المخرج `video`، والمنفّذ `method:TRANS-277` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `cinematic-cut-planner` · `creative-quality-gate` · `dua-wednesday` · `fetch-reference` · `kosif-timeline` · `kosif-timeline-demo`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `cinematic-cut-planner` · `creative-quality-gate` · `dua-wednesday` · `fast-edit` · `fetch-reference` · `kosif-timeline`.
 - مراحل النوع: قياس الصوت والأصول ← ستوريبورد ← بناء المشهد ← معاينة رخيصة ← رندر ← تحقق ← تسليم.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -16354,7 +16354,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `audio` ← المخرج `video`، والمنفّذ `method:TRANS-278` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `cinematic-cut-planner` · `creative-quality-gate` · `dua-wednesday` · `fetch-reference` · `kosif-timeline` · `kosif-timeline-demo`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `cinematic-cut-planner` · `creative-quality-gate` · `dua-wednesday` · `fast-edit` · `fetch-reference` · `kosif-timeline`.
 - مراحل النوع: قياس الصوت والأصول ← ستوريبورد ← بناء المشهد ← معاينة رخيصة ← رندر ← تحقق ← تسليم.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -16429,7 +16429,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `audio` ← المخرج `video`، والمنفّذ `method:TRANS-279` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `cinematic-cut-planner` · `creative-quality-gate` · `dua-wednesday` · `fetch-reference` · `kosif-timeline` · `kosif-timeline-demo`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `cinematic-cut-planner` · `creative-quality-gate` · `dua-wednesday` · `fast-edit` · `fetch-reference` · `kosif-timeline`.
 - مراحل النوع: قياس الصوت والأصول ← ستوريبورد ← بناء المشهد ← معاينة رخيصة ← رندر ← تحقق ← تسليم.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -16502,7 +16502,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `audio` ← المخرج `video`، والمنفّذ `method:TRANS-28` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `cinematic-cut-planner` · `creative-quality-gate` · `dua-wednesday` · `fetch-reference` · `kosif-timeline` · `kosif-timeline-demo`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `cinematic-cut-planner` · `creative-quality-gate` · `dua-wednesday` · `fast-edit` · `fetch-reference` · `kosif-timeline`.
 - مراحل النوع: قياس الصوت والأصول ← ستوريبورد ← بناء المشهد ← معاينة رخيصة ← رندر ← تحقق ← تسليم.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -16581,7 +16581,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `audio` ← المخرج `video`، والمنفّذ `method:TRANS-280` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `cinematic-cut-planner` · `creative-quality-gate` · `dua-wednesday` · `fetch-reference` · `kosif-timeline` · `kosif-timeline-demo`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `cinematic-cut-planner` · `creative-quality-gate` · `dua-wednesday` · `fast-edit` · `fetch-reference` · `kosif-timeline`.
 - مراحل النوع: قياس الصوت والأصول ← ستوريبورد ← بناء المشهد ← معاينة رخيصة ← رندر ← تحقق ← تسليم.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -16656,7 +16656,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `audio` ← المخرج `video`، والمنفّذ `method:TRANS-281` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `cinematic-cut-planner` · `creative-quality-gate` · `dua-wednesday` · `fetch-reference` · `kosif-timeline` · `kosif-timeline-demo`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `cinematic-cut-planner` · `creative-quality-gate` · `dua-wednesday` · `fast-edit` · `fetch-reference` · `kosif-timeline`.
 - مراحل النوع: قياس الصوت والأصول ← ستوريبورد ← بناء المشهد ← معاينة رخيصة ← رندر ← تحقق ← تسليم.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -16731,7 +16731,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `audio` ← المخرج `video`، والمنفّذ `method:TRANS-282` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `cinematic-cut-planner` · `creative-quality-gate` · `dua-wednesday` · `fetch-reference` · `kosif-timeline` · `kosif-timeline-demo`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `cinematic-cut-planner` · `creative-quality-gate` · `dua-wednesday` · `fast-edit` · `fetch-reference` · `kosif-timeline`.
 - مراحل النوع: قياس الصوت والأصول ← ستوريبورد ← بناء المشهد ← معاينة رخيصة ← رندر ← تحقق ← تسليم.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -16806,7 +16806,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `audio` ← المخرج `video`، والمنفّذ `method:TRANS-283` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `cinematic-cut-planner` · `creative-quality-gate` · `dua-wednesday` · `fetch-reference` · `kosif-timeline` · `kosif-timeline-demo`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `cinematic-cut-planner` · `creative-quality-gate` · `dua-wednesday` · `fast-edit` · `fetch-reference` · `kosif-timeline`.
 - مراحل النوع: قياس الصوت والأصول ← ستوريبورد ← بناء المشهد ← معاينة رخيصة ← رندر ← تحقق ← تسليم.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -16881,7 +16881,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `audio` ← المخرج `video`، والمنفّذ `method:TRANS-284` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `cinematic-cut-planner` · `creative-quality-gate` · `dua-wednesday` · `fetch-reference` · `kosif-timeline` · `kosif-timeline-demo`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `cinematic-cut-planner` · `creative-quality-gate` · `dua-wednesday` · `fast-edit` · `fetch-reference` · `kosif-timeline`.
 - مراحل النوع: قياس الصوت والأصول ← ستوريبورد ← بناء المشهد ← معاينة رخيصة ← رندر ← تحقق ← تسليم.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -16954,7 +16954,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `audio` ← المخرج `video`، والمنفّذ `method:TRANS-285` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `cinematic-cut-planner` · `creative-quality-gate` · `dua-wednesday` · `fetch-reference` · `kosif-timeline` · `kosif-timeline-demo`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `cinematic-cut-planner` · `creative-quality-gate` · `dua-wednesday` · `fast-edit` · `fetch-reference` · `kosif-timeline`.
 - مراحل النوع: قياس الصوت والأصول ← ستوريبورد ← بناء المشهد ← معاينة رخيصة ← رندر ← تحقق ← تسليم.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -17029,7 +17029,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `audio` ← المخرج `video`، والمنفّذ `method:TRANS-286` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `cinematic-cut-planner` · `creative-quality-gate` · `dua-wednesday` · `fetch-reference` · `kosif-timeline` · `kosif-timeline-demo`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `cinematic-cut-planner` · `creative-quality-gate` · `dua-wednesday` · `fast-edit` · `fetch-reference` · `kosif-timeline`.
 - مراحل النوع: قياس الصوت والأصول ← ستوريبورد ← بناء المشهد ← معاينة رخيصة ← رندر ← تحقق ← تسليم.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -17105,7 +17105,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `audio` ← المخرج `video`، والمنفّذ `method:TRANS-287` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `cinematic-cut-planner` · `creative-quality-gate` · `dua-wednesday` · `fetch-reference` · `kosif-timeline` · `kosif-timeline-demo`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `cinematic-cut-planner` · `creative-quality-gate` · `dua-wednesday` · `fast-edit` · `fetch-reference` · `kosif-timeline`.
 - مراحل النوع: قياس الصوت والأصول ← ستوريبورد ← بناء المشهد ← معاينة رخيصة ← رندر ← تحقق ← تسليم.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -17180,7 +17180,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `audio` ← المخرج `video`، والمنفّذ `method:TRANS-288` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `cinematic-cut-planner` · `creative-quality-gate` · `dua-wednesday` · `fetch-reference` · `kosif-timeline` · `kosif-timeline-demo`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `cinematic-cut-planner` · `creative-quality-gate` · `dua-wednesday` · `fast-edit` · `fetch-reference` · `kosif-timeline`.
 - مراحل النوع: قياس الصوت والأصول ← ستوريبورد ← بناء المشهد ← معاينة رخيصة ← رندر ← تحقق ← تسليم.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -17255,7 +17255,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `audio` ← المخرج `video`، والمنفّذ `method:TRANS-289` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `cinematic-cut-planner` · `creative-quality-gate` · `dua-wednesday` · `fetch-reference` · `kosif-timeline` · `kosif-timeline-demo`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `cinematic-cut-planner` · `creative-quality-gate` · `dua-wednesday` · `fast-edit` · `fetch-reference` · `kosif-timeline`.
 - مراحل النوع: قياس الصوت والأصول ← ستوريبورد ← بناء المشهد ← معاينة رخيصة ← رندر ← تحقق ← تسليم.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -17331,7 +17331,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `audio` ← المخرج `video`، والمنفّذ `method:TRANS-29` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `cinematic-cut-planner` · `creative-quality-gate` · `dua-wednesday` · `fetch-reference` · `kosif-timeline` · `kosif-timeline-demo`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `cinematic-cut-planner` · `creative-quality-gate` · `dua-wednesday` · `fast-edit` · `fetch-reference` · `kosif-timeline`.
 - مراحل النوع: قياس الصوت والأصول ← ستوريبورد ← بناء المشهد ← معاينة رخيصة ← رندر ← تحقق ← تسليم.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -17408,7 +17408,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `audio` ← المخرج `video`، والمنفّذ `method:TRANS-290` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `cinematic-cut-planner` · `creative-quality-gate` · `dua-wednesday` · `fetch-reference` · `kosif-timeline` · `kosif-timeline-demo`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `cinematic-cut-planner` · `creative-quality-gate` · `dua-wednesday` · `fast-edit` · `fetch-reference` · `kosif-timeline`.
 - مراحل النوع: قياس الصوت والأصول ← ستوريبورد ← بناء المشهد ← معاينة رخيصة ← رندر ← تحقق ← تسليم.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -17483,7 +17483,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `audio` ← المخرج `video`، والمنفّذ `method:TRANS-291` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `cinematic-cut-planner` · `creative-quality-gate` · `dua-wednesday` · `fetch-reference` · `kosif-timeline` · `kosif-timeline-demo`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `cinematic-cut-planner` · `creative-quality-gate` · `dua-wednesday` · `fast-edit` · `fetch-reference` · `kosif-timeline`.
 - مراحل النوع: قياس الصوت والأصول ← ستوريبورد ← بناء المشهد ← معاينة رخيصة ← رندر ← تحقق ← تسليم.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -17558,7 +17558,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `audio` ← المخرج `video`، والمنفّذ `method:TRANS-292` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `cinematic-cut-planner` · `creative-quality-gate` · `dua-wednesday` · `fetch-reference` · `kosif-timeline` · `kosif-timeline-demo`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `cinematic-cut-planner` · `creative-quality-gate` · `dua-wednesday` · `fast-edit` · `fetch-reference` · `kosif-timeline`.
 - مراحل النوع: قياس الصوت والأصول ← ستوريبورد ← بناء المشهد ← معاينة رخيصة ← رندر ← تحقق ← تسليم.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -17633,7 +17633,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `audio` ← المخرج `video`، والمنفّذ `method:TRANS-293` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `cinematic-cut-planner` · `creative-quality-gate` · `dua-wednesday` · `fetch-reference` · `kosif-timeline` · `kosif-timeline-demo`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `cinematic-cut-planner` · `creative-quality-gate` · `dua-wednesday` · `fast-edit` · `fetch-reference` · `kosif-timeline`.
 - مراحل النوع: قياس الصوت والأصول ← ستوريبورد ← بناء المشهد ← معاينة رخيصة ← رندر ← تحقق ← تسليم.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -17706,7 +17706,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `audio` ← المخرج `video`، والمنفّذ `method:TRANS-294` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `cinematic-cut-planner` · `creative-quality-gate` · `dua-wednesday` · `fetch-reference` · `kosif-timeline` · `kosif-timeline-demo`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `cinematic-cut-planner` · `creative-quality-gate` · `dua-wednesday` · `fast-edit` · `fetch-reference` · `kosif-timeline`.
 - مراحل النوع: قياس الصوت والأصول ← ستوريبورد ← بناء المشهد ← معاينة رخيصة ← رندر ← تحقق ← تسليم.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -17779,7 +17779,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `audio` ← المخرج `video`، والمنفّذ `method:TRANS-295` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `cinematic-cut-planner` · `creative-quality-gate` · `dua-wednesday` · `fetch-reference` · `kosif-timeline` · `kosif-timeline-demo`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `cinematic-cut-planner` · `creative-quality-gate` · `dua-wednesday` · `fast-edit` · `fetch-reference` · `kosif-timeline`.
 - مراحل النوع: قياس الصوت والأصول ← ستوريبورد ← بناء المشهد ← معاينة رخيصة ← رندر ← تحقق ← تسليم.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -17854,7 +17854,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `audio` ← المخرج `video`، والمنفّذ `method:TRANS-296` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `cinematic-cut-planner` · `creative-quality-gate` · `dua-wednesday` · `fetch-reference` · `kosif-timeline` · `kosif-timeline-demo`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `cinematic-cut-planner` · `creative-quality-gate` · `dua-wednesday` · `fast-edit` · `fetch-reference` · `kosif-timeline`.
 - مراحل النوع: قياس الصوت والأصول ← ستوريبورد ← بناء المشهد ← معاينة رخيصة ← رندر ← تحقق ← تسليم.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -17929,7 +17929,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `audio` ← المخرج `video`، والمنفّذ `method:TRANS-297` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `cinematic-cut-planner` · `creative-quality-gate` · `dua-wednesday` · `fetch-reference` · `kosif-timeline` · `kosif-timeline-demo`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `cinematic-cut-planner` · `creative-quality-gate` · `dua-wednesday` · `fast-edit` · `fetch-reference` · `kosif-timeline`.
 - مراحل النوع: قياس الصوت والأصول ← ستوريبورد ← بناء المشهد ← معاينة رخيصة ← رندر ← تحقق ← تسليم.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -18004,7 +18004,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `audio` ← المخرج `video`، والمنفّذ `method:TRANS-298` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `cinematic-cut-planner` · `creative-quality-gate` · `dua-wednesday` · `fetch-reference` · `kosif-timeline` · `kosif-timeline-demo`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `cinematic-cut-planner` · `creative-quality-gate` · `dua-wednesday` · `fast-edit` · `fetch-reference` · `kosif-timeline`.
 - مراحل النوع: قياس الصوت والأصول ← ستوريبورد ← بناء المشهد ← معاينة رخيصة ← رندر ← تحقق ← تسليم.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -18079,7 +18079,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `audio` ← المخرج `video`، والمنفّذ `method:TRANS-299` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `cinematic-cut-planner` · `creative-quality-gate` · `dua-wednesday` · `fetch-reference` · `kosif-timeline` · `kosif-timeline-demo`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `cinematic-cut-planner` · `creative-quality-gate` · `dua-wednesday` · `fast-edit` · `fetch-reference` · `kosif-timeline`.
 - مراحل النوع: قياس الصوت والأصول ← ستوريبورد ← بناء المشهد ← معاينة رخيصة ← رندر ← تحقق ← تسليم.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -18154,7 +18154,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `audio` ← المخرج `video`، والمنفّذ `method:TRANS-30` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `cinematic-cut-planner` · `creative-quality-gate` · `dua-wednesday` · `fetch-reference` · `kosif-timeline` · `kosif-timeline-demo`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `cinematic-cut-planner` · `creative-quality-gate` · `dua-wednesday` · `fast-edit` · `fetch-reference` · `kosif-timeline`.
 - مراحل النوع: قياس الصوت والأصول ← ستوريبورد ← بناء المشهد ← معاينة رخيصة ← رندر ← تحقق ← تسليم.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -18228,7 +18228,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `audio` ← المخرج `video`، والمنفّذ `method:TRANS-300` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `cinematic-cut-planner` · `creative-quality-gate` · `dua-wednesday` · `fetch-reference` · `kosif-timeline` · `kosif-timeline-demo`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `cinematic-cut-planner` · `creative-quality-gate` · `dua-wednesday` · `fast-edit` · `fetch-reference` · `kosif-timeline`.
 - مراحل النوع: قياس الصوت والأصول ← ستوريبورد ← بناء المشهد ← معاينة رخيصة ← رندر ← تحقق ← تسليم.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -18303,7 +18303,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `audio` ← المخرج `video`، والمنفّذ `method:TRANS-301` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `cinematic-cut-planner` · `creative-quality-gate` · `dua-wednesday` · `fetch-reference` · `kosif-timeline` · `kosif-timeline-demo`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `cinematic-cut-planner` · `creative-quality-gate` · `dua-wednesday` · `fast-edit` · `fetch-reference` · `kosif-timeline`.
 - مراحل النوع: قياس الصوت والأصول ← ستوريبورد ← بناء المشهد ← معاينة رخيصة ← رندر ← تحقق ← تسليم.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -18378,7 +18378,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `audio` ← المخرج `video`، والمنفّذ `method:TRANS-302` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `cinematic-cut-planner` · `creative-quality-gate` · `dua-wednesday` · `fetch-reference` · `kosif-timeline` · `kosif-timeline-demo`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `cinematic-cut-planner` · `creative-quality-gate` · `dua-wednesday` · `fast-edit` · `fetch-reference` · `kosif-timeline`.
 - مراحل النوع: قياس الصوت والأصول ← ستوريبورد ← بناء المشهد ← معاينة رخيصة ← رندر ← تحقق ← تسليم.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -18453,7 +18453,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `audio` ← المخرج `video`، والمنفّذ `method:TRANS-303` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `cinematic-cut-planner` · `creative-quality-gate` · `dua-wednesday` · `fetch-reference` · `kosif-timeline` · `kosif-timeline-demo`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `cinematic-cut-planner` · `creative-quality-gate` · `dua-wednesday` · `fast-edit` · `fetch-reference` · `kosif-timeline`.
 - مراحل النوع: قياس الصوت والأصول ← ستوريبورد ← بناء المشهد ← معاينة رخيصة ← رندر ← تحقق ← تسليم.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -18528,7 +18528,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `audio` ← المخرج `video`، والمنفّذ `method:TRANS-304` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `cinematic-cut-planner` · `creative-quality-gate` · `dua-wednesday` · `fetch-reference` · `kosif-timeline` · `kosif-timeline-demo`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `cinematic-cut-planner` · `creative-quality-gate` · `dua-wednesday` · `fast-edit` · `fetch-reference` · `kosif-timeline`.
 - مراحل النوع: قياس الصوت والأصول ← ستوريبورد ← بناء المشهد ← معاينة رخيصة ← رندر ← تحقق ← تسليم.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -18601,7 +18601,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `audio` ← المخرج `video`، والمنفّذ `method:TRANS-305` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `cinematic-cut-planner` · `creative-quality-gate` · `dua-wednesday` · `fetch-reference` · `kosif-timeline` · `kosif-timeline-demo`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `cinematic-cut-planner` · `creative-quality-gate` · `dua-wednesday` · `fast-edit` · `fetch-reference` · `kosif-timeline`.
 - مراحل النوع: قياس الصوت والأصول ← ستوريبورد ← بناء المشهد ← معاينة رخيصة ← رندر ← تحقق ← تسليم.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -18676,7 +18676,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `audio` ← المخرج `video`، والمنفّذ `method:TRANS-306` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `cinematic-cut-planner` · `creative-quality-gate` · `dua-wednesday` · `fetch-reference` · `kosif-timeline` · `kosif-timeline-demo`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `cinematic-cut-planner` · `creative-quality-gate` · `dua-wednesday` · `fast-edit` · `fetch-reference` · `kosif-timeline`.
 - مراحل النوع: قياس الصوت والأصول ← ستوريبورد ← بناء المشهد ← معاينة رخيصة ← رندر ← تحقق ← تسليم.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -18751,7 +18751,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `audio` ← المخرج `video`، والمنفّذ `method:TRANS-307` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `cinematic-cut-planner` · `creative-quality-gate` · `dua-wednesday` · `fetch-reference` · `kosif-timeline` · `kosif-timeline-demo`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `cinematic-cut-planner` · `creative-quality-gate` · `dua-wednesday` · `fast-edit` · `fetch-reference` · `kosif-timeline`.
 - مراحل النوع: قياس الصوت والأصول ← ستوريبورد ← بناء المشهد ← معاينة رخيصة ← رندر ← تحقق ← تسليم.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -18826,7 +18826,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `audio` ← المخرج `video`، والمنفّذ `method:TRANS-308` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `cinematic-cut-planner` · `creative-quality-gate` · `dua-wednesday` · `fetch-reference` · `kosif-timeline` · `kosif-timeline-demo`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `cinematic-cut-planner` · `creative-quality-gate` · `dua-wednesday` · `fast-edit` · `fetch-reference` · `kosif-timeline`.
 - مراحل النوع: قياس الصوت والأصول ← ستوريبورد ← بناء المشهد ← معاينة رخيصة ← رندر ← تحقق ← تسليم.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -18899,7 +18899,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `audio` ← المخرج `video`، والمنفّذ `method:TRANS-309` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `cinematic-cut-planner` · `creative-quality-gate` · `dua-wednesday` · `fetch-reference` · `kosif-timeline` · `kosif-timeline-demo`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `cinematic-cut-planner` · `creative-quality-gate` · `dua-wednesday` · `fast-edit` · `fetch-reference` · `kosif-timeline`.
 - مراحل النوع: قياس الصوت والأصول ← ستوريبورد ← بناء المشهد ← معاينة رخيصة ← رندر ← تحقق ← تسليم.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -18974,7 +18974,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `audio` ← المخرج `video`، والمنفّذ `method:TRANS-31` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `cinematic-cut-planner` · `creative-quality-gate` · `dua-wednesday` · `fetch-reference` · `kosif-timeline` · `kosif-timeline-demo`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `cinematic-cut-planner` · `creative-quality-gate` · `dua-wednesday` · `fast-edit` · `fetch-reference` · `kosif-timeline`.
 - مراحل النوع: قياس الصوت والأصول ← ستوريبورد ← بناء المشهد ← معاينة رخيصة ← رندر ← تحقق ← تسليم.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -19050,7 +19050,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `audio` ← المخرج `video`، والمنفّذ `method:TRANS-310` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `cinematic-cut-planner` · `creative-quality-gate` · `dua-wednesday` · `fetch-reference` · `kosif-timeline` · `kosif-timeline-demo`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `cinematic-cut-planner` · `creative-quality-gate` · `dua-wednesday` · `fast-edit` · `fetch-reference` · `kosif-timeline`.
 - مراحل النوع: قياس الصوت والأصول ← ستوريبورد ← بناء المشهد ← معاينة رخيصة ← رندر ← تحقق ← تسليم.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -19123,7 +19123,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `audio` ← المخرج `video`، والمنفّذ `method:TRANS-311` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `cinematic-cut-planner` · `creative-quality-gate` · `dua-wednesday` · `fetch-reference` · `kosif-timeline` · `kosif-timeline-demo`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `cinematic-cut-planner` · `creative-quality-gate` · `dua-wednesday` · `fast-edit` · `fetch-reference` · `kosif-timeline`.
 - مراحل النوع: قياس الصوت والأصول ← ستوريبورد ← بناء المشهد ← معاينة رخيصة ← رندر ← تحقق ← تسليم.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -19198,7 +19198,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `audio` ← المخرج `video`، والمنفّذ `method:TRANS-312` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `cinematic-cut-planner` · `creative-quality-gate` · `dua-wednesday` · `fetch-reference` · `kosif-timeline` · `kosif-timeline-demo`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `cinematic-cut-planner` · `creative-quality-gate` · `dua-wednesday` · `fast-edit` · `fetch-reference` · `kosif-timeline`.
 - مراحل النوع: قياس الصوت والأصول ← ستوريبورد ← بناء المشهد ← معاينة رخيصة ← رندر ← تحقق ← تسليم.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -19273,7 +19273,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `audio` ← المخرج `video`، والمنفّذ `method:TRANS-313` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `cinematic-cut-planner` · `creative-quality-gate` · `dua-wednesday` · `fetch-reference` · `kosif-timeline` · `kosif-timeline-demo`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `cinematic-cut-planner` · `creative-quality-gate` · `dua-wednesday` · `fast-edit` · `fetch-reference` · `kosif-timeline`.
 - مراحل النوع: قياس الصوت والأصول ← ستوريبورد ← بناء المشهد ← معاينة رخيصة ← رندر ← تحقق ← تسليم.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -19348,7 +19348,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `audio` ← المخرج `video`، والمنفّذ `method:TRANS-314` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `cinematic-cut-planner` · `creative-quality-gate` · `dua-wednesday` · `fetch-reference` · `kosif-timeline` · `kosif-timeline-demo`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `cinematic-cut-planner` · `creative-quality-gate` · `dua-wednesday` · `fast-edit` · `fetch-reference` · `kosif-timeline`.
 - مراحل النوع: قياس الصوت والأصول ← ستوريبورد ← بناء المشهد ← معاينة رخيصة ← رندر ← تحقق ← تسليم.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -19423,7 +19423,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `audio` ← المخرج `video`، والمنفّذ `method:TRANS-315` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `cinematic-cut-planner` · `creative-quality-gate` · `dua-wednesday` · `fetch-reference` · `kosif-timeline` · `kosif-timeline-demo`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `cinematic-cut-planner` · `creative-quality-gate` · `dua-wednesday` · `fast-edit` · `fetch-reference` · `kosif-timeline`.
 - مراحل النوع: قياس الصوت والأصول ← ستوريبورد ← بناء المشهد ← معاينة رخيصة ← رندر ← تحقق ← تسليم.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -19498,7 +19498,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `audio` ← المخرج `video`، والمنفّذ `method:TRANS-316` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `cinematic-cut-planner` · `creative-quality-gate` · `dua-wednesday` · `fetch-reference` · `kosif-timeline` · `kosif-timeline-demo`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `cinematic-cut-planner` · `creative-quality-gate` · `dua-wednesday` · `fast-edit` · `fetch-reference` · `kosif-timeline`.
 - مراحل النوع: قياس الصوت والأصول ← ستوريبورد ← بناء المشهد ← معاينة رخيصة ← رندر ← تحقق ← تسليم.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -19573,7 +19573,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `audio` ← المخرج `video`، والمنفّذ `method:TRANS-317` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `cinematic-cut-planner` · `creative-quality-gate` · `dua-wednesday` · `fetch-reference` · `kosif-timeline` · `kosif-timeline-demo`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `cinematic-cut-planner` · `creative-quality-gate` · `dua-wednesday` · `fast-edit` · `fetch-reference` · `kosif-timeline`.
 - مراحل النوع: قياس الصوت والأصول ← ستوريبورد ← بناء المشهد ← معاينة رخيصة ← رندر ← تحقق ← تسليم.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -19648,7 +19648,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `audio` ← المخرج `video`، والمنفّذ `method:TRANS-318` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `cinematic-cut-planner` · `creative-quality-gate` · `dua-wednesday` · `fetch-reference` · `kosif-timeline` · `kosif-timeline-demo`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `cinematic-cut-planner` · `creative-quality-gate` · `dua-wednesday` · `fast-edit` · `fetch-reference` · `kosif-timeline`.
 - مراحل النوع: قياس الصوت والأصول ← ستوريبورد ← بناء المشهد ← معاينة رخيصة ← رندر ← تحقق ← تسليم.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -19723,7 +19723,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `audio` ← المخرج `video`، والمنفّذ `method:TRANS-319` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `cinematic-cut-planner` · `creative-quality-gate` · `dua-wednesday` · `fetch-reference` · `kosif-timeline` · `kosif-timeline-demo`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `cinematic-cut-planner` · `creative-quality-gate` · `dua-wednesday` · `fast-edit` · `fetch-reference` · `kosif-timeline`.
 - مراحل النوع: قياس الصوت والأصول ← ستوريبورد ← بناء المشهد ← معاينة رخيصة ← رندر ← تحقق ← تسليم.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -19798,7 +19798,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `audio` ← المخرج `video`، والمنفّذ `method:TRANS-32` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `cinematic-cut-planner` · `creative-quality-gate` · `dua-wednesday` · `fetch-reference` · `kosif-timeline` · `kosif-timeline-demo`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `cinematic-cut-planner` · `creative-quality-gate` · `dua-wednesday` · `fast-edit` · `fetch-reference` · `kosif-timeline`.
 - مراحل النوع: قياس الصوت والأصول ← ستوريبورد ← بناء المشهد ← معاينة رخيصة ← رندر ← تحقق ← تسليم.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -19873,7 +19873,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `audio` ← المخرج `video`، والمنفّذ `method:TRANS-320` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `cinematic-cut-planner` · `creative-quality-gate` · `dua-wednesday` · `fetch-reference` · `kosif-timeline` · `kosif-timeline-demo`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `cinematic-cut-planner` · `creative-quality-gate` · `dua-wednesday` · `fast-edit` · `fetch-reference` · `kosif-timeline`.
 - مراحل النوع: قياس الصوت والأصول ← ستوريبورد ← بناء المشهد ← معاينة رخيصة ← رندر ← تحقق ← تسليم.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -19948,7 +19948,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `audio` ← المخرج `video`، والمنفّذ `method:TRANS-321` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `cinematic-cut-planner` · `creative-quality-gate` · `dua-wednesday` · `fetch-reference` · `kosif-timeline` · `kosif-timeline-demo`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `cinematic-cut-planner` · `creative-quality-gate` · `dua-wednesday` · `fast-edit` · `fetch-reference` · `kosif-timeline`.
 - مراحل النوع: قياس الصوت والأصول ← ستوريبورد ← بناء المشهد ← معاينة رخيصة ← رندر ← تحقق ← تسليم.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -20023,7 +20023,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `audio` ← المخرج `video`، والمنفّذ `method:TRANS-322` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `cinematic-cut-planner` · `creative-quality-gate` · `dua-wednesday` · `fetch-reference` · `kosif-timeline` · `kosif-timeline-demo`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `cinematic-cut-planner` · `creative-quality-gate` · `dua-wednesday` · `fast-edit` · `fetch-reference` · `kosif-timeline`.
 - مراحل النوع: قياس الصوت والأصول ← ستوريبورد ← بناء المشهد ← معاينة رخيصة ← رندر ← تحقق ← تسليم.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -20098,7 +20098,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `audio` ← المخرج `video`، والمنفّذ `method:TRANS-323` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `cinematic-cut-planner` · `creative-quality-gate` · `dua-wednesday` · `fetch-reference` · `kosif-timeline` · `kosif-timeline-demo`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `cinematic-cut-planner` · `creative-quality-gate` · `dua-wednesday` · `fast-edit` · `fetch-reference` · `kosif-timeline`.
 - مراحل النوع: قياس الصوت والأصول ← ستوريبورد ← بناء المشهد ← معاينة رخيصة ← رندر ← تحقق ← تسليم.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -20173,7 +20173,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `audio` ← المخرج `video`، والمنفّذ `method:TRANS-324` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `cinematic-cut-planner` · `creative-quality-gate` · `dua-wednesday` · `fetch-reference` · `kosif-timeline` · `kosif-timeline-demo`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `cinematic-cut-planner` · `creative-quality-gate` · `dua-wednesday` · `fast-edit` · `fetch-reference` · `kosif-timeline`.
 - مراحل النوع: قياس الصوت والأصول ← ستوريبورد ← بناء المشهد ← معاينة رخيصة ← رندر ← تحقق ← تسليم.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -20248,7 +20248,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `audio` ← المخرج `video`، والمنفّذ `method:TRANS-325` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `cinematic-cut-planner` · `creative-quality-gate` · `dua-wednesday` · `fetch-reference` · `kosif-timeline` · `kosif-timeline-demo`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `cinematic-cut-planner` · `creative-quality-gate` · `dua-wednesday` · `fast-edit` · `fetch-reference` · `kosif-timeline`.
 - مراحل النوع: قياس الصوت والأصول ← ستوريبورد ← بناء المشهد ← معاينة رخيصة ← رندر ← تحقق ← تسليم.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -20321,7 +20321,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `audio` ← المخرج `video`، والمنفّذ `method:TRANS-326` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `cinematic-cut-planner` · `creative-quality-gate` · `dua-wednesday` · `fetch-reference` · `kosif-timeline` · `kosif-timeline-demo`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `cinematic-cut-planner` · `creative-quality-gate` · `dua-wednesday` · `fast-edit` · `fetch-reference` · `kosif-timeline`.
 - مراحل النوع: قياس الصوت والأصول ← ستوريبورد ← بناء المشهد ← معاينة رخيصة ← رندر ← تحقق ← تسليم.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -20394,7 +20394,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `audio` ← المخرج `video`، والمنفّذ `method:TRANS-327` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `cinematic-cut-planner` · `creative-quality-gate` · `dua-wednesday` · `fetch-reference` · `kosif-timeline` · `kosif-timeline-demo`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `cinematic-cut-planner` · `creative-quality-gate` · `dua-wednesday` · `fast-edit` · `fetch-reference` · `kosif-timeline`.
 - مراحل النوع: قياس الصوت والأصول ← ستوريبورد ← بناء المشهد ← معاينة رخيصة ← رندر ← تحقق ← تسليم.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -20469,7 +20469,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `audio` ← المخرج `video`، والمنفّذ `method:TRANS-328` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `cinematic-cut-planner` · `creative-quality-gate` · `dua-wednesday` · `fetch-reference` · `kosif-timeline` · `kosif-timeline-demo`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `cinematic-cut-planner` · `creative-quality-gate` · `dua-wednesday` · `fast-edit` · `fetch-reference` · `kosif-timeline`.
 - مراحل النوع: قياس الصوت والأصول ← ستوريبورد ← بناء المشهد ← معاينة رخيصة ← رندر ← تحقق ← تسليم.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -20544,7 +20544,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `audio` ← المخرج `video`، والمنفّذ `method:TRANS-329` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `cinematic-cut-planner` · `creative-quality-gate` · `dua-wednesday` · `fetch-reference` · `kosif-timeline` · `kosif-timeline-demo`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `cinematic-cut-planner` · `creative-quality-gate` · `dua-wednesday` · `fast-edit` · `fetch-reference` · `kosif-timeline`.
 - مراحل النوع: قياس الصوت والأصول ← ستوريبورد ← بناء المشهد ← معاينة رخيصة ← رندر ← تحقق ← تسليم.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -20620,7 +20620,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `audio` ← المخرج `video`، والمنفّذ `method:TRANS-33` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `cinematic-cut-planner` · `creative-quality-gate` · `dua-wednesday` · `fetch-reference` · `kosif-timeline` · `kosif-timeline-demo`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `cinematic-cut-planner` · `creative-quality-gate` · `dua-wednesday` · `fast-edit` · `fetch-reference` · `kosif-timeline`.
 - مراحل النوع: قياس الصوت والأصول ← ستوريبورد ← بناء المشهد ← معاينة رخيصة ← رندر ← تحقق ← تسليم.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -20698,7 +20698,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `audio` ← المخرج `video`، والمنفّذ `method:TRANS-330` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `cinematic-cut-planner` · `creative-quality-gate` · `dua-wednesday` · `fetch-reference` · `kosif-timeline` · `kosif-timeline-demo`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `cinematic-cut-planner` · `creative-quality-gate` · `dua-wednesday` · `fast-edit` · `fetch-reference` · `kosif-timeline`.
 - مراحل النوع: قياس الصوت والأصول ← ستوريبورد ← بناء المشهد ← معاينة رخيصة ← رندر ← تحقق ← تسليم.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -20773,7 +20773,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `audio` ← المخرج `video`، والمنفّذ `method:TRANS-331` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `cinematic-cut-planner` · `creative-quality-gate` · `dua-wednesday` · `fetch-reference` · `kosif-timeline` · `kosif-timeline-demo`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `cinematic-cut-planner` · `creative-quality-gate` · `dua-wednesday` · `fast-edit` · `fetch-reference` · `kosif-timeline`.
 - مراحل النوع: قياس الصوت والأصول ← ستوريبورد ← بناء المشهد ← معاينة رخيصة ← رندر ← تحقق ← تسليم.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -20846,7 +20846,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `audio` ← المخرج `video`، والمنفّذ `method:TRANS-332` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `cinematic-cut-planner` · `creative-quality-gate` · `dua-wednesday` · `fetch-reference` · `kosif-timeline` · `kosif-timeline-demo`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `cinematic-cut-planner` · `creative-quality-gate` · `dua-wednesday` · `fast-edit` · `fetch-reference` · `kosif-timeline`.
 - مراحل النوع: قياس الصوت والأصول ← ستوريبورد ← بناء المشهد ← معاينة رخيصة ← رندر ← تحقق ← تسليم.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -20921,7 +20921,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `audio` ← المخرج `video`، والمنفّذ `method:TRANS-333` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `cinematic-cut-planner` · `creative-quality-gate` · `dua-wednesday` · `fetch-reference` · `kosif-timeline` · `kosif-timeline-demo`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `cinematic-cut-planner` · `creative-quality-gate` · `dua-wednesday` · `fast-edit` · `fetch-reference` · `kosif-timeline`.
 - مراحل النوع: قياس الصوت والأصول ← ستوريبورد ← بناء المشهد ← معاينة رخيصة ← رندر ← تحقق ← تسليم.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -20996,7 +20996,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `audio` ← المخرج `video`، والمنفّذ `method:TRANS-334` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `cinematic-cut-planner` · `creative-quality-gate` · `dua-wednesday` · `fetch-reference` · `kosif-timeline` · `kosif-timeline-demo`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `cinematic-cut-planner` · `creative-quality-gate` · `dua-wednesday` · `fast-edit` · `fetch-reference` · `kosif-timeline`.
 - مراحل النوع: قياس الصوت والأصول ← ستوريبورد ← بناء المشهد ← معاينة رخيصة ← رندر ← تحقق ← تسليم.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -21071,7 +21071,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `audio` ← المخرج `video`، والمنفّذ `method:TRANS-335` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `cinematic-cut-planner` · `creative-quality-gate` · `dua-wednesday` · `fetch-reference` · `kosif-timeline` · `kosif-timeline-demo`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `cinematic-cut-planner` · `creative-quality-gate` · `dua-wednesday` · `fast-edit` · `fetch-reference` · `kosif-timeline`.
 - مراحل النوع: قياس الصوت والأصول ← ستوريبورد ← بناء المشهد ← معاينة رخيصة ← رندر ← تحقق ← تسليم.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -21146,7 +21146,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `audio` ← المخرج `video`، والمنفّذ `method:TRANS-336` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `cinematic-cut-planner` · `creative-quality-gate` · `dua-wednesday` · `fetch-reference` · `kosif-timeline` · `kosif-timeline-demo`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `cinematic-cut-planner` · `creative-quality-gate` · `dua-wednesday` · `fast-edit` · `fetch-reference` · `kosif-timeline`.
 - مراحل النوع: قياس الصوت والأصول ← ستوريبورد ← بناء المشهد ← معاينة رخيصة ← رندر ← تحقق ← تسليم.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -21221,7 +21221,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `audio` ← المخرج `video`، والمنفّذ `method:TRANS-337` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `cinematic-cut-planner` · `creative-quality-gate` · `dua-wednesday` · `fetch-reference` · `kosif-timeline` · `kosif-timeline-demo`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `cinematic-cut-planner` · `creative-quality-gate` · `dua-wednesday` · `fast-edit` · `fetch-reference` · `kosif-timeline`.
 - مراحل النوع: قياس الصوت والأصول ← ستوريبورد ← بناء المشهد ← معاينة رخيصة ← رندر ← تحقق ← تسليم.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -21296,7 +21296,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `audio` ← المخرج `video`، والمنفّذ `method:TRANS-338` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `cinematic-cut-planner` · `creative-quality-gate` · `dua-wednesday` · `fetch-reference` · `kosif-timeline` · `kosif-timeline-demo`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `cinematic-cut-planner` · `creative-quality-gate` · `dua-wednesday` · `fast-edit` · `fetch-reference` · `kosif-timeline`.
 - مراحل النوع: قياس الصوت والأصول ← ستوريبورد ← بناء المشهد ← معاينة رخيصة ← رندر ← تحقق ← تسليم.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -21371,7 +21371,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `audio` ← المخرج `video`، والمنفّذ `method:TRANS-339` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `cinematic-cut-planner` · `creative-quality-gate` · `dua-wednesday` · `fetch-reference` · `kosif-timeline` · `kosif-timeline-demo`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `cinematic-cut-planner` · `creative-quality-gate` · `dua-wednesday` · `fast-edit` · `fetch-reference` · `kosif-timeline`.
 - مراحل النوع: قياس الصوت والأصول ← ستوريبورد ← بناء المشهد ← معاينة رخيصة ← رندر ← تحقق ← تسليم.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -21447,7 +21447,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `audio` ← المخرج `video`، والمنفّذ `method:TRANS-34` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `cinematic-cut-planner` · `creative-quality-gate` · `dua-wednesday` · `fetch-reference` · `kosif-timeline` · `kosif-timeline-demo`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `cinematic-cut-planner` · `creative-quality-gate` · `dua-wednesday` · `fast-edit` · `fetch-reference` · `kosif-timeline`.
 - مراحل النوع: قياس الصوت والأصول ← ستوريبورد ← بناء المشهد ← معاينة رخيصة ← رندر ← تحقق ← تسليم.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -21525,7 +21525,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `audio` ← المخرج `video`، والمنفّذ `method:TRANS-340` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `cinematic-cut-planner` · `creative-quality-gate` · `dua-wednesday` · `fetch-reference` · `kosif-timeline` · `kosif-timeline-demo`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `cinematic-cut-planner` · `creative-quality-gate` · `dua-wednesday` · `fast-edit` · `fetch-reference` · `kosif-timeline`.
 - مراحل النوع: قياس الصوت والأصول ← ستوريبورد ← بناء المشهد ← معاينة رخيصة ← رندر ← تحقق ← تسليم.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -21598,7 +21598,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `audio` ← المخرج `video`، والمنفّذ `method:TRANS-341` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `cinematic-cut-planner` · `creative-quality-gate` · `dua-wednesday` · `fetch-reference` · `kosif-timeline` · `kosif-timeline-demo`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `cinematic-cut-planner` · `creative-quality-gate` · `dua-wednesday` · `fast-edit` · `fetch-reference` · `kosif-timeline`.
 - مراحل النوع: قياس الصوت والأصول ← ستوريبورد ← بناء المشهد ← معاينة رخيصة ← رندر ← تحقق ← تسليم.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -21671,7 +21671,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `audio` ← المخرج `video`، والمنفّذ `method:TRANS-342` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `cinematic-cut-planner` · `creative-quality-gate` · `dua-wednesday` · `fetch-reference` · `kosif-timeline` · `kosif-timeline-demo`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `cinematic-cut-planner` · `creative-quality-gate` · `dua-wednesday` · `fast-edit` · `fetch-reference` · `kosif-timeline`.
 - مراحل النوع: قياس الصوت والأصول ← ستوريبورد ← بناء المشهد ← معاينة رخيصة ← رندر ← تحقق ← تسليم.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -21744,7 +21744,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `audio` ← المخرج `video`، والمنفّذ `method:TRANS-343` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `cinematic-cut-planner` · `creative-quality-gate` · `dua-wednesday` · `fetch-reference` · `kosif-timeline` · `kosif-timeline-demo`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `cinematic-cut-planner` · `creative-quality-gate` · `dua-wednesday` · `fast-edit` · `fetch-reference` · `kosif-timeline`.
 - مراحل النوع: قياس الصوت والأصول ← ستوريبورد ← بناء المشهد ← معاينة رخيصة ← رندر ← تحقق ← تسليم.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -21819,7 +21819,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `audio` ← المخرج `video`، والمنفّذ `method:TRANS-344` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `cinematic-cut-planner` · `creative-quality-gate` · `dua-wednesday` · `fetch-reference` · `kosif-timeline` · `kosif-timeline-demo`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `cinematic-cut-planner` · `creative-quality-gate` · `dua-wednesday` · `fast-edit` · `fetch-reference` · `kosif-timeline`.
 - مراحل النوع: قياس الصوت والأصول ← ستوريبورد ← بناء المشهد ← معاينة رخيصة ← رندر ← تحقق ← تسليم.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -21894,7 +21894,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `audio` ← المخرج `video`، والمنفّذ `method:TRANS-345` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `cinematic-cut-planner` · `creative-quality-gate` · `dua-wednesday` · `fetch-reference` · `kosif-timeline` · `kosif-timeline-demo`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `cinematic-cut-planner` · `creative-quality-gate` · `dua-wednesday` · `fast-edit` · `fetch-reference` · `kosif-timeline`.
 - مراحل النوع: قياس الصوت والأصول ← ستوريبورد ← بناء المشهد ← معاينة رخيصة ← رندر ← تحقق ← تسليم.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -21969,7 +21969,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `audio` ← المخرج `video`، والمنفّذ `method:TRANS-346` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `cinematic-cut-planner` · `creative-quality-gate` · `dua-wednesday` · `fetch-reference` · `kosif-timeline` · `kosif-timeline-demo`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `cinematic-cut-planner` · `creative-quality-gate` · `dua-wednesday` · `fast-edit` · `fetch-reference` · `kosif-timeline`.
 - مراحل النوع: قياس الصوت والأصول ← ستوريبورد ← بناء المشهد ← معاينة رخيصة ← رندر ← تحقق ← تسليم.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -22044,7 +22044,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `audio` ← المخرج `video`، والمنفّذ `method:TRANS-347` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `cinematic-cut-planner` · `creative-quality-gate` · `dua-wednesday` · `fetch-reference` · `kosif-timeline` · `kosif-timeline-demo`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `cinematic-cut-planner` · `creative-quality-gate` · `dua-wednesday` · `fast-edit` · `fetch-reference` · `kosif-timeline`.
 - مراحل النوع: قياس الصوت والأصول ← ستوريبورد ← بناء المشهد ← معاينة رخيصة ← رندر ← تحقق ← تسليم.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -22119,7 +22119,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `audio` ← المخرج `video`، والمنفّذ `method:TRANS-348` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `cinematic-cut-planner` · `creative-quality-gate` · `dua-wednesday` · `fetch-reference` · `kosif-timeline` · `kosif-timeline-demo`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `cinematic-cut-planner` · `creative-quality-gate` · `dua-wednesday` · `fast-edit` · `fetch-reference` · `kosif-timeline`.
 - مراحل النوع: قياس الصوت والأصول ← ستوريبورد ← بناء المشهد ← معاينة رخيصة ← رندر ← تحقق ← تسليم.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -22194,7 +22194,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `audio` ← المخرج `video`، والمنفّذ `method:TRANS-349` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `cinematic-cut-planner` · `creative-quality-gate` · `dua-wednesday` · `fetch-reference` · `kosif-timeline` · `kosif-timeline-demo`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `cinematic-cut-planner` · `creative-quality-gate` · `dua-wednesday` · `fast-edit` · `fetch-reference` · `kosif-timeline`.
 - مراحل النوع: قياس الصوت والأصول ← ستوريبورد ← بناء المشهد ← معاينة رخيصة ← رندر ← تحقق ← تسليم.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -22269,7 +22269,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `audio` ← المخرج `video`، والمنفّذ `method:TRANS-35` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `cinematic-cut-planner` · `creative-quality-gate` · `dua-wednesday` · `fetch-reference` · `kosif-timeline` · `kosif-timeline-demo`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `cinematic-cut-planner` · `creative-quality-gate` · `dua-wednesday` · `fast-edit` · `fetch-reference` · `kosif-timeline`.
 - مراحل النوع: قياس الصوت والأصول ← ستوريبورد ← بناء المشهد ← معاينة رخيصة ← رندر ← تحقق ← تسليم.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -22347,7 +22347,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `audio` ← المخرج `video`، والمنفّذ `method:TRANS-350` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `cinematic-cut-planner` · `creative-quality-gate` · `dua-wednesday` · `fetch-reference` · `kosif-timeline` · `kosif-timeline-demo`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `cinematic-cut-planner` · `creative-quality-gate` · `dua-wednesday` · `fast-edit` · `fetch-reference` · `kosif-timeline`.
 - مراحل النوع: قياس الصوت والأصول ← ستوريبورد ← بناء المشهد ← معاينة رخيصة ← رندر ← تحقق ← تسليم.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -22422,7 +22422,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `audio` ← المخرج `video`، والمنفّذ `method:TRANS-351` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `cinematic-cut-planner` · `creative-quality-gate` · `dua-wednesday` · `fetch-reference` · `kosif-timeline` · `kosif-timeline-demo`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `cinematic-cut-planner` · `creative-quality-gate` · `dua-wednesday` · `fast-edit` · `fetch-reference` · `kosif-timeline`.
 - مراحل النوع: قياس الصوت والأصول ← ستوريبورد ← بناء المشهد ← معاينة رخيصة ← رندر ← تحقق ← تسليم.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -22497,7 +22497,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `audio` ← المخرج `video`، والمنفّذ `method:TRANS-352` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `cinematic-cut-planner` · `creative-quality-gate` · `dua-wednesday` · `fetch-reference` · `kosif-timeline` · `kosif-timeline-demo`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `cinematic-cut-planner` · `creative-quality-gate` · `dua-wednesday` · `fast-edit` · `fetch-reference` · `kosif-timeline`.
 - مراحل النوع: قياس الصوت والأصول ← ستوريبورد ← بناء المشهد ← معاينة رخيصة ← رندر ← تحقق ← تسليم.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -22572,7 +22572,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `audio` ← المخرج `video`، والمنفّذ `method:TRANS-353` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `cinematic-cut-planner` · `creative-quality-gate` · `dua-wednesday` · `fetch-reference` · `kosif-timeline` · `kosif-timeline-demo`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `cinematic-cut-planner` · `creative-quality-gate` · `dua-wednesday` · `fast-edit` · `fetch-reference` · `kosif-timeline`.
 - مراحل النوع: قياس الصوت والأصول ← ستوريبورد ← بناء المشهد ← معاينة رخيصة ← رندر ← تحقق ← تسليم.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -22647,7 +22647,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `audio` ← المخرج `video`، والمنفّذ `method:TRANS-354` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `cinematic-cut-planner` · `creative-quality-gate` · `dua-wednesday` · `fetch-reference` · `kosif-timeline` · `kosif-timeline-demo`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `cinematic-cut-planner` · `creative-quality-gate` · `dua-wednesday` · `fast-edit` · `fetch-reference` · `kosif-timeline`.
 - مراحل النوع: قياس الصوت والأصول ← ستوريبورد ← بناء المشهد ← معاينة رخيصة ← رندر ← تحقق ← تسليم.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -22722,7 +22722,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `audio` ← المخرج `video`، والمنفّذ `method:TRANS-355` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `cinematic-cut-planner` · `creative-quality-gate` · `dua-wednesday` · `fetch-reference` · `kosif-timeline` · `kosif-timeline-demo`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `cinematic-cut-planner` · `creative-quality-gate` · `dua-wednesday` · `fast-edit` · `fetch-reference` · `kosif-timeline`.
 - مراحل النوع: قياس الصوت والأصول ← ستوريبورد ← بناء المشهد ← معاينة رخيصة ← رندر ← تحقق ← تسليم.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -22795,7 +22795,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `audio` ← المخرج `video`، والمنفّذ `method:TRANS-356` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `cinematic-cut-planner` · `creative-quality-gate` · `dua-wednesday` · `fetch-reference` · `kosif-timeline` · `kosif-timeline-demo`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `cinematic-cut-planner` · `creative-quality-gate` · `dua-wednesday` · `fast-edit` · `fetch-reference` · `kosif-timeline`.
 - مراحل النوع: قياس الصوت والأصول ← ستوريبورد ← بناء المشهد ← معاينة رخيصة ← رندر ← تحقق ← تسليم.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -22871,7 +22871,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `audio` ← المخرج `video`، والمنفّذ `method:TRANS-357` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `cinematic-cut-planner` · `creative-quality-gate` · `dua-wednesday` · `fetch-reference` · `kosif-timeline` · `kosif-timeline-demo`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `cinematic-cut-planner` · `creative-quality-gate` · `dua-wednesday` · `fast-edit` · `fetch-reference` · `kosif-timeline`.
 - مراحل النوع: قياس الصوت والأصول ← ستوريبورد ← بناء المشهد ← معاينة رخيصة ← رندر ← تحقق ← تسليم.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -22944,7 +22944,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `audio` ← المخرج `video`، والمنفّذ `method:TRANS-358` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `cinematic-cut-planner` · `creative-quality-gate` · `dua-wednesday` · `fetch-reference` · `kosif-timeline` · `kosif-timeline-demo`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `cinematic-cut-planner` · `creative-quality-gate` · `dua-wednesday` · `fast-edit` · `fetch-reference` · `kosif-timeline`.
 - مراحل النوع: قياس الصوت والأصول ← ستوريبورد ← بناء المشهد ← معاينة رخيصة ← رندر ← تحقق ← تسليم.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -23019,7 +23019,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `audio` ← المخرج `video`، والمنفّذ `method:TRANS-359` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `cinematic-cut-planner` · `creative-quality-gate` · `dua-wednesday` · `fetch-reference` · `kosif-timeline` · `kosif-timeline-demo`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `cinematic-cut-planner` · `creative-quality-gate` · `dua-wednesday` · `fast-edit` · `fetch-reference` · `kosif-timeline`.
 - مراحل النوع: قياس الصوت والأصول ← ستوريبورد ← بناء المشهد ← معاينة رخيصة ← رندر ← تحقق ← تسليم.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -23094,7 +23094,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `audio` ← المخرج `video`، والمنفّذ `method:TRANS-36` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `cinematic-cut-planner` · `creative-quality-gate` · `dua-wednesday` · `fetch-reference` · `kosif-timeline` · `kosif-timeline-demo`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `cinematic-cut-planner` · `creative-quality-gate` · `dua-wednesday` · `fast-edit` · `fetch-reference` · `kosif-timeline`.
 - مراحل النوع: قياس الصوت والأصول ← ستوريبورد ← بناء المشهد ← معاينة رخيصة ← رندر ← تحقق ← تسليم.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -23171,7 +23171,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `audio` ← المخرج `video`، والمنفّذ `method:TRANS-360` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `cinematic-cut-planner` · `creative-quality-gate` · `dua-wednesday` · `fetch-reference` · `kosif-timeline` · `kosif-timeline-demo`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `cinematic-cut-planner` · `creative-quality-gate` · `dua-wednesday` · `fast-edit` · `fetch-reference` · `kosif-timeline`.
 - مراحل النوع: قياس الصوت والأصول ← ستوريبورد ← بناء المشهد ← معاينة رخيصة ← رندر ← تحقق ← تسليم.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -23246,7 +23246,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `audio` ← المخرج `video`، والمنفّذ `method:TRANS-361` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `cinematic-cut-planner` · `creative-quality-gate` · `dua-wednesday` · `fetch-reference` · `kosif-timeline` · `kosif-timeline-demo`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `cinematic-cut-planner` · `creative-quality-gate` · `dua-wednesday` · `fast-edit` · `fetch-reference` · `kosif-timeline`.
 - مراحل النوع: قياس الصوت والأصول ← ستوريبورد ← بناء المشهد ← معاينة رخيصة ← رندر ← تحقق ← تسليم.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -23321,7 +23321,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `audio` ← المخرج `video`، والمنفّذ `method:TRANS-362` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `cinematic-cut-planner` · `creative-quality-gate` · `dua-wednesday` · `fetch-reference` · `kosif-timeline` · `kosif-timeline-demo`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `cinematic-cut-planner` · `creative-quality-gate` · `dua-wednesday` · `fast-edit` · `fetch-reference` · `kosif-timeline`.
 - مراحل النوع: قياس الصوت والأصول ← ستوريبورد ← بناء المشهد ← معاينة رخيصة ← رندر ← تحقق ← تسليم.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -23396,7 +23396,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `audio` ← المخرج `video`، والمنفّذ `method:TRANS-363` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `cinematic-cut-planner` · `creative-quality-gate` · `dua-wednesday` · `fetch-reference` · `kosif-timeline` · `kosif-timeline-demo`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `cinematic-cut-planner` · `creative-quality-gate` · `dua-wednesday` · `fast-edit` · `fetch-reference` · `kosif-timeline`.
 - مراحل النوع: قياس الصوت والأصول ← ستوريبورد ← بناء المشهد ← معاينة رخيصة ← رندر ← تحقق ← تسليم.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -23471,7 +23471,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `audio` ← المخرج `video`، والمنفّذ `method:TRANS-364` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `cinematic-cut-planner` · `creative-quality-gate` · `dua-wednesday` · `fetch-reference` · `kosif-timeline` · `kosif-timeline-demo`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `cinematic-cut-planner` · `creative-quality-gate` · `dua-wednesday` · `fast-edit` · `fetch-reference` · `kosif-timeline`.
 - مراحل النوع: قياس الصوت والأصول ← ستوريبورد ← بناء المشهد ← معاينة رخيصة ← رندر ← تحقق ← تسليم.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -23546,7 +23546,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `audio` ← المخرج `video`، والمنفّذ `method:TRANS-365` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `cinematic-cut-planner` · `creative-quality-gate` · `dua-wednesday` · `fetch-reference` · `kosif-timeline` · `kosif-timeline-demo`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `cinematic-cut-planner` · `creative-quality-gate` · `dua-wednesday` · `fast-edit` · `fetch-reference` · `kosif-timeline`.
 - مراحل النوع: قياس الصوت والأصول ← ستوريبورد ← بناء المشهد ← معاينة رخيصة ← رندر ← تحقق ← تسليم.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -23621,7 +23621,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `audio` ← المخرج `video`، والمنفّذ `method:TRANS-366` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `cinematic-cut-planner` · `creative-quality-gate` · `dua-wednesday` · `fetch-reference` · `kosif-timeline` · `kosif-timeline-demo`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `cinematic-cut-planner` · `creative-quality-gate` · `dua-wednesday` · `fast-edit` · `fetch-reference` · `kosif-timeline`.
 - مراحل النوع: قياس الصوت والأصول ← ستوريبورد ← بناء المشهد ← معاينة رخيصة ← رندر ← تحقق ← تسليم.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -23696,7 +23696,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `audio` ← المخرج `video`، والمنفّذ `method:TRANS-367` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `cinematic-cut-planner` · `creative-quality-gate` · `dua-wednesday` · `fetch-reference` · `kosif-timeline` · `kosif-timeline-demo`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `cinematic-cut-planner` · `creative-quality-gate` · `dua-wednesday` · `fast-edit` · `fetch-reference` · `kosif-timeline`.
 - مراحل النوع: قياس الصوت والأصول ← ستوريبورد ← بناء المشهد ← معاينة رخيصة ← رندر ← تحقق ← تسليم.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -23771,7 +23771,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `audio` ← المخرج `video`، والمنفّذ `method:TRANS-368` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `cinematic-cut-planner` · `creative-quality-gate` · `dua-wednesday` · `fetch-reference` · `kosif-timeline` · `kosif-timeline-demo`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `cinematic-cut-planner` · `creative-quality-gate` · `dua-wednesday` · `fast-edit` · `fetch-reference` · `kosif-timeline`.
 - مراحل النوع: قياس الصوت والأصول ← ستوريبورد ← بناء المشهد ← معاينة رخيصة ← رندر ← تحقق ← تسليم.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -23846,7 +23846,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `audio` ← المخرج `video`، والمنفّذ `method:TRANS-369` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `cinematic-cut-planner` · `creative-quality-gate` · `dua-wednesday` · `fetch-reference` · `kosif-timeline` · `kosif-timeline-demo`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `cinematic-cut-planner` · `creative-quality-gate` · `dua-wednesday` · `fast-edit` · `fetch-reference` · `kosif-timeline`.
 - مراحل النوع: قياس الصوت والأصول ← ستوريبورد ← بناء المشهد ← معاينة رخيصة ← رندر ← تحقق ← تسليم.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -23921,7 +23921,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `audio` ← المخرج `video`، والمنفّذ `method:TRANS-37` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `cinematic-cut-planner` · `creative-quality-gate` · `dua-wednesday` · `fetch-reference` · `kosif-timeline` · `kosif-timeline-demo`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `cinematic-cut-planner` · `creative-quality-gate` · `dua-wednesday` · `fast-edit` · `fetch-reference` · `kosif-timeline`.
 - مراحل النوع: قياس الصوت والأصول ← ستوريبورد ← بناء المشهد ← معاينة رخيصة ← رندر ← تحقق ← تسليم.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -23995,7 +23995,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `audio` ← المخرج `video`، والمنفّذ `method:TRANS-370` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `cinematic-cut-planner` · `creative-quality-gate` · `dua-wednesday` · `fetch-reference` · `kosif-timeline` · `kosif-timeline-demo`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `cinematic-cut-planner` · `creative-quality-gate` · `dua-wednesday` · `fast-edit` · `fetch-reference` · `kosif-timeline`.
 - مراحل النوع: قياس الصوت والأصول ← ستوريبورد ← بناء المشهد ← معاينة رخيصة ← رندر ← تحقق ← تسليم.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -24068,7 +24068,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `audio` ← المخرج `video`، والمنفّذ `method:TRANS-371` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `cinematic-cut-planner` · `creative-quality-gate` · `dua-wednesday` · `fetch-reference` · `kosif-timeline` · `kosif-timeline-demo`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `cinematic-cut-planner` · `creative-quality-gate` · `dua-wednesday` · `fast-edit` · `fetch-reference` · `kosif-timeline`.
 - مراحل النوع: قياس الصوت والأصول ← ستوريبورد ← بناء المشهد ← معاينة رخيصة ← رندر ← تحقق ← تسليم.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -24141,7 +24141,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `audio` ← المخرج `video`، والمنفّذ `method:TRANS-372` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `cinematic-cut-planner` · `creative-quality-gate` · `dua-wednesday` · `fetch-reference` · `kosif-timeline` · `kosif-timeline-demo`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `cinematic-cut-planner` · `creative-quality-gate` · `dua-wednesday` · `fast-edit` · `fetch-reference` · `kosif-timeline`.
 - مراحل النوع: قياس الصوت والأصول ← ستوريبورد ← بناء المشهد ← معاينة رخيصة ← رندر ← تحقق ← تسليم.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -24216,7 +24216,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `audio` ← المخرج `video`، والمنفّذ `method:TRANS-373` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `cinematic-cut-planner` · `creative-quality-gate` · `dua-wednesday` · `fetch-reference` · `kosif-timeline` · `kosif-timeline-demo`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `cinematic-cut-planner` · `creative-quality-gate` · `dua-wednesday` · `fast-edit` · `fetch-reference` · `kosif-timeline`.
 - مراحل النوع: قياس الصوت والأصول ← ستوريبورد ← بناء المشهد ← معاينة رخيصة ← رندر ← تحقق ← تسليم.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -24289,7 +24289,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `audio` ← المخرج `video`، والمنفّذ `method:TRANS-374` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `cinematic-cut-planner` · `creative-quality-gate` · `dua-wednesday` · `fetch-reference` · `kosif-timeline` · `kosif-timeline-demo`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `cinematic-cut-planner` · `creative-quality-gate` · `dua-wednesday` · `fast-edit` · `fetch-reference` · `kosif-timeline`.
 - مراحل النوع: قياس الصوت والأصول ← ستوريبورد ← بناء المشهد ← معاينة رخيصة ← رندر ← تحقق ← تسليم.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -24364,7 +24364,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `audio` ← المخرج `video`، والمنفّذ `method:TRANS-375` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `cinematic-cut-planner` · `creative-quality-gate` · `dua-wednesday` · `fetch-reference` · `kosif-timeline` · `kosif-timeline-demo`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `cinematic-cut-planner` · `creative-quality-gate` · `dua-wednesday` · `fast-edit` · `fetch-reference` · `kosif-timeline`.
 - مراحل النوع: قياس الصوت والأصول ← ستوريبورد ← بناء المشهد ← معاينة رخيصة ← رندر ← تحقق ← تسليم.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -24437,7 +24437,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `audio` ← المخرج `video`، والمنفّذ `method:TRANS-376` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `cinematic-cut-planner` · `creative-quality-gate` · `dua-wednesday` · `fetch-reference` · `kosif-timeline` · `kosif-timeline-demo`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `cinematic-cut-planner` · `creative-quality-gate` · `dua-wednesday` · `fast-edit` · `fetch-reference` · `kosif-timeline`.
 - مراحل النوع: قياس الصوت والأصول ← ستوريبورد ← بناء المشهد ← معاينة رخيصة ← رندر ← تحقق ← تسليم.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -24513,7 +24513,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `audio` ← المخرج `video`، والمنفّذ `method:TRANS-377` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `cinematic-cut-planner` · `creative-quality-gate` · `dua-wednesday` · `fetch-reference` · `kosif-timeline` · `kosif-timeline-demo`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `cinematic-cut-planner` · `creative-quality-gate` · `dua-wednesday` · `fast-edit` · `fetch-reference` · `kosif-timeline`.
 - مراحل النوع: قياس الصوت والأصول ← ستوريبورد ← بناء المشهد ← معاينة رخيصة ← رندر ← تحقق ← تسليم.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -24590,7 +24590,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `audio` ← المخرج `video`، والمنفّذ `method:TRANS-378` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `cinematic-cut-planner` · `creative-quality-gate` · `dua-wednesday` · `fetch-reference` · `kosif-timeline` · `kosif-timeline-demo`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `cinematic-cut-planner` · `creative-quality-gate` · `dua-wednesday` · `fast-edit` · `fetch-reference` · `kosif-timeline`.
 - مراحل النوع: قياس الصوت والأصول ← ستوريبورد ← بناء المشهد ← معاينة رخيصة ← رندر ← تحقق ← تسليم.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -24663,7 +24663,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `audio` ← المخرج `video`، والمنفّذ `method:TRANS-379` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `cinematic-cut-planner` · `creative-quality-gate` · `dua-wednesday` · `fetch-reference` · `kosif-timeline` · `kosif-timeline-demo`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `cinematic-cut-planner` · `creative-quality-gate` · `dua-wednesday` · `fast-edit` · `fetch-reference` · `kosif-timeline`.
 - مراحل النوع: قياس الصوت والأصول ← ستوريبورد ← بناء المشهد ← معاينة رخيصة ← رندر ← تحقق ← تسليم.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -24739,7 +24739,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `audio` ← المخرج `video`، والمنفّذ `method:TRANS-38` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `cinematic-cut-planner` · `creative-quality-gate` · `dua-wednesday` · `fetch-reference` · `kosif-timeline` · `kosif-timeline-demo`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `cinematic-cut-planner` · `creative-quality-gate` · `dua-wednesday` · `fast-edit` · `fetch-reference` · `kosif-timeline`.
 - مراحل النوع: قياس الصوت والأصول ← ستوريبورد ← بناء المشهد ← معاينة رخيصة ← رندر ← تحقق ← تسليم.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -24815,7 +24815,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `audio` ← المخرج `video`، والمنفّذ `method:TRANS-380` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `cinematic-cut-planner` · `creative-quality-gate` · `dua-wednesday` · `fetch-reference` · `kosif-timeline` · `kosif-timeline-demo`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `cinematic-cut-planner` · `creative-quality-gate` · `dua-wednesday` · `fast-edit` · `fetch-reference` · `kosif-timeline`.
 - مراحل النوع: قياس الصوت والأصول ← ستوريبورد ← بناء المشهد ← معاينة رخيصة ← رندر ← تحقق ← تسليم.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -24890,7 +24890,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `audio` ← المخرج `video`، والمنفّذ `method:TRANS-381` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `cinematic-cut-planner` · `creative-quality-gate` · `dua-wednesday` · `fetch-reference` · `kosif-timeline` · `kosif-timeline-demo`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `cinematic-cut-planner` · `creative-quality-gate` · `dua-wednesday` · `fast-edit` · `fetch-reference` · `kosif-timeline`.
 - مراحل النوع: قياس الصوت والأصول ← ستوريبورد ← بناء المشهد ← معاينة رخيصة ← رندر ← تحقق ← تسليم.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -24966,7 +24966,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `audio` ← المخرج `video`، والمنفّذ `method:TRANS-382` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `cinematic-cut-planner` · `creative-quality-gate` · `dua-wednesday` · `fetch-reference` · `kosif-timeline` · `kosif-timeline-demo`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `cinematic-cut-planner` · `creative-quality-gate` · `dua-wednesday` · `fast-edit` · `fetch-reference` · `kosif-timeline`.
 - مراحل النوع: قياس الصوت والأصول ← ستوريبورد ← بناء المشهد ← معاينة رخيصة ← رندر ← تحقق ← تسليم.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -25042,7 +25042,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `audio` ← المخرج `video`، والمنفّذ `method:TRANS-383` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `cinematic-cut-planner` · `creative-quality-gate` · `dua-wednesday` · `fetch-reference` · `kosif-timeline` · `kosif-timeline-demo`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `cinematic-cut-planner` · `creative-quality-gate` · `dua-wednesday` · `fast-edit` · `fetch-reference` · `kosif-timeline`.
 - مراحل النوع: قياس الصوت والأصول ← ستوريبورد ← بناء المشهد ← معاينة رخيصة ← رندر ← تحقق ← تسليم.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -25118,7 +25118,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `audio` ← المخرج `video`، والمنفّذ `method:TRANS-384` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `cinematic-cut-planner` · `creative-quality-gate` · `dua-wednesday` · `fetch-reference` · `kosif-timeline` · `kosif-timeline-demo`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `cinematic-cut-planner` · `creative-quality-gate` · `dua-wednesday` · `fast-edit` · `fetch-reference` · `kosif-timeline`.
 - مراحل النوع: قياس الصوت والأصول ← ستوريبورد ← بناء المشهد ← معاينة رخيصة ← رندر ← تحقق ← تسليم.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -25194,7 +25194,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `audio` ← المخرج `video`، والمنفّذ `method:TRANS-385` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `cinematic-cut-planner` · `creative-quality-gate` · `dua-wednesday` · `fetch-reference` · `kosif-timeline` · `kosif-timeline-demo`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `cinematic-cut-planner` · `creative-quality-gate` · `dua-wednesday` · `fast-edit` · `fetch-reference` · `kosif-timeline`.
 - مراحل النوع: قياس الصوت والأصول ← ستوريبورد ← بناء المشهد ← معاينة رخيصة ← رندر ← تحقق ← تسليم.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -25270,7 +25270,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `audio` ← المخرج `video`، والمنفّذ `method:TRANS-386` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `cinematic-cut-planner` · `creative-quality-gate` · `dua-wednesday` · `fetch-reference` · `kosif-timeline` · `kosif-timeline-demo`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `cinematic-cut-planner` · `creative-quality-gate` · `dua-wednesday` · `fast-edit` · `fetch-reference` · `kosif-timeline`.
 - مراحل النوع: قياس الصوت والأصول ← ستوريبورد ← بناء المشهد ← معاينة رخيصة ← رندر ← تحقق ← تسليم.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -25347,7 +25347,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `audio` ← المخرج `video`، والمنفّذ `method:TRANS-387` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `cinematic-cut-planner` · `creative-quality-gate` · `dua-wednesday` · `fetch-reference` · `kosif-timeline` · `kosif-timeline-demo`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `cinematic-cut-planner` · `creative-quality-gate` · `dua-wednesday` · `fast-edit` · `fetch-reference` · `kosif-timeline`.
 - مراحل النوع: قياس الصوت والأصول ← ستوريبورد ← بناء المشهد ← معاينة رخيصة ← رندر ← تحقق ← تسليم.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -25424,7 +25424,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `audio` ← المخرج `video`، والمنفّذ `method:TRANS-388` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `cinematic-cut-planner` · `creative-quality-gate` · `dua-wednesday` · `fetch-reference` · `kosif-timeline` · `kosif-timeline-demo`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `cinematic-cut-planner` · `creative-quality-gate` · `dua-wednesday` · `fast-edit` · `fetch-reference` · `kosif-timeline`.
 - مراحل النوع: قياس الصوت والأصول ← ستوريبورد ← بناء المشهد ← معاينة رخيصة ← رندر ← تحقق ← تسليم.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -25501,7 +25501,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `audio` ← المخرج `video`، والمنفّذ `method:TRANS-389` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `cinematic-cut-planner` · `creative-quality-gate` · `dua-wednesday` · `fetch-reference` · `kosif-timeline` · `kosif-timeline-demo`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `cinematic-cut-planner` · `creative-quality-gate` · `dua-wednesday` · `fast-edit` · `fetch-reference` · `kosif-timeline`.
 - مراحل النوع: قياس الصوت والأصول ← ستوريبورد ← بناء المشهد ← معاينة رخيصة ← رندر ← تحقق ← تسليم.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -25576,7 +25576,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `audio` ← المخرج `video`، والمنفّذ `method:TRANS-39` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `cinematic-cut-planner` · `creative-quality-gate` · `dua-wednesday` · `fetch-reference` · `kosif-timeline` · `kosif-timeline-demo`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `cinematic-cut-planner` · `creative-quality-gate` · `dua-wednesday` · `fast-edit` · `fetch-reference` · `kosif-timeline`.
 - مراحل النوع: قياس الصوت والأصول ← ستوريبورد ← بناء المشهد ← معاينة رخيصة ← رندر ← تحقق ← تسليم.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -25651,7 +25651,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `audio` ← المخرج `video`، والمنفّذ `method:TRANS-390` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `cinematic-cut-planner` · `creative-quality-gate` · `dua-wednesday` · `fetch-reference` · `kosif-timeline` · `kosif-timeline-demo`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `cinematic-cut-planner` · `creative-quality-gate` · `dua-wednesday` · `fast-edit` · `fetch-reference` · `kosif-timeline`.
 - مراحل النوع: قياس الصوت والأصول ← ستوريبورد ← بناء المشهد ← معاينة رخيصة ← رندر ← تحقق ← تسليم.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -25727,7 +25727,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `audio` ← المخرج `video`، والمنفّذ `method:TRANS-391` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `cinematic-cut-planner` · `creative-quality-gate` · `dua-wednesday` · `fetch-reference` · `kosif-timeline` · `kosif-timeline-demo`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `cinematic-cut-planner` · `creative-quality-gate` · `dua-wednesday` · `fast-edit` · `fetch-reference` · `kosif-timeline`.
 - مراحل النوع: قياس الصوت والأصول ← ستوريبورد ← بناء المشهد ← معاينة رخيصة ← رندر ← تحقق ← تسليم.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -25804,7 +25804,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `audio` ← المخرج `video`، والمنفّذ `method:TRANS-392` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `cinematic-cut-planner` · `creative-quality-gate` · `dua-wednesday` · `fetch-reference` · `kosif-timeline` · `kosif-timeline-demo`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `cinematic-cut-planner` · `creative-quality-gate` · `dua-wednesday` · `fast-edit` · `fetch-reference` · `kosif-timeline`.
 - مراحل النوع: قياس الصوت والأصول ← ستوريبورد ← بناء المشهد ← معاينة رخيصة ← رندر ← تحقق ← تسليم.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -25881,7 +25881,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `audio` ← المخرج `video`، والمنفّذ `method:TRANS-393` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `cinematic-cut-planner` · `creative-quality-gate` · `dua-wednesday` · `fetch-reference` · `kosif-timeline` · `kosif-timeline-demo`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `cinematic-cut-planner` · `creative-quality-gate` · `dua-wednesday` · `fast-edit` · `fetch-reference` · `kosif-timeline`.
 - مراحل النوع: قياس الصوت والأصول ← ستوريبورد ← بناء المشهد ← معاينة رخيصة ← رندر ← تحقق ← تسليم.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -25958,7 +25958,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `audio` ← المخرج `video`، والمنفّذ `method:TRANS-394` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `cinematic-cut-planner` · `creative-quality-gate` · `dua-wednesday` · `fetch-reference` · `kosif-timeline` · `kosif-timeline-demo`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `cinematic-cut-planner` · `creative-quality-gate` · `dua-wednesday` · `fast-edit` · `fetch-reference` · `kosif-timeline`.
 - مراحل النوع: قياس الصوت والأصول ← ستوريبورد ← بناء المشهد ← معاينة رخيصة ← رندر ← تحقق ← تسليم.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -26033,7 +26033,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `audio` ← المخرج `video`، والمنفّذ `method:TRANS-395` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `cinematic-cut-planner` · `creative-quality-gate` · `dua-wednesday` · `fetch-reference` · `kosif-timeline` · `kosif-timeline-demo`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `cinematic-cut-planner` · `creative-quality-gate` · `dua-wednesday` · `fast-edit` · `fetch-reference` · `kosif-timeline`.
 - مراحل النوع: قياس الصوت والأصول ← ستوريبورد ← بناء المشهد ← معاينة رخيصة ← رندر ← تحقق ← تسليم.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -26108,7 +26108,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `audio` ← المخرج `video`، والمنفّذ `method:TRANS-396` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `cinematic-cut-planner` · `creative-quality-gate` · `dua-wednesday` · `fetch-reference` · `kosif-timeline` · `kosif-timeline-demo`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `cinematic-cut-planner` · `creative-quality-gate` · `dua-wednesday` · `fast-edit` · `fetch-reference` · `kosif-timeline`.
 - مراحل النوع: قياس الصوت والأصول ← ستوريبورد ← بناء المشهد ← معاينة رخيصة ← رندر ← تحقق ← تسليم.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -26185,7 +26185,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `audio` ← المخرج `video`، والمنفّذ `method:TRANS-397` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `cinematic-cut-planner` · `creative-quality-gate` · `dua-wednesday` · `fetch-reference` · `kosif-timeline` · `kosif-timeline-demo`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `cinematic-cut-planner` · `creative-quality-gate` · `dua-wednesday` · `fast-edit` · `fetch-reference` · `kosif-timeline`.
 - مراحل النوع: قياس الصوت والأصول ← ستوريبورد ← بناء المشهد ← معاينة رخيصة ← رندر ← تحقق ← تسليم.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -26259,7 +26259,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `audio` ← المخرج `video`، والمنفّذ `method:TRANS-398` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `cinematic-cut-planner` · `creative-quality-gate` · `dua-wednesday` · `fetch-reference` · `kosif-timeline` · `kosif-timeline-demo`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `cinematic-cut-planner` · `creative-quality-gate` · `dua-wednesday` · `fast-edit` · `fetch-reference` · `kosif-timeline`.
 - مراحل النوع: قياس الصوت والأصول ← ستوريبورد ← بناء المشهد ← معاينة رخيصة ← رندر ← تحقق ← تسليم.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -26333,7 +26333,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `audio` ← المخرج `video`، والمنفّذ `method:TRANS-399` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `cinematic-cut-planner` · `creative-quality-gate` · `dua-wednesday` · `fetch-reference` · `kosif-timeline` · `kosif-timeline-demo`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `cinematic-cut-planner` · `creative-quality-gate` · `dua-wednesday` · `fast-edit` · `fetch-reference` · `kosif-timeline`.
 - مراحل النوع: قياس الصوت والأصول ← ستوريبورد ← بناء المشهد ← معاينة رخيصة ← رندر ← تحقق ← تسليم.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -26406,7 +26406,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `audio` ← المخرج `video`، والمنفّذ `method:TRANS-40` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `cinematic-cut-planner` · `creative-quality-gate` · `dua-wednesday` · `fetch-reference` · `kosif-timeline` · `kosif-timeline-demo`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `cinematic-cut-planner` · `creative-quality-gate` · `dua-wednesday` · `fast-edit` · `fetch-reference` · `kosif-timeline`.
 - مراحل النوع: قياس الصوت والأصول ← ستوريبورد ← بناء المشهد ← معاينة رخيصة ← رندر ← تحقق ← تسليم.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -26479,7 +26479,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `audio` ← المخرج `video`، والمنفّذ `method:TRANS-400` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `cinematic-cut-planner` · `creative-quality-gate` · `dua-wednesday` · `fetch-reference` · `kosif-timeline` · `kosif-timeline-demo`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `cinematic-cut-planner` · `creative-quality-gate` · `dua-wednesday` · `fast-edit` · `fetch-reference` · `kosif-timeline`.
 - مراحل النوع: قياس الصوت والأصول ← ستوريبورد ← بناء المشهد ← معاينة رخيصة ← رندر ← تحقق ← تسليم.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -26554,7 +26554,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `audio` ← المخرج `video`، والمنفّذ `method:TRANS-401` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `cinematic-cut-planner` · `creative-quality-gate` · `dua-wednesday` · `fetch-reference` · `kosif-timeline` · `kosif-timeline-demo`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `cinematic-cut-planner` · `creative-quality-gate` · `dua-wednesday` · `fast-edit` · `fetch-reference` · `kosif-timeline`.
 - مراحل النوع: قياس الصوت والأصول ← ستوريبورد ← بناء المشهد ← معاينة رخيصة ← رندر ← تحقق ← تسليم.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -26627,7 +26627,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `audio` ← المخرج `video`، والمنفّذ `method:TRANS-402` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `cinematic-cut-planner` · `creative-quality-gate` · `dua-wednesday` · `fetch-reference` · `kosif-timeline` · `kosif-timeline-demo`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `cinematic-cut-planner` · `creative-quality-gate` · `dua-wednesday` · `fast-edit` · `fetch-reference` · `kosif-timeline`.
 - مراحل النوع: قياس الصوت والأصول ← ستوريبورد ← بناء المشهد ← معاينة رخيصة ← رندر ← تحقق ← تسليم.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -26702,7 +26702,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `audio` ← المخرج `video`، والمنفّذ `method:TRANS-403` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `cinematic-cut-planner` · `creative-quality-gate` · `dua-wednesday` · `fetch-reference` · `kosif-timeline` · `kosif-timeline-demo`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `cinematic-cut-planner` · `creative-quality-gate` · `dua-wednesday` · `fast-edit` · `fetch-reference` · `kosif-timeline`.
 - مراحل النوع: قياس الصوت والأصول ← ستوريبورد ← بناء المشهد ← معاينة رخيصة ← رندر ← تحقق ← تسليم.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -26777,7 +26777,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `audio` ← المخرج `video`، والمنفّذ `method:TRANS-404` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `cinematic-cut-planner` · `creative-quality-gate` · `dua-wednesday` · `fetch-reference` · `kosif-timeline` · `kosif-timeline-demo`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `cinematic-cut-planner` · `creative-quality-gate` · `dua-wednesday` · `fast-edit` · `fetch-reference` · `kosif-timeline`.
 - مراحل النوع: قياس الصوت والأصول ← ستوريبورد ← بناء المشهد ← معاينة رخيصة ← رندر ← تحقق ← تسليم.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -26853,7 +26853,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `audio` ← المخرج `video`، والمنفّذ `method:TRANS-405` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `cinematic-cut-planner` · `creative-quality-gate` · `dua-wednesday` · `fetch-reference` · `kosif-timeline` · `kosif-timeline-demo`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `cinematic-cut-planner` · `creative-quality-gate` · `dua-wednesday` · `fast-edit` · `fetch-reference` · `kosif-timeline`.
 - مراحل النوع: قياس الصوت والأصول ← ستوريبورد ← بناء المشهد ← معاينة رخيصة ← رندر ← تحقق ← تسليم.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -26929,7 +26929,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `audio` ← المخرج `video`، والمنفّذ `method:TRANS-406` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `cinematic-cut-planner` · `creative-quality-gate` · `dua-wednesday` · `fetch-reference` · `kosif-timeline` · `kosif-timeline-demo`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `cinematic-cut-planner` · `creative-quality-gate` · `dua-wednesday` · `fast-edit` · `fetch-reference` · `kosif-timeline`.
 - مراحل النوع: قياس الصوت والأصول ← ستوريبورد ← بناء المشهد ← معاينة رخيصة ← رندر ← تحقق ← تسليم.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -27005,7 +27005,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `audio` ← المخرج `video`، والمنفّذ `method:TRANS-407` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `cinematic-cut-planner` · `creative-quality-gate` · `dua-wednesday` · `fetch-reference` · `kosif-timeline` · `kosif-timeline-demo`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `cinematic-cut-planner` · `creative-quality-gate` · `dua-wednesday` · `fast-edit` · `fetch-reference` · `kosif-timeline`.
 - مراحل النوع: قياس الصوت والأصول ← ستوريبورد ← بناء المشهد ← معاينة رخيصة ← رندر ← تحقق ← تسليم.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -27079,7 +27079,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `audio` ← المخرج `video`، والمنفّذ `method:TRANS-408` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `cinematic-cut-planner` · `creative-quality-gate` · `dua-wednesday` · `fetch-reference` · `kosif-timeline` · `kosif-timeline-demo`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `cinematic-cut-planner` · `creative-quality-gate` · `dua-wednesday` · `fast-edit` · `fetch-reference` · `kosif-timeline`.
 - مراحل النوع: قياس الصوت والأصول ← ستوريبورد ← بناء المشهد ← معاينة رخيصة ← رندر ← تحقق ← تسليم.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -27153,7 +27153,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `audio` ← المخرج `video`، والمنفّذ `method:TRANS-409` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `cinematic-cut-planner` · `creative-quality-gate` · `dua-wednesday` · `fetch-reference` · `kosif-timeline` · `kosif-timeline-demo`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `cinematic-cut-planner` · `creative-quality-gate` · `dua-wednesday` · `fast-edit` · `fetch-reference` · `kosif-timeline`.
 - مراحل النوع: قياس الصوت والأصول ← ستوريبورد ← بناء المشهد ← معاينة رخيصة ← رندر ← تحقق ← تسليم.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -27227,7 +27227,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `audio` ← المخرج `video`، والمنفّذ `method:TRANS-41` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `cinematic-cut-planner` · `creative-quality-gate` · `dua-wednesday` · `fetch-reference` · `kosif-timeline` · `kosif-timeline-demo`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `cinematic-cut-planner` · `creative-quality-gate` · `dua-wednesday` · `fast-edit` · `fetch-reference` · `kosif-timeline`.
 - مراحل النوع: قياس الصوت والأصول ← ستوريبورد ← بناء المشهد ← معاينة رخيصة ← رندر ← تحقق ← تسليم.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -27300,7 +27300,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `audio` ← المخرج `video`، والمنفّذ `method:TRANS-410` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `cinematic-cut-planner` · `creative-quality-gate` · `dua-wednesday` · `fetch-reference` · `kosif-timeline` · `kosif-timeline-demo`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `cinematic-cut-planner` · `creative-quality-gate` · `dua-wednesday` · `fast-edit` · `fetch-reference` · `kosif-timeline`.
 - مراحل النوع: قياس الصوت والأصول ← ستوريبورد ← بناء المشهد ← معاينة رخيصة ← رندر ← تحقق ← تسليم.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -27374,7 +27374,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `audio` ← المخرج `video`، والمنفّذ `method:TRANS-411` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `cinematic-cut-planner` · `creative-quality-gate` · `dua-wednesday` · `fetch-reference` · `kosif-timeline` · `kosif-timeline-demo`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `cinematic-cut-planner` · `creative-quality-gate` · `dua-wednesday` · `fast-edit` · `fetch-reference` · `kosif-timeline`.
 - مراحل النوع: قياس الصوت والأصول ← ستوريبورد ← بناء المشهد ← معاينة رخيصة ← رندر ← تحقق ← تسليم.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -27448,7 +27448,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `audio` ← المخرج `video`، والمنفّذ `method:TRANS-412` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `cinematic-cut-planner` · `creative-quality-gate` · `dua-wednesday` · `fetch-reference` · `kosif-timeline` · `kosif-timeline-demo`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `cinematic-cut-planner` · `creative-quality-gate` · `dua-wednesday` · `fast-edit` · `fetch-reference` · `kosif-timeline`.
 - مراحل النوع: قياس الصوت والأصول ← ستوريبورد ← بناء المشهد ← معاينة رخيصة ← رندر ← تحقق ← تسليم.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -27522,7 +27522,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `audio` ← المخرج `video`، والمنفّذ `method:TRANS-413` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `cinematic-cut-planner` · `creative-quality-gate` · `dua-wednesday` · `fetch-reference` · `kosif-timeline` · `kosif-timeline-demo`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `cinematic-cut-planner` · `creative-quality-gate` · `dua-wednesday` · `fast-edit` · `fetch-reference` · `kosif-timeline`.
 - مراحل النوع: قياس الصوت والأصول ← ستوريبورد ← بناء المشهد ← معاينة رخيصة ← رندر ← تحقق ← تسليم.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -27596,7 +27596,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `audio` ← المخرج `video`، والمنفّذ `method:TRANS-414` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `cinematic-cut-planner` · `creative-quality-gate` · `dua-wednesday` · `fetch-reference` · `kosif-timeline` · `kosif-timeline-demo`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `cinematic-cut-planner` · `creative-quality-gate` · `dua-wednesday` · `fast-edit` · `fetch-reference` · `kosif-timeline`.
 - مراحل النوع: قياس الصوت والأصول ← ستوريبورد ← بناء المشهد ← معاينة رخيصة ← رندر ← تحقق ← تسليم.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -27670,7 +27670,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `audio` ← المخرج `video`، والمنفّذ `method:TRANS-415` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `cinematic-cut-planner` · `creative-quality-gate` · `dua-wednesday` · `fetch-reference` · `kosif-timeline` · `kosif-timeline-demo`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `cinematic-cut-planner` · `creative-quality-gate` · `dua-wednesday` · `fast-edit` · `fetch-reference` · `kosif-timeline`.
 - مراحل النوع: قياس الصوت والأصول ← ستوريبورد ← بناء المشهد ← معاينة رخيصة ← رندر ← تحقق ← تسليم.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -27744,7 +27744,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `audio` ← المخرج `video`، والمنفّذ `method:TRANS-416` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `cinematic-cut-planner` · `creative-quality-gate` · `dua-wednesday` · `fetch-reference` · `kosif-timeline` · `kosif-timeline-demo`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `cinematic-cut-planner` · `creative-quality-gate` · `dua-wednesday` · `fast-edit` · `fetch-reference` · `kosif-timeline`.
 - مراحل النوع: قياس الصوت والأصول ← ستوريبورد ← بناء المشهد ← معاينة رخيصة ← رندر ← تحقق ← تسليم.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -27818,7 +27818,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `audio` ← المخرج `video`، والمنفّذ `method:TRANS-417` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `cinematic-cut-planner` · `creative-quality-gate` · `dua-wednesday` · `fetch-reference` · `kosif-timeline` · `kosif-timeline-demo`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `cinematic-cut-planner` · `creative-quality-gate` · `dua-wednesday` · `fast-edit` · `fetch-reference` · `kosif-timeline`.
 - مراحل النوع: قياس الصوت والأصول ← ستوريبورد ← بناء المشهد ← معاينة رخيصة ← رندر ← تحقق ← تسليم.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -27892,7 +27892,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `audio` ← المخرج `video`، والمنفّذ `method:TRANS-418` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `cinematic-cut-planner` · `creative-quality-gate` · `dua-wednesday` · `fetch-reference` · `kosif-timeline` · `kosif-timeline-demo`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `cinematic-cut-planner` · `creative-quality-gate` · `dua-wednesday` · `fast-edit` · `fetch-reference` · `kosif-timeline`.
 - مراحل النوع: قياس الصوت والأصول ← ستوريبورد ← بناء المشهد ← معاينة رخيصة ← رندر ← تحقق ← تسليم.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -27968,7 +27968,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `audio` ← المخرج `video`، والمنفّذ `method:TRANS-419` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `cinematic-cut-planner` · `creative-quality-gate` · `dua-wednesday` · `fetch-reference` · `kosif-timeline` · `kosif-timeline-demo`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `cinematic-cut-planner` · `creative-quality-gate` · `dua-wednesday` · `fast-edit` · `fetch-reference` · `kosif-timeline`.
 - مراحل النوع: قياس الصوت والأصول ← ستوريبورد ← بناء المشهد ← معاينة رخيصة ← رندر ← تحقق ← تسليم.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -28042,7 +28042,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `audio` ← المخرج `video`، والمنفّذ `method:TRANS-42` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `cinematic-cut-planner` · `creative-quality-gate` · `dua-wednesday` · `fetch-reference` · `kosif-timeline` · `kosif-timeline-demo`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `cinematic-cut-planner` · `creative-quality-gate` · `dua-wednesday` · `fast-edit` · `fetch-reference` · `kosif-timeline`.
 - مراحل النوع: قياس الصوت والأصول ← ستوريبورد ← بناء المشهد ← معاينة رخيصة ← رندر ← تحقق ← تسليم.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -28117,7 +28117,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `audio` ← المخرج `video`، والمنفّذ `method:TRANS-420` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `cinematic-cut-planner` · `creative-quality-gate` · `dua-wednesday` · `fetch-reference` · `kosif-timeline` · `kosif-timeline-demo`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `cinematic-cut-planner` · `creative-quality-gate` · `dua-wednesday` · `fast-edit` · `fetch-reference` · `kosif-timeline`.
 - مراحل النوع: قياس الصوت والأصول ← ستوريبورد ← بناء المشهد ← معاينة رخيصة ← رندر ← تحقق ← تسليم.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -28191,7 +28191,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `audio` ← المخرج `video`، والمنفّذ `method:TRANS-421` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `cinematic-cut-planner` · `creative-quality-gate` · `dua-wednesday` · `fetch-reference` · `kosif-timeline` · `kosif-timeline-demo`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `cinematic-cut-planner` · `creative-quality-gate` · `dua-wednesday` · `fast-edit` · `fetch-reference` · `kosif-timeline`.
 - مراحل النوع: قياس الصوت والأصول ← ستوريبورد ← بناء المشهد ← معاينة رخيصة ← رندر ← تحقق ← تسليم.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -28266,7 +28266,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `audio` ← المخرج `video`، والمنفّذ `method:TRANS-422` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `cinematic-cut-planner` · `creative-quality-gate` · `dua-wednesday` · `fetch-reference` · `kosif-timeline` · `kosif-timeline-demo`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `cinematic-cut-planner` · `creative-quality-gate` · `dua-wednesday` · `fast-edit` · `fetch-reference` · `kosif-timeline`.
 - مراحل النوع: قياس الصوت والأصول ← ستوريبورد ← بناء المشهد ← معاينة رخيصة ← رندر ← تحقق ← تسليم.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -28339,7 +28339,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `audio` ← المخرج `video`، والمنفّذ `method:TRANS-423` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `cinematic-cut-planner` · `creative-quality-gate` · `dua-wednesday` · `fetch-reference` · `kosif-timeline` · `kosif-timeline-demo`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `cinematic-cut-planner` · `creative-quality-gate` · `dua-wednesday` · `fast-edit` · `fetch-reference` · `kosif-timeline`.
 - مراحل النوع: قياس الصوت والأصول ← ستوريبورد ← بناء المشهد ← معاينة رخيصة ← رندر ← تحقق ← تسليم.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -28415,7 +28415,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `audio` ← المخرج `video`، والمنفّذ `method:TRANS-424` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `cinematic-cut-planner` · `creative-quality-gate` · `dua-wednesday` · `fetch-reference` · `kosif-timeline` · `kosif-timeline-demo`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `cinematic-cut-planner` · `creative-quality-gate` · `dua-wednesday` · `fast-edit` · `fetch-reference` · `kosif-timeline`.
 - مراحل النوع: قياس الصوت والأصول ← ستوريبورد ← بناء المشهد ← معاينة رخيصة ← رندر ← تحقق ← تسليم.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -28488,7 +28488,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `audio` ← المخرج `video`، والمنفّذ `method:TRANS-425` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `cinematic-cut-planner` · `creative-quality-gate` · `dua-wednesday` · `fetch-reference` · `kosif-timeline` · `kosif-timeline-demo`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `cinematic-cut-planner` · `creative-quality-gate` · `dua-wednesday` · `fast-edit` · `fetch-reference` · `kosif-timeline`.
 - مراحل النوع: قياس الصوت والأصول ← ستوريبورد ← بناء المشهد ← معاينة رخيصة ← رندر ← تحقق ← تسليم.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -28561,7 +28561,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `audio` ← المخرج `video`، والمنفّذ `method:TRANS-426` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `cinematic-cut-planner` · `creative-quality-gate` · `dua-wednesday` · `fetch-reference` · `kosif-timeline` · `kosif-timeline-demo`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `cinematic-cut-planner` · `creative-quality-gate` · `dua-wednesday` · `fast-edit` · `fetch-reference` · `kosif-timeline`.
 - مراحل النوع: قياس الصوت والأصول ← ستوريبورد ← بناء المشهد ← معاينة رخيصة ← رندر ← تحقق ← تسليم.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -28634,7 +28634,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `audio` ← المخرج `video`، والمنفّذ `method:TRANS-427` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `cinematic-cut-planner` · `creative-quality-gate` · `dua-wednesday` · `fetch-reference` · `kosif-timeline` · `kosif-timeline-demo`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `cinematic-cut-planner` · `creative-quality-gate` · `dua-wednesday` · `fast-edit` · `fetch-reference` · `kosif-timeline`.
 - مراحل النوع: قياس الصوت والأصول ← ستوريبورد ← بناء المشهد ← معاينة رخيصة ← رندر ← تحقق ← تسليم.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -28707,7 +28707,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `audio` ← المخرج `video`، والمنفّذ `method:TRANS-428` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `cinematic-cut-planner` · `creative-quality-gate` · `dua-wednesday` · `fetch-reference` · `kosif-timeline` · `kosif-timeline-demo`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `cinematic-cut-planner` · `creative-quality-gate` · `dua-wednesday` · `fast-edit` · `fetch-reference` · `kosif-timeline`.
 - مراحل النوع: قياس الصوت والأصول ← ستوريبورد ← بناء المشهد ← معاينة رخيصة ← رندر ← تحقق ← تسليم.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -28780,7 +28780,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `audio` ← المخرج `video`، والمنفّذ `method:TRANS-429` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `cinematic-cut-planner` · `creative-quality-gate` · `dua-wednesday` · `fetch-reference` · `kosif-timeline` · `kosif-timeline-demo`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `cinematic-cut-planner` · `creative-quality-gate` · `dua-wednesday` · `fast-edit` · `fetch-reference` · `kosif-timeline`.
 - مراحل النوع: قياس الصوت والأصول ← ستوريبورد ← بناء المشهد ← معاينة رخيصة ← رندر ← تحقق ← تسليم.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -28855,7 +28855,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `audio` ← المخرج `video`، والمنفّذ `method:TRANS-43` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `cinematic-cut-planner` · `creative-quality-gate` · `dua-wednesday` · `fetch-reference` · `kosif-timeline` · `kosif-timeline-demo`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `cinematic-cut-planner` · `creative-quality-gate` · `dua-wednesday` · `fast-edit` · `fetch-reference` · `kosif-timeline`.
 - مراحل النوع: قياس الصوت والأصول ← ستوريبورد ← بناء المشهد ← معاينة رخيصة ← رندر ← تحقق ← تسليم.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -28929,7 +28929,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `audio` ← المخرج `video`، والمنفّذ `method:TRANS-430` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `cinematic-cut-planner` · `creative-quality-gate` · `dua-wednesday` · `fetch-reference` · `kosif-timeline` · `kosif-timeline-demo`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `cinematic-cut-planner` · `creative-quality-gate` · `dua-wednesday` · `fast-edit` · `fetch-reference` · `kosif-timeline`.
 - مراحل النوع: قياس الصوت والأصول ← ستوريبورد ← بناء المشهد ← معاينة رخيصة ← رندر ← تحقق ← تسليم.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -29002,7 +29002,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `audio` ← المخرج `video`، والمنفّذ `method:TRANS-431` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `cinematic-cut-planner` · `creative-quality-gate` · `dua-wednesday` · `fetch-reference` · `kosif-timeline` · `kosif-timeline-demo`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `cinematic-cut-planner` · `creative-quality-gate` · `dua-wednesday` · `fast-edit` · `fetch-reference` · `kosif-timeline`.
 - مراحل النوع: قياس الصوت والأصول ← ستوريبورد ← بناء المشهد ← معاينة رخيصة ← رندر ← تحقق ← تسليم.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -29077,7 +29077,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `audio` ← المخرج `video`، والمنفّذ `method:TRANS-432` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `cinematic-cut-planner` · `creative-quality-gate` · `dua-wednesday` · `fetch-reference` · `kosif-timeline` · `kosif-timeline-demo`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `cinematic-cut-planner` · `creative-quality-gate` · `dua-wednesday` · `fast-edit` · `fetch-reference` · `kosif-timeline`.
 - مراحل النوع: قياس الصوت والأصول ← ستوريبورد ← بناء المشهد ← معاينة رخيصة ← رندر ← تحقق ← تسليم.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -29152,7 +29152,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `audio` ← المخرج `video`، والمنفّذ `method:TRANS-433` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `cinematic-cut-planner` · `creative-quality-gate` · `dua-wednesday` · `fetch-reference` · `kosif-timeline` · `kosif-timeline-demo`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `cinematic-cut-planner` · `creative-quality-gate` · `dua-wednesday` · `fast-edit` · `fetch-reference` · `kosif-timeline`.
 - مراحل النوع: قياس الصوت والأصول ← ستوريبورد ← بناء المشهد ← معاينة رخيصة ← رندر ← تحقق ← تسليم.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -29227,7 +29227,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `audio` ← المخرج `video`، والمنفّذ `method:TRANS-434` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `cinematic-cut-planner` · `creative-quality-gate` · `dua-wednesday` · `fetch-reference` · `kosif-timeline` · `kosif-timeline-demo`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `cinematic-cut-planner` · `creative-quality-gate` · `dua-wednesday` · `fast-edit` · `fetch-reference` · `kosif-timeline`.
 - مراحل النوع: قياس الصوت والأصول ← ستوريبورد ← بناء المشهد ← معاينة رخيصة ← رندر ← تحقق ← تسليم.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -29300,7 +29300,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `audio` ← المخرج `video`، والمنفّذ `method:TRANS-435` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `cinematic-cut-planner` · `creative-quality-gate` · `dua-wednesday` · `fetch-reference` · `kosif-timeline` · `kosif-timeline-demo`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `cinematic-cut-planner` · `creative-quality-gate` · `dua-wednesday` · `fast-edit` · `fetch-reference` · `kosif-timeline`.
 - مراحل النوع: قياس الصوت والأصول ← ستوريبورد ← بناء المشهد ← معاينة رخيصة ← رندر ← تحقق ← تسليم.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -29375,7 +29375,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `audio` ← المخرج `video`، والمنفّذ `method:TRANS-436` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `cinematic-cut-planner` · `creative-quality-gate` · `dua-wednesday` · `fetch-reference` · `kosif-timeline` · `kosif-timeline-demo`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `cinematic-cut-planner` · `creative-quality-gate` · `dua-wednesday` · `fast-edit` · `fetch-reference` · `kosif-timeline`.
 - مراحل النوع: قياس الصوت والأصول ← ستوريبورد ← بناء المشهد ← معاينة رخيصة ← رندر ← تحقق ← تسليم.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -29450,7 +29450,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `audio` ← المخرج `video`، والمنفّذ `method:TRANS-437` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `cinematic-cut-planner` · `creative-quality-gate` · `dua-wednesday` · `fetch-reference` · `kosif-timeline` · `kosif-timeline-demo`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `cinematic-cut-planner` · `creative-quality-gate` · `dua-wednesday` · `fast-edit` · `fetch-reference` · `kosif-timeline`.
 - مراحل النوع: قياس الصوت والأصول ← ستوريبورد ← بناء المشهد ← معاينة رخيصة ← رندر ← تحقق ← تسليم.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -29525,7 +29525,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `audio` ← المخرج `video`، والمنفّذ `method:TRANS-438` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `cinematic-cut-planner` · `creative-quality-gate` · `dua-wednesday` · `fetch-reference` · `kosif-timeline` · `kosif-timeline-demo`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `cinematic-cut-planner` · `creative-quality-gate` · `dua-wednesday` · `fast-edit` · `fetch-reference` · `kosif-timeline`.
 - مراحل النوع: قياس الصوت والأصول ← ستوريبورد ← بناء المشهد ← معاينة رخيصة ← رندر ← تحقق ← تسليم.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -29601,7 +29601,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `audio` ← المخرج `video`، والمنفّذ `method:TRANS-439` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `cinematic-cut-planner` · `creative-quality-gate` · `dua-wednesday` · `fetch-reference` · `kosif-timeline` · `kosif-timeline-demo`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `cinematic-cut-planner` · `creative-quality-gate` · `dua-wednesday` · `fast-edit` · `fetch-reference` · `kosif-timeline`.
 - مراحل النوع: قياس الصوت والأصول ← ستوريبورد ← بناء المشهد ← معاينة رخيصة ← رندر ← تحقق ← تسليم.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -29675,7 +29675,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `audio` ← المخرج `video`، والمنفّذ `method:TRANS-44` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `cinematic-cut-planner` · `creative-quality-gate` · `dua-wednesday` · `fetch-reference` · `kosif-timeline` · `kosif-timeline-demo`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `cinematic-cut-planner` · `creative-quality-gate` · `dua-wednesday` · `fast-edit` · `fetch-reference` · `kosif-timeline`.
 - مراحل النوع: قياس الصوت والأصول ← ستوريبورد ← بناء المشهد ← معاينة رخيصة ← رندر ← تحقق ← تسليم.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -29751,7 +29751,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `audio` ← المخرج `video`، والمنفّذ `method:TRANS-440` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `cinematic-cut-planner` · `creative-quality-gate` · `dua-wednesday` · `fetch-reference` · `kosif-timeline` · `kosif-timeline-demo`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `cinematic-cut-planner` · `creative-quality-gate` · `dua-wednesday` · `fast-edit` · `fetch-reference` · `kosif-timeline`.
 - مراحل النوع: قياس الصوت والأصول ← ستوريبورد ← بناء المشهد ← معاينة رخيصة ← رندر ← تحقق ← تسليم.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -29826,7 +29826,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `audio` ← المخرج `video`، والمنفّذ `method:TRANS-441` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `cinematic-cut-planner` · `creative-quality-gate` · `dua-wednesday` · `fetch-reference` · `kosif-timeline` · `kosif-timeline-demo`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `cinematic-cut-planner` · `creative-quality-gate` · `dua-wednesday` · `fast-edit` · `fetch-reference` · `kosif-timeline`.
 - مراحل النوع: قياس الصوت والأصول ← ستوريبورد ← بناء المشهد ← معاينة رخيصة ← رندر ← تحقق ← تسليم.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -29901,7 +29901,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `audio` ← المخرج `video`، والمنفّذ `method:TRANS-442` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `cinematic-cut-planner` · `creative-quality-gate` · `dua-wednesday` · `fetch-reference` · `kosif-timeline` · `kosif-timeline-demo`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `cinematic-cut-planner` · `creative-quality-gate` · `dua-wednesday` · `fast-edit` · `fetch-reference` · `kosif-timeline`.
 - مراحل النوع: قياس الصوت والأصول ← ستوريبورد ← بناء المشهد ← معاينة رخيصة ← رندر ← تحقق ← تسليم.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -29974,7 +29974,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `audio` ← المخرج `video`، والمنفّذ `method:TRANS-443` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `cinematic-cut-planner` · `creative-quality-gate` · `dua-wednesday` · `fetch-reference` · `kosif-timeline` · `kosif-timeline-demo`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `cinematic-cut-planner` · `creative-quality-gate` · `dua-wednesday` · `fast-edit` · `fetch-reference` · `kosif-timeline`.
 - مراحل النوع: قياس الصوت والأصول ← ستوريبورد ← بناء المشهد ← معاينة رخيصة ← رندر ← تحقق ← تسليم.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -30047,7 +30047,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `audio` ← المخرج `video`، والمنفّذ `method:TRANS-444` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `cinematic-cut-planner` · `creative-quality-gate` · `dua-wednesday` · `fetch-reference` · `kosif-timeline` · `kosif-timeline-demo`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `cinematic-cut-planner` · `creative-quality-gate` · `dua-wednesday` · `fast-edit` · `fetch-reference` · `kosif-timeline`.
 - مراحل النوع: قياس الصوت والأصول ← ستوريبورد ← بناء المشهد ← معاينة رخيصة ← رندر ← تحقق ← تسليم.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -30122,7 +30122,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `audio` ← المخرج `video`، والمنفّذ `method:TRANS-445` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `cinematic-cut-planner` · `creative-quality-gate` · `dua-wednesday` · `fetch-reference` · `kosif-timeline` · `kosif-timeline-demo`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `cinematic-cut-planner` · `creative-quality-gate` · `dua-wednesday` · `fast-edit` · `fetch-reference` · `kosif-timeline`.
 - مراحل النوع: قياس الصوت والأصول ← ستوريبورد ← بناء المشهد ← معاينة رخيصة ← رندر ← تحقق ← تسليم.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -30197,7 +30197,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `audio` ← المخرج `video`، والمنفّذ `method:TRANS-446` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `cinematic-cut-planner` · `creative-quality-gate` · `dua-wednesday` · `fetch-reference` · `kosif-timeline` · `kosif-timeline-demo`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `cinematic-cut-planner` · `creative-quality-gate` · `dua-wednesday` · `fast-edit` · `fetch-reference` · `kosif-timeline`.
 - مراحل النوع: قياس الصوت والأصول ← ستوريبورد ← بناء المشهد ← معاينة رخيصة ← رندر ← تحقق ← تسليم.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -30272,7 +30272,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `audio` ← المخرج `video`، والمنفّذ `method:TRANS-447` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `cinematic-cut-planner` · `creative-quality-gate` · `dua-wednesday` · `fetch-reference` · `kosif-timeline` · `kosif-timeline-demo`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `cinematic-cut-planner` · `creative-quality-gate` · `dua-wednesday` · `fast-edit` · `fetch-reference` · `kosif-timeline`.
 - مراحل النوع: قياس الصوت والأصول ← ستوريبورد ← بناء المشهد ← معاينة رخيصة ← رندر ← تحقق ← تسليم.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -30347,7 +30347,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `audio` ← المخرج `video`، والمنفّذ `method:TRANS-448` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `cinematic-cut-planner` · `creative-quality-gate` · `dua-wednesday` · `fetch-reference` · `kosif-timeline` · `kosif-timeline-demo`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `cinematic-cut-planner` · `creative-quality-gate` · `dua-wednesday` · `fast-edit` · `fetch-reference` · `kosif-timeline`.
 - مراحل النوع: قياس الصوت والأصول ← ستوريبورد ← بناء المشهد ← معاينة رخيصة ← رندر ← تحقق ← تسليم.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -30420,7 +30420,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `audio` ← المخرج `video`، والمنفّذ `method:TRANS-449` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `cinematic-cut-planner` · `creative-quality-gate` · `dua-wednesday` · `fetch-reference` · `kosif-timeline` · `kosif-timeline-demo`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `cinematic-cut-planner` · `creative-quality-gate` · `dua-wednesday` · `fast-edit` · `fetch-reference` · `kosif-timeline`.
 - مراحل النوع: قياس الصوت والأصول ← ستوريبورد ← بناء المشهد ← معاينة رخيصة ← رندر ← تحقق ← تسليم.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -30493,7 +30493,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `audio` ← المخرج `video`، والمنفّذ `method:TRANS-45` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `cinematic-cut-planner` · `creative-quality-gate` · `dua-wednesday` · `fetch-reference` · `kosif-timeline` · `kosif-timeline-demo`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `cinematic-cut-planner` · `creative-quality-gate` · `dua-wednesday` · `fast-edit` · `fetch-reference` · `kosif-timeline`.
 - مراحل النوع: قياس الصوت والأصول ← ستوريبورد ← بناء المشهد ← معاينة رخيصة ← رندر ← تحقق ← تسليم.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -30568,7 +30568,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `audio` ← المخرج `video`، والمنفّذ `method:TRANS-450` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `cinematic-cut-planner` · `creative-quality-gate` · `dua-wednesday` · `fetch-reference` · `kosif-timeline` · `kosif-timeline-demo`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `cinematic-cut-planner` · `creative-quality-gate` · `dua-wednesday` · `fast-edit` · `fetch-reference` · `kosif-timeline`.
 - مراحل النوع: قياس الصوت والأصول ← ستوريبورد ← بناء المشهد ← معاينة رخيصة ← رندر ← تحقق ← تسليم.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -30643,7 +30643,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `audio` ← المخرج `video`، والمنفّذ `method:TRANS-451` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `cinematic-cut-planner` · `creative-quality-gate` · `dua-wednesday` · `fetch-reference` · `kosif-timeline` · `kosif-timeline-demo`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `cinematic-cut-planner` · `creative-quality-gate` · `dua-wednesday` · `fast-edit` · `fetch-reference` · `kosif-timeline`.
 - مراحل النوع: قياس الصوت والأصول ← ستوريبورد ← بناء المشهد ← معاينة رخيصة ← رندر ← تحقق ← تسليم.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -30718,7 +30718,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `audio` ← المخرج `video`، والمنفّذ `method:TRANS-452` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `cinematic-cut-planner` · `creative-quality-gate` · `dua-wednesday` · `fetch-reference` · `kosif-timeline` · `kosif-timeline-demo`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `cinematic-cut-planner` · `creative-quality-gate` · `dua-wednesday` · `fast-edit` · `fetch-reference` · `kosif-timeline`.
 - مراحل النوع: قياس الصوت والأصول ← ستوريبورد ← بناء المشهد ← معاينة رخيصة ← رندر ← تحقق ← تسليم.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -30793,7 +30793,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `audio` ← المخرج `video`، والمنفّذ `method:TRANS-453` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `cinematic-cut-planner` · `creative-quality-gate` · `dua-wednesday` · `fetch-reference` · `kosif-timeline` · `kosif-timeline-demo`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `cinematic-cut-planner` · `creative-quality-gate` · `dua-wednesday` · `fast-edit` · `fetch-reference` · `kosif-timeline`.
 - مراحل النوع: قياس الصوت والأصول ← ستوريبورد ← بناء المشهد ← معاينة رخيصة ← رندر ← تحقق ← تسليم.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -30869,7 +30869,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `audio` ← المخرج `video`، والمنفّذ `method:TRANS-454` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `cinematic-cut-planner` · `creative-quality-gate` · `dua-wednesday` · `fetch-reference` · `kosif-timeline` · `kosif-timeline-demo`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `cinematic-cut-planner` · `creative-quality-gate` · `dua-wednesday` · `fast-edit` · `fetch-reference` · `kosif-timeline`.
 - مراحل النوع: قياس الصوت والأصول ← ستوريبورد ← بناء المشهد ← معاينة رخيصة ← رندر ← تحقق ← تسليم.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -30945,7 +30945,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `audio` ← المخرج `video`، والمنفّذ `method:TRANS-455` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `cinematic-cut-planner` · `creative-quality-gate` · `dua-wednesday` · `fetch-reference` · `kosif-timeline` · `kosif-timeline-demo`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `cinematic-cut-planner` · `creative-quality-gate` · `dua-wednesday` · `fast-edit` · `fetch-reference` · `kosif-timeline`.
 - مراحل النوع: قياس الصوت والأصول ← ستوريبورد ← بناء المشهد ← معاينة رخيصة ← رندر ← تحقق ← تسليم.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -31020,7 +31020,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `audio` ← المخرج `video`، والمنفّذ `method:TRANS-456` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `cinematic-cut-planner` · `creative-quality-gate` · `dua-wednesday` · `fetch-reference` · `kosif-timeline` · `kosif-timeline-demo`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `cinematic-cut-planner` · `creative-quality-gate` · `dua-wednesday` · `fast-edit` · `fetch-reference` · `kosif-timeline`.
 - مراحل النوع: قياس الصوت والأصول ← ستوريبورد ← بناء المشهد ← معاينة رخيصة ← رندر ← تحقق ← تسليم.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -31095,7 +31095,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `audio` ← المخرج `video`، والمنفّذ `method:TRANS-457` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `cinematic-cut-planner` · `creative-quality-gate` · `dua-wednesday` · `fetch-reference` · `kosif-timeline` · `kosif-timeline-demo`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `cinematic-cut-planner` · `creative-quality-gate` · `dua-wednesday` · `fast-edit` · `fetch-reference` · `kosif-timeline`.
 - مراحل النوع: قياس الصوت والأصول ← ستوريبورد ← بناء المشهد ← معاينة رخيصة ← رندر ← تحقق ← تسليم.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -31168,7 +31168,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `audio` ← المخرج `video`، والمنفّذ `method:TRANS-458` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `cinematic-cut-planner` · `creative-quality-gate` · `dua-wednesday` · `fetch-reference` · `kosif-timeline` · `kosif-timeline-demo`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `cinematic-cut-planner` · `creative-quality-gate` · `dua-wednesday` · `fast-edit` · `fetch-reference` · `kosif-timeline`.
 - مراحل النوع: قياس الصوت والأصول ← ستوريبورد ← بناء المشهد ← معاينة رخيصة ← رندر ← تحقق ← تسليم.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -31243,7 +31243,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `audio` ← المخرج `video`، والمنفّذ `method:TRANS-459` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `cinematic-cut-planner` · `creative-quality-gate` · `dua-wednesday` · `fetch-reference` · `kosif-timeline` · `kosif-timeline-demo`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `cinematic-cut-planner` · `creative-quality-gate` · `dua-wednesday` · `fast-edit` · `fetch-reference` · `kosif-timeline`.
 - مراحل النوع: قياس الصوت والأصول ← ستوريبورد ← بناء المشهد ← معاينة رخيصة ← رندر ← تحقق ← تسليم.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -31318,7 +31318,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `audio` ← المخرج `video`، والمنفّذ `method:TRANS-46` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `cinematic-cut-planner` · `creative-quality-gate` · `dua-wednesday` · `fetch-reference` · `kosif-timeline` · `kosif-timeline-demo`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `cinematic-cut-planner` · `creative-quality-gate` · `dua-wednesday` · `fast-edit` · `fetch-reference` · `kosif-timeline`.
 - مراحل النوع: قياس الصوت والأصول ← ستوريبورد ← بناء المشهد ← معاينة رخيصة ← رندر ← تحقق ← تسليم.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -31391,7 +31391,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `audio` ← المخرج `video`، والمنفّذ `method:TRANS-460` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `cinematic-cut-planner` · `creative-quality-gate` · `dua-wednesday` · `fetch-reference` · `kosif-timeline` · `kosif-timeline-demo`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `cinematic-cut-planner` · `creative-quality-gate` · `dua-wednesday` · `fast-edit` · `fetch-reference` · `kosif-timeline`.
 - مراحل النوع: قياس الصوت والأصول ← ستوريبورد ← بناء المشهد ← معاينة رخيصة ← رندر ← تحقق ← تسليم.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -31466,7 +31466,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `audio` ← المخرج `video`، والمنفّذ `method:TRANS-47` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `cinematic-cut-planner` · `creative-quality-gate` · `dua-wednesday` · `fetch-reference` · `kosif-timeline` · `kosif-timeline-demo`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `cinematic-cut-planner` · `creative-quality-gate` · `dua-wednesday` · `fast-edit` · `fetch-reference` · `kosif-timeline`.
 - مراحل النوع: قياس الصوت والأصول ← ستوريبورد ← بناء المشهد ← معاينة رخيصة ← رندر ← تحقق ← تسليم.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -31542,7 +31542,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `audio` ← المخرج `video`، والمنفّذ `method:TRANS-48` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `cinematic-cut-planner` · `creative-quality-gate` · `dua-wednesday` · `fetch-reference` · `kosif-timeline` · `kosif-timeline-demo`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `cinematic-cut-planner` · `creative-quality-gate` · `dua-wednesday` · `fast-edit` · `fetch-reference` · `kosif-timeline`.
 - مراحل النوع: قياس الصوت والأصول ← ستوريبورد ← بناء المشهد ← معاينة رخيصة ← رندر ← تحقق ← تسليم.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -31617,7 +31617,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `audio` ← المخرج `video`، والمنفّذ `method:TRANS-49` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `cinematic-cut-planner` · `creative-quality-gate` · `dua-wednesday` · `fetch-reference` · `kosif-timeline` · `kosif-timeline-demo`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `cinematic-cut-planner` · `creative-quality-gate` · `dua-wednesday` · `fast-edit` · `fetch-reference` · `kosif-timeline`.
 - مراحل النوع: قياس الصوت والأصول ← ستوريبورد ← بناء المشهد ← معاينة رخيصة ← رندر ← تحقق ← تسليم.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -31693,7 +31693,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `audio` ← المخرج `video`، والمنفّذ `method:TRANS-50` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `cinematic-cut-planner` · `creative-quality-gate` · `dua-wednesday` · `fetch-reference` · `kosif-timeline` · `kosif-timeline-demo`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `cinematic-cut-planner` · `creative-quality-gate` · `dua-wednesday` · `fast-edit` · `fetch-reference` · `kosif-timeline`.
 - مراحل النوع: قياس الصوت والأصول ← ستوريبورد ← بناء المشهد ← معاينة رخيصة ← رندر ← تحقق ← تسليم.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -31768,7 +31768,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `audio` ← المخرج `video`، والمنفّذ `method:TRANS-51` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `cinematic-cut-planner` · `creative-quality-gate` · `dua-wednesday` · `fetch-reference` · `kosif-timeline` · `kosif-timeline-demo`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `cinematic-cut-planner` · `creative-quality-gate` · `dua-wednesday` · `fast-edit` · `fetch-reference` · `kosif-timeline`.
 - مراحل النوع: قياس الصوت والأصول ← ستوريبورد ← بناء المشهد ← معاينة رخيصة ← رندر ← تحقق ← تسليم.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -31845,7 +31845,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `audio` ← المخرج `video`، والمنفّذ `method:TRANS-52` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `cinematic-cut-planner` · `creative-quality-gate` · `dua-wednesday` · `fetch-reference` · `kosif-timeline` · `kosif-timeline-demo`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `cinematic-cut-planner` · `creative-quality-gate` · `dua-wednesday` · `fast-edit` · `fetch-reference` · `kosif-timeline`.
 - مراحل النوع: قياس الصوت والأصول ← ستوريبورد ← بناء المشهد ← معاينة رخيصة ← رندر ← تحقق ← تسليم.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -31920,7 +31920,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `audio` ← المخرج `video`، والمنفّذ `method:TRANS-53` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `cinematic-cut-planner` · `creative-quality-gate` · `dua-wednesday` · `fetch-reference` · `kosif-timeline` · `kosif-timeline-demo`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `cinematic-cut-planner` · `creative-quality-gate` · `dua-wednesday` · `fast-edit` · `fetch-reference` · `kosif-timeline`.
 - مراحل النوع: قياس الصوت والأصول ← ستوريبورد ← بناء المشهد ← معاينة رخيصة ← رندر ← تحقق ← تسليم.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -31995,7 +31995,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `audio` ← المخرج `video`، والمنفّذ `method:TRANS-54` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `cinematic-cut-planner` · `creative-quality-gate` · `dua-wednesday` · `fetch-reference` · `kosif-timeline` · `kosif-timeline-demo`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `cinematic-cut-planner` · `creative-quality-gate` · `dua-wednesday` · `fast-edit` · `fetch-reference` · `kosif-timeline`.
 - مراحل النوع: قياس الصوت والأصول ← ستوريبورد ← بناء المشهد ← معاينة رخيصة ← رندر ← تحقق ← تسليم.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -32070,7 +32070,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `audio` ← المخرج `video`، والمنفّذ `method:TRANS-55` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `cinematic-cut-planner` · `creative-quality-gate` · `dua-wednesday` · `fetch-reference` · `kosif-timeline` · `kosif-timeline-demo`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `cinematic-cut-planner` · `creative-quality-gate` · `dua-wednesday` · `fast-edit` · `fetch-reference` · `kosif-timeline`.
 - مراحل النوع: قياس الصوت والأصول ← ستوريبورد ← بناء المشهد ← معاينة رخيصة ← رندر ← تحقق ← تسليم.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -32145,7 +32145,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `audio` ← المخرج `video`، والمنفّذ `method:TRANS-56` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `cinematic-cut-planner` · `creative-quality-gate` · `dua-wednesday` · `fetch-reference` · `kosif-timeline` · `kosif-timeline-demo`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `cinematic-cut-planner` · `creative-quality-gate` · `dua-wednesday` · `fast-edit` · `fetch-reference` · `kosif-timeline`.
 - مراحل النوع: قياس الصوت والأصول ← ستوريبورد ← بناء المشهد ← معاينة رخيصة ← رندر ← تحقق ← تسليم.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -32220,7 +32220,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `audio` ← المخرج `video`، والمنفّذ `method:TRANS-57` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `cinematic-cut-planner` · `creative-quality-gate` · `dua-wednesday` · `fetch-reference` · `kosif-timeline` · `kosif-timeline-demo`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `cinematic-cut-planner` · `creative-quality-gate` · `dua-wednesday` · `fast-edit` · `fetch-reference` · `kosif-timeline`.
 - مراحل النوع: قياس الصوت والأصول ← ستوريبورد ← بناء المشهد ← معاينة رخيصة ← رندر ← تحقق ← تسليم.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -32293,7 +32293,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `audio` ← المخرج `video`، والمنفّذ `method:TRANS-58` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `cinematic-cut-planner` · `creative-quality-gate` · `dua-wednesday` · `fetch-reference` · `kosif-timeline` · `kosif-timeline-demo`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `cinematic-cut-planner` · `creative-quality-gate` · `dua-wednesday` · `fast-edit` · `fetch-reference` · `kosif-timeline`.
 - مراحل النوع: قياس الصوت والأصول ← ستوريبورد ← بناء المشهد ← معاينة رخيصة ← رندر ← تحقق ← تسليم.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -32370,7 +32370,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `audio` ← المخرج `video`، والمنفّذ `method:TRANS-59` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `cinematic-cut-planner` · `creative-quality-gate` · `dua-wednesday` · `fetch-reference` · `kosif-timeline` · `kosif-timeline-demo`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `cinematic-cut-planner` · `creative-quality-gate` · `dua-wednesday` · `fast-edit` · `fetch-reference` · `kosif-timeline`.
 - مراحل النوع: قياس الصوت والأصول ← ستوريبورد ← بناء المشهد ← معاينة رخيصة ← رندر ← تحقق ← تسليم.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -32447,7 +32447,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `audio` ← المخرج `video`، والمنفّذ `method:TRANS-60` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `cinematic-cut-planner` · `creative-quality-gate` · `dua-wednesday` · `fetch-reference` · `kosif-timeline` · `kosif-timeline-demo`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `cinematic-cut-planner` · `creative-quality-gate` · `dua-wednesday` · `fast-edit` · `fetch-reference` · `kosif-timeline`.
 - مراحل النوع: قياس الصوت والأصول ← ستوريبورد ← بناء المشهد ← معاينة رخيصة ← رندر ← تحقق ← تسليم.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -32521,7 +32521,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `audio` ← المخرج `video`، والمنفّذ `method:TRANS-61` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `cinematic-cut-planner` · `creative-quality-gate` · `dua-wednesday` · `fetch-reference` · `kosif-timeline` · `kosif-timeline-demo`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `cinematic-cut-planner` · `creative-quality-gate` · `dua-wednesday` · `fast-edit` · `fetch-reference` · `kosif-timeline`.
 - مراحل النوع: قياس الصوت والأصول ← ستوريبورد ← بناء المشهد ← معاينة رخيصة ← رندر ← تحقق ← تسليم.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -32597,7 +32597,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `audio` ← المخرج `video`، والمنفّذ `method:TRANS-62` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `cinematic-cut-planner` · `creative-quality-gate` · `dua-wednesday` · `fetch-reference` · `kosif-timeline` · `kosif-timeline-demo`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `cinematic-cut-planner` · `creative-quality-gate` · `dua-wednesday` · `fast-edit` · `fetch-reference` · `kosif-timeline`.
 - مراحل النوع: قياس الصوت والأصول ← ستوريبورد ← بناء المشهد ← معاينة رخيصة ← رندر ← تحقق ← تسليم.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -32675,7 +32675,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `audio` ← المخرج `video`، والمنفّذ `method:TRANS-63` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `cinematic-cut-planner` · `creative-quality-gate` · `dua-wednesday` · `fetch-reference` · `kosif-timeline` · `kosif-timeline-demo`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `cinematic-cut-planner` · `creative-quality-gate` · `dua-wednesday` · `fast-edit` · `fetch-reference` · `kosif-timeline`.
 - مراحل النوع: قياس الصوت والأصول ← ستوريبورد ← بناء المشهد ← معاينة رخيصة ← رندر ← تحقق ← تسليم.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -32753,7 +32753,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `audio` ← المخرج `video`، والمنفّذ `method:TRANS-64` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `cinematic-cut-planner` · `creative-quality-gate` · `dua-wednesday` · `fetch-reference` · `kosif-timeline` · `kosif-timeline-demo`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `cinematic-cut-planner` · `creative-quality-gate` · `dua-wednesday` · `fast-edit` · `fetch-reference` · `kosif-timeline`.
 - مراحل النوع: قياس الصوت والأصول ← ستوريبورد ← بناء المشهد ← معاينة رخيصة ← رندر ← تحقق ← تسليم.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -32831,7 +32831,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `audio` ← المخرج `video`، والمنفّذ `method:TRANS-65` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `cinematic-cut-planner` · `creative-quality-gate` · `dua-wednesday` · `fetch-reference` · `kosif-timeline` · `kosif-timeline-demo`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `cinematic-cut-planner` · `creative-quality-gate` · `dua-wednesday` · `fast-edit` · `fetch-reference` · `kosif-timeline`.
 - مراحل النوع: قياس الصوت والأصول ← ستوريبورد ← بناء المشهد ← معاينة رخيصة ← رندر ← تحقق ← تسليم.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -32909,7 +32909,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `audio` ← المخرج `video`، والمنفّذ `method:TRANS-66` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `cinematic-cut-planner` · `creative-quality-gate` · `dua-wednesday` · `fetch-reference` · `kosif-timeline` · `kosif-timeline-demo`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `cinematic-cut-planner` · `creative-quality-gate` · `dua-wednesday` · `fast-edit` · `fetch-reference` · `kosif-timeline`.
 - مراحل النوع: قياس الصوت والأصول ← ستوريبورد ← بناء المشهد ← معاينة رخيصة ← رندر ← تحقق ← تسليم.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -32987,7 +32987,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `audio` ← المخرج `video`، والمنفّذ `method:TRANS-67` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `cinematic-cut-planner` · `creative-quality-gate` · `dua-wednesday` · `fetch-reference` · `kosif-timeline` · `kosif-timeline-demo`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `cinematic-cut-planner` · `creative-quality-gate` · `dua-wednesday` · `fast-edit` · `fetch-reference` · `kosif-timeline`.
 - مراحل النوع: قياس الصوت والأصول ← ستوريبورد ← بناء المشهد ← معاينة رخيصة ← رندر ← تحقق ← تسليم.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -33065,7 +33065,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `audio` ← المخرج `video`، والمنفّذ `method:TRANS-68` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `cinematic-cut-planner` · `creative-quality-gate` · `dua-wednesday` · `fetch-reference` · `kosif-timeline` · `kosif-timeline-demo`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `cinematic-cut-planner` · `creative-quality-gate` · `dua-wednesday` · `fast-edit` · `fetch-reference` · `kosif-timeline`.
 - مراحل النوع: قياس الصوت والأصول ← ستوريبورد ← بناء المشهد ← معاينة رخيصة ← رندر ← تحقق ← تسليم.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -33143,7 +33143,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `audio` ← المخرج `video`، والمنفّذ `method:TRANS-69` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `cinematic-cut-planner` · `creative-quality-gate` · `dua-wednesday` · `fetch-reference` · `kosif-timeline` · `kosif-timeline-demo`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `cinematic-cut-planner` · `creative-quality-gate` · `dua-wednesday` · `fast-edit` · `fetch-reference` · `kosif-timeline`.
 - مراحل النوع: قياس الصوت والأصول ← ستوريبورد ← بناء المشهد ← معاينة رخيصة ← رندر ← تحقق ← تسليم.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -33221,7 +33221,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `audio` ← المخرج `video`، والمنفّذ `method:TRANS-70` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `cinematic-cut-planner` · `creative-quality-gate` · `dua-wednesday` · `fetch-reference` · `kosif-timeline` · `kosif-timeline-demo`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `cinematic-cut-planner` · `creative-quality-gate` · `dua-wednesday` · `fast-edit` · `fetch-reference` · `kosif-timeline`.
 - مراحل النوع: قياس الصوت والأصول ← ستوريبورد ← بناء المشهد ← معاينة رخيصة ← رندر ← تحقق ← تسليم.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -33299,7 +33299,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `audio` ← المخرج `video`، والمنفّذ `method:TRANS-71` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `cinematic-cut-planner` · `creative-quality-gate` · `dua-wednesday` · `fetch-reference` · `kosif-timeline` · `kosif-timeline-demo`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `cinematic-cut-planner` · `creative-quality-gate` · `dua-wednesday` · `fast-edit` · `fetch-reference` · `kosif-timeline`.
 - مراحل النوع: قياس الصوت والأصول ← ستوريبورد ← بناء المشهد ← معاينة رخيصة ← رندر ← تحقق ← تسليم.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -33377,7 +33377,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `audio` ← المخرج `video`، والمنفّذ `method:TRANS-72` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `cinematic-cut-planner` · `creative-quality-gate` · `dua-wednesday` · `fetch-reference` · `kosif-timeline` · `kosif-timeline-demo`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `cinematic-cut-planner` · `creative-quality-gate` · `dua-wednesday` · `fast-edit` · `fetch-reference` · `kosif-timeline`.
 - مراحل النوع: قياس الصوت والأصول ← ستوريبورد ← بناء المشهد ← معاينة رخيصة ← رندر ← تحقق ← تسليم.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -33455,7 +33455,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `audio` ← المخرج `video`، والمنفّذ `method:TRANS-73` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `cinematic-cut-planner` · `creative-quality-gate` · `dua-wednesday` · `fetch-reference` · `kosif-timeline` · `kosif-timeline-demo`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `cinematic-cut-planner` · `creative-quality-gate` · `dua-wednesday` · `fast-edit` · `fetch-reference` · `kosif-timeline`.
 - مراحل النوع: قياس الصوت والأصول ← ستوريبورد ← بناء المشهد ← معاينة رخيصة ← رندر ← تحقق ← تسليم.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -33533,7 +33533,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `audio` ← المخرج `video`، والمنفّذ `method:TRANS-74` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `cinematic-cut-planner` · `creative-quality-gate` · `dua-wednesday` · `fetch-reference` · `kosif-timeline` · `kosif-timeline-demo`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `cinematic-cut-planner` · `creative-quality-gate` · `dua-wednesday` · `fast-edit` · `fetch-reference` · `kosif-timeline`.
 - مراحل النوع: قياس الصوت والأصول ← ستوريبورد ← بناء المشهد ← معاينة رخيصة ← رندر ← تحقق ← تسليم.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -33611,7 +33611,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `audio` ← المخرج `video`، والمنفّذ `method:TRANS-75` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `cinematic-cut-planner` · `creative-quality-gate` · `dua-wednesday` · `fetch-reference` · `kosif-timeline` · `kosif-timeline-demo`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `cinematic-cut-planner` · `creative-quality-gate` · `dua-wednesday` · `fast-edit` · `fetch-reference` · `kosif-timeline`.
 - مراحل النوع: قياس الصوت والأصول ← ستوريبورد ← بناء المشهد ← معاينة رخيصة ← رندر ← تحقق ← تسليم.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -33689,7 +33689,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `audio` ← المخرج `video`، والمنفّذ `method:TRANS-76` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `cinematic-cut-planner` · `creative-quality-gate` · `dua-wednesday` · `fetch-reference` · `kosif-timeline` · `kosif-timeline-demo`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `cinematic-cut-planner` · `creative-quality-gate` · `dua-wednesday` · `fast-edit` · `fetch-reference` · `kosif-timeline`.
 - مراحل النوع: قياس الصوت والأصول ← ستوريبورد ← بناء المشهد ← معاينة رخيصة ← رندر ← تحقق ← تسليم.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -33767,7 +33767,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `audio` ← المخرج `video`، والمنفّذ `method:TRANS-77` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `cinematic-cut-planner` · `creative-quality-gate` · `dua-wednesday` · `fetch-reference` · `kosif-timeline` · `kosif-timeline-demo`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `cinematic-cut-planner` · `creative-quality-gate` · `dua-wednesday` · `fast-edit` · `fetch-reference` · `kosif-timeline`.
 - مراحل النوع: قياس الصوت والأصول ← ستوريبورد ← بناء المشهد ← معاينة رخيصة ← رندر ← تحقق ← تسليم.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -33845,7 +33845,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `audio` ← المخرج `video`، والمنفّذ `method:TRANS-78` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `cinematic-cut-planner` · `creative-quality-gate` · `dua-wednesday` · `fetch-reference` · `kosif-timeline` · `kosif-timeline-demo`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `cinematic-cut-planner` · `creative-quality-gate` · `dua-wednesday` · `fast-edit` · `fetch-reference` · `kosif-timeline`.
 - مراحل النوع: قياس الصوت والأصول ← ستوريبورد ← بناء المشهد ← معاينة رخيصة ← رندر ← تحقق ← تسليم.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -33921,7 +33921,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `audio` ← المخرج `video`، والمنفّذ `method:TRANS-79` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `cinematic-cut-planner` · `creative-quality-gate` · `dua-wednesday` · `fetch-reference` · `kosif-timeline` · `kosif-timeline-demo`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `cinematic-cut-planner` · `creative-quality-gate` · `dua-wednesday` · `fast-edit` · `fetch-reference` · `kosif-timeline`.
 - مراحل النوع: قياس الصوت والأصول ← ستوريبورد ← بناء المشهد ← معاينة رخيصة ← رندر ← تحقق ← تسليم.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -33999,7 +33999,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `audio` ← المخرج `video`، والمنفّذ `method:TRANS-80` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `cinematic-cut-planner` · `creative-quality-gate` · `dua-wednesday` · `fetch-reference` · `kosif-timeline` · `kosif-timeline-demo`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `cinematic-cut-planner` · `creative-quality-gate` · `dua-wednesday` · `fast-edit` · `fetch-reference` · `kosif-timeline`.
 - مراحل النوع: قياس الصوت والأصول ← ستوريبورد ← بناء المشهد ← معاينة رخيصة ← رندر ← تحقق ← تسليم.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -34076,7 +34076,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `audio` ← المخرج `video`، والمنفّذ `method:TRANS-81` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `cinematic-cut-planner` · `creative-quality-gate` · `dua-wednesday` · `fetch-reference` · `kosif-timeline` · `kosif-timeline-demo`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `cinematic-cut-planner` · `creative-quality-gate` · `dua-wednesday` · `fast-edit` · `fetch-reference` · `kosif-timeline`.
 - مراحل النوع: قياس الصوت والأصول ← ستوريبورد ← بناء المشهد ← معاينة رخيصة ← رندر ← تحقق ← تسليم.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -34152,7 +34152,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `audio` ← المخرج `video`، والمنفّذ `method:TRANS-82` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `cinematic-cut-planner` · `creative-quality-gate` · `dua-wednesday` · `fetch-reference` · `kosif-timeline` · `kosif-timeline-demo`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `cinematic-cut-planner` · `creative-quality-gate` · `dua-wednesday` · `fast-edit` · `fetch-reference` · `kosif-timeline`.
 - مراحل النوع: قياس الصوت والأصول ← ستوريبورد ← بناء المشهد ← معاينة رخيصة ← رندر ← تحقق ← تسليم.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -34229,7 +34229,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `audio` ← المخرج `video`، والمنفّذ `method:TRANS-83` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `cinematic-cut-planner` · `creative-quality-gate` · `dua-wednesday` · `fetch-reference` · `kosif-timeline` · `kosif-timeline-demo`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `cinematic-cut-planner` · `creative-quality-gate` · `dua-wednesday` · `fast-edit` · `fetch-reference` · `kosif-timeline`.
 - مراحل النوع: قياس الصوت والأصول ← ستوريبورد ← بناء المشهد ← معاينة رخيصة ← رندر ← تحقق ← تسليم.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -34304,7 +34304,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `audio` ← المخرج `video`، والمنفّذ `method:TRANS-84` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `cinematic-cut-planner` · `creative-quality-gate` · `dua-wednesday` · `fetch-reference` · `kosif-timeline` · `kosif-timeline-demo`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `cinematic-cut-planner` · `creative-quality-gate` · `dua-wednesday` · `fast-edit` · `fetch-reference` · `kosif-timeline`.
 - مراحل النوع: قياس الصوت والأصول ← ستوريبورد ← بناء المشهد ← معاينة رخيصة ← رندر ← تحقق ← تسليم.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -34381,7 +34381,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `audio` ← المخرج `video`، والمنفّذ `method:TRANS-85` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `cinematic-cut-planner` · `creative-quality-gate` · `dua-wednesday` · `fetch-reference` · `kosif-timeline` · `kosif-timeline-demo`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `cinematic-cut-planner` · `creative-quality-gate` · `dua-wednesday` · `fast-edit` · `fetch-reference` · `kosif-timeline`.
 - مراحل النوع: قياس الصوت والأصول ← ستوريبورد ← بناء المشهد ← معاينة رخيصة ← رندر ← تحقق ← تسليم.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -34457,7 +34457,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `audio` ← المخرج `video`، والمنفّذ `method:TRANS-86` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `cinematic-cut-planner` · `creative-quality-gate` · `dua-wednesday` · `fetch-reference` · `kosif-timeline` · `kosif-timeline-demo`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `cinematic-cut-planner` · `creative-quality-gate` · `dua-wednesday` · `fast-edit` · `fetch-reference` · `kosif-timeline`.
 - مراحل النوع: قياس الصوت والأصول ← ستوريبورد ← بناء المشهد ← معاينة رخيصة ← رندر ← تحقق ← تسليم.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -34534,7 +34534,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `audio` ← المخرج `video`، والمنفّذ `method:TRANS-87` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `cinematic-cut-planner` · `creative-quality-gate` · `dua-wednesday` · `fetch-reference` · `kosif-timeline` · `kosif-timeline-demo`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `cinematic-cut-planner` · `creative-quality-gate` · `dua-wednesday` · `fast-edit` · `fetch-reference` · `kosif-timeline`.
 - مراحل النوع: قياس الصوت والأصول ← ستوريبورد ← بناء المشهد ← معاينة رخيصة ← رندر ← تحقق ← تسليم.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -34612,7 +34612,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `audio` ← المخرج `video`، والمنفّذ `method:TRANS-88` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `cinematic-cut-planner` · `creative-quality-gate` · `dua-wednesday` · `fetch-reference` · `kosif-timeline` · `kosif-timeline-demo`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `cinematic-cut-planner` · `creative-quality-gate` · `dua-wednesday` · `fast-edit` · `fetch-reference` · `kosif-timeline`.
 - مراحل النوع: قياس الصوت والأصول ← ستوريبورد ← بناء المشهد ← معاينة رخيصة ← رندر ← تحقق ← تسليم.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -34689,7 +34689,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `audio` ← المخرج `video`، والمنفّذ `method:TRANS-89` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `cinematic-cut-planner` · `creative-quality-gate` · `dua-wednesday` · `fetch-reference` · `kosif-timeline` · `kosif-timeline-demo`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `cinematic-cut-planner` · `creative-quality-gate` · `dua-wednesday` · `fast-edit` · `fetch-reference` · `kosif-timeline`.
 - مراحل النوع: قياس الصوت والأصول ← ستوريبورد ← بناء المشهد ← معاينة رخيصة ← رندر ← تحقق ← تسليم.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -34766,7 +34766,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `audio` ← المخرج `video`، والمنفّذ `method:TRANS-90` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `cinematic-cut-planner` · `creative-quality-gate` · `dua-wednesday` · `fetch-reference` · `kosif-timeline` · `kosif-timeline-demo`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `cinematic-cut-planner` · `creative-quality-gate` · `dua-wednesday` · `fast-edit` · `fetch-reference` · `kosif-timeline`.
 - مراحل النوع: قياس الصوت والأصول ← ستوريبورد ← بناء المشهد ← معاينة رخيصة ← رندر ← تحقق ← تسليم.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -34843,7 +34843,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `audio` ← المخرج `video`، والمنفّذ `method:TRANS-91` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `cinematic-cut-planner` · `creative-quality-gate` · `dua-wednesday` · `fetch-reference` · `kosif-timeline` · `kosif-timeline-demo`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `cinematic-cut-planner` · `creative-quality-gate` · `dua-wednesday` · `fast-edit` · `fetch-reference` · `kosif-timeline`.
 - مراحل النوع: قياس الصوت والأصول ← ستوريبورد ← بناء المشهد ← معاينة رخيصة ← رندر ← تحقق ← تسليم.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -34920,7 +34920,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `audio` ← المخرج `video`، والمنفّذ `method:TRANS-92` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `cinematic-cut-planner` · `creative-quality-gate` · `dua-wednesday` · `fetch-reference` · `kosif-timeline` · `kosif-timeline-demo`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `cinematic-cut-planner` · `creative-quality-gate` · `dua-wednesday` · `fast-edit` · `fetch-reference` · `kosif-timeline`.
 - مراحل النوع: قياس الصوت والأصول ← ستوريبورد ← بناء المشهد ← معاينة رخيصة ← رندر ← تحقق ← تسليم.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -34997,7 +34997,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `audio` ← المخرج `video`، والمنفّذ `method:TRANS-93` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `cinematic-cut-planner` · `creative-quality-gate` · `dua-wednesday` · `fetch-reference` · `kosif-timeline` · `kosif-timeline-demo`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `cinematic-cut-planner` · `creative-quality-gate` · `dua-wednesday` · `fast-edit` · `fetch-reference` · `kosif-timeline`.
 - مراحل النوع: قياس الصوت والأصول ← ستوريبورد ← بناء المشهد ← معاينة رخيصة ← رندر ← تحقق ← تسليم.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -35072,7 +35072,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `audio` ← المخرج `video`، والمنفّذ `method:TRANS-94` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `cinematic-cut-planner` · `creative-quality-gate` · `dua-wednesday` · `fetch-reference` · `kosif-timeline` · `kosif-timeline-demo`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `cinematic-cut-planner` · `creative-quality-gate` · `dua-wednesday` · `fast-edit` · `fetch-reference` · `kosif-timeline`.
 - مراحل النوع: قياس الصوت والأصول ← ستوريبورد ← بناء المشهد ← معاينة رخيصة ← رندر ← تحقق ← تسليم.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -35149,7 +35149,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `audio` ← المخرج `video`، والمنفّذ `method:TRANS-95` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `cinematic-cut-planner` · `creative-quality-gate` · `dua-wednesday` · `fetch-reference` · `kosif-timeline` · `kosif-timeline-demo`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `cinematic-cut-planner` · `creative-quality-gate` · `dua-wednesday` · `fast-edit` · `fetch-reference` · `kosif-timeline`.
 - مراحل النوع: قياس الصوت والأصول ← ستوريبورد ← بناء المشهد ← معاينة رخيصة ← رندر ← تحقق ← تسليم.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -35225,7 +35225,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `audio` ← المخرج `video`، والمنفّذ `method:TRANS-96` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `cinematic-cut-planner` · `creative-quality-gate` · `dua-wednesday` · `fetch-reference` · `kosif-timeline` · `kosif-timeline-demo`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `cinematic-cut-planner` · `creative-quality-gate` · `dua-wednesday` · `fast-edit` · `fetch-reference` · `kosif-timeline`.
 - مراحل النوع: قياس الصوت والأصول ← ستوريبورد ← بناء المشهد ← معاينة رخيصة ← رندر ← تحقق ← تسليم.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -35302,7 +35302,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `audio` ← المخرج `video`، والمنفّذ `method:TRANS-97` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `cinematic-cut-planner` · `creative-quality-gate` · `dua-wednesday` · `fetch-reference` · `kosif-timeline` · `kosif-timeline-demo`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `cinematic-cut-planner` · `creative-quality-gate` · `dua-wednesday` · `fast-edit` · `fetch-reference` · `kosif-timeline`.
 - مراحل النوع: قياس الصوت والأصول ← ستوريبورد ← بناء المشهد ← معاينة رخيصة ← رندر ← تحقق ← تسليم.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -35378,7 +35378,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `audio` ← المخرج `video`، والمنفّذ `method:TRANS-98` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `cinematic-cut-planner` · `creative-quality-gate` · `dua-wednesday` · `fetch-reference` · `kosif-timeline` · `kosif-timeline-demo`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `cinematic-cut-planner` · `creative-quality-gate` · `dua-wednesday` · `fast-edit` · `fetch-reference` · `kosif-timeline`.
 - مراحل النوع: قياس الصوت والأصول ← ستوريبورد ← بناء المشهد ← معاينة رخيصة ← رندر ← تحقق ← تسليم.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -35454,7 +35454,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `audio` ← المخرج `video`، والمنفّذ `method:TRANS-99` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `cinematic-cut-planner` · `creative-quality-gate` · `dua-wednesday` · `fetch-reference` · `kosif-timeline` · `kosif-timeline-demo`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `cinematic-cut-planner` · `creative-quality-gate` · `dua-wednesday` · `fast-edit` · `fetch-reference` · `kosif-timeline`.
 - مراحل النوع: قياس الصوت والأصول ← ستوريبورد ← بناء المشهد ← معاينة رخيصة ← رندر ← تحقق ← تسليم.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -35605,7 +35605,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `audio` ← المخرج `video`، والمنفّذ `method:TRANS-U01` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `cinematic-cut-planner` · `creative-quality-gate` · `dua-wednesday` · `fetch-reference` · `kosif-timeline` · `kosif-timeline-demo`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `cinematic-cut-planner` · `creative-quality-gate` · `dua-wednesday` · `fast-edit` · `fetch-reference` · `kosif-timeline`.
 - مراحل النوع: قياس الصوت والأصول ← ستوريبورد ← بناء المشهد ← معاينة رخيصة ← رندر ← تحقق ← تسليم.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -35682,7 +35682,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `audio` ← المخرج `video`، والمنفّذ `method:TRANS-X01` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `cinematic-cut-planner` · `creative-quality-gate` · `dua-wednesday` · `fetch-reference` · `kosif-timeline` · `kosif-timeline-demo`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `cinematic-cut-planner` · `creative-quality-gate` · `dua-wednesday` · `fast-edit` · `fetch-reference` · `kosif-timeline`.
 - مراحل النوع: قياس الصوت والأصول ← ستوريبورد ← بناء المشهد ← معاينة رخيصة ← رندر ← تحقق ← تسليم.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -35758,7 +35758,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `audio` ← المخرج `video`، والمنفّذ `method:TRANS-X02` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `cinematic-cut-planner` · `creative-quality-gate` · `dua-wednesday` · `fetch-reference` · `kosif-timeline` · `kosif-timeline-demo`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `cinematic-cut-planner` · `creative-quality-gate` · `dua-wednesday` · `fast-edit` · `fetch-reference` · `kosif-timeline`.
 - مراحل النوع: قياس الصوت والأصول ← ستوريبورد ← بناء المشهد ← معاينة رخيصة ← رندر ← تحقق ← تسليم.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -35833,7 +35833,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `audio` ← المخرج `video`، والمنفّذ `method:TRANS-X03` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `cinematic-cut-planner` · `creative-quality-gate` · `dua-wednesday` · `fetch-reference` · `kosif-timeline` · `kosif-timeline-demo`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `cinematic-cut-planner` · `creative-quality-gate` · `dua-wednesday` · `fast-edit` · `fetch-reference` · `kosif-timeline`.
 - مراحل النوع: قياس الصوت والأصول ← ستوريبورد ← بناء المشهد ← معاينة رخيصة ← رندر ← تحقق ← تسليم.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -35908,7 +35908,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `audio` ← المخرج `video`، والمنفّذ `method:TRANS-X04` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `cinematic-cut-planner` · `creative-quality-gate` · `dua-wednesday` · `fetch-reference` · `kosif-timeline` · `kosif-timeline-demo`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `cinematic-cut-planner` · `creative-quality-gate` · `dua-wednesday` · `fast-edit` · `fetch-reference` · `kosif-timeline`.
 - مراحل النوع: قياس الصوت والأصول ← ستوريبورد ← بناء المشهد ← معاينة رخيصة ← رندر ← تحقق ← تسليم.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -35983,7 +35983,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `audio` ← المخرج `video`، والمنفّذ `method:TRANS-X05` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `cinematic-cut-planner` · `creative-quality-gate` · `dua-wednesday` · `fetch-reference` · `kosif-timeline` · `kosif-timeline-demo`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `cinematic-cut-planner` · `creative-quality-gate` · `dua-wednesday` · `fast-edit` · `fetch-reference` · `kosif-timeline`.
 - مراحل النوع: قياس الصوت والأصول ← ستوريبورد ← بناء المشهد ← معاينة رخيصة ← رندر ← تحقق ← تسليم.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -36058,7 +36058,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `audio` ← المخرج `video`، والمنفّذ `method:TRANS-X06` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `cinematic-cut-planner` · `creative-quality-gate` · `dua-wednesday` · `fetch-reference` · `kosif-timeline` · `kosif-timeline-demo`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `cinematic-cut-planner` · `creative-quality-gate` · `dua-wednesday` · `fast-edit` · `fetch-reference` · `kosif-timeline`.
 - مراحل النوع: قياس الصوت والأصول ← ستوريبورد ← بناء المشهد ← معاينة رخيصة ← رندر ← تحقق ← تسليم.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -36133,7 +36133,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `audio` ← المخرج `video`، والمنفّذ `method:TRANS-X07` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `cinematic-cut-planner` · `creative-quality-gate` · `dua-wednesday` · `fetch-reference` · `kosif-timeline` · `kosif-timeline-demo`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `cinematic-cut-planner` · `creative-quality-gate` · `dua-wednesday` · `fast-edit` · `fetch-reference` · `kosif-timeline`.
 - مراحل النوع: قياس الصوت والأصول ← ستوريبورد ← بناء المشهد ← معاينة رخيصة ← رندر ← تحقق ← تسليم.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -36208,7 +36208,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `audio` ← المخرج `video`، والمنفّذ `method:TRANS-X08` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `cinematic-cut-planner` · `creative-quality-gate` · `dua-wednesday` · `fetch-reference` · `kosif-timeline` · `kosif-timeline-demo`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `cinematic-cut-planner` · `creative-quality-gate` · `dua-wednesday` · `fast-edit` · `fetch-reference` · `kosif-timeline`.
 - مراحل النوع: قياس الصوت والأصول ← ستوريبورد ← بناء المشهد ← معاينة رخيصة ← رندر ← تحقق ← تسليم.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -36283,7 +36283,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `audio` ← المخرج `video`، والمنفّذ `method:TRANS-X09` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `cinematic-cut-planner` · `creative-quality-gate` · `dua-wednesday` · `fetch-reference` · `kosif-timeline` · `kosif-timeline-demo`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `cinematic-cut-planner` · `creative-quality-gate` · `dua-wednesday` · `fast-edit` · `fetch-reference` · `kosif-timeline`.
 - مراحل النوع: قياس الصوت والأصول ← ستوريبورد ← بناء المشهد ← معاينة رخيصة ← رندر ← تحقق ← تسليم.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -36358,7 +36358,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `audio` ← المخرج `video`، والمنفّذ `method:TRANS-X10` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `cinematic-cut-planner` · `creative-quality-gate` · `dua-wednesday` · `fetch-reference` · `kosif-timeline` · `kosif-timeline-demo`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `cinematic-cut-planner` · `creative-quality-gate` · `dua-wednesday` · `fast-edit` · `fetch-reference` · `kosif-timeline`.
 - مراحل النوع: قياس الصوت والأصول ← ستوريبورد ← بناء المشهد ← معاينة رخيصة ← رندر ← تحقق ← تسليم.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -36433,7 +36433,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `audio` ← المخرج `video`، والمنفّذ `method:TRANS-X11` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `cinematic-cut-planner` · `creative-quality-gate` · `dua-wednesday` · `fetch-reference` · `kosif-timeline` · `kosif-timeline-demo`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `cinematic-cut-planner` · `creative-quality-gate` · `dua-wednesday` · `fast-edit` · `fetch-reference` · `kosif-timeline`.
 - مراحل النوع: قياس الصوت والأصول ← ستوريبورد ← بناء المشهد ← معاينة رخيصة ← رندر ← تحقق ← تسليم.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -36507,7 +36507,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `audio` ← المخرج `video`، والمنفّذ `method:TRANS-X12` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `cinematic-cut-planner` · `creative-quality-gate` · `dua-wednesday` · `fetch-reference` · `kosif-timeline` · `kosif-timeline-demo`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `cinematic-cut-planner` · `creative-quality-gate` · `dua-wednesday` · `fast-edit` · `fetch-reference` · `kosif-timeline`.
 - مراحل النوع: قياس الصوت والأصول ← ستوريبورد ← بناء المشهد ← معاينة رخيصة ← رندر ← تحقق ← تسليم.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -36587,7 +36587,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `audio` ← المخرج `video`، والمنفّذ `method:TRANS-X13` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `cinematic-cut-planner` · `creative-quality-gate` · `dua-wednesday` · `fetch-reference` · `kosif-timeline` · `kosif-timeline-demo`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `cinematic-cut-planner` · `creative-quality-gate` · `dua-wednesday` · `fast-edit` · `fetch-reference` · `kosif-timeline`.
 - مراحل النوع: قياس الصوت والأصول ← ستوريبورد ← بناء المشهد ← معاينة رخيصة ← رندر ← تحقق ← تسليم.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
