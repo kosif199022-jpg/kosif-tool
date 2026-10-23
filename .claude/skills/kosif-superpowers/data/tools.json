@@ -12802,6 +12802,198 @@
     "software-investigation"
    ],
    "power_id": "TOOL-67"
+  },
+  {
+   "id": "prompt-lab",
+   "path": "scripts/prompt_lab.py",
+   "root": "skill",
+   "kind": "cli",
+   "area": "think",
+   "title_en": "Prompt Lab",
+   "title_ar": "مختبر البرومبت",
+   "summary_en": "Makes the prompt-craft method runnable for eight kinds of prompt (system, agent brief, code, research, writing, LLM judge, image, video). build renders a kind's slots in order and turns every unfilled required slot into a question; lint scores a prompt out of 20 (required slots present, anti-patterns such as vague or shouted words, hype tokens and negative-heavy rules, in English and Arabic) with hard gates for a secret, a chain-of-thought request or undelimited pasted data; refine orders the fixes and prints the missing-slot skeleton; eval runs deterministic assertions on saved outputs and keeps a variant only when it beats the baseline with no regression; pairwise prints order-swapped judge prompts and counts only verdicts that agree in both orders, the way the owner's Jev service judges.",
+   "summary_ar": "يجعل منهج كتابة البرومبت قابلًا للتشغيل لثمانية أنواع (نظام، تكليف وكيل، كود، بحث، كتابة، حَكَم، صورة، فيديو). build يرتب خانات النوع ويحوّل كل خانة مطلوبة ناقصة إلى سؤال؛ lint يعطي درجة من 20 (الخانات المطلوبة، والأنماط الضارة كالكلمات المبهمة والصياح وكلمات التهويل وكثرة النفي، بالعربية والإنجليزية) مع بوابات رفض للأسرار وطلب سلسلة التفكير والبيانات الملصقة بلا فواصل؛ refine يرتب الإصلاحات ويطبع هيكل الخانات الناقصة؛ eval يشغّل تأكيدات حتمية على نواتج محفوظة ويحتفظ بالنسخة فقط إن فازت على الأساس بلا تراجع؛ pairwise يطبع برومبتين للحكم بترتيب معكوس ولا يحتسب إلا الحكم المتفق عليه، كما يحكم Jev.",
+   "use_when": [
+    "اكتب لي برومبت فيديو تفصيلي ودقيق جدًا",
+    "افحص البرومبت ده وقولي ناقصه إيه",
+    "write a precise system prompt for my app",
+    "is my new prompt actually better than the old one?"
+   ],
+   "keywords": [
+    "prompt",
+    "prompt engineering",
+    "system prompt",
+    "agent brief",
+    "image prompt",
+    "video prompt",
+    "prompt lint",
+    "rubric",
+    "prompt eval",
+    "a/b test",
+    "llm judge",
+    "برومبت",
+    "هندسة البرومبت",
+    "برومبت نظام",
+    "برومبت صور",
+    "برومبت فيديو",
+    "فحص البرومبت",
+    "تحسين البرومبت"
+   ],
+   "commands": [
+    {
+     "name": "kinds",
+     "example": "python3 scripts/prompt_lab.py kinds",
+     "does": "Lists the eight kinds and their slots (* = required)"
+    },
+    {
+     "name": "build",
+     "example": "python3 scripts/prompt_lab.py build --kind video --set shot=\"Wide shot\" --set subject=\"a fisherman\" --set action=\"pulling a net\" --set environment=\"on a boat at sunrise\" --set camera=\"slow dolly in\" --set style=\"warm light from the right\" --set duration=\"6 seconds\" --set aspect=16:9 --set audio=\"waves, no music\"",
+     "does": "Renders the kind's slots in order; unfilled required slots become [[questions]]; --lang ar adds the keep-dialect rule"
+    },
+    {
+     "name": "lint",
+     "example": "echo \"Make a nice image of a cat, 8k\" | python3 scripts/prompt_lab.py lint - --kind image",
+     "does": "Score out of 20, band (ship / fix-lowest / rewrite / fail-gate), missing slots, anti-patterns and fixes; exit 1 on rewrite or a gate; --json"
+    },
+    {
+     "name": "refine",
+     "example": "echo \"Write a blog post about AI\" | python3 scripts/prompt_lab.py refine - --kind writing",
+     "does": "Ordered fix list plus the skeleton of the missing slots to merge into"
+    },
+    {
+     "name": "eval",
+     "example": "python3 scripts/prompt_lab.py eval --cases cases.json --outputs outputs.json --baseline A",
+     "does": "Assertion matrix over saved outputs; keep=true only with a gain and no regression"
+    },
+    {
+     "name": "pairwise",
+     "example": "python3 scripts/prompt_lab.py pairwise --plan --a A.txt --b B.txt --task \"Summarise the report for the board\"",
+     "does": "Prints the two order-swapped judge prompts; with --verdicts FILE counts only agreeing verdicts and flags position bias"
+    },
+    {
+     "name": "--self-test",
+     "example": "python3 scripts/prompt_lab.py --self-test",
+     "does": "Runs the built-in checks"
+    }
+   ],
+   "inputs": "A prompt file or stdin; for eval, cases.json and outputs.json saved from real runs; for pairwise, two output files or a verdicts file.",
+   "outputs": "Text or JSON on stdout; it writes no files.",
+   "requires": {
+    "python": [],
+    "binaries": [
+     "python3"
+    ],
+    "node": [],
+    "optional": [],
+    "network": false
+   },
+   "safety": "read-only",
+   "consent": "",
+   "limits": "The linter reads text only: it shows whether slots and anti-patterns appear, not whether the prompt will work; eval needs outputs from real runs, and it never calls a model or the Jev service itself.",
+   "evidence": "tested-here",
+   "evidence_note": "8/8 passed (python3 -m unittest evals.test_prompt_lab) and --self-test OK on 2026-10-23",
+   "tests": [
+    ".claude/skills/kosif-superpowers/evals/test_prompt_lab.py"
+   ],
+   "docs": [
+    ".claude/skills/kosif-superpowers/references/prompt-optimizer.md",
+    ".claude/skills/kosif-superpowers/references/guides/discover.md"
+   ],
+   "families": [
+    "prompt-craft",
+    "verification-evals"
+   ]
+  },
+  {
+   "id": "github-top-repos",
+   "path": "scripts/github_top_repos.py",
+   "root": "skill",
+   "kind": "cli",
+   "area": "sources",
+   "title_en": "GitHub Top-1000 Tracker",
+   "title_ar": "متابعة أشهر 1000 مستودع",
+   "summary_en": "Keeps the review of the 1,000 most-starred public GitHub repositories: a facts snapshot (rank, stars, language, licence id, description, merged from the gitstar-ranking index and deps.dev records for a supplement list it misses), an automatic topic and licence classification, and a hand review of exclusions and transfers. build writes data/github_top1000.json and the table references/github-top-1000.md with a decision per repository (transferred, mine, reference, skip) and the power or tool ids that carry its methods; find and show search it; refresh fetches a new snapshot to a separate file for review.",
+   "summary_ar": "يحفظ مراجعة أشهر 1000 مستودع عام على GitHub: لقطة حقائق (الترتيب والنجوم واللغة والترخيص والوصف، مدموجة من فهرس gitstar-ranking وسجلات deps.dev لقائمة مكملة لما يفوته)، وتصنيف آلي حسب الموضوع والترخيص، ومراجعة يدوية للاستبعادات والنقل. build يكتب data/github_top1000.json والجدول references/github-top-1000.md بقرار لكل مستودع (نُقل، قابل للتعدين، مرجع، لا يُنقل) ومعرّفات القدرات أو الأدوات التي تحمل طرقه؛ find وshow للبحث؛ refresh يجلب لقطة جديدة إلى ملف منفصل للمراجعة.",
+   "use_when": [
+    "وريني أشهر مستودعات جيت هاب اللي ليها علاقة بالموشن",
+    "هل راجعت مستودع langchain ونقلت منه إيه؟",
+    "which top GitHub repos about agents are still unmined?",
+    "show the licence and decision for stanfordnlp/dspy"
+   ],
+   "keywords": [
+    "github",
+    "top repositories",
+    "most starred",
+    "stars",
+    "licence",
+    "tracker",
+    "mining",
+    "open source",
+    "مستودعات",
+    "جيت هاب",
+    "أشهر المستودعات",
+    "تراخيص",
+    "نجوم"
+   ],
+   "commands": [
+    {
+     "name": "build",
+     "example": "python3 scripts/github_top_repos.py build",
+     "does": "Writes data/github_top1000.json and references/github-top-1000.md; --check reports drift only"
+    },
+    {
+     "name": "stats",
+     "example": "python3 scripts/github_top_repos.py stats",
+     "does": "Counts by decision, topic and licence class; --json"
+    },
+    {
+     "name": "find",
+     "example": "python3 scripts/github_top_repos.py find motion",
+     "does": "Repositories whose name, description, topic or decision match every word"
+    },
+    {
+     "name": "show",
+     "example": "python3 scripts/github_top_repos.py show stanfordnlp/dspy",
+     "does": "One repository's full record"
+    },
+    {
+     "name": "refresh",
+     "example": "python3 scripts/github_top_repos.py refresh --out /tmp/top1000-new.json",
+     "does": "Network: fetches a new snapshot to --out (refuses to overwrite the committed one)"
+    },
+    {
+     "name": "--self-test",
+     "example": "python3 scripts/github_top_repos.py --self-test",
+     "does": "Runs the built-in checks on a small fixture"
+    }
+   ],
+   "inputs": "data/github_top1000_snapshot.json and data/github_top1000_review.json.",
+   "outputs": "data/github_top1000.json and references/github-top-1000.md (build), or text on stdout.",
+   "requires": {
+    "python": [],
+    "binaries": [
+     "python3"
+    ],
+    "node": [],
+    "optional": [],
+    "network": false
+   },
+   "safety": "writes-files",
+   "consent": "refresh reads two public websites (gitstar-ranking.com, api.deps.dev); nothing is sent but repository names.",
+   "limits": "The top 1,000 is cut from a merged pool, not a census of GitHub: a repository neither source lists is missing; the topic rules are keyword based and corrected by hand where noticed; licence ids are what GitHub detects ('non-standard' means read the licence yourself).",
+   "evidence": "tested-here",
+   "evidence_note": "5/5 passed (python3 -m unittest evals.test_github_top_repos) and --self-test OK on 2026-10-23",
+   "tests": [
+    ".claude/skills/kosif-superpowers/evals/test_github_top_repos.py"
+   ],
+   "docs": [
+    ".claude/skills/kosif-superpowers/references/github-top-1000.md",
+    ".claude/skills/kosif-superpowers/references/guides/sources.md"
+   ],
+   "families": [
+    "web-research",
+    "self-discovery"
+   ]
   }
  ]
 }

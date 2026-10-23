@@ -25,6 +25,10 @@ jobs:
         run: python3 .claude/skills/kosif-superpowers/scripts/check_skill.py --evals
       - name: Skill layout map (USIP v5.4)
         run: python3 -m unittest discover -s .claude/skills/kosif-superpowers/evals -p 'test_skill_layout.py' -v
+      - name: Prompt lab and GitHub top-1000 tracker
+        run: |
+          python3 -m unittest discover -s .claude/skills/kosif-superpowers/evals -p 'test_prompt_lab.py' -v
+          python3 -m unittest discover -s .claude/skills/kosif-superpowers/evals -p 'test_github_top_repos.py' -v
       - name: Permission-aware capability routing and honest host discovery
         run: python3 -m unittest discover -s .claude/skills/kosif-superpowers/evals -p 'test_capability_runtime_router.py' -v
       - name: Creative audio-to-motion reasoning tests
