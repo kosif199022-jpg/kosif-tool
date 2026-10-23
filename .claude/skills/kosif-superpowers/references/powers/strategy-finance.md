@@ -23,14 +23,14 @@
 
 #### PROD-01 · ثلاثة خيارات حقيقية وعدم الفعل · Three real options plus do-nothing · 📄 موصوف / documented only
 - **ماذا / what:** لا توصية بلا بدائل: ثلاثة خيارات مختلفة حقًا، أحدها «لا نغير شيئًا» يُقيَّم بجدية. — No recommendation without alternatives: three genuinely different options, one of them 'change nothing', evaluated seriously.
-- **متى أستخدمها / when:** strategy, build-vs-buy, pricing, hiring, any important decision
+- **متى أستخدمها / when:** عند الاستراتيجية، أو قرار البناء مقابل الشراء، أو التسعير، أو التوظيف، أو أي قرار مهم / strategy, build-vs-buy, pricing, hiring, any important decision
 - **كيف / how:** Frame first: the decision, who it affects, the outcome wanted, constraints, horizon. Then options A/B/C + do-nothing in a table: cost, benefit, reversibility, time to signal, main risk. Options that are the same idea in three sizes do not count.
 - **الدليل / proof:** — (لا دليل تشغيل بعد / no run proof yet)
 - **المصدر / source:** owner: KOSIF SEE v1.7.5 skills/kosif-product-strategy (paraphrased in own words)
 
 #### PROD-02 · الافتراضات التي تقلب القرار · Decision-flipping assumptions (computed thresholds) · 📄 موصوف / documented only
 - **ماذا / what:** حدّد الافتراضات القليلة التي لو أخطأت لتغيّر القرار، واحسب عتبتها بالكود لا بالتخمين. — Find the few assumptions that would change the decision if wrong, and compute their thresholds in code, not by guesswork.
-- **متى أستخدمها / when:** any plan resting on estimates (demand, price, cost, conversion)
+- **متى أستخدمها / when:** عند أي خطة تقوم على تقديرات (الطلب، السعر، التكلفة، التحويل) / any plan resting on estimates (demand, price, cost, conversion)
 - **كيف / how:** List the assumptions; for each, solve for the value at which the preferred option stops winning (sympy.solve of profit_A = profit_B, or break-even = 0). Compare the threshold with the evidence. Related run: break-even Q = 6000 and p* = 60 were solved exactly with sympy (proofs/general-data), but no A-vs-B flipping threshold has been computed here yet, so this method is 📄.
 - **تثبيت / install:** `pip install sympy`
 - **يحتاج / needs:** [`pip:sympy`](../requirements.md#req-pip-sympy)
@@ -40,7 +40,7 @@
 
 #### PROD-03 · المخاطر كتوزيع لا كرقم · Risk as a distribution (Monte Carlo) · ✅ مُثبت هنا / proven here
 - **ماذا / what:** اعرض احتمال الخسارة والنطاق P5–P95 بدل ربح متوقع واحد. — Show the probability of loss and the P5-P95 range instead of one expected profit.
-- **متى أستخدمها / when:** business cases, budgets, launch plans
+- **متى أستخدمها / when:** عند دراسات الجدوى والميزانيات وخطط الإطلاق / business cases, budgets, launch plans
 - **كيف / how:** See ANLY Monte Carlo: seeded 100k draws over the uncertain inputs. Proof: P(loss) 0.356, P5 -33,252, P50 10,570, P95 61,457. State the distributions you assumed next to the result.
 - **تثبيت / install:** `pip install numpy`
 - **يحتاج / needs:** [`pip:numpy`](../requirements.md#req-pip-numpy) · [`npm:p5`](../requirements.md#req-npm-p5)
@@ -50,14 +50,14 @@
 
 #### PROD-04 · تشريح ما قبل الفشل · Premortem on the favourite option · 📄 موصوف / documented only
 - **ماذا / what:** تخيّل أن الخيار المفضل فشل بعد سنة واكتب لماذا، ثم عالج أقوى الأسباب قبل التوصية. — Imagine the favourite option failed a year from now, write why, and address the strongest causes before recommending it.
-- **متى أستخدمها / when:** before any recommendation with real cost or low reversibility
+- **متى أستخدمها / when:** قبل أي توصية ذات كلفة حقيقية أو قابلية عكس منخفضة / before any recommendation with real cost or low reversibility
 - **كيف / how:** Write 5-10 failure stories (market, execution, team, tech, legal, timing); score likelihood x impact; turn the top 3 into mitigations or early warning signs; check second-order effects and dependencies.
 - **الدليل / proof:** — (لا دليل تشغيل بعد / no run proof yet)
 - **المصدر / source:** owner: KOSIF SEE v1.7.5 skills/kosif-product-strategy (paraphrased in own words)
 
 #### PROD-05 · مجلس آراء مستقلة · Independent council (anti-anchoring) · 📄 موصوف / documented only
 - **ماذا / what:** لأسئلة الاتجاه الغامضة: اكتب رأيك أولًا ثم اطلب ثلاثة آراء مستقلة بلا سياق المحادثة، واجمعها مع إبراز الخلاف. — For ambiguous direction questions: write my own view first, then ask three independent voices without the conversation history, and merge them with dissent shown.
-- **متى أستخدمها / when:** multi-path choices with little guidance (not facts, not code review); sub-agents available
+- **متى أستخدمها / when:** عند الخيارات المتعددة المسارات قليلة الإرشاد (لا الحقائق ولا مراجعة الشيفرة)؛ مع توفر وكلاء فرعيين / multi-path choices with little guidance (not facts, not code review); sub-agents available
 - **كيف / how:** Reduce to one question; my position + 3 reasons + main risk BEFORE reading others; voices: architect (long-term correctness), skeptic (challenge the premise), pragmatist (speed, user impact), critic (failure modes); synthesise and keep the dissent visible.
 - **يحتاج / needs:** [`claude:tools`](../requirements.md#req-claude-tools)
 - **الدليل / proof:** — (لا دليل تشغيل بعد / no run proof yet)
@@ -65,7 +65,7 @@
 
 #### PROD-06 · دفتر القرارات · Decision ledger · 📄 موصوف / documented only
 - **ماذا / what:** سجّل كل قرار مهم في سطر: ما تغير، والدليل، والعلامة (قبول/مراقبة/رفض)، وشرط المراجعة. — Record each important decision as one line: what changed, the evidence, a mark (accept / watch / reject) and a review condition.
-- **متى أستخدمها / when:** long projects, repeated trials, anything you may revisit
+- **متى أستخدمها / when:** عند المشاريع الطويلة، والتجارب المتكررة، وأي شيء قد تعود إليه / long projects, repeated trials, anything you may revisit
 - **كيف / how:** Append JSONL {date, decision, options, evidence, mark, review_if}. Repeating confidence is not approval; default to a dry run for risky moves. Lead every summary with the decision.
 - **الدليل / proof:** — (لا دليل تشغيل بعد / no run proof yet)
 - **المصدر / source:** github.com/affaan-m/ECC skills/recursive-decision-ledger (MIT (c) 2026 Affaan Mustafa), paraphrased
@@ -74,28 +74,28 @@
 
 #### PROD-07 · تنفيذ مرحلي بمعايير إيقاف · Staged rollout with kill criteria · 📄 موصوف / documented only
 - **ماذا / what:** حوّل التوصية إلى مراحل، لكل مرحلة مقياس ونقطة مراجعة وشرط إيقاف مكتوب مسبقًا. — Turn the recommendation into stages, each with a metric, a checkpoint and a stop condition written in advance.
-- **متى أستخدمها / when:** launches, experiments, migrations, hiring plans
+- **متى أستخدمها / when:** عند الإطلاقات والتجارب وعمليات الترحيل وخطط التوظيف / launches, experiments, migrations, hiring plans
 - **كيف / how:** Stage | goal | metric + threshold | date | kill/review rule | owner. Prefer reversible first steps. Kill rules are numeric ('CAC > 2x LTV for 6 weeks -> stop').
 - **الدليل / proof:** — (لا دليل تشغيل بعد / no run proof yet)
 - **المصدر / source:** owner: KOSIF SEE v1.7.5 skills/kosif-product-strategy (paraphrased in own words)
 
 #### PROD-08 · متطلبات منتج قابلة للقياس · Measurable PRD and acceptance criteria · 📄 موصوف / documented only
 - **ماذا / what:** كل متطلب مرتبط بنتيجة قابلة للقياس وشروط إطلاق وتراجع، وكل معيار قبول له سيناريو وفعل ونتيجة ونفي ووسيلة تحقق. — Every requirement is tied to a measurable outcome with launch and rollback conditions; every acceptance criterion has a scenario, action, expected result, must-not and verification method.
-- **متى أستخدمها / when:** writing a PRD, a feature brief, a spec for an agent
+- **متى أستخدمها / when:** عند كتابة PRD أو موجز ميزة أو مواصفة لوكيل / writing a PRD, a feature brief, a spec for an agent
 - **كيف / how:** Quick capture: goal, in/out of scope, assumptions, 3-7 acceptance criteria, blockers. No vague words ('fast' -> 'p95 < 300 ms'). Block only for security, data loss, irreversible migration, API breakage, real cost or destructive actions; otherwise record and proceed. Mark revised criteria [revised].
 - **الدليل / proof:** — (لا دليل تشغيل بعد / no run proof yet)
 - **المصدر / source:** owner: KOSIF SEE v1.7.5 skills/kosif-product-strategy (paraphrased in own words); github.com/affaan-m/ECC skills/intent-driven-development (MIT (c) 2026 Affaan Mustafa), paraphrased
 
 #### PROD-09 · عدسة المنتج وأولويات ICE · Product lens + ICE prioritisation · 📄 موصوف / documented only
 - **ماذا / what:** سبعة أسئلة للمنتج (من؟ الألم بالأرقام؟ لماذا الآن؟ النسخة المثالية؟ الحد الأدنى؟ ما لن نفعله؟ المقياس؟) ثم ترتيب ICE. — Seven product questions (who, pain quantified, why now, 10-star version, MVP, anti-goal, metric), then ICE ranking.
-- **متى أستخدمها / when:** idea triage, roadmap ordering, feature requests
+- **متى أستخدمها / when:** عند فرز الأفكار وترتيب خارطة الطريق وطلبات الميزات / idea triage, roadmap ordering, feature requests
 - **كيف / how:** ICE = impact x confidence / effort, each 1-5; compute and sort in code; show the inputs so people can argue with them, not with the total.
 - **الدليل / proof:** — (لا دليل تشغيل بعد / no run proof yet)
 - **المصدر / source:** github.com/affaan-m/ECC skills/product-lens (MIT (c) 2026 Affaan Mustafa), paraphrased
 
 #### PROD-10 · مزيج إنتاج أمثل · Optimal product mix (LP) · ✅ مُثبت هنا / proven here
 - **ماذا / what:** احسب أفضل توزيع للموارد المحدودة بين المنتجات بالبرمجة الخطية بدل التقدير. — Compute the best allocation of limited resources across products with linear programming instead of guessing.
-- **متى أستخدمها / when:** capacity, budget or time limits shared by several products
+- **متى أستخدمها / when:** عند السعة أو الميزانية أو حدود الوقت المشتركة بين عدة منتجات / capacity, budget or time limits shared by several products
 - **كيف / how:** scipy.optimize.linprog(method='highs') (see ANLY LP); for integer quantities use OR-Tools MIP. Proof: max 40x+30y with x+y<=40, 2x+y<=60 gave x=y=20, profit 1,400, cross-checked with sympy.
 - **تثبيت / install:** `pip install scipy`
 - **يحتاج / needs:** [`pip:scipy`](../requirements.md#req-pip-scipy) · [`pip:sympy`](../requirements.md#req-pip-sympy) · [`pip:ortools`](../requirements.md#req-pip-ortools)
@@ -107,7 +107,7 @@
 
 #### PROD-11 · السعر الأمثل ونقطة التعادل · Optimal price and break-even · ✅ مُثبت هنا / proven here
 - **ماذا / what:** اشتق السعر الذي يعظّم الربح من دالة الطلب، واحسب نقطة التعادل حلًا دقيقًا. — Derive the profit-maximising price from a demand curve and solve the break-even point exactly.
-- **متى أستخدمها / when:** pricing questions, unit economics, 'how many must we sell?'
+- **متى أستخدمها / when:** عند أسئلة التسعير واقتصاديات الوحدة و'كم يجب أن نبيع؟' / pricing questions, unit economics, 'how many must we sell?'
 - **كيف / how:** profit=(p-c)*(a-b*p); sp.solve(sp.diff(profit,p),p) and check the second derivative is negative; break-even Q = F/(p-v) via sp.solve. Proof: p*=60, profit 16,000; Q=6,000 for F=120,000, p=50, v=30. The demand curve is an assumption; say so.
 - **تثبيت / install:** `pip install sympy`
 - **يحتاج / needs:** [`pip:sympy`](../requirements.md#req-pip-sympy)
@@ -117,21 +117,21 @@
 
 #### PROD-12 · تتبع القيد المحاسبي · Accounting trace and balanced entries · 📄 موصوف / documented only
 - **ماذا / what:** من المعاملة إلى قاعدة الاعتراف إلى قيد متوازن إلى أثره في الدفاتر والقوائم؛ المدين يساوي الدائن دائمًا. — From transaction to recognition rule to a balanced journal entry to its ledger and report impact; debits always equal credits.
-- **متى أستخدمها / when:** journal entries, IFRS questions, reconciliations
+- **متى أستخدمها / when:** عند قيود اليومية وأسئلة IFRS والتسويات / journal entries, IFRS questions, reconciliations
 - **كيف / how:** For each entry: date, accounts, Dr, Cr, rule cited, and the impact on P&L / balance sheet / cash. Assert sum(Dr) == sum(Cr) in code. Standards change, so fetch the current IFRS text (WEB-02) before citing it.
 - **الدليل / proof:** — (لا دليل تشغيل بعد / no run proof yet)
 - **المصدر / source:** owner: KOSIF SEE v1.7.5 skills/kosif-finance-data (paraphrased in own words)
 
 #### PROD-13 · المطابقة دون سدّ الفجوات · Reconcile without plugs · 📄 موصوف / documented only
 - **ماذا / what:** طابق المجاميع من مصدرين مستقلين وفسّر كل فرق؛ لا تضف رقمًا لإخفاء فجوة. — Reconcile totals from two independent sources and explain every difference; never add a number to hide a gap.
-- **متى أستخدمها / when:** bank vs ledger, system A vs B, budget vs actual
+- **متى أستخدمها / when:** عند مقارنة البنك بالدفتر، أو النظام A بالنظام B، أو الميزانية بالفعلي / bank vs ledger, system A vs B, budget vs actual
 - **كيف / how:** Match on keys (date, amount, reference); list unmatched items on both sides; classify timing vs error vs missing; the residual must be zero or explicitly reported. Same discipline as ANLY control totals.
 - **الدليل / proof:** — (لا دليل تشغيل بعد / no run proof yet)
 - **المصدر / source:** owner: KOSIF SEE v1.7.5 skills/kosif-finance-data (paraphrased in own words)
 
 #### PROD-14 · نموذج مالي بمحركات أعمال · Driver-based financial model · 📄 موصوف / documented only
 - **ماذا / what:** ابنِ النموذج على محركات طبيعية (عملاء × سعر × احتفاظ) مع فصل الافتراضات عن الحسابات وفحوص توازن تساوي صفرًا. — Build the model on natural drivers (customers x price x retention), with assumptions separated from mechanics and balance checks that equal zero.
-- **متى أستخدمها / when:** forecasts, business plans, DCFs
+- **متى أستخدمها / when:** عند التوقعات وخطط الأعمال وDCF / forecasts, business plans, DCFs
 - **كيف / how:** Inputs sheet (with sources and units) -> drivers -> P&L -> cash -> balance sheet; checks: balance = 0, cash bridge = 0; scenario overrides on the inputs only; recompute in code or with a LibreOffice recalc before quoting; no exact optimum taken from prose.
 - **يحتاج / needs:** [`libreoffice`](../requirements.md#req-libreoffice)
 - **الدليل / proof:** — (لا دليل تشغيل بعد / no run proof yet)
@@ -139,7 +139,7 @@
 
 #### PROD-15 · بيانات الأسواق (غير رسمية) · Market data libraries (unofficial sources) · 📦 بأمر تثبيت / one install
 - **ماذا / what:** مكتبات لأسعار الأسهم والمؤشرات الفنية وتقارير المحافظ؛ بعضها يعتمد على واجهات غير رسمية. — Libraries for stock prices, technical indicators and portfolio tear-sheets; some rely on unofficial endpoints.
-- **متى أستخدمها / when:** quick market exploration (never as an official source)
+- **متى أستخدمها / when:** عند استكشاف سريع للسوق (لا كمصدر رسمي أبدًا) / quick market exploration (never as an official source)
 - **كيف / how:** yfinance (scrapes Yahoo, subject to its terms), pandas-ta (beta, no license field on PyPI), quantstats (Apache-2.0). Metadata only; none of them ran here. Prefer official data from exchanges or regulators for anything published.
 - **تثبيت / install:** `pip install yfinance quantstats`
 - **يحتاج / needs:** [`pip:pandas`](../requirements.md#req-pip-pandas)
@@ -151,7 +151,7 @@
 
 #### PROD-16 · OR-Tools: حل مسائل الجدولة والتوجيه والتعيين بأمثلية عبر · OR-Tools: Solve scheduling, routing and assignment problems optimally with CP-SAT · ✅ مُثبت هنا / proven here
 - **ماذا / what:** حل مسائل الجدولة والتوجيه والتعيين بأمثلية عبر CP-SAT. — Solve scheduling, routing and assignment problems optimally with CP-SAT. (OR-Tools, ★14.2k, Apache-2.0).
-- **متى أستخدمها / when:** optimisation tasks the user has the right to run
+- **متى أستخدمها / when:** عند مهام التحسين التي يحق للمستخدم تشغيلها / optimisation tasks the user has the right to run
 - **كيف / how:** `pip install ortools`. Verified here 2026-10-18: 4 jobs on one machine, optimal makespan 10 (ortools 9.15.6755). Licence note: permissive.
 - **تثبيت / install:** `pip install ortools`
 - **يحتاج / needs:** [`pip:ortools`](../requirements.md#req-pip-ortools)
@@ -161,7 +161,7 @@
 
 #### PROD-17 · PuLP: نمذجة مسائل البرمجة الخطية والصحيحة كتوزيع الميزانيات · PuLP: Model linear and integer programs such as budget splits and blends · ✅ مُثبت هنا / proven here
 - **ماذا / what:** نمذجة مسائل البرمجة الخطية والصحيحة كتوزيع الميزانيات. — Model linear and integer programs such as budget splits and blends. (PuLP, ★2.5k, BSD-style).
-- **متى أستخدمها / when:** optimisation tasks the user has the right to run
+- **متى أستخدمها / when:** عند مهام التحسين التي يحق للمستخدم تشغيلها / optimisation tasks the user has the right to run
 - **كيف / how:** `pip install pulp ortools  (PuLP ≥4 ships no CBC; CP-SAT needs integer, bounded variables)`. Verified here 2026-10-18: max 3a+2b s.t. a+b≤100, a≤60 → 260 (a=60, b=40) via CPSAT (pulp 4.0.1). Licence note: permissive.
 - **تثبيت / install:** `pip install pulp ortools  (PuLP ≥4 ships no CBC; CP-SAT needs integer, bounded variables)`
 - **يحتاج / needs:** [`pip:ortools`](../requirements.md#req-pip-ortools) · [`pip:pulp`](../requirements.md#req-pip-pulp)
@@ -171,7 +171,7 @@
 
 #### PROD-18 · MuJoCo: محاكاة ديناميكيات الأجسام الصلبة والروبوتات وتسجيل المسارات · MuJoCo: Simulate rigid-body and robot dynamics and log trajectories · 📦 بأمر تثبيت / one install
 - **ماذا / what:** محاكاة ديناميكيات الأجسام الصلبة والروبوتات وتسجيل المسارات. — Simulate rigid-body and robot dynamics and log trajectories. (MuJoCo, ★15.7k, Apache-2.0).
-- **متى أستخدمها / when:** simulation tasks the user has the right to run
+- **متى أستخدمها / when:** عند مهام المحاكاة التي يحق للمستخدم تشغيلها / simulation tasks the user has the right to run
 - **كيف / how:** `pip install mujoco`. Licence note: permissive.
 - **تثبيت / install:** `pip install mujoco`
 - **يحتاج / needs:** [`pip:mujoco`](../requirements.md#req-pip-mujoco)

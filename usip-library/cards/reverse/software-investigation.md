@@ -279,7 +279,7 @@
 
 **ما هي:** تحويل إزاحة ملف إلى: أمر `rea address-to-file-offset` من REA v6.7.0 (الثنائيات الأصلية)؛ يعيد سجل أدلة JSON بمعرّف وبصمة SHA-256 ويصرّح بحدوده وما بقي مجهولًا — Resolve an analysis address to its original file byte offset.
 
-**متى:** lawful inspection of native binaries targets you have the right to analyse; the user asks how an app/binary/site works without its source
+**متى:** عند الفحص المشروع لأهداف ملفات تنفيذية أصلية يحق لك تحليلها، أو حين يسأل المستخدم كيف يعمل تطبيق أو ملف ثنائي أو موقع دون مصدره / lawful inspection of native binaries targets you have the right to analyse; the user asks how an app/binary/site works without its source
 
 **كيف:** `rea address-to-file-offset <path> <address>` --json · options: --target-format, --architecture, --entry-point, --provider. Needs: a deep-analysis provider: Hopper (rea setup), Ghidra 12.1 (GHIDRA_INSTALL_DIR), IDA MCP, or Kuna. Evidence first: observations ≠ inferences ≠ unknowns; never claim equivalence from pseudocode; rights to inspect the target are required.
 
@@ -350,7 +350,7 @@
 
 **ما هي:** تحليل: أمر `rea analyze` من REA v6.7.0 (الثنائيات الأصلية)؛ يعيد سجل أدلة JSON بمعرّف وبصمة SHA-256 ويصرّح بحدوده وما بقي مجهولًا — Get an overview of an app.
 
-**متى:** lawful inspection of native binaries targets you have the right to analyse; the user asks how an app/binary/site works without its source
+**متى:** عند الفحص المشروع لأهداف ملفات تنفيذية أصلية يحق لك تحليلها، أو حين يسأل المستخدم كيف يعمل تطبيق أو ملف ثنائي أو موقع دون مصدره / lawful inspection of native binaries targets you have the right to analyse; the user asks how an app/binary/site works without its source
 
 **كيف:** `rea analyze <path>` --json · options: --snapshot, --target-format, --architecture, --entry-point, --provider, --integrityPolicy, --sourcePath. Needs: a deep-analysis provider: Hopper (rea setup), Ghidra 12.1 (GHIDRA_INSTALL_DIR), IDA MCP, or Kuna. Evidence first: observations ≠ inferences ≠ unknowns; never claim equivalence from pseudocode; rights to inspect the target are required.
 
@@ -422,7 +422,7 @@
 
 **ما هي:** تحليل تطبيق جافاسكربت: أمر `rea analyze-javascript-application` من REA v6.7.0 (جافاسكربت والويب)؛ يعيد سجل أدلة JSON بمعرّف وبصمة SHA-256 ويصرّح بحدوده وما بقي مجهولًا — Statically reconstruct a local JavaScript/Electron application.
 
-**متى:** lawful inspection of JavaScript & web targets you have the right to analyse; the user asks how an app/binary/site works without its source
+**متى:** عند الفحص المشروع لأهداف JavaScript والويب يحق لك تحليلها، أو حين يسأل المستخدم كيف يعمل تطبيق أو ملف ثنائي أو موقع دون مصدره / lawful inspection of JavaScript & web targets you have the right to analyse; the user asks how an app/binary/site works without its source
 
 **كيف:** `rea analyze-javascript-application <path>` --json · options: --maxSemanticNodes, --maxSemanticNodesPerFile, --maxSemanticUnknowns, --maxSemanticUnknownsPerFile, --sourcePath, --maxHeapMb, --analysisTimeoutMs, --artifactFormat. Needs: REA alone for static work; a loopback CDP browser (Chromium/Playwright) for observation; Wakaru only for recover-javascript-sources. Verified here on extracted Chrome MV3 extension (owner upload, 14 files): JavaScriptApplicationGraph: 14 nodes (4 endpoints, 4 artifacts, 2 modules, 2 renderers, 2 assets), 17 edges, semantic graph with 396 unknowns retained. Evidence first: observations ≠ inferences ≠ unknowns; never claim equivalence from pseudocode; rights to inspect the target are required.
 
@@ -498,7 +498,7 @@
 
 **ما هي:** تحليل حزمة ويب: أمر `rea analyze-web-bundle` من REA v6.7.0 (جافاسكربت والويب)؛ يعيد سجل أدلة JSON بمعرّف وبصمة SHA-256 ويصرّح بحدوده وما بقي مجهولًا — Capture and statically analyze a page bundle, defaulting to the selected target origin.
 
-**متى:** lawful inspection of JavaScript & web targets you have the right to analyse; the user asks how an app/binary/site works without its source
+**متى:** عند الفحص المشروع لأهداف JavaScript والويب يحق لك تحليلها، أو حين يسأل المستخدم كيف يعمل تطبيق أو ملف ثنائي أو موقع دون مصدره / lawful inspection of JavaScript & web targets you have the right to analyse; the user asks how an app/binary/site works without its source
 
 **كيف:** `rea analyze-web-bundle <endpoint> <targetId>` --json · options: --allowedOrigins, --observationMs, --fetchSourceMaps. Needs: REA alone for static work; a loopback CDP browser (Chromium/Playwright) for observation; Wakaru only for recover-javascript-sources. Verified here on same page: capture + static bundle analysis; completeness complete. Evidence first: observations ≠ inferences ≠ unknowns; never claim equivalence from pseudocode; rights to inspect the target are required.
 
@@ -574,7 +574,7 @@
 
 **ما هي:** توصيف دالة أصلية: أمر `rea annotate-native-function` من REA v6.7.0 (الثنائيات الأصلية)؛ يعيد سجل أدلة JSON بمعرّف وبصمة SHA-256 ويصرّح بحدوده وما بقي مجهولًا — Edit function annotations and return refreshed analysis.
 
-**متى:** lawful inspection of native binaries targets you have the right to analyse; the user asks how an app/binary/site works without its source
+**متى:** عند الفحص المشروع لأهداف ملفات تنفيذية أصلية يحق لك تحليلها، أو حين يسأل المستخدم كيف يعمل تطبيق أو ملف ثنائي أو موقع دون مصدره / lawful inspection of native binaries targets you have the right to analyse; the user asks how an app/binary/site works without its source
 
 **كيف:** `rea annotate-native-function <path> <procedure>` --json · options: --name, --comment, --inline-comment, --target-format, --architecture, --entry-point, --provider. Needs: a deep-analysis provider: Hopper (rea setup), Ghidra 12.1 (GHIDRA_INSTALL_DIR), IDA MCP, or Kuna. Evidence first: observations ≠ inferences ≠ unknowns; never claim equivalence from pseudocode; rights to inspect the target are required.
 
@@ -647,7 +647,7 @@
 
 **ما هي:** بناء سجل الالتزامات إعادة البناء: أمر `rea build-reconstruction-obligation-ledger` من REA v6.7.0 (الأدلة والنواة)؛ يعيد سجل أدلة JSON بمعرّف وبصمة SHA-256 ويصرّح بحدوده وما بقي مجهولًا — Generate a deterministic Evidence-backed reconstruction obligation ledger page.
 
-**متى:** lawful inspection of Evidence & core targets you have the right to analyse; the user asks how an app/binary/site works without its source
+**متى:** عند الفحص المشروع لأهداف الأدلة والنواة يحق لك تحليلها، أو حين يسأل المستخدم كيف يعمل تطبيق أو ملف ثنائي أو موقع دون مصدره / lawful inspection of Evidence & core targets you have the right to analyse; the user asks how an app/binary/site works without its source
 
 **كيف:** `rea build-reconstruction-obligation-ledger <inputJson>` --json. Needs: REA alone. Evidence first: observations ≠ inferences ≠ unknowns; never claim equivalence from pseudocode; rights to inspect the target are required.
 
@@ -719,7 +719,7 @@
 
 **ما هي:** قدرات المزودين: أمر `rea capabilities` من REA v6.7.0 (الأدلة والنواة)؛ يعيد سجل أدلة JSON بمعرّف وبصمة SHA-256 ويصرّح بحدوده وما بقي مجهولًا — List provider capabilities and side effects.
 
-**متى:** lawful inspection of Evidence & core targets you have the right to analyse; the user asks how an app/binary/site works without its source
+**متى:** عند الفحص المشروع لأهداف الأدلة والنواة يحق لك تحليلها، أو حين يسأل المستخدم كيف يعمل تطبيق أو ملف ثنائي أو موقع دون مصدره / lawful inspection of Evidence & core targets you have the right to analyse; the user asks how an app/binary/site works without its source
 
 **كيف:** `rea capabilities ` --json. Needs: REA alone. Verified here on —: 4 providers advertised with effects: native-macos, rea-artifact-graph, rea-dotnet-static, sqlite. Evidence first: observations ≠ inferences ≠ unknowns; never claim equivalence from pseudocode; rights to inspect the target are required.
 
@@ -794,7 +794,7 @@
 
 **ما هي:** التقاط screen ADB: أمر `rea capture-adb-screen` من REA v6.7.0 (أندرويد والأجهزة)؛ يعيد سجل أدلة JSON بمعرّف وبصمة SHA-256 ويصرّح بحدوده وما بقي مجهولًا — Capture one screen frame as a digested PNG.
 
-**متى:** lawful inspection of Android, apktool & adb targets you have the right to analyse; the user asks how an app/binary/site works without its source
+**متى:** عند الفحص المشروع لأهداف Android وapktool وadb يحق لك تحليلها، أو حين يسأل المستخدم كيف يعمل تطبيق أو ملف ثنائي أو موقع دون مصدره / lawful inspection of Android, apktool & adb targets you have the right to analyse; the user asks how an app/binary/site works without its source
 
 **كيف:** `rea capture-adb-screen <serial>` --json · options: --output-directory. Needs: adb-authorized Android device / jadx-headless-mcp 0.7.1 JAR (REA_JADX_MCP_JAR) / apktool launcher; REA never installs them. Evidence first: observations ≠ inferences ≠ unknowns; never claim equivalence from pseudocode; rights to inspect the target are required.
 
@@ -868,7 +868,7 @@
 
 **ما هي:** التقاط سيناريو المتصفح: أمر `rea capture-browser-scenario` من REA v6.7.0 (جافاسكربت والويب)؛ يعيد سجل أدلة JSON بمعرّف وبصمة SHA-256 ويصرّح بحدوده وما بقي مجهولًا — Run one bounded Playwright browser scenario and return Evidence.
 
-**متى:** lawful inspection of JavaScript & web targets you have the right to analyse; the user asks how an app/binary/site works without its source
+**متى:** عند الفحص المشروع لأهداف JavaScript والويب يحق لك تحليلها، أو حين يسأل المستخدم كيف يعمل تطبيق أو ملف ثنائي أو موقع دون مصدره / lawful inspection of JavaScript & web targets you have the right to analyse; the user asks how an app/binary/site works without its source
 
 **كيف:** `rea capture-browser-scenario <inputJson>` --json. Needs: REA alone for static work; a loopback CDP browser (Chromium/Playwright) for observation; Wakaru only for recover-javascript-sources. Evidence first: observations ≠ inferences ≠ unknowns; never claim equivalence from pseudocode; rights to inspect the target are required.
 
@@ -1088,7 +1088,7 @@
 
 **ما هي:** التقاط عملية: أمر `rea capture-process` من REA v6.7.0 (الأدلة والنواة)؛ يعيد سجل أدلة JSON بمعرّف وبصمة SHA-256 ويصرّح بحدوده وما بقي مجهولًا — Capture one caller-selected process scenario.
 
-**متى:** lawful inspection of Evidence & core targets you have the right to analyse; the user asks how an app/binary/site works without its source
+**متى:** عند الفحص المشروع لأهداف الأدلة والنواة يحق لك تحليلها، أو حين يسأل المستخدم كيف يعمل تطبيق أو ملف ثنائي أو موقع دون مصدره / lawful inspection of Evidence & core targets you have the right to analyse; the user asks how an app/binary/site works without its source
 
 **كيف:** `rea capture-process <scenario>` --json. Needs: REA alone. Evidence first: observations ≠ inferences ≠ unknowns; never claim equivalence from pseudocode; rights to inspect the target are required.
 
@@ -1160,7 +1160,7 @@
 
 **ما هي:** التقاط لقطة شاشة ويب: أمر `rea capture-web-screenshot` من REA v6.7.0 (جافاسكربت والويب)؛ يعيد سجل أدلة JSON بمعرّف وبصمة SHA-256 ويصرّح بحدوده وما بقي مجهولًا — Capture one visible page viewport within the supplied origin scope.
 
-**متى:** lawful inspection of JavaScript & web targets you have the right to analyse; the user asks how an app/binary/site works without its source
+**متى:** عند الفحص المشروع لأهداف JavaScript والويب يحق لك تحليلها، أو حين يسأل المستخدم كيف يعمل تطبيق أو ملف ثنائي أو موقع دون مصدره / lawful inspection of JavaScript & web targets you have the right to analyse; the user asks how an app/binary/site works without its source
 
 **كيف:** `rea capture-web-screenshot <endpoint> <targetId>` --json · options: --allowedOrigins. Needs: REA alone for static work; a loopback CDP browser (Chromium/Playwright) for observation; Wakaru only for recover-javascript-sources. Verified here on same page: self-verifying PNG artifact JSON. Evidence first: observations ≠ inferences ≠ unknowns; never claim equivalence from pseudocode; rights to inspect the target are required.
 
@@ -1236,7 +1236,7 @@
 
 **ما هي:** جمع تقرير أخطاء ADB: أمر `rea collect-adb-bugreport` من REA v6.7.0 (أندرويد والأجهزة)؛ يعيد سجل أدلة JSON بمعرّف وبصمة SHA-256 ويصرّح بحدوده وما بقي مجهولًا — Collect and digest one device-generated bugreport archive.
 
-**متى:** lawful inspection of Android, apktool & adb targets you have the right to analyse; the user asks how an app/binary/site works without its source
+**متى:** عند الفحص المشروع لأهداف Android وapktool وadb يحق لك تحليلها، أو حين يسأل المستخدم كيف يعمل تطبيق أو ملف ثنائي أو موقع دون مصدره / lawful inspection of Android, apktool & adb targets you have the right to analyse; the user asks how an app/binary/site works without its source
 
 **كيف:** `rea collect-adb-bugreport <serial>` --json · options: --output-directory. Needs: adb-authorized Android device / jadx-headless-mcp 0.7.1 JAR (REA_JADX_MCP_JAR) / apktool launcher; REA never installs them. Evidence first: observations ≠ inferences ≠ unknowns; never claim equivalence from pseudocode; rights to inspect the target are required.
 
@@ -1310,7 +1310,7 @@
 
 **ما هي:** مقارنة: أمر `rea compare` من REA v6.7.0 (الأدلة والنواة)؛ يعيد سجل أدلة JSON بمعرّف وبصمة SHA-256 ويصرّح بحدوده وما بقي مجهولًا — Compare two canonical Evidence bundles.
 
-**متى:** lawful inspection of Evidence & core targets you have the right to analyse; the user asks how an app/binary/site works without its source
+**متى:** عند الفحص المشروع لأهداف الأدلة والنواة يحق لك تحليلها، أو حين يسأل المستخدم كيف يعمل تطبيق أو ملف ثنائي أو موقع دون مصدره / lawful inspection of Evidence & core targets you have the right to analyse; the user asks how an app/binary/site works without its source
 
 **كيف:** `rea compare <left> <right>` --json. Needs: REA alone. Evidence first: observations ≠ inferences ≠ unknowns; never claim equivalence from pseudocode; rights to inspect the target are required.
 
@@ -1382,7 +1382,7 @@
 
 **ما هي:** مقارنة الإصدارات تطبيق: أمر `rea compare-application-versions` من REA v6.7.0 (جافاسكربت والويب)؛ يعيد سجل أدلة JSON بمعرّف وبصمة SHA-256 ويصرّح بحدوده وما بقي مجهولًا — Compare two authenticated JavaScript Application Graph versions.
 
-**متى:** lawful inspection of JavaScript & web targets you have the right to analyse; the user asks how an app/binary/site works without its source
+**متى:** عند الفحص المشروع لأهداف JavaScript والويب يحق لك تحليلها، أو حين يسأل المستخدم كيف يعمل تطبيق أو ملف ثنائي أو موقع دون مصدره / lawful inspection of JavaScript & web targets you have the right to analyse; the user asks how an app/binary/site works without its source
 
 **كيف:** `rea compare-application-versions <inputJson>` --json. Needs: REA alone for static work; a loopback CDP browser (Chromium/Playwright) for observation; Wakaru only for recover-javascript-sources. Tried here: input shape needs two complete Evidence records in left/right; not retried. Evidence first: observations ≠ inferences ≠ unknowns; never claim equivalence from pseudocode; rights to inspect the target are required.
 
@@ -1456,7 +1456,7 @@
 
 **ما هي:** مقارنة أشكال التصدير جافاسكربت: أمر `rea compare-javascript-export-shapes` من REA v6.7.0 (جافاسكربت والويب)؛ يعيد سجل أدلة JSON بمعرّف وبصمة SHA-256 ويصرّح بحدوده وما بقي مجهولًا — Compare exact static JavaScript export return shapes without execution.
 
-**متى:** lawful inspection of JavaScript & web targets you have the right to analyse; the user asks how an app/binary/site works without its source
+**متى:** عند الفحص المشروع لأهداف JavaScript والويب يحق لك تحليلها، أو حين يسأل المستخدم كيف يعمل تطبيق أو ملف ثنائي أو موقع دون مصدره / lawful inspection of JavaScript & web targets you have the right to analyse; the user asks how an app/binary/site works without its source
 
 **كيف:** `rea compare-javascript-export-shapes <inputJson>` --json. Needs: REA alone for static work; a loopback CDP browser (Chromium/Playwright) for observation; Wakaru only for recover-javascript-sources. Evidence first: observations ≠ inferences ≠ unknowns; never claim equivalence from pseudocode; rights to inspect the target are required.
 
@@ -1530,7 +1530,7 @@
 
 **ما هي:** مقارنة الأعضاء مُدار (.NET): أمر `rea compare-managed-members` من REA v6.7.0 (.NET)؛ يعيد سجل أدلة JSON بمعرّف وبصمة SHA-256 ويصرّح بحدوده وما بقي مجهولًا — Compare managed PE/CLI member inventories by exact declared type, name, and signature; names alone never form a match.
 
-**متى:** lawful inspection of managed code targets you have the right to analyse; the user asks how an app/binary/site works without its source
+**متى:** عند الفحص المشروع لأهداف الشيفرة المُدارة يحق لك تحليلها، أو حين يسأل المستخدم كيف يعمل تطبيق أو ملف ثنائي أو موقع دون مصدره / lawful inspection of managed code targets you have the right to analyse; the user asks how an app/binary/site works without its source
 
 **كيف:** `rea compare-managed-members <leftPath> <rightPath>` --json. Needs: a PE/CLI assembly; built-in rea-dotnet-static provider. Evidence first: observations ≠ inferences ≠ unknowns; never claim equivalence from pseudocode; rights to inspect the target are required.
 
@@ -1602,7 +1602,7 @@
 
 **ما هي:** مقارنة التقاطات عملية: أمر `rea compare-process-captures` من REA v6.7.0 (الأدلة والنواة)؛ يعيد سجل أدلة JSON بمعرّف وبصمة SHA-256 ويصرّح بحدوده وما بقي مجهولًا — Compare two process capture Evidence JSON files.
 
-**متى:** lawful inspection of Evidence & core targets you have the right to analyse; the user asks how an app/binary/site works without its source
+**متى:** عند الفحص المشروع لأهداف الأدلة والنواة يحق لك تحليلها، أو حين يسأل المستخدم كيف يعمل تطبيق أو ملف ثنائي أو موقع دون مصدره / lawful inspection of Evidence & core targets you have the right to analyse; the user asks how an app/binary/site works without its source
 
 **كيف:** `rea compare-process-captures <left> <right> [traceSpec]` --json. Needs: REA alone. Evidence first: observations ≠ inferences ≠ unknowns; never claim equivalence from pseudocode; rights to inspect the target are required.
 
@@ -1674,7 +1674,7 @@
 
 **ما هي:** مقارنة حزمة إلى المصدر: أمر `rea compare-source-to-bundle` من REA v6.7.0 (جافاسكربت والويب)؛ يعيد سجل أدلة JSON بمعرّف وبصمة SHA-256 ويصرّح بحدوده وما بقي مجهولًا — Compare committed historical source with authenticated application Evidence.
 
-**متى:** lawful inspection of JavaScript & web targets you have the right to analyse; the user asks how an app/binary/site works without its source
+**متى:** عند الفحص المشروع لأهداف JavaScript والويب يحق لك تحليلها، أو حين يسأل المستخدم كيف يعمل تطبيق أو ملف ثنائي أو موقع دون مصدره / lawful inspection of JavaScript & web targets you have the right to analyse; the user asks how an app/binary/site works without its source
 
 **كيف:** `rea compare-source-to-bundle <inputJson>` --json. Needs: REA alone for static work; a loopback CDP browser (Chromium/Playwright) for observation; Wakaru only for recover-javascript-sources. Evidence first: observations ≠ inferences ≠ unknowns; never claim equivalence from pseudocode; rights to inspect the target are required.
 
@@ -1748,7 +1748,7 @@
 
 **ما هي:** مقارنة الواجهات WASM: أمر `rea compare-wasm-interfaces` من REA v6.7.0 (WebAssembly)؛ يعيد سجل أدلة JSON بمعرّف وبصمة SHA-256 ويصرّح بحدوده وما بقي مجهولًا — Compare core WASM interfaces from two exact inspection Evidence records.
 
-**متى:** lawful inspection of WebAssembly targets you have the right to analyse; the user asks how an app/binary/site works without its source
+**متى:** عند الفحص المشروع لأهداف WebAssembly يحق لك تحليلها، أو حين يسأل المستخدم كيف يعمل تطبيق أو ملف ثنائي أو موقع دون مصدره / lawful inspection of WebAssembly targets you have the right to analyse; the user asks how an app/binary/site works without its source
 
 **كيف:** `rea compare-wasm-interfaces <input>` --json. Needs: WABT 1.0.42 (REA_WABT_BIN_DIRECTORY). Evidence first: observations ≠ inferences ≠ unknowns; never claim equivalence from pseudocode; rights to inspect the target are required.
 
@@ -1821,7 +1821,7 @@
 
 **ما هي:** مقارنة التقاطات ويب: أمر `rea compare-web-captures` من REA v6.7.0 (جافاسكربت والويب)؛ يعيد سجل أدلة JSON بمعرّف وبصمة SHA-256 ويصرّح بحدوده وما بقي مجهولًا — Compare two normalized passive captures or recorded browser scenarios.
 
-**متى:** lawful inspection of JavaScript & web targets you have the right to analyse; the user asks how an app/binary/site works without its source
+**متى:** عند الفحص المشروع لأهداف JavaScript والويب يحق لك تحليلها، أو حين يسأل المستخدم كيف يعمل تطبيق أو ملف ثنائي أو موقع دون مصدره / lawful inspection of JavaScript & web targets you have the right to analyse; the user asks how an app/binary/site works without its source
 
 **كيف:** `rea compare-web-captures <beforeJson> <afterJson>` --json · options: --normalizationJson. Needs: REA alone for static work; a loopback CDP browser (Chromium/Playwright) for observation; Wakaru only for recover-javascript-sources. Evidence first: observations ≠ inferences ≠ unknowns; never claim equivalence from pseudocode; rights to inspect the target are required.
 
@@ -1895,7 +1895,7 @@
 
 **ما هي:** مقارنة لقطات الشاشة ويب: أمر `rea compare-web-screenshots` من REA v6.7.0 (جافاسكربت والويب)؛ يعيد سجل أدلة JSON بمعرّف وبصمة SHA-256 ويصرّح بحدوده وما بقي مجهولًا — Compare two self-verifying PNG artifact JSON values.
 
-**متى:** lawful inspection of JavaScript & web targets you have the right to analyse; the user asks how an app/binary/site works without its source
+**متى:** عند الفحص المشروع لأهداف JavaScript والويب يحق لك تحليلها، أو حين يسأل المستخدم كيف يعمل تطبيق أو ملف ثنائي أو موقع دون مصدره / lawful inspection of JavaScript & web targets you have the right to analyse; the user asks how an app/binary/site works without its source
 
 **كيف:** `rea compare-web-screenshots <beforeJson> <afterJson>` --json · options: --channelThreshold. Needs: REA alone for static work; a loopback CDP browser (Chromium/Playwright) for observation; Wakaru only for recover-javascript-sources. Evidence first: observations ≠ inferences ≠ unknowns; never claim equivalence from pseudocode; rights to inspect the target are required.
 
@@ -1969,7 +1969,7 @@
 
 **ما هي:** أمر Cutter command: أمر `rea cutter-command` من REA v6.7.0 (Rizin / Cutter)؛ يعيد سجل أدلة JSON بمعرّف وبصمة SHA-256 ويصرّح بحدوده وما بقي مجهولًا — Execute one Rizin command in a selected live Cutter instance.
 
-**متى:** lawful inspection of Rizin / Cutter targets you have the right to analyse; the user asks how an app/binary/site works without its source
+**متى:** عند الفحص المشروع لأهداف Rizin / Cutter يحق لك تحليلها، أو حين يسأل المستخدم كيف يعمل تطبيق أو ملف ثنائي أو موقع دون مصدره / lawful inspection of Rizin / Cutter targets you have the right to analyse; the user asks how an app/binary/site works without its source
 
 **كيف:** `rea cutter-command <sessionId> <expectedGeneration> <command>` --json · options: --jsonOutput, --json. Needs: Rizin or a live Cutter with the REA Python plugin bridge. Evidence first: observations ≠ inferences ≠ unknowns; never claim equivalence from pseudocode; rights to inspect the target are required.
 
@@ -2043,7 +2043,7 @@
 
 **ما هي:** تنقيح GDB بـ: أمر `rea debug-with-gdb` من REA v6.7.0 (GDB)؛ يعيد سجل أدلة JSON بمعرّف وبصمة SHA-256 ويصرّح بحدوده وما بقي مجهولًا — Run one unrestricted GDB console command in an ephemeral MI session; provide an inferior TTY so a live target can be safely detached.
 
-**متى:** lawful inspection of GDB targets you have the right to analyse; the user asks how an app/binary/site works without its source
+**متى:** عند الفحص المشروع لأهداف GDB يحق لك تحليلها، أو حين يسأل المستخدم كيف يعمل تطبيق أو ملف ثنائي أو موقع دون مصدره / lawful inspection of GDB targets you have the right to analyse; the user asks how an app/binary/site works without its source
 
 **كيف:** `rea debug-with-gdb <command>` --json · options: --inferiorTty. Needs: GDB with MI; a live target needs an inferior TTY. Evidence first: observations ≠ inferences ≠ unknowns; never claim equivalence from pseudocode; rights to inspect the target are required.
 
@@ -2116,7 +2116,7 @@
 
 **ما هي:** تنقيح Rizin بـ: أمر `rea debug-with-rizin` من REA v6.7.0 (Rizin / Cutter)؛ يعيد سجل أدلة JSON بمعرّف وبصمة SHA-256 ويصرّح بحدوده وما بقي مجهولًا — Run one unrestricted Rizin debugger command in an ephemeral session.
 
-**متى:** lawful inspection of Rizin / Cutter targets you have the right to analyse; the user asks how an app/binary/site works without its source
+**متى:** عند الفحص المشروع لأهداف Rizin / Cutter يحق لك تحليلها، أو حين يسأل المستخدم كيف يعمل تطبيق أو ملف ثنائي أو موقع دون مصدره / lawful inspection of Rizin / Cutter targets you have the right to analyse; the user asks how an app/binary/site works without its source
 
 **كيف:** `rea debug-with-rizin <path> <command>` --json · options: --inferiorTty, --backend. Needs: Rizin or a live Cutter with the REA Python plugin bridge. Evidence first: observations ≠ inferences ≠ unknowns; never claim equivalence from pseudocode; rights to inspect the target are required.
 
@@ -2190,7 +2190,7 @@
 
 **ما هي:** فك ترميز الموارد أندرويد: أمر `rea decode-android-resources` من REA v6.7.0 (أندرويد والأجهزة)؛ يعيد سجل أدلة JSON بمعرّف وبصمة SHA-256 ويصرّح بحدوده وما بقي مجهولًا — Decode one APK's manifest, metadata, and string resources with apktool.
 
-**متى:** lawful inspection of Android, apktool & adb targets you have the right to analyse; the user asks how an app/binary/site works without its source
+**متى:** عند الفحص المشروع لأهداف Android وapktool وadb يحق لك تحليلها، أو حين يسأل المستخدم كيف يعمل تطبيق أو ملف ثنائي أو موقع دون مصدره / lawful inspection of Android, apktool & adb targets you have the right to analyse; the user asks how an app/binary/site works without its source
 
 **كيف:** `rea decode-android-resources <path>` --json · options: --locale, --locales, --strings. Needs: adb-authorized Android device / jadx-headless-mcp 0.7.1 JAR (REA_JADX_MCP_JAR) / apktool launcher; REA never installs them. Evidence first: observations ≠ inferences ≠ unknowns; never claim equivalence from pseudocode; rights to inspect the target are required.
 
@@ -2338,7 +2338,7 @@
 
 **ما هي:** فك ترميز تسجيل إشارة: أمر `rea decode-signal-recording` من REA v6.7.0 (تسجيلات الإشارة)؛ يعيد سجل أدلة JSON بمعرّف وبصمة SHA-256 ويصرّح بحدوده وما بقي مجهولًا — Decode an existing signal recording with caller-supplied sigrok.
 
-**متى:** lawful inspection of sigrok targets you have the right to analyse; the user asks how an app/binary/site works without its source
+**متى:** عند الفحص المشروع لأهداف sigrok يحق لك تحليلها، أو حين يسأل المستخدم كيف يعمل تطبيق أو ملف ثنائي أو موقع دون مصدره / lawful inspection of sigrok targets you have the right to analyse; the user asks how an app/binary/site works without its source
 
 **كيف:** `rea decode-signal-recording <path>` --json · options: --decoders, --input_format, --annotations, --line_offset, --line_limit, --all_lines. Needs: sigrok-cli with decoders. Evidence first: observations ≠ inferences ≠ unknowns; never claim equivalence from pseudocode; rights to inspect the target are required.
 
@@ -2411,7 +2411,7 @@
 
 **ما هي:** تفكيك: أمر `rea decompile` من REA v6.7.0 (الثنائيات الأصلية)؛ يعيد سجل أدلة JSON بمعرّف وبصمة SHA-256 ويصرّح بحدوده وما بقي مجهولًا — Read one part of an app as code.
 
-**متى:** lawful inspection of native binaries targets you have the right to analyse; the user asks how an app/binary/site works without its source
+**متى:** عند الفحص المشروع لأهداف ملفات تنفيذية أصلية يحق لك تحليلها، أو حين يسأل المستخدم كيف يعمل تطبيق أو ملف ثنائي أو موقع دون مصدره / lawful inspection of native binaries targets you have the right to analyse; the user asks how an app/binary/site works without its source
 
 **كيف:** `rea decompile <path> [address]` --json · options: --procedure, --file-offset, --snapshot, --target-format, --architecture, --entry-point, --provider. Needs: a deep-analysis provider: Hopper (rea setup), Ghidra 12.1 (GHIDRA_INSTALL_DIR), IDA MCP, or Kuna. Evidence first: observations ≠ inferences ≠ unknowns; never claim equivalence from pseudocode; rights to inspect the target are required.
 
@@ -2631,7 +2631,7 @@
 
 **ما هي:** اكتشاف أدوات WebMCP: أمر `rea discover-webmcp-tools` من REA v6.7.0 (جافاسكربت والويب)؛ يعيد سجل أدلة JSON بمعرّف وبصمة SHA-256 ويصرّح بحدوده وما بقي مجهولًا — Passively discover page-declared WebMCP tools.
 
-**متى:** lawful inspection of JavaScript & web targets you have the right to analyse; the user asks how an app/binary/site works without its source
+**متى:** عند الفحص المشروع لأهداف JavaScript والويب يحق لك تحليلها، أو حين يسأل المستخدم كيف يعمل تطبيق أو ملف ثنائي أو موقع دون مصدره / lawful inspection of JavaScript & web targets you have the right to analyse; the user asks how an app/binary/site works without its source
 
 **كيف:** `rea discover-webmcp-tools <endpoint> <targetId>` --json · options: --allowedOrigins, --observationMs. Needs: REA alone for static work; a loopback CDP browser (Chromium/Playwright) for observation; Wakaru only for recover-javascript-sources. Evidence first: observations ≠ inferences ≠ unknowns; never claim equivalence from pseudocode; rights to inspect the target are required.
 
@@ -2705,7 +2705,7 @@
 
 **ما هي:** فحص جاهزية REA: أمر `rea doctor` من REA v6.7.0 (الأدلة والنواة)؛ يعيد سجل أدلة JSON بمعرّف وبصمة SHA-256 ويصرّح بحدوده وما بقي مجهولًا — Check whether REA is ready.
 
-**متى:** lawful inspection of Evidence & core targets you have the right to analyse; the user asks how an app/binary/site works without its source
+**متى:** عند الفحص المشروع لأهداف الأدلة والنواة يحق لك تحليلها، أو حين يسأل المستخدم كيف يعمل تطبيق أو ملف ثنائي أو موقع دون مصدره / lawful inspection of Evidence & core targets you have the right to analyse; the user asks how an app/binary/site works without its source
 
 **كيف:** `rea doctor ` --json · options: --target, --client, --provider, --skill. Needs: REA alone. Verified here on —: exit 1 = not healthy, reported honestly: node 22.22 / ubuntu 24.04; Hopper, Ghidra, IDA, jadx, Kuna absent → classified missing_analysis_engine. Evidence first: observations ≠ inferences ≠ unknowns; never claim equivalence from pseudocode; rights to inspect the target are required.
 
@@ -2781,7 +2781,7 @@
 
 **ما هي:** تقييم التغطية إعادة البناء: أمر `rea evaluate-reconstruction-coverage` من REA v6.7.0 (الأدلة والنواة)؛ يعيد سجل أدلة JSON بمعرّف وبصمة SHA-256 ويصرّح بحدوده وما بقي مجهولًا — Evaluate inline fail-closed reconstruction coverage.
 
-**متى:** lawful inspection of Evidence & core targets you have the right to analyse; the user asks how an app/binary/site works without its source
+**متى:** عند الفحص المشروع لأهداف الأدلة والنواة يحق لك تحليلها، أو حين يسأل المستخدم كيف يعمل تطبيق أو ملف ثنائي أو موقع دون مصدره / lawful inspection of Evidence & core targets you have the right to analyse; the user asks how an app/binary/site works without its source
 
 **كيف:** `rea evaluate-reconstruction-coverage <inputJson>` --json. Needs: REA alone. Evidence first: observations ≠ inferences ≠ unknowns; never claim equivalence from pseudocode; rights to inspect the target are required.
 
@@ -2853,7 +2853,7 @@
 
 **ما هي:** تصدير حزمة أدلة: أمر `rea evidence-export` من REA v6.7.0 (الأدلة والنواة)؛ يعيد سجل أدلة JSON بمعرّف وبصمة SHA-256 ويصرّح بحدوده وما بقي مجهولًا — Validate and atomically export canonical Evidence JSON.
 
-**متى:** lawful inspection of Evidence & core targets you have the right to analyse; the user asks how an app/binary/site works without its source
+**متى:** عند الفحص المشروع لأهداف الأدلة والنواة يحق لك تحليلها، أو حين يسأل المستخدم كيف يعمل تطبيق أو ملف ثنائي أو موقع دون مصدره / lawful inspection of Evidence & core targets you have the right to analyse; the user asks how an app/binary/site works without its source
 
 **كيف:** `rea evidence-export <source> <output>` --json · options: --overwrite. Needs: REA alone. Evidence first: observations ≠ inferences ≠ unknowns; never claim equivalence from pseudocode; rights to inspect the target are required.
 
@@ -2925,7 +2925,7 @@
 
 **ما هي:** استيراد حزمة أدلة: أمر `rea evidence-import` من REA v6.7.0 (الأدلة والنواة)؛ يعيد سجل أدلة JSON بمعرّف وبصمة SHA-256 ويصرّح بحدوده وما بقي مجهولًا — Validate and import a bounded local Evidence bundle.
 
-**متى:** lawful inspection of Evidence & core targets you have the right to analyse; the user asks how an app/binary/site works without its source
+**متى:** عند الفحص المشروع لأهداف الأدلة والنواة يحق لك تحليلها، أو حين يسأل المستخدم كيف يعمل تطبيق أو ملف ثنائي أو موقع دون مصدره / lawful inspection of Evidence & core targets you have the right to analyse; the user asks how an app/binary/site works without its source
 
 **كيف:** `rea evidence-import <path>` --json. Needs: REA alone. Evidence first: observations ≠ inferences ≠ unknowns; never claim equivalence from pseudocode; rights to inspect the target are required.
 
@@ -2997,7 +2997,7 @@
 
 **ما هي:** تنفيذ command Rizin: أمر `rea execute-rizin-command` من REA v6.7.0 (Rizin / Cutter)؛ يعيد سجل أدلة JSON بمعرّف وبصمة SHA-256 ويصرّح بحدوده وما بقي مجهولًا — Execute one Rizin command against a local artifact.
 
-**متى:** lawful inspection of Rizin / Cutter targets you have the right to analyse; the user asks how an app/binary/site works without its source
+**متى:** عند الفحص المشروع لأهداف Rizin / Cutter يحق لك تحليلها، أو حين يسأل المستخدم كيف يعمل تطبيق أو ملف ثنائي أو موقع دون مصدره / lawful inspection of Rizin / Cutter targets you have the right to analyse; the user asks how an app/binary/site works without its source
 
 **كيف:** `rea execute-rizin-command <path> <command>` --json. Needs: Rizin or a live Cutter with the REA Python plugin bridge. Evidence first: observations ≠ inferences ≠ unknowns; never claim equivalence from pseudocode; rights to inspect the target are required.
 
@@ -3071,7 +3071,7 @@
 
 **ما هي:** تصدير السكربتات ويب: أمر `rea export-web-scripts` من REA v6.7.0 (جافاسكربت والويب)؛ يعيد سجل أدلة JSON بمعرّف وبصمة SHA-256 ويصرّح بحدوده وما بقي مجهولًا — Export retained website scripts into an absent directory for static JavaScript analysis.
 
-**متى:** lawful inspection of JavaScript & web targets you have the right to analyse; the user asks how an app/binary/site works without its source
+**متى:** عند الفحص المشروع لأهداف JavaScript والويب يحق لك تحليلها، أو حين يسأل المستخدم كيف يعمل تطبيق أو ملف ثنائي أو موقع دون مصدره / lawful inspection of JavaScript & web targets you have the right to analyse; the user asks how an app/binary/site works without its source
 
 **كيف:** `rea export-web-scripts <capturePath> <outputDirectory>` --json. Needs: REA alone for static work; a loopback CDP browser (Chromium/Playwright) for observation; Wakaru only for recover-javascript-sources. Tried here: needs a saved page/scenario capture JSON, not a bundle analysis record. Evidence first: observations ≠ inferences ≠ unknowns; never claim equivalence from pseudocode; rights to inspect the target are required.
 
@@ -3145,7 +3145,7 @@
 
 **ما هي:** استخراج قطعة: أمر `rea extract-artifact` من REA v6.7.0 (الأدلة والنواة)؛ يعيد سجل أدلة JSON بمعرّف وبصمة SHA-256 ويصرّح بحدوده وما بقي مجهولًا — Extract all regular artifact contents safely.
 
-**متى:** lawful inspection of Evidence & core targets you have the right to analyse; the user asks how an app/binary/site works without its source
+**متى:** عند الفحص المشروع لأهداف الأدلة والنواة يحق لك تحليلها، أو حين يسأل المستخدم كيف يعمل تطبيق أو ملف ثنائي أو موقع دون مصدره / lawful inspection of Evidence & core targets you have the right to analyse; the user asks how an app/binary/site works without its source
 
 **كيف:** `rea extract-artifact <path>` --json · options: --integrityPolicy. Needs: REA alone. Verified here on video-downloader.zip: safe extraction with per-file digests into an absent directory. Evidence first: observations ≠ inferences ≠ unknowns; never claim equivalence from pseudocode; rights to inspect the target are required.
 
@@ -3219,7 +3219,7 @@
 
 **ما هي:** استخراج فيرموير: أمر `rea extract-firmware` من REA v6.7.0 (الفيرموير)؛ يعيد سجل أدلة JSON بمعرّف وبصمة SHA-256 ويصرّح بحدوده وما بقي مجهولًا — Extract selected firmware bytes and return verified files and provenance.
 
-**متى:** lawful inspection of firmware targets you have the right to analyse; the user asks how an app/binary/site works without its source
+**متى:** عند الفحص المشروع لأهداف البرمجيات الثابتة (firmware) يحق لك تحليلها، أو حين يسأل المستخدم كيف يعمل تطبيق أو ملف ثنائي أو موقع دون مصدره / lawful inspection of firmware targets you have the right to analyse; the user asks how an app/binary/site works without its source
 
 **كيف:** `rea extract-firmware <path> <outputDirectory>` --json · options: --offset, --length, --maxDepth, --maxOutputBytes, --maxOutputFiles. Needs: Linux + REA_BINWALK_COMMAND (Binwalk) or Unblob. Evidence first: observations ≠ inferences ≠ unknowns; never claim equivalence from pseudocode; rights to inspect the target are required.
 
@@ -3292,7 +3292,7 @@
 
 **ما هي:** تحليل دالة: أمر `rea function` من REA v6.7.0 (الثنائيات الأصلية)؛ يعيد سجل أدلة JSON بمعرّف وبصمة SHA-256 ويصرّح بحدوده وما بقي مجهولًا — Analyze one complete function with evidence.
 
-**متى:** lawful inspection of native binaries targets you have the right to analyse; the user asks how an app/binary/site works without its source
+**متى:** عند الفحص المشروع لأهداف ملفات تنفيذية أصلية يحق لك تحليلها، أو حين يسأل المستخدم كيف يعمل تطبيق أو ملف ثنائي أو موقع دون مصدره / lawful inspection of native binaries targets you have the right to analyse; the user asks how an app/binary/site works without its source
 
 **كيف:** `rea function <path> [address]` --json · options: --procedure, --snapshot, --target-format, --architecture, --entry-point, --provider. Needs: a deep-analysis provider: Hopper (rea setup), Ghidra 12.1 (GHIDRA_INSTALL_DIR), IDA MCP, or Kuna. Evidence first: observations ≠ inferences ≠ unknowns; never claim equivalence from pseudocode; rights to inspect the target are required.
 
@@ -3365,7 +3365,7 @@
 
 **ما هي:** تعريف build Flutter: أمر `rea identify-flutter-build` من REA v6.7.0 (أندرويد وFlutter)؛ يعيد سجل أدلة JSON بمعرّف وبصمة SHA-256 ويصرّح بحدوده وما بقي مجهولًا — Identify a Flutter build's Dart snapshot hash and engine facts by pure APK parsing.
 
-**متى:** lawful inspection of static APK parsing targets you have the right to analyse; the user asks how an app/binary/site works without its source
+**متى:** عند الفحص المشروع لأهداف التحليل الساكن لـ APK يحق لك تحليلها، أو حين يسأل المستخدم كيف يعمل تطبيق أو ملف ثنائي أو موقع دون مصدره / lawful inspection of static APK parsing targets you have the right to analyse; the user asks how an app/binary/site works without its source
 
 **كيف:** `rea identify-flutter-build <path>` --json. Needs: a standalone APK; pure parsing, no engine. Evidence first: observations ≠ inferences ≠ unknowns; never claim equivalence from pseudocode; rights to inspect the target are required.
 
@@ -3438,7 +3438,7 @@
 
 **ما هي:** استيراد إعادة البناء مُدار (.NET): أمر `rea import-managed-reconstruction` من REA v6.7.0 (.NET)؛ يعيد سجل أدلة JSON بمعرّف وبصمة SHA-256 ويصرّح بحدوده وما بقي مجهولًا — Import decompiler-produced managed reconstruction against exact static member evidence.
 
-**متى:** lawful inspection of managed code targets you have the right to analyse; the user asks how an app/binary/site works without its source
+**متى:** عند الفحص المشروع لأهداف الشيفرة المُدارة يحق لك تحليلها، أو حين يسأل المستخدم كيف يعمل تطبيق أو ملف ثنائي أو موقع دون مصدره / lawful inspection of managed code targets you have the right to analyse; the user asks how an app/binary/site works without its source
 
 **كيف:** `rea import-managed-reconstruction <inputJson>` --json. Needs: a PE/CLI assembly; built-in rea-dotnet-static provider. Evidence first: observations ≠ inferences ≠ unknowns; never claim equivalence from pseudocode; rights to inspect the target are required.
 
@@ -3510,7 +3510,7 @@
 
 **ما هي:** استيراد المصدر مرجعي: أمر `rea import-reference-source` من REA v6.7.0 (جافاسكربت والويب)؛ يعيد سجل أدلة JSON بمعرّف وبصمة SHA-256 ويصرّح بحدوده وما بقي مجهولًا — Import a source tree as historical reference only.
 
-**متى:** lawful inspection of JavaScript & web targets you have the right to analyse; the user asks how an app/binary/site works without its source
+**متى:** عند الفحص المشروع لأهداف JavaScript والويب يحق لك تحليلها، أو حين يسأل المستخدم كيف يعمل تطبيق أو ملف ثنائي أو موقع دون مصدره / lawful inspection of JavaScript & web targets you have the right to analyse; the user asks how an app/binary/site works without its source
 
 **كيف:** `rea import-reference-source <root>` --json · options: --detail, --outlineDepth. Needs: REA alone for static work; a loopback CDP browser (Chromium/Playwright) for observation; Wakaru only for recover-javascript-sources. Evidence first: observations ≠ inferences ≠ unknowns; never claim equivalence from pseudocode; rights to inspect the target are required.
 
@@ -3584,7 +3584,7 @@
 
 **ما هي:** فحص: أمر `rea inspect` من REA v6.7.0 (الثنائيات الأصلية)؛ يعيد سجل أدلة JSON بمعرّف وبصمة SHA-256 ويصرّح بحدوده وما بقي مجهولًا — Inspect an app overview with evidence.
 
-**متى:** lawful inspection of native binaries targets you have the right to analyse; the user asks how an app/binary/site works without its source
+**متى:** عند الفحص المشروع لأهداف ملفات تنفيذية أصلية يحق لك تحليلها، أو حين يسأل المستخدم كيف يعمل تطبيق أو ملف ثنائي أو موقع دون مصدره / lawful inspection of native binaries targets you have the right to analyse; the user asks how an app/binary/site works without its source
 
 **كيف:** `rea inspect <path>` --json · options: --snapshot, --target-format, --architecture, --entry-point, --provider. Needs: a deep-analysis provider: Hopper (rea setup), Ghidra 12.1 (GHIDRA_INSTALL_DIR), IDA MCP, or Kuna. Evidence first: observations ≠ inferences ≠ unknowns; never claim equivalence from pseudocode; rights to inspect the target are required.
 
@@ -3657,7 +3657,7 @@
 
 **ما هي:** فحص عميل ADB: أمر `rea inspect-adb-client` من REA v6.7.0 (أندرويد والأجهزة)؛ يعيد سجل أدلة JSON بمعرّف وبصمة SHA-256 ويصرّح بحدوده وما بقي مجهولًا — Inspect the caller-selected adb client without contacting devices.
 
-**متى:** lawful inspection of Android, apktool & adb targets you have the right to analyse; the user asks how an app/binary/site works without its source
+**متى:** عند الفحص المشروع لأهداف Android وapktool وadb يحق لك تحليلها، أو حين يسأل المستخدم كيف يعمل تطبيق أو ملف ثنائي أو موقع دون مصدره / lawful inspection of Android, apktool & adb targets you have the right to analyse; the user asks how an app/binary/site works without its source
 
 **كيف:** `rea inspect-adb-client ` --json. Needs: adb-authorized Android device / jadx-headless-mcp 0.7.1 JAR (REA_JADX_MCP_JAR) / apktool launcher; REA never installs them. Evidence first: observations ≠ inferences ≠ unknowns; never claim equivalence from pseudocode; rights to inspect the target are required. Verified here 2026-10-18: adb 34.0.4 detected (read-only).
 
@@ -3733,7 +3733,7 @@
 
 **ما هي:** فحص جهاز ADB: أمر `rea inspect-adb-device` من REA v6.7.0 (أندرويد والأجهزة)؛ يعيد سجل أدلة JSON بمعرّف وبصمة SHA-256 ويصرّح بحدوده وما بقي مجهولًا — Inspect one device's build identity through a fixed getprop whitelist.
 
-**متى:** lawful inspection of Android, apktool & adb targets you have the right to analyse; the user asks how an app/binary/site works without its source
+**متى:** عند الفحص المشروع لأهداف Android وapktool وadb يحق لك تحليلها، أو حين يسأل المستخدم كيف يعمل تطبيق أو ملف ثنائي أو موقع دون مصدره / lawful inspection of Android, apktool & adb targets you have the right to analyse; the user asks how an app/binary/site works without its source
 
 **كيف:** `rea inspect-adb-device <serial>` --json. Needs: adb-authorized Android device / jadx-headless-mcp 0.7.1 JAR (REA_JADX_MCP_JAR) / apktool launcher; REA never installs them. Evidence first: observations ≠ inferences ≠ unknowns; never claim equivalence from pseudocode; rights to inspect the target are required.
 
@@ -3807,7 +3807,7 @@
 
 **ما هي:** فحص الشاشة ADB: أمر `rea inspect-adb-display` من REA v6.7.0 (أندرويد والأجهزة)؛ يعيد سجل أدلة JSON بمعرّف وبصمة SHA-256 ويصرّح بحدوده وما بقي مجهولًا — Report the display's declared size and density.
 
-**متى:** lawful inspection of Android, apktool & adb targets you have the right to analyse; the user asks how an app/binary/site works without its source
+**متى:** عند الفحص المشروع لأهداف Android وapktool وadb يحق لك تحليلها، أو حين يسأل المستخدم كيف يعمل تطبيق أو ملف ثنائي أو موقع دون مصدره / lawful inspection of Android, apktool & adb targets you have the right to analyse; the user asks how an app/binary/site works without its source
 
 **كيف:** `rea inspect-adb-display <serial>` --json. Needs: adb-authorized Android device / jadx-headless-mcp 0.7.1 JAR (REA_JADX_MCP_JAR) / apktool launcher; REA never installs them. Evidence first: observations ≠ inferences ≠ unknowns; never claim equivalence from pseudocode; rights to inspect the target are required.
 
@@ -3881,7 +3881,7 @@
 
 **ما هي:** فحص حزمة ADB: أمر `rea inspect-adb-package` من REA v6.7.0 (أندرويد والأجهزة)؛ يعيد سجل أدلة JSON بمعرّف وبصمة SHA-256 ويصرّح بحدوده وما بقي مجهولًا — Inspect one installed package's version, installer, and flags through dumpsys.
 
-**متى:** lawful inspection of Android, apktool & adb targets you have the right to analyse; the user asks how an app/binary/site works without its source
+**متى:** عند الفحص المشروع لأهداف Android وapktool وadb يحق لك تحليلها، أو حين يسأل المستخدم كيف يعمل تطبيق أو ملف ثنائي أو موقع دون مصدره / lawful inspection of Android, apktool & adb targets you have the right to analyse; the user asks how an app/binary/site works without its source
 
 **كيف:** `rea inspect-adb-package <serial> <package>` --json. Needs: adb-authorized Android device / jadx-headless-mcp 0.7.1 JAR (REA_JADX_MCP_JAR) / apktool launcher; REA never installs them. Evidence first: observations ≠ inferences ≠ unknowns; never claim equivalence from pseudocode; rights to inspect the target are required.
 
@@ -3955,7 +3955,7 @@
 
 **ما هي:** فحص النافذة ADB: أمر `rea inspect-adb-window` من REA v6.7.0 (أندرويد والأجهزة)؛ يعيد سجل أدلة JSON بمعرّف وبصمة SHA-256 ويصرّح بحدوده وما بقي مجهولًا — Report the window manager's current focus declarations.
 
-**متى:** lawful inspection of Android, apktool & adb targets you have the right to analyse; the user asks how an app/binary/site works without its source
+**متى:** عند الفحص المشروع لأهداف Android وapktool وadb يحق لك تحليلها، أو حين يسأل المستخدم كيف يعمل تطبيق أو ملف ثنائي أو موقع دون مصدره / lawful inspection of Android, apktool & adb targets you have the right to analyse; the user asks how an app/binary/site works without its source
 
 **كيف:** `rea inspect-adb-window <serial>` --json. Needs: adb-authorized Android device / jadx-headless-mcp 0.7.1 JAR (REA_JADX_MCP_JAR) / apktool launcher; REA never installs them. Evidence first: observations ≠ inferences ≠ unknowns; never claim equivalence from pseudocode; rights to inspect the target are required.
 
@@ -4029,7 +4029,7 @@
 
 **ما هي:** فحص عرض التحليل: أمر `rea inspect-analysis-view` من REA v6.7.0 (الأدلة والنواة)؛ يعيد سجل أدلة JSON بمعرّف وبصمة SHA-256 ويصرّح بحدوده وما بقي مجهولًا — Project a selected view of completed binary-layout, JavaScript application, native function, artifact-inventory, WASM, Mach-O, Interface Builder, EVM, managed, Android package, Dart AOT, web network capture or pcap Evidence JSON.
 
-**متى:** lawful inspection of Evidence & core targets you have the right to analyse; the user asks how an app/binary/site works without its source
+**متى:** عند الفحص المشروع لأهداف الأدلة والنواة يحق لك تحليلها، أو حين يسأل المستخدم كيف يعمل تطبيق أو ملف ثنائي أو موقع دون مصدره / lawful inspection of Evidence & core targets you have the right to analyse; the user asks how an app/binary/site works without its source
 
 **كيف:** `rea inspect-analysis-view <inputJson>` --json. Needs: REA alone. Verified here on inline evidence from the run above: javascript-facts rows for manifest.json/background.js with available_property_keys; coverage exhausted 1/1. Evidence first: observations ≠ inferences ≠ unknowns; never claim equivalence from pseudocode; rights to inspect the target are required.
 
@@ -4105,7 +4105,7 @@
 
 **ما هي:** فحص صنف أندرويد: أمر `rea inspect-android-class` من REA v6.7.0 (أندرويد والأجهزة)؛ يعيد سجل أدلة JSON بمعرّف وبصمة SHA-256 ويصرّح بحدوده وما بقي مجهولًا — Inspect one exact APK class's member inventory.
 
-**متى:** lawful inspection of Android, apktool & adb targets you have the right to analyse; the user asks how an app/binary/site works without its source
+**متى:** عند الفحص المشروع لأهداف Android وapktool وadb يحق لك تحليلها، أو حين يسأل المستخدم كيف يعمل تطبيق أو ملف ثنائي أو موقع دون مصدره / lawful inspection of Android, apktool & adb targets you have the right to analyse; the user asks how an app/binary/site works without its source
 
 **كيف:** `rea inspect-android-class <path> <className>` --json. Needs: adb-authorized Android device / jadx-headless-mcp 0.7.1 JAR (REA_JADX_MCP_JAR) / apktool launcher; REA never installs them. Evidence first: observations ≠ inferences ≠ unknowns; never claim equivalence from pseudocode; rights to inspect the target are required.
 
@@ -4179,7 +4179,7 @@
 
 **ما هي:** فحص دالة أندرويد: أمر `rea inspect-android-method` من REA v6.7.0 (أندرويد والأجهزة)؛ يعيد سجل أدلة JSON بمعرّف وبصمة SHA-256 ويصرّح بحدوده وما بقي مجهولًا — Decompile one APK method with explicit overload selection.
 
-**متى:** lawful inspection of Android, apktool & adb targets you have the right to analyse; the user asks how an app/binary/site works without its source
+**متى:** عند الفحص المشروع لأهداف Android وapktool وadb يحق لك تحليلها، أو حين يسأل المستخدم كيف يعمل تطبيق أو ملف ثنائي أو موقع دون مصدره / lawful inspection of Android, apktool & adb targets you have the right to analyse; the user asks how an app/binary/site works without its source
 
 **كيف:** `rea inspect-android-method <path> <className> <methodName>` --json · options: --overloadIndex. Needs: adb-authorized Android device / jadx-headless-mcp 0.7.1 JAR (REA_JADX_MCP_JAR) / apktool launcher; REA never installs them. Evidence first: observations ≠ inferences ≠ unknowns; never claim equivalence from pseudocode; rights to inspect the target are required.
 
@@ -4253,7 +4253,7 @@
 
 **ما هي:** فحص حزمة أندرويد: أمر `rea inspect-android-package` من REA v6.7.0 (أندرويد وFlutter)؛ يعيد سجل أدلة JSON بمعرّف وبصمة SHA-256 ويصرّح بحدوده وما بقي مجهولًا — Inspect APK declarations and decoded manifest without executing it.
 
-**متى:** lawful inspection of static APK parsing targets you have the right to analyse; the user asks how an app/binary/site works without its source
+**متى:** عند الفحص المشروع لأهداف التحليل الساكن لـ APK يحق لك تحليلها، أو حين يسأل المستخدم كيف يعمل تطبيق أو ملف ثنائي أو موقع دون مصدره / lawful inspection of static APK parsing targets you have the right to analyse; the user asks how an app/binary/site works without its source
 
 **كيف:** `rea inspect-android-package <path>` --json. Needs: a standalone APK; pure parsing, no engine. Evidence first: observations ≠ inferences ≠ unknowns; never claim equivalence from pseudocode; rights to inspect the target are required.
 
@@ -4326,7 +4326,7 @@
 
 **ما هي:** فحص عميل apktool: أمر `rea inspect-apktool-client` من REA v6.7.0 (أندرويد والأجهزة)؛ يعيد سجل أدلة JSON بمعرّف وبصمة SHA-256 ويصرّح بحدوده وما بقي مجهولًا — Inspect the caller-selected apktool launcher without decoding anything.
 
-**متى:** lawful inspection of Android, apktool & adb targets you have the right to analyse; the user asks how an app/binary/site works without its source
+**متى:** عند الفحص المشروع لأهداف Android وapktool وadb يحق لك تحليلها، أو حين يسأل المستخدم كيف يعمل تطبيق أو ملف ثنائي أو موقع دون مصدره / lawful inspection of Android, apktool & adb targets you have the right to analyse; the user asks how an app/binary/site works without its source
 
 **كيف:** `rea inspect-apktool-client ` --json. Needs: adb-authorized Android device / jadx-headless-mcp 0.7.1 JAR (REA_JADX_MCP_JAR) / apktool launcher; REA never installs them. Evidence first: observations ≠ inferences ≠ unknowns; never claim equivalence from pseudocode; rights to inspect the target are required. Verified here 2026-10-18: apktool 2.7.0 detected (read-only).
 
@@ -4402,7 +4402,7 @@
 
 **ما هي:** فحص قطعة: أمر `rea inspect-artifact` من REA v6.7.0 (الأدلة والنواة)؛ يعيد سجل أدلة JSON بمعرّف وبصمة SHA-256 ويصرّح بحدوده وما بقي مجهولًا — Inspect one artifact and return all available observations and next probes.
 
-**متى:** lawful inspection of Evidence & core targets you have the right to analyse; the user asks how an app/binary/site works without its source
+**متى:** عند الفحص المشروع لأهداف الأدلة والنواة يحق لك تحليلها، أو حين يسأل المستخدم كيف يعمل تطبيق أو ملف ثنائي أو موقع دون مصدره / lawful inspection of Evidence & core targets you have the right to analyse; the user asks how an app/binary/site works without its source
 
 **كيف:** `rea inspect-artifact <path>` --json · options: --integrityPolicy. Needs: REA alone. Verified here on video-downloader.zip (owner upload): safe artifact graph: observations, hypotheses, next_probes, coverage. Evidence first: observations ≠ inferences ≠ unknowns; never claim equivalence from pseudocode; rights to inspect the target are required.
 
@@ -4550,7 +4550,7 @@
 
 **ما هي:** فحص تخطيط ثنائي: أمر `rea inspect-binary-layout` من REA v6.7.0 (تخطيط ELF)؛ يعيد سجل أدلة JSON بمعرّف وبصمة SHA-256 ويصرّح بحدوده وما بقي مجهولًا — Inspect binary file/linked layout without executing the selected object.
 
-**متى:** lawful inspection of offline layout targets you have the right to analyse; the user asks how an app/binary/site works without its source
+**متى:** عند الفحص المشروع لأهداف التخطيط دون اتصال يحق لك تحليلها، أو حين يسأل المستخدم كيف يعمل تطبيق أو ملف ثنائي أو موقع دون مصدره / lawful inspection of offline layout targets you have the right to analyse; the user asks how an app/binary/site works without its source
 
 **كيف:** `rea inspect-binary-layout <path>` --json. Needs: REA_PWNTOOLS_PYTHON with pwntools 4.15.0, pyelftools 0.33, Unicorn 2.1.2. Tried here: needs REA_PWNTOOLS_PYTHON (pwntools 4.15 + pyelftools + Unicorn). Evidence first: observations ≠ inferences ≠ unknowns; never claim equivalence from pseudocode; rights to inspect the target are required.
 
@@ -4622,7 +4622,7 @@
 
 **ما هي:** فحص AOT Dart: أمر `rea inspect-dart-aot` من REA v6.7.0 (أندرويد وFlutter)؛ يعيد سجل أدلة JSON بمعرّف وبصمة SHA-256 ويصرّح بحدوده وما بقي مجهولًا — Inspect one ABI's Dart AOT snapshot: sections, headers, and the string pool.
 
-**متى:** lawful inspection of static APK parsing targets you have the right to analyse; the user asks how an app/binary/site works without its source
+**متى:** عند الفحص المشروع لأهداف التحليل الساكن لـ APK يحق لك تحليلها، أو حين يسأل المستخدم كيف يعمل تطبيق أو ملف ثنائي أو موقع دون مصدره / lawful inspection of static APK parsing targets you have the right to analyse; the user asks how an app/binary/site works without its source
 
 **كيف:** `rea inspect-dart-aot <path>` --json · options: --abi. Needs: a standalone APK; pure parsing, no engine. Evidence first: observations ≠ inferences ≠ unknowns; never claim equivalence from pseudocode; rights to inspect the target are required.
 
@@ -4841,7 +4841,7 @@
 
 **ما هي:** فحص حزمة الأدلة: أمر `rea inspect-evidence-bundle` من REA v6.7.0 (الأدلة والنواة)؛ يعيد سجل أدلة JSON بمعرّف وبصمة SHA-256 ويصرّح بحدوده وما بقي مجهولًا — Inspect complete or selected discovery metadata from a local Evidence bundle.
 
-**متى:** lawful inspection of Evidence & core targets you have the right to analyse; the user asks how an app/binary/site works without its source
+**متى:** عند الفحص المشروع لأهداف الأدلة والنواة يحق لك تحليلها، أو حين يسأل المستخدم كيف يعمل تطبيق أو ملف ثنائي أو موقع دون مصدره / lawful inspection of Evidence & core targets you have the right to analyse; the user asks how an app/binary/site works without its source
 
 **كيف:** `rea inspect-evidence-bundle <inputJson>` --json. Needs: REA alone. Evidence first: observations ≠ inferences ≠ unknowns; never claim equivalence from pseudocode; rights to inspect the target are required.
 
@@ -4913,7 +4913,7 @@
 
 **ما هي:** فحص واجهة EVM: أمر `rea inspect-evm-interface` من REA v6.7.0 (الأدلة والنواة)؛ يعيد سجل أدلة JSON بمعرّف وبصمة SHA-256 ويصرّح بحدوده وما بقي مجهولًا — Infer interface candidates from explicit local EVM bytecode.
 
-**متى:** lawful inspection of Evidence & core targets you have the right to analyse; the user asks how an app/binary/site works without its source
+**متى:** عند الفحص المشروع لأهداف الأدلة والنواة يحق لك تحليلها، أو حين يسأل المستخدم كيف يعمل تطبيق أو ملف ثنائي أو موقع دون مصدره / lawful inspection of Evidence & core targets you have the right to analyse; the user asks how an app/binary/site works without its source
 
 **كيف:** `rea inspect-evm-interface <path> <encoding>` --json. Needs: REA alone. Verified here on 346-byte hex bytecode file: evmole@0.9.3 interface candidates, discovery_completeness reported. Evidence first: observations ≠ inferences ≠ unknowns; never claim equivalence from pseudocode; rights to inspect the target are required.
 
@@ -4987,7 +4987,7 @@
 
 **ما هي:** فحص المناطق فيرموير: أمر `rea inspect-firmware-regions` من REA v6.7.0 (الفيرموير)؛ يعيد سجل أدلة JSON بمعرّف وبصمة SHA-256 ويصرّح بحدوده وما بقي مجهولًا — Inspect firmware signature candidates without extracting them.
 
-**متى:** lawful inspection of firmware targets you have the right to analyse; the user asks how an app/binary/site works without its source
+**متى:** عند الفحص المشروع لأهداف البرمجيات الثابتة (firmware) يحق لك تحليلها، أو حين يسأل المستخدم كيف يعمل تطبيق أو ملف ثنائي أو موقع دون مصدره / lawful inspection of firmware targets you have the right to analyse; the user asks how an app/binary/site works without its source
 
 **كيف:** `rea inspect-firmware-regions <path>` --json. Needs: Linux + REA_BINWALK_COMMAND (Binwalk) or Unblob. Tried here: needs REA_BINWALK_COMMAND. Evidence first: observations ≠ inferences ≠ unknowns; never claim equivalence from pseudocode; rights to inspect the target are required.
 
@@ -5060,7 +5060,7 @@
 
 **ما هي:** فحص ثنائي Go: أمر `rea inspect-go-binary` من REA v6.7.0 (الأدلة والنواة)؛ يعيد سجل أدلة JSON بمعرّف وبصمة SHA-256 ويصرّح بحدوده وما بقي مجهولًا — Inspect embedded Go compiler, modules and build settings without target execution.
 
-**متى:** lawful inspection of Evidence & core targets you have the right to analyse; the user asks how an app/binary/site works without its source
+**متى:** عند الفحص المشروع لأهداف الأدلة والنواة يحق لك تحليلها، أو حين يسأل المستخدم كيف يعمل تطبيق أو ملف ثنائي أو موقع دون مصدره / lawful inspection of Evidence & core targets you have the right to analyse; the user asks how an app/binary/site works without its source
 
 **كيف:** `rea inspect-go-binary <path>` --json. Needs: REA alone. Verified here on /usr/local/bin/gh: go1.26.1, module github.com/cli/cli/v2 v2.89.0 with dependency list, limitations stated. Evidence first: observations ≠ inferences ≠ unknowns; never claim equivalence from pseudocode; rights to inspect the target are required.
 
@@ -5355,7 +5355,7 @@
 
 **ما هي:** فحص قطعة مُدار (.NET): أمر `rea inspect-managed-artifact` من REA v6.7.0 (.NET)؛ يعيد سجل أدلة JSON بمعرّف وبصمة SHA-256 ويصرّح بحدوده وما بقي مجهولًا — Inspect PE/CLI identity without loading target code.
 
-**متى:** lawful inspection of managed code targets you have the right to analyse; the user asks how an app/binary/site works without its source
+**متى:** عند الفحص المشروع لأهداف الشيفرة المُدارة يحق لك تحليلها، أو حين يسأل المستخدم كيف يعمل تطبيق أو ملف ثنائي أو موقع دون مصدره / lawful inspection of managed code targets you have the right to analyse; the user asks how an app/binary/site works without its source
 
 **كيف:** `rea inspect-managed-artifact <path>` --json. Needs: a PE/CLI assembly; built-in rea-dotnet-static provider. Tried here: target was an ELF, not PE/CLI → capability_unavailable (correct refusal). Evidence first: observations ≠ inferences ≠ unknowns; never claim equivalence from pseudocode; rights to inspect the target are required.
 
@@ -5427,7 +5427,7 @@
 
 **ما هي:** فحص الأعضاء مُدار (.NET): أمر `rea inspect-managed-members` من REA v6.7.0 (.NET)؛ يعيد سجل أدلة JSON بمعرّف وبصمة SHA-256 ويصرّح بحدوده وما بقي مجهولًا — Inspect PE/CLI metadata members, signatures, CIL anchors, and ldstr string literals without loading target code.
 
-**متى:** lawful inspection of managed code targets you have the right to analyse; the user asks how an app/binary/site works without its source
+**متى:** عند الفحص المشروع لأهداف الشيفرة المُدارة يحق لك تحليلها، أو حين يسأل المستخدم كيف يعمل تطبيق أو ملف ثنائي أو موقع دون مصدره / lawful inspection of managed code targets you have the right to analyse; the user asks how an app/binary/site works without its source
 
 **كيف:** `rea inspect-managed-members <path>` --json · options: --type. Needs: a PE/CLI assembly; built-in rea-dotnet-static provider. Evidence first: observations ≠ inferences ≠ unknowns; never claim equivalence from pseudocode; rights to inspect the target are required.
 
@@ -5499,7 +5499,7 @@
 
 **ما هي:** فحص الحدود أصلية مُدار (.NET): أمر `rea inspect-managed-native-boundaries` من REA v6.7.0 (.NET)؛ يعيد سجل أدلة JSON بمعرّف وبصمة SHA-256 ويصرّح بحدوده وما بقي مجهولًا — Inspect PE/CLI PInvoke and native implementation boundary declarations without loading target code.
 
-**متى:** lawful inspection of managed code targets you have the right to analyse; the user asks how an app/binary/site works without its source
+**متى:** عند الفحص المشروع لأهداف الشيفرة المُدارة يحق لك تحليلها، أو حين يسأل المستخدم كيف يعمل تطبيق أو ملف ثنائي أو موقع دون مصدره / lawful inspection of managed code targets you have the right to analyse; the user asks how an app/binary/site works without its source
 
 **كيف:** `rea inspect-managed-native-boundaries <path>` --json. Needs: a PE/CLI assembly; built-in rea-dotnet-static provider. Evidence first: observations ≠ inferences ≠ unknowns; never claim equivalence from pseudocode; rights to inspect the target are required.
 
@@ -5571,7 +5571,7 @@
 
 **ما هي:** فحص واجهة برمجية أصلية: أمر `rea inspect-native-api` من REA v6.7.0 (الثنائيات الأصلية)؛ يعيد سجل أدلة JSON بمعرّف وبصمة SHA-256 ويصرّح بحدوده وما بقي مجهولًا — Reconstruct one native function API boundary with evidence.
 
-**متى:** lawful inspection of native binaries targets you have the right to analyse; the user asks how an app/binary/site works without its source
+**متى:** عند الفحص المشروع لأهداف ملفات تنفيذية أصلية يحق لك تحليلها، أو حين يسأل المستخدم كيف يعمل تطبيق أو ملف ثنائي أو موقع دون مصدره / lawful inspection of native binaries targets you have the right to analyse; the user asks how an app/binary/site works without its source
 
 **كيف:** `rea inspect-native-api <path> <address>` --json · options: --snapshot, --target-format, --architecture, --entry-point, --provider. Needs: a deep-analysis provider: Hopper (rea setup), Ghidra 12.1 (GHIDRA_INSTALL_DIR), IDA MCP, or Kuna. Evidence first: observations ≠ inferences ≠ unknowns; never claim equivalence from pseudocode; rights to inspect the target are required.
 
@@ -5644,7 +5644,7 @@
 
 **ما هي:** فحص نوع بيانات أصلية: أمر `rea inspect-native-data-type` من REA v6.7.0 (الثنائيات الأصلية)؛ يعيد سجل أدلة JSON بمعرّف وبصمة SHA-256 ويصرّح بحدوده وما بقي مجهولًا — Inspect one recovered database type or typed data object.
 
-**متى:** lawful inspection of native binaries targets you have the right to analyse; the user asks how an app/binary/site works without its source
+**متى:** عند الفحص المشروع لأهداف ملفات تنفيذية أصلية يحق لك تحليلها، أو حين يسأل المستخدم كيف يعمل تطبيق أو ملف ثنائي أو موقع دون مصدره / lawful inspection of native binaries targets you have the right to analyse; the user asks how an app/binary/site works without its source
 
 **كيف:** `rea inspect-native-data-type <path>` --json · options: --type, --address, --target-format, --architecture, --entry-point, --provider. Needs: a deep-analysis provider: Hopper (rea setup), Ghidra 12.1 (GHIDRA_INSTALL_DIR), IDA MCP, or Kuna. Evidence first: observations ≠ inferences ≠ unknowns; never claim equivalence from pseudocode; rights to inspect the target are required.
 
@@ -5791,7 +5791,7 @@
 
 **ما هي:** فحص تعليمة أصلية: أمر `rea inspect-native-instruction` من REA v6.7.0 (الثنائيات الأصلية)؛ يعيد سجل أدلة JSON بمعرّف وبصمة SHA-256 ويصرّح بحدوده وما بقي مجهولًا — Inspect one native instruction with decoded operand facts.
 
-**متى:** lawful inspection of native binaries targets you have the right to analyse; the user asks how an app/binary/site works without its source
+**متى:** عند الفحص المشروع لأهداف ملفات تنفيذية أصلية يحق لك تحليلها، أو حين يسأل المستخدم كيف يعمل تطبيق أو ملف ثنائي أو موقع دون مصدره / lawful inspection of native binaries targets you have the right to analyse; the user asks how an app/binary/site works without its source
 
 **كيف:** `rea inspect-native-instruction <path> <address>` --json · options: --target-format, --architecture, --entry-point, --provider. Needs: a deep-analysis provider: Hopper (rea setup), Ghidra 12.1 (GHIDRA_INSTALL_DIR), IDA MCP, or Kuna. Evidence first: observations ≠ inferences ≠ unknowns; never claim equivalence from pseudocode; rights to inspect the target are required.
 
@@ -5864,7 +5864,7 @@
 
 **ما هي:** فحص صورة تحميل أصلية: أمر `rea inspect-native-load-image` من REA v6.7.0 (الثنائيات الأصلية)؛ يعيد سجل أدلة JSON بمعرّف وبصمة SHA-256 ويصرّح بحدوده وما بقي مجهولًا — Verify loaded native bytes, source mappings, relocations and entry.
 
-**متى:** lawful inspection of native binaries targets you have the right to analyse; the user asks how an app/binary/site works without its source
+**متى:** عند الفحص المشروع لأهداف ملفات تنفيذية أصلية يحق لك تحليلها، أو حين يسأل المستخدم كيف يعمل تطبيق أو ملف ثنائي أو موقع دون مصدره / lawful inspection of native binaries targets you have the right to analyse; the user asks how an app/binary/site works without its source
 
 **كيف:** `rea inspect-native-load-image <path>` --json · options: --target-format, --architecture, --entry-point, --provider. Needs: a deep-analysis provider: Hopper (rea setup), Ghidra 12.1 (GHIDRA_INSTALL_DIR), IDA MCP, or Kuna. Evidence first: observations ≠ inferences ≠ unknowns; never claim equivalence from pseudocode; rights to inspect the target are required.
 
@@ -5937,7 +5937,7 @@
 
 **ما هي:** فحص التقاط الحزم: أمر `rea inspect-packet-capture` من REA v6.7.0 (التقاط الحزم)؛ يعيد سجل أدلة JSON بمعرّف وبصمة SHA-256 ويصرّح بحدوده وما بقي مجهولًا — Inspect an existing packet capture with caller-supplied TShark.
 
-**متى:** lawful inspection of pcap targets you have the right to analyse; the user asks how an app/binary/site works without its source
+**متى:** عند الفحص المشروع لأهداف pcap يحق لك تحليلها، أو حين يسأل المستخدم كيف يعمل تطبيق أو ملف ثنائي أو موقع دون مصدره / lawful inspection of pcap targets you have the right to analyse; the user asks how an app/binary/site works without its source
 
 **كيف:** `rea inspect-packet-capture <path>` --json · options: --fields, --display_filter, --decode_as, --packet_limit, --two_pass, --match_offset, --match_limit, --all_matches. Needs: Wireshark 4.x tshark + capinfos (REA_TSHARK_COMMAND / REA_CAPINFOS_COMMAND). Evidence first: observations ≠ inferences ≠ unknowns; never claim equivalence from pseudocode; rights to inspect the target are required.
 
@@ -6010,7 +6010,7 @@
 
 **ما هي:** فحص حقول الحزم: أمر `rea inspect-packet-fields` من REA v6.7.0 (التقاط الحزم)؛ يعيد سجل أدلة JSON بمعرّف وبصمة SHA-256 ويصرّح بحدوده وما بقي مجهولًا — Search installed TShark protocol and field definitions.
 
-**متى:** lawful inspection of pcap targets you have the right to analyse; the user asks how an app/binary/site works without its source
+**متى:** عند الفحص المشروع لأهداف pcap يحق لك تحليلها، أو حين يسأل المستخدم كيف يعمل تطبيق أو ملف ثنائي أو موقع دون مصدره / lawful inspection of pcap targets you have the right to analyse; the user asks how an app/binary/site works without its source
 
 **كيف:** `rea inspect-packet-fields ` --json · options: --kind, --protocol, --query, --offset, --limit, --all. Needs: Wireshark 4.x tshark + capinfos (REA_TSHARK_COMMAND / REA_CAPINFOS_COMMAND). Evidence first: observations ≠ inferences ≠ unknowns; never claim equivalence from pseudocode; rights to inspect the target are required. Verified here 2026-10-18: listed tcp protocol registrations (read-only).
 
@@ -6085,7 +6085,7 @@
 
 **ما هي:** فحص التقاط pcap: أمر `rea inspect-pcap-capture` من REA v6.7.0 (التقاط الحزم)؛ يعيد سجل أدلة JSON بمعرّف وبصمة SHA-256 ويصرّح بحدوده وما بقي مجهولًا — Inspect one pcap/pcapng capture: endpoints, DNS, TLS SNI, and protocol distribution.
 
-**متى:** lawful inspection of pcap targets you have the right to analyse; the user asks how an app/binary/site works without its source
+**متى:** عند الفحص المشروع لأهداف pcap يحق لك تحليلها، أو حين يسأل المستخدم كيف يعمل تطبيق أو ملف ثنائي أو موقع دون مصدره / lawful inspection of pcap targets you have the right to analyse; the user asks how an app/binary/site works without its source
 
 **كيف:** `rea inspect-pcap-capture <path>` --json. Needs: Wireshark 4.x tshark + capinfos (REA_TSHARK_COMMAND / REA_CAPINFOS_COMMAND). Evidence first: observations ≠ inferences ≠ unknowns; never claim equivalence from pseudocode; rights to inspect the target are required.
 
@@ -6158,7 +6158,7 @@
 
 **ما هي:** فحص عميل pcap: أمر `rea inspect-pcap-client` من REA v6.7.0 (التقاط الحزم)؛ يعيد سجل أدلة JSON بمعرّف وبصمة SHA-256 ويصرّح بحدوده وما بقي مجهولًا — Inspect the caller-selected tshark and capinfos binaries without reading a capture.
 
-**متى:** lawful inspection of pcap targets you have the right to analyse; the user asks how an app/binary/site works without its source
+**متى:** عند الفحص المشروع لأهداف pcap يحق لك تحليلها، أو حين يسأل المستخدم كيف يعمل تطبيق أو ملف ثنائي أو موقع دون مصدره / lawful inspection of pcap targets you have the right to analyse; the user asks how an app/binary/site works without its source
 
 **كيف:** `rea inspect-pcap-client ` --json. Needs: Wireshark 4.x tshark + capinfos (REA_TSHARK_COMMAND / REA_CAPINFOS_COMMAND). Tried here: needs tshark/capinfos (Wireshark 4.x). Evidence first: observations ≠ inferences ≠ unknowns; never claim equivalence from pseudocode; rights to inspect the target are required. Verified here 2026-10-18: TShark 4.2.2 + capinfos detected (read-only).
 
@@ -6379,7 +6379,7 @@
 
 **ما هي:** فحص انهيار مسجّل: أمر `rea inspect-recorded-crash` من REA v6.7.0 (الانهيارات المسجلة)؛ يعيد سجل أدلة JSON بمعرّف وبصمة SHA-256 ويصرّح بحدوده وما بقي مجهولًا — Inspect supplied core registers/signals and optional debugger mapping evidence.
 
-**متى:** lawful inspection of recorded crashes targets you have the right to analyse; the user asks how an app/binary/site works without its source
+**متى:** عند الفحص المشروع لأهداف الانهيارات المسجَّلة يحق لك تحليلها، أو حين يسأل المستخدم كيف يعمل تطبيق أو ملف ثنائي أو موقع دون مصدره / lawful inspection of recorded crashes targets you have the right to analyse; the user asks how an app/binary/site works without its source
 
 **كيف:** `rea inspect-recorded-crash <path>` --json · options: --debuggerContext. Needs: a saved Linux ELF64 core; optional BYO GDB/pwndbg. Evidence first: observations ≠ inferences ≠ unknowns; never claim equivalence from pseudocode; rights to inspect the target are required.
 
@@ -6452,7 +6452,7 @@
 
 **ما هي:** فحص ثنائي Rust: أمر `rea inspect-rust-binary` من REA v6.7.0 (الأدلة والنواة)؛ يعيد سجل أدلة JSON بمعرّف وبصمة SHA-256 ويصرّح بحدوده وما بقي مجهولًا — Inspect an embedded cargo-auditable Rust dependency list without target execution.
 
-**متى:** lawful inspection of Evidence & core targets you have the right to analyse; the user asks how an app/binary/site works without its source
+**متى:** عند الفحص المشروع لأهداف الأدلة والنواة يحق لك تحليلها، أو حين يسأل المستخدم كيف يعمل تطبيق أو ملف ثنائي أو موقع دون مصدره / lawful inspection of Evidence & core targets you have the right to analyse; the user asks how an app/binary/site works without its source
 
 **كيف:** `rea inspect-rust-binary <path>` --json. Needs: REA alone. Verified here on /usr/bin/rg: ELF amd64; no cargo-auditable section → auditable_metadata null (honest absence). Evidence first: observations ≠ inferences ≠ unknowns; never claim equivalence from pseudocode; rights to inspect the target are required.
 
@@ -6526,7 +6526,7 @@
 
 **ما هي:** فحص مفككات إشارة: أمر `rea inspect-signal-decoders` من REA v6.7.0 (تسجيلات الإشارة)؛ يعيد سجل أدلة JSON بمعرّف وبصمة SHA-256 ويصرّح بحدوده وما بقي مجهولًا — Search installed sigrok decoders or selected decoder help.
 
-**متى:** lawful inspection of sigrok targets you have the right to analyse; the user asks how an app/binary/site works without its source
+**متى:** عند الفحص المشروع لأهداف sigrok يحق لك تحليلها، أو حين يسأل المستخدم كيف يعمل تطبيق أو ملف ثنائي أو موقع دون مصدره / lawful inspection of sigrok targets you have the right to analyse; the user asks how an app/binary/site works without its source
 
 **كيف:** `rea inspect-signal-decoders ` --json · options: --decoder, --query, --offset, --limit, --all. Needs: sigrok-cli with decoders. Evidence first: observations ≠ inferences ≠ unknowns; never claim equivalence from pseudocode; rights to inspect the target are required. Verified here 2026-10-18: found uart among 111 decoders (read-only).
 
@@ -6675,7 +6675,7 @@
 
 **ما هي:** فحص database SQLite: أمر `rea inspect-sqlite-database` من REA v6.7.0 (SQLite)؛ يعيد سجل أدلة JSON بمعرّف وبصمة SHA-256 ويصرّح بحدوده وما بقي مجهولًا — Inspect SQLite schema and optional ordinary-table rows from a local snapshot.
 
-**متى:** lawful inspection of SQLite targets you have the right to analyse; the user asks how an app/binary/site works without its source
+**متى:** عند الفحص المشروع لأهداف SQLite يحق لك تحليلها، أو حين يسأل المستخدم كيف يعمل تطبيق أو ملف ثنائي أو موقع دون مصدره / lawful inspection of SQLite targets you have the right to analyse; the user asks how an app/binary/site works without its source
 
 **كيف:** `rea inspect-sqlite-database <path>` --json · options: --table, --column, --schemaScope, --rowLimit. Needs: Node 24.15+ or 26+ (native DatabaseSync.limits). Tried here: needs Node 24.15+ DatabaseSync.limits (this box runs Node 22). Evidence first: observations ≠ inferences ≠ unknowns; never claim equivalence from pseudocode; rights to inspect the target are required.
 
@@ -6747,7 +6747,7 @@
 
 **ما هي:** فحص قطعة WASM: أمر `rea inspect-wasm-artifact` من REA v6.7.0 (WebAssembly)؛ يعيد سجل أدلة JSON بمعرّف وبصمة SHA-256 ويصرّح بحدوده وما بقي مجهولًا — Inspect an explicit local WASM artifact with WABT.
 
-**متى:** lawful inspection of WebAssembly targets you have the right to analyse; the user asks how an app/binary/site works without its source
+**متى:** عند الفحص المشروع لأهداف WebAssembly يحق لك تحليلها، أو حين يسأل المستخدم كيف يعمل تطبيق أو ملف ثنائي أو موقع دون مصدره / lawful inspection of WebAssembly targets you have the right to analyse; the user asks how an app/binary/site works without its source
 
 **كيف:** `rea inspect-wasm-artifact <path>` --json · options: --glue_paths, --candidate_paths. Needs: WABT 1.0.42 (REA_WABT_BIN_DIRECTORY). Tried here: needs REA_WABT_BIN_DIRECTORY (WABT 1.0.42). Evidence first: observations ≠ inferences ≠ unknowns; never claim equivalence from pseudocode; rights to inspect the target are required.
 
@@ -6820,7 +6820,7 @@
 
 **ما هي:** فحص مستمعات الأحداث الأحداث ويب: أمر `rea inspect-web-event-listeners` من REA v6.7.0 (جافاسكربت والويب)؛ يعيد سجل أدلة JSON بمعرّف وبصمة SHA-256 ويصرّح بحدوده وما بقي مجهولًا — Inspect native listener source locations on the first main-document CSS match.
 
-**متى:** lawful inspection of JavaScript & web targets you have the right to analyse; the user asks how an app/binary/site works without its source
+**متى:** عند الفحص المشروع لأهداف JavaScript والويب يحق لك تحليلها، أو حين يسأل المستخدم كيف يعمل تطبيق أو ملف ثنائي أو موقع دون مصدره / lawful inspection of JavaScript & web targets you have the right to analyse; the user asks how an app/binary/site works without its source
 
 **كيف:** `rea inspect-web-event-listeners <endpoint> <targetId> <selector>` --json · options: --allowedOrigins. Needs: REA alone for static work; a loopback CDP browser (Chromium/Playwright) for observation; Wakaru only for recover-javascript-sources. Verified here on same page, selector body: native listener source locations. Evidence first: observations ≠ inferences ≠ unknowns; never claim equivalence from pseudocode; rights to inspect the target are required.
 
@@ -6896,7 +6896,7 @@
 
 **ما هي:** فحص التقاط الشبكة ويب: أمر `rea inspect-web-network-capture` من REA v6.7.0 (جافاسكربت والويب)؛ يعيد سجل أدلة JSON بمعرّف وبصمة SHA-256 ويصرّح بحدوده وما بقي مجهولًا — Inspect retained HAR, native mitmproxy, Fiddler SAZ or aioquic qlog records without fetching recorded URLs.
 
-**متى:** lawful inspection of JavaScript & web targets you have the right to analyse; the user asks how an app/binary/site works without its source
+**متى:** عند الفحص المشروع لأهداف JavaScript والويب يحق لك تحليلها، أو حين يسأل المستخدم كيف يعمل تطبيق أو ملف ثنائي أو موقع دون مصدره / lawful inspection of JavaScript & web targets you have the right to analyse; the user asks how an app/binary/site works without its source
 
 **كيف:** `rea inspect-web-network-capture <capturePath> <format>` --json · options: --record, --sensitiveValue. Needs: REA alone for static work; a loopback CDP browser (Chromium/Playwright) for observation; Wakaru only for recover-javascript-sources. Evidence first: observations ≠ inferences ≠ unknowns; never claim equivalence from pseudocode; rights to inspect the target are required.
 
@@ -6970,7 +6970,7 @@
 
 **ما هي:** فحص صفحة ويب: أمر `rea inspect-web-page` من REA v6.7.0 (جافاسكربت والويب)؛ يعيد سجل أدلة JSON بمعرّف وبصمة SHA-256 ويصرّح بحدوده وما بقي مجهولًا — Passively inspect one page through CDP, defaulting to its current origin.
 
-**متى:** lawful inspection of JavaScript & web targets you have the right to analyse; the user asks how an app/binary/site works without its source
+**متى:** عند الفحص المشروع لأهداف JavaScript والويب يحق لك تحليلها، أو حين يسأل المستخدم كيف يعمل تطبيق أو ملف ثنائي أو موقع دون مصدره / lawful inspection of JavaScript & web targets you have the right to analyse; the user asks how an app/binary/site works without its source
 
 **كيف:** `rea inspect-web-page <endpoint> <targetId>` --json · options: --allowedOrigins, --observationMs, --includeAccessibilityText, --includeConsoleText, --includeJsonBodyShapes, --includeWebsocketShapes, --includeScriptSources, --includeStorageKeys. Needs: REA alone for static work; a loopback CDP browser (Chromium/Playwright) for observation; Wakaru only for recover-javascript-sources. Verified here on http://127.0.0.1:8765/index.html (repo web/ served locally): frames, dom, accessibility, scripts, resources, network, console, workers. Evidence first: observations ≠ inferences ≠ unknowns; never claim equivalence from pseudocode; rights to inspect the target are required.
 
@@ -7046,7 +7046,7 @@
 
 **ما هي:** فحص objdump بـ: أمر `rea inspect-with-objdump` من REA v6.7.0 (GNU objdump)؛ يعيد سجل أدلة JSON بمعرّف وبصمة SHA-256 ويصرّح بحدوده وما بقي مجهولًا — Inspect a local artifact with GNU objdump and retain its raw output as Evidence.
 
-**متى:** lawful inspection of GNU objdump targets you have the right to analyse; the user asks how an app/binary/site works without its source
+**متى:** عند الفحص المشروع لأهداف GNU objdump يحق لك تحليلها، أو حين يسأل المستخدم كيف يعمل تطبيق أو ملف ثنائي أو موقع دون مصدره / lawful inspection of GNU objdump targets you have the right to analyse; the user asks how an app/binary/site works without its source
 
 **كيف:** `rea inspect-with-objdump <path> <operation>` --json · options: --followDebugLinks. Needs: GNU binutils objdump on PATH. Verified here on /usr/bin/rg file_headers: GNU objdump raw output retained as Evidence. Evidence first: observations ≠ inferences ≠ unknowns; never claim equivalence from pseudocode; rights to inspect the target are required.
 
@@ -7121,7 +7121,7 @@
 
 **ما هي:** تثبيت حزمة ADB: أمر `rea install-adb-package` من REA v6.7.0 (أندرويد والأجهزة)؛ يعيد سجل أدلة JSON بمعرّف وبصمة SHA-256 ويصرّح بحدوده وما بقي مجهولًا — Install one local APK; --replace requests reinstall mode to keep existing app data.
 
-**متى:** lawful inspection of Android, apktool & adb targets you have the right to analyse; the user asks how an app/binary/site works without its source
+**متى:** عند الفحص المشروع لأهداف Android وapktool وadb يحق لك تحليلها، أو حين يسأل المستخدم كيف يعمل تطبيق أو ملف ثنائي أو موقع دون مصدره / lawful inspection of Android, apktool & adb targets you have the right to analyse; the user asks how an app/binary/site works without its source
 
 **كيف:** `rea install-adb-package <serial> <apk-path>` --json · options: --replace. Needs: adb-authorized Android device / jadx-headless-mcp 0.7.1 JAR (REA_JADX_MCP_JAR) / apktool launcher; REA never installs them. Evidence first: observations ≠ inferences ≠ unknowns; never claim equivalence from pseudocode; rights to inspect the target are required.
 
@@ -7195,7 +7195,7 @@
 
 **ما هي:** قراءة التعليمات: أمر `rea instructions` من REA v6.7.0 (الثنائيات الأصلية)؛ يعيد سجل أدلة JSON بمعرّف وبصمة SHA-256 ويصرّح بحدوده وما بقي مجهولًا — Read every raw instruction without decompiling.
 
-**متى:** lawful inspection of native binaries targets you have the right to analyse; the user asks how an app/binary/site works without its source
+**متى:** عند الفحص المشروع لأهداف ملفات تنفيذية أصلية يحق لك تحليلها، أو حين يسأل المستخدم كيف يعمل تطبيق أو ملف ثنائي أو موقع دون مصدره / lawful inspection of native binaries targets you have the right to analyse; the user asks how an app/binary/site works without its source
 
 **كيف:** `rea instructions <path> [address]` --json · options: --procedure, --snapshot, --target-format, --architecture, --entry-point, --provider. Needs: a deep-analysis provider: Hopper (rea setup), Ghidra 12.1 (GHIDRA_INSTALL_DIR), IDA MCP, or Kuna. Evidence first: observations ≠ inferences ≠ unknowns; never claim equivalence from pseudocode; rights to inspect the target are required.
 
@@ -7341,7 +7341,7 @@
 
 **ما هي:** سرد الأجهزة ADB: أمر `rea list-adb-devices` من REA v6.7.0 (أندرويد والأجهزة)؛ يعيد سجل أدلة JSON بمعرّف وبصمة SHA-256 ويصرّح بحدوده وما بقي مجهولًا — List attached devices with serial, state, transport, and inferred kind.
 
-**متى:** lawful inspection of Android, apktool & adb targets you have the right to analyse; the user asks how an app/binary/site works without its source
+**متى:** عند الفحص المشروع لأهداف Android وapktool وadb يحق لك تحليلها، أو حين يسأل المستخدم كيف يعمل تطبيق أو ملف ثنائي أو موقع دون مصدره / lawful inspection of Android, apktool & adb targets you have the right to analyse; the user asks how an app/binary/site works without its source
 
 **كيف:** `rea list-adb-devices ` --json. Needs: adb-authorized Android device / jadx-headless-mcp 0.7.1 JAR (REA_JADX_MCP_JAR) / apktool launcher; REA never installs them. Evidence first: observations ≠ inferences ≠ unknowns; never claim equivalence from pseudocode; rights to inspect the target are required.
 
@@ -7415,7 +7415,7 @@
 
 **ما هي:** سرد مجلد ADB: أمر `rea list-adb-directory` من REA v6.7.0 (أندرويد والأجهزة)؛ يعيد سجل أدلة JSON بمعرّف وبصمة SHA-256 ويصرّح بحدوده وما بقي مجهولًا — List one device directory with kinds, permissions, and sizes.
 
-**متى:** lawful inspection of Android, apktool & adb targets you have the right to analyse; the user asks how an app/binary/site works without its source
+**متى:** عند الفحص المشروع لأهداف Android وapktool وadb يحق لك تحليلها، أو حين يسأل المستخدم كيف يعمل تطبيق أو ملف ثنائي أو موقع دون مصدره / lawful inspection of Android, apktool & adb targets you have the right to analyse; the user asks how an app/binary/site works without its source
 
 **كيف:** `rea list-adb-directory <serial> <device-path>` --json. Needs: adb-authorized Android device / jadx-headless-mcp 0.7.1 JAR (REA_JADX_MCP_JAR) / apktool launcher; REA never installs them. Evidence first: observations ≠ inferences ≠ unknowns; never claim equivalence from pseudocode; rights to inspect the target are required.
 
@@ -7489,7 +7489,7 @@
 
 **ما هي:** سرد الميزات ADB: أمر `rea list-adb-features` من REA v6.7.0 (أندرويد والأجهزة)؛ يعيد سجل أدلة JSON بمعرّف وبصمة SHA-256 ويصرّح بحدوده وما بقي مجهولًا — List the device's declared hardware and software features.
 
-**متى:** lawful inspection of Android, apktool & adb targets you have the right to analyse; the user asks how an app/binary/site works without its source
+**متى:** عند الفحص المشروع لأهداف Android وapktool وadb يحق لك تحليلها، أو حين يسأل المستخدم كيف يعمل تطبيق أو ملف ثنائي أو موقع دون مصدره / lawful inspection of Android, apktool & adb targets you have the right to analyse; the user asks how an app/binary/site works without its source
 
 **كيف:** `rea list-adb-features <serial>` --json. Needs: adb-authorized Android device / jadx-headless-mcp 0.7.1 JAR (REA_JADX_MCP_JAR) / apktool launcher; REA never installs them. Evidence first: observations ≠ inferences ≠ unknowns; never claim equivalence from pseudocode; rights to inspect the target are required.
 
@@ -7563,7 +7563,7 @@
 
 **ما هي:** سرد الحزم ADB: أمر `rea list-adb-packages` من REA v6.7.0 (أندرويد والأجهزة)؛ يعيد سجل أدلة JSON بمعرّف وبصمة SHA-256 ويصرّح بحدوده وما بقي مجهولًا — List installed packages on one device with base APK device paths.
 
-**متى:** lawful inspection of Android, apktool & adb targets you have the right to analyse; the user asks how an app/binary/site works without its source
+**متى:** عند الفحص المشروع لأهداف Android وapktool وadb يحق لك تحليلها، أو حين يسأل المستخدم كيف يعمل تطبيق أو ملف ثنائي أو موقع دون مصدره / lawful inspection of Android, apktool & adb targets you have the right to analyse; the user asks how an app/binary/site works without its source
 
 **كيف:** `rea list-adb-packages <serial>` --json · options: --scope. Needs: adb-authorized Android device / jadx-headless-mcp 0.7.1 JAR (REA_JADX_MCP_JAR) / apktool launcher; REA never installs them. Evidence first: observations ≠ inferences ≠ unknowns; never claim equivalence from pseudocode; rights to inspect the target are required.
 
@@ -7637,7 +7637,7 @@
 
 **ما هي:** سرد العمليات ADB: أمر `rea list-adb-processes` من REA v6.7.0 (أندرويد والأجهزة)؛ يعيد سجل أدلة JSON بمعرّف وبصمة SHA-256 ويصرّح بحدوده وما بقي مجهولًا — List running processes exactly as ps -A reports them.
 
-**متى:** lawful inspection of Android, apktool & adb targets you have the right to analyse; the user asks how an app/binary/site works without its source
+**متى:** عند الفحص المشروع لأهداف Android وapktool وadb يحق لك تحليلها، أو حين يسأل المستخدم كيف يعمل تطبيق أو ملف ثنائي أو موقع دون مصدره / lawful inspection of Android, apktool & adb targets you have the right to analyse; the user asks how an app/binary/site works without its source
 
 **كيف:** `rea list-adb-processes <serial>` --json. Needs: adb-authorized Android device / jadx-headless-mcp 0.7.1 JAR (REA_JADX_MCP_JAR) / apktool launcher; REA never installs them. Evidence first: observations ≠ inferences ≠ unknowns; never claim equivalence from pseudocode; rights to inspect the target are required.
 
@@ -7711,7 +7711,7 @@
 
 **ما هي:** سرد الخدمات ADB: أمر `rea list-adb-services` من REA v6.7.0 (أندرويد والأجهزة)؛ يعيد سجل أدلة JSON بمعرّف وبصمة SHA-256 ويصرّح بحدوده وما بقي مجهولًا — List the device's binder services and interfaces.
 
-**متى:** lawful inspection of Android, apktool & adb targets you have the right to analyse; the user asks how an app/binary/site works without its source
+**متى:** عند الفحص المشروع لأهداف Android وapktool وadb يحق لك تحليلها، أو حين يسأل المستخدم كيف يعمل تطبيق أو ملف ثنائي أو موقع دون مصدره / lawful inspection of Android, apktool & adb targets you have the right to analyse; the user asks how an app/binary/site works without its source
 
 **كيف:** `rea list-adb-services <serial>` --json. Needs: adb-authorized Android device / jadx-headless-mcp 0.7.1 JAR (REA_JADX_MCP_JAR) / apktool launcher; REA never installs them. Evidence first: observations ≠ inferences ≠ unknowns; never claim equivalence from pseudocode; rights to inspect the target are required.
 
@@ -7859,7 +7859,7 @@
 
 **ما هي:** سرد الأهداف المتصفح: أمر `rea list-browser-targets` من REA v6.7.0 (جافاسكربت والويب)؛ يعيد سجل أدلة JSON بمعرّف وبصمة SHA-256 ويصرّح بحدوده وما بقي مجهولًا — List page targets from a selected loopback CDP browser, optionally filtered by origin.
 
-**متى:** lawful inspection of JavaScript & web targets you have the right to analyse; the user asks how an app/binary/site works without its source
+**متى:** عند الفحص المشروع لأهداف JavaScript والويب يحق لك تحليلها، أو حين يسأل المستخدم كيف يعمل تطبيق أو ملف ثنائي أو موقع دون مصدره / lawful inspection of JavaScript & web targets you have the right to analyse; the user asks how an app/binary/site works without its source
 
 **كيف:** `rea list-browser-targets <endpoint>` --json · options: --allowedOrigins. Needs: REA alone for static work; a loopback CDP browser (Chromium/Playwright) for observation; Wakaru only for recover-javascript-sources. Verified here on headless Chromium 141 on 127.0.0.1:9333: page target listed; file:// target excluded as unsupported_url. Evidence first: observations ≠ inferences ≠ unknowns; never claim equivalence from pseudocode; rights to inspect the target are required.
 
@@ -7935,7 +7935,7 @@
 
 **ما هي:** سرد الجلسات cutter: أمر `rea list-cutter-sessions` من REA v6.7.0 (Rizin / Cutter)؛ يعيد سجل أدلة JSON بمعرّف وبصمة SHA-256 ويصرّح بحدوده وما بقي مجهولًا — List live Cutter instances connected through the REA Python plugin bridge.
 
-**متى:** lawful inspection of Rizin / Cutter targets you have the right to analyse; the user asks how an app/binary/site works without its source
+**متى:** عند الفحص المشروع لأهداف Rizin / Cutter يحق لك تحليلها، أو حين يسأل المستخدم كيف يعمل تطبيق أو ملف ثنائي أو موقع دون مصدره / lawful inspection of Rizin / Cutter targets you have the right to analyse; the user asks how an app/binary/site works without its source
 
 **كيف:** `rea list-cutter-sessions ` --json. Needs: Rizin or a live Cutter with the REA Python plugin bridge. Evidence first: observations ≠ inferences ≠ unknowns; never claim equivalence from pseudocode; rights to inspect the target are required.
 
@@ -8373,7 +8373,7 @@
 
 **ما هي:** سرد المعماريات objdump: أمر `rea list-objdump-architectures` من REA v6.7.0 (GNU objdump)؛ يعيد سجل أدلة JSON بمعرّف وبصمة SHA-256 ويصرّح بحدوده وما بقي مجهولًا — List BFD targets advertised by the installed GNU objdump.
 
-**متى:** lawful inspection of GNU objdump targets you have the right to analyse; the user asks how an app/binary/site works without its source
+**متى:** عند الفحص المشروع لأهداف GNU objdump يحق لك تحليلها، أو حين يسأل المستخدم كيف يعمل تطبيق أو ملف ثنائي أو موقع دون مصدره / lawful inspection of GNU objdump targets you have the right to analyse; the user asks how an app/binary/site works without its source
 
 **كيف:** `rea list-objdump-architectures ` --json. Needs: GNU binutils objdump on PATH. Verified here on —: BFD targets of the installed objdump. Evidence first: observations ≠ inferences ≠ unknowns; never claim equivalence from pseudocode; rights to inspect the target are required.
 
@@ -8668,7 +8668,7 @@
 
 **ما هي:** مراقبة التنفيذ ويب: أمر `rea observe-web-execution` من REA v6.7.0 (جافاسكربت والويب)؛ يعيد سجل أدلة JSON بمعرّف وبصمة SHA-256 ويصرّح بحدوده وما بقي مجهولًا — Observe precise page execution; resets counters and temporarily disables optimization.
 
-**متى:** lawful inspection of JavaScript & web targets you have the right to analyse; the user asks how an app/binary/site works without its source
+**متى:** عند الفحص المشروع لأهداف JavaScript والويب يحق لك تحليلها، أو حين يسأل المستخدم كيف يعمل تطبيق أو ملف ثنائي أو موقع دون مصدره / lawful inspection of JavaScript & web targets you have the right to analyse; the user asks how an app/binary/site works without its source
 
 **كيف:** `rea observe-web-execution <endpoint> <targetId>` --json · options: --allowedOrigins, --observationMs. Needs: REA alone for static work; a loopback CDP browser (Chromium/Playwright) for observation; Wakaru only for recover-javascript-sources. Evidence first: observations ≠ inferences ≠ unknowns; never claim equivalence from pseudocode; rights to inspect the target are required.
 
@@ -8742,7 +8742,7 @@
 
 **ما هي:** مراقبة جلسة ويب: أمر `rea observe-web-session` من REA v6.7.0 (جافاسكربت والويب)؛ يعيد سجل أدلة JSON بمعرّف وبصمة SHA-256 ويصرّح بحدوده وما بقي مجهولًا — Observe user-driven page navigation during a chosen window.
 
-**متى:** lawful inspection of JavaScript & web targets you have the right to analyse; the user asks how an app/binary/site works without its source
+**متى:** عند الفحص المشروع لأهداف JavaScript والويب يحق لك تحليلها، أو حين يسأل المستخدم كيف يعمل تطبيق أو ملف ثنائي أو موقع دون مصدره / lawful inspection of JavaScript & web targets you have the right to analyse; the user asks how an app/binary/site works without its source
 
 **كيف:** `rea observe-web-session <endpoint> <targetId>` --json · options: --allowedOrigins, --observationMs. Needs: REA alone for static work; a loopback CDP browser (Chromium/Playwright) for observation; Wakaru only for recover-javascript-sources. Evidence first: observations ≠ inferences ≠ unknowns; never claim equivalence from pseudocode; rights to inspect the target are required.
 
@@ -8889,7 +8889,7 @@
 
 **ما هي:** إسقاط مخطط تطبيق أندرويد: أمر `rea project-android-application-graph` من REA v6.7.0 (الأدلة والنواة)؛ يعيد سجل أدلة JSON بمعرّف وبصمة SHA-256 ويصرّح بحدوده وما بقي مجهولًا — Project authenticated APK inventory Evidence into an Android application graph.
 
-**متى:** lawful inspection of Evidence & core targets you have the right to analyse; the user asks how an app/binary/site works without its source
+**متى:** عند الفحص المشروع لأهداف الأدلة والنواة يحق لك تحليلها، أو حين يسأل المستخدم كيف يعمل تطبيق أو ملف ثنائي أو موقع دون مصدره / lawful inspection of Evidence & core targets you have the right to analyse; the user asks how an app/binary/site works without its source
 
 **كيف:** `rea project-android-application-graph <inputJson>` --json. Needs: REA alone. Evidence first: observations ≠ inferences ≠ unknowns; never claim equivalence from pseudocode; rights to inspect the target are required.
 
@@ -9036,7 +9036,7 @@
 
 **ما هي:** إسقاط مخطط تطبيق HarmonyOS: أمر `rea project-harmony-application-graph` من REA v6.7.0 (HarmonyOS)؛ يعيد سجل أدلة JSON بمعرّف وبصمة SHA-256 ويصرّح بحدوده وما بقي مجهولًا — Project authenticated HarmonyOS HAP, HSP, or App Pack inventory Evidence into an application graph.
 
-**متى:** lawful inspection of HarmonyOS targets you have the right to analyse; the user asks how an app/binary/site works without its source
+**متى:** عند الفحص المشروع لأهداف HarmonyOS يحق لك تحليلها، أو حين يسأل المستخدم كيف يعمل تطبيق أو ملف ثنائي أو موقع دون مصدره / lawful inspection of HarmonyOS targets you have the right to analyse; the user asks how an app/binary/site works without its source
 
 **كيف:** `rea project-harmony-application-graph <inputJson>` --json. Needs: HAP/HSP/App Pack inventory Evidence. Evidence first: observations ≠ inferences ≠ unknowns; never claim equivalence from pseudocode; rights to inspect the target are required.
 
@@ -9108,7 +9108,7 @@
 
 **ما هي:** إسقاط مخطط تطبيق مُدار (.NET): أمر `rea project-managed-application-graph` من REA v6.7.0 (.NET)؛ يعيد سجل أدلة JSON بمعرّف وبصمة SHA-256 ويصرّح بحدوده وما بقي مجهولًا — Project authenticated managed static Evidence into an application graph.
 
-**متى:** lawful inspection of managed code targets you have the right to analyse; the user asks how an app/binary/site works without its source
+**متى:** عند الفحص المشروع لأهداف الشيفرة المُدارة يحق لك تحليلها، أو حين يسأل المستخدم كيف يعمل تطبيق أو ملف ثنائي أو موقع دون مصدره / lawful inspection of managed code targets you have the right to analyse; the user asks how an app/binary/site works without its source
 
 **كيف:** `rea project-managed-application-graph <inputJson>` --json. Needs: a PE/CLI assembly; built-in rea-dotnet-static provider. Evidence first: observations ≠ inferences ≠ unknowns; never claim equivalence from pseudocode; rights to inspect the target are required.
 
@@ -9180,7 +9180,7 @@
 
 **ما هي:** المزودون المهيّأون: أمر `rea providers` من REA v6.7.0 (الأدلة والنواة)؛ يعيد سجل أدلة JSON بمعرّف وبصمة SHA-256 ويصرّح بحدوده وما بقي مجهولًا — List configured analysis providers.
 
-**متى:** lawful inspection of Evidence & core targets you have the right to analyse; the user asks how an app/binary/site works without its source
+**متى:** عند الفحص المشروع لأهداف الأدلة والنواة يحق لك تحليلها، أو حين يسأل المستخدم كيف يعمل تطبيق أو ملف ثنائي أو موقع دون مصدره / lawful inspection of Evidence & core targets you have the right to analyse; the user asks how an app/binary/site works without its source
 
 **كيف:** `rea providers ` --json. Needs: REA alone. Verified here on —: configured providers listed with side-effect groups. Evidence first: observations ≠ inferences ≠ unknowns; never claim equivalence from pseudocode; rights to inspect the target are required.
 
@@ -9254,7 +9254,7 @@
 
 **ما هي:** سحب ملف ADB: أمر `rea pull-adb-file` من REA v6.7.0 (أندرويد والأجهزة)؛ يعيد سجل أدلة JSON بمعرّف وبصمة SHA-256 ويصرّح بحدوده وما بقي مجهولًا — Pull one device file to a local copy with a SHA-256 digest.
 
-**متى:** lawful inspection of Android, apktool & adb targets you have the right to analyse; the user asks how an app/binary/site works without its source
+**متى:** عند الفحص المشروع لأهداف Android وapktool وadb يحق لك تحليلها، أو حين يسأل المستخدم كيف يعمل تطبيق أو ملف ثنائي أو موقع دون مصدره / lawful inspection of Android, apktool & adb targets you have the right to analyse; the user asks how an app/binary/site works without its source
 
 **كيف:** `rea pull-adb-file <serial> <device-path>` --json · options: --output-directory. Needs: adb-authorized Android device / jadx-headless-mcp 0.7.1 JAR (REA_JADX_MCP_JAR) / apktool launcher; REA never installs them. Evidence first: observations ≠ inferences ≠ unknowns; never claim equivalence from pseudocode; rights to inspect the target are required.
 
@@ -9328,7 +9328,7 @@
 
 **ما هي:** سحب حزمة ADB: أمر `rea pull-adb-package` من REA v6.7.0 (أندرويد والأجهزة)؛ يعيد سجل أدلة JSON بمعرّف وبصمة SHA-256 ويصرّح بحدوده وما بقي مجهولًا — Pull one installed package's complete APK set with SHA-256 digests.
 
-**متى:** lawful inspection of Android, apktool & adb targets you have the right to analyse; the user asks how an app/binary/site works without its source
+**متى:** عند الفحص المشروع لأهداف Android وapktool وadb يحق لك تحليلها، أو حين يسأل المستخدم كيف يعمل تطبيق أو ملف ثنائي أو موقع دون مصدره / lawful inspection of Android, apktool & adb targets you have the right to analyse; the user asks how an app/binary/site works without its source
 
 **كيف:** `rea pull-adb-package <serial> <package>` --json · options: --output-directory. Needs: adb-authorized Android device / jadx-headless-mcp 0.7.1 JAR (REA_JADX_MCP_JAR) / apktool launcher; REA never installs them. Evidence first: observations ≠ inferences ≠ unknowns; never claim equivalence from pseudocode; rights to inspect the target are required.
 
@@ -9402,7 +9402,7 @@
 
 **ما هي:** دفع ملف ADB: أمر `rea push-adb-file` من REA v6.7.0 (أندرويد والأجهزة)؛ يعيد سجل أدلة JSON بمعرّف وبصمة SHA-256 ويصرّح بحدوده وما بقي مجهولًا — Push one local file to the device; refuses existing targets without --overwrite.
 
-**متى:** lawful inspection of Android, apktool & adb targets you have the right to analyse; the user asks how an app/binary/site works without its source
+**متى:** عند الفحص المشروع لأهداف Android وapktool وadb يحق لك تحليلها، أو حين يسأل المستخدم كيف يعمل تطبيق أو ملف ثنائي أو موقع دون مصدره / lawful inspection of Android, apktool & adb targets you have the right to analyse; the user asks how an app/binary/site works without its source
 
 **كيف:** `rea push-adb-file <serial> <local-path> <device-path>` --json · options: --overwrite. Needs: adb-authorized Android device / jadx-headless-mcp 0.7.1 JAR (REA_JADX_MCP_JAR) / apktool launcher; REA never installs them. Evidence first: observations ≠ inferences ≠ unknowns; never claim equivalence from pseudocode; rights to inspect the target are required.
 
@@ -9476,7 +9476,7 @@
 
 **ما هي:** قراءة سجل logcat ADB: أمر `rea read-adb-logcat` من REA v6.7.0 (أندرويد والأجهزة)؛ يعيد سجل أدلة JSON بمعرّف وبصمة SHA-256 ويصرّح بحدوده وما بقي مجهولًا — Read a bounded dump of the device log for one buffer.
 
-**متى:** lawful inspection of Android, apktool & adb targets you have the right to analyse; the user asks how an app/binary/site works without its source
+**متى:** عند الفحص المشروع لأهداف Android وapktool وadb يحق لك تحليلها، أو حين يسأل المستخدم كيف يعمل تطبيق أو ملف ثنائي أو موقع دون مصدره / lawful inspection of Android, apktool & adb targets you have the right to analyse; the user asks how an app/binary/site works without its source
 
 **كيف:** `rea read-adb-logcat <serial>` --json · options: --count, --buffer, --pid. Needs: adb-authorized Android device / jadx-headless-mcp 0.7.1 JAR (REA_JADX_MCP_JAR) / apktool launcher; REA never installs them. Evidence first: observations ≠ inferences ≠ unknowns; never claim equivalence from pseudocode; rights to inspect the target are required.
 
@@ -9550,7 +9550,7 @@
 
 **ما هي:** قراءة إعداد ADB: أمر `rea read-adb-setting` من REA v6.7.0 (أندرويد والأجهزة)؛ يعيد سجل أدلة JSON بمعرّف وبصمة SHA-256 ويصرّح بحدوده وما بقي مجهولًا — Read one settings value from system, secure, or global.
 
-**متى:** lawful inspection of Android, apktool & adb targets you have the right to analyse; the user asks how an app/binary/site works without its source
+**متى:** عند الفحص المشروع لأهداف Android وapktool وadb يحق لك تحليلها، أو حين يسأل المستخدم كيف يعمل تطبيق أو ملف ثنائي أو موقع دون مصدره / lawful inspection of Android, apktool & adb targets you have the right to analyse; the user asks how an app/binary/site works without its source
 
 **كيف:** `rea read-adb-setting <serial> <namespace> <key>` --json. Needs: adb-authorized Android device / jadx-headless-mcp 0.7.1 JAR (REA_JADX_MCP_JAR) / apktool launcher; REA never installs them. Evidence first: observations ≠ inferences ≠ unknowns; never claim equivalence from pseudocode; rights to inspect the target are required.
 
@@ -9624,7 +9624,7 @@
 
 **ما هي:** قراءة بايتات: أمر `rea read-bytes` من REA v6.7.0 (الثنائيات الأصلية)؛ يعيد سجل أدلة JSON بمعرّف وبصمة SHA-256 ويصرّح بحدوده وما بقي مجهولًا — Read exact provider memory bytes at one analysis address.
 
-**متى:** lawful inspection of native binaries targets you have the right to analyse; the user asks how an app/binary/site works without its source
+**متى:** عند الفحص المشروع لأهداف ملفات تنفيذية أصلية يحق لك تحليلها، أو حين يسأل المستخدم كيف يعمل تطبيق أو ملف ثنائي أو موقع دون مصدره / lawful inspection of native binaries targets you have the right to analyse; the user asks how an app/binary/site works without its source
 
 **كيف:** `rea read-bytes <path> <address>` --json · options: --length, --target-format, --architecture, --entry-point, --provider. Needs: a deep-analysis provider: Hopper (rea setup), Ghidra 12.1 (GHIDRA_INSTALL_DIR), IDA MCP, or Kuna. Evidence first: observations ≠ inferences ≠ unknowns; never claim equivalence from pseudocode; rights to inspect the target are required.
 
@@ -9769,7 +9769,7 @@
 
 **ما هي:** استعادة sources جافاسكربت: أمر `rea recover-javascript-sources` من REA v6.7.0 (جافاسكربت والويب)؛ يعيد سجل أدلة JSON بمعرّف وبصمة SHA-256 ويصرّح بحدوده وما بقي مجهولًا — Recover readable JavaScript modules with source provenance and verified files.
 
-**متى:** lawful inspection of JavaScript & web targets you have the right to analyse; the user asks how an app/binary/site works without its source
+**متى:** عند الفحص المشروع لأهداف JavaScript والويب يحق لك تحليلها، أو حين يسأل المستخدم كيف يعمل تطبيق أو ملف ثنائي أو موقع دون مصدره / lawful inspection of JavaScript & web targets you have the right to analyse; the user asks how an app/binary/site works without its source
 
 **كيف:** `rea recover-javascript-sources <path> <outputDirectory>` --json · options: --additionalPath, --extractionMode, --rewriteLevel. Needs: REA alone for static work; a loopback CDP browser (Chromium/Playwright) for observation; Wakaru only for recover-javascript-sources. Tried here: needs REA_WAKARU_COMMAND (Wakaru 1.13+). Evidence first: observations ≠ inferences ≠ unknowns; never claim equivalence from pseudocode; rights to inspect the target are required.
 
@@ -9843,7 +9843,7 @@
 
 **ما هي:** تحديد الحزم ADB: أمر `rea resolve-adb-packages` من REA v6.7.0 (أندرويد والأجهزة)؛ يعيد سجل أدلة JSON بمعرّف وبصمة SHA-256 ويصرّح بحدوده وما بقي مجهولًا — Find installed packages by case-insensitive name substring.
 
-**متى:** lawful inspection of Android, apktool & adb targets you have the right to analyse; the user asks how an app/binary/site works without its source
+**متى:** عند الفحص المشروع لأهداف Android وapktool وadb يحق لك تحليلها، أو حين يسأل المستخدم كيف يعمل تطبيق أو ملف ثنائي أو موقع دون مصدره / lawful inspection of Android, apktool & adb targets you have the right to analyse; the user asks how an app/binary/site works without its source
 
 **كيف:** `rea resolve-adb-packages <serial> <query>` --json. Needs: adb-authorized Android device / jadx-headless-mcp 0.7.1 JAR (REA_JADX_MCP_JAR) / apktool launcher; REA never installs them. Evidence first: observations ≠ inferences ≠ unknowns; never claim equivalence from pseudocode; rights to inspect the target are required.
 
@@ -9917,7 +9917,7 @@
 
 **ما هي:** تحديد الأهداف استدعاء أصلية: أمر `rea resolve-native-call-targets` من REA v6.7.0 (الثنائيات الأصلية)؛ يعيد سجل أدلة JSON بمعرّف وبصمة SHA-256 ويصرّح بحدوده وما بقي مجهولًا — Resolve one static native call site.
 
-**متى:** lawful inspection of native binaries targets you have the right to analyse; the user asks how an app/binary/site works without its source
+**متى:** عند الفحص المشروع لأهداف ملفات تنفيذية أصلية يحق لك تحليلها، أو حين يسأل المستخدم كيف يعمل تطبيق أو ملف ثنائي أو موقع دون مصدره / lawful inspection of native binaries targets you have the right to analyse; the user asks how an app/binary/site works without its source
 
 **كيف:** `rea resolve-native-call-targets <path> <address>` --json · options: --target-format, --architecture, --entry-point, --provider. Needs: a deep-analysis provider: Hopper (rea setup), Ghidra 12.1 (GHIDRA_INSTALL_DIR), IDA MCP, or Kuna. Evidence first: observations ≠ inferences ≠ unknowns; never claim equivalence from pseudocode; rights to inspect the target are required.
 
@@ -9990,7 +9990,7 @@
 
 **ما هي:** بحث في: أمر `rea search` من REA v6.7.0 (الثنائيات الأصلية)؛ يعيد سجل أدلة JSON بمعرّف وبصمة SHA-256 ويصرّح بحدوده وما بقي مجهولًا — Search every analyzed string or procedure name.
 
-**متى:** lawful inspection of native binaries targets you have the right to analyse; the user asks how an app/binary/site works without its source
+**متى:** عند الفحص المشروع لأهداف ملفات تنفيذية أصلية يحق لك تحليلها، أو حين يسأل المستخدم كيف يعمل تطبيق أو ملف ثنائي أو موقع دون مصدره / lawful inspection of native binaries targets you have the right to analyse; the user asks how an app/binary/site works without its source
 
 **كيف:** `rea search <path> [pattern]` --json · options: --pattern, --kind, --mode, --caseSensitive, --snapshot, --target-format, --architecture, --entry-point. Needs: a deep-analysis provider: Hopper (rea setup), Ghidra 12.1 (GHIDRA_INSTALL_DIR), IDA MCP, or Kuna. Evidence first: observations ≠ inferences ≠ unknowns; never claim equivalence from pseudocode; rights to inspect the target are required.
 
@@ -10063,7 +10063,7 @@
 
 **ما هي:** بحث في الأصناف أندرويد: أمر `rea search-android-classes` من REA v6.7.0 (أندرويد والأجهزة)؛ يعيد سجل أدلة JSON بمعرّف وبصمة SHA-256 ويصرّح بحدوده وما بقي مجهولًا — Search APK class names; empty query inventories all classes.
 
-**متى:** lawful inspection of Android, apktool & adb targets you have the right to analyse; the user asks how an app/binary/site works without its source
+**متى:** عند الفحص المشروع لأهداف Android وapktool وadb يحق لك تحليلها، أو حين يسأل المستخدم كيف يعمل تطبيق أو ملف ثنائي أو موقع دون مصدره / lawful inspection of Android, apktool & adb targets you have the right to analyse; the user asks how an app/binary/site works without its source
 
 **كيف:** `rea search-android-classes <path> <query>` --json. Needs: adb-authorized Android device / jadx-headless-mcp 0.7.1 JAR (REA_JADX_MCP_JAR) / apktool launcher; REA never installs them. Evidence first: observations ≠ inferences ≠ unknowns; never claim equivalence from pseudocode; rights to inspect the target are required.
 
@@ -10137,7 +10137,7 @@
 
 **ما هي:** بحث في بايتات: أمر `rea search-bytes` من REA v6.7.0 (الثنائيات الأصلية)؛ يعيد سجل أدلة JSON بمعرّف وبصمة SHA-256 ويصرّح بحدوده وما بقي مجهولًا — Find masked byte patterns in initialized provider memory.
 
-**متى:** lawful inspection of native binaries targets you have the right to analyse; the user asks how an app/binary/site works without its source
+**متى:** عند الفحص المشروع لأهداف ملفات تنفيذية أصلية يحق لك تحليلها، أو حين يسأل المستخدم كيف يعمل تطبيق أو ملف ثنائي أو موقع دون مصدره / lawful inspection of native binaries targets you have the right to analyse; the user asks how an app/binary/site works without its source
 
 **كيف:** `rea search-bytes <path> <pattern>` --json · options: --mask, --start, --end, --cursor, --limit, --target-format, --architecture, --entry-point. Needs: a deep-analysis provider: Hopper (rea setup), Ghidra 12.1 (GHIDRA_INSTALL_DIR), IDA MCP, or Kuna. Evidence first: observations ≠ inferences ≠ unknowns; never claim equivalence from pseudocode; rights to inspect the target are required.
 
@@ -10210,7 +10210,7 @@
 
 **ما هي:** إعداد REA: أمر `rea setup` من REA v6.7.0 (الأدلة والنواة)؛ يعيد سجل أدلة JSON بمعرّف وبصمة SHA-256 ويصرّح بحدوده وما بقي مجهولًا — Configure agent integrations and optional analysis providers.
 
-**متى:** lawful inspection of Evidence & core targets you have the right to analyse; the user asks how an app/binary/site works without its source
+**متى:** عند الفحص المشروع لأهداف الأدلة والنواة يحق لك تحليلها، أو حين يسأل المستخدم كيف يعمل تطبيق أو ملف ثنائي أو موقع دون مصدره / lawful inspection of Evidence & core targets you have the right to analyse; the user asks how an app/binary/site works without its source
 
 **كيف:** `rea setup ` --json · options: --yes, --installHopper, --client, --skillClient, --allDetected, --skill, --dryRun, --accessible. Needs: REA alone. Evidence first: observations ≠ inferences ≠ unknowns; never claim equivalence from pseudocode; rights to inspect the target are required.
 
@@ -10282,7 +10282,7 @@
 
 **ما هي:** تشغيل نشاط ADB: أمر `rea start-adb-activity` من REA v6.7.0 (أندرويد والأجهزة)؛ يعيد سجل أدلة JSON بمعرّف وبصمة SHA-256 ويصرّح بحدوده وما بقي مجهولًا — Start an intent with am start (action, URI, component, extras).
 
-**متى:** lawful inspection of Android, apktool & adb targets you have the right to analyse; the user asks how an app/binary/site works without its source
+**متى:** عند الفحص المشروع لأهداف Android وapktool وadb يحق لك تحليلها، أو حين يسأل المستخدم كيف يعمل تطبيق أو ملف ثنائي أو موقع دون مصدره / lawful inspection of Android, apktool & adb targets you have the right to analyse; the user asks how an app/binary/site works without its source
 
 **كيف:** `rea start-adb-activity <serial> <action>` --json · options: --data-uri, --component, --extra. Needs: adb-authorized Android device / jadx-headless-mcp 0.7.1 JAR (REA_JADX_MCP_JAR) / apktool launcher; REA never installs them. Evidence first: observations ≠ inferences ≠ unknowns; never claim equivalence from pseudocode; rights to inspect the target are required.
 
@@ -10356,7 +10356,7 @@
 
 **ما هي:** تشغيل تطبيق ADB: أمر `rea start-adb-app` من REA v6.7.0 (أندرويد والأجهزة)؛ يعيد سجل أدلة JSON بمعرّف وبصمة SHA-256 ويصرّح بحدوده وما بقي مجهولًا — Start one installed app by resolving and launching its launcher activity.
 
-**متى:** lawful inspection of Android, apktool & adb targets you have the right to analyse; the user asks how an app/binary/site works without its source
+**متى:** عند الفحص المشروع لأهداف Android وapktool وadb يحق لك تحليلها، أو حين يسأل المستخدم كيف يعمل تطبيق أو ملف ثنائي أو موقع دون مصدره / lawful inspection of Android, apktool & adb targets you have the right to analyse; the user asks how an app/binary/site works without its source
 
 **كيف:** `rea start-adb-app <serial> <package>` --json. Needs: adb-authorized Android device / jadx-headless-mcp 0.7.1 JAR (REA_JADX_MCP_JAR) / apktool launcher; REA never installs them. Evidence first: observations ≠ inferences ≠ unknowns; never claim equivalence from pseudocode; rights to inspect the target are required.
 
@@ -10430,7 +10430,7 @@
 
 **ما هي:** إيقاف تطبيق ADB: أمر `rea stop-adb-app` من REA v6.7.0 (أندرويد والأجهزة)؛ يعيد سجل أدلة JSON بمعرّف وبصمة SHA-256 ويصرّح بحدوده وما بقي مجهولًا — Force-stop every process of one package.
 
-**متى:** lawful inspection of Android, apktool & adb targets you have the right to analyse; the user asks how an app/binary/site works without its source
+**متى:** عند الفحص المشروع لأهداف Android وapktool وadb يحق لك تحليلها، أو حين يسأل المستخدم كيف يعمل تطبيق أو ملف ثنائي أو موقع دون مصدره / lawful inspection of Android, apktool & adb targets you have the right to analyse; the user asks how an app/binary/site works without its source
 
 **كيف:** `rea stop-adb-app <serial> <package>` --json. Needs: adb-authorized Android device / jadx-headless-mcp 0.7.1 JAR (REA_JADX_MCP_JAR) / apktool launcher; REA never installs them. Evidence first: observations ≠ inferences ≠ unknowns; never claim equivalence from pseudocode; rights to inspect the target are required.
 
@@ -10504,7 +10504,7 @@
 
 **ما هي:** تتبّع: أمر `rea trace` من REA v6.7.0 (الثنائيات الأصلية)؛ يعيد سجل أدلة JSON بمعرّف وبصمة SHA-256 ويصرّح بحدوده وما بقي مجهولًا — Trace a literal feature through analyzed references.
 
-**متى:** lawful inspection of native binaries targets you have the right to analyse; the user asks how an app/binary/site works without its source
+**متى:** عند الفحص المشروع لأهداف ملفات تنفيذية أصلية يحق لك تحليلها، أو حين يسأل المستخدم كيف يعمل تطبيق أو ملف ثنائي أو موقع دون مصدره / lawful inspection of native binaries targets you have the right to analyse; the user asks how an app/binary/site works without its source
 
 **كيف:** `rea trace <path> [query]` --json · options: --query, --caseSensitive, --snapshot, --target-format, --architecture, --entry-point, --provider. Needs: a deep-analysis provider: Hopper (rea setup), Ghidra 12.1 (GHIDRA_INSTALL_DIR), IDA MCP, or Kuna. Evidence first: observations ≠ inferences ≠ unknowns; never claim equivalence from pseudocode; rights to inspect the target are required.
 
@@ -10577,7 +10577,7 @@
 
 **ما هي:** تتبّع المراجع أندرويد: أمر `rea trace-android-references` من REA v6.7.0 (أندرويد والأجهزة)؛ يعيد سجل أدلة JSON بمعرّف وبصمة SHA-256 ويصرّح بحدوده وما بقي مجهولًا — Trace incoming APK using nodes for a class or selected method.
 
-**متى:** lawful inspection of Android, apktool & adb targets you have the right to analyse; the user asks how an app/binary/site works without its source
+**متى:** عند الفحص المشروع لأهداف Android وapktool وadb يحق لك تحليلها، أو حين يسأل المستخدم كيف يعمل تطبيق أو ملف ثنائي أو موقع دون مصدره / lawful inspection of Android, apktool & adb targets you have the right to analyse; the user asks how an app/binary/site works without its source
 
 **كيف:** `rea trace-android-references <path> <className>` --json · options: --methodName, --overloadIndex. Needs: adb-authorized Android device / jadx-headless-mcp 0.7.1 JAR (REA_JADX_MCP_JAR) / apktool launcher; REA never installs them. Evidence first: observations ≠ inferences ≠ unknowns; never claim equivalence from pseudocode; rights to inspect the target are required.
 
@@ -10651,7 +10651,7 @@
 
 **ما هي:** تتبّع ميزة تطبيق: أمر `rea trace-application-feature` من REA v6.7.0 (جافاسكربت والويب)؛ يعيد سجل أدلة JSON بمعرّف وبصمة SHA-256 ويصرّح بحدوده وما بقي مجهولًا — Trace a typed seed through authenticated application Evidence JSON.
 
-**متى:** lawful inspection of JavaScript & web targets you have the right to analyse; the user asks how an app/binary/site works without its source
+**متى:** عند الفحص المشروع لأهداف JavaScript والويب يحق لك تحليلها، أو حين يسأل المستخدم كيف يعمل تطبيق أو ملف ثنائي أو موقع دون مصدره / lawful inspection of JavaScript & web targets you have the right to analyse; the user asks how an app/binary/site works without its source
 
 **كيف:** `rea trace-application-feature <inputJson>` --json. Needs: REA alone for static work; a loopback CDP browser (Chromium/Playwright) for observation; Wakaru only for recover-javascript-sources. Verified here on inline evidence, seed string 'download': feature trace through the authenticated graph. Evidence first: observations ≠ inferences ≠ unknowns; never claim equivalence from pseudocode; rights to inspect the target are required.
 
@@ -10801,7 +10801,7 @@
 
 **ما هي:** تتبّع الدلالات جافاسكربت: أمر `rea trace-javascript-semantics` من REA v6.7.0 (جافاسكربت والويب)؛ يعيد سجل أدلة JSON بمعرّف وبصمة SHA-256 ويصرّح بحدوده وما بقي مجهولًا — Trace bounded static semantic relations through authenticated application Evidence.
 
-**متى:** lawful inspection of JavaScript & web targets you have the right to analyse; the user asks how an app/binary/site works without its source
+**متى:** عند الفحص المشروع لأهداف JavaScript والويب يحق لك تحليلها، أو حين يسأل المستخدم كيف يعمل تطبيق أو ملف ثنائي أو موقع دون مصدره / lawful inspection of JavaScript & web targets you have the right to analyse; the user asks how an app/binary/site works without its source
 
 **كيف:** `rea trace-javascript-semantics <inputJson>` --json. Needs: REA alone for static work; a loopback CDP browser (Chromium/Playwright) for observation; Wakaru only for recover-javascript-sources. Evidence first: observations ≠ inferences ≠ unknowns; never claim equivalence from pseudocode; rights to inspect the target are required.
 
@@ -10949,7 +10949,7 @@
 
 **ما هي:** تتبّع القيم أصلية: أمر `rea trace-native-values` من REA v6.7.0 (الثنائيات الأصلية)؛ يعيد سجل أدلة JSON بمعرّف وبصمة SHA-256 ويصرّح بحدوده وما بقي مجهولًا — Trace bounded native def-use and call dependencies.
 
-**متى:** lawful inspection of native binaries targets you have the right to analyse; the user asks how an app/binary/site works without its source
+**متى:** عند الفحص المشروع لأهداف ملفات تنفيذية أصلية يحق لك تحليلها، أو حين يسأل المستخدم كيف يعمل تطبيق أو ملف ثنائي أو موقع دون مصدره / lawful inspection of native binaries targets you have the right to analyse; the user asks how an app/binary/site works without its source
 
 **كيف:** `rea trace-native-values <path> <procedure>` --json · options: --maxDepth, --maxFunctions, --maxCallSites, --maxNodes, --maxEdges, --offset, --limit, --target-format. Needs: a deep-analysis provider: Hopper (rea setup), Ghidra 12.1 (GHIDRA_INSTALL_DIR), IDA MCP, or Kuna. Evidence first: observations ≠ inferences ≠ unknowns; never claim equivalence from pseudocode; rights to inspect the target are required.
 
@@ -11022,7 +11022,7 @@
 
 **ما هي:** تتبّع الاستيرادات وحدة ويب: أمر `rea trace-web-module-imports` من REA v6.7.0 (جافاسكربت والويب)؛ يعيد سجل أدلة JSON بمعرّف وبصمة SHA-256 ويصرّح بحدوده وما بقي مجهولًا — Trace one captured script's native imports to URLs and captured source candidates.
 
-**متى:** lawful inspection of JavaScript & web targets you have the right to analyse; the user asks how an app/binary/site works without its source
+**متى:** عند الفحص المشروع لأهداف JavaScript والويب يحق لك تحليلها، أو حين يسأل المستخدم كيف يعمل تطبيق أو ملف ثنائي أو موقع دون مصدره / lawful inspection of JavaScript & web targets you have the right to analyse; the user asks how an app/binary/site works without its source
 
 **كيف:** `rea trace-web-module-imports <manifestPath> <scriptIndex>` --json · options: --importerUrl, --importMapPath, --importMapBaseUrl. Needs: REA alone for static work; a loopback CDP browser (Chromium/Playwright) for observation; Wakaru only for recover-javascript-sources. Evidence first: observations ≠ inferences ≠ unknowns; never claim equivalence from pseudocode; rights to inspect the target are required.
 
@@ -11096,7 +11096,7 @@
 
 **ما هي:** تتبّع موقع المصدر ويب: أمر `rea trace-web-source-location` من REA v6.7.0 (جافاسكربت والويب)؛ يعيد سجل أدلة JSON بمعرّف وبصمة SHA-256 ويصرّح بحدوده وما بقي مجهولًا — Trace one retained script position through an explicitly selected local source map.
 
-**متى:** lawful inspection of JavaScript & web targets you have the right to analyse; the user asks how an app/binary/site works without its source
+**متى:** عند الفحص المشروع لأهداف JavaScript والويب يحق لك تحليلها، أو حين يسأل المستخدم كيف يعمل تطبيق أو ملف ثنائي أو موقع دون مصدره / lawful inspection of JavaScript & web targets you have the right to analyse; the user asks how an app/binary/site works without its source
 
 **كيف:** `rea trace-web-source-location <manifestPath> <scriptIndex> <sourceMapPath> <sourceMapUrl> <line> <column>` --json. Needs: REA alone for static work; a loopback CDP browser (Chromium/Playwright) for observation; Wakaru only for recover-javascript-sources. Evidence first: observations ≠ inferences ≠ unknowns; never claim equivalence from pseudocode; rights to inspect the target are required.
 
@@ -11170,7 +11170,7 @@
 
 **ما هي:** إزالة: أمر `rea uninstall` من REA v6.7.0 (الأدلة والنواة)؛ يعيد سجل أدلة JSON بمعرّف وبصمة SHA-256 ويصرّح بحدوده وما بقي مجهولًا — Remove REA-owned agent configuration and skill files.
 
-**متى:** lawful inspection of Evidence & core targets you have the right to analyse; the user asks how an app/binary/site works without its source
+**متى:** عند الفحص المشروع لأهداف الأدلة والنواة يحق لك تحليلها، أو حين يسأل المستخدم كيف يعمل تطبيق أو ملف ثنائي أو موقع دون مصدره / lawful inspection of Evidence & core targets you have the right to analyse; the user asks how an app/binary/site works without its source
 
 **كيف:** `rea uninstall ` --json · options: --purgeData. Needs: REA alone. Evidence first: observations ≠ inferences ≠ unknowns; never claim equivalence from pseudocode; rights to inspect the target are required.
 
@@ -11242,7 +11242,7 @@
 
 **ما هي:** إزالة حزمة ADB: أمر `rea uninstall-adb-package` من REA v6.7.0 (أندرويد والأجهزة)؛ يعيد سجل أدلة JSON بمعرّف وبصمة SHA-256 ويصرّح بحدوده وما بقي مجهولًا — Uninstall one package and its data from the device.
 
-**متى:** lawful inspection of Android, apktool & adb targets you have the right to analyse; the user asks how an app/binary/site works without its source
+**متى:** عند الفحص المشروع لأهداف Android وapktool وadb يحق لك تحليلها، أو حين يسأل المستخدم كيف يعمل تطبيق أو ملف ثنائي أو موقع دون مصدره / lawful inspection of Android, apktool & adb targets you have the right to analyse; the user asks how an app/binary/site works without its source
 
 **كيف:** `rea uninstall-adb-package <serial> <package>` --json. Needs: adb-authorized Android device / jadx-headless-mcp 0.7.1 JAR (REA_JADX_MCP_JAR) / apktool launcher; REA never installs them. Evidence first: observations ≠ inferences ≠ unknowns; never claim equivalence from pseudocode; rights to inspect the target are required.
 
@@ -11316,7 +11316,7 @@
 
 **ما هي:** تحديث REA: أمر `rea update` من REA v6.7.0 (الأدلة والنواة)؛ يعيد سجل أدلة JSON بمعرّف وبصمة SHA-256 ويصرّح بحدوده وما بقي مجهولًا — Update this REA installation and verify the installed release.
 
-**متى:** lawful inspection of Evidence & core targets you have the right to analyse; the user asks how an app/binary/site works without its source
+**متى:** عند الفحص المشروع لأهداف الأدلة والنواة يحق لك تحليلها، أو حين يسأل المستخدم كيف يعمل تطبيق أو ملف ثنائي أو موقع دون مصدره / lawful inspection of Evidence & core targets you have the right to analyse; the user asks how an app/binary/site works without its source
 
 **كيف:** `rea update ` --json. Needs: REA alone. Evidence first: observations ≠ inferences ≠ unknowns; never claim equivalence from pseudocode; rights to inspect the target are required.
 
@@ -11388,7 +11388,7 @@
 
 **ما هي:** تحقق من الحدود أصلية مُدار (.NET): أمر `rea verify-managed-native-boundaries` من REA v6.7.0 (.NET)؛ يعيد سجل أدلة JSON بمعرّف وبصمة SHA-256 ويصرّح بحدوده وما بقي مجهولًا — Verify managed P/Invoke declarations against authenticated native Evidence.
 
-**متى:** lawful inspection of managed code targets you have the right to analyse; the user asks how an app/binary/site works without its source
+**متى:** عند الفحص المشروع لأهداف الشيفرة المُدارة يحق لك تحليلها، أو حين يسأل المستخدم كيف يعمل تطبيق أو ملف ثنائي أو موقع دون مصدره / lawful inspection of managed code targets you have the right to analyse; the user asks how an app/binary/site works without its source
 
 **كيف:** `rea verify-managed-native-boundaries <inputJson>` --json. Needs: a PE/CLI assembly; built-in rea-dotnet-static provider. Evidence first: observations ≠ inferences ≠ unknowns; never claim equivalence from pseudocode; rights to inspect the target are required.
 
@@ -11460,7 +11460,7 @@
 
 **ما هي:** المراجع المتقاطعة: أمر `rea xrefs` من REA v6.7.0 (الثنائيات الأصلية)؛ يعيد سجل أدلة JSON بمعرّف وبصمة SHA-256 ويصرّح بحدوده وما بقي مجهولًا — List bounded references to an analyzed address.
 
-**متى:** lawful inspection of native binaries targets you have the right to analyse; the user asks how an app/binary/site works without its source
+**متى:** عند الفحص المشروع لأهداف ملفات تنفيذية أصلية يحق لك تحليلها، أو حين يسأل المستخدم كيف يعمل تطبيق أو ملف ثنائي أو موقع دون مصدره / lawful inspection of native binaries targets you have the right to analyse; the user asks how an app/binary/site works without its source
 
 **كيف:** `rea xrefs <path> [address]` --json · options: --address, --snapshot, --target-format, --architecture, --entry-point, --provider. Needs: a deep-analysis provider: Hopper (rea setup), Ghidra 12.1 (GHIDRA_INSTALL_DIR), IDA MCP, or Kuna. Evidence first: observations ≠ inferences ≠ unknowns; never claim equivalence from pseudocode; rights to inspect the target are required.
 
@@ -11533,7 +11533,7 @@
 
 **ما هي:** أداة MCP من REA v6.7.0 (ليست من أوامر سطر الأوامر الـ153): Resolve the primary analyzed name at a code or data address. Headless providers require an explicit address; GUI providers may default to their current cursor. Null means the provider has no primary n — MCP-only tool exposed by the REA server. Resolve the primary analyzed name at a code or data address. Headless providers require an explicit address; GUI providers may default to their current cursor.
 
-**متى:** lawful reverse engineering via a connected REA MCP server; needs an analysis provider (Hopper, Ghidra, IDA or Kuna) with an open binary
+**متى:** عند الهندسة العكسية المشروعة عبر خادم REA MCP متصل؛ يلزم مزوّد تحليل (Hopper أو Ghidra أو IDA أو Kuna) مع ملف ثنائي مفتوح / lawful reverse engineering via a connected REA MCP server; needs an analysis provider (Hopper, Ghidra, IDA or Kuna) with an open binary
 
 **كيف:** Connect the REA MCP server (`rea mcp add` / `rea --mcp`) and call the `address_name` tool through your client; it is not a CLI command. Needs: an analysis provider (Hopper, Ghidra, IDA or Kuna) with an open binary. Evidence-first: observations ≠ inferences ≠ unknowns; a mutating tool (set_*, *_session, load_frida_script) acts only on a consented target.
 
@@ -11607,7 +11607,7 @@
 
 **ما هي:** أداة MCP من REA v6.7.0 (ليست من أوامر سطر الأوامر الـ153): Read the regular analysis comment at an address, defaulting to the current cursor. This is read-only and returns null when no comment exists; use set_comment to persist a finding. — MCP-only tool exposed by the REA server. Read the regular analysis comment at an address, defaulting to the current cursor. This is read-only and returns null when no comment exists; use set_comment to
 
-**متى:** lawful reverse engineering via a connected REA MCP server; needs an analysis provider (Hopper, Ghidra, IDA or Kuna) with an open binary
+**متى:** عند الهندسة العكسية المشروعة عبر خادم REA MCP متصل؛ يلزم مزوّد تحليل (Hopper أو Ghidra أو IDA أو Kuna) مع ملف ثنائي مفتوح / lawful reverse engineering via a connected REA MCP server; needs an analysis provider (Hopper, Ghidra, IDA or Kuna) with an open binary
 
 **كيف:** Connect the REA MCP server (`rea mcp add` / `rea --mcp`) and call the `comment` tool through your client; it is not a CLI command. Needs: an analysis provider (Hopper, Ghidra, IDA or Kuna) with an open binary. Evidence-first: observations ≠ inferences ≠ unknowns; a mutating tool (set_*, *_session, load_frida_script) acts only on a consented target.
 
@@ -11680,7 +11680,7 @@
 
 **ما هي:** أداة MCP من REA v6.7.0 (ليست من أوامر سطر الأوامر الـ153): Return Hopper's current cursor address for the selected document. Use only for interactive navigation state; prefer explicit addresses in reproducible investigations. — MCP-only tool exposed by the REA server. Return Hopper's current cursor address for the selected document. Use only for interactive navigation state; prefer explicit addresses in reproducible investiga
 
-**متى:** lawful reverse engineering via a connected REA MCP server; needs an analysis provider (Hopper, Ghidra, IDA or Kuna) with an open binary
+**متى:** عند الهندسة العكسية المشروعة عبر خادم REA MCP متصل؛ يلزم مزوّد تحليل (Hopper أو Ghidra أو IDA أو Kuna) مع ملف ثنائي مفتوح / lawful reverse engineering via a connected REA MCP server; needs an analysis provider (Hopper, Ghidra, IDA or Kuna) with an open binary
 
 **كيف:** Connect the REA MCP server (`rea mcp add` / `rea --mcp`) and call the `current_address` tool through your client; it is not a CLI command. Needs: an analysis provider (Hopper, Ghidra, IDA or Kuna) with an open binary. Evidence-first: observations ≠ inferences ≠ unknowns; a mutating tool (set_*, *_session, load_frida_script) acts only on a consented target.
 
@@ -11753,7 +11753,7 @@
 
 **ما هي:** أداة MCP من REA v6.7.0 (ليست من أوامر سطر الأوامر الـ153): Return the analyzed procedure containing Hopper's current cursor. This uses GUI cursor state and is not a procedure-name lookup. — MCP-only tool exposed by the REA server. Return the analyzed procedure containing Hopper's current cursor. This uses GUI cursor state and is not a procedure-name lookup.
 
-**متى:** lawful reverse engineering via a connected REA MCP server; needs an analysis provider (Hopper, Ghidra, IDA or Kuna) with an open binary
+**متى:** عند الهندسة العكسية المشروعة عبر خادم REA MCP متصل؛ يلزم مزوّد تحليل (Hopper أو Ghidra أو IDA أو Kuna) مع ملف ثنائي مفتوح / lawful reverse engineering via a connected REA MCP server; needs an analysis provider (Hopper, Ghidra, IDA or Kuna) with an open binary
 
 **كيف:** Connect the REA MCP server (`rea mcp add` / `rea --mcp`) and call the `current_procedure` tool through your client; it is not a CLI command. Needs: an analysis provider (Hopper, Ghidra, IDA or Kuna) with an open binary. Evidence-first: observations ≠ inferences ≠ unknowns; a mutating tool (set_*, *_session, load_frida_script) acts only on a consented target.
 
@@ -11826,7 +11826,7 @@
 
 **ما هي:** أداة MCP من REA v6.7.0 (ليست من أوامر سطر الأوامر الـ153): Return the document currently selected by REA's Hopper bridge. — MCP-only tool exposed by the REA server. Return the document currently selected by REA's Hopper bridge.
 
-**متى:** lawful reverse engineering via a connected REA MCP server; needs an analysis provider (Hopper, Ghidra, IDA or Kuna) with an open binary
+**متى:** عند الهندسة العكسية المشروعة عبر خادم REA MCP متصل؛ يلزم مزوّد تحليل (Hopper أو Ghidra أو IDA أو Kuna) مع ملف ثنائي مفتوح / lawful reverse engineering via a connected REA MCP server; needs an analysis provider (Hopper, Ghidra, IDA or Kuna) with an open binary
 
 **كيف:** Connect the REA MCP server (`rea mcp add` / `rea --mcp`) and call the `current_document` tool through your client; it is not a CLI command. Needs: an analysis provider (Hopper, Ghidra, IDA or Kuna) with an open binary. Evidence-first: observations ≠ inferences ≠ unknowns; a mutating tool (set_*, *_session, load_frida_script) acts only on a consented target.
 
@@ -11899,7 +11899,7 @@
 
 **ما هي:** أداة MCP من REA v6.7.0 (ليست من أوامر سطر الأوامر الـ153): Move Hopper's GUI cursor to a mapped address and return the observed cursor address. Interior coordinates snap to the containing analyzed object's start. Unmapped destinations fail without moving the — MCP-only tool exposed by the REA server. Move Hopper's GUI cursor to a mapped address and return the observed cursor address. Interior coordinates snap to the containing analyzed object's start. Unmapp
 
-**متى:** lawful reverse engineering via a connected REA MCP server; needs an analysis provider (Hopper, Ghidra, IDA or Kuna) with an open binary
+**متى:** عند الهندسة العكسية المشروعة عبر خادم REA MCP متصل؛ يلزم مزوّد تحليل (Hopper أو Ghidra أو IDA أو Kuna) مع ملف ثنائي مفتوح / lawful reverse engineering via a connected REA MCP server; needs an analysis provider (Hopper, Ghidra, IDA or Kuna) with an open binary
 
 **كيف:** Connect the REA MCP server (`rea mcp add` / `rea --mcp`) and call the `goto_address` tool through your client; it is not a CLI command. Needs: an analysis provider (Hopper, Ghidra, IDA or Kuna) with an open binary. Evidence-first: observations ≠ inferences ≠ unknowns; a mutating tool (set_*, *_session, load_frida_script) acts only on a consented target.
 
@@ -11972,7 +11972,7 @@
 
 **ما هي:** أداة MCP من REA v6.7.0 (ليست من أوامر سطر الأوامر الـ153): Read the inline instruction comment at an address, defaulting to the current cursor. Returns null when absent; use set_inline_comment to write one. — MCP-only tool exposed by the REA server. Read the inline instruction comment at an address, defaulting to the current cursor. Returns null when absent; use set_inline_comment to write one.
 
-**متى:** lawful reverse engineering via a connected REA MCP server; needs an analysis provider (Hopper, Ghidra, IDA or Kuna) with an open binary
+**متى:** عند الهندسة العكسية المشروعة عبر خادم REA MCP متصل؛ يلزم مزوّد تحليل (Hopper أو Ghidra أو IDA أو Kuna) مع ملف ثنائي مفتوح / lawful reverse engineering via a connected REA MCP server; needs an analysis provider (Hopper, Ghidra, IDA or Kuna) with an open binary
 
 **كيف:** Connect the REA MCP server (`rea mcp add` / `rea --mcp`) and call the `inline_comment` tool through your client; it is not a CLI command. Needs: an analysis provider (Hopper, Ghidra, IDA or Kuna) with an open binary. Evidence-first: observations ≠ inferences ≠ unknowns; a mutating tool (set_*, *_session, load_frida_script) acts only on a consented target.
 
@@ -12045,7 +12045,7 @@
 
 **ما هي:** أداة MCP من REA v6.7.0 (ليست من أوامر سطر الأوامر الـ153): List every bookmark in the selected Hopper document as address and name pairs; unnamed bookmarks retain a null name. Use bookmarks as analyst-authored navigation aids; this does not discover code refe — MCP-only tool exposed by the REA server. List every bookmark in the selected Hopper document as address and name pairs; unnamed bookmarks retain a null name. Use bookmarks as analyst-authored navigatio
 
-**متى:** lawful reverse engineering via a connected REA MCP server; needs an analysis provider (Hopper, Ghidra, IDA or Kuna) with an open binary
+**متى:** عند الهندسة العكسية المشروعة عبر خادم REA MCP متصل؛ يلزم مزوّد تحليل (Hopper أو Ghidra أو IDA أو Kuna) مع ملف ثنائي مفتوح / lawful reverse engineering via a connected REA MCP server; needs an analysis provider (Hopper, Ghidra, IDA or Kuna) with an open binary
 
 **كيف:** Connect the REA MCP server (`rea mcp add` / `rea --mcp`) and call the `list_bookmarks` tool through your client; it is not a CLI command. Needs: an analysis provider (Hopper, Ghidra, IDA or Kuna) with an open binary. Evidence-first: observations ≠ inferences ≠ unknowns; a mutating tool (set_*, *_session, load_frida_script) acts only on a consented target.
 
@@ -12118,7 +12118,7 @@
 
 **ما هي:** أداة MCP من REA v6.7.0 (ليست من أوامر سطر الأوامر الـ153): List provider program or document identities. Hopper may expose several documents; a Ghidra headless session contains exactly its one imported Program. — MCP-only tool exposed by the REA server. List provider program or document identities. Hopper may expose several documents; a Ghidra headless session contains exactly its one imported Program.
 
-**متى:** lawful reverse engineering via a connected REA MCP server; needs an analysis provider (Hopper, Ghidra, IDA or Kuna) with an open binary
+**متى:** عند الهندسة العكسية المشروعة عبر خادم REA MCP متصل؛ يلزم مزوّد تحليل (Hopper أو Ghidra أو IDA أو Kuna) مع ملف ثنائي مفتوح / lawful reverse engineering via a connected REA MCP server; needs an analysis provider (Hopper, Ghidra, IDA or Kuna) with an open binary
 
 **كيف:** Connect the REA MCP server (`rea mcp add` / `rea --mcp`) and call the `list_documents` tool through your client; it is not a CLI command. Needs: an analysis provider (Hopper, Ghidra, IDA or Kuna) with an open binary. Evidence-first: observations ≠ inferences ≠ unknowns; a mutating tool (set_*, *_session, load_frida_script) acts only on a consented target.
 
@@ -12192,7 +12192,7 @@
 
 **ما هي:** أداة MCP من REA v6.7.0 (ليست من أوامر سطر الأوامر الـ153): List every analyzed memory and external symbol as address/value pairs. Provider metadata distinguishes Ghidra primary, dynamic, external, type, and source facts when available. — MCP-only tool exposed by the REA server. List every analyzed memory and external symbol as address/value pairs. Provider metadata distinguishes Ghidra primary, dynamic, external, type, and source facts
 
-**متى:** lawful reverse engineering via a connected REA MCP server; needs an analysis provider (Hopper, Ghidra, IDA or Kuna) with an open binary
+**متى:** عند الهندسة العكسية المشروعة عبر خادم REA MCP متصل؛ يلزم مزوّد تحليل (Hopper أو Ghidra أو IDA أو Kuna) مع ملف ثنائي مفتوح / lawful reverse engineering via a connected REA MCP server; needs an analysis provider (Hopper, Ghidra, IDA or Kuna) with an open binary
 
 **كيف:** Connect the REA MCP server (`rea mcp add` / `rea --mcp`) and call the `list_names` tool through your client; it is not a CLI command. Needs: an analysis provider (Hopper, Ghidra, IDA or Kuna) with an open binary. Evidence-first: observations ≠ inferences ≠ unknowns; a mutating tool (set_*, *_session, load_frida_script) acts only on a consented target.
 
@@ -12265,7 +12265,7 @@
 
 **ما هي:** أداة MCP من REA v6.7.0 (ليست من أوامر سطر الأوامر الـ153): List every analyzed procedure as address/value pairs after provider analysis. Ghidra metadata distinguishes thunks and external functions; use returned addresses in later function operations. — MCP-only tool exposed by the REA server. List every analyzed procedure as address/value pairs after provider analysis. Ghidra metadata distinguishes thunks and external functions; use returned addresse
 
-**متى:** lawful reverse engineering via a connected REA MCP server; needs an analysis provider (Hopper, Ghidra, IDA or Kuna) with an open binary
+**متى:** عند الهندسة العكسية المشروعة عبر خادم REA MCP متصل؛ يلزم مزوّد تحليل (Hopper أو Ghidra أو IDA أو Kuna) مع ملف ثنائي مفتوح / lawful reverse engineering via a connected REA MCP server; needs an analysis provider (Hopper, Ghidra, IDA or Kuna) with an open binary
 
 **كيف:** Connect the REA MCP server (`rea mcp add` / `rea --mcp`) and call the `list_procedures` tool through your client; it is not a CLI command. Needs: an analysis provider (Hopper, Ghidra, IDA or Kuna) with an open binary. Evidence-first: observations ≠ inferences ≠ unknowns; a mutating tool (set_*, *_session, load_frida_script) acts only on a consented target.
 
@@ -12338,7 +12338,7 @@
 
 **ما هي:** أداة MCP من REA v6.7.0 (ليست من أوامر سطر الأوامر الـ153): List segments or memory blocks using exclusive end addresses. Ghidra reports block permissions, address space, image base, initialization, and overlay facts; Hopper marks unavailable permissions expli — MCP-only tool exposed by the REA server. List segments or memory blocks using exclusive end addresses. Ghidra reports block permissions, address space, image base, initialization, and overlay facts; Ho
 
-**متى:** lawful reverse engineering via a connected REA MCP server; needs an analysis provider (Hopper, Ghidra, IDA or Kuna) with an open binary
+**متى:** عند الهندسة العكسية المشروعة عبر خادم REA MCP متصل؛ يلزم مزوّد تحليل (Hopper أو Ghidra أو IDA أو Kuna) مع ملف ثنائي مفتوح / lawful reverse engineering via a connected REA MCP server; needs an analysis provider (Hopper, Ghidra, IDA or Kuna) with an open binary
 
 **كيف:** Connect the REA MCP server (`rea mcp add` / `rea --mcp`) and call the `list_segments` tool through your client; it is not a CLI command. Needs: an analysis provider (Hopper, Ghidra, IDA or Kuna) with an open binary. Evidence-first: observations ≠ inferences ≠ unknowns; a mutating tool (set_*, *_session, load_frida_script) acts only on a consented target.
 
@@ -12411,7 +12411,7 @@
 
 **ما هي:** أداة MCP من REA v6.7.0 (ليست من أوامر سطر الأوامر الـ153): List every provider-reported string object or candidate, or filter to one address, as address/value pairs with encoding, terminator status, and byte length when available. Hopper reads complete typed — MCP-only tool exposed by the REA server. List every provider-reported string object or candidate, or filter to one address, as address/value pairs with encoding, terminator status, and byte length when
 
-**متى:** lawful reverse engineering via a connected REA MCP server; needs an analysis provider (Hopper, Ghidra, IDA or Kuna) with an open binary
+**متى:** عند الهندسة العكسية المشروعة عبر خادم REA MCP متصل؛ يلزم مزوّد تحليل (Hopper أو Ghidra أو IDA أو Kuna) مع ملف ثنائي مفتوح / lawful reverse engineering via a connected REA MCP server; needs an analysis provider (Hopper, Ghidra, IDA or Kuna) with an open binary
 
 **كيف:** Connect the REA MCP server (`rea mcp add` / `rea --mcp`) and call the `list_strings` tool through your client; it is not a CLI command. Needs: an analysis provider (Hopper, Ghidra, IDA or Kuna) with an open binary. Evidence-first: observations ≠ inferences ≠ unknowns; a mutating tool (set_*, *_session, load_frida_script) acts only on a consented target.
 
@@ -12484,7 +12484,7 @@
 
 **ما هي:** أداة MCP من REA v6.7.0 (ليست من أوامر سطر الأوامر الـ153): Return the next analyzed object address after an explicit address or current cursor. This is a navigation primitive, not instruction-flow or CFG analysis. — MCP-only tool exposed by the REA server. Return the next analyzed object address after an explicit address or current cursor. This is a navigation primitive, not instruction-flow or CFG analysis.
 
-**متى:** lawful reverse engineering via a connected REA MCP server; needs an analysis provider (Hopper, Ghidra, IDA or Kuna) with an open binary
+**متى:** عند الهندسة العكسية المشروعة عبر خادم REA MCP متصل؛ يلزم مزوّد تحليل (Hopper أو Ghidra أو IDA أو Kuna) مع ملف ثنائي مفتوح / lawful reverse engineering via a connected REA MCP server; needs an analysis provider (Hopper, Ghidra, IDA or Kuna) with an open binary
 
 **كيف:** Connect the REA MCP server (`rea mcp add` / `rea --mcp`) and call the `next_address` tool through your client; it is not a CLI command. Needs: an analysis provider (Hopper, Ghidra, IDA or Kuna) with an open binary. Evidence-first: observations ≠ inferences ≠ unknowns; a mutating tool (set_*, *_session, load_frida_script) acts only on a consented target.
 
@@ -12557,7 +12557,7 @@
 
 **ما هي:** أداة MCP من REA v6.7.0 (ليست من أوامر سطر الأوامر الـ153): Return the previous analyzed object start before an explicit address or current cursor. This is a navigation primitive and may fail at document boundaries; data objects and instructions remain distinc — MCP-only tool exposed by the REA server. Return the previous analyzed object start before an explicit address or current cursor. This is a navigation primitive and may fail at document boundaries; data
 
-**متى:** lawful reverse engineering via a connected REA MCP server; needs an analysis provider (Hopper, Ghidra, IDA or Kuna) with an open binary
+**متى:** عند الهندسة العكسية المشروعة عبر خادم REA MCP متصل؛ يلزم مزوّد تحليل (Hopper أو Ghidra أو IDA أو Kuna) مع ملف ثنائي مفتوح / lawful reverse engineering via a connected REA MCP server; needs an analysis provider (Hopper, Ghidra, IDA or Kuna) with an open binary
 
 **كيف:** Connect the REA MCP server (`rea mcp add` / `rea --mcp`) and call the `prev_address` tool through your client; it is not a CLI command. Needs: an analysis provider (Hopper, Ghidra, IDA or Kuna) with an open binary. Evidence-first: observations ≠ inferences ≠ unknowns; a mutating tool (set_*, *_session, load_frida_script) acts only on a consented target.
 
@@ -12630,7 +12630,7 @@
 
 **ما هي:** أداة MCP من REA v6.7.0 (ليست من أوامر سطر الأوامر الـ153): Resolve an unambiguous procedure symbol name or provider-normalized address to its canonical entry address. External address spaces remain explicit. — MCP-only tool exposed by the REA server. Resolve an unambiguous procedure symbol name or provider-normalized address to its canonical entry address. External address spaces remain explicit.
 
-**متى:** lawful reverse engineering via a connected REA MCP server; needs an analysis provider (Hopper, Ghidra, IDA or Kuna) with an open binary
+**متى:** عند الهندسة العكسية المشروعة عبر خادم REA MCP متصل؛ يلزم مزوّد تحليل (Hopper أو Ghidra أو IDA أو Kuna) مع ملف ثنائي مفتوح / lawful reverse engineering via a connected REA MCP server; needs an analysis provider (Hopper, Ghidra, IDA or Kuna) with an open binary
 
 **كيف:** Connect the REA MCP server (`rea mcp add` / `rea --mcp`) and call the `procedure_address` tool through your client; it is not a CLI command. Needs: an analysis provider (Hopper, Ghidra, IDA or Kuna) with an open binary. Evidence-first: observations ≠ inferences ≠ unknowns; a mutating tool (set_*, *_session, load_frida_script) acts only on a consented target.
 
@@ -12703,7 +12703,7 @@
 
 **ما هي:** أداة MCP من REA v6.7.0 (ليست من أوامر سطر الأوامر الـ153): Return assembly for one analyzed procedure identified by symbol or hexadecimal address. Use when pseudocode loses calling-convention or instruction-level detail; output is currently returned as one un — MCP-only tool exposed by the REA server. Return assembly for one analyzed procedure identified by symbol or hexadecimal address. Use when pseudocode loses calling-convention or instruction-level detail
 
-**متى:** lawful reverse engineering via a connected REA MCP server; needs an analysis provider (Hopper, Ghidra, IDA or Kuna) with an open binary
+**متى:** عند الهندسة العكسية المشروعة عبر خادم REA MCP متصل؛ يلزم مزوّد تحليل (Hopper أو Ghidra أو IDA أو Kuna) مع ملف ثنائي مفتوح / lawful reverse engineering via a connected REA MCP server; needs an analysis provider (Hopper, Ghidra, IDA or Kuna) with an open binary
 
 **كيف:** Connect the REA MCP server (`rea mcp add` / `rea --mcp`) and call the `procedure_assembly` tool through your client; it is not a CLI command. Needs: an analysis provider (Hopper, Ghidra, IDA or Kuna) with an open binary. Evidence-first: observations ≠ inferences ≠ unknowns; a mutating tool (set_*, *_session, load_frida_script) acts only on a consented target.
 
@@ -12776,7 +12776,7 @@
 
 **ما هي:** أداة MCP من REA v6.7.0 (ليست من أوامر سطر الأوامر الـ153): Return the provider's resolved direct callees for one procedure identified by symbol or address. Unresolved indirect calls may be absent; use analyze_function and typed references to preserve availabl — MCP-only tool exposed by the REA server. Return the provider's resolved direct callees for one procedure identified by symbol or address. Unresolved indirect calls may be absent; use analyze_function a
 
-**متى:** lawful reverse engineering via a connected REA MCP server; needs an analysis provider (Hopper, Ghidra, IDA or Kuna) with an open binary
+**متى:** عند الهندسة العكسية المشروعة عبر خادم REA MCP متصل؛ يلزم مزوّد تحليل (Hopper أو Ghidra أو IDA أو Kuna) مع ملف ثنائي مفتوح / lawful reverse engineering via a connected REA MCP server; needs an analysis provider (Hopper, Ghidra, IDA or Kuna) with an open binary
 
 **كيف:** Connect the REA MCP server (`rea mcp add` / `rea --mcp`) and call the `procedure_callees` tool through your client; it is not a CLI command. Needs: an analysis provider (Hopper, Ghidra, IDA or Kuna) with an open binary. Evidence-first: observations ≠ inferences ≠ unknowns; a mutating tool (set_*, *_session, load_frida_script) acts only on a consented target.
 
@@ -12849,7 +12849,7 @@
 
 **ما هي:** أداة MCP من REA v6.7.0 (ليست من أوامر سطر الأوامر الـ153): Return the provider's resolved direct callers for one procedure identified by symbol or address. Results reflect completed static analysis and may omit unresolved indirect references. Ghidra terminal- — MCP-only tool exposed by the REA server. Return the provider's resolved direct callers for one procedure identified by symbol or address. Results reflect completed static analysis and may omit unresolv
 
-**متى:** lawful reverse engineering via a connected REA MCP server; needs an analysis provider (Hopper, Ghidra, IDA or Kuna) with an open binary
+**متى:** عند الهندسة العكسية المشروعة عبر خادم REA MCP متصل؛ يلزم مزوّد تحليل (Hopper أو Ghidra أو IDA أو Kuna) مع ملف ثنائي مفتوح / lawful reverse engineering via a connected REA MCP server; needs an analysis provider (Hopper, Ghidra, IDA or Kuna) with an open binary
 
 **كيف:** Connect the REA MCP server (`rea mcp add` / `rea --mcp`) and call the `procedure_callers` tool through your client; it is not a CLI command. Needs: an analysis provider (Hopper, Ghidra, IDA or Kuna) with an open binary. Evidence-first: observations ≠ inferences ≠ unknowns; a mutating tool (set_*, *_session, load_frida_script) acts only on a consented target.
 
@@ -12922,7 +12922,7 @@
 
 **ما هي:** أداة MCP من REA v6.7.0 (ليست من أوامر سطر الأوامر الـ153): Return provider metadata for one procedure identified by symbol or address: entrypoint, signature, locals, size, block count, and complete inclusive body ranges when observed. Extents reflect the prov — MCP-only tool exposed by the REA server. Return provider metadata for one procedure identified by symbol or address: entrypoint, signature, locals, size, block count, and complete inclusive body ranges
 
-**متى:** lawful reverse engineering via a connected REA MCP server; needs an analysis provider (Hopper, Ghidra, IDA or Kuna) with an open binary
+**متى:** عند الهندسة العكسية المشروعة عبر خادم REA MCP متصل؛ يلزم مزوّد تحليل (Hopper أو Ghidra أو IDA أو Kuna) مع ملف ثنائي مفتوح / lawful reverse engineering via a connected REA MCP server; needs an analysis provider (Hopper, Ghidra, IDA or Kuna) with an open binary
 
 **كيف:** Connect the REA MCP server (`rea mcp add` / `rea --mcp`) and call the `procedure_info` tool through your client; it is not a CLI command. Needs: an analysis provider (Hopper, Ghidra, IDA or Kuna) with an open binary. Evidence-first: observations ≠ inferences ≠ unknowns; a mutating tool (set_*, *_session, load_frida_script) acts only on a consented target.
 
@@ -12995,7 +12995,7 @@
 
 **ما هي:** أداة MCP من REA v6.7.0 (ليست من أوامر سطر الأوامر الـ153): Return every raw instruction for one analyzed procedure. Instruction text and body extent are provider-specific. Ghidra terminal-call assumptions that may cut the analyzed body are reported in limitat — MCP-only tool exposed by the REA server. Return every raw instruction for one analyzed procedure. Instruction text and body extent are provider-specific. Ghidra terminal-call assumptions that may cut t
 
-**متى:** lawful reverse engineering via a connected REA MCP server; needs an analysis provider (Hopper, Ghidra, IDA or Kuna) with an open binary
+**متى:** عند الهندسة العكسية المشروعة عبر خادم REA MCP متصل؛ يلزم مزوّد تحليل (Hopper أو Ghidra أو IDA أو Kuna) مع ملف ثنائي مفتوح / lawful reverse engineering via a connected REA MCP server; needs an analysis provider (Hopper, Ghidra, IDA or Kuna) with an open binary
 
 **كيف:** Connect the REA MCP server (`rea mcp add` / `rea --mcp`) and call the `read_function_instructions` tool through your client; it is not a CLI command. Needs: an analysis provider (Hopper, Ghidra, IDA or Kuna) with an open binary. Evidence-first: observations ≠ inferences ≠ unknowns; a mutating tool (set_*, *_session, load_frida_script) acts only on a consented target.
 
@@ -13068,7 +13068,7 @@
 
 **ما هي:** أداة MCP من REA v6.7.0 (ليست من أوامر سطر الأوامر الـ153): Return every raw incoming or outgoing reference edge for one procedure. Endpoint procedures are resolved only from provider containment. Ghidra preserves detailed reference flags. Hopper preserves nat — MCP-only tool exposed by the REA server. Return every raw incoming or outgoing reference edge for one procedure. Endpoint procedures are resolved only from provider containment. Ghidra preserves detail
 
-**متى:** lawful reverse engineering via a connected REA MCP server; needs an analysis provider (Hopper, Ghidra, IDA or Kuna) with an open binary
+**متى:** عند الهندسة العكسية المشروعة عبر خادم REA MCP متصل؛ يلزم مزوّد تحليل (Hopper أو Ghidra أو IDA أو Kuna) مع ملف ثنائي مفتوح / lawful reverse engineering via a connected REA MCP server; needs an analysis provider (Hopper, Ghidra, IDA or Kuna) with an open binary
 
 **كيف:** Connect the REA MCP server (`rea mcp add` / `rea --mcp`) and call the `procedure_references` tool through your client; it is not a CLI command. Needs: an analysis provider (Hopper, Ghidra, IDA or Kuna) with an open binary. Evidence-first: observations ≠ inferences ≠ unknowns; a mutating tool (set_*, *_session, load_frida_script) acts only on a consented target.
 
@@ -13141,7 +13141,7 @@
 
 **ما هي:** أداة MCP من REA v6.7.0 (ليست من أوامر سطر الأوامر الـ153): Decompile one analyzed procedure by symbol name or provider-normalized address. Ghidra also accepts file-offset:0x... selectors and falls back to a unique source-file mapping when a 0x-prefixed number — MCP-only tool exposed by the REA server. Decompile one analyzed procedure by symbol name or provider-normalized address. Ghidra also accepts file-offset:0x... selectors and falls back to a unique sourc
 
-**متى:** lawful reverse engineering via a connected REA MCP server; needs an analysis provider (Hopper, Ghidra, IDA or Kuna) with an open binary
+**متى:** عند الهندسة العكسية المشروعة عبر خادم REA MCP متصل؛ يلزم مزوّد تحليل (Hopper أو Ghidra أو IDA أو Kuna) مع ملف ثنائي مفتوح / lawful reverse engineering via a connected REA MCP server; needs an analysis provider (Hopper, Ghidra, IDA or Kuna) with an open binary
 
 **كيف:** Connect the REA MCP server (`rea mcp add` / `rea --mcp`) and call the `procedure_pseudo_code` tool through your client; it is not a CLI command. Needs: an analysis provider (Hopper, Ghidra, IDA or Kuna) with an open binary. Evidence-first: observations ≠ inferences ≠ unknowns; a mutating tool (set_*, *_session, load_frida_script) acts only on a consented target.
 
@@ -13214,7 +13214,7 @@
 
 **ما هي:** أداة MCP من REA v6.7.0 (ليست من أوامر سطر الأوامر الـ153): Resolve an arbitrary address, including an interior instruction or exact external entry, to its provider-analyzed containing procedure. A negative result distinguishes outside segments from not in a p — MCP-only tool exposed by the REA server. Resolve an arbitrary address, including an interior instruction or exact external entry, to its provider-analyzed containing procedure. A negative result distin
 
-**متى:** lawful reverse engineering via a connected REA MCP server; needs an analysis provider (Hopper, Ghidra, IDA or Kuna) with an open binary
+**متى:** عند الهندسة العكسية المشروعة عبر خادم REA MCP متصل؛ يلزم مزوّد تحليل (Hopper أو Ghidra أو IDA أو Kuna) مع ملف ثنائي مفتوح / lawful reverse engineering via a connected REA MCP server; needs an analysis provider (Hopper, Ghidra, IDA or Kuna) with an open binary
 
 **كيف:** Connect the REA MCP server (`rea mcp add` / `rea --mcp`) and call the `resolve_containing_procedure` tool through your client; it is not a CLI command. Needs: an analysis provider (Hopper, Ghidra, IDA or Kuna) with an open binary. Evidence-first: observations ≠ inferences ≠ unknowns; a mutating tool (set_*, *_session, load_frida_script) acts only on a consented target.
 
@@ -13287,7 +13287,7 @@
 
 **ما هي:** أداة MCP من REA v6.7.0 (ليست من أوامر سطر الأوامر الـ153): Search every analyzed procedure name using literal matching by default or regex when requested. Results are deterministic and complete. Hopper regex mode uses ECMAScript Unicode syntax in a cancellabl — MCP-only tool exposed by the REA server. Search every analyzed procedure name using literal matching by default or regex when requested. Results are deterministic and complete. Hopper regex mode uses E
 
-**متى:** lawful reverse engineering via a connected REA MCP server; needs an analysis provider (Hopper, Ghidra, IDA or Kuna) with an open binary
+**متى:** عند الهندسة العكسية المشروعة عبر خادم REA MCP متصل؛ يلزم مزوّد تحليل (Hopper أو Ghidra أو IDA أو Kuna) مع ملف ثنائي مفتوح / lawful reverse engineering via a connected REA MCP server; needs an analysis provider (Hopper, Ghidra, IDA or Kuna) with an open binary
 
 **كيف:** Connect the REA MCP server (`rea mcp add` / `rea --mcp`) and call the `search_procedures` tool through your client; it is not a CLI command. Needs: an analysis provider (Hopper, Ghidra, IDA or Kuna) with an open binary. Evidence-first: observations ≠ inferences ≠ unknowns; a mutating tool (set_*, *_session, load_frida_script) acts only on a consented target.
 
@@ -13360,7 +13360,7 @@
 
 **ما هي:** أداة MCP من REA v6.7.0 (ليست من أوامر سطر الأوامر الـ153): Search every provider-reported string object or candidate using literal matching by default or regex when requested. Results are deterministic and complete over that provider inventory, not every text — MCP-only tool exposed by the REA server. Search every provider-reported string object or candidate using literal matching by default or regex when requested. Results are deterministic and complete over
 
-**متى:** lawful reverse engineering via a connected REA MCP server; needs an analysis provider (Hopper, Ghidra, IDA or Kuna) with an open binary
+**متى:** عند الهندسة العكسية المشروعة عبر خادم REA MCP متصل؛ يلزم مزوّد تحليل (Hopper أو Ghidra أو IDA أو Kuna) مع ملف ثنائي مفتوح / lawful reverse engineering via a connected REA MCP server; needs an analysis provider (Hopper, Ghidra, IDA or Kuna) with an open binary
 
 **كيف:** Connect the REA MCP server (`rea mcp add` / `rea --mcp`) and call the `search_strings` tool through your client; it is not a CLI command. Needs: an analysis provider (Hopper, Ghidra, IDA or Kuna) with an open binary. Evidence-first: observations ≠ inferences ≠ unknowns; a mutating tool (set_*, *_session, load_frida_script) acts only on a consented target.
 
@@ -13433,7 +13433,7 @@
 
 **ما هي:** أداة MCP من REA v6.7.0 (ليست من أوامر سطر الأوامر الـ153): Assign an analyst name to one mapped hexadecimal address and report whether the native edit succeeded and exact readback matched. Hopper rejects symbol names exceeding 1024 UTF-16 code units before mu — MCP-only tool exposed by the REA server. Assign an analyst name to one mapped hexadecimal address and report whether the native edit succeeded and exact readback matched. Hopper rejects symbol names ex
 
-**متى:** lawful reverse engineering via a connected REA MCP server; needs an analysis provider (Hopper, Ghidra, IDA or Kuna) with an open binary
+**متى:** عند الهندسة العكسية المشروعة عبر خادم REA MCP متصل؛ يلزم مزوّد تحليل (Hopper أو Ghidra أو IDA أو Kuna) مع ملف ثنائي مفتوح / lawful reverse engineering via a connected REA MCP server; needs an analysis provider (Hopper, Ghidra, IDA or Kuna) with an open binary
 
 **كيف:** Connect the REA MCP server (`rea mcp add` / `rea --mcp`) and call the `set_address_name` tool through your client; it is not a CLI command. Needs: an analysis provider (Hopper, Ghidra, IDA or Kuna) with an open binary. Evidence-first: observations ≠ inferences ≠ unknowns; a mutating tool (set_*, *_session, load_frida_script) acts only on a consented target.
 
@@ -13506,7 +13506,7 @@
 
 **ما هي:** أداة MCP من REA v6.7.0 (ليست من أوامر سطر الأوامر الـ153): Assign analyst names to multiple mapped addresses in one call and return per-address edit/readback success booleans. Hopper validates mapped destinations, native string representations, its 1024 UTF-1 — MCP-only tool exposed by the REA server. Assign analyst names to multiple mapped addresses in one call and return per-address edit/readback success booleans. Hopper validates mapped destinations, nativ
 
-**متى:** lawful reverse engineering via a connected REA MCP server; needs an analysis provider (Hopper, Ghidra, IDA or Kuna) with an open binary
+**متى:** عند الهندسة العكسية المشروعة عبر خادم REA MCP متصل؛ يلزم مزوّد تحليل (Hopper أو Ghidra أو IDA أو Kuna) مع ملف ثنائي مفتوح / lawful reverse engineering via a connected REA MCP server; needs an analysis provider (Hopper, Ghidra, IDA or Kuna) with an open binary
 
 **كيف:** Connect the REA MCP server (`rea mcp add` / `rea --mcp`) and call the `set_addresses_names` tool through your client; it is not a CLI command. Needs: an analysis provider (Hopper, Ghidra, IDA or Kuna) with an open binary. Evidence-first: observations ≠ inferences ≠ unknowns; a mutating tool (set_*, *_session, load_frida_script) acts only on a consented target.
 
@@ -13579,7 +13579,7 @@
 
 **ما هي:** أداة MCP من REA v6.7.0 (ليست من أوامر سطر الأوامر الـ153): Create or replace a bookmark at a mapped hexadecimal address and report success. This mutates navigation metadata; bookmarks are analyst-authored navigation aids, not binary evidence. — MCP-only tool exposed by the REA server. Create or replace a bookmark at a mapped hexadecimal address and report success. This mutates navigation metadata; bookmarks are analyst-authored navigation aid
 
-**متى:** lawful reverse engineering via a connected REA MCP server; needs an analysis provider (Hopper, Ghidra, IDA or Kuna) with an open binary
+**متى:** عند الهندسة العكسية المشروعة عبر خادم REA MCP متصل؛ يلزم مزوّد تحليل (Hopper أو Ghidra أو IDA أو Kuna) مع ملف ثنائي مفتوح / lawful reverse engineering via a connected REA MCP server; needs an analysis provider (Hopper, Ghidra, IDA or Kuna) with an open binary
 
 **كيف:** Connect the REA MCP server (`rea mcp add` / `rea --mcp`) and call the `set_bookmark` tool through your client; it is not a CLI command. Needs: an analysis provider (Hopper, Ghidra, IDA or Kuna) with an open binary. Evidence-first: observations ≠ inferences ≠ unknowns; a mutating tool (set_*, *_session, load_frida_script) acts only on a consented target.
 
@@ -13652,7 +13652,7 @@
 
 **ما هي:** أداة MCP من REA v6.7.0 (ليست من أوامر سطر الأوامر الـ153): Write a regular analysis comment at a hexadecimal address and return whether readback matched. An empty comment clears it. This mutates the Hopper document; use comments to record evidence IDs or reas — MCP-only tool exposed by the REA server. Write a regular analysis comment at a hexadecimal address and return whether readback matched. An empty comment clears it. This mutates the Hopper document; use
 
-**متى:** lawful reverse engineering via a connected REA MCP server; needs an analysis provider (Hopper, Ghidra, IDA or Kuna) with an open binary
+**متى:** عند الهندسة العكسية المشروعة عبر خادم REA MCP متصل؛ يلزم مزوّد تحليل (Hopper أو Ghidra أو IDA أو Kuna) مع ملف ثنائي مفتوح / lawful reverse engineering via a connected REA MCP server; needs an analysis provider (Hopper, Ghidra, IDA or Kuna) with an open binary
 
 **كيف:** Connect the REA MCP server (`rea mcp add` / `rea --mcp`) and call the `set_comment` tool through your client; it is not a CLI command. Needs: an analysis provider (Hopper, Ghidra, IDA or Kuna) with an open binary. Evidence-first: observations ≠ inferences ≠ unknowns; a mutating tool (set_*, *_session, load_frida_script) acts only on a consented target.
 
@@ -13725,7 +13725,7 @@
 
 **ما هي:** أداة MCP من REA v6.7.0 (ليست من أوامر سطر الأوامر الـ153): Write an inline instruction comment at a hexadecimal address and return whether readback matched. An empty comment clears it; Hopper may flatten newlines, producing false on exact readback. This mutat — MCP-only tool exposed by the REA server. Write an inline instruction comment at a hexadecimal address and return whether readback matched. An empty comment clears it; Hopper may flatten newlines, produ
 
-**متى:** lawful reverse engineering via a connected REA MCP server; needs an analysis provider (Hopper, Ghidra, IDA or Kuna) with an open binary
+**متى:** عند الهندسة العكسية المشروعة عبر خادم REA MCP متصل؛ يلزم مزوّد تحليل (Hopper أو Ghidra أو IDA أو Kuna) مع ملف ثنائي مفتوح / lawful reverse engineering via a connected REA MCP server; needs an analysis provider (Hopper, Ghidra, IDA or Kuna) with an open binary
 
 **كيف:** Connect the REA MCP server (`rea mcp add` / `rea --mcp`) and call the `set_inline_comment` tool through your client; it is not a CLI command. Needs: an analysis provider (Hopper, Ghidra, IDA or Kuna) with an open binary. Evidence-first: observations ≠ inferences ≠ unknowns; a mutating tool (set_*, *_session, load_frida_script) acts only on a consented target.
 
@@ -13798,7 +13798,7 @@
 
 **ما هي:** أداة MCP من REA v6.7.0 (ليست من أوامر سطر الأوامر الـ153): Remove the bookmark at a mapped hexadecimal address and return whether it is absent. Hopper also permits removing an existing legacy bookmark outside mapped memory. This mutates navigation metadata an — MCP-only tool exposed by the REA server. Remove the bookmark at a mapped hexadecimal address and return whether it is absent. Hopper also permits removing an existing legacy bookmark outside mapped mem
 
-**متى:** lawful reverse engineering via a connected REA MCP server; needs an analysis provider (Hopper, Ghidra, IDA or Kuna) with an open binary
+**متى:** عند الهندسة العكسية المشروعة عبر خادم REA MCP متصل؛ يلزم مزوّد تحليل (Hopper أو Ghidra أو IDA أو Kuna) مع ملف ثنائي مفتوح / lawful reverse engineering via a connected REA MCP server; needs an analysis provider (Hopper, Ghidra, IDA or Kuna) with an open binary
 
 **كيف:** Connect the REA MCP server (`rea mcp add` / `rea --mcp`) and call the `unset_bookmark` tool through your client; it is not a CLI command. Needs: an analysis provider (Hopper, Ghidra, IDA or Kuna) with an open binary. Evidence-first: observations ≠ inferences ≠ unknowns; a mutating tool (set_*, *_session, load_frida_script) acts only on a consented target.
 
@@ -13871,7 +13871,7 @@
 
 **ما هي:** أداة MCP من REA v6.7.0 (ليست من أوامر سطر الأوامر الـ153): Discover and deduplicate Objective-C class labels, optionally filtering by literal substring. — MCP-only tool exposed by the REA server. Discover and deduplicate Objective-C class labels, optionally filtering by literal substring.
 
-**متى:** lawful reverse engineering via a connected REA MCP server; needs an analysis provider (Hopper, Ghidra, IDA or Kuna) with an open binary
+**متى:** عند الهندسة العكسية المشروعة عبر خادم REA MCP متصل؛ يلزم مزوّد تحليل (Hopper أو Ghidra أو IDA أو Kuna) مع ملف ثنائي مفتوح / lawful reverse engineering via a connected REA MCP server; needs an analysis provider (Hopper, Ghidra, IDA or Kuna) with an open binary
 
 **كيف:** Connect the REA MCP server (`rea mcp add` / `rea --mcp`) and call the `get_objc_classes` tool through your client; it is not a CLI command. Needs: an analysis provider (Hopper, Ghidra, IDA or Kuna) with an open binary. Evidence-first: observations ≠ inferences ≠ unknowns; a mutating tool (set_*, *_session, load_frida_script) acts only on a consented target.
 
@@ -13944,7 +13944,7 @@
 
 **ما هي:** أداة MCP من REA v6.7.0 (ليست من أوامر سطر الأوامر الـ153): Discover and deduplicate Objective-C and Swift protocol labels. — MCP-only tool exposed by the REA server. Discover and deduplicate Objective-C and Swift protocol labels.
 
-**متى:** lawful reverse engineering via a connected REA MCP server; needs an analysis provider (Hopper, Ghidra, IDA or Kuna) with an open binary
+**متى:** عند الهندسة العكسية المشروعة عبر خادم REA MCP متصل؛ يلزم مزوّد تحليل (Hopper أو Ghidra أو IDA أو Kuna) مع ملف ثنائي مفتوح / lawful reverse engineering via a connected REA MCP server; needs an analysis provider (Hopper, Ghidra, IDA or Kuna) with an open binary
 
 **كيف:** Connect the REA MCP server (`rea mcp add` / `rea --mcp`) and call the `get_objc_protocols` tool through your client; it is not a CLI command. Needs: an analysis provider (Hopper, Ghidra, IDA or Kuna) with an open binary. Evidence-first: observations ≠ inferences ≠ unknowns; a mutating tool (set_*, *_session, load_frida_script) acts only on a consented target.
 
@@ -14017,7 +14017,7 @@
 
 **ما هي:** أداة MCP من REA v6.7.0 (ليست من أوامر سطر الأوامر الـ153): Decompile each explicit procedure symbol or address concurrently. Preserves each input selector in address and reports the observed canonical entry and entry label in procedure; identity or label fail — MCP-only tool exposed by the REA server. Decompile each explicit procedure symbol or address concurrently. Preserves each input selector in address and reports the observed canonical entry and entry la
 
-**متى:** lawful reverse engineering via a connected REA MCP server; needs an analysis provider (Hopper, Ghidra, IDA or Kuna) with an open binary
+**متى:** عند الهندسة العكسية المشروعة عبر خادم REA MCP متصل؛ يلزم مزوّد تحليل (Hopper أو Ghidra أو IDA أو Kuna) مع ملف ثنائي مفتوح / lawful reverse engineering via a connected REA MCP server; needs an analysis provider (Hopper, Ghidra, IDA or Kuna) with an open binary
 
 **كيف:** Connect the REA MCP server (`rea mcp add` / `rea --mcp`) and call the `batch_decompile` tool through your client; it is not a CLI command. Needs: an analysis provider (Hopper, Ghidra, IDA or Kuna) with an open binary. Evidence-first: observations ≠ inferences ≠ unknowns; a mutating tool (set_*, *_session, load_frida_script) acts only on a consented target.
 
@@ -14090,7 +14090,7 @@
 
 **ما هي:** أداة MCP من REA v6.7.0 (ليست من أوامر سطر الأوامر الـ153): Resolve one symbol or address to its canonical procedure entry, then traverse the bound provider's caller or callee relationships until the reachable graph is exhausted. Every node uses a canonical ad — MCP-only tool exposed by the REA server. Resolve one symbol or address to its canonical procedure entry, then traverse the bound provider's caller or callee relationships until the reachable graph is e
 
-**متى:** lawful reverse engineering via a connected REA MCP server; needs an analysis provider (Hopper, Ghidra, IDA or Kuna) with an open binary
+**متى:** عند الهندسة العكسية المشروعة عبر خادم REA MCP متصل؛ يلزم مزوّد تحليل (Hopper أو Ghidra أو IDA أو Kuna) مع ملف ثنائي مفتوح / lawful reverse engineering via a connected REA MCP server; needs an analysis provider (Hopper, Ghidra, IDA or Kuna) with an open binary
 
 **كيف:** Connect the REA MCP server (`rea mcp add` / `rea --mcp`) and call the `get_call_graph` tool through your client; it is not a CLI command. Needs: an analysis provider (Hopper, Ghidra, IDA or Kuna) with an open binary. Evidence-first: observations ≠ inferences ≠ unknowns; a mutating tool (set_*, *_session, load_frida_script) acts only on a consented target.
 
@@ -14163,7 +14163,7 @@
 
 **ما هي:** أداة MCP من REA v6.7.0 (ليست من أوامر سطر الأوامر الـ153): Categorize analyzed Swift procedure names using their manglings or same-address Swift symbol aliases. Decodes legacy and literal modern nominal contexts into classes, structs, enums, protocols, and ex — MCP-only tool exposed by the REA server. Categorize analyzed Swift procedure names using their manglings or same-address Swift symbol aliases. Decodes legacy and literal modern nominal contexts into cl
 
-**متى:** lawful reverse engineering via a connected REA MCP server; needs an analysis provider (Hopper, Ghidra, IDA or Kuna) with an open binary
+**متى:** عند الهندسة العكسية المشروعة عبر خادم REA MCP متصل؛ يلزم مزوّد تحليل (Hopper أو Ghidra أو IDA أو Kuna) مع ملف ثنائي مفتوح / lawful reverse engineering via a connected REA MCP server; needs an analysis provider (Hopper, Ghidra, IDA or Kuna) with an open binary
 
 **كيف:** Connect the REA MCP server (`rea mcp add` / `rea --mcp`) and call the `analyze_swift_types` tool through your client; it is not a CLI command. Needs: an analysis provider (Hopper, Ghidra, IDA or Kuna) with an open binary. Evidence-first: observations ≠ inferences ≠ unknowns; a mutating tool (set_*, *_session, load_frida_script) acts only on a consented target.
 
@@ -14236,7 +14236,7 @@
 
 **ما هي:** أداة MCP من REA v6.7.0 (ليست من أوامر سطر الأوامر الـ153): Resolve an exact name against the bound provider's name inventory and return a resolved or unresolved result. Unresolved names use the stable name_not_found reason; this xref workflow returns address- — MCP-only tool exposed by the REA server. Resolve an exact name against the bound provider's name inventory and return a resolved or unresolved result. Unresolved names use the stable name_not_found rea
 
-**متى:** lawful reverse engineering via a connected REA MCP server; needs an analysis provider (Hopper, Ghidra, IDA or Kuna) with an open binary
+**متى:** عند الهندسة العكسية المشروعة عبر خادم REA MCP متصل؛ يلزم مزوّد تحليل (Hopper أو Ghidra أو IDA أو Kuna) مع ملف ثنائي مفتوح / lawful reverse engineering via a connected REA MCP server; needs an analysis provider (Hopper, Ghidra, IDA or Kuna) with an open binary
 
 **كيف:** Connect the REA MCP server (`rea mcp add` / `rea --mcp`) and call the `find_xrefs_to_name` tool through your client; it is not a CLI command. Needs: an analysis provider (Hopper, Ghidra, IDA or Kuna) with an open binary. Evidence-first: observations ≠ inferences ≠ unknowns; a mutating tool (set_*, *_session, load_frida_script) acts only on a consented target.
 
@@ -14309,7 +14309,7 @@
 
 **ما هي:** أداة MCP من REA v6.7.0 (ليست من أوامر سطر الأوامر الـ153): Return the bound document and exhaustive procedure/string counts, plus every segment and segment_count when the provider supports segment enumeration. If segment fields are omitted, segment coverage i — MCP-only tool exposed by the REA server. Return the bound document and exhaustive procedure/string counts, plus every segment and segment_count when the provider supports segment enumeration. If segmen
 
-**متى:** lawful reverse engineering via a connected REA MCP server; needs an open binary session with a provider
+**متى:** عند الهندسة العكسية المشروعة عبر خادم REA MCP متصل؛ يلزم جلسة ملف ثنائي مفتوحة مع مزوّد / lawful reverse engineering via a connected REA MCP server; needs an open binary session with a provider
 
 **كيف:** Connect the REA MCP server (`rea mcp add` / `rea --mcp`) and call the `binary_overview` tool through your client; it is not a CLI command. Needs: an open binary session with a provider. Evidence-first: observations ≠ inferences ≠ unknowns; a mutating tool (set_*, *_session, load_frida_script) acts only on a consented target.
 
@@ -14381,7 +14381,7 @@
 
 **ما هي:** أداة MCP من REA v6.7.0 (ليست من أوامر سطر الأوامر الـ153): Build a dossier for one native function identified by symbol or provider-returned address. Returns identity with complete inclusive analyzed body ranges or explicit unknown, provider-specific pseudoco — MCP-only tool exposed by the REA server. Build a dossier for one native function identified by symbol or provider-returned address. Returns identity with complete inclusive analyzed body ranges or expl
 
-**متى:** lawful reverse engineering via a connected REA MCP server; needs an analysis provider (Hopper, Ghidra, IDA or Kuna) with an open binary
+**متى:** عند الهندسة العكسية المشروعة عبر خادم REA MCP متصل؛ يلزم مزوّد تحليل (Hopper أو Ghidra أو IDA أو Kuna) مع ملف ثنائي مفتوح / lawful reverse engineering via a connected REA MCP server; needs an analysis provider (Hopper, Ghidra, IDA or Kuna) with an open binary
 
 **كيف:** Connect the REA MCP server (`rea mcp add` / `rea --mcp`) and call the `analyze_function` tool through your client; it is not a CLI command. Needs: an analysis provider (Hopper, Ghidra, IDA or Kuna) with an open binary. Evidence-first: observations ≠ inferences ≠ unknowns; a mutating tool (set_*, *_session, load_frida_script) acts only on a consented target.
 
@@ -14454,7 +14454,7 @@
 
 **ما هي:** أداة MCP من REA v6.7.0 (ليست من أوامر سطر الأوامر الـ153): Trace the complete literal query, preserving spaces, through every matching string and procedure, their xrefs, and truthful containing-procedure resolution. Returns observations, operation count, and — MCP-only tool exposed by the REA server. Trace the complete literal query, preserving spaces, through every matching string and procedure, their xrefs, and truthful containing-procedure resolution. Ret
 
-**متى:** lawful reverse engineering via a connected REA MCP server; needs an analysis provider (Hopper, Ghidra, IDA or Kuna) with an open binary
+**متى:** عند الهندسة العكسية المشروعة عبر خادم REA MCP متصل؛ يلزم مزوّد تحليل (Hopper أو Ghidra أو IDA أو Kuna) مع ملف ثنائي مفتوح / lawful reverse engineering via a connected REA MCP server; needs an analysis provider (Hopper, Ghidra, IDA or Kuna) with an open binary
 
 **كيف:** Connect the REA MCP server (`rea mcp add` / `rea --mcp`) and call the `trace_feature` tool through your client; it is not a CLI command. Needs: an analysis provider (Hopper, Ghidra, IDA or Kuna) with an open binary. Evidence-first: observations ≠ inferences ≠ unknowns; a mutating tool (set_*, *_session, load_frida_script) acts only on a consented target.
 
@@ -14527,7 +14527,7 @@
 
 **ما هي:** أداة MCP من REA v6.7.0 (ليست من أوامر سطر الأوامر الـ153): Resolve start and optional goal symbols or addresses to canonical procedure entries, then trace direct callers or callees until the graph is exhausted or the goal is reached. Results use canonical add — MCP-only tool exposed by the REA server. Resolve start and optional goal symbols or addresses to canonical procedure entries, then trace direct callers or callees until the graph is exhausted or the go
 
-**متى:** lawful reverse engineering via a connected REA MCP server; needs an analysis provider (Hopper, Ghidra, IDA or Kuna) with an open binary
+**متى:** عند الهندسة العكسية المشروعة عبر خادم REA MCP متصل؛ يلزم مزوّد تحليل (Hopper أو Ghidra أو IDA أو Kuna) مع ملف ثنائي مفتوح / lawful reverse engineering via a connected REA MCP server; needs an analysis provider (Hopper, Ghidra, IDA or Kuna) with an open binary
 
 **كيف:** Connect the REA MCP server (`rea mcp add` / `rea --mcp`) and call the `trace_call_path` tool through your client; it is not a CLI command. Needs: an analysis provider (Hopper, Ghidra, IDA or Kuna) with an open binary. Evidence-first: observations ≠ inferences ≠ unknowns; a mutating tool (set_*, *_session, load_frida_script) acts only on a consented target.
 
@@ -14600,7 +14600,7 @@
 
 **ما هي:** أداة MCP من REA v6.7.0 (ليست من أوامر سطر الأوامر الـ153): Attach Frida to one selected process or spawn one selected target. Spawned targets remain paused until resume_frida_session, allowing scripts to load before execution. Closing a session detaches instr — MCP-only tool exposed by the REA server. Attach Frida to one selected process or spawn one selected target. Spawned targets remain paused until resume_frida_session, allowing scripts to load before exe
 
-**متى:** lawful reverse engineering via a connected REA MCP server; needs runtime instrumentation of a consented process
+**متى:** عند الهندسة العكسية المشروعة عبر خادم REA MCP متصل؛ يلزم قياس وقت التشغيل لعملية تمت الموافقة عليها / lawful reverse engineering via a connected REA MCP server; needs runtime instrumentation of a consented process
 
 **كيف:** Connect the REA MCP server (`rea mcp add` / `rea --mcp`) and call the `start_frida_session` tool through your client; it is not a CLI command. Needs: runtime instrumentation of a consented process. Evidence-first: observations ≠ inferences ≠ unknowns; a mutating tool (set_*, *_session, load_frida_script) acts only on a consented target.
 
@@ -14673,7 +14673,7 @@
 
 **ما هي:** أداة MCP من REA v6.7.0 (ليست من أوامر سطر الأوامر الـ153): Load caller-supplied JavaScript into a Frida session. Scripts can read or change target memory and behavior and can access the target process's capabilities. Messages and script errors are returned in — MCP-only tool exposed by the REA server. Load caller-supplied JavaScript into a Frida session. Scripts can read or change target memory and behavior and can access the target process's capabilities. Me
 
-**متى:** lawful reverse engineering via a connected REA MCP server; needs runtime instrumentation of a consented process
+**متى:** عند الهندسة العكسية المشروعة عبر خادم REA MCP متصل؛ يلزم قياس وقت التشغيل لعملية تمت الموافقة عليها / lawful reverse engineering via a connected REA MCP server; needs runtime instrumentation of a consented process
 
 **كيف:** Connect the REA MCP server (`rea mcp add` / `rea --mcp`) and call the `load_frida_script` tool through your client; it is not a CLI command. Needs: runtime instrumentation of a consented process. Evidence-first: observations ≠ inferences ≠ unknowns; a mutating tool (set_*, *_session, load_frida_script) acts only on a consented target.
 
@@ -14746,7 +14746,7 @@
 
 **ما هي:** أداة MCP من REA v6.7.0 (ليست من أوامر سطر الأوامر الـ153): Resume the process created by a paused Frida spawn session. Attached processes are already running and cannot be resumed through this operation. — MCP-only tool exposed by the REA server. Resume the process created by a paused Frida spawn session. Attached processes are already running and cannot be resumed through this operation.
 
-**متى:** lawful reverse engineering via a connected REA MCP server; needs runtime instrumentation of a consented process
+**متى:** عند الهندسة العكسية المشروعة عبر خادم REA MCP متصل؛ يلزم قياس وقت التشغيل لعملية تمت الموافقة عليها / lawful reverse engineering via a connected REA MCP server; needs runtime instrumentation of a consented process
 
 **كيف:** Connect the REA MCP server (`rea mcp add` / `rea --mcp`) and call the `resume_frida_session` tool through your client; it is not a CLI command. Needs: runtime instrumentation of a consented process. Evidence-first: observations ≠ inferences ≠ unknowns; a mutating tool (set_*, *_session, load_frida_script) acts only on a consented target.
 
@@ -14819,7 +14819,7 @@
 
 **ما هي:** أداة MCP من REA v6.7.0 (ليست من أوامر سطر الأوامر الـ153): Unload one caller-selected Frida script from a live session. This removes that script's instrumentation from the target. — MCP-only tool exposed by the REA server. Unload one caller-selected Frida script from a live session. This removes that script's instrumentation from the target.
 
-**متى:** lawful reverse engineering via a connected REA MCP server; needs runtime instrumentation of a consented process
+**متى:** عند الهندسة العكسية المشروعة عبر خادم REA MCP متصل؛ يلزم قياس وقت التشغيل لعملية تمت الموافقة عليها / lawful reverse engineering via a connected REA MCP server; needs runtime instrumentation of a consented process
 
 **كيف:** Connect the REA MCP server (`rea mcp add` / `rea --mcp`) and call the `unload_frida_script` tool through your client; it is not a CLI command. Needs: runtime instrumentation of a consented process. Evidence-first: observations ≠ inferences ≠ unknowns; a mutating tool (set_*, *_session, load_frida_script) acts only on a consented target.
 
@@ -14892,7 +14892,7 @@
 
 **ما هي:** أداة MCP من REA v6.7.0 (ليست من أوامر سطر الأوامر الـ153): Return observed Frida session state and queued script messages. Message history is bounded by the provider capture budget and reports truncation. — MCP-only tool exposed by the REA server. Return observed Frida session state and queued script messages. Message history is bounded by the provider capture budget and reports truncation.
 
-**متى:** lawful reverse engineering via a connected REA MCP server; needs runtime instrumentation of a consented process
+**متى:** عند الهندسة العكسية المشروعة عبر خادم REA MCP متصل؛ يلزم قياس وقت التشغيل لعملية تمت الموافقة عليها / lawful reverse engineering via a connected REA MCP server; needs runtime instrumentation of a consented process
 
 **كيف:** Connect the REA MCP server (`rea mcp add` / `rea --mcp`) and call the `frida_session_status` tool through your client; it is not a CLI command. Needs: runtime instrumentation of a consented process. Evidence-first: observations ≠ inferences ≠ unknowns; a mutating tool (set_*, *_session, load_frida_script) acts only on a consented target.
 
@@ -14965,7 +14965,7 @@
 
 **ما هي:** أداة MCP من REA v6.7.0 (ليست من أوامر سطر الأوامر الـ153): Unload session scripts and detach REA's Frida session. If a spawned process is still paused, resume it before detaching so it is not left suspended. REA never kills the target; its final state is repo — MCP-only tool exposed by the REA server. Unload session scripts and detach REA's Frida session. If a spawned process is still paused, resume it before detaching so it is not left suspended. REA never k
 
-**متى:** lawful reverse engineering via a connected REA MCP server; needs runtime instrumentation of a consented process
+**متى:** عند الهندسة العكسية المشروعة عبر خادم REA MCP متصل؛ يلزم قياس وقت التشغيل لعملية تمت الموافقة عليها / lawful reverse engineering via a connected REA MCP server; needs runtime instrumentation of a consented process
 
 **كيف:** Connect the REA MCP server (`rea mcp add` / `rea --mcp`) and call the `close_frida_session` tool through your client; it is not a CLI command. Needs: runtime instrumentation of a consented process. Evidence-first: observations ≠ inferences ≠ unknowns; a mutating tool (set_*, *_session, load_frida_script) acts only on a consented target.
 
@@ -15038,7 +15038,7 @@
 
 **ما هي:** أداة MCP من REA v6.7.0 (ليست من أوامر سطر الأوامر الـ153): Start a BYO GDB process in MI3 mode when available, suppress startup files, and disable auto-loading. Persistent GDB sessions are available only on Linux, where REA can verify live inferior output des — MCP-only tool exposed by the REA server. Start a BYO GDB process in MI3 mode when available, suppress startup files, and disable auto-loading. Persistent GDB sessions are available only on Linux, where
 
-**متى:** lawful reverse engineering via a connected REA MCP server; needs a BYO GDB debugger on a consented target
+**متى:** عند الهندسة العكسية المشروعة عبر خادم REA MCP متصل؛ يلزم مصحّح GDB يحضره المستخدم على هدف تمت الموافقة عليه / lawful reverse engineering via a connected REA MCP server; needs a BYO GDB debugger on a consented target
 
 **كيف:** Connect the REA MCP server (`rea mcp add` / `rea --mcp`) and call the `start_gdb_session` tool through your client; it is not a CLI command. Needs: a BYO GDB debugger on a consented target. Evidence-first: observations ≠ inferences ≠ unknowns; a mutating tool (set_*, *_session, load_frida_script) acts only on a consented target.
 
@@ -15111,7 +15111,7 @@
 
 **ما هي:** أداة MCP من REA v6.7.0 (ليست من أوامر سطر الأوامر الـ153): Run one unrestricted GDB CLI command through MI interpreter-exec console and return raw MI, console, target, and log records inline with Evidence. A command timeout preserves collected records with co — MCP-only tool exposed by the REA server. Run one unrestricted GDB CLI command through MI interpreter-exec console and return raw MI, console, target, and log records inline with Evidence. A command tim
 
-**متى:** lawful reverse engineering via a connected REA MCP server; needs a BYO GDB debugger on a consented target
+**متى:** عند الهندسة العكسية المشروعة عبر خادم REA MCP متصل؛ يلزم مصحّح GDB يحضره المستخدم على هدف تمت الموافقة عليه / lawful reverse engineering via a connected REA MCP server; needs a BYO GDB debugger on a consented target
 
 **كيف:** Connect the REA MCP server (`rea mcp add` / `rea --mcp`) and call the `gdb_console` tool through your client; it is not a CLI command. Needs: a BYO GDB debugger on a consented target. Evidence-first: observations ≠ inferences ≠ unknowns; a mutating tool (set_*, *_session, load_frida_script) acts only on a consented target.
 
@@ -15184,7 +15184,7 @@
 
 **ما هي:** أداة MCP من REA v6.7.0 (ليست من أوامر سطر الأوامر الـ153): Return the observed lifecycle state and bounded recent MI records and process diagnostics for one persistent REA GDB session; truncation and invalid-UTF-8 fields report discarded or lossy data. — MCP-only tool exposed by the REA server. Return the observed lifecycle state and bounded recent MI records and process diagnostics for one persistent REA GDB session; truncation and invalid-UTF-8 field
 
-**متى:** lawful reverse engineering via a connected REA MCP server; needs a BYO GDB debugger on a consented target
+**متى:** عند الهندسة العكسية المشروعة عبر خادم REA MCP متصل؛ يلزم مصحّح GDB يحضره المستخدم على هدف تمت الموافقة عليه / lawful reverse engineering via a connected REA MCP server; needs a BYO GDB debugger on a consented target
 
 **كيف:** Connect the REA MCP server (`rea mcp add` / `rea --mcp`) and call the `gdb_session_status` tool through your client; it is not a CLI command. Needs: a BYO GDB debugger on a consented target. Evidence-first: observations ≠ inferences ≠ unknowns; a mutating tool (set_*, *_session, load_frida_script) acts only on a consented target.
 
@@ -15257,7 +15257,7 @@
 
 **ما هي:** أداة MCP من REA v6.7.0 (ليست من أوامر سطر الأوامر الـ153): Close the owned GDB process after verifying the inferior state. When one live thread group has a verified durable output TTY, REA automatically detaches it, which may resume target execution; otherwis — MCP-only tool exposed by the REA server. Close the owned GDB process after verifying the inferior state. When one live thread group has a verified durable output TTY, REA automatically detaches it, whi
 
-**متى:** lawful reverse engineering via a connected REA MCP server; needs a BYO GDB debugger on a consented target
+**متى:** عند الهندسة العكسية المشروعة عبر خادم REA MCP متصل؛ يلزم مصحّح GDB يحضره المستخدم على هدف تمت الموافقة عليه / lawful reverse engineering via a connected REA MCP server; needs a BYO GDB debugger on a consented target
 
 **كيف:** Connect the REA MCP server (`rea mcp add` / `rea --mcp`) and call the `close_gdb_session` tool through your client; it is not a CLI command. Needs: a BYO GDB debugger on a consented target. Evidence-first: observations ≠ inferences ≠ unknowns; a mutating tool (set_*, *_session, load_frida_script) acts only on a consented target.
 
@@ -15330,7 +15330,7 @@
 
 **ما هي:** أداة MCP من REA v6.7.0 (ليست من أوامر سطر الأوامر الـ153): Start a persistent Rizin debugger session using `-N` to suppress user settings and scripts while retaining plugins, `-0` for NUL framing, and `-d` with an optional caller-selected IO debugger backend. — MCP-only tool exposed by the REA server. Start a persistent Rizin debugger session using `-N` to suppress user settings and scripts while retaining plugins, `-0` for NUL framing, and `-d` with an optio
 
-**متى:** lawful reverse engineering via a connected REA MCP server; needs a BYO Rizin debugger
+**متى:** عند الهندسة العكسية المشروعة عبر خادم REA MCP متصل؛ يلزم مصحّح Rizin يحضره المستخدم / lawful reverse engineering via a connected REA MCP server; needs a BYO Rizin debugger
 
 **كيف:** Connect the REA MCP server (`rea mcp add` / `rea --mcp`) and call the `start_rizin_debug_session` tool through your client; it is not a CLI command. Needs: a BYO Rizin debugger. Evidence-first: observations ≠ inferences ≠ unknowns; a mutating tool (set_*, *_session, load_frida_script) acts only on a consented target.
 
@@ -15403,7 +15403,7 @@
 
 **ما هي:** أداة MCP من REA v6.7.0 (ليست من أوامر سطر الأوامر الـ153): Execute one unrestricted command in a persistent Rizin debugger session. Returns raw output inline with Evidence, including backend output interleaved before the completion marker. If the command exce — MCP-only tool exposed by the REA server. Execute one unrestricted command in a persistent Rizin debugger session. Returns raw output inline with Evidence, including backend output interleaved before th
 
-**متى:** lawful reverse engineering via a connected REA MCP server; needs a BYO Rizin debugger
+**متى:** عند الهندسة العكسية المشروعة عبر خادم REA MCP متصل؛ يلزم مصحّح Rizin يحضره المستخدم / lawful reverse engineering via a connected REA MCP server; needs a BYO Rizin debugger
 
 **كيف:** Connect the REA MCP server (`rea mcp add` / `rea --mcp`) and call the `rizin_debug_command` tool through your client; it is not a CLI command. Needs: a BYO Rizin debugger. Evidence-first: observations ≠ inferences ≠ unknowns; a mutating tool (set_*, *_session, load_frida_script) acts only on a consented target.
 
@@ -15476,7 +15476,7 @@
 
 **ما هي:** أداة MCP من REA v6.7.0 (ليست من أوامر سطر الأوامر الـ153): Return observed lifecycle state and bounded recent NUL-framed output and process diagnostics for one Rizin debugger session; truncation fields report discarded data, and output_invalid_utf8 reports wh — MCP-only tool exposed by the REA server. Return observed lifecycle state and bounded recent NUL-framed output and process diagnostics for one Rizin debugger session; truncation fields report discarded
 
-**متى:** lawful reverse engineering via a connected REA MCP server; needs a BYO Rizin debugger
+**متى:** عند الهندسة العكسية المشروعة عبر خادم REA MCP متصل؛ يلزم مصحّح Rizin يحضره المستخدم / lawful reverse engineering via a connected REA MCP server; needs a BYO Rizin debugger
 
 **كيف:** Connect the REA MCP server (`rea mcp add` / `rea --mcp`) and call the `rizin_debug_session_status` tool through your client; it is not a CLI command. Needs: a BYO Rizin debugger. Evidence-first: observations ≠ inferences ≠ unknowns; a mutating tool (set_*, *_session, load_frida_script) acts only on a consented target.
 
@@ -15549,7 +15549,7 @@
 
 **ما هي:** أداة MCP من REA v6.7.0 (ليست من أوامر سطر الأوامر الـ153): Close the REA-owned Rizin debugger only after verifying no inferior remains or detaching one with a verified caller-selected TTY output sink. A detached target may continue running and write to that T — MCP-only tool exposed by the REA server. Close the REA-owned Rizin debugger only after verifying no inferior remains or detaching one with a verified caller-selected TTY output sink. A detached target
 
-**متى:** lawful reverse engineering via a connected REA MCP server; needs a BYO Rizin debugger
+**متى:** عند الهندسة العكسية المشروعة عبر خادم REA MCP متصل؛ يلزم مصحّح Rizin يحضره المستخدم / lawful reverse engineering via a connected REA MCP server; needs a BYO Rizin debugger
 
 **كيف:** Connect the REA MCP server (`rea mcp add` / `rea --mcp`) and call the `close_rizin_debug_session` tool through your client; it is not a CLI command. Needs: a BYO Rizin debugger. Evidence-first: observations ≠ inferences ≠ unknowns; a mutating tool (set_*, *_session, load_frida_script) acts only on a consented target.
 
@@ -15622,7 +15622,7 @@
 
 **ما هي:** أداة MCP من REA v6.7.0 (ليست من أوامر سطر الأوامر الـ153): Open a local executable, application bundle, archive, JavaScript, source map, plist, or analysis database after validation. format=dos-com explicitly interprets 1..65280 headerless bytes as a DOS COM — MCP-only tool exposed by the REA server. Open a local executable, application bundle, archive, JavaScript, source map, plist, or analysis database after validation. format=dos-com explicitly interprets
 
-**متى:** lawful reverse engineering via a connected REA MCP server; needs an open binary session with a provider
+**متى:** عند الهندسة العكسية المشروعة عبر خادم REA MCP متصل؛ يلزم جلسة ملف ثنائي مفتوحة مع مزوّد / lawful reverse engineering via a connected REA MCP server; needs an open binary session with a provider
 
 **كيف:** Connect the REA MCP server (`rea mcp add` / `rea --mcp`) and call the `open_binary` tool through your client; it is not a CLI command. Needs: an open binary session with a provider. Evidence-first: observations ≠ inferences ≠ unknowns; a mutating tool (set_*, *_session, load_frida_script) acts only on a consented target.
 
@@ -15695,7 +15695,7 @@
 
 **ما هي:** أداة MCP من REA v6.7.0 (ليست من أوامر سطر الأوامر الـ153): When the investigation is finished, drain earlier provider requests, optionally write a provider-neutral analysis snapshot atomically to the caller-supplied path, then close the active target and ever — MCP-only tool exposed by the REA server. When the investigation is finished, drain earlier provider requests, optionally write a provider-neutral analysis snapshot atomically to the caller-supplied pat
 
-**متى:** lawful reverse engineering via a connected REA MCP server; needs an open binary session with a provider
+**متى:** عند الهندسة العكسية المشروعة عبر خادم REA MCP متصل؛ يلزم جلسة ملف ثنائي مفتوحة مع مزوّد / lawful reverse engineering via a connected REA MCP server; needs an open binary session with a provider
 
 **كيف:** Connect the REA MCP server (`rea mcp add` / `rea --mcp`) and call the `close_binary` tool through your client; it is not a CLI command. Needs: an open binary session with a provider. Evidence-first: observations ≠ inferences ≠ unknowns; a mutating tool (set_*, *_session, load_frida_script) acts only on a consented target.
 
@@ -15767,7 +15767,7 @@
 
 **ما هي:** أداة MCP من REA v6.7.0 (ليست من أوامر سطر الأوامر الـ153): Report the complete current target, provider, capability availability, client-feature, analysis, and server-identity status without starting analysis. — MCP-only tool exposed by the REA server. Report the complete current target, provider, capability availability, client-feature, analysis, and server-identity status without starting analysis.
 
-**متى:** lawful reverse engineering via a connected REA MCP server; needs an open binary session with a provider
+**متى:** عند الهندسة العكسية المشروعة عبر خادم REA MCP متصل؛ يلزم جلسة ملف ثنائي مفتوحة مع مزوّد / lawful reverse engineering via a connected REA MCP server; needs an open binary session with a provider
 
 **كيف:** Connect the REA MCP server (`rea mcp add` / `rea --mcp`) and call the `binary_session` tool through your client; it is not a CLI command. Needs: an open binary session with a provider. Evidence-first: observations ≠ inferences ≠ unknowns; a mutating tool (set_*, *_session, load_frida_script) acts only on a consented target.
 
@@ -15839,7 +15839,7 @@
 
 **ما هي:** أداة MCP من REA v6.7.0 (ليست من أوامر سطر الأوامر الـ153): Atomically write the session's deterministic Evidence bundle to the requested local path. Existing files require overwrite: true; records and manifests use canonical byte-stable ordering. — MCP-only tool exposed by the REA server. Atomically write the session's deterministic Evidence bundle to the requested local path. Existing files require overwrite: true; records and manifests use cano
 
-**متى:** lawful reverse engineering via a connected REA MCP server; needs REA alone (operates on retained Evidence)
+**متى:** عند الهندسة العكسية المشروعة عبر خادم REA MCP متصل؛ يكفي REA وحده (يعمل على الأدلة المحفوظة) / lawful reverse engineering via a connected REA MCP server; needs REA alone (operates on retained Evidence)
 
 **كيف:** Connect the REA MCP server (`rea mcp add` / `rea --mcp`) and call the `export_evidence_bundle` tool through your client; it is not a CLI command. Needs: REA alone (operates on retained Evidence). Evidence-first: observations ≠ inferences ≠ unknowns; a mutating tool (set_*, *_session, load_frida_script) acts only on a consented target.
 
@@ -15911,7 +15911,7 @@
 
 **ما هي:** أداة MCP من REA v6.7.0 (ليست من أوامر سطر الأوامر الـ153): Read the JSON bundle at the supplied local path, validate every Evidence ID and canonical manifest, then atomically merge it. Imported content is data only and is never executed. — MCP-only tool exposed by the REA server. Read the JSON bundle at the supplied local path, validate every Evidence ID and canonical manifest, then atomically merge it. Imported content is data only and
 
-**متى:** lawful reverse engineering via a connected REA MCP server; needs REA alone (operates on retained Evidence)
+**متى:** عند الهندسة العكسية المشروعة عبر خادم REA MCP متصل؛ يكفي REA وحده (يعمل على الأدلة المحفوظة) / lawful reverse engineering via a connected REA MCP server; needs REA alone (operates on retained Evidence)
 
 **كيف:** Connect the REA MCP server (`rea mcp add` / `rea --mcp`) and call the `import_evidence_bundle` tool through your client; it is not a CLI command. Needs: REA alone (operates on retained Evidence). Evidence-first: observations ≠ inferences ≠ unknowns; a mutating tool (set_*, *_session, load_frida_script) acts only on a consented target.
 
@@ -15983,7 +15983,7 @@
 
 **ما هي:** أداة MCP من REA v6.7.0 (ليست من أوامر سطر الأوامر الـ153): Return every retained Evidence record and residual unknown as a complete canonical bundle by default. detail=summary discovers retained records without copying or transferring their payloads; optional — MCP-only tool exposed by the REA server. Return every retained Evidence record and residual unknown as a complete canonical bundle by default. detail=summary discovers retained records without copying
 
-**متى:** lawful reverse engineering via a connected REA MCP server; needs REA alone (operates on retained Evidence)
+**متى:** عند الهندسة العكسية المشروعة عبر خادم REA MCP متصل؛ يكفي REA وحده (يعمل على الأدلة المحفوظة) / lawful reverse engineering via a connected REA MCP server; needs REA alone (operates on retained Evidence)
 
 **كيف:** Connect the REA MCP server (`rea mcp add` / `rea --mcp`) and call the `get_evidence_bundle` tool through your client; it is not a CLI command. Needs: REA alone (operates on retained Evidence). Evidence-first: observations ≠ inferences ≠ unknowns; a mutating tool (set_*, *_session, load_frida_script) acts only on a consented target.
 
@@ -16055,7 +16055,7 @@
 
 **ما هي:** أداة MCP من REA v6.7.0 (ليست من أوامر سطر الأوامر الـ153): Run one caller-selected command under a PTY and return process capture Evidence with residual unknowns. The renderer admits at most 1,000,000 combined terminal cells, computed as columns × (rows + scr — MCP-only tool exposed by the REA server. Run one caller-selected command under a PTY and return process capture Evidence with residual unknowns. The renderer admits at most 1,000,000 combined terminal
 
-**متى:** lawful reverse engineering via a connected REA MCP server; needs REA alone (operates on retained Evidence)
+**متى:** عند الهندسة العكسية المشروعة عبر خادم REA MCP متصل؛ يكفي REA وحده (يعمل على الأدلة المحفوظة) / lawful reverse engineering via a connected REA MCP server; needs REA alone (operates on retained Evidence)
 
 **كيف:** Connect the REA MCP server (`rea mcp add` / `rea --mcp`) and call the `capture_process_scenario` tool through your client; it is not a CLI command. Needs: REA alone (operates on retained Evidence). Evidence-first: observations ≠ inferences ≠ unknowns; a mutating tool (set_*, *_session, load_frida_script) acts only on a consented target.
 
@@ -16127,7 +16127,7 @@
 
 **ما هي:** أداة MCP من REA v6.7.0 (ليست من أوامر سطر الأوامر الـ153): Compare complete artifact inventories by logical occurrence path, content identity, metadata, and graph relations. Pass the inventory Evidence nested in each inspect_artifact result as left and right, — MCP-only tool exposed by the REA server. Compare complete artifact inventories by logical occurrence path, content identity, metadata, and graph relations. Pass the inventory Evidence nested in each in
 
-**متى:** lawful reverse engineering via a connected REA MCP server; needs REA alone (operates on retained Evidence)
+**متى:** عند الهندسة العكسية المشروعة عبر خادم REA MCP متصل؛ يكفي REA وحده (يعمل على الأدلة المحفوظة) / lawful reverse engineering via a connected REA MCP server; needs REA alone (operates on retained Evidence)
 
 **كيف:** Connect the REA MCP server (`rea mcp add` / `rea --mcp`) and call the `compare_artifacts` tool through your client; it is not a CLI command. Needs: REA alone (operates on retained Evidence). Evidence-first: observations ≠ inferences ≠ unknowns; a mutating tool (set_*, *_session, load_frida_script) acts only on a consented target.
 
@@ -16199,7 +16199,7 @@
 
 **ما هي:** أداة MCP من REA v6.7.0 (ليست من أوامر سطر الأوامر الـ153): Compare two explicit sets of analyze_function Evidence across identity, exact provider text, calls, references, strings, and address-normalized CFG topology. Missing or provider-incompatible facets re — MCP-only tool exposed by the REA server. Compare two explicit sets of analyze_function Evidence across identity, exact provider text, calls, references, strings, and address-normalized CFG topology. Mi
 
-**متى:** lawful reverse engineering via a connected REA MCP server; needs REA alone (operates on retained Evidence)
+**متى:** عند الهندسة العكسية المشروعة عبر خادم REA MCP متصل؛ يكفي REA وحده (يعمل على الأدلة المحفوظة) / lawful reverse engineering via a connected REA MCP server; needs REA alone (operates on retained Evidence)
 
 **كيف:** Connect the REA MCP server (`rea mcp add` / `rea --mcp`) and call the `compare_functions` tool through your client; it is not a CLI command. Needs: REA alone (operates on retained Evidence). Evidence-first: observations ≠ inferences ≠ unknowns; a mutating tool (set_*, *_session, load_frida_script) acts only on a consented target.
 
@@ -16271,7 +16271,7 @@
 
 **ما هي:** أداة MCP من REA v6.7.0 (ليست من أوامر سطر الأوامر الـ153): Compare two canonical Evidence bundles by exact record membership, explicit one-to-one observation pairs, and complete residual-unknown revision histories. Missing bundle members describe omission onl — MCP-only tool exposed by the REA server. Compare two canonical Evidence bundles by exact record membership, explicit one-to-one observation pairs, and complete residual-unknown revision histories. Miss
 
-**متى:** lawful reverse engineering via a connected REA MCP server; needs REA alone (operates on retained Evidence)
+**متى:** عند الهندسة العكسية المشروعة عبر خادم REA MCP متصل؛ يكفي REA وحده (يعمل على الأدلة المحفوظة) / lawful reverse engineering via a connected REA MCP server; needs REA alone (operates on retained Evidence)
 
 **كيف:** Connect the REA MCP server (`rea mcp add` / `rea --mcp`) and call the `compare_bundles` tool through your client; it is not a CLI command. Needs: REA alone (operates on retained Evidence). Evidence-first: observations ≠ inferences ≠ unknowns; a mutating tool (set_*, *_session, load_frida_script) acts only on a consented target.
 
@@ -16343,7 +16343,7 @@
 
 **ما هي:** أداة MCP من REA v6.7.0 (ليست من أوامر سطر الأوامر الـ153): Aggregate validated process and artifact comparison Evidence. Runtime observations remain distinct from static behavior candidates; missing or incomplete comparisons produce unresolved findings, never — MCP-only tool exposed by the REA server. Aggregate validated process and artifact comparison Evidence. Runtime observations remain distinct from static behavior candidates; missing or incomplete compar
 
-**متى:** lawful reverse engineering via a connected REA MCP server; needs REA alone (operates on retained Evidence)
+**متى:** عند الهندسة العكسية المشروعة عبر خادم REA MCP متصل؛ يكفي REA وحده (يعمل على الأدلة المحفوظة) / lawful reverse engineering via a connected REA MCP server; needs REA alone (operates on retained Evidence)
 
 **كيف:** Connect the REA MCP server (`rea mcp add` / `rea --mcp`) and call the `find_changed_behavior` tool through your client; it is not a CLI command. Needs: REA alone (operates on retained Evidence). Evidence-first: observations ≠ inferences ≠ unknowns; a mutating tool (set_*, *_session, load_frida_script) acts only on a consented target.
 
@@ -16415,7 +16415,7 @@
 
 **ما هي:** أداة MCP من REA v6.7.0 (ليست من أوامر سطر الأوامر الـ153): Build every shortest direct-callee path inline from complete analyze_function Evidence records using exact canonical addresses. Missing dossiers and provider mixing remain unknown; every node and edge — MCP-only tool exposed by the REA server. Build every shortest direct-callee path inline from complete analyze_function Evidence records using exact canonical addresses. Missing dossiers and provider mi
 
-**متى:** lawful reverse engineering via a connected REA MCP server; needs REA alone (operates on retained Evidence)
+**متى:** عند الهندسة العكسية المشروعة عبر خادم REA MCP متصل؛ يكفي REA وحده (يعمل على الأدلة المحفوظة) / lawful reverse engineering via a connected REA MCP server; needs REA alone (operates on retained Evidence)
 
 **كيف:** Connect the REA MCP server (`rea mcp add` / `rea --mcp`) and call the `build_call_path` tool through your client; it is not a CLI command. Needs: REA alone (operates on retained Evidence). Evidence-first: observations ≠ inferences ≠ unknowns; a mutating tool (set_*, *_session, load_frida_script) acts only on a consented target.
 
@@ -16487,7 +16487,7 @@
 
 **ما هي:** أداة MCP من REA v6.7.0 (ليست من أوامر سطر الأوامر الـ153): Evaluate every explicit caller-declared hypothesis between exact static comparison findings and runtime comparison dimensions. Similar names or paths are never auto-matched, consistent cochange never — MCP-only tool exposed by the REA server. Evaluate every explicit caller-declared hypothesis between exact static comparison findings and runtime comparison dimensions. Similar names or paths are never
 
-**متى:** lawful reverse engineering via a connected REA MCP server; needs REA alone (operates on retained Evidence)
+**متى:** عند الهندسة العكسية المشروعة عبر خادم REA MCP متصل؛ يكفي REA وحده (يعمل على الأدلة المحفوظة) / lawful reverse engineering via a connected REA MCP server; needs REA alone (operates on retained Evidence)
 
 **كيف:** Connect the REA MCP server (`rea mcp add` / `rea --mcp`) and call the `correlate_static_and_runtime` tool through your client; it is not a CLI command. Needs: REA alone (operates on retained Evidence). Evidence-first: observations ≠ inferences ≠ unknowns; a mutating tool (set_*, *_session, load_frida_script) acts only on a consented target.
 
@@ -16559,7 +16559,7 @@
 
 **ما هي:** أداة MCP من REA v6.7.0 (ليست من أوامر سطر الأوامر الـ153): Verify a finite typed behavioral and structural specification against a canonical Evidence bundle. Pass means every declared claim has complete comparable authority—not global source equivalence; chan — MCP-only tool exposed by the REA server. Verify a finite typed behavioral and structural specification against a canonical Evidence bundle. Pass means every declared claim has complete comparable autho
 
-**متى:** lawful reverse engineering via a connected REA MCP server; needs REA alone (operates on retained Evidence)
+**متى:** عند الهندسة العكسية المشروعة عبر خادم REA MCP متصل؛ يكفي REA وحده (يعمل على الأدلة المحفوظة) / lawful reverse engineering via a connected REA MCP server; needs REA alone (operates on retained Evidence)
 
 **كيف:** Connect the REA MCP server (`rea mcp add` / `rea --mcp`) and call the `verify_reconstruction` tool through your client; it is not a CLI command. Needs: REA alone (operates on retained Evidence). Evidence-first: observations ≠ inferences ≠ unknowns; a mutating tool (set_*, *_session, load_frida_script) acts only on a consented target.
 
@@ -16631,7 +16631,7 @@
 
 **ما هي:** أداة MCP من REA v6.7.0 (ليست من أوامر سطر الأوامر الـ153): List current residual-unknown heads in deterministic ID order, with optional exact status, severity, and domain filters. Results are complete inline by default; supply offset and limit to page the fil — MCP-only tool exposed by the REA server. List current residual-unknown heads in deterministic ID order, with optional exact status, severity, and domain filters. Results are complete inline by default;
 
-**متى:** lawful reverse engineering via a connected REA MCP server; needs REA alone (operates on retained Evidence)
+**متى:** عند الهندسة العكسية المشروعة عبر خادم REA MCP متصل؛ يكفي REA وحده (يعمل على الأدلة المحفوظة) / lawful reverse engineering via a connected REA MCP server; needs REA alone (operates on retained Evidence)
 
 **كيف:** Connect the REA MCP server (`rea mcp add` / `rea --mcp`) and call the `list_unknowns` tool through your client; it is not a CLI command. Needs: REA alone (operates on retained Evidence). Evidence-first: observations ≠ inferences ≠ unknowns; a mutating tool (set_*, *_session, load_frida_script) acts only on a consented target.
 
@@ -16703,7 +16703,7 @@
 
 **ما هي:** أداة MCP من REA v6.7.0 (ليست من أوامر سطر الأوامر الـ153): Create one deterministic residual unknown and immutable mutation evidence. Validates all evidence and relationship references, and rejects duplicate stable identity. — MCP-only tool exposed by the REA server. Create one deterministic residual unknown and immutable mutation evidence. Validates all evidence and relationship references, and rejects duplicate stable iden
 
-**متى:** lawful reverse engineering via a connected REA MCP server; needs REA alone (operates on retained Evidence)
+**متى:** عند الهندسة العكسية المشروعة عبر خادم REA MCP متصل؛ يكفي REA وحده (يعمل على الأدلة المحفوظة) / lawful reverse engineering via a connected REA MCP server; needs REA alone (operates on retained Evidence)
 
 **كيف:** Connect the REA MCP server (`rea mcp add` / `rea --mcp`) and call the `record_unknown` tool through your client; it is not a CLI command. Needs: REA alone (operates on retained Evidence). Evidence-first: observations ≠ inferences ≠ unknowns; a mutating tool (set_*, *_session, load_frida_script) acts only on a consented target.
 
@@ -16775,7 +16775,7 @@
 
 **ما هي:** أداة MCP من REA v6.7.0 (ليست من أوامر سطر الأوامر الـ153): Append one immutable full-state revision and mutation evidence. Requires exact expected_revision; stale concurrent writers fail instead of overwriting newer analysis. — MCP-only tool exposed by the REA server. Append one immutable full-state revision and mutation evidence. Requires exact expected_revision; stale concurrent writers fail instead of overwriting newer ana
 
-**متى:** lawful reverse engineering via a connected REA MCP server; needs REA alone (operates on retained Evidence)
+**متى:** عند الهندسة العكسية المشروعة عبر خادم REA MCP متصل؛ يكفي REA وحده (يعمل على الأدلة المحفوظة) / lawful reverse engineering via a connected REA MCP server; needs REA alone (operates on retained Evidence)
 
 **كيف:** Connect the REA MCP server (`rea mcp add` / `rea --mcp`) and call the `update_unknown` tool through your client; it is not a CLI command. Needs: REA alone (operates on retained Evidence). Evidence-first: observations ≠ inferences ≠ unknowns; a mutating tool (set_*, *_session, load_frida_script) acts only on a consented target.
 
@@ -16847,7 +16847,7 @@
 
 **ما هي:** أداة MCP من REA v6.7.0 (ليست من أوامر سطر الأوامر الـ153): Revalidate the current residual-unknown head against live bundled evidence, exact authority/confidence/environment requirements, and revision integrity. Withdrawn and out-of-scope dispositions are not — MCP-only tool exposed by the REA server. Revalidate the current residual-unknown head against live bundled evidence, exact authority/confidence/environment requirements, and revision integrity. Withdra
 
-**متى:** lawful reverse engineering via a connected REA MCP server; needs REA alone (operates on retained Evidence)
+**متى:** عند الهندسة العكسية المشروعة عبر خادم REA MCP متصل؛ يكفي REA وحده (يعمل على الأدلة المحفوظة) / lawful reverse engineering via a connected REA MCP server; needs REA alone (operates on retained Evidence)
 
 **كيف:** Connect the REA MCP server (`rea mcp add` / `rea --mcp`) and call the `verify_unknown_resolution` tool through your client; it is not a CLI command. Needs: REA alone (operates on retained Evidence). Evidence-first: observations ≠ inferences ≠ unknowns; a mutating tool (set_*, *_session, load_frida_script) acts only on a consented target.
 
@@ -16919,7 +16919,7 @@
 
 **ما هي:** أداة MCP من REA v6.7.0 (ليست من أوامر سطر الأوامر الـ153): Return the selected document, current address, and containing/current procedure in one provider-neutral result. The result reflects sequential provider observations, not an atomic cursor snapshot; a c — MCP-only tool exposed by the REA server. Return the selected document, current address, and containing/current procedure in one provider-neutral result. The result reflects sequential provider observat
 
-**متى:** lawful reverse engineering via a connected REA MCP server; needs REA alone (operates on retained Evidence)
+**متى:** عند الهندسة العكسية المشروعة عبر خادم REA MCP متصل؛ يكفي REA وحده (يعمل على الأدلة المحفوظة) / lawful reverse engineering via a connected REA MCP server; needs REA alone (operates on retained Evidence)
 
 **كيف:** Connect the REA MCP server (`rea mcp add` / `rea --mcp`) and call the `get_navigation_context` tool through your client; it is not a CLI command. Needs: REA alone (operates on retained Evidence). Evidence-first: observations ≠ inferences ≠ unknowns; a mutating tool (set_*, *_session, load_frida_script) acts only on a consented target.
 
@@ -16991,7 +16991,7 @@
 
 **ما هي:** أداة MCP من REA v6.7.0 (ليست من أوامر سطر الأوامر الـ153): Inspect one explicit reproducible address for its analyzed name, containing procedure, regular and inline comments, and matching bookmarks. Each unsupported facet returns a typed unavailable outcome; — MCP-only tool exposed by the REA server. Inspect one explicit reproducible address for its analyzed name, containing procedure, regular and inline comments, and matching bookmarks. Each unsupported fac
 
-**متى:** lawful reverse engineering via a connected REA MCP server; needs REA alone (operates on retained Evidence)
+**متى:** عند الهندسة العكسية المشروعة عبر خادم REA MCP متصل؛ يكفي REA وحده (يعمل على الأدلة المحفوظة) / lawful reverse engineering via a connected REA MCP server; needs REA alone (operates on retained Evidence)
 
 **كيف:** Connect the REA MCP server (`rea mcp add` / `rea --mcp`) and call the `inspect_address_context` tool through your client; it is not a CLI command. Needs: REA alone (operates on retained Evidence). Evidence-first: observations ≠ inferences ≠ unknowns; a mutating tool (set_*, *_session, load_frida_script) acts only on a consented target.
 
@@ -17063,7 +17063,7 @@
 
 **ما هي:** موجّه جاهز من خادم REA MCP يقود تحقيقًا كاملًا: Trace a feature through relevant artifact, symbol, and function evidence while distinguishing observations, inferences, and residual unknowns. — A ready MCP prompt that drives a whole investigation workflow.
 
-**متى:** starting a guided REA investigation of a target you may analyse
+**متى:** عند بدء تحقيق REA موجَّه في هدف يحق لك تحليله / starting a guided REA investigation of a target you may analyse
 
 **كيف:** Invoke the `investigate_feature` prompt from a client connected to the REA MCP server; it orchestrates the matching tools with the evidence-first contract.
 
@@ -17135,7 +17135,7 @@
 
 **ما هي:** موجّه جاهز من خادم REA MCP يقود تحقيقًا كاملًا: Compare two shipped application artifacts through complete inventory and optional static or runtime evidence without equating missing data with unchanged behavior. — A ready MCP prompt that drives a whole investigation workflow.
 
-**متى:** starting a guided REA investigation of a target you may analyse
+**متى:** عند بدء تحقيق REA موجَّه في هدف يحق لك تحليله / starting a guided REA investigation of a target you may analyse
 
 **كيف:** Invoke the `compare_application_versions` prompt from a client connected to the REA MCP server; it orchestrates the matching tools with the evidence-first contract.
 
@@ -17207,7 +17207,7 @@
 
 **ما هي:** موجّه جاهز من خادم REA MCP يقود تحقيقًا كاملًا: Evaluate a finite reconstruction specification against retained Evidence comparisons without broadening pass results into global equivalence claims. — A ready MCP prompt that drives a whole investigation workflow.
 
-**متى:** starting a guided REA investigation of a target you may analyse
+**متى:** عند بدء تحقيق REA موجَّه في هدف يحق لك تحليله / starting a guided REA investigation of a target you may analyse
 
 **كيف:** Invoke the `verify_reconstruction` prompt from a client connected to the REA MCP server; it orchestrates the matching tools with the evidence-first contract.
 
@@ -17279,7 +17279,7 @@
 
 **ما هي:** موجّه جاهز من خادم REA MCP يقود تحقيقًا كاملًا: Correlate a crash symptom with static call and reference evidence plus optional process capture observations. — A ready MCP prompt that drives a whole investigation workflow.
 
-**متى:** starting a guided REA investigation of a target you may analyse
+**متى:** عند بدء تحقيق REA موجَّه في هدف يحق لك تحليله / starting a guided REA investigation of a target you may analyse
 
 **كيف:** Invoke the `trace_crash` prompt from a client connected to the REA MCP server; it orchestrates the matching tools with the evidence-first contract.
 
@@ -17351,7 +17351,7 @@
 
 **ما هي:** موجّه جاهز من خادم REA MCP يقود تحقيقًا كاملًا: Review current residual-unknown heads against retained evidence, revision integrity, and declared authority without silently closing unanswered questions. — A ready MCP prompt that drives a whole investigation workflow.
 
-**متى:** starting a guided REA investigation of a target you may analyse
+**متى:** عند بدء تحقيق REA موجَّه في هدف يحق لك تحليله / starting a guided REA investigation of a target you may analyse
 
 **كيف:** Invoke the `audit_residual_unknowns` prompt from a client connected to the REA MCP server; it orchestrates the matching tools with the evidence-first contract.
 
@@ -17423,7 +17423,7 @@
 
 **ما هي:** موجّه جاهز من خادم REA MCP يقود تحقيقًا كاملًا: Choose a command, inputs, observations, and stopping conditions for a process capture that answers the behavioral question. — A ready MCP prompt that drives a whole investigation workflow.
 
-**متى:** starting a guided REA investigation of a target you may analyse
+**متى:** عند بدء تحقيق REA موجَّه في هدف يحق لك تحليله / starting a guided REA investigation of a target you may analyse
 
 **كيف:** Invoke the `prepare_bounded_process_capture` prompt from a client connected to the REA MCP server; it orchestrates the matching tools with the evidence-first contract.
 
@@ -17495,7 +17495,7 @@
 
 **ما هي:** يكشف NSIS وInno وUPX و7z/ZIP SFX وMSI وWiX Burn وSquirrel وElectron و.NET وخانة التوقيع ومعلومات الإصدار، ويقترح أوامر REA المناسبة — Installer triage scan.
 
-**متى:** lawful inspection of a Windows installer or desktop app you have the right to analyse; REA reports the installer as an opaque PE
+**متى:** عند الفحص المشروع لمثبّت Windows أو تطبيق سطح مكتب يحق لك تحليله؛ إذ يبلّغ REA عن المثبّت كملف PE معتم / lawful inspection of a Windows installer or desktop app you have the right to analyse; REA reports the installer as an opaque PE
 
 **كيف:** `installer_triage.py scan <file\|folder>` Evidence first; never executes the target.
 
@@ -17568,7 +17568,7 @@
 
 **ما هي:** يستخرج حمولة NSIS ثم الأرشيفات الداخلية (app-64.7z وres.zip وnupkg) بـ 7-Zip إلى مجلد غير موجود، ويرفض بلا --authorized، ويكشف إضافات التنزيل (مثبّت تمهيدي) — Unpack an installer payload without running it.
 
-**متى:** lawful inspection of a Windows installer or desktop app you have the right to analyse; REA reports the installer as an opaque PE
+**متى:** عند الفحص المشروع لمثبّت Windows أو تطبيق سطح مكتب يحق لك تحليله؛ إذ يبلّغ REA عن المثبّت كملف PE معتم / lawful inspection of a Windows installer or desktop app you have the right to analyse; REA reports the installer as an opaque PE
 
 **كيف:** `installer_triage.py unpack <file> --to <new-dir> --authorized` Evidence first; never executes the target.
 
@@ -17642,7 +17642,7 @@
 
 **ما هي:** يسرد ملفات app.asar وpackage.json والنوافذ بلا أدوات npm، ويقرأ مدخلًا نصيًا واحدًا عند الطلب — List an Electron app.asar.
 
-**متى:** lawful inspection of a Windows installer or desktop app you have the right to analyse; REA reports the installer as an opaque PE
+**متى:** عند الفحص المشروع لمثبّت Windows أو تطبيق سطح مكتب يحق لك تحليله؛ إذ يبلّغ REA عن المثبّت كملف PE معتم / lawful inspection of a Windows installer or desktop app you have the right to analyse; REA reports the installer as an opaque PE
 
 **كيف:** `installer_triage.py asar <app.asar> [package.json]` Evidence first; never executes the target.
 
@@ -17715,7 +17715,7 @@
 
 **ما هي:** يعدّ مراسي واجهات Electron في main وpreload (تسجيل الشاشة، التحديث، الأعطال، التخزين الآمن، الروابط العميقة…) واقترانات الملفات وصفحات الواجهة وRTL؛ يكمل REA حين تخفي الأسماء المصغرة هويات Electron — Electron capability fingerprint.
 
-**متى:** lawful inspection of a Windows installer or desktop app you have the right to analyse; REA reports the installer as an opaque PE
+**متى:** عند الفحص المشروع لمثبّت Windows أو تطبيق سطح مكتب يحق لك تحليله؛ إذ يبلّغ REA عن المثبّت كملف PE معتم / lawful inspection of a Windows installer or desktop app you have the right to analyse; REA reports the installer as an opaque PE
 
 **كيف:** `installer_triage.py fingerprint <app.asar>` Evidence first; never executes the target.
 
@@ -17788,7 +17788,7 @@
 
 **ما هي:** لكل ملف مستخرج يقترح الأمر المناسب: asar إلى analyze-javascript-application بنطاق main، وexe إلى inspect-electron-fuses وpe-resources، وDLL مُدار إلى inspect-managed-members، وsqlite إلى inspect-sqlite-database — Route unpacked artifacts to REA.
 
-**متى:** lawful inspection of a Windows installer or desktop app you have the right to analyse; REA reports the installer as an opaque PE
+**متى:** عند الفحص المشروع لمثبّت Windows أو تطبيق سطح مكتب يحق لك تحليله؛ إذ يبلّغ REA عن المثبّت كملف PE معتم / lawful inspection of a Windows installer or desktop app you have the right to analyse; REA reports the installer as an opaque PE
 
 **كيف:** `installer_triage.py route <unpacked-dir>` Evidence first; never executes the target.
 
@@ -17861,7 +17861,7 @@
 
 **ما هي:** الجسر يستبدل rea.cmd بـ node rea-agents/scripts/rea.mjs (عبر REA_BIN أو PATH)، مع --timeout (600 ث افتراضيًا) و--source-path للتحليل المحدود — Run REA on Windows without cmd.exe.
 
-**متى:** lawful inspection of a Windows installer or desktop app you have the right to analyse; REA reports the installer as an opaque PE
+**متى:** عند الفحص المشروع لمثبّت Windows أو تطبيق سطح مكتب يحق لك تحليله؛ إذ يبلّغ REA عن المثبّت كملف PE معتم / lawful inspection of a Windows installer or desktop app you have the right to analyse; REA reports the installer as an opaque PE
 
 **كيف:** `REA_BIN=…/rea.cmd python scripts/rea_bridge.py run electron-fuses App.exe --authorized --output fuses.json` Evidence first; never executes the target.
 

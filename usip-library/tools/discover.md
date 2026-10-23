@@ -94,7 +94,7 @@
 
 - ابدأ بـ `think.py recover --message "<نص الخطأ>"`، ثم سجّل `fusionforge.py trace --project <slug> --id <FUSE-ID> --stage <stage> --node <N> --action "<ما جُرّب>" --result failed --error-class <الصنف> --tool tool:atlas-5000 --evidence <ملف>`.
 
-### `atlas-capability-miner` — ???? ????? ???? / Atlas metadata capability miner
+### `atlas-capability-miner` — منقّب قدرات الأطلس من البيانات الوصفية / Atlas metadata capability miner
 
 | الحقل | القيمة |
 |---|---|
@@ -103,7 +103,7 @@
 | الدليل | `tested-here` |
 | العائلات | `software-investigation` |
 
-**ما تفعله:** ???? ????? ????? ?????? ????? ?? ???? ????? ??? ???????.
+**ما تفعله:** يفهرس البيانات الوصفية لمهارات الأطلس الخارجية أو يستعلم عنها، مع مسار REA اختياري؛ وجود المصدر ليس دليل تشغيل.
 
 **What it does:** Indexes or queries metadata of third-party Atlas skills with an opt-in REA path; source presence is not execution proof.
 
@@ -111,7 +111,8 @@
 
 - «Review documented Atlas or Blender capabilities»
 - «Inspect relevant tool arguments before running»
-- «????? ??????? ???????? ?? ???????»
+- «طلّع القدرات المفيدة من بيانات مهارات الأطلس»
+- «ابحث في فهرس الأطلس عن مهارات تناسب طلبي»
 
 #### الأوامر
 
@@ -185,7 +186,7 @@
 
 - ابدأ بـ `think.py recover --message "<نص الخطأ>"`، ثم سجّل `fusionforge.py trace --project <slug> --id <FUSE-ID> --stage <stage> --node <N> --action "<ما جُرّب>" --result failed --error-class <الصنف> --tool tool:atlas-ledger --evidence <ملف>`.
 
-### `atlas-task-method-router` — ????? ???? ???? / Atlas task method router
+### `atlas-task-method-router` — موجّه مناهج الأطلس حسب المهمة / Atlas task method router
 
 | الحقل | القيمة |
 |---|---|
@@ -194,7 +195,7 @@
 | الدليل | `untested` |
 | العائلات | `software-investigation` |
 
-**ما تفعله:** ????? ???? ????? ?????? ????? ?? ???? ????? ??? ???????.
+**ما تفعله:** يجد مناهج مرشحة من الأطلس مدعومة بالمصادر لمهمة ما دون تشغيل كودها.
 
 **What it does:** Finds source-backed Atlas method candidates for a task without executing their code.
 
@@ -202,7 +203,8 @@
 
 - «Review documented Atlas or Blender capabilities»
 - «Inspect relevant tool arguments before running»
-- «????? ??????? ???????? ?? ???????»
+- «إيه مناهج الأطلس المناسبة للمهمة دي؟»
+- «وجّهني لمنهج من الأطلس يحل المشكلة دي»
 
 #### الأوامر
 
@@ -540,9 +542,9 @@
 - **recall**: Read-only: returns only explicitly approved, allowlisted structural graphs for the named output kind.
   - `python3 scripts/fusionforge_shared.py recall --kind video`
 - **review-template**: Prints the independent privacy/security/QA and baseline comparison review template without approving.
-  - `python3 scripts/fusionforge_shared.py review-template --signature <sha256>`
+  - `python3 scripts/fusionforge_shared.py review-template --signature "$SIG"`
 - **approve**: Writes a sanitized graph into the project-local shared registry only after independent test, review and security gates.
-  - `python3 scripts/fusionforge_shared.py approve --signature <sha256>`
+  - `python3 scripts/fusionforge_shared.py approve --signature "$SIG"`
 
 #### المتطلبات والأمان
 

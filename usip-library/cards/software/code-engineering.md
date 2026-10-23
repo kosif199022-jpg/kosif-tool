@@ -45,7 +45,7 @@
 
 **ما هي:** قبل كتابة كود جديد ابحث عن حزمة أو أداة أو مهارة أو مستودع يحلّ المشكلة، ثم قرّر: تبنَّ، أو وسّع، أو ركّب، أو ابنِ. — Before writing new code, look for a package, tool, skill or repo that already solves it, then adopt, extend, compose or build.
 
-**متى:** any new feature, effect, parser, integration or utility
+**متى:** عند أي ميزة أو تأثير أو محلل أو تكامل أو أداة جديدة / any new feature, effect, parser, integration or utility
 
 **كيف:** Step 0 — check which search channels work and say which you skipped: `rg --files`, `python3 -m pip --version`, `npm --version`, `gh auth status`, the MCP/deferred tool list, `ls ~/.claude/skills .claude/skills`. Then search in order: this repo → package registries (`pip index versions X`, `npm view X version`) → MCP servers and skills → GitHub (`gh search repos <kw> --sort stars`) → web. Score candidates on fit, maintenance, community, docs, licence, dependencies. Decide: exact maintained MIT/Apache match → Adopt; partial → Extend with a thin wrapper; several weak matches → Compose 2–3 small packages; none → Build, informed by what you read.
 
@@ -114,7 +114,7 @@
 
 **ما هي:** لأي سؤال عن مكتبة أو API اعتمد على الوثائق الحالية لا على ما تتذكره، واذكر النسخة. — For any library or API question, read the current docs instead of recalling them, and cite the version.
 
-**متى:** library usage, API parameters, CLI flags, version-sensitive behaviour
+**متى:** عند استخدام مكتبة أو معاملات API أو أعلام CLI أو سلوك يتأثر بالإصدار / library usage, API parameters, CLI flags, version-sensitive behaviour
 
 **كيف:** With the Context7 MCP (🔑 if connected): resolve-library-id with the full question → pick by exact name, reputation and the user's version → query-docs; at most 3 calls per question. Without it: WebFetch the official docs (many sites serve /llms.txt), `pip show X`, `npm view X version`, `<tool> --help`, read the installed source. Cite the version you read. Redact secrets from queries. If still unsure, say so.
 
@@ -186,7 +186,7 @@
 
 **ما هي:** لا تَعِد بمكتبة قبل أن تثبّتها في بيئة افتراضية وتشغّل أصغر مثال لها وترى ناتجه. — Never promise a library before installing it in a venv and running its smallest example.
 
-**متى:** a power or plan depends on a package that is not yet present
+**متى:** حين تعتمد قدرة أو خطة على حزمة غير موجودة بعد / a power or plan depends on a package that is not yet present
 
 **كيف:** 1) `python3 -m venv $SCRATCH/venvs/<name>` (or `uv venv`); 2) `$V/bin/pip install -q "<pkg>==<exact version>"` — pin it; 3) run the smallest real command with a scrubbed environment (`env -i PATH=$V/bin:/usr/bin:/bin HOME=$V/home`) so it cannot read keys or call paid backends; 4) record the command, exit code, timing and output path; 5) only then call it present/verified. Example in this skill: graphifyy 0.9.91 + [mcp] installed in 15.8 s and mapped 13 files in 1.49 s.
 
@@ -258,7 +258,7 @@
 
 **ما هي:** حوّل مستودعًا مجهولًا إلى خريطة: طبقات، ونقاط دخول، واختبارات، وأوامر بناء، ومسودة CLAUDE.md. — Turn an unfamiliar repo into a map: layers, entry points, tests, build commands and a starter CLAUDE.md.
 
-**متى:** first contact with a repo; before planning a change in unknown code
+**متى:** عند أول تماس مع مستودع؛ وقبل التخطيط لتغيير في شيفرة مجهولة / first contact with a repo; before planning a change in unknown code
 
 **كيف:** Read in this order: README / CLAUDE.md / AGENTS.md → manifests (package.json, pyproject, go.mod) and lockfiles → entry points (main, CLI, routes) → test layout and how to run it → CI config → `git log --oneline -20` and `git log --stat -5` for what changes often. Then map the code (GRAPH-16: build a graph, read god nodes and communities). Output: a one-page onboarding note (purpose, layers, entry points, commands, conventions, risky areas) and, with consent, a starter CLAUDE.md.
 
@@ -328,7 +328,7 @@
 
 **ما هي:** قبل أي تعديل اعرف ما سينكسر: الكود والبيانات والواجهات والاختبارات والتوثيق والإصدار، بدليل من الاستيرادات الحقيقية لا من أسماء المجلدات. — Before a change, list what can break across code, data, interfaces, tests, docs and release, with evidence from real imports, not folder names.
 
-**متى:** edits to shared code, schemas, file formats, CLIs or public APIs
+**متى:** عند تعديل شيفرة مشتركة أو مخططات أو صيغ ملفات أو CLI أو واجهات API عامة / edits to shared code, schemas, file formats, CLIs or public APIs
 
 **كيف:** Answer in order: Code (entry points, callers, consumers, generated artifacts); Data (schemas, caches, serialization); Interfaces (APIs, file formats, CLIs and who uses them); Tests (which ones prove success); Docs; Release (order, compatibility window, rollback, irreversible effects). Evidence only from real imports, routes, `git grep -n`, graph `affected` (GRAPH-04) and tests; mark unknowns 'unverified'. After the change: did it solve the original issue, did the diff exceed scope, does the evidence cover the criteria (not just 'the command ran'), are docs synced, is temporary code gone.
 
@@ -397,7 +397,7 @@
 
 **ما هي:** قبل أن تعدّل ملفًا اكتب حقائق ملموسة: من يستورده، وأي دوال عامة تتأثر، وشكل البيانات، ونص طلب المستخدم حرفيًا. — Before editing a file, state concrete facts: who imports it, which public functions change, the data shape, and the user's request verbatim.
 
-**متى:** the first Edit/Write of any file in a session; destructive shell commands
+**متى:** عند أول Edit/Write لأي ملف في جلسة؛ وعند أوامر الصدفة المدمرة / the first Edit/Write of any file in a session; destructive shell commands
 
 **كيف:** Edit: list importers (`git grep -n "from x import\\|require('x')"` or GRAPH-04), affected public functions, field names/structure/date format of any data file (use synthetic values), and quote the instruction. New file: who will call it, proof that no existing file already does the job, its schema. Destructive command (rm, forced checkout, find -exec): what exactly is removed and how to undo. 'Are you sure?' always answers yes; concrete facts force real investigation. Can be enforced by a PreToolUse hook (GateGuard).
 
@@ -466,7 +466,7 @@
 
 **ما هي:** اكتب الكود الجديد بأسلوب المستودع الموجود: افحص أعرافه، واحسم التعارضات واحدًا واحدًا، وطابق نمط التكاملات القائمة. — Write new code in the repo's existing style: scan its conventions, resolve conflicts one at a time, mirror existing integrations.
 
-**متى:** adding a module, endpoint or integration to an established codebase
+**متى:** عند إضافة وحدة أو نقطة نهاية أو تكامل إلى قاعدة شيفرة راسخة / adding a module, endpoint or integration to an established codebase
 
 **كيف:** Sample 3–5 sibling files: naming, error handling, logging, tests, file layout, imports, comments, language of messages (this repo: bilingual Arabic/English help texts). Where files disagree, pick one rule per conflict and say why. When adding an integration, copy the closest existing one's structure exactly (config keys, error type, test style). Optionally record the rules in a short style file.
 
@@ -535,7 +535,7 @@
 
 **ما هي:** اكتب اختبارًا يفشل أولًا، ثم أقل كود يجعله ينجح، ثم حسّن البنية والاختبارات خضراء. — Write a failing test first, then the least code to pass it, then refactor while green.
 
-**متى:** new behaviour, bug fixes, refactors
+**متى:** عند سلوك جديد أو إصلاح أخطاء أو إعادة هيكلة / new behaviour, bug fixes, refactors
 
 **كيف:** RED: a test that states the behaviour and fails for the right reason. GREEN: the smallest change that passes. REFACTOR: improve structure with tests green. Bugs: reproduce as a failing regression test first, fix to green, keep the test. Changed requirements: update the tests to the new spec first, then the code. Coverage target ~80% where meaningful (ECC default) — coverage is evidence, not truth; never delete or weaken a test to go green.
 
@@ -606,7 +606,7 @@
 
 **ما هي:** قبل القول «جاهز»: بناء، ثم أنواع، ثم فحص أسلوب، ثم اختبارات، ثم بحث عن أسرار، ثم مراجعة الفرق. — Before saying 'ready': build, types, lint, tests, secret scan, diff review.
 
-**متى:** before a commit, PR, delivery, or after a major change (or every ~15 minutes of edits)
+**متى:** قبل الإيداع أو طلب الدمج أو التسليم، أو بعد تغيير كبير (أو كل ~15 دقيقة من التعديلات) / before a commit, PR, delivery, or after a major change (or every ~15 minutes of edits)
 
 **كيف:** `set -o pipefail`. 1) build — stop if it fails; 2) types (`tsc --noEmit`, `pyright`/`mypy`); 3) lint (`ruff check`, `npm run lint`); pipe long output through `sed -n '1,30p'` rather than `head` so success is not killed by SIGPIPE; 4) tests with coverage; 5) secret and debug grep (`sk-`, `api_key`, `console.log`, `debugger`); 6) `git diff --stat` and read the diff. Report: Build / Types / Lint / Tests / Security / Diff, then READY or NOT READY with the issues. For video work the same loop is build → preview → ffprobe duration/fps/audio → sampled frames → diff.
 
@@ -682,7 +682,7 @@
 
 **ما هي:** ثبّت نقطة معروفة السلامة قبل التغيير، وقِس الانحدار مقابلها، واستخدم pass^k حين يهم الثبات. — Pin a known-good point before changing things, measure regressions against it, and use pass^k when consistency matters.
 
-**متى:** risky multi-step changes; flaky or AI-written code; anything that must work every time
+**متى:** عند تغييرات محفوفة بالمخاطر متعددة الخطوات؛ أو شيفرة متقلبة أو كتبها ذكاء اصطناعي؛ أو أي شيء يجب أن يعمل في كل مرة / risky multi-step changes; flaky or AI-written code; anything that must work every time
 
 **كيف:** Checkpoint: verify clean state → commit or stash → log `date \| name \| sha` (e.g. .claude/checkpoints.log). Regression eval: baseline SHA, X/Y checks passed, compare after the change. Capability eval: checklist of new behaviours. Graders: code (test, grep, build = PASS/FAIL), model (1–5 rubric), human (risk LOW/MED/HIGH). pass@k = at least one of k runs succeeds (70% → 91% at k=3); pass^k = all k succeed (70% → 34% at k=3) — use pass^k for critical paths and regressions (target 100%). Keep a REGRESSION.md of each module's consumers and its acceptance command.
 
@@ -753,7 +753,7 @@
 
 **ما هي:** أعد إنتاج الخطأ في أصغر حالة، وغيّر شيئًا واحدًا في كل تجربة، وأصلح السبب لا العَرَض، وأضف اختبارًا كان سيمسكه: الفرق في الكود ليس إصلاحًا. — Reproduce in the smallest case, change one thing per experiment, fix the cause not the symptom, add the test that would have caught it: a diff is not a fix.
 
-**متى:** bugs, errors, flaky behaviour, wrong output
+**متى:** عند الأخطاء والأعطال والسلوك المتقلب والمخرجات الخاطئة / bugs, errors, flaky behaviour, wrong output
 
 **كيف:** 1) Reproduce with the smallest reliable case; capture environment and the exact failure. 2) Diff working vs broken; one hypothesis per experiment. 3) Fix the root cause with the smallest reversible change. 4) Add a regression test that fails before and passes after. 5) Review correctness and edge cases before style. 6) Verify the requested postcondition (observe the behaviour). Never retry blindly after an uncertain, half-applied risky change: inspect the actual state first.
 
@@ -823,7 +823,7 @@
 
 **ما هي:** أصلح أخطاء البناء والأنواع بأصغر تغيير ممكن وصنفًا صنفًا، وأصلح الكود لا إعدادات الفاحص. — Fix build and type errors with the smallest change, one error class at a time; fix the code, not the linter config.
 
-**متى:** red CI, compile/type errors, dependency resolution failures
+**متى:** عند فشل CI أو أخطاء التصريف/الأنواع أو فشل حل التبعيات / red CI, compile/type errors, dependency resolution failures
 
 **كيف:** Detect the build system; run it; group errors by class; fix the first root error (later ones often cascade); rebuild after each group. Do not touch architecture, rename things or 'improve' unrelated code. Never weaken linter/formatter/tsconfig rules to get green (ECC blocks such edits with a config-protection hook). Record what each fix was for.
 
@@ -892,7 +892,7 @@
 
 **ما هي:** ابحث عن الأخطاء المبتلعة والبدائل الخاطئة، وتتبّع كل زر خطوة خطوة لترى إن كانت خطوة لاحقة تلغي سابقتها. — Hunt swallowed errors and bad fallbacks, and trace each action step by step to see if a later step undoes an earlier one.
 
-**متى:** 'it does nothing', state resets unexpectedly, errors vanish, UI shows the wrong mode
+**متى:** حين «لا يفعل شيئًا»، أو تُصفَّر الحالة بشكل غير متوقع، أو تختفي الأخطاء، أو تعرض الواجهة الوضع الخاطئ / 'it does nothing', state resets unexpectedly, errors vanish, UI shows the wrong mode
 
 **كيف:** Silent failures: grep for empty catch/except, `except Exception: pass`, defaults that hide errors, missing error propagation, ignored return codes. Click-path: for each interactive action, list its handler's calls in order and, for each call, the state it reads/writes/resets; build a map `action → {sets, resets}`; check whether a later call resets what an earlier one set, whether the final state matches the label, and async races. The same idea applies to animation timelines: a later tween can silently override an earlier property.
 
@@ -961,7 +961,7 @@
 
 **ما هي:** لا تحسّن الأداء قبل تحديد العملية والمقياس وخط الأساس والميزانية، وجرّب فرضية واحدة في كل نسخة، وقل «أفضل نسخة آمنة مقاسة» لا «الأمثل». — Optimize only after fixing the operation, metric, baseline and budget; one hypothesis per variant; report 'best measured safe variant', never 'optimal'.
 
-**متى:** slow renders, builds, queries, scripts
+**متى:** عند بطء التصيير أو البناء أو الاستعلامات أو السكربتات / slow renders, builds, queries, scripts
 
 **كيف:** Prerequisites: operation, correctness gate, metric (wall time, p95, rows/s, cost/run, memory), baseline, budget (max variants, time, spend). Loop: measure baseline → find the bottleneck from evidence → variants that each test ONE hypothesis → same input shape → reject incorrect, unsafe or irreproducible ones → promote the fastest safe one → codify it in a script/config → rerun baseline vs winner. Keep a table: variant \| hypothesis \| command \| time \| correct? \| notes. Stop when within noise, correctness fails or budget is spent.
 
@@ -1030,7 +1030,7 @@
 
 **ما هي:** صمّم الأخطاء: أنواع واضحة، وإعادة محاولة بتراجع وعشوائية للأخطاء العابرة فقط، وقاطع دائرة، وعمليات قابلة للتكرار بأمان. — Design errors on purpose: typed errors, retries with backoff and jitter only for transient faults, a circuit breaker, idempotent operations.
 
-**متى:** network calls, external APIs, file processing, long pipelines
+**متى:** عند استدعاءات الشبكة وواجهات API الخارجية ومعالجة الملفات وخطوط المعالجة الطويلة / network calls, external APIs, file processing, long pipelines
 
 **كيف:** Typed error classes carrying cause and context; user-facing messages that leak nothing sensitive. Retry only transient errors (timeouts, 429, 5xx) with exponential backoff + jitter and a cap; never retry validation or auth errors. Circuit breaker after N consecutive failures. Make writes idempotent (keys, temp file + rename). Log once at the boundary. No blind retry of a half-applied operation: check state first.
 
@@ -1099,7 +1099,7 @@
 
 **ما هي:** راجع الصحة والحالات الحدّية قبل الأسلوب، ورتّب النتائج حسب الخطورة مع دليل لكل نتيجة. — Review correctness and edge cases before style; rank findings by severity with evidence for each.
 
-**متى:** after writing or changing code; before merge; the user asks for a review
+**متى:** بعد كتابة الشيفرة أو تغييرها؛ وقبل الدمج؛ وحين يطلب المستخدم مراجعة / after writing or changing code; before merge; the user asks for a review
 
 **كيف:** Order: logic and edge cases → error handling → security (inputs, authz, injection, secrets) → performance → tests (do they test behaviour?) → readability. Each finding: file:line, severity CRITICAL/HIGH/MEDIUM/LOW, evidence, suggested fix; group by file. Built-in skills in Claude Code: /code-review (effort low…max; --comment posts inline PR comments; --fix applies findings) and /simplify for reuse/simplification. Report what you did not review.
 
@@ -1170,7 +1170,7 @@
 
 **ما هي:** وزّع مراجعة طلب الدمج على مراجعين متخصصين بالتوازي، ثم أزل التكرار وتحقق، ثم انشر تعليقات مرتبطة بالأسطر. — Fan a PR review out to specialist reviewers in parallel, dedupe and verify, then post line-level comments.
 
-**متى:** a GitHub PR number or URL; the user asks for a thorough review
+**متى:** عند رقم أو رابط طلب دمج على GitHub؛ وحين يطلب المستخدم مراجعة شاملة / a GitHub PR number or URL; the user asks for a thorough review
 
 **كيف:** Fetch the diff (`gh pr diff <n>` or the GitHub MCP pull_request_read). In one message run: code-reviewer, comment-analyzer (comment rot), pr-test-analyzer (behavioural coverage), silent-failure-hunter, type-design-analyzer. Merge, dedupe, verify each serious finding (AGENT-14). Post with the GitHub MCP review flow: create a pending review → add_comment_to_pending_review per finding → submit. Needs the GitHub connector or `gh auth`.
 
@@ -1243,7 +1243,7 @@
 
 **ما هي:** لا تعِد الهيكلة إلا والاختبارات خضراء، وغيّر البنية دون السلوك، وتحقق بعد كل خطوة حذف. — Refactor only with green tests, change structure not behaviour, and verify after each removal.
 
-**متى:** cleanup, dead code, duplication, simplifying recently changed code
+**متى:** عند التنظيف أو الشيفرة الميتة أو التكرار أو تبسيط الشيفرة المغيّرة حديثًا / cleanup, dead code, duplication, simplifying recently changed code
 
 **كيف:** 1) Confirm tests are green (add characterization tests if coverage is thin). 2) Small behaviour-preserving steps, each followed by tests. 3) Dead code: find candidates with tools (knip, ts-prune, vulture, `graphify affected` showing no dependents), remove one group at a time, rebuild and test after each. 4) Focus on recently modified code unless asked for more. 5) Commit per step so rollback is trivial.
 
@@ -1314,7 +1314,7 @@
 
 **ما هي:** وثّق كل قرار معماري: السياق والدوافع والخيارات والمفاضلات وأنماط الفشل والقرار والعواقب ومتى يُراجع. — Record each architecture decision: context, drivers, options, trade-offs, failure modes, decision, consequences, review trigger.
 
-**متى:** choosing a framework, storage, protocol, structure; reversing an earlier decision
+**متى:** عند اختيار إطار عمل أو تخزين أو بروتوكول أو بنية؛ أو عند عكس قرار سابق / choosing a framework, storage, protocol, structure; reversing an earlier decision
 
 **كيف:** File docs/adr/NNNN-<slug>.md (numbered, never edited after acceptance; supersede instead). Fields: context; decision drivers; options considered; trade-offs; failure modes; decision; consequences; kill/review criteria. Claims about the architecture must come from the code and live constraints, not imagined topology. Keep a CONTEXT.md glossary for domain terms separate from ADRs.
 
@@ -1383,7 +1383,7 @@
 
 **ما هي:** حين يتبع معظم المدخلات نمطًا: عالجها بالتعابير النمطية أو محلل حتمي، وأرسل الحالات منخفضة الثقة فقط إلى النموذج. — When most inputs follow a pattern, parse them deterministically and send only low-confidence leftovers to a model.
 
-**متى:** structured text extraction, log parsing, subtitle/timing files, catalog cleanup
+**متى:** عند استخراج النص المنظم وتحليل السجلات وملفات الترجمة/التوقيت وتنظيف الفهارس / structured text extraction, log parsing, subtitle/timing files, catalog cleanup
 
 **كيف:** Pipeline: regex/parser → cleaner → confidence score per item. Confidence ≥0.95 → output directly; below → a model validates or fixes that item only. Typical regex coverage 95–98% of items. Exact numbers (sums, timings, allocations) are computed by code and then frozen; prose arithmetic is never final.
 
@@ -1454,7 +1454,7 @@
 
 **ما هي:** اجعل مفتاح الذاكرة المؤقتة بصمة SHA-256 للمحتوى ونسخة الإعدادات، فتُعاد المعالجة تلقائيًا عند التغيير فقط. — Key caches by a SHA-256 of the content plus the config/prompt version, so work reruns only when something changed.
 
-**متى:** expensive per-file processing: renders, transcriptions, extractions, thumbnails
+**متى:** عند معالجة مكلفة لكل ملف: تصييرات وتفريغات واستخراجات ومصغرات / expensive per-file processing: renders, transcriptions, extractions, thumbnails
 
 **كيف:** key = sha256(file bytes + tool version + prompt/config version); store results by key; write the manifest only after a successful run (a crash must not corrupt the next diff); refuse to overwrite a larger output with a much smaller one without --force (shrink guard). Example: skip re-rendering unchanged scenes; graphify uses this for its AST and semantic caches.
 
@@ -1525,7 +1525,7 @@
 
 **ما هي:** أودِع تغييرات صغيرة برسائل تطابق تاريخ المستودع، وافحص الفرق المرحلي قبل الإيداع، واستخدم كلمات حالة دقيقة. — Commit small changes with messages matching the repo's history, review the staged diff first, and report with exact status words.
 
-**متى:** before any commit or push; when reporting progress
+**متى:** قبل أي إيداع أو دفع؛ وعند الإبلاغ عن التقدم / before any commit or push; when reporting progress
 
 **كيف:** Read `git log --oneline -15` to match the message style (Conventional Commits if the repo uses them). Review `git diff --staged`: no secrets, no debug prints, no stray files. Commit only when the user asked; never force-push or rewrite shared history without explicit approval; branch first if on the default branch. Report with: inspected · changed locally · verified locally · committed · pushed · blocked.
 
@@ -1595,7 +1595,7 @@
 
 **ما هي:** اختبارات قائمة على الخصائص تولّد مدخلات فاشلة وتختزلها. — Property-based tests that generate and shrink failing inputs. (Hypothesis, ★9.1k, MPL-2.0).
 
-**متى:** testing tasks the user has the right to run
+**متى:** عند مهام الاختبار التي يحق للمستخدم تشغيلها / testing tasks the user has the right to run
 
 **كيف:** `pip install hypothesis`. Verified here 2026-10-18: falsified 'short or small' list property and shrank the input (hypothesis 6.170.1). Licence note: weak copyleft.
 
@@ -1666,7 +1666,7 @@
 
 **ما هي:** تعريف عقود بيانات لإطارات pandas وPolars وفرضها. — Declare and enforce schemas on pandas/Polars dataframes (data contracts). (Pandera, ★4.5k, MIT).
 
-**متى:** data contracts tasks the user has the right to run
+**متى:** عند مهام عقود البيانات التي يحق للمستخدم تشغيلها / data contracts tasks the user has the right to run
 
 **كيف:** `pip install pandera`. Verified here 2026-10-18: fps column contract: 29 rejected, 30/60 accepted (pandera 0.34.1). Licence note: permissive.
 

@@ -8,15 +8,27 @@ user chose and why, per-node traces with hashed evidence, and status changes thr
 (candidate -> planned -> tested -> verified | failed; verified and failed are final, start again with fork).
 FusionForge does not rank capabilities itself: skill_intelligence's brief is the single ranker.
 
-  python3 scripts/fusionforge.py propose "<goal>" --project P [--from-brief brief.json] [--terms "english words"]
-  python3 scripts/fusionforge.py validate --project P --id FUSE-...
-  python3 scripts/fusionforge.py choose   --project P --id FUSE-... --plan B --why "..."
-  python3 scripts/fusionforge.py trace    --project P --id FUSE-... --stage create --node N02 --action "..." \\
-                                          --result passed --tool tool:montage-pro --observed "..." --evidence out/job/qa.json
-  python3 scripts/fusionforge.py record   --project P --id FUSE-... --status tested --evidence out/job/qa.json
-  python3 scripts/fusionforge.py record   --project P --id FUSE-... --status verified --evidence out/job/qa.json --qa-pass
-  python3 scripts/fusionforge.py lessons  --project P          |  reuse "<goal>" --project P
-  also: show, catalog, set-graph, bind, fork, card, import-card, export, import, migrate, promote (see --help)
+Every subcommand (19), one example each (`<subcommand> --help` lists all options):
+  python3 scripts/fusionforge.py propose     "<goal>" --project P [--from-brief brief.json] [--terms "english words"]
+  python3 scripts/fusionforge.py show        --project P --id FUSE-...
+  python3 scripts/fusionforge.py catalog     --project P
+  python3 scripts/fusionforge.py set-graph   --project P --id FUSE-... --file graph.json
+  python3 scripts/fusionforge.py bind        --project P --id FUSE-... --node N02 --executor tool:montage-pro
+  python3 scripts/fusionforge.py validate    --project P --id FUSE-...
+  python3 scripts/fusionforge.py choose      --project P --id FUSE-... --plan B --why "..."   (plan D also needs --nodes)
+  python3 scripts/fusionforge.py trace       --project P --id FUSE-... --stage create --node N02 --action "..." \\
+                                             --result passed --tool tool:montage-pro --observed "..." --evidence out/job/qa.json
+  python3 scripts/fusionforge.py record      --project P --id FUSE-... --status tested --evidence out/job/qa.json
+  python3 scripts/fusionforge.py record      --project P --id FUSE-... --status verified --evidence out/job/qa.json --qa-pass
+  python3 scripts/fusionforge.py fork        --project P --id FUSE-... [--new-id FUSE-...]
+  python3 scripts/fusionforge.py lessons     --project P
+  python3 scripts/fusionforge.py reuse       "<goal>" --project P [--from-brief brief.json] [--top 3]
+  python3 scripts/fusionforge.py card        --project P --id FUSE-... --out out/cards/recipe.md
+  python3 scripts/fusionforge.py import-card out/cards/recipe.md --project P [--new-id FUSE-...]
+  python3 scripts/fusionforge.py export      --project P --out out/fusionforge-P.json [--include-candidates]
+  python3 scripts/fusionforge.py import      out/fusionforge-P.json --project P
+  python3 scripts/fusionforge.py migrate     --project P
+  python3 scripts/fusionforge.py promote     --project P --id FUSE-...
 
 Global options: --root DIR (else $KOSIF_FUSIONFORGE_ROOT, else <git top of cwd>/out/fusionforge, else
 <git checkout holding this skill>/out/fusionforge; with none of these the command stops with NO_ROOT), --catalog-file,

@@ -27,7 +27,7 @@
 
 #### MEDIA-01 · كتابة العربية على الصور بـ Pillow · Arabic text on images with Pillow (raqm) · ✅ مُثبت هنا / proven here
 - **ماذا / what:** Pillow 12 يشكّل العربية بنفسه عبر raqm؛ مرّر النص كما هو مع الاتجاه واللغة ونقطة الارتكاز. — Pillow 12 shapes Arabic itself through raqm; pass the text as-is with direction, language and anchor.
-- **متى أستخدمها / when:** thumbnails, social cards, certificates, OCR test images, labels on frames
+- **متى أستخدمها / when:** للصور المصغرة وبطاقات التواصل والشهادات وصور اختبار OCR والتسميات على الإطارات / thumbnails, social cards, certificates, OCR test images, labels on frames
 - **كيف / how:** f=ImageFont.truetype(path,64,layout_engine=ImageFont.Layout.RAQM); draw.text((right_x,y), text, font=f, direction='rtl', language='ar', anchor='ra'). Check PIL.features.check('raqm') first (True, raqm 0.10.5, on 2026-10-16). Use bundled OFL fonts (Amiri, Cairo, Tajawal) because system Arabic fonts are poor. **أرقام / params:** anchor 'ra' = right edge, ascender line; 'la' for LTR
 - **تثبيت / install:** `pip install pillow`
 - **يحتاج / needs:** [`pip:pillow`](../requirements.md#req-pip-pillow) · [`fonts:arabic`](../requirements.md#req-fonts-arabic)
@@ -37,7 +37,7 @@
 
 #### MEDIA-02 · لا تشكّل العربية مرتين · Never double-shape Arabic · ✅ مُثبت هنا / proven here
 - **ماذا / what:** إضافة arabic_reshaper وpython-bidi فوق محرك يشكّل بنفسه تقلب الكلمات وتفصل الحروف. — Adding arabic_reshaper + python-bidi on top of an engine that already shapes reverses the words and breaks the letters.
-- **متى أستخدمها / when:** old snippets with get_display(reshape(s)); text appears reversed
+- **متى أستخدمها / when:** مع مقتطفات قديمة بـ get_display(reshape(s)) يظهر فيها النص معكوسًا / old snippets with get_display(reshape(s)); text appears reversed
 - **كيف / how:** Rule: raw string for raqm/HarfBuzz engines (Pillow 12, matplotlib 3.11, browsers, LibreOffice, weasyprint); reshape + bidi only for reportlab or builds without raqm. Contact panel 4 shows both lines side by side.
 - **يحتاج / needs:** [`libreoffice`](../requirements.md#req-libreoffice) · [`pip:pillow`](../requirements.md#req-pip-pillow) · [`pip:matplotlib`](../requirements.md#req-pip-matplotlib) · [`pip:office`](../requirements.md#req-pip-office) · [`pip:arabic-reshaper`](../requirements.md#req-pip-arabic-reshaper)
 - **الدليل / proof:** `kosif-tool/.claude/skills/kosif-superpowers/proofs/general-media/README.md` · `kosif-tool/.claude/skills/kosif-superpowers/proofs/general-data/README.md`
@@ -47,7 +47,7 @@
 
 #### MEDIA-03 · التعرف على العربية والإنجليزية بـ tesseract · Arabic + English OCR with tesseract · ✅ مُثبت هنا / proven here
 - **ماذا / what:** استخرج النص العربي والإنجليزي من الصور محليًا بعد تثبيت حزمة العربية. — Extract Arabic and English text from images locally once the Arabic pack is installed.
-- **متى أستخدمها / when:** screenshots, scans, photos of documents, images inside PDFs
+- **متى أستخدمها / when:** مع لقطات الشاشة والمسوحات وصور المستندات والصور داخل ملفات PDF / screenshots, scans, photos of documents, images inside PDFs
 - **كيف / how:** apt-get install -y tesseract-ocr tesseract-ocr-ara (6 s); pytesseract.image_to_string(img, lang='ara+eng', config='--oem 1 --psm 6'). Proof: clean naskh, sans and English lines read at similarity 0.99 in 0.41 s; mean word confidence 90.6. Strip U+200E/U+200F marks from the output. **أرقام / params:** --psm 6 block, 7 single line, 4 columns; 300 dpi for scans
 - **تثبيت / install:** `apt-get install tesseract-ocr tesseract-ocr-ara && pip install pytesseract`
 - **يحتاج / needs:** [`python3`](../requirements.md#req-python3) · [`tesseract`](../requirements.md#req-tesseract)
@@ -57,7 +57,7 @@
 
 #### MEDIA-04 · نقاط ضعف OCR العربي · Arabic OCR weak spots (digits, display fonts) · ✅ مُثبت هنا / proven here
 - **ماذا / what:** نموذج ara الافتراضي يخطئ في الأرقام الهندية العربية والخطوط الكوفية والعرضية؛ تحقق من كل رقم. — The stock ara model misreads Arabic-Indic digits and Kufi/display fonts; validate every number.
-- **متى أستخدمها / when:** invoices, phone numbers, dates, prices read by OCR
+- **متى أستخدمها / when:** مع الفواتير وأرقام الهواتف والتواريخ والأسعار التي يقرؤها OCR / invoices, phone numbers, dates, prices read by OCR
 - **كيف / how:** Measured (56 px, psm 7): Arabic-Indic digits 0.51-0.84 similarity (a phone number came back as garbage); the same line with Western digits 1.0; Reem Kufi merged two words. Mitigations: -l ara for pure Arabic lines (ara+eng can emit Latin junk); range/checksum checks; ask the user to confirm numbers; try tessdata_best (untested).
 - **يحتاج / needs:** [`tesseract`](../requirements.md#req-tesseract) · [`fonts:arabic`](../requirements.md#req-fonts-arabic)
 - **الدليل / proof:** `kosif-tool/.claude/skills/kosif-superpowers/proofs/general-media/README.md`
@@ -65,7 +65,7 @@
 
 #### MEDIA-05 · تقويم الصفحات المائلة · Deskew scans before OCR · ✅ مُثبت هنا / proven here
 - **ماذا / what:** قدّر زاوية الميل من كتل السطور ودوّر الصورة قبل التعرف، فيرتفع التطابق كثيرًا. — Estimate the skew angle from line blobs and rotate before OCR; accuracy rises sharply.
-- **متى أستخدمها / when:** photographed or scanned pages that are visibly tilted
+- **متى أستخدمها / when:** مع الصفحات المصوَّرة أو الممسوحة المائلة بوضوح / photographed or scanned pages that are visibly tilted
 - **كيف / how:** median 3 -> Otsu (inverted) -> morph open 2x2 -> dilate with a 60x5 kernel -> contours > 5000 px -> cv2.minAreaRect angles (subtract 90 when w<h) -> median -> warpAffine back. Proof: true 12°, estimated 12.07°, OCR 0.598 -> 0.912.
 - **تثبيت / install:** `pip install opencv-python-headless`
 - **يحتاج / needs:** [`chromium`](../requirements.md#req-chromium) · [`tesseract`](../requirements.md#req-tesseract) · [`pip:opencv`](../requirements.md#req-pip-opencv)
@@ -75,7 +75,7 @@
 
 #### MEDIA-06 · قس قبل أن تعالج · Measure preprocessing, do not assume it helps · ✅ مُثبت هنا / proven here
 - **ماذا / what:** التحويل إلى أبيض وأسود بعتبة تكيفية خفّض دقة tesseract 5 بعد التقويم؛ كل خطوة تُقاس. — Adaptive-threshold binarisation lowered tesseract 5 accuracy after deskew; measure every step.
-- **متى أستخدمها / when:** building any OCR or image pipeline
+- **متى أستخدمها / when:** عند بناء أي مسار OCR أو معالجة صور / building any OCR or image pipeline
 - **كيف / how:** Score each variant against ground truth (difflib ratio on NFKC text). Proof: grayscale deskew 0.912, the same plus adaptiveThreshold(31, C=15) 0.814. Tesseract's LSTM engine works on grayscale; binarise only if a measurement shows it helps.
 - **يحتاج / needs:** [`tesseract`](../requirements.md#req-tesseract)
 - **الدليل / proof:** `kosif-tool/.claude/skills/kosif-superpowers/proofs/general-media/README.md`
@@ -83,7 +83,7 @@
 
 #### MEDIA-07 · OCR بديل عبر pip · easyocr (pure-pip OCR) · 📦 بأمر تثبيت / one install
 - **ماذا / what:** تعرّف ضوئي يدعم العربية دون apt، لكنه يسحب torch ونماذج. — OCR with Arabic support and no apt step, but it pulls torch and model files.
-- **متى أستخدمها / when:** hosts without apt/root
+- **متى أستخدمها / when:** على المضيفات التي لا تملك apt/root / hosts without apt/root
 - **كيف / how:** pip install torch --index-url https://download.pytorch.org/whl/cpu (21 s, 769 MB in the arsenal run) then pip install easyocr; reader=easyocr.Reader(['ar','en']). Model download and accuracy not tested here.
 - **تثبيت / install:** `pip install easyocr`
 - **يحتاج / needs:** [`tesseract`](../requirements.md#req-tesseract) · [`pip:torch`](../requirements.md#req-pip-torch) · [`network`](../requirements.md#req-network)
@@ -95,7 +95,7 @@
 
 #### MEDIA-08 · عمليات OpenCV الأساسية · OpenCV basics (edges, threshold, warp) · ✅ مُثبت هنا / proven here
 - **ماذا / what:** حواف، وعتبات، وتدوير، وتحويلات منظور، وكشف أشكال — أساس أي خط معالجة صور. — Edges, thresholds, rotation, perspective warps and contours: the base of any image pipeline.
-- **متى أستخدمها / when:** cleanup, measurement, masks, document straightening
+- **متى أستخدمها / when:** للتنظيف والقياس والأقنعة وتقويم المستندات / cleanup, measurement, masks, document straightening
 - **كيف / how:** cv2.Canny(gray,80,160); cv2.threshold(..., THRESH_OTSU); cv2.getRotationMatrix2D + warpAffine(borderValue=255); cv2.findContours. Note: opencv-python-headless is version 5.0 (major bump), so check the API before writing code.
 - **تثبيت / install:** `pip install opencv-python-headless`
 - **يحتاج / needs:** [`chromium`](../requirements.md#req-chromium) · [`pip:opencv`](../requirements.md#req-pip-opencv)
@@ -105,7 +105,7 @@
 
 #### MEDIA-09 · ضغط الصور ومقارنة الجودة · Image compression with quality metrics · ✅ مُثبت هنا / proven here
 - **ماذا / what:** اختر الصيغة بالأرقام: WebP وAVIF أصغر بكثير من PNG وJPEG مع SSIM مرتفع. — Choose formats by numbers: WebP and AVIF are much smaller than PNG/JPEG while keeping SSIM high.
-- **متى أستخدمها / when:** web images, thumbnails, artifacts under size limits
+- **متى أستخدمها / when:** لصور الويب والصور المصغرة والملفات الفنية تحت حدود الحجم / web images, thumbnails, artifacts under size limits
 - **كيف / how:** Pillow save: PNG optimize, WebP quality 80, AVIF quality 50, JPEG 85; measure with cv2.PSNR and skimage structural_similarity(channel_axis=2). Proof (640x480 synthetic): 12.0 / 5.5 / 3.3 / 15.8 KB; WebP PSNR 39.7 dB, SSIM 0.982.
 - **تثبيت / install:** `pip install pillow scikit-image opencv-python-headless`
 - **يحتاج / needs:** [`chromium`](../requirements.md#req-chromium) · [`pip:pillow`](../requirements.md#req-pip-pillow) · [`pip:opencv`](../requirements.md#req-pip-opencv)
@@ -115,7 +115,7 @@
 
 #### MEDIA-10 · استخراج لوحة الألوان · Dominant palette with k-means · ✅ مُثبت هنا / proven here
 - **ماذا / what:** استخرج الألوان الغالبة من صورة أو شعار لبناء هوية أو مطابقة تصميم. — Extract dominant colours from an image or logo to build or match a palette.
-- **متى أستخدمها / when:** brand matching, palette from a photo, colour grading references
+- **متى أستخدمها / when:** عند مطابقة العلامة التجارية وأخذ لوحة من صورة ومراجع تدريج الألوان / brand matching, palette from a photo, colour grading references
 - **كيف / how:** Z=img.reshape(-1,3).astype(np.float32); cv2.kmeans(Z, k, None, (EPS+MAX_ITER,30,0.5), 4, cv2.KMEANS_PP_CENTERS); sort centres by cluster size. Proof: k=4 recovered three disc colours within 0.9-2.3 RGB units. Gradients need a larger k or a LAB colour space.
 - **تثبيت / install:** `pip install opencv-python-headless`
 - **يحتاج / needs:** [`chromium`](../requirements.md#req-chromium) · [`pip:numpy`](../requirements.md#req-pip-numpy) · [`pip:opencv`](../requirements.md#req-pip-opencv)
@@ -125,7 +125,7 @@
 
 #### MEDIA-11 · رموز QR والباركود · QR codes and barcodes (encode + decode) · ✅ مُثبت هنا / proven here
 - **ماذا / what:** ولّد رموز QR (حتى بروابط فيها عربية) وفكّ ترميزها للتحقق، وولّد باركود EAN/Code128. — Generate QR codes (even URLs with Arabic) and decode them back to verify; generate EAN/Code128 barcodes.
-- **متى أستخدمها / when:** menus, posters, invoices, packaging, end cards
+- **متى أستخدمها / when:** مع القوائم والملصقات والفواتير والتغليف وبطاقات الختام / menus, posters, invoices, packaging, end cards
 - **كيف / how:** qrcode.make(payload, box_size=8, border=4).save(p); cv2.QRCodeDetector().detectAndDecode(cv2.imread(p)) must equal the payload. Barcode: barcode.get('ean13', digits, writer=ImageWriter()).save('bc').
 - **تثبيت / install:** `pip install qrcode python-barcode opencv-python-headless`
 - **يحتاج / needs:** [`chromium`](../requirements.md#req-chromium) · [`pip:opencv`](../requirements.md#req-pip-opencv)
@@ -135,7 +135,7 @@
 
 #### MEDIA-12 · ImageMagick من سطر الأوامر · ImageMagick 6 CLI · ✅ مُثبت هنا / proven here
 - **ماذا / what:** تحويلات سريعة للصور من الطرفية؛ الإصدار المتوفر 6 (convert) لا 7 (magick). — Quick image transforms from the shell; the available version is 6 (`convert`), not 7 (`magick`).
-- **متى أستخدمها / when:** batch resize, format conversion, montage, quick fixes
+- **متى أستخدمها / when:** لتغيير الحجم دفعة واحدة وتحويل الصيغ والمونتاج والإصلاحات السريعة / batch resize, format conversion, montage, quick fixes
 - **كيف / how:** convert in.png -resize 50% -colorspace Gray -unsharp 0x1 out.png; identify -format '%w %h %[colorspace]' out.png -> 750 235 Gray (proof). Use mogrify for in-place batches on copies only.
 - **تثبيت / install:** `apt-get install imagemagick (6.9.12 present)`
 - **يحتاج / needs:** [`imagemagick`](../requirements.md#req-imagemagick)
@@ -145,7 +145,7 @@
 
 #### MEDIA-13 · SVG إلى PNG · SVG to PNG (cairosvg) · ✅ مُثبت هنا / proven here
 - **ماذا / what:** حوّل رسوم SVG إلى صور نقطية لإدراجها في مستندات أو فيديو. — Rasterise SVG for documents or video.
-- **متى أستخدمها / when:** icons, logos, diagrams drawn as SVG
+- **متى أستخدمها / when:** مع الأيقونات والشعارات والمخططات المرسومة بـ SVG / icons, logos, diagrams drawn as SVG
 - **كيف / how:** cairosvg.svg2png(bytestring=svg, write_to='o.png', output_width=1024). For Arabic text inside SVG prefer Chromium rendering (APP-05 snap) because it has full shaping; Arabic in cairosvg was not tested.
 - **تثبيت / install:** `pip install cairosvg`
 - **يحتاج / needs:** [`python3`](../requirements.md#req-python3) · [`chromium`](../requirements.md#req-chromium)
@@ -155,7 +155,7 @@
 
 #### MEDIA-14 · المراجعة البصرية لمخرجاتي · Look at your own outputs (vision QA) · ✅ مُثبت هنا / proven here
 - **ماذا / what:** افتح الصور وصفحات PDF التي أنتجتها بأداة القراءة وانظر إليها فعلًا قبل الادعاء بأنها صحيحة. — Open the images and PDF pages I produced with the Read tool and actually look before claiming they are right.
-- **متى أستخدمها / when:** after every render, chart, document or OCR test image
+- **متى أستخدمها / when:** بعد كل تصيير أو مخطط أو مستند أو صورة اختبار OCR / after every render, chart, document or OCR test image
 - **كيف / how:** Build a contact sheet (Pillow tiles, quantize to stay under 300 KB), Read it, and check Arabic joining, direction, cropping and overlaps. In this session, looking caught a reversed matplotlib title, a chart split over two pages, and a wrong filter name.
 - **يحتاج / needs:** [`pip:pillow`](../requirements.md#req-pip-pillow) · [`pip:matplotlib`](../requirements.md#req-pip-matplotlib)
 - **الدليل / proof:** `kosif-tool/.claude/skills/kosif-superpowers/proofs/general-media/README.md` · `kosif-tool/.claude/skills/kosif-superpowers/proofs/general-docs/README.md` · `kosif-tool/.claude/skills/kosif-superpowers/proofs/general-data/README.md`
@@ -165,7 +165,7 @@
 
 #### MEDIA-15 · توليد إشارات صوتية للاختبار · Synthesize test audio · ✅ مُثبت هنا / proven here
 - **ماذا / what:** اصنع صوتًا معروف الخصائص (نغمة، صمت، نقرات بإيقاع) لاختبار أي خط معالجة. — Make audio with known properties (tone, silence, clicks at a tempo) to test any audio pipeline.
-- **متى أستخدمها / when:** before trusting a beat, pitch, loudness or silence detector on real audio
+- **متى أستخدمها / when:** قبل الوثوق بكاشف إيقاع أو طبقة صوت أو جهارة أو صمت على صوت حقيقي / before trusting a beat, pitch, loudness or silence detector on real audio
 - **كيف / how:** numpy: 0.2*sin(2*pi*440*t) for 2 s, zeros for 1 s, decaying 1 kHz clicks every 0.5 s (120 BPM); soundfile.write(p, sig, 48000, subtype='PCM_16').
 - **تثبيت / install:** `pip install numpy soundfile`
 - **يحتاج / needs:** [`pip:numpy`](../requirements.md#req-pip-numpy) · [`pip:soundfile`](../requirements.md#req-pip-soundfile)
@@ -175,7 +175,7 @@
 
 #### MEDIA-16 · قياس طبقة الصوت · Pitch tracking (librosa YIN) · ✅ مُثبت هنا / proven here
 - **ماذا / what:** قِس التردد الأساسي لصوت أو نغمة. — Measure the fundamental frequency of a voice or tone.
-- **متى أستخدمها / when:** tuning checks, voice analysis, verifying generated tones
+- **متى أستخدمها / when:** عند فحوص الضبط وتحليل الصوت والتحقق من النغمات المولَّدة / tuning checks, voice analysis, verifying generated tones
 - **كيف / how:** f0=librosa.yin(y, fmin=100, fmax=1000, sr=sr); np.median(f0). Proof: 440 Hz tone -> 440.6 Hz. librosa is 1.0 now; check the API before writing from memory. librosa ran in an earlier session's venv (2026-10-16) and is not installed in the current container: `pip install librosa` first.
 - **تثبيت / install:** `pip install librosa`
 - **يحتاج / needs:** [`pip:numpy`](../requirements.md#req-pip-numpy) · [`pip:librosa`](../requirements.md#req-pip-librosa)
@@ -185,7 +185,7 @@
 
 #### MEDIA-17 · كشف بدايات الأصوات والإيقاع · Onset and tempo detection · ✅ مُثبت هنا / proven here
 - **ماذا / what:** جِد لحظات الضربات والمسافات بينها لاستنتاج الإيقاع. — Find hit times and their spacing to infer tempo.
-- **متى أستخدمها / when:** cutting to the beat, syncing captions, rhythm checks
+- **متى أستخدمها / when:** عند القطع على الإيقاع ومزامنة الترجمات وفحوص الإيقاع / cutting to the beat, syncing captions, rhythm checks
 - **كيف / how:** librosa.onset.onset_detect(y=seg, sr=sr, units='time'); tempo = 60/median(diff). Start the window about 0.1 s before the first hit, because an onset at sample 0 is missed (first run found 5 of 6). Proof: 6 onsets, 0.501 s spacing (119.7 BPM). librosa ran in an earlier session's venv (2026-10-16) and is not installed in the current container: `pip install librosa` first.
 - **تثبيت / install:** `pip install librosa`
 - **يحتاج / needs:** [`pip:librosa`](../requirements.md#req-pip-librosa)
@@ -195,7 +195,7 @@
 
 #### MEDIA-18 · قياس الجهارة LUFS · Loudness measurement (LUFS) · ✅ مُثبت هنا / proven here
 - **ماذا / what:** قِس الجهارة المتكاملة بطريقتين مستقلتين (pyloudnorm وffmpeg ebur128) وتحقق من اتفاقهما. — Measure integrated loudness two independent ways (pyloudnorm, ffmpeg ebur128) and check that they agree.
-- **متى أستخدمها / when:** delivering voice-overs, podcasts, reels, music beds
+- **متى أستخدمها / when:** عند تسليم التعليقات الصوتية والبودكاست والريلز وخلفيات الموسيقى / delivering voice-overs, podcasts, reels, music beds
 - **كيف / how:** pyln.Meter(sr).integrated_loudness(x); ffmpeg -i f -af ebur128=peak=true -f null - (read the last 'I:'). Proof: -13.96 vs -13.9 LUFS on the normalised file.
 - **تثبيت / install:** `pip install pyloudnorm`
 - **يحتاج / needs:** [`ffmpeg`](../requirements.md#req-ffmpeg) · [`pip:pyloudnorm`](../requirements.md#req-pip-pyloudnorm)
@@ -205,7 +205,7 @@
 
 #### MEDIA-19 · تطبيع الجهارة بمرورين خطّيين · Two-pass linear loudnorm to a target · ✅ مُثبت هنا / proven here
 - **ماذا / what:** ارفع الصوت إلى −14 LUFS بكسب ثابت دون ضغط، وتأكد أن ffmpeg لم ينتقل سرًا إلى الوضع الديناميكي. — Bring audio to -14 LUFS with pure gain (no compression), and confirm ffmpeg did not silently switch to dynamic mode.
-- **متى أستخدمها / when:** final audio for any delivery; preserving the user's audio character
+- **متى أستخدمها / when:** للصوت النهائي في أي تسليم، ولحفظ طابع صوت المستخدم / final audio for any delivery; preserving the user's audio character
 - **كيف / how:** Pass 1: loudnorm=I=-14:TP=-1:LRA=11:print_format=json -f null. Pass 2: the measured_* values + offset + linear=true + print_format=json, and LRA set above the measured LRA (max(11, input_lra+1)); assert normalization_type == 'linear'. Proof: -18.05 -> -13.96 LUFS, linear. With LRA=11 and a measured LRA of 17.8 the mode went dynamic. **أرقام / params:** I -14, TP -1 dBTP; streaming platforms vary (-14 to -16)
 - **تثبيت / install:** `ffmpeg (6.1.1 present)`
 - **يحتاج / needs:** [`ffmpeg`](../requirements.md#req-ffmpeg)
@@ -215,7 +215,7 @@
 
 #### MEDIA-20 · كشف الصمت · Silence detection · ✅ مُثبت هنا / proven here
 - **ماذا / what:** جِد فترات الصمت لقصها أو لتقسيم المقاطع. — Find silent stretches to trim them or split segments.
-- **متى أستخدمها / when:** podcast cleanup, splitting takes, jump cuts
+- **متى أستخدمها / when:** لتنظيف البودكاست وتقسيم اللقطات والقطع المتتالية / podcast cleanup, splitting takes, jump cuts
 - **كيف / how:** ffmpeg -i f -af silencedetect=noise=-50dB:d=0.5 -f null - ; parse silence_start / silence_end. Proof: 2.0 -> 3.0 s found exactly. Tune noise to the room tone (-35 to -50 dB).
 - **تثبيت / install:** `ffmpeg`
 - **يحتاج / needs:** [`ffmpeg`](../requirements.md#req-ffmpeg)
@@ -225,7 +225,7 @@
 
 #### MEDIA-21 · صور الموجة والطيف · Waveform and spectrogram images · ✅ مُثبت هنا / proven here
 - **ماذا / what:** ارسم شكل الموجة والطيف لصوت لعرضه أو لفحصه بالعين. — Draw a waveform and a spectrogram of audio to show or inspect it.
-- **متى أستخدمها / when:** podcast covers, QA of edits, explaining audio
+- **متى أستخدمها / when:** لأغلفة البودكاست وفحص جودة المونتاج وشرح الصوت / podcast covers, QA of edits, explaining audio
 - **كيف / how:** ffmpeg -i f -filter_complex showwavespic=s=1200x200:colors=#2a78d6 -frames:v 1 w.png ; ffmpeg -i f -lavfi showspectrumpic=s=1200x300:legend=0 s.png. The filter is showwavespic; there is no 'showwavespng' (the first run failed on that name).
 - **تثبيت / install:** `ffmpeg`
 - **يحتاج / needs:** [`ffmpeg`](../requirements.md#req-ffmpeg)
@@ -235,7 +235,7 @@
 
 #### MEDIA-22 · قص وتلاشي وتصدير بـ pydub · Slice, fade and export with pydub (Python 3.13) · ✅ مُثبت هنا / proven here
 - **ماذا / what:** تحرير صوتي بسيط بالمللي ثانية؛ على بايثون 3.13 يحتاج حزمة audioop-lts. — Simple millisecond audio editing; on Python 3.13 it needs the audioop-lts package.
-- **متى أستخدمها / when:** trimming intros, fades, joining clips, exporting MP3
+- **متى أستخدمها / when:** لقص المقدمات والتلاشي وضم المقاطع وتصدير MP3 / trimming intros, fades, joining clips, exporting MP3
 - **كيف / how:** pip install pydub audioop-lts (without it: ModuleNotFoundError 'pyaudioop'); AudioSegment.from_wav(p)[:2000].fade_in(200).fade_out(400).export('o.mp3', format='mp3', bitrate='128k'). Proof: ffprobe 2.040 s (the MP3 encoder adds padding).
 - **تثبيت / install:** `pip install pydub audioop-lts`
 - **يحتاج / needs:** [`ffmpeg`](../requirements.md#req-ffmpeg) · [`python3`](../requirements.md#req-python3)
@@ -245,7 +245,7 @@
 
 #### MEDIA-23 · تحويل الصيغ والتحقق من المدة · Transcode and verify duration · ✅ مُثبت هنا / proven here
 - **ماذا / what:** حوّل إلى AAC أو MP3 وتحقق بـ ffprobe أن المدة لم تتغير. — Transcode to AAC or MP3 and verify with ffprobe that the duration did not change.
-- **متى أستخدمها / when:** delivering audio for web, messaging or video
+- **متى أستخدمها / when:** عند تسليم صوت للويب أو الرسائل أو الفيديو / delivering audio for web, messaging or video
 - **كيف / how:** ffmpeg -i in.wav -c:a aac -b:a 96k out.m4a; ffprobe -v error -show_entries format=duration -of csv=p=0 out.m4a. Proof: 6.000 s for a 6.0 s source, 34 KB (MP3 via pydub: 2.040 s for 2.0 s, encoder padding). Never overwrite the user's original.
 - **تثبيت / install:** `ffmpeg`
 - **يحتاج / needs:** [`ffmpeg`](../requirements.md#req-ffmpeg)
@@ -255,7 +255,7 @@
 
 #### MEDIA-24 · مؤثرات صوتية بـ pedalboard · Audio effects (pedalboard, GPL) · ✅ مُثبت هنا / proven here
 - **ماذا / what:** ضاغط وصدى وفلاتر بجودة استوديو من Python؛ الرخصة GPL. — Studio-grade compressor, reverb and filters from Python; licensed GPL.
-- **متى أستخدمها / when:** polishing a voice-over or music bed (use as a tool, do not vendor it)
+- **متى أستخدمها / when:** عند تحسين تعليق صوتي أو خلفية موسيقية (استخدمه كأداة ولا تضمّنه في المشروع) / polishing a voice-over or music bed (use as a tool, do not vendor it)
 - **كيف / how:** Pedalboard([Compressor(), Reverb()])(audio, sr) (arsenal run). Keep the original and render a copy.
 - **تثبيت / install:** `pip install pedalboard`
 - **يحتاج / needs:** [`python3`](../requirements.md#req-python3)
@@ -267,7 +267,7 @@
 
 #### MEDIA-25 · تحويل الكلام إلى نص محليًا · Local speech-to-text (faster-whisper) · 📦 بأمر تثبيت / one install
 - **ماذا / what:** تفريغ الكلام العربي بطوابع زمنية للكلمات على المعالج بنماذج صغيرة. — Transcribe Arabic speech with word timestamps on CPU using small models.
-- **متى أستخدمها / when:** captions, words.json for sync, meeting notes
+- **متى أستخدمها / when:** عند الحاجة إلى ترجمات نصية أو words.json للمزامنة أو محاضر الاجتماعات / captions, words.json for sync, meeting notes
 - **كيف / how:** pip install faster-whisper; WhisperModel('small', device='cpu', compute_type='int8').transcribe(p, language='ar', word_timestamps=True). Models download from huggingface.co (reachable on 2026-10-16). Not run in this proof; see the motion audio-sync family for the caption pipeline.
 - **تثبيت / install:** `pip install faster-whisper`
 - **يحتاج / needs:** [`pip:faster-whisper`](../requirements.md#req-pip-faster-whisper) · [`network`](../requirements.md#req-network)
@@ -277,7 +277,7 @@
 
 #### MEDIA-26 · فصل المسارات الصوتية · Stem separation (demucs) · 📦 بأمر تثبيت / one install
 - **ماذا / what:** فصل الصوت البشري عن الموسيقى؛ بطيء على المعالج. — Separate vocals from music; slow on CPU.
-- **متى أستخدمها / when:** remove music under speech, karaoke, remix
+- **متى أستخدمها / when:** عند إزالة الموسيقى من تحت الكلام أو عمل كاريوكي أو ريمكس / remove music under speech, karaoke, remix
 - **كيف / how:** pip install demucs (needs torch); demucs --two-stems=vocals in.wav. Expect minutes per track without a GPU. Not run here.
 - **تثبيت / install:** `pip install demucs`
 - **يحتاج / needs:** [`pip:torch`](../requirements.md#req-pip-torch)
@@ -287,7 +287,7 @@
 
 #### MEDIA-27 · إزالة الخلفية محليًا · Background removal (rembg) · 📦 بأمر تثبيت / one install
 - **ماذا / what:** قص الشخص أو المنتج من الخلفية بنموذج U2Net محلي. — Cut out a person or product from the background with a local U2Net model.
-- **متى أستخدمها / when:** product shots, thumbnails, stickers
+- **متى أستخدمها / when:** عند تجهيز صور المنتجات أو الصور المصغرة أو الملصقات / product shots, thumbnails, stickers
 - **كيف / how:** pip install rembg; rembg i in.png out.png. The model downloads on first use; not tested here. The paid service alternative is MEDIA-29.
 - **تثبيت / install:** `pip install rembg`
 - **يحتاج / needs:** [`pip:rembg`](../requirements.md#req-pip-rembg)
@@ -297,7 +297,7 @@
 
 #### MEDIA-28 · بيانات الصور الوصفية · Image metadata (EXIF) · 📦 بأمر تثبيت / one install
 - **ماذا / what:** قراءة وحذف بيانات الكاميرا والموقع قبل النشر. — Read and strip camera and GPS metadata before publishing.
-- **متى أستخدمها / when:** privacy before sharing photos; checking capture dates
+- **متى أستخدمها / when:** عند حماية الخصوصية قبل مشاركة الصور أو التحقق من تواريخ التقاطها / privacy before sharing photos; checking capture dates
 - **كيف / how:** Pillow: Image.open(p).getexif(); strip by re-saving without exif. Full tool: apt-get install libimage-exiftool-perl; exiftool -all= copy.jpg. Not run here.
 - **تثبيت / install:** `apt-get install libimage-exiftool-perl`
 - **يحتاج / needs:** [`pip:pillow`](../requirements.md#req-pip-pillow)
@@ -307,7 +307,7 @@
 
 #### MEDIA-29 · توليد وتحسين الصور والأصوات بالذكاء الاصطناعي (مدفوع) · AI image/audio generation and upscaling (paid connector) · 🔑 مفتاح أو خدمة / needs key or service
 - **ماذا / what:** عند وجود موصل مثل Higgsfield: توليد صور وصوت، وتكبير، وإزالة خلفية، ودبلجة — بأرصدة مدفوعة وبطلب صريح. — With a connector such as Higgsfield: image and audio generation, upscaling, background removal, dubbing; it costs credits, so only on explicit request.
-- **متى أستخدمها / when:** the user explicitly asks for generated or upscaled media and the connector is attached
+- **متى أستخدمها / when:** عندما يطلب المستخدم صراحةً وسائط مولّدة أو مُحسَّنة والموصل متصل / the user explicitly asks for generated or upscaled media and the connector is attached
 - **كيف / how:** Check the tool list for mcp__<server>__generate_image / upscale_image / remove_background / dubbing; read the connector's own instructions; quote the cost first; never call paid tools without the user's intent. No GPU locally, so local diffusion is impractical.
 - **يحتاج / needs:** [`pip:higgsfield`](../requirements.md#req-pip-higgsfield) · [`key:unspecified`](../requirements.md#req-key-unspecified)
 - **الدليل / proof:** — (لا دليل تشغيل بعد / no run proof yet)
@@ -315,7 +315,7 @@
 
 #### MEDIA-30 · صيغ HEIC وصور الهواتف · HEIC/HEIF input from phones · 📦 بأمر تثبيت / one install
 - **ماذا / what:** فتح صور الآيفون بصيغة HEIC وتحويلها. — Open and convert iPhone HEIC photos.
-- **متى أستخدمها / when:** the user uploads .heic files
+- **متى أستخدمها / when:** عندما يرفع المستخدم ملفات بصيغة .heic / the user uploads .heic files
 - **كيف / how:** pip install pillow-heif; from pillow_heif import register_heif_opener; register_heif_opener(); then Image.open('x.heic'). AVIF works natively in Pillow 12 (proven in MEDIA-09); HEIC was not tested.
 - **تثبيت / install:** `pip install pillow-heif`
 - **يحتاج / needs:** [`pip:pillow`](../requirements.md#req-pip-pillow)
@@ -327,7 +327,7 @@
 
 #### MEDIA-31 · music21: بناء المدونات الموسيقية وقراءتها وتحليل المقامات والأوتار · music21: Build, parse and analyse scores (MIDI/MusicXML): keys, chords, voice leading · ✅ مُثبت هنا / proven here
 - **ماذا / what:** بناء المدونات الموسيقية وقراءتها وتحليل المقامات والأوتار. — Build, parse and analyse scores (MIDI/MusicXML): keys, chords, voice leading. (music21, ★2.6k, BSD-3-Clause).
-- **متى أستخدمها / when:** music notation tasks the user has the right to run
+- **متى أستخدمها / when:** عند مهام التدوين الموسيقي التي يحق للمستخدم تنفيذها / music notation tasks the user has the right to run
 - **كيف / how:** `pip install music21`. Verified here 2026-10-18: 10-note line analysed as C major (music21 10.5.0). Licence note: permissive.
 - **تثبيت / install:** `pip install music21`
 - **يحتاج / needs:** [`pip:music21`](../requirements.md#req-pip-music21)
@@ -337,7 +337,7 @@
 
 #### MEDIA-32 · MediaPipe: تتبع الوجوه واليدين ووضعية الجسم لإعادة التأطير · MediaPipe: Track faces, hands and pose in footage for auto-reframing and overlays · 📦 بأمر تثبيت / one install
 - **ماذا / what:** تتبع الوجوه واليدين ووضعية الجسم لإعادة التأطير والإضافات. — Track faces, hands and pose in footage for auto-reframing and overlays. (MediaPipe, ★37.3k, Apache-2.0).
-- **متى أستخدمها / when:** computer vision tasks the user has the right to run
+- **متى أستخدمها / when:** عند مهام الرؤية الحاسوبية التي يحق للمستخدم تنفيذها / computer vision tasks the user has the right to run
 - **كيف / how:** `pip install mediapipe  (+ .task model files, MBs)`. Verified here 2026-10-18: mediapipe 1.1.1 import OK; face/pose tasks need a .task model file (mediapipe 1.1.1). Licence note: permissive.
 - **تثبيت / install:** `pip install mediapipe  (+ .task model files, MBs)`
 - **يحتاج / needs:** [`pip:mediapipe`](../requirements.md#req-pip-mediapipe)
@@ -347,7 +347,7 @@
 
 #### MEDIA-33 · Ultralytics YOLO: كشف الأجسام وتقسيمها وتتبعها في الصور والفيديو · Ultralytics YOLO: Detect, segment and track objects in images and video · 📦 بأمر تثبيت / one install
 - **ماذا / what:** كشف الأجسام وتقسيمها وتتبعها في الصور والفيديو. — Detect, segment and track objects in images and video. (Ultralytics YOLO, ★62.6k, AGPL-3.0).
-- **متى أستخدمها / when:** computer vision tasks the user has the right to run
+- **متى أستخدمها / when:** عند مهام الرؤية الحاسوبية التي يحق للمستخدم تنفيذها / computer vision tasks the user has the right to run
 - **كيف / how:** `pip install ultralytics  (nano models ~6 MB)`. Licence note: copyleft: run as an external tool, do not vendor.
 - **تثبيت / install:** `pip install ultralytics  (nano models ~6 MB)`
 - **يحتاج / needs:** [`pip:ultralytics`](../requirements.md#req-pip-ultralytics)
@@ -357,7 +357,7 @@
 
 #### MEDIA-34 · pyannote.audio: تحديد من تحدث ومتى لبناء ترجمة لكل · pyannote.audio: Label who spoke when, for per-speaker captions · 🔑 مفتاح أو خدمة / needs key or service
 - **ماذا / what:** تحديد من تحدث ومتى لبناء ترجمة لكل متحدث. — Label who spoke when, for per-speaker captions. (pyannote.audio, ★10.7k, MIT).
-- **متى أستخدمها / when:** diarization tasks the user has the right to run
+- **متى أستخدمها / when:** عند مهام تمييز المتحدثين التي يحق للمستخدم تنفيذها / diarization tasks the user has the right to run
 - **كيف / how:** `pip install pyannote.audio  + Hugging Face token (gated model terms)`. Licence note: permissive.
 - **تثبيت / install:** `pip install pyannote.audio  + Hugging Face token (gated model terms)`
 - **يحتاج / needs:** [`pip:pyannote`](../requirements.md#req-pip-pyannote)

@@ -1,6 +1,7 @@
 """KOSIF cinematic integration regression and actual audio/video acceptance."""
 from __future__ import annotations
 import copy
+import importlib.util
 import json
 import math
 import shutil
@@ -17,6 +18,8 @@ from unified_cinematic import camera_frame, fade_frame, plan, produce, pulse_sce
 from unified_draw import compile_scene
 from unified_media import compose
 
+# effect="develop" runs App Studio, which needs OpenCV (opencv-python-headless)
+HAVE_CV2=importlib.util.find_spec("cv2") is not None
 BASE=Path(__file__).resolve().parent.parent
 PHOTO=BASE/"templates/unified-media-demo-photo.png"
 SCENE=BASE/"templates/unified-draw-motion-demo.json"
@@ -112,6 +115,7 @@ class CinematicIntegration(unittest.TestCase):
                 plan(PHOTO,drawing(),wav,Path(d)/"out.mp4",fade_frames=50)
 
     @unittest.skipUnless(shutil.which("ffmpeg") and shutil.which("ffprobe"),"FFmpeg required")
+    @unittest.skipUnless(HAVE_CV2,"OpenCV (cv2) required for the App Studio develop effect")
     def test_real_h264_aac_both_streams_with_cues(self):
         with tempfile.TemporaryDirectory() as d:
             wav=wav_sample(Path(d)/"a.wav")

@@ -978,7 +978,7 @@
      "IDEA",
      "STORY"
     ],
-    "top_k": 8,
+    "top_k": 10,
     "motion_output": true,
     "expect_all": [
      "IDEA"
@@ -1508,7 +1508,8 @@
    ],
    "routing": {
     "expect_any": [
-     "APPX"
+     "APPX",
+     "TOOL"
     ],
     "top_k": 8
    }

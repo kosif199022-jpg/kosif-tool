@@ -15,13 +15,22 @@ import warnings
 try:
     import numpy as np
     import cv2
+    MISSING_EXTRAS = None
 except ImportError as exc:  # optional extras: pip install numpy opencv-python-headless pillow
-    raise unittest.SkipTest(f"App Studio tests need numpy and opencv-python-headless ({exc})")
+    np = cv2 = None
+    MISSING_EXTRAS = str(exc)
+
+
+def setUpModule():
+    # a skip raised here (not at import time) keeps `python3 evals/<this file>` and `-m unittest <file>` at exit 0
+    if MISSING_EXTRAS:
+        raise unittest.SkipTest(f"App Studio tests need numpy and opencv-python-headless ({MISSING_EXTRAS})")
+
 
 PATH = Path(__file__).resolve().parents[1] / "scripts" / "app_studio.py"
 spec = importlib.util.spec_from_file_location("app_studio", PATH)
 st = importlib.util.module_from_spec(spec)
-spec.loader.exec_module(st)
+spec.loader.exec_module(st)  # stdlib-only at import time; numpy/cv2 load inside the operations
 
 
 def scene(w=480, h=320, seed=7):

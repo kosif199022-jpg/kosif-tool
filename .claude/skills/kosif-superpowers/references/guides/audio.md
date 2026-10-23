@@ -8,13 +8,14 @@ Commands below are typed from the skill folder (`.claude/skills/kosif-superpower
 
 <!-- hub:area:audio:start -->
 
-**الأدوات / tools (3)** — `python3 scripts/hub.py tool <id>` for every command, requirement and limit:
+**الأدوات / tools (4)** — `python3 scripts/hub.py tool <id>` for every command, requirement and limit:
 
 | tool | what it does | start with | evidence |
 |---|---|---|---|
 | `audio-cue-mapper` | Measures a 16-bit PCM WAV (up to 120 s) into a new kosif.audio-cues.v1 JSON with a 50 ms RMS energy envelope and rising-energy onset candidates, optionally importing validated WhisperX/KOSIF word timings, without ever inventing BPM, beats, words or emotion. | `python3 scripts/audio_cue_mapper.py ./voice.wav --out ./out/cues.json` | tested-here |
 | `music-rhythm-engine` | Turns a kosif.audio-cues.v1 file into a new JSON of up to three distinct tempo hypotheses (60–200 BPM scored against measured onsets), an estimated beat grid when the best match is at least 0.60, and per-second energy sections relative to the track median, all flagged as unverified. | `python3 scripts/music_rhythm_engine.py ./out/cues.json --out ./out/rhythm.json` | tested-here |
 | `repo-words-convert` (repo root) | Converts SRT/VTT subtitles, Whisper-style JSON or word,start,end CSV/TSV into the atlas words.json timing list ([{word,start,end}] in seconds), with an optional global offset and minimum gap between words. When the destination ends in .js it writes a words.js file (window.KOSIF_WORDS) instead. | `python3 tools/words_convert.py ./captions.srt ./words.json` | tested-here |
+| `tts-script` | Prepares an Arabic or mixed-language narration script for any TTS engine: splits it into request-sized chunks at sentence ends, then clause marks, then between words (never mid-word, never across paragraphs); estimates speech time per chunk from words per minute plus sentence, clause and paragraph pauses with Arabic word counting; and writes SSML 1.0 with paragraphs, sentences, breaks at punctuation and lang tags around Latin runs (or Arabic runs in a Latin script). | `printf 'مرحبا بكم في KOSIF Studio. هذا اختبار، قصير جدا!\n\nفقرة ثانية؟ نعم.\n' \| python3 scripts/tts_script.py chunk - --max-chars 30` | tested-here |
 
 <!-- hub:area:audio:end -->
 

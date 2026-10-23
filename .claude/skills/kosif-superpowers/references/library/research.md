@@ -45,7 +45,7 @@
 | `rebalance-creative-repos` | إعادة موازنة فهرس المستودعات الإبداعية | `python3 scripts/rebalance_creative_repos.py run` | tested-elsewhere |
 | `repo-sync-catalog` | مزامنة الكتالوج مع PromptsMotion | `python3 tools/sync_catalog.py` | untested |
 | `source-scout` | مستكشف مصادر المجتمع | `python3 scripts/source_scout.py check` | tested-here |
-| `sources-index` | فهرس المصادر: الذاكرة الفهرسية لمرفقات المستخدم داخل مجلد العمل | `python3 -I scripts/sources_index.py add charter.txt --dir out/demo` | tested-here |
+| `sources-index` | فهرس المصادر: الذاكرة الفهرسية لمرفقات المستخدم داخل مجلد العمل | `python3 -I scripts/sources_index.py add charter.txt --dir ../../../out/demo` | tested-here |
 | `superpower-fusion` | دمج القدرات في قدرات خارقة مترابطة | `python3 scripts/superpower_fusion.py build` | tested-here |
 
 الأوامر نسبية إلى مجلد المهارة (أو جذر المستودع لأدوات `tools/`)؛ `python3 scripts/hub.py tool <id>` يعطي كل الأوامر والمتطلبات والحدود.

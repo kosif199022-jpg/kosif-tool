@@ -5134,7 +5134,7 @@
 
 **ما هي:** يكتشف روابط الوسائط في الصفحة (video/source، Open Graph، JSON-LD، النصوص البرمجية)، يجلب الملف المباشر أو بث HLS غير المشفّر (أعلى جودة، مع مسار صوت منفصل)، يرفض DRM والمضيفين الخاصين والأحجام الكبيرة، يعيد التغليف ثم يقيس: probe وcontact sheet وقطعات المشاهد ولوحة ألوان وتقرير ثنائي اللغة في .kosif-cache. — Discovers media URLs on a page, fetches direct or unencrypted HLS media (top variant, separate audio), refuses DRM/private hosts/oversize, remuxes and measures: probe, contact sheet, scene cuts, palette, bilingual REPORT.md in .kosif-cache.
 
-**متى:** AGENTS.md rule 3: observe the reference before implementing, lawfully
+**متى:** عندما تنص قاعدة AGENTS.md رقم 3 على مراقبة المرجع قبل التنفيذ، وبصورة مشروعة / AGENTS.md rule 3: observe the reference before implementing, lawfully
 
 **كيف:** `python3 .claude/skills/kosif-superpowers/scripts/fetch_reference.py <page-or-media-url> [--list \| --pick N] [--frames 8 --scene 0.3 --max-mb 400]`; outputs reference.mp4, probe.json, contact.png, cuts.json, palette.json, REPORT.md; blob: players need the browser's network panel first (references/reference-inspection.md). Measured values go to STYLE.md *Observed*; nothing fetched is committed.
 

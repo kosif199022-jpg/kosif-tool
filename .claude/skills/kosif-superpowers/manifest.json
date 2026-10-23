@@ -15,18 +15,18 @@
  },
  "paths_note": "Tool paths and examples are relative to their root: 'skill' = this folder, 'repo' = the kosif-tool repository root.",
  "counts": {
-  "powers": 5512,
+  "powers": 5601,
   "families": 62,
   "domains": 10,
-  "tools": 149,
+  "tools": 159,
   "guides": 109,
   "statuses": {
    "documented": 2097,
    "idea": 71,
-   "install": 973,
+   "install": 980,
    "key": 176,
-   "proven": 933,
-   "ready": 653,
+   "proven": 999,
+   "ready": 669,
    "seen": 609
   }
  },
@@ -888,11 +888,11 @@
    "domain": "build",
    "title_ar": "الأدوات القابلة للتشغيل",
    "title_en": "Runnable KOSIF tools",
-   "count": 70,
+   "count": 159,
    "statuses": {
-    "install": 5,
-    "proven": 60,
-    "ready": 5
+    "install": 12,
+    "proven": 126,
+    "ready": 21
    },
    "chapter": "references/powers/runnable-tools.md",
    "data": "data/powers/runnable-tools.json"
@@ -1991,7 +1991,8 @@
    ],
    "safe_commands": [
     "stats"
-   ]
+   ],
+   "power_id": "TOOL-156"
   },
   {
    "id": "probe-env",
@@ -2092,7 +2093,8 @@
    ],
    "families": [
     "self-discovery"
-   ]
+   ],
+   "power_id": "TOOL-71"
   },
   {
    "id": "python-package-probe",
@@ -2255,7 +2257,8 @@
    "families": [
     "self-discovery",
     "planning-execution"
-   ]
+   ],
+   "power_id": "TOOL-72"
   },
   {
    "id": "superpowers-unified",
@@ -2447,7 +2450,8 @@
     "story-direction-ideas",
     "prompt-craft",
     "planning-execution"
-   ]
+   ],
+   "power_id": "TOOL-73"
   },
   {
    "id": "anchor-gate",
@@ -2542,7 +2546,8 @@
     "prompt-craft",
     "arabic-language",
     "qa-verification"
-   ]
+   ],
+   "power_id": "TOOL-74"
   },
   {
    "id": "architecture-sizer",
@@ -2781,7 +2786,8 @@
     "writing-humanizer",
     "arabic-language",
     "qa-verification"
-   ]
+   ],
+   "power_id": "TOOL-75"
   },
   {
    "id": "think",
@@ -3114,7 +3120,7 @@
     },
     {
      "name": "check",
-     "example": "python3 scripts/see_pro_cognitive_gate.py check --file .claude/skills/kosif-superpowers/examples/see_pro_cognitive_packet.example.json",
+     "example": "python3 scripts/see_pro_cognitive_gate.py check --file examples/see_pro_cognitive_packet.example.json",
      "does": "Checks a JSON reasoning packet and emits PASS/HARD_FAIL with concrete contract errors."
     }
    ],
@@ -3146,7 +3152,8 @@
    "consent": "No approval required; read-only cognitive packet validation.",
    "safe_commands": [
     "check"
-   ]
+   ],
+   "power_id": "TOOL-76"
   },
   {
    "id": "aspects",
@@ -3233,7 +3240,8 @@
    ],
    "families": [
     "formats-platforms"
-   ]
+   ],
+   "power_id": "TOOL-77"
   },
   {
    "id": "creative-reasoning-bridge",
@@ -3997,7 +4005,8 @@
     "engines-render-pipeline",
     "qa-verification",
     "formats-platforms"
-   ]
+   ],
+   "power_id": "TOOL-78"
   },
   {
    "id": "verify-video",
@@ -4090,7 +4099,8 @@
     "qa-verification",
     "formats-platforms",
     "media-image-audio"
-   ]
+   ],
+   "power_id": "TOOL-79"
   },
   {
    "id": "repo-aspects",
@@ -4177,7 +4187,8 @@
    ],
    "families": [
     "formats-platforms"
-   ]
+   ],
+   "power_id": "TOOL-80"
   },
   {
    "id": "repo-render-html",
@@ -4282,7 +4293,8 @@
     "engines-render-pipeline",
     "qa-verification",
     "formats-platforms"
-   ]
+   ],
+   "power_id": "TOOL-81"
   },
   {
    "id": "repo-verify-video",
@@ -4382,7 +4394,8 @@
     "verification-evals",
     "media-image-audio",
     "formats-platforms"
-   ]
+   ],
+   "power_id": "TOOL-82"
   },
   {
    "id": "starter-html-canvas",
@@ -4494,7 +4507,8 @@
     "easing-timing-rhythm",
     "audio-sync-captions",
     "typography-arabic"
-   ]
+   ],
+   "power_id": "TOOL-83"
   },
   {
    "id": "starter-remotion",
@@ -4618,7 +4632,8 @@
     "audio-sync-captions",
     "charts-data-infographic",
     "typography-arabic"
-   ]
+   ],
+   "power_id": "TOOL-84"
   },
   {
    "id": "cinematic-broll-render",
@@ -4971,7 +4986,8 @@
     "transitions-cuts",
     "typography-arabic",
     "color-palette-grading"
-   ]
+   ],
+   "power_id": "TOOL-85"
   },
   {
    "id": "motion-reference-probe",
@@ -5543,7 +5559,8 @@
    ],
    "families": [
     "audio-sync-captions"
-   ]
+   ],
+   "power_id": "TOOL-86"
   },
   {
    "id": "character-fullbody",
@@ -6276,7 +6293,8 @@
     "engines-render-pipeline",
     "light-glow-bloom",
     "camera-composition-layout"
-   ]
+   ],
+   "power_id": "TOOL-87"
   },
   {
    "id": "blender-cycles-render",
@@ -6774,7 +6792,8 @@
     "photo-video-footage",
     "media-image-audio",
     "typography-arabic"
-   ]
+   ],
+   "power_id": "TOOL-88"
   },
   {
    "id": "app-studio-paint",
@@ -6921,7 +6940,8 @@
     "color-palette-grading",
     "hand-drawn-draw-on",
     "photo-video-footage"
-   ]
+   ],
+   "power_id": "TOOL-89"
   },
   {
    "id": "font-fidelity-lab",
@@ -7070,7 +7090,8 @@
    "families": [
     "typography-arabic",
     "typography-latin"
-   ]
+   ],
+   "power_id": "TOOL-90"
   },
   {
    "id": "atlas-external-bridge",
@@ -7201,7 +7222,8 @@
    "consent": "Downloads third-party text from raw.githubusercontent.com into a private folder; keep it out of the repository and do not run or merge any fetched code without the owner's task-specific approval.",
    "limits": "A sample, not full coverage, and static only: an indicator is a prompt for human review, not a malware verdict, and nothing proves a skill works; fetching needs network access to the kosif-atlas repository.",
    "evidence": "tested-here",
-   "evidence_note": "tests/test_atlas_body_audit.py 4/4 passed offline on 2026-10-23 (path validation, indicator detection, sample selection, bridge annotation); the live fetch was not run here."
+   "evidence_note": "tests/test_atlas_body_audit.py 4/4 passed offline on 2026-10-23 (path validation, indicator detection, sample selection, bridge annotation); the live fetch was not run here.",
+   "power_id": "TOOL-91"
   },
   {
    "id": "atlas-audit-synthesis",
@@ -7260,7 +7282,8 @@
    "consent": "Writes only the two output paths given; review the manifest for private paths before committing it.",
    "limits": "Only summarises what the audit and REA already recorded, so it adds no new verification; the counts describe the sample, not the whole Atlas.",
    "evidence": "untested",
-   "evidence_note": "No direct test; its committed output data/atlas-reviewed/manifest.json is read by atlas_external_bridge.py, which tests/test_atlas_body_audit.py covers."
+   "evidence_note": "No direct test; its committed output data/atlas-reviewed/manifest.json is read by atlas_external_bridge.py, which tests/test_atlas_body_audit.py covers.",
+   "power_id": "TOOL-92"
   },
   {
    "id": "atlas-metadata-audit",
@@ -7580,7 +7603,8 @@
     "photo-video-footage",
     "transitions-cuts",
     "color-palette-grading"
-   ]
+   ],
+   "power_id": "TOOL-93"
   },
   {
    "id": "fetch-video",
@@ -7680,7 +7704,8 @@
     "video-download",
     "photo-video-footage",
     "formats-platforms"
-   ]
+   ],
+   "power_id": "TOOL-94"
   },
   {
    "id": "stock-fetch",
@@ -7755,7 +7780,8 @@
    "families": [
     "photo-video-footage",
     "video-download"
-   ]
+   ],
+   "power_id": "TOOL-95"
   },
   {
    "id": "media-sources",
@@ -8191,7 +8217,8 @@
    "families": [
     "self-discovery",
     "engines-render-pipeline"
-   ]
+   ],
+   "power_id": "TOOL-96"
   },
   {
    "id": "repo-ashell-cinema",
@@ -8442,7 +8469,8 @@
    "families": [
     "software-investigation",
     "app-feature-transfer"
-   ]
+   ],
+   "power_id": "TOOL-97"
   },
   {
    "id": "local-project-audit",
@@ -8618,7 +8646,8 @@
    "families": [
     "software-investigation",
     "self-discovery"
-   ]
+   ],
+   "power_id": "TOOL-98"
   },
   {
    "id": "web-app-study",
@@ -9111,7 +9140,8 @@
    "families": [
     "self-discovery",
     "verification-evals"
-   ]
+   ],
+   "power_id": "TOOL-99"
   },
   {
    "id": "catalog-evidence-audit",
@@ -9365,7 +9395,8 @@
    "families": [
     "verification-evals",
     "self-discovery"
-   ]
+   ],
+   "power_id": "TOOL-100"
   },
   {
    "id": "package-skill",
@@ -9595,7 +9626,8 @@
    "families": [
     "self-discovery",
     "story-direction-ideas"
-   ]
+   ],
+   "power_id": "TOOL-101"
   },
   {
    "id": "repo-check-originality",
@@ -9663,7 +9695,8 @@
    "families": [
     "qa-verification",
     "verification-evals"
-   ]
+   ],
+   "power_id": "TOOL-102"
   },
   {
    "id": "repo-import-briefs",
@@ -9910,7 +9943,8 @@
    "families": [
     "qa-verification",
     "verification-evals"
-   ]
+   ],
+   "power_id": "TOOL-103"
   },
   {
    "id": "atlas-bulk-source-audit",
@@ -9919,13 +9953,14 @@
    "kind": "cli",
    "area": "investigate",
    "title_en": "Atlas source-text audit",
-   "title_ar": "????? ???? ?????? ????",
+   "title_ar": "تدقيق نصوص مصادر الأطلس",
    "summary_en": "Audits an authorized local Atlas source sample and records evidence without executing third-party skill code.",
-   "summary_ar": "????? ???? ?????? ????? ?????? ????? ?? ???? ????? ??? ???????.",
+   "summary_ar": "يدقق عينة محلية مأذونة من مصادر الأطلس ويسجّل الأدلة دون تشغيل كود مهارات طرف ثالث.",
    "use_when": [
     "Review documented Atlas or Blender capabilities",
     "Inspect relevant tool arguments before running",
-    "????? ??????? ???????? ?? ???????"
+    "دقّق نصوص مصادر مهارات الأطلس المحلية دي من غير ما تشغّل كودها",
+    "سجّل أدلة عينة مصادر الأطلس"
    ],
    "keywords": [
     "atlas-bulk-source-audit",
@@ -9964,7 +9999,8 @@
     "software-investigation"
    ],
    "evidence": "untested",
-   "evidence_note": "Registered after merge; runtime command not yet independently verified."
+   "evidence_note": "Registered after merge; runtime command not yet independently verified.",
+   "power_id": "TOOL-104"
   },
   {
    "id": "atlas-capability-miner",
@@ -9973,13 +10009,14 @@
    "kind": "cli",
    "area": "discover",
    "title_en": "Atlas metadata capability miner",
-   "title_ar": "???? ????? ????",
+   "title_ar": "منقّب قدرات الأطلس من البيانات الوصفية",
    "summary_en": "Indexes or queries metadata of third-party Atlas skills with an opt-in REA path; source presence is not execution proof.",
-   "summary_ar": "???? ????? ????? ?????? ????? ?? ???? ????? ??? ???????.",
+   "summary_ar": "يفهرس البيانات الوصفية لمهارات الأطلس الخارجية أو يستعلم عنها، مع مسار REA اختياري؛ وجود المصدر ليس دليل تشغيل.",
    "use_when": [
     "Review documented Atlas or Blender capabilities",
     "Inspect relevant tool arguments before running",
-    "????? ??????? ???????? ?? ???????"
+    "طلّع القدرات المفيدة من بيانات مهارات الأطلس",
+    "ابحث في فهرس الأطلس عن مهارات تناسب طلبي"
    ],
    "keywords": [
     "atlas-capability-miner",
@@ -10020,7 +10057,8 @@
     "software-investigation"
    ],
    "evidence": "tested-here",
-   "evidence_note": "Eight focused unit tests passed locally on Windows for the Atlas miner."
+   "evidence_note": "Eight focused unit tests passed locally on Windows for the Atlas miner.",
+   "power_id": "TOOL-105"
   },
   {
    "id": "atlas-5000",
@@ -10099,7 +10137,8 @@
    "families": [
     "self-discovery",
     "software-investigation"
-   ]
+   ],
+   "power_id": "TOOL-106"
   },
   {
    "id": "atlas-ledger",
@@ -10186,7 +10225,8 @@
    "families": [
     "self-discovery",
     "atlas-code"
-   ]
+   ],
+   "power_id": "TOOL-107"
   },
   {
    "id": "rea-superpowers-map",
@@ -10280,7 +10320,8 @@
    "families": [
     "self-discovery",
     "software-investigation"
-   ]
+   ],
+   "power_id": "TOOL-108"
   },
   {
    "id": "atlas-deep-fusion",
@@ -10289,13 +10330,14 @@
    "kind": "cli",
    "area": "investigate",
    "title_en": "Atlas read-only method selector",
-   "title_ar": "????? ??? ????",
+   "title_ar": "منتقي مناهج الأطلس للقراءة فقط",
    "summary_en": "Selects source-linked Atlas methods for review against an authorized local Atlas index.",
-   "summary_ar": "????? ??? ????? ?????? ????? ?? ???? ????? ??? ???????.",
+   "summary_ar": "يختار مناهج من الأطلس مربوطة بمصادرها لمراجعتها مقابل فهرس أطلس محلي مأذون.",
    "use_when": [
     "Review documented Atlas or Blender capabilities",
     "Inspect relevant tool arguments before running",
-    "????? ??????? ???????? ?? ???????"
+    "اختار لي مناهج من الأطلس تنفع للمهمة دي",
+    "أي مهارات الأطلس تستاهل ننقل فكرتها للسوبر باور؟"
    ],
    "keywords": [
     "atlas-deep-fusion",
@@ -10334,7 +10376,8 @@
     "software-investigation"
    ],
    "evidence": "untested",
-   "evidence_note": "Registered after merge; runtime command not yet independently verified."
+   "evidence_note": "Registered after merge; runtime command not yet independently verified.",
+   "power_id": "TOOL-109"
   },
   {
    "id": "atlas-review-summary",
@@ -10343,13 +10386,14 @@
    "kind": "cli",
    "area": "investigate",
    "title_en": "Atlas review summary",
-   "title_ar": "???? ?????? ????",
+   "title_ar": "ملخص مراجعة الأطلس",
    "summary_en": "Summarizes source-audit evidence and provenance for candidate Atlas methods.",
-   "summary_ar": "???? ?????? ????? ?????? ????? ?? ???? ????? ??? ???????.",
+   "summary_ar": "يلخّص أدلة تدقيق المصادر ومنشأها لمناهج الأطلس المرشحة.",
    "use_when": [
     "Review documented Atlas or Blender capabilities",
     "Inspect relevant tool arguments before running",
-    "????? ??????? ???????? ?? ???????"
+    "لخّص لي نتيجة مراجعة مصادر الأطلس",
+    "إيه أدلة ومنشأ المناهج المرشحة من الأطلس؟"
    ],
    "keywords": [
     "atlas-review-summary",
@@ -10388,7 +10432,8 @@
     "software-investigation"
    ],
    "evidence": "untested",
-   "evidence_note": "Registered after merge; runtime command not yet independently verified."
+   "evidence_note": "Registered after merge; runtime command not yet independently verified.",
+   "power_id": "TOOL-110"
   },
   {
    "id": "atlas-reviewed-methods-v3",
@@ -10397,13 +10442,14 @@
    "kind": "cli",
    "area": "investigate",
    "title_en": "Reviewed Atlas methods",
-   "title_ar": "??? ???? ????????",
+   "title_ar": "مناهج الأطلس المراجَعة",
    "summary_en": "Works with reviewed Atlas method records and their provenance.",
-   "summary_ar": "??? ???? ????????? ?????? ????? ?? ???? ????? ??? ???????.",
+   "summary_ar": "يتعامل مع سجلات مناهج الأطلس المراجَعة ومنشئها.",
    "use_when": [
     "Review documented Atlas or Blender capabilities",
     "Inspect relevant tool arguments before running",
-    "????? ??????? ???????? ?? ???????"
+    "اعرض مناهج الأطلس اللي اتراجعت ومصادرها",
+    "دوّر في المناهج المراجَعة من الأطلس"
    ],
    "keywords": [
     "atlas-reviewed-methods-v3",
@@ -10442,7 +10488,8 @@
     "software-investigation"
    ],
    "evidence": "untested",
-   "evidence_note": "Registered after merge; runtime command not yet independently verified."
+   "evidence_note": "Registered after merge; runtime command not yet independently verified.",
+   "power_id": "TOOL-111"
   },
   {
    "id": "atlas-task-method-router",
@@ -10451,13 +10498,14 @@
    "kind": "cli",
    "area": "discover",
    "title_en": "Atlas task method router",
-   "title_ar": "????? ???? ????",
+   "title_ar": "موجّه مناهج الأطلس حسب المهمة",
    "summary_en": "Finds source-backed Atlas method candidates for a task without executing their code.",
-   "summary_ar": "????? ???? ????? ?????? ????? ?? ???? ????? ??? ???????.",
+   "summary_ar": "يجد مناهج مرشحة من الأطلس مدعومة بالمصادر لمهمة ما دون تشغيل كودها.",
    "use_when": [
     "Review documented Atlas or Blender capabilities",
     "Inspect relevant tool arguments before running",
-    "????? ??????? ???????? ?? ???????"
+    "إيه مناهج الأطلس المناسبة للمهمة دي؟",
+    "وجّهني لمنهج من الأطلس يحل المشكلة دي"
    ],
    "keywords": [
     "atlas-task-method-router",
@@ -10496,7 +10544,8 @@
     "software-investigation"
    ],
    "evidence": "untested",
-   "evidence_note": "Registered after merge; runtime command not yet independently verified."
+   "evidence_note": "Registered after merge; runtime command not yet independently verified.",
+   "power_id": "TOOL-112"
   },
   {
    "id": "atlas-transfer",
@@ -10505,13 +10554,14 @@
    "kind": "cli",
    "area": "investigate",
    "title_en": "Atlas verified method transfer",
-   "title_ar": "??? ??? ????",
+   "title_ar": "نقل مناهج الأطلس المثبتة",
    "summary_en": "Converts reviewed Atlas records into KOSIF capability catalog data; writes files only when explicitly approved.",
-   "summary_ar": "??? ??? ????? ?????? ????? ?? ???? ????? ??? ???????.",
+   "summary_ar": "يحوّل سجلات الأطلس المراجَعة إلى بيانات كتالوج قدرات KOSIF، ولا يكتب ملفات إلا بموافقة صريحة.",
    "use_when": [
     "Review documented Atlas or Blender capabilities",
     "Inspect relevant tool arguments before running",
-    "????? ??????? ???????? ?? ???????"
+    "انقل مناهج الأطلس المراجَعة إلى كتالوج السوبر باور",
+    "حوّل سجلات الأطلس دي لبطاقات قدرات"
    ],
    "keywords": [
     "atlas-transfer",
@@ -10550,7 +10600,8 @@
     "software-investigation"
    ],
    "evidence": "untested",
-   "evidence_note": "Registered after merge; runtime command not yet independently verified."
+   "evidence_note": "Registered after merge; runtime command not yet independently verified.",
+   "power_id": "TOOL-113"
   },
   {
    "id": "blender-motion-video",
@@ -10559,13 +10610,14 @@
    "kind": "cli",
    "area": "3d",
    "title_en": "Blender motion video helper",
-   "title_ar": "???? ????? ?????",
+   "title_ar": "مساعد فيديو الحركة في Blender",
    "summary_en": "Provides Blender-based animation and video functionality when Blender is separately available.",
-   "summary_ar": "???? ????? ?????? ?????? ????? ?? ???? ????? ??? ???????.",
+   "summary_ar": "يوفّر تحريكًا وفيديو مبنيين على Blender عندما يكون Blender متاحًا بشكل منفصل.",
    "use_when": [
     "Review documented Atlas or Blender capabilities",
     "Inspect relevant tool arguments before running",
-    "????? ??????? ???????? ?? ???????"
+    "اعمل فيديو متحرك بـ Blender",
+    "حرّك المشهد في Blender وصدّره فيديو"
    ],
    "keywords": [
     "blender-motion-video",
@@ -10604,7 +10656,8 @@
     "3d-spatial"
    ],
    "evidence": "untested",
-   "evidence_note": "Registered after merge; runtime command not yet independently verified."
+   "evidence_note": "Registered after merge; runtime command not yet independently verified.",
+   "power_id": "TOOL-114"
   },
   {
    "id": "unified-draw",
@@ -10615,7 +10668,7 @@
    "title_en": "Unified Draw: freehand + geometry + layered export",
    "title_ar": "الرسم الموحد: خطوط وأشكال وطبقات وتصدير",
    "summary_en": "Combines Smart Draw freehand stroke snapping, Creative Paint layered shapes and text, and keyframed GIF/MP4 animation behind one ordered scene and CLI.",
-   "summary_ar": "??? ?????? ???????? ??????? ?????? ??????? ??????? ?????? ?????? PNG ?SVG ?JSON ?GIF ?MP4.",
+   "summary_ar": "يجمع الرسم الحر مع التقاط الخطوط (Smart Draw)، والأشكال والنصوص بالطبقات (Creative Paint)، والتحريك بالإطارات المفتاحية إلى GIF/MP4، في مشهد واحد مرتب وواجهة أوامر واحدة، ويصدّر PNG وSVG وJSON وGIF وMP4.",
    "use_when": [
     "Draw lines and shapes in one file",
     "Combine freehand strokes, ellipses, rectangles, polygons or text and export",
@@ -10699,7 +10752,8 @@
    "families": [
     "hand-drawn-draw-on",
     "shapes-morph-geometry"
-   ]
+   ],
+   "power_id": "TOOL-115"
   },
   {
    "id": "smart-capabilities",
@@ -10795,7 +10849,8 @@
    ],
    "families": [
     "self-discovery"
-   ]
+   ],
+   "power_id": "TOOL-116"
   },
   {
    "id": "unified-media",
@@ -10885,7 +10940,8 @@
     "photo-video-footage",
     "hand-drawn-draw-on",
     "shapes-morph-geometry"
-   ]
+   ],
+   "power_id": "TOOL-117"
   },
   {
    "id": "unified-cinematic",
@@ -10975,7 +11031,8 @@
     "camera-composition-layout",
     "photo-video-footage",
     "easing-timing-rhythm"
-   ]
+   ],
+   "power_id": "TOOL-118"
   },
   {
    "id": "blender-cinematic-bridge",
@@ -11078,7 +11135,8 @@
     "engines-render-pipeline",
     "audio-sync-captions",
     "camera-composition-layout"
-   ]
+   ],
+   "power_id": "TOOL-119"
   },
   {
    "id": "blender-rescue-scene",
@@ -11142,7 +11200,8 @@
    "families": [
     "3d-spatial",
     "engines-render-pipeline"
-   ]
+   ],
+   "power_id": "TOOL-120"
   },
   {
    "id": "blender-cat-fur-upgrade",
@@ -11221,7 +11280,8 @@
     "3d-spatial",
     "texture-material",
     "engines-render-pipeline"
-   ]
+   ],
+   "power_id": "TOOL-121"
   },
   {
    "id": "kosif-timeline",
@@ -11335,7 +11395,8 @@
     "transitions-cuts",
     "audio-sync-captions",
     "engines-render-pipeline"
-   ]
+   ],
+   "power_id": "TOOL-122"
   },
   {
    "id": "kosif-timeline-demo",
@@ -11402,7 +11463,8 @@
     "photo-video-footage",
     "transitions-cuts",
     "engines-render-pipeline"
-   ]
+   ],
+   "power_id": "TOOL-123"
   },
   {
    "id": "telegram-typography-atlas",
@@ -11592,7 +11654,8 @@
     "agent-orchestration",
     "planning-execution"
    ],
-   "evidence": "tested-here"
+   "evidence": "tested-here",
+   "power_id": "TOOL-124"
   },
   {
    "id": "fusionforge",
@@ -11764,7 +11827,8 @@
     "catalog",
     "validate",
     "reuse"
-   ]
+   ],
+   "power_id": "TOOL-125"
   },
   {
    "id": "fusionforge-shared",
@@ -11804,12 +11868,12 @@
     },
     {
      "name": "review-template",
-     "example": "python3 scripts/fusionforge_shared.py review-template --signature <sha256>",
+     "example": "python3 scripts/fusionforge_shared.py review-template --signature \"$SIG\"",
      "does": "Prints the independent privacy/security/QA and baseline comparison review template without approving."
     },
     {
      "name": "approve",
-     "example": "python3 scripts/fusionforge_shared.py approve --signature <sha256>",
+     "example": "python3 scripts/fusionforge_shared.py approve --signature \"$SIG\"",
      "does": "Writes a sanitized graph into the project-local shared registry only after independent test, review and security gates."
     }
    ],
@@ -11843,7 +11907,8 @@
     "audit",
     "recall",
     "review-template"
-   ]
+   ],
+   "power_id": "TOOL-126"
   },
   {
    "id": "superpower-fusion",
@@ -11910,7 +11975,8 @@
     "self-discovery",
     "knowledge-graph"
    ],
-   "evidence": "tested-here"
+   "evidence": "tested-here",
+   "power_id": "TOOL-127"
   },
   {
    "id": "capability-mindmap",
@@ -11978,7 +12044,8 @@
     "planning-execution",
     "mental-models"
    ],
-   "evidence": "tested-here"
+   "evidence": "tested-here",
+   "power_id": "TOOL-128"
   },
   {
    "id": "kosif-groups",
@@ -12046,7 +12113,8 @@
    "families": [
     "self-discovery"
    ],
-   "evidence": "tested-here"
+   "evidence": "tested-here",
+   "power_id": "TOOL-129"
   },
   {
    "id": "montage-pro",
@@ -12094,32 +12162,32 @@
     },
     {
      "name": "intake",
-     "example": "python3 scripts/montage_pro.py intake ./voice.wav --job ./job1",
+     "example": "python3 scripts/montage_pro.py intake ./voice.wav --job ../../../out/job1",
      "does": "Measures the media into job1/intake.json."
     },
     {
      "name": "transcribe",
-     "example": "python3 scripts/montage_pro.py transcribe ./voice.m4a --job ./out/job1 --language ar --local-only",
+     "example": "python3 scripts/montage_pro.py transcribe ./voice.m4a --job ../../../out/job1 --language ar --local-only",
      "does": "Decodes the audio with ffmpeg to 16 kHz mono and runs faster-whisper (CPU, int8, word timestamps, Silero VAD) into job1/words.json in schema kosif-words/1 (source sha256, engine, words, phrases); drops segments above --no-speech-threshold and lists them; skips when the source and engine are unchanged unless --force; refuses jobs/, git-tracked or un-ignored targets unless --allow-tracked; exit 2 with one line when ffmpeg, faster-whisper or the cached model is missing. After an earlier intake it also refreshes JOB/work/cues.json so a later build uses the new words."
     },
     {
      "name": "intake with transcription",
-     "example": "python3 scripts/montage_pro.py intake ./voice.m4a --job ./out/job1 --transcribe --local-only",
+     "example": "python3 scripts/montage_pro.py intake ./voice.m4a --job ../../../out/job1 --transcribe --local-only",
      "does": "Opt-in: transcribes right after the probe so the cue mapper imports the aligned words; plain intake is unchanged."
     },
     {
      "name": "options",
-     "example": "python3 scripts/montage_pro.py options ./job1 --brief \"ريلز حماسي\"",
+     "example": "python3 scripts/montage_pro.py options ../../../out/job1 --brief \"ريلز حماسي\"",
      "does": "Option menu with team, pipeline, status and a stage plan."
     },
     {
      "name": "build",
-     "example": "python3 scripts/montage_pro.py build ./job1 --option kinetic-film --style kinetic --deliver-mix",
+     "example": "python3 scripts/montage_pro.py build ../../../out/job1 --option kinetic-film --style kinetic --deliver-mix",
      "does": "Renders and verifies the option; optional separate -14 LUFS delivery copy."
     },
     {
      "name": "acquire",
-     "example": "python3 scripts/montage_pro.py acquire https://example.com/clip.mp4 --job ./job1 --license \"CC0\" --source-page https://example.com/page",
+     "example": "python3 scripts/montage_pro.py acquire https://example.com/clip.mp4 --job ../../../out/job1 --license \"CC0\" --source-page https://example.com/page",
      "does": "Licence-gated download or stream grab into job1/footage with rights.json."
     }
    ],
@@ -12158,7 +12226,8 @@
     "formats-platforms"
    ],
    "evidence": "tested-here",
-   "evidence_note": "evals/test_montage_pro.py 25/25 OK here (transcribe tests use the KOSIF_TRANSCRIBE_FAKE hook; 9 skip without ffmpeg, 5 of them transcribe tests). Real model on 22-10: jobs/20261022-tiktok-reel/source/audio.m4a → 34 words, 2 phrases, three runs byte-identical; silence and a 220 Hz tone → 0 words with a warning."
+   "evidence_note": "evals/test_montage_pro.py 25/25 OK here (transcribe tests use the KOSIF_TRANSCRIBE_FAKE hook; 9 skip without ffmpeg, 5 of them transcribe tests). Real model on 22-10: jobs/20261022-tiktok-reel/source/audio.m4a → 34 words, 2 phrases, three runs byte-identical; silence and a 220 Hz tone → 0 words with a warning.",
+   "power_id": "TOOL-130"
   },
   {
    "id": "reel-factory",
@@ -12204,7 +12273,7 @@
     },
     {
      "name": "draft",
-     "example": "python3 scripts/reel_factory.py build ... --draft",
+     "example": "python3 scripts/reel_factory.py build --audio ./voice.m4a --audio-rights owned --words ./words.json --shots ./shots.json --draft",
      "does": "Renders a 540x960 check copy with the same 9:16 checks."
     }
    ],
@@ -12244,7 +12313,8 @@
     "qa-verification"
    ],
    "evidence": "tested-here",
-   "evidence_note": "evals/test_reel_factory.py 34/34 OK here (the build smoke test renders a tiny draft reel; it skips without ffmpeg, node or Chromium). On 22-10 the real dua audio declared as direct-permission without evidence planned with rights.json status incomplete and one RIGHTS_NOTE; an owned 6 s voice with three Pexels shots built a 1080x1920 reel that verify_video --source-audio passed 12/12 (packet MD5 equal to the source)."
+   "evidence_note": "evals/test_reel_factory.py 34/34 OK here (the build smoke test renders a tiny draft reel; it skips without ffmpeg, node or Chromium). On 22-10 the real dua audio declared as direct-permission without evidence planned with rights.json status incomplete and one RIGHTS_NOTE; an owned 6 s voice with three Pexels shots built a 1080x1920 reel that verify_video --source-audio passed 12/12 (packet MD5 equal to the source).",
+   "power_id": "TOOL-131"
   },
   {
    "id": "dua-wednesday",
@@ -12367,7 +12437,8 @@
     "photo-video-footage",
     "formats-platforms"
    ],
-   "evidence": "tested-here"
+   "evidence": "tested-here",
+   "power_id": "TOOL-132"
   },
   {
    "id": "stream-grabber",
@@ -12441,7 +12512,8 @@
     "video-download",
     "photo-video-footage"
    ],
-   "evidence": "tested-here"
+   "evidence": "tested-here",
+   "power_id": "TOOL-133"
   },
   {
    "id": "creative-principles",
@@ -12507,7 +12579,8 @@
     "story-direction-ideas"
    ],
    "evidence": "tested-elsewhere",
-   "evidence_note": "22 narrow tests previously passed on authorized Windows laptop (7+7+8), not full professional quality proof."
+   "evidence_note": "22 narrow tests previously passed on authorized Windows laptop (7+7+8), not full professional quality proof.",
+   "power_id": "TOOL-134"
   },
   {
    "id": "drawing-academy",
@@ -12573,7 +12646,8 @@
     "story-direction-ideas"
    ],
    "evidence": "tested-elsewhere",
-   "evidence_note": "22 narrow tests previously passed on authorized Windows laptop (7+7+8), not full professional quality proof."
+   "evidence_note": "22 narrow tests previously passed on authorized Windows laptop (7+7+8), not full professional quality proof.",
+   "power_id": "TOOL-135"
   },
   {
    "id": "drawing-methods",
@@ -12696,200 +12770,8 @@
     "story-direction-ideas"
    ],
    "evidence": "tested-here",
-   "evidence_note": "10 unit tests passed on this checkout (cloud container, 2026-10-23), including draw+check of 9 variants and a rendered visual review of head, figure, character and forms SVGs."
-  },
-  {
-   "id": "portrait-pipeline",
-   "path": "scripts/portrait_pipeline.py",
-   "root": "skill",
-   "kind": "cli",
-   "area": "draw",
-   "title_en": "Hand-drawn pencil, charcoal or ink drawing of any photo or imagined scene, built stroke by stroke",
-   "title_ar": "رسم يدوي المظهر بالرصاص أو الفحم أو الحبر لأي صورة أو مشهد متخيَّل، خطًا بخط",
-   "summary_en": "Turns any photo (portrait, object, place) or any scene Claude imagines into a hand-drawn-looking drawing without copying a single photo pixel: it measures the sitter (MediaPipe face landmarks and hair/skin/clothes segmentation, optional), lays in faint Loomis construction and a straight-line envelope, plans values with the background held back, renders four tonal passes of tapered strokes that follow the form and stop at edges, blends the skin with a stump pass, adds lost-and-found edges and feature accents, lifts highlights and catchlights with an eraser pass, and deposits graphite through simulated paper tooth. Writes PNG, a layered editable SVG (one group per stage) and a receipt; review runs the rule-27 anatomy/contact gate plus value-fidelity checks. 16 portrait method cards (Loomis, Bridgman, Bargue, Speed, Vanderpoel, Hampton, Gurney, Dodson, Hammond, atelier sight-size) in data/portrait_methods.json name the stage that executes each. Non-portrait photos switch to scene mode (GrabCut subject + colour-cluster shape boundaries, short straight hatching). `imagine` draws scenes from imagination: Claude writes the scene as an SVG maquette (one light, gradients for the light and shadow families, far planes lighter) or passes any rendered PNG (unified_draw, drawing_methods, Blender or native 3D), and it is drawn like a photo. Media: graphite, charcoal, ink, sepia.",
-   "summary_ar": "يحوّل صورة مرجعية إلى بورتريه بالقلم الرصاص يبدو مرسومًا باليد دون نسخ أي بكسل من الصورة: يقيس الشخص (نقاط ملامح الوجه وتقسيم الشعر والجلد والملابس، اختياري)، ويضع بناء لوميس الخفيف وغلافًا بخطوط مستقيمة، ويخطط القيم مع تخفيف الخلفية، ويرسم أربع طبقات تهشير بخطوط مستدقة تتبع الشكل وتتوقف عند الحواف، ويموّه البشرة، ويضيف حوافًا ضائعة وظاهرة ولمسات الملامح، ويرفع الإضاءات ولمعة العين بالممحاة، ويرسب الجرافيت عبر ملمس ورق. يكتب PNG وSVG بطبقات قابلة للتحرير وإيصالًا، والمراجعة تشغّل بوابة القاعدة 27 وفحوص دقة القيم. 16 بطاقة منهج للبورتريه في data/portrait_methods.json. يعمل على أي صورة (وضع المشهد لغير البورتريه)، و`imagine` يرسم مشاهد من الخيال: Claude يكتب المشهد كمجسّم SVG بإضاءة واحدة أو يمرر أي صورة مصيّرة من أدوات الرسم أو ثلاثي الأبعاد، ثم يُرسم خطًا بخط. الخامات: رصاص، فحم، حبر، سيبيا.",
-   "use_when": [
-    "ارسم الصورة دي بورتريه بالقلم الرصاص كأنها مرسومة باليد",
-    "حوّل صورتي لرسم واقعي بالرصاص من غير ما تغير التكوين",
-    "Draw this photo as a realistic pencil portrait from scratch",
-    "Make a graphite portrait drawing of this person",
-    "ارسم بورتريه واقعي بالتهشير",
-    "ارسم من خيالك منارة على جرف بالرصاص كأنها مرسومة باليد",
-    "ارسم أي صورة أبعتها لك بالفحم",
-    "Draw an imagined scene in pencil, stroke by stroke",
-    "Turn this landscape photo into an ink hatching drawing"
-   ],
-   "keywords": [
-    "portrait",
-    "بورتريه",
-    "pencil portrait",
-    "رسم بالرصاص",
-    "graphite",
-    "جرافيت",
-    "realistic drawing",
-    "رسم واقعي",
-    "hatching",
-    "تهشير",
-    "cross-hatching",
-    "loomis",
-    "لوميس",
-    "bargue",
-    "بارج",
-    "sight-size",
-    "charcoal",
-    "فحم",
-    "photo to drawing",
-    "صورة لرسم",
-    "face drawing",
-    "رسم الوجه",
-    "imagination",
-    "من الخيال",
-    "imagined scene",
-    "مشهد متخيل",
-    "charcoal drawing",
-    "رسم بالفحم",
-    "ink drawing",
-    "رسم بالحبر",
-    "sepia",
-    "landscape drawing",
-    "رسم منظر",
-    "maquette",
-    "مجسم"
-   ],
-   "commands": [
-    {
-     "name": "draw",
-     "example": "python3 scripts/portrait_pipeline.py draw --photo photo.png --out out/portrait --models <dir with face_landmarker.task and selfie_multiclass.tflite>",
-     "does": "Measures the photo and writes portrait.png, portrait.svg (layers construction, lay-in, cross-hatch, deep-shadow, accents, edges + a hidden rule-27 figure group) and receipt.json. --medium graphite|charcoal|ink|sepia, --subject auto|portrait|scene, --background straight|flow."
-    },
-    {
-     "name": "imagine",
-     "example": "python3 scripts/portrait_pipeline.py imagine --svg scene.svg --out out/scene --medium graphite",
-     "does": "Rasterises a Claude-authored SVG maquette (Chromium or rsvg-convert) or takes --png from any renderer, then draws it from strokes only; keeps _reference.png beside the drawing."
-    },
-    {
-     "name": "review",
-     "example": "python3 scripts/portrait_pipeline.py review --dir out/portrait",
-     "does": "Rule-27 anatomy/contact gate (drawing_methods review) plus value-mass, value-detail, face-likeness, value-range and stroke-texture checks; writes review.json; exit 1 on any failure."
-    },
-    {
-     "name": "cards",
-     "example": "python3 scripts/portrait_pipeline.py cards --id PM-02",
-     "does": "Lists or shows the portrait method cards."
-    }
-   ],
-   "inputs": "A photo of anything, or an imagined scene as an SVG maquette / rendered PNG; optional MediaPipe models for portraits",
-   "outputs": "portrait.png, layered editable portrait.svg, receipt.json, review.json",
-   "requires": {
-    "python": [
-     "numpy",
-     "opencv-python-headless"
-    ],
-    "binaries": [],
-    "node": [],
-    "optional": [
-     "mediapipe (+ face_landmarker.task, selfie_multiclass_256x256.tflite from storage.googleapis.com/mediapipe-models)"
-    ],
-    "network": false
-   },
-   "safety": "writes-files",
-   "consent": "Writes only into --out; no network, model calls or spend. A photo of a real person is personal data: draw people only with their consent and never publish without the user's permission.",
-   "limits": "Algorithmic rendering from a measured reference and a value map, not a human hand and not a neural model. An imagined scene is only as convincing as the maquette Claude builds for it: flat vector maquettes give illustration-like drawings. Method cards paraphrase widely taught methods (only those marked user_copy_read_paraphrased rest on books read). review measures value fidelity, texture and figure connectivity, not beauty.",
-   "tests": [
-    ".claude/skills/kosif-superpowers/evals/test_portrait_pipeline.py"
-   ],
-   "docs": [
-    ".claude/skills/kosif-superpowers/references/portrait-drawing.md"
-   ],
-   "families": [
-    "hand-drawn-draw-on",
-    "story-direction-ideas"
-   ],
-   "evidence": "tested-here",
-   "evidence_note": "Unit tests passed on this checkout (cloud container, 2026-10-23); the portrait of a 1320x2345 reference (5 rounds), an imagined lighthouse scene from an SVG maquette (3 rounds), a drawing_methods head SVG in ink, and the portrait in charcoal and ink were drawn, reviewed and visually inspected."
-  },
-  {
-   "id": "drawing-council",
-   "path": "scripts/drawing_council.py",
-   "root": "skill",
-   "kind": "cli",
-   "area": "draw",
-   "title_en": "Drawing council: eleven experts from the 48 method cards review an image before it is sent",
-   "title_ar": "مجلس خبراء الرسم: أحد عشر خبيرًا من بطاقات الكتب الـ48 يراجعون الصورة قبل إرسالها",
-   "summary_en": "PROTOCOL law 27 gate after drawing_methods.py review. Groups the 48 drawing-book method cards into eleven experts (construction, anatomy and proportion, gesture, logic and physics, perspective, light, colour, composition, line, character design, animals and nature), runs the automated gates (law-27 contact review, card checks, tone metrics), writes one prompt per expert with its card checks, common errors and veto conditions, records each expert's pass/fix/veto with correctness, craft and beauty scores, and computes a deterministic PASS/FAIL verdict with the fixes still required; it also exports the experts in the general council persona schema.",
-   "summary_ar": "بوابة القانون 27 بعد فحص review: يجمع بطاقات كتب الرسم الـ48 في أحد عشر خبيرًا (البناء، التشريح والنسب، الإيماءة، المنطق والفيزياء، المنظور، الضوء، اللون، التكوين، الخط، تصميم الشخصيات، الحيوان والطبيعة)، ويشغّل الفحوص الآلية، ويكتب لكل خبير برومبت بفحوص بطاقاته وأخطائها وشروط الرفض، ويسجل حكم كل خبير pass/fix/veto ودرجات الصحة والحرفة والجمال، ويحسب حكمًا PASS/FAIL بالتصليحات المطلوبة؛ ويصدّر الخبراء بصيغة شخصيات المجلس العام.",
-   "use_when": [
-    "راجع الرسمة دي قبل ما تبعتها",
-    "اعمل مجلس خبراء رسم يراجع الصورة",
-    "Review this drawing with the drawing council before sending",
-    "Check the image for anatomy, perspective, light and colour mistakes"
-   ],
-   "keywords": [
-    "drawing council",
-    "مجلس الرسم",
-    "مجلس خبراء",
-    "review",
-    "مراجعة",
-    "critique",
-    "نقد",
-    "anatomy",
-    "تشريح",
-    "perspective",
-    "منظور",
-    "colour",
-    "لون",
-    "beauty",
-    "جمال",
-    "veto"
-   ],
-   "commands": [
-    {
-     "name": "roster",
-     "example": "python3 scripts/drawing_council.py roster --markdown",
-     "does": "The eleven experts with their cards, books and veto conditions (JSON, Markdown, or --personas for council.py)."
-    },
-    {
-     "name": "plan",
-     "example": "python3 scripts/drawing_council.py plan --png out/scene.png --svg out/scene.svg --brief \"رجل ينقذ قطة\" --dir out/council-r1",
-     "does": "Runs the automated gates and writes prompts/E01..E11.md; refuses an existing council dir without --force."
-    },
-    {
-     "name": "ingest",
-     "example": "python3 scripts/drawing_council.py ingest --dir out/council-r1 --expert E04 --file e04.json",
-     "does": "Validates and records one expert's answer, bound to the PNG's hash; --simulated when written in the main context."
-    },
-    {
-     "name": "verdict",
-     "example": "python3 scripts/drawing_council.py verdict --dir out/council-r1",
-     "does": "Writes verdict.json and minutes.md; exits 0 only on PASS."
-    }
-   ],
-   "inputs": "A rendered PNG, optionally its SVG (tagged for law 27), the brief, and each expert's JSON answer",
-   "outputs": "council.json, one prompt per expert, recorded answers, verdict.json and Arabic minutes.md with required fixes",
-   "requires": {
-    "python": [],
-    "binaries": [],
-    "node": [],
-    "optional": [
-     "pillow"
-    ],
-    "network": false
-   },
-   "safety": "writes-files",
-   "consent": "Writes only inside the council directory you pass; no network, model calls or spend.",
-   "limits": "The automated gates measure geometry and tone only. Scores are the experts' recorded judgements against their cards, not a proof of beauty; the verdict says SIMULATED when one context played the experts. Cards summarise the books' methods, not the books.",
-   "tests": [
-    ".claude/skills/kosif-superpowers/evals/test_drawing_council.py"
-   ],
-   "docs": [
-    ".claude/skills/kosif-superpowers/references/protocol/A31-drawing-council.md"
-   ],
-   "families": [
-    "hand-drawn-draw-on",
-    "story-direction-ideas"
-   ],
-   "evidence": "tested-here",
-   "evidence_note": "10 unit tests passed on this checkout (cloud container, 2026-10-23), and the man-and-cat drawing was reviewed by eleven separate expert agents."
+   "evidence_note": "10 unit tests passed on this checkout (cloud container, 2026-10-23), including draw+check of 9 variants and a rendered visual review of head, figure, character and forms SVGs.",
+   "power_id": "TOOL-136"
   },
   {
    "id": "perspective-color-lab",
@@ -12956,7 +12838,8 @@
     "story-direction-ideas"
    ],
    "evidence": "tested-elsewhere",
-   "evidence_note": "22 narrow tests previously passed on authorized Windows laptop (7+7+8), not full professional quality proof."
+   "evidence_note": "22 narrow tests previously passed on authorized Windows laptop (7+7+8), not full professional quality proof.",
+   "power_id": "TOOL-137"
   },
   {
    "id": "style-atlas-bridge",
@@ -13258,7 +13141,8 @@
     "software-investigation",
     "media-image-audio",
     "apps-artifacts"
-   ]
+   ],
+   "power_id": "TOOL-138"
   },
   {
    "id": "charter-ingest",
@@ -13320,7 +13204,8 @@
     "security-safety"
    ],
    "evidence": "tested-here",
-   "evidence_note": "evals/test_charter_index.py 6/6 passed on this checkout (full 50x10 parse of the user's charter: 500 experts, 200 boilerplate, 5 duplicates, 7 consent, 24 regulated)."
+   "evidence_note": "evals/test_charter_index.py 6/6 passed on this checkout (full 50x10 parse of the user's charter: 500 experts, 200 boilerplate, 5 duplicates, 7 consent, 24 regulated).",
+   "power_id": "TOOL-139"
   },
   {
    "id": "image-local-ai",
@@ -13410,7 +13295,8 @@
     "typography-arabic"
    ],
    "evidence": "tested-here",
-   "evidence_note": "evals/test_image_local_ai.py 8 passed, 1 skipped (onnx.checker; onnx not installed) on this checkout, 2026-10-22; remove-bg and inpaint ran end to end on hand-encoded synthetic ONNX graphs with onnxruntime 1.29. No real model was downloaded."
+   "evidence_note": "evals/test_image_local_ai.py 8 passed, 1 skipped (onnx.checker; onnx not installed) on this checkout, 2026-10-22; remove-bg and inpaint ran end to end on hand-encoded synthetic ONNX graphs with onnxruntime 1.29. No real model was downloaded.",
+   "power_id": "TOOL-140"
   },
   {
    "id": "prompt-pack",
@@ -13478,7 +13364,8 @@
     "verification-evals"
    ],
    "evidence": "tested-here",
-   "evidence_note": "evals/test_prompt_pack.py 9/9 passed on this checkout (22-10)."
+   "evidence_note": "evals/test_prompt_pack.py 9/9 passed on this checkout (22-10).",
+   "power_id": "TOOL-141"
   },
   {
    "id": "sources-index",
@@ -13512,22 +13399,22 @@
    "commands": [
     {
      "name": "add",
-     "example": "python3 -I scripts/sources_index.py add charter.txt --dir out/demo",
+     "example": "python3 -I scripts/sources_index.py add charter.txt --dir ../../../out/demo",
      "does": "Indexes one file or URL into out/demo/sources_index.json and prints its id, imperative line numbers and secret locations."
     },
     {
      "name": "list",
-     "example": "python3 -I scripts/sources_index.py list --dir out/demo",
+     "example": "python3 -I scripts/sources_index.py list --dir ../../../out/demo",
      "does": "Lists indexed sources with counts."
     },
     {
      "name": "show",
-     "example": "python3 -I scripts/sources_index.py show SRC-0123456789 --dir out/demo",
+     "example": "python3 -I scripts/sources_index.py show SRC-0123456789 --dir ../../../out/demo",
      "does": "Prints one record (metadata, headings and flags, never body text)."
     },
     {
      "name": "find",
-     "example": "python3 -I scripts/sources_index.py find \"الباب الرابع\" --dir out/demo",
+     "example": "python3 -I scripts/sources_index.py find \"الباب الرابع\" --dir ../../../out/demo",
      "does": "Matches titles and headings and returns line ranges; --body also returns matching line numbers, never text."
     }
    ],
@@ -13557,7 +13444,8 @@
     "verification-evals"
    ],
    "evidence": "tested-here",
-   "evidence_note": "evals/test_sources_index.py 6/6 passed on this checkout; real run on a 24,257-line attachment (22-10): key at line 405 reported as google_api_key by location only, 0 'AIza' matches in the 35 KB index."
+   "evidence_note": "evals/test_sources_index.py 6/6 passed on this checkout; real run on a 24,257-line attachment (22-10): key at line 405 reported as google_api_key by location only, 0 'AIza' matches in the 35 KB index.",
+   "power_id": "TOOL-142"
   },
   {
    "id": "atlas-render",
@@ -13925,7 +13813,8 @@
    ],
    "families": [
     "self-discovery"
-   ]
+   ],
+   "power_id": "TOOL-143"
   },
   {
    "id": "drawing-visual-qa",
@@ -14012,7 +13901,8 @@
     "story-direction-ideas"
    ],
    "evidence": "tested-here",
-   "evidence_note": "14 independent raster tests passed on authorized Windows laptop LAPTOP-5T3VFM48, 2026-10-23; PR92 existing 10 SVG tests also passed."
+   "evidence_note": "14 independent raster tests passed on authorized Windows laptop LAPTOP-5T3VFM48, 2026-10-23; PR92 existing 10 SVG tests also passed.",
+   "power_id": "TOOL-144"
   },
   {
    "id": "differential-exam",
@@ -14097,6 +13987,1041 @@
     "software-investigation"
    ],
    "power_id": "TOOL-67"
+  },
+  {
+   "id": "decision-math",
+   "path": "scripts/decision_math.py",
+   "root": "skill",
+   "kind": "cli",
+   "area": "think",
+   "title_en": "Decision math: Monte Carlo ranges, break-even, ICE, NPV/IRR and flip thresholds",
+   "title_ar": "رياضيات القرار: نطاقات مونت كارلو ونقطة التعادل وترتيب ICE والقيمة الحالية ونقطة انقلاب القرار",
+   "summary_en": "Runs a seeded Monte Carlo over a profit model with triangular/uniform/normal inputs (P5/P10/P50/P90/P95 and probability of loss), computes break-even units and revenue, ranks a backlog by ICE, computes NPV and IRR by bisection, and finds by bisection the value of one assumption at which the go/no-go decision flips.",
+   "summary_ar": "يشغّل محاكاة مونت كارلو ببذرة ثابتة لنموذج ربح بمدخلات مثلثية/منتظمة/طبيعية (P10/P50/P90 واحتمال الخسارة)، ويحسب نقطة التعادل، ويرتب قائمة العمل بطريقة ICE، ويحسب القيمة الحالية الصافية ومعدل العائد الداخلي، ويجد بالتنصيف قيمة الافتراض التي ينقلب عندها القرار.",
+   "use_when": [
+    "احسب احتمال الخسارة ونطاق الربح للمشروع ده",
+    "عند كام وحدة هنغطي التكاليف؟",
+    "رتّب الأفكار دي بطريقة ICE",
+    "What is the probability this launch loses money?",
+    "At what price does this decision flip?",
+    "Compute NPV and IRR for these cash flows"
+   ],
+   "keywords": [
+    "decision",
+    "monte carlo",
+    "break-even",
+    "breakeven",
+    "ICE",
+    "NPV",
+    "IRR",
+    "sensitivity",
+    "threshold",
+    "risk",
+    "finance",
+    "قرار",
+    "مونت كارلو",
+    "نقطة التعادل",
+    "احتمال الخسارة",
+    "القيمة الحالية",
+    "معدل العائد",
+    "حساسية",
+    "أولويات"
+   ],
+   "commands": [
+    {
+     "name": "montecarlo",
+     "example": "echo '{\"inputs\":{\"price\":{\"dist\":\"triangular\",\"low\":8,\"mode\":10,\"high\":13},\"units\":{\"dist\":\"uniform\",\"low\":800,\"high\":1200},\"cost\":{\"dist\":\"normal\",\"mean\":6,\"sd\":0.5},\"fixed\":2500},\"profit\":\"(price - cost) * units - fixed\"}' | python3 scripts/decision_math.py montecarlo - --runs 20000 --seed 7",
+     "does": "P5-P95 profit range, mean, sd and probability of profit below target."
+    },
+    {
+     "name": "breakeven",
+     "example": "python3 scripts/decision_math.py breakeven --price 25 --fixed 10000 --variable 15",
+     "does": "Break-even units (exact and rounded up), revenue and contribution margin."
+    },
+    {
+     "name": "ice",
+     "example": "printf 'name,impact,confidence,ease\\nA,8,7,5\\nB,9,9,9\\nC,3,4,10\\n' | python3 scripts/decision_math.py ice - --text",
+     "does": "ICE ranking (impact x confidence x ease, 1-10 each) of a CSV backlog."
+    },
+    {
+     "name": "npv",
+     "example": "python3 scripts/decision_math.py npv --rate 0.1 --flows -1000,300,400,500",
+     "does": "NPV at the rate and IRR by bisection (flags non-unique IRR)."
+    },
+    {
+     "name": "flip",
+     "example": "echo '{\"inputs\":{\"price\":{\"dist\":\"triangular\",\"low\":8,\"mode\":10,\"high\":13},\"units\":{\"dist\":\"uniform\",\"low\":800,\"high\":1200},\"cost\":{\"dist\":\"normal\",\"mean\":6,\"sd\":0.5},\"fixed\":2500},\"profit\":\"(price - cost) * units - fixed\"}' | python3 scripts/decision_math.py flip - --var price",
+     "does": "Value of one input where profit crosses the target, with headroom from the base case."
+    },
+    {
+     "name": "self-test",
+     "example": "python3 scripts/decision_math.py --self-test",
+     "does": "Offline self-check."
+    }
+   ],
+   "inputs": "a JSON profit model (inputs as constants or distributions + an arithmetic profit expression), a CSV backlog, or numbers on the command line; '-' reads stdin",
+   "outputs": "JSON on stdout (--text for a one-line summary)",
+   "requires": {
+    "python": [],
+    "binaries": [],
+    "node": [],
+    "optional": [],
+    "network": false
+   },
+   "safety": "read-only",
+   "consent": "",
+   "limits": "Inputs are sampled independently (no correlations); the profit expression allows arithmetic and min/max/abs/round only; flip varies one input with the others at their base values; IRR may be non-unique when flows change sign more than once.",
+   "evidence": "tested-here",
+   "evidence_note": "evals/test_decision_math.py 11/11 passed on 2026-10-23",
+   "tests": [
+    ".claude/skills/kosif-superpowers/evals/test_decision_math.py"
+   ],
+   "docs": [],
+   "families": [
+    "atlas-strategy",
+    "strategy-finance"
+   ],
+   "power_id": "TOOL-145"
+  },
+  {
+   "id": "particles",
+   "path": "scripts/particles.py",
+   "root": "skill",
+   "kind": "cli",
+   "area": "motion",
+   "title_en": "Seekable particles: closed-form bursts, budget check and SVG frame",
+   "title_ar": "جسيمات قابلة للقفز: انفجار بصيغة مغلقة وفحص الميزانية وإطار SVG",
+   "summary_en": "Computes every particle of a seeded burst at any time t from a closed-form drag+gravity solution and a stateless lowbias32 hash RNG (so frames render identically in any order), checks a particle spec against the family's budget rules (sizes, colours, per-engine counts, burst size, seeding, layering), and writes one frame as SVG for visual review.",
+   "summary_ar": "يحسب موقع وشفافية كل جسيم في انفجار ببذرة عند أي زمن t بصيغة مغلقة للسحب والجاذبية ومولد عشوائي بالهاش بلا حالة (فيطابق كل إطار في أي ترتيب رندر)، ويفحص مواصفة الجسيمات مقابل قواعد الميزانية، ويرسم إطارًا واحدًا SVG للمراجعة.",
+   "use_when": [
+    "اعمل انفجار جسيمات ثابت في كل رندر",
+    "هل عدد الجسيمات ده كتير على Canvas؟",
+    "Make a deterministic particle burst I can seek to any frame",
+    "Check my particle budget before rendering"
+   ],
+   "keywords": [
+    "particles",
+    "burst",
+    "explosion",
+    "seeded",
+    "deterministic",
+    "hash",
+    "seek",
+    "budget",
+    "svg",
+    "physics",
+    "drag",
+    "gravity",
+    "جسيمات",
+    "انفجار",
+    "بذرة",
+    "حتمي",
+    "فيزياء",
+    "جاذبية",
+    "ميزانية",
+    "إطار"
+   ],
+   "commands": [
+    {
+     "name": "burst",
+     "example": "python3 scripts/particles.py burst --seed 7 --count 40 --t 0.5 --visible-only",
+     "does": "Position, opacity, size and colour of every particle at time t."
+    },
+    {
+     "name": "budget",
+     "example": "echo '{\"engine\":\"canvas2d\",\"kind\":\"ambient\",\"count\":900,\"sizes\":[4,8,14],\"colors\":[\"#fff\",\"#fc0\"],\"seeded\":true,\"behind_text\":true}' | python3 scripts/particles.py budget -",
+     "does": "Budget violations and warnings with the source power card of each rule."
+    },
+    {
+     "name": "svg",
+     "example": "python3 scripts/particles.py svg --seed 7 --count 160 --t 0.4",
+     "does": "One frame as SVG on stdout (or --out FILE)."
+    },
+    {
+     "name": "self-test",
+     "example": "python3 scripts/particles.py --self-test",
+     "does": "Offline self-check."
+    }
+   ],
+   "inputs": "burst parameters on the command line (seed, count, t, canvas size, speed/life ranges, drag, gravity, stagger, sizes, colours) or a JSON particle spec; '-' reads stdin",
+   "outputs": "JSON particle states or budget verdict on stdout; SVG on stdout or the --out file",
+   "requires": {
+    "python": [],
+    "binaries": [],
+    "node": [],
+    "optional": [],
+    "network": false
+   },
+   "safety": "writes-files",
+   "consent": "Writes only the --out SVG path the user passes; otherwise stdout.",
+   "limits": "Radial bursts with linear drag and constant gravity only (no collisions, fluids or forces between particles); the SVG/DOM count limit of 300 is a tool heuristic, the Canvas/WebGL limits come from PART-04.",
+   "evidence": "tested-here",
+   "evidence_note": "evals/test_particles.py 13/13 passed on 2026-10-23",
+   "tests": [
+    ".claude/skills/kosif-superpowers/evals/test_particles.py"
+   ],
+   "docs": [],
+   "families": [
+    "particles-fluids-physics"
+   ],
+   "power_id": "TOOL-146"
+  },
+  {
+   "id": "geo-plate",
+   "path": "scripts/geo_plate.py",
+   "root": "skill",
+   "kind": "cli",
+   "area": "draw",
+   "title_en": "Map plate: projection to pixels, choropleth classes and source ledger",
+   "title_ar": "لوح الخرائط: إسقاط الإحداثيات إلى بكسلات وتصنيف الخرائط الملونة وسجل المصادر",
+   "summary_en": "Projects lon/lat points to pixel coordinates on a WxH plate (Web Mercator or equirectangular with a cos(lat) squash, world or bbox fitted with aspect kept), computes choropleth class breaks (quantile, equal interval, exact Fisher-Jenks) with GVF and a raw-count normalization warning or per-capita rates, and validates a coordinate ledger (ranges, swapped lat/lon, null island, CRS, duplicate ids, source and licence on every point).",
+   "summary_ar": "يحوّل الإحداثيات إلى بكسلات على لوح بحجم محدد (مركاتور أو متساوي المسافات مع ضغط cos(lat))، ويحسب فواصل فئات الخريطة الملونة (كمّي، متساوٍ، جنكس) مع تحذير من الأعداد الخام أو تحويلها لمعدل لكل فرد، ويفحص سجل النقاط (المدى، تبديل خط الطول والعرض، نظام الإحداثيات، المصدر والترخيص).",
+   "use_when": [
+    "حوّل الإحداثيات دي لمكانها على الخريطة بالبكسل",
+    "قسّم المحافظات لفئات ألوان للخريطة",
+    "Where do these cities land on a 1920x1080 map?",
+    "Check my map points have a source and licence"
+   ],
+   "keywords": [
+    "map",
+    "projection",
+    "mercator",
+    "equirectangular",
+    "choropleth",
+    "jenks",
+    "quantile",
+    "per capita",
+    "CRS",
+    "coordinates",
+    "licence",
+    "خريطة",
+    "إسقاط",
+    "مركاتور",
+    "إحداثيات",
+    "تصنيف",
+    "فئات",
+    "لكل فرد",
+    "مصدر",
+    "ترخيص"
+   ],
+   "commands": [
+    {
+     "name": "project",
+     "example": "python3 scripts/geo_plate.py project --proj equirect --size 2000x1000 31.2357,30.0444 -0.1276,51.5072",
+     "does": "Pixel x,y of each LON,LAT on the plate, with a distortion note."
+    },
+    {
+     "name": "classify",
+     "example": "printf 'region,cases,pop\\nA,10,1000\\nB,20,1000\\nC,300,1000\\nD,1100,1000\\nE,1200,1000\\nF,2000,1000\\n' | python3 scripts/geo_plate.py classify - --value cases --per-capita pop --method jenks --classes 3",
+     "does": "Class breaks, per-row class, class counts, GVF and normalization warnings."
+    },
+    {
+     "name": "ledger",
+     "example": "echo '{\"crs\":\"EPSG:4326\",\"source\":\"Natural Earth\",\"licence\":\"public domain\",\"points\":[{\"id\":\"cairo\",\"lon\":31.2357,\"lat\":30.0444}]}' | python3 scripts/geo_plate.py ledger -",
+     "does": "Coordinate/CRS/source/licence errors and warnings with a pass/fail verdict."
+    },
+    {
+     "name": "self-test",
+     "example": "python3 scripts/geo_plate.py --self-test",
+     "does": "Offline self-check."
+    }
+   ],
+   "inputs": "LON,LAT pairs, a CSV of region values (and optional population column), or a JSON points ledger; '-' reads stdin",
+   "outputs": "JSON on stdout",
+   "requires": {
+    "python": [],
+    "binaries": [],
+    "node": [],
+    "optional": [],
+    "network": false
+   },
+   "safety": "read-only",
+   "consent": "",
+   "limits": "Spherical Web Mercator and plate carree only (no reprojection library, no ellipsoid, no polygon geometry); ledger ranges are checked for EPSG:4326-style degrees and EPSG:3857 metres, other CRS are only flagged; Jenks is exact but O(k n^2), capped at 5000 rows.",
+   "evidence": "tested-here",
+   "evidence_note": "evals/test_geo_plate.py 12/12 passed on 2026-10-23",
+   "tests": [
+    ".claude/skills/kosif-superpowers/evals/test_geo_plate.py"
+   ],
+   "docs": [],
+   "families": [
+    "maps-geo"
+   ],
+   "power_id": "TOOL-147"
+  },
+  {
+   "id": "prompt-forge",
+   "path": "scripts/prompt_forge.py",
+   "root": "skill",
+   "kind": "cli",
+   "area": "image",
+   "title_en": "Prompt forge: layered generator prompts, prompt lint and frame-exact shot lists",
+   "title_ar": "مصنع البرومبتات: برومبتات طبقية وفحص البرومبت وقائمة لقطات بإطارات دقيقة",
+   "summary_en": "Builds still-image, video, music and voice prompts from one layered spec (subject, action, setting, style, camera, light, constraints) with no brand names; lints a prompt for hype words, vague adjectives, contradictions, negative-only phrasing, missing subject or camera and length in Arabic and English; splits a target duration into per-shot video prompts whose frame counts sum exactly to total x fps.",
+   "summary_ar": "يبني برومبتات الصور والفيديو والموسيقى والصوت من مواصفة طبقية واحدة، ويفحص البرومبت (كلمات المبالغة، الصفات المبهمة، التناقض، النفي فقط، غياب الموضوع أو الكاميرا، الطول) بالعربية والإنجليزية، ويقسم المدة على لقطات بإطارات مجموعها مضبوط.",
+   "use_when": [
+    "اكتب لي برومبت صورة وفيديو لنفس المشهد",
+    "افحص البرومبت ده وقولي غلطه فين",
+    "قسّم فيديو 12 ثانية على 4 لقطات ببرومبت لكل لقطة",
+    "Write image and video prompts for this scene",
+    "Lint my generation prompt",
+    "Make a shot list whose durations add up to 15 seconds"
+   ],
+   "keywords": [
+    "prompt",
+    "prompt lint",
+    "shot list",
+    "image prompt",
+    "video prompt",
+    "music prompt",
+    "voice prompt",
+    "negative prompt",
+    "برومبت",
+    "وصف",
+    "لقطات",
+    "قائمة لقطات",
+    "توليد صور",
+    "توليد فيديو"
+   ],
+   "commands": [
+    {
+     "name": "forge",
+     "example": "python3 scripts/prompt_forge.py forge /tmp/spec.json --targets still-image,video,music,voice",
+     "does": "Per-target prompts from the layered spec, with word counts and warnings (--text prints only the prompts)."
+    },
+    {
+     "name": "lint",
+     "example": "python3 scripts/prompt_forge.py lint /tmp/prompt.txt --target video",
+     "does": "Findings with severity and fix, score 0-100 and pass/revise/fail verdict."
+    },
+    {
+     "name": "shotlist",
+     "example": "python3 scripts/prompt_forge.py shotlist /tmp/shots.json --fps 30 --total 12 --max-shot 10",
+     "does": "Per-shot video prompts with start/end frames; largest-remainder split so frames sum exactly to total*fps."
+    },
+    {
+     "name": "self-test",
+     "example": "python3 scripts/prompt_forge.py --self-test",
+     "does": "Offline self-check."
+    }
+   ],
+   "inputs": "spec.json (layers), prompt.txt, shots.json ({subject, shots:[{action, weight|duration, ...}]})",
+   "outputs": "JSON on stdout (or plain prompts with --text)",
+   "requires": {
+    "python": [],
+    "binaries": [],
+    "node": [],
+    "optional": [],
+    "network": false
+   },
+   "safety": "read-only",
+   "consent": "",
+   "limits": "Rule-based text checks and templates: it does not call any generator or judge image quality, its word lists are finite (Arabic and English only), and generator-specific parameters are left to the user.",
+   "evidence": "tested-here",
+   "evidence_note": "evals/test_prompt_forge.py 11/11 passed on 2026-10-23",
+   "tests": [
+    ".claude/skills/kosif-superpowers/evals/test_prompt_forge.py"
+   ],
+   "docs": [],
+   "families": [
+    "ai-generation"
+   ],
+   "power_id": "TOOL-148"
+  },
+  {
+   "id": "diagram-layout",
+   "path": "scripts/diagram_layout.py",
+   "root": "skill",
+   "kind": "cli",
+   "area": "draw",
+   "title_en": "Diagram layout: graph lint, deterministic layered layout and RTL-ready SVG",
+   "title_ar": "تخطيط المخططات: فحص الرسم البياني وتخطيط طبقي حتمي وSVG جاهز للعربية",
+   "summary_en": "Checks a node/edge graph for dangling edges, duplicate ids, self-loops, cycles, orphans, long labels and too many nodes; computes a deterministic longest-path layered layout (LR or TB, cycle edges reversed and reported, RTL mirroring x' = W - x - w); writes an SVG with role colours, arrow markers, paint-order layers and Arabic labels with direction rtl.",
+   "summary_ar": "يفحص المخطط (حواف معلقة، تكرار، حلقات، عقد يتيمة، عناوين طويلة)، ويحسب تخطيطًا طبقيًا حتميًا بأطول مسار مع عكس من اليمين لليسار، ويصدّر SVG بألوان الأدوار وأسهم وعناوين عربية.",
+   "use_when": [
+    "ارسم لي مخطط معماري للنظام من اليمين لليسار",
+    "افحص المخطط ده فيه حلقات أو عقد مقطوعة",
+    "Lay out this flowchart deterministically",
+    "Turn this graph JSON into an SVG diagram with Arabic labels"
+   ],
+   "keywords": [
+    "diagram",
+    "flowchart",
+    "architecture",
+    "graph layout",
+    "svg",
+    "layered layout",
+    "cycle",
+    "rtl",
+    "مخطط",
+    "رسم بياني",
+    "مخطط انسيابي",
+    "معمارية",
+    "تخطيط",
+    "أسهم"
+   ],
+   "commands": [
+    {
+     "name": "lint",
+     "example": "python3 scripts/diagram_layout.py lint /tmp/graph.json --max-label 24 --max-nodes 9",
+     "does": "Findings (DANGLING_EDGE, DUPLICATE_ID, SELF_LOOP, CYCLE, ORPHAN, LONG_LABEL, TOO_MANY_NODES, UNLABELLED_EDGE) and verdict."
+    },
+    {
+     "name": "layout",
+     "example": "python3 scripts/diagram_layout.py layout /tmp/graph.json --rtl --direction lr",
+     "does": "Layer, slot, x/y/w/h per node and edge anchor points as JSON."
+    },
+    {
+     "name": "svg",
+     "example": "python3 scripts/diagram_layout.py svg /tmp/graph.json --rtl --theme dark --out /tmp/flow.svg",
+     "does": "SVG on stdout or only the --out file."
+    },
+    {
+     "name": "self-test",
+     "example": "python3 scripts/diagram_layout.py --self-test",
+     "does": "Offline self-check."
+    }
+   ],
+   "inputs": "graph.json {nodes:[{id,label,role}], edges:[{from,to,label}]}",
+   "outputs": "JSON report/layout on stdout; SVG on stdout or --out file",
+   "requires": {
+    "python": [],
+    "binaries": [],
+    "node": [],
+    "optional": [],
+    "network": false
+   },
+   "safety": "writes-files",
+   "consent": "Writes only the --out SVG path the user passes; otherwise stdout.",
+   "limits": "Simple layered layout (one barycentre pass, straight/elbow edges, fixed box size): no crossing minimisation beyond that, no text measurement or wrapping, and Arabic shaping depends on the SVG viewer's fonts.",
+   "evidence": "tested-here",
+   "evidence_note": "evals/test_diagram_layout.py 9/9 passed on 2026-10-23",
+   "tests": [
+    ".claude/skills/kosif-superpowers/evals/test_diagram_layout.py"
+   ],
+   "docs": [],
+   "families": [
+    "diagrams-explainers-code"
+   ],
+   "power_id": "TOOL-149"
+  },
+  {
+   "id": "ui-beat",
+   "path": "scripts/ui_beat.py",
+   "root": "skill",
+   "kind": "cli",
+   "area": "motion",
+   "title_en": "UI beat: eased cursor keyframes, RTL layout mirror and seamless-loop check",
+   "title_ar": "إيقاع الواجهات: مسار مؤشر بتسهيل وعكس تخطيط للعربية وفحص الحلقة المتصلة",
+   "summary_en": "Computes one cursor keyframe per frame along a bowed quadratic Bezier timed by a CSS cubic-bezier easing (solved by bisection), with press, release, UI-response (60-120 ms) and ripple timings; mirrors a UI layout for RTL (x' = W - x - w, left/right alignment flips, directional icon flip list); and checks that a loop's first and last states match, listing differing keys.",
+   "summary_ar": "يحسب إطارات حركة المؤشر على منحنى بيزييه بتسهيل CSS مع توقيت النقر والتموج، ويعكس تخطيط الواجهة للعربية مع قائمة الأيقونات التي تنقلب، ويتأكد أن بداية الحلقة تساوي نهايتها.",
+   "use_when": [
+    "اعمل حركة ماوس طبيعية من الزر للقائمة مع نقرة",
+    "اعكس تصميم الشاشة ده للعربي",
+    "اتأكد إن اللوب بيرجع لنفس البداية",
+    "Generate cursor keyframes with a click ripple for a UI demo",
+    "Mirror this layout for RTL",
+    "Check that my UI animation loops seamlessly"
+   ],
+   "keywords": [
+    "cursor",
+    "mouse",
+    "click",
+    "ripple",
+    "easing",
+    "cubic-bezier",
+    "rtl",
+    "mirror",
+    "loop",
+    "seamless",
+    "product demo",
+    "ui animation",
+    "مؤشر",
+    "ماوس",
+    "نقرة",
+    "عكس",
+    "حلقة",
+    "لوب",
+    "واجهة",
+    "عرض منتج"
+   ],
+   "commands": [
+    {
+     "name": "cursor",
+     "example": "python3 scripts/ui_beat.py cursor --from 900,1700 --to 540,960 --dur 0.8 --fps 30 --ease ease-in-out --arc 0.12",
+     "does": "Per-frame x/y/progress/angle keyframes plus click, response and ripple timings."
+    },
+    {
+     "name": "rtl-mirror",
+     "example": "python3 scripts/ui_beat.py rtl-mirror /tmp/layout.json --width 1080",
+     "does": "Mirrored elements, alignment flips, icons to flip vs keep, warnings for out-of-bounds elements."
+    },
+    {
+     "name": "loop-check",
+     "example": "python3 scripts/ui_beat.py loop-check /tmp/states.json --tol 0.000001",
+     "does": "seamless true/false with every differing, missing or retyped key; warns outside 3-6 s."
+    },
+    {
+     "name": "self-test",
+     "example": "python3 scripts/ui_beat.py --self-test",
+     "does": "Offline self-check."
+    }
+   ],
+   "inputs": "x,y points with duration/fps; layout.json {elements:[{id,x,w,align,icon,text}]}; states.json {start,end} | {states:[...]} | [ ... ]",
+   "outputs": "JSON on stdout",
+   "requires": {
+    "python": [],
+    "binaries": [],
+    "node": [],
+    "optional": [],
+    "network": false
+   },
+   "safety": "read-only",
+   "consent": "",
+   "limits": "Computes numbers only (no rendering): one Bezier leg per call, icon flipping is a name-based rule list, and loop-check compares declared states, not rendered frames.",
+   "evidence": "tested-here",
+   "evidence_note": "evals/test_ui_beat.py 9/9 passed on 2026-10-23",
+   "tests": [
+    ".claude/skills/kosif-superpowers/evals/test_ui_beat.py"
+   ],
+   "docs": [],
+   "families": [
+    "ui-product-device"
+   ],
+   "power_id": "TOOL-150"
+  },
+  {
+   "id": "stats-lab",
+   "path": "scripts/stats_lab.py",
+   "root": "skill",
+   "kind": "cli",
+   "area": "think",
+   "title_en": "Stats lab: A/B test, sample size, column statistics and FIFO/LIFO gains",
+   "title_ar": "مختبر الإحصاء: اختبار A/B وحجم العينة ووصف عمود وأرباح الدفعات",
+   "summary_en": "Deterministic decision statistics with the standard library: a pooled two-proportion z-test with p-value, Wald CI of the difference and log risk-ratio CI of the lift; visitors per arm for a target lift, alpha and power; n, mean, median, sd, quartiles and IQR outliers (with row numbers) for a CSV column; and realized gains per sell from a trades CSV by FIFO, LIFO or HIFO lots with fees and exact decimals.",
+   "summary_ar": "إحصاء حتمي للقرار: اختبار A/B بقيمة p وفترة ثقة للفرق والتحسن، وحجم العينة لكل مجموعة، ووصف عمود CSV مع القيم الشاذة وأرقام صفوفها، والأرباح المحققة لكل بيع بطريقة FIFO أو LIFO أو HIFO بحساب عشري دقيق.",
+   "use_when": [
+    "هل الفرق بين النسختين في اختبار A/B حقيقي؟",
+    "كم زائر أحتاج عشان أختبر تحسين 20%؟",
+    "احسب أرباحي المحققة من ملف الصفقات بطريقة FIFO",
+    "Is variant B's conversion lift statistically significant?",
+    "How many users per arm do I need for this A/B test?",
+    "Describe this CSV column and flag the outliers"
+   ],
+   "keywords": [
+    "ab test",
+    "a/b",
+    "significance",
+    "p-value",
+    "confidence interval",
+    "sample size",
+    "power",
+    "statistics",
+    "outliers",
+    "iqr",
+    "quartiles",
+    "fifo",
+    "lifo",
+    "cost basis",
+    "capital gains",
+    "اختبار",
+    "إحصاء",
+    "دلالة إحصائية",
+    "حجم العينة",
+    "قيم شاذة",
+    "أرباح محققة",
+    "تكلفة الشراء"
+   ],
+   "commands": [
+    {
+     "name": "abtest",
+     "example": "python3 scripts/stats_lab.py abtest --a 1000,100 --b 1000,130",
+     "does": "Two-proportion z-test: z, p-value, CI of difference and lift, verdict."
+    },
+    {
+     "name": "samplesize",
+     "example": "python3 scripts/stats_lab.py samplesize --base 0.10 --mde 0.20 --power 0.8",
+     "does": "Visitors per arm and total for a relative (or --absolute) minimum detectable effect."
+    },
+    {
+     "name": "describe",
+     "example": "printf 'region,revenue\\nA,120\\nB,95\\nC,130\\nD,110\\nE,900\\n' | python3 scripts/stats_lab.py describe - --col revenue",
+     "does": "n, mean, median, sd, quartiles, IQR fences and outlier rows of one column."
+    },
+    {
+     "name": "lots",
+     "example": "printf 'date,side,qty,price,fee\\n2024-01-05,buy,10,100,5\\n2024-03-01,buy,10,150,5\\n2024-06-01,sell,12,200,4\\n' | python3 scripts/stats_lab.py lots - --method fifo",
+     "does": "Realized gain per sell with the lots used, totals per asset and open lots."
+    }
+   ],
+   "inputs": "Conversion counts, rates, or a CSV file (or stdin) with a numeric column or date,side,qty,price[,fee][,asset] trades",
+   "outputs": "JSON (or a one-line --text summary)",
+   "requires": {
+    "python": [],
+    "binaries": [],
+    "node": [],
+    "optional": [],
+    "network": false
+   },
+   "safety": "read-only",
+   "consent": "",
+   "limits": "Normal-approximation tests (not exact or Bayesian, no sequential-peeking correction); lots is arithmetic, not tax advice (no wash-sale or holding-period rules).",
+   "evidence": "tested-here",
+   "evidence_note": "evals/test_stats_lab.py 8/8 passed on 2026-10-23",
+   "tests": [
+    ".claude/skills/kosif-superpowers/evals/test_stats_lab.py"
+   ],
+   "docs": [],
+   "families": [
+    "atlas-data",
+    "data-analysis"
+   ],
+   "power_id": "TOOL-151"
+  },
+  {
+   "id": "tts-script",
+   "path": "scripts/tts_script.py",
+   "root": "skill",
+   "kind": "cli",
+   "area": "audio",
+   "title_en": "TTS script prep: prosody-safe chunks, duration estimate and SSML",
+   "title_ar": "تجهيز نص التعليق الصوتي: تقطيع آمن وتقدير المدة وSSML",
+   "summary_en": "Prepares an Arabic or mixed-language narration script for any TTS engine: splits it into request-sized chunks at sentence ends, then clause marks, then between words (never mid-word, never across paragraphs); estimates speech time per chunk from words per minute plus sentence, clause and paragraph pauses with Arabic word counting; and writes SSML 1.0 with paragraphs, sentences, breaks at punctuation and lang tags around Latin runs (or Arabic runs in a Latin script).",
+   "summary_ar": "يجهز نص التعليق العربي أو المختلط لأي محرك تحويل نص إلى كلام: يقطعه عند نهايات الجمل ثم الفواصل ثم بين الكلمات دون كسر كلمة، ويقدر مدة كل قطعة بعدد الكلمات في الدقيقة مع الوقفات، ويكتب SSML بوقفات عند علامات الترقيم ووسوم لغة حول الكلمات الإنجليزية.",
+   "use_when": [
+    "قسم نص التعليق الصوتي لقطع مناسبة لـ ElevenLabs",
+    "التعليق ده هياخد كام ثانية؟",
+    "اعمل SSML للنص العربي بوقفات عند الفواصل",
+    "Split my narration script into TTS-safe chunks",
+    "Estimate how long this voice-over will run",
+    "Generate SSML with breaks and language tags for a mixed Arabic/English script"
+   ],
+   "keywords": [
+    "tts",
+    "text to speech",
+    "ssml",
+    "voice-over",
+    "narration",
+    "chunk",
+    "prosody",
+    "duration",
+    "wpm",
+    "break",
+    "lang tag",
+    "تعليق صوتي",
+    "تحويل النص إلى كلام",
+    "تقطيع",
+    "مدة",
+    "وقفات",
+    "نطق",
+    "سكريبت"
+   ],
+   "commands": [
+    {
+     "name": "chunk",
+     "example": "printf 'مرحبا بكم في KOSIF Studio. هذا اختبار، قصير جدا!\\n\\nفقرة ثانية؟ نعم.\\n' | python3 scripts/tts_script.py chunk - --max-chars 30",
+     "does": "Chunks at most N characters with their end type (sentence, clause, word, paragraph)."
+    },
+    {
+     "name": "estimate",
+     "example": "printf 'مرحبا بكم في KOSIF Studio. هذا اختبار، قصير جدا!\\n\\nفقرة ثانية؟ نعم.\\n' | python3 scripts/tts_script.py estimate - --wpm 140",
+     "does": "Seconds per chunk (speech + pauses), start times and total mm:ss."
+    },
+    {
+     "name": "ssml",
+     "example": "printf 'مرحبا بكم في KOSIF Studio. هذا اختبار، قصير جدا!\\n' | python3 scripts/tts_script.py ssml - --lang ar-EG --xml",
+     "does": "SSML 1.0 document with <p>, <s>, <break> and <lang> around Latin runs."
+    }
+   ],
+   "inputs": "A UTF-8 script text file or stdin; paragraphs separated by blank lines",
+   "outputs": "JSON (chunks, timing) or an SSML document with --xml",
+   "requires": {
+    "python": [],
+    "binaries": [],
+    "node": [],
+    "optional": [],
+    "network": false
+   },
+   "safety": "read-only",
+   "consent": "",
+   "limits": "Timing is a words-per-minute estimate (numbers and abbreviations count as one word; real length depends on the voice); SSML support for <lang> and break times varies by engine.",
+   "evidence": "tested-here",
+   "evidence_note": "evals/test_tts_script.py 6/6 passed on 2026-10-23",
+   "tests": [
+    ".claude/skills/kosif-superpowers/evals/test_tts_script.py"
+   ],
+   "docs": [],
+   "families": [
+    "voice-tts"
+   ],
+   "power_id": "TOOL-152"
+  },
+  {
+   "id": "brand-tokens",
+   "path": "scripts/brand_tokens.py",
+   "root": "skill",
+   "kind": "cli",
+   "area": "draw",
+   "title_en": "Brand tokens: SVG palette, 3-tier design tokens and WCAG contrast matrix",
+   "title_ar": "رموز الهوية: ألوان الشعار ورموز بثلاث طبقات ومصفوفة تباين WCAG",
+   "summary_en": "Extracts every colour a logo SVG uses (fill, stroke, stop-color, style and <style> CSS; hex, rgb(), hsl() and named colours) normalised to #rrggbb with counts and roles; builds DTCG-style core (100-900 scales), semantic and component tokens plus CSS custom properties, choosing action, link and muted steps that pass AA; and computes the WCAG 2.x contrast matrix with AA/AAA verdicts for the intended text/background pairs.",
+   "summary_ar": "يستخرج ألوان الشعار من ملف SVG بعدد مرات الاستخدام، ويبني رموز تصميم بثلاث طبقات (أساسية ودلالية ومكونات) مع متغيرات CSS ويختار درجات تنجح في AA، ويحسب مصفوفة تباين WCAG للنص على الخلفية بأحكام AA وAAA.",
+   "use_when": [
+    "استخرج ألوان الشعار من ملف SVG",
+    "اعمل design tokens للهوية من الألوان دي",
+    "هل تباين الألوان ده ناجح في WCAG؟",
+    "Extract the colour palette from this logo SVG",
+    "Turn our brand colours into primitive, semantic and component tokens",
+    "Check the WCAG contrast of our text and background colours"
+   ],
+   "keywords": [
+    "brand",
+    "palette",
+    "logo",
+    "svg",
+    "colors",
+    "design tokens",
+    "dtcg",
+    "css variables",
+    "semantic tokens",
+    "wcag",
+    "contrast",
+    "accessibility",
+    "aa",
+    "aaa",
+    "هوية",
+    "شعار",
+    "ألوان",
+    "لوحة ألوان",
+    "رموز التصميم",
+    "تباين",
+    "إتاحة"
+   ],
+   "commands": [
+    {
+     "name": "palette",
+     "example": "echo '<svg xmlns=\"http://www.w3.org/2000/svg\"><rect fill=\"#1d4ed8\"/><circle fill=\"#1D4ED8\"/><path stroke=\"#f59e0b\"/><text fill=\"#475569\">K</text></svg>' | python3 scripts/brand_tokens.py palette -",
+     "does": "Colours used with frequency, share, roles, alpha and HSL; unparsed values listed."
+    },
+    {
+     "name": "tokens",
+     "example": "echo '{\"primary\":\"#1d4ed8\",\"accent\":\"#f59e0b\",\"neutral\":\"#64748b\"}' | python3 scripts/brand_tokens.py tokens -",
+     "does": "Core/semantic/component tokens with aliases, resolved values and CSS (--css for CSS only)."
+    },
+    {
+     "name": "contrast",
+     "example": "echo '{\"text\":\"#777777\",\"bg\":\"#ffffff\"}' | python3 scripts/brand_tokens.py contrast -",
+     "does": "Contrast ratio and AA/AAA (normal and large text) per text/background pair."
+    }
+   ],
+   "inputs": "An SVG file, a palette JSON (palette output, name->hex map or hex list) or a tokens JSON; any of them on stdin with -",
+   "outputs": "JSON (palette, tokens with CSS, contrast matrix) or CSS with --css",
+   "requires": {
+    "python": [],
+    "binaries": [],
+    "node": [],
+    "optional": [],
+    "network": false
+   },
+   "safety": "read-only",
+   "consent": "",
+   "limits": "Reads colours written in the SVG text only (no rendering: implicit black fills, gradients' blended colours and raster images are not measured); tints/shades are sRGB mixes, not perceptual (OKLCH) scales; contrast follows WCAG 2.x, not APCA.",
+   "evidence": "tested-here",
+   "evidence_note": "evals/test_brand_tokens.py 5/5 passed on 2026-10-23",
+   "tests": [
+    ".claude/skills/kosif-superpowers/evals/test_brand_tokens.py"
+   ],
+   "docs": [],
+   "families": [
+    "brand-logo-identity"
+   ],
+   "power_id": "TOOL-153"
+  },
+  {
+   "id": "agent-guard",
+   "path": "scripts/agent_guard.py",
+   "root": "skill",
+   "kind": "cli",
+   "area": "maintain",
+   "title_en": "Agent guard: shell preflight, transcript secret scan and worktree plans",
+   "title_ar": "حارس الوكيل: فحص الأوامر قبل تشغيلها وكشف الأسرار وخطة فروع متوازية",
+   "summary_en": "Checks a shell command before an agent runs it against a documented 13-rule table (recursive rm of / ~ * or outside the folder, curl|bash, force push, world-writable chmod, credentials in argv, disk-destroying commands, writes to system paths or outside cwd, history-rewriting git, sudo) and returns GREEN, YELLOW or RED with redacted findings; scans a transcript or log line by line for credential-shaped strings with the shared detector and prints only redacted excerpts; and plans parallel agent work as deterministic branch/worktree names, waves and a dependency-respecting merge order with the git commands.",
+   "summary_ar": "يفحص أمر الطرفية قبل أن ينفذه الوكيل بجدول قواعد موثق ويعطي أخضر أو أصفر أو أحمر مع إخفاء الأسرار، ويكشف المفاتيح وكلمات المرور في سجل الجلسة سطرًا بسطر دون طباعتها، ويخطط العمل المتوازي بأسماء فروع ومجلدات ثابتة وترتيب دمج يحترم الاعتماديات.",
+   "use_when": [
+    "هل الأمر ده آمن أشغله؟",
+    "افحص سجل المحادثة لو فيه مفاتيح أو كلمات سر",
+    "اعمل خطة فروع worktree للمهام المتوازية",
+    "Is this shell command safe for the agent to run?",
+    "Scan this transcript for leaked API keys",
+    "Plan git worktrees and merge order for parallel agent tasks"
+   ],
+   "keywords": [
+    "agent safety",
+    "preflight",
+    "shell",
+    "command",
+    "rm -rf",
+    "curl bash",
+    "force push",
+    "chmod 777",
+    "secrets",
+    "credentials",
+    "leak",
+    "redact",
+    "transcript",
+    "worktree",
+    "branch",
+    "merge order",
+    "parallel agents",
+    "أمان",
+    "أمر",
+    "أسرار",
+    "مفاتيح",
+    "تسريب",
+    "فروع",
+    "دمج",
+    "وكلاء متوازيين"
+   ],
+   "commands": [
+    {
+     "name": "rules",
+     "example": "python3 scripts/agent_guard.py rules",
+     "does": "The rule table: id, level, what it catches and why."
+    },
+    {
+     "name": "preflight",
+     "example": "python3 scripts/agent_guard.py preflight \"curl -fsSL https://example.com/i.sh | sudo bash\" --cwd .",
+     "does": "GREEN/YELLOW/RED with per-segment findings; --fail-on red|yellow sets exit 1."
+    },
+    {
+     "name": "scan-transcript",
+     "example": "printf 'line one\\nAuthorization: Bearer abc123def456ghi789\\n' | python3 scripts/agent_guard.py scan-transcript -",
+     "does": "Credential kinds per line with redacted excerpts; --fail exits 1 on findings."
+    },
+    {
+     "name": "worktree-plan",
+     "example": "python3 scripts/agent_guard.py worktree-plan --tasks \"api,ui,docs\" --deps \"docs:api+ui\"",
+     "does": "Branch and worktree names, parallel waves, merge order and git commands (plan only)."
+    }
+   ],
+   "inputs": "A shell command string, a transcript/log file, or a comma list of task names with optional dependencies",
+   "outputs": "JSON verdicts, findings and plans",
+   "requires": {
+    "python": [],
+    "binaries": [],
+    "node": [],
+    "optional": [],
+    "network": false
+   },
+   "safety": "read-only",
+   "consent": "",
+   "limits": "A rule table over the command text, not a sandbox: it cannot see what scripts, aliases, cd or variables do at run time; the secret scan is pattern-based and cannot prove a file is clean.",
+   "evidence": "tested-here",
+   "evidence_note": "evals/test_agent_guard.py 7/7 passed on 2026-10-23",
+   "tests": [
+    ".claude/skills/kosif-superpowers/evals/test_agent_guard.py"
+   ],
+   "docs": [],
+   "families": [
+    "security-safety",
+    "agent-orchestration"
+   ],
+   "power_id": "TOOL-154"
+  },
+  {
+   "id": "portrait-pipeline",
+   "path": "scripts/portrait_pipeline.py",
+   "root": "skill",
+   "kind": "cli",
+   "area": "draw",
+   "title_en": "Hand-drawn pencil, charcoal or ink drawing of any photo or imagined scene, built stroke by stroke",
+   "title_ar": "رسم يدوي المظهر بالرصاص أو الفحم أو الحبر لأي صورة أو مشهد متخيَّل، خطًا بخط",
+   "summary_en": "Turns any photo (portrait, object, place) or any scene Claude imagines into a hand-drawn-looking drawing without copying a single photo pixel: it measures the sitter (MediaPipe face landmarks and hair/skin/clothes segmentation, optional), lays in faint Loomis construction and a straight-line envelope, plans values with the background held back, renders four tonal passes of tapered strokes that follow the form and stop at edges, blends the skin with a stump pass, adds lost-and-found edges and feature accents, lifts highlights and catchlights with an eraser pass, and deposits graphite through simulated paper tooth. Writes PNG, a layered editable SVG (one group per stage) and a receipt; review runs the rule-27 anatomy/contact gate plus value-fidelity checks. 16 portrait method cards (Loomis, Bridgman, Bargue, Speed, Vanderpoel, Hampton, Gurney, Dodson, Hammond, atelier sight-size) in data/portrait_methods.json name the stage that executes each. Non-portrait photos switch to scene mode (GrabCut subject + colour-cluster shape boundaries, short straight hatching). `imagine` draws scenes from imagination: Claude writes the scene as an SVG maquette (one light, gradients for the light and shadow families, far planes lighter) or passes any rendered PNG (unified_draw, drawing_methods, Blender or native 3D), and it is drawn like a photo. Media: graphite, charcoal, ink, sepia.",
+   "summary_ar": "يحوّل صورة مرجعية إلى بورتريه بالقلم الرصاص يبدو مرسومًا باليد دون نسخ أي بكسل من الصورة: يقيس الشخص (نقاط ملامح الوجه وتقسيم الشعر والجلد والملابس، اختياري)، ويضع بناء لوميس الخفيف وغلافًا بخطوط مستقيمة، ويخطط القيم مع تخفيف الخلفية، ويرسم أربع طبقات تهشير بخطوط مستدقة تتبع الشكل وتتوقف عند الحواف، ويموّه البشرة، ويضيف حوافًا ضائعة وظاهرة ولمسات الملامح، ويرفع الإضاءات ولمعة العين بالممحاة، ويرسب الجرافيت عبر ملمس ورق. يكتب PNG وSVG بطبقات قابلة للتحرير وإيصالًا، والمراجعة تشغّل بوابة القاعدة 27 وفحوص دقة القيم. 16 بطاقة منهج للبورتريه في data/portrait_methods.json. يعمل على أي صورة (وضع المشهد لغير البورتريه)، و`imagine` يرسم مشاهد من الخيال: Claude يكتب المشهد كمجسّم SVG بإضاءة واحدة أو يمرر أي صورة مصيّرة من أدوات الرسم أو ثلاثي الأبعاد، ثم يُرسم خطًا بخط. الخامات: رصاص، فحم، حبر، سيبيا.",
+   "use_when": [
+    "ارسم الصورة دي بورتريه بالقلم الرصاص كأنها مرسومة باليد",
+    "حوّل صورتي لرسم واقعي بالرصاص من غير ما تغير التكوين",
+    "Draw this photo as a realistic pencil portrait from scratch",
+    "Make a graphite portrait drawing of this person",
+    "ارسم بورتريه واقعي بالتهشير",
+    "ارسم من خيالك منارة على جرف بالرصاص كأنها مرسومة باليد",
+    "ارسم أي صورة أبعتها لك بالفحم",
+    "Draw an imagined scene in pencil, stroke by stroke",
+    "Turn this landscape photo into an ink hatching drawing"
+   ],
+   "keywords": [
+    "portrait",
+    "بورتريه",
+    "pencil portrait",
+    "رسم بالرصاص",
+    "graphite",
+    "جرافيت",
+    "realistic drawing",
+    "رسم واقعي",
+    "hatching",
+    "تهشير",
+    "cross-hatching",
+    "loomis",
+    "لوميس",
+    "bargue",
+    "بارج",
+    "sight-size",
+    "charcoal",
+    "فحم",
+    "photo to drawing",
+    "صورة لرسم",
+    "face drawing",
+    "رسم الوجه",
+    "imagination",
+    "من الخيال",
+    "imagined scene",
+    "مشهد متخيل",
+    "charcoal drawing",
+    "رسم بالفحم",
+    "ink drawing",
+    "رسم بالحبر",
+    "sepia",
+    "landscape drawing",
+    "رسم منظر",
+    "maquette",
+    "مجسم"
+   ],
+   "commands": [
+    {
+     "name": "draw",
+     "example": "python3 scripts/portrait_pipeline.py draw --photo photo.png --out out/portrait --models <dir with face_landmarker.task and selfie_multiclass.tflite>",
+     "does": "Measures the photo and writes portrait.png, portrait.svg (layers construction, lay-in, cross-hatch, deep-shadow, accents, edges + a hidden rule-27 figure group) and receipt.json. --medium graphite|charcoal|ink|sepia, --subject auto|portrait|scene, --background straight|flow."
+    },
+    {
+     "name": "imagine",
+     "example": "python3 scripts/portrait_pipeline.py imagine --svg scene.svg --out out/scene --medium graphite",
+     "does": "Rasterises a Claude-authored SVG maquette (Chromium or rsvg-convert) or takes --png from any renderer, then draws it from strokes only; keeps _reference.png beside the drawing."
+    },
+    {
+     "name": "review",
+     "example": "python3 scripts/portrait_pipeline.py review --dir out/portrait",
+     "does": "Rule-27 anatomy/contact gate (drawing_methods review) plus value-mass, value-detail, face-likeness, value-range and stroke-texture checks; writes review.json; exit 1 on any failure."
+    },
+    {
+     "name": "cards",
+     "example": "python3 scripts/portrait_pipeline.py cards --id PM-02",
+     "does": "Lists or shows the portrait method cards."
+    }
+   ],
+   "inputs": "A photo of anything, or an imagined scene as an SVG maquette / rendered PNG; optional MediaPipe models for portraits",
+   "outputs": "portrait.png, layered editable portrait.svg, receipt.json, review.json",
+   "requires": {
+    "python": [
+     "numpy",
+     "opencv-python-headless"
+    ],
+    "binaries": [],
+    "node": [],
+    "optional": [
+     "mediapipe (+ face_landmarker.task, selfie_multiclass_256x256.tflite from storage.googleapis.com/mediapipe-models)"
+    ],
+    "network": false
+   },
+   "safety": "writes-files",
+   "consent": "Writes only into --out; no network, model calls or spend. A photo of a real person is personal data: draw people only with their consent and never publish without the user's permission.",
+   "limits": "Algorithmic rendering from a measured reference and a value map, not a human hand and not a neural model. An imagined scene is only as convincing as the maquette Claude builds for it: flat vector maquettes give illustration-like drawings. Method cards paraphrase widely taught methods (only those marked user_copy_read_paraphrased rest on books read). review measures value fidelity, texture and figure connectivity, not beauty.",
+   "tests": [
+    ".claude/skills/kosif-superpowers/evals/test_portrait_pipeline.py"
+   ],
+   "docs": [
+    ".claude/skills/kosif-superpowers/references/portrait-drawing.md"
+   ],
+   "families": [
+    "hand-drawn-draw-on",
+    "story-direction-ideas"
+   ],
+   "evidence": "tested-here",
+   "evidence_note": "Unit tests passed on this checkout (cloud container, 2026-10-23); the portrait of a 1320x2345 reference (5 rounds), an imagined lighthouse scene from an SVG maquette (3 rounds), a drawing_methods head SVG in ink, and the portrait in charcoal and ink were drawn, reviewed and visually inspected.",
+   "power_id": "TOOL-157"
+  },
+  {
+   "id": "drawing-council",
+   "path": "scripts/drawing_council.py",
+   "root": "skill",
+   "kind": "cli",
+   "area": "draw",
+   "title_en": "Drawing council: eleven experts from the 48 method cards review an image before it is sent",
+   "title_ar": "مجلس خبراء الرسم: أحد عشر خبيرًا من بطاقات الكتب الـ48 يراجعون الصورة قبل إرسالها",
+   "summary_en": "PROTOCOL law 27 gate after drawing_methods.py review. Groups the 48 drawing-book method cards into eleven experts (construction, anatomy and proportion, gesture, logic and physics, perspective, light, colour, composition, line, character design, animals and nature), runs the automated gates (law-27 contact review, card checks, tone metrics), writes one prompt per expert with its card checks, common errors and veto conditions, records each expert's pass/fix/veto with correctness, craft and beauty scores, and computes a deterministic PASS/FAIL verdict with the fixes still required; it also exports the experts in the general council persona schema.",
+   "summary_ar": "بوابة القانون 27 بعد فحص review: يجمع بطاقات كتب الرسم الـ48 في أحد عشر خبيرًا (البناء، التشريح والنسب، الإيماءة، المنطق والفيزياء، المنظور، الضوء، اللون، التكوين، الخط، تصميم الشخصيات، الحيوان والطبيعة)، ويشغّل الفحوص الآلية، ويكتب لكل خبير برومبت بفحوص بطاقاته وأخطائها وشروط الرفض، ويسجل حكم كل خبير pass/fix/veto ودرجات الصحة والحرفة والجمال، ويحسب حكمًا PASS/FAIL بالتصليحات المطلوبة؛ ويصدّر الخبراء بصيغة شخصيات المجلس العام.",
+   "use_when": [
+    "راجع الرسمة دي قبل ما تبعتها",
+    "اعمل مجلس خبراء رسم يراجع الصورة",
+    "Review this drawing with the drawing council before sending",
+    "Check the image for anatomy, perspective, light and colour mistakes"
+   ],
+   "keywords": [
+    "drawing council",
+    "مجلس الرسم",
+    "مجلس خبراء",
+    "review",
+    "مراجعة",
+    "critique",
+    "نقد",
+    "anatomy",
+    "تشريح",
+    "perspective",
+    "منظور",
+    "colour",
+    "لون",
+    "beauty",
+    "جمال",
+    "veto"
+   ],
+   "commands": [
+    {
+     "name": "roster",
+     "example": "python3 scripts/drawing_council.py roster --markdown",
+     "does": "The eleven experts with their cards, books and veto conditions (JSON, Markdown, or --personas for council.py)."
+    },
+    {
+     "name": "plan",
+     "example": "python3 scripts/drawing_council.py plan --png out/scene.png --svg out/scene.svg --brief \"رجل ينقذ قطة\" --dir out/council-r1",
+     "does": "Runs the automated gates and writes prompts/E01..E11.md; refuses an existing council dir without --force."
+    },
+    {
+     "name": "ingest",
+     "example": "python3 scripts/drawing_council.py ingest --dir out/council-r1 --expert E04 --file e04.json",
+     "does": "Validates and records one expert's answer, bound to the PNG's hash; --simulated when written in the main context."
+    },
+    {
+     "name": "verdict",
+     "example": "python3 scripts/drawing_council.py verdict --dir out/council-r1",
+     "does": "Writes verdict.json and minutes.md; exits 0 only on PASS."
+    }
+   ],
+   "inputs": "A rendered PNG, optionally its SVG (tagged for law 27), the brief, and each expert's JSON answer",
+   "outputs": "council.json, one prompt per expert, recorded answers, verdict.json and Arabic minutes.md with required fixes",
+   "requires": {
+    "python": [],
+    "binaries": [],
+    "node": [],
+    "optional": [
+     "pillow"
+    ],
+    "network": false
+   },
+   "safety": "writes-files",
+   "consent": "Writes only inside the council directory you pass; no network, model calls or spend.",
+   "limits": "The automated gates measure geometry and tone only. Scores are the experts' recorded judgements against their cards, not a proof of beauty; the verdict says SIMULATED when one context played the experts. Cards summarise the books' methods, not the books.",
+   "tests": [
+    ".claude/skills/kosif-superpowers/evals/test_drawing_council.py"
+   ],
+   "docs": [
+    ".claude/skills/kosif-superpowers/references/protocol/A31-drawing-council.md"
+   ],
+   "families": [
+    "hand-drawn-draw-on",
+    "story-direction-ideas"
+   ],
+   "evidence": "tested-here",
+   "evidence_note": "10 unit tests passed on this checkout (cloud container, 2026-10-23), and the man-and-cat drawing was reviewed by eleven separate expert agents.",
+   "power_id": "TOOL-158"
   },
   {
    "id": "prompt-lab",
@@ -14197,7 +15122,8 @@
    "families": [
     "prompt-craft",
     "verification-evals"
-   ]
+   ],
+   "power_id": "TOOL-159"
   },
   {
    "id": "github-top-repos",
@@ -14288,7 +15214,8 @@
    "families": [
     "web-research",
     "self-discovery"
-   ]
+   ],
+   "power_id": "TOOL-160"
   }
  ],
  "guides": [

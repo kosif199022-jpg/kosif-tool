@@ -40,6 +40,7 @@
 | `capability-mindmap` | الخريطة الذهنية المرحلية وتدقيق التكرار | `python3 scripts/capability_mindmap.py build` | tested-here |
 | `capability-runtime-router` | موجّه القدرات التنفيذية | `python3 scripts/capability_runtime_router.py --task "حلل فيديو مرجعي وأنتج مونتاج مشابه بأصولي" --limit 5 --json` | tested-here |
 | `council` | مجلس البرو: خمسة متعارضين أو مجلس مناسب من 100 شخصية، ثلاث جولات وحكم بالدرجات | `python3 scripts/council.py plan "اعمل ريلز دعاء" --dir out/demo/council --options A,B,C` | tested-here |
+| `decision-math` | رياضيات القرار: نطاقات مونت كارلو ونقطة التعادل وترتيب ICE والقيمة الحالية ونقطة انقلاب القرار | `echo '{"inputs":{"price":{"dist":"triangular","low":8,"mode":10,"high":13},"units":{"dist":"uniform","low":800,"high":1200},"cost":{"dist":"normal","mean":6,"sd":0.5},"fixed":2500},"profit":"(price - cost) * units - fixed"}' \| python3 scripts/decision_math.py montecarlo - --runs 20000 --seed 7` | tested-here |
 | `fusionforge` | FusionForge v2 لوصفات الـWorkflow المركبة داخل المشروع | `python3 scripts/fusionforge.py propose "مونتاج ريلز بترجمة عربية" --project demo_project --from-brief out/20261021-reel/brief.json` | tested-here |
 | `fusionforge-shared` | ذاكرة FusionForge المشتركة بوصفات مهارات معزولة | `python3 scripts/fusionforge_shared.py audit` | untested |
 | `invention-lab` | مختبر الابتكار الهندسي | `python3 scripts/invention_lab.py methods` | tested-here |

@@ -4,6 +4,8 @@
 This is an optional companion to FusionForge v2 (it does not change v2 project-private behavior).
 Run from the kosif-tool repo root:
   python3 .claude/skills/kosif-superpowers/scripts/fusionforge_shared.py audit
+  python3 .claude/skills/kosif-superpowers/scripts/fusionforge_shared.py review-template --signature <sha256> \
+      > out/fusionforge/_shared/reviews/<sha256>.json      # blank review to fill in by a human, then approve
   python3 .claude/skills/kosif-superpowers/scripts/fusionforge_shared.py approve --signature <sha256>
   python3 .claude/skills/kosif-superpowers/scripts/fusionforge_shared.py recall --kind video
 

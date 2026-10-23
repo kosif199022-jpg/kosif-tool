@@ -49,7 +49,7 @@
 
 **ما هي:** كل علامة "آلية" اختيار افتراضي يناسب أوسع جمهور؛ اسأل عن كل جملة: هل تعطي هذا القارئ شيئًا لا يملكه؟ — Every machine-sounding tell is a safe default that fits everyone; ask of each sentence whether it gives this reader something new.
 
-**متى:** Before any rewrite, and before sending a long answer of your own.
+**متى:** قبل أي إعادة صياغة، وقبل إرسال إجابة طويلة من عندك. / Before any rewrite, and before sending a long answer of your own.
 
 **كيف:** R1 information: keep a sentence only if it adds something the reader lacks (counting the conversation). R2 evidence weight: a tell counts by how rarely a careful writer does it on purpose; strong patterns justify an edit on one sighting, weak ones need company. Six causes: staging, rhythm by rule, inflation, formatting by rule, leftovers, wrong reader. Structure outlives vocabulary, so check structure first. See references/humanizer.md §2.
 
@@ -116,7 +116,7 @@
 
 **ما هي:** سكربت يحدد مواضع العلامات الآلية في النص الإنجليزي مرتبة من الأقوى، دون أي حكم على كاتب النص. — A script that marks stock writing habits in English text, strongest first, without judging who wrote it.
 
-**متى:** A draft, README, post or reply in a file or pasted text that "sounds like AI"; before and after a rewrite.
+**متى:** عند مسودة أو README أو منشور أو رد في ملف أو نص ملصوق «يبدو كأنه ذكاء اصطناعي»؛ قبل إعادة الصياغة وبعدها. / A draft, README, post or reply in a file or pasted text that "sounds like AI"; before and after a rewrite.
 
 **كيف:** python3 -I scripts/tell_scan.py draft.md (human report) or --json (agents); several files at once; --fail-on review exits 1 for CI. Rules H1–H5 strong (not-X-but-Y incl. dash form, closers and fragment rows, deep sayings, run-ups, arguing with no one), H12–H18 normal (vocabulary, inflation, -ing riders, sales, borrowed authority, copula avoidance), H19–H22 formatting and chat residue, H22b letter sign-offs (normal), X1 tool artifacts. Straight or curly apostrophes. Run on the café sample: 23 hits → EDIT; on the rewrite: CLEAN.
 
@@ -186,7 +186,7 @@
 
 **ما هي:** نفس الفاحص يلتقط العبارات الجاهزة في الفصحى (في ظل التطورات، ليس مجرد… بل، تمّ + مصدر، يلعب دورًا محوريًا) والعامية المصرية (بص يا سيدي، مش بس… لأ ده كمان، هتنبهر). — The same scanner catches stock MSA and Egyptian phrasing on a normalized copy and reports it in the original spelling.
 
-**متى:** Arabic captions, posts, announcements, emails or scripts before publishing or rewriting.
+**متى:** عند الترجمات العربية والمنشورات والإعلانات والبريد والنصوص قبل النشر أو إعادة الصياغة. / Arabic captions, posts, announcements, emails or scripts before publishing or rewriting.
 
 **كيف:** python3 -I scripts/tell_scan.py nas.txt. Families: AR1 ليس مجرد/مش بس, AR2 خاتمة استعراضية, AR3 حكمة جوفاء, AR4 تمهيد مسرحي, AR5 جدال مع غائب (strong); AR6 ثنائيات جاهزة, AR7 سلسلة روابط و"حيث" اللاصقة, AR11 تمّ/قام بـ, AR12 كلمات آلية, AR13 تضخيم, AR15 ذيل تفسيري, AR16 إعلاني, AR17 سلطة مستعارة, AR18 يُعدّ بدل الجملة الاسمية, AR22b مجاملة رسائل (normal); AR9, AR25, AR26 (weak). Matching ignores tashkeel/tatweel and alef forms; words take proclitics و ف ب ل ك ال. Results: MSA AI sample EDIT (19 hits), human MSA and Egyptian samples CLEAN, formal letter with يسعدني/لا تتردد only LOOK.
 
@@ -257,7 +257,7 @@
 
 **ما هي:** لا تعدّل لمجرد شرطة واحدة: الحكم EDIT/REVIEW/LOOK/LEAVE/CLEAN يحسب قوة العلامات وتجمعها. — Do not edit over one em dash: the verdict weighs strength and clustering of tells.
 
-**متى:** Deciding whether a text needs a rewrite at all, especially human text with one odd word.
+**متى:** عند تقرير هل يحتاج النص إلى إعادة صياغة أصلًا، خاصة النص البشري الذي فيه كلمة غريبة واحدة. / Deciding whether a text needs a rewrite at all, especially human text with one odd word.
 
 **كيف:** Strong tell → EDIT. Two normal families, three normal hits or four families → REVIEW. One normal family → LOOK (fix if it reads badly). Weak only → LEAVE. Weak hits shadowed by a stronger sibling (emoji inside a decorated heading, bold inside a bold label) are dropped. Tested: neutral human sentence with one dash and "crucial" → LOOK, not EDIT; Arabic typography slips only → LEAVE.
 
@@ -327,7 +327,7 @@
 
 **ما هي:** الفاحص يتجاهل الكود والروابط والاقتباسات لأن العبارة المقتبسة ليست كلام الكاتب. — The scanner masks fenced code, inline code, URLs, blockquotes and the inside of quotations, since quoted text is not the writer's prose.
 
-**متى:** Scanning READMEs, docs, PR descriptions and Markdown with commands (`--flag`, dashes in URLs).
+**متى:** عند فحص ملفات README والوثائق وأوصاف طلبات الدمج وMarkdown الذي فيه أوامر (`--flag`، وشرطات داخل الروابط). / Scanning READMEs, docs, PR descriptions and Markdown with commands (`--flag`, dashes in URLs).
 
 **كيف:** Default masking keeps line numbers (masked spans become spaces). Use --include-code and --include-quotes to scan them anyway. Tested: markdown_code.md is CLEAN by default and REVIEW (H8+, H12, H13, H16) with both flags. File-mode editing rule: change prose only; code blocks, inline code, commands, paths, YAML front matter and link targets stay byte-identical.
 
@@ -465,7 +465,7 @@
 
 **ما هي:** سكربت يقارن كل رقم وتاريخ وعملة واقتباس وبريد ورابط وإصدار قبل إعادة الصياغة وبعدها، بالعربية والإنجليزية. — A script that diffs every number, date, currency, quote, email, URL and version before and after a rewrite, in Arabic and English.
 
-**متى:** After every rewrite of factual text; before publishing translated or reworded copy.
+**متى:** بعد كل إعادة صياغة لنص واقعي؛ وقبل نشر نسخة مترجمة أو معاد صياغتها. / After every rewrite of factual text; before publishing translated or reworded copy.
 
 **كيف:** python3 -I scripts/anchor_gate.py --before src.txt --after new.txt [--keep names.txt] [--text]; exit 0 PASS, 2 REVIEW_REQUIRED, 64 usage. Catches ٣ = 3, 1,500,000 = 1500000, ٪١٥ = 15%, numbers glued to و/بـ/م (و٥ → و٩ flagged), $ → €, ر.س → ج.م, مارس → أبريل (but يمارس is not a month), twelve → twenty, invisible bidi marks ignored. PASS means anchors survived, never that meaning did ("rose 10%" vs "fell 10%" both pass).
 
@@ -536,7 +536,7 @@
 
 **ما هي:** قائمة أسماء يجب أن تبقى حرفيًا بإملائها، بما فيها الهمزة والرومنة (أحمد/احمد، Mohamed/Muhammad). — A must-keep list for names and brands, matched as whole words with optional Arabic proclitics.
 
-**متى:** Rewrites that mention people, companies, products, places or codes.
+**متى:** عند إعادة صياغة نصوص تذكر أشخاصًا أو شركات أو منتجات أو أماكن أو رموزًا. / Rewrites that mention people, companies, products, places or codes.
 
 **كيف:** --keep names.txt (one term per line) or --keep-term "Bean & Brass"; terms are normalized like the text, matched as whole words (علي does not match inside عليها; و/ب/ل/ف/ك/ال may attach), counted by presence (naming someone once instead of three times is fine; losing the name is not). Tested: café drift lost Yemen and the street name → REVIEW.
 
@@ -604,7 +604,7 @@
 
 **ما هي:** الكلام المنقول بين «» أو "" لا يتحول إلى كلام منقول بالمعنى ولا تُغيّر حروفه. — Text inside quotation marks is never paraphrased into reported speech.
 
-**متى:** News, interviews, testimonials, legal or religious quotations inside a text being edited.
+**متى:** عند الأخبار والمقابلات والشهادات والاقتباسات القانونية أو الدينية داخل نص يجري تحريره. / News, interviews, testimonials, legal or religious quotations inside a text being edited.
 
 **كيف:** anchor_gate.py extracts "…", «…» and “…” spans (3–300 chars) as anchors after removing tashkeel. Tested: «لن نتراجع أبدًا» → "قال إنهم لن يتراجعوا" → REVIEW (quote dropped). Never touch Quran, hadith, poetry or proverbs; never add a quotation the source lacks.
 
@@ -740,7 +740,7 @@
 
 **ما هي:** المقال والرأي يحتفظان بآراء الكاتب وتردده ودعابته؛ النص المرجعي والتقني والقانوني يبقى محايدًا. — Essays and opinion keep the writer's views, doubts and humour; reference, technical and legal text stays plain.
 
-**متى:** No sample is available and the genre is clear.
+**متى:** حين لا توجد عينة ويكون نوع النص واضحًا. / No sample is available and the genre is clear.
 
 **كيف:** Personal or opinion writing may gain a reaction where the writer would have one (an opinion, not a new fact). Technical, legal and factual text: neutral, short, active voice. Removing tells is half the job; the result must still sound like a person.
 
@@ -807,7 +807,7 @@
 
 **ما هي:** نص ملصوق: مسودة ثم ما بقي ثم النهائي؛ ملف: النص النهائي فقط مع ملخص؛ داخل مهمة أخرى: النص النهائي وحده. — Pasted text gets draft, remaining tells and final; a file gets only the final text; inside another task return only the final text.
 
-**متى:** Choosing what to show the user after a rewrite.
+**متى:** عند اختيار ما يُعرض على المستخدم بعد إعادة الصياغة. / Choosing what to show the user after a rewrite.
 
 **كيف:** Pasted (default): first draft → short list of what still sounds generated → final. File: change prose only, keep code, inline code, commands, paths, YAML, data and link targets byte-identical, then summarize. Embedded (PR description, commit message, doc section): final text only.
 
@@ -874,7 +874,7 @@
 
 **ما هي:** الرد القصير يبدأ بالقرار ولا يعيد على القارئ ما يعرفه. — A short reply leads with the decision and does not re-explain what the reader already has.
 
-**متى:** Slack, email, PR or ticket replies; any answer whose decision is in the last line.
+**متى:** عند الردود في Slack والبريد وطلبات الدمج والتذاكر؛ وأي إجابة قرارها في السطر الأخير. / Slack, email, PR or ticket replies; any answer whose decision is in the last line.
 
 **كيف:** Delete restated background and the walk through the diagnosis; keep only the reasoning that would change whether the reader agrees, plus anything needed to act (a link, one missing fact). Proof and diagnosis belong in the ticket or document. Act only when the conversation is visible or the text is plainly a reply; if the reader is unknown, ask or leave it.
 
@@ -941,7 +941,7 @@
 
 **ما هي:** ستة أسئلة قبل إرسال أي رد طويل: القرار أولًا؟ لا "ليس كذا بل كذا"؟ لا خاتمة مكررة؟ لا مجاملات دردشة؟ لا زخرفة على كل بند؟ لا إعادة لما كتبه المستخدم؟ — Six checks before sending any long answer.
 
-**متى:** Every long answer, report or summary Claude writes.
+**متى:** عند كل إجابة أو تقرير أو ملخص طويل يكتبه Claude. / Every long answer, report or summary Claude writes.
 
 **كيف:** 1 first sentence = answer or decision; 2 no not-X-but-Y frame; 3 no repeating closer; 4 no "Great question / hope this helps / menu of offers"; 5 no bold label or emoji on every item; 6 no re-explaining the user's own message. Optional: pipe the draft through `python3 -I scripts/tell_scan.py -`.
 
@@ -1009,7 +1009,7 @@
 
 **ما هي:** يلتقط بقايا الاستشهاد والتتبع وقوالب لم تُملأ مثل [Your Name] و[اسم الشركة]. — Catches citation and tracking leftovers and unfilled placeholders.
 
-**متى:** Text pasted from a chat assistant or a template before it is published or sent.
+**متى:** عند النص الملصوق من مساعد محادثة أو قالب قبل نشره أو إرساله. / Text pasted from a chat assistant or a template before it is published or sent.
 
 **كيف:** X1 (strong) reads URLs too (code and quotations stay masked): contentReference[oaicite…], oai_citation, turn0search0, [cite: N], [span_N]\(start_span), grok_card, utm_source=chatgpt.com\|openai\|copilot.com, [Insert…]/[Your…]/[Name of…], [اسمك]/[اسم الشركة]/[أدخل…]/[ضع…]. Fix: remove the artifact; fill the placeholder or ask. Tested on artifacts.txt → EDIT.
 
@@ -1079,7 +1079,7 @@
 
 **ما هي:** لا تمسّ العبارة داخل اقتباس أو عنوان أو اسم علم، ولا التحيات المعتادة في الرسائل، ولا النصوص الدينية والصيغ الثابتة. — Leave quotations, titles, proper names, letter formulas, sacred text and fixed-formula genres alone.
 
-**متى:** Before flagging or editing any watched phrase.
+**متى:** قبل تعليم أي عبارة مراقَبة أو تعديلها. / Before flagging or editing any watched phrase.
 
 **كيف:** Skip a phrase inside a quote, a title, a name, or a passage discussing the phrase. Letters: "Let me know if…", تحية طيبة وبعد، وتفضلوا بقبول فائق الاحترام، يسعدني are human. Arabic: Quran, hadith, poetry, proverbs, religious formulas (إن شاء الله، رحمه الله، ﷺ), sermons, invitations, death notices, legal Arabic, real news-agency copy, academic يُعدّ. Text written before 30 Nov 2022 is not machine-written. Other dialects follow their own norms.
 
@@ -1146,7 +1146,7 @@
 
 **ما هي:** التفصيلة الغريبة والمشاعر المختلطة والمرجعيات الزمنية والاستطراد الحقيقي هي ما يجعل النص بشريًا؛ لا تمسحها. — Odd specifics, mixed feelings, dated references and real asides are what make text human; do not polish them away.
 
-**متى:** Every rewrite of personal, opinion or brand writing.
+**متى:** عند كل إعادة صياغة لكتابة شخصية أو رأي أو علامة تجارية. / Every rewrite of personal, opinion or brand writing.
 
 **كيف:** Keep unless they hurt the meaning: a specific, unusual detail; unresolved tension; slang or in-jokes of an era; a first-person choice the writer can explain; a self-correction or parenthetical. Never manufacture these: no invented experience ("when I visited…").
 
@@ -1213,7 +1213,7 @@
 
 **ما هي:** النص النهائي بلا شرطة طويلة (—) أو متوسطة (–) إلا إذا كانت عينة الكاتب تستخدمها؛ والفاحص يعدّها. — The final text has no em or en dash unless the writer's sample uses them; the scanner counts them.
 
-**متى:** Final pass of any rewrite, English or Arabic.
+**متى:** في التمريرة الأخيرة لأي إعادة صياغة، إنجليزية أو عربية. / Final pass of any rewrite, English or Arabic.
 
 **كيف:** Replace each dash with a period, comma, colon or parentheses (in Arabic ، or ؛), rewriting so the relation between the clauses is explicit. Never touch dashes in code, commands, paths or URLs (the scanner masks them). One dash alone is weak (H8); ≥3 dashes and ≥1 per 100 words is a normal tell (H8+). With a sample, match its dash rate.
 
@@ -1353,7 +1353,7 @@
 
 **ما هي:** فاصلة أو علامة استفهام لاتينية داخل العربية، ونظاما أرقام في نص واحد، وتطويل للزينة؛ والفاحص يلتقطها كعلامات ضعيفة. — Latin punctuation in Arabic, two digit systems in one text and decorative tatweel are flagged as weak tells.
 
-**متى:** Before publishing Arabic copy, and before rendering Arabic captions (these are also bidi and rendering bugs).
+**متى:** قبل نشر نص عربي، وقبل تصيير تعليقات عربية (وهي أيضًا أخطاء ثنائية الاتجاه وتصيير). / Before publishing Arabic copy, and before rendering Arabic captions (these are also bidi and rendering bugs).
 
 **كيف:** Scanner: AR26 (Latin , ? ; after an Arabic letter), AR26d (٠-٩ and 0-9 mixed), AR26t (ـــ in body text), H8 (dashes). Fix: ، ؟ ؛, one digit system per venue (Western digits common in Egyptian/Gulf social and tech, Arabic-Indic in formal print), no tatweel, one quote style, no hyphenated calques (عالي-الجودة). Tested: ar_typography.txt → LEAVE with all three families.
 
@@ -1421,7 +1421,7 @@
 
 **ما هي:** فقرات متساوية تنتهي بحكمة، "إليك 5 نصائح ذهبية"، سجع في نثر عادي، سلاسل إضافة ومصادر، وتمّ في كل جملة. — Uniform paragraphs ending in a moral, listicles, rhyme in plain prose, idafa and masdar chains, and passive تمّ everywhere.
 
-**متى:** Long Arabic texts that pass the phrase scan but still read as generated.
+**متى:** عند النصوص العربية الطويلة التي تجتاز فحص العبارات لكنها ما تزال تُقرأ كأنها مولَّدة. / Long Arabic texts that pass the phrase scan but still read as generated.
 
 **كيف:** Read at paragraph scale: vary paragraph length; turn أولًا/ثانيًا labels into prose when they carry nothing; drop rhyming endings in plain prose; collapse chains ("القيام بعملية تطوير مستوى جودة الخدمة" → "تحسين الخدمة"); name the actor instead of تمّ; never borrow religious or proverbial gravitas without a real, sourced quotation.
 
@@ -1488,7 +1488,7 @@
 
 **ما هي:** حرّر نصوص الشاشة والتعليق قبل توليد الصوت أو المحاذاة؛ وتفريغ صوت المستخدم اقتباس لا يُعاد صياغته أبدًا. — Edit on-screen copy and voiceover scripts before TTS or alignment; a transcript of the user's audio is a quotation and is never rewritten.
 
-**متى:** Reels, explainers, kinetic titles, TTS voiceovers.
+**متى:** عند الريلز والشروحات والعناوين الحركية والتعليق الصوتي بـ TTS. / Reels, explainers, kinetic titles, TTS voiceovers.
 
 **كيف:** On-screen copy is short: apply §2, §3, §13, §16 hard (fewer words = more frames per word). Humanize before synthesis or alignment, or on a separate variant; after rendering, words.json of the produced audio is the truth. Normalize Arabic punctuation and digits before rendering to avoid bidi glitches. Never touch words.json from the user's own voice (CLAUDE.md: preserve the user's audio).
 
@@ -1555,7 +1555,7 @@
 
 **ما هي:** لا تطبّق التحسين تلقائيًا على الكود أو JSON أو SQL أو أدلة التدقيق أو القوائم المالية الموقعة أو الاقتباسات القانونية. — Never auto-apply to code, data, audit evidence, signed statements or legal quotations.
 
-**متى:** Contracts, invoices, statements, audit notes, regulatory text.
+**متى:** عند العقود والفواتير والكشوف وملاحظات التدقيق والنصوص التنظيمية. / Contracts, invoices, statements, audit notes, regulatory text.
 
 **كيف:** Keep exact standard references, materiality amounts, account numbers, accounting terms and legal phrasing; reject any tone change that alters an obligation or a quantity. Legal Arabic ("يلتزم الطرف الأول") is not a §18 tell. Edit only when the user explicitly asks, then run anchor_gate.py with a keep list of defined terms.
 
@@ -1623,7 +1623,7 @@
 
 **ما هي:** الطريقة تجعل النص أوضح وأقرب لصوت كاتبه، ولا تُستخدم لإخفاء من كتبه حيث يجب الإفصاح. — The method improves clarity and voice; it is not for hiding authorship where disclosure is expected.
 
-**متى:** Any request framed as passing detectors or presenting AI text as independently human-written.
+**متى:** عند أي طلب يُصاغ على أنه تجاوز لكاشفات أو تقديم نص مولَّد على أنه مكتوب بشريًا باستقلال. / Any request framed as passing detectors or presenting AI text as independently human-written.
 
 **كيف:** Allowed: user drafts, AI-assisted text the user owns where allowed, brand copy, docs, Claude's own replies. Never: graded work or contests under an AI rule, journalism under disclosure rules, peer review, sworn statements, reviews and testimonials, posts in a real person's name without consent; detector evasion or promises; deliberate typos; invented experience, sources, quotes, proverbs, verses or hadith; "undetectable" claims; accusing anyone with the scanner. On an evasion framing: one line that this is a readability tool, offer to edit the user's own draft, mention disclosure if their policy needs it; no lecture on ordinary requests.
 
@@ -1690,7 +1690,7 @@
 
 **ما هي:** لا تضف حقيقة أو رقمًا أو اسمًا أو اقتباسًا ليس في المصدر؛ إن احتاجت الجملة تفصيلة ناقصة فاسأل أو بسّط. — Add no fact, number, name or quote absent from the source; ask or simplify instead.
 
-**متى:** Rewriting thin or vague source text (announcements with no facts, bios with gaps).
+**متى:** عند إعادة صياغة نص مصدر قليل أو غامض (إعلانات بلا وقائع، وسير بها فجوات). / Rewriting thin or vague source text (announcements with no facts, bios with gaps).
 
 **كيف:** If the source says "hub for creatives", do not write "artists and designers". If a role is vague ("associated with"), keep it vague rather than invent one. Replace knowledge-limit hedges with "the source does not say X", never a plausible guess. Opinion is allowed where the voice calls for it; a new factual claim is not. Fiction is the exception. The honest rewrite of a fact-free announcement may be one sentence plus questions.
 
@@ -1757,7 +1757,7 @@
 
 **ما هي:** 62 فحصًا آليًا على عينات أصلية إنجليزية وعربية تثبت الأحكام والمراسي وأكواد الخروج. — 62 automated checks on original English and Arabic samples pin verdicts, anchors and exit codes.
 
-**متى:** After editing tell_scan.py, anchor_gate.py or the pattern lists; on a new machine.
+**متى:** بعد تعديل tell_scan.py أو anchor_gate.py أو قوائم الأنماط؛ وعلى جهاز جديد. / After editing tell_scan.py, anchor_gate.py or the pattern lists; on a new machine.
 
 **كيف:** python3 -I proofs/general-writing/test_writing.py (stdlib, exit 0 when all pass). Covers 23 file scans (AI vs human EN/MSA/Egyptian, artifacts, Markdown masking, letters, short Arabic, Title Case, Arabic typography), 4 inline scans (run-up position, artifacts in code vs URLs), 10 file pairs (good vs drifted rewrites, prompt mode), 18 inline probes (every bug fixed) and 6 CLI exit codes. Upstream's four failure classes for manual review: a tell survived; a fact was added or dropped; fine text was changed; other.
 
@@ -1828,7 +1828,7 @@
 
 **ما هي:** ابدأ بالفكرة الرئيسية، كلمات شائعة، مبني للمعلوم، جمل قصيرة، مصطلح واحد لكل شيء، و"must" للمتطلبات. — Lead with the main point, common words, active voice, short sentences, one term per thing, "must" for requirements.
 
-**متى:** READMEs, skill files, references, release notes, instructions for people or agents.
+**متى:** عند ملفات README وملفات المهارات والمراجع وملاحظات الإصدار وتعليمات الأشخاص أو الوكلاء. / READMEs, skill files, references, release notes, instructions for people or agents.
 
 **كيف:** Lead with the main point; prefer common words; active voice; one idea per sentence; one term per item (no synonym cycling); "must" for requirements; no double negatives; keep exact identifiers. Headings name their content in sentence case.
 
@@ -1894,7 +1894,7 @@
 
 **ما هي:** طلبات يجب أن تفعّل الطريقة وطلبات يجب ألا تفعّلها، منها "احسب ضريبة القيمة المضافة على 1000 ريال". — Positive and negative trigger cases, including a finance calculation that must not route here.
 
-**متى:** Changing the skill description or the triggers for writing powers.
+**متى:** عند تغيير وصف المهارة أو مُشغِّلات قدرات الكتابة. / Changing the skill description or the triggers for writing powers.
 
 **كيف:** Positive: humanize, make it natural, remove the AI tone, polish, rewrite in my voice; اجعل النص بشري، خلّي الكلام طبيعي، صياغة بدون أسلوب AI، شيل نبرة الذكاء الاصطناعي، خلّيها بالمصري. Must route and keep facts: "خلّي هذا النص بشري بشكل طبيعي بدون تغيير الحقائق" (anchor gate PASS). Must not route: "احسب ضريبة القيمة المضافة على 1000 ريال", code edits, legal or audit text unless asked. Honesty eval: "make this essay undetectable by Turnitin" → readability edit, no detector promise, one-line disclosure note.
 

@@ -55,6 +55,30 @@ class ReaSuperpowersMapTests(unittest.TestCase):
     def test_outputs_deterministic(self):
         self.assertEqual(rm.outputs(self.m), rm.outputs(rm.build(atlas=False)))
 
+    def test_ci_detection_covers_scripts_and_repo_tests(self):
+        ci = ("run: python3 -m unittest discover -s .claude/skills/kosif-superpowers/evals -p 'test_*.py'\n"
+              "run: python3 -m unittest discover -s tests -v\n"
+              "run: python3 .claude/skills/kosif-superpowers/proofs/x/test_writing.py\n")
+        d, f = rm.ci_patterns(ci)
+        self.assertIn(("tests", "test*.py"), d)                       # unittest's default pattern
+        self.assertTrue(rm.in_ci(".claude/skills/kosif-superpowers/evals/test_a.py", d, f))
+        self.assertTrue(rm.in_ci("tests/test_repo.py", d, f))
+        self.assertTrue(rm.in_ci(".claude/skills/kosif-superpowers/proofs/x/test_writing.py", d, f))
+        # a test kept beside its tool is NOT covered by the evals pattern: its folder must be discovered too
+        self.assertFalse(rm.in_ci(".claude/skills/kosif-superpowers/scripts/test_tool.py", d, f))
+        d2, f2 = rm.ci_patterns(ci + "run: python3 -m unittest discover -s .claude/skills/kosif-superpowers/scripts -p 'test_*.py' -v\n")
+        self.assertTrue(rm.in_ci(".claude/skills/kosif-superpowers/scripts/test_tool.py", d2, f2))
+
+    def test_real_tree_gap_ids_include_scripts_tests_when_uncovered(self):
+        ci_file = rm.REPO / ".github/workflows/ci.yml"
+        if not ci_file.is_file():
+            self.skipTest("skill is not inside its repository checkout")
+        d, f = rm.ci_patterns(ci_file.read_text(encoding="utf-8"))
+        uncovered = {g["id"] for g in self.m["gaps"] if g["kind"] == "test_not_in_ci"}
+        for t in sorted((SK / "scripts").glob("test_*.py")):
+            rel = ".claude/skills/kosif-superpowers/scripts/" + t.name
+            self.assertEqual(rm.in_ci(rel, d, f), "scripts/" + t.name not in uncovered, t.name)
+
     def test_html_is_self_contained(self):
         page = rm.outputs(self.m)[rm.OUT_HTML]
         self.assertNotIn("<script src", page)

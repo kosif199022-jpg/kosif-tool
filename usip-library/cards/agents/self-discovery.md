@@ -133,7 +133,7 @@
 
 **ما هي:** لكل قدرة حالة واحدة صادقة من فكرة إلى مُتحقَّق منها؛ أبلغ دائمًا بأدنى حالة صحيحة. — Every capability sits on one rung from idea to verified; always report the lowest rung that is true.
 
-**متى:** before you claim anything works, before giving a badge, when writing a final report
+**متى:** قبل أن تدّعي أن شيئًا يعمل، وقبل منح شارة، وعند كتابة تقرير نهائي / before you claim anything works, before giving a badge, when writing a final report
 
 **كيف:** IDEA 💡 (no source) → DOCUMENTED 📄 (a file describes it with numbers) → INSTALLABLE 📦 (registry resolves through the proxy) → NEEDS-KEY 🔑 (name the key, account or connector) → PRESENT 🟢 (`command -v`, import or tool listed in this session) → EXECUTED (exit code and output path known) → VERIFIED ✅ (postcondition checked: ffprobe numbers, tests pass, file reopens, frame viewed). BLOCKED = named gate + next step. Never merge two rungs into a yes/no.
 
@@ -203,7 +203,7 @@
 
 **ما هي:** الإثبات من جلسة أو حاوية أخرى تاريخي فقط؛ أعد الفحص إن تغيّر المكان أو اليوم. — A proof from another session or container is history; re-probe when the container, surface or day differs.
 
-**متى:** you read ✅ in this skill, in a README or in memory and are about to rely on it
+**متى:** حين تقرأ ✅ في هذه المهارة أو في README أو في الذاكرة وأنت على وشك الاعتماد عليه / you read ✅ in this skill, in a README or in memory and are about to rely on it
 
 **كيف:** Read the proof's date and surface. If either differs from now, run the probe (import, `command -v`, a one-line smoke test) before promising. A failed re-probe lowers the badge for this answer only, without editing history. Live examples (P6, P19): `faster_whisper` is marked as run in the motion arsenal but is not importable in a fresh container; tesseract went from missing to present within one day.
 
@@ -273,7 +273,7 @@
 
 **ما هي:** رسالة النجاح ليست دليلًا؛ افحص الشرط اللاحق على الناتج نفسه. — A success message is not evidence; check the postcondition on the artifact itself.
 
-**متى:** after any render, install, conversion, deploy or file write, before saying done
+**متى:** بعد أي رندر أو تثبيت أو تحويل أو نشر أو كتابة ملف، قبل أن تقول إنه تم / after any render, install, conversion, deploy or file write, before saying done
 
 **كيف:** Pick the check by artifact. Video: `ffprobe -v error -show_entries format=duration:stream=codec_type,r_frame_rate`, then look at frames. Document: reopen it or convert it (`soffice --headless --convert-to pdf`). Code: run the tests. Web page: take a screenshot. Install: import it and print the version. Only an output from that check upgrades EXECUTED to VERIFIED.
 
@@ -342,7 +342,7 @@
 
 **ما هي:** قائمة أدواتك في رسالة النظام هي جرد قدراتك الفعلي: أدوات محمّلة، وأسماء مؤجلة، وخوادم MCP. — The tool list in your system prompt is your real inventory: loaded tools, deferred names and MCP servers.
 
-**متى:** start of any non-trivial task; whenever you are about to say a tool is missing
+**متى:** عند بدء أي مهمة غير بسيطة؛ وكلما كنت على وشك القول إن أداة مفقودة / start of any non-trivial task; whenever you are about to say a tool is missing
 
 **كيف:** Scan five places: (a) loaded tools that already have schemas; (b) the deferred-tools name list; (c) every `mcp__<server>__` prefix, each of which is one MCP server; (d) the skills listing; (e) the environment block (cwd, platform, scratchpad, proxy notes). Write a 5-line inventory before planning. Proof P1 saw Higgsfield (100+ tools), github, graphify, Claude_Docs and claude-code-remote servers.
 
@@ -413,7 +413,7 @@
 
 **ما هي:** كثير من الأدوات تظهر أسماءً فقط؛ ToolSearch يحمّل مخططها فتصبح قابلة للاستدعاء. — Many tools appear only as names; ToolSearch loads their schemas so you can call them.
 
-**متى:** a needed tool is named in the deferred list, or you suspect one exists (web, browser, schedule, notebook, image, video)
+**متى:** حين تُذكر أداة مطلوبة في قائمة المؤجَّلة، أو تشك بوجود واحدة (ويب، متصفح، جدولة، دفتر، صورة، فيديو) / a needed tool is named in the deferred list, or you suspect one exists (web, browser, schedule, notebook, image, video)
 
 **كيف:** Exact: `select:WebFetch,WebSearch`. By keyword: `image video generate`, `schedule`, `browser`, `notebook`. Name-required: `+slack send`. Calling a deferred tool before loading it fails with an input-validation error. Load only what the task needs, because each schema costs context.
 
@@ -482,7 +482,7 @@
 
 **ما هي:** كل بادئة mcp__ خادم مستقل؛ صنّفه: قراءة فقط، أو له أثر جانبي، أو مدفوع. — Each mcp__ prefix is a server; classify it as read-only, side-effecting or paid.
 
-**متى:** planning which tool does the work; before any generation, publish, push or send call
+**متى:** عند التخطيط لأي أداة تؤدي العمل؛ وقبل أي استدعاء توليد أو نشر أو دفع أو إرسال / planning which tool does the work; before any generation, publish, push or send call
 
 **كيف:** List the prefixes. For each, note read-only (search, list, get), side-effecting (create, push, publish, send, deploy) or paid (credits: generate_*, upscale, dubbing). Paid or side-effecting calls need explicit user intent. Prefer a working MCP tool over a blocked CLI: in P13, `gh search repos` returned 403 while `mcp__github__search_repositories` returned 139 hits.
 
@@ -553,7 +553,7 @@
 
 **ما هي:** المهارات المتاحة تظهر بسطر واحد؛ اعرضها وابحث عنها واستدعِ المطابقة قبل أن تبدأ. — Skills show as one line each; list them, search them and invoke the matching one before you start.
 
-**متى:** any domain task (docs, slides, sheets, PDF, charts, design, motion) or 'what can you do'
+**متى:** عند أي مهمة في مجال ما (مستندات، عروض، جداول، PDF، مخططات، تصميم، حركة) أو حين يُسأل 'ماذا تستطيع أن تفعل' / any domain task (docs, slides, sheets, PDF, charts, design, motion) or 'what can you do'
 
 **كيف:** 1) Read the skills listing in the system prompt. 2) `ListSkills` (P3: 13 account skills). 3) On disk: `ls ~/.claude/skills .claude/skills */.claude/skills`; plugin skills appear as `plugin:skill`. 4) SearchSkills / SuggestSkills, when present, find skills the user does not have. 5) Invoke the match with the Skill tool BEFORE writing output.
 
@@ -622,7 +622,7 @@
 
 **ما هي:** الإضافات تجمع مهارات ووكلاء وخطافات وخوادم MCP؛ اعرف المفعّل منها وما يمكن اقتراحه. — Plugins bundle skills, agents, hooks and MCP servers; know which are enabled and which you could suggest.
 
-**متى:** the user asks for a capability no loaded skill or tool covers
+**متى:** عندما يطلب المستخدم قدرة لا تغطيها أي مهارة أو أداة محمّلة / the user asks for a capability no loaded skill or tool covers
 
 **كيف:** `ListPlugins` lists account plugins (P3 returned none). `SearchPlugins` searches the marketplace. `SuggestPluginInstall` shows an install card when present. In a terminal session use `/plugin`. Never install a plugin silently: suggest it, then let the user approve.
 
@@ -688,7 +688,7 @@
 
 **ما هي:** في جلسات السحابة أداة توثيق تشرح الشبكة والتبعيات والأسرار ووصول GitHub، وتعرض للمستخدم زر الإعداد. — Cloud sessions expose a docs tool that explains network, dependencies, secrets and GitHub access, and shows the user a settings button.
 
-**متى:** a host is denied, a dependency is missing, a key is needed, a clone or push is refused, the disk is full
+**متى:** حين يُرفض مضيف، أو تنقص تبعية، أو يلزم مفتاح، أو يُرفض استنساخ أو دفع، أو يمتلئ القرص / a host is denied, a dependency is missing, a key is needed, a clone or push is refused, the disk is full
 
 **كيف:** Call `read_documentation` with no topic to get the index (P4: 10 pages), then call it with a topic such as `environment.network`, `environment.dependencies`, `environment.secrets`, `github.access` or `session.resources`. Quote what the page says the user can change; do not guess settings paths from memory.
 
@@ -756,7 +756,7 @@
 
 **ما هي:** إن لم تجد أداة للخدمة فقد تكون موصلًا غير مربوط أو مفتاحًا ناقصًا؛ سمِّ المطلوب بالضبط. — If no tool covers a service, it may be an unconnected connector or a missing key; name exactly what is needed.
 
-**متى:** the task needs Slack, Drive, Gmail, a paid model API, a database or any account-bound service
+**متى:** عندما تحتاج المهمة Slack أو Drive أو Gmail أو واجهة نموذج مدفوعة أو قاعدة بيانات أو أي خدمة مرتبطة بحساب / the task needs Slack, Drive, Gmail, a paid model API, a database or any account-bound service
 
 **كيف:** 1) ToolSearch the service name. 2) If present, use ListConnectors / SuggestConnectors / SearchMcpRegistry. 3) Otherwise tell the user to connect it in claude.ai Settings → Connectors, or to add a key as an environment secret (`read_documentation environment.secrets`). 4) Never ask for a secret in chat unless the host has a secure input. 5) Meanwhile offer the best keyless route.
 
@@ -825,7 +825,7 @@
 
 **ما هي:** سكربت probe_env.py يفحص النظام والأدوات والخطوط والشبكة ويطبع بطاقة قدرات بالشارات. — scripts/probe_env.py checks system, binaries, fonts and network and prints a badge capability card.
 
-**متى:** first non-trivial task in a new session or container; before promising renders, installs or downloads
+**متى:** عند أول مهمة غير بسيطة في جلسة أو حاوية جديدة؛ وقبل الوعد بالرندر أو التثبيت أو التنزيل / first non-trivial task in a new session or container; before promising renders, installs or downloads
 
 **كيف:** `python3 scripts/probe_env.py` gives the Markdown card; `--json` gives capabilities.json. It uses the standard library only, works without root, has a short global time budget, is read-only and prints env names, never values. Optional tools (MCP, skills) are invisible to scripts, so combine it with SELF-05. P21 (2026-10-16): 1.7 s, host claude-code-cloud with 4 evidence items, network full, GPU none, docker daemon down, a 120-line card with a domain table and one-line fixes.
 
@@ -896,7 +896,7 @@
 
 **ما هي:** أوامر قليلة تكشف النظام والمعالج والذاكرة والقرص والأدوات وإصداراتها. — A handful of commands reveal OS, CPU, RAM, disk and which tools exist at which versions.
 
-**متى:** no probe script available, or you need one specific fact fast
+**متى:** حين لا يتوفر سكربت فحص، أو تحتاج إلى معلومة واحدة محددة بسرعة / no probe script available, or you need one specific fact fast
 
 **كيف:** `uname -sr; nproc; free -g; df -h .; id -u` then `for b in python3 node npm uv ffmpeg convert soffice pandoc git gh rg docker playwright blender tesseract dot; do printf '%s ' $b; command -v $b \|\| echo MISSING; done` and `<tool> --version \| head -1` for the few that matter. P5 found 4 vCPU, 15 GiB and ffmpeg 6.1.1 but no blender and no `dot` (snapshot 2026-10-16; re-run scripts/probe_env.py).
 
@@ -973,7 +973,7 @@
 
 **ما هي:** افحص وجود GPU قبل أن تَعِد بنماذج ثقيلة؛ بدونه ارندر برمجيًا واستخدم نماذج صغيرة أو موصلًا. — Check for a GPU before promising heavy models; without one, render in software and use small models or a connector.
 
-**متى:** local diffusion, video generation, big LLMs, speech models, WebGL renders
+**متى:** عند التوليد المحلي بالانتشار، أو توليد الفيديو، أو نماذج LLM الكبيرة، أو نماذج الكلام، أو رندرات WebGL / local diffusion, video generation, big LLMs, speech models, WebGL renders
 
 **كيف:** `command -v nvidia-smi && nvidia-smi -L; ls /dev/dri`. None (P5): use ffmpeg libx264 and headless Chromium software GL, whisper tiny/base/small on CPU and the CPU torch wheel (SELF-28), and route image or video generation to a 🔑 connector such as Higgsfield only with user consent.
 
@@ -1048,7 +1048,7 @@
 
 **ما هي:** اختبر مضيفين أو أكثر لتعرف مستوى الشبكة: كاملة، أو سجلات فقط، أو لا شيء. — Test a few hosts to learn the network level: full, registries only, or none.
 
-**متى:** before promising installs, downloads, web fetches or API calls
+**متى:** قبل الوعد بالتثبيت أو التنزيل أو جلب الويب أو استدعاءات API / before promising installs, downloads, web fetches or API calls
 
 **كيف:** `curl -sS -o /dev/null -m 8 -w '%{http_code} %{time_total}\n' https://pypi.org/simple/` plus registry.npmjs.org, api.github.com, huggingface.co and a non-registry host (example.com). 200/200 means full egress; registry 200 with other hosts 403 means an allowlist; DNS failures or timeouts mean no network (API sandbox). In a cloud session also run `curl "$HTTPS_PROXY/__agentproxy/status"`. P8: all 7 hosts returned 200.
 
@@ -1117,7 +1117,7 @@
 
 **ما هي:** البروكسي جزء من الأمان: لا تعطّل التحقق من TLS ولا تلغِ متغيره، والرفض 403 قرار سياسة. — The proxy is part of security: never disable TLS checks or unset it; a 403 is a policy decision.
 
-**متى:** TLS errors, 403/405/407, cut-off transfers, Node or Python clients that ignore the proxy
+**متى:** عند أخطاء TLS، أو 403/405/407، أو انقطاع النقل، أو عملاء Node أو Python الذين يتجاهلون الوكيل / TLS errors, 403/405/407, cut-off transfers, Node or Python clients that ignore the proxy
 
 **كيف:** Read the container's proxy README if present and its status endpoint. Point clients at the CA bundle (`SSL_CERT_FILE`, `REQUESTS_CA_BUNDLE`, `NODE_EXTRA_CA_CERTS`). Node fetch: try `NODE_USE_ENV_PROXY=1` (P9: plain and env-proxy fetch both returned 200 here). aiohttp needs `trust_env=True`. Plain HTTP_PROXY is unsupported. Report 403/407 to the user; do not retry or route around them.
 
@@ -1183,7 +1183,7 @@
 
 **ما هي:** اعرف أي مفاتيح موجودة من أسماء المتغيرات دون طباعة قيمها أبدًا. — Learn which keys exist from variable names, never printing values.
 
-**متى:** deciding whether a 🔑 power is usable now
+**متى:** عند تقرير هل قوة 🔑 قابلة للاستخدام الآن / deciding whether a 🔑 power is usable now
 
 **كيف:** `env \| cut -d= -f1 \| grep -iE 'key\|token\|secret\|pass'` and `[ -n "$ANTHROPIC_API_KEY" ] && echo set \|\| echo unset`. Never `echo $VAR`, never paste values into files, logs or URLs. For `.env*` files read key names only: `grep -o '^[A-Z_]*=' .env`. P10: 13 names found; the API key was unset.
 
@@ -1254,7 +1254,7 @@
 
 **ما هي:** تحقق من المكتبات المتاحة فعلًا قبل كتابة كود يعتمد عليها. — Check which Python libraries are really importable before writing code that needs them.
 
-**متى:** before using pandas, matplotlib, cv2, torch, whisper, librosa, duckdb or any third-party module
+**متى:** قبل استخدام pandas أو matplotlib أو cv2 أو torch أو whisper أو librosa أو duckdb أو أي وحدة خارجية / before using pandas, matplotlib, cv2, torch, whisper, librosa, duckdb or any third-party module
 
 **كيف:** `python3 -I -c "import importlib.util as u; print({m: bool(u.find_spec(m)) for m in ['numpy','matplotlib','cv2','torch','librosa']})"`; count with `importlib.metadata.distributions()`. Missing → SELF-26. P6: numpy, pandas, PIL, docx, openpyxl, reportlab and pypdf were present; matplotlib, scipy, cv2, torch and librosa were not (snapshot 2026-10-16; re-run scripts/probe_env.py).
 
@@ -1331,7 +1331,7 @@
 
 **ما هي:** قد يوجد Chromium مع Playwright حتى لو لم يكن chromium في PATH؛ ابحث عنه قبل أن تقول لا متصفح. — Chromium may ship with Playwright even when `chromium` is not on PATH; look before saying there is no browser.
 
-**متى:** HTML→video, screenshots, PDF printing, scraping, mermaid rendering
+**متى:** عند HTML→فيديو، ولقطات الشاشة، وطباعة PDF، والكشط، وتصيير mermaid / HTML→video, screenshots, PDF printing, scraping, mermaid rendering
 
 **كيف:** `ls $(npm root -g)`; `echo $PLAYWRIGHT_BROWSERS_PATH; ls /opt/pw-browsers ~/.cache/ms-playwright 2>/dev/null`; `npx playwright --version`. P5/P9 found the global Playwright CLI and chromium-1194 under /opt/pw-browsers. Otherwise use `npx playwright install chromium` (about 150 MB, needs network).
 
@@ -1399,7 +1399,7 @@
 
 **ما هي:** افحص الخطوط العربية المثبتة؛ الافتراضي غالبًا لا يصلح للعرض فضمّن خطك وحمّله قبل الرندر. — Check the installed Arabic fonts; the defaults are usually not display quality, so ship your own.
 
-**متى:** any Arabic text in images, PDFs, video or HTML renders
+**متى:** عند وجود أي نص عربي في رندرات الصور أو PDF أو الفيديو أو HTML / any Arabic text in images, PDFs, video or HTML renders
 
 **كيف:** `fc-list :lang=ar family \| sort -u`. P7 found only DejaVu, FreeMono/FreeSerif and Unifont. Use OFL fonts from `proofs/_shared/fonts` (Amiri, Cairo, Reem Kufi, Aref Ruqaa, Tajawal, Lalezar), or `apt-get install fonts-noto-core fonts-kacst`, and load the font before the first frame.
 
@@ -1466,7 +1466,7 @@
 
 **ما هي:** إن كنت جذرًا وapt يعمل فأي حزمة أوبونتو على بعد أمر واحد. — If you are root and apt works, any Ubuntu package is one command away.
 
-**متى:** you need tesseract, graphviz, inkscape, texlive, sox, blender, fonts or another system binary
+**متى:** حين تحتاج tesseract أو graphviz أو inkscape أو texlive أو sox أو blender أو خطوطًا أو أي ملف تنفيذي نظامي آخر / you need tesseract, graphviz, inkscape, texlive, sox, blender, fonts or another system binary
 
 **كيف:** `id -u; sudo -n true && echo sudo-ok; apt-get -s install <pkg> \| tail -1` (simulation, no change). Then `apt-get update && apt-get install -y <pkg>` and verify with `<bin> --version`. P11: sudo was OK and the simulation resolved; earlier the same day `cowsay` installed and ran in 7.8 s.
 
@@ -1536,7 +1536,7 @@
 
 **ما هي:** وجود أمر docker لا يعني أن الخدمة تعمل؛ افحص docker info قبل أي وعد بالحاويات. — A docker binary does not mean a running daemon; check `docker info` before promising containers.
 
-**متى:** you plan to run services, databases or toolchains in containers
+**متى:** عندما تنوي تشغيل خدمات أو قواعد بيانات أو سلاسل أدوات في حاويات / you plan to run services, databases or toolchains in containers
 
 **كيف:** `timeout 8 docker info --format '{{.ServerVersion}}'`. P12: the client was present but the daemon was not running (no /var/run/docker.sock), even though the cloud-environment docs list Docker. Fall back to venvs, apt packages or local processes (e.g. `redis-server &`).
 
@@ -1605,7 +1605,7 @@
 
 **ما هي:** القراءة العامة عبر git تعمل، لكن واجهة GitHub API مقيدة بالمستودعات المربوطة؛ استخدم أداة MCP أو add_repo. — Public git reads work, but the GitHub API is limited to attached repos; use the MCP tool or add_repo.
 
-**متى:** cloning, reading releases or licenses, searching repos, opening PRs from a cloud session
+**متى:** عند الاستنساخ، وقراءة الإصدارات أو التراخيص، والبحث في المستودعات، وفتح PR من جلسة سحابية / cloning, reading releases or licenses, searching repos, opening PRs from a cloud session
 
 **كيف:** Public clone: `git clone --depth 1 https://github.com/<o>/<r>` (P13 `git ls-remote` worked), or raw files from raw.githubusercontent.com. `gh api repos/...` and `gh search repos` returned 403 for unattached repos. Use `mcp__github__search_repositories` / `get_file_contents`, or call `add_repo` (access read or push) for API work.
 
@@ -1673,7 +1673,7 @@
 
 **ما هي:** سؤال PyPI أو npm يكشف في ثوانٍ هل المكتبة موجودة وما إصدارها ورخصتها. — Asking PyPI or npm tells you within seconds whether a library exists, its version and its license.
 
-**متى:** you are unsure a library exists or remember an old version
+**متى:** حين لا تكون متأكدًا من وجود مكتبة أو تتذكر إصدارًا قديمًا / you are unsure a library exists or remember an old version
 
 **كيف:** Python: `pip index versions <pkg>` (resolves for this interpreter), `pip download --no-deps -d /tmp/x <pkg>` or `curl -s https://pypi.org/pypi/<pkg>/json` for version and license_expression. JS: `npm view <pkg> version license --json`. P14: humanize 4.16.0, tabulate 0.10.0 wheel, left-pad 1.3.0 (WTFPL). An E404 means not in the registry (e.g. `@hyperframes/cli`).
 
@@ -1744,7 +1744,7 @@
 
 **ما هي:** أحدث إصدار على PyPI قد لا يُثبَّت على بايثونك؛ اقرأ requires_python. — PyPI's latest release may not install on your Python; read requires_python.
 
-**متى:** pip picks an old version, says 'no matching distribution', or a model library targets older Python
+**متى:** حين يختار pip إصدارًا قديمًا، أو يقول 'no matching distribution'، أو تستهدف مكتبة نماذج بايثون أقدم / pip picks an old version, says 'no matching distribution', or a model library targets older Python
 
 **كيف:** `curl -s https://pypi.org/pypi/<pkg>/json \| python3 -c "import json,sys; i=json.load(sys.stdin)['info']; print(i['version'], i['requires_python'])"` and compare with `pip index versions <pkg>`. P14 on Python 3.13: kokoro resolves to 0.7.16 (latest 0.9.4 needs below 3.13); `TTS` resolves to nothing (needs below 3.12), but the maintained fork `coqui-tts` 0.27.5 resolves. Fixes: use the fork, an older pin, or `uv venv --python 3.12`.
 
@@ -1812,7 +1812,7 @@
 
 **ما هي:** ثبّت في بيئة معزولة ثم استورد واطبع الإصدار وشغّل أصغر مثال قبل الادعاء. — Install into an isolated env, then import, print the version and run the smallest example before claiming.
 
-**متى:** a needed Python library is missing (SELF-18)
+**متى:** حين تنقص مكتبة بايثون لازمة (SELF-18) / a needed Python library is missing (SELF-18)
 
 **كيف:** `python3 -m venv .venv && .venv/bin/pip install -q <pkg> && .venv/bin/python -I -c 'import <mod>; print(<mod>.__version__)'`, or faster `uv pip install --python .venv/bin/python <pkg>`. Then one real operation (e.g. `duckdb.sql('select 42*2')`). P15: venv+pip+import took 3.7 s, uv took 0.3 s. Prefer `--only-binary=:all:` to avoid slow builds.
 
@@ -1882,7 +1882,7 @@
 
 **ما هي:** مجلد مؤقت مع npm init يكفي لتجربة أي حزمة JS في ثانية أو اثنتين. — A scratch folder with npm init is enough to try any JS package in a second or two.
 
-**متى:** you need a JS library (Remotion, d3, three, docx, pptxgenjs, culori) and are unsure it works here
+**متى:** عندما تحتاج مكتبة JS (Remotion، d3، three، docx، pptxgenjs، culori) ولا تتأكد أنها تعمل هنا / you need a JS library (Remotion, d3, three, docx, pptxgenjs, culori) and are unsure it works here
 
 **كيف:** `mkdir -p /tmp/try && cd /tmp/try && npm init -y >/dev/null && npm i <pkg>@<exact> && node -e "import('<pkg>').then(m=>console.log(Object.keys(m).slice(0,5)))"`. Pin exact versions. P15: culori 4.0.2 install+import took 1.3 s. Earlier the same day docx, pptxgenjs, exceljs and pdf-lib each produced a real file.
 
@@ -1953,7 +1953,7 @@
 
 **ما هي:** torch للمعالج يُثبَّت في نحو 21 ثانية، والملفات الصغيرة من Hugging Face تُنزَّل؛ لا تفترض الاستحالة. — CPU torch installs in about 21 s and small Hugging Face files download; do not assume it is impossible.
 
-**متى:** speech-to-text, embeddings, OCR with easyocr, small classifiers, ONNX models
+**متى:** عند تحويل الكلام إلى نص، والتضمينات، وOCR بـ easyocr، والمصنِّفات الصغيرة، ونماذج ONNX / speech-to-text, embeddings, OCR with easyocr, small classifiers, ONNX models
 
 **كيف:** `pip install torch --index-url https://download.pytorch.org/whl/cpu` (default pip pulls GBs of CUDA). Earlier on 2026-10-16: 21 s, 769 MB, tensor inverse ran. HF: config.json in 0.49 s and a 540 KB weight in 1.0 s although cdn-lfs.huggingface.co was blocked (redirects use another CDN). Keep models small (30 GB disk, 4 CPUs, no GPU in that snapshot).
 
@@ -2026,7 +2026,7 @@
 
 **ما هي:** اقرأ رخصة الحزمة من السجل أو ملف LICENSE قبل اعتمادها، وانتبه لـAGPL وGPL و«انظر الرخصة». — Read the license from the registry or LICENSE file before adopting; watch for AGPL, GPL and 'SEE LICENSE'.
 
-**متى:** choosing a library to bundle, vendor or ship; copying code or assets
+**متى:** عند اختيار مكتبة للتضمين أو التوريد أو الشحن؛ وعند نسخ شيفرة أو أصول / choosing a library to bundle, vendor or ship; copying code or assets
 
 **كيف:** npm: `npm view <pkg> license`. PyPI JSON: `license_expression`, else `license`, else the classifiers. GitHub: `curl -s https://raw.githubusercontent.com/<o>/<r>/HEAD/LICENSE \| head -3`. Red flags: AGPL (pymupdf, ultralytics), GPL (piper-tts, pedalboard, bpy, typed.js, ffmpeg-static), 'SEE LICENSE IN …' (remotion, @anthropic-ai/claude-agent-sdk), UNLICENSED, or blank. Using a tool to produce output differs from redistributing its code.
 
@@ -2098,7 +2098,7 @@
 
 **ما هي:** قبل كتابة شيء من الصفر ابحث عن حزمة أو أداة أو مهارة، ثم قرّر: تبنَّ، أو وسّع، أو ركّب، أو ابنِ. — Before writing from scratch, search for a package, tool or skill, then decide: adopt, extend, compose or build.
 
-**متى:** any feature, effect, parser, converter or integration you are about to hand-code
+**متى:** عند أي ميزة أو تأثير أو محلل أو محوّل أو تكامل توشك على برمجته يدويًا / any feature, effect, parser, converter or integration you are about to hand-code
 
 **كيف:** Search in parallel: this repo, then package registries, then MCP tools and skills, then GitHub templates. Score each candidate on fit, maintenance, docs, license and dependencies. Exact maintained match with a permissive license → Adopt. Partial match → Extend with a thin wrapper. Several weak matches → Compose 2-3 small packages. Nothing → Build, informed by what you found. Say which channels you skipped.
 
@@ -2166,7 +2166,7 @@
 
 **ما هي:** قبل إنشاء مهارة جديدة ابحث محليًا ثم في المتجر ثم في GitHub، وافحص ما تجد. — Before creating a new skill, search locally, then the marketplace, then GitHub, and vet what you find.
 
-**متى:** the user asks for a new skill or workflow; you are about to write a long procedure
+**متى:** عندما يطلب المستخدم مهارة أو سير عمل جديدًا؛ وحين توشك على كتابة إجراء طويل / the user asks for a new skill or workflow; you are about to write a long procedure
 
 **كيف:** 1) Intent + 3-5 bilingual keywords. 2) Local: `find ~/.claude/skills .claude/skills -name SKILL.md \| xargs grep -il <kw>`. 3) Account: ListSkills / SearchSkills / SearchPlugins. 4) Remote: GitHub search (in cloud sessions use `mcp__github__search_repositories`, since `gh search` is blocked, P13), plus at most 3 web queries. 5) Vet: unexpected shell, network, credential handling or installs; maintenance; license. 6) Rank (name match > description > local > maintained GitHub > web), cap 10, then offer use, fork, or create.
 
@@ -2234,7 +2234,7 @@
 
 **ما هي:** لأسئلة المكتبات والواجهات اقرأ التوثيق الرسمي الحالي واذكر الإصدار، ولا تعتمد على ذاكرة التدريب. — For library and API questions read the current official docs and cite the version; do not rely on training memory.
 
-**متى:** writing code against a library, API parameters, CLI flags, product limits or prices
+**متى:** عند كتابة شيفرة على مكتبة، أو معاملات API، أو أعلام CLI، أو حدود المنتج أو أسعاره / writing code against a library, API parameters, CLI flags, product limits or prices
 
 **كيف:** Use a docs MCP (e.g. Context7) if connected. Otherwise WebFetch the official page, run `npm view <pkg> version`, `pip show <pkg>` and `<cli> --help`. Use at most 3 lookups per question, then state uncertainty. Cite the version and date. Redact secrets from queries. P18 fetched the official code-execution page to get the sandbox limits instead of recalling them.
 
@@ -2304,7 +2304,7 @@
 
 **ما هي:** كثير من المكتبات غيّرت واجهاتها؛ افحص الإصدار وجرّب سطرًا قبل كتابة كود من الذاكرة. — Many libraries changed their APIs; check the version and try one line before writing code from memory.
 
-**متى:** any import or call you remember rather than just read
+**متى:** عند أي استيراد أو استدعاء تتذكره بدل أن تقرأه للتو / any import or call you remember rather than just read
 
 **كيف:** Re-run P16 traps: pulp 4 drops `LpVariable(...)` and `PULP_CBC_CMD` (use `m.add_variable` + `pulp.HiGHS`); mcp 2.x moves FastMCP to `from mcp.server import MCPServer`; markitdown needs extras `[docx,pdf,xlsx,pptx]`; pymupdf prefers `import pymupdf` over `fitz`; openpyxl stores formulas but never computes them (recalculate with LibreOffice headless); plotly `write_html` inlines 4.8 MB unless `include_plotlyjs='cdn'`. Major bumps seen: pandas 3, numpy 2.5, polars 2, opencv 5, transformers 5.
 
@@ -2381,7 +2381,7 @@
 
 **ما هي:** جرد للقراءة فقط لما يستطيعه هذا المستودع وهذه الآلة الآن، مع الفجوات وأفضل خطوات تالية. — A read-only inventory of what this repo and machine can do now, with gaps and the best next moves.
 
-**متى:** new repo, 'what can you do here', before proposing automation, hooks or agents
+**متى:** عند مستودع جديد، أو 'ماذا تستطيع أن تفعل هنا'، وقبل اقتراح أتمتة أو hooks أو وكلاء / new repo, 'what can you do here', before proposing automation, hooks or agents
 
 **كيف:** Read the markers: package.json and lockfiles, `.mcp.json`, `.claude/settings*.json`, AGENTS.md/CLAUDE.md, hooks, `.claude/agents`, `.claude/skills`, `.env*` (key names only). Output 5 parts: usable now; parity; primitives with no workflow wrapped around them; missing integrations; top 3-5 next moves. Map each gap to a shape: repeatable workflow → skill, enforcement → hook, delegated role → agent, external bridge → MCP or connector.
 
@@ -2451,7 +2451,7 @@
 
 **ما هي:** القدرات تختلف بين Claude Code وclaude.ai وواجهة API؛ استنتج أين أنت من الأدلة قبل الوعد. — Capabilities differ between Claude Code, claude.ai and the API; infer where you are from evidence before promising.
 
-**متى:** start of a session; before promising network, installs, file delivery or long jobs
+**متى:** عند بدء جلسة؛ وقبل الوعد بالشبكة أو التثبيت أو تسليم الملفات أو المهام الطويلة / start of a session; before promising network, installs, file delivery or long jobs
 
 **كيف:** Evidence: `/root/.ccr` or `CLAUDE_CODE_REMOTE` or `mcp__claude-code-remote__*` → Claude Code cloud session; `CLAUDECODE=1` without those → local Claude Code; a code-execution tool with no network and Python 3.11 → API sandbox; `/mnt/user-data` or `/home/claude` with egress depending on admin → claude.ai sandbox (unconfirmed heuristic); `CI` or `GITHUB_ACTIONS` → CI. Then open references/surfaces.md for that surface's table.
 
@@ -2518,7 +2518,7 @@
 
 **ما هي:** جلسة السحابة حاوية Linux فيها نحو 4 أنوية و16 غيغابايت ذاكرة، وشبكتها حسب إعداد البيئة؛ قِس قبل أن تعتمد. — A cloud session is a Linux container with about 4 vCPU, 16 GB and network per the environment setting; measure before relying on it.
 
-**متى:** planning long renders, big installs, downloads or services in a web or cloud session
+**متى:** عند التخطيط لرندرات طويلة أو تثبيتات كبيرة أو تنزيلات أو خدمات في جلسة ويب أو سحابية / planning long renders, big installs, downloads or services in a web or cloud session
 
 **كيف:** Documented: 4 vCPU, 16 GB RAM, 30 GB disk; network None, Trusted (default: registries, GitHub, cloud SDKs), Full or Custom; setup script cached; network secrets injected by the proxy. Measured in P5/P8 on 2026-10-16: 4 vCPU, 15 GiB, 24-30 GB free, every tested host reachable, Docker daemon NOT running. Re-run scripts/probe_env.py; read `read_documentation session.resources` when limits hit.
 
@@ -2590,7 +2590,7 @@
 
 **ما هي:** في API يعمل الكود في حاوية بلا إنترنت ولا تثبيت حزم؛ اعمل بالمكتبات المثبتة مسبقًا فقط. — In the API, code runs in a container with no internet and no package installs; work with the preinstalled libraries only.
 
-**متى:** you are called through the API with the code-execution tool, or the network probe fails instantly
+**متى:** حين تُستدعى عبر API مع أداة تنفيذ الكود، أو يفشل فحص الشبكة فورًا / you are called through the API with the code-execution tool, or the network probe fails instantly
 
 **كيف:** Per the official page (fetched 2026-10-16): Python 3.11, 1 CPU, 5 GiB RAM, 5 GiB disk, no outbound network; containers reusable by id and expire after 30 days. Preinstalled: pandas, numpy, scipy, scikit-learn, statsmodels, matplotlib, seaborn, openpyxl, xlsxwriter, python-docx, python-pptx, pypdf, pdfplumber, reportlab, pillow, sympy, plus rg, fd and sqlite. Inline assets; do not promise ffmpeg or downloads.
 
@@ -2668,7 +2668,7 @@
 
 **ما هي:** في claude.ai يصنع Claude ملفات Word وExcel وPowerPoint وPDF داخل صندوق، وتعتمد الشبكة على إعداد الخطة أو المشرف. — In claude.ai, Claude creates docx/xlsx/pptx/pdf files in a sandbox, and the network depends on the plan or admin setting.
 
-**متى:** the session is a claude.ai chat (web, desktop or mobile) with code execution
+**متى:** حين تكون الجلسة محادثة claude.ai (ويب أو سطح مكتب أو جوال) مع تنفيذ الكود / the session is a claude.ai chat (web, desktop or mobile) with code execution
 
 **كيف:** Per the help article (fetched 2026-10-16): Free/Pro/Max have one 'Allow network egress' toggle; Team/Enterprise owners pick Off, Package managers only (npm, PyPI, crates, Ubuntu, Yarn, GitHub), Package managers + domains, or All domains. Max 30 MB per file. Custom skills upload as a zip with SKILL.md (help article: description up to 200 chars). Probe the network (SELF-15) before promising installs.
 
@@ -2739,7 +2739,7 @@
 
 **ما هي:** تطبيق سطح المكتب يضيف بيئات محلية وسحابية وSSH، ولوحة متصفح، والتحكم بالحاسوب، وموصلات بزر. — The desktop app adds local, cloud and SSH environments, a browser pane, computer use and one-click connectors.
 
-**متى:** the user is on Claude Desktop, or a cloud session is linked to their computer
+**متى:** حين يستخدم المستخدم Claude Desktop، أو تكون جلسة سحابية مرتبطة بحاسوبه / the user is on Claude Desktop, or a cloud session is linked to their computer
 
 **كيف:** Per the docs (fetched 2026-10-16): environments Local, Cloud, SSH and WSL; parallel sessions with worktrees; visual diff; browser pane (per-site approval); computer use on macOS/Windows for Pro/Max (preview); connectors and plugins via the + button; Dispatch from phone. Cloud sessions have no file editor, no plugin browser and no connector button. Look for `mcp__Claude_Browser__*`, `mcp__computer-use__*` or `enable__…` tools and load the matching skill first.
 
@@ -2810,7 +2810,7 @@
 
 **ما هي:** جدول يحوّل كل أداة تجدها إلى القوى التي تفتحها، حتى لا تنسى قدرة متاحة. — A table that turns each tool you find into the powers it unlocks, so no available capability is forgotten.
 
-**متى:** right after the inventory (SELF-05) and before planning
+**متى:** مباشرة بعد الجرد (SELF-05) وقبل التخطيط / right after the inventory (SELF-05) and before planning
 
 **كيف:** Open references/surfaces.md § 'Tool present → powers'. Examples: Bash + network → pip/npm/apt installs, git clone, API calls; Read on images or PDFs → look at your own renders; Agent/Workflow → parallel research and review; Monitor or background Bash → long renders with progress; Artifact → shareable pages; scheduling tools → recurring work; mcp__github__* → PRs, CI logs and code search; mcp__Higgsfield__* → paid AI image/video/audio.
 
@@ -2878,7 +2878,7 @@
 
 **ما هي:** أبلغ بما وجدت في بطاقة قصيرة، وبعد كل فعل مؤثر أعط إيصالًا بالدليل. — Report findings as a short card, and after each consequential action give a receipt with evidence.
 
-**متى:** end of discovery; after renders, installs, publishes or pushes; final answer
+**متى:** عند نهاية الاستكشاف؛ وبعد الرندرات أو التثبيتات أو النشر أو الدفع؛ والإجابة النهائية / end of discovery; after renders, installs, publishes or pushes; final answer
 
 **كيف:** Card: surface · CPU/RAM/disk · GPU yes/no · network level · key tools present · gaps with one-line fixes · tools that are paid or side-effecting. Receipt: status (success/warning/error), one-line summary, tool used, evidence items (command output, file path, ffprobe line), artifacts, next actions, retry safe?, verified?. 'Done' means verified with evidence.
 
@@ -2947,7 +2947,7 @@
 
 **ما هي:** سمِّ العطل ثم طبّق أصغر إصلاح له، ولا تكرر الطلب نفسه بلا تغيير. — Name the failure, apply its smallest fix, and never resend an identical failing call.
 
-**متى:** a tool call, install, probe or subagent fails
+**متى:** حين تفشل استدعاء أداة أو تثبيت أو فحص أو وكيل فرعي / a tool call, install, probe or subagent fails
 
 **كيف:** STALE_STATE → re-probe. BAD_TOOL_ARGS → read the schema, fix once, never resend identical arguments. PROBE_ABORT → run independent probes separately. MISSING_DEP → install in isolation, then verify import and version. NEEDS_AUTH → name the key or connector. POLICY_BLOCK (403/407) → report it, no workaround. SUPPLY_CHAIN_RISK → read the source, do not run unknown installers or hooks. REGRESSION → roll back.
 
@@ -3016,7 +3016,7 @@
 
 **ما هي:** لا تستدعِ أداة تصرف رصيدًا أو تنشر أو ترسل أو تدفع دون نية واضحة من المستخدم. — Never call a tool that spends credits, publishes, sends or pushes without clear user intent.
 
-**متى:** generation tools with credits, publishing, posting, emails or messages, git push, deploys, deletes
+**متى:** عند أدوات التوليد ذات الأرصدة، والنشر، والتغريد، والبريد أو الرسائل، وgit push، والنشر البرمجي، والحذف / generation tools with credits, publishing, posting, emails or messages, git push, deploys, deletes
 
 **كيف:** Before the call, state what it will do, the cost if known (quote or balance tools first), and whether it can be undone. Get a yes, or rely on intent the user already stated. Browsing a catalog is not permission to generate. Prefer a free local route (ffmpeg, Canvas, Piper) when it meets the brief. Log the receipt afterwards.
 

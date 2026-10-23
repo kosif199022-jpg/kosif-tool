@@ -20,7 +20,7 @@
 
 #### API-01 · مجموعة طلبات كملفات نصية في git · Author an API collection as git-tracked Bru files · ✅ مُثبت هنا / proven here
 - **ماذا / what:** اكتب كل طلب API كملف ‎.bru نصي (طريقة، رابط، ترويسات، جسم، مصادقة، تأكيدات، اختبارات) داخل مجلد مع bruno.json، فيُراجَع ويُدار بالإصدارات مثل الكود. — Each request is a plain-text .bru file in a folder with bruno.json; reviewable and versioned like code, offline, no account.
-- **متى أستخدمها / when:** building or documenting an HTTP API; replacing a Postman/Insomnia collection with a git-native one
+- **متى أستخدمها / when:** عند بناء API من نوع HTTP أو توثيقه، أو استبدال مجموعة Postman/Insomnia بمجموعة أصلية في git / building or documenting an HTTP API; replacing a Postman/Insomnia collection with a git-native one
 - **كيف / how:** Create bruno.json + <name>.bru files (meta/get|post/headers/body/auth/assert/tests blocks). Verified here: a 6-request owned collection ran 6/6.
 - **تثبيت / install:** `npm i -g @usebruno/cli@4.2.1  (Bruno MIT; desktop app optional)`
 - **يحتاج / needs:** [`npm:bruno`](../requirements.md#req-npm-bruno)
@@ -30,7 +30,7 @@
 
 #### API-02 · تشغيل المجموعة كاختبارات قبول · Run a collection as automated acceptance tests · ✅ مُثبت هنا / proven here
 - **ماذا / what:** شغّل المجموعة كلها أو مجلدًا أو طلبًا واحدًا من سطر الأوامر مقابل بيئة مسماة؛ كل تأكيد واختبار يُحسب ويُلخَّص. — Run the whole collection, a folder, or one request against a named environment; assertions and tests are counted and summarised.
-- **متى أستخدمها / when:** CI, pre-deploy checks, regression on an API you own or may test
+- **متى أستخدمها / when:** في CI والفحوص قبل النشر واختبار الانحدار على API تملكه أو يحق لك اختباره / CI, pre-deploy checks, regression on an API you own or may test
 - **كيف / how:** `bru run --env local`. Verified here: 6/6 requests, 8/8 assertions, 3/3 tests passed.
 - **تثبيت / install:** `npm i -g @usebruno/cli@4.2.1  (Bruno MIT; desktop app optional)`
 - **يحتاج / needs:** [`npm:bruno`](../requirements.md#req-npm-bruno)
@@ -40,7 +40,7 @@
 
 #### API-03 · تأكيدات تعريفية على الاستجابة · Declarative response assertions · ✅ مُثبت هنا / proven here
 - **ماذا / what:** تأكيدات بصيغة `res.status: eq 200` و`res.body.count: gte 1` و`res.responseTime: lt 2000` دون كتابة كود. — Declarative assert block on status, body paths and response time, no code.
-- **متى أستخدمها / when:** quick contract checks on a response
+- **متى أستخدمها / when:** عند الفحوص السريعة لعقد الاستجابة / quick contract checks on a response
 - **كيف / how:** assert { res.status: eq 200 ... }. Verified here: 8/8 assertions passed.
 - **تثبيت / install:** `npm i -g @usebruno/cli@4.2.1  (Bruno MIT; desktop app optional)`
 - **يحتاج / needs:** [`npm:bruno`](../requirements.md#req-npm-bruno)
@@ -50,7 +50,7 @@
 
 #### API-04 · اختبارات Chai على الاستجابة · Chai-style tests on the response · ✅ مُثبت هنا / proven here
 - **ماذا / what:** اكتب اختبارات بـ `test(...)` و`expect(res.getBody())...` بأسلوب Chai لمنطق أعقد من التأكيدات. — JavaScript test() blocks with Chai expect() for logic beyond simple asserts.
-- **متى أستخدمها / when:** validating shapes, loops over arrays, conditional checks
+- **متى أستخدمها / when:** عند التحقق من الأشكال، والمرور على المصفوفات، والفحوص الشرطية / validating shapes, loops over arrays, conditional checks
 - **كيف / how:** tests { test('...', () => expect(res.getStatus()).to.equal(200)) }. Verified here: 3/3 tests, including a loop asserting every item's keys and non-negative price.
 - **تثبيت / install:** `npm i -g @usebruno/cli@4.2.1  (Bruno MIT; desktop app optional)`
 - **يحتاج / needs:** [`npm:bruno`](../requirements.md#req-npm-bruno)
@@ -60,7 +60,7 @@
 
 #### API-05 · تسلسل الطلبات بحفظ المتغيرات · Request chaining via saved variables · ✅ مُثبت هنا / proven here
 - **ماذا / what:** احفظ قيمة من استجابة (رمز دخول، معرّف منشأ) بـ `bru.setVar` في سكربت ما بعد الاستجابة، واستخدمها في الطلبات التالية. — Save a value (token, created id) with bru.setVar in a post-response script and use it in later requests.
-- **متى أستخدمها / when:** login then authenticated calls; create then read-back
+- **متى أستخدمها / when:** عند تسجيل الدخول ثم الاستدعاءات الموثقة، أو الإنشاء ثم القراءة للتحقق / login then authenticated calls; create then read-back
 - **كيف / how:** script:post-response { bru.setVar('token', res.body.token) }. Verified here: login→list→create→get-by-id chained through a saved token and createdId.
 - **تثبيت / install:** `npm i -g @usebruno/cli@4.2.1  (Bruno MIT; desktop app optional)`
 - **يحتاج / needs:** [`npm:bruno`](../requirements.md#req-npm-bruno)
@@ -70,7 +70,7 @@
 
 #### API-06 · المصادقة: Bearer وBasic وOAuth2 · Auth: Bearer, Basic, OAuth 2.0 and more · ✅ مُثبت هنا / proven here
 - **ماذا / what:** اضبط المصادقة لكل طلب: Bearer وBasic وDigest وNTLM وAPI key وAWS Signature وOAuth 1.0/2.0 (رموز التفويض والاعتماد وكلمة المرور). — Per-request auth: Bearer, Basic, Digest, NTLM, API key, AWS Signature, OAuth 1.0/2.0 grant types.
-- **متى أستخدمها / when:** calling protected endpoints
+- **متى أستخدمها / when:** عند استدعاء نقاط نهاية محمية / calling protected endpoints
 - **كيف / how:** auth:bearer { token: {{token}} } and an OAuth2 config block. Verified here: Bearer with a chained token on three requests; other modes documented at https://docs.usebruno.com/auth/overview.
 - **تثبيت / install:** `npm i -g @usebruno/cli@4.2.1  (Bruno MIT; desktop app optional)`
 - **يحتاج / needs:** [`key:unspecified`](../requirements.md#req-key-unspecified) · [`npm:bruno`](../requirements.md#req-npm-bruno)
@@ -80,7 +80,7 @@
 
 #### API-07 · متغيرات على مستويات متعددة · Variables at every scope · ✅ مُثبت هنا / proven here
 - **ماذا / what:** متغيرات البيئة والعامة والمجموعة والمجلد والطلب ووقت التشغيل، مع استيفاء `{{var}}` في الروابط والأجسام. — Environment, global, collection, folder, request and runtime variables with {{var}} interpolation in URLs and bodies.
-- **متى أستخدمها / when:** reusing a base URL, tokens, test data across requests
+- **متى أستخدمها / when:** عند إعادة استخدام عنوان أساسي ورموز وبيانات اختبار عبر الطلبات / reusing a base URL, tokens, test data across requests
 - **كيف / how:** environments/<env>.bru vars{} + bru.setVar/getVar. Verified here: baseUrl and user from the env file, token and createdId at runtime.
 - **تثبيت / install:** `npm i -g @usebruno/cli@4.2.1  (Bruno MIT; desktop app optional)`
 - **يحتاج / needs:** [`npm:bruno`](../requirements.md#req-npm-bruno)
@@ -90,7 +90,7 @@
 
 #### API-08 · الأسرار خارج الملفات · Secrets kept out of the files · ✅ مُثبت هنا / proven here
 - **ماذا / what:** عرّف متغيرًا سرّيًا في `vars:secret`، ومرّر قيمته بـ `--env-var` أو من ملف ‎.env أو خزنة (HashiCorp/AWS/Azure/GCP)؛ يُحجب في التقارير. — Declare a secret var, pass its value via --env-var or a .env/secret vault; masked in reports.
-- **متى أستخدمها / when:** passwords, API keys that must not be committed
+- **متى أستخدمها / when:** عند كلمات المرور ومفاتيح API التي يجب ألا تُودَع في المستودع / passwords, API keys that must not be committed
 - **كيف / how:** vars:secret [ password ] + `--env-var password=...`. Verified here: the password stayed out of the files and was passed at run time.
 - **تثبيت / install:** `npm i -g @usebruno/cli@4.2.1  (Bruno MIT; desktop app optional)`
 - **يحتاج / needs:** [`npm:bruno`](../requirements.md#req-npm-bruno)
@@ -100,7 +100,7 @@
 
 #### API-09 · سكربتات ما قبل وبعد الطلب · Pre-request and post-response scripts · ✅ مُثبت هنا / proven here
 - **ماذا / what:** نفّذ JavaScript قبل الطلب (تجهيز بيانات) وبعده (استخراج، تحقق) عبر واجهة `bru`/`req`/`res` في صندوق آمن (safe) أو تطويري (developer) للحزم الخارجية. — Run JS before (set up data) and after (extract, verify) each request via the bru/req/res API in a safe or developer sandbox.
-- **متى أستخدمها / when:** dynamic bodies, extracting values, conditional flow
+- **متى أستخدمها / when:** عند الأجسام الديناميكية واستخراج القيم والتدفق الشرطي / dynamic bodies, extracting values, conditional flow
 - **كيف / how:** script:pre-request / script:post-response. Verified here: a pre-request default for name/price and a post-response capture of the created id.
 - **تثبيت / install:** `npm i -g @usebruno/cli@4.2.1  (Bruno MIT; desktop app optional)`
 - **يحتاج / needs:** [`npm:bruno`](../requirements.md#req-npm-bruno)
@@ -110,7 +110,7 @@
 
 #### API-10 · تشغيل مدفوع بالبيانات من CSV/JSON · Data-driven runs from CSV/JSON · ✅ مُثبت هنا / proven here
 - **ماذا / what:** كرّر طلبًا أو مجموعة على كل صف من ملف CSV أو JSON (تسلسليًا أو بالتوازي) لاختبار حالات كثيرة. — Iterate a request or collection over each row of a CSV/JSON data file, sequentially or in parallel.
-- **متى أستخدمها / when:** testing many inputs, fixture-driven suites
+- **متى أستخدمها / when:** عند اختبار مدخلات كثيرة وحزم تعتمد على بيانات ثابتة / testing many inputs, fixture-driven suites
 - **كيف / how:** `bru run ... --csv-file-path data.csv`. Verified here: 3 CSV rows each created a distinct item (فيديو إعلان، موشن شعار، ريل دعاء).
 - **تثبيت / install:** `npm i -g @usebruno/cli@4.2.1  (Bruno MIT; desktop app optional)`
 - **يحتاج / needs:** [`npm:bruno`](../requirements.md#req-npm-bruno)
@@ -120,7 +120,7 @@
 
 #### API-11 · تقارير JSON وJUnit وHTML · JSON, JUnit and HTML reports · ✅ مُثبت هنا / proven here
 - **ماذا / what:** اكتب نتائج التشغيل بصيغة JSON (للبرمجة) أو JUnit (لأنظمة CI) أو HTML (للمراجعة). — Emit run results as JSON, JUnit XML (for CI dashboards) or a standalone HTML page.
-- **متى أستخدمها / when:** CI pipelines, shareable run records
+- **متى أستخدمها / when:** عند خطوط CI وسجلات التشغيل القابلة للمشاركة / CI pipelines, shareable run records
 - **كيف / how:** `--reporter-json/--reporter-junit/--reporter-html`. Verified here: all three written; JUnit parsed to a valid testsuite.
 - **تثبيت / install:** `npm i -g @usebruno/cli@4.2.1  (Bruno MIT; desktop app optional)`
 - **يحتاج / needs:** [`npm:bruno`](../requirements.md#req-npm-bruno)
@@ -130,7 +130,7 @@
 
 #### API-12 · بوابة فشل لخط CI · CI failure gate · ✅ مُثبت هنا / proven here
 - **ماذا / what:** يرجع رمز خروج غير صفري عند فشل أي طلب أو اختبار أو تأكيد، و`--bail` يوقف عند أول فشل، فيكسر خط CI بوضوح. — Non-zero exit on any failed request/test/assertion; --bail stops at the first failure, failing the pipeline.
-- **متى أستخدمها / when:** gating a deploy on API health
+- **متى أستخدمها / when:** عند ربط نشر ما بسلامة الـAPI / gating a deploy on API health
 - **كيف / how:** `bru run ... --bail`. Verified here: a wrong password returned exit code 1.
 - **تثبيت / install:** `npm i -g @usebruno/cli@4.2.1  (Bruno MIT; desktop app optional)`
 - **يحتاج / needs:** [`npm:bruno`](../requirements.md#req-npm-bruno)
@@ -140,7 +140,7 @@
 
 #### API-13 · استيراد OpenAPI إلى مجموعة · Import OpenAPI into a collection · ✅ مُثبت هنا / proven here
 - **ماذا / what:** حوّل مواصفة OpenAPI 3 / Swagger 2 (ملف أو رابط) إلى مجموعة ‎.bru مجمّعة حسب الوسوم أو المسار. — Convert an OpenAPI 3/Swagger 2 spec (file or URL) into a .bru collection grouped by tags or path.
-- **متى أستخدمها / when:** bootstrapping tests from an existing API spec
+- **متى أستخدمها / when:** عند بدء الاختبارات من مواصفة API موجودة / bootstrapping tests from an existing API spec
 - **كيف / how:** `bru import openapi -s api.yaml -o out`. Verified here: our openapi.yaml became 10 .bru files under auth/items/system.
 - **تثبيت / install:** `npm i -g @usebruno/cli@4.2.1  (Bruno MIT; desktop app optional)`
 - **يحتاج / needs:** [`npm:bruno`](../requirements.md#req-npm-bruno)
@@ -150,7 +150,7 @@
 
 #### API-14 · توليد توثيق HTML للـAPI · Generate standalone HTML API docs · ✅ مُثبت هنا / proven here
 - **ماذا / what:** ولّد صفحة HTML مستقلة توثّق المجموعة وطلباتها وبيئاتها. — Generate a self-contained HTML documentation page for the collection.
-- **متى أستخدمها / when:** sharing API docs without a service
+- **متى أستخدمها / when:** عند مشاركة توثيق الـAPI دون خدمة / sharing API docs without a service
 - **كيف / how:** `bru docs generate -o docs.html --all-envs`. Verified here: an HTML page was produced.
 - **تثبيت / install:** `npm i -g @usebruno/cli@4.2.1  (Bruno MIT; desktop app optional)`
 - **يحتاج / needs:** [`npm:bruno`](../requirements.md#req-npm-bruno)
@@ -160,7 +160,7 @@
 
 #### API-15 · تحويل Postman وInsomnia · Convert Postman and Insomnia collections · ✅ مُثبت هنا / proven here
 - **ماذا / what:** حوّل مجموعة Postman أو Insomnia إلى Bruno برمجيًا، مع ترجمة `pm.*` إلى `bru.*`. — Convert a Postman or Insomnia collection to Bruno in code, translating pm.* scripts to bru.*.
-- **متى أستخدمها / when:** migrating off Postman/Insomnia
+- **متى أستخدمها / when:** عند الانتقال من Postman/Insomnia / migrating off Postman/Insomnia
 - **كيف / how:** `@usebruno/converters` postmanToBruno()/insomniaToBruno(). Verified here: a Postman collection converted with pm.test/pm.response/pm.environment.set translated to bru.* and 0 issues.
 - **تثبيت / install:** `npm i -g @usebruno/cli@4.2.1  (Bruno MIT; desktop app optional)`
 - **يحتاج / needs:** [`npm:bruno`](../requirements.md#req-npm-bruno)
@@ -170,7 +170,7 @@
 
 #### API-16 · بروتوكولات متعددة · REST, GraphQL, gRPC, WebSocket, SOAP · 📦 بأمر تثبيت / one install
 - **ماذا / what:** ليس REST فقط: Bruno يدعم طلبات GraphQL (مع متغيرات وباني استعلام) وgRPC (ملفات proto وبث) وWebSocket (أنواع رسائل) وSOAP وSSE. — Beyond REST: GraphQL (variables, query builder), gRPC (proto files, streaming), WebSocket (message types), SOAP and Server-Sent Events.
-- **متى أستخدمها / when:** testing a non-REST API
+- **متى أستخدمها / when:** عند اختبار API غير REST / testing a non-REST API
 - **كيف / how:** Author the request with its type; most run from the desktop app, REST/GraphQL also from the CLI. Docs: https://docs.usebruno.com/send-requests/overview.
 - **تثبيت / install:** `npm i -g @usebruno/cli@4.2.1  (Bruno MIT; desktop app optional)`
 - **يحتاج / needs:** [`npm:bruno`](../requirements.md#req-npm-bruno)
@@ -180,7 +180,7 @@
 
 #### API-17 · استيراد WSDL · Import a WSDL (SOAP) definition · 📦 بأمر تثبيت / one install
 - **ماذا / what:** حوّل تعريف WSDL إلى مجموعة Bruno لاختبار خدمات SOAP. — Convert a WSDL definition into a Bruno collection for SOAP services.
-- **متى أستخدمها / when:** testing a legacy SOAP service
+- **متى أستخدمها / when:** عند اختبار خدمة SOAP قديمة / testing a legacy SOAP service
 - **كيف / how:** `bru import wsdl -s service.wsdl -o out`. Documented at https://docs.usebruno.com/converters/wsdl-to-bruno.
 - **تثبيت / install:** `npm i -g @usebruno/cli@4.2.1  (Bruno MIT; desktop app optional)`
 - **يحتاج / needs:** [`npm:bruno`](../requirements.md#req-npm-bruno)
@@ -190,7 +190,7 @@
 
 #### API-18 · خوادم محاكاة من مواصفة أو أمثلة · Mock servers from a spec or saved examples · 🔑 مفتاح أو خدمة / needs key or service
 - **ماذا / what:** شغّل خادم HTTP وهميًا محليًا يرد من أمثلة الاستجابات المحفوظة أو من مواصفة OpenAPI، للتطوير قبل جاهزية الخلفية. — Run a local mock HTTP server that replies from saved response examples or an OpenAPI spec.
-- **متى أستخدمها / when:** front-end work before the backend is ready
+- **متى أستخدمها / when:** عند العمل على الواجهة قبل جاهزية الخلفية / front-end work before the backend is ready
 - **كيف / how:** Bruno desktop app → Mock Servers (Beta). Runs from the app, not the CLI; CORS on, request log of the last 500. Docs: https://docs.usebruno.com/mock-servers/overview.
 - **تثبيت / install:** `npm i -g @usebruno/cli@4.2.1  (Bruno MIT; desktop app optional)`
 - **يحتاج / needs:** [`npm:bruno`](../requirements.md#req-npm-bruno) · [`key:unspecified`](../requirements.md#req-key-unspecified)
@@ -200,7 +200,7 @@
 
 #### API-19 · تعاون عبر git بلا سحابة · Git-native collaboration, no cloud · 📄 موصوف / documented only
 - **ماذا / what:** لأن المجموعة ملفات نصية، التعاون يتم عبر git (GitHub/GitLab/Bitbucket/Azure) بفروع ومراجعات، بلا مزامنة سحابية. — Because collections are plain files, teams collaborate through git with branches and reviews, no cloud sync.
-- **متى أستخدمها / when:** team-owned API suites in the repo
+- **متى أستخدمها / when:** عند امتلاك الفريق حزم API داخل المستودع / team-owned API suites in the repo
 - **كيف / how:** Commit the collection folder; review .bru diffs. Docs: https://docs.usebruno.com/git-integration/overview.
 - **تثبيت / install:** `npm i -g @usebruno/cli@4.2.1  (Bruno MIT; desktop app optional)`
 - **يحتاج / needs:** [`npm:bruno`](../requirements.md#req-npm-bruno)
@@ -210,7 +210,7 @@
 
 #### API-20 · مكتبات مدمجة في السكربتات · Built-in libraries in scripts · 📄 موصوف / documented only
 - **ماذا / what:** تتوفر في السكربتات مكتبات مثل jsonwebtoken وcrypto وlodash وmoment وuuid وajv دون تثبيت، مع دعم حزم npm في الوضع التطويري. — Scripts ship with libraries (jsonwebtoken, crypto-js, lodash, moment, uuid, ajv…) and can require npm packages in developer mode.
-- **متى أستخدمها / when:** signing JWTs, hashing, schema validation inside a test
+- **متى أستخدمها / when:** عند توقيع JWT أو التجزئة أو التحقق من المخطط داخل اختبار / signing JWTs, hashing, schema validation inside a test
 - **كيف / how:** require('jsonwebtoken') in a script. Docs: https://docs.usebruno.com/testing/script/inbuilt-libraries.
 - **تثبيت / install:** `npm i -g @usebruno/cli@4.2.1  (Bruno MIT; desktop app optional)`
 - **يحتاج / needs:** [`npm:bruno`](../requirements.md#req-npm-bruno)
@@ -220,7 +220,7 @@
 
 #### API-21 · إرسال طلب فرعي من سكربت · Send a sub-request from a script · 📄 موصوف / documented only
 - **ماذا / what:** أرسل طلبًا إضافيًا من داخل سكربت بـ `bru.sendRequest` (تجهيز بيانات، جلب رمز) دون إضافته للمجموعة. — Fire an extra HTTP request from inside a script with bru.sendRequest (set-up, token fetch) without adding it to the collection.
-- **متى أستخدمها / when:** a login call needed only as setup
+- **متى أستخدمها / when:** عند الحاجة إلى استدعاء تسجيل دخول للإعداد فقط / a login call needed only as setup
 - **كيف / how:** bru.sendRequest({url, method}, cb). Docs: https://docs.usebruno.com/testing/script/javascript-reference.
 - **تثبيت / install:** `npm i -g @usebruno/cli@4.2.1  (Bruno MIT; desktop app optional)`
 - **يحتاج / needs:** [`npm:bruno`](../requirements.md#req-npm-bruno)
@@ -230,7 +230,7 @@
 
 #### API-22 · صيغة OpenCollection وBru Lang · OpenCollection YAML and Bru Lang · 📄 موصوف / documented only
 - **ماذا / what:** المجموعة تُخزَّن بلغة Bru النصية أو بصيغة OpenCollection YAML المفتوحة، وكلاهما موثّق ومصمَّم للقراءة البشرية والدمج في git. — Collections persist as the Bru markup language or the open OpenCollection YAML format, both human-readable and git-friendly.
-- **متى أستخدمها / when:** understanding or generating the file format directly
+- **متى أستخدمها / when:** عند فهم صيغة الملف أو توليدها مباشرة / understanding or generating the file format directly
 - **كيف / how:** Bru tag reference and OpenCollection YAML structure at https://docs.usebruno.com/bru-lang/tag-reference.
 - **تثبيت / install:** `npm i -g @usebruno/cli@4.2.1  (Bruno MIT; desktop app optional)`
 - **يحتاج / needs:** [`npm:bruno`](../requirements.md#req-npm-bruno)
