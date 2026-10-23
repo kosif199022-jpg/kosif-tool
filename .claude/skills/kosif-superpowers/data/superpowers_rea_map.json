@@ -471,20 +471,20 @@
  },
  "counts": {
   "broken_links": 0,
-  "evals": 100,
+  "evals": 101,
   "families": 62,
   "gaps": {
    "family_without_tool": 21
   },
   "powers": 5521,
-  "py_edges": 265,
+  "py_edges": 266,
   "repo_tests": 35,
   "roles": {
    "helper": 2,
-   "registered": 131
+   "registered": 132
   },
-  "scripts": 133,
-  "tools": 149
+  "scripts": 134,
+  "tools": 150
  },
  "families": [
   {
@@ -640,7 +640,7 @@
   {
    "id": "hand-drawn-draw-on",
    "powers": 63,
-   "tools": 20
+   "tools": 21
   },
   {
    "id": "knowledge-graph",
@@ -735,7 +735,7 @@
   {
    "id": "story-direction-ideas",
    "powers": 95,
-   "tools": 12
+   "tools": 13
   },
   {
    "id": "strategy-finance",
@@ -1353,6 +1353,11 @@
    "from": "package_skill",
    "kind": "invokes",
    "to": "check_skill"
+  },
+  {
+   "from": "portrait_pipeline",
+   "kind": "imports",
+   "to": "drawing_methods"
   },
   {
    "from": "powers",
@@ -3766,7 +3771,8 @@
    "ci": false,
    "id": "drawing_methods",
    "imported_by": [
-    "drawing_council"
+    "drawing_council",
+    "portrait_pipeline"
    ],
    "path": "scripts/drawing_methods.py",
    "power_count": 0,
@@ -4405,6 +4411,21 @@
    ],
    "tools": [
     "perspective-color-lab"
+   ]
+  },
+  {
+   "ci": false,
+   "id": "portrait_pipeline",
+   "imported_by": [],
+   "path": "scripts/portrait_pipeline.py",
+   "power_count": 0,
+   "powers": [],
+   "role": "registered",
+   "tests": [
+    "evals/test_portrait_pipeline.py"
+   ],
+   "tools": [
+    "portrait-pipeline"
    ]
   },
   {
@@ -5239,20 +5260,20 @@
   "areas": {
    "(root)": 8,
    "assets": 4,
-   "data": 122,
+   "data": 123,
    "dua-wednesday": 10,
-   "evals": 93,
+   "evals": 94,
    "examples": 12,
    "montage-pro": 2,
    "proofs": 239,
-   "references": 222,
+   "references": 223,
    "resources": 3,
    "schemas": 5,
-   "scripts": 164,
+   "scripts": 165,
    "templates": 16,
    "vendor": 76
   },
-  "bytes": 57000385,
+  "bytes": 57106534,
   "extensions": {
    "(none)": 8,
    ".bru": 7,
@@ -5260,17 +5281,17 @@
    ".html": 22,
    ".jpg": 23,
    ".js": 14,
-   ".json": 178,
-   ".md": 337,
+   ".json": 179,
+   ".md": 338,
    ".mjs": 9,
    ".png": 6,
-   ".py": 279,
+   ".py": 281,
    ".sh": 5,
    ".ttf": 14,
    ".txt": 54,
    ".woff2": 8
   },
-  "files": 976,
+  "files": 980,
   "symlinks": 0
  }
 }
