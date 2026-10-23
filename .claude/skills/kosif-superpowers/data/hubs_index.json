@@ -1,6 +1,6 @@
 {
  "schema": "kosif.hubs-index.v1",
- "atoms": 5506,
+ "atoms": 5512,
  "superpowers": 455,
  "hubs": [
   {
@@ -172,21 +172,21 @@
     "ابتكار"
    ],
    "superpowers": [
-    "SP-0021",
+    "SP-0022",
     "SP-0033",
     "SP-0143",
+    "SP-0034",
     "SP-0009",
-    "SP-0016",
+    "SP-0017",
     "SP-0144",
-    "SP-0035",
     "SP-0012",
     "SP-0005",
     "SP-0137",
-    "SP-0022",
+    "SP-0023",
     "SP-0138",
     "SP-0139",
     "SP-0013",
-    "SP-0023",
+    "SP-0024",
     "SP-0140",
     "SP-0010",
     "SP-0141",
@@ -194,16 +194,17 @@
     "SP-0006",
     "SP-0014",
     "SP-0015",
-    "SP-0034",
+    "SP-0016",
+    "SP-0035",
     "SP-0007",
-    "SP-0024",
-    "SP-0011",
+    "SP-0025",
     "SP-0036",
+    "SP-0011",
     "SP-0008"
    ],
    "top": [
     {
-     "id": "SP-0021",
+     "id": "SP-0022",
      "name_ar": "سلّم مستويات التفكير L0–L6",
      "name_en": "Cognition ladder L0–L6",
      "size": 20,
@@ -214,9 +215,9 @@
      "id": "SP-0033",
      "name_ar": "قوالب حسب نوع البرومبت",
      "name_en": "Prompt templates by kind",
-     "size": 30,
+     "size": 32,
      "best": "proven",
-     "ready_now": 5
+     "ready_now": 6
     },
     {
      "id": "SP-0143",
@@ -227,6 +228,14 @@
      "ready_now": 4
     },
     {
+     "id": "SP-0034",
+     "name_ar": "اطلب أي أسلوب بصري بالاسم من مكتبة 586 أسلوبًا",
+     "name_en": "Ask for any visual style by name from a 586-style library",
+     "size": 4,
+     "best": "ready",
+     "ready_now": 3
+    },
+    {
      "id": "SP-0009",
      "name_ar": "سكامبر (SCAMPER)",
      "name_en": "SCAMPER",
@@ -235,7 +244,7 @@
      "ready_now": 2
     },
     {
-     "id": "SP-0016",
+     "id": "SP-0017",
      "name_ar": "خطة تسليم بإيصال",
      "name_en": "Delivery plan with a receipt",
      "size": 13,
@@ -251,18 +260,10 @@
      "ready_now": 1
     },
     {
-     "id": "SP-0035",
-     "name_ar": "اختبار A/B للبرومبت قبل إعلان التحسن",
-     "name_en": "Prompt A/B eval before claiming \"better\"",
-     "size": 3,
-     "best": "ready",
-     "ready_now": 1
-    },
-    {
      "id": "SP-0012",
      "name_ar": "خريطة أصحاب المصلحة",
      "name_en": "Systems map of stakeholders",
-     "size": 48,
+     "size": 43,
      "best": "documented",
      "ready_now": 0
     },
@@ -283,7 +284,7 @@
      "ready_now": 0
     },
     {
-     "id": "SP-0022",
+     "id": "SP-0023",
      "name_ar": "قائمة المرحلة صفر (12 وحدة)",
      "name_en": "Stage-0 checklist (12 modules)",
      "size": 16,
@@ -299,14 +300,14 @@
      "ready_now": 0
     }
    ],
-   "powers": 323,
+   "powers": 327,
    "status_mix": {
     "proven": 17,
-    "ready": 5,
+    "ready": 8,
     "install": 2,
-    "documented": 299
+    "documented": 300
    },
-   "ready_now": 22,
+   "ready_now": 25,
    "requires": [
     "python3",
     "claude:tools",
@@ -316,11 +317,11 @@
     "git",
     "node",
     "key:video-gen",
+    "chromium",
     "pip:pandas",
     "lean",
     "pip:sympy",
     "pip:ortools",
-    "chromium",
     "pip:duckdb",
     "npm:d3",
     "npm:react",
@@ -385,27 +386,27 @@
    "superpowers": [
     "SP-0125",
     "SP-0126",
+    "SP-0019",
     "SP-0018",
-    "SP-0017",
     "SP-0127",
     "SP-0128",
-    "SP-0019",
     "SP-0129",
+    "SP-0020",
     "SP-0130",
     "SP-0001",
     "SP-0002",
     "SP-0003",
     "SP-0004",
-    "SP-0020"
+    "SP-0021"
    ],
    "top": [
     {
      "id": "SP-0125",
      "name_ar": "أطلس القدرات للبحث والتخطيط",
      "name_en": "Capability Atlas search and planner",
-     "size": 22,
+     "size": 23,
      "best": "proven",
-     "ready_now": 20
+     "ready_now": 21
     },
     {
      "id": "SP-0126",
@@ -416,7 +417,7 @@
      "ready_now": 19
     },
     {
-     "id": "SP-0018",
+     "id": "SP-0019",
      "name_ar": "خطوط عربية قبل الرندر",
      "name_en": "Arabic font probe",
      "size": 14,
@@ -424,7 +425,7 @@
      "ready_now": 12
     },
     {
-     "id": "SP-0017",
+     "id": "SP-0018",
      "name_ar": "اعرف قبل أن تقول لا",
      "name_en": "Registry before no",
      "size": 20,
@@ -441,6 +442,14 @@
     },
     {
      "id": "SP-0128",
+     "name_ar": "مقدّر سعة الأنظمة",
+     "name_en": "System Capacity Sizer",
+     "size": 7,
+     "best": "proven",
+     "ready_now": 7
+    },
+    {
+     "id": "SP-0129",
      "name_ar": "تحليل REA لمستودعات المالك دفعةً واحدة",
      "name_en": "REA Owned-Repo Batch",
      "size": 7,
@@ -448,18 +457,10 @@
      "ready_now": 6
     },
     {
-     "id": "SP-0019",
+     "id": "SP-0020",
      "name_ar": "اقرأ قائمة أدواتك",
      "name_en": "Read your own tool list",
      "size": 6,
-     "best": "proven",
-     "ready_now": 5
-    },
-    {
-     "id": "SP-0129",
-     "name_ar": "مختبر الابتكار الهندسي",
-     "name_en": "Invention Lab Candidates",
-     "size": 5,
      "best": "proven",
      "ready_now": 5
     },
@@ -496,15 +497,15 @@
      "ready_now": 0
     }
    ],
-   "powers": 164,
+   "powers": 167,
    "status_mix": {
-    "proven": 84,
+    "proven": 87,
     "ready": 5,
     "install": 8,
     "key": 2,
     "documented": 65
    },
-   "ready_now": 89,
+   "ready_now": 92,
    "requires": [
     "python3",
     "ffmpeg",
@@ -762,14 +763,14 @@
      "ready_now": 4
     }
    ],
-   "powers": 557,
+   "powers": 558,
    "status_mix": {
     "proven": 111,
     "ready": 16,
     "install": 34,
     "key": 7,
     "seen": 16,
-    "documented": 371,
+    "documented": 372,
     "idea": 2
    },
    "ready_now": 127,
@@ -784,8 +785,8 @@
     "ffmpeg",
     "npm:hyperframes",
     "key:unspecified",
-    "npm:react",
     "gh",
+    "npm:react",
     "claude:tools",
     "os:macos",
     "npm:axe",
@@ -834,8 +835,8 @@
    ],
    "links": [
     "3d",
-    "thinking",
     "motion",
+    "thinking",
     "quality"
    ]
   },
@@ -1052,8 +1053,8 @@
    "links": [
     "motion",
     "3d",
-    "documents",
-    "software"
+    "software",
+    "documents"
    ]
   },
   {
@@ -2107,7 +2108,7 @@
    ],
    "superpowers": [
     "SP-0426",
-    "SP-0028",
+    "SP-0029",
     "SP-0427",
     "SP-0428",
     "SP-0434",
@@ -2121,7 +2122,7 @@
     "SP-0433",
     "SP-0436",
     "SP-0441",
-    "SP-0029",
+    "SP-0030",
     "SP-0437",
     "SP-0440"
    ],
@@ -2135,7 +2136,7 @@
      "ready_now": 24
     },
     {
-     "id": "SP-0028",
+     "id": "SP-0029",
      "name_ar": "CAMeL Tools: تقطيع النص العربي واستخراج الجذور والتشكيل وتحديد",
      "name_en": "CAMeL Tools: Tokenise, lemmatise, diacritise and dialect-identify Arabic text",
      "size": 19,
@@ -2525,13 +2526,12 @@
     "SP-0039",
     "SP-0037",
     "SP-0096",
-    "SP-0030",
     "SP-0031",
+    "SP-0032",
     "SP-0097",
     "SP-0098",
     "SP-0099",
-    "SP-0102",
-    "SP-0032"
+    "SP-0102"
    ],
    "top": [
     {
@@ -2583,7 +2583,7 @@
      "ready_now": 0
     },
     {
-     "id": "SP-0030",
+     "id": "SP-0031",
      "name_ar": "تصميم الأيقونات بالتشابه والإغلاق البصري",
      "name_en": "Icon design by resemblance and Gestalt closure",
      "size": 15,
@@ -2591,7 +2591,7 @@
      "ready_now": 0
     },
     {
-     "id": "SP-0031",
+     "id": "SP-0032",
      "name_ar": "مخطط أولي ومنظمات بصرية ملائمة",
      "name_en": "Low-fi wireframe and ADHD-friendly visual organizers",
      "size": 9,
@@ -2631,12 +2631,12 @@
      "ready_now": 0
     }
    ],
-   "powers": 137,
+   "powers": 136,
    "status_mix": {
     "proven": 32,
     "install": 8,
     "key": 4,
-    "documented": 93
+    "documented": 92
    },
    "ready_now": 32,
    "requires": [
@@ -2672,8 +2672,8 @@
    "links": [
     "thinking",
     "software",
-    "quality",
-    "type"
+    "type",
+    "quality"
    ]
   },
   {
@@ -2728,20 +2728,20 @@
     "SP-0355",
     "SP-0360",
     "SP-0364",
-    "SP-0025",
+    "SP-0026",
     "SP-0353",
     "SP-0356",
     "SP-0357",
     "SP-0358",
-    "SP-0026",
+    "SP-0027",
     "SP-0369",
     "SP-0065",
     "SP-0359",
     "SP-0362",
     "SP-0368",
-    "SP-0066",
     "SP-0351",
-    "SP-0027",
+    "SP-0066",
+    "SP-0028",
     "SP-0365",
     "SP-0367",
     "SP-0370"
@@ -2844,14 +2844,14 @@
      "ready_now": 5
     }
    ],
-   "powers": 482,
+   "powers": 481,
    "status_mix": {
     "proven": 94,
     "ready": 58,
     "install": 91,
     "key": 15,
     "seen": 3,
-    "documented": 216,
+    "documented": 215,
     "idea": 5
    },
    "ready_now": 152,
@@ -2869,14 +2869,14 @@
     "pip:faster-whisper",
     "npm:gsap",
     "imagemagick",
-    "git",
     "claude:tools",
     "npm:three",
     "fonts:arabic",
     "npm:lottie",
+    "git",
     "pip:hypothesis",
-    "network",
     "gitleaks",
+    "network",
     "pip:opencv",
     "pip:fonttools",
     "pip:librosa",
@@ -2889,7 +2889,6 @@
     "pip:semgrep",
     "trivy",
     "mcp:github",
-    "gh",
     "pip:higgsfield",
     "pip:scipy",
     "npm:animejs",
@@ -3167,9 +3166,9 @@
     "pip:higgsfield",
     "npm:gsap",
     "npm:hyperframes",
+    "imagemagick",
     "pip:chromadb",
     "npm:axe",
-    "imagemagick",
     "key:video-gen",
     "node"
    ],

@@ -22,12 +22,12 @@
 
 | الحالة | العدد | المعنى |
 |---|---:|---|
-| `proven` | 84 | ✅ proven: a proof exists in the catalog; still check its requirements here before calling it ready |
+| `proven` | 87 | ✅ proven: a proof exists in the catalog; still check its requirements here before calling it ready |
 | `ready` | 5 | 🟢 ready: runnable without setup according to the catalog |
 | `documented` | 57 | 📄 documented: a described method; needs building or wiring before it runs |
 | `install` | 8 | 📦 install: needs a package, binary or model first |
 | `key` | 2 | 🔑 key: needs an account, key or paid service (ask before any spend) |
-| **المجموع** | **156** | |
+| **المجموع** | **159** | |
 
 ## الأدوات القابلة للتشغيل / runnable tools
 
@@ -45,7 +45,7 @@
 | `catalog-evidence-audit` | تدقيق أدلة الكتالوج | `python3 scripts/catalog_evidence_audit.py` | tested-elsewhere |
 | `charter-ingest` | إدخال قائمة الميثاق: مجلس الخبراء 500 فهرسًا للاستشارة | `python3 scripts/charter_ingest.py roster.txt --out data/experts_500.json` | tested-here |
 | `check-skill` | فحص سلامة المهارة | `python3 scripts/check_skill.py` | untested |
-| `council` | مجلس البرو: خمسة أعضاء متعارضين وثلاث جولات وحكم بالدرجات | `python3 scripts/council.py plan "اعمل ريلز دعاء" --dir out/demo/council --options A,B,C` | tested-here |
+| `council` | مجلس البرو: خمسة متعارضين أو مجلس مناسب من 100 شخصية، ثلاث جولات وحكم بالدرجات | `python3 scripts/council.py plan "اعمل ريلز دعاء" --dir out/demo/council --options A,B,C` | tested-here |
 | `fusionforge` | FusionForge v2 لوصفات الـWorkflow المركبة داخل المشروع | `python3 scripts/fusionforge.py propose "مونتاج ريلز بترجمة عربية" --project demo_project --from-brief out/20261021-reel/brief.json` | tested-here |
 | `fusionforge-shared` | ذاكرة FusionForge المشتركة بوصفات مهارات معزولة | `python3 scripts/fusionforge_shared.py audit` | untested |
 | `github-top-repos` | متابعة أشهر 1000 مستودع | `python3 scripts/github_top_repos.py build` | tested-here |
@@ -79,7 +79,7 @@
 | العائلة | القدرات | الفصل |
 |---|---:|---|
 | `agent-orchestration` | 46 | [agent-orchestration.md](../powers/agent-orchestration.md) |
-| `runnable-tools` | 67 | [runnable-tools.md](../powers/runnable-tools.md) |
+| `runnable-tools` | 70 | [runnable-tools.md](../powers/runnable-tools.md) |
 | `self-discovery` | 43 | [self-discovery.md](../powers/self-discovery.md) |
 
 ## كل القدرات / every power
@@ -146,6 +146,9 @@
 | `TOOL-65` | الذكاء الاصطناعي في الأعمال: 9 وظائف و64 خطة عمل بخطط تشغيل لClaude | AI for business: 9 functions, 64 workflows, Claude-native gated runbooks | proven | python3, key:unspecified |
 | `TOOL-66` | مناهج مستخلصة من الكتب: التفكير الجانبي والهندسة العملية والأدلة البايزية والشخصية وفحوص المحاسبة ووضوح البرومنت | Book-distilled methods: lateral ideas, pragmatic engineering, Bayesian evidence, personality, accounting checks, prompt clarity | proven | python3 |
 | `TOOL-67` | مصحّح الامتحان الخفي التفاضلي | Differential hidden-exam scorer | proven | python3 |
+| `TOOL-68` | مجلس البرو: خمسة متعارضين أو مجلس مناسب من 100 شخصية، ثلاث جولات وحكم بالدرجات | Pro Council: five opposing members or a task-fitted council from 100 personas, three rounds, a scored verdict | proven | python3 |
+| `TOOL-69` | محرك التفكير وقوالبه | Thinking engine scaffolds | proven | python3 |
+| `TOOL-70` | مكتبة الأساليب: 586 أسلوبًا بصريًا بالاسم (86 من أطلس Futurepedia + 500 أصلي) — بحث ووصف وبرومنت وعينة وكتالوج PDF مصوّر | Style library — 586 visual styles by name (86 Futurepedia-derived + 500 original): find, describe, prompt, swatch, illustrated PDF catalog | proven | python3, chromium |
 | `SELF-05` | اقرأ قائمة أدواتك | Read your own tool list | proven | pip:higgsfield, key:graphify |
 | `SELF-06` | حمّل الأدوات المؤجلة بـToolSearch | Load deferred tools with ToolSearch | proven | claude:tools |
 | `SELF-07` | جرد خوادم MCP وتكلفتها | MCP server inventory with cost flags | proven | pip:higgsfield, key:unspecified |

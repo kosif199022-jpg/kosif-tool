@@ -15,7 +15,7 @@
    "id": "root",
    "kind": "root",
    "label": "KOSIF Superpowers",
-   "count": 5506
+   "count": 5512
   },
   {
    "id": "dom:motion",
@@ -1320,18 +1320,23 @@
    "label": "Prompt craft",
    "ar": "صناعة البرومبت",
    "prefix": "PROMPT",
-   "count": 38,
+   "count": 41,
    "proven": 1,
    "status": {
     "documented": 32,
     "proven": 1,
-    "ready": 5
+    "ready": 8
    }
   },
   {
    "id": "script:scripts/prompt_lab.py",
    "kind": "script",
    "label": "scripts/prompt_lab.py"
+  },
+  {
+   "id": "script:scripts/style_library.py",
+   "kind": "script",
+   "label": "scripts/style_library.py"
   },
   {
    "id": "script:scripts/probe_env.py",
@@ -1378,10 +1383,10 @@
    "label": "Runnable KOSIF tools",
    "ar": "الأدوات القابلة للتشغيل",
    "prefix": "TOOL",
-   "count": 67,
-   "proven": 57,
+   "count": 70,
+   "proven": 60,
    "status": {
-    "proven": 57,
+    "proven": 60,
     "ready": 5,
     "install": 5
    }
@@ -2511,6 +2516,11 @@
    "id": "test:tests/test_think.py",
    "kind": "test",
    "label": "tests/test_think.py"
+  },
+  {
+   "id": "test:tests/test_think_pro.py",
+   "kind": "test",
+   "label": "tests/test_think_pro.py"
   },
   {
    "id": "test:tests/test_think_reasoning.py",
@@ -5028,13 +5038,13 @@
    "from": "dom:craft",
    "to": "fam:prompt-craft",
    "rel": "has",
-   "w": 38
+   "w": 41
   },
   {
    "from": "fam:prompt-craft",
    "to": "req:python3",
    "rel": "needs",
-   "w": 13
+   "w": 16
   },
   {
    "from": "fam:prompt-craft",
@@ -5056,6 +5066,12 @@
   },
   {
    "from": "fam:prompt-craft",
+   "to": "req:chromium",
+   "rel": "needs",
+   "w": 1
+  },
+  {
+   "from": "fam:prompt-craft",
    "to": "req:npm:react",
    "rel": "needs",
    "w": 1
@@ -5071,6 +5087,12 @@
    "to": "script:scripts/prompt_lab.py",
    "rel": "runs",
    "w": 9
+  },
+  {
+   "from": "fam:prompt-craft",
+   "to": "script:scripts/style_library.py",
+   "rel": "runs",
+   "w": 3
   },
   {
    "from": "fam:prompt-craft",
@@ -5178,13 +5200,13 @@
    "from": "dom:build",
    "to": "fam:runnable-tools",
    "rel": "has",
-   "w": 67
+   "w": 70
   },
   {
    "from": "fam:runnable-tools",
    "to": "req:python3",
    "rel": "needs",
-   "w": 54
+   "w": 57
   },
   {
    "from": "fam:runnable-tools",
@@ -5194,13 +5216,13 @@
   },
   {
    "from": "fam:runnable-tools",
-   "to": "req:pip:pillow",
+   "to": "req:chromium",
    "rel": "needs",
-   "w": 8
+   "w": 9
   },
   {
    "from": "fam:runnable-tools",
-   "to": "req:chromium",
+   "to": "req:pip:pillow",
    "rel": "needs",
    "w": 8
   },
@@ -5232,7 +5254,7 @@
    "from": "fam:runnable-tools",
    "to": "script:scripts/hub.py",
    "rel": "runs",
-   "w": 72
+   "w": 75
   },
   {
    "from": "fam:runnable-tools",
@@ -7138,6 +7160,12 @@
   },
   {
    "from": "script:scripts/think.py",
+   "to": "script:scripts/council.py",
+   "rel": "imports",
+   "w": 1
+  },
+  {
+   "from": "script:scripts/think.py",
    "to": "script:scripts/powers.py",
    "rel": "imports",
    "w": 1
@@ -7793,6 +7821,12 @@
   {
    "from": "script:scripts/think.py",
    "to": "test:tests/test_think_intel.py",
+   "rel": "tested_by",
+   "w": 1
+  },
+  {
+   "from": "script:scripts/think.py",
+   "to": "test:tests/test_think_pro.py",
    "rel": "tested_by",
    "w": 1
   },

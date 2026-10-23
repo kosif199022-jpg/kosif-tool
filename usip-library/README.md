@@ -12,7 +12,7 @@
 
 ## ما هذه المكتبة
 
-بطاقة بروتوكول لكل قدرة في الكتالوج (5,506) ولكل أداة قابلة للتشغيل (146)، في 78 ملفًا و410,490 سطرًا تقريبًا مع هذا الفهرس. كل بطاقة تجمع سجل القدرة نفسه (ما هي، متى، كيف، التثبيت، المتطلبات، الأدلة، الرخصة) مع قواعد البروتوكول مطبّقة عليها: خانات الاستقبال (A25)، والجاهزية والشارة الصادقة (A28)، وموضعها عقدةً منمّطة في الخطة (A26)، وبوابة التحقق لنوع مخرجها (A27)، وسلم التعافي لأخطائها المرجحة (A29). القواعد العامة تتكرر عمدًا في كل بطاقة لتُقرأ البطاقة وحدها؛ والمعرفة الفريدة في سجلات الكتالوج والملاحق. حالة الكتالوج ليست حالة الجلسة: افحص قبل أي شارة.
+بطاقة بروتوكول لكل قدرة في الكتالوج (5,512) ولكل أداة قابلة للتشغيل (147)، في 78 ملفًا و410,981 سطرًا تقريبًا مع هذا الفهرس. كل بطاقة تجمع سجل القدرة نفسه (ما هي، متى، كيف، التثبيت، المتطلبات، الأدلة، الرخصة) مع قواعد البروتوكول مطبّقة عليها: خانات الاستقبال (A25)، والجاهزية والشارة الصادقة (A28)، وموضعها عقدةً منمّطة في الخطة (A26)، وبوابة التحقق لنوع مخرجها (A27)، وسلم التعافي لأخطائها المرجحة (A29). القواعد العامة تتكرر عمدًا في كل بطاقة لتُقرأ البطاقة وحدها؛ والمعرفة الفريدة في سجلات الكتالوج والملاحق. حالة الكتالوج ليست حالة الجلسة: افحص قبل أي شارة.
 
 ## بطاقات القدرات
 
@@ -24,7 +24,7 @@
 | الثري دي والمحاكاة والرندر | `particles-fluids-physics` | 77 | 5,293 | [cards/3d/particles-fluids-physics.md](cards/3d/particles-fluids-physics.md) |
 | الثري دي والمحاكاة والرندر | `texture-material` | 96 | 6,666 | [cards/3d/texture-material.md](cards/3d/texture-material.md) |
 | الوكلاء والتوجيه الذكي | `agent-orchestration` | 46 | 3,169 | [cards/agents/agent-orchestration.md](cards/agents/agent-orchestration.md) |
-| الوكلاء والتوجيه الذكي | `runnable-tools` | 67 | 4,769 | [cards/agents/runnable-tools.md](cards/agents/runnable-tools.md) |
+| الوكلاء والتوجيه الذكي | `runnable-tools` | 70 | 4,983 | [cards/agents/runnable-tools.md](cards/agents/runnable-tools.md) |
 | الوكلاء والتوجيه الذكي | `self-discovery` | 43 | 3,070 | [cards/agents/self-discovery.md](cards/agents/self-discovery.md) |
 | الصوت والموسيقى والتعليق | `audio-sync-captions` | 61 | 4,404 | [cards/audio/audio-sync-captions.md](cards/audio/audio-sync-captions.md) |
 | الصوت والموسيقى والتعليق | `music-beat-sound` | 306 | 21,436 | [cards/audio/music-beat-sound.md](cards/audio/music-beat-sound.md) |
@@ -74,7 +74,7 @@
 | التفكير والتخطيط والاستراتيجية | `creativity-engine` | 29 | 2,024 | [cards/thinking/creativity-engine.md](cards/thinking/creativity-engine.md) |
 | التفكير والتخطيط والاستراتيجية | `mental-models` | 63 | 4,414 | [cards/thinking/mental-models.md](cards/thinking/mental-models.md) |
 | التفكير والتخطيط والاستراتيجية | `planning-execution` | 12 | 820 | [cards/thinking/planning-execution.md](cards/thinking/planning-execution.md) |
-| التفكير والتخطيط والاستراتيجية | `prompt-craft` | 38 | 2,632 | [cards/thinking/prompt-craft.md](cards/thinking/prompt-craft.md) |
+| التفكير والتخطيط والاستراتيجية | `prompt-craft` | 41 | 2,840 | [cards/thinking/prompt-craft.md](cards/thinking/prompt-craft.md) |
 | التفكير والتخطيط والاستراتيجية | `strategy-finance` | 18 | 1,209 | [cards/thinking/strategy-finance.md](cards/thinking/strategy-finance.md) |
 | التفكير والتخطيط والاستراتيجية | `thinking-core` | 46 | 3,214 | [cards/thinking/thinking-core.md](cards/thinking/thinking-core.md) |
 | الخطوط والنصوص العربية واللاتينية | `arabic-language` | 22 | 1,525 | [cards/type/arabic-language.md](cards/type/arabic-language.md) |
@@ -90,13 +90,13 @@
 | `discover` | 25 | 1,298 | [tools/discover.md](tools/discover.md) |
 | `draw` | 11 | 549 | [tools/draw.md](tools/draw.md) |
 | `edit` | 13 | 661 | [tools/edit.md](tools/edit.md) |
-| `image` | 9 | 495 | [tools/image.md](tools/image.md) |
+| `image` | 10 | 550 | [tools/image.md](tools/image.md) |
 | `investigate` | 13 | 597 | [tools/investigate.md](tools/investigate.md) |
 | `local-computer` | 1 | 53 | [tools/local-computer.md](tools/local-computer.md) |
 | `maintain` | 12 | 603 | [tools/maintain.md](tools/maintain.md) |
 | `motion` | 18 | 978 | [tools/motion.md](tools/motion.md) |
 | `sources` | 18 | 904 | [tools/sources.md](tools/sources.md) |
-| `think` | 12 | 620 | [tools/think.md](tools/think.md) |
+| `think` | 12 | 634 | [tools/think.md](tools/think.md) |
 
 ## المناهج
 

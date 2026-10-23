@@ -616,12 +616,115 @@
   "id": "PROMPT-23",
   "family": "prompt-craft",
   "domain": "craft",
+  "name_ar": "اطلب أي أسلوب بصري بالاسم من مكتبة 586 أسلوبًا",
+  "name_en": "Ask for any visual style by name from a 586-style library",
+  "status": "ready",
+  "what": "مكتبة أساليب بصرية: 86 طريقة من أطلس Futurepedia معاد صياغتها و500 أسلوب أصلي في 20 مجموعة، لكل أسلوب شكل ومنطق وألوان وملمس وتكوين ووصفة برومنت. — A visual style library: 86 paraphrased Futurepedia methods plus 500 original styles in 20 groups, each with look, logic, palette, texture, composition and a prompt recipe.",
+  "when": "عايز صورة أو مشهد بأسلوب معيّن، أو تدوّر على أسلوب بالاسم أو بالوصف / A request names a visual style or asks which style fits a subject.",
+  "how": "python3 scripts/style_library.py find \"<words>\" → describe <KS-NNN|FA-NN|name> → prompt <id> --subject \"<subject>\". Treat the card as an art brief: keep the medium's surface, palette and composition on every frame, and change only the subject. The KS styles are descriptions, not produced films; say so when you hand one over.",
+  "params": "",
+  "install": "",
+  "requires": [
+   "python3"
+  ],
+  "license": "",
+  "proof": [
+   "kosif-tool/.claude/skills/kosif-superpowers/evals/test_style_library.py"
+  ],
+  "proof_scope": "repo",
+  "styles": [],
+  "tags": [
+   "style library",
+   "visual style",
+   "art style",
+   "أسلوب",
+   "أساليب",
+   "ستايل",
+   "استايل",
+   "مكتبة الأساليب",
+   "موسوعة الأساليب",
+   "futurepedia",
+   "KS"
+  ],
+  "section": "الفحص والإثبات — Check and prove",
+  "source": "KOSIF original library (data/style_library_500.json); 86 methods paraphrased from https://www.futurepedia.io/resources/ai-style-atlas/view"
+ },
+ {
+  "id": "PROMPT-24",
+  "family": "prompt-craft",
+  "domain": "craft",
+  "name_ar": "دمج أسلوبين 70/30 في برومنت واحد",
+  "name_en": "Fuse two styles 70/30 in one prompt",
+  "status": "ready",
+  "what": "أسلوب أساسي يحكم الخامة والتكوين، وأسلوب ثانٍ يضيف لمسة لون أو عنصر بنسبة 30% فقط. — One base style owns the medium and composition; a second adds about 30% accent (a colour or one motif), never more.",
+  "when": "عايز تمزج أسلوبين أو أسلوب بلمسة من غيره / Mixing two looks without losing either one's identity.",
+  "how": "python3 scripts/style_library.py prompt <base> --subject \"…\" --mix <accent>. Keep the base's surface and finishing on every frame; take from the accent only its first look cue and one palette colour. A 50/50 mix usually reads as neither.",
+  "params": "",
+  "install": "",
+  "requires": [
+   "python3"
+  ],
+  "license": "",
+  "proof": [
+   "kosif-tool/.claude/skills/kosif-superpowers/evals/test_style_library.py"
+  ],
+  "proof_scope": "repo",
+  "styles": [],
+  "tags": [
+   "style fusion",
+   "mix styles",
+   "دمج أساليب",
+   "مزج",
+   "accent",
+   "fusion"
+  ],
+  "section": "الفحص والإثبات — Check and prove",
+  "source": "KOSIF original method (extends the 85/15 fusion of style_atlas_bridge.py plan)"
+ },
+ {
+  "id": "PROMPT-25",
+  "family": "prompt-craft",
+  "domain": "craft",
+  "name_ar": "كتالوج أساليب مصوّر PDF بعينات مولّدة",
+  "name_en": "Illustrated style catalog PDF with generated swatches",
+  "status": "ready",
+  "what": "كتالوج A4 فيه اسم كل أسلوب بالعربي والإنجليزي ورقمه وعينة إجرائية أصلية، مقسوم بالمجموعات وقابل للتقسيم ملفًا لكل مجموعة. — An A4 catalog with each style's id, Arabic and English name and an original procedural swatch, grouped, optionally one PDF per group.",
+  "when": "عايز تشوف الأساليب كلها وتختار منها، أو ملف PDF للأساليب / Someone wants to browse and pick styles visually.",
+  "how": "python3 scripts/style_library.py catalog --out <new dir> --pdf <file.pdf> [--split-groups]. Needs node + Playwright Chromium; without them the HTML catalog with SVG swatches still works. Swatches show palette, texture and composition only; never present them as finished artwork.",
+  "params": "",
+  "install": "",
+  "requires": [
+   "python3",
+   "chromium"
+  ],
+  "license": "",
+  "proof": [
+   "kosif-tool/.claude/skills/kosif-superpowers/evals/test_style_library.py"
+  ],
+  "proof_scope": "repo",
+  "styles": [],
+  "tags": [
+   "style catalog",
+   "pdf",
+   "كتالوج",
+   "ملف بي دي اف",
+   "عينات",
+   "swatches",
+   "contact sheet"
+  ],
+  "section": "الفحص والإثبات — Check and prove",
+  "source": "KOSIF original tool"
+ },
+ {
+  "id": "PROMPT-26",
+  "family": "prompt-craft",
+  "domain": "craft",
   "name_ar": "برومبت يبدأ بالتوقيع",
   "name_en": "Signature-first prompt",
   "status": "documented",
   "what": "اكتب أولًا الحقول الداخلة والخارجة بأسمائها وأنواعها وجملة قصد واحدة، ثم النثر. — Declare the named input and output fields with types and a one-line intent before any prose.",
   "when": "برومبت يتكرر استعماله أو يغذي كودًا / a prompt that is reused or feeds code",
-  "how": "Write `question: str, context: list[str] -> answer: str, citations: list[int]` plus one sentence of intent; every output field gets a type and a check (schema, regex, range). The prose only explains what the types cannot. Swapping models then means re-testing the same signature, not rewriting the prompt. Pairs with PROMPT-24 and PROMPT-33.",
+  "how": "Write `question: str, context: list[str] -> answer: str, citations: list[int]` plus one sentence of intent; every output field gets a type and a check (schema, regex, range). The prose only explains what the types cannot. Swapping models then means re-testing the same signature, not rewriting the prompt. Pairs with PROMPT-27 and PROMPT-36.",
   "params": "",
   "install": "",
   "requires": [],
@@ -642,7 +745,7 @@
   "source": "https://github.com/stanfordnlp/dspy (MIT; signatures and modules) — method restated in our own words; data/github_top1000.json"
  },
  {
-  "id": "PROMPT-24",
+  "id": "PROMPT-27",
   "family": "prompt-craft",
   "domain": "craft",
   "name_ar": "تجميع البرومبت بمقياس",
@@ -675,7 +778,7 @@
   "source": "https://github.com/stanfordnlp/dspy (MIT; optimizers that bootstrap demonstrations) — method restated in our own words"
  },
  {
-  "id": "PROMPT-25",
+  "id": "PROMPT-28",
   "family": "prompt-craft",
   "domain": "craft",
   "name_ar": "اختيار التقنية حسب نوع الفشل",
@@ -683,7 +786,7 @@
   "status": "documented",
   "what": "لا تضف تقنية لأنها مشهورة؛ شخّص الفشل أولًا ثم اختر التقنية التي تعالجه. — Diagnose the failure first, then add only the technique that treats it.",
   "when": "برومبت يفشل ولا تعرف ماذا تضيف / a prompt fails and you do not know what to add",
-  "how": "Wrong format → schema or 2-3 examples (PROMPT-33). Arithmetic or counting errors → program-aided answer (PROMPT-27). Different answers on reruns → self-consistency vote (PROMPT-26). Missing or invented facts → retrieval with cited passages, or ask the model to list what it knows first. Loses track in long tasks → prompt chaining: split into steps with a handoff format. Needs to explore alternatives → generate several plans, score, expand the best (tree of thoughts). Needs live data or actions → reason-act loop with tools (ReAct). Repeats the same mistake across attempts → write a lesson and retry (PROMPT-28). Log the diagnosis with the change so the eval can confirm it.",
+  "how": "Wrong format → schema or 2-3 examples (PROMPT-36). Arithmetic or counting errors → program-aided answer (PROMPT-30). Different answers on reruns → self-consistency vote (PROMPT-29). Missing or invented facts → retrieval with cited passages, or ask the model to list what it knows first. Loses track in long tasks → prompt chaining: split into steps with a handoff format. Needs to explore alternatives → generate several plans, score, expand the best (tree of thoughts). Needs live data or actions → reason-act loop with tools (ReAct). Repeats the same mistake across attempts → write a lesson and retry (PROMPT-31). Log the diagnosis with the change so the eval can confirm it.",
   "params": "",
   "install": "",
   "requires": [
@@ -708,7 +811,7 @@
   "source": "https://github.com/dair-ai/Prompt-Engineering-Guide (MIT; techniques chapter, promptingguide.ai/techniques read 2026-10-23) — catalogue regrouped by failure mode in our own words"
  },
  {
-  "id": "PROMPT-26",
+  "id": "PROMPT-29",
   "family": "prompt-craft",
   "domain": "craft",
   "name_ar": "تصويت الاتساق الذاتي",
@@ -716,7 +819,7 @@
   "status": "documented",
   "what": "اطلب عدة إجابات مستقلة ثم خذ الأغلبية على الإجابة النهائية فقط، وأبلغ بنسبة الاتفاق. — Sample several independent answers, take the majority on the final answer only, and report the agreement ratio.",
   "when": "سؤال له إجابة واحدة صحيحة والنموذج يتذبذب / a question with one right answer where the model wavers",
-  "how": "Run the same prompt 5 times (temperature above 0, or 5 differently worded prompts); extract only the final answer with a fixed format; majority wins; agreement below 3/5 is reported as uncertain instead of hidden. Costs 5x: use it for decisions, not prose. The order-swapped judge (PROMPT-38) is the pairwise version.",
+  "how": "Run the same prompt 5 times (temperature above 0, or 5 differently worded prompts); extract only the final answer with a fixed format; majority wins; agreement below 3/5 is reported as uncertain instead of hidden. Costs 5x: use it for decisions, not prose. The order-swapped judge (PROMPT-41) is the pairwise version.",
   "params": "",
   "install": "",
   "requires": [],
@@ -737,7 +840,7 @@
   "source": "https://github.com/dair-ai/Prompt-Engineering-Guide (MIT; self-consistency) — restated in our own words"
  },
  {
-  "id": "PROMPT-27",
+  "id": "PROMPT-30",
   "family": "prompt-craft",
   "domain": "craft",
   "name_ar": "الإجابة عبر برنامج",
@@ -769,7 +872,7 @@
   "source": "https://github.com/dair-ai/Prompt-Engineering-Guide (MIT; program-aided language models) — restated in our own words"
  },
  {
-  "id": "PROMPT-28",
+  "id": "PROMPT-31",
   "family": "prompt-craft",
   "domain": "craft",
   "name_ar": "ذاكرة الدروس بعد الفشل",
@@ -801,7 +904,7 @@
   "source": "https://github.com/dair-ai/Prompt-Engineering-Guide (MIT; Reflexion) — restated in our own words; FusionForge lessons in scripts/fusionforge.py"
  },
  {
-  "id": "PROMPT-29",
+  "id": "PROMPT-32",
   "family": "prompt-craft",
   "domain": "craft",
   "name_ar": "ملف نمط بأقسام ثابتة",
@@ -833,7 +936,7 @@
   "source": "https://github.com/danielmiessler/Fabric (MIT; pattern structure) — method restated in our own words, no pattern text copied"
  },
  {
-  "id": "PROMPT-30",
+  "id": "PROMPT-33",
   "family": "prompt-craft",
   "domain": "craft",
   "name_ar": "ترتيب يناسب التخزين المؤقت",
@@ -863,7 +966,7 @@
   "source": "https://github.com/anthropics/anthropic-cookbook (MIT; prompt caching and long-context recipes) — restated in our own words"
  },
  {
-  "id": "PROMPT-31",
+  "id": "PROMPT-34",
   "family": "prompt-craft",
   "domain": "craft",
   "name_ar": "مصفوفة تقييم بالتأكيدات",
@@ -871,7 +974,7 @@
   "status": "ready",
   "what": "اختبر كل نسخة برومبت على نفس الحالات بتأكيدات حتمية (يحتوي، تعبير نمطي، JSON، طول) واحتفظ بالجديدة فقط إن فازت بلا تراجع. — Test every prompt variant on the same cases with deterministic assertions and keep the new one only if it wins with no regression.",
   "when": "قبل أن تقول إن البرومبت الجديد أفضل / before claiming a new prompt is better",
-  "how": "cases.json: [{id, input, assert:[{type: contains|icontains|not-contains|regex|not-regex|starts-with|max-chars|min-chars|is-json|json-keys|equals, value}]}]; outputs.json: {variant: {case_id: text}} saved from real runs. `python3 scripts/prompt_lab.py eval --cases cases.json --outputs outputs.json --baseline A` prints the pass table and keep=true only when gain > 0 and no case the baseline passed now fails. Rubric-only qualities go to an LLM judge (PROMPT-38).",
+  "how": "cases.json: [{id, input, assert:[{type: contains|icontains|not-contains|regex|not-regex|starts-with|max-chars|min-chars|is-json|json-keys|equals, value}]}]; outputs.json: {variant: {case_id: text}} saved from real runs. `python3 scripts/prompt_lab.py eval --cases cases.json --outputs outputs.json --baseline A` prints the pass table and keep=true only when gain > 0 and no case the baseline passed now fails. Rubric-only qualities go to an LLM judge (PROMPT-41).",
   "params": "",
   "install": "",
   "requires": [
@@ -898,7 +1001,7 @@
   "source": "https://github.com/promptfoo/promptfoo (MIT; declarative test cases with assertions; outside the top 1,000) — idea restated, our own code in scripts/prompt_lab.py"
  },
  {
-  "id": "PROMPT-32",
+  "id": "PROMPT-35",
   "family": "prompt-craft",
   "domain": "craft",
   "name_ar": "قالب صورة بمتغيرات وأقفال",
@@ -933,7 +1036,7 @@
   "source": "https://github.com/freestylefly/awesome-gpt-image-2 (MIT; 'prompt as code' templates) — idea restated, no template text copied"
  },
  {
-  "id": "PROMPT-33",
+  "id": "PROMPT-36",
   "family": "prompt-craft",
   "domain": "craft",
   "name_ar": "مخرجات مقيدة مع تحقق وإعادة",
@@ -964,7 +1067,7 @@
   "source": "https://github.com/567-labs/instructor (MIT), https://github.com/dottxt-ai/outlines (Apache-2.0), https://github.com/guidance-ai/guidance (MIT) — validate-and-retry idea restated in our own words"
  },
  {
-  "id": "PROMPT-34",
+  "id": "PROMPT-37",
   "family": "prompt-craft",
   "domain": "craft",
   "name_ar": "توسيع البرومبت القصير مع قفل كلمات المستخدم",
@@ -995,7 +1098,7 @@
   "source": "https://github.com/lllyasviel/Fooocus (GPL-3.0; prompt expansion) — referenced, idea restated in our own words, nothing copied"
  },
  {
-  "id": "PROMPT-35",
+  "id": "PROMPT-38",
   "family": "prompt-craft",
   "domain": "craft",
   "name_ar": "برومبت يكتب برومبت ثم يُختبر",
@@ -1025,7 +1128,7 @@
   "source": "https://github.com/dair-ai/Prompt-Engineering-Guide (MIT; meta prompting, automatic prompt engineer) — restated in our own words"
  },
  {
-  "id": "PROMPT-36",
+  "id": "PROMPT-39",
   "family": "prompt-craft",
   "domain": "craft",
   "name_ar": "فحص البرومبت الحتمي",
@@ -1059,7 +1162,7 @@
   "source": "kosif-tool/.claude/skills/kosif-superpowers/references/prompt-optimizer.md §9 (PROMPT-13, PROMPT-14) made runnable in scripts/prompt_lab.py"
  },
  {
-  "id": "PROMPT-37",
+  "id": "PROMPT-40",
   "family": "prompt-craft",
   "domain": "craft",
   "name_ar": "قوالب حسب نوع البرومبت",
@@ -1093,7 +1196,7 @@
   "source": "kosif-tool/.claude/skills/kosif-superpowers/references/prompt-optimizer.md §4 and §8 (PROMPT-03, -07, -08, -10, -11) made runnable"
  },
  {
-  "id": "PROMPT-38",
+  "id": "PROMPT-41",
   "family": "prompt-craft",
   "domain": "craft",
   "name_ar": "حَكَم مقارن بترتيب معكوس (طريقة Jev)",

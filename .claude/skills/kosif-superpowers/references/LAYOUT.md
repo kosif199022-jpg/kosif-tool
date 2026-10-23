@@ -41,7 +41,7 @@ Read first: what the skill is, the protocol, the one-file copy and the maps. Sta
 
 USIP appendices A1… and the CHANGELOG, opened only by the core's trigger table.
 
-`protocol` · 28 file(s)
+`protocol` · 29 file(s)
 
 - [references/protocol/A1-see-thinking.md](protocol/A1-see-thinking.md)
 - [references/protocol/A10-self-evolution.md](protocol/A10-self-evolution.md)
@@ -63,6 +63,7 @@ USIP appendices A1… and the CHANGELOG, opened only by the core's trigger table
 - [references/protocol/A28-capability-routing.md](protocol/A28-capability-routing.md)
 - [references/protocol/A29-failure-recovery.md](protocol/A29-failure-recovery.md)
 - [references/protocol/A3-release-bridge.md](protocol/A3-release-bridge.md)
+- [references/protocol/A30-council-100.md](protocol/A30-council-100.md)
 - [references/protocol/A33-open-source-mining-prompts.md](protocol/A33-open-source-mining-prompts.md)
 - [references/protocol/A4-fusionforge-composition.md](protocol/A4-fusionforge-composition.md)
 - [references/protocol/A5-state-receipts.md](protocol/A5-state-receipts.md)

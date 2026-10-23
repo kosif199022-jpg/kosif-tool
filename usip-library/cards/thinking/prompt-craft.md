@@ -1,4 +1,4 @@
-# `prompt-craft` — التفكير والتخطيط والاستراتيجية (38 بطاقة)
+# `prompt-craft` — التفكير والتخطيط والاستراتيجية (41 بطاقة)
 
 > مكتبة بروتوكول USIP v5.5 الكاملة، مولّدة بـ `smart_capabilities.py cards` من `data/powers/prompt-craft.json` وقواعد الملاحق A25–A29؛ لا تُحرَّر يدويًا. [الفهرس الرئيسي](../../README.md) · [فصل المجموعة](../../../.claude/skills/kosif-superpowers/references/library/thinking.md) · [النواة](../../../.claude/skills/kosif-superpowers/PROTOCOL.md)
 
@@ -26,22 +26,25 @@
 - [`PROMPT-20` اقترح أم نفّذ، أفكار أم بناء](#prompt-20--اقترح-أم-نفّذ-أفكار-أم-بناء--suggest-vs-do-ideas-vs-build)
 - [`PROMPT-21` إبقاء ملاحظات النماذج حديثة](#prompt-21--إبقاء-ملاحظات-النماذج-حديثة--keep-model-notes-fresh)
 - [`PROMPT-22` وصف مهارة يُستدعى بدقة](#prompt-22--وصف-مهارة-يُستدعى-بدقة--skill-description-that-triggers-precisely)
-- [`PROMPT-23` برومبت يبدأ بالتوقيع](#prompt-23--برومبت-يبدأ-بالتوقيع--signature-first-prompt)
-- [`PROMPT-24` تجميع البرومبت بمقياس](#prompt-24--تجميع-البرومبت-بمقياس--metric-compiled-few-shot)
-- [`PROMPT-25` اختيار التقنية حسب نوع الفشل](#prompt-25--اختيار-التقنية-حسب-نوع-الفشل--technique-picker-by-failure-mode)
-- [`PROMPT-26` تصويت الاتساق الذاتي](#prompt-26--تصويت-الاتساق-الذاتي--self-consistency-vote)
-- [`PROMPT-27` الإجابة عبر برنامج](#prompt-27--الإجابة-عبر-برنامج--program-aided-answer)
-- [`PROMPT-28` ذاكرة الدروس بعد الفشل](#prompt-28--ذاكرة-الدروس-بعد-الفشل--reflexion-lesson-memory)
-- [`PROMPT-29` ملف نمط بأقسام ثابتة](#prompt-29--ملف-نمط-بأقسام-ثابتة--pattern-file-with-fixed-sections)
-- [`PROMPT-30` ترتيب يناسب التخزين المؤقت](#prompt-30--ترتيب-يناسب-التخزين-المؤقت--cache-friendly-prompt-layout)
-- [`PROMPT-31` مصفوفة تقييم بالتأكيدات](#prompt-31--مصفوفة-تقييم-بالتأكيدات--assertion-matrix-eval)
-- [`PROMPT-32` قالب صورة بمتغيرات وأقفال](#prompt-32--قالب-صورة-بمتغيرات-وأقفال--parameterized-image-prompt-template)
-- [`PROMPT-33` مخرجات مقيدة مع تحقق وإعادة](#prompt-33--مخرجات-مقيدة-مع-تحقق-وإعادة--constrained-output-with-validate-and-retry)
-- [`PROMPT-34` توسيع البرومبت القصير مع قفل كلمات المستخدم](#prompt-34--توسيع-البرومبت-القصير-مع-قفل-كلمات-المستخدم--short-prompt-expansion-with-locked-user-words)
-- [`PROMPT-35` برومبت يكتب برومبت ثم يُختبر](#prompt-35--برومبت-يكتب-برومبت-ثم-يُختبر--meta-prompting-with-a-test-gate)
-- [`PROMPT-36` فحص البرومبت الحتمي](#prompt-36--فحص-البرومبت-الحتمي--deterministic-prompt-lint)
-- [`PROMPT-37` قوالب حسب نوع البرومبت](#prompt-37--قوالب-حسب-نوع-البرومبت--prompt-templates-by-kind)
-- [`PROMPT-38` حَكَم مقارن بترتيب معكوس (طريقة Jev)](#prompt-38--حَكَم-مقارن-بترتيب-معكوس-طريقة-jev--order-swapped-pairwise-judge-jev-method)
+- [`PROMPT-23` اطلب أي أسلوب بصري بالاسم من مكتبة 586 أسلوبًا](#prompt-23--اطلب-أي-أسلوب-بصري-بالاسم-من-مكتبة-586-أسلوبًا--ask-for-any-visual-style-by-name-from-a-586-style-library)
+- [`PROMPT-24` دمج أسلوبين 70/30 في برومنت واحد](#prompt-24--دمج-أسلوبين-7030-في-برومنت-واحد--fuse-two-styles-7030-in-one-prompt)
+- [`PROMPT-25` كتالوج أساليب مصوّر PDF بعينات مولّدة](#prompt-25--كتالوج-أساليب-مصوّر-pdf-بعينات-مولّدة--illustrated-style-catalog-pdf-with-generated-swatches)
+- [`PROMPT-26` برومبت يبدأ بالتوقيع](#prompt-26--برومبت-يبدأ-بالتوقيع--signature-first-prompt)
+- [`PROMPT-27` تجميع البرومبت بمقياس](#prompt-27--تجميع-البرومبت-بمقياس--metric-compiled-few-shot)
+- [`PROMPT-28` اختيار التقنية حسب نوع الفشل](#prompt-28--اختيار-التقنية-حسب-نوع-الفشل--technique-picker-by-failure-mode)
+- [`PROMPT-29` تصويت الاتساق الذاتي](#prompt-29--تصويت-الاتساق-الذاتي--self-consistency-vote)
+- [`PROMPT-30` الإجابة عبر برنامج](#prompt-30--الإجابة-عبر-برنامج--program-aided-answer)
+- [`PROMPT-31` ذاكرة الدروس بعد الفشل](#prompt-31--ذاكرة-الدروس-بعد-الفشل--reflexion-lesson-memory)
+- [`PROMPT-32` ملف نمط بأقسام ثابتة](#prompt-32--ملف-نمط-بأقسام-ثابتة--pattern-file-with-fixed-sections)
+- [`PROMPT-33` ترتيب يناسب التخزين المؤقت](#prompt-33--ترتيب-يناسب-التخزين-المؤقت--cache-friendly-prompt-layout)
+- [`PROMPT-34` مصفوفة تقييم بالتأكيدات](#prompt-34--مصفوفة-تقييم-بالتأكيدات--assertion-matrix-eval)
+- [`PROMPT-35` قالب صورة بمتغيرات وأقفال](#prompt-35--قالب-صورة-بمتغيرات-وأقفال--parameterized-image-prompt-template)
+- [`PROMPT-36` مخرجات مقيدة مع تحقق وإعادة](#prompt-36--مخرجات-مقيدة-مع-تحقق-وإعادة--constrained-output-with-validate-and-retry)
+- [`PROMPT-37` توسيع البرومبت القصير مع قفل كلمات المستخدم](#prompt-37--توسيع-البرومبت-القصير-مع-قفل-كلمات-المستخدم--short-prompt-expansion-with-locked-user-words)
+- [`PROMPT-38` برومبت يكتب برومبت ثم يُختبر](#prompt-38--برومبت-يكتب-برومبت-ثم-يُختبر--meta-prompting-with-a-test-gate)
+- [`PROMPT-39` فحص البرومبت الحتمي](#prompt-39--فحص-البرومبت-الحتمي--deterministic-prompt-lint)
+- [`PROMPT-40` قوالب حسب نوع البرومبت](#prompt-40--قوالب-حسب-نوع-البرومبت--prompt-templates-by-kind)
+- [`PROMPT-41` حَكَم مقارن بترتيب معكوس (طريقة Jev)](#prompt-41--حَكَم-مقارن-بترتيب-معكوس-طريقة-jev--order-swapped-pairwise-judge-jev-method)
 
 ## البطاقات / cards
 
@@ -83,7 +86,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `brief` ← المخرج `document`، والمنفّذ `method:PROMPT-01` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `anchor-gate` · `prompt-lab` · `prompt-pack` · `repo-kosif`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `anchor-gate` · `prompt-lab` · `prompt-pack` · `repo-kosif` · `style-library`.
 - مراحل النوع: الغرض والقارئ ← هيكل العناوين ← مسودة ← مراجعة الحقائق ← تحرير اللغة ← فتح الملف بصيغته ← تسليم.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -151,7 +154,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `brief` ← المخرج `document`، والمنفّذ `method:PROMPT-02` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `anchor-gate` · `prompt-lab` · `prompt-pack` · `repo-kosif`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `anchor-gate` · `prompt-lab` · `prompt-pack` · `repo-kosif` · `style-library`.
 - مراحل النوع: الغرض والقارئ ← هيكل العناوين ← مسودة ← مراجعة الحقائق ← تحرير اللغة ← فتح الملف بصيغته ← تسليم.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -219,7 +222,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `brief` ← المخرج `document`، والمنفّذ `method:PROMPT-03` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `anchor-gate` · `prompt-lab` · `prompt-pack` · `repo-kosif`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `anchor-gate` · `prompt-lab` · `prompt-pack` · `repo-kosif` · `style-library`.
 - مراحل النوع: الغرض والقارئ ← هيكل العناوين ← مسودة ← مراجعة الحقائق ← تحرير اللغة ← فتح الملف بصيغته ← تسليم.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -288,7 +291,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `brief` ← المخرج `document`، والمنفّذ `method:PROMPT-04` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `anchor-gate` · `prompt-lab` · `prompt-pack` · `repo-kosif`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `anchor-gate` · `prompt-lab` · `prompt-pack` · `repo-kosif` · `style-library`.
 - مراحل النوع: الغرض والقارئ ← هيكل العناوين ← مسودة ← مراجعة الحقائق ← تحرير اللغة ← فتح الملف بصيغته ← تسليم.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -357,7 +360,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `brief` ← المخرج `document`، والمنفّذ `method:PROMPT-05` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `anchor-gate` · `prompt-lab` · `prompt-pack` · `repo-kosif`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `anchor-gate` · `prompt-lab` · `prompt-pack` · `repo-kosif` · `style-library`.
 - مراحل النوع: الغرض والقارئ ← هيكل العناوين ← مسودة ← مراجعة الحقائق ← تحرير اللغة ← فتح الملف بصيغته ← تسليم.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -426,7 +429,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `brief` ← المخرج `document`، والمنفّذ `method:PROMPT-06` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `anchor-gate` · `prompt-lab` · `prompt-pack` · `repo-kosif`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `anchor-gate` · `prompt-lab` · `prompt-pack` · `repo-kosif` · `style-library`.
 - مراحل النوع: الغرض والقارئ ← هيكل العناوين ← مسودة ← مراجعة الحقائق ← تحرير اللغة ← فتح الملف بصيغته ← تسليم.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -493,7 +496,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `brief` ← المخرج `document`، والمنفّذ `method:PROMPT-07` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `anchor-gate` · `prompt-lab` · `prompt-pack` · `repo-kosif`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `anchor-gate` · `prompt-lab` · `prompt-pack` · `repo-kosif` · `style-library`.
 - مراحل النوع: الغرض والقارئ ← هيكل العناوين ← مسودة ← مراجعة الحقائق ← تحرير اللغة ← فتح الملف بصيغته ← تسليم.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -560,7 +563,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `brief` ← المخرج `document`، والمنفّذ `method:PROMPT-08` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `anchor-gate` · `prompt-lab` · `prompt-pack` · `repo-kosif`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `anchor-gate` · `prompt-lab` · `prompt-pack` · `repo-kosif` · `style-library`.
 - مراحل النوع: الغرض والقارئ ← هيكل العناوين ← مسودة ← مراجعة الحقائق ← تحرير اللغة ← فتح الملف بصيغته ← تسليم.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -628,7 +631,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `brief` ← المخرج `document`، والمنفّذ `method:PROMPT-09` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `anchor-gate` · `prompt-lab` · `prompt-pack` · `repo-kosif`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `anchor-gate` · `prompt-lab` · `prompt-pack` · `repo-kosif` · `style-library`.
 - مراحل النوع: الغرض والقارئ ← هيكل العناوين ← مسودة ← مراجعة الحقائق ← تحرير اللغة ← فتح الملف بصيغته ← تسليم.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -697,7 +700,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `brief` ← المخرج `document`، والمنفّذ `method:PROMPT-10` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `anchor-gate` · `prompt-lab` · `prompt-pack` · `repo-kosif`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `anchor-gate` · `prompt-lab` · `prompt-pack` · `repo-kosif` · `style-library`.
 - مراحل النوع: الغرض والقارئ ← هيكل العناوين ← مسودة ← مراجعة الحقائق ← تحرير اللغة ← فتح الملف بصيغته ← تسليم.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -768,7 +771,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `brief` ← المخرج `document`، والمنفّذ `method:PROMPT-11` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `anchor-gate` · `prompt-lab` · `prompt-pack` · `repo-kosif`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `anchor-gate` · `prompt-lab` · `prompt-pack` · `repo-kosif` · `style-library`.
 - مراحل النوع: الغرض والقارئ ← هيكل العناوين ← مسودة ← مراجعة الحقائق ← تحرير اللغة ← فتح الملف بصيغته ← تسليم.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -837,7 +840,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `brief` ← المخرج `document`، والمنفّذ `method:PROMPT-12` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `anchor-gate` · `prompt-lab` · `prompt-pack` · `repo-kosif`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `anchor-gate` · `prompt-lab` · `prompt-pack` · `repo-kosif` · `style-library`.
 - مراحل النوع: الغرض والقارئ ← هيكل العناوين ← مسودة ← مراجعة الحقائق ← تحرير اللغة ← فتح الملف بصيغته ← تسليم.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -904,7 +907,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `brief` ← المخرج `document`، والمنفّذ `method:PROMPT-13` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `anchor-gate` · `prompt-lab` · `prompt-pack` · `repo-kosif`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `anchor-gate` · `prompt-lab` · `prompt-pack` · `repo-kosif` · `style-library`.
 - مراحل النوع: الغرض والقارئ ← هيكل العناوين ← مسودة ← مراجعة الحقائق ← تحرير اللغة ← فتح الملف بصيغته ← تسليم.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -973,7 +976,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `brief` ← المخرج `document`، والمنفّذ `method:PROMPT-14` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `anchor-gate` · `prompt-lab` · `prompt-pack` · `repo-kosif`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `anchor-gate` · `prompt-lab` · `prompt-pack` · `repo-kosif` · `style-library`.
 - مراحل النوع: الغرض والقارئ ← هيكل العناوين ← مسودة ← مراجعة الحقائق ← تحرير اللغة ← فتح الملف بصيغته ← تسليم.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -1042,7 +1045,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `brief` ← المخرج `document`، والمنفّذ `method:PROMPT-15` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `anchor-gate` · `prompt-lab` · `prompt-pack` · `repo-kosif`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `anchor-gate` · `prompt-lab` · `prompt-pack` · `repo-kosif` · `style-library`.
 - مراحل النوع: الغرض والقارئ ← هيكل العناوين ← مسودة ← مراجعة الحقائق ← تحرير اللغة ← فتح الملف بصيغته ← تسليم.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -1109,7 +1112,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `brief` ← المخرج `document`، والمنفّذ `method:PROMPT-16` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `anchor-gate` · `prompt-lab` · `prompt-pack` · `repo-kosif`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `anchor-gate` · `prompt-lab` · `prompt-pack` · `repo-kosif` · `style-library`.
 - مراحل النوع: الغرض والقارئ ← هيكل العناوين ← مسودة ← مراجعة الحقائق ← تحرير اللغة ← فتح الملف بصيغته ← تسليم.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -1176,7 +1179,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `brief` ← المخرج `document`، والمنفّذ `method:PROMPT-17` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `anchor-gate` · `prompt-lab` · `prompt-pack` · `repo-kosif`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `anchor-gate` · `prompt-lab` · `prompt-pack` · `repo-kosif` · `style-library`.
 - مراحل النوع: الغرض والقارئ ← هيكل العناوين ← مسودة ← مراجعة الحقائق ← تحرير اللغة ← فتح الملف بصيغته ← تسليم.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -1245,7 +1248,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `brief` ← المخرج `document`، والمنفّذ `method:PROMPT-18` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `anchor-gate` · `prompt-lab` · `prompt-pack` · `repo-kosif`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `anchor-gate` · `prompt-lab` · `prompt-pack` · `repo-kosif` · `style-library`.
 - مراحل النوع: الغرض والقارئ ← هيكل العناوين ← مسودة ← مراجعة الحقائق ← تحرير اللغة ← فتح الملف بصيغته ← تسليم.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -1312,7 +1315,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `brief` ← المخرج `document`، والمنفّذ `method:PROMPT-19` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `anchor-gate` · `prompt-lab` · `prompt-pack` · `repo-kosif`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `anchor-gate` · `prompt-lab` · `prompt-pack` · `repo-kosif` · `style-library`.
 - مراحل النوع: الغرض والقارئ ← هيكل العناوين ← مسودة ← مراجعة الحقائق ← تحرير اللغة ← فتح الملف بصيغته ← تسليم.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -1379,7 +1382,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `brief` ← المخرج `document`، والمنفّذ `method:PROMPT-20` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `anchor-gate` · `prompt-lab` · `prompt-pack` · `repo-kosif`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `anchor-gate` · `prompt-lab` · `prompt-pack` · `repo-kosif` · `style-library`.
 - مراحل النوع: الغرض والقارئ ← هيكل العناوين ← مسودة ← مراجعة الحقائق ← تحرير اللغة ← فتح الملف بصيغته ← تسليم.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -1446,7 +1449,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `brief` ← المخرج `document`، والمنفّذ `method:PROMPT-21` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `anchor-gate` · `prompt-lab` · `prompt-pack` · `repo-kosif`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `anchor-gate` · `prompt-lab` · `prompt-pack` · `repo-kosif` · `style-library`.
 - مراحل النوع: الغرض والقارئ ← هيكل العناوين ← مسودة ← مراجعة الحقائق ← تحرير اللغة ← فتح الملف بصيغته ← تسليم.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -1474,7 +1477,7 @@
 - `PROMPT-19` أسئلة تشخيصية حسب نوع المهمة / Diagnostic questions by task type (documented)
 - `PROMPT-20` اقترح أم نفّذ، أفكار أم بناء / Suggest vs do; ideas vs build (documented)
 - `PROMPT-22` وصف مهارة يُستدعى بدقة / Skill description that triggers precisely (documented)
-- `PROMPT-23` برومبت يبدأ بالتوقيع / Signature-first prompt (documented)
+- `PROMPT-23` اطلب أي أسلوب بصري بالاسم من مكتبة 586 أسلوبًا / Ask for any visual style by name from a 586-style library (ready)
 
 ### `PROMPT-22` — وصف مهارة يُستدعى بدقة / Skill description that triggers precisely
 
@@ -1514,7 +1517,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `brief` ← المخرج `document`، والمنفّذ `method:PROMPT-22` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `anchor-gate` · `prompt-lab` · `prompt-pack` · `repo-kosif`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `anchor-gate` · `prompt-lab` · `prompt-pack` · `repo-kosif` · `style-library`.
 - مراحل النوع: الغرض والقارئ ← هيكل العناوين ← مسودة ← مراجعة الحقائق ← تحرير اللغة ← فتح الملف بصيغته ← تسليم.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -1540,10 +1543,215 @@
 
 - `PROMPT-20` اقترح أم نفّذ، أفكار أم بناء / Suggest vs do; ideas vs build (documented)
 - `PROMPT-21` إبقاء ملاحظات النماذج حديثة / Keep model notes fresh (documented)
-- `PROMPT-23` برومبت يبدأ بالتوقيع / Signature-first prompt (documented)
-- `PROMPT-24` تجميع البرومبت بمقياس / Metric-compiled few-shot (documented)
+- `PROMPT-23` اطلب أي أسلوب بصري بالاسم من مكتبة 586 أسلوبًا / Ask for any visual style by name from a 586-style library (ready)
+- `PROMPT-24` دمج أسلوبين 70/30 في برومنت واحد / Fuse two styles 70/30 in one prompt (ready)
 
-### `PROMPT-23` — برومبت يبدأ بالتوقيع / Signature-first prompt
+### `PROMPT-23` — اطلب أي أسلوب بصري بالاسم من مكتبة 586 أسلوبًا / Ask for any visual style by name from a 586-style library
+
+| الحقل | القيمة |
+|---|---|
+| العائلة | `prompt-craft` ([فصل العائلة](../../../.claude/skills/kosif-superpowers/references/powers/prompt-craft.md)) |
+| المجموعة | التفكير والتخطيط والاستراتيجية (`thinking`) |
+| نوع المخرج (A25، A27) | مستند وكتابة ومحتوى (`document`) |
+| الحالة في الكتالوج | 🟢 `ready`: جاهزة حسب الكتالوج بلا إعداد |
+| سقف التحقق قبل العمل (A27) | V2 بعد تشغيلها، وV3 بعد قياس معيار |
+| نطاق الدليل | `repo` |
+| الرخصة | غير مذكورة في السجل: تُؤكَّد من المصدر قبل التسليم |
+
+**ما هي:** مكتبة أساليب بصرية: 86 طريقة من أطلس Futurepedia معاد صياغتها و500 أسلوب أصلي في 20 مجموعة، لكل أسلوب شكل ومنطق وألوان وملمس وتكوين ووصفة برومنت. — A visual style library: 86 paraphrased Futurepedia methods plus 500 original styles in 20 groups, each with look, logic, palette, texture, composition and a prompt recipe.
+
+**متى:** عايز صورة أو مشهد بأسلوب معيّن، أو تدوّر على أسلوب بالاسم أو بالوصف / A request names a visual style or asks which style fits a subject.
+
+**كيف:** python3 scripts/style_library.py find "<words>" → describe <KS-NNN\|FA-NN\|name> → prompt <id> --subject "<subject>". Treat the card as an art brief: keep the medium's surface, palette and composition on every frame, and change only the subject. The KS styles are descriptions, not produced films; say so when you hand one over.
+
+**التثبيت:** لا خطوة تثبيت مسجلة
+
+**الوسوم:** style library · visual style · art style · أسلوب · أساليب · ستايل · استايل · مكتبة الأساليب · موسوعة الأساليب · futurepedia · KS
+
+#### 1. الاستقبال (A25)
+
+- الجمهور: افتراض مكتوب ← قارئ عام ذكي غير متخصص
+- النبرة واللهجة: افتراض مكتوب ← لغة الطلب ولهجته
+- الطول: افتراض مكتوب ← أقصر طول يحقق الغرض
+- الصيغة: افتراض مكتوب ← نص في الرد، أو مستند إن طُلب ملف
+- لا تُفترض أبدًا: مادة الإنتاج نفسها، والإذن بخطوة مدفوعة أو منشورة أو لا رجعة فيها، والهوية والحقوق.
+
+#### 2. الجاهزية والشارة (A28)
+
+- `python3` ← افحص وجوده بأمر واحد قبل كتابة الشارة
+- الوضع 1: شارة «هنا الآن» بعد الفحص، لا 🟢 الكتالوج تلقائيًا · الوضع 2: `كتالوج: 🟢 · هنا: غير مفحوص` · الوضع 3: بلا شارة ولا معرّف.
+
+#### 3. موضعها في الخطة (A26)
+
+- عقدة منمّطة: المدخل `brief` ← المخرج `document`، والمنفّذ `method:PROMPT-23` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `anchor-gate` · `prompt-lab` · `prompt-pack` · `repo-kosif` · `style-library`.
+- مراحل النوع: الغرض والقارئ ← هيكل العناوين ← مسودة ← مراجعة الحقائق ← تحرير اللغة ← فتح الملف بصيغته ← تسليم.
+- إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
+
+#### 4. بوابة التحقق (A27)
+
+- إلزامي: يحقق الغرض في أول فقرة ← قراءة الافتتاح
+- إلزامي: عربية سليمة إملاءً ونحوًا ← مراجعة سطر بسطر
+- جودة: بلا حشو ولا عبارات عامة بلا مضمون ← think.py critic
+- إلزامي: كل رقم أو اسم أو تاريخ متحقق منه ← مصدر لكل حقيقة
+- إلزامي: الملف المطلوب يُفتح فعلًا بصيغته ← فتح الملف
+- أمر الحكم في الوضع 1: `think.py qa document --answers qa.json` (PASS / FAIL / INCOMPLETE).
+
+#### 5. التعافي (A29)
+
+- `missing_dependency` (اعتمادية مفقودة، ميزانية 2): سمِّ الاعتمادية بالضبط (حزمة، برنامج، خط، نموذج) ← ثبّت محليًا في بيئة العمل إن كان مجانيًا ومسموحًا (pip --user أو venv أو npm محلي) · البديل: مسار المكتبة القياسية أو أداة أخرى من نفس المجموعة · تصعيد: تثبيت نظامي أو مدفوع أو يحتاج مفتاحًا: توقف واسأل
+- `quality_below_threshold` (جودة دون العتبة، ميزانية 3): أي معيار فشل وبكم (المقيس مقابل العتبة) ← عالج السبب الأكبر وحده ثم أعد القياس · البديل: المنهج البديل المكتوب للمرحلة في الخطة · تصعيد: معيار إلزامي لا يتحقق بعد البديل: توقف وأبلغ بالأرقام
+- `tool_error` (خطأ أداة، ميزانية 3): اقرأ آخر سطر في الخطأ ثم أول سطر من كودك فيه ← أصلح السبب المثبت وحده، ثم شغّل الاختبار المتعلق · البديل: أداة أخرى أو مسار يدوي للمرحلة نفسها · تصعيد: خطأ في أداة خارجية لا تملكها: بلّغ بإعادة الإنتاج ولا تخفه
+
+#### 6. الأدلة
+
+- `kosif-tool/.claude/skills/kosif-superpowers/evals/test_style_library.py`
+
+#### 7. قدرات قريبة في العائلة
+
+- `PROMPT-21` إبقاء ملاحظات النماذج حديثة / Keep model notes fresh (documented)
+- `PROMPT-22` وصف مهارة يُستدعى بدقة / Skill description that triggers precisely (documented)
+- `PROMPT-24` دمج أسلوبين 70/30 في برومنت واحد / Fuse two styles 70/30 in one prompt (ready)
+- `PROMPT-25` كتالوج أساليب مصوّر PDF بعينات مولّدة / Illustrated style catalog PDF with generated swatches (ready)
+
+### `PROMPT-24` — دمج أسلوبين 70/30 في برومنت واحد / Fuse two styles 70/30 in one prompt
+
+| الحقل | القيمة |
+|---|---|
+| العائلة | `prompt-craft` ([فصل العائلة](../../../.claude/skills/kosif-superpowers/references/powers/prompt-craft.md)) |
+| المجموعة | التفكير والتخطيط والاستراتيجية (`thinking`) |
+| نوع المخرج (A25، A27) | مستند وكتابة ومحتوى (`document`) |
+| الحالة في الكتالوج | 🟢 `ready`: جاهزة حسب الكتالوج بلا إعداد |
+| سقف التحقق قبل العمل (A27) | V2 بعد تشغيلها، وV3 بعد قياس معيار |
+| نطاق الدليل | `repo` |
+| الرخصة | غير مذكورة في السجل: تُؤكَّد من المصدر قبل التسليم |
+
+**ما هي:** أسلوب أساسي يحكم الخامة والتكوين، وأسلوب ثانٍ يضيف لمسة لون أو عنصر بنسبة 30% فقط. — One base style owns the medium and composition; a second adds about 30% accent (a colour or one motif), never more.
+
+**متى:** عايز تمزج أسلوبين أو أسلوب بلمسة من غيره / Mixing two looks without losing either one's identity.
+
+**كيف:** python3 scripts/style_library.py prompt <base> --subject "…" --mix <accent>. Keep the base's surface and finishing on every frame; take from the accent only its first look cue and one palette colour. A 50/50 mix usually reads as neither.
+
+**التثبيت:** لا خطوة تثبيت مسجلة
+
+**الوسوم:** style fusion · mix styles · دمج أساليب · مزج · accent · fusion
+
+#### 1. الاستقبال (A25)
+
+- الجمهور: افتراض مكتوب ← قارئ عام ذكي غير متخصص
+- النبرة واللهجة: افتراض مكتوب ← لغة الطلب ولهجته
+- الطول: افتراض مكتوب ← أقصر طول يحقق الغرض
+- الصيغة: افتراض مكتوب ← نص في الرد، أو مستند إن طُلب ملف
+- لا تُفترض أبدًا: مادة الإنتاج نفسها، والإذن بخطوة مدفوعة أو منشورة أو لا رجعة فيها، والهوية والحقوق.
+
+#### 2. الجاهزية والشارة (A28)
+
+- `python3` ← افحص وجوده بأمر واحد قبل كتابة الشارة
+- الوضع 1: شارة «هنا الآن» بعد الفحص، لا 🟢 الكتالوج تلقائيًا · الوضع 2: `كتالوج: 🟢 · هنا: غير مفحوص` · الوضع 3: بلا شارة ولا معرّف.
+
+#### 3. موضعها في الخطة (A26)
+
+- عقدة منمّطة: المدخل `brief` ← المخرج `document`، والمنفّذ `method:PROMPT-24` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `anchor-gate` · `prompt-lab` · `prompt-pack` · `repo-kosif` · `style-library`.
+- مراحل النوع: الغرض والقارئ ← هيكل العناوين ← مسودة ← مراجعة الحقائق ← تحرير اللغة ← فتح الملف بصيغته ← تسليم.
+- إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
+
+#### 4. بوابة التحقق (A27)
+
+- إلزامي: يحقق الغرض في أول فقرة ← قراءة الافتتاح
+- إلزامي: عربية سليمة إملاءً ونحوًا ← مراجعة سطر بسطر
+- جودة: بلا حشو ولا عبارات عامة بلا مضمون ← think.py critic
+- إلزامي: كل رقم أو اسم أو تاريخ متحقق منه ← مصدر لكل حقيقة
+- إلزامي: الملف المطلوب يُفتح فعلًا بصيغته ← فتح الملف
+- أمر الحكم في الوضع 1: `think.py qa document --answers qa.json` (PASS / FAIL / INCOMPLETE).
+
+#### 5. التعافي (A29)
+
+- `missing_dependency` (اعتمادية مفقودة، ميزانية 2): سمِّ الاعتمادية بالضبط (حزمة، برنامج، خط، نموذج) ← ثبّت محليًا في بيئة العمل إن كان مجانيًا ومسموحًا (pip --user أو venv أو npm محلي) · البديل: مسار المكتبة القياسية أو أداة أخرى من نفس المجموعة · تصعيد: تثبيت نظامي أو مدفوع أو يحتاج مفتاحًا: توقف واسأل
+- `quality_below_threshold` (جودة دون العتبة، ميزانية 3): أي معيار فشل وبكم (المقيس مقابل العتبة) ← عالج السبب الأكبر وحده ثم أعد القياس · البديل: المنهج البديل المكتوب للمرحلة في الخطة · تصعيد: معيار إلزامي لا يتحقق بعد البديل: توقف وأبلغ بالأرقام
+- `tool_error` (خطأ أداة، ميزانية 3): اقرأ آخر سطر في الخطأ ثم أول سطر من كودك فيه ← أصلح السبب المثبت وحده، ثم شغّل الاختبار المتعلق · البديل: أداة أخرى أو مسار يدوي للمرحلة نفسها · تصعيد: خطأ في أداة خارجية لا تملكها: بلّغ بإعادة الإنتاج ولا تخفه
+
+#### 6. الأدلة
+
+- `kosif-tool/.claude/skills/kosif-superpowers/evals/test_style_library.py`
+
+#### 7. قدرات قريبة في العائلة
+
+- `PROMPT-22` وصف مهارة يُستدعى بدقة / Skill description that triggers precisely (documented)
+- `PROMPT-23` اطلب أي أسلوب بصري بالاسم من مكتبة 586 أسلوبًا / Ask for any visual style by name from a 586-style library (ready)
+- `PROMPT-25` كتالوج أساليب مصوّر PDF بعينات مولّدة / Illustrated style catalog PDF with generated swatches (ready)
+- `PROMPT-26` برومبت يبدأ بالتوقيع / Signature-first prompt (documented)
+
+### `PROMPT-25` — كتالوج أساليب مصوّر PDF بعينات مولّدة / Illustrated style catalog PDF with generated swatches
+
+| الحقل | القيمة |
+|---|---|
+| العائلة | `prompt-craft` ([فصل العائلة](../../../.claude/skills/kosif-superpowers/references/powers/prompt-craft.md)) |
+| المجموعة | التفكير والتخطيط والاستراتيجية (`thinking`) |
+| نوع المخرج (A25، A27) | مستند وكتابة ومحتوى (`document`) |
+| الحالة في الكتالوج | 🟢 `ready`: جاهزة حسب الكتالوج بلا إعداد |
+| سقف التحقق قبل العمل (A27) | V2 بعد تشغيلها، وV3 بعد قياس معيار |
+| نطاق الدليل | `repo` |
+| الرخصة | غير مذكورة في السجل: تُؤكَّد من المصدر قبل التسليم |
+
+**ما هي:** كتالوج A4 فيه اسم كل أسلوب بالعربي والإنجليزي ورقمه وعينة إجرائية أصلية، مقسوم بالمجموعات وقابل للتقسيم ملفًا لكل مجموعة. — An A4 catalog with each style's id, Arabic and English name and an original procedural swatch, grouped, optionally one PDF per group.
+
+**متى:** عايز تشوف الأساليب كلها وتختار منها، أو ملف PDF للأساليب / Someone wants to browse and pick styles visually.
+
+**كيف:** python3 scripts/style_library.py catalog --out <new dir> --pdf <file.pdf> [--split-groups]. Needs node + Playwright Chromium; without them the HTML catalog with SVG swatches still works. Swatches show palette, texture and composition only; never present them as finished artwork.
+
+**التثبيت:** لا خطوة تثبيت مسجلة
+
+**الوسوم:** style catalog · pdf · كتالوج · ملف بي دي اف · عينات · swatches · contact sheet
+
+#### 1. الاستقبال (A25)
+
+- الجمهور: افتراض مكتوب ← قارئ عام ذكي غير متخصص
+- النبرة واللهجة: افتراض مكتوب ← لغة الطلب ولهجته
+- الطول: افتراض مكتوب ← أقصر طول يحقق الغرض
+- الصيغة: افتراض مكتوب ← نص في الرد، أو مستند إن طُلب ملف
+- لا تُفترض أبدًا: مادة الإنتاج نفسها، والإذن بخطوة مدفوعة أو منشورة أو لا رجعة فيها، والهوية والحقوق.
+
+#### 2. الجاهزية والشارة (A28)
+
+- `python3` ← افحص وجوده بأمر واحد قبل كتابة الشارة
+- `chromium` ← افحص وجوده بأمر واحد قبل كتابة الشارة
+- الوضع 1: شارة «هنا الآن» بعد الفحص، لا 🟢 الكتالوج تلقائيًا · الوضع 2: `كتالوج: 🟢 · هنا: غير مفحوص` · الوضع 3: بلا شارة ولا معرّف.
+
+#### 3. موضعها في الخطة (A26)
+
+- عقدة منمّطة: المدخل `brief` ← المخرج `document`، والمنفّذ `method:PROMPT-25` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `anchor-gate` · `prompt-lab` · `prompt-pack` · `repo-kosif` · `style-library`.
+- مراحل النوع: الغرض والقارئ ← هيكل العناوين ← مسودة ← مراجعة الحقائق ← تحرير اللغة ← فتح الملف بصيغته ← تسليم.
+- إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
+
+#### 4. بوابة التحقق (A27)
+
+- إلزامي: يحقق الغرض في أول فقرة ← قراءة الافتتاح
+- إلزامي: عربية سليمة إملاءً ونحوًا ← مراجعة سطر بسطر
+- جودة: بلا حشو ولا عبارات عامة بلا مضمون ← think.py critic
+- إلزامي: كل رقم أو اسم أو تاريخ متحقق منه ← مصدر لكل حقيقة
+- إلزامي: الملف المطلوب يُفتح فعلًا بصيغته ← فتح الملف
+- أمر الحكم في الوضع 1: `think.py qa document --answers qa.json` (PASS / FAIL / INCOMPLETE).
+
+#### 5. التعافي (A29)
+
+- `missing_dependency` (اعتمادية مفقودة، ميزانية 2): سمِّ الاعتمادية بالضبط (حزمة، برنامج، خط، نموذج) ← ثبّت محليًا في بيئة العمل إن كان مجانيًا ومسموحًا (pip --user أو venv أو npm محلي) · البديل: مسار المكتبة القياسية أو أداة أخرى من نفس المجموعة · تصعيد: تثبيت نظامي أو مدفوع أو يحتاج مفتاحًا: توقف واسأل
+- `quality_below_threshold` (جودة دون العتبة، ميزانية 3): أي معيار فشل وبكم (المقيس مقابل العتبة) ← عالج السبب الأكبر وحده ثم أعد القياس · البديل: المنهج البديل المكتوب للمرحلة في الخطة · تصعيد: معيار إلزامي لا يتحقق بعد البديل: توقف وأبلغ بالأرقام
+- `tool_error` (خطأ أداة، ميزانية 3): اقرأ آخر سطر في الخطأ ثم أول سطر من كودك فيه ← أصلح السبب المثبت وحده، ثم شغّل الاختبار المتعلق · البديل: أداة أخرى أو مسار يدوي للمرحلة نفسها · تصعيد: خطأ في أداة خارجية لا تملكها: بلّغ بإعادة الإنتاج ولا تخفه
+
+#### 6. الأدلة
+
+- `kosif-tool/.claude/skills/kosif-superpowers/evals/test_style_library.py`
+
+#### 7. قدرات قريبة في العائلة
+
+- `PROMPT-23` اطلب أي أسلوب بصري بالاسم من مكتبة 586 أسلوبًا / Ask for any visual style by name from a 586-style library (ready)
+- `PROMPT-24` دمج أسلوبين 70/30 في برومنت واحد / Fuse two styles 70/30 in one prompt (ready)
+- `PROMPT-26` برومبت يبدأ بالتوقيع / Signature-first prompt (documented)
+- `PROMPT-27` تجميع البرومبت بمقياس / Metric-compiled few-shot (documented)
+
+### `PROMPT-26` — برومبت يبدأ بالتوقيع / Signature-first prompt
 
 | الحقل | القيمة |
 |---|---|
@@ -1559,7 +1767,7 @@
 
 **متى:** برومبت يتكرر استعماله أو يغذي كودًا / a prompt that is reused or feeds code
 
-**كيف:** Write `question: str, context: list[str] -> answer: str, citations: list[int]` plus one sentence of intent; every output field gets a type and a check (schema, regex, range). The prose only explains what the types cannot. Swapping models then means re-testing the same signature, not rewriting the prompt. Pairs with PROMPT-24 and PROMPT-33.
+**كيف:** Write `question: str, context: list[str] -> answer: str, citations: list[int]` plus one sentence of intent; every output field gets a type and a check (schema, regex, range). The prose only explains what the types cannot. Swapping models then means re-testing the same signature, not rewriting the prompt. Pairs with PROMPT-27 and PROMPT-36.
 
 **التثبيت:** لا خطوة تثبيت مسجلة
 
@@ -1580,8 +1788,8 @@
 
 #### 3. موضعها في الخطة (A26)
 
-- عقدة منمّطة: المدخل `brief` ← المخرج `document`، والمنفّذ `method:PROMPT-23` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `anchor-gate` · `prompt-lab` · `prompt-pack` · `repo-kosif`.
+- عقدة منمّطة: المدخل `brief` ← المخرج `document`، والمنفّذ `method:PROMPT-26` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `anchor-gate` · `prompt-lab` · `prompt-pack` · `repo-kosif` · `style-library`.
 - مراحل النوع: الغرض والقارئ ← هيكل العناوين ← مسودة ← مراجعة الحقائق ← تحرير اللغة ← فتح الملف بصيغته ← تسليم.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -1605,12 +1813,12 @@
 
 #### 7. قدرات قريبة في العائلة
 
-- `PROMPT-21` إبقاء ملاحظات النماذج حديثة / Keep model notes fresh (documented)
-- `PROMPT-22` وصف مهارة يُستدعى بدقة / Skill description that triggers precisely (documented)
-- `PROMPT-24` تجميع البرومبت بمقياس / Metric-compiled few-shot (documented)
-- `PROMPT-25` اختيار التقنية حسب نوع الفشل / Technique picker by failure mode (documented)
+- `PROMPT-24` دمج أسلوبين 70/30 في برومنت واحد / Fuse two styles 70/30 in one prompt (ready)
+- `PROMPT-25` كتالوج أساليب مصوّر PDF بعينات مولّدة / Illustrated style catalog PDF with generated swatches (ready)
+- `PROMPT-27` تجميع البرومبت بمقياس / Metric-compiled few-shot (documented)
+- `PROMPT-28` اختيار التقنية حسب نوع الفشل / Technique picker by failure mode (documented)
 
-### `PROMPT-24` — تجميع البرومبت بمقياس / Metric-compiled few-shot
+### `PROMPT-27` — تجميع البرومبت بمقياس / Metric-compiled few-shot
 
 | الحقل | القيمة |
 |---|---|
@@ -1647,8 +1855,8 @@
 
 #### 3. موضعها في الخطة (A26)
 
-- عقدة منمّطة: المدخل `brief` ← المخرج `document`، والمنفّذ `method:PROMPT-24` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `anchor-gate` · `prompt-lab` · `prompt-pack` · `repo-kosif`.
+- عقدة منمّطة: المدخل `brief` ← المخرج `document`، والمنفّذ `method:PROMPT-27` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `anchor-gate` · `prompt-lab` · `prompt-pack` · `repo-kosif` · `style-library`.
 - مراحل النوع: الغرض والقارئ ← هيكل العناوين ← مسودة ← مراجعة الحقائق ← تحرير اللغة ← فتح الملف بصيغته ← تسليم.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -1673,12 +1881,12 @@
 
 #### 7. قدرات قريبة في العائلة
 
-- `PROMPT-22` وصف مهارة يُستدعى بدقة / Skill description that triggers precisely (documented)
-- `PROMPT-23` برومبت يبدأ بالتوقيع / Signature-first prompt (documented)
-- `PROMPT-25` اختيار التقنية حسب نوع الفشل / Technique picker by failure mode (documented)
-- `PROMPT-26` تصويت الاتساق الذاتي / Self-consistency vote (documented)
+- `PROMPT-25` كتالوج أساليب مصوّر PDF بعينات مولّدة / Illustrated style catalog PDF with generated swatches (ready)
+- `PROMPT-26` برومبت يبدأ بالتوقيع / Signature-first prompt (documented)
+- `PROMPT-28` اختيار التقنية حسب نوع الفشل / Technique picker by failure mode (documented)
+- `PROMPT-29` تصويت الاتساق الذاتي / Self-consistency vote (documented)
 
-### `PROMPT-25` — اختيار التقنية حسب نوع الفشل / Technique picker by failure mode
+### `PROMPT-28` — اختيار التقنية حسب نوع الفشل / Technique picker by failure mode
 
 | الحقل | القيمة |
 |---|---|
@@ -1694,7 +1902,7 @@
 
 **متى:** برومبت يفشل ولا تعرف ماذا تضيف / a prompt fails and you do not know what to add
 
-**كيف:** Wrong format → schema or 2-3 examples (PROMPT-33). Arithmetic or counting errors → program-aided answer (PROMPT-27). Different answers on reruns → self-consistency vote (PROMPT-26). Missing or invented facts → retrieval with cited passages, or ask the model to list what it knows first. Loses track in long tasks → prompt chaining: split into steps with a handoff format. Needs to explore alternatives → generate several plans, score, expand the best (tree of thoughts). Needs live data or actions → reason-act loop with tools (ReAct). Repeats the same mistake across attempts → write a lesson and retry (PROMPT-28). Log the diagnosis with the change so the eval can confirm it.
+**كيف:** Wrong format → schema or 2-3 examples (PROMPT-36). Arithmetic or counting errors → program-aided answer (PROMPT-30). Different answers on reruns → self-consistency vote (PROMPT-29). Missing or invented facts → retrieval with cited passages, or ask the model to list what it knows first. Loses track in long tasks → prompt chaining: split into steps with a handoff format. Needs to explore alternatives → generate several plans, score, expand the best (tree of thoughts). Needs live data or actions → reason-act loop with tools (ReAct). Repeats the same mistake across attempts → write a lesson and retry (PROMPT-31). Log the diagnosis with the change so the eval can confirm it.
 
 **التثبيت:** لا خطوة تثبيت مسجلة
 
@@ -1716,8 +1924,8 @@
 
 #### 3. موضعها في الخطة (A26)
 
-- عقدة منمّطة: المدخل `brief` ← المخرج `document`، والمنفّذ `method:PROMPT-25` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `anchor-gate` · `prompt-lab` · `prompt-pack` · `repo-kosif`.
+- عقدة منمّطة: المدخل `brief` ← المخرج `document`، والمنفّذ `method:PROMPT-28` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `anchor-gate` · `prompt-lab` · `prompt-pack` · `repo-kosif` · `style-library`.
 - مراحل النوع: الغرض والقارئ ← هيكل العناوين ← مسودة ← مراجعة الحقائق ← تحرير اللغة ← فتح الملف بصيغته ← تسليم.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -1742,12 +1950,12 @@
 
 #### 7. قدرات قريبة في العائلة
 
-- `PROMPT-23` برومبت يبدأ بالتوقيع / Signature-first prompt (documented)
-- `PROMPT-24` تجميع البرومبت بمقياس / Metric-compiled few-shot (documented)
-- `PROMPT-26` تصويت الاتساق الذاتي / Self-consistency vote (documented)
-- `PROMPT-27` الإجابة عبر برنامج / Program-aided answer (documented)
+- `PROMPT-26` برومبت يبدأ بالتوقيع / Signature-first prompt (documented)
+- `PROMPT-27` تجميع البرومبت بمقياس / Metric-compiled few-shot (documented)
+- `PROMPT-29` تصويت الاتساق الذاتي / Self-consistency vote (documented)
+- `PROMPT-30` الإجابة عبر برنامج / Program-aided answer (documented)
 
-### `PROMPT-26` — تصويت الاتساق الذاتي / Self-consistency vote
+### `PROMPT-29` — تصويت الاتساق الذاتي / Self-consistency vote
 
 | الحقل | القيمة |
 |---|---|
@@ -1763,7 +1971,7 @@
 
 **متى:** سؤال له إجابة واحدة صحيحة والنموذج يتذبذب / a question with one right answer where the model wavers
 
-**كيف:** Run the same prompt 5 times (temperature above 0, or 5 differently worded prompts); extract only the final answer with a fixed format; majority wins; agreement below 3/5 is reported as uncertain instead of hidden. Costs 5x: use it for decisions, not prose. The order-swapped judge (PROMPT-38) is the pairwise version.
+**كيف:** Run the same prompt 5 times (temperature above 0, or 5 differently worded prompts); extract only the final answer with a fixed format; majority wins; agreement below 3/5 is reported as uncertain instead of hidden. Costs 5x: use it for decisions, not prose. The order-swapped judge (PROMPT-41) is the pairwise version.
 
 **التثبيت:** لا خطوة تثبيت مسجلة
 
@@ -1784,8 +1992,8 @@
 
 #### 3. موضعها في الخطة (A26)
 
-- عقدة منمّطة: المدخل `brief` ← المخرج `document`، والمنفّذ `method:PROMPT-26` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `anchor-gate` · `prompt-lab` · `prompt-pack` · `repo-kosif`.
+- عقدة منمّطة: المدخل `brief` ← المخرج `document`، والمنفّذ `method:PROMPT-29` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `anchor-gate` · `prompt-lab` · `prompt-pack` · `repo-kosif` · `style-library`.
 - مراحل النوع: الغرض والقارئ ← هيكل العناوين ← مسودة ← مراجعة الحقائق ← تحرير اللغة ← فتح الملف بصيغته ← تسليم.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -1809,12 +2017,12 @@
 
 #### 7. قدرات قريبة في العائلة
 
-- `PROMPT-24` تجميع البرومبت بمقياس / Metric-compiled few-shot (documented)
-- `PROMPT-25` اختيار التقنية حسب نوع الفشل / Technique picker by failure mode (documented)
-- `PROMPT-27` الإجابة عبر برنامج / Program-aided answer (documented)
-- `PROMPT-28` ذاكرة الدروس بعد الفشل / Reflexion lesson memory (documented)
+- `PROMPT-27` تجميع البرومبت بمقياس / Metric-compiled few-shot (documented)
+- `PROMPT-28` اختيار التقنية حسب نوع الفشل / Technique picker by failure mode (documented)
+- `PROMPT-30` الإجابة عبر برنامج / Program-aided answer (documented)
+- `PROMPT-31` ذاكرة الدروس بعد الفشل / Reflexion lesson memory (documented)
 
-### `PROMPT-27` — الإجابة عبر برنامج / Program-aided answer
+### `PROMPT-30` — الإجابة عبر برنامج / Program-aided answer
 
 | الحقل | القيمة |
 |---|---|
@@ -1851,8 +2059,8 @@
 
 #### 3. موضعها في الخطة (A26)
 
-- عقدة منمّطة: المدخل `brief` ← المخرج `document`، والمنفّذ `method:PROMPT-27` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `anchor-gate` · `prompt-lab` · `prompt-pack` · `repo-kosif`.
+- عقدة منمّطة: المدخل `brief` ← المخرج `document`، والمنفّذ `method:PROMPT-30` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `anchor-gate` · `prompt-lab` · `prompt-pack` · `repo-kosif` · `style-library`.
 - مراحل النوع: الغرض والقارئ ← هيكل العناوين ← مسودة ← مراجعة الحقائق ← تحرير اللغة ← فتح الملف بصيغته ← تسليم.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -1877,12 +2085,12 @@
 
 #### 7. قدرات قريبة في العائلة
 
-- `PROMPT-25` اختيار التقنية حسب نوع الفشل / Technique picker by failure mode (documented)
-- `PROMPT-26` تصويت الاتساق الذاتي / Self-consistency vote (documented)
-- `PROMPT-28` ذاكرة الدروس بعد الفشل / Reflexion lesson memory (documented)
-- `PROMPT-29` ملف نمط بأقسام ثابتة / Pattern file with fixed sections (documented)
+- `PROMPT-28` اختيار التقنية حسب نوع الفشل / Technique picker by failure mode (documented)
+- `PROMPT-29` تصويت الاتساق الذاتي / Self-consistency vote (documented)
+- `PROMPT-31` ذاكرة الدروس بعد الفشل / Reflexion lesson memory (documented)
+- `PROMPT-32` ملف نمط بأقسام ثابتة / Pattern file with fixed sections (documented)
 
-### `PROMPT-28` — ذاكرة الدروس بعد الفشل / Reflexion lesson memory
+### `PROMPT-31` — ذاكرة الدروس بعد الفشل / Reflexion lesson memory
 
 | الحقل | القيمة |
 |---|---|
@@ -1919,8 +2127,8 @@
 
 #### 3. موضعها في الخطة (A26)
 
-- عقدة منمّطة: المدخل `brief` ← المخرج `document`، والمنفّذ `method:PROMPT-28` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `anchor-gate` · `prompt-lab` · `prompt-pack` · `repo-kosif`.
+- عقدة منمّطة: المدخل `brief` ← المخرج `document`، والمنفّذ `method:PROMPT-31` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `anchor-gate` · `prompt-lab` · `prompt-pack` · `repo-kosif` · `style-library`.
 - مراحل النوع: الغرض والقارئ ← هيكل العناوين ← مسودة ← مراجعة الحقائق ← تحرير اللغة ← فتح الملف بصيغته ← تسليم.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -1945,12 +2153,12 @@
 
 #### 7. قدرات قريبة في العائلة
 
-- `PROMPT-26` تصويت الاتساق الذاتي / Self-consistency vote (documented)
-- `PROMPT-27` الإجابة عبر برنامج / Program-aided answer (documented)
-- `PROMPT-29` ملف نمط بأقسام ثابتة / Pattern file with fixed sections (documented)
-- `PROMPT-30` ترتيب يناسب التخزين المؤقت / Cache-friendly prompt layout (documented)
+- `PROMPT-29` تصويت الاتساق الذاتي / Self-consistency vote (documented)
+- `PROMPT-30` الإجابة عبر برنامج / Program-aided answer (documented)
+- `PROMPT-32` ملف نمط بأقسام ثابتة / Pattern file with fixed sections (documented)
+- `PROMPT-33` ترتيب يناسب التخزين المؤقت / Cache-friendly prompt layout (documented)
 
-### `PROMPT-29` — ملف نمط بأقسام ثابتة / Pattern file with fixed sections
+### `PROMPT-32` — ملف نمط بأقسام ثابتة / Pattern file with fixed sections
 
 | الحقل | القيمة |
 |---|---|
@@ -1987,8 +2195,8 @@
 
 #### 3. موضعها في الخطة (A26)
 
-- عقدة منمّطة: المدخل `brief` ← المخرج `document`، والمنفّذ `method:PROMPT-29` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `anchor-gate` · `prompt-lab` · `prompt-pack` · `repo-kosif`.
+- عقدة منمّطة: المدخل `brief` ← المخرج `document`، والمنفّذ `method:PROMPT-32` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `anchor-gate` · `prompt-lab` · `prompt-pack` · `repo-kosif` · `style-library`.
 - مراحل النوع: الغرض والقارئ ← هيكل العناوين ← مسودة ← مراجعة الحقائق ← تحرير اللغة ← فتح الملف بصيغته ← تسليم.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -2013,12 +2221,12 @@
 
 #### 7. قدرات قريبة في العائلة
 
-- `PROMPT-27` الإجابة عبر برنامج / Program-aided answer (documented)
-- `PROMPT-28` ذاكرة الدروس بعد الفشل / Reflexion lesson memory (documented)
-- `PROMPT-30` ترتيب يناسب التخزين المؤقت / Cache-friendly prompt layout (documented)
-- `PROMPT-31` مصفوفة تقييم بالتأكيدات / Assertion matrix eval (ready)
+- `PROMPT-30` الإجابة عبر برنامج / Program-aided answer (documented)
+- `PROMPT-31` ذاكرة الدروس بعد الفشل / Reflexion lesson memory (documented)
+- `PROMPT-33` ترتيب يناسب التخزين المؤقت / Cache-friendly prompt layout (documented)
+- `PROMPT-34` مصفوفة تقييم بالتأكيدات / Assertion matrix eval (ready)
 
-### `PROMPT-30` — ترتيب يناسب التخزين المؤقت / Cache-friendly prompt layout
+### `PROMPT-33` — ترتيب يناسب التخزين المؤقت / Cache-friendly prompt layout
 
 | الحقل | القيمة |
 |---|---|
@@ -2055,8 +2263,8 @@
 
 #### 3. موضعها في الخطة (A26)
 
-- عقدة منمّطة: المدخل `brief` ← المخرج `document`، والمنفّذ `method:PROMPT-30` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `anchor-gate` · `prompt-lab` · `prompt-pack` · `repo-kosif`.
+- عقدة منمّطة: المدخل `brief` ← المخرج `document`، والمنفّذ `method:PROMPT-33` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `anchor-gate` · `prompt-lab` · `prompt-pack` · `repo-kosif` · `style-library`.
 - مراحل النوع: الغرض والقارئ ← هيكل العناوين ← مسودة ← مراجعة الحقائق ← تحرير اللغة ← فتح الملف بصيغته ← تسليم.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -2080,12 +2288,12 @@
 
 #### 7. قدرات قريبة في العائلة
 
-- `PROMPT-28` ذاكرة الدروس بعد الفشل / Reflexion lesson memory (documented)
-- `PROMPT-29` ملف نمط بأقسام ثابتة / Pattern file with fixed sections (documented)
-- `PROMPT-31` مصفوفة تقييم بالتأكيدات / Assertion matrix eval (ready)
-- `PROMPT-32` قالب صورة بمتغيرات وأقفال / Parameterized image prompt template (ready)
+- `PROMPT-31` ذاكرة الدروس بعد الفشل / Reflexion lesson memory (documented)
+- `PROMPT-32` ملف نمط بأقسام ثابتة / Pattern file with fixed sections (documented)
+- `PROMPT-34` مصفوفة تقييم بالتأكيدات / Assertion matrix eval (ready)
+- `PROMPT-35` قالب صورة بمتغيرات وأقفال / Parameterized image prompt template (ready)
 
-### `PROMPT-31` — مصفوفة تقييم بالتأكيدات / Assertion matrix eval
+### `PROMPT-34` — مصفوفة تقييم بالتأكيدات / Assertion matrix eval
 
 | الحقل | القيمة |
 |---|---|
@@ -2101,7 +2309,7 @@
 
 **متى:** قبل أن تقول إن البرومبت الجديد أفضل / before claiming a new prompt is better
 
-**كيف:** cases.json: [{id, input, assert:[{type: contains\|icontains\|not-contains\|regex\|not-regex\|starts-with\|max-chars\|min-chars\|is-json\|json-keys\|equals, value}]}]; outputs.json: {variant: {case_id: text}} saved from real runs. `python3 scripts/prompt_lab.py eval --cases cases.json --outputs outputs.json --baseline A` prints the pass table and keep=true only when gain > 0 and no case the baseline passed now fails. Rubric-only qualities go to an LLM judge (PROMPT-38).
+**كيف:** cases.json: [{id, input, assert:[{type: contains\|icontains\|not-contains\|regex\|not-regex\|starts-with\|max-chars\|min-chars\|is-json\|json-keys\|equals, value}]}]; outputs.json: {variant: {case_id: text}} saved from real runs. `python3 scripts/prompt_lab.py eval --cases cases.json --outputs outputs.json --baseline A` prints the pass table and keep=true only when gain > 0 and no case the baseline passed now fails. Rubric-only qualities go to an LLM judge (PROMPT-41).
 
 **التثبيت:** لا خطوة تثبيت مسجلة
 
@@ -2122,8 +2330,8 @@
 
 #### 3. موضعها في الخطة (A26)
 
-- عقدة منمّطة: المدخل `brief` ← المخرج `document`، والمنفّذ `method:PROMPT-31` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `anchor-gate` · `prompt-lab` · `prompt-pack` · `repo-kosif`.
+- عقدة منمّطة: المدخل `brief` ← المخرج `document`، والمنفّذ `method:PROMPT-34` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `anchor-gate` · `prompt-lab` · `prompt-pack` · `repo-kosif` · `style-library`.
 - مراحل النوع: الغرض والقارئ ← هيكل العناوين ← مسودة ← مراجعة الحقائق ← تحرير اللغة ← فتح الملف بصيغته ← تسليم.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -2149,12 +2357,12 @@
 
 #### 7. قدرات قريبة في العائلة
 
-- `PROMPT-29` ملف نمط بأقسام ثابتة / Pattern file with fixed sections (documented)
-- `PROMPT-30` ترتيب يناسب التخزين المؤقت / Cache-friendly prompt layout (documented)
-- `PROMPT-32` قالب صورة بمتغيرات وأقفال / Parameterized image prompt template (ready)
-- `PROMPT-33` مخرجات مقيدة مع تحقق وإعادة / Constrained output with validate-and-retry (documented)
+- `PROMPT-32` ملف نمط بأقسام ثابتة / Pattern file with fixed sections (documented)
+- `PROMPT-33` ترتيب يناسب التخزين المؤقت / Cache-friendly prompt layout (documented)
+- `PROMPT-35` قالب صورة بمتغيرات وأقفال / Parameterized image prompt template (ready)
+- `PROMPT-36` مخرجات مقيدة مع تحقق وإعادة / Constrained output with validate-and-retry (documented)
 
-### `PROMPT-32` — قالب صورة بمتغيرات وأقفال / Parameterized image prompt template
+### `PROMPT-35` — قالب صورة بمتغيرات وأقفال / Parameterized image prompt template
 
 | الحقل | القيمة |
 |---|---|
@@ -2191,8 +2399,8 @@
 
 #### 3. موضعها في الخطة (A26)
 
-- عقدة منمّطة: المدخل `brief` ← المخرج `document`، والمنفّذ `method:PROMPT-32` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `anchor-gate` · `prompt-lab` · `prompt-pack` · `repo-kosif`.
+- عقدة منمّطة: المدخل `brief` ← المخرج `document`، والمنفّذ `method:PROMPT-35` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `anchor-gate` · `prompt-lab` · `prompt-pack` · `repo-kosif` · `style-library`.
 - مراحل النوع: الغرض والقارئ ← هيكل العناوين ← مسودة ← مراجعة الحقائق ← تحرير اللغة ← فتح الملف بصيغته ← تسليم.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -2218,12 +2426,12 @@
 
 #### 7. قدرات قريبة في العائلة
 
-- `PROMPT-30` ترتيب يناسب التخزين المؤقت / Cache-friendly prompt layout (documented)
-- `PROMPT-31` مصفوفة تقييم بالتأكيدات / Assertion matrix eval (ready)
-- `PROMPT-33` مخرجات مقيدة مع تحقق وإعادة / Constrained output with validate-and-retry (documented)
-- `PROMPT-34` توسيع البرومبت القصير مع قفل كلمات المستخدم / Short-prompt expansion with locked user words (documented)
+- `PROMPT-33` ترتيب يناسب التخزين المؤقت / Cache-friendly prompt layout (documented)
+- `PROMPT-34` مصفوفة تقييم بالتأكيدات / Assertion matrix eval (ready)
+- `PROMPT-36` مخرجات مقيدة مع تحقق وإعادة / Constrained output with validate-and-retry (documented)
+- `PROMPT-37` توسيع البرومبت القصير مع قفل كلمات المستخدم / Short-prompt expansion with locked user words (documented)
 
-### `PROMPT-33` — مخرجات مقيدة مع تحقق وإعادة / Constrained output with validate-and-retry
+### `PROMPT-36` — مخرجات مقيدة مع تحقق وإعادة / Constrained output with validate-and-retry
 
 | الحقل | القيمة |
 |---|---|
@@ -2260,8 +2468,8 @@
 
 #### 3. موضعها في الخطة (A26)
 
-- عقدة منمّطة: المدخل `brief` ← المخرج `document`، والمنفّذ `method:PROMPT-33` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `anchor-gate` · `prompt-lab` · `prompt-pack` · `repo-kosif`.
+- عقدة منمّطة: المدخل `brief` ← المخرج `document`، والمنفّذ `method:PROMPT-36` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `anchor-gate` · `prompt-lab` · `prompt-pack` · `repo-kosif` · `style-library`.
 - مراحل النوع: الغرض والقارئ ← هيكل العناوين ← مسودة ← مراجعة الحقائق ← تحرير اللغة ← فتح الملف بصيغته ← تسليم.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -2285,12 +2493,12 @@
 
 #### 7. قدرات قريبة في العائلة
 
-- `PROMPT-31` مصفوفة تقييم بالتأكيدات / Assertion matrix eval (ready)
-- `PROMPT-32` قالب صورة بمتغيرات وأقفال / Parameterized image prompt template (ready)
-- `PROMPT-34` توسيع البرومبت القصير مع قفل كلمات المستخدم / Short-prompt expansion with locked user words (documented)
-- `PROMPT-35` برومبت يكتب برومبت ثم يُختبر / Meta-prompting with a test gate (documented)
+- `PROMPT-34` مصفوفة تقييم بالتأكيدات / Assertion matrix eval (ready)
+- `PROMPT-35` قالب صورة بمتغيرات وأقفال / Parameterized image prompt template (ready)
+- `PROMPT-37` توسيع البرومبت القصير مع قفل كلمات المستخدم / Short-prompt expansion with locked user words (documented)
+- `PROMPT-38` برومبت يكتب برومبت ثم يُختبر / Meta-prompting with a test gate (documented)
 
-### `PROMPT-34` — توسيع البرومبت القصير مع قفل كلمات المستخدم / Short-prompt expansion with locked user words
+### `PROMPT-37` — توسيع البرومبت القصير مع قفل كلمات المستخدم / Short-prompt expansion with locked user words
 
 | الحقل | القيمة |
 |---|---|
@@ -2327,8 +2535,8 @@
 
 #### 3. موضعها في الخطة (A26)
 
-- عقدة منمّطة: المدخل `brief` ← المخرج `document`، والمنفّذ `method:PROMPT-34` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `anchor-gate` · `prompt-lab` · `prompt-pack` · `repo-kosif`.
+- عقدة منمّطة: المدخل `brief` ← المخرج `document`، والمنفّذ `method:PROMPT-37` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `anchor-gate` · `prompt-lab` · `prompt-pack` · `repo-kosif` · `style-library`.
 - مراحل النوع: الغرض والقارئ ← هيكل العناوين ← مسودة ← مراجعة الحقائق ← تحرير اللغة ← فتح الملف بصيغته ← تسليم.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -2353,12 +2561,12 @@
 
 #### 7. قدرات قريبة في العائلة
 
-- `PROMPT-32` قالب صورة بمتغيرات وأقفال / Parameterized image prompt template (ready)
-- `PROMPT-33` مخرجات مقيدة مع تحقق وإعادة / Constrained output with validate-and-retry (documented)
-- `PROMPT-35` برومبت يكتب برومبت ثم يُختبر / Meta-prompting with a test gate (documented)
-- `PROMPT-36` فحص البرومبت الحتمي / Deterministic prompt lint (ready)
+- `PROMPT-35` قالب صورة بمتغيرات وأقفال / Parameterized image prompt template (ready)
+- `PROMPT-36` مخرجات مقيدة مع تحقق وإعادة / Constrained output with validate-and-retry (documented)
+- `PROMPT-38` برومبت يكتب برومبت ثم يُختبر / Meta-prompting with a test gate (documented)
+- `PROMPT-39` فحص البرومبت الحتمي / Deterministic prompt lint (ready)
 
-### `PROMPT-35` — برومبت يكتب برومبت ثم يُختبر / Meta-prompting with a test gate
+### `PROMPT-38` — برومبت يكتب برومبت ثم يُختبر / Meta-prompting with a test gate
 
 | الحقل | القيمة |
 |---|---|
@@ -2395,8 +2603,8 @@
 
 #### 3. موضعها في الخطة (A26)
 
-- عقدة منمّطة: المدخل `brief` ← المخرج `document`، والمنفّذ `method:PROMPT-35` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `anchor-gate` · `prompt-lab` · `prompt-pack` · `repo-kosif`.
+- عقدة منمّطة: المدخل `brief` ← المخرج `document`، والمنفّذ `method:PROMPT-38` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `anchor-gate` · `prompt-lab` · `prompt-pack` · `repo-kosif` · `style-library`.
 - مراحل النوع: الغرض والقارئ ← هيكل العناوين ← مسودة ← مراجعة الحقائق ← تحرير اللغة ← فتح الملف بصيغته ← تسليم.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -2421,12 +2629,12 @@
 
 #### 7. قدرات قريبة في العائلة
 
-- `PROMPT-33` مخرجات مقيدة مع تحقق وإعادة / Constrained output with validate-and-retry (documented)
-- `PROMPT-34` توسيع البرومبت القصير مع قفل كلمات المستخدم / Short-prompt expansion with locked user words (documented)
-- `PROMPT-36` فحص البرومبت الحتمي / Deterministic prompt lint (ready)
-- `PROMPT-37` قوالب حسب نوع البرومبت / Prompt templates by kind (ready)
+- `PROMPT-36` مخرجات مقيدة مع تحقق وإعادة / Constrained output with validate-and-retry (documented)
+- `PROMPT-37` توسيع البرومبت القصير مع قفل كلمات المستخدم / Short-prompt expansion with locked user words (documented)
+- `PROMPT-39` فحص البرومبت الحتمي / Deterministic prompt lint (ready)
+- `PROMPT-40` قوالب حسب نوع البرومبت / Prompt templates by kind (ready)
 
-### `PROMPT-36` — فحص البرومبت الحتمي / Deterministic prompt lint
+### `PROMPT-39` — فحص البرومبت الحتمي / Deterministic prompt lint
 
 | الحقل | القيمة |
 |---|---|
@@ -2463,8 +2671,8 @@
 
 #### 3. موضعها في الخطة (A26)
 
-- عقدة منمّطة: المدخل `brief` ← المخرج `document`، والمنفّذ `method:PROMPT-36` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `anchor-gate` · `prompt-lab` · `prompt-pack` · `repo-kosif`.
+- عقدة منمّطة: المدخل `brief` ← المخرج `document`، والمنفّذ `method:PROMPT-39` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `anchor-gate` · `prompt-lab` · `prompt-pack` · `repo-kosif` · `style-library`.
 - مراحل النوع: الغرض والقارئ ← هيكل العناوين ← مسودة ← مراجعة الحقائق ← تحرير اللغة ← فتح الملف بصيغته ← تسليم.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -2490,12 +2698,12 @@
 
 #### 7. قدرات قريبة في العائلة
 
-- `PROMPT-34` توسيع البرومبت القصير مع قفل كلمات المستخدم / Short-prompt expansion with locked user words (documented)
-- `PROMPT-35` برومبت يكتب برومبت ثم يُختبر / Meta-prompting with a test gate (documented)
-- `PROMPT-37` قوالب حسب نوع البرومبت / Prompt templates by kind (ready)
-- `PROMPT-38` حَكَم مقارن بترتيب معكوس (طريقة Jev) / Order-swapped pairwise judge (Jev method) (ready)
+- `PROMPT-37` توسيع البرومبت القصير مع قفل كلمات المستخدم / Short-prompt expansion with locked user words (documented)
+- `PROMPT-38` برومبت يكتب برومبت ثم يُختبر / Meta-prompting with a test gate (documented)
+- `PROMPT-40` قوالب حسب نوع البرومبت / Prompt templates by kind (ready)
+- `PROMPT-41` حَكَم مقارن بترتيب معكوس (طريقة Jev) / Order-swapped pairwise judge (Jev method) (ready)
 
-### `PROMPT-37` — قوالب حسب نوع البرومبت / Prompt templates by kind
+### `PROMPT-40` — قوالب حسب نوع البرومبت / Prompt templates by kind
 
 | الحقل | القيمة |
 |---|---|
@@ -2532,8 +2740,8 @@
 
 #### 3. موضعها في الخطة (A26)
 
-- عقدة منمّطة: المدخل `brief` ← المخرج `document`، والمنفّذ `method:PROMPT-37` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `anchor-gate` · `prompt-lab` · `prompt-pack` · `repo-kosif`.
+- عقدة منمّطة: المدخل `brief` ← المخرج `document`، والمنفّذ `method:PROMPT-40` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `anchor-gate` · `prompt-lab` · `prompt-pack` · `repo-kosif` · `style-library`.
 - مراحل النوع: الغرض والقارئ ← هيكل العناوين ← مسودة ← مراجعة الحقائق ← تحرير اللغة ← فتح الملف بصيغته ← تسليم.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -2559,11 +2767,11 @@
 
 #### 7. قدرات قريبة في العائلة
 
-- `PROMPT-35` برومبت يكتب برومبت ثم يُختبر / Meta-prompting with a test gate (documented)
-- `PROMPT-36` فحص البرومبت الحتمي / Deterministic prompt lint (ready)
-- `PROMPT-38` حَكَم مقارن بترتيب معكوس (طريقة Jev) / Order-swapped pairwise judge (Jev method) (ready)
+- `PROMPT-38` برومبت يكتب برومبت ثم يُختبر / Meta-prompting with a test gate (documented)
+- `PROMPT-39` فحص البرومبت الحتمي / Deterministic prompt lint (ready)
+- `PROMPT-41` حَكَم مقارن بترتيب معكوس (طريقة Jev) / Order-swapped pairwise judge (Jev method) (ready)
 
-### `PROMPT-38` — حَكَم مقارن بترتيب معكوس (طريقة Jev) / Order-swapped pairwise judge (Jev method)
+### `PROMPT-41` — حَكَم مقارن بترتيب معكوس (طريقة Jev) / Order-swapped pairwise judge (Jev method)
 
 | الحقل | القيمة |
 |---|---|
@@ -2600,8 +2808,8 @@
 
 #### 3. موضعها في الخطة (A26)
 
-- عقدة منمّطة: المدخل `brief` ← المخرج `document`، والمنفّذ `method:PROMPT-38` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `anchor-gate` · `prompt-lab` · `prompt-pack` · `repo-kosif`.
+- عقدة منمّطة: المدخل `brief` ← المخرج `document`، والمنفّذ `method:PROMPT-41` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `anchor-gate` · `prompt-lab` · `prompt-pack` · `repo-kosif` · `style-library`.
 - مراحل النوع: الغرض والقارئ ← هيكل العناوين ← مسودة ← مراجعة الحقائق ← تحرير اللغة ← فتح الملف بصيغته ← تسليم.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -2627,6 +2835,6 @@
 
 #### 7. قدرات قريبة في العائلة
 
-- `PROMPT-36` فحص البرومبت الحتمي / Deterministic prompt lint (ready)
-- `PROMPT-37` قوالب حسب نوع البرومبت / Prompt templates by kind (ready)
+- `PROMPT-39` فحص البرومبت الحتمي / Deterministic prompt lint (ready)
+- `PROMPT-40` قوالب حسب نوع البرومبت / Prompt templates by kind (ready)
 

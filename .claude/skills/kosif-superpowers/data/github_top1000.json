@@ -3090,11 +3090,11 @@
    "decision": "transferred",
    "why": "relevant (prompt-engineering) and MIT: methods and code patterns may be reused with credit",
    "transferred": [
-    "PROMPT-25",
-    "PROMPT-26",
-    "PROMPT-27",
     "PROMPT-28",
-    "PROMPT-35"
+    "PROMPT-29",
+    "PROMPT-30",
+    "PROMPT-31",
+    "PROMPT-38"
    ],
    "credited_in_repos_json": false,
    "url": "https://github.com/dair-ai/Prompt-Engineering-Guide",
@@ -5887,7 +5887,7 @@
    "decision": "transferred",
    "why": "relevant (agents-skills) and MIT: methods and code patterns may be reused with credit",
    "transferred": [
-    "PROMPT-30"
+    "PROMPT-33"
    ],
    "credited_in_repos_json": false,
    "url": "https://github.com/anthropics/anthropic-cookbook",
@@ -5937,7 +5937,7 @@
    "decision": "transferred",
    "why": "GPL-3.0 is copyleft: link and own-words method only, no code copied",
    "transferred": [
-    "PROMPT-34"
+    "PROMPT-37"
    ],
    "credited_in_repos_json": false,
    "url": "https://github.com/lllyasviel/Fooocus",
@@ -7621,7 +7621,7 @@
    "decision": "transferred",
    "why": "relevant (prompt-engineering) and MIT: methods and code patterns may be reused with credit",
    "transferred": [
-    "PROMPT-29"
+    "PROMPT-32"
    ],
    "credited_in_repos_json": false,
    "url": "https://github.com/danielmiessler/Fabric",
@@ -9273,8 +9273,8 @@
    "decision": "transferred",
    "why": "relevant (prompt-engineering) and MIT: methods and code patterns may be reused with credit",
    "transferred": [
-    "PROMPT-23",
-    "PROMPT-24"
+    "PROMPT-26",
+    "PROMPT-27"
    ],
    "credited_in_repos_json": false,
    "url": "https://github.com/stanfordnlp/dspy",
@@ -10974,7 +10974,7 @@
    "decision": "transferred",
    "why": "relevant (prompt-engineering) and MIT: methods and code patterns may be reused with credit",
    "transferred": [
-    "PROMPT-32"
+    "PROMPT-35"
    ],
    "credited_in_repos_json": false,
    "url": "https://github.com/freestylefly/awesome-gpt-image-2",
@@ -16260,7 +16260,7 @@
    "decision": "transferred",
    "why": "relevant (prompt-engineering) and MIT: methods and code patterns may be reused with credit",
    "transferred": [
-    "PROMPT-33"
+    "PROMPT-36"
    ],
    "credited_in_repos_json": false,
    "url": "https://github.com/567-labs/instructor",
@@ -16278,7 +16278,7 @@
    "decision": "transferred",
    "why": "relevant (prompt-engineering) and Apache-2.0: methods and code patterns may be reused with credit",
    "transferred": [
-    "PROMPT-33"
+    "PROMPT-36"
    ],
    "credited_in_repos_json": false,
    "url": "https://github.com/dottxt-ai/outlines",
@@ -16296,7 +16296,7 @@
    "decision": "transferred",
    "why": "relevant (prompt-engineering) and MIT: methods and code patterns may be reused with credit",
    "transferred": [
-    "PROMPT-33"
+    "PROMPT-36"
    ],
    "credited_in_repos_json": false,
    "url": "https://github.com/guidance-ai/guidance",
@@ -16314,7 +16314,7 @@
    "decision": "transferred",
    "why": "relevant (prompt-engineering) and MIT: methods and code patterns may be reused with credit",
    "transferred": [
-    "PROMPT-31",
+    "PROMPT-34",
     "prompt-lab"
    ],
    "credited_in_repos_json": false,

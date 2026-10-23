@@ -48,7 +48,7 @@
 | `charter-ingest` | إدخال قائمة الميثاق: مجلس الخبراء 500 فهرسًا للاستشارة | `python3 scripts/charter_ingest.py roster.txt --out data/experts_500.json` | tested-here |
 | `check-skill` | فحص سلامة المهارة | `python3 scripts/check_skill.py` | untested |
 | `cinematic-broll-render` | تصيير لقطات B-roll بحركة كاميرا | `python3 scripts/cinematic_broll_render.py --edl ./edl.json --manifest ./clips.json --audio ./voice.wav --out ./out/master.mkv --width 1080 --height 1920` | tested-here |
-| `council` | مجلس البرو: خمسة أعضاء متعارضين وثلاث جولات وحكم بالدرجات | `python3 scripts/council.py plan "اعمل ريلز دعاء" --dir out/demo/council --options A,B,C` | tested-here |
+| `council` | مجلس البرو: خمسة متعارضين أو مجلس مناسب من 100 شخصية، ثلاث جولات وحكم بالدرجات | `python3 scripts/council.py plan "اعمل ريلز دعاء" --dir out/demo/council --options A,B,C` | tested-here |
 | `creative-quality-gate` | بوابة جودة خطة المونتاج | `python3 scripts/creative_quality_gate.py ./my-project/src/plan.json --out ./out/quality-audit.json` | tested-here |
 | `differential-exam` | مصحّح الامتحان الخفي التفاضلي | `python3 scripts/differential_exam.py seal ./exam --out ./exam-seal.json` | tested-here |
 | `kosif-remote-commander` | خادم KOSIF Remote Commander | `python3 scripts/kosif_remote_superpowers.py doctor` | tested-here |

@@ -32,7 +32,7 @@
   },
   "anthropics/anthropic-cookbook": {
    "transferred": [
-    "PROMPT-30"
+    "PROMPT-33"
    ]
   },
   "apache/kafka": {
@@ -113,16 +113,16 @@
   },
   "dair-ai/Prompt-Engineering-Guide": {
    "transferred": [
-    "PROMPT-25",
-    "PROMPT-26",
-    "PROMPT-27",
     "PROMPT-28",
-    "PROMPT-35"
+    "PROMPT-29",
+    "PROMPT-30",
+    "PROMPT-31",
+    "PROMPT-38"
    ]
   },
   "danielmiessler/Fabric": {
    "transferred": [
-    "PROMPT-29"
+    "PROMPT-32"
    ]
   },
   "deepinsight/insightface": {
@@ -182,7 +182,7 @@
   },
   "freestylefly/awesome-gpt-image-2": {
    "transferred": [
-    "PROMPT-32"
+    "PROMPT-35"
    ]
   },
   "gedoor/legado": {
@@ -261,7 +261,7 @@
   },
   "lllyasviel/Fooocus": {
    "transferred": [
-    "PROMPT-34"
+    "PROMPT-37"
    ]
   },
   "maboloshi/github-chinese": {
@@ -383,8 +383,8 @@
   },
   "stanfordnlp/dspy": {
    "transferred": [
-    "PROMPT-23",
-    "PROMPT-24"
+    "PROMPT-26",
+    "PROMPT-27"
    ]
   },
   "strapi/strapi": {
@@ -458,7 +458,7 @@
    "topic": "prompt-engineering",
    "description": "Test prompts, agents and RAGs with declarative configs; red teaming.",
    "transferred": [
-    "PROMPT-31",
+    "PROMPT-34",
     "prompt-lab"
    ]
   },
@@ -468,7 +468,7 @@
    "topic": "prompt-engineering",
    "description": "Structured outputs for LLMs.",
    "transferred": [
-    "PROMPT-33"
+    "PROMPT-36"
    ]
   },
   "dottxt-ai/outlines": {
@@ -477,7 +477,7 @@
    "topic": "prompt-engineering",
    "description": "Structured outputs.",
    "transferred": [
-    "PROMPT-33"
+    "PROMPT-36"
    ]
   },
   "guidance-ai/guidance": {
@@ -486,7 +486,7 @@
    "topic": "prompt-engineering",
    "description": "A guidance language for controlling large language models.",
    "transferred": [
-    "PROMPT-33"
+    "PROMPT-36"
    ]
   }
  }

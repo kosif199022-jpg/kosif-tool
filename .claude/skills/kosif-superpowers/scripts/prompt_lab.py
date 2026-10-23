@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 """Prompt lab: build, lint, refine and test prompts / مختبر البرومبت: بناء وفحص وتحسين واختبار.
 
-Makes the prompt-craft method (references/prompt-optimizer.md, PROMPT-01…PROMPT-38) runnable:
+Makes the prompt-craft method (references/prompt-optimizer.md, PROMPT-01…PROMPT-41) runnable:
 
     python3 scripts/prompt_lab.py kinds                                   # the prompt kinds and their slots
     python3 scripts/prompt_lab.py build --kind image --goal "..." [--set subject=... --set aspect=9:16] [--lang ar]
@@ -63,7 +63,7 @@ KINDS = {
                         ("labels", "Labels", True, "the fixed output labels, e.g. PASS / FAIL or 1-5"),
                         ("output", "Output format", True, "label first, then one-sentence reason"),
                         ("success", "Done when", False, "agreement with a few human-labelled cases")]},
-    "image": {"about": "image-generator prompt (PROMPT-10, PROMPT-32)", "visual": True,
+    "image": {"about": "image-generator prompt (PROMPT-10, PROMPT-35)", "visual": True,
               "slots": [("subject", "Subject", True, "who or what, with visible attributes"),
                         ("action", "Action", True, "what the subject is doing"),
                         ("environment", "Environment", True, "place, time, weather"),
@@ -261,7 +261,7 @@ def refine(text: str, kind: str) -> dict:
 
 
 # ---------------------------------------------------------------------------------------------------------------
-# Eval: assertion matrix over saved outputs (PROMPT-31) and keep-or-revert (PROMPT-15)
+# Eval: assertion matrix over saved outputs (PROMPT-34) and keep-or-revert (PROMPT-15)
 def check_assert(a: dict, out: str) -> bool:
     t, v = a.get("type"), a.get("value")
     if t == "contains":

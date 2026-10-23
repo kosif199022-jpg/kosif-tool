@@ -1,13 +1,13 @@
 {
 "schema": "kosif.superpowers.v1",
-"atoms": 5506,
-"distinct_methods": 5238,
+"atoms": 5512,
+"distinct_methods": 5245,
 "twin_groups": 169,
 "superpowers": 455,
 "per_target": 12,
-"fusion_ratio": 12.1,
+"fusion_ratio": 12.11,
 "atlas_folded_into_native": 52,
-"tiny_absorbed": 23,
+"tiny_absorbed": 22,
 "lookalikes_unified": 7,
 "graph_components": 1,
 "note": "Each atomic power belongs to exactly one superpower; atomic IDs, proofs and badges stay the evidence. 'best' = strongest member badge, status_mix = honest distribution. Built by scripts/superpower_fusion.py.",
@@ -257,7 +257,7 @@
 "sim": 0.149
 },
 {
-"id": "SP-0025",
+"id": "SP-0026",
 "sim": 0.133
 }
 ]
@@ -307,16 +307,16 @@
 "name_ar": "قرار التفويض للوكلاء أو التنفيذ المباشر"
 },
 {
-"id": "AGENT-02",
-"status": "documented",
-"name_en": "Execution packet (delegation brief)",
-"name_ar": "حزمة التنفيذ: موجز تفويض كامل"
-},
-{
 "id": "AGENT-01",
 "status": "documented",
 "name_en": "Delegate or do it yourself",
 "name_ar": "متى تفوّض ومتى تعمل بنفسك"
+},
+{
+"id": "AGENT-02",
+"status": "documented",
+"name_en": "Execution packet (delegation brief)",
+"name_ar": "حزمة التنفيذ: موجز تفويض كامل"
 },
 {
 "id": "AMIND-14",
@@ -366,8 +366,8 @@
 "sim": 0.176
 },
 {
-"id": "SP-0034",
-"sim": 0.164
+"id": "SP-0035",
+"sim": 0.167
 }
 ]
 },
@@ -548,15 +548,15 @@
 "links": [
 {
 "id": "SP-0343",
-"sim": 0.206
+"sim": 0.207
 },
 {
-"id": "SP-0025",
-"sim": 0.148
+"id": "SP-0026",
+"sim": 0.147
 },
 {
 "id": "SP-0061",
-"sim": 0.138
+"sim": 0.139
 },
 {
 "id": "SP-0348",
@@ -811,7 +811,7 @@
 },
 {
 "id": "SP-0124",
-"sim": 0.482
+"sim": 0.483
 },
 {
 "id": "SP-0089",
@@ -879,7 +879,7 @@
 "distinct_methods": 5,
 "links": [
 {
-"id": "SP-0025",
+"id": "SP-0026",
 "sim": 0.173
 },
 {
@@ -944,7 +944,7 @@
 "distinct_methods": 3,
 "links": [
 {
-"id": "SP-0044",
+"id": "SP-0045",
 "sim": 0.156
 },
 {
@@ -1000,19 +1000,19 @@
 "links": [
 {
 "id": "SP-0226",
-"sim": 0.169
+"sim": 0.17
 },
 {
 "id": "SP-0246",
-"sim": 0.166
+"sim": 0.167
 },
 {
 "id": "SP-0064",
-"sim": 0.158
+"sim": 0.157
 },
 {
-"id": "SP-0031",
-"sim": 0.152
+"id": "SP-0032",
+"sim": 0.153
 }
 ]
 },
@@ -1131,16 +1131,16 @@
 "name_ar": "التضخيم والتصغير"
 },
 {
-"id": "IDEA-12",
-"status": "documented",
-"name_en": "Perspective swap",
-"name_ar": "تبديل المنظور"
-},
-{
 "id": "IDEA-05",
 "status": "documented",
 "name_en": "Fermi estimate",
 "name_ar": "تقدير فيرمي"
+},
+{
+"id": "IDEA-12",
+"status": "documented",
+"name_en": "Perspective swap",
+"name_ar": "تبديل المنظور"
 },
 {
 "id": "IDEA-04",
@@ -1183,16 +1183,16 @@
 "distinct_methods": 21,
 "links": [
 {
-"id": "SP-0012",
-"sim": 0.072
+"id": "SP-0014",
+"sim": 0.441
+},
+{
+"id": "SP-0128",
+"sim": 0.071
 },
 {
 "id": "SP-0351",
 "sim": 0.057
-},
-{
-"id": "SP-0129",
-"sim": 0.054
 },
 {
 "id": "SP-0146",
@@ -1276,7 +1276,7 @@
 "links": [
 {
 "id": "SP-0008",
-"sim": 0.101
+"sim": 0.1
 },
 {
 "id": "SP-0451",
@@ -1342,12 +1342,12 @@
 "sim": 0.122
 },
 {
-"id": "SP-0156",
-"sim": 0.102
+"id": "SP-0034",
+"sim": 0.117
 },
 {
-"id": "SP-0344",
-"sim": 0.09
+"id": "SP-0156",
+"sim": 0.101
 }
 ]
 },
@@ -1363,14 +1363,14 @@
 "output",
 "epistemics"
 ],
-"size": 48,
+"size": 43,
 "best": "documented",
 "status_mix": {
-"documented": 48
+"documented": 43
 },
 "ready_now": 0,
 "families": {
-"mental-models": 48
+"mental-models": 43
 },
 "atlas_folded": 0,
 "requires": [
@@ -1421,12 +1421,6 @@
 "name_ar": "نقاط الرافعة"
 },
 {
-"id": "MODEL-34",
-"status": "documented",
-"name_en": "Combinatorial creativity",
-"name_ar": "الإبداع التركيبي"
-},
-{
 "id": "MODEL-02",
 "status": "documented",
 "name_en": "Inversion",
@@ -1437,18 +1431,6 @@
 "status": "documented",
 "name_en": "Sunk cost check",
 "name_ar": "فحص التكلفة الغارقة"
-},
-{
-"id": "MODEL-20",
-"status": "documented",
-"name_en": "Cynefin",
-"name_ar": "إطار كنفين"
-},
-{
-"id": "MODEL-57",
-"status": "documented",
-"name_en": "Socratic questioning",
-"name_ar": "التساؤل السقراطي"
 },
 {
 "id": "MODEL-06",
@@ -1463,22 +1445,46 @@
 "name_ar": "انحياز الناجين"
 },
 {
+"id": "MODEL-57",
+"status": "documented",
+"name_en": "Socratic questioning",
+"name_ar": "التساؤل السقراطي"
+},
+{
+"id": "MODEL-20",
+"status": "documented",
+"name_en": "Cynefin",
+"name_ar": "إطار كنفين"
+},
+{
+"id": "MODEL-24",
+"status": "documented",
+"name_en": "Pre-mortem",
+"name_ar": "التشريح المسبق"
+},
+{
 "id": "MODEL-07",
 "status": "documented",
 "name_en": "Hanlon's razor",
 "name_ar": "شفرة هانلون"
 },
 {
-"id": "MODEL-03",
+"id": "MODEL-46",
 "status": "documented",
-"name_en": "Second-order effects",
-"name_ar": "آثار الدرجة الثانية"
+"name_en": "Anchoring check",
+"name_ar": "فحص الإرساء"
 },
 {
 "id": "MODEL-16",
 "status": "documented",
 "name_en": "Theory of constraints",
 "name_ar": "نظرية القيود"
+},
+{
+"id": "MODEL-03",
+"status": "documented",
+"name_en": "Second-order effects",
+"name_ar": "آثار الدرجة الثانية"
 },
 {
 "id": "MODEL-18",
@@ -1491,12 +1497,6 @@
 "status": "documented",
 "name_en": "Lindy effect",
 "name_ar": "تأثير ليندي"
-},
-{
-"id": "MODEL-24",
-"status": "documented",
-"name_en": "Pre-mortem",
-"name_ar": "التشريح المسبق"
 },
 {
 "id": "MODEL-17",
@@ -1517,28 +1517,10 @@
 "name_ar": "فحص انحياز التأكيد"
 },
 {
-"id": "MODEL-46",
-"status": "documented",
-"name_en": "Anchoring check",
-"name_ar": "فحص الإرساء"
-},
-{
-"id": "MODEL-32",
-"status": "documented",
-"name_en": "Analogy transfer",
-"name_ar": "نقل التشبيه"
-},
-{
 "id": "MODEL-41",
 "status": "documented",
 "name_en": "Deliberate practice loop",
 "name_ar": "الممارسة المتعمدة"
-},
-{
-"id": "MODEL-23",
-"status": "documented",
-"name_en": "Red team",
-"name_ar": "الفريق الأحمر"
 },
 {
 "id": "MODEL-62",
@@ -1547,10 +1529,10 @@
 "name_ar": "قانون جودهارت"
 },
 {
-"id": "MODEL-40",
+"id": "MODEL-23",
 "status": "documented",
-"name_en": "Feynman technique",
-"name_ar": "تقنية فاينمان"
+"name_en": "Red team",
+"name_ar": "الفريق الأحمر"
 },
 {
 "id": "MODEL-25",
@@ -1559,16 +1541,16 @@
 "name_ar": "التخطيط العكسي"
 },
 {
+"id": "MODEL-40",
+"status": "documented",
+"name_en": "Feynman technique",
+"name_ar": "تقنية فاينمان"
+},
+{
 "id": "MODEL-27",
 "status": "documented",
 "name_en": "Work breakdown",
 "name_ar": "تفكيك العمل"
-},
-{
-"id": "MODEL-33",
-"status": "documented",
-"name_en": "Constraint as engine",
-"name_ar": "القيد كمحرك"
 },
 {
 "id": "MODEL-01",
@@ -1577,10 +1559,10 @@
 "name_ar": "المبادئ الأولى"
 },
 {
-"id": "MODEL-50",
+"id": "MODEL-09",
 "status": "documented",
-"name_en": "Kill criteria",
-"name_ar": "معايير الإيقاف"
+"name_en": "Base rates",
+"name_ar": "المعدلات الأساسية"
 },
 {
 "id": "MODEL-26",
@@ -1589,16 +1571,10 @@
 "name_ar": "المسار الحرج"
 },
 {
-"id": "MODEL-09",
+"id": "MODEL-50",
 "status": "documented",
-"name_en": "Base rates",
-"name_ar": "المعدلات الأساسية"
-},
-{
-"id": "MODEL-36",
-"status": "documented",
-"name_en": "Lateral thinking (provocation)",
-"name_ar": "التفكير الجانبي"
+"name_en": "Kill criteria",
+"name_ar": "معايير الإيقاف"
 },
 {
 "id": "MODEL-13",
@@ -1637,10 +1613,10 @@
 "name_ar": "الشريحة الأصغر القابلة للعرض"
 },
 {
-"id": "MODEL-35",
+"id": "MODEL-63",
 "status": "documented",
-"name_en": "Divergent → convergent",
-"name_ar": "التباعد ثم التقارب"
+"name_en": "Map → probe → install → alternative",
+"name_ar": "خريطة ثم فحص ثم تثبيت ثم بديل"
 },
 {
 "id": "MODEL-22",
@@ -1655,12 +1631,6 @@
 "name_ar": "اقتصاديات الوحدة"
 },
 {
-"id": "MODEL-63",
-"status": "documented",
-"name_en": "Map → probe → install → alternative",
-"name_ar": "خريطة ثم فحص ثم تثبيت ثم بديل"
-},
-{
 "id": "MODEL-37",
 "status": "documented",
 "name_en": "Jobs to be done",
@@ -1669,23 +1639,27 @@
 ],
 "proof": [],
 "twins": [],
-"distinct_methods": 48,
+"distinct_methods": 43,
 "links": [
 {
 "id": "SP-0013",
-"sim": 0.551
+"sim": 0.547
 },
 {
 "id": "SP-0015",
-"sim": 0.46
+"sim": 0.457
+},
+{
+"id": "SP-0016",
+"sim": 0.456
 },
 {
 "id": "SP-0014",
-"sim": 0.459
+"sim": 0.454
 },
 {
-"id": "SP-0034",
-"sim": 0.098
+"id": "SP-0035",
+"sim": 0.099
 }
 ]
 },
@@ -1765,24 +1739,111 @@
 "links": [
 {
 "id": "SP-0012",
-"sim": 0.551
+"sim": 0.547
 },
 {
-"id": "SP-0015",
+"id": "SP-0016",
 "sim": 0.306
 },
 {
 "id": "SP-0014",
+"sim": 0.299
+},
+{
+"id": "SP-0015",
 "sim": 0.295
 },
 {
 "id": "SP-0144",
-"sim": 0.204
+"sim": 0.203
 }
 ]
 },
 {
 "id": "SP-0014",
+"domain": "mind",
+"family": "mental-models",
+"name_ar": "الإبداع التركيبي",
+"name_en": "Combinatorial creativity",
+"focus": [
+"creativity",
+"mental",
+"idea",
+"model"
+],
+"size": 5,
+"best": "documented",
+"status_mix": {
+"documented": 5
+},
+"ready_now": 0,
+"families": {
+"mental-models": 5
+},
+"atlas_folded": 0,
+"requires": [
+"python3"
+],
+"pipeline": [
+{
+"id": "MODEL-34",
+"status": "documented",
+"name_en": "Combinatorial creativity",
+"name_ar": "الإبداع التركيبي"
+},
+{
+"id": "MODEL-32",
+"status": "documented",
+"name_en": "Analogy transfer",
+"name_ar": "نقل التشبيه"
+},
+{
+"id": "MODEL-36",
+"status": "documented",
+"name_en": "Lateral thinking (provocation)",
+"name_ar": "التفكير الجانبي"
+},
+{
+"id": "MODEL-33",
+"status": "documented",
+"name_en": "Constraint as engine",
+"name_ar": "القيد كمحرك"
+},
+{
+"id": "MODEL-35",
+"status": "documented",
+"name_en": "Divergent → convergent",
+"name_ar": "التباعد ثم التقارب"
+}
+],
+"proof": [],
+"twins": [],
+"distinct_methods": 5,
+"links": [
+{
+"id": "SP-0012",
+"sim": 0.454
+},
+{
+"id": "SP-0009",
+"sim": 0.441
+},
+{
+"id": "SP-0013",
+"sim": 0.299
+},
+{
+"id": "SP-0016",
+"sim": 0.251
+},
+{
+"id": "SP-0128",
+"sim": 0.062
+}
+]
+},
+{
+"id": "SP-0015",
 "domain": "mind",
 "family": "mental-models",
 "name_ar": "تخطيط السيناريوهات",
@@ -1838,15 +1899,19 @@
 "links": [
 {
 "id": "SP-0012",
-"sim": 0.459
+"sim": 0.457
 },
 {
 "id": "SP-0013",
 "sim": 0.295
 },
 {
-"id": "SP-0015",
-"sim": 0.25
+"id": "SP-0016",
+"sim": 0.249
+},
+{
+"id": "SP-0014",
+"sim": 0.24
 },
 {
 "id": "SP-0141",
@@ -1855,7 +1920,7 @@
 ]
 },
 {
-"id": "SP-0015",
+"id": "SP-0016",
 "domain": "mind",
 "family": "mental-models",
 "name_ar": "شجرة المشكلة",
@@ -1911,7 +1976,7 @@
 "links": [
 {
 "id": "SP-0012",
-"sim": 0.46
+"sim": 0.456
 },
 {
 "id": "SP-0013",
@@ -1923,12 +1988,12 @@
 },
 {
 "id": "SP-0014",
-"sim": 0.25
+"sim": 0.251
 }
 ]
 },
 {
-"id": "SP-0016",
+"id": "SP-0017",
 "domain": "mind",
 "family": "planning-execution",
 "name_ar": "خطة تسليم بإيصال",
@@ -2012,12 +2077,6 @@
 "name_ar": "تخطيط بأسلوب Heuer: اختبار الافتراضات دون مجاملة"
 },
 {
-"id": "PLAN-09",
-"status": "documented",
-"name_en": "Scenario grid and robust moves",
-"name_ar": "سيناريوهات المستقبل والحركات المتينة"
-},
-{
 "id": "PLAN-02",
 "status": "documented",
 "name_en": "Backcasting from the end state",
@@ -2028,6 +2087,12 @@
 "status": "documented",
 "name_en": "Parallel lanes for agents and workflows",
 "name_ar": "توزيع العمل على وكلاء متوازيين"
+},
+{
+"id": "PLAN-09",
+"status": "documented",
+"name_en": "Scenario grid and robust moves",
+"name_ar": "سيناريوهات المستقبل والحركات المتينة"
 },
 {
 "id": "PLAN-03",
@@ -2045,25 +2110,25 @@
 "distinct_methods": 13,
 "links": [
 {
-"id": "SP-0022",
+"id": "SP-0023",
 "sim": 0.185
 },
 {
 "id": "SP-0385",
-"sim": 0.146
+"sim": 0.145
 },
 {
 "id": "SP-0139",
-"sim": 0.142
+"sim": 0.141
 },
 {
-"id": "SP-0014",
+"id": "SP-0015",
 "sim": 0.141
 }
 ]
 },
 {
-"id": "SP-0017",
+"id": "SP-0018",
 "domain": "mind",
 "family": "self-discovery",
 "name_ar": "اعرف قبل أن تقول لا",
@@ -2227,7 +2292,7 @@
 "distinct_methods": 20,
 "links": [
 {
-"id": "SP-0023",
+"id": "SP-0024",
 "sim": 0.279
 },
 {
@@ -2245,7 +2310,7 @@
 ]
 },
 {
-"id": "SP-0018",
+"id": "SP-0019",
 "domain": "mind",
 "family": "self-discovery",
 "name_ar": "خطوط عربية قبل الرندر",
@@ -2376,7 +2441,7 @@
 "sim": 0.181
 },
 {
-"id": "SP-0023",
+"id": "SP-0024",
 "sim": 0.154
 },
 {
@@ -2390,7 +2455,7 @@
 ]
 },
 {
-"id": "SP-0019",
+"id": "SP-0020",
 "domain": "mind",
 "family": "self-discovery",
 "name_ar": "اقرأ قائمة أدواتك",
@@ -2468,7 +2533,7 @@
 },
 {
 "id": "SP-0268",
-"sim": 0.159
+"sim": 0.16
 },
 {
 "id": "SP-0102",
@@ -2481,7 +2546,7 @@
 ]
 },
 {
-"id": "SP-0020",
+"id": "SP-0021",
 "domain": "mind",
 "family": "self-discovery",
 "name_ar": "بطاقة القدرة والإيصال",
@@ -2533,14 +2598,14 @@
 "links": [
 {
 "id": "SP-0340",
-"sim": 0.125
+"sim": 0.124
 },
 {
 "id": "SP-0191",
 "sim": 0.103
 },
 {
-"id": "SP-0025",
+"id": "SP-0026",
 "sim": 0.092
 },
 {
@@ -2550,7 +2615,7 @@
 ]
 },
 {
-"id": "SP-0021",
+"id": "SP-0022",
 "domain": "mind",
 "family": "thinking-core",
 "name_ar": "سلّم مستويات التفكير L0–L6",
@@ -2708,25 +2773,25 @@
 "distinct_methods": 20,
 "links": [
 {
+"id": "SP-0128",
+"sim": 0.148
+},
+{
 "id": "SP-0064",
-"sim": 0.112
+"sim": 0.111
 },
 {
 "id": "SP-0348",
 "sim": 0.086
 },
 {
-"id": "SP-0025",
+"id": "SP-0026",
 "sim": 0.072
-},
-{
-"id": "SP-0421",
-"sim": 0.056
 }
 ]
 },
 {
-"id": "SP-0022",
+"id": "SP-0023",
 "domain": "mind",
 "family": "thinking-core",
 "name_ar": "قائمة المرحلة صفر (12 وحدة)",
@@ -2854,7 +2919,7 @@
 "distinct_methods": 16,
 "links": [
 {
-"id": "SP-0016",
+"id": "SP-0017",
 "sim": 0.185
 },
 {
@@ -2863,7 +2928,7 @@
 },
 {
 "id": "SP-0002",
-"sim": 0.146
+"sim": 0.147
 },
 {
 "id": "SP-0013",
@@ -2872,7 +2937,7 @@
 ]
 },
 {
-"id": "SP-0023",
+"id": "SP-0024",
 "domain": "mind",
 "family": "thinking-core",
 "name_ar": "اعرف قبل أن تقول «لا»",
@@ -2949,25 +3014,25 @@
 "distinct_methods": 7,
 "links": [
 {
-"id": "SP-0017",
+"id": "SP-0018",
 "sim": 0.279
 },
 {
 "id": "SP-0125",
-"sim": 0.216
+"sim": 0.211
 },
 {
 "id": "SP-0062",
 "sim": 0.188
 },
 {
-"id": "SP-0018",
+"id": "SP-0019",
 "sim": 0.154
 }
 ]
 },
 {
-"id": "SP-0024",
+"id": "SP-0025",
 "domain": "mind",
 "family": "thinking-core",
 "name_ar": "سجل التغطية قبل الإرسال",
@@ -3036,7 +3101,7 @@
 ]
 },
 {
-"id": "SP-0025",
+"id": "SP-0026",
 "domain": "mind",
 "family": "verification-evals",
 "name_ar": "حلقة التحقق الثمانية",
@@ -3119,16 +3184,16 @@
 "name_ar": "فحص تصميم الحلقة"
 },
 {
-"id": "CHECK-17",
-"status": "documented",
-"name_en": "Adversarial verifier that defaults to 'refuted'",
-"name_ar": "المتحقق العدائي"
-},
-{
 "id": "CHECK-04",
 "status": "documented",
 "name_en": "Five-axis self-evaluation (accuracy, completeness, clarity, actionability, concision)",
 "name_ar": "التقييم الذاتي بخمسة محاور"
+},
+{
+"id": "CHECK-17",
+"status": "documented",
+"name_en": "Adversarial verifier that defaults to 'refuted'",
+"name_ar": "المتحقق العدائي"
 },
 {
 "id": "CHECK-12",
@@ -3237,7 +3302,7 @@
 ]
 },
 {
-"id": "SP-0026",
+"id": "SP-0027",
 "domain": "mind",
 "family": "verification-evals",
 "name_ar": "حلقة التطوير الذاتي للمهارة",
@@ -3331,7 +3396,7 @@
 },
 {
 "id": "SP-0036",
-"sim": 0.13
+"sim": 0.105
 },
 {
 "id": "SP-0125",
@@ -3344,7 +3409,7 @@
 ]
 },
 {
-"id": "SP-0027",
+"id": "SP-0028",
 "domain": "mind",
 "family": "verification-evals",
 "name_ar": "التقييم أولًا",
@@ -3424,20 +3489,20 @@
 },
 {
 "id": "SP-0036",
-"sim": 0.139
-},
-{
-"id": "SP-0035",
-"sim": 0.127
+"sim": 0.151
 },
 {
 "id": "SP-0057",
 "sim": 0.122
+},
+{
+"id": "SP-0341",
+"sim": 0.105
 }
 ]
 },
 {
-"id": "SP-0028",
+"id": "SP-0029",
 "domain": "craft",
 "family": "arabic-language",
 "name_ar": "CAMeL Tools: تقطيع النص العربي واستخراج الجذور والتشكيل وتحديد",
@@ -3597,7 +3662,7 @@
 "links": [
 {
 "id": "SP-0354",
-"sim": 0.286
+"sim": 0.285
 },
 {
 "id": "SP-0426",
@@ -3605,16 +3670,16 @@
 },
 {
 "id": "SP-0101",
-"sim": 0.225
+"sim": 0.224
 },
 {
 "id": "SP-0313",
-"sim": 0.223
+"sim": 0.222
 }
 ]
 },
 {
-"id": "SP-0029",
+"id": "SP-0030",
 "domain": "craft",
 "family": "arabic-language",
 "name_ar": "مراجعة المطابقة النحوية بعد التعديل",
@@ -3680,7 +3745,7 @@
 ]
 },
 {
-"id": "SP-0030",
+"id": "SP-0031",
 "domain": "craft",
 "family": "atlas-craft",
 "name_ar": "تصميم الأيقونات بالتشابه والإغلاق البصري",
@@ -3802,7 +3867,7 @@
 "links": [
 {
 "id": "SP-0120",
-"sim": 0.562
+"sim": 0.561
 },
 {
 "id": "SP-0052",
@@ -3814,12 +3879,12 @@
 },
 {
 "id": "SP-0215",
-"sim": 0.14
+"sim": 0.141
 }
 ]
 },
 {
-"id": "SP-0031",
+"id": "SP-0032",
 "domain": "craft",
 "family": "atlas-craft",
 "name_ar": "مخطط أولي ومنظمات بصرية ملائمة",
@@ -3916,64 +3981,11 @@
 },
 {
 "id": "SP-0008",
-"sim": 0.152
+"sim": 0.153
 },
 {
 "id": "SP-0347",
-"sim": 0.151
-}
-]
-},
-{
-"id": "SP-0032",
-"domain": "craft",
-"family": "atlas-craft",
-"name_ar": "استخراج أسلوب كاتب إلى دليل أسلوب قابل للتطبيق",
-"name_en": "Extract a writing style into a reusable style guide",
-"focus": [
-"style",
-"writing",
-"guide",
-"reusable"
-],
-"size": 1,
-"best": "documented",
-"status_mix": {
-"documented": 1
-},
-"ready_now": 0,
-"families": {
-"atlas-craft": 1
-},
-"atlas_folded": 1,
-"requires": [],
-"pipeline": [
-{
-"id": "ACRAFT-26",
-"status": "documented",
-"name_en": "Extract a writing style into a reusable style guide",
-"name_ar": "استخراج أسلوب كاتب إلى دليل أسلوب قابل للتطبيق"
-}
-],
-"proof": [],
-"twins": [],
-"distinct_methods": 1,
-"links": [
-{
-"id": "SP-0355",
-"sim": 0.348
-},
-{
-"id": "SP-0156",
-"sim": 0.301
-},
-{
-"id": "SP-0380",
-"sim": 0.255
-},
-{
-"id": "SP-0166",
-"sim": 0.146
+"sim": 0.15
 }
 ]
 },
@@ -3989,16 +4001,16 @@
 "repositories",
 "top"
 ],
-"size": 30,
+"size": 32,
 "best": "proven",
 "status_mix": {
 "proven": 1,
-"ready": 4,
-"documented": 25
+"ready": 5,
+"documented": 26
 },
-"ready_now": 5,
+"ready_now": 6,
 "families": {
-"prompt-craft": 29,
+"prompt-craft": 31,
 "atlas-craft": 1
 },
 "atlas_folded": 1,
@@ -4017,34 +4029,46 @@
 "name_ar": "دفتر الحفظ وفحصه الآلي"
 },
 {
-"id": "PROMPT-37",
+"id": "PROMPT-40",
 "status": "ready",
 "name_en": "Prompt templates by kind",
 "name_ar": "قوالب حسب نوع البرومبت"
 },
 {
-"id": "PROMPT-36",
+"id": "PROMPT-39",
 "status": "ready",
 "name_en": "Deterministic prompt lint",
 "name_ar": "فحص البرومبت الحتمي"
 },
 {
-"id": "PROMPT-32",
+"id": "PROMPT-35",
 "status": "ready",
 "name_en": "Parameterized image prompt template",
 "name_ar": "قالب صورة بمتغيرات وأقفال"
 },
 {
-"id": "PROMPT-38",
+"id": "PROMPT-34",
+"status": "ready",
+"name_en": "Assertion matrix eval",
+"name_ar": "مصفوفة تقييم بالتأكيدات"
+},
+{
+"id": "PROMPT-41",
 "status": "ready",
 "name_en": "Order-swapped pairwise judge (Jev method)",
 "name_ar": "حَكَم مقارن بترتيب معكوس (طريقة Jev)"
 },
 {
-"id": "PROMPT-23",
+"id": "PROMPT-26",
 "status": "documented",
 "name_en": "Signature-first prompt",
 "name_ar": "برومبت يبدأ بالتوقيع"
+},
+{
+"id": "PROMPT-38",
+"status": "documented",
+"name_en": "Meta-prompting with a test gate",
+"name_ar": "برومبت يكتب برومبت ثم يُختبر"
 },
 {
 "id": "PROMPT-10",
@@ -4053,13 +4077,7 @@
 "name_ar": "برومبت مولّد الصور"
 },
 {
-"id": "PROMPT-35",
-"status": "documented",
-"name_en": "Meta-prompting with a test gate",
-"name_ar": "برومبت يكتب برومبت ثم يُختبر"
-},
-{
-"id": "PROMPT-30",
+"id": "PROMPT-33",
 "status": "documented",
 "name_en": "Cache-friendly prompt layout",
 "name_ar": "ترتيب يناسب التخزين المؤقت"
@@ -4071,13 +4089,13 @@
 "name_ar": "برومبت مولّد الفيديو"
 },
 {
-"id": "PROMPT-25",
+"id": "PROMPT-28",
 "status": "documented",
 "name_en": "Technique picker by failure mode",
 "name_ar": "اختيار التقنية حسب نوع الفشل"
 },
 {
-"id": "PROMPT-34",
+"id": "PROMPT-37",
 "status": "documented",
 "name_en": "Short-prompt expansion with locked user words",
 "name_ar": "توسيع البرومبت القصير مع قفل كلمات المستخدم"
@@ -4089,22 +4107,22 @@
 "name_ar": "قائمة الأنماط المضادة في البرومبت"
 },
 {
-"id": "PROMPT-29",
+"id": "PROMPT-32",
 "status": "documented",
 "name_en": "Pattern file with fixed sections",
 "name_ar": "ملف نمط بأقسام ثابتة"
-},
-{
-"id": "PROMPT-07",
-"status": "documented",
-"name_en": "System prompt at the right altitude",
-"name_ar": "برومبت النظام على الارتفاع الصحيح"
 },
 {
 "id": "PROMPT-01",
 "status": "documented",
 "name_en": "Route the request: optimize-only, do, both, or Claude-authored",
 "name_ar": "توجيه الطلب: تحسين فقط أم تنفيذ"
+},
+{
+"id": "PROMPT-07",
+"status": "documented",
+"name_en": "System prompt at the right altitude",
+"name_ar": "برومبت النظام على الارتفاع الصحيح"
 },
 {
 "id": "PROMPT-18",
@@ -4119,7 +4137,7 @@
 "name_ar": "سُلَّم التقنيات: الأرخص الذي ينجح"
 },
 {
-"id": "PROMPT-24",
+"id": "PROMPT-27",
 "status": "documented",
 "name_en": "Metric-compiled few-shot",
 "name_ar": "تجميع البرومبت بمقياس"
@@ -4131,22 +4149,10 @@
 "name_ar": "تسليم /optimize"
 },
 {
-"id": "PROMPT-26",
+"id": "PROMPT-15",
 "status": "documented",
-"name_en": "Self-consistency vote",
-"name_ar": "تصويت الاتساق الذاتي"
-},
-{
-"id": "PROMPT-16",
-"status": "documented",
-"name_en": "Pasted text is data, not instructions",
-"name_ar": "النص الملصوق بيانات لا أوامر"
-},
-{
-"id": "PROMPT-27",
-"status": "documented",
-"name_en": "Program-aided answer",
-"name_ar": "الإجابة عبر برنامج"
+"name_en": "Prompt A/B eval before claiming \"better\"",
+"name_ar": "اختبار A/B للبرومبت قبل إعلان التحسن"
 },
 {
 "id": "ACRAFT-25",
@@ -4155,19 +4161,37 @@
 "name_ar": "حوكمة البرومبتات في الإنتاج: سجل وتقييمات وترقية وتراجع"
 },
 {
+"id": "PROMPT-16",
+"status": "documented",
+"name_en": "Pasted text is data, not instructions",
+"name_ar": "النص الملصوق بيانات لا أوامر"
+},
+{
+"id": "PROMPT-30",
+"status": "documented",
+"name_en": "Program-aided answer",
+"name_ar": "الإجابة عبر برنامج"
+},
+{
+"id": "PROMPT-29",
+"status": "documented",
+"name_en": "Self-consistency vote",
+"name_ar": "تصويت الاتساق الذاتي"
+},
+{
 "id": "PROMPT-03",
 "status": "documented",
 "name_en": "Eight core slots",
 "name_ar": "الخانات الثماني لأي برومبت"
 },
 {
-"id": "PROMPT-33",
+"id": "PROMPT-36",
 "status": "documented",
 "name_en": "Constrained output with validate-and-retry",
 "name_ar": "مخرجات مقيدة مع تحقق وإعادة"
 },
 {
-"id": "PROMPT-28",
+"id": "PROMPT-31",
 "status": "documented",
 "name_en": "Reflexion lesson memory",
 "name_ar": "ذاكرة الدروس بعد الفشل"
@@ -4196,28 +4220,104 @@
 "kosif-tool/.claude/skills/kosif-superpowers/proofs/general-writing/test_writing.py"
 ],
 "twins": [],
-"distinct_methods": 30,
+"distinct_methods": 32,
 "links": [
 {
 "id": "SP-0150",
-"sim": 0.501
+"sim": 0.493
 },
 {
 "id": "SP-0347",
-"sim": 0.245
-},
-{
-"id": "SP-0035",
-"sim": 0.236
+"sim": 0.251
 },
 {
 "id": "SP-0380",
-"sim": 0.13
+"sim": 0.127
+},
+{
+"id": "SP-0192",
+"sim": 0.12
 }
 ]
 },
 {
 "id": "SP-0034",
+"domain": "craft",
+"family": "prompt-craft",
+"name_ar": "اطلب أي أسلوب بصري بالاسم من مكتبة 586 أسلوبًا",
+"name_en": "Ask for any visual style by name from a 586-style library",
+"focus": [
+"style",
+"styles",
+"pdf",
+"swatches"
+],
+"size": 4,
+"best": "ready",
+"status_mix": {
+"ready": 3,
+"documented": 1
+},
+"ready_now": 3,
+"families": {
+"prompt-craft": 3,
+"atlas-craft": 1
+},
+"atlas_folded": 1,
+"requires": [
+"python3",
+"chromium"
+],
+"pipeline": [
+{
+"id": "PROMPT-23",
+"status": "ready",
+"name_en": "Ask for any visual style by name from a 586-style library",
+"name_ar": "اطلب أي أسلوب بصري بالاسم من مكتبة 586 أسلوبًا"
+},
+{
+"id": "PROMPT-25",
+"status": "ready",
+"name_en": "Illustrated style catalog PDF with generated swatches",
+"name_ar": "كتالوج أساليب مصوّر PDF بعينات مولّدة"
+},
+{
+"id": "PROMPT-24",
+"status": "ready",
+"name_en": "Fuse two styles 70/30 in one prompt",
+"name_ar": "دمج أسلوبين 70/30 في برومنت واحد"
+},
+{
+"id": "ACRAFT-26",
+"status": "documented",
+"name_en": "Extract a writing style into a reusable style guide",
+"name_ar": "استخراج أسلوب كاتب إلى دليل أسلوب قابل للتطبيق"
+}
+],
+"proof": [],
+"twins": [],
+"distinct_methods": 4,
+"links": [
+{
+"id": "SP-0156",
+"sim": 0.36
+},
+{
+"id": "SP-0355",
+"sim": 0.351
+},
+{
+"id": "SP-0380",
+"sim": 0.316
+},
+{
+"id": "SP-0125",
+"sim": 0.146
+}
+]
+},
+{
+"id": "SP-0035",
 "domain": "craft",
 "family": "prompt-craft",
 "name_ar": "محوّل Claude: نبرة هادئة وأسباب ووسوم",
@@ -4283,7 +4383,7 @@
 },
 {
 "id": "SP-0002",
-"sim": 0.164
+"sim": 0.167
 },
 {
 "id": "SP-0141",
@@ -4292,93 +4392,25 @@
 ]
 },
 {
-"id": "SP-0035",
-"domain": "craft",
-"family": "prompt-craft",
-"name_ar": "اختبار A/B للبرومبت قبل إعلان التحسن",
-"name_en": "Prompt A/B eval before claiming \"better\"",
-"focus": [
-"eval",
-"better",
-"rubric",
-"test"
-],
-"size": 3,
-"best": "ready",
-"status_mix": {
-"ready": 1,
-"documented": 2
-},
-"ready_now": 1,
-"families": {
-"prompt-craft": 3
-},
-"atlas_folded": 0,
-"requires": [
-"python3"
-],
-"pipeline": [
-{
-"id": "PROMPT-31",
-"status": "ready",
-"name_en": "Assertion matrix eval",
-"name_ar": "مصفوفة تقييم بالتأكيدات"
-},
-{
-"id": "PROMPT-15",
-"status": "documented",
-"name_en": "Prompt A/B eval before claiming \"better\"",
-"name_ar": "اختبار A/B للبرومبت قبل إعلان التحسن"
-},
-{
-"id": "PROMPT-14",
-"status": "documented",
-"name_en": "Twenty-point rubric with hard gates",
-"name_ar": "معيار تقييم من 20 نقطة مع بوابات رفض"
-}
-],
-"proof": [],
-"twins": [],
-"distinct_methods": 3,
-"links": [
-{
-"id": "SP-0351",
-"sim": 0.275
-},
-{
-"id": "SP-0033",
-"sim": 0.236
-},
-{
-"id": "SP-0057",
-"sim": 0.176
-},
-{
-"id": "SP-0341",
-"sim": 0.154
-}
-]
-},
-{
 "id": "SP-0036",
 "domain": "craft",
 "family": "prompt-craft",
-"name_ar": "وصف مهارة يُستدعى بدقة",
-"name_en": "Skill description that triggers precisely",
+"name_ar": "اختبارات التفعيل والتصادم",
+"name_en": "Trigger and collision evals",
 "focus": [
 "triggers",
 "description",
 "collision",
-"evals"
+"rubric"
 ],
-"size": 2,
+"size": 3,
 "best": "documented",
 "status_mix": {
-"documented": 2
+"documented": 3
 },
 "ready_now": 0,
 "families": {
-"prompt-craft": 2
+"prompt-craft": 3
 },
 "atlas_folded": 0,
 "requires": [
@@ -4396,27 +4428,33 @@
 "status": "documented",
 "name_en": "Skill description that triggers precisely",
 "name_ar": "وصف مهارة يُستدعى بدقة"
+},
+{
+"id": "PROMPT-14",
+"status": "documented",
+"name_en": "Twenty-point rubric with hard gates",
+"name_ar": "معيار تقييم من 20 نقطة مع بوابات رفض"
 }
 ],
 "proof": [],
 "twins": [],
-"distinct_methods": 2,
+"distinct_methods": 3,
 "links": [
 {
+"id": "SP-0028",
+"sim": 0.151
+},
+{
+"id": "SP-0351",
+"sim": 0.115
+},
+{
+"id": "SP-0034",
+"sim": 0.111
+},
+{
 "id": "SP-0027",
-"sim": 0.139
-},
-{
-"id": "SP-0026",
-"sim": 0.13
-},
-{
-"id": "SP-0130",
-"sim": 0.119
-},
-{
-"id": "SP-0037",
-"sim": 0.089
+"sim": 0.105
 }
 ]
 },
@@ -4526,16 +4564,16 @@
 "sim": 0.201
 },
 {
-"id": "SP-0032",
-"sim": 0.096
-},
-{
-"id": "SP-0036",
-"sim": 0.089
-},
-{
 "id": "SP-0310",
 "sim": 0.086
+},
+{
+"id": "SP-0157",
+"sim": 0.085
+},
+{
+"id": "SP-0034",
+"sim": 0.079
 }
 ]
 },
@@ -4641,7 +4679,7 @@
 "sim": 0.172
 },
 {
-"id": "SP-0028",
+"id": "SP-0029",
 "sim": 0.167
 },
 {
@@ -4732,7 +4770,7 @@
 "distinct_methods": 7,
 "links": [
 {
-"id": "SP-0024",
+"id": "SP-0025",
 "sim": 0.134
 },
 {
@@ -5556,16 +5594,16 @@
 "name_ar": "طبقة مهايئ مُنمّطة لـ SDK أو REST خارجي"
 },
 {
-"id": "ACODE-26",
-"status": "documented",
-"name_en": "Choose Zoom surface: REST, webhooks, WebSocket, SDK",
-"name_ar": "اختيار واجهة Zoom المناسبة"
-},
-{
 "id": "ACODE-170",
 "status": "documented",
 "name_en": "Prompt-cache hit-rate audit and fix",
 "name_ar": "تدقيق ذاكرة الـprompt المؤقتة وإصلاحها"
+},
+{
+"id": "ACODE-26",
+"status": "documented",
+"name_en": "Choose Zoom surface: REST, webhooks, WebSocket, SDK",
+"name_ar": "اختيار واجهة Zoom المناسبة"
 },
 {
 "id": "ACODE-19",
@@ -5598,6 +5636,172 @@
 },
 {
 "id": "SP-0044",
+"domain": "code",
+"family": "atlas-code",
+"name_ar": "طلبات دمج متراكبة عبر gh stack",
+"name_en": "Stacked PRs with gh stack",
+"focus": [
+"git",
+"releases",
+"pull",
+"requests"
+],
+"size": 18,
+"best": "documented",
+"status_mix": {
+"documented": 18
+},
+"ready_now": 0,
+"families": {
+"atlas-code": 18
+},
+"atlas_folded": 18,
+"requires": [
+"git",
+"gh",
+"mcp:github",
+"node",
+"python3"
+],
+"pipeline": [
+{
+"id": "ACODE-213",
+"status": "documented",
+"name_en": "Stacked PRs with gh stack",
+"name_ar": "طلبات دمج متراكبة عبر gh stack"
+},
+{
+"id": "ACODE-206",
+"status": "documented",
+"name_en": "PR babysit loop to merge",
+"name_ar": "مراقبة طلب الدمج حتى الدمج"
+},
+{
+"id": "ACODE-204",
+"status": "documented",
+"name_en": "Dangerous git command guardrail hooks",
+"name_ar": "خطافات تمنع أوامر git الخطرة"
+},
+{
+"id": "ACODE-208",
+"status": "documented",
+"name_en": "PR creation with reviewer-friendly body",
+"name_ar": "فتح طلب دمج بوصف واضح"
+},
+{
+"id": "ACODE-201",
+"status": "documented",
+"name_en": "Babysit PR until green and mergeable",
+"name_ar": "مراقبة PR حتى يصبح جاهزا للدمج"
+},
+{
+"id": "ACODE-211",
+"status": "documented",
+"name_en": "Resolve rebase and merge conflicts",
+"name_ar": "حل تعارضات الدمج وإعادة التأسيس"
+},
+{
+"id": "ACODE-212",
+"status": "documented",
+"name_en": "Split branch into one-commit branches",
+"name_ar": "تقسيم فرع إلى فروع بكوميت واحد"
+},
+{
+"id": "ACODE-207",
+"status": "documented",
+"name_en": "PR body from diff using repo template",
+"name_ar": "وصف PR من الفروقات وقالب المستودع"
+},
+{
+"id": "ACODE-202",
+"status": "documented",
+"name_en": "Changelog from commits, Keep a Changelog",
+"name_ar": "سجل تغييرات من الكوميتات"
+},
+{
+"id": "ACODE-205",
+"status": "documented",
+"name_en": "Merge queue conflict simulation",
+"name_ar": "محاكاة تعارضات قائمة الدمج"
+},
+{
+"id": "ACODE-214",
+"status": "documented",
+"name_en": "Stacked PRs with Graphite or Mergify",
+"name_ar": "طلبات دمج متراكمة مع Graphite وMergify"
+},
+{
+"id": "ACODE-200",
+"status": "documented",
+"name_en": "Atomic commit splitting by purpose",
+"name_ar": "تقسيم التغييرات إلى commits ذرية"
+},
+{
+"id": "ACODE-215",
+"status": "documented",
+"name_en": "Worktree-isolated issue-to-PR flow",
+"name_ar": "مسار من issue إلى PR بأشجار عمل معزولة"
+},
+{
+"id": "ACODE-203",
+"status": "documented",
+"name_en": "Conventional commit from staged diff",
+"name_ar": "رسالة commit بصيغة Conventional من التغييرات"
+},
+{
+"id": "ACODE-210",
+"status": "documented",
+"name_en": "Release cut with changelog and tag",
+"name_ar": "إصدار نسخة مع سجل التغييرات والوسم"
+},
+{
+"id": "ACODE-216",
+"status": "documented",
+"name_en": "Worktree lifecycle and safe cleanup",
+"name_ar": "إدارة worktree وتنظيفها بأمان"
+},
+{
+"id": "ACODE-209",
+"status": "documented",
+"name_en": "Purge pushed secrets from hosted history",
+"name_ar": "إزالة أسرار دُفعت من السجل المستضاف"
+},
+{
+"id": "ACODE-14",
+"status": "documented",
+"name_en": "Metric-driven autonomous experiment loop (keep or reset)",
+"name_ar": "حلقة تجارب ذاتية بمقياس: احتفظ أو تراجع"
+}
+],
+"proof": [],
+"twins": [
+[
+"ACODE-206",
+"ACODE-201"
+]
+],
+"distinct_methods": 17,
+"links": [
+{
+"id": "SP-0141",
+"sim": 0.148
+},
+{
+"id": "SP-0003",
+"sim": 0.103
+},
+{
+"id": "SP-0123",
+"sim": 0.103
+},
+{
+"id": "SP-0043",
+"sim": 0.079
+}
+]
+},
+{
+"id": "SP-0045",
 "domain": "code",
 "family": "atlas-code",
 "name_ar": "تصحيح الأخطاء بأربع مراحل منهجية",
@@ -5753,166 +5957,6 @@
 {
 "id": "SP-0007",
 "sim": 0.156
-}
-]
-},
-{
-"id": "SP-0045",
-"domain": "code",
-"family": "atlas-code",
-"name_ar": "طلبات دمج متراكبة عبر gh stack",
-"name_en": "Stacked PRs with gh stack",
-"focus": [
-"git",
-"releases",
-"pull",
-"requests"
-],
-"size": 17,
-"best": "documented",
-"status_mix": {
-"documented": 17
-},
-"ready_now": 0,
-"families": {
-"atlas-code": 17
-},
-"atlas_folded": 17,
-"requires": [
-"git",
-"gh",
-"mcp:github",
-"node",
-"python3"
-],
-"pipeline": [
-{
-"id": "ACODE-213",
-"status": "documented",
-"name_en": "Stacked PRs with gh stack",
-"name_ar": "طلبات دمج متراكبة عبر gh stack"
-},
-{
-"id": "ACODE-206",
-"status": "documented",
-"name_en": "PR babysit loop to merge",
-"name_ar": "مراقبة طلب الدمج حتى الدمج"
-},
-{
-"id": "ACODE-204",
-"status": "documented",
-"name_en": "Dangerous git command guardrail hooks",
-"name_ar": "خطافات تمنع أوامر git الخطرة"
-},
-{
-"id": "ACODE-208",
-"status": "documented",
-"name_en": "PR creation with reviewer-friendly body",
-"name_ar": "فتح طلب دمج بوصف واضح"
-},
-{
-"id": "ACODE-201",
-"status": "documented",
-"name_en": "Babysit PR until green and mergeable",
-"name_ar": "مراقبة PR حتى يصبح جاهزا للدمج"
-},
-{
-"id": "ACODE-211",
-"status": "documented",
-"name_en": "Resolve rebase and merge conflicts",
-"name_ar": "حل تعارضات الدمج وإعادة التأسيس"
-},
-{
-"id": "ACODE-212",
-"status": "documented",
-"name_en": "Split branch into one-commit branches",
-"name_ar": "تقسيم فرع إلى فروع بكوميت واحد"
-},
-{
-"id": "ACODE-207",
-"status": "documented",
-"name_en": "PR body from diff using repo template",
-"name_ar": "وصف PR من الفروقات وقالب المستودع"
-},
-{
-"id": "ACODE-202",
-"status": "documented",
-"name_en": "Changelog from commits, Keep a Changelog",
-"name_ar": "سجل تغييرات من الكوميتات"
-},
-{
-"id": "ACODE-200",
-"status": "documented",
-"name_en": "Atomic commit splitting by purpose",
-"name_ar": "تقسيم التغييرات إلى commits ذرية"
-},
-{
-"id": "ACODE-205",
-"status": "documented",
-"name_en": "Merge queue conflict simulation",
-"name_ar": "محاكاة تعارضات قائمة الدمج"
-},
-{
-"id": "ACODE-214",
-"status": "documented",
-"name_en": "Stacked PRs with Graphite or Mergify",
-"name_ar": "طلبات دمج متراكمة مع Graphite وMergify"
-},
-{
-"id": "ACODE-215",
-"status": "documented",
-"name_en": "Worktree-isolated issue-to-PR flow",
-"name_ar": "مسار من issue إلى PR بأشجار عمل معزولة"
-},
-{
-"id": "ACODE-203",
-"status": "documented",
-"name_en": "Conventional commit from staged diff",
-"name_ar": "رسالة commit بصيغة Conventional من التغييرات"
-},
-{
-"id": "ACODE-210",
-"status": "documented",
-"name_en": "Release cut with changelog and tag",
-"name_ar": "إصدار نسخة مع سجل التغييرات والوسم"
-},
-{
-"id": "ACODE-216",
-"status": "documented",
-"name_en": "Worktree lifecycle and safe cleanup",
-"name_ar": "إدارة worktree وتنظيفها بأمان"
-},
-{
-"id": "ACODE-14",
-"status": "documented",
-"name_en": "Metric-driven autonomous experiment loop (keep or reset)",
-"name_ar": "حلقة تجارب ذاتية بمقياس: احتفظ أو تراجع"
-}
-],
-"proof": [],
-"twins": [
-[
-"ACODE-206",
-"ACODE-201"
-]
-],
-"distinct_methods": 16,
-"links": [
-{
-"id": "SP-0141",
-"sim": 0.146
-},
-{
-"id": "SP-0003",
-"sim": 0.104
-},
-{
-"id": "SP-0123",
-"sim": 0.103
-},
-{
-"id": "SP-0066",
-"sim": 0.088
 }
 ]
 },
@@ -6160,7 +6204,7 @@
 "distinct_methods": 11,
 "links": [
 {
-"id": "SP-0044",
+"id": "SP-0045",
 "sim": 0.211
 },
 {
@@ -6714,10 +6758,10 @@
 "links": [
 {
 "id": "SP-0120",
-"sim": 0.429
+"sim": 0.428
 },
 {
-"id": "SP-0030",
+"id": "SP-0031",
 "sim": 0.373
 },
 {
@@ -7005,7 +7049,7 @@
 "sim": 0.153
 },
 {
-"id": "SP-0044",
+"id": "SP-0045",
 "sim": 0.099
 },
 {
@@ -7013,7 +7057,7 @@
 "sim": 0.099
 },
 {
-"id": "SP-0128",
+"id": "SP-0129",
 "sim": 0.083
 }
 ]
@@ -7171,16 +7215,16 @@
 "sim": 0.368
 },
 {
-"id": "SP-0035",
-"sim": 0.176
-},
-{
 "id": "SP-0088",
 "sim": 0.138
 },
 {
-"id": "SP-0027",
+"id": "SP-0028",
 "sim": 0.122
+},
+{
+"id": "SP-0368",
+"sim": 0.111
 }
 ]
 },
@@ -7393,7 +7437,7 @@
 "sim": 0.129
 },
 {
-"id": "SP-0044",
+"id": "SP-0045",
 "sim": 0.122
 },
 {
@@ -7582,7 +7626,7 @@
 "sim": 0.213
 },
 {
-"id": "SP-0025",
+"id": "SP-0026",
 "sim": 0.196
 },
 {
@@ -7665,11 +7709,11 @@
 "distinct_methods": 6,
 "links": [
 {
-"id": "SP-0023",
+"id": "SP-0024",
 "sim": 0.188
 },
 {
-"id": "SP-0017",
+"id": "SP-0018",
 "sim": 0.155
 },
 {
@@ -7946,7 +7990,7 @@
 },
 {
 "id": "SP-0008",
-"sim": 0.158
+"sim": 0.157
 }
 ]
 },
@@ -7962,24 +8006,25 @@
 "harness",
 "approval"
 ],
-"size": 14,
+"size": 15,
 "best": "proven",
 "status_mix": {
 "proven": 1,
-"install": 3,
+"install": 4,
 "documented": 10
 },
 "ready_now": 1,
 "families": {
-"security-safety": 14
+"security-safety": 15
 },
 "atlas_folded": 0,
 "requires": [
 "python3",
 "key:graphify",
 "pip:semgrep",
-"node",
 "trivy",
+"node",
+"gitleaks",
 "network"
 ],
 "pipeline": [
@@ -7996,16 +8041,22 @@
 "name_ar": "Semgrep CE: تشغيل قواعد تحليل ثابت على مستودع وفرز"
 },
 {
+"id": "SEC-19",
+"status": "install",
+"name_en": "Trivy: Scan lockfiles, containers and IaC for CVEs and misconfigurations",
+"name_ar": "Trivy: فحص ملفات القفل والحاويات والبنية ككود بحثًا"
+},
+{
 "id": "SEC-09",
 "status": "install",
 "name_en": "Harness scan with AgentShield",
 "name_ar": "فحص الحزام بـAgentShield"
 },
 {
-"id": "SEC-19",
+"id": "SEC-18",
 "status": "install",
-"name_en": "Trivy: Scan lockfiles, containers and IaC for CVEs and misconfigurations",
-"name_ar": "Trivy: فحص ملفات القفل والحاويات والبنية ككود بحثًا"
+"name_en": "Gitleaks: Detect committed secrets across git history",
+"name_ar": "Gitleaks: كشف الأسرار المسرّبة في تاريخ git"
 },
 {
 "id": "SEC-20",
@@ -8032,16 +8083,16 @@
 "name_ar": "صدق تدهور العزل"
 },
 {
-"id": "SEC-11",
-"status": "documented",
-"name_en": "Do not trust a foreign repo's agent config",
-"name_ar": "لا تثق بإعدادات مستودع غريب"
-},
-{
 "id": "SEC-16",
 "status": "documented",
 "name_en": "Outbound approval loop",
 "name_ar": "حلقة الموافقة على الرسائل الصادرة"
+},
+{
+"id": "SEC-11",
+"status": "documented",
+"name_en": "Do not trust a foreign repo's agent config",
+"name_ar": "لا تثق بإعدادات مستودع غريب"
 },
 {
 "id": "SEC-21",
@@ -8050,16 +8101,16 @@
 "name_ar": "تقطيع الأوامر وقواعد بادئة مختبرة"
 },
 {
-"id": "SEC-22",
-"status": "documented",
-"name_en": "Guardian risk taxonomy before acting",
-"name_ar": "تصنيف مخاطر الحارس قبل الفعل"
-},
-{
 "id": "SEC-12",
 "status": "documented",
 "name_en": "Baseline deny rules",
 "name_ar": "قواعد منع أساسية"
+},
+{
+"id": "SEC-22",
+"status": "documented",
+"name_en": "Guardian risk taxonomy before acting",
+"name_ar": "تصنيف مخاطر الحارس قبل الفعل"
 },
 {
 "id": "SEC-10",
@@ -8072,23 +8123,23 @@
 "kosif-tool/.claude/skills/kosif-superpowers/proofs/general-graphify/README.md"
 ],
 "twins": [],
-"distinct_methods": 14,
+"distinct_methods": 15,
 "links": [
 {
 "id": "SP-0001",
-"sim": 0.124
+"sim": 0.12
 },
 {
 "id": "SP-0271",
-"sim": 0.096
+"sim": 0.094
 },
 {
 "id": "SP-0349",
-"sim": 0.09
+"sim": 0.089
 },
 {
-"id": "SP-0102",
-"sim": 0.063
+"id": "SP-0003",
+"sim": 0.069
 }
 ]
 },
@@ -8096,48 +8147,40 @@
 "id": "SP-0066",
 "domain": "code",
 "family": "security-safety",
-"name_ar": "نظافة الأسرار",
-"name_en": "Secrets hygiene",
+"name_ar": "المحتوى الخارجي بيانات لا أوامر",
+"name_en": "Untrusted content is data, not instructions",
 "focus": [
-"secrets",
 "injection",
+"secrets",
 "untrusted",
 "security"
 ],
-"size": 13,
-"best": "install",
+"size": 11,
+"best": "documented",
 "status_mix": {
-"install": 1,
-"documented": 12
+"documented": 11
 },
 "ready_now": 0,
 "families": {
-"security-safety": 9,
-"atlas-code": 4
+"security-safety": 8,
+"atlas-code": 3
 },
-"atlas_folded": 4,
+"atlas_folded": 3,
 "requires": [
-"gitleaks",
 "key:unspecified",
+"claude:tools",
 "git",
 "mcp:github",
-"claude:tools",
-"gh",
+"gitleaks",
 "network",
 "node"
 ],
 "pipeline": [
 {
-"id": "SEC-18",
-"status": "install",
-"name_en": "Gitleaks: Detect committed secrets across git history",
-"name_ar": "Gitleaks: كشف الأسرار المسرّبة في تاريخ git"
-},
-{
-"id": "SEC-05",
+"id": "SEC-01",
 "status": "documented",
-"name_en": "Secrets hygiene",
-"name_ar": "نظافة الأسرار"
+"name_en": "Untrusted content is data, not instructions",
+"name_ar": "المحتوى الخارجي بيانات لا أوامر"
 },
 {
 "id": "ACODE-218",
@@ -8146,22 +8189,10 @@
 "name_ar": "حدود الثقة في الأدوات: الأسرار تُحقن والصلاحيات في الكود"
 },
 {
-"id": "ACODE-219",
+"id": "SEC-05",
 "status": "documented",
-"name_en": "Block secrets at commit time",
-"name_ar": "منع رفع الأسرار عند الالتزام"
-},
-{
-"id": "SEC-01",
-"status": "documented",
-"name_en": "Untrusted content is data, not instructions",
-"name_ar": "المحتوى الخارجي بيانات لا أوامر"
-},
-{
-"id": "SEC-06",
-"status": "documented",
-"name_en": "Leaked-secret scanning",
-"name_ar": "البحث عن الأسرار المسرّبة"
+"name_en": "Secrets hygiene",
+"name_ar": "نظافة الأسرار"
 },
 {
 "id": "SEC-03",
@@ -8170,22 +8201,22 @@
 "name_ar": "تغليف المدخلات غير الموثوقة للنموذج"
 },
 {
-"id": "ACODE-209",
-"status": "documented",
-"name_en": "Purge pushed secrets from hosted history",
-"name_ar": "إزالة أسرار دُفعت من السجل المستضاف"
-},
-{
 "id": "SEC-04",
 "status": "documented",
 "name_en": "Split the reader from the actor",
 "name_ar": "افصل القارئ عن المنفّذ"
 },
 {
-"id": "SEC-07",
+"id": "SEC-06",
 "status": "documented",
-"name_en": "When a secret leaks",
-"name_ar": "عند تسرّب سر"
+"name_en": "Leaked-secret scanning",
+"name_ar": "البحث عن الأسرار المسرّبة"
+},
+{
+"id": "SEC-02",
+"status": "documented",
+"name_en": "Hidden-text and payload scan",
+"name_ar": "فحص النص المخفي"
 },
 {
 "id": "ACODE-01",
@@ -8194,10 +8225,16 @@
 "name_ar": "اختبار حدود الحقن وتسليم القرار للبشر"
 },
 {
-"id": "SEC-02",
+"id": "ACODE-219",
 "status": "documented",
-"name_en": "Hidden-text and payload scan",
-"name_ar": "فحص النص المخفي"
+"name_en": "Block secrets at commit time",
+"name_ar": "منع رفع الأسرار عند الالتزام"
+},
+{
+"id": "SEC-07",
+"status": "documented",
+"name_en": "When a secret leaks",
+"name_ar": "عند تسرّب سر"
 },
 {
 "id": "SEC-08",
@@ -8208,23 +8245,23 @@
 ],
 "proof": [],
 "twins": [],
-"distinct_methods": 13,
+"distinct_methods": 11,
 "links": [
 {
-"id": "SP-0045",
-"sim": 0.088
-},
-{
 "id": "SP-0033",
-"sim": 0.078
+"sim": 0.087
 },
 {
 "id": "SP-0150",
-"sim": 0.071
+"sim": 0.08
 },
 {
-"id": "SP-0141",
-"sim": 0.067
+"id": "SP-0061",
+"sim": 0.08
+},
+{
+"id": "SP-0343",
+"sim": 0.066
 }
 ]
 },
@@ -8317,28 +8354,28 @@
 "name_ar": "REA MCP: عنوان"
 },
 {
-"id": "REA-212",
-"status": "documented",
-"name_en": "REA MCP tool `binary_session`",
-"name_ar": "REA MCP: الثنائي"
-},
-{
 "id": "REA-180",
 "status": "documented",
 "name_en": "REA MCP tool `set_address_name`",
 "name_ar": "REA MCP: عنوان"
 },
 {
-"id": "REA-165",
-"status": "documented",
-"name_en": "REA MCP tool `list_segments`",
-"name_ar": "REA MCP: المقاطع"
-},
-{
 "id": "REA-173",
 "status": "documented",
 "name_en": "REA MCP tool `procedure_info`",
 "name_ar": "REA MCP: دالة"
+},
+{
+"id": "REA-212",
+"status": "documented",
+"name_en": "REA MCP tool `binary_session`",
+"name_ar": "REA MCP: الثنائي"
+},
+{
+"id": "REA-165",
+"status": "documented",
+"name_en": "REA MCP tool `list_segments`",
+"name_ar": "REA MCP: المقاطع"
 },
 {
 "id": "REA-174",
@@ -8389,16 +8426,16 @@
 "name_ar": "REA MCP: الاستدعاء"
 },
 {
-"id": "REA-170",
-"status": "documented",
-"name_en": "REA MCP tool `procedure_assembly`",
-"name_ar": "REA MCP: دالة"
-},
-{
 "id": "REA-163",
 "status": "documented",
 "name_en": "REA MCP tool `list_names`",
 "name_ar": "REA MCP: سرد الأسماء والرموز"
+},
+{
+"id": "REA-170",
+"status": "documented",
+"name_en": "REA MCP tool `procedure_assembly`",
+"name_ar": "REA MCP: دالة"
 },
 {
 "id": "REA-218",
@@ -8449,22 +8486,28 @@
 "name_ar": "REA MCP: ربط التحليل الثابت بالتشغيل"
 },
 {
-"id": "REA-183",
-"status": "documented",
-"name_en": "REA MCP tool `set_comment`",
-"name_ar": "REA MCP: تعليق"
-},
-{
 "id": "REA-216",
 "status": "documented",
 "name_en": "REA MCP tool `capture_process_scenario`",
 "name_ar": "REA MCP: عملية"
 },
 {
+"id": "REA-183",
+"status": "documented",
+"name_en": "REA MCP tool `set_comment`",
+"name_ar": "REA MCP: تعليق"
+},
+{
 "id": "REA-214",
 "status": "documented",
 "name_en": "REA MCP tool `import_evidence_bundle`",
 "name_ar": "REA MCP: الأدلة"
+},
+{
+"id": "REA-182",
+"status": "documented",
+"name_en": "REA MCP tool `set_bookmark`",
+"name_ar": "REA MCP: علامة"
 },
 {
 "id": "REA-194",
@@ -8477,12 +8520,6 @@
 "status": "documented",
 "name_en": "REA MCP tool `get_navigation_context`",
 "name_ar": "REA MCP: سياق التنقل"
-},
-{
-"id": "REA-182",
-"status": "documented",
-"name_en": "REA MCP tool `set_bookmark`",
-"name_ar": "REA MCP: علامة"
 },
 {
 "id": "REA-215",
@@ -8533,16 +8570,16 @@
 "name_ar": "REA MCP: دالة"
 },
 {
-"id": "REA-178",
-"status": "documented",
-"name_en": "REA MCP tool `search_procedures`",
-"name_ar": "REA MCP: البحث في الإجراءات"
-},
-{
 "id": "REA-177",
 "status": "documented",
 "name_en": "REA MCP tool `resolve_containing_procedure`",
 "name_ar": "REA MCP: دالة"
+},
+{
+"id": "REA-178",
+"status": "documented",
+"name_en": "REA MCP tool `search_procedures`",
+"name_ar": "REA MCP: البحث في الإجراءات"
 },
 {
 "id": "REA-184",
@@ -8804,8 +8841,8 @@
 "REA-158",
 "REA-167",
 "REA-180",
-"REA-165",
 "REA-173",
+"REA-165",
 "REA-174",
 "REA-164",
 "REA-169",
@@ -8814,8 +8851,8 @@
 "REA-189",
 "REA-163",
 "REA-183",
-"REA-228",
 "REA-182",
+"REA-228",
 "REA-177",
 "REA-168",
 "REA-188"
@@ -8893,7 +8930,7 @@
 "sim": 0.33
 },
 {
-"id": "SP-0128",
+"id": "SP-0129",
 "sim": 0.246
 }
 ]
@@ -8964,16 +9001,16 @@
 "name_ar": "سرد الحزم ADB"
 },
 {
-"id": "REA-099",
-"status": "documented",
-"name_en": "List the device's declared hardware and software features",
-"name_ar": "سرد الميزات ADB"
-},
-{
 "id": "REA-123",
 "status": "documented",
 "name_en": "Pull one device file to a local copy with a SHA-256 digest",
 "name_ar": "سحب ملف ADB"
+},
+{
+"id": "REA-099",
+"status": "documented",
+"name_en": "List the device's declared hardware and software features",
+"name_ar": "سرد الميزات ADB"
 },
 {
 "id": "REA-098",
@@ -9283,15 +9320,15 @@
 },
 {
 "id": "SP-0079",
-"sim": 0.249
+"sim": 0.248
 },
 {
 "id": "SP-0072",
 "sim": 0.246
 },
 {
-"id": "SP-0128",
-"sim": 0.11
+"id": "SP-0129",
+"sim": 0.111
 }
 ]
 },
@@ -9443,7 +9480,7 @@
 "sim": 0.2
 },
 {
-"id": "SP-0128",
+"id": "SP-0129",
 "sim": 0.089
 }
 ]
@@ -9580,7 +9617,7 @@
 "sim": 0.263
 },
 {
-"id": "SP-0128",
+"id": "SP-0129",
 "sim": 0.153
 }
 ]
@@ -9707,7 +9744,7 @@
 "sim": 0.259
 },
 {
-"id": "SP-0128",
+"id": "SP-0129",
 "sim": 0.153
 }
 ]
@@ -9820,8 +9857,8 @@
 "sim": 0.306
 },
 {
-"id": "SP-0079",
-"sim": 0.299
+"id": "SP-0069",
+"sim": 0.297
 },
 {
 "id": "SP-0340",
@@ -9938,14 +9975,14 @@
 },
 {
 "id": "SP-0077",
-"sim": 0.299
+"sim": 0.3
 },
 {
 "id": "SP-0072",
 "sim": 0.21
 },
 {
-"id": "SP-0128",
+"id": "SP-0129",
 "sim": 0.141
 }
 ]
@@ -10056,7 +10093,7 @@
 "sim": 0.203
 },
 {
-"id": "SP-0128",
+"id": "SP-0129",
 "sim": 0.106
 }
 ]
@@ -10267,14 +10304,14 @@
 },
 {
 "id": "SP-0074",
-"sim": 0.299
+"sim": 0.3
 },
 {
 "id": "SP-0072",
 "sim": 0.185
 },
 {
-"id": "SP-0128",
+"id": "SP-0129",
 "sim": 0.128
 }
 ]
@@ -10371,7 +10408,7 @@
 "sim": 0.241
 },
 {
-"id": "SP-0128",
+"id": "SP-0129",
 "sim": 0.152
 }
 ]
@@ -10449,30 +10486,29 @@
 "twins": [
 [
 "REA-070",
-"REA-072",
-"REA-071"
+"REA-072"
 ]
 ],
-"distinct_methods": 5,
+"distinct_methods": 6,
 "links": [
 {
 "id": "SP-0073",
-"sim": 0.299
+"sim": 0.297
 },
 {
 "id": "SP-0069",
-"sim": 0.249
+"sim": 0.248
 },
 {
 "id": "SP-0071",
-"sim": 0.22
+"sim": 0.217
 },
 {
 "id": "SP-0076",
 "sim": 0.197
 },
 {
-"id": "SP-0128",
+"id": "SP-0129",
 "sim": 0.115
 }
 ]
@@ -10570,7 +10606,7 @@
 "sim": 0.211
 },
 {
-"id": "SP-0128",
+"id": "SP-0129",
 "sim": 0.135
 }
 ]
@@ -10759,7 +10795,7 @@
 "sim": 0.192
 },
 {
-"id": "SP-0128",
+"id": "SP-0129",
 "sim": 0.142
 }
 ]
@@ -10923,7 +10959,7 @@
 },
 {
 "id": "SP-0067",
-"sim": 0.125
+"sim": 0.126
 },
 {
 "id": "SP-0080",
@@ -11006,7 +11042,7 @@
 },
 {
 "id": "SP-0073",
-"sim": 0.166
+"sim": 0.167
 },
 {
 "id": "SP-0083",
@@ -11090,7 +11126,7 @@
 "sim": 0.154
 },
 {
-"id": "SP-0128",
+"id": "SP-0129",
 "sim": 0.121
 }
 ]
@@ -11171,7 +11207,7 @@
 },
 {
 "id": "SP-0068",
-"sim": 0.163
+"sim": 0.164
 },
 {
 "id": "SP-0122",
@@ -11590,7 +11626,7 @@
 },
 {
 "id": "SP-0098",
-"sim": 0.161
+"sim": 0.162
 },
 {
 "id": "SP-0056",
@@ -12081,11 +12117,11 @@
 },
 {
 "id": "SP-0088",
-"sim": 0.084
+"sim": 0.085
 },
 {
 "id": "SP-0144",
-"sim": 0.075
+"sim": 0.074
 },
 {
 "id": "SP-0349",
@@ -12422,7 +12458,7 @@
 "distinct_methods": 28,
 "links": [
 {
-"id": "SP-0031",
+"id": "SP-0032",
 "sim": 0.266
 },
 {
@@ -12435,7 +12471,7 @@
 },
 {
 "id": "SP-0008",
-"sim": 0.103
+"sim": 0.104
 }
 ]
 },
@@ -12515,7 +12551,7 @@
 "links": [
 {
 "id": "SP-0140",
-"sim": 0.35
+"sim": 0.351
 },
 {
 "id": "SP-0223",
@@ -12609,7 +12645,7 @@
 },
 {
 "id": "SP-0090",
-"sim": 0.161
+"sim": 0.162
 },
 {
 "id": "SP-0059",
@@ -12671,7 +12707,7 @@
 "distinct_methods": 3,
 "links": [
 {
-"id": "SP-0044",
+"id": "SP-0045",
 "sim": 0.187
 },
 {
@@ -12892,7 +12928,11 @@
 "links": [
 {
 "id": "SP-0101",
-"sim": 0.184
+"sim": 0.185
+},
+{
+"id": "SP-0034",
+"sim": 0.143
 },
 {
 "id": "SP-0104",
@@ -12900,11 +12940,7 @@
 },
 {
 "id": "SP-0324",
-"sim": 0.1
-},
-{
-"id": "SP-0102",
-"sim": 0.09
+"sim": 0.099
 }
 ]
 },
@@ -13022,12 +13058,12 @@
 "sim": 0.277
 },
 {
-"id": "SP-0028",
-"sim": 0.225
+"id": "SP-0029",
+"sim": 0.224
 },
 {
 "id": "SP-0100",
-"sim": 0.184
+"sim": 0.185
 }
 ]
 },
@@ -13086,11 +13122,11 @@
 "sim": 0.208
 },
 {
-"id": "SP-0019",
+"id": "SP-0020",
 "sim": 0.134
 },
 {
-"id": "SP-0017",
+"id": "SP-0018",
 "sim": 0.114
 },
 {
@@ -13467,7 +13503,7 @@
 "sim": 0.105
 },
 {
-"id": "SP-0023",
+"id": "SP-0024",
 "sim": 0.074
 },
 {
@@ -13864,12 +13900,12 @@
 "sim": 0.05
 },
 {
-"id": "SP-0129",
-"sim": 0.048
+"id": "SP-0128",
+"sim": 0.046
 },
 {
 "id": "SP-0323",
-"sim": 0.04
+"sim": 0.039
 }
 ]
 },
@@ -13950,16 +13986,16 @@
 "name_ar": "وحدة مستقلة لكل تصحيح"
 },
 {
-"id": "APPX-55",
-"status": "documented",
-"name_en": "Font engineering stack",
-"name_ar": "حزمة هندسة الخطوط"
-},
-{
 "id": "APPX-25",
 "status": "documented",
 "name_en": "Auto update channel",
 "name_ar": "تحديث تلقائي"
+},
+{
+"id": "APPX-55",
+"status": "documented",
+"name_en": "Font engineering stack",
+"name_ar": "حزمة هندسة الخطوط"
 },
 {
 "id": "APPX-27",
@@ -14485,7 +14521,7 @@
 },
 {
 "id": "SP-0434",
-"sim": 0.105
+"sim": 0.104
 },
 {
 "id": "SP-0120",
@@ -14493,7 +14529,7 @@
 },
 {
 "id": "SP-0320",
-"sim": 0.093
+"sim": 0.092
 }
 ]
 },
@@ -14582,7 +14618,7 @@
 "sim": 0.061
 },
 {
-"id": "SP-0031",
+"id": "SP-0032",
 "sim": 0.055
 }
 ]
@@ -14849,8 +14885,8 @@
 "sim": 0.08
 },
 {
-"id": "SP-0125",
-"sim": 0.078
+"id": "SP-0136",
+"sim": 0.077
 }
 ]
 },
@@ -14960,16 +14996,16 @@
 "requires": [],
 "pipeline": [
 {
-"id": "APPX-60",
-"status": "documented",
-"name_en": "Vertical swipe video player (Android)",
-"name_ar": "مشغل فيديو عمودي بالسحب"
-},
-{
 "id": "APPX-59",
 "status": "documented",
 "name_en": "Virtual camera from a video file",
 "name_ar": "كاميرا افتراضية من فيديو"
+},
+{
+"id": "APPX-60",
+"status": "documented",
+"name_en": "Vertical swipe video player (Android)",
+"name_ar": "مشغل فيديو عمودي بالسحب"
 }
 ],
 "proof": [],
@@ -15434,12 +15470,12 @@
 "distinct_methods": 19,
 "links": [
 {
-"id": "SP-0030",
-"sim": 0.562
+"id": "SP-0031",
+"sim": 0.561
 },
 {
 "id": "SP-0052",
-"sim": 0.429
+"sim": 0.428
 },
 {
 "id": "SP-0053",
@@ -15754,7 +15790,7 @@
 "sim": 0.148
 },
 {
-"id": "SP-0045",
+"id": "SP-0044",
 "sim": 0.103
 }
 ]
@@ -15816,7 +15852,7 @@
 "links": [
 {
 "id": "SP-0005",
-"sim": 0.482
+"sim": 0.483
 },
 {
 "id": "SP-0043",
@@ -15844,27 +15880,27 @@
 "search",
 "capability"
 ],
-"size": 22,
+"size": 23,
 "best": "proven",
 "status_mix": {
-"proven": 17,
+"proven": 18,
 "ready": 3,
 "install": 2
 },
-"ready_now": 20,
+"ready_now": 21,
 "families": {
-"runnable-tools": 22
+"runnable-tools": 23
 },
 "atlas_folded": 0,
 "requires": [
 "python3",
 "npm:rea",
 "node",
+"chromium",
 "gh",
 "pip:pillow",
 "pip:opencv",
-"blender",
-"key:graphify"
+"blender"
 ],
 "pipeline": [
 {
@@ -15880,16 +15916,16 @@
 "name_ar": "باحث القدرات ثنائي اللغة بلا اتصال"
 },
 {
-"id": "TOOL-43",
-"status": "proven",
-"name_en": "Atlas external skill search",
-"name_ar": "بحث مهارات أطلس الخارجية"
-},
-{
 "id": "TOOL-07",
 "status": "proven",
 "name_en": "Local-first no-clone entry",
 "name_ar": "مدخل محلي بلا استنساخ"
+},
+{
+"id": "TOOL-43",
+"status": "proven",
+"name_en": "Atlas external skill search",
+"name_ar": "بحث مهارات أطلس الخارجية"
 },
 {
 "id": "TOOL-06",
@@ -15916,16 +15952,16 @@
 "name_ar": "باني خريطة القدرات المترابطة"
 },
 {
-"id": "TOOL-04",
-"status": "proven",
-"name_en": "Capability runtime router",
-"name_ar": "موجّه القدرات التنفيذية"
-},
-{
 "id": "TOOL-63",
 "status": "proven",
 "name_en": "Futurepedia AI Style Atlas — all 86 methods: search, fusion, storyboard-first briefs and engine scaffolds",
 "name_ar": "أطلس الأساليب الكامل (86 طريقة): بحث وتوليف وموجز إنتاج وهيكل مشروع شرح"
+},
+{
+"id": "TOOL-04",
+"status": "proven",
+"name_en": "Capability runtime router",
+"name_ar": "موجّه القدرات التنفيذية"
 },
 {
 "id": "TOOL-05",
@@ -15950,6 +15986,12 @@
 "status": "proven",
 "name_en": "KOSIF Remote Commander MCP",
 "name_ar": "خادم KOSIF Remote Commander"
+},
+{
+"id": "TOOL-70",
+"status": "proven",
+"name_en": "Style library — 586 visual styles by name (86 Futurepedia-derived + 500 original): find, describe, prompt, swatch, illustrated PDF catalog",
+"name_ar": "مكتبة الأساليب: 586 أسلوبًا بصريًا بالاسم (86 من أطلس Futurepedia + 500 أصلي) — بحث ووصف وبرومنت وعينة وكتالوج PDF مصوّر"
 },
 {
 "id": "TOOL-61",
@@ -16007,23 +16049,23 @@
 "kosif-tool/.claude/skills/kosif-superpowers/scripts/ai_tool_discovery.py"
 ],
 "twins": [],
-"distinct_methods": 22,
+"distinct_methods": 23,
 "links": [
 {
 "id": "SP-0322",
-"sim": 0.385
+"sim": 0.389
 },
 {
 "id": "SP-0265",
-"sim": 0.264
+"sim": 0.267
 },
 {
-"id": "SP-0023",
-"sim": 0.216
+"id": "SP-0024",
+"sim": 0.211
 },
 {
 "id": "SP-0244",
-"sim": 0.158
+"sim": 0.157
 }
 ]
 },
@@ -16315,7 +16357,7 @@
 },
 {
 "id": "SP-0355",
-"sim": 0.171
+"sim": 0.172
 },
 {
 "id": "SP-0159",
@@ -16325,6 +16367,106 @@
 },
 {
 "id": "SP-0128",
+"domain": "build",
+"family": "runnable-tools",
+"name_ar": "مقدّر سعة الأنظمة",
+"name_en": "System Capacity Sizer",
+"focus": [
+"think",
+"ideate",
+"capacity",
+"font"
+],
+"size": 7,
+"best": "proven",
+"status_mix": {
+"proven": 7
+},
+"ready_now": 7,
+"families": {
+"runnable-tools": 7
+},
+"atlas_folded": 0,
+"requires": [
+"python3",
+"pip:hypothesis",
+"key:unspecified",
+"pip:pillow",
+"fonts:arabic"
+],
+"pipeline": [
+{
+"id": "TOOL-10",
+"status": "proven",
+"name_en": "System Capacity Sizer",
+"name_ar": "مقدّر سعة الأنظمة"
+},
+{
+"id": "TOOL-11",
+"status": "proven",
+"name_en": "Invention Lab Candidates",
+"name_ar": "مختبر الابتكار الهندسي"
+},
+{
+"id": "TOOL-69",
+"status": "proven",
+"name_en": "Thinking engine scaffolds",
+"name_ar": "محرك التفكير وقوالبه"
+},
+{
+"id": "TOOL-66",
+"status": "proven",
+"name_en": "Book-distilled methods: lateral ideas, pragmatic engineering, Bayesian evidence, personality, accounting checks, prompt clarity",
+"name_ar": "مناهج مستخلصة من الكتب: التفكير الجانبي والهندسة العملية والأدلة البايزية والشخصية وفحوص المحاسبة ووضوح البرومنت"
+},
+{
+"id": "TOOL-68",
+"status": "proven",
+"name_en": "Pro Council: five opposing members or a task-fitted council from 100 personas, three rounds, a scored verdict",
+"name_ar": "مجلس البرو: خمسة متعارضين أو مجلس مناسب من 100 شخصية، ثلاث جولات وحكم بالدرجات"
+},
+{
+"id": "TOOL-65",
+"status": "proven",
+"name_en": "AI for business: 9 functions, 64 workflows, Claude-native gated runbooks",
+"name_ar": "الذكاء الاصطناعي في الأعمال: 9 وظائف و64 خطة عمل بخطط تشغيل لClaude"
+},
+{
+"id": "TOOL-42",
+"status": "proven",
+"name_en": "Arabic-aware font fidelity lab",
+"name_ar": "مختبر مطابقة الخطوط العربية"
+}
+],
+"proof": [
+"kosif-tool/.claude/skills/kosif-superpowers/evals/test_system_python.py",
+"kosif-tool/.claude/skills/kosif-superpowers/scripts/architecture_sizer.py",
+"kosif-tool/tests/test_invention_lab.py",
+"kosif-tool/.claude/skills/kosif-superpowers/scripts/invention_lab.py"
+],
+"twins": [],
+"distinct_methods": 7,
+"links": [
+{
+"id": "SP-0022",
+"sim": 0.148
+},
+{
+"id": "SP-0427",
+"sim": 0.142
+},
+{
+"id": "SP-0064",
+"sim": 0.072
+},
+{
+"id": "SP-0144",
+"sim": 0.071
+}
+]
+},
+{
+"id": "SP-0129",
 "domain": "build",
 "family": "runnable-tools",
 "name_ar": "تحليل REA لمستودعات المالك دفعةً واحدة",
@@ -16429,94 +16571,6 @@
 ]
 },
 {
-"id": "SP-0129",
-"domain": "build",
-"family": "runnable-tools",
-"name_ar": "مختبر الابتكار الهندسي",
-"name_en": "Invention Lab Candidates",
-"focus": [
-"capacity",
-"font",
-"ideate",
-"invention"
-],
-"size": 5,
-"best": "proven",
-"status_mix": {
-"proven": 5
-},
-"ready_now": 5,
-"families": {
-"runnable-tools": 5
-},
-"atlas_folded": 0,
-"requires": [
-"python3",
-"pip:hypothesis",
-"key:unspecified",
-"pip:pillow",
-"fonts:arabic"
-],
-"pipeline": [
-{
-"id": "TOOL-11",
-"status": "proven",
-"name_en": "Invention Lab Candidates",
-"name_ar": "مختبر الابتكار الهندسي"
-},
-{
-"id": "TOOL-10",
-"status": "proven",
-"name_en": "System Capacity Sizer",
-"name_ar": "مقدّر سعة الأنظمة"
-},
-{
-"id": "TOOL-66",
-"status": "proven",
-"name_en": "Book-distilled methods: lateral ideas, pragmatic engineering, Bayesian evidence, personality, accounting checks, prompt clarity",
-"name_ar": "مناهج مستخلصة من الكتب: التفكير الجانبي والهندسة العملية والأدلة البايزية والشخصية وفحوص المحاسبة ووضوح البرومنت"
-},
-{
-"id": "TOOL-65",
-"status": "proven",
-"name_en": "AI for business: 9 functions, 64 workflows, Claude-native gated runbooks",
-"name_ar": "الذكاء الاصطناعي في الأعمال: 9 وظائف و64 خطة عمل بخطط تشغيل لClaude"
-},
-{
-"id": "TOOL-42",
-"status": "proven",
-"name_en": "Arabic-aware font fidelity lab",
-"name_ar": "مختبر مطابقة الخطوط العربية"
-}
-],
-"proof": [
-"kosif-tool/tests/test_invention_lab.py",
-"kosif-tool/.claude/skills/kosif-superpowers/scripts/invention_lab.py",
-"kosif-tool/.claude/skills/kosif-superpowers/evals/test_system_python.py",
-"kosif-tool/.claude/skills/kosif-superpowers/scripts/architecture_sizer.py"
-],
-"twins": [],
-"distinct_methods": 5,
-"links": [
-{
-"id": "SP-0427",
-"sim": 0.204
-},
-{
-"id": "SP-0434",
-"sim": 0.088
-},
-{
-"id": "SP-0033",
-"sim": 0.061
-},
-{
-"id": "SP-0201",
-"sim": 0.055
-}
-]
-},
-{
 "id": "SP-0130",
 "domain": "build",
 "family": "runnable-tools",
@@ -16584,7 +16638,7 @@
 "distinct_methods": 4,
 "links": [
 {
-"id": "SP-0026",
+"id": "SP-0027",
 "sim": 0.256
 },
 {
@@ -16596,7 +16650,7 @@
 "sim": 0.168
 },
 {
-"id": "SP-0018",
+"id": "SP-0019",
 "sim": 0.144
 }
 ]
@@ -16988,7 +17042,7 @@
 "links": [
 {
 "id": "SP-0353",
-"sim": 0.473
+"sim": 0.474
 },
 {
 "id": "SP-0300",
@@ -17135,7 +17189,7 @@
 "distinct_methods": 12,
 "links": [
 {
-"id": "SP-0029",
+"id": "SP-0030",
 "sim": 0.35
 },
 {
@@ -17143,12 +17197,12 @@
 "sim": 0.276
 },
 {
-"id": "SP-0028",
-"sim": 0.204
+"id": "SP-0029",
+"sim": 0.203
 },
 {
 "id": "SP-0101",
-"sim": 0.152
+"sim": 0.151
 }
 ]
 },
@@ -17261,10 +17315,10 @@
 },
 {
 "id": "SP-0136",
-"sim": 0.147
+"sim": 0.146
 },
 {
-"id": "SP-0028",
+"id": "SP-0029",
 "sim": 0.11
 }
 ]
@@ -17366,11 +17420,11 @@
 "links": [
 {
 "id": "SP-0151",
-"sim": 0.156
+"sim": 0.155
 },
 {
 "id": "SP-0135",
-"sim": 0.147
+"sim": 0.146
 },
 {
 "id": "SP-0347",
@@ -17610,7 +17664,7 @@
 },
 {
 "id": "SP-0343",
-"sim": 0.171
+"sim": 0.172
 },
 {
 "id": "SP-0120",
@@ -17931,7 +17985,7 @@
 "links": [
 {
 "id": "SP-0097",
-"sim": 0.35
+"sim": 0.351
 },
 {
 "id": "SP-0046",
@@ -18019,15 +18073,15 @@
 "sim": 0.258
 },
 {
-"id": "SP-0014",
+"id": "SP-0015",
 "sim": 0.168
 },
 {
-"id": "SP-0045",
-"sim": 0.146
+"id": "SP-0044",
+"sim": 0.148
 },
 {
-"id": "SP-0034",
+"id": "SP-0035",
 "sim": 0.134
 }
 ]
@@ -18098,7 +18152,7 @@
 "distinct_methods": 6,
 "links": [
 {
-"id": "SP-0015",
+"id": "SP-0016",
 "sim": 0.278
 },
 {
@@ -18106,7 +18160,7 @@
 "sim": 0.237
 },
 {
-"id": "SP-0044",
+"id": "SP-0045",
 "sim": 0.178
 },
 {
@@ -18323,10 +18377,10 @@
 "links": [
 {
 "id": "SP-0013",
-"sim": 0.204
+"sim": 0.203
 },
 {
-"id": "SP-0022",
+"id": "SP-0023",
 "sim": 0.163
 },
 {
@@ -18334,7 +18388,7 @@
 "sim": 0.096
 },
 {
-"id": "SP-0026",
+"id": "SP-0027",
 "sim": 0.093
 }
 ]
@@ -18636,7 +18690,7 @@
 },
 {
 "id": "SP-0245",
-"sim": 0.195
+"sim": 0.196
 },
 {
 "id": "SP-0126",
@@ -19192,15 +19246,15 @@
 "links": [
 {
 "id": "SP-0033",
-"sim": 0.501
+"sim": 0.493
 },
 {
 "id": "SP-0347",
-"sim": 0.243
+"sim": 0.242
 },
 {
 "id": "SP-0154",
-"sim": 0.216
+"sim": 0.217
 },
 {
 "id": "SP-0151",
@@ -19369,7 +19423,7 @@
 },
 {
 "id": "SP-0136",
-"sim": 0.156
+"sim": 0.155
 }
 ]
 },
@@ -19699,18 +19753,18 @@
 "links": [
 {
 "id": "SP-0150",
-"sim": 0.216
+"sim": 0.217
 },
 {
 "id": "SP-0151",
-"sim": 0.131
-},
-{
-"id": "SP-0355",
-"sim": 0.079
+"sim": 0.13
 },
 {
 "id": "SP-0040",
+"sim": 0.079
+},
+{
+"id": "SP-0355",
 "sim": 0.079
 }
 ]
@@ -19880,16 +19934,16 @@
 "distinct_methods": 5,
 "links": [
 {
-"id": "SP-0355",
-"sim": 0.317
+"id": "SP-0034",
+"sim": 0.36
 },
 {
-"id": "SP-0032",
-"sim": 0.301
+"id": "SP-0355",
+"sim": 0.314
 },
 {
 "id": "SP-0380",
-"sim": 0.295
+"sim": 0.293
 },
 {
 "id": "SP-0216",
@@ -19955,7 +20009,7 @@
 "sim": 0.31
 },
 {
-"id": "SP-0034",
+"id": "SP-0035",
 "sim": 0.307
 },
 {
@@ -20328,7 +20382,7 @@
 "links": [
 {
 "id": "SP-0300",
-"sim": 0.342
+"sim": 0.343
 },
 {
 "id": "SP-0353",
@@ -20537,11 +20591,11 @@
 "links": [
 {
 "id": "SP-0309",
-"sim": 0.497
+"sim": 0.498
 },
 {
 "id": "SP-0426",
-"sim": 0.199
+"sim": 0.2
 },
 {
 "id": "SP-0158",
@@ -20624,7 +20678,7 @@
 },
 {
 "id": "SP-0249",
-"sim": 0.207
+"sim": 0.208
 },
 {
 "id": "SP-0307",
@@ -21024,7 +21078,7 @@
 "links": [
 {
 "id": "SP-0171",
-"sim": 0.198
+"sim": 0.199
 },
 {
 "id": "SP-0442",
@@ -21039,7 +21093,7 @@
 "sim": 0.097
 },
 {
-"id": "SP-0020",
+"id": "SP-0021",
 "sim": 0.049
 }
 ]
@@ -21123,8 +21177,12 @@
 "sim": 0.16
 },
 {
-"id": "SP-0032",
-"sim": 0.146
+"id": "SP-0153",
+"sim": 0.143
+},
+{
+"id": "SP-0034",
+"sim": 0.095
 }
 ]
 },
@@ -21215,7 +21273,7 @@
 "sim": 0.116
 },
 {
-"id": "SP-0030",
+"id": "SP-0031",
 "sim": 0.111
 }
 ]
@@ -22339,7 +22397,7 @@
 },
 {
 "id": "SP-0165",
-"sim": 0.198
+"sim": 0.199
 },
 {
 "id": "SP-0304",
@@ -22697,8 +22755,8 @@
 "sim": 0.119
 },
 {
-"id": "SP-0016",
-"sim": 0.117
+"id": "SP-0017",
+"sim": 0.116
 }
 ]
 },
@@ -23191,7 +23249,7 @@
 "links": [
 {
 "id": "SP-0189",
-"sim": 0.131
+"sim": 0.13
 },
 {
 "id": "SP-0441",
@@ -23203,7 +23261,7 @@
 },
 {
 "id": "SP-0258",
-"sim": 0.087
+"sim": 0.086
 },
 {
 "id": "SP-0091",
@@ -23621,7 +23679,7 @@
 },
 {
 "id": "SP-0033",
-"sim": 0.034
+"sim": 0.033
 }
 ]
 },
@@ -23859,7 +23917,7 @@
 "sim": 0.104
 },
 {
-"id": "SP-0024",
+"id": "SP-0025",
 "sim": 0.073
 }
 ]
@@ -24309,14 +24367,14 @@
 },
 {
 "id": "SP-0306",
-"sim": 0.139
+"sim": 0.14
 },
 {
 "id": "SP-0423",
 "sim": 0.11
 },
 {
-"id": "SP-0206",
+"id": "SP-0352",
 "sim": 0.078
 },
 {
@@ -24424,15 +24482,11 @@
 },
 {
 "id": "SP-0197",
-"sim": 0.109
+"sim": 0.11
 },
 {
-"id": "SP-0171",
-"sim": 0.096
-},
-{
-"id": "SP-0135",
-"sim": 0.084
+"id": "SP-0034",
+"sim": 0.102
 }
 ]
 },
@@ -24733,7 +24787,7 @@
 "links": [
 {
 "id": "SP-0176",
-"sim": 0.131
+"sim": 0.13
 },
 {
 "id": "SP-0441",
@@ -24840,7 +24894,7 @@
 },
 {
 "id": "SP-0333",
-"sim": 0.162
+"sim": 0.161
 },
 {
 "id": "SP-0200",
@@ -24851,7 +24905,7 @@
 "sim": 0.124
 },
 {
-"id": "SP-0028",
+"id": "SP-0029",
 "sim": 0.069
 }
 ]
@@ -24947,7 +25001,7 @@
 "sim": 0.204
 },
 {
-"id": "SP-0020",
+"id": "SP-0021",
 "sim": 0.103
 }
 ]
@@ -25040,7 +25094,7 @@
 },
 {
 "id": "SP-0342",
-"sim": 0.294
+"sim": 0.293
 },
 {
 "id": "SP-0233",
@@ -25048,7 +25102,7 @@
 },
 {
 "id": "SP-0033",
-"sim": 0.124
+"sim": 0.12
 }
 ]
 },
@@ -25419,7 +25473,7 @@
 },
 {
 "id": "SP-0125",
-"sim": 0.085
+"sim": 0.083
 }
 ]
 },
@@ -25500,7 +25554,7 @@
 "sim": 0.142
 },
 {
-"id": "SP-0045",
+"id": "SP-0044",
 "sim": 0.044
 }
 ]
@@ -25576,7 +25630,7 @@
 "sim": 0.076
 },
 {
-"id": "SP-0030",
+"id": "SP-0031",
 "sim": 0.048
 }
 ]
@@ -25722,7 +25776,7 @@
 "sim": 0.157
 },
 {
-"id": "SP-0030",
+"id": "SP-0031",
 "sim": 0.076
 }
 ]
@@ -25928,7 +25982,7 @@
 "sim": 0.086
 },
 {
-"id": "SP-0031",
+"id": "SP-0032",
 "sim": 0.074
 },
 {
@@ -26107,7 +26161,7 @@
 "sim": 0.076
 },
 {
-"id": "SP-0031",
+"id": "SP-0032",
 "sim": 0.068
 }
 ]
@@ -26183,12 +26237,12 @@
 "sim": 0.065
 },
 {
-"id": "SP-0032",
-"sim": 0.038
+"id": "SP-0034",
+"sim": 0.047
 },
 {
 "id": "SP-0156",
-"sim": 0.038
+"sim": 0.037
 }
 ]
 },
@@ -26254,7 +26308,7 @@
 "distinct_methods": 4,
 "links": [
 {
-"id": "SP-0031",
+"id": "SP-0032",
 "sim": 0.128
 },
 {
@@ -26802,7 +26856,7 @@
 "sim": 0.132
 },
 {
-"id": "SP-0025",
+"id": "SP-0026",
 "sim": 0.06
 }
 ]
@@ -27050,7 +27104,7 @@
 "sim": 0.115
 },
 {
-"id": "SP-0022",
+"id": "SP-0023",
 "sim": 0.041
 }
 ]
@@ -27163,7 +27217,7 @@
 "sim": 0.133
 },
 {
-"id": "SP-0024",
+"id": "SP-0025",
 "sim": 0.089
 }
 ]
@@ -27345,8 +27399,8 @@
 "sim": 0.077
 },
 {
-"id": "SP-0037",
-"sim": 0.038
+"id": "SP-0034",
+"sim": 0.042
 }
 ]
 },
@@ -27768,8 +27822,8 @@
 "sim": 0.181
 },
 {
-"id": "SP-0030",
-"sim": 0.14
+"id": "SP-0031",
+"sim": 0.141
 },
 {
 "id": "SP-0220",
@@ -28280,7 +28334,7 @@
 "sim": 0.097
 },
 {
-"id": "SP-0030",
+"id": "SP-0031",
 "sim": 0.053
 }
 ]
@@ -28382,7 +28436,7 @@
 "sim": 0.097
 },
 {
-"id": "SP-0030",
+"id": "SP-0031",
 "sim": 0.037
 }
 ]
@@ -29057,7 +29111,7 @@
 "distinct_methods": 9,
 "links": [
 {
-"id": "SP-0031",
+"id": "SP-0032",
 "sim": 0.205
 },
 {
@@ -29140,7 +29194,7 @@
 "links": [
 {
 "id": "SP-0008",
-"sim": 0.169
+"sim": 0.17
 },
 {
 "id": "SP-0049",
@@ -29233,7 +29287,7 @@
 "sim": 0.09
 },
 {
-"id": "SP-0030",
+"id": "SP-0031",
 "sim": 0.078
 }
 ]
@@ -30131,7 +30185,7 @@
 "links": [
 {
 "id": "SP-0248",
-"sim": 0.259
+"sim": 0.258
 },
 {
 "id": "SP-0342",
@@ -30453,7 +30507,7 @@
 "sim": 0.142
 },
 {
-"id": "SP-0021",
+"id": "SP-0022",
 "sim": 0.038
 }
 ]
@@ -32041,7 +32095,7 @@
 },
 {
 "id": "SP-0125",
-"sim": 0.158
+"sim": 0.157
 }
 ]
 },
@@ -32200,7 +32254,7 @@
 "links": [
 {
 "id": "SP-0146",
-"sim": 0.195
+"sim": 0.196
 },
 {
 "id": "SP-0405",
@@ -32387,7 +32441,7 @@
 },
 {
 "id": "SP-0008",
-"sim": 0.166
+"sim": 0.167
 },
 {
 "id": "SP-0239",
@@ -32844,7 +32898,7 @@
 "links": [
 {
 "id": "SP-0162",
-"sim": 0.207
+"sim": 0.208
 },
 {
 "id": "SP-0331",
@@ -33431,11 +33485,11 @@
 "links": [
 {
 "id": "SP-0300",
-"sim": 0.216
+"sim": 0.217
 },
 {
 "id": "SP-0133",
-"sim": 0.179
+"sim": 0.183
 },
 {
 "id": "SP-0353",
@@ -33568,7 +33622,7 @@
 },
 {
 "id": "SP-0336",
-"sim": 0.193
+"sim": 0.192
 },
 {
 "id": "SP-0159",
@@ -33886,16 +33940,16 @@
 "name_ar": "محرك Canvas الأصلي القابل للتقديم"
 },
 {
-"id": "ENG-81",
-"status": "ready",
-"name_en": "Canvas route template (pure function of t)",
-"name_ar": "مسار الكانفس"
-},
-{
 "id": "ENG-61",
 "status": "ready",
 "name_en": "Canvas retained scene model",
 "name_ar": "نموذج مشهد محفوظ للـ Canvas"
+},
+{
+"id": "ENG-81",
+"status": "ready",
+"name_en": "Canvas route template (pure function of t)",
+"name_ar": "مسار الكانفس"
 },
 {
 "id": "ENG-288",
@@ -34094,11 +34148,11 @@
 },
 {
 "id": "SP-0164",
-"sim": 0.095
+"sim": 0.096
 },
 {
 "id": "SP-0176",
-"sim": 0.087
+"sim": 0.086
 }
 ]
 },
@@ -34589,7 +34643,7 @@
 },
 {
 "id": "SP-0126",
-"sim": 0.081
+"sim": 0.08
 }
 ]
 },
@@ -34782,15 +34836,11 @@
 },
 {
 "id": "SP-0254",
-"sim": 0.098
-},
-{
-"id": "SP-0171",
-"sim": 0.093
+"sim": 0.099
 },
 {
 "id": "SP-0133",
-"sim": 0.091
+"sim": 0.096
 }
 ]
 },
@@ -34867,15 +34917,15 @@
 "links": [
 {
 "id": "SP-0125",
-"sim": 0.264
+"sim": 0.267
 },
 {
 "id": "SP-0449",
-"sim": 0.229
+"sim": 0.23
 },
 {
 "id": "SP-0322",
-"sim": 0.169
+"sim": 0.163
 },
 {
 "id": "SP-0149",
@@ -35055,7 +35105,7 @@
 "sim": 0.173
 },
 {
-"id": "SP-0128",
+"id": "SP-0129",
 "sim": 0.094
 },
 {
@@ -35150,16 +35200,16 @@
 "distinct_methods": 5,
 "links": [
 {
-"id": "SP-0019",
-"sim": 0.159
+"id": "SP-0020",
+"sim": 0.16
 },
 {
 "id": "SP-0322",
-"sim": 0.158
+"sim": 0.15
 },
 {
 "id": "SP-0125",
-"sim": 0.126
+"sim": 0.123
 },
 {
 "id": "SP-0047",
@@ -35425,7 +35475,7 @@
 "sim": 0.168
 },
 {
-"id": "SP-0017",
+"id": "SP-0018",
 "sim": 0.16
 }
 ]
@@ -35491,12 +35541,12 @@
 "sim": 0.153
 },
 {
-"id": "SP-0018",
+"id": "SP-0019",
 "sim": 0.108
 },
 {
 "id": "SP-0130",
-"sim": 0.105
+"sim": 0.106
 },
 {
 "id": "SP-0224",
@@ -36541,15 +36591,15 @@
 "sim": 0.111
 },
 {
+"id": "SP-0034",
+"sim": 0.107
+},
+{
 "id": "SP-0164",
 "sim": 0.106
 },
 {
-"id": "SP-0031",
-"sim": 0.104
-},
-{
-"id": "SP-0355",
+"id": "SP-0032",
 "sim": 0.104
 }
 ]
@@ -36660,7 +36710,7 @@
 "links": [
 {
 "id": "SP-0426",
-"sim": 0.204
+"sim": 0.205
 },
 {
 "id": "SP-0403",
@@ -36867,7 +36917,7 @@
 "distinct_methods": 7,
 "links": [
 {
-"id": "SP-0031",
+"id": "SP-0032",
 "sim": 0.121
 },
 {
@@ -36880,7 +36930,7 @@
 },
 {
 "id": "SP-0390",
-"sim": 0.058
+"sim": 0.057
 }
 ]
 },
@@ -37946,7 +37996,7 @@
 },
 {
 "id": "SP-0033",
-"sim": 0.072
+"sim": 0.07
 }
 ]
 },
@@ -38351,7 +38401,7 @@
 },
 {
 "id": "SP-0064",
-"sim": 0.106
+"sim": 0.107
 }
 ]
 },
@@ -39294,7 +39344,7 @@
 },
 {
 "id": "SP-0320",
-"sim": 0.18
+"sim": 0.179
 },
 {
 "id": "SP-0315",
@@ -39529,11 +39579,11 @@
 },
 {
 "id": "SP-0353",
-"sim": 0.38
+"sim": 0.381
 },
 {
 "id": "SP-0159",
-"sim": 0.342
+"sim": 0.343
 },
 {
 "id": "SP-0310",
@@ -39879,7 +39929,7 @@
 },
 {
 "id": "SP-0132",
-"sim": 0.14
+"sim": 0.141
 }
 ]
 },
@@ -40197,7 +40247,7 @@
 "links": [
 {
 "id": "SP-0307",
-"sim": 0.549
+"sim": 0.55
 },
 {
 "id": "SP-0301",
@@ -40643,7 +40693,7 @@
 "links": [
 {
 "id": "SP-0304",
-"sim": 0.549
+"sim": 0.55
 },
 {
 "id": "SP-0301",
@@ -40651,7 +40701,7 @@
 },
 {
 "id": "SP-0439",
-"sim": 0.326
+"sim": 0.327
 },
 {
 "id": "SP-0416",
@@ -40899,7 +40949,7 @@
 "links": [
 {
 "id": "SP-0161",
-"sim": 0.497
+"sim": 0.498
 },
 {
 "id": "SP-0308",
@@ -41137,7 +41187,7 @@
 },
 {
 "id": "SP-0300",
-"sim": 0.16
+"sim": 0.161
 }
 ]
 },
@@ -41336,12 +41386,12 @@
 "distinct_methods": 8,
 "links": [
 {
-"id": "SP-0028",
-"sim": 0.223
+"id": "SP-0029",
+"sim": 0.222
 },
 {
 "id": "SP-0354",
-"sim": 0.22
+"sim": 0.219
 },
 {
 "id": "SP-0426",
@@ -41541,7 +41591,7 @@
 },
 {
 "id": "SP-0326",
-"sim": 0.147
+"sim": 0.158
 },
 {
 "id": "SP-0302",
@@ -41927,7 +41977,7 @@
 "sim": 0.29
 },
 {
-"id": "SP-0028",
+"id": "SP-0029",
 "sim": 0.016
 }
 ]
@@ -41993,7 +42043,7 @@
 },
 {
 "id": "SP-0299",
-"sim": 0.18
+"sim": 0.179
 },
 {
 "id": "SP-0315",
@@ -42005,7 +42055,7 @@
 },
 {
 "id": "SP-0111",
-"sim": 0.093
+"sim": 0.092
 }
 ]
 },
@@ -42186,16 +42236,16 @@
 "name_ar": "تدقيق تراخيص المصادر وحدود إعادة الاستخدام"
 },
 {
-"id": "MISC-21",
-"status": "documented",
-"name_en": "Owner supporting playbooks (31)",
-"name_ar": "مهارات المالك المساندة (31 كتيب)"
-},
-{
 "id": "MISC-15",
 "status": "documented",
 "name_en": "KOSIF SEE routing limits",
 "name_ar": "حدود التكامل مع KOSIF SEE"
+},
+{
+"id": "MISC-21",
+"status": "documented",
+"name_en": "Owner supporting playbooks (31)",
+"name_ar": "مهارات المالك المساندة (31 كتيب)"
 },
 {
 "id": "MISC-P02",
@@ -42227,19 +42277,19 @@
 "links": [
 {
 "id": "SP-0125",
-"sim": 0.385
+"sim": 0.389
 },
 {
 "id": "SP-0265",
-"sim": 0.169
+"sim": 0.163
 },
 {
 "id": "SP-0268",
-"sim": 0.158
+"sim": 0.15
 },
 {
 "id": "SP-0244",
-"sim": 0.122
+"sim": 0.121
 }
 ]
 },
@@ -42340,7 +42390,7 @@
 "sim": 0.2
 },
 {
-"id": "SP-0034",
+"id": "SP-0035",
 "sim": 0.167
 },
 {
@@ -42419,10 +42469,10 @@
 },
 {
 "id": "SP-0364",
-"sim": 0.223
+"sim": 0.224
 },
 {
-"id": "SP-0029",
+"id": "SP-0030",
 "sim": 0.168
 }
 ]
@@ -42746,7 +42796,7 @@
 "links": [
 {
 "id": "SP-0315",
-"sim": 0.147
+"sim": 0.158
 },
 {
 "id": "SP-0148",
@@ -43812,7 +43862,7 @@
 },
 {
 "id": "SP-0190",
-"sim": 0.162
+"sim": 0.161
 },
 {
 "id": "SP-0428",
@@ -43912,7 +43962,7 @@
 "links": [
 {
 "id": "SP-0355",
-"sim": 0.148
+"sim": 0.149
 },
 {
 "id": "SP-0127",
@@ -44027,7 +44077,7 @@
 "sim": 0.11
 },
 {
-"id": "SP-0018",
+"id": "SP-0019",
 "sim": 0.09
 }
 ]
@@ -44085,7 +44135,7 @@
 "links": [
 {
 "id": "SP-0254",
-"sim": 0.193
+"sim": 0.192
 },
 {
 "id": "SP-0454",
@@ -44835,8 +44885,8 @@
 "sim": 0.153
 },
 {
-"id": "SP-0020",
-"sim": 0.125
+"id": "SP-0021",
+"sim": 0.124
 }
 ]
 },
@@ -45085,7 +45135,7 @@
 "sim": 0.163
 },
 {
-"id": "SP-0035",
+"id": "SP-0354",
 "sim": 0.154
 }
 ]
@@ -45300,7 +45350,7 @@
 },
 {
 "id": "SP-0192",
-"sim": 0.294
+"sim": 0.293
 },
 {
 "id": "SP-0256",
@@ -45506,11 +45556,11 @@
 "links": [
 {
 "id": "SP-0348",
-"sim": 0.233
+"sim": 0.234
 },
 {
 "id": "SP-0352",
-"sim": 0.223
+"sim": 0.224
 },
 {
 "id": "SP-0061",
@@ -45518,7 +45568,7 @@
 },
 {
 "id": "SP-0004",
-"sim": 0.206
+"sim": 0.207
 }
 ]
 },
@@ -45715,11 +45765,11 @@
 "sim": 0.122
 },
 {
-"id": "SP-0024",
+"id": "SP-0025",
 "sim": 0.106
 },
 {
-"id": "SP-0044",
+"id": "SP-0045",
 "sim": 0.091
 },
 {
@@ -45911,7 +45961,7 @@
 "distinct_methods": 21,
 "links": [
 {
-"id": "SP-0025",
+"id": "SP-0026",
 "sim": 0.209
 },
 {
@@ -46245,11 +46295,11 @@
 },
 {
 "id": "SP-0033",
-"sim": 0.245
+"sim": 0.251
 },
 {
 "id": "SP-0150",
-"sim": 0.243
+"sim": 0.242
 }
 ]
 },
@@ -46396,12 +46446,12 @@
 "sim": 0.41
 },
 {
-"id": "SP-0025",
+"id": "SP-0026",
 "sim": 0.273
 },
 {
 "id": "SP-0343",
-"sim": 0.233
+"sim": 0.234
 },
 {
 "id": "SP-0275",
@@ -46826,16 +46876,16 @@
 "distinct_methods": 12,
 "links": [
 {
-"id": "SP-0035",
-"sim": 0.275
-},
-{
-"id": "SP-0027",
+"id": "SP-0028",
 "sim": 0.2
 },
 {
 "id": "SP-0004",
-"sim": 0.126
+"sim": 0.127
+},
+{
+"id": "SP-0036",
+"sim": 0.115
 },
 {
 "id": "SP-0141",
@@ -46964,7 +47014,7 @@
 },
 {
 "id": "SP-0343",
-"sim": 0.223
+"sim": 0.224
 },
 {
 "id": "SP-0346",
@@ -47083,11 +47133,11 @@
 },
 {
 "id": "SP-0133",
-"sim": 0.473
+"sim": 0.474
 },
 {
 "id": "SP-0300",
-"sim": 0.38
+"sim": 0.381
 },
 {
 "id": "SP-0159",
@@ -47197,8 +47247,8 @@
 "sim": 0.334
 },
 {
-"id": "SP-0028",
-"sim": 0.286
+"id": "SP-0029",
+"sim": 0.285
 },
 {
 "id": "SP-0101",
@@ -47206,7 +47256,7 @@
 },
 {
 "id": "SP-0313",
-"sim": 0.22
+"sim": 0.219
 }
 ]
 },
@@ -47310,16 +47360,16 @@
 "distinct_methods": 8,
 "links": [
 {
-"id": "SP-0032",
-"sim": 0.348
+"id": "SP-0034",
+"sim": 0.351
 },
 {
 "id": "SP-0156",
-"sim": 0.317
+"sim": 0.314
 },
 {
 "id": "SP-0380",
-"sim": 0.269
+"sim": 0.267
 },
 {
 "id": "SP-0215",
@@ -47434,7 +47484,7 @@
 "sim": 0.134
 },
 {
-"id": "SP-0128",
+"id": "SP-0129",
 "sim": 0.103
 },
 {
@@ -47551,7 +47601,7 @@
 },
 {
 "id": "SP-0455",
-"sim": 0.061
+"sim": 0.06
 },
 {
 "id": "SP-0132",
@@ -47754,16 +47804,16 @@
 "name_ar": "فحص جودة التفريغ وإعادة المحاولة"
 },
 {
-"id": "QA-346",
-"status": "documented",
-"name_en": "Two-reviewer critique rubric",
-"name_ar": "معيار النقد بمراجعين"
-},
-{
 "id": "QA-320",
 "status": "documented",
 "name_en": "Critique loop rubric (8 criteria, >= 3 rounds)",
 "name_ar": "حلقة النقد الذاتي"
+},
+{
+"id": "QA-346",
+"status": "documented",
+"name_en": "Two-reviewer critique rubric",
+"name_ar": "معيار النقد بمراجعين"
 }
 ],
 "proof": [
@@ -47788,7 +47838,7 @@
 },
 {
 "id": "SP-0345",
-"sim": 0.096
+"sim": 0.097
 },
 {
 "id": "SP-0132",
@@ -48190,7 +48240,7 @@
 "sim": 0.11
 },
 {
-"id": "SP-0026",
+"id": "SP-0027",
 "sim": 0.066
 }
 ]
@@ -48270,7 +48320,7 @@
 },
 {
 "id": "SP-0324",
-"sim": 0.223
+"sim": 0.224
 },
 {
 "id": "SP-0243",
@@ -48593,8 +48643,8 @@
 "sim": 0.089
 },
 {
-"id": "SP-0016",
-"sim": 0.065
+"id": "SP-0017",
+"sim": 0.064
 },
 {
 "id": "SP-0088",
@@ -49007,7 +49057,7 @@
 "sim": 0.089
 },
 {
-"id": "SP-0030",
+"id": "SP-0031",
 "sim": 0.068
 }
 ]
@@ -49090,16 +49140,16 @@
 "name_ar": "حلقة نقاط تتسع بخطوط شعاعية"
 },
 {
-"id": "SHAPE-60",
-"status": "seen",
-"name_en": "Tilted icon wall",
-"name_ar": "جدار أيقونات مائل"
-},
-{
 "id": "SHAPE-87",
 "status": "seen",
 "name_en": "Line-art sea with mascot",
 "name_ar": "بحر خطوط مع شخصية رمزية"
+},
+{
+"id": "SHAPE-60",
+"status": "seen",
+"name_en": "Tilted icon wall",
+"name_ar": "جدار أيقونات مائل"
 },
 {
 "id": "SHAPE-57",
@@ -49152,7 +49202,7 @@
 "sim": 0.142
 },
 {
-"id": "SP-0030",
+"id": "SP-0031",
 "sim": 0.051
 }
 ]
@@ -49290,7 +49340,7 @@
 "sim": 0.135
 },
 {
-"id": "SP-0025",
+"id": "SP-0026",
 "sim": 0.058
 }
 ]
@@ -49603,12 +49653,12 @@
 "distinct_methods": 7,
 "links": [
 {
-"id": "SP-0171",
-"sim": 0.087
-},
-{
 "id": "SP-0430",
 "sim": 0.085
+},
+{
+"id": "SP-0171",
+"sim": 0.084
 },
 {
 "id": "SP-0229",
@@ -49620,7 +49670,7 @@
 },
 {
 "id": "SP-0003",
-"sim": 0.032
+"sim": 0.03
 }
 ]
 },
@@ -50034,7 +50084,7 @@
 "sim": 0.124
 },
 {
-"id": "SP-0031",
+"id": "SP-0032",
 "sim": 0.055
 }
 ]
@@ -50048,8 +50098,8 @@
 "focus": [
 "style",
 "router",
-"prompt",
-"request"
+"request",
+"prompt"
 ],
 "size": 16,
 "best": "proven",
@@ -50155,16 +50205,16 @@
 "name_ar": "اعرض ثلاث معاينات بدل الأسئلة"
 },
 {
-"id": "STORY-P03",
-"status": "documented",
-"name_en": "Amateur → pro motion lexicon (adjective → code direction)",
-"name_ar": "قاموس تحويل وصف الهواة إلى أوامر حركة"
-},
-{
 "id": "STORY-29",
 "status": "documented",
 "name_en": "Long-form edit style metrics (essay · diary · reflection)",
 "name_ar": "مقاييس أساليب المونتاج الطويل"
+},
+{
+"id": "STORY-P03",
+"status": "documented",
+"name_en": "Amateur → pro motion lexicon (adjective → code direction)",
+"name_ar": "قاموس تحويل وصف الهواة إلى أوامر حركة"
 },
 {
 "id": "STORY-13",
@@ -50183,20 +50233,20 @@
 "distinct_methods": 16,
 "links": [
 {
+"id": "SP-0034",
+"sim": 0.316
+},
+{
 "id": "SP-0156",
-"sim": 0.295
+"sim": 0.293
 },
 {
 "id": "SP-0355",
-"sim": 0.269
-},
-{
-"id": "SP-0032",
-"sim": 0.255
+"sim": 0.267
 },
 {
 "id": "SP-0150",
-"sim": 0.173
+"sim": 0.172
 }
 ]
 },
@@ -50348,14 +50398,14 @@
 },
 {
 "id": "SP-0343",
-"sim": 0.13
+"sim": 0.131
 },
 {
 "id": "SP-0179",
 "sim": 0.117
 },
 {
-"id": "SP-0025",
+"id": "SP-0026",
 "sim": 0.101
 }
 ]
@@ -50433,16 +50483,16 @@
 "name_ar": "أقواس العروض التقديمية كهياكل فيديو"
 },
 {
-"id": "STORY-U01",
-"status": "documented",
-"name_en": "Cartoon music-video pipeline",
-"name_ar": "خط فيلم الأغنية الكرتوني"
-},
-{
 "id": "STORY-19",
 "status": "documented",
 "name_en": "Product-proof first frame",
 "name_ar": "الإطار الأول دليل لا تدرّج"
+},
+{
+"id": "STORY-U01",
+"status": "documented",
+"name_en": "Cartoon music-video pipeline",
+"name_ar": "خط فيلم الأغنية الكرتوني"
 },
 {
 "id": "STORY-80",
@@ -50576,10 +50626,10 @@
 },
 {
 "id": "SP-0309",
-"sim": 0.091
+"sim": 0.092
 },
 {
-"id": "SP-0031",
+"id": "SP-0032",
 "sim": 0.046
 }
 ]
@@ -50672,7 +50722,7 @@
 },
 {
 "id": "SP-0351",
-"sim": 0.089
+"sim": 0.09
 },
 {
 "id": "SP-0011",
@@ -50742,8 +50792,8 @@
 "distinct_methods": 4,
 "links": [
 {
-"id": "SP-0016",
-"sim": 0.146
+"id": "SP-0017",
+"sim": 0.145
 },
 {
 "id": "SP-0363",
@@ -50755,7 +50805,7 @@
 },
 {
 "id": "SP-0173",
-"sim": 0.083
+"sim": 0.082
 }
 ]
 },
@@ -51355,15 +51405,11 @@
 },
 {
 "id": "SP-0338",
-"sim": 0.096
+"sim": 0.097
 },
 {
-"id": "SP-0156",
-"sim": 0.081
-},
-{
-"id": "SP-0032",
-"sim": 0.073
+"id": "SP-0034",
+"sim": 0.094
 }
 ]
 },
@@ -51493,7 +51539,7 @@
 },
 {
 "id": "SP-0149",
-"sim": 0.086
+"sim": 0.085
 },
 {
 "id": "SP-0190",
@@ -51637,11 +51683,11 @@
 },
 {
 "id": "SP-0339",
-"sim": 0.127
+"sim": 0.128
 },
 {
 "id": "SP-0111",
-"sim": 0.064
+"sim": 0.063
 }
 ]
 },
@@ -52236,7 +52282,7 @@
 },
 {
 "id": "SP-0011",
-"sim": 0.048
+"sim": 0.049
 }
 ]
 },
@@ -52708,8 +52754,8 @@
 "sim": 0.263
 },
 {
-"id": "SP-0127",
-"sim": 0.044
+"id": "SP-0036",
+"sim": 0.047
 }
 ]
 },
@@ -53504,7 +53550,7 @@
 "sim": 0.125
 },
 {
-"id": "SP-0025",
+"id": "SP-0026",
 "sim": 0.015
 }
 ]
@@ -54394,7 +54440,7 @@
 "sim": 0.129
 },
 {
-"id": "SP-0020",
+"id": "SP-0021",
 "sim": 0.08
 }
 ]
@@ -55463,7 +55509,7 @@
 },
 {
 "id": "SP-0126",
-"sim": 0.076
+"sim": 0.077
 }
 ]
 },
@@ -55591,7 +55637,7 @@
 "sim": 0.142
 },
 {
-"id": "SP-0028",
+"id": "SP-0029",
 "sim": 0.063
 }
 ]
@@ -56199,7 +56245,7 @@
 "sim": 0.195
 },
 {
-"id": "SP-0030",
+"id": "SP-0031",
 "sim": 0.048
 }
 ]
@@ -56452,7 +56498,7 @@
 "sim": 0.41
 },
 {
-"id": "SP-0025",
+"id": "SP-0026",
 "sim": 0.186
 },
 {
@@ -56675,7 +56721,7 @@
 "links": [
 {
 "id": "SP-0411",
-"sim": 0.16
+"sim": 0.161
 },
 {
 "id": "SP-0169",
@@ -57216,12 +57262,16 @@
 "sim": 0.211
 },
 {
-"id": "SP-0129",
-"sim": 0.204
-},
-{
 "id": "SP-0354",
 "sim": 0.167
+},
+{
+"id": "SP-0441",
+"sim": 0.152
+},
+{
+"id": "SP-0128",
+"sim": 0.142
 }
 ]
 },
@@ -57365,8 +57415,8 @@
 "sim": 0.184
 },
 {
-"id": "SP-0028",
-"sim": 0.159
+"id": "SP-0029",
+"sim": 0.158
 }
 ]
 },
@@ -57468,7 +57518,7 @@
 "sim": 0.146
 },
 {
-"id": "SP-0028",
+"id": "SP-0029",
 "sim": 0.079
 }
 ]
@@ -57565,7 +57615,7 @@
 "sim": 0.101
 },
 {
-"id": "SP-0024",
+"id": "SP-0025",
 "sim": 0.1
 }
 ]
@@ -57662,8 +57712,8 @@
 "sim": 0.14
 },
 {
-"id": "SP-0028",
-"sim": 0.067
+"id": "SP-0029",
+"sim": 0.068
 }
 ]
 },
@@ -57753,7 +57803,7 @@
 "sim": 0.115
 },
 {
-"id": "SP-0020",
+"id": "SP-0021",
 "sim": 0.046
 }
 ]
@@ -58064,7 +58114,7 @@
 "sim": 0.172
 },
 {
-"id": "SP-0030",
+"id": "SP-0031",
 "sim": 0.152
 }
 ]
@@ -58684,7 +58734,7 @@
 "links": [
 {
 "id": "SP-0307",
-"sim": 0.326
+"sim": 0.327
 },
 {
 "id": "SP-0301",
@@ -59860,7 +59910,7 @@
 "sim": 0.098
 },
 {
-"id": "SP-0025",
+"id": "SP-0026",
 "sim": 0.047
 }
 ]
@@ -59922,7 +59972,7 @@
 },
 {
 "id": "SP-0265",
-"sim": 0.229
+"sim": 0.23
 },
 {
 "id": "SP-0149",
@@ -60048,7 +60098,7 @@
 },
 {
 "id": "SP-0274",
-"sim": 0.081
+"sim": 0.082
 },
 {
 "id": "SP-0111",
@@ -60595,7 +60645,7 @@
 "links": [
 {
 "id": "SP-0310",
-"sim": 0.176
+"sim": 0.177
 },
 {
 "id": "SP-0336",
@@ -60679,7 +60729,7 @@
 },
 {
 "id": "SP-0357",
-"sim": 0.061
+"sim": 0.06
 },
 {
 "id": "SP-0313",

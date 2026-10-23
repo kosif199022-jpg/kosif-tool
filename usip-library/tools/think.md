@@ -284,7 +284,7 @@
 
 - ابدأ بـ `think.py recover --message "<نص الخطأ>"`، ثم سجّل `fusionforge.py trace --project <slug> --id <FUSE-ID> --stage <stage> --node <N> --action "<ما جُرّب>" --result failed --error-class <الصنف> --tool tool:charter-ingest --evidence <ملف>`.
 
-### `council` — مجلس البرو: خمسة أعضاء متعارضين وثلاث جولات وحكم بالدرجات / Pro Council: five opposing members, three rounds, a scored verdict
+### `council` — مجلس البرو: خمسة متعارضين أو مجلس مناسب من 100 شخصية، ثلاث جولات وحكم بالدرجات / Pro Council: five opposing members or a task-fitted council from 100 personas, three rounds, a scored verdict
 
 | الحقل | القيمة |
 |---|---|
@@ -293,9 +293,9 @@
 | الدليل | `tested-here` |
 | العائلات | `agent-orchestration`, `planning-execution`, `verification-evals` |
 
-**ما تفعله:** يخطط لمجلس من خمسة أعضاء متعارضين (المبتكر، محامي الشيطان، المهندس العملي، صوت الجمهور، الحارس)، لكل منهم مسار أدلة مختلف وتخصص حسب مخرج الطلب، ويكتب مطالبة كل عضو في كل جولة (مواقف مستقلة، استجواب متبادل، تصويت بالدرجات)، ويتحقق من كل رد ويبصمه ويرفض الأسرار، ثم يحسب حكمًا بطريقة بوردا مع الرأي المخالف والتحذيرات وإيصال SHA-256. لا يستدعي أي نموذج: Claude يشغّل الأعضاء وكلاء منفصلين، أو يسميهم COUNCIL_SIMULATED.
+**ما تفعله:** يخطط لمجلس من خمسة أعضاء متعارضين (المبتكر، محامي الشيطان، المهندس العملي، صوت الجمهور، الحارس)، لكل منهم مسار أدلة مختلف وتخصص حسب مخرج الطلب، ويكتب مطالبة كل عضو في كل جولة (مواقف مستقلة، استجواب متبادل، تصويت بالدرجات)، ويتحقق من كل رد ويبصمه ويرفض الأسرار، ثم يحسب حكمًا بطريقة بوردا مع الرأي المخالف والتحذيرات وإيصال SHA-256. لا يستدعي أي نموذج: Claude يشغّل الأعضاء وكلاء منفصلين، أو يسميهم COUNCIL_SIMULATED. ومع --seats N (من 5 إلى 15) يُجلس مجلسًا مناسبًا للطلب بحتمية من data/council_100.json: مئة شخصية فريدة مخترعة، عشرون لكل مسار أدلة، لكل منها وصف مفصل وثلاث قدرات خارقة وثلاثة أسئلة توقيع ونقطة عمياء معلنة والدليل الذي تطلبه وخصم مقابل؛ و--personas يختارها بالمعرّف، و--full يُجلس المئة بطلب صريح، والمجالس فوق تسعة ترى ملخص ردود الآخرين، والأمر personas يعرض القائمة ويبحث فيها ويعرض بطاقة.
 
-**What it does:** Plans a five-member adversarial council for a request (Visionary, Skeptic, Builder, Audience, Guardian, each with its own evidence lane and a specialisation from the brief's deliverable), writes every member's prompt for each round (independent positions, cross-examination, scored vote), validates and fingerprints each answer, refuses secrets, and computes a Borda verdict with recorded dissent, warnings and a SHA-256 receipt. It never calls a model: Claude runs the members as separate agents, or labels them COUNCIL_SIMULATED.
+**What it does:** Plans a five-member adversarial council for a request (Visionary, Skeptic, Builder, Audience, Guardian, each with its own evidence lane and a specialisation from the brief's deliverable), writes every member's prompt for each round (independent positions, cross-examination, scored vote), validates and fingerprints each answer, refuses secrets, and computes a Borda verdict with recorded dissent, warnings and a SHA-256 receipt. It never calls a model: Claude runs the members as separate agents, or labels them COUNCIL_SIMULATED. With --seats N (5-15) it seats a deterministic, task-fitted council from data/council_100.json: 100 unique invented personas, 20 per evidence lane, each with a detailed character, three superpowers, three signature questions, a declared blind spot, the evidence it demands and a counterpart; --personas picks them by id, --full seats all 100 on explicit request, councils above nine see a digest of the other answers, and the personas command lists, searches or shows the roster.
 
 #### متى تُستدعى
 
@@ -303,11 +303,16 @@
 - «وضع البرو: عايز نقاش بين آراء متعارضة»
 - «Run a five-member adversarial council on these three plans»
 - «Debate this decision with opposing experts and give me the verdict and the dissent»
+- «نفّذ بأقصى قوة: اعمل مجلس من الشخصيات المناسبة للطلب ده»
+- «Seat a nine-member council from the 100 personas for this decision»
+- «مين أنسب شخصيات المجلس لمراجعة الكود ده؟»
 
 #### الأوامر
 
-- **plan**: Writes council.json: five members with stances, evidence lanes and a specialisation, the options and the session rules.
+- **plan**: Writes council.json: five members with stances, evidence lanes and a specialisation, the options and the session rules. --seats N / --personas ids / --full seat personas from the 100-persona roster instead.
   - `python3 scripts/council.py plan "اعمل ريلز دعاء" --dir out/demo/council --options A,B,C`
+- **plan --seats**: Seats a task-fitted council of 9 from the 100 personas: the best of each lane first, then the most relevant; deterministic.
+  - `python3 scripts/council.py plan "اعمل ريلز موشن عربي" --dir out/demo/council9 --seats 9 --no-roster`
 - **prompts**: Writes prompts_r<N>.json with one prompt per member; round 2 and 3 include the earlier rounds and refuse to run before the previous round is complete.
   - `python3 scripts/council.py prompts --dir out/demo/council --round 1`
 - **ingest**: Validates one member's JSON answer for a round, refuses secrets, fingerprints it and records it (--simulated marks a voice written in Claude's own context).
@@ -316,17 +321,20 @@
   - `python3 scripts/council.py status --dir out/demo/council`
 - **verdict**: Sums round-3 scores per option, records the dissent and warnings (NO_DISSENT, CLOSE_CALL, WEAK_EVIDENCE), and writes verdict.json and minutes.md with a SHA-256 receipt.
   - `python3 scripts/council.py verdict --dir out/demo/council`
+- **personas**: Lists the roster (--lane), shows one full persona card (--id P024), or shows which council a request would seat (--find).
+  - `python3 scripts/council.py personas --find "راجع أمان الكود" --seats 7`
 
 #### المتطلبات والأمان
 
 - الأمان: writes-files
 - الموافقة: Writes only inside the --dir folder; it runs no model, spends nothing and publishes nothing.
-- الحدود: The council's quality depends on the members Claude runs; the script checks structure, evidence fields and votes, not whether an argument is correct, and a council without separate agents is only COUNCIL_SIMULATED.
+- الحدود: The council's quality depends on the members Claude runs; the script checks structure, evidence fields and votes, not whether an argument is correct, and a council without separate agents is only COUNCIL_SIMULATED. The 100 personas are invented stance prompts selected by keyword relevance; they add perspectives, not verified expertise, and a full 100-member council is 300 answers.
 
 #### الاختبارات والأدلة
 
 - `.claude/skills/kosif-superpowers/evals/test_council.py`
 - مرجع: `.claude/skills/kosif-superpowers/references/protocol/A13-pro-council.md`
+- مرجع: `.claude/skills/kosif-superpowers/references/protocol/A30-council-100.md`
 
 #### عند الفشل (A29)
 
@@ -537,9 +545,9 @@
 | الدليل | `tested-here` |
 | العائلات | `thinking-core`, `mental-models`, `planning-execution`, `creativity-engine` |
 
-**ما تفعله:** يحوّل إجراءات التفكير إلى قوالب نصية قابلة للفحص. يختار مستوى التفكير (L0–L6)، ويكتب عقد المهمة، ويرتّب 63 نموذجًا ذهنيًا، ويصوغ خطة بالتخطيط العكسي، ويبني مصفوفة أفكار من قدرات الكتالوج، ويقيّم قرارًا موزونًا مع اختبار الحساسية، ويجري تقدير فيرمي بطريقة مونت كارلو، ويرصد الصياغات الضعيفة في المسودة. وأضاف USIP v5.4 أربع أدوات استدلال: ترتيب ثمانية أنماط استدلال للمهمة، وتحديث الاعتقاد بنسب الأرجحية مع اختبار حساسية بالتنصيف والمضاعفة، وحكم استمر/حوّل/أوقف/انتظر من عتبات مكتوبة مسبقًا، ودفتر ادعاء ← دليل للمسودة. وأضاف USIP v5.5 أربعة قوالب ذكاء: كشف نوع مخرج الطلب وتصنيف خاناته إلى مملوءة ومفترضة ومسؤولة (بميزانية أسئلة المستوى) وحاجبة، وفحص رسم المهام وحساب ترتيبه ومساره الحرج المتفائل والمتشائم وأبوابه التي لا رجعة فيها، ومعايير الجودة لاثني عشر نوع مخرج مع حكم ناجح/فاشل/ناقص من الإجابات، وسلم التعافي لكل صنف خطأ في FusionForge بميزانية محاولات.
+**ما تفعله:** يحوّل إجراءات التفكير إلى قوالب نصية قابلة للفحص. يختار مستوى التفكير (L0–L6)، ويكتب عقد المهمة، ويرتّب 63 نموذجًا ذهنيًا، ويصوغ خطة بالتخطيط العكسي، ويبني مصفوفة أفكار من قدرات الكتالوج، ويقيّم قرارًا موزونًا مع اختبار الحساسية، ويجري تقدير فيرمي بطريقة مونت كارلو، ويرصد الصياغات الضعيفة في المسودة. وأضاف USIP v5.4 أربع أدوات استدلال: ترتيب ثمانية أنماط استدلال للمهمة، وتحديث الاعتقاد بنسب الأرجحية مع اختبار حساسية بالتنصيف والمضاعفة، وحكم استمر/حوّل/أوقف/انتظر من عتبات مكتوبة مسبقًا، ودفتر ادعاء ← دليل للمسودة. وأضاف USIP v5.5 أربعة قوالب ذكاء: كشف نوع مخرج الطلب وتصنيف خاناته إلى مملوءة ومفترضة ومسؤولة (بميزانية أسئلة المستوى) وحاجبة، وفحص رسم المهام وحساب ترتيبه ومساره الحرج المتفائل والمتشائم وأبوابه التي لا رجعة فيها، ومعايير الجودة لاثني عشر نوع مخرج مع حكم ناجح/فاشل/ناقص من الإجابات، وسلم التعافي لكل صنف خطأ في FusionForge بميزانية محاولات. وأمر pro يطبع 4 أو 8 أو 12 طبقة ذكاء (قياسي، عميق، أقصى)، لكل طبقة سؤال ومخرج يُكتب واختبار إبطال يفرض الإعادة، ومعها مجلس مناسب من 5 أو 9 أو 15 شخصية ونمطا استدلال وثلاثة نماذج ذهنية.
 
-**What it does:** Turns thinking procedures into checkable text scaffolds. It picks a reasoning level (L0–L6), writes a task contract, ranks 63 mental models, drafts a backcast plan, builds an idea matrix from catalog powers, scores a weighted decision with sensitivity, runs a Monte-Carlo Fermi estimate and flags weak wording in a draft. USIP v5.4 adds four reasoning tools: it ranks eight reasoning modes for a task, updates a belief by likelihood ratios with a halve/double sensitivity, gives a GO/PIVOT/KILL/HOLD verdict from thresholds written in advance, and builds a claim-to-evidence ledger for a draft. USIP v5.5 adds four intelligence scaffolds: it detects a request's deliverable kind and sorts its slots into filled, assumed, asked (within the level's question budget) and blocking; checks a task DAG and computes its order, optimistic and pessimistic critical path and one-way doors; prints the quality bar of twelve deliverable kinds and gives PASS, FAIL or INCOMPLETE from answers; and prints the recovery ladder for a FusionForge error class with an attempt budget.
+**What it does:** Turns thinking procedures into checkable text scaffolds. It picks a reasoning level (L0–L6), writes a task contract, ranks 63 mental models, drafts a backcast plan, builds an idea matrix from catalog powers, scores a weighted decision with sensitivity, runs a Monte-Carlo Fermi estimate and flags weak wording in a draft. USIP v5.4 adds four reasoning tools: it ranks eight reasoning modes for a task, updates a belief by likelihood ratios with a halve/double sensitivity, gives a GO/PIVOT/KILL/HOLD verdict from thresholds written in advance, and builds a claim-to-evidence ledger for a draft. USIP v5.5 adds four intelligence scaffolds: it detects a request's deliverable kind and sorts its slots into filled, assumed, asked (within the level's question budget) and blocking; checks a task DAG and computes its order, optimistic and pessimistic critical path and one-way doors; prints the quality bar of twelve deliverable kinds and gives PASS, FAIL or INCOMPLETE from answers; and prints the recovery ladder for a FusionForge error class with an attempt budget. The Pro pass prints 4, 8 or 12 intelligence passes (standard, deep, max), each with a question, the artifact to write and a falsifier that forces a redo, plus a task-fitted council of 5, 9 or 15 personas, two reasoning modes and three mental models.
 
 #### متى تُستدعى
 
@@ -556,6 +564,8 @@
 - «Check my task plan for cycles and the critical path»
 - «What quality checks does a video deliverable need?»
 - «الأمر فشل بخطأ، أعمل إيه؟»
+- «فكّر بأقصى قوة في القرار ده (برو)»
+- «Run the deep Pro passes on this launch plan»
 
 #### الأوامر
 
@@ -591,6 +601,8 @@
   - `python3 scripts/think.py qa video --answers qa.json`
 - **recover**: Prints the diagnose / fix / fallback / escalate ladder for one of the eight FusionForge error classes (guessed from the message when not given) and says STOP when the attempt budget is spent
   - `python3 scripts/think.py recover --message "ModuleNotFoundError: No module named cv2" --attempts 1`
+- **pro**: Prints the Pro passes of the depth (4/8/12) with question, artifact and falsifier, a fitted council (5/9/15), two modes and three models; --json for JSON.
+  - `python3 scripts/think.py pro "اعمل فيديو إطلاق منتج" --depth max`
 
 #### المتطلبات والأمان
 
@@ -604,6 +616,7 @@
 - `tests/test_think.py`
 - `tests/test_think_reasoning.py`
 - `tests/test_think_intel.py`
+- `tests/test_think_pro.py`
 - مرجع: `.claude/skills/kosif-superpowers/references/protocol/A24-reasoning-modes-decision-gates.md`
 - مرجع: `.claude/skills/kosif-superpowers/references/cognition.md`
 - مرجع: `.claude/skills/kosif-superpowers/references/guides/discover.md`
@@ -613,6 +626,7 @@
 - مرجع: `.claude/skills/kosif-superpowers/references/protocol/A26-planning-decomposition.md`
 - مرجع: `.claude/skills/kosif-superpowers/references/protocol/A27-verification-quality-standards.md`
 - مرجع: `.claude/skills/kosif-superpowers/references/protocol/A29-failure-recovery.md`
+- مرجع: `.claude/skills/kosif-superpowers/references/protocol/A30-council-100.md`
 
 #### عند الفشل (A29)
 

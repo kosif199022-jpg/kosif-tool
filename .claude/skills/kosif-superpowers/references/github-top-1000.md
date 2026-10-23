@@ -50,10 +50,10 @@ Repositories below the star cut-off that the skill still draws on (named by the 
 
 | repo | ★ | licence | topic | decision | transferred to |
 |---|---:|---|---|---|---|
-| [567-labs/instructor](https://github.com/567-labs/instructor) | 14,042 | MIT | prompt-engineering | transferred | PROMPT-33 |
-| [dottxt-ai/outlines](https://github.com/dottxt-ai/outlines) | 15,963 | Apache-2.0 | prompt-engineering | transferred | PROMPT-33 |
-| [guidance-ai/guidance](https://github.com/guidance-ai/guidance) | 21,803 | MIT | prompt-engineering | transferred | PROMPT-33 |
-| [promptfoo/promptfoo](https://github.com/promptfoo/promptfoo) | 26,070 | MIT | prompt-engineering | transferred | PROMPT-31, prompt-lab |
+| [567-labs/instructor](https://github.com/567-labs/instructor) | 14,042 | MIT | prompt-engineering | transferred | PROMPT-36 |
+| [dottxt-ai/outlines](https://github.com/dottxt-ai/outlines) | 15,963 | Apache-2.0 | prompt-engineering | transferred | PROMPT-36 |
+| [guidance-ai/guidance](https://github.com/guidance-ai/guidance) | 21,803 | MIT | prompt-engineering | transferred | PROMPT-36 |
+| [promptfoo/promptfoo](https://github.com/promptfoo/promptfoo) | 26,070 | MIT | prompt-engineering | transferred | PROMPT-34, prompt-lab |
 
 ## الجدول الكامل / full table
 
@@ -239,7 +239,7 @@ Repositories below the star cut-off that the skill still draws on (named by the 
 | 178 | [Z4nzu/hackingtool](https://github.com/Z4nzu/hackingtool) | 80,556 | MIT | security | skip |  |
 | 179 | [abi/screenshot-to-code](https://github.com/abi/screenshot-to-code) | 80,474 | MIT | design-ui-type | mine |  |
 | 180 | [anuraghazra/github-readme-stats](https://github.com/anuraghazra/github-readme-stats) | 79,843 | MIT | engineering-general | skip |  |
-| 181 | [dair-ai/Prompt-Engineering-Guide](https://github.com/dair-ai/Prompt-Engineering-Guide) | 79,377 | MIT | prompt-engineering | transferred | PROMPT-25, PROMPT-26, PROMPT-27, PROMPT-28, PROMPT-35 |
+| 181 | [dair-ai/Prompt-Engineering-Guide](https://github.com/dair-ai/Prompt-Engineering-Guide) | 79,377 | MIT | prompt-engineering | transferred | PROMPT-28, PROMPT-29, PROMPT-30, PROMPT-31, PROMPT-38 |
 | 182 | [doocs/advanced-java](https://github.com/doocs/advanced-java) | 79,162 | non-standard | methods-curricula | reference |  |
 | 183 | [base/chains](https://github.com/base/chains) | 78,607 | unknown | engineering-general | skip |  |
 | 184 | [elastic/elasticsearch](https://github.com/elastic/elasticsearch) | 78,335 | non-standard | engineering-general | skip |  |
@@ -412,10 +412,10 @@ Repositories below the star cut-off that the skill still draws on (named by the 
 | 351 | [ElemeFE/element](https://github.com/ElemeFE/element) | 54,009 | MIT | design-ui-type | mine |  |
 | 352 | [ChromeDevTools/chrome-devtools-mcp](https://github.com/ChromeDevTools/chrome-devtools-mcp) | 53,902 | Apache-2.0 | agents-skills | mine ·repos.json |  |
 | 353 | [vsouza/awesome-ios](https://github.com/vsouza/awesome-ios) | 53,645 | MIT | methods-curricula | mine |  |
-| 354 | [anthropics/anthropic-cookbook](https://github.com/anthropics/anthropic-cookbook) | 53,568 | MIT | agents-skills | transferred | PROMPT-30 |
+| 354 | [anthropics/anthropic-cookbook](https://github.com/anthropics/anthropic-cookbook) | 53,568 | MIT | agents-skills | transferred | PROMPT-33 |
 | 355 | [JetBrains/kotlin](https://github.com/JetBrains/kotlin) | 53,495 | none | engineering-general | skip |  |
 | 356 | [necolas/normalize.css](https://github.com/necolas/normalize.css) | 53,494 | MIT | design-ui-type | mine |  |
-| 357 | [lllyasviel/Fooocus](https://github.com/lllyasviel/Fooocus) | 53,477 | GPL-3.0 | prompt-engineering | transferred | PROMPT-34 |
+| 357 | [lllyasviel/Fooocus](https://github.com/lllyasviel/Fooocus) | 53,477 | GPL-3.0 | prompt-engineering | transferred | PROMPT-37 |
 | 358 | [jesseduffield/lazydocker](https://github.com/jesseduffield/lazydocker) | 53,194 | MIT | engineering-general | skip |  |
 | 359 | [expo/expo](https://github.com/expo/expo) | 52,895 | MIT | engineering-general | skip |  |
 | 360 | [poteto/hiring-without-whiteboards](https://github.com/poteto/hiring-without-whiteboards) | 52,789 | MIT | engineering-general | skip |  |
@@ -520,7 +520,7 @@ Repositories below the star cut-off that the skill still draws on (named by the 
 | 459 | [mifi/lossless-cut](https://github.com/mifi/lossless-cut) | 44,619 | GPL-2.0 | media-audio-video | reference |  |
 | 460 | [Wei-Shaw/sub2api](https://github.com/Wei-Shaw/sub2api) | 44,605 | LGPL-3.0 | agents-skills | skip |  |
 | 461 | [vercel-labs/agent-browser](https://github.com/vercel-labs/agent-browser) | 44,433 | Apache-2.0 | agents-skills | mine |  |
-| 462 | [danielmiessler/Fabric](https://github.com/danielmiessler/Fabric) | 44,385 | MIT | prompt-engineering | transferred | PROMPT-29 |
+| 462 | [danielmiessler/Fabric](https://github.com/danielmiessler/Fabric) | 44,385 | MIT | prompt-engineering | transferred | PROMPT-32 |
 | 463 | [Kong/kong](https://github.com/Kong/kong) | 44,295 | Apache-2.0 | engineering-general | skip |  |
 | 464 | [apache/spark](https://github.com/apache/spark) | 44,262 | Apache-2.0 | engineering-general | skip |  |
 | 465 | [colinhacks/zod](https://github.com/colinhacks/zod) | 44,168 | MIT | engineering-general | skip |  |
@@ -623,7 +623,7 @@ Repositories below the star cut-off that the skill still draws on (named by the 
 | 562 | [naptha/tesseract.js](https://github.com/naptha/tesseract.js) | 38,767 | Apache-2.0 | ai-ml-vision | mine |  |
 | 563 | [gto76/python-cheatsheet](https://github.com/gto76/python-cheatsheet) | 38,759 | none | methods-curricula | reference |  |
 | 564 | [ueberdosis/tiptap](https://github.com/ueberdosis/tiptap) | 38,758 | MIT | docs-writing-knowledge | mine |  |
-| 565 | [stanfordnlp/dspy](https://github.com/stanfordnlp/dspy) | 38,715 | MIT | prompt-engineering | transferred | PROMPT-23, PROMPT-24 |
+| 565 | [stanfordnlp/dspy](https://github.com/stanfordnlp/dspy) | 38,715 | MIT | prompt-engineering | transferred | PROMPT-26, PROMPT-27 |
 | 566 | [sqlmapproject/sqlmap](https://github.com/sqlmapproject/sqlmap) | 38,713 | non-standard | engineering-general | skip |  |
 | 567 | [xyflow/xyflow](https://github.com/xyflow/xyflow) | 38,692 | MIT | engineering-general | skip ·repos.json |  |
 | 568 | [portainer/portainer](https://github.com/portainer/portainer) | 38,672 | non-standard | engineering-general | skip |  |
@@ -729,7 +729,7 @@ Repositories below the star cut-off that the skill still draws on (named by the 
 | 668 | [laravel/framework](https://github.com/laravel/framework) | 34,962 | MIT | engineering-general | skip |  |
 | 669 | [facebookresearch/detectron2](https://github.com/facebookresearch/detectron2) | 34,942 | Apache-2.0 | ai-ml-vision | mine |  |
 | 670 | [binwiederhier/ntfy](https://github.com/binwiederhier/ntfy) | 34,925 | Apache-2.0 | engineering-general | skip |  |
-| 671 | [freestylefly/awesome-gpt-image-2](https://github.com/freestylefly/awesome-gpt-image-2) | 34,913 | MIT | prompt-engineering | transferred | PROMPT-32 |
+| 671 | [freestylefly/awesome-gpt-image-2](https://github.com/freestylefly/awesome-gpt-image-2) | 34,913 | MIT | prompt-engineering | transferred | PROMPT-35 |
 | 672 | [nothings/stb](https://github.com/nothings/stb) | 34,868 | non-standard | engineering-general | skip |  |
 | 673 | [derailed/k9s](https://github.com/derailed/k9s) | 34,853 | Apache-2.0 | engineering-general | skip |  |
 | 674 | [qishibo/AnotherRedisDesktopManager](https://github.com/qishibo/AnotherRedisDesktopManager) | 34,806 | MIT | engineering-general | skip |  |
