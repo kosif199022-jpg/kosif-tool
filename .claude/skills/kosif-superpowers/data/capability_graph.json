@@ -2007,6 +2007,16 @@
    "label": "scripts/cinematic_cut_planner.py"
   },
   {
+   "id": "script:scripts/color_media.py",
+   "kind": "script",
+   "label": "scripts/color_media.py"
+  },
+  {
+   "id": "script:scripts/portrait_pipeline.py",
+   "kind": "script",
+   "label": "scripts/portrait_pipeline.py"
+  },
+  {
    "id": "script:scripts/council.py",
    "kind": "script",
    "label": "scripts/council.py"
@@ -2101,11 +2111,6 @@
    "id": "script:scripts/package_skill.py",
    "kind": "script",
    "label": "scripts/package_skill.py"
-  },
-  {
-   "id": "script:scripts/portrait_pipeline.py",
-   "kind": "script",
-   "label": "scripts/portrait_pipeline.py"
   },
   {
    "id": "script:scripts/prompt_pack.py",
@@ -6625,6 +6630,12 @@
    "w": 1
   },
   {
+   "from": "script:scripts/color_media.py",
+   "to": "script:scripts/portrait_pipeline.py",
+   "rel": "imports",
+   "w": 1
+  },
+  {
    "from": "script:scripts/council.py",
    "to": "script:scripts/_secrets.py",
    "rel": "imports",
@@ -6999,6 +7010,12 @@
   {
    "from": "script:scripts/package_skill.py",
    "to": "script:scripts/check_skill.py",
+   "rel": "imports",
+   "w": 1
+  },
+  {
+   "from": "script:scripts/portrait_pipeline.py",
+   "to": "script:scripts/color_media.py",
    "rel": "imports",
    "w": 1
   },
