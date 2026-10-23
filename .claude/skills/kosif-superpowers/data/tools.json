@@ -10873,6 +10873,129 @@
    "evidence_note": "evals/test_reel_factory.py 34/34 OK here (the build smoke test renders a tiny draft reel; it skips without ffmpeg, node or Chromium). On 22-10 the real dua audio declared as direct-permission without evidence planned with rights.json status incomplete and one RIGHTS_NOTE; an owned 6 s voice with three Pexels shots built a 1080x1920 reel that verify_video --source-audio passed 12/12 (packet MD5 equal to the source)."
   },
   {
+   "id": "dua-wednesday",
+   "path": "scripts/dua_wednesday.py",
+   "root": "skill",
+   "kind": "cli",
+   "area": "edit",
+   "title_en": "Wednesday-morning dua reel (دعاء يوم الأربعاء) — 9:16 motion-graphics dua engine",
+   "title_ar": "دعاء يوم الأربعاء — محرك ريل دعاء موشن جرافيك 9:16",
+   "summary_en": "Rebuilds the approved Wednesday-morning dua reel style on new footage and voice: one dua phrase per licensed shot cut just before the voice onset with nine different transitions (light leak, whip, gold ink reveal, zoom-through, gold iris, film burn, spin zoom, bokeh, slide), word-by-word Arabic text timed with faster-whisper and audio energy with a gold karaoke highlight, a gold Ruqaa day title under a drawn-on mihrab crowned by a crescent, golden dust, god rays, bloom, warm grade and grain. The voice is stream-copied and checked byte for byte.",
+   "summary_ar": "يعيد أسلوب ريل دعاء صباح الأربعاء المعتمد على لقطات وصوت جديدين: عبارة لكل لقطة مرخصة بقطع قبل بداية الصوت وتسعة انتقالات مختلفة، ونص عربي كلمة كلمة بتوقيت Whisper وطاقة الصوت مع تمييز ذهبي للكلمة المنطوقة، وعنوان اليوم بخط رقعة ذهبي تحت محراب يُرسم ويعلوه هلال، وغبار ذهبي وأشعة وتوهج وتدرج دافئ. الصوت يُنسخ دون أي تعديل ويُتحقق منه بايتًا ببايت.",
+   "use_when": [
+    "اعمل الفيديو ده بنفس استايل دعاء يوم الأربعاء",
+    "دعاء الصباح ريلز بنفس الأسلوب مع لقطات جديدة",
+    "Make this dua video in the same Wednesday dua style",
+    "حوّل فيديو الدعاء ده لموشن جرافيك 9:16 بخطوط ذهبية وانتقالات"
+   ],
+   "keywords": [
+    "dua",
+    "دعاء",
+    "الأربعاء",
+    "wednesday",
+    "صباح",
+    "morning",
+    "reel",
+    "ريلز",
+    "موشن",
+    "motion graphics",
+    "karaoke",
+    "mihrab",
+    "محراب",
+    "هلال",
+    "crescent",
+    "9:16",
+    "tiktok",
+    "تيك توك",
+    "kinetic arabic"
+   ],
+   "commands": [
+    {
+     "name": "doctor",
+     "example": "python3 scripts/dua_wednesday.py doctor",
+     "does": "Lists binaries, Python modules, Playwright and fonts."
+    },
+    {
+     "name": "fetch",
+     "example": "python3 scripts/dua_wednesday.py fetch \"https://vt.tiktok.com/XXXX/\" --job ./dua1",
+     "does": "Downloads the source (yt-dlp, TikTok fallback) and stream-copies its audio to voice.m4a."
+    },
+    {
+     "name": "caption-times",
+     "example": "python3 scripts/dua_wednesday.py caption-times ./dua1/source.mp4",
+     "does": "On-screen caption onsets of the reference reel."
+    },
+    {
+     "name": "asr",
+     "example": "python3 scripts/dua_wednesday.py asr --job ./dua1 --model medium",
+     "does": "faster-whisper word timings + energy-refined phrase onsets → words.json, lines.draft.json."
+    },
+    {
+     "name": "init",
+     "example": "python3 scripts/dua_wednesday.py init --job ./dua1",
+     "does": "Copies the approved Wednesday project.json to edit."
+    },
+    {
+     "name": "prep",
+     "example": "python3 scripts/dua_wednesday.py prep --job ./dua1 sunrise.mp4 candle.mp4:556",
+     "does": "Licensed clips → 1080×1920 30 fps sharpened mezzanine (SRC:X sets the crop)."
+    },
+    {
+     "name": "sprites",
+     "example": "python3 scripts/dua_wednesday.py sprites --job ./dua1",
+     "does": "Renders title, date, subtitle and per-word dua sprites in Chromium."
+    },
+    {
+     "name": "stills",
+     "example": "python3 scripts/dua_wednesday.py stills --job ./dua1 --t 1.6,5.4,20",
+     "does": "Review frames."
+    },
+    {
+     "name": "render",
+     "example": "python3 scripts/dua_wednesday.py render --job ./dua1 --workers 4",
+     "does": "Parallel render, concat, untouched audio, TikTok copy, frame and audio checks."
+    }
+   ],
+   "inputs": "A dua video or voice (URL or file), licensed clips (one per phrase), project.json",
+   "outputs": "JOB/out/master.mp4, JOB/out/tiktok.mp4, JOB/out/report.json, JOB/stills/*.jpg",
+   "requires": {
+    "python": [
+     "numpy",
+     "opencv-python-headless"
+    ],
+    "binaries": [
+     "ffmpeg",
+     "ffprobe",
+     "node"
+    ],
+    "node": [
+     "playwright"
+    ],
+    "optional": [
+     "pip:faster-whisper",
+     "bin:yt-dlp"
+    ],
+    "network": false
+   },
+   "safety": "runs-external-programs",
+   "consent": "fetch downloads the user's link (and may call the public tikwm.com endpoint for TikTok); asr downloads a Whisper model from huggingface.co once; footage must be the user's own or licensed (Mixkit, CC).",
+   "limits": "Fixed 1080×1920 layout for short Arabic phrases; ASR drafts need a human spelling pass; licensed stock is often 720p landscape, so crops are upscaled; loudness is left as in the source.",
+   "tests": [
+    ".claude/skills/kosif-superpowers/evals/test_dua_wednesday.py"
+   ],
+   "docs": [
+    ".claude/skills/kosif-superpowers/dua-wednesday/WORKFLOW.md",
+    ".claude/skills/kosif-superpowers/dua-wednesday/README.md"
+   ],
+   "families": [
+    "transitions-cuts",
+    "audio-sync-captions",
+    "photo-video-footage",
+    "formats-platforms"
+   ],
+   "evidence": "tested-here"
+  },
+  {
    "id": "stream-grabber",
    "path": "scripts/stream_grabber.py",
    "root": "skill",
