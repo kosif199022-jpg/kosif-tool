@@ -15,13 +15,13 @@
  },
  "paths_note": "Tool paths and examples are relative to their root: 'skill' = this folder, 'repo' = the kosif-tool repository root.",
  "counts": {
-  "powers": 5408,
+  "powers": 5468,
   "families": 62,
   "domains": 10,
-  "tools": 141,
-  "guides": 102,
+  "tools": 142,
+  "guides": 104,
   "statuses": {
-   "documented": 2005,
+   "documented": 2065,
    "idea": 71,
    "install": 973,
    "key": 176,
@@ -242,9 +242,9 @@
    "domain": "build",
    "title_ar": "قدرات التطبيقات المحللة",
    "title_en": "Analyzed app capabilities",
-   "count": 139,
+   "count": 145,
    "statuses": {
-    "documented": 41,
+    "documented": 47,
     "install": 1,
     "proven": 96,
     "ready": 1
@@ -289,9 +289,9 @@
    "domain": "build",
    "title_ar": "أطلس: التطبيقات والواجهات والتكاملات",
    "title_en": "Atlas: apps, UI & integrations",
-   "count": 50,
+   "count": 52,
    "statuses": {
-    "documented": 50
+    "documented": 52
    },
    "chapter": "references/powers/atlas-build.md",
    "data": "data/powers/atlas-build.json"
@@ -302,9 +302,9 @@
    "domain": "code",
    "title_ar": "أطلس: الهندسة والكود",
    "title_en": "Atlas: engineering & code",
-   "count": 226,
+   "count": 237,
    "statuses": {
-    "documented": 226
+    "documented": 237
    },
    "chapter": "references/powers/atlas-code.md",
    "data": "data/powers/atlas-code.json"
@@ -315,9 +315,9 @@
    "domain": "craft",
    "title_ar": "أطلس: الكتابة والبرومبت والترجمة",
    "title_en": "Atlas: writing, prompts & languages",
-   "count": 24,
+   "count": 26,
    "statuses": {
-    "documented": 24
+    "documented": 26
    },
    "chapter": "references/powers/atlas-craft.md",
    "data": "data/powers/atlas-craft.json"
@@ -328,9 +328,9 @@
    "domain": "data",
    "title_ar": "أطلس: البيانات والتعلم الآلي",
    "title_en": "Atlas: data, ML & charts",
-   "count": 47,
+   "count": 52,
    "statuses": {
-    "documented": 47
+    "documented": 52
    },
    "chapter": "references/powers/atlas-data.md",
    "data": "data/powers/atlas-data.json"
@@ -341,9 +341,9 @@
    "domain": "docs",
    "title_ar": "أطلس: المستندات والمخططات",
    "title_en": "Atlas: documents & diagrams",
-   "count": 45,
+   "count": 50,
    "statuses": {
-    "documented": 45
+    "documented": 50
    },
    "chapter": "references/powers/atlas-docs.md",
    "data": "data/powers/atlas-docs.json"
@@ -367,9 +367,9 @@
    "domain": "mind",
    "title_ar": "أطلس: الوكلاء والتخطيط والمراجعة",
    "title_en": "Atlas: agent workflows, planning & review",
-   "count": 50,
+   "count": 54,
    "statuses": {
-    "documented": 50
+    "documented": 54
    },
    "chapter": "references/powers/atlas-mind.md",
    "data": "data/powers/atlas-mind.json"
@@ -380,9 +380,9 @@
    "domain": "research",
    "title_ar": "أطلس: البحث والمعرفة",
    "title_en": "Atlas: research & knowledge",
-   "count": 9,
+   "count": 11,
    "statuses": {
-    "documented": 9
+    "documented": 11
    },
    "chapter": "references/powers/atlas-research.md",
    "data": "data/powers/atlas-research.json"
@@ -393,9 +393,9 @@
    "domain": "strategy",
    "title_ar": "أطلس: المنتج والتسويق والأعمال",
    "title_en": "Atlas: product, marketing & business",
-   "count": 62,
+   "count": 72,
    "statuses": {
-    "documented": 62
+    "documented": 72
    },
    "chapter": "references/powers/atlas-strategy.md",
    "data": "data/powers/atlas-strategy.json"
@@ -950,9 +950,9 @@
    "domain": "code",
    "title_ar": "فحص البرامج والهندسة العكسية",
    "title_en": "Software investigation (REA)",
-   "count": 245,
+   "count": 258,
    "statuses": {
-    "documented": 167,
+    "documented": 180,
     "install": 48,
     "proven": 30
    },
@@ -10033,6 +10033,100 @@
    ]
   },
   {
+   "id": "rea-superpowers-map",
+   "path": "scripts/rea_superpowers_map.py",
+   "root": "skill",
+   "kind": "cli",
+   "area": "maintain",
+   "title_en": "Superpowers map, REA approach",
+   "title_ar": "خريطة سوبر باور بمنهج REA",
+   "summary_en": "Maps this skill the way REA maps a source tree it does not execute: a content-addressed inventory, Python import and invoke edges (ast), REA's JavaScript edges from its committed receipt, links from every script to its tools.json entry, tests, CI steps, powers and families, the gaps (orphan or untested scripts, missing tool files, unlisted references, broken links, families without a runnable tool) and Atlas safe-core coverage per theme.",
+   "summary_ar": "يرسم خريطة المهارة كما يرسم REA شجرة مصدر لا يشغّلها: جرد ببصمات المحتوى، وحواف الاستيراد والاستدعاء في بايثون، وحواف جافاسكربت من إيصال REA المحفوظ، وروابط كل سكربت بأداته واختباراته وخطوات CI والقدرات والعائلات، ثم الفجوات (سكربتات يتيمة أو بلا اختبار، ملفات أدوات مفقودة، مراجع خارج فهرس التخطيط، روابط مكسورة، عائلات بلا أداة قابلة للتشغيل) وتغطية الأطلس لكل موضوع.",
+   "use_when": [
+    "اعمل خريطة كاملة لسوبر باور: البنية والتبعيات والفجوات",
+    "ايه السكربتات اللي ملهاش اختبار أو مش متسجلة؟",
+    "Map the superpowers skill: structure, dependency graph, gaps and Atlas coverage",
+    "Which scripts are orphaned or untested, and which families have no runnable tool?"
+   ],
+   "keywords": [
+    "superpowers map",
+    "rea map",
+    "dependency graph",
+    "import graph",
+    "gaps",
+    "orphan scripts",
+    "untested",
+    "coverage",
+    "خريطة سوبر باور",
+    "خريطة",
+    "فجوات",
+    "تبعيات",
+    "سكربتات يتيمة"
+   ],
+   "commands": [
+    {
+     "name": "build",
+     "example": "python3 scripts/rea_superpowers_map.py build",
+     "does": "Writes data/superpowers_rea_map.json, references/superpowers-rea-map.md and the self-contained references/superpowers-rea-map.html; --check exits 1 when they are stale."
+    },
+    {
+     "name": "stats",
+     "example": "python3 scripts/rea_superpowers_map.py stats --json",
+     "does": "Structure, counts, gap counts, Atlas coverage and the REA receipt summary."
+    },
+    {
+     "name": "gaps",
+     "example": "python3 scripts/rea_superpowers_map.py gaps --kind script_untested",
+     "does": "Lists gap rows, optionally one kind."
+    },
+    {
+     "name": "node",
+     "example": "python3 scripts/rea_superpowers_map.py node atlas_5000",
+     "does": "One script, tool id, family or path with its edges, tools, tests, powers and gaps; unknown exits 2."
+    },
+    {
+     "name": "ingest-rea",
+     "example": "python3 scripts/rea_superpowers_map.py ingest-rea --summary sp_sum.json --graph sp_full.json",
+     "does": "Turns `rea import-reference-source <skill dir> --format json` output (summary and full) into the trimmed receipt proofs/rea-superpowers-map/receipt.json; foreign JSON is refused."
+    },
+    {
+     "name": "self-test",
+     "example": "python3 scripts/rea_superpowers_map.py --self-test",
+     "does": "Offline synthetic tree with known roles, edges and gaps; prints pass or the failed checks."
+    }
+   ],
+   "inputs": "The skill tree, data/tools.json, data/powers/*.json, data/skill_layout.json, .github/workflows/ci.yml, tests/, data/atlas_capability_index.json.gz and the committed REA receipt.",
+   "outputs": "build writes the three map files; other commands print to stdout; ingest-rea writes the receipt.",
+   "requires": {
+    "python": [],
+    "binaries": [
+     "python3"
+    ],
+    "node": [],
+    "optional": [
+     "rea (only to refresh the receipt, run separately)"
+    ],
+    "network": false
+   },
+   "safety": "read-only",
+   "consent": "None needed for build/stats/gaps/node; refreshing the receipt runs REA separately on the user's own tree.",
+   "limits": "Import edges are static (dynamic imports are invisible); a test reference is a name or import, not measured coverage; JavaScript edges are as of the receipt's git head; Atlas covered means cited, not run.",
+   "evidence": "tested-here",
+   "evidence_note": "evals/test_rea_superpowers_map.py and the built-in --self-test",
+   "tests": [
+    ".claude/skills/kosif-superpowers/evals/test_rea_superpowers_map.py"
+   ],
+   "docs": [
+    ".claude/skills/kosif-superpowers/references/superpowers-rea-map.md",
+    ".claude/skills/kosif-superpowers/references/rea-superpowers-frontier-20261023.md",
+    ".claude/skills/kosif-superpowers/references/guides/maintain.md"
+   ],
+   "families": [
+    "self-discovery",
+    "software-investigation"
+   ]
+  },
+  {
    "id": "atlas-deep-fusion",
    "path": "scripts/atlas_deep_fusion.py",
    "root": "skill",
@@ -13898,6 +13992,12 @@
    "summary": ""
   },
   {
+   "path": "references/rea-superpowers-frontier-20261023.md",
+   "title": "REA superpowers map and frontier mining — 2026-10-23",
+   "area": "maintain",
+   "summary": ""
+  },
+  {
    "path": "references/rea-upstream-capabilities.md",
    "title": "REA upstream v6.7.0 capability atlas for KOSIF Superpowers",
    "area": "investigate",
@@ -13973,6 +14073,12 @@
    "path": "references/styles-atlas.md",
    "title": "أطلس الأساليب — 289 دليلًا على ما صنعتَه / Styles atlas",
    "area": "general",
+   "summary": ""
+  },
+  {
+   "path": "references/superpowers-rea-map.md",
+   "title": "Superpowers map, REA approach — خريطة سوبر باور بمنهج REA",
+   "area": "maintain",
    "summary": ""
   },
   {

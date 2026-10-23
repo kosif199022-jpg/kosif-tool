@@ -2878,5 +2878,209 @@
     "11548": "3fca5ad57a9abd76c8b24e7e577a2550bbe4f780d10c9793d7b0274e7665396d"
    }
   }
+ },
+ {
+  "id": "AMIND-51",
+  "family": "atlas-mind",
+  "domain": "mind",
+  "name_ar": "زرع العيب لإثبات أن الفحص يستطيع أن يفشل",
+  "name_en": "Plant the defect to prove a check can fail",
+  "status": "documented",
+  "what": "يكسر الكود عمدًا بالعيب الذي يدّعي اختبار أو أداة فحص اكتشافه، ويسجّل ما حدث فعلًا في جدول زرع يتحول إلى اختبارات. — Breaks the code on purpose with the exact defect a test or instrument claims to catch, and records what really happened in a plant table that becomes regression tests.",
+  "when": "'هل سأعرف لو انكسر هذا؟'، فحص يدّعي غياب شيء (تسريب، تحذير)، أداة خارجية صامتة / 'would I know if this broke', a check that asserts an absence, a silent linter or sanitizer",
+  "how": "1) Write the claim as 'if X broke, Y would fail' and the plant table first (planted defect, expected instrument, what actually happened, covering test) with the result column empty. 2) Commit the check, confirm the clean tree passes and stand up a positive control that proves the instrument is running. 3) Plant one defect at a time in the real code, revert between plants, judge on exit codes (a plant that does not compile is not a pass). 4) Confirm the named assertion fired, not a neighbour. 5) Weaken each assertion in turn and check something still fails. 6) Turn data-expressible plants into tests; write down rows nothing covers. Use mutation testers (mutmut, Stryker, cargo-mutants) for exhaustive syntactic coverage.",
+  "params": "",
+  "install": "",
+  "requires": [],
+  "license": "method paraphrased from Atlas skills under MIT; the skills keep their own licenses — see each folder's SOURCE.md",
+  "proof": [
+   "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/959-plant-defects/2243-plant-defects"
+  ],
+  "proof_scope": "url",
+  "styles": [],
+  "tags": [
+   "mutation testing",
+   "test quality",
+   "verification",
+   "اختبار الاختبار",
+   "زرع عيب",
+   "false green"
+  ],
+  "section": "المراجعة والتحقق — Review, verification & quality gates",
+  "source": "KOSIF Atlas frontier mining 2026-10-23 (https://github.com/kosif199022-jpg/kosif-atlas @ 99bb108d): plant-defects/plant-defects (#2243) · theme verification-review · SKILL.md read in full as inert text: skills/959-plant-defects/2243-plant-defects",
+  "atlas": {
+   "ids": [
+    "2243"
+   ],
+   "examples": [
+    {
+     "id": "2243",
+     "plugin": "plant-defects",
+     "skill": "plant-defects",
+     "url": "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/959-plant-defects/2243-plant-defects"
+    }
+   ],
+   "theme": "verification-review",
+   "risk_notes": "Method guidance only; no Atlas code imported or executed.",
+   "kosif_overlap_ids": [],
+   "stage": "extracted",
+   "verified_by": "atlas-frontier-mining-20261023.json",
+   "skill_md_sha256": {
+    "2243": "c44f3975f90a0a24d8bcbf79975273b501e5a4bb2e561ffc0e5114589f84b143"
+   }
+  }
+ },
+ {
+  "id": "AMIND-52",
+  "family": "atlas-mind",
+  "domain": "mind",
+  "name_ar": "خطة تحقق يدوي مرقمة قابلة للاستئناف",
+  "name_en": "Resumable numbered manual verification plan",
+  "status": "documented",
+  "what": "يكتب قائمة فحوص يدوية كسجل دائم: كل خطوة إعداد وفعل ومتوقَّع قابل للملاحظة وتمييز النتيجة الصفرية الصحيحة من الأداة المعطلة. — Writes a by-hand checklist as a durable record: each step has setup, action, an observable expected result and a null-vs-broken guard.",
+  "when": "فحص لا يتم إلا على جهاز أو متصفح أو برنامج فعلي، أو إعادة طباعة خطوات التحقق / checks only a real device, browser or host can show; reprinting verification steps",
+  "how": "1) Look for the existing checklist in the plan or issue before writing one; a reprint request means find the record, not regenerate it. 2) Keep a step by hand only if its quantity passes through something only the environment has; otherwise defer it with a link to the automation issue. 3) Step 0 confirms the build under test (hash, version or provenance marker) every session. 4) Each step: Setup, Action, Expected (where it appears, value, tolerance, what wrong readings mean), Null vs broken, Why by hand. 5) Never renumber; statuses pending/passed/failed/partial/void/deferred/retired. 6) Persist first, then present; record readings verbatim with date, build and environment, never a bare tick.",
+  "params": "",
+  "install": "",
+  "requires": [],
+  "license": "method paraphrased from Atlas skills under MIT; the skills keep their own licenses — see each folder's SOURCE.md",
+  "proof": [
+   "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/992-write-manual-verification-plan/2276-write-manual-verification-plan"
+  ],
+  "proof_scope": "url",
+  "styles": [],
+  "tags": [
+   "manual testing",
+   "QA checklist",
+   "تحقق يدوي",
+   "قائمة فحص",
+   "acceptance",
+   "verification plan"
+  ],
+  "section": "المراجعة والتحقق — Review, verification & quality gates",
+  "source": "KOSIF Atlas frontier mining 2026-10-23 (https://github.com/kosif199022-jpg/kosif-atlas @ 99bb108d): write-manual-verification-plan/write-manual-verification-plan (#2276) · theme verification-review · SKILL.md read in full as inert text: skills/992-write-manual-verification-plan/2276-write-manual-verification-plan",
+  "atlas": {
+   "ids": [
+    "2276"
+   ],
+   "examples": [
+    {
+     "id": "2276",
+     "plugin": "write-manual-verification-plan",
+     "skill": "write-manual-verification-plan",
+     "url": "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/992-write-manual-verification-plan/2276-write-manual-verification-plan"
+    }
+   ],
+   "theme": "verification-review",
+   "risk_notes": "Method guidance only; no Atlas code imported or executed.",
+   "kosif_overlap_ids": [],
+   "stage": "extracted",
+   "verified_by": "atlas-frontier-mining-20261023.json",
+   "skill_md_sha256": {
+    "2276": "99200b3d81eb153c9b9623ed68df678fbfdd79d65822a3dacf4865977039308a"
+   }
+  }
+ },
+ {
+  "id": "AMIND-53",
+  "family": "atlas-mind",
+  "domain": "mind",
+  "name_ar": "الإطلاق في الظل لاختبار نظام بديل تحت حمل الإنتاج",
+  "name_en": "Shadow mode (dark launch) to validate a replacement under real load",
+  "status": "documented",
+  "what": "يكرر حركة الإنتاج إلى النظام الجديد دون أن تصل ردوده للمستخدم، ويقارن الردود حقلًا بحقل لبناء الثقة قبل التحويل. — Mirrors production traffic to a new system whose responses never reach users, comparing them field by field to build confidence before cutover.",
+  "when": "استبدال خدمة، ترحيل، مقارنة سلوك إصدار جديد بالحالي / replacing a service, a migration, comparing a new version's behaviour with production",
+  "how": "1) Choose a mirror: full, sampled, selective or offline replay; proxy, application, mesh or log-replay topology. 2) The production path never waits on the shadow: async copy, independent timeouts, and a kill switch toggled by config that works in seconds and is tested first. 3) Compare with rules: ignore IDs and timestamps, tolerance for computed numbers, sets for unordered collections, exact status codes. 4) Writes: mirror reads only, or give the shadow isolated state, dry-run or record-only writes. 5) Ramp 1%, 5-10%, 25-50%, 100%, tracking match rate (>99.9%), shadow latency vs prod and error rate. 6) Combine with dual write and strangler-fig steps: shadow, dual write, cut reads then writes, decommission.",
+  "params": "mirror %, match target",
+  "install": "",
+  "requires": [],
+  "license": "method paraphrased from Atlas skills under MIT; the skills keep their own licenses — see each folder's SOURCE.md",
+  "proof": [
+   "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/2160-migration-patterns-plugin/7804-shadow-mode"
+  ],
+  "proof_scope": "url",
+  "styles": [],
+  "tags": [
+   "shadow traffic",
+   "dark launch",
+   "migration",
+   "ترحيل",
+   "مقارنة",
+   "strangler fig"
+  ],
+  "section": "التخطيط والمواصفات — Planning, specs & decisions",
+  "source": "KOSIF Atlas frontier mining 2026-10-23 (https://github.com/kosif199022-jpg/kosif-atlas @ 99bb108d): migration-patterns-plugin/shadow-mode (#7804) · theme planning-specs · SKILL.md read in full as inert text: skills/2160-migration-patterns-plugin/7804-shadow-mode",
+  "atlas": {
+   "ids": [
+    "7804"
+   ],
+   "examples": [
+    {
+     "id": "7804",
+     "plugin": "migration-patterns-plugin",
+     "skill": "shadow-mode",
+     "url": "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/2160-migration-patterns-plugin/7804-shadow-mode"
+    }
+   ],
+   "theme": "planning-specs",
+   "risk_notes": "Method guidance only; no Atlas code imported or executed.",
+   "kosif_overlap_ids": [],
+   "stage": "extracted",
+   "verified_by": "atlas-frontier-mining-20261023.json",
+   "skill_md_sha256": {
+    "7804": "10cf640a4a46d6b6407a443037c4283e084438adc3026280063fcd9f6579cc44"
+   }
+  }
+ },
+ {
+  "id": "AMIND-54",
+  "family": "atlas-mind",
+  "domain": "mind",
+  "name_ar": "تنقيح المواصفات بتحليل الفجوات وأسئلة متتابعة مرجّحة",
+  "name_en": "Specification refinement: gap analysis and ranked one-at-a-time questions",
+  "status": "documented",
+  "what": "يحلل مواصفة أو خطة بعدسات البنية والتنفيذ والافتراضات وعدم التطابق وأصحاب المصلحة، ثم يطرح أهم الأسئلة واحدًا تلو الآخر مع إجابة موصى بها. — Analyses a spec or plan through structure, execution, assumptions, mismatches and stakeholder lenses, then asks the top questions one at a time with a recommended answer.",
+  "when": "مراجعة مواصفات أو متطلبات أو تصميم معماري، 'ما الثغرات في خطتي؟' / reviewing a spec, requirements or architecture, 'what are the gaps in my plan'",
+  "how": "1) Assess size, domains, stakeholders and scope clarity; simple mode for one clear domain, complex for several. 2) Lenses: Structure (I/O paths, coupling, boundaries), Execution (happy path, edge cases, failure modes), Assumptions, Mismatches (requirements vs design vs implementation), Stakeholders (operator, security, integrator, user). 3) In complex mode add dependency mapping, critical path, single points of failure and bottlenecks. 4) Build a coverage map over 11 categories (scope, data model, UX flow, non-functional, integrations, edge cases, constraints, terminology, completion signals, risks, placeholders) as Clear/Partial/Missing. 5) Rank questions by impact x uncertainty; ask at most 5 per session (10 total), one at a time, multiple choice with a recommended option, integrating each answer immediately. 6) Output numbered requirements with traceability in Draft status; never invent standards citations.",
+  "params": "mode: simple|complex",
+  "install": "",
+  "requires": [],
+  "license": "method paraphrased from Atlas skills under MIT; the skills keep their own licenses — see each folder's SOURCE.md",
+  "proof": [
+   "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/376-specification-refiner/1403-specification-refiner"
+  ],
+  "proof_scope": "url",
+  "styles": [],
+  "tags": [
+   "specification",
+   "requirements",
+   "gap analysis",
+   "مراجعة المواصفات",
+   "متطلبات",
+   "architecture review"
+  ],
+  "section": "التخطيط والمواصفات — Planning, specs & decisions",
+  "source": "KOSIF Atlas frontier mining 2026-10-23 (https://github.com/kosif199022-jpg/kosif-atlas @ 99bb108d): specification-refiner/specification-refiner (#1403) · theme planning-specs · SKILL.md read up to its first 12,000 characters as inert text (rest not read): skills/376-specification-refiner/1403-specification-refiner",
+  "atlas": {
+   "ids": [
+    "1403"
+   ],
+   "examples": [
+    {
+     "id": "1403",
+     "plugin": "specification-refiner",
+     "skill": "specification-refiner",
+     "url": "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/376-specification-refiner/1403-specification-refiner"
+    }
+   ],
+   "theme": "planning-specs",
+   "risk_notes": "Method guidance only; no Atlas code imported or executed.",
+   "kosif_overlap_ids": [],
+   "stage": "extracted",
+   "verified_by": "atlas-frontier-mining-20261023.json",
+   "skill_md_sha256": {
+    "1403": "45139f0ef588dc8cd42df2b3f42d282574520f3b71738f087cbacc3f0b5d44fe"
+   }
+  }
  }
 ]

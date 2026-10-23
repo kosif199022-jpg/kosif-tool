@@ -3,18 +3,20 @@
 
 > **قوتك هنا / what this gives you:** طرق الكتابة والمحتوى وصناعة البرومبت والمهارات والترجمة المستخرجة من أطلس. — Writing, content, prompt/skill engineering and translation methods mined from the Atlas.
 > **أقوى دليل / strongest evidence:** لا قوة مثبتة بعد في هذه العائلة — no ✅ power yet; the strongest badge here is 📄 documented.
-> **24 powers follow** — ✅ 0 · 🟢 0 · 📦 0 · 🔑 0 · 👁 0 · 📄 24 · 💡 0.
+> **26 powers follow** — ✅ 0 · 🟢 0 · 📦 0 · 🔑 0 · 👁 0 · 📄 26 · 💡 0.
 
 **الحالة / status:** ✅ مُثبت (شُغّل فعلًا وله مسار دليل) · 🟢 جاهز (كود موجود يعمل بما هو متاح عادة) · 📦 بأمر تثبيت واحد · 🔑 يحتاج مفتاحًا أو حسابًا أو موصلًا · 👁 شوهد في فيديو مرجعي (للموشن فقط) · 📄 طريقة موثقة · 💡 فكرة. الشارة هي أدنى مستوى صادق — the badge is the lowest level that is true.
 مسارات الدليل نسبية إلى `/home/user/`؛ و`session-<date>:<file>#<section>` تشير إلى تشغيل موثق في جلسة سابقة؛ و`owner-upload:` إلى ملف داخل أرشيف أرسله المالك. Proof paths are relative to `/home/user/`.
 
 **المجال / domain:** الكتابة واللغة — Writing & language · **البادئة / prefix:** `ACRAFT` · **البيانات / data:** `data/powers/atlas-craft.json` · **بحث / search:** `python3 scripts/powers.py family atlas-craft`
-**مراجع ذات صلة / related references:** [CLAUDE_3_MINUTE_MAP.md](../CLAUDE_3_MINUTE_MAP.md) · [atlas-5000-mining-20261023.md](../atlas-5000-mining-20261023.md) · [hubs.md](../hubs.md)
+**مراجع ذات صلة / related references:** [CLAUDE_3_MINUTE_MAP.md](../CLAUDE_3_MINUTE_MAP.md) · [atlas-5000-mining-20261023.md](../atlas-5000-mining-20261023.md) · [hubs.md](../hubs.md) · [rea-superpowers-frontier-20261023.md](../rea-superpowers-frontier-20261023.md)
 
 ## الفهرس / contents
 
 - **المخططات — Diagrams & visual documentation** — ACRAFT-01 … ACRAFT-23 (9)
 - **الواجهات والتصميم — Front-end, UI & design systems** — ACRAFT-02 … ACRAFT-24 (15)
+- **هندسة البرومبت والمهارات — Prompt, skill & plugin engineering** — ACRAFT-25 (1)
+- **الكتابة والمحتوى — Writing & content** — ACRAFT-26 (1)
 - المصادر والرخص / sources & licences
 
 ## المخططات — Diagrams & visual documentation
@@ -218,9 +220,29 @@
 - **الدليل / proof:** `https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/1503-universal-design-principles/3768-progressive-disclosure`
 - **المصدر / source:** KOSIF Atlas-5000 mining 2026-10-23 (https://github.com/kosif199022-jpg/kosif-atlas @ 99bb108d): universal-design-principles/progressive-disclosure (#3768) · theme prompt-skill-engineering · 1 supporting skills · SKILL.md read in full as inert text: skills/1503-universal-design-principles/3768-progressive-disclosure
 
+## هندسة البرومبت والمهارات — Prompt, skill & plugin engineering
+
+#### ACRAFT-25 · حوكمة البرومبتات في الإنتاج: سجل وتقييمات وترقية وتراجع · Prompt governance: registry, evals, promotion and rollback · 📄 موصوف / documented only
+- **ماذا / what:** يعامل البرومبتات ككود: سجل بإصدارات وترقية بين البيئات، مجموعة ذهبية وتقييمات آلية في CI، اختبار A/B مسبق التعريف، وتراجع بأمر واحد. — Treats prompts as code: a versioned registry with environment promotion, a golden set with automated evals in CI, pre-defined A/B tests and one-command rollback.
+- **متى أستخدمها / when:** برومبتات مكتوبة داخل الكود، تراجع جودة بعد تعديل برومبت، اختبار A/B لبرومبت / prompts hard-coded in app code, a prompt change regressed quality, prompt A/B tests
+- **كيف / how:** 1) Registry: prompts/<id>/vX.Y.Z.md plus registry.yaml with owner, model, status and who promoted when. 2) A golden dataset per prompt (20 examples minimum, 100+ for production) covering edge cases, reviewed by a domain expert and versioned with the prompt. 3) Pick eval type by task: exact match, contains, schema validation, embedding similarity, model-as-judge, human; set thresholds (e.g. 95% extraction, 100% schema). 4) Lifecycle: branch, develop, eval in CI, compare with production score, review diff plus scores, promote with approval, monitor 24-48 h, rollback. 5) A/B: stable hash assignment, metric and sample size fixed in advance, at least a week or 1,000 requests per arm. 6) Re-run evals on a schedule because model updates break prompts silently.
+- **الرخصة / license:** method paraphrased from Atlas skills under MIT; the skills keep their own licenses — see each folder's SOURCE.md
+- **الدليل / proof:** `https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/179-prompt-governance/548-prompt-governance`
+- **المصدر / source:** KOSIF Atlas frontier mining 2026-10-23 (https://github.com/kosif199022-jpg/kosif-atlas @ 99bb108d): prompt-governance/prompt-governance (#548) · theme prompt-skill-engineering · SKILL.md read in full as inert text: skills/179-prompt-governance/548-prompt-governance
+
+## الكتابة والمحتوى — Writing & content
+
+#### ACRAFT-26 · استخراج أسلوب كاتب إلى دليل أسلوب قابل للتطبيق · Extract a writing style into a reusable style guide · 📄 موصوف / documented only
+- **ماذا / what:** يحلل نصًا مصدرًا عبر 17 بعدًا أسلوبيًا (و10 سردية للأدب) من عينات موزعة، وينتج دليلًا وبطاقة صوت وقائمة افعل/لا تفعل ومعيار تقييم. — Analyses a source text across 17 style dimensions (plus 10 narrative ones for fiction) from spread samples and produces a guide, a voice card, a do/don't list and a scoring rubric.
+- **متى أستخدمها / when:** 'حلل أسلوب هذا الكاتب'، صوت علامة تجارية، كتابة بأسلوب مرجع / analyse an author's voice, brand voice, write in the style of a reference
+- **كيف / how:** 1) Sample 5-7 points spread across the text (opening, 25-35%, middle, 65-75%, end), not one chapter. 2) Record patterns, not content, across tone, sentence and paragraph length, register, transitions, humour, directness, warmth, explanation order, openings, closings, punctuation, rhetorical moves, reader address, examples, references and how the style adapts to difficulty. 3) For fiction add plot architecture, time structure, character introduction, emotional conveyance, theme handling, revelation pacing and where the author departs from AI defaults. 4) Keep only features seen in several samples; never claim absent traits. 5) Deliver full guide (800-1500 words), voice card (~300), 20-30 do/don't items and a 1-5 rubric, each with 2-3 neutral passages rewritten in the style. 6) Never copy signature phrases as rules; describe the pattern they exemplify. **أرقام / params:** source text
+- **الرخصة / license:** method paraphrased from Atlas skills under MIT; the skills keep their own licenses — see each folder's SOURCE.md
+- **الدليل / proof:** `https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/1268-style-extractor/2946-style-extractor`
+- **المصدر / source:** KOSIF Atlas frontier mining 2026-10-23 (https://github.com/kosif199022-jpg/kosif-atlas @ 99bb108d): style-extractor/style-extractor (#2946) · theme writing-content · SKILL.md read in full as inert text: skills/1268-style-extractor/2946-style-extractor
+
 ## المصادر والرخص / sources & licences
 
-- الرخص / licences: method paraphrased from Atlas skills under MIT; the skills keep their own licenses — see each folder's SOURCE.md (22) · method paraphrased from Atlas skills under Apache-2.0 / MIT; the skills keep their own licenses — see each folder's SOURCE.md (1) · method paraphrased from Atlas skills under Apache-2.0; the skills keep their own licenses — see each folder's SOURCE.md (1)
+- الرخص / licences: method paraphrased from Atlas skills under MIT; the skills keep their own licenses — see each folder's SOURCE.md (24) · method paraphrased from Atlas skills under Apache-2.0 / MIT; the skills keep their own licenses — see each folder's SOURCE.md (1) · method paraphrased from Atlas skills under Apache-2.0; the skills keep their own licenses — see each folder's SOURCE.md (1)
 - الأفكار مكتوبة بكلماتنا مع رابط المصدر؛ لا يُنسخ نص طرف ثالث طويل. Ideas are paraphrased with a link to the source; no long third-party text is copied. `—` = no licence recorded (own method or own wording).
 
 ---

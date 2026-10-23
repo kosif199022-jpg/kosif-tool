@@ -1,0 +1,469 @@
+{
+ "schema": "kosif.rea-receipt.v1",
+ "tool": "rea import-reference-source",
+ "authority": "historical-reference",
+ "importer_version": "6.7.0",
+ "vcs_head": "08c91e42789acfa9018065360731f30757644568",
+ "manifest_id": "hsm_60109626efa171b42c15c8982b01660fccdc00d4792af575626b0be42377004c",
+ "graph_sha256": "a589b977de817edf856fa2d653d47c3705cb0dd6d404a5d8d8686f88508f7be7",
+ "root_sha256": "745f35ab7965b1acd40e5fd2c2a97ec81715bfcdc12e1e7c7ef3df57f4491c76",
+ "inventory_state": "partial",
+ "counts": {
+  "entries": 1024,
+  "files": 931,
+  "directories": 93,
+  "symlinks": 0,
+  "unknown": 0,
+  "relationships": 71,
+  "parse_failures": 0,
+  "exclusions": 0
+ },
+ "languages": [
+  "HTML",
+  "JSON",
+  "JavaScript",
+  "Markdown",
+  "Python",
+  "Shell",
+  "Text",
+  "TypeScript",
+  "YAML"
+ ],
+ "manifests": [
+  "examples/threejs-motion-lab/package-lock.json",
+  "examples/threejs-motion-lab/package.json"
+ ],
+ "exclusions": [],
+ "limitations": [
+  "Path identity is revalidated around operations; Node lacks portable descriptor-relative openat traversal, so a syscall-boundary pathname race remains."
+ ],
+ "relationships": [
+  {
+   "from": "dua-wednesday/sprites.cjs",
+   "to": "fs",
+   "kind": "requires",
+   "resolution": "external"
+  },
+  {
+   "from": "dua-wednesday/sprites.cjs",
+   "to": "path",
+   "kind": "requires",
+   "resolution": "external"
+  },
+  {
+   "from": "dua-wednesday/sprites.cjs",
+   "to": "playwright",
+   "kind": "requires",
+   "resolution": "external"
+  },
+  {
+   "from": "evals/test_code_drawing_engine.mjs",
+   "to": "node:assert/strict",
+   "kind": "imports",
+   "resolution": "external"
+  },
+  {
+   "from": "evals/test_code_drawing_engine.mjs",
+   "to": "node:fs",
+   "kind": "imports",
+   "resolution": "external"
+  },
+  {
+   "from": "evals/test_code_drawing_engine.mjs",
+   "to": "node:path",
+   "kind": "imports",
+   "resolution": "external"
+  },
+  {
+   "from": "evals/test_code_drawing_engine.mjs",
+   "to": "node:test",
+   "kind": "imports",
+   "resolution": "external"
+  },
+  {
+   "from": "evals/test_code_drawing_engine.mjs",
+   "to": "node:url",
+   "kind": "imports",
+   "resolution": "external"
+  },
+  {
+   "from": "evals/test_code_drawing_engine.mjs",
+   "to": "node:vm",
+   "kind": "imports",
+   "resolution": "external"
+  },
+  {
+   "from": "evals/test_motion_engine.mjs",
+   "to": "node:assert/strict",
+   "kind": "imports",
+   "resolution": "external"
+  },
+  {
+   "from": "evals/test_motion_engine.mjs",
+   "to": "node:fs",
+   "kind": "imports",
+   "resolution": "external"
+  },
+  {
+   "from": "evals/test_motion_engine.mjs",
+   "to": "node:path",
+   "kind": "imports",
+   "resolution": "external"
+  },
+  {
+   "from": "evals/test_motion_engine.mjs",
+   "to": "node:test",
+   "kind": "imports",
+   "resolution": "external"
+  },
+  {
+   "from": "evals/test_motion_engine.mjs",
+   "to": "node:url",
+   "kind": "imports",
+   "resolution": "external"
+  },
+  {
+   "from": "evals/test_motion_engine.mjs",
+   "to": "node:vm",
+   "kind": "imports",
+   "resolution": "external"
+  },
+  {
+   "from": "evals/test_motion_template.mjs",
+   "to": "node:assert/strict",
+   "kind": "imports",
+   "resolution": "external"
+  },
+  {
+   "from": "evals/test_motion_template.mjs",
+   "to": "node:fs",
+   "kind": "imports",
+   "resolution": "external"
+  },
+  {
+   "from": "evals/test_motion_template.mjs",
+   "to": "node:path",
+   "kind": "imports",
+   "resolution": "external"
+  },
+  {
+   "from": "evals/test_motion_template.mjs",
+   "to": "node:test",
+   "kind": "imports",
+   "resolution": "external"
+  },
+  {
+   "from": "evals/test_motion_template.mjs",
+   "to": "node:url",
+   "kind": "imports",
+   "resolution": "external"
+  },
+  {
+   "from": "evals/test_motion_template.mjs",
+   "to": "node:vm",
+   "kind": "imports",
+   "resolution": "external"
+  },
+  {
+   "from": "evals/test_motion_toolkit.mjs",
+   "to": "node:assert/strict",
+   "kind": "imports",
+   "resolution": "external"
+  },
+  {
+   "from": "evals/test_motion_toolkit.mjs",
+   "to": "node:test",
+   "kind": "imports",
+   "resolution": "external"
+  },
+  {
+   "from": "evals/test_motion_toolkit.mjs",
+   "to": "resources/motion-runtime/motion_toolkit.mjs",
+   "kind": "imports",
+   "resolution": "internal"
+  },
+  {
+   "from": "examples/threejs-motion-lab/main.js",
+   "to": "examples/threejs-motion-lab/storyboard.mjs",
+   "kind": "imports",
+   "resolution": "internal"
+  },
+  {
+   "from": "examples/threejs-motion-lab/main.js",
+   "to": "three",
+   "kind": "imports",
+   "resolution": "external"
+  },
+  {
+   "from": "examples/threejs-motion-lab/render.mjs",
+   "to": "examples/threejs-motion-lab/server.mjs",
+   "kind": "imports",
+   "resolution": "internal"
+  },
+  {
+   "from": "examples/threejs-motion-lab/render.mjs",
+   "to": "examples/threejs-motion-lab/storyboard.mjs",
+   "kind": "imports",
+   "resolution": "internal"
+  },
+  {
+   "from": "examples/threejs-motion-lab/render.mjs",
+   "to": "node:child_process",
+   "kind": "imports",
+   "resolution": "external"
+  },
+  {
+   "from": "examples/threejs-motion-lab/render.mjs",
+   "to": "node:crypto",
+   "kind": "imports",
+   "resolution": "external"
+  },
+  {
+   "from": "examples/threejs-motion-lab/render.mjs",
+   "to": "node:fs",
+   "kind": "imports",
+   "resolution": "external"
+  },
+  {
+   "from": "examples/threejs-motion-lab/render.mjs",
+   "to": "node:fs/promises",
+   "kind": "imports",
+   "resolution": "external"
+  },
+  {
+   "from": "examples/threejs-motion-lab/render.mjs",
+   "to": "node:http",
+   "kind": "imports",
+   "resolution": "external"
+  },
+  {
+   "from": "examples/threejs-motion-lab/render.mjs",
+   "to": "node:path",
+   "kind": "imports",
+   "resolution": "external"
+  },
+  {
+   "from": "examples/threejs-motion-lab/render.mjs",
+   "to": "playwright-core",
+   "kind": "imports",
+   "resolution": "external"
+  },
+  {
+   "from": "examples/threejs-motion-lab/server.mjs",
+   "to": "node:fs/promises",
+   "kind": "imports",
+   "resolution": "external"
+  },
+  {
+   "from": "examples/threejs-motion-lab/server.mjs",
+   "to": "node:http",
+   "kind": "imports",
+   "resolution": "external"
+  },
+  {
+   "from": "examples/threejs-motion-lab/server.mjs",
+   "to": "node:path",
+   "kind": "imports",
+   "resolution": "external"
+  },
+  {
+   "from": "examples/threejs-motion-lab/server.mjs",
+   "to": "node:url",
+   "kind": "imports",
+   "resolution": "external"
+  },
+  {
+   "from": "examples/threejs-motion-lab/test.mjs",
+   "to": "examples/threejs-motion-lab/server.mjs",
+   "kind": "imports",
+   "resolution": "internal"
+  },
+  {
+   "from": "examples/threejs-motion-lab/test.mjs",
+   "to": "examples/threejs-motion-lab/storyboard.mjs",
+   "kind": "imports",
+   "resolution": "internal"
+  },
+  {
+   "from": "examples/threejs-motion-lab/test.mjs",
+   "to": "node:assert/strict",
+   "kind": "imports",
+   "resolution": "external"
+  },
+  {
+   "from": "examples/threejs-motion-lab/test.mjs",
+   "to": "node:test",
+   "kind": "imports",
+   "resolution": "external"
+  },
+  {
+   "from": "examples/threejs-motion-lab/test.mjs",
+   "to": "three",
+   "kind": "imports",
+   "resolution": "external"
+  },
+  {
+   "from": "examples/threejs-motion-lab/test.mjs",
+   "to": "three/addons/loaders/GLTFLoader.js",
+   "kind": "imports",
+   "resolution": "external"
+  },
+  {
+   "from": "proofs/arabic-voice-kinetic/sync_probe.cjs",
+   "to": "path",
+   "kind": "requires",
+   "resolution": "external"
+  },
+  {
+   "from": "proofs/arabic-voice-kinetic/sync_probe.cjs",
+   "to": "url",
+   "kind": "requires",
+   "resolution": "external"
+  },
+  {
+   "from": "proofs/general-data/snap.cjs",
+   "to": "/opt/node-tools/node_modules/playwright",
+   "kind": "requires",
+   "resolution": "unresolved"
+  },
+  {
+   "from": "proofs/general-data/snap.cjs",
+   "to": "path",
+   "kind": "requires",
+   "resolution": "external"
+  },
+  {
+   "from": "proofs/general-data/snap.cjs",
+   "to": "playwright",
+   "kind": "requires",
+   "resolution": "external"
+  },
+  {
+   "from": "proofs/general-data/snap.cjs",
+   "to": "url",
+   "kind": "requires",
+   "resolution": "external"
+  },
+  {
+   "from": "resources/motion-runtime/render_html.cjs",
+   "to": "child_process",
+   "kind": "requires",
+   "resolution": "external"
+  },
+  {
+   "from": "resources/motion-runtime/render_html.cjs",
+   "to": "fs",
+   "kind": "requires",
+   "resolution": "external"
+  },
+  {
+   "from": "resources/motion-runtime/render_html.cjs",
+   "to": "os",
+   "kind": "requires",
+   "resolution": "external"
+  },
+  {
+   "from": "resources/motion-runtime/render_html.cjs",
+   "to": "path",
+   "kind": "requires",
+   "resolution": "external"
+  },
+  {
+   "from": "resources/motion-runtime/render_html.cjs",
+   "to": "playwright",
+   "kind": "requires",
+   "resolution": "external"
+  },
+  {
+   "from": "resources/motion-runtime/render_html.cjs",
+   "to": "url",
+   "kind": "requires",
+   "resolution": "external"
+  },
+  {
+   "from": "scripts/render_text.cjs",
+   "to": "fs",
+   "kind": "requires",
+   "resolution": "external"
+  },
+  {
+   "from": "scripts/render_text.cjs",
+   "to": "path",
+   "kind": "requires",
+   "resolution": "external"
+  },
+  {
+   "from": "scripts/render_text.cjs",
+   "to": "playwright",
+   "kind": "requires",
+   "resolution": "external"
+  },
+  {
+   "from": "vendor/obra-superpowers-v7/skills/brainstorming/scripts/server.cjs",
+   "to": "child_process",
+   "kind": "requires",
+   "resolution": "external"
+  },
+  {
+   "from": "vendor/obra-superpowers-v7/skills/brainstorming/scripts/server.cjs",
+   "to": "crypto",
+   "kind": "requires",
+   "resolution": "external"
+  },
+  {
+   "from": "vendor/obra-superpowers-v7/skills/brainstorming/scripts/server.cjs",
+   "to": "fs",
+   "kind": "requires",
+   "resolution": "external"
+  },
+  {
+   "from": "vendor/obra-superpowers-v7/skills/brainstorming/scripts/server.cjs",
+   "to": "http",
+   "kind": "requires",
+   "resolution": "external"
+  },
+  {
+   "from": "vendor/obra-superpowers-v7/skills/brainstorming/scripts/server.cjs",
+   "to": "os",
+   "kind": "requires",
+   "resolution": "external"
+  },
+  {
+   "from": "vendor/obra-superpowers-v7/skills/brainstorming/scripts/server.cjs",
+   "to": "path",
+   "kind": "requires",
+   "resolution": "external"
+  },
+  {
+   "from": "vendor/obra-superpowers-v7/skills/systematic-debugging/condition-based-waiting-example.ts",
+   "to": "~/threads/thread-manager",
+   "kind": "imports",
+   "resolution": "external"
+  },
+  {
+   "from": "vendor/obra-superpowers-v7/skills/systematic-debugging/condition-based-waiting-example.ts",
+   "to": "~/threads/types",
+   "kind": "imports",
+   "resolution": "external"
+  },
+  {
+   "from": "vendor/obra-superpowers-v7/skills/writing-skills/render-graphs.js",
+   "to": "child_process",
+   "kind": "imports",
+   "resolution": "external"
+  },
+  {
+   "from": "vendor/obra-superpowers-v7/skills/writing-skills/render-graphs.js",
+   "to": "fs",
+   "kind": "imports",
+   "resolution": "external"
+  },
+  {
+   "from": "vendor/obra-superpowers-v7/skills/writing-skills/render-graphs.js",
+   "to": "path",
+   "kind": "imports",
+   "resolution": "external"
+  }
+ ],
+ "note": "Trimmed from REA output read as untrusted JSON; graph_sha256 and root_sha256 identify the full REA graph of the tree at vcs_head."
+}

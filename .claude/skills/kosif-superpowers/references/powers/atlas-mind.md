@@ -3,13 +3,13 @@
 
 > **قوتك هنا / what this gives you:** طرق سير عمل الوكلاء والتخطيط والمواصفات وبوابات المراجعة المستخرجة من مهارات أطلس المفتوحة. — Agent-workflow, planning, spec and review-gate methods mined from the open Atlas skills.
 > **أقوى دليل / strongest evidence:** لا قوة مثبتة بعد في هذه العائلة — no ✅ power yet; the strongest badge here is 📄 documented.
-> **50 powers follow** — ✅ 0 · 🟢 0 · 📦 0 · 🔑 0 · 👁 0 · 📄 50 · 💡 0.
+> **54 powers follow** — ✅ 0 · 🟢 0 · 📦 0 · 🔑 0 · 👁 0 · 📄 54 · 💡 0.
 
 **الحالة / status:** ✅ مُثبت (شُغّل فعلًا وله مسار دليل) · 🟢 جاهز (كود موجود يعمل بما هو متاح عادة) · 📦 بأمر تثبيت واحد · 🔑 يحتاج مفتاحًا أو حسابًا أو موصلًا · 👁 شوهد في فيديو مرجعي (للموشن فقط) · 📄 طريقة موثقة · 💡 فكرة. الشارة هي أدنى مستوى صادق — the badge is the lowest level that is true.
 مسارات الدليل نسبية إلى `/home/user/`؛ و`session-<date>:<file>#<section>` تشير إلى تشغيل موثق في جلسة سابقة؛ و`owner-upload:` إلى ملف داخل أرشيف أرسله المالك. Proof paths are relative to `/home/user/`.
 
 **المجال / domain:** العقل والتفكير — Mind & thinking · **البادئة / prefix:** `AMIND` · **البيانات / data:** `data/powers/atlas-mind.json` · **بحث / search:** `python3 scripts/powers.py family atlas-mind`
-**مراجع ذات صلة / related references:** [CLAUDE_3_MINUTE_MAP.md](../CLAUDE_3_MINUTE_MAP.md) · [atlas-5000-mining-20261023.md](../atlas-5000-mining-20261023.md) · [hubs.md](../hubs.md)
+**مراجع ذات صلة / related references:** [CLAUDE_3_MINUTE_MAP.md](../CLAUDE_3_MINUTE_MAP.md) · [atlas-5000-mining-20261023.md](../atlas-5000-mining-20261023.md) · [hubs.md](../hubs.md) · [rea-superpowers-frontier-20261023.md](../rea-superpowers-frontier-20261023.md)
 
 ## الفهرس / contents
 
@@ -19,6 +19,8 @@
 - **المخططات — Diagrams & visual documentation** — AMIND-41 (1)
 - **سير عمل تطوير عام — General development workflow** — AMIND-42 … AMIND-49 (3)
 - **التعليم والتعلم — Teaching, learning & study** — AMIND-44 (1)
+- **المراجعة والتحقق — Review, verification & quality gates** — AMIND-51 … AMIND-52 (2)
+- **التخطيط والمواصفات — Planning, specs & decisions** — AMIND-53 … AMIND-54 (2)
 - المصادر والرخص / sources & licences
 
 ## سير عمل الوكلاء — Agent workflows & orchestration
@@ -447,9 +449,45 @@
 - **الدليل / proof:** `https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/295-math-olympiad/907-math-olympiad` · `https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/296-math-proof/908-siege`
 - **المصدر / source:** KOSIF Atlas mining 2026-10-20 (https://github.com/kosif199022-jpg/kosif-atlas): math-olympiad/math-olympiad (#907); math-proof/siege (#908) · theme education-learning · 3 supporting skills · verifier read: skills/295-math-olympiad/907-math-olympiad, skills/296-math-proof/908-siege
 
+## المراجعة والتحقق — Review, verification & quality gates
+
+#### AMIND-51 · زرع العيب لإثبات أن الفحص يستطيع أن يفشل · Plant the defect to prove a check can fail · 📄 موصوف / documented only
+- **ماذا / what:** يكسر الكود عمدًا بالعيب الذي يدّعي اختبار أو أداة فحص اكتشافه، ويسجّل ما حدث فعلًا في جدول زرع يتحول إلى اختبارات. — Breaks the code on purpose with the exact defect a test or instrument claims to catch, and records what really happened in a plant table that becomes regression tests.
+- **متى أستخدمها / when:** 'هل سأعرف لو انكسر هذا؟'، فحص يدّعي غياب شيء (تسريب، تحذير)، أداة خارجية صامتة / 'would I know if this broke', a check that asserts an absence, a silent linter or sanitizer
+- **كيف / how:** 1) Write the claim as 'if X broke, Y would fail' and the plant table first (planted defect, expected instrument, what actually happened, covering test) with the result column empty. 2) Commit the check, confirm the clean tree passes and stand up a positive control that proves the instrument is running. 3) Plant one defect at a time in the real code, revert between plants, judge on exit codes (a plant that does not compile is not a pass). 4) Confirm the named assertion fired, not a neighbour. 5) Weaken each assertion in turn and check something still fails. 6) Turn data-expressible plants into tests; write down rows nothing covers. Use mutation testers (mutmut, Stryker, cargo-mutants) for exhaustive syntactic coverage.
+- **الرخصة / license:** method paraphrased from Atlas skills under MIT; the skills keep their own licenses — see each folder's SOURCE.md
+- **الدليل / proof:** `https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/959-plant-defects/2243-plant-defects`
+- **المصدر / source:** KOSIF Atlas frontier mining 2026-10-23 (https://github.com/kosif199022-jpg/kosif-atlas @ 99bb108d): plant-defects/plant-defects (#2243) · theme verification-review · SKILL.md read in full as inert text: skills/959-plant-defects/2243-plant-defects
+
+#### AMIND-52 · خطة تحقق يدوي مرقمة قابلة للاستئناف · Resumable numbered manual verification plan · 📄 موصوف / documented only
+- **ماذا / what:** يكتب قائمة فحوص يدوية كسجل دائم: كل خطوة إعداد وفعل ومتوقَّع قابل للملاحظة وتمييز النتيجة الصفرية الصحيحة من الأداة المعطلة. — Writes a by-hand checklist as a durable record: each step has setup, action, an observable expected result and a null-vs-broken guard.
+- **متى أستخدمها / when:** فحص لا يتم إلا على جهاز أو متصفح أو برنامج فعلي، أو إعادة طباعة خطوات التحقق / checks only a real device, browser or host can show; reprinting verification steps
+- **كيف / how:** 1) Look for the existing checklist in the plan or issue before writing one; a reprint request means find the record, not regenerate it. 2) Keep a step by hand only if its quantity passes through something only the environment has; otherwise defer it with a link to the automation issue. 3) Step 0 confirms the build under test (hash, version or provenance marker) every session. 4) Each step: Setup, Action, Expected (where it appears, value, tolerance, what wrong readings mean), Null vs broken, Why by hand. 5) Never renumber; statuses pending/passed/failed/partial/void/deferred/retired. 6) Persist first, then present; record readings verbatim with date, build and environment, never a bare tick.
+- **الرخصة / license:** method paraphrased from Atlas skills under MIT; the skills keep their own licenses — see each folder's SOURCE.md
+- **الدليل / proof:** `https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/992-write-manual-verification-plan/2276-write-manual-verification-plan`
+- **المصدر / source:** KOSIF Atlas frontier mining 2026-10-23 (https://github.com/kosif199022-jpg/kosif-atlas @ 99bb108d): write-manual-verification-plan/write-manual-verification-plan (#2276) · theme verification-review · SKILL.md read in full as inert text: skills/992-write-manual-verification-plan/2276-write-manual-verification-plan
+
+## التخطيط والمواصفات — Planning, specs & decisions
+
+#### AMIND-53 · الإطلاق في الظل لاختبار نظام بديل تحت حمل الإنتاج · Shadow mode (dark launch) to validate a replacement under real load · 📄 موصوف / documented only
+- **ماذا / what:** يكرر حركة الإنتاج إلى النظام الجديد دون أن تصل ردوده للمستخدم، ويقارن الردود حقلًا بحقل لبناء الثقة قبل التحويل. — Mirrors production traffic to a new system whose responses never reach users, comparing them field by field to build confidence before cutover.
+- **متى أستخدمها / when:** استبدال خدمة، ترحيل، مقارنة سلوك إصدار جديد بالحالي / replacing a service, a migration, comparing a new version's behaviour with production
+- **كيف / how:** 1) Choose a mirror: full, sampled, selective or offline replay; proxy, application, mesh or log-replay topology. 2) The production path never waits on the shadow: async copy, independent timeouts, and a kill switch toggled by config that works in seconds and is tested first. 3) Compare with rules: ignore IDs and timestamps, tolerance for computed numbers, sets for unordered collections, exact status codes. 4) Writes: mirror reads only, or give the shadow isolated state, dry-run or record-only writes. 5) Ramp 1%, 5-10%, 25-50%, 100%, tracking match rate (>99.9%), shadow latency vs prod and error rate. 6) Combine with dual write and strangler-fig steps: shadow, dual write, cut reads then writes, decommission. **أرقام / params:** mirror %, match target
+- **الرخصة / license:** method paraphrased from Atlas skills under MIT; the skills keep their own licenses — see each folder's SOURCE.md
+- **الدليل / proof:** `https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/2160-migration-patterns-plugin/7804-shadow-mode`
+- **المصدر / source:** KOSIF Atlas frontier mining 2026-10-23 (https://github.com/kosif199022-jpg/kosif-atlas @ 99bb108d): migration-patterns-plugin/shadow-mode (#7804) · theme planning-specs · SKILL.md read in full as inert text: skills/2160-migration-patterns-plugin/7804-shadow-mode
+
+#### AMIND-54 · تنقيح المواصفات بتحليل الفجوات وأسئلة متتابعة مرجّحة · Specification refinement: gap analysis and ranked one-at-a-time questions · 📄 موصوف / documented only
+- **ماذا / what:** يحلل مواصفة أو خطة بعدسات البنية والتنفيذ والافتراضات وعدم التطابق وأصحاب المصلحة، ثم يطرح أهم الأسئلة واحدًا تلو الآخر مع إجابة موصى بها. — Analyses a spec or plan through structure, execution, assumptions, mismatches and stakeholder lenses, then asks the top questions one at a time with a recommended answer.
+- **متى أستخدمها / when:** مراجعة مواصفات أو متطلبات أو تصميم معماري، 'ما الثغرات في خطتي؟' / reviewing a spec, requirements or architecture, 'what are the gaps in my plan'
+- **كيف / how:** 1) Assess size, domains, stakeholders and scope clarity; simple mode for one clear domain, complex for several. 2) Lenses: Structure (I/O paths, coupling, boundaries), Execution (happy path, edge cases, failure modes), Assumptions, Mismatches (requirements vs design vs implementation), Stakeholders (operator, security, integrator, user). 3) In complex mode add dependency mapping, critical path, single points of failure and bottlenecks. 4) Build a coverage map over 11 categories (scope, data model, UX flow, non-functional, integrations, edge cases, constraints, terminology, completion signals, risks, placeholders) as Clear/Partial/Missing. 5) Rank questions by impact x uncertainty; ask at most 5 per session (10 total), one at a time, multiple choice with a recommended option, integrating each answer immediately. 6) Output numbered requirements with traceability in Draft status; never invent standards citations. **أرقام / params:** mode: simple|complex
+- **الرخصة / license:** method paraphrased from Atlas skills under MIT; the skills keep their own licenses — see each folder's SOURCE.md
+- **الدليل / proof:** `https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/376-specification-refiner/1403-specification-refiner`
+- **المصدر / source:** KOSIF Atlas frontier mining 2026-10-23 (https://github.com/kosif199022-jpg/kosif-atlas @ 99bb108d): specification-refiner/specification-refiner (#1403) · theme planning-specs · SKILL.md read up to its first 12,000 characters as inert text (rest not read): skills/376-specification-refiner/1403-specification-refiner
+
 ## المصادر والرخص / sources & licences
 
-- الرخص / licences: method paraphrased from Atlas skills under MIT; the skills keep their own licenses — see each folder's SOURCE.md (40) · method paraphrased from Atlas skills under Apache-2.0; the skills keep their own licenses — see each folder's SOURCE.md (3) · method paraphrased from Atlas skills under Apache-2.0 / MIT (no copyleft seen among supporting ids); the skills keep their own licenses — see each folder's SOURCE.md (2) · method paraphrased from Atlas skills under MIT (no copyleft seen among supporting ids); the skills keep their own licenses — see each folder's SOURCE.md (2) · method paraphrased from Atlas skills under MIT / Apache-2.0 (1300); the skills keep their own licenses — see each folder's SOURCE.md (1) · method paraphrased from Atlas skills under MIT / Apache-2.0 (3349); the skills keep their own licenses — see each folder's SOURCE.md (1) · method paraphrased from Atlas skills under MIT/Apache-2.0; the skills keep their own licenses — see each folder's SOURCE.md (1)
+- الرخص / licences: method paraphrased from Atlas skills under MIT; the skills keep their own licenses — see each folder's SOURCE.md (44) · method paraphrased from Atlas skills under Apache-2.0; the skills keep their own licenses — see each folder's SOURCE.md (3) · method paraphrased from Atlas skills under Apache-2.0 / MIT (no copyleft seen among supporting ids); the skills keep their own licenses — see each folder's SOURCE.md (2) · method paraphrased from Atlas skills under MIT (no copyleft seen among supporting ids); the skills keep their own licenses — see each folder's SOURCE.md (2) · method paraphrased from Atlas skills under MIT / Apache-2.0 (1300); the skills keep their own licenses — see each folder's SOURCE.md (1) · method paraphrased from Atlas skills under MIT / Apache-2.0 (3349); the skills keep their own licenses — see each folder's SOURCE.md (1) · method paraphrased from Atlas skills under MIT/Apache-2.0; the skills keep their own licenses — see each folder's SOURCE.md (1)
 - الأفكار مكتوبة بكلماتنا مع رابط المصدر؛ لا يُنسخ نص طرف ثالث طويل. Ideas are paraphrased with a link to the source; no long third-party text is copied. `—` = no licence recorded (own method or own wording).
 
 ---

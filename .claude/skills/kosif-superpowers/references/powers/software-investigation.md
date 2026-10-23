@@ -3,13 +3,13 @@
 
 > **قوتك هنا / what this gives you:** كل أوامر REA v6.7.0 الـ153 وأدوات MCP وفرز مثبّتات Windows قبلها: فحص تطبيقات جافاسكربت وElectron والثنائيات الأصلية و.NET وأندرويد وApple والفيرموير والمواقع مع أدلة JSON وحدود صريحة؛ بإذن قانوني فقط. — All 153 REA v6.7.0 commands, its MCP tools and Windows installer triage: evidence-first inspection of JavaScript/Electron apps, native binaries, .NET, Android, Apple, firmware and websites, with explicit limitations; lawful targets only.
 > **أقوى دليل / strongest evidence:** **REA-003** Statically reconstruct a local JavaScript/Electron application (`kosif-tool/.claude/skills/kosif-superpowers/proofs/rea-static-runs/README.md`) · **REA-004** Capture and statically analyze a page bundle, defaulting to the selected target origin (`kosif-tool/.claude/skills/kosif-superpowers/proofs/rea-static-runs/README.md`)
-> **245 powers follow** — ✅ 30 · 🟢 0 · 📦 48 · 🔑 0 · 👁 0 · 📄 167 · 💡 0.
+> **258 powers follow** — ✅ 30 · 🟢 0 · 📦 48 · 🔑 0 · 👁 0 · 📄 180 · 💡 0.
 
 **الحالة / status:** ✅ مُثبت (شُغّل فعلًا وله مسار دليل) · 🟢 جاهز (كود موجود يعمل بما هو متاح عادة) · 📦 بأمر تثبيت واحد · 🔑 يحتاج مفتاحًا أو حسابًا أو موصلًا · 👁 شوهد في فيديو مرجعي (للموشن فقط) · 📄 طريقة موثقة · 💡 فكرة. الشارة هي أدنى مستوى صادق — the badge is the lowest level that is true.
 مسارات الدليل نسبية إلى `/home/user/`؛ و`session-<date>:<file>#<section>` تشير إلى تشغيل موثق في جلسة سابقة؛ و`owner-upload:` إلى ملف داخل أرشيف أرسله المالك. Proof paths are relative to `/home/user/`.
 
 **المجال / domain:** الهندسة والكود — Code & engineering · **البادئة / prefix:** `REA` · **البيانات / data:** `data/powers/software-investigation.json` · **بحث / search:** `python3 scripts/powers.py family software-investigation`
-**مراجع ذات صلة / related references:** [CLAUDE_3_MINUTE_MAP.md](../CLAUDE_3_MINUTE_MAP.md) · [capability-audit.md](../capability-audit.md) · [hubs.md](../hubs.md) · [rea-reverse-engineering.md](../rea-reverse-engineering.md) · [rea-upstream-capabilities.md](../rea-upstream-capabilities.md)
+**مراجع ذات صلة / related references:** [CLAUDE_3_MINUTE_MAP.md](../CLAUDE_3_MINUTE_MAP.md) · [hubs.md](../hubs.md) · [rea-reverse-engineering.md](../rea-reverse-engineering.md) · [rea-superpowers-frontier-20261023.md](../rea-superpowers-frontier-20261023.md) · [rea-upstream-capabilities.md](../rea-upstream-capabilities.md)
 
 ## الفهرس / contents
 
@@ -35,10 +35,10 @@
 - **GNU objdump** — REA-093 … REA-111 (2)
 - **Frida — تجهيز العمليات** — REA-096 … REA-108 (3)
 - **HarmonyOS** — REA-120 (1)
-- **REA MCP tools (v6.7.0)** — REA-154 … REA-229 (76)
+- **REA MCP tools (v6.7.0)** — REA-154 … REA-257 (88)
 - **REA MCP prompts (v6.7.0)** — REA-230 … REA-235 (6)
 - **فرز مثبّتات Windows — Windows installer triage (KOSIF addition)** — REA-236 … REA-241 (6)
-- **مهارات REA الجديدة — REA upstream agent skills (6.7.0, checked 2026-10-22)** — REA-242 … REA-245 (4)
+- **مهارات REA الجديدة — REA upstream agent skills (6.7.0, checked 2026-10-22)** — REA-242 … REA-258 (5)
 - المصادر والرخص / sources & licences
 
 ## الثنائيات الأصلية — native binaries
@@ -2377,6 +2377,126 @@
 - **الدليل / proof:** `https://github.com/morluto/rea/blob/main/docs/mcp-contracts.md`
 - **المصدر / source:** https://github.com/morluto/rea#mcp-tool-inspect_address_context
 
+#### REA-246 · REA: إنتروبيا البايتات لكشف المناطق المضغوطة أو المشفرة · REA MCP tool `inspect_byte_entropy`: Shannon byte entropy profile · 📄 موصوف / documented only
+- **ماذا / what:** أداة MCP من REA v6.7.0 لم تكن في الكتالوج: يحسب إنتروبيا شانون للملف كله ولكتل ثابتة الحجم مع مقاطع مرتفعة (≥7.2) ومنخفضة (≤1.0) بإزاحات دقيقة، قبل أي استخراج. — Shannon entropy for the whole file and fixed blocks, with high (>=7.2) and low (<=1.0) runs at exact offsets, before any extraction. Entropy cannot tell compression from encryption.
+- **متى أستخدمها / when:** فيرموير أو ملف مجهول قبل الاستخراج / profiling firmware or an unknown blob before extraction
+- **كيف / how:** Connect the REA MCP server and call `inspect_byte_entropy` (MCP only, no CLI command of the same name in 6.7.0). Needs: REA alone. Static reading only: no target execution, network or changes. Evidence-first: keep observations, inferences and unknowns apart; a missing table is observed absence, not proof. Summary detail keeps complete Evidence that `inspect_analysis_view` can page later. Only on targets you have the right to analyse. **أرقام / params:** MCP tool `inspect_byte_entropy`; detail summary|complete
+- **تثبيت / install:** `npm install -g rea-agents@6.7.0 then connect it as an MCP server; REA alone`
+- **يحتاج / needs:** [`npm:rea`](../requirements.md#req-npm-rea) · [`engine:binwalk`](../requirements.md#req-engine-binwalk)
+- **الرخصة / license:** MIT (REA, © 2026 morluto); bring-your-own engines keep their own terms
+- **الدليل / proof:** `https://github.com/morluto/rea/blob/main/docs/firmware-analysis.md`
+- **المصدر / source:** https://github.com/morluto/rea#mcp-tool-inspect_byte_entropy (contract read from src/contracts @ 45a411e8, also in the user's rea-main.zip upload)
+
+#### REA-247 · REA: فحص تطبيق سطح مكتب ومعرفة محركه · REA MCP tool `inspect_desktop_application`: engine candidates for a desktop app folder · 📄 موصوف / documented only
+- **ماذا / what:** أداة MCP من REA v6.7.0 لم تكن في الكتالوج: يفحص مجلد تطبيق سطح مكتب بقوائم محدودة ورؤوس ملفات ويعيد مرشحين: .NET وUnity Mono/IL2CPP وUnreal وGodot وGameMaker وElectron مع مسارات داعمة وخطوات فحص تالية. — Inspects a desktop app folder with bounded listings and headers and returns .NET, Unity Mono/IL2CPP, Unreal, Godot, GameMaker and Electron candidates with supporting paths and next probes.
+- **متى أستخدمها / when:** 'بماذا بُني هذا البرنامج؟' لمجلد تطبيق مثبت / 'what is this installed app built with'
+- **كيف / how:** Connect the REA MCP server and call `inspect_desktop_application` (MCP only, no CLI command of the same name in 6.7.0). Needs: REA alone. Static reading only: no target execution, network or changes. Evidence-first: keep observations, inferences and unknowns apart; a missing table is observed absence, not proof. Summary detail keeps complete Evidence that `inspect_analysis_view` can page later. Only on targets you have the right to analyse. **أرقام / params:** MCP tool `inspect_desktop_application`; detail summary|complete
+- **تثبيت / install:** `npm install -g rea-agents@6.7.0 then connect it as an MCP server; REA alone`
+- **يحتاج / needs:** [`npm:rea`](../requirements.md#req-npm-rea)
+- **الرخصة / license:** MIT (REA, © 2026 morluto); bring-your-own engines keep their own terms
+- **الدليل / proof:** `https://github.com/morluto/rea/blob/main/docs/desktop-applications.md`
+- **المصدر / source:** https://github.com/morluto/rea#mcp-tool-inspect_desktop_application (contract read from src/contracts @ 45a411e8, also in the user's rea-main.zip upload)
+
+#### REA-248 · REA: ملاحظات ELF ومعرّف البناء · REA MCP tool `inspect_elf_notes`: GNU build-id and ABI-tag notes · 📄 موصوف / documented only
+- **ماذا / what:** أداة MCP من REA v6.7.0 لم تكن في الكتالوج: يقرأ جداول PT_NOTE وSHT_NOTE في ELF ويعيد معرّف البناء GNU build-id ووسم ABI بلا محلل عكسي. — Reads an ELF image's note tables and returns GNU build-id, ABI tag and gold version without a disassembler.
+- **متى أستخدمها / when:** مطابقة ثنائي مع رموز التصحيح أو إصدار البناء / matching a binary to its debug symbols or build
+- **كيف / how:** Connect the REA MCP server and call `inspect_elf_notes` (MCP only, no CLI command of the same name in 6.7.0). Needs: REA alone. Static reading only: no target execution, network or changes. Evidence-first: keep observations, inferences and unknowns apart; a missing table is observed absence, not proof. Summary detail keeps complete Evidence that `inspect_analysis_view` can page later. Only on targets you have the right to analyse. **أرقام / params:** MCP tool `inspect_elf_notes`; detail summary|complete
+- **تثبيت / install:** `npm install -g rea-agents@6.7.0 then connect it as an MCP server; REA alone`
+- **يحتاج / needs:** [`npm:rea`](../requirements.md#req-npm-rea)
+- **الرخصة / license:** MIT (REA, © 2026 morluto); bring-your-own engines keep their own terms
+- **الدليل / proof:** `https://github.com/morluto/rea/blob/main/docs/elf-notes.md`
+- **المصدر / source:** https://github.com/morluto/rea#mcp-tool-inspect_elf_notes (contract read from src/contracts @ 45a411e8, also in the user's rea-main.zip upload)
+
+#### REA-249 · REA: فحص ملفات BEAM لإرلانغ وإليكسير · REA MCP tool `inspect_erlang_beam`: BEAM atoms, exports and Code header · 📄 موصوف / documented only
+- **ماذا / what:** أداة MCP من REA v6.7.0 لم تكن في الكتالوج: يحلل حاوية BEAM: أسماء الكتل وبصماتها، الذرات، جداول التصدير والاستيراد واللامبدا، ورأس مجموعة التعليمات، بلا تثبيت إرلانغ. — Parses a BEAM container: chunk names and hashes, atoms, export/import/lambda tables and the Code instruction-set header, without installing Erlang.
+- **متى أستخدمها / when:** تحليل وحدة Erlang أو Elixir مُجمّعة / analysing a compiled Erlang or Elixir module
+- **كيف / how:** Connect the REA MCP server and call `inspect_erlang_beam` (MCP only, no CLI command of the same name in 6.7.0). Needs: REA alone. Static reading only: no target execution, network or changes. Evidence-first: keep observations, inferences and unknowns apart; a missing table is observed absence, not proof. Summary detail keeps complete Evidence that `inspect_analysis_view` can page later. Only on targets you have the right to analyse. **أرقام / params:** MCP tool `inspect_erlang_beam`; detail summary|complete
+- **تثبيت / install:** `npm install -g rea-agents@6.7.0 then connect it as an MCP server; REA alone`
+- **يحتاج / needs:** [`npm:rea`](../requirements.md#req-npm-rea)
+- **الرخصة / license:** MIT (REA, © 2026 morluto); bring-your-own engines keep their own terms
+- **الدليل / proof:** `https://github.com/morluto/rea/blob/main/docs/erlang-beam.md`
+- **المصدر / source:** https://github.com/morluto/rea#mcp-tool-inspect_erlang_beam (contract read from src/contracts @ 45a411e8, also in the user's rea-main.zip upload)
+
+#### REA-250 · REA: كائنات كود GPU لـ CUDA وHIP · REA MCP tool `inspect_gpu_code_objects`: CUDA/HIP fatbins, CUBIN and PTX · 📄 موصوف / documented only
+- **ماذا / what:** أداة MCP من REA v6.7.0 لم تكن في الكتالوج: يجرد كائنات كود GPU داخل ELF/PE وfatbin وCUBIN وPTX وحزم HIP، ويفك نواة محددة: سجلات PTX الافتراضية، سجلات CUBIN والذاكرة المشتركة، وإعلانات AMDGPU، بلا أدوات GPU ولا تشغيل. — Inventories GPU code objects in hosts, fatbins, CUBIN, PTX and HIP bundles and decodes selected kernels (PTX registers, CUBIN registers/shared memory, AMDGPU declarations) without GPU tools or execution.
+- **متى أستخدمها / when:** معرفة نوى CUDA أو ROCm داخل مكتبة / finding the CUDA or ROCm kernels inside a library
+- **كيف / how:** Connect the REA MCP server and call `inspect_gpu_code_objects` (MCP only, no CLI command of the same name in 6.7.0). Needs: REA alone. Static reading only: no target execution, network or changes. Evidence-first: keep observations, inferences and unknowns apart; a missing table is observed absence, not proof. Summary detail keeps complete Evidence that `inspect_analysis_view` can page later. Only on targets you have the right to analyse. **أرقام / params:** MCP tool `inspect_gpu_code_objects`; detail summary|complete
+- **تثبيت / install:** `npm install -g rea-agents@6.7.0 then connect it as an MCP server; REA alone`
+- **يحتاج / needs:** [`npm:rea`](../requirements.md#req-npm-rea) · [`gpu`](../requirements.md#req-gpu)
+- **الرخصة / license:** MIT (REA, © 2026 morluto); bring-your-own engines keep their own terms
+- **الدليل / proof:** `https://github.com/morluto/rea/blob/main/docs/gpu-code-objects.md`
+- **المصدر / source:** https://github.com/morluto/rea#mcp-tool-inspect_gpu_code_objects (contract read from src/contracts @ 45a411e8, also in the user's rea-main.zip upload)
+
+#### REA-251 · REA: بيانات Unity IL2CPP الوصفية · REA MCP tool `inspect_il2cpp_metadata`: Unity IL2CPP metadata with optional binary link · 📄 موصوف / documented only
+- **ماذا / what:** أداة MCP من REA v6.7.0 لم تكن في الكتالوج: يقرأ global-metadata لإصدارات IL2CPP (24/27/29/31/39) ويربطها اختياريًا بثنائي Mach-O أو PE أو ELF، مع حالات صريحة للعناوين المجهولة أو الفارغة. — Reads Unity IL2CPP metadata (versions 24-39) and optionally links a Mach-O, PE or ELF binary, keeping unknown and empty method slots explicit; static linking does not prove runtime behaviour.
+- **متى أستخدمها / when:** تحليل لعبة أو تطبيق Unity مبني بـ IL2CPP / analysing an IL2CPP Unity game or app
+- **كيف / how:** Connect the REA MCP server and call `inspect_il2cpp_metadata` (MCP only, no CLI command of the same name in 6.7.0). Needs: REA alone. Static reading only: no target execution, network or changes. Evidence-first: keep observations, inferences and unknowns apart; a missing table is observed absence, not proof. Summary detail keeps complete Evidence that `inspect_analysis_view` can page later. Only on targets you have the right to analyse. **أرقام / params:** MCP tool `inspect_il2cpp_metadata`; detail summary|complete
+- **تثبيت / install:** `npm install -g rea-agents@6.7.0 then connect it as an MCP server; REA alone`
+- **يحتاج / needs:** [`npm:rea`](../requirements.md#req-npm-rea) · [`os:macos`](../requirements.md#req-os-macos)
+- **الرخصة / license:** MIT (REA, © 2026 morluto); bring-your-own engines keep their own terms
+- **الدليل / proof:** `https://github.com/morluto/rea/blob/main/docs/il2cpp-metadata.md`
+- **المصدر / source:** https://github.com/morluto/rea#mcp-tool-inspect_il2cpp_metadata (contract read from src/contracts @ 45a411e8, also in the user's rea-main.zip upload)
+
+#### REA-252 · REA: فحص ملفات النماذج GGUF وsafetensors بلا تحميل · REA MCP tool `inspect_model_artifact`: GGUF and safetensors declarations without loading · 📄 موصوف / documented only
+- **ماذا / what:** أداة MCP من REA v6.7.0 لم تكن في الكتالوج: يقرأ ترويسة نموذج GGUF أو safetensors: المفاتيح الوصفية وأسماء الموترات وأشكالها وأنواعها وإزاحاتها، بلا تحميل النموذج ولا pickle ولا شبكة؛ لا يقيس السلوك أو الجودة. — Reads a GGUF or safetensors header (metadata keys, tensor names, shapes, types, offsets) without loading the model, pickle or network; behaviour and quality are not inspected.
+- **متى أستخدمها / when:** 'ما محتوى ملف النموذج هذا؟' قبل تشغيله / 'what is in this model file' before running it
+- **كيف / how:** Connect the REA MCP server and call `inspect_model_artifact` (MCP only, no CLI command of the same name in 6.7.0). Needs: REA alone. Static reading only: no target execution, network or changes. Evidence-first: keep observations, inferences and unknowns apart; a missing table is observed absence, not proof. Summary detail keeps complete Evidence that `inspect_analysis_view` can page later. Only on targets you have the right to analyse. **أرقام / params:** MCP tool `inspect_model_artifact`; detail summary|complete
+- **تثبيت / install:** `npm install -g rea-agents@6.7.0 then connect it as an MCP server; REA alone`
+- **يحتاج / needs:** [`npm:rea`](../requirements.md#req-npm-rea) · [`pip:llama-cpp`](../requirements.md#req-pip-llama-cpp)
+- **الرخصة / license:** MIT (REA, © 2026 morluto); bring-your-own engines keep their own terms
+- **الدليل / proof:** `https://github.com/morluto/rea/blob/main/docs/model-artifacts.md`
+- **المصدر / source:** https://github.com/morluto/rea#mcp-tool-inspect_model_artifact (contract read from src/contracts @ 45a411e8, also in the user's rea-main.zip upload)
+
+#### REA-253 · REA: جدول تصدير مكتبة PE أو ELF · REA MCP tool `inspect_native_exports`: PE/ELF export table · 📄 موصوف / documented only
+- **ماذا / what:** أداة MCP من REA v6.7.0 لم تكن في الكتالوج: يسرد تصديرات مكتبة PE (أسماء وأرقام ترتيبية وعناوين وتحويلات) أو رموز ELF الديناميكية مع الربط والإصدار، بلا محرك. — Lists PE exports (names, ordinals, addresses, forwarders) or ELF dynamic symbols with binding and version, without an engine.
+- **متى أستخدمها / when:** 'ما الدوال التي تقدمها هذه DLL أو .so؟' / 'which functions does this DLL or .so expose'
+- **كيف / how:** Connect the REA MCP server and call `inspect_native_exports` (MCP only, no CLI command of the same name in 6.7.0). Needs: REA alone. Static reading only: no target execution, network or changes. Evidence-first: keep observations, inferences and unknowns apart; a missing table is observed absence, not proof. Summary detail keeps complete Evidence that `inspect_analysis_view` can page later. Only on targets you have the right to analyse. **أرقام / params:** MCP tool `inspect_native_exports`; detail summary|complete
+- **تثبيت / install:** `npm install -g rea-agents@6.7.0 then connect it as an MCP server; REA alone`
+- **يحتاج / needs:** [`npm:rea`](../requirements.md#req-npm-rea)
+- **الرخصة / license:** MIT (REA, © 2026 morluto); bring-your-own engines keep their own terms
+- **الدليل / proof:** `https://github.com/morluto/rea/blob/main/docs/native-investigation.md`
+- **المصدر / source:** https://github.com/morluto/rea#mcp-tool-inspect_native_exports (contract read from src/contracts @ 45a411e8, also in the user's rea-main.zip upload)
+
+#### REA-254 · REA: هويات شهادات Authenticode في PE · REA MCP tool `inspect_pe_certificates`: Authenticode certificate identities · 📄 موصوف / documented only
+- **ماذا / what:** أداة MCP من REA v6.7.0 لم تكن في الكتالوج: يقرأ جدول الأمان في PE ويفك PKCS#7: خوارزميات الملخص، الرقم التسلسلي والمُصدر والموضوع والصلاحية للشهادات، دون التحقق من التوقيع أو سلسلة الثقة. — Reads the PE security directory and decodes PKCS#7 (digest algorithms, certificate serial, issuer, subject, validity) without verifying the signature or chain.
+- **متى أستخدمها / when:** من وقّع هذا المثبت أو الملف التنفيذي؟ / who signed this installer or executable
+- **كيف / how:** Connect the REA MCP server and call `inspect_pe_certificates` (MCP only, no CLI command of the same name in 6.7.0). Needs: REA alone. Static reading only: no target execution, network or changes. Evidence-first: keep observations, inferences and unknowns apart; a missing table is observed absence, not proof. Summary detail keeps complete Evidence that `inspect_analysis_view` can page later. Only on targets you have the right to analyse. **أرقام / params:** MCP tool `inspect_pe_certificates`; detail summary|complete
+- **تثبيت / install:** `npm install -g rea-agents@6.7.0 then connect it as an MCP server; REA alone`
+- **يحتاج / needs:** [`npm:rea`](../requirements.md#req-npm-rea)
+- **الرخصة / license:** MIT (REA, © 2026 morluto); bring-your-own engines keep their own terms
+- **الدليل / proof:** `https://github.com/morluto/rea/blob/main/docs/pe-certificates.md`
+- **المصدر / source:** https://github.com/morluto/rea#mcp-tool-inspect_pe_certificates (contract read from src/contracts @ 45a411e8, also in the user's rea-main.zip upload)
+
+#### REA-255 · REA: ترويسة pyc وكائنات الكود بلا بايثون · REA MCP tool `inspect_python_pyc`: CPython .pyc header and code objects · 📄 موصوف / documented only
+- **ماذا / what:** أداة MCP من REA v6.7.0 لم تكن في الكتالوج: يقرأ ملف .pyc لإصدارات CPython 3.7-3.13: السحر والإصدار وأعلام PEP 552 والكائن العلوي والدوال المتداخلة والأسماء وبصمة البايتكود، دون تنفيذ أو استعادة المصدر. — Reads a CPython 3.7-3.13 .pyc: magic, version, PEP 552 flags, top-level and nested code objects, names and bytecode hash, without executing or recovering source.
+- **متى أستخدمها / when:** تطبيق بايثون مُحزّم بلا مصدر / a packaged Python app without source
+- **كيف / how:** Connect the REA MCP server and call `inspect_python_pyc` (MCP only, no CLI command of the same name in 6.7.0). Needs: REA alone. Static reading only: no target execution, network or changes. Evidence-first: keep observations, inferences and unknowns apart; a missing table is observed absence, not proof. Summary detail keeps complete Evidence that `inspect_analysis_view` can page later. Only on targets you have the right to analyse. **أرقام / params:** MCP tool `inspect_python_pyc`; detail summary|complete
+- **تثبيت / install:** `npm install -g rea-agents@6.7.0 then connect it as an MCP server; REA alone`
+- **يحتاج / needs:** [`python3`](../requirements.md#req-python3) · [`npm:rea`](../requirements.md#req-npm-rea)
+- **الرخصة / license:** MIT (REA, © 2026 morluto); bring-your-own engines keep their own terms
+- **الدليل / proof:** `https://github.com/morluto/rea/blob/main/docs/python-pyc.md`
+- **المصدر / source:** https://github.com/morluto/rea#mcp-tool-inspect_python_pyc (contract read from src/contracts @ 45a411e8, also in the user's rea-main.zip upload)
+
+#### REA-256 · REA: مطابقة الدوال بين نسختين من ثنائي · REA MCP tool `match_native_functions`: match functions across two binary versions · 📄 موصوف / documented only
+- **ماذا / what:** أداة MCP من REA v6.7.0 لم تكن في الكتالوج: يطابق قائمتي دوال من نسختين بالرموز الفريدة ثم بالبايتات المتطابقة، ويترك المكررات مجموعات غير محسومة؛ غير المقترن لا يعني إضافة أو حذفًا. — Matches two function inventories by unique exact symbols, then identical bytes, leaving duplicates as unresolved groups; unpaired never means added or removed.
+- **متى أستخدمها / when:** ماذا تغيّر بين إصدارين من برنامج؟ / what changed between two versions of a program
+- **كيف / how:** Connect the REA MCP server and call `match_native_functions` (MCP only, no CLI command of the same name in 6.7.0). Needs: a native provider session with list_procedures Evidence for both sides. Static reading only: no target execution, network or changes. Evidence-first: keep observations, inferences and unknowns apart; a missing table is observed absence, not proof. Summary detail keeps complete Evidence that `inspect_analysis_view` can page later. Only on targets you have the right to analyse. **أرقام / params:** MCP tool `match_native_functions`; detail summary|complete
+- **تثبيت / install:** `npm install -g rea-agents@6.7.0 then connect it as an MCP server; REA alone`
+- **يحتاج / needs:** [`npm:rea`](../requirements.md#req-npm-rea)
+- **الرخصة / license:** MIT (REA, © 2026 morluto); bring-your-own engines keep their own terms
+- **الدليل / proof:** `https://github.com/morluto/rea/blob/main/docs/native-function-matching.md`
+- **المصدر / source:** https://github.com/morluto/rea#mcp-tool-match_native_functions (contract read from src/contracts @ 45a411e8, also in the user's rea-main.zip upload)
+
+#### REA-257 · REA: فتح حزمة تطبيق لقراءة الموارد فقط · REA MCP tool `open_bundle_resources`: resource-only app bundle session · 📄 موصوف / documented only
+- **ماذا / what:** أداة MCP من REA v6.7.0 لم تكن في الكتالوج: يفتح حزمة تطبيق لقراءة plist وواجهات Interface Builder وكتالوجات الأصول والأرشيفات دون اختلاق هوية للملف التنفيذي؛ تحليل الكود غير متاح حتى يُفتح هدف آخر. — Opens an app bundle read-only for plist, Interface Builder, asset catalogs and keyed archives without inventing an executable identity.
+- **متى أستخدمها / when:** فحص موارد تطبيق Apple دون تحليل الثنائي / inspecting an Apple app's resources without its binary
+- **كيف / how:** Connect the REA MCP server and call `open_bundle_resources` (MCP only, no CLI command of the same name in 6.7.0). Needs: REA alone. Static reading only: no target execution, network or changes. Evidence-first: keep observations, inferences and unknowns apart; a missing table is observed absence, not proof. Summary detail keeps complete Evidence that `inspect_analysis_view` can page later. Only on targets you have the right to analyse. **أرقام / params:** MCP tool `open_bundle_resources`; detail summary|complete
+- **تثبيت / install:** `npm install -g rea-agents@6.7.0 then connect it as an MCP server; REA alone`
+- **يحتاج / needs:** [`npm:rea`](../requirements.md#req-npm-rea) · [`os:macos`](../requirements.md#req-os-macos)
+- **الرخصة / license:** MIT (REA, © 2026 morluto); bring-your-own engines keep their own terms
+- **الدليل / proof:** `https://github.com/morluto/rea/blob/main/docs/apple-application-analysis.md`
+- **المصدر / source:** https://github.com/morluto/rea#mcp-tool-open_bundle_resources (contract read from src/contracts @ 45a411e8, also in the user's rea-main.zip upload)
+
 ## REA MCP prompts (v6.7.0)
 
 #### REA-230 · REA موجّه: investigate_feature · REA MCP prompt `investigate_feature` · 📄 موصوف / documented only
@@ -2543,9 +2663,19 @@
 - **الدليل / proof:** `https://github.com/morluto/rea/tree/main/.agents/skills/rea-changelog-update`
 - **المصدر / source:** https://github.com/morluto/rea
 
+#### REA-258 · REA: مهارة «اعكس هندسة أي شيء» ومتى لا تستخدم REA · REA skill: reverse-engineer-anything, and when to skip REA · 📄 موصوف / documented only
+- **ماذا / what:** مهارة REA الرئيسية: استخدم REA حين يعتمد الادعاء على ثنائي أو حزمة مشحونة أو تفكيك أو دليل وقت تشغيل، وتجاوزه لتحليل مستودع مصدر كامل بأدوات المستودع العادية؛ مع سلم تعافٍ للاتصال بدل تكرار الإعداد. — REA's main skill: use REA when a claim depends on a shipped binary or package, decompilation or runtime evidence; skip it for a complete source repository; a recovery ladder replaces repeated setup.
+- **متى أستخدمها / when:** قبل أي تحقيق REA، أو حين تختفي أدوات REA / before an REA investigation, or when REA tools are missing
+- **كيف / how:** 1) Decide: shipped artifact or runtime question → REA; plain source repo → normal repo tools (for an owned source tree, `rea import-reference-source` is the sanctioned bridge: it marks the tree as historical reference only). 2) If tools are present and not stale, go straight to the target; no doctor run before every task. 3) On missing tools: diagnose with `rea doctor --client <client> --json` without changing config; separate stale registration (scoped repair) from no-tools-in-session (restart) from a missing provider (affects only tasks that need it). 4) Retry a dropped call once only when it is safe to repeat; otherwise ask the user to restart the client. 5) Use the connected server's real tool list and schemas, not the skill text.
+- **تثبيت / install:** `REA source checkout or `rea` skill install (read only)`
+- **يحتاج / needs:** [`npm:rea`](../requirements.md#req-npm-rea)
+- **الرخصة / license:** MIT © 2026 morluto
+- **الدليل / proof:** `https://github.com/morluto/rea/tree/main/.agents/skills/reverse-engineer-anything`
+- **المصدر / source:** https://github.com/morluto/rea @ 45a411e8 (.agents/skills/reverse-engineer-anything/SKILL.md, metadata version 45)
+
 ## المصادر والرخص / sources & licences
 
-- الرخص / licences: MIT (REA code, © 2026 morluto); bring-your-own engines keep their own terms (THIRD_PARTY_NOTICES.md) (153) · MIT (REA); bring-your-own engines keep their own terms (76) · MIT (REA) (6) · owner (KOSIF); REA MIT © 2026 morluto; 7-Zip LGPL (6) · MIT © 2026 morluto (4)
+- الرخص / licences: MIT (REA code, © 2026 morluto); bring-your-own engines keep their own terms (THIRD_PARTY_NOTICES.md) (153) · MIT (REA); bring-your-own engines keep their own terms (76) · MIT (REA, © 2026 morluto); bring-your-own engines keep their own terms (12) · MIT (REA) (6) · owner (KOSIF); REA MIT © 2026 morluto; 7-Zip LGPL (6) · MIT © 2026 morluto (5)
 - الأفكار مكتوبة بكلماتنا مع رابط المصدر؛ لا يُنسخ نص طرف ثالث طويل. Ideas are paraphrased with a link to the source; no long third-party text is copied. `—` = no licence recorded (own method or own wording).
 
 ---

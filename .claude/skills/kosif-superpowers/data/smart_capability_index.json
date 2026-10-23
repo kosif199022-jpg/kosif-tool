@@ -1,10 +1,10 @@
 {
   "schema": "kosif.smart-capability-index.v1",
   "origin": "data/powers/*.json (catalog); no original records changed",
-  "catalog_powers": 5408,
+  "catalog_powers": 5468,
   "group_count": 15,
   "family_count": 62,
-  "tool_count": 141,
+  "tool_count": 142,
   "groups": [
     {
       "id": "research",
@@ -17,16 +17,16 @@
       ],
       "keywords": "research web source citations evidence knowledge search بحث مصادر مراجع معرفة",
       "workflow": [],
-      "count": 54,
+      "count": 56,
       "status_counts": {
-        "documented": 21,
+        "documented": 23,
         "idea": 1,
         "install": 2,
         "key": 9,
         "proven": 21
       },
       "family_counts": {
-        "atlas-research": 9,
+        "atlas-research": 11,
         "knowledge-graph": 21,
         "web-research": 24
       },
@@ -74,15 +74,15 @@
       ],
       "keywords": "think reasoning idea brainstorm strategy plan finance decision تحليل تخطيط ابتكار قرار",
       "workflow": [],
-      "count": 302,
+      "count": 316,
       "status_counts": {
-        "documented": 283,
+        "documented": 297,
         "install": 2,
         "proven": 17
       },
       "family_counts": {
-        "atlas-mind": 50,
-        "atlas-strategy": 62,
+        "atlas-mind": 54,
+        "atlas-strategy": 72,
         "creativity-engine": 29,
         "mental-models": 63,
         "planning-execution": 12,
@@ -189,9 +189,9 @@
         "الاختبار",
         "النشر"
       ],
-      "count": 555,
+      "count": 574,
       "status_counts": {
-        "documented": 371,
+        "documented": 390,
         "idea": 2,
         "install": 32,
         "key": 7,
@@ -200,10 +200,10 @@
         "seen": 16
       },
       "family_counts": {
-        "app-feature-transfer": 139,
+        "app-feature-transfer": 145,
         "apps-artifacts": 23,
-        "atlas-build": 50,
-        "atlas-code": 226,
+        "atlas-build": 52,
+        "atlas-code": 237,
         "code-engineering": 24,
         "ui-product-device": 93
       },
@@ -621,9 +621,9 @@
         "الرسم والخرائط",
         "التصدير"
       ],
-      "count": 253,
+      "count": 258,
       "status_counts": {
-        "documented": 96,
+        "documented": 101,
         "idea": 1,
         "install": 34,
         "key": 7,
@@ -632,7 +632,7 @@
         "seen": 48
       },
       "family_counts": {
-        "atlas-data": 47,
+        "atlas-data": 52,
         "charts-data-infographic": 105,
         "data-analysis": 39,
         "maps-geo": 62
@@ -677,16 +677,16 @@
       ],
       "keywords": "document pdf word excel office writing report مستند تقرير كتابة وورد",
       "workflow": [],
-      "count": 131,
+      "count": 138,
       "status_counts": {
-        "documented": 87,
+        "documented": 94,
         "install": 8,
         "key": 4,
         "proven": 32
       },
       "family_counts": {
-        "atlas-craft": 24,
-        "atlas-docs": 45,
+        "atlas-craft": 26,
+        "atlas-docs": 50,
         "documents-office": 34,
         "writing-humanizer": 28
       },
@@ -788,14 +788,14 @@
       ],
       "keywords": "reverse engineering ghidra rea binary executable forensic تحليل عكسي جفرا ريش",
       "workflow": [],
-      "count": 245,
+      "count": 258,
       "status_counts": {
-        "documented": 167,
+        "documented": 180,
         "install": 48,
         "proven": 30
       },
       "family_counts": {
-        "software-investigation": 245
+        "software-investigation": 258
       },
       "examples": [
         {
@@ -7106,6 +7106,102 @@
       "what": "افحص أي حزمة مهارة خارجية قبل اعتمادها: نص فقط، حجم محدود، بلا ملفات تنفيذية، ومصدر معروف — vet third-party skill packages before importing them"
     },
     {
+      "id": "APPX-140",
+      "family": "app-feature-transfer",
+      "group": "software",
+      "domain": "build",
+      "name_en": "Hidden acceptance test written before cloning",
+      "name_ar": "اختبار قبول مخفي يُكتب قبل الاستنساخ",
+      "status": "documented",
+      "requires": [],
+      "proof": [
+        "https://github.com/softsweb/codex-clone-hidden-test-kit",
+        "https://github.com/softsweb/codex-clone-hidden-test-kit/blob/main/README.md"
+      ],
+      "source": "app-feature-transfer.json",
+      "what": "قبل أن يبدأ الوكيل نسخ برنامج، يُكتب اختبار مخفي عنه يشغّل الأصل والنسخة على نفس المهام ويقارن المخرجات، فلا يفصّل الوكيل الحل على الاختبار. — Before an agent starts cloning a program, write a test it cannot see that runs the original and the copy on the same tasks and compares t"
+    },
+    {
+      "id": "APPX-141",
+      "family": "app-feature-transfer",
+      "group": "software",
+      "domain": "build",
+      "name_en": "Mock model server that records every request",
+      "name_ar": "خادم نموذج وهمي يسجل كل طلب",
+      "status": "documented",
+      "requires": [],
+      "proof": [
+        "https://github.com/softsweb/codex-clone-hidden-test-kit/tree/main/exam"
+      ],
+      "source": "app-feature-transfer.json",
+      "what": "خادم صغير يتظاهر بواجهة النموذج، يرد بما يمليه ملف سيناريو، ويكتب كل طلب يصله في سجل؛ فيصبح سلوك الوكيل (التعليمات والأدوات والرسائل) قابلًا للمقارنة دون حساب أو مفتاح. — A tiny server that imitates the model API, answers from a scenario file and logs every request, so an agent's"
+    },
+    {
+      "id": "APPX-142",
+      "family": "app-feature-transfer",
+      "group": "software",
+      "domain": "build",
+      "name_en": "Multi-check parity scoring, calibrated original-vs-original first",
+      "name_ar": "تقييم التطابق بثلاث عشرة نقطة فحص، ومعايرة المقيّم أولًا",
+      "status": "documented",
+      "requires": [
+        "npm:rea"
+      ],
+      "proof": [
+        "https://github.com/softsweb/codex-clone-hidden-test-kit/blob/main/RESULTS.md"
+      ],
+      "source": "app-feature-transfer.json",
+      "what": "يقارن الأصل والنسخة في كل مهمة على فحوص مستقلة: عدد الطلبات وشكلها، التعليمات، الأدوات، البيئة، رسائل المستخدم، نتائج الأدوات، آثار الملفات، الإجابة النهائية، أحداث JSON، كود الخروج، أخطاء stderr، الترويسات؛ ويُعاير المقيّم بمقارنة الأصل بنفسه حتى 100%. — Compares original and co"
+    },
+    {
+      "id": "APPX-143",
+      "family": "app-feature-transfer",
+      "group": "software",
+      "domain": "build",
+      "name_en": "Non-interactive agent run with a fixed output contract",
+      "name_ar": "تشغيل الوكيل بلا واجهة بعقد مخرجات ثابت",
+      "status": "documented",
+      "requires": [
+        "chromium"
+      ],
+      "proof": [
+        "https://github.com/openai/codex/blob/main/codex-rs/exec/src/cli.rs"
+      ],
+      "source": "app-feature-transfer.json",
+      "what": "نمط codex exec: تشغيل الوكيل مرة واحدة من سكربت أو CI، أحداث JSONL على stdout، مخطط JSON لشكل الإجابة النهائية، ملف لآخر رسالة، وجلسة لا تُحفظ عند الحاجة. — The codex exec pattern: run the agent once from a script or CI, JSONL events on stdout, a JSON Schema for the final answer,"
+    },
+    {
+      "id": "APPX-144",
+      "family": "app-feature-transfer",
+      "group": "software",
+      "domain": "build",
+      "name_en": "Hierarchical AGENTS.md from project root down to the working folder",
+      "name_ar": "تعليمات AGENTS.md الهرمية من جذر المشروع إلى المجلد الحالي",
+      "status": "documented",
+      "requires": [],
+      "proof": [
+        "https://github.com/openai/codex/blob/main/codex-rs/core/src/agents_md.rs"
+      ],
+      "source": "app-feature-transfer.json",
+      "what": "يجد جذر المشروع بالصعود حتى علامة (افتراضيًا .git)، ثم يجمع كل AGENTS.md من الجذر نزولًا إلى المجلد الحالي بالترتيب، مع ملف تجاوز محلي AGENTS.override.md، ولا يصعد فوق الجذر. — Finds the project root by walking up to a marker (.git by default), then concatenates every AGENTS.md f"
+    },
+    {
+      "id": "APPX-145",
+      "family": "app-feature-transfer",
+      "group": "software",
+      "domain": "build",
+      "name_en": "Sandbox x approval matrix with command rules whose examples are tested",
+      "name_ar": "مصفوفة العزل والموافقات وقواعد أوامر لها أمثلة تُختبر",
+      "status": "documented",
+      "requires": [],
+      "proof": [
+        "https://github.com/openai/codex/blob/main/codex-rs/execpolicy/README.md",
+        "https://github.com/openai/codex/blob/main/codex-rs/protocol/src/config_types.rs"
+      ],
+      "source": "app-feature-transfer.json",
+      "what": "ثلاثة أوضاع عزل (قراءة فقط، كتابة في مساحة العمل، وصول كامل خطر) مع سياسات موافقة (غير موثوق، عند الطلب، دقيقة، أبدًا)، وقواعد بادئة للأوامر allow/prompt/forbidden تحمل أمثلة match/not_match تُفحص عند التحميل كاختبارات. — Three sandbox modes with approval policies, plus prefix ru"
+    },
+    {
       "id": "APP-01",
       "family": "apps-artifacts",
       "group": "software",
@@ -8706,6 +8802,36 @@
       ],
       "source": "atlas-build.json",
       "what": "تنفيذ بوابات الإصدار ثم الوسم والنشر والتحقق من وجود الوسم. — Run release gates, tag, push and publish a GitHub release then prove the tag exists."
+    },
+    {
+      "id": "ABUILD-51",
+      "family": "atlas-build",
+      "group": "software",
+      "domain": "build",
+      "name_en": "What/Why/How ticket and PR drafting",
+      "name_ar": "صياغة التذاكر وأوصاف PR بهيكل ماذا/لماذا/كيف",
+      "status": "documented",
+      "requires": [],
+      "proof": [
+        "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/2143-communication-plugin/7664-ticket-drafting-guidelines"
+      ],
+      "source": "atlas-build.json",
+      "what": "يكتب جسم تذكرة أو بلاغ خطأ أو وصف PR بثلاثة أقسام ثابتة ولغة محايدة إيجابية بلا وعود. — Writes an issue, bug report or PR body in three fixed sections with neutral, affirmative wording and no unbacked claims."
+    },
+    {
+      "id": "ABUILD-52",
+      "family": "atlas-build",
+      "group": "software",
+      "domain": "build",
+      "name_en": "Fault-domain connectivity triage without touching config",
+      "name_ar": "فرز أعطال الاتصال حسب مجال الخطأ دون تغيير الإعدادات",
+      "status": "documented",
+      "requires": [],
+      "proof": [
+        "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/3494-incident-response/14217-connectivity-triage"
+      ],
+      "source": "atlas-build.json",
+      "what": "يحدد مكان عطل الشبكة (الشبكة المحلية، DNS، المسار، الخدمة نفسها) بأقل الأدلة وبأوامر قراءة فقط. — Localises a live connectivity failure to LAN, DNS, upstream path or the remote service with bounded, read-only probes."
     },
     {
       "id": "ACODE-01",
@@ -12492,6 +12618,185 @@
       "what": "يسأل أولاً عن مسار البناء (SwiftUI صارم، SwiftUI بهوية، React Native، Flutter، Electron) لأن لكل مسار سقفاً بصرياً وتكلفة. — Asks first which build track (strict SwiftUI, branded SwiftUI, React Native, Flutter, Electron) because each has a different visual ceiling and cost."
     },
     {
+      "id": "ACODE-227",
+      "family": "atlas-code",
+      "group": "software",
+      "domain": "code",
+      "name_en": "ruff lint and format without the select trap",
+      "name_ar": "ضبط ruff للفحص والتنسيق دون فخ select",
+      "status": "documented",
+      "requires": [
+        "python3"
+      ],
+      "proof": [
+        "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/1262-ruff/2942-ruff"
+      ],
+      "source": "atlas-code.json",
+      "what": "يعتمد ruff كفاحص ومنسق لبايثون مع فهم أن select يستبدل القواعد الافتراضية ولا يضيف إليها. — Adopts ruff as Python linter and formatter, knowing that select replaces the default rule set while extend-select adds to it."
+    },
+    {
+      "id": "ACODE-228",
+      "family": "atlas-code",
+      "group": "software",
+      "domain": "code",
+      "name_en": "Python projects, scripts and tools with uv",
+      "name_ar": "إدارة مشاريع بايثون والسكربتات ببرنامج uv",
+      "status": "documented",
+      "requires": [
+        "python3"
+      ],
+      "proof": [
+        "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/1273-uv/2951-uv"
+      ],
+      "source": "atlas-code.json",
+      "what": "يدير الحزم والبيئات وإصدارات بايثون بأداة واحدة: مشروع بملف قفل شامل، سكربتات PEP 723، وأدوات عابرة بـ uvx. — Manages packages, environments and Python versions with one tool: locked projects, PEP 723 scripts and one-off tools via uvx."
+    },
+    {
+      "id": "ACODE-229",
+      "family": "atlas-code",
+      "group": "software",
+      "domain": "code",
+      "name_en": "Choosing DPO, ORPO, KTO or SimPO for preference tuning",
+      "name_ar": "اختيار طريقة مواءمة التفضيلات DPO/ORPO/KTO/SimPO",
+      "status": "documented",
+      "requires": [],
+      "proof": [
+        "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/3104-llm-finetuning/13292-preference-optimization"
+      ],
+      "source": "atlas-code.json",
+      "what": "يختار طريقة مواءمة النموذج بالتفضيلات حسب شكل البيانات، ويعرف أن اختيار دالة الخسارة رافعة صغيرة مقارنة بالحجم وجودة البيانات. — Picks a preference-alignment method by data shape, knowing that loss choice is a small lever next to scale and data quality."
+    },
+    {
+      "id": "ACODE-230",
+      "family": "atlas-code",
+      "group": "software",
+      "domain": "code",
+      "name_en": "MCP server design: deployment model and tool pattern before code",
+      "name_ar": "تصميم خادم MCP: نموذج النشر ونمط الأدوات قبل الكود",
+      "status": "documented",
+      "requires": [
+        "python3",
+        "key:unspecified"
+      ],
+      "proof": [
+        "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/297-mcp-server-dev/911-build-mcp-server"
+      ],
+      "source": "atlas-code.json",
+      "what": "يحسم أربعة قرارات قبل كتابة خادم MCP: نموذج النشر (HTTP بعيد، حزمة محلية، stdio)، نمط الأدوات، الإطار، والمصادقة. — Settles four decisions before writing an MCP server: deployment model (remote HTTP, bundled local, stdio), tool pattern, framework and auth."
+    },
+    {
+      "id": "ACODE-231",
+      "family": "atlas-code",
+      "group": "software",
+      "domain": "code",
+      "name_en": "Upgrade-everything audit with a risk/reward matrix",
+      "name_ar": "تدقيق كل الترقيات الممكنة بمصفوفة مخاطرة/عائد قبل التطبيق",
+      "status": "documented",
+      "requires": [],
+      "proof": [
+        "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/983-upgrade-everything/2267-upgrade-everything"
+      ],
+      "source": "atlas-code.json",
+      "what": "يجرد كل مرجع إصدار في المستودع ويحدد أحدث إصدار من المصدر الرسمي ويقيّم كل ترقية، ولا يطبق إلا ما يختاره المستخدم. — Inventories every version reference, resolves the latest from authoritative sources, rates each upgrade, and applies only what the user selects."
+    },
+    {
+      "id": "ACODE-232",
+      "family": "atlas-code",
+      "group": "software",
+      "domain": "code",
+      "name_en": "False-green test detection",
+      "name_ar": "كشف الاختبارات الخضراء الكاذبة",
+      "status": "documented",
+      "requires": [],
+      "proof": [
+        "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/3258-falsegreen-skill/13769-falsegreen-skill"
+      ],
+      "source": "atlas-code.json",
+      "what": "يفحص ملفات الاختبار بحثًا عن اختبارات تنجح حتى لو انكسر الكود: بلا تأكيد، تأكيد دائم الصحة، محاكاة للوحدة نفسها، استثناء مبتلع. — Reviews tests for ones that pass even when the code breaks: no assertion, always-true assertion, mocking the unit under test, swallowed exceptions."
+    },
+    {
+      "id": "ACODE-233",
+      "family": "atlas-code",
+      "group": "software",
+      "domain": "code",
+      "name_en": "Reduced-space test: decompose the equivalence claim first",
+      "name_ar": "اختبار في فضاء مصغّر: تفكيك ادعاء التكافؤ قبل التجربة",
+      "status": "documented",
+      "requires": [],
+      "proof": [
+        "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/1990-epistemic-cooperative/7155-reduced-space-test"
+      ],
+      "source": "atlas-code.json",
+      "what": "يتحقق تجريبيًا من ادعاء داخل بيئة بديلة مقيدة بعد تفكيك ادعاء تكافؤها مع البيئة الحقيقية إلى أوجه قابلة للقياس، ويحمل الجزء غير المختبر إلى الأمام. — Validates a claim empirically inside a bounded stand-in space after decomposing its equivalence with the real target into measurab"
+    },
+    {
+      "id": "ACODE-234",
+      "family": "atlas-code",
+      "group": "software",
+      "domain": "code",
+      "name_en": "Exploratory web-app QA with full repro evidence",
+      "name_ar": "اختبار استكشافي لتطبيق ويب بأدلة إعادة إنتاج كاملة",
+      "status": "documented",
+      "requires": [
+        "chromium"
+      ],
+      "proof": [
+        "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/2887-agent-browser/11671-dogfood"
+      ],
+      "source": "atlas-code.json",
+      "what": "يستكشف تطبيق ويب كمستخدم حقيقي ويوثق كل مشكلة فور اكتشافها بخطوات مرقمة ولقطات وفيديو للمشكلات التفاعلية. — Explores a web app as a real user and documents each issue the moment it is found, with numbered steps, screenshots and a video for interactive bugs."
+    },
+    {
+      "id": "ACODE-235",
+      "family": "atlas-code",
+      "group": "software",
+      "domain": "code",
+      "name_en": "GDPR review built on a personal-data inventory",
+      "name_ar": "تدقيق الامتثال لـ GDPR انطلاقًا من جرد البيانات الشخصية",
+      "status": "documented",
+      "requires": [],
+      "proof": [
+        "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/2528-gdpr-review/9825-gdpr-review"
+      ],
+      "source": "atlas-code.json",
+      "what": "يدقق كودًا أو تصميمًا أو بنية تحتية أو تدفق بيانات مقابل GDPR بعد بناء جرد للبيانات الشخصية، ويفصل ما يحتاج شهادة قانونية عن النتائج التقنية. — Audits code, a design, IaC or a data flow against GDPR after building a personal-data inventory, separating legal-attestation items from"
+    },
+    {
+      "id": "ACODE-236",
+      "family": "atlas-code",
+      "group": "software",
+      "domain": "code",
+      "name_en": "Narrative codebase guide for newcomers",
+      "name_ar": "دليل سردي لمستودع غير مألوف للمساهمين الجدد",
+      "status": "documented",
+      "requires": [
+        "npm:mermaid"
+      ],
+      "proof": [
+        "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/60-codebase-mapper/97-map-codebase-workflow"
+      ],
+      "source": "atlas-code.json",
+      "what": "ينتج دليلًا مقروءًا لمستودع: ملخص تنفيذي بلغة بسيطة، ثم عشر وثائق مرقمة بمخططات Mermaid، ومسرد، وفهرس بمسارات قراءة حسب الجمهور. — Produces a readable tour of a repository: a plain-language executive summary, ten numbered documents with Mermaid diagrams, a glossary and an index w"
+    },
+    {
+      "id": "ACODE-237",
+      "family": "atlas-code",
+      "group": "software",
+      "domain": "code",
+      "name_en": "Pin every version surface for supply-chain hardening",
+      "name_ar": "تثبيت كل أسطح الإصدارات لتقوية سلسلة التوريد",
+      "status": "documented",
+      "requires": [
+        "node",
+        "python3"
+      ],
+      "proof": [
+        "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/958-pin-everything/2242-pin-everything"
+      ],
+      "source": "atlas-code.json",
+      "what": "يثبت كل مرجع إصدار في المستودع: إجراءات CI ببصمة SHA، وقت التشغيل عبر ملف إصدار واحد، اعتماديات التطبيق بإصدار دقيق، وأوامر التثبيت بإصدار صريح. — Pins every version reference: CI actions to a commit SHA, runtimes through one version file, application dependencies exactly, instal"
+    },
+    {
       "id": "ACRAFT-01",
       "family": "atlas-craft",
       "group": "documents",
@@ -12877,6 +13182,36 @@
       ],
       "source": "atlas-craft.json",
       "what": "يقسّم الواجهة أو الشرح إلى طبقات: ما يلزم للقرار الحالي أولاً، والباقي خلف خطوة واحدة. — Layers an interface or explanation: what the current decision needs first, the rest one step away."
+    },
+    {
+      "id": "ACRAFT-25",
+      "family": "atlas-craft",
+      "group": "documents",
+      "domain": "craft",
+      "name_en": "Prompt governance: registry, evals, promotion and rollback",
+      "name_ar": "حوكمة البرومبتات في الإنتاج: سجل وتقييمات وترقية وتراجع",
+      "status": "documented",
+      "requires": [],
+      "proof": [
+        "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/179-prompt-governance/548-prompt-governance"
+      ],
+      "source": "atlas-craft.json",
+      "what": "يعامل البرومبتات ككود: سجل بإصدارات وترقية بين البيئات، مجموعة ذهبية وتقييمات آلية في CI، اختبار A/B مسبق التعريف، وتراجع بأمر واحد. — Treats prompts as code: a versioned registry with environment promotion, a golden set with automated evals in CI, pre-defined A/B tests and one-c"
+    },
+    {
+      "id": "ACRAFT-26",
+      "family": "atlas-craft",
+      "group": "documents",
+      "domain": "craft",
+      "name_en": "Extract a writing style into a reusable style guide",
+      "name_ar": "استخراج أسلوب كاتب إلى دليل أسلوب قابل للتطبيق",
+      "status": "documented",
+      "requires": [],
+      "proof": [
+        "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/1268-style-extractor/2946-style-extractor"
+      ],
+      "source": "atlas-craft.json",
+      "what": "يحلل نصًا مصدرًا عبر 17 بعدًا أسلوبيًا (و10 سردية للأدب) من عينات موزعة، وينتج دليلًا وبطاقة صوت وقائمة افعل/لا تفعل ومعيار تقييم. — Analyses a source text across 17 style dimensions (plus 10 narrative ones for fiction) from spread samples and produces a guide, a voice card, a do"
     },
     {
       "id": "ADATA-01",
@@ -13650,6 +13985,81 @@
       "what": "مطابقة كل حساب بمصدر مستقل وتسوية البنود قبل إصدار القوائم. — Tie each bank and balance-sheet account to an independent source and clear reconciling items before statements ship."
     },
     {
+      "id": "ADATA-48",
+      "family": "atlas-data",
+      "group": "data",
+      "domain": "data",
+      "name_en": "Fine-tuning dataset curation and dataset card",
+      "name_ar": "تجهيز بيانات الضبط الدقيق وبطاقة البيانات",
+      "status": "documented",
+      "requires": [],
+      "proof": [
+        "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/3104-llm-finetuning/13287-dataset-curation"
+      ],
+      "source": "atlas-data.json",
+      "what": "يحوّل الأمثلة الخام إلى JSONL بالشكل المناسب للطريقة (SFT/DPO/KTO) مع قالب المحادثة وإخفاء الخسارة والتعبئة وبطاقة بيانات إلزامية. — Turns raw examples into method-shaped JSONL with the chat template, loss masking, packing and a mandatory dataset card."
+    },
+    {
+      "id": "ADATA-49",
+      "family": "atlas-data",
+      "group": "data",
+      "domain": "data",
+      "name_en": "Anomaly detection with baseline, calibration and explained flags",
+      "name_ar": "كشف الشذوذ بخط أساس ومعايرة وتفسير لكل إنذار",
+      "status": "documented",
+      "requires": [],
+      "proof": [
+        "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/2207-majestic-data/8242-anomaly-detection"
+      ],
+      "source": "atlas-data.json",
+      "what": "يصمم كشف القيم الشاذة في جداول أو سلاسل زمنية انطلاقًا من القرار الذي يلي الإنذار، بأبسط طريقة مناسبة وعتبات معايرة. — Designs anomaly detection for tables or time series starting from the decision a flag triggers, with the simplest fitting method and calibrated thresholds."
+    },
+    {
+      "id": "ADATA-50",
+      "family": "atlas-data",
+      "group": "data",
+      "domain": "data",
+      "name_en": "Pre-mortem: define success and failure before starting",
+      "name_ar": "التشريح المسبق: تعريف النجاح والفشل قبل البدء",
+      "status": "documented",
+      "requires": [],
+      "proof": [
+        "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/2123-pre-mortem/7548-pre-mortem"
+      ],
+      "source": "atlas-data.json",
+      "what": "قبل تنفيذ عمل متعدد الخطوات يتخيل أن العمل فشل فعلًا ويشرح لماذا، ثم يكتب معايير نجاح وفشل قابلة للاختبار وخطة تحقق بعمق يناسب المخاطرة. — Before multi-step work, imagines it has already failed and explains why, then writes testable success/failure criteria and a verification pla"
+    },
+    {
+      "id": "ADATA-51",
+      "family": "atlas-data",
+      "group": "data",
+      "domain": "data",
+      "name_en": "Statistical process control: chart choice and capability",
+      "name_ar": "ضبط العمليات إحصائيًا: اختيار مخطط التحكم وقدرة العملية",
+      "status": "documented",
+      "requires": [],
+      "proof": [
+        "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/2989-quality-engineering-skills/12654-spc-control-charts"
+      ],
+      "source": "atlas-data.json",
+      "what": "يختار مخطط التحكم المناسب لنوع البيانات وحجم المجموعة، يحسب الحدود من البيانات، يطبق قواعد Western Electric، ثم يحسب Cp/Cpk/Pp/Ppk على عملية مستقرة فقط. — Picks the control chart for the data type and subgroup size, computes limits from data, applies Western Electric rules, then "
+    },
+    {
+      "id": "ADATA-52",
+      "family": "atlas-data",
+      "group": "data",
+      "domain": "data",
+      "name_en": "Trustworthy numbers from a client-rendered dashboard",
+      "name_ar": "استخراج أرقام موثوقة من لوحة معلومات تُرسم في المتصفح",
+      "status": "documented",
+      "requires": [],
+      "proof": [
+        "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/3286-client-rendered-dashboard-data-blob/13800-client-rendered-dashboard-data-blob"
+      ],
+      "source": "atlas-data.json",
+      "what": "بدل أتمتة متصفح يجد كتلة البيانات المضمنة في الصفحة، يفك مخططها من حلقة الرسم نفسها، وينقل صيغ المقاييس المشتقة حرفيًا، ثم يطابق كل رقم مع العرض. — Instead of driving a browser, finds the data blob embedded in the page, decodes its schema from the page's own render loop, ports de"
+    },
+    {
       "id": "ADOCS-01",
       "family": "atlas-docs",
       "group": "documents",
@@ -14374,6 +14784,93 @@
       ],
       "source": "atlas-docs.json",
       "what": "يفرز في النص ما يحتاج ترجمة حرفية وما يحتاج إعادة إبداع (تعابير، تلاعب لفظي، فكاهة)، مع قائمة كلمات لا تُترجم. — Sorts what needs literal translation from what needs transcreation (idioms, wordplay, humour), with a do-not-translate list."
+    },
+    {
+      "id": "ADOCS-46",
+      "family": "atlas-docs",
+      "group": "documents",
+      "domain": "docs",
+      "name_en": "JSON-to-document templating (DOCX/XLSX/PPTX/PDF)",
+      "name_ar": "دمج بيانات JSON في قوالب Word وExcel وPowerPoint",
+      "status": "documented",
+      "requires": [
+        "pip:office"
+      ],
+      "proof": [
+        "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/931-carbone-skill/2177-carbone"
+      ],
+      "source": "atlas-docs.json",
+      "what": "يملأ قالب مستند مكتبي من بيانات JSON بوسوم وحلقات وشروط ومنسّقات دون إعادة تشكيل البيانات. — Fills an office template from JSON with tags, loops, conditions and formatters, adapting the template rather than the data."
+    },
+    {
+      "id": "ADOCS-47",
+      "family": "atlas-docs",
+      "group": "documents",
+      "domain": "docs",
+      "name_en": "True redaction and a sha256 delivery manifest",
+      "name_ar": "تنقيح المستندات حقًا وإثبات ما سُلِّم ببصمات sha256",
+      "status": "documented",
+      "requires": [
+        "tesseract"
+      ],
+      "proof": [
+        "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/1195-carrel-documents/2838-redaction-and-provenance"
+      ],
+      "source": "atlas-docs.json",
+      "what": "يحذف النص الحساس فعليًا (لا مربع أسود فوقه) ثم يثبت ما سُلّم ببيان بصمات قابل للتحقق. — Removes sensitive text for real (not a black box over it) and proves what was delivered with a verifiable hash manifest."
+    },
+    {
+      "id": "ADOCS-48",
+      "family": "atlas-docs",
+      "group": "documents",
+      "domain": "docs",
+      "name_en": "Developer slide decks in Markdown with Slidev",
+      "name_ar": "عروض تقديمية للمطورين بـ Slidev من Markdown",
+      "status": "documented",
+      "requires": [
+        "chromium",
+        "latex",
+        "pip:office",
+        "npm:mermaid",
+        "npm:slidev"
+      ],
+      "proof": [
+        "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/2938-slidev/12191-slidev"
+      ],
+      "source": "atlas-docs.json",
+      "what": "يبني عرضًا تقديميًا ويبيًا من ملف Markdown واحد بكود مُبرز ومتحرك ومخططات Mermaid ومعادلات LaTeX وملاحظات للمقدّم. — Builds a web slide deck from one Markdown file with highlighted, animated code, Mermaid diagrams, LaTeX and presenter notes."
+    },
+    {
+      "id": "ADOCS-49",
+      "family": "atlas-docs",
+      "group": "documents",
+      "domain": "docs",
+      "name_en": "README that hooks in 3 seconds and runs in 60",
+      "name_ar": "كتابة README يجذب المطور في ثلاث ثوانٍ ويشغله في دقيقة",
+      "status": "documented",
+      "requires": [
+        "npm:mermaid"
+      ],
+      "proof": [
+        "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/26-docs/36-readme-craft"
+      ],
+      "source": "atlas-docs.json",
+      "what": "يكتب README لمشروع مفتوح بعد مسح ملفات المشروع: واجهة بجملة قيمة وشارات حقيقية، بداية سريعة قابلة للنسخ، وتفاصيل خلف أقسام قابلة للطي. — Writes an open-source README after scanning the project: a hero with one value sentence and real badges, a copy-paste quick start, details behi"
+    },
+    {
+      "id": "ADOCS-50",
+      "family": "atlas-docs",
+      "group": "documents",
+      "domain": "docs",
+      "name_en": "Appropriate code comments: information the code cannot carry",
+      "name_ar": "تعليقات الكود الملائمة: معلومة لا يحملها الكود",
+      "status": "documented",
+      "requires": [],
+      "proof": [
+        "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/2854-appropriate-comments-code/11563-appropriate-comments-code"
+      ],
+      "source": "atlas-docs.json",
+      "what": "يحكم على كل تعليق: هل يضيف معلومة عن الحالة الحالية لا يقولها الكود نفسه؟ ويحوّل وعود 'لا تغيّر هذا' إلى اختبارات. — Judges each comment by whether it adds present-tense information the code itself cannot say, and turns 'do not change this' promises into tests."
     },
     {
       "id": "AMEDIA-01",
@@ -15667,6 +16164,66 @@
       "what": "يحدّث ملف خارطة الطريق بحسب ما في الكود فعلاً، ويصرّح هل فحص المستودع كاملاً أم اعتمد على سياق الجلسة. — Updates the roadmap file from what the code actually shows and states whether it did a full scan or relied on session context."
     },
     {
+      "id": "AMIND-51",
+      "family": "atlas-mind",
+      "group": "thinking",
+      "domain": "mind",
+      "name_en": "Plant the defect to prove a check can fail",
+      "name_ar": "زرع العيب لإثبات أن الفحص يستطيع أن يفشل",
+      "status": "documented",
+      "requires": [],
+      "proof": [
+        "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/959-plant-defects/2243-plant-defects"
+      ],
+      "source": "atlas-mind.json",
+      "what": "يكسر الكود عمدًا بالعيب الذي يدّعي اختبار أو أداة فحص اكتشافه، ويسجّل ما حدث فعلًا في جدول زرع يتحول إلى اختبارات. — Breaks the code on purpose with the exact defect a test or instrument claims to catch, and records what really happened in a plant table that becomes regression te"
+    },
+    {
+      "id": "AMIND-52",
+      "family": "atlas-mind",
+      "group": "thinking",
+      "domain": "mind",
+      "name_en": "Resumable numbered manual verification plan",
+      "name_ar": "خطة تحقق يدوي مرقمة قابلة للاستئناف",
+      "status": "documented",
+      "requires": [],
+      "proof": [
+        "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/992-write-manual-verification-plan/2276-write-manual-verification-plan"
+      ],
+      "source": "atlas-mind.json",
+      "what": "يكتب قائمة فحوص يدوية كسجل دائم: كل خطوة إعداد وفعل ومتوقَّع قابل للملاحظة وتمييز النتيجة الصفرية الصحيحة من الأداة المعطلة. — Writes a by-hand checklist as a durable record: each step has setup, action, an observable expected result and a null-vs-broken guard."
+    },
+    {
+      "id": "AMIND-53",
+      "family": "atlas-mind",
+      "group": "thinking",
+      "domain": "mind",
+      "name_en": "Shadow mode (dark launch) to validate a replacement under real load",
+      "name_ar": "الإطلاق في الظل لاختبار نظام بديل تحت حمل الإنتاج",
+      "status": "documented",
+      "requires": [],
+      "proof": [
+        "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/2160-migration-patterns-plugin/7804-shadow-mode"
+      ],
+      "source": "atlas-mind.json",
+      "what": "يكرر حركة الإنتاج إلى النظام الجديد دون أن تصل ردوده للمستخدم، ويقارن الردود حقلًا بحقل لبناء الثقة قبل التحويل. — Mirrors production traffic to a new system whose responses never reach users, comparing them field by field to build confidence before cutover."
+    },
+    {
+      "id": "AMIND-54",
+      "family": "atlas-mind",
+      "group": "thinking",
+      "domain": "mind",
+      "name_en": "Specification refinement: gap analysis and ranked one-at-a-time questions",
+      "name_ar": "تنقيح المواصفات بتحليل الفجوات وأسئلة متتابعة مرجّحة",
+      "status": "documented",
+      "requires": [],
+      "proof": [
+        "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/376-specification-refiner/1403-specification-refiner"
+      ],
+      "source": "atlas-mind.json",
+      "what": "يحلل مواصفة أو خطة بعدسات البنية والتنفيذ والافتراضات وعدم التطابق وأصحاب المصلحة، ثم يطرح أهم الأسئلة واحدًا تلو الآخر مع إجابة موصى بها. — Analyses a spec or plan through structure, execution, assumptions, mismatches and stakeholder lenses, then asks the top questions one at a "
+    },
+    {
       "id": "AWEB-01",
       "family": "atlas-research",
       "group": "research",
@@ -15813,6 +16370,36 @@
       ],
       "source": "atlas-research.json",
       "what": "يبني قائمة قراءات docx بأحدث الأوراق لكل قسم من المنهج. — Build a docx reading list of recent papers per syllabus section via academic search."
+    },
+    {
+      "id": "AWEB-10",
+      "family": "atlas-research",
+      "group": "research",
+      "domain": "research",
+      "name_en": "Database views over notes with Obsidian Bases",
+      "name_ar": "قواعد بيانات الملاحظات بملفات Obsidian Bases",
+      "status": "documented",
+      "requires": [],
+      "proof": [
+        "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/1247-obsidian-bases/2927-obsidian-bases"
+      ],
+      "source": "atlas-research.json",
+      "what": "يبني ملف .base بصيغة YAML يعرض الملاحظات كجدول أو بطاقات أو قائمة بفلاتر وصيغ وملخصات. — Builds a YAML .base file that shows notes as table, cards or list views with filters, formulas and summaries."
+    },
+    {
+      "id": "AWEB-11",
+      "family": "atlas-research",
+      "group": "research",
+      "domain": "research",
+      "name_en": "Recognition over recall in pickers and menus",
+      "name_ar": "التعرّف بدل التذكّر في المنتقيات والقوائم",
+      "status": "documented",
+      "requires": [],
+      "proof": [
+        "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/1503-universal-design-principles/3771-recognition-over-recall"
+      ],
+      "source": "atlas-research.json",
+      "what": "يصمم المدخلات بحيث يرى المستخدم الخيارات ويتعرّف عليها بدل أن يتذكرها ويكتبها. — Designs inputs so the user sees and recognises options instead of recalling and typing them."
     },
     {
       "id": "ASTRAT-01",
@@ -16806,6 +17393,165 @@
       ],
       "source": "atlas-strategy.json",
       "what": "يراجع المنتج من تجربة العميل إلى التقنية، ويحذف حتى يصبح الحذف التالي كاسراً للمنتج. — Reviews a product from the customer experience back to the technology, subtracting until one more removal would break it."
+    },
+    {
+      "id": "ASTRAT-63",
+      "family": "atlas-strategy",
+      "group": "thinking",
+      "domain": "strategy",
+      "name_en": "One-question interview to extract real intent",
+      "name_ar": "مقابلة سؤال-بسؤال لاستخراج النية الحقيقية قبل البناء",
+      "status": "documented",
+      "requires": [],
+      "proof": [
+        "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/3225-interview-me/13638-interview-me"
+      ],
+      "source": "atlas-strategy.json",
+      "what": "يكشف ما يريده المستخدم فعلًا لا ما يظن أنه ينبغي أن يريده، بسؤال واحد في كل مرة مع تخمين مرفق حتى ثقة ~95%. — Surfaces what the user actually wants rather than what they think they should want, one question at a time with an attached guess, until ~95% confidence."
+    },
+    {
+      "id": "ASTRAT-64",
+      "family": "atlas-strategy",
+      "group": "thinking",
+      "domain": "strategy",
+      "name_en": "Tailored cover letter without AI tells",
+      "name_ar": "خطاب تقديم وظيفي مفصّل على الإعلان بلا عبارات آلية",
+      "status": "documented",
+      "requires": [
+        "latex"
+      ],
+      "proof": [
+        "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/3410-career-tools/13964-cover-letter-builder"
+      ],
+      "source": "atlas-strategy.json",
+      "what": "يكتب خطاب تقديم من السيرة الذاتية مطابقًا لإعلان الوظيفة وثقافة الشركة، بنثر مباشر وادعاءات قابلة للتتبع. — Writes a cover letter from the CV matched to the job posting and company culture, in direct prose with traceable claims."
+    },
+    {
+      "id": "ASTRAT-65",
+      "family": "atlas-strategy",
+      "group": "thinking",
+      "domain": "strategy",
+      "name_en": "Negotiation with tactical empathy and calibrated questions",
+      "name_ar": "التفاوض بالتعاطف التكتيكي والأسئلة المعايَرة",
+      "status": "documented",
+      "requires": [],
+      "proof": [
+        "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/3433-product-strategy/14097-negotiation"
+      ],
+      "source": "atlas-strategy.json",
+      "what": "يجهّز تفاوضًا (راتب، عقد، سعر) بالإصغاء والتسمية والأسئلة المفتوحة وتدقيق الاتهامات والبديل الأفضل، بلا تقسيم للفرق. — Prepares a salary, contract or price negotiation with listening, labelling, open questions, an accusation audit and a BATNA, never splitting the difference."
+    },
+    {
+      "id": "ASTRAT-66",
+      "family": "atlas-strategy",
+      "group": "thinking",
+      "domain": "strategy",
+      "name_en": "Team Topologies: four team types, three interaction modes",
+      "name_ar": "تصميم الفرق للتدفق السريع: أربعة أنواع وثلاثة أنماط تفاعل",
+      "status": "documented",
+      "requires": [],
+      "proof": [
+        "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/3436-systems-architecture/14113-team-topologies"
+      ],
+      "source": "atlas-strategy.json",
+      "what": "ينظّم فرق الهندسة حسب قانون كونواي والحمل الذهني: فرق مسار، منصة، تمكين، أنظمة معقدة، مع نمط تفاعل معلن لكل زوج. — Organises engineering teams by Conway's law and cognitive load into stream-aligned, platform, enabling and complicated-subsystem teams with a declared interaction mo"
+    },
+    {
+      "id": "ASTRAT-67",
+      "family": "atlas-strategy",
+      "group": "thinking",
+      "domain": "strategy",
+      "name_en": "Gated 8D investigation coach",
+      "name_ar": "تحقيق 8D ببوابات تحقق لكل مرحلة",
+      "status": "documented",
+      "requires": [
+        "npm:d3"
+      ],
+      "proof": [
+        "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/2989-quality-engineering-skills/12639-8d-coach"
+      ],
+      "source": "atlas-strategy.json",
+      "what": "يدير تحقيق جودة 8D من D0 إلى D8 ولا ينتقل لمرحلة قبل أن تجتاز السابقة معاييرها، ويرفض الاحتواء والأسباب الجذرية الضعيفة. — Runs an 8D quality investigation from D0 to D8 and advances only when each discipline passes its criteria, rejecting weak containment and root causes."
+    },
+    {
+      "id": "ASTRAT-68",
+      "family": "atlas-strategy",
+      "group": "thinking",
+      "domain": "strategy",
+      "name_en": "Closable corrective action report (CAR/CAPA)",
+      "name_ar": "كتابة تقرير إجراء تصحيحي CAR/CAPA قابل للإغلاق",
+      "status": "documented",
+      "requires": [],
+      "proof": [
+        "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/2989-quality-engineering-skills/12651-car-corrective-action"
+      ],
+      "source": "atlas-strategy.json",
+      "what": "يكتب تقرير إجراء تصحيحي بسببين جذريين مثبتين، وإجراء لكل سبب، ودليل تنفيذ، وتحقق من الفعالية بحجم عينة مبرر. — Writes a corrective action report with two validated root causes, one action per cause, implementation evidence and effectiveness verification on a justified sample."
+    },
+    {
+      "id": "ASTRAT-69",
+      "family": "atlas-strategy",
+      "group": "thinking",
+      "domain": "strategy",
+      "name_en": "LoRA and QLoRA fine-tuning recipe",
+      "name_ar": "وصفة إعدادات LoRA وQLoRA للضبط الدقيق",
+      "status": "documented",
+      "requires": [
+        "pip:torch",
+        "gpu"
+      ],
+      "proof": [
+        "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/3104-llm-finetuning/13291-lora-qlora-recipes"
+      ],
+      "source": "atlas-strategy.json",
+      "what": "يضبط مُكيّف LoRA/QLoRA بالإعدادات المستقرة: كل الطبقات الخطية، alpha = 2×rank، معدل تعلم أعلى بعشر مرات، ورتبة حسب المهمة. — Configures a LoRA/QLoRA adapter with the settled recipe: all linear modules, alpha = 2 × rank, ~10× the full-FT learning rate, rank by task."
+    },
+    {
+      "id": "ASTRAT-70",
+      "family": "atlas-strategy",
+      "group": "thinking",
+      "domain": "strategy",
+      "name_en": "Customer-support system ladder: self-service to contact center",
+      "name_ar": "سلّم أنظمة دعم العملاء من الخدمة الذاتية إلى مركز الاتصال",
+      "status": "documented",
+      "requires": [],
+      "proof": [
+        "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/2721-twilio-developer-kit/10479-twilio-customer-support-architect"
+      ],
+      "source": "atlas-strategy.json",
+      "what": "يؤهل احتياج نظام دعم العملاء بستة أسئلة (الاتجاه، القنوات، الحجم، الأتمتة، أدوات الموظف، التحويلات) ثم يختار درجة السلّم المناسبة. — Qualifies a support-system need with six questions (direction, channels, volume, automation, agent tooling, transfers) and picks the matching rung "
+    },
+    {
+      "id": "ASTRAT-71",
+      "family": "atlas-strategy",
+      "group": "thinking",
+      "domain": "strategy",
+      "name_en": "Action-first response shape for an ADHD reader",
+      "name_ar": "صياغة الردود للعمل أولًا لقارئ مشتت الانتباه",
+      "status": "documented",
+      "requires": [],
+      "proof": [
+        "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/2411-adhd/9350-shape"
+      ],
+      "source": "atlas-strategy.json",
+      "what": "يشكّل كل رد ليبدأ بالخطوة التالية القابلة للتنفيذ، بخطوات مرقمة وحالة معادة وقوائم لا تتجاوز خمسة وتقديرات زمنية ملموسة. — Shapes every reply to open with the next doable action, with numbered steps, restated state, lists capped at five and concrete time estimates."
+    },
+    {
+      "id": "ASTRAT-72",
+      "family": "atlas-strategy",
+      "group": "thinking",
+      "domain": "strategy",
+      "name_en": "Session report for a non-technical stakeholder",
+      "name_ar": "تقرير جلسة برمجة لصاحب قرار غير تقني",
+      "status": "documented",
+      "requires": [
+        "git"
+      ],
+      "proof": [
+        "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/1074-dev-report/2383-dev-report"
+      ],
+      "source": "atlas-strategy.json",
+      "what": "يحول جلسة عمل إلى تقرير يتخذ عليه مدير المنتج قرارًا: الدليل قبل التفسير، كل مصطلح معرَّف عند أول ظهور، والتحقق والافتراض وغير المختبر في سلال صريحة. — Turns a work session into a report a product owner can act on: evidence before interpretation, each term defined at first use, a"
     },
     {
       "id": "SYNC-01",
@@ -74213,6 +74959,233 @@
       ],
       "source": "software-investigation.json",
       "what": "مهارة rea-changelog-update: جرد قبل النثر (scripts/release-notes.mjs inventory/record)، أقسام Highlights/Changes/Fixes/BREAKING، شكر كل مساهمة مرة بحسابها المؤكد وعدم تخمين الهويات. — Inventory before prose, user-facing sections, credit each contribution once to its verified auth"
+    },
+    {
+      "id": "REA-246",
+      "family": "software-investigation",
+      "group": "reverse",
+      "domain": "code",
+      "name_en": "REA MCP tool `inspect_byte_entropy`: Shannon byte entropy profile",
+      "name_ar": "REA: إنتروبيا البايتات لكشف المناطق المضغوطة أو المشفرة",
+      "status": "documented",
+      "requires": [
+        "npm:rea",
+        "engine:binwalk"
+      ],
+      "proof": [
+        "https://github.com/morluto/rea/blob/main/docs/firmware-analysis.md"
+      ],
+      "source": "software-investigation.json",
+      "what": "أداة MCP من REA v6.7.0 لم تكن في الكتالوج: يحسب إنتروبيا شانون للملف كله ولكتل ثابتة الحجم مع مقاطع مرتفعة (≥7.2) ومنخفضة (≤1.0) بإزاحات دقيقة، قبل أي استخراج. — Shannon entropy for the whole file and fixed blocks, with high (>=7.2) and low (<=1.0) runs at exact offsets, before a"
+    },
+    {
+      "id": "REA-247",
+      "family": "software-investigation",
+      "group": "reverse",
+      "domain": "code",
+      "name_en": "REA MCP tool `inspect_desktop_application`: engine candidates for a desktop app folder",
+      "name_ar": "REA: فحص تطبيق سطح مكتب ومعرفة محركه",
+      "status": "documented",
+      "requires": [
+        "npm:rea"
+      ],
+      "proof": [
+        "https://github.com/morluto/rea/blob/main/docs/desktop-applications.md"
+      ],
+      "source": "software-investigation.json",
+      "what": "أداة MCP من REA v6.7.0 لم تكن في الكتالوج: يفحص مجلد تطبيق سطح مكتب بقوائم محدودة ورؤوس ملفات ويعيد مرشحين: .NET وUnity Mono/IL2CPP وUnreal وGodot وGameMaker وElectron مع مسارات داعمة وخطوات فحص تالية. — Inspects a desktop app folder with bounded listings and headers and returns "
+    },
+    {
+      "id": "REA-248",
+      "family": "software-investigation",
+      "group": "reverse",
+      "domain": "code",
+      "name_en": "REA MCP tool `inspect_elf_notes`: GNU build-id and ABI-tag notes",
+      "name_ar": "REA: ملاحظات ELF ومعرّف البناء",
+      "status": "documented",
+      "requires": [
+        "npm:rea"
+      ],
+      "proof": [
+        "https://github.com/morluto/rea/blob/main/docs/elf-notes.md"
+      ],
+      "source": "software-investigation.json",
+      "what": "أداة MCP من REA v6.7.0 لم تكن في الكتالوج: يقرأ جداول PT_NOTE وSHT_NOTE في ELF ويعيد معرّف البناء GNU build-id ووسم ABI بلا محلل عكسي. — Reads an ELF image's note tables and returns GNU build-id, ABI tag and gold version without a disassembler."
+    },
+    {
+      "id": "REA-249",
+      "family": "software-investigation",
+      "group": "reverse",
+      "domain": "code",
+      "name_en": "REA MCP tool `inspect_erlang_beam`: BEAM atoms, exports and Code header",
+      "name_ar": "REA: فحص ملفات BEAM لإرلانغ وإليكسير",
+      "status": "documented",
+      "requires": [
+        "npm:rea"
+      ],
+      "proof": [
+        "https://github.com/morluto/rea/blob/main/docs/erlang-beam.md"
+      ],
+      "source": "software-investigation.json",
+      "what": "أداة MCP من REA v6.7.0 لم تكن في الكتالوج: يحلل حاوية BEAM: أسماء الكتل وبصماتها، الذرات، جداول التصدير والاستيراد واللامبدا، ورأس مجموعة التعليمات، بلا تثبيت إرلانغ. — Parses a BEAM container: chunk names and hashes, atoms, export/import/lambda tables and the Code instruction-se"
+    },
+    {
+      "id": "REA-250",
+      "family": "software-investigation",
+      "group": "reverse",
+      "domain": "code",
+      "name_en": "REA MCP tool `inspect_gpu_code_objects`: CUDA/HIP fatbins, CUBIN and PTX",
+      "name_ar": "REA: كائنات كود GPU لـ CUDA وHIP",
+      "status": "documented",
+      "requires": [
+        "npm:rea",
+        "gpu"
+      ],
+      "proof": [
+        "https://github.com/morluto/rea/blob/main/docs/gpu-code-objects.md"
+      ],
+      "source": "software-investigation.json",
+      "what": "أداة MCP من REA v6.7.0 لم تكن في الكتالوج: يجرد كائنات كود GPU داخل ELF/PE وfatbin وCUBIN وPTX وحزم HIP، ويفك نواة محددة: سجلات PTX الافتراضية، سجلات CUBIN والذاكرة المشتركة، وإعلانات AMDGPU، بلا أدوات GPU ولا تشغيل. — Inventories GPU code objects in hosts, fatbins, CUBIN, PTX an"
+    },
+    {
+      "id": "REA-251",
+      "family": "software-investigation",
+      "group": "reverse",
+      "domain": "code",
+      "name_en": "REA MCP tool `inspect_il2cpp_metadata`: Unity IL2CPP metadata with optional binary link",
+      "name_ar": "REA: بيانات Unity IL2CPP الوصفية",
+      "status": "documented",
+      "requires": [
+        "npm:rea",
+        "os:macos"
+      ],
+      "proof": [
+        "https://github.com/morluto/rea/blob/main/docs/il2cpp-metadata.md"
+      ],
+      "source": "software-investigation.json",
+      "what": "أداة MCP من REA v6.7.0 لم تكن في الكتالوج: يقرأ global-metadata لإصدارات IL2CPP (24/27/29/31/39) ويربطها اختياريًا بثنائي Mach-O أو PE أو ELF، مع حالات صريحة للعناوين المجهولة أو الفارغة. — Reads Unity IL2CPP metadata (versions 24-39) and optionally links a Mach-O, PE or ELF bina"
+    },
+    {
+      "id": "REA-252",
+      "family": "software-investigation",
+      "group": "reverse",
+      "domain": "code",
+      "name_en": "REA MCP tool `inspect_model_artifact`: GGUF and safetensors declarations without loading",
+      "name_ar": "REA: فحص ملفات النماذج GGUF وsafetensors بلا تحميل",
+      "status": "documented",
+      "requires": [
+        "npm:rea",
+        "pip:llama-cpp"
+      ],
+      "proof": [
+        "https://github.com/morluto/rea/blob/main/docs/model-artifacts.md"
+      ],
+      "source": "software-investigation.json",
+      "what": "أداة MCP من REA v6.7.0 لم تكن في الكتالوج: يقرأ ترويسة نموذج GGUF أو safetensors: المفاتيح الوصفية وأسماء الموترات وأشكالها وأنواعها وإزاحاتها، بلا تحميل النموذج ولا pickle ولا شبكة؛ لا يقيس السلوك أو الجودة. — Reads a GGUF or safetensors header (metadata keys, tensor names, shap"
+    },
+    {
+      "id": "REA-253",
+      "family": "software-investigation",
+      "group": "reverse",
+      "domain": "code",
+      "name_en": "REA MCP tool `inspect_native_exports`: PE/ELF export table",
+      "name_ar": "REA: جدول تصدير مكتبة PE أو ELF",
+      "status": "documented",
+      "requires": [
+        "npm:rea"
+      ],
+      "proof": [
+        "https://github.com/morluto/rea/blob/main/docs/native-investigation.md"
+      ],
+      "source": "software-investigation.json",
+      "what": "أداة MCP من REA v6.7.0 لم تكن في الكتالوج: يسرد تصديرات مكتبة PE (أسماء وأرقام ترتيبية وعناوين وتحويلات) أو رموز ELF الديناميكية مع الربط والإصدار، بلا محرك. — Lists PE exports (names, ordinals, addresses, forwarders) or ELF dynamic symbols with binding and version, without an en"
+    },
+    {
+      "id": "REA-254",
+      "family": "software-investigation",
+      "group": "reverse",
+      "domain": "code",
+      "name_en": "REA MCP tool `inspect_pe_certificates`: Authenticode certificate identities",
+      "name_ar": "REA: هويات شهادات Authenticode في PE",
+      "status": "documented",
+      "requires": [
+        "npm:rea"
+      ],
+      "proof": [
+        "https://github.com/morluto/rea/blob/main/docs/pe-certificates.md"
+      ],
+      "source": "software-investigation.json",
+      "what": "أداة MCP من REA v6.7.0 لم تكن في الكتالوج: يقرأ جدول الأمان في PE ويفك PKCS#7: خوارزميات الملخص، الرقم التسلسلي والمُصدر والموضوع والصلاحية للشهادات، دون التحقق من التوقيع أو سلسلة الثقة. — Reads the PE security directory and decodes PKCS#7 (digest algorithms, certificate serial,"
+    },
+    {
+      "id": "REA-255",
+      "family": "software-investigation",
+      "group": "reverse",
+      "domain": "code",
+      "name_en": "REA MCP tool `inspect_python_pyc`: CPython .pyc header and code objects",
+      "name_ar": "REA: ترويسة pyc وكائنات الكود بلا بايثون",
+      "status": "documented",
+      "requires": [
+        "python3",
+        "npm:rea"
+      ],
+      "proof": [
+        "https://github.com/morluto/rea/blob/main/docs/python-pyc.md"
+      ],
+      "source": "software-investigation.json",
+      "what": "أداة MCP من REA v6.7.0 لم تكن في الكتالوج: يقرأ ملف .pyc لإصدارات CPython 3.7-3.13: السحر والإصدار وأعلام PEP 552 والكائن العلوي والدوال المتداخلة والأسماء وبصمة البايتكود، دون تنفيذ أو استعادة المصدر. — Reads a CPython 3.7-3.13 .pyc: magic, version, PEP 552 flags, top-level and "
+    },
+    {
+      "id": "REA-256",
+      "family": "software-investigation",
+      "group": "reverse",
+      "domain": "code",
+      "name_en": "REA MCP tool `match_native_functions`: match functions across two binary versions",
+      "name_ar": "REA: مطابقة الدوال بين نسختين من ثنائي",
+      "status": "documented",
+      "requires": [
+        "npm:rea"
+      ],
+      "proof": [
+        "https://github.com/morluto/rea/blob/main/docs/native-function-matching.md"
+      ],
+      "source": "software-investigation.json",
+      "what": "أداة MCP من REA v6.7.0 لم تكن في الكتالوج: يطابق قائمتي دوال من نسختين بالرموز الفريدة ثم بالبايتات المتطابقة، ويترك المكررات مجموعات غير محسومة؛ غير المقترن لا يعني إضافة أو حذفًا. — Matches two function inventories by unique exact symbols, then identical bytes, leaving duplicat"
+    },
+    {
+      "id": "REA-257",
+      "family": "software-investigation",
+      "group": "reverse",
+      "domain": "code",
+      "name_en": "REA MCP tool `open_bundle_resources`: resource-only app bundle session",
+      "name_ar": "REA: فتح حزمة تطبيق لقراءة الموارد فقط",
+      "status": "documented",
+      "requires": [
+        "npm:rea",
+        "os:macos"
+      ],
+      "proof": [
+        "https://github.com/morluto/rea/blob/main/docs/apple-application-analysis.md"
+      ],
+      "source": "software-investigation.json",
+      "what": "أداة MCP من REA v6.7.0 لم تكن في الكتالوج: يفتح حزمة تطبيق لقراءة plist وواجهات Interface Builder وكتالوجات الأصول والأرشيفات دون اختلاق هوية للملف التنفيذي؛ تحليل الكود غير متاح حتى يُفتح هدف آخر. — Opens an app bundle read-only for plist, Interface Builder, asset catalogs and k"
+    },
+    {
+      "id": "REA-258",
+      "family": "software-investigation",
+      "group": "reverse",
+      "domain": "code",
+      "name_en": "REA skill: reverse-engineer-anything, and when to skip REA",
+      "name_ar": "REA: مهارة «اعكس هندسة أي شيء» ومتى لا تستخدم REA",
+      "status": "documented",
+      "requires": [
+        "npm:rea"
+      ],
+      "proof": [
+        "https://github.com/morluto/rea/tree/main/.agents/skills/reverse-engineer-anything"
+      ],
+      "source": "software-investigation.json",
+      "what": "مهارة REA الرئيسية: استخدم REA حين يعتمد الادعاء على ثنائي أو حزمة مشحونة أو تفكيك أو دليل وقت تشغيل، وتجاوزه لتحليل مستودع مصدر كامل بأدوات المستودع العادية؛ مع سلم تعافٍ للاتصال بدل تكرار الإعداد. — REA's main skill: use REA when a claim depends on a shipped binary or package, "
     },
     {
       "id": "STORY-01",

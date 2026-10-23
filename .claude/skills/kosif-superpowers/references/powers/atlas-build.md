@@ -3,13 +3,13 @@
 
 > **قوتك هنا / what this gives you:** الواجهات وأنظمة التصميم وبناء التطبيقات وأتمتة المتصفح وتكاملات SaaS والألعاب من أطلس. — UI, design systems, app building, browser automation, SaaS integrations and games from the Atlas.
 > **أقوى دليل / strongest evidence:** لا قوة مثبتة بعد في هذه العائلة — no ✅ power yet; the strongest badge here is 📄 documented.
-> **50 powers follow** — ✅ 0 · 🟢 0 · 📦 0 · 🔑 0 · 👁 0 · 📄 50 · 💡 0.
+> **52 powers follow** — ✅ 0 · 🟢 0 · 📦 0 · 🔑 0 · 👁 0 · 📄 52 · 💡 0.
 
 **الحالة / status:** ✅ مُثبت (شُغّل فعلًا وله مسار دليل) · 🟢 جاهز (كود موجود يعمل بما هو متاح عادة) · 📦 بأمر تثبيت واحد · 🔑 يحتاج مفتاحًا أو حسابًا أو موصلًا · 👁 شوهد في فيديو مرجعي (للموشن فقط) · 📄 طريقة موثقة · 💡 فكرة. الشارة هي أدنى مستوى صادق — the badge is the lowest level that is true.
 مسارات الدليل نسبية إلى `/home/user/`؛ و`session-<date>:<file>#<section>` تشير إلى تشغيل موثق في جلسة سابقة؛ و`owner-upload:` إلى ملف داخل أرشيف أرسله المالك. Proof paths are relative to `/home/user/`.
 
 **المجال / domain:** التطبيقات والواجهات — Apps & artifacts · **البادئة / prefix:** `ABUILD` · **البيانات / data:** `data/powers/atlas-build.json` · **بحث / search:** `python3 scripts/powers.py family atlas-build`
-**مراجع ذات صلة / related references:** [CLAUDE_3_MINUTE_MAP.md](../CLAUDE_3_MINUTE_MAP.md) · [hubs.md](../hubs.md)
+**مراجع ذات صلة / related references:** [CLAUDE_3_MINUTE_MAP.md](../CLAUDE_3_MINUTE_MAP.md) · [hubs.md](../hubs.md) · [rea-superpowers-frontier-20261023.md](../rea-superpowers-frontier-20261023.md)
 
 ## الفهرس / contents
 
@@ -21,6 +21,7 @@
 - **DevOps والسحابة — DevOps, CI/CD, cloud & infrastructure** — ABUILD-30 (1)
 - **الواجهات والتصميم — Front-end, UI & design systems** — ABUILD-31 … ABUILD-49 (19)
 - **Git والإصدار — Git, pull requests & releases** — ABUILD-50 (1)
+- **تكاملات الإنتاجية — Productivity & SaaS integrations** — ABUILD-51 … ABUILD-52 (2)
 - المصادر والرخص / sources & licences
 
 ## سير عمل الوكلاء — Agent workflows & orchestration
@@ -467,9 +468,27 @@
 - **الدليل / proof:** `https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/?/10012-release` · `https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/?/1238-ship` · `https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/?/9678-releasing`
 - **المصدر / source:** KOSIF Atlas mining 2026-10-20 (https://github.com/kosif199022-jpg/kosif-atlas): release/release (#10012); kernel/ship (#1238); mergify/releasing (#9678) · theme git-release · 10 supporting skills · verifier read: skills/?/10012-release, skills/?/1238-ship, skills/?/9678-releasing
 
+## تكاملات الإنتاجية — Productivity & SaaS integrations
+
+#### ABUILD-51 · صياغة التذاكر وأوصاف PR بهيكل ماذا/لماذا/كيف · What/Why/How ticket and PR drafting · 📄 موصوف / documented only
+- **ماذا / what:** يكتب جسم تذكرة أو بلاغ خطأ أو وصف PR بثلاثة أقسام ثابتة ولغة محايدة إيجابية بلا وعود. — Writes an issue, bug report or PR body in three fixed sections with neutral, affirmative wording and no unbacked claims.
+- **متى أستخدمها / when:** كتابة issue أو وصف PR أو مهمة إعادة هيكلة / drafting an issue, bug report, PR description or migration task
+- **كيف / how:** 1) What: 1-3 sentences on the subject, with links to related issues and official docs. 2) Why: the problem or opportunity and its background, linked to the discussion. 3) How: one concrete action per bullet, in order, ending in verifiable acceptance criteria. 4) Say what to do rather than what to avoid; state facts without superlatives, percentages or time estimates. 5) Before posting check every link resolves and the Markdown renders; read the repo's PR template first. **أرقام / params:** type: feature|bug|refactor
+- **الرخصة / license:** method paraphrased from Atlas skills under MIT; the skills keep their own licenses — see each folder's SOURCE.md
+- **الدليل / proof:** `https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/2143-communication-plugin/7664-ticket-drafting-guidelines`
+- **المصدر / source:** KOSIF Atlas frontier mining 2026-10-23 (https://github.com/kosif199022-jpg/kosif-atlas @ 99bb108d): communication-plugin/ticket-drafting-guidelines (#7664) · theme productivity-integrations · SKILL.md read in full as inert text: skills/2143-communication-plugin/7664-ticket-drafting-guidelines
+
+#### ABUILD-52 · فرز أعطال الاتصال حسب مجال الخطأ دون تغيير الإعدادات · Fault-domain connectivity triage without touching config · 📄 موصوف / documented only
+- **ماذا / what:** يحدد مكان عطل الشبكة (الشبكة المحلية، DNS، المسار، الخدمة نفسها) بأقل الأدلة وبأوامر قراءة فقط. — Localises a live connectivity failure to LAN, DNS, upstream path or the remote service with bounded, read-only probes.
+- **متى أستخدمها / when:** API أو خادم MCP ينقطع، DNS متقلب، فقدان حزم / an API or MCP server times out, DNS is flaky, calls drop packets
+- **كيف / how:** 1) Record the exact affected host/URL, start time, continuous or intermittent, and whether other sites work. 2) Compare a 5-packet ping to a known local target with one to the destination (never invent a gateway). 3) Separate resolver configuration (scutil --dns / resolvectl) from query behaviour (dig +time=2 +tries=1). 4) Bounded traceroute -n -q 1 -m 20 only if path visibility reduces doubt; a silent hop is not a broken hop. 5) Time the real endpoint with curl -w dns/connect/tls/ttfb/total and timeouts. 6) Label each line Observed / Inferred / Unknown and return one fault domain with low/medium/high confidence plus the single next safest check; no restarts, DNS flushes or firewall edits during diagnosis. **أرقام / params:** host, symptom window
+- **الرخصة / license:** method paraphrased from Atlas skills under MIT; the skills keep their own licenses — see each folder's SOURCE.md
+- **الدليل / proof:** `https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/3494-incident-response/14217-connectivity-triage`
+- **المصدر / source:** KOSIF Atlas frontier mining 2026-10-23 (https://github.com/kosif199022-jpg/kosif-atlas @ 99bb108d): incident-response/connectivity-triage (#14217) · theme productivity-integrations · SKILL.md read in full as inert text: skills/3494-incident-response/14217-connectivity-triage
+
 ## المصادر والرخص / sources & licences
 
-- الرخص / licences: method paraphrased from Atlas skills under MIT; the skills keep their own licenses — see each folder's SOURCE.md (37) · method paraphrased from Atlas skills under MIT / Apache-2.0; the skills keep their own licenses — see each folder's SOURCE.md (7) · method paraphrased from Atlas skills under Apache-2.0 / MIT; the skills keep their own licenses — see each folder's SOURCE.md (3) · method paraphrased from Atlas skills under Apache-2.0 / MIT (no copyleft seen among supporting ids); the skills keep their own licenses — see each folder's SOURCE.md (1) · method paraphrased from Atlas skills under MIT AND Apache-2.0; the skills keep their own licenses — see each folder's SOURCE.md (1) · method paraphrased from Atlas skills under MIT/Apache; the skills keep their own licenses — see each folder's SOURCE.md (1)
+- الرخص / licences: method paraphrased from Atlas skills under MIT; the skills keep their own licenses — see each folder's SOURCE.md (39) · method paraphrased from Atlas skills under MIT / Apache-2.0; the skills keep their own licenses — see each folder's SOURCE.md (7) · method paraphrased from Atlas skills under Apache-2.0 / MIT; the skills keep their own licenses — see each folder's SOURCE.md (3) · method paraphrased from Atlas skills under Apache-2.0 / MIT (no copyleft seen among supporting ids); the skills keep their own licenses — see each folder's SOURCE.md (1) · method paraphrased from Atlas skills under MIT AND Apache-2.0; the skills keep their own licenses — see each folder's SOURCE.md (1) · method paraphrased from Atlas skills under MIT/Apache; the skills keep their own licenses — see each folder's SOURCE.md (1)
 - الأفكار مكتوبة بكلماتنا مع رابط المصدر؛ لا يُنسخ نص طرف ثالث طويل. Ideas are paraphrased with a link to the source; no long third-party text is copied. `—` = no licence recorded (own method or own wording).
 
 ---

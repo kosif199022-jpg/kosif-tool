@@ -9,7 +9,7 @@
 مسارات الدليل نسبية إلى `/home/user/`؛ و`session-<date>:<file>#<section>` تشير إلى تشغيل موثق في جلسة سابقة؛ و`owner-upload:` إلى ملف داخل أرشيف أرسله المالك. Proof paths are relative to `/home/user/`.
 
 **المجال / domain:** البيانات — Data & analysis · **البادئة / prefix:** `ANLY` · **البيانات / data:** `data/powers/data-analysis.json` · **بحث / search:** `python3 scripts/powers.py family data-analysis`
-**مراجع ذات صلة / related references:** [CLAUDE_3_MINUTE_MAP.md](../CLAUDE_3_MINUTE_MAP.md) · [creativity.md](../creativity.md) · [hubs.md](../hubs.md) · [method-packs.md](../method-packs.md)
+**مراجع ذات صلة / related references:** [CLAUDE_3_MINUTE_MAP.md](../CLAUDE_3_MINUTE_MAP.md) · [creativity.md](../creativity.md) · [hubs.md](../hubs.md) · [method-packs.md](../method-packs.md) · [rea-superpowers-frontier-20261023.md](../rea-superpowers-frontier-20261023.md) · [superpowers-rea-map.md](../superpowers-rea-map.md)
 
 ## الفهرس / contents
 

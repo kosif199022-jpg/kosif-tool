@@ -3,13 +3,13 @@
 
 > **قوتك هنا / what this gives you:** تحليل البيانات وهندستها والتعلم الآلي ولوحات المعلومات كما تصفها مهارات أطلس. — Data analysis, data engineering, machine learning and dashboard methods from the Atlas.
 > **أقوى دليل / strongest evidence:** لا قوة مثبتة بعد في هذه العائلة — no ✅ power yet; the strongest badge here is 📄 documented.
-> **47 powers follow** — ✅ 0 · 🟢 0 · 📦 0 · 🔑 0 · 👁 0 · 📄 47 · 💡 0.
+> **52 powers follow** — ✅ 0 · 🟢 0 · 📦 0 · 🔑 0 · 👁 0 · 📄 52 · 💡 0.
 
 **الحالة / status:** ✅ مُثبت (شُغّل فعلًا وله مسار دليل) · 🟢 جاهز (كود موجود يعمل بما هو متاح عادة) · 📦 بأمر تثبيت واحد · 🔑 يحتاج مفتاحًا أو حسابًا أو موصلًا · 👁 شوهد في فيديو مرجعي (للموشن فقط) · 📄 طريقة موثقة · 💡 فكرة. الشارة هي أدنى مستوى صادق — the badge is the lowest level that is true.
 مسارات الدليل نسبية إلى `/home/user/`؛ و`session-<date>:<file>#<section>` تشير إلى تشغيل موثق في جلسة سابقة؛ و`owner-upload:` إلى ملف داخل أرشيف أرسله المالك. Proof paths are relative to `/home/user/`.
 
 **المجال / domain:** البيانات — Data & analysis · **البادئة / prefix:** `ADATA` · **البيانات / data:** `data/powers/atlas-data.json` · **بحث / search:** `python3 scripts/powers.py family atlas-data`
-**مراجع ذات صلة / related references:** [CLAUDE_3_MINUTE_MAP.md](../CLAUDE_3_MINUTE_MAP.md) · [hubs.md](../hubs.md)
+**مراجع ذات صلة / related references:** [CLAUDE_3_MINUTE_MAP.md](../CLAUDE_3_MINUTE_MAP.md) · [hubs.md](../hubs.md) · [rea-superpowers-frontier-20261023.md](../rea-superpowers-frontier-20261023.md)
 
 ## الفهرس / contents
 
@@ -18,10 +18,12 @@
 - **البلوكتشين — Blockchain & web3** — ADATA-05 … ADATA-07 (3)
 - **الأعمال والمال — Business, finance & legal** — ADATA-08 … ADATA-12 (5)
 - **تحليل البيانات — Data analysis & statistics** — ADATA-13 … ADATA-28 (16)
-- **هندسة البيانات — Data engineering & pipelines** — ADATA-29 … ADATA-37 (9)
+- **هندسة البيانات — Data engineering & pipelines** — ADATA-29 … ADATA-50 (10)
 - **قواعد البيانات — Databases & storage** — ADATA-38 … ADATA-45 (8)
 - **هندسة النماذج اللغوية — LLM & AI engineering** — ADATA-46 (1)
 - **القطاعات المنظّمة — Regulated industries & domain expertise** — ADATA-47 (1)
+- **التعلم الآلي — Machine learning & data science** — ADATA-48 … ADATA-49 (2)
+- **التصوير البياني ولوحات المعلومات — Charts, dashboards & visualisation** — ADATA-51 … ADATA-52 (2)
 - المصادر والرخص / sources & licences
 
 ## سير عمل الوكلاء — Agent workflows & orchestration
@@ -341,6 +343,14 @@
 - **الدليل / proof:** `https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/2957-posthog/12413-tuning-incremental-sync-config` · `https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/2957-posthog/12303-diagnosing-failed-warehouse-syncs` · `https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/2957-posthog/12265-auditing-warehouse-source-health`
 - **المصدر / source:** KOSIF Atlas mining 2026-10-20 (https://github.com/kosif199022-jpg/kosif-atlas): posthog/tuning-incremental-sync-config (#12413); posthog/diagnosing-failed-warehouse-syncs (#12303); posthog/auditing-warehouse-source-health (#12265) · theme data-engineering · 3 supporting skills · verifier read: skills/2957-posthog/12413-tuning-incremental-sync-config, skills/2957-posthog/12303-diagnosing-failed-warehouse-syncs, skills/2957-posthog/12265-auditing-warehouse-source-health
 
+#### ADATA-50 · التشريح المسبق: تعريف النجاح والفشل قبل البدء · Pre-mortem: define success and failure before starting · 📄 موصوف / documented only
+- **ماذا / what:** قبل تنفيذ عمل متعدد الخطوات يتخيل أن العمل فشل فعلًا ويشرح لماذا، ثم يكتب معايير نجاح وفشل قابلة للاختبار وخطة تحقق بعمق يناسب المخاطرة. — Before multi-step work, imagines it has already failed and explains why, then writes testable success/failure criteria and a verification plan sized to the stakes.
+- **متى أستخدمها / when:** قبل البدء بمهمة برمجية أو بيانات أو بحث متعددة الخطوات / before any multi-step code, data or research task
+- **كيف / how:** 1) Frame the task in one sentence. 2) Success as 'when [action], then [observable result]'. 3) Specific failure modes, never 'could have bugs'. 4) Unverified assumptions. 5) Top 3-5 risks, each with a concrete countermeasure. 6) Verification plan a separate verifier could apply from the card alone. Size it: Micro (one line, the default for small reversible work), Light (inline), Standard (saved card), Deep (delegated, for novel or high-stakes work). Always do it before execution, never after. **أرقام / params:** tier
+- **الرخصة / license:** method paraphrased from Atlas skills under MIT; the skills keep their own licenses — see each folder's SOURCE.md
+- **الدليل / proof:** `https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/2123-pre-mortem/7548-pre-mortem`
+- **المصدر / source:** KOSIF Atlas frontier mining 2026-10-23 (https://github.com/kosif199022-jpg/kosif-atlas @ 99bb108d): pre-mortem/pre-mortem (#7548) · theme data-engineering · SKILL.md read in full as inert text: skills/2123-pre-mortem/7548-pre-mortem
+
 ## قواعد البيانات — Databases & storage
 
 #### ADATA-38 · مراجعة مخطط واستعلامات ClickHouse · ClickHouse schema and query rule review · 📄 موصوف / documented only
@@ -430,9 +440,45 @@
 - **الدليل / proof:** `https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/2228-accounting-bookkeeping/8461-reconcile-accounts` · `https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/321-finance/975-reconciliation`
 - **المصدر / source:** KOSIF Atlas mining 2026-10-20 (https://github.com/kosif199022-jpg/kosif-atlas): accounting-bookkeeping/reconcile-accounts (#8461); finance/reconciliation (#975) · theme compliance-industry · 2 supporting skills · verifier read: skills/2228-accounting-bookkeeping/8461-reconcile-accounts, skills/321-finance/975-reconciliation
 
+## التعلم الآلي — Machine learning & data science
+
+#### ADATA-48 · تجهيز بيانات الضبط الدقيق وبطاقة البيانات · Fine-tuning dataset curation and dataset card · 📄 موصوف / documented only
+- **ماذا / what:** يحوّل الأمثلة الخام إلى JSONL بالشكل المناسب للطريقة (SFT/DPO/KTO) مع قالب المحادثة وإخفاء الخسارة والتعبئة وبطاقة بيانات إلزامية. — Turns raw examples into method-shaped JSONL with the chat template, loss masking, packing and a mandatory dataset card.
+- **متى أستخدمها / when:** إعداد بيانات لتدريب أو ضبط نموذج لغوي، توليد بيانات صناعية / preparing data to fine-tune an LLM, generating synthetic data
+- **كيف / how:** 1) Choose the shape by method: instruct or messages for SFT (about 1,000 rows as a floor), chosen/rejected pairs for DPO/ORPO, labelled completions for KTO. 2) Apply the target model's chat template before any concatenation or packing; keep data in messages form and mask loss to assistant tokens; decode the unmasked positions to check. 3) Packing saves the 40-70% wasted on padding but changes steps per epoch; decode 5-10 packed sequences by hand. 4) Keep at least 25% real (non-task-generated) data; filter synthetic generations (accept rates are often 10-30%). 5) Dataset card fields: provenance, counts per split, synthetic/real ratio, dedup method, template id, packing config. Use the same template at inference and eval. **أرقام / params:** method, template
+- **الرخصة / license:** method paraphrased from Atlas skills under MIT; the skills keep their own licenses — see each folder's SOURCE.md
+- **الدليل / proof:** `https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/3104-llm-finetuning/13287-dataset-curation`
+- **المصدر / source:** KOSIF Atlas frontier mining 2026-10-23 (https://github.com/kosif199022-jpg/kosif-atlas @ 99bb108d): llm-finetuning/dataset-curation (#13287) · theme ml-datascience · SKILL.md read in full as inert text: skills/3104-llm-finetuning/13287-dataset-curation
+
+#### ADATA-49 · كشف الشذوذ بخط أساس ومعايرة وتفسير لكل إنذار · Anomaly detection with baseline, calibration and explained flags · 📄 موصوف / documented only
+- **ماذا / what:** يصمم كشف القيم الشاذة في جداول أو سلاسل زمنية انطلاقًا من القرار الذي يلي الإنذار، بأبسط طريقة مناسبة وعتبات معايرة. — Designs anomaly detection for tables or time series starting from the decision a flag triggers, with the simplest fitting method and calibrated thresholds.
+- **متى أستخدمها / when:** قيم غريبة في مقياس، مراقبة مؤشرات، احتيال محتمل، سلسلة زمنية موسمية / odd metric values, KPI monitoring, possible fraud, seasonal series
+- **كيف / how:** 1) Define entity, metric, grain, the action after a flag and the cost of false positives vs negatives before choosing a method. 2) Validate units, duplicates, missing/default values, time zones, schema changes and future leakage; never fill missing with zero unless zero is the meaning. 3) Pick a baseline (history, peer group, rolling window, seasonal position, forecast residual) and segment different populations first. 4) Smallest method: z-score, IQR/quantiles, MAD, rolling or seasonal residual, Isolation Forest or LOF for multivariate. 5) Calibrate thresholds by backtest or labelled incidents (flag rate, precision/recall, delay), not by the '3 sigma' habit. 6) Explain each flag (observed, expected, deviation, method) and classify it (data defect, expected event, novel valid, model failure) before changing any record; plan alert routing and feedback. **أرقام / params:** metric, grain
+- **الرخصة / license:** method paraphrased from Atlas skills under MIT; the skills keep their own licenses — see each folder's SOURCE.md
+- **الدليل / proof:** `https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/2207-majestic-data/8242-anomaly-detection`
+- **المصدر / source:** KOSIF Atlas frontier mining 2026-10-23 (https://github.com/kosif199022-jpg/kosif-atlas @ 99bb108d): majestic-data/anomaly-detection (#8242) · theme ml-datascience · SKILL.md read in full as inert text: skills/2207-majestic-data/8242-anomaly-detection
+
+## التصوير البياني ولوحات المعلومات — Charts, dashboards & visualisation
+
+#### ADATA-51 · ضبط العمليات إحصائيًا: اختيار مخطط التحكم وقدرة العملية · Statistical process control: chart choice and capability · 📄 موصوف / documented only
+- **ماذا / what:** يختار مخطط التحكم المناسب لنوع البيانات وحجم المجموعة، يحسب الحدود من البيانات، يطبق قواعد Western Electric، ثم يحسب Cp/Cpk/Pp/Ppk على عملية مستقرة فقط. — Picks the control chart for the data type and subgroup size, computes limits from data, applies Western Electric rules, then computes Cp/Cpk/Pp/Ppk only on a stable process.
+- **متى أستخدمها / when:** مراقبة خاصية إنتاج، تفسير إشارة خروج عن السيطرة، تدقيق نظام SPC / monitoring a characteristic, interpreting an out-of-control signal, auditing SPC
+- **كيف / how:** 1) Variable data: X-bar/R for n 2-9, X-bar/S for n >= 10, I-MR for n = 1; attributes: p, np, c or u. 2) Limits from at least 25 subgroups and never set to the specification limits. 3) Apply rules 1-3 at least (beyond 3 sigma, 9 on one side, 6 trending) and all 8 for safety-critical items. 4) Capability only on an in-control process with 100+ consecutive parts; fewer means 'preliminary' with n stated; always report Cpk with Cp. 5) Thresholds: Cpk >= 1.33 minimum, 1.67 target. 6) On a signal: stop, contain, investigate what changed, root cause, correct, document; never recalculate limits to hide it. **أرقام / params:** characteristic, subgroup size
+- **الرخصة / license:** method paraphrased from Atlas skills under MIT; the skills keep their own licenses — see each folder's SOURCE.md
+- **الدليل / proof:** `https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/2989-quality-engineering-skills/12654-spc-control-charts`
+- **المصدر / source:** KOSIF Atlas frontier mining 2026-10-23 (https://github.com/kosif199022-jpg/kosif-atlas @ 99bb108d): quality-engineering-skills/spc-control-charts (#12654) · theme visualization-dashboards · SKILL.md read in full as inert text: skills/2989-quality-engineering-skills/12654-spc-control-charts
+
+#### ADATA-52 · استخراج أرقام موثوقة من لوحة معلومات تُرسم في المتصفح · Trustworthy numbers from a client-rendered dashboard · 📄 موصوف / documented only
+- **ماذا / what:** بدل أتمتة متصفح يجد كتلة البيانات المضمنة في الصفحة، يفك مخططها من حلقة الرسم نفسها، وينقل صيغ المقاييس المشتقة حرفيًا، ثم يطابق كل رقم مع العرض. — Instead of driving a browser, finds the data blob embedded in the page, decodes its schema from the page's own render loop, ports derived-metric formulas literally, then reconciles every number with the rendered view.
+- **متى أستخدمها / when:** لوحة لا تظهر أرقامها في HTML، تحويل لوحة إلى مصدر تقرير / a dashboard whose numbers are not in the HTML, using a dashboard as a report source
+- **كيف / how:** 1) Confirm you are authorised to read the dashboard; never commit fetched personal pages. 2) Locate the blob (__NEXT_DATA__, initial-state globals, JSON script tags, a top-level const). 3) Read field names from the code that destructures the tuples; note lookup indexes and offsets. 4) Port formulas, including degenerate cases. Two traps: a displayed rank may be a row number under the active sort (rank yourself and give the denominator), and a 'velocity' may compare halves of the same window. 5) Match entities by stable id, not name. 6) Reproduce every number for one entity; a single mismatch is a finding to explain, not to hide. 7) Distinguish a login page from a format change, and keep an offline synthetic self-check.
+- **الرخصة / license:** method paraphrased from Atlas skills under MIT; the skills keep their own licenses — see each folder's SOURCE.md
+- **الدليل / proof:** `https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/3286-client-rendered-dashboard-data-blob/13800-client-rendered-dashboard-data-blob`
+- **المصدر / source:** KOSIF Atlas frontier mining 2026-10-23 (https://github.com/kosif199022-jpg/kosif-atlas @ 99bb108d): client-rendered-dashboard-data-blob/client-rendered-dashboard-data-blob (#13800) · theme visualization-dashboards · SKILL.md read in full as inert text: skills/3286-client-rendered-dashboard-data-blob/13800-client-rendered-dashboard-data-blob
+
 ## المصادر والرخص / sources & licences
 
-- الرخص / licences: method paraphrased from Atlas skills under MIT; the skills keep their own licenses — see each folder's SOURCE.md (33) · method paraphrased from Atlas skills under MIT/Apache-2.0; the skills keep their own licenses — see each folder's SOURCE.md (4) · method paraphrased from Atlas skills under Apache-2.0 / MIT; the skills keep their own licenses — see each folder's SOURCE.md (3) · method paraphrased from Atlas skills under Apache-2.0; the skills keep their own licenses — see each folder's SOURCE.md (3) · method paraphrased from Atlas skills under MIT / Apache-2.0; the skills keep their own licenses — see each folder's SOURCE.md (3) · method paraphrased from Atlas skills under Apache-2.0 / MIT (no copyleft seen among supporting ids); the skills keep their own licenses — see each folder's SOURCE.md (1)
+- الرخص / licences: method paraphrased from Atlas skills under MIT; the skills keep their own licenses — see each folder's SOURCE.md (38) · method paraphrased from Atlas skills under MIT/Apache-2.0; the skills keep their own licenses — see each folder's SOURCE.md (4) · method paraphrased from Atlas skills under Apache-2.0 / MIT; the skills keep their own licenses — see each folder's SOURCE.md (3) · method paraphrased from Atlas skills under Apache-2.0; the skills keep their own licenses — see each folder's SOURCE.md (3) · method paraphrased from Atlas skills under MIT / Apache-2.0; the skills keep their own licenses — see each folder's SOURCE.md (3) · method paraphrased from Atlas skills under Apache-2.0 / MIT (no copyleft seen among supporting ids); the skills keep their own licenses — see each folder's SOURCE.md (1)
 - الأفكار مكتوبة بكلماتنا مع رابط المصدر؛ لا يُنسخ نص طرف ثالث طويل. Ideas are paraphrased with a link to the source; no long third-party text is copied. `—` = no licence recorded (own method or own wording).
 
 ---

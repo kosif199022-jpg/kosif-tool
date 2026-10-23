@@ -464,5 +464,107 @@
    "stage": "extracted",
    "verified_by": "b036-education-learning-1.json"
   }
+ },
+ {
+  "id": "AWEB-10",
+  "family": "atlas-research",
+  "domain": "research",
+  "name_ar": "قواعد بيانات الملاحظات بملفات Obsidian Bases",
+  "name_en": "Database views over notes with Obsidian Bases",
+  "status": "documented",
+  "what": "يبني ملف .base بصيغة YAML يعرض الملاحظات كجدول أو بطاقات أو قائمة بفلاتر وصيغ وملخصات. — Builds a YAML .base file that shows notes as table, cards or list views with filters, formulas and summaries.",
+  "when": "متتبع مهام أو قائمة قراءة أو فهرس يوميات داخل Obsidian / a task tracker, reading list or daily-notes index inside an Obsidian vault",
+  "how": "1) Scope with global filters (and/or/not over file.hasTag, file.inFolder, properties). 2) Define computed columns under formulas and reference them as formula.NAME. 3) Add one or more views with order, groupBy, per-view filters and summaries (Average, Sum, Median, Earliest...). 4) Date differences are Durations: read .days before rounding. 5) Quote any string with : { } [ ] # etc.; single-quote formulas that contain double quotes. 6) Validate the YAML and that every formula.X is defined, then open it in Obsidian; embed with ![[Name.base#View]].",
+  "params": "vault folder, tags",
+  "install": "",
+  "requires": [],
+  "license": "method paraphrased from Atlas skills under MIT; the skills keep their own licenses — see each folder's SOURCE.md",
+  "proof": [
+   "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/1247-obsidian-bases/2927-obsidian-bases"
+  ],
+  "proof_scope": "url",
+  "styles": [],
+  "tags": [
+   "obsidian",
+   "bases",
+   "notes database",
+   "ملاحظات",
+   "قاعدة معرفة",
+   "knowledge base"
+  ],
+  "section": "إدارة المعرفة — Notes, knowledge bases & personal memory",
+  "source": "KOSIF Atlas frontier mining 2026-10-23 (https://github.com/kosif199022-jpg/kosif-atlas @ 99bb108d): obsidian-bases/obsidian-bases (#2927) · theme knowledge-management · SKILL.md read up to its first 12,000 characters as inert text (rest not read): skills/1247-obsidian-bases/2927-obsidian-bases",
+  "atlas": {
+   "ids": [
+    "2927"
+   ],
+   "examples": [
+    {
+     "id": "2927",
+     "plugin": "obsidian-bases",
+     "skill": "obsidian-bases",
+     "url": "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/1247-obsidian-bases/2927-obsidian-bases"
+    }
+   ],
+   "theme": "knowledge-management",
+   "risk_notes": "Method guidance only; no Atlas code imported or executed.",
+   "kosif_overlap_ids": [],
+   "stage": "extracted",
+   "verified_by": "atlas-frontier-mining-20261023.json",
+   "skill_md_sha256": {
+    "2927": "8988fd9ba6f8e4c9e80e6fc3d8a83062a4e5c1a7c7b579d3055c303a4d39d3c3"
+   }
+  }
+ },
+ {
+  "id": "AWEB-11",
+  "family": "atlas-research",
+  "domain": "research",
+  "name_ar": "التعرّف بدل التذكّر في المنتقيات والقوائم",
+  "name_en": "Recognition over recall in pickers and menus",
+  "status": "documented",
+  "what": "يصمم المدخلات بحيث يرى المستخدم الخيارات ويتعرّف عليها بدل أن يتذكرها ويكتبها. — Designs inputs so the user sees and recognises options instead of recalling and typing them.",
+  "when": "منتقي تاريخ أو منطقة زمنية، لوحة أوامر، حقل بحث، قائمة إعدادات / pickers, command palettes, autocomplete, settings, navigation",
+  "how": "1) For each input ask: are the valid options shown, or must the user remember them? 2) Large known sets: a combobox (type a few letters, recognise from filtered matches) with recents first. 3) Surface recents and frequently used items in pickers and navigation. 4) Hook fields to autocomplete and show example values instead of 'Enter value'. 5) Keep recall paths (shortcuts, CLI) for experts alongside, and keep recall where it is the point (passwords, free text). 6) Test discoverability: can a newcomer find the feature without knowing its name?",
+  "params": "",
+  "install": "",
+  "requires": [],
+  "license": "method paraphrased from Atlas skills under MIT; the skills keep their own licenses — see each folder's SOURCE.md",
+  "proof": [
+   "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/1503-universal-design-principles/3771-recognition-over-recall"
+  ],
+  "proof_scope": "url",
+  "styles": [],
+  "tags": [
+   "UX",
+   "recognition",
+   "command palette",
+   "واجهة",
+   "سهولة الاستخدام",
+   "autocomplete"
+  ],
+  "section": "إدارة المعرفة — Notes, knowledge bases & personal memory",
+  "source": "KOSIF Atlas frontier mining 2026-10-23 (https://github.com/kosif199022-jpg/kosif-atlas @ 99bb108d): universal-design-principles/recognition-over-recall (#3771) · theme knowledge-management · SKILL.md read up to its first 12,000 characters as inert text (rest not read): skills/1503-universal-design-principles/3771-recognition-over-recall",
+  "atlas": {
+   "ids": [
+    "3771"
+   ],
+   "examples": [
+    {
+     "id": "3771",
+     "plugin": "universal-design-principles",
+     "skill": "recognition-over-recall",
+     "url": "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/1503-universal-design-principles/3771-recognition-over-recall"
+    }
+   ],
+   "theme": "knowledge-management",
+   "risk_notes": "Method guidance only; no Atlas code imported or executed.",
+   "kosif_overlap_ids": [],
+   "stage": "extracted",
+   "verified_by": "atlas-frontier-mining-20261023.json",
+   "skill_md_sha256": {
+    "3771": "4e4d37fa8226942e8275ba0ff408b458e721158bfa4c6820d1e5c1da7825bf6e"
+   }
+  }
  }
 ]

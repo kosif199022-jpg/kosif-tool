@@ -2012,6 +2012,52 @@
     ],
     "top_k": 3
    }
+  },
+  {
+   "id": 94,
+   "lang": "ar",
+   "domain": "code",
+   "skills": [
+    "kosif-superpowers"
+   ],
+   "query": "اكتب اختبار قبول مخفي قبل ما الوكيل يستنسخ أداة سطر أوامر وقارن النسخة بالأصل",
+   "files": [],
+   "expected_behavior": [
+    "Routes to the agent-clone acceptance cards (APPX-140..142) and states they are documented methods, not a run",
+    "Freezes scenarios and the scorer before the build, calibrates the scorer original-vs-original to 100% first, then scores the copy as ok/total per check",
+    "Lists what was not tested next to the score and copies no code or text from the unlicensed kit"
+   ],
+   "routing": {
+    "expect_any": [
+     "APPX"
+    ],
+    "expect_domain": "code",
+    "top_k": 8,
+    "motion_output": false
+   }
+  },
+  {
+   "id": 95,
+   "lang": "en",
+   "domain": "code",
+   "skills": [
+    "kosif-superpowers"
+   ],
+   "query": "inspect a GGUF or safetensors model file without loading it",
+   "files": [],
+   "expected_behavior": [
+    "Routes to REA's inspect_model_artifact card (REA-252) and says it reads declarations only, not model behaviour or quality",
+    "Never loads the model, unpickles anything or opens the network",
+    "Reports tensor names, shapes, types and offsets as observed and parameter totals as derived"
+   ],
+   "routing": {
+    "expect_any": [
+     "REA"
+    ],
+    "expect_domain": "code",
+    "top_k": 8,
+    "motion_output": false
+   }
   }
  ]
 }
