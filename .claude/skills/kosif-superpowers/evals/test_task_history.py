@@ -158,6 +158,9 @@ class Gate(Base):
         self.assertRefused(entry(notes="SA" + "0" * 22), "IBAN")
         self.assertRefused(entry(params={"payment_ref": "iban sa" + "9" * 22}), "IBAN")
 
+    def test_any_iban_is_refused(self):
+        self.assertRefused(entry(notes="pay DE89370400440532013000"), "IBAN")
+
     def test_git_remotes_and_versions_are_not_personal_data(self):
         rec = entry(notes="git clone git@github.com:o/r.git; npm i react@18.3.1; 2026-10-23 at 1080x1920")
         self.assertEqual(self.add(rec)[0], 0)

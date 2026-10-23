@@ -63,7 +63,7 @@ SHA_RE = re.compile(r"^[0-9a-f]{64}$")
 LEAK_RE = re.compile(r"/tmp/claude-\d+/|scratchpad/|session_[0-9A-Za-z]{20,}|/root/\.claude/|/mnt/project-files/uploads/")
 EMAIL_RE = re.compile(r"(?<![\w.%+-])(?!git@|noreply@|no-reply@)[A-Za-z0-9._%+-]+@[A-Za-z0-9-]+\.[A-Za-z0-9.-]*[A-Za-z]")
 PHONE_RE = re.compile(r"(?<![\w.:/-])\+?\d[\d \-]{9,}\d(?![\w.])")
-IBAN_RE = re.compile(r"\bSA[0-9]{22}\b", re.IGNORECASE)
+IBAN_RE = re.compile(r"\b(?:[Ss][Aa][0-9]{22}|[A-Z]{2}[0-9]{2}[A-Z0-9]{11,30})\b")
 PLACEHOLDER_RE = re.compile(r"^<[^<>]* [^<>]*>$")
 ABS_RE = re.compile(r"(?<![\w.:])(?:/home/|/Users/|/mnt/|/tmp/|[A-Za-z]:\\)")
 
@@ -138,7 +138,7 @@ def privacy_problems(rec) -> tuple:
             errors.append(f"{where}: a phone number (personal data on a public branch)")
         if IBAN_RE.search(s):
             errors.append(f"{where}: an IBAN/bank account number (financial data on a public branch)")
-        elif ABS_RE.search(s):
+        if not PHONE_RE.search(s) and ABS_RE.search(s):
             warnings.append(f"{where}: an absolute local path; another machine cannot reproduce it, prefer a repo path")
     return errors, warnings
 
