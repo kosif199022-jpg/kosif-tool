@@ -1,8 +1,8 @@
 # أطلس مناهج كتب الرسم — Drawing Methods Atlas
 
-ملخص أصلي لطرق التعليم في أشهر كتب الرسم، ومنها 41 كتابًا من مكتبة المستخدم نفسه قُرئت في هذه الجلسة، مربوط بأداة تنفيذية ترسم وتفحص. الهدف أن يعرف Claude **كيف يفكر الرسام** قبل أن يرسم شخصية أو وجهًا أو جسمًا أو شكلًا، سواء رسم بالكود (SVG) أو كتب برومبت لنموذج صور.
+ملخص أصلي لطرق التعليم في أشهر كتب الرسم، ومنها 41 كتابًا من مكتبة المستخدم نفسه قُرئت في 2026-10-23، مربوط بأداة تنفيذية ترسم وتفحص. الهدف أن يعرف Claude **كيف يفكر الرسام** قبل أن يرسم شخصية أو وجهًا أو جسمًا أو شكلًا، سواء رسم بالكود (SVG) أو كتب برومبت لنموذج صور.
 
-An original summary of how the best-known drawing books teach, including 41 books from the user's own library read in this session, tied to a tool that draws and checks. It gives Claude the artist's order of thinking before it draws a character, face, figure or shape, whether in code (SVG) or as a prompt for an image model.
+An original summary of how the best-known drawing books teach, including 41 books from the user's own library read on 2026-10-23, tied to a tool that draws and checks. It gives Claude the artist's order of thinking before it draws a character, face, figure or shape, whether in code (SVG) or as a prompt for an image model.
 
 السجل: [`data/drawing_methods_atlas.json`](../data/drawing_methods_atlas.json) · الأداة: `scripts/drawing_methods.py` · الاختبار: `evals/test_drawing_methods.py` · الأكاديمية الأم: [A14](protocol/A14-drawing-cinematic-academy.md) · العودة للبروتوكول: [PROTOCOL.md](../PROTOCOL.md)
 
@@ -18,14 +18,14 @@ An original summary of how the best-known drawing books teach, including 41 book
 
 ## حدود الصدق / honesty limits
 
-- كل بطاقة (DM-01…DM-47) **إعادة صياغة أصلية** بكلماتنا؛ لم يُنسخ نص أو صفحة أو رسم من أي كتاب ولا يُوزَّع شيء منها. حقل `review_status` يقول لكل بطاقة كم قُرئ فعلًا:
-  - `user_copy_read_paraphrased`: قُرئت نسخة المستخدم في هذه الجلسة (طبقة النص، أو OCR، أو صفحات عينة مرسومة لكتب الصور) ثم أُعيدت صياغة الطريقة. هذا لا يعني دراسة كل صفحة سطرًا بسطر، وبعض الكتب كان OCR فيها مشوّهًا (مذكور في الجدول).
+- كل بطاقة (DM-01…DM-48) **إعادة صياغة أصلية** بكلماتنا؛ لم يُنسخ نص أو صفحة أو رسم من أي كتاب ولا يُوزَّع شيء منها. حقل `review_status` يقول لكل بطاقة كم قُرئ فعلًا:
+  - `user_copy_read_paraphrased`: قُرئت نسخة المستخدم في 2026-10-23 (طبقة النص، أو OCR، أو صفحات عينة مرسومة لكتب الصور) ثم أُعيدت صياغة الطريقة. هذا لا يعني دراسة كل صفحة سطرًا بسطر، وبعض الكتب كان OCR فيها مشوّهًا (مذكور في الجدول).
   - `general_teaching_knowledge`: طريقة معروفة ارتبطت بالكتاب دون قراءة نصه هنا.
 - الكتب مرقّمة بمعرّفات فهرس الـ200 (`data/creative_books_200_index.json`، مثل ART-021)، ومكتبة المستخدم `UBK-01…UBK-41` (العنوان والمؤلف وطريقة القراءة فقط، مع `index_id` إن كان الكتاب في الفهرس)، وما عدا ذلك `EXT-…` ببيانات ببليوغرافية فقط.
 - هذا **ليس تدريبًا لأوزان النموذج** ولا دليل احتراف. الدليل الوحيد على الجودة هو رسم فعلي يُفحص مقابل بنود `checks` في البطاقات، ثم مراجعة بصرية.
 - عند كتابة برومبت صور: اذكر **الطريقة** (لغة أشكال، خط فعل، ضوء دافئ وظل بارد) لا أسماء فنانين أحياء، ولا تنسخ رسوم كتب.
 
-Each card restates a method in original words; no book text, page or illustration is copied or redistributed. `review_status` says per card whether the user's own copy was read in this session (text layer, OCR or rendered sample pages) or the card rests on widely taught knowledge only. This is not model training and not proof of mastery: only drawings checked against the cards' `checks`, then reviewed visually, show quality.
+Each card restates a method in original words; no book text, page or illustration is copied or redistributed. `review_status` says per card whether the user's own copy was read on 2026-10-23 (text layer, OCR or rendered sample pages) or the card rests on widely taught knowledge only. This is not model training and not proof of mastery: only drawings checked against the cards' `checks`, then reviewed visually, show quality.
 
 ## ترتيب التفكير عند الرسم / the drawing pipeline
 
@@ -36,7 +36,7 @@ Each card restates a method in original words; no book text, page or illustratio
 | gesture الإيماءة | خط الفعل والإيقاع وخط التوازن والشد قبل أي تفصيل | DM-06, DM-29, DM-30 |
 | construction البناء | كتل ثلاثية الأبعاد ونسب ومنظور ورأس الأنمي والأفق والمدن والنبات والمنتجات | DM-03, DM-04, DM-05, DM-07, DM-08, DM-09, DM-31, DM-34, DM-37, DM-38, DM-39, DM-42 |
 | design التصميم | لغة الأشكال والسيلويت والمبالغة وأنماط الأنمي والشعر ورموز الكرتون والمخلوقات | DM-13, DM-14, DM-15, DM-35, DM-40, DM-43, DM-46 |
-| line الخط | أوزان خط، تهشير وتنقيط، ملمس الرصاص | DM-24, DM-33, DM-47 |
+| line الخط | أوزان خط، تهشير وتنقيط، ملمس الرصاص، التراكب والخط الواثق | DM-24, DM-33, DM-47, DM-48 |
 | value/colour الضوء واللون | عائلة ضوء وعائلة ظل، ظل ساقط مبني، بشرة الأنمي، رصاص واقعي | DM-19, DM-20, DM-21, DM-32, DM-36, DM-44 |
 | motion الحركة الزمنية | انضغاط وتمدد وتحضير، توقيت وتباعد وأقواس، مشي وجري (للتحريك فقط) | DM-27, DM-28, DM-45 |
 | verify التحقق | اقلب الصورة، صغّرها، افحص السيلويت والنسب، وراجع بنظام التمرين | DM-02, DM-14, DM-41 |
@@ -91,12 +91,13 @@ The rule all these books share: general to specific — action, then mass, then 
 | المشي والجري | Richard Williams (ART-092)، Thomas & Johnston | تلامس، هبوط، عبور، صعود؛ الذراعان عكس الساقين | DM-45 |
 | المخلوقات والألعاب | How to Character Design for Games (UBK-36) | عشرات السيلويتات ثم هيكل معقول ثم تجسيد خامة خامة | DM-46 |
 | ملمس الرصاص | Trudy Friend (UBK-34)، Hammond، Borgman | ضربة عريضة، ضع وادفع واسحب، تعرج لأوراق الشجر | DM-47 |
+| التراكب والخط الواثق | Tom Fox (UBK-25)، Bert Dodson (UBK-17)، Stanchfield | خطوط أقل وأوثق؛ التراكب يصنع العمق؛ فحص الخط الأوسط والسيلويت | DM-48 |
 
 ## مكتبة المستخدم / the user's library
 
-41 كتابًا من مجلد المستخدم قُرئت في هذه الجلسة. لا يُحفظ من أي كتاب إلا العنوان والمؤلف وعدد الصفحات وطريقة القراءة (`user_library` في السجل)؛ النصوص والصور لا تُنسخ ولا تُرفع. «صفحات عينة» تعني كتبًا مصوّرة بلا نص كافٍ، فُهمت طريقتها من صفحات مرسومة مختارة.
+41 كتابًا من مجلد المستخدم قُرئت في 2026-10-23. لا يُحفظ من أي كتاب إلا العنوان والمؤلف وعدد الصفحات وطريقة القراءة (`user_library` في السجل)؛ النصوص والصور لا تُنسخ ولا تُرفع. «صفحات عينة» تعني كتبًا مصوّرة بلا نص كافٍ، فُهمت طريقتها من صفحات مرسومة مختارة.
 
-Forty-one books from the user's folder, read in this session. Only title, author, page count and how it was read are stored (`user_library`); no text or image is copied or uploaded. "Sample pages" means a picture book whose method was read from selected rendered pages.
+Forty-one books from the user's folder, read on 2026-10-23. Only title, author, page count and how it was read are stored (`user_library`); no text or image is copied or uploaded. "Sample pages" means a picture book whose method was read from selected rendered pages.
 
 | المعرّف | الكتاب | صفحات | القراءة | البطاقات |
 |---|---|---|---|---|
@@ -116,7 +117,7 @@ Forty-one books from the user's folder, read in this session. Only title, author
 | UBK-14 | *Cartoons: Drawing Funny* — not printed in the pages read | 162 | OCR | DM-26, DM-40 |
 | UBK-15 | *The Cartoonist's Bible* — Franklin Bishop | 195 | نص | DM-16, DM-17, DM-25, DM-27, DM-40 |
 | UBK-16 | *How to Draw Cool Stuff: The 5-Minute Workbook* — Catherine V. Holmes | 287 | OCR | DM-42 |
-| UBK-17 | *Keys to Drawing* — Bert Dodson (ART-004) | 226 | OCR | DM-01, DM-02, DM-04, DM-19 |
+| UBK-17 | *Keys to Drawing* — Bert Dodson (ART-004) | 226 | OCR | DM-01, DM-02, DM-04, DM-19, DM-48 |
 | UBK-18 | *The Illusion of Life: Disney Animation* — Frank Thomas & Ollie Johnston (ART-093) | 546 | نص | DM-14, DM-15, DM-16, DM-17, DM-27, DM-28, DM-45 |
 | UBK-19 | *Sketching People: Basics of Drawing the Human* — Karen Reed | 74 | نص | DM-44 |
 | UBK-20 | *How to Draw Flowers and Plants* — unknown (workbook) | 133 | نص | DM-38 |
@@ -124,16 +125,16 @@ Forty-one books from the user's folder, read in this session. Only title, author
 | UBK-22 | *How to Paint Realistic Skin of a Beautiful Girl* — Japanese anthology (machine translation) | 148 | نص | DM-36 |
 | UBK-23 | *How to Draw Clothing for Manga* — unknown (Japanese) | 348 | نص | DM-11, DM-32 |
 | UBK-24 | *Cartoons Drawing Worksheets* — howtodrawforkids.com | 216 | صفحات عينة | DM-42 |
-| UBK-25 | *Anatomy for Artists: Drawing Form & Pose* — Tom Fox | 297 | OCR | DM-04, DM-08, DM-10 |
+| UBK-25 | *Anatomy for Artists: Drawing Form & Pose* — Tom Fox | 297 | OCR | DM-04, DM-08, DM-09, DM-10, DM-48 |
 | UBK-26 | *How to Draw Hairstyles for Manga* — Studio Hard Deluxe | 391 | نص | DM-35 |
 | UBK-27 | *How to Draw Animals: A Visual Reference Guide to Sketching 100 Animals* — Japanese anatomist | 178 | نص | DM-25 |
-| UBK-28 | *Anime Academy: How to Draw Manga* — unknown | 134 | OCR | DM-08, DM-11, DM-34, DM-36, DM-43 |
-| UBK-29 | *Drawn to Life Vol. 1 (Portuguese translation)* — Walt Stanchfield (ART-097) | 493 | نص | DM-06, DM-12, DM-14, DM-18, DM-27, DM-29, DM-30, DM-45 |
+| UBK-28 | *Anime Academy: How to Draw Manga* — unknown | 134 | OCR | DM-07, DM-08, DM-11, DM-19, DM-21, DM-22, DM-34, DM-35, DM-36, DM-43 |
+| UBK-29 | *Drawn to Life Vol. 1 (Portuguese translation)* — Walt Stanchfield (ART-097) | 493 | نص | DM-06, DM-12, DM-14, DM-18, DM-27, DM-29, DM-30, DM-45, DM-48 |
 | UBK-30 | *A Comprehensive 13-Week Art Course (65 daily lessons)* — Date Naoto | 194 | نص | DM-07, DM-21, DM-22, DM-24, DM-34, DM-36, DM-41, DM-43 |
 | UBK-31 | *365 Days of Drawing* — Lorna Scobey | 322 | نص | DM-01, DM-02, DM-21, DM-41 |
 | UBK-32 | *How to Draw Disney Characters for Kids* — unknown | 234 | صفحات عينة | DM-42 |
 | UBK-33 | *Point Character Drawing Vol. 2 (Chinese edition)* — Taco | 223 | OCR | DM-10, DM-34 |
-| UBK-34 | *Drawing: The Complete Question Handbook* — Trudy Friend | 131 | OCR | DM-47 |
+| UBK-34 | *Drawing: The Complete Question Handbook* — Trudy Friend | 131 | OCR | DM-01, DM-32, DM-47 |
 | UBK-35 | *Drawn to Life Vol. 2 (Chinese edition)* — Walt Stanchfield (ART-098) | 346 | OCR | DM-30 |
 | UBK-36 | *How to Character Design for Games* — unknown | 276 | OCR | DM-46 |
 | UBK-37 | *Debt-Free Art Degree: Foundations in Drawing* — Quarry Books | 332 | نص | DM-02, DM-09, DM-12, DM-19, DM-29, DM-30 |
