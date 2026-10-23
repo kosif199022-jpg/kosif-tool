@@ -463,7 +463,8 @@
         "UBK-01",
         "UBK-30",
         "UBK-02",
-        "UBK-28"
+        "UBK-28",
+        "UBK-33"
       ],
       "principle_ar": "قِس الجسم برؤوس: البطل المثالي نحو 8 رؤوس، الواقعي 7.5، الطفل 4–5، والشخصيات الكرتونية 2–4؛ منتصف الجسم عند الحوض، والركبة عند الربع السفلي تقريبًا، والذراع المرتخية تصل منتصف الفخذ.",
       "principle_en": "Measure the body in heads: idealised hero about 8, realistic adult 7.5, child 4–5, cartoon 2–4; the midpoint sits at the pelvis, the knee near the lower quarter, and the relaxed arm reaches mid-thigh.",
@@ -474,7 +475,8 @@
         "Adjust for character exaggeration on purpose, not by accident",
         "Note the type: about 7.5 heads average, 8 ideal, 9 heroic; women about half a head shorter",
         "Anime adult about 6.5 heads: crotch at half height, waist at elbow level, waist width about one head",
-        "Three-box check: half the body height is the bottom of the hip box; split the top half into thirds (nose base, sternum base, top of hip box)"
+        "Three-box check: half the body height is the bottom of the hip box; split the top half into thirds (nose base, sternum base, top of hip box)",
+        "At eight heads, thigh and shin are each about two head lengths; the foot in profile is about three squares long from big toe to heel"
       ],
       "code_recipe": "drawing_methods.py draw figure --heads N marks every head unit on the guide layer and stores heads_tall in data attributes for the checker.",
       "prompt_terms": [
@@ -721,7 +723,8 @@
         "ART-040",
         "UBK-01",
         "UBK-37",
-        "UBK-29"
+        "UBK-29",
+        "UBK-33"
       ],
       "principle_ar": "خط الجاذبية من عظمة الرقبة يسقط على القدم الحاملة للوزن؛ حين يحمل الوزن ساق واحدة يرتفع حوضها وينخفض الكتف المقابل، فتتعاكس زاويتا الكتفين والحوض.",
       "principle_en": "The gravity line from the pit of the neck falls on the weight-bearing foot; when one leg takes the weight its hip rises and the opposite shoulder drops, so shoulder and hip lines tilt against each other.",
@@ -730,7 +733,8 @@
         "Put the weight foot under it",
         "Tilt pelvis up on the weight side",
         "Counter-tilt the shoulders",
-        "Break a static stance: weight on one leg, turn the torso, tilt the head or lean on support"
+        "Break a static stance: weight on one leg, turn the torso, tilt the head or lean on support",
+        "In an active pose keep one leg line straight for a stable centre of gravity; turn the two feet in different directions, and lift the back heel to add drive"
       ],
       "code_recipe": "In draw figure --pose contrapposto the support foot x equals the neck x; pelvis and shoulder angles are set with opposite signs.",
       "prompt_terms": [
@@ -740,7 +744,8 @@
       ],
       "checks": [
         "Neck point within 0.3 head of the support foot horizontally",
-        "Shoulder and hip tilt with opposite signs"
+        "Shoulder and hip tilt with opposite signs",
+        "The weight-bearing leg is clearly identifiable"
       ],
       "common_errors": [
         "Figure falling over (gravity line outside the base)",
@@ -858,7 +863,8 @@
         "ART-086",
         "ART-094",
         "UBK-18",
-        "UBK-02"
+        "UBK-02",
+        "UBK-35"
       ],
       "principle_ar": "الجاذبية تأتي من وضوح وتبسيط ومبالغة مقصودة: رأس أكبر وعينان أوسع وأدنى في الوجه تعطي صغرًا وبراءة، ووجه أطول وعينان أصغر وأعلى تعطي نضجًا؛ بالغ في السمة التي تحمل الشخصية لا في كل شيء.",
       "principle_en": "Appeal comes from clarity, simplification and deliberate exaggeration: a larger head and bigger, lower-set eyes read young and innocent; a longer face and smaller, higher eyes read mature. Exaggerate the trait that carries the character, not everything.",
@@ -867,7 +873,8 @@
         "Set head-to-body ratio and eye placement from the age",
         "Push the defining trait 20–50%",
         "Simplify everything else",
-        "Exaggerate as a caricature of reality: sadder, brighter, wilder, never distorted for its own sake"
+        "Exaggerate as a caricature of reality: sadder, brighter, wilder, never distorted for its own sake",
+        "Exaggerate from the normal: find where the pose would sit, then push the angle and length past it so the action reads at once"
       ],
       "code_recipe": "draw character --age child|teen|adult|elder sets heads-tall (3/4.5/6/5.5 in cartoon scale) and eye line height on the face.",
       "prompt_terms": [
@@ -1638,7 +1645,9 @@
         "Relate every hand, elbow, knee and foot to its opposite",
         "Tilt shoulders and hips against each other",
         "Discard 90% of detail; keep the 10% that tells the action",
-        "Before each sketch ask what the pose is for and what the viewer should feel"
+        "Before each sketch ask what the pose is for and what the viewer should feel",
+        "Pair opposing forces: angle against angle, squash against stretch, closed against open; stretch with straights and compress with curves",
+        "Act the pose in your own body first, then draw the movement you felt rather than the anatomy you know"
       ],
       "code_recipe": "Represent each limb pair as a constraint; tag contours as 'stretch' (straight) or 'squash' (curved) and make sure both appear in the figure's outline.",
       "prompt_terms": [
@@ -1855,7 +1864,11 @@
         "Check that inner eye corner and nose bridge share a contour in three-quarter view",
         "Eyes sit in a V-shaped indent; the mouth is slightly above halfway from nose base to chin",
         "Start every angle from a sphere, find the centre line for orientation, then attach the jaw and back of the head as solid pieces",
-        "The far eye is narrower and fits inside a triangle; draw the second eye one eye-length away with guide lines from the first eye's top and bottom, highlights on the same side"
+        "The far eye is narrower and fits inside a triangle; draw the second eye one eye-length away with guide lines from the first eye's top and bottom, highlights on the same side",
+        "In a three-quarter view the front of the face (eyes, nose, mouth) and the side plane with the ear are about equally wide; the closer to profile, the more back of the skull shows",
+        "One eye length sets the other features: about an eye-width gap between the eyes, and one iris width out from each outer corner finds the face edge",
+        "Head down: the ears sit higher than the nose; head up: lower. The ear sits between brow and nose tip and is about as long as the nose",
+        "Smiling keeps the lower lip in place and lifts the upper lip; a wide-open mouth is about as long as the nose bridge"
       ],
       "code_recipe": "Use the head demo's yaw/pitch to place the eye-line curve; for anime push the eye line slightly below mid-height and enlarge the brow-to-eye gap.",
       "prompt_terms": [
@@ -1867,7 +1880,8 @@
         "Eye line curvature matches the camera angle",
         "Both eyes sit on one wrapped eye line",
         "Far eye narrowed by the nose bridge",
-        "Both eyes match in size and shape (flick back and forth to compare)"
+        "Both eyes match in size and shape (flick back and forth to compare)",
+        "Ear height agrees with the head tilt"
       ],
       "common_errors": [
         "Front-view features pasted on a turned head",
@@ -1903,7 +1917,8 @@
         "UBK-02",
         "UBK-21",
         "UBK-38",
-        "UBK-28"
+        "UBK-28",
+        "UBK-33"
       ],
       "principle_ar": "الشعر ينمو من الدوامة وخط الفرق ويتبع الجمجمة مع فراغ ثابت فوقها. ارسم الكتلة الخارجية أولًا ثم قسّمها إلى خصلات كبيرة ثم أصغر، وظلّل حيث تتراكب الخصلات فقط. الجاذبية تشد الأطراف لأسفل مهما مال الرأس؛ الريح والجري والقفز والسقوط تغيّر الشكل بقوانين ثابتة، وحالة الشعر تحكي الشعور (متهدّل حزين، مرفوع غاضب أو قوي).",
       "principle_en": "Hair grows from the crown whorl and the parting and follows the skull with a constant volume gap. Draw the outer mass first, divide it into big locks, then smaller ones, and shade only where locks overlap. Gravity pulls the ends straight down however the head tilts; wind, running, jumping and falling reshape it by fixed rules, and the hair's state tells the emotion (limp = sad, lifted = anger or power).",
@@ -1914,7 +1929,8 @@
         "Shade only overlaps and the underside of the back mass",
         "Apply the force: gravity, wind direction, motion",
         "Lay hair in as a ribbon, then a cut-out plane over the skull, then layered clumps (back, middle, front) that follow gravity",
-        "Hair grows out perpendicular to the scalp and tied hair is thicker; render a clump as core shadow, half-tone, turning edge and highlight, with the highlight as a crown"
+        "Hair grows out perpendicular to the scalp and tied hair is thicker; render a clump as core shadow, half-tone, turning edge and highlight, with the highlight as a crown",
+        "Block the hair direction in big masses first, then add fine strands; tied hair flows toward its tie point and the part sits on the crown"
       ],
       "code_recipe": "Model each lock as a curve rooted on the skull whose tip vector = gravity + wind + inertia; keep roots on a circle offset from the skull by a fixed gap.",
       "prompt_terms": [
@@ -2495,7 +2511,10 @@
         "Thumbnail 12–30 silhouettes; pick by readability",
         "Construct the chosen one on a plausible skeleton",
         "Flat colours: main, secondary, accent",
-        "Render material by material; design props separately in A/B versions and a second view"
+        "Render material by material; design props separately in A/B versions and a second view",
+        "Research the real animal (structure, habits, environment), trace a base form from it, then transform starting at the face",
+        "Design by association: take a hint from one form and combine functional parts; a part that changes nothing about how the creature works (bunny ears stuck on) is decoration, not design",
+        "Block colour with three or four base colours at most before detailing; avoid mixing saturated colours into mud; finish with a turnaround"
       ],
       "code_recipe": "Generate silhouette variants by mutating primitive sizes/positions; score readability by filled-area compactness and unique outline features; keep a JSON spec per prop.",
       "prompt_terms": [
@@ -2506,7 +2525,8 @@
       "checks": [
         "Silhouette reads at thumbnail size",
         "Joints and limbs could plausibly move",
-        "Every material keeps the same light direction"
+        "Every material keeps the same light direction",
+        "Every added part has a reason in the creature's setting"
       ],
       "common_errors": [
         "Rendering before the silhouette works",
@@ -2594,7 +2614,8 @@
       "books": [
         "UBK-25",
         "UBK-17",
-        "ART-097"
+        "ART-097",
+        "UBK-35"
       ],
       "principle_ar": "كثرة الخطوط لا تعني حجمًا أكثر. أقوى إشارة للعمق هي التراكب: قرر أي خط في الأمام واجعله يقطع الخط الذي خلفه، واترك فجوة صغيرة حيث يمر شكل خلف آخر. خطوط قليلة واثقة أفضل من خطوط مترددة، ومع قلة الخطوط تزيد مسؤولية دقتها. افحص الوضعية برسم الخط الأوسط وحده وبالسيلويت وحده، واسأل: هل أستطيع تدوير هذا الشكل في ذهني؟",
       "principle_en": "More lines do not mean more form. The strongest depth cue is overlap: decide which line is in front and let it cut the one behind, and leave a small gap where a form passes behind another. A few confident lines beat many hesitant ones, and the fewer the lines the more each must be right. Test the pose by drawing the centre line alone and the silhouette alone, and ask whether you could rotate the form in your head.",
@@ -2603,7 +2624,8 @@
         "At every crossing, decide front and back and make a T-junction",
         "Leave a gap where a far line meets a near form",
         "Centre-line check and silhouette check",
-        "Remove marks until only the necessary ones remain"
+        "Remove marks until only the necessary ones remain",
+        "Hunt tangents: a hat brim on the shoulder line, an arm along the body, a head touching the back; separate or overlap them so space reads"
       ],
       "code_recipe": "Order SVG paths by depth; clip each far contour where a nearer silhouette crosses it and add a 3-6 px gap.",
       "prompt_terms": [
@@ -2614,7 +2636,8 @@
       "checks": [
         "Every crossing reads as one form in front of another",
         "No scratchy duplicated contour lines",
-        "Centre line alone reads the pose"
+        "Centre line alone reads the pose",
+        "No two contours run along or just touch each other by accident"
       ],
       "common_errors": [
         "Hairy restated lines in the final",
@@ -2927,8 +2950,8 @@
     },
     {
       "id": "UBK-36",
-      "title": "How to Character Design for Games",
-      "author": "unknown",
+      "title": "Game Creature Design (Chinese edition)",
+      "author": "Lee Dae-hoon",
       "pages": 276,
       "read_via": "ocr",
       "review_status": "user_copy_read_paraphrased"
