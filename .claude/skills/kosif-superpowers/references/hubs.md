@@ -286,7 +286,7 @@
 <a id="hub-data"></a>
 ## البيانات والرسوم والمواقع — Data & visual analytics (`data`)
 
-- **الحجم / size:** 261 قدرة ذرية في 23 قدرة خارقة · ✅49 🟢18 📦35 🔑7 👁48 📄102 💡2
+- **الحجم / size:** 265 قدرة ذرية في 24 قدرة خارقة · ✅49 🟢18 📦35 🔑7 👁48 📄106 💡2
 - **ابدأ / start:** `python3 scripts/powers.py family data-analysis` · خطة التثبيت: `python3 scripts/kosif_hubs.py install data`
 - **السكربتات / scripts:** — (وصفات في الفصول)
 - **العائلات / families:** [atlas-data](powers/atlas-data.md) · [charts-data-infographic](powers/charts-data-infographic.md) · [data-analysis](powers/data-analysis.md) · [maps-geo](powers/maps-geo.md)
@@ -308,12 +308,12 @@
 | SP-0215 خط/مساحة مع مؤشر تقاطع · SKCharts line/area with crosshair | 10 | ✅ | 2 |
 | SP-0219 جدول يتكشف صفًّا صفًّا · Progressive table & status pills | 5 | ✅ | 2 |
 
-…و11 قدرة خارقة أخرى: `python3 scripts/kosif_hubs.py show data`
+…و12 قدرة خارقة أخرى: `python3 scripts/kosif_hubs.py show data`
 
 <a id="hub-documents"></a>
 ## المستندات والكتابة — Documents & writing (`documents`)
 
-- **الحجم / size:** 136 قدرة ذرية في 12 قدرة خارقة · ✅32 📦8 🔑4 📄92
+- **الحجم / size:** 141 قدرة ذرية في 13 قدرة خارقة · ✅32 📦8 🔑4 📄97
 - **ابدأ / start:** `python3 scripts/tell_scan.py --help` · خطة التثبيت: `python3 scripts/kosif_hubs.py install documents`
 - **السكربتات / scripts:** `scripts/tell_scan.py` · `scripts/anchor_gate.py`
 - **العائلات / families:** [atlas-craft](powers/atlas-craft.md) · [atlas-docs](powers/atlas-docs.md) · [documents-office](powers/documents-office.md) · [writing-humanizer](powers/writing-humanizer.md)
@@ -365,7 +365,7 @@
 <a id="hub-reverse"></a>
 ## التحليل العكسي وفحص البرامج — Reverse engineering (`reverse`)
 
-- **الحجم / size:** 262 قدرة ذرية في 21 قدرة خارقة · ✅30 📦48 📄184
+- **الحجم / size:** 264 قدرة ذرية في 21 قدرة خارقة · ✅30 📦48 📄186
 - **ابدأ / start:** `python3 scripts/rea_bridge.py doctor` · خطة التثبيت: `python3 scripts/kosif_hubs.py install reverse`
 - **السكربتات / scripts:** `scripts/rea_bridge.py` · `scripts/rea_family_router.py` · `scripts/installer_triage.py` · `scripts/stream_grabber.py`
 - **العائلات / families:** [software-investigation](powers/software-investigation.md)

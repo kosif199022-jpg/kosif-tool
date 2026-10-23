@@ -1,0 +1,2418 @@
+{
+ "name": "KOSIF Atlas vendored skills",
+ "master_skill": "kosif-superpowers",
+ "atlas": "https://github.com/kosif199022-jpg/kosif-atlas",
+ "atlas_commit": "99bb108dff169880dd531359f474a01b73c4b233",
+ "integration_mode": "whole skill folders copied verbatim (text files only) beside the KOSIF power card that cites them; each plugin folder keeps its SOURCE.md and LICENSE",
+ "policy": "only READ_ONLY_OK, permissive-license, no-risk-flag skills; copyleft is linked, never copied; KOSIF executes nothing here; install copies one skill folder into ~/.claude/skills",
+ "skills_count": 101,
+ "skills": [
+  {
+   "atlas_id": 103,
+   "plugin": "dependency-audit",
+   "skill": "deps-audit-workflow",
+   "license": "MIT",
+   "upstream": "https://github.com/acaprino/daodan/tree/39443d215d28fcbc32d651895b3cc45c64f24b6f/exports/codex/plugins/dependency-audit",
+   "path": "skills/63-dependency-audit/103-deps-audit-workflow",
+   "files": [
+    {
+     "path": "SKILL.md",
+     "sha256": "115575014c14ab5093ad1db2bef7cc401b08dff8ce69e209691ebeb4c9420592",
+     "bytes": 7828
+    }
+   ],
+   "refused_non_text": [],
+   "install": "mkdir -p ~/.claude/skills && cp -r .claude/skills/kosif-superpowers/vendor/kosif-atlas/skills/63-dependency-audit/103-deps-audit-workflow ~/.claude/skills/deps-audit-workflow"
+  },
+  {
+   "atlas_id": 10303,
+   "plugin": "build-macos-apps",
+   "skill": "liquid-glass",
+   "license": "MIT",
+   "upstream": "https://github.com/openai/plugins/tree/5fd93af4cd0c623e020d0cc7e9ce178b4ac1f70f/plugins/build-macos-apps",
+   "path": "skills/2688-build-macos-apps/10303-liquid-glass",
+   "files": [
+    {
+     "path": "SKILL.md",
+     "sha256": "b2bbb5ea8a62523931d89d9db47cfecf6745406f17722cbe7a6f1c06026472c3",
+     "bytes": 8668
+    },
+    {
+     "path": "agents/openai.yaml",
+     "sha256": "30fa5b43fdf1c9e327eb12b1dac12bacc4d56f66dca48fa2c0e7e2c47e085d02",
+     "bytes": 327
+    }
+   ],
+   "refused_non_text": [],
+   "install": "mkdir -p ~/.claude/skills && cp -r .claude/skills/kosif-superpowers/vendor/kosif-atlas/skills/2688-build-macos-apps/10303-liquid-glass ~/.claude/skills/liquid-glass"
+  },
+  {
+   "atlas_id": 10305,
+   "plugin": "build-macos-apps",
+   "skill": "signing-entitlements",
+   "license": "MIT",
+   "upstream": "https://github.com/openai/plugins/tree/5fd93af4cd0c623e020d0cc7e9ce178b4ac1f70f/plugins/build-macos-apps",
+   "path": "skills/2688-build-macos-apps/10305-signing-entitlements",
+   "files": [
+    {
+     "path": "SKILL.md",
+     "sha256": "79326e5096325b53c4350db9e1586c9a2ef56976705f01c24d3643a592dc3030",
+     "bytes": 1773
+    },
+    {
+     "path": "agents/openai.yaml",
+     "sha256": "5fd5c99a32497274c88987614203a287f20a22e44df788f8750cb72e474a8b75",
+     "bytes": 290
+    }
+   ],
+   "refused_non_text": [],
+   "install": "mkdir -p ~/.claude/skills && cp -r .claude/skills/kosif-superpowers/vendor/kosif-atlas/skills/2688-build-macos-apps/10305-signing-entitlements ~/.claude/skills/signing-entitlements"
+  },
+  {
+   "atlas_id": 10308,
+   "plugin": "build-macos-apps",
+   "skill": "telemetry",
+   "license": "MIT",
+   "upstream": "https://github.com/openai/plugins/tree/5fd93af4cd0c623e020d0cc7e9ce178b4ac1f70f/plugins/build-macos-apps",
+   "path": "skills/2688-build-macos-apps/10308-telemetry",
+   "files": [
+    {
+     "path": "SKILL.md",
+     "sha256": "64fae6fd88c411d108b321462f90b74deb42fb043b815baae04b199a07dfbd25",
+     "bytes": 3717
+    },
+    {
+     "path": "agents/openai.yaml",
+     "sha256": "bf243b6d413bde9486203a3fd7cc51b01c521d5eb02a4a9f1bfe6d2083d0d533",
+     "bytes": 343
+    }
+   ],
+   "refused_non_text": [],
+   "install": "mkdir -p ~/.claude/skills && cp -r .claude/skills/kosif-superpowers/vendor/kosif-atlas/skills/2688-build-macos-apps/10308-telemetry ~/.claude/skills/telemetry"
+  },
+  {
+   "atlas_id": 11336,
+   "plugin": "hdl",
+   "skill": "review-systemverilog",
+   "license": "MIT",
+   "upstream": "https://github.com/outcomeeng/plugins/tree/01a7c21b9438fcceefbfb5ceb0b2999275249431/src/plugins/hdl",
+   "path": "skills/2807-hdl/11336-review-systemverilog",
+   "files": [
+    {
+     "path": "SKILL.md",
+     "sha256": "f5571ef4a6e3a38e7f6dab1d0def99f13b3b6c107554dfc9f4b437789053c002",
+     "bytes": 5023
+    },
+    {
+     "path": "references/systemverilog-idioms.md",
+     "sha256": "cf0a6224dbc6b7dd4278aa01ad59d8d6ecffe220f84fcdf9bc62c81ef49dcefb",
+     "bytes": 20491
+    },
+    {
+     "path": "workflows/systemverilog-review.md",
+     "sha256": "eda5726f31c4021ea93b40b63eb210a6a1b30859a5b8278bf4c1161c2b13b6aa",
+     "bytes": 6811
+    }
+   ],
+   "refused_non_text": [],
+   "install": "mkdir -p ~/.claude/skills && cp -r .claude/skills/kosif-superpowers/vendor/kosif-atlas/skills/2807-hdl/11336-review-systemverilog ~/.claude/skills/review-systemverilog"
+  },
+  {
+   "atlas_id": 11600,
+   "plugin": "pm-ai-shipping",
+   "skill": "intended-vs-implemented",
+   "license": "MIT",
+   "upstream": "https://github.com/phuryn/pm-skills/tree/8607e3b077817f89bf4a9b623246219734ac3be0/pm-ai-shipping",
+   "path": "skills/2876-pm-ai-shipping/11600-intended-vs-implemented",
+   "files": [
+    {
+     "path": "SKILL.md",
+     "sha256": "6d917f0e59f78ea6b5d847f57b1c816baa2948cac56529939589cd73d2e4c9eb",
+     "bytes": 3815
+    }
+   ],
+   "refused_non_text": [],
+   "install": "mkdir -p ~/.claude/skills && cp -r .claude/skills/kosif-superpowers/vendor/kosif-atlas/skills/2876-pm-ai-shipping/11600-intended-vs-implemented ~/.claude/skills/intended-vs-implemented"
+  },
+  {
+   "atlas_id": 125,
+   "plugin": "libgdx-development",
+   "skill": "libgdx-audit-workflow",
+   "license": "MIT",
+   "upstream": "https://github.com/acaprino/daodan/tree/39443d215d28fcbc32d651895b3cc45c64f24b6f/exports/codex/plugins/libgdx-development",
+   "path": "skills/71-libgdx-development/125-libgdx-audit-workflow",
+   "files": [
+    {
+     "path": "SKILL.md",
+     "sha256": "d1094fde3c1da16d4210c8957aa8538fefa31b0c6a1128779d32ac3aa816356f",
+     "bytes": 7848
+    }
+   ],
+   "refused_non_text": [],
+   "install": "mkdir -p ~/.claude/skills && cp -r .claude/skills/kosif-superpowers/vendor/kosif-atlas/skills/71-libgdx-development/125-libgdx-audit-workflow ~/.claude/skills/libgdx-audit-workflow"
+  },
+  {
+   "atlas_id": 12640,
+   "plugin": "quality-engineering-skills",
+   "skill": "audit-guide",
+   "license": "MIT",
+   "upstream": "https://github.com/hashgraph-online/awesome-codex-plugins/tree/9cc4f3e/plugins/RBraga01/Quality-Engineering-Skills",
+   "path": "skills/2989-quality-engineering-skills/12640-audit-guide",
+   "files": [
+    {
+     "path": "SKILL.md",
+     "sha256": "1e76ea2cd90cdf41588c46e96be9d77416c39328334fdf6ddfec6b8f5ffc2d05",
+     "bytes": 9097
+    }
+   ],
+   "refused_non_text": [],
+   "install": "mkdir -p ~/.claude/skills && cp -r .claude/skills/kosif-superpowers/vendor/kosif-atlas/skills/2989-quality-engineering-skills/12640-audit-guide ~/.claude/skills/audit-guide"
+  },
+  {
+   "atlas_id": 12642,
+   "plugin": "quality-engineering-skills",
+   "skill": "fmea-reviewer",
+   "license": "MIT",
+   "upstream": "https://github.com/hashgraph-online/awesome-codex-plugins/tree/9cc4f3e/plugins/RBraga01/Quality-Engineering-Skills",
+   "path": "skills/2989-quality-engineering-skills/12642-fmea-reviewer",
+   "files": [
+    {
+     "path": "SKILL.md",
+     "sha256": "84857692194d77471c1f6a9fb7f22145eb5a63468d420d6253cea9ea5e0b6a0b",
+     "bytes": 9853
+    }
+   ],
+   "refused_non_text": [],
+   "install": "mkdir -p ~/.claude/skills && cp -r .claude/skills/kosif-superpowers/vendor/kosif-atlas/skills/2989-quality-engineering-skills/12642-fmea-reviewer ~/.claude/skills/fmea-reviewer"
+  },
+  {
+   "atlas_id": 12647,
+   "plugin": "quality-engineering-skills",
+   "skill": "iatf-16949-audit",
+   "license": "MIT",
+   "upstream": "https://github.com/hashgraph-online/awesome-codex-plugins/tree/9cc4f3e/plugins/RBraga01/Quality-Engineering-Skills",
+   "path": "skills/2989-quality-engineering-skills/12647-iatf-16949-audit",
+   "files": [
+    {
+     "path": "SKILL.md",
+     "sha256": "3bd224d6649b7a634a034f2477c64f943b5b5a83573fc52772bdbcac40ad51ee",
+     "bytes": 16158
+    },
+    {
+     "path": "references/supplemental-requirements.md",
+     "sha256": "9de99b04cba8d64462b3ff7a01fbf28bda4548bdbfcae2e27df9b9ef4e7d0ce9",
+     "bytes": 15523
+    }
+   ],
+   "refused_non_text": [],
+   "install": "mkdir -p ~/.claude/skills && cp -r .claude/skills/kosif-superpowers/vendor/kosif-atlas/skills/2989-quality-engineering-skills/12647-iatf-16949-audit ~/.claude/skills/iatf-16949-audit"
+  },
+  {
+   "atlas_id": 12648,
+   "plugin": "quality-engineering-skills",
+   "skill": "iso-9001-internal-audit",
+   "license": "MIT",
+   "upstream": "https://github.com/hashgraph-online/awesome-codex-plugins/tree/9cc4f3e/plugins/RBraga01/Quality-Engineering-Skills",
+   "path": "skills/2989-quality-engineering-skills/12648-iso-9001-internal-audit",
+   "files": [
+    {
+     "path": "SKILL.md",
+     "sha256": "1bfe9bc5f64a41d56652fd834e0eb51434941b9fceebcade2dceff38100cbbe9",
+     "bytes": 17217
+    },
+    {
+     "path": "references/clause-questions.md",
+     "sha256": "3264285d87d965f3c8db0df486248f8991014ab92daa585f93811be24b2b4c5c",
+     "bytes": 13658
+    }
+   ],
+   "refused_non_text": [],
+   "install": "mkdir -p ~/.claude/skills && cp -r .claude/skills/kosif-superpowers/vendor/kosif-atlas/skills/2989-quality-engineering-skills/12648-iso-9001-internal-audit ~/.claude/skills/iso-9001-internal-audit"
+  },
+  {
+   "atlas_id": 12649,
+   "plugin": "quality-engineering-skills",
+   "skill": "vda-6-3-audit",
+   "license": "MIT",
+   "upstream": "https://github.com/hashgraph-online/awesome-codex-plugins/tree/9cc4f3e/plugins/RBraga01/Quality-Engineering-Skills",
+   "path": "skills/2989-quality-engineering-skills/12649-vda-6-3-audit",
+   "files": [
+    {
+     "path": "SKILL.md",
+     "sha256": "6bde620d5db45c8209678c4bb6d3c4e1b6ce9f6670225495946ecc2e79039791",
+     "bytes": 11243
+    },
+    {
+     "path": "references/p1-p7-questions.md",
+     "sha256": "a39a5aea5e7d9aba68500a0114e159e812fa4e0fc3cb6f350f1c1dac2e0df49e",
+     "bytes": 31073
+    }
+   ],
+   "refused_non_text": [],
+   "install": "mkdir -p ~/.claude/skills && cp -r .claude/skills/kosif-superpowers/vendor/kosif-atlas/skills/2989-quality-engineering-skills/12649-vda-6-3-audit ~/.claude/skills/vda-6-3-audit"
+  },
+  {
+   "atlas_id": 12655,
+   "plugin": "quality-engineering-skills",
+   "skill": "apqp",
+   "license": "MIT",
+   "upstream": "https://github.com/hashgraph-online/awesome-codex-plugins/tree/9cc4f3e/plugins/RBraga01/Quality-Engineering-Skills",
+   "path": "skills/2989-quality-engineering-skills/12655-apqp",
+   "files": [
+    {
+     "path": "SKILL.md",
+     "sha256": "4cff49867e9468236ae49974867fe40085fc648597148958b79433a105e8d3f1",
+     "bytes": 10688
+    },
+    {
+     "path": "references/phase-deliverables.md",
+     "sha256": "9e6150a4ce39628bf7ee1c1a2b3f0771b494bfac71e2d663b967417f93a65f26",
+     "bytes": 15223
+    }
+   ],
+   "refused_non_text": [],
+   "install": "mkdir -p ~/.claude/skills && cp -r .claude/skills/kosif-superpowers/vendor/kosif-atlas/skills/2989-quality-engineering-skills/12655-apqp ~/.claude/skills/apqp"
+  },
+  {
+   "atlas_id": 12658,
+   "plugin": "quality-engineering-skills",
+   "skill": "ppap",
+   "license": "MIT",
+   "upstream": "https://github.com/hashgraph-online/awesome-codex-plugins/tree/9cc4f3e/plugins/RBraga01/Quality-Engineering-Skills",
+   "path": "skills/2989-quality-engineering-skills/12658-ppap",
+   "files": [
+    {
+     "path": "SKILL.md",
+     "sha256": "aaa0509e4e5b766afa262163c17c58db40484df4958408aefba67f3c5b8eac1a",
+     "bytes": 10032
+    },
+    {
+     "path": "references/18-elements-checklist.md",
+     "sha256": "f03084bd706f7f292c44425795896d2bb66f271f9d4e99903b06f1e9173bd622",
+     "bytes": 27385
+    }
+   ],
+   "refused_non_text": [],
+   "install": "mkdir -p ~/.claude/skills && cp -r .claude/skills/kosif-superpowers/vendor/kosif-atlas/skills/2989-quality-engineering-skills/12658-ppap ~/.claude/skills/ppap"
+  },
+  {
+   "atlas_id": 12661,
+   "plugin": "quality-engineering-skills",
+   "skill": "dmaic",
+   "license": "MIT",
+   "upstream": "https://github.com/hashgraph-online/awesome-codex-plugins/tree/9cc4f3e/plugins/RBraga01/Quality-Engineering-Skills",
+   "path": "skills/2989-quality-engineering-skills/12661-dmaic",
+   "files": [
+    {
+     "path": "SKILL.md",
+     "sha256": "f6425c4f7108208fca62c73c52d94c3984ddabf31e45daa4bcd59af601f84f49",
+     "bytes": 11663
+    },
+    {
+     "path": "references/statistical-tools.md",
+     "sha256": "6b1377a3a07322e4046c39d9c9af237d75937829970761adbcadd87d59a91f65",
+     "bytes": 21000
+    }
+   ],
+   "refused_non_text": [],
+   "install": "mkdir -p ~/.claude/skills && cp -r .claude/skills/kosif-superpowers/vendor/kosif-atlas/skills/2989-quality-engineering-skills/12661-dmaic ~/.claude/skills/dmaic"
+  },
+  {
+   "atlas_id": 12663,
+   "plugin": "quality-engineering-skills",
+   "skill": "is-is-not-scoping",
+   "license": "MIT",
+   "upstream": "https://github.com/hashgraph-online/awesome-codex-plugins/tree/9cc4f3e/plugins/RBraga01/Quality-Engineering-Skills",
+   "path": "skills/2989-quality-engineering-skills/12663-is-is-not-scoping",
+   "files": [
+    {
+     "path": "SKILL.md",
+     "sha256": "1614fe316a59ce400b725c62b44f21e01ba5de7b45c83b55f530d82a1e8c1b73",
+     "bytes": 7602
+    },
+    {
+     "path": "references/hypothesis-elimination.md",
+     "sha256": "0b849c468a5428c2ee08e8ce51ca41d0076ee6e03f038e139f01fa052f13e144",
+     "bytes": 12923
+    }
+   ],
+   "refused_non_text": [],
+   "install": "mkdir -p ~/.claude/skills && cp -r .claude/skills/kosif-superpowers/vendor/kosif-atlas/skills/2989-quality-engineering-skills/12663-is-is-not-scoping ~/.claude/skills/is-is-not-scoping"
+  },
+  {
+   "atlas_id": 12664,
+   "plugin": "quality-engineering-skills",
+   "skill": "pdca-improvement",
+   "license": "MIT",
+   "upstream": "https://github.com/hashgraph-online/awesome-codex-plugins/tree/9cc4f3e/plugins/RBraga01/Quality-Engineering-Skills",
+   "path": "skills/2989-quality-engineering-skills/12664-pdca-improvement",
+   "files": [
+    {
+     "path": "SKILL.md",
+     "sha256": "bf004b57cf7cc32687c0603ea156a7e24320c6faff787a14340f796baa29573c",
+     "bytes": 8259
+    },
+    {
+     "path": "references/pdca-examples.md",
+     "sha256": "dd49242d3a02b0f48d6b4571c8af6be9edea6a5ffcf2e5b7045aab0d64fb1d76",
+     "bytes": 21688
+    }
+   ],
+   "refused_non_text": [],
+   "install": "mkdir -p ~/.claude/skills && cp -r .claude/skills/kosif-superpowers/vendor/kosif-atlas/skills/2989-quality-engineering-skills/12664-pdca-improvement ~/.claude/skills/pdca-improvement"
+  },
+  {
+   "atlas_id": 12665,
+   "plugin": "quality-engineering-skills",
+   "skill": "quality-problem-zeroing",
+   "license": "MIT",
+   "upstream": "https://github.com/hashgraph-online/awesome-codex-plugins/tree/9cc4f3e/plugins/RBraga01/Quality-Engineering-Skills",
+   "path": "skills/2989-quality-engineering-skills/12665-quality-problem-zeroing",
+   "files": [
+    {
+     "path": "SKILL.md",
+     "sha256": "f3d277dd56017e7d751e3eb68157faf101c40cad3e51963841b8e2ac28914443",
+     "bytes": 19011
+    },
+    {
+     "path": "assets/zeroing-report-template.md",
+     "sha256": "b71bc68727fac94bdbe09c9d6f9a3fa74e6a60b6ddec52965733c5ff21016fec",
+     "bytes": 11472
+    },
+    {
+     "path": "references/engineering-methods.md",
+     "sha256": "2abbb6554bff3fc4d88e37f4bae4dc0e6b229890e63536d8334faeabbd24a142",
+     "bytes": 10724
+    },
+    {
+     "path": "references/gbt-29076-2021-method-guide.md",
+     "sha256": "79b248e24c9ab2499bf3792a8d3cbc09aa56279d5dfa129c1733afcd8d76e55e",
+     "bytes": 14233
+    }
+   ],
+   "refused_non_text": [],
+   "install": "mkdir -p ~/.claude/skills && cp -r .claude/skills/kosif-superpowers/vendor/kosif-atlas/skills/2989-quality-engineering-skills/12665-quality-problem-zeroing ~/.claude/skills/quality-problem-zeroing"
+  },
+  {
+   "atlas_id": 12806,
+   "plugin": "pf-code-review",
+   "skill": "pf-adversarial-review",
+   "license": "MIT",
+   "upstream": "https://github.com/rh-uxd/ai-helpers/tree/e8cca17430a8ccb062ed1878073165417a081b34/plugins/patternfly/pf-code-review",
+   "path": "skills/3000-pf-code-review/12806-pf-adversarial-review",
+   "files": [
+    {
+     "path": "SKILL.md",
+     "sha256": "8869d6755febef1209a1620efda6a14077a30d330db3e716e644e54539ab45e0",
+     "bytes": 5723
+    },
+    {
+     "path": "eval/cases/conditional-render-trap/annotations.yaml",
+     "sha256": "42add0fae21a170ea48752c5b14f4d3cf31d5caf872a458139c6129af9ff2e00",
+     "bytes": 796
+    },
+    {
+     "path": "eval/cases/conditional-render-trap/input.yaml",
+     "sha256": "36a1e0cde77ff91576a3250cfe8f38c548b97d7c4e711b253a2635da10fbb454",
+     "bytes": 159
+    },
+    {
+     "path": "eval/cases/missing-defensive-code/annotations.yaml",
+     "sha256": "9d6f47b2002919a867c2eb577e8be38941903904bf8bce13f90a5b0ae94962b2",
+     "bytes": 1024
+    },
+    {
+     "path": "eval/cases/missing-defensive-code/input.yaml",
+     "sha256": "d79de9677037e430fd1fb5e812a4b8ef89feddb0e5c1175647c4dd75975f7fca",
+     "bytes": 182
+    },
+    {
+     "path": "eval/cases/pf-contract-violation/annotations.yaml",
+     "sha256": "3b5866eb61147a87205eba06529659de887acda5e56adb666f5793cb3e238a2d",
+     "bytes": 965
+    },
+    {
+     "path": "eval/cases/pf-contract-violation/input.yaml",
+     "sha256": "783be8143ae4a1708231d4ea4df4a25a1c15e9e0e384c8aeb0a035eadeb62e47",
+     "bytes": 174
+    },
+    {
+     "path": "eval/cases/well-defended-component/annotations.yaml",
+     "sha256": "13e7e47b42f0a61be8f9ea992c5158eb9de2267ffe50c3f12b771de1c281f9aa",
+     "bytes": 503
+    },
+    {
+     "path": "eval/cases/well-defended-component/input.yaml",
+     "sha256": "07698f6bab6d7a33fb5ea11a2da6e790769f76e9f041b6a6c356da105e49632a",
+     "bytes": 161
+    },
+    {
+     "path": "eval/eval.yaml",
+     "sha256": "aaad05b5195e88cf9dd68aab84fa78f6f1bb265196d917730b559fb22ded2528",
+     "bytes": 7528
+    }
+   ],
+   "refused_non_text": [
+    "eval/cases/conditional-render-trap/StatusPanel.tsx",
+    "eval/cases/missing-defensive-code/UserTable.tsx",
+    "eval/cases/pf-contract-violation/OrderTable.tsx",
+    "eval/cases/well-defended-component/SafeList.tsx"
+   ],
+   "install": "mkdir -p ~/.claude/skills && cp -r .claude/skills/kosif-superpowers/vendor/kosif-atlas/skills/3000-pf-code-review/12806-pf-adversarial-review ~/.claude/skills/pf-adversarial-review"
+  },
+  {
+   "atlas_id": 12807,
+   "plugin": "pf-code-review",
+   "skill": "pf-i18n-audit",
+   "license": "MIT",
+   "upstream": "https://github.com/rh-uxd/ai-helpers/tree/e8cca17430a8ccb062ed1878073165417a081b34/plugins/patternfly/pf-code-review",
+   "path": "skills/3000-pf-code-review/12807-pf-i18n-audit",
+   "files": [
+    {
+     "path": "SKILL.md",
+     "sha256": "e00eb6fa9093bf6fbacb69b163165597f371105d6d9d43d2c003359a10356450",
+     "bytes": 6468
+    },
+    {
+     "path": "eval/cases/all-i18n-ready/annotations.yaml",
+     "sha256": "8cc8306d0cb34af7f267c556a5eea4e172f8cefe714cfa3993f5061c870c8dc5",
+     "bytes": 305
+    },
+    {
+     "path": "eval/cases/all-i18n-ready/input.yaml",
+     "sha256": "adfa0ae8cee60d8b4f3eecbe12406ec6f1f56bf2c17919c8ebd78edf12d1325e",
+     "bytes": 133
+    },
+    {
+     "path": "eval/cases/concatenation-antipattern/annotations.yaml",
+     "sha256": "9298c04441dc95ff699e0f5678d86473faeef557087aca9a473cd44044bd4bf3",
+     "bytes": 480
+    },
+    {
+     "path": "eval/cases/concatenation-antipattern/input.yaml",
+     "sha256": "1ccb45b88057f8d282e05ee904464f48e2d92b9b5666e5d69f1973d433e6d680",
+     "bytes": 117
+    },
+    {
+     "path": "eval/cases/hardcoded-strings/annotations.yaml",
+     "sha256": "cfb5877b57d48086dea5e0fa06016e68d806b40d1d6edbbcd986814f3d66e013",
+     "bytes": 343
+    },
+    {
+     "path": "eval/cases/hardcoded-strings/input.yaml",
+     "sha256": "3f1f607fee11a47c3be8185a3284514ae6ec52731582acc6788ca28e57170137",
+     "bytes": 130
+    },
+    {
+     "path": "eval/cases/rtl-unsafe-css/annotations.yaml",
+     "sha256": "2c4e94ad2d8bef79982c05153baabb4341033f79d18c803f56b9aa9335173148",
+     "bytes": 466
+    },
+    {
+     "path": "eval/cases/rtl-unsafe-css/input.yaml",
+     "sha256": "8365ea4a8963b0332cffbf5808dfc7d5e61a95ca7da5515d70021c9013ded7bc",
+     "bytes": 122
+    },
+    {
+     "path": "eval/eval.yaml",
+     "sha256": "1cd8107c2916226349ec080a6980fb7224f1107bf57caec0270264f6d674e94d",
+     "bytes": 6251
+    }
+   ],
+   "refused_non_text": [
+    "eval/cases/all-i18n-ready/I18nReady.tsx",
+    "eval/cases/concatenation-antipattern/Dashboard.tsx",
+    "eval/cases/hardcoded-strings/UserList.tsx",
+    "eval/cases/rtl-unsafe-css/sidebar.scss"
+   ],
+   "install": "mkdir -p ~/.claude/skills && cp -r .claude/skills/kosif-superpowers/vendor/kosif-atlas/skills/3000-pf-code-review/12807-pf-i18n-audit ~/.claude/skills/pf-i18n-audit"
+  },
+  {
+   "atlas_id": 12810,
+   "plugin": "pf-code-review",
+   "skill": "pf-state-audit",
+   "license": "MIT",
+   "upstream": "https://github.com/rh-uxd/ai-helpers/tree/e8cca17430a8ccb062ed1878073165417a081b34/plugins/patternfly/pf-code-review",
+   "path": "skills/3000-pf-code-review/12810-pf-state-audit",
+   "files": [
+    {
+     "path": "SKILL.md",
+     "sha256": "b74ad3b068a98364a306cf981c8fe408563545f902596a9dc36838898fc5b882",
+     "bytes": 5694
+    },
+    {
+     "path": "eval/cases/all-states-covered/annotations.yaml",
+     "sha256": "4a69fe7a2b56cca9a70fb9c574e083097cf8278498f841296812ac0a39795dd3",
+     "bytes": 19
+    },
+    {
+     "path": "eval/cases/all-states-covered/input.yaml",
+     "sha256": "ff2e12b1e331586fefdc9d441c22981d88039126c1e75220398175caf4d2a25a",
+     "bytes": 1629
+    },
+    {
+     "path": "eval/cases/missing-error-with-retry/annotations.yaml",
+     "sha256": "3e13ab18835882de12b22da08bddcb88e7ec57eefa9b50c67ec1e8d07c9b8e28",
+     "bytes": 54
+    },
+    {
+     "path": "eval/cases/missing-error-with-retry/input.yaml",
+     "sha256": "e35133e1a0a113ef9a4c9c8b13871a8f6119a134fa23f5a9e319a136291d5a63",
+     "bytes": 840
+    },
+    {
+     "path": "eval/cases/missing-loading-and-empty/annotations.yaml",
+     "sha256": "cc155611d6ebfb9bbc32369eacde36c268efcf672c33b26388e1a91acad32a19",
+     "bytes": 56
+    },
+    {
+     "path": "eval/cases/missing-loading-and-empty/input.yaml",
+     "sha256": "648176a832abdb2d836c335603efe78204c15af1f6d70b1a7836271324b2d003",
+     "bytes": 1020
+    },
+    {
+     "path": "eval/cases/missing-unauthorized/annotations.yaml",
+     "sha256": "93946616bdc9225e2d2fecdeb419439d66e8b8b71857817d3378ab9ccbd121af",
+     "bytes": 51
+    },
+    {
+     "path": "eval/cases/missing-unauthorized/input.yaml",
+     "sha256": "556514e8eed719f066473b654a295664bdf837b84188739a1785d25dc046b130",
+     "bytes": 1239
+    },
+    {
+     "path": "eval/eval.yaml",
+     "sha256": "a9de936781b6914f0feb3237c82e6c814a872ec6687ab8af6e44186d4dac4208",
+     "bytes": 4457
+    }
+   ],
+   "refused_non_text": [],
+   "install": "mkdir -p ~/.claude/skills && cp -r .claude/skills/kosif-superpowers/vendor/kosif-atlas/skills/3000-pf-code-review/12810-pf-state-audit ~/.claude/skills/pf-state-audit"
+  },
+  {
+   "atlas_id": 12864,
+   "plugin": "uxd-research",
+   "skill": "uxd-research-heuristic-eval",
+   "license": "Apache-2.0",
+   "upstream": "https://github.com/rh-uxd/ai-helpers/tree/e8cca17430a8ccb062ed1878073165417a081b34/plugins/uxd-research",
+   "path": "skills/3011-uxd-research/12864-uxd-research-heuristic-eval",
+   "files": [
+    {
+     "path": "SKILL.md",
+     "sha256": "5f6adfe2493cb14208bd3ed75da7bb219777e5f6fe8e253c459799c102483393",
+     "bytes": 23819
+    },
+    {
+     "path": "eval/cases/agent-mode-assume-defaults/annotations.yaml",
+     "sha256": "131b83f180288ca9cd04e5646df3fd0fb57c9dc3b3c5a0d2aadf37543ecb1990",
+     "bytes": 38
+    },
+    {
+     "path": "eval/cases/agent-mode-assume-defaults/fixture-ui.md",
+     "sha256": "96346c4e18780c042ae3c3e97712fa9f1ca89527fe906b90d7b98712093cca37",
+     "bytes": 496
+    },
+    {
+     "path": "eval/cases/agent-mode-assume-defaults/input.yaml",
+     "sha256": "5f1239ab53a65185be74a351d49638b757ed4ef1fc3b0a82a3635737e3ab2a53",
+     "bytes": 181
+    },
+    {
+     "path": "eval/cases/agent-mode-requires-framework/annotations.yaml",
+     "sha256": "4f191de3f7f88ddf4a5cc0bf8a566dda04db55077f070c731b43a39833aa6197",
+     "bytes": 41
+    },
+    {
+     "path": "eval/cases/agent-mode-requires-framework/fixture-ui.md",
+     "sha256": "96346c4e18780c042ae3c3e97712fa9f1ca89527fe906b90d7b98712093cca37",
+     "bytes": 496
+    },
+    {
+     "path": "eval/cases/agent-mode-requires-framework/input.yaml",
+     "sha256": "565c96cbf94efb7863ddd5e281e44b0b46b75b3c22fc860331116199e359125a",
+     "bytes": 177
+    },
+    {
+     "path": "eval/cases/ask-framework/annotations.yaml",
+     "sha256": "886a696740cedaa298727cba09e175bb49d2824674cf2f61fecf8996225dc4c7",
+     "bytes": 25
+    },
+    {
+     "path": "eval/cases/ask-framework/answers.yaml",
+     "sha256": "ccdb026ca268338fd5c9acb96683af67182bee984ea3d8cfa8af529b767e9f35",
+     "bytes": 532
+    },
+    {
+     "path": "eval/cases/ask-framework/fixture-ui.md",
+     "sha256": "362e12562b766e97ac68528a29fd0867dc34bd76c17b01462b847a51783941ba",
+     "bytes": 437
+    },
+    {
+     "path": "eval/cases/ask-framework/input.yaml",
+     "sha256": "4d448901e7f4de1053495296d8f50a285cd299e604b07ae8cfa8ae48b7d52670",
+     "bytes": 179
+    },
+    {
+     "path": "eval/cases/figma-needs-export/annotations.yaml",
+     "sha256": "5471a524829e2e0ee4f342bd04328d73793deae2b3080b8ff5ef78fc12f32a1b",
+     "bytes": 30
+    },
+    {
+     "path": "eval/cases/figma-needs-export/input.yaml",
+     "sha256": "8cad01b3b0d3724f704f4e2b72e032f9a7353a2e3cc6fa8df74bb9f24397fccc",
+     "bytes": 204
+    },
+    {
+     "path": "eval/cases/no-recommendations/annotations.yaml",
+     "sha256": "51352076d997f787255a84b69537e89ce0125e5986df7ddb43e85313a685291e",
+     "bytes": 30
+    },
+    {
+     "path": "eval/cases/no-recommendations/fixture-ui.md",
+     "sha256": "f244d56918922183bd291e57c8efe0e6e7ee9f3fdc9885e9d02c018f232abc78",
+     "bytes": 422
+    },
+    {
+     "path": "eval/cases/no-recommendations/input.yaml",
+     "sha256": "86cf29d353a51328ffb2d0e6294ef8b5e26b68eb2d868ed0a11330e1b2fa3f65",
+     "bytes": 221
+    },
+    {
+     "path": "eval/cases/rejects-accessibility-specialist/annotations.yaml",
+     "sha256": "d956c0a834e04ba9770bbf292696db3ce41f1450e74c1162da373eef1109fe67",
+     "bytes": 44
+    },
+    {
+     "path": "eval/cases/rejects-accessibility-specialist/fixture-ui.md",
+     "sha256": "96346c4e18780c042ae3c3e97712fa9f1ca89527fe906b90d7b98712093cca37",
+     "bytes": 496
+    },
+    {
+     "path": "eval/cases/rejects-accessibility-specialist/input.yaml",
+     "sha256": "c62a1f31f1a5a503f7d2c5df446fb4abfb904d6f655eedf4d23ffc280e53a2a4",
+     "bytes": 227
+    },
+    {
+     "path": "eval/cases/researcher-gate/annotations.yaml",
+     "sha256": "695b070c8520f659d823a3e56f73bfba6a2430c06fd38569fcc42f87bfdf742d",
+     "bytes": 27
+    },
+    {
+     "path": "eval/cases/researcher-gate/answers.yaml",
+     "sha256": "87943fe5d9dc82c07aa7a2795648b3f6ae8c3eb90b147c178b5872e42aecac17",
+     "bytes": 253
+    },
+    {
+     "path": "eval/cases/researcher-gate/fixture-ui.md",
+     "sha256": "f244d56918922183bd291e57c8efe0e6e7ee9f3fdc9885e9d02c018f232abc78",
+     "bytes": 422
+    },
+    {
+     "path": "eval/cases/researcher-gate/input.yaml",
+     "sha256": "879abcbbb27a78ec5a9979315145f6bd5d555881a82fb05d45265677d34405d8",
+     "bytes": 208
+    },
+    {
+     "path": "eval/cases/review-subject-record/annotations.yaml",
+     "sha256": "0b3aa8df1838ed9e4ce4cb63205d075c2e0f04d4b4dc3aebd37c4b46b54a243b",
+     "bytes": 33
+    },
+    {
+     "path": "eval/cases/review-subject-record/fixture-ui.md",
+     "sha256": "bf6bb77277151cd5296e7e26ca966853ae33cc5b4199aa66c29bcfab58d1417d",
+     "bytes": 336
+    },
+    {
+     "path": "eval/cases/review-subject-record/input.yaml",
+     "sha256": "7cde054f7751b2319785d227b511c638291d6ce2e26d3146c903e08bd92b66eb",
+     "bytes": 220
+    },
+    {
+     "path": "eval/cases/three-evaluator-passes/annotations.yaml",
+     "sha256": "e6968db5f05d602a5095714de9f259e673b4a43d6ef7e3cd198eedba4d37320b",
+     "bytes": 34
+    },
+    {
+     "path": "eval/cases/three-evaluator-passes/fixture-ui.md",
+     "sha256": "96346c4e18780c042ae3c3e97712fa9f1ca89527fe906b90d7b98712093cca37",
+     "bytes": 496
+    },
+    {
+     "path": "eval/cases/three-evaluator-passes/input.yaml",
+     "sha256": "47a6d3db79e11f28e7405c832a46637a170e3637ba90728810dd8e885f36f1b3",
+     "bytes": 237
+    },
+    {
+     "path": "eval/cases/url-needs-live-browser/annotations.yaml",
+     "sha256": "9b256823ee9a54f96d8547bdb1f1a2f4dd397936e22ee614ac6c57044977c1e2",
+     "bytes": 34
+    },
+    {
+     "path": "eval/cases/url-needs-live-browser/input.yaml",
+     "sha256": "83871258b701abeacbaad0aaf3eebe00b0571b351aaba9913634c7db0d251af8",
+     "bytes": 145
+    },
+    {
+     "path": "eval/eval.yaml",
+     "sha256": "2a1d55bcc5c9a044a6dc735dafe2cd9a29cc773bc5d85c9fa18ef524b7e62fc1",
+     "bytes": 22743
+    },
+    {
+     "path": "references/evaluation-framework.md",
+     "sha256": "40dd458374c0f724713a3a8ae53fc1e75581693419b0faca2b0d2ccc4e1c29fd",
+     "bytes": 12301
+    },
+    {
+     "path": "references/heuristic-frameworks.md",
+     "sha256": "3881ff433965a9b46d06178eaa69be05080a916111cb6f1ff2b284c60d7ac769",
+     "bytes": 6089
+    },
+    {
+     "path": "references/human-vs-agent-operation.md",
+     "sha256": "161c57c8b21f9a0a80b2a90918efbbcdd95b4131ce59aa643814e8da118db384",
+     "bytes": 8810
+    },
+    {
+     "path": "references/report-templates.md",
+     "sha256": "a231c28ae845cb4b4c7aa993db2c347b8bdc599962986df699723e9fd74dee60",
+     "bytes": 10362
+    },
+    {
+     "path": "references/researcher-review.md",
+     "sha256": "0cfe5ffc02c250c91f55033b0b7691eae8d0b19ec3448ccfe0758fd36f5363cb",
+     "bytes": 8577
+    }
+   ],
+   "refused_non_text": [],
+   "install": "mkdir -p ~/.claude/skills && cp -r .claude/skills/kosif-superpowers/vendor/kosif-atlas/skills/3011-uxd-research/12864-uxd-research-heuristic-eval ~/.claude/skills/uxd-research-heuristic-eval"
+  },
+  {
+   "atlas_id": 13145,
+   "plugin": "adlc-operate",
+   "skill": "release-gates",
+   "license": "MIT",
+   "upstream": "https://github.com/shmulikdav/adlc-skills/tree/f0445434337a5fbf05ccc731dadbc7fa993d736e/adlc-operate",
+   "path": "skills/3051-adlc-operate/13145-release-gates",
+   "files": [
+    {
+     "path": "SKILL.md",
+     "sha256": "1c5aacb39740e47e810e3561c0c201d41e571496986a9bb5753ee59747b3c5f8",
+     "bytes": 2792
+    }
+   ],
+   "refused_non_text": [],
+   "install": "mkdir -p ~/.claude/skills && cp -r .claude/skills/kosif-superpowers/vendor/kosif-atlas/skills/3051-adlc-operate/13145-release-gates ~/.claude/skills/release-gates"
+  },
+  {
+   "atlas_id": 13150,
+   "plugin": "adlc-verify",
+   "skill": "agent-code-review",
+   "license": "MIT",
+   "upstream": "https://github.com/shmulikdav/adlc-skills/tree/f0445434337a5fbf05ccc731dadbc7fa993d736e/adlc-verify",
+   "path": "skills/3052-adlc-verify/13150-agent-code-review",
+   "files": [
+    {
+     "path": "SKILL.md",
+     "sha256": "667be41e64f76cf651e72b03780adc79025ada3ae0c368b2759e173acb827eda",
+     "bytes": 3787
+    }
+   ],
+   "refused_non_text": [],
+   "install": "mkdir -p ~/.claude/skills && cp -r .claude/skills/kosif-superpowers/vendor/kosif-atlas/skills/3052-adlc-verify/13150-agent-code-review ~/.claude/skills/agent-code-review"
+  },
+  {
+   "atlas_id": 13153,
+   "plugin": "adlc-verify",
+   "skill": "hallucination-checks",
+   "license": "MIT",
+   "upstream": "https://github.com/shmulikdav/adlc-skills/tree/f0445434337a5fbf05ccc731dadbc7fa993d736e/adlc-verify",
+   "path": "skills/3052-adlc-verify/13153-hallucination-checks",
+   "files": [
+    {
+     "path": "SKILL.md",
+     "sha256": "3e7bd8a52addfcb4680911142faa76e828378fe757e446b881b4a8b1ee181169",
+     "bytes": 3629
+    }
+   ],
+   "refused_non_text": [],
+   "install": "mkdir -p ~/.claude/skills && cp -r .claude/skills/kosif-superpowers/vendor/kosif-atlas/skills/3052-adlc-verify/13153-hallucination-checks ~/.claude/skills/hallucination-checks"
+  },
+  {
+   "atlas_id": 13154,
+   "plugin": "adlc-verify",
+   "skill": "review-capacity",
+   "license": "MIT",
+   "upstream": "https://github.com/shmulikdav/adlc-skills/tree/f0445434337a5fbf05ccc731dadbc7fa993d736e/adlc-verify",
+   "path": "skills/3052-adlc-verify/13154-review-capacity",
+   "files": [
+    {
+     "path": "SKILL.md",
+     "sha256": "44c04755abba282ebb6143262e0b3da6983c99937dd3fc1c255342bc52a22b07",
+     "bytes": 5151
+    }
+   ],
+   "refused_non_text": [],
+   "install": "mkdir -p ~/.claude/skills && cp -r .claude/skills/kosif-superpowers/vendor/kosif-atlas/skills/3052-adlc-verify/13154-review-capacity ~/.claude/skills/review-capacity"
+  },
+  {
+   "atlas_id": 13330,
+   "plugin": "estregenesis",
+   "skill": "feeda",
+   "license": "Apache-2.0",
+   "upstream": "https://github.com/soliestre/estregenesis/tree/911a38baf81411e91a39c1a79cfe1ea877090bab/plugins/estregenesis",
+   "path": "skills/3113-estregenesis/13330-feeda",
+   "files": [
+    {
+     "path": "SKILL.md",
+     "sha256": "ec5d2e632d57f3af35fadeed8eaefe08682f3cdfcd30fb858c42e9eb8dc3c105",
+     "bytes": 3874
+    }
+   ],
+   "refused_non_text": [],
+   "install": "mkdir -p ~/.claude/skills && cp -r .claude/skills/kosif-superpowers/vendor/kosif-atlas/skills/3113-estregenesis/13330-feeda ~/.claude/skills/feeda"
+  },
+  {
+   "atlas_id": 13497,
+   "plugin": "dependabot-review",
+   "skill": "dependabot-review",
+   "license": "MIT",
+   "upstream": "https://github.com/svyatov/agent-toolkit/tree/30316cebb256ff4a11d9483445c8769c1d1e4050/plugins/dependabot-review",
+   "path": "skills/3168-dependabot-review/13497-dependabot-review",
+   "files": [
+    {
+     "path": "SKILL.md",
+     "sha256": "4b8763bc9c5ae62fb5a6bbbedde100d39db591c55e228fa52687ee39fd238e2e",
+     "bytes": 12573
+    },
+    {
+     "path": "agents/openai.yaml",
+     "sha256": "a1499d95abd8447558c535fe5554adcc3c9b988a0a39264a6283d430effe1e94",
+     "bytes": 43
+    },
+    {
+     "path": "sources.json",
+     "sha256": "fd27d91676203a4989f03293a15976ced5da1baaae5b4796954af7a732af1fce",
+     "bytes": 574
+    }
+   ],
+   "refused_non_text": [],
+   "install": "mkdir -p ~/.claude/skills && cp -r .claude/skills/kosif-superpowers/vendor/kosif-atlas/skills/3168-dependabot-review/13497-dependabot-review ~/.claude/skills/dependabot-review"
+  },
+  {
+   "atlas_id": 13504,
+   "plugin": "prior-art",
+   "skill": "prior-art",
+   "license": "MIT",
+   "upstream": "https://github.com/svyatov/agent-toolkit/tree/30316cebb256ff4a11d9483445c8769c1d1e4050/plugins/prior-art",
+   "path": "skills/3175-prior-art/13504-prior-art",
+   "files": [
+    {
+     "path": "SKILL.md",
+     "sha256": "ba5434645046ddfb28c48abad75eedc56ea085c79622c12222f142aad9db9d98",
+     "bytes": 12311
+    },
+    {
+     "path": "agents/openai.yaml",
+     "sha256": "a1499d95abd8447558c535fe5554adcc3c9b988a0a39264a6283d430effe1e94",
+     "bytes": 43
+    },
+    {
+     "path": "sources.json",
+     "sha256": "de28938a9557e18a3d91b007a9505a1ce5cf94cee6742e4cc07f48457adbdaa7",
+     "bytes": 564
+    }
+   ],
+   "refused_non_text": [],
+   "install": "mkdir -p ~/.claude/skills && cp -r .claude/skills/kosif-superpowers/vendor/kosif-atlas/skills/3175-prior-art/13504-prior-art ~/.claude/skills/prior-art"
+  },
+  {
+   "atlas_id": 138,
+   "plugin": "opentelemetry",
+   "skill": "otel-audit-workflow",
+   "license": "MIT",
+   "upstream": "https://github.com/acaprino/daodan/tree/39443d215d28fcbc32d651895b3cc45c64f24b6f/exports/codex/plugins/opentelemetry",
+   "path": "skills/75-opentelemetry/138-otel-audit-workflow",
+   "files": [
+    {
+     "path": "SKILL.md",
+     "sha256": "8f7aba9aa546df02e74a67eddbfe9833d25aab940d95df67b174f78f8d5aceb4",
+     "bytes": 6063
+    }
+   ],
+   "refused_non_text": [],
+   "install": "mkdir -p ~/.claude/skills && cp -r .claude/skills/kosif-superpowers/vendor/kosif-atlas/skills/75-opentelemetry/138-otel-audit-workflow ~/.claude/skills/otel-audit-workflow"
+  },
+  {
+   "atlas_id": 13818,
+   "plugin": "consumed-gate-major-upgrade",
+   "skill": "consumed-gate-major-upgrade",
+   "license": "MIT",
+   "upstream": "https://github.com/voitta-ai/skillz/tree/feb9ceb0539f8f65355406ff1d5789c28c17a512/plugins/consumed-gate-major-upgrade",
+   "path": "skills/3304-consumed-gate-major-upgrade/13818-consumed-gate-major-upgrade",
+   "files": [
+    {
+     "path": "SKILL.md",
+     "sha256": "d2f26e481f28a267fc15bf0c4a1b7828d6f0211de88aa4b32a03abcc9cabd5cf",
+     "bytes": 8955
+    }
+   ],
+   "refused_non_text": [],
+   "install": "mkdir -p ~/.claude/skills && cp -r .claude/skills/kosif-superpowers/vendor/kosif-atlas/skills/3304-consumed-gate-major-upgrade/13818-consumed-gate-major-upgrade ~/.claude/skills/consumed-gate-major-upgrade"
+  },
+  {
+   "atlas_id": 13819,
+   "plugin": "credential-audit-rerun",
+   "skill": "credential-audit-rerun",
+   "license": "MIT",
+   "upstream": "https://github.com/voitta-ai/skillz/tree/feb9ceb0539f8f65355406ff1d5789c28c17a512/plugins/credential-audit-rerun",
+   "path": "skills/3305-credential-audit-rerun/13819-credential-audit-rerun",
+   "files": [
+    {
+     "path": "SKILL.md",
+     "sha256": "fde1a3b4cd136e713ce95815bdea84da816576008d8b1673494f4fc4f19b2ef5",
+     "bytes": 11496
+    }
+   ],
+   "refused_non_text": [],
+   "install": "mkdir -p ~/.claude/skills && cp -r .claude/skills/kosif-superpowers/vendor/kosif-atlas/skills/3305-credential-audit-rerun/13819-credential-audit-rerun ~/.claude/skills/credential-audit-rerun"
+  },
+  {
+   "atlas_id": 13845,
+   "plugin": "metrics-zero-provenance-audit",
+   "skill": "metrics-zero-provenance-audit",
+   "license": "MIT",
+   "upstream": "https://github.com/voitta-ai/skillz/tree/feb9ceb0539f8f65355406ff1d5789c28c17a512/plugins/metrics-zero-provenance-audit",
+   "path": "skills/3331-metrics-zero-provenance-audit/13845-metrics-zero-provenance-audit",
+   "files": [
+    {
+     "path": "SKILL.md",
+     "sha256": "0340ce8a3cfb1e933ba96a924a28a85e89c8f491634a79663ccfd31ab457e36e",
+     "bytes": 12689
+    }
+   ],
+   "refused_non_text": [],
+   "install": "mkdir -p ~/.claude/skills && cp -r .claude/skills/kosif-superpowers/vendor/kosif-atlas/skills/3331-metrics-zero-provenance-audit/13845-metrics-zero-provenance-audit ~/.claude/skills/metrics-zero-provenance-audit"
+  },
+  {
+   "atlas_id": 13853,
+   "plugin": "permission-gate-allow-list-not-decisive",
+   "skill": "permission-gate-allow-list-not-decisive",
+   "license": "MIT",
+   "upstream": "https://github.com/voitta-ai/skillz/tree/feb9ceb0539f8f65355406ff1d5789c28c17a512/plugins/permission-gate-allow-list-not-decisive",
+   "path": "skills/3339-permission-gate-allow-list-not-decisive/13853-permission-gate-allow-list-not-decisive",
+   "files": [
+    {
+     "path": "SKILL.md",
+     "sha256": "fa4705617b0a89b1cef64e8c3101d90ab6f8eef1e0c0884f5e90f00e8bd70679",
+     "bytes": 9333
+    }
+   ],
+   "refused_non_text": [],
+   "install": "mkdir -p ~/.claude/skills && cp -r .claude/skills/kosif-superpowers/vendor/kosif-atlas/skills/3339-permission-gate-allow-list-not-decisive/13853-permission-gate-allow-list-not-decisive ~/.claude/skills/permission-gate-allow-list-not-decisive"
+  },
+  {
+   "atlas_id": 13854,
+   "plugin": "permission-gate-inherits-operator-allow-list",
+   "skill": "permission-gate-inherits-operator-allow-list",
+   "license": "MIT",
+   "upstream": "https://github.com/voitta-ai/skillz/tree/feb9ceb0539f8f65355406ff1d5789c28c17a512/plugins/permission-gate-inherits-operator-allow-list",
+   "path": "skills/3340-permission-gate-inherits-operator-allow/13854-permission-gate-inherits-operator-allow",
+   "files": [
+    {
+     "path": "SKILL.md",
+     "sha256": "77f590885f2eb7f9bc3d081c93194fa4e7613dfd8f2e2bab26aa5195c573879b",
+     "bytes": 10449
+    }
+   ],
+   "refused_non_text": [],
+   "install": "mkdir -p ~/.claude/skills && cp -r .claude/skills/kosif-superpowers/vendor/kosif-atlas/skills/3340-permission-gate-inherits-operator-allow/13854-permission-gate-inherits-operator-allow ~/.claude/skills/permission-gate-inherits-operator-allow"
+  },
+  {
+   "atlas_id": 13860,
+   "plugin": "pre-open-source-credential-audit",
+   "skill": "pre-open-source-credential-audit",
+   "license": "MIT",
+   "upstream": "https://github.com/voitta-ai/skillz/tree/feb9ceb0539f8f65355406ff1d5789c28c17a512/plugins/pre-open-source-credential-audit",
+   "path": "skills/3345-pre-open-source-credential-audit/13860-pre-open-source-credential-audit",
+   "files": [
+    {
+     "path": "SKILL.md",
+     "sha256": "00cd929ae3819857edc7272a58d2f65d2c7c15834a40125836e99a3938283e5b",
+     "bytes": 5876
+    }
+   ],
+   "refused_non_text": [],
+   "install": "mkdir -p ~/.claude/skills && cp -r .claude/skills/kosif-superpowers/vendor/kosif-atlas/skills/3345-pre-open-source-credential-audit/13860-pre-open-source-credential-audit ~/.claude/skills/pre-open-source-credential-audit"
+  },
+  {
+   "atlas_id": 13879,
+   "plugin": "terraform-check-block-warn-only-ci-gate",
+   "skill": "terraform-check-block-warn-only-ci-gate",
+   "license": "MIT",
+   "upstream": "https://github.com/voitta-ai/skillz/tree/feb9ceb0539f8f65355406ff1d5789c28c17a512/plugins/terraform-check-block-warn-only-ci-gate",
+   "path": "skills/3364-terraform-check-block-warn-only-ci-gate/13879-terraform-check-block-warn-only-ci-gate",
+   "files": [
+    {
+     "path": "SKILL.md",
+     "sha256": "7630d14c31a29467d3499dd04e4aa65a48b841a3c278f88da49d5cd047882137",
+     "bytes": 6005
+    }
+   ],
+   "refused_non_text": [],
+   "install": "mkdir -p ~/.claude/skills && cp -r .claude/skills/kosif-superpowers/vendor/kosif-atlas/skills/3364-terraform-check-block-warn-only-ci-gate/13879-terraform-check-block-warn-only-ci-gate ~/.claude/skills/terraform-check-block-warn-only-ci-gate"
+  },
+  {
+   "atlas_id": 13885,
+   "plugin": "us-federal-open-data-claim-verification",
+   "skill": "us-federal-open-data-claim-verification",
+   "license": "MIT",
+   "upstream": "https://github.com/voitta-ai/skillz/tree/feb9ceb0539f8f65355406ff1d5789c28c17a512/plugins/us-federal-open-data-claim-verification",
+   "path": "skills/3370-us-federal-open-data-claim-verification/13885-us-federal-open-data-claim-verification",
+   "files": [
+    {
+     "path": "SKILL.md",
+     "sha256": "1f8a0f635296e0bc856ab23537bc3334f966268ca1cc3a3a31fa5456cc542bd8",
+     "bytes": 11160
+    }
+   ],
+   "refused_non_text": [],
+   "install": "mkdir -p ~/.claude/skills && cp -r .claude/skills/kosif-superpowers/vendor/kosif-atlas/skills/3370-us-federal-open-data-claim-verification/13885-us-federal-open-data-claim-verification ~/.claude/skills/us-federal-open-data-claim-verification"
+  },
+  {
+   "atlas_id": 142,
+   "plugin": "platform-engineering",
+   "skill": "platform-review-workflow",
+   "license": "MIT",
+   "upstream": "https://github.com/acaprino/daodan/tree/39443d215d28fcbc32d651895b3cc45c64f24b6f/exports/codex/plugins/platform-engineering",
+   "path": "skills/77-platform-engineering/142-platform-review-workflow",
+   "files": [
+    {
+     "path": "SKILL.md",
+     "sha256": "1c0d7ac95b05bfcbcff6398cd03f5ec0b689987328b656c76d3746b7111294a2",
+     "bytes": 3983
+    }
+   ],
+   "refused_non_text": [],
+   "install": "mkdir -p ~/.claude/skills && cp -r .claude/skills/kosif-superpowers/vendor/kosif-atlas/skills/77-platform-engineering/142-platform-review-workflow ~/.claude/skills/platform-review-workflow"
+  },
+  {
+   "atlas_id": 14292,
+   "plugin": "signed-audit-trails",
+   "skill": "signed-audit-trails-recipe",
+   "license": "MIT",
+   "upstream": "https://github.com/wshobson/agents/tree/156b7a5/plugins/signed-audit-trails",
+   "path": "skills/3521-signed-audit-trails/14292-signed-audit-trails-recipe",
+   "files": [
+    {
+     "path": "SKILL.md",
+     "sha256": "27aa1ea6583638045960a8d5b2ba0bb7f336b32b3eea20b6a89fd8c331fd2080",
+     "bytes": 10086
+    },
+    {
+     "path": "references/cedar-policy.md",
+     "sha256": "260c65ab7e86a817fa28ca3fc2d0998e9812e9cede41df9c7153dc80d14273b9",
+     "bytes": 3992
+    },
+    {
+     "path": "references/ci-cd.md",
+     "sha256": "2c8d6e8187e57cfb62dd6c60d5c12467596bd2c8f9ac444fda3c5e77531726ec",
+     "bytes": 2197
+    },
+    {
+     "path": "references/hook-wiring.md",
+     "sha256": "1296d3f1a161c03336321ca40c46561e5722150881a059ddae6a49272cde3ebb",
+     "bytes": 1380
+    },
+    {
+     "path": "references/receipt-format.md",
+     "sha256": "e39220906ddbed047a8bd83814615deda7b575124690e8e2f5d118337a392d2d",
+     "bytes": 1266
+    }
+   ],
+   "refused_non_text": [],
+   "install": "mkdir -p ~/.claude/skills && cp -r .claude/skills/kosif-superpowers/vendor/kosif-atlas/skills/3521-signed-audit-trails/14292-signed-audit-trails-recipe ~/.claude/skills/signed-audit-trails-recipe"
+  },
+  {
+   "atlas_id": 14471,
+   "plugin": "agent-harness-skills",
+   "skill": "validation-harness-design",
+   "license": "MIT",
+   "upstream": "https://github.com/hashgraph-online/awesome-codex-plugins/tree/9cc4f3e/plugins/yfge/agent-harness-skills",
+   "path": "skills/3604-agent-harness-skills/14471-validation-harness-design",
+   "files": [
+    {
+     "path": "SKILL.md",
+     "sha256": "5c2c83c5dbbe2a4f42e7180a7bcbdca32a15ba352db0dd4439d3709016c50e37",
+     "bytes": 3463
+    },
+    {
+     "path": "references/build-when-missing.md",
+     "sha256": "2552fcad8f26684cf15e20c7f9cd51f0a7f01b07627f7ae65788869741b81c10",
+     "bytes": 2024
+    },
+    {
+     "path": "references/environment-bootstrap.md",
+     "sha256": "35022f6fb190be88ec339bdb08de62385d0c4200ffd3fd577efd819934232f12",
+     "bytes": 1086
+    }
+   ],
+   "refused_non_text": [],
+   "install": "mkdir -p ~/.claude/skills && cp -r .claude/skills/kosif-superpowers/vendor/kosif-atlas/skills/3604-agent-harness-skills/14471-validation-harness-design ~/.claude/skills/validation-harness-design"
+  },
+  {
+   "atlas_id": 145,
+   "plugin": "pwa-expert",
+   "skill": "pwa-audit-workflow",
+   "license": "MIT",
+   "upstream": "https://github.com/acaprino/daodan/tree/39443d215d28fcbc32d651895b3cc45c64f24b6f/exports/codex/plugins/pwa-expert",
+   "path": "skills/79-pwa-expert/145-pwa-audit-workflow",
+   "files": [
+    {
+     "path": "SKILL.md",
+     "sha256": "3ff9378765e784eeccd67f870c254a341539016029e98249fa28abe6ee58d575",
+     "bytes": 9848
+    }
+   ],
+   "refused_non_text": [],
+   "install": "mkdir -p ~/.claude/skills && cp -r .claude/skills/kosif-superpowers/vendor/kosif-atlas/skills/79-pwa-expert/145-pwa-audit-workflow ~/.claude/skills/pwa-audit-workflow"
+  },
+  {
+   "atlas_id": 146,
+   "plugin": "pwa-expert",
+   "skill": "pwa-checklist-workflow",
+   "license": "MIT",
+   "upstream": "https://github.com/acaprino/daodan/tree/39443d215d28fcbc32d651895b3cc45c64f24b6f/exports/codex/plugins/pwa-expert",
+   "path": "skills/79-pwa-expert/146-pwa-checklist-workflow",
+   "files": [
+    {
+     "path": "SKILL.md",
+     "sha256": "7774dac66adb55b52c29d9f24bb317557fb8141fbc2d4c21d189d418599ad276",
+     "bytes": 4319
+    }
+   ],
+   "refused_non_text": [],
+   "install": "mkdir -p ~/.claude/skills && cp -r .claude/skills/kosif-superpowers/vendor/kosif-atlas/skills/79-pwa-expert/146-pwa-checklist-workflow ~/.claude/skills/pwa-checklist-workflow"
+  },
+  {
+   "atlas_id": 2013,
+   "plugin": "codex-tui-proof",
+   "skill": "validate-tui-in-codex",
+   "license": "MIT",
+   "upstream": "https://github.com/hashgraph-online/awesome-codex-plugins/tree/9cc4f3e/plugins/bnc4vk/codex-tui-proof",
+   "path": "skills/891-codex-tui-proof/2013-validate-tui-in-codex",
+   "files": [
+    {
+     "path": "SKILL.md",
+     "sha256": "034cf4fde1e0bf97e4d83e943315f63f670c993bff53d6daac14b38cbf59a74c",
+     "bytes": 5810
+    },
+    {
+     "path": "agents/openai.yaml",
+     "sha256": "13e7362cbc88dbca432106021d511468b1b2acedf815aa8b714dcfa3e48f8e17",
+     "bytes": 228
+    },
+    {
+     "path": "references/evidence-contract.md",
+     "sha256": "752f73da979bfac79f1173ff135e6243da67d59e9bb20d52ebb00061bd6fd6f6",
+     "bytes": 2477
+    }
+   ],
+   "refused_non_text": [],
+   "install": "mkdir -p ~/.claude/skills && cp -r .claude/skills/kosif-superpowers/vendor/kosif-atlas/skills/891-codex-tui-proof/2013-validate-tui-in-codex ~/.claude/skills/validate-tui-in-codex"
+  },
+  {
+   "atlas_id": 2252,
+   "plugin": "review-dependabot-config",
+   "skill": "review-dependabot-config",
+   "license": "MIT",
+   "upstream": "https://github.com/cboone/agent-harness-plugins/tree/d9e1b396852487c90500486a7b4fe94d88c64bd0/dist/codex/plugins/review-dependabot-config",
+   "path": "skills/968-review-dependabot-config/2252-review-dependabot-config",
+   "files": [
+    {
+     "path": "SKILL.md",
+     "sha256": "b840269326cf775543335446fde98c2ef3eb202d68475119d8ccfb1a989503a8",
+     "bytes": 17993
+    },
+    {
+     "path": "references/checklist.md",
+     "sha256": "03935f16ce618deac3d9bff513e5c7c590effdbe8769589db497f4cfe7e76b9a",
+     "bytes": 16366
+    },
+    {
+     "path": "references/ecosystems.md",
+     "sha256": "6933870469cf6098c182612245ecf0f0e6aa3f6c94a53e38395161665b31b07e",
+     "bytes": 17183
+    },
+    {
+     "path": "references/repository-settings.md",
+     "sha256": "71429ea45f501b7e2984e1fc8c62302affdb33784c639c9ebbfa00c59b413b0d",
+     "bytes": 8603
+    }
+   ],
+   "refused_non_text": [],
+   "install": "mkdir -p ~/.claude/skills && cp -r .claude/skills/kosif-superpowers/vendor/kosif-atlas/skills/968-review-dependabot-config/2252-review-dependabot-config ~/.claude/skills/review-dependabot-config"
+  },
+  {
+   "atlas_id": 2263,
+   "plugin": "set-up-review-config",
+   "skill": "set-up-review-config",
+   "license": "MIT",
+   "upstream": "https://github.com/cboone/agent-harness-plugins/tree/d9e1b396852487c90500486a7b4fe94d88c64bd0/dist/codex/plugins/set-up-review-config",
+   "path": "skills/979-set-up-review-config/2263-set-up-review-config",
+   "files": [
+    {
+     "path": "SKILL.md",
+     "sha256": "96eff4b6a4a51cd4ef8a3942948e978f6c58abe20d79b4ee5e51c6999f50fd7a",
+     "bytes": 12880
+    },
+    {
+     "path": "references/agents-md-section.md",
+     "sha256": "0d3d1c1d78f6095c77cb604f5d40bdb311bc7a178c1b017ee466b1479f449133",
+     "bytes": 1469
+    },
+    {
+     "path": "references/checklists/write-bash-scripts.md",
+     "sha256": "edb699801fa27fbb3ac8e4823bd40ff34c475d8f32771cd924e84ec2663ec4fa",
+     "bytes": 4244
+    },
+    {
+     "path": "references/checklists/write-go-code.md",
+     "sha256": "e4fe2d02d4cdf096a52eb3b591f50bff7678594b9659966d956845e4118450e0",
+     "bytes": 4396
+    },
+    {
+     "path": "references/checklists/write-lean-code.md",
+     "sha256": "f64ad409f7b25cf341aacf5962d251d578dfe9c59f9e2d86618e7d8f35355dff",
+     "bytes": 3893
+    },
+    {
+     "path": "references/checklists/write-lean-tests.md",
+     "sha256": "e8be5112d6a660f1666b632726d201653a5fcde39209bc0a3e2df5cb7cdf0675",
+     "bytes": 3013
+    },
+    {
+     "path": "references/checklists/write-markdown.md",
+     "sha256": "2fcbba103b523e12689ae4de9132a8235730bb04821d885d29b38b47f32c46bb",
+     "bytes": 2644
+    },
+    {
+     "path": "references/checklists/write-scrut-tests.md",
+     "sha256": "465f93cd82774dabb8ea48fff7b69e366cfeedee391ca8530e79aa5756d7e505",
+     "bytes": 2815
+    },
+    {
+     "path": "references/checklists/write-zsh-scripts.md",
+     "sha256": "cc61b97b376380bbce2a4f35f16697b50838392b4cb75946fd1f3737e3cf9b21",
+     "bytes": 4348
+    },
+    {
+     "path": "references/code-review-skill.md",
+     "sha256": "e044c3f70bf5e7677b1896d17c38b19dd5e94aff7de6fe4ebf44c1531ba6e8b3",
+     "bytes": 4342
+    },
+    {
+     "path": "references/guides.md",
+     "sha256": "5b93cba37094190ed17c81c7ad652348d9bfc9144c4ee4b71eb5b6d9cdbbb050",
+     "bytes": 5097
+    },
+    {
+     "path": "references/review-md.md",
+     "sha256": "8e8a86fee402c8d661ae8fb36c866df4af8cc019339f7998364da5a0f3c12a3b",
+     "bytes": 2968
+    }
+   ],
+   "refused_non_text": [],
+   "install": "mkdir -p ~/.claude/skills && cp -r .claude/skills/kosif-superpowers/vendor/kosif-atlas/skills/979-set-up-review-config/2263-set-up-review-config ~/.claude/skills/set-up-review-config"
+  },
+  {
+   "atlas_id": 2957,
+   "plugin": "instruction-audit",
+   "skill": "instruction-audit",
+   "license": "MIT",
+   "upstream": "https://github.com/davekim917/bootstrap/tree/e179e878904a0bf41bfde2b1a20af62f0a88447d/plugins/instruction-audit",
+   "path": "skills/1280-instruction-audit/2957-instruction-audit",
+   "files": [
+    {
+     "path": "SKILL.md",
+     "sha256": "b5f89df10ea738c56c094ecf4247061908e21967a28115dfd819829f2b102f1b",
+     "bytes": 12873
+    }
+   ],
+   "refused_non_text": [],
+   "install": "mkdir -p ~/.claude/skills && cp -r .claude/skills/kosif-superpowers/vendor/kosif-atlas/skills/1280-instruction-audit/2957-instruction-audit ~/.claude/skills/instruction-audit"
+  },
+  {
+   "atlas_id": 3225,
+   "plugin": "velith",
+   "skill": "book-outline",
+   "license": "Apache-2.0",
+   "upstream": "https://github.com/hashgraph-online/awesome-codex-plugins/tree/9cc4f3e/plugins/epicsagas/Velith",
+   "path": "skills/1376-velith/3225-book-outline",
+   "files": [
+    {
+     "path": "SKILL.md",
+     "sha256": "6cd8d314b9180aa04d050b4b638614a7cf655c7a2f96112c7f074448d97e6fb8",
+     "bytes": 5374
+    }
+   ],
+   "refused_non_text": [],
+   "install": "mkdir -p ~/.claude/skills && cp -r .claude/skills/kosif-superpowers/vendor/kosif-atlas/skills/1376-velith/3225-book-outline ~/.claude/skills/book-outline"
+  },
+  {
+   "atlas_id": 3227,
+   "plugin": "velith",
+   "skill": "book-publish",
+   "license": "Apache-2.0",
+   "upstream": "https://github.com/hashgraph-online/awesome-codex-plugins/tree/9cc4f3e/plugins/epicsagas/Velith",
+   "path": "skills/1376-velith/3227-book-publish",
+   "files": [
+    {
+     "path": "SKILL.md",
+     "sha256": "1adb774b39c33805158a81fbca6c1fba00d369aee6c3bd1077534e65dffea1ae",
+     "bytes": 6477
+    }
+   ],
+   "refused_non_text": [],
+   "install": "mkdir -p ~/.claude/skills && cp -r .claude/skills/kosif-superpowers/vendor/kosif-atlas/skills/1376-velith/3227-book-publish ~/.claude/skills/book-publish"
+  },
+  {
+   "atlas_id": 4131,
+   "plugin": "digital-marketing-pro",
+   "skill": "verify-claims",
+   "license": "MIT",
+   "upstream": "https://github.com/hashgraph-online/awesome-codex-plugins/tree/9cc4f3e/plugins/indranilbanerjee/digital-marketing-pro",
+   "path": "skills/1520-digital-marketing-pro/4131-verify-claims",
+   "files": [
+    {
+     "path": "SKILL.md",
+     "sha256": "52a7cbd5c56dfc7345faa790c988481f6b3c624280493bf659f422828e4cd114",
+     "bytes": 9848
+    }
+   ],
+   "refused_non_text": [],
+   "install": "mkdir -p ~/.claude/skills && cp -r .claude/skills/kosif-superpowers/vendor/kosif-atlas/skills/1520-digital-marketing-pro/4131-verify-claims ~/.claude/skills/verify-claims"
+  },
+  {
+   "atlas_id": 4180,
+   "plugin": "safeguard",
+   "skill": "trust-and-safety-review",
+   "license": "MIT",
+   "upstream": "https://github.com/itsjavi/skills/tree/1716408e6b8ca3fd395519c44f3f971b612afbcf/plugins/safeguard",
+   "path": "skills/1528-safeguard/4180-trust-and-safety-review",
+   "files": [
+    {
+     "path": "SKILL.md",
+     "sha256": "6573e156d02e75b508d01d6bf84d526295f8777a229c98220833ba747434f128",
+     "bytes": 7193
+    }
+   ],
+   "refused_non_text": [],
+   "install": "mkdir -p ~/.claude/skills && cp -r .claude/skills/kosif-superpowers/vendor/kosif-atlas/skills/1528-safeguard/4180-trust-and-safety-review ~/.claude/skills/trust-and-safety-review"
+  },
+  {
+   "atlas_id": 457,
+   "plugin": "c-level-agents",
+   "skill": "cco-review",
+   "license": "MIT",
+   "upstream": "https://github.com/alirezarezvani/claude-skills/tree/19392f7a08264ed00486a251f5b2098321771f94/c-level-agents",
+   "path": "skills/146-c-level-agents/457-cco-review",
+   "files": [
+    {
+     "path": "SKILL.md",
+     "sha256": "2d51a9832f54c90a2865ce224571283e15644fecffcd76cd6dd942f1cdcabee5",
+     "bytes": 5241
+    }
+   ],
+   "refused_non_text": [],
+   "install": "mkdir -p ~/.claude/skills && cp -r .claude/skills/kosif-superpowers/vendor/kosif-atlas/skills/146-c-level-agents/457-cco-review ~/.claude/skills/cco-review"
+  },
+  {
+   "atlas_id": 458,
+   "plugin": "c-level-agents",
+   "skill": "cdo-review",
+   "license": "MIT",
+   "upstream": "https://github.com/alirezarezvani/claude-skills/tree/19392f7a08264ed00486a251f5b2098321771f94/c-level-agents",
+   "path": "skills/146-c-level-agents/458-cdo-review",
+   "files": [
+    {
+     "path": "SKILL.md",
+     "sha256": "bb2ec96ce1dd754f6adefcec4569a7a0f3b99816c4c0a9d4eb2896951c73912e",
+     "bytes": 5154
+    }
+   ],
+   "refused_non_text": [],
+   "install": "mkdir -p ~/.claude/skills && cp -r .claude/skills/kosif-superpowers/vendor/kosif-atlas/skills/146-c-level-agents/458-cdo-review ~/.claude/skills/cdo-review"
+  },
+  {
+   "atlas_id": 460,
+   "plugin": "c-level-agents",
+   "skill": "ciso-review",
+   "license": "MIT",
+   "upstream": "https://github.com/alirezarezvani/claude-skills/tree/19392f7a08264ed00486a251f5b2098321771f94/c-level-agents",
+   "path": "skills/146-c-level-agents/460-ciso-review",
+   "files": [
+    {
+     "path": "SKILL.md",
+     "sha256": "a01052ca3b197558d9d4295877d0c79376d5baa83826869b8e950fe0debc695e",
+     "bytes": 3258
+    }
+   ],
+   "refused_non_text": [],
+   "install": "mkdir -p ~/.claude/skills && cp -r .claude/skills/kosif-superpowers/vendor/kosif-atlas/skills/146-c-level-agents/460-ciso-review ~/.claude/skills/ciso-review"
+  },
+  {
+   "atlas_id": 461,
+   "plugin": "c-level-agents",
+   "skill": "cmo-review",
+   "license": "MIT",
+   "upstream": "https://github.com/alirezarezvani/claude-skills/tree/19392f7a08264ed00486a251f5b2098321771f94/c-level-agents",
+   "path": "skills/146-c-level-agents/461-cmo-review",
+   "files": [
+    {
+     "path": "SKILL.md",
+     "sha256": "eb570120eb291f2f273e0fd9cdc280d1a01d678ca7ef8407713ff4151709b1cb",
+     "bytes": 3267
+    }
+   ],
+   "refused_non_text": [],
+   "install": "mkdir -p ~/.claude/skills && cp -r .claude/skills/kosif-superpowers/vendor/kosif-atlas/skills/146-c-level-agents/461-cmo-review ~/.claude/skills/cmo-review"
+  },
+  {
+   "atlas_id": 4612,
+   "plugin": "general-legal-assistant",
+   "skill": "freelancer-review",
+   "license": "MIT",
+   "upstream": "https://github.com/jeremylongshore/tons-of-skills-marketplace/tree/b520cf9/plugins/business-tools/general-legal-assistant",
+   "path": "skills/1634-general-legal-assistant/4612-freelancer-review",
+   "files": [
+    {
+     "path": "SKILL.md",
+     "sha256": "2a7c95eae0194e5d18c1d5fee427f1b1e7193619c276ee1bd80aaf7fec295622",
+     "bytes": 13688
+    }
+   ],
+   "refused_non_text": [],
+   "install": "mkdir -p ~/.claude/skills && cp -r .claude/skills/kosif-superpowers/vendor/kosif-atlas/skills/1634-general-legal-assistant/4612-freelancer-review ~/.claude/skills/freelancer-review"
+  },
+  {
+   "atlas_id": 462,
+   "plugin": "c-level-agents",
+   "skill": "cpo-review",
+   "license": "MIT",
+   "upstream": "https://github.com/alirezarezvani/claude-skills/tree/19392f7a08264ed00486a251f5b2098321771f94/c-level-agents",
+   "path": "skills/146-c-level-agents/462-cpo-review",
+   "files": [
+    {
+     "path": "SKILL.md",
+     "sha256": "ea10de58a736386d4706985f5ca2ae4a63c7d931783d0b75959115dd2c5646dc",
+     "bytes": 3199
+    }
+   ],
+   "refused_non_text": [],
+   "install": "mkdir -p ~/.claude/skills && cp -r .claude/skills/kosif-superpowers/vendor/kosif-atlas/skills/146-c-level-agents/462-cpo-review ~/.claude/skills/cpo-review"
+  },
+  {
+   "atlas_id": 463,
+   "plugin": "c-level-agents",
+   "skill": "cro-review",
+   "license": "MIT",
+   "upstream": "https://github.com/alirezarezvani/claude-skills/tree/19392f7a08264ed00486a251f5b2098321771f94/c-level-agents",
+   "path": "skills/146-c-level-agents/463-cro-review",
+   "files": [
+    {
+     "path": "SKILL.md",
+     "sha256": "69bbc505a3716e361d43bbd1bee388bada5c92a561b140ef7fc364dcf95f3e99",
+     "bytes": 3118
+    }
+   ],
+   "refused_non_text": [],
+   "install": "mkdir -p ~/.claude/skills && cp -r .claude/skills/kosif-superpowers/vendor/kosif-atlas/skills/146-c-level-agents/463-cro-review ~/.claude/skills/cro-review"
+  },
+  {
+   "atlas_id": 470,
+   "plugin": "c-level-agents",
+   "skill": "gc-review",
+   "license": "MIT",
+   "upstream": "https://github.com/alirezarezvani/claude-skills/tree/19392f7a08264ed00486a251f5b2098321771f94/c-level-agents",
+   "path": "skills/146-c-level-agents/470-gc-review",
+   "files": [
+    {
+     "path": "SKILL.md",
+     "sha256": "89ae32636540db36674aeaa653e037e11607851e3b66470263378a7e5f2b45c8",
+     "bytes": 4644
+    }
+   ],
+   "refused_non_text": [],
+   "install": "mkdir -p ~/.claude/skills && cp -r .claude/skills/kosif-superpowers/vendor/kosif-atlas/skills/146-c-level-agents/470-gc-review ~/.claude/skills/gc-review"
+  },
+  {
+   "atlas_id": 474,
+   "plugin": "c-level-agents",
+   "skill": "vpe-review",
+   "license": "MIT",
+   "upstream": "https://github.com/alirezarezvani/claude-skills/tree/19392f7a08264ed00486a251f5b2098321771f94/c-level-agents",
+   "path": "skills/146-c-level-agents/474-vpe-review",
+   "files": [
+    {
+     "path": "SKILL.md",
+     "sha256": "799b0b5ebed290647e61a39330479ca7679b093ae19e80a08487600ed8ecd4a0",
+     "bytes": 4815
+    }
+   ],
+   "refused_non_text": [],
+   "install": "mkdir -p ~/.claude/skills && cp -r .claude/skills/kosif-superpowers/vendor/kosif-atlas/skills/146-c-level-agents/474-vpe-review ~/.claude/skills/vpe-review"
+  },
+  {
+   "atlas_id": 4886,
+   "plugin": "abridge-pack",
+   "skill": "abridge-upgrade-migration",
+   "license": "MIT",
+   "upstream": "https://github.com/jeremylongshore/tons-of-skills-marketplace/tree/b520cf9/plugins/saas-packs/abridge-pack",
+   "path": "skills/1818-abridge-pack/4886-abridge-upgrade-migration",
+   "files": [
+    {
+     "path": "SKILL.md",
+     "sha256": "94747f4588bebc6deeca8db16a20c74e4f433723bc4e7746118f4b3be03e0559",
+     "bytes": 4861
+    },
+    {
+     "path": "references/official-docs.md",
+     "sha256": "04a634ca637727ef91bfea9965797579e032f59973b39ed8ae247299e7b3081a",
+     "bytes": 1815
+    }
+   ],
+   "refused_non_text": [],
+   "install": "mkdir -p ~/.claude/skills && cp -r .claude/skills/kosif-superpowers/vendor/kosif-atlas/skills/1818-abridge-pack/4886-abridge-upgrade-migration ~/.claude/skills/abridge-upgrade-migration"
+  },
+  {
+   "atlas_id": 4955,
+   "plugin": "algolia-pack",
+   "skill": "algolia-reference-architecture",
+   "license": "MIT",
+   "upstream": "https://github.com/jeremylongshore/tons-of-skills-marketplace/tree/b520cf9/plugins/saas-packs/algolia-pack",
+   "path": "skills/1821-algolia-pack/4955-algolia-reference-architecture",
+   "files": [
+    {
+     "path": "SKILL.md",
+     "sha256": "b40461fddfd90315355dc846e39c482ef8759a4405ca8b4f353fb560ee6302d3",
+     "bytes": 4119
+    },
+    {
+     "path": "references/official-docs.md",
+     "sha256": "c69c3ccbf7af9a631e1f07c8b923dcbb48fec7443881144ac841a6492edca9d0",
+     "bytes": 1330
+    }
+   ],
+   "refused_non_text": [],
+   "install": "mkdir -p ~/.claude/skills && cp -r .claude/skills/kosif-superpowers/vendor/kosif-atlas/skills/1821-algolia-pack/4955-algolia-reference-architecture ~/.claude/skills/algolia-reference-architecture"
+  },
+  {
+   "atlas_id": 5262,
+   "plugin": "clay-pack",
+   "skill": "clay-advanced-troubleshooting",
+   "license": "MIT",
+   "upstream": "https://github.com/jeremylongshore/tons-of-skills-marketplace/tree/b520cf9/plugins/saas-packs/clay-pack",
+   "path": "skills/1836-clay-pack/5262-clay-advanced-troubleshooting",
+   "files": [
+    {
+     "path": "SKILL.md",
+     "sha256": "c63b9fe8dbb8aab79c11b7cce091696caf7b9ea8c15365b3d06800dff619ff43",
+     "bytes": 9197
+    },
+    {
+     "path": "references/implementation-guide.md",
+     "sha256": "f2d8bc6bc9e122cfdb23c90fe24b9bf99105cb9dbfa9ed42e8f8f8bbbc0db3de",
+     "bytes": 4228
+    }
+   ],
+   "refused_non_text": [],
+   "install": "mkdir -p ~/.claude/skills && cp -r .claude/skills/kosif-superpowers/vendor/kosif-atlas/skills/1836-clay-pack/5262-clay-advanced-troubleshooting ~/.claude/skills/clay-advanced-troubleshooting"
+  },
+  {
+   "atlas_id": 5269,
+   "plugin": "clay-pack",
+   "skill": "clay-data-handling",
+   "license": "MIT",
+   "upstream": "https://github.com/jeremylongshore/tons-of-skills-marketplace/tree/b520cf9/plugins/saas-packs/clay-pack",
+   "path": "skills/1836-clay-pack/5269-clay-data-handling",
+   "files": [
+    {
+     "path": "SKILL.md",
+     "sha256": "9ef9df6d70a603725e4b95491edafe6a46de26a9901f93a63d6b97ed5de09609",
+     "bytes": 8881
+    },
+    {
+     "path": "references/implementation-guide.md",
+     "sha256": "4564066b1eb05230f9da717e0031b3e075e2583054327c32bc6b351b5136d0a8",
+     "bytes": 3651
+    },
+    {
+     "path": "references/implementation.md",
+     "sha256": "c87ca15d90c48f56d5f3afd14278350deb10443f470585aef26781748d4978b9",
+     "bytes": 4312
+    }
+   ],
+   "refused_non_text": [],
+   "install": "mkdir -p ~/.claude/skills && cp -r .claude/skills/kosif-superpowers/vendor/kosif-atlas/skills/1836-clay-pack/5269-clay-data-handling ~/.claude/skills/clay-data-handling"
+  },
+  {
+   "atlas_id": 531,
+   "plugin": "code-tour",
+   "skill": "code-tour",
+   "license": "MIT",
+   "upstream": "https://github.com/alirezarezvani/claude-skills/tree/19392f7a08264ed00486a251f5b2098321771f94/engineering/code-tour",
+   "path": "skills/162-code-tour/531-code-tour",
+   "files": [
+    {
+     "path": "SKILL.md",
+     "sha256": "3497bd672c185df19a2205190f897fddf64f9b55a599ad3c24443b87241139e6",
+     "bytes": 6332
+    }
+   ],
+   "refused_non_text": [],
+   "install": "mkdir -p ~/.claude/skills && cp -r .claude/skills/kosif-superpowers/vendor/kosif-atlas/skills/162-code-tour/531-code-tour ~/.claude/skills/code-tour"
+  },
+  {
+   "atlas_id": 5379,
+   "plugin": "coderabbit-pack",
+   "skill": "coderabbit-observability",
+   "license": "MIT",
+   "upstream": "https://github.com/jeremylongshore/tons-of-skills-marketplace/tree/b520cf9/plugins/saas-packs/coderabbit-pack",
+   "path": "skills/1840-coderabbit-pack/5379-coderabbit-observability",
+   "files": [
+    {
+     "path": "SKILL.md",
+     "sha256": "79071eb58289bcbe56630440a1b2406c4e870903076166b3e98bd0bd01d0fa15",
+     "bytes": 4313
+    },
+    {
+     "path": "references/official-docs.md",
+     "sha256": "d795198c4e1f514dfb6d407a16d56ed07e047aab800593bb5f509a1ce7ab8697",
+     "bytes": 1351
+    }
+   ],
+   "refused_non_text": [],
+   "install": "mkdir -p ~/.claude/skills && cp -r .claude/skills/kosif-superpowers/vendor/kosif-atlas/skills/1840-coderabbit-pack/5379-coderabbit-observability ~/.claude/skills/coderabbit-observability"
+  },
+  {
+   "atlas_id": 5396,
+   "plugin": "cohere-pack",
+   "skill": "cohere-enterprise-rbac",
+   "license": "MIT",
+   "upstream": "https://github.com/jeremylongshore/tons-of-skills-marketplace/tree/b520cf9/plugins/saas-packs/cohere-pack",
+   "path": "skills/1841-cohere-pack/5396-cohere-enterprise-rbac",
+   "files": [
+    {
+     "path": "SKILL.md",
+     "sha256": "23839a3d9b244acc671b8975971baa0af47b0b83c54416244c06e2eb6bbf8e28",
+     "bytes": 4413
+    },
+    {
+     "path": "references/official-docs.md",
+     "sha256": "d5f3a235a9a7982243edeb0ff88d7f9d3975669cefdbf47942c1f7fabc6221e4",
+     "bytes": 3279
+    }
+   ],
+   "refused_non_text": [],
+   "install": "mkdir -p ~/.claude/skills && cp -r .claude/skills/kosif-superpowers/vendor/kosif-atlas/skills/1841-cohere-pack/5396-cohere-enterprise-rbac ~/.claude/skills/cohere-enterprise-rbac"
+  },
+  {
+   "atlas_id": 5675,
+   "plugin": "firecrawl-pack",
+   "skill": "firecrawl-reliability-patterns",
+   "license": "MIT",
+   "upstream": "https://github.com/jeremylongshore/tons-of-skills-marketplace/tree/b520cf9/plugins/saas-packs/firecrawl-pack",
+   "path": "skills/1853-firecrawl-pack/5675-firecrawl-reliability-patterns",
+   "files": [
+    {
+     "path": "SKILL.md",
+     "sha256": "73304a25c6bdb984092b9737d5c9342d08cd5672f3366eaf601ba850343a8538",
+     "bytes": 4486
+    },
+    {
+     "path": "references/official-docs.md",
+     "sha256": "b808f03007754b1a6672c7daa91ad27bc37340e35bbefba521365953456a0ba1",
+     "bytes": 1816
+    }
+   ],
+   "refused_non_text": [],
+   "install": "mkdir -p ~/.claude/skills && cp -r .claude/skills/kosif-superpowers/vendor/kosif-atlas/skills/1853-firecrawl-pack/5675-firecrawl-reliability-patterns ~/.claude/skills/firecrawl-reliability-patterns"
+  },
+  {
+   "atlas_id": 5694,
+   "plugin": "fireflies-pack",
+   "skill": "fireflies-multi-env-setup",
+   "license": "MIT",
+   "upstream": "https://github.com/jeremylongshore/tons-of-skills-marketplace/tree/b520cf9/plugins/saas-packs/fireflies-pack",
+   "path": "skills/1854-fireflies-pack/5694-fireflies-multi-env-setup",
+   "files": [
+    {
+     "path": "SKILL.md",
+     "sha256": "23d320861dcf9b417fad5ff2d55596ee5864034e353622ecf17afb063472afd0",
+     "bytes": 4120
+    },
+    {
+     "path": "references/official-docs.md",
+     "sha256": "42cd1b96dde310cf03c02d8c78bde815a222e721d163481fc037a84b2c3380fd",
+     "bytes": 1721
+    }
+   ],
+   "refused_non_text": [],
+   "install": "mkdir -p ~/.claude/skills && cp -r .claude/skills/kosif-superpowers/vendor/kosif-atlas/skills/1854-fireflies-pack/5694-fireflies-multi-env-setup ~/.claude/skills/fireflies-multi-env-setup"
+  },
+  {
+   "atlas_id": 5949,
+   "plugin": "ideogram-pack",
+   "skill": "ideogram-data-handling",
+   "license": "MIT",
+   "upstream": "https://github.com/jeremylongshore/tons-of-skills-marketplace/tree/b520cf9/plugins/saas-packs/ideogram-pack",
+   "path": "skills/1869-ideogram-pack/5949-ideogram-data-handling",
+   "files": [
+    {
+     "path": "SKILL.md",
+     "sha256": "a474b619f95bc5bfa42408ca4b6419244e4e9d5e2b438b14bb4aad1ab26f7f96",
+     "bytes": 4680
+    },
+    {
+     "path": "references/official-docs.md",
+     "sha256": "09903e90a07b27098c534964940ef60042039e1668b1d19584b80b2c91f57e69",
+     "bytes": 2489
+    }
+   ],
+   "refused_non_text": [],
+   "install": "mkdir -p ~/.claude/skills && cp -r .claude/skills/kosif-superpowers/vendor/kosif-atlas/skills/1869-ideogram-pack/5949-ideogram-data-handling ~/.claude/skills/ideogram-data-handling"
+  },
+  {
+   "atlas_id": 6189,
+   "plugin": "linear-pack",
+   "skill": "linear-multi-env-setup",
+   "license": "MIT",
+   "upstream": "https://github.com/jeremylongshore/tons-of-skills-marketplace/tree/b520cf9/plugins/saas-packs/linear-pack",
+   "path": "skills/1878-linear-pack/6189-linear-multi-env-setup",
+   "files": [
+    {
+     "path": "SKILL.md",
+     "sha256": "5236e937d2b02687514dd674d653808a56aa1d894cf6977ec50b17d98653976c",
+     "bytes": 4943
+    },
+    {
+     "path": "references/official-docs.md",
+     "sha256": "7c4f907b92fc45f850b2eba8f48d1b48a0a8fafb1e78de6a55043f508c2727c2",
+     "bytes": 3264
+    }
+   ],
+   "refused_non_text": [],
+   "install": "mkdir -p ~/.claude/skills && cp -r .claude/skills/kosif-superpowers/vendor/kosif-atlas/skills/1878-linear-pack/6189-linear-multi-env-setup ~/.claude/skills/linear-multi-env-setup"
+  },
+  {
+   "atlas_id": 6344,
+   "plugin": "mistral-pack",
+   "skill": "mistral-reference-architecture",
+   "license": "MIT",
+   "upstream": "https://github.com/jeremylongshore/tons-of-skills-marketplace/tree/b520cf9/plugins/saas-packs/mistral-pack",
+   "path": "skills/1885-mistral-pack/6344-mistral-reference-architecture",
+   "files": [
+    {
+     "path": "SKILL.md",
+     "sha256": "fdd46d1356fdaaf1f9abf34a1ea1bc8968a355f7fa2538557b923faf3db87130",
+     "bytes": 3728
+    },
+    {
+     "path": "references/official-docs.md",
+     "sha256": "baad83a634e17890b7d6da598f25445655df2740decf0c6cecd84b6e07e826f6",
+     "bytes": 886
+    }
+   ],
+   "refused_non_text": [],
+   "install": "mkdir -p ~/.claude/skills && cp -r .claude/skills/kosif-superpowers/vendor/kosif-atlas/skills/1885-mistral-pack/6344-mistral-reference-architecture ~/.claude/skills/mistral-reference-architecture"
+  },
+  {
+   "atlas_id": 6390,
+   "plugin": "notion-pack",
+   "skill": "notion-known-pitfalls",
+   "license": "MIT",
+   "upstream": "https://github.com/jeremylongshore/tons-of-skills-marketplace/tree/b520cf9/plugins/saas-packs/notion-pack",
+   "path": "skills/1887-notion-pack/6390-notion-known-pitfalls",
+   "files": [
+    {
+     "path": "SKILL.md",
+     "sha256": "ed2e0364c2c05869eebc1fce360bfb4984fcd8a0a4e7a24e444418b01548a78b",
+     "bytes": 3857
+    },
+    {
+     "path": "references/official-docs.md",
+     "sha256": "c76b3977f8f1a9a69f83fa640dbb3e5bc05a50e41011d2e632b6e6123c64aada",
+     "bytes": 2177
+    }
+   ],
+   "refused_non_text": [],
+   "install": "mkdir -p ~/.claude/skills && cp -r .claude/skills/kosif-superpowers/vendor/kosif-atlas/skills/1887-notion-pack/6390-notion-known-pitfalls ~/.claude/skills/notion-known-pitfalls"
+  },
+  {
+   "atlas_id": 6464,
+   "plugin": "openevidence-pack",
+   "skill": "openevidence-observability",
+   "license": "MIT",
+   "upstream": "https://github.com/jeremylongshore/tons-of-skills-marketplace/tree/b520cf9/plugins/saas-packs/openevidence-pack",
+   "path": "skills/1890-openevidence-pack/6464-openevidence-observability",
+   "files": [
+    {
+     "path": "SKILL.md",
+     "sha256": "71b081e4a14132ace87afd656acc916a9d966b33980815ed0644084b1167583c",
+     "bytes": 4457
+    },
+    {
+     "path": "references/official-docs.md",
+     "sha256": "eb4f8d012dc5fc72abf5c07fea53de7ef170f40144d0d4d67d68cb98e809c5ae",
+     "bytes": 2563
+    }
+   ],
+   "refused_non_text": [],
+   "install": "mkdir -p ~/.claude/skills && cp -r .claude/skills/kosif-superpowers/vendor/kosif-atlas/skills/1890-openevidence-pack/6464-openevidence-observability ~/.claude/skills/openevidence-observability"
+  },
+  {
+   "atlas_id": 6533,
+   "plugin": "posthog-pack",
+   "skill": "posthog-enterprise-rbac",
+   "license": "MIT",
+   "upstream": "https://github.com/jeremylongshore/tons-of-skills-marketplace/tree/b520cf9/plugins/saas-packs/posthog-pack",
+   "path": "skills/1894-posthog-pack/6533-posthog-enterprise-rbac",
+   "files": [
+    {
+     "path": "SKILL.md",
+     "sha256": "db78da3ae24c3c994da2a37b3fbbcc375e7f5852129b451bff72a04963fbf33e",
+     "bytes": 7971
+    },
+    {
+     "path": "references/official-docs.md",
+     "sha256": "4786e8fc1ac08ebc626a3a5a8e4d6534351766186ccf51a444dcfae7c465a2ee",
+     "bytes": 800
+    }
+   ],
+   "refused_non_text": [],
+   "install": "mkdir -p ~/.claude/skills && cp -r .claude/skills/kosif-superpowers/vendor/kosif-atlas/skills/1894-posthog-pack/6533-posthog-enterprise-rbac ~/.claude/skills/posthog-enterprise-rbac"
+  },
+  {
+   "atlas_id": 6571,
+   "plugin": "procore-pack",
+   "skill": "procore-upgrade-migration",
+   "license": "MIT",
+   "upstream": "https://github.com/jeremylongshore/tons-of-skills-marketplace/tree/b520cf9/plugins/saas-packs/procore-pack",
+   "path": "skills/1895-procore-pack/6571-procore-upgrade-migration",
+   "files": [
+    {
+     "path": "SKILL.md",
+     "sha256": "200922f1e9c68670530f25e553c551c1f906e4eb9f5156f7478026347384521e",
+     "bytes": 4302
+    },
+    {
+     "path": "references/official-docs.md",
+     "sha256": "cd11a97449bf3a13d6980ba0a311d08078ff5f12708600b638014ee0d36666e3",
+     "bytes": 993
+    }
+   ],
+   "refused_non_text": [],
+   "install": "mkdir -p ~/.claude/skills && cp -r .claude/skills/kosif-superpowers/vendor/kosif-atlas/skills/1895-procore-pack/6571-procore-upgrade-migration ~/.claude/skills/procore-upgrade-migration"
+  },
+  {
+   "atlas_id": 6771,
+   "plugin": "shopify-pack",
+   "skill": "shopify-advanced-troubleshooting",
+   "license": "MIT",
+   "upstream": "https://github.com/jeremylongshore/tons-of-skills-marketplace/tree/b520cf9/plugins/saas-packs/shopify-pack",
+   "path": "skills/1905-shopify-pack/6771-shopify-advanced-troubleshooting",
+   "files": [
+    {
+     "path": "SKILL.md",
+     "sha256": "1b16ebc38bd4fb3bf216446176b359c7ca4efb0f0792613fcd68450382c0b48b",
+     "bytes": 5005
+    },
+    {
+     "path": "references/debug-intermittent-failures.md",
+     "sha256": "011165c0a4a88e325736515822d9a6444f03dfe708fb5b0af769a8986372832d",
+     "bytes": 1540
+    },
+    {
+     "path": "references/layer-by-layer-diagnostic.md",
+     "sha256": "579b298c5ac9ad385313a9b80a4dd58a49722fcacc6ece92b1c627358c869967",
+     "bytes": 1674
+    },
+    {
+     "path": "references/webhook-status-query.md",
+     "sha256": "44d774a1fb26db9141d9cb4c822ec3ff7cfcf746af4b9774d4670567ad5c5867",
+     "bytes": 731
+    }
+   ],
+   "refused_non_text": [],
+   "install": "mkdir -p ~/.claude/skills && cp -r .claude/skills/kosif-superpowers/vendor/kosif-atlas/skills/1905-shopify-pack/6771-shopify-advanced-troubleshooting ~/.claude/skills/shopify-advanced-troubleshooting"
+  },
+  {
+   "atlas_id": 6802,
+   "plugin": "shopify-pack",
+   "skill": "shopify-reliability-patterns",
+   "license": "MIT",
+   "upstream": "https://github.com/jeremylongshore/tons-of-skills-marketplace/tree/b520cf9/plugins/saas-packs/shopify-pack",
+   "path": "skills/1905-shopify-pack/6802-shopify-reliability-patterns",
+   "files": [
+    {
+     "path": "SKILL.md",
+     "sha256": "37c69de853a771d423dc38a5de1d40a01a55e3793050bd57434a6172a6c18616",
+     "bytes": 4342
+    },
+    {
+     "path": "references/cached-fallback.md",
+     "sha256": "4081adbf74f42a5edd5f063abcacc0dbedb5a92b86e6ee3a1fa2b8d9fadaa0eb",
+     "bytes": 1375
+    },
+    {
+     "path": "references/circuit-breaker.md",
+     "sha256": "52c3a79d4aba8d6301ceab45797cc1b85a7c325e30b99136e767870cee9bcdce",
+     "bytes": 1738
+    },
+    {
+     "path": "references/rate-limit-retry.md",
+     "sha256": "d68145c84bb897aaae2649cd7639acc15f2bad15d37ac2ba2a9ad4c79e3f5a5a",
+     "bytes": 1294
+    },
+    {
+     "path": "references/webhook-idempotency.md",
+     "sha256": "8adbc7587afda54158e7a6cac7276564a715c0ca5796e510829d2318bef2f810",
+     "bytes": 1567
+    },
+    {
+     "path": "references/webhook-processing-queue.md",
+     "sha256": "97110bd3baee61cca6824c545f7393e12b778de1d5ef3acc47313f3998743bca",
+     "bytes": 1366
+    }
+   ],
+   "refused_non_text": [],
+   "install": "mkdir -p ~/.claude/skills && cp -r .claude/skills/kosif-superpowers/vendor/kosif-atlas/skills/1905-shopify-pack/6802-shopify-reliability-patterns ~/.claude/skills/shopify-reliability-patterns"
+  },
+  {
+   "atlas_id": 7023,
+   "plugin": "windsurf-pack",
+   "skill": "windsurf-known-pitfalls",
+   "license": "MIT",
+   "upstream": "https://github.com/jeremylongshore/tons-of-skills-marketplace/tree/b520cf9/plugins/saas-packs/windsurf-pack",
+   "path": "skills/1915-windsurf-pack/7023-windsurf-known-pitfalls",
+   "files": [
+    {
+     "path": "SKILL.md",
+     "sha256": "4f23a78f8b9d40b3aeaad3d11231092dd099403fb102da8d669fd98e36c30009",
+     "bytes": 9246
+    },
+    {
+     "path": "references/official-docs.md",
+     "sha256": "405f9c7844a8ccdab7a8a48e7e43f9e680bfe30538f47c5f7817c910bae87a9f",
+     "bytes": 392
+    }
+   ],
+   "refused_non_text": [],
+   "install": "mkdir -p ~/.claude/skills && cp -r .claude/skills/kosif-superpowers/vendor/kosif-atlas/skills/1915-windsurf-pack/7023-windsurf-known-pitfalls ~/.claude/skills/windsurf-known-pitfalls"
+  },
+  {
+   "atlas_id": 7149,
+   "plugin": "epharmoge",
+   "skill": "contextualize",
+   "license": "MIT",
+   "upstream": "https://github.com/jongwony/epistemic-protocols/tree/10abcb37573c187b3fc23d5dc834519475b920b2/epharmoge",
+   "path": "skills/1989-epharmoge/7149-contextualize",
+   "files": [
+    {
+     "path": "SKILL.md",
+     "sha256": "39e61b7a3dcb95899776f5e1531cbfdb6e7f20a61349b62cd4530d98fc9f47b8",
+     "bytes": 34850
+    },
+    {
+     "path": "references/round-composition.md",
+     "sha256": "a1c7cebd34374f2dde8396b74afca69b1125406072bafb3cd6280525e8d06514",
+     "bytes": 2627
+    }
+   ],
+   "refused_non_text": [],
+   "install": "mkdir -p ~/.claude/skills && cp -r .claude/skills/kosif-superpowers/vendor/kosif-atlas/skills/1989-epharmoge/7149-contextualize ~/.claude/skills/contextualize"
+  },
+  {
+   "atlas_id": 715,
+   "plugin": "mas-ai-workflows",
+   "skill": "ai-citation-verification",
+   "license": "MIT",
+   "upstream": "https://github.com/alivirgo/major-ai-skills/tree/ba3a5729d60646626fee31c2d9906adc59f418dc/plugins/mas-ai-workflows",
+   "path": "skills/229-mas-ai-workflows/715-ai-citation-verification",
+   "files": [
+    {
+     "path": "SKILL.md",
+     "sha256": "1f10b26b5a9aca2b4c817a2afaa09dc43d925c9aaa1a90c3cb8b48f1d4bc95dc",
+     "bytes": 1561
+    }
+   ],
+   "refused_non_text": [],
+   "install": "mkdir -p ~/.claude/skills && cp -r .claude/skills/kosif-superpowers/vendor/kosif-atlas/skills/229-mas-ai-workflows/715-ai-citation-verification ~/.claude/skills/ai-citation-verification"
+  },
+  {
+   "atlas_id": 7150,
+   "plugin": "epistemic-cooperative",
+   "skill": "gate-check",
+   "license": "MIT",
+   "upstream": "https://github.com/jongwony/epistemic-protocols/tree/10abcb37573c187b3fc23d5dc834519475b920b2/epistemic-cooperative",
+   "path": "skills/1990-epistemic-cooperative/7150-gate-check",
+   "files": [
+    {
+     "path": "SKILL.md",
+     "sha256": "107c1781ee660cb4aa863e1f2e41184a07ab23e04564e9b74ba9e948b33e4280",
+     "bytes": 53167
+    }
+   ],
+   "refused_non_text": [],
+   "install": "mkdir -p ~/.claude/skills && cp -r .claude/skills/kosif-superpowers/vendor/kosif-atlas/skills/1990-epistemic-cooperative/7150-gate-check ~/.claude/skills/gate-check"
+  },
+  {
+   "atlas_id": 7157,
+   "plugin": "epistemic-cooperative",
+   "skill": "white-bear",
+   "license": "MIT",
+   "upstream": "https://github.com/jongwony/epistemic-protocols/tree/10abcb37573c187b3fc23d5dc834519475b920b2/epistemic-cooperative",
+   "path": "skills/1990-epistemic-cooperative/7157-white-bear",
+   "files": [
+    {
+     "path": "SKILL.md",
+     "sha256": "45dae5139ab90504d4856cde1be19b65dd6619ed76b5af3982f1a7ef5e35a4e7",
+     "bytes": 10112
+    }
+   ],
+   "refused_non_text": [],
+   "install": "mkdir -p ~/.claude/skills && cp -r .claude/skills/kosif-superpowers/vendor/kosif-atlas/skills/1990-epistemic-cooperative/7157-white-bear ~/.claude/skills/white-bear"
+  },
+  {
+   "atlas_id": 7158,
+   "plugin": "epistemic-cooperative",
+   "skill": "zero-shot",
+   "license": "MIT",
+   "upstream": "https://github.com/jongwony/epistemic-protocols/tree/10abcb37573c187b3fc23d5dc834519475b920b2/epistemic-cooperative",
+   "path": "skills/1990-epistemic-cooperative/7158-zero-shot",
+   "files": [
+    {
+     "path": "SKILL.md",
+     "sha256": "264d1ed8a2f4c6e94404403adf44357d316652a9e916e478c723403d982d42a0",
+     "bytes": 6725
+    }
+   ],
+   "refused_non_text": [],
+   "install": "mkdir -p ~/.claude/skills && cp -r .claude/skills/kosif-superpowers/vendor/kosif-atlas/skills/1990-epistemic-cooperative/7158-zero-shot ~/.claude/skills/zero-shot"
+  },
+  {
+   "atlas_id": 718,
+   "plugin": "mas-ai-workflows",
+   "skill": "ai-pii-redaction-review",
+   "license": "MIT",
+   "upstream": "https://github.com/alivirgo/major-ai-skills/tree/ba3a5729d60646626fee31c2d9906adc59f418dc/plugins/mas-ai-workflows",
+   "path": "skills/229-mas-ai-workflows/718-ai-pii-redaction-review",
+   "files": [
+    {
+     "path": "SKILL.md",
+     "sha256": "93bdc55862b43b69ac765b6bf6016eb560612493251f35ee0c461c385d50d500",
+     "bytes": 1645
+    }
+   ],
+   "refused_non_text": [],
+   "install": "mkdir -p ~/.claude/skills && cp -r .claude/skills/kosif-superpowers/vendor/kosif-atlas/skills/229-mas-ai-workflows/718-ai-pii-redaction-review ~/.claude/skills/ai-pii-redaction-review"
+  },
+  {
+   "atlas_id": 7753,
+   "plugin": "github-actions-plugin",
+   "skill": "ai-review-max-turns",
+   "license": "MIT",
+   "upstream": "https://github.com/laurigates/claude-plugins/tree/9caa2be8e7b4b35823e4154c610e3846af05635c/github-actions-plugin",
+   "path": "skills/2153-github-actions-plugin/7753-ai-review-max-turns",
+   "files": [
+    {
+     "path": "REFERENCE.md",
+     "sha256": "86330d77ba61ae34387ec6cf478394c83c712078cddfc5b75d48dba5aafc639d",
+     "bytes": 5967
+    },
+    {
+     "path": "SKILL.md",
+     "sha256": "395f7bca26d62cb54bc2bd0160b28259044ae2961260d888f9f9384674d3dd1c",
+     "bytes": 14609
+    }
+   ],
+   "refused_non_text": [],
+   "install": "mkdir -p ~/.claude/skills && cp -r .claude/skills/kosif-superpowers/vendor/kosif-atlas/skills/2153-github-actions-plugin/7753-ai-review-max-turns ~/.claude/skills/ai-review-max-turns"
+  },
+  {
+   "atlas_id": 7774,
+   "plugin": "home-assistant-plugin",
+   "skill": "ha-validate",
+   "license": "MIT",
+   "upstream": "https://github.com/laurigates/claude-plugins/tree/9caa2be8e7b4b35823e4154c610e3846af05635c/home-assistant-plugin",
+   "path": "skills/2155-home-assistant-plugin/7774-ha-validate",
+   "files": [
+    {
+     "path": "SKILL.md",
+     "sha256": "9aa2dd208c8800f380a0421a459505b2df1abeea9d47c278bca297ebeaa2196a",
+     "bytes": 3980
+    }
+   ],
+   "refused_non_text": [],
+   "install": "mkdir -p ~/.claude/skills && cp -r .claude/skills/kosif-superpowers/vendor/kosif-atlas/skills/2155-home-assistant-plugin/7774-ha-validate ~/.claude/skills/ha-validate"
+  },
+  {
+   "atlas_id": 7801,
+   "plugin": "migration-patterns-plugin",
+   "skill": "eslint-to-biome",
+   "license": "MIT",
+   "upstream": "https://github.com/laurigates/claude-plugins/tree/9caa2be8e7b4b35823e4154c610e3846af05635c/migration-patterns-plugin",
+   "path": "skills/2160-migration-patterns-plugin/7801-eslint-to-biome",
+   "files": [
+    {
+     "path": "SKILL.md",
+     "sha256": "2f6aa15fad4b9d7171799380f1354899e60a3ced0176fa7006731165ba162680",
+     "bytes": 8158
+    }
+   ],
+   "refused_non_text": [],
+   "install": "mkdir -p ~/.claude/skills && cp -r .claude/skills/kosif-superpowers/vendor/kosif-atlas/skills/2160-migration-patterns-plugin/7801-eslint-to-biome ~/.claude/skills/eslint-to-biome"
+  },
+  {
+   "atlas_id": 7802,
+   "plugin": "migration-patterns-plugin",
+   "skill": "flake8-to-ruff",
+   "license": "MIT",
+   "upstream": "https://github.com/laurigates/claude-plugins/tree/9caa2be8e7b4b35823e4154c610e3846af05635c/migration-patterns-plugin",
+   "path": "skills/2160-migration-patterns-plugin/7802-flake8-to-ruff",
+   "files": [
+    {
+     "path": "SKILL.md",
+     "sha256": "619193c496355d3bfc9ca9fda6d7ccdbe70a0c63ae96d8a9f2a11e0c696f3597",
+     "bytes": 6486
+    }
+   ],
+   "refused_non_text": [],
+   "install": "mkdir -p ~/.claude/skills && cp -r .claude/skills/kosif-superpowers/vendor/kosif-atlas/skills/2160-migration-patterns-plugin/7802-flake8-to-ruff ~/.claude/skills/flake8-to-ruff"
+  },
+  {
+   "atlas_id": 7864,
+   "plugin": "rust-plugin",
+   "skill": "cargo-machete",
+   "license": "MIT",
+   "upstream": "https://github.com/laurigates/claude-plugins/tree/9caa2be8e7b4b35823e4154c610e3846af05635c/rust-plugin",
+   "path": "skills/2167-rust-plugin/7864-cargo-machete",
+   "files": [
+    {
+     "path": "REFERENCE.md",
+     "sha256": "609dedf434f0de42db5d083363f7f6cf0c35cdae54cad87148e481cadaf3c103",
+     "bytes": 4662
+    },
+    {
+     "path": "SKILL.md",
+     "sha256": "924a6c4372df995df89f0fc35d729a35ba4d36b7cf61e81630ef5f596ca719a1",
+     "bytes": 4574
+    }
+   ],
+   "refused_non_text": [],
+   "install": "mkdir -p ~/.claude/skills && cp -r .claude/skills/kosif-superpowers/vendor/kosif-atlas/skills/2167-rust-plugin/7864-cargo-machete ~/.claude/skills/cargo-machete"
+  },
+  {
+   "atlas_id": 8276,
+   "plugin": "majestic-founder",
+   "skill": "operating-priorities",
+   "license": "MIT",
+   "upstream": "https://github.com/majesticlabs-dev/majestic-abilities/tree/1198e20e5d1086fc9d055c86f9c029ffa479af5a/plugins/founder",
+   "path": "skills/2209-majestic-founder/8276-operating-priorities",
+   "files": [
+    {
+     "path": "SKILL.md",
+     "sha256": "cec3fb1341d38a8c9add80dedb53bc7a5cfc9f2ff68df0b9633af59957a2cd39",
+     "bytes": 3291
+    },
+    {
+     "path": "references/operating-rules.md",
+     "sha256": "1df8103fb9655a5b82c5375460394688fd6e36adb65e5733cdf9b31eb3177ad3",
+     "bytes": 4879
+    }
+   ],
+   "refused_non_text": [],
+   "install": "mkdir -p ~/.claude/skills && cp -r .claude/skills/kosif-superpowers/vendor/kosif-atlas/skills/2209-majestic-founder/8276-operating-priorities ~/.claude/skills/operating-priorities"
+  },
+  {
+   "atlas_id": 8360,
+   "plugin": "majestic-sales",
+   "skill": "icp-definition",
+   "license": "MIT",
+   "upstream": "https://github.com/majesticlabs-dev/majestic-abilities/tree/1198e20e5d1086fc9d055c86f9c029ffa479af5a/plugins/sales",
+   "path": "skills/2216-majestic-sales/8360-icp-definition",
+   "files": [
+    {
+     "path": "SKILL.md",
+     "sha256": "f822a7f8463514492113174e032094c174ba1cf415eb5ad3bb553aa72556c42a",
+     "bytes": 2239
+    },
+    {
+     "path": "references/account-tiering.md",
+     "sha256": "2339f12f6565aabe756424242eddf1e4eb6940d88eb2fc6541c8073e05ad635d",
+     "bytes": 758
+    },
+    {
+     "path": "references/evidence-gates.md",
+     "sha256": "af0f44ee31ba7eb43cf50bba43f04989dd0662fdad4344ef8f9079c1140405e4",
+     "bytes": 2679
+    }
+   ],
+   "refused_non_text": [],
+   "install": "mkdir -p ~/.claude/skills && cp -r .claude/skills/kosif-superpowers/vendor/kosif-atlas/skills/2216-majestic-sales/8360-icp-definition ~/.claude/skills/icp-definition"
+  },
+  {
+   "atlas_id": 8563,
+   "plugin": "browser-extension-engineering",
+   "skill": "manifest-permissions-audit",
+   "license": "MIT",
+   "upstream": "https://github.com/mcorbett51090/ravenclaude/tree/300e672ec81d25d7d6a07345aa7783f7c89d5db7/plugins/browser-extension-engineering",
+   "path": "skills/2249-browser-extension-engineering/8563-manifest-permissions-audit",
+   "files": [
+    {
+     "path": "SKILL.md",
+     "sha256": "efe900e15889a6c524738969bbdbb938a05fab3a0a45a0afab861c2301562259",
+     "bytes": 3528
+    }
+   ],
+   "refused_non_text": [],
+   "install": "mkdir -p ~/.claude/skills && cp -r .claude/skills/kosif-superpowers/vendor/kosif-atlas/skills/2249-browser-extension-engineering/8563-manifest-permissions-audit ~/.claude/skills/manifest-permissions-audit"
+  },
+  {
+   "atlas_id": 8666,
+   "plugin": "data-quality-observability",
+   "skill": "choose-data-quality-approach",
+   "license": "MIT",
+   "upstream": "https://github.com/mcorbett51090/ravenclaude/tree/300e672ec81d25d7d6a07345aa7783f7c89d5db7/plugins/data-quality-observability",
+   "path": "skills/2271-data-quality-observability/8666-choose-data-quality-approach",
+   "files": [
+    {
+     "path": "SKILL.md",
+     "sha256": "460605987401ea3a173149958953f801194dc14a084ee0dcfa069fcbba2d8e12",
+     "bytes": 5876
+    }
+   ],
+   "refused_non_text": [],
+   "install": "mkdir -p ~/.claude/skills && cp -r .claude/skills/kosif-superpowers/vendor/kosif-atlas/skills/2271-data-quality-observability/8666-choose-data-quality-approach ~/.claude/skills/choose-data-quality-approach"
+  },
+  {
+   "atlas_id": 8825,
+   "plugin": "franchise-operations",
+   "skill": "run-brand-standard-audit",
+   "license": "MIT",
+   "upstream": "https://github.com/mcorbett51090/ravenclaude/tree/300e672ec81d25d7d6a07345aa7783f7c89d5db7/plugins/franchise-operations",
+   "path": "skills/2300-franchise-operations/8825-run-brand-standard-audit",
+   "files": [
+    {
+     "path": "SKILL.md",
+     "sha256": "abde7f8973d0913cbf0330ee1cd5954d1c8b26db688751d1315ea880de2438ba",
+     "bytes": 2901
+    }
+   ],
+   "refused_non_text": [],
+   "install": "mkdir -p ~/.claude/skills && cp -r .claude/skills/kosif-superpowers/vendor/kosif-atlas/skills/2300-franchise-operations/8825-run-brand-standard-audit ~/.claude/skills/run-brand-standard-audit"
+  },
+  {
+   "atlas_id": 8874,
+   "plugin": "hardware-electronics-engineering",
+   "skill": "review-schematic-and-layout",
+   "license": "MIT",
+   "upstream": "https://github.com/mcorbett51090/ravenclaude/tree/300e672ec81d25d7d6a07345aa7783f7c89d5db7/plugins/hardware-electronics-engineering",
+   "path": "skills/2313-hardware-electronics-engineering/8874-review-schematic-and-layout",
+   "files": [
+    {
+     "path": "SKILL.md",
+     "sha256": "54460e0523ff9fd5fd5e985ed6da4feb05fb3866d710b929b2912ade899aafd1",
+     "bytes": 2723
+    }
+   ],
+   "refused_non_text": [],
+   "install": "mkdir -p ~/.claude/skills && cp -r .claude/skills/kosif-superpowers/vendor/kosif-atlas/skills/2313-hardware-electronics-engineering/8874-review-schematic-and-layout ~/.claude/skills/review-schematic-and-layout"
+  },
+  {
+   "atlas_id": 8913,
+   "plugin": "internal-audit",
+   "skill": "rate-and-report-audit-findings",
+   "license": "MIT",
+   "upstream": "https://github.com/mcorbett51090/ravenclaude/tree/300e672ec81d25d7d6a07345aa7783f7c89d5db7/plugins/internal-audit",
+   "path": "skills/2322-internal-audit/8913-rate-and-report-audit-findings",
+   "files": [
+    {
+     "path": "SKILL.md",
+     "sha256": "c95e85df4a926e5e7d43308953aa81c44c11dcd867c2f30a506daa6f3f67f69a",
+     "bytes": 6764
+    }
+   ],
+   "refused_non_text": [],
+   "install": "mkdir -p ~/.claude/skills && cp -r .claude/skills/kosif-superpowers/vendor/kosif-atlas/skills/2322-internal-audit/8913-rate-and-report-audit-findings ~/.claude/skills/rate-and-report-audit-findings"
+  },
+  {
+   "atlas_id": 8954,
+   "plugin": "martech-event-instrumentation",
+   "skill": "implement-event-instrumentation-and-consent",
+   "license": "MIT",
+   "upstream": "https://github.com/mcorbett51090/ravenclaude/tree/300e672ec81d25d7d6a07345aa7783f7c89d5db7/plugins/martech-event-instrumentation",
+   "path": "skills/2332-martech-event-instrumentation/8954-implement-event-instrumentation-and-cons",
+   "files": [
+    {
+     "path": "SKILL.md",
+     "sha256": "531a6a43eab504c753c437aaaeae088da02b8a34c6f326892032aa9f29c5a997",
+     "bytes": 5289
+    }
+   ],
+   "refused_non_text": [],
+   "install": "mkdir -p ~/.claude/skills && cp -r .claude/skills/kosif-superpowers/vendor/kosif-atlas/skills/2332-martech-event-instrumentation/8954-implement-event-instrumentation-and-cons ~/.claude/skills/implement-event-instrumentation-and-cons"
+  },
+  {
+   "atlas_id": 9003,
+   "plugin": "museum-cultural-institution-operations",
+   "skill": "publish-digital-collections-and-access",
+   "license": "MIT",
+   "upstream": "https://github.com/mcorbett51090/ravenclaude/tree/300e672ec81d25d7d6a07345aa7783f7c89d5db7/plugins/museum-cultural-institution-operations",
+   "path": "skills/2342-museum-cultural-institution-operations/9003-publish-digital-collections-and-access",
+   "files": [
+    {
+     "path": "SKILL.md",
+     "sha256": "ba94265b5692350aadb0e37a739c38891ed31d39d5f995d7290ccaa234f0549d",
+     "bytes": 5534
+    }
+   ],
+   "refused_non_text": [],
+   "install": "mkdir -p ~/.claude/skills && cp -r .claude/skills/kosif-superpowers/vendor/kosif-atlas/skills/2342-museum-cultural-institution-operations/9003-publish-digital-collections-and-access ~/.claude/skills/publish-digital-collections-and-access"
+  },
+  {
+   "atlas_id": 9140,
+   "plugin": "recommendation-systems-engineering",
+   "skill": "evaluate-recommenders",
+   "license": "MIT",
+   "upstream": "https://github.com/mcorbett51090/ravenclaude/tree/300e672ec81d25d7d6a07345aa7783f7c89d5db7/plugins/recommendation-systems-engineering",
+   "path": "skills/2367-recommendation-systems-engineering/9140-evaluate-recommenders",
+   "files": [
+    {
+     "path": "SKILL.md",
+     "sha256": "e962cc95bcdce7ed6f4f6007d1cfc54a67eb28b1853cc05f0edb64a77ded33a9",
+     "bytes": 2986
+    }
+   ],
+   "refused_non_text": [],
+   "install": "mkdir -p ~/.claude/skills && cp -r .claude/skills/kosif-superpowers/vendor/kosif-atlas/skills/2367-recommendation-systems-engineering/9140-evaluate-recommenders ~/.claude/skills/evaluate-recommenders"
+  },
+  {
+   "atlas_id": 9284,
+   "plugin": "title-escrow-settlement",
+   "skill": "wire-fraud-and-trust-account-controls",
+   "license": "MIT",
+   "upstream": "https://github.com/mcorbett51090/ravenclaude/tree/300e672ec81d25d7d6a07345aa7783f7c89d5db7/plugins/title-escrow-settlement",
+   "path": "skills/2397-title-escrow-settlement/9284-wire-fraud-and-trust-account-controls",
+   "files": [
+    {
+     "path": "SKILL.md",
+     "sha256": "168d9d00e1c5c57f2e5bb13efdee7100b7510d7d90a5120dd712a7216011f0f4",
+     "bytes": 3646
+    }
+   ],
+   "refused_non_text": [],
+   "install": "mkdir -p ~/.claude/skills && cp -r .claude/skills/kosif-superpowers/vendor/kosif-atlas/skills/2397-title-escrow-settlement/9284-wire-fraud-and-trust-account-controls ~/.claude/skills/wire-fraud-and-trust-account-controls"
+  }
+ ]
+}

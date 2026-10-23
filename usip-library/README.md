@@ -34,7 +34,7 @@
 | البيانات والرسوم والمواقع | `data-analysis` | 39 | 2,742 | [cards/data/data-analysis.md](cards/data/data-analysis.md) |
 | البيانات والرسوم والمواقع | `maps-geo` | 62 | 4,467 | [cards/data/maps-geo.md](cards/data/maps-geo.md) |
 | المستندات والكتابة | `atlas-craft` | 26 | 1,807 | [cards/documents/atlas-craft.md](cards/documents/atlas-craft.md) |
-| المستندات والكتابة | `atlas-docs` | 50 | 3,473 | [cards/documents/atlas-docs.md](cards/documents/atlas-docs.md) |
+| المستندات والكتابة | `atlas-docs` | 55 | 3,824 | [cards/documents/atlas-docs.md](cards/documents/atlas-docs.md) |
 | المستندات والكتابة | `documents-office` | 34 | 2,363 | [cards/documents/documents-office.md](cards/documents/documents-office.md) |
 | المستندات والكتابة | `writing-humanizer` | 28 | 1,947 | [cards/documents/writing-humanizer.md](cards/documents/writing-humanizer.md) |
 | الرسم والأشكال والتصميم | `brand-logo-identity` | 43 | 3,186 | [cards/drawing/brand-logo-identity.md](cards/drawing/brand-logo-identity.md) |
@@ -66,7 +66,7 @@
 | البرمجة وبناء التطبيقات | `app-feature-transfer` | 155 | 11,584 | [cards/software/app-feature-transfer.md](cards/software/app-feature-transfer.md) |
 | البرمجة وبناء التطبيقات | `apps-artifacts` | 23 | 1,649 | [cards/software/apps-artifacts.md](cards/software/apps-artifacts.md) |
 | البرمجة وبناء التطبيقات | `atlas-build` | 52 | 3,767 | [cards/software/atlas-build.md](cards/software/atlas-build.md) |
-| البرمجة وبناء التطبيقات | `atlas-code` | 247 | 17,988 | [cards/software/atlas-code.md](cards/software/atlas-code.md) |
+| البرمجة وبناء التطبيقات | `atlas-code` | 277 | 20,197 | [cards/software/atlas-code.md](cards/software/atlas-code.md) |
 | البرمجة وبناء التطبيقات | `code-engineering` | 24 | 1,726 | [cards/software/code-engineering.md](cards/software/code-engineering.md) |
 | البرمجة وبناء التطبيقات | `ui-product-device` | 93 | 6,932 | [cards/software/ui-product-device.md](cards/software/ui-product-device.md) |
 | التفكير والتخطيط والاستراتيجية | `atlas-mind` | 54 | 3,679 | [cards/thinking/atlas-mind.md](cards/thinking/atlas-mind.md) |

@@ -51,6 +51,7 @@ For a task in the user's words, `python3 scripts/hub.py find "<task>"` combines 
 
 ### code: 599 powers
 
+- atlas-code: 277
 - software-investigation: 258
 - atlas-code: 247
 - code-engineering: 26
@@ -66,14 +67,14 @@ For a task in the user's words, `python3 scripts/hub.py find "<task>"` combines 
 - arabic-language: 22
 - typography-arabic: 2
 
-### data: 91 powers
+### data: 95 powers
 
-- atlas-data: 52
+- atlas-data: 56
 - data-analysis: 39
 
-### docs: 84 powers
+### docs: 89 powers
 
-- atlas-docs: 50
+- atlas-docs: 55
 - documents-office: 34
 
 ### media: 68 powers
@@ -130,9 +131,9 @@ For a task in the user's words, `python3 scripts/hub.py find "<task>"` combines 
 - web-research: 26
 - atlas-research: 11
 
-### strategy: 90 powers
+### strategy: 105 powers
 
-- atlas-strategy: 72
+- atlas-strategy: 87
 - strategy-finance: 18
 
 ## Decision flow

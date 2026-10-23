@@ -6,7 +6,7 @@
  "atlas_commit": "99bb108dff169880dd531359f474a01b73c4b233",
  "powers_added": 10,
  "sources_read": 18,
- "scope_note": "Each SKILL.md was read in full as inert text and its method rewritten in our own words; no Atlas script, package or instruction was executed or copied verbatim. Only READ_ONLY_OK, permissive-license, no-risk-flag skills were used.",
+ "scope_note": "Each SKILL.md was read in full as inert text and its method summarised in our own words on the card; with the owner's approval (2026-10-23) the whole skill folder (text files only) is also copied verbatim with its license into vendor/kosif-atlas, listed with hashes in vendor/kosif-atlas/KOSIF_INTEGRATION.json. Nothing from the Atlas was executed. Only READ_ONLY_OK, permissive-license, no-risk-flag skills were used.",
  "sources": [
   {
    "atlas_id": 5262,

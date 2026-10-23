@@ -294,7 +294,7 @@ Build, check and package the catalog, the skill and the style atlas.
 | prefix | family | domain | powers | ✅ proven | chapter |
 |---|---|---|---|---|---|
 | AGENT | Agent orchestration — تنسيق الوكلاء | mind | 46 | 1 | [agent-orchestration.md](powers/agent-orchestration.md) |
-| AMIND | Atlas: agent workflows, planning & review — أطلس: الوكلاء والتخطيط والمراجعة | mind | 54 | 0 | [atlas-mind.md](powers/atlas-mind.md) |
+| AMIND | Atlas: agent workflows, planning & review — أطلس: الوكلاء والتخطيط والمراجعة | mind | 60 | 0 | [atlas-mind.md](powers/atlas-mind.md) |
 | IDEA | Creativity engine — محرك الإبداع | mind | 29 | 2 | [creativity-engine.md](powers/creativity-engine.md) |
 | MODEL | Mental models — النماذج الذهنية | mind | 63 | 0 | [mental-models.md](powers/mental-models.md) |
 | PLAN | Planning & execution — التخطيط والتنفيذ | mind | 12 | 2 | [planning-execution.md](powers/planning-execution.md) |
@@ -306,14 +306,14 @@ Build, check and package the catalog, the skill and the style atlas.
 | PROMPT | Prompt craft — صناعة البرومبت | craft | 41 | 1 | [prompt-craft.md](powers/prompt-craft.md) |
 | WRITE | Writing & humanizer — الكتابة الطبيعية | craft | 28 | 11 | [writing-humanizer.md](powers/writing-humanizer.md) |
 | API | API testing (Bruno) — اختبار واجهات API | code | 22 | 15 | [api-testing.md](powers/api-testing.md) |
-| ACODE | Atlas: engineering & code — أطلس: الهندسة والكود | code | 247 | 0 | [atlas-code.md](powers/atlas-code.md) |
+| ACODE | Atlas: engineering & code — أطلس: الهندسة والكود | code | 277 | 0 | [atlas-code.md](powers/atlas-code.md) |
 | CODE | Code engineering — هندسة البرمجيات | code | 24 | 3 | [code-engineering.md](powers/code-engineering.md) |
 | GRAPH | Knowledge graph & mind maps — الرسم المعرفي والخرائط الذهنية | code | 21 | 11 | [knowledge-graph.md](powers/knowledge-graph.md) |
 | SEC | Security & safety — الأمان والسلامة | code | 23 | 1 | [security-safety.md](powers/security-safety.md) |
 | REA | Software investigation (REA) — فحص البرامج والهندسة العكسية | code | 258 | 30 | [software-investigation.md](powers/software-investigation.md) |
-| ADATA | Atlas: data, ML & charts — أطلس: البيانات والتعلم الآلي | data | 52 | 0 | [atlas-data.md](powers/atlas-data.md) |
+| ADATA | Atlas: data, ML & charts — أطلس: البيانات والتعلم الآلي | data | 56 | 0 | [atlas-data.md](powers/atlas-data.md) |
 | ANLY | Data analysis — تحليل البيانات | data | 39 | 36 | [data-analysis.md](powers/data-analysis.md) |
-| ADOCS | Atlas: documents & diagrams — أطلس: المستندات والمخططات | docs | 50 | 0 | [atlas-docs.md](powers/atlas-docs.md) |
+| ADOCS | Atlas: documents & diagrams — أطلس: المستندات والمخططات | docs | 55 | 0 | [atlas-docs.md](powers/atlas-docs.md) |
 | DOC | Documents & office — المستندات والمكتب | docs | 34 | 21 | [documents-office.md](powers/documents-office.md) |
 | AWEB | Atlas: research & knowledge — أطلس: البحث والمعرفة | research | 11 | 0 | [atlas-research.md](powers/atlas-research.md) |
 | WEB | Web research — البحث على الويب | research | 24 | 10 | [web-research.md](powers/web-research.md) |
@@ -323,7 +323,7 @@ Build, check and package the catalog, the skill and the style atlas.
 | TOOL | Runnable KOSIF tools — الأدوات القابلة للتشغيل | build | 159 | 126 | [runnable-tools.md](powers/runnable-tools.md) |
 | AMEDIA | Atlas: images, audio & video — أطلس: الصور والصوت والفيديو | media | 27 | 0 | [atlas-media.md](powers/atlas-media.md) |
 | MEDIA | Image & audio — الصور والصوت | media | 41 | 24 | [media-image-audio.md](powers/media-image-audio.md) |
-| ASTRAT | Atlas: product, marketing & business — أطلس: المنتج والتسويق والأعمال | strategy | 72 | 0 | [atlas-strategy.md](powers/atlas-strategy.md) |
+| ASTRAT | Atlas: product, marketing & business — أطلس: المنتج والتسويق والأعمال | strategy | 87 | 0 | [atlas-strategy.md](powers/atlas-strategy.md) |
 | PROD | Product, strategy & finance — المنتج والاستراتيجية والمال | strategy | 18 | 5 | [strategy-finance.md](powers/strategy-finance.md) |
 | 3D | 3D & spatial — الأبعاد الثلاثية | motion | 52 | 2 | [3d-spatial.md](powers/3d-spatial.md) |
 | GEN | AI generation — التوليد بالذكاء الاصطناعي | motion | 93 | 14 | [ai-generation.md](powers/ai-generation.md) |

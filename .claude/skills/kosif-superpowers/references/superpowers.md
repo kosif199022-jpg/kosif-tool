@@ -11,9 +11,9 @@
 
 - **العقل والتفكير — Mind & thinking** (27 superpowers, 329 powers)
 - **الكتابة واللغة — Writing & language** (11 superpowers, 116 powers)
-- **الهندسة والكود — Code & engineering** (48 superpowers, 595 powers)
-- **البيانات — Data & analysis** (8 superpowers, 91 powers)
-- **المستندات — Documents** (7 superpowers, 84 powers)
+- **الهندسة والكود — Code & engineering** (49 superpowers, 625 powers)
+- **البيانات — Data & analysis** (9 superpowers, 95 powers)
+- **المستندات — Documents** (8 superpowers, 89 powers)
 - **البحث والويب — Research & web** (3 superpowers, 34 powers)
 - **التطبيقات والواجهات — Apps & artifacts** (33 superpowers, 373 powers)
 - **الصور والصوت — Image & audio** (6 superpowers, 69 powers)

@@ -483,7 +483,7 @@
 | `ACODE-236` | دليل سردي لمستودع غير مألوف للمساهمين الجدد | Narrative codebase guide for newcomers | documented | npm:mermaid |
 | `ACODE-237` | تثبيت كل أسطح الإصدارات لتقوية سلسلة التوريد | Pin every version surface for supply-chain hardening | documented | node, python3 |
 | `ACODE-238` | تشخيص أعطال تكامل SaaS المستعصية طبقةً طبقة | Layer-by-layer deep debugging of a stubborn SaaS integration | documented |  |
-| `ACODE-239` | دورة حياة البيانات المارّة بخدمة خارجية: تصنيف واحتفاظ وحذف | Data lifecycle governance for data sent through a SaaS vendor | documented |  |
+| `ACODE-239` | دورة حياة البيانات المارّة بخدمة خارجية: تصنيف واحتفاظ وحذف | Data lifecycle governance for data sent through a SaaS vendor | documented | key:video-gen |
 | `ACODE-24` | أنماط خدمات الواجهة الخلفية بعدة لغات | Backend service patterns: Node, Go, .NET, Django | documented |  |
 | `ACODE-240` | ربط أدوار المزوّد بصلاحيات التطبيق ومفاتيح الخدمة | Map vendor roles to application RBAC and scoped service keys | documented |  |
 | `ACODE-241` | مراجعة مطبات التكامل المتكررة قبل الإصدار | Recurring integration pitfall audit before release | documented |  |
@@ -493,9 +493,39 @@
 | `ACODE-245` | أنماط موثوقية تكامل خارجي: هوية عمل واحدة لكل إعادة | Integration reliability: one idempotency model for every retry path | documented |  |
 | `ACODE-246` | ترحيل عقد API لدى المزوّد بأدلة الحركة والقراءة المزدوجة | Vendor API contract migration with traffic evidence and dual reads | documented |  |
 | `ACODE-247` | خريطة دورة حياة تكامل SaaS: من التثبيت إلى الحوادث | SaaS integration lifecycle map: install to incident | documented | python3 |
+| `ACODE-248` | تدقيق التبعيات بأدوات كل منظومة: ثغرات وتأخر إصدارات ورخص وتبعيات غير مستخدمة | Ecosystem-native dependency audit: vulnerabilities, lag, licences, unused deps | documented | node |
+| `ACODE-249` | تدقيق قياس OpenTelemetry: إعداد SDK ونظافة الـspans وانتشار السياق | OpenTelemetry instrumentation audit: SDK setup, span hygiene, propagation | documented |  |
 | `ACODE-25` | اختيار وتخزين مفاتيح الـAPI بأمان | Choose and store API credentials safely | documented | chromium, key:unspecified |
+| `ACODE-250` | تدقيق تطبيق ويب تقدمي (PWA) وقائمة الإطلاق الحتمية | PWA audit and deterministic launch checklist | documented | chromium |
+| `ACODE-251` | تجهيز مدخلات منقّحة من البيانات الشخصية قبل إرسالها لخدمة ذكاء اصطناعي خارجية | PII-redacted payload review before sending to an external AI | documented |  |
+| `ACODE-252` | إثبات بصري لواجهة طرفية (TUI) عبر PTY حقيقي ومتصفح محلي | Visual proof of a terminal UI through a real PTY and a local browser | documented |  |
+| `ACODE-253` | مراجعة إعداد Dependabot وفرز طلبات الترقية التي يفتحها | Dependabot config review and upgrade-PR triage | documented |  |
+| `ACODE-254` | تدقيق أذونات إضافة المتصفح وفق أقل صلاحية وManifest V3 | Browser-extension manifest audit: least privilege and MV3 | documented |  |
+| `ACODE-255` | مراجعة المخطط ولوحة PCB قبل التصنيع | Schematic and PCB layout review before fab | documented |  |
+| `ACODE-256` | تشخيص أعطال توقيع تطبيقات macOS والـentitlements | macOS code-signing and entitlements failure diagnosis | documented | os:macos |
+| `ACODE-257` | تطبيقات macOS بـSwiftUI: قياس خفيف بـLogger وتبنّي Liquid Glass بأقل تخصيص | macOS SwiftUI apps: lightweight Logger telemetry and minimal-chrome Liquid Glass | documented | os:macos |
+| `ACODE-258` | مراجعة كود SystemVerilog: الأنواع وكتل always والقابلية للتوليف | SystemVerilog review: types, always blocks, synthesisability | documented |  |
+| `ACODE-259` | تدقيق حالات الواجهة الأربع وحالات الحدود في مكونات React | UI state completeness and edge-case audit for React components | documented | npm:react |
 | `ACODE-26` | اختيار واجهة Zoom المناسبة | Choose Zoom surface: REST, webhooks, WebSocket, SDK | documented | key:unspecified |
+| `ACODE-260` | تدقيق جاهزية الواجهة للتعريب والتدويل والاتجاه من اليمين | i18n readiness audit: hardcoded strings, concatenation, locale formats, RTL | documented |  |
+| `ACODE-261` | تقييم استكشافي للواجهة بثلاثة مقيّمين مستقلين ثم توفيق النتائج | Heuristic evaluation with three independent evaluators and reconciliation | documented |  |
+| `ACODE-262` | مراجعة طلبات الدمج التي يكتبها وكيل: المواءمة مع المتطلبات والمراجع الوهمية | Agent-authored PR review: alignment passes and hallucinated references | documented |  |
+| `ACODE-263` | تصميم سعة المراجعة وبوابات الإصدار لعصر الوكلاء | Review capacity and release gates for agent-speed delivery | documented |  |
+| `ACODE-264` | تدقيق الأسرار في كل تاريخ git قبل جعل المستودع عامًا، وإعادة التدقيق حين يقدم | Whole-history secret audit before open-sourcing, and stale-audit reruns | documented | gitleaks |
+| `ACODE-265` | جعل كتل check في Terraform تُفشل CI فعلًا | Make Terraform check blocks actually fail CI | documented |  |
+| `ACODE-266` | سجل تدقيق موقّع لكل استدعاء أداة يقوم به الوكيل | Signed, offline-verifiable audit trail for agent tool calls | documented | claude:tools |
+| `ACODE-267` | تشخيص أي بوابة صلاحيات رفضت الأمر، وخطر توريث قائمة السماح في خدمة | Which permission gate refused, and services that inherit an operator's allow-list | documented |  |
+| `ACODE-268` | تبنّي إصدار رئيسي جديد لبوابة أمان تعتمد عليها | Adopting a new major of a security gate you consume | documented |  |
+| `ACODE-269` | ترحيل أدوات الفحص: ESLint/Prettier إلى Biome وflake8/isort إلى ruff | Linter migration: ESLint/Prettier → Biome and flake8/isort → ruff | documented | npm:react |
 | `ACODE-27` | اختبار عقود API من جهة المستهلك بـ Pact | Consumer-driven API contract testing with Pact | documented |  |
+| `ACODE-270` | تدقيق مشروع لعبة libGDX: الإعداد ودورة الشاشات والأصول والرسم | libGDX game project audit: setup, screen lifecycle, assets, rendering | documented |  |
+| `ACODE-271` | مراجعة هندسة المنصات: ويب أحادي الصفحة وPWA وموبايل وElectron وTauri | Cross-platform engineering review: SPA, PWA, mobile, Electron, Tauri | documented | npm:react |
+| `ACODE-272` | تصميم حزمة تحقق موحدة للمستودع بطبقات وأوامر لكل نوع تغيير | Repository validation harness: layered matrix, one entrypoint, honest fallbacks | documented |  |
+| `ACODE-273` | تدقيق الفجوة بين ما يُفترض أن يفعله النظام وما يفعله الكود فعلًا | Intended-vs-implemented gap audit | documented |  |
+| `ACODE-274` | تثبيت قوائم مراجعة موحّدة يقرؤها Copilot وCodex وClaude عند مراجعة طلبات الدمج | Install shared review checklists for Copilot, Codex and Claude PR reviewers | documented |  |
+| `ACODE-275` | فرز فحص CI أحمر لمراجعة يقوم بها ذكاء اصطناعي: أربعة أسباب مختلفة | Triage a red AI-review CI check: four causes with opposite responses | documented |  |
+| `ACODE-276` | التحقق من إعدادات Home Assistant: YAML والأسرار والمفاتيح المكررة | Home Assistant configuration validation: YAML, secrets, duplicate keys | documented | docker |
+| `ACODE-277` | تدقيق طبقات التعليمات كلها: هل طُبّقت القاعدة يومًا؟ وأين تتعارض الطبقات؟ | Cross-layer instruction-stack audit: rule-firing evidence, conflicts, permission bypasses | documented |  |
 | `ACODE-28` | استخراج عميل API مستقل من تسجيل HAR | Derive standalone API client from HAR recording | documented |  |
 | `ACODE-29` | قائمة تحصين نقطة GraphQL | GraphQL endpoint hardening checklist | documented |  |
 | `ACODE-30` | مصادقة JWT مع تدوير التحديث وصلاحيات الأدوار | JWT auth with refresh rotation and RBAC | documented | key:unspecified |

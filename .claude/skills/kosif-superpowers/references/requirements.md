@@ -40,10 +40,10 @@
 | 24 | [`blender`](#req-blender) | apt | 36 | runnable-tools, app-feature-transfer, engines-render-pipeline, 3d-spatial, self-discovery | · `engine:android` |
 | 25 | [`engine:android`](#req-engine-android) | bin | 36 | software-investigation, runnable-tools | · `npm:axe` |
 | 26 | [`npm:axe`](#req-npm-axe) | npm | 28 | qa-verification, atlas-build, atlas-code, color-palette-grading, runnable-tools | · `npm:esbuild` |
-| 27 | [`npm:esbuild`](#req-npm-esbuild) | npm | 25 | engines-render-pipeline, light-glow-bloom, particles-fluids-physics, texture-material, atlas-code | · `network` |
-| 28 | [`npm:mermaid`](#req-npm-mermaid) | npm | 24 | atlas-docs, atlas-code, diagrams-explainers-code, atlas-craft, knowledge-graph | · `blender` |
-| 29 | [`tesseract`](#req-tesseract) | apt | 23 | media-image-audio, arabic-language, other, runnable-tools, self-discovery | · `engine:wakaru` |
-| 30 | [`engine:wakaru`](#req-engine-wakaru) | bin | 23 | software-investigation | · `npm:mermaid` |
+| 27 | [`npm:esbuild`](#req-npm-esbuild) | npm | 25 | engines-render-pipeline, light-glow-bloom, particles-fluids-physics, texture-material, atlas-code | · `network` · `blender` |
+| 28 | [`npm:mermaid`](#req-npm-mermaid) | npm | 24 | atlas-docs, atlas-code, diagrams-explainers-code, atlas-craft, knowledge-graph | · `blender` · `engine:wakaru` |
+| 29 | [`tesseract`](#req-tesseract) | apt | 23 | media-image-audio, arabic-language, other, runnable-tools, self-discovery | · `engine:wakaru` · `npm:mermaid` |
+| 30 | [`engine:wakaru`](#req-engine-wakaru) | bin | 23 | software-investigation | · `npm:mermaid` · `key:graphify` |
 | 31 | [`network`](#req-network) | os | 23 | self-discovery, audio-sync-captions, web-research, media-image-audio, security-safety | · `key:graphify` |
 | 32 | [`yt-dlp`](#req-yt-dlp) | pip | 22 | video-download, runnable-tools, atlas-media, audio-sync-captions, engines-render-pipeline | · `npm:bruno` |
 | 33 | [`key:graphify`](#req-key-graphify) | service | 22 | knowledge-graph, code-engineering, agent-orchestration, runnable-tools, security-safety | · `tesseract` |
@@ -54,16 +54,16 @@
 | 38 | [`key:elevenlabs`](#req-key-elevenlabs) | key | 19 | music-beat-sound, voice-tts, atlas-media, audio-sync-captions, formats-platforms |  |
 | 39 | [`docker`](#req-docker) | bin | 18 | engines-render-pipeline, self-discovery, atlas-code, atlas-build, atlas-docs |  |
 | 40 | [`pip:matplotlib`](#req-pip-matplotlib) | pip | 18 | engines-render-pipeline, data-analysis, media-image-audio, qa-verification, self-discovery |  |
-| 41 | [`npm:lottie`](#req-npm-lottie) | npm | 18 | engines-render-pipeline, qa-verification, app-feature-transfer, characters-rigs, easing-timing-rhythm |  |
-| 42 | [`pip:higgsfield`](#req-pip-higgsfield) | key | 17 | ai-generation, self-discovery, apps-artifacts, camera-composition-layout, engines-render-pipeline |  |
-| 43 | [`npm:maplibre`](#req-npm-maplibre) | npm | 17 | maps-geo, camera-composition-layout, engines-render-pipeline, light-glow-bloom, particles-fluids-physics |  |
+| 41 | [`npm:lottie`](#req-npm-lottie) | npm | 18 | engines-render-pipeline, qa-verification, app-feature-transfer, characters-rigs, easing-timing-rhythm | · `pip:higgsfield` |
+| 42 | [`pip:higgsfield`](#req-pip-higgsfield) | key | 17 | ai-generation, self-discovery, apps-artifacts, camera-composition-layout, engines-render-pipeline | · `npm:maplibre` |
+| 43 | [`npm:maplibre`](#req-npm-maplibre) | npm | 17 | maps-geo, camera-composition-layout, engines-render-pipeline, light-glow-bloom, particles-fluids-physics | · `npm:lottie` |
 | 44 | [`gh`](#req-gh) | bin | 16 | atlas-code, runnable-tools, code-engineering, self-discovery, web-research |  |
 | 45 | [`npm:p5`](#req-npm-p5) | npm | 16 | self-discovery, engines-render-pipeline, runnable-tools, atlas-data, characters-rigs |  |
 | 46 | [`engine:rizin`](#req-engine-rizin) | bin | 16 | software-investigation |  |
 | 47 | [`pip:torch`](#req-pip-torch) | pip | 15 | self-discovery, arabic-language, ai-generation, media-image-audio, atlas-strategy |  |
-| 48 | [`pip:pandas`](#req-pip-pandas) | pip | 13 | self-discovery, atlas-data, data-analysis, atlas-strategy, code-engineering |  |
-| 49 | [`pip:librosa`](#req-pip-librosa) | pip | 13 | music-beat-sound, media-image-audio, qa-verification, self-discovery, video-download |  |
-| 50 | [`pip:hypothesis`](#req-pip-hypothesis) | pip | 13 | atlas-code, code-engineering, mental-models, agent-orchestration, atlas-mind |  |
+| 48 | [`pip:pandas`](#req-pip-pandas) | pip | 13 | self-discovery, atlas-data, data-analysis, atlas-strategy, code-engineering | · `pip:hypothesis` |
+| 49 | [`pip:librosa`](#req-pip-librosa) | pip | 13 | music-beat-sound, media-image-audio, qa-verification, self-discovery, video-download | · `pip:pandas` |
+| 50 | [`pip:hypothesis`](#req-pip-hypothesis) | pip | 13 | atlas-code, code-engineering, mental-models, agent-orchestration, atlas-mind | · `pip:librosa` |
 | 51 | [`pip:piper`](#req-pip-piper) | model | 12 | voice-tts, audio-sync-captions, self-discovery, creativity-engine |  |
 | 52 | [`pip:fonttools`](#req-pip-fonttools) | pip | 12 | app-feature-transfer, qa-verification, typography-arabic, brand-logo-identity, diagrams-explainers-code |  |
 | 53 | [`npm:animejs`](#req-npm-animejs) | npm | 12 | engines-render-pipeline, easing-timing-rhythm, atlas-media, qa-verification, transitions-cuts |  |
@@ -84,7 +84,7 @@
 | 68 | [`pip:polars`](#req-pip-polars) | pip | 5 | data-analysis, code-engineering, self-discovery, web-research |  |
 | 69 | [`pip:ortools`](#req-pip-ortools) | pip | 5 | strategy-finance, data-analysis |  |
 | 70 | [`pip:pulp`](#req-pip-pulp) | pip | 5 | data-analysis, self-discovery, strategy-finance, web-research |  |
-| 71 | [`7zip`](#req-7zip) | bin | 5 | app-feature-transfer, runnable-tools, software-investigation |  |
+| 71 | [`7zip`](#req-7zip) | bin | 5 | app-feature-transfer, runnable-tools, software-investigation | · `pandoc` |
 | 72 | [`pip:soundfile`](#req-pip-soundfile) | pip | 4 | music-beat-sound, media-image-audio, voice-tts |  |
 | 73 | [`pip:anthropic`](#req-pip-anthropic) | pip | 4 | ai-generation, apps-artifacts, self-discovery, web-research |  |
 | 74 | [`npm:matter`](#req-npm-matter) | npm | 4 | atlas-media, camera-composition-layout, particles-fluids-physics, typography-latin |  |
@@ -92,16 +92,16 @@
 | 76 | [`engine:jeb`](#req-engine-jeb) | service | 4 | software-investigation |  |
 | 77 | [`mcp:github`](#req-mcp-github) | service | 4 | atlas-code, code-engineering, security-safety |  |
 | 78 | [`pip:llama-cpp`](#req-pip-llama-cpp) | model | 4 | agent-orchestration, atlas-code, engines-render-pipeline, software-investigation |  |
-| 79 | [`pip:mediapipe`](#req-pip-mediapipe) | model | 4 | formats-platforms, media-image-audio, photo-video-footage, runnable-tools |  |
-| 80 | [`pandoc`](#req-pandoc) | bin | 3 | documents-office, self-discovery, web-research |  |
-| 81 | [`pip:plotly`](#req-pip-plotly) | pip | 3 | data-analysis, engines-render-pipeline, self-discovery |  |
-| 82 | [`pip:z3`](#req-pip-z3) | pip | 3 | data-analysis, photo-video-footage |  |
-| 83 | [`pip:sklearn`](#req-pip-sklearn) | pip | 3 | data-analysis, self-discovery |  |
-| 84 | [`npm:slidev`](#req-npm-slidev) | npm | 3 | atlas-docs, documents-office, engines-render-pipeline |  |
+| 79 | [`pip:mediapipe`](#req-pip-mediapipe) | model | 4 | formats-platforms, media-image-audio, photo-video-footage, runnable-tools | · `7zip` |
+| 80 | [`pandoc`](#req-pandoc) | bin | 3 | documents-office, self-discovery, web-research | · `pip:plotly` |
+| 81 | [`pip:plotly`](#req-pip-plotly) | pip | 3 | data-analysis, engines-render-pipeline, self-discovery | · `pip:z3` |
+| 82 | [`pip:z3`](#req-pip-z3) | pip | 3 | data-analysis, photo-video-footage | · `pip:sklearn` |
+| 83 | [`pip:sklearn`](#req-pip-sklearn) | pip | 3 | data-analysis, self-discovery | · `npm:slidev` |
+| 84 | [`npm:slidev`](#req-npm-slidev) | npm | 3 | atlas-docs, documents-office, engines-render-pipeline | · `pip:mediapipe` |
 | 85 | [`pip:ultralytics`](#req-pip-ultralytics) | model | 3 | formats-platforms, media-image-audio, self-discovery |  |
 | 86 | [`pip:pyannote`](#req-pip-pyannote) | key | 3 | atlas-media, audio-sync-captions, media-image-audio |  |
 | 87 | [`npm:pa11y`](#req-npm-pa11y) | npm | 3 | apps-artifacts, atlas-build, atlas-code |  |
-| 88 | [`model:yunet`](#req-model-yunet) | model | 3 | app-feature-transfer, photo-video-footage, runnable-tools |  |
+| 88 | [`model:yunet`](#req-model-yunet) | model | 3 | app-feature-transfer, photo-video-footage, runnable-tools | · `gitleaks` |
 | 89 | [`graphviz`](#req-graphviz) | apt | 2 | atlas-code, atlas-craft |  |
 | 90 | [`pip:vtracer`](#req-pip-vtracer) | pip | 2 | ai-generation, texture-material |  |
 | 91 | [`engine:wabt`](#req-engine-wabt) | bin | 2 | software-investigation |  |
@@ -112,27 +112,27 @@
 | 96 | [`pip:trafilatura`](#req-pip-trafilatura) | pip | 2 | web-research |  |
 | 97 | [`pip:docling`](#req-pip-docling) | model | 2 | documents-office |  |
 | 98 | [`plantuml`](#req-plantuml) | apt | 2 | atlas-docs, documents-office |  |
-| 99 | [`gitleaks`](#req-gitleaks) | bin | 2 | security-safety |  |
-| 100 | [`trivy`](#req-trivy) | bin | 2 | atlas-code, security-safety |  |
-| 101 | [`pip:shapely`](#req-pip-shapely) | pip | 2 | app-feature-transfer, data-analysis |  |
-| 102 | [`innoextract`](#req-innoextract) | bin | 2 | app-feature-transfer, runnable-tools |  |
-| 103 | [`pip:pyloudnorm`](#req-pip-pyloudnorm) | pip | 1 | media-image-audio |  |
-| 104 | [`pip:statsforecast`](#req-pip-statsforecast) | pip | 1 | data-analysis |  |
-| 105 | [`pip:biopython`](#req-pip-biopython) | pip | 1 | data-analysis |  |
-| 106 | [`pip:mujoco`](#req-pip-mujoco) | pip | 1 | strategy-finance |  |
-| 107 | [`npm:mcp-servers`](#req-npm-mcp-servers) | npm | 1 | agent-orchestration |  |
-| 108 | [`pip:scrapy`](#req-pip-scrapy) | pip | 1 | web-research |  |
-| 109 | [`pip:crawl4ai`](#req-pip-crawl4ai) | pip | 1 | web-research |  |
-| 110 | [`pip:browser-use`](#req-pip-browser-use) | key | 1 | web-research |  |
-| 111 | [`pip:marker`](#req-pip-marker) | model | 1 | documents-office |  |
-| 112 | [`npm:marp`](#req-npm-marp) | npm | 1 | documents-office |  |
-| 113 | [`pip:music21`](#req-pip-music21) | pip | 1 | media-image-audio |  |
-| 114 | [`pip:cadquery`](#req-pip-cadquery) | pip | 1 | apps-artifacts |  |
-| 115 | [`openscad`](#req-openscad) | apt | 1 | apps-artifacts |  |
-| 116 | [`pip:semgrep`](#req-pip-semgrep) | pip | 1 | security-safety |  |
-| 117 | [`pip:pandera`](#req-pip-pandera) | pip | 1 | code-engineering |  |
-| 118 | [`pip:spacy`](#req-pip-spacy) | pip | 1 | arabic-language |  |
-| 119 | [`pip:argos`](#req-pip-argos) | model | 1 | arabic-language |  |
+| 99 | [`gitleaks`](#req-gitleaks) | bin | 2 | security-safety | · `trivy` |
+| 100 | [`trivy`](#req-trivy) | bin | 2 | atlas-code, security-safety | · `pip:shapely` |
+| 101 | [`pip:shapely`](#req-pip-shapely) | pip | 2 | app-feature-transfer, data-analysis | · `model:yunet` |
+| 102 | [`innoextract`](#req-innoextract) | bin | 2 | app-feature-transfer, runnable-tools | · `pip:pyloudnorm` |
+| 103 | [`pip:pyloudnorm`](#req-pip-pyloudnorm) | pip | 1 | media-image-audio | · `pip:statsforecast` |
+| 104 | [`pip:statsforecast`](#req-pip-statsforecast) | pip | 1 | data-analysis | · `pip:biopython` |
+| 105 | [`pip:biopython`](#req-pip-biopython) | pip | 1 | data-analysis | · `pip:mujoco` |
+| 106 | [`pip:mujoco`](#req-pip-mujoco) | pip | 1 | strategy-finance | · `npm:mcp-servers` |
+| 107 | [`npm:mcp-servers`](#req-npm-mcp-servers) | npm | 1 | agent-orchestration | · `pip:scrapy` |
+| 108 | [`pip:scrapy`](#req-pip-scrapy) | pip | 1 | web-research | · `pip:crawl4ai` |
+| 109 | [`pip:crawl4ai`](#req-pip-crawl4ai) | pip | 1 | web-research | · `pip:browser-use` |
+| 110 | [`pip:browser-use`](#req-pip-browser-use) | key | 1 | web-research | · `pip:marker` |
+| 111 | [`pip:marker`](#req-pip-marker) | model | 1 | documents-office | · `npm:marp` |
+| 112 | [`npm:marp`](#req-npm-marp) | npm | 1 | documents-office | · `pip:music21` |
+| 113 | [`pip:music21`](#req-pip-music21) | pip | 1 | media-image-audio | · `pip:cadquery` |
+| 114 | [`pip:cadquery`](#req-pip-cadquery) | pip | 1 | apps-artifacts | · `openscad` |
+| 115 | [`openscad`](#req-openscad) | apt | 1 | apps-artifacts | · `pip:semgrep` |
+| 116 | [`pip:semgrep`](#req-pip-semgrep) | pip | 1 | security-safety | · `pip:pandera` |
+| 117 | [`pip:pandera`](#req-pip-pandera) | pip | 1 | code-engineering | · `pip:spacy` |
+| 118 | [`pip:spacy`](#req-pip-spacy) | pip | 1 | arabic-language | · `pip:argos` |
+| 119 | [`pip:argos`](#req-pip-argos) | model | 1 | arabic-language | · `innoextract` |
 | 120 | [`pip:segno`](#req-pip-segno) | pip | 1 | app-feature-transfer |  |
 | 121 | [`npm:sharp`](#req-npm-sharp) | npm | 0 |  |  |
 | 122 | [`npm:satori`](#req-npm-satori) | npm | 0 |  |  |
@@ -305,9 +305,9 @@
 
 - **النوع / kind:** service (خدمة/موصل)
 - **التثبيت / install:** `Claude Code (CLI, desktop, web) — Agent, Workflow, Artifact, WebFetch/WebSearch, ToolSearch`
-- **يفتح / unlocks:** 74 powers
-- **بالحالة / by status:** documented 55 · key 9 · proven 7 · install 3
-- **العائلات / families:** agent-orchestration (14), thinking-core (12), atlas-mind (7), atlas-code (6), self-discovery (5), web-research (5), apps-artifacts (3), engines-render-pipeline (3)
+- **يفتح / unlocks:** 75 powers
+- **بالحالة / by status:** documented 56 · key 9 · proven 7 · install 3
+- **العائلات / families:** agent-orchestration (14), thinking-core (12), atlas-code (7), atlas-mind (7), self-discovery (5), web-research (5), apps-artifacts (3), engines-render-pipeline (3)
 - **أمثلة / examples:** `FMT-42` KOSIF Studio Cloud — one-page artifact · `SELF-06` Load deferred tools with ToolSearch · `SELF-08` Discover skills before acting · `SELF-32` Live docs over memory · `WEB-01` Built-in WebSearch tool · `WEB-02` Built-in WebFetch tool
 
 <a id="req-key-video-gen"></a>
@@ -375,9 +375,9 @@
 
 - **النوع / kind:** os (منصة)
 - **التثبيت / install:** `a macOS machine with Xcode command-line tools`
-- **يفتح / unlocks:** 37 powers
-- **بالحالة / by status:** documented 25 · install 4 · proven 3 · seen 3 · ready 2
-- **العائلات / families:** software-investigation (20), ui-product-device (5), atlas-code (3), engines-render-pipeline (2), atlas-build (1), atlas-strategy (1), formats-platforms (1), music-beat-sound (1)
+- **يفتح / unlocks:** 39 powers
+- **بالحالة / by status:** documented 27 · install 4 · proven 3 · seen 3 · ready 2
+- **العائلات / families:** software-investigation (20), atlas-code (5), ui-product-device (5), engines-render-pipeline (2), atlas-build (1), atlas-strategy (1), formats-platforms (1), music-beat-sound (1)
 - **أمثلة / examples:** `REA-007` List provider capabilities and side effects · `REA-052` Project a selected view of completed binary-layo · `TOOL-52` REA Family Router · `ABUILD-05` Mobile and desktop release signing pipeline · `ACODE-111` macOS freeze/panic reconstruction from Diagnosti · `ACODE-13` macOS Seatbelt confinement for agent commands
 
 <a id="req-blender"></a>
@@ -639,16 +639,6 @@
 - **بالحالة / by status:** documented 5 · proven 3 · install 3 · idea 1 · ready 1
 - **العائلات / families:** music-beat-sound (6), media-image-audio (2), qa-verification (2), self-discovery (1), video-download (1), web-research (1)
 - **أمثلة / examples:** `MEDIA-16` Pitch tracking (librosa YIN) · `MEDIA-17` Onset and tempo detection · `SELF-18` Python import probe · `BEAT-129` Beat-grid analyzer (audiomap.json) · `BEAT-159` Measured beat detection · `BEAT-217` Beat-grid trailer from a capture
-
-<a id="req-pip-hypothesis"></a>
-### `pip:hypothesis` — اختبارات الخصائص / property-based tests
-
-- **النوع / kind:** pip (حزمة بايثون)
-- **التثبيت / install:** `pip install hypothesis`
-- **يفتح / unlocks:** 13 powers
-- **بالحالة / by status:** documented 11 · proven 2
-- **العائلات / families:** atlas-code (2), code-engineering (2), mental-models (2), agent-orchestration (1), atlas-mind (1), atlas-strategy (1), qa-verification (1), runnable-tools (1)
-- **أمثلة / examples:** `CODE-23` Hypothesis: Property-based tests that generate a · `TOOL-11` Invention Lab Candidates · `ACODE-117` Root-cause-first debugging with one hypothesis · `ACODE-97` Adversarial competing-hypothesis debugging with  · `AGENT-19` Agent introspection debugging · `AMIND-46` Heuer-style structured planning with tested prem
 
 <a id="req-pip-piper"></a>
 ### `pip:piper` — توليد صوت عربي محلي بلا مفتاح مع محاذاة الفونيمات / local Arabic TTS without a key, with phoneme alignment
@@ -940,16 +930,6 @@
 - **العائلات / families:** formats-platforms (1), media-image-audio (1), photo-video-footage (1), runnable-tools (1)
 - **أمثلة / examples:** `FMT-13` Smart reframe around faces · `TOOL-157` Hand-drawn pencil, charcoal or ink drawing of an · `FOOT-31` Person matte / background removal · `MEDIA-32` MediaPipe: Track faces, hands and pose in footag
 
-<a id="req-pandoc"></a>
-### `pandoc` — تحويل المستندات بين الصيغ / convert documents between formats
-
-- **النوع / kind:** bin (أداة)
-- **التثبيت / install:** `apt-get install -y pandoc`
-- **يفتح / unlocks:** 3 powers
-- **بالحالة / by status:** proven 3
-- **العائلات / families:** documents-office (1), self-discovery (1), web-research (1)
-- **أمثلة / examples:** `DOC-12` Markdown <-> DOCX with pandoc (RTL) · `SELF-13` Manual shell probe · `WEB-05` Main-text extraction (trafilatura + bs4)
-
 <a id="req-pip-plotly"></a>
 ### `pip:plotly` — رسوم تفاعلية وتصدير صور / interactive charts and image export
 
@@ -1129,16 +1109,6 @@
 - **بالحالة / by status:** documented 1 · install 1
 - **العائلات / families:** atlas-docs (1), documents-office (1)
 - **أمثلة / examples:** `ADOCS-18` Diagram-as-code engine choice: PlantUML, D2, Str · `DOC-34` PlantUML: Generate UML class/sequence/component
-
-<a id="req-gitleaks"></a>
-### `gitleaks` — كشف الأسرار في git / secret detection
-
-- **النوع / kind:** bin (أداة)
-- **التثبيت / install:** `gitleaks release binary`
-- **يفتح / unlocks:** 2 powers
-- **بالحالة / by status:** documented 1 · install 1
-- **العائلات / families:** security-safety (2)
-- **أمثلة / examples:** `SEC-06` Leaked-secret scanning · `SEC-18` Gitleaks: Detect committed secrets across git hi
 
 <a id="req-trivy"></a>
 ### `trivy` — فحص الثغرات / vulnerability scanning

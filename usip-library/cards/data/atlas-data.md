@@ -1,4 +1,4 @@
-# `atlas-data` — البيانات والرسوم والمواقع (52 بطاقة)
+# `atlas-data` — البيانات والرسوم والمواقع (56 بطاقة)
 
 > مكتبة بروتوكول USIP v5.5 الكاملة، مولّدة بـ `smart_capabilities.py cards` من `data/powers/atlas-data.json` وقواعد الملاحق A25–A29؛ لا تُحرَّر يدويًا. [الفهرس الرئيسي](../../README.md) · [فصل المجموعة](../../../.claude/skills/kosif-superpowers/references/library/data.md) · [النواة](../../../.claude/skills/kosif-superpowers/PROTOCOL.md)
 
@@ -56,6 +56,10 @@
 - [`ADATA-50` التشريح المسبق: تعريف النجاح والفشل قبل البدء](#adata-50--التشريح-المسبق-تعريف-النجاح-والفشل-قبل-البدء--pre-mortem-define-success-and-failure-before-starting)
 - [`ADATA-51` ضبط العمليات إحصائيًا: اختيار مخطط التحكم وقدرة العملية](#adata-51--ضبط-العمليات-إحصائيًا-اختيار-مخطط-التحكم-وقدرة-العملية--statistical-process-control-chart-choice-and-capability)
 - [`ADATA-52` استخراج أرقام موثوقة من لوحة معلومات تُرسم في المتصفح](#adata-52--استخراج-أرقام-موثوقة-من-لوحة-معلومات-تُرسم-في-المتصفح--trustworthy-numbers-from-a-client-rendered-dashboard)
+- [`ADATA-53` تنفيذ خطة تتبع الأحداث مع بوابة schema في CI وموافقة المستخدم من المصدر](#adata-53--تنفيذ-خطة-تتبع-الأحداث-مع-بوابة-schema-في-ci-وموافقة-المستخدم-من-المصدر--event-instrumentation-from-a-tracking-plan-with-ci-schema-gate-and-consent-at-source)
+- [`ADATA-54` تقييم أنظمة التوصية: تقسيم زمني وخط أساس شعبية والحكم للـA/B](#adata-54--تقييم-أنظمة-التوصية-تقسيم-زمني-وخط-أساس-شعبية-والحكم-للـab--recommender-evaluation-temporal-split-popularity-baseline-ab-as-verdict)
+- [`ADATA-55` تدقيق مصدر الأصفار في مقاييس متعددة المصادر قبل تصديقها](#adata-55--تدقيق-مصدر-الأصفار-في-مقاييس-متعددة-المصادر-قبل-تصديقها--zero-provenance-audit-for-multi-source-metrics-before-believing-a-0)
+- [`ADATA-56` اختيار منهج جودة البيانات: اختبارات للقواعد المعروفة ومراقبة للمجهول وعقود عند المنتِج](#adata-56--اختيار-منهج-جودة-البيانات-اختبارات-للقواعد-المعروفة-ومراقبة-للمجهول-وعقود-عند-المنتِج--choose-a-data-quality-approach-tests-monitors-and-contracts-and-where-each-runs)
 
 ## البطاقات / cards
 
@@ -3610,6 +3614,7 @@
 - `ADATA-49` كشف الشذوذ بخط أساس ومعايرة وتفسير لكل إنذار / Anomaly detection with baseline, calibration and explained flags (documented)
 - `ADATA-50` التشريح المسبق: تعريف النجاح والفشل قبل البدء / Pre-mortem: define success and failure before starting (documented)
 - `ADATA-52` استخراج أرقام موثوقة من لوحة معلومات تُرسم في المتصفح / Trustworthy numbers from a client-rendered dashboard (documented)
+- `ADATA-53` تنفيذ خطة تتبع الأحداث مع بوابة schema في CI وموافقة المستخدم من المصدر / Event instrumentation from a tracking plan with CI schema gate and consent at source (documented)
 
 ### `ADATA-52` — استخراج أرقام موثوقة من لوحة معلومات تُرسم في المتصفح / Trustworthy numbers from a client-rendered dashboard
 
@@ -3675,4 +3680,280 @@
 
 - `ADATA-50` التشريح المسبق: تعريف النجاح والفشل قبل البدء / Pre-mortem: define success and failure before starting (documented)
 - `ADATA-51` ضبط العمليات إحصائيًا: اختيار مخطط التحكم وقدرة العملية / Statistical process control: chart choice and capability (documented)
+- `ADATA-53` تنفيذ خطة تتبع الأحداث مع بوابة schema في CI وموافقة المستخدم من المصدر / Event instrumentation from a tracking plan with CI schema gate and consent at source (documented)
+- `ADATA-54` تقييم أنظمة التوصية: تقسيم زمني وخط أساس شعبية والحكم للـA/B / Recommender evaluation: temporal split, popularity baseline, A/B as verdict (documented)
+
+### `ADATA-53` — تنفيذ خطة تتبع الأحداث مع بوابة schema في CI وموافقة المستخدم من المصدر / Event instrumentation from a tracking plan with CI schema gate and consent at source
+
+| الحقل | القيمة |
+|---|---|
+| العائلة | `atlas-data` ([فصل العائلة](../../../.claude/skills/kosif-superpowers/references/powers/atlas-data.md)) |
+| المجموعة | البيانات والرسوم والمواقع (`data`) |
+| نوع المخرج (A25، A27) | بيانات وجداول ورسوم (`data`) |
+| الحالة في الكتالوج | 📄 `documented`: منهج موصوف يحتاج بناءً أو ربطًا قبل التشغيل |
+| سقف التحقق قبل العمل (A27) | V1 حتى تُبنى وتُشغَّل؛ لا تقدَّم جاهزة أبدًا |
+| نطاق الدليل | `url` |
+| الرخصة | card in our own words; the original skill folders are copied verbatim with their MIT license and SOURCE.md under vendor/kosif-atlas |
+
+**ما هي:** يحوّل خطة التتبع إلى جمع أحداث فعلي: مكتبة تتبع typed مولّدة من الخطة، توزيع الأحداث بين العميل والخادم، ربط الهوية كما صُمم، بوابة CI تُفشل أي حدث خارج الخطة، وحجب الجمع قبل الموافقة (Consent Mode v2، TCF، GPC). — Turns a tracking plan into typed collection with a CI schema gate and consent gating before events fire.
+
+**متى:** إضافة analytics لتطبيق، أحداث ناقصة أو مكررة، ربط Consent Mode، إعداد Segment/RudderStack / adding analytics, missing or duplicated events, wiring consent, setting up a CDP
+
+**كيف:** 1) Treat the tracking plan as the contract: an event not in the plan gets no track call; send gaps back to the plan owner. 2) Generate typed tracking wrappers from the plan so code and plan cannot drift; never hand-write stringly-typed calls. 3) Place revenue, conversion and anything ad-blockers drop server-side; UI-context events client-side; both where hybrid. 4) Wire identity exactly as designed: identify on known users, alias/merge on anonymous→known, a stable anonymous ID; keep PII in traits behind a consent category, out of event properties. 5) Generate JSON Schema from the plan and add a CI gate that fails a PR on off-plan or mistyped events. 6) Gate collection at the source by consent category before the event fires: Consent Mode v2 signals, TCF strings where applicable, the GPC header. 7) Wire destinations and reverse ETL, then QA the live stream against the plan (missing, duplicate, mistyped events). Full original skill(s) with license: vendor/kosif-atlas/skills/2332-martech-event-instrumentation/8954-implement-event-instrumentation-and-cons.
+
+**المعاملات:** tracking plan, CDP
+
+**التثبيت:** mkdir -p ~/.claude/skills && cp -r .claude/skills/kosif-superpowers/vendor/kosif-atlas/skills/2332-martech-event-instrumentation/8954-implement-event-instrumentation-and-cons ~/.claude/skills/implement-event-instrumentation-and-cons
+
+**الوسوم:** analytics · event tracking · tracking plan · consent mode · GDPR · CDP · تتبع الأحداث · موافقة
+
+#### 1. الاستقبال (A25)
+
+- مصدر البيانات: مدخل حاجب ← لا يُفترض: البيانات مطلوبة أو مصدر عام مسمى
+- السؤال الذي تجيب عنه البيانات: سؤال بإجابة مقترحة ← وصف عام: توزيع واتجاه وأعلى خمس فئات
+- الفترة والوحدات: افتراض مكتوب ← كل الفترة الموجودة في الملف، مع ذكرها
+- لا تُفترض أبدًا: مادة الإنتاج نفسها، والإذن بخطوة مدفوعة أو منشورة أو لا رجعة فيها، والهوية والحقوق.
+
+#### 2. الجاهزية والشارة (A28)
+
+- `chromium` ← افحص وجوده بأمر واحد قبل كتابة الشارة
+- الوضع 1: شارة «هنا الآن» بعد الفحص، لا 📄 الكتالوج تلقائيًا · الوضع 2: `كتالوج: 📄 · هنا: غير مفحوص` · الوضع 3: بلا شارة ولا معرّف.
+
+#### 3. موضعها في الخطة (A26)
+
+- عقدة منمّطة: المدخل `dataset` ← المخرج `report`، والمنفّذ `method:ADATA-53` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
+- لا أداة مسجلة تخدم عائلتها: التنفيذ بالمكتبات أو بأداة من مجموعة أخرى.
+- مراحل النوع: فحص الملف ← تنظيف موثق ← حساب بسكربت ← تسوية المجاميع ← رسم يناسب السؤال ← تسليم مع السكربت.
+- إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
+
+#### 4. بوابة التحقق (A27)
+
+- إلزامي: المجاميع تطابق المصدر (تسوية) ← حساب بالكود
+- إلزامي: الوحدات والفترات مكتوبة على كل رقم ورسم ← مراجعة المحاور
+- إلزامي: كل رقم من حساب حتمي لا من تقدير النموذج ← سكربت قابل لإعادة التشغيل
+- جودة: نوع الرسم يناسب السؤال ولا يشوّه المقياس ← المحور يبدأ من الصفر للأعمدة
+- جودة: القيم المفقودة والشاذة معالجة ومذكورة ← عدّ القيم الفارغة
+- أمر الحكم في الوضع 1: `think.py qa data --answers qa.json` (PASS / FAIL / INCOMPLETE).
+
+#### 5. التعافي (A29)
+
+- `missing_dependency` (اعتمادية مفقودة، ميزانية 2): سمِّ الاعتمادية بالضبط (حزمة، برنامج، خط، نموذج) ← ثبّت محليًا في بيئة العمل إن كان مجانيًا ومسموحًا (pip --user أو venv أو npm محلي) · البديل: مسار المكتبة القياسية أو أداة أخرى من نفس المجموعة · تصعيد: تثبيت نظامي أو مدفوع أو يحتاج مفتاحًا: توقف واسأل
+- `wrong_input_kind` (نوع مدخل خاطئ، ميزانية 2): افحص المدخل الفعلي (file، ffprobe، أول بايتات، ترميز النص) ← أضف محوّلًا صريحًا بين العقدتين (مثلًا ffmpeg لتحويل الصيغة) واحفظ الأصل كما هو · البديل: اطلب المدخل بالصيغة الصحيحة مع أمر تحويل جاهز · تصعيد: إن كان التحويل يفقد جودة أو بيانات: اسأل قبل التحويل
+- `quality_below_threshold` (جودة دون العتبة، ميزانية 3): أي معيار فشل وبكم (المقيس مقابل العتبة) ← عالج السبب الأكبر وحده ثم أعد القياس · البديل: المنهج البديل المكتوب للمرحلة في الخطة · تصعيد: معيار إلزامي لا يتحقق بعد البديل: توقف وأبلغ بالأرقام
+
+#### 6. الأدلة
+
+- `https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/2332-martech-event-instrumentation/8954-implement-event-instrumentation-and-cons`
+
+#### 7. قدرات قريبة في العائلة
+
+- `ADATA-51` ضبط العمليات إحصائيًا: اختيار مخطط التحكم وقدرة العملية / Statistical process control: chart choice and capability (documented)
+- `ADATA-52` استخراج أرقام موثوقة من لوحة معلومات تُرسم في المتصفح / Trustworthy numbers from a client-rendered dashboard (documented)
+- `ADATA-54` تقييم أنظمة التوصية: تقسيم زمني وخط أساس شعبية والحكم للـA/B / Recommender evaluation: temporal split, popularity baseline, A/B as verdict (documented)
+- `ADATA-55` تدقيق مصدر الأصفار في مقاييس متعددة المصادر قبل تصديقها / Zero-provenance audit for multi-source metrics before believing a 0 (documented)
+
+### `ADATA-54` — تقييم أنظمة التوصية: تقسيم زمني وخط أساس شعبية والحكم للـA/B / Recommender evaluation: temporal split, popularity baseline, A/B as verdict
+
+| الحقل | القيمة |
+|---|---|
+| العائلة | `atlas-data` ([فصل العائلة](../../../.claude/skills/kosif-superpowers/references/powers/atlas-data.md)) |
+| المجموعة | البيانات والرسوم والمواقع (`data`) |
+| نوع المخرج (A25، A27) | بيانات وجداول ورسوم (`data`) |
+| الحالة في الكتالوج | 📄 `documented`: منهج موصوف يحتاج بناءً أو ربطًا قبل التشغيل |
+| سقف التحقق قبل العمل (A27) | V1 حتى تُبنى وتُشغَّل؛ لا تقدَّم جاهزة أبدًا |
+| نطاق الدليل | `url` |
+| الرخصة | card in our own words; the original skill folders are copied verbatim with their MIT license and SOURCE.md under vendor/kosif-atlas |
+
+**ما هي:** يبني تقييمًا صادقًا لنظام توصية: تقسيم زمني بدل العشوائي، مقارنة دائمة بخط أساس الشعبية، مقاييس تناسب كل مرحلة، حواجز التغطية والتنوع والجدة، مراعاة انحياز الموضع، وتجربة A/B هي الحكم النهائي. — Builds an honest recommender evaluation where offline metrics filter and the online A/B decides.
+
+**متى:** مقارنة نماذج توصية، تحسن offline لم يظهر online، بناء حزمة تقييم / comparing recommenders, an offline win that did not reproduce online, building an eval harness
+
+**كيف:** 1) Split by time: train on the past, test on the future; a random split leaks future interactions and inflates every metric. 2) Report every metric for the candidate and a popularity baseline; a model that cannot beat popularity offline will not beat it online. 3) Match metric to stage: recall@k with candidate count for retrieval; nDCG, MAP, precision@k for ranking. 4) Add guardrails: catalogue coverage, intra-list diversity, novelty, to catch an accurate filter bubble. 5) Account for exposure and position bias in logged data; use bias-aware or off-policy estimates where possible and treat offline as directional. 6) Design the online A/B with a primary metric, guardrails (latency, diversity, revenue, complaints) and a power/MDE calculation; ship on the online result. 7) When offline and online disagree, check feedback-loop bias, metric mismatch, train/serve skew, popularity leakage in features and hidden guardrail regressions. Full original skill(s) with license: vendor/kosif-atlas/skills/2367-recommendation-systems-engineering/9140-evaluate-recommenders.
+
+**المعاملات:** models, interaction logs
+
+**التثبيت:** mkdir -p ~/.claude/skills && cp -r .claude/skills/kosif-superpowers/vendor/kosif-atlas/skills/2367-recommendation-systems-engineering/9140-evaluate-recommenders ~/.claude/skills/evaluate-recommenders
+
+**الوسوم:** recommender systems · evaluation · nDCG · A/B testing · machine learning · نظام توصية · تقييم
+
+#### 1. الاستقبال (A25)
+
+- مصدر البيانات: مدخل حاجب ← لا يُفترض: البيانات مطلوبة أو مصدر عام مسمى
+- السؤال الذي تجيب عنه البيانات: سؤال بإجابة مقترحة ← وصف عام: توزيع واتجاه وأعلى خمس فئات
+- الفترة والوحدات: افتراض مكتوب ← كل الفترة الموجودة في الملف، مع ذكرها
+- لا تُفترض أبدًا: مادة الإنتاج نفسها، والإذن بخطوة مدفوعة أو منشورة أو لا رجعة فيها، والهوية والحقوق.
+
+#### 2. الجاهزية والشارة (A28)
+
+- لا متطلبات مسجلة؛ افحص المسار والأداة بـ `hub.py doctor` قبل الشارة.
+- الوضع 1: شارة «هنا الآن» بعد الفحص، لا 📄 الكتالوج تلقائيًا · الوضع 2: `كتالوج: 📄 · هنا: غير مفحوص` · الوضع 3: بلا شارة ولا معرّف.
+
+#### 3. موضعها في الخطة (A26)
+
+- عقدة منمّطة: المدخل `dataset` ← المخرج `report`، والمنفّذ `method:ADATA-54` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
+- لا أداة مسجلة تخدم عائلتها: التنفيذ بالمكتبات أو بأداة من مجموعة أخرى.
+- مراحل النوع: فحص الملف ← تنظيف موثق ← حساب بسكربت ← تسوية المجاميع ← رسم يناسب السؤال ← تسليم مع السكربت.
+- إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
+
+#### 4. بوابة التحقق (A27)
+
+- إلزامي: المجاميع تطابق المصدر (تسوية) ← حساب بالكود
+- إلزامي: الوحدات والفترات مكتوبة على كل رقم ورسم ← مراجعة المحاور
+- إلزامي: كل رقم من حساب حتمي لا من تقدير النموذج ← سكربت قابل لإعادة التشغيل
+- جودة: نوع الرسم يناسب السؤال ولا يشوّه المقياس ← المحور يبدأ من الصفر للأعمدة
+- جودة: القيم المفقودة والشاذة معالجة ومذكورة ← عدّ القيم الفارغة
+- أمر الحكم في الوضع 1: `think.py qa data --answers qa.json` (PASS / FAIL / INCOMPLETE).
+
+#### 5. التعافي (A29)
+
+- `missing_dependency` (اعتمادية مفقودة، ميزانية 2): سمِّ الاعتمادية بالضبط (حزمة، برنامج، خط، نموذج) ← ثبّت محليًا في بيئة العمل إن كان مجانيًا ومسموحًا (pip --user أو venv أو npm محلي) · البديل: مسار المكتبة القياسية أو أداة أخرى من نفس المجموعة · تصعيد: تثبيت نظامي أو مدفوع أو يحتاج مفتاحًا: توقف واسأل
+- `wrong_input_kind` (نوع مدخل خاطئ، ميزانية 2): افحص المدخل الفعلي (file، ffprobe، أول بايتات، ترميز النص) ← أضف محوّلًا صريحًا بين العقدتين (مثلًا ffmpeg لتحويل الصيغة) واحفظ الأصل كما هو · البديل: اطلب المدخل بالصيغة الصحيحة مع أمر تحويل جاهز · تصعيد: إن كان التحويل يفقد جودة أو بيانات: اسأل قبل التحويل
+- `quality_below_threshold` (جودة دون العتبة، ميزانية 3): أي معيار فشل وبكم (المقيس مقابل العتبة) ← عالج السبب الأكبر وحده ثم أعد القياس · البديل: المنهج البديل المكتوب للمرحلة في الخطة · تصعيد: معيار إلزامي لا يتحقق بعد البديل: توقف وأبلغ بالأرقام
+
+#### 6. الأدلة
+
+- `https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/2367-recommendation-systems-engineering/9140-evaluate-recommenders`
+
+#### 7. قدرات قريبة في العائلة
+
+- `ADATA-52` استخراج أرقام موثوقة من لوحة معلومات تُرسم في المتصفح / Trustworthy numbers from a client-rendered dashboard (documented)
+- `ADATA-53` تنفيذ خطة تتبع الأحداث مع بوابة schema في CI وموافقة المستخدم من المصدر / Event instrumentation from a tracking plan with CI schema gate and consent at source (documented)
+- `ADATA-55` تدقيق مصدر الأصفار في مقاييس متعددة المصادر قبل تصديقها / Zero-provenance audit for multi-source metrics before believing a 0 (documented)
+- `ADATA-56` اختيار منهج جودة البيانات: اختبارات للقواعد المعروفة ومراقبة للمجهول وعقود عند المنتِج / Choose a data-quality approach: tests, monitors and contracts, and where each runs (documented)
+
+### `ADATA-55` — تدقيق مصدر الأصفار في مقاييس متعددة المصادر قبل تصديقها / Zero-provenance audit for multi-source metrics before believing a 0
+
+| الحقل | القيمة |
+|---|---|
+| العائلة | `atlas-data` ([فصل العائلة](../../../.claude/skills/kosif-superpowers/references/powers/atlas-data.md)) |
+| المجموعة | البيانات والرسوم والمواقع (`data`) |
+| نوع المخرج (A25، A27) | بيانات وجداول ورسوم (`data`) |
+| الحالة في الكتالوج | 📄 `documented`: منهج موصوف يحتاج بناءً أو ربطًا قبل التشغيل |
+| سقف التحقق قبل العمل (A27) | V1 حتى تُبنى وتُشغَّل؛ لا تقدَّم جاهزة أبدًا |
+| نطاق الدليل | `url` |
+| الرخصة | card in our own words; the original skill folders are copied verbatim with their MIT license and SOURCE.md under vendor/kosif-atlas |
+
+**ما هي:** حين يجمع أداة واحدة مقاييس من عدة مصادر في مخطط ثابت، يعني الصفر واحدًا من ثلاثة: لم تفعل ذلك فعلًا، أو أن مصدرك لا يبلغ عن هذا الحقل أصلًا، أو أنك فعلته بطريقة لا يتعرف عليها الكاشف. يبحث عن الدالة التي تزيد كل حقل قبل تصديق أي صفر. — In a shared multi-source schema a 0 can mean not done, not reported, or not recognised; find the incrementer before believing it.
+
+**متى:** تقرير أو درجة يظهر فيها 0 لشيء تفعله، أداة تقيّمك من سجلاتك المحلية، تحديد هل المشكلة PR أم issue / a report shows 0 for something you do, a tool grades you from local activity
+
+**كيف:** 1) For every zero-valued field, grep for the code that writes it; read the assignment, not the schema, docs or field name. 2) Build a table: field, function that increments it, reachable from my source?, meaning of my 0 (genuine / not-applicable). 3) For reachable fields, inspect the recogniser: hardcoded allowlists of tool names, file names or conventions that encode one way of working; the same act done differently reads as 0. 4) Note server-side scoring you cannot see and do not guess its weights. 5) Separate findings: collector bugs and recogniser gaps that a small PR can fix, versus design questions for an issue. 6) Never change real behaviour to satisfy a parsing gap. Full original skill(s) with license: vendor/kosif-atlas/skills/3331-metrics-zero-provenance-audit/13845-metrics-zero-provenance-audit.
+
+**المعاملات:** metrics client source, report
+
+**التثبيت:** mkdir -p ~/.claude/skills && cp -r .claude/skills/kosif-superpowers/vendor/kosif-atlas/skills/3331-metrics-zero-provenance-audit/13845-metrics-zero-provenance-audit ~/.claude/skills/metrics-zero-provenance-audit
+
+**الوسوم:** metrics · telemetry · data quality · provenance · audit · مقاييس · أصفار
+
+#### 1. الاستقبال (A25)
+
+- مصدر البيانات: مدخل حاجب ← لا يُفترض: البيانات مطلوبة أو مصدر عام مسمى
+- السؤال الذي تجيب عنه البيانات: سؤال بإجابة مقترحة ← وصف عام: توزيع واتجاه وأعلى خمس فئات
+- الفترة والوحدات: افتراض مكتوب ← كل الفترة الموجودة في الملف، مع ذكرها
+- لا تُفترض أبدًا: مادة الإنتاج نفسها، والإذن بخطوة مدفوعة أو منشورة أو لا رجعة فيها، والهوية والحقوق.
+
+#### 2. الجاهزية والشارة (A28)
+
+- لا متطلبات مسجلة؛ افحص المسار والأداة بـ `hub.py doctor` قبل الشارة.
+- الوضع 1: شارة «هنا الآن» بعد الفحص، لا 📄 الكتالوج تلقائيًا · الوضع 2: `كتالوج: 📄 · هنا: غير مفحوص` · الوضع 3: بلا شارة ولا معرّف.
+
+#### 3. موضعها في الخطة (A26)
+
+- عقدة منمّطة: المدخل `dataset` ← المخرج `report`، والمنفّذ `method:ADATA-55` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
+- لا أداة مسجلة تخدم عائلتها: التنفيذ بالمكتبات أو بأداة من مجموعة أخرى.
+- مراحل النوع: فحص الملف ← تنظيف موثق ← حساب بسكربت ← تسوية المجاميع ← رسم يناسب السؤال ← تسليم مع السكربت.
+- إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
+
+#### 4. بوابة التحقق (A27)
+
+- إلزامي: المجاميع تطابق المصدر (تسوية) ← حساب بالكود
+- إلزامي: الوحدات والفترات مكتوبة على كل رقم ورسم ← مراجعة المحاور
+- إلزامي: كل رقم من حساب حتمي لا من تقدير النموذج ← سكربت قابل لإعادة التشغيل
+- جودة: نوع الرسم يناسب السؤال ولا يشوّه المقياس ← المحور يبدأ من الصفر للأعمدة
+- جودة: القيم المفقودة والشاذة معالجة ومذكورة ← عدّ القيم الفارغة
+- أمر الحكم في الوضع 1: `think.py qa data --answers qa.json` (PASS / FAIL / INCOMPLETE).
+
+#### 5. التعافي (A29)
+
+- `missing_dependency` (اعتمادية مفقودة، ميزانية 2): سمِّ الاعتمادية بالضبط (حزمة، برنامج، خط، نموذج) ← ثبّت محليًا في بيئة العمل إن كان مجانيًا ومسموحًا (pip --user أو venv أو npm محلي) · البديل: مسار المكتبة القياسية أو أداة أخرى من نفس المجموعة · تصعيد: تثبيت نظامي أو مدفوع أو يحتاج مفتاحًا: توقف واسأل
+- `wrong_input_kind` (نوع مدخل خاطئ، ميزانية 2): افحص المدخل الفعلي (file، ffprobe، أول بايتات، ترميز النص) ← أضف محوّلًا صريحًا بين العقدتين (مثلًا ffmpeg لتحويل الصيغة) واحفظ الأصل كما هو · البديل: اطلب المدخل بالصيغة الصحيحة مع أمر تحويل جاهز · تصعيد: إن كان التحويل يفقد جودة أو بيانات: اسأل قبل التحويل
+- `quality_below_threshold` (جودة دون العتبة، ميزانية 3): أي معيار فشل وبكم (المقيس مقابل العتبة) ← عالج السبب الأكبر وحده ثم أعد القياس · البديل: المنهج البديل المكتوب للمرحلة في الخطة · تصعيد: معيار إلزامي لا يتحقق بعد البديل: توقف وأبلغ بالأرقام
+
+#### 6. الأدلة
+
+- `https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/3331-metrics-zero-provenance-audit/13845-metrics-zero-provenance-audit`
+
+#### 7. قدرات قريبة في العائلة
+
+- `ADATA-53` تنفيذ خطة تتبع الأحداث مع بوابة schema في CI وموافقة المستخدم من المصدر / Event instrumentation from a tracking plan with CI schema gate and consent at source (documented)
+- `ADATA-54` تقييم أنظمة التوصية: تقسيم زمني وخط أساس شعبية والحكم للـA/B / Recommender evaluation: temporal split, popularity baseline, A/B as verdict (documented)
+- `ADATA-56` اختيار منهج جودة البيانات: اختبارات للقواعد المعروفة ومراقبة للمجهول وعقود عند المنتِج / Choose a data-quality approach: tests, monitors and contracts, and where each runs (documented)
+
+### `ADATA-56` — اختيار منهج جودة البيانات: اختبارات للقواعد المعروفة ومراقبة للمجهول وعقود عند المنتِج / Choose a data-quality approach: tests, monitors and contracts, and where each runs
+
+| الحقل | القيمة |
+|---|---|
+| العائلة | `atlas-data` ([فصل العائلة](../../../.claude/skills/kosif-superpowers/references/powers/atlas-data.md)) |
+| المجموعة | البيانات والرسوم والمواقع (`data`) |
+| نوع المخرج (A25، A27) | بيانات وجداول ورسوم (`data`) |
+| الحالة في الكتالوج | 📄 `documented`: منهج موصوف يحتاج بناءً أو ربطًا قبل التشغيل |
+| سقف التحقق قبل العمل (A27) | V1 حتى تُبنى وتُشغَّل؛ لا تقدَّم جاهزة أبدًا |
+| نطاق الدليل | `url` |
+| الرخصة | card in our own words; the original skill folders are copied verbatim with their MIT license and SOURCE.md under vendor/kosif-atlas |
+
+**ما هي:** يقرر كيف تُضمن جودة البيانات لمجموعة محددة: القاعدة المعروفة (لا قيم فارغة، فريدة، مرجعية) اختبار، والمجهول عبر الزمن (تأخر التحديث، الحجم، انحراف المخطط والتوزيع) مراقب، وضمان حدود المنتِج عقد؛ ثم الأداة ومكان التشغيل وسياسة الإيقاف أو التحذير والـSLA. — Decides the mix of tests, monitors and contracts, the tool, where checks run and block-vs-warn policy.
+
+**متى:** dbt tests أم Great Expectations أم Soda أم منصة مدارة؟ بيانات سيئة يكتشفها أصحاب المصلحة، ضغط تدقيق / choosing data-quality tooling, stakeholders finding bad data, audit pressure
+
+**كيف:** 1) Restate the situation: warehouse and orchestrator, on dbt or not, the pain (silent bad data, stakeholder-found errors, no coverage, audit), team size and budget, datasets and their consumers. 2) Classify each concern: known rule → test; unknown over time → monitor; producer-boundary guarantee a consumer relies on → contract. Most programmes need all three. 3) Sequence by return: freshness and volume monitors first (cheap, catch most incidents), contracts on the highest-value sources next, column tests where they earn their keep; '200 tests, zero monitors' is inverted. 4) Choose tooling: dbt tests if already on dbt; a Python expectation framework for non-dbt pipelines; a monitoring platform when anomaly detection at scale is worth paying for. 5) Decide where checks run (at ingestion, in the transform, before publish) and which block the pipeline vs warn. 6) Set SLAs per dataset and name the one or two facts that would change the recommendation. Full original skill(s) with license: vendor/kosif-atlas/skills/2271-data-quality-observability/8666-choose-data-quality-approach.
+
+**المعاملات:** stack, datasets, pain
+
+**التثبيت:** mkdir -p ~/.claude/skills && cp -r .claude/skills/kosif-superpowers/vendor/kosif-atlas/skills/2271-data-quality-observability/8666-choose-data-quality-approach ~/.claude/skills/choose-data-quality-approach
+
+**الوسوم:** data quality · data contracts · dbt · data observability · monitoring · جودة البيانات
+
+#### 1. الاستقبال (A25)
+
+- مصدر البيانات: مدخل حاجب ← لا يُفترض: البيانات مطلوبة أو مصدر عام مسمى
+- السؤال الذي تجيب عنه البيانات: سؤال بإجابة مقترحة ← وصف عام: توزيع واتجاه وأعلى خمس فئات
+- الفترة والوحدات: افتراض مكتوب ← كل الفترة الموجودة في الملف، مع ذكرها
+- لا تُفترض أبدًا: مادة الإنتاج نفسها، والإذن بخطوة مدفوعة أو منشورة أو لا رجعة فيها، والهوية والحقوق.
+
+#### 2. الجاهزية والشارة (A28)
+
+- `python3` ← افحص وجوده بأمر واحد قبل كتابة الشارة
+- `npm:three` ← npm ls three أو وجود node_modules/three
+- الوضع 1: شارة «هنا الآن» بعد الفحص، لا 📄 الكتالوج تلقائيًا · الوضع 2: `كتالوج: 📄 · هنا: غير مفحوص` · الوضع 3: بلا شارة ولا معرّف.
+
+#### 3. موضعها في الخطة (A26)
+
+- عقدة منمّطة: المدخل `dataset` ← المخرج `report`، والمنفّذ `method:ADATA-56` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
+- لا أداة مسجلة تخدم عائلتها: التنفيذ بالمكتبات أو بأداة من مجموعة أخرى.
+- مراحل النوع: فحص الملف ← تنظيف موثق ← حساب بسكربت ← تسوية المجاميع ← رسم يناسب السؤال ← تسليم مع السكربت.
+- إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
+
+#### 4. بوابة التحقق (A27)
+
+- إلزامي: المجاميع تطابق المصدر (تسوية) ← حساب بالكود
+- إلزامي: الوحدات والفترات مكتوبة على كل رقم ورسم ← مراجعة المحاور
+- إلزامي: كل رقم من حساب حتمي لا من تقدير النموذج ← سكربت قابل لإعادة التشغيل
+- جودة: نوع الرسم يناسب السؤال ولا يشوّه المقياس ← المحور يبدأ من الصفر للأعمدة
+- جودة: القيم المفقودة والشاذة معالجة ومذكورة ← عدّ القيم الفارغة
+- أمر الحكم في الوضع 1: `think.py qa data --answers qa.json` (PASS / FAIL / INCOMPLETE).
+
+#### 5. التعافي (A29)
+
+- `missing_dependency` (اعتمادية مفقودة، ميزانية 2): سمِّ الاعتمادية بالضبط (حزمة، برنامج، خط، نموذج) ← ثبّت محليًا في بيئة العمل إن كان مجانيًا ومسموحًا (pip --user أو venv أو npm محلي) · البديل: مسار المكتبة القياسية أو أداة أخرى من نفس المجموعة · تصعيد: تثبيت نظامي أو مدفوع أو يحتاج مفتاحًا: توقف واسأل
+- `wrong_input_kind` (نوع مدخل خاطئ، ميزانية 2): افحص المدخل الفعلي (file، ffprobe، أول بايتات، ترميز النص) ← أضف محوّلًا صريحًا بين العقدتين (مثلًا ffmpeg لتحويل الصيغة) واحفظ الأصل كما هو · البديل: اطلب المدخل بالصيغة الصحيحة مع أمر تحويل جاهز · تصعيد: إن كان التحويل يفقد جودة أو بيانات: اسأل قبل التحويل
+- `quality_below_threshold` (جودة دون العتبة، ميزانية 3): أي معيار فشل وبكم (المقيس مقابل العتبة) ← عالج السبب الأكبر وحده ثم أعد القياس · البديل: المنهج البديل المكتوب للمرحلة في الخطة · تصعيد: معيار إلزامي لا يتحقق بعد البديل: توقف وأبلغ بالأرقام
+
+#### 6. الأدلة
+
+- `https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/2271-data-quality-observability/8666-choose-data-quality-approach`
+
+#### 7. قدرات قريبة في العائلة
+
+- `ADATA-54` تقييم أنظمة التوصية: تقسيم زمني وخط أساس شعبية والحكم للـA/B / Recommender evaluation: temporal split, popularity baseline, A/B as verdict (documented)
+- `ADATA-55` تدقيق مصدر الأصفار في مقاييس متعددة المصادر قبل تصديقها / Zero-provenance audit for multi-source metrics before believing a 0 (documented)
 
