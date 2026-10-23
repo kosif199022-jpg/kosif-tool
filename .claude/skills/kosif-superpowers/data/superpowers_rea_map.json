@@ -471,20 +471,20 @@
  },
  "counts": {
   "broken_links": 0,
-  "evals": 99,
+  "evals": 100,
   "families": 62,
   "gaps": {
    "family_without_tool": 21
   },
   "powers": 5521,
-  "py_edges": 262,
+  "py_edges": 265,
   "repo_tests": 35,
   "roles": {
    "helper": 2,
-   "registered": 130
+   "registered": 131
   },
-  "scripts": 132,
-  "tools": 148
+  "scripts": 133,
+  "tools": 149
  },
  "families": [
   {
@@ -640,7 +640,7 @@
   {
    "id": "hand-drawn-draw-on",
    "powers": 63,
-   "tools": 19
+   "tools": 20
   },
   {
    "id": "knowledge-graph",
@@ -735,7 +735,7 @@
   {
    "id": "story-direction-ideas",
    "powers": 95,
-   "tools": 11
+   "tools": 12
   },
   {
    "id": "strategy-finance",
@@ -1183,6 +1183,11 @@
    "from": "creative_reasoning_bridge",
    "kind": "imports",
    "to": "motion_director"
+  },
+  {
+   "from": "drawing_council",
+   "kind": "imports",
+   "to": "drawing_methods"
   },
   {
    "from": "fusionforge",
@@ -1733,6 +1738,16 @@
    "from": "test_drawing_academy",
    "kind": "imports",
    "to": "drawing_academy"
+  },
+  {
+   "from": "test_drawing_council",
+   "kind": "imports",
+   "to": "drawing_council"
+  },
+  {
+   "from": "test_drawing_council",
+   "kind": "imports",
+   "to": "drawing_methods"
   },
   {
    "from": "test_drawing_methods",
@@ -3734,13 +3749,31 @@
   },
   {
    "ci": false,
-   "id": "drawing_methods",
+   "id": "drawing_council",
    "imported_by": [],
+   "path": "scripts/drawing_council.py",
+   "power_count": 0,
+   "powers": [],
+   "role": "registered",
+   "tests": [
+    "evals/test_drawing_council.py"
+   ],
+   "tools": [
+    "drawing-council"
+   ]
+  },
+  {
+   "ci": false,
+   "id": "drawing_methods",
+   "imported_by": [
+    "drawing_council"
+   ],
    "path": "scripts/drawing_methods.py",
    "power_count": 0,
    "powers": [],
    "role": "registered",
    "tests": [
+    "evals/test_drawing_council.py",
     "evals/test_drawing_methods.py"
    ],
    "tools": [
@@ -5206,20 +5239,20 @@
   "areas": {
    "(root)": 8,
    "assets": 4,
-   "data": 121,
+   "data": 122,
    "dua-wednesday": 10,
-   "evals": 92,
+   "evals": 93,
    "examples": 12,
    "montage-pro": 2,
    "proofs": 239,
-   "references": 221,
+   "references": 222,
    "resources": 3,
    "schemas": 5,
-   "scripts": 163,
+   "scripts": 164,
    "templates": 16,
    "vendor": 76
   },
-  "bytes": 56917716,
+  "bytes": 57000385,
   "extensions": {
    "(none)": 8,
    ".bru": 7,
@@ -5227,17 +5260,17 @@
    ".html": 22,
    ".jpg": 23,
    ".js": 14,
-   ".json": 177,
-   ".md": 336,
+   ".json": 178,
+   ".md": 337,
    ".mjs": 9,
    ".png": 6,
-   ".py": 277,
+   ".py": 279,
    ".sh": 5,
    ".ttf": 14,
    ".txt": 54,
    ".woff2": 8
   },
-  "files": 972,
+  "files": 976,
   "symlinks": 0
  }
 }
