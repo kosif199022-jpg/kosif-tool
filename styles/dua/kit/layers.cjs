@@ -4,7 +4,8 @@
  *
  *   node styles/dua/kit/layers.cjs <request.json> <out-dir>
  *
- * request.json: { "date": "22.08.2025", "subtitle": "ليلة جمعة مبـــاركة", "lines": ["…", "سطر أول\nسطر ثان"], "show_title": true }
+ * request.json: { "date": "22.08.2025", "subtitle": "ليلة جمعة مبـــاركة", "lines": ["…", "سطر أول\nسطر ثان"], "show_title": true,
+ *                 "title_text": "الأربعاء" }   (optional: another day's title, set in Aref Ruqaa Bold instead of the Jumuah SVG)
  * Fonts: the composed Thuluth title SVG and KOSIF Jumuah come from fonts/kosif-jumuah (repo root);
  * Marhey and Scheherazade New Bold ship in styles/dua/kit/fonts (OFL, unmodified). Geometry and the halo
  * come from styles/dua/dua.style.json (measured from the reference). Chromium shapes Arabic (HarfBuzz).
@@ -30,10 +31,13 @@ const dataUrl = (p, mime) => `data:${mime};base64,${fs.readFileSync(p).toString(
 
 function page(req) {
   const L = spec.layers;
-  const titleSvg = fs.readFileSync(path.join(REPO, 'fonts/kosif-jumuah/demo/title-aljumuah.svg'), 'utf8')
+  const titleSvg = req.title_text
+    ? `<div id="titlesvg" style="font-family:'Aref Ruqaa';font-weight:700;font-size:220px;line-height:1.2;direction:rtl;text-align:right;white-space:nowrap">${esc(req.title_text)}</div>`
+    : fs.readFileSync(path.join(REPO, 'fonts/kosif-jumuah/demo/title-aljumuah.svg'), 'utf8')
     .replace(/<svg /, '<svg id="titlesvg" preserveAspectRatio="xMaxYMid meet" ');
   const fonts = `
     @font-face{font-family:"KOSIF Jumuah";font-weight:400;src:url(${dataUrl(path.join(REPO, 'fonts/kosif-jumuah/KOSIFJumuah-Regular.ttf'), 'font/ttf')})}
+    @font-face{font-family:"Aref Ruqaa";font-weight:700;src:url(${dataUrl(path.join(REPO, '.claude/skills/kosif-superpowers/proofs/_shared/fonts/ArefRuqaa-Bold.ttf'), 'font/ttf')})}
     @font-face{font-family:"Marhey";font-weight:300 700;src:url(${dataUrl(path.join(KIT, 'fonts/Marhey-VF.ttf'), 'font/ttf')})}
     @font-face{font-family:"Scheherazade New";font-weight:700;src:url(${dataUrl(path.join(KIT, 'fonts/ScheherazadeNew-Bold.ttf'), 'font/ttf')})}`;
   const halo = spec.shadow.css;
