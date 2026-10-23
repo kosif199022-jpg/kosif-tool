@@ -24,9 +24,9 @@
 |---|---:|---|
 | `proven` | 17 | ✅ proven: a proof exists in the catalog; still check its requirements here before calling it ready |
 | `ready` | 8 | 🟢 ready: runnable without setup according to the catalog |
-| `documented` | 332 | 📄 documented: a described method; needs building or wiring before it runs |
+| `documented` | 375 | 📄 documented: a described method; needs building or wiring before it runs |
 | `install` | 2 | 📦 install: needs a package, binary or model first |
-| **المجموع** | **359** | |
+| **المجموع** | **402** | |
 
 ## الأدوات القابلة للتشغيل / runnable tools
 
@@ -60,8 +60,8 @@
 
 | العائلة | القدرات | الفصل |
 |---|---:|---|
-| `atlas-mind` | 60 | [atlas-mind.md](../powers/atlas-mind.md) |
-| `atlas-strategy` | 87 | [atlas-strategy.md](../powers/atlas-strategy.md) |
+| `atlas-mind` | 82 | [atlas-mind.md](../powers/atlas-mind.md) |
+| `atlas-strategy` | 108 | [atlas-strategy.md](../powers/atlas-strategy.md) |
 | `creativity-engine` | 29 | [creativity-engine.md](../powers/creativity-engine.md) |
 | `mental-models` | 63 | [mental-models.md](../powers/mental-models.md) |
 | `planning-execution` | 14 | [planning-execution.md](../powers/planning-execution.md) |
@@ -160,6 +160,28 @@
 | `AMIND-58` | فحص ملاءمة النتيجة لكل مكان تصل إليه وكل نية حُمّلت بها | Landing-fit check: does a result fit every place it reaches | documented |  |
 | `AMIND-59` | بوابة فحص مستقلة لمجموعة الخيارات قبل عرضها على المستخدم | Independent option-set gate check before asking the user | documented |  |
 | `AMIND-60` | استقبال الملاحظات الخارجية: تحقق من كل ادعاء ثم صنّفه وامنع تكراره وأغلق الحلقة | External feedback intake: verify each claim, tier it, prevent, cover, close | documented |  |
+| `AMIND-61` | مدقق الانحراف للقراءة فقط: مقارنة العمل بملفات الحقيقة وإشارات الزمن وسلم تصعيد | Read-only drift audit against truth files, with time signals and an escalation ladder | documented |  |
+| `AMIND-62` | تقرير ما ساهم به الوكيل في الجلسة: مستوى الإشارة أولًا ثم ما يستحق التسجيل | Session contribution evidence: grade the signal first, record only what earns it | documented |  |
+| `AMIND-63` | فهم مؤكد لا شرح فقط: مداخل حسب نية المستخدم واختبارات سيناريو تكشف سوء الفهم | Verified comprehension: intent-scented entry points and scenario probes | documented |  |
+| `AMIND-64` | حلقة التعلم من رفض طلبات الدمج: الخطأ الذي يتكرر مرتين يصبح أداة دائمة | Learning loop from rejected agent PRs: a mistake that happens twice becomes an artefact | documented |  |
+| `AMIND-65` | مطابقة ذاكرة الوكيل مع وثائق المشروع في الاتجاهين: خمسة أنواع انحراف | Reconcile agent memory with project docs in both directions: five kinds of drift | documented |  |
+| `AMIND-66` | تنقيب سجلات الجلسات دوريًا: تكثيف قبل القراءة، نافذة غير محصودة، ومقارنة مع الكتالوج | Periodic session-transcript mining: condense first, unharvested window, dedupe against catalogues | documented |  |
+| `AMIND-67` | مالك واحد لكل نوع حقيقة: التصميم، حالة العمل، خطة التنفيذ، ودليل التسليم | One owner per kind of truth: design, work state, execution plan, delivery evidence | documented |  |
+| `AMIND-68` | اختر الأداة للمشكلة لا بالعادة: أربع خطايا اختيار، وسلم أصلي ثم رسمي ثم طرف ثالث موثوق | Pick for the problem, not the reflex: four selection sins and a native, official, vetted ladder | documented |  |
+| `AMIND-69` | انقل العمل الحتمي إلى سكربت: ثلاث طبقات (حتمي، اكتشف ثم احكم، تفكير فقط) | Script the deterministic work: three tiers, deterministic, detect-then-judge, reasoning-only | documented |  |
+| `AMIND-70` | مستشار الأتمتة والأدوات للقراءة فقط: ماذا يناسب هذا المستودع من خوادم MCP ومهارات وخطافات ووكلاء فرعيين وإضافات | Read-only automation and tool advisor: which MCP servers, skills, hooks, subagents and plugins fit this repository | documented | chromium, claude:tools |
+| `AMIND-71` | تفويض التنفيذ لنموذج أضعف دون حضورك: اتخذ كل قرار مسبقًا، واكتب أقل قدر ممكن | A plan a weaker model will execute without you: make every decision, write as little as possible | documented | claude:tools |
+| `AMIND-72` | من التخطيط إلى التنفيذ بسلطتين: التوجيه التقني لك ويُسجل، والوظيفي والتشغيلي للمستخدم ويُسأل، والخطة هي المواصفة | Plan, then implement, under two authorities: technical direction is yours and logged, functional and operational direction is the user's and asked; the plan is the spec | documented | git |
+| `AMIND-73` | مدقق الاستدلال: مصفوفة تتبع من الشروط الأصلية إلى الاستنتاج، وتصنيف كل افتراض معطى أو مُثبت أو مستنتج أو مخترع أو مجهول | Reasoning verifier: a traceability matrix from the original conditions to the conclusion, with each assumption classed given, verified, deduced, invented or unknown | documented |  |
+| `AMIND-74` | استدل ولا تردد: الموروث يصف ما هو كائن ولا يبرر نفسه، فأعد اشتقاق القرارات التي تعيش على السابقة | Reason, don't recite: inherited content describes what is and does not justify itself, so re-derive decisions coasting on precedent | documented |  |
+| `AMIND-75` | عصف ذهني بقدر الحاجة: فرز بسيط أو مضغوط أو كامل، وكبسولة قرار من خمسة أسطر، وفحص سياق رخيص قبل الأسئلة | Brainstorm only as much as needed: minimal, compact or full triage, a five-line decision capsule, and a cheap context preflight before questions | documented |  |
+| `AMIND-76` | استخراج القرارات التي تقوم عليها النية: اعرض الخريطة كاملة أولًا، واسأل فقط ما لا يُشتق، والمدخلات مادة لا حقيقة | Elicit the decisions an intent turns on: show the whole map first, ask only what cannot be derived, treat input as material not truth | documented |  |
+| `AMIND-77` | اختيار مسار تنفيذ الوكلاء: مالك واحد لكل خانة (المواصفة، انضباط التنفيذ، المراجعة، أمان الكود، حوكمة الإعداد) | Choose agent execution rails: one owner per slot (spec, execution discipline, review, code security, setup governance) | documented | claude:tools |
+| `AMIND-78` | تقييم مهارة كدالة تحت الاختبار: تشغيل أعمى بوكيل جديد لكل حالة، وحكم منفصل يطبق المعيار، وسقاطة لا تقبل تراجع الدرجة | Evaluate a skill like a function under test: a blind fresh agent per case, a separate judge applying the bar, and a ratchet that never accepts a lower score | documented |  |
+| `AMIND-79` | تأليف المهارات وإدارة مكتبتها: هل هي مهارة أصلًا، ووصف يقول متى لا ماذا، وإبقاء أو إصلاح أو حذف حسب الفرق المقاس | Authoring skills and curating the library: is it a skill at all, a description that says when not what, and keep/fix/cut by measured delta | documented |  |
+| `AMIND-80` | حوّل التصحيح المتكرر للوكيل إلى قاعدة في المكان الصحيح: ملف سياق أو مهارة أو قاعدة لمسار أو خطاف أو اختبار | Turn a repeated correction into a rule in the right place: context file, skill, path rule, hook or test | documented |  |
+| `AMIND-81` | أسماء أفضل: مولدات عمياء من زوايا مختلفة لكسر التثبيت، ومعايير مرتبة تبدأ بألا يكذب الاسم، والإنسان يختار دائمًا | Better names: blind generators from distinct lenses to break the anchor, ranked criteria led by 'the name must not lie', and the human always picks | documented |  |
+| `AMIND-82` | حلقة تحسين بسقاطة يقودها الهدف: حدد النهاية لا الطريق، وافصل الحكم عن المنفذ، واستبدل الوكيل العالق | Goal-driven ratchet optimisation loop: define the end, not the route; separate judge from worker; replace a stuck worker | documented |  |
 | `ASTRAT-01` | تدقيق جدوى تعدد الوكلاء مقابل وكيل واحد | Audit multi-agent topology against single-agent baseline | documented |  |
 | `ASTRAT-02` | حلقة مستقلة لتصريف قائمة المهام | Autonomous backlog-draining loop and single-task ralph loop | documented |  |
 | `ASTRAT-03` | توجيه أسئلة المؤسس إلى أدوار المستشارين التنفيذيين | Route founder questions to C-suite advisor roles | documented |  |
@@ -170,6 +192,15 @@
 | `ASTRAT-08` | تقرير استخدام الطاقة وانحراف العمل قيد التنفيذ | Practice utilisation and WIP variance report | documented |  |
 | `ASTRAT-09` | تخطيط دفعة الموردين الأسبوعية مع الاستثناءات | Weekly supplier pay-run planning with exclusions | documented |  |
 | `ASTRAT-10` | فحص كلمات ASO وتدقيق القائمة | App Store Optimization keyword probe and lint | documented |  |
+| `ASTRAT-100` | تصميم الباقات والمستويات: كل حد بين مستويين بُعد يختار عليه العميل، لا قائمة ميزات أطول | Packaging and tiering: every tier boundary is a fence customers self-select on, not a longer feature list | documented |  |
+| `ASTRAT-101` | خطة تدقيق داخلي مبنية على المخاطر وتنفيذ مهمة تدقيق: عالم التدقيق، والمخاطر المتبقية، ومصفوفة المخاطر والضوابط | Risk-based internal audit plan and engagement: the audit universe, residual risk, and the risk and control matrix | documented |  |
+| `ASTRAT-102` | تخطيط دراسة بحث مستخدمين: بوابة 'هل هذا بحث أم تبرير'، وسؤال قابل للبحث، وطريقة من السؤال، وعينة بحجم الادعاء | Plan a user research study: a research-theatre gate, a researchable question, method from the question, sample sized to the claim | documented |  |
+| `ASTRAT-103` | خطة التحكم وخطة التحقق من التصميم مرتبطتان بتحليل FMEA: صف لكل خاصية، واختبار لكل نمط فشل عالي الأولوية | Control plan and design verification plan linked to FMEA: a row per characteristic and a test for every high-priority failure mode | documented |  |
+| `ASTRAT-104` | تحليل نظام القياس وGauge R&R: اختيار نوع الدراسة وتصميمها وقراءة النتيجة | Measurement system analysis and Gauge R&R: choose the study, design it, read the result | documented |  |
+| `ASTRAT-105` | تخطيط الإنتاج وتكلفة الوحدة: الفاقد تكلفة حقيقية، والطاقة تقاس بالأوعية والزمن، والتغليف يحدد القناة | Production planning and unit cost: yield loss is a real cost, capacity is vessels and time, packaging gates the channel | documented |  |
+| `ASTRAT-106` | تقدير حجم السوق TAM وSAM وSOM من أعلى ومن أسفل والتحقق المتبادل | Market sizing TAM, SAM and SOM, top-down and bottom-up, cross-checked | documented |  |
+| `ASTRAT-107` | اكتشاف المنتج: أفكار من ثلاث زوايا، وفرضية XYZ، وتجارب منخفضة الجهد بعتبة نجاح، وترتيب بدرجة الفرصة | Product discovery: ideas from three perspectives, XYZ hypotheses, low-effort experiments with success thresholds, opportunity-score ranking | documented | pip:hypothesis |
+| `ASTRAT-108` | مشكلة البداية الباردة للمنتجات الشبكية: شبكة ذرية واحدة، والجانب الصعب أولًا، ونقطة الانقلاب، ومقاييس الكثافة لا الإجمالي | The cold start problem for networked products: one atomic network, the hard side first, the tipping point, density metrics over totals | documented |  |
 | `ASTRAT-11` | رحلة من الفكرة إلى التطبيق بمتتبع | Idea-to-app journey with docs tracker | documented |  |
 | `ASTRAT-12` | مراجعة مخاطر ما قبل البناء | Pre-build risk review and kill-test | documented |  |
 | `ASTRAT-13` | قرار تخزين البيانات على السلسلة أو خارجها | On-chain versus off-chain data placement | documented |  |
@@ -247,6 +278,18 @@
 | `ASTRAT-85` | تدقيق معايير العلامة عبر الفروع وتحويله إلى حلقة تدريب | Multi-unit brand-standard audit turned into a coaching loop | documented |  |
 | `ASTRAT-86` | تعريف العميل المثالي ICP والتحقق منه بخطة اختبار | Define and validate an Ideal Customer Profile | documented |  |
 | `ASTRAT-87` | أولويات تشغيل القائد: عنق الزجاجة ومراجعة التقويم والتفويض | Leader operating priorities: bottleneck, calendar audit, delegation | documented |  |
+| `ASTRAT-88` | خريطة فرص سير العمل: نمذجة العمل الحالي بالأدلة قبل اقتراح الأتمتة | Workflow opportunity mapping: model the current work from evidence before proposing automation | documented |  |
+| `ASTRAT-89` | تشخيص صحة خط المبيعات والتنبؤ: جودة البيانات أولًا وتغطية معايرة بالتاريخ | Sales pipeline health and forecast diagnosis calibrated to history | documented | key:video-gen |
+| `ASTRAT-90` | خط المنح: ملاءمة الممول قبل الجهد، بوابة تقدّم أو اعتذر، وترتيب حسب القدرة | Grant pipeline: funder fit before effort, go/no-go gate, capacity-weighted priority | documented |  |
+| `ASTRAT-91` | اقتصاديات نماذج العمولة: النسبة أم السقف أم الرسوم، ونقطة التقاطع | Commission model economics: split vs cap vs fee and the crossover point | documented |  |
+| `ASTRAT-92` | تشغيل جلسات قابلية الاستخدام والمقابلات دون تلويث النتائج | Run usability and interview sessions without contaminating the findings | documented |  |
+| `ASTRAT-93` | تحسين مسارات الجمع والأسطول: كثافة المحطات ووقت القيادة غير المنتج وكلفة المحطة | Route and fleet optimisation for collection services: density, windshield time, cost per stop | documented |  |
+| `ASTRAT-94` | من دورة تطوير البرمجيات إلى دورة تطوير بالوكلاء: من ينفذ كل مرحلة وأين تبقى البوابات البشرية | SDLC to agentic development lifecycle: who executes each stage and where human gates stay | documented |  |
+| `ASTRAT-95` | دورة حياة القرار بعد اعتماده: خطة 90 يومًا، وتجميد يمنع التراجع المتسرع، ومراجعة تفصل جودة العملية عن النتيجة | Decision lifecycle after approval: a 90-day execution plan, a cooldown freeze, and a retrospective that separates process from outcome | documented |  |
+| `ASTRAT-96` | قيم الشركة من وقائع حقيقية لا من شعارات: سلوك ملحوظ ومعايير توظيف وأنماط مرفوضة | Company values derived from real episodes, not slogans: observable behaviour, hiring criteria and anti-patterns | documented |  |
+| `ASTRAT-97` | مراجعة خطة عمل أو منتج بأربعة مواقف: توسيع، توسيع انتقائي، تثبيت النطاق، تقليص | Business plan review under one of four postures: expand, selectively expand, hold scope, reduce | documented |  |
+| `ASTRAT-98` | بداية الوصول للسوق: خطة تسويق عضوية، وقرار صريح عن الإعلان المدفوع، وأول العملاء بطريق دافئ أو مجتمعي أو بارد | Early go-to-market: an organic marketing plan, an explicit paid-spend decision, and first customers by a warm, community or cold route | documented |  |
+| `ASTRAT-99` | تشخيص تعطل قرارات المنتج بين الفرق: جملة القرار وخريطة الصلاحية وستة شروط للمحاذاة | Diagnose product decision deadlocks across teams: the decision sentence, the authority map and six alignment conditions | documented |  |
 | `IDEA-01` | التباعد ثم التقارب | Diverge → converge protocol | documented | python3 |
 | `IDEA-02` | التفكير من المبادئ الأولى | First principles | documented |  |
 | `IDEA-03` | القلب: كيف نضمن الفشل؟ | Inversion | documented |  |

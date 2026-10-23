@@ -1,0 +1,96 @@
+{
+ "schema": "kosif.atlas-5000.mining-receipt.v1",
+ "date": "2026-10-23",
+ "batch": "batch3-media",
+ "atlas": "https://github.com/kosif199022-jpg/kosif-atlas",
+ "atlas_commit": "99bb108dff169880dd531359f474a01b73c4b233",
+ "powers_added": 2,
+ "sources_read": 7,
+ "scope_note": "Each SKILL.md was read in full as inert text and its method summarised in our own words on the card; with the owner's approval the whole skill folder (text files only) is also copied verbatim with its license into vendor/kosif-atlas. Nothing from the Atlas was executed. Only READ_ONLY_OK, permissive-license, no-risk-flag skills were used.",
+ "sources": [
+  {
+   "atlas_id": 755,
+   "plugin": "mas-video-lab",
+   "skill": "final-cut-pro",
+   "license": "MIT",
+   "theme": "agent-workflow",
+   "path": "skills/235-mas-video-lab/755-final-cut-pro",
+   "skill_md_sha256": "07c6d6d21ec4e434790e2afe411654ce8ee05e8d8a73e97af38742ef405bca91",
+   "bytes": 8890,
+   "read_in_full": true,
+   "power": "AMEDIA-28"
+  },
+  {
+   "atlas_id": 708,
+   "plugin": "mas-3d-games",
+   "skill": "houdini",
+   "license": "MIT",
+   "theme": "agent-workflow",
+   "path": "skills/228-mas-3d-games/708-houdini",
+   "skill_md_sha256": "6529c45568f58041e9e73e0506b53680a8157c9bc803e8b357829103a06c4786",
+   "bytes": 8551,
+   "read_in_full": true,
+   "power": "AMEDIA-29"
+  },
+  {
+   "atlas_id": 712,
+   "plugin": "mas-3d-games",
+   "skill": "zbrush",
+   "license": "MIT",
+   "theme": "agent-workflow",
+   "path": "skills/228-mas-3d-games/712-zbrush",
+   "skill_md_sha256": "f838fe44ba72bdaa753860b66fcd81aff948a02862bc9535f450ed1be619b032",
+   "bytes": 6909,
+   "read_in_full": true,
+   "power": "AMEDIA-29"
+  },
+  {
+   "atlas_id": 724,
+   "plugin": "mas-cad-studio",
+   "skill": "catia",
+   "license": "MIT",
+   "theme": "agent-workflow",
+   "path": "skills/230-mas-cad-studio/724-catia",
+   "skill_md_sha256": "4caad47b5bd2f1277578ebae0be422e27fe1c04ce6f9847c6d4b49458f6c364d",
+   "bytes": 7703,
+   "read_in_full": true,
+   "power": "AMEDIA-29"
+  },
+  {
+   "atlas_id": 725,
+   "plugin": "mas-cad-studio",
+   "skill": "fusion-360",
+   "license": "MIT",
+   "theme": "agent-workflow",
+   "path": "skills/230-mas-cad-studio/725-fusion-360",
+   "skill_md_sha256": "226024d50919ebc5db0fe10573f294be99cb226bb30a0c3c18c7f5607cd30cc9",
+   "bytes": 9259,
+   "read_in_full": true,
+   "power": "AMEDIA-29"
+  },
+  {
+   "atlas_id": 726,
+   "plugin": "mas-cad-studio",
+   "skill": "rhino",
+   "license": "MIT",
+   "theme": "mcp-tooling",
+   "path": "skills/230-mas-cad-studio/726-rhino",
+   "skill_md_sha256": "0cd3891a4b3c92aa520cea93afa5614fd1923d0b7c707eaa57900a2f36519cdc",
+   "bytes": 7829,
+   "read_in_full": true,
+   "power": "AMEDIA-29"
+  },
+  {
+   "atlas_id": 728,
+   "plugin": "mas-cad-studio",
+   "skill": "solidworks",
+   "license": "MIT",
+   "theme": "mcp-tooling",
+   "path": "skills/230-mas-cad-studio/728-solidworks",
+   "skill_md_sha256": "2755217e522b30f413de3dff893e3a363d1e7c63212d74bc23c9f18f468a433a",
+   "bytes": 8302,
+   "read_in_full": true,
+   "power": "AMEDIA-29"
+  }
+ ]
+}

@@ -1485,5 +1485,236 @@
     "707": "d0ed8e1374abaa201915aefc27cd4a2891d66e3c4643adfbb40a0c945822beab"
    }
   }
+ },
+ {
+  "id": "AMEDIA-28",
+  "family": "atlas-media",
+  "domain": "media",
+  "name_ar": "توليد خط زمني لـFinal Cut Pro برمجيًا عبر FCPXML وتصدير دفعي بـCompressor",
+  "name_en": "Programmatic Final Cut Pro timelines via FCPXML and batch export with Compressor",
+  "status": "documented",
+  "what": "يبني مشروع Final Cut Pro قابلًا للاستيراد من سكربت: ملف FCPXML يحدد صيغة المشروع والأصول والقصة الرئيسية بالصوت والصورة متزامنين والعناوين المتصلة وعلامات الفصول، ثم يصدّر عدة صيغ دفعة واحدة (ماستر ProRes، H.264 للويب، 4K) من سطر الأوامر، مع تنظيف ملفات العرض المؤقتة في المكتبة. — Builds an importable FCP project from code and batch-exports masters and web versions.",
+  "when": "تسليم مونتاج قابل للتعديل لمحرر يعمل على Final Cut، تحويل قائمة قطع أو توقيت كلمات إلى خط زمني، تصدير عدة نسخ / handing an editable cut to a Final Cut editor",
+  "how": "1) Choose the FCPXML version the target app imports and declare a format (frame size, frame rate as a rational frame duration, colour space). 2) Declare each asset with its media reference, duration and audio and video flags. 3) Build the project sequence on the primary storyline with clips using rational time values (offset, start, duration in frame-duration multiples) so cuts land on frame boundaries. 4) Attach titles, B-roll and music as connected clips with lanes, and add chapter and marker elements from word timing or a cut list. 5) Validate the XML against the DTD before handing over, and import a test copy. 6) Batch-export with the command-line encoder using saved settings for each deliverable (ProRes master, web H.264, a 4K platform version). 7) Purge generated render and optical-flow caches from the library to recover disk space, never original media. 8) Keep the user's audio untouched and report duration, frame rate and audio checks. Full original skill(s) with license: vendor/kosif-atlas/skills/235-mas-video-lab/755-final-cut-pro.",
+  "params": "assets, cut list, format",
+  "install": "mkdir -p ~/.claude/skills && cp -r .claude/skills/kosif-superpowers/vendor/kosif-atlas/skills/235-mas-video-lab/755-final-cut-pro ~/.claude/skills/final-cut-pro",
+  "requires": [
+   "imagemagick"
+  ],
+  "license": "card in our own words; the original skill folders are copied verbatim with their MIT license and SOURCE.md under vendor/kosif-atlas",
+  "proof": [
+   "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/235-mas-video-lab/755-final-cut-pro"
+  ],
+  "proof_scope": "url",
+  "styles": [],
+  "tags": [
+   "Final Cut Pro",
+   "FCPXML",
+   "NLE interchange",
+   "montage",
+   "video export",
+   "مونتاج",
+   "تصدير"
+  ],
+  "section": "سير عمل الوكلاء — Agent workflows & orchestration",
+  "source": "KOSIF Atlas exhaustive pass 2026-10-23, batch batch3-media (https://github.com/kosif199022-jpg/kosif-atlas @ 99bb108d): mas-video-lab/final-cut-pro (#755) · SKILL.md read in full as inert text",
+  "atlas": {
+   "ids": [
+    "755"
+   ],
+   "examples": [
+    {
+     "id": "755",
+     "plugin": "mas-video-lab",
+     "skill": "final-cut-pro",
+     "url": "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/235-mas-video-lab/755-final-cut-pro"
+    }
+   ],
+   "theme": "agent-workflow",
+   "risk_notes": "Method guidance only; no Atlas code imported or executed.",
+   "kosif_overlap_ids": [
+    "FMT-29"
+   ],
+   "stage": "extracted",
+   "verified_by": "atlas-pass-20261023-batch3-media.json",
+   "skill_md_sha256": {
+    "755": "07c6d6d21ec4e434790e2afe411654ce8ee05e8d8a73e97af38742ef405bca91"
+   },
+   "vendored": [
+    "vendor/kosif-atlas/skills/235-mas-video-lab/755-final-cut-pro"
+   ]
+  }
+ },
+ {
+  "id": "AMEDIA-29",
+  "family": "atlas-media",
+  "domain": "media",
+  "name_ar": "أتمتة برامج ثلاثية الأبعاد والتصميم الهندسي دون واجهة: خبز المحاكاة، تقليل المضلعات، واستخراج الخصائص",
+  "name_en": "Headless automation of 3D and CAD apps: simulation baking, batch decimation, property extraction",
+  "status": "documented",
+  "what": "نمط مشترك لبرامج الإنتاج الثقيلة (Houdini، ZBrush، CATIA، Fusion، Rhino، SOLIDWORKS): سكربت يعمل بلا واجهة عبر واجهة البرنامج البرمجية ليخبز محاكاة إلى ملفات، أو يقلل كثافة نماذج النحت دفعة واحدة ويصدّرها، أو يمر على شجرة تجميع ليستخرج الأبعاد والكتلة ويصدّر STEP، أو يولد نموذجًا بارامتريًا؛ مع جدول أعطال شائعة لكل برنامج. — Script heavy DCC and CAD apps without the GUI, with a per-app troubleshooting matrix.",
+  "when": "مهام متكررة في Houdini أو ZBrush أو CATIA أو Fusion، خبز محاكاة على خادم، تجهيز نماذج للألعاب، تقارير خصائص التجميعات / repetitive work in 3D or CAD apps",
+  "how": "1) Use each app's own scripting surface: the Houdini Python module through its headless interpreter, ZBrush macros, CATIA's COM automation from Python on Windows, Fusion's Python API in its script manager, RhinoCommon with Grasshopper and Rhino.Compute for headless runs, SOLIDWORKS through COM from Python. 2) For simulation, load the scene, set the frame range and substeps, cook the cache node to disk and log per-frame time; diagnose explosions by finer particle separation and more substeps before touching solver internals. 3) For sculpts, iterate visible subtools, decimate to a target count while preserving silhouette and normals, and export each with a predictable name; split very dense meshes by polygroup before display. 4) For CAD assemblies, traverse the product tree, compute bounding boxes and inertia, and export a neutral format; fix broken contextual links after renames before exporting. 5) For parametric models drive dimensions from a parameter table so the result regenerates; read red timeline features as lost references and re-constrain the sketch; in Rhino check naked edges and document tolerance before a boolean, and flatten or graft Grasshopper data trees instead of letting branches multiply; in SOLIDWORKS read the rebuild errors parent-first and use mate diagnostics for over-defined loops, and lightweight mode for very large assemblies. 6) Run scripts on copies, record versions of the app and plugins, and never overwrite the source file. Full original skill(s) with license: vendor/kosif-atlas/skills/228-mas-3d-games/708-houdini, vendor/kosif-atlas/skills/228-mas-3d-games/712-zbrush, vendor/kosif-atlas/skills/230-mas-cad-studio/724-catia, vendor/kosif-atlas/skills/230-mas-cad-studio/725-fusion-360, vendor/kosif-atlas/skills/230-mas-cad-studio/726-rhino, vendor/kosif-atlas/skills/230-mas-cad-studio/728-solidworks.",
+  "params": "app, task",
+  "install": "mkdir -p ~/.claude/skills && cp -r .claude/skills/kosif-superpowers/vendor/kosif-atlas/skills/228-mas-3d-games/708-houdini ~/.claude/skills/houdini ; mkdir -p ~/.claude/skills && cp -r .claude/skills/kosif-superpowers/vendor/kosif-atlas/skills/228-mas-3d-games/712-zbrush ~/.claude/skills/zbrush ; mkdir -p ~/.claude/skills && cp -r .claude/skills/kosif-superpowers/vendor/kosif-atlas/skills/230-mas-cad-studio/724-catia ~/.claude/skills/catia ; mkdir -p ~/.claude/skills && cp -r .claude/skills/kosif-superpowers/vendor/kosif-atlas/skills/230-mas-cad-studio/725-fusion-360 ~/.claude/skills/fusion-360 ; mkdir -p ~/.claude/skills && cp -r .claude/skills/kosif-superpowers/vendor/kosif-atlas/skills/230-mas-cad-studio/726-rhino ~/.claude/skills/rhino ; mkdir -p ~/.claude/skills && cp -r .claude/skills/kosif-superpowers/vendor/kosif-atlas/skills/230-mas-cad-studio/728-solidworks ~/.claude/skills/solidworks",
+  "requires": [
+   "python3",
+   "chromium"
+  ],
+  "license": "card in our own words; the original skill folders are copied verbatim with their MIT license and SOURCE.md under vendor/kosif-atlas",
+  "proof": [
+   "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/228-mas-3d-games/708-houdini",
+   "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/228-mas-3d-games/712-zbrush",
+   "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/230-mas-cad-studio/724-catia",
+   "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/230-mas-cad-studio/725-fusion-360",
+   "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/230-mas-cad-studio/726-rhino",
+   "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/230-mas-cad-studio/728-solidworks"
+  ],
+  "proof_scope": "url",
+  "styles": [],
+  "tags": [
+   "Houdini",
+   "ZBrush",
+   "CATIA",
+   "Fusion 360",
+   "3D automation",
+   "CAD",
+   "ثلاثي الأبعاد",
+   "أتمتة",
+   "Rhino",
+   "Grasshopper",
+   "SOLIDWORKS"
+  ],
+  "section": "سير عمل الوكلاء — Agent workflows & orchestration",
+  "source": "KOSIF Atlas exhaustive pass 2026-10-23, batch batch3-media (https://github.com/kosif199022-jpg/kosif-atlas @ 99bb108d): mas-3d-games/houdini (#708); mas-3d-games/zbrush (#712); mas-cad-studio/catia (#724); mas-cad-studio/fusion-360 (#725); mas-cad-studio/rhino (#726); mas-cad-studio/solidworks (#728) · SKILL.md read in full as inert text",
+  "atlas": {
+   "ids": [
+    "708",
+    "712",
+    "724",
+    "725",
+    "726",
+    "728"
+   ],
+   "examples": [
+    {
+     "id": "708",
+     "plugin": "mas-3d-games",
+     "skill": "houdini",
+     "url": "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/228-mas-3d-games/708-houdini"
+    },
+    {
+     "id": "712",
+     "plugin": "mas-3d-games",
+     "skill": "zbrush",
+     "url": "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/228-mas-3d-games/712-zbrush"
+    },
+    {
+     "id": "724",
+     "plugin": "mas-cad-studio",
+     "skill": "catia",
+     "url": "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/230-mas-cad-studio/724-catia"
+    },
+    {
+     "id": "725",
+     "plugin": "mas-cad-studio",
+     "skill": "fusion-360",
+     "url": "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/230-mas-cad-studio/725-fusion-360"
+    },
+    {
+     "id": "726",
+     "plugin": "mas-cad-studio",
+     "skill": "rhino",
+     "url": "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/230-mas-cad-studio/726-rhino"
+    },
+    {
+     "id": "728",
+     "plugin": "mas-cad-studio",
+     "skill": "solidworks",
+     "url": "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/230-mas-cad-studio/728-solidworks"
+    }
+   ],
+   "theme": "agent-workflow",
+   "risk_notes": "Method guidance only; no Atlas code imported or executed.",
+   "kosif_overlap_ids": [
+    "TOOL-36"
+   ],
+   "stage": "extracted",
+   "verified_by": "atlas-pass-20261023-batch3-media.json",
+   "skill_md_sha256": {
+    "708": "6529c45568f58041e9e73e0506b53680a8157c9bc803e8b357829103a06c4786",
+    "712": "f838fe44ba72bdaa753860b66fcd81aff948a02862bc9535f450ed1be619b032",
+    "724": "4caad47b5bd2f1277578ebae0be422e27fe1c04ce6f9847c6d4b49458f6c364d",
+    "725": "226024d50919ebc5db0fe10573f294be99cb226bb30a0c3c18c7f5607cd30cc9",
+    "726": "0cd3891a4b3c92aa520cea93afa5614fd1923d0b7c707eaa57900a2f36519cdc",
+    "728": "2755217e522b30f413de3dff893e3a363d1e7c63212d74bc23c9f18f468a433a"
+   },
+   "vendored": [
+    "vendor/kosif-atlas/skills/228-mas-3d-games/708-houdini",
+    "vendor/kosif-atlas/skills/228-mas-3d-games/712-zbrush",
+    "vendor/kosif-atlas/skills/230-mas-cad-studio/724-catia",
+    "vendor/kosif-atlas/skills/230-mas-cad-studio/725-fusion-360",
+    "vendor/kosif-atlas/skills/230-mas-cad-studio/726-rhino",
+    "vendor/kosif-atlas/skills/230-mas-cad-studio/728-solidworks"
+   ]
+  }
+ },
+ {
+  "id": "AMEDIA-30",
+  "family": "atlas-media",
+  "domain": "media",
+  "name_ar": "ربط الوكيل الصوتي بالهاتف وتقييمه: SIP وDTMF والتحويل الدافئ ونجاح المهمة كمقياس أول",
+  "name_en": "Telephony and call-flow integration for a voice agent: SIP, DTMF, warm transfer, and task success as the primary metric",
+  "status": "documented",
+  "what": "السباكة التي تصل الوكيل بالمتصلين الحقيقيين والأداة التي تثبت أنه يعمل: قناة الهاتف أو المتصفح بالترميز الصحيح، والتقاط أزرار لوحة المفاتيح، والمزج المقصود بين خطوات IVR الثابتة والمحادثة، وتحويل دافئ للإنسان مع السياق، وفروع لفشل المكالمة، ومجموعة تقييم بمعيار نجاح المهمة. — Wire and evaluate a phone voice agent.",
+  "when": "ربط وكيل صوتي بخط هاتف، مركز اتصال آلي، تحويل للموظف، تقييم وكيل مكالمات / connecting a voice agent to phone calls",
+  "how": "1) Channel: SIP or PSTN trunking with RTP media for phones, WebRTC for browser or app; confirm codec and sample rate so ASR and TTS receive the right format. 2) DTMF: confirm the provider's path (in-band tones, RFC 2833, SIP INFO differ). 3) Decide per step whether a deterministic IVR or keypad step (authentication, menus) beats conversation, and mix deliberately. 4) Routing and a warm transfer that hands the human agent the context; define escalation triggers up front. 5) Treat dropped calls, no answer, trunk failures and failed mid-call transfers as designed branches. 6) Evaluate on representative recorded conversations: task success first, then word error rate, end-to-end latency and barge-in handling, with a regression gate on changes; track connect and drop rates, DTMF reliability and warm-transfer success. 7) Recording consent, robocall rules and payment or health data are legal questions to route out, not engineering decisions; call audio and transcripts are sensitive data. Full original skill(s) with license: vendor/kosif-atlas/skills/2261-conversational-ai-voice-engineering/8617-telephony-and-call-flow-integration.",
+  "params": "provider, call flow",
+  "install": "mkdir -p ~/.claude/skills && cp -r .claude/skills/kosif-superpowers/vendor/kosif-atlas/skills/2261-conversational-ai-voice-engineering/8617-telephony-and-call-flow-integration ~/.claude/skills/telephony-and-call-flow-integration",
+  "requires": [],
+  "license": "card in our own words; the original skill folders are copied verbatim with their MIT license and SOURCE.md under vendor/kosif-atlas",
+  "proof": [
+   "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/2261-conversational-ai-voice-engineering/8617-telephony-and-call-flow-integration"
+  ],
+  "proof_scope": "url",
+  "styles": [],
+  "tags": [
+   "voice agent",
+   "telephony",
+   "SIP",
+   "DTMF",
+   "IVR",
+   "call center",
+   "وكيل صوتي",
+   "مكالمات"
+  ],
+  "section": "أدوات MCP والتكاملات — MCP servers, tools & integrations",
+  "source": "KOSIF Atlas exhaustive pass 2026-10-23, batch batch4-media (https://github.com/kosif199022-jpg/kosif-atlas @ 99bb108d): conversational-ai-voice-engineering/telephony-and-call-flow-integration (#8617) · SKILL.md read in full as inert text",
+  "atlas": {
+   "ids": [
+    "8617"
+   ],
+   "examples": [
+    {
+     "id": "8617",
+     "plugin": "conversational-ai-voice-engineering",
+     "skill": "telephony-and-call-flow-integration",
+     "url": "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/2261-conversational-ai-voice-engineering/8617-telephony-and-call-flow-integration"
+    }
+   ],
+   "theme": "mcp-tooling",
+   "risk_notes": "Method guidance only; no Atlas code imported or executed.",
+   "kosif_overlap_ids": [
+    "AMEDIA-11"
+   ],
+   "stage": "extracted",
+   "verified_by": "atlas-pass-20261023-batch4-media.json",
+   "skill_md_sha256": {
+    "8617": "407553b27217b8c3a9d17cc66a0e09eb29be25f827edfbb4850f70aabc90b92f"
+   },
+   "vendored": [
+    "vendor/kosif-atlas/skills/2261-conversational-ai-voice-engineering/8617-telephony-and-call-flow-integration"
+   ]
+  }
  }
 ]

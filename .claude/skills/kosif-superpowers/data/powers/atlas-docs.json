@@ -3013,5 +3013,373 @@
     "vendor/kosif-atlas/skills/2342-museum-cultural-institution-operations/9003-publish-digital-collections-and-access"
    ]
   }
+ },
+ {
+  "id": "ADOCS-56",
+  "family": "atlas-docs",
+  "domain": "docs",
+  "name_ar": "صفحة حالة المشروع بتبويبات: تحديث بالفروق لا إعادة سرد، وكتلة حالة مضمنة في كل نسخة",
+  "name_en": "Tabbed project status page: refresh by deltas, not re-narration, with a state block embedded in every render",
+  "status": "documented",
+  "what": "صفحة حالة لمشروع أكبر من أن يتابَع من الذاكرة: نظرة عامة ومسارات عمل كعمود فقري، وتبويبات للقرارات والأسئلة فقط حين يوجد محتوى حقيقي، وملف إعداد لكل مشروع بمصادر الحالة الحية والمسؤولين، وتحديث يقرأ النسخة السابقة ويغير ما تغير فقط. — A living status artifact.",
+  "when": "صفحة حالة للمشروع، تقرير تقدم أسبوعي، تحديث لوحة المشروع / project status page or weekly update",
+  "how": "1) Keep one config per project: name, slug, one-line description, audience, the page URL after first publish, live sources (repos and queries, trackers, docs), owners per workstream and where to ask, dated notes for future refreshes. 2) Pick tabs with real content only: Overview and Workstreams are the spine; Decisions, FAQ, Risks or Timeline earn a tab only when substantive. 3) Generate from one template, then reread the render for cut-off text and overflow before publishing. 4) Embed a JSON state block (as_of plus the facts shown) in every render. 5) Refresh: read the previous render, parse its state block, gather live again, update in place, and report what changed since as_of instead of rewriting the story. 6) Publish privately first, say who can open it, update the same URL on every refresh, and optionally register it on a project hub. 7) Reply with the link and the deltas. Full original skill(s) with license: vendor/kosif-atlas/skills/303-project-artifact/921-project-artifact.",
+  "params": "project config, sources",
+  "install": "mkdir -p ~/.claude/skills && cp -r .claude/skills/kosif-superpowers/vendor/kosif-atlas/skills/303-project-artifact/921-project-artifact ~/.claude/skills/project-artifact",
+  "requires": [],
+  "license": "card in our own words; the original skill folders are copied verbatim with their Apache-2.0 license and SOURCE.md under vendor/kosif-atlas",
+  "proof": [
+   "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/303-project-artifact/921-project-artifact"
+  ],
+  "proof_scope": "url",
+  "styles": [],
+  "tags": [
+   "status page",
+   "project status",
+   "artifact",
+   "weekly update",
+   "صفحة الحالة",
+   "تقرير المشروع"
+  ],
+  "section": "أدوات MCP والتكاملات — MCP servers, tools & integrations",
+  "source": "KOSIF Atlas exhaustive pass 2026-10-23, batch batch4-docs (https://github.com/kosif199022-jpg/kosif-atlas @ 99bb108d): project-artifact/project-artifact (#921) · SKILL.md read in full as inert text",
+  "atlas": {
+   "ids": [
+    "921"
+   ],
+   "examples": [
+    {
+     "id": "921",
+     "plugin": "project-artifact",
+     "skill": "project-artifact",
+     "url": "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/303-project-artifact/921-project-artifact"
+    }
+   ],
+   "theme": "mcp-tooling",
+   "risk_notes": "Method guidance only; no Atlas code imported or executed.",
+   "kosif_overlap_ids": [
+    "QA-145",
+    "APP-01"
+   ],
+   "stage": "extracted",
+   "verified_by": "atlas-pass-20261023-batch4-docs.json",
+   "skill_md_sha256": {
+    "921": "34e13249dba8a066f33c5f723dbb7b9cb6174b80cc490dd866fbfd1736f0577f"
+   },
+   "vendored": [
+    "vendor/kosif-atlas/skills/303-project-artifact/921-project-artifact"
+   ]
+  }
+ },
+ {
+  "id": "ADOCS-57",
+  "family": "atlas-docs",
+  "domain": "docs",
+  "name_ar": "من محضر الاجتماع إلى سجل قرارات: القرار والسبب والبدائل المرفوضة والمسؤول والأسئلة المفتوحة",
+  "name_en": "From meeting transcript to decision record: decision, rationale, rejected options, owner and open questions",
+  "status": "documented",
+  "what": "بدل ملخص يسرد ما قيل بالترتيب، يستخرج من النص ما تقرر فعلًا مع سببه، والخيارات التي رُفضت صراحة ولماذا، ومن يملك كل إجراء وموعده، وما بقي معلقًا؛ وما لم يُحسم يُكتب معلقًا ولا يُخترع له قرار. — A decision log, not a chronological recap.",
+  "when": "لخص الاجتماع، محضر اجتماع، ماذا قررنا، تفريغ اجتماع إلى مهام / meeting notes to decisions",
+  "how": "1) Read the whole transcript before writing. 2) Extract each decision with the exact numbers, dates and scope as stated, and the rationale given. 3) List options explicitly rejected and why, so they are not re-argued. 4) Assign each action an owner and a due date only when the transcript names them; otherwise mark owner or date missing. 5) Collect unresolved questions and who must answer them. 6) Flag conflicts between speakers instead of picking a side. 7) Order the output: decisions, rejected options, actions, open questions, then a two-line context; quote the source line for anything contested. Full original skill(s) with license: vendor/kosif-atlas/skills/231-mas-common-sense-pack/733-summarize-meetings-into-decisions.",
+  "params": "transcript",
+  "install": "mkdir -p ~/.claude/skills && cp -r .claude/skills/kosif-superpowers/vendor/kosif-atlas/skills/231-mas-common-sense-pack/733-summarize-meetings-into-decisions ~/.claude/skills/summarize-meetings-into-decisions",
+  "requires": [],
+  "license": "card in our own words; the original skill folders are copied verbatim with their MIT license and SOURCE.md under vendor/kosif-atlas",
+  "proof": [
+   "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/231-mas-common-sense-pack/733-summarize-meetings-into-decisions"
+  ],
+  "proof_scope": "url",
+  "styles": [],
+  "tags": [
+   "meeting notes",
+   "decision log",
+   "action items",
+   "transcript",
+   "محضر اجتماع",
+   "سجل القرارات"
+  ],
+  "section": "التخطيط والمواصفات — Planning, specs & decisions",
+  "source": "KOSIF Atlas exhaustive pass 2026-10-23, batch batch5-docs (https://github.com/kosif199022-jpg/kosif-atlas @ 99bb108d): mas-common-sense-pack/summarize-meetings-into-decisions (#733) · SKILL.md read in full as inert text",
+  "atlas": {
+   "ids": [
+    "733"
+   ],
+   "examples": [
+    {
+     "id": "733",
+     "plugin": "mas-common-sense-pack",
+     "skill": "summarize-meetings-into-decisions",
+     "url": "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/231-mas-common-sense-pack/733-summarize-meetings-into-decisions"
+    }
+   ],
+   "theme": "planning-specs",
+   "risk_notes": "Method guidance only; no Atlas code imported or executed.",
+   "kosif_overlap_ids": [
+    "CODE-19"
+   ],
+   "stage": "extracted",
+   "verified_by": "atlas-pass-20261023-batch5-docs.json",
+   "skill_md_sha256": {
+    "733": "e7b634e01a717ee8addb72d6669d99330bd302215f94eb8c7fc8ac098bd9563a"
+   },
+   "vendored": [
+    "vendor/kosif-atlas/skills/231-mas-common-sense-pack/733-summarize-meetings-into-decisions"
+   ]
+  }
+ },
+ {
+  "id": "ADOCS-58",
+  "family": "atlas-docs",
+  "domain": "docs",
+  "name_ar": "من المتطلبات إلى قصص جاهزة للتذاكر بسيناريوهات Gherkin، مع تدقيق جودة المتطلبات قبل التسليم",
+  "name_en": "Requirements to ticket-ready stories with Gherkin scenarios, plus a requirements quality audit before handoff",
+  "status": "documented",
+  "what": "يفكك المتطلب المعتمد إلى أصغر قصص تحفظ النية (من أنا وماذا أريد ولماذا، وفق INVEST)، ويكتب لكل قصة سيناريو رئيسيًا يكون فيه Given حقيقة وWhen فعلًا واحدًا وThen نتيجة ملحوظة من الخارج، ويستبدل كلمات مثل 'بشكل صحيح' بنتيجة محددة، ويضيف أخطر الحالات البديلة؛ ويدقق المتطلبات في الغموض والاتساق وقابلية التتبع والاختبار. — Atomic stories and testable requirements.",
+  "when": "اكتب user stories، معايير قبول، Gherkin، راجع المتطلبات قبل التطوير / writing stories or auditing requirements",
+  "how": "1) Set the evidence boundary: sources, stable requirement IDs, authoritative rules, assumptions, missing evidence. 2) Inventory actors, triggers, states, outcomes, constraints and unresolved decisions before rewriting anything. 3) Split into the smallest stories that keep the approved intent; check variations of actor or permission, state, validity or timing, repetition, empty input, cancellation, failure. 4) Each story: title, 'as a role I want an action so that a benefit', a link to the design, and acceptance criteria; it must be independent, negotiable, valuable, estimable, small and testable. 5) Primary Gherkin scenario: factual Given, a single When, an externally observable Then; replace 'gracefully', 'properly', 'successfully' with the concrete result. 6) Add the highest-risk alternate, failure and boundary scenarios, not every permutation. 7) For backlog items written as Why-What-Acceptance, tie the why to an objective and keep acceptance high-level. 8) Audit requirements: classify as business, stakeholder or solution level, trace each to its source and to a test, and mark each check pass, fail, unknown or not applicable with blocker, major or minor severity for ambiguity, conflicts, missing conditions and untestable wording. Full original skill(s) with license: vendor/kosif-atlas/skills/2213-majestic-product/8305-gherkin-stories, vendor/kosif-atlas/skills/2878-pm-execution/11619-user-stories, vendor/kosif-atlas/skills/2878-pm-execution/11620-wwas, vendor/kosif-atlas/skills/2213-majestic-product/8315-requirements-quality.",
+  "params": "requirements, design links",
+  "install": "mkdir -p ~/.claude/skills && cp -r .claude/skills/kosif-superpowers/vendor/kosif-atlas/skills/2213-majestic-product/8305-gherkin-stories ~/.claude/skills/gherkin-stories ; mkdir -p ~/.claude/skills && cp -r .claude/skills/kosif-superpowers/vendor/kosif-atlas/skills/2878-pm-execution/11619-user-stories ~/.claude/skills/user-stories ; mkdir -p ~/.claude/skills && cp -r .claude/skills/kosif-superpowers/vendor/kosif-atlas/skills/2878-pm-execution/11620-wwas ~/.claude/skills/wwas ; mkdir -p ~/.claude/skills && cp -r .claude/skills/kosif-superpowers/vendor/kosif-atlas/skills/2213-majestic-product/8315-requirements-quality ~/.claude/skills/requirements-quality",
+  "requires": [],
+  "license": "card in our own words; the original skill folders are copied verbatim with their MIT license and SOURCE.md under vendor/kosif-atlas",
+  "proof": [
+   "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/2213-majestic-product/8305-gherkin-stories",
+   "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/2878-pm-execution/11619-user-stories",
+   "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/2878-pm-execution/11620-wwas",
+   "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/2213-majestic-product/8315-requirements-quality"
+  ],
+  "proof_scope": "url",
+  "styles": [],
+  "tags": [
+   "user stories",
+   "Gherkin",
+   "acceptance criteria",
+   "INVEST",
+   "requirements quality",
+   "قصص المستخدم",
+   "معايير القبول"
+  ],
+  "section": "التخطيط والمواصفات — Planning, specs & decisions",
+  "source": "KOSIF Atlas exhaustive pass 2026-10-23, batch batch5-docs (https://github.com/kosif199022-jpg/kosif-atlas @ 99bb108d): majestic-product/gherkin-stories (#8305); pm-execution/user-stories (#11619); pm-execution/wwas (#11620); majestic-product/requirements-quality (#8315) · SKILL.md read in full as inert text",
+  "atlas": {
+   "ids": [
+    "8305",
+    "11619",
+    "11620",
+    "8315"
+   ],
+   "examples": [
+    {
+     "id": "8305",
+     "plugin": "majestic-product",
+     "skill": "gherkin-stories",
+     "url": "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/2213-majestic-product/8305-gherkin-stories"
+    },
+    {
+     "id": "11619",
+     "plugin": "pm-execution",
+     "skill": "user-stories",
+     "url": "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/2878-pm-execution/11619-user-stories"
+    },
+    {
+     "id": "11620",
+     "plugin": "pm-execution",
+     "skill": "wwas",
+     "url": "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/2878-pm-execution/11620-wwas"
+    },
+    {
+     "id": "8315",
+     "plugin": "majestic-product",
+     "skill": "requirements-quality",
+     "url": "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/2213-majestic-product/8315-requirements-quality"
+    }
+   ],
+   "theme": "planning-specs",
+   "risk_notes": "Method guidance only; no Atlas code imported or executed.",
+   "kosif_overlap_ids": [
+    "PROD-08",
+    "THINK-26",
+    "AMIND-47"
+   ],
+   "stage": "extracted",
+   "verified_by": "atlas-pass-20261023-batch5-docs.json",
+   "skill_md_sha256": {
+    "8305": "9cd67707bce644f754d08c4f0a531640d16503af05a21577763f16c7a444ed50",
+    "11619": "8ce89cd81de5a3df7d504380d18c54cec6c59ccdb7fd18cbcb62b6b6183d0a55",
+    "11620": "7fad2bed16046679a9eb2941573f978c692db425e5e5b7a7c31a8be2e4dd10a4",
+    "8315": "4249b3814de38a8171853c9f1e2721887c6dbd77f5eaf610ca6a6846e09a6061"
+   },
+   "vendored": [
+    "vendor/kosif-atlas/skills/2213-majestic-product/8305-gherkin-stories",
+    "vendor/kosif-atlas/skills/2878-pm-execution/11619-user-stories",
+    "vendor/kosif-atlas/skills/2878-pm-execution/11620-wwas",
+    "vendor/kosif-atlas/skills/2213-majestic-product/8315-requirements-quality"
+   ]
+  }
+ },
+ {
+  "id": "ADOCS-59",
+  "family": "atlas-docs",
+  "domain": "docs",
+  "name_ar": "التطوير بالمواصفة للوكلاء: دستور ثم مواصفة بلا تقنية ثم صيد الغموض ثم خطة ثم مهام، ودمج تغييرات المواصفة في الأساس",
+  "name_en": "Spec-driven development for coding agents: constitution, tech-free spec, ambiguity hunt, plan, tasks, and merging delta specs into the baseline",
+  "status": "documented",
+  "what": "المواصفة لا الـprompt هي مصدر الحقيقة الدائم: مبادئ المشروع غير القابلة للتفاوض، ثم مواصفة تقول ماذا ولماذا دون تقنية بمعايير قبول بصيغة EARS، ثم صيد الغموض بأسئلة مع افتراض موصى به، ثم خطة تُفحص مقابل المبادئ، ثم مهام صغيرة مرتبة، ثم مزامنة المواصفة مع ما بُني فعلًا؛ ومواصفة جاهزة للوكيل في صفحة إلى ثلاث صفحات. — Tool-agnostic SDD loop with human gates.",
+  "when": "اكتب مواصفة لميزة، جهّز المتطلبات لوكيل برمجة، Spec Kit أو Kiro، الوكيل بنى الشيء الخطأ / spec-first work with coding agents",
+  "how": "1) Detect the toolchain (.specify for Spec Kit, .kiro/specs for Kiro, AI-DLC rules) and follow it; otherwise create specs/<feature>/. 2) Constitution once per project: 5 to 9 principles drawn from the repo (test commands, architecture patterns, banned practices), approved by the tech lead. 3) Specify what and why with no technology; move tech choices to the plan. Write user stories with EARS criteria (WHEN a trigger, the system SHALL a response; WHILE a state; IF an unwanted condition THEN), non-functional needs and explicit out-of-scope. 4) Agent-ready spec: intent over instructions, explicit non-goals and forbidden actions, every requirement mapped to a check an agent can run, point to files and ADRs by path, 1 to 3 pages. 5) Clarify before planning: model actors, entities, states and external systems, then hunt scope, data, states and errors, permissions, concurrency, non-functional (including RTL), compatibility and contradictions; each finding becomes a question with a recommended default and the impact if wrong, ranked blocking, important, minor; check the code before asking; record answers in a dated Clarifications section. 6) Plan with a constitution check that lists each principle and compliance. 7) Tasks of 1 to 4 hours each with a verification step, independent ones marked [P], ordered by dependency with tests first. 8) Implement task by task and verify each. 9) Converge: merge delta specs into the main spec by operation (added appends, modified replaces by requirement name, removed deletes, renamed checks for collisions), flag conflicts for the owner, and archive only when clean. Full original skill(s) with license: vendor/kosif-atlas/skills/1497-spec-driven/3713-spec-workflow, vendor/kosif-atlas/skills/3050-adlc-intent/13135-spec-driven-development, vendor/kosif-atlas/skills/3050-adlc-intent/13134-spec-clarification, vendor/kosif-atlas/skills/3050-adlc-intent/13132-agentic-prd, vendor/kosif-atlas/skills/2200-spec-superflow/8211-spec-writer, vendor/kosif-atlas/skills/2200-spec-superflow/8210-spec-merger.",
+  "params": "feature idea, repository",
+  "install": "mkdir -p ~/.claude/skills && cp -r .claude/skills/kosif-superpowers/vendor/kosif-atlas/skills/1497-spec-driven/3713-spec-workflow ~/.claude/skills/spec-workflow ; mkdir -p ~/.claude/skills && cp -r .claude/skills/kosif-superpowers/vendor/kosif-atlas/skills/3050-adlc-intent/13135-spec-driven-development ~/.claude/skills/spec-driven-development ; mkdir -p ~/.claude/skills && cp -r .claude/skills/kosif-superpowers/vendor/kosif-atlas/skills/3050-adlc-intent/13134-spec-clarification ~/.claude/skills/spec-clarification ; mkdir -p ~/.claude/skills && cp -r .claude/skills/kosif-superpowers/vendor/kosif-atlas/skills/3050-adlc-intent/13132-agentic-prd ~/.claude/skills/agentic-prd ; mkdir -p ~/.claude/skills && cp -r .claude/skills/kosif-superpowers/vendor/kosif-atlas/skills/2200-spec-superflow/8211-spec-writer ~/.claude/skills/spec-writer ; mkdir -p ~/.claude/skills && cp -r .claude/skills/kosif-superpowers/vendor/kosif-atlas/skills/2200-spec-superflow/8210-spec-merger ~/.claude/skills/spec-merger",
+  "requires": [],
+  "license": "card in our own words; the original skill folders are copied verbatim with their MIT license and SOURCE.md under vendor/kosif-atlas",
+  "proof": [
+   "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/1497-spec-driven/3713-spec-workflow",
+   "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/3050-adlc-intent/13135-spec-driven-development",
+   "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/3050-adlc-intent/13134-spec-clarification",
+   "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/3050-adlc-intent/13132-agentic-prd",
+   "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/2200-spec-superflow/8211-spec-writer",
+   "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/2200-spec-superflow/8210-spec-merger"
+  ],
+  "proof_scope": "url",
+  "styles": [],
+  "tags": [
+   "spec-driven development",
+   "EARS",
+   "Spec Kit",
+   "Kiro",
+   "agentic PRD",
+   "ambiguity",
+   "المواصفة",
+   "التطوير بالمواصفة"
+  ],
+  "section": "التخطيط والمواصفات — Planning, specs & decisions",
+  "source": "KOSIF Atlas exhaustive pass 2026-10-23, batch batch5-docs (https://github.com/kosif199022-jpg/kosif-atlas @ 99bb108d): spec-driven/spec-workflow (#3713); adlc-intent/spec-driven-development (#13135); adlc-intent/spec-clarification (#13134); adlc-intent/agentic-prd (#13132); spec-superflow/spec-writer (#8211); spec-superflow/spec-merger (#8210) · SKILL.md read in full as inert text",
+  "atlas": {
+   "ids": [
+    "3713",
+    "13135",
+    "13134",
+    "13132",
+    "8211",
+    "8210"
+   ],
+   "examples": [
+    {
+     "id": "3713",
+     "plugin": "spec-driven",
+     "skill": "spec-workflow",
+     "url": "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/1497-spec-driven/3713-spec-workflow"
+    },
+    {
+     "id": "13135",
+     "plugin": "adlc-intent",
+     "skill": "spec-driven-development",
+     "url": "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/3050-adlc-intent/13135-spec-driven-development"
+    },
+    {
+     "id": "13134",
+     "plugin": "adlc-intent",
+     "skill": "spec-clarification",
+     "url": "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/3050-adlc-intent/13134-spec-clarification"
+    },
+    {
+     "id": "13132",
+     "plugin": "adlc-intent",
+     "skill": "agentic-prd",
+     "url": "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/3050-adlc-intent/13132-agentic-prd"
+    },
+    {
+     "id": "8211",
+     "plugin": "spec-superflow",
+     "skill": "spec-writer",
+     "url": "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/2200-spec-superflow/8211-spec-writer"
+    },
+    {
+     "id": "8210",
+     "plugin": "spec-superflow",
+     "skill": "spec-merger",
+     "url": "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/2200-spec-superflow/8210-spec-merger"
+    }
+   ],
+   "theme": "planning-specs",
+   "risk_notes": "Method guidance only; no Atlas code imported or executed.",
+   "kosif_overlap_ids": [
+    "ABUILD-04",
+    "AMIND-31",
+    "AMIND-47"
+   ],
+   "stage": "extracted",
+   "verified_by": "atlas-pass-20261023-batch5-docs.json",
+   "skill_md_sha256": {
+    "3713": "0a9c63a70a4be196b8e255bc1335b93cef21e380c250cbcbc0d29696f4df7861",
+    "13135": "5c97dadad3ecaf885c9188e43bf30e0d5b0b3c6763a51bfd813ceeeb928612d7",
+    "13134": "740061448a993b020331a0c6b09b9c249d7e3229ccc34d6c2e4280d79377b2a2",
+    "13132": "00147b407aafc1b8b3c1936152b13df9bd6a0aa6c9ee4538c6a95e6b2e100d49",
+    "8211": "5029295ab08cd111d3604e144f488da9f64a407a597a5172ae35f2ea964a8657",
+    "8210": "22bc7fb83f6077a08ef7e00f45f7f402465f80c777db1f31fc1ef991a052fc9c"
+   },
+   "vendored": [
+    "vendor/kosif-atlas/skills/1497-spec-driven/3713-spec-workflow",
+    "vendor/kosif-atlas/skills/3050-adlc-intent/13135-spec-driven-development",
+    "vendor/kosif-atlas/skills/3050-adlc-intent/13134-spec-clarification",
+    "vendor/kosif-atlas/skills/3050-adlc-intent/13132-agentic-prd",
+    "vendor/kosif-atlas/skills/2200-spec-superflow/8211-spec-writer",
+    "vendor/kosif-atlas/skills/2200-spec-superflow/8210-spec-merger"
+   ]
+  }
+ },
+ {
+  "id": "ADOCS-60",
+  "family": "atlas-docs",
+  "domain": "docs",
+  "name_ar": "قائمة الأعمال المؤجلة في المستودع: ملف لكل بند، وحقل يستحق نعم أو لا أو لاحقًا، والإغلاق بحذف الملف في git",
+  "name_en": "In-repo backlog of deferred work: one file per item, a worth yes/no/later field, closed by deleting the file in git",
+  "status": "documented",
+  "what": "مجلد docs/backlog يحفظ العمل الحقيقي غير المنفذ الآن: عيب لم يُدخله التغيير الحالي، انحراف بلا عرض ظاهر، إصلاح أكبر من قيمته، فكرة تستحق الحفظ؛ لكل بند ملف باسم العيب نفسه، وثلاثة حقول فقط، و'لا' تُحفظ حتى لا يُكتشف البند ويُناقش من جديد. — A dedupe-friendly backlog that never gates work.",
+  "when": "سجل المهام المؤجلة، ماذا على قائمتي، أجّل هذا الإصلاح، اكتشاف مكرر لنفس المشكلة في كل مراجعة / tracking deferred work in a repo",
+  "how": "1) Store items at docs/backlog/<slug>.md, where the slug names the defect (not the file), so commits can cite it and dedupe is a filename check. 2) Three front-matter fields: worth (yes = agreed it should be fixed, regardless of schedule; later = the value decision itself is open, and the body must name the unknown that settles it; no = decided not to fix, with the reason, kept only while that reason still matters), where (path:line when anchored; the line is only a navigation hint), added (YYYY-MM-DD, never updated, so it reads as age). 3) The H1 is the title; the body is free-form (repro, what was tried, links). 4) Before adding, search slugs and where paths for an existing item and append to it instead. 5) Close an item by git rm in the commit that fixes it. 6) List items ordered by worth then age. 7) It is the maintainer's own list; it never blocks a change or reaches contributors. Full original skill(s) with license: vendor/kosif-atlas/skills/3234-workflow/13651-backlog.",
+  "params": "repository",
+  "install": "mkdir -p ~/.claude/skills && cp -r .claude/skills/kosif-superpowers/vendor/kosif-atlas/skills/3234-workflow/13651-backlog ~/.claude/skills/backlog",
+  "requires": [],
+  "license": "card in our own words; the original skill folders are copied verbatim with their MIT license and SOURCE.md under vendor/kosif-atlas",
+  "proof": [
+   "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/3234-workflow/13651-backlog"
+  ],
+  "proof_scope": "url",
+  "styles": [],
+  "tags": [
+   "backlog",
+   "deferred work",
+   "tech debt",
+   "triage",
+   "قائمة مؤجلة",
+   "الدين التقني"
+  ],
+  "section": "التخطيط والمواصفات — Planning, specs & decisions",
+  "source": "KOSIF Atlas exhaustive pass 2026-10-23, batch batch5-docs (https://github.com/kosif199022-jpg/kosif-atlas @ 99bb108d): workflow/backlog (#13651) · SKILL.md read in full as inert text",
+  "atlas": {
+   "ids": [
+    "13651"
+   ],
+   "examples": [
+    {
+     "id": "13651",
+     "plugin": "workflow",
+     "skill": "backlog",
+     "url": "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/3234-workflow/13651-backlog"
+    }
+   ],
+   "theme": "planning-specs",
+   "risk_notes": "Method guidance only; no Atlas code imported or executed.",
+   "kosif_overlap_ids": [
+    "ASTRAT-02"
+   ],
+   "stage": "extracted",
+   "verified_by": "atlas-pass-20261023-batch5-docs.json",
+   "skill_md_sha256": {
+    "13651": "40904cfa5690c70ef35497ee304d86e2796caa93892b8c2b7fa07f4dab3fcf53"
+   },
+   "vendored": [
+    "vendor/kosif-atlas/skills/3234-workflow/13651-backlog"
+   ]
+  }
  }
 ]

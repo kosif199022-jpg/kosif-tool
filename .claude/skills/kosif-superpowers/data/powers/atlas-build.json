@@ -3095,5 +3095,562 @@
     "14217": "08cd3ebe37f8ea4d623e23f61f78f06ab897e69b19865ddf370e6d4f89df2c2b"
    }
   }
+ },
+ {
+  "id": "ABUILD-53",
+  "family": "atlas-build",
+  "domain": "build",
+  "name_ar": "الإدراك وتقدير الحالة للروبوت: مزامنة الزمن والإطارات أولًا ثم دمج حساسات تغطي أعطال بعضها",
+  "name_en": "Robot perception and state estimation: time and frames first, fuse complementary sensors, fail safe",
+  "status": "documented",
+  "what": "يبني تقدير حالة مستقرًا لروبوت: يوحد الزمن والإطارات المرجعية قبل الدمج، يختار حساسات يغطي كل منها أعطال الآخر، يختار المرشح حسب اللاخطية (EKF، UKF، مرشح جسيمات)، يقرر بين SLAM وتحديد الموقع على خريطة معروفة، يمرر عدم اليقين للمخطط، ويصمم الاستقلالية بفروع آمنة. — Builds a stable state estimate: sync, complementary fusion, the right filter, propagated uncertainty and fail-safe autonomy.",
+  "when": "المرشح 'معطل'، انجراف في الموقع، تصميم مكدس إدراك لروبوت أو مركبة ذاتية / localisation drift, designing a perception stack",
+  "how": "1) Timestamp every measurement in one time base and express it in the correct frame; most broken-filter bugs are a timestamp or a frame. 2) Choose modalities that cover each other: lidar for geometry, camera for semantics, IMU for high-rate motion, wheel odometry for scale, GNSS for a global fix. 3) Pick the estimator by nonlinearity: EKF for mild, UKF when linearisation hurts, a particle filter for map-based localisation with multimodal belief; tune process and measurement noise and gate outliers. 4) Build a map online with loop closure when none exists; localise against a known map when you have one. 5) Pass detection confidence and covariance to the planner and safety monitor instead of thresholding and forgetting. 6) Structure autonomy as a behaviour tree or hierarchical state machine with recover, degraded and safe-stop branches reachable from every state. 7) Measure drift against ground truth, filter consistency (NEES or NIS) before swapping filters, detection precision and recall on your own data, and time-sync skew; benchmark numbers do not transfer. Full original skill(s) with license: vendor/kosif-atlas/skills/2374-robotics-autonomous-systems-engineering/9182-perception-and-state-estimation.",
+  "params": "sensors, platform",
+  "install": "mkdir -p ~/.claude/skills && cp -r .claude/skills/kosif-superpowers/vendor/kosif-atlas/skills/2374-robotics-autonomous-systems-engineering/9182-perception-and-state-estimation ~/.claude/skills/perception-and-state-estimation",
+  "requires": [],
+  "license": "card in our own words; the original skill folders are copied verbatim with their MIT license and SOURCE.md under vendor/kosif-atlas",
+  "proof": [
+   "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/2374-robotics-autonomous-systems-engineering/9182-perception-and-state-estimation"
+  ],
+  "proof_scope": "url",
+  "styles": [],
+  "tags": [
+   "robotics",
+   "sensor fusion",
+   "state estimation",
+   "SLAM",
+   "autonomy",
+   "روبوتات",
+   "دمج الحساسات"
+  ],
+  "section": "سير عمل الوكلاء — Agent workflows & orchestration",
+  "source": "KOSIF Atlas exhaustive pass 2026-10-23, batch batch3-build (https://github.com/kosif199022-jpg/kosif-atlas @ 99bb108d): robotics-autonomous-systems-engineering/perception-and-state-estimation (#9182) · SKILL.md read in full as inert text",
+  "atlas": {
+   "ids": [
+    "9182"
+   ],
+   "examples": [
+    {
+     "id": "9182",
+     "plugin": "robotics-autonomous-systems-engineering",
+     "skill": "perception-and-state-estimation",
+     "url": "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/2374-robotics-autonomous-systems-engineering/9182-perception-and-state-estimation"
+    }
+   ],
+   "theme": "agent-workflow",
+   "risk_notes": "Method guidance only; no Atlas code imported or executed.",
+   "kosif_overlap_ids": [],
+   "stage": "extracted",
+   "verified_by": "atlas-pass-20261023-batch3-build.json",
+   "skill_md_sha256": {
+    "9182": "f70493cd53d206c2759beb26c6334f52cef1d77171d7e43833fdbab55dc7e749"
+   },
+   "vendored": [
+    "vendor/kosif-atlas/skills/2374-robotics-autonomous-systems-engineering/9182-perception-and-state-estimation"
+   ]
+  }
+ },
+ {
+  "id": "ABUILD-54",
+  "family": "atlas-build",
+  "domain": "build",
+  "name_ar": "تجهيز مستودع جديد أو تحديث قديم بترتيب ثابت للخطوات: الأساس ثم هيكل اللغة ثم CI والمدققات والأسرار والإصدار",
+  "name_en": "Bootstrap a new repository or refresh an old one in a fixed order: foundation, language scaffold, CI, linters, secrets, release",
+  "status": "documented",
+  "what": "منسق يكتشف نوع المشروع والبنية الموجودة، ويبني خطة بترتيب محدد لمهارات الإعداد، ويعرضها قبل التنفيذ؛ ونسخة تحديث تقارن الملفات الموجودة بأحدث القوالب ولا تضيف أدوات لم تُستخدم؛ مع قوالب أساس مستقلة عن اللغة وهياكل Go وRust وZig وLean. — Ordered, plan-first repository setup and refresh.",
+  "when": "جهّز المشروع، ابدأ مستودعًا جديدًا، حدّث الهيكل وCI لآخر قالب، هيكل أداة Go أو Rust / bootstrap or refresh a repository",
+  "how": "1) Detect the project type (go.mod, Cargo.toml, package.json, lakefile, build.zig, pyproject) and the infrastructure already present. 2) Plan in this order, skipping covered steps: foundation files (LICENSE, README, CHANGELOG, .gitignore, agent config, plans), the language scaffold (Go CLI with Cobra and GoReleaser, Go library with changelog-only releases, Rust CLI with cargo-deny, nextest and git-cliff, Zig CLI with cross-compiled releases, Lean library with Lake tests), CI, linters, secret scanning, release packaging for CLIs, community files (CONTRIBUTING, code of conduct, SECURITY, PR template), installers and CLI tests for CLIs, review checklists after the file types and CI checks are final, and dependency-update config last so it sees every workflow and manifest. 3) Present the plan and wait for confirmation. 4) Execute each step through its own skill; if that skill is missing, record it as skipped rather than improvising another setup. 5) Derive the project name from the git remote, then the README heading, and ask only when both fail; never from the directory or branch name. 6) Refresh mode: detect which tools were really used, compare their files with current templates, restore missing expected files for partly configured tools, never set up a tool that was never used, but treat a missing dependency-update config as actionable because pinned action SHAs go stale without it. 7) Report every step as done, unchanged, skipped or failed. Full original skill(s) with license: vendor/kosif-atlas/skills/943-bootstrap-project/2228-bootstrap-project, vendor/kosif-atlas/skills/963-refresh-project-scaffolding/2247-refresh-project-scaffolding, vendor/kosif-atlas/skills/973-scaffold-new-repo/2257-scaffold-new-repo, vendor/kosif-atlas/skills/970-scaffold-go-cli/2254-scaffold-go-cli, vendor/kosif-atlas/skills/971-scaffold-go-library/2255-scaffold-go-library, vendor/kosif-atlas/skills/974-scaffold-rust-cli/2258-scaffold-rust-cli, vendor/kosif-atlas/skills/975-scaffold-zig-cli/2259-scaffold-zig-cli, vendor/kosif-atlas/skills/972-scaffold-lean-library/2256-scaffold-lean-library.",
+  "params": "repository, project type",
+  "install": "mkdir -p ~/.claude/skills && cp -r .claude/skills/kosif-superpowers/vendor/kosif-atlas/skills/943-bootstrap-project/2228-bootstrap-project ~/.claude/skills/bootstrap-project ; mkdir -p ~/.claude/skills && cp -r .claude/skills/kosif-superpowers/vendor/kosif-atlas/skills/963-refresh-project-scaffolding/2247-refresh-project-scaffolding ~/.claude/skills/refresh-project-scaffolding ; mkdir -p ~/.claude/skills && cp -r .claude/skills/kosif-superpowers/vendor/kosif-atlas/skills/973-scaffold-new-repo/2257-scaffold-new-repo ~/.claude/skills/scaffold-new-repo ; mkdir -p ~/.claude/skills && cp -r .claude/skills/kosif-superpowers/vendor/kosif-atlas/skills/970-scaffold-go-cli/2254-scaffold-go-cli ~/.claude/skills/scaffold-go-cli ; mkdir -p ~/.claude/skills && cp -r .claude/skills/kosif-superpowers/vendor/kosif-atlas/skills/971-scaffold-go-library/2255-scaffold-go-library ~/.claude/skills/scaffold-go-library ; mkdir -p ~/.claude/skills && cp -r .claude/skills/kosif-superpowers/vendor/kosif-atlas/skills/974-scaffold-rust-cli/2258-scaffold-rust-cli ~/.claude/skills/scaffold-rust-cli ; mkdir -p ~/.claude/skills && cp -r .claude/skills/kosif-superpowers/vendor/kosif-atlas/skills/975-scaffold-zig-cli/2259-scaffold-zig-cli ~/.claude/skills/scaffold-zig-cli ; mkdir -p ~/.claude/skills && cp -r .claude/skills/kosif-superpowers/vendor/kosif-atlas/skills/972-scaffold-lean-library/2256-scaffold-lean-library ~/.claude/skills/scaffold-lean-library",
+  "requires": [
+   "lean"
+  ],
+  "license": "card in our own words; the original skill folders are copied verbatim with their MIT license and SOURCE.md under vendor/kosif-atlas",
+  "proof": [
+   "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/943-bootstrap-project/2228-bootstrap-project",
+   "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/963-refresh-project-scaffolding/2247-refresh-project-scaffolding",
+   "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/973-scaffold-new-repo/2257-scaffold-new-repo",
+   "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/970-scaffold-go-cli/2254-scaffold-go-cli",
+   "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/971-scaffold-go-library/2255-scaffold-go-library",
+   "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/974-scaffold-rust-cli/2258-scaffold-rust-cli",
+   "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/975-scaffold-zig-cli/2259-scaffold-zig-cli",
+   "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/972-scaffold-lean-library/2256-scaffold-lean-library"
+  ],
+  "proof_scope": "url",
+  "styles": [],
+  "tags": [
+   "scaffold",
+   "bootstrap",
+   "new repository",
+   "Go CLI",
+   "Rust CLI",
+   "project template",
+   "تجهيز مستودع",
+   "هيكل المشروع"
+  ],
+  "section": "أدوات MCP والتكاملات — MCP servers, tools & integrations",
+  "source": "KOSIF Atlas exhaustive pass 2026-10-23, batch batch4-build (https://github.com/kosif199022-jpg/kosif-atlas @ 99bb108d): bootstrap-project/bootstrap-project (#2228); refresh-project-scaffolding/refresh-project-scaffolding (#2247); scaffold-new-repo/scaffold-new-repo (#2257); scaffold-go-cli/scaffold-go-cli (#2254); scaffold-go-library/scaffold-go-library (#2255); scaffold-rust-cli/scaffold-rust-cli (#2258); scaffold-zig-cli/scaffold-zig-cli (#2259); scaffold-lean-library/scaffold-lean-library (#2256) · SKILL.md read in full as inert text",
+  "atlas": {
+   "ids": [
+    "2228",
+    "2247",
+    "2257",
+    "2254",
+    "2255",
+    "2258",
+    "2259",
+    "2256"
+   ],
+   "examples": [
+    {
+     "id": "2228",
+     "plugin": "bootstrap-project",
+     "skill": "bootstrap-project",
+     "url": "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/943-bootstrap-project/2228-bootstrap-project"
+    },
+    {
+     "id": "2247",
+     "plugin": "refresh-project-scaffolding",
+     "skill": "refresh-project-scaffolding",
+     "url": "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/963-refresh-project-scaffolding/2247-refresh-project-scaffolding"
+    },
+    {
+     "id": "2257",
+     "plugin": "scaffold-new-repo",
+     "skill": "scaffold-new-repo",
+     "url": "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/973-scaffold-new-repo/2257-scaffold-new-repo"
+    },
+    {
+     "id": "2254",
+     "plugin": "scaffold-go-cli",
+     "skill": "scaffold-go-cli",
+     "url": "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/970-scaffold-go-cli/2254-scaffold-go-cli"
+    },
+    {
+     "id": "2255",
+     "plugin": "scaffold-go-library",
+     "skill": "scaffold-go-library",
+     "url": "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/971-scaffold-go-library/2255-scaffold-go-library"
+    },
+    {
+     "id": "2258",
+     "plugin": "scaffold-rust-cli",
+     "skill": "scaffold-rust-cli",
+     "url": "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/974-scaffold-rust-cli/2258-scaffold-rust-cli"
+    },
+    {
+     "id": "2259",
+     "plugin": "scaffold-zig-cli",
+     "skill": "scaffold-zig-cli",
+     "url": "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/975-scaffold-zig-cli/2259-scaffold-zig-cli"
+    },
+    {
+     "id": "2256",
+     "plugin": "scaffold-lean-library",
+     "skill": "scaffold-lean-library",
+     "url": "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/972-scaffold-lean-library/2256-scaffold-lean-library"
+    }
+   ],
+   "theme": "mcp-tooling",
+   "risk_notes": "Method guidance only; no Atlas code imported or executed.",
+   "kosif_overlap_ids": [
+    "APPX-29",
+    "TOOL-54"
+   ],
+   "stage": "extracted",
+   "verified_by": "atlas-pass-20261023-batch4-build.json",
+   "skill_md_sha256": {
+    "2228": "c363d336d1b755e340cb205a9466b168db85877862e36bf78483d091430e14a6",
+    "2247": "8ed5a6b77709a3e76e692993679198aafdfc2b5479500fbd34b63f3a5d8cf281",
+    "2257": "f977f14cc391b3d00762ec2f6b2ec483148c1e3e478656d3f2bf5031148ee31f",
+    "2254": "3d49da104e78b4218e68051b44ce5ca470d4f5a009f6d873ce44e5c34ef011b9",
+    "2255": "8e9ffd96618bb7af69d73a85df979309b1d4e7551b105fe9ecc2f134b0065260",
+    "2258": "fdba83dd54a587036196604b33a956c649be14b695fff27bc411be10202bdc45",
+    "2259": "5750914c44754d43b7e3a7605f27fc53f1735dc1285a952c4cdd7d70d03a3f87",
+    "2256": "89fcd7e1ed96dc4184f672350bb9d228b94178cc537954c3b8fb1dfa682eea0f"
+   },
+   "vendored": [
+    "vendor/kosif-atlas/skills/943-bootstrap-project/2228-bootstrap-project",
+    "vendor/kosif-atlas/skills/963-refresh-project-scaffolding/2247-refresh-project-scaffolding",
+    "vendor/kosif-atlas/skills/973-scaffold-new-repo/2257-scaffold-new-repo",
+    "vendor/kosif-atlas/skills/970-scaffold-go-cli/2254-scaffold-go-cli",
+    "vendor/kosif-atlas/skills/971-scaffold-go-library/2255-scaffold-go-library",
+    "vendor/kosif-atlas/skills/974-scaffold-rust-cli/2258-scaffold-rust-cli",
+    "vendor/kosif-atlas/skills/975-scaffold-zig-cli/2259-scaffold-zig-cli",
+    "vendor/kosif-atlas/skills/972-scaffold-lean-library/2256-scaffold-lean-library"
+   ]
+  }
+ },
+ {
+  "id": "ABUILD-55",
+  "family": "atlas-build",
+  "domain": "build",
+  "name_ar": "اختيار أداة المستودع الأحادي من القياس: اللغات والحجم والألم والحاجة للإحكام، وقائمة ما لا نتبناه الآن",
+  "name_en": "Choose monorepo tooling from measurements: language mix, scale, pain and hermeticity, plus a do-not-adopt-yet list",
+  "status": "documented",
+  "what": "لا توصية من اسم الأداة في الطلب: يجمع مزيج اللغات وعدد الحزم وزمن البناء الحالي ونوع الألم وهل نحتاج بناءً قابلًا للتكرار بايتًا ببايت، ثم يمشي شجرة قرار إلى أداة ومدير حزم، ويذكر الكلفة، وأهم مخرج غالبًا 'لا تتبنَّ Bazel الآن'. مع إعداد Turborepo وتشخيصه. — Measured monorepo tool choice.",
+  "when": "أي أداة نستخدم Nx أم Turborepo أم Bazel، هل نحتاج مستودعًا أحاديًا، CI بطيء لأن كل شيء يُبنى / monorepo tool choice",
+  "how": "1) Measure: language mix (JS or TS only, or polyglot), scale (packages, repo size, build wall-clock, team size), the pain (slow CI, broken caching, cross-package coordination, release versioning), and the hermeticity need (byte-reproducible cross-language builds, or task-level caching is enough). 2) Walk the tree language mix, then scale, then hermeticity, to a leaf: JS or TS mid-scale usually a pnpm workspace plus Turborepo or Nx; polyglot with strict reproducibility Bazel or a similar hermetic tool; Moon in between. 3) Choose the package manager separately (pnpm by default, yarn or npm with a reason). 4) State the tradeoff against the measured pain: config tax, lock-in, learning curve, who maintains it. 5) List what not to adopt yet; a tool that solves a pain you do not have is a net cost. 6) Turborepo specifics: define tasks and dependsOn in turbo.json, declare outputs so caching works, add env inputs that change results, enable remote cache, and read a miss with --summarize or --dry. 7) Hand pipeline-shaped pain (runner config, cache hosting) to CI work. Full original skill(s) with license: vendor/kosif-atlas/skills/2281-developer-tooling/8708-choose-monorepo-tooling, vendor/kosif-atlas/skills/2944-turborepo/12208-turborepo.",
+  "params": "repository measurements",
+  "install": "mkdir -p ~/.claude/skills && cp -r .claude/skills/kosif-superpowers/vendor/kosif-atlas/skills/2281-developer-tooling/8708-choose-monorepo-tooling ~/.claude/skills/choose-monorepo-tooling ; mkdir -p ~/.claude/skills && cp -r .claude/skills/kosif-superpowers/vendor/kosif-atlas/skills/2944-turborepo/12208-turborepo ~/.claude/skills/turborepo",
+  "requires": [
+   "node"
+  ],
+  "license": "card in our own words; the original skill folders are copied verbatim with their MIT license and SOURCE.md under vendor/kosif-atlas",
+  "proof": [
+   "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/2281-developer-tooling/8708-choose-monorepo-tooling",
+   "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/2944-turborepo/12208-turborepo"
+  ],
+  "proof_scope": "url",
+  "styles": [],
+  "tags": [
+   "monorepo",
+   "Turborepo",
+   "Nx",
+   "Bazel",
+   "pnpm",
+   "build tooling",
+   "مستودع أحادي"
+  ],
+  "section": "أدوات MCP والتكاملات — MCP servers, tools & integrations",
+  "source": "KOSIF Atlas exhaustive pass 2026-10-23, batch batch4-build (https://github.com/kosif199022-jpg/kosif-atlas @ 99bb108d): developer-tooling/choose-monorepo-tooling (#8708); turborepo/turborepo (#12208) · SKILL.md read in full as inert text",
+  "atlas": {
+   "ids": [
+    "8708",
+    "12208"
+   ],
+   "examples": [
+    {
+     "id": "8708",
+     "plugin": "developer-tooling",
+     "skill": "choose-monorepo-tooling",
+     "url": "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/2281-developer-tooling/8708-choose-monorepo-tooling"
+    },
+    {
+     "id": "12208",
+     "plugin": "turborepo",
+     "skill": "turborepo",
+     "url": "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/2944-turborepo/12208-turborepo"
+    }
+   ],
+   "theme": "mcp-tooling",
+   "risk_notes": "Method guidance only; no Atlas code imported or executed.",
+   "kosif_overlap_ids": [
+    "ACODE-272"
+   ],
+   "stage": "extracted",
+   "verified_by": "atlas-pass-20261023-batch4-build.json",
+   "skill_md_sha256": {
+    "8708": "883fb277d85c853075ac69da92c17a9032b3ddeef96a4bf032952e97879960c7",
+    "12208": "e475e520f1822f0de4ca5fbbfd37906949db67d35b038f2b8a76ef4c95c13c53"
+   },
+   "vendored": [
+    "vendor/kosif-atlas/skills/2281-developer-tooling/8708-choose-monorepo-tooling",
+    "vendor/kosif-atlas/skills/2944-turborepo/12208-turborepo"
+   ]
+  }
+ },
+ {
+  "id": "ABUILD-56",
+  "family": "atlas-build",
+  "domain": "build",
+  "name_ar": "إعداد أجهزة الشبكة: تحقق قبل التطبيق، وترجمة بين لهجات المصنعين عبر المفاهيم، وقوالب آمنة",
+  "name_en": "Network device config: validate before applying, translate between vendor dialects through concepts, safe templates",
+  "status": "documented",
+  "what": "كل إعداد مولد أو منقول يمر بفحوص قبل اعتباره قابلًا للتطبيق: الأوامر الخطرة التي قد تقطع الاتصال، وتداخل الشبكات الفرعية، وتكرار العناوين والـVLAN، ومنطق قوائم التحكم، واكتمال خطوة الحفظ؛ والترجمة بين Cisco وRouterOS وPAN-OS وJunos وAruba تمر بطبقة المفهوم لا سطرًا بسطر. — Pre-deployment validation for router, switch and firewall config.",
+  "when": "كتابة أو نقل إعداد راوتر أو سويتش أو جدار ناري، تحويل إعداد Cisco إلى MikroTik، مراجعة قبل التطبيق / generating or porting network config",
+  "how": "1) Never write vendor CLI from memory; check syntax for the vendor and version in its reference. 2) Validate every config before output and list findings: dangerous commands (shutdown on the management or uplink path, removing an active ACL or NAT rule, routing or default-route changes, erase or reset, AAA changes that affect your own access), ordered so your own path is touched last; subnet overlaps and prefix conflicts; duplicate IPs, VLAN IDs, VRRP or HSRP addresses and DHCP scopes; ACL logic (first match wins, implicit deny at the end, direction, a rule under a broader match is dead); completeness (the save step: write memory on Cisco, commit on PAN-OS and Junos, RouterOS persists automatically; a route without its return route, a trunk without allowed VLANs). 3) Translate through concepts: the config model (line-based and live vs object or menu based vs commit-based), VLANs and bridging, firewall zones and policies, and flag what has no one-to-one equivalent on the target. 4) Templates: access ports with a fixed VLAN, edge or portfast and BPDU guard; trunks with explicit allowed VLANs and no auto-negotiated trunk mode; default-deny zones with specific-to-general allow rules and logging; SSH not Telnet and management access limited to the admin network. 5) Applying on a live device is a separate, confirmed step with a rollback timer. Full original skill(s) with license: vendor/kosif-atlas/skills/2591-bertram/9958-net-config.",
+  "params": "vendor, version, existing config",
+  "install": "mkdir -p ~/.claude/skills && cp -r .claude/skills/kosif-superpowers/vendor/kosif-atlas/skills/2591-bertram/9958-net-config ~/.claude/skills/net-config",
+  "requires": [],
+  "license": "card in our own words; the original skill folders are copied verbatim with their MIT license and SOURCE.md under vendor/kosif-atlas",
+  "proof": [
+   "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/2591-bertram/9958-net-config"
+  ],
+  "proof_scope": "url",
+  "styles": [],
+  "tags": [
+   "network config",
+   "Cisco",
+   "MikroTik",
+   "firewall",
+   "VLAN",
+   "ACL",
+   "إعداد الشبكات",
+   "جدار ناري"
+  ],
+  "section": "أدوات MCP والتكاملات — MCP servers, tools & integrations",
+  "source": "KOSIF Atlas exhaustive pass 2026-10-23, batch batch4-build (https://github.com/kosif199022-jpg/kosif-atlas @ 99bb108d): bertram/net-config (#9958) · SKILL.md read in full as inert text",
+  "atlas": {
+   "ids": [
+    "9958"
+   ],
+   "examples": [
+    {
+     "id": "9958",
+     "plugin": "bertram",
+     "skill": "net-config",
+     "url": "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/2591-bertram/9958-net-config"
+    }
+   ],
+   "theme": "mcp-tooling",
+   "risk_notes": "Method guidance only; no Atlas code imported or executed.",
+   "kosif_overlap_ids": [
+    "ABUILD-52"
+   ],
+   "stage": "extracted",
+   "verified_by": "atlas-pass-20261023-batch4-build.json",
+   "skill_md_sha256": {
+    "9958": "e9c035d1fe276a32142e1fa5ef996c3347af31489bbb69e22769051c2b238b12"
+   },
+   "vendored": [
+    "vendor/kosif-atlas/skills/2591-bertram/9958-net-config"
+   ]
+  }
+ },
+ {
+  "id": "ABUILD-57",
+  "family": "atlas-build",
+  "domain": "build",
+  "name_ar": "ملعب HTML تفاعلي في ملف واحد: أدوات تحكم ومعاينة حية وprompt جاهز للنسخ",
+  "name_en": "Single-file interactive HTML playground: controls, live preview and a ready-to-copy prompt",
+  "status": "documented",
+  "what": "صفحة واحدة يضبط فيها المستخدم شيئًا بصريًا (تصميم، ألوان، حركة، بنية بيانات، مفهوم) بأدوات تحكم، فتتحدث المعاينة فورًا ويتولد نص طلب طبيعي يذكر الخيارات غير الافتراضية فقط، مع زر نسخ وإعدادات مسبقة. — Configure visually, then copy a precise prompt.",
+  "when": "المستخدم لا يعرف كيف يصف ما يريد، استكشاف خيارات تصميم أو حركة، تحويل إعدادات إلى طلب دقيق / exploring options visually before asking for the build",
+  "how": "1) Identify the playground type (design or style, data explorer, concept map, code or config, document critique) and start from the closest template. 2) One HTML file with inline CSS and JS and no external dependencies. 3) Live preview on every control change, no Apply button. 4) Keep one state object; every control writes to it and one render function reads it. 5) Prompt output in natural language that mentions only non-default choices and carries enough context to act on without seeing the page; it updates live. 6) A copy button with brief 'Copied' feedback. 7) Sensible defaults that look good on first load, and 3 to 5 named presets that set every control to a coherent combination. 8) Dark theme, system font for UI, monospace for values. 9) Open it in the browser, or publish it as a private page when no local browser exists. Full original skill(s) with license: vendor/kosif-atlas/skills/300-playground/913-playground.",
+  "params": "topic, controls",
+  "install": "mkdir -p ~/.claude/skills && cp -r .claude/skills/kosif-superpowers/vendor/kosif-atlas/skills/300-playground/913-playground ~/.claude/skills/playground",
+  "requires": [],
+  "license": "card in our own words; the original skill folders are copied verbatim with their Apache-2.0 license and SOURCE.md under vendor/kosif-atlas",
+  "proof": [
+   "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/300-playground/913-playground"
+  ],
+  "proof_scope": "url",
+  "styles": [],
+  "tags": [
+   "playground",
+   "interactive HTML",
+   "prompt builder",
+   "presets",
+   "live preview",
+   "صفحة تفاعلية",
+   "منشئ الطلب"
+  ],
+  "section": "أدوات MCP والتكاملات — MCP servers, tools & integrations",
+  "source": "KOSIF Atlas exhaustive pass 2026-10-23, batch batch4-build (https://github.com/kosif199022-jpg/kosif-atlas @ 99bb108d): playground/playground (#913) · SKILL.md read in full as inert text",
+  "atlas": {
+   "ids": [
+    "913"
+   ],
+   "examples": [
+    {
+     "id": "913",
+     "plugin": "playground",
+     "skill": "playground",
+     "url": "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/300-playground/913-playground"
+    }
+   ],
+   "theme": "mcp-tooling",
+   "risk_notes": "Method guidance only; no Atlas code imported or executed.",
+   "kosif_overlap_ids": [
+    "APP-01"
+   ],
+   "stage": "extracted",
+   "verified_by": "atlas-pass-20261023-batch4-build.json",
+   "skill_md_sha256": {
+    "913": "521a3d62211e5f47b65ed17b660e001b15cf8d88d058cbf31bc00e889bcb63cc"
+   },
+   "vendored": [
+    "vendor/kosif-atlas/skills/300-playground/913-playground"
+   ]
+  }
+ },
+ {
+  "id": "ABUILD-58",
+  "family": "atlas-build",
+  "domain": "build",
+  "name_ar": "تحديد معمارية جهاز إلكتروني قبل أي مخطط: المتطلبات قبل القطع، ووحدة جاهزة أم لوحة مخصصة، وشجرة الطاقة، والتوافق الكهرومغناطيسي",
+  "name_en": "Scope a hardware design before any schematic: requirements before parts, module vs custom PCB, the power tree, EMC posture",
+  "status": "documented",
+  "what": "قرار الشراء أم البناء أعلى قرار أثرًا في العتاد: تُسمى الوظيفة والطاقة والحجم والبيئة والواجهات والكمية والجدول والشهادات قبل اختيار المتحكم، ثم يُقرر بين وحدة جاهزة ولوحة مخصصة (ووحدة لاسلكية معتمدة مسبقًا تعيد استخدام شهادتها)، وتُرسم شجرة الطاقة وخطة الواجهات ووضعية ما قبل الامتثال. — An architecture brief for electronics.",
+  "when": "فكرة منتج إلكتروني، أي متحكم نختار، نبني لوحة أم نشتري وحدة، تجهيز للشهادات / scoping an electronics product",
+  "how": "1) Name the requirements first: function, compute and peripherals, power envelope and battery, size and enclosure, environment (temperature, humidity, vibration), interfaces, volume, schedule and certification; parts are conclusions of these. 2) Decide module or custom PCB on volume times cost times size times certification times time to market; a pre-certified radio module reuses its approval, a discrete radio means your own intentional-radiator certification; state the crossover. 3) Sketch the power tree: rails and loads, LDO or switching regulator per rail (noise vs efficiency vs size), a power budget, sequencing, protection, battery and thermal. 4) Plan interfaces: buses (I2C, SPI, UART, USB), analogue front ends, wireless, connectors and their protection. 5) EMC posture: the likely regulatory regime and the design-for-EMC choices to make now (grounding, filtering, clock management, shielding); certification is a test-lab verdict, not a claim. 6) Output the brief: build-vs-buy verdict, requirements, component direction, power tree, interface plan, pre-compliance posture and flip conditions, then hand off to component selection and schematic review. Full original skill(s) with license: vendor/kosif-atlas/skills/2313-hardware-electronics-engineering/8875-scope-a-hardware-design.",
+  "params": "product idea, volume, certification targets",
+  "install": "mkdir -p ~/.claude/skills && cp -r .claude/skills/kosif-superpowers/vendor/kosif-atlas/skills/2313-hardware-electronics-engineering/8875-scope-a-hardware-design ~/.claude/skills/scope-a-hardware-design",
+  "requires": [],
+  "license": "card in our own words; the original skill folders are copied verbatim with their MIT license and SOURCE.md under vendor/kosif-atlas",
+  "proof": [
+   "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/2313-hardware-electronics-engineering/8875-scope-a-hardware-design"
+  ],
+  "proof_scope": "url",
+  "styles": [],
+  "tags": [
+   "hardware design",
+   "PCB",
+   "power tree",
+   "EMC",
+   "embedded",
+   "electronics",
+   "تصميم العتاد",
+   "إلكترونيات"
+  ],
+  "section": "التخطيط والمواصفات — Planning, specs & decisions",
+  "source": "KOSIF Atlas exhaustive pass 2026-10-23, batch batch5-build (https://github.com/kosif199022-jpg/kosif-atlas @ 99bb108d): hardware-electronics-engineering/scope-a-hardware-design (#8875) · SKILL.md read in full as inert text",
+  "atlas": {
+   "ids": [
+    "8875"
+   ],
+   "examples": [
+    {
+     "id": "8875",
+     "plugin": "hardware-electronics-engineering",
+     "skill": "scope-a-hardware-design",
+     "url": "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/2313-hardware-electronics-engineering/8875-scope-a-hardware-design"
+    }
+   ],
+   "theme": "planning-specs",
+   "risk_notes": "Method guidance only; no Atlas code imported or executed.",
+   "kosif_overlap_ids": [
+    "ACODE-255"
+   ],
+   "stage": "extracted",
+   "verified_by": "atlas-pass-20261023-batch5-build.json",
+   "skill_md_sha256": {
+    "8875": "78729a636919be1384574eb1699bad2d886a703ec9af958d1a4049c8c29c37f9"
+   },
+   "vendored": [
+    "vendor/kosif-atlas/skills/2313-hardware-electronics-engineering/8875-scope-a-hardware-design"
+   ]
+  }
+ },
+ {
+  "id": "ABUILD-59",
+  "family": "atlas-build",
+  "domain": "build",
+  "name_ar": "رحلة بناء موقع أو تحسينه بترتيب ثابت: الرسالة ثم التصميم ثم التحويل، وكل إصلاح فرضية قابلة للاختبار، وملف تتبع يستأنف منه",
+  "name_en": "Website creation or improvement as a fixed-order journey: message, then design, then conversion; every fix a testable hypothesis; a tracker to resume from",
+  "status": "documented",
+  "what": "الزائر يقرر في خمس ثوانٍ هل يبقى، وهذا يعتمد على فهمه الفوري لما تقدمه ولماذا يهمه، فالوضوح أولًا والتصميم يخدمه. البناء عشر مراحل (التسويق في صفحة، الرسالة بالعميل بطلًا، جعلها لا تُنسى، تصميم لافت، طباعة مقروءة، تصميم منظم، سهولة الاستخدام، التحويل، جمع غير الجاهزين للشراء، مراجعة قاسية)، والتحسين ثماني مراحل تبدأ بأدلة الزوار. — Resumable website journeys with gates.",
+  "when": "ابنِ لي موقعًا من الصفر، موقعي لا يحول، تحسين صفحة الهبوط / building or fixing a marketing website",
+  "how": "1) Resume first: read the tracker file (for example docs/CREATE-WEBSITE-PLAN.md) and every artifact; summarise the journey state in 3 to 5 lines and ask which phase to enter. 2) First run only: an intake, then create the tracker with each phase marked pending, in progress, awaiting evidence, done, deferred with a reason, or skipped with a reason. 3) Create order: who it is for and the site's one job, the message with the customer as hero, making it memorable, a distinctive visual direction, readable typography, a consistent design system, usability heuristics, conversion (why visitors do not act and what answers them), capturing visitors not ready to buy, and a final quality gate that can send work back. 4) Improve order: diagnose conversion from real visitor evidence first (a gate), then usability, visual hierarchy, typography, the five-second message test, speed, memorability, and error tolerance. 5) Each phase announces what it does, the decision it forces and the artifact it writes (marketing, positioning, design, website and experiments docs), and asks before each decision. 6) Big changes ship as experiments with a hypothesis and a metric; record the result in the experiments file. 7) Never design before the message is settled. Full original skill(s) with license: vendor/kosif-atlas/skills/3431-metaskills/14077-create-website, vendor/kosif-atlas/skills/3431-metaskills/14085-improve-website.",
+  "params": "site or brief, analytics access",
+  "install": "mkdir -p ~/.claude/skills && cp -r .claude/skills/kosif-superpowers/vendor/kosif-atlas/skills/3431-metaskills/14077-create-website ~/.claude/skills/create-website ; mkdir -p ~/.claude/skills && cp -r .claude/skills/kosif-superpowers/vendor/kosif-atlas/skills/3431-metaskills/14085-improve-website ~/.claude/skills/improve-website",
+  "requires": [
+   "pip:hypothesis"
+  ],
+  "license": "card in our own words; the original skill folders are copied verbatim with their MIT license and SOURCE.md under vendor/kosif-atlas",
+  "proof": [
+   "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/3431-metaskills/14077-create-website",
+   "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/3431-metaskills/14085-improve-website"
+  ],
+  "proof_scope": "url",
+  "styles": [],
+  "tags": [
+   "website",
+   "landing page",
+   "conversion",
+   "CRO",
+   "messaging",
+   "web design",
+   "موقع إلكتروني",
+   "التحويل"
+  ],
+  "section": "التخطيط والمواصفات — Planning, specs & decisions",
+  "source": "KOSIF Atlas exhaustive pass 2026-10-23, batch batch5-build (https://github.com/kosif199022-jpg/kosif-atlas @ 99bb108d): metaskills/create-website (#14077); metaskills/improve-website (#14085) · SKILL.md read in full as inert text",
+  "atlas": {
+   "ids": [
+    "14077",
+    "14085"
+   ],
+   "examples": [
+    {
+     "id": "14077",
+     "plugin": "metaskills",
+     "skill": "create-website",
+     "url": "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/3431-metaskills/14077-create-website"
+    },
+    {
+     "id": "14085",
+     "plugin": "metaskills",
+     "skill": "improve-website",
+     "url": "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/3431-metaskills/14085-improve-website"
+    }
+   ],
+   "theme": "planning-specs",
+   "risk_notes": "Method guidance only; no Atlas code imported or executed.",
+   "kosif_overlap_ids": [
+    "APP-14",
+    "ASTRAT-59"
+   ],
+   "stage": "extracted",
+   "verified_by": "atlas-pass-20261023-batch5-build.json",
+   "skill_md_sha256": {
+    "14077": "2ec2d82e4ea3b23937cb35d3e8e22d141904d38c7d5073ff36c287c8911f918c",
+    "14085": "2e7256bac97eea6c223b922a9999a073d1611eab83ea06fa085fe36cb3eee84f"
+   },
+   "vendored": [
+    "vendor/kosif-atlas/skills/3431-metaskills/14077-create-website",
+    "vendor/kosif-atlas/skills/3431-metaskills/14085-improve-website"
+   ]
+  }
+ },
+ {
+  "id": "ABUILD-60",
+  "family": "atlas-build",
+  "domain": "build",
+  "name_ar": "إعداد طرق التثبيت لأداة CLI: صيغة Homebrew tap وgo install وcargo install مع كشف اللغة وGoReleaser والقيود الخاصة بالمنصة",
+  "name_en": "Set up installers for a CLI: a Homebrew tap formula plus go install and cargo install support, with language, GoReleaser and platform detection",
+  "status": "documented",
+  "what": "يجهز توزيع أداة سطر أوامر مكتوبة بـ Go أو Swift أو Rust أو Zig: يكتشف اللغة من go.mod وPackage.swift وCargo.toml وbuild.zig، يلاحظ وجود GoReleaser، يكشف قيود macOS فقط في Swift، ثم يكتب صيغة Homebrew وتعليمات README لطرق التثبيت المناسبة. — Distribution setup for Go, Swift, Rust and Zig CLIs.",
+  "when": "اجعل الأداة تُثبت بـ brew، go install، cargo install، توزيع CLI / making a CLI installable",
+  "how": "1) Detect the language from go.mod, Package.swift, Cargo.toml or build.zig; note a Makefile; read the repo owner and name from git remote or the GitHub CLI. 2) Go: if .goreleaser.yml exists, let GoReleaser generate the brew formula; make sure the module path matches the repo for `go install module/cmd/name@latest`. 3) Rust: confirm a [[bin]] target and that `cargo install --git` or crates.io install works. 4) Swift: grep for AppKit or Cocoa imports to mark the formula macOS-only. 5) Write the formula in a separate tap repo (homebrew-<name>) with url, sha256 from the release tarball, a build or install block and a `test do` that runs `--version`. 6) Add README install sections for each supported method. 7) Verify locally: `brew install --build-from-source ./Formula/<name>.rb` and `brew test`, `go install` in a clean GOPATH, `cargo install --path .`. 8) Creating the tap repo, tagging or publishing a release needs the user's explicit go-ahead. Full original skill(s) with license: vendor/kosif-atlas/skills/977-set-up-installers/2261-set-up-installers.",
+  "params": "language, repo, release tag",
+  "install": "mkdir -p ~/.claude/skills && cp -r .claude/skills/kosif-superpowers/vendor/kosif-atlas/skills/977-set-up-installers/2261-set-up-installers ~/.claude/skills/set-up-installers",
+  "requires": [
+   "os:macos"
+  ],
+  "license": "card in our own words; the original skill folders are copied verbatim with their MIT license and SOURCE.md under vendor/kosif-atlas",
+  "proof": [
+   "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/977-set-up-installers/2261-set-up-installers"
+  ],
+  "proof_scope": "url",
+  "styles": [],
+  "tags": [
+   "Homebrew",
+   "go install",
+   "cargo install",
+   "GoReleaser",
+   "CLI distribution",
+   "توزيع الأداة"
+  ],
+  "section": "أطر الويب — Web frameworks & languages",
+  "source": "KOSIF Atlas exhaustive pass 2026-10-23, batch batch7-build (https://github.com/kosif199022-jpg/kosif-atlas @ 99bb108d): set-up-installers/set-up-installers (#2261) · SKILL.md read in full as inert text",
+  "atlas": {
+   "ids": [
+    "2261"
+   ],
+   "examples": [
+    {
+     "id": "2261",
+     "plugin": "set-up-installers",
+     "skill": "set-up-installers",
+     "url": "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/977-set-up-installers/2261-set-up-installers"
+    }
+   ],
+   "theme": "web-frameworks",
+   "risk_notes": "Method guidance only; no Atlas code imported or executed.",
+   "kosif_overlap_ids": [
+    "ACODE-228"
+   ],
+   "stage": "extracted",
+   "verified_by": "atlas-pass-20261023-batch7-build.json",
+   "skill_md_sha256": {
+    "2261": "5bbd4dde6a52031a8b1e759e2143692672194aea6e5d079b0be24a19d7ece6ae"
+   },
+   "vendored": [
+    "vendor/kosif-atlas/skills/977-set-up-installers/2261-set-up-installers"
+   ]
+  }
  }
 ]

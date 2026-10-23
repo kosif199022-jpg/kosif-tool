@@ -1,0 +1,48 @@
+{
+ "schema": "kosif.atlas-5000.mining-receipt.v1",
+ "date": "2026-10-23",
+ "batch": "batch5-code",
+ "atlas": "https://github.com/kosif199022-jpg/kosif-atlas",
+ "atlas_commit": "99bb108dff169880dd531359f474a01b73c4b233",
+ "powers_added": 2,
+ "sources_read": 3,
+ "scope_note": "Each SKILL.md was read in full as inert text and its method summarised in our own words on the card; with the owner's approval the whole skill folder (text files only) is also copied verbatim with its license into vendor/kosif-atlas. Nothing from the Atlas was executed. Only READ_ONLY_OK, permissive-license, no-risk-flag skills were used.",
+ "sources": [
+  {
+   "atlas_id": 2253,
+   "plugin": "review-plan",
+   "skill": "review-plan",
+   "license": "MIT",
+   "theme": "planning-specs",
+   "path": "skills/969-review-plan/2253-review-plan",
+   "skill_md_sha256": "fa06bec950b1ad039b763b8352de8ec2a0c975629423ce93d1d3eeedca74b1ce",
+   "bytes": 11827,
+   "read_in_full": true,
+   "power": "ACODE-308"
+  },
+  {
+   "atlas_id": 13040,
+   "plugin": "codex-reviewer",
+   "skill": "feature-review-plan",
+   "license": "MIT",
+   "theme": "planning-specs",
+   "path": "skills/3031-codex-reviewer/13040-feature-review-plan",
+   "skill_md_sha256": "da04ed311ab7490ea2f2eb3e94756ae206d566726844fcecd6efc7ce09a1d6bd",
+   "bytes": 20845,
+   "read_in_full": true,
+   "power": "ACODE-308"
+  },
+  {
+   "atlas_id": 13792,
+   "plugin": "claude-code-settings-spec-from-binary",
+   "skill": "claude-code-settings-spec-from-binary",
+   "license": "MIT",
+   "theme": "planning-specs",
+   "path": "skills/3281-claude-code-settings-spec-from-binary/13792-claude-code-settings-spec-from-binary",
+   "skill_md_sha256": "b15945b2c77b20777097da1ab18e1ff470c540d713a1c839b5080bffc465bb3e",
+   "bytes": 10401,
+   "read_in_full": true,
+   "power": "ACODE-309"
+  }
+ ]
+}

@@ -1,4 +1,4 @@
-# `atlas-mind` — التفكير والتخطيط والاستراتيجية (60 بطاقة)
+# `atlas-mind` — التفكير والتخطيط والاستراتيجية (82 بطاقة)
 
 > مكتبة بروتوكول USIP v5.6 الكاملة، مولّدة بـ `smart_capabilities.py cards` من `data/powers/atlas-mind.json` وقواعد الملاحق A25–A29؛ لا تُحرَّر يدويًا. [الفهرس الرئيسي](../../README.md) · [فصل المجموعة](../../../.claude/skills/kosif-superpowers/references/library/thinking.md) · [النواة](../../../.claude/skills/kosif-superpowers/PROTOCOL.md)
 
@@ -64,6 +64,28 @@
 - [`AMIND-58` فحص ملاءمة النتيجة لكل مكان تصل إليه وكل نية حُمّلت بها](#amind-58--فحص-ملاءمة-النتيجة-لكل-مكان-تصل-إليه-وكل-نية-حُمّلت-بها--landing-fit-check-does-a-result-fit-every-place-it-reaches)
 - [`AMIND-59` بوابة فحص مستقلة لمجموعة الخيارات قبل عرضها على المستخدم](#amind-59--بوابة-فحص-مستقلة-لمجموعة-الخيارات-قبل-عرضها-على-المستخدم--independent-option-set-gate-check-before-asking-the-user)
 - [`AMIND-60` استقبال الملاحظات الخارجية: تحقق من كل ادعاء ثم صنّفه وامنع تكراره وأغلق الحلقة](#amind-60--استقبال-الملاحظات-الخارجية-تحقق-من-كل-ادعاء-ثم-صنّفه-وامنع-تكراره-وأغلق-الحلقة--external-feedback-intake-verify-each-claim-tier-it-prevent-cover-close)
+- [`AMIND-61` مدقق الانحراف للقراءة فقط: مقارنة العمل بملفات الحقيقة وإشارات الزمن وسلم تصعيد](#amind-61--مدقق-الانحراف-للقراءة-فقط-مقارنة-العمل-بملفات-الحقيقة-وإشارات-الزمن-وسلم-تصعيد--read-only-drift-audit-against-truth-files-with-time-signals-and-an-escalation-ladder)
+- [`AMIND-62` تقرير ما ساهم به الوكيل في الجلسة: مستوى الإشارة أولًا ثم ما يستحق التسجيل](#amind-62--تقرير-ما-ساهم-به-الوكيل-في-الجلسة-مستوى-الإشارة-أولًا-ثم-ما-يستحق-التسجيل--session-contribution-evidence-grade-the-signal-first-record-only-what-earns-it)
+- [`AMIND-63` فهم مؤكد لا شرح فقط: مداخل حسب نية المستخدم واختبارات سيناريو تكشف سوء الفهم](#amind-63--فهم-مؤكد-لا-شرح-فقط-مداخل-حسب-نية-المستخدم-واختبارات-سيناريو-تكشف-سوء-الفهم--verified-comprehension-intent-scented-entry-points-and-scenario-probes)
+- [`AMIND-64` حلقة التعلم من رفض طلبات الدمج: الخطأ الذي يتكرر مرتين يصبح أداة دائمة](#amind-64--حلقة-التعلم-من-رفض-طلبات-الدمج-الخطأ-الذي-يتكرر-مرتين-يصبح-أداة-دائمة--learning-loop-from-rejected-agent-prs-a-mistake-that-happens-twice-becomes-an-artefact)
+- [`AMIND-65` مطابقة ذاكرة الوكيل مع وثائق المشروع في الاتجاهين: خمسة أنواع انحراف](#amind-65--مطابقة-ذاكرة-الوكيل-مع-وثائق-المشروع-في-الاتجاهين-خمسة-أنواع-انحراف--reconcile-agent-memory-with-project-docs-in-both-directions-five-kinds-of-drift)
+- [`AMIND-66` تنقيب سجلات الجلسات دوريًا: تكثيف قبل القراءة، نافذة غير محصودة، ومقارنة مع الكتالوج](#amind-66--تنقيب-سجلات-الجلسات-دوريًا-تكثيف-قبل-القراءة-نافذة-غير-محصودة-ومقارنة-مع-الكتالوج--periodic-session-transcript-mining-condense-first-unharvested-window-dedupe-against-catalogues)
+- [`AMIND-67` مالك واحد لكل نوع حقيقة: التصميم، حالة العمل، خطة التنفيذ، ودليل التسليم](#amind-67--مالك-واحد-لكل-نوع-حقيقة-التصميم-حالة-العمل-خطة-التنفيذ-ودليل-التسليم--one-owner-per-kind-of-truth-design-work-state-execution-plan-delivery-evidence)
+- [`AMIND-68` اختر الأداة للمشكلة لا بالعادة: أربع خطايا اختيار، وسلم أصلي ثم رسمي ثم طرف ثالث موثوق](#amind-68--اختر-الأداة-للمشكلة-لا-بالعادة-أربع-خطايا-اختيار-وسلم-أصلي-ثم-رسمي-ثم-طرف-ثالث-موثوق--pick-for-the-problem-not-the-reflex-four-selection-sins-and-a-native-official-vetted-ladder)
+- [`AMIND-69` انقل العمل الحتمي إلى سكربت: ثلاث طبقات (حتمي، اكتشف ثم احكم، تفكير فقط)](#amind-69--انقل-العمل-الحتمي-إلى-سكربت-ثلاث-طبقات-حتمي-اكتشف-ثم-احكم-تفكير-فقط--script-the-deterministic-work-three-tiers-deterministic-detect-then-judge-reasoning-only)
+- [`AMIND-70` مستشار الأتمتة والأدوات للقراءة فقط: ماذا يناسب هذا المستودع من خوادم MCP ومهارات وخطافات ووكلاء فرعيين وإضافات](#amind-70--مستشار-الأتمتة-والأدوات-للقراءة-فقط-ماذا-يناسب-هذا-المستودع-من-خوادم-mcp-ومهارات-وخطافات-ووكلاء-فرعيين-وإضافات--read-only-automation-and-tool-advisor-which-mcp-servers-skills-hooks-subagents-and-plugins-fit-this-repository)
+- [`AMIND-71` تفويض التنفيذ لنموذج أضعف دون حضورك: اتخذ كل قرار مسبقًا، واكتب أقل قدر ممكن](#amind-71--تفويض-التنفيذ-لنموذج-أضعف-دون-حضورك-اتخذ-كل-قرار-مسبقًا-واكتب-أقل-قدر-ممكن--a-plan-a-weaker-model-will-execute-without-you-make-every-decision-write-as-little-as-possible)
+- [`AMIND-72` من التخطيط إلى التنفيذ بسلطتين: التوجيه التقني لك ويُسجل، والوظيفي والتشغيلي للمستخدم ويُسأل، والخطة هي المواصفة](#amind-72--من-التخطيط-إلى-التنفيذ-بسلطتين-التوجيه-التقني-لك-ويُسجل-والوظيفي-والتشغيلي-للمستخدم-ويُسأل-والخطة-هي-المواصفة--plan-then-implement-under-two-authorities-technical-direction-is-yours-and-logged-functional-and-operational-direction-is-the-users-and-asked-the-plan-is-the-spec)
+- [`AMIND-73` مدقق الاستدلال: مصفوفة تتبع من الشروط الأصلية إلى الاستنتاج، وتصنيف كل افتراض معطى أو مُثبت أو مستنتج أو مخترع أو مجهول](#amind-73--مدقق-الاستدلال-مصفوفة-تتبع-من-الشروط-الأصلية-إلى-الاستنتاج-وتصنيف-كل-افتراض-معطى-أو-مُثبت-أو-مستنتج-أو-مخترع-أو-مجهول--reasoning-verifier-a-traceability-matrix-from-the-original-conditions-to-the-conclusion-with-each-assumption-classed-given-verified-deduced-invented-or-unknown)
+- [`AMIND-74` استدل ولا تردد: الموروث يصف ما هو كائن ولا يبرر نفسه، فأعد اشتقاق القرارات التي تعيش على السابقة](#amind-74--استدل-ولا-تردد-الموروث-يصف-ما-هو-كائن-ولا-يبرر-نفسه-فأعد-اشتقاق-القرارات-التي-تعيش-على-السابقة--reason-dont-recite-inherited-content-describes-what-is-and-does-not-justify-itself-so-re-derive-decisions-coasting-on-precedent)
+- [`AMIND-75` عصف ذهني بقدر الحاجة: فرز بسيط أو مضغوط أو كامل، وكبسولة قرار من خمسة أسطر، وفحص سياق رخيص قبل الأسئلة](#amind-75--عصف-ذهني-بقدر-الحاجة-فرز-بسيط-أو-مضغوط-أو-كامل-وكبسولة-قرار-من-خمسة-أسطر-وفحص-سياق-رخيص-قبل-الأسئلة--brainstorm-only-as-much-as-needed-minimal-compact-or-full-triage-a-five-line-decision-capsule-and-a-cheap-context-preflight-before-questions)
+- [`AMIND-76` استخراج القرارات التي تقوم عليها النية: اعرض الخريطة كاملة أولًا، واسأل فقط ما لا يُشتق، والمدخلات مادة لا حقيقة](#amind-76--استخراج-القرارات-التي-تقوم-عليها-النية-اعرض-الخريطة-كاملة-أولًا-واسأل-فقط-ما-لا-يُشتق-والمدخلات-مادة-لا-حقيقة--elicit-the-decisions-an-intent-turns-on-show-the-whole-map-first-ask-only-what-cannot-be-derived-treat-input-as-material-not-truth)
+- [`AMIND-77` اختيار مسار تنفيذ الوكلاء: مالك واحد لكل خانة (المواصفة، انضباط التنفيذ، المراجعة، أمان الكود، حوكمة الإعداد)](#amind-77--اختيار-مسار-تنفيذ-الوكلاء-مالك-واحد-لكل-خانة-المواصفة-انضباط-التنفيذ-المراجعة-أمان-الكود-حوكمة-الإعداد--choose-agent-execution-rails-one-owner-per-slot-spec-execution-discipline-review-code-security-setup-governance)
+- [`AMIND-78` تقييم مهارة كدالة تحت الاختبار: تشغيل أعمى بوكيل جديد لكل حالة، وحكم منفصل يطبق المعيار، وسقاطة لا تقبل تراجع الدرجة](#amind-78--تقييم-مهارة-كدالة-تحت-الاختبار-تشغيل-أعمى-بوكيل-جديد-لكل-حالة-وحكم-منفصل-يطبق-المعيار-وسقاطة-لا-تقبل-تراجع-الدرجة--evaluate-a-skill-like-a-function-under-test-a-blind-fresh-agent-per-case-a-separate-judge-applying-the-bar-and-a-ratchet-that-never-accepts-a-lower-score)
+- [`AMIND-79` تأليف المهارات وإدارة مكتبتها: هل هي مهارة أصلًا، ووصف يقول متى لا ماذا، وإبقاء أو إصلاح أو حذف حسب الفرق المقاس](#amind-79--تأليف-المهارات-وإدارة-مكتبتها-هل-هي-مهارة-أصلًا-ووصف-يقول-متى-لا-ماذا-وإبقاء-أو-إصلاح-أو-حذف-حسب-الفرق-المقاس--authoring-skills-and-curating-the-library-is-it-a-skill-at-all-a-description-that-says-when-not-what-and-keepfixcut-by-measured-delta)
+- [`AMIND-80` حوّل التصحيح المتكرر للوكيل إلى قاعدة في المكان الصحيح: ملف سياق أو مهارة أو قاعدة لمسار أو خطاف أو اختبار](#amind-80--حوّل-التصحيح-المتكرر-للوكيل-إلى-قاعدة-في-المكان-الصحيح-ملف-سياق-أو-مهارة-أو-قاعدة-لمسار-أو-خطاف-أو-اختبار--turn-a-repeated-correction-into-a-rule-in-the-right-place-context-file-skill-path-rule-hook-or-test)
+- [`AMIND-81` أسماء أفضل: مولدات عمياء من زوايا مختلفة لكسر التثبيت، ومعايير مرتبة تبدأ بألا يكذب الاسم، والإنسان يختار دائمًا](#amind-81--أسماء-أفضل-مولدات-عمياء-من-زوايا-مختلفة-لكسر-التثبيت-ومعايير-مرتبة-تبدأ-بألا-يكذب-الاسم-والإنسان-يختار-دائمًا--better-names-blind-generators-from-distinct-lenses-to-break-the-anchor-ranked-criteria-led-by-the-name-must-not-lie-and-the-human-always-picks)
+- [`AMIND-82` حلقة تحسين بسقاطة يقودها الهدف: حدد النهاية لا الطريق، وافصل الحكم عن المنفذ، واستبدل الوكيل العالق](#amind-82--حلقة-تحسين-بسقاطة-يقودها-الهدف-حدد-النهاية-لا-الطريق-وافصل-الحكم-عن-المنفذ-واستبدل-الوكيل-العالق--goal-driven-ratchet-optimisation-loop-define-the-end-not-the-route-separate-judge-from-worker-replace-a-stuck-worker)
 
 ## البطاقات / cards
 
@@ -4025,6 +4047,7 @@
 - `AMIND-57` التحقق من ادعاء رقمي عام مقابل البيانات المفتوحة الأولية / Verify a public numeric claim against the primary open-data series (documented)
 - `AMIND-58` فحص ملاءمة النتيجة لكل مكان تصل إليه وكل نية حُمّلت بها / Landing-fit check: does a result fit every place it reaches (documented)
 - `AMIND-60` استقبال الملاحظات الخارجية: تحقق من كل ادعاء ثم صنّفه وامنع تكراره وأغلق الحلقة / External feedback intake: verify each claim, tier it, prevent, cover, close (documented)
+- `AMIND-61` مدقق الانحراف للقراءة فقط: مقارنة العمل بملفات الحقيقة وإشارات الزمن وسلم تصعيد / Read-only drift audit against truth files, with time signals and an escalation ladder (documented)
 
 ### `AMIND-60` — استقبال الملاحظات الخارجية: تحقق من كل ادعاء ثم صنّفه وامنع تكراره وأغلق الحلقة / External feedback intake: verify each claim, tier it, prevent, cover, close
 
@@ -4091,4 +4114,1517 @@
 
 - `AMIND-58` فحص ملاءمة النتيجة لكل مكان تصل إليه وكل نية حُمّلت بها / Landing-fit check: does a result fit every place it reaches (documented)
 - `AMIND-59` بوابة فحص مستقلة لمجموعة الخيارات قبل عرضها على المستخدم / Independent option-set gate check before asking the user (documented)
+- `AMIND-61` مدقق الانحراف للقراءة فقط: مقارنة العمل بملفات الحقيقة وإشارات الزمن وسلم تصعيد / Read-only drift audit against truth files, with time signals and an escalation ladder (documented)
+- `AMIND-62` تقرير ما ساهم به الوكيل في الجلسة: مستوى الإشارة أولًا ثم ما يستحق التسجيل / Session contribution evidence: grade the signal first, record only what earns it (documented)
+
+### `AMIND-61` — مدقق الانحراف للقراءة فقط: مقارنة العمل بملفات الحقيقة وإشارات الزمن وسلم تصعيد / Read-only drift audit against truth files, with time signals and an escalation ladder
+
+| الحقل | القيمة |
+|---|---|
+| العائلة | `atlas-mind` ([فصل العائلة](../../../.claude/skills/kosif-superpowers/references/powers/atlas-mind.md)) |
+| المجموعة | التفكير والتخطيط والاستراتيجية (`thinking`) |
+| نوع المخرج (A25، A27) | خطة واستراتيجية وقرار (`plan`) |
+| الحالة في الكتالوج | 📄 `documented`: منهج موصوف يحتاج بناءً أو ربطًا قبل التشغيل |
+| سقف التحقق قبل العمل (A27) | V1 حتى تُبنى وتُشغَّل؛ لا تقدَّم جاهزة أبدًا |
+| نطاق الدليل | `url` |
+| الرخصة | card in our own words; the original skill folders are copied verbatim with their MIT license and SOURCE.md under vendor/kosif-atlas |
+
+**ما هي:** دور مدقق لا يعدّل شيئًا: يقارن ما يحدث في المشروع بملفات الحقيقة (المشروع، طابور المهام، القرارات، لقطة الحالة) ليكشف اتساع النطاق وتعدد المهام المتزامنة وتغيير التسميات أو المعمارية خفية والقرارات غير المسجلة وتحول الإصلاح إلى إعادة كتابة، ويضيف إشارات زمنية للمهام والقرارات الراكدة، ويختم بتوصية واحدة واضحة. — An auditor that never edits: compares work with the project's truth files, adds staleness signals and ends with one clear recommendation.
+
+**متى:** المشروع تشتت، الوكيل عدّل أكثر مما طُلب، خطط متعارضة، 'حاسس إننا خرجنا عن المسار' / a project feels off-track, the agent changed more than asked, competing plans
+
+**كيف:** 1) Read only: the project definition, the task queue, the decision log and the current state snapshot. 2) Check each drift type against its source: scope grew (project file), several tasks in flight (queue), naming or architecture changed without a decision (decision log), duplicate approaches, undecided choices, a bug fix that became a rewrite, learning that became endless explanation. 3) Add code checks: matches the spec, no copied blocks over three lines, naming follows recorded conventions, no injection, path traversal, privilege or hard-coded secret risk. 4) Time signals: a task idle over three days (stuck or parked?), a phase with no progress over three days (split or shrink), a decision older than seven days on active work (re-confirm). 5) Grade findings critical (blocks delivery), warning (log it), info. 6) Escalate by level: self-correct, auditor note, roll back to the last valid state and pause, freeze the queue with a full report, lock and ask a human. 7) Output one screen: where it drifted, severity, cause traced through evidence, rollback or fix, files to update, and one verdict (continue, split, pause, decision gate). The fixer role it hands to repairs one issue: reproduce, root cause, a failing test first, the smallest fix, no refactor or feature, then report residual risk. Full original skill(s) with license: vendor/kosif-atlas/skills/2-agent-workflow-system/3-agent-drift-auditor, vendor/kosif-atlas/skills/2-agent-workflow-system/2-agent-debug-fixer.
+
+**المعاملات:** truth files
+
+**التثبيت:** mkdir -p ~/.claude/skills && cp -r .claude/skills/kosif-superpowers/vendor/kosif-atlas/skills/2-agent-workflow-system/3-agent-drift-auditor ~/.claude/skills/agent-drift-auditor ; mkdir -p ~/.claude/skills && cp -r .claude/skills/kosif-superpowers/vendor/kosif-atlas/skills/2-agent-workflow-system/2-agent-debug-fixer ~/.claude/skills/agent-debug-fixer
+
+**الوسوم:** agent workflow · drift · scope creep · audit · project control · انحراف المشروع · تدقيق
+
+#### 1. الاستقبال (A25)
+
+- الهدف القابل للقياس: سؤال بإجابة مقترحة ← هدف مقترح بعتبة رقمية يُعرض للتعديل
+- الأفق الزمني: افتراض مكتوب ← 90 يومًا
+- الموارد والميزانية: افتراض مكتوب ← شخص واحد بلا صرف
+- لا تُفترض أبدًا: مادة الإنتاج نفسها، والإذن بخطوة مدفوعة أو منشورة أو لا رجعة فيها، والهوية والحقوق.
+
+#### 2. الجاهزية والشارة (A28)
+
+- لا متطلبات مسجلة؛ افحص المسار والأداة بـ `hub.py doctor` قبل الشارة.
+- الوضع 1: شارة «هنا الآن» بعد الفحص، لا 📄 الكتالوج تلقائيًا · الوضع 2: `كتالوج: 📄 · هنا: غير مفحوص` · الوضع 3: بلا شارة ولا معرّف.
+
+#### 3. موضعها في الخطة (A26)
+
+- عقدة منمّطة: المدخل `brief` ← المخرج `plan`، والمنفّذ `method:AMIND-61` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
+- لا أداة مسجلة تخدم عائلتها: التنفيذ بالمكتبات أو بأداة من مجموعة أخرى.
+- مراحل النوع: الهدف بمؤشره ← ثلاثة خيارات مختلفة ← تقييم وحساسية ← تشريح مسبق ← بوابات مكتوبة ← خطوة أولى قابلة للتراجع.
+- إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
+
+#### 4. بوابة التحقق (A27)
+
+- إلزامي: لكل هدف مؤشر وعتبة وتاريخ ← جدول المؤشرات
+- إلزامي: ثلاثة خيارات مختلفة المنهج مع توصية ← جدول المقارنة
+- جودة: تشريح مسبق بأهم أسباب الفشل والوقاية ← think.py plan
+- جودة: بوابات go/pivot/kill مكتوبة قبل النتائج ← think.py gate
+- إلزامي: خطوة أولى صغيرة قابلة للتراجع هذا الأسبوع ← مراجعة
+- أمر الحكم في الوضع 1: `think.py qa plan --answers qa.json` (PASS / FAIL / INCOMPLETE).
+
+#### 5. التعافي (A29)
+
+- `missing_dependency` (اعتمادية مفقودة، ميزانية 2): سمِّ الاعتمادية بالضبط (حزمة، برنامج، خط، نموذج) ← ثبّت محليًا في بيئة العمل إن كان مجانيًا ومسموحًا (pip --user أو venv أو npm محلي) · البديل: مسار المكتبة القياسية أو أداة أخرى من نفس المجموعة · تصعيد: تثبيت نظامي أو مدفوع أو يحتاج مفتاحًا: توقف واسأل
+- `quality_below_threshold` (جودة دون العتبة، ميزانية 3): أي معيار فشل وبكم (المقيس مقابل العتبة) ← عالج السبب الأكبر وحده ثم أعد القياس · البديل: المنهج البديل المكتوب للمرحلة في الخطة · تصعيد: معيار إلزامي لا يتحقق بعد البديل: توقف وأبلغ بالأرقام
+
+#### 6. الأدلة
+
+- `https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/2-agent-workflow-system/3-agent-drift-auditor`
+- `https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/2-agent-workflow-system/2-agent-debug-fixer`
+
+#### 7. قدرات قريبة في العائلة
+
+- `AMIND-59` بوابة فحص مستقلة لمجموعة الخيارات قبل عرضها على المستخدم / Independent option-set gate check before asking the user (documented)
+- `AMIND-60` استقبال الملاحظات الخارجية: تحقق من كل ادعاء ثم صنّفه وامنع تكراره وأغلق الحلقة / External feedback intake: verify each claim, tier it, prevent, cover, close (documented)
+- `AMIND-62` تقرير ما ساهم به الوكيل في الجلسة: مستوى الإشارة أولًا ثم ما يستحق التسجيل / Session contribution evidence: grade the signal first, record only what earns it (documented)
+- `AMIND-63` فهم مؤكد لا شرح فقط: مداخل حسب نية المستخدم واختبارات سيناريو تكشف سوء الفهم / Verified comprehension: intent-scented entry points and scenario probes (documented)
+
+### `AMIND-62` — تقرير ما ساهم به الوكيل في الجلسة: مستوى الإشارة أولًا ثم ما يستحق التسجيل / Session contribution evidence: grade the signal first, record only what earns it
+
+| الحقل | القيمة |
+|---|---|
+| العائلة | `atlas-mind` ([فصل العائلة](../../../.claude/skills/kosif-superpowers/references/powers/atlas-mind.md)) |
+| المجموعة | التفكير والتخطيط والاستراتيجية (`thinking`) |
+| نوع المخرج (A25، A27) | خطة واستراتيجية وقرار (`plan`) |
+| الحالة في الكتالوج | 📄 `documented`: منهج موصوف يحتاج بناءً أو ربطًا قبل التشغيل |
+| سقف التحقق قبل العمل (A27) | V1 حتى تُبنى وتُشغَّل؛ لا تقدَّم جاهزة أبدًا |
+| نطاق الدليل | `url` |
+| الرخصة | card in our own words; the original skill folders are copied verbatim with their MIT license and SOURCE.md under vendor/kosif-atlas |
+
+**ما هي:** يقرر إن كانت الجلسة تستحق التوثيق قبل كتابة أي شيء: إشارة عالية (ملف جديد، أربعة ملفات أو أكثر، مقارنة بدائل صريحة، نقاش طويل، أو خطأ شُرح سببه الجذري ولو في ملف واحد) تستحق سجل قرارات وتاريخ جلسة، متوسطة تستحق سطرًا في سجل العمل، ومنخفضة لا شيء. ثم يقيس أبعاد القصد (تعقيد تقني، شك، تفرع قرار) ليفصل ما قاده الإنسان عما ساهم به الوكيل. — Decide whether a session is worth recording before writing anything, then separate what the human drove from what the agent contributed.
+
+**متى:** ما الذي فعله الوكيل فعلًا في هذه الجلسة؟ مراجعة جلسة، إثبات تعاون، سجل قرارات / what did the agent actually contribute, session retrospective
+
+**كيف:** 1) Read the recent commits and diff stat. 2) Grade signal: HIGH if a new file, four or more files changed, alternatives explicitly compared, a long design discussion, or a bug whose root cause was explained (a well-diagnosed one-file fix outranks a ten-file feature with no discussion); MEDIUM for one to three files with no rationale; LOW for planning only or a trivial edit, and then record nothing and say so. 3) Score frames 0 to 1: technical complexity (new module or novel logic vs a typo), uncertainty (rollbacks, doubt, repeated revisions), fork (alternatives compared), plus who proposed each decisive idea. 4) HIGH writes a decision record (the options, the choice, why), a session-history entry and a work-log line; MEDIUM writes the work-log line only. 5) Quote the evidence for each attribution; never claim authorship the transcript does not show. Full original skill(s) with license: vendor/kosif-atlas/skills/163-collab-proof/532-collab-proof.
+
+**المعاملات:** session, git range
+
+**التثبيت:** mkdir -p ~/.claude/skills && cp -r .claude/skills/kosif-superpowers/vendor/kosif-atlas/skills/163-collab-proof/532-collab-proof ~/.claude/skills/collab-proof
+
+**الوسوم:** session retrospective · decision log · AI collaboration · worklog · سجل القرارات · مراجعة الجلسة
+
+#### 1. الاستقبال (A25)
+
+- الهدف القابل للقياس: سؤال بإجابة مقترحة ← هدف مقترح بعتبة رقمية يُعرض للتعديل
+- الأفق الزمني: افتراض مكتوب ← 90 يومًا
+- الموارد والميزانية: افتراض مكتوب ← شخص واحد بلا صرف
+- لا تُفترض أبدًا: مادة الإنتاج نفسها، والإذن بخطوة مدفوعة أو منشورة أو لا رجعة فيها، والهوية والحقوق.
+
+#### 2. الجاهزية والشارة (A28)
+
+- لا متطلبات مسجلة؛ افحص المسار والأداة بـ `hub.py doctor` قبل الشارة.
+- الوضع 1: شارة «هنا الآن» بعد الفحص، لا 📄 الكتالوج تلقائيًا · الوضع 2: `كتالوج: 📄 · هنا: غير مفحوص` · الوضع 3: بلا شارة ولا معرّف.
+
+#### 3. موضعها في الخطة (A26)
+
+- عقدة منمّطة: المدخل `brief` ← المخرج `plan`، والمنفّذ `method:AMIND-62` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
+- لا أداة مسجلة تخدم عائلتها: التنفيذ بالمكتبات أو بأداة من مجموعة أخرى.
+- مراحل النوع: الهدف بمؤشره ← ثلاثة خيارات مختلفة ← تقييم وحساسية ← تشريح مسبق ← بوابات مكتوبة ← خطوة أولى قابلة للتراجع.
+- إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
+
+#### 4. بوابة التحقق (A27)
+
+- إلزامي: لكل هدف مؤشر وعتبة وتاريخ ← جدول المؤشرات
+- إلزامي: ثلاثة خيارات مختلفة المنهج مع توصية ← جدول المقارنة
+- جودة: تشريح مسبق بأهم أسباب الفشل والوقاية ← think.py plan
+- جودة: بوابات go/pivot/kill مكتوبة قبل النتائج ← think.py gate
+- إلزامي: خطوة أولى صغيرة قابلة للتراجع هذا الأسبوع ← مراجعة
+- أمر الحكم في الوضع 1: `think.py qa plan --answers qa.json` (PASS / FAIL / INCOMPLETE).
+
+#### 5. التعافي (A29)
+
+- `missing_dependency` (اعتمادية مفقودة، ميزانية 2): سمِّ الاعتمادية بالضبط (حزمة، برنامج، خط، نموذج) ← ثبّت محليًا في بيئة العمل إن كان مجانيًا ومسموحًا (pip --user أو venv أو npm محلي) · البديل: مسار المكتبة القياسية أو أداة أخرى من نفس المجموعة · تصعيد: تثبيت نظامي أو مدفوع أو يحتاج مفتاحًا: توقف واسأل
+- `quality_below_threshold` (جودة دون العتبة، ميزانية 3): أي معيار فشل وبكم (المقيس مقابل العتبة) ← عالج السبب الأكبر وحده ثم أعد القياس · البديل: المنهج البديل المكتوب للمرحلة في الخطة · تصعيد: معيار إلزامي لا يتحقق بعد البديل: توقف وأبلغ بالأرقام
+
+#### 6. الأدلة
+
+- `https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/163-collab-proof/532-collab-proof`
+
+#### 7. قدرات قريبة في العائلة
+
+- `AMIND-60` استقبال الملاحظات الخارجية: تحقق من كل ادعاء ثم صنّفه وامنع تكراره وأغلق الحلقة / External feedback intake: verify each claim, tier it, prevent, cover, close (documented)
+- `AMIND-61` مدقق الانحراف للقراءة فقط: مقارنة العمل بملفات الحقيقة وإشارات الزمن وسلم تصعيد / Read-only drift audit against truth files, with time signals and an escalation ladder (documented)
+- `AMIND-63` فهم مؤكد لا شرح فقط: مداخل حسب نية المستخدم واختبارات سيناريو تكشف سوء الفهم / Verified comprehension: intent-scented entry points and scenario probes (documented)
+- `AMIND-64` حلقة التعلم من رفض طلبات الدمج: الخطأ الذي يتكرر مرتين يصبح أداة دائمة / Learning loop from rejected agent PRs: a mistake that happens twice becomes an artefact (documented)
+
+### `AMIND-63` — فهم مؤكد لا شرح فقط: مداخل حسب نية المستخدم واختبارات سيناريو تكشف سوء الفهم / Verified comprehension: intent-scented entry points and scenario probes
+
+| الحقل | القيمة |
+|---|---|
+| العائلة | `atlas-mind` ([فصل العائلة](../../../.claude/skills/kosif-superpowers/references/powers/atlas-mind.md)) |
+| المجموعة | التفكير والتخطيط والاستراتيجية (`thinking`) |
+| نوع المخرج (A25، A27) | خطة واستراتيجية وقرار (`plan`) |
+| الحالة في الكتالوج | 📄 `documented`: منهج موصوف يحتاج بناءً أو ربطًا قبل التشغيل |
+| سقف التحقق قبل العمل (A27) | V1 حتى تُبنى وتُشغَّل؛ لا تقدَّم جاهزة أبدًا |
+| نطاق الدليل | `url` |
+| الرخصة | card in our own words; the original skill folders are copied verbatim with their MIT license and SOURCE.md under vendor/kosif-atlas |
+
+**ما هي:** حين يريد المستخدم أن يفهم فعلًا شيئًا أمامه (شيفرة، مستند، نتيجة كتبها الوكيل): يعرض حتى ثلاثة مداخل حسب ما سيفهمه أو يقرره (التوجّه، المبرر، الأثر، الموافقة، النقل)، ثم يسأل أسئلة سيناريو ملموسة فيها مسار صحيح وجزئي وخاطئ بعواقب حقيقية، ويصحح الجزء الخاطئ فقط مستشهدًا بمواضع محددة في المادة. — Builds verified understanding of an artefact through intent-based entry points and scenario probes, correcting only what the material settles.
+
+**متى:** 'اشرح لي هذا الكود فعلًا'، قبل الموافقة على تغيير كبير كتبه الوكيل، تسليم معرفة لزميل / the user wants to truly understand code or a result before approving it
+
+**كيف:** 1) Activate only when the user asks to understand something already in context and quotable; not for unrelated questions or trivial results. 2) Offer up to three entry labels phrased as what the user will understand or decide (orientation, rationale, impact, approval, transfer); a list of concerns the user already named becomes the order directly. 3) Before each probe show the relevant excerpt and a concrete scenario ('a request arrives with an empty cart: what happens?'). 4) For classification probes show recognisable correct, partial and misconception paths with their domain consequences; for open probes invite the user's own reasoning; always allow a free answer. 5) Correct only the part the material settles, keep what the answer got right, and cite exact locations. 6) Advance when the answer shows understanding; stop when the user can explain the target in their own words or declines. Full original skill(s) with license: vendor/kosif-atlas/skills/1996-katalepsis/7164-grasp.
+
+**المعاملات:** artefact
+
+**التثبيت:** mkdir -p ~/.claude/skills && cp -r .claude/skills/kosif-superpowers/vendor/kosif-atlas/skills/1996-katalepsis/7164-grasp ~/.claude/skills/grasp
+
+**الوسوم:** understanding · teaching · code comprehension · review · approval · فهم الشيفرة · تعليم
+
+#### 1. الاستقبال (A25)
+
+- الهدف القابل للقياس: سؤال بإجابة مقترحة ← هدف مقترح بعتبة رقمية يُعرض للتعديل
+- الأفق الزمني: افتراض مكتوب ← 90 يومًا
+- الموارد والميزانية: افتراض مكتوب ← شخص واحد بلا صرف
+- لا تُفترض أبدًا: مادة الإنتاج نفسها، والإذن بخطوة مدفوعة أو منشورة أو لا رجعة فيها، والهوية والحقوق.
+
+#### 2. الجاهزية والشارة (A28)
+
+- لا متطلبات مسجلة؛ افحص المسار والأداة بـ `hub.py doctor` قبل الشارة.
+- الوضع 1: شارة «هنا الآن» بعد الفحص، لا 📄 الكتالوج تلقائيًا · الوضع 2: `كتالوج: 📄 · هنا: غير مفحوص` · الوضع 3: بلا شارة ولا معرّف.
+
+#### 3. موضعها في الخطة (A26)
+
+- عقدة منمّطة: المدخل `brief` ← المخرج `plan`، والمنفّذ `method:AMIND-63` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
+- لا أداة مسجلة تخدم عائلتها: التنفيذ بالمكتبات أو بأداة من مجموعة أخرى.
+- مراحل النوع: الهدف بمؤشره ← ثلاثة خيارات مختلفة ← تقييم وحساسية ← تشريح مسبق ← بوابات مكتوبة ← خطوة أولى قابلة للتراجع.
+- إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
+
+#### 4. بوابة التحقق (A27)
+
+- إلزامي: لكل هدف مؤشر وعتبة وتاريخ ← جدول المؤشرات
+- إلزامي: ثلاثة خيارات مختلفة المنهج مع توصية ← جدول المقارنة
+- جودة: تشريح مسبق بأهم أسباب الفشل والوقاية ← think.py plan
+- جودة: بوابات go/pivot/kill مكتوبة قبل النتائج ← think.py gate
+- إلزامي: خطوة أولى صغيرة قابلة للتراجع هذا الأسبوع ← مراجعة
+- أمر الحكم في الوضع 1: `think.py qa plan --answers qa.json` (PASS / FAIL / INCOMPLETE).
+
+#### 5. التعافي (A29)
+
+- `missing_dependency` (اعتمادية مفقودة، ميزانية 2): سمِّ الاعتمادية بالضبط (حزمة، برنامج، خط، نموذج) ← ثبّت محليًا في بيئة العمل إن كان مجانيًا ومسموحًا (pip --user أو venv أو npm محلي) · البديل: مسار المكتبة القياسية أو أداة أخرى من نفس المجموعة · تصعيد: تثبيت نظامي أو مدفوع أو يحتاج مفتاحًا: توقف واسأل
+- `quality_below_threshold` (جودة دون العتبة، ميزانية 3): أي معيار فشل وبكم (المقيس مقابل العتبة) ← عالج السبب الأكبر وحده ثم أعد القياس · البديل: المنهج البديل المكتوب للمرحلة في الخطة · تصعيد: معيار إلزامي لا يتحقق بعد البديل: توقف وأبلغ بالأرقام
+
+#### 6. الأدلة
+
+- `https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/1996-katalepsis/7164-grasp`
+
+#### 7. قدرات قريبة في العائلة
+
+- `AMIND-61` مدقق الانحراف للقراءة فقط: مقارنة العمل بملفات الحقيقة وإشارات الزمن وسلم تصعيد / Read-only drift audit against truth files, with time signals and an escalation ladder (documented)
+- `AMIND-62` تقرير ما ساهم به الوكيل في الجلسة: مستوى الإشارة أولًا ثم ما يستحق التسجيل / Session contribution evidence: grade the signal first, record only what earns it (documented)
+- `AMIND-64` حلقة التعلم من رفض طلبات الدمج: الخطأ الذي يتكرر مرتين يصبح أداة دائمة / Learning loop from rejected agent PRs: a mistake that happens twice becomes an artefact (documented)
+- `AMIND-65` مطابقة ذاكرة الوكيل مع وثائق المشروع في الاتجاهين: خمسة أنواع انحراف / Reconcile agent memory with project docs in both directions: five kinds of drift (documented)
+
+### `AMIND-64` — حلقة التعلم من رفض طلبات الدمج: الخطأ الذي يتكرر مرتين يصبح أداة دائمة / Learning loop from rejected agent PRs: a mistake that happens twice becomes an artefact
+
+| الحقل | القيمة |
+|---|---|
+| العائلة | `atlas-mind` ([فصل العائلة](../../../.claude/skills/kosif-superpowers/references/powers/atlas-mind.md)) |
+| المجموعة | التفكير والتخطيط والاستراتيجية (`thinking`) |
+| نوع المخرج (A25، A27) | خطة واستراتيجية وقرار (`plan`) |
+| الحالة في الكتالوج | 📄 `documented`: منهج موصوف يحتاج بناءً أو ربطًا قبل التشغيل |
+| سقف التحقق قبل العمل (A27) | V1 حتى تُبنى وتُشغَّل؛ لا تقدَّم جاهزة أبدًا |
+| نطاق الدليل | `url` |
+| الرخصة | card in our own words; the original skill folders are copied verbatim with their MIT license and SOURCE.md under vendor/kosif-atlas |
+
+**ما هي:** يجمع إشارات شهر (طلبات دمج مرفوضة أو متروكة، تعليقات مراجعة متكررة، تراجعات خلال أسبوعين، تعديلات بشرية على فروع الوكيل، أفعال محجوبة، حوادث)، يجمعها حسب السبب الجذري، ويحول كل عنقود إلى أرخص إصلاح دائم: سطر سياق، مهارة أو قاعدة lint، خطاف أو صلاحية، اختبار، حالة تقييم، أو تعديل قالب المواصفة؛ ثم يتحقق ويقلّم. — Mines rejections and repeated review comments and converts each recurring cause into the cheapest durable fix.
+
+**متى:** الوكيل يكرر نفس الأخطاء، المراجعون يكتبون نفس التعليق، كثير من طلبات الوكيل لا تُقبل / an agent keeps repeating mistakes across PRs
+
+**كيف:** 1) Collect a month of signals, starting with rejected agent PRs and review comments on agent PRs; add early reverts, human edits before merge, blocked actions and incidents. 2) Cluster by root cause: missing context, unclear spec, unwritten convention, verification gap, permission boundary, model limitation. 3) Convert each recurring cluster to the cheapest durable artefact: missing context → a context-file line or linked doc; convention → a skill or linter rule; must-never-happen → a hook or permission rule; broken behaviour → a test; quality regression → an eval case; unclear spec → a spec-template change. 4) Verify by re-running a representative past task or eval and confirming the mistake no longer occurs. 5) Prune quarterly; context bloat is also a failure, so not everything goes into the instruction file. 6) Report the top causes, artefacts shipped with links and the trend in rejection or rework rate; anything that reached production gets a full incident review. Full original skill(s) with license: vendor/kosif-atlas/skills/3051-adlc-operate/13144-learning-loop, vendor/kosif-atlas/skills/3051-adlc-operate/13147-mine-rejections.
+
+**المعاملات:** repository, period
+
+**التثبيت:** mkdir -p ~/.claude/skills && cp -r .claude/skills/kosif-superpowers/vendor/kosif-atlas/skills/3051-adlc-operate/13144-learning-loop ~/.claude/skills/learning-loop ; mkdir -p ~/.claude/skills && cp -r .claude/skills/kosif-superpowers/vendor/kosif-atlas/skills/3051-adlc-operate/13147-mine-rejections ~/.claude/skills/mine-rejections
+
+**الوسوم:** learning loop · code review · agent quality · postmortem · continuous improvement · التعلم من الأخطاء
+
+#### 1. الاستقبال (A25)
+
+- الهدف القابل للقياس: سؤال بإجابة مقترحة ← هدف مقترح بعتبة رقمية يُعرض للتعديل
+- الأفق الزمني: افتراض مكتوب ← 90 يومًا
+- الموارد والميزانية: افتراض مكتوب ← شخص واحد بلا صرف
+- لا تُفترض أبدًا: مادة الإنتاج نفسها، والإذن بخطوة مدفوعة أو منشورة أو لا رجعة فيها، والهوية والحقوق.
+
+#### 2. الجاهزية والشارة (A28)
+
+- لا متطلبات مسجلة؛ افحص المسار والأداة بـ `hub.py doctor` قبل الشارة.
+- الوضع 1: شارة «هنا الآن» بعد الفحص، لا 📄 الكتالوج تلقائيًا · الوضع 2: `كتالوج: 📄 · هنا: غير مفحوص` · الوضع 3: بلا شارة ولا معرّف.
+
+#### 3. موضعها في الخطة (A26)
+
+- عقدة منمّطة: المدخل `brief` ← المخرج `plan`، والمنفّذ `method:AMIND-64` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
+- لا أداة مسجلة تخدم عائلتها: التنفيذ بالمكتبات أو بأداة من مجموعة أخرى.
+- مراحل النوع: الهدف بمؤشره ← ثلاثة خيارات مختلفة ← تقييم وحساسية ← تشريح مسبق ← بوابات مكتوبة ← خطوة أولى قابلة للتراجع.
+- إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
+
+#### 4. بوابة التحقق (A27)
+
+- إلزامي: لكل هدف مؤشر وعتبة وتاريخ ← جدول المؤشرات
+- إلزامي: ثلاثة خيارات مختلفة المنهج مع توصية ← جدول المقارنة
+- جودة: تشريح مسبق بأهم أسباب الفشل والوقاية ← think.py plan
+- جودة: بوابات go/pivot/kill مكتوبة قبل النتائج ← think.py gate
+- إلزامي: خطوة أولى صغيرة قابلة للتراجع هذا الأسبوع ← مراجعة
+- أمر الحكم في الوضع 1: `think.py qa plan --answers qa.json` (PASS / FAIL / INCOMPLETE).
+
+#### 5. التعافي (A29)
+
+- `missing_dependency` (اعتمادية مفقودة، ميزانية 2): سمِّ الاعتمادية بالضبط (حزمة، برنامج، خط، نموذج) ← ثبّت محليًا في بيئة العمل إن كان مجانيًا ومسموحًا (pip --user أو venv أو npm محلي) · البديل: مسار المكتبة القياسية أو أداة أخرى من نفس المجموعة · تصعيد: تثبيت نظامي أو مدفوع أو يحتاج مفتاحًا: توقف واسأل
+- `quality_below_threshold` (جودة دون العتبة، ميزانية 3): أي معيار فشل وبكم (المقيس مقابل العتبة) ← عالج السبب الأكبر وحده ثم أعد القياس · البديل: المنهج البديل المكتوب للمرحلة في الخطة · تصعيد: معيار إلزامي لا يتحقق بعد البديل: توقف وأبلغ بالأرقام
+
+#### 6. الأدلة
+
+- `https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/3051-adlc-operate/13144-learning-loop`
+- `https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/3051-adlc-operate/13147-mine-rejections`
+
+#### 7. قدرات قريبة في العائلة
+
+- `AMIND-62` تقرير ما ساهم به الوكيل في الجلسة: مستوى الإشارة أولًا ثم ما يستحق التسجيل / Session contribution evidence: grade the signal first, record only what earns it (documented)
+- `AMIND-63` فهم مؤكد لا شرح فقط: مداخل حسب نية المستخدم واختبارات سيناريو تكشف سوء الفهم / Verified comprehension: intent-scented entry points and scenario probes (documented)
+- `AMIND-65` مطابقة ذاكرة الوكيل مع وثائق المشروع في الاتجاهين: خمسة أنواع انحراف / Reconcile agent memory with project docs in both directions: five kinds of drift (documented)
+- `AMIND-66` تنقيب سجلات الجلسات دوريًا: تكثيف قبل القراءة، نافذة غير محصودة، ومقارنة مع الكتالوج / Periodic session-transcript mining: condense first, unharvested window, dedupe against catalogues (documented)
+
+### `AMIND-65` — مطابقة ذاكرة الوكيل مع وثائق المشروع في الاتجاهين: خمسة أنواع انحراف / Reconcile agent memory with project docs in both directions: five kinds of drift
+
+| الحقل | القيمة |
+|---|---|
+| العائلة | `atlas-mind` ([فصل العائلة](../../../.claude/skills/kosif-superpowers/references/powers/atlas-mind.md)) |
+| المجموعة | التفكير والتخطيط والاستراتيجية (`thinking`) |
+| نوع المخرج (A25، A27) | خطة واستراتيجية وقرار (`plan`) |
+| الحالة في الكتالوج | 📄 `documented`: منهج موصوف يحتاج بناءً أو ربطًا قبل التشغيل |
+| سقف التحقق قبل العمل (A27) | V1 حتى تُبنى وتُشغَّل؛ لا تقدَّم جاهزة أبدًا |
+| نطاق الدليل | `url` |
+| الرخصة | card in our own words; the original skill folders are copied verbatim with their Apache-2.0 license and SOURCE.md under vendor/kosif-atlas |
+
+**ما هي:** ذاكرة الوكيل ووثائق الحوكمة (AGENTS.md وCLAUDE.md وملفات القواعد) تنحرف في الاتجاهين: الذاكرة تستوعب التصحيحات أسرع فتبقى الوثيقة على سياسة قديمة، والوثائق تتقدم فتبقى الذاكرة على حالة قديمة. يقرأ الطرفين كاملين ثم يبحث عن خمسة أنواع انحراف ويقترح لكل واحد تصحيحًا في الجهة الصحيحة. — Full read of both corpora, five drift kinds, and a fix on the side that should win.
+
+**متى:** ذاكرة الوكيل تناقض ملف التعليمات، مراجعة دورية لملفات الحوكمة، قبل ترقية قاعدة من الذاكرة إلى الوثائق / periodic true-up of memory and instruction files
+
+**كيف:** 1) Locate both corpora: the project's memory store with its index, and the governance docs; with no memory store, say so and stop. 2) Read both fully before judging; partial reads give false confidence. 3) Sweep for: (a) memory supersedes doc (a dated memory revised a policy the doc still states, often while citing that memory by name); (b) dangling references (a cited file, folder or link that does not exist); (c) durable policy that lives only in memory (promotion candidates); (d) the same fact in both places with different values, including index summaries of an older revision; (e) outdated identifiers (versions, dates, paths, counts) and contradictions inside one doc. 4) For each finding say which side is authoritative and why, with dates. 5) Propose exact edits; promote memory-only rules to docs only with the owner's approval; never delete a memory the user wrote without asking. 6) Report counts per kind and what was left unresolved. Full original skill(s) with license: vendor/kosif-atlas/skills/3113-estregenesis/13321-eg-memsync.
+
+**المعاملات:** memory store, docs
+
+**التثبيت:** mkdir -p ~/.claude/skills && cp -r .claude/skills/kosif-superpowers/vendor/kosif-atlas/skills/3113-estregenesis/13321-eg-memsync ~/.claude/skills/eg-memsync
+
+**الوسوم:** agent memory · AGENTS.md · CLAUDE.md · documentation drift · governance · ذاكرة الوكيل
+
+#### 1. الاستقبال (A25)
+
+- الهدف القابل للقياس: سؤال بإجابة مقترحة ← هدف مقترح بعتبة رقمية يُعرض للتعديل
+- الأفق الزمني: افتراض مكتوب ← 90 يومًا
+- الموارد والميزانية: افتراض مكتوب ← شخص واحد بلا صرف
+- لا تُفترض أبدًا: مادة الإنتاج نفسها، والإذن بخطوة مدفوعة أو منشورة أو لا رجعة فيها، والهوية والحقوق.
+
+#### 2. الجاهزية والشارة (A28)
+
+- لا متطلبات مسجلة؛ افحص المسار والأداة بـ `hub.py doctor` قبل الشارة.
+- الوضع 1: شارة «هنا الآن» بعد الفحص، لا 📄 الكتالوج تلقائيًا · الوضع 2: `كتالوج: 📄 · هنا: غير مفحوص` · الوضع 3: بلا شارة ولا معرّف.
+
+#### 3. موضعها في الخطة (A26)
+
+- عقدة منمّطة: المدخل `brief` ← المخرج `plan`، والمنفّذ `method:AMIND-65` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
+- لا أداة مسجلة تخدم عائلتها: التنفيذ بالمكتبات أو بأداة من مجموعة أخرى.
+- مراحل النوع: الهدف بمؤشره ← ثلاثة خيارات مختلفة ← تقييم وحساسية ← تشريح مسبق ← بوابات مكتوبة ← خطوة أولى قابلة للتراجع.
+- إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
+
+#### 4. بوابة التحقق (A27)
+
+- إلزامي: لكل هدف مؤشر وعتبة وتاريخ ← جدول المؤشرات
+- إلزامي: ثلاثة خيارات مختلفة المنهج مع توصية ← جدول المقارنة
+- جودة: تشريح مسبق بأهم أسباب الفشل والوقاية ← think.py plan
+- جودة: بوابات go/pivot/kill مكتوبة قبل النتائج ← think.py gate
+- إلزامي: خطوة أولى صغيرة قابلة للتراجع هذا الأسبوع ← مراجعة
+- أمر الحكم في الوضع 1: `think.py qa plan --answers qa.json` (PASS / FAIL / INCOMPLETE).
+
+#### 5. التعافي (A29)
+
+- `missing_dependency` (اعتمادية مفقودة، ميزانية 2): سمِّ الاعتمادية بالضبط (حزمة، برنامج، خط، نموذج) ← ثبّت محليًا في بيئة العمل إن كان مجانيًا ومسموحًا (pip --user أو venv أو npm محلي) · البديل: مسار المكتبة القياسية أو أداة أخرى من نفس المجموعة · تصعيد: تثبيت نظامي أو مدفوع أو يحتاج مفتاحًا: توقف واسأل
+- `quality_below_threshold` (جودة دون العتبة، ميزانية 3): أي معيار فشل وبكم (المقيس مقابل العتبة) ← عالج السبب الأكبر وحده ثم أعد القياس · البديل: المنهج البديل المكتوب للمرحلة في الخطة · تصعيد: معيار إلزامي لا يتحقق بعد البديل: توقف وأبلغ بالأرقام
+
+#### 6. الأدلة
+
+- `https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/3113-estregenesis/13321-eg-memsync`
+
+#### 7. قدرات قريبة في العائلة
+
+- `AMIND-63` فهم مؤكد لا شرح فقط: مداخل حسب نية المستخدم واختبارات سيناريو تكشف سوء الفهم / Verified comprehension: intent-scented entry points and scenario probes (documented)
+- `AMIND-64` حلقة التعلم من رفض طلبات الدمج: الخطأ الذي يتكرر مرتين يصبح أداة دائمة / Learning loop from rejected agent PRs: a mistake that happens twice becomes an artefact (documented)
+- `AMIND-66` تنقيب سجلات الجلسات دوريًا: تكثيف قبل القراءة، نافذة غير محصودة، ومقارنة مع الكتالوج / Periodic session-transcript mining: condense first, unharvested window, dedupe against catalogues (documented)
+- `AMIND-67` مالك واحد لكل نوع حقيقة: التصميم، حالة العمل، خطة التنفيذ، ودليل التسليم / One owner per kind of truth: design, work state, execution plan, delivery evidence (documented)
+
+### `AMIND-66` — تنقيب سجلات الجلسات دوريًا: تكثيف قبل القراءة، نافذة غير محصودة، ومقارنة مع الكتالوج / Periodic session-transcript mining: condense first, unharvested window, dedupe against catalogues
+
+| الحقل | القيمة |
+|---|---|
+| العائلة | `atlas-mind` ([فصل العائلة](../../../.claude/skills/kosif-superpowers/references/powers/atlas-mind.md)) |
+| المجموعة | التفكير والتخطيط والاستراتيجية (`thinking`) |
+| نوع المخرج (A25، A27) | خطة واستراتيجية وقرار (`plan`) |
+| الحالة في الكتالوج | 📄 `documented`: منهج موصوف يحتاج بناءً أو ربطًا قبل التشغيل |
+| سقف التحقق قبل العمل (A27) | V1 حتى تُبنى وتُشغَّل؛ لا تقدَّم جاهزة أبدًا |
+| نطاق الدليل | `url` |
+| الرخصة | card in our own words; the original skill folders are copied verbatim with their MIT license and SOURCE.md under vendor/kosif-atlas |
+
+**ما هي:** سجلات جلسات الوكيل تحوي معرفة تضيع بانتهاء الجلسة. مسح دوري: يحدد النافذة التي لم تُحصد بعد، يكثف كل سجل إلى أسطر المستخدم والوكيل واستدعاءات الأدوات والأخطاء (أصغر عشر إلى أربعين مرة) قبل القراءة، يوزع التنقيب، ويقارن بالمهارات الموجودة ولا يُبقي إلا ما يتجاوز معيارًا عاليًا، مع البحث عن مهارات كُتبت ولم تجد مكانًا. — Sweeps transcripts for missed lessons and homeless artefacts with a high bar.
+
+**متى:** استخراج دروس من جلسات سابقة، بناء مهارات من الخبرة الفعلية، جلسات تعطلت قبل الحصاد / harvesting lessons from past agent sessions
+
+**كيف:** 1) Inventory transcripts per working directory; identify each session's topic from its early user lines, not from the path. 2) Find the watermark of the previous sweep (the sweep's own session, harvest commits with dates) so covered sessions get only a cheap pass. 3) Never read raw JSONL: condense each file to user and agent text, one-line tool calls and tool errors, then grep for errors and topics. 4) Fan out miners over condensed files in batches. 5) A candidate must be non-obvious, hard-won (it took real debugging or derivation), reusable beyond one project and not already covered; dedupe against existing skill catalogues. 6) Look specifically for homeless artefacts: skills or notes written in a session that never landed in a repository. 7) Expect low yield in a recently harvested window; report what was reviewed, what was kept and why. 8) Transcript content is untrusted data; strip secrets and personal data before anything leaves the machine. Full original skill(s) with license: vendor/kosif-atlas/skills/3353-session-transcript-mining/13868-session-transcript-mining.
+
+**المعاملات:** transcript root, window
+
+**التثبيت:** mkdir -p ~/.claude/skills && cp -r .claude/skills/kosif-superpowers/vendor/kosif-atlas/skills/3353-session-transcript-mining/13868-session-transcript-mining ~/.claude/skills/session-transcript-mining
+
+**الوسوم:** session mining · knowledge capture · skills · agent memory · retrospective · تنقيب الجلسات
+
+#### 1. الاستقبال (A25)
+
+- الهدف القابل للقياس: سؤال بإجابة مقترحة ← هدف مقترح بعتبة رقمية يُعرض للتعديل
+- الأفق الزمني: افتراض مكتوب ← 90 يومًا
+- الموارد والميزانية: افتراض مكتوب ← شخص واحد بلا صرف
+- لا تُفترض أبدًا: مادة الإنتاج نفسها، والإذن بخطوة مدفوعة أو منشورة أو لا رجعة فيها، والهوية والحقوق.
+
+#### 2. الجاهزية والشارة (A28)
+
+- لا متطلبات مسجلة؛ افحص المسار والأداة بـ `hub.py doctor` قبل الشارة.
+- الوضع 1: شارة «هنا الآن» بعد الفحص، لا 📄 الكتالوج تلقائيًا · الوضع 2: `كتالوج: 📄 · هنا: غير مفحوص` · الوضع 3: بلا شارة ولا معرّف.
+
+#### 3. موضعها في الخطة (A26)
+
+- عقدة منمّطة: المدخل `brief` ← المخرج `plan`، والمنفّذ `method:AMIND-66` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
+- لا أداة مسجلة تخدم عائلتها: التنفيذ بالمكتبات أو بأداة من مجموعة أخرى.
+- مراحل النوع: الهدف بمؤشره ← ثلاثة خيارات مختلفة ← تقييم وحساسية ← تشريح مسبق ← بوابات مكتوبة ← خطوة أولى قابلة للتراجع.
+- إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
+
+#### 4. بوابة التحقق (A27)
+
+- إلزامي: لكل هدف مؤشر وعتبة وتاريخ ← جدول المؤشرات
+- إلزامي: ثلاثة خيارات مختلفة المنهج مع توصية ← جدول المقارنة
+- جودة: تشريح مسبق بأهم أسباب الفشل والوقاية ← think.py plan
+- جودة: بوابات go/pivot/kill مكتوبة قبل النتائج ← think.py gate
+- إلزامي: خطوة أولى صغيرة قابلة للتراجع هذا الأسبوع ← مراجعة
+- أمر الحكم في الوضع 1: `think.py qa plan --answers qa.json` (PASS / FAIL / INCOMPLETE).
+
+#### 5. التعافي (A29)
+
+- `missing_dependency` (اعتمادية مفقودة، ميزانية 2): سمِّ الاعتمادية بالضبط (حزمة، برنامج، خط، نموذج) ← ثبّت محليًا في بيئة العمل إن كان مجانيًا ومسموحًا (pip --user أو venv أو npm محلي) · البديل: مسار المكتبة القياسية أو أداة أخرى من نفس المجموعة · تصعيد: تثبيت نظامي أو مدفوع أو يحتاج مفتاحًا: توقف واسأل
+- `quality_below_threshold` (جودة دون العتبة، ميزانية 3): أي معيار فشل وبكم (المقيس مقابل العتبة) ← عالج السبب الأكبر وحده ثم أعد القياس · البديل: المنهج البديل المكتوب للمرحلة في الخطة · تصعيد: معيار إلزامي لا يتحقق بعد البديل: توقف وأبلغ بالأرقام
+
+#### 6. الأدلة
+
+- `https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/3353-session-transcript-mining/13868-session-transcript-mining`
+
+#### 7. قدرات قريبة في العائلة
+
+- `AMIND-64` حلقة التعلم من رفض طلبات الدمج: الخطأ الذي يتكرر مرتين يصبح أداة دائمة / Learning loop from rejected agent PRs: a mistake that happens twice becomes an artefact (documented)
+- `AMIND-65` مطابقة ذاكرة الوكيل مع وثائق المشروع في الاتجاهين: خمسة أنواع انحراف / Reconcile agent memory with project docs in both directions: five kinds of drift (documented)
+- `AMIND-67` مالك واحد لكل نوع حقيقة: التصميم، حالة العمل، خطة التنفيذ، ودليل التسليم / One owner per kind of truth: design, work state, execution plan, delivery evidence (documented)
+- `AMIND-68` اختر الأداة للمشكلة لا بالعادة: أربع خطايا اختيار، وسلم أصلي ثم رسمي ثم طرف ثالث موثوق / Pick for the problem, not the reflex: four selection sins and a native, official, vetted ladder (documented)
+
+### `AMIND-67` — مالك واحد لكل نوع حقيقة: التصميم، حالة العمل، خطة التنفيذ، ودليل التسليم / One owner per kind of truth: design, work state, execution plan, delivery evidence
+
+| الحقل | القيمة |
+|---|---|
+| العائلة | `atlas-mind` ([فصل العائلة](../../../.claude/skills/kosif-superpowers/references/powers/atlas-mind.md)) |
+| المجموعة | التفكير والتخطيط والاستراتيجية (`thinking`) |
+| نوع المخرج (A25، A27) | خطة واستراتيجية وقرار (`plan`) |
+| الحالة في الكتالوج | 📄 `documented`: منهج موصوف يحتاج بناءً أو ربطًا قبل التشغيل |
+| سقف التحقق قبل العمل (A27) | V1 حتى تُبنى وتُشغَّل؛ لا تقدَّم جاهزة أبدًا |
+| نطاق الدليل | `url` |
+| الرخصة | card in our own words; the original skill folders are copied verbatim with their MIT license and SOURCE.md under vendor/kosif-atlas |
+
+**ما هي:** يربط النية وحالة العمل ومعايير القبول ودليل التسليم دون مصادر حقيقة مكررة: يرسم كل سطح قائم حسب مسؤوليته لا اسم ملفه (التصميم يشرح لماذا وكيف، حالة العمل تملك الوضع والقبول، خطة التنفيذ تنسق العمل المعقد، دليل التسليم يسجل ما تغير وما أُثبت)، ويضيف الحد الأدنى فقط لما ينقص، ويحدد ترتيب التحديث وربط الالتزامات. — Assigns one owner per kind of truth and the update order, adding only missing surfaces.
+
+**متى:** وثائق التصميم ولوحة المهام وسجل التسليم تتناقض، أين نكتب المتطلبات والقرارات؟ سياسة ربط الالتزامات بالمهام / design docs, task boards and ledgers contradict each other
+
+**كيف:** 1) Search for design docs, task files, tracker references, execution plans, review templates, ledgers, release notes and commit guidance. 2) Map each by responsibility: design (why and how), work state (current status and acceptance), execution plan (coordination of complex work), delivery evidence (what changed and what was proved). 3) Where a role is missing, add the minimum surface; do not add a local task file when an external tracker already fills the role. 4) Define the update order: design decision first, then work state and acceptance, then implementation, then delivery evidence. 5) Define coupling: commits reference task ids, staging by exact path, and when an artefact may be skipped and why. 6) Redact secrets and personal data from evidence. 7) Do not invoke this for an ordinary commit in a repo whose rules are already clear. Full original skill(s) with license: vendor/kosif-atlas/skills/3604-agent-harness-skills/14472-work-state-and-delivery.
+
+**المعاملات:** repository surfaces
+
+**التثبيت:** mkdir -p ~/.claude/skills && cp -r .claude/skills/kosif-superpowers/vendor/kosif-atlas/skills/3604-agent-harness-skills/14472-work-state-and-delivery ~/.claude/skills/work-state-and-delivery
+
+**الوسوم:** project governance · task tracking · traceability · documentation · delivery · مصدر الحقيقة
+
+#### 1. الاستقبال (A25)
+
+- الهدف القابل للقياس: سؤال بإجابة مقترحة ← هدف مقترح بعتبة رقمية يُعرض للتعديل
+- الأفق الزمني: افتراض مكتوب ← 90 يومًا
+- الموارد والميزانية: افتراض مكتوب ← شخص واحد بلا صرف
+- لا تُفترض أبدًا: مادة الإنتاج نفسها، والإذن بخطوة مدفوعة أو منشورة أو لا رجعة فيها، والهوية والحقوق.
+
+#### 2. الجاهزية والشارة (A28)
+
+- لا متطلبات مسجلة؛ افحص المسار والأداة بـ `hub.py doctor` قبل الشارة.
+- الوضع 1: شارة «هنا الآن» بعد الفحص، لا 📄 الكتالوج تلقائيًا · الوضع 2: `كتالوج: 📄 · هنا: غير مفحوص` · الوضع 3: بلا شارة ولا معرّف.
+
+#### 3. موضعها في الخطة (A26)
+
+- عقدة منمّطة: المدخل `brief` ← المخرج `plan`، والمنفّذ `method:AMIND-67` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
+- لا أداة مسجلة تخدم عائلتها: التنفيذ بالمكتبات أو بأداة من مجموعة أخرى.
+- مراحل النوع: الهدف بمؤشره ← ثلاثة خيارات مختلفة ← تقييم وحساسية ← تشريح مسبق ← بوابات مكتوبة ← خطوة أولى قابلة للتراجع.
+- إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
+
+#### 4. بوابة التحقق (A27)
+
+- إلزامي: لكل هدف مؤشر وعتبة وتاريخ ← جدول المؤشرات
+- إلزامي: ثلاثة خيارات مختلفة المنهج مع توصية ← جدول المقارنة
+- جودة: تشريح مسبق بأهم أسباب الفشل والوقاية ← think.py plan
+- جودة: بوابات go/pivot/kill مكتوبة قبل النتائج ← think.py gate
+- إلزامي: خطوة أولى صغيرة قابلة للتراجع هذا الأسبوع ← مراجعة
+- أمر الحكم في الوضع 1: `think.py qa plan --answers qa.json` (PASS / FAIL / INCOMPLETE).
+
+#### 5. التعافي (A29)
+
+- `missing_dependency` (اعتمادية مفقودة، ميزانية 2): سمِّ الاعتمادية بالضبط (حزمة، برنامج، خط، نموذج) ← ثبّت محليًا في بيئة العمل إن كان مجانيًا ومسموحًا (pip --user أو venv أو npm محلي) · البديل: مسار المكتبة القياسية أو أداة أخرى من نفس المجموعة · تصعيد: تثبيت نظامي أو مدفوع أو يحتاج مفتاحًا: توقف واسأل
+- `quality_below_threshold` (جودة دون العتبة، ميزانية 3): أي معيار فشل وبكم (المقيس مقابل العتبة) ← عالج السبب الأكبر وحده ثم أعد القياس · البديل: المنهج البديل المكتوب للمرحلة في الخطة · تصعيد: معيار إلزامي لا يتحقق بعد البديل: توقف وأبلغ بالأرقام
+
+#### 6. الأدلة
+
+- `https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/3604-agent-harness-skills/14472-work-state-and-delivery`
+
+#### 7. قدرات قريبة في العائلة
+
+- `AMIND-65` مطابقة ذاكرة الوكيل مع وثائق المشروع في الاتجاهين: خمسة أنواع انحراف / Reconcile agent memory with project docs in both directions: five kinds of drift (documented)
+- `AMIND-66` تنقيب سجلات الجلسات دوريًا: تكثيف قبل القراءة، نافذة غير محصودة، ومقارنة مع الكتالوج / Periodic session-transcript mining: condense first, unharvested window, dedupe against catalogues (documented)
+- `AMIND-68` اختر الأداة للمشكلة لا بالعادة: أربع خطايا اختيار، وسلم أصلي ثم رسمي ثم طرف ثالث موثوق / Pick for the problem, not the reflex: four selection sins and a native, official, vetted ladder (documented)
+- `AMIND-69` انقل العمل الحتمي إلى سكربت: ثلاث طبقات (حتمي، اكتشف ثم احكم، تفكير فقط) / Script the deterministic work: three tiers, deterministic, detect-then-judge, reasoning-only (documented)
+
+### `AMIND-68` — اختر الأداة للمشكلة لا بالعادة: أربع خطايا اختيار، وسلم أصلي ثم رسمي ثم طرف ثالث موثوق / Pick for the problem, not the reflex: four selection sins and a native, official, vetted ladder
+
+| الحقل | القيمة |
+|---|---|
+| العائلة | `atlas-mind` ([فصل العائلة](../../../.claude/skills/kosif-superpowers/references/powers/atlas-mind.md)) |
+| المجموعة | التفكير والتخطيط والاستراتيجية (`thinking`) |
+| نوع المخرج (A25، A27) | خطة واستراتيجية وقرار (`plan`) |
+| الحالة في الكتالوج | 📄 `documented`: منهج موصوف يحتاج بناءً أو ربطًا قبل التشغيل |
+| سقف التحقق قبل العمل (A27) | V1 حتى تُبنى وتُشغَّل؛ لا تقدَّم جاهزة أبدًا |
+| نطاق الدليل | `url` |
+| الرخصة | card in our own words; the original skill folders are copied verbatim with their MIT license and SOURCE.md under vendor/kosif-atlas |
+
+**ما هي:** مصحح انحراف لاختيار أداة أو مكتبة أو إطار أو لغة: معظم الاختيارات غير المفحوصة ترجع إلى العادة أو المتاح أو الموجود سلفًا أو الحكم المسبق؛ البديل تعريف المشكلة أولًا ومسح أكثر من مرشح وصعود سلم التفضيل، وكل تبعية نقطة اقتران لها كلفة لاحقة. — A re-anchor for technology selection.
+
+**متى:** اختيار مكتبة أو إطار أو أداة، 'نستخدم X لأننا دائمًا نستخدمه'، مراجعة قرار تبعية / choosing a dependency or approach
+
+**كيف:** 1) If the project states its own selection or dependency rule, re-anchor that first. 2) Name which sin drove the current choice: habit (I always use X), availability (X is at hand), incumbency (the repo already uses X so new work assumes it), preconception (the verdict came before the problem). 3) Define the problem and requirements before any candidate, including plausible future requirements that could turn a choice into pain. 4) Survey more than one candidate against them. 5) Walk the ladder, an earlier rung wins when it covers the requirements: native (what the platform or language already gives), official or first-party, then a vetted third party that is maintained, known, safe and secure. 6) Weigh each dependency's coupling cost now: abandonment, pricing pivot, licence change, security exposure, lock-in. 7) Re-implementing something already solved is itself a finding. 8) Load-bearing evaluations route to current research, not memory. 9) Do not churn a choice that already fits the problem, and do not invent a finding where the choice was derived properly; report and correct forward. Full original skill(s) with license: vendor/kosif-atlas/skills/2431-discipline/9418-pick-for-the-problem.
+
+**المعاملات:** choice under review
+
+**التثبيت:** mkdir -p ~/.claude/skills && cp -r .claude/skills/kosif-superpowers/vendor/kosif-atlas/skills/2431-discipline/9418-pick-for-the-problem ~/.claude/skills/pick-for-the-problem
+
+**الوسوم:** technology selection · dependency · native first · incumbency · اختيار الأدوات · التبعيات
+
+#### 1. الاستقبال (A25)
+
+- الهدف القابل للقياس: سؤال بإجابة مقترحة ← هدف مقترح بعتبة رقمية يُعرض للتعديل
+- الأفق الزمني: افتراض مكتوب ← 90 يومًا
+- الموارد والميزانية: افتراض مكتوب ← شخص واحد بلا صرف
+- لا تُفترض أبدًا: مادة الإنتاج نفسها، والإذن بخطوة مدفوعة أو منشورة أو لا رجعة فيها، والهوية والحقوق.
+
+#### 2. الجاهزية والشارة (A28)
+
+- لا متطلبات مسجلة؛ افحص المسار والأداة بـ `hub.py doctor` قبل الشارة.
+- الوضع 1: شارة «هنا الآن» بعد الفحص، لا 📄 الكتالوج تلقائيًا · الوضع 2: `كتالوج: 📄 · هنا: غير مفحوص` · الوضع 3: بلا شارة ولا معرّف.
+
+#### 3. موضعها في الخطة (A26)
+
+- عقدة منمّطة: المدخل `brief` ← المخرج `plan`، والمنفّذ `method:AMIND-68` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
+- لا أداة مسجلة تخدم عائلتها: التنفيذ بالمكتبات أو بأداة من مجموعة أخرى.
+- مراحل النوع: الهدف بمؤشره ← ثلاثة خيارات مختلفة ← تقييم وحساسية ← تشريح مسبق ← بوابات مكتوبة ← خطوة أولى قابلة للتراجع.
+- إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
+
+#### 4. بوابة التحقق (A27)
+
+- إلزامي: لكل هدف مؤشر وعتبة وتاريخ ← جدول المؤشرات
+- إلزامي: ثلاثة خيارات مختلفة المنهج مع توصية ← جدول المقارنة
+- جودة: تشريح مسبق بأهم أسباب الفشل والوقاية ← think.py plan
+- جودة: بوابات go/pivot/kill مكتوبة قبل النتائج ← think.py gate
+- إلزامي: خطوة أولى صغيرة قابلة للتراجع هذا الأسبوع ← مراجعة
+- أمر الحكم في الوضع 1: `think.py qa plan --answers qa.json` (PASS / FAIL / INCOMPLETE).
+
+#### 5. التعافي (A29)
+
+- `missing_dependency` (اعتمادية مفقودة، ميزانية 2): سمِّ الاعتمادية بالضبط (حزمة، برنامج، خط، نموذج) ← ثبّت محليًا في بيئة العمل إن كان مجانيًا ومسموحًا (pip --user أو venv أو npm محلي) · البديل: مسار المكتبة القياسية أو أداة أخرى من نفس المجموعة · تصعيد: تثبيت نظامي أو مدفوع أو يحتاج مفتاحًا: توقف واسأل
+- `quality_below_threshold` (جودة دون العتبة، ميزانية 3): أي معيار فشل وبكم (المقيس مقابل العتبة) ← عالج السبب الأكبر وحده ثم أعد القياس · البديل: المنهج البديل المكتوب للمرحلة في الخطة · تصعيد: معيار إلزامي لا يتحقق بعد البديل: توقف وأبلغ بالأرقام
+
+#### 6. الأدلة
+
+- `https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/2431-discipline/9418-pick-for-the-problem`
+
+#### 7. قدرات قريبة في العائلة
+
+- `AMIND-66` تنقيب سجلات الجلسات دوريًا: تكثيف قبل القراءة، نافذة غير محصودة، ومقارنة مع الكتالوج / Periodic session-transcript mining: condense first, unharvested window, dedupe against catalogues (documented)
+- `AMIND-67` مالك واحد لكل نوع حقيقة: التصميم، حالة العمل، خطة التنفيذ، ودليل التسليم / One owner per kind of truth: design, work state, execution plan, delivery evidence (documented)
+- `AMIND-69` انقل العمل الحتمي إلى سكربت: ثلاث طبقات (حتمي، اكتشف ثم احكم، تفكير فقط) / Script the deterministic work: three tiers, deterministic, detect-then-judge, reasoning-only (documented)
+- `AMIND-70` مستشار الأتمتة والأدوات للقراءة فقط: ماذا يناسب هذا المستودع من خوادم MCP ومهارات وخطافات ووكلاء فرعيين وإضافات / Read-only automation and tool advisor: which MCP servers, skills, hooks, subagents and plugins fit this repository (documented)
+
+### `AMIND-69` — انقل العمل الحتمي إلى سكربت: ثلاث طبقات (حتمي، اكتشف ثم احكم، تفكير فقط) / Script the deterministic work: three tiers, deterministic, detect-then-judge, reasoning-only
+
+| الحقل | القيمة |
+|---|---|
+| العائلة | `atlas-mind` ([فصل العائلة](../../../.claude/skills/kosif-superpowers/references/powers/atlas-mind.md)) |
+| المجموعة | التفكير والتخطيط والاستراتيجية (`thinking`) |
+| نوع المخرج (A25، A27) | خطة واستراتيجية وقرار (`plan`) |
+| الحالة في الكتالوج | 📄 `documented`: منهج موصوف يحتاج بناءً أو ربطًا قبل التشغيل |
+| سقف التحقق قبل العمل (A27) | V1 حتى تُبنى وتُشغَّل؛ لا تقدَّم جاهزة أبدًا |
+| نطاق الدليل | `url` |
+| الرخصة | card in our own words; the original skill folders are copied verbatim with their MIT license and SOURCE.md under vendor/kosif-atlas |
+
+**ما هي:** النموذج حاسبة ضعيفة وعدّاد أسطر أضعف؛ كل ما يُحسب أو يُعدّ أو يُقارن أو يُرتب أو يُحوّل آليًا يُكتب له سكربت ويُشغّل ثم يُفكَّر فوق مخرجه. وما يحتاج حكمًا يُسكربَت نصف الاكتشاف منه فقط، وما هو معنى أو نية لا يُسكربَت أبدًا. — Tiered rule for what to offload to code.
+
+**متى:** عدّ أو مقارنة أو تحويل أو مسح عبر ملفات، أرقام في تقرير، 'احسبها بنفسك' / counts, diffs, sweeps, arithmetic
+
+**كيف:** 1) Classify each sub-task. Deterministic: pass or fail, exact or countable with no judgment; write a script or use a tool, run it, read the output, reason only after. 2) Detect-then-judge: a mechanical pass narrows candidates but the verdict needs context; script only the detect half and treat each flag as a candidate, never the ruling. 3) Reasoning-only: meaning, intent, fit, abstraction quality; never script it, because a script there dresses a judgment as a computed fact. 4) Apply it to generation too: build repetitive files, tables or reports from data with code rather than by hand. 5) Audit the reverse over-reach as well: an existing script that decides a judgment call. 6) A one-off can be a throwaway command; it does not need a permanent tool. 7) Record the command beside the number it produced so the result can be rerun. Full original skill(s) with license: vendor/kosif-atlas/skills/2431-discipline/9424-script-the-deterministic-work.
+
+**المعاملات:** task
+
+**التثبيت:** mkdir -p ~/.claude/skills && cp -r .claude/skills/kosif-superpowers/vendor/kosif-atlas/skills/2431-discipline/9424-script-the-deterministic-work ~/.claude/skills/script-the-deterministic-work
+
+**الوسوم:** deterministic · scripting · counting · detect then judge · سكربت · الأرقام الحتمية
+
+#### 1. الاستقبال (A25)
+
+- الهدف القابل للقياس: سؤال بإجابة مقترحة ← هدف مقترح بعتبة رقمية يُعرض للتعديل
+- الأفق الزمني: افتراض مكتوب ← 90 يومًا
+- الموارد والميزانية: افتراض مكتوب ← شخص واحد بلا صرف
+- لا تُفترض أبدًا: مادة الإنتاج نفسها، والإذن بخطوة مدفوعة أو منشورة أو لا رجعة فيها، والهوية والحقوق.
+
+#### 2. الجاهزية والشارة (A28)
+
+- لا متطلبات مسجلة؛ افحص المسار والأداة بـ `hub.py doctor` قبل الشارة.
+- الوضع 1: شارة «هنا الآن» بعد الفحص، لا 📄 الكتالوج تلقائيًا · الوضع 2: `كتالوج: 📄 · هنا: غير مفحوص` · الوضع 3: بلا شارة ولا معرّف.
+
+#### 3. موضعها في الخطة (A26)
+
+- عقدة منمّطة: المدخل `brief` ← المخرج `plan`، والمنفّذ `method:AMIND-69` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
+- لا أداة مسجلة تخدم عائلتها: التنفيذ بالمكتبات أو بأداة من مجموعة أخرى.
+- مراحل النوع: الهدف بمؤشره ← ثلاثة خيارات مختلفة ← تقييم وحساسية ← تشريح مسبق ← بوابات مكتوبة ← خطوة أولى قابلة للتراجع.
+- إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
+
+#### 4. بوابة التحقق (A27)
+
+- إلزامي: لكل هدف مؤشر وعتبة وتاريخ ← جدول المؤشرات
+- إلزامي: ثلاثة خيارات مختلفة المنهج مع توصية ← جدول المقارنة
+- جودة: تشريح مسبق بأهم أسباب الفشل والوقاية ← think.py plan
+- جودة: بوابات go/pivot/kill مكتوبة قبل النتائج ← think.py gate
+- إلزامي: خطوة أولى صغيرة قابلة للتراجع هذا الأسبوع ← مراجعة
+- أمر الحكم في الوضع 1: `think.py qa plan --answers qa.json` (PASS / FAIL / INCOMPLETE).
+
+#### 5. التعافي (A29)
+
+- `missing_dependency` (اعتمادية مفقودة، ميزانية 2): سمِّ الاعتمادية بالضبط (حزمة، برنامج، خط، نموذج) ← ثبّت محليًا في بيئة العمل إن كان مجانيًا ومسموحًا (pip --user أو venv أو npm محلي) · البديل: مسار المكتبة القياسية أو أداة أخرى من نفس المجموعة · تصعيد: تثبيت نظامي أو مدفوع أو يحتاج مفتاحًا: توقف واسأل
+- `quality_below_threshold` (جودة دون العتبة، ميزانية 3): أي معيار فشل وبكم (المقيس مقابل العتبة) ← عالج السبب الأكبر وحده ثم أعد القياس · البديل: المنهج البديل المكتوب للمرحلة في الخطة · تصعيد: معيار إلزامي لا يتحقق بعد البديل: توقف وأبلغ بالأرقام
+
+#### 6. الأدلة
+
+- `https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/2431-discipline/9424-script-the-deterministic-work`
+
+#### 7. قدرات قريبة في العائلة
+
+- `AMIND-67` مالك واحد لكل نوع حقيقة: التصميم، حالة العمل، خطة التنفيذ، ودليل التسليم / One owner per kind of truth: design, work state, execution plan, delivery evidence (documented)
+- `AMIND-68` اختر الأداة للمشكلة لا بالعادة: أربع خطايا اختيار، وسلم أصلي ثم رسمي ثم طرف ثالث موثوق / Pick for the problem, not the reflex: four selection sins and a native, official, vetted ladder (documented)
+- `AMIND-70` مستشار الأتمتة والأدوات للقراءة فقط: ماذا يناسب هذا المستودع من خوادم MCP ومهارات وخطافات ووكلاء فرعيين وإضافات / Read-only automation and tool advisor: which MCP servers, skills, hooks, subagents and plugins fit this repository (documented)
+- `AMIND-71` تفويض التنفيذ لنموذج أضعف دون حضورك: اتخذ كل قرار مسبقًا، واكتب أقل قدر ممكن / A plan a weaker model will execute without you: make every decision, write as little as possible (documented)
+
+### `AMIND-70` — مستشار الأتمتة والأدوات للقراءة فقط: ماذا يناسب هذا المستودع من خوادم MCP ومهارات وخطافات ووكلاء فرعيين وإضافات / Read-only automation and tool advisor: which MCP servers, skills, hooks, subagents and plugins fit this repository
+
+| الحقل | القيمة |
+|---|---|
+| العائلة | `atlas-mind` ([فصل العائلة](../../../.claude/skills/kosif-superpowers/references/powers/atlas-mind.md)) |
+| المجموعة | التفكير والتخطيط والاستراتيجية (`thinking`) |
+| نوع المخرج (A25، A27) | خطة واستراتيجية وقرار (`plan`) |
+| الحالة في الكتالوج | 📄 `documented`: منهج موصوف يحتاج بناءً أو ربطًا قبل التشغيل |
+| سقف التحقق قبل العمل (A27) | V1 حتى تُبنى وتُشغَّل؛ لا تقدَّم جاهزة أبدًا |
+| نطاق الدليل | `url` |
+| الرخصة | card in our own words; the original skill folders are copied verbatim with their Apache-2.0, MIT license and SOURCE.md under vendor/kosif-atlas |
+
+**ما هي:** يفحص المستودع والبيئة دون تعديل أي شيء، ثم يوصي بأفضل واحد أو اثنين من كل نوع أتمتة مع السبب، ويعرض للمهمة الحالية تركيبة الأدوات الأنسب وجملة 'تم حين...' وجدول خطوات أولى جاهزة للنسخ، ولا يثبت شيئًا دون موافقة. — Analyse first, recommend few, never execute.
+
+**متى:** ما الأتمتة المناسبة لمشروعي، أي أدوات أستخدم لهذه المهمة، إعداد Claude Code لمستودع / which automations or tools fit this repo
+
+**كيف:** 1) Read only: languages, frameworks, package files, CI, existing .claude settings, tests, docs; enumerate native tools, then discover installed MCP servers, skills, plugins and CLIs in one scan. 2) Classify the task: type (creation, modification, investigation, research, review, data), scale (small 1-3 files, medium 3-10, large 10+), and one 'done when' sentence. 3) Recommend one or two per category: MCP servers for repeated external systems, skills for repeatable workflows with templates or scripts, hooks for checks that must always run (format after edit, block edits to protected files), subagents for isolated parallel or specialised work, plugins for bundles; give 3-5 only when the user asks for one category. 4) Match capabilities to the task and suggest a composition (which tool for which step), scaled to the task size. 5) Ask at most three questions in one message, then proceed with defaults. 6) End with a quick-action table of copy-paste first steps; installs are left to the user. 7) Team tips: check .mcp.json into the repo, use headless mode for CI. Full original skill(s) with license: vendor/kosif-atlas/skills/278-claude-code-setup/901-claude-automation-recommender, vendor/kosif-atlas/skills/1362-tool-advisor/3094-tool-advisor.
+
+**المعاملات:** repository, task
+
+**التثبيت:** mkdir -p ~/.claude/skills && cp -r .claude/skills/kosif-superpowers/vendor/kosif-atlas/skills/278-claude-code-setup/901-claude-automation-recommender ~/.claude/skills/claude-automation-recommender ; mkdir -p ~/.claude/skills && cp -r .claude/skills/kosif-superpowers/vendor/kosif-atlas/skills/1362-tool-advisor/3094-tool-advisor ~/.claude/skills/tool-advisor
+
+**الوسوم:** Claude Code setup · automation · hooks · subagents · tool advisor · أتمتة · اختيار الأدوات
+
+#### 1. الاستقبال (A25)
+
+- الهدف القابل للقياس: سؤال بإجابة مقترحة ← هدف مقترح بعتبة رقمية يُعرض للتعديل
+- الأفق الزمني: افتراض مكتوب ← 90 يومًا
+- الموارد والميزانية: افتراض مكتوب ← شخص واحد بلا صرف
+- لا تُفترض أبدًا: مادة الإنتاج نفسها، والإذن بخطوة مدفوعة أو منشورة أو لا رجعة فيها، والهوية والحقوق.
+
+#### 2. الجاهزية والشارة (A28)
+
+- `chromium` ← افحص وجوده بأمر واحد قبل كتابة الشارة
+- `claude:tools` ← افحص وجوده بأمر واحد قبل كتابة الشارة
+- الوضع 1: شارة «هنا الآن» بعد الفحص، لا 📄 الكتالوج تلقائيًا · الوضع 2: `كتالوج: 📄 · هنا: غير مفحوص` · الوضع 3: بلا شارة ولا معرّف.
+
+#### 3. موضعها في الخطة (A26)
+
+- عقدة منمّطة: المدخل `brief` ← المخرج `plan`، والمنفّذ `method:AMIND-70` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
+- لا أداة مسجلة تخدم عائلتها: التنفيذ بالمكتبات أو بأداة من مجموعة أخرى.
+- مراحل النوع: الهدف بمؤشره ← ثلاثة خيارات مختلفة ← تقييم وحساسية ← تشريح مسبق ← بوابات مكتوبة ← خطوة أولى قابلة للتراجع.
+- إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
+
+#### 4. بوابة التحقق (A27)
+
+- إلزامي: لكل هدف مؤشر وعتبة وتاريخ ← جدول المؤشرات
+- إلزامي: ثلاثة خيارات مختلفة المنهج مع توصية ← جدول المقارنة
+- جودة: تشريح مسبق بأهم أسباب الفشل والوقاية ← think.py plan
+- جودة: بوابات go/pivot/kill مكتوبة قبل النتائج ← think.py gate
+- إلزامي: خطوة أولى صغيرة قابلة للتراجع هذا الأسبوع ← مراجعة
+- أمر الحكم في الوضع 1: `think.py qa plan --answers qa.json` (PASS / FAIL / INCOMPLETE).
+
+#### 5. التعافي (A29)
+
+- `missing_dependency` (اعتمادية مفقودة، ميزانية 2): سمِّ الاعتمادية بالضبط (حزمة، برنامج، خط، نموذج) ← ثبّت محليًا في بيئة العمل إن كان مجانيًا ومسموحًا (pip --user أو venv أو npm محلي) · البديل: مسار المكتبة القياسية أو أداة أخرى من نفس المجموعة · تصعيد: تثبيت نظامي أو مدفوع أو يحتاج مفتاحًا: توقف واسأل
+- `quality_below_threshold` (جودة دون العتبة، ميزانية 3): أي معيار فشل وبكم (المقيس مقابل العتبة) ← عالج السبب الأكبر وحده ثم أعد القياس · البديل: المنهج البديل المكتوب للمرحلة في الخطة · تصعيد: معيار إلزامي لا يتحقق بعد البديل: توقف وأبلغ بالأرقام
+
+#### 6. الأدلة
+
+- `https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/278-claude-code-setup/901-claude-automation-recommender`
+- `https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/1362-tool-advisor/3094-tool-advisor`
+
+#### 7. قدرات قريبة في العائلة
+
+- `AMIND-68` اختر الأداة للمشكلة لا بالعادة: أربع خطايا اختيار، وسلم أصلي ثم رسمي ثم طرف ثالث موثوق / Pick for the problem, not the reflex: four selection sins and a native, official, vetted ladder (documented)
+- `AMIND-69` انقل العمل الحتمي إلى سكربت: ثلاث طبقات (حتمي، اكتشف ثم احكم، تفكير فقط) / Script the deterministic work: three tiers, deterministic, detect-then-judge, reasoning-only (documented)
+- `AMIND-71` تفويض التنفيذ لنموذج أضعف دون حضورك: اتخذ كل قرار مسبقًا، واكتب أقل قدر ممكن / A plan a weaker model will execute without you: make every decision, write as little as possible (documented)
+- `AMIND-72` من التخطيط إلى التنفيذ بسلطتين: التوجيه التقني لك ويُسجل، والوظيفي والتشغيلي للمستخدم ويُسأل، والخطة هي المواصفة / Plan, then implement, under two authorities: technical direction is yours and logged, functional and operational direction is the user's and asked; the plan is the spec (documented)
+
+### `AMIND-71` — تفويض التنفيذ لنموذج أضعف دون حضورك: اتخذ كل قرار مسبقًا، واكتب أقل قدر ممكن / A plan a weaker model will execute without you: make every decision, write as little as possible
+
+| الحقل | القيمة |
+|---|---|
+| العائلة | `atlas-mind` ([فصل العائلة](../../../.claude/skills/kosif-superpowers/references/powers/atlas-mind.md)) |
+| المجموعة | التفكير والتخطيط والاستراتيجية (`thinking`) |
+| نوع المخرج (A25، A27) | خطة واستراتيجية وقرار (`plan`) |
+| الحالة في الكتالوج | 📄 `documented`: منهج موصوف يحتاج بناءً أو ربطًا قبل التشغيل |
+| سقف التحقق قبل العمل (A27) | V1 حتى تُبنى وتُشغَّل؛ لا تقدَّم جاهزة أبدًا |
+| نطاق الدليل | `url` |
+| الرخصة | card in our own words; the original skill folders are copied verbatim with their MIT license and SOURCE.md under vendor/kosif-atlas |
+
+**ما هي:** حين تخطط لنفسك تختصر ('اتبع النمط الموجود'، 'عالج الأخطاء بشكل مناسب')، وكل اختصار قرار سيتخذه منفذ أضعف بثقة وخطأ. والفشل المعاكس خطة أطول من المهمة. القاعدة: كل قرار يُتخذ في الخطة، والكلمات تُصرف فقط حيث يكون سوء الفهم واردًا، والخطة أقصر من الفرق الذي تنتجه. — Delegation plans for subagents or cheaper models.
+
+**متى:** تفويض مهمة لوكيل فرعي أو نموذج أرخص، كتابة خطة تنفيذ لغيرك / delegating implementation to a subagent or smaller model
+
+**كيف:** 1) Check it is delegable: work needing judgment throughout (open-ended debugging, design exploration) is not; do that part yourself and delegate the mechanical remainder. 2) Investigate until you can name every file that changes and every decision is made: exact paths, symbol names, signatures, config keys, the test command, the existing code to mirror by file and symbol, and any surprise as a 'Watch out' line. 3) Check the task's claims against HEAD; a prerequisite already landed or a missing symbol is your decision now. 4) Scan the draft for TBD, consider, decide whether, could, might, either; each is a decision pushed onto the weaker model, so decide it or ask the user. 5) Budget about 50 lines at 80 columns; past 100, split and plan only the first delegable slice, titled 'N of M', with a 'Not in this plan' list. 6) Never write function bodies; write literal signatures, schemas, config keys and error strings once for every symbol the plan introduces. 7) Refer to code by path and symbol, never by line number. 8) Name the library and the exact version from the lockfile when a step calls an API. 9) No vague words (appropriately, as needed, etc.). 10) End with the exact verification command and what passing looks like; a strong model reviews the result afterwards. Full original skill(s) with license: vendor/kosif-atlas/skills/243-plan-for-dummies/780-plan-for-dummies.
+
+**المعاملات:** task, repository
+
+**التثبيت:** mkdir -p ~/.claude/skills && cp -r .claude/skills/kosif-superpowers/vendor/kosif-atlas/skills/243-plan-for-dummies/780-plan-for-dummies ~/.claude/skills/plan-for-dummies
+
+**الوسوم:** delegation · handoff spec · subagent · التفويض · مواصفة التسليم
+
+#### 1. الاستقبال (A25)
+
+- الهدف القابل للقياس: سؤال بإجابة مقترحة ← هدف مقترح بعتبة رقمية يُعرض للتعديل
+- الأفق الزمني: افتراض مكتوب ← 90 يومًا
+- الموارد والميزانية: افتراض مكتوب ← شخص واحد بلا صرف
+- لا تُفترض أبدًا: مادة الإنتاج نفسها، والإذن بخطوة مدفوعة أو منشورة أو لا رجعة فيها، والهوية والحقوق.
+
+#### 2. الجاهزية والشارة (A28)
+
+- `claude:tools` ← افحص وجوده بأمر واحد قبل كتابة الشارة
+- الوضع 1: شارة «هنا الآن» بعد الفحص، لا 📄 الكتالوج تلقائيًا · الوضع 2: `كتالوج: 📄 · هنا: غير مفحوص` · الوضع 3: بلا شارة ولا معرّف.
+
+#### 3. موضعها في الخطة (A26)
+
+- عقدة منمّطة: المدخل `brief` ← المخرج `plan`، والمنفّذ `method:AMIND-71` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
+- لا أداة مسجلة تخدم عائلتها: التنفيذ بالمكتبات أو بأداة من مجموعة أخرى.
+- مراحل النوع: الهدف بمؤشره ← ثلاثة خيارات مختلفة ← تقييم وحساسية ← تشريح مسبق ← بوابات مكتوبة ← خطوة أولى قابلة للتراجع.
+- إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
+
+#### 4. بوابة التحقق (A27)
+
+- إلزامي: لكل هدف مؤشر وعتبة وتاريخ ← جدول المؤشرات
+- إلزامي: ثلاثة خيارات مختلفة المنهج مع توصية ← جدول المقارنة
+- جودة: تشريح مسبق بأهم أسباب الفشل والوقاية ← think.py plan
+- جودة: بوابات go/pivot/kill مكتوبة قبل النتائج ← think.py gate
+- إلزامي: خطوة أولى صغيرة قابلة للتراجع هذا الأسبوع ← مراجعة
+- أمر الحكم في الوضع 1: `think.py qa plan --answers qa.json` (PASS / FAIL / INCOMPLETE).
+
+#### 5. التعافي (A29)
+
+- `missing_dependency` (اعتمادية مفقودة، ميزانية 2): سمِّ الاعتمادية بالضبط (حزمة، برنامج، خط، نموذج) ← ثبّت محليًا في بيئة العمل إن كان مجانيًا ومسموحًا (pip --user أو venv أو npm محلي) · البديل: مسار المكتبة القياسية أو أداة أخرى من نفس المجموعة · تصعيد: تثبيت نظامي أو مدفوع أو يحتاج مفتاحًا: توقف واسأل
+- `quality_below_threshold` (جودة دون العتبة، ميزانية 3): أي معيار فشل وبكم (المقيس مقابل العتبة) ← عالج السبب الأكبر وحده ثم أعد القياس · البديل: المنهج البديل المكتوب للمرحلة في الخطة · تصعيد: معيار إلزامي لا يتحقق بعد البديل: توقف وأبلغ بالأرقام
+
+#### 6. الأدلة
+
+- `https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/243-plan-for-dummies/780-plan-for-dummies`
+
+#### 7. قدرات قريبة في العائلة
+
+- `AMIND-69` انقل العمل الحتمي إلى سكربت: ثلاث طبقات (حتمي، اكتشف ثم احكم، تفكير فقط) / Script the deterministic work: three tiers, deterministic, detect-then-judge, reasoning-only (documented)
+- `AMIND-70` مستشار الأتمتة والأدوات للقراءة فقط: ماذا يناسب هذا المستودع من خوادم MCP ومهارات وخطافات ووكلاء فرعيين وإضافات / Read-only automation and tool advisor: which MCP servers, skills, hooks, subagents and plugins fit this repository (documented)
+- `AMIND-72` من التخطيط إلى التنفيذ بسلطتين: التوجيه التقني لك ويُسجل، والوظيفي والتشغيلي للمستخدم ويُسأل، والخطة هي المواصفة / Plan, then implement, under two authorities: technical direction is yours and logged, functional and operational direction is the user's and asked; the plan is the spec (documented)
+- `AMIND-73` مدقق الاستدلال: مصفوفة تتبع من الشروط الأصلية إلى الاستنتاج، وتصنيف كل افتراض معطى أو مُثبت أو مستنتج أو مخترع أو مجهول / Reasoning verifier: a traceability matrix from the original conditions to the conclusion, with each assumption classed given, verified, deduced, invented or unknown (documented)
+
+### `AMIND-72` — من التخطيط إلى التنفيذ بسلطتين: التوجيه التقني لك ويُسجل، والوظيفي والتشغيلي للمستخدم ويُسأل، والخطة هي المواصفة / Plan, then implement, under two authorities: technical direction is yours and logged, functional and operational direction is the user's and asked; the plan is the spec
+
+| الحقل | القيمة |
+|---|---|
+| العائلة | `atlas-mind` ([فصل العائلة](../../../.claude/skills/kosif-superpowers/references/powers/atlas-mind.md)) |
+| المجموعة | التفكير والتخطيط والاستراتيجية (`thinking`) |
+| نوع المخرج (A25، A27) | خطة واستراتيجية وقرار (`plan`) |
+| الحالة في الكتالوج | 📄 `documented`: منهج موصوف يحتاج بناءً أو ربطًا قبل التشغيل |
+| سقف التحقق قبل العمل (A27) | V1 حتى تُبنى وتُشغَّل؛ لا تقدَّم جاهزة أبدًا |
+| نطاق الدليل | `url` |
+| الرخصة | card in our own words; the original skill folders are copied verbatim with their MIT license and SOURCE.md under vendor/kosif-atlas |
+
+**ما هي:** التخطيط ينتج خطة واحدة حالية تُعاد كتابتها في مكانها، لقارئ لم يرَ الكود، تجد فيها الحقائق بنفسك وتسأل المستخدم فقط ما لا يجيب عنه الكود، سؤالًا واحدًا في كل رسالة؛ والتنفيذ يقيس العمل بندًا بندًا مقابل الخطة المتفق عليها، ويقسمها لشرائح ويرسل منفذين ويراجع المطابقة ويجري مراجعة عدائية واحدة، ويواصل دون توقف إلا عند البوابات المسماة. — An end-to-end plan and execute discipline.
+
+**متى:** خطط لهذا التغيير، كيف نبني كذا، نفّذ الخطة المتفق عليها / planning a coding change or executing an agreed plan
+
+**كيف:** 1) The plan never describes its own earlier versions: revise in place, and keep the past only in a decisions section (choice, alternative, reason). 2) Write for a reader who has not seen the code: explain each named function or file in plain words. 3) Authority table: technical direction (structure, libraries, internal names) is yours and logged; functional and operational direction (behaviour users see, data retention, cost, rollout) is the user's and asked; never re-ask a decided question. 4) Find facts yourself; ask only what the codebase cannot answer, one question per message in a fixed shape (situation, options, cost, your recommendation), after the questions it depends on. 5) Plan the simplest thing that works, as one document (diagrams and file trees welcome); spikes are throwaway probes deleted before presenting. 6) Execution: measure work against the plan item by item, not 'does it look right'. 7) Split into slices, give each executor a handoff packet (scope, tests first, the test map, documentation rule, stop conditions), and require a short mini-plan and minimum sufficient change. 8) Run a conformance review of plan against work, then the one adversarial review the user chose, and fix its findings. 9) Keep going; stop only at named gates, where one word resumes. 10) Execution labels (gate ids, wave names, finding numbers) never appear in code, comments, tests or commit messages. 11) For linear execution, check out a branch or worktree first and pause for human checkpoints between batches with typed verification per step. Full original skill(s) with license: vendor/kosif-atlas/skills/2860-planning-flow/11569-planning-flow, vendor/kosif-atlas/skills/2859-implement-plan/11568-implement-plan, vendor/kosif-atlas/skills/3612-zagrosi-forge/14531-zagrosi-plan, vendor/kosif-atlas/skills/3606-hotl/14489-executing-plans.
+
+**المعاملات:** request or agreed plan, repository
+
+**التثبيت:** mkdir -p ~/.claude/skills && cp -r .claude/skills/kosif-superpowers/vendor/kosif-atlas/skills/2860-planning-flow/11569-planning-flow ~/.claude/skills/planning-flow ; mkdir -p ~/.claude/skills && cp -r .claude/skills/kosif-superpowers/vendor/kosif-atlas/skills/2859-implement-plan/11568-implement-plan ~/.claude/skills/implement-plan ; mkdir -p ~/.claude/skills && cp -r .claude/skills/kosif-superpowers/vendor/kosif-atlas/skills/3612-zagrosi-forge/14531-zagrosi-plan ~/.claude/skills/zagrosi-plan ; mkdir -p ~/.claude/skills && cp -r .claude/skills/kosif-superpowers/vendor/kosif-atlas/skills/3606-hotl/14489-executing-plans ~/.claude/skills/executing-plans
+
+**الوسوم:** planning · implementation · plan execution · conformance review · adversarial review · التخطيط · التنفيذ
+
+#### 1. الاستقبال (A25)
+
+- الهدف القابل للقياس: سؤال بإجابة مقترحة ← هدف مقترح بعتبة رقمية يُعرض للتعديل
+- الأفق الزمني: افتراض مكتوب ← 90 يومًا
+- الموارد والميزانية: افتراض مكتوب ← شخص واحد بلا صرف
+- لا تُفترض أبدًا: مادة الإنتاج نفسها، والإذن بخطوة مدفوعة أو منشورة أو لا رجعة فيها، والهوية والحقوق.
+
+#### 2. الجاهزية والشارة (A28)
+
+- `git` ← افحص وجوده بأمر واحد قبل كتابة الشارة
+- الوضع 1: شارة «هنا الآن» بعد الفحص، لا 📄 الكتالوج تلقائيًا · الوضع 2: `كتالوج: 📄 · هنا: غير مفحوص` · الوضع 3: بلا شارة ولا معرّف.
+
+#### 3. موضعها في الخطة (A26)
+
+- عقدة منمّطة: المدخل `brief` ← المخرج `plan`، والمنفّذ `method:AMIND-72` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
+- لا أداة مسجلة تخدم عائلتها: التنفيذ بالمكتبات أو بأداة من مجموعة أخرى.
+- مراحل النوع: الهدف بمؤشره ← ثلاثة خيارات مختلفة ← تقييم وحساسية ← تشريح مسبق ← بوابات مكتوبة ← خطوة أولى قابلة للتراجع.
+- إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
+
+#### 4. بوابة التحقق (A27)
+
+- إلزامي: لكل هدف مؤشر وعتبة وتاريخ ← جدول المؤشرات
+- إلزامي: ثلاثة خيارات مختلفة المنهج مع توصية ← جدول المقارنة
+- جودة: تشريح مسبق بأهم أسباب الفشل والوقاية ← think.py plan
+- جودة: بوابات go/pivot/kill مكتوبة قبل النتائج ← think.py gate
+- إلزامي: خطوة أولى صغيرة قابلة للتراجع هذا الأسبوع ← مراجعة
+- أمر الحكم في الوضع 1: `think.py qa plan --answers qa.json` (PASS / FAIL / INCOMPLETE).
+
+#### 5. التعافي (A29)
+
+- `missing_dependency` (اعتمادية مفقودة، ميزانية 2): سمِّ الاعتمادية بالضبط (حزمة، برنامج، خط، نموذج) ← ثبّت محليًا في بيئة العمل إن كان مجانيًا ومسموحًا (pip --user أو venv أو npm محلي) · البديل: مسار المكتبة القياسية أو أداة أخرى من نفس المجموعة · تصعيد: تثبيت نظامي أو مدفوع أو يحتاج مفتاحًا: توقف واسأل
+- `quality_below_threshold` (جودة دون العتبة، ميزانية 3): أي معيار فشل وبكم (المقيس مقابل العتبة) ← عالج السبب الأكبر وحده ثم أعد القياس · البديل: المنهج البديل المكتوب للمرحلة في الخطة · تصعيد: معيار إلزامي لا يتحقق بعد البديل: توقف وأبلغ بالأرقام
+
+#### 6. الأدلة
+
+- `https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/2860-planning-flow/11569-planning-flow`
+- `https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/2859-implement-plan/11568-implement-plan`
+- `https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/3612-zagrosi-forge/14531-zagrosi-plan`
+- `https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/3606-hotl/14489-executing-plans`
+
+#### 7. قدرات قريبة في العائلة
+
+- `AMIND-70` مستشار الأتمتة والأدوات للقراءة فقط: ماذا يناسب هذا المستودع من خوادم MCP ومهارات وخطافات ووكلاء فرعيين وإضافات / Read-only automation and tool advisor: which MCP servers, skills, hooks, subagents and plugins fit this repository (documented)
+- `AMIND-71` تفويض التنفيذ لنموذج أضعف دون حضورك: اتخذ كل قرار مسبقًا، واكتب أقل قدر ممكن / A plan a weaker model will execute without you: make every decision, write as little as possible (documented)
+- `AMIND-73` مدقق الاستدلال: مصفوفة تتبع من الشروط الأصلية إلى الاستنتاج، وتصنيف كل افتراض معطى أو مُثبت أو مستنتج أو مخترع أو مجهول / Reasoning verifier: a traceability matrix from the original conditions to the conclusion, with each assumption classed given, verified, deduced, invented or unknown (documented)
+- `AMIND-74` استدل ولا تردد: الموروث يصف ما هو كائن ولا يبرر نفسه، فأعد اشتقاق القرارات التي تعيش على السابقة / Reason, don't recite: inherited content describes what is and does not justify itself, so re-derive decisions coasting on precedent (documented)
+
+### `AMIND-73` — مدقق الاستدلال: مصفوفة تتبع من الشروط الأصلية إلى الاستنتاج، وتصنيف كل افتراض معطى أو مُثبت أو مستنتج أو مخترع أو مجهول / Reasoning verifier: a traceability matrix from the original conditions to the conclusion, with each assumption classed given, verified, deduced, invented or unknown
+
+| الحقل | القيمة |
+|---|---|
+| العائلة | `atlas-mind` ([فصل العائلة](../../../.claude/skills/kosif-superpowers/references/powers/atlas-mind.md)) |
+| المجموعة | التفكير والتخطيط والاستراتيجية (`thinking`) |
+| نوع المخرج (A25، A27) | خطة واستراتيجية وقرار (`plan`) |
+| الحالة في الكتالوج | 📄 `documented`: منهج موصوف يحتاج بناءً أو ربطًا قبل التشغيل |
+| سقف التحقق قبل العمل (A27) | V1 حتى تُبنى وتُشغَّل؛ لا تقدَّم جاهزة أبدًا |
+| نطاق الدليل | `url` |
+| الرخصة | card in our own words; the original skill folders are copied verbatim with their MIT license and SOURCE.md under vendor/kosif-atlas |
+
+**ما هي:** يفحص تحليلًا مكتملًا قبل تسليمه: يستخرج شروط الطلب الأصلية، ويعيد بناء سلسلة الاستدلال، ويربط كل شرط بما يغطيه، ويصنف الافتراضات، ويختبر كل حلقة منطقية وحساسية الاستنتاج، ثم يرتب العيوب حرجة أو كبيرة أو صغيرة. — Check an analysis before trusting its conclusion.
+
+**متى:** راجع هذا التحليل، هل الاستنتاج صحيح، قبل تسليم توصية / verifying a completed analysis or recommendation
+
+**كيف:** 1) Extract the original conditions: requirements, decision criteria, constraints on scope, time, cost and risk. 2) Reconstruct the proposed reasoning as numbered steps. 3) Build a traceability matrix: each condition against the step that satisfies it, or a gap. 4) Class every assumption: given (explicit in the source), verified (supported by cited evidence), deduced (follows from supported premises), invented (needed by the answer but unsupported), unknown (cannot be checked). 5) Test each link for leaps, circularity and confusing correlation with cause. 6) Test sensitivity: which assumption, if false, flips the conclusion. 7) Rate findings: critical reverses the conclusion or makes it unknown, major narrows or removes support, minor is presentation. 8) Report the matrix, findings and a corrected or qualified conclusion. Full original skill(s) with license: vendor/kosif-atlas/skills/2215-majestic-reasoning/8357-reasoning-verifier.
+
+**المعاملات:** request, analysis, evidence
+
+**التثبيت:** mkdir -p ~/.claude/skills && cp -r .claude/skills/kosif-superpowers/vendor/kosif-atlas/skills/2215-majestic-reasoning/8357-reasoning-verifier ~/.claude/skills/reasoning-verifier
+
+**الوسوم:** reasoning check · traceability · assumptions · verification · تدقيق الاستدلال · الافتراضات
+
+#### 1. الاستقبال (A25)
+
+- الهدف القابل للقياس: سؤال بإجابة مقترحة ← هدف مقترح بعتبة رقمية يُعرض للتعديل
+- الأفق الزمني: افتراض مكتوب ← 90 يومًا
+- الموارد والميزانية: افتراض مكتوب ← شخص واحد بلا صرف
+- لا تُفترض أبدًا: مادة الإنتاج نفسها، والإذن بخطوة مدفوعة أو منشورة أو لا رجعة فيها، والهوية والحقوق.
+
+#### 2. الجاهزية والشارة (A28)
+
+- لا متطلبات مسجلة؛ افحص المسار والأداة بـ `hub.py doctor` قبل الشارة.
+- الوضع 1: شارة «هنا الآن» بعد الفحص، لا 📄 الكتالوج تلقائيًا · الوضع 2: `كتالوج: 📄 · هنا: غير مفحوص` · الوضع 3: بلا شارة ولا معرّف.
+
+#### 3. موضعها في الخطة (A26)
+
+- عقدة منمّطة: المدخل `brief` ← المخرج `plan`، والمنفّذ `method:AMIND-73` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
+- لا أداة مسجلة تخدم عائلتها: التنفيذ بالمكتبات أو بأداة من مجموعة أخرى.
+- مراحل النوع: الهدف بمؤشره ← ثلاثة خيارات مختلفة ← تقييم وحساسية ← تشريح مسبق ← بوابات مكتوبة ← خطوة أولى قابلة للتراجع.
+- إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
+
+#### 4. بوابة التحقق (A27)
+
+- إلزامي: لكل هدف مؤشر وعتبة وتاريخ ← جدول المؤشرات
+- إلزامي: ثلاثة خيارات مختلفة المنهج مع توصية ← جدول المقارنة
+- جودة: تشريح مسبق بأهم أسباب الفشل والوقاية ← think.py plan
+- جودة: بوابات go/pivot/kill مكتوبة قبل النتائج ← think.py gate
+- إلزامي: خطوة أولى صغيرة قابلة للتراجع هذا الأسبوع ← مراجعة
+- أمر الحكم في الوضع 1: `think.py qa plan --answers qa.json` (PASS / FAIL / INCOMPLETE).
+
+#### 5. التعافي (A29)
+
+- `missing_dependency` (اعتمادية مفقودة، ميزانية 2): سمِّ الاعتمادية بالضبط (حزمة، برنامج، خط، نموذج) ← ثبّت محليًا في بيئة العمل إن كان مجانيًا ومسموحًا (pip --user أو venv أو npm محلي) · البديل: مسار المكتبة القياسية أو أداة أخرى من نفس المجموعة · تصعيد: تثبيت نظامي أو مدفوع أو يحتاج مفتاحًا: توقف واسأل
+- `quality_below_threshold` (جودة دون العتبة، ميزانية 3): أي معيار فشل وبكم (المقيس مقابل العتبة) ← عالج السبب الأكبر وحده ثم أعد القياس · البديل: المنهج البديل المكتوب للمرحلة في الخطة · تصعيد: معيار إلزامي لا يتحقق بعد البديل: توقف وأبلغ بالأرقام
+
+#### 6. الأدلة
+
+- `https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/2215-majestic-reasoning/8357-reasoning-verifier`
+
+#### 7. قدرات قريبة في العائلة
+
+- `AMIND-71` تفويض التنفيذ لنموذج أضعف دون حضورك: اتخذ كل قرار مسبقًا، واكتب أقل قدر ممكن / A plan a weaker model will execute without you: make every decision, write as little as possible (documented)
+- `AMIND-72` من التخطيط إلى التنفيذ بسلطتين: التوجيه التقني لك ويُسجل، والوظيفي والتشغيلي للمستخدم ويُسأل، والخطة هي المواصفة / Plan, then implement, under two authorities: technical direction is yours and logged, functional and operational direction is the user's and asked; the plan is the spec (documented)
+- `AMIND-74` استدل ولا تردد: الموروث يصف ما هو كائن ولا يبرر نفسه، فأعد اشتقاق القرارات التي تعيش على السابقة / Reason, don't recite: inherited content describes what is and does not justify itself, so re-derive decisions coasting on precedent (documented)
+- `AMIND-75` عصف ذهني بقدر الحاجة: فرز بسيط أو مضغوط أو كامل، وكبسولة قرار من خمسة أسطر، وفحص سياق رخيص قبل الأسئلة / Brainstorm only as much as needed: minimal, compact or full triage, a five-line decision capsule, and a cheap context preflight before questions (documented)
+
+### `AMIND-74` — استدل ولا تردد: الموروث يصف ما هو كائن ولا يبرر نفسه، فأعد اشتقاق القرارات التي تعيش على السابقة / Reason, don't recite: inherited content describes what is and does not justify itself, so re-derive decisions coasting on precedent
+
+| الحقل | القيمة |
+|---|---|
+| العائلة | `atlas-mind` ([فصل العائلة](../../../.claude/skills/kosif-superpowers/references/powers/atlas-mind.md)) |
+| المجموعة | التفكير والتخطيط والاستراتيجية (`thinking`) |
+| نوع المخرج (A25، A27) | خطة واستراتيجية وقرار (`plan`) |
+| الحالة في الكتالوج | 📄 `documented`: منهج موصوف يحتاج بناءً أو ربطًا قبل التشغيل |
+| سقف التحقق قبل العمل (A27) | V1 حتى تُبنى وتُشغَّل؛ لا تقدَّم جاهزة أبدًا |
+| نطاق الدليل | `url` |
+| الرخصة | card in our own words; the original skill folders are copied verbatim with their MIT license and SOURCE.md under vendor/kosif-atlas |
+
+**ما هي:** مصحح انحراف: البنية الموجودة والقواعد المكتوبة والتعليقات دليل على الحال، لا سلطة تبرر نفسها. القاعدة التي سندها الوحيد 'هكذا هي' تستحق التحدي، والعرف الذي يستطيع أحد أن يشرح سببه الحي يختلف عن القصور الذاتي، وغياب الشيء اليوم لا يعني أنه خارج النطاق. — Re-anchor on reasons, not precedent.
+
+**متى:** لماذا هي هكذا، 'لأننا دائمًا نفعل ذلك'، نسخ نمط قديم دون فهم / decisions justified only by precedent
+
+**كيف:** 1) If the project states its own rule about challenging precedent, re-anchor that first. 2) For each inherited rule, boundary or convention ask what live reason supports it; descriptive support only ('the code does it') earns a challenge. 3) Distinguish a live rationale someone can state from inertia. 4) Do not dismiss a concern because it is absent today. 5) Re-derive the decision from the current problem; often it confirms the precedent, which is fine and should be said. 6) For shared standards, raise a challenge with the owner instead of diverging locally. 7) Do not treat challenge as rejection and do not invent a finding where the precedent stands on a live reason; correct forward and report. Full original skill(s) with license: vendor/kosif-atlas/skills/2431-discipline/9420-reason-dont-recite.
+
+**المعاملات:** decision or rule under review
+
+**التثبيت:** mkdir -p ~/.claude/skills && cp -r .claude/skills/kosif-superpowers/vendor/kosif-atlas/skills/2431-discipline/9420-reason-dont-recite ~/.claude/skills/reason-dont-recite
+
+**الوسوم:** first principles · precedent · convention · re-derive · التفكير من الأساس · الموروث
+
+#### 1. الاستقبال (A25)
+
+- الهدف القابل للقياس: سؤال بإجابة مقترحة ← هدف مقترح بعتبة رقمية يُعرض للتعديل
+- الأفق الزمني: افتراض مكتوب ← 90 يومًا
+- الموارد والميزانية: افتراض مكتوب ← شخص واحد بلا صرف
+- لا تُفترض أبدًا: مادة الإنتاج نفسها، والإذن بخطوة مدفوعة أو منشورة أو لا رجعة فيها، والهوية والحقوق.
+
+#### 2. الجاهزية والشارة (A28)
+
+- لا متطلبات مسجلة؛ افحص المسار والأداة بـ `hub.py doctor` قبل الشارة.
+- الوضع 1: شارة «هنا الآن» بعد الفحص، لا 📄 الكتالوج تلقائيًا · الوضع 2: `كتالوج: 📄 · هنا: غير مفحوص` · الوضع 3: بلا شارة ولا معرّف.
+
+#### 3. موضعها في الخطة (A26)
+
+- عقدة منمّطة: المدخل `brief` ← المخرج `plan`، والمنفّذ `method:AMIND-74` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
+- لا أداة مسجلة تخدم عائلتها: التنفيذ بالمكتبات أو بأداة من مجموعة أخرى.
+- مراحل النوع: الهدف بمؤشره ← ثلاثة خيارات مختلفة ← تقييم وحساسية ← تشريح مسبق ← بوابات مكتوبة ← خطوة أولى قابلة للتراجع.
+- إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
+
+#### 4. بوابة التحقق (A27)
+
+- إلزامي: لكل هدف مؤشر وعتبة وتاريخ ← جدول المؤشرات
+- إلزامي: ثلاثة خيارات مختلفة المنهج مع توصية ← جدول المقارنة
+- جودة: تشريح مسبق بأهم أسباب الفشل والوقاية ← think.py plan
+- جودة: بوابات go/pivot/kill مكتوبة قبل النتائج ← think.py gate
+- إلزامي: خطوة أولى صغيرة قابلة للتراجع هذا الأسبوع ← مراجعة
+- أمر الحكم في الوضع 1: `think.py qa plan --answers qa.json` (PASS / FAIL / INCOMPLETE).
+
+#### 5. التعافي (A29)
+
+- `missing_dependency` (اعتمادية مفقودة، ميزانية 2): سمِّ الاعتمادية بالضبط (حزمة، برنامج، خط، نموذج) ← ثبّت محليًا في بيئة العمل إن كان مجانيًا ومسموحًا (pip --user أو venv أو npm محلي) · البديل: مسار المكتبة القياسية أو أداة أخرى من نفس المجموعة · تصعيد: تثبيت نظامي أو مدفوع أو يحتاج مفتاحًا: توقف واسأل
+- `quality_below_threshold` (جودة دون العتبة، ميزانية 3): أي معيار فشل وبكم (المقيس مقابل العتبة) ← عالج السبب الأكبر وحده ثم أعد القياس · البديل: المنهج البديل المكتوب للمرحلة في الخطة · تصعيد: معيار إلزامي لا يتحقق بعد البديل: توقف وأبلغ بالأرقام
+
+#### 6. الأدلة
+
+- `https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/2431-discipline/9420-reason-dont-recite`
+
+#### 7. قدرات قريبة في العائلة
+
+- `AMIND-72` من التخطيط إلى التنفيذ بسلطتين: التوجيه التقني لك ويُسجل، والوظيفي والتشغيلي للمستخدم ويُسأل، والخطة هي المواصفة / Plan, then implement, under two authorities: technical direction is yours and logged, functional and operational direction is the user's and asked; the plan is the spec (documented)
+- `AMIND-73` مدقق الاستدلال: مصفوفة تتبع من الشروط الأصلية إلى الاستنتاج، وتصنيف كل افتراض معطى أو مُثبت أو مستنتج أو مخترع أو مجهول / Reasoning verifier: a traceability matrix from the original conditions to the conclusion, with each assumption classed given, verified, deduced, invented or unknown (documented)
+- `AMIND-75` عصف ذهني بقدر الحاجة: فرز بسيط أو مضغوط أو كامل، وكبسولة قرار من خمسة أسطر، وفحص سياق رخيص قبل الأسئلة / Brainstorm only as much as needed: minimal, compact or full triage, a five-line decision capsule, and a cheap context preflight before questions (documented)
+- `AMIND-76` استخراج القرارات التي تقوم عليها النية: اعرض الخريطة كاملة أولًا، واسأل فقط ما لا يُشتق، والمدخلات مادة لا حقيقة / Elicit the decisions an intent turns on: show the whole map first, ask only what cannot be derived, treat input as material not truth (documented)
+
+### `AMIND-75` — عصف ذهني بقدر الحاجة: فرز بسيط أو مضغوط أو كامل، وكبسولة قرار من خمسة أسطر، وفحص سياق رخيص قبل الأسئلة / Brainstorm only as much as needed: minimal, compact or full triage, a five-line decision capsule, and a cheap context preflight before questions
+
+| الحقل | القيمة |
+|---|---|
+| العائلة | `atlas-mind` ([فصل العائلة](../../../.claude/skills/kosif-superpowers/references/powers/atlas-mind.md)) |
+| المجموعة | التفكير والتخطيط والاستراتيجية (`thinking`) |
+| نوع المخرج (A25، A27) | خطة واستراتيجية وقرار (`plan`) |
+| الحالة في الكتالوج | 📄 `documented`: منهج موصوف يحتاج بناءً أو ربطًا قبل التشغيل |
+| سقف التحقق قبل العمل (A27) | V1 حتى تُبنى وتُشغَّل؛ لا تقدَّم جاهزة أبدًا |
+| نطاق الدليل | `url` |
+| الرخصة | card in our own words; the original skill folders are copied verbatim with their MIT license and SOURCE.md under vendor/kosif-atlas |
+
+**ما هي:** اختر أقل قدر من عمل التصميم يزيل عدم اليقين المهم؛ العمل الروتيني لا يتحول إلى مقابلة. العمل الآلي يُسجل ويُنفذ، والمحدود بافتراض مهم ينتج كبسولة قصيرة، والكامل فقط للعمل الشامل أو الواجهات العامة أو الترحيل أو الأمان أو الكلفة أو الهدف الغامض. — Default-and-proceed design thinking.
+
+**متى:** فكّر في هذا قبل البناء، brainstorm، ما البدائل، قبل أي ميزة جديدة / thinking a change through before building
+
+**كيف:** 1) Cheap preflight: glob the project for design docs, sources and config (README and LICENSE do not count); read the latest one or two design docs and recent commits if relevant, or say it is greenfield. 2) Triage: minimal (mechanical, no design decision: record outcome, convention, the direct check, proceed), compact (a material default or small compatibility risk), full (cross-cutting, public interface, persistence or migration, security or privacy, external cost, unclear goal). 3) Search memory and the repo once for an existing decision or convention and reuse it when it settles the choice. 4) Set material defaults and proceed; ask one structured question with 2 or 3 options only for a goal-defining or hard-to-reverse fork evidence cannot settle. 5) For full triage compare only genuinely distinct alternatives on the relevant axes. 6) Write the capsule: outcome, material defaults and non-goals, repository evidence, remaining risk, handoff. 7) Standalone brainstorming never edits code; it suggests the next step. Full original skill(s) with license: vendor/kosif-atlas/skills/1397-brainstorm/3333-brainstorm, vendor/kosif-atlas/skills/3606-hotl/14485-brainstorming.
+
+**المعاملات:** request, repository
+
+**التثبيت:** mkdir -p ~/.claude/skills && cp -r .claude/skills/kosif-superpowers/vendor/kosif-atlas/skills/1397-brainstorm/3333-brainstorm ~/.claude/skills/brainstorm ; mkdir -p ~/.claude/skills && cp -r .claude/skills/kosif-superpowers/vendor/kosif-atlas/skills/3606-hotl/14485-brainstorming ~/.claude/skills/brainstorming
+
+**الوسوم:** brainstorm · design decision · triage · defaults · عصف ذهني · قرار التصميم
+
+#### 1. الاستقبال (A25)
+
+- الهدف القابل للقياس: سؤال بإجابة مقترحة ← هدف مقترح بعتبة رقمية يُعرض للتعديل
+- الأفق الزمني: افتراض مكتوب ← 90 يومًا
+- الموارد والميزانية: افتراض مكتوب ← شخص واحد بلا صرف
+- لا تُفترض أبدًا: مادة الإنتاج نفسها، والإذن بخطوة مدفوعة أو منشورة أو لا رجعة فيها، والهوية والحقوق.
+
+#### 2. الجاهزية والشارة (A28)
+
+- لا متطلبات مسجلة؛ افحص المسار والأداة بـ `hub.py doctor` قبل الشارة.
+- الوضع 1: شارة «هنا الآن» بعد الفحص، لا 📄 الكتالوج تلقائيًا · الوضع 2: `كتالوج: 📄 · هنا: غير مفحوص` · الوضع 3: بلا شارة ولا معرّف.
+
+#### 3. موضعها في الخطة (A26)
+
+- عقدة منمّطة: المدخل `brief` ← المخرج `plan`، والمنفّذ `method:AMIND-75` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
+- لا أداة مسجلة تخدم عائلتها: التنفيذ بالمكتبات أو بأداة من مجموعة أخرى.
+- مراحل النوع: الهدف بمؤشره ← ثلاثة خيارات مختلفة ← تقييم وحساسية ← تشريح مسبق ← بوابات مكتوبة ← خطوة أولى قابلة للتراجع.
+- إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
+
+#### 4. بوابة التحقق (A27)
+
+- إلزامي: لكل هدف مؤشر وعتبة وتاريخ ← جدول المؤشرات
+- إلزامي: ثلاثة خيارات مختلفة المنهج مع توصية ← جدول المقارنة
+- جودة: تشريح مسبق بأهم أسباب الفشل والوقاية ← think.py plan
+- جودة: بوابات go/pivot/kill مكتوبة قبل النتائج ← think.py gate
+- إلزامي: خطوة أولى صغيرة قابلة للتراجع هذا الأسبوع ← مراجعة
+- أمر الحكم في الوضع 1: `think.py qa plan --answers qa.json` (PASS / FAIL / INCOMPLETE).
+
+#### 5. التعافي (A29)
+
+- `missing_dependency` (اعتمادية مفقودة، ميزانية 2): سمِّ الاعتمادية بالضبط (حزمة، برنامج، خط، نموذج) ← ثبّت محليًا في بيئة العمل إن كان مجانيًا ومسموحًا (pip --user أو venv أو npm محلي) · البديل: مسار المكتبة القياسية أو أداة أخرى من نفس المجموعة · تصعيد: تثبيت نظامي أو مدفوع أو يحتاج مفتاحًا: توقف واسأل
+- `quality_below_threshold` (جودة دون العتبة، ميزانية 3): أي معيار فشل وبكم (المقيس مقابل العتبة) ← عالج السبب الأكبر وحده ثم أعد القياس · البديل: المنهج البديل المكتوب للمرحلة في الخطة · تصعيد: معيار إلزامي لا يتحقق بعد البديل: توقف وأبلغ بالأرقام
+
+#### 6. الأدلة
+
+- `https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/1397-brainstorm/3333-brainstorm`
+- `https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/3606-hotl/14485-brainstorming`
+
+#### 7. قدرات قريبة في العائلة
+
+- `AMIND-73` مدقق الاستدلال: مصفوفة تتبع من الشروط الأصلية إلى الاستنتاج، وتصنيف كل افتراض معطى أو مُثبت أو مستنتج أو مخترع أو مجهول / Reasoning verifier: a traceability matrix from the original conditions to the conclusion, with each assumption classed given, verified, deduced, invented or unknown (documented)
+- `AMIND-74` استدل ولا تردد: الموروث يصف ما هو كائن ولا يبرر نفسه، فأعد اشتقاق القرارات التي تعيش على السابقة / Reason, don't recite: inherited content describes what is and does not justify itself, so re-derive decisions coasting on precedent (documented)
+- `AMIND-76` استخراج القرارات التي تقوم عليها النية: اعرض الخريطة كاملة أولًا، واسأل فقط ما لا يُشتق، والمدخلات مادة لا حقيقة / Elicit the decisions an intent turns on: show the whole map first, ask only what cannot be derived, treat input as material not truth (documented)
+- `AMIND-77` اختيار مسار تنفيذ الوكلاء: مالك واحد لكل خانة (المواصفة، انضباط التنفيذ، المراجعة، أمان الكود، حوكمة الإعداد) / Choose agent execution rails: one owner per slot (spec, execution discipline, review, code security, setup governance) (documented)
+
+### `AMIND-76` — استخراج القرارات التي تقوم عليها النية: اعرض الخريطة كاملة أولًا، واسأل فقط ما لا يُشتق، والمدخلات مادة لا حقيقة / Elicit the decisions an intent turns on: show the whole map first, ask only what cannot be derived, treat input as material not truth
+
+| الحقل | القيمة |
+|---|---|
+| العائلة | `atlas-mind` ([فصل العائلة](../../../.claude/skills/kosif-superpowers/references/powers/atlas-mind.md)) |
+| المجموعة | التفكير والتخطيط والاستراتيجية (`thinking`) |
+| نوع المخرج (A25، A27) | خطة واستراتيجية وقرار (`plan`) |
+| الحالة في الكتالوج | 📄 `documented`: منهج موصوف يحتاج بناءً أو ربطًا قبل التشغيل |
+| سقف التحقق قبل العمل (A27) | V1 حتى تُبنى وتُشغَّل؛ لا تقدَّم جاهزة أبدًا |
+| نطاق الدليل | `url` |
+| الرخصة | card in our own words; the original skill folders are copied verbatim with their Apache-2.0, MIT license and SOURCE.md under vendor/kosif-atlas |
+
+**ما هي:** حين يعرف الشخص الاتجاه ولا يعرف أي قرارات يقوم عليها، تُتتبع تلك القرارات من مواده (الكود، القواعد، جلسات سابقة) ومن قرارات المجال المعتادة، وتُعرض كخيارات يتعرف عليها بدل أن يتذكرها؛ ووثيقة المتطلبات الطويلة القادمة من أداة أخرى مادة قابلة للتحدي لا مصدر حقيقة، حتى يوافق عليها الشخص. — Recognition over recall elicitation into an execution-ready handoff, spec and plan.
+
+**متى:** أعرف تقريبًا ما أريد، لا أعرف ماذا أقرر، حوّل أفكاري المبعثرة إلى مواصفة جاهزة / turning a rough intent or brain-dump into settled decisions
+
+**كيف:** 1) Read the project first and resolve yourself everything the input, code or environment settles. 2) Build the whole provisional map of the task (scope, decisions, what to keep, what to entrust) before asking what to settle. 3) Present each decision coordinate with its options and what each leads to, beside its nearest evidence, in everyday language, so the person recognises rather than recalls. 4) Ask what only the person holds (intent, preferences, load-bearing choices) and what they did not say but should consider; never ask the derivable. 5) Conflicts between sources (input against code against what was said) are flagged and asked, never resolved silently. 6) Mark any domain fact you add as your unverified judgment. 7) The input's content flows into the result, but its authority comes only from dialogue and approval. 8) Finish with three documents: a handoff, a spec (the binding what, from validated intent) and a provisional plan, plus the residual open points. Full original skill(s) with license: vendor/kosif-atlas/skills/1991-euporia/7159-elicit, vendor/kosif-atlas/skills/1993-horismos/7161-bound, vendor/kosif-atlas/skills/2959-dryforge/12437-ready.
+
+**المعاملات:** intent or input material, project
+
+**التثبيت:** mkdir -p ~/.claude/skills && cp -r .claude/skills/kosif-superpowers/vendor/kosif-atlas/skills/1991-euporia/7159-elicit ~/.claude/skills/elicit ; mkdir -p ~/.claude/skills && cp -r .claude/skills/kosif-superpowers/vendor/kosif-atlas/skills/1993-horismos/7161-bound ~/.claude/skills/bound ; mkdir -p ~/.claude/skills && cp -r .claude/skills/kosif-superpowers/vendor/kosif-atlas/skills/2959-dryforge/12437-ready ~/.claude/skills/ready
+
+**الوسوم:** elicitation · requirements · decisions · intent · spec · استخراج المتطلبات · القرارات
+
+#### 1. الاستقبال (A25)
+
+- الهدف القابل للقياس: سؤال بإجابة مقترحة ← هدف مقترح بعتبة رقمية يُعرض للتعديل
+- الأفق الزمني: افتراض مكتوب ← 90 يومًا
+- الموارد والميزانية: افتراض مكتوب ← شخص واحد بلا صرف
+- لا تُفترض أبدًا: مادة الإنتاج نفسها، والإذن بخطوة مدفوعة أو منشورة أو لا رجعة فيها، والهوية والحقوق.
+
+#### 2. الجاهزية والشارة (A28)
+
+- لا متطلبات مسجلة؛ افحص المسار والأداة بـ `hub.py doctor` قبل الشارة.
+- الوضع 1: شارة «هنا الآن» بعد الفحص، لا 📄 الكتالوج تلقائيًا · الوضع 2: `كتالوج: 📄 · هنا: غير مفحوص` · الوضع 3: بلا شارة ولا معرّف.
+
+#### 3. موضعها في الخطة (A26)
+
+- عقدة منمّطة: المدخل `brief` ← المخرج `plan`، والمنفّذ `method:AMIND-76` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
+- لا أداة مسجلة تخدم عائلتها: التنفيذ بالمكتبات أو بأداة من مجموعة أخرى.
+- مراحل النوع: الهدف بمؤشره ← ثلاثة خيارات مختلفة ← تقييم وحساسية ← تشريح مسبق ← بوابات مكتوبة ← خطوة أولى قابلة للتراجع.
+- إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
+
+#### 4. بوابة التحقق (A27)
+
+- إلزامي: لكل هدف مؤشر وعتبة وتاريخ ← جدول المؤشرات
+- إلزامي: ثلاثة خيارات مختلفة المنهج مع توصية ← جدول المقارنة
+- جودة: تشريح مسبق بأهم أسباب الفشل والوقاية ← think.py plan
+- جودة: بوابات go/pivot/kill مكتوبة قبل النتائج ← think.py gate
+- إلزامي: خطوة أولى صغيرة قابلة للتراجع هذا الأسبوع ← مراجعة
+- أمر الحكم في الوضع 1: `think.py qa plan --answers qa.json` (PASS / FAIL / INCOMPLETE).
+
+#### 5. التعافي (A29)
+
+- `missing_dependency` (اعتمادية مفقودة، ميزانية 2): سمِّ الاعتمادية بالضبط (حزمة، برنامج، خط، نموذج) ← ثبّت محليًا في بيئة العمل إن كان مجانيًا ومسموحًا (pip --user أو venv أو npm محلي) · البديل: مسار المكتبة القياسية أو أداة أخرى من نفس المجموعة · تصعيد: تثبيت نظامي أو مدفوع أو يحتاج مفتاحًا: توقف واسأل
+- `quality_below_threshold` (جودة دون العتبة، ميزانية 3): أي معيار فشل وبكم (المقيس مقابل العتبة) ← عالج السبب الأكبر وحده ثم أعد القياس · البديل: المنهج البديل المكتوب للمرحلة في الخطة · تصعيد: معيار إلزامي لا يتحقق بعد البديل: توقف وأبلغ بالأرقام
+
+#### 6. الأدلة
+
+- `https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/1991-euporia/7159-elicit`
+- `https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/1993-horismos/7161-bound`
+- `https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/2959-dryforge/12437-ready`
+
+#### 7. قدرات قريبة في العائلة
+
+- `AMIND-74` استدل ولا تردد: الموروث يصف ما هو كائن ولا يبرر نفسه، فأعد اشتقاق القرارات التي تعيش على السابقة / Reason, don't recite: inherited content describes what is and does not justify itself, so re-derive decisions coasting on precedent (documented)
+- `AMIND-75` عصف ذهني بقدر الحاجة: فرز بسيط أو مضغوط أو كامل، وكبسولة قرار من خمسة أسطر، وفحص سياق رخيص قبل الأسئلة / Brainstorm only as much as needed: minimal, compact or full triage, a five-line decision capsule, and a cheap context preflight before questions (documented)
+- `AMIND-77` اختيار مسار تنفيذ الوكلاء: مالك واحد لكل خانة (المواصفة، انضباط التنفيذ، المراجعة، أمان الكود، حوكمة الإعداد) / Choose agent execution rails: one owner per slot (spec, execution discipline, review, code security, setup governance) (documented)
+- `AMIND-78` تقييم مهارة كدالة تحت الاختبار: تشغيل أعمى بوكيل جديد لكل حالة، وحكم منفصل يطبق المعيار، وسقاطة لا تقبل تراجع الدرجة / Evaluate a skill like a function under test: a blind fresh agent per case, a separate judge applying the bar, and a ratchet that never accepts a lower score (documented)
+
+### `AMIND-77` — اختيار مسار تنفيذ الوكلاء: مالك واحد لكل خانة (المواصفة، انضباط التنفيذ، المراجعة، أمان الكود، حوكمة الإعداد) / Choose agent execution rails: one owner per slot (spec, execution discipline, review, code security, setup governance)
+
+| الحقل | القيمة |
+|---|---|
+| العائلة | `atlas-mind` ([فصل العائلة](../../../.claude/skills/kosif-superpowers/references/powers/atlas-mind.md)) |
+| المجموعة | التفكير والتخطيط والاستراتيجية (`thinking`) |
+| نوع المخرج (A25، A27) | خطة واستراتيجية وقرار (`plan`) |
+| الحالة في الكتالوج | 📄 `documented`: منهج موصوف يحتاج بناءً أو ربطًا قبل التشغيل |
+| سقف التحقق قبل العمل (A27) | V1 حتى تُبنى وتُشغَّل؛ لا تقدَّم جاهزة أبدًا |
+| نطاق الدليل | `url` |
+| الرخصة | card in our own words; the original skill folders are copied verbatim with their MIT license and SOURCE.md under vendor/kosif-atlas |
+
+**ما هي:** أطر العمل الجاهزة للوكلاء (Superpowers وSpec Kit وGSD وBMAD ووضع التخطيط المدمج) تتصارع إذا ادعى اثنان منها نفس الخانة على نفس ملفات الحالة؛ يجرد المثبت، ويسأل ثلاثة أسئلة، ويعين مالكًا واحدًا لكل خانة، ويوصل المواصفات والمهام وتعريف الإنجاز بها. — Avoid two frameworks fighting over planning or execution.
+
+**متى:** أي إطار عمل للوكلاء نستخدم، إطاران مثبتان يتعارضان، إعداد فريق لاستخدام الوكلاء / choosing or combining agentic coding frameworks
+
+**كيف:** 1) Inventory what is installed (plugin list, .claude, .specify, .planning, .gsd, _bmad) and flag any slot with two owners. 2) Ask: team size and seniority; the main failure today (wrong thing built, broken code, context loss, review overload); one agent tool or several. 3) Assign one owner per slot: spec and plan, execution discipline (TDD, review, debugging, worktrees), review, security review of code, governance of the agent setup. 4) Typical picks: a team new to agents uses built-in plan mode with a feature workflow plus a light spec skill; quality problems call for an execution-discipline framework with enforced tests and two-stage review; several agent tools across an organisation call for a tool-agnostic spec format; a solo builder on long projects needs context-rot control and milestones; enterprises with role handoffs pair a structured spec framework with an execution one. 5) Remove or disable the losing owner of a contested slot. 6) Wire the specs, tasks and definition of done into the chosen rail. 7) Note that generic coding skills often add little on top of a strong model, so measure before adding more. Full original skill(s) with license: vendor/kosif-atlas/skills/3046-adlc-build/13093-execution-rail-selection.
+
+**المعاملات:** installed frameworks, team context
+
+**التثبيت:** mkdir -p ~/.claude/skills && cp -r .claude/skills/kosif-superpowers/vendor/kosif-atlas/skills/3046-adlc-build/13093-execution-rail-selection ~/.claude/skills/execution-rail-selection
+
+**الوسوم:** agent frameworks · Superpowers · Spec Kit · execution rail · أطر الوكلاء
+
+#### 1. الاستقبال (A25)
+
+- الهدف القابل للقياس: سؤال بإجابة مقترحة ← هدف مقترح بعتبة رقمية يُعرض للتعديل
+- الأفق الزمني: افتراض مكتوب ← 90 يومًا
+- الموارد والميزانية: افتراض مكتوب ← شخص واحد بلا صرف
+- لا تُفترض أبدًا: مادة الإنتاج نفسها، والإذن بخطوة مدفوعة أو منشورة أو لا رجعة فيها، والهوية والحقوق.
+
+#### 2. الجاهزية والشارة (A28)
+
+- `claude:tools` ← افحص وجوده بأمر واحد قبل كتابة الشارة
+- الوضع 1: شارة «هنا الآن» بعد الفحص، لا 📄 الكتالوج تلقائيًا · الوضع 2: `كتالوج: 📄 · هنا: غير مفحوص` · الوضع 3: بلا شارة ولا معرّف.
+
+#### 3. موضعها في الخطة (A26)
+
+- عقدة منمّطة: المدخل `brief` ← المخرج `plan`، والمنفّذ `method:AMIND-77` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
+- لا أداة مسجلة تخدم عائلتها: التنفيذ بالمكتبات أو بأداة من مجموعة أخرى.
+- مراحل النوع: الهدف بمؤشره ← ثلاثة خيارات مختلفة ← تقييم وحساسية ← تشريح مسبق ← بوابات مكتوبة ← خطوة أولى قابلة للتراجع.
+- إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
+
+#### 4. بوابة التحقق (A27)
+
+- إلزامي: لكل هدف مؤشر وعتبة وتاريخ ← جدول المؤشرات
+- إلزامي: ثلاثة خيارات مختلفة المنهج مع توصية ← جدول المقارنة
+- جودة: تشريح مسبق بأهم أسباب الفشل والوقاية ← think.py plan
+- جودة: بوابات go/pivot/kill مكتوبة قبل النتائج ← think.py gate
+- إلزامي: خطوة أولى صغيرة قابلة للتراجع هذا الأسبوع ← مراجعة
+- أمر الحكم في الوضع 1: `think.py qa plan --answers qa.json` (PASS / FAIL / INCOMPLETE).
+
+#### 5. التعافي (A29)
+
+- `missing_dependency` (اعتمادية مفقودة، ميزانية 2): سمِّ الاعتمادية بالضبط (حزمة، برنامج، خط، نموذج) ← ثبّت محليًا في بيئة العمل إن كان مجانيًا ومسموحًا (pip --user أو venv أو npm محلي) · البديل: مسار المكتبة القياسية أو أداة أخرى من نفس المجموعة · تصعيد: تثبيت نظامي أو مدفوع أو يحتاج مفتاحًا: توقف واسأل
+- `quality_below_threshold` (جودة دون العتبة، ميزانية 3): أي معيار فشل وبكم (المقيس مقابل العتبة) ← عالج السبب الأكبر وحده ثم أعد القياس · البديل: المنهج البديل المكتوب للمرحلة في الخطة · تصعيد: معيار إلزامي لا يتحقق بعد البديل: توقف وأبلغ بالأرقام
+
+#### 6. الأدلة
+
+- `https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/3046-adlc-build/13093-execution-rail-selection`
+
+#### 7. قدرات قريبة في العائلة
+
+- `AMIND-75` عصف ذهني بقدر الحاجة: فرز بسيط أو مضغوط أو كامل، وكبسولة قرار من خمسة أسطر، وفحص سياق رخيص قبل الأسئلة / Brainstorm only as much as needed: minimal, compact or full triage, a five-line decision capsule, and a cheap context preflight before questions (documented)
+- `AMIND-76` استخراج القرارات التي تقوم عليها النية: اعرض الخريطة كاملة أولًا، واسأل فقط ما لا يُشتق، والمدخلات مادة لا حقيقة / Elicit the decisions an intent turns on: show the whole map first, ask only what cannot be derived, treat input as material not truth (documented)
+- `AMIND-78` تقييم مهارة كدالة تحت الاختبار: تشغيل أعمى بوكيل جديد لكل حالة، وحكم منفصل يطبق المعيار، وسقاطة لا تقبل تراجع الدرجة / Evaluate a skill like a function under test: a blind fresh agent per case, a separate judge applying the bar, and a ratchet that never accepts a lower score (documented)
+- `AMIND-79` تأليف المهارات وإدارة مكتبتها: هل هي مهارة أصلًا، ووصف يقول متى لا ماذا، وإبقاء أو إصلاح أو حذف حسب الفرق المقاس / Authoring skills and curating the library: is it a skill at all, a description that says when not what, and keep/fix/cut by measured delta (documented)
+
+### `AMIND-78` — تقييم مهارة كدالة تحت الاختبار: تشغيل أعمى بوكيل جديد لكل حالة، وحكم منفصل يطبق المعيار، وسقاطة لا تقبل تراجع الدرجة / Evaluate a skill like a function under test: a blind fresh agent per case, a separate judge applying the bar, and a ratchet that never accepts a lower score
+
+| الحقل | القيمة |
+|---|---|
+| العائلة | `atlas-mind` ([فصل العائلة](../../../.claude/skills/kosif-superpowers/references/powers/atlas-mind.md)) |
+| المجموعة | التفكير والتخطيط والاستراتيجية (`thinking`) |
+| نوع المخرج (A25، A27) | خطة واستراتيجية وقرار (`plan`) |
+| الحالة في الكتالوج | 📄 `documented`: منهج موصوف يحتاج بناءً أو ربطًا قبل التشغيل |
+| سقف التحقق قبل العمل (A27) | V1 حتى تُبنى وتُشغَّل؛ لا تقدَّم جاهزة أبدًا |
+| نطاق الدليل | `url` |
+| الرخصة | card in our own words; the original skill folders are copied verbatim with their MIT license and SOURCE.md under vendor/kosif-atlas |
+
+**ما هي:** التقييم صادق فقط إذا كان أعمى: الوكيل المنفذ لا يحمل سياق المحادثة ولا يرى الناتج المتوقع. يحتاج ثلاثة مدخلات قبل البدء (مهارة حقيقية، حالة ذهبية واحدة على الأقل بمدخل فعلي، ومعيار لكل حالة يصف النتيجة الجيدة وروائح الفشل)، ثم حكمًا مستقلًا، ثم تعديلات تقودها الإخفاقات، مع مقارنة 'بالمهارة' و'بدونها' وحكمين ووسيط. — Honest skill evals and improvement loops.
+
+**متى:** قيّم هذه المهارة، حسّن مهارة، هل المهارة تفيد أصلًا، درجة المهارة نزلت بعد التعديل / evaluating or improving a skill
+
+**كيف:** 1) Settle three inputs or stop and say which is missing: a target that resolves to a real SKILL.md, at least one golden case with a concrete input the skill will really receive, and a bar per case stating what a good artifact achieves and which smells make it bad (not an exhaustive parts list, unless the skill is conformance-style). 2) Run each case blind in a fresh, context-free agent given only the input and the instruction to use the skill; never show it the bar. 3) Grade with a separate judge that applies judgment to the artifact against the bar; use two independent judges and take the median when scores matter. 4) Also run the same cases without the skill; a skill must show a positive delta or it is noise. 5) Grade transcripts too: flag unsupported claims and steps the skill pushed that were unnecessary. 6) Edit the skill from the failures, one change at a time, then rerun; if the score drops, roll back (a ratchet), so scores only rise. 7) Add one off-domain prompt to check it does not trigger where it should not. 8) Report per case: pass or fail, the evidence, the change made, before and after scores. Full original skill(s) with license: vendor/kosif-atlas/skills/360-skill-authoring/1290-eval-skills, vendor/kosif-atlas/skills/2212-majestic-misc/8301-skill-grader, vendor/kosif-atlas/skills/3601-skill-evolve/14445-skill-evolve.
+
+**المعاملات:** skill, golden cases, bar per case
+
+**التثبيت:** mkdir -p ~/.claude/skills && cp -r .claude/skills/kosif-superpowers/vendor/kosif-atlas/skills/360-skill-authoring/1290-eval-skills ~/.claude/skills/eval-skills ; mkdir -p ~/.claude/skills && cp -r .claude/skills/kosif-superpowers/vendor/kosif-atlas/skills/2212-majestic-misc/8301-skill-grader ~/.claude/skills/skill-grader ; mkdir -p ~/.claude/skills && cp -r .claude/skills/kosif-superpowers/vendor/kosif-atlas/skills/3601-skill-evolve/14445-skill-evolve ~/.claude/skills/skill-evolve
+
+**الوسوم:** skill eval · golden cases · blind run · LLM judge · baseline · تقييم المهارة · تطوير المهارات
+
+#### 1. الاستقبال (A25)
+
+- الهدف القابل للقياس: سؤال بإجابة مقترحة ← هدف مقترح بعتبة رقمية يُعرض للتعديل
+- الأفق الزمني: افتراض مكتوب ← 90 يومًا
+- الموارد والميزانية: افتراض مكتوب ← شخص واحد بلا صرف
+- لا تُفترض أبدًا: مادة الإنتاج نفسها، والإذن بخطوة مدفوعة أو منشورة أو لا رجعة فيها، والهوية والحقوق.
+
+#### 2. الجاهزية والشارة (A28)
+
+- لا متطلبات مسجلة؛ افحص المسار والأداة بـ `hub.py doctor` قبل الشارة.
+- الوضع 1: شارة «هنا الآن» بعد الفحص، لا 📄 الكتالوج تلقائيًا · الوضع 2: `كتالوج: 📄 · هنا: غير مفحوص` · الوضع 3: بلا شارة ولا معرّف.
+
+#### 3. موضعها في الخطة (A26)
+
+- عقدة منمّطة: المدخل `brief` ← المخرج `plan`، والمنفّذ `method:AMIND-78` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
+- لا أداة مسجلة تخدم عائلتها: التنفيذ بالمكتبات أو بأداة من مجموعة أخرى.
+- مراحل النوع: الهدف بمؤشره ← ثلاثة خيارات مختلفة ← تقييم وحساسية ← تشريح مسبق ← بوابات مكتوبة ← خطوة أولى قابلة للتراجع.
+- إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
+
+#### 4. بوابة التحقق (A27)
+
+- إلزامي: لكل هدف مؤشر وعتبة وتاريخ ← جدول المؤشرات
+- إلزامي: ثلاثة خيارات مختلفة المنهج مع توصية ← جدول المقارنة
+- جودة: تشريح مسبق بأهم أسباب الفشل والوقاية ← think.py plan
+- جودة: بوابات go/pivot/kill مكتوبة قبل النتائج ← think.py gate
+- إلزامي: خطوة أولى صغيرة قابلة للتراجع هذا الأسبوع ← مراجعة
+- أمر الحكم في الوضع 1: `think.py qa plan --answers qa.json` (PASS / FAIL / INCOMPLETE).
+
+#### 5. التعافي (A29)
+
+- `missing_dependency` (اعتمادية مفقودة، ميزانية 2): سمِّ الاعتمادية بالضبط (حزمة، برنامج، خط، نموذج) ← ثبّت محليًا في بيئة العمل إن كان مجانيًا ومسموحًا (pip --user أو venv أو npm محلي) · البديل: مسار المكتبة القياسية أو أداة أخرى من نفس المجموعة · تصعيد: تثبيت نظامي أو مدفوع أو يحتاج مفتاحًا: توقف واسأل
+- `quality_below_threshold` (جودة دون العتبة، ميزانية 3): أي معيار فشل وبكم (المقيس مقابل العتبة) ← عالج السبب الأكبر وحده ثم أعد القياس · البديل: المنهج البديل المكتوب للمرحلة في الخطة · تصعيد: معيار إلزامي لا يتحقق بعد البديل: توقف وأبلغ بالأرقام
+
+#### 6. الأدلة
+
+- `https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/360-skill-authoring/1290-eval-skills`
+- `https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/2212-majestic-misc/8301-skill-grader`
+- `https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/3601-skill-evolve/14445-skill-evolve`
+
+#### 7. قدرات قريبة في العائلة
+
+- `AMIND-76` استخراج القرارات التي تقوم عليها النية: اعرض الخريطة كاملة أولًا، واسأل فقط ما لا يُشتق، والمدخلات مادة لا حقيقة / Elicit the decisions an intent turns on: show the whole map first, ask only what cannot be derived, treat input as material not truth (documented)
+- `AMIND-77` اختيار مسار تنفيذ الوكلاء: مالك واحد لكل خانة (المواصفة، انضباط التنفيذ، المراجعة، أمان الكود، حوكمة الإعداد) / Choose agent execution rails: one owner per slot (spec, execution discipline, review, code security, setup governance) (documented)
+- `AMIND-79` تأليف المهارات وإدارة مكتبتها: هل هي مهارة أصلًا، ووصف يقول متى لا ماذا، وإبقاء أو إصلاح أو حذف حسب الفرق المقاس / Authoring skills and curating the library: is it a skill at all, a description that says when not what, and keep/fix/cut by measured delta (documented)
+- `AMIND-80` حوّل التصحيح المتكرر للوكيل إلى قاعدة في المكان الصحيح: ملف سياق أو مهارة أو قاعدة لمسار أو خطاف أو اختبار / Turn a repeated correction into a rule in the right place: context file, skill, path rule, hook or test (documented)
+
+### `AMIND-79` — تأليف المهارات وإدارة مكتبتها: هل هي مهارة أصلًا، ووصف يقول متى لا ماذا، وإبقاء أو إصلاح أو حذف حسب الفرق المقاس / Authoring skills and curating the library: is it a skill at all, a description that says when not what, and keep/fix/cut by measured delta
+
+| الحقل | القيمة |
+|---|---|
+| العائلة | `atlas-mind` ([فصل العائلة](../../../.claude/skills/kosif-superpowers/references/powers/atlas-mind.md)) |
+| المجموعة | التفكير والتخطيط والاستراتيجية (`thinking`) |
+| نوع المخرج (A25، A27) | خطة واستراتيجية وقرار (`plan`) |
+| الحالة في الكتالوج | 📄 `documented`: منهج موصوف يحتاج بناءً أو ربطًا قبل التشغيل |
+| سقف التحقق قبل العمل (A27) | V1 حتى تُبنى وتُشغَّل؛ لا تقدَّم جاهزة أبدًا |
+| نطاق الدليل | `url` |
+| الرخصة | card in our own words; the original skill folders are copied verbatim with their MIT license and SOURCE.md under vendor/kosif-atlas |
+
+**ما هي:** المهارة ليست مجانية: المهارات المركزة الخاصة بالمؤسسة تفيد، والعامة كثيرًا لا تضيف شيئًا وقد تدفع الوكيل لعمل زائد، ومجموعات صغيرة من مهارتين أو ثلاث تتفوق على الحزم الكبيرة. قبل الكتابة: هل الأنسب مهارة أم مرجع أم سكربت أم prompt أم لا شيء؟ ثم وصف يبدأ بـ'Use when' ويذكر المواقف لا ملخص الخطوات، وإجراءات لا مقالات، وكشف تدريجي، وتحقق بالاستخدام. — Skill design and library hygiene.
+
+**متى:** اكتب مهارة، حسّن وصف مهارة، المهارة لا تُستدعى أو تُستدعى خطأ، تنظيف مكتبة المهارات / writing skills or pruning a skill library
+
+**كيف:** 1) Capability test: choose between a skill, a reference file, a script, a prompt, or nothing; a deterministic step belongs in a script, an always-relevant short rule in the context file. 2) Duplicate check: search existing names, descriptions and bodies for the same trigger and output; improve an existing skill rather than add one users cannot tell apart; split only when start conditions, workflow or deliverable really differ. 3) Description: when to use, not what it does; start with 'Use when', list situations and symptoms, front-load the trigger words, third person; a workflow summary in the description lets the agent act on the summary and skip the body. Respect length budgets (for example description up to about 500 characters, whole front matter about 1,024) and quote YAML only where needed. 4) Body: boundary and exclusions, required inputs, ordered steps with decision points, the output shape, a verification gate, links to resources only where needed; procedures and decision tables, not essays; examples show the problem, not the solution. 5) Progressive disclosure: keep SKILL.md short, move long material to references and scripts. 6) Encode what the model cannot know (conventions, thresholds, approval rules); generic advice the model already follows is cut. 7) Library test: positive delta on evals and natural triggering, keep; near-zero delta, cut or narrow to the org-specific part; no trigger on realistic prompts, fix the description; triggers on unrelated prompts, narrow it and add a negative case; negative delta or heavy token overhead, cut or rewrite; duplicates an installed framework, pick one owner. 8) After changes update routing indexes and any mirrors, then verify by use. Full original skill(s) with license: vendor/kosif-atlas/skills/360-skill-authoring/1291-write-skills, vendor/kosif-atlas/skills/2212-majestic-misc/8302-skill-structure, vendor/kosif-atlas/skills/3047-adlc-context/13105-skill-library-management, vendor/kosif-atlas/skills/3606-hotl/14498-skill-authoring, vendor/kosif-atlas/skills/2588-write-a-skill/9955-write-a-skill, vendor/kosif-atlas/skills/1543-toolkit-ops/4233-toolkit-skill-standards.
+
+**المعاملات:** skill or library
+
+**التثبيت:** mkdir -p ~/.claude/skills && cp -r .claude/skills/kosif-superpowers/vendor/kosif-atlas/skills/360-skill-authoring/1291-write-skills ~/.claude/skills/write-skills ; mkdir -p ~/.claude/skills && cp -r .claude/skills/kosif-superpowers/vendor/kosif-atlas/skills/2212-majestic-misc/8302-skill-structure ~/.claude/skills/skill-structure ; mkdir -p ~/.claude/skills && cp -r .claude/skills/kosif-superpowers/vendor/kosif-atlas/skills/3047-adlc-context/13105-skill-library-management ~/.claude/skills/skill-library-management ; mkdir -p ~/.claude/skills && cp -r .claude/skills/kosif-superpowers/vendor/kosif-atlas/skills/3606-hotl/14498-skill-authoring ~/.claude/skills/skill-authoring ; mkdir -p ~/.claude/skills && cp -r .claude/skills/kosif-superpowers/vendor/kosif-atlas/skills/2588-write-a-skill/9955-write-a-skill ~/.claude/skills/write-a-skill ; mkdir -p ~/.claude/skills && cp -r .claude/skills/kosif-superpowers/vendor/kosif-atlas/skills/1543-toolkit-ops/4233-toolkit-skill-standards ~/.claude/skills/toolkit-skill-standards
+
+**الوسوم:** write a skill · SKILL.md · skill description · skill library · progressive disclosure · تأليف المهارات · مكتبة المهارات
+
+#### 1. الاستقبال (A25)
+
+- الهدف القابل للقياس: سؤال بإجابة مقترحة ← هدف مقترح بعتبة رقمية يُعرض للتعديل
+- الأفق الزمني: افتراض مكتوب ← 90 يومًا
+- الموارد والميزانية: افتراض مكتوب ← شخص واحد بلا صرف
+- لا تُفترض أبدًا: مادة الإنتاج نفسها، والإذن بخطوة مدفوعة أو منشورة أو لا رجعة فيها، والهوية والحقوق.
+
+#### 2. الجاهزية والشارة (A28)
+
+- لا متطلبات مسجلة؛ افحص المسار والأداة بـ `hub.py doctor` قبل الشارة.
+- الوضع 1: شارة «هنا الآن» بعد الفحص، لا 📄 الكتالوج تلقائيًا · الوضع 2: `كتالوج: 📄 · هنا: غير مفحوص` · الوضع 3: بلا شارة ولا معرّف.
+
+#### 3. موضعها في الخطة (A26)
+
+- عقدة منمّطة: المدخل `brief` ← المخرج `plan`، والمنفّذ `method:AMIND-79` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
+- لا أداة مسجلة تخدم عائلتها: التنفيذ بالمكتبات أو بأداة من مجموعة أخرى.
+- مراحل النوع: الهدف بمؤشره ← ثلاثة خيارات مختلفة ← تقييم وحساسية ← تشريح مسبق ← بوابات مكتوبة ← خطوة أولى قابلة للتراجع.
+- إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
+
+#### 4. بوابة التحقق (A27)
+
+- إلزامي: لكل هدف مؤشر وعتبة وتاريخ ← جدول المؤشرات
+- إلزامي: ثلاثة خيارات مختلفة المنهج مع توصية ← جدول المقارنة
+- جودة: تشريح مسبق بأهم أسباب الفشل والوقاية ← think.py plan
+- جودة: بوابات go/pivot/kill مكتوبة قبل النتائج ← think.py gate
+- إلزامي: خطوة أولى صغيرة قابلة للتراجع هذا الأسبوع ← مراجعة
+- أمر الحكم في الوضع 1: `think.py qa plan --answers qa.json` (PASS / FAIL / INCOMPLETE).
+
+#### 5. التعافي (A29)
+
+- `missing_dependency` (اعتمادية مفقودة، ميزانية 2): سمِّ الاعتمادية بالضبط (حزمة، برنامج، خط، نموذج) ← ثبّت محليًا في بيئة العمل إن كان مجانيًا ومسموحًا (pip --user أو venv أو npm محلي) · البديل: مسار المكتبة القياسية أو أداة أخرى من نفس المجموعة · تصعيد: تثبيت نظامي أو مدفوع أو يحتاج مفتاحًا: توقف واسأل
+- `quality_below_threshold` (جودة دون العتبة، ميزانية 3): أي معيار فشل وبكم (المقيس مقابل العتبة) ← عالج السبب الأكبر وحده ثم أعد القياس · البديل: المنهج البديل المكتوب للمرحلة في الخطة · تصعيد: معيار إلزامي لا يتحقق بعد البديل: توقف وأبلغ بالأرقام
+
+#### 6. الأدلة
+
+- `https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/360-skill-authoring/1291-write-skills`
+- `https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/2212-majestic-misc/8302-skill-structure`
+- `https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/3047-adlc-context/13105-skill-library-management`
+- `https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/3606-hotl/14498-skill-authoring`
+- `https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/2588-write-a-skill/9955-write-a-skill`
+- `https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/1543-toolkit-ops/4233-toolkit-skill-standards`
+
+#### 7. قدرات قريبة في العائلة
+
+- `AMIND-77` اختيار مسار تنفيذ الوكلاء: مالك واحد لكل خانة (المواصفة، انضباط التنفيذ، المراجعة، أمان الكود، حوكمة الإعداد) / Choose agent execution rails: one owner per slot (spec, execution discipline, review, code security, setup governance) (documented)
+- `AMIND-78` تقييم مهارة كدالة تحت الاختبار: تشغيل أعمى بوكيل جديد لكل حالة، وحكم منفصل يطبق المعيار، وسقاطة لا تقبل تراجع الدرجة / Evaluate a skill like a function under test: a blind fresh agent per case, a separate judge applying the bar, and a ratchet that never accepts a lower score (documented)
+- `AMIND-80` حوّل التصحيح المتكرر للوكيل إلى قاعدة في المكان الصحيح: ملف سياق أو مهارة أو قاعدة لمسار أو خطاف أو اختبار / Turn a repeated correction into a rule in the right place: context file, skill, path rule, hook or test (documented)
+- `AMIND-81` أسماء أفضل: مولدات عمياء من زوايا مختلفة لكسر التثبيت، ومعايير مرتبة تبدأ بألا يكذب الاسم، والإنسان يختار دائمًا / Better names: blind generators from distinct lenses to break the anchor, ranked criteria led by 'the name must not lie', and the human always picks (documented)
+
+### `AMIND-80` — حوّل التصحيح المتكرر للوكيل إلى قاعدة في المكان الصحيح: ملف سياق أو مهارة أو قاعدة لمسار أو خطاف أو اختبار / Turn a repeated correction into a rule in the right place: context file, skill, path rule, hook or test
+
+| الحقل | القيمة |
+|---|---|
+| العائلة | `atlas-mind` ([فصل العائلة](../../../.claude/skills/kosif-superpowers/references/powers/atlas-mind.md)) |
+| المجموعة | التفكير والتخطيط والاستراتيجية (`thinking`) |
+| نوع المخرج (A25، A27) | خطة واستراتيجية وقرار (`plan`) |
+| الحالة في الكتالوج | 📄 `documented`: منهج موصوف يحتاج بناءً أو ربطًا قبل التشغيل |
+| سقف التحقق قبل العمل (A27) | V1 حتى تُبنى وتُشغَّل؛ لا تقدَّم جاهزة أبدًا |
+| نطاق الدليل | `url` |
+| الرخصة | card in our own words; the original skill folders are copied verbatim with their MIT license and SOURCE.md under vendor/kosif-atlas |
+
+**ما هي:** كل تصحيح يتكرر للوكيل عرف لم يُكتب في مكانه. القصير الدائم في ملف السياق، والإجراء متعدد الخطوات المستخدم أحيانًا في مهارة، والخاص بمجلد أو نوع ملف في قاعدة لمسار، وما يجب أن يحدث كل مرة في خطاف أو مدقق أو فحص CI، وخاصية الصحة في اختبار. إذا كان كسره مكلفًا فلا تعتمد على التعليمات وحدها. — Feedforward and feedback controls.
+
+**متى:** الوكيل يكرر نفس الخطأ، 'نحن دائمًا نفعلها هكذا'، حوّل هذا إلى مهارة أو قاعدة / an agent keeps making the same mistake
+
+**كيف:** 1) Collect two or three concrete examples of the mistake or desired behaviour. 2) Classify: short and always relevant goes in the context file; a multi-step procedure or occasional domain knowledge becomes a skill; scoped to a folder or file type becomes a nested context file or path rule; must happen every time becomes a hook, linter rule or CI check; a correctness property becomes a test. 3) Context files and skills guide before acting; hooks, linters and tests catch after; strong setups use both. 4) Write the artifact, keeping a skill well under 500 lines with long material in references and scripts. 5) Provide a quick test prompt that should now produce the correct behaviour, and run it. Full original skill(s) with license: vendor/kosif-atlas/skills/3047-adlc-context/13102-codify-conventions.
+
+**المعاملات:** examples of the mistake
+
+**التثبيت:** mkdir -p ~/.claude/skills && cp -r .claude/skills/kosif-superpowers/vendor/kosif-atlas/skills/3047-adlc-context/13102-codify-conventions ~/.claude/skills/codify-conventions
+
+**الوسوم:** conventions · CLAUDE.md · hooks · rules · agent mistakes · الأعراف · قواعد الوكيل
+
+#### 1. الاستقبال (A25)
+
+- الهدف القابل للقياس: سؤال بإجابة مقترحة ← هدف مقترح بعتبة رقمية يُعرض للتعديل
+- الأفق الزمني: افتراض مكتوب ← 90 يومًا
+- الموارد والميزانية: افتراض مكتوب ← شخص واحد بلا صرف
+- لا تُفترض أبدًا: مادة الإنتاج نفسها، والإذن بخطوة مدفوعة أو منشورة أو لا رجعة فيها، والهوية والحقوق.
+
+#### 2. الجاهزية والشارة (A28)
+
+- لا متطلبات مسجلة؛ افحص المسار والأداة بـ `hub.py doctor` قبل الشارة.
+- الوضع 1: شارة «هنا الآن» بعد الفحص، لا 📄 الكتالوج تلقائيًا · الوضع 2: `كتالوج: 📄 · هنا: غير مفحوص` · الوضع 3: بلا شارة ولا معرّف.
+
+#### 3. موضعها في الخطة (A26)
+
+- عقدة منمّطة: المدخل `brief` ← المخرج `plan`، والمنفّذ `method:AMIND-80` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
+- لا أداة مسجلة تخدم عائلتها: التنفيذ بالمكتبات أو بأداة من مجموعة أخرى.
+- مراحل النوع: الهدف بمؤشره ← ثلاثة خيارات مختلفة ← تقييم وحساسية ← تشريح مسبق ← بوابات مكتوبة ← خطوة أولى قابلة للتراجع.
+- إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
+
+#### 4. بوابة التحقق (A27)
+
+- إلزامي: لكل هدف مؤشر وعتبة وتاريخ ← جدول المؤشرات
+- إلزامي: ثلاثة خيارات مختلفة المنهج مع توصية ← جدول المقارنة
+- جودة: تشريح مسبق بأهم أسباب الفشل والوقاية ← think.py plan
+- جودة: بوابات go/pivot/kill مكتوبة قبل النتائج ← think.py gate
+- إلزامي: خطوة أولى صغيرة قابلة للتراجع هذا الأسبوع ← مراجعة
+- أمر الحكم في الوضع 1: `think.py qa plan --answers qa.json` (PASS / FAIL / INCOMPLETE).
+
+#### 5. التعافي (A29)
+
+- `missing_dependency` (اعتمادية مفقودة، ميزانية 2): سمِّ الاعتمادية بالضبط (حزمة، برنامج، خط، نموذج) ← ثبّت محليًا في بيئة العمل إن كان مجانيًا ومسموحًا (pip --user أو venv أو npm محلي) · البديل: مسار المكتبة القياسية أو أداة أخرى من نفس المجموعة · تصعيد: تثبيت نظامي أو مدفوع أو يحتاج مفتاحًا: توقف واسأل
+- `quality_below_threshold` (جودة دون العتبة، ميزانية 3): أي معيار فشل وبكم (المقيس مقابل العتبة) ← عالج السبب الأكبر وحده ثم أعد القياس · البديل: المنهج البديل المكتوب للمرحلة في الخطة · تصعيد: معيار إلزامي لا يتحقق بعد البديل: توقف وأبلغ بالأرقام
+
+#### 6. الأدلة
+
+- `https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/3047-adlc-context/13102-codify-conventions`
+
+#### 7. قدرات قريبة في العائلة
+
+- `AMIND-78` تقييم مهارة كدالة تحت الاختبار: تشغيل أعمى بوكيل جديد لكل حالة، وحكم منفصل يطبق المعيار، وسقاطة لا تقبل تراجع الدرجة / Evaluate a skill like a function under test: a blind fresh agent per case, a separate judge applying the bar, and a ratchet that never accepts a lower score (documented)
+- `AMIND-79` تأليف المهارات وإدارة مكتبتها: هل هي مهارة أصلًا، ووصف يقول متى لا ماذا، وإبقاء أو إصلاح أو حذف حسب الفرق المقاس / Authoring skills and curating the library: is it a skill at all, a description that says when not what, and keep/fix/cut by measured delta (documented)
+- `AMIND-81` أسماء أفضل: مولدات عمياء من زوايا مختلفة لكسر التثبيت، ومعايير مرتبة تبدأ بألا يكذب الاسم، والإنسان يختار دائمًا / Better names: blind generators from distinct lenses to break the anchor, ranked criteria led by 'the name must not lie', and the human always picks (documented)
+- `AMIND-82` حلقة تحسين بسقاطة يقودها الهدف: حدد النهاية لا الطريق، وافصل الحكم عن المنفذ، واستبدل الوكيل العالق / Goal-driven ratchet optimisation loop: define the end, not the route; separate judge from worker; replace a stuck worker (documented)
+
+### `AMIND-81` — أسماء أفضل: مولدات عمياء من زوايا مختلفة لكسر التثبيت، ومعايير مرتبة تبدأ بألا يكذب الاسم، والإنسان يختار دائمًا / Better names: blind generators from distinct lenses to break the anchor, ranked criteria led by 'the name must not lie', and the human always picks
+
+| الحقل | القيمة |
+|---|---|
+| العائلة | `atlas-mind` ([فصل العائلة](../../../.claude/skills/kosif-superpowers/references/powers/atlas-mind.md)) |
+| المجموعة | التفكير والتخطيط والاستراتيجية (`thinking`) |
+| نوع المخرج (A25، A27) | خطة واستراتيجية وقرار (`plan`) |
+| الحالة في الكتالوج | 📄 `documented`: منهج موصوف يحتاج بناءً أو ربطًا قبل التشغيل |
+| سقف التحقق قبل العمل (A27) | V1 حتى تُبنى وتُشغَّل؛ لا تقدَّم جاهزة أبدًا |
+| نطاق الدليل | `url` |
+| الرخصة | card in our own words; the original skill folders are copied verbatim with their Apache-2.0, MIT license and SOURCE.md under vendor/kosif-atlas |
+
+**ما هي:** حين يُرفض اسم مقترح، فنفس السياق سينتج المزيد منه، فتعمل المولدات دون رؤية المحادثة ومن زوايا مختلفة، ثم تُقيم المرشحات بأعراف المشروع المعلنة أولًا، وإلا بمعايير عامة: الدقة الدلالية (الاسم المضلل أسوأ من المبهم)، ثم ملاءمة النطاق، ثم الوضوح، ثم سهولة الاستدعاء؛ مع تجنب كلمات بلا معنى مثل util وcommon. — Naming for code, files, skills and products.
+
+**متى:** اقترح اسمًا، الاسم غير مناسب، تسمية دالة أو ملف أو مهارة أو مستودع / naming anything
+
+**كيف:** 1) If the project declares naming conventions (context file, rules, a standards source), score against those; a missing criterion goes into those conventions, not into this method. 2) Otherwise rank: semantic accuracy first (the name must not mislead about what the thing does), then scope fit (length scales with scope and lifetime; do not repeat what the package or type already says), comprehensibility (full intention-revealing words, allowing established short idioms), and recall or evocative value. 3) Ban empty words such as common, util, helper, manager, misc, and prefer singular base forms. 4) Generate candidates blind to the conversation from several lenses (what it does, what it returns, the domain term users say, a metaphor) so the rejected name does not anchor them. 5) Apply the syntactic layer last: casing and form for the language or platform. 6) Present a short scored list with the trade of each and a recommendation; never lock a name without the person choosing. Full original skill(s) with license: vendor/kosif-atlas/skills/2457-naming/9514-name-it-better, vendor/kosif-atlas/skills/2650-programming-tasuke/10067-naming-rule.
+
+**المعاملات:** thing to name, context
+
+**التثبيت:** mkdir -p ~/.claude/skills && cp -r .claude/skills/kosif-superpowers/vendor/kosif-atlas/skills/2457-naming/9514-name-it-better ~/.claude/skills/name-it-better ; mkdir -p ~/.claude/skills && cp -r .claude/skills/kosif-superpowers/vendor/kosif-atlas/skills/2650-programming-tasuke/10067-naming-rule ~/.claude/skills/naming-rule
+
+**الوسوم:** naming · variable names · domain language · التسمية · أسماء
+
+#### 1. الاستقبال (A25)
+
+- الهدف القابل للقياس: سؤال بإجابة مقترحة ← هدف مقترح بعتبة رقمية يُعرض للتعديل
+- الأفق الزمني: افتراض مكتوب ← 90 يومًا
+- الموارد والميزانية: افتراض مكتوب ← شخص واحد بلا صرف
+- لا تُفترض أبدًا: مادة الإنتاج نفسها، والإذن بخطوة مدفوعة أو منشورة أو لا رجعة فيها، والهوية والحقوق.
+
+#### 2. الجاهزية والشارة (A28)
+
+- لا متطلبات مسجلة؛ افحص المسار والأداة بـ `hub.py doctor` قبل الشارة.
+- الوضع 1: شارة «هنا الآن» بعد الفحص، لا 📄 الكتالوج تلقائيًا · الوضع 2: `كتالوج: 📄 · هنا: غير مفحوص` · الوضع 3: بلا شارة ولا معرّف.
+
+#### 3. موضعها في الخطة (A26)
+
+- عقدة منمّطة: المدخل `brief` ← المخرج `plan`، والمنفّذ `method:AMIND-81` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
+- لا أداة مسجلة تخدم عائلتها: التنفيذ بالمكتبات أو بأداة من مجموعة أخرى.
+- مراحل النوع: الهدف بمؤشره ← ثلاثة خيارات مختلفة ← تقييم وحساسية ← تشريح مسبق ← بوابات مكتوبة ← خطوة أولى قابلة للتراجع.
+- إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
+
+#### 4. بوابة التحقق (A27)
+
+- إلزامي: لكل هدف مؤشر وعتبة وتاريخ ← جدول المؤشرات
+- إلزامي: ثلاثة خيارات مختلفة المنهج مع توصية ← جدول المقارنة
+- جودة: تشريح مسبق بأهم أسباب الفشل والوقاية ← think.py plan
+- جودة: بوابات go/pivot/kill مكتوبة قبل النتائج ← think.py gate
+- إلزامي: خطوة أولى صغيرة قابلة للتراجع هذا الأسبوع ← مراجعة
+- أمر الحكم في الوضع 1: `think.py qa plan --answers qa.json` (PASS / FAIL / INCOMPLETE).
+
+#### 5. التعافي (A29)
+
+- `missing_dependency` (اعتمادية مفقودة، ميزانية 2): سمِّ الاعتمادية بالضبط (حزمة، برنامج، خط، نموذج) ← ثبّت محليًا في بيئة العمل إن كان مجانيًا ومسموحًا (pip --user أو venv أو npm محلي) · البديل: مسار المكتبة القياسية أو أداة أخرى من نفس المجموعة · تصعيد: تثبيت نظامي أو مدفوع أو يحتاج مفتاحًا: توقف واسأل
+- `quality_below_threshold` (جودة دون العتبة، ميزانية 3): أي معيار فشل وبكم (المقيس مقابل العتبة) ← عالج السبب الأكبر وحده ثم أعد القياس · البديل: المنهج البديل المكتوب للمرحلة في الخطة · تصعيد: معيار إلزامي لا يتحقق بعد البديل: توقف وأبلغ بالأرقام
+
+#### 6. الأدلة
+
+- `https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/2457-naming/9514-name-it-better`
+- `https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/2650-programming-tasuke/10067-naming-rule`
+
+#### 7. قدرات قريبة في العائلة
+
+- `AMIND-79` تأليف المهارات وإدارة مكتبتها: هل هي مهارة أصلًا، ووصف يقول متى لا ماذا، وإبقاء أو إصلاح أو حذف حسب الفرق المقاس / Authoring skills and curating the library: is it a skill at all, a description that says when not what, and keep/fix/cut by measured delta (documented)
+- `AMIND-80` حوّل التصحيح المتكرر للوكيل إلى قاعدة في المكان الصحيح: ملف سياق أو مهارة أو قاعدة لمسار أو خطاف أو اختبار / Turn a repeated correction into a rule in the right place: context file, skill, path rule, hook or test (documented)
+- `AMIND-82` حلقة تحسين بسقاطة يقودها الهدف: حدد النهاية لا الطريق، وافصل الحكم عن المنفذ، واستبدل الوكيل العالق / Goal-driven ratchet optimisation loop: define the end, not the route; separate judge from worker; replace a stuck worker (documented)
+
+### `AMIND-82` — حلقة تحسين بسقاطة يقودها الهدف: حدد النهاية لا الطريق، وافصل الحكم عن المنفذ، واستبدل الوكيل العالق / Goal-driven ratchet optimisation loop: define the end, not the route; separate judge from worker; replace a stuck worker
+
+| الحقل | القيمة |
+|---|---|
+| العائلة | `atlas-mind` ([فصل العائلة](../../../.claude/skills/kosif-superpowers/references/powers/atlas-mind.md)) |
+| المجموعة | التفكير والتخطيط والاستراتيجية (`thinking`) |
+| نوع المخرج (A25، A27) | خطة واستراتيجية وقرار (`plan`) |
+| الحالة في الكتالوج | 📄 `documented`: منهج موصوف يحتاج بناءً أو ربطًا قبل التشغيل |
+| سقف التحقق قبل العمل (A27) | V1 حتى تُبنى وتُشغَّل؛ لا تقدَّم جاهزة أبدًا |
+| نطاق الدليل | `url` |
+| الرخصة | card in our own words; the original skill folders are copied verbatim with their MIT license and SOURCE.md under vendor/kosif-atlas |
+
+**ما هي:** نظام متعدد الوكلاء للتحسين المستمر: يُعرَّف ما يعتبر إنجازًا بشروط يمكن فحصها آليًا، فالرئيس يقيّم فقط ولا يعمل، والمنفذون يعملون ولا يقيّمون أنفسهم، وكل تحسن يُثبت ولا يُقبل تراجع، ومن يتوقف أو يدعي الانتهاء دون بلوغ المعيار يُستبدل بآخر جديد. — Independent evaluation, kept gains, restarted workers.
+
+**متى:** حسّن الأداء حتى يصل لرقم، مهمة تحسين طويلة بوكلاء، الوكيل يدعي الانتهاء والنتيجة لم تتحسن / long optimisation tasks with agents
+
+**كيف:** 1) Clarify the goal with three questions: what final result, how it is judged (machine-checkable conditions), what the agent may and may not touch. 2) Gather context: the files and stack, existing tests, benchmarks and CI to reuse, and any reference implementation for differential testing, the strongest criterion. 3) Design criteria as Given (input assumptions), When (the trigger), Then (output properties) plus invariants, and ask what result would look good but not be. 4) The master only evaluates against the criteria; workers only do the work and never grade themselves. 5) Keep a score; accept a change only when it improves without breaking invariants, otherwise revert (the ratchet). 6) Kill and restart a worker that goes quiet or claims done below the bar, with the current best state and the failure notes. 7) Stop at the goal, a budget, or a plateau, and report the trajectory. Full original skill(s) with license: vendor/kosif-atlas/skills/3600-ratchet/14444-ratchet.
+
+**المعاملات:** goal, criteria, scope, budget
+
+**التثبيت:** mkdir -p ~/.claude/skills && cp -r .claude/skills/kosif-superpowers/vendor/kosif-atlas/skills/3600-ratchet/14444-ratchet ~/.claude/skills/ratchet
+
+**الوسوم:** optimisation loop · multi-agent · ratchet · evaluation · goal-driven · حلقة التحسين · وكلاء متعددون
+
+#### 1. الاستقبال (A25)
+
+- الهدف القابل للقياس: سؤال بإجابة مقترحة ← هدف مقترح بعتبة رقمية يُعرض للتعديل
+- الأفق الزمني: افتراض مكتوب ← 90 يومًا
+- الموارد والميزانية: افتراض مكتوب ← شخص واحد بلا صرف
+- لا تُفترض أبدًا: مادة الإنتاج نفسها، والإذن بخطوة مدفوعة أو منشورة أو لا رجعة فيها، والهوية والحقوق.
+
+#### 2. الجاهزية والشارة (A28)
+
+- لا متطلبات مسجلة؛ افحص المسار والأداة بـ `hub.py doctor` قبل الشارة.
+- الوضع 1: شارة «هنا الآن» بعد الفحص، لا 📄 الكتالوج تلقائيًا · الوضع 2: `كتالوج: 📄 · هنا: غير مفحوص` · الوضع 3: بلا شارة ولا معرّف.
+
+#### 3. موضعها في الخطة (A26)
+
+- عقدة منمّطة: المدخل `brief` ← المخرج `plan`، والمنفّذ `method:AMIND-82` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
+- لا أداة مسجلة تخدم عائلتها: التنفيذ بالمكتبات أو بأداة من مجموعة أخرى.
+- مراحل النوع: الهدف بمؤشره ← ثلاثة خيارات مختلفة ← تقييم وحساسية ← تشريح مسبق ← بوابات مكتوبة ← خطوة أولى قابلة للتراجع.
+- إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
+
+#### 4. بوابة التحقق (A27)
+
+- إلزامي: لكل هدف مؤشر وعتبة وتاريخ ← جدول المؤشرات
+- إلزامي: ثلاثة خيارات مختلفة المنهج مع توصية ← جدول المقارنة
+- جودة: تشريح مسبق بأهم أسباب الفشل والوقاية ← think.py plan
+- جودة: بوابات go/pivot/kill مكتوبة قبل النتائج ← think.py gate
+- إلزامي: خطوة أولى صغيرة قابلة للتراجع هذا الأسبوع ← مراجعة
+- أمر الحكم في الوضع 1: `think.py qa plan --answers qa.json` (PASS / FAIL / INCOMPLETE).
+
+#### 5. التعافي (A29)
+
+- `missing_dependency` (اعتمادية مفقودة، ميزانية 2): سمِّ الاعتمادية بالضبط (حزمة، برنامج، خط، نموذج) ← ثبّت محليًا في بيئة العمل إن كان مجانيًا ومسموحًا (pip --user أو venv أو npm محلي) · البديل: مسار المكتبة القياسية أو أداة أخرى من نفس المجموعة · تصعيد: تثبيت نظامي أو مدفوع أو يحتاج مفتاحًا: توقف واسأل
+- `quality_below_threshold` (جودة دون العتبة، ميزانية 3): أي معيار فشل وبكم (المقيس مقابل العتبة) ← عالج السبب الأكبر وحده ثم أعد القياس · البديل: المنهج البديل المكتوب للمرحلة في الخطة · تصعيد: معيار إلزامي لا يتحقق بعد البديل: توقف وأبلغ بالأرقام
+
+#### 6. الأدلة
+
+- `https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/3600-ratchet/14444-ratchet`
+
+#### 7. قدرات قريبة في العائلة
+
+- `AMIND-80` حوّل التصحيح المتكرر للوكيل إلى قاعدة في المكان الصحيح: ملف سياق أو مهارة أو قاعدة لمسار أو خطاف أو اختبار / Turn a repeated correction into a rule in the right place: context file, skill, path rule, hook or test (documented)
+- `AMIND-81` أسماء أفضل: مولدات عمياء من زوايا مختلفة لكسر التثبيت، ومعايير مرتبة تبدأ بألا يكذب الاسم، والإنسان يختار دائمًا / Better names: blind generators from distinct lenses to break the anchor, ranked criteria led by 'the name must not lie', and the human always picks (documented)
 
