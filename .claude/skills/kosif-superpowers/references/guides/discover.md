@@ -42,7 +42,7 @@ Commands below are typed from the skill folder (`.claude/skills/kosif-superpower
 
 <!-- hub:area:think:start -->
 
-**الأدوات / tools (13)** — `python3 scripts/hub.py tool <id>` for every command, requirement and limit:
+**الأدوات / tools (14)** — `python3 scripts/hub.py tool <id>` for every command, requirement and limit:
 
 | tool | what it does | start with | evidence |
 |---|---|---|---|
@@ -59,6 +59,7 @@ Commands below are typed from the skill folder (`.claude/skills/kosif-superpower
 | `book-methods` | Searches 45 methods distilled in our own words from ten uploaded PDFs (lateral-thinking course, The Pragmatic Programmer, Jaynes's Bayesian framework, the Cambridge Handbook of Personality Psychology, an IFRS/ISA accounting skill report, the owner's KOSIF v8 prompt spec, Shawqi's diwan, two English coursebooks), and runs five helpers: seeded random-word provocation, a Bayesian posterior with a decibel evidence ledger, a prompt clarity/context/specificity gate, a journal-entry checker (balance, integer minor units, VAT, duplicates, bank-receipt-is-settlement) and a Big Five character card. | `python3 scripts/book_methods.py search "شخصية حوار"` | tested-here |
 | `decision-math` | Runs a seeded Monte Carlo over a profit model with triangular/uniform/normal inputs (P5/P10/P50/P90/P95 and probability of loss), computes break-even units and revenue, ranks a backlog by ICE, computes NPV and IRR by bisection, and finds by bisection the value of one assumption at which the go/no-go decision flips. | `echo '{"inputs":{"price":{"dist":"triangular","low":8,"mode":10,"high":13},"units":{"dist":"uniform","low":800,"high":1200},"cost":{"dist":"normal","mean":6,"sd":0.5},"fixed":2500},"profit":"(price - cost) * units - fixed"}' \| python3 scripts/decision_math.py montecarlo - --runs 20000 --seed 7` | tested-here |
 | `stats-lab` | Deterministic decision statistics with the standard library: a pooled two-proportion z-test with p-value, Wald CI of the difference and log risk-ratio CI of the lift; visitors per arm for a target lift, alpha and power; n, mean, median, sd, quartiles and IQR outliers (with row numbers) for a CSV column; and realized gains per sell from a trades CSV by FIFO, LIFO or HIFO lots with fees and exact decimals. | `python3 scripts/stats_lab.py abtest --a 1000,100 --b 1000,130` | tested-here |
+| `prompt-lab` | Makes the prompt-craft method runnable for eight kinds of prompt (system, agent brief, code, research, writing, LLM judge, image, video). build renders a kind's slots in order and turns every unfilled required slot into a question; lint scores a prompt out of 20 (required slots present, anti-patterns such as vague or shouted words, hype tokens and negative-heavy rules, in English and Arabic) with hard gates for a secret, a chain-of-thought request or undelimited pasted data; refine orders the fixes and prints the missing-slot skeleton; eval runs deterministic assertions on saved outputs and keeps a variant only when it beats the baseline with no regression; pairwise prints order-swapped judge prompts and counts only verdicts that agree in both orders, the way the owner's Jev service judges. | `python3 scripts/prompt_lab.py kinds` | tested-here |
 
 <!-- hub:area:think:end -->
 

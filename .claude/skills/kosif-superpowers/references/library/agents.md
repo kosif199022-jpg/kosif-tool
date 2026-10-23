@@ -22,12 +22,12 @@
 
 | الحالة | العدد | المعنى |
 |---|---:|---|
-| `proven` | 149 | ✅ proven: a proof exists in the catalog; still check its requirements here before calling it ready |
+| `proven` | 153 | ✅ proven: a proof exists in the catalog; still check its requirements here before calling it ready |
 | `ready` | 21 | 🟢 ready: runnable without setup according to the catalog |
 | `documented` | 57 | 📄 documented: a described method; needs building or wiring before it runs |
 | `install` | 15 | 📦 install: needs a package, binary or model first |
 | `key` | 2 | 🔑 key: needs an account, key or paid service (ask before any spend) |
-| **المجموع** | **244** | |
+| **المجموع** | **248** | |
 
 ## الأدوات القابلة للتشغيل / runnable tools
 
@@ -49,6 +49,7 @@
 | `council` | مجلس البرو: خمسة متعارضين أو مجلس مناسب من 100 شخصية، ثلاث جولات وحكم بالدرجات | `python3 scripts/council.py plan "اعمل ريلز دعاء" --dir out/demo/council --options A,B,C` | tested-here |
 | `fusionforge` | FusionForge v2 لوصفات الـWorkflow المركبة داخل المشروع | `python3 scripts/fusionforge.py propose "مونتاج ريلز بترجمة عربية" --project demo_project --from-brief out/20261021-reel/brief.json` | tested-here |
 | `fusionforge-shared` | ذاكرة FusionForge المشتركة بوصفات مهارات معزولة | `python3 scripts/fusionforge_shared.py audit` | untested |
+| `github-top-repos` | متابعة أشهر 1000 مستودع | `python3 scripts/github_top_repos.py build` | tested-here |
 | `hub` | بوابة KOSIF الموحّدة | `python3 scripts/hub.py find "اعمل فيديو موشن عربي متزامن مع صوتي"` | tested-here |
 | `kosif-groups` | خريطة المجموعات مع القدرات الخارقة والسكربتات وخطط التثبيت | `python3 scripts/kosif_hubs.py` | tested-here |
 | `kosif-mcp` | خادم MCP لكتالوج KOSIF | `python3 scripts/kosif_mcp.py` | tested-here |
@@ -79,7 +80,7 @@
 | العائلة | القدرات | الفصل |
 |---|---:|---|
 | `agent-orchestration` | 46 | [agent-orchestration.md](../powers/agent-orchestration.md) |
-| `runnable-tools` | 155 | [runnable-tools.md](../powers/runnable-tools.md) |
+| `runnable-tools` | 159 | [runnable-tools.md](../powers/runnable-tools.md) |
 | `self-discovery` | 43 | [self-discovery.md](../powers/self-discovery.md) |
 
 ## كل القدرات / every power
@@ -147,7 +148,11 @@
 | `TOOL-153` | رموز الهوية: ألوان الشعار ورموز بثلاث طبقات ومصفوفة تباين WCAG | Brand tokens: SVG palette, 3-tier design tokens and WCAG contrast matrix | proven | python3, npm:axe |
 | `TOOL-154` | حارس الوكيل: فحص الأوامر قبل تشغيلها وكشف الأسرار وخطة فروع متوازية | Agent guard: shell preflight, transcript secret scan and worktree plans | proven | python3, git |
 | `TOOL-156` | البحث في كتالوج القدرات | Power catalog search | proven | python3, npm:mermaid |
+| `TOOL-157` | رسم يدوي المظهر بالرصاص أو الفحم أو الحبر لأي صورة أو مشهد متخيَّل، خطًا بخط | Hand-drawn pencil, charcoal or ink drawing of any photo or imagined scene, built stroke by stroke | proven | chromium, blender, pip:numpy, pip:opencv |
+| `TOOL-158` | مجلس خبراء الرسم: أحد عشر خبيرًا من بطاقات الكتب الـ48 يراجعون الصورة قبل إرسالها | Drawing council: eleven experts from the 48 method cards review an image before it is sent | proven | pip:pillow |
+| `TOOL-159` | مختبر البرومبت | Prompt Lab | proven | python3 |
 | `TOOL-16` | إنشاء فيلم سبورة مرسوم وتصييره | Doodle film runtime and renderer | proven | ffmpeg, node, python3, chromium |
+| `TOOL-160` | متابعة أشهر 1000 مستودع | GitHub Top-1000 Tracker | proven | python3 |
 | `TOOL-17` | مولّد مشاريع بداية لمحركات الحركة | Third-party motion engine scaffolder | proven | python3, npm:three, npm:gsap, npm:remotion |
 | `TOOL-18` | مكتبة رياضيات الحركة | Motion math toolkit | proven | node, python3 |
 | `TOOL-19` | تصيير لقطات B-roll بحركة كاميرا | Cinematic B-roll Renderer | proven | ffmpeg, python3 |

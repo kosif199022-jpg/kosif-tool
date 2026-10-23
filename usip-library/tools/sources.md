@@ -1,4 +1,4 @@
-# أدوات المجال `sources` (17 أداة)
+# أدوات المجال `sources` (18 أداة)
 
 > مولّد من `data/tools.json`. [الفهرس الرئيسي](../README.md) · `python3 scripts/hub.py tool <id>` للبطاقة الحية.
 
@@ -375,6 +375,58 @@
 #### عند الفشل (A29)
 
 - ابدأ بـ `think.py recover --message "<نص الخطأ>"`، ثم سجّل `fusionforge.py trace --project <slug> --id <FUSE-ID> --stage <stage> --node <N> --action "<ما جُرّب>" --result failed --error-class <الصنف> --tool tool:fetch-video --evidence <ملف>`.
+
+### `github-top-repos` — متابعة أشهر 1000 مستودع / GitHub Top-1000 Tracker
+
+| الحقل | القيمة |
+|---|---|
+| المسار | `scripts/github_top_repos.py` (جذر: skill) |
+| المجال | `sources` |
+| الدليل | `tested-here` |
+| العائلات | `web-research`, `self-discovery` |
+
+**ما تفعله:** يحفظ مراجعة أشهر 1000 مستودع عام على GitHub: لقطة حقائق (الترتيب والنجوم واللغة والترخيص والوصف، مدموجة من فهرس gitstar-ranking وسجلات deps.dev لقائمة مكملة لما يفوته)، وتصنيف آلي حسب الموضوع والترخيص، ومراجعة يدوية للاستبعادات والنقل. build يكتب data/github_top1000.json والجدول references/github-top-1000.md بقرار لكل مستودع (نُقل، قابل للتعدين، مرجع، لا يُنقل) ومعرّفات القدرات أو الأدوات التي تحمل طرقه؛ find وshow للبحث؛ refresh يجلب لقطة جديدة إلى ملف منفصل للمراجعة.
+
+**What it does:** Keeps the review of the 1,000 most-starred public GitHub repositories: a facts snapshot (rank, stars, language, licence id, description, merged from the gitstar-ranking index and deps.dev records for a supplement list it misses), an automatic topic and licence classification, and a hand review of exclusions and transfers. build writes data/github_top1000.json and the table references/github-top-1000.md with a decision per repository (transferred, mine, reference, skip) and the power or tool ids that carry its methods; find and show search it; refresh fetches a new snapshot to a separate file for review.
+
+#### متى تُستدعى
+
+- «وريني أشهر مستودعات جيت هاب اللي ليها علاقة بالموشن»
+- «هل راجعت مستودع langchain ونقلت منه إيه؟»
+- «which top GitHub repos about agents are still unmined?»
+- «show the licence and decision for stanfordnlp/dspy»
+
+#### الأوامر
+
+- **build**: Writes data/github_top1000.json and references/github-top-1000.md; --check reports drift only
+  - `python3 scripts/github_top_repos.py build`
+- **stats**: Counts by decision, topic and licence class; --json
+  - `python3 scripts/github_top_repos.py stats`
+- **find**: Repositories whose name, description, topic or decision match every word
+  - `python3 scripts/github_top_repos.py find motion`
+- **show**: One repository's full record
+  - `python3 scripts/github_top_repos.py show stanfordnlp/dspy`
+- **refresh**: Network: fetches a new snapshot to --out (refuses to overwrite the committed one)
+  - `python3 scripts/github_top_repos.py refresh --out /tmp/top1000-new.json`
+- **--self-test**: Runs the built-in checks on a small fixture
+  - `python3 scripts/github_top_repos.py --self-test`
+
+#### المتطلبات والأمان
+
+- binaries: python3
+- الأمان: writes-files
+- الموافقة: refresh reads two public websites (gitstar-ranking.com, api.deps.dev); nothing is sent but repository names.
+- الحدود: The top 1,000 is cut from a merged pool, not a census of GitHub: a repository neither source lists is missing; the topic rules are keyword based and corrected by hand where noticed; licence ids are what GitHub detects ('non-standard' means read the licence yourself).
+
+#### الاختبارات والأدلة
+
+- `.claude/skills/kosif-superpowers/evals/test_github_top_repos.py`
+- مرجع: `.claude/skills/kosif-superpowers/references/github-top-1000.md`
+- مرجع: `.claude/skills/kosif-superpowers/references/guides/sources.md`
+
+#### عند الفشل (A29)
+
+- ابدأ بـ `think.py recover --message "<نص الخطأ>"`، ثم سجّل `fusionforge.py trace --project <slug> --id <FUSE-ID> --stage <stage> --node <N> --action "<ما جُرّب>" --result failed --error-class <الصنف> --tool tool:github-top-repos --evidence <ملف>`.
 
 ### `media-sources` — بوابة الوسائط المرخّصة / Licensed stock media gateway
 

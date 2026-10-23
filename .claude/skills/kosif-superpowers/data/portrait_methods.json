@@ -1,0 +1,464 @@
+{
+  "schema": "kosif.portrait.methods.v1",
+  "revision": "2026-10-23a",
+  "status": "original_method_summaries_NOT_fulltext_copy_NOT_model_training",
+  "notes": [
+    "Each card restates, in original words, a portrait or head-drawing method that is widely taught in the named books and ateliers. No book text, page, diagram or illustration is copied or bundled.",
+    "review_status says how much was really read: public_domain_source_located = a public-domain scan was located and its method is summarised from general knowledge of it; general_teaching_knowledge = summarised from the widely taught content associated with the book, not read in this session; user_copy_read_paraphrased = the user's own copy (UBK ids in data/drawing_methods_atlas.json) was read earlier.",
+    "Every card names the pipeline stage that applies it in scripts/portrait_pipeline.py, so a card is either executed by code or marked as guidance only.",
+    "The cards are guidance for planning and checking a portrait. They do not prove professional quality; only a rendered drawing reviewed against its checks can show that."
+  ],
+  "sources": [
+    {
+      "id": "PS-01",
+      "title": "Drawing the Head and Hands",
+      "author": "Andrew Loomis",
+      "year": 1956,
+      "review_status": "general_teaching_knowledge"
+    },
+    {
+      "id": "PS-02",
+      "title": "Fun with a Pencil",
+      "author": "Andrew Loomis",
+      "year": 1939,
+      "review_status": "general_teaching_knowledge"
+    },
+    {
+      "id": "PS-03",
+      "title": "Constructive Anatomy",
+      "author": "George B. Bridgman",
+      "year": 1920,
+      "review_status": "public_domain_source_located",
+      "url": "https://archive.org/details/cu31924014504371"
+    },
+    {
+      "id": "PS-04",
+      "title": "Figure Drawing: Design and Invention",
+      "author": "Michael Hampton",
+      "year": 2009,
+      "review_status": "general_teaching_knowledge"
+    },
+    {
+      "id": "PS-05",
+      "title": "Cours de dessin (Drawing Course)",
+      "author": "Charles Bargue with Jean-Léon Gérôme",
+      "year": 1868,
+      "review_status": "public_domain_source_located",
+      "url": "https://en.wikipedia.org/wiki/Charles_Bargue"
+    },
+    {
+      "id": "PS-06",
+      "title": "The Vilppu Drawing Manual",
+      "author": "Glenn Vilppu",
+      "year": 1997,
+      "review_status": "general_teaching_knowledge"
+    },
+    {
+      "id": "PS-07",
+      "title": "Color and Light",
+      "author": "James Gurney",
+      "year": 2010,
+      "review_status": "general_teaching_knowledge"
+    },
+    {
+      "id": "PS-08",
+      "title": "Keys to Drawing",
+      "author": "Bert Dodson",
+      "year": 1985,
+      "review_status": "user_copy_read_paraphrased",
+      "atlas_id": "UBK-17"
+    },
+    {
+      "id": "PS-09",
+      "title": "The Practice and Science of Drawing",
+      "author": "Harold Speed",
+      "year": 1913,
+      "review_status": "public_domain_source_located",
+      "url": "https://www.gutenberg.org/ebooks/14264"
+    },
+    {
+      "id": "PS-10",
+      "title": "The Human Figure",
+      "author": "John H. Vanderpoel",
+      "year": 1907,
+      "review_status": "public_domain_source_located",
+      "url": "https://drawingbooks.org/vanderpoel1/"
+    },
+    {
+      "id": "PS-11",
+      "title": "Classical Drawing Atelier",
+      "author": "Juliette Aristides",
+      "year": 2006,
+      "review_status": "general_teaching_knowledge"
+    },
+    {
+      "id": "PS-12",
+      "title": "The Artist's Complete Guide to Drawing the Head",
+      "author": "William L. Maughan",
+      "year": 2004,
+      "review_status": "general_teaching_knowledge"
+    },
+    {
+      "id": "PS-13",
+      "title": "Drawing the Human Head",
+      "author": "Burne Hogarth",
+      "year": 1965,
+      "review_status": "general_teaching_knowledge"
+    },
+    {
+      "id": "PS-14",
+      "title": "Lee Hammond's Big Book of Drawing",
+      "author": "Lee Hammond",
+      "year": 2015,
+      "review_status": "user_copy_read_paraphrased",
+      "atlas_id": "UBK-05"
+    },
+    {
+      "id": "PS-15",
+      "title": "Pen & Pencil Drawing Techniques",
+      "author": "Harry Borgman",
+      "year": 1989,
+      "review_status": "user_copy_read_paraphrased",
+      "atlas_id": "UBK-03"
+    },
+    {
+      "id": "PS-16",
+      "title": "Alla Prima",
+      "author": "Richard Schmid",
+      "year": 1998,
+      "review_status": "general_teaching_knowledge"
+    },
+    {
+      "id": "PS-17",
+      "title": "Sight-size tradition (Cecil, Reni and other ateliers)",
+      "author": "atelier practice",
+      "year": null,
+      "review_status": "general_teaching_knowledge"
+    },
+    {
+      "id": "PS-18",
+      "title": "Angles, enveloping and the block-in (lesson)",
+      "author": "Stan Prokopenko",
+      "year": null,
+      "review_status": "general_teaching_knowledge",
+      "url": "https://www.proko.com/lesson/angles-enveloping-and-the-block-in"
+    },
+    {
+      "id": "PS-19",
+      "title": "Imaginative Realism: How to Paint What Doesn't Exist",
+      "author": "James Gurney",
+      "year": 2009,
+      "review_status": "general_teaching_knowledge"
+    }
+  ],
+  "methods": [
+    {
+      "id": "PM-01",
+      "name_en": "Measure before you mark (sight-size and comparative measuring)",
+      "name_ar": "قِس قبل أن ترسم (المقاس البصري والمقارنة)",
+      "sources": [
+        "PS-17",
+        "PS-08",
+        "PS-05"
+      ],
+      "principle_en": "Proportion comes from measurement, not memory: compare every length to one unit (eye width, head height), drop plumb and level lines through landmarks, and check angles against the vertical.",
+      "principle_ar": "النسب تأتي من القياس لا من الذاكرة: قارن كل طول بوحدة واحدة (عرض العين أو طول الرأس)، وأسقط خطوطًا رأسية وأفقية عبر نقاط العلامات، وقِس الزوايا بالنسبة للرأسي.",
+      "pipeline_stage": "measure",
+      "executed_by": "measure() + proportions()",
+      "checks": [
+        "eye gap / eye width is measured, not assumed",
+        "head roll angle is measured and kept"
+      ]
+    },
+    {
+      "id": "PM-02",
+      "name_en": "Loomis head: ball, side plane and the three divisions",
+      "name_ar": "رأس لوميس: الكرة والمستوى الجانبي والتقسيمات الثلاث",
+      "sources": [
+        "PS-01",
+        "PS-02"
+      ],
+      "principle_en": "Start the head as a ball with its sides sliced flat; a centre line and brow line wrap around it, and the face below hangs in three roughly equal parts (hairline to brow, brow to nose base, nose base to chin). The ear sits between the brow and nose lines.",
+      "principle_ar": "ابدأ الرأس كرة مقطوعة الجانبين، يلتف عليها خط المنتصف وخط الحاجب، ويتدلى الوجه في ثلاثة أجزاء متقاربة (منبت الشعر للحاجب، الحاجب لقاعدة الأنف، قاعدة الأنف للذقن)، والأذن بين خطي الحاجب والأنف.",
+      "pipeline_stage": "construct",
+      "executed_by": "construction()",
+      "checks": [
+        "construction guides are laid in before tone and stay faint",
+        "measured thirds are reported against the 1:1:1 teaching average"
+      ]
+    },
+    {
+      "id": "PM-03",
+      "name_en": "Straight-line block-in and envelope",
+      "name_ar": "التخطيط بخطوط مستقيمة والغلاف",
+      "sources": [
+        "PS-05",
+        "PS-11",
+        "PS-18"
+      ],
+      "principle_en": "Enclose the whole subject in a few straight lines first, then break each line into shorter ones until the silhouette is found. Straight lines make angles easy to judge; curves come last.",
+      "principle_ar": "أحِط الموضوع كله ببضعة خطوط مستقيمة أولًا، ثم قسّم كل خط لخطوط أقصر حتى يظهر الظل الخارجي؛ المستقيم يسهّل الحكم على الزاوية، والمنحنيات في النهاية.",
+      "pipeline_stage": "construct",
+      "executed_by": "construction() envelope",
+      "checks": [
+        "envelope polygon follows the sitter's silhouette within 1.2% of its perimeter"
+      ]
+    },
+    {
+      "id": "PM-04",
+      "name_en": "Mass drawing: see value shapes before lines",
+      "name_ar": "رسم الكتل: ارَ أشكال القيم قبل الخطوط",
+      "sources": [
+        "PS-09",
+        "PS-05"
+      ],
+      "principle_en": "Squint until the subject breaks into a few masses of light, half-tone and shadow, and draw those shapes as shapes. A portrait reads at a distance by its value masses, not its outlines.",
+      "principle_ar": "ضيّق عينيك حتى ينقسم الموضوع لكتل قليلة من نور ونصف ظل وظل، وارسمها كأشكال؛ البورتريه يُقرأ من بعيد بكتل قيمه لا بخطوطه.",
+      "pipeline_stage": "value plan",
+      "executed_by": "value_map() + review value-masses check",
+      "checks": [
+        "drawn darkness correlates > 0.9 with the value map at a 6 px blur (squint test)"
+      ]
+    },
+    {
+      "id": "PM-05",
+      "name_en": "Light family and shadow family (form principle)",
+      "name_ar": "عائلة النور وعائلة الظل (مبدأ الشكل)",
+      "sources": [
+        "PS-07",
+        "PS-12"
+      ],
+      "principle_en": "Keep every value in the light darker-free and every value in the shadow lighter-free: highlight, light, half-tone, core shadow, reflected light and cast shadow each have a place, and reflected light never gets as light as a half-tone.",
+      "principle_ar": "اجعل كل قيم النور فاتحة وكل قيم الظل داكنة بلا تداخل: إضاءة، نور، نصف ظل، ظل أساسي، ضوء منعكس، ظل ساقط؛ والمنعكس لا يصل لفتاحة نصف الظل.",
+      "pipeline_stage": "value plan",
+      "executed_by": "value_map() (flesh keyed lighter, shadows kept)",
+      "checks": [
+        "face value error (MAE at 4 px) under 0.09"
+      ]
+    },
+    {
+      "id": "PM-06",
+      "name_en": "Focal hierarchy: finish the face, suggest the rest",
+      "name_ar": "تسلسل التركيز: أنهِ الوجه ولمّح الباقي",
+      "sources": [
+        "PS-16",
+        "PS-09",
+        "PS-07"
+      ],
+      "principle_en": "Spend the strongest contrast, the sharpest edges and the finest detail on the face; let clothing and background stay simpler, lighter and looser so the eye goes where you want it. Do not move or remove anything: hold it back.",
+      "principle_ar": "اصرف أقوى تباين وأحدّ حواف وأدق تفاصيل على الوجه، واترك الملابس والخلفية أبسط وأفتح وأكثر تحررًا لتذهب العين حيث تريد؛ لا تحرك شيئًا ولا تحذفه، فقط خفّفه.",
+      "pipeline_stage": "value plan / render",
+      "executed_by": "REGION_STYLE val, ln, sp, edge",
+      "checks": [
+        "composition unchanged (same crop, same placement)",
+        "background value weight below 0.6"
+      ]
+    },
+    {
+      "id": "PM-07",
+      "name_en": "Hatching that describes the plane",
+      "name_ar": "تهشير يصف المستوى",
+      "sources": [
+        "PS-04",
+        "PS-15",
+        "PS-10"
+      ],
+      "principle_en": "Lay parallel strokes that follow the direction of the plane or wrap across the form (cross-contour), not random scribbles. Build darker values by adding layers at new angles rather than pressing harder.",
+      "principle_ar": "ضع خطوطًا متوازية تتبع اتجاه المستوى أو تلتف عبر الشكل، لا خربشة عشوائية، وابنِ القيم الأغمق بطبقات جديدة بزوايا مختلفة لا بالضغط الأقوى.",
+      "pipeline_stage": "render",
+      "executed_by": "direction_field() + tonal_pass() lay-in / cross-hatch / deep-shadow / accents",
+      "checks": [
+        "four tonal passes recorded in the receipt",
+        "clothes show stroke texture (Laplacian > 0.01)"
+      ]
+    },
+    {
+      "id": "PM-08",
+      "name_en": "Strokes stop at edges",
+      "name_ar": "الخط يتوقف عند الحافة",
+      "sources": [
+        "PS-15",
+        "PS-14"
+      ],
+      "principle_en": "A tonal stroke should end where its plane ends; strokes that run across a silhouette or a feature edge muddy the form. Lift the pencil at the edge and start a new direction on the next plane.",
+      "principle_ar": "خط الظل ينتهي حيث ينتهي مستواه؛ الخط الذي يعبر الظل الخارجي أو حافة الملمح يطمس الشكل، فارفع القلم عند الحافة وابدأ اتجاهًا جديدًا في المستوى التالي.",
+      "pipeline_stage": "render",
+      "executed_by": "trace(): stops on region change, tone jump or a turn sharper than 30 degrees",
+      "checks": [
+        "no stroke crosses a region boundary (enforced in trace)"
+      ]
+    },
+    {
+      "id": "PM-09",
+      "name_en": "Blending for flesh, then texture on top",
+      "name_ar": "التمويه للبشرة ثم الملمس فوقه",
+      "sources": [
+        "PS-14",
+        "PS-12"
+      ],
+      "principle_en": "Realistic skin is built in thin layers softened with a stump or tissue, then given back a little texture with fine light hatching; blend lightly so the drawing does not turn into a photograph-like smear.",
+      "principle_ar": "البشرة الواقعية تُبنى بطبقات رقيقة تُنعَّم بالـstump أو المنديل، ثم يُعاد لها قليل من الملمس بتهشير ناعم فاتح؛ موّه بخفة حتى لا يتحول الرسم لطمسة تشبه الصورة.",
+      "pipeline_stage": "blend",
+      "executed_by": "stump_blend() x2 + fine skin pass",
+      "checks": [
+        "blending only on skin regions",
+        "texture pass after the first blend"
+      ]
+    },
+    {
+      "id": "PM-10",
+      "name_en": "Lost and found edges",
+      "name_ar": "الحواف الضائعة والظاهرة",
+      "sources": [
+        "PS-16",
+        "PS-07",
+        "PS-09"
+      ],
+      "principle_en": "Vary the edge: sharp where contrast is high and the form turns away crisply, soft or lost where values meet closely. An outline of even weight flattens a portrait.",
+      "principle_ar": "نوّع الحافة: حادة حيث التباين عالٍ والشكل ينعطف بحدة، ناعمة أو ضائعة حيث تتقارب القيم؛ الخط المحيط بوزن واحد يسطّح البورتريه.",
+      "pipeline_stage": "edges",
+      "executed_by": "contour_lines(): weight from local contrast x region importance, some edges dropped",
+      "checks": [
+        "edge strokes vary in opacity with measured gradient"
+      ]
+    },
+    {
+      "id": "PM-11",
+      "name_en": "Features as forms (eye, nose, mouth, ear)",
+      "name_ar": "الملامح كأشكال (العين والأنف والفم والأذن)",
+      "sources": [
+        "PS-10",
+        "PS-03",
+        "PS-01",
+        "PS-13"
+      ],
+      "principle_en": "The eye is a ball under lids with thickness; the upper lid casts a shadow and the lash line is the darkest accent. The nose is a wedge with a ball at its tip and wings; the mouth wraps the cylinder of the teeth with the line between the lips darkest at the corners.",
+      "principle_ar": "العين كرة تحت جفون لها سُمك، والجفن العلوي يلقي ظلًا وخط الرموش أغمق نقطة؛ الأنف إسفين بكرة في طرفه وجناحين؛ والفم يلتف على أسطوانة الأسنان والخط بين الشفتين أغمق عند الأركان.",
+      "pipeline_stage": "accents",
+      "executed_by": "feature_accents() on the landmark contours",
+      "checks": [
+        "lash line, lip line and nostrils placed on measured landmarks"
+      ]
+    },
+    {
+      "id": "PM-12",
+      "name_en": "Lift lights with the eraser",
+      "name_ar": "ارفع الأنوار بالممحاة",
+      "sources": [
+        "PS-14",
+        "PS-11"
+      ],
+      "principle_en": "Highlights and catchlights are often taken out, not left in: press a kneaded eraser to lift graphite where the light hits hardest (forehead, nose bridge, lower lip, the catchlight in each eye).",
+      "principle_ar": "الإضاءات ولمعة العين كثيرًا ما تُرفع لا تُترك: اضغط الممحاة العجين لترفع الجرافيت حيث يضرب النور أقوى (الجبهة، قصبة الأنف، الشفة السفلى، لمعة كل عين).",
+      "pipeline_stage": "lift",
+      "executed_by": "lift_highlights()",
+      "checks": [
+        "one catchlight per eye at the brightest measured point",
+        "lifting only where the paper is darker than the value map"
+      ]
+    },
+    {
+      "id": "PM-13",
+      "name_en": "Bridgman wedging: masses that lock together",
+      "name_ar": "تعشيق بريدجمان: كتل تتداخل",
+      "sources": [
+        "PS-03",
+        "PS-04"
+      ],
+      "principle_en": "Think of the head, neck, chest and hand as blocks that wedge into each other; the neck is a tilted cylinder from behind the jaw into the collar, and the hand is a box with the thumb as a separate wedge.",
+      "principle_ar": "فكّر في الرأس والرقبة والصدر واليد ككتل تتعشق ببعضها؛ الرقبة أسطوانة مائلة من خلف الفك إلى الياقة، واليد صندوق والإبهام إسفين منفصل.",
+      "pipeline_stage": "review",
+      "executed_by": "figure_parts() + drawing_methods.review (rule 27)",
+      "checks": [
+        "head, neck, torso and hand form one connected body",
+        "the saluting hand touches the head"
+      ]
+    },
+    {
+      "id": "PM-14",
+      "name_en": "Paper, tooth and pressure",
+      "name_ar": "الورق والملمس والضغط",
+      "sources": [
+        "PS-15",
+        "PS-14",
+        "PS-09"
+      ],
+      "principle_en": "Graphite catches the paper's tooth: light pressure leaves broken grey on the peaks, heavier pressure fills the valleys. Darks are built by layers, and the paper itself is the lightest light.",
+      "principle_ar": "الجرافيت يمسك بحبيبات الورق: الضغط الخفيف يترك رماديًا متقطعًا على القمم، والأقوى يملأ الوديان؛ الغوامق تُبنى بطبقات، والورق نفسه هو أفتح نور.",
+      "pipeline_stage": "paper",
+      "executed_by": "paper_tooth() + Canvas.stroke deposit + compose()",
+      "checks": [
+        "canvas starts as paper; no photo pixel is composited"
+      ]
+    },
+    {
+      "id": "PM-15",
+      "name_en": "Gesture first, even in a portrait",
+      "name_ar": "الإيماءة أولًا حتى في البورتريه",
+      "sources": [
+        "PS-06",
+        "PS-04"
+      ],
+      "principle_en": "Find the action of the pose (here the tilt of the saluting arm and the turn of the shoulders) before any feature, so that detail sits on a living pose rather than a stiff map.",
+      "principle_ar": "اعثر على حركة الوضعية (هنا ميل ذراع التحية ودوران الكتفين) قبل أي ملمح، لتجلس التفاصيل على وضعية حية لا خريطة جامدة.",
+      "pipeline_stage": "construct",
+      "executed_by": "guidance only (envelope captures the arm line)",
+      "checks": [
+        "arm angle in the drawing matches the reference"
+      ]
+    },
+    {
+      "id": "PM-16",
+      "name_en": "Step back: flip, shrink, compare",
+      "name_ar": "ابتعد: اقلب وصغّر وقارن",
+      "sources": [
+        "PS-17",
+        "PS-08",
+        "PS-09"
+      ],
+      "principle_en": "Judge the drawing as a whole from a distance, mirrored and at thumbnail size, against the reference; fix the largest error first and repeat. Several rounds are normal.",
+      "principle_ar": "احكم على الرسم ككل من بعيد ومقلوبًا وبحجم صغير مقابل المرجع، وأصلح أكبر خطأ أولًا وكرر؛ عدة جولات أمر طبيعي.",
+      "pipeline_stage": "review",
+      "executed_by": "review command + iteration log in the receipt",
+      "checks": [
+        "review.json written after every round",
+        "an image was opened and looked at before delivery"
+      ]
+    },
+    {
+      "id": "PM-17",
+      "name_en": "Maquette first: build the imagined scene, then draw it",
+      "name_ar": "المجسّم أولًا: ابنِ المشهد المتخيَّل ثم ارسمه",
+      "sources": [
+        "PS-19",
+        "PS-07"
+      ],
+      "principle_en": "To draw something that does not exist with the conviction of observation, build a simple stand-in (a maquette, a lit model, a quick 3D or vector mock-up), light it from one source, and draw from that reference as if from life.",
+      "principle_ar": "لترسم شيئًا غير موجود بإقناع الرسم من الواقع، ابنِ له بديلًا بسيطًا (مجسّمًا أو نموذجًا مضاءً أو تصورًا ثلاثي الأبعاد أو متجهيًا)، وأضئه من مصدر واحد، وارسم منه كأنك ترسم من الحياة.",
+      "pipeline_stage": "imagine",
+      "executed_by": "imagine(): Claude-authored SVG (gradients = light and shadow families) or a 3D render, rasterised, then drawn by draw()",
+      "checks": [
+        "one light direction across every form in the maquette",
+        "the reference is kept beside the drawing as its receipt (_reference.png)"
+      ]
+    },
+    {
+      "id": "PM-18",
+      "name_en": "Depth planes and atmospheric perspective",
+      "name_ar": "مستويات العمق والمنظور الجوي",
+      "sources": [
+        "PS-07",
+        "PS-09",
+        "PS-19"
+      ],
+      "principle_en": "Separate foreground, middle ground and distance: far planes get lighter values, less contrast and softer edges, near planes the darkest darks and sharpest edges. Plan the planes in the maquette so the drawing inherits them.",
+      "principle_ar": "افصل المقدمة والوسط والبعيد: المستويات البعيدة أفتح وأقل تباينًا وأنعم حوافًا، والقريبة لها أغمق الغوامق وأحدّ الحواف؛ خطط المستويات في المجسّم ليرثها الرسم.",
+      "pipeline_stage": "value plan",
+      "executed_by": "value_map() + contour_lines() contrast weighting; planned in the SVG maquette",
+      "checks": [
+        "distant plane mean darkness lower than the foreground's",
+        "edge weight falls with depth"
+      ]
+    }
+  ]
+}

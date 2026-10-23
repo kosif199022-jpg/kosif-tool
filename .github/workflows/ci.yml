@@ -25,6 +25,10 @@ jobs:
         run: python3 .claude/skills/kosif-superpowers/scripts/check_skill.py --evals
       - name: Skill layout map (USIP v5.4)
         run: python3 -m unittest discover -s .claude/skills/kosif-superpowers/evals -p 'test_skill_layout.py' -v
+      - name: Prompt lab and GitHub top-1000 tracker
+        run: |
+          python3 -m unittest discover -s .claude/skills/kosif-superpowers/evals -p 'test_prompt_lab.py' -v
+          python3 -m unittest discover -s .claude/skills/kosif-superpowers/evals -p 'test_github_top_repos.py' -v
       - name: Permission-aware capability routing and honest host discovery
         run: python3 -m unittest discover -s .claude/skills/kosif-superpowers/evals -p 'test_capability_runtime_router.py' -v
       - name: Creative audio-to-motion reasoning tests
@@ -71,6 +75,8 @@ jobs:
         run: python3 -m pip install --disable-pip-version-check 'Pillow==12.3.0' 'fonttools[woff]==4.60.1' 'beautifulsoup4==4.15.0' 'opencv-python-headless==4.12.0.88'
       - name: KOSIF Creative Paint PNG/SVG/GIF/MP4 functionality and safety
         run: python3 -m unittest discover -s .claude/skills/kosif-superpowers/evals -p 'test_creative_paint.py' -v
+      - name: KOSIF portrait pipeline (stroke-built graphite portrait, method cards, review gate)
+        run: python3 -m unittest discover -s .claude/skills/kosif-superpowers/evals -p 'test_portrait_pipeline.py' -v
       - name: IK character motion and immutable AAC audio packet tests
         run: python3 -m unittest discover -s .claude/skills/kosif-superpowers/evals -p 'test_character_ik.py' -v
       - name: Verify original Blender five-second movie
@@ -79,6 +85,8 @@ jobs:
         run: python3 -m unittest discover -s .claude/skills/kosif-superpowers/evals -p 'test_character_fullbody.py' -v
       - name: Drawing-book methods atlas, layered construction SVGs and geometry checks
         run: python3 -m unittest discover -s .claude/skills/kosif-superpowers/evals -p 'test_drawing_methods.py' -v
+      - name: Drawing council tests
+        run: python3 -m unittest discover -s .claude/skills/kosif-superpowers/evals -p 'test_drawing_council.py' -v
       - name: Verify offline Claude bootstrap and every catalog link
         run: |
           python3 -m unittest discover -s .claude/skills/kosif-superpowers/evals -p 'test_local_first.py' -v

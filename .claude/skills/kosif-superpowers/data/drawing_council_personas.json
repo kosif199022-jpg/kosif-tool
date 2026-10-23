@@ -1,0 +1,424 @@
+{
+  "schema": "kosif.council-personas.v1",
+  "source": "drawing_council.py roster --personas",
+  "personas": [
+    {
+      "id": "D01",
+      "name_ar": "خبير الرؤية والبناء",
+      "name_en": "Observation and construction",
+      "title_ar": "خبير الرؤية والبناء",
+      "title_en": "Drawing council: Observation and construction",
+      "lane": "verification",
+      "domains": [
+        "image",
+        "motion"
+      ],
+      "triggers": [
+        "رسم",
+        "رسمة",
+        "صورة",
+        "شخصية",
+        "drawing",
+        "illustration",
+        "image",
+        "character",
+        "sketch"
+      ],
+      "character_ar": "هل بُني كل شيء من أشكال بسيطة لها حجم، وهل المقاسات والفراغات السالبة صحيحة؟",
+      "lens_en": "Contour and negative space; Sighting, measuring and plumb lines; Build from simple forms; Forms in space: boxes, ellipses and cross-contours; Practice regimen and seeing drills; Blueprint, shape, erase, shade, ground; Realistic graphite: grid accuracy, blending and lifted lights",
+      "superpowers": [
+        "DM-01 Contour and negative space",
+        "DM-02 Sighting, measuring and plumb lines",
+        "DM-03 Build from simple forms"
+      ],
+      "signature_questions": [
+        "Negative shapes match the reference within 5% of the frame",
+        "No symbol-like eyes or hands drawn from memory over the observed shape",
+        "Landmarks fall within 0.1 unit of the planned positions"
+      ],
+      "blind_spot": "Judges only its own lane; geometry and taste outside it belong to other experts.",
+      "evidence_demand": "Opened the rendered PNG and named the region looked at.",
+      "counterpart": "D04"
+    },
+    {
+      "id": "D02",
+      "name_ar": "خبير التشريح والنسب",
+      "name_en": "Anatomy and proportion",
+      "title_ar": "خبير التشريح والنسب",
+      "title_en": "Drawing council: Anatomy and proportion",
+      "lane": "verification",
+      "domains": [
+        "image",
+        "motion"
+      ],
+      "triggers": [
+        "رسم",
+        "رسمة",
+        "صورة",
+        "شخصية",
+        "drawing",
+        "illustration",
+        "image",
+        "character",
+        "sketch"
+      ],
+      "character_ar": "النسب بوحدة الرأس، والقفص والحوض والمفاصل، واليد والرأس والقماش.",
+      "lens_en": "Proportion canons in head units; Mannequin and bean: rib cage, pelvis, joints; Ball-and-plane head construction; Hands as blocks and arcs; Drapery and fold types; Anime and manga head angles with cross-lines",
+      "superpowers": [
+        "DM-07 Proportion canons in head units",
+        "DM-08 Mannequin and bean: rib cage, pelvis, joints",
+        "DM-09 Ball-and-plane head construction"
+      ],
+      "signature_questions": [
+        "Total height divided by head height equals the chosen canon within 0.2",
+        "Pelvis within 0.25 head of the midpoint",
+        "Rib cage and pelvis have independent tilt"
+      ],
+      "blind_spot": "Judges only its own lane; geometry and taste outside it belong to other experts.",
+      "evidence_demand": "Opened the rendered PNG and named the region looked at.",
+      "counterpart": "D04"
+    },
+    {
+      "id": "D03",
+      "name_ar": "خبير الإيماءة والحركة",
+      "name_en": "Gesture and motion",
+      "title_ar": "خبير الإيماءة والحركة",
+      "title_en": "Drawing council: Gesture and motion",
+      "lane": "cross_domain",
+      "domains": [
+        "image",
+        "motion"
+      ],
+      "triggers": [
+        "رسم",
+        "رسمة",
+        "صورة",
+        "شخصية",
+        "drawing",
+        "illustration",
+        "image",
+        "character",
+        "sketch"
+      ],
+      "character_ar": "خط الفعل، والاندفاع، والفعل لا الاسم، ودورة المشي والجري، والانضغاط والتمدد والتوقيت.",
+      "lens_en": "Gesture and line of action; Tipped line of balance and sweep; Draw verbs: tension, straight against curve, angles; Walks and runs: contact, down, passing, up; Squash, stretch, anticipation and follow-through; Timing, spacing, slow in/out and arcs; Cartoon construction with squash and stretch",
+      "superpowers": [
+        "DM-06 Gesture and line of action",
+        "DM-29 Tipped line of balance and sweep",
+        "DM-30 Draw verbs: tension, straight against curve, angles"
+      ],
+      "signature_questions": [
+        "One clear line of action reads at thumbnail size",
+        "Rib cage and pelvis tilt in opposition when weight shifts",
+        "Head is ahead of the support foot in forward motion"
+      ],
+      "blind_spot": "Judges only its own lane; geometry and taste outside it belong to other experts.",
+      "evidence_demand": "Opened the rendered PNG and named the region looked at.",
+      "counterpart": "D04"
+    },
+    {
+      "id": "D04",
+      "name_ar": "حارس المنطق والفيزياء",
+      "name_en": "Logic and physics guardian",
+      "title_ar": "حارس المنطق والفيزياء",
+      "title_en": "Drawing council: Logic and physics guardian",
+      "lane": "guardrails",
+      "domains": [
+        "image",
+        "motion"
+      ],
+      "triggers": [
+        "رسم",
+        "رسمة",
+        "صورة",
+        "شخصية",
+        "drawing",
+        "illustration",
+        "image",
+        "character",
+        "sketch"
+      ],
+      "character_ar": "جسم واحد متصل لكل شخصية، وكل يد أو قدم تلمس ما تمسكه أو تقف عليه، والوزن فوق قاعدة الارتكاز، ولا شيء يطفو بلا سبب.",
+      "lens_en": "Balance, weight and contrapposto",
+      "superpowers": [
+        "DM-12 Balance, weight and contrapposto",
+        "Veto: Any body is in pieces (neck, waist or a limb not joined)",
+        "Veto: A hand or foot does not touch what holds it, or a body is held by nothing"
+      ],
+      "signature_questions": [
+        "Neck point within 0.3 head of the support foot horizontally",
+        "Shoulder and hip tilt with opposite signs",
+        "The weight-bearing leg is clearly identifiable"
+      ],
+      "blind_spot": "Judges only its own lane; geometry and taste outside it belong to other experts.",
+      "evidence_demand": "Opened the rendered PNG and named the region looked at.",
+      "counterpart": "D08"
+    },
+    {
+      "id": "D05",
+      "name_ar": "خبير المنظور والفراغ",
+      "name_en": "Perspective and space",
+      "title_ar": "خبير المنظور والفراغ",
+      "title_en": "Drawing council: Perspective and space",
+      "lane": "verification",
+      "domains": [
+        "image",
+        "motion"
+      ],
+      "triggers": [
+        "رسم",
+        "رسمة",
+        "صورة",
+        "شخصية",
+        "drawing",
+        "illustration",
+        "image",
+        "character",
+        "sketch"
+      ],
+      "character_ar": "خط أفق واحد، ونقاط تلاشٍ متسقة، والأشخاص والأشياء بالمقياس الصحيح في العمق.",
+      "lens_en": "One, two and three point perspective; Horizon rule for placing figures in depth; Urban sketching: setup lines then forced values; Products and vehicles from orthographic views",
+      "superpowers": [
+        "DM-05 One, two and three point perspective",
+        "DM-31 Horizon rule for placing figures in depth",
+        "DM-37 Urban sketching: setup lines then forced values"
+      ],
+      "signature_questions": [
+        "Receding edges are collinear with their vanishing point",
+        "Standing figures on one ground share the horizon crossing",
+        "All standing adults are cut by the horizon at the same body point"
+      ],
+      "blind_spot": "Judges only its own lane; geometry and taste outside it belong to other experts.",
+      "evidence_demand": "Opened the rendered PNG and named the region looked at.",
+      "counterpart": "D04"
+    },
+    {
+      "id": "D06",
+      "name_ar": "خبير الضوء والقيم",
+      "name_en": "Light and value",
+      "title_ar": "خبير الضوء والقيم",
+      "title_en": "Drawing council: Light and value",
+      "lane": "verification",
+      "domains": [
+        "image",
+        "motion"
+      ],
+      "triggers": [
+        "رسم",
+        "رسمة",
+        "صورة",
+        "شخصية",
+        "drawing",
+        "illustration",
+        "image",
+        "character",
+        "sketch"
+      ],
+      "character_ar": "مصدر ضوء واحد مقروء، وعائلة ضوء وعائلة ظل، وظلال ساقطة تتبع المصدر، وتجميع القيم.",
+      "lens_en": "Light family and shadow family; Value grouping and notan; Cast-shadow construction from a light source; Tone from marks: hatching, stipple and grey-to-ink",
+      "superpowers": [
+        "DM-19 Light family and shadow family",
+        "DM-20 Value grouping and notan",
+        "DM-32 Cast-shadow construction from a light source"
+      ],
+      "signature_questions": [
+        "One consistent light direction",
+        "Every shadow value darker than every light value",
+        "Reflected light stays darker than the darkest halftone"
+      ],
+      "blind_spot": "Judges only its own lane; geometry and taste outside it belong to other experts.",
+      "evidence_demand": "Opened the rendered PNG and named the region looked at.",
+      "counterpart": "D04"
+    },
+    {
+      "id": "D07",
+      "name_ar": "خبير اللون",
+      "name_en": "Colour",
+      "title_ar": "خبير اللون",
+      "title_en": "Drawing council: Colour",
+      "lane": "verification",
+      "domains": [
+        "image",
+        "motion"
+      ],
+      "triggers": [
+        "رسم",
+        "رسمة",
+        "صورة",
+        "شخصية",
+        "drawing",
+        "illustration",
+        "image",
+        "character",
+        "sketch"
+      ],
+      "character_ar": "حرارة اللون ولوحة محدودة متناغمة، والبشرة والتظليل، والتباين الذي يخدم نقطة التركيز.",
+      "lens_en": "Colour temperature and limited palettes; Anime skin and cel-shading layer stack",
+      "superpowers": [
+        "DM-21 Colour temperature and limited palettes",
+        "DM-36 Anime skin and cel-shading layer stack",
+        "Veto: Colours clash with the mood of the brief or make the focal point unreadable"
+      ],
+      "signature_questions": [
+        "Light and shadow temperatures differ",
+        "At most one accent hue",
+        "Not everything is fully saturated; value carries the read"
+      ],
+      "blind_spot": "Judges only its own lane; geometry and taste outside it belong to other experts.",
+      "evidence_demand": "Opened the rendered PNG and named the region looked at.",
+      "counterpart": "D04"
+    },
+    {
+      "id": "D08",
+      "name_ar": "خبير التكوين والسرد",
+      "name_en": "Composition and storytelling",
+      "title_ar": "خبير التكوين والسرد",
+      "title_en": "Drawing council: Composition and storytelling",
+      "lane": "audience",
+      "domains": [
+        "image",
+        "motion"
+      ],
+      "triggers": [
+        "رسم",
+        "رسمة",
+        "صورة",
+        "شخصية",
+        "drawing",
+        "illustration",
+        "image",
+        "character",
+        "sketch"
+      ],
+      "character_ar": "نقطة تركيز واحدة، ومسار العين، والأشكال التي تحمل الشعور، ووضوح القصة من نظرة.",
+      "lens_en": "Thumbnails, framing and focal path; How shapes carry emotion; Panels, closure and visual storytelling",
+      "superpowers": [
+        "DM-22 Thumbnails, framing and focal path",
+        "DM-23 How shapes carry emotion",
+        "DM-26 Panels, closure and visual storytelling"
+      ],
+      "signature_questions": [
+        "One focal point",
+        "Leading lines converge on it",
+        "Dominant direction matches the emotion"
+      ],
+      "blind_spot": "Judges only its own lane; geometry and taste outside it belong to other experts.",
+      "evidence_demand": "Opened the rendered PNG and named the region looked at.",
+      "counterpart": "D04"
+    },
+    {
+      "id": "D09",
+      "name_ar": "خبير الخط والتشطيب",
+      "name_en": "Line and finish",
+      "title_ar": "خبير الخط والتشطيب",
+      "title_en": "Drawing council: Line and finish",
+      "lane": "verification",
+      "domains": [
+        "image",
+        "motion"
+      ],
+      "triggers": [
+        "رسم",
+        "رسمة",
+        "صورة",
+        "شخصية",
+        "drawing",
+        "illustration",
+        "image",
+        "character",
+        "sketch"
+      ],
+      "character_ar": "أوزان الخط، والتراكب، والملمس، ونظافة الحواف والتقاطعات (لا مماسات مزعجة).",
+      "lens_en": "Line weight and inking; Graphite textures: grazing, push-pull and foliage; Suggest form with overlap and few confident lines",
+      "superpowers": [
+        "DM-24 Line weight and inking",
+        "DM-47 Graphite textures: grazing, push-pull and foliage",
+        "DM-48 Suggest form with overlap and few confident lines"
+      ],
+      "signature_questions": [
+        "At least two distinct line weights",
+        "Silhouette heavier than interior lines",
+        "Strokes follow the surface or growth direction"
+      ],
+      "blind_spot": "Judges only its own lane; geometry and taste outside it belong to other experts.",
+      "evidence_demand": "Opened the rendered PNG and named the region looked at.",
+      "counterpart": "D04"
+    },
+    {
+      "id": "D10",
+      "name_ar": "خبير تصميم الشخصيات والتعبير",
+      "name_en": "Character design and expression",
+      "title_ar": "خبير تصميم الشخصيات والتعبير",
+      "title_en": "Drawing council: Character design and expression",
+      "lane": "verification",
+      "domains": [
+        "image",
+        "motion"
+      ],
+      "triggers": [
+        "رسم",
+        "رسمة",
+        "صورة",
+        "شخصية",
+        "drawing",
+        "illustration",
+        "image",
+        "character",
+        "sketch"
+      ],
+      "character_ar": "لغة الأشكال، والسيلويت المقروء، والجاذبية، وتعبير الوجه والعين والحاجب، والشعر ككتل.",
+      "lens_en": "Shape language; Silhouette readability; Exaggeration, appeal and age by proportion; Facial expression from brows, eyes and mouth; Turnarounds and model sheets; Hair as masses that grow and move; Cartoon motion symbols and expression shorthand; Anime character types and body ratios by role; Creature and game character design pipeline",
+      "superpowers": [
+        "DM-13 Shape language",
+        "DM-14 Silhouette readability",
+        "DM-15 Exaggeration, appeal and age by proportion"
+      ],
+      "signature_questions": [
+        "The dominant shape is identifiable in the silhouette",
+        "At least two clearly different mass sizes",
+        "Pose reads at 64 px tall"
+      ],
+      "blind_spot": "Judges only its own lane; geometry and taste outside it belong to other experts.",
+      "evidence_demand": "Opened the rendered PNG and named the region looked at.",
+      "counterpart": "D04"
+    },
+    {
+      "id": "D11",
+      "name_ar": "خبير الحيوان والطبيعة",
+      "name_en": "Animals and nature",
+      "title_ar": "خبير الحيوان والطبيعة",
+      "title_en": "Drawing council: Animals and nature",
+      "lane": "verification",
+      "domains": [
+        "image",
+        "motion"
+      ],
+      "triggers": [
+        "رسم",
+        "رسمة",
+        "صورة",
+        "شخصية",
+        "drawing",
+        "illustration",
+        "image",
+        "character",
+        "sketch"
+      ],
+      "character_ar": "بناء الحيوان من خط العمود الفقري وكتل الصدر والحوض، والأشجار والنبات من أشكال بسيطة.",
+      "lens_en": "Animal construction from the skeleton line; Flowers, leaves and trees from simple shapes",
+      "superpowers": [
+        "DM-25 Animal construction from the skeleton line",
+        "DM-38 Flowers, leaves and trees from simple shapes",
+        "Veto: An animal's anatomy or pose is impossible for that animal"
+      ],
+      "signature_questions": [
+        "Back leg shows the raised heel (hock)",
+        "Chest mass larger than hip mass for most quadrupeds",
+        "Head-to-body ratio kept in every pose"
+      ],
+      "blind_spot": "Judges only its own lane; geometry and taste outside it belong to other experts.",
+      "evidence_demand": "Opened the rendered PNG and named the region looked at.",
+      "counterpart": "D04"
+    }
+  ]
+}

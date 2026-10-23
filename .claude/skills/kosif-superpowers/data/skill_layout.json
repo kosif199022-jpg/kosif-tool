@@ -88,7 +88,8 @@
     "references/remote-commander-mcp.md",
     "references/owned-repos-map.md",
     "references/superpowers-rea-map.md",
-    "references/superpowers-rea-map.html"
+    "references/superpowers-rea-map.html",
+    "references/github-top-1000.md"
    ],
    "globs": []
   },
@@ -163,7 +164,8 @@
     "references/native-primitives-and-research-v2.md",
     "references/native-zbuffer-rasterizer.md",
     "references/cloud-browser-and-app-capability-matrix.md",
-    "references/drawing-methods-atlas.md"
+    "references/drawing-methods-atlas.md",
+    "references/portrait-drawing.md"
    ],
    "globs": []
   },

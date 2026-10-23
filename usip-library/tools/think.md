@@ -1,4 +1,4 @@
-# أدوات المجال `think` (13 أداة)
+# أدوات المجال `think` (14 أداة)
 
 > مولّد من `data/tools.json`. [الفهرس الرئيسي](../README.md) · `python3 scripts/hub.py tool <id>` للبطاقة الحية.
 
@@ -435,6 +435,60 @@
 #### عند الفشل (A29)
 
 - ابدأ بـ `think.py recover --message "<نص الخطأ>"`، ثم سجّل `fusionforge.py trace --project <slug> --id <FUSE-ID> --stage <stage> --node <N> --action "<ما جُرّب>" --result failed --error-class <الصنف> --tool tool:invention-lab --evidence <ملف>`.
+
+### `prompt-lab` — مختبر البرومبت / Prompt Lab
+
+| الحقل | القيمة |
+|---|---|
+| المسار | `scripts/prompt_lab.py` (جذر: skill) |
+| المجال | `think` |
+| الدليل | `tested-here` |
+| العائلات | `prompt-craft`, `verification-evals` |
+
+**ما تفعله:** يجعل منهج كتابة البرومبت قابلًا للتشغيل لثمانية أنواع (نظام، تكليف وكيل، كود، بحث، كتابة، حَكَم، صورة، فيديو). build يرتب خانات النوع ويحوّل كل خانة مطلوبة ناقصة إلى سؤال؛ lint يعطي درجة من 20 (الخانات المطلوبة، والأنماط الضارة كالكلمات المبهمة والصياح وكلمات التهويل وكثرة النفي، بالعربية والإنجليزية) مع بوابات رفض للأسرار وطلب سلسلة التفكير والبيانات الملصقة بلا فواصل؛ refine يرتب الإصلاحات ويطبع هيكل الخانات الناقصة؛ eval يشغّل تأكيدات حتمية على نواتج محفوظة ويحتفظ بالنسخة فقط إن فازت على الأساس بلا تراجع؛ pairwise يطبع برومبتين للحكم بترتيب معكوس ولا يحتسب إلا الحكم المتفق عليه، كما يحكم Jev.
+
+**What it does:** Makes the prompt-craft method runnable for eight kinds of prompt (system, agent brief, code, research, writing, LLM judge, image, video). build renders a kind's slots in order and turns every unfilled required slot into a question; lint scores a prompt out of 20 (required slots present, anti-patterns such as vague or shouted words, hype tokens and negative-heavy rules, in English and Arabic) with hard gates for a secret, a chain-of-thought request or undelimited pasted data; refine orders the fixes and prints the missing-slot skeleton; eval runs deterministic assertions on saved outputs and keeps a variant only when it beats the baseline with no regression; pairwise prints order-swapped judge prompts and counts only verdicts that agree in both orders, the way the owner's Jev service judges.
+
+#### متى تُستدعى
+
+- «اكتب لي برومبت فيديو تفصيلي ودقيق جدًا»
+- «افحص البرومبت ده وقولي ناقصه إيه»
+- «write a precise system prompt for my app»
+- «is my new prompt actually better than the old one?»
+
+#### الأوامر
+
+- **kinds**: Lists the eight kinds and their slots (* = required)
+  - `python3 scripts/prompt_lab.py kinds`
+- **build**: Renders the kind's slots in order; unfilled required slots become [[questions]]; --lang ar adds the keep-dialect rule
+  - `python3 scripts/prompt_lab.py build --kind video --set shot="Wide shot" --set subject="a fisherman" --set action="pulling a net" --set environment="on a boat at sunrise" --set camera="slow dolly in" --set style="warm light from the right" --set duration="6 seconds" --set aspect=16:9 --set audio="waves, no music"`
+- **lint**: Score out of 20, band (ship / fix-lowest / rewrite / fail-gate), missing slots, anti-patterns and fixes; exit 1 on rewrite or a gate; --json
+  - `echo "Make a nice image of a cat, 8k" \| python3 scripts/prompt_lab.py lint - --kind image`
+- **refine**: Ordered fix list plus the skeleton of the missing slots to merge into
+  - `echo "Write a blog post about AI" \| python3 scripts/prompt_lab.py refine - --kind writing`
+- **eval**: Assertion matrix over saved outputs; keep=true only with a gain and no regression
+  - `python3 scripts/prompt_lab.py eval --cases cases.json --outputs outputs.json --baseline A`
+- **pairwise**: Prints the two order-swapped judge prompts; with --verdicts FILE counts only agreeing verdicts and flags position bias
+  - `python3 scripts/prompt_lab.py pairwise --plan --a A.txt --b B.txt --task "Summarise the report for the board"`
+- **--self-test**: Runs the built-in checks
+  - `python3 scripts/prompt_lab.py --self-test`
+
+#### المتطلبات والأمان
+
+- binaries: python3
+- الأمان: read-only
+- الموافقة: —
+- الحدود: The linter reads text only: it shows whether slots and anti-patterns appear, not whether the prompt will work; eval needs outputs from real runs, and it never calls a model or the Jev service itself.
+
+#### الاختبارات والأدلة
+
+- `.claude/skills/kosif-superpowers/evals/test_prompt_lab.py`
+- مرجع: `.claude/skills/kosif-superpowers/references/prompt-optimizer.md`
+- مرجع: `.claude/skills/kosif-superpowers/references/guides/discover.md`
+
+#### عند الفشل (A29)
+
+- ابدأ بـ `think.py recover --message "<نص الخطأ>"`، ثم سجّل `fusionforge.py trace --project <slug> --id <FUSE-ID> --stage <stage> --node <N> --action "<ما جُرّب>" --result failed --error-class <الصنف> --tool tool:prompt-lab --evidence <ملف>`.
 
 ### `see-pro-cognitive-gate` — فاحص عقود التفكير والتوليف KOSIF SEE Pro / SEE Pro Cognitive Fusion contract verifier
 

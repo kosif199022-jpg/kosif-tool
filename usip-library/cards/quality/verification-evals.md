@@ -82,7 +82,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `spec` ← المخرج `code`، والمنفّذ `method:CHECK-01` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `council` · `differential-exam` · `package-skill` · `prompt-pack` · `repo-validate` · `repo-verify-video`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `council` · `differential-exam` · `package-skill` · `prompt-lab` · `prompt-pack` · `repo-validate`.
 - مراحل النوع: قراءة الكود والاختبارات ← إعادة إنتاج أو اختبار جديد ← أصغر تغيير ← الاختبارات ← مراجعة الفرق ← فرع وPR.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -153,7 +153,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `spec` ← المخرج `code`، والمنفّذ `method:CHECK-02` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `council` · `differential-exam` · `package-skill` · `prompt-pack` · `repo-validate` · `repo-verify-video`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `council` · `differential-exam` · `package-skill` · `prompt-lab` · `prompt-pack` · `repo-validate`.
 - مراحل النوع: قراءة الكود والاختبارات ← إعادة إنتاج أو اختبار جديد ← أصغر تغيير ← الاختبارات ← مراجعة الفرق ← فرع وPR.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -229,7 +229,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `spec` ← المخرج `code`، والمنفّذ `method:CHECK-03` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `council` · `differential-exam` · `package-skill` · `prompt-pack` · `repo-validate` · `repo-verify-video`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `council` · `differential-exam` · `package-skill` · `prompt-lab` · `prompt-pack` · `repo-validate`.
 - مراحل النوع: قراءة الكود والاختبارات ← إعادة إنتاج أو اختبار جديد ← أصغر تغيير ← الاختبارات ← مراجعة الفرق ← فرع وPR.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -303,7 +303,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `spec` ← المخرج `code`، والمنفّذ `method:CHECK-04` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `council` · `differential-exam` · `package-skill` · `prompt-pack` · `repo-validate` · `repo-verify-video`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `council` · `differential-exam` · `package-skill` · `prompt-lab` · `prompt-pack` · `repo-validate`.
 - مراحل النوع: قراءة الكود والاختبارات ← إعادة إنتاج أو اختبار جديد ← أصغر تغيير ← الاختبارات ← مراجعة الفرق ← فرع وPR.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -374,7 +374,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `spec` ← المخرج `code`، والمنفّذ `method:CHECK-05` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `council` · `differential-exam` · `package-skill` · `prompt-pack` · `repo-validate` · `repo-verify-video`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `council` · `differential-exam` · `package-skill` · `prompt-lab` · `prompt-pack` · `repo-validate`.
 - مراحل النوع: قراءة الكود والاختبارات ← إعادة إنتاج أو اختبار جديد ← أصغر تغيير ← الاختبارات ← مراجعة الفرق ← فرع وPR.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -448,7 +448,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `spec` ← المخرج `code`، والمنفّذ `method:CHECK-06` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `council` · `differential-exam` · `package-skill` · `prompt-pack` · `repo-validate` · `repo-verify-video`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `council` · `differential-exam` · `package-skill` · `prompt-lab` · `prompt-pack` · `repo-validate`.
 - مراحل النوع: قراءة الكود والاختبارات ← إعادة إنتاج أو اختبار جديد ← أصغر تغيير ← الاختبارات ← مراجعة الفرق ← فرع وPR.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -521,7 +521,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `spec` ← المخرج `code`، والمنفّذ `method:CHECK-07` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `council` · `differential-exam` · `package-skill` · `prompt-pack` · `repo-validate` · `repo-verify-video`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `council` · `differential-exam` · `package-skill` · `prompt-lab` · `prompt-pack` · `repo-validate`.
 - مراحل النوع: قراءة الكود والاختبارات ← إعادة إنتاج أو اختبار جديد ← أصغر تغيير ← الاختبارات ← مراجعة الفرق ← فرع وPR.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -592,7 +592,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `spec` ← المخرج `code`، والمنفّذ `method:CHECK-08` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `council` · `differential-exam` · `package-skill` · `prompt-pack` · `repo-validate` · `repo-verify-video`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `council` · `differential-exam` · `package-skill` · `prompt-lab` · `prompt-pack` · `repo-validate`.
 - مراحل النوع: قراءة الكود والاختبارات ← إعادة إنتاج أو اختبار جديد ← أصغر تغيير ← الاختبارات ← مراجعة الفرق ← فرع وPR.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -663,7 +663,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `spec` ← المخرج `code`، والمنفّذ `method:CHECK-09` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `council` · `differential-exam` · `package-skill` · `prompt-pack` · `repo-validate` · `repo-verify-video`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `council` · `differential-exam` · `package-skill` · `prompt-lab` · `prompt-pack` · `repo-validate`.
 - مراحل النوع: قراءة الكود والاختبارات ← إعادة إنتاج أو اختبار جديد ← أصغر تغيير ← الاختبارات ← مراجعة الفرق ← فرع وPR.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -735,7 +735,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `spec` ← المخرج `code`، والمنفّذ `method:CHECK-10` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `council` · `differential-exam` · `package-skill` · `prompt-pack` · `repo-validate` · `repo-verify-video`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `council` · `differential-exam` · `package-skill` · `prompt-lab` · `prompt-pack` · `repo-validate`.
 - مراحل النوع: قراءة الكود والاختبارات ← إعادة إنتاج أو اختبار جديد ← أصغر تغيير ← الاختبارات ← مراجعة الفرق ← فرع وPR.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -806,7 +806,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `spec` ← المخرج `code`، والمنفّذ `method:CHECK-11` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `council` · `differential-exam` · `package-skill` · `prompt-pack` · `repo-validate` · `repo-verify-video`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `council` · `differential-exam` · `package-skill` · `prompt-lab` · `prompt-pack` · `repo-validate`.
 - مراحل النوع: قراءة الكود والاختبارات ← إعادة إنتاج أو اختبار جديد ← أصغر تغيير ← الاختبارات ← مراجعة الفرق ← فرع وPR.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -877,7 +877,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `spec` ← المخرج `code`، والمنفّذ `method:CHECK-12` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `council` · `differential-exam` · `package-skill` · `prompt-pack` · `repo-validate` · `repo-verify-video`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `council` · `differential-exam` · `package-skill` · `prompt-lab` · `prompt-pack` · `repo-validate`.
 - مراحل النوع: قراءة الكود والاختبارات ← إعادة إنتاج أو اختبار جديد ← أصغر تغيير ← الاختبارات ← مراجعة الفرق ← فرع وPR.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -948,7 +948,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `spec` ← المخرج `code`، والمنفّذ `method:CHECK-13` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `council` · `differential-exam` · `package-skill` · `prompt-pack` · `repo-validate` · `repo-verify-video`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `council` · `differential-exam` · `package-skill` · `prompt-lab` · `prompt-pack` · `repo-validate`.
 - مراحل النوع: قراءة الكود والاختبارات ← إعادة إنتاج أو اختبار جديد ← أصغر تغيير ← الاختبارات ← مراجعة الفرق ← فرع وPR.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -1019,7 +1019,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `spec` ← المخرج `code`، والمنفّذ `method:CHECK-14` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `council` · `differential-exam` · `package-skill` · `prompt-pack` · `repo-validate` · `repo-verify-video`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `council` · `differential-exam` · `package-skill` · `prompt-lab` · `prompt-pack` · `repo-validate`.
 - مراحل النوع: قراءة الكود والاختبارات ← إعادة إنتاج أو اختبار جديد ← أصغر تغيير ← الاختبارات ← مراجعة الفرق ← فرع وPR.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -1091,7 +1091,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `spec` ← المخرج `code`، والمنفّذ `method:CHECK-15` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `council` · `differential-exam` · `package-skill` · `prompt-pack` · `repo-validate` · `repo-verify-video`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `council` · `differential-exam` · `package-skill` · `prompt-lab` · `prompt-pack` · `repo-validate`.
 - مراحل النوع: قراءة الكود والاختبارات ← إعادة إنتاج أو اختبار جديد ← أصغر تغيير ← الاختبارات ← مراجعة الفرق ← فرع وPR.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -1163,7 +1163,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `spec` ← المخرج `code`، والمنفّذ `method:CHECK-16` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `council` · `differential-exam` · `package-skill` · `prompt-pack` · `repo-validate` · `repo-verify-video`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `council` · `differential-exam` · `package-skill` · `prompt-lab` · `prompt-pack` · `repo-validate`.
 - مراحل النوع: قراءة الكود والاختبارات ← إعادة إنتاج أو اختبار جديد ← أصغر تغيير ← الاختبارات ← مراجعة الفرق ← فرع وPR.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -1235,7 +1235,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `spec` ← المخرج `code`، والمنفّذ `method:CHECK-17` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `council` · `differential-exam` · `package-skill` · `prompt-pack` · `repo-validate` · `repo-verify-video`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `council` · `differential-exam` · `package-skill` · `prompt-lab` · `prompt-pack` · `repo-validate`.
 - مراحل النوع: قراءة الكود والاختبارات ← إعادة إنتاج أو اختبار جديد ← أصغر تغيير ← الاختبارات ← مراجعة الفرق ← فرع وPR.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -1306,7 +1306,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `spec` ← المخرج `code`، والمنفّذ `method:CHECK-18` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `council` · `differential-exam` · `package-skill` · `prompt-pack` · `repo-validate` · `repo-verify-video`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `council` · `differential-exam` · `package-skill` · `prompt-lab` · `prompt-pack` · `repo-validate`.
 - مراحل النوع: قراءة الكود والاختبارات ← إعادة إنتاج أو اختبار جديد ← أصغر تغيير ← الاختبارات ← مراجعة الفرق ← فرع وPR.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -1378,7 +1378,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `spec` ← المخرج `code`، والمنفّذ `method:CHECK-19` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `council` · `differential-exam` · `package-skill` · `prompt-pack` · `repo-validate` · `repo-verify-video`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `council` · `differential-exam` · `package-skill` · `prompt-lab` · `prompt-pack` · `repo-validate`.
 - مراحل النوع: قراءة الكود والاختبارات ← إعادة إنتاج أو اختبار جديد ← أصغر تغيير ← الاختبارات ← مراجعة الفرق ← فرع وPR.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -1449,7 +1449,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `spec` ← المخرج `code`، والمنفّذ `method:CHECK-20` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `council` · `differential-exam` · `package-skill` · `prompt-pack` · `repo-validate` · `repo-verify-video`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `council` · `differential-exam` · `package-skill` · `prompt-lab` · `prompt-pack` · `repo-validate`.
 - مراحل النوع: قراءة الكود والاختبارات ← إعادة إنتاج أو اختبار جديد ← أصغر تغيير ← الاختبارات ← مراجعة الفرق ← فرع وPR.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -1520,7 +1520,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `spec` ← المخرج `code`، والمنفّذ `method:CHECK-21` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `council` · `differential-exam` · `package-skill` · `prompt-pack` · `repo-validate` · `repo-verify-video`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `council` · `differential-exam` · `package-skill` · `prompt-lab` · `prompt-pack` · `repo-validate`.
 - مراحل النوع: قراءة الكود والاختبارات ← إعادة إنتاج أو اختبار جديد ← أصغر تغيير ← الاختبارات ← مراجعة الفرق ← فرع وPR.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -1592,7 +1592,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `spec` ← المخرج `code`، والمنفّذ `method:CHECK-22` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `council` · `differential-exam` · `package-skill` · `prompt-pack` · `repo-validate` · `repo-verify-video`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `council` · `differential-exam` · `package-skill` · `prompt-lab` · `prompt-pack` · `repo-validate`.
 - مراحل النوع: قراءة الكود والاختبارات ← إعادة إنتاج أو اختبار جديد ← أصغر تغيير ← الاختبارات ← مراجعة الفرق ← فرع وPR.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -1667,7 +1667,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `spec` ← المخرج `code`، والمنفّذ `method:CHECK-23` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `council` · `differential-exam` · `package-skill` · `prompt-pack` · `repo-validate` · `repo-verify-video`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `council` · `differential-exam` · `package-skill` · `prompt-lab` · `prompt-pack` · `repo-validate`.
 - مراحل النوع: قراءة الكود والاختبارات ← إعادة إنتاج أو اختبار جديد ← أصغر تغيير ← الاختبارات ← مراجعة الفرق ← فرع وPR.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -1738,7 +1738,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `spec` ← المخرج `code`، والمنفّذ `method:CHECK-24` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `council` · `differential-exam` · `package-skill` · `prompt-pack` · `repo-validate` · `repo-verify-video`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `council` · `differential-exam` · `package-skill` · `prompt-lab` · `prompt-pack` · `repo-validate`.
 - مراحل النوع: قراءة الكود والاختبارات ← إعادة إنتاج أو اختبار جديد ← أصغر تغيير ← الاختبارات ← مراجعة الفرق ← فرع وPR.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -1810,7 +1810,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `spec` ← المخرج `code`، والمنفّذ `method:CHECK-25` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `council` · `differential-exam` · `package-skill` · `prompt-pack` · `repo-validate` · `repo-verify-video`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `council` · `differential-exam` · `package-skill` · `prompt-lab` · `prompt-pack` · `repo-validate`.
 - مراحل النوع: قراءة الكود والاختبارات ← إعادة إنتاج أو اختبار جديد ← أصغر تغيير ← الاختبارات ← مراجعة الفرق ← فرع وPR.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -1881,7 +1881,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `spec` ← المخرج `code`، والمنفّذ `method:CHECK-26` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `council` · `differential-exam` · `package-skill` · `prompt-pack` · `repo-validate` · `repo-verify-video`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `council` · `differential-exam` · `package-skill` · `prompt-lab` · `prompt-pack` · `repo-validate`.
 - مراحل النوع: قراءة الكود والاختبارات ← إعادة إنتاج أو اختبار جديد ← أصغر تغيير ← الاختبارات ← مراجعة الفرق ← فرع وPR.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -1952,7 +1952,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `spec` ← المخرج `code`، والمنفّذ `method:CHECK-27` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `council` · `differential-exam` · `package-skill` · `prompt-pack` · `repo-validate` · `repo-verify-video`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `council` · `differential-exam` · `package-skill` · `prompt-lab` · `prompt-pack` · `repo-validate`.
 - مراحل النوع: قراءة الكود والاختبارات ← إعادة إنتاج أو اختبار جديد ← أصغر تغيير ← الاختبارات ← مراجعة الفرق ← فرع وPR.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -2026,7 +2026,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `spec` ← المخرج `code`، والمنفّذ `method:CHECK-28` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `council` · `differential-exam` · `package-skill` · `prompt-pack` · `repo-validate` · `repo-verify-video`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `council` · `differential-exam` · `package-skill` · `prompt-lab` · `prompt-pack` · `repo-validate`.
 - مراحل النوع: قراءة الكود والاختبارات ← إعادة إنتاج أو اختبار جديد ← أصغر تغيير ← الاختبارات ← مراجعة الفرق ← فرع وPR.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -2098,7 +2098,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `spec` ← المخرج `code`، والمنفّذ `method:CHECK-29` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `council` · `differential-exam` · `package-skill` · `prompt-pack` · `repo-validate` · `repo-verify-video`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `council` · `differential-exam` · `package-skill` · `prompt-lab` · `prompt-pack` · `repo-validate`.
 - مراحل النوع: قراءة الكود والاختبارات ← إعادة إنتاج أو اختبار جديد ← أصغر تغيير ← الاختبارات ← مراجعة الفرق ← فرع وPR.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -2169,7 +2169,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `spec` ← المخرج `code`، والمنفّذ `method:CHECK-30` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `council` · `differential-exam` · `package-skill` · `prompt-pack` · `repo-validate` · `repo-verify-video`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `council` · `differential-exam` · `package-skill` · `prompt-lab` · `prompt-pack` · `repo-validate`.
 - مراحل النوع: قراءة الكود والاختبارات ← إعادة إنتاج أو اختبار جديد ← أصغر تغيير ← الاختبارات ← مراجعة الفرق ← فرع وPR.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -2238,7 +2238,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `spec` ← المخرج `code`، والمنفّذ `method:CHECK-31` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `council` · `differential-exam` · `package-skill` · `prompt-pack` · `repo-validate` · `repo-verify-video`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `council` · `differential-exam` · `package-skill` · `prompt-lab` · `prompt-pack` · `repo-validate`.
 - مراحل النوع: قراءة الكود والاختبارات ← إعادة إنتاج أو اختبار جديد ← أصغر تغيير ← الاختبارات ← مراجعة الفرق ← فرع وPR.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -2308,7 +2308,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `spec` ← المخرج `code`، والمنفّذ `method:CHECK-32` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `council` · `differential-exam` · `package-skill` · `prompt-pack` · `repo-validate` · `repo-verify-video`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `council` · `differential-exam` · `package-skill` · `prompt-lab` · `prompt-pack` · `repo-validate`.
 - مراحل النوع: قراءة الكود والاختبارات ← إعادة إنتاج أو اختبار جديد ← أصغر تغيير ← الاختبارات ← مراجعة الفرق ← فرع وPR.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -2378,7 +2378,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `spec` ← المخرج `code`، والمنفّذ `method:CHECK-33` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `council` · `differential-exam` · `package-skill` · `prompt-pack` · `repo-validate` · `repo-verify-video`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `council` · `differential-exam` · `package-skill` · `prompt-lab` · `prompt-pack` · `repo-validate`.
 - مراحل النوع: قراءة الكود والاختبارات ← إعادة إنتاج أو اختبار جديد ← أصغر تغيير ← الاختبارات ← مراجعة الفرق ← فرع وPR.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -2447,7 +2447,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `spec` ← المخرج `code`، والمنفّذ `method:CHECK-34` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `council` · `differential-exam` · `package-skill` · `prompt-pack` · `repo-validate` · `repo-verify-video`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `council` · `differential-exam` · `package-skill` · `prompt-lab` · `prompt-pack` · `repo-validate`.
 - مراحل النوع: قراءة الكود والاختبارات ← إعادة إنتاج أو اختبار جديد ← أصغر تغيير ← الاختبارات ← مراجعة الفرق ← فرع وPR.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -2516,7 +2516,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `spec` ← المخرج `code`، والمنفّذ `method:CHECK-35` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `council` · `differential-exam` · `package-skill` · `prompt-pack` · `repo-validate` · `repo-verify-video`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `council` · `differential-exam` · `package-skill` · `prompt-lab` · `prompt-pack` · `repo-validate`.
 - مراحل النوع: قراءة الكود والاختبارات ← إعادة إنتاج أو اختبار جديد ← أصغر تغيير ← الاختبارات ← مراجعة الفرق ← فرع وPR.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 

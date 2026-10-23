@@ -1,6 +1,6 @@
 # مكتبة البروتوكول — USIP v5.5 protocol library
 
-> مولّدة بـ `scripts/smart_capabilities.py library`؛ لا تُحرَّر يدويًا. 5,581 قدرة في 62 عائلة و15 مجموعة، و155 أداة مسجلة. الدليل: [A28](../protocol/A28-capability-routing.md) · [النواة](../../PROTOCOL.md#متى-تفتح-الملاحق--appendix-triggers)
+> مولّدة بـ `scripts/smart_capabilities.py library`؛ لا تُحرَّر يدويًا. 5,601 قدرة في 62 عائلة و15 مجموعة، و159 أداة مسجلة. الدليل: [A28](../protocol/A28-capability-routing.md) · [النواة](../../PROTOCOL.md#متى-تفتح-الملاحق--appendix-triggers)
 
 ## الفهرس / contents
 
@@ -19,23 +19,23 @@
 
 | المجموعة | القدرات | proven | ready | الأدوات | الفصل |
 |---|---:|---:|---:|---:|---|
-| البحث والمعرفة (`research`) | 56 | 21 | 0 | 13 | [research.md](research.md) |
-| التفكير والتخطيط والاستراتيجية (`thinking`) | 319 | 17 | 3 | 20 | [thinking.md](thinking.md) |
-| الوكلاء والتوجيه الذكي (`agents`) | 244 | 149 | 21 | 38 | [agents.md](agents.md) |
+| البحث والمعرفة (`research`) | 56 | 21 | 0 | 14 | [research.md](research.md) |
+| التفكير والتخطيط والاستراتيجية (`thinking`) | 335 | 17 | 8 | 21 | [thinking.md](thinking.md) |
+| الوكلاء والتوجيه الذكي (`agents`) | 248 | 153 | 21 | 39 | [agents.md](agents.md) |
 | البرمجة وبناء التطبيقات (`software`) | 578 | 111 | 16 | 17 | [software.md](software.md) |
-| الرسم والأشكال والتصميم (`drawing`) | 300 | 53 | 55 | 23 | [drawing.md](drawing.md) |
+| الرسم والأشكال والتصميم (`drawing`) | 300 | 53 | 55 | 25 | [drawing.md](drawing.md) |
 | الصور والتحرير والتوليد (`images`) | 319 | 96 | 42 | 28 | [images.md](images.md) |
 | الثري دي والمحاكاة والرندر (`3d`) | 755 | 122 | 141 | 28 | [3d.md](3d.md) |
-| الموشن والمونتاج والسينما (`motion`) | 1,228 | 117 | 180 | 49 | [motion.md](motion.md) |
+| الموشن والمونتاج والسينما (`motion`) | 1,228 | 117 | 180 | 51 | [motion.md](motion.md) |
 | الصوت والموسيقى والتعليق (`audio`) | 422 | 59 | 74 | 23 | [audio.md](audio.md) |
 | الخطوط والنصوص العربية واللاتينية (`type`) | 215 | 40 | 49 | 12 | [type.md](type.md) |
 | البيانات والرسوم والمواقع (`data`) | 258 | 49 | 18 | 4 | [data.md](data.md) |
 | المستندات والكتابة (`documents`) | 138 | 32 | 0 | 2 | [documents.md](documents.md) |
-| الاختبارات والجودة والأمان (`quality`) | 464 | 94 | 58 | 35 | [quality.md](quality.md) |
+| الاختبارات والجودة والأمان (`quality`) | 464 | 94 | 58 | 36 | [quality.md](quality.md) |
 | التحليل العكسي وفحص البرامج (`reverse`) | 258 | 30 | 0 | 20 | [reverse.md](reverse.md) |
 | قدرات مساندة غير مصنفة (`misc`) | 27 | 5 | 7 | 0 | [misc.md](misc.md) |
 
-الفصول الـ15 معًا 6,716 سطرًا، وكل قدرة في فصل واحد بالضبط.
+الفصول الـ15 معًا 6,744 سطرًا، وكل قدرة في فصل واحد بالضبط.
 
 ## من أي محادثة / from any chat
 

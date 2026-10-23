@@ -9,7 +9,7 @@
 مسارات الدليل نسبية إلى `/home/user/`؛ و`session-<date>:<file>#<section>` تشير إلى تشغيل موثق في جلسة سابقة؛ و`owner-upload:` إلى ملف داخل أرشيف أرسله المالك. Proof paths are relative to `/home/user/`.
 
 **المجال / domain:** المنتج والمال — Product & finance · **البادئة / prefix:** `ASTRAT` · **البيانات / data:** `data/powers/atlas-strategy.json` · **بحث / search:** `python3 scripts/powers.py family atlas-strategy`
-**مراجع ذات صلة / related references:** [CLAUDE_3_MINUTE_MAP.md](../CLAUDE_3_MINUTE_MAP.md) · [atlas-5000-mining-20261023.md](../atlas-5000-mining-20261023.md) · [hubs.md](../hubs.md) · [rea-superpowers-frontier-20261023.md](../rea-superpowers-frontier-20261023.md)
+**مراجع ذات صلة / related references:** [CLAUDE_3_MINUTE_MAP.md](../CLAUDE_3_MINUTE_MAP.md) · [atlas-5000-mining-20261023.md](../atlas-5000-mining-20261023.md) · [capability-audit.md](../capability-audit.md) · [hubs.md](../hubs.md) · [rea-superpowers-frontier-20261023.md](../rea-superpowers-frontier-20261023.md)
 
 ## الفهرس / contents
 

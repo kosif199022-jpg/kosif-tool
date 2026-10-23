@@ -3,7 +3,7 @@
 
 > **قوتك هنا / what this gives you:** كل سكربت في المهارة والمستودع يُشغَّل فعلًا ولم يكن له سجل في الكتالوج: ماذا يفعل، ومتى، وأمره الأول، ومستلزماته، ودليله. مولَّدة من data/tools.json بأمر hub.py build؛ hub.py tool <id> يعطي البطاقة كاملة. — Every script in the skill and repository that really runs and had no catalog record: what it does, when, its first command, requirements and proof. Generated from data/tools.json by hub.py build; hub.py tool <id> gives the full card.
 > **أقوى دليل / strongest evidence:** **TOOL-01** Offline bilingual capability finder (`kosif-tool/.claude/skills/kosif-superpowers/evals/test_ai_tool_discovery.py`) · **TOOL-02** Session boot briefing (`kosif-tool/tests/test_boot.py`)
-> **155 powers follow** — ✅ 122 · 🟢 21 · 📦 12 · 🔑 0 · 👁 0 · 📄 0 · 💡 0.
+> **159 powers follow** — ✅ 126 · 🟢 21 · 📦 12 · 🔑 0 · 👁 0 · 📄 0 · 💡 0.
 
 **الحالة / status:** ✅ مُثبت (شُغّل فعلًا وله مسار دليل) · 🟢 جاهز (كود موجود يعمل بما هو متاح عادة) · 📦 بأمر تثبيت واحد · 🔑 يحتاج مفتاحًا أو حسابًا أو موصلًا · 👁 شوهد في فيديو مرجعي (للموشن فقط) · 📄 طريقة موثقة · 💡 فكرة. الشارة هي أدنى مستوى صادق — the badge is the lowest level that is true.
 مسارات الدليل نسبية إلى `/home/user/`؛ و`session-<date>:<file>#<section>` تشير إلى تشغيل موثق في جلسة سابقة؛ و`owner-upload:` إلى ملف داخل أرشيف أرسله المالك. Proof paths are relative to `/home/user/`.
@@ -14,16 +14,16 @@
 ## الفهرس / contents
 
 - **Discover and route / اكتشاف القدرات والتوجيه** — TOOL-01 … TOOL-156 (25)
-- **Think, ideate and write / التفكير والأفكار والكتابة** — TOOL-10 … TOOL-151 (13)
+- **Think, ideate and write / التفكير والأفكار والكتابة** — TOOL-10 … TOOL-159 (14)
 - **Motion graphics and rendering / الموشن والرندر** — TOOL-12 … TOOL-150 (20)
 - **Editing and reference video / المونتاج والفيديو المرجعي** — TOOL-19 … TOOL-132 (13)
 - **Audio and rhythm / الصوت والإيقاع** — TOOL-25 … TOOL-152 (4)
-- **Drawing and characters / الرسم والشخصيات** — TOOL-27 … TOOL-153 (14)
+- **Drawing and characters / الرسم والشخصيات** — TOOL-27 … TOOL-158 (16)
 - **Software investigation / فحص البرامج** — TOOL-32 … TOOL-113 (13)
 - **Maintain and build / الصيانة والبناء** — TOOL-33 … TOOL-154 (13)
 - **3D / ثلاثي الأبعاد** — TOOL-36 … TOOL-121 (11)
 - **Image, design and fonts / الصور والتصميم والخطوط** — TOOL-42 … TOOL-148 (11)
-- **Sources and references / المصادر والمراجع** — TOOL-43 … TOOL-142 (17)
+- **Sources and references / المصادر والمراجع** — TOOL-43 … TOOL-160 (18)
 - **Local computer / الجهاز المحلي** — TOOL-55 (1)
 - المصادر والرخص / sources & licences
 
@@ -351,6 +351,15 @@
 - **كيف / how:** abtest: `python3 scripts/stats_lab.py abtest --a 1000,100 --b 1000,130`; samplesize: `python3 scripts/stats_lab.py samplesize --base 0.10 --mde 0.20 --power 0.8`; describe: `printf 'region,revenue\nA,120\nB,95\nC,130\nD,110\nE,900\n' | python3 scripts/stats_lab.py describe - --col revenue`; lots: `printf 'date,side,qty,price,fee\n2024-01-05,buy,10,100,5\n2024-03-01,buy,10,150,5\n2024-06-01,sell,12,200,4\n' | python3 scripts/stats_lab.py lots - --method fifo`. Full card: `python3 scripts/hub.py tool stats-lab`. Limits: Normal-approximation tests (not exact or Bayesian, no sequential-peeking correction); lots is arithmetic, not tax advice (no wash-sale or holding-period rules). **أرقام / params:** in: Conversion counts, rates, or a CSV file (or stdin) with a numeric column or date,side,qty,price[,fee][,asset] trades · out: JSON (or a one-line --text summary)
 - **يحتاج / needs:** [`python3`](../requirements.md#req-python3)
 - **الدليل / proof:** `kosif-tool/.claude/skills/kosif-superpowers/evals/test_stats_lab.py` · `kosif-tool/.claude/skills/kosif-superpowers/scripts/stats_lab.py`
+- **المصدر / source:** data/tools.json
+
+#### TOOL-159 · مختبر البرومبت · Prompt Lab · ✅ مُثبت هنا / proven here
+- **ماذا / what:** يجعل منهج كتابة البرومبت قابلًا للتشغيل لثمانية أنواع (نظام، تكليف وكيل، كود، بحث، كتابة، حَكَم، صورة، فيديو). build يرتب خانات النوع ويحوّل كل خانة مطلوبة ناقصة إلى سؤال؛ lint يعطي درجة من 20 (الخانات المطلوبة، والأنماط الضارة كالكلمات المبهمة والصياح وكلمات التهويل وكثرة النفي، بالعربية والإنجليزية) مع بوابات رفض للأسرار وطلب سلسلة التفكير والبيانات الملصقة بلا فواصل؛ refine يرتب الإصلاحات ويطبع هيكل الخانات الناقصة؛ eval يشغّل تأكيدات حتمية على نواتج محفوظة ويحتفظ بالنسخة فقط إن فازت على الأساس بلا تراجع؛ pairwise يطبع برومبتين للحكم بترتيب معكوس ولا يحتسب إلا الحكم المتفق عليه، كما يحكم Jev. — Makes the prompt-craft method runnable for eight kinds of prompt (system, agent brief, code, research, writing, LLM judge, image, video). build renders a kind's slots in order and turns every unfilled required slot into a question; lint scores a prompt out of 20 (required slots present, anti-patterns such as vague or shouted words, hype tokens and negative-heavy rules, in English and Arabic) with hard gates for a secret, a chain-of-thought request or undelimited pasted data; refine orders the fixes and prints the missing-slot skeleton; eval runs deterministic assertions on saved outputs and keeps a variant only when it beats the baseline with no regression; pairwise prints order-swapped judge prompts and counts only verdicts that agree in both orders, the way the owner's Jev service judges.
+- **متى أستخدمها / when:** اكتب لي برومبت فيديو تفصيلي ودقيق جدًا / write a precise system prompt for my app
+- **كيف / how:** kinds: `python3 scripts/prompt_lab.py kinds`; build: `python3 scripts/prompt_lab.py build --kind video --set shot="Wide shot" --set subject="a fisherman" --set action="pulling a net" --set environment="on a boat at sunrise" --set camera="slow dolly in" --set style="warm light from the right" --set duration="6 seconds" --set aspect=16:9 --set audio="waves, no music"`; lint: `echo "Make a nice image of a cat, 8k" | python3 scripts/prompt_lab.py lint - --kind image`; refine: `echo "Write a blog post about AI" | python3 scripts/prompt_lab.py refine - --kind writing`. Full card: `python3 scripts/hub.py tool prompt-lab`. Limits: The linter reads text only: it shows whether slots and anti-patterns appear, not whether the prompt will work; eval needs outputs from real runs, and it never calls a model or the Jev service itself. **أرقام / params:** in: A prompt file or stdin; for eval, cases.json and outputs.json saved from real runs; for pairwise, two output files or a verdicts file. · out: Text or JSON on stdout; it writes no files.
+- **تثبيت / install:** `needs on PATH: python3`
+- **يحتاج / needs:** [`python3`](../requirements.md#req-python3)
+- **الدليل / proof:** `kosif-tool/.claude/skills/kosif-superpowers/evals/test_prompt_lab.py` · `kosif-tool/.claude/skills/kosif-superpowers/scripts/prompt_lab.py`
 - **المصدر / source:** data/tools.json
 
 ## Motion graphics and rendering / الموشن والرندر
@@ -800,6 +809,24 @@
 - **كيف / how:** palette: `echo '<svg xmlns="http://www.w3.org/2000/svg"><rect fill="#1d4ed8"/><circle fill="#1D4ED8"/><path stroke="#f59e0b"/><text fill="#475569">K</text></svg>' | python3 scripts/brand_tokens.py palette -`; tokens: `echo '{"primary":"#1d4ed8","accent":"#f59e0b","neutral":"#64748b"}' | python3 scripts/brand_tokens.py tokens -`; contrast: `echo '{"text":"#777777","bg":"#ffffff"}' | python3 scripts/brand_tokens.py contrast -`. Full card: `python3 scripts/hub.py tool brand-tokens`. Limits: Reads colours written in the SVG text only (no rendering: implicit black fills, gradients' blended colours and raster images are not measured); tints/shades are sRGB mixes, not perceptual (OKLCH) scales; contrast follows WCAG 2.x, not APCA. **أرقام / params:** in: An SVG file, a palette JSON (palette output, name->hex map or hex list) or a tokens JSON; any of them on stdin with - · out: JSON (palette, tokens with CSS, contrast matrix) or CSS with --css
 - **يحتاج / needs:** [`python3`](../requirements.md#req-python3) · [`npm:axe`](../requirements.md#req-npm-axe)
 - **الدليل / proof:** `kosif-tool/.claude/skills/kosif-superpowers/evals/test_brand_tokens.py` · `kosif-tool/.claude/skills/kosif-superpowers/scripts/brand_tokens.py`
+- **المصدر / source:** data/tools.json
+
+#### TOOL-157 · رسم يدوي المظهر بالرصاص أو الفحم أو الحبر لأي صورة أو مشهد متخيَّل، خطًا بخط · Hand-drawn pencil, charcoal or ink drawing of any photo or imagined scene, built stroke by stroke · ✅ مُثبت هنا / proven here
+- **ماذا / what:** يحوّل صورة مرجعية إلى بورتريه بالقلم الرصاص يبدو مرسومًا باليد دون نسخ أي بكسل من الصورة: يقيس الشخص (نقاط ملامح الوجه وتقسيم الشعر والجلد والملابس، اختياري)، ويضع بناء لوميس الخفيف وغلافًا بخطوط مستقيمة، ويخطط القيم مع تخفيف الخلفية، ويرسم أربع طبقات تهشير بخطوط مستدقة تتبع الشكل وتتوقف عند الحواف، ويموّه البشرة، ويضيف حوافًا ضائعة وظاهرة ولمسات الملامح، ويرفع الإضاءات ولمعة العين بالممحاة، ويرسب الجرافيت عبر ملمس ورق. يكتب PNG وSVG بطبقات قابلة للتحرير وإيصالًا، والمراجعة تشغّل بوابة القاعدة 27 وفحوص دقة القيم. 16 بطاقة منهج للبورتريه في data/portrait_methods.json. يعمل على أي صورة (وضع المشهد لغير البورتريه)، و`imagine` يرسم مشاهد من الخيال: Claude يكتب المشهد كمجسّم SVG بإضاءة واحدة أو يمرر أي صورة مصيّرة من أدوات الرسم أو ثلاثي الأبعاد، ثم يُرسم خطًا بخط. الخامات: رصاص، فحم، حبر، سيبيا. — Turns any photo (portrait, object, place) or any scene Claude imagines into a hand-drawn-looking drawing without copying a single photo pixel: it measures the sitter (MediaPipe face landmarks and hair/skin/clothes segmentation, optional), lays in faint Loomis construction and a straight-line envelope, plans values with the background held back, renders four tonal passes of tapered strokes that follow the form and stop at edges, blends the skin with a stump pass, adds lost-and-found edges and feature accents, lifts highlights and catchlights with an eraser pass, and deposits graphite through simulated paper tooth. Writes PNG, a layered editable SVG (one group per stage) and a receipt; review runs the rule-27 anatomy/contact gate plus value-fidelity checks. 16 portrait method cards (Loomis, Bridgman, Bargue, Speed, Vanderpoel, Hampton, Gurney, Dodson, Hammond, atelier sight-size) in data/portrait_methods.json name the stage that executes each. Non-portrait photos switch to scene mode (GrabCut subject + colour-cluster shape boundaries, short straight hatching). `imagine` draws scenes from imagination: Claude writes the scene as an SVG maquette (one light, gradients for the light and shadow families, far planes lighter) or passes any rendered PNG (unified_draw, drawing_methods, Blender or native 3D), and it is drawn like a photo. Media: graphite, charcoal, ink, sepia.
+- **متى أستخدمها / when:** ارسم الصورة دي بورتريه بالقلم الرصاص كأنها مرسومة باليد / Draw this photo as a realistic pencil portrait from scratch
+- **كيف / how:** draw: `python3 scripts/portrait_pipeline.py draw --photo photo.png --out out/portrait --models <dir with face_landmarker.task and selfie_multiclass.tflite>`; imagine: `python3 scripts/portrait_pipeline.py imagine --svg scene.svg --out out/scene --medium graphite`; review: `python3 scripts/portrait_pipeline.py review --dir out/portrait`; cards: `python3 scripts/portrait_pipeline.py cards --id PM-02`. Full card: `python3 scripts/hub.py tool portrait-pipeline`. Limits: Algorithmic rendering from a measured reference and a value map, not a human hand and not a neural model. An imagined scene is only as convincing as the maquette Claude builds for it: flat vector maquettes give illustration-like drawings. Method cards paraphrase widely taught methods (only those marked user_copy_read_paraphrased rest on books read). review measures value fidelity, texture and figure connectivity, not beauty. **أرقام / params:** in: A photo of anything, or an imagined scene as an SVG maquette / rendered PNG; optional MediaPipe models for portraits · out: portrait.png, layered editable portrait.svg, receipt.json, review.json
+- **تثبيت / install:** `pip install numpy opencv-python-headless · optional: mediapipe (+ face_landmarker.task, selfie_multiclass_256x256.tflite from storage.googleapis.com/mediapipe-models)`
+- **يحتاج / needs:** [`chromium`](../requirements.md#req-chromium) · [`blender`](../requirements.md#req-blender) · [`pip:numpy`](../requirements.md#req-pip-numpy) · [`pip:opencv`](../requirements.md#req-pip-opencv) · [`pip:mediapipe`](../requirements.md#req-pip-mediapipe)
+- **الدليل / proof:** `kosif-tool/.claude/skills/kosif-superpowers/evals/test_portrait_pipeline.py` · `kosif-tool/.claude/skills/kosif-superpowers/scripts/portrait_pipeline.py`
+- **المصدر / source:** data/tools.json
+
+#### TOOL-158 · مجلس خبراء الرسم: أحد عشر خبيرًا من بطاقات الكتب الـ48 يراجعون الصورة قبل إرسالها · Drawing council: eleven experts from the 48 method cards review an image before it is sent · ✅ مُثبت هنا / proven here
+- **ماذا / what:** بوابة القانون 27 بعد فحص review: يجمع بطاقات كتب الرسم الـ48 في أحد عشر خبيرًا (البناء، التشريح والنسب، الإيماءة، المنطق والفيزياء، المنظور، الضوء، اللون، التكوين، الخط، تصميم الشخصيات، الحيوان والطبيعة)، ويشغّل الفحوص الآلية، ويكتب لكل خبير برومبت بفحوص بطاقاته وأخطائها وشروط الرفض، ويسجل حكم كل خبير pass/fix/veto ودرجات الصحة والحرفة والجمال، ويحسب حكمًا PASS/FAIL بالتصليحات المطلوبة؛ ويصدّر الخبراء بصيغة شخصيات المجلس العام. — PROTOCOL law 27 gate after drawing_methods.py review. Groups the 48 drawing-book method cards into eleven experts (construction, anatomy and proportion, gesture, logic and physics, perspective, light, colour, composition, line, character design, animals and nature), runs the automated gates (law-27 contact review, card checks, tone metrics), writes one prompt per expert with its card checks, common errors and veto conditions, records each expert's pass/fix/veto with correctness, craft and beauty scores, and computes a deterministic PASS/FAIL verdict with the fixes still required; it also exports the experts in the general council persona schema.
+- **متى أستخدمها / when:** راجع الرسمة دي قبل ما تبعتها / Review this drawing with the drawing council before sending
+- **كيف / how:** roster: `python3 scripts/drawing_council.py roster --markdown`; plan: `python3 scripts/drawing_council.py plan --png out/scene.png --svg out/scene.svg --brief "رجل ينقذ قطة" --dir out/council-r1`; ingest: `python3 scripts/drawing_council.py ingest --dir out/council-r1 --expert E04 --file e04.json`; verdict: `python3 scripts/drawing_council.py verdict --dir out/council-r1`. Full card: `python3 scripts/hub.py tool drawing-council`. Limits: The automated gates measure geometry and tone only. Scores are the experts' recorded judgements against their cards, not a proof of beauty; the verdict says SIMULATED when one context played the experts. Cards summarise the books' methods, not the books. **أرقام / params:** in: A rendered PNG, optionally its SVG (tagged for law 27), the brief, and each expert's JSON answer · out: council.json, one prompt per expert, recorded answers, verdict.json and Arabic minutes.md with required fixes
+- **تثبيت / install:** `optional: pillow`
+- **يحتاج / needs:** [`pip:pillow`](../requirements.md#req-pip-pillow)
+- **الدليل / proof:** `kosif-tool/.claude/skills/kosif-superpowers/evals/test_drawing_council.py` · `kosif-tool/.claude/skills/kosif-superpowers/scripts/drawing_council.py`
 - **المصدر / source:** data/tools.json
 
 ## Software investigation / فحص البرامج
@@ -1378,6 +1405,15 @@
 - **الدليل / proof:** `kosif-tool/.claude/skills/kosif-superpowers/evals/test_sources_index.py` · `kosif-tool/.claude/skills/kosif-superpowers/scripts/sources_index.py`
 - **المصدر / source:** data/tools.json
 
+#### TOOL-160 · متابعة أشهر 1000 مستودع · GitHub Top-1000 Tracker · ✅ مُثبت هنا / proven here
+- **ماذا / what:** يحفظ مراجعة أشهر 1000 مستودع عام على GitHub: لقطة حقائق (الترتيب والنجوم واللغة والترخيص والوصف، مدموجة من فهرس gitstar-ranking وسجلات deps.dev لقائمة مكملة لما يفوته)، وتصنيف آلي حسب الموضوع والترخيص، ومراجعة يدوية للاستبعادات والنقل. build يكتب data/github_top1000.json والجدول references/github-top-1000.md بقرار لكل مستودع (نُقل، قابل للتعدين، مرجع، لا يُنقل) ومعرّفات القدرات أو الأدوات التي تحمل طرقه؛ find وshow للبحث؛ refresh يجلب لقطة جديدة إلى ملف منفصل للمراجعة. — Keeps the review of the 1,000 most-starred public GitHub repositories: a facts snapshot (rank, stars, language, licence id, description, merged from the gitstar-ranking index and deps.dev records for a supplement list it misses), an automatic topic and licence classification, and a hand review of exclusions and transfers. build writes data/github_top1000.json and the table references/github-top-1000.md with a decision per repository (transferred, mine, reference, skip) and the power or tool ids that carry its methods; find and show search it; refresh fetches a new snapshot to a separate file for review.
+- **متى أستخدمها / when:** وريني أشهر مستودعات جيت هاب اللي ليها علاقة بالموشن / which top GitHub repos about agents are still unmined?
+- **كيف / how:** build: `python3 scripts/github_top_repos.py build`; stats: `python3 scripts/github_top_repos.py stats`; find: `python3 scripts/github_top_repos.py find motion`; show: `python3 scripts/github_top_repos.py show stanfordnlp/dspy`. Full card: `python3 scripts/hub.py tool github-top-repos`. Limits: The top 1,000 is cut from a merged pool, not a census of GitHub: a repository neither source lists is missing; the topic rules are keyword based and corrected by hand where noticed; licence ids are what GitHub detects ('non-standard' means read the licence yourself). **أرقام / params:** in: data/github_top1000_snapshot.json and data/github_top1000_review.json. · out: data/github_top1000.json and references/github-top-1000.md (build), or text on stdout.
+- **تثبيت / install:** `needs on PATH: python3`
+- **يحتاج / needs:** [`python3`](../requirements.md#req-python3)
+- **الدليل / proof:** `kosif-tool/.claude/skills/kosif-superpowers/evals/test_github_top_repos.py` · `kosif-tool/.claude/skills/kosif-superpowers/scripts/github_top_repos.py`
+- **المصدر / source:** data/tools.json
+
 ## Local computer / الجهاز المحلي
 
 #### TOOL-55 · خادم KOSIF Remote Commander · KOSIF Remote Commander MCP · ✅ مُثبت هنا / proven here
@@ -1391,7 +1427,7 @@
 
 ## المصادر والرخص / sources & licences
 
-- الرخص / licences: — (155)
+- الرخص / licences: — (159)
 - الأفكار مكتوبة بكلماتنا مع رابط المصدر؛ لا يُنسخ نص طرف ثالث طويل. Ideas are paraphrased with a link to the source; no long third-party text is copied. `—` = no licence recorded (own method or own wording).
 
 ---

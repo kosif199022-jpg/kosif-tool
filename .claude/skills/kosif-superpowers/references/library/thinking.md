@@ -23,10 +23,10 @@
 | الحالة | العدد | المعنى |
 |---|---:|---|
 | `proven` | 17 | ✅ proven: a proof exists in the catalog; still check its requirements here before calling it ready |
-| `ready` | 3 | 🟢 ready: runnable without setup according to the catalog |
-| `documented` | 297 | 📄 documented: a described method; needs building or wiring before it runs |
+| `ready` | 8 | 🟢 ready: runnable without setup according to the catalog |
+| `documented` | 308 | 📄 documented: a described method; needs building or wiring before it runs |
 | `install` | 2 | 📦 install: needs a package, binary or model first |
-| **المجموع** | **319** | |
+| **المجموع** | **335** | |
 
 ## الأدوات القابلة للتشغيل / runnable tools
 
@@ -44,6 +44,7 @@
 | `fusionforge` | FusionForge v2 لوصفات الـWorkflow المركبة داخل المشروع | `python3 scripts/fusionforge.py propose "مونتاج ريلز بترجمة عربية" --project demo_project --from-brief out/20261021-reel/brief.json` | tested-here |
 | `fusionforge-shared` | ذاكرة FusionForge المشتركة بوصفات مهارات معزولة | `python3 scripts/fusionforge_shared.py audit` | untested |
 | `invention-lab` | مختبر الابتكار الهندسي | `python3 scripts/invention_lab.py methods` | tested-here |
+| `prompt-lab` | مختبر البرومبت | `python3 scripts/prompt_lab.py kinds` | tested-here |
 | `prompt-pack` | حزمة المطالبات: كل مطالبة في كتلة كود قابلة للنسخ مع فحص يحذّر فقط | `python3 scripts/prompt_pack.py build prompts.json --out out/demo/prompts --engine midjourney` | tested-here |
 | `repo-kosif` | أداة سطر أوامر لأطلس أنماط KOSIF | `python3 tools/kosif.py list --category charts --limit 10` | tested-here |
 | `requirements` | مخطط متطلبات القدرات | `python3 scripts/requirements.py present --json` | tested-here |
@@ -64,7 +65,7 @@
 | `creativity-engine` | 29 | [creativity-engine.md](../powers/creativity-engine.md) |
 | `mental-models` | 63 | [mental-models.md](../powers/mental-models.md) |
 | `planning-execution` | 12 | [planning-execution.md](../powers/planning-execution.md) |
-| `prompt-craft` | 25 | [prompt-craft.md](../powers/prompt-craft.md) |
+| `prompt-craft` | 41 | [prompt-craft.md](../powers/prompt-craft.md) |
 | `strategy-finance` | 18 | [strategy-finance.md](../powers/strategy-finance.md) |
 | `thinking-core` | 46 | [thinking-core.md](../powers/thinking-core.md) |
 
@@ -94,6 +95,11 @@
 | `PROMPT-23` | اطلب أي أسلوب بصري بالاسم من مكتبة 586 أسلوبًا | Ask for any visual style by name from a 586-style library | ready | python3 |
 | `PROMPT-24` | دمج أسلوبين 70/30 في برومنت واحد | Fuse two styles 70/30 in one prompt | ready | python3 |
 | `PROMPT-25` | كتالوج أساليب مصوّر PDF بعينات مولّدة | Illustrated style catalog PDF with generated swatches | ready | python3, chromium |
+| `PROMPT-34` | مصفوفة تقييم بالتأكيدات | Assertion matrix eval | ready | python3 |
+| `PROMPT-35` | قالب صورة بمتغيرات وأقفال | Parameterized image prompt template | ready | python3 |
+| `PROMPT-39` | فحص البرومبت الحتمي | Deterministic prompt lint | ready | python3 |
+| `PROMPT-40` | قوالب حسب نوع البرومبت | Prompt templates by kind | ready | python3 |
+| `PROMPT-41` | حَكَم مقارن بترتيب معكوس (طريقة Jev) | Order-swapped pairwise judge (Jev method) | ready | python3 |
 | `AMIND-01` | تصميم ذاكرة الوكيل وتقييمها وتدقيق التسميم | Agent memory design, eval and poisoning audit | documented |  |
 | `AMIND-02` | فرز النهج الوكيلي وتصميم الأدوات وتحصين التقييم | Agentic approach triage, tool design and eval hardening | documented |  |
 | `AMIND-03` | تنظيم الذاكرة التلقائية وترقيتها | Auto-memory curation and promotion | documented |  |
@@ -341,6 +347,17 @@
 | `PROMPT-20` | اقترح أم نفّذ، أفكار أم بناء | Suggest vs do; ideas vs build | documented |  |
 | `PROMPT-21` | إبقاء ملاحظات النماذج حديثة | Keep model notes fresh | documented | python3 |
 | `PROMPT-22` | وصف مهارة يُستدعى بدقة | Skill description that triggers precisely | documented |  |
+| `PROMPT-26` | برومبت يبدأ بالتوقيع | Signature-first prompt | documented |  |
+| `PROMPT-27` | تجميع البرومبت بمقياس | Metric-compiled few-shot | documented | python3 |
+| `PROMPT-28` | اختيار التقنية حسب نوع الفشل | Technique picker by failure mode | documented | npm:react, pip:chromadb |
+| `PROMPT-29` | تصويت الاتساق الذاتي | Self-consistency vote | documented |  |
+| `PROMPT-30` | الإجابة عبر برنامج | Program-aided answer | documented | python3 |
+| `PROMPT-31` | ذاكرة الدروس بعد الفشل | Reflexion lesson memory | documented | python3 |
+| `PROMPT-32` | ملف نمط بأقسام ثابتة | Pattern file with fixed sections | documented | python3 |
+| `PROMPT-33` | ترتيب يناسب التخزين المؤقت | Cache-friendly prompt layout | documented |  |
+| `PROMPT-36` | مخرجات مقيدة مع تحقق وإعادة | Constrained output with validate-and-retry | documented |  |
+| `PROMPT-37` | توسيع البرومبت القصير مع قفل كلمات المستخدم | Short-prompt expansion with locked user words | documented | python3 |
+| `PROMPT-38` | برومبت يكتب برومبت ثم يُختبر | Meta-prompting with a test gate | documented | python3 |
 | `PROD-01` | ثلاثة خيارات حقيقية وعدم الفعل | Three real options plus do-nothing | documented |  |
 | `PROD-02` | الافتراضات التي تقلب القرار | Decision-flipping assumptions (computed thresholds) | documented | pip:sympy |
 | `PROD-04` | تشريح ما قبل الفشل | Premortem on the favourite option | documented |  |

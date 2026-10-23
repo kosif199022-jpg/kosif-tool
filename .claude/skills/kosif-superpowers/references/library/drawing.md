@@ -44,6 +44,7 @@
 | `creative-reasoning-bridge` | جسر الصوت إلى لوحة القصة | `python3 scripts/creative_reasoning_bridge.py ./cues.json --style auto --out ./out/scene.json --report ./out/decision.json` | tested-here |
 | `diagram-layout` | تخطيط المخططات: فحص الرسم البياني وتخطيط طبقي حتمي وSVG جاهز للعربية | `python3 scripts/diagram_layout.py lint /tmp/graph.json --max-label 24 --max-nodes 9` | tested-here |
 | `drawing-academy` | أكاديمية الرسم والدروس المبنية على مصادر | `python3 scripts/drawing_academy.py index` | tested-elsewhere |
+| `drawing-council` | مجلس خبراء الرسم: أحد عشر خبيرًا من بطاقات الكتب الـ48 يراجعون الصورة قبل إرسالها | `python3 scripts/drawing_council.py roster --markdown` | tested-here |
 | `drawing-methods` | أطلس مناهج كتب الرسم مع رسم بنائي بالطبقات | `python3 scripts/drawing_methods.py find "ارسم وش شخصية بتضحك"` | tested-here |
 | `drawing-visual-qa` | مدرب الرسم من فصول الكتب والتشخيص البصري المستقل | `python3 scripts/drawing_visual_qa.py curriculum "ارسم شخصية كرتونية بمنظور وإضاءة" --out out/lessons.json` | tested-here |
 | `motion-director` | مُصرِّف حركة SVG المتزامنة مع الصوت | `python3 scripts/motion_director.py doctor` | tested-here |
@@ -54,6 +55,7 @@
 | `native-3d` | رندر ثلاثي الأبعاد مستقل عن Blender | `python3 scripts/native_3d.py doctor` | tested-here |
 | `native-glb` | مُصدِّر GLB مستقل عن Blender | `python3 scripts/native_glb.py --scene templates/blender-demo.json --output ./out/scene.glb` | tested-here |
 | `perspective-color-lab` | منظور هندسي ومقاييس التباين اللوني | `python3 scripts/perspective_color_lab.py perspective --input scene.json --out out/scene.svg` | tested-elsewhere |
+| `portrait-pipeline` | رسم يدوي المظهر بالرصاص أو الفحم أو الحبر لأي صورة أو مشهد متخيَّل، خطًا بخط | `python3 scripts/portrait_pipeline.py draw --photo photo.png --out out/portrait --models <dir with face_landmarker.task and selfie_multiclass.tflite>` | tested-here |
 | `smart-draw` | الرسم الذكي ومساعد الأشكال | `python3 scripts/smart_draw.py doctor` | tested-here |
 | `style-atlas-bridge` | أطلس الأساليب الكامل (86 طريقة): بحث وتوليف وموجز إنتاج وهيكل مشروع شرح | `python3 scripts/style_atlas_bridge.py families` | tested-here |
 | `unified-draw` | الرسم الموحد: خطوط وأشكال وطبقات وتصدير | `python3 scripts/unified_draw.py doctor` | tested-here |
