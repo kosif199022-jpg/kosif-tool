@@ -1,4 +1,4 @@
-# أدوات المجال `maintain` (11 أداة)
+# أدوات المجال `maintain` (12 أداة)
 
 > مولّد من `data/tools.json`. [الفهرس الرئيسي](../README.md) · `python3 scripts/hub.py tool <id>` للبطاقة الحية.
 
@@ -208,6 +208,60 @@
 #### عند الفشل (A29)
 
 - ابدأ بـ `think.py recover --message "<نص الخطأ>"`، ثم سجّل `fusionforge.py trace --project <slug> --id <FUSE-ID> --stage <stage> --node <N> --action "<ما جُرّب>" --result failed --error-class <الصنف> --tool tool:package-skill --evidence <ملف>`.
+
+### `rea-superpowers-map` — خريطة سوبر باور بمنهج REA / Superpowers map, REA approach
+
+| الحقل | القيمة |
+|---|---|
+| المسار | `scripts/rea_superpowers_map.py` (جذر: skill) |
+| المجال | `maintain` |
+| الدليل | `tested-here` |
+| العائلات | `self-discovery`, `software-investigation` |
+
+**ما تفعله:** يرسم خريطة المهارة كما يرسم REA شجرة مصدر لا يشغّلها: جرد ببصمات المحتوى، وحواف الاستيراد والاستدعاء في بايثون، وحواف جافاسكربت من إيصال REA المحفوظ، وروابط كل سكربت بأداته واختباراته وخطوات CI والقدرات والعائلات، ثم الفجوات (سكربتات يتيمة أو بلا اختبار، ملفات أدوات مفقودة، مراجع خارج فهرس التخطيط، روابط مكسورة، عائلات بلا أداة قابلة للتشغيل) وتغطية الأطلس لكل موضوع.
+
+**What it does:** Maps this skill the way REA maps a source tree it does not execute: a content-addressed inventory, Python import and invoke edges (ast), REA's JavaScript edges from its committed receipt, links from every script to its tools.json entry, tests, CI steps, powers and families, the gaps (orphan or untested scripts, missing tool files, unlisted references, broken links, families without a runnable tool) and Atlas safe-core coverage per theme.
+
+#### متى تُستدعى
+
+- «اعمل خريطة كاملة لسوبر باور: البنية والتبعيات والفجوات»
+- «ايه السكربتات اللي ملهاش اختبار أو مش متسجلة؟»
+- «Map the superpowers skill: structure, dependency graph, gaps and Atlas coverage»
+- «Which scripts are orphaned or untested, and which families have no runnable tool?»
+
+#### الأوامر
+
+- **build**: Writes data/superpowers_rea_map.json, references/superpowers-rea-map.md and the self-contained references/superpowers-rea-map.html; --check exits 1 when they are stale.
+  - `python3 scripts/rea_superpowers_map.py build`
+- **stats**: Structure, counts, gap counts, Atlas coverage and the REA receipt summary.
+  - `python3 scripts/rea_superpowers_map.py stats --json`
+- **gaps**: Lists gap rows, optionally one kind.
+  - `python3 scripts/rea_superpowers_map.py gaps --kind script_untested`
+- **node**: One script, tool id, family or path with its edges, tools, tests, powers and gaps; unknown exits 2.
+  - `python3 scripts/rea_superpowers_map.py node atlas_5000`
+- **ingest-rea**: Turns `rea import-reference-source <skill dir> --format json` output (summary and full) into the trimmed receipt proofs/rea-superpowers-map/receipt.json; foreign JSON is refused.
+  - `python3 scripts/rea_superpowers_map.py ingest-rea --summary sp_sum.json --graph sp_full.json`
+- **self-test**: Offline synthetic tree with known roles, edges and gaps; prints pass or the failed checks.
+  - `python3 scripts/rea_superpowers_map.py --self-test`
+
+#### المتطلبات والأمان
+
+- binaries: python3
+- optional: rea (only to refresh the receipt, run separately)
+- الأمان: read-only
+- الموافقة: None needed for build/stats/gaps/node; refreshing the receipt runs REA separately on the user's own tree.
+- الحدود: Import edges are static (dynamic imports are invisible); a test reference is a name or import, not measured coverage; JavaScript edges are as of the receipt's git head; Atlas covered means cited, not run.
+
+#### الاختبارات والأدلة
+
+- `.claude/skills/kosif-superpowers/evals/test_rea_superpowers_map.py`
+- مرجع: `.claude/skills/kosif-superpowers/references/superpowers-rea-map.md`
+- مرجع: `.claude/skills/kosif-superpowers/references/rea-superpowers-frontier-20261023.md`
+- مرجع: `.claude/skills/kosif-superpowers/references/guides/maintain.md`
+
+#### عند الفشل (A29)
+
+- ابدأ بـ `think.py recover --message "<نص الخطأ>"`، ثم سجّل `fusionforge.py trace --project <slug> --id <FUSE-ID> --stage <stage> --node <N> --action "<ما جُرّب>" --result failed --error-class <الصنف> --tool tool:rea-superpowers-map --evidence <ملف>`.
 
 ### `relabel-proofs` — إعادة تصنيف نطاق الأدلة / Proof Scope Relabeler
 

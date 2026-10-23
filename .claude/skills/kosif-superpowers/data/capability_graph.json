@@ -15,7 +15,7 @@
    "id": "root",
    "kind": "root",
    "label": "KOSIF Superpowers",
-   "count": 5426
+   "count": 5480
   },
   {
    "id": "dom:motion",
@@ -453,10 +453,10 @@
    "label": "Atlas: apps, UI & integrations",
    "ar": "أطلس: التطبيقات والواجهات والتكاملات",
    "prefix": "ABUILD",
-   "count": 50,
+   "count": 52,
    "proven": 0,
    "status": {
-    "documented": 50
+    "documented": 52
    }
   },
   {
@@ -483,10 +483,10 @@
    "label": "Atlas: engineering & code",
    "ar": "أطلس: الهندسة والكود",
    "prefix": "ACODE",
-   "count": 226,
+   "count": 237,
    "proven": 0,
    "status": {
-    "documented": 226
+    "documented": 237
    }
   },
   {
@@ -504,10 +504,10 @@
    "label": "Atlas: writing, prompts & languages",
    "ar": "أطلس: الكتابة والبرومبت والترجمة",
    "prefix": "ACRAFT",
-   "count": 24,
+   "count": 26,
    "proven": 0,
    "status": {
-    "documented": 24
+    "documented": 26
    }
   },
   {
@@ -539,10 +539,10 @@
    "label": "Atlas: data, ML & charts",
    "ar": "أطلس: البيانات والتعلم الآلي",
    "prefix": "ADATA",
-   "count": 47,
+   "count": 52,
    "proven": 0,
    "status": {
-    "documented": 47
+    "documented": 52
    }
   },
   {
@@ -592,10 +592,10 @@
    "label": "Atlas: documents & diagrams",
    "ar": "أطلس: المستندات والمخططات",
    "prefix": "ADOCS",
-   "count": 45,
+   "count": 50,
    "proven": 0,
    "status": {
-    "documented": 45
+    "documented": 50
    }
   },
   {
@@ -657,10 +657,10 @@
    "label": "Atlas: agent workflows, planning & review",
    "ar": "أطلس: الوكلاء والتخطيط والمراجعة",
    "prefix": "AMIND",
-   "count": 50,
+   "count": 54,
    "proven": 0,
    "status": {
-    "documented": 50
+    "documented": 54
    }
   },
   {
@@ -683,10 +683,10 @@
    "label": "Atlas: research & knowledge",
    "ar": "أطلس: البحث والمعرفة",
    "prefix": "AWEB",
-   "count": 9,
+   "count": 11,
    "proven": 0,
    "status": {
-    "documented": 9
+    "documented": 11
    }
   },
   {
@@ -700,10 +700,10 @@
    "label": "Atlas: product, marketing & business",
    "ar": "أطلس: المنتج والتسويق والأعمال",
    "prefix": "ASTRAT",
-   "count": 62,
+   "count": 72,
    "proven": 0,
    "status": {
-    "documented": 62
+    "documented": 72
    }
   },
   {
@@ -1496,10 +1496,10 @@
    "label": "Software investigation (REA)",
    "ar": "فحص البرامج والهندسة العكسية",
    "prefix": "REA",
-   "count": 245,
+   "count": 258,
    "proven": 30,
    "status": {
-    "documented": 167,
+    "documented": 180,
     "proven": 30,
     "install": 48
    }
@@ -2077,6 +2077,16 @@
    "label": "scripts/prompt_pack.py"
   },
   {
+   "id": "script:scripts/rea_superpowers_map.py",
+   "kind": "script",
+   "label": "scripts/rea_superpowers_map.py"
+  },
+  {
+   "id": "script:scripts/atlas_5000.py",
+   "kind": "script",
+   "label": "scripts/atlas_5000.py"
+  },
+  {
    "id": "script:scripts/rebalance_creative_repos.py",
    "kind": "script",
    "label": "scripts/rebalance_creative_repos.py"
@@ -2235,6 +2245,11 @@
    "id": "test:tests/test_catalog_tools.py",
    "kind": "test",
    "label": "tests/test_catalog_tools.py"
+  },
+  {
+   "id": "test:.claude/skills/kosif-superpowers/evals/test_script_smoke.py",
+   "kind": "test",
+   "label": ".claude/skills/kosif-superpowers/evals/test_script_smoke.py"
   },
   {
    "id": "test:.claude/skills/kosif-superpowers/evals/test_atlas_capability_miner.py",
@@ -2430,6 +2445,11 @@
    "id": "test:tests/test_creative_external_research.py",
    "kind": "test",
    "label": "tests/test_creative_external_research.py"
+  },
+  {
+   "id": "test:.claude/skills/kosif-superpowers/evals/test_rea_superpowers_map.py",
+   "kind": "test",
+   "label": ".claude/skills/kosif-superpowers/evals/test_rea_superpowers_map.py"
   },
   {
    "id": "test:.claude/skills/kosif-superpowers/evals/test_reel_factory.py",
@@ -2917,7 +2937,7 @@
    "from": "dom:build",
    "to": "fam:atlas-build",
    "rel": "has",
-   "w": 50
+   "w": 52
   },
   {
    "from": "fam:atlas-build",
@@ -2977,7 +2997,7 @@
    "from": "dom:code",
    "to": "fam:atlas-code",
    "rel": "has",
-   "w": 226
+   "w": 237
   },
   {
    "from": "fam:atlas-code",
@@ -2987,15 +3007,15 @@
   },
   {
    "from": "fam:atlas-code",
-   "to": "req:key:unspecified",
+   "to": "req:python3",
    "rel": "needs",
-   "w": 15
+   "w": 17
   },
   {
    "from": "fam:atlas-code",
-   "to": "req:python3",
+   "to": "req:key:unspecified",
    "rel": "needs",
-   "w": 13
+   "w": 16
   },
   {
    "from": "fam:atlas-code",
@@ -3007,7 +3027,7 @@
    "from": "fam:atlas-code",
    "to": "req:node",
    "rel": "needs",
-   "w": 10
+   "w": 11
   },
   {
    "from": "fam:atlas-code",
@@ -3023,9 +3043,9 @@
   },
   {
    "from": "fam:atlas-code",
-   "to": "req:os:macos",
+   "to": "req:chromium",
    "rel": "needs",
-   "w": 3
+   "w": 4
   },
   {
    "from": "root",
@@ -3037,7 +3057,7 @@
    "from": "dom:craft",
    "to": "fam:atlas-craft",
    "rel": "has",
-   "w": 24
+   "w": 26
   },
   {
    "from": "fam:atlas-craft",
@@ -3079,7 +3099,7 @@
    "from": "dom:data",
    "to": "fam:atlas-data",
    "rel": "has",
-   "w": 47
+   "w": 52
   },
   {
    "from": "fam:atlas-data",
@@ -3127,19 +3147,19 @@
    "from": "dom:docs",
    "to": "fam:atlas-docs",
    "rel": "has",
-   "w": 45
+   "w": 50
   },
   {
    "from": "fam:atlas-docs",
    "to": "req:npm:mermaid",
    "rel": "needs",
-   "w": 6
+   "w": 8
   },
   {
    "from": "fam:atlas-docs",
    "to": "req:pip:office",
    "rel": "needs",
-   "w": 3
+   "w": 5
   },
   {
    "from": "fam:atlas-docs",
@@ -3168,6 +3188,12 @@
   {
    "from": "fam:atlas-docs",
    "to": "req:python3",
+   "rel": "needs",
+   "w": 1
+  },
+  {
+   "from": "fam:atlas-docs",
+   "to": "req:tesseract",
    "rel": "needs",
    "w": 1
   },
@@ -3241,7 +3267,7 @@
    "from": "dom:mind",
    "to": "fam:atlas-mind",
    "rel": "has",
-   "w": 50
+   "w": 54
   },
   {
    "from": "fam:atlas-mind",
@@ -3289,7 +3315,7 @@
    "from": "dom:research",
    "to": "fam:atlas-research",
    "rel": "has",
-   "w": 9
+   "w": 11
   },
   {
    "from": "fam:atlas-research",
@@ -3331,7 +3357,7 @@
    "from": "dom:strategy",
    "to": "fam:atlas-strategy",
    "rel": "has",
-   "w": 62
+   "w": 72
   },
   {
    "from": "fam:atlas-strategy",
@@ -5419,13 +5445,13 @@
    "from": "dom:code",
    "to": "fam:software-investigation",
    "rel": "has",
-   "w": 245
+   "w": 258
   },
   {
    "from": "fam:software-investigation",
    "to": "req:npm:rea",
    "rel": "needs",
-   "w": 245
+   "w": 258
   },
   {
    "from": "fam:software-investigation",
@@ -5455,7 +5481,7 @@
    "from": "fam:software-investigation",
    "to": "req:os:macos",
    "rel": "needs",
-   "w": 18
+   "w": 20
   },
   {
    "from": "fam:software-investigation",
@@ -5467,7 +5493,7 @@
    "from": "fam:software-investigation",
    "to": "req:python3",
    "rel": "needs",
-   "w": 10
+   "w": 11
   },
   {
    "from": "fam:software-investigation",
@@ -6880,6 +6906,12 @@
    "w": 1
   },
   {
+   "from": "script:scripts/rea_superpowers_map.py",
+   "to": "script:scripts/atlas_5000.py",
+   "rel": "imports",
+   "w": 1
+  },
+  {
    "from": "script:scripts/rebalance_creative_repos.py",
    "to": "script:scripts/rea_creative_research_atlas.py",
    "rel": "imports",
@@ -7174,8 +7206,26 @@
    "w": 1
   },
   {
+   "from": "script:scripts/atlas_bulk_source_audit.py",
+   "to": "test:.claude/skills/kosif-superpowers/evals/test_script_smoke.py",
+   "rel": "tested_by",
+   "w": 1
+  },
+  {
    "from": "script:scripts/atlas_capability_miner.py",
    "to": "test:.claude/skills/kosif-superpowers/evals/test_atlas_capability_miner.py",
+   "rel": "tested_by",
+   "w": 1
+  },
+  {
+   "from": "script:scripts/atlas_deep_fusion.py",
+   "to": "test:.claude/skills/kosif-superpowers/evals/test_script_smoke.py",
+   "rel": "tested_by",
+   "w": 1
+  },
+  {
+   "from": "script:scripts/atlas_transfer.py",
+   "to": "test:.claude/skills/kosif-superpowers/evals/test_script_smoke.py",
    "rel": "tested_by",
    "w": 1
   },
@@ -7510,6 +7560,12 @@
    "w": 1
   },
   {
+   "from": "script:scripts/probe_env.py",
+   "to": "test:.claude/skills/kosif-superpowers/evals/test_script_smoke.py",
+   "rel": "tested_by",
+   "w": 1
+  },
+  {
    "from": "script:scripts/prompt_pack.py",
    "to": "test:.claude/skills/kosif-superpowers/evals/test_prompt_pack.py",
    "rel": "tested_by",
@@ -7530,6 +7586,24 @@
   {
    "from": "script:scripts/rea_creative_research_atlas.py",
    "to": "test:tests/test_creative_external_research.py",
+   "rel": "tested_by",
+   "w": 1
+  },
+  {
+   "from": "script:scripts/rea_superpowers_map.py",
+   "to": "test:.claude/skills/kosif-superpowers/evals/test_rea_superpowers_map.py",
+   "rel": "tested_by",
+   "w": 1
+  },
+  {
+   "from": "script:scripts/rea_superpowers_map.py",
+   "to": "test:.claude/skills/kosif-superpowers/evals/test_script_smoke.py",
+   "rel": "tested_by",
+   "w": 1
+  },
+  {
+   "from": "script:scripts/rebalance_creative_repos.py",
+   "to": "test:.claude/skills/kosif-superpowers/evals/test_script_smoke.py",
    "rel": "tested_by",
    "w": 1
   },

@@ -1,4 +1,4 @@
-# `atlas-mind` — التفكير والتخطيط والاستراتيجية (50 بطاقة)
+# `atlas-mind` — التفكير والتخطيط والاستراتيجية (54 بطاقة)
 
 > مكتبة بروتوكول USIP v5.5 الكاملة، مولّدة بـ `smart_capabilities.py cards` من `data/powers/atlas-mind.json` وقواعد الملاحق A25–A29؛ لا تُحرَّر يدويًا. [الفهرس الرئيسي](../../README.md) · [فصل المجموعة](../../../.claude/skills/kosif-superpowers/references/library/thinking.md) · [النواة](../../../.claude/skills/kosif-superpowers/PROTOCOL.md)
 
@@ -54,6 +54,10 @@
 - [`AMIND-48` توجيه إلى أخصائي واحد مع إلزام القراءة](#amind-48--توجيه-إلى-أخصائي-واحد-مع-إلزام-القراءة--route-to-one-specialist-read-before-answering)
 - [`AMIND-49` أعد الاستخدام أو استبدل علناً: لا طريقتين لشيء واحد](#amind-49--أعد-الاستخدام-أو-استبدل-علناً-لا-طريقتين-لشيء-واحد--reuse-or-openly-replace-one-way-to-do-a-thing)
 - [`AMIND-50` تحديث خارطة الطريق من الأدلة مع ذكر وضع الفحص](#amind-50--تحديث-خارطة-الطريق-من-الأدلة-مع-ذكر-وضع-الفحص--evidence-based-roadmap-update-with-an-explicit-scan-mode)
+- [`AMIND-51` زرع العيب لإثبات أن الفحص يستطيع أن يفشل](#amind-51--زرع-العيب-لإثبات-أن-الفحص-يستطيع-أن-يفشل--plant-the-defect-to-prove-a-check-can-fail)
+- [`AMIND-52` خطة تحقق يدوي مرقمة قابلة للاستئناف](#amind-52--خطة-تحقق-يدوي-مرقمة-قابلة-للاستئناف--resumable-numbered-manual-verification-plan)
+- [`AMIND-53` الإطلاق في الظل لاختبار نظام بديل تحت حمل الإنتاج](#amind-53--الإطلاق-في-الظل-لاختبار-نظام-بديل-تحت-حمل-الإنتاج--shadow-mode-dark-launch-to-validate-a-replacement-under-real-load)
+- [`AMIND-54` تنقيح المواصفات بتحليل الفجوات وأسئلة متتابعة مرجّحة](#amind-54--تنقيح-المواصفات-بتحليل-الفجوات-وأسئلة-متتابعة-مرجّحة--specification-refinement-gap-analysis-and-ranked-one-at-a-time-questions)
 
 ## البطاقات / cards
 
@@ -3343,6 +3347,7 @@
 - `AMIND-47` استخراج المتطلبات: اسأل ولا تخترع / Requirements elicitation: elicit, do not invent (documented)
 - `AMIND-48` توجيه إلى أخصائي واحد مع إلزام القراءة / Route to one specialist, read before answering (documented)
 - `AMIND-50` تحديث خارطة الطريق من الأدلة مع ذكر وضع الفحص / Evidence-based roadmap update with an explicit scan mode (documented)
+- `AMIND-51` زرع العيب لإثبات أن الفحص يستطيع أن يفشل / Plant the defect to prove a check can fail (documented)
 
 ### `AMIND-50` — تحديث خارطة الطريق من الأدلة مع ذكر وضع الفحص / Evidence-based roadmap update with an explicit scan mode
 
@@ -3408,4 +3413,267 @@
 
 - `AMIND-48` توجيه إلى أخصائي واحد مع إلزام القراءة / Route to one specialist, read before answering (documented)
 - `AMIND-49` أعد الاستخدام أو استبدل علناً: لا طريقتين لشيء واحد / Reuse or openly replace: one way to do a thing (documented)
+- `AMIND-51` زرع العيب لإثبات أن الفحص يستطيع أن يفشل / Plant the defect to prove a check can fail (documented)
+- `AMIND-52` خطة تحقق يدوي مرقمة قابلة للاستئناف / Resumable numbered manual verification plan (documented)
+
+### `AMIND-51` — زرع العيب لإثبات أن الفحص يستطيع أن يفشل / Plant the defect to prove a check can fail
+
+| الحقل | القيمة |
+|---|---|
+| العائلة | `atlas-mind` ([فصل العائلة](../../../.claude/skills/kosif-superpowers/references/powers/atlas-mind.md)) |
+| المجموعة | التفكير والتخطيط والاستراتيجية (`thinking`) |
+| نوع المخرج (A25، A27) | خطة واستراتيجية وقرار (`plan`) |
+| الحالة في الكتالوج | 📄 `documented`: منهج موصوف يحتاج بناءً أو ربطًا قبل التشغيل |
+| سقف التحقق قبل العمل (A27) | V1 حتى تُبنى وتُشغَّل؛ لا تقدَّم جاهزة أبدًا |
+| نطاق الدليل | `url` |
+| الرخصة | method paraphrased from Atlas skills under MIT; the skills keep their own licenses — see each folder's SOURCE.md |
+
+**ما هي:** يكسر الكود عمدًا بالعيب الذي يدّعي اختبار أو أداة فحص اكتشافه، ويسجّل ما حدث فعلًا في جدول زرع يتحول إلى اختبارات. — Breaks the code on purpose with the exact defect a test or instrument claims to catch, and records what really happened in a plant table that becomes regression tests.
+
+**متى:** 'هل سأعرف لو انكسر هذا؟'، فحص يدّعي غياب شيء (تسريب، تحذير)، أداة خارجية صامتة / 'would I know if this broke', a check that asserts an absence, a silent linter or sanitizer
+
+**كيف:** 1) Write the claim as 'if X broke, Y would fail' and the plant table first (planted defect, expected instrument, what actually happened, covering test) with the result column empty. 2) Commit the check, confirm the clean tree passes and stand up a positive control that proves the instrument is running. 3) Plant one defect at a time in the real code, revert between plants, judge on exit codes (a plant that does not compile is not a pass). 4) Confirm the named assertion fired, not a neighbour. 5) Weaken each assertion in turn and check something still fails. 6) Turn data-expressible plants into tests; write down rows nothing covers. Use mutation testers (mutmut, Stryker, cargo-mutants) for exhaustive syntactic coverage.
+
+**التثبيت:** لا خطوة تثبيت مسجلة
+
+**الوسوم:** mutation testing · test quality · verification · اختبار الاختبار · زرع عيب · false green
+
+#### 1. الاستقبال (A25)
+
+- الهدف القابل للقياس: سؤال بإجابة مقترحة ← هدف مقترح بعتبة رقمية يُعرض للتعديل
+- الأفق الزمني: افتراض مكتوب ← 90 يومًا
+- الموارد والميزانية: افتراض مكتوب ← شخص واحد بلا صرف
+- لا تُفترض أبدًا: مادة الإنتاج نفسها، والإذن بخطوة مدفوعة أو منشورة أو لا رجعة فيها، والهوية والحقوق.
+
+#### 2. الجاهزية والشارة (A28)
+
+- لا متطلبات مسجلة؛ افحص المسار والأداة بـ `hub.py doctor` قبل الشارة.
+- الوضع 1: شارة «هنا الآن» بعد الفحص، لا 📄 الكتالوج تلقائيًا · الوضع 2: `كتالوج: 📄 · هنا: غير مفحوص` · الوضع 3: بلا شارة ولا معرّف.
+
+#### 3. موضعها في الخطة (A26)
+
+- عقدة منمّطة: المدخل `brief` ← المخرج `plan`، والمنفّذ `method:AMIND-51` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
+- لا أداة مسجلة تخدم عائلتها: التنفيذ بالمكتبات أو بأداة من مجموعة أخرى.
+- مراحل النوع: الهدف بمؤشره ← ثلاثة خيارات مختلفة ← تقييم وحساسية ← تشريح مسبق ← بوابات مكتوبة ← خطوة أولى قابلة للتراجع.
+- إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
+
+#### 4. بوابة التحقق (A27)
+
+- إلزامي: لكل هدف مؤشر وعتبة وتاريخ ← جدول المؤشرات
+- إلزامي: ثلاثة خيارات مختلفة المنهج مع توصية ← جدول المقارنة
+- جودة: تشريح مسبق بأهم أسباب الفشل والوقاية ← think.py plan
+- جودة: بوابات go/pivot/kill مكتوبة قبل النتائج ← think.py gate
+- إلزامي: خطوة أولى صغيرة قابلة للتراجع هذا الأسبوع ← مراجعة
+- أمر الحكم في الوضع 1: `think.py qa plan --answers qa.json` (PASS / FAIL / INCOMPLETE).
+
+#### 5. التعافي (A29)
+
+- `quality_below_threshold` (جودة دون العتبة، ميزانية 3): أي معيار فشل وبكم (المقيس مقابل العتبة) ← عالج السبب الأكبر وحده ثم أعد القياس · البديل: المنهج البديل المكتوب للمرحلة في الخطة · تصعيد: معيار إلزامي لا يتحقق بعد البديل: توقف وأبلغ بالأرقام
+
+#### 6. الأدلة
+
+- `https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/959-plant-defects/2243-plant-defects`
+
+#### 7. قدرات قريبة في العائلة
+
+- `AMIND-49` أعد الاستخدام أو استبدل علناً: لا طريقتين لشيء واحد / Reuse or openly replace: one way to do a thing (documented)
+- `AMIND-50` تحديث خارطة الطريق من الأدلة مع ذكر وضع الفحص / Evidence-based roadmap update with an explicit scan mode (documented)
+- `AMIND-52` خطة تحقق يدوي مرقمة قابلة للاستئناف / Resumable numbered manual verification plan (documented)
+- `AMIND-53` الإطلاق في الظل لاختبار نظام بديل تحت حمل الإنتاج / Shadow mode (dark launch) to validate a replacement under real load (documented)
+
+### `AMIND-52` — خطة تحقق يدوي مرقمة قابلة للاستئناف / Resumable numbered manual verification plan
+
+| الحقل | القيمة |
+|---|---|
+| العائلة | `atlas-mind` ([فصل العائلة](../../../.claude/skills/kosif-superpowers/references/powers/atlas-mind.md)) |
+| المجموعة | التفكير والتخطيط والاستراتيجية (`thinking`) |
+| نوع المخرج (A25، A27) | خطة واستراتيجية وقرار (`plan`) |
+| الحالة في الكتالوج | 📄 `documented`: منهج موصوف يحتاج بناءً أو ربطًا قبل التشغيل |
+| سقف التحقق قبل العمل (A27) | V1 حتى تُبنى وتُشغَّل؛ لا تقدَّم جاهزة أبدًا |
+| نطاق الدليل | `url` |
+| الرخصة | method paraphrased from Atlas skills under MIT; the skills keep their own licenses — see each folder's SOURCE.md |
+
+**ما هي:** يكتب قائمة فحوص يدوية كسجل دائم: كل خطوة إعداد وفعل ومتوقَّع قابل للملاحظة وتمييز النتيجة الصفرية الصحيحة من الأداة المعطلة. — Writes a by-hand checklist as a durable record: each step has setup, action, an observable expected result and a null-vs-broken guard.
+
+**متى:** فحص لا يتم إلا على جهاز أو متصفح أو برنامج فعلي، أو إعادة طباعة خطوات التحقق / checks only a real device, browser or host can show; reprinting verification steps
+
+**كيف:** 1) Look for the existing checklist in the plan or issue before writing one; a reprint request means find the record, not regenerate it. 2) Keep a step by hand only if its quantity passes through something only the environment has; otherwise defer it with a link to the automation issue. 3) Step 0 confirms the build under test (hash, version or provenance marker) every session. 4) Each step: Setup, Action, Expected (where it appears, value, tolerance, what wrong readings mean), Null vs broken, Why by hand. 5) Never renumber; statuses pending/passed/failed/partial/void/deferred/retired. 6) Persist first, then present; record readings verbatim with date, build and environment, never a bare tick.
+
+**التثبيت:** لا خطوة تثبيت مسجلة
+
+**الوسوم:** manual testing · QA checklist · تحقق يدوي · قائمة فحص · acceptance · verification plan
+
+#### 1. الاستقبال (A25)
+
+- الهدف القابل للقياس: سؤال بإجابة مقترحة ← هدف مقترح بعتبة رقمية يُعرض للتعديل
+- الأفق الزمني: افتراض مكتوب ← 90 يومًا
+- الموارد والميزانية: افتراض مكتوب ← شخص واحد بلا صرف
+- لا تُفترض أبدًا: مادة الإنتاج نفسها، والإذن بخطوة مدفوعة أو منشورة أو لا رجعة فيها، والهوية والحقوق.
+
+#### 2. الجاهزية والشارة (A28)
+
+- لا متطلبات مسجلة؛ افحص المسار والأداة بـ `hub.py doctor` قبل الشارة.
+- الوضع 1: شارة «هنا الآن» بعد الفحص، لا 📄 الكتالوج تلقائيًا · الوضع 2: `كتالوج: 📄 · هنا: غير مفحوص` · الوضع 3: بلا شارة ولا معرّف.
+
+#### 3. موضعها في الخطة (A26)
+
+- عقدة منمّطة: المدخل `brief` ← المخرج `plan`، والمنفّذ `method:AMIND-52` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
+- لا أداة مسجلة تخدم عائلتها: التنفيذ بالمكتبات أو بأداة من مجموعة أخرى.
+- مراحل النوع: الهدف بمؤشره ← ثلاثة خيارات مختلفة ← تقييم وحساسية ← تشريح مسبق ← بوابات مكتوبة ← خطوة أولى قابلة للتراجع.
+- إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
+
+#### 4. بوابة التحقق (A27)
+
+- إلزامي: لكل هدف مؤشر وعتبة وتاريخ ← جدول المؤشرات
+- إلزامي: ثلاثة خيارات مختلفة المنهج مع توصية ← جدول المقارنة
+- جودة: تشريح مسبق بأهم أسباب الفشل والوقاية ← think.py plan
+- جودة: بوابات go/pivot/kill مكتوبة قبل النتائج ← think.py gate
+- إلزامي: خطوة أولى صغيرة قابلة للتراجع هذا الأسبوع ← مراجعة
+- أمر الحكم في الوضع 1: `think.py qa plan --answers qa.json` (PASS / FAIL / INCOMPLETE).
+
+#### 5. التعافي (A29)
+
+- `quality_below_threshold` (جودة دون العتبة، ميزانية 3): أي معيار فشل وبكم (المقيس مقابل العتبة) ← عالج السبب الأكبر وحده ثم أعد القياس · البديل: المنهج البديل المكتوب للمرحلة في الخطة · تصعيد: معيار إلزامي لا يتحقق بعد البديل: توقف وأبلغ بالأرقام
+
+#### 6. الأدلة
+
+- `https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/992-write-manual-verification-plan/2276-write-manual-verification-plan`
+
+#### 7. قدرات قريبة في العائلة
+
+- `AMIND-50` تحديث خارطة الطريق من الأدلة مع ذكر وضع الفحص / Evidence-based roadmap update with an explicit scan mode (documented)
+- `AMIND-51` زرع العيب لإثبات أن الفحص يستطيع أن يفشل / Plant the defect to prove a check can fail (documented)
+- `AMIND-53` الإطلاق في الظل لاختبار نظام بديل تحت حمل الإنتاج / Shadow mode (dark launch) to validate a replacement under real load (documented)
+- `AMIND-54` تنقيح المواصفات بتحليل الفجوات وأسئلة متتابعة مرجّحة / Specification refinement: gap analysis and ranked one-at-a-time questions (documented)
+
+### `AMIND-53` — الإطلاق في الظل لاختبار نظام بديل تحت حمل الإنتاج / Shadow mode (dark launch) to validate a replacement under real load
+
+| الحقل | القيمة |
+|---|---|
+| العائلة | `atlas-mind` ([فصل العائلة](../../../.claude/skills/kosif-superpowers/references/powers/atlas-mind.md)) |
+| المجموعة | التفكير والتخطيط والاستراتيجية (`thinking`) |
+| نوع المخرج (A25، A27) | خطة واستراتيجية وقرار (`plan`) |
+| الحالة في الكتالوج | 📄 `documented`: منهج موصوف يحتاج بناءً أو ربطًا قبل التشغيل |
+| سقف التحقق قبل العمل (A27) | V1 حتى تُبنى وتُشغَّل؛ لا تقدَّم جاهزة أبدًا |
+| نطاق الدليل | `url` |
+| الرخصة | method paraphrased from Atlas skills under MIT; the skills keep their own licenses — see each folder's SOURCE.md |
+
+**ما هي:** يكرر حركة الإنتاج إلى النظام الجديد دون أن تصل ردوده للمستخدم، ويقارن الردود حقلًا بحقل لبناء الثقة قبل التحويل. — Mirrors production traffic to a new system whose responses never reach users, comparing them field by field to build confidence before cutover.
+
+**متى:** استبدال خدمة، ترحيل، مقارنة سلوك إصدار جديد بالحالي / replacing a service, a migration, comparing a new version's behaviour with production
+
+**كيف:** 1) Choose a mirror: full, sampled, selective or offline replay; proxy, application, mesh or log-replay topology. 2) The production path never waits on the shadow: async copy, independent timeouts, and a kill switch toggled by config that works in seconds and is tested first. 3) Compare with rules: ignore IDs and timestamps, tolerance for computed numbers, sets for unordered collections, exact status codes. 4) Writes: mirror reads only, or give the shadow isolated state, dry-run or record-only writes. 5) Ramp 1%, 5-10%, 25-50%, 100%, tracking match rate (>99.9%), shadow latency vs prod and error rate. 6) Combine with dual write and strangler-fig steps: shadow, dual write, cut reads then writes, decommission.
+
+**المعاملات:** mirror %, match target
+
+**التثبيت:** لا خطوة تثبيت مسجلة
+
+**الوسوم:** shadow traffic · dark launch · migration · ترحيل · مقارنة · strangler fig
+
+#### 1. الاستقبال (A25)
+
+- الهدف القابل للقياس: سؤال بإجابة مقترحة ← هدف مقترح بعتبة رقمية يُعرض للتعديل
+- الأفق الزمني: افتراض مكتوب ← 90 يومًا
+- الموارد والميزانية: افتراض مكتوب ← شخص واحد بلا صرف
+- لا تُفترض أبدًا: مادة الإنتاج نفسها، والإذن بخطوة مدفوعة أو منشورة أو لا رجعة فيها، والهوية والحقوق.
+
+#### 2. الجاهزية والشارة (A28)
+
+- لا متطلبات مسجلة؛ افحص المسار والأداة بـ `hub.py doctor` قبل الشارة.
+- الوضع 1: شارة «هنا الآن» بعد الفحص، لا 📄 الكتالوج تلقائيًا · الوضع 2: `كتالوج: 📄 · هنا: غير مفحوص` · الوضع 3: بلا شارة ولا معرّف.
+
+#### 3. موضعها في الخطة (A26)
+
+- عقدة منمّطة: المدخل `brief` ← المخرج `plan`، والمنفّذ `method:AMIND-53` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
+- لا أداة مسجلة تخدم عائلتها: التنفيذ بالمكتبات أو بأداة من مجموعة أخرى.
+- مراحل النوع: الهدف بمؤشره ← ثلاثة خيارات مختلفة ← تقييم وحساسية ← تشريح مسبق ← بوابات مكتوبة ← خطوة أولى قابلة للتراجع.
+- إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
+
+#### 4. بوابة التحقق (A27)
+
+- إلزامي: لكل هدف مؤشر وعتبة وتاريخ ← جدول المؤشرات
+- إلزامي: ثلاثة خيارات مختلفة المنهج مع توصية ← جدول المقارنة
+- جودة: تشريح مسبق بأهم أسباب الفشل والوقاية ← think.py plan
+- جودة: بوابات go/pivot/kill مكتوبة قبل النتائج ← think.py gate
+- إلزامي: خطوة أولى صغيرة قابلة للتراجع هذا الأسبوع ← مراجعة
+- أمر الحكم في الوضع 1: `think.py qa plan --answers qa.json` (PASS / FAIL / INCOMPLETE).
+
+#### 5. التعافي (A29)
+
+- `quality_below_threshold` (جودة دون العتبة، ميزانية 3): أي معيار فشل وبكم (المقيس مقابل العتبة) ← عالج السبب الأكبر وحده ثم أعد القياس · البديل: المنهج البديل المكتوب للمرحلة في الخطة · تصعيد: معيار إلزامي لا يتحقق بعد البديل: توقف وأبلغ بالأرقام
+
+#### 6. الأدلة
+
+- `https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/2160-migration-patterns-plugin/7804-shadow-mode`
+
+#### 7. قدرات قريبة في العائلة
+
+- `AMIND-51` زرع العيب لإثبات أن الفحص يستطيع أن يفشل / Plant the defect to prove a check can fail (documented)
+- `AMIND-52` خطة تحقق يدوي مرقمة قابلة للاستئناف / Resumable numbered manual verification plan (documented)
+- `AMIND-54` تنقيح المواصفات بتحليل الفجوات وأسئلة متتابعة مرجّحة / Specification refinement: gap analysis and ranked one-at-a-time questions (documented)
+
+### `AMIND-54` — تنقيح المواصفات بتحليل الفجوات وأسئلة متتابعة مرجّحة / Specification refinement: gap analysis and ranked one-at-a-time questions
+
+| الحقل | القيمة |
+|---|---|
+| العائلة | `atlas-mind` ([فصل العائلة](../../../.claude/skills/kosif-superpowers/references/powers/atlas-mind.md)) |
+| المجموعة | التفكير والتخطيط والاستراتيجية (`thinking`) |
+| نوع المخرج (A25، A27) | خطة واستراتيجية وقرار (`plan`) |
+| الحالة في الكتالوج | 📄 `documented`: منهج موصوف يحتاج بناءً أو ربطًا قبل التشغيل |
+| سقف التحقق قبل العمل (A27) | V1 حتى تُبنى وتُشغَّل؛ لا تقدَّم جاهزة أبدًا |
+| نطاق الدليل | `url` |
+| الرخصة | method paraphrased from Atlas skills under MIT; the skills keep their own licenses — see each folder's SOURCE.md |
+
+**ما هي:** يحلل مواصفة أو خطة بعدسات البنية والتنفيذ والافتراضات وعدم التطابق وأصحاب المصلحة، ثم يطرح أهم الأسئلة واحدًا تلو الآخر مع إجابة موصى بها. — Analyses a spec or plan through structure, execution, assumptions, mismatches and stakeholder lenses, then asks the top questions one at a time with a recommended answer.
+
+**متى:** مراجعة مواصفات أو متطلبات أو تصميم معماري، 'ما الثغرات في خطتي؟' / reviewing a spec, requirements or architecture, 'what are the gaps in my plan'
+
+**كيف:** 1) Assess size, domains, stakeholders and scope clarity; simple mode for one clear domain, complex for several. 2) Lenses: Structure (I/O paths, coupling, boundaries), Execution (happy path, edge cases, failure modes), Assumptions, Mismatches (requirements vs design vs implementation), Stakeholders (operator, security, integrator, user). 3) In complex mode add dependency mapping, critical path, single points of failure and bottlenecks. 4) Build a coverage map over 11 categories (scope, data model, UX flow, non-functional, integrations, edge cases, constraints, terminology, completion signals, risks, placeholders) as Clear/Partial/Missing. 5) Rank questions by impact x uncertainty; ask at most 5 per session (10 total), one at a time, multiple choice with a recommended option, integrating each answer immediately. 6) Output numbered requirements with traceability in Draft status; never invent standards citations.
+
+**المعاملات:** mode: simple\|complex
+
+**التثبيت:** لا خطوة تثبيت مسجلة
+
+**الوسوم:** specification · requirements · gap analysis · مراجعة المواصفات · متطلبات · architecture review
+
+#### 1. الاستقبال (A25)
+
+- الهدف القابل للقياس: سؤال بإجابة مقترحة ← هدف مقترح بعتبة رقمية يُعرض للتعديل
+- الأفق الزمني: افتراض مكتوب ← 90 يومًا
+- الموارد والميزانية: افتراض مكتوب ← شخص واحد بلا صرف
+- لا تُفترض أبدًا: مادة الإنتاج نفسها، والإذن بخطوة مدفوعة أو منشورة أو لا رجعة فيها، والهوية والحقوق.
+
+#### 2. الجاهزية والشارة (A28)
+
+- لا متطلبات مسجلة؛ افحص المسار والأداة بـ `hub.py doctor` قبل الشارة.
+- الوضع 1: شارة «هنا الآن» بعد الفحص، لا 📄 الكتالوج تلقائيًا · الوضع 2: `كتالوج: 📄 · هنا: غير مفحوص` · الوضع 3: بلا شارة ولا معرّف.
+
+#### 3. موضعها في الخطة (A26)
+
+- عقدة منمّطة: المدخل `brief` ← المخرج `plan`، والمنفّذ `method:AMIND-54` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
+- لا أداة مسجلة تخدم عائلتها: التنفيذ بالمكتبات أو بأداة من مجموعة أخرى.
+- مراحل النوع: الهدف بمؤشره ← ثلاثة خيارات مختلفة ← تقييم وحساسية ← تشريح مسبق ← بوابات مكتوبة ← خطوة أولى قابلة للتراجع.
+- إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
+
+#### 4. بوابة التحقق (A27)
+
+- إلزامي: لكل هدف مؤشر وعتبة وتاريخ ← جدول المؤشرات
+- إلزامي: ثلاثة خيارات مختلفة المنهج مع توصية ← جدول المقارنة
+- جودة: تشريح مسبق بأهم أسباب الفشل والوقاية ← think.py plan
+- جودة: بوابات go/pivot/kill مكتوبة قبل النتائج ← think.py gate
+- إلزامي: خطوة أولى صغيرة قابلة للتراجع هذا الأسبوع ← مراجعة
+- أمر الحكم في الوضع 1: `think.py qa plan --answers qa.json` (PASS / FAIL / INCOMPLETE).
+
+#### 5. التعافي (A29)
+
+- `quality_below_threshold` (جودة دون العتبة، ميزانية 3): أي معيار فشل وبكم (المقيس مقابل العتبة) ← عالج السبب الأكبر وحده ثم أعد القياس · البديل: المنهج البديل المكتوب للمرحلة في الخطة · تصعيد: معيار إلزامي لا يتحقق بعد البديل: توقف وأبلغ بالأرقام
+
+#### 6. الأدلة
+
+- `https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/376-specification-refiner/1403-specification-refiner`
+
+#### 7. قدرات قريبة في العائلة
+
+- `AMIND-52` خطة تحقق يدوي مرقمة قابلة للاستئناف / Resumable numbered manual verification plan (documented)
+- `AMIND-53` الإطلاق في الظل لاختبار نظام بديل تحت حمل الإنتاج / Shadow mode (dark launch) to validate a replacement under real load (documented)
 

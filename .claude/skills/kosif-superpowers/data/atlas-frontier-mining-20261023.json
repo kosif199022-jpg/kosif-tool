@@ -1,0 +1,562 @@
+{
+ "schema": "kosif.atlas-5000.mining-receipt.v1",
+ "date": "2026-10-23",
+ "atlas": "https://github.com/kosif199022-jpg/kosif-atlas",
+ "atlas_commit": "99bb108dff169880dd531359f474a01b73c4b233",
+ "sources_read": 55,
+ "powers_added": 41,
+ "selection": "least-covered safe-core themes (atlas_5000 gaps); each skill re-checked with atlas_5000.is_safe; skills already cited by an existing power on main were skipped",
+ "scope_note": "Each SKILL.md was read as inert text and its method paraphrased in our own words; no Atlas script, package or instruction was executed or copied verbatim. Only READ_ONLY_OK, permissive-license, no-risk-flag skills were used. full=false means only the first 12,000 characters were read.",
+ "skipped": [
+  {
+   "atlas_id": 2957,
+   "reason": "method overlaps existing ADOCS-02"
+  },
+  {
+   "atlas_id": 7507,
+   "reason": "already cited by ACODE-221"
+  },
+  {
+   "atlas_id": 14110,
+   "reason": "already cited by ACODE-223"
+  },
+  {
+   "atlas_id": 9949,
+   "reason": "already cited by ACODE-220"
+  },
+  {
+   "atlas_id": 9413,
+   "reason": "method overlaps existing WEB-10"
+  },
+  {
+   "atlas_id": 13862,
+   "reason": "method overlaps existing ACODE-83"
+  },
+  {
+   "atlas_id": 14093,
+   "reason": "already cited by ASTRAT-58"
+  },
+  {
+   "atlas_id": 2907,
+   "reason": "method overlaps existing ANLY-33"
+  },
+  {
+   "atlas_id": 9828,
+   "reason": "already cited by ACODE-88"
+  },
+  {
+   "atlas_id": 2934,
+   "reason": "method overlaps existing ADATA-40"
+  },
+  {
+   "atlas_id": 2899,
+   "reason": "already cited by ASTRAT-54"
+  },
+  {
+   "atlas_id": 8244,
+   "reason": "already cited by ACODE-85,ACODE-86,ADATA-34"
+  },
+  {
+   "atlas_id": 2925,
+   "reason": "already cited by ADOCS-21"
+  },
+  {
+   "atlas_id": 14283,
+   "reason": "already cited by ACODE-174"
+  }
+ ],
+ "sources": [
+  {
+   "atlas_id": 7664,
+   "plugin": "communication-plugin",
+   "skill": "ticket-drafting-guidelines",
+   "license": "MIT",
+   "theme": "productivity-integrations",
+   "path": "skills/2143-communication-plugin/7664-ticket-drafting-guidelines",
+   "skill_md_sha256": "07db14544d48a1e3744825f902005e984da4e9916f2bdcab95c650837dba2603",
+   "bytes": 11683,
+   "read_in_full": true,
+   "power": "ABUILD-51"
+  },
+  {
+   "atlas_id": 14217,
+   "plugin": "incident-response",
+   "skill": "connectivity-triage",
+   "license": "MIT",
+   "theme": "productivity-integrations",
+   "path": "skills/3494-incident-response/14217-connectivity-triage",
+   "skill_md_sha256": "08cd3ebe37f8ea4d623e23f61f78f06ab897e69b19865ddf370e6d4f89df2c2b",
+   "bytes": 8101,
+   "read_in_full": true,
+   "power": "ABUILD-52"
+  },
+  {
+   "atlas_id": 2942,
+   "plugin": "ruff",
+   "skill": "ruff",
+   "license": "MIT",
+   "theme": "web-frameworks",
+   "path": "skills/1262-ruff/2942-ruff",
+   "skill_md_sha256": "731ca1a29b86ecc02f2174100c341c5d0c3b9fab21c2a81fbcf6dcf973012d50",
+   "bytes": 18260,
+   "read_in_full": false,
+   "power": "ACODE-227"
+  },
+  {
+   "atlas_id": 2951,
+   "plugin": "uv",
+   "skill": "uv",
+   "license": "MIT",
+   "theme": "web-frameworks",
+   "path": "skills/1273-uv/2951-uv",
+   "skill_md_sha256": "c3732b910bc2fe1d181d8efe5df3248ab76da55c8ee7872635b2b18c838febc3",
+   "bytes": 15678,
+   "read_in_full": false,
+   "power": "ACODE-228"
+  },
+  {
+   "atlas_id": 2927,
+   "plugin": "obsidian-bases",
+   "skill": "obsidian-bases",
+   "license": "MIT",
+   "theme": "knowledge-management",
+   "path": "skills/1247-obsidian-bases/2927-obsidian-bases",
+   "skill_md_sha256": "8988fd9ba6f8e4c9e80e6fc3d8a83062a4e5c1a7c7b579d3055c303a4d39d3c3",
+   "bytes": 13891,
+   "read_in_full": false,
+   "power": "AWEB-10"
+  },
+  {
+   "atlas_id": 3771,
+   "plugin": "universal-design-principles",
+   "skill": "recognition-over-recall",
+   "license": "MIT",
+   "theme": "knowledge-management",
+   "path": "skills/1503-universal-design-principles/3771-recognition-over-recall",
+   "skill_md_sha256": "4e4d37fa8226942e8275ba0ff408b458e721158bfa4c6820d1e5c1da7825bf6e",
+   "bytes": 12168,
+   "read_in_full": false,
+   "power": "AWEB-11"
+  },
+  {
+   "atlas_id": 2177,
+   "plugin": "carbone-skill",
+   "skill": "carbone",
+   "license": "Apache-2.0",
+   "theme": "office-documents",
+   "path": "skills/931-carbone-skill/2177-carbone",
+   "skill_md_sha256": "0ff1549ce6a435253278e0dec5e9ef424bf36ecafaf197ca9d51d138704bab5b",
+   "bytes": 32932,
+   "read_in_full": false,
+   "power": "ADOCS-46"
+  },
+  {
+   "atlas_id": 2838,
+   "plugin": "carrel-documents",
+   "skill": "redaction-and-provenance",
+   "license": "MIT",
+   "theme": "office-documents",
+   "path": "skills/1195-carrel-documents/2838-redaction-and-provenance",
+   "skill_md_sha256": "2cc6899c31ae6fce4eccf197f0e22c319789a71c31bbf8758003be2c85e89e96",
+   "bytes": 4426,
+   "read_in_full": true,
+   "power": "ADOCS-47"
+  },
+  {
+   "atlas_id": 12191,
+   "plugin": "slidev",
+   "skill": "slidev",
+   "license": "MIT",
+   "theme": "office-documents",
+   "path": "skills/2938-slidev/12191-slidev",
+   "skill_md_sha256": "3b1b7fd100b3bbc93fbadfeac13092cbf81410a81d16b3ffd5d1716f4a2a3c82",
+   "bytes": 8896,
+   "read_in_full": true,
+   "power": "ADOCS-48"
+  },
+  {
+   "atlas_id": 13638,
+   "plugin": "interview-me",
+   "skill": "interview-me",
+   "license": "MIT",
+   "theme": "hr-career",
+   "path": "skills/3225-interview-me/13638-interview-me",
+   "skill_md_sha256": "1d94741d10d2c826cd0c191aea3981ee94c8abb27ef2a166f6a372117d06448f",
+   "bytes": 14359,
+   "read_in_full": false,
+   "power": "ASTRAT-63"
+  },
+  {
+   "atlas_id": 13964,
+   "plugin": "career-tools",
+   "skill": "cover-letter-builder",
+   "license": "MIT",
+   "theme": "hr-career",
+   "path": "skills/3410-career-tools/13964-cover-letter-builder",
+   "skill_md_sha256": "c934de88b6597a2c8e4e3666ea489c9d55b2112216a940fa8e9563ed504405d9",
+   "bytes": 13539,
+   "read_in_full": false,
+   "power": "ASTRAT-64"
+  },
+  {
+   "atlas_id": 14097,
+   "plugin": "product-strategy",
+   "skill": "negotiation",
+   "license": "MIT",
+   "theme": "hr-career",
+   "path": "skills/3433-product-strategy/14097-negotiation",
+   "skill_md_sha256": "f808051fc0c50b551de44f66006af298662209d8f39c22cc5600385da45a5e04",
+   "bytes": 18922,
+   "read_in_full": false,
+   "power": "ASTRAT-65"
+  },
+  {
+   "atlas_id": 14113,
+   "plugin": "systems-architecture",
+   "skill": "team-topologies",
+   "license": "MIT",
+   "theme": "hr-career",
+   "path": "skills/3436-systems-architecture/14113-team-topologies",
+   "skill_md_sha256": "b62a65eee8f0fc170f4223540a0ba6f2bf9248db9de028bccce32cdce41060e4",
+   "bytes": 18913,
+   "read_in_full": false,
+   "power": "ASTRAT-66"
+  },
+  {
+   "atlas_id": 12639,
+   "plugin": "quality-engineering-skills",
+   "skill": "8d-coach",
+   "license": "MIT",
+   "theme": "hr-career",
+   "path": "skills/2989-quality-engineering-skills/12639-8d-coach",
+   "skill_md_sha256": "bb704dd5b01e9b90f27431679afddfb84e86b70bed26648109ff85d893a947eb",
+   "bytes": 9695,
+   "read_in_full": true,
+   "power": "ASTRAT-67"
+  },
+  {
+   "atlas_id": 12651,
+   "plugin": "quality-engineering-skills",
+   "skill": "car-corrective-action",
+   "license": "MIT",
+   "theme": "personal-lifestyle",
+   "path": "skills/2989-quality-engineering-skills/12651-car-corrective-action",
+   "skill_md_sha256": "7a5e08356b5691b28665d7b82d077e7a744bf3b87ac845e503d2b2b3291296e7",
+   "bytes": 10642,
+   "read_in_full": true,
+   "power": "ASTRAT-68"
+  },
+  {
+   "atlas_id": 13287,
+   "plugin": "llm-finetuning",
+   "skill": "dataset-curation",
+   "license": "MIT",
+   "theme": "ml-datascience",
+   "path": "skills/3104-llm-finetuning/13287-dataset-curation",
+   "skill_md_sha256": "77dd076c9a44967d0d508106c68f3e068605a9fa45cb1279834fa5545d9329d6",
+   "bytes": 7991,
+   "read_in_full": true,
+   "power": "ADATA-48"
+  },
+  {
+   "atlas_id": 13291,
+   "plugin": "llm-finetuning",
+   "skill": "lora-qlora-recipes",
+   "license": "MIT",
+   "theme": "personal-lifestyle",
+   "path": "skills/3104-llm-finetuning/13291-lora-qlora-recipes",
+   "skill_md_sha256": "83171f8287ee41c799bd6b1c8dd04695286599abc9f4a5d4175d3bcfed6ddf96",
+   "bytes": 7673,
+   "read_in_full": true,
+   "power": "ASTRAT-69"
+  },
+  {
+   "atlas_id": 8242,
+   "plugin": "majestic-data",
+   "skill": "anomaly-detection",
+   "license": "MIT",
+   "theme": "ml-datascience",
+   "path": "skills/2207-majestic-data/8242-anomaly-detection",
+   "skill_md_sha256": "a3507e70b00ab6b5f172bf8ba2ce5f895421317d0872196dd4be7e740ed08c1e",
+   "bytes": 4682,
+   "read_in_full": true,
+   "power": "ADATA-49"
+  },
+  {
+   "atlas_id": 13292,
+   "plugin": "llm-finetuning",
+   "skill": "preference-optimization",
+   "license": "MIT",
+   "theme": "performance",
+   "path": "skills/3104-llm-finetuning/13292-preference-optimization",
+   "skill_md_sha256": "c5756fa59c8c99475b6fee92199ea17f060ba3895d5ff5ab2b544ed4ac996fe8",
+   "bytes": 7910,
+   "read_in_full": true,
+   "power": "ACODE-229"
+  },
+  {
+   "atlas_id": 10479,
+   "plugin": "twilio-developer-kit",
+   "skill": "twilio-customer-support-architect",
+   "license": "MIT",
+   "theme": "sales-customer",
+   "path": "skills/2721-twilio-developer-kit/10479-twilio-customer-support-architect",
+   "skill_md_sha256": "577e4c6a524ccfdb526b6ac81706a87c19dc5a5bb2ec5e0ad21ed5bd2ac27b67",
+   "bytes": 13502,
+   "read_in_full": false,
+   "power": "ASTRAT-70"
+  },
+  {
+   "atlas_id": 9350,
+   "plugin": "adhd",
+   "skill": "shape",
+   "license": "MIT",
+   "theme": "sales-customer",
+   "path": "skills/2411-adhd/9350-shape",
+   "skill_md_sha256": "008ac23811158d2f332f7dbc220c37c5c769cc2caaa461495bba7b5fbb85935c",
+   "bytes": 8638,
+   "read_in_full": true,
+   "power": "ASTRAT-71"
+  },
+  {
+   "atlas_id": 2243,
+   "plugin": "plant-defects",
+   "skill": "plant-defects",
+   "license": "MIT",
+   "theme": "verification-review",
+   "path": "skills/959-plant-defects/2243-plant-defects",
+   "skill_md_sha256": "c44f3975f90a0a24d8bcbf79975273b501e5a4bb2e561ffc0e5114589f84b143",
+   "bytes": 10547,
+   "read_in_full": true,
+   "power": "AMIND-51"
+  },
+  {
+   "atlas_id": 2276,
+   "plugin": "write-manual-verification-plan",
+   "skill": "write-manual-verification-plan",
+   "license": "MIT",
+   "theme": "verification-review",
+   "path": "skills/992-write-manual-verification-plan/2276-write-manual-verification-plan",
+   "skill_md_sha256": "99200b3d81eb153c9b9623ed68df678fbfdd79d65822a3dacf4865977039308a",
+   "bytes": 10831,
+   "read_in_full": true,
+   "power": "AMIND-52"
+  },
+  {
+   "atlas_id": 911,
+   "plugin": "mcp-server-dev",
+   "skill": "build-mcp-server",
+   "license": "Apache-2.0",
+   "theme": "mcp-tooling",
+   "path": "skills/297-mcp-server-dev/911-build-mcp-server",
+   "skill_md_sha256": "088cd04be7f03ebbdfd24973cbcbf93c7a2e09117c4bba7b2b06bcc3e0a556f6",
+   "bytes": 12084,
+   "read_in_full": true,
+   "power": "ACODE-230"
+  },
+  {
+   "atlas_id": 2267,
+   "plugin": "upgrade-everything",
+   "skill": "upgrade-everything",
+   "license": "MIT",
+   "theme": "refactoring-architecture",
+   "path": "skills/983-upgrade-everything/2267-upgrade-everything",
+   "skill_md_sha256": "53c40ab93c0567c6327dfd2d5ed740285cf0000e906e54e23ec80c9b46c6d8aa",
+   "bytes": 9670,
+   "read_in_full": true,
+   "power": "ACODE-231"
+  },
+  {
+   "atlas_id": 7804,
+   "plugin": "migration-patterns-plugin",
+   "skill": "shadow-mode",
+   "license": "MIT",
+   "theme": "planning-specs",
+   "path": "skills/2160-migration-patterns-plugin/7804-shadow-mode",
+   "skill_md_sha256": "10cf640a4a46d6b6407a443037c4283e084438adc3026280063fcd9f6579cc44",
+   "bytes": 9252,
+   "read_in_full": true,
+   "power": "AMIND-53"
+  },
+  {
+   "atlas_id": 13769,
+   "plugin": "falsegreen-skill",
+   "skill": "falsegreen-skill",
+   "license": "MIT",
+   "theme": "testing-tdd",
+   "path": "skills/3258-falsegreen-skill/13769-falsegreen-skill",
+   "skill_md_sha256": "1d5925f046bf3a7694dd81acffeb7d8acc964084512fb7fc97d99cb5aaecf59a",
+   "bytes": 23576,
+   "read_in_full": false,
+   "power": "ACODE-232"
+  },
+  {
+   "atlas_id": 7155,
+   "plugin": "epistemic-cooperative",
+   "skill": "reduced-space-test",
+   "license": "MIT",
+   "theme": "testing-tdd",
+   "path": "skills/1990-epistemic-cooperative/7155-reduced-space-test",
+   "skill_md_sha256": "81925376f2cfe3252ad3f60ae571a107d5ccf2fc30cdad197f212cf8fbd02a7e",
+   "bytes": 22982,
+   "read_in_full": false,
+   "power": "ACODE-233"
+  },
+  {
+   "atlas_id": 11671,
+   "plugin": "agent-browser",
+   "skill": "dogfood",
+   "license": "Apache-2.0",
+   "theme": "testing-tdd",
+   "path": "skills/2887-agent-browser/11671-dogfood",
+   "skill_md_sha256": "c86db6b33c8f92e2a074d7f5b7eb9629e333d0fb287eca4421782266b1e76257",
+   "bytes": 10605,
+   "read_in_full": true,
+   "power": "ACODE-234"
+  },
+  {
+   "atlas_id": 9825,
+   "plugin": "gdpr-review",
+   "skill": "gdpr-review",
+   "license": "MIT",
+   "theme": "security",
+   "path": "skills/2528-gdpr-review/9825-gdpr-review",
+   "skill_md_sha256": "ba53734e0ef209dee2c13d3011cefd50ad12aa6e3672750015bac781a266a26e",
+   "bytes": 16610,
+   "read_in_full": false,
+   "power": "ACODE-235"
+  },
+  {
+   "atlas_id": 97,
+   "plugin": "codebase-mapper",
+   "skill": "map-codebase-workflow",
+   "license": "MIT",
+   "theme": "code-understanding",
+   "path": "skills/60-codebase-mapper/97-map-codebase-workflow",
+   "skill_md_sha256": "5da8ae11ad7be232ad422a1b6e321a7d4e1fb3c96df8f4538991e8e706d191ea",
+   "bytes": 11116,
+   "read_in_full": true,
+   "power": "ACODE-236"
+  },
+  {
+   "atlas_id": 2242,
+   "plugin": "pin-everything",
+   "skill": "pin-everything",
+   "license": "MIT",
+   "theme": "code-understanding",
+   "path": "skills/958-pin-everything/2242-pin-everything",
+   "skill_md_sha256": "56fa88f33452f15e8b4fc8821d7c1bdb0f452ff7a0e28449c126bc36ee1c353e",
+   "bytes": 30500,
+   "read_in_full": false,
+   "power": "ACODE-237"
+  },
+  {
+   "atlas_id": 548,
+   "plugin": "prompt-governance",
+   "skill": "prompt-governance",
+   "license": "MIT",
+   "theme": "prompt-skill-engineering",
+   "path": "skills/179-prompt-governance/548-prompt-governance",
+   "skill_md_sha256": "a269ce5a289573ee82d3316824ba56e4faf5a40c599fb356fed8ab4054d82dcd",
+   "bytes": 11213,
+   "read_in_full": true,
+   "power": "ACRAFT-25"
+  },
+  {
+   "atlas_id": 2946,
+   "plugin": "style-extractor",
+   "skill": "style-extractor",
+   "license": "MIT",
+   "theme": "writing-content",
+   "path": "skills/1268-style-extractor/2946-style-extractor",
+   "skill_md_sha256": "e28f5b99cbda95c1bfb2c25c3a39b01022ce96646306a6d615501660e00696b5",
+   "bytes": 10406,
+   "read_in_full": true,
+   "power": "ACRAFT-26"
+  },
+  {
+   "atlas_id": 1403,
+   "plugin": "specification-refiner",
+   "skill": "specification-refiner",
+   "license": "MIT",
+   "theme": "planning-specs",
+   "path": "skills/376-specification-refiner/1403-specification-refiner",
+   "skill_md_sha256": "45139f0ef588dc8cd42df2b3f42d282574520f3b71738f087cbacc3f0b5d44fe",
+   "bytes": 27782,
+   "read_in_full": false,
+   "power": "AMIND-54"
+  },
+  {
+   "atlas_id": 2383,
+   "plugin": "dev-report",
+   "skill": "dev-report",
+   "license": "MIT",
+   "theme": "product-management",
+   "path": "skills/1074-dev-report/2383-dev-report",
+   "skill_md_sha256": "0d3cbd999bc733f292d47cf8c51b703e4ec533d03711ec71a9be8f292fa5d63b",
+   "bytes": 12509,
+   "read_in_full": false,
+   "power": "ASTRAT-72"
+  },
+  {
+   "atlas_id": 36,
+   "plugin": "docs",
+   "skill": "readme-craft",
+   "license": "MIT",
+   "theme": "documentation",
+   "path": "skills/26-docs/36-readme-craft",
+   "skill_md_sha256": "d0ee1ab3abb7db2dd860fbfead09bd7f5fdbbe3235022d841585f3f354432e03",
+   "bytes": 9489,
+   "read_in_full": true,
+   "power": "ADOCS-49"
+  },
+  {
+   "atlas_id": 11563,
+   "plugin": "appropriate-comments-code",
+   "skill": "appropriate-comments-code",
+   "license": "MIT",
+   "theme": "documentation",
+   "path": "skills/2854-appropriate-comments-code/11563-appropriate-comments-code",
+   "skill_md_sha256": "f832f2ce88a4bf7aa8c2b3776afec5a592b51cd0b1f951b68efe72c589d20ef9",
+   "bytes": 39990,
+   "read_in_full": false,
+   "power": "ADOCS-50"
+  },
+  {
+   "atlas_id": 7548,
+   "plugin": "pre-mortem",
+   "skill": "pre-mortem",
+   "license": "MIT",
+   "theme": "data-engineering",
+   "path": "skills/2123-pre-mortem/7548-pre-mortem",
+   "skill_md_sha256": "d67f70acc7b87afd530d36913b5d2b569826000d55b7e756ec72572a4af39d18",
+   "bytes": 6136,
+   "read_in_full": true,
+   "power": "ADATA-50"
+  },
+  {
+   "atlas_id": 12654,
+   "plugin": "quality-engineering-skills",
+   "skill": "spc-control-charts",
+   "license": "MIT",
+   "theme": "visualization-dashboards",
+   "path": "skills/2989-quality-engineering-skills/12654-spc-control-charts",
+   "skill_md_sha256": "c602e6f38c28802fe62c8cf7a7354c8480493185981764d1e4f2ce181137b133",
+   "bytes": 10076,
+   "read_in_full": true,
+   "power": "ADATA-51"
+  },
+  {
+   "atlas_id": 13800,
+   "plugin": "client-rendered-dashboard-data-blob",
+   "skill": "client-rendered-dashboard-data-blob",
+   "license": "MIT",
+   "theme": "visualization-dashboards",
+   "path": "skills/3286-client-rendered-dashboard-data-blob/13800-client-rendered-dashboard-data-blob",
+   "skill_md_sha256": "0699c3e20003c03cc64ea92ace9723cb824904c7b6fe0d43103693c04422b6a8",
+   "bytes": 11032,
+   "read_in_full": true,
+   "power": "ADATA-52"
+  }
+ ]
+}

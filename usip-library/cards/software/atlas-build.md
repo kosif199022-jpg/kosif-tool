@@ -1,4 +1,4 @@
-# `atlas-build` — البرمجة وبناء التطبيقات (50 بطاقة)
+# `atlas-build` — البرمجة وبناء التطبيقات (52 بطاقة)
 
 > مكتبة بروتوكول USIP v5.5 الكاملة، مولّدة بـ `smart_capabilities.py cards` من `data/powers/atlas-build.json` وقواعد الملاحق A25–A29؛ لا تُحرَّر يدويًا. [الفهرس الرئيسي](../../README.md) · [فصل المجموعة](../../../.claude/skills/kosif-superpowers/references/library/software.md) · [النواة](../../../.claude/skills/kosif-superpowers/PROTOCOL.md)
 
@@ -54,6 +54,8 @@
 - [`ABUILD-48` معمارية رموز التصميم بثلاث طبقات](#abuild-48--معمارية-رموز-التصميم-بثلاث-طبقات--three-tier-design-token-architecture-with-theming)
 - [`ABUILD-49` تدقيق إتاحة WCAG 2.2: فحص وإصلاح وتحقق](#abuild-49--تدقيق-إتاحة-wcag-22-فحص-وإصلاح-وتحقق--wcag-22-scan-fix-verify-accessibility-audit)
 - [`ABUILD-50` إصدار نسخة: وسم ونشر وتحقق](#abuild-50--إصدار-نسخة-وسم-ونشر-وتحقق--cut-a-release-tag-github-release-verify)
+- [`ABUILD-51` صياغة التذاكر وأوصاف PR بهيكل ماذا/لماذا/كيف](#abuild-51--صياغة-التذاكر-وأوصاف-pr-بهيكل-ماذالماذاكيف--whatwhyhow-ticket-and-pr-drafting)
+- [`ABUILD-52` فرز أعطال الاتصال حسب مجال الخطأ دون تغيير الإعدادات](#abuild-52--فرز-أعطال-الاتصال-حسب-مجال-الخطأ-دون-تغيير-الإعدادات--fault-domain-connectivity-triage-without-touching-config)
 
 ## البطاقات / cards
 
@@ -3552,6 +3554,7 @@
 - `ABUILD-47` حلقة مقارنة لقطة الشاشة بالمرجع / Screenshot-vs-reference pixel diff loop (documented)
 - `ABUILD-48` معمارية رموز التصميم بثلاث طبقات / Three-tier design token architecture with theming (documented)
 - `ABUILD-50` إصدار نسخة: وسم ونشر وتحقق / Cut a release: tag, GitHub release, verify (documented)
+- `ABUILD-51` صياغة التذاكر وأوصاف PR بهيكل ماذا/لماذا/كيف / What/Why/How ticket and PR drafting (documented)
 
 ### `ABUILD-50` — إصدار نسخة: وسم ونشر وتحقق / Cut a release: tag, GitHub release, verify
 
@@ -3622,4 +3625,143 @@
 
 - `ABUILD-48` معمارية رموز التصميم بثلاث طبقات / Three-tier design token architecture with theming (documented)
 - `ABUILD-49` تدقيق إتاحة WCAG 2.2: فحص وإصلاح وتحقق / WCAG 2.2 scan-fix-verify accessibility audit (documented)
+- `ABUILD-51` صياغة التذاكر وأوصاف PR بهيكل ماذا/لماذا/كيف / What/Why/How ticket and PR drafting (documented)
+- `ABUILD-52` فرز أعطال الاتصال حسب مجال الخطأ دون تغيير الإعدادات / Fault-domain connectivity triage without touching config (documented)
+
+### `ABUILD-51` — صياغة التذاكر وأوصاف PR بهيكل ماذا/لماذا/كيف / What/Why/How ticket and PR drafting
+
+| الحقل | القيمة |
+|---|---|
+| العائلة | `atlas-build` ([فصل العائلة](../../../.claude/skills/kosif-superpowers/references/powers/atlas-build.md)) |
+| المجموعة | البرمجة وبناء التطبيقات (`software`) |
+| نوع المخرج (A25، A27) | كود وتطبيقات ومواقع (`code`) |
+| الحالة في الكتالوج | 📄 `documented`: منهج موصوف يحتاج بناءً أو ربطًا قبل التشغيل |
+| سقف التحقق قبل العمل (A27) | V1 حتى تُبنى وتُشغَّل؛ لا تقدَّم جاهزة أبدًا |
+| نطاق الدليل | `url` |
+| الرخصة | method paraphrased from Atlas skills under MIT; the skills keep their own licenses — see each folder's SOURCE.md |
+
+**ما هي:** يكتب جسم تذكرة أو بلاغ خطأ أو وصف PR بثلاثة أقسام ثابتة ولغة محايدة إيجابية بلا وعود. — Writes an issue, bug report or PR body in three fixed sections with neutral, affirmative wording and no unbacked claims.
+
+**متى:** كتابة issue أو وصف PR أو مهمة إعادة هيكلة / drafting an issue, bug report, PR description or migration task
+
+**كيف:** 1) What: 1-3 sentences on the subject, with links to related issues and official docs. 2) Why: the problem or opportunity and its background, linked to the discussion. 3) How: one concrete action per bullet, in order, ending in verifiable acceptance criteria. 4) Say what to do rather than what to avoid; state facts without superlatives, percentages or time estimates. 5) Before posting check every link resolves and the Markdown renders; read the repo's PR template first.
+
+**المعاملات:** type: feature\|bug\|refactor
+
+**التثبيت:** لا خطوة تثبيت مسجلة
+
+**الوسوم:** ticket · issue · PR description · تذكرة · وصف طلب الدمج · What/Why/How
+
+#### 1. الاستقبال (A25)
+
+- اللغة والإطار: افتراض مكتوب ← لغة المستودع الموجود، وإلا Python أو HTML/JS بلا اعتماديات
+- أين يعمل: افتراض مكتوب ← المتصفح أو سطر الأوامر حسب المخرج
+- مستودع أو ملفات موجودة: سؤال بإجابة مقترحة ← مشروع جديد مستقل
+- متى يكون ناجحًا: افتراض مكتوب ← الاختبارات الموجودة تمر + اختبار لكل سلوك جديد
+- لا تُفترض أبدًا: مادة الإنتاج نفسها، والإذن بخطوة مدفوعة أو منشورة أو لا رجعة فيها، والهوية والحقوق.
+
+#### 2. الجاهزية والشارة (A28)
+
+- لا متطلبات مسجلة؛ افحص المسار والأداة بـ `hub.py doctor` قبل الشارة.
+- الوضع 1: شارة «هنا الآن» بعد الفحص، لا 📄 الكتالوج تلقائيًا · الوضع 2: `كتالوج: 📄 · هنا: غير مفحوص` · الوضع 3: بلا شارة ولا معرّف.
+
+#### 3. موضعها في الخطة (A26)
+
+- عقدة منمّطة: المدخل `spec` ← المخرج `code`، والمنفّذ `method:ABUILD-51` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
+- لا أداة مسجلة تخدم عائلتها: التنفيذ بالمكتبات أو بأداة من مجموعة أخرى.
+- مراحل النوع: قراءة الكود والاختبارات ← إعادة إنتاج أو اختبار جديد ← أصغر تغيير ← الاختبارات ← مراجعة الفرق ← فرع وPR.
+- إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
+
+#### 4. بوابة التحقق (A27)
+
+- إلزامي: الاختبارات الموجودة تمر قبل التعديل وبعده ← أمر الاختبار
+- إلزامي: اختبار لكل سلوك جديد أو خطأ مُصلح ← الاختبار الجديد يفشل قبل الإصلاح
+- إلزامي: لا أسرار ولا مسارات جلسة في الشيفرة ← بحث أنماط الأسرار
+- جودة: يطابق أسلوب الكود المحيط وتسمياته ← مراجعة الفرق
+- جودة: طريقة تشغيل مكتوبة ومجرَّبة ← تشغيل الأمر المكتوب
+- جودة: الفرق أصغر ما يحقق الطلب بلا إعادة كتابة غير مطلوبة ← git diff --stat
+- جودة: المدخل الخاطئ يعطي خطأ واضحًا لا انهيارًا صامتًا ← تشغيل بمدخل خاطئ
+- أمر الحكم في الوضع 1: `think.py qa code --answers qa.json` (PASS / FAIL / INCOMPLETE).
+
+#### 5. التعافي (A29)
+
+- `quality_below_threshold` (جودة دون العتبة، ميزانية 3): أي معيار فشل وبكم (المقيس مقابل العتبة) ← عالج السبب الأكبر وحده ثم أعد القياس · البديل: المنهج البديل المكتوب للمرحلة في الخطة · تصعيد: معيار إلزامي لا يتحقق بعد البديل: توقف وأبلغ بالأرقام
+
+#### 6. الأدلة
+
+- `https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/2143-communication-plugin/7664-ticket-drafting-guidelines`
+
+#### 7. قدرات قريبة في العائلة
+
+- `ABUILD-49` تدقيق إتاحة WCAG 2.2: فحص وإصلاح وتحقق / WCAG 2.2 scan-fix-verify accessibility audit (documented)
+- `ABUILD-50` إصدار نسخة: وسم ونشر وتحقق / Cut a release: tag, GitHub release, verify (documented)
+- `ABUILD-52` فرز أعطال الاتصال حسب مجال الخطأ دون تغيير الإعدادات / Fault-domain connectivity triage without touching config (documented)
+
+### `ABUILD-52` — فرز أعطال الاتصال حسب مجال الخطأ دون تغيير الإعدادات / Fault-domain connectivity triage without touching config
+
+| الحقل | القيمة |
+|---|---|
+| العائلة | `atlas-build` ([فصل العائلة](../../../.claude/skills/kosif-superpowers/references/powers/atlas-build.md)) |
+| المجموعة | البرمجة وبناء التطبيقات (`software`) |
+| نوع المخرج (A25، A27) | كود وتطبيقات ومواقع (`code`) |
+| الحالة في الكتالوج | 📄 `documented`: منهج موصوف يحتاج بناءً أو ربطًا قبل التشغيل |
+| سقف التحقق قبل العمل (A27) | V1 حتى تُبنى وتُشغَّل؛ لا تقدَّم جاهزة أبدًا |
+| نطاق الدليل | `url` |
+| الرخصة | method paraphrased from Atlas skills under MIT; the skills keep their own licenses — see each folder's SOURCE.md |
+
+**ما هي:** يحدد مكان عطل الشبكة (الشبكة المحلية، DNS، المسار، الخدمة نفسها) بأقل الأدلة وبأوامر قراءة فقط. — Localises a live connectivity failure to LAN, DNS, upstream path or the remote service with bounded, read-only probes.
+
+**متى:** API أو خادم MCP ينقطع، DNS متقلب، فقدان حزم / an API or MCP server times out, DNS is flaky, calls drop packets
+
+**كيف:** 1) Record the exact affected host/URL, start time, continuous or intermittent, and whether other sites work. 2) Compare a 5-packet ping to a known local target with one to the destination (never invent a gateway). 3) Separate resolver configuration (scutil --dns / resolvectl) from query behaviour (dig +time=2 +tries=1). 4) Bounded traceroute -n -q 1 -m 20 only if path visibility reduces doubt; a silent hop is not a broken hop. 5) Time the real endpoint with curl -w dns/connect/tls/ttfb/total and timeouts. 6) Label each line Observed / Inferred / Unknown and return one fault domain with low/medium/high confidence plus the single next safest check; no restarts, DNS flushes or firewall edits during diagnosis.
+
+**المعاملات:** host, symptom window
+
+**التثبيت:** لا خطوة تثبيت مسجلة
+
+**الوسوم:** network · DNS · latency · شبكة · انقطاع · MCP timeout · triage
+
+#### 1. الاستقبال (A25)
+
+- اللغة والإطار: افتراض مكتوب ← لغة المستودع الموجود، وإلا Python أو HTML/JS بلا اعتماديات
+- أين يعمل: افتراض مكتوب ← المتصفح أو سطر الأوامر حسب المخرج
+- مستودع أو ملفات موجودة: سؤال بإجابة مقترحة ← مشروع جديد مستقل
+- متى يكون ناجحًا: افتراض مكتوب ← الاختبارات الموجودة تمر + اختبار لكل سلوك جديد
+- لا تُفترض أبدًا: مادة الإنتاج نفسها، والإذن بخطوة مدفوعة أو منشورة أو لا رجعة فيها، والهوية والحقوق.
+
+#### 2. الجاهزية والشارة (A28)
+
+- لا متطلبات مسجلة؛ افحص المسار والأداة بـ `hub.py doctor` قبل الشارة.
+- الوضع 1: شارة «هنا الآن» بعد الفحص، لا 📄 الكتالوج تلقائيًا · الوضع 2: `كتالوج: 📄 · هنا: غير مفحوص` · الوضع 3: بلا شارة ولا معرّف.
+
+#### 3. موضعها في الخطة (A26)
+
+- عقدة منمّطة: المدخل `spec` ← المخرج `code`، والمنفّذ `method:ABUILD-52` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
+- لا أداة مسجلة تخدم عائلتها: التنفيذ بالمكتبات أو بأداة من مجموعة أخرى.
+- مراحل النوع: قراءة الكود والاختبارات ← إعادة إنتاج أو اختبار جديد ← أصغر تغيير ← الاختبارات ← مراجعة الفرق ← فرع وPR.
+- إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
+
+#### 4. بوابة التحقق (A27)
+
+- إلزامي: الاختبارات الموجودة تمر قبل التعديل وبعده ← أمر الاختبار
+- إلزامي: اختبار لكل سلوك جديد أو خطأ مُصلح ← الاختبار الجديد يفشل قبل الإصلاح
+- إلزامي: لا أسرار ولا مسارات جلسة في الشيفرة ← بحث أنماط الأسرار
+- جودة: يطابق أسلوب الكود المحيط وتسمياته ← مراجعة الفرق
+- جودة: طريقة تشغيل مكتوبة ومجرَّبة ← تشغيل الأمر المكتوب
+- جودة: الفرق أصغر ما يحقق الطلب بلا إعادة كتابة غير مطلوبة ← git diff --stat
+- جودة: المدخل الخاطئ يعطي خطأ واضحًا لا انهيارًا صامتًا ← تشغيل بمدخل خاطئ
+- أمر الحكم في الوضع 1: `think.py qa code --answers qa.json` (PASS / FAIL / INCOMPLETE).
+
+#### 5. التعافي (A29)
+
+- `quality_below_threshold` (جودة دون العتبة، ميزانية 3): أي معيار فشل وبكم (المقيس مقابل العتبة) ← عالج السبب الأكبر وحده ثم أعد القياس · البديل: المنهج البديل المكتوب للمرحلة في الخطة · تصعيد: معيار إلزامي لا يتحقق بعد البديل: توقف وأبلغ بالأرقام
+
+#### 6. الأدلة
+
+- `https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/3494-incident-response/14217-connectivity-triage`
+
+#### 7. قدرات قريبة في العائلة
+
+- `ABUILD-50` إصدار نسخة: وسم ونشر وتحقق / Cut a release: tag, GitHub release, verify (documented)
+- `ABUILD-51` صياغة التذاكر وأوصاف PR بهيكل ماذا/لماذا/كيف / What/Why/How ticket and PR drafting (documented)
 

@@ -9,7 +9,7 @@
 مسارات الدليل نسبية إلى `/home/user/`؛ و`session-<date>:<file>#<section>` تشير إلى تشغيل موثق في جلسة سابقة؛ و`owner-upload:` إلى ملف داخل أرشيف أرسله المالك. Proof paths are relative to `/home/user/`.
 
 **المجال / domain:** العقل والتفكير — Mind & thinking · **البادئة / prefix:** `CHECK` · **البيانات / data:** `data/powers/verification-evals.json` · **بحث / search:** `python3 scripts/powers.py family verification-evals`
-**مراجع ذات صلة / related references:** [CLAUDE_3_MINUTE_MAP.md](../CLAUDE_3_MINUTE_MAP.md) · [capability-audit.md](../capability-audit.md) · [cinematic-director-pro.md](../cinematic-director-pro.md) · [codex-agent-harness.md](../codex-agent-harness.md) · [codex-repos-study-20261023.md](../codex-repos-study-20261023.md) · [hubs.md](../hubs.md) · [owner-uploads-review-20261023.md](../owner-uploads-review-20261023.md) · [thinking.md](../thinking.md) · [verification.md](../verification.md)
+**مراجع ذات صلة / related references:** [CLAUDE_3_MINUTE_MAP.md](../CLAUDE_3_MINUTE_MAP.md) · [capability-audit.md](../capability-audit.md) · [cinematic-director-pro.md](../cinematic-director-pro.md) · [codex-agent-harness.md](../codex-agent-harness.md) · [codex-repos-study-20261023.md](../codex-repos-study-20261023.md) · [hubs.md](../hubs.md) · [owner-uploads-review-20261023.md](../owner-uploads-review-20261023.md) · [rea-superpowers-frontier-20261023.md](../rea-superpowers-frontier-20261023.md) · [thinking.md](../thinking.md) · [verification.md](../verification.md)
 
 ## الفهرس / contents
 

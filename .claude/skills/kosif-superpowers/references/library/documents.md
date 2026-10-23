@@ -23,10 +23,10 @@
 | الحالة | العدد | المعنى |
 |---|---:|---|
 | `proven` | 32 | ✅ proven: a proof exists in the catalog; still check its requirements here before calling it ready |
-| `documented` | 87 | 📄 documented: a described method; needs building or wiring before it runs |
+| `documented` | 94 | 📄 documented: a described method; needs building or wiring before it runs |
 | `install` | 8 | 📦 install: needs a package, binary or model first |
 | `key` | 4 | 🔑 key: needs an account, key or paid service (ask before any spend) |
-| **المجموع** | **131** | |
+| **المجموع** | **138** | |
 
 ## الأدوات القابلة للتشغيل / runnable tools
 
@@ -41,8 +41,8 @@
 
 | العائلة | القدرات | الفصل |
 |---|---:|---|
-| `atlas-craft` | 24 | [atlas-craft.md](../powers/atlas-craft.md) |
-| `atlas-docs` | 45 | [atlas-docs.md](../powers/atlas-docs.md) |
+| `atlas-craft` | 26 | [atlas-craft.md](../powers/atlas-craft.md) |
+| `atlas-docs` | 50 | [atlas-docs.md](../powers/atlas-docs.md) |
 | `documents-office` | 34 | [documents-office.md](../powers/documents-office.md) |
 | `writing-humanizer` | 28 | [writing-humanizer.md](../powers/writing-humanizer.md) |
 
@@ -108,6 +108,8 @@
 | `ACRAFT-22` | التفاعلات الدقيقة: المحفّز والقواعد والاستجابة والحلقات | Microinteractions: trigger, rules, feedback, loops and modes | documented |  |
 | `ACRAFT-23` | شرح بصري بصيغة واحدة مناسبة للسؤال | Visual explanation: one format chosen by the question | documented | npm:mermaid |
 | `ACRAFT-24` | الإفصاح التدريجي للمعلومات والأدوات | Progressive disclosure of information and controls | documented |  |
+| `ACRAFT-25` | حوكمة البرومبتات في الإنتاج: سجل وتقييمات وترقية وتراجع | Prompt governance: registry, evals, promotion and rollback | documented |  |
+| `ACRAFT-26` | استخراج أسلوب كاتب إلى دليل أسلوب قابل للتطبيق | Extract a writing style into a reusable style guide | documented |  |
 | `ADOCS-01` | كتابة AGENTS.md وCLAUDE.md جاهزة للوكلاء | Agent-ready AGENTS.md and CLAUDE.md authoring | documented |  |
 | `ADOCS-02` | تدقيق CLAUDE.md وAGENTS.md وتخفيف السياق | Audit CLAUDE.md and AGENTS.md for context diet | documented | claude:tools |
 | `ADOCS-03` | مزامنة ذاكرة التعليمات دون تضخم مع تحقق مستقل | Non-growth instruction-memory sync with independent verify | documented |  |
@@ -153,6 +155,11 @@
 | `ADOCS-43` | أنسنة النص بالكثافة لا بقائمة حذف | Humanize by density, with an over-correction guard | documented |  |
 | `ADOCS-44` | تدقيق انحراف التوثيق عن الكود لكل بُعد | Per-dimension documentation drift audit | documented |  |
 | `ADOCS-45` | الترجمة الإبداعية: متى نترجم ومتى نعيد الصياغة | Transcreation routing for marketing translation | documented |  |
+| `ADOCS-46` | دمج بيانات JSON في قوالب Word وExcel وPowerPoint | JSON-to-document templating (DOCX/XLSX/PPTX/PDF) | documented | pip:office |
+| `ADOCS-47` | تنقيح المستندات حقًا وإثبات ما سُلِّم ببصمات sha256 | True redaction and a sha256 delivery manifest | documented | tesseract |
+| `ADOCS-48` | عروض تقديمية للمطورين بـ Slidev من Markdown | Developer slide decks in Markdown with Slidev | documented | chromium, latex, pip:office, npm:mermaid |
+| `ADOCS-49` | كتابة README يجذب المطور في ثلاث ثوانٍ ويشغله في دقيقة | README that hooks in 3 seconds and runs in 60 | documented | npm:mermaid |
+| `ADOCS-50` | تعليقات الكود الملائمة: معلومة لا يحملها الكود | Appropriate code comments: information the code cannot carry | documented |  |
 | `DOC-24` | مراجعة المستند قبل التسليم | Document delivery gate | documented |  |
 | `WRITE-01` | سؤال واحد لكل جملة: هل تضيف جديدًا للقارئ؟ | One-question causal model for every sentence | documented |  |
 | `WRITE-06` | إعادة الصياغة في أربع خطوات | Four-step rewrite: mark, draft, check, final | documented | python3 |

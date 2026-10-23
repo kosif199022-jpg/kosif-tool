@@ -58,6 +58,7 @@
 | `python-package-probe` | فاحص وجود حزم بايثون | `python3 scripts/python_package_probe.py pandas numpy httpx` | tested-here |
 | `rea-bridge` | جسر أوامر REA | `python3 scripts/rea_bridge.py doctor` | tested-here |
 | `rea-family-router` | موجّه عائلات REA | `python3 scripts/rea_family_router.py list` | tested-here |
+| `rea-superpowers-map` | خريطة سوبر باور بمنهج REA | `python3 scripts/rea_superpowers_map.py build` | tested-here |
 | `relabel-proofs` | إعادة تصنيف نطاق الأدلة | `python3 scripts/relabel_proofs.py` | untested |
 | `repo-build` | مولّد ملفات أطلس الأساليب | `python3 tools/build.py` | untested |
 | `requirements` | مخطط متطلبات القدرات | `python3 scripts/requirements.py present --json` | tested-here |

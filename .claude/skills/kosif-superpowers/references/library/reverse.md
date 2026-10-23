@@ -23,9 +23,9 @@
 | الحالة | العدد | المعنى |
 |---|---:|---|
 | `proven` | 30 | ✅ proven: a proof exists in the catalog; still check its requirements here before calling it ready |
-| `documented` | 167 | 📄 documented: a described method; needs building or wiring before it runs |
+| `documented` | 180 | 📄 documented: a described method; needs building or wiring before it runs |
 | `install` | 48 | 📦 install: needs a package, binary or model first |
-| **المجموع** | **245** | |
+| **المجموع** | **258** | |
 
 ## الأدوات القابلة للتشغيل / runnable tools
 
@@ -48,6 +48,7 @@
 | `rea-creative-research-atlas` | باني فهرس البحث الإبداعي | `python3 scripts/rea_creative_research_atlas.py report` | tested-elsewhere |
 | `rea-family-router` | موجّه عائلات REA | `python3 scripts/rea_family_router.py list` | tested-here |
 | `rea-owned-repo-batch` | تحليل REA لمستودعات المالك دفعةً واحدة | `python3 scripts/rea_owned_repo_batch.py --private-output "$HOME/kosif-private" --rea-cli ./node_modules/rea-agents/scripts/rea.mjs --max-repos 16 --max-size-kb 8000` | untested |
+| `rea-superpowers-map` | خريطة سوبر باور بمنهج REA | `python3 scripts/rea_superpowers_map.py build` | tested-here |
 | `repository-capability-packer` | فحص المستودعات وحزمها | `python3 scripts/repository_capability_packer.py inspect ./repo --out ./repo-report.json` | tested-here |
 | `web-app-study` | دراسة تطبيق ويب عام بـ REA (حقائق فقط) | `python3 scripts/web_app_study.py doctor` | tested-here |
 
@@ -57,7 +58,7 @@
 
 | العائلة | القدرات | الفصل |
 |---|---:|---|
-| `software-investigation` | 245 | [software-investigation.md](../powers/software-investigation.md) |
+| `software-investigation` | 258 | [software-investigation.md](../powers/software-investigation.md) |
 
 ## كل القدرات / every power
 
@@ -262,6 +263,19 @@
 | `REA-243` | REA: تصميم أداة تحقيق وعقد CLI/MCP | REA skill: design investigation tools, CLI/MCP contracts and Evidence semantics | documented | npm:rea |
 | `REA-244` | REA: تدقيق CI والاختبارات (انحراف التجهيزات والنجاح الكاذب) | REA skill: audit CI and test suites for fixture drift, false passes and measured cost | documented | npm:rea |
 | `REA-245` | REA: كتابة سجل التغييرات من تاريخ Git مثبت مع شكر موثق | REA skill: release changelog from pinned Git history with verified contributor thanks | documented | npm:rea |
+| `REA-246` | REA: إنتروبيا البايتات لكشف المناطق المضغوطة أو المشفرة | REA MCP tool `inspect_byte_entropy`: Shannon byte entropy profile | documented | npm:rea, engine:binwalk |
+| `REA-247` | REA: فحص تطبيق سطح مكتب ومعرفة محركه | REA MCP tool `inspect_desktop_application`: engine candidates for a desktop app folder | documented | npm:rea |
+| `REA-248` | REA: ملاحظات ELF ومعرّف البناء | REA MCP tool `inspect_elf_notes`: GNU build-id and ABI-tag notes | documented | npm:rea |
+| `REA-249` | REA: فحص ملفات BEAM لإرلانغ وإليكسير | REA MCP tool `inspect_erlang_beam`: BEAM atoms, exports and Code header | documented | npm:rea |
+| `REA-250` | REA: كائنات كود GPU لـ CUDA وHIP | REA MCP tool `inspect_gpu_code_objects`: CUDA/HIP fatbins, CUBIN and PTX | documented | npm:rea, gpu |
+| `REA-251` | REA: بيانات Unity IL2CPP الوصفية | REA MCP tool `inspect_il2cpp_metadata`: Unity IL2CPP metadata with optional binary link | documented | npm:rea, os:macos |
+| `REA-252` | REA: فحص ملفات النماذج GGUF وsafetensors بلا تحميل | REA MCP tool `inspect_model_artifact`: GGUF and safetensors declarations without loading | documented | npm:rea, pip:llama-cpp |
+| `REA-253` | REA: جدول تصدير مكتبة PE أو ELF | REA MCP tool `inspect_native_exports`: PE/ELF export table | documented | npm:rea |
+| `REA-254` | REA: هويات شهادات Authenticode في PE | REA MCP tool `inspect_pe_certificates`: Authenticode certificate identities | documented | npm:rea |
+| `REA-255` | REA: ترويسة pyc وكائنات الكود بلا بايثون | REA MCP tool `inspect_python_pyc`: CPython .pyc header and code objects | documented | python3, npm:rea |
+| `REA-256` | REA: مطابقة الدوال بين نسختين من ثنائي | REA MCP tool `match_native_functions`: match functions across two binary versions | documented | npm:rea |
+| `REA-257` | REA: فتح حزمة تطبيق لقراءة الموارد فقط | REA MCP tool `open_bundle_resources`: resource-only app bundle session | documented | npm:rea, os:macos |
+| `REA-258` | REA: مهارة «اعكس هندسة أي شيء» ومتى لا تستخدم REA | REA skill: reverse-engineer-anything, and when to skip REA | documented | npm:rea |
 | `REA-006` | بناء سجل الالتزامات إعادة البناء | Generate a deterministic Evidence-backed reconstruction obligation ledger page | install | npm:rea |
 | `REA-009` | التقاط سيناريو المتصفح | Run one bounded Playwright browser scenario and return Evidence | install | chromium, npm:rea, engine:wakaru |
 | `REA-010` | التقاط سيناريو Electron | Run one owned Electron scenario with cancellable actions | install | npm:rea |

@@ -2,7 +2,7 @@
 
 Generated from real repository data. Catalog evidence is NOT a live execution receipt.
 
-**5,426 powers / 62 families / 10 domains / 22 route descriptions.**
+**5,480 powers / 62 families / 10 domains / 22 route descriptions.**
 
 For a task in the user's words, `python3 scripts/hub.py find "<task>"` combines this atlas with the runnable tools and guides.
 
@@ -42,38 +42,38 @@ For a task in the user's words, `python3 scripts/hub.py find "<task>"` combines 
 
 ## Families by domain
 
-### build: 279 powers
+### build: 281 powers
 
 - app-feature-transfer: 139
 - runnable-tools: 67
-- atlas-build: 50
+- atlas-build: 52
 - apps-artifacts: 23
 
-### code: 561 powers
+### code: 585 powers
 
-- software-investigation: 245
-- atlas-code: 226
+- software-investigation: 258
+- atlas-code: 237
 - code-engineering: 24
 - security-safety: 23
 - api-testing: 22
 - knowledge-graph: 21
 
-### craft: 98 powers
+### craft: 100 powers
 
 - writing-humanizer: 28
-- atlas-craft: 24
+- atlas-craft: 26
 - arabic-language: 22
 - prompt-craft: 22
 - typography-arabic: 2
 
-### data: 86 powers
+### data: 91 powers
 
-- atlas-data: 47
+- atlas-data: 52
 - data-analysis: 39
 
-### docs: 79 powers
+### docs: 84 powers
 
-- atlas-docs: 45
+- atlas-docs: 50
 - documents-office: 34
 
 ### media: 68 powers
@@ -81,10 +81,10 @@ For a task in the user's words, `python3 scripts/hub.py find "<task>"` combines 
 - media-image-audio: 41
 - atlas-media: 27
 
-### mind: 324 powers
+### mind: 328 powers
 
 - mental-models: 63
-- atlas-mind: 50
+- atlas-mind: 54
 - agent-orchestration: 46
 - thinking-core: 46
 - self-discovery: 43
@@ -125,14 +125,14 @@ For a task in the user's words, `python3 scripts/hub.py find "<task>"` combines 
 - other: 27
 - video-download: 11
 
-### research: 33 powers
+### research: 35 powers
 
 - web-research: 24
-- atlas-research: 9
+- atlas-research: 11
 
-### strategy: 80 powers
+### strategy: 90 powers
 
-- atlas-strategy: 62
+- atlas-strategy: 72
 - strategy-finance: 18
 
 ## Decision flow

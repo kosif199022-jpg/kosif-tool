@@ -3,13 +3,13 @@
 
 > **قوتك هنا / what this gives you:** وصفات الاختبار والتصحيح وGit وDevOps وقواعد البيانات وAPI والأمان والأداء والأطر من أطلس. — Testing, debugging, Git, DevOps, database, API, security, performance and framework recipes from the Atlas.
 > **أقوى دليل / strongest evidence:** لا قوة مثبتة بعد في هذه العائلة — no ✅ power yet; the strongest badge here is 📄 documented.
-> **226 powers follow** — ✅ 0 · 🟢 0 · 📦 0 · 🔑 0 · 👁 0 · 📄 226 · 💡 0.
+> **237 powers follow** — ✅ 0 · 🟢 0 · 📦 0 · 🔑 0 · 👁 0 · 📄 237 · 💡 0.
 
 **الحالة / status:** ✅ مُثبت (شُغّل فعلًا وله مسار دليل) · 🟢 جاهز (كود موجود يعمل بما هو متاح عادة) · 📦 بأمر تثبيت واحد · 🔑 يحتاج مفتاحًا أو حسابًا أو موصلًا · 👁 شوهد في فيديو مرجعي (للموشن فقط) · 📄 طريقة موثقة · 💡 فكرة. الشارة هي أدنى مستوى صادق — the badge is the lowest level that is true.
 مسارات الدليل نسبية إلى `/home/user/`؛ و`session-<date>:<file>#<section>` تشير إلى تشغيل موثق في جلسة سابقة؛ و`owner-upload:` إلى ملف داخل أرشيف أرسله المالك. Proof paths are relative to `/home/user/`.
 
 **المجال / domain:** الهندسة والكود — Code & engineering · **البادئة / prefix:** `ACODE` · **البيانات / data:** `data/powers/atlas-code.json` · **بحث / search:** `python3 scripts/powers.py family atlas-code`
-**مراجع ذات صلة / related references:** [CLAUDE_3_MINUTE_MAP.md](../CLAUDE_3_MINUTE_MAP.md) · [atlas-5000-mining-20261023.md](../atlas-5000-mining-20261023.md) · [capability-audit.md](../capability-audit.md) · [hubs.md](../hubs.md)
+**مراجع ذات صلة / related references:** [CLAUDE_3_MINUTE_MAP.md](../CLAUDE_3_MINUTE_MAP.md) · [atlas-5000-mining-20261023.md](../atlas-5000-mining-20261023.md) · [capability-audit.md](../capability-audit.md) · [hubs.md](../hubs.md) · [rea-superpowers-frontier-20261023.md](../rea-superpowers-frontier-20261023.md)
 
 ## الفهرس / contents
 
@@ -18,7 +18,7 @@
 - **بناء التطبيقات — App building, SaaS & product engineering** — ACODE-57 … ACODE-226 (10)
 - **البلوكتشين — Blockchain & web3** — ACODE-66 … ACODE-72 (7)
 - **الأعمال والمال — Business, finance & legal** — ACODE-73 (1)
-- **فهم الكود — Codebase understanding & impact** — ACODE-74 … ACODE-84 (11)
+- **فهم الكود — Codebase understanding & impact** — ACODE-74 … ACODE-237 (13)
 - **هندسة البيانات — Data engineering & pipelines** — ACODE-85 … ACODE-86 (2)
 - **قواعد البيانات — Databases & storage** — ACODE-87 … ACODE-96 (10)
 - **التصحيح — Debugging & diagnosis** — ACODE-97 … ACODE-223 (26)
@@ -30,6 +30,12 @@
 - **تطوير الألعاب — Game development** — ACODE-187 … ACODE-194 (8)
 - **سير عمل تطوير عام — General development workflow** — ACODE-195 … ACODE-225 (10)
 - **Git والإصدار — Git, pull requests & releases** — ACODE-200 … ACODE-216 (17)
+- **أطر الويب — Web frameworks & languages** — ACODE-227 … ACODE-228 (2)
+- **الأداء — Performance & optimisation** — ACODE-229 (1)
+- **أدوات MCP والتكاملات — MCP servers, tools & integrations** — ACODE-230 (1)
+- **إعادة الهيكلة والمعمارية — Refactoring, architecture & patterns** — ACODE-231 (1)
+- **الاختبار — Testing & TDD** — ACODE-232 … ACODE-234 (3)
+- **الأمان — Security & compliance** — ACODE-235 (1)
 - المصادر والرخص / sources & licences
 
 ## سير عمل الوكلاء — Agent workflows & orchestration
@@ -780,6 +786,24 @@
 - **الرخصة / license:** method paraphrased from Atlas skills under MIT; the skills keep their own licenses — see each folder's SOURCE.md
 - **الدليل / proof:** `https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/?` · `https://github.com/kosif199022-jpg/kosif-atlas/tree/main/?`
 - **المصدر / source:** KOSIF Atlas mining 2026-10-20 (https://github.com/kosif199022-jpg/kosif-atlas): ast-grep/ast-grep (#3332); ast-grep/ast-grep (#11682) · theme code-understanding · 6 supporting skills · verifier read: skills/?, ?
+
+#### ACODE-236 · دليل سردي لمستودع غير مألوف للمساهمين الجدد · Narrative codebase guide for newcomers · 📄 موصوف / documented only
+- **ماذا / what:** ينتج دليلًا مقروءًا لمستودع: ملخص تنفيذي بلغة بسيطة، ثم عشر وثائق مرقمة بمخططات Mermaid، ومسرد، وفهرس بمسارات قراءة حسب الجمهور. — Produces a readable tour of a repository: a plain-language executive summary, ten numbered documents with Mermaid diagrams, a glossary and an index with audience-specific reading paths.
+- **متى أستخدمها / when:** الانضمام لمشروع جديد، جولة في الكود، دليل للمساهمين / onboarding to an unfamiliar project, a codebase tour, a contributor guide
+- **كيف / how:** 1) Explore by reading real code and write a context brief with file paths for every claim, starting with a project profile (type, audience, register). 2) Confirm that profile with the user in one question. 3) Build structured facts first: call graph of entry points, contracts, invariants, domain rules, integration hot-spots, change-impact radius, each citing file:line. 4) Write: overview with mindmap, features, tech stack, architecture diagram, workflows with sequence diagrams, data model ER, getting started with copy-paste commands, open questions, anatomy (configs, env vars, scripts, ports) and a configuration guide. 5) Review for terminology, cross-links, valid Mermaid and doc-vs-code drift, flagging drift as open questions. 6) Finish with a glossary and INDEX.md (non-technical path from the summary, developer path from architecture). **أرقام / params:** target path
+- **يحتاج / needs:** [`npm:mermaid`](../requirements.md#req-npm-mermaid)
+- **الرخصة / license:** method paraphrased from Atlas skills under MIT; the skills keep their own licenses — see each folder's SOURCE.md
+- **الدليل / proof:** `https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/60-codebase-mapper/97-map-codebase-workflow`
+- **المصدر / source:** KOSIF Atlas frontier mining 2026-10-23 (https://github.com/kosif199022-jpg/kosif-atlas @ 99bb108d): codebase-mapper/map-codebase-workflow (#97) · theme code-understanding · SKILL.md read in full as inert text: skills/60-codebase-mapper/97-map-codebase-workflow
+
+#### ACODE-237 · تثبيت كل أسطح الإصدارات لتقوية سلسلة التوريد · Pin every version surface for supply-chain hardening · 📄 موصوف / documented only
+- **ماذا / what:** يثبت كل مرجع إصدار في المستودع: إجراءات CI ببصمة SHA، وقت التشغيل عبر ملف إصدار واحد، اعتماديات التطبيق بإصدار دقيق، وأوامر التثبيت بإصدار صريح. — Pins every version reference: CI actions to a commit SHA, runtimes through one version file, application dependencies exactly, install commands explicitly.
+- **متى أستخدمها / when:** 'ثبّت كل شيء'، تقوية سلسلة التوريد، بناء قابل للتكرار / 'pin everything', supply-chain hardening, reproducible builds
+- **كيف / how:** 1) Audit and print a table per category (action uses: refs incl. ones in Markdown templates, reusable workflows, packageManager, ^/~ ranges, version files, go/cargo/pip/uv/npx installs, $schema @latest) with pinned/unpinned/mixed; exclude vendored dirs. 2) Confirm scope; audit-only phrasing means stop after the table. 3) Replace action tags by the 40-char commit SHA with a '# vX.Y.Z' comment; leave local ./ actions alone. 4) Point CI at one existing version file per language that really has an entry for it, normalised to X.Y.Z; uv reads requires-python, so do not add a parallel .python-version. 5) Exact-pin application deps but keep library peer ranges. 6) Optionally add a weekly drift audit and Dependabot for actions, then lint and verify only the categories in scope. **أرقام / params:** scope list, --dry-run
+- **يحتاج / needs:** [`node`](../requirements.md#req-node) · [`python3`](../requirements.md#req-python3)
+- **الرخصة / license:** method paraphrased from Atlas skills under MIT; the skills keep their own licenses — see each folder's SOURCE.md
+- **الدليل / proof:** `https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/958-pin-everything/2242-pin-everything`
+- **المصدر / source:** KOSIF Atlas frontier mining 2026-10-23 (https://github.com/kosif199022-jpg/kosif-atlas @ 99bb108d): pin-everything/pin-everything (#2242) · theme code-understanding · SKILL.md read up to its first 12,000 characters as inert text (rest not read): skills/958-pin-everything/2242-pin-everything
 
 ## هندسة البيانات — Data engineering & pipelines
 
@@ -1978,9 +2002,97 @@
 - **الدليل / proof:** `https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/2546-git/9889-clean-worktrees` · `https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/compound-engineeri/3311-ce-worktree` · `https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/git-worktree-conve/13829-git-worktree-convention`
 - **المصدر / source:** KOSIF Atlas mining 2026-10-20 (https://github.com/kosif199022-jpg/kosif-atlas): git/clean-worktrees (#9889); compound-engineering/ce-worktree (#3311); git-worktree-convention/git-worktree-convention (#13829) · theme git-release · 8 supporting skills · verifier read: skills/2546-git/9889-clean-worktrees, skills/compound-engineeri/3311-ce-worktree, skills/git-worktree-conve/13829-git-worktree-convention
 
+## أطر الويب — Web frameworks & languages
+
+#### ACODE-227 · ضبط ruff للفحص والتنسيق دون فخ select · ruff lint and format without the select trap · 📄 موصوف / documented only
+- **ماذا / what:** يعتمد ruff كفاحص ومنسق لبايثون مع فهم أن select يستبدل القواعد الافتراضية ولا يضيف إليها. — Adopts ruff as Python linter and formatter, knowing that select replaces the default rule set while extend-select adds to it.
+- **متى أستخدمها / when:** إعداد فحص كود بايثون أو الانتقال من flake8/black/isort / setting up Python lint, migrating from flake8/black/isort
+- **كيف / how:** 1) Pin the version (required-version / pre-commit rev): ruff 0.x treats a minor bump as breaking. 2) Add categories with extend-select, subtract with ignore; use select only for a locked list. 3) Run ruff check --fix then ruff format (format does not sort imports; the I rules do). 4) In CI: ruff check (exit 1 = violations, exit 2 = broken config) and ruff format --check. 5) Look rules up with ruff rule CODE, never guess; prefer # noqa: CODE over blanket noqa. 6) Remember config is nearest-file-wins (use extend to share) and that recent ruff also formats Python blocks in Markdown. **أرقام / params:** ruff version
+- **يحتاج / needs:** [`python3`](../requirements.md#req-python3)
+- **الرخصة / license:** method paraphrased from Atlas skills under MIT; the skills keep their own licenses — see each folder's SOURCE.md
+- **الدليل / proof:** `https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/1262-ruff/2942-ruff`
+- **المصدر / source:** KOSIF Atlas frontier mining 2026-10-23 (https://github.com/kosif199022-jpg/kosif-atlas @ 99bb108d): ruff/ruff (#2942) · theme web-frameworks · SKILL.md read up to its first 12,000 characters as inert text (rest not read): skills/1262-ruff/2942-ruff
+
+#### ACODE-228 · إدارة مشاريع بايثون والسكربتات ببرنامج uv · Python projects, scripts and tools with uv · 📄 موصوف / documented only
+- **ماذا / what:** يدير الحزم والبيئات وإصدارات بايثون بأداة واحدة: مشروع بملف قفل شامل، سكربتات PEP 723، وأدوات عابرة بـ uvx. — Manages packages, environments and Python versions with one tool: locked projects, PEP 723 scripts and one-off tools via uvx.
+- **متى أستخدمها / when:** إعداد مشروع بايثون، تشغيل سكربت باعتمادياته، CI قابل للتكرار / new Python project, running a script with its deps, reproducible CI
+- **كيف / how:** 1) Project: uv init, uv add PKG (updates pyproject, uv.lock and .venv together), uv run CMD; commit uv.lock, ignore .venv. 2) Single script: declare deps in a # /// script block and run uv run script.py in an ephemeral env. 3) One-off tools: uvx TOOL@version; persistent: uv tool install. 4) CI: uv lock --check, then uv sync --frozen and uv run --frozen pytest. 5) Pin Python with uv python pin; treat uv minor bumps as breaking and check uv --version. 6) uv pip is a separate pip-compatible interface that never touches pyproject or the lock. **أرقام / params:** python version
+- **يحتاج / needs:** [`python3`](../requirements.md#req-python3)
+- **الرخصة / license:** method paraphrased from Atlas skills under MIT; the skills keep their own licenses — see each folder's SOURCE.md
+- **الدليل / proof:** `https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/1273-uv/2951-uv`
+- **المصدر / source:** KOSIF Atlas frontier mining 2026-10-23 (https://github.com/kosif199022-jpg/kosif-atlas @ 99bb108d): uv/uv (#2951) · theme web-frameworks · SKILL.md read up to its first 12,000 characters as inert text (rest not read): skills/1273-uv/2951-uv
+
+## الأداء — Performance & optimisation
+
+#### ACODE-229 · اختيار طريقة مواءمة التفضيلات DPO/ORPO/KTO/SimPO · Choosing DPO, ORPO, KTO or SimPO for preference tuning · 📄 موصوف / documented only
+- **ماذا / what:** يختار طريقة مواءمة النموذج بالتفضيلات حسب شكل البيانات، ويعرف أن اختيار دالة الخسارة رافعة صغيرة مقارنة بالحجم وجودة البيانات. — Picks a preference-alignment method by data shape, knowing that loss choice is a small lever next to scale and data quality.
+- **متى أستخدمها / when:** بيانات تفضيل أو إعجاب/عدم إعجاب بعد SFT، تشغيل DPO يحتاج إعدادات / preference pairs or thumbs-up/down after SFT, a DPO run needing settings
+- **كيف / how:** 1) Paired preferences: DPO with beta 0.1, LR 5e-7 to 1e-6 (lower than the SFT LR), 1-2 epochs. 2) Memory-bound or no SFT checkpoint: ORPO (reference-free). 3) Unpaired thumbs: KTO; never fabricate pairs to force DPO. 4) Length bias plus a real sweep budget: SimPO; otherwise stay with DPO; skip reward-model+PPO. 5) Run iteratively on-policy: sample from the current checkpoint, score, DPO with it as reference, repeat. 6) Build pairs from passing vs failing attempts at the same task, taking the rejected one near mean minus 2 sigma of reward, not the worst. If general ability drops, lower the LR first. **أرقام / params:** data shape
+- **الرخصة / license:** method paraphrased from Atlas skills under MIT; the skills keep their own licenses — see each folder's SOURCE.md
+- **الدليل / proof:** `https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/3104-llm-finetuning/13292-preference-optimization`
+- **المصدر / source:** KOSIF Atlas frontier mining 2026-10-23 (https://github.com/kosif199022-jpg/kosif-atlas @ 99bb108d): llm-finetuning/preference-optimization (#13292) · theme performance · SKILL.md read in full as inert text: skills/3104-llm-finetuning/13292-preference-optimization
+
+## أدوات MCP والتكاملات — MCP servers, tools & integrations
+
+#### ACODE-230 · تصميم خادم MCP: نموذج النشر ونمط الأدوات قبل الكود · MCP server design: deployment model and tool pattern before code · 📄 موصوف / documented only
+- **ماذا / what:** يحسم أربعة قرارات قبل كتابة خادم MCP: نموذج النشر (HTTP بعيد، حزمة محلية، stdio)، نمط الأدوات، الإطار، والمصادقة. — Settles four decisions before writing an MCP server: deployment model (remote HTTP, bundled local, stdio), tool pattern, framework and auth.
+- **متى أستخدمها / when:** بناء خادم MCP، تغليف API لـ Claude، كشف أدوات لوكيل / building an MCP server, wrapping an API for Claude, exposing tools to an agent
+- **كيف / how:** 1) Ask in one message: what it connects to, who uses it, how many actions, whether a tool needs mid-call input or rich UI, and the upstream auth. 2) Default to a remote streamable-HTTP server for cloud APIs; a bundled local server only when it must touch the user's machine; plain stdio only for personal prototypes. 3) Under ~15 actions: one tool per action with tight schemas; dozens or hundreds: search_actions + execute_action, promoting the top 3-5 to dedicated tools. 4) Use the official TypeScript SDK or FastMCP (Python). 5) Simple confirmations via elicitation with a capability check and fallback; resources for browsable data, prompts for slash workflows. 6) Test with the real client as a custom connector, separate read and write tools, and run the host's review checklist before publishing. **أرقام / params:** actions count, auth
+- **يحتاج / needs:** [`python3`](../requirements.md#req-python3) · [`key:unspecified`](../requirements.md#req-key-unspecified)
+- **الرخصة / license:** method paraphrased from Atlas skills under Apache-2.0; the skills keep their own licenses — see each folder's SOURCE.md
+- **الدليل / proof:** `https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/297-mcp-server-dev/911-build-mcp-server`
+- **المصدر / source:** KOSIF Atlas frontier mining 2026-10-23 (https://github.com/kosif199022-jpg/kosif-atlas @ 99bb108d): mcp-server-dev/build-mcp-server (#911) · theme mcp-tooling · SKILL.md read in full as inert text: skills/297-mcp-server-dev/911-build-mcp-server
+
+## إعادة الهيكلة والمعمارية — Refactoring, architecture & patterns
+
+#### ACODE-231 · تدقيق كل الترقيات الممكنة بمصفوفة مخاطرة/عائد قبل التطبيق · Upgrade-everything audit with a risk/reward matrix · 📄 موصوف / documented only
+- **ماذا / what:** يجرد كل مرجع إصدار في المستودع ويحدد أحدث إصدار من المصدر الرسمي ويقيّم كل ترقية، ولا يطبق إلا ما يختاره المستخدم. — Inventories every version reference, resolves the latest from authoritative sources, rates each upgrade, and applies only what the user selects.
+- **متى أستخدمها / when:** 'ماذا يمكنني أن أرقّي؟'، تحديث الاعتماديات، مراجعة Dependabot / 'what can I upgrade', dependency refresh, reviewing Dependabot PRs
+- **كيف / how:** 1) Record today's date (upgrade data is date-sensitive). 2) Detect languages, package managers, CI and release tooling; exclude .git, node_modules, vendor, dist, .venv and caches. 3) Inventory manifests, lockfiles, CI action refs, runtimes, container images, install commands, schema URLs and version literals in docs; note who owns each value (lockfile, generator). 4) Resolve upstream from registries/releases with source and confidence; keep failures as Blocked/Unknown. 5) One numbered row per candidate: current, latest, type, reward, risk, validation, open bot PR, recommendation; risk changes order, not inclusion. 6) Ask for scope (all, low-risk, numbers, audit-only), apply via the package manager in dependency order (toolchain, manifests, CI, docs), never hand-edit owned lockfiles, then run checks and report upgraded/skipped/blocked/failed.
+- **الرخصة / license:** method paraphrased from Atlas skills under MIT; the skills keep their own licenses — see each folder's SOURCE.md
+- **الدليل / proof:** `https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/983-upgrade-everything/2267-upgrade-everything`
+- **المصدر / source:** KOSIF Atlas frontier mining 2026-10-23 (https://github.com/kosif199022-jpg/kosif-atlas @ 99bb108d): upgrade-everything/upgrade-everything (#2267) · theme refactoring-architecture · SKILL.md read in full as inert text: skills/983-upgrade-everything/2267-upgrade-everything
+
+## الاختبار — Testing & TDD
+
+#### ACODE-232 · كشف الاختبارات الخضراء الكاذبة · False-green test detection · 📄 موصوف / documented only
+- **ماذا / what:** يفحص ملفات الاختبار بحثًا عن اختبارات تنجح حتى لو انكسر الكود: بلا تأكيد، تأكيد دائم الصحة، محاكاة للوحدة نفسها، استثناء مبتلع. — Reviews tests for ones that pass even when the code breaks: no assertion, always-true assertion, mocking the unit under test, swallowed exceptions.
+- **متى أستخدمها / when:** 'هل يمكن لهذا الاختبار أن يفشل؟'، مراجعة جودة الاختبارات، اختبارات مولدة بالذكاء الاصطناعي / 'can this test fail', reviewing test quality, AI-written tests
+- **كيف / how:** 1) Structural pass: no assertion; assertion inside a loop/conditional that may never run; assert inside try with a swallowing except; always-true or self-comparison; weak 'is not None' only; float exact equality; broad raises; skipped or focused tests (it.only); un-awaited async matchers; empty parametrize tables. 2) Semantic pass: mocks the unit under test, asserts the value the stub was told to return, re-implements the production formula for the expected value, depends on another test's state. 3) Respect look-alike exemptions to avoid false alarms, which count as worse than a miss. 4) Report each finding with its line, why it cannot fail, and the minimal fix; then plant a defect to prove the fixed test goes red. **أرقام / params:** language
+- **الرخصة / license:** method paraphrased from Atlas skills under MIT; the skills keep their own licenses — see each folder's SOURCE.md
+- **الدليل / proof:** `https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/3258-falsegreen-skill/13769-falsegreen-skill`
+- **المصدر / source:** KOSIF Atlas frontier mining 2026-10-23 (https://github.com/kosif199022-jpg/kosif-atlas @ 99bb108d): falsegreen-skill/falsegreen-skill (#13769) · theme testing-tdd · SKILL.md read up to its first 12,000 characters as inert text (rest not read): skills/3258-falsegreen-skill/13769-falsegreen-skill
+
+#### ACODE-233 · اختبار في فضاء مصغّر: تفكيك ادعاء التكافؤ قبل التجربة · Reduced-space test: decompose the equivalence claim first · 📄 موصوف / documented only
+- **ماذا / what:** يتحقق تجريبيًا من ادعاء داخل بيئة بديلة مقيدة بعد تفكيك ادعاء تكافؤها مع البيئة الحقيقية إلى أوجه قابلة للقياس، ويحمل الجزء غير المختبر إلى الأمام. — Validates a claim empirically inside a bounded stand-in space after decomposing its equivalence with the real target into measurable facets, carrying the untested remainder forward.
+- **متى أستخدمها / when:** اختبار على بيئة تجريبية أو عينة أو نموذج مصغّر بدل الإنتاج / testing on staging, a sample or a small model instead of the real target
+- **كيف / how:** 1) State the claim that reasoning alone cannot settle. 2) Decompose 'the surrogate stands in for the target' into facets: critical dimensions, a named list of surrogate-vs-target differences, how each difference could change the outcome, and how the gap will be measured (randomised conditions, shadowing, canary). 3) Show this frame to the user and ask which facet is missing before it constrains the test. 4) Let the user draw the boundary: each cut decides what the result may claim. 5) Gather evidence only inside that space. 6) Report holds / fails / inconclusive within the stated conditions, or a coverage shortfall, plus the uncovered residual as a first-class output, never a bare 'it works'.
+- **الرخصة / license:** method paraphrased from Atlas skills under MIT; the skills keep their own licenses — see each folder's SOURCE.md
+- **الدليل / proof:** `https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/1990-epistemic-cooperative/7155-reduced-space-test`
+- **المصدر / source:** KOSIF Atlas frontier mining 2026-10-23 (https://github.com/kosif199022-jpg/kosif-atlas @ 99bb108d): epistemic-cooperative/reduced-space-test (#7155) · theme testing-tdd · SKILL.md read up to its first 12,000 characters as inert text (rest not read): skills/1990-epistemic-cooperative/7155-reduced-space-test
+
+#### ACODE-234 · اختبار استكشافي لتطبيق ويب بأدلة إعادة إنتاج كاملة · Exploratory web-app QA with full repro evidence · 📄 موصوف / documented only
+- **ماذا / what:** يستكشف تطبيق ويب كمستخدم حقيقي ويوثق كل مشكلة فور اكتشافها بخطوات مرقمة ولقطات وفيديو للمشكلات التفاعلية. — Explores a web app as a real user and documents each issue the moment it is found, with numbered steps, screenshots and a video for interactive bugs.
+- **متى أستخدمها / when:** 'جرّب التطبيق'، صيد أخطاء، QA قبل الإطلاق / 'dogfood this', bug hunt, pre-launch QA of a site
+- **كيف / how:** 1) Only the URL is required; set up a named browser session, an output folder and a report file from a template. 2) Sign in if needed and save the auth state; ask the user for one-time codes. 3) Orient with an annotated screenshot and the main navigation, then visit each section: buttons, forms, dropdowns, empty and error states, real create-edit-delete flows; check the console often. 4) Retry once to confirm each issue is reproducible; interactive bugs get a paced video plus a screenshot per step, static ones a single annotated screenshot. 5) Append each issue immediately (ISSUE-001...), never batch or delete evidence, never read the app's source. 6) Aim for 5-10 well-evidenced issues, reconcile the severity counts and summarise the most critical. **أرقام / params:** target URL, scope
+- **يحتاج / needs:** [`chromium`](../requirements.md#req-chromium)
+- **الرخصة / license:** method paraphrased from Atlas skills under Apache-2.0; the skills keep their own licenses — see each folder's SOURCE.md
+- **الدليل / proof:** `https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/2887-agent-browser/11671-dogfood`
+- **المصدر / source:** KOSIF Atlas frontier mining 2026-10-23 (https://github.com/kosif199022-jpg/kosif-atlas @ 99bb108d): agent-browser/dogfood (#11671) · theme testing-tdd · SKILL.md read in full as inert text: skills/2887-agent-browser/11671-dogfood
+
+## الأمان — Security & compliance
+
+#### ACODE-235 · تدقيق الامتثال لـ GDPR انطلاقًا من جرد البيانات الشخصية · GDPR review built on a personal-data inventory · 📄 موصوف / documented only
+- **ماذا / what:** يدقق كودًا أو تصميمًا أو بنية تحتية أو تدفق بيانات مقابل GDPR بعد بناء جرد للبيانات الشخصية، ويفصل ما يحتاج شهادة قانونية عن النتائج التقنية. — Audits code, a design, IaC or a data flow against GDPR after building a personal-data inventory, separating legal-attestation items from technical findings.
+- **متى أستخدمها / when:** 'هل نحن متوافقون مع GDPR؟'، حق الحذف، الموافقة، نقل البيانات خارج الاتحاد الأوروبي / 'are we GDPR compliant', right to erasure, consent, cross-border transfers
+- **كيف / how:** 1) Detect mode (code, design, IaC, data-flow, org readiness), role (controller/processor), territorial hook and whether special-category data exists. 2) Build the inventory table system, store, field, category, special flag before any check. 3) The best findings are coverage diffs: PII fields vs those the deletion path and the access export cover; stores vs encrypted/region-pinned/TTL'd; vendors in code vs the processor list. 4) Check lawful basis and consent, subject rights, minimisation and retention, security and privacy by design, transfers and processors, logging/breach readiness, tracking and consent UX. 5) Each finding: article ID, severity, quoted evidence, remediation, confidence; re-verify every Critical/High. 6) Put signed DPAs, notice adequacy and balancing tests under 'legal attestation required'; check adequacy decisions and pending laws live. An analysis aid, not legal advice. **أرقام / params:** mode, role
+- **الرخصة / license:** method paraphrased from Atlas skills under MIT; the skills keep their own licenses — see each folder's SOURCE.md
+- **الدليل / proof:** `https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/2528-gdpr-review/9825-gdpr-review`
+- **المصدر / source:** KOSIF Atlas frontier mining 2026-10-23 (https://github.com/kosif199022-jpg/kosif-atlas @ 99bb108d): gdpr-review/gdpr-review (#9825) · theme security · SKILL.md read up to its first 12,000 characters as inert text (rest not read): skills/2528-gdpr-review/9825-gdpr-review
+
 ## المصادر والرخص / sources & licences
 
-- الرخص / licences: method paraphrased from Atlas skills under MIT; the skills keep their own licenses — see each folder's SOURCE.md (175) · method paraphrased from Atlas skills under MIT/Apache-2.0; the skills keep their own licenses — see each folder's SOURCE.md (12) · method paraphrased from Atlas skills under MIT / Apache-2.0; the skills keep their own licenses — see each folder's SOURCE.md (10) · method paraphrased from Atlas skills under Apache-2.0/MIT; the skills keep their own licenses — see each folder's SOURCE.md (6) · method paraphrased from Atlas skills under Apache-2.0; the skills keep their own licenses — see each folder's SOURCE.md (4) · method paraphrased from Atlas skills under MIT (no copyleft seen among supporting ids); the skills keep their own licenses — see each folder's SOURCE.md (4) · method paraphrased from Atlas skills under MIT/Apache; the skills keep their own licenses — see each folder's SOURCE.md (4) · method paraphrased from Atlas skills under check per-plugin; the skills keep their own licenses — see each folder's SOURCE.md (3) · method paraphrased from Atlas skills under Apache-2.0 (3351), MIT others; the skills keep their own licenses — see each folder's SOURCE.md (1) · method paraphrased from Atlas skills under Apache-2.0 / MIT (no copyleft seen among supporting ids); the skills keep their own licenses — see each folder's SOURCE.md (1) · method paraphrased from Atlas skills under Apache-2.0 / MIT; the skills keep their own licenses — see each folder's SOURCE.md (1) · method paraphrased from Atlas skills under MIT (backend-development) / Apache-2.0 (aws-data-analytics); the skills keep their own licenses — see each folder's SOURCE.md (1) · method paraphrased from Atlas skills under MIT / WTFPL (x20314); the skills keep their own licenses — see each folder's SOURCE.md (1) · method paraphrased from Atlas skills under MIT/mixed; the skills keep their own licenses — see each folder's SOURCE.md (1) · method paraphrased from Atlas skills under MIT; terraform plugin items MPL-2.0 (copyleft); the skills keep their own licenses — see each folder's SOURCE.md (1) · method paraphrased from Atlas skills under unspecified; the skills keep their own licenses — see each folder's SOURCE.md (1)
+- الرخص / licences: method paraphrased from Atlas skills under MIT; the skills keep their own licenses — see each folder's SOURCE.md (184) · method paraphrased from Atlas skills under MIT/Apache-2.0; the skills keep their own licenses — see each folder's SOURCE.md (12) · method paraphrased from Atlas skills under MIT / Apache-2.0; the skills keep their own licenses — see each folder's SOURCE.md (10) · method paraphrased from Atlas skills under Apache-2.0/MIT; the skills keep their own licenses — see each folder's SOURCE.md (6) · method paraphrased from Atlas skills under Apache-2.0; the skills keep their own licenses — see each folder's SOURCE.md (6) · method paraphrased from Atlas skills under MIT (no copyleft seen among supporting ids); the skills keep their own licenses — see each folder's SOURCE.md (4) · method paraphrased from Atlas skills under MIT/Apache; the skills keep their own licenses — see each folder's SOURCE.md (4) · method paraphrased from Atlas skills under check per-plugin; the skills keep their own licenses — see each folder's SOURCE.md (3) · method paraphrased from Atlas skills under Apache-2.0 (3351), MIT others; the skills keep their own licenses — see each folder's SOURCE.md (1) · method paraphrased from Atlas skills under Apache-2.0 / MIT (no copyleft seen among supporting ids); the skills keep their own licenses — see each folder's SOURCE.md (1) · method paraphrased from Atlas skills under Apache-2.0 / MIT; the skills keep their own licenses — see each folder's SOURCE.md (1) · method paraphrased from Atlas skills under MIT (backend-development) / Apache-2.0 (aws-data-analytics); the skills keep their own licenses — see each folder's SOURCE.md (1) · method paraphrased from Atlas skills under MIT / WTFPL (x20314); the skills keep their own licenses — see each folder's SOURCE.md (1) · method paraphrased from Atlas skills under MIT/mixed; the skills keep their own licenses — see each folder's SOURCE.md (1) · method paraphrased from Atlas skills under MIT; terraform plugin items MPL-2.0 (copyleft); the skills keep their own licenses — see each folder's SOURCE.md (1) · method paraphrased from Atlas skills under unspecified; the skills keep their own licenses — see each folder's SOURCE.md (1)
 - الأفكار مكتوبة بكلماتنا مع رابط المصدر؛ لا يُنسخ نص طرف ثالث طويل. Ideas are paraphrased with a link to the source; no long third-party text is copied. `—` = no licence recorded (own method or own wording).
 
 ---

@@ -1,4 +1,4 @@
-# `atlas-docs` — المستندات والكتابة (45 بطاقة)
+# `atlas-docs` — المستندات والكتابة (50 بطاقة)
 
 > مكتبة بروتوكول USIP v5.5 الكاملة، مولّدة بـ `smart_capabilities.py cards` من `data/powers/atlas-docs.json` وقواعد الملاحق A25–A29؛ لا تُحرَّر يدويًا. [الفهرس الرئيسي](../../README.md) · [فصل المجموعة](../../../.claude/skills/kosif-superpowers/references/library/documents.md) · [النواة](../../../.claude/skills/kosif-superpowers/PROTOCOL.md)
 
@@ -49,6 +49,11 @@
 - [`ADOCS-43` أنسنة النص بالكثافة لا بقائمة حذف](#adocs-43--أنسنة-النص-بالكثافة-لا-بقائمة-حذف--humanize-by-density-with-an-over-correction-guard)
 - [`ADOCS-44` تدقيق انحراف التوثيق عن الكود لكل بُعد](#adocs-44--تدقيق-انحراف-التوثيق-عن-الكود-لكل-بُعد--per-dimension-documentation-drift-audit)
 - [`ADOCS-45` الترجمة الإبداعية: متى نترجم ومتى نعيد الصياغة](#adocs-45--الترجمة-الإبداعية-متى-نترجم-ومتى-نعيد-الصياغة--transcreation-routing-for-marketing-translation)
+- [`ADOCS-46` دمج بيانات JSON في قوالب Word وExcel وPowerPoint](#adocs-46--دمج-بيانات-json-في-قوالب-word-وexcel-وpowerpoint--json-to-document-templating-docxxlsxpptxpdf)
+- [`ADOCS-47` تنقيح المستندات حقًا وإثبات ما سُلِّم ببصمات sha256](#adocs-47--تنقيح-المستندات-حقًا-وإثبات-ما-سُلِّم-ببصمات-sha256--true-redaction-and-a-sha256-delivery-manifest)
+- [`ADOCS-48` عروض تقديمية للمطورين بـ Slidev من Markdown](#adocs-48--عروض-تقديمية-للمطورين-بـ-slidev-من-markdown--developer-slide-decks-in-markdown-with-slidev)
+- [`ADOCS-49` كتابة README يجذب المطور في ثلاث ثوانٍ ويشغله في دقيقة](#adocs-49--كتابة-readme-يجذب-المطور-في-ثلاث-ثوانٍ-ويشغله-في-دقيقة--readme-that-hooks-in-3-seconds-and-runs-in-60)
+- [`ADOCS-50` تعليقات الكود الملائمة: معلومة لا يحملها الكود](#adocs-50--تعليقات-الكود-الملائمة-معلومة-لا-يحملها-الكود--appropriate-code-comments-information-the-code-cannot-carry)
 
 ## البطاقات / cards
 
@@ -3055,6 +3060,7 @@
 - `ADOCS-42` الكتابة البسيطة: كلمات يومية وجمل كاملة / Plain writing: everyday words, complete sentences (documented)
 - `ADOCS-43` أنسنة النص بالكثافة لا بقائمة حذف / Humanize by density, with an over-correction guard (documented)
 - `ADOCS-45` الترجمة الإبداعية: متى نترجم ومتى نعيد الصياغة / Transcreation routing for marketing translation (documented)
+- `ADOCS-46` دمج بيانات JSON في قوالب Word وExcel وPowerPoint / JSON-to-document templating (DOCX/XLSX/PPTX/PDF) (documented)
 
 ### `ADOCS-45` — الترجمة الإبداعية: متى نترجم ومتى نعيد الصياغة / Transcreation routing for marketing translation
 
@@ -3121,4 +3127,347 @@
 
 - `ADOCS-43` أنسنة النص بالكثافة لا بقائمة حذف / Humanize by density, with an over-correction guard (documented)
 - `ADOCS-44` تدقيق انحراف التوثيق عن الكود لكل بُعد / Per-dimension documentation drift audit (documented)
+- `ADOCS-46` دمج بيانات JSON في قوالب Word وExcel وPowerPoint / JSON-to-document templating (DOCX/XLSX/PPTX/PDF) (documented)
+- `ADOCS-47` تنقيح المستندات حقًا وإثبات ما سُلِّم ببصمات sha256 / True redaction and a sha256 delivery manifest (documented)
+
+### `ADOCS-46` — دمج بيانات JSON في قوالب Word وExcel وPowerPoint / JSON-to-document templating (DOCX/XLSX/PPTX/PDF)
+
+| الحقل | القيمة |
+|---|---|
+| العائلة | `atlas-docs` ([فصل العائلة](../../../.claude/skills/kosif-superpowers/references/powers/atlas-docs.md)) |
+| المجموعة | المستندات والكتابة (`documents`) |
+| نوع المخرج (A25، A27) | مستند وكتابة ومحتوى (`document`) |
+| الحالة في الكتالوج | 📄 `documented`: منهج موصوف يحتاج بناءً أو ربطًا قبل التشغيل |
+| سقف التحقق قبل العمل (A27) | V1 حتى تُبنى وتُشغَّل؛ لا تقدَّم جاهزة أبدًا |
+| نطاق الدليل | `url` |
+| الرخصة | method paraphrased from Atlas skills under Apache-2.0; the skills keep their own licenses — see each folder's SOURCE.md |
+
+**ما هي:** يملأ قالب مستند مكتبي من بيانات JSON بوسوم وحلقات وشروط ومنسّقات دون إعادة تشكيل البيانات. — Fills an office template from JSON with tags, loops, conditions and formatters, adapting the template rather than the data.
+
+**متى:** فاتورة أو عقد أو تقرير من JSON، دمج بريدي، تحويل DOCX/HTML إلى PDF / invoice, contract or report from JSON, mail merge, document conversion
+
+**كيف:** 1) Keep the API JSON as is; shape output in the template with filters, sort, lookups and computed values. 2) Placeholders reach data by path; a loop is declared by a row with [i] and closed by a row with [i+1], which is removed from the output; nest loops freely. 3) Chain formatters for text, numbers, currency and dates; set language and time zone once as template options. 4) Use inline show/elseShow for words and Begin/End blocks for sections. 5) Never invent syntax from Mustache/Jinja: if the engine's documentation does not show it, say it does not exist. 6) Render a sample and check totals, empty arrays and locale formatting before delivery.
+
+**المعاملات:** template format, dataset
+
+**التثبيت:** لا خطوة تثبيت مسجلة
+
+**الوسوم:** docx · xlsx · pptx · template · mail merge · قالب مستند · فاتورة · PDF
+
+#### 1. الاستقبال (A25)
+
+- الجمهور: افتراض مكتوب ← قارئ عام ذكي غير متخصص
+- النبرة واللهجة: افتراض مكتوب ← لغة الطلب ولهجته
+- الطول: افتراض مكتوب ← أقصر طول يحقق الغرض
+- الصيغة: افتراض مكتوب ← نص في الرد، أو مستند إن طُلب ملف
+- لا تُفترض أبدًا: مادة الإنتاج نفسها، والإذن بخطوة مدفوعة أو منشورة أو لا رجعة فيها، والهوية والحقوق.
+
+#### 2. الجاهزية والشارة (A28)
+
+- `pip:office` ← python3 -c "import office" (اسم الاستيراد قد يختلف عن اسم الحزمة)
+- الوضع 1: شارة «هنا الآن» بعد الفحص، لا 📄 الكتالوج تلقائيًا · الوضع 2: `كتالوج: 📄 · هنا: غير مفحوص` · الوضع 3: بلا شارة ولا معرّف.
+
+#### 3. موضعها في الخطة (A26)
+
+- عقدة منمّطة: المدخل `brief` ← المخرج `document`، والمنفّذ `method:ADOCS-46` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
+- لا أداة مسجلة تخدم عائلتها: التنفيذ بالمكتبات أو بأداة من مجموعة أخرى.
+- مراحل النوع: الغرض والقارئ ← هيكل العناوين ← مسودة ← مراجعة الحقائق ← تحرير اللغة ← فتح الملف بصيغته ← تسليم.
+- إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
+
+#### 4. بوابة التحقق (A27)
+
+- إلزامي: يحقق الغرض في أول فقرة ← قراءة الافتتاح
+- إلزامي: عربية سليمة إملاءً ونحوًا ← مراجعة سطر بسطر
+- جودة: بلا حشو ولا عبارات عامة بلا مضمون ← think.py critic
+- إلزامي: كل رقم أو اسم أو تاريخ متحقق منه ← مصدر لكل حقيقة
+- إلزامي: الملف المطلوب يُفتح فعلًا بصيغته ← فتح الملف
+- أمر الحكم في الوضع 1: `think.py qa document --answers qa.json` (PASS / FAIL / INCOMPLETE).
+
+#### 5. التعافي (A29)
+
+- `missing_dependency` (اعتمادية مفقودة، ميزانية 2): سمِّ الاعتمادية بالضبط (حزمة، برنامج، خط، نموذج) ← ثبّت محليًا في بيئة العمل إن كان مجانيًا ومسموحًا (pip --user أو venv أو npm محلي) · البديل: مسار المكتبة القياسية أو أداة أخرى من نفس المجموعة · تصعيد: تثبيت نظامي أو مدفوع أو يحتاج مفتاحًا: توقف واسأل
+- `quality_below_threshold` (جودة دون العتبة، ميزانية 3): أي معيار فشل وبكم (المقيس مقابل العتبة) ← عالج السبب الأكبر وحده ثم أعد القياس · البديل: المنهج البديل المكتوب للمرحلة في الخطة · تصعيد: معيار إلزامي لا يتحقق بعد البديل: توقف وأبلغ بالأرقام
+
+#### 6. الأدلة
+
+- `https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/931-carbone-skill/2177-carbone`
+
+#### 7. قدرات قريبة في العائلة
+
+- `ADOCS-44` تدقيق انحراف التوثيق عن الكود لكل بُعد / Per-dimension documentation drift audit (documented)
+- `ADOCS-45` الترجمة الإبداعية: متى نترجم ومتى نعيد الصياغة / Transcreation routing for marketing translation (documented)
+- `ADOCS-47` تنقيح المستندات حقًا وإثبات ما سُلِّم ببصمات sha256 / True redaction and a sha256 delivery manifest (documented)
+- `ADOCS-48` عروض تقديمية للمطورين بـ Slidev من Markdown / Developer slide decks in Markdown with Slidev (documented)
+
+### `ADOCS-47` — تنقيح المستندات حقًا وإثبات ما سُلِّم ببصمات sha256 / True redaction and a sha256 delivery manifest
+
+| الحقل | القيمة |
+|---|---|
+| العائلة | `atlas-docs` ([فصل العائلة](../../../.claude/skills/kosif-superpowers/references/powers/atlas-docs.md)) |
+| المجموعة | المستندات والكتابة (`documents`) |
+| نوع المخرج (A25، A27) | مستند وكتابة ومحتوى (`document`) |
+| الحالة في الكتالوج | 📄 `documented`: منهج موصوف يحتاج بناءً أو ربطًا قبل التشغيل |
+| سقف التحقق قبل العمل (A27) | V1 حتى تُبنى وتُشغَّل؛ لا تقدَّم جاهزة أبدًا |
+| نطاق الدليل | `url` |
+| الرخصة | method paraphrased from Atlas skills under MIT; the skills keep their own licenses — see each folder's SOURCE.md |
+
+**ما هي:** يحذف النص الحساس فعليًا (لا مربع أسود فوقه) ثم يثبت ما سُلّم ببيان بصمات قابل للتحقق. — Removes sensitive text for real (not a black box over it) and proves what was delivered with a verifiable hash manifest.
+
+**متى:** إزالة بيانات شخصية من ملفات قبل مشاركتها، تسليم يحتاج أثر سلامة / removing PII before sharing, a deliverable that needs an integrity trail
+
+**كيف:** 1) Text formats: replace matches and diff source against output; grep for each pattern must return 0; make zero matches an error in scripts. 2) PDFs: a box drawn over text leaves it extractable; rasterise each page, paint the match and write a PDF with no text layer; tell the user it is now unsearchable, larger and without metadata. 3) Verify by extracting text from the output (should be empty); re-OCR only if searchability is needed and grep the OCR text again for near misses. 4) Write a sha256 manifest of the delivered files (optionally GPG-signed) and verify it; a manifest proves the bytes, not that redaction was complete. 5) Never overwrite a manifest; write v2. Originals stay untouched.
+
+**المعاملات:** patterns, output dir
+
+**التثبيت:** لا خطوة تثبيت مسجلة
+
+**الوسوم:** redaction · PII · sha256 · تنقيح · خصوصية · provenance · manifest
+
+#### 1. الاستقبال (A25)
+
+- الجمهور: افتراض مكتوب ← قارئ عام ذكي غير متخصص
+- النبرة واللهجة: افتراض مكتوب ← لغة الطلب ولهجته
+- الطول: افتراض مكتوب ← أقصر طول يحقق الغرض
+- الصيغة: افتراض مكتوب ← نص في الرد، أو مستند إن طُلب ملف
+- لا تُفترض أبدًا: مادة الإنتاج نفسها، والإذن بخطوة مدفوعة أو منشورة أو لا رجعة فيها، والهوية والحقوق.
+
+#### 2. الجاهزية والشارة (A28)
+
+- `tesseract` ← افحص وجوده بأمر واحد قبل كتابة الشارة
+- الوضع 1: شارة «هنا الآن» بعد الفحص، لا 📄 الكتالوج تلقائيًا · الوضع 2: `كتالوج: 📄 · هنا: غير مفحوص` · الوضع 3: بلا شارة ولا معرّف.
+
+#### 3. موضعها في الخطة (A26)
+
+- عقدة منمّطة: المدخل `brief` ← المخرج `document`، والمنفّذ `method:ADOCS-47` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
+- لا أداة مسجلة تخدم عائلتها: التنفيذ بالمكتبات أو بأداة من مجموعة أخرى.
+- مراحل النوع: الغرض والقارئ ← هيكل العناوين ← مسودة ← مراجعة الحقائق ← تحرير اللغة ← فتح الملف بصيغته ← تسليم.
+- إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
+
+#### 4. بوابة التحقق (A27)
+
+- إلزامي: يحقق الغرض في أول فقرة ← قراءة الافتتاح
+- إلزامي: عربية سليمة إملاءً ونحوًا ← مراجعة سطر بسطر
+- جودة: بلا حشو ولا عبارات عامة بلا مضمون ← think.py critic
+- إلزامي: كل رقم أو اسم أو تاريخ متحقق منه ← مصدر لكل حقيقة
+- إلزامي: الملف المطلوب يُفتح فعلًا بصيغته ← فتح الملف
+- أمر الحكم في الوضع 1: `think.py qa document --answers qa.json` (PASS / FAIL / INCOMPLETE).
+
+#### 5. التعافي (A29)
+
+- `missing_dependency` (اعتمادية مفقودة، ميزانية 2): سمِّ الاعتمادية بالضبط (حزمة، برنامج، خط، نموذج) ← ثبّت محليًا في بيئة العمل إن كان مجانيًا ومسموحًا (pip --user أو venv أو npm محلي) · البديل: مسار المكتبة القياسية أو أداة أخرى من نفس المجموعة · تصعيد: تثبيت نظامي أو مدفوع أو يحتاج مفتاحًا: توقف واسأل
+- `quality_below_threshold` (جودة دون العتبة، ميزانية 3): أي معيار فشل وبكم (المقيس مقابل العتبة) ← عالج السبب الأكبر وحده ثم أعد القياس · البديل: المنهج البديل المكتوب للمرحلة في الخطة · تصعيد: معيار إلزامي لا يتحقق بعد البديل: توقف وأبلغ بالأرقام
+
+#### 6. الأدلة
+
+- `https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/1195-carrel-documents/2838-redaction-and-provenance`
+
+#### 7. قدرات قريبة في العائلة
+
+- `ADOCS-45` الترجمة الإبداعية: متى نترجم ومتى نعيد الصياغة / Transcreation routing for marketing translation (documented)
+- `ADOCS-46` دمج بيانات JSON في قوالب Word وExcel وPowerPoint / JSON-to-document templating (DOCX/XLSX/PPTX/PDF) (documented)
+- `ADOCS-48` عروض تقديمية للمطورين بـ Slidev من Markdown / Developer slide decks in Markdown with Slidev (documented)
+- `ADOCS-49` كتابة README يجذب المطور في ثلاث ثوانٍ ويشغله في دقيقة / README that hooks in 3 seconds and runs in 60 (documented)
+
+### `ADOCS-48` — عروض تقديمية للمطورين بـ Slidev من Markdown / Developer slide decks in Markdown with Slidev
+
+| الحقل | القيمة |
+|---|---|
+| العائلة | `atlas-docs` ([فصل العائلة](../../../.claude/skills/kosif-superpowers/references/powers/atlas-docs.md)) |
+| المجموعة | المستندات والكتابة (`documents`) |
+| نوع المخرج (A25، A27) | مستند وكتابة ومحتوى (`document`) |
+| الحالة في الكتالوج | 📄 `documented`: منهج موصوف يحتاج بناءً أو ربطًا قبل التشغيل |
+| سقف التحقق قبل العمل (A27) | V1 حتى تُبنى وتُشغَّل؛ لا تقدَّم جاهزة أبدًا |
+| نطاق الدليل | `url` |
+| الرخصة | method paraphrased from Atlas skills under MIT; the skills keep their own licenses — see each folder's SOURCE.md |
+
+**ما هي:** يبني عرضًا تقديميًا ويبيًا من ملف Markdown واحد بكود مُبرز ومتحرك ومخططات Mermaid ومعادلات LaTeX وملاحظات للمقدّم. — Builds a web slide deck from one Markdown file with highlighted, animated code, Mermaid diagrams, LaTeX and presenter notes.
+
+**متى:** محاضرة تقنية، شرح كود، ورشة، عرض يُصدَّر PDF/PPTX / tech talk, code walkthrough, workshop deck exported to PDF or PPTX
+
+**كيف:** 1) The first frontmatter configures the deck; --- separates slides; an HTML comment holds presenter notes. 2) Pick layouts (cover, two-cols with ::right::, section, fact, image-*). 3) Reveal code step by step with line ranges like {1\|2-3\|all} and morph between versions with magic-move. 4) Step reveals with v-click and annotations with v-mark. 5) Export needs a headless Chromium (playwright-chromium); build a static SPA for hosting. 6) Verify: dev server renders at its port, the exported PDF exists and has the expected page count.
+
+**المعاملات:** theme, aspect ratio
+
+**التثبيت:** لا خطوة تثبيت مسجلة
+
+**الوسوم:** slides · presentation · Slidev · عرض تقديمي · شرائح · markdown · PPTX
+
+#### 1. الاستقبال (A25)
+
+- الجمهور: افتراض مكتوب ← قارئ عام ذكي غير متخصص
+- النبرة واللهجة: افتراض مكتوب ← لغة الطلب ولهجته
+- الطول: افتراض مكتوب ← أقصر طول يحقق الغرض
+- الصيغة: افتراض مكتوب ← نص في الرد، أو مستند إن طُلب ملف
+- لا تُفترض أبدًا: مادة الإنتاج نفسها، والإذن بخطوة مدفوعة أو منشورة أو لا رجعة فيها، والهوية والحقوق.
+
+#### 2. الجاهزية والشارة (A28)
+
+- `chromium` ← افحص وجوده بأمر واحد قبل كتابة الشارة
+- `latex` ← افحص وجوده بأمر واحد قبل كتابة الشارة
+- `pip:office` ← python3 -c "import office" (اسم الاستيراد قد يختلف عن اسم الحزمة)
+- `npm:mermaid` ← npm ls mermaid أو وجود node_modules/mermaid
+- `npm:slidev` ← npm ls slidev أو وجود node_modules/slidev
+- الوضع 1: شارة «هنا الآن» بعد الفحص، لا 📄 الكتالوج تلقائيًا · الوضع 2: `كتالوج: 📄 · هنا: غير مفحوص` · الوضع 3: بلا شارة ولا معرّف.
+
+#### 3. موضعها في الخطة (A26)
+
+- عقدة منمّطة: المدخل `brief` ← المخرج `document`، والمنفّذ `method:ADOCS-48` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
+- لا أداة مسجلة تخدم عائلتها: التنفيذ بالمكتبات أو بأداة من مجموعة أخرى.
+- مراحل النوع: الغرض والقارئ ← هيكل العناوين ← مسودة ← مراجعة الحقائق ← تحرير اللغة ← فتح الملف بصيغته ← تسليم.
+- إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
+
+#### 4. بوابة التحقق (A27)
+
+- إلزامي: يحقق الغرض في أول فقرة ← قراءة الافتتاح
+- إلزامي: عربية سليمة إملاءً ونحوًا ← مراجعة سطر بسطر
+- جودة: بلا حشو ولا عبارات عامة بلا مضمون ← think.py critic
+- إلزامي: كل رقم أو اسم أو تاريخ متحقق منه ← مصدر لكل حقيقة
+- إلزامي: الملف المطلوب يُفتح فعلًا بصيغته ← فتح الملف
+- أمر الحكم في الوضع 1: `think.py qa document --answers qa.json` (PASS / FAIL / INCOMPLETE).
+
+#### 5. التعافي (A29)
+
+- `missing_dependency` (اعتمادية مفقودة، ميزانية 2): سمِّ الاعتمادية بالضبط (حزمة، برنامج، خط، نموذج) ← ثبّت محليًا في بيئة العمل إن كان مجانيًا ومسموحًا (pip --user أو venv أو npm محلي) · البديل: مسار المكتبة القياسية أو أداة أخرى من نفس المجموعة · تصعيد: تثبيت نظامي أو مدفوع أو يحتاج مفتاحًا: توقف واسأل
+- `quality_below_threshold` (جودة دون العتبة، ميزانية 3): أي معيار فشل وبكم (المقيس مقابل العتبة) ← عالج السبب الأكبر وحده ثم أعد القياس · البديل: المنهج البديل المكتوب للمرحلة في الخطة · تصعيد: معيار إلزامي لا يتحقق بعد البديل: توقف وأبلغ بالأرقام
+
+#### 6. الأدلة
+
+- `https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/2938-slidev/12191-slidev`
+
+#### 7. قدرات قريبة في العائلة
+
+- `ADOCS-46` دمج بيانات JSON في قوالب Word وExcel وPowerPoint / JSON-to-document templating (DOCX/XLSX/PPTX/PDF) (documented)
+- `ADOCS-47` تنقيح المستندات حقًا وإثبات ما سُلِّم ببصمات sha256 / True redaction and a sha256 delivery manifest (documented)
+- `ADOCS-49` كتابة README يجذب المطور في ثلاث ثوانٍ ويشغله في دقيقة / README that hooks in 3 seconds and runs in 60 (documented)
+- `ADOCS-50` تعليقات الكود الملائمة: معلومة لا يحملها الكود / Appropriate code comments: information the code cannot carry (documented)
+
+### `ADOCS-49` — كتابة README يجذب المطور في ثلاث ثوانٍ ويشغله في دقيقة / README that hooks in 3 seconds and runs in 60
+
+| الحقل | القيمة |
+|---|---|
+| العائلة | `atlas-docs` ([فصل العائلة](../../../.claude/skills/kosif-superpowers/references/powers/atlas-docs.md)) |
+| المجموعة | المستندات والكتابة (`documents`) |
+| نوع المخرج (A25، A27) | مستند وكتابة ومحتوى (`document`) |
+| الحالة في الكتالوج | 📄 `documented`: منهج موصوف يحتاج بناءً أو ربطًا قبل التشغيل |
+| سقف التحقق قبل العمل (A27) | V1 حتى تُبنى وتُشغَّل؛ لا تقدَّم جاهزة أبدًا |
+| نطاق الدليل | `url` |
+| الرخصة | method paraphrased from Atlas skills under MIT; the skills keep their own licenses — see each folder's SOURCE.md |
+
+**ما هي:** يكتب README لمشروع مفتوح بعد مسح ملفات المشروع: واجهة بجملة قيمة وشارات حقيقية، بداية سريعة قابلة للنسخ، وتفاصيل خلف أقسام قابلة للطي. — Writes an open-source README after scanning the project: a hero with one value sentence and real badges, a copy-paste quick start, details behind collapsible sections.
+
+**متى:** كتابة أو إنشاء README لمستودع / writing or scaffolding a README.md
+
+**كيف:** 1) Scan first, talk second: manifests, LICENSE, CONTRIBUTING, CI, entry points, CLI help, existing badges, logos and screenshots. 2) Show the inferred profile (name, one-liner, stack, type, license, install command, features) and ask only for what could not be inferred. 3) Hero: logo only if one exists (never placeholders), one jargon-free value sentence, 4-6 badges built from real metadata. 4) Why (3-5 bullets), Quick Start (copy-pasteable, working in 60 s, no $ prompts), commands table, advanced config in <details>, optional Mermaid architecture. 5) Contributing, community and license footer. 6) Keep it near 200 lines (300 hard ceiling) and link docs/ for the rest; ask whether to replace or merge an existing README.
+
+**التثبيت:** لا خطوة تثبيت مسجلة
+
+**الوسوم:** README · documentation · open source · توثيق · ملف التعريف · quick start
+
+#### 1. الاستقبال (A25)
+
+- الجمهور: افتراض مكتوب ← قارئ عام ذكي غير متخصص
+- النبرة واللهجة: افتراض مكتوب ← لغة الطلب ولهجته
+- الطول: افتراض مكتوب ← أقصر طول يحقق الغرض
+- الصيغة: افتراض مكتوب ← نص في الرد، أو مستند إن طُلب ملف
+- لا تُفترض أبدًا: مادة الإنتاج نفسها، والإذن بخطوة مدفوعة أو منشورة أو لا رجعة فيها، والهوية والحقوق.
+
+#### 2. الجاهزية والشارة (A28)
+
+- `npm:mermaid` ← npm ls mermaid أو وجود node_modules/mermaid
+- الوضع 1: شارة «هنا الآن» بعد الفحص، لا 📄 الكتالوج تلقائيًا · الوضع 2: `كتالوج: 📄 · هنا: غير مفحوص` · الوضع 3: بلا شارة ولا معرّف.
+
+#### 3. موضعها في الخطة (A26)
+
+- عقدة منمّطة: المدخل `brief` ← المخرج `document`، والمنفّذ `method:ADOCS-49` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
+- لا أداة مسجلة تخدم عائلتها: التنفيذ بالمكتبات أو بأداة من مجموعة أخرى.
+- مراحل النوع: الغرض والقارئ ← هيكل العناوين ← مسودة ← مراجعة الحقائق ← تحرير اللغة ← فتح الملف بصيغته ← تسليم.
+- إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
+
+#### 4. بوابة التحقق (A27)
+
+- إلزامي: يحقق الغرض في أول فقرة ← قراءة الافتتاح
+- إلزامي: عربية سليمة إملاءً ونحوًا ← مراجعة سطر بسطر
+- جودة: بلا حشو ولا عبارات عامة بلا مضمون ← think.py critic
+- إلزامي: كل رقم أو اسم أو تاريخ متحقق منه ← مصدر لكل حقيقة
+- إلزامي: الملف المطلوب يُفتح فعلًا بصيغته ← فتح الملف
+- أمر الحكم في الوضع 1: `think.py qa document --answers qa.json` (PASS / FAIL / INCOMPLETE).
+
+#### 5. التعافي (A29)
+
+- `missing_dependency` (اعتمادية مفقودة، ميزانية 2): سمِّ الاعتمادية بالضبط (حزمة، برنامج، خط، نموذج) ← ثبّت محليًا في بيئة العمل إن كان مجانيًا ومسموحًا (pip --user أو venv أو npm محلي) · البديل: مسار المكتبة القياسية أو أداة أخرى من نفس المجموعة · تصعيد: تثبيت نظامي أو مدفوع أو يحتاج مفتاحًا: توقف واسأل
+- `quality_below_threshold` (جودة دون العتبة، ميزانية 3): أي معيار فشل وبكم (المقيس مقابل العتبة) ← عالج السبب الأكبر وحده ثم أعد القياس · البديل: المنهج البديل المكتوب للمرحلة في الخطة · تصعيد: معيار إلزامي لا يتحقق بعد البديل: توقف وأبلغ بالأرقام
+
+#### 6. الأدلة
+
+- `https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/26-docs/36-readme-craft`
+
+#### 7. قدرات قريبة في العائلة
+
+- `ADOCS-47` تنقيح المستندات حقًا وإثبات ما سُلِّم ببصمات sha256 / True redaction and a sha256 delivery manifest (documented)
+- `ADOCS-48` عروض تقديمية للمطورين بـ Slidev من Markdown / Developer slide decks in Markdown with Slidev (documented)
+- `ADOCS-50` تعليقات الكود الملائمة: معلومة لا يحملها الكود / Appropriate code comments: information the code cannot carry (documented)
+
+### `ADOCS-50` — تعليقات الكود الملائمة: معلومة لا يحملها الكود / Appropriate code comments: information the code cannot carry
+
+| الحقل | القيمة |
+|---|---|
+| العائلة | `atlas-docs` ([فصل العائلة](../../../.claude/skills/kosif-superpowers/references/powers/atlas-docs.md)) |
+| المجموعة | المستندات والكتابة (`documents`) |
+| نوع المخرج (A25، A27) | مستند وكتابة ومحتوى (`document`) |
+| الحالة في الكتالوج | 📄 `documented`: منهج موصوف يحتاج بناءً أو ربطًا قبل التشغيل |
+| سقف التحقق قبل العمل (A27) | V1 حتى تُبنى وتُشغَّل؛ لا تقدَّم جاهزة أبدًا |
+| نطاق الدليل | `url` |
+| الرخصة | method paraphrased from Atlas skills under MIT; the skills keep their own licenses — see each folder's SOURCE.md |
+
+**ما هي:** يحكم على كل تعليق: هل يضيف معلومة عن الحالة الحالية لا يقولها الكود نفسه؟ ويحوّل وعود 'لا تغيّر هذا' إلى اختبارات. — Judges each comment by whether it adds present-tense information the code itself cannot say, and turns 'do not change this' promises into tests.
+
+**متى:** مراجعة أو كتابة تعليقات، تنظيف كود قبل الدمج / writing or reviewing comments, cleaning code before merge
+
+**كيف:** 1) Keep a comment only when it states something the code cannot: a non-obvious why, a unit, a caller obligation such as lock ownership. 2) Cap it near two lines; longer rationale belongs in the commit or a design note. 3) Delete restatements of the code, change-history narration and ticket chatter. 4) Editor-test each instruction addressed to a future editor ('never lower this', 'keep in step with X'): nothing enforces it, so write a test named after the invariant (e.g. refund-not-applied-twice), not after the incident. 5) Test files are exempt from the cap where explaining a scenario helps.
+
+**التثبيت:** لا خطوة تثبيت مسجلة
+
+**الوسوم:** code comments · code review · clean code · تعليقات الكود · مراجعة · invariant tests
+
+#### 1. الاستقبال (A25)
+
+- الجمهور: افتراض مكتوب ← قارئ عام ذكي غير متخصص
+- النبرة واللهجة: افتراض مكتوب ← لغة الطلب ولهجته
+- الطول: افتراض مكتوب ← أقصر طول يحقق الغرض
+- الصيغة: افتراض مكتوب ← نص في الرد، أو مستند إن طُلب ملف
+- لا تُفترض أبدًا: مادة الإنتاج نفسها، والإذن بخطوة مدفوعة أو منشورة أو لا رجعة فيها، والهوية والحقوق.
+
+#### 2. الجاهزية والشارة (A28)
+
+- لا متطلبات مسجلة؛ افحص المسار والأداة بـ `hub.py doctor` قبل الشارة.
+- الوضع 1: شارة «هنا الآن» بعد الفحص، لا 📄 الكتالوج تلقائيًا · الوضع 2: `كتالوج: 📄 · هنا: غير مفحوص` · الوضع 3: بلا شارة ولا معرّف.
+
+#### 3. موضعها في الخطة (A26)
+
+- عقدة منمّطة: المدخل `brief` ← المخرج `document`، والمنفّذ `method:ADOCS-50` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
+- لا أداة مسجلة تخدم عائلتها: التنفيذ بالمكتبات أو بأداة من مجموعة أخرى.
+- مراحل النوع: الغرض والقارئ ← هيكل العناوين ← مسودة ← مراجعة الحقائق ← تحرير اللغة ← فتح الملف بصيغته ← تسليم.
+- إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
+
+#### 4. بوابة التحقق (A27)
+
+- إلزامي: يحقق الغرض في أول فقرة ← قراءة الافتتاح
+- إلزامي: عربية سليمة إملاءً ونحوًا ← مراجعة سطر بسطر
+- جودة: بلا حشو ولا عبارات عامة بلا مضمون ← think.py critic
+- إلزامي: كل رقم أو اسم أو تاريخ متحقق منه ← مصدر لكل حقيقة
+- إلزامي: الملف المطلوب يُفتح فعلًا بصيغته ← فتح الملف
+- أمر الحكم في الوضع 1: `think.py qa document --answers qa.json` (PASS / FAIL / INCOMPLETE).
+
+#### 5. التعافي (A29)
+
+- `quality_below_threshold` (جودة دون العتبة، ميزانية 3): أي معيار فشل وبكم (المقيس مقابل العتبة) ← عالج السبب الأكبر وحده ثم أعد القياس · البديل: المنهج البديل المكتوب للمرحلة في الخطة · تصعيد: معيار إلزامي لا يتحقق بعد البديل: توقف وأبلغ بالأرقام
+
+#### 6. الأدلة
+
+- `https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/2854-appropriate-comments-code/11563-appropriate-comments-code`
+
+#### 7. قدرات قريبة في العائلة
+
+- `ADOCS-48` عروض تقديمية للمطورين بـ Slidev من Markdown / Developer slide decks in Markdown with Slidev (documented)
+- `ADOCS-49` كتابة README يجذب المطور في ثلاث ثوانٍ ويشغله في دقيقة / README that hooks in 3 seconds and runs in 60 (documented)
 

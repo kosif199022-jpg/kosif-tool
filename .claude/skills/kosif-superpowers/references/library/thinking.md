@@ -23,9 +23,9 @@
 | الحالة | العدد | المعنى |
 |---|---:|---|
 | `proven` | 17 | ✅ proven: a proof exists in the catalog; still check its requirements here before calling it ready |
-| `documented` | 283 | 📄 documented: a described method; needs building or wiring before it runs |
+| `documented` | 297 | 📄 documented: a described method; needs building or wiring before it runs |
 | `install` | 2 | 📦 install: needs a package, binary or model first |
-| **المجموع** | **302** | |
+| **المجموع** | **316** | |
 
 ## الأدوات القابلة للتشغيل / runnable tools
 
@@ -56,8 +56,8 @@
 
 | العائلة | القدرات | الفصل |
 |---|---:|---|
-| `atlas-mind` | 50 | [atlas-mind.md](../powers/atlas-mind.md) |
-| `atlas-strategy` | 62 | [atlas-strategy.md](../powers/atlas-strategy.md) |
+| `atlas-mind` | 54 | [atlas-mind.md](../powers/atlas-mind.md) |
+| `atlas-strategy` | 72 | [atlas-strategy.md](../powers/atlas-strategy.md) |
 | `creativity-engine` | 29 | [creativity-engine.md](../powers/creativity-engine.md) |
 | `mental-models` | 63 | [mental-models.md](../powers/mental-models.md) |
 | `planning-execution` | 12 | [planning-execution.md](../powers/planning-execution.md) |
@@ -138,6 +138,10 @@
 | `AMIND-48` | توجيه إلى أخصائي واحد مع إلزام القراءة | Route to one specialist, read before answering | documented |  |
 | `AMIND-49` | أعد الاستخدام أو استبدل علناً: لا طريقتين لشيء واحد | Reuse or openly replace: one way to do a thing | documented |  |
 | `AMIND-50` | تحديث خارطة الطريق من الأدلة مع ذكر وضع الفحص | Evidence-based roadmap update with an explicit scan mode | documented |  |
+| `AMIND-51` | زرع العيب لإثبات أن الفحص يستطيع أن يفشل | Plant the defect to prove a check can fail | documented |  |
+| `AMIND-52` | خطة تحقق يدوي مرقمة قابلة للاستئناف | Resumable numbered manual verification plan | documented |  |
+| `AMIND-53` | الإطلاق في الظل لاختبار نظام بديل تحت حمل الإنتاج | Shadow mode (dark launch) to validate a replacement under real load | documented |  |
+| `AMIND-54` | تنقيح المواصفات بتحليل الفجوات وأسئلة متتابعة مرجّحة | Specification refinement: gap analysis and ranked one-at-a-time questions | documented |  |
 | `ASTRAT-01` | تدقيق جدوى تعدد الوكلاء مقابل وكيل واحد | Audit multi-agent topology against single-agent baseline | documented |  |
 | `ASTRAT-02` | حلقة مستقلة لتصريف قائمة المهام | Autonomous backlog-draining loop and single-task ralph loop | documented |  |
 | `ASTRAT-03` | توجيه أسئلة المؤسس إلى أدوار المستشارين التنفيذيين | Route founder questions to C-suite advisor roles | documented |  |
@@ -200,6 +204,16 @@
 | `ASTRAT-60` | تحسين التحويل: اكتشف ولا تخمّن | Conversion optimisation: discover, do not guess | documented |  |
 | `ASTRAT-61` | تحسين الظهور في البحث ومحركات الإجابة والذكاء التوليدي | SEO, answer-engine and generative-engine visibility | documented |  |
 | `ASTRAT-62` | مراجعة تصميم بأسلوب الطرح حتى الجوهر | Subtractive design review from the customer backwards | documented |  |
+| `ASTRAT-63` | مقابلة سؤال-بسؤال لاستخراج النية الحقيقية قبل البناء | One-question interview to extract real intent | documented |  |
+| `ASTRAT-64` | خطاب تقديم وظيفي مفصّل على الإعلان بلا عبارات آلية | Tailored cover letter without AI tells | documented | latex |
+| `ASTRAT-65` | التفاوض بالتعاطف التكتيكي والأسئلة المعايَرة | Negotiation with tactical empathy and calibrated questions | documented |  |
+| `ASTRAT-66` | تصميم الفرق للتدفق السريع: أربعة أنواع وثلاثة أنماط تفاعل | Team Topologies: four team types, three interaction modes | documented |  |
+| `ASTRAT-67` | تحقيق 8D ببوابات تحقق لكل مرحلة | Gated 8D investigation coach | documented | npm:d3 |
+| `ASTRAT-68` | كتابة تقرير إجراء تصحيحي CAR/CAPA قابل للإغلاق | Closable corrective action report (CAR/CAPA) | documented |  |
+| `ASTRAT-69` | وصفة إعدادات LoRA وQLoRA للضبط الدقيق | LoRA and QLoRA fine-tuning recipe | documented | pip:torch, gpu |
+| `ASTRAT-70` | سلّم أنظمة دعم العملاء من الخدمة الذاتية إلى مركز الاتصال | Customer-support system ladder: self-service to contact center | documented |  |
+| `ASTRAT-71` | صياغة الردود للعمل أولًا لقارئ مشتت الانتباه | Action-first response shape for an ADHD reader | documented |  |
+| `ASTRAT-72` | تقرير جلسة برمجة لصاحب قرار غير تقني | Session report for a non-technical stakeholder | documented | git |
 | `IDEA-01` | التباعد ثم التقارب | Diverge → converge protocol | documented | python3 |
 | `IDEA-02` | التفكير من المبادئ الأولى | First principles | documented |  |
 | `IDEA-03` | القلب: كيف نضمن الفشل؟ | Inversion | documented |  |

@@ -3,13 +3,13 @@
 
 > **قوتك هنا / what this gives you:** إدارة المنتج والتسويق وSEO والمبيعات والمال والتوظيف والتعليم كما تصفها مهارات أطلس. — Product management, marketing/SEO, sales, finance, hiring and teaching methods from the Atlas.
 > **أقوى دليل / strongest evidence:** لا قوة مثبتة بعد في هذه العائلة — no ✅ power yet; the strongest badge here is 📄 documented.
-> **62 powers follow** — ✅ 0 · 🟢 0 · 📦 0 · 🔑 0 · 👁 0 · 📄 62 · 💡 0.
+> **72 powers follow** — ✅ 0 · 🟢 0 · 📦 0 · 🔑 0 · 👁 0 · 📄 72 · 💡 0.
 
 **الحالة / status:** ✅ مُثبت (شُغّل فعلًا وله مسار دليل) · 🟢 جاهز (كود موجود يعمل بما هو متاح عادة) · 📦 بأمر تثبيت واحد · 🔑 يحتاج مفتاحًا أو حسابًا أو موصلًا · 👁 شوهد في فيديو مرجعي (للموشن فقط) · 📄 طريقة موثقة · 💡 فكرة. الشارة هي أدنى مستوى صادق — the badge is the lowest level that is true.
 مسارات الدليل نسبية إلى `/home/user/`؛ و`session-<date>:<file>#<section>` تشير إلى تشغيل موثق في جلسة سابقة؛ و`owner-upload:` إلى ملف داخل أرشيف أرسله المالك. Proof paths are relative to `/home/user/`.
 
 **المجال / domain:** المنتج والمال — Product & finance · **البادئة / prefix:** `ASTRAT` · **البيانات / data:** `data/powers/atlas-strategy.json` · **بحث / search:** `python3 scripts/powers.py family atlas-strategy`
-**مراجع ذات صلة / related references:** [CLAUDE_3_MINUTE_MAP.md](../CLAUDE_3_MINUTE_MAP.md) · [atlas-5000-mining-20261023.md](../atlas-5000-mining-20261023.md) · [hubs.md](../hubs.md)
+**مراجع ذات صلة / related references:** [CLAUDE_3_MINUTE_MAP.md](../CLAUDE_3_MINUTE_MAP.md) · [atlas-5000-mining-20261023.md](../atlas-5000-mining-20261023.md) · [hubs.md](../hubs.md) · [rea-superpowers-frontier-20261023.md](../rea-superpowers-frontier-20261023.md)
 
 ## الفهرس / contents
 
@@ -30,6 +30,10 @@
 - **سير عمل تطوير عام — General development workflow** — ASTRAT-50 … ASTRAT-52 (3)
 - **Git والإصدار — Git, pull requests & releases** — ASTRAT-53 (1)
 - **التعليم والتعلم — Teaching, learning & study** — ASTRAT-54 … ASTRAT-57 (4)
+- **الموارد البشرية والمسار المهني — HR, hiring & careers** — ASTRAT-63 … ASTRAT-67 (5)
+- **الحياة الشخصية — Personal life, health & hobbies** — ASTRAT-68 … ASTRAT-69 (2)
+- **المبيعات والعملاء — Sales, CRM & customer success** — ASTRAT-70 … ASTRAT-71 (2)
+- **إدارة المنتج — Product management** — ASTRAT-72 (1)
 - المصادر والرخص / sources & licences
 
 ## سير عمل الوكلاء — Agent workflows & orchestration
@@ -572,9 +576,101 @@
 - **الدليل / proof:** `https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/1390-core-learning/3276-learn-core` · `https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/1097-akbun-learning/2467-akbun-algorithm-tutor`
 - **المصدر / source:** KOSIF Atlas mining 2026-10-20 (https://github.com/kosif199022-jpg/kosif-atlas): core-learning/learn-core (#3276); akbun-learning/akbun-algorithm-tutor (#2467) · theme education-learning · 5 supporting skills · verifier read: skills/1390-core-learning/3276-learn-core, skills/1097-akbun-learning/2467-akbun-algorithm-tutor
 
+## الموارد البشرية والمسار المهني — HR, hiring & careers
+
+#### ASTRAT-63 · مقابلة سؤال-بسؤال لاستخراج النية الحقيقية قبل البناء · One-question interview to extract real intent · 📄 موصوف / documented only
+- **ماذا / what:** يكشف ما يريده المستخدم فعلًا لا ما يظن أنه ينبغي أن يريده، بسؤال واحد في كل مرة مع تخمين مرفق حتى ثقة ~95%. — Surfaces what the user actually wants rather than what they think they should want, one question at a time with an attached guess, until ~95% confidence.
+- **متى أستخدمها / when:** طلب ناقص (من؟ لماذا الآن؟ ما النجاح؟)، أو 'اسألني'، قبل أي خطة أو كود / an underspecified ask, 'interview me', before any plan or code
+- **كيف / how:** 1) Write a one-sentence hypothesis with an honest confidence number and what is missing. 2) Ask one focused question, each with your GUESS and its reasoning; wait for the reaction. 3) Watch for 'should want' answers (buzzwords, 'the standard way') and ask: if you did not have to justify it, what would you want? 4) Restate as Outcome, User, Why now, Success, Constraint, Out of scope. 5) Accept only an explicit yes; 'whatever you think' means re-ask as two concrete options. 6) Stop when you can predict the reactions to the next three questions; if several rounds still fail, say something foundational is missing. Never run it in non-interactive contexts.
+- **الرخصة / license:** method paraphrased from Atlas skills under MIT; the skills keep their own licenses — see each folder's SOURCE.md
+- **الدليل / proof:** `https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/3225-interview-me/13638-interview-me`
+- **المصدر / source:** KOSIF Atlas frontier mining 2026-10-23 (https://github.com/kosif199022-jpg/kosif-atlas @ 99bb108d): interview-me/interview-me (#13638) · theme hr-career · SKILL.md read up to its first 12,000 characters as inert text (rest not read): skills/3225-interview-me/13638-interview-me
+
+#### ASTRAT-64 · خطاب تقديم وظيفي مفصّل على الإعلان بلا عبارات آلية · Tailored cover letter without AI tells · 📄 موصوف / documented only
+- **ماذا / what:** يكتب خطاب تقديم من السيرة الذاتية مطابقًا لإعلان الوظيفة وثقافة الشركة، بنثر مباشر وادعاءات قابلة للتتبع. — Writes a cover letter from the CV matched to the job posting and company culture, in direct prose with traceable claims.
+- **متى أستخدمها / when:** التقديم على وظيفة، خطاب تقديم، رسالة لينكدإن قصيرة / applying for a job, cover letter, short LinkedIn note
+- **كيف / how:** 1) Intake: get the CV and the full job description in one message; extract text from PDF/LaTeX if given. 2) Read the company's tone, values page and repeated keywords. 3) Map must-haves and nice-to-haves to 2-3 strongest matching outcomes with numbers; bridge gaps honestly, never invent. 4) Standard: 4 paragraphs, 250-380 words, open with the strongest result (not 'I am excited'), one concrete company-specific paragraph, short close. LinkedIn: 100-150 plain words. 5) Ban stock phrases, triads of adjectives, 'not only X but also Y', uniform sentence length. 6) Grammar and authenticity pass, then save as YYYY-MM-DD-company-role.md for the user to review before sending. **أرقام / params:** channel: standard|linkedin
+- **يحتاج / needs:** [`latex`](../requirements.md#req-latex)
+- **الرخصة / license:** method paraphrased from Atlas skills under MIT; the skills keep their own licenses — see each folder's SOURCE.md
+- **الدليل / proof:** `https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/3410-career-tools/13964-cover-letter-builder`
+- **المصدر / source:** KOSIF Atlas frontier mining 2026-10-23 (https://github.com/kosif199022-jpg/kosif-atlas @ 99bb108d): career-tools/cover-letter-builder (#13964) · theme hr-career · SKILL.md read up to its first 12,000 characters as inert text (rest not read): skills/3410-career-tools/13964-cover-letter-builder
+
+#### ASTRAT-65 · التفاوض بالتعاطف التكتيكي والأسئلة المعايَرة · Negotiation with tactical empathy and calibrated questions · 📄 موصوف / documented only
+- **ماذا / what:** يجهّز تفاوضًا (راتب، عقد، سعر) بالإصغاء والتسمية والأسئلة المفتوحة وتدقيق الاتهامات والبديل الأفضل، بلا تقسيم للفرق. — Prepares a salary, contract or price negotiation with listening, labelling, open questions, an accusation audit and a BATNA, never splitting the difference.
+- **متى أستخدمها / when:** طلب زيادة، تفاوض مع مورّد، عميل يرفض السعر، محادثة صعبة / asking for a raise, vendor terms, a client who will not budge
+- **كيف / how:** 1) Before: write your BATNA, target and walk-away; list every negative thing they may think of you (accusation audit) and say it first. 2) Mirror their last 1-3 key words as a question, then stay silent. 3) Label emotions with 'It seems like...' rather than 'I think you...'. 4) Push back with 'How'/'What' questions ('How am I supposed to do that?'), not 'Why'. 5) Summarise their position with its emotions until they say 'That's right'. 6) On money: offers rising 65%, 85%, 95%, 100% of target with a precise final number and a non-monetary extra; no concession without something in return; hunt for unknown facts that change the deal. **أرقام / params:** target, BATNA
+- **الرخصة / license:** method paraphrased from Atlas skills under MIT; the skills keep their own licenses — see each folder's SOURCE.md
+- **الدليل / proof:** `https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/3433-product-strategy/14097-negotiation`
+- **المصدر / source:** KOSIF Atlas frontier mining 2026-10-23 (https://github.com/kosif199022-jpg/kosif-atlas @ 99bb108d): product-strategy/negotiation (#14097) · theme hr-career · SKILL.md read up to its first 12,000 characters as inert text (rest not read): skills/3433-product-strategy/14097-negotiation
+
+#### ASTRAT-66 · تصميم الفرق للتدفق السريع: أربعة أنواع وثلاثة أنماط تفاعل · Team Topologies: four team types, three interaction modes · 📄 موصوف / documented only
+- **ماذا / what:** ينظّم فرق الهندسة حسب قانون كونواي والحمل الذهني: فرق مسار، منصة، تمكين، أنظمة معقدة، مع نمط تفاعل معلن لكل زوج. — Organises engineering teams by Conway's law and cognitive load into stream-aligned, platform, enabling and complicated-subsystem teams with a declared interaction mode per pair.
+- **متى أستخدمها / when:** إعادة هيكلة فريق، من يملك هذه الخدمة، تقسيم مونوليث، فريق منصة داخلي / reorg, service ownership, splitting a monolith, internal platform
+- **كيف / how:** 1) Decide the target architecture, then shape teams so it becomes the natural outcome (inverse Conway). 2) Assign every team one of four types; stream-aligned is the default, the others exist only to remove its load. 3) For each interacting pair declare collaboration (time-boxed discovery), X-as-a-Service or facilitating, and evolve it deliberately. 4) Count domains per team: at most one complicated or two-three simple; split software, not people, when it exceeds a team. 5) Split along fracture planes, business domain first; avoid technology-layer splits. 6) Publish a team API (owners, docs, on-call, request path) and score the design 0-10 with the gaps to 10.
+- **الرخصة / license:** method paraphrased from Atlas skills under MIT; the skills keep their own licenses — see each folder's SOURCE.md
+- **الدليل / proof:** `https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/3436-systems-architecture/14113-team-topologies`
+- **المصدر / source:** KOSIF Atlas frontier mining 2026-10-23 (https://github.com/kosif199022-jpg/kosif-atlas @ 99bb108d): systems-architecture/team-topologies (#14113) · theme hr-career · SKILL.md read up to its first 12,000 characters as inert text (rest not read): skills/3436-systems-architecture/14113-team-topologies
+
+#### ASTRAT-67 · تحقيق 8D ببوابات تحقق لكل مرحلة · Gated 8D investigation coach · 📄 موصوف / documented only
+- **ماذا / what:** يدير تحقيق جودة 8D من D0 إلى D8 ولا ينتقل لمرحلة قبل أن تجتاز السابقة معاييرها، ويرفض الاحتواء والأسباب الجذرية الضعيفة. — Runs an 8D quality investigation from D0 to D8 and advances only when each discipline passes its criteria, rejecting weak containment and root causes.
+- **متى أستخدمها / when:** عيب وصل للعميل، شكوى جودة، مراجعة تقرير 8D قبل إرساله / a defect escape, customer complaint, reviewing an 8D before submission
+- **كيف / how:** 1) D0: safety assessment and customer notification before anything else. 2) D1 cross-functional team with a named champion; D2 problem with measured value vs spec, part/revision and 'X of Y = Z%', no cause speculation. 3) D3 containment must physically stop bad product, be in the past tense, dated and verified ('be more careful' is not containment). 4) D4 two validated 5-Why chains: why it occurred and why it escaped; 'human error' is a prompt to ask why the system allowed it. 5) D5 one action per root cause, D6 before/after data on a volume of at least about 3/baseline-rate units. 6) D7 update PFMEA, control plan, work instructions and check similar parts; D8 sign-off and a one-paragraph summary. **أرقام / params:** customer CSR deadlines
+- **يحتاج / needs:** [`npm:d3`](../requirements.md#req-npm-d3)
+- **الرخصة / license:** method paraphrased from Atlas skills under MIT; the skills keep their own licenses — see each folder's SOURCE.md
+- **الدليل / proof:** `https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/2989-quality-engineering-skills/12639-8d-coach`
+- **المصدر / source:** KOSIF Atlas frontier mining 2026-10-23 (https://github.com/kosif199022-jpg/kosif-atlas @ 99bb108d): quality-engineering-skills/8d-coach (#12639) · theme hr-career · SKILL.md read in full as inert text: skills/2989-quality-engineering-skills/12639-8d-coach
+
+## الحياة الشخصية — Personal life, health & hobbies
+
+#### ASTRAT-68 · كتابة تقرير إجراء تصحيحي CAR/CAPA قابل للإغلاق · Closable corrective action report (CAR/CAPA) · 📄 موصوف / documented only
+- **ماذا / what:** يكتب تقرير إجراء تصحيحي بسببين جذريين مثبتين، وإجراء لكل سبب، ودليل تنفيذ، وتحقق من الفعالية بحجم عينة مبرر. — Writes a corrective action report with two validated root causes, one action per cause, implementation evidence and effectiveness verification on a justified sample.
+- **متى أستخدمها / when:** الرد على عدم مطابقة أو ملاحظة تدقيق أو شكوى عميل / responding to an NCR, audit finding or customer complaint
+- **كيف / how:** 1) Header with traceable number, named owner and named closure authority; problem summary copied exactly from the NCR. 2) Root cause of occurrence and of escape, each as a documented Why chain, validated by reproduction, data correlation, physical evidence or record review (team opinion is not validation). 3) A corrective action table mapping each action to its root cause with owner and date. 4) Implementation evidence = revised documents with revision numbers and approval dates. 5) Verification of effectiveness: method, metric, volume and target defined before collecting data (e.g. zero defects in 60 units for a 5% baseline at 95% confidence). 6) Horizontal deployment, lessons learned, and a closure checklist; 'retrain operators' alone is never enough.
+- **الرخصة / license:** method paraphrased from Atlas skills under MIT; the skills keep their own licenses — see each folder's SOURCE.md
+- **الدليل / proof:** `https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/2989-quality-engineering-skills/12651-car-corrective-action`
+- **المصدر / source:** KOSIF Atlas frontier mining 2026-10-23 (https://github.com/kosif199022-jpg/kosif-atlas @ 99bb108d): quality-engineering-skills/car-corrective-action (#12651) · theme personal-lifestyle · SKILL.md read in full as inert text: skills/2989-quality-engineering-skills/12651-car-corrective-action
+
+#### ASTRAT-69 · وصفة إعدادات LoRA وQLoRA للضبط الدقيق · LoRA and QLoRA fine-tuning recipe · 📄 موصوف / documented only
+- **ماذا / what:** يضبط مُكيّف LoRA/QLoRA بالإعدادات المستقرة: كل الطبقات الخطية، alpha = 2×rank، معدل تعلم أعلى بعشر مرات، ورتبة حسب المهمة. — Configures a LoRA/QLoRA adapter with the settled recipe: all linear modules, alpha = 2 × rank, ~10× the full-FT learning rate, rank by task.
+- **متى أستخدمها / when:** كتابة أو مراجعة إعدادات تدريب LoRA، الاختيار بين LoRA وQLoRA والضبط الكامل / writing or reviewing a LoRA config, choosing LoRA vs QLoRA vs full fine-tune
+- **كيف / how:** 1) Target all linear modules (q,k,v,o and the MLP gate/up/down, which matter most); never drop modules to save memory. 2) Rank: 1-32 for RL adapters, 16-32 default, up to ~256 only for SFT at scale; raise it only if held-out eval underfits. 3) lora_alpha = 2 × r; LR about 10× the full fine-tune LR (QLoRA starts at 2e-4); effective batch under 32. 4) LoRA by default, QLoRA only when bf16 does not fit, full fine-tuning only for dense knowledge injection. 5) Use bf16 where supported (check torch.cuda.is_bf16_supported()), fix the seed, dropout 0 with fused kernels. 6) Treat loss spikes, plateaus or memorisation first as config deviations from this recipe before debugging the loop. **أرقام / params:** rank, model size
+- **يحتاج / needs:** [`pip:torch`](../requirements.md#req-pip-torch) · [`gpu`](../requirements.md#req-gpu)
+- **الرخصة / license:** method paraphrased from Atlas skills under MIT; the skills keep their own licenses — see each folder's SOURCE.md
+- **الدليل / proof:** `https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/3104-llm-finetuning/13291-lora-qlora-recipes`
+- **المصدر / source:** KOSIF Atlas frontier mining 2026-10-23 (https://github.com/kosif199022-jpg/kosif-atlas @ 99bb108d): llm-finetuning/lora-qlora-recipes (#13291) · theme personal-lifestyle · SKILL.md read in full as inert text: skills/3104-llm-finetuning/13291-lora-qlora-recipes
+
+## المبيعات والعملاء — Sales, CRM & customer success
+
+#### ASTRAT-70 · سلّم أنظمة دعم العملاء من الخدمة الذاتية إلى مركز الاتصال · Customer-support system ladder: self-service to contact center · 📄 موصوف / documented only
+- **ماذا / what:** يؤهل احتياج نظام دعم العملاء بستة أسئلة (الاتجاه، القنوات، الحجم، الأتمتة، أدوات الموظف، التحويلات) ثم يختار درجة السلّم المناسبة. — Qualifies a support-system need with six questions (direction, channels, volume, automation, agent tooling, transfers) and picks the matching rung of the ladder.
+- **متى أستخدمها / when:** بناء مركز اتصال، رد آلي IVR، توجيه مكالمات، دعم متعدد القنوات / building a call center, IVR, call routing, omnichannel support
+- **كيف / how:** 1) Detect the request level: discovery (whole system), validation (a named pattern) or build (one concrete piece). 2) Ask: inbound/outbound, channel mix, daily volume (<50, 50-500, 500+), self-service depth, agent desktop/CRM, cold vs warm transfer and coaching. 3) Rungs: scripted menu, AI self-service with a human fallback, skills-based routing with queues and conferences, then analytics and real-time assistance. 4) Make every multi-party call a conference (warm transfer, hold, coaching); record dual-channel for QA and pause recording during card entry. 5) Check consent and calling-hours rules, card-data handling, health-data and GDPR recording consent before launch. 6) Make webhooks idempotent and receive-queue-acknowledge fast under load. (Source examples use Twilio; the ladder is vendor-neutral.) **أرقام / params:** volume, channels
+- **الرخصة / license:** method paraphrased from Atlas skills under MIT; the skills keep their own licenses — see each folder's SOURCE.md
+- **الدليل / proof:** `https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/2721-twilio-developer-kit/10479-twilio-customer-support-architect`
+- **المصدر / source:** KOSIF Atlas frontier mining 2026-10-23 (https://github.com/kosif199022-jpg/kosif-atlas @ 99bb108d): twilio-developer-kit/twilio-customer-support-architect (#10479) · theme sales-customer · SKILL.md read up to its first 12,000 characters as inert text (rest not read): skills/2721-twilio-developer-kit/10479-twilio-customer-support-architect
+
+#### ASTRAT-71 · صياغة الردود للعمل أولًا لقارئ مشتت الانتباه · Action-first response shape for an ADHD reader · 📄 موصوف / documented only
+- **ماذا / what:** يشكّل كل رد ليبدأ بالخطوة التالية القابلة للتنفيذ، بخطوات مرقمة وحالة معادة وقوائم لا تتجاوز خمسة وتقديرات زمنية ملموسة. — Shapes every reply to open with the next doable action, with numbered steps, restated state, lists capped at five and concrete time estimates.
+- **متى أستخدمها / when:** 'ادخل في الموضوع'، 'بدون مقدمات'، قارئ مصاب بتشتت الانتباه، تعليمات خطوة بخطوة / 'cut the preamble', ADHD-friendly, step-by-step help
+- **كيف / how:** 1) First line is an action (a command, a path, a snippet), not context. 2) Multi-step work is a numbered list, one bounded action per item. 3) Restate state each turn as 'step 3 of 5 done: X. Next: Y' (not a running recap). 4) Estimates in real units; show the finished, working result concretely; state errors flat with cause and fix. 5) Cap lists at five, split into now/later; park tangents as a separate offer; end with one action doable in under two minutes; no preamble, recap or closing pleasantry. 6) Override for 'explain in full', for destructive actions (confirm first) and after three 'still broken' turns (stop and question the assumption).
+- **الرخصة / license:** method paraphrased from Atlas skills under MIT; the skills keep their own licenses — see each folder's SOURCE.md
+- **الدليل / proof:** `https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/2411-adhd/9350-shape`
+- **المصدر / source:** KOSIF Atlas frontier mining 2026-10-23 (https://github.com/kosif199022-jpg/kosif-atlas @ 99bb108d): adhd/shape (#9350) · theme sales-customer · SKILL.md read in full as inert text: skills/2411-adhd/9350-shape
+
+## إدارة المنتج — Product management
+
+#### ASTRAT-72 · تقرير جلسة برمجة لصاحب قرار غير تقني · Session report for a non-technical stakeholder · 📄 موصوف / documented only
+- **ماذا / what:** يحول جلسة عمل إلى تقرير يتخذ عليه مدير المنتج قرارًا: الدليل قبل التفسير، كل مصطلح معرَّف عند أول ظهور، والتحقق والافتراض وغير المختبر في سلال صريحة. — Turns a work session into a report a product owner can act on: evidence before interpretation, each term defined at first use, and verified/assumed/untested stated in explicit buckets.
+- **متى أستخدمها / when:** 'اكتب ملخص اليوم لمدير المنتج'، شرح ما بُني لغير المبرمجين / 'write today up for my PM', explaining a session to a non-developer
+- **كيف / how:** 1) Use the conversation as the main source, then corroborate with git log/diff/status; state how far each change got: edited, committed, pushed/merged, or live and observed. 2) Sections, omitting empty ones: one-line summary (the gap between plan and reality is the headline), why we started here, what we found or built (verbatim artifact first), why it happened (name the part that behaved correctly too), how we solved it and why this way (the rejected alternative and what the fix deliberately does not cover), numbers with denominators, verified/assumed/untested, next steps and what I need from you. 3) Attach analogies, never substitute them for the real term. 4) Keep identifiers verbatim in the reader's language. 5) No blame on people or models; describe the missing information. 6) 600-1,200 words for one thread. **أرقام / params:** scope hint
+- **يحتاج / needs:** [`git`](../requirements.md#req-git)
+- **الرخصة / license:** method paraphrased from Atlas skills under MIT; the skills keep their own licenses — see each folder's SOURCE.md
+- **الدليل / proof:** `https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/1074-dev-report/2383-dev-report`
+- **المصدر / source:** KOSIF Atlas frontier mining 2026-10-23 (https://github.com/kosif199022-jpg/kosif-atlas @ 99bb108d): dev-report/dev-report (#2383) · theme product-management · SKILL.md read up to its first 12,000 characters as inert text (rest not read): skills/1074-dev-report/2383-dev-report
+
 ## المصادر والرخص / sources & licences
 
-- الرخص / licences: method paraphrased from Atlas skills under MIT; the skills keep their own licenses — see each folder's SOURCE.md (47) · method paraphrased from Atlas skills under MIT / Apache-2.0; the skills keep their own licenses — see each folder's SOURCE.md (6) · method paraphrased from Atlas skills under MIT/Apache-2.0; the skills keep their own licenses — see each folder's SOURCE.md (3) · method paraphrased from Atlas skills under check per-plugin; the skills keep their own licenses — see each folder's SOURCE.md (2) · method paraphrased from Atlas skills under Apache-2.0 / MIT (no copyleft seen among supporting ids); the skills keep their own licenses — see each folder's SOURCE.md (1) · method paraphrased from Atlas skills under Apache-2.0; the skills keep their own licenses — see each folder's SOURCE.md (1) · method paraphrased from Atlas skills under MIT (no copyleft seen among supporting ids); the skills keep their own licenses — see each folder's SOURCE.md (1) · method paraphrased from Atlas skills under mixed MIT/Apache; the skills keep their own licenses — see each folder's SOURCE.md (1)
+- الرخص / licences: method paraphrased from Atlas skills under MIT; the skills keep their own licenses — see each folder's SOURCE.md (57) · method paraphrased from Atlas skills under MIT / Apache-2.0; the skills keep their own licenses — see each folder's SOURCE.md (6) · method paraphrased from Atlas skills under MIT/Apache-2.0; the skills keep their own licenses — see each folder's SOURCE.md (3) · method paraphrased from Atlas skills under check per-plugin; the skills keep their own licenses — see each folder's SOURCE.md (2) · method paraphrased from Atlas skills under Apache-2.0 / MIT (no copyleft seen among supporting ids); the skills keep their own licenses — see each folder's SOURCE.md (1) · method paraphrased from Atlas skills under Apache-2.0; the skills keep their own licenses — see each folder's SOURCE.md (1) · method paraphrased from Atlas skills under MIT (no copyleft seen among supporting ids); the skills keep their own licenses — see each folder's SOURCE.md (1) · method paraphrased from Atlas skills under mixed MIT/Apache; the skills keep their own licenses — see each folder's SOURCE.md (1)
 - الأفكار مكتوبة بكلماتنا مع رابط المصدر؛ لا يُنسخ نص طرف ثالث طويل. Ideas are paraphrased with a link to the source; no long third-party text is copied. `—` = no licence recorded (own method or own wording).
 
 ---

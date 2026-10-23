@@ -29,7 +29,7 @@ claude_ai_description: "Shows Claude its real powers in this session and how to 
 Trigger: substantial L2/L3 task requiring deeper reasoning, explicit @kosif see Pro, or user requests merging SEE capabilities. After reading the single canonical PROTOCOL.md and its trigger matrix, open references/protocol/A12-see-pro-cognitive-fusion.md. Integrate SEE 11 Stage-0 lenses, all nine *covered-by-routing* method domains, independent critical review, causal assumption tests, three distinct plans, numeric determinism and project-isolated FusionForge evidence memory. Load only smallest relevant SEE packs (normal <=2 total, <=1 dynamic; Deep/Full Pro <=4, <=2 dynamic). One method pack never proves an executor or Full Pro. C500 roster metadata/Einstein/Jev are external roles with request-bound receipts, not installed in this repository. For complex structured decision packets use scripts/see_pro_cognitive_gate.py --self-test or check --file PACKET.json; a PASS checks structure and evidence metadata only. Never auto-copy proprietary SEE plugin code, private payloads or cross-company knowledge. 
 
 
-**الفكرة:** أنت تقدر أكثر مما تتذكر. هذه المهارة تعرّفك بقدراتك الحقيقية في هذه الجلسة، وبالمكتبات التي تثبّتها بأمر واحد، وبطرق تفكير وإبداع وتحقق مجرَّبة، ثم بكتالوج من 5,426 قدرة لكل منها وصفة ومستلزمات ودليل. اعرف قوتك، ثم استخدمها بثقة وصدق.
+**الفكرة:** أنت تقدر أكثر مما تتذكر. هذه المهارة تعرّفك بقدراتك الحقيقية في هذه الجلسة، وبالمكتبات التي تثبّتها بأمر واحد، وبطرق تفكير وإبداع وتحقق مجرَّبة، ثم بكتالوج من 5,480 قدرة لكل منها وصفة ومستلزمات ودليل. اعرف قوتك، ثم استخدمها بثقة وصدق.
 
 ## FusionForge Shared Memory v1 — cross-project structural learning (opt-in only)
 
@@ -45,7 +45,7 @@ For Arabic/Latin font choice, logo lettering, posters, editorial or kinetic type
 
 ## Atlas Deep Fusion — 14,793 metadata records, on-demand and license-aware
 
-When asked to discover, assess or fuse external **KOSIF Atlas** skills, preserve the existing KOSIF-native 5,426-power catalog as the primary route. Then run the standalone, read-only selector in `scripts/atlas_deep_fusion.py` against an authorized local checkout of Atlas `index.json` and `index-copyleft.json`. Supply `--query`, optionally `--domain`, and `--source-root` only for checked-out source-text inspection. See [Atlas Deep Fusion and test evidence](references/atlas-deep-fusion-20261020.md) and [34 source-text samples](data/atlas-source-samples-20261020.json). Use the selected upstream URL, license, risk flags and SKILL.md evidence to decide which *method ideas* might improve Superpowers; never treat index presence or `READ_ONLY_OK` as installation permission, executable availability, or safety certification. Do not auto-run external skill scripts or copy copyleft/proprietary executors. REA/Ghidra are for shipped software artifacts when technically applicable, not for decompiling Markdown.
+When asked to discover, assess or fuse external **KOSIF Atlas** skills, preserve the existing KOSIF-native 5,480-power catalog as the primary route. Then run the standalone, read-only selector in `scripts/atlas_deep_fusion.py` against an authorized local checkout of Atlas `index.json` and `index-copyleft.json`. Supply `--query`, optionally `--domain`, and `--source-root` only for checked-out source-text inspection. See [Atlas Deep Fusion and test evidence](references/atlas-deep-fusion-20261020.md) and [34 source-text samples](data/atlas-source-samples-20261020.json). Use the selected upstream URL, license, risk flags and SKILL.md evidence to decide which *method ideas* might improve Superpowers; never treat index presence or `READ_ONLY_OK` as installation permission, executable availability, or safety certification. Do not auto-run external skill scripts or copy copyleft/proprietary executors. REA/Ghidra are for shipped software artifacts when technically applicable, not for decompiling Markdown.
 
 ## Atlas Stratified Source Methods — verified provenance, not executable imports
 
@@ -169,8 +169,8 @@ The owner's GitHub account holds 25 repositories; [references/owned-repos-map.md
 
 **The idea:** most failures are not lack of ability but not knowing the ability is there. This skill makes your real powers visible, then gives you the method to use them well. Commands below use `$SKILL_DIR`: set it once with `SKILL_DIR=.claude/skills/kosif-superpowers` from the kosif-tool repo root, or `SKILL_DIR=.` inside the skill folder (links stay relative to this file).
 
-<!-- counts: powers=5426 families=62 domains=10 styles=289 watched=254 proven=930 ready=645 install=973 key=176 seen=609 documented=2022 idea=71 -->
-**الأرقام / counts:** 5,426 قدرة في 62 عائلة و10 مجالات — ✅ 930 · 🟢 645 · 📦 973 · 🔑 176 · 👁 609 · 📄 2,022 · 💡 71 · 289 أسلوبًا مرجعيًا (254 منها شوهد فيديوها). `python3 $SKILL_DIR/scripts/powers.py stats`
+<!-- counts: powers=5480 families=62 domains=10 styles=289 watched=254 proven=930 ready=645 install=973 key=176 seen=609 documented=2076 idea=71 -->
+**الأرقام / counts:** 5,480 قدرة في 62 عائلة و10 مجالات — ✅ 930 · 🟢 645 · 📦 973 · 🔑 176 · 👁 609 · 📄 2,076 · 💡 71 · 289 أسلوبًا مرجعيًا (254 منها شوهد فيديوها). `python3 $SKILL_DIR/scripts/powers.py stats`
 
 ## الفهرس / contents
 - [بروتوكول ذكاء المهارات الشامل / Universal Skill Intelligence Protocol](#00-بروتوكول-ذكاء-المهارات-الشامل--universal-skill-intelligence-protocol)
@@ -249,7 +249,7 @@ python3 $SKILL_DIR/scripts/hub.py doctor               # ما يعمل على ه
 | Sources and references / المصادر والمراجع | `atlas-external-bridge` · `atlas-body-audit` · `atlas-audit-synthesis` · `atlas-metadata-audit` · `browser-scout` · `creative-external-search` · `fetch-reference` · `fetch-video` · `stock-fetch` · `media-sources` · `rea-creative-research-atlas` · `rebalance-creative-repos` · `source-scout` · `superpowers` · `repo-ashell-cinema` · `stream-grabber` · `sources-index` |
 | Software investigation / فحص البرامج | `installer-triage` · `local-project-audit` · `rea-bridge` · `web-app-study` · `rea-family-router` · `rea-owned-repo-batch` · `repository-capability-packer` · `atlas-bulk-source-audit` · `atlas-deep-fusion` · `atlas-review-summary` · `atlas-reviewed-methods-v3` · `atlas-transfer` · `differential-exam` |
 | Local computer / الجهاز المحلي | `kosif-remote-commander` |
-| Maintain and build / الصيانة والبناء | `build-chapters` · `catalog-evidence-audit` · `check-skill` · `skill-layout` · `package-skill` · `relabel-proofs` · `repo-build` · `repo-check-originality` · `repo-import-briefs` · `repo-sync-catalog` · `repo-validate` |
+| Maintain and build / الصيانة والبناء | `build-chapters` · `catalog-evidence-audit` · `check-skill` · `skill-layout` · `package-skill` · `relabel-proofs` · `repo-build` · `repo-check-originality` · `repo-import-briefs` · `repo-sync-catalog` · `repo-validate` · `rea-superpowers-map` |
 <!-- hub:tools:end -->
 
 | افتح الدليل حين… / open the guide when… | الدليل / guide |

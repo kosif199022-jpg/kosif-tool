@@ -91,7 +91,7 @@ How to think, ideate, decide, write and check before and after acting. A24 is th
 
 The capability catalog in human form: fused superpowers, hubs, groups, maps, audits, requirements and what this machine can run.
 
-`catalog` · 19 file(s) · planned folder `references/catalog/`
+`catalog` · 21 file(s) · planned folder `references/catalog/`
 
 - [references/superpowers.md](superpowers.md) · pinned (fixed path)
 - [references/hubs.md](hubs.md) · pinned (fixed path)
@@ -112,6 +112,8 @@ The capability catalog in human form: fused superpowers, hubs, groups, maps, aud
 - [references/claude-auto-local-first.md](claude-auto-local-first.md)
 - [references/remote-commander-mcp.md](remote-commander-mcp.md)
 - [references/owned-repos-map.md](owned-repos-map.md)
+- [references/superpowers-rea-map.md](superpowers-rea-map.md)
+- [references/superpowers-rea-map.html](superpowers-rea-map.html)
 
 ## 5. فصول القدرات المولّدة / Generated power chapters
 
@@ -296,7 +298,7 @@ Reverse engineering, code graphs, harnesses, repository and app capability trans
 
 Point-in-time research and audit receipts. Evidence, not instructions: re-check live before relying on a number.
 
-`studies` · 18 file(s) · planned folder `references/studies/`
+`studies` · 19 file(s) · planned folder `references/studies/`
 
 - [references/REA_CREATIVE_DISCOVERY_2000_20261019.md](REA_CREATIVE_DISCOVERY_2000_20261019.md)
 - [references/atlas-deep-fusion-20261020.md](atlas-deep-fusion-20261020.md)
@@ -316,3 +318,4 @@ Point-in-time research and audit receipts. Evidence, not instructions: re-check 
 - [references/atlas-reviewed-audit.md](atlas-reviewed-audit.md)
 - [references/owner-uploads-review-20261023.md](owner-uploads-review-20261023.md)
 - [references/codex-repos-study-20261023.md](codex-repos-study-20261023.md)
+- [references/rea-superpowers-frontier-20261023.md](rea-superpowers-frontier-20261023.md)

@@ -2992,5 +2992,108 @@
    "stage": "extracted",
    "verified_by": "b043-git-release-2.json"
   }
+ },
+ {
+  "id": "ABUILD-51",
+  "family": "atlas-build",
+  "domain": "build",
+  "name_ar": "صياغة التذاكر وأوصاف PR بهيكل ماذا/لماذا/كيف",
+  "name_en": "What/Why/How ticket and PR drafting",
+  "status": "documented",
+  "what": "يكتب جسم تذكرة أو بلاغ خطأ أو وصف PR بثلاثة أقسام ثابتة ولغة محايدة إيجابية بلا وعود. — Writes an issue, bug report or PR body in three fixed sections with neutral, affirmative wording and no unbacked claims.",
+  "when": "كتابة issue أو وصف PR أو مهمة إعادة هيكلة / drafting an issue, bug report, PR description or migration task",
+  "how": "1) What: 1-3 sentences on the subject, with links to related issues and official docs. 2) Why: the problem or opportunity and its background, linked to the discussion. 3) How: one concrete action per bullet, in order, ending in verifiable acceptance criteria. 4) Say what to do rather than what to avoid; state facts without superlatives, percentages or time estimates. 5) Before posting check every link resolves and the Markdown renders; read the repo's PR template first.",
+  "params": "type: feature|bug|refactor",
+  "install": "",
+  "requires": [],
+  "license": "method paraphrased from Atlas skills under MIT; the skills keep their own licenses — see each folder's SOURCE.md",
+  "proof": [
+   "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/2143-communication-plugin/7664-ticket-drafting-guidelines"
+  ],
+  "proof_scope": "url",
+  "styles": [],
+  "tags": [
+   "ticket",
+   "issue",
+   "PR description",
+   "تذكرة",
+   "وصف طلب الدمج",
+   "What/Why/How"
+  ],
+  "section": "تكاملات الإنتاجية — Productivity & SaaS integrations",
+  "source": "KOSIF Atlas frontier mining 2026-10-23 (https://github.com/kosif199022-jpg/kosif-atlas @ 99bb108d): communication-plugin/ticket-drafting-guidelines (#7664) · theme productivity-integrations · SKILL.md read in full as inert text: skills/2143-communication-plugin/7664-ticket-drafting-guidelines",
+  "atlas": {
+   "ids": [
+    "7664"
+   ],
+   "examples": [
+    {
+     "id": "7664",
+     "plugin": "communication-plugin",
+     "skill": "ticket-drafting-guidelines",
+     "url": "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/2143-communication-plugin/7664-ticket-drafting-guidelines"
+    }
+   ],
+   "theme": "productivity-integrations",
+   "risk_notes": "Method guidance only; no Atlas code imported or executed.",
+   "kosif_overlap_ids": [],
+   "stage": "extracted",
+   "verified_by": "atlas-frontier-mining-20261023.json",
+   "skill_md_sha256": {
+    "7664": "07db14544d48a1e3744825f902005e984da4e9916f2bdcab95c650837dba2603"
+   }
+  }
+ },
+ {
+  "id": "ABUILD-52",
+  "family": "atlas-build",
+  "domain": "build",
+  "name_ar": "فرز أعطال الاتصال حسب مجال الخطأ دون تغيير الإعدادات",
+  "name_en": "Fault-domain connectivity triage without touching config",
+  "status": "documented",
+  "what": "يحدد مكان عطل الشبكة (الشبكة المحلية، DNS، المسار، الخدمة نفسها) بأقل الأدلة وبأوامر قراءة فقط. — Localises a live connectivity failure to LAN, DNS, upstream path or the remote service with bounded, read-only probes.",
+  "when": "API أو خادم MCP ينقطع، DNS متقلب، فقدان حزم / an API or MCP server times out, DNS is flaky, calls drop packets",
+  "how": "1) Record the exact affected host/URL, start time, continuous or intermittent, and whether other sites work. 2) Compare a 5-packet ping to a known local target with one to the destination (never invent a gateway). 3) Separate resolver configuration (scutil --dns / resolvectl) from query behaviour (dig +time=2 +tries=1). 4) Bounded traceroute -n -q 1 -m 20 only if path visibility reduces doubt; a silent hop is not a broken hop. 5) Time the real endpoint with curl -w dns/connect/tls/ttfb/total and timeouts. 6) Label each line Observed / Inferred / Unknown and return one fault domain with low/medium/high confidence plus the single next safest check; no restarts, DNS flushes or firewall edits during diagnosis.",
+  "params": "host, symptom window",
+  "install": "",
+  "requires": [],
+  "license": "method paraphrased from Atlas skills under MIT; the skills keep their own licenses — see each folder's SOURCE.md",
+  "proof": [
+   "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/3494-incident-response/14217-connectivity-triage"
+  ],
+  "proof_scope": "url",
+  "styles": [],
+  "tags": [
+   "network",
+   "DNS",
+   "latency",
+   "شبكة",
+   "انقطاع",
+   "MCP timeout",
+   "triage"
+  ],
+  "section": "تكاملات الإنتاجية — Productivity & SaaS integrations",
+  "source": "KOSIF Atlas frontier mining 2026-10-23 (https://github.com/kosif199022-jpg/kosif-atlas @ 99bb108d): incident-response/connectivity-triage (#14217) · theme productivity-integrations · SKILL.md read in full as inert text: skills/3494-incident-response/14217-connectivity-triage",
+  "atlas": {
+   "ids": [
+    "14217"
+   ],
+   "examples": [
+    {
+     "id": "14217",
+     "plugin": "incident-response",
+     "skill": "connectivity-triage",
+     "url": "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/3494-incident-response/14217-connectivity-triage"
+    }
+   ],
+   "theme": "productivity-integrations",
+   "risk_notes": "Method guidance only; no Atlas code imported or executed.",
+   "kosif_overlap_ids": [],
+   "stage": "extracted",
+   "verified_by": "atlas-frontier-mining-20261023.json",
+   "skill_md_sha256": {
+    "14217": "08cd3ebe37f8ea4d623e23f61f78f06ab897e69b19865ddf370e6d4f89df2c2b"
+   }
+  }
  }
 ]

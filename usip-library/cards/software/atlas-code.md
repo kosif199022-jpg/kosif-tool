@@ -1,4 +1,4 @@
-# `atlas-code` — البرمجة وبناء التطبيقات (226 بطاقة)
+# `atlas-code` — البرمجة وبناء التطبيقات (237 بطاقة)
 
 > مكتبة بروتوكول USIP v5.5 الكاملة، مولّدة بـ `smart_capabilities.py cards` من `data/powers/atlas-code.json` وقواعد الملاحق A25–A29؛ لا تُحرَّر يدويًا. [الفهرس الرئيسي](../../README.md) · [فصل المجموعة](../../../.claude/skills/kosif-superpowers/references/library/software.md) · [النواة](../../../.claude/skills/kosif-superpowers/PROTOCOL.md)
 
@@ -153,7 +153,18 @@
 - [`ACODE-224` قياس التحسين مقابل خط أساس مُلتقط قبل التغيير](#acode-224--قياس-التحسين-مقابل-خط-أساس-مُلتقط-قبل-التغيير--measure-improvement-against-a-baseline-captured-before)
 - [`ACODE-225` jq: نموذج المرشّح لتدفق JSON](#acode-225--jq-نموذج-المرشّح-لتدفق-json--jq-filter-mental-model-for-json-streams)
 - [`ACODE-226` تصميم تطبيقات Apple: اختر المسار أولاً](#acode-226--تصميم-تطبيقات-apple-اختر-المسار-أولاً--apple-platform-design-choose-the-track-first)
+- [`ACODE-227` ضبط ruff للفحص والتنسيق دون فخ select](#acode-227--ضبط-ruff-للفحص-والتنسيق-دون-فخ-select--ruff-lint-and-format-without-the-select-trap)
+- [`ACODE-228` إدارة مشاريع بايثون والسكربتات ببرنامج uv](#acode-228--إدارة-مشاريع-بايثون-والسكربتات-ببرنامج-uv--python-projects-scripts-and-tools-with-uv)
+- [`ACODE-229` اختيار طريقة مواءمة التفضيلات DPO/ORPO/KTO/SimPO](#acode-229--اختيار-طريقة-مواءمة-التفضيلات-dpoorpoktosimpo--choosing-dpo-orpo-kto-or-simpo-for-preference-tuning)
 - [`ACODE-23` قائمة صمود الخلفية أمام الاعتماديات](#acode-23--قائمة-صمود-الخلفية-أمام-الاعتماديات--backend-resilience-checklist-for-dependencies)
+- [`ACODE-230` تصميم خادم MCP: نموذج النشر ونمط الأدوات قبل الكود](#acode-230--تصميم-خادم-mcp-نموذج-النشر-ونمط-الأدوات-قبل-الكود--mcp-server-design-deployment-model-and-tool-pattern-before-code)
+- [`ACODE-231` تدقيق كل الترقيات الممكنة بمصفوفة مخاطرة/عائد قبل التطبيق](#acode-231--تدقيق-كل-الترقيات-الممكنة-بمصفوفة-مخاطرةعائد-قبل-التطبيق--upgrade-everything-audit-with-a-riskreward-matrix)
+- [`ACODE-232` كشف الاختبارات الخضراء الكاذبة](#acode-232--كشف-الاختبارات-الخضراء-الكاذبة--false-green-test-detection)
+- [`ACODE-233` اختبار في فضاء مصغّر: تفكيك ادعاء التكافؤ قبل التجربة](#acode-233--اختبار-في-فضاء-مصغّر-تفكيك-ادعاء-التكافؤ-قبل-التجربة--reduced-space-test-decompose-the-equivalence-claim-first)
+- [`ACODE-234` اختبار استكشافي لتطبيق ويب بأدلة إعادة إنتاج كاملة](#acode-234--اختبار-استكشافي-لتطبيق-ويب-بأدلة-إعادة-إنتاج-كاملة--exploratory-web-app-qa-with-full-repro-evidence)
+- [`ACODE-235` تدقيق الامتثال لـ GDPR انطلاقًا من جرد البيانات الشخصية](#acode-235--تدقيق-الامتثال-لـ-gdpr-انطلاقًا-من-جرد-البيانات-الشخصية--gdpr-review-built-on-a-personal-data-inventory)
+- [`ACODE-236` دليل سردي لمستودع غير مألوف للمساهمين الجدد](#acode-236--دليل-سردي-لمستودع-غير-مألوف-للمساهمين-الجدد--narrative-codebase-guide-for-newcomers)
+- [`ACODE-237` تثبيت كل أسطح الإصدارات لتقوية سلسلة التوريد](#acode-237--تثبيت-كل-أسطح-الإصدارات-لتقوية-سلسلة-التوريد--pin-every-version-surface-for-supply-chain-hardening)
 - [`ACODE-24` أنماط خدمات الواجهة الخلفية بعدة لغات](#acode-24--أنماط-خدمات-الواجهة-الخلفية-بعدة-لغات--backend-service-patterns-node-go-net-django)
 - [`ACODE-25` اختيار وتخزين مفاتيح الـAPI بأمان](#acode-25--اختيار-وتخزين-مفاتيح-الـapi-بأمان--choose-and-store-api-credentials-safely)
 - [`ACODE-26` اختيار واجهة Zoom المناسبة](#acode-26--اختيار-واجهة-zoom-المناسبة--choose-zoom-surface-rest-webhooks-websocket-sdk)
@@ -10691,7 +10702,7 @@
 - `ACODE-223` أداء الويب: الكمون قبل عرض النطاق / Web performance: latency before bandwidth (documented)
 - `ACODE-224` قياس التحسين مقابل خط أساس مُلتقط قبل التغيير / Measure improvement against a baseline captured before (documented)
 - `ACODE-226` تصميم تطبيقات Apple: اختر المسار أولاً / Apple platform design: choose the track first (documented)
-- `ACODE-23` قائمة صمود الخلفية أمام الاعتماديات / Backend resilience checklist for dependencies (documented)
+- `ACODE-227` ضبط ruff للفحص والتنسيق دون فخ select / ruff lint and format without the select trap (documented)
 
 ### `ACODE-226` — تصميم تطبيقات Apple: اختر المسار أولاً / Apple platform design: choose the track first
 
@@ -10762,8 +10773,220 @@
 
 - `ACODE-224` قياس التحسين مقابل خط أساس مُلتقط قبل التغيير / Measure improvement against a baseline captured before (documented)
 - `ACODE-225` jq: نموذج المرشّح لتدفق JSON / jq filter mental model for JSON streams (documented)
+- `ACODE-227` ضبط ruff للفحص والتنسيق دون فخ select / ruff lint and format without the select trap (documented)
+- `ACODE-228` إدارة مشاريع بايثون والسكربتات ببرنامج uv / Python projects, scripts and tools with uv (documented)
+
+### `ACODE-227` — ضبط ruff للفحص والتنسيق دون فخ select / ruff lint and format without the select trap
+
+| الحقل | القيمة |
+|---|---|
+| العائلة | `atlas-code` ([فصل العائلة](../../../.claude/skills/kosif-superpowers/references/powers/atlas-code.md)) |
+| المجموعة | البرمجة وبناء التطبيقات (`software`) |
+| نوع المخرج (A25، A27) | كود وتطبيقات ومواقع (`code`) |
+| الحالة في الكتالوج | 📄 `documented`: منهج موصوف يحتاج بناءً أو ربطًا قبل التشغيل |
+| سقف التحقق قبل العمل (A27) | V1 حتى تُبنى وتُشغَّل؛ لا تقدَّم جاهزة أبدًا |
+| نطاق الدليل | `url` |
+| الرخصة | method paraphrased from Atlas skills under MIT; the skills keep their own licenses — see each folder's SOURCE.md |
+
+**ما هي:** يعتمد ruff كفاحص ومنسق لبايثون مع فهم أن select يستبدل القواعد الافتراضية ولا يضيف إليها. — Adopts ruff as Python linter and formatter, knowing that select replaces the default rule set while extend-select adds to it.
+
+**متى:** إعداد فحص كود بايثون أو الانتقال من flake8/black/isort / setting up Python lint, migrating from flake8/black/isort
+
+**كيف:** 1) Pin the version (required-version / pre-commit rev): ruff 0.x treats a minor bump as breaking. 2) Add categories with extend-select, subtract with ignore; use select only for a locked list. 3) Run ruff check --fix then ruff format (format does not sort imports; the I rules do). 4) In CI: ruff check (exit 1 = violations, exit 2 = broken config) and ruff format --check. 5) Look rules up with ruff rule CODE, never guess; prefer # noqa: CODE over blanket noqa. 6) Remember config is nearest-file-wins (use extend to share) and that recent ruff also formats Python blocks in Markdown.
+
+**المعاملات:** ruff version
+
+**التثبيت:** لا خطوة تثبيت مسجلة
+
+**الوسوم:** ruff · lint · python · فحص الكود · formatter · flake8
+
+#### 1. الاستقبال (A25)
+
+- اللغة والإطار: افتراض مكتوب ← لغة المستودع الموجود، وإلا Python أو HTML/JS بلا اعتماديات
+- أين يعمل: افتراض مكتوب ← المتصفح أو سطر الأوامر حسب المخرج
+- مستودع أو ملفات موجودة: سؤال بإجابة مقترحة ← مشروع جديد مستقل
+- متى يكون ناجحًا: افتراض مكتوب ← الاختبارات الموجودة تمر + اختبار لكل سلوك جديد
+- لا تُفترض أبدًا: مادة الإنتاج نفسها، والإذن بخطوة مدفوعة أو منشورة أو لا رجعة فيها، والهوية والحقوق.
+
+#### 2. الجاهزية والشارة (A28)
+
+- `python3` ← افحص وجوده بأمر واحد قبل كتابة الشارة
+- الوضع 1: شارة «هنا الآن» بعد الفحص، لا 📄 الكتالوج تلقائيًا · الوضع 2: `كتالوج: 📄 · هنا: غير مفحوص` · الوضع 3: بلا شارة ولا معرّف.
+
+#### 3. موضعها في الخطة (A26)
+
+- عقدة منمّطة: المدخل `spec` ← المخرج `code`، والمنفّذ `method:ACODE-227` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
+- لا أداة مسجلة تخدم عائلتها: التنفيذ بالمكتبات أو بأداة من مجموعة أخرى.
+- مراحل النوع: قراءة الكود والاختبارات ← إعادة إنتاج أو اختبار جديد ← أصغر تغيير ← الاختبارات ← مراجعة الفرق ← فرع وPR.
+- إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
+
+#### 4. بوابة التحقق (A27)
+
+- إلزامي: الاختبارات الموجودة تمر قبل التعديل وبعده ← أمر الاختبار
+- إلزامي: اختبار لكل سلوك جديد أو خطأ مُصلح ← الاختبار الجديد يفشل قبل الإصلاح
+- إلزامي: لا أسرار ولا مسارات جلسة في الشيفرة ← بحث أنماط الأسرار
+- جودة: يطابق أسلوب الكود المحيط وتسمياته ← مراجعة الفرق
+- جودة: طريقة تشغيل مكتوبة ومجرَّبة ← تشغيل الأمر المكتوب
+- جودة: الفرق أصغر ما يحقق الطلب بلا إعادة كتابة غير مطلوبة ← git diff --stat
+- جودة: المدخل الخاطئ يعطي خطأ واضحًا لا انهيارًا صامتًا ← تشغيل بمدخل خاطئ
+- أمر الحكم في الوضع 1: `think.py qa code --answers qa.json` (PASS / FAIL / INCOMPLETE).
+
+#### 5. التعافي (A29)
+
+- `missing_dependency` (اعتمادية مفقودة، ميزانية 2): سمِّ الاعتمادية بالضبط (حزمة، برنامج، خط، نموذج) ← ثبّت محليًا في بيئة العمل إن كان مجانيًا ومسموحًا (pip --user أو venv أو npm محلي) · البديل: مسار المكتبة القياسية أو أداة أخرى من نفس المجموعة · تصعيد: تثبيت نظامي أو مدفوع أو يحتاج مفتاحًا: توقف واسأل
+- `quality_below_threshold` (جودة دون العتبة، ميزانية 3): أي معيار فشل وبكم (المقيس مقابل العتبة) ← عالج السبب الأكبر وحده ثم أعد القياس · البديل: المنهج البديل المكتوب للمرحلة في الخطة · تصعيد: معيار إلزامي لا يتحقق بعد البديل: توقف وأبلغ بالأرقام
+
+#### 6. الأدلة
+
+- `https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/1262-ruff/2942-ruff`
+
+#### 7. قدرات قريبة في العائلة
+
+- `ACODE-225` jq: نموذج المرشّح لتدفق JSON / jq filter mental model for JSON streams (documented)
+- `ACODE-226` تصميم تطبيقات Apple: اختر المسار أولاً / Apple platform design: choose the track first (documented)
+- `ACODE-228` إدارة مشاريع بايثون والسكربتات ببرنامج uv / Python projects, scripts and tools with uv (documented)
+- `ACODE-229` اختيار طريقة مواءمة التفضيلات DPO/ORPO/KTO/SimPO / Choosing DPO, ORPO, KTO or SimPO for preference tuning (documented)
+
+### `ACODE-228` — إدارة مشاريع بايثون والسكربتات ببرنامج uv / Python projects, scripts and tools with uv
+
+| الحقل | القيمة |
+|---|---|
+| العائلة | `atlas-code` ([فصل العائلة](../../../.claude/skills/kosif-superpowers/references/powers/atlas-code.md)) |
+| المجموعة | البرمجة وبناء التطبيقات (`software`) |
+| نوع المخرج (A25، A27) | كود وتطبيقات ومواقع (`code`) |
+| الحالة في الكتالوج | 📄 `documented`: منهج موصوف يحتاج بناءً أو ربطًا قبل التشغيل |
+| سقف التحقق قبل العمل (A27) | V1 حتى تُبنى وتُشغَّل؛ لا تقدَّم جاهزة أبدًا |
+| نطاق الدليل | `url` |
+| الرخصة | method paraphrased from Atlas skills under MIT; the skills keep their own licenses — see each folder's SOURCE.md |
+
+**ما هي:** يدير الحزم والبيئات وإصدارات بايثون بأداة واحدة: مشروع بملف قفل شامل، سكربتات PEP 723، وأدوات عابرة بـ uvx. — Manages packages, environments and Python versions with one tool: locked projects, PEP 723 scripts and one-off tools via uvx.
+
+**متى:** إعداد مشروع بايثون، تشغيل سكربت باعتمادياته، CI قابل للتكرار / new Python project, running a script with its deps, reproducible CI
+
+**كيف:** 1) Project: uv init, uv add PKG (updates pyproject, uv.lock and .venv together), uv run CMD; commit uv.lock, ignore .venv. 2) Single script: declare deps in a # /// script block and run uv run script.py in an ephemeral env. 3) One-off tools: uvx TOOL@version; persistent: uv tool install. 4) CI: uv lock --check, then uv sync --frozen and uv run --frozen pytest. 5) Pin Python with uv python pin; treat uv minor bumps as breaking and check uv --version. 6) uv pip is a separate pip-compatible interface that never touches pyproject or the lock.
+
+**المعاملات:** python version
+
+**التثبيت:** لا خطوة تثبيت مسجلة
+
+**الوسوم:** uv · python · packaging · حزم بايثون · venv · PEP 723 · lockfile
+
+#### 1. الاستقبال (A25)
+
+- اللغة والإطار: افتراض مكتوب ← لغة المستودع الموجود، وإلا Python أو HTML/JS بلا اعتماديات
+- أين يعمل: افتراض مكتوب ← المتصفح أو سطر الأوامر حسب المخرج
+- مستودع أو ملفات موجودة: سؤال بإجابة مقترحة ← مشروع جديد مستقل
+- متى يكون ناجحًا: افتراض مكتوب ← الاختبارات الموجودة تمر + اختبار لكل سلوك جديد
+- لا تُفترض أبدًا: مادة الإنتاج نفسها، والإذن بخطوة مدفوعة أو منشورة أو لا رجعة فيها، والهوية والحقوق.
+
+#### 2. الجاهزية والشارة (A28)
+
+- `python3` ← افحص وجوده بأمر واحد قبل كتابة الشارة
+- الوضع 1: شارة «هنا الآن» بعد الفحص، لا 📄 الكتالوج تلقائيًا · الوضع 2: `كتالوج: 📄 · هنا: غير مفحوص` · الوضع 3: بلا شارة ولا معرّف.
+
+#### 3. موضعها في الخطة (A26)
+
+- عقدة منمّطة: المدخل `spec` ← المخرج `code`، والمنفّذ `method:ACODE-228` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
+- لا أداة مسجلة تخدم عائلتها: التنفيذ بالمكتبات أو بأداة من مجموعة أخرى.
+- مراحل النوع: قراءة الكود والاختبارات ← إعادة إنتاج أو اختبار جديد ← أصغر تغيير ← الاختبارات ← مراجعة الفرق ← فرع وPR.
+- إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
+
+#### 4. بوابة التحقق (A27)
+
+- إلزامي: الاختبارات الموجودة تمر قبل التعديل وبعده ← أمر الاختبار
+- إلزامي: اختبار لكل سلوك جديد أو خطأ مُصلح ← الاختبار الجديد يفشل قبل الإصلاح
+- إلزامي: لا أسرار ولا مسارات جلسة في الشيفرة ← بحث أنماط الأسرار
+- جودة: يطابق أسلوب الكود المحيط وتسمياته ← مراجعة الفرق
+- جودة: طريقة تشغيل مكتوبة ومجرَّبة ← تشغيل الأمر المكتوب
+- جودة: الفرق أصغر ما يحقق الطلب بلا إعادة كتابة غير مطلوبة ← git diff --stat
+- جودة: المدخل الخاطئ يعطي خطأ واضحًا لا انهيارًا صامتًا ← تشغيل بمدخل خاطئ
+- أمر الحكم في الوضع 1: `think.py qa code --answers qa.json` (PASS / FAIL / INCOMPLETE).
+
+#### 5. التعافي (A29)
+
+- `missing_dependency` (اعتمادية مفقودة، ميزانية 2): سمِّ الاعتمادية بالضبط (حزمة، برنامج، خط، نموذج) ← ثبّت محليًا في بيئة العمل إن كان مجانيًا ومسموحًا (pip --user أو venv أو npm محلي) · البديل: مسار المكتبة القياسية أو أداة أخرى من نفس المجموعة · تصعيد: تثبيت نظامي أو مدفوع أو يحتاج مفتاحًا: توقف واسأل
+- `quality_below_threshold` (جودة دون العتبة، ميزانية 3): أي معيار فشل وبكم (المقيس مقابل العتبة) ← عالج السبب الأكبر وحده ثم أعد القياس · البديل: المنهج البديل المكتوب للمرحلة في الخطة · تصعيد: معيار إلزامي لا يتحقق بعد البديل: توقف وأبلغ بالأرقام
+
+#### 6. الأدلة
+
+- `https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/1273-uv/2951-uv`
+
+#### 7. قدرات قريبة في العائلة
+
+- `ACODE-226` تصميم تطبيقات Apple: اختر المسار أولاً / Apple platform design: choose the track first (documented)
+- `ACODE-227` ضبط ruff للفحص والتنسيق دون فخ select / ruff lint and format without the select trap (documented)
+- `ACODE-229` اختيار طريقة مواءمة التفضيلات DPO/ORPO/KTO/SimPO / Choosing DPO, ORPO, KTO or SimPO for preference tuning (documented)
 - `ACODE-23` قائمة صمود الخلفية أمام الاعتماديات / Backend resilience checklist for dependencies (documented)
-- `ACODE-24` أنماط خدمات الواجهة الخلفية بعدة لغات / Backend service patterns: Node, Go, .NET, Django (documented)
+
+### `ACODE-229` — اختيار طريقة مواءمة التفضيلات DPO/ORPO/KTO/SimPO / Choosing DPO, ORPO, KTO or SimPO for preference tuning
+
+| الحقل | القيمة |
+|---|---|
+| العائلة | `atlas-code` ([فصل العائلة](../../../.claude/skills/kosif-superpowers/references/powers/atlas-code.md)) |
+| المجموعة | البرمجة وبناء التطبيقات (`software`) |
+| نوع المخرج (A25، A27) | كود وتطبيقات ومواقع (`code`) |
+| الحالة في الكتالوج | 📄 `documented`: منهج موصوف يحتاج بناءً أو ربطًا قبل التشغيل |
+| سقف التحقق قبل العمل (A27) | V1 حتى تُبنى وتُشغَّل؛ لا تقدَّم جاهزة أبدًا |
+| نطاق الدليل | `url` |
+| الرخصة | method paraphrased from Atlas skills under MIT; the skills keep their own licenses — see each folder's SOURCE.md |
+
+**ما هي:** يختار طريقة مواءمة النموذج بالتفضيلات حسب شكل البيانات، ويعرف أن اختيار دالة الخسارة رافعة صغيرة مقارنة بالحجم وجودة البيانات. — Picks a preference-alignment method by data shape, knowing that loss choice is a small lever next to scale and data quality.
+
+**متى:** بيانات تفضيل أو إعجاب/عدم إعجاب بعد SFT، تشغيل DPO يحتاج إعدادات / preference pairs or thumbs-up/down after SFT, a DPO run needing settings
+
+**كيف:** 1) Paired preferences: DPO with beta 0.1, LR 5e-7 to 1e-6 (lower than the SFT LR), 1-2 epochs. 2) Memory-bound or no SFT checkpoint: ORPO (reference-free). 3) Unpaired thumbs: KTO; never fabricate pairs to force DPO. 4) Length bias plus a real sweep budget: SimPO; otherwise stay with DPO; skip reward-model+PPO. 5) Run iteratively on-policy: sample from the current checkpoint, score, DPO with it as reference, repeat. 6) Build pairs from passing vs failing attempts at the same task, taking the rejected one near mean minus 2 sigma of reward, not the worst. If general ability drops, lower the LR first.
+
+**المعاملات:** data shape
+
+**التثبيت:** لا خطوة تثبيت مسجلة
+
+**الوسوم:** DPO · preference optimization · alignment · مواءمة · KTO · ORPO
+
+#### 1. الاستقبال (A25)
+
+- اللغة والإطار: افتراض مكتوب ← لغة المستودع الموجود، وإلا Python أو HTML/JS بلا اعتماديات
+- أين يعمل: افتراض مكتوب ← المتصفح أو سطر الأوامر حسب المخرج
+- مستودع أو ملفات موجودة: سؤال بإجابة مقترحة ← مشروع جديد مستقل
+- متى يكون ناجحًا: افتراض مكتوب ← الاختبارات الموجودة تمر + اختبار لكل سلوك جديد
+- لا تُفترض أبدًا: مادة الإنتاج نفسها، والإذن بخطوة مدفوعة أو منشورة أو لا رجعة فيها، والهوية والحقوق.
+
+#### 2. الجاهزية والشارة (A28)
+
+- لا متطلبات مسجلة؛ افحص المسار والأداة بـ `hub.py doctor` قبل الشارة.
+- الوضع 1: شارة «هنا الآن» بعد الفحص، لا 📄 الكتالوج تلقائيًا · الوضع 2: `كتالوج: 📄 · هنا: غير مفحوص` · الوضع 3: بلا شارة ولا معرّف.
+
+#### 3. موضعها في الخطة (A26)
+
+- عقدة منمّطة: المدخل `spec` ← المخرج `code`، والمنفّذ `method:ACODE-229` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
+- لا أداة مسجلة تخدم عائلتها: التنفيذ بالمكتبات أو بأداة من مجموعة أخرى.
+- مراحل النوع: قراءة الكود والاختبارات ← إعادة إنتاج أو اختبار جديد ← أصغر تغيير ← الاختبارات ← مراجعة الفرق ← فرع وPR.
+- إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
+
+#### 4. بوابة التحقق (A27)
+
+- إلزامي: الاختبارات الموجودة تمر قبل التعديل وبعده ← أمر الاختبار
+- إلزامي: اختبار لكل سلوك جديد أو خطأ مُصلح ← الاختبار الجديد يفشل قبل الإصلاح
+- إلزامي: لا أسرار ولا مسارات جلسة في الشيفرة ← بحث أنماط الأسرار
+- جودة: يطابق أسلوب الكود المحيط وتسمياته ← مراجعة الفرق
+- جودة: طريقة تشغيل مكتوبة ومجرَّبة ← تشغيل الأمر المكتوب
+- جودة: الفرق أصغر ما يحقق الطلب بلا إعادة كتابة غير مطلوبة ← git diff --stat
+- جودة: المدخل الخاطئ يعطي خطأ واضحًا لا انهيارًا صامتًا ← تشغيل بمدخل خاطئ
+- أمر الحكم في الوضع 1: `think.py qa code --answers qa.json` (PASS / FAIL / INCOMPLETE).
+
+#### 5. التعافي (A29)
+
+- `quality_below_threshold` (جودة دون العتبة، ميزانية 3): أي معيار فشل وبكم (المقيس مقابل العتبة) ← عالج السبب الأكبر وحده ثم أعد القياس · البديل: المنهج البديل المكتوب للمرحلة في الخطة · تصعيد: معيار إلزامي لا يتحقق بعد البديل: توقف وأبلغ بالأرقام
+
+#### 6. الأدلة
+
+- `https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/3104-llm-finetuning/13292-preference-optimization`
+
+#### 7. قدرات قريبة في العائلة
+
+- `ACODE-227` ضبط ruff للفحص والتنسيق دون فخ select / ruff lint and format without the select trap (documented)
+- `ACODE-228` إدارة مشاريع بايثون والسكربتات ببرنامج uv / Python projects, scripts and tools with uv (documented)
+- `ACODE-23` قائمة صمود الخلفية أمام الاعتماديات / Backend resilience checklist for dependencies (documented)
+- `ACODE-230` تصميم خادم MCP: نموذج النشر ونمط الأدوات قبل الكود / MCP server design: deployment model and tool pattern before code (documented)
 
 ### `ACODE-23` — قائمة صمود الخلفية أمام الاعتماديات / Backend resilience checklist for dependencies
 
@@ -10830,8 +11053,571 @@
 
 #### 7. قدرات قريبة في العائلة
 
-- `ACODE-225` jq: نموذج المرشّح لتدفق JSON / jq filter mental model for JSON streams (documented)
-- `ACODE-226` تصميم تطبيقات Apple: اختر المسار أولاً / Apple platform design: choose the track first (documented)
+- `ACODE-228` إدارة مشاريع بايثون والسكربتات ببرنامج uv / Python projects, scripts and tools with uv (documented)
+- `ACODE-229` اختيار طريقة مواءمة التفضيلات DPO/ORPO/KTO/SimPO / Choosing DPO, ORPO, KTO or SimPO for preference tuning (documented)
+- `ACODE-230` تصميم خادم MCP: نموذج النشر ونمط الأدوات قبل الكود / MCP server design: deployment model and tool pattern before code (documented)
+- `ACODE-231` تدقيق كل الترقيات الممكنة بمصفوفة مخاطرة/عائد قبل التطبيق / Upgrade-everything audit with a risk/reward matrix (documented)
+
+### `ACODE-230` — تصميم خادم MCP: نموذج النشر ونمط الأدوات قبل الكود / MCP server design: deployment model and tool pattern before code
+
+| الحقل | القيمة |
+|---|---|
+| العائلة | `atlas-code` ([فصل العائلة](../../../.claude/skills/kosif-superpowers/references/powers/atlas-code.md)) |
+| المجموعة | البرمجة وبناء التطبيقات (`software`) |
+| نوع المخرج (A25، A27) | كود وتطبيقات ومواقع (`code`) |
+| الحالة في الكتالوج | 📄 `documented`: منهج موصوف يحتاج بناءً أو ربطًا قبل التشغيل |
+| سقف التحقق قبل العمل (A27) | V1 حتى تُبنى وتُشغَّل؛ لا تقدَّم جاهزة أبدًا |
+| نطاق الدليل | `url` |
+| الرخصة | method paraphrased from Atlas skills under Apache-2.0; the skills keep their own licenses — see each folder's SOURCE.md |
+
+**ما هي:** يحسم أربعة قرارات قبل كتابة خادم MCP: نموذج النشر (HTTP بعيد، حزمة محلية، stdio)، نمط الأدوات، الإطار، والمصادقة. — Settles four decisions before writing an MCP server: deployment model (remote HTTP, bundled local, stdio), tool pattern, framework and auth.
+
+**متى:** بناء خادم MCP، تغليف API لـ Claude، كشف أدوات لوكيل / building an MCP server, wrapping an API for Claude, exposing tools to an agent
+
+**كيف:** 1) Ask in one message: what it connects to, who uses it, how many actions, whether a tool needs mid-call input or rich UI, and the upstream auth. 2) Default to a remote streamable-HTTP server for cloud APIs; a bundled local server only when it must touch the user's machine; plain stdio only for personal prototypes. 3) Under ~15 actions: one tool per action with tight schemas; dozens or hundreds: search_actions + execute_action, promoting the top 3-5 to dedicated tools. 4) Use the official TypeScript SDK or FastMCP (Python). 5) Simple confirmations via elicitation with a capability check and fallback; resources for browsable data, prompts for slash workflows. 6) Test with the real client as a custom connector, separate read and write tools, and run the host's review checklist before publishing.
+
+**المعاملات:** actions count, auth
+
+**التثبيت:** لا خطوة تثبيت مسجلة
+
+**الوسوم:** MCP · server · tools · خادم MCP · تكامل · connector · API wrapper
+
+#### 1. الاستقبال (A25)
+
+- اللغة والإطار: افتراض مكتوب ← لغة المستودع الموجود، وإلا Python أو HTML/JS بلا اعتماديات
+- أين يعمل: افتراض مكتوب ← المتصفح أو سطر الأوامر حسب المخرج
+- مستودع أو ملفات موجودة: سؤال بإجابة مقترحة ← مشروع جديد مستقل
+- متى يكون ناجحًا: افتراض مكتوب ← الاختبارات الموجودة تمر + اختبار لكل سلوك جديد
+- لا تُفترض أبدًا: مادة الإنتاج نفسها، والإذن بخطوة مدفوعة أو منشورة أو لا رجعة فيها، والهوية والحقوق.
+
+#### 2. الجاهزية والشارة (A28)
+
+- `python3` ← افحص وجوده بأمر واحد قبل كتابة الشارة
+- `key:unspecified` ← حساب أو مفتاح: لا تطلب لصقه في المحادثة، واسأل قبل أي صرف
+- الوضع 1: شارة «هنا الآن» بعد الفحص، لا 📄 الكتالوج تلقائيًا · الوضع 2: `كتالوج: 📄 · هنا: غير مفحوص` · الوضع 3: بلا شارة ولا معرّف.
+
+#### 3. موضعها في الخطة (A26)
+
+- عقدة منمّطة: المدخل `spec` ← المخرج `code`، والمنفّذ `method:ACODE-230` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
+- لا أداة مسجلة تخدم عائلتها: التنفيذ بالمكتبات أو بأداة من مجموعة أخرى.
+- مراحل النوع: قراءة الكود والاختبارات ← إعادة إنتاج أو اختبار جديد ← أصغر تغيير ← الاختبارات ← مراجعة الفرق ← فرع وPR.
+- إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
+
+#### 4. بوابة التحقق (A27)
+
+- إلزامي: الاختبارات الموجودة تمر قبل التعديل وبعده ← أمر الاختبار
+- إلزامي: اختبار لكل سلوك جديد أو خطأ مُصلح ← الاختبار الجديد يفشل قبل الإصلاح
+- إلزامي: لا أسرار ولا مسارات جلسة في الشيفرة ← بحث أنماط الأسرار
+- جودة: يطابق أسلوب الكود المحيط وتسمياته ← مراجعة الفرق
+- جودة: طريقة تشغيل مكتوبة ومجرَّبة ← تشغيل الأمر المكتوب
+- جودة: الفرق أصغر ما يحقق الطلب بلا إعادة كتابة غير مطلوبة ← git diff --stat
+- جودة: المدخل الخاطئ يعطي خطأ واضحًا لا انهيارًا صامتًا ← تشغيل بمدخل خاطئ
+- أمر الحكم في الوضع 1: `think.py qa code --answers qa.json` (PASS / FAIL / INCOMPLETE).
+
+#### 5. التعافي (A29)
+
+- `missing_dependency` (اعتمادية مفقودة، ميزانية 2): سمِّ الاعتمادية بالضبط (حزمة، برنامج، خط، نموذج) ← ثبّت محليًا في بيئة العمل إن كان مجانيًا ومسموحًا (pip --user أو venv أو npm محلي) · البديل: مسار المكتبة القياسية أو أداة أخرى من نفس المجموعة · تصعيد: تثبيت نظامي أو مدفوع أو يحتاج مفتاحًا: توقف واسأل
+- `quality_below_threshold` (جودة دون العتبة، ميزانية 3): أي معيار فشل وبكم (المقيس مقابل العتبة) ← عالج السبب الأكبر وحده ثم أعد القياس · البديل: المنهج البديل المكتوب للمرحلة في الخطة · تصعيد: معيار إلزامي لا يتحقق بعد البديل: توقف وأبلغ بالأرقام
+- `permission_denied` (صلاحية مرفوضة، ميزانية 1): من رفض: نظام الملفات أم الخدمة أم المستخدم في نافذة الإذن ← اكتب في مسار مسموح (مجلد مؤقت أو مجلد العمل) · البديل: سلّم الأمر جاهزًا ليشغّله المستخدم بنفسه · تصعيد: لا تتجاوز أي رفض بحيلة؛ اشرح ما يلزم وانتظر
+
+#### 6. الأدلة
+
+- `https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/297-mcp-server-dev/911-build-mcp-server`
+
+#### 7. قدرات قريبة في العائلة
+
+- `ACODE-229` اختيار طريقة مواءمة التفضيلات DPO/ORPO/KTO/SimPO / Choosing DPO, ORPO, KTO or SimPO for preference tuning (documented)
+- `ACODE-23` قائمة صمود الخلفية أمام الاعتماديات / Backend resilience checklist for dependencies (documented)
+- `ACODE-231` تدقيق كل الترقيات الممكنة بمصفوفة مخاطرة/عائد قبل التطبيق / Upgrade-everything audit with a risk/reward matrix (documented)
+- `ACODE-232` كشف الاختبارات الخضراء الكاذبة / False-green test detection (documented)
+
+### `ACODE-231` — تدقيق كل الترقيات الممكنة بمصفوفة مخاطرة/عائد قبل التطبيق / Upgrade-everything audit with a risk/reward matrix
+
+| الحقل | القيمة |
+|---|---|
+| العائلة | `atlas-code` ([فصل العائلة](../../../.claude/skills/kosif-superpowers/references/powers/atlas-code.md)) |
+| المجموعة | البرمجة وبناء التطبيقات (`software`) |
+| نوع المخرج (A25، A27) | كود وتطبيقات ومواقع (`code`) |
+| الحالة في الكتالوج | 📄 `documented`: منهج موصوف يحتاج بناءً أو ربطًا قبل التشغيل |
+| سقف التحقق قبل العمل (A27) | V1 حتى تُبنى وتُشغَّل؛ لا تقدَّم جاهزة أبدًا |
+| نطاق الدليل | `url` |
+| الرخصة | method paraphrased from Atlas skills under MIT; the skills keep their own licenses — see each folder's SOURCE.md |
+
+**ما هي:** يجرد كل مرجع إصدار في المستودع ويحدد أحدث إصدار من المصدر الرسمي ويقيّم كل ترقية، ولا يطبق إلا ما يختاره المستخدم. — Inventories every version reference, resolves the latest from authoritative sources, rates each upgrade, and applies only what the user selects.
+
+**متى:** 'ماذا يمكنني أن أرقّي؟'، تحديث الاعتماديات، مراجعة Dependabot / 'what can I upgrade', dependency refresh, reviewing Dependabot PRs
+
+**كيف:** 1) Record today's date (upgrade data is date-sensitive). 2) Detect languages, package managers, CI and release tooling; exclude .git, node_modules, vendor, dist, .venv and caches. 3) Inventory manifests, lockfiles, CI action refs, runtimes, container images, install commands, schema URLs and version literals in docs; note who owns each value (lockfile, generator). 4) Resolve upstream from registries/releases with source and confidence; keep failures as Blocked/Unknown. 5) One numbered row per candidate: current, latest, type, reward, risk, validation, open bot PR, recommendation; risk changes order, not inclusion. 6) Ask for scope (all, low-risk, numbers, audit-only), apply via the package manager in dependency order (toolchain, manifests, CI, docs), never hand-edit owned lockfiles, then run checks and report upgraded/skipped/blocked/failed.
+
+**التثبيت:** لا خطوة تثبيت مسجلة
+
+**الوسوم:** dependencies · upgrade · Dependabot · ترقية · اعتماديات · versions
+
+#### 1. الاستقبال (A25)
+
+- اللغة والإطار: افتراض مكتوب ← لغة المستودع الموجود، وإلا Python أو HTML/JS بلا اعتماديات
+- أين يعمل: افتراض مكتوب ← المتصفح أو سطر الأوامر حسب المخرج
+- مستودع أو ملفات موجودة: سؤال بإجابة مقترحة ← مشروع جديد مستقل
+- متى يكون ناجحًا: افتراض مكتوب ← الاختبارات الموجودة تمر + اختبار لكل سلوك جديد
+- لا تُفترض أبدًا: مادة الإنتاج نفسها، والإذن بخطوة مدفوعة أو منشورة أو لا رجعة فيها، والهوية والحقوق.
+
+#### 2. الجاهزية والشارة (A28)
+
+- لا متطلبات مسجلة؛ افحص المسار والأداة بـ `hub.py doctor` قبل الشارة.
+- الوضع 1: شارة «هنا الآن» بعد الفحص، لا 📄 الكتالوج تلقائيًا · الوضع 2: `كتالوج: 📄 · هنا: غير مفحوص` · الوضع 3: بلا شارة ولا معرّف.
+
+#### 3. موضعها في الخطة (A26)
+
+- عقدة منمّطة: المدخل `spec` ← المخرج `code`، والمنفّذ `method:ACODE-231` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
+- لا أداة مسجلة تخدم عائلتها: التنفيذ بالمكتبات أو بأداة من مجموعة أخرى.
+- مراحل النوع: قراءة الكود والاختبارات ← إعادة إنتاج أو اختبار جديد ← أصغر تغيير ← الاختبارات ← مراجعة الفرق ← فرع وPR.
+- إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
+
+#### 4. بوابة التحقق (A27)
+
+- إلزامي: الاختبارات الموجودة تمر قبل التعديل وبعده ← أمر الاختبار
+- إلزامي: اختبار لكل سلوك جديد أو خطأ مُصلح ← الاختبار الجديد يفشل قبل الإصلاح
+- إلزامي: لا أسرار ولا مسارات جلسة في الشيفرة ← بحث أنماط الأسرار
+- جودة: يطابق أسلوب الكود المحيط وتسمياته ← مراجعة الفرق
+- جودة: طريقة تشغيل مكتوبة ومجرَّبة ← تشغيل الأمر المكتوب
+- جودة: الفرق أصغر ما يحقق الطلب بلا إعادة كتابة غير مطلوبة ← git diff --stat
+- جودة: المدخل الخاطئ يعطي خطأ واضحًا لا انهيارًا صامتًا ← تشغيل بمدخل خاطئ
+- أمر الحكم في الوضع 1: `think.py qa code --answers qa.json` (PASS / FAIL / INCOMPLETE).
+
+#### 5. التعافي (A29)
+
+- `quality_below_threshold` (جودة دون العتبة، ميزانية 3): أي معيار فشل وبكم (المقيس مقابل العتبة) ← عالج السبب الأكبر وحده ثم أعد القياس · البديل: المنهج البديل المكتوب للمرحلة في الخطة · تصعيد: معيار إلزامي لا يتحقق بعد البديل: توقف وأبلغ بالأرقام
+
+#### 6. الأدلة
+
+- `https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/983-upgrade-everything/2267-upgrade-everything`
+
+#### 7. قدرات قريبة في العائلة
+
+- `ACODE-23` قائمة صمود الخلفية أمام الاعتماديات / Backend resilience checklist for dependencies (documented)
+- `ACODE-230` تصميم خادم MCP: نموذج النشر ونمط الأدوات قبل الكود / MCP server design: deployment model and tool pattern before code (documented)
+- `ACODE-232` كشف الاختبارات الخضراء الكاذبة / False-green test detection (documented)
+- `ACODE-233` اختبار في فضاء مصغّر: تفكيك ادعاء التكافؤ قبل التجربة / Reduced-space test: decompose the equivalence claim first (documented)
+
+### `ACODE-232` — كشف الاختبارات الخضراء الكاذبة / False-green test detection
+
+| الحقل | القيمة |
+|---|---|
+| العائلة | `atlas-code` ([فصل العائلة](../../../.claude/skills/kosif-superpowers/references/powers/atlas-code.md)) |
+| المجموعة | البرمجة وبناء التطبيقات (`software`) |
+| نوع المخرج (A25، A27) | كود وتطبيقات ومواقع (`code`) |
+| الحالة في الكتالوج | 📄 `documented`: منهج موصوف يحتاج بناءً أو ربطًا قبل التشغيل |
+| سقف التحقق قبل العمل (A27) | V1 حتى تُبنى وتُشغَّل؛ لا تقدَّم جاهزة أبدًا |
+| نطاق الدليل | `url` |
+| الرخصة | method paraphrased from Atlas skills under MIT; the skills keep their own licenses — see each folder's SOURCE.md |
+
+**ما هي:** يفحص ملفات الاختبار بحثًا عن اختبارات تنجح حتى لو انكسر الكود: بلا تأكيد، تأكيد دائم الصحة، محاكاة للوحدة نفسها، استثناء مبتلع. — Reviews tests for ones that pass even when the code breaks: no assertion, always-true assertion, mocking the unit under test, swallowed exceptions.
+
+**متى:** 'هل يمكن لهذا الاختبار أن يفشل؟'، مراجعة جودة الاختبارات، اختبارات مولدة بالذكاء الاصطناعي / 'can this test fail', reviewing test quality, AI-written tests
+
+**كيف:** 1) Structural pass: no assertion; assertion inside a loop/conditional that may never run; assert inside try with a swallowing except; always-true or self-comparison; weak 'is not None' only; float exact equality; broad raises; skipped or focused tests (it.only); un-awaited async matchers; empty parametrize tables. 2) Semantic pass: mocks the unit under test, asserts the value the stub was told to return, re-implements the production formula for the expected value, depends on another test's state. 3) Respect look-alike exemptions to avoid false alarms, which count as worse than a miss. 4) Report each finding with its line, why it cannot fail, and the minimal fix; then plant a defect to prove the fixed test goes red.
+
+**المعاملات:** language
+
+**التثبيت:** لا خطوة تثبيت مسجلة
+
+**الوسوم:** test smells · false positive · weak assertion · اختبارات كاذبة · mock misuse · pytest · jest
+
+#### 1. الاستقبال (A25)
+
+- اللغة والإطار: افتراض مكتوب ← لغة المستودع الموجود، وإلا Python أو HTML/JS بلا اعتماديات
+- أين يعمل: افتراض مكتوب ← المتصفح أو سطر الأوامر حسب المخرج
+- مستودع أو ملفات موجودة: سؤال بإجابة مقترحة ← مشروع جديد مستقل
+- متى يكون ناجحًا: افتراض مكتوب ← الاختبارات الموجودة تمر + اختبار لكل سلوك جديد
+- لا تُفترض أبدًا: مادة الإنتاج نفسها، والإذن بخطوة مدفوعة أو منشورة أو لا رجعة فيها، والهوية والحقوق.
+
+#### 2. الجاهزية والشارة (A28)
+
+- لا متطلبات مسجلة؛ افحص المسار والأداة بـ `hub.py doctor` قبل الشارة.
+- الوضع 1: شارة «هنا الآن» بعد الفحص، لا 📄 الكتالوج تلقائيًا · الوضع 2: `كتالوج: 📄 · هنا: غير مفحوص` · الوضع 3: بلا شارة ولا معرّف.
+
+#### 3. موضعها في الخطة (A26)
+
+- عقدة منمّطة: المدخل `spec` ← المخرج `code`، والمنفّذ `method:ACODE-232` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
+- لا أداة مسجلة تخدم عائلتها: التنفيذ بالمكتبات أو بأداة من مجموعة أخرى.
+- مراحل النوع: قراءة الكود والاختبارات ← إعادة إنتاج أو اختبار جديد ← أصغر تغيير ← الاختبارات ← مراجعة الفرق ← فرع وPR.
+- إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
+
+#### 4. بوابة التحقق (A27)
+
+- إلزامي: الاختبارات الموجودة تمر قبل التعديل وبعده ← أمر الاختبار
+- إلزامي: اختبار لكل سلوك جديد أو خطأ مُصلح ← الاختبار الجديد يفشل قبل الإصلاح
+- إلزامي: لا أسرار ولا مسارات جلسة في الشيفرة ← بحث أنماط الأسرار
+- جودة: يطابق أسلوب الكود المحيط وتسمياته ← مراجعة الفرق
+- جودة: طريقة تشغيل مكتوبة ومجرَّبة ← تشغيل الأمر المكتوب
+- جودة: الفرق أصغر ما يحقق الطلب بلا إعادة كتابة غير مطلوبة ← git diff --stat
+- جودة: المدخل الخاطئ يعطي خطأ واضحًا لا انهيارًا صامتًا ← تشغيل بمدخل خاطئ
+- أمر الحكم في الوضع 1: `think.py qa code --answers qa.json` (PASS / FAIL / INCOMPLETE).
+
+#### 5. التعافي (A29)
+
+- `quality_below_threshold` (جودة دون العتبة، ميزانية 3): أي معيار فشل وبكم (المقيس مقابل العتبة) ← عالج السبب الأكبر وحده ثم أعد القياس · البديل: المنهج البديل المكتوب للمرحلة في الخطة · تصعيد: معيار إلزامي لا يتحقق بعد البديل: توقف وأبلغ بالأرقام
+
+#### 6. الأدلة
+
+- `https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/3258-falsegreen-skill/13769-falsegreen-skill`
+
+#### 7. قدرات قريبة في العائلة
+
+- `ACODE-230` تصميم خادم MCP: نموذج النشر ونمط الأدوات قبل الكود / MCP server design: deployment model and tool pattern before code (documented)
+- `ACODE-231` تدقيق كل الترقيات الممكنة بمصفوفة مخاطرة/عائد قبل التطبيق / Upgrade-everything audit with a risk/reward matrix (documented)
+- `ACODE-233` اختبار في فضاء مصغّر: تفكيك ادعاء التكافؤ قبل التجربة / Reduced-space test: decompose the equivalence claim first (documented)
+- `ACODE-234` اختبار استكشافي لتطبيق ويب بأدلة إعادة إنتاج كاملة / Exploratory web-app QA with full repro evidence (documented)
+
+### `ACODE-233` — اختبار في فضاء مصغّر: تفكيك ادعاء التكافؤ قبل التجربة / Reduced-space test: decompose the equivalence claim first
+
+| الحقل | القيمة |
+|---|---|
+| العائلة | `atlas-code` ([فصل العائلة](../../../.claude/skills/kosif-superpowers/references/powers/atlas-code.md)) |
+| المجموعة | البرمجة وبناء التطبيقات (`software`) |
+| نوع المخرج (A25، A27) | كود وتطبيقات ومواقع (`code`) |
+| الحالة في الكتالوج | 📄 `documented`: منهج موصوف يحتاج بناءً أو ربطًا قبل التشغيل |
+| سقف التحقق قبل العمل (A27) | V1 حتى تُبنى وتُشغَّل؛ لا تقدَّم جاهزة أبدًا |
+| نطاق الدليل | `url` |
+| الرخصة | method paraphrased from Atlas skills under MIT; the skills keep their own licenses — see each folder's SOURCE.md |
+
+**ما هي:** يتحقق تجريبيًا من ادعاء داخل بيئة بديلة مقيدة بعد تفكيك ادعاء تكافؤها مع البيئة الحقيقية إلى أوجه قابلة للقياس، ويحمل الجزء غير المختبر إلى الأمام. — Validates a claim empirically inside a bounded stand-in space after decomposing its equivalence with the real target into measurable facets, carrying the untested remainder forward.
+
+**متى:** اختبار على بيئة تجريبية أو عينة أو نموذج مصغّر بدل الإنتاج / testing on staging, a sample or a small model instead of the real target
+
+**كيف:** 1) State the claim that reasoning alone cannot settle. 2) Decompose 'the surrogate stands in for the target' into facets: critical dimensions, a named list of surrogate-vs-target differences, how each difference could change the outcome, and how the gap will be measured (randomised conditions, shadowing, canary). 3) Show this frame to the user and ask which facet is missing before it constrains the test. 4) Let the user draw the boundary: each cut decides what the result may claim. 5) Gather evidence only inside that space. 6) Report holds / fails / inconclusive within the stated conditions, or a coverage shortfall, plus the uncovered residual as a first-class output, never a bare 'it works'.
+
+**التثبيت:** لا خطوة تثبيت مسجلة
+
+**الوسوم:** validation · staging · experiment design · تحقق تجريبي · نطاق · surrogate · evidence
+
+#### 1. الاستقبال (A25)
+
+- اللغة والإطار: افتراض مكتوب ← لغة المستودع الموجود، وإلا Python أو HTML/JS بلا اعتماديات
+- أين يعمل: افتراض مكتوب ← المتصفح أو سطر الأوامر حسب المخرج
+- مستودع أو ملفات موجودة: سؤال بإجابة مقترحة ← مشروع جديد مستقل
+- متى يكون ناجحًا: افتراض مكتوب ← الاختبارات الموجودة تمر + اختبار لكل سلوك جديد
+- لا تُفترض أبدًا: مادة الإنتاج نفسها، والإذن بخطوة مدفوعة أو منشورة أو لا رجعة فيها، والهوية والحقوق.
+
+#### 2. الجاهزية والشارة (A28)
+
+- لا متطلبات مسجلة؛ افحص المسار والأداة بـ `hub.py doctor` قبل الشارة.
+- الوضع 1: شارة «هنا الآن» بعد الفحص، لا 📄 الكتالوج تلقائيًا · الوضع 2: `كتالوج: 📄 · هنا: غير مفحوص` · الوضع 3: بلا شارة ولا معرّف.
+
+#### 3. موضعها في الخطة (A26)
+
+- عقدة منمّطة: المدخل `spec` ← المخرج `code`، والمنفّذ `method:ACODE-233` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
+- لا أداة مسجلة تخدم عائلتها: التنفيذ بالمكتبات أو بأداة من مجموعة أخرى.
+- مراحل النوع: قراءة الكود والاختبارات ← إعادة إنتاج أو اختبار جديد ← أصغر تغيير ← الاختبارات ← مراجعة الفرق ← فرع وPR.
+- إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
+
+#### 4. بوابة التحقق (A27)
+
+- إلزامي: الاختبارات الموجودة تمر قبل التعديل وبعده ← أمر الاختبار
+- إلزامي: اختبار لكل سلوك جديد أو خطأ مُصلح ← الاختبار الجديد يفشل قبل الإصلاح
+- إلزامي: لا أسرار ولا مسارات جلسة في الشيفرة ← بحث أنماط الأسرار
+- جودة: يطابق أسلوب الكود المحيط وتسمياته ← مراجعة الفرق
+- جودة: طريقة تشغيل مكتوبة ومجرَّبة ← تشغيل الأمر المكتوب
+- جودة: الفرق أصغر ما يحقق الطلب بلا إعادة كتابة غير مطلوبة ← git diff --stat
+- جودة: المدخل الخاطئ يعطي خطأ واضحًا لا انهيارًا صامتًا ← تشغيل بمدخل خاطئ
+- أمر الحكم في الوضع 1: `think.py qa code --answers qa.json` (PASS / FAIL / INCOMPLETE).
+
+#### 5. التعافي (A29)
+
+- `quality_below_threshold` (جودة دون العتبة، ميزانية 3): أي معيار فشل وبكم (المقيس مقابل العتبة) ← عالج السبب الأكبر وحده ثم أعد القياس · البديل: المنهج البديل المكتوب للمرحلة في الخطة · تصعيد: معيار إلزامي لا يتحقق بعد البديل: توقف وأبلغ بالأرقام
+
+#### 6. الأدلة
+
+- `https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/1990-epistemic-cooperative/7155-reduced-space-test`
+
+#### 7. قدرات قريبة في العائلة
+
+- `ACODE-231` تدقيق كل الترقيات الممكنة بمصفوفة مخاطرة/عائد قبل التطبيق / Upgrade-everything audit with a risk/reward matrix (documented)
+- `ACODE-232` كشف الاختبارات الخضراء الكاذبة / False-green test detection (documented)
+- `ACODE-234` اختبار استكشافي لتطبيق ويب بأدلة إعادة إنتاج كاملة / Exploratory web-app QA with full repro evidence (documented)
+- `ACODE-235` تدقيق الامتثال لـ GDPR انطلاقًا من جرد البيانات الشخصية / GDPR review built on a personal-data inventory (documented)
+
+### `ACODE-234` — اختبار استكشافي لتطبيق ويب بأدلة إعادة إنتاج كاملة / Exploratory web-app QA with full repro evidence
+
+| الحقل | القيمة |
+|---|---|
+| العائلة | `atlas-code` ([فصل العائلة](../../../.claude/skills/kosif-superpowers/references/powers/atlas-code.md)) |
+| المجموعة | البرمجة وبناء التطبيقات (`software`) |
+| نوع المخرج (A25، A27) | كود وتطبيقات ومواقع (`code`) |
+| الحالة في الكتالوج | 📄 `documented`: منهج موصوف يحتاج بناءً أو ربطًا قبل التشغيل |
+| سقف التحقق قبل العمل (A27) | V1 حتى تُبنى وتُشغَّل؛ لا تقدَّم جاهزة أبدًا |
+| نطاق الدليل | `url` |
+| الرخصة | method paraphrased from Atlas skills under Apache-2.0; the skills keep their own licenses — see each folder's SOURCE.md |
+
+**ما هي:** يستكشف تطبيق ويب كمستخدم حقيقي ويوثق كل مشكلة فور اكتشافها بخطوات مرقمة ولقطات وفيديو للمشكلات التفاعلية. — Explores a web app as a real user and documents each issue the moment it is found, with numbered steps, screenshots and a video for interactive bugs.
+
+**متى:** 'جرّب التطبيق'، صيد أخطاء، QA قبل الإطلاق / 'dogfood this', bug hunt, pre-launch QA of a site
+
+**كيف:** 1) Only the URL is required; set up a named browser session, an output folder and a report file from a template. 2) Sign in if needed and save the auth state; ask the user for one-time codes. 3) Orient with an annotated screenshot and the main navigation, then visit each section: buttons, forms, dropdowns, empty and error states, real create-edit-delete flows; check the console often. 4) Retry once to confirm each issue is reproducible; interactive bugs get a paced video plus a screenshot per step, static ones a single annotated screenshot. 5) Append each issue immediately (ISSUE-001...), never batch or delete evidence, never read the app's source. 6) Aim for 5-10 well-evidenced issues, reconcile the severity counts and summarise the most critical.
+
+**المعاملات:** target URL, scope
+
+**التثبيت:** لا خطوة تثبيت مسجلة
+
+**الوسوم:** QA · exploratory testing · bug hunt · اختبار يدوي · تجربة التطبيق · playwright · browser
+
+#### 1. الاستقبال (A25)
+
+- اللغة والإطار: افتراض مكتوب ← لغة المستودع الموجود، وإلا Python أو HTML/JS بلا اعتماديات
+- أين يعمل: افتراض مكتوب ← المتصفح أو سطر الأوامر حسب المخرج
+- مستودع أو ملفات موجودة: سؤال بإجابة مقترحة ← مشروع جديد مستقل
+- متى يكون ناجحًا: افتراض مكتوب ← الاختبارات الموجودة تمر + اختبار لكل سلوك جديد
+- لا تُفترض أبدًا: مادة الإنتاج نفسها، والإذن بخطوة مدفوعة أو منشورة أو لا رجعة فيها، والهوية والحقوق.
+
+#### 2. الجاهزية والشارة (A28)
+
+- `chromium` ← افحص وجوده بأمر واحد قبل كتابة الشارة
+- الوضع 1: شارة «هنا الآن» بعد الفحص، لا 📄 الكتالوج تلقائيًا · الوضع 2: `كتالوج: 📄 · هنا: غير مفحوص` · الوضع 3: بلا شارة ولا معرّف.
+
+#### 3. موضعها في الخطة (A26)
+
+- عقدة منمّطة: المدخل `spec` ← المخرج `code`، والمنفّذ `method:ACODE-234` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
+- لا أداة مسجلة تخدم عائلتها: التنفيذ بالمكتبات أو بأداة من مجموعة أخرى.
+- مراحل النوع: قراءة الكود والاختبارات ← إعادة إنتاج أو اختبار جديد ← أصغر تغيير ← الاختبارات ← مراجعة الفرق ← فرع وPR.
+- إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
+
+#### 4. بوابة التحقق (A27)
+
+- إلزامي: الاختبارات الموجودة تمر قبل التعديل وبعده ← أمر الاختبار
+- إلزامي: اختبار لكل سلوك جديد أو خطأ مُصلح ← الاختبار الجديد يفشل قبل الإصلاح
+- إلزامي: لا أسرار ولا مسارات جلسة في الشيفرة ← بحث أنماط الأسرار
+- جودة: يطابق أسلوب الكود المحيط وتسمياته ← مراجعة الفرق
+- جودة: طريقة تشغيل مكتوبة ومجرَّبة ← تشغيل الأمر المكتوب
+- جودة: الفرق أصغر ما يحقق الطلب بلا إعادة كتابة غير مطلوبة ← git diff --stat
+- جودة: المدخل الخاطئ يعطي خطأ واضحًا لا انهيارًا صامتًا ← تشغيل بمدخل خاطئ
+- أمر الحكم في الوضع 1: `think.py qa code --answers qa.json` (PASS / FAIL / INCOMPLETE).
+
+#### 5. التعافي (A29)
+
+- `missing_dependency` (اعتمادية مفقودة، ميزانية 2): سمِّ الاعتمادية بالضبط (حزمة، برنامج، خط، نموذج) ← ثبّت محليًا في بيئة العمل إن كان مجانيًا ومسموحًا (pip --user أو venv أو npm محلي) · البديل: مسار المكتبة القياسية أو أداة أخرى من نفس المجموعة · تصعيد: تثبيت نظامي أو مدفوع أو يحتاج مفتاحًا: توقف واسأل
+- `quality_below_threshold` (جودة دون العتبة، ميزانية 3): أي معيار فشل وبكم (المقيس مقابل العتبة) ← عالج السبب الأكبر وحده ثم أعد القياس · البديل: المنهج البديل المكتوب للمرحلة في الخطة · تصعيد: معيار إلزامي لا يتحقق بعد البديل: توقف وأبلغ بالأرقام
+
+#### 6. الأدلة
+
+- `https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/2887-agent-browser/11671-dogfood`
+
+#### 7. قدرات قريبة في العائلة
+
+- `ACODE-232` كشف الاختبارات الخضراء الكاذبة / False-green test detection (documented)
+- `ACODE-233` اختبار في فضاء مصغّر: تفكيك ادعاء التكافؤ قبل التجربة / Reduced-space test: decompose the equivalence claim first (documented)
+- `ACODE-235` تدقيق الامتثال لـ GDPR انطلاقًا من جرد البيانات الشخصية / GDPR review built on a personal-data inventory (documented)
+- `ACODE-236` دليل سردي لمستودع غير مألوف للمساهمين الجدد / Narrative codebase guide for newcomers (documented)
+
+### `ACODE-235` — تدقيق الامتثال لـ GDPR انطلاقًا من جرد البيانات الشخصية / GDPR review built on a personal-data inventory
+
+| الحقل | القيمة |
+|---|---|
+| العائلة | `atlas-code` ([فصل العائلة](../../../.claude/skills/kosif-superpowers/references/powers/atlas-code.md)) |
+| المجموعة | البرمجة وبناء التطبيقات (`software`) |
+| نوع المخرج (A25، A27) | كود وتطبيقات ومواقع (`code`) |
+| الحالة في الكتالوج | 📄 `documented`: منهج موصوف يحتاج بناءً أو ربطًا قبل التشغيل |
+| سقف التحقق قبل العمل (A27) | V1 حتى تُبنى وتُشغَّل؛ لا تقدَّم جاهزة أبدًا |
+| نطاق الدليل | `url` |
+| الرخصة | method paraphrased from Atlas skills under MIT; the skills keep their own licenses — see each folder's SOURCE.md |
+
+**ما هي:** يدقق كودًا أو تصميمًا أو بنية تحتية أو تدفق بيانات مقابل GDPR بعد بناء جرد للبيانات الشخصية، ويفصل ما يحتاج شهادة قانونية عن النتائج التقنية. — Audits code, a design, IaC or a data flow against GDPR after building a personal-data inventory, separating legal-attestation items from technical findings.
+
+**متى:** 'هل نحن متوافقون مع GDPR؟'، حق الحذف، الموافقة، نقل البيانات خارج الاتحاد الأوروبي / 'are we GDPR compliant', right to erasure, consent, cross-border transfers
+
+**كيف:** 1) Detect mode (code, design, IaC, data-flow, org readiness), role (controller/processor), territorial hook and whether special-category data exists. 2) Build the inventory table system, store, field, category, special flag before any check. 3) The best findings are coverage diffs: PII fields vs those the deletion path and the access export cover; stores vs encrypted/region-pinned/TTL'd; vendors in code vs the processor list. 4) Check lawful basis and consent, subject rights, minimisation and retention, security and privacy by design, transfers and processors, logging/breach readiness, tracking and consent UX. 5) Each finding: article ID, severity, quoted evidence, remediation, confidence; re-verify every Critical/High. 6) Put signed DPAs, notice adequacy and balancing tests under 'legal attestation required'; check adequacy decisions and pending laws live. An analysis aid, not legal advice.
+
+**المعاملات:** mode, role
+
+**التثبيت:** لا خطوة تثبيت مسجلة
+
+**الوسوم:** GDPR · privacy · personal data · خصوصية · حماية البيانات · compliance · DSAR
+
+#### 1. الاستقبال (A25)
+
+- اللغة والإطار: افتراض مكتوب ← لغة المستودع الموجود، وإلا Python أو HTML/JS بلا اعتماديات
+- أين يعمل: افتراض مكتوب ← المتصفح أو سطر الأوامر حسب المخرج
+- مستودع أو ملفات موجودة: سؤال بإجابة مقترحة ← مشروع جديد مستقل
+- متى يكون ناجحًا: افتراض مكتوب ← الاختبارات الموجودة تمر + اختبار لكل سلوك جديد
+- لا تُفترض أبدًا: مادة الإنتاج نفسها، والإذن بخطوة مدفوعة أو منشورة أو لا رجعة فيها، والهوية والحقوق.
+
+#### 2. الجاهزية والشارة (A28)
+
+- لا متطلبات مسجلة؛ افحص المسار والأداة بـ `hub.py doctor` قبل الشارة.
+- الوضع 1: شارة «هنا الآن» بعد الفحص، لا 📄 الكتالوج تلقائيًا · الوضع 2: `كتالوج: 📄 · هنا: غير مفحوص` · الوضع 3: بلا شارة ولا معرّف.
+
+#### 3. موضعها في الخطة (A26)
+
+- عقدة منمّطة: المدخل `spec` ← المخرج `code`، والمنفّذ `method:ACODE-235` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
+- لا أداة مسجلة تخدم عائلتها: التنفيذ بالمكتبات أو بأداة من مجموعة أخرى.
+- مراحل النوع: قراءة الكود والاختبارات ← إعادة إنتاج أو اختبار جديد ← أصغر تغيير ← الاختبارات ← مراجعة الفرق ← فرع وPR.
+- إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
+
+#### 4. بوابة التحقق (A27)
+
+- إلزامي: الاختبارات الموجودة تمر قبل التعديل وبعده ← أمر الاختبار
+- إلزامي: اختبار لكل سلوك جديد أو خطأ مُصلح ← الاختبار الجديد يفشل قبل الإصلاح
+- إلزامي: لا أسرار ولا مسارات جلسة في الشيفرة ← بحث أنماط الأسرار
+- جودة: يطابق أسلوب الكود المحيط وتسمياته ← مراجعة الفرق
+- جودة: طريقة تشغيل مكتوبة ومجرَّبة ← تشغيل الأمر المكتوب
+- جودة: الفرق أصغر ما يحقق الطلب بلا إعادة كتابة غير مطلوبة ← git diff --stat
+- جودة: المدخل الخاطئ يعطي خطأ واضحًا لا انهيارًا صامتًا ← تشغيل بمدخل خاطئ
+- أمر الحكم في الوضع 1: `think.py qa code --answers qa.json` (PASS / FAIL / INCOMPLETE).
+
+#### 5. التعافي (A29)
+
+- `quality_below_threshold` (جودة دون العتبة، ميزانية 3): أي معيار فشل وبكم (المقيس مقابل العتبة) ← عالج السبب الأكبر وحده ثم أعد القياس · البديل: المنهج البديل المكتوب للمرحلة في الخطة · تصعيد: معيار إلزامي لا يتحقق بعد البديل: توقف وأبلغ بالأرقام
+
+#### 6. الأدلة
+
+- `https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/2528-gdpr-review/9825-gdpr-review`
+
+#### 7. قدرات قريبة في العائلة
+
+- `ACODE-233` اختبار في فضاء مصغّر: تفكيك ادعاء التكافؤ قبل التجربة / Reduced-space test: decompose the equivalence claim first (documented)
+- `ACODE-234` اختبار استكشافي لتطبيق ويب بأدلة إعادة إنتاج كاملة / Exploratory web-app QA with full repro evidence (documented)
+- `ACODE-236` دليل سردي لمستودع غير مألوف للمساهمين الجدد / Narrative codebase guide for newcomers (documented)
+- `ACODE-237` تثبيت كل أسطح الإصدارات لتقوية سلسلة التوريد / Pin every version surface for supply-chain hardening (documented)
+
+### `ACODE-236` — دليل سردي لمستودع غير مألوف للمساهمين الجدد / Narrative codebase guide for newcomers
+
+| الحقل | القيمة |
+|---|---|
+| العائلة | `atlas-code` ([فصل العائلة](../../../.claude/skills/kosif-superpowers/references/powers/atlas-code.md)) |
+| المجموعة | البرمجة وبناء التطبيقات (`software`) |
+| نوع المخرج (A25، A27) | كود وتطبيقات ومواقع (`code`) |
+| الحالة في الكتالوج | 📄 `documented`: منهج موصوف يحتاج بناءً أو ربطًا قبل التشغيل |
+| سقف التحقق قبل العمل (A27) | V1 حتى تُبنى وتُشغَّل؛ لا تقدَّم جاهزة أبدًا |
+| نطاق الدليل | `url` |
+| الرخصة | method paraphrased from Atlas skills under MIT; the skills keep their own licenses — see each folder's SOURCE.md |
+
+**ما هي:** ينتج دليلًا مقروءًا لمستودع: ملخص تنفيذي بلغة بسيطة، ثم عشر وثائق مرقمة بمخططات Mermaid، ومسرد، وفهرس بمسارات قراءة حسب الجمهور. — Produces a readable tour of a repository: a plain-language executive summary, ten numbered documents with Mermaid diagrams, a glossary and an index with audience-specific reading paths.
+
+**متى:** الانضمام لمشروع جديد، جولة في الكود، دليل للمساهمين / onboarding to an unfamiliar project, a codebase tour, a contributor guide
+
+**كيف:** 1) Explore by reading real code and write a context brief with file paths for every claim, starting with a project profile (type, audience, register). 2) Confirm that profile with the user in one question. 3) Build structured facts first: call graph of entry points, contracts, invariants, domain rules, integration hot-spots, change-impact radius, each citing file:line. 4) Write: overview with mindmap, features, tech stack, architecture diagram, workflows with sequence diagrams, data model ER, getting started with copy-paste commands, open questions, anatomy (configs, env vars, scripts, ports) and a configuration guide. 5) Review for terminology, cross-links, valid Mermaid and doc-vs-code drift, flagging drift as open questions. 6) Finish with a glossary and INDEX.md (non-technical path from the summary, developer path from architecture).
+
+**المعاملات:** target path
+
+**التثبيت:** لا خطوة تثبيت مسجلة
+
+**الوسوم:** onboarding · codebase map · documentation · فهم الكود · دليل المشروع · mermaid · architecture
+
+#### 1. الاستقبال (A25)
+
+- اللغة والإطار: افتراض مكتوب ← لغة المستودع الموجود، وإلا Python أو HTML/JS بلا اعتماديات
+- أين يعمل: افتراض مكتوب ← المتصفح أو سطر الأوامر حسب المخرج
+- مستودع أو ملفات موجودة: سؤال بإجابة مقترحة ← مشروع جديد مستقل
+- متى يكون ناجحًا: افتراض مكتوب ← الاختبارات الموجودة تمر + اختبار لكل سلوك جديد
+- لا تُفترض أبدًا: مادة الإنتاج نفسها، والإذن بخطوة مدفوعة أو منشورة أو لا رجعة فيها، والهوية والحقوق.
+
+#### 2. الجاهزية والشارة (A28)
+
+- `npm:mermaid` ← npm ls mermaid أو وجود node_modules/mermaid
+- الوضع 1: شارة «هنا الآن» بعد الفحص، لا 📄 الكتالوج تلقائيًا · الوضع 2: `كتالوج: 📄 · هنا: غير مفحوص` · الوضع 3: بلا شارة ولا معرّف.
+
+#### 3. موضعها في الخطة (A26)
+
+- عقدة منمّطة: المدخل `spec` ← المخرج `code`، والمنفّذ `method:ACODE-236` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
+- لا أداة مسجلة تخدم عائلتها: التنفيذ بالمكتبات أو بأداة من مجموعة أخرى.
+- مراحل النوع: قراءة الكود والاختبارات ← إعادة إنتاج أو اختبار جديد ← أصغر تغيير ← الاختبارات ← مراجعة الفرق ← فرع وPR.
+- إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
+
+#### 4. بوابة التحقق (A27)
+
+- إلزامي: الاختبارات الموجودة تمر قبل التعديل وبعده ← أمر الاختبار
+- إلزامي: اختبار لكل سلوك جديد أو خطأ مُصلح ← الاختبار الجديد يفشل قبل الإصلاح
+- إلزامي: لا أسرار ولا مسارات جلسة في الشيفرة ← بحث أنماط الأسرار
+- جودة: يطابق أسلوب الكود المحيط وتسمياته ← مراجعة الفرق
+- جودة: طريقة تشغيل مكتوبة ومجرَّبة ← تشغيل الأمر المكتوب
+- جودة: الفرق أصغر ما يحقق الطلب بلا إعادة كتابة غير مطلوبة ← git diff --stat
+- جودة: المدخل الخاطئ يعطي خطأ واضحًا لا انهيارًا صامتًا ← تشغيل بمدخل خاطئ
+- أمر الحكم في الوضع 1: `think.py qa code --answers qa.json` (PASS / FAIL / INCOMPLETE).
+
+#### 5. التعافي (A29)
+
+- `missing_dependency` (اعتمادية مفقودة، ميزانية 2): سمِّ الاعتمادية بالضبط (حزمة، برنامج، خط، نموذج) ← ثبّت محليًا في بيئة العمل إن كان مجانيًا ومسموحًا (pip --user أو venv أو npm محلي) · البديل: مسار المكتبة القياسية أو أداة أخرى من نفس المجموعة · تصعيد: تثبيت نظامي أو مدفوع أو يحتاج مفتاحًا: توقف واسأل
+- `quality_below_threshold` (جودة دون العتبة، ميزانية 3): أي معيار فشل وبكم (المقيس مقابل العتبة) ← عالج السبب الأكبر وحده ثم أعد القياس · البديل: المنهج البديل المكتوب للمرحلة في الخطة · تصعيد: معيار إلزامي لا يتحقق بعد البديل: توقف وأبلغ بالأرقام
+
+#### 6. الأدلة
+
+- `https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/60-codebase-mapper/97-map-codebase-workflow`
+
+#### 7. قدرات قريبة في العائلة
+
+- `ACODE-234` اختبار استكشافي لتطبيق ويب بأدلة إعادة إنتاج كاملة / Exploratory web-app QA with full repro evidence (documented)
+- `ACODE-235` تدقيق الامتثال لـ GDPR انطلاقًا من جرد البيانات الشخصية / GDPR review built on a personal-data inventory (documented)
+- `ACODE-237` تثبيت كل أسطح الإصدارات لتقوية سلسلة التوريد / Pin every version surface for supply-chain hardening (documented)
+- `ACODE-24` أنماط خدمات الواجهة الخلفية بعدة لغات / Backend service patterns: Node, Go, .NET, Django (documented)
+
+### `ACODE-237` — تثبيت كل أسطح الإصدارات لتقوية سلسلة التوريد / Pin every version surface for supply-chain hardening
+
+| الحقل | القيمة |
+|---|---|
+| العائلة | `atlas-code` ([فصل العائلة](../../../.claude/skills/kosif-superpowers/references/powers/atlas-code.md)) |
+| المجموعة | البرمجة وبناء التطبيقات (`software`) |
+| نوع المخرج (A25، A27) | كود وتطبيقات ومواقع (`code`) |
+| الحالة في الكتالوج | 📄 `documented`: منهج موصوف يحتاج بناءً أو ربطًا قبل التشغيل |
+| سقف التحقق قبل العمل (A27) | V1 حتى تُبنى وتُشغَّل؛ لا تقدَّم جاهزة أبدًا |
+| نطاق الدليل | `url` |
+| الرخصة | method paraphrased from Atlas skills under MIT; the skills keep their own licenses — see each folder's SOURCE.md |
+
+**ما هي:** يثبت كل مرجع إصدار في المستودع: إجراءات CI ببصمة SHA، وقت التشغيل عبر ملف إصدار واحد، اعتماديات التطبيق بإصدار دقيق، وأوامر التثبيت بإصدار صريح. — Pins every version reference: CI actions to a commit SHA, runtimes through one version file, application dependencies exactly, install commands explicitly.
+
+**متى:** 'ثبّت كل شيء'، تقوية سلسلة التوريد، بناء قابل للتكرار / 'pin everything', supply-chain hardening, reproducible builds
+
+**كيف:** 1) Audit and print a table per category (action uses: refs incl. ones in Markdown templates, reusable workflows, packageManager, ^/~ ranges, version files, go/cargo/pip/uv/npx installs, $schema @latest) with pinned/unpinned/mixed; exclude vendored dirs. 2) Confirm scope; audit-only phrasing means stop after the table. 3) Replace action tags by the 40-char commit SHA with a '# vX.Y.Z' comment; leave local ./ actions alone. 4) Point CI at one existing version file per language that really has an entry for it, normalised to X.Y.Z; uv reads requires-python, so do not add a parallel .python-version. 5) Exact-pin application deps but keep library peer ranges. 6) Optionally add a weekly drift audit and Dependabot for actions, then lint and verify only the categories in scope.
+
+**المعاملات:** scope list, --dry-run
+
+**التثبيت:** لا خطوة تثبيت مسجلة
+
+**الوسوم:** pinning · supply chain · SHA pin · تثبيت الإصدارات · GitHub Actions · reproducible
+
+#### 1. الاستقبال (A25)
+
+- اللغة والإطار: افتراض مكتوب ← لغة المستودع الموجود، وإلا Python أو HTML/JS بلا اعتماديات
+- أين يعمل: افتراض مكتوب ← المتصفح أو سطر الأوامر حسب المخرج
+- مستودع أو ملفات موجودة: سؤال بإجابة مقترحة ← مشروع جديد مستقل
+- متى يكون ناجحًا: افتراض مكتوب ← الاختبارات الموجودة تمر + اختبار لكل سلوك جديد
+- لا تُفترض أبدًا: مادة الإنتاج نفسها، والإذن بخطوة مدفوعة أو منشورة أو لا رجعة فيها، والهوية والحقوق.
+
+#### 2. الجاهزية والشارة (A28)
+
+- `node` ← افحص وجوده بأمر واحد قبل كتابة الشارة
+- `python3` ← افحص وجوده بأمر واحد قبل كتابة الشارة
+- الوضع 1: شارة «هنا الآن» بعد الفحص، لا 📄 الكتالوج تلقائيًا · الوضع 2: `كتالوج: 📄 · هنا: غير مفحوص` · الوضع 3: بلا شارة ولا معرّف.
+
+#### 3. موضعها في الخطة (A26)
+
+- عقدة منمّطة: المدخل `spec` ← المخرج `code`، والمنفّذ `method:ACODE-237` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
+- لا أداة مسجلة تخدم عائلتها: التنفيذ بالمكتبات أو بأداة من مجموعة أخرى.
+- مراحل النوع: قراءة الكود والاختبارات ← إعادة إنتاج أو اختبار جديد ← أصغر تغيير ← الاختبارات ← مراجعة الفرق ← فرع وPR.
+- إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
+
+#### 4. بوابة التحقق (A27)
+
+- إلزامي: الاختبارات الموجودة تمر قبل التعديل وبعده ← أمر الاختبار
+- إلزامي: اختبار لكل سلوك جديد أو خطأ مُصلح ← الاختبار الجديد يفشل قبل الإصلاح
+- إلزامي: لا أسرار ولا مسارات جلسة في الشيفرة ← بحث أنماط الأسرار
+- جودة: يطابق أسلوب الكود المحيط وتسمياته ← مراجعة الفرق
+- جودة: طريقة تشغيل مكتوبة ومجرَّبة ← تشغيل الأمر المكتوب
+- جودة: الفرق أصغر ما يحقق الطلب بلا إعادة كتابة غير مطلوبة ← git diff --stat
+- جودة: المدخل الخاطئ يعطي خطأ واضحًا لا انهيارًا صامتًا ← تشغيل بمدخل خاطئ
+- أمر الحكم في الوضع 1: `think.py qa code --answers qa.json` (PASS / FAIL / INCOMPLETE).
+
+#### 5. التعافي (A29)
+
+- `missing_dependency` (اعتمادية مفقودة، ميزانية 2): سمِّ الاعتمادية بالضبط (حزمة، برنامج، خط، نموذج) ← ثبّت محليًا في بيئة العمل إن كان مجانيًا ومسموحًا (pip --user أو venv أو npm محلي) · البديل: مسار المكتبة القياسية أو أداة أخرى من نفس المجموعة · تصعيد: تثبيت نظامي أو مدفوع أو يحتاج مفتاحًا: توقف واسأل
+- `quality_below_threshold` (جودة دون العتبة، ميزانية 3): أي معيار فشل وبكم (المقيس مقابل العتبة) ← عالج السبب الأكبر وحده ثم أعد القياس · البديل: المنهج البديل المكتوب للمرحلة في الخطة · تصعيد: معيار إلزامي لا يتحقق بعد البديل: توقف وأبلغ بالأرقام
+
+#### 6. الأدلة
+
+- `https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/958-pin-everything/2242-pin-everything`
+
+#### 7. قدرات قريبة في العائلة
+
+- `ACODE-235` تدقيق الامتثال لـ GDPR انطلاقًا من جرد البيانات الشخصية / GDPR review built on a personal-data inventory (documented)
+- `ACODE-236` دليل سردي لمستودع غير مألوف للمساهمين الجدد / Narrative codebase guide for newcomers (documented)
 - `ACODE-24` أنماط خدمات الواجهة الخلفية بعدة لغات / Backend service patterns: Node, Go, .NET, Django (documented)
 - `ACODE-25` اختيار وتخزين مفاتيح الـAPI بأمان / Choose and store API credentials safely (documented)
 
@@ -10900,8 +11686,8 @@
 
 #### 7. قدرات قريبة في العائلة
 
-- `ACODE-226` تصميم تطبيقات Apple: اختر المسار أولاً / Apple platform design: choose the track first (documented)
-- `ACODE-23` قائمة صمود الخلفية أمام الاعتماديات / Backend resilience checklist for dependencies (documented)
+- `ACODE-236` دليل سردي لمستودع غير مألوف للمساهمين الجدد / Narrative codebase guide for newcomers (documented)
+- `ACODE-237` تثبيت كل أسطح الإصدارات لتقوية سلسلة التوريد / Pin every version surface for supply-chain hardening (documented)
 - `ACODE-25` اختيار وتخزين مفاتيح الـAPI بأمان / Choose and store API credentials safely (documented)
 - `ACODE-26` اختيار واجهة Zoom المناسبة / Choose Zoom surface: REST, webhooks, WebSocket, SDK (documented)
 
@@ -10975,7 +11761,7 @@
 
 #### 7. قدرات قريبة في العائلة
 
-- `ACODE-23` قائمة صمود الخلفية أمام الاعتماديات / Backend resilience checklist for dependencies (documented)
+- `ACODE-237` تثبيت كل أسطح الإصدارات لتقوية سلسلة التوريد / Pin every version surface for supply-chain hardening (documented)
 - `ACODE-24` أنماط خدمات الواجهة الخلفية بعدة لغات / Backend service patterns: Node, Go, .NET, Django (documented)
 - `ACODE-26` اختيار واجهة Zoom المناسبة / Choose Zoom surface: REST, webhooks, WebSocket, SDK (documented)
 - `ACODE-27` اختبار عقود API من جهة المستهلك بـ Pact / Consumer-driven API contract testing with Pact (documented)

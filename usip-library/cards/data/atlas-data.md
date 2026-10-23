@@ -1,4 +1,4 @@
-# `atlas-data` — البيانات والرسوم والمواقع (47 بطاقة)
+# `atlas-data` — البيانات والرسوم والمواقع (52 بطاقة)
 
 > مكتبة بروتوكول USIP v5.5 الكاملة، مولّدة بـ `smart_capabilities.py cards` من `data/powers/atlas-data.json` وقواعد الملاحق A25–A29؛ لا تُحرَّر يدويًا. [الفهرس الرئيسي](../../README.md) · [فصل المجموعة](../../../.claude/skills/kosif-superpowers/references/library/data.md) · [النواة](../../../.claude/skills/kosif-superpowers/PROTOCOL.md)
 
@@ -51,6 +51,11 @@
 - [`ADATA-45` سجل تدقيق للتغييرات في قاعدة البيانات](#adata-45--سجل-تدقيق-للتغييرات-في-قاعدة-البيانات--trigger-based-database-audit-trail)
 - [`ADATA-46` تدقيق خط الاسترجاع على سبعة محاور](#adata-46--تدقيق-خط-الاسترجاع-على-سبعة-محاور--seven-axis-retrieval-pipeline-audit)
 - [`ADATA-47` بوابة تسوية الحسابات قبل التقارير](#adata-47--بوابة-تسوية-الحسابات-قبل-التقارير--account-reconciliation-gate-before-reporting)
+- [`ADATA-48` تجهيز بيانات الضبط الدقيق وبطاقة البيانات](#adata-48--تجهيز-بيانات-الضبط-الدقيق-وبطاقة-البيانات--fine-tuning-dataset-curation-and-dataset-card)
+- [`ADATA-49` كشف الشذوذ بخط أساس ومعايرة وتفسير لكل إنذار](#adata-49--كشف-الشذوذ-بخط-أساس-ومعايرة-وتفسير-لكل-إنذار--anomaly-detection-with-baseline-calibration-and-explained-flags)
+- [`ADATA-50` التشريح المسبق: تعريف النجاح والفشل قبل البدء](#adata-50--التشريح-المسبق-تعريف-النجاح-والفشل-قبل-البدء--pre-mortem-define-success-and-failure-before-starting)
+- [`ADATA-51` ضبط العمليات إحصائيًا: اختيار مخطط التحكم وقدرة العملية](#adata-51--ضبط-العمليات-إحصائيًا-اختيار-مخطط-التحكم-وقدرة-العملية--statistical-process-control-chart-choice-and-capability)
+- [`ADATA-52` استخراج أرقام موثوقة من لوحة معلومات تُرسم في المتصفح](#adata-52--استخراج-أرقام-موثوقة-من-لوحة-معلومات-تُرسم-في-المتصفح--trustworthy-numbers-from-a-client-rendered-dashboard)
 
 ## البطاقات / cards
 
@@ -3213,6 +3218,7 @@
 - `ADATA-44` نمط الجداول الزمنية بوقت النظام / System-time temporal table pattern (documented)
 - `ADATA-45` سجل تدقيق للتغييرات في قاعدة البيانات / Trigger-based database audit trail (documented)
 - `ADATA-47` بوابة تسوية الحسابات قبل التقارير / Account reconciliation gate before reporting (documented)
+- `ADATA-48` تجهيز بيانات الضبط الدقيق وبطاقة البيانات / Fine-tuning dataset curation and dataset card (documented)
 
 ### `ADATA-47` — بوابة تسوية الحسابات قبل التقارير / Account reconciliation gate before reporting
 
@@ -3280,4 +3286,341 @@
 
 - `ADATA-45` سجل تدقيق للتغييرات في قاعدة البيانات / Trigger-based database audit trail (documented)
 - `ADATA-46` تدقيق خط الاسترجاع على سبعة محاور / Seven-axis retrieval pipeline audit (documented)
+- `ADATA-48` تجهيز بيانات الضبط الدقيق وبطاقة البيانات / Fine-tuning dataset curation and dataset card (documented)
+- `ADATA-49` كشف الشذوذ بخط أساس ومعايرة وتفسير لكل إنذار / Anomaly detection with baseline, calibration and explained flags (documented)
+
+### `ADATA-48` — تجهيز بيانات الضبط الدقيق وبطاقة البيانات / Fine-tuning dataset curation and dataset card
+
+| الحقل | القيمة |
+|---|---|
+| العائلة | `atlas-data` ([فصل العائلة](../../../.claude/skills/kosif-superpowers/references/powers/atlas-data.md)) |
+| المجموعة | البيانات والرسوم والمواقع (`data`) |
+| نوع المخرج (A25، A27) | بيانات وجداول ورسوم (`data`) |
+| الحالة في الكتالوج | 📄 `documented`: منهج موصوف يحتاج بناءً أو ربطًا قبل التشغيل |
+| سقف التحقق قبل العمل (A27) | V1 حتى تُبنى وتُشغَّل؛ لا تقدَّم جاهزة أبدًا |
+| نطاق الدليل | `url` |
+| الرخصة | method paraphrased from Atlas skills under MIT; the skills keep their own licenses — see each folder's SOURCE.md |
+
+**ما هي:** يحوّل الأمثلة الخام إلى JSONL بالشكل المناسب للطريقة (SFT/DPO/KTO) مع قالب المحادثة وإخفاء الخسارة والتعبئة وبطاقة بيانات إلزامية. — Turns raw examples into method-shaped JSONL with the chat template, loss masking, packing and a mandatory dataset card.
+
+**متى:** إعداد بيانات لتدريب أو ضبط نموذج لغوي، توليد بيانات صناعية / preparing data to fine-tune an LLM, generating synthetic data
+
+**كيف:** 1) Choose the shape by method: instruct or messages for SFT (about 1,000 rows as a floor), chosen/rejected pairs for DPO/ORPO, labelled completions for KTO. 2) Apply the target model's chat template before any concatenation or packing; keep data in messages form and mask loss to assistant tokens; decode the unmasked positions to check. 3) Packing saves the 40-70% wasted on padding but changes steps per epoch; decode 5-10 packed sequences by hand. 4) Keep at least 25% real (non-task-generated) data; filter synthetic generations (accept rates are often 10-30%). 5) Dataset card fields: provenance, counts per split, synthetic/real ratio, dedup method, template id, packing config. Use the same template at inference and eval.
+
+**المعاملات:** method, template
+
+**التثبيت:** لا خطوة تثبيت مسجلة
+
+**الوسوم:** fine-tuning · dataset · SFT · DPO · بيانات تدريب · ضبط دقيق · synthetic data
+
+#### 1. الاستقبال (A25)
+
+- مصدر البيانات: مدخل حاجب ← لا يُفترض: البيانات مطلوبة أو مصدر عام مسمى
+- السؤال الذي تجيب عنه البيانات: سؤال بإجابة مقترحة ← وصف عام: توزيع واتجاه وأعلى خمس فئات
+- الفترة والوحدات: افتراض مكتوب ← كل الفترة الموجودة في الملف، مع ذكرها
+- لا تُفترض أبدًا: مادة الإنتاج نفسها، والإذن بخطوة مدفوعة أو منشورة أو لا رجعة فيها، والهوية والحقوق.
+
+#### 2. الجاهزية والشارة (A28)
+
+- لا متطلبات مسجلة؛ افحص المسار والأداة بـ `hub.py doctor` قبل الشارة.
+- الوضع 1: شارة «هنا الآن» بعد الفحص، لا 📄 الكتالوج تلقائيًا · الوضع 2: `كتالوج: 📄 · هنا: غير مفحوص` · الوضع 3: بلا شارة ولا معرّف.
+
+#### 3. موضعها في الخطة (A26)
+
+- عقدة منمّطة: المدخل `dataset` ← المخرج `report`، والمنفّذ `method:ADATA-48` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
+- لا أداة مسجلة تخدم عائلتها: التنفيذ بالمكتبات أو بأداة من مجموعة أخرى.
+- مراحل النوع: فحص الملف ← تنظيف موثق ← حساب بسكربت ← تسوية المجاميع ← رسم يناسب السؤال ← تسليم مع السكربت.
+- إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
+
+#### 4. بوابة التحقق (A27)
+
+- إلزامي: المجاميع تطابق المصدر (تسوية) ← حساب بالكود
+- إلزامي: الوحدات والفترات مكتوبة على كل رقم ورسم ← مراجعة المحاور
+- إلزامي: كل رقم من حساب حتمي لا من تقدير النموذج ← سكربت قابل لإعادة التشغيل
+- جودة: نوع الرسم يناسب السؤال ولا يشوّه المقياس ← المحور يبدأ من الصفر للأعمدة
+- جودة: القيم المفقودة والشاذة معالجة ومذكورة ← عدّ القيم الفارغة
+- أمر الحكم في الوضع 1: `think.py qa data --answers qa.json` (PASS / FAIL / INCOMPLETE).
+
+#### 5. التعافي (A29)
+
+- `wrong_input_kind` (نوع مدخل خاطئ، ميزانية 2): افحص المدخل الفعلي (file، ffprobe، أول بايتات، ترميز النص) ← أضف محوّلًا صريحًا بين العقدتين (مثلًا ffmpeg لتحويل الصيغة) واحفظ الأصل كما هو · البديل: اطلب المدخل بالصيغة الصحيحة مع أمر تحويل جاهز · تصعيد: إن كان التحويل يفقد جودة أو بيانات: اسأل قبل التحويل
+- `quality_below_threshold` (جودة دون العتبة، ميزانية 3): أي معيار فشل وبكم (المقيس مقابل العتبة) ← عالج السبب الأكبر وحده ثم أعد القياس · البديل: المنهج البديل المكتوب للمرحلة في الخطة · تصعيد: معيار إلزامي لا يتحقق بعد البديل: توقف وأبلغ بالأرقام
+
+#### 6. الأدلة
+
+- `https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/3104-llm-finetuning/13287-dataset-curation`
+
+#### 7. قدرات قريبة في العائلة
+
+- `ADATA-46` تدقيق خط الاسترجاع على سبعة محاور / Seven-axis retrieval pipeline audit (documented)
+- `ADATA-47` بوابة تسوية الحسابات قبل التقارير / Account reconciliation gate before reporting (documented)
+- `ADATA-49` كشف الشذوذ بخط أساس ومعايرة وتفسير لكل إنذار / Anomaly detection with baseline, calibration and explained flags (documented)
+- `ADATA-50` التشريح المسبق: تعريف النجاح والفشل قبل البدء / Pre-mortem: define success and failure before starting (documented)
+
+### `ADATA-49` — كشف الشذوذ بخط أساس ومعايرة وتفسير لكل إنذار / Anomaly detection with baseline, calibration and explained flags
+
+| الحقل | القيمة |
+|---|---|
+| العائلة | `atlas-data` ([فصل العائلة](../../../.claude/skills/kosif-superpowers/references/powers/atlas-data.md)) |
+| المجموعة | البيانات والرسوم والمواقع (`data`) |
+| نوع المخرج (A25، A27) | بيانات وجداول ورسوم (`data`) |
+| الحالة في الكتالوج | 📄 `documented`: منهج موصوف يحتاج بناءً أو ربطًا قبل التشغيل |
+| سقف التحقق قبل العمل (A27) | V1 حتى تُبنى وتُشغَّل؛ لا تقدَّم جاهزة أبدًا |
+| نطاق الدليل | `url` |
+| الرخصة | method paraphrased from Atlas skills under MIT; the skills keep their own licenses — see each folder's SOURCE.md |
+
+**ما هي:** يصمم كشف القيم الشاذة في جداول أو سلاسل زمنية انطلاقًا من القرار الذي يلي الإنذار، بأبسط طريقة مناسبة وعتبات معايرة. — Designs anomaly detection for tables or time series starting from the decision a flag triggers, with the simplest fitting method and calibrated thresholds.
+
+**متى:** قيم غريبة في مقياس، مراقبة مؤشرات، احتيال محتمل، سلسلة زمنية موسمية / odd metric values, KPI monitoring, possible fraud, seasonal series
+
+**كيف:** 1) Define entity, metric, grain, the action after a flag and the cost of false positives vs negatives before choosing a method. 2) Validate units, duplicates, missing/default values, time zones, schema changes and future leakage; never fill missing with zero unless zero is the meaning. 3) Pick a baseline (history, peer group, rolling window, seasonal position, forecast residual) and segment different populations first. 4) Smallest method: z-score, IQR/quantiles, MAD, rolling or seasonal residual, Isolation Forest or LOF for multivariate. 5) Calibrate thresholds by backtest or labelled incidents (flag rate, precision/recall, delay), not by the '3 sigma' habit. 6) Explain each flag (observed, expected, deviation, method) and classify it (data defect, expected event, novel valid, model failure) before changing any record; plan alert routing and feedback.
+
+**المعاملات:** metric, grain
+
+**التثبيت:** لا خطوة تثبيت مسجلة
+
+**الوسوم:** anomaly detection · outliers · time series · قيم شاذة · مراقبة · statistics
+
+#### 1. الاستقبال (A25)
+
+- مصدر البيانات: مدخل حاجب ← لا يُفترض: البيانات مطلوبة أو مصدر عام مسمى
+- السؤال الذي تجيب عنه البيانات: سؤال بإجابة مقترحة ← وصف عام: توزيع واتجاه وأعلى خمس فئات
+- الفترة والوحدات: افتراض مكتوب ← كل الفترة الموجودة في الملف، مع ذكرها
+- لا تُفترض أبدًا: مادة الإنتاج نفسها، والإذن بخطوة مدفوعة أو منشورة أو لا رجعة فيها، والهوية والحقوق.
+
+#### 2. الجاهزية والشارة (A28)
+
+- لا متطلبات مسجلة؛ افحص المسار والأداة بـ `hub.py doctor` قبل الشارة.
+- الوضع 1: شارة «هنا الآن» بعد الفحص، لا 📄 الكتالوج تلقائيًا · الوضع 2: `كتالوج: 📄 · هنا: غير مفحوص` · الوضع 3: بلا شارة ولا معرّف.
+
+#### 3. موضعها في الخطة (A26)
+
+- عقدة منمّطة: المدخل `dataset` ← المخرج `report`، والمنفّذ `method:ADATA-49` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
+- لا أداة مسجلة تخدم عائلتها: التنفيذ بالمكتبات أو بأداة من مجموعة أخرى.
+- مراحل النوع: فحص الملف ← تنظيف موثق ← حساب بسكربت ← تسوية المجاميع ← رسم يناسب السؤال ← تسليم مع السكربت.
+- إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
+
+#### 4. بوابة التحقق (A27)
+
+- إلزامي: المجاميع تطابق المصدر (تسوية) ← حساب بالكود
+- إلزامي: الوحدات والفترات مكتوبة على كل رقم ورسم ← مراجعة المحاور
+- إلزامي: كل رقم من حساب حتمي لا من تقدير النموذج ← سكربت قابل لإعادة التشغيل
+- جودة: نوع الرسم يناسب السؤال ولا يشوّه المقياس ← المحور يبدأ من الصفر للأعمدة
+- جودة: القيم المفقودة والشاذة معالجة ومذكورة ← عدّ القيم الفارغة
+- أمر الحكم في الوضع 1: `think.py qa data --answers qa.json` (PASS / FAIL / INCOMPLETE).
+
+#### 5. التعافي (A29)
+
+- `wrong_input_kind` (نوع مدخل خاطئ، ميزانية 2): افحص المدخل الفعلي (file، ffprobe، أول بايتات، ترميز النص) ← أضف محوّلًا صريحًا بين العقدتين (مثلًا ffmpeg لتحويل الصيغة) واحفظ الأصل كما هو · البديل: اطلب المدخل بالصيغة الصحيحة مع أمر تحويل جاهز · تصعيد: إن كان التحويل يفقد جودة أو بيانات: اسأل قبل التحويل
+- `quality_below_threshold` (جودة دون العتبة، ميزانية 3): أي معيار فشل وبكم (المقيس مقابل العتبة) ← عالج السبب الأكبر وحده ثم أعد القياس · البديل: المنهج البديل المكتوب للمرحلة في الخطة · تصعيد: معيار إلزامي لا يتحقق بعد البديل: توقف وأبلغ بالأرقام
+
+#### 6. الأدلة
+
+- `https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/2207-majestic-data/8242-anomaly-detection`
+
+#### 7. قدرات قريبة في العائلة
+
+- `ADATA-47` بوابة تسوية الحسابات قبل التقارير / Account reconciliation gate before reporting (documented)
+- `ADATA-48` تجهيز بيانات الضبط الدقيق وبطاقة البيانات / Fine-tuning dataset curation and dataset card (documented)
+- `ADATA-50` التشريح المسبق: تعريف النجاح والفشل قبل البدء / Pre-mortem: define success and failure before starting (documented)
+- `ADATA-51` ضبط العمليات إحصائيًا: اختيار مخطط التحكم وقدرة العملية / Statistical process control: chart choice and capability (documented)
+
+### `ADATA-50` — التشريح المسبق: تعريف النجاح والفشل قبل البدء / Pre-mortem: define success and failure before starting
+
+| الحقل | القيمة |
+|---|---|
+| العائلة | `atlas-data` ([فصل العائلة](../../../.claude/skills/kosif-superpowers/references/powers/atlas-data.md)) |
+| المجموعة | البيانات والرسوم والمواقع (`data`) |
+| نوع المخرج (A25، A27) | بيانات وجداول ورسوم (`data`) |
+| الحالة في الكتالوج | 📄 `documented`: منهج موصوف يحتاج بناءً أو ربطًا قبل التشغيل |
+| سقف التحقق قبل العمل (A27) | V1 حتى تُبنى وتُشغَّل؛ لا تقدَّم جاهزة أبدًا |
+| نطاق الدليل | `url` |
+| الرخصة | method paraphrased from Atlas skills under MIT; the skills keep their own licenses — see each folder's SOURCE.md |
+
+**ما هي:** قبل تنفيذ عمل متعدد الخطوات يتخيل أن العمل فشل فعلًا ويشرح لماذا، ثم يكتب معايير نجاح وفشل قابلة للاختبار وخطة تحقق بعمق يناسب المخاطرة. — Before multi-step work, imagines it has already failed and explains why, then writes testable success/failure criteria and a verification plan sized to the stakes.
+
+**متى:** قبل البدء بمهمة برمجية أو بيانات أو بحث متعددة الخطوات / before any multi-step code, data or research task
+
+**كيف:** 1) Frame the task in one sentence. 2) Success as 'when [action], then [observable result]'. 3) Specific failure modes, never 'could have bugs'. 4) Unverified assumptions. 5) Top 3-5 risks, each with a concrete countermeasure. 6) Verification plan a separate verifier could apply from the card alone. Size it: Micro (one line, the default for small reversible work), Light (inline), Standard (saved card), Deep (delegated, for novel or high-stakes work). Always do it before execution, never after.
+
+**المعاملات:** tier
+
+**التثبيت:** لا خطوة تثبيت مسجلة
+
+**الوسوم:** pre-mortem · risk · planning · تحليل المخاطر · معايير القبول · verification
+
+#### 1. الاستقبال (A25)
+
+- مصدر البيانات: مدخل حاجب ← لا يُفترض: البيانات مطلوبة أو مصدر عام مسمى
+- السؤال الذي تجيب عنه البيانات: سؤال بإجابة مقترحة ← وصف عام: توزيع واتجاه وأعلى خمس فئات
+- الفترة والوحدات: افتراض مكتوب ← كل الفترة الموجودة في الملف، مع ذكرها
+- لا تُفترض أبدًا: مادة الإنتاج نفسها، والإذن بخطوة مدفوعة أو منشورة أو لا رجعة فيها، والهوية والحقوق.
+
+#### 2. الجاهزية والشارة (A28)
+
+- لا متطلبات مسجلة؛ افحص المسار والأداة بـ `hub.py doctor` قبل الشارة.
+- الوضع 1: شارة «هنا الآن» بعد الفحص، لا 📄 الكتالوج تلقائيًا · الوضع 2: `كتالوج: 📄 · هنا: غير مفحوص` · الوضع 3: بلا شارة ولا معرّف.
+
+#### 3. موضعها في الخطة (A26)
+
+- عقدة منمّطة: المدخل `dataset` ← المخرج `report`، والمنفّذ `method:ADATA-50` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
+- لا أداة مسجلة تخدم عائلتها: التنفيذ بالمكتبات أو بأداة من مجموعة أخرى.
+- مراحل النوع: فحص الملف ← تنظيف موثق ← حساب بسكربت ← تسوية المجاميع ← رسم يناسب السؤال ← تسليم مع السكربت.
+- إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
+
+#### 4. بوابة التحقق (A27)
+
+- إلزامي: المجاميع تطابق المصدر (تسوية) ← حساب بالكود
+- إلزامي: الوحدات والفترات مكتوبة على كل رقم ورسم ← مراجعة المحاور
+- إلزامي: كل رقم من حساب حتمي لا من تقدير النموذج ← سكربت قابل لإعادة التشغيل
+- جودة: نوع الرسم يناسب السؤال ولا يشوّه المقياس ← المحور يبدأ من الصفر للأعمدة
+- جودة: القيم المفقودة والشاذة معالجة ومذكورة ← عدّ القيم الفارغة
+- أمر الحكم في الوضع 1: `think.py qa data --answers qa.json` (PASS / FAIL / INCOMPLETE).
+
+#### 5. التعافي (A29)
+
+- `wrong_input_kind` (نوع مدخل خاطئ، ميزانية 2): افحص المدخل الفعلي (file، ffprobe، أول بايتات، ترميز النص) ← أضف محوّلًا صريحًا بين العقدتين (مثلًا ffmpeg لتحويل الصيغة) واحفظ الأصل كما هو · البديل: اطلب المدخل بالصيغة الصحيحة مع أمر تحويل جاهز · تصعيد: إن كان التحويل يفقد جودة أو بيانات: اسأل قبل التحويل
+- `quality_below_threshold` (جودة دون العتبة، ميزانية 3): أي معيار فشل وبكم (المقيس مقابل العتبة) ← عالج السبب الأكبر وحده ثم أعد القياس · البديل: المنهج البديل المكتوب للمرحلة في الخطة · تصعيد: معيار إلزامي لا يتحقق بعد البديل: توقف وأبلغ بالأرقام
+
+#### 6. الأدلة
+
+- `https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/2123-pre-mortem/7548-pre-mortem`
+
+#### 7. قدرات قريبة في العائلة
+
+- `ADATA-48` تجهيز بيانات الضبط الدقيق وبطاقة البيانات / Fine-tuning dataset curation and dataset card (documented)
+- `ADATA-49` كشف الشذوذ بخط أساس ومعايرة وتفسير لكل إنذار / Anomaly detection with baseline, calibration and explained flags (documented)
+- `ADATA-51` ضبط العمليات إحصائيًا: اختيار مخطط التحكم وقدرة العملية / Statistical process control: chart choice and capability (documented)
+- `ADATA-52` استخراج أرقام موثوقة من لوحة معلومات تُرسم في المتصفح / Trustworthy numbers from a client-rendered dashboard (documented)
+
+### `ADATA-51` — ضبط العمليات إحصائيًا: اختيار مخطط التحكم وقدرة العملية / Statistical process control: chart choice and capability
+
+| الحقل | القيمة |
+|---|---|
+| العائلة | `atlas-data` ([فصل العائلة](../../../.claude/skills/kosif-superpowers/references/powers/atlas-data.md)) |
+| المجموعة | البيانات والرسوم والمواقع (`data`) |
+| نوع المخرج (A25، A27) | بيانات وجداول ورسوم (`data`) |
+| الحالة في الكتالوج | 📄 `documented`: منهج موصوف يحتاج بناءً أو ربطًا قبل التشغيل |
+| سقف التحقق قبل العمل (A27) | V1 حتى تُبنى وتُشغَّل؛ لا تقدَّم جاهزة أبدًا |
+| نطاق الدليل | `url` |
+| الرخصة | method paraphrased from Atlas skills under MIT; the skills keep their own licenses — see each folder's SOURCE.md |
+
+**ما هي:** يختار مخطط التحكم المناسب لنوع البيانات وحجم المجموعة، يحسب الحدود من البيانات، يطبق قواعد Western Electric، ثم يحسب Cp/Cpk/Pp/Ppk على عملية مستقرة فقط. — Picks the control chart for the data type and subgroup size, computes limits from data, applies Western Electric rules, then computes Cp/Cpk/Pp/Ppk only on a stable process.
+
+**متى:** مراقبة خاصية إنتاج، تفسير إشارة خروج عن السيطرة، تدقيق نظام SPC / monitoring a characteristic, interpreting an out-of-control signal, auditing SPC
+
+**كيف:** 1) Variable data: X-bar/R for n 2-9, X-bar/S for n >= 10, I-MR for n = 1; attributes: p, np, c or u. 2) Limits from at least 25 subgroups and never set to the specification limits. 3) Apply rules 1-3 at least (beyond 3 sigma, 9 on one side, 6 trending) and all 8 for safety-critical items. 4) Capability only on an in-control process with 100+ consecutive parts; fewer means 'preliminary' with n stated; always report Cpk with Cp. 5) Thresholds: Cpk >= 1.33 minimum, 1.67 target. 6) On a signal: stop, contain, investigate what changed, root cause, correct, document; never recalculate limits to hide it.
+
+**المعاملات:** characteristic, subgroup size
+
+**التثبيت:** لا خطوة تثبيت مسجلة
+
+**الوسوم:** SPC · control chart · Cpk · quality · ضبط الجودة · إحصاء
+
+#### 1. الاستقبال (A25)
+
+- مصدر البيانات: مدخل حاجب ← لا يُفترض: البيانات مطلوبة أو مصدر عام مسمى
+- السؤال الذي تجيب عنه البيانات: سؤال بإجابة مقترحة ← وصف عام: توزيع واتجاه وأعلى خمس فئات
+- الفترة والوحدات: افتراض مكتوب ← كل الفترة الموجودة في الملف، مع ذكرها
+- لا تُفترض أبدًا: مادة الإنتاج نفسها، والإذن بخطوة مدفوعة أو منشورة أو لا رجعة فيها، والهوية والحقوق.
+
+#### 2. الجاهزية والشارة (A28)
+
+- لا متطلبات مسجلة؛ افحص المسار والأداة بـ `hub.py doctor` قبل الشارة.
+- الوضع 1: شارة «هنا الآن» بعد الفحص، لا 📄 الكتالوج تلقائيًا · الوضع 2: `كتالوج: 📄 · هنا: غير مفحوص` · الوضع 3: بلا شارة ولا معرّف.
+
+#### 3. موضعها في الخطة (A26)
+
+- عقدة منمّطة: المدخل `dataset` ← المخرج `report`، والمنفّذ `method:ADATA-51` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
+- لا أداة مسجلة تخدم عائلتها: التنفيذ بالمكتبات أو بأداة من مجموعة أخرى.
+- مراحل النوع: فحص الملف ← تنظيف موثق ← حساب بسكربت ← تسوية المجاميع ← رسم يناسب السؤال ← تسليم مع السكربت.
+- إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
+
+#### 4. بوابة التحقق (A27)
+
+- إلزامي: المجاميع تطابق المصدر (تسوية) ← حساب بالكود
+- إلزامي: الوحدات والفترات مكتوبة على كل رقم ورسم ← مراجعة المحاور
+- إلزامي: كل رقم من حساب حتمي لا من تقدير النموذج ← سكربت قابل لإعادة التشغيل
+- جودة: نوع الرسم يناسب السؤال ولا يشوّه المقياس ← المحور يبدأ من الصفر للأعمدة
+- جودة: القيم المفقودة والشاذة معالجة ومذكورة ← عدّ القيم الفارغة
+- أمر الحكم في الوضع 1: `think.py qa data --answers qa.json` (PASS / FAIL / INCOMPLETE).
+
+#### 5. التعافي (A29)
+
+- `wrong_input_kind` (نوع مدخل خاطئ، ميزانية 2): افحص المدخل الفعلي (file، ffprobe، أول بايتات، ترميز النص) ← أضف محوّلًا صريحًا بين العقدتين (مثلًا ffmpeg لتحويل الصيغة) واحفظ الأصل كما هو · البديل: اطلب المدخل بالصيغة الصحيحة مع أمر تحويل جاهز · تصعيد: إن كان التحويل يفقد جودة أو بيانات: اسأل قبل التحويل
+- `quality_below_threshold` (جودة دون العتبة، ميزانية 3): أي معيار فشل وبكم (المقيس مقابل العتبة) ← عالج السبب الأكبر وحده ثم أعد القياس · البديل: المنهج البديل المكتوب للمرحلة في الخطة · تصعيد: معيار إلزامي لا يتحقق بعد البديل: توقف وأبلغ بالأرقام
+
+#### 6. الأدلة
+
+- `https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/2989-quality-engineering-skills/12654-spc-control-charts`
+
+#### 7. قدرات قريبة في العائلة
+
+- `ADATA-49` كشف الشذوذ بخط أساس ومعايرة وتفسير لكل إنذار / Anomaly detection with baseline, calibration and explained flags (documented)
+- `ADATA-50` التشريح المسبق: تعريف النجاح والفشل قبل البدء / Pre-mortem: define success and failure before starting (documented)
+- `ADATA-52` استخراج أرقام موثوقة من لوحة معلومات تُرسم في المتصفح / Trustworthy numbers from a client-rendered dashboard (documented)
+
+### `ADATA-52` — استخراج أرقام موثوقة من لوحة معلومات تُرسم في المتصفح / Trustworthy numbers from a client-rendered dashboard
+
+| الحقل | القيمة |
+|---|---|
+| العائلة | `atlas-data` ([فصل العائلة](../../../.claude/skills/kosif-superpowers/references/powers/atlas-data.md)) |
+| المجموعة | البيانات والرسوم والمواقع (`data`) |
+| نوع المخرج (A25، A27) | بيانات وجداول ورسوم (`data`) |
+| الحالة في الكتالوج | 📄 `documented`: منهج موصوف يحتاج بناءً أو ربطًا قبل التشغيل |
+| سقف التحقق قبل العمل (A27) | V1 حتى تُبنى وتُشغَّل؛ لا تقدَّم جاهزة أبدًا |
+| نطاق الدليل | `url` |
+| الرخصة | method paraphrased from Atlas skills under MIT; the skills keep their own licenses — see each folder's SOURCE.md |
+
+**ما هي:** بدل أتمتة متصفح يجد كتلة البيانات المضمنة في الصفحة، يفك مخططها من حلقة الرسم نفسها، وينقل صيغ المقاييس المشتقة حرفيًا، ثم يطابق كل رقم مع العرض. — Instead of driving a browser, finds the data blob embedded in the page, decodes its schema from the page's own render loop, ports derived-metric formulas literally, then reconciles every number with the rendered view.
+
+**متى:** لوحة لا تظهر أرقامها في HTML، تحويل لوحة إلى مصدر تقرير / a dashboard whose numbers are not in the HTML, using a dashboard as a report source
+
+**كيف:** 1) Confirm you are authorised to read the dashboard; never commit fetched personal pages. 2) Locate the blob (__NEXT_DATA__, initial-state globals, JSON script tags, a top-level const). 3) Read field names from the code that destructures the tuples; note lookup indexes and offsets. 4) Port formulas, including degenerate cases. Two traps: a displayed rank may be a row number under the active sort (rank yourself and give the denominator), and a 'velocity' may compare halves of the same window. 5) Match entities by stable id, not name. 6) Reproduce every number for one entity; a single mismatch is a finding to explain, not to hide. 7) Distinguish a login page from a format change, and keep an offline synthetic self-check.
+
+**التثبيت:** لا خطوة تثبيت مسجلة
+
+**الوسوم:** dashboard · scraping · data extraction · لوحة معلومات · استخراج بيانات · reconciliation
+
+#### 1. الاستقبال (A25)
+
+- مصدر البيانات: مدخل حاجب ← لا يُفترض: البيانات مطلوبة أو مصدر عام مسمى
+- السؤال الذي تجيب عنه البيانات: سؤال بإجابة مقترحة ← وصف عام: توزيع واتجاه وأعلى خمس فئات
+- الفترة والوحدات: افتراض مكتوب ← كل الفترة الموجودة في الملف، مع ذكرها
+- لا تُفترض أبدًا: مادة الإنتاج نفسها، والإذن بخطوة مدفوعة أو منشورة أو لا رجعة فيها، والهوية والحقوق.
+
+#### 2. الجاهزية والشارة (A28)
+
+- لا متطلبات مسجلة؛ افحص المسار والأداة بـ `hub.py doctor` قبل الشارة.
+- الوضع 1: شارة «هنا الآن» بعد الفحص، لا 📄 الكتالوج تلقائيًا · الوضع 2: `كتالوج: 📄 · هنا: غير مفحوص` · الوضع 3: بلا شارة ولا معرّف.
+
+#### 3. موضعها في الخطة (A26)
+
+- عقدة منمّطة: المدخل `dataset` ← المخرج `report`، والمنفّذ `method:ADATA-52` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
+- لا أداة مسجلة تخدم عائلتها: التنفيذ بالمكتبات أو بأداة من مجموعة أخرى.
+- مراحل النوع: فحص الملف ← تنظيف موثق ← حساب بسكربت ← تسوية المجاميع ← رسم يناسب السؤال ← تسليم مع السكربت.
+- إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
+
+#### 4. بوابة التحقق (A27)
+
+- إلزامي: المجاميع تطابق المصدر (تسوية) ← حساب بالكود
+- إلزامي: الوحدات والفترات مكتوبة على كل رقم ورسم ← مراجعة المحاور
+- إلزامي: كل رقم من حساب حتمي لا من تقدير النموذج ← سكربت قابل لإعادة التشغيل
+- جودة: نوع الرسم يناسب السؤال ولا يشوّه المقياس ← المحور يبدأ من الصفر للأعمدة
+- جودة: القيم المفقودة والشاذة معالجة ومذكورة ← عدّ القيم الفارغة
+- أمر الحكم في الوضع 1: `think.py qa data --answers qa.json` (PASS / FAIL / INCOMPLETE).
+
+#### 5. التعافي (A29)
+
+- `wrong_input_kind` (نوع مدخل خاطئ، ميزانية 2): افحص المدخل الفعلي (file، ffprobe، أول بايتات، ترميز النص) ← أضف محوّلًا صريحًا بين العقدتين (مثلًا ffmpeg لتحويل الصيغة) واحفظ الأصل كما هو · البديل: اطلب المدخل بالصيغة الصحيحة مع أمر تحويل جاهز · تصعيد: إن كان التحويل يفقد جودة أو بيانات: اسأل قبل التحويل
+- `quality_below_threshold` (جودة دون العتبة، ميزانية 3): أي معيار فشل وبكم (المقيس مقابل العتبة) ← عالج السبب الأكبر وحده ثم أعد القياس · البديل: المنهج البديل المكتوب للمرحلة في الخطة · تصعيد: معيار إلزامي لا يتحقق بعد البديل: توقف وأبلغ بالأرقام
+
+#### 6. الأدلة
+
+- `https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/3286-client-rendered-dashboard-data-blob/13800-client-rendered-dashboard-data-blob`
+
+#### 7. قدرات قريبة في العائلة
+
+- `ADATA-50` التشريح المسبق: تعريف النجاح والفشل قبل البدء / Pre-mortem: define success and failure before starting (documented)
+- `ADATA-51` ضبط العمليات إحصائيًا: اختيار مخطط التحكم وقدرة العملية / Statistical process control: chart choice and capability (documented)
 

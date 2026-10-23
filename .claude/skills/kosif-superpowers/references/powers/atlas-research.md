@@ -3,13 +3,13 @@
 
 > **قوتك هنا / what this gives you:** البحث والزحف والاستشهاد وإدارة الملاحظات والمعرفة كما تصفها مهارات أطلس. — Research, crawling, citation and knowledge-management methods from the Atlas.
 > **أقوى دليل / strongest evidence:** لا قوة مثبتة بعد في هذه العائلة — no ✅ power yet; the strongest badge here is 📄 documented.
-> **9 powers follow** — ✅ 0 · 🟢 0 · 📦 0 · 🔑 0 · 👁 0 · 📄 9 · 💡 0.
+> **11 powers follow** — ✅ 0 · 🟢 0 · 📦 0 · 🔑 0 · 👁 0 · 📄 11 · 💡 0.
 
 **الحالة / status:** ✅ مُثبت (شُغّل فعلًا وله مسار دليل) · 🟢 جاهز (كود موجود يعمل بما هو متاح عادة) · 📦 بأمر تثبيت واحد · 🔑 يحتاج مفتاحًا أو حسابًا أو موصلًا · 👁 شوهد في فيديو مرجعي (للموشن فقط) · 📄 طريقة موثقة · 💡 فكرة. الشارة هي أدنى مستوى صادق — the badge is the lowest level that is true.
 مسارات الدليل نسبية إلى `/home/user/`؛ و`session-<date>:<file>#<section>` تشير إلى تشغيل موثق في جلسة سابقة؛ و`owner-upload:` إلى ملف داخل أرشيف أرسله المالك. Proof paths are relative to `/home/user/`.
 
 **المجال / domain:** البحث والويب — Research & web · **البادئة / prefix:** `AWEB` · **البيانات / data:** `data/powers/atlas-research.json` · **بحث / search:** `python3 scripts/powers.py family atlas-research`
-**مراجع ذات صلة / related references:** [CLAUDE_3_MINUTE_MAP.md](../CLAUDE_3_MINUTE_MAP.md) · [hubs.md](../hubs.md)
+**مراجع ذات صلة / related references:** [CLAUDE_3_MINUTE_MAP.md](../CLAUDE_3_MINUTE_MAP.md) · [hubs.md](../hubs.md) · [rea-superpowers-frontier-20261023.md](../rea-superpowers-frontier-20261023.md)
 
 ## الفهرس / contents
 
@@ -20,6 +20,7 @@
 - **هندسة النماذج اللغوية — LLM & AI engineering** — AWEB-05 (1)
 - **القطاعات المنظّمة — Regulated industries & domain expertise** — AWEB-06 … AWEB-08 (3)
 - **التعليم والتعلم — Teaching, learning & study** — AWEB-09 (1)
+- **إدارة المعرفة — Notes, knowledge bases & personal memory** — AWEB-10 … AWEB-11 (2)
 - المصادر والرخص / sources & licences
 
 ## واجهات API والخلفية — APIs, backends & auth
@@ -113,9 +114,27 @@
 - **الدليل / proof:** `https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/227-syllabus/704-syllabus` · `https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/2451-knowledge/9499-course-digest`
 - **المصدر / source:** KOSIF Atlas mining 2026-10-20 (https://github.com/kosif199022-jpg/kosif-atlas): syllabus/syllabus (#704); knowledge/course-digest (#9499) · theme education-learning · 3 supporting skills · verifier read: skills/227-syllabus/704-syllabus, skills/2451-knowledge/9499-course-digest
 
+## إدارة المعرفة — Notes, knowledge bases & personal memory
+
+#### AWEB-10 · قواعد بيانات الملاحظات بملفات Obsidian Bases · Database views over notes with Obsidian Bases · 📄 موصوف / documented only
+- **ماذا / what:** يبني ملف .base بصيغة YAML يعرض الملاحظات كجدول أو بطاقات أو قائمة بفلاتر وصيغ وملخصات. — Builds a YAML .base file that shows notes as table, cards or list views with filters, formulas and summaries.
+- **متى أستخدمها / when:** متتبع مهام أو قائمة قراءة أو فهرس يوميات داخل Obsidian / a task tracker, reading list or daily-notes index inside an Obsidian vault
+- **كيف / how:** 1) Scope with global filters (and/or/not over file.hasTag, file.inFolder, properties). 2) Define computed columns under formulas and reference them as formula.NAME. 3) Add one or more views with order, groupBy, per-view filters and summaries (Average, Sum, Median, Earliest...). 4) Date differences are Durations: read .days before rounding. 5) Quote any string with : { } [ ] # etc.; single-quote formulas that contain double quotes. 6) Validate the YAML and that every formula.X is defined, then open it in Obsidian; embed with ![[Name.base#View]]. **أرقام / params:** vault folder, tags
+- **الرخصة / license:** method paraphrased from Atlas skills under MIT; the skills keep their own licenses — see each folder's SOURCE.md
+- **الدليل / proof:** `https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/1247-obsidian-bases/2927-obsidian-bases`
+- **المصدر / source:** KOSIF Atlas frontier mining 2026-10-23 (https://github.com/kosif199022-jpg/kosif-atlas @ 99bb108d): obsidian-bases/obsidian-bases (#2927) · theme knowledge-management · SKILL.md read up to its first 12,000 characters as inert text (rest not read): skills/1247-obsidian-bases/2927-obsidian-bases
+
+#### AWEB-11 · التعرّف بدل التذكّر في المنتقيات والقوائم · Recognition over recall in pickers and menus · 📄 موصوف / documented only
+- **ماذا / what:** يصمم المدخلات بحيث يرى المستخدم الخيارات ويتعرّف عليها بدل أن يتذكرها ويكتبها. — Designs inputs so the user sees and recognises options instead of recalling and typing them.
+- **متى أستخدمها / when:** منتقي تاريخ أو منطقة زمنية، لوحة أوامر، حقل بحث، قائمة إعدادات / pickers, command palettes, autocomplete, settings, navigation
+- **كيف / how:** 1) For each input ask: are the valid options shown, or must the user remember them? 2) Large known sets: a combobox (type a few letters, recognise from filtered matches) with recents first. 3) Surface recents and frequently used items in pickers and navigation. 4) Hook fields to autocomplete and show example values instead of 'Enter value'. 5) Keep recall paths (shortcuts, CLI) for experts alongside, and keep recall where it is the point (passwords, free text). 6) Test discoverability: can a newcomer find the feature without knowing its name?
+- **الرخصة / license:** method paraphrased from Atlas skills under MIT; the skills keep their own licenses — see each folder's SOURCE.md
+- **الدليل / proof:** `https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/1503-universal-design-principles/3771-recognition-over-recall`
+- **المصدر / source:** KOSIF Atlas frontier mining 2026-10-23 (https://github.com/kosif199022-jpg/kosif-atlas @ 99bb108d): universal-design-principles/recognition-over-recall (#3771) · theme knowledge-management · SKILL.md read up to its first 12,000 characters as inert text (rest not read): skills/1503-universal-design-principles/3771-recognition-over-recall
+
 ## المصادر والرخص / sources & licences
 
-- الرخص / licences: method paraphrased from Atlas skills under MIT; the skills keep their own licenses — see each folder's SOURCE.md (8) · method paraphrased from Atlas skills under MIT / Apache-2.0; the skills keep their own licenses — see each folder's SOURCE.md (1)
+- الرخص / licences: method paraphrased from Atlas skills under MIT; the skills keep their own licenses — see each folder's SOURCE.md (10) · method paraphrased from Atlas skills under MIT / Apache-2.0; the skills keep their own licenses — see each folder's SOURCE.md (1)
 - الأفكار مكتوبة بكلماتنا مع رابط المصدر؛ لا يُنسخ نص طرف ثالث طويل. Ideas are paraphrased with a link to the source; no long third-party text is copied. `—` = no licence recorded (own method or own wording).
 
 ---

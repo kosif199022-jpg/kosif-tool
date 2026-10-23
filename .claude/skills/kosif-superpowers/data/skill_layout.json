@@ -86,7 +86,9 @@
     "references/superpowers-unification.md",
     "references/claude-auto-local-first.md",
     "references/remote-commander-mcp.md",
-    "references/owned-repos-map.md"
+    "references/owned-repos-map.md",
+    "references/superpowers-rea-map.md",
+    "references/superpowers-rea-map.html"
    ],
    "globs": []
   },
@@ -98,7 +100,8 @@
    "target": null,
    "files": [],
    "globs": [
-    "references/powers/*", "references/library/*"
+    "references/powers/*",
+    "references/library/*"
    ]
   },
   {
@@ -225,7 +228,8 @@
     "references/atlas-5000-mining-20261023.md",
     "references/atlas-reviewed-audit.md",
     "references/owner-uploads-review-20261023.md",
-    "references/codex-repos-study-20261023.md"
+    "references/codex-repos-study-20261023.md",
+    "references/rea-superpowers-frontier-20261023.md"
    ],
    "globs": []
   }

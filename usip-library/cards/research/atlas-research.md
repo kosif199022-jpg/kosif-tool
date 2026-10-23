@@ -1,4 +1,4 @@
-# `atlas-research` — البحث والمعرفة (9 بطاقة)
+# `atlas-research` — البحث والمعرفة (11 بطاقة)
 
 > مكتبة بروتوكول USIP v5.5 الكاملة، مولّدة بـ `smart_capabilities.py cards` من `data/powers/atlas-research.json` وقواعد الملاحق A25–A29؛ لا تُحرَّر يدويًا. [الفهرس الرئيسي](../../README.md) · [فصل المجموعة](../../../.claude/skills/kosif-superpowers/references/library/research.md) · [النواة](../../../.claude/skills/kosif-superpowers/PROTOCOL.md)
 
@@ -13,6 +13,8 @@
 - [`AWEB-07` استخراج وإثراء بيانات الأطباء](#aweb-07--استخراج-وإثراء-بيانات-الأطباء--healthcare-provider-list-extraction-and-enrichment)
 - [`AWEB-08` بحث براءات الاختراع بأسئلة إلزامية](#aweb-08--بحث-براءات-الاختراع-بأسئلة-إلزامية--patent-search-with-forcing-intake)
 - [`AWEB-09` من المنهج الدراسي إلى قائمة قراءات](#aweb-09--من-المنهج-الدراسي-إلى-قائمة-قراءات--course-syllabus-to-supplementary-reading-list)
+- [`AWEB-10` قواعد بيانات الملاحظات بملفات Obsidian Bases](#aweb-10--قواعد-بيانات-الملاحظات-بملفات-obsidian-bases--database-views-over-notes-with-obsidian-bases)
+- [`AWEB-11` التعرّف بدل التذكّر في المنتقيات والقوائم](#aweb-11--التعرّف-بدل-التذكّر-في-المنتقيات-والقوائم--recognition-over-recall-in-pickers-and-menus)
 
 ## البطاقات / cards
 
@@ -552,6 +554,7 @@
 - `AWEB-06` بوابة نقاط النهاية وحجم العينة للدراسات / Clinical study endpoint and sample-size gate (documented)
 - `AWEB-07` استخراج وإثراء بيانات الأطباء / Healthcare provider list extraction and enrichment (documented)
 - `AWEB-09` من المنهج الدراسي إلى قائمة قراءات / Course syllabus to supplementary reading list (documented)
+- `AWEB-10` قواعد بيانات الملاحظات بملفات Obsidian Bases / Database views over notes with Obsidian Bases (documented)
 
 ### `AWEB-09` — من المنهج الدراسي إلى قائمة قراءات / Course syllabus to supplementary reading list
 
@@ -620,4 +623,135 @@
 
 - `AWEB-07` استخراج وإثراء بيانات الأطباء / Healthcare provider list extraction and enrichment (documented)
 - `AWEB-08` بحث براءات الاختراع بأسئلة إلزامية / Patent search with forcing intake (documented)
+- `AWEB-10` قواعد بيانات الملاحظات بملفات Obsidian Bases / Database views over notes with Obsidian Bases (documented)
+- `AWEB-11` التعرّف بدل التذكّر في المنتقيات والقوائم / Recognition over recall in pickers and menus (documented)
+
+### `AWEB-10` — قواعد بيانات الملاحظات بملفات Obsidian Bases / Database views over notes with Obsidian Bases
+
+| الحقل | القيمة |
+|---|---|
+| العائلة | `atlas-research` ([فصل العائلة](../../../.claude/skills/kosif-superpowers/references/powers/atlas-research.md)) |
+| المجموعة | البحث والمعرفة (`research`) |
+| نوع المخرج (A25، A27) | بحث وتقرير ومقارنة (`research`) |
+| الحالة في الكتالوج | 📄 `documented`: منهج موصوف يحتاج بناءً أو ربطًا قبل التشغيل |
+| سقف التحقق قبل العمل (A27) | V1 حتى تُبنى وتُشغَّل؛ لا تقدَّم جاهزة أبدًا |
+| نطاق الدليل | `url` |
+| الرخصة | method paraphrased from Atlas skills under MIT; the skills keep their own licenses — see each folder's SOURCE.md |
+
+**ما هي:** يبني ملف .base بصيغة YAML يعرض الملاحظات كجدول أو بطاقات أو قائمة بفلاتر وصيغ وملخصات. — Builds a YAML .base file that shows notes as table, cards or list views with filters, formulas and summaries.
+
+**متى:** متتبع مهام أو قائمة قراءة أو فهرس يوميات داخل Obsidian / a task tracker, reading list or daily-notes index inside an Obsidian vault
+
+**كيف:** 1) Scope with global filters (and/or/not over file.hasTag, file.inFolder, properties). 2) Define computed columns under formulas and reference them as formula.NAME. 3) Add one or more views with order, groupBy, per-view filters and summaries (Average, Sum, Median, Earliest...). 4) Date differences are Durations: read .days before rounding. 5) Quote any string with : { } [ ] # etc.; single-quote formulas that contain double quotes. 6) Validate the YAML and that every formula.X is defined, then open it in Obsidian; embed with ![[Name.base#View]].
+
+**المعاملات:** vault folder, tags
+
+**التثبيت:** لا خطوة تثبيت مسجلة
+
+**الوسوم:** obsidian · bases · notes database · ملاحظات · قاعدة معرفة · knowledge base
+
+#### 1. الاستقبال (A25)
+
+- النطاق والسؤال الدقيق: افتراض مكتوب ← السؤال كما كُتب مع حدود مكتوبة
+- حداثة المصادر: افتراض مكتوب ← آخر 24 شهرًا للحقائق المتغيرة
+- الطول والعمق: افتراض مكتوب ← خلاصة في أعلى الصفحة ثم تفصيل
+- لا تُفترض أبدًا: مادة الإنتاج نفسها، والإذن بخطوة مدفوعة أو منشورة أو لا رجعة فيها، والهوية والحقوق.
+
+#### 2. الجاهزية والشارة (A28)
+
+- لا متطلبات مسجلة؛ افحص المسار والأداة بـ `hub.py doctor` قبل الشارة.
+- الوضع 1: شارة «هنا الآن» بعد الفحص، لا 📄 الكتالوج تلقائيًا · الوضع 2: `كتالوج: 📄 · هنا: غير مفحوص` · الوضع 3: بلا شارة ولا معرّف.
+
+#### 3. موضعها في الخطة (A26)
+
+- عقدة منمّطة: المدخل `brief` ← المخرج `report`، والمنفّذ `method:AWEB-10` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
+- لا أداة مسجلة تخدم عائلتها: التنفيذ بالمكتبات أو بأداة من مجموعة أخرى.
+- مراحل النوع: السؤال والنطاق ← مصادر بتواريخها ← حقائق بمراجعها ← تركيب ورأي مخالف ← تدقيق ادعاء ← دليل ← تسليم.
+- إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
+
+#### 4. بوابة التحقق (A27)
+
+- إلزامي: كل حقيقة غير بديهية لها مصدر مفتوح فعلًا ← رابط لكل ادعاء
+- إلزامي: تاريخ كل معلومة متغيرة مكتوب ← مراجعة
+- جودة: أقوى رأي مخالف مذكور ومردود عليه ← قسم الاعتراضات
+- جودة: الجواب في أول سطرين ← قراءة الافتتاح
+- إلزامي: ما لم يُعرف أو لم يُفتح مكتوب صراحة ← قسم الحدود
+- أمر الحكم في الوضع 1: `think.py qa research --answers qa.json` (PASS / FAIL / INCOMPLETE).
+
+#### 5. التعافي (A29)
+
+- `quality_below_threshold` (جودة دون العتبة، ميزانية 3): أي معيار فشل وبكم (المقيس مقابل العتبة) ← عالج السبب الأكبر وحده ثم أعد القياس · البديل: المنهج البديل المكتوب للمرحلة في الخطة · تصعيد: معيار إلزامي لا يتحقق بعد البديل: توقف وأبلغ بالأرقام
+
+#### 6. الأدلة
+
+- `https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/1247-obsidian-bases/2927-obsidian-bases`
+
+#### 7. قدرات قريبة في العائلة
+
+- `AWEB-08` بحث براءات الاختراع بأسئلة إلزامية / Patent search with forcing intake (documented)
+- `AWEB-09` من المنهج الدراسي إلى قائمة قراءات / Course syllabus to supplementary reading list (documented)
+- `AWEB-11` التعرّف بدل التذكّر في المنتقيات والقوائم / Recognition over recall in pickers and menus (documented)
+
+### `AWEB-11` — التعرّف بدل التذكّر في المنتقيات والقوائم / Recognition over recall in pickers and menus
+
+| الحقل | القيمة |
+|---|---|
+| العائلة | `atlas-research` ([فصل العائلة](../../../.claude/skills/kosif-superpowers/references/powers/atlas-research.md)) |
+| المجموعة | البحث والمعرفة (`research`) |
+| نوع المخرج (A25، A27) | بحث وتقرير ومقارنة (`research`) |
+| الحالة في الكتالوج | 📄 `documented`: منهج موصوف يحتاج بناءً أو ربطًا قبل التشغيل |
+| سقف التحقق قبل العمل (A27) | V1 حتى تُبنى وتُشغَّل؛ لا تقدَّم جاهزة أبدًا |
+| نطاق الدليل | `url` |
+| الرخصة | method paraphrased from Atlas skills under MIT; the skills keep their own licenses — see each folder's SOURCE.md |
+
+**ما هي:** يصمم المدخلات بحيث يرى المستخدم الخيارات ويتعرّف عليها بدل أن يتذكرها ويكتبها. — Designs inputs so the user sees and recognises options instead of recalling and typing them.
+
+**متى:** منتقي تاريخ أو منطقة زمنية، لوحة أوامر، حقل بحث، قائمة إعدادات / pickers, command palettes, autocomplete, settings, navigation
+
+**كيف:** 1) For each input ask: are the valid options shown, or must the user remember them? 2) Large known sets: a combobox (type a few letters, recognise from filtered matches) with recents first. 3) Surface recents and frequently used items in pickers and navigation. 4) Hook fields to autocomplete and show example values instead of 'Enter value'. 5) Keep recall paths (shortcuts, CLI) for experts alongside, and keep recall where it is the point (passwords, free text). 6) Test discoverability: can a newcomer find the feature without knowing its name?
+
+**التثبيت:** لا خطوة تثبيت مسجلة
+
+**الوسوم:** UX · recognition · command palette · واجهة · سهولة الاستخدام · autocomplete
+
+#### 1. الاستقبال (A25)
+
+- النطاق والسؤال الدقيق: افتراض مكتوب ← السؤال كما كُتب مع حدود مكتوبة
+- حداثة المصادر: افتراض مكتوب ← آخر 24 شهرًا للحقائق المتغيرة
+- الطول والعمق: افتراض مكتوب ← خلاصة في أعلى الصفحة ثم تفصيل
+- لا تُفترض أبدًا: مادة الإنتاج نفسها، والإذن بخطوة مدفوعة أو منشورة أو لا رجعة فيها، والهوية والحقوق.
+
+#### 2. الجاهزية والشارة (A28)
+
+- لا متطلبات مسجلة؛ افحص المسار والأداة بـ `hub.py doctor` قبل الشارة.
+- الوضع 1: شارة «هنا الآن» بعد الفحص، لا 📄 الكتالوج تلقائيًا · الوضع 2: `كتالوج: 📄 · هنا: غير مفحوص` · الوضع 3: بلا شارة ولا معرّف.
+
+#### 3. موضعها في الخطة (A26)
+
+- عقدة منمّطة: المدخل `brief` ← المخرج `report`، والمنفّذ `method:AWEB-11` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
+- لا أداة مسجلة تخدم عائلتها: التنفيذ بالمكتبات أو بأداة من مجموعة أخرى.
+- مراحل النوع: السؤال والنطاق ← مصادر بتواريخها ← حقائق بمراجعها ← تركيب ورأي مخالف ← تدقيق ادعاء ← دليل ← تسليم.
+- إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
+
+#### 4. بوابة التحقق (A27)
+
+- إلزامي: كل حقيقة غير بديهية لها مصدر مفتوح فعلًا ← رابط لكل ادعاء
+- إلزامي: تاريخ كل معلومة متغيرة مكتوب ← مراجعة
+- جودة: أقوى رأي مخالف مذكور ومردود عليه ← قسم الاعتراضات
+- جودة: الجواب في أول سطرين ← قراءة الافتتاح
+- إلزامي: ما لم يُعرف أو لم يُفتح مكتوب صراحة ← قسم الحدود
+- أمر الحكم في الوضع 1: `think.py qa research --answers qa.json` (PASS / FAIL / INCOMPLETE).
+
+#### 5. التعافي (A29)
+
+- `quality_below_threshold` (جودة دون العتبة، ميزانية 3): أي معيار فشل وبكم (المقيس مقابل العتبة) ← عالج السبب الأكبر وحده ثم أعد القياس · البديل: المنهج البديل المكتوب للمرحلة في الخطة · تصعيد: معيار إلزامي لا يتحقق بعد البديل: توقف وأبلغ بالأرقام
+
+#### 6. الأدلة
+
+- `https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/1503-universal-design-principles/3771-recognition-over-recall`
+
+#### 7. قدرات قريبة في العائلة
+
+- `AWEB-09` من المنهج الدراسي إلى قائمة قراءات / Course syllabus to supplementary reading list (documented)
+- `AWEB-10` قواعد بيانات الملاحظات بملفات Obsidian Bases / Database views over notes with Obsidian Bases (documented)
 

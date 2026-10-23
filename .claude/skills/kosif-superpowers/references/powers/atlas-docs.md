@@ -3,13 +3,13 @@
 
 > **قوتك هنا / what this gives you:** التوثيق وملفات المكتب وPDF والمخططات كما تصفها مهارات أطلس. — Documentation, office files, PDF and diagram methods from the Atlas.
 > **أقوى دليل / strongest evidence:** لا قوة مثبتة بعد في هذه العائلة — no ✅ power yet; the strongest badge here is 📄 documented.
-> **45 powers follow** — ✅ 0 · 🟢 0 · 📦 0 · 🔑 0 · 👁 0 · 📄 45 · 💡 0.
+> **50 powers follow** — ✅ 0 · 🟢 0 · 📦 0 · 🔑 0 · 👁 0 · 📄 50 · 💡 0.
 
 **الحالة / status:** ✅ مُثبت (شُغّل فعلًا وله مسار دليل) · 🟢 جاهز (كود موجود يعمل بما هو متاح عادة) · 📦 بأمر تثبيت واحد · 🔑 يحتاج مفتاحًا أو حسابًا أو موصلًا · 👁 شوهد في فيديو مرجعي (للموشن فقط) · 📄 طريقة موثقة · 💡 فكرة. الشارة هي أدنى مستوى صادق — the badge is the lowest level that is true.
 مسارات الدليل نسبية إلى `/home/user/`؛ و`session-<date>:<file>#<section>` تشير إلى تشغيل موثق في جلسة سابقة؛ و`owner-upload:` إلى ملف داخل أرشيف أرسله المالك. Proof paths are relative to `/home/user/`.
 
 **المجال / domain:** المستندات — Documents · **البادئة / prefix:** `ADOCS` · **البيانات / data:** `data/powers/atlas-docs.json` · **بحث / search:** `python3 scripts/powers.py family atlas-docs`
-**مراجع ذات صلة / related references:** [CLAUDE_3_MINUTE_MAP.md](../CLAUDE_3_MINUTE_MAP.md) · [atlas-5000-mining-20261023.md](../atlas-5000-mining-20261023.md) · [capability-audit.md](../capability-audit.md) · [hubs.md](../hubs.md)
+**مراجع ذات صلة / related references:** [CLAUDE_3_MINUTE_MAP.md](../CLAUDE_3_MINUTE_MAP.md) · [atlas-5000-mining-20261023.md](../atlas-5000-mining-20261023.md) · [capability-audit.md](../capability-audit.md) · [hubs.md](../hubs.md) · [rea-superpowers-frontier-20261023.md](../rea-superpowers-frontier-20261023.md)
 
 ## الفهرس / contents
 
@@ -21,10 +21,11 @@
 - **هندسة النماذج اللغوية — LLM & AI engineering** — ADOCS-14 (1)
 - **القطاعات المنظّمة — Regulated industries & domain expertise** — ADOCS-15 … ADOCS-16 (2)
 - **المخططات — Diagrams & visual documentation** — ADOCS-17 … ADOCS-24 (8)
-- **التوثيق — Documentation** — ADOCS-25 … ADOCS-45 (14)
+- **التوثيق — Documentation** — ADOCS-25 … ADOCS-50 (16)
 - **تطوير الألعاب — Game development** — ADOCS-35 (1)
 - **Git والإصدار — Git, pull requests & releases** — ADOCS-36 (1)
 - **التعليم والتعلم — Teaching, learning & study** — ADOCS-37 … ADOCS-41 (5)
+- **ملفات المكتب — Office documents & PDF** — ADOCS-46 … ADOCS-48 (3)
 - المصادر والرخص / sources & licences
 
 ## سير عمل الوكلاء — Agent workflows & orchestration
@@ -363,6 +364,23 @@
 - **الدليل / proof:** `https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/1520-digital-marketing-pro/4128-translate-content`
 - **المصدر / source:** KOSIF Atlas-5000 mining 2026-10-23 (https://github.com/kosif199022-jpg/kosif-atlas @ 99bb108d): digital-marketing-pro/translate-content (#4128) · theme localization-language · 1 supporting skills · SKILL.md read in full as inert text: skills/1520-digital-marketing-pro/4128-translate-content
 
+#### ADOCS-49 · كتابة README يجذب المطور في ثلاث ثوانٍ ويشغله في دقيقة · README that hooks in 3 seconds and runs in 60 · 📄 موصوف / documented only
+- **ماذا / what:** يكتب README لمشروع مفتوح بعد مسح ملفات المشروع: واجهة بجملة قيمة وشارات حقيقية، بداية سريعة قابلة للنسخ، وتفاصيل خلف أقسام قابلة للطي. — Writes an open-source README after scanning the project: a hero with one value sentence and real badges, a copy-paste quick start, details behind collapsible sections.
+- **متى أستخدمها / when:** كتابة أو إنشاء README لمستودع / writing or scaffolding a README.md
+- **كيف / how:** 1) Scan first, talk second: manifests, LICENSE, CONTRIBUTING, CI, entry points, CLI help, existing badges, logos and screenshots. 2) Show the inferred profile (name, one-liner, stack, type, license, install command, features) and ask only for what could not be inferred. 3) Hero: logo only if one exists (never placeholders), one jargon-free value sentence, 4-6 badges built from real metadata. 4) Why (3-5 bullets), Quick Start (copy-pasteable, working in 60 s, no $ prompts), commands table, advanced config in <details>, optional Mermaid architecture. 5) Contributing, community and license footer. 6) Keep it near 200 lines (300 hard ceiling) and link docs/ for the rest; ask whether to replace or merge an existing README.
+- **يحتاج / needs:** [`npm:mermaid`](../requirements.md#req-npm-mermaid)
+- **الرخصة / license:** method paraphrased from Atlas skills under MIT; the skills keep their own licenses — see each folder's SOURCE.md
+- **الدليل / proof:** `https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/26-docs/36-readme-craft`
+- **المصدر / source:** KOSIF Atlas frontier mining 2026-10-23 (https://github.com/kosif199022-jpg/kosif-atlas @ 99bb108d): docs/readme-craft (#36) · theme documentation · SKILL.md read in full as inert text: skills/26-docs/36-readme-craft
+
+#### ADOCS-50 · تعليقات الكود الملائمة: معلومة لا يحملها الكود · Appropriate code comments: information the code cannot carry · 📄 موصوف / documented only
+- **ماذا / what:** يحكم على كل تعليق: هل يضيف معلومة عن الحالة الحالية لا يقولها الكود نفسه؟ ويحوّل وعود 'لا تغيّر هذا' إلى اختبارات. — Judges each comment by whether it adds present-tense information the code itself cannot say, and turns 'do not change this' promises into tests.
+- **متى أستخدمها / when:** مراجعة أو كتابة تعليقات، تنظيف كود قبل الدمج / writing or reviewing comments, cleaning code before merge
+- **كيف / how:** 1) Keep a comment only when it states something the code cannot: a non-obvious why, a unit, a caller obligation such as lock ownership. 2) Cap it near two lines; longer rationale belongs in the commit or a design note. 3) Delete restatements of the code, change-history narration and ticket chatter. 4) Editor-test each instruction addressed to a future editor ('never lower this', 'keep in step with X'): nothing enforces it, so write a test named after the invariant (e.g. refund-not-applied-twice), not after the incident. 5) Test files are exempt from the cap where explaining a scenario helps.
+- **الرخصة / license:** method paraphrased from Atlas skills under MIT; the skills keep their own licenses — see each folder's SOURCE.md
+- **الدليل / proof:** `https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/2854-appropriate-comments-code/11563-appropriate-comments-code`
+- **المصدر / source:** KOSIF Atlas frontier mining 2026-10-23 (https://github.com/kosif199022-jpg/kosif-atlas @ 99bb108d): appropriate-comments-code/appropriate-comments-code (#11563) · theme documentation · SKILL.md read up to its first 12,000 characters as inert text (rest not read): skills/2854-appropriate-comments-code/11563-appropriate-comments-code
+
 ## تطوير الألعاب — Game development
 
 #### ADOCS-35 · كتابة سرد الألعاب المتفرع · Game narrative and branching writing · 📄 موصوف / documented only
@@ -427,9 +445,38 @@
 - **الدليل / proof:** `https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/2437-education/9459-eli5` · `https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/257-eli5/864-eli5`
 - **المصدر / source:** KOSIF Atlas mining 2026-10-20 (https://github.com/kosif199022-jpg/kosif-atlas): education/eli5 (#9459); eli5/eli5 (#864) · theme education-learning · 4 supporting skills · verifier read: skills/2437-education/9459-eli5, skills/257-eli5/864-eli5
 
+## ملفات المكتب — Office documents & PDF
+
+#### ADOCS-46 · دمج بيانات JSON في قوالب Word وExcel وPowerPoint · JSON-to-document templating (DOCX/XLSX/PPTX/PDF) · 📄 موصوف / documented only
+- **ماذا / what:** يملأ قالب مستند مكتبي من بيانات JSON بوسوم وحلقات وشروط ومنسّقات دون إعادة تشكيل البيانات. — Fills an office template from JSON with tags, loops, conditions and formatters, adapting the template rather than the data.
+- **متى أستخدمها / when:** فاتورة أو عقد أو تقرير من JSON، دمج بريدي، تحويل DOCX/HTML إلى PDF / invoice, contract or report from JSON, mail merge, document conversion
+- **كيف / how:** 1) Keep the API JSON as is; shape output in the template with filters, sort, lookups and computed values. 2) Placeholders reach data by path; a loop is declared by a row with [i] and closed by a row with [i+1], which is removed from the output; nest loops freely. 3) Chain formatters for text, numbers, currency and dates; set language and time zone once as template options. 4) Use inline show/elseShow for words and Begin/End blocks for sections. 5) Never invent syntax from Mustache/Jinja: if the engine's documentation does not show it, say it does not exist. 6) Render a sample and check totals, empty arrays and locale formatting before delivery. **أرقام / params:** template format, dataset
+- **يحتاج / needs:** [`pip:office`](../requirements.md#req-pip-office)
+- **الرخصة / license:** method paraphrased from Atlas skills under Apache-2.0; the skills keep their own licenses — see each folder's SOURCE.md
+- **الدليل / proof:** `https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/931-carbone-skill/2177-carbone`
+- **المصدر / source:** KOSIF Atlas frontier mining 2026-10-23 (https://github.com/kosif199022-jpg/kosif-atlas @ 99bb108d): carbone-skill/carbone (#2177) · theme office-documents · SKILL.md read up to its first 12,000 characters as inert text (rest not read): skills/931-carbone-skill/2177-carbone
+
+#### ADOCS-47 · تنقيح المستندات حقًا وإثبات ما سُلِّم ببصمات sha256 · True redaction and a sha256 delivery manifest · 📄 موصوف / documented only
+- **ماذا / what:** يحذف النص الحساس فعليًا (لا مربع أسود فوقه) ثم يثبت ما سُلّم ببيان بصمات قابل للتحقق. — Removes sensitive text for real (not a black box over it) and proves what was delivered with a verifiable hash manifest.
+- **متى أستخدمها / when:** إزالة بيانات شخصية من ملفات قبل مشاركتها، تسليم يحتاج أثر سلامة / removing PII before sharing, a deliverable that needs an integrity trail
+- **كيف / how:** 1) Text formats: replace matches and diff source against output; grep for each pattern must return 0; make zero matches an error in scripts. 2) PDFs: a box drawn over text leaves it extractable; rasterise each page, paint the match and write a PDF with no text layer; tell the user it is now unsearchable, larger and without metadata. 3) Verify by extracting text from the output (should be empty); re-OCR only if searchability is needed and grep the OCR text again for near misses. 4) Write a sha256 manifest of the delivered files (optionally GPG-signed) and verify it; a manifest proves the bytes, not that redaction was complete. 5) Never overwrite a manifest; write v2. Originals stay untouched. **أرقام / params:** patterns, output dir
+- **يحتاج / needs:** [`tesseract`](../requirements.md#req-tesseract)
+- **الرخصة / license:** method paraphrased from Atlas skills under MIT; the skills keep their own licenses — see each folder's SOURCE.md
+- **الدليل / proof:** `https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/1195-carrel-documents/2838-redaction-and-provenance`
+- **المصدر / source:** KOSIF Atlas frontier mining 2026-10-23 (https://github.com/kosif199022-jpg/kosif-atlas @ 99bb108d): carrel-documents/redaction-and-provenance (#2838) · theme office-documents · SKILL.md read in full as inert text: skills/1195-carrel-documents/2838-redaction-and-provenance
+
+#### ADOCS-48 · عروض تقديمية للمطورين بـ Slidev من Markdown · Developer slide decks in Markdown with Slidev · 📄 موصوف / documented only
+- **ماذا / what:** يبني عرضًا تقديميًا ويبيًا من ملف Markdown واحد بكود مُبرز ومتحرك ومخططات Mermaid ومعادلات LaTeX وملاحظات للمقدّم. — Builds a web slide deck from one Markdown file with highlighted, animated code, Mermaid diagrams, LaTeX and presenter notes.
+- **متى أستخدمها / when:** محاضرة تقنية، شرح كود، ورشة، عرض يُصدَّر PDF/PPTX / tech talk, code walkthrough, workshop deck exported to PDF or PPTX
+- **كيف / how:** 1) The first frontmatter configures the deck; --- separates slides; an HTML comment holds presenter notes. 2) Pick layouts (cover, two-cols with ::right::, section, fact, image-*). 3) Reveal code step by step with line ranges like {1|2-3|all} and morph between versions with magic-move. 4) Step reveals with v-click and annotations with v-mark. 5) Export needs a headless Chromium (playwright-chromium); build a static SPA for hosting. 6) Verify: dev server renders at its port, the exported PDF exists and has the expected page count. **أرقام / params:** theme, aspect ratio
+- **يحتاج / needs:** [`chromium`](../requirements.md#req-chromium) · [`latex`](../requirements.md#req-latex) · [`pip:office`](../requirements.md#req-pip-office) · [`npm:mermaid`](../requirements.md#req-npm-mermaid) · [`npm:slidev`](../requirements.md#req-npm-slidev)
+- **الرخصة / license:** method paraphrased from Atlas skills under MIT; the skills keep their own licenses — see each folder's SOURCE.md
+- **الدليل / proof:** `https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/2938-slidev/12191-slidev`
+- **المصدر / source:** KOSIF Atlas frontier mining 2026-10-23 (https://github.com/kosif199022-jpg/kosif-atlas @ 99bb108d): slidev/slidev (#12191) · theme office-documents · SKILL.md read in full as inert text: skills/2938-slidev/12191-slidev
+
 ## المصادر والرخص / sources & licences
 
-- الرخص / licences: method paraphrased from Atlas skills under MIT; the skills keep their own licenses — see each folder's SOURCE.md (34) · method paraphrased from Atlas skills under Apache-2.0 / MIT; the skills keep their own licenses — see each folder's SOURCE.md (2) · method paraphrased from Atlas skills under MIT / Apache-2.0; the skills keep their own licenses — see each folder's SOURCE.md (2) · method paraphrased from Atlas skills under MIT/Apache-2.0; the skills keep their own licenses — see each folder's SOURCE.md (2) · method paraphrased from Atlas skills under Apache-2.0; the skills keep their own licenses — see each folder's SOURCE.md (1) · method paraphrased from Atlas skills under MIT (no copyleft seen among supporting ids); the skills keep their own licenses — see each folder's SOURCE.md (1) · method paraphrased from Atlas skills under MIT / BSD-3-Clause; the skills keep their own licenses — see each folder's SOURCE.md (1) · method paraphrased from Atlas skills under MIT/Apache; the skills keep their own licenses — see each folder's SOURCE.md (1) · method paraphrased from Atlas skills under MIT; one WTFPL; the skills keep their own licenses — see each folder's SOURCE.md (1)
+- الرخص / licences: method paraphrased from Atlas skills under MIT; the skills keep their own licenses — see each folder's SOURCE.md (38) · method paraphrased from Atlas skills under Apache-2.0 / MIT; the skills keep their own licenses — see each folder's SOURCE.md (2) · method paraphrased from Atlas skills under Apache-2.0; the skills keep their own licenses — see each folder's SOURCE.md (2) · method paraphrased from Atlas skills under MIT / Apache-2.0; the skills keep their own licenses — see each folder's SOURCE.md (2) · method paraphrased from Atlas skills under MIT/Apache-2.0; the skills keep their own licenses — see each folder's SOURCE.md (2) · method paraphrased from Atlas skills under MIT (no copyleft seen among supporting ids); the skills keep their own licenses — see each folder's SOURCE.md (1) · method paraphrased from Atlas skills under MIT / BSD-3-Clause; the skills keep their own licenses — see each folder's SOURCE.md (1) · method paraphrased from Atlas skills under MIT/Apache; the skills keep their own licenses — see each folder's SOURCE.md (1) · method paraphrased from Atlas skills under MIT; one WTFPL; the skills keep their own licenses — see each folder's SOURCE.md (1)
 - الأفكار مكتوبة بكلماتنا مع رابط المصدر؛ لا يُنسخ نص طرف ثالث طويل. Ideas are paraphrased with a link to the source; no long third-party text is copied. `—` = no licence recorded (own method or own wording).
 
 ---

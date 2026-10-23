@@ -24,12 +24,12 @@
 |---|---:|---|
 | `proven` | 111 | ✅ proven: a proof exists in the catalog; still check its requirements here before calling it ready |
 | `ready` | 16 | 🟢 ready: runnable without setup according to the catalog |
-| `documented` | 371 | 📄 documented: a described method; needs building or wiring before it runs |
+| `documented` | 384 | 📄 documented: a described method; needs building or wiring before it runs |
 | `seen` | 16 | 👁 seen: observed in a reference or demo, not executed here |
 | `install` | 32 | 📦 install: needs a package, binary or model first |
 | `key` | 7 | 🔑 key: needs an account, key or paid service (ask before any spend) |
 | `idea` | 2 | 💡 idea: not built |
-| **المجموع** | **555** | |
+| **المجموع** | **568** | |
 
 ## الأدوات القابلة للتشغيل / runnable tools
 
@@ -59,8 +59,8 @@
 |---|---:|---|
 | `app-feature-transfer` | 139 | [app-feature-transfer.md](../powers/app-feature-transfer.md) |
 | `apps-artifacts` | 23 | [apps-artifacts.md](../powers/apps-artifacts.md) |
-| `atlas-build` | 50 | [atlas-build.md](../powers/atlas-build.md) |
-| `atlas-code` | 226 | [atlas-code.md](../powers/atlas-code.md) |
+| `atlas-build` | 52 | [atlas-build.md](../powers/atlas-build.md) |
+| `atlas-code` | 237 | [atlas-code.md](../powers/atlas-code.md) |
 | `code-engineering` | 24 | [code-engineering.md](../powers/code-engineering.md) |
 | `ui-product-device` | 93 | [ui-product-device.md](../powers/ui-product-device.md) |
 
@@ -293,6 +293,8 @@
 | `ABUILD-48` | معمارية رموز التصميم بثلاث طبقات | Three-tier design token architecture with theming | documented |  |
 | `ABUILD-49` | تدقيق إتاحة WCAG 2.2: فحص وإصلاح وتحقق | WCAG 2.2 scan-fix-verify accessibility audit | documented | npm:axe |
 | `ABUILD-50` | إصدار نسخة: وسم ونشر وتحقق | Cut a release: tag, GitHub release, verify | documented |  |
+| `ABUILD-51` | صياغة التذاكر وأوصاف PR بهيكل ماذا/لماذا/كيف | What/Why/How ticket and PR drafting | documented |  |
+| `ABUILD-52` | فرز أعطال الاتصال حسب مجال الخطأ دون تغيير الإعدادات | Fault-domain connectivity triage without touching config | documented |  |
 | `ACODE-01` | اختبار حدود الحقن وتسليم القرار للبشر | Agent injection boundary and human-handoff tests | documented |  |
 | `ACODE-02` | فحص أمان مسبق للوكيل بإيصال أخضر/أصفر/أحمر | Agent safety preflight with Green/Yellow/Red receipt | documented |  |
 | `ACODE-03` | تدقيق سجلات جلسات الوكلاء بحثًا عن أسرار مسرّبة | Audit agent transcripts for leaked credentials | documented |  |
@@ -442,7 +444,18 @@
 | `ACODE-224` | قياس التحسين مقابل خط أساس مُلتقط قبل التغيير | Measure improvement against a baseline captured before | documented |  |
 | `ACODE-225` | jq: نموذج المرشّح لتدفق JSON | jq filter mental model for JSON streams | documented |  |
 | `ACODE-226` | تصميم تطبيقات Apple: اختر المسار أولاً | Apple platform design: choose the track first | documented | npm:react, os:macos |
+| `ACODE-227` | ضبط ruff للفحص والتنسيق دون فخ select | ruff lint and format without the select trap | documented | python3 |
+| `ACODE-228` | إدارة مشاريع بايثون والسكربتات ببرنامج uv | Python projects, scripts and tools with uv | documented | python3 |
+| `ACODE-229` | اختيار طريقة مواءمة التفضيلات DPO/ORPO/KTO/SimPO | Choosing DPO, ORPO, KTO or SimPO for preference tuning | documented |  |
 | `ACODE-23` | قائمة صمود الخلفية أمام الاعتماديات | Backend resilience checklist for dependencies | documented |  |
+| `ACODE-230` | تصميم خادم MCP: نموذج النشر ونمط الأدوات قبل الكود | MCP server design: deployment model and tool pattern before code | documented | python3, key:unspecified |
+| `ACODE-231` | تدقيق كل الترقيات الممكنة بمصفوفة مخاطرة/عائد قبل التطبيق | Upgrade-everything audit with a risk/reward matrix | documented |  |
+| `ACODE-232` | كشف الاختبارات الخضراء الكاذبة | False-green test detection | documented |  |
+| `ACODE-233` | اختبار في فضاء مصغّر: تفكيك ادعاء التكافؤ قبل التجربة | Reduced-space test: decompose the equivalence claim first | documented |  |
+| `ACODE-234` | اختبار استكشافي لتطبيق ويب بأدلة إعادة إنتاج كاملة | Exploratory web-app QA with full repro evidence | documented | chromium |
+| `ACODE-235` | تدقيق الامتثال لـ GDPR انطلاقًا من جرد البيانات الشخصية | GDPR review built on a personal-data inventory | documented |  |
+| `ACODE-236` | دليل سردي لمستودع غير مألوف للمساهمين الجدد | Narrative codebase guide for newcomers | documented | npm:mermaid |
+| `ACODE-237` | تثبيت كل أسطح الإصدارات لتقوية سلسلة التوريد | Pin every version surface for supply-chain hardening | documented | node, python3 |
 | `ACODE-24` | أنماط خدمات الواجهة الخلفية بعدة لغات | Backend service patterns: Node, Go, .NET, Django | documented |  |
 | `ACODE-25` | اختيار وتخزين مفاتيح الـAPI بأمان | Choose and store API credentials safely | documented | chromium, key:unspecified |
 | `ACODE-26` | اختيار واجهة Zoom المناسبة | Choose Zoom surface: REST, webhooks, WebSocket, SDK | documented | key:unspecified |

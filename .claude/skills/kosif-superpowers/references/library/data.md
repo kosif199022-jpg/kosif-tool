@@ -24,12 +24,12 @@
 |---|---:|---|
 | `proven` | 49 | ✅ proven: a proof exists in the catalog; still check its requirements here before calling it ready |
 | `ready` | 18 | 🟢 ready: runnable without setup according to the catalog |
-| `documented` | 96 | 📄 documented: a described method; needs building or wiring before it runs |
+| `documented` | 101 | 📄 documented: a described method; needs building or wiring before it runs |
 | `seen` | 48 | 👁 seen: observed in a reference or demo, not executed here |
 | `install` | 34 | 📦 install: needs a package, binary or model first |
 | `key` | 7 | 🔑 key: needs an account, key or paid service (ask before any spend) |
 | `idea` | 1 | 💡 idea: not built |
-| **المجموع** | **253** | |
+| **المجموع** | **258** | |
 
 ## الأدوات القابلة للتشغيل / runnable tools
 
@@ -44,7 +44,7 @@
 
 | العائلة | القدرات | الفصل |
 |---|---:|---|
-| `atlas-data` | 47 | [atlas-data.md](../powers/atlas-data.md) |
+| `atlas-data` | 52 | [atlas-data.md](../powers/atlas-data.md) |
 | `charts-data-infographic` | 105 | [charts-data-infographic.md](../powers/charts-data-infographic.md) |
 | `data-analysis` | 39 | [data-analysis.md](../powers/data-analysis.md) |
 | `maps-geo` | 62 | [maps-geo.md](../powers/maps-geo.md) |
@@ -169,6 +169,11 @@
 | `ADATA-45` | سجل تدقيق للتغييرات في قاعدة البيانات | Trigger-based database audit trail | documented |  |
 | `ADATA-46` | تدقيق خط الاسترجاع على سبعة محاور | Seven-axis retrieval pipeline audit | documented | pip:chromadb |
 | `ADATA-47` | بوابة تسوية الحسابات قبل التقارير | Account reconciliation gate before reporting | documented |  |
+| `ADATA-48` | تجهيز بيانات الضبط الدقيق وبطاقة البيانات | Fine-tuning dataset curation and dataset card | documented |  |
+| `ADATA-49` | كشف الشذوذ بخط أساس ومعايرة وتفسير لكل إنذار | Anomaly detection with baseline, calibration and explained flags | documented |  |
+| `ADATA-50` | التشريح المسبق: تعريف النجاح والفشل قبل البدء | Pre-mortem: define success and failure before starting | documented |  |
+| `ADATA-51` | ضبط العمليات إحصائيًا: اختيار مخطط التحكم وقدرة العملية | Statistical process control: chart choice and capability | documented |  |
+| `ADATA-52` | استخراج أرقام موثوقة من لوحة معلومات تُرسم في المتصفح | Trustworthy numbers from a client-rendered dashboard | documented |  |
 | `DATA-01` | اختيار المخطط حسب السؤال | Chart choice by analytical question | documented |  |
 | `DATA-02` | المسار أم الميل | Line path vs slope net-change | documented |  |
 | `DATA-03` | اختيار مخطط التوزيع | Distribution chart choice | documented |  |

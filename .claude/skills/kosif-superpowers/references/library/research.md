@@ -23,11 +23,11 @@
 | الحالة | العدد | المعنى |
 |---|---:|---|
 | `proven` | 21 | ✅ proven: a proof exists in the catalog; still check its requirements here before calling it ready |
-| `documented` | 21 | 📄 documented: a described method; needs building or wiring before it runs |
+| `documented` | 23 | 📄 documented: a described method; needs building or wiring before it runs |
 | `install` | 2 | 📦 install: needs a package, binary or model first |
 | `key` | 9 | 🔑 key: needs an account, key or paid service (ask before any spend) |
 | `idea` | 1 | 💡 idea: not built |
-| **المجموع** | **54** | |
+| **المجموع** | **56** | |
 
 ## الأدوات القابلة للتشغيل / runnable tools
 
@@ -53,7 +53,7 @@
 
 | العائلة | القدرات | الفصل |
 |---|---:|---|
-| `atlas-research` | 9 | [atlas-research.md](../powers/atlas-research.md) |
+| `atlas-research` | 11 | [atlas-research.md](../powers/atlas-research.md) |
 | `knowledge-graph` | 21 | [knowledge-graph.md](../powers/knowledge-graph.md) |
 | `web-research` | 24 | [web-research.md](../powers/web-research.md) |
 
@@ -93,6 +93,8 @@
 | `AWEB-07` | استخراج وإثراء بيانات الأطباء | Healthcare provider list extraction and enrichment | documented |  |
 | `AWEB-08` | بحث براءات الاختراع بأسئلة إلزامية | Patent search with forcing intake | documented |  |
 | `AWEB-09` | من المنهج الدراسي إلى قائمة قراءات | Course syllabus to supplementary reading list | documented | node, pip:office |
+| `AWEB-10` | قواعد بيانات الملاحظات بملفات Obsidian Bases | Database views over notes with Obsidian Bases | documented |  |
+| `AWEB-11` | التعرّف بدل التذكّر في المنتقيات والقوائم | Recognition over recall in pickers and menus | documented |  |
 | `GRAPH-15` | صدق لقطة الفهرس | Index-snapshot honesty | documented | python3, git |
 | `GRAPH-16` | فهم أي مستودع أو مجموعة مهارات بسرعة | Understand any codebase or skill set fast | documented | key:graphify |
 | `GRAPH-18` | الخريطة أولًا لغير الكود | Map-first for non-code corpora | documented | claude:tools |

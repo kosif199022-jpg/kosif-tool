@@ -8,7 +8,7 @@ Commands are typed from the skill folder (`.claude/skills/kosif-superpowers/`) u
 
 <!-- hub:area:maintain:start -->
 
-**الأدوات / tools (11)** — `python3 scripts/hub.py tool <id>` for every command, requirement and limit:
+**الأدوات / tools (12)** — `python3 scripts/hub.py tool <id>` for every command, requirement and limit:
 
 | tool | what it does | start with | evidence |
 |---|---|---|---|
@@ -23,6 +23,7 @@ Commands are typed from the skill folder (`.claude/skills/kosif-superpowers/`) u
 | `repo-import-briefs` (repo root) | Validates batch JSON files of creative briefs ({"briefs": [...]}), writes styles/<id>/BRIEF.md for each accepted brief, and merges the brief summary fields into catalog/styles.json, catalog/prompts_motion.json, catalog/briefs.json and each STYLE.json. | `python3 tools/import_briefs.py ./briefs/` | untested |
 | `repo-sync-catalog` (repo root) | Scrapes the public PromptsMotion library index and its detail pages (cached under .cache/promptsmotion/), extracts factual metadata only, rewrites catalog/styles.json, catalog/prompts_motion.json and every styles/<id>/STYLE.json, and flags entries that have left the index with listed=false. | `python3 tools/sync_catalog.py` | untested |
 | `repo-validate` (repo root) | Runs 14 integrity checks on the style atlas and prints a numbered PASS/WARN/FAIL report or JSON. It checks that catalog/styles.json parses with unique slug ids, that catalog/categories.json is a valid taxonomy, record fields, enums and https URLs, known categories, aspect_label against the pixel size, and that styles/<id>/SKILL.md exists and STYLE.json equals the record. It also checks for orphan folders, STYLE_INDEX.md coverage, prompts_motion and briefs consistency, playbook files, rehosted media under styles/ or catalog/, matching request-template placeholders and meta totals. | `python3 tools/validate.py` | tested-here |
+| `rea-superpowers-map` | Maps this skill the way REA maps a source tree it does not execute: a content-addressed inventory, Python import and invoke edges (ast), REA's JavaScript edges from its committed receipt, links from every script to its tools.json entry, tests, CI steps, powers and families, the gaps (orphan or untested scripts, missing tool files, unlisted references, broken links, families without a runnable tool) and Atlas safe-core coverage per theme. | `python3 scripts/rea_superpowers_map.py build` | tested-here |
 
 <!-- hub:area:maintain:end -->
 
@@ -33,6 +34,7 @@ Commands are typed from the skill folder (`.claude/skills/kosif-superpowers/`) u
 3. [Adding a tool](#adding-a-tool)
 4. [Adding or changing powers](#adding-or-changing-powers)
 5. [What CI checks](#what-ci-checks)
+6. [Mapping the skill the REA way](#mapping-the-skill-the-rea-way)
 
 ## What to edit
 
@@ -62,6 +64,7 @@ python3 scripts/smart_capabilities.py library   # references/library/: one routi
 python3 scripts/smart_capabilities.py cards     # usip-library/ (repo root): a protocol card per power and tool
 python3 scripts/hub.py build                    # again: manifest.json, references/INDEX.md, SKILL.md and guide tool blocks
 python3 scripts/boot.py --static --write        # CAPABILITIES.md + llms.txt at the repo root
+python3 scripts/rea_superpowers_map.py build    # data/superpowers_rea_map.json + references/superpowers-rea-map.{md,html} (not CI-checked)
 python3 scripts/check_skill.py --print-counts   # paste the marker line into SKILL.md if any count changed
 python3 scripts/check_skill.py --evals          # structure, links, proofs, counts, registry, secrets + routing evals
 ```
@@ -90,3 +93,18 @@ The chapters (`build_chapters.py`) link related references but skip the generate
 ## What CI checks
 
 `.github/workflows/ci.yml` runs the repo validators and tests, `check_skill.py --evals`, every skill eval suite, the Node tests, the determinism checks above, the tool registry tests (`evals/test_hub.py`) and the MCP server self-test (`python3 scripts/kosif_mcp.py --selftest`).
+
+## Mapping the skill the REA way
+
+`python3 scripts/rea_superpowers_map.py build` writes [superpowers-rea-map.md](../superpowers-rea-map.md), its interactive page [superpowers-rea-map.html](../superpowers-rea-map.html) and `data/superpowers_rea_map.json`: a content-addressed inventory, the Python import and invoke graph between scripts and tests, links from each script to its `data/tools.json` entry, tests, CI steps and powers, and the gaps (`gaps --kind <kind>` lists them). Run it after the chain above when scripts, tools or tests changed; CI runs only its `--self-test` and `evals/test_rea_superpowers_map.py`, so a concurrent edit elsewhere never makes it fail.
+
+The JavaScript edges and the tree identity come from REA itself. To refresh them, run REA on the skill folder (it reads the tree as historical reference only and executes nothing), then ingest the two outputs:
+
+```bash
+rea import-reference-source .claude/skills/kosif-superpowers --detail summary --outline-depth 1 --format json > /tmp/sp_sum.json
+rea import-reference-source .claude/skills/kosif-superpowers --format json > /tmp/sp_full.json
+python3 scripts/rea_superpowers_map.py ingest-rea --summary /tmp/sp_sum.json --graph /tmp/sp_full.json
+python3 scripts/rea_superpowers_map.py build
+```
+
+`family_without_tool` rows are informational: most method families are documented guidance with no script, which is expected; the row says where a runnable tool would help most.

@@ -8961,6 +8961,100 @@
    ]
   },
   {
+   "id": "rea-superpowers-map",
+   "path": "scripts/rea_superpowers_map.py",
+   "root": "skill",
+   "kind": "cli",
+   "area": "maintain",
+   "title_en": "Superpowers map, REA approach",
+   "title_ar": "خريطة سوبر باور بمنهج REA",
+   "summary_en": "Maps this skill the way REA maps a source tree it does not execute: a content-addressed inventory, Python import and invoke edges (ast), REA's JavaScript edges from its committed receipt, links from every script to its tools.json entry, tests, CI steps, powers and families, the gaps (orphan or untested scripts, missing tool files, unlisted references, broken links, families without a runnable tool) and Atlas safe-core coverage per theme.",
+   "summary_ar": "يرسم خريطة المهارة كما يرسم REA شجرة مصدر لا يشغّلها: جرد ببصمات المحتوى، وحواف الاستيراد والاستدعاء في بايثون، وحواف جافاسكربت من إيصال REA المحفوظ، وروابط كل سكربت بأداته واختباراته وخطوات CI والقدرات والعائلات، ثم الفجوات (سكربتات يتيمة أو بلا اختبار، ملفات أدوات مفقودة، مراجع خارج فهرس التخطيط، روابط مكسورة، عائلات بلا أداة قابلة للتشغيل) وتغطية الأطلس لكل موضوع.",
+   "use_when": [
+    "اعمل خريطة كاملة لسوبر باور: البنية والتبعيات والفجوات",
+    "ايه السكربتات اللي ملهاش اختبار أو مش متسجلة؟",
+    "Map the superpowers skill: structure, dependency graph, gaps and Atlas coverage",
+    "Which scripts are orphaned or untested, and which families have no runnable tool?"
+   ],
+   "keywords": [
+    "superpowers map",
+    "rea map",
+    "dependency graph",
+    "import graph",
+    "gaps",
+    "orphan scripts",
+    "untested",
+    "coverage",
+    "خريطة سوبر باور",
+    "خريطة",
+    "فجوات",
+    "تبعيات",
+    "سكربتات يتيمة"
+   ],
+   "commands": [
+    {
+     "name": "build",
+     "example": "python3 scripts/rea_superpowers_map.py build",
+     "does": "Writes data/superpowers_rea_map.json, references/superpowers-rea-map.md and the self-contained references/superpowers-rea-map.html; --check exits 1 when they are stale."
+    },
+    {
+     "name": "stats",
+     "example": "python3 scripts/rea_superpowers_map.py stats --json",
+     "does": "Structure, counts, gap counts, Atlas coverage and the REA receipt summary."
+    },
+    {
+     "name": "gaps",
+     "example": "python3 scripts/rea_superpowers_map.py gaps --kind script_untested",
+     "does": "Lists gap rows, optionally one kind."
+    },
+    {
+     "name": "node",
+     "example": "python3 scripts/rea_superpowers_map.py node atlas_5000",
+     "does": "One script, tool id, family or path with its edges, tools, tests, powers and gaps; unknown exits 2."
+    },
+    {
+     "name": "ingest-rea",
+     "example": "python3 scripts/rea_superpowers_map.py ingest-rea --summary sp_sum.json --graph sp_full.json",
+     "does": "Turns `rea import-reference-source <skill dir> --format json` output (summary and full) into the trimmed receipt proofs/rea-superpowers-map/receipt.json; foreign JSON is refused."
+    },
+    {
+     "name": "self-test",
+     "example": "python3 scripts/rea_superpowers_map.py --self-test",
+     "does": "Offline synthetic tree with known roles, edges and gaps; prints pass or the failed checks."
+    }
+   ],
+   "inputs": "The skill tree, data/tools.json, data/powers/*.json, data/skill_layout.json, .github/workflows/ci.yml, tests/, data/atlas_capability_index.json.gz and the committed REA receipt.",
+   "outputs": "build writes the three map files; other commands print to stdout; ingest-rea writes the receipt.",
+   "requires": {
+    "python": [],
+    "binaries": [
+     "python3"
+    ],
+    "node": [],
+    "optional": [
+     "rea (only to refresh the receipt, run separately)"
+    ],
+    "network": false
+   },
+   "safety": "read-only",
+   "consent": "None needed for build/stats/gaps/node; refreshing the receipt runs REA separately on the user's own tree.",
+   "limits": "Import edges are static (dynamic imports are invisible); a test reference is a name or import, not measured coverage; JavaScript edges are as of the receipt's git head; Atlas covered means cited, not run.",
+   "evidence": "tested-here",
+   "evidence_note": "evals/test_rea_superpowers_map.py and the built-in --self-test",
+   "tests": [
+    ".claude/skills/kosif-superpowers/evals/test_rea_superpowers_map.py"
+   ],
+   "docs": [
+    ".claude/skills/kosif-superpowers/references/superpowers-rea-map.md",
+    ".claude/skills/kosif-superpowers/references/rea-superpowers-frontier-20261023.md",
+    ".claude/skills/kosif-superpowers/references/guides/maintain.md"
+   ],
+   "families": [
+    "self-discovery",
+    "software-investigation"
+   ]
+  },
+  {
    "id": "atlas-deep-fusion",
    "path": "scripts/atlas_deep_fusion.py",
    "root": "skill",

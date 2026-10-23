@@ -1,4 +1,4 @@
-# `software-investigation` — التحليل العكسي وفحص البرامج (245 بطاقة)
+# `software-investigation` — التحليل العكسي وفحص البرامج (258 بطاقة)
 
 > مكتبة بروتوكول USIP v5.5 الكاملة، مولّدة بـ `smart_capabilities.py cards` من `data/powers/software-investigation.json` وقواعد الملاحق A25–A29؛ لا تُحرَّر يدويًا. [الفهرس الرئيسي](../../README.md) · [فصل المجموعة](../../../.claude/skills/kosif-superpowers/references/library/reverse.md) · [النواة](../../../.claude/skills/kosif-superpowers/PROTOCOL.md)
 
@@ -249,6 +249,19 @@
 - [`REA-243` REA: تصميم أداة تحقيق وعقد CLI/MCP](#rea-243--rea-تصميم-أداة-تحقيق-وعقد-climcp--rea-skill-design-investigation-tools-climcp-contracts-and-evidence-semantics)
 - [`REA-244` REA: تدقيق CI والاختبارات (انحراف التجهيزات والنجاح الكاذب)](#rea-244--rea-تدقيق-ci-والاختبارات-انحراف-التجهيزات-والنجاح-الكاذب--rea-skill-audit-ci-and-test-suites-for-fixture-drift-false-passes-and-measured-cost)
 - [`REA-245` REA: كتابة سجل التغييرات من تاريخ Git مثبت مع شكر موثق](#rea-245--rea-كتابة-سجل-التغييرات-من-تاريخ-git-مثبت-مع-شكر-موثق--rea-skill-release-changelog-from-pinned-git-history-with-verified-contributor-thanks)
+- [`REA-246` REA: إنتروبيا البايتات لكشف المناطق المضغوطة أو المشفرة](#rea-246--rea-إنتروبيا-البايتات-لكشف-المناطق-المضغوطة-أو-المشفرة--rea-mcp-tool-inspect_byte_entropy-shannon-byte-entropy-profile)
+- [`REA-247` REA: فحص تطبيق سطح مكتب ومعرفة محركه](#rea-247--rea-فحص-تطبيق-سطح-مكتب-ومعرفة-محركه--rea-mcp-tool-inspect_desktop_application-engine-candidates-for-a-desktop-app-folder)
+- [`REA-248` REA: ملاحظات ELF ومعرّف البناء](#rea-248--rea-ملاحظات-elf-ومعرّف-البناء--rea-mcp-tool-inspect_elf_notes-gnu-build-id-and-abi-tag-notes)
+- [`REA-249` REA: فحص ملفات BEAM لإرلانغ وإليكسير](#rea-249--rea-فحص-ملفات-beam-لإرلانغ-وإليكسير--rea-mcp-tool-inspect_erlang_beam-beam-atoms-exports-and-code-header)
+- [`REA-250` REA: كائنات كود GPU لـ CUDA وHIP](#rea-250--rea-كائنات-كود-gpu-لـ-cuda-وhip--rea-mcp-tool-inspect_gpu_code_objects-cudahip-fatbins-cubin-and-ptx)
+- [`REA-251` REA: بيانات Unity IL2CPP الوصفية](#rea-251--rea-بيانات-unity-il2cpp-الوصفية--rea-mcp-tool-inspect_il2cpp_metadata-unity-il2cpp-metadata-with-optional-binary-link)
+- [`REA-252` REA: فحص ملفات النماذج GGUF وsafetensors بلا تحميل](#rea-252--rea-فحص-ملفات-النماذج-gguf-وsafetensors-بلا-تحميل--rea-mcp-tool-inspect_model_artifact-gguf-and-safetensors-declarations-without-loading)
+- [`REA-253` REA: جدول تصدير مكتبة PE أو ELF](#rea-253--rea-جدول-تصدير-مكتبة-pe-أو-elf--rea-mcp-tool-inspect_native_exports-peelf-export-table)
+- [`REA-254` REA: هويات شهادات Authenticode في PE](#rea-254--rea-هويات-شهادات-authenticode-في-pe--rea-mcp-tool-inspect_pe_certificates-authenticode-certificate-identities)
+- [`REA-255` REA: ترويسة pyc وكائنات الكود بلا بايثون](#rea-255--rea-ترويسة-pyc-وكائنات-الكود-بلا-بايثون--rea-mcp-tool-inspect_python_pyc-cpython-pyc-header-and-code-objects)
+- [`REA-256` REA: مطابقة الدوال بين نسختين من ثنائي](#rea-256--rea-مطابقة-الدوال-بين-نسختين-من-ثنائي--rea-mcp-tool-match_native_functions-match-functions-across-two-binary-versions)
+- [`REA-257` REA: فتح حزمة تطبيق لقراءة الموارد فقط](#rea-257--rea-فتح-حزمة-تطبيق-لقراءة-الموارد-فقط--rea-mcp-tool-open_bundle_resources-resource-only-app-bundle-session)
+- [`REA-258` REA: مهارة «اعكس هندسة أي شيء» ومتى لا تستخدم REA](#rea-258--rea-مهارة-اعكس-هندسة-أي-شيء-ومتى-لا-تستخدم-rea--rea-skill-reverse-engineer-anything-and-when-to-skip-rea)
 
 ## البطاقات / cards
 
@@ -18116,6 +18129,7 @@
 - `REA-242` REA: تحسين أداء التحليل مع الحفاظ على الأدلة / REA skill: optimize analysis cost while preserving correctness and Evidence (documented)
 - `REA-243` REA: تصميم أداة تحقيق وعقد CLI/MCP / REA skill: design investigation tools, CLI/MCP contracts and Evidence semantics (documented)
 - `REA-245` REA: كتابة سجل التغييرات من تاريخ Git مثبت مع شكر موثق / REA skill: release changelog from pinned Git history with verified contributor thanks (documented)
+- `REA-246` REA: إنتروبيا البايتات لكشف المناطق المضغوطة أو المشفرة / REA MCP tool `inspect_byte_entropy`: Shannon byte entropy profile (documented)
 
 ### `REA-245` — REA: كتابة سجل التغييرات من تاريخ Git مثبت مع شكر موثق / REA skill: release changelog from pinned Git history with verified contributor thanks
 
@@ -18184,4 +18198,943 @@
 
 - `REA-243` REA: تصميم أداة تحقيق وعقد CLI/MCP / REA skill: design investigation tools, CLI/MCP contracts and Evidence semantics (documented)
 - `REA-244` REA: تدقيق CI والاختبارات (انحراف التجهيزات والنجاح الكاذب) / REA skill: audit CI and test suites for fixture drift, false passes and measured cost (documented)
+- `REA-246` REA: إنتروبيا البايتات لكشف المناطق المضغوطة أو المشفرة / REA MCP tool `inspect_byte_entropy`: Shannon byte entropy profile (documented)
+- `REA-247` REA: فحص تطبيق سطح مكتب ومعرفة محركه / REA MCP tool `inspect_desktop_application`: engine candidates for a desktop app folder (documented)
+
+### `REA-246` — REA: إنتروبيا البايتات لكشف المناطق المضغوطة أو المشفرة / REA MCP tool `inspect_byte_entropy`: Shannon byte entropy profile
+
+| الحقل | القيمة |
+|---|---|
+| العائلة | `software-investigation` ([فصل العائلة](../../../.claude/skills/kosif-superpowers/references/powers/software-investigation.md)) |
+| المجموعة | التحليل العكسي وفحص البرامج (`reverse`) |
+| نوع المخرج (A25، A27) | كود وتطبيقات ومواقع (`code`) |
+| الحالة في الكتالوج | 📄 `documented`: منهج موصوف يحتاج بناءً أو ربطًا قبل التشغيل |
+| سقف التحقق قبل العمل (A27) | V1 حتى تُبنى وتُشغَّل؛ لا تقدَّم جاهزة أبدًا |
+| نطاق الدليل | `url` |
+| الرخصة | MIT (REA, © 2026 morluto); bring-your-own engines keep their own terms |
+
+**ما هي:** أداة MCP من REA v6.7.0 لم تكن في الكتالوج: يحسب إنتروبيا شانون للملف كله ولكتل ثابتة الحجم مع مقاطع مرتفعة (≥7.2) ومنخفضة (≤1.0) بإزاحات دقيقة، قبل أي استخراج. — Shannon entropy for the whole file and fixed blocks, with high (>=7.2) and low (<=1.0) runs at exact offsets, before any extraction. Entropy cannot tell compression from encryption.
+
+**متى:** فيرموير أو ملف مجهول قبل الاستخراج / profiling firmware or an unknown blob before extraction
+
+**كيف:** Connect the REA MCP server and call `inspect_byte_entropy` (MCP only, no CLI command of the same name in 6.7.0). Needs: REA alone. Static reading only: no target execution, network or changes. Evidence-first: keep observations, inferences and unknowns apart; a missing table is observed absence, not proof. Summary detail keeps complete Evidence that `inspect_analysis_view` can page later. Only on targets you have the right to analyse.
+
+**المعاملات:** MCP tool `inspect_byte_entropy`; detail summary\|complete
+
+**التثبيت:** npm install -g rea-agents@6.7.0 then connect it as an MCP server; REA alone
+
+**الوسوم:** REA · MCP · reverse engineering · هندسة عكسية · entropy · firmware · إنتروبيا
+
+#### 1. الاستقبال (A25)
+
+- اللغة والإطار: افتراض مكتوب ← لغة المستودع الموجود، وإلا Python أو HTML/JS بلا اعتماديات
+- أين يعمل: افتراض مكتوب ← المتصفح أو سطر الأوامر حسب المخرج
+- مستودع أو ملفات موجودة: سؤال بإجابة مقترحة ← مشروع جديد مستقل
+- متى يكون ناجحًا: افتراض مكتوب ← الاختبارات الموجودة تمر + اختبار لكل سلوك جديد
+- لا تُفترض أبدًا: مادة الإنتاج نفسها، والإذن بخطوة مدفوعة أو منشورة أو لا رجعة فيها، والهوية والحقوق.
+
+#### 2. الجاهزية والشارة (A28)
+
+- `npm:rea` ← npm ls rea أو وجود node_modules/rea
+- `engine:binwalk` ← افحص وجوده بأمر واحد قبل كتابة الشارة
+- الوضع 1: شارة «هنا الآن» بعد الفحص، لا 📄 الكتالوج تلقائيًا · الوضع 2: `كتالوج: 📄 · هنا: غير مفحوص` · الوضع 3: بلا شارة ولا معرّف.
+
+#### 3. موضعها في الخطة (A26)
+
+- عقدة منمّطة: المدخل `spec` ← المخرج `code`، والمنفّذ `method:REA-246` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `atlas-5000` · `atlas-capability-miner` · `blender-api-audit` · `differential-exam` · `installer-triage` · `local-project-audit`.
+- مراحل النوع: قراءة الكود والاختبارات ← إعادة إنتاج أو اختبار جديد ← أصغر تغيير ← الاختبارات ← مراجعة الفرق ← فرع وPR.
+- إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
+
+#### 4. بوابة التحقق (A27)
+
+- إلزامي: الاختبارات الموجودة تمر قبل التعديل وبعده ← أمر الاختبار
+- إلزامي: اختبار لكل سلوك جديد أو خطأ مُصلح ← الاختبار الجديد يفشل قبل الإصلاح
+- إلزامي: لا أسرار ولا مسارات جلسة في الشيفرة ← بحث أنماط الأسرار
+- جودة: يطابق أسلوب الكود المحيط وتسمياته ← مراجعة الفرق
+- جودة: طريقة تشغيل مكتوبة ومجرَّبة ← تشغيل الأمر المكتوب
+- جودة: الفرق أصغر ما يحقق الطلب بلا إعادة كتابة غير مطلوبة ← git diff --stat
+- جودة: المدخل الخاطئ يعطي خطأ واضحًا لا انهيارًا صامتًا ← تشغيل بمدخل خاطئ
+- أمر الحكم في الوضع 1: `think.py qa code --answers qa.json` (PASS / FAIL / INCOMPLETE).
+
+#### 5. التعافي (A29)
+
+- `missing_dependency` (اعتمادية مفقودة، ميزانية 2): سمِّ الاعتمادية بالضبط (حزمة، برنامج، خط، نموذج) ← ثبّت محليًا في بيئة العمل إن كان مجانيًا ومسموحًا (pip --user أو venv أو npm محلي) · البديل: مسار المكتبة القياسية أو أداة أخرى من نفس المجموعة · تصعيد: تثبيت نظامي أو مدفوع أو يحتاج مفتاحًا: توقف واسأل
+- `quality_below_threshold` (جودة دون العتبة، ميزانية 3): أي معيار فشل وبكم (المقيس مقابل العتبة) ← عالج السبب الأكبر وحده ثم أعد القياس · البديل: المنهج البديل المكتوب للمرحلة في الخطة · تصعيد: معيار إلزامي لا يتحقق بعد البديل: توقف وأبلغ بالأرقام
+- `tool_error` (خطأ أداة، ميزانية 3): اقرأ آخر سطر في الخطأ ثم أول سطر من كودك فيه ← أصلح السبب المثبت وحده، ثم شغّل الاختبار المتعلق · البديل: أداة أخرى أو مسار يدوي للمرحلة نفسها · تصعيد: خطأ في أداة خارجية لا تملكها: بلّغ بإعادة الإنتاج ولا تخفه
+
+#### 6. الأدلة
+
+- `https://github.com/morluto/rea/blob/main/docs/firmware-analysis.md`
+
+#### 7. قدرات قريبة في العائلة
+
+- `REA-244` REA: تدقيق CI والاختبارات (انحراف التجهيزات والنجاح الكاذب) / REA skill: audit CI and test suites for fixture drift, false passes and measured cost (documented)
+- `REA-245` REA: كتابة سجل التغييرات من تاريخ Git مثبت مع شكر موثق / REA skill: release changelog from pinned Git history with verified contributor thanks (documented)
+- `REA-247` REA: فحص تطبيق سطح مكتب ومعرفة محركه / REA MCP tool `inspect_desktop_application`: engine candidates for a desktop app folder (documented)
+- `REA-248` REA: ملاحظات ELF ومعرّف البناء / REA MCP tool `inspect_elf_notes`: GNU build-id and ABI-tag notes (documented)
+
+### `REA-247` — REA: فحص تطبيق سطح مكتب ومعرفة محركه / REA MCP tool `inspect_desktop_application`: engine candidates for a desktop app folder
+
+| الحقل | القيمة |
+|---|---|
+| العائلة | `software-investigation` ([فصل العائلة](../../../.claude/skills/kosif-superpowers/references/powers/software-investigation.md)) |
+| المجموعة | التحليل العكسي وفحص البرامج (`reverse`) |
+| نوع المخرج (A25، A27) | كود وتطبيقات ومواقع (`code`) |
+| الحالة في الكتالوج | 📄 `documented`: منهج موصوف يحتاج بناءً أو ربطًا قبل التشغيل |
+| سقف التحقق قبل العمل (A27) | V1 حتى تُبنى وتُشغَّل؛ لا تقدَّم جاهزة أبدًا |
+| نطاق الدليل | `url` |
+| الرخصة | MIT (REA, © 2026 morluto); bring-your-own engines keep their own terms |
+
+**ما هي:** أداة MCP من REA v6.7.0 لم تكن في الكتالوج: يفحص مجلد تطبيق سطح مكتب بقوائم محدودة ورؤوس ملفات ويعيد مرشحين: .NET وUnity Mono/IL2CPP وUnreal وGodot وGameMaker وElectron مع مسارات داعمة وخطوات فحص تالية. — Inspects a desktop app folder with bounded listings and headers and returns .NET, Unity Mono/IL2CPP, Unreal, Godot, GameMaker and Electron candidates with supporting paths and next probes.
+
+**متى:** 'بماذا بُني هذا البرنامج؟' لمجلد تطبيق مثبت / 'what is this installed app built with'
+
+**كيف:** Connect the REA MCP server and call `inspect_desktop_application` (MCP only, no CLI command of the same name in 6.7.0). Needs: REA alone. Static reading only: no target execution, network or changes. Evidence-first: keep observations, inferences and unknowns apart; a missing table is observed absence, not proof. Summary detail keeps complete Evidence that `inspect_analysis_view` can page later. Only on targets you have the right to analyse.
+
+**المعاملات:** MCP tool `inspect_desktop_application`; detail summary\|complete
+
+**التثبيت:** npm install -g rea-agents@6.7.0 then connect it as an MCP server; REA alone
+
+**الوسوم:** REA · MCP · reverse engineering · هندسة عكسية · desktop · Unity · Electron · Godot
+
+#### 1. الاستقبال (A25)
+
+- اللغة والإطار: افتراض مكتوب ← لغة المستودع الموجود، وإلا Python أو HTML/JS بلا اعتماديات
+- أين يعمل: افتراض مكتوب ← المتصفح أو سطر الأوامر حسب المخرج
+- مستودع أو ملفات موجودة: سؤال بإجابة مقترحة ← مشروع جديد مستقل
+- متى يكون ناجحًا: افتراض مكتوب ← الاختبارات الموجودة تمر + اختبار لكل سلوك جديد
+- لا تُفترض أبدًا: مادة الإنتاج نفسها، والإذن بخطوة مدفوعة أو منشورة أو لا رجعة فيها، والهوية والحقوق.
+
+#### 2. الجاهزية والشارة (A28)
+
+- `npm:rea` ← npm ls rea أو وجود node_modules/rea
+- الوضع 1: شارة «هنا الآن» بعد الفحص، لا 📄 الكتالوج تلقائيًا · الوضع 2: `كتالوج: 📄 · هنا: غير مفحوص` · الوضع 3: بلا شارة ولا معرّف.
+
+#### 3. موضعها في الخطة (A26)
+
+- عقدة منمّطة: المدخل `spec` ← المخرج `code`، والمنفّذ `method:REA-247` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `atlas-5000` · `atlas-capability-miner` · `blender-api-audit` · `differential-exam` · `installer-triage` · `local-project-audit`.
+- مراحل النوع: قراءة الكود والاختبارات ← إعادة إنتاج أو اختبار جديد ← أصغر تغيير ← الاختبارات ← مراجعة الفرق ← فرع وPR.
+- إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
+
+#### 4. بوابة التحقق (A27)
+
+- إلزامي: الاختبارات الموجودة تمر قبل التعديل وبعده ← أمر الاختبار
+- إلزامي: اختبار لكل سلوك جديد أو خطأ مُصلح ← الاختبار الجديد يفشل قبل الإصلاح
+- إلزامي: لا أسرار ولا مسارات جلسة في الشيفرة ← بحث أنماط الأسرار
+- جودة: يطابق أسلوب الكود المحيط وتسمياته ← مراجعة الفرق
+- جودة: طريقة تشغيل مكتوبة ومجرَّبة ← تشغيل الأمر المكتوب
+- جودة: الفرق أصغر ما يحقق الطلب بلا إعادة كتابة غير مطلوبة ← git diff --stat
+- جودة: المدخل الخاطئ يعطي خطأ واضحًا لا انهيارًا صامتًا ← تشغيل بمدخل خاطئ
+- أمر الحكم في الوضع 1: `think.py qa code --answers qa.json` (PASS / FAIL / INCOMPLETE).
+
+#### 5. التعافي (A29)
+
+- `missing_dependency` (اعتمادية مفقودة، ميزانية 2): سمِّ الاعتمادية بالضبط (حزمة، برنامج، خط، نموذج) ← ثبّت محليًا في بيئة العمل إن كان مجانيًا ومسموحًا (pip --user أو venv أو npm محلي) · البديل: مسار المكتبة القياسية أو أداة أخرى من نفس المجموعة · تصعيد: تثبيت نظامي أو مدفوع أو يحتاج مفتاحًا: توقف واسأل
+- `quality_below_threshold` (جودة دون العتبة، ميزانية 3): أي معيار فشل وبكم (المقيس مقابل العتبة) ← عالج السبب الأكبر وحده ثم أعد القياس · البديل: المنهج البديل المكتوب للمرحلة في الخطة · تصعيد: معيار إلزامي لا يتحقق بعد البديل: توقف وأبلغ بالأرقام
+- `tool_error` (خطأ أداة، ميزانية 3): اقرأ آخر سطر في الخطأ ثم أول سطر من كودك فيه ← أصلح السبب المثبت وحده، ثم شغّل الاختبار المتعلق · البديل: أداة أخرى أو مسار يدوي للمرحلة نفسها · تصعيد: خطأ في أداة خارجية لا تملكها: بلّغ بإعادة الإنتاج ولا تخفه
+
+#### 6. الأدلة
+
+- `https://github.com/morluto/rea/blob/main/docs/desktop-applications.md`
+
+#### 7. قدرات قريبة في العائلة
+
+- `REA-245` REA: كتابة سجل التغييرات من تاريخ Git مثبت مع شكر موثق / REA skill: release changelog from pinned Git history with verified contributor thanks (documented)
+- `REA-246` REA: إنتروبيا البايتات لكشف المناطق المضغوطة أو المشفرة / REA MCP tool `inspect_byte_entropy`: Shannon byte entropy profile (documented)
+- `REA-248` REA: ملاحظات ELF ومعرّف البناء / REA MCP tool `inspect_elf_notes`: GNU build-id and ABI-tag notes (documented)
+- `REA-249` REA: فحص ملفات BEAM لإرلانغ وإليكسير / REA MCP tool `inspect_erlang_beam`: BEAM atoms, exports and Code header (documented)
+
+### `REA-248` — REA: ملاحظات ELF ومعرّف البناء / REA MCP tool `inspect_elf_notes`: GNU build-id and ABI-tag notes
+
+| الحقل | القيمة |
+|---|---|
+| العائلة | `software-investigation` ([فصل العائلة](../../../.claude/skills/kosif-superpowers/references/powers/software-investigation.md)) |
+| المجموعة | التحليل العكسي وفحص البرامج (`reverse`) |
+| نوع المخرج (A25، A27) | كود وتطبيقات ومواقع (`code`) |
+| الحالة في الكتالوج | 📄 `documented`: منهج موصوف يحتاج بناءً أو ربطًا قبل التشغيل |
+| سقف التحقق قبل العمل (A27) | V1 حتى تُبنى وتُشغَّل؛ لا تقدَّم جاهزة أبدًا |
+| نطاق الدليل | `url` |
+| الرخصة | MIT (REA, © 2026 morluto); bring-your-own engines keep their own terms |
+
+**ما هي:** أداة MCP من REA v6.7.0 لم تكن في الكتالوج: يقرأ جداول PT_NOTE وSHT_NOTE في ELF ويعيد معرّف البناء GNU build-id ووسم ABI بلا محلل عكسي. — Reads an ELF image's note tables and returns GNU build-id, ABI tag and gold version without a disassembler.
+
+**متى:** مطابقة ثنائي مع رموز التصحيح أو إصدار البناء / matching a binary to its debug symbols or build
+
+**كيف:** Connect the REA MCP server and call `inspect_elf_notes` (MCP only, no CLI command of the same name in 6.7.0). Needs: REA alone. Static reading only: no target execution, network or changes. Evidence-first: keep observations, inferences and unknowns apart; a missing table is observed absence, not proof. Summary detail keeps complete Evidence that `inspect_analysis_view` can page later. Only on targets you have the right to analyse.
+
+**المعاملات:** MCP tool `inspect_elf_notes`; detail summary\|complete
+
+**التثبيت:** npm install -g rea-agents@6.7.0 then connect it as an MCP server; REA alone
+
+**الوسوم:** REA · MCP · reverse engineering · هندسة عكسية · ELF · build-id · linux
+
+#### 1. الاستقبال (A25)
+
+- اللغة والإطار: افتراض مكتوب ← لغة المستودع الموجود، وإلا Python أو HTML/JS بلا اعتماديات
+- أين يعمل: افتراض مكتوب ← المتصفح أو سطر الأوامر حسب المخرج
+- مستودع أو ملفات موجودة: سؤال بإجابة مقترحة ← مشروع جديد مستقل
+- متى يكون ناجحًا: افتراض مكتوب ← الاختبارات الموجودة تمر + اختبار لكل سلوك جديد
+- لا تُفترض أبدًا: مادة الإنتاج نفسها، والإذن بخطوة مدفوعة أو منشورة أو لا رجعة فيها، والهوية والحقوق.
+
+#### 2. الجاهزية والشارة (A28)
+
+- `npm:rea` ← npm ls rea أو وجود node_modules/rea
+- الوضع 1: شارة «هنا الآن» بعد الفحص، لا 📄 الكتالوج تلقائيًا · الوضع 2: `كتالوج: 📄 · هنا: غير مفحوص` · الوضع 3: بلا شارة ولا معرّف.
+
+#### 3. موضعها في الخطة (A26)
+
+- عقدة منمّطة: المدخل `spec` ← المخرج `code`، والمنفّذ `method:REA-248` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `atlas-5000` · `atlas-capability-miner` · `blender-api-audit` · `differential-exam` · `installer-triage` · `local-project-audit`.
+- مراحل النوع: قراءة الكود والاختبارات ← إعادة إنتاج أو اختبار جديد ← أصغر تغيير ← الاختبارات ← مراجعة الفرق ← فرع وPR.
+- إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
+
+#### 4. بوابة التحقق (A27)
+
+- إلزامي: الاختبارات الموجودة تمر قبل التعديل وبعده ← أمر الاختبار
+- إلزامي: اختبار لكل سلوك جديد أو خطأ مُصلح ← الاختبار الجديد يفشل قبل الإصلاح
+- إلزامي: لا أسرار ولا مسارات جلسة في الشيفرة ← بحث أنماط الأسرار
+- جودة: يطابق أسلوب الكود المحيط وتسمياته ← مراجعة الفرق
+- جودة: طريقة تشغيل مكتوبة ومجرَّبة ← تشغيل الأمر المكتوب
+- جودة: الفرق أصغر ما يحقق الطلب بلا إعادة كتابة غير مطلوبة ← git diff --stat
+- جودة: المدخل الخاطئ يعطي خطأ واضحًا لا انهيارًا صامتًا ← تشغيل بمدخل خاطئ
+- أمر الحكم في الوضع 1: `think.py qa code --answers qa.json` (PASS / FAIL / INCOMPLETE).
+
+#### 5. التعافي (A29)
+
+- `missing_dependency` (اعتمادية مفقودة، ميزانية 2): سمِّ الاعتمادية بالضبط (حزمة، برنامج، خط، نموذج) ← ثبّت محليًا في بيئة العمل إن كان مجانيًا ومسموحًا (pip --user أو venv أو npm محلي) · البديل: مسار المكتبة القياسية أو أداة أخرى من نفس المجموعة · تصعيد: تثبيت نظامي أو مدفوع أو يحتاج مفتاحًا: توقف واسأل
+- `quality_below_threshold` (جودة دون العتبة، ميزانية 3): أي معيار فشل وبكم (المقيس مقابل العتبة) ← عالج السبب الأكبر وحده ثم أعد القياس · البديل: المنهج البديل المكتوب للمرحلة في الخطة · تصعيد: معيار إلزامي لا يتحقق بعد البديل: توقف وأبلغ بالأرقام
+- `tool_error` (خطأ أداة، ميزانية 3): اقرأ آخر سطر في الخطأ ثم أول سطر من كودك فيه ← أصلح السبب المثبت وحده، ثم شغّل الاختبار المتعلق · البديل: أداة أخرى أو مسار يدوي للمرحلة نفسها · تصعيد: خطأ في أداة خارجية لا تملكها: بلّغ بإعادة الإنتاج ولا تخفه
+
+#### 6. الأدلة
+
+- `https://github.com/morluto/rea/blob/main/docs/elf-notes.md`
+
+#### 7. قدرات قريبة في العائلة
+
+- `REA-246` REA: إنتروبيا البايتات لكشف المناطق المضغوطة أو المشفرة / REA MCP tool `inspect_byte_entropy`: Shannon byte entropy profile (documented)
+- `REA-247` REA: فحص تطبيق سطح مكتب ومعرفة محركه / REA MCP tool `inspect_desktop_application`: engine candidates for a desktop app folder (documented)
+- `REA-249` REA: فحص ملفات BEAM لإرلانغ وإليكسير / REA MCP tool `inspect_erlang_beam`: BEAM atoms, exports and Code header (documented)
+- `REA-250` REA: كائنات كود GPU لـ CUDA وHIP / REA MCP tool `inspect_gpu_code_objects`: CUDA/HIP fatbins, CUBIN and PTX (documented)
+
+### `REA-249` — REA: فحص ملفات BEAM لإرلانغ وإليكسير / REA MCP tool `inspect_erlang_beam`: BEAM atoms, exports and Code header
+
+| الحقل | القيمة |
+|---|---|
+| العائلة | `software-investigation` ([فصل العائلة](../../../.claude/skills/kosif-superpowers/references/powers/software-investigation.md)) |
+| المجموعة | التحليل العكسي وفحص البرامج (`reverse`) |
+| نوع المخرج (A25، A27) | كود وتطبيقات ومواقع (`code`) |
+| الحالة في الكتالوج | 📄 `documented`: منهج موصوف يحتاج بناءً أو ربطًا قبل التشغيل |
+| سقف التحقق قبل العمل (A27) | V1 حتى تُبنى وتُشغَّل؛ لا تقدَّم جاهزة أبدًا |
+| نطاق الدليل | `url` |
+| الرخصة | MIT (REA, © 2026 morluto); bring-your-own engines keep their own terms |
+
+**ما هي:** أداة MCP من REA v6.7.0 لم تكن في الكتالوج: يحلل حاوية BEAM: أسماء الكتل وبصماتها، الذرات، جداول التصدير والاستيراد واللامبدا، ورأس مجموعة التعليمات، بلا تثبيت إرلانغ. — Parses a BEAM container: chunk names and hashes, atoms, export/import/lambda tables and the Code instruction-set header, without installing Erlang.
+
+**متى:** تحليل وحدة Erlang أو Elixir مُجمّعة / analysing a compiled Erlang or Elixir module
+
+**كيف:** Connect the REA MCP server and call `inspect_erlang_beam` (MCP only, no CLI command of the same name in 6.7.0). Needs: REA alone. Static reading only: no target execution, network or changes. Evidence-first: keep observations, inferences and unknowns apart; a missing table is observed absence, not proof. Summary detail keeps complete Evidence that `inspect_analysis_view` can page later. Only on targets you have the right to analyse.
+
+**المعاملات:** MCP tool `inspect_erlang_beam`; detail summary\|complete
+
+**التثبيت:** npm install -g rea-agents@6.7.0 then connect it as an MCP server; REA alone
+
+**الوسوم:** REA · MCP · reverse engineering · هندسة عكسية · Erlang · Elixir · BEAM
+
+#### 1. الاستقبال (A25)
+
+- اللغة والإطار: افتراض مكتوب ← لغة المستودع الموجود، وإلا Python أو HTML/JS بلا اعتماديات
+- أين يعمل: افتراض مكتوب ← المتصفح أو سطر الأوامر حسب المخرج
+- مستودع أو ملفات موجودة: سؤال بإجابة مقترحة ← مشروع جديد مستقل
+- متى يكون ناجحًا: افتراض مكتوب ← الاختبارات الموجودة تمر + اختبار لكل سلوك جديد
+- لا تُفترض أبدًا: مادة الإنتاج نفسها، والإذن بخطوة مدفوعة أو منشورة أو لا رجعة فيها، والهوية والحقوق.
+
+#### 2. الجاهزية والشارة (A28)
+
+- `npm:rea` ← npm ls rea أو وجود node_modules/rea
+- الوضع 1: شارة «هنا الآن» بعد الفحص، لا 📄 الكتالوج تلقائيًا · الوضع 2: `كتالوج: 📄 · هنا: غير مفحوص` · الوضع 3: بلا شارة ولا معرّف.
+
+#### 3. موضعها في الخطة (A26)
+
+- عقدة منمّطة: المدخل `spec` ← المخرج `code`، والمنفّذ `method:REA-249` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `atlas-5000` · `atlas-capability-miner` · `blender-api-audit` · `differential-exam` · `installer-triage` · `local-project-audit`.
+- مراحل النوع: قراءة الكود والاختبارات ← إعادة إنتاج أو اختبار جديد ← أصغر تغيير ← الاختبارات ← مراجعة الفرق ← فرع وPR.
+- إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
+
+#### 4. بوابة التحقق (A27)
+
+- إلزامي: الاختبارات الموجودة تمر قبل التعديل وبعده ← أمر الاختبار
+- إلزامي: اختبار لكل سلوك جديد أو خطأ مُصلح ← الاختبار الجديد يفشل قبل الإصلاح
+- إلزامي: لا أسرار ولا مسارات جلسة في الشيفرة ← بحث أنماط الأسرار
+- جودة: يطابق أسلوب الكود المحيط وتسمياته ← مراجعة الفرق
+- جودة: طريقة تشغيل مكتوبة ومجرَّبة ← تشغيل الأمر المكتوب
+- جودة: الفرق أصغر ما يحقق الطلب بلا إعادة كتابة غير مطلوبة ← git diff --stat
+- جودة: المدخل الخاطئ يعطي خطأ واضحًا لا انهيارًا صامتًا ← تشغيل بمدخل خاطئ
+- أمر الحكم في الوضع 1: `think.py qa code --answers qa.json` (PASS / FAIL / INCOMPLETE).
+
+#### 5. التعافي (A29)
+
+- `missing_dependency` (اعتمادية مفقودة، ميزانية 2): سمِّ الاعتمادية بالضبط (حزمة، برنامج، خط، نموذج) ← ثبّت محليًا في بيئة العمل إن كان مجانيًا ومسموحًا (pip --user أو venv أو npm محلي) · البديل: مسار المكتبة القياسية أو أداة أخرى من نفس المجموعة · تصعيد: تثبيت نظامي أو مدفوع أو يحتاج مفتاحًا: توقف واسأل
+- `quality_below_threshold` (جودة دون العتبة، ميزانية 3): أي معيار فشل وبكم (المقيس مقابل العتبة) ← عالج السبب الأكبر وحده ثم أعد القياس · البديل: المنهج البديل المكتوب للمرحلة في الخطة · تصعيد: معيار إلزامي لا يتحقق بعد البديل: توقف وأبلغ بالأرقام
+- `tool_error` (خطأ أداة، ميزانية 3): اقرأ آخر سطر في الخطأ ثم أول سطر من كودك فيه ← أصلح السبب المثبت وحده، ثم شغّل الاختبار المتعلق · البديل: أداة أخرى أو مسار يدوي للمرحلة نفسها · تصعيد: خطأ في أداة خارجية لا تملكها: بلّغ بإعادة الإنتاج ولا تخفه
+
+#### 6. الأدلة
+
+- `https://github.com/morluto/rea/blob/main/docs/erlang-beam.md`
+
+#### 7. قدرات قريبة في العائلة
+
+- `REA-247` REA: فحص تطبيق سطح مكتب ومعرفة محركه / REA MCP tool `inspect_desktop_application`: engine candidates for a desktop app folder (documented)
+- `REA-248` REA: ملاحظات ELF ومعرّف البناء / REA MCP tool `inspect_elf_notes`: GNU build-id and ABI-tag notes (documented)
+- `REA-250` REA: كائنات كود GPU لـ CUDA وHIP / REA MCP tool `inspect_gpu_code_objects`: CUDA/HIP fatbins, CUBIN and PTX (documented)
+- `REA-251` REA: بيانات Unity IL2CPP الوصفية / REA MCP tool `inspect_il2cpp_metadata`: Unity IL2CPP metadata with optional binary link (documented)
+
+### `REA-250` — REA: كائنات كود GPU لـ CUDA وHIP / REA MCP tool `inspect_gpu_code_objects`: CUDA/HIP fatbins, CUBIN and PTX
+
+| الحقل | القيمة |
+|---|---|
+| العائلة | `software-investigation` ([فصل العائلة](../../../.claude/skills/kosif-superpowers/references/powers/software-investigation.md)) |
+| المجموعة | التحليل العكسي وفحص البرامج (`reverse`) |
+| نوع المخرج (A25، A27) | كود وتطبيقات ومواقع (`code`) |
+| الحالة في الكتالوج | 📄 `documented`: منهج موصوف يحتاج بناءً أو ربطًا قبل التشغيل |
+| سقف التحقق قبل العمل (A27) | V1 حتى تُبنى وتُشغَّل؛ لا تقدَّم جاهزة أبدًا |
+| نطاق الدليل | `url` |
+| الرخصة | MIT (REA, © 2026 morluto); bring-your-own engines keep their own terms |
+
+**ما هي:** أداة MCP من REA v6.7.0 لم تكن في الكتالوج: يجرد كائنات كود GPU داخل ELF/PE وfatbin وCUBIN وPTX وحزم HIP، ويفك نواة محددة: سجلات PTX الافتراضية، سجلات CUBIN والذاكرة المشتركة، وإعلانات AMDGPU، بلا أدوات GPU ولا تشغيل. — Inventories GPU code objects in hosts, fatbins, CUBIN, PTX and HIP bundles and decodes selected kernels (PTX registers, CUBIN registers/shared memory, AMDGPU declarations) without GPU tools or execution.
+
+**متى:** معرفة نوى CUDA أو ROCm داخل مكتبة / finding the CUDA or ROCm kernels inside a library
+
+**كيف:** Connect the REA MCP server and call `inspect_gpu_code_objects` (MCP only, no CLI command of the same name in 6.7.0). Needs: REA alone. Static reading only: no target execution, network or changes. Evidence-first: keep observations, inferences and unknowns apart; a missing table is observed absence, not proof. Summary detail keeps complete Evidence that `inspect_analysis_view` can page later. Only on targets you have the right to analyse.
+
+**المعاملات:** MCP tool `inspect_gpu_code_objects`; detail summary\|complete
+
+**التثبيت:** npm install -g rea-agents@6.7.0 then connect it as an MCP server; REA alone
+
+**الوسوم:** REA · MCP · reverse engineering · هندسة عكسية · GPU · CUDA · PTX · ROCm
+
+#### 1. الاستقبال (A25)
+
+- اللغة والإطار: افتراض مكتوب ← لغة المستودع الموجود، وإلا Python أو HTML/JS بلا اعتماديات
+- أين يعمل: افتراض مكتوب ← المتصفح أو سطر الأوامر حسب المخرج
+- مستودع أو ملفات موجودة: سؤال بإجابة مقترحة ← مشروع جديد مستقل
+- متى يكون ناجحًا: افتراض مكتوب ← الاختبارات الموجودة تمر + اختبار لكل سلوك جديد
+- لا تُفترض أبدًا: مادة الإنتاج نفسها، والإذن بخطوة مدفوعة أو منشورة أو لا رجعة فيها، والهوية والحقوق.
+
+#### 2. الجاهزية والشارة (A28)
+
+- `npm:rea` ← npm ls rea أو وجود node_modules/rea
+- `gpu` ← افحص وجوده بأمر واحد قبل كتابة الشارة
+- الوضع 1: شارة «هنا الآن» بعد الفحص، لا 📄 الكتالوج تلقائيًا · الوضع 2: `كتالوج: 📄 · هنا: غير مفحوص` · الوضع 3: بلا شارة ولا معرّف.
+
+#### 3. موضعها في الخطة (A26)
+
+- عقدة منمّطة: المدخل `spec` ← المخرج `code`، والمنفّذ `method:REA-250` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `atlas-5000` · `atlas-capability-miner` · `blender-api-audit` · `differential-exam` · `installer-triage` · `local-project-audit`.
+- مراحل النوع: قراءة الكود والاختبارات ← إعادة إنتاج أو اختبار جديد ← أصغر تغيير ← الاختبارات ← مراجعة الفرق ← فرع وPR.
+- إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
+
+#### 4. بوابة التحقق (A27)
+
+- إلزامي: الاختبارات الموجودة تمر قبل التعديل وبعده ← أمر الاختبار
+- إلزامي: اختبار لكل سلوك جديد أو خطأ مُصلح ← الاختبار الجديد يفشل قبل الإصلاح
+- إلزامي: لا أسرار ولا مسارات جلسة في الشيفرة ← بحث أنماط الأسرار
+- جودة: يطابق أسلوب الكود المحيط وتسمياته ← مراجعة الفرق
+- جودة: طريقة تشغيل مكتوبة ومجرَّبة ← تشغيل الأمر المكتوب
+- جودة: الفرق أصغر ما يحقق الطلب بلا إعادة كتابة غير مطلوبة ← git diff --stat
+- جودة: المدخل الخاطئ يعطي خطأ واضحًا لا انهيارًا صامتًا ← تشغيل بمدخل خاطئ
+- أمر الحكم في الوضع 1: `think.py qa code --answers qa.json` (PASS / FAIL / INCOMPLETE).
+
+#### 5. التعافي (A29)
+
+- `missing_dependency` (اعتمادية مفقودة، ميزانية 2): سمِّ الاعتمادية بالضبط (حزمة، برنامج، خط، نموذج) ← ثبّت محليًا في بيئة العمل إن كان مجانيًا ومسموحًا (pip --user أو venv أو npm محلي) · البديل: مسار المكتبة القياسية أو أداة أخرى من نفس المجموعة · تصعيد: تثبيت نظامي أو مدفوع أو يحتاج مفتاحًا: توقف واسأل
+- `quality_below_threshold` (جودة دون العتبة، ميزانية 3): أي معيار فشل وبكم (المقيس مقابل العتبة) ← عالج السبب الأكبر وحده ثم أعد القياس · البديل: المنهج البديل المكتوب للمرحلة في الخطة · تصعيد: معيار إلزامي لا يتحقق بعد البديل: توقف وأبلغ بالأرقام
+- `tool_error` (خطأ أداة، ميزانية 3): اقرأ آخر سطر في الخطأ ثم أول سطر من كودك فيه ← أصلح السبب المثبت وحده، ثم شغّل الاختبار المتعلق · البديل: أداة أخرى أو مسار يدوي للمرحلة نفسها · تصعيد: خطأ في أداة خارجية لا تملكها: بلّغ بإعادة الإنتاج ولا تخفه
+
+#### 6. الأدلة
+
+- `https://github.com/morluto/rea/blob/main/docs/gpu-code-objects.md`
+
+#### 7. قدرات قريبة في العائلة
+
+- `REA-248` REA: ملاحظات ELF ومعرّف البناء / REA MCP tool `inspect_elf_notes`: GNU build-id and ABI-tag notes (documented)
+- `REA-249` REA: فحص ملفات BEAM لإرلانغ وإليكسير / REA MCP tool `inspect_erlang_beam`: BEAM atoms, exports and Code header (documented)
+- `REA-251` REA: بيانات Unity IL2CPP الوصفية / REA MCP tool `inspect_il2cpp_metadata`: Unity IL2CPP metadata with optional binary link (documented)
+- `REA-252` REA: فحص ملفات النماذج GGUF وsafetensors بلا تحميل / REA MCP tool `inspect_model_artifact`: GGUF and safetensors declarations without loading (documented)
+
+### `REA-251` — REA: بيانات Unity IL2CPP الوصفية / REA MCP tool `inspect_il2cpp_metadata`: Unity IL2CPP metadata with optional binary link
+
+| الحقل | القيمة |
+|---|---|
+| العائلة | `software-investigation` ([فصل العائلة](../../../.claude/skills/kosif-superpowers/references/powers/software-investigation.md)) |
+| المجموعة | التحليل العكسي وفحص البرامج (`reverse`) |
+| نوع المخرج (A25، A27) | كود وتطبيقات ومواقع (`code`) |
+| الحالة في الكتالوج | 📄 `documented`: منهج موصوف يحتاج بناءً أو ربطًا قبل التشغيل |
+| سقف التحقق قبل العمل (A27) | V1 حتى تُبنى وتُشغَّل؛ لا تقدَّم جاهزة أبدًا |
+| نطاق الدليل | `url` |
+| الرخصة | MIT (REA, © 2026 morluto); bring-your-own engines keep their own terms |
+
+**ما هي:** أداة MCP من REA v6.7.0 لم تكن في الكتالوج: يقرأ global-metadata لإصدارات IL2CPP (24/27/29/31/39) ويربطها اختياريًا بثنائي Mach-O أو PE أو ELF، مع حالات صريحة للعناوين المجهولة أو الفارغة. — Reads Unity IL2CPP metadata (versions 24-39) and optionally links a Mach-O, PE or ELF binary, keeping unknown and empty method slots explicit; static linking does not prove runtime behaviour.
+
+**متى:** تحليل لعبة أو تطبيق Unity مبني بـ IL2CPP / analysing an IL2CPP Unity game or app
+
+**كيف:** Connect the REA MCP server and call `inspect_il2cpp_metadata` (MCP only, no CLI command of the same name in 6.7.0). Needs: REA alone. Static reading only: no target execution, network or changes. Evidence-first: keep observations, inferences and unknowns apart; a missing table is observed absence, not proof. Summary detail keeps complete Evidence that `inspect_analysis_view` can page later. Only on targets you have the right to analyse.
+
+**المعاملات:** MCP tool `inspect_il2cpp_metadata`; detail summary\|complete
+
+**التثبيت:** npm install -g rea-agents@6.7.0 then connect it as an MCP server; REA alone
+
+**الوسوم:** REA · MCP · reverse engineering · هندسة عكسية · Unity · IL2CPP · games
+
+#### 1. الاستقبال (A25)
+
+- اللغة والإطار: افتراض مكتوب ← لغة المستودع الموجود، وإلا Python أو HTML/JS بلا اعتماديات
+- أين يعمل: افتراض مكتوب ← المتصفح أو سطر الأوامر حسب المخرج
+- مستودع أو ملفات موجودة: سؤال بإجابة مقترحة ← مشروع جديد مستقل
+- متى يكون ناجحًا: افتراض مكتوب ← الاختبارات الموجودة تمر + اختبار لكل سلوك جديد
+- لا تُفترض أبدًا: مادة الإنتاج نفسها، والإذن بخطوة مدفوعة أو منشورة أو لا رجعة فيها، والهوية والحقوق.
+
+#### 2. الجاهزية والشارة (A28)
+
+- `npm:rea` ← npm ls rea أو وجود node_modules/rea
+- `os:macos` ← افحص وجوده بأمر واحد قبل كتابة الشارة
+- الوضع 1: شارة «هنا الآن» بعد الفحص، لا 📄 الكتالوج تلقائيًا · الوضع 2: `كتالوج: 📄 · هنا: غير مفحوص` · الوضع 3: بلا شارة ولا معرّف.
+
+#### 3. موضعها في الخطة (A26)
+
+- عقدة منمّطة: المدخل `spec` ← المخرج `code`، والمنفّذ `method:REA-251` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `atlas-5000` · `atlas-capability-miner` · `blender-api-audit` · `differential-exam` · `installer-triage` · `local-project-audit`.
+- مراحل النوع: قراءة الكود والاختبارات ← إعادة إنتاج أو اختبار جديد ← أصغر تغيير ← الاختبارات ← مراجعة الفرق ← فرع وPR.
+- إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
+
+#### 4. بوابة التحقق (A27)
+
+- إلزامي: الاختبارات الموجودة تمر قبل التعديل وبعده ← أمر الاختبار
+- إلزامي: اختبار لكل سلوك جديد أو خطأ مُصلح ← الاختبار الجديد يفشل قبل الإصلاح
+- إلزامي: لا أسرار ولا مسارات جلسة في الشيفرة ← بحث أنماط الأسرار
+- جودة: يطابق أسلوب الكود المحيط وتسمياته ← مراجعة الفرق
+- جودة: طريقة تشغيل مكتوبة ومجرَّبة ← تشغيل الأمر المكتوب
+- جودة: الفرق أصغر ما يحقق الطلب بلا إعادة كتابة غير مطلوبة ← git diff --stat
+- جودة: المدخل الخاطئ يعطي خطأ واضحًا لا انهيارًا صامتًا ← تشغيل بمدخل خاطئ
+- أمر الحكم في الوضع 1: `think.py qa code --answers qa.json` (PASS / FAIL / INCOMPLETE).
+
+#### 5. التعافي (A29)
+
+- `missing_dependency` (اعتمادية مفقودة، ميزانية 2): سمِّ الاعتمادية بالضبط (حزمة، برنامج، خط، نموذج) ← ثبّت محليًا في بيئة العمل إن كان مجانيًا ومسموحًا (pip --user أو venv أو npm محلي) · البديل: مسار المكتبة القياسية أو أداة أخرى من نفس المجموعة · تصعيد: تثبيت نظامي أو مدفوع أو يحتاج مفتاحًا: توقف واسأل
+- `quality_below_threshold` (جودة دون العتبة، ميزانية 3): أي معيار فشل وبكم (المقيس مقابل العتبة) ← عالج السبب الأكبر وحده ثم أعد القياس · البديل: المنهج البديل المكتوب للمرحلة في الخطة · تصعيد: معيار إلزامي لا يتحقق بعد البديل: توقف وأبلغ بالأرقام
+- `tool_error` (خطأ أداة، ميزانية 3): اقرأ آخر سطر في الخطأ ثم أول سطر من كودك فيه ← أصلح السبب المثبت وحده، ثم شغّل الاختبار المتعلق · البديل: أداة أخرى أو مسار يدوي للمرحلة نفسها · تصعيد: خطأ في أداة خارجية لا تملكها: بلّغ بإعادة الإنتاج ولا تخفه
+
+#### 6. الأدلة
+
+- `https://github.com/morluto/rea/blob/main/docs/il2cpp-metadata.md`
+
+#### 7. قدرات قريبة في العائلة
+
+- `REA-249` REA: فحص ملفات BEAM لإرلانغ وإليكسير / REA MCP tool `inspect_erlang_beam`: BEAM atoms, exports and Code header (documented)
+- `REA-250` REA: كائنات كود GPU لـ CUDA وHIP / REA MCP tool `inspect_gpu_code_objects`: CUDA/HIP fatbins, CUBIN and PTX (documented)
+- `REA-252` REA: فحص ملفات النماذج GGUF وsafetensors بلا تحميل / REA MCP tool `inspect_model_artifact`: GGUF and safetensors declarations without loading (documented)
+- `REA-253` REA: جدول تصدير مكتبة PE أو ELF / REA MCP tool `inspect_native_exports`: PE/ELF export table (documented)
+
+### `REA-252` — REA: فحص ملفات النماذج GGUF وsafetensors بلا تحميل / REA MCP tool `inspect_model_artifact`: GGUF and safetensors declarations without loading
+
+| الحقل | القيمة |
+|---|---|
+| العائلة | `software-investigation` ([فصل العائلة](../../../.claude/skills/kosif-superpowers/references/powers/software-investigation.md)) |
+| المجموعة | التحليل العكسي وفحص البرامج (`reverse`) |
+| نوع المخرج (A25، A27) | كود وتطبيقات ومواقع (`code`) |
+| الحالة في الكتالوج | 📄 `documented`: منهج موصوف يحتاج بناءً أو ربطًا قبل التشغيل |
+| سقف التحقق قبل العمل (A27) | V1 حتى تُبنى وتُشغَّل؛ لا تقدَّم جاهزة أبدًا |
+| نطاق الدليل | `url` |
+| الرخصة | MIT (REA, © 2026 morluto); bring-your-own engines keep their own terms |
+
+**ما هي:** أداة MCP من REA v6.7.0 لم تكن في الكتالوج: يقرأ ترويسة نموذج GGUF أو safetensors: المفاتيح الوصفية وأسماء الموترات وأشكالها وأنواعها وإزاحاتها، بلا تحميل النموذج ولا pickle ولا شبكة؛ لا يقيس السلوك أو الجودة. — Reads a GGUF or safetensors header (metadata keys, tensor names, shapes, types, offsets) without loading the model, pickle or network; behaviour and quality are not inspected.
+
+**متى:** 'ما محتوى ملف النموذج هذا؟' قبل تشغيله / 'what is in this model file' before running it
+
+**كيف:** Connect the REA MCP server and call `inspect_model_artifact` (MCP only, no CLI command of the same name in 6.7.0). Needs: REA alone. Static reading only: no target execution, network or changes. Evidence-first: keep observations, inferences and unknowns apart; a missing table is observed absence, not proof. Summary detail keeps complete Evidence that `inspect_analysis_view` can page later. Only on targets you have the right to analyse.
+
+**المعاملات:** MCP tool `inspect_model_artifact`; detail summary\|complete
+
+**التثبيت:** npm install -g rea-agents@6.7.0 then connect it as an MCP server; REA alone
+
+**الوسوم:** REA · MCP · reverse engineering · هندسة عكسية · GGUF · safetensors · LLM · نماذج
+
+#### 1. الاستقبال (A25)
+
+- اللغة والإطار: افتراض مكتوب ← لغة المستودع الموجود، وإلا Python أو HTML/JS بلا اعتماديات
+- أين يعمل: افتراض مكتوب ← المتصفح أو سطر الأوامر حسب المخرج
+- مستودع أو ملفات موجودة: سؤال بإجابة مقترحة ← مشروع جديد مستقل
+- متى يكون ناجحًا: افتراض مكتوب ← الاختبارات الموجودة تمر + اختبار لكل سلوك جديد
+- لا تُفترض أبدًا: مادة الإنتاج نفسها، والإذن بخطوة مدفوعة أو منشورة أو لا رجعة فيها، والهوية والحقوق.
+
+#### 2. الجاهزية والشارة (A28)
+
+- `npm:rea` ← npm ls rea أو وجود node_modules/rea
+- `pip:llama-cpp` ← python3 -c "import llama-cpp" (اسم الاستيراد قد يختلف عن اسم الحزمة)
+- الوضع 1: شارة «هنا الآن» بعد الفحص، لا 📄 الكتالوج تلقائيًا · الوضع 2: `كتالوج: 📄 · هنا: غير مفحوص` · الوضع 3: بلا شارة ولا معرّف.
+
+#### 3. موضعها في الخطة (A26)
+
+- عقدة منمّطة: المدخل `spec` ← المخرج `code`، والمنفّذ `method:REA-252` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `atlas-5000` · `atlas-capability-miner` · `blender-api-audit` · `differential-exam` · `installer-triage` · `local-project-audit`.
+- مراحل النوع: قراءة الكود والاختبارات ← إعادة إنتاج أو اختبار جديد ← أصغر تغيير ← الاختبارات ← مراجعة الفرق ← فرع وPR.
+- إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
+
+#### 4. بوابة التحقق (A27)
+
+- إلزامي: الاختبارات الموجودة تمر قبل التعديل وبعده ← أمر الاختبار
+- إلزامي: اختبار لكل سلوك جديد أو خطأ مُصلح ← الاختبار الجديد يفشل قبل الإصلاح
+- إلزامي: لا أسرار ولا مسارات جلسة في الشيفرة ← بحث أنماط الأسرار
+- جودة: يطابق أسلوب الكود المحيط وتسمياته ← مراجعة الفرق
+- جودة: طريقة تشغيل مكتوبة ومجرَّبة ← تشغيل الأمر المكتوب
+- جودة: الفرق أصغر ما يحقق الطلب بلا إعادة كتابة غير مطلوبة ← git diff --stat
+- جودة: المدخل الخاطئ يعطي خطأ واضحًا لا انهيارًا صامتًا ← تشغيل بمدخل خاطئ
+- أمر الحكم في الوضع 1: `think.py qa code --answers qa.json` (PASS / FAIL / INCOMPLETE).
+
+#### 5. التعافي (A29)
+
+- `missing_dependency` (اعتمادية مفقودة، ميزانية 2): سمِّ الاعتمادية بالضبط (حزمة، برنامج، خط، نموذج) ← ثبّت محليًا في بيئة العمل إن كان مجانيًا ومسموحًا (pip --user أو venv أو npm محلي) · البديل: مسار المكتبة القياسية أو أداة أخرى من نفس المجموعة · تصعيد: تثبيت نظامي أو مدفوع أو يحتاج مفتاحًا: توقف واسأل
+- `quality_below_threshold` (جودة دون العتبة، ميزانية 3): أي معيار فشل وبكم (المقيس مقابل العتبة) ← عالج السبب الأكبر وحده ثم أعد القياس · البديل: المنهج البديل المكتوب للمرحلة في الخطة · تصعيد: معيار إلزامي لا يتحقق بعد البديل: توقف وأبلغ بالأرقام
+- `tool_error` (خطأ أداة، ميزانية 3): اقرأ آخر سطر في الخطأ ثم أول سطر من كودك فيه ← أصلح السبب المثبت وحده، ثم شغّل الاختبار المتعلق · البديل: أداة أخرى أو مسار يدوي للمرحلة نفسها · تصعيد: خطأ في أداة خارجية لا تملكها: بلّغ بإعادة الإنتاج ولا تخفه
+
+#### 6. الأدلة
+
+- `https://github.com/morluto/rea/blob/main/docs/model-artifacts.md`
+
+#### 7. قدرات قريبة في العائلة
+
+- `REA-250` REA: كائنات كود GPU لـ CUDA وHIP / REA MCP tool `inspect_gpu_code_objects`: CUDA/HIP fatbins, CUBIN and PTX (documented)
+- `REA-251` REA: بيانات Unity IL2CPP الوصفية / REA MCP tool `inspect_il2cpp_metadata`: Unity IL2CPP metadata with optional binary link (documented)
+- `REA-253` REA: جدول تصدير مكتبة PE أو ELF / REA MCP tool `inspect_native_exports`: PE/ELF export table (documented)
+- `REA-254` REA: هويات شهادات Authenticode في PE / REA MCP tool `inspect_pe_certificates`: Authenticode certificate identities (documented)
+
+### `REA-253` — REA: جدول تصدير مكتبة PE أو ELF / REA MCP tool `inspect_native_exports`: PE/ELF export table
+
+| الحقل | القيمة |
+|---|---|
+| العائلة | `software-investigation` ([فصل العائلة](../../../.claude/skills/kosif-superpowers/references/powers/software-investigation.md)) |
+| المجموعة | التحليل العكسي وفحص البرامج (`reverse`) |
+| نوع المخرج (A25، A27) | كود وتطبيقات ومواقع (`code`) |
+| الحالة في الكتالوج | 📄 `documented`: منهج موصوف يحتاج بناءً أو ربطًا قبل التشغيل |
+| سقف التحقق قبل العمل (A27) | V1 حتى تُبنى وتُشغَّل؛ لا تقدَّم جاهزة أبدًا |
+| نطاق الدليل | `url` |
+| الرخصة | MIT (REA, © 2026 morluto); bring-your-own engines keep their own terms |
+
+**ما هي:** أداة MCP من REA v6.7.0 لم تكن في الكتالوج: يسرد تصديرات مكتبة PE (أسماء وأرقام ترتيبية وعناوين وتحويلات) أو رموز ELF الديناميكية مع الربط والإصدار، بلا محرك. — Lists PE exports (names, ordinals, addresses, forwarders) or ELF dynamic symbols with binding and version, without an engine.
+
+**متى:** 'ما الدوال التي تقدمها هذه DLL أو .so؟' / 'which functions does this DLL or .so expose'
+
+**كيف:** Connect the REA MCP server and call `inspect_native_exports` (MCP only, no CLI command of the same name in 6.7.0). Needs: REA alone. Static reading only: no target execution, network or changes. Evidence-first: keep observations, inferences and unknowns apart; a missing table is observed absence, not proof. Summary detail keeps complete Evidence that `inspect_analysis_view` can page later. Only on targets you have the right to analyse.
+
+**المعاملات:** MCP tool `inspect_native_exports`; detail summary\|complete
+
+**التثبيت:** npm install -g rea-agents@6.7.0 then connect it as an MCP server; REA alone
+
+**الوسوم:** REA · MCP · reverse engineering · هندسة عكسية · exports · DLL · ELF · PE
+
+#### 1. الاستقبال (A25)
+
+- اللغة والإطار: افتراض مكتوب ← لغة المستودع الموجود، وإلا Python أو HTML/JS بلا اعتماديات
+- أين يعمل: افتراض مكتوب ← المتصفح أو سطر الأوامر حسب المخرج
+- مستودع أو ملفات موجودة: سؤال بإجابة مقترحة ← مشروع جديد مستقل
+- متى يكون ناجحًا: افتراض مكتوب ← الاختبارات الموجودة تمر + اختبار لكل سلوك جديد
+- لا تُفترض أبدًا: مادة الإنتاج نفسها، والإذن بخطوة مدفوعة أو منشورة أو لا رجعة فيها، والهوية والحقوق.
+
+#### 2. الجاهزية والشارة (A28)
+
+- `npm:rea` ← npm ls rea أو وجود node_modules/rea
+- الوضع 1: شارة «هنا الآن» بعد الفحص، لا 📄 الكتالوج تلقائيًا · الوضع 2: `كتالوج: 📄 · هنا: غير مفحوص` · الوضع 3: بلا شارة ولا معرّف.
+
+#### 3. موضعها في الخطة (A26)
+
+- عقدة منمّطة: المدخل `spec` ← المخرج `code`، والمنفّذ `method:REA-253` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `atlas-5000` · `atlas-capability-miner` · `blender-api-audit` · `differential-exam` · `installer-triage` · `local-project-audit`.
+- مراحل النوع: قراءة الكود والاختبارات ← إعادة إنتاج أو اختبار جديد ← أصغر تغيير ← الاختبارات ← مراجعة الفرق ← فرع وPR.
+- إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
+
+#### 4. بوابة التحقق (A27)
+
+- إلزامي: الاختبارات الموجودة تمر قبل التعديل وبعده ← أمر الاختبار
+- إلزامي: اختبار لكل سلوك جديد أو خطأ مُصلح ← الاختبار الجديد يفشل قبل الإصلاح
+- إلزامي: لا أسرار ولا مسارات جلسة في الشيفرة ← بحث أنماط الأسرار
+- جودة: يطابق أسلوب الكود المحيط وتسمياته ← مراجعة الفرق
+- جودة: طريقة تشغيل مكتوبة ومجرَّبة ← تشغيل الأمر المكتوب
+- جودة: الفرق أصغر ما يحقق الطلب بلا إعادة كتابة غير مطلوبة ← git diff --stat
+- جودة: المدخل الخاطئ يعطي خطأ واضحًا لا انهيارًا صامتًا ← تشغيل بمدخل خاطئ
+- أمر الحكم في الوضع 1: `think.py qa code --answers qa.json` (PASS / FAIL / INCOMPLETE).
+
+#### 5. التعافي (A29)
+
+- `missing_dependency` (اعتمادية مفقودة، ميزانية 2): سمِّ الاعتمادية بالضبط (حزمة، برنامج، خط، نموذج) ← ثبّت محليًا في بيئة العمل إن كان مجانيًا ومسموحًا (pip --user أو venv أو npm محلي) · البديل: مسار المكتبة القياسية أو أداة أخرى من نفس المجموعة · تصعيد: تثبيت نظامي أو مدفوع أو يحتاج مفتاحًا: توقف واسأل
+- `quality_below_threshold` (جودة دون العتبة، ميزانية 3): أي معيار فشل وبكم (المقيس مقابل العتبة) ← عالج السبب الأكبر وحده ثم أعد القياس · البديل: المنهج البديل المكتوب للمرحلة في الخطة · تصعيد: معيار إلزامي لا يتحقق بعد البديل: توقف وأبلغ بالأرقام
+- `tool_error` (خطأ أداة، ميزانية 3): اقرأ آخر سطر في الخطأ ثم أول سطر من كودك فيه ← أصلح السبب المثبت وحده، ثم شغّل الاختبار المتعلق · البديل: أداة أخرى أو مسار يدوي للمرحلة نفسها · تصعيد: خطأ في أداة خارجية لا تملكها: بلّغ بإعادة الإنتاج ولا تخفه
+
+#### 6. الأدلة
+
+- `https://github.com/morluto/rea/blob/main/docs/native-investigation.md`
+
+#### 7. قدرات قريبة في العائلة
+
+- `REA-251` REA: بيانات Unity IL2CPP الوصفية / REA MCP tool `inspect_il2cpp_metadata`: Unity IL2CPP metadata with optional binary link (documented)
+- `REA-252` REA: فحص ملفات النماذج GGUF وsafetensors بلا تحميل / REA MCP tool `inspect_model_artifact`: GGUF and safetensors declarations without loading (documented)
+- `REA-254` REA: هويات شهادات Authenticode في PE / REA MCP tool `inspect_pe_certificates`: Authenticode certificate identities (documented)
+- `REA-255` REA: ترويسة pyc وكائنات الكود بلا بايثون / REA MCP tool `inspect_python_pyc`: CPython .pyc header and code objects (documented)
+
+### `REA-254` — REA: هويات شهادات Authenticode في PE / REA MCP tool `inspect_pe_certificates`: Authenticode certificate identities
+
+| الحقل | القيمة |
+|---|---|
+| العائلة | `software-investigation` ([فصل العائلة](../../../.claude/skills/kosif-superpowers/references/powers/software-investigation.md)) |
+| المجموعة | التحليل العكسي وفحص البرامج (`reverse`) |
+| نوع المخرج (A25، A27) | كود وتطبيقات ومواقع (`code`) |
+| الحالة في الكتالوج | 📄 `documented`: منهج موصوف يحتاج بناءً أو ربطًا قبل التشغيل |
+| سقف التحقق قبل العمل (A27) | V1 حتى تُبنى وتُشغَّل؛ لا تقدَّم جاهزة أبدًا |
+| نطاق الدليل | `url` |
+| الرخصة | MIT (REA, © 2026 morluto); bring-your-own engines keep their own terms |
+
+**ما هي:** أداة MCP من REA v6.7.0 لم تكن في الكتالوج: يقرأ جدول الأمان في PE ويفك PKCS#7: خوارزميات الملخص، الرقم التسلسلي والمُصدر والموضوع والصلاحية للشهادات، دون التحقق من التوقيع أو سلسلة الثقة. — Reads the PE security directory and decodes PKCS#7 (digest algorithms, certificate serial, issuer, subject, validity) without verifying the signature or chain.
+
+**متى:** من وقّع هذا المثبت أو الملف التنفيذي؟ / who signed this installer or executable
+
+**كيف:** Connect the REA MCP server and call `inspect_pe_certificates` (MCP only, no CLI command of the same name in 6.7.0). Needs: REA alone. Static reading only: no target execution, network or changes. Evidence-first: keep observations, inferences and unknowns apart; a missing table is observed absence, not proof. Summary detail keeps complete Evidence that `inspect_analysis_view` can page later. Only on targets you have the right to analyse.
+
+**المعاملات:** MCP tool `inspect_pe_certificates`; detail summary\|complete
+
+**التثبيت:** npm install -g rea-agents@6.7.0 then connect it as an MCP server; REA alone
+
+**الوسوم:** REA · MCP · reverse engineering · هندسة عكسية · Authenticode · certificate · signing · Windows
+
+#### 1. الاستقبال (A25)
+
+- اللغة والإطار: افتراض مكتوب ← لغة المستودع الموجود، وإلا Python أو HTML/JS بلا اعتماديات
+- أين يعمل: افتراض مكتوب ← المتصفح أو سطر الأوامر حسب المخرج
+- مستودع أو ملفات موجودة: سؤال بإجابة مقترحة ← مشروع جديد مستقل
+- متى يكون ناجحًا: افتراض مكتوب ← الاختبارات الموجودة تمر + اختبار لكل سلوك جديد
+- لا تُفترض أبدًا: مادة الإنتاج نفسها، والإذن بخطوة مدفوعة أو منشورة أو لا رجعة فيها، والهوية والحقوق.
+
+#### 2. الجاهزية والشارة (A28)
+
+- `npm:rea` ← npm ls rea أو وجود node_modules/rea
+- الوضع 1: شارة «هنا الآن» بعد الفحص، لا 📄 الكتالوج تلقائيًا · الوضع 2: `كتالوج: 📄 · هنا: غير مفحوص` · الوضع 3: بلا شارة ولا معرّف.
+
+#### 3. موضعها في الخطة (A26)
+
+- عقدة منمّطة: المدخل `spec` ← المخرج `code`، والمنفّذ `method:REA-254` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `atlas-5000` · `atlas-capability-miner` · `blender-api-audit` · `differential-exam` · `installer-triage` · `local-project-audit`.
+- مراحل النوع: قراءة الكود والاختبارات ← إعادة إنتاج أو اختبار جديد ← أصغر تغيير ← الاختبارات ← مراجعة الفرق ← فرع وPR.
+- إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
+
+#### 4. بوابة التحقق (A27)
+
+- إلزامي: الاختبارات الموجودة تمر قبل التعديل وبعده ← أمر الاختبار
+- إلزامي: اختبار لكل سلوك جديد أو خطأ مُصلح ← الاختبار الجديد يفشل قبل الإصلاح
+- إلزامي: لا أسرار ولا مسارات جلسة في الشيفرة ← بحث أنماط الأسرار
+- جودة: يطابق أسلوب الكود المحيط وتسمياته ← مراجعة الفرق
+- جودة: طريقة تشغيل مكتوبة ومجرَّبة ← تشغيل الأمر المكتوب
+- جودة: الفرق أصغر ما يحقق الطلب بلا إعادة كتابة غير مطلوبة ← git diff --stat
+- جودة: المدخل الخاطئ يعطي خطأ واضحًا لا انهيارًا صامتًا ← تشغيل بمدخل خاطئ
+- أمر الحكم في الوضع 1: `think.py qa code --answers qa.json` (PASS / FAIL / INCOMPLETE).
+
+#### 5. التعافي (A29)
+
+- `missing_dependency` (اعتمادية مفقودة، ميزانية 2): سمِّ الاعتمادية بالضبط (حزمة، برنامج، خط، نموذج) ← ثبّت محليًا في بيئة العمل إن كان مجانيًا ومسموحًا (pip --user أو venv أو npm محلي) · البديل: مسار المكتبة القياسية أو أداة أخرى من نفس المجموعة · تصعيد: تثبيت نظامي أو مدفوع أو يحتاج مفتاحًا: توقف واسأل
+- `quality_below_threshold` (جودة دون العتبة، ميزانية 3): أي معيار فشل وبكم (المقيس مقابل العتبة) ← عالج السبب الأكبر وحده ثم أعد القياس · البديل: المنهج البديل المكتوب للمرحلة في الخطة · تصعيد: معيار إلزامي لا يتحقق بعد البديل: توقف وأبلغ بالأرقام
+- `tool_error` (خطأ أداة، ميزانية 3): اقرأ آخر سطر في الخطأ ثم أول سطر من كودك فيه ← أصلح السبب المثبت وحده، ثم شغّل الاختبار المتعلق · البديل: أداة أخرى أو مسار يدوي للمرحلة نفسها · تصعيد: خطأ في أداة خارجية لا تملكها: بلّغ بإعادة الإنتاج ولا تخفه
+
+#### 6. الأدلة
+
+- `https://github.com/morluto/rea/blob/main/docs/pe-certificates.md`
+
+#### 7. قدرات قريبة في العائلة
+
+- `REA-252` REA: فحص ملفات النماذج GGUF وsafetensors بلا تحميل / REA MCP tool `inspect_model_artifact`: GGUF and safetensors declarations without loading (documented)
+- `REA-253` REA: جدول تصدير مكتبة PE أو ELF / REA MCP tool `inspect_native_exports`: PE/ELF export table (documented)
+- `REA-255` REA: ترويسة pyc وكائنات الكود بلا بايثون / REA MCP tool `inspect_python_pyc`: CPython .pyc header and code objects (documented)
+- `REA-256` REA: مطابقة الدوال بين نسختين من ثنائي / REA MCP tool `match_native_functions`: match functions across two binary versions (documented)
+
+### `REA-255` — REA: ترويسة pyc وكائنات الكود بلا بايثون / REA MCP tool `inspect_python_pyc`: CPython .pyc header and code objects
+
+| الحقل | القيمة |
+|---|---|
+| العائلة | `software-investigation` ([فصل العائلة](../../../.claude/skills/kosif-superpowers/references/powers/software-investigation.md)) |
+| المجموعة | التحليل العكسي وفحص البرامج (`reverse`) |
+| نوع المخرج (A25، A27) | كود وتطبيقات ومواقع (`code`) |
+| الحالة في الكتالوج | 📄 `documented`: منهج موصوف يحتاج بناءً أو ربطًا قبل التشغيل |
+| سقف التحقق قبل العمل (A27) | V1 حتى تُبنى وتُشغَّل؛ لا تقدَّم جاهزة أبدًا |
+| نطاق الدليل | `url` |
+| الرخصة | MIT (REA, © 2026 morluto); bring-your-own engines keep their own terms |
+
+**ما هي:** أداة MCP من REA v6.7.0 لم تكن في الكتالوج: يقرأ ملف .pyc لإصدارات CPython 3.7-3.13: السحر والإصدار وأعلام PEP 552 والكائن العلوي والدوال المتداخلة والأسماء وبصمة البايتكود، دون تنفيذ أو استعادة المصدر. — Reads a CPython 3.7-3.13 .pyc: magic, version, PEP 552 flags, top-level and nested code objects, names and bytecode hash, without executing or recovering source.
+
+**متى:** تطبيق بايثون مُحزّم بلا مصدر / a packaged Python app without source
+
+**كيف:** Connect the REA MCP server and call `inspect_python_pyc` (MCP only, no CLI command of the same name in 6.7.0). Needs: REA alone. Static reading only: no target execution, network or changes. Evidence-first: keep observations, inferences and unknowns apart; a missing table is observed absence, not proof. Summary detail keeps complete Evidence that `inspect_analysis_view` can page later. Only on targets you have the right to analyse.
+
+**المعاملات:** MCP tool `inspect_python_pyc`; detail summary\|complete
+
+**التثبيت:** npm install -g rea-agents@6.7.0 then connect it as an MCP server; REA alone
+
+**الوسوم:** REA · MCP · reverse engineering · هندسة عكسية · python · pyc · bytecode
+
+#### 1. الاستقبال (A25)
+
+- اللغة والإطار: افتراض مكتوب ← لغة المستودع الموجود، وإلا Python أو HTML/JS بلا اعتماديات
+- أين يعمل: افتراض مكتوب ← المتصفح أو سطر الأوامر حسب المخرج
+- مستودع أو ملفات موجودة: سؤال بإجابة مقترحة ← مشروع جديد مستقل
+- متى يكون ناجحًا: افتراض مكتوب ← الاختبارات الموجودة تمر + اختبار لكل سلوك جديد
+- لا تُفترض أبدًا: مادة الإنتاج نفسها، والإذن بخطوة مدفوعة أو منشورة أو لا رجعة فيها، والهوية والحقوق.
+
+#### 2. الجاهزية والشارة (A28)
+
+- `python3` ← افحص وجوده بأمر واحد قبل كتابة الشارة
+- `npm:rea` ← npm ls rea أو وجود node_modules/rea
+- الوضع 1: شارة «هنا الآن» بعد الفحص، لا 📄 الكتالوج تلقائيًا · الوضع 2: `كتالوج: 📄 · هنا: غير مفحوص` · الوضع 3: بلا شارة ولا معرّف.
+
+#### 3. موضعها في الخطة (A26)
+
+- عقدة منمّطة: المدخل `spec` ← المخرج `code`، والمنفّذ `method:REA-255` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `atlas-5000` · `atlas-capability-miner` · `blender-api-audit` · `differential-exam` · `installer-triage` · `local-project-audit`.
+- مراحل النوع: قراءة الكود والاختبارات ← إعادة إنتاج أو اختبار جديد ← أصغر تغيير ← الاختبارات ← مراجعة الفرق ← فرع وPR.
+- إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
+
+#### 4. بوابة التحقق (A27)
+
+- إلزامي: الاختبارات الموجودة تمر قبل التعديل وبعده ← أمر الاختبار
+- إلزامي: اختبار لكل سلوك جديد أو خطأ مُصلح ← الاختبار الجديد يفشل قبل الإصلاح
+- إلزامي: لا أسرار ولا مسارات جلسة في الشيفرة ← بحث أنماط الأسرار
+- جودة: يطابق أسلوب الكود المحيط وتسمياته ← مراجعة الفرق
+- جودة: طريقة تشغيل مكتوبة ومجرَّبة ← تشغيل الأمر المكتوب
+- جودة: الفرق أصغر ما يحقق الطلب بلا إعادة كتابة غير مطلوبة ← git diff --stat
+- جودة: المدخل الخاطئ يعطي خطأ واضحًا لا انهيارًا صامتًا ← تشغيل بمدخل خاطئ
+- أمر الحكم في الوضع 1: `think.py qa code --answers qa.json` (PASS / FAIL / INCOMPLETE).
+
+#### 5. التعافي (A29)
+
+- `missing_dependency` (اعتمادية مفقودة، ميزانية 2): سمِّ الاعتمادية بالضبط (حزمة، برنامج، خط، نموذج) ← ثبّت محليًا في بيئة العمل إن كان مجانيًا ومسموحًا (pip --user أو venv أو npm محلي) · البديل: مسار المكتبة القياسية أو أداة أخرى من نفس المجموعة · تصعيد: تثبيت نظامي أو مدفوع أو يحتاج مفتاحًا: توقف واسأل
+- `quality_below_threshold` (جودة دون العتبة، ميزانية 3): أي معيار فشل وبكم (المقيس مقابل العتبة) ← عالج السبب الأكبر وحده ثم أعد القياس · البديل: المنهج البديل المكتوب للمرحلة في الخطة · تصعيد: معيار إلزامي لا يتحقق بعد البديل: توقف وأبلغ بالأرقام
+- `tool_error` (خطأ أداة، ميزانية 3): اقرأ آخر سطر في الخطأ ثم أول سطر من كودك فيه ← أصلح السبب المثبت وحده، ثم شغّل الاختبار المتعلق · البديل: أداة أخرى أو مسار يدوي للمرحلة نفسها · تصعيد: خطأ في أداة خارجية لا تملكها: بلّغ بإعادة الإنتاج ولا تخفه
+
+#### 6. الأدلة
+
+- `https://github.com/morluto/rea/blob/main/docs/python-pyc.md`
+
+#### 7. قدرات قريبة في العائلة
+
+- `REA-253` REA: جدول تصدير مكتبة PE أو ELF / REA MCP tool `inspect_native_exports`: PE/ELF export table (documented)
+- `REA-254` REA: هويات شهادات Authenticode في PE / REA MCP tool `inspect_pe_certificates`: Authenticode certificate identities (documented)
+- `REA-256` REA: مطابقة الدوال بين نسختين من ثنائي / REA MCP tool `match_native_functions`: match functions across two binary versions (documented)
+- `REA-257` REA: فتح حزمة تطبيق لقراءة الموارد فقط / REA MCP tool `open_bundle_resources`: resource-only app bundle session (documented)
+
+### `REA-256` — REA: مطابقة الدوال بين نسختين من ثنائي / REA MCP tool `match_native_functions`: match functions across two binary versions
+
+| الحقل | القيمة |
+|---|---|
+| العائلة | `software-investigation` ([فصل العائلة](../../../.claude/skills/kosif-superpowers/references/powers/software-investigation.md)) |
+| المجموعة | التحليل العكسي وفحص البرامج (`reverse`) |
+| نوع المخرج (A25، A27) | كود وتطبيقات ومواقع (`code`) |
+| الحالة في الكتالوج | 📄 `documented`: منهج موصوف يحتاج بناءً أو ربطًا قبل التشغيل |
+| سقف التحقق قبل العمل (A27) | V1 حتى تُبنى وتُشغَّل؛ لا تقدَّم جاهزة أبدًا |
+| نطاق الدليل | `url` |
+| الرخصة | MIT (REA, © 2026 morluto); bring-your-own engines keep their own terms |
+
+**ما هي:** أداة MCP من REA v6.7.0 لم تكن في الكتالوج: يطابق قائمتي دوال من نسختين بالرموز الفريدة ثم بالبايتات المتطابقة، ويترك المكررات مجموعات غير محسومة؛ غير المقترن لا يعني إضافة أو حذفًا. — Matches two function inventories by unique exact symbols, then identical bytes, leaving duplicates as unresolved groups; unpaired never means added or removed.
+
+**متى:** ماذا تغيّر بين إصدارين من برنامج؟ / what changed between two versions of a program
+
+**كيف:** Connect the REA MCP server and call `match_native_functions` (MCP only, no CLI command of the same name in 6.7.0). Needs: a native provider session with list_procedures Evidence for both sides. Static reading only: no target execution, network or changes. Evidence-first: keep observations, inferences and unknowns apart; a missing table is observed absence, not proof. Summary detail keeps complete Evidence that `inspect_analysis_view` can page later. Only on targets you have the right to analyse.
+
+**المعاملات:** MCP tool `match_native_functions`; detail summary\|complete
+
+**التثبيت:** npm install -g rea-agents@6.7.0 then connect it as an MCP server; REA alone
+
+**الوسوم:** REA · MCP · reverse engineering · هندسة عكسية · diff · binary diff · مقارنة إصدارات
+
+#### 1. الاستقبال (A25)
+
+- اللغة والإطار: افتراض مكتوب ← لغة المستودع الموجود، وإلا Python أو HTML/JS بلا اعتماديات
+- أين يعمل: افتراض مكتوب ← المتصفح أو سطر الأوامر حسب المخرج
+- مستودع أو ملفات موجودة: سؤال بإجابة مقترحة ← مشروع جديد مستقل
+- متى يكون ناجحًا: افتراض مكتوب ← الاختبارات الموجودة تمر + اختبار لكل سلوك جديد
+- لا تُفترض أبدًا: مادة الإنتاج نفسها، والإذن بخطوة مدفوعة أو منشورة أو لا رجعة فيها، والهوية والحقوق.
+
+#### 2. الجاهزية والشارة (A28)
+
+- `npm:rea` ← npm ls rea أو وجود node_modules/rea
+- الوضع 1: شارة «هنا الآن» بعد الفحص، لا 📄 الكتالوج تلقائيًا · الوضع 2: `كتالوج: 📄 · هنا: غير مفحوص` · الوضع 3: بلا شارة ولا معرّف.
+
+#### 3. موضعها في الخطة (A26)
+
+- عقدة منمّطة: المدخل `spec` ← المخرج `code`، والمنفّذ `method:REA-256` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `atlas-5000` · `atlas-capability-miner` · `blender-api-audit` · `differential-exam` · `installer-triage` · `local-project-audit`.
+- مراحل النوع: قراءة الكود والاختبارات ← إعادة إنتاج أو اختبار جديد ← أصغر تغيير ← الاختبارات ← مراجعة الفرق ← فرع وPR.
+- إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
+
+#### 4. بوابة التحقق (A27)
+
+- إلزامي: الاختبارات الموجودة تمر قبل التعديل وبعده ← أمر الاختبار
+- إلزامي: اختبار لكل سلوك جديد أو خطأ مُصلح ← الاختبار الجديد يفشل قبل الإصلاح
+- إلزامي: لا أسرار ولا مسارات جلسة في الشيفرة ← بحث أنماط الأسرار
+- جودة: يطابق أسلوب الكود المحيط وتسمياته ← مراجعة الفرق
+- جودة: طريقة تشغيل مكتوبة ومجرَّبة ← تشغيل الأمر المكتوب
+- جودة: الفرق أصغر ما يحقق الطلب بلا إعادة كتابة غير مطلوبة ← git diff --stat
+- جودة: المدخل الخاطئ يعطي خطأ واضحًا لا انهيارًا صامتًا ← تشغيل بمدخل خاطئ
+- أمر الحكم في الوضع 1: `think.py qa code --answers qa.json` (PASS / FAIL / INCOMPLETE).
+
+#### 5. التعافي (A29)
+
+- `missing_dependency` (اعتمادية مفقودة، ميزانية 2): سمِّ الاعتمادية بالضبط (حزمة، برنامج، خط، نموذج) ← ثبّت محليًا في بيئة العمل إن كان مجانيًا ومسموحًا (pip --user أو venv أو npm محلي) · البديل: مسار المكتبة القياسية أو أداة أخرى من نفس المجموعة · تصعيد: تثبيت نظامي أو مدفوع أو يحتاج مفتاحًا: توقف واسأل
+- `quality_below_threshold` (جودة دون العتبة، ميزانية 3): أي معيار فشل وبكم (المقيس مقابل العتبة) ← عالج السبب الأكبر وحده ثم أعد القياس · البديل: المنهج البديل المكتوب للمرحلة في الخطة · تصعيد: معيار إلزامي لا يتحقق بعد البديل: توقف وأبلغ بالأرقام
+- `tool_error` (خطأ أداة، ميزانية 3): اقرأ آخر سطر في الخطأ ثم أول سطر من كودك فيه ← أصلح السبب المثبت وحده، ثم شغّل الاختبار المتعلق · البديل: أداة أخرى أو مسار يدوي للمرحلة نفسها · تصعيد: خطأ في أداة خارجية لا تملكها: بلّغ بإعادة الإنتاج ولا تخفه
+
+#### 6. الأدلة
+
+- `https://github.com/morluto/rea/blob/main/docs/native-function-matching.md`
+
+#### 7. قدرات قريبة في العائلة
+
+- `REA-254` REA: هويات شهادات Authenticode في PE / REA MCP tool `inspect_pe_certificates`: Authenticode certificate identities (documented)
+- `REA-255` REA: ترويسة pyc وكائنات الكود بلا بايثون / REA MCP tool `inspect_python_pyc`: CPython .pyc header and code objects (documented)
+- `REA-257` REA: فتح حزمة تطبيق لقراءة الموارد فقط / REA MCP tool `open_bundle_resources`: resource-only app bundle session (documented)
+- `REA-258` REA: مهارة «اعكس هندسة أي شيء» ومتى لا تستخدم REA / REA skill: reverse-engineer-anything, and when to skip REA (documented)
+
+### `REA-257` — REA: فتح حزمة تطبيق لقراءة الموارد فقط / REA MCP tool `open_bundle_resources`: resource-only app bundle session
+
+| الحقل | القيمة |
+|---|---|
+| العائلة | `software-investigation` ([فصل العائلة](../../../.claude/skills/kosif-superpowers/references/powers/software-investigation.md)) |
+| المجموعة | التحليل العكسي وفحص البرامج (`reverse`) |
+| نوع المخرج (A25، A27) | كود وتطبيقات ومواقع (`code`) |
+| الحالة في الكتالوج | 📄 `documented`: منهج موصوف يحتاج بناءً أو ربطًا قبل التشغيل |
+| سقف التحقق قبل العمل (A27) | V1 حتى تُبنى وتُشغَّل؛ لا تقدَّم جاهزة أبدًا |
+| نطاق الدليل | `url` |
+| الرخصة | MIT (REA, © 2026 morluto); bring-your-own engines keep their own terms |
+
+**ما هي:** أداة MCP من REA v6.7.0 لم تكن في الكتالوج: يفتح حزمة تطبيق لقراءة plist وواجهات Interface Builder وكتالوجات الأصول والأرشيفات دون اختلاق هوية للملف التنفيذي؛ تحليل الكود غير متاح حتى يُفتح هدف آخر. — Opens an app bundle read-only for plist, Interface Builder, asset catalogs and keyed archives without inventing an executable identity.
+
+**متى:** فحص موارد تطبيق Apple دون تحليل الثنائي / inspecting an Apple app's resources without its binary
+
+**كيف:** Connect the REA MCP server and call `open_bundle_resources` (MCP only, no CLI command of the same name in 6.7.0). Needs: REA alone. Static reading only: no target execution, network or changes. Evidence-first: keep observations, inferences and unknowns apart; a missing table is observed absence, not proof. Summary detail keeps complete Evidence that `inspect_analysis_view` can page later. Only on targets you have the right to analyse.
+
+**المعاملات:** MCP tool `open_bundle_resources`; detail summary\|complete
+
+**التثبيت:** npm install -g rea-agents@6.7.0 then connect it as an MCP server; REA alone
+
+**الوسوم:** REA · MCP · reverse engineering · هندسة عكسية · Apple · plist · bundle
+
+#### 1. الاستقبال (A25)
+
+- اللغة والإطار: افتراض مكتوب ← لغة المستودع الموجود، وإلا Python أو HTML/JS بلا اعتماديات
+- أين يعمل: افتراض مكتوب ← المتصفح أو سطر الأوامر حسب المخرج
+- مستودع أو ملفات موجودة: سؤال بإجابة مقترحة ← مشروع جديد مستقل
+- متى يكون ناجحًا: افتراض مكتوب ← الاختبارات الموجودة تمر + اختبار لكل سلوك جديد
+- لا تُفترض أبدًا: مادة الإنتاج نفسها، والإذن بخطوة مدفوعة أو منشورة أو لا رجعة فيها، والهوية والحقوق.
+
+#### 2. الجاهزية والشارة (A28)
+
+- `npm:rea` ← npm ls rea أو وجود node_modules/rea
+- `os:macos` ← افحص وجوده بأمر واحد قبل كتابة الشارة
+- الوضع 1: شارة «هنا الآن» بعد الفحص، لا 📄 الكتالوج تلقائيًا · الوضع 2: `كتالوج: 📄 · هنا: غير مفحوص` · الوضع 3: بلا شارة ولا معرّف.
+
+#### 3. موضعها في الخطة (A26)
+
+- عقدة منمّطة: المدخل `spec` ← المخرج `code`، والمنفّذ `method:REA-257` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `atlas-5000` · `atlas-capability-miner` · `blender-api-audit` · `differential-exam` · `installer-triage` · `local-project-audit`.
+- مراحل النوع: قراءة الكود والاختبارات ← إعادة إنتاج أو اختبار جديد ← أصغر تغيير ← الاختبارات ← مراجعة الفرق ← فرع وPR.
+- إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
+
+#### 4. بوابة التحقق (A27)
+
+- إلزامي: الاختبارات الموجودة تمر قبل التعديل وبعده ← أمر الاختبار
+- إلزامي: اختبار لكل سلوك جديد أو خطأ مُصلح ← الاختبار الجديد يفشل قبل الإصلاح
+- إلزامي: لا أسرار ولا مسارات جلسة في الشيفرة ← بحث أنماط الأسرار
+- جودة: يطابق أسلوب الكود المحيط وتسمياته ← مراجعة الفرق
+- جودة: طريقة تشغيل مكتوبة ومجرَّبة ← تشغيل الأمر المكتوب
+- جودة: الفرق أصغر ما يحقق الطلب بلا إعادة كتابة غير مطلوبة ← git diff --stat
+- جودة: المدخل الخاطئ يعطي خطأ واضحًا لا انهيارًا صامتًا ← تشغيل بمدخل خاطئ
+- أمر الحكم في الوضع 1: `think.py qa code --answers qa.json` (PASS / FAIL / INCOMPLETE).
+
+#### 5. التعافي (A29)
+
+- `missing_dependency` (اعتمادية مفقودة، ميزانية 2): سمِّ الاعتمادية بالضبط (حزمة، برنامج، خط، نموذج) ← ثبّت محليًا في بيئة العمل إن كان مجانيًا ومسموحًا (pip --user أو venv أو npm محلي) · البديل: مسار المكتبة القياسية أو أداة أخرى من نفس المجموعة · تصعيد: تثبيت نظامي أو مدفوع أو يحتاج مفتاحًا: توقف واسأل
+- `quality_below_threshold` (جودة دون العتبة، ميزانية 3): أي معيار فشل وبكم (المقيس مقابل العتبة) ← عالج السبب الأكبر وحده ثم أعد القياس · البديل: المنهج البديل المكتوب للمرحلة في الخطة · تصعيد: معيار إلزامي لا يتحقق بعد البديل: توقف وأبلغ بالأرقام
+- `tool_error` (خطأ أداة، ميزانية 3): اقرأ آخر سطر في الخطأ ثم أول سطر من كودك فيه ← أصلح السبب المثبت وحده، ثم شغّل الاختبار المتعلق · البديل: أداة أخرى أو مسار يدوي للمرحلة نفسها · تصعيد: خطأ في أداة خارجية لا تملكها: بلّغ بإعادة الإنتاج ولا تخفه
+
+#### 6. الأدلة
+
+- `https://github.com/morluto/rea/blob/main/docs/apple-application-analysis.md`
+
+#### 7. قدرات قريبة في العائلة
+
+- `REA-255` REA: ترويسة pyc وكائنات الكود بلا بايثون / REA MCP tool `inspect_python_pyc`: CPython .pyc header and code objects (documented)
+- `REA-256` REA: مطابقة الدوال بين نسختين من ثنائي / REA MCP tool `match_native_functions`: match functions across two binary versions (documented)
+- `REA-258` REA: مهارة «اعكس هندسة أي شيء» ومتى لا تستخدم REA / REA skill: reverse-engineer-anything, and when to skip REA (documented)
+
+### `REA-258` — REA: مهارة «اعكس هندسة أي شيء» ومتى لا تستخدم REA / REA skill: reverse-engineer-anything, and when to skip REA
+
+| الحقل | القيمة |
+|---|---|
+| العائلة | `software-investigation` ([فصل العائلة](../../../.claude/skills/kosif-superpowers/references/powers/software-investigation.md)) |
+| المجموعة | التحليل العكسي وفحص البرامج (`reverse`) |
+| نوع المخرج (A25، A27) | كود وتطبيقات ومواقع (`code`) |
+| الحالة في الكتالوج | 📄 `documented`: منهج موصوف يحتاج بناءً أو ربطًا قبل التشغيل |
+| سقف التحقق قبل العمل (A27) | V1 حتى تُبنى وتُشغَّل؛ لا تقدَّم جاهزة أبدًا |
+| نطاق الدليل | `url` |
+| الرخصة | MIT © 2026 morluto |
+
+**ما هي:** مهارة REA الرئيسية: استخدم REA حين يعتمد الادعاء على ثنائي أو حزمة مشحونة أو تفكيك أو دليل وقت تشغيل، وتجاوزه لتحليل مستودع مصدر كامل بأدوات المستودع العادية؛ مع سلم تعافٍ للاتصال بدل تكرار الإعداد. — REA's main skill: use REA when a claim depends on a shipped binary or package, decompilation or runtime evidence; skip it for a complete source repository; a recovery ladder replaces repeated setup.
+
+**متى:** قبل أي تحقيق REA، أو حين تختفي أدوات REA / before an REA investigation, or when REA tools are missing
+
+**كيف:** 1) Decide: shipped artifact or runtime question → REA; plain source repo → normal repo tools (for an owned source tree, `rea import-reference-source` is the sanctioned bridge: it marks the tree as historical reference only). 2) If tools are present and not stale, go straight to the target; no doctor run before every task. 3) On missing tools: diagnose with `rea doctor --client <client> --json` without changing config; separate stale registration (scoped repair) from no-tools-in-session (restart) from a missing provider (affects only tasks that need it). 4) Retry a dropped call once only when it is safe to repeat; otherwise ask the user to restart the client. 5) Use the connected server's real tool list and schemas, not the skill text.
+
+**التثبيت:** REA source checkout or `rea` skill install (read only)
+
+**الوسوم:** REA · reverse engineering · هندسة عكسية · routing · recovery
+
+#### 1. الاستقبال (A25)
+
+- اللغة والإطار: افتراض مكتوب ← لغة المستودع الموجود، وإلا Python أو HTML/JS بلا اعتماديات
+- أين يعمل: افتراض مكتوب ← المتصفح أو سطر الأوامر حسب المخرج
+- مستودع أو ملفات موجودة: سؤال بإجابة مقترحة ← مشروع جديد مستقل
+- متى يكون ناجحًا: افتراض مكتوب ← الاختبارات الموجودة تمر + اختبار لكل سلوك جديد
+- لا تُفترض أبدًا: مادة الإنتاج نفسها، والإذن بخطوة مدفوعة أو منشورة أو لا رجعة فيها، والهوية والحقوق.
+
+#### 2. الجاهزية والشارة (A28)
+
+- `npm:rea` ← npm ls rea أو وجود node_modules/rea
+- الوضع 1: شارة «هنا الآن» بعد الفحص، لا 📄 الكتالوج تلقائيًا · الوضع 2: `كتالوج: 📄 · هنا: غير مفحوص` · الوضع 3: بلا شارة ولا معرّف.
+
+#### 3. موضعها في الخطة (A26)
+
+- عقدة منمّطة: المدخل `spec` ← المخرج `code`، والمنفّذ `method:REA-258` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `atlas-5000` · `atlas-capability-miner` · `blender-api-audit` · `differential-exam` · `installer-triage` · `local-project-audit`.
+- مراحل النوع: قراءة الكود والاختبارات ← إعادة إنتاج أو اختبار جديد ← أصغر تغيير ← الاختبارات ← مراجعة الفرق ← فرع وPR.
+- إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
+
+#### 4. بوابة التحقق (A27)
+
+- إلزامي: الاختبارات الموجودة تمر قبل التعديل وبعده ← أمر الاختبار
+- إلزامي: اختبار لكل سلوك جديد أو خطأ مُصلح ← الاختبار الجديد يفشل قبل الإصلاح
+- إلزامي: لا أسرار ولا مسارات جلسة في الشيفرة ← بحث أنماط الأسرار
+- جودة: يطابق أسلوب الكود المحيط وتسمياته ← مراجعة الفرق
+- جودة: طريقة تشغيل مكتوبة ومجرَّبة ← تشغيل الأمر المكتوب
+- جودة: الفرق أصغر ما يحقق الطلب بلا إعادة كتابة غير مطلوبة ← git diff --stat
+- جودة: المدخل الخاطئ يعطي خطأ واضحًا لا انهيارًا صامتًا ← تشغيل بمدخل خاطئ
+- أمر الحكم في الوضع 1: `think.py qa code --answers qa.json` (PASS / FAIL / INCOMPLETE).
+
+#### 5. التعافي (A29)
+
+- `missing_dependency` (اعتمادية مفقودة، ميزانية 2): سمِّ الاعتمادية بالضبط (حزمة، برنامج، خط، نموذج) ← ثبّت محليًا في بيئة العمل إن كان مجانيًا ومسموحًا (pip --user أو venv أو npm محلي) · البديل: مسار المكتبة القياسية أو أداة أخرى من نفس المجموعة · تصعيد: تثبيت نظامي أو مدفوع أو يحتاج مفتاحًا: توقف واسأل
+- `quality_below_threshold` (جودة دون العتبة، ميزانية 3): أي معيار فشل وبكم (المقيس مقابل العتبة) ← عالج السبب الأكبر وحده ثم أعد القياس · البديل: المنهج البديل المكتوب للمرحلة في الخطة · تصعيد: معيار إلزامي لا يتحقق بعد البديل: توقف وأبلغ بالأرقام
+- `tool_error` (خطأ أداة، ميزانية 3): اقرأ آخر سطر في الخطأ ثم أول سطر من كودك فيه ← أصلح السبب المثبت وحده، ثم شغّل الاختبار المتعلق · البديل: أداة أخرى أو مسار يدوي للمرحلة نفسها · تصعيد: خطأ في أداة خارجية لا تملكها: بلّغ بإعادة الإنتاج ولا تخفه
+
+#### 6. الأدلة
+
+- `https://github.com/morluto/rea/tree/main/.agents/skills/reverse-engineer-anything`
+
+#### 7. قدرات قريبة في العائلة
+
+- `REA-256` REA: مطابقة الدوال بين نسختين من ثنائي / REA MCP tool `match_native_functions`: match functions across two binary versions (documented)
+- `REA-257` REA: فتح حزمة تطبيق لقراءة الموارد فقط / REA MCP tool `open_bundle_resources`: resource-only app bundle session (documented)
 

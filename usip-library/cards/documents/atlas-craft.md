@@ -1,4 +1,4 @@
-# `atlas-craft` — المستندات والكتابة (24 بطاقة)
+# `atlas-craft` — المستندات والكتابة (26 بطاقة)
 
 > مكتبة بروتوكول USIP v5.5 الكاملة، مولّدة بـ `smart_capabilities.py cards` من `data/powers/atlas-craft.json` وقواعد الملاحق A25–A29؛ لا تُحرَّر يدويًا. [الفهرس الرئيسي](../../README.md) · [فصل المجموعة](../../../.claude/skills/kosif-superpowers/references/library/documents.md) · [النواة](../../../.claude/skills/kosif-superpowers/PROTOCOL.md)
 
@@ -28,6 +28,8 @@
 - [`ACRAFT-22` التفاعلات الدقيقة: المحفّز والقواعد والاستجابة والحلقات](#acraft-22--التفاعلات-الدقيقة-المحفّز-والقواعد-والاستجابة-والحلقات--microinteractions-trigger-rules-feedback-loops-and-modes)
 - [`ACRAFT-23` شرح بصري بصيغة واحدة مناسبة للسؤال](#acraft-23--شرح-بصري-بصيغة-واحدة-مناسبة-للسؤال--visual-explanation-one-format-chosen-by-the-question)
 - [`ACRAFT-24` الإفصاح التدريجي للمعلومات والأدوات](#acraft-24--الإفصاح-التدريجي-للمعلومات-والأدوات--progressive-disclosure-of-information-and-controls)
+- [`ACRAFT-25` حوكمة البرومبتات في الإنتاج: سجل وتقييمات وترقية وتراجع](#acraft-25--حوكمة-البرومبتات-في-الإنتاج-سجل-وتقييمات-وترقية-وتراجع--prompt-governance-registry-evals-promotion-and-rollback)
+- [`ACRAFT-26` استخراج أسلوب كاتب إلى دليل أسلوب قابل للتطبيق](#acraft-26--استخراج-أسلوب-كاتب-إلى-دليل-أسلوب-قابل-للتطبيق--extract-a-writing-style-into-a-reusable-style-guide)
 
 ## البطاقات / cards
 
@@ -1602,6 +1604,7 @@
 - `ACRAFT-21` تصميم واجهة غير قالبي وملف DESIGN.md / Anti-template interface design and a DESIGN.md north star (documented)
 - `ACRAFT-22` التفاعلات الدقيقة: المحفّز والقواعد والاستجابة والحلقات / Microinteractions: trigger, rules, feedback, loops and modes (documented)
 - `ACRAFT-24` الإفصاح التدريجي للمعلومات والأدوات / Progressive disclosure of information and controls (documented)
+- `ACRAFT-25` حوكمة البرومبتات في الإنتاج: سجل وتقييمات وترقية وتراجع / Prompt governance: registry, evals, promotion and rollback (documented)
 
 ### `ACRAFT-24` — الإفصاح التدريجي للمعلومات والأدوات / Progressive disclosure of information and controls
 
@@ -1668,4 +1671,137 @@
 
 - `ACRAFT-22` التفاعلات الدقيقة: المحفّز والقواعد والاستجابة والحلقات / Microinteractions: trigger, rules, feedback, loops and modes (documented)
 - `ACRAFT-23` شرح بصري بصيغة واحدة مناسبة للسؤال / Visual explanation: one format chosen by the question (documented)
+- `ACRAFT-25` حوكمة البرومبتات في الإنتاج: سجل وتقييمات وترقية وتراجع / Prompt governance: registry, evals, promotion and rollback (documented)
+- `ACRAFT-26` استخراج أسلوب كاتب إلى دليل أسلوب قابل للتطبيق / Extract a writing style into a reusable style guide (documented)
+
+### `ACRAFT-25` — حوكمة البرومبتات في الإنتاج: سجل وتقييمات وترقية وتراجع / Prompt governance: registry, evals, promotion and rollback
+
+| الحقل | القيمة |
+|---|---|
+| العائلة | `atlas-craft` ([فصل العائلة](../../../.claude/skills/kosif-superpowers/references/powers/atlas-craft.md)) |
+| المجموعة | المستندات والكتابة (`documents`) |
+| نوع المخرج (A25، A27) | مستند وكتابة ومحتوى (`document`) |
+| الحالة في الكتالوج | 📄 `documented`: منهج موصوف يحتاج بناءً أو ربطًا قبل التشغيل |
+| سقف التحقق قبل العمل (A27) | V1 حتى تُبنى وتُشغَّل؛ لا تقدَّم جاهزة أبدًا |
+| نطاق الدليل | `url` |
+| الرخصة | method paraphrased from Atlas skills under MIT; the skills keep their own licenses — see each folder's SOURCE.md |
+
+**ما هي:** يعامل البرومبتات ككود: سجل بإصدارات وترقية بين البيئات، مجموعة ذهبية وتقييمات آلية في CI، اختبار A/B مسبق التعريف، وتراجع بأمر واحد. — Treats prompts as code: a versioned registry with environment promotion, a golden set with automated evals in CI, pre-defined A/B tests and one-command rollback.
+
+**متى:** برومبتات مكتوبة داخل الكود، تراجع جودة بعد تعديل برومبت، اختبار A/B لبرومبت / prompts hard-coded in app code, a prompt change regressed quality, prompt A/B tests
+
+**كيف:** 1) Registry: prompts/<id>/vX.Y.Z.md plus registry.yaml with owner, model, status and who promoted when. 2) A golden dataset per prompt (20 examples minimum, 100+ for production) covering edge cases, reviewed by a domain expert and versioned with the prompt. 3) Pick eval type by task: exact match, contains, schema validation, embedding similarity, model-as-judge, human; set thresholds (e.g. 95% extraction, 100% schema). 4) Lifecycle: branch, develop, eval in CI, compare with production score, review diff plus scores, promote with approval, monitor 24-48 h, rollback. 5) A/B: stable hash assignment, metric and sample size fixed in advance, at least a week or 1,000 requests per arm. 6) Re-run evals on a schedule because model updates break prompts silently.
+
+**التثبيت:** لا خطوة تثبيت مسجلة
+
+**الوسوم:** prompt management · evals · regression · حوكمة البرومبت · تقييم · A/B test · registry
+
+#### 1. الاستقبال (A25)
+
+- الجمهور: افتراض مكتوب ← قارئ عام ذكي غير متخصص
+- النبرة واللهجة: افتراض مكتوب ← لغة الطلب ولهجته
+- الطول: افتراض مكتوب ← أقصر طول يحقق الغرض
+- الصيغة: افتراض مكتوب ← نص في الرد، أو مستند إن طُلب ملف
+- لا تُفترض أبدًا: مادة الإنتاج نفسها، والإذن بخطوة مدفوعة أو منشورة أو لا رجعة فيها، والهوية والحقوق.
+
+#### 2. الجاهزية والشارة (A28)
+
+- لا متطلبات مسجلة؛ افحص المسار والأداة بـ `hub.py doctor` قبل الشارة.
+- الوضع 1: شارة «هنا الآن» بعد الفحص، لا 📄 الكتالوج تلقائيًا · الوضع 2: `كتالوج: 📄 · هنا: غير مفحوص` · الوضع 3: بلا شارة ولا معرّف.
+
+#### 3. موضعها في الخطة (A26)
+
+- عقدة منمّطة: المدخل `brief` ← المخرج `document`، والمنفّذ `method:ACRAFT-25` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
+- لا أداة مسجلة تخدم عائلتها: التنفيذ بالمكتبات أو بأداة من مجموعة أخرى.
+- مراحل النوع: الغرض والقارئ ← هيكل العناوين ← مسودة ← مراجعة الحقائق ← تحرير اللغة ← فتح الملف بصيغته ← تسليم.
+- إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
+
+#### 4. بوابة التحقق (A27)
+
+- إلزامي: يحقق الغرض في أول فقرة ← قراءة الافتتاح
+- إلزامي: عربية سليمة إملاءً ونحوًا ← مراجعة سطر بسطر
+- جودة: بلا حشو ولا عبارات عامة بلا مضمون ← think.py critic
+- إلزامي: كل رقم أو اسم أو تاريخ متحقق منه ← مصدر لكل حقيقة
+- إلزامي: الملف المطلوب يُفتح فعلًا بصيغته ← فتح الملف
+- أمر الحكم في الوضع 1: `think.py qa document --answers qa.json` (PASS / FAIL / INCOMPLETE).
+
+#### 5. التعافي (A29)
+
+- `quality_below_threshold` (جودة دون العتبة، ميزانية 3): أي معيار فشل وبكم (المقيس مقابل العتبة) ← عالج السبب الأكبر وحده ثم أعد القياس · البديل: المنهج البديل المكتوب للمرحلة في الخطة · تصعيد: معيار إلزامي لا يتحقق بعد البديل: توقف وأبلغ بالأرقام
+
+#### 6. الأدلة
+
+- `https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/179-prompt-governance/548-prompt-governance`
+
+#### 7. قدرات قريبة في العائلة
+
+- `ACRAFT-23` شرح بصري بصيغة واحدة مناسبة للسؤال / Visual explanation: one format chosen by the question (documented)
+- `ACRAFT-24` الإفصاح التدريجي للمعلومات والأدوات / Progressive disclosure of information and controls (documented)
+- `ACRAFT-26` استخراج أسلوب كاتب إلى دليل أسلوب قابل للتطبيق / Extract a writing style into a reusable style guide (documented)
+
+### `ACRAFT-26` — استخراج أسلوب كاتب إلى دليل أسلوب قابل للتطبيق / Extract a writing style into a reusable style guide
+
+| الحقل | القيمة |
+|---|---|
+| العائلة | `atlas-craft` ([فصل العائلة](../../../.claude/skills/kosif-superpowers/references/powers/atlas-craft.md)) |
+| المجموعة | المستندات والكتابة (`documents`) |
+| نوع المخرج (A25، A27) | مستند وكتابة ومحتوى (`document`) |
+| الحالة في الكتالوج | 📄 `documented`: منهج موصوف يحتاج بناءً أو ربطًا قبل التشغيل |
+| سقف التحقق قبل العمل (A27) | V1 حتى تُبنى وتُشغَّل؛ لا تقدَّم جاهزة أبدًا |
+| نطاق الدليل | `url` |
+| الرخصة | method paraphrased from Atlas skills under MIT; the skills keep their own licenses — see each folder's SOURCE.md |
+
+**ما هي:** يحلل نصًا مصدرًا عبر 17 بعدًا أسلوبيًا (و10 سردية للأدب) من عينات موزعة، وينتج دليلًا وبطاقة صوت وقائمة افعل/لا تفعل ومعيار تقييم. — Analyses a source text across 17 style dimensions (plus 10 narrative ones for fiction) from spread samples and produces a guide, a voice card, a do/don't list and a scoring rubric.
+
+**متى:** 'حلل أسلوب هذا الكاتب'، صوت علامة تجارية، كتابة بأسلوب مرجع / analyse an author's voice, brand voice, write in the style of a reference
+
+**كيف:** 1) Sample 5-7 points spread across the text (opening, 25-35%, middle, 65-75%, end), not one chapter. 2) Record patterns, not content, across tone, sentence and paragraph length, register, transitions, humour, directness, warmth, explanation order, openings, closings, punctuation, rhetorical moves, reader address, examples, references and how the style adapts to difficulty. 3) For fiction add plot architecture, time structure, character introduction, emotional conveyance, theme handling, revelation pacing and where the author departs from AI defaults. 4) Keep only features seen in several samples; never claim absent traits. 5) Deliver full guide (800-1500 words), voice card (~300), 20-30 do/don't items and a 1-5 rubric, each with 2-3 neutral passages rewritten in the style. 6) Never copy signature phrases as rules; describe the pattern they exemplify.
+
+**المعاملات:** source text
+
+**التثبيت:** لا خطوة تثبيت مسجلة
+
+**الوسوم:** writing style · voice · style guide · أسلوب الكتابة · صوت العلامة · rubric
+
+#### 1. الاستقبال (A25)
+
+- الجمهور: افتراض مكتوب ← قارئ عام ذكي غير متخصص
+- النبرة واللهجة: افتراض مكتوب ← لغة الطلب ولهجته
+- الطول: افتراض مكتوب ← أقصر طول يحقق الغرض
+- الصيغة: افتراض مكتوب ← نص في الرد، أو مستند إن طُلب ملف
+- لا تُفترض أبدًا: مادة الإنتاج نفسها، والإذن بخطوة مدفوعة أو منشورة أو لا رجعة فيها، والهوية والحقوق.
+
+#### 2. الجاهزية والشارة (A28)
+
+- لا متطلبات مسجلة؛ افحص المسار والأداة بـ `hub.py doctor` قبل الشارة.
+- الوضع 1: شارة «هنا الآن» بعد الفحص، لا 📄 الكتالوج تلقائيًا · الوضع 2: `كتالوج: 📄 · هنا: غير مفحوص` · الوضع 3: بلا شارة ولا معرّف.
+
+#### 3. موضعها في الخطة (A26)
+
+- عقدة منمّطة: المدخل `brief` ← المخرج `document`، والمنفّذ `method:ACRAFT-26` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
+- لا أداة مسجلة تخدم عائلتها: التنفيذ بالمكتبات أو بأداة من مجموعة أخرى.
+- مراحل النوع: الغرض والقارئ ← هيكل العناوين ← مسودة ← مراجعة الحقائق ← تحرير اللغة ← فتح الملف بصيغته ← تسليم.
+- إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
+
+#### 4. بوابة التحقق (A27)
+
+- إلزامي: يحقق الغرض في أول فقرة ← قراءة الافتتاح
+- إلزامي: عربية سليمة إملاءً ونحوًا ← مراجعة سطر بسطر
+- جودة: بلا حشو ولا عبارات عامة بلا مضمون ← think.py critic
+- إلزامي: كل رقم أو اسم أو تاريخ متحقق منه ← مصدر لكل حقيقة
+- إلزامي: الملف المطلوب يُفتح فعلًا بصيغته ← فتح الملف
+- أمر الحكم في الوضع 1: `think.py qa document --answers qa.json` (PASS / FAIL / INCOMPLETE).
+
+#### 5. التعافي (A29)
+
+- `quality_below_threshold` (جودة دون العتبة، ميزانية 3): أي معيار فشل وبكم (المقيس مقابل العتبة) ← عالج السبب الأكبر وحده ثم أعد القياس · البديل: المنهج البديل المكتوب للمرحلة في الخطة · تصعيد: معيار إلزامي لا يتحقق بعد البديل: توقف وأبلغ بالأرقام
+
+#### 6. الأدلة
+
+- `https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/1268-style-extractor/2946-style-extractor`
+
+#### 7. قدرات قريبة في العائلة
+
+- `ACRAFT-24` الإفصاح التدريجي للمعلومات والأدوات / Progressive disclosure of information and controls (documented)
+- `ACRAFT-25` حوكمة البرومبتات في الإنتاج: سجل وتقييمات وترقية وتراجع / Prompt governance: registry, evals, promotion and rollback (documented)
 
