@@ -84,8 +84,15 @@ def _luma(pixel):
     return round(.2126*pixel[0]+.7152*pixel[1]+.0722*pixel[2])
 
 
+def pixels(img):
+    """Pillow 13/14 compatibility without deprecated getdata API."""
+    if hasattr(img, "get_flattened_data"):
+        return list(img.get_flattened_data())
+    return list(img.getdata())
+
+
 def summary(s):
-    pix=list(s["image"].getdata())
+    pix=pixels(s["image"])
     n=len(pix)
     visible=[p for p in pix if p[3]>=16]
     alpha= len(visible)!=n
@@ -143,7 +150,7 @@ def compare(before,after,roi=None,threshold=12,max_outside_fraction=0.005):
         if not all(type(v)==int for v in roi) or not (0<=x<w0 and 0<=y<h0 and 0<rw<=w0-x and 0<rh<=h0-y):
             raise ValueError("ROI must fit original image exactly")
     w,h=a["image"].size
-    pa=list(a["image"].getdata());pb=list(b["image"].getdata())
+    pa=pixels(a["image"]);pb=pixels(b["image"])
     changed=outside=outside_count=inside_count=0
     changed_inside=0
     for i,(v,u) in enumerate(zip(pa,pb)):
