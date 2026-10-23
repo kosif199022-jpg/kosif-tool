@@ -2105,7 +2105,7 @@
    "skills": [
     "kosif-superpowers"
    ],
-   "query": "اعمل خريطة لسوبر باور ووريني السكربتات اللي ملهاش اختبار والفجوات",
+   "query": "ايه السكربتات في سوبر باور اللي ملهاش اختبار أو مش متسجلة كأداة؟",
    "files": [],
    "expected_behavior": [
     "Runs or names the rea-superpowers-map tool (scripts/rea_superpowers_map.py gaps) and reports gap kinds with counts",

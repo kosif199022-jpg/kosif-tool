@@ -494,7 +494,7 @@ def main(argv=None) -> int:
     if a.cmd == "node":
         node = find_node(m, a.id)
         if node is None:
-            print(json.dumps({"error": f"unknown node {a.id!r}"}))
+            print(json.dumps({"error": f"unknown node {a.id!r}"}), file=sys.stderr)
             return 2
         print(json.dumps(node, ensure_ascii=False, indent=1))
         return 0
