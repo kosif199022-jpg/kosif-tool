@@ -14,7 +14,7 @@
 
 | # | requirement | kind | powers unlocked | families | here now |
 |---|---|---|---|---|---|
-| 1 | [`python3`](#req-python3) | bin | 684 | engines-render-pipeline, qa-verification, mental-models, runnable-tools, music-beat-sound |  |
+| 1 | [`python3`](#req-python3) | bin | 695 | engines-render-pipeline, qa-verification, mental-models, runnable-tools, music-beat-sound |  |
 | 2 | [`npm:hyperframes`](#req-npm-hyperframes) | npm | 461 | transitions-cuts, engines-render-pipeline, camera-composition-layout, typography-latin, qa-verification |  |
 | 3 | [`ffmpeg`](#req-ffmpeg) | bin | 424 | engines-render-pipeline, qa-verification, transitions-cuts, music-beat-sound, photo-video-footage |  |
 | 4 | [`chromium`](#req-chromium) | bin | 353 | engines-render-pipeline, software-investigation, app-feature-transfer, qa-verification, transitions-cuts |  |
@@ -32,7 +32,7 @@
 | 16 | [`engine:ghidra`](#req-engine-ghidra) | bin | 77 | software-investigation, runnable-tools |  |
 | 17 | [`claude:tools`](#req-claude-tools) | service | 74 | agent-orchestration, thinking-core, atlas-mind, atlas-code, self-discovery |  |
 | 18 | [`key:video-gen`](#req-key-video-gen) | service | 66 | ai-generation, music-beat-sound, camera-composition-layout, atlas-strategy, prompt-craft |  |
-| 19 | [`npm:react`](#req-npm-react) | npm | 55 | engines-render-pipeline, atlas-code, transitions-cuts, atlas-build, 3d-spatial |  |
+| 19 | [`npm:react`](#req-npm-react) | npm | 56 | engines-render-pipeline, atlas-code, transitions-cuts, atlas-build, 3d-spatial |  |
 | 20 | [`git`](#req-git) | bin | 49 | atlas-code, agent-orchestration, atlas-mind, atlas-docs, code-engineering |  |
 | 21 | [`pip:faster-whisper`](#req-pip-faster-whisper) | model | 48 | audio-sync-captions, qa-verification, engines-render-pipeline, photo-video-footage, runnable-tools |  |
 | 22 | [`pip:office`](#req-pip-office) | pip | 39 | documents-office, atlas-docs, self-discovery, app-feature-transfer, arabic-language |  |
@@ -76,9 +76,9 @@
 | 60 | [`pip:sympy`](#req-pip-sympy) | pip | 7 | data-analysis, strategy-finance, self-discovery |  |
 | 61 | [`pip:rembg`](#req-pip-rembg) | model | 7 | ai-generation, diagrams-explainers-code, media-image-audio, photo-video-footage, transitions-cuts |  |
 | 62 | [`lean`](#req-lean) | bin | 7 | atlas-strategy, atlas-code, color-palette-grading, data-analysis, ui-product-device |  |
-| 63 | [`latex`](#req-latex) | apt | 6 | atlas-docs, atlas-mind, atlas-strategy, data-analysis, diagrams-explainers-code |  |
-| 64 | [`pip:camel-tools`](#req-pip-camel-tools) | model | 6 | arabic-language |  |
-| 65 | [`pip:chromadb`](#req-pip-chromadb) | pip | 6 | atlas-code, agent-orchestration, atlas-data, atlas-research, other |  |
+| 63 | [`pip:chromadb`](#req-pip-chromadb) | pip | 7 | atlas-code, agent-orchestration, atlas-data, atlas-research, other |  |
+| 64 | [`latex`](#req-latex) | apt | 6 | atlas-docs, atlas-mind, atlas-strategy, data-analysis, diagrams-explainers-code |  |
+| 65 | [`pip:camel-tools`](#req-pip-camel-tools) | model | 6 | arabic-language |  |
 | 66 | [`pip:kokoro`](#req-pip-kokoro) | model | 5 | voice-tts, diagrams-explainers-code, self-discovery |  |
 | 67 | [`engine:wireshark`](#req-engine-wireshark) | bin | 5 | software-investigation |  |
 | 68 | [`pip:polars`](#req-pip-polars) | pip | 5 | data-analysis, code-engineering, self-discovery, web-research |  |
@@ -145,8 +145,8 @@
 
 - **النوع / kind:** bin (أداة)
 - **التثبيت / install:** `apt-get install -y python3 python3-pip python3-venv`
-- **يفتح / unlocks:** 684 powers
-- **بالحالة / by status:** proven 240 · documented 185 · ready 143 · install 100 · key 13 · seen 3
+- **يفتح / unlocks:** 695 powers
+- **بالحالة / by status:** proven 240 · documented 191 · ready 148 · install 100 · key 13 · seen 3
 - **العائلات / families:** engines-render-pipeline (97), qa-verification (79), mental-models (61), runnable-tools (57), music-beat-sound (45), app-feature-transfer (24), atlas-code (18), photo-video-footage (16)
 - **أمثلة / examples:** `ANLY-08` statsmodels OLS and time-series models · `ANLY-14` altair / Vega-Lite chart specs · `ANLY-17` Gradient boosting (XGBoost, LightGBM) · `ANLY-21` Convex optimisation with cvxpy · `ANLY-23` Graph algorithms with networkx · `APP-06` HTML to MP4 renderer (repo tool)
 
@@ -325,8 +325,8 @@
 
 - **النوع / kind:** npm (حزمة npm)
 - **التثبيت / install:** `npm i react react-dom  (or next, svelte, vue)`
-- **يفتح / unlocks:** 55 powers
-- **بالحالة / by status:** install 26 · documented 18 · proven 4 · ready 3 · key 2 · seen 2
+- **يفتح / unlocks:** 56 powers
+- **بالحالة / by status:** install 26 · documented 19 · proven 4 · ready 3 · key 2 · seen 2
 - **العائلات / families:** engines-render-pipeline (17), atlas-code (7), transitions-cuts (4), atlas-build (3), 3d-spatial (2), apps-artifacts (2), atlas-media (2), music-beat-sound (2)
 - **أمثلة / examples:** `DATA-92` Chart palettes (categorical, sequential, semanti · `TOOL-17` Third-party motion engine scaffolder · `TOOL-22` Reference Edit Engine · `TRANS-07` Scene enter on view change · `3D-16` Remotion ThreeCanvas · `3D-17` Portals & render-to-texture
 
@@ -760,6 +760,16 @@
 - **العائلات / families:** atlas-strategy (3), atlas-code (1), color-palette-grading (1), data-analysis (1), ui-product-device (1)
 - **أمثلة / examples:** `ACODE-88` Multi-lens database schema review · `ANLY-32` Lean 4: Write and machine-check formal proofs of · `ASTRAT-22` Strategy canvases, SWOT and red-team · `ASTRAT-27` Metrics architecture and definition docs · `ASTRAT-28` Root-cause and risk analysis (fishbone, PFMEA, l · `COLOR-54` One accent, one meaning (~5% of the frame)
 
+<a id="req-pip-chromadb"></a>
+### `pip:chromadb` — مخزن متجهات للاسترجاع / vector store for RAG
+
+- **النوع / kind:** pip (حزمة بايثون)
+- **التثبيت / install:** `pip install chromadb`
+- **يفتح / unlocks:** 7 powers
+- **بالحالة / by status:** documented 6 · proven 1
+- **العائلات / families:** atlas-code (2), agent-orchestration (1), atlas-data (1), atlas-research (1), other (1), prompt-craft (1)
+- **أمثلة / examples:** `AGENT-37` Chroma: Index documents into a vector store and  · `ACODE-163` Hybrid-search RAG pipeline with citations · `ACODE-171` RAG pipeline build and tuning guide · `ADATA-46` Seven-axis retrieval pipeline audit · `AWEB-05` Fine-tune or not: method router · `MISC-21` Owner supporting playbooks (31)
+
 <a id="req-latex"></a>
 ### `latex` — معادلات ومستندات LaTeX بالعربية / LaTeX equations and Arabic documents
 
@@ -779,16 +789,6 @@
 - **بالحالة / by status:** install 3 · proven 2 · documented 1
 - **العائلات / families:** arabic-language (6)
 - **أمثلة / examples:** `ARL-10` camel-tools character utilities without models · `ARL-18` Transliteration and romanization · `ARL-11` Morphology, dialect ID and NER with full camel-t · `ARL-13` Farasa segmenter via farasapy · `ARL-17` Dialect handling and register choice · `ARL-20` CAMeL Tools: Tokenise, lemmatise, diacritise and
-
-<a id="req-pip-chromadb"></a>
-### `pip:chromadb` — مخزن متجهات للاسترجاع / vector store for RAG
-
-- **النوع / kind:** pip (حزمة بايثون)
-- **التثبيت / install:** `pip install chromadb`
-- **يفتح / unlocks:** 6 powers
-- **بالحالة / by status:** documented 5 · proven 1
-- **العائلات / families:** atlas-code (2), agent-orchestration (1), atlas-data (1), atlas-research (1), other (1)
-- **أمثلة / examples:** `AGENT-37` Chroma: Index documents into a vector store and  · `ACODE-163` Hybrid-search RAG pipeline with citations · `ACODE-171` RAG pipeline build and tuning guide · `ADATA-46` Seven-axis retrieval pipeline audit · `AWEB-05` Fine-tune or not: method router · `MISC-21` Owner supporting playbooks (31)
 
 <a id="req-pip-kokoro"></a>
 ### `pip:kokoro` — توليد صوت محلي (إنجليزي وأخرى) / local TTS (English and others)
@@ -1357,4 +1357,4 @@
 <a id="none"></a>
 ## قدرات بلا مستلزمات خارجية / no external requirement
 
-2485 powers need only Claude and this skill (thinking, writing, planning, review protocols). The rest name at least one requirement above.
+2489 powers need only Claude and this skill (thinking, writing, planning, review protocols). The rest name at least one requirement above.

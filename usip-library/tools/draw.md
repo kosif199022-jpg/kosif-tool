@@ -297,6 +297,53 @@
 
 - ابدأ بـ `think.py recover --message "<نص الخطأ>"`، ثم سجّل `fusionforge.py trace --project <slug> --id <FUSE-ID> --stage <stage> --node <N> --action "<ما جُرّب>" --result failed --error-class <الصنف> --tool tool:drawing-academy --evidence <ملف>`.
 
+### `drawing-council` — مجلس خبراء الرسم: أحد عشر خبيرًا من بطاقات الكتب الـ48 يراجعون الصورة قبل إرسالها / Drawing council: eleven experts from the 48 method cards review an image before it is sent
+
+| الحقل | القيمة |
+|---|---|
+| المسار | `scripts/drawing_council.py` (جذر: skill) |
+| المجال | `draw` |
+| الدليل | `tested-here` |
+| العائلات | `hand-drawn-draw-on`, `story-direction-ideas` |
+
+**ما تفعله:** بوابة القانون 27 بعد فحص review: يجمع بطاقات كتب الرسم الـ48 في أحد عشر خبيرًا (البناء، التشريح والنسب، الإيماءة، المنطق والفيزياء، المنظور، الضوء، اللون، التكوين، الخط، تصميم الشخصيات، الحيوان والطبيعة)، ويشغّل الفحوص الآلية، ويكتب لكل خبير برومبت بفحوص بطاقاته وأخطائها وشروط الرفض، ويسجل حكم كل خبير pass/fix/veto ودرجات الصحة والحرفة والجمال، ويحسب حكمًا PASS/FAIL بالتصليحات المطلوبة؛ ويصدّر الخبراء بصيغة شخصيات المجلس العام.
+
+**What it does:** PROTOCOL law 27 gate after drawing_methods.py review. Groups the 48 drawing-book method cards into eleven experts (construction, anatomy and proportion, gesture, logic and physics, perspective, light, colour, composition, line, character design, animals and nature), runs the automated gates (law-27 contact review, card checks, tone metrics), writes one prompt per expert with its card checks, common errors and veto conditions, records each expert's pass/fix/veto with correctness, craft and beauty scores, and computes a deterministic PASS/FAIL verdict with the fixes still required; it also exports the experts in the general council persona schema.
+
+#### متى تُستدعى
+
+- «راجع الرسمة دي قبل ما تبعتها»
+- «اعمل مجلس خبراء رسم يراجع الصورة»
+- «Review this drawing with the drawing council before sending»
+- «Check the image for anatomy, perspective, light and colour mistakes»
+
+#### الأوامر
+
+- **roster**: The eleven experts with their cards, books and veto conditions (JSON, Markdown, or --personas for council.py).
+  - `python3 scripts/drawing_council.py roster --markdown`
+- **plan**: Runs the automated gates and writes prompts/E01..E11.md; refuses an existing council dir without --force.
+  - `python3 scripts/drawing_council.py plan --png out/scene.png --svg out/scene.svg --brief "رجل ينقذ قطة" --dir out/council-r1`
+- **ingest**: Validates and records one expert's answer, bound to the PNG's hash; --simulated when written in the main context.
+  - `python3 scripts/drawing_council.py ingest --dir out/council-r1 --expert E04 --file e04.json`
+- **verdict**: Writes verdict.json and minutes.md; exits 0 only on PASS.
+  - `python3 scripts/drawing_council.py verdict --dir out/council-r1`
+
+#### المتطلبات والأمان
+
+- optional: pillow
+- الأمان: writes-files
+- الموافقة: Writes only inside the council directory you pass; no network, model calls or spend.
+- الحدود: The automated gates measure geometry and tone only. Scores are the experts' recorded judgements against their cards, not a proof of beauty; the verdict says SIMULATED when one context played the experts. Cards summarise the books' methods, not the books.
+
+#### الاختبارات والأدلة
+
+- `.claude/skills/kosif-superpowers/evals/test_drawing_council.py`
+- مرجع: `.claude/skills/kosif-superpowers/references/protocol/A31-drawing-council.md`
+
+#### عند الفشل (A29)
+
+- ابدأ بـ `think.py recover --message "<نص الخطأ>"`، ثم سجّل `fusionforge.py trace --project <slug> --id <FUSE-ID> --stage <stage> --node <N> --action "<ما جُرّب>" --result failed --error-class <الصنف> --tool tool:drawing-council --evidence <ملف>`.
+
 ### `drawing-methods` — أطلس مناهج كتب الرسم مع رسم بنائي بالطبقات / Drawing-book methods atlas with layered construction SVGs
 
 | الحقل | القيمة |

@@ -42,6 +42,7 @@
 | `creative-principles` | دراسة الرسم التدريجي والظل الأصلي | `python3 scripts/creative_principles.py construct --input original-shapes.json --out-prefix out/stage` | tested-elsewhere |
 | `creative-reasoning-bridge` | جسر الصوت إلى لوحة القصة | `python3 scripts/creative_reasoning_bridge.py ./cues.json --style auto --out ./out/scene.json --report ./out/decision.json` | tested-here |
 | `drawing-academy` | أكاديمية الرسم والدروس المبنية على مصادر | `python3 scripts/drawing_academy.py index` | tested-elsewhere |
+| `drawing-council` | مجلس خبراء الرسم: أحد عشر خبيرًا من بطاقات الكتب الـ48 يراجعون الصورة قبل إرسالها | `python3 scripts/drawing_council.py roster --markdown` | tested-here |
 | `drawing-methods` | أطلس مناهج كتب الرسم مع رسم بنائي بالطبقات | `python3 scripts/drawing_methods.py find "ارسم وش شخصية بتضحك"` | tested-here |
 | `drawing-visual-qa` | مدرب الرسم من فصول الكتب والتشخيص البصري المستقل | `python3 scripts/drawing_visual_qa.py curriculum "ارسم شخصية كرتونية بمنظور وإضاءة" --out out/lessons.json` | tested-here |
 | `motion-director` | مُصرِّف حركة SVG المتزامنة مع الصوت | `python3 scripts/motion_director.py doctor` | tested-here |

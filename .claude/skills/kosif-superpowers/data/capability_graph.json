@@ -15,7 +15,7 @@
    "id": "root",
    "kind": "root",
    "label": "KOSIF Superpowers",
-   "count": 5496
+   "count": 5512
   },
   {
    "id": "dom:motion",
@@ -1320,13 +1320,18 @@
    "label": "Prompt craft",
    "ar": "صناعة البرومبت",
    "prefix": "PROMPT",
-   "count": 25,
+   "count": 41,
    "proven": 1,
    "status": {
-    "documented": 21,
+    "documented": 32,
     "proven": 1,
-    "ready": 3
+    "ready": 8
    }
+  },
+  {
+   "id": "script:scripts/prompt_lab.py",
+   "kind": "script",
+   "label": "scripts/prompt_lab.py"
   },
   {
    "id": "script:scripts/style_library.py",
@@ -2017,6 +2022,16 @@
    "label": "scripts/creative_reasoning_bridge.py"
   },
   {
+   "id": "script:scripts/drawing_council.py",
+   "kind": "script",
+   "label": "scripts/drawing_council.py"
+  },
+  {
+   "id": "script:scripts/drawing_methods.py",
+   "kind": "script",
+   "label": "scripts/drawing_methods.py"
+  },
+  {
    "id": "script:scripts/fusionforge.py",
    "kind": "script",
    "label": "scripts/fusionforge.py"
@@ -2086,16 +2101,6 @@
    "id": "script:scripts/package_skill.py",
    "kind": "script",
    "label": "scripts/package_skill.py"
-  },
-  {
-   "id": "script:scripts/portrait_pipeline.py",
-   "kind": "script",
-   "label": "scripts/portrait_pipeline.py"
-  },
-  {
-   "id": "script:scripts/drawing_methods.py",
-   "kind": "script",
-   "label": "scripts/drawing_methods.py"
   },
   {
    "id": "script:scripts/prompt_pack.py",
@@ -2363,6 +2368,11 @@
    "label": ".claude/skills/kosif-superpowers/evals/test_council.py"
   },
   {
+   "id": "test:.claude/skills/kosif-superpowers/evals/test_drawing_council.py",
+   "kind": "test",
+   "label": ".claude/skills/kosif-superpowers/evals/test_drawing_council.py"
+  },
+  {
    "id": "test:.claude/skills/kosif-superpowers/evals/test_creative_paint.py",
    "kind": "test",
    "label": ".claude/skills/kosif-superpowers/evals/test_creative_paint.py"
@@ -2448,11 +2458,6 @@
    "label": "tests/test_superpowers_unified.py"
   },
   {
-   "id": "test:.claude/skills/kosif-superpowers/evals/test_portrait_pipeline.py",
-   "kind": "test",
-   "label": ".claude/skills/kosif-superpowers/evals/test_portrait_pipeline.py"
-  },
-  {
    "id": "test:.claude/skills/kosif-superpowers/evals/test_catalog_evidence_audit.py",
    "kind": "test",
    "label": ".claude/skills/kosif-superpowers/evals/test_catalog_evidence_audit.py"
@@ -2466,6 +2471,11 @@
    "id": "test:tests/test_superpowers.py",
    "kind": "test",
    "label": "tests/test_superpowers.py"
+  },
+  {
+   "id": "test:.claude/skills/kosif-superpowers/evals/test_prompt_lab.py",
+   "kind": "test",
+   "label": ".claude/skills/kosif-superpowers/evals/test_prompt_lab.py"
   },
   {
    "id": "test:.claude/skills/kosif-superpowers/evals/test_system_python.py",
@@ -5048,13 +5058,13 @@
    "from": "dom:craft",
    "to": "fam:prompt-craft",
    "rel": "has",
-   "w": 25
+   "w": 41
   },
   {
    "from": "fam:prompt-craft",
    "to": "req:python3",
    "rel": "needs",
-   "w": 5
+   "w": 16
   },
   {
    "from": "fam:prompt-craft",
@@ -5079,6 +5089,24 @@
    "to": "req:chromium",
    "rel": "needs",
    "w": 1
+  },
+  {
+   "from": "fam:prompt-craft",
+   "to": "req:npm:react",
+   "rel": "needs",
+   "w": 1
+  },
+  {
+   "from": "fam:prompt-craft",
+   "to": "req:pip:chromadb",
+   "rel": "needs",
+   "w": 1
+  },
+  {
+   "from": "fam:prompt-craft",
+   "to": "script:scripts/prompt_lab.py",
+   "rel": "runs",
+   "w": 9
   },
   {
    "from": "fam:prompt-craft",
@@ -6617,6 +6645,12 @@
    "w": 1
   },
   {
+   "from": "script:scripts/drawing_council.py",
+   "to": "script:scripts/drawing_methods.py",
+   "rel": "imports",
+   "w": 1
+  },
+  {
    "from": "script:scripts/fusionforge.py",
    "to": "script:scripts/_secrets.py",
    "rel": "imports",
@@ -6955,12 +6989,6 @@
   {
    "from": "script:scripts/package_skill.py",
    "to": "script:scripts/check_skill.py",
-   "rel": "imports",
-   "w": 1
-  },
-  {
-   "from": "script:scripts/portrait_pipeline.py",
-   "to": "script:scripts/drawing_methods.py",
    "rel": "imports",
    "w": 1
   },
@@ -7433,8 +7461,20 @@
    "w": 1
   },
   {
+   "from": "script:scripts/council.py",
+   "to": "test:.claude/skills/kosif-superpowers/evals/test_drawing_council.py",
+   "rel": "tested_by",
+   "w": 1
+  },
+  {
    "from": "script:scripts/creative_paint.py",
    "to": "test:.claude/skills/kosif-superpowers/evals/test_creative_paint.py",
+   "rel": "tested_by",
+   "w": 1
+  },
+  {
+   "from": "script:scripts/drawing_council.py",
+   "to": "test:.claude/skills/kosif-superpowers/evals/test_drawing_council.py",
    "rel": "tested_by",
    "w": 1
   },
@@ -7607,12 +7647,6 @@
    "w": 1
   },
   {
-   "from": "script:scripts/portrait_pipeline.py",
-   "to": "test:.claude/skills/kosif-superpowers/evals/test_portrait_pipeline.py",
-   "rel": "tested_by",
-   "w": 1
-  },
-  {
    "from": "script:scripts/powers.py",
    "to": "test:.claude/skills/kosif-superpowers/evals/test_catalog_evidence_audit.py",
    "rel": "tested_by",
@@ -7657,6 +7691,12 @@
   {
    "from": "script:scripts/probe_env.py",
    "to": "test:.claude/skills/kosif-superpowers/evals/test_script_smoke.py",
+   "rel": "tested_by",
+   "w": 1
+  },
+  {
+   "from": "script:scripts/prompt_lab.py",
+   "to": "test:.claude/skills/kosif-superpowers/evals/test_prompt_lab.py",
    "rel": "tested_by",
    "w": 1
   },

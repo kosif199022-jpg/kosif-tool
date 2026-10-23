@@ -9,7 +9,7 @@
 مسارات الدليل نسبية إلى `/home/user/`؛ و`session-<date>:<file>#<section>` تشير إلى تشغيل موثق في جلسة سابقة؛ و`owner-upload:` إلى ملف داخل أرشيف أرسله المالك. Proof paths are relative to `/home/user/`.
 
 **المجال / domain:** الهندسة والكود — Code & engineering · **البادئة / prefix:** `SEC` · **البيانات / data:** `data/powers/security-safety.json` · **بحث / search:** `python3 scripts/powers.py family security-safety`
-**مراجع ذات صلة / related references:** [CLAUDE_3_MINUTE_MAP.md](../CLAUDE_3_MINUTE_MAP.md) · [codex-agent-harness.md](../codex-agent-harness.md) · [codex-repos-study-20261023.md](../codex-repos-study-20261023.md) · [ecc-harness.md](../ecc-harness.md) · [ecc-skills-index.md](../ecc-skills-index.md) · [hubs.md](../hubs.md) · [rea-superpowers-frontier-20261023.md](../rea-superpowers-frontier-20261023.md)
+**مراجع ذات صلة / related references:** [CLAUDE_3_MINUTE_MAP.md](../CLAUDE_3_MINUTE_MAP.md) · [codex-agent-harness.md](../codex-agent-harness.md) · [codex-repos-study-20261023.md](../codex-repos-study-20261023.md) · [ecc-harness.md](../ecc-harness.md) · [ecc-skills-index.md](../ecc-skills-index.md) · [github-top-1000.md](../github-top-1000.md) · [hubs.md](../hubs.md) · [rea-superpowers-frontier-20261023.md](../rea-superpowers-frontier-20261023.md)
 
 ## الفهرس / contents
 

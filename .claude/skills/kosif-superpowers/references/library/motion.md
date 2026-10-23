@@ -50,6 +50,7 @@
 | `creative-quality-gate` | بوابة جودة خطة المونتاج | `python3 scripts/creative_quality_gate.py ./my-project/src/plan.json --out ./out/quality-audit.json` | tested-here |
 | `creative-reasoning-bridge` | جسر الصوت إلى لوحة القصة | `python3 scripts/creative_reasoning_bridge.py ./cues.json --style auto --out ./out/scene.json --report ./out/decision.json` | tested-here |
 | `drawing-academy` | أكاديمية الرسم والدروس المبنية على مصادر | `python3 scripts/drawing_academy.py index` | tested-elsewhere |
+| `drawing-council` | مجلس خبراء الرسم: أحد عشر خبيرًا من بطاقات الكتب الـ48 يراجعون الصورة قبل إرسالها | `python3 scripts/drawing_council.py roster --markdown` | tested-here |
 | `drawing-methods` | أطلس مناهج كتب الرسم مع رسم بنائي بالطبقات | `python3 scripts/drawing_methods.py find "ارسم وش شخصية بتضحك"` | tested-here |
 | `drawing-visual-qa` | مدرب الرسم من فصول الكتب والتشخيص البصري المستقل | `python3 scripts/drawing_visual_qa.py curriculum "ارسم شخصية كرتونية بمنظور وإضاءة" --out out/lessons.json` | tested-here |
 | `dua-wednesday` | دعاء يوم الأربعاء — محرك ريل دعاء موشن جرافيك 9:16 | `python3 scripts/dua_wednesday.py doctor` | tested-here |
