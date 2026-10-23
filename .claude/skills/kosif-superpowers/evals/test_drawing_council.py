@@ -119,6 +119,17 @@ class FlowTests(unittest.TestCase):
         self.assertEqual(r.returncode, 1)
         self.assertIn("التصليحات المطلوبة", (d / "minutes.md").read_text(encoding="utf-8"))
 
+    def test_fix_is_a_suggestion_and_does_not_block(self):
+        d = self.plan()
+        for e in dc.EXPERTS:
+            self.ingest(d, answer(e["id"], verdict="fix" if e["id"] in ("E03", "E09") else "pass"))
+        v = dc.verdict(d)
+        self.assertEqual(v["status"], "PASS", v["reasons"])
+        self.assertEqual(len(v["suggestions"]), 2)
+        self.assertEqual(v["required_fixes"], [])
+        dc.cmd_verdict(type("A", (), {"dir": str(d)})())
+        self.assertIn("تحسينات مقترحة", (d / "minutes.md").read_text(encoding="utf-8"))
+
     def test_detached_body_fails_even_when_every_expert_passes(self):
         d = self.plan(body_y=95)  # head ends at 80: a 15px gap at the neck
         for e in dc.EXPERTS:

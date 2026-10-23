@@ -15,8 +15,9 @@ From the repository root:
 
 An expert answers {"expert": "E04", "verdict": "pass|fix|veto", "scores": {"correctness": 1-5, "craft": 1-5,
 "beauty": 1-5}, "findings": [{"check": "...", "observed": "...", "fix": "..."}], "evidence": ["what was looked at"]}.
-PASS needs every automated gate PASS, all eleven experts answered on the same PNG, no fix or veto open, every score
-at least 3 and a mean beauty score of at least 3.5. After fixes, re-render and plan a new council directory.
+PASS needs every automated gate PASS, all eleven experts answered on the same PNG, no veto, every score at least 3
+and a mean beauty score of at least 3.5. A `fix` verdict is an improvement suggestion: it goes in the minutes and
+does not withhold approval; a real error is a veto. After fixes, re-render and plan a new council directory.
 
 Scores are recorded judgements, not measurements: the verdict says who judged and how, never that taste was proven.
 Python stdlib only (the visual metrics step uses drawing_visual_qa.py when Pillow is present and is skipped otherwise).
@@ -217,6 +218,10 @@ def expert_prompt(c: dict, e: dict) -> str:
     for m in e["methods"]:
         lines.append(f"- **{m['id']} {m['name_en']}** — checks: {'; '.join(m['checks'])}. Common errors: {'; '.join(m['common_errors'])}.")
     lines += ["", "## Veto conditions (any one of these is a veto)"] + [f"- {v}" for v in e["veto"]]
+    lines += ["", "Verdicts: `veto` for a real error that must not be sent (any veto condition above, or anything that makes "
+              "the picture wrong or illogical); `fix` for an improvement the picture is acceptable without (it is listed "
+              "in the minutes as a suggestion and does not withhold approval); `pass` when you have nothing to add. "
+              "Use the scores for quality: any score below 3 blocks approval."]
     if e.get("automated") == "law27_review":
         lines += ["", "## Automated law-27 review (you own it)", "```json",
                   json.dumps({k: auto["law27_review"].get(k) for k in ("status", "passed", "total")}, ensure_ascii=False),
@@ -358,13 +363,14 @@ def verdict(d: Path) -> dict:
     stale = [k for k, v in answers.items() if v.get("png_sha256") != c["png_sha256"]]
     auto_fail = [k for k, v in c["automated"].items() if v.get("status") == "FAIL"]
     fixes = [dict(f, expert=k, verdict=v["verdict"]) for k, v in sorted(answers.items())
-             for f in v.get("findings", []) if v["verdict"] != "pass" and f.get("fix")]
+             for f in v.get("findings", []) if v["verdict"] == "veto" and f.get("fix")]
+    suggestions = [dict(f, expert=k, verdict=v["verdict"]) for k, v in sorted(answers.items())
+                   for f in v.get("findings", []) if v["verdict"] == "fix" and f.get("fix")]
     low = [{"expert": k, "scores": v["scores"]} for k, v in sorted(answers.items())
            if min(v["scores"].values()) < MIN_SCORE]
     beauty = [v["scores"]["beauty"] for v in answers.values()]
     beauty_mean = round(sum(beauty) / len(beauty), 2) if beauty else None
     vetoes = sorted(k for k, v in answers.items() if v["verdict"] == "veto")
-    open_fix = sorted(k for k, v in answers.items() if v["verdict"] == "fix")
     reasons = []
     if png_now != c["png_sha256"]:
         reasons.append("the PNG changed after planning: plan a new council for the new render")
@@ -376,8 +382,6 @@ def verdict(d: Path) -> dict:
         reasons.append(f"answers about another image: {', '.join(stale)}")
     if vetoes:
         reasons.append(f"veto: {', '.join(vetoes)}")
-    if open_fix:
-        reasons.append(f"fixes required by: {', '.join(open_fix)}")
     if low:
         reasons.append(f"a score below {MIN_SCORE}: {', '.join(x['expert'] for x in low)}")
     worse = sorted(k for k, v in answers.items() if v.get("vs_baseline") == "worse")
@@ -390,6 +394,7 @@ def verdict(d: Path) -> dict:
     mode = "REAL_AGENTS" if answers and not simulated else ("SIMULATED" if simulated else "NONE")
     return {"schema": SCHEMA + ".verdict", "computed": now_iso(), "status": status, "mode": mode,
             "simulated_experts": simulated, "reasons": reasons, "required_fixes": fixes,
+            "suggestions": suggestions,
             "scores": {k: v["scores"] for k, v in sorted(answers.items())}, "beauty_mean": beauty_mean,
             "automated": {k: v.get("status") for k, v in c["automated"].items()},
             "png": c["png"], "png_sha256": c["png_sha256"], "brief": c["brief"], "style": c.get("style"),
@@ -415,6 +420,14 @@ def minutes(v: dict, c: dict) -> str:
         out += ["## التصليحات المطلوبة", ""]
         for f in v["required_fixes"]:
             out.append(f"- {names[f['expert']]} ({f['verdict']}) · {f['check']}: {f['observed']} ← {f['fix']}")
+            if isinstance(f.get("code"), dict):
+                cd = f["code"]
+                out.append(f"  - الكود: `{cd.get('where')}` · السبب: {cd.get('cause')} · التعديل: {cd.get('change')}")
+        out.append("")
+    if v.get("suggestions"):
+        out += ["## تحسينات مقترحة (لا تمنع الاعتماد)", ""]
+        for f in v["suggestions"]:
+            out.append(f"- {names[f['expert']]} · {f['check']}: {f['observed']} ← {f['fix']}")
             if isinstance(f.get("code"), dict):
                 cd = f["code"]
                 out.append(f"  - الكود: `{cd.get('where')}` · السبب: {cd.get('cause')} · التعديل: {cd.get('change')}")
