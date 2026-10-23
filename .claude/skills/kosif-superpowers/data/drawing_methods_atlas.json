@@ -4,7 +4,7 @@
   "status": "original_method_summaries_NOT_fulltext_copy_NOT_model_training",
   "notes": [
     "Each card restates a teaching method in original words. No book text, page, diagram or illustration is copied or bundled.",
-    "Book references point at data/creative_books_200_index.json ids (ART-xxx), at the user's own library (UBK-xx, read in this session from the user's copies) or, for other titles, at bibliographic metadata only (EXT-xxx). review_status says how much was really read.",
+    "Book references point at data/creative_books_200_index.json ids (ART-xxx), at the user's own library (UBK-xx, read on 2026-10-23 from the user's copies) or, for other titles, at bibliographic metadata only (EXT-xxx). review_status says how much was really read.",
     "user_copy_read_paraphrased means the card was written after reading that book's text (text layer or OCR) or, for picture books, its rendered sample pages; it does not mean every page was studied line by line, and nothing from the book is redistributed.",
     "A card is guidance for planning and checking a drawing. It does not prove that Claude draws at a professional level; only rendered artifacts checked against the card's checks can show that.",
     "Executable demonstrations live in scripts/drawing_methods.py (draw head|figure|character|forms|bounce|shadow). They are original code, deterministic, and write editable layered SVG."
@@ -13,7 +13,7 @@
     "general_teaching_knowledge": "Method summarised from the widely taught content associated with the book; the book's full text was not read in this session.",
     "public_domain_section_read": "A public-domain section was read (see A14 for the anchors).",
     "bibliographic_metadata_only": "External book entries only: title and author are recorded; no content was reviewed.",
-    "user_copy_read_paraphrased": "The user's own copy was read in this session (text layer, OCR or rendered sample pages) and the method was paraphrased; no text or image is kept or redistributed."
+    "user_copy_read_paraphrased": "The user's own copy was read on 2026-10-23 (text layer, OCR or rendered sample pages) and the method was paraphrased; no text or image is kept or redistributed."
   },
   "pipeline": [
     {
@@ -84,7 +84,8 @@
       "methods": [
         "DM-24",
         "DM-33",
-        "DM-47"
+        "DM-47",
+        "DM-48"
       ]
     },
     {
@@ -176,7 +177,8 @@
         "ART-002",
         "ART-006",
         "UBK-17",
-        "UBK-31"
+        "UBK-31",
+        "UBK-34"
       ],
       "principle_ar": "ارسم ما تراه لا ما تعرفه: تتبّع حافة الشكل ببطء كأن القلم يلمسه، وارسم الفراغات بين الأشياء كأشكال مستقلة؛ الفراغ السالب يكشف أخطاء النسب التي يخفيها الرمز الذهني.",
       "principle_en": "Draw what you see, not the symbol you know: trace the edge slowly as if touching it, and draw the gaps between things as shapes of their own; negative shapes expose proportion errors that the mental symbol hides.",
@@ -186,7 +188,8 @@
         "Compare each negative shape's width to its height",
         "Only then connect contours into the object",
         "Draw shapes, not things: large shapes first, then secondary, then enrichment shapes such as reflections and labels",
-        "Keep restating searching lines instead of erasing every first attempt"
+        "Keep restating searching lines instead of erasing every first attempt",
+        "Look for V shapes between forms and drop guide lines through them to relate parts; draw the shapes you see, not the object you know"
       ],
       "code_recipe": "Build the outline as one continuous SVG path; draw negative-space polygons on a separate 'guide' layer and compare their bounding boxes with the reference.",
       "prompt_terms": [
@@ -459,7 +462,8 @@
         "ART-034",
         "UBK-01",
         "UBK-30",
-        "UBK-02"
+        "UBK-02",
+        "UBK-28"
       ],
       "principle_ar": "قِس الجسم برؤوس: البطل المثالي نحو 8 رؤوس، الواقعي 7.5، الطفل 4–5، والشخصيات الكرتونية 2–4؛ منتصف الجسم عند الحوض، والركبة عند الربع السفلي تقريبًا، والذراع المرتخية تصل منتصف الفخذ.",
       "principle_en": "Measure the body in heads: idealised hero about 8, realistic adult 7.5, child 4–5, cartoon 2–4; the midpoint sits at the pelvis, the knee near the lower quarter, and the relaxed arm reaches mid-thigh.",
@@ -469,7 +473,8 @@
         "Place pelvis at the midpoint, nipples at 2, navel near 3, knees near 6 (8-head canon)",
         "Adjust for character exaggeration on purpose, not by accident",
         "Note the type: about 7.5 heads average, 8 ideal, 9 heroic; women about half a head shorter",
-        "Anime adult about 6.5 heads: crotch at half height, waist at elbow level, waist width about one head"
+        "Anime adult about 6.5 heads: crotch at half height, waist at elbow level, waist width about one head",
+        "Three-box check: half the body height is the bottom of the hip box; split the top half into thirds (nose base, sternum base, top of hip box)"
       ],
       "code_recipe": "drawing_methods.py draw figure --heads N marks every head unit on the guide layer and stores heads_tall in data attributes for the checker.",
       "prompt_terms": [
@@ -561,7 +566,8 @@
         "EXT-005",
         "UBK-01",
         "UBK-37",
-        "UBK-38"
+        "UBK-38",
+        "UBK-25"
       ],
       "principle_ar": "الجمجمة كرة يُقطع جانباها مستويين مسطحين، ويُعلَّق تحتها الفك؛ خط منتصف رأسي وخط الحاجب يلتفّان حول الكرة مع دوران الرأس، والوجه يُقسم إلى ثلاثة أجزاء متساوية تقريبًا: منبت الشعر للحاجب، الحاجب لقاعدة الأنف، الأنف للذقن.",
       "principle_en": "The cranium is a ball with its sides sliced flat; the jaw hangs below it. A vertical centre line and a brow line wrap around the ball as the head turns, and the face splits into roughly equal thirds: hairline to brow, brow to nose base, nose to chin.",
@@ -571,7 +577,9 @@
         "Drop the face thirds and hang the jaw",
         "Place eyes on a line halfway down the full head, ears between brow and nose base",
         "Treat the mouth as wrapping the cylinder of the teeth, not a flat line",
-        "Ear sits between the brow line and the nose line; hairline sets the tilt"
+        "Ear sits between the brow line and the nose line; hairline sets the tilt",
+        "From the side the head is a P shape (cranium plus face) that tapers to the jaw from every angle; the jaw corner rises toward the socket edge",
+        "Ears angle out and back and flatten further as the head tilts back"
       ],
       "code_recipe": "drawing_methods.py draw head --yaw D --pitch D rotates the centre line as a vertical ellipse and the brow line as a horizontal ellipse on the ball, then places thirds and features.",
       "prompt_terms": [
@@ -1053,7 +1061,8 @@
         "UBK-01",
         "UBK-37",
         "UBK-04",
-        "UBK-17"
+        "UBK-17",
+        "UBK-28"
       ],
       "principle_ar": "افصل الضوء عن الظل أولًا بحد واضح (خط الانتهاء)، ثم قسّم: إضاءة عالية، نصف ضوء، خط انتهاء، ظل ذاتي، ضوء منعكس خافت، ظل ملقى أغمق عند نقطة التلامس؛ لا تجعل الضوء المنعكس أفتح من أي جزء مضاء.",
       "principle_en": "Separate light from shadow first with a clear terminator, then subdivide: highlight, half-tone, terminator, form shadow, faint reflected light, and a cast shadow darkest at the contact point. Reflected light never gets brighter than any lit area.",
@@ -1065,7 +1074,9 @@
         "Order the planes: light, halftone, shadow (where the plane runs parallel to the light), reflected light, cast shadow",
         "Nothing in the shadow family may be as light as anything in the light family",
         "Map light and shadow as territories with definite borders; contrast is greatest where the form turns",
-        "The cast shadow carries the darkest dark where it meets the object and a sharper edge than the form shadow"
+        "The cast shadow carries the darkest dark where it meets the object and a sharper edge than the form shadow",
+        "1-2-3 read: top, side and front planes must separate clearly in value whatever the local value",
+        "Light a head as an egg with a wedge nose; a rim light from behind pops the edge"
       ],
       "code_recipe": "Shade spheres and cylinders with a two-stop split at the terminator angle plus a radial gradient; cast shadows as skewed ellipses away from the light vector.",
       "prompt_terms": [
@@ -1156,7 +1167,8 @@
         "ART-073",
         "UBK-30",
         "UBK-21",
-        "UBK-31"
+        "UBK-31",
+        "UBK-28"
       ],
       "principle_ar": "اللون نسبي: نفس اللون يتغير بجيرانه؛ إن كان الضوء دافئًا فالظل يميل للبرودة والعكس، واختر لوحة محدودة (لون غالب + مكمّل صغير + محايدات) بدل كل الألوان.",
       "principle_en": "Colour is relative: the same colour shifts with its neighbours. A warm light gives cool shadows and vice versa; choose a limited palette (dominant hue, a small complement, neutrals) rather than every hue.",
@@ -1166,7 +1178,8 @@
         "Pick dominant/accent/neutral roles",
         "Check value still works in greyscale",
         "Split the palette roughly 70 / 25 / 5 between main, secondary and accent colours",
-        "Light colour tints the whole lit side; the halftone holds the most saturation"
+        "Light colour tints the whole lit side; the halftone holds the most saturation",
+        "Decide warm or cool light first: warm light gives cool shadows and the reverse; push saturation where skin turns from light to shadow"
       ],
       "code_recipe": "Derive shadow hex by rotating hue toward blue (or orange) and lowering value; validate contrast with perspective_color_lab.py palette.",
       "prompt_terms": [
@@ -1177,7 +1190,8 @@
       ],
       "checks": [
         "Light and shadow temperatures differ",
-        "At most one accent hue"
+        "At most one accent hue",
+        "Not everything is fully saturated; value carries the read"
       ],
       "common_errors": [
         "Shadows made by adding black only",
@@ -1208,7 +1222,8 @@
         "ART-100",
         "UBK-04",
         "UBK-41",
-        "UBK-30"
+        "UBK-30",
+        "UBK-28"
       ],
       "principle_ar": "قبل الرسم الكبير ارسم مصغرات سريعة تجرب الكادر والزاوية ومكان البطل؛ قُد العين بخطوط وتباين واتجاه نظرات نحو نقطة تركيز واحدة، واترك فراغًا للتنفس.",
       "principle_en": "Before the big drawing, make quick thumbnails that test the frame, angle and hero placement; lead the eye with lines, contrast and gaze direction toward one focal point, and leave breathing space.",
@@ -1217,7 +1232,8 @@
         "Pick the clearest one",
         "Place the focal point off-centre (thirds or golden ratio)",
         "Route leading lines and gazes to it",
-        "Give the focal area the highest value and saturation contrast and the most detail"
+        "Give the focal area the highest value and saturation contrast and the most detail",
+        "Keep the strongest value contrast at the focal point (usually the face and upper body)"
       ],
       "code_recipe": "Generate thumbnails as small SVG frames with grey blocks; score focal point distance to the thirds intersections.",
       "prompt_terms": [
@@ -1715,7 +1731,8 @@
         "UBK-04",
         "ART-009",
         "UBK-13",
-        "UBK-23"
+        "UBK-23",
+        "UBK-34"
       ],
       "principle_ar": "الظل الساقط يُبنى ولا يُخمَّن. لمصباح قريب: أسقط عمودًا من المصباح إلى الأرض؛ تلك النقطة هي نقطة تلاشي الظلال على الأرض. كل زاوية في الظل تقع حيث يلتقي شعاع من قدم المصباح عبر قاعدة الحافة مع شعاع من المصباح عبر أعلاها. للشمس: الأشعة متوازية، وظلال الحواف تتلاشى إلى نقطة أسفل الشمس على الأفق. الظل أغمق وأحدّ عند نقطة التلامس ويلين كلما ابتعد.",
       "principle_en": "A cast shadow is constructed, not guessed. For a near lamp drop a vertical from the lamp to the ground: that foot is the vanishing point of the ground shadows. Each shadow corner lies where a ray from the foot through an edge's base meets a ray from the lamp through the edge's top. For sunlight the rays are parallel and shadow edges converge to the point under the sun on the horizon. The shadow is darkest and sharpest at the contact point and softens as it travels away.",
@@ -1724,7 +1741,9 @@
         "For each vertical edge, ray from the foot through the base",
         "Ray from the light through the top; the crossing is the shadow corner",
         "Join the corners; the object stands on its shadow",
-        "Darken and sharpen at contact, soften with distance"
+        "Darken and sharpen at contact, soften with distance",
+        "Place cast shadows first in a pale tone, then build depth in layers; cast shadows follow the form they fall on",
+        "Leave a thin reflected-light edge on the shadow side of a round form before it meets its cast shadow"
       ],
       "code_recipe": "`drawing_methods.py draw shadow` builds the shadow by line intersection and `check` verifies every shadow point lies on both rays (offset < 1 px).",
       "prompt_terms": [
@@ -1834,7 +1853,9 @@
         "Set brow and eye lines to choose eye size and age",
         "Place the nose base below the eye line and the mouth on its own line",
         "Check that inner eye corner and nose bridge share a contour in three-quarter view",
-        "Eyes sit in a V-shaped indent; the mouth is slightly above halfway from nose base to chin"
+        "Eyes sit in a V-shaped indent; the mouth is slightly above halfway from nose base to chin",
+        "Start every angle from a sphere, find the centre line for orientation, then attach the jaw and back of the head as solid pieces",
+        "The far eye is narrower and fits inside a triangle; draw the second eye one eye-length away with guide lines from the first eye's top and bottom, highlights on the same side"
       ],
       "code_recipe": "Use the head demo's yaw/pitch to place the eye-line curve; for anime push the eye line slightly below mid-height and enlarge the brow-to-eye gap.",
       "prompt_terms": [
@@ -1845,7 +1866,8 @@
       "checks": [
         "Eye line curvature matches the camera angle",
         "Both eyes sit on one wrapped eye line",
-        "Far eye narrowed by the nose bridge"
+        "Far eye narrowed by the nose bridge",
+        "Both eyes match in size and shape (flick back and forth to compare)"
       ],
       "common_errors": [
         "Front-view features pasted on a turned head",
@@ -1880,7 +1902,8 @@
         "UBK-26",
         "UBK-02",
         "UBK-21",
-        "UBK-38"
+        "UBK-38",
+        "UBK-28"
       ],
       "principle_ar": "الشعر ينمو من الدوامة وخط الفرق ويتبع الجمجمة مع فراغ ثابت فوقها. ارسم الكتلة الخارجية أولًا ثم قسّمها إلى خصلات كبيرة ثم أصغر، وظلّل حيث تتراكب الخصلات فقط. الجاذبية تشد الأطراف لأسفل مهما مال الرأس؛ الريح والجري والقفز والسقوط تغيّر الشكل بقوانين ثابتة، وحالة الشعر تحكي الشعور (متهدّل حزين، مرفوع غاضب أو قوي).",
       "principle_en": "Hair grows from the crown whorl and the parting and follows the skull with a constant volume gap. Draw the outer mass first, divide it into big locks, then smaller ones, and shade only where locks overlap. Gravity pulls the ends straight down however the head tilts; wind, running, jumping and falling reshape it by fixed rules, and the hair's state tells the emotion (limp = sad, lifted = anger or power).",
@@ -1889,7 +1912,9 @@
         "Draw the silhouette of the whole hair mass outside the skull",
         "Split into big groups (fringe, sides, back), then locks",
         "Shade only overlaps and the underside of the back mass",
-        "Apply the force: gravity, wind direction, motion"
+        "Apply the force: gravity, wind direction, motion",
+        "Lay hair in as a ribbon, then a cut-out plane over the skull, then layered clumps (back, middle, front) that follow gravity",
+        "Hair grows out perpendicular to the scalp and tied hair is thicker; render a clump as core shadow, half-tone, turning edge and highlight, with the highlight as a crown"
       ],
       "code_recipe": "Model each lock as a curve rooted on the skull whose tip vector = gravity + wind + inertia; keep roots on a circle offset from the skull by a fixed gap.",
       "prompt_terms": [
@@ -2523,7 +2548,10 @@
         "Lay a tonal block for the mass",
         "Add texture strokes in the surface direction",
         "Cut light negative shapes to show structure",
-        "Lift highlights; keep the darkest darks for depth behind light shapes"
+        "Lift highlights; keep the darkest darks for depth behind light shapes",
+        "Practise a tonal ribbon: firm pressure fading to light, to learn how pressure maps to value",
+        "Vary edge pressure (on/off, erratic) instead of a wire-like outline; let lost lines drop where the edge is obvious",
+        "Find the light shapes by toning dark negative shapes around them (counterchange: light against dark, then dark against light)"
       ],
       "code_recipe": "Texture brush = stochastic short strokes with direction field from the surface normal; foliage = blue-noise points expanded into zigzag clusters masked by the mass shape.",
       "prompt_terms": [
@@ -2534,7 +2562,8 @@
       "checks": [
         "Strokes follow the surface or growth direction",
         "Light negative shapes break up dark masses",
-        "Different materials use different marks"
+        "Different materials use different marks",
+        "No uniform wire outline around the main form"
       ],
       "common_errors": [
         "Outlining each leaf",
@@ -2554,6 +2583,55 @@
         "ريش",
         "حجر",
         "تقنيات الرصاص"
+      ],
+      "review_status": "user_copy_read_paraphrased"
+    },
+    {
+      "id": "DM-48",
+      "domain": "line",
+      "name_en": "Suggest form with overlap and few confident lines",
+      "name_ar": "اوحِ بالحجم بالتراكب وبخطوط قليلة واثقة",
+      "books": [
+        "UBK-25",
+        "UBK-17",
+        "ART-097"
+      ],
+      "principle_ar": "كثرة الخطوط لا تعني حجمًا أكثر. أقوى إشارة للعمق هي التراكب: قرر أي خط في الأمام واجعله يقطع الخط الذي خلفه، واترك فجوة صغيرة حيث يمر شكل خلف آخر. خطوط قليلة واثقة أفضل من خطوط مترددة، ومع قلة الخطوط تزيد مسؤولية دقتها. افحص الوضعية برسم الخط الأوسط وحده وبالسيلويت وحده، واسأل: هل أستطيع تدوير هذا الشكل في ذهني؟",
+      "principle_en": "More lines do not mean more form. The strongest depth cue is overlap: decide which line is in front and let it cut the one behind, and leave a small gap where a form passes behind another. A few confident lines beat many hesitant ones, and the fewer the lines the more each must be right. Test the pose by drawing the centre line alone and the silhouette alone, and ask whether you could rotate the form in your head.",
+      "steps": [
+        "Block the form with the fewest planes that describe it",
+        "At every crossing, decide front and back and make a T-junction",
+        "Leave a gap where a far line meets a near form",
+        "Centre-line check and silhouette check",
+        "Remove marks until only the necessary ones remain"
+      ],
+      "code_recipe": "Order SVG paths by depth; clip each far contour where a nearer silhouette crosses it and add a 3-6 px gap.",
+      "prompt_terms": [
+        "clean confident line art",
+        "clear overlapping forms",
+        "minimal lines strong form"
+      ],
+      "checks": [
+        "Every crossing reads as one form in front of another",
+        "No scratchy duplicated contour lines",
+        "Centre line alone reads the pose"
+      ],
+      "common_errors": [
+        "Hairy restated lines in the final",
+        "Lines that touch without overlapping (tangents)",
+        "Planes drawn everywhere like scales"
+      ],
+      "tags": [
+        "overlap",
+        "line art",
+        "form",
+        "confident lines",
+        "tangents",
+        "تراكب",
+        "خط واثق",
+        "حجم",
+        "لاين آرت",
+        "تحبير نظيف"
       ],
       "review_status": "user_copy_read_paraphrased"
     }
