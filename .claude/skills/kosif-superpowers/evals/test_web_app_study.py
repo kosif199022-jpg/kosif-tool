@@ -56,8 +56,10 @@ class Guardrails(unittest.TestCase):
             busy = Path(tmp) / "busy"; busy.mkdir(); (busy / "x").write_text("x")
             with self.assertRaisesRegex(ValueError, "new or empty"):
                 W.run("https://example.com", str(busy), dry_run=True)
-        with self.assertRaisesRegex(ValueError, "outside any git checkout"):   # this very repository
-            W.run("https://example.com", str(SK / "tmp-study"), dry_run=True)
+        # this very repository; a packaged copy of the skill (zip, package_skill output) has no checkout to refuse
+        if W.inside_git(SK):
+            with self.assertRaisesRegex(ValueError, "outside any git checkout"):
+                W.run("https://example.com", str(SK / "tmp-study"), dry_run=True)
 
     def test_dry_run_plan_is_isolated_and_logged_out(self):
         with tempfile.TemporaryDirectory() as tmp:

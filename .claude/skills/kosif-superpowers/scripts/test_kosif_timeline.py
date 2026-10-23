@@ -197,6 +197,28 @@ class TimelineTests(unittest.TestCase):
             data=edit(data,"move","g1",{"start":.25+i*.01})
         self.assertEqual(len(data["history"]["past"]),10)
 
+    def test_demo_writes_only_relative_paths(self):
+        import sys
+        import kosif_timeline_demo
+        with tempfile.TemporaryDirectory() as d:
+            folder=Path(d)/"demo"
+            result=kosif_timeline_demo.create(folder)
+            self.assertTrue(result["verified"])
+            for name in ("project.json","receipt.json"):
+                text=(folder/name).read_text(encoding="utf-8")
+                self.assertNotIn(str(Path(d)),text,name)
+                self.assertNotIn(str(Path(d).resolve()),text,name)
+            doc=json.loads((folder/"project.json").read_text(encoding="utf-8"))
+            paths=[c["path"] for t in doc["tracks"] for c in t["clips"]]
+            self.assertTrue(paths and all(not Path(x).is_absolute() for x in paths),paths)
+            self.assertEqual(json.loads((folder/"receipt.json").read_text(encoding="utf-8"))["output"],"timeline.mp4")
+            # the CLI anchors relative clip paths at the project file's folder, whatever the cwd
+            script=Path(__file__).resolve().with_name("kosif_timeline.py")
+            r=subprocess.run([sys.executable,str(script),"check","--project",str(folder/"project.json")],
+                             capture_output=True,text=True,cwd=d,timeout=60)
+            self.assertEqual(r.returncode,0,r.stdout+r.stderr)
+            self.assertTrue(json.loads(r.stdout)["valid"])
+
 
 if __name__=="__main__":
     unittest.main(verbosity=2)

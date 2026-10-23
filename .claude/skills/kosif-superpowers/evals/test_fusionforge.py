@@ -1290,5 +1290,19 @@ class SchemaFileTests(unittest.TestCase):
         self.assertEqual(tuple(defs["node"]["properties"]["status"]["enum"]), ff.NODE_STATUSES)
 
 
+class DocstringTests(unittest.TestCase):
+    def test_docstring_lists_every_subcommand_with_an_example(self):
+        import argparse
+        import importlib.util
+        spec = importlib.util.spec_from_file_location("fusionforge_doc", SCRIPT)
+        ff = importlib.util.module_from_spec(spec)
+        spec.loader.exec_module(ff)
+        parser = ff.build_parser()
+        sub = next(a for a in parser._actions if isinstance(a, argparse._SubParsersAction))
+        doc = ff.__doc__
+        for name in sub.choices:
+            self.assertRegex(doc, r"scripts/fusionforge\.py " + re.escape(name) + r"\s", name)
+
+
 if __name__ == "__main__":
     unittest.main(verbosity=2)

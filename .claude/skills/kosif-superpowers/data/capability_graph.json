@@ -7053,6 +7053,12 @@
    "w": 1
   },
   {
+   "from": "script:scripts/test_kosif_timeline.py",
+   "to": "script:scripts/kosif_timeline_demo.py",
+   "rel": "imports",
+   "w": 1
+  },
+  {
    "from": "script:scripts/test_telegram_typography_atlas.py",
    "to": "script:scripts/telegram_typography_atlas.py",
    "rel": "imports",

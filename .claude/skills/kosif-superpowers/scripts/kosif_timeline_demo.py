@@ -2,6 +2,7 @@
 """Create original synthetic video+audio+image sources and render a KOSIF timeline.
 
 No personal media, no internet, no vendor application code. Directory must not exist.
+project.json and receipt.json keep paths relative to the demo folder (portable; no machine path leaks).
 """
 from __future__ import annotations
 
@@ -11,7 +12,7 @@ from pathlib import Path
 import subprocess
 
 from PIL import Image, ImageDraw
-from kosif_timeline import render, validate
+from kosif_timeline import render, resolve_relative, validate
 
 
 def create(directory):
@@ -48,20 +49,22 @@ def create(directory):
       "schema":"kosif.timeline.v1","width":480,"height":270,"fps":12,"duration":3,
       "background":"#182522","tracks":[
       {"id":"picture","kind":"video","layer":0,"clips":[
-        {"id":"shot1","path":str(source_a.resolve()),"start":0,"in":0,
+        {"id":"shot1","path":source_a.name,"start":0,"in":0,
          "duration":1.65,"fade_out":.3,"include_audio":True,"volume":.6},
-        {"id":"shot2","path":str(source_b.resolve()),"start":1.3,"in":0,
+        {"id":"shot2","path":source_b.name,"start":1.3,"in":0,
          "duration":1.7,"fade_in":.35}]},
       {"id":"graphics","kind":"image","layer":5,"clips":[
-        {"id":"badge","path":str(art.resolve()),"start":.4,
+        {"id":"badge","path":art.name,"start":.4,
          "duration":2.3,"x":20,"y":20,"width":130,"height":80,
          "fade_in":.2,"fade_out":.3}]},
       {"id":"music","kind":"audio","layer":0,"clips":[
-        {"id":"melody","path":str(music.resolve()),"start":.1,"in":0,
+        {"id":"melody","path":music.name,"start":.1,"in":0,
          "duration":2.7,"volume":.22,"fade_in":.2,"fade_out":.3}]}]}
-    validate(project)
+    anchored=resolve_relative(project,out.resolve())
+    validate(anchored)
     project_file.write_text(json.dumps(project,ensure_ascii=False,indent=2)+"\n",encoding="utf-8")
-    receipt=render(project,movie)
+    receipt=render(anchored,movie)
+    receipt["output"]=movie.name
     receipt_file=out/"receipt.json"
     receipt_file.write_text(json.dumps(receipt,ensure_ascii=False,indent=2)+"\n",encoding="utf-8")
     return {"demo_folder":str(out),"project":str(project_file),"movie":str(movie),
