@@ -1,6 +1,6 @@
 {
  "schema": "kosif.task-history-index.v1",
- "count": 1,
+ "count": 2,
  "tasks": [
   {
    "id": "20261023-task-history-memory",
@@ -9,6 +9,15 @@
    "mode": "نفّذ مباشرة",
    "status": "DONE_VERIFIED",
    "title": "Task history memory on GitHub"
+  },
+  {
+   "id": "20261023-saluting-photo-to-4-minute-ambient-video",
+   "date": "2026-10-23",
+   "kind": "video",
+   "mode": "نفّذ مباشرة",
+   "plan": "A",
+   "status": "DONE_VERIFIED",
+   "title": "Saluting photo to 4-minute ambient video"
   }
  ]
 }

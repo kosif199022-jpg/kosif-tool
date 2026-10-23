@@ -1,0 +1,98 @@
+{
+  "schema": "kosif.task-history.v1",
+  "id": "20261023-saluting-photo-to-4-minute-ambient-video",
+  "date": "2026-10-23",
+  "title": "Saluting photo to 4-minute ambient video",
+  "request": "استخدم كل مهاراتك. انا عايز تحول الصورة دي الى فيديو. الصورة زي ما هي مفيش تغيير اي حاجة، بس كأن السماء بتتحرك، كأن البحر بيتحرك، كأن في اضاءة كده خفيفة على الصورة بتتحرك، يعني امور زي كده. انا عايز المقطع الفيديو دوت مدته تكون 4 دقايق من غير تغيير اي حاجة الا مؤثرات بسيطة، عشان هدفي ان انا احط على برنامج مونتاج واضيف مع صوت، فكأنه يبان ان هو فيديو بس من غير اي حركة تشدد المشاهد.",
+  "kind": "video",
+  "mode": "نفّذ مباشرة",
+  "steps": [
+    {
+      "n": 1,
+      "what": "person mask + sky/water masks",
+      "tool": "ambient_loop.py",
+      "command": "python3 workflows/ambient-photo-loop/scripts/ambient_loop.py masks --image photo.png --config workflows/ambient-photo-loop/config.json --out out/ambient",
+      "params": {}
+    },
+    {
+      "n": 2,
+      "what": "four test stills and a diff",
+      "tool": "ambient_loop.py",
+      "command": "python3 workflows/ambient-photo-loop/scripts/ambient_loop.py test --config workflows/ambient-photo-loop/config.json --out out/ambient",
+      "params": {}
+    },
+    {
+      "n": 3,
+      "what": "render the 24 s loop and concat to 240 s",
+      "tool": "ambient_loop.py",
+      "command": "python3 workflows/ambient-photo-loop/scripts/ambient_loop.py render --config workflows/ambient-photo-loop/config.json --out out/ambient",
+      "params": {}
+    },
+    {
+      "n": 4,
+      "what": "probe and check the person region and loop seam",
+      "tool": "ambient_loop.py",
+      "command": "python3 workflows/ambient-photo-loop/scripts/ambient_loop.py verify --config workflows/ambient-photo-loop/config.json --out out/ambient",
+      "params": {}
+    }
+  ],
+  "outputs": [
+    {
+      "path": "project-files: video/saluting-man-ambient-4min.mp4 (108.7 MB, not committed)",
+      "kind": "video",
+      "deterministic": false,
+      "sha256": "6c5fbdb46bf4ca93cf95637449698274f7af868cc230ad45f4866f86f6122a2c",
+      "measured": {
+        "duration_s": 240,
+        "fps": 30,
+        "width": 1080,
+        "height": 1920,
+        "frames": 7200
+      }
+    }
+  ],
+  "reproduce": {
+    "how": "Run ambient_loop.py all with the same photo and config. The motion is deterministic (fixed seeds); the bytes may differ with another x264 or OpenCV build, and the person mask may differ slightly with another rembg model version.",
+    "prerequisites": [
+      "ffmpeg",
+      "pip install opencv-python-headless rembg onnxruntime numpy pillow",
+      "rembg downloads u2net_human_seg (~176 MB) on first use"
+    ],
+    "commands": [
+      "python3 workflows/ambient-photo-loop/scripts/ambient_loop.py all --image photo.png --config workflows/ambient-photo-loop/config.json --out out/ambient"
+    ]
+  },
+  "level": "L2",
+  "plan": "A",
+  "status": "DONE_VERIFIED",
+  "agent": "Claude Code cloud session (project thread)",
+  "tools": [
+    "workflows/ambient-photo-loop/scripts/ambient_loop.py",
+    "rembg u2net_human_seg",
+    "opencv 4",
+    "ffmpeg 6.1"
+  ],
+  "params": {
+    "size": "1080x1920",
+    "fps": 30,
+    "loop_seconds": 24,
+    "duration_seconds": 240,
+    "crf": 14,
+    "config": "workflows/ambient-photo-loop/config.json"
+  },
+  "inputs": [
+    {
+      "name": "saluting-man photo (941x1672 PNG, user upload, not committed)",
+      "path": "project-files: drawing/ (private)",
+      "kind": "image",
+      "sha256": "a60ed1f2bf1217abe61a12634d82798a46ab0ca6843a13edc0b510285ae54f90"
+    }
+  ],
+  "evidence": [
+    "workflows/ambient-photo-loop/TEST_REPORT.md"
+  ],
+  "lessons": [
+    "Crossfading two horizontal drifts (shift v*t and v*(t-T)) gives a seamless cloud loop with no visible ghosting at 0.5 px/s.",
+    "Copy the person from the source after all effects so lighting never touches the face."
+  ]
+}
