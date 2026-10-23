@@ -1,0 +1,105 @@
+{
+  "schema": "kosif.task-history.v1",
+  "id": "20261023-task-history-memory",
+  "date": "2026-10-23",
+  "title": "Task history memory on GitHub",
+  "request": "عايزك تضيف كمان ذاكرة جوه جيت هاب ... بعد ما يخلص المهمة ... يضيف تلقائيا في المين الاساسي جوه الهيستوري ايه المهمة اللي قام بيها وقام بيها ازاي ... عشان لو احتجت انه يكرر نفس المهمة ويوصل نفس النتائج اروح اقول له طب ايه المهام اللي انت عملتها واختار منها مهمة اقول له كررها",
+  "kind": "code",
+  "mode": "نفّذ مباشرة",
+  "steps": [
+    {
+      "n": 1,
+      "what": "write the history tool",
+      "manual": "wrote scripts/task_history.py (new, add, list, show, replay, compare, build, validate)"
+    },
+    {
+      "n": 2,
+      "what": "write its tests",
+      "command": "python3 -m unittest discover -s .claude/skills/kosif-superpowers/evals -p 'test_task_history.py' -v"
+    },
+    {
+      "n": 3,
+      "what": "add the protocol step",
+      "manual": "annex A35, a trigger-table row, phase 8 reply words and phase 9 item 10 in PROTOCOL.md, steps 8-9 in USIP_PASTE.md, item 10 of section 12 in USIP_PORTABLE.md"
+    },
+    {
+      "n": 4,
+      "what": "register the tool as TOOL-170 and rebuild the catalog",
+      "command": "python3 scripts/hub.py build && python3 scripts/micro_index.py build && python3 scripts/boot.py --static --write",
+      "cwd": ".claude/skills/kosif-superpowers"
+    },
+    {
+      "n": 5,
+      "what": "check the skill",
+      "command": "python3 scripts/check_skill.py --evals",
+      "cwd": ".claude/skills/kosif-superpowers"
+    },
+    {
+      "n": 6,
+      "what": "record this task",
+      "command": "python3 .claude/skills/kosif-superpowers/scripts/task_history.py add --from out/20261023-task-history/history-entry.json"
+    }
+  ],
+  "outputs": [
+    {
+      "path": ".claude/skills/kosif-superpowers/scripts/task_history.py",
+      "kind": "code",
+      "deterministic": true
+    },
+    {
+      "path": ".claude/skills/kosif-superpowers/evals/test_task_history.py",
+      "kind": "code",
+      "deterministic": true
+    },
+    {
+      "path": ".claude/skills/kosif-superpowers/references/protocol/A35-task-history.md",
+      "kind": "document",
+      "deterministic": true
+    }
+  ],
+  "reproduce": {
+    "how": "This is the task that created the history itself; repeating it means checking it still holds: run the tests and validate, then list the history. No hashes are recorded because git already tracks these files and they will keep changing.",
+    "prerequisites": [
+      "python 3.8+"
+    ],
+    "commands": [
+      "python3 -m unittest discover -s .claude/skills/kosif-superpowers/evals -p 'test_task_history.py' -v",
+      "python3 .claude/skills/kosif-superpowers/scripts/task_history.py validate --strict",
+      "python3 .claude/skills/kosif-superpowers/scripts/task_history.py list"
+    ]
+  },
+  "level": "L2",
+  "status": "DONE_VERIFIED",
+  "agent": "Claude Code cloud session (project thread)",
+  "tools": [
+    "python3 (stdlib)",
+    "task-history",
+    "check-skill",
+    "hub",
+    "micro-index"
+  ],
+  "params": {
+    "schema": "kosif.task-history.v1",
+    "power_id": "TOOL-170",
+    "annex": "A35"
+  },
+  "inputs": [
+    {
+      "name": "protocol core",
+      "path": ".claude/skills/kosif-superpowers/PROTOCOL.md",
+      "kind": "document"
+    },
+    {
+      "name": "tool registry",
+      "path": ".claude/skills/kosif-superpowers/data/tools.json",
+      "kind": "data"
+    }
+  ],
+  "evidence": [
+    ".claude/skills/kosif-superpowers/evals/test_task_history.py"
+  ],
+  "branch": "claude/project-thread-0ty7mf",
+  "lessons": [
+    "One file per task keeps parallel sessions free of merge conflicts; the index is rebuilt, never hand-merged."
+  ]
+}

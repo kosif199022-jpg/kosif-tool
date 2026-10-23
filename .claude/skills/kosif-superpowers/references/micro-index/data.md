@@ -131,111 +131,111 @@ chapter: [charts-data-infographic](../powers/charts-data-infographic.md) · card
 
 | ID | | القدرة / power | SP | يحتاج / requires |
 |---|---|---|---|---|
-| DATA-55 | ✅ | الخطوط المصغرة · Sparklines & micro-charts | SP-0228 Chart choice by analytical question | python3 |
-| DATA-92 | ✅ | لوحات ألوان الرسوم · Chart palettes (categorical, sequential, semantic) | SP-0228 Chart choice by analytical question | npm:react |
-| DATA-105 | 🟢 | أيقونة مخطط أعمدة · Mini bar-chart hero icon | SP-0228 Chart choice by analytical question | — |
-| DATA-36 | 🟢 | أعمدة أفقية مرتبة مع تمييز واحد · Ranked horizontal bars with one highlight | SP-0228 Chart choice by analytical question | — |
-| DATA-38 | 🟢 | أعمدة مجمّعة أو مكدّسة مع خط · Grouped / stacked columns + line | SP-0228 Chart choice by analytical question | — |
-| DATA-39 | 🟢 | مخطط الشلال (الجسر) · Waterfall / bridge chart | SP-0228 Chart choice by analytical question | key:unspecified |
-| DATA-68 | 🟢 | دونات بخدعة المحيط 100 · Donut via r = 15.915 dasharray | SP-0228 Chart choice by analytical question | — |
-| DATA-35 | 📦 | نمو الأعمدة المتدرج · Staggered bar growth | SP-0228 Chart choice by analytical question | npm:gsap, npm:remotion |
-| DATA-37 | 📦 | سباق الأعمدة · Bar-chart race | SP-0228 Chart choice by analytical question | chromium, npm:hyperframes |
-| DATA-52 | 📦 | منحنى ناعم في Remotion · Remotion smooth cubic line | SP-0228 Chart choice by analytical question | npm:remotion |
-| DATA-53 | 📦 | مؤشر قراءة متحرك على المخطط · Chart scrub readout (playhead) | SP-0228 Chart choice by analytical question | npm:hyperframes |
-| DATA-56 | 📦 | صعود ثم انهيار · Rise-then-crash line metaphor | SP-0228 Chart choice by analytical question | npm:hyperframes |
-| DATA-59 | 📦 | تحوّل المخططات · Chart morph (bars → donut / line / scatter) | SP-0228 Chart choice by analytical question | node |
-| DATA-88 | 📦 | سجل HyperFrames للبيانات · HyperFrames data registry (components & blocks) | SP-0228 Chart choice by analytical question | npm:gsap, npm:hyperframes |
-| DATA-96 | 📦 | مكتبات الرسوم كإطارات فيديو · Chart libraries as video frames | SP-0228 Chart choice by analytical question | chromium, npm:d3 |
-| DATA-97 | 🔑 | مشاهد بسمة للبيانات وقوالب أفلامها · Basma chart scenes & data-film templates | SP-0228 Chart choice by analytical question | node, key:unspecified |
-| DATA-42 | 👁 | أعمدة بفترات ثقة · Bars with interval whiskers | SP-0228 Chart choice by analytical question | — |
-| DATA-45 | 👁 | سباق المقارنة والسرعة · Speed / latency comparison race | SP-0228 Chart choice by analytical question | — |
-| DATA-60 | 👁 | رسم بياني بخط اليد · Hand-drawn axis plot | SP-0228 Chart choice by analytical question | — |
-| DATA-61 | 👁 | مروحة مونت كارلو وعدم اليقين · Monte Carlo fan & uncertainty | SP-0228 Chart choice by analytical question | — |
-| DATA-62 | 👁 | هيستوغرام نقاط يصير منحنى جرس · Dot histogram resolving to a bell curve | SP-0228 Chart choice by analytical question | — |
-| DATA-64 | 👁 | راكب على خط المخطط · Glyph riding the chart path | SP-0228 Chart choice by analytical question | — |
-| DATA-66 | 👁 | مبعثر الحد الفعّال · Scatter with frontier curve | SP-0228 Chart choice by analytical question | — |
-| DATA-70 | 👁 | دونات متوهجة مع قائمة · Glowing donut with legend | SP-0228 Chart choice by analytical question | — |
-| DATA-01 | 📄 | اختيار المخطط حسب السؤال · Chart choice by analytical question | SP-0228 Chart choice by analytical question | — |
-| DATA-02 | 📄 | المسار أم الميل · Line path vs slope net-change | SP-0228 Chart choice by analytical question | — |
-| DATA-03 | 📄 | اختيار مخطط التوزيع · Distribution chart choice | SP-0228 Chart choice by analytical question | — |
-| DATA-04 | 📄 | رسم واحد لخلاصة واحدة وقوس القصة · One insight per chart & data story arc | SP-0228 Chart choice by analytical question | — |
-| DATA-07 | 📄 | أشكال ممنوعة أو خطرة · Forbidden and risky chart forms | SP-0228 Chart choice by analytical question | — |
-| DATA-08 | 📄 | قواعد الرسم الدائري · Pie rules | SP-0228 Chart choice by analytical question | — |
-| DATA-11 | 📄 | التسمية المباشرة بدل وسيلة الإيضاح · Direct labels over legends | SP-0228 Chart choice by analytical question | — |
-| DATA-16 | 📄 | اتجاه المحاور في العربية · RTL chart axis conventions | SP-0228 Chart choice by analytical question | — |
-| DATA-17 | 📄 | أحجام نصوص الرسوم · Chart type sizes | SP-0228 Chart choice by analytical question | — |
-| DATA-89 | 📄 | مخططات مشاهد البيانات في HyperFrames · HyperFrames data blueprints & categories | SP-0228 Chart choice by analytical question | npm:hyperframes |
-| DATA-91 | 📄 | ستايل البيانات المتحركة الداكن · Data-in-Motion dark style | SP-0228 Chart choice by analytical question | — |
-| DATA-48 | 💡 | مخطط أعمدة دائري / شعاعي · Radial / clockwise bar chart | SP-0228 Chart choice by analytical question | — |
-| DATA-20 | ✅ | قالب stat-counter: رقم مع حلقة · stat-counter template (count + drawn ring) | SP-0229 Conic-gradient progress ring | python3, fonts:arabic |
-| DATA-29 | ✅ | الرقم المنطوق يصبح حلقة ساعة · Spoken number → clock-ring motif | SP-0229 Conic-gradient progress ring | — |
-| DATA-94 | ✅ | لوحة التوأم الإنشائي · Structural-twin dashboard & utilisation ramp | SP-0229 Conic-gradient progress ring | python3 |
-| DATA-32 | 🟢 | أرقام KPI بتدرج أو نيون · Gradient-clipped & neon KPI numerals | SP-0229 Conic-gradient progress ring | — |
-| DATA-43 | 🟢 | مقاييس وأشرطة تقدم بلون الحكم · Verdict-coloured meters & RTL-safe progress | SP-0229 Conic-gradient progress ring | — |
-| DATA-67 | 🟢 | حلقة التقدم المخروطية · Conic-gradient progress ring | SP-0229 Conic-gradient progress ring | — |
-| DATA-102 | 📦 | الشبكات والمحاور والأقواس · Networks, hubs & brackets | SP-0229 Conic-gradient progress ring | npm:hyperframes |
-| DATA-71 | 📦 | حلقة قياس مع عدّاد متزامن · Arc gauge with synced counter | SP-0229 Conic-gradient progress ring | npm:hyperframes |
-| DATA-104 | 👁 | تقاطع فن والأشرطة الطيفية · Venn overlap & spectrum indicator | SP-0229 Conic-gradient progress ring | — |
-| DATA-72 | 👁 | مقاييس HUD الدائرية · HUD radial gauges | SP-0229 Conic-gradient progress ring | — |
-| DATA-73 | 👁 | مقياس السائل والمنسوب · Liquid-fill & level gauges | SP-0229 Conic-gradient progress ring | — |
-| DATA-75 | 👁 | رادار المسح · Radar sweep with pings | SP-0229 Conic-gradient progress ring | — |
-| DATA-76 | 👁 | نصف دائرة البرلمان وحلقة النقاط · Parliament hemicycle & dot ring | SP-0229 Conic-gradient progress ring | — |
-| DATA-87 | 👁 | افتتاحية الرقم البطل · Hero-number opener card | SP-0229 Conic-gradient progress ring | — |
-| DATA-12 | 📄 | الترتيب حسب القيمة ونسبة الأبعاد · Sort by value & aspect by task | SP-0229 Conic-gradient progress ring | — |
-| DATA-69 | 📄 | مسح الدائرة بزاوية واحدة · Pie sweep (one eased angle) | SP-0229 Conic-gradient progress ring | — |
-| DATA-85 | 📄 | تشريح بطاقة المؤشر · KPI card anatomy | SP-0229 Conic-gradient progress ring | — |
-| DATA-99 | 📄 | مشاهد السرد بالتمرير كبيانات · Scrollytelling scenes as data | SP-0229 Conic-gradient progress ring | — |
-| DATA-51 | 🟢 | خط يرسمه رأس قلم يحمل العدّاد · Pen-tip counter line | SP-0230 Cost-stack accumulation counter | — |
-| DATA-81 | 🟢 | خريطة المخاطر 3×3 بأربع درجات · 3×3 risk heatmap with 4-step scale | SP-0230 Cost-stack accumulation counter | — |
-| DATA-74 | 📦 | تعبئة النجوم والتقييم · Star-rating fill | SP-0230 Cost-stack accumulation counter | npm:hyperframes |
-| DATA-22 | 👁 | العدّاد المتخلخل والوميض · Scramble / flicker counter | SP-0230 Cost-stack accumulation counter | — |
-| DATA-26 | 👁 | عدّاد يتلوّن مع تصاعد المشكلة · Threshold-colour escalation counter | SP-0230 Cost-stack accumulation counter | — |
-| DATA-27 | 👁 | عدّاد التكلفة التراكمي · Cost-stack accumulation counter | SP-0230 Cost-stack accumulation counter | — |
-| DATA-28 | 👁 | عدّادات HUD والسنوات والمسافة · HUD, year & distance counters | SP-0230 Cost-stack accumulation counter | — |
-| DATA-31 | 👁 | حاسبة حيّة بشريط تمرير · Slider-driven live calculator | SP-0230 Cost-stack accumulation counter | — |
-| DATA-33 | 👁 | عدّاد حي فوق اللقطات · Live stat over footage | SP-0230 Cost-stack accumulation counter | — |
-| DATA-57 | 👁 | الشموع وشريط الأسعار · Candlesticks & price ticker | SP-0230 Cost-stack accumulation counter | — |
-| DATA-77 | 👁 | مخطط الوافل: 100 نقطة · Waffle — 100 dots with synced percent | SP-0230 Cost-stack accumulation counter | — |
-| DATA-15 | 📄 | قيمة واحدة تقود الشكل والرقم · One-scalar rule (no bar springs) | SP-0230 Cost-stack accumulation counter | — |
-| DATA-50 | ✅ | خط يُرسم مع مساحة ونقاط تقفز · Line draw-on with area fade & dot pops | SP-0231 SKCharts line/area with crosshair | — |
-| DATA-54 | 🟢 | خط/مساحة مع مؤشر تقاطع · SKCharts line/area with crosshair | SP-0231 SKCharts line/area with crosshair | — |
-| DATA-30 | 👁 | شطب القيمة واستبدالها · Strike-and-replace value | SP-0231 SKCharts line/area with crosshair | — |
-| DATA-41 | 👁 | زووم لوغاريتمي داخل شريحة · Log-domain zoom into a slice | SP-0231 SKCharts line/area with crosshair | — |
-| DATA-63 | 👁 | رسم الدوال والمشتقة حيًّا · Live function & derivative tracer | SP-0231 SKCharts line/area with crosshair | python3 |
-| DATA-05 | 📄 | صفر حقيقي ومقياس موحد · True-zero baseline & shared scale | SP-0231 SKCharts line/area with crosshair | — |
-| DATA-06 | 📄 | أمانة المقاييس: المساحة واللوغاريتم والتطبيع · Scale honesty: area, log, normalization | SP-0231 SKCharts line/area with crosshair | — |
-| DATA-09 | 📄 | المفقود ليس صفرًا · Missing, zero and censored are different | SP-0231 SKCharts line/area with crosshair | — |
-| DATA-10 | 📄 | لا أرقام مخترعة: مصدر أو «توضيحي» · No invented figures: source line or 'illustrative' | SP-0231 SKCharts line/area with crosshair | — |
-| DATA-79 | 📄 | مقياس إلى شيء مألوف · Scale to a familiar object | SP-0231 SKCharts line/area with crosshair | — |
-| DATA-19 | ✅ | العدّاد التصاعدي بأرقام ثابتة العرض · Tabular count-up counter | SP-0232 Number pop-in with blur & lift | node, chromium, fonts:arabic |
-| DATA-83 | ✅ | مخطط بنفورد للرقم الأول · Benford first-digit chart | SP-0232 Number pop-in with blur & lift | — |
-| DATA-25 | 🟢 | تنسيق الأرقام المختصر والمحلي · Compact & locale number formatting | SP-0232 Number pop-in with blur & lift | — |
-| DATA-21 | 📦 | عداد الأسطوانة (أودوميتر) · Odometer digit roll | SP-0232 Number pop-in with blur & lift | npm:hyperframes |
-| DATA-24 | 📦 | ظهور الرقم بضبابية ورفع · Number pop-in with blur & lift | SP-0232 Number pop-in with blur & lift | npm:hyperframes |
-| DATA-40 | 👁 | شريط النسب المقسّم (كبسولة) · Proportional split bar (segmented pill) | SP-0232 Number pop-in with blur & lift | — |
-| DATA-44 | 👁 | أشرطة مقسّمة إلى خانات · Segmented / dotted meters | SP-0232 Number pop-in with blur & lift | — |
-| DATA-86 | 👁 | ثلاثية بطاقات الأرقام والإثبات · Stat-tile trio & proof cards | SP-0232 Number pop-in with blur & lift | — |
-| DATA-13 | 📄 | البيانات المتحركة لها وزن واستمرارية · Data-in-motion weight & continuity | SP-0232 Number pop-in with blur & lift | — |
-| DATA-58 | 🟢 | طبقة التعليقات والإبراز · Annotation & highlight layer | SP-0233 Highlight pulse & focus hierarchy | — |
-| DATA-23 | 📦 | عدّاد يكبر مع قيمته ونبضة الهبوط · Count-up with growing scale & landing punch | SP-0233 Highlight pulse & focus hierarchy | npm:hyperframes |
-| DATA-34 | 👁 | كومة أرقام الضرر · MMO damage-number stack | SP-0233 Highlight pulse & focus hierarchy | — |
-| DATA-78 | 👁 | مصفوفة الوحدات: نقطة لكل عنصر · Unit dot matrix (one dot per item) | SP-0233 Highlight pulse & focus hierarchy | — |
-| DATA-103 | 📄 | أدوات التحليل الخلفية · Analysis back-office skills | SP-0233 Highlight pulse & focus hierarchy | python3 |
-| DATA-14 | 📄 | ربط البيانات بقنوات الحركة · Mapping data to motion channels | SP-0233 Highlight pulse & focus hierarchy | — |
-| DATA-18 | 📄 | نبضة التمييز وهرمية التركيز · Highlight pulse & focus hierarchy | SP-0233 Highlight pulse & focus hierarchy | — |
-| DATA-80 | 🟢 | خريطة حرارية تقويمية · Calendar heatmap grid | SP-0234 Search-grounded infographic generation | — |
-| DATA-98 | 🔑 | إنفوجرافيك مولَّد مستند إلى بحث · Search-grounded infographic generation | SP-0234 Search-grounded infographic generation | key:unspecified |
-| DATA-90 | 👁 | ستايل الإنفوجرافيك بأسلوب أبل · Keynote infographic style | SP-0234 Search-grounded infographic generation | python3 |
-| DATA-100 | 📄 | تخطيطات إنفوجرافيك العمليات · Process infographic layouts | SP-0234 Search-grounded infographic generation | — |
-| DATA-49 | 📄 | المضاعفات الصغيرة · Small multiples | SP-0234 Search-grounded infographic generation | — |
-| DATA-95 | ✅ | ملف إكسل برسوم أصلية · Excel workbook with native charts | SP-0235 Progressive table & status pills | pip:office |
-| DATA-82 | 🟢 | جدول حرارة الصفوف × الأعمدة · Matrix intensity table | SP-0235 Progressive table & status pills | — |
-| DATA-101 | 👁 | الخطوط الزمنية المتحركة · Animated timelines & Gantt traces | SP-0235 Progressive table & status pills | key:unspecified |
-| DATA-47 | 👁 | ترتيب يتغير والقوائم المرتبة · Rank swap & ranked lists | SP-0235 Progressive table & status pills | — |
-| DATA-84 | 👁 | جدول يتكشف صفًّا صفًّا · Progressive table & status pills | SP-0235 Progressive table & status pills | — |
-| DATA-46 | 👁 | لوحة احتمالات الكلمة التالية · Next-token probability panel | SP-0236 Ridge-line wave field | — |
-| DATA-65 | 👁 | حقل خطوط الجبال · Ridge-line wave field | SP-0236 Ridge-line wave field | — |
-| DATA-93 | 📄 | رموز بطاقات البيانات التقنية · Tech-doc data-card tokens | SP-0236 Ridge-line wave field | — |
+| DATA-55 | ✅ | الخطوط المصغرة · Sparklines & micro-charts | SP-0229 Chart choice by analytical question | python3 |
+| DATA-92 | ✅ | لوحات ألوان الرسوم · Chart palettes (categorical, sequential, semantic) | SP-0229 Chart choice by analytical question | npm:react |
+| DATA-105 | 🟢 | أيقونة مخطط أعمدة · Mini bar-chart hero icon | SP-0229 Chart choice by analytical question | — |
+| DATA-36 | 🟢 | أعمدة أفقية مرتبة مع تمييز واحد · Ranked horizontal bars with one highlight | SP-0229 Chart choice by analytical question | — |
+| DATA-38 | 🟢 | أعمدة مجمّعة أو مكدّسة مع خط · Grouped / stacked columns + line | SP-0229 Chart choice by analytical question | — |
+| DATA-39 | 🟢 | مخطط الشلال (الجسر) · Waterfall / bridge chart | SP-0229 Chart choice by analytical question | key:unspecified |
+| DATA-68 | 🟢 | دونات بخدعة المحيط 100 · Donut via r = 15.915 dasharray | SP-0229 Chart choice by analytical question | — |
+| DATA-35 | 📦 | نمو الأعمدة المتدرج · Staggered bar growth | SP-0229 Chart choice by analytical question | npm:gsap, npm:remotion |
+| DATA-37 | 📦 | سباق الأعمدة · Bar-chart race | SP-0229 Chart choice by analytical question | chromium, npm:hyperframes |
+| DATA-52 | 📦 | منحنى ناعم في Remotion · Remotion smooth cubic line | SP-0229 Chart choice by analytical question | npm:remotion |
+| DATA-53 | 📦 | مؤشر قراءة متحرك على المخطط · Chart scrub readout (playhead) | SP-0229 Chart choice by analytical question | npm:hyperframes |
+| DATA-56 | 📦 | صعود ثم انهيار · Rise-then-crash line metaphor | SP-0229 Chart choice by analytical question | npm:hyperframes |
+| DATA-59 | 📦 | تحوّل المخططات · Chart morph (bars → donut / line / scatter) | SP-0229 Chart choice by analytical question | node |
+| DATA-88 | 📦 | سجل HyperFrames للبيانات · HyperFrames data registry (components & blocks) | SP-0229 Chart choice by analytical question | npm:gsap, npm:hyperframes |
+| DATA-96 | 📦 | مكتبات الرسوم كإطارات فيديو · Chart libraries as video frames | SP-0229 Chart choice by analytical question | chromium, npm:d3 |
+| DATA-97 | 🔑 | مشاهد بسمة للبيانات وقوالب أفلامها · Basma chart scenes & data-film templates | SP-0229 Chart choice by analytical question | node, key:unspecified |
+| DATA-42 | 👁 | أعمدة بفترات ثقة · Bars with interval whiskers | SP-0229 Chart choice by analytical question | — |
+| DATA-45 | 👁 | سباق المقارنة والسرعة · Speed / latency comparison race | SP-0229 Chart choice by analytical question | — |
+| DATA-60 | 👁 | رسم بياني بخط اليد · Hand-drawn axis plot | SP-0229 Chart choice by analytical question | — |
+| DATA-61 | 👁 | مروحة مونت كارلو وعدم اليقين · Monte Carlo fan & uncertainty | SP-0229 Chart choice by analytical question | — |
+| DATA-62 | 👁 | هيستوغرام نقاط يصير منحنى جرس · Dot histogram resolving to a bell curve | SP-0229 Chart choice by analytical question | — |
+| DATA-64 | 👁 | راكب على خط المخطط · Glyph riding the chart path | SP-0229 Chart choice by analytical question | — |
+| DATA-66 | 👁 | مبعثر الحد الفعّال · Scatter with frontier curve | SP-0229 Chart choice by analytical question | — |
+| DATA-70 | 👁 | دونات متوهجة مع قائمة · Glowing donut with legend | SP-0229 Chart choice by analytical question | — |
+| DATA-01 | 📄 | اختيار المخطط حسب السؤال · Chart choice by analytical question | SP-0229 Chart choice by analytical question | — |
+| DATA-02 | 📄 | المسار أم الميل · Line path vs slope net-change | SP-0229 Chart choice by analytical question | — |
+| DATA-03 | 📄 | اختيار مخطط التوزيع · Distribution chart choice | SP-0229 Chart choice by analytical question | — |
+| DATA-04 | 📄 | رسم واحد لخلاصة واحدة وقوس القصة · One insight per chart & data story arc | SP-0229 Chart choice by analytical question | — |
+| DATA-07 | 📄 | أشكال ممنوعة أو خطرة · Forbidden and risky chart forms | SP-0229 Chart choice by analytical question | — |
+| DATA-08 | 📄 | قواعد الرسم الدائري · Pie rules | SP-0229 Chart choice by analytical question | — |
+| DATA-11 | 📄 | التسمية المباشرة بدل وسيلة الإيضاح · Direct labels over legends | SP-0229 Chart choice by analytical question | — |
+| DATA-16 | 📄 | اتجاه المحاور في العربية · RTL chart axis conventions | SP-0229 Chart choice by analytical question | — |
+| DATA-17 | 📄 | أحجام نصوص الرسوم · Chart type sizes | SP-0229 Chart choice by analytical question | — |
+| DATA-89 | 📄 | مخططات مشاهد البيانات في HyperFrames · HyperFrames data blueprints & categories | SP-0229 Chart choice by analytical question | npm:hyperframes |
+| DATA-91 | 📄 | ستايل البيانات المتحركة الداكن · Data-in-Motion dark style | SP-0229 Chart choice by analytical question | — |
+| DATA-48 | 💡 | مخطط أعمدة دائري / شعاعي · Radial / clockwise bar chart | SP-0229 Chart choice by analytical question | — |
+| DATA-20 | ✅ | قالب stat-counter: رقم مع حلقة · stat-counter template (count + drawn ring) | SP-0230 Conic-gradient progress ring | python3, fonts:arabic |
+| DATA-29 | ✅ | الرقم المنطوق يصبح حلقة ساعة · Spoken number → clock-ring motif | SP-0230 Conic-gradient progress ring | — |
+| DATA-94 | ✅ | لوحة التوأم الإنشائي · Structural-twin dashboard & utilisation ramp | SP-0230 Conic-gradient progress ring | python3 |
+| DATA-32 | 🟢 | أرقام KPI بتدرج أو نيون · Gradient-clipped & neon KPI numerals | SP-0230 Conic-gradient progress ring | — |
+| DATA-43 | 🟢 | مقاييس وأشرطة تقدم بلون الحكم · Verdict-coloured meters & RTL-safe progress | SP-0230 Conic-gradient progress ring | — |
+| DATA-67 | 🟢 | حلقة التقدم المخروطية · Conic-gradient progress ring | SP-0230 Conic-gradient progress ring | — |
+| DATA-102 | 📦 | الشبكات والمحاور والأقواس · Networks, hubs & brackets | SP-0230 Conic-gradient progress ring | npm:hyperframes |
+| DATA-71 | 📦 | حلقة قياس مع عدّاد متزامن · Arc gauge with synced counter | SP-0230 Conic-gradient progress ring | npm:hyperframes |
+| DATA-104 | 👁 | تقاطع فن والأشرطة الطيفية · Venn overlap & spectrum indicator | SP-0230 Conic-gradient progress ring | — |
+| DATA-72 | 👁 | مقاييس HUD الدائرية · HUD radial gauges | SP-0230 Conic-gradient progress ring | — |
+| DATA-73 | 👁 | مقياس السائل والمنسوب · Liquid-fill & level gauges | SP-0230 Conic-gradient progress ring | — |
+| DATA-75 | 👁 | رادار المسح · Radar sweep with pings | SP-0230 Conic-gradient progress ring | — |
+| DATA-76 | 👁 | نصف دائرة البرلمان وحلقة النقاط · Parliament hemicycle & dot ring | SP-0230 Conic-gradient progress ring | — |
+| DATA-87 | 👁 | افتتاحية الرقم البطل · Hero-number opener card | SP-0230 Conic-gradient progress ring | — |
+| DATA-12 | 📄 | الترتيب حسب القيمة ونسبة الأبعاد · Sort by value & aspect by task | SP-0230 Conic-gradient progress ring | — |
+| DATA-69 | 📄 | مسح الدائرة بزاوية واحدة · Pie sweep (one eased angle) | SP-0230 Conic-gradient progress ring | — |
+| DATA-85 | 📄 | تشريح بطاقة المؤشر · KPI card anatomy | SP-0230 Conic-gradient progress ring | — |
+| DATA-99 | 📄 | مشاهد السرد بالتمرير كبيانات · Scrollytelling scenes as data | SP-0230 Conic-gradient progress ring | — |
+| DATA-51 | 🟢 | خط يرسمه رأس قلم يحمل العدّاد · Pen-tip counter line | SP-0231 Cost-stack accumulation counter | — |
+| DATA-81 | 🟢 | خريطة المخاطر 3×3 بأربع درجات · 3×3 risk heatmap with 4-step scale | SP-0231 Cost-stack accumulation counter | — |
+| DATA-74 | 📦 | تعبئة النجوم والتقييم · Star-rating fill | SP-0231 Cost-stack accumulation counter | npm:hyperframes |
+| DATA-22 | 👁 | العدّاد المتخلخل والوميض · Scramble / flicker counter | SP-0231 Cost-stack accumulation counter | — |
+| DATA-26 | 👁 | عدّاد يتلوّن مع تصاعد المشكلة · Threshold-colour escalation counter | SP-0231 Cost-stack accumulation counter | — |
+| DATA-27 | 👁 | عدّاد التكلفة التراكمي · Cost-stack accumulation counter | SP-0231 Cost-stack accumulation counter | — |
+| DATA-28 | 👁 | عدّادات HUD والسنوات والمسافة · HUD, year & distance counters | SP-0231 Cost-stack accumulation counter | — |
+| DATA-31 | 👁 | حاسبة حيّة بشريط تمرير · Slider-driven live calculator | SP-0231 Cost-stack accumulation counter | — |
+| DATA-33 | 👁 | عدّاد حي فوق اللقطات · Live stat over footage | SP-0231 Cost-stack accumulation counter | — |
+| DATA-57 | 👁 | الشموع وشريط الأسعار · Candlesticks & price ticker | SP-0231 Cost-stack accumulation counter | — |
+| DATA-77 | 👁 | مخطط الوافل: 100 نقطة · Waffle — 100 dots with synced percent | SP-0231 Cost-stack accumulation counter | — |
+| DATA-15 | 📄 | قيمة واحدة تقود الشكل والرقم · One-scalar rule (no bar springs) | SP-0231 Cost-stack accumulation counter | — |
+| DATA-50 | ✅ | خط يُرسم مع مساحة ونقاط تقفز · Line draw-on with area fade & dot pops | SP-0232 SKCharts line/area with crosshair | — |
+| DATA-54 | 🟢 | خط/مساحة مع مؤشر تقاطع · SKCharts line/area with crosshair | SP-0232 SKCharts line/area with crosshair | — |
+| DATA-30 | 👁 | شطب القيمة واستبدالها · Strike-and-replace value | SP-0232 SKCharts line/area with crosshair | — |
+| DATA-41 | 👁 | زووم لوغاريتمي داخل شريحة · Log-domain zoom into a slice | SP-0232 SKCharts line/area with crosshair | — |
+| DATA-63 | 👁 | رسم الدوال والمشتقة حيًّا · Live function & derivative tracer | SP-0232 SKCharts line/area with crosshair | python3 |
+| DATA-05 | 📄 | صفر حقيقي ومقياس موحد · True-zero baseline & shared scale | SP-0232 SKCharts line/area with crosshair | — |
+| DATA-06 | 📄 | أمانة المقاييس: المساحة واللوغاريتم والتطبيع · Scale honesty: area, log, normalization | SP-0232 SKCharts line/area with crosshair | — |
+| DATA-09 | 📄 | المفقود ليس صفرًا · Missing, zero and censored are different | SP-0232 SKCharts line/area with crosshair | — |
+| DATA-10 | 📄 | لا أرقام مخترعة: مصدر أو «توضيحي» · No invented figures: source line or 'illustrative' | SP-0232 SKCharts line/area with crosshair | — |
+| DATA-79 | 📄 | مقياس إلى شيء مألوف · Scale to a familiar object | SP-0232 SKCharts line/area with crosshair | — |
+| DATA-19 | ✅ | العدّاد التصاعدي بأرقام ثابتة العرض · Tabular count-up counter | SP-0233 Number pop-in with blur & lift | node, chromium, fonts:arabic |
+| DATA-83 | ✅ | مخطط بنفورد للرقم الأول · Benford first-digit chart | SP-0233 Number pop-in with blur & lift | — |
+| DATA-25 | 🟢 | تنسيق الأرقام المختصر والمحلي · Compact & locale number formatting | SP-0233 Number pop-in with blur & lift | — |
+| DATA-21 | 📦 | عداد الأسطوانة (أودوميتر) · Odometer digit roll | SP-0233 Number pop-in with blur & lift | npm:hyperframes |
+| DATA-24 | 📦 | ظهور الرقم بضبابية ورفع · Number pop-in with blur & lift | SP-0233 Number pop-in with blur & lift | npm:hyperframes |
+| DATA-40 | 👁 | شريط النسب المقسّم (كبسولة) · Proportional split bar (segmented pill) | SP-0233 Number pop-in with blur & lift | — |
+| DATA-44 | 👁 | أشرطة مقسّمة إلى خانات · Segmented / dotted meters | SP-0233 Number pop-in with blur & lift | — |
+| DATA-86 | 👁 | ثلاثية بطاقات الأرقام والإثبات · Stat-tile trio & proof cards | SP-0233 Number pop-in with blur & lift | — |
+| DATA-13 | 📄 | البيانات المتحركة لها وزن واستمرارية · Data-in-motion weight & continuity | SP-0233 Number pop-in with blur & lift | — |
+| DATA-58 | 🟢 | طبقة التعليقات والإبراز · Annotation & highlight layer | SP-0234 Highlight pulse & focus hierarchy | — |
+| DATA-23 | 📦 | عدّاد يكبر مع قيمته ونبضة الهبوط · Count-up with growing scale & landing punch | SP-0234 Highlight pulse & focus hierarchy | npm:hyperframes |
+| DATA-34 | 👁 | كومة أرقام الضرر · MMO damage-number stack | SP-0234 Highlight pulse & focus hierarchy | — |
+| DATA-78 | 👁 | مصفوفة الوحدات: نقطة لكل عنصر · Unit dot matrix (one dot per item) | SP-0234 Highlight pulse & focus hierarchy | — |
+| DATA-103 | 📄 | أدوات التحليل الخلفية · Analysis back-office skills | SP-0234 Highlight pulse & focus hierarchy | python3 |
+| DATA-14 | 📄 | ربط البيانات بقنوات الحركة · Mapping data to motion channels | SP-0234 Highlight pulse & focus hierarchy | — |
+| DATA-18 | 📄 | نبضة التمييز وهرمية التركيز · Highlight pulse & focus hierarchy | SP-0234 Highlight pulse & focus hierarchy | — |
+| DATA-80 | 🟢 | خريطة حرارية تقويمية · Calendar heatmap grid | SP-0235 Search-grounded infographic generation | — |
+| DATA-98 | 🔑 | إنفوجرافيك مولَّد مستند إلى بحث · Search-grounded infographic generation | SP-0235 Search-grounded infographic generation | key:unspecified |
+| DATA-90 | 👁 | ستايل الإنفوجرافيك بأسلوب أبل · Keynote infographic style | SP-0235 Search-grounded infographic generation | python3 |
+| DATA-100 | 📄 | تخطيطات إنفوجرافيك العمليات · Process infographic layouts | SP-0235 Search-grounded infographic generation | — |
+| DATA-49 | 📄 | المضاعفات الصغيرة · Small multiples | SP-0235 Search-grounded infographic generation | — |
+| DATA-95 | ✅ | ملف إكسل برسوم أصلية · Excel workbook with native charts | SP-0236 Progressive table & status pills | pip:office |
+| DATA-82 | 🟢 | جدول حرارة الصفوف × الأعمدة · Matrix intensity table | SP-0236 Progressive table & status pills | — |
+| DATA-101 | 👁 | الخطوط الزمنية المتحركة · Animated timelines & Gantt traces | SP-0236 Progressive table & status pills | key:unspecified |
+| DATA-47 | 👁 | ترتيب يتغير والقوائم المرتبة · Rank swap & ranked lists | SP-0236 Progressive table & status pills | — |
+| DATA-84 | 👁 | جدول يتكشف صفًّا صفًّا · Progressive table & status pills | SP-0236 Progressive table & status pills | — |
+| DATA-46 | 👁 | لوحة احتمالات الكلمة التالية · Next-token probability panel | SP-0237 Ridge-line wave field | — |
+| DATA-65 | 👁 | حقل خطوط الجبال · Ridge-line wave field | SP-0237 Ridge-line wave field | — |
+| DATA-93 | 📄 | رموز بطاقات البيانات التقنية · Tech-doc data-card tokens | SP-0237 Ridge-line wave field | — |
 
 ## maps-geo (motion)
 
@@ -243,65 +243,65 @@ chapter: [maps-geo](../powers/maps-geo.md) · card: `usip-library/cards/data/map
 
 | ID | | القدرة / power | SP | يحتاج / requires |
 |---|---|---|---|---|
-| MAP-45 | ✅ | خريطة المملكة التخطيطية بالمناطق · Schematic Saudi Arabia map — 13 regions, drill-down | SP-0316 Map or not | node |
-| MAP-57 | ✅ | عناصر خرائط أرشيفية · Archival map-fragment collage props | SP-0316 Map or not | node |
-| MAP-46 | 🟢 | تدرّج الخريطة الأزرق · Sequential blue map heat ramp | SP-0316 Map or not | — |
-| MAP-33 | 📦 | رحلة على خريطة حبر قديمة · Parchment map journey | SP-0316 Map or not | node, fonts:arabic |
-| MAP-47 | 📦 | خرائط تظليل بكشف متتابع · Choropleth staggered-reveal blocks | SP-0316 Map or not | npm:gsap, npm:hyperframes, npm:d3 |
-| MAP-48 | 📦 | خريطة الفقاعات · Proportional bubble map | SP-0316 Map or not | npm:hyperframes |
-| MAP-49 | 📦 | خريطة التدفق · Origin–destination flow map | SP-0316 Map or not | npm:hyperframes |
-| MAP-50 | 📦 | خريطة سداسية · Hex tile map | SP-0316 Map or not | npm:hyperframes |
-| MAP-53 | 👁 | رسم خريطة شوارع وإسقاط دبابيس · SVG street map draw + pin drop | SP-0316 Map or not | — |
-| MAP-54 | 👁 | خريطة نقاط تجمعات المدن · Dot-cluster city map | SP-0316 Map or not | — |
-| MAP-55 | 👁 | خريطة عالم نقطية بكبسولات صور · Dotted world map with avatar pills | SP-0316 Map or not | — |
-| MAP-56 | 👁 | خريطة أعمدة ضوئية · Spike map | SP-0316 Map or not | — |
-| MAP-01 | 📄 | هل نحتاج خريطة أصلًا · Map or not | SP-0316 Map or not | — |
-| MAP-02 | 📄 | الخريطة الأساسية حسب الغرض · Basemap substrate by purpose | SP-0316 Map or not | — |
-| MAP-03 | 📄 | اختيار نوع الخريطة الموضوعية · Thematic map family choice | SP-0316 Map or not | — |
-| MAP-04 | 📄 | اختيار الإسقاط · Projection choice | SP-0316 Map or not | npm:d3 |
-| MAP-05 | 📄 | تطبيع خرائط التظليل · Choropleth normalization | SP-0316 Map or not | — |
-| MAP-06 | 📄 | استراتيجيات تداخل النقاط · Point overlap strategies | SP-0316 Map or not | — |
-| MAP-07 | 📄 | طبقات تتكبر مع الخريطة وأخرى ثابتة · Map-space vs screen-stable layers | SP-0316 Map or not | — |
-| MAP-08 | 📄 | سجل الإحداثيات والمصادر · Coordinate & source ledger | SP-0316 Map or not | fonts:arabic |
-| MAP-09 | 📄 | الخرائط الحساسة والبيانات الإنسانية · Sensitive maps & human data | SP-0316 Map or not | — |
-| MAP-10 | 📄 | توقيعات حركة الخرائط وضوابطها · Map motion signatures & restraint rules | SP-0316 Map or not | npm:d3, npm:maplibre |
-| MAP-40 | 📄 | خريطة وثائقية · Documentary map | SP-0316 Map or not | python3 |
-| MAP-13 | 📦 | MapLibre حتمي بلا واجهة · Deterministic headless MapLibre | SP-0317 VersaTiles self-hosted styles | chromium, npm:remotion, npm:maplibre |
-| MAP-14 | 📦 | لوحة خريطة مجمّدة ضد الارتعاش · Frozen oversized plate (anti-shimmer) | SP-0317 VersaTiles self-hosted styles | npm:maplibre |
-| MAP-15 | 📦 | خريطة حقيقية مخبوزة مع طبقة متجهات حية · Baked real basemap MP4 + live SVG overlay | SP-0317 VersaTiles self-hosted styles | chromium, npm:maplibre |
-| MAP-20 | 📦 | أنماط VersaTiles المجانية · VersaTiles self-hosted styles | SP-0317 VersaTiles self-hosted styles | npm:maplibre |
-| MAP-21 | 📦 | خطوط SDF والتسميات العربية على خرائط GL · SDF glyphs & Arabic labels on GL maps | SP-0317 VersaTiles self-hosted styles | npm:maplibre |
-| MAP-22 | 📦 | تنظيف الخريطة الأساسية · Basemap decluttering | SP-0317 VersaTiles self-hosted styles | npm:maplibre |
-| MAP-17 | 🔑 | MapTiler: التحريك فوق طبقات المزود · MapTiler provider-layer animation | SP-0317 VersaTiles self-hosted styles | key:unspecified |
-| MAP-18 | 🔑 | طيران فوق التضاريس بـ Cesium · Cesium terrain flyover | SP-0317 VersaTiles self-hosted styles | key:unspecified |
-| MAP-19 | 🔑 | صور خرائط ثابتة من AWS · Amazon Location static maps | SP-0317 VersaTiles self-hosted styles | npm:maplibre, key:unspecified |
-| MAP-11 | 📄 | محرك واحد لكل لقطة · One map engine per shot (chooser) | SP-0317 VersaTiles self-hosted styles | npm:remotion, npm:d3, npm:maplibre |
-| MAP-12 | 📄 | لوحة خريطة ثابتة للموقع · Static locator map plate | SP-0317 VersaTiles self-hosted styles | chromium, npm:remotion |
-| MAP-29 | ✅ | تجهيز ممر الكاميرا · Camera corridor path preparation | SP-0318 GeoJSON vs vector-tile threshold | — |
-| MAP-31 | ✅ | توحيد أسماء الأماكن العربية · Arabic place-name normalisation | SP-0318 GeoJSON vs vector-tile threshold | node |
-| MAP-30 | 🟢 | مرساة التسمية في أبعد نقطة داخلية · Label anchor at pole of inaccessibility | SP-0318 GeoJSON vs vector-tile threshold | node |
-| MAP-23 | 📄 | طبقات المزود أم GeoJSON مخصص · Provider vectors vs custom GeoJSON | SP-0318 GeoJSON vs vector-tile threshold | — |
-| MAP-24 | 📄 | متى GeoJSON ومتى البلاطات المتجهة · GeoJSON vs vector-tile threshold | SP-0318 GeoJSON vs vector-tile threshold | — |
-| MAP-25 | 📄 | خط PMTiles وGeoParquet · PMTiles & GeoParquet pipeline | SP-0318 GeoJSON vs vector-tile threshold | npm:maplibre, pip:duckdb |
-| MAP-26 | 📄 | التحليل المكاني بـ DuckDB · DuckDB spatial analysis | SP-0318 GeoJSON vs vector-tile threshold | pip:duckdb |
-| MAP-27 | 📄 | بيانات Overture Maps المفتوحة · Overture Maps open data | SP-0318 GeoJSON vs vector-tile threshold | key:unspecified |
-| MAP-28 | 📄 | OSM عبر Overpass لخطوط الأنهار والطرق · OSM via Overpass for centerlines | SP-0318 GeoJSON vs vector-tile threshold | — |
-| MAP-43 | 🟢 | شريط نهر يُرسم ويجري · River ribbon reveal & flow | SP-0319 Great-circle route draw-on | npm:three |
-| MAP-32 | 📦 | رسم مسار الدائرة العظمى · Great-circle route draw-on | SP-0319 Great-circle route draw-on | npm:d3 |
-| MAP-41 | 📦 | رحلة طيران نيويورك–باريس · NYC–Paris flight block | SP-0319 Great-circle route draw-on | npm:hyperframes, fonts:arabic |
-| MAP-42 | 📦 | أقواس ضوء ترسم بين المدن (3D) · 3D light arcs between cities | SP-0319 Great-circle route draw-on | npm:three |
-| MAP-34 | 👁 | إسقاط خطوط الطول والعرض على SVG · Equirectangular lon/lat → SVG with latitude squash | SP-0319 Great-circle route draw-on | — |
-| MAP-35 | 👁 | متتبع مسار بطول القوس مع توقف · Arc-length route follower with dwell | SP-0319 Great-circle route draw-on | — |
-| MAP-36 | 👁 | كاميرا الخريطة المائلة 2.5D · Tilted 2.5D map camera | SP-0319 Great-circle route draw-on | — |
-| MAP-38 | 👁 | رسم مسار بمحطات تنبثق · Route line with popping station dots | SP-0319 Great-circle route draw-on | — |
-| MAP-39 | 👁 | مسار تقدم على جبل · Progress path up terrain with avatar | SP-0319 Great-circle route draw-on | — |
-| MAP-37 | 📄 | خط زمني بمحطات وخريطة رحلة · Milestone timeline & map route (MG-045/046) | SP-0319 Great-circle route draw-on | npm:d3 |
-| MAP-58 | 📦 | كوكب الأرض مع غلاف جوي · Procedural Earth with atmosphere | SP-0320 Globe with great-circle arcs (wireframe… | npm:three |
-| MAP-59 | 📦 | خريطة الأضواء من المدار · Orbit-at-night lights map | SP-0320 Globe with great-circle arcs (wireframe… | npm:three, fonts:arabic |
-| MAP-16 | 🔑 | Mapbox: كرة وأبنية ثلاثية الأبعاد · Mapbox globe & 3D buildings | SP-0320 Globe with great-circle arcs (wireframe… | npm:maplibre, key:unspecified |
-| MAP-60 | 👁 | كرة أرضية نقطية بإسقاط كروي · Orthographic dot / halftone globe | SP-0320 Globe with great-circle arcs (wireframe… | npm:d3 |
-| MAP-61 | 👁 | كرة أرضية بأقواس اتصال · Globe with great-circle arcs (wireframe / particle) | SP-0320 Globe with great-circle arcs (wireframe… | — |
-| MAP-62 | 👁 | كرة غبار مع تسميات · Dust point-cloud globe with leader labels | SP-0320 Globe with great-circle arcs (wireframe… | npm:three |
-| MAP-51 | 📦 | زووم دولة مع دائرة حمراء · Country zoom with red scribble circle | SP-0321 Country zoom with red scribble circle | npm:hyperframes |
-| MAP-52 | 📦 | علامات وتسميات داخل الخريطة · Map-native circle & symbol markers | SP-0321 Country zoom with red scribble circle | npm:maplibre |
-| MAP-44 | 🔑 | إضاءة الدول عند وصول النهر · River-triggered country reveal | SP-0321 Country zoom with red scribble circle | npm:d3, key:unspecified |
+| MAP-45 | ✅ | خريطة المملكة التخطيطية بالمناطق · Schematic Saudi Arabia map — 13 regions, drill-down | SP-0317 Map or not | node |
+| MAP-57 | ✅ | عناصر خرائط أرشيفية · Archival map-fragment collage props | SP-0317 Map or not | node |
+| MAP-46 | 🟢 | تدرّج الخريطة الأزرق · Sequential blue map heat ramp | SP-0317 Map or not | — |
+| MAP-33 | 📦 | رحلة على خريطة حبر قديمة · Parchment map journey | SP-0317 Map or not | node, fonts:arabic |
+| MAP-47 | 📦 | خرائط تظليل بكشف متتابع · Choropleth staggered-reveal blocks | SP-0317 Map or not | npm:gsap, npm:hyperframes, npm:d3 |
+| MAP-48 | 📦 | خريطة الفقاعات · Proportional bubble map | SP-0317 Map or not | npm:hyperframes |
+| MAP-49 | 📦 | خريطة التدفق · Origin–destination flow map | SP-0317 Map or not | npm:hyperframes |
+| MAP-50 | 📦 | خريطة سداسية · Hex tile map | SP-0317 Map or not | npm:hyperframes |
+| MAP-53 | 👁 | رسم خريطة شوارع وإسقاط دبابيس · SVG street map draw + pin drop | SP-0317 Map or not | — |
+| MAP-54 | 👁 | خريطة نقاط تجمعات المدن · Dot-cluster city map | SP-0317 Map or not | — |
+| MAP-55 | 👁 | خريطة عالم نقطية بكبسولات صور · Dotted world map with avatar pills | SP-0317 Map or not | — |
+| MAP-56 | 👁 | خريطة أعمدة ضوئية · Spike map | SP-0317 Map or not | — |
+| MAP-01 | 📄 | هل نحتاج خريطة أصلًا · Map or not | SP-0317 Map or not | — |
+| MAP-02 | 📄 | الخريطة الأساسية حسب الغرض · Basemap substrate by purpose | SP-0317 Map or not | — |
+| MAP-03 | 📄 | اختيار نوع الخريطة الموضوعية · Thematic map family choice | SP-0317 Map or not | — |
+| MAP-04 | 📄 | اختيار الإسقاط · Projection choice | SP-0317 Map or not | npm:d3 |
+| MAP-05 | 📄 | تطبيع خرائط التظليل · Choropleth normalization | SP-0317 Map or not | — |
+| MAP-06 | 📄 | استراتيجيات تداخل النقاط · Point overlap strategies | SP-0317 Map or not | — |
+| MAP-07 | 📄 | طبقات تتكبر مع الخريطة وأخرى ثابتة · Map-space vs screen-stable layers | SP-0317 Map or not | — |
+| MAP-08 | 📄 | سجل الإحداثيات والمصادر · Coordinate & source ledger | SP-0317 Map or not | fonts:arabic |
+| MAP-09 | 📄 | الخرائط الحساسة والبيانات الإنسانية · Sensitive maps & human data | SP-0317 Map or not | — |
+| MAP-10 | 📄 | توقيعات حركة الخرائط وضوابطها · Map motion signatures & restraint rules | SP-0317 Map or not | npm:d3, npm:maplibre |
+| MAP-40 | 📄 | خريطة وثائقية · Documentary map | SP-0317 Map or not | python3 |
+| MAP-13 | 📦 | MapLibre حتمي بلا واجهة · Deterministic headless MapLibre | SP-0318 VersaTiles self-hosted styles | chromium, npm:remotion, npm:maplibre |
+| MAP-14 | 📦 | لوحة خريطة مجمّدة ضد الارتعاش · Frozen oversized plate (anti-shimmer) | SP-0318 VersaTiles self-hosted styles | npm:maplibre |
+| MAP-15 | 📦 | خريطة حقيقية مخبوزة مع طبقة متجهات حية · Baked real basemap MP4 + live SVG overlay | SP-0318 VersaTiles self-hosted styles | chromium, npm:maplibre |
+| MAP-20 | 📦 | أنماط VersaTiles المجانية · VersaTiles self-hosted styles | SP-0318 VersaTiles self-hosted styles | npm:maplibre |
+| MAP-21 | 📦 | خطوط SDF والتسميات العربية على خرائط GL · SDF glyphs & Arabic labels on GL maps | SP-0318 VersaTiles self-hosted styles | npm:maplibre |
+| MAP-22 | 📦 | تنظيف الخريطة الأساسية · Basemap decluttering | SP-0318 VersaTiles self-hosted styles | npm:maplibre |
+| MAP-17 | 🔑 | MapTiler: التحريك فوق طبقات المزود · MapTiler provider-layer animation | SP-0318 VersaTiles self-hosted styles | key:unspecified |
+| MAP-18 | 🔑 | طيران فوق التضاريس بـ Cesium · Cesium terrain flyover | SP-0318 VersaTiles self-hosted styles | key:unspecified |
+| MAP-19 | 🔑 | صور خرائط ثابتة من AWS · Amazon Location static maps | SP-0318 VersaTiles self-hosted styles | npm:maplibre, key:unspecified |
+| MAP-11 | 📄 | محرك واحد لكل لقطة · One map engine per shot (chooser) | SP-0318 VersaTiles self-hosted styles | npm:remotion, npm:d3, npm:maplibre |
+| MAP-12 | 📄 | لوحة خريطة ثابتة للموقع · Static locator map plate | SP-0318 VersaTiles self-hosted styles | chromium, npm:remotion |
+| MAP-29 | ✅ | تجهيز ممر الكاميرا · Camera corridor path preparation | SP-0319 GeoJSON vs vector-tile threshold | — |
+| MAP-31 | ✅ | توحيد أسماء الأماكن العربية · Arabic place-name normalisation | SP-0319 GeoJSON vs vector-tile threshold | node |
+| MAP-30 | 🟢 | مرساة التسمية في أبعد نقطة داخلية · Label anchor at pole of inaccessibility | SP-0319 GeoJSON vs vector-tile threshold | node |
+| MAP-23 | 📄 | طبقات المزود أم GeoJSON مخصص · Provider vectors vs custom GeoJSON | SP-0319 GeoJSON vs vector-tile threshold | — |
+| MAP-24 | 📄 | متى GeoJSON ومتى البلاطات المتجهة · GeoJSON vs vector-tile threshold | SP-0319 GeoJSON vs vector-tile threshold | — |
+| MAP-25 | 📄 | خط PMTiles وGeoParquet · PMTiles & GeoParquet pipeline | SP-0319 GeoJSON vs vector-tile threshold | npm:maplibre, pip:duckdb |
+| MAP-26 | 📄 | التحليل المكاني بـ DuckDB · DuckDB spatial analysis | SP-0319 GeoJSON vs vector-tile threshold | pip:duckdb |
+| MAP-27 | 📄 | بيانات Overture Maps المفتوحة · Overture Maps open data | SP-0319 GeoJSON vs vector-tile threshold | key:unspecified |
+| MAP-28 | 📄 | OSM عبر Overpass لخطوط الأنهار والطرق · OSM via Overpass for centerlines | SP-0319 GeoJSON vs vector-tile threshold | — |
+| MAP-43 | 🟢 | شريط نهر يُرسم ويجري · River ribbon reveal & flow | SP-0320 Great-circle route draw-on | npm:three |
+| MAP-32 | 📦 | رسم مسار الدائرة العظمى · Great-circle route draw-on | SP-0320 Great-circle route draw-on | npm:d3 |
+| MAP-41 | 📦 | رحلة طيران نيويورك–باريس · NYC–Paris flight block | SP-0320 Great-circle route draw-on | npm:hyperframes, fonts:arabic |
+| MAP-42 | 📦 | أقواس ضوء ترسم بين المدن (3D) · 3D light arcs between cities | SP-0320 Great-circle route draw-on | npm:three |
+| MAP-34 | 👁 | إسقاط خطوط الطول والعرض على SVG · Equirectangular lon/lat → SVG with latitude squash | SP-0320 Great-circle route draw-on | — |
+| MAP-35 | 👁 | متتبع مسار بطول القوس مع توقف · Arc-length route follower with dwell | SP-0320 Great-circle route draw-on | — |
+| MAP-36 | 👁 | كاميرا الخريطة المائلة 2.5D · Tilted 2.5D map camera | SP-0320 Great-circle route draw-on | — |
+| MAP-38 | 👁 | رسم مسار بمحطات تنبثق · Route line with popping station dots | SP-0320 Great-circle route draw-on | — |
+| MAP-39 | 👁 | مسار تقدم على جبل · Progress path up terrain with avatar | SP-0320 Great-circle route draw-on | — |
+| MAP-37 | 📄 | خط زمني بمحطات وخريطة رحلة · Milestone timeline & map route (MG-045/046) | SP-0320 Great-circle route draw-on | npm:d3 |
+| MAP-58 | 📦 | كوكب الأرض مع غلاف جوي · Procedural Earth with atmosphere | SP-0321 Globe with great-circle arcs (wireframe… | npm:three |
+| MAP-59 | 📦 | خريطة الأضواء من المدار · Orbit-at-night lights map | SP-0321 Globe with great-circle arcs (wireframe… | npm:three, fonts:arabic |
+| MAP-16 | 🔑 | Mapbox: كرة وأبنية ثلاثية الأبعاد · Mapbox globe & 3D buildings | SP-0321 Globe with great-circle arcs (wireframe… | npm:maplibre, key:unspecified |
+| MAP-60 | 👁 | كرة أرضية نقطية بإسقاط كروي · Orthographic dot / halftone globe | SP-0321 Globe with great-circle arcs (wireframe… | npm:d3 |
+| MAP-61 | 👁 | كرة أرضية بأقواس اتصال · Globe with great-circle arcs (wireframe / particle) | SP-0321 Globe with great-circle arcs (wireframe… | — |
+| MAP-62 | 👁 | كرة غبار مع تسميات · Dust point-cloud globe with leader labels | SP-0321 Globe with great-circle arcs (wireframe… | npm:three |
+| MAP-51 | 📦 | زووم دولة مع دائرة حمراء · Country zoom with red scribble circle | SP-0322 Country zoom with red scribble circle | npm:hyperframes |
+| MAP-52 | 📦 | علامات وتسميات داخل الخريطة · Map-native circle & symbol markers | SP-0322 Country zoom with red scribble circle | npm:maplibre |
+| MAP-44 | 🔑 | إضاءة الدول عند وصول النهر · River-triggered country reveal | SP-0322 Country zoom with red scribble circle | npm:d3, key:unspecified |

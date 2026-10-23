@@ -22,12 +22,12 @@
 
 | الحالة | العدد | المعنى |
 |---|---:|---|
-| `proven` | 162 | ✅ proven: a proof exists in the catalog; still check its requirements here before calling it ready |
+| `proven` | 163 | ✅ proven: a proof exists in the catalog; still check its requirements here before calling it ready |
 | `ready` | 22 | 🟢 ready: runnable without setup according to the catalog |
 | `documented` | 65 | 📄 documented: a described method; needs building or wiring before it runs |
 | `install` | 15 | 📦 install: needs a package, binary or model first |
 | `key` | 2 | 🔑 key: needs an account, key or paid service (ask before any spend) |
-| **المجموع** | **266** | |
+| **المجموع** | **267** | |
 
 ## الأدوات القابلة للتشغيل / runnable tools
 
@@ -74,6 +74,7 @@
 | `superpower-fusion` | دمج القدرات في قدرات خارقة مترابطة | `python3 scripts/superpower_fusion.py build` | tested-here |
 | `superpowers` | خريطة المستودعات الخارجية | `python3 scripts/superpowers.py list --capability voice --json` | tested-here |
 | `superpowers-unified` | موجّه مهارات العمل ومثبّتها | `python3 scripts/superpowers_unified.py doctor` | tested-here |
+| `task-history` | سجل المهام: سجل لكل مهمة منجزة لإعادتها لاحقًا | `python3 scripts/task_history.py new --kind video` | tested-here |
 
 الأوامر نسبية إلى مجلد المهارة (أو جذر المستودع لأدوات `tools/`)؛ `python3 scripts/hub.py tool <id>` يعطي كل الأوامر والمتطلبات والحدود.
 
@@ -82,7 +83,7 @@
 | العائلة | القدرات | الفصل |
 |---|---:|---|
 | `agent-orchestration` | 55 | [agent-orchestration.md](../powers/agent-orchestration.md) |
-| `runnable-tools` | 168 | [runnable-tools.md](../powers/runnable-tools.md) |
+| `runnable-tools` | 169 | [runnable-tools.md](../powers/runnable-tools.md) |
 | `self-discovery` | 43 | [self-discovery.md](../powers/self-discovery.md) |
 
 ## كل القدرات / every power
@@ -165,6 +166,7 @@
 | `TOOL-168` | التعديل السريع: قص فوري يعرف الإطارات المفتاحية، مغيّر صوت، تفتيح الفيديو المظلم، استخراج الصوت | Fast Edit: keyframe-aware instant cut, voice presets, low-light lift, audio extract | proven | ffmpeg, python3 |
 | `TOOL-169` | محرك الخامات الملوّنة: ألوان خشبية وفرشاة زيت وألوان مائية لأي صورة | Colour media engine: coloured pencil, oil brush and watercolour painting of a photo | proven | chromium, pip:numpy, pip:opencv, pip:mediapipe |
 | `TOOL-17` | مولّد مشاريع بداية لمحركات الحركة | Third-party motion engine scaffolder | proven | python3, npm:three, npm:gsap, npm:remotion |
+| `TOOL-170` | سجل المهام: سجل لكل مهمة منجزة لإعادتها لاحقًا | Task history: record every finished task and repeat it later | proven | python3 |
 | `TOOL-18` | مكتبة رياضيات الحركة | Motion math toolkit | proven | node, python3 |
 | `TOOL-19` | تصيير لقطات B-roll بحركة كاميرا | Cinematic B-roll Renderer | proven | ffmpeg, python3 |
 | `TOOL-20` | مُخطِّط قطعات اللقطات الحقيقية | Footage-First Cut Planner | proven | python3 |

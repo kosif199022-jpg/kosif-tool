@@ -130,6 +130,10 @@ jobs:
         run: python3 -m unittest discover -s .claude/skills/kosif-superpowers/evals -p 'test_council.py' -v
       - name: Micro index
         run: python3 .claude/skills/kosif-superpowers/evals/test_micro_index.py -v
+      - name: Task history (A35)
+        run: |
+          python3 .claude/skills/kosif-superpowers/evals/test_task_history.py -v
+          python3 .claude/skills/kosif-superpowers/scripts/task_history.py validate
       - name: Paste protocol (read first, run with consent)
         run: python3 .claude/skills/kosif-superpowers/evals/test_usip_paste.py -v
       - name: Family tools (decision math, particles, geo, prompts, diagrams, UI beats, stats, TTS, brand tokens, agent guard)

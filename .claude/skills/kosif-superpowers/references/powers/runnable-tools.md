@@ -3,7 +3,7 @@
 
 > **قوتك هنا / what this gives you:** كل سكربت في المهارة والمستودع يُشغَّل فعلًا ولم يكن له سجل في الكتالوج: ماذا يفعل، ومتى، وأمره الأول، ومستلزماته، ودليله. مولَّدة من data/tools.json بأمر hub.py build؛ hub.py tool <id> يعطي البطاقة كاملة. — Every script in the skill and repository that really runs and had no catalog record: what it does, when, its first command, requirements and proof. Generated from data/tools.json by hub.py build; hub.py tool <id> gives the full card.
 > **أقوى دليل / strongest evidence:** **TOOL-01** Offline bilingual capability finder (`kosif-tool/.claude/skills/kosif-superpowers/evals/test_ai_tool_discovery.py`) · **TOOL-02** Session boot briefing (`kosif-tool/tests/test_boot.py`)
-> **168 powers follow** — ✅ 135 · 🟢 21 · 📦 12 · 🔑 0 · 👁 0 · 📄 0 · 💡 0.
+> **169 powers follow** — ✅ 136 · 🟢 21 · 📦 12 · 🔑 0 · 👁 0 · 📄 0 · 💡 0.
 
 **الحالة / status:** ✅ مُثبت (شُغّل فعلًا وله مسار دليل) · 🟢 جاهز (كود موجود يعمل بما هو متاح عادة) · 📦 بأمر تثبيت واحد · 🔑 يحتاج مفتاحًا أو حسابًا أو موصلًا · 👁 شوهد في فيديو مرجعي (للموشن فقط) · 📄 طريقة موثقة · 💡 فكرة. الشارة هي أدنى مستوى صادق — the badge is the lowest level that is true.
 مسارات الدليل نسبية إلى `/home/user/`؛ و`session-<date>:<file>#<section>` تشير إلى تشغيل موثق في جلسة سابقة؛ و`owner-upload:` إلى ملف داخل أرشيف أرسله المالك. Proof paths are relative to `/home/user/`.
@@ -14,7 +14,7 @@
 ## الفهرس / contents
 
 - **Discover and route / اكتشاف القدرات والتوجيه** — TOOL-01 … TOOL-161 (26)
-- **Think, ideate and write / التفكير والأفكار والكتابة** — TOOL-10 … TOOL-167 (16)
+- **Think, ideate and write / التفكير والأفكار والكتابة** — TOOL-10 … TOOL-170 (17)
 - **Motion graphics and rendering / الموشن والرندر** — TOOL-12 … TOOL-164 (21)
 - **Editing and reference video / المونتاج والفيديو المرجعي** — TOOL-19 … TOOL-168 (15)
 - **Audio and rhythm / الصوت والإيقاع** — TOOL-25 … TOOL-165 (5)
@@ -386,6 +386,14 @@
 - **تثبيت / install:** `needs on PATH: python3`
 - **يحتاج / needs:** [`python3`](../requirements.md#req-python3)
 - **الدليل / proof:** `kosif-tool/.claude/skills/kosif-superpowers/evals/test_lesson_integrity.py` · `kosif-tool/.claude/skills/kosif-superpowers/scripts/lesson_integrity.py`
+- **المصدر / source:** data/tools.json
+
+#### TOOL-170 · سجل المهام: سجل لكل مهمة منجزة لإعادتها لاحقًا · Task history: record every finished task and repeat it later · ✅ مُثبت هنا / proven here
+- **ماذا / what:** ذاكرة مهام على GitHub: سجل JSON واحد لكل مهمة منجزة تحت history/tasks/ بجذر المستودع، فيه الطلب بكلمات المستخدم والوضع والخطة والأدوات والأوامر بمعاملاتها والمدخلات والمخرجات (مع sha256 للملفات المحلية) وطريقة الإعادة. list وshow يجيبان «إيه المهام اللي عملتها؟»، وreplay يطبع خطة أو سكربت يعيد مهمة (لا يشغّل شيئًا ويعلّق خطوات الإذن)، وcompare يقارن المخرجات الجديدة بالبصمات المسجلة، وbuild يكتب history/INDEX.md وindex.json. والخيار add --print لا يكتب شيئًا ويعطي السجل وأمر حفظ في سطر ورابط GitHub مملوءًا لتطبيقات المحادثة التي لا تدفع. ويُرفض السجل الذي فيه مفتاح أو مسار جلسة أو رفع أو بريد أو هاتف. — Keeps a task memory on GitHub: one JSON record per finished task under history/tasks/ at the repo root, with the request in the user's words, the mode and plan, the tools and exact commands with their parameters, the inputs and outputs (sha256 added for local files) and how to reproduce it. list and show answer "what tasks have you done?", replay prints the plan or a shell script that repeats one (it runs nothing and keeps permission steps commented out), compare checks new outputs against the recorded hashes, and build writes history/INDEX.md and index.json. add --print writes nothing and gives the record, a one-line save command and a pre-filled GitHub new-file link for chat apps that cannot push. Records holding a credential, a session or upload path, an e-mail address or a phone number are refused.
+- **متى أستخدمها / when:** إيه المهام اللي عملتها قبل كده / What tasks have you done? Repeat the Friday dua video
+- **كيف / how:** new: `python3 scripts/task_history.py new --kind video`; add: `python3 scripts/task_history.py add --from entry.json`; list: `python3 scripts/task_history.py list --kind video`; show: `python3 scripts/task_history.py show last`. Full card: `python3 scripts/hub.py tool task-history`. Limits: A record is what the assistant reports it ran: replay repeats the recorded commands but cannot bring back a deleted input, an expired link or a paid model's randomness, and compare checks bytes only for outputs marked deterministic. **أرقام / params:** in: a record JSON file or stdin; history/tasks/*.json · out: history/tasks/<id>.json, history/INDEX.md, history/index.json; plans, scripts and comparisons on stdout
+- **يحتاج / needs:** [`python3`](../requirements.md#req-python3)
+- **الدليل / proof:** `kosif-tool/.claude/skills/kosif-superpowers/evals/test_task_history.py` · `kosif-tool/.claude/skills/kosif-superpowers/scripts/task_history.py`
 - **المصدر / source:** data/tools.json
 
 ## Motion graphics and rendering / الموشن والرندر
@@ -1506,7 +1514,7 @@
 
 ## المصادر والرخص / sources & licences
 
-- الرخص / licences: — (168)
+- الرخص / licences: — (169)
 - الأفكار مكتوبة بكلماتنا مع رابط المصدر؛ لا يُنسخ نص طرف ثالث طويل. Ideas are paraphrased with a link to the source; no long third-party text is copied. `—` = no licence recorded (own method or own wording).
 
 ---
