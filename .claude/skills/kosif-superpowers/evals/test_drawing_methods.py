@@ -158,11 +158,11 @@ SCENE = """<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 400" data-fl
 <circle data-part="head" cx="100" cy="100" r="20"/>
 <path data-part="torso" d="M85,118 Q100,112 115,118 L118,{waist} Q100,{waist_low} 82,{waist}z"/>
 <ellipse data-part="hips" cx="100" cy="{hips}" rx="20" ry="12"/>
-<polyline data-part="leg" points="92,{hips} 90,300 88,{foot}" stroke-width="10" fill="none"/>
-<g transform="rotate(10 100 130)"><polyline data-part="arm" data-contact="pole" points="115,130 150,120 175,100" stroke-width="8" fill="none"/></g>
+<polyline data-part="leg" points="92,{hips} 90,300 88,{foot}" stroke="#000" stroke-width="10" fill="none"/>
+<g transform="rotate(10 100 130)"><polyline data-part="arm" data-contact="pole" points="115,130 150,120 175,100" stroke="#000" stroke-width="8" fill="none"/></g>
 <rect data-part="shoe" data-contact="ground" x="76" y="{shoe}" width="24" height="8"/>
 </g>
-<g data-figure="pole"><line id="pole" data-part="pole" data-contact="ground" x1="280" y1="40" x2="280" y2="360" stroke-width="10"/></g>
+<g data-figure="pole"><line id="pole" data-part="pole" data-contact="ground" x1="280" y1="40" x2="280" y2="360" stroke="#000" stroke-width="10"/></g>
 </svg>"""
 
 
@@ -214,6 +214,35 @@ class ReviewGateTests(unittest.TestCase):
                                capture_output=True, text=True)
             self.assertEqual(r.returncode, 1, r.stderr)
             self.assertEqual(json.loads(r.stdout)["status"], "FAIL")
+
+    def test_geometry_edge_cases(self):
+        el = dm.ET.fromstring
+        I = (1, 0, 0, 1, 0, 0)
+        g = lambda a, b: dm._gap(dm._geometry(el(a), I), dm._geometry(el(b), I))
+        dot = '<circle cx="{}" cy="{}" r="2"/>'
+        # an open polyline has no closing segment between its ends
+        self.assertGreater(g('<polyline points="0,0 100,0 100,100" fill="none"/>', dot.format(50, 52)), 40)
+        # an outline drawn with fill="none" is only its stroke, not a solid disc
+        self.assertGreater(g('<circle cx="0" cy="0" r="50" fill="none" stroke="#000" stroke-width="2"/>', dot.format(0, 0)), 40)
+        self.assertEqual(g('<circle cx="0" cy="0" r="50"/>', dot.format(0, 0)), 0.0)
+        # two open strokes that cross between their vertices touch
+        self.assertEqual(g('<line x1="0" y1="0" x2="100" y2="100"/>', '<line x1="0" y1="100" x2="100" y2="0"/>'), 0.0)
+        # arcs are followed, so the far end of a half circle reaches the dot
+        arc = '<path d="M100 55 A 20 20 0 0 1 100 120 L100 160" fill="none" stroke="#000" stroke-width="2"/>'
+        self.assertEqual(g(arc, dot.format(132, 88)), 0.0)
+        self.assertGreater(g(arc, dot.format(60, 88)), 30)
+        # every SVG number form parses: exponents in either case, explicit +, a leading dot
+        self.assertEqual(dm._path_points("M1E2,+1e1 L.5E2 -1.0e+1"), [(100.0, 10.0), (50.0, -10.0)])
+
+    def test_unreadable_path_is_an_error_not_a_pass(self):
+        with tempfile.TemporaryDirectory() as tmp:
+            p = Path(tmp) / "s.svg"
+            p.write_text('<svg xmlns="http://www.w3.org/2000/svg"><g data-figure="a"><path data-part="p" d="M0 0 X 5 5"/></g></svg>',
+                         encoding="utf-8")
+            r = subprocess.run([sys.executable, str(SK / "scripts" / "drawing_methods.py"), "review", "--svg", str(p)],
+                               capture_output=True, text=True)
+            self.assertEqual(r.returncode, 2)
+            self.assertIn("unsupported path command", r.stderr)
 
     def test_protocol_and_portable_require_the_gate(self):
         core = (SK / "PROTOCOL.md").read_text(encoding="utf-8")

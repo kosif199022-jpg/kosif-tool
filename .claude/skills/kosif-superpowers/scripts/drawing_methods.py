@@ -802,23 +802,60 @@ def _apply(m, p):
     return (m[0] * p[0] + m[2] * p[1] + m[4], m[1] * p[0] + m[3] * p[1] + m[5])
 
 
+def _arc_points(p0, p1, rx, ry, phi, large, sweep, steps):
+    """Sample an SVG elliptical arc (endpoint form, SVG spec F.6.5) after its start point."""
+    rx, ry = abs(rx), abs(ry)
+    if not rx or not ry or p0 == p1:
+        return [p1]
+    c, s_ = math.cos(math.radians(phi)), math.sin(math.radians(phi))
+    dx, dy = (p0[0] - p1[0]) / 2, (p0[1] - p1[1]) / 2
+    x1, y1 = c * dx + s_ * dy, -s_ * dx + c * dy
+    lam = x1 * x1 / (rx * rx) + y1 * y1 / (ry * ry)
+    if lam > 1:
+        rx, ry = rx * math.sqrt(lam), ry * math.sqrt(lam)
+    num = rx * rx * ry * ry - rx * rx * y1 * y1 - ry * ry * x1 * x1
+    k = math.sqrt(max(0.0, num / (rx * rx * y1 * y1 + ry * ry * x1 * x1)))
+    if bool(large) == bool(sweep):
+        k = -k
+    cx1, cy1 = k * rx * y1 / ry, -k * ry * x1 / rx
+    cx, cy = c * cx1 - s_ * cy1 + (p0[0] + p1[0]) / 2, s_ * cx1 + c * cy1 + (p0[1] + p1[1]) / 2
+    a0 = math.atan2((y1 - cy1) / ry, (x1 - cx1) / rx)
+    da = math.atan2((-y1 - cy1) / ry, (-x1 - cx1) / rx) - a0
+    if sweep and da < 0:
+        da += 2 * math.pi
+    elif not sweep and da > 0:
+        da -= 2 * math.pi
+    n = max(steps, int(abs(da) / (math.pi / 12)) + 1)
+    return [(cx + c * rx * math.cos(a0 + da * k_ / n) - s_ * ry * math.sin(a0 + da * k_ / n),
+             cy + s_ * rx * math.cos(a0 + da * k_ / n) + c * ry * math.sin(a0 + da * k_ / n)) for k_ in range(1, n + 1)]
+
+
 def _path_points(d, steps=12):
-    toks = re.findall(r"[MmLlHhVvQqTtCcSsZz]|-?\d*\.?\d+(?:e-?\d+)?", d)
+    toks = re.findall(r"[+-]?(?:\d+\.?\d*|\.\d+)(?:[eE][+-]?\d+)?|[A-Za-z]", d)
     out, cur, start, i, cmd, last_ctrl = [], (0.0, 0.0), (0.0, 0.0), 0, "M", None
     while i < len(toks):
         if re.match(r"[A-Za-z]", toks[i]):
             cmd = toks[i]
             i += 1
+            if cmd.upper() not in "MLHVQTCSAZ":
+                raise ValueError(f"unsupported path command {cmd!r}")
             if cmd in "Zz":
                 out.append(start)
                 cur = start
                 continue
         rel = cmd.islower()
-        n = {"M": 2, "L": 2, "H": 1, "V": 1, "Q": 4, "T": 2, "C": 6, "S": 4}[cmd.upper()]
+        n = {"M": 2, "L": 2, "H": 1, "V": 1, "Q": 4, "T": 2, "C": 6, "S": 4, "A": 7}[cmd.upper()]
         v = [float(t) for t in toks[i:i + n]]
+        if len(v) < n:
+            raise ValueError(f"path command {cmd!r} needs {n} numbers")
         i += n
         ox, oy = cur if rel else (0.0, 0.0)
         u = cmd.upper()
+        if u == "A":
+            end = (v[5] + ox, v[6] + oy)
+            out.extend(_arc_points(cur, end, v[0], v[1], v[2], v[3], v[4], steps))
+            cur, last_ctrl = end, None
+            continue
         if u == "H":
             pts_ = [(v[0] + ox, cur[1])]
         elif u == "V":
@@ -851,8 +888,11 @@ def _path_points(d, steps=12):
     return out
 
 
-def _geometry(e, m):
-    """Outline of one SVG element in page space: (points, closed, filled, half stroke width)."""
+def _geometry(e, m, style=None):
+    """Outline of one SVG element in page space: (points, closed, filled, half stroke width).
+
+    `style` carries fill and stroke-width inherited from ancestor groups."""
+    style = style or {}
     tag = e.tag.split("}")[-1]
     g = lambda k, d=0.0: float(e.get(k, d))
     if tag in ("circle", "ellipse"):
@@ -873,11 +913,13 @@ def _geometry(e, m):
         closed = bool(re.search(r"[Zz]\s*$", e.get("d", "")))
     else:
         return None
-    fill = e.get("data-fill", e.get("fill"))
-    filled = closed or (fill not in (None, "none") and tag in ("path", "polyline"))
+    fill = e.get("fill", style.get("fill", "black"))
+    # SVG fills every shape but a line unless fill="none"; an unfilled outline is only its stroke
+    filled = tag != "line" and fill != "none" and len(pts_) > 2
     scale = math.sqrt(abs(m[0] * m[3] - m[1] * m[2])) or 1.0
-    half = float(e.get("stroke-width", "0") or 0) * scale / 2
-    return [_apply(m, p) for p in pts_], filled, half
+    stroke = e.get("stroke", style.get("stroke", "none"))
+    half = float(e.get("stroke-width", style.get("stroke-width", "1")) or 0) * scale / 2 if stroke != "none" else 0.0
+    return [_apply(m, p) for p in pts_], closed or filled, filled, half
 
 
 def _inside(p, poly):
@@ -896,14 +938,23 @@ def _seg_dist(p, a, b):
     return math.dist(p, (a[0] + t * dx, a[1] + t * dy))
 
 
+def _segs_dist(a0, a1, b0, b1):
+    def orient(p, q, r):
+        return (q[0] - p[0]) * (r[1] - p[1]) - (q[1] - p[1]) * (r[0] - p[0])
+    d1, d2, d3, d4 = orient(b0, b1, a0), orient(b0, b1, a1), orient(a0, a1, b0), orient(a0, a1, b1)
+    if ((d1 > 0) != (d2 > 0)) and ((d3 > 0) != (d4 > 0)) and 0 not in (d1, d2, d3, d4):
+        return 0.0
+    return min(_seg_dist(a0, b0, b1), _seg_dist(a1, b0, b1), _seg_dist(b0, a0, a1), _seg_dist(b1, a0, a1))
+
+
 def _gap(a, b):
-    """Pixels of empty space between two parts; 0 when they touch or overlap."""
-    (pa, fa, ha), (pb, fb, hb) = a, b
+    """Pixels of empty space between two parts; 0 when they touch, cross or overlap."""
+    (pa, ca, fa, ha), (pb, cb, fb, hb) = a, b
     if (fb and any(_inside(p, pb) for p in pa)) or (fa and any(_inside(p, pa) for p in pb)):
         return 0.0
-    segs = lambda pts_: list(zip(pts_, pts_[1:] + pts_[:1])) if len(pts_) > 2 else [(pts_[0], pts_[-1])]
-    best = min(min(_seg_dist(p, s0, s1) for s0, s1 in segs(pb)) for p in pa)
-    best = min(best, min(min(_seg_dist(p, s0, s1) for s0, s1 in segs(pa)) for p in pb))
+    segs = lambda pts_, closed: (list(zip(pts_, pts_[1:] + pts_[:1])) if closed and len(pts_) > 2
+                                 else list(zip(pts_, pts_[1:])) or [(pts_[0], pts_[0])])
+    best = min(_segs_dist(a0, a1, b0, b1) for a0, a1 in segs(pa, ca) for b0, b1 in segs(pb, cb))
     return max(0.0, best - ha - hb)
 
 
@@ -921,12 +972,13 @@ def review_svg(path, tolerance=1.5):
 
     figures, parts_by_id, contacts = {}, {}, []
 
-    def walk(node, m, fig):
+    def walk(node, m, fig, style):
         m = _mat_mul(m, _transform(node.get("transform")))
+        style = dict(style, **{k: node.get(k) for k in ("fill", "stroke", "stroke-width") if node.get(k) is not None})
         if node.get("data-figure"):
             fig = node.get("data-figure")
             figures.setdefault(fig, [])
-        geo = _geometry(node, m) if node.get("data-part") else None
+        geo = _geometry(node, m, style) if node.get("data-part") else None
         if geo and geo[0]:
             name = node.get("data-part")
             if fig:
@@ -935,9 +987,9 @@ def review_svg(path, tolerance=1.5):
             if node.get("data-contact"):
                 contacts.append((fig, name, node.get("data-contact"), geo))
         for child in node:
-            walk(child, m, fig)
+            walk(child, m, fig, style)
 
-    walk(root, (1, 0, 0, 1, 0, 0), None)
+    walk(root, (1, 0, 0, 1, 0, 0), None, {})
     if not figures:
         add("figures-declared", False, "no <g data-figure> groups with data-part pieces", "DM-08")
     for fig, parts in figures.items():
