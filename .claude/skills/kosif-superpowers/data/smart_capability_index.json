@@ -1,7 +1,7 @@
 {
   "schema": "kosif.smart-capability-index.v1",
   "origin": "data/powers/*.json (catalog); no original records changed",
-  "catalog_powers": 5512,
+  "catalog_powers": 5572,
   "group_count": 15,
   "family_count": 62,
   "tool_count": 148,
@@ -74,16 +74,16 @@
       ],
       "keywords": "think reasoning idea brainstorm strategy plan finance decision تحليل تخطيط ابتكار قرار",
       "workflow": [],
-      "count": 335,
+      "count": 356,
       "status_counts": {
-        "documented": 308,
+        "documented": 329,
         "install": 2,
         "proven": 17,
         "ready": 8
       },
       "family_counts": {
-        "atlas-mind": 54,
-        "atlas-strategy": 72,
+        "atlas-mind": 60,
+        "atlas-strategy": 87,
         "creativity-engine": 29,
         "mental-models": 63,
         "planning-execution": 12,
@@ -190,9 +190,9 @@
         "الاختبار",
         "النشر"
       ],
-      "count": 578,
+      "count": 608,
       "status_counts": {
-        "documented": 394,
+        "documented": 424,
         "idea": 2,
         "install": 32,
         "key": 7,
@@ -204,7 +204,7 @@
         "app-feature-transfer": 139,
         "apps-artifacts": 23,
         "atlas-build": 52,
-        "atlas-code": 247,
+        "atlas-code": 277,
         "code-engineering": 24,
         "ui-product-device": 93
       },
@@ -622,9 +622,9 @@
         "الرسم والخرائط",
         "التصدير"
       ],
-      "count": 258,
+      "count": 262,
       "status_counts": {
-        "documented": 101,
+        "documented": 105,
         "idea": 1,
         "install": 34,
         "key": 7,
@@ -633,7 +633,7 @@
         "seen": 48
       },
       "family_counts": {
-        "atlas-data": 52,
+        "atlas-data": 56,
         "charts-data-infographic": 105,
         "data-analysis": 39,
         "maps-geo": 62
@@ -678,16 +678,16 @@
       ],
       "keywords": "document pdf word excel office writing report مستند تقرير كتابة وورد",
       "workflow": [],
-      "count": 138,
+      "count": 143,
       "status_counts": {
-        "documented": 94,
+        "documented": 99,
         "install": 8,
         "key": 4,
         "proven": 32
       },
       "family_counts": {
         "atlas-craft": 26,
-        "atlas-docs": 50,
+        "atlas-docs": 55,
         "documents-office": 34,
         "writing-humanizer": 28
       },
@@ -12831,7 +12831,9 @@
       "name_en": "Data lifecycle governance for data sent through a SaaS vendor",
       "name_ar": "دورة حياة البيانات المارّة بخدمة خارجية: تصنيف واحتفاظ وحذف",
       "status": "documented",
-      "requires": [],
+      "requires": [
+        "key:video-gen"
+      ],
       "proof": [
         "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/1836-clay-pack/5269-clay-data-handling",
         "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/1869-ideogram-pack/5949-ideogram-data-handling"
@@ -12975,6 +12977,486 @@
       ],
       "source": "atlas-code.json",
       "what": "خريطة توجيه لنحو 30 مرحلة تتكرر في حزم تكامل الخدمات بالأطلس (أكثر من 90 مزوّدًا): لكل مرحلة القدرة المقابلة في سوبر باور، والتفاصيل الخاصة بالمزوّد تبقى في مجلد الأطلس. — A routing map of the ~30 stages that repeat across the Atlas vendor packs (90+ vendors): each stage points t"
+    },
+    {
+      "id": "ACODE-248",
+      "family": "atlas-code",
+      "group": "software",
+      "domain": "code",
+      "name_en": "Ecosystem-native dependency audit: vulnerabilities, lag, licences, unused deps",
+      "name_ar": "تدقيق التبعيات بأدوات كل منظومة: ثغرات وتأخر إصدارات ورخص وتبعيات غير مستخدمة",
+      "status": "documented",
+      "requires": [
+        "node"
+      ],
+      "proof": [
+        "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/63-dependency-audit/103-deps-audit-workflow",
+        "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/2167-rust-plugin/7864-cargo-machete"
+      ],
+      "source": "atlas-code.json",
+      "what": "يدقق تبعيات المشروع بتشغيل أداة كل منظومة نفسها (npm/pip/cargo/go/…) ويبلغ فقط بما تقوله الأدوات وقواعد البيانات، مع وسم كل معلومة بدرجة دليلها، ودون أي إصلاح قسري. — Audits a project's dependencies with each ecosystem's own tools and reports only what tools and advisory database"
+    },
+    {
+      "id": "ACODE-249",
+      "family": "atlas-code",
+      "group": "software",
+      "domain": "code",
+      "name_en": "OpenTelemetry instrumentation audit: SDK setup, span hygiene, propagation",
+      "name_ar": "تدقيق قياس OpenTelemetry: إعداد SDK ونظافة الـspans وانتشار السياق",
+      "status": "documented",
+      "requires": [],
+      "proof": [
+        "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/75-opentelemetry/138-otel-audit-workflow"
+      ],
+      "source": "atlas-code.json",
+      "what": "يراجع قياس OpenTelemetry قائمًا ويخرج تقرير أعطال وإصلاحات: إعداد المزوّد والموارد، نظافة الـspans، ميزانية السمات وخلوها من البيانات الشخصية، انتشار السياق عبر async والخيوط والطوابير، والـexporters والـsampling. — Audits an existing OTel setup and reports what is broken, where,"
+    },
+    {
+      "id": "ACODE-250",
+      "family": "atlas-code",
+      "group": "software",
+      "domain": "code",
+      "name_en": "PWA audit and deterministic launch checklist",
+      "name_ar": "تدقيق تطبيق ويب تقدمي (PWA) وقائمة الإطلاق الحتمية",
+      "status": "documented",
+      "requires": [
+        "chromium"
+      ],
+      "proof": [
+        "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/79-pwa-expert/145-pwa-audit-workflow",
+        "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/79-pwa-expert/146-pwa-checklist-workflow"
+      ],
+      "source": "atlas-code.json",
+      "what": "يفحص تطبيق PWA محليًا أو على رابط حي: المانيفست ومعايير التثبيت وتسجيل الـservice worker ووسوم iOS ورؤوس الأمان والعمل دون اتصال وCore Web Vitals، مع وضعين: تدقيق عدائي للعيوب، وقائمة إطلاق حتمية PASS/FAIL/N-A لكل بند. — Audits a PWA locally or live, in two modes: an adversarial "
+    },
+    {
+      "id": "ACODE-251",
+      "family": "atlas-code",
+      "group": "software",
+      "domain": "code",
+      "name_en": "PII-redacted payload review before sending to an external AI",
+      "name_ar": "تجهيز مدخلات منقّحة من البيانات الشخصية قبل إرسالها لخدمة ذكاء اصطناعي خارجية",
+      "status": "documented",
+      "requires": [],
+      "proof": [
+        "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/229-mas-ai-workflows/718-ai-pii-redaction-review"
+      ],
+      "source": "atlas-code.json",
+      "what": "يعد نسخة من البيانات مزالًا منها ما لا يلزم ومستبدلًا فيها المعرّفات بعلامات ثابتة قبل أي إرسال خارجي، ويفحص المرفقات والأسماء والسجلات أيضًا، ويصف النتيجة بدقة: منقّحة أو مستعارة، لا مجهولة مضمونة. — Prepares a field-aware redacted payload with stable placeholders before any ext"
+    },
+    {
+      "id": "ACODE-252",
+      "family": "atlas-code",
+      "group": "software",
+      "domain": "code",
+      "name_en": "Visual proof of a terminal UI through a real PTY and a local browser",
+      "name_ar": "إثبات بصري لواجهة طرفية (TUI) عبر PTY حقيقي ومتصفح محلي",
+      "status": "documented",
+      "requires": [],
+      "proof": [
+        "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/891-codex-tui-proof/2013-validate-tui-in-codex"
+      ],
+      "source": "atlas-code.json",
+      "what": "يتحقق من واجهة طرفية تفاعلية بتشغيلها في PTY حقيقي بحجم ثابت معروض في صفحة محلية على 127.0.0.1، وقيادتها بلوحة المفاتيح من المتصفح وأخذ لقطات وسجل جلسة، دون التحكم في سطح مكتب المستخدم. — Validates an interactive TUI by running it in a real fixed-size PTY rendered on a localhost "
+    },
+    {
+      "id": "ACODE-253",
+      "family": "atlas-code",
+      "group": "software",
+      "domain": "code",
+      "name_en": "Dependabot config review and upgrade-PR triage",
+      "name_ar": "مراجعة إعداد Dependabot وفرز طلبات الترقية التي يفتحها",
+      "status": "documented",
+      "requires": [],
+      "proof": [
+        "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/968-review-dependabot-config/2252-review-dependabot-config",
+        "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/3168-dependabot-review/13497-dependabot-review"
+      ],
+      "source": "atlas-code.json",
+      "what": "يكشف أخطاء إعداد Dependabot الصامتة (منظومات أو مجلدات غير مدرجة، وسوم غير موجودة، أسرار ناقصة تُفشل CI) ثم يفرز طلبات الترقية المفتوحة بحكم لكل طلب: ما تغيّر upstream، ما قد ينكسر، ما يلمسه في الكود، وهل يُدمج. — Finds Dependabot's silent misconfigurations, then triages open upg"
+    },
+    {
+      "id": "ACODE-254",
+      "family": "atlas-code",
+      "group": "software",
+      "domain": "code",
+      "name_en": "Browser-extension manifest audit: least privilege and MV3",
+      "name_ar": "تدقيق أذونات إضافة المتصفح وفق أقل صلاحية وManifest V3",
+      "status": "documented",
+      "requires": [],
+      "proof": [
+        "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/2249-browser-extension-engineering/8563-manifest-permissions-audit"
+      ],
+      "source": "atlas-code.json",
+      "what": "يراجع manifest.json لإضافة متصفح: كل إذن يحتاج ميزة تبرره وإلا يُحذف، تضييق أذونات المواقع أو استبدالها بـactiveTab، نقل النادر إلى optional، وشروط MV3 (service worker، لا كود من بعيد). — Audits an extension manifest so every grant is justified by a feature, narrowed or made opti"
+    },
+    {
+      "id": "ACODE-255",
+      "family": "atlas-code",
+      "group": "software",
+      "domain": "code",
+      "name_en": "Schematic and PCB layout review before fab",
+      "name_ar": "مراجعة المخطط ولوحة PCB قبل التصنيع",
+      "status": "documented",
+      "requires": [],
+      "proof": [
+        "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/2313-hardware-electronics-engineering/8874-review-schematic-and-layout"
+      ],
+      "source": "atlas-code.json",
+      "what": "مراجعة منضبطة قبل إرسال اللوحة للتصنيع تلتقط أخطاء النسخة الأولى: ERC/DRC، البصمات والأطراف والقطبية مقابل datasheet، خطوط الطاقة، فصل الطاقة عند الطرف، مسارات العودة والأرضي، الـstack-up والممانعة، وقابلية التصنيع والتجميع والاختبار. — A disciplined pre-fab review that catches f"
+    },
+    {
+      "id": "ACODE-256",
+      "family": "atlas-code",
+      "group": "software",
+      "domain": "code",
+      "name_en": "macOS code-signing and entitlements failure diagnosis",
+      "name_ar": "تشخيص أعطال توقيع تطبيقات macOS والـentitlements",
+      "status": "documented",
+      "requires": [
+        "os:macos"
+      ],
+      "proof": [
+        "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/2688-build-macos-apps/10305-signing-entitlements"
+      ],
+      "source": "atlas-code.json",
+      "what": "حين يرفض macOS تشغيل تطبيق أو يشكو من توقيع أو entitlement أو sandbox، يفحص الحزمة ويصنف العطل (بلا توقيع، هوية خاطئة، entitlement غير مطابق، hardened runtime، sandbox، توقيع متداخل، متطلبات notarization) ويعطي أقصر مسار إصلاح. — Inspects the bundle, classifies the signing failur"
+    },
+    {
+      "id": "ACODE-257",
+      "family": "atlas-code",
+      "group": "software",
+      "domain": "code",
+      "name_en": "macOS SwiftUI apps: lightweight Logger telemetry and minimal-chrome Liquid Glass",
+      "name_ar": "تطبيقات macOS بـSwiftUI: قياس خفيف بـLogger وتبنّي Liquid Glass بأقل تخصيص",
+      "status": "documented",
+      "requires": [
+        "os:macos"
+      ],
+      "proof": [
+        "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/2688-build-macos-apps/10308-telemetry",
+        "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/2688-build-macos-apps/10303-liquid-glass"
+      ],
+      "source": "atlas-code.json",
+      "what": "طريقتان لتطبيق ماك: إضافة سجلات OSLog Logger بنظام subsystem/category سطرًا واحدًا لكل فعل والتحقق منها بـlog stream، وتحديث الواجهة لنظام Liquid Glass بإزالة الخلفيات والتعتيم المخصص أولًا والاعتماد على مكونات النظام قبل أي glassEffect مخصص. — Two macOS app methods: Logger telem"
+    },
+    {
+      "id": "ACODE-258",
+      "family": "atlas-code",
+      "group": "software",
+      "domain": "code",
+      "name_en": "SystemVerilog review: types, always blocks, synthesisability",
+      "name_ar": "مراجعة كود SystemVerilog: الأنواع وكتل always والقابلية للتوليف",
+      "status": "documented",
+      "requires": [],
+      "proof": [
+        "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/2807-hdl/11336-review-systemverilog"
+      ],
+      "source": "atlas-code.json",
+      "what": "مراجعة مرتبة لملفات SystemVerilog وفق IEEE 1800-2017: logic بدل wire/reg، always_ff/always_comb بدل always @، unique/priority case، الإسناد الصحيح، منافذ ANSI وتوصيلات بالاسم، الحزم للأنواع المشتركة، وكشف الـlatches وعدم تطابق العرض. — A prioritised SystemVerilog review covering "
+    },
+    {
+      "id": "ACODE-259",
+      "family": "atlas-code",
+      "group": "software",
+      "domain": "code",
+      "name_en": "UI state completeness and edge-case audit for React components",
+      "name_ar": "تدقيق حالات الواجهة الأربع وحالات الحدود في مكونات React",
+      "status": "documented",
+      "requires": [
+        "npm:react"
+      ],
+      "proof": [
+        "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/3000-pf-code-review/12810-pf-state-audit",
+        "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/3000-pf-code-review/12806-pf-adversarial-review"
+      ],
+      "source": "atlas-code.json",
+      "what": "يفحص كل مكون يعتمد على بيانات: هل يعرض حالات التحميل والخطأ والفراغ وعدم الصلاحية (الفرق تنسى عادةً اثنتين من أربع)، ثم يجرّب قيمًا حدية للخصائص (نصوص فارغة أو طويلة، أرقام سالبة وNaN، مصفوفات فارغة أو ضخمة، callbacks ترمي أخطاء) ويكشف غياب الحماية. — Checks every data-dependent "
+    },
+    {
+      "id": "ACODE-260",
+      "family": "atlas-code",
+      "group": "software",
+      "domain": "code",
+      "name_en": "i18n readiness audit: hardcoded strings, concatenation, locale formats, RTL",
+      "name_ar": "تدقيق جاهزية الواجهة للتعريب والتدويل والاتجاه من اليمين",
+      "status": "documented",
+      "requires": [],
+      "proof": [
+        "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/3000-pf-code-review/12807-pf-i18n-audit"
+      ],
+      "source": "atlas-code.json",
+      "what": "يكشف قبل الترجمة ما سيكسرها: نصوص ظاهرة مكتوبة في الكود، جمل مبنية بالدمج (ترتيب الكلمات والجمع يختلفان؛ العربية لها ست صيغ جمع)، تنسيق تاريخ وأرقام وعملات دون locale، وCSS لا يحتمل الاتجاه من اليمين. — Finds what will break translation: hardcoded strings, concatenated sentences,"
+    },
+    {
+      "id": "ACODE-261",
+      "family": "atlas-code",
+      "group": "software",
+      "domain": "code",
+      "name_en": "Heuristic evaluation with three independent evaluators and reconciliation",
+      "name_ar": "تقييم استكشافي للواجهة بثلاثة مقيّمين مستقلين ثم توفيق النتائج",
+      "status": "documented",
+      "requires": [],
+      "proof": [
+        "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/3011-uxd-research/12864-uxd-research-heuristic-eval"
+      ],
+      "source": "atlas-code.json",
+      "what": "يفحص واجهة (لقطات أو رابط حي أو وصف) مقابل إطار استكشافي يختاره الباحث (Nielsen، Shneiderman أو مخصص) بثلاثة مقيّمين كلٌّ على حدة، ثم يوفّق بين النتائج في تقرير موحّد للمخالفات المرصودة دون أن يقيّم الشدة أو يقترح الحلول؛ ذلك عمل الباحث بعدها. — Runs a structured heuristic evalua"
+    },
+    {
+      "id": "ACODE-262",
+      "family": "atlas-code",
+      "group": "software",
+      "domain": "code",
+      "name_en": "Agent-authored PR review: alignment passes and hallucinated references",
+      "name_ar": "مراجعة طلبات الدمج التي يكتبها وكيل: المواءمة مع المتطلبات والمراجع الوهمية",
+      "status": "documented",
+      "requires": [],
+      "proof": [
+        "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/3052-adlc-verify/13150-agent-code-review",
+        "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/3052-adlc-verify/13153-hallucination-checks"
+      ],
+      "source": "atlas-code.json",
+      "what": "مراجعة كود كتبه وكيل ذكاء اصطناعي تختلف عن مراجعة زميل: الكود يُبنى ويُقرأ جيدًا، والخطر في ما افترضه أو غيّره أو تركه بصمت. خمس تمريرات (المواءمة، سلامة الاختبارات، أنماط فشل الوكلاء، الأمان، التشغيل) مع تحقق من وجود كل حزمة ورمز وإعداد ورابط. — Five review passes for agent-writ"
+    },
+    {
+      "id": "ACODE-263",
+      "family": "atlas-code",
+      "group": "software",
+      "domain": "code",
+      "name_en": "Review capacity and release gates for agent-speed delivery",
+      "name_ar": "تصميم سعة المراجعة وبوابات الإصدار لعصر الوكلاء",
+      "status": "documented",
+      "requires": [],
+      "proof": [
+        "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/3052-adlc-verify/13154-review-capacity",
+        "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/3051-adlc-operate/13145-release-gates"
+      ],
+      "source": "atlas-code.json",
+      "what": "حين يصبح عنق الزجاجة هو قرار الدمج لا كتابة الكود: طبقات تحقق آلية قبل أن يرى إنسان الطلب، توجيه حسب درجة الخطر لا طابور واحد، وبوابات إصدار (دمج، تجربة، إنتاج، ما بعد الإصدار) مع فئات تغيير وتراجع مسبق التسليح. — When deciding to merge becomes the bottleneck: machine layers befo"
+    },
+    {
+      "id": "ACODE-264",
+      "family": "atlas-code",
+      "group": "software",
+      "domain": "code",
+      "name_en": "Whole-history secret audit before open-sourcing, and stale-audit reruns",
+      "name_ar": "تدقيق الأسرار في كل تاريخ git قبل جعل المستودع عامًا، وإعادة التدقيق حين يقدم",
+      "status": "documented",
+      "requires": [
+        "gitleaks"
+      ],
+      "proof": [
+        "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/3345-pre-open-source-credential-audit/13860-pre-open-source-credential-audit",
+        "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/3305-credential-audit-rerun/13819-credential-audit-rerun"
+      ],
+      "source": "atlas-code.json",
+      "what": "جعل مستودع خاص عامًا يكشف تاريخ git كله لا الشجرة الحالية فقط. يتحقق أن ملفات الأسرار متجاهلة وغير متتبعة معًا، ويبحث عن ملفات النسخ الاحتياطي للمحرر، ويمسح كل blob في كل commit، ويدوّر أي مفتاح حقيقي قبل إعادة كتابة التاريخ. ويعيد التدقيق القديم باشتقاق المسارات من جديد. — Makin"
+    },
+    {
+      "id": "ACODE-265",
+      "family": "atlas-code",
+      "group": "software",
+      "domain": "code",
+      "name_en": "Make Terraform check blocks actually fail CI",
+      "name_ar": "جعل كتل check في Terraform تُفشل CI فعلًا",
+      "status": "documented",
+      "requires": [],
+      "proof": [
+        "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/3364-terraform-check-block-warn-only-ci-gate/13879-terraform-check-block-warn-only-ci-gate"
+      ],
+      "source": "atlas-code.json",
+      "what": "كتل check في Terraform (1.5+) تحذّر فقط وتخرج بالرمز 0، فلا يحمي الحارس شيئًا. يلف خطوة plan بحيث يتحول نص فشل التأكيد إلى فشل صريح، ويكتب رسائل تسمّي المخالفين دون كشف قيم حساسة. — Terraform check blocks warn and exit 0; this wraps plan so a failed assertion fails CI, naming off"
+    },
+    {
+      "id": "ACODE-266",
+      "family": "atlas-code",
+      "group": "software",
+      "domain": "code",
+      "name_en": "Signed, offline-verifiable audit trail for agent tool calls",
+      "name_ar": "سجل تدقيق موقّع لكل استدعاء أداة يقوم به الوكيل",
+      "status": "documented",
+      "requires": [
+        "claude:tools"
+      ],
+      "proof": [
+        "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/3521-signed-audit-trails/14292-signed-audit-trails-recipe"
+      ],
+      "source": "atlas-code.json",
+      "what": "نمط يجعل كل استدعاء أداة لوكيل (Bash، تعديل، كتابة، جلب) يُقيَّم أولًا مقابل سياسة صريحة (Cedar) فيُمنع إن رُفض، ثم يُوقَّع بعد التنفيذ بإيصال Ed25519 قانوني الشكل يمكن لأي مدقق التحقق منه دون شبكة أو ثقة في المشغّل. — Every agent tool call is policy-checked before running and si"
+    },
+    {
+      "id": "ACODE-267",
+      "family": "atlas-code",
+      "group": "software",
+      "domain": "code",
+      "name_en": "Which permission gate refused, and services that inherit an operator's allow-list",
+      "name_ar": "تشخيص أي بوابة صلاحيات رفضت الأمر، وخطر توريث قائمة السماح في خدمة",
+      "status": "documented",
+      "requires": [],
+      "proof": [
+        "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/3339-permission-gate-allow-list-not-decisive/13853-permission-gate-allow-list-not-decisive",
+        "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/3340-permission-gate-inherits-operator-allow/13854-permission-gate-inherits-operator-allow"
+      ],
+      "source": "atlas-code.json",
+      "what": "قائمة السماح ليست سلطة واحدة: حين تقف بوابتان أمام نفس الأمر (مصنّف المضيف وhook وقاعدة خادم) قد تحترمها واحدة وتتجاهلها الأخرى دون أن يُذكر من رفض. وحين تُضمَّن بوابة مكتوبة لإنسان في خدمة أو بوت، ترث الخدمة صلاحيات الإنسان وتنفّذ بها طلبات لم يرها (نائب مرتبك). — Diagnose which"
+    },
+    {
+      "id": "ACODE-268",
+      "family": "atlas-code",
+      "group": "software",
+      "domain": "code",
+      "name_en": "Adopting a new major of a security gate you consume",
+      "name_ar": "تبنّي إصدار رئيسي جديد لبوابة أمان تعتمد عليها",
+      "status": "documented",
+      "requires": [],
+      "proof": [
+        "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/3304-consumed-gate-major-upgrade/13818-consumed-gate-major-upgrade"
+      ],
+      "source": "atlas-code.json",
+      "what": "تحسّن يقيسه المزوّد بشروط مضيفه قد يكون صحيحًا وخاطئًا لك، لأنكما تستهلكان تمييزات مختلفة. يسأل: هل يقرر شيء بعد هذه البوابة؟ ثم يعيد تشغيل الأوامر الحقيقية بمعاييرك أنت ويقيس ما عبر حدودك. — A vendor's measured improvement can be true and still wrong for you; replay in your own "
+    },
+    {
+      "id": "ACODE-269",
+      "family": "atlas-code",
+      "group": "software",
+      "domain": "code",
+      "name_en": "Linter migration: ESLint/Prettier → Biome and flake8/isort → ruff",
+      "name_ar": "ترحيل أدوات الفحص: ESLint/Prettier إلى Biome وflake8/isort إلى ruff",
+      "status": "documented",
+      "requires": [
+        "npm:react"
+      ],
+      "proof": [
+        "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/2160-migration-patterns-plugin/7801-eslint-to-biome",
+        "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/2160-migration-patterns-plugin/7802-flake8-to-ruff"
+      ],
+      "source": "atlas-code.json",
+      "what": "يرحّل فحص الكود إلى أداة واحدة سريعة مع الحفاظ على القواعد: يدقق الإعدادات والإضافات الحالية، يربط كل قاعدة بمكافئها، يحدد ما لا مكافئ له (فيبقي الأداة القديمة له فقط)، يحدّث pre-commit وCI ويزيل التبعيات القديمة، ثم يتحقق أن النتائج متكافئة. — Consolidates linting into one fast "
+    },
+    {
+      "id": "ACODE-270",
+      "family": "atlas-code",
+      "group": "software",
+      "domain": "code",
+      "name_en": "libGDX game project audit: setup, screen lifecycle, assets, rendering",
+      "name_ar": "تدقيق مشروع لعبة libGDX: الإعداد ودورة الشاشات والأصول والرسم",
+      "status": "documented",
+      "requires": [],
+      "proof": [
+        "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/71-libgdx-development/125-libgdx-audit-workflow"
+      ],
+      "source": "atlas-code.json",
+      "what": "يراجع مشروع لعبة libGDX ويخرج تقرير عيوب الصحة والأداء ودورة الحياة: إصدار المكتبة وJDK وGradle، بنية الوحدات والمنصات، جذر التطبيق، دورة Screen، تحميل الأصول والتخلص منها، خط الرسم، وحجب خيط GL. — Audits a libGDX project for correctness, performance and lifecycle defects."
+    },
+    {
+      "id": "ACODE-271",
+      "family": "atlas-code",
+      "group": "software",
+      "domain": "code",
+      "name_en": "Cross-platform engineering review: SPA, PWA, mobile, Electron, Tauri",
+      "name_ar": "مراجعة هندسة المنصات: ويب أحادي الصفحة وPWA وموبايل وElectron وTauri",
+      "status": "documented",
+      "requires": [
+        "npm:react"
+      ],
+      "proof": [
+        "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/77-platform-engineering/142-platform-review-workflow"
+      ],
+      "source": "atlas-code.json",
+      "what": "يكتشف خليط المنصات في المستودع أولًا ثم يراجع كل منصة بقواعدها في الأمان والمعمارية والأداء: التحقق على الخادم، التوكنات وpasskeys، CSP وXSS، الأسرار، تقوية Electron/Tauri، وحدود العميل والخادم، ويكتب تقريرًا دون إصلاح تلقائي. — Detects the platform mix, then reviews each against"
+    },
+    {
+      "id": "ACODE-272",
+      "family": "atlas-code",
+      "group": "software",
+      "domain": "code",
+      "name_en": "Repository validation harness: layered matrix, one entrypoint, honest fallbacks",
+      "name_ar": "تصميم حزمة تحقق موحدة للمستودع بطبقات وأوامر لكل نوع تغيير",
+      "status": "documented",
+      "requires": [],
+      "proof": [
+        "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/3604-agent-harness-skills/14471-validation-harness-design"
+      ],
+      "source": "atlas-code.json",
+      "what": "يحوّل الفحوص المتفرقة إلى أصغر سطح أوامر متكرر يثبت أن التغيير آمن للمراجعة: جرد الأوامر وCI الموجودة، مصفوفة طبقات (مستودع/وثائق، عقود، وحدة/أنواع/فحص، تشغيل، تبعيات خارجية)، أمر أدنى لكل نوع تغيير، مدخل موحّد doctor، ومخرجات JSON/JUnit مع أسباب صريحة لأي تخطٍّ. — Turns scattere"
+    },
+    {
+      "id": "ACODE-273",
+      "family": "atlas-code",
+      "group": "software",
+      "domain": "code",
+      "name_en": "Intended-vs-implemented gap audit",
+      "name_ar": "تدقيق الفجوة بين ما يُفترض أن يفعله النظام وما يفعله الكود فعلًا",
+      "status": "documented",
+      "requires": [],
+      "proof": [
+        "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/2876-pm-ai-shipping/11600-intended-vs-implemented"
+      ],
+      "source": "atlas-code.json",
+      "what": "أخطر أخطاء الأمان والصحة تعيش بين النية والتنفيذ: صلاحية موثقة لا تُفرض، endpoint 'للمجدول فقط' يستدعيه أي أحد، حقل 'عام فقط' يسرّب بيانات خاصة. يقرأ وثائق النية كادعاءات، ويجد نقطة الفرض في الكود لكل ادعاء، ويصنف كل فجوة حسب ما إذا كانت تسمح لفاعل حقيقي بالوصول لما لا يجب. — Rea"
+    },
+    {
+      "id": "ACODE-274",
+      "family": "atlas-code",
+      "group": "software",
+      "domain": "code",
+      "name_en": "Install shared review checklists for Copilot, Codex and Claude PR reviewers",
+      "name_ar": "تثبيت قوائم مراجعة موحّدة يقرؤها Copilot وCodex وClaude عند مراجعة طلبات الدمج",
+      "status": "documented",
+      "requires": [],
+      "proof": [
+        "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/979-set-up-review-config/2263-set-up-review-config"
+      ],
+      "source": "atlas-code.json",
+      "what": "يجعل ثلاثة مراجعين آليين لطلبات الدمج يطبقون نفس قواعد الأسلوب: ملف مهارة code-review لـCopilot، قسم 'Code Review Rules' في AGENTS.md لـCodex، وREVIEW.md لـClaude، داخل كتل مُدارة تُستبدل بأمان عند الإعادة، وكل قاعدة باسم تستشهد به النتائج. — Makes three AI PR reviewers apply the"
+    },
+    {
+      "id": "ACODE-275",
+      "family": "atlas-code",
+      "group": "software",
+      "domain": "code",
+      "name_en": "Triage a red AI-review CI check: four causes with opposite responses",
+      "name_ar": "فرز فحص CI أحمر لمراجعة يقوم بها ذكاء اصطناعي: أربعة أسباب مختلفة",
+      "status": "documented",
+      "requires": [],
+      "proof": [
+        "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/2153-github-actions-plugin/7753-ai-review-max-turns"
+      ],
+      "source": "atlas-code.json",
+      "what": "فحوص CI التي تشغّل Claude على الفرق تتحول للأحمر لأربعة أسباب تحتاج ردودًا متعاكسة: نفاد الميزانية أثناء التشغيل، تجاوز سقف الأدوار بعد اكتمال الفحص، نتيجة حقيقية لم تُنشر كتعليق، أو عطل بنية تحتية. يميز بينها من سجل التشغيل قبل أي فعل. — Separates the four reasons an AI-review c"
+    },
+    {
+      "id": "ACODE-276",
+      "family": "atlas-code",
+      "group": "software",
+      "domain": "code",
+      "name_en": "Home Assistant configuration validation: YAML, secrets, duplicate keys",
+      "name_ar": "التحقق من إعدادات Home Assistant: YAML والأسرار والمفاتيح المكررة",
+      "status": "documented",
+      "requires": [
+        "docker"
+      ],
+      "proof": [
+        "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/2155-home-assistant-plugin/7774-ha-validate"
+      ],
+      "source": "atlas-code.json",
+      "what": "يفحص ملفات إعداد Home Assistant قبل إعادة التشغيل: صحة YAML مع وسوم HA الخاصة، مراجع !secret غير معرفة في secrets.yaml، مفاتيح مكررة في scripts وscenes، ثم الفحص الكامل check_config عبر Docker أو HA OS، مع إصلاحات للأخطاء الشائعة. — Validates Home Assistant YAML, secret reference"
+    },
+    {
+      "id": "ACODE-277",
+      "family": "atlas-code",
+      "group": "software",
+      "domain": "code",
+      "name_en": "Cross-layer instruction-stack audit: rule-firing evidence, conflicts, permission bypasses",
+      "name_ar": "تدقيق طبقات التعليمات كلها: هل طُبّقت القاعدة يومًا؟ وأين تتعارض الطبقات؟",
+      "status": "documented",
+      "requires": [],
+      "proof": [
+        "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/1280-instruction-audit/2957-instruction-audit"
+      ],
+      "source": "atlas-code.json",
+      "what": "تدقيق للقراءة فقط لكل ما يصل إلى الوكيل (ملفات التعليمات العامة والمشروع والمتداخلة، تعريفات الوكلاء، الخطافات، الصلاحيات، والموجّه الذي يُجمّع للوكيل البعيد)، يبدأ بقياس الحجم قبل الحكم، ثم يختبر كل قاعدة بدليل سلوكي هل أثّرت يومًا، ويقتبس طرفي كل تعارض بين الطبقات، ويكشف بوابات"
     },
     {
       "id": "ACRAFT-01",
@@ -14240,6 +14722,71 @@
       "what": "بدل أتمتة متصفح يجد كتلة البيانات المضمنة في الصفحة، يفك مخططها من حلقة الرسم نفسها، وينقل صيغ المقاييس المشتقة حرفيًا، ثم يطابق كل رقم مع العرض. — Instead of driving a browser, finds the data blob embedded in the page, decodes its schema from the page's own render loop, ports de"
     },
     {
+      "id": "ADATA-53",
+      "family": "atlas-data",
+      "group": "data",
+      "domain": "data",
+      "name_en": "Event instrumentation from a tracking plan with CI schema gate and consent at source",
+      "name_ar": "تنفيذ خطة تتبع الأحداث مع بوابة schema في CI وموافقة المستخدم من المصدر",
+      "status": "documented",
+      "requires": [
+        "chromium"
+      ],
+      "proof": [
+        "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/2332-martech-event-instrumentation/8954-implement-event-instrumentation-and-cons"
+      ],
+      "source": "atlas-data.json",
+      "what": "يحوّل خطة التتبع إلى جمع أحداث فعلي: مكتبة تتبع typed مولّدة من الخطة، توزيع الأحداث بين العميل والخادم، ربط الهوية كما صُمم، بوابة CI تُفشل أي حدث خارج الخطة، وحجب الجمع قبل الموافقة (Consent Mode v2، TCF، GPC). — Turns a tracking plan into typed collection with a CI schema gate"
+    },
+    {
+      "id": "ADATA-54",
+      "family": "atlas-data",
+      "group": "data",
+      "domain": "data",
+      "name_en": "Recommender evaluation: temporal split, popularity baseline, A/B as verdict",
+      "name_ar": "تقييم أنظمة التوصية: تقسيم زمني وخط أساس شعبية والحكم للـA/B",
+      "status": "documented",
+      "requires": [],
+      "proof": [
+        "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/2367-recommendation-systems-engineering/9140-evaluate-recommenders"
+      ],
+      "source": "atlas-data.json",
+      "what": "يبني تقييمًا صادقًا لنظام توصية: تقسيم زمني بدل العشوائي، مقارنة دائمة بخط أساس الشعبية، مقاييس تناسب كل مرحلة، حواجز التغطية والتنوع والجدة، مراعاة انحياز الموضع، وتجربة A/B هي الحكم النهائي. — Builds an honest recommender evaluation where offline metrics filter and the online A"
+    },
+    {
+      "id": "ADATA-55",
+      "family": "atlas-data",
+      "group": "data",
+      "domain": "data",
+      "name_en": "Zero-provenance audit for multi-source metrics before believing a 0",
+      "name_ar": "تدقيق مصدر الأصفار في مقاييس متعددة المصادر قبل تصديقها",
+      "status": "documented",
+      "requires": [],
+      "proof": [
+        "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/3331-metrics-zero-provenance-audit/13845-metrics-zero-provenance-audit"
+      ],
+      "source": "atlas-data.json",
+      "what": "حين يجمع أداة واحدة مقاييس من عدة مصادر في مخطط ثابت، يعني الصفر واحدًا من ثلاثة: لم تفعل ذلك فعلًا، أو أن مصدرك لا يبلغ عن هذا الحقل أصلًا، أو أنك فعلته بطريقة لا يتعرف عليها الكاشف. يبحث عن الدالة التي تزيد كل حقل قبل تصديق أي صفر. — In a shared multi-source schema a 0 can mean"
+    },
+    {
+      "id": "ADATA-56",
+      "family": "atlas-data",
+      "group": "data",
+      "domain": "data",
+      "name_en": "Choose a data-quality approach: tests, monitors and contracts, and where each runs",
+      "name_ar": "اختيار منهج جودة البيانات: اختبارات للقواعد المعروفة ومراقبة للمجهول وعقود عند المنتِج",
+      "status": "documented",
+      "requires": [
+        "python3",
+        "npm:three"
+      ],
+      "proof": [
+        "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/2271-data-quality-observability/8666-choose-data-quality-approach"
+      ],
+      "source": "atlas-data.json",
+      "what": "يقرر كيف تُضمن جودة البيانات لمجموعة محددة: القاعدة المعروفة (لا قيم فارغة، فريدة، مرجعية) اختبار، والمجهول عبر الزمن (تأخر التحديث، الحجم، انحراف المخطط والتوزيع) مراقب، وضمان حدود المنتِج عقد؛ ثم الأداة ومكان التشغيل وسياسة الإيقاف أو التحذير والـSLA. — Decides the mix of tests"
+    },
+    {
       "id": "ADOCS-01",
       "family": "atlas-docs",
       "group": "documents",
@@ -15051,6 +15598,84 @@
       ],
       "source": "atlas-docs.json",
       "what": "يحكم على كل تعليق: هل يضيف معلومة عن الحالة الحالية لا يقولها الكود نفسه؟ ويحوّل وعود 'لا تغيّر هذا' إلى اختبارات. — Judges each comment by whether it adds present-tense information the code itself cannot say, and turns 'do not change this' promises into tests."
+    },
+    {
+      "id": "ADOCS-51",
+      "family": "atlas-docs",
+      "group": "documents",
+      "domain": "docs",
+      "name_en": "Persona-targeted CodeTour walkthroughs with verified anchors",
+      "name_ar": "جولات CodeTour في الكود موجّهة لشخصية القارئ",
+      "status": "documented",
+      "requires": [],
+      "proof": [
+        "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/162-code-tour/531-code-tour"
+      ],
+      "source": "atlas-docs.json",
+      "what": "يكتب ملفات .tour لإضافة CodeTour: جولة قصصية خطوة بخطوة في المستودع لشخص محدد (منضم جديد، مراجع PR، محقق سبب جذري، معماري، مراجع أمان)، كل خطوة مربوطة بملف وسطر حقيقيين، دون تعديل أي كود. — Writes CodeTour .tour files: a narrative, persona-specific walkthrough anchored to real fi"
+    },
+    {
+      "id": "ADOCS-52",
+      "family": "atlas-docs",
+      "group": "documents",
+      "domain": "docs",
+      "name_en": "LLM-facing prose audit: priming prohibitions and anchoring examples",
+      "name_ar": "تدقيق نصوص التعليمات الموجهة للنموذج: نواهٍ تلفت الانتباه وأمثلة تقيّد",
+      "status": "documented",
+      "requires": [],
+      "proof": [
+        "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/1990-epistemic-cooperative/7157-white-bear",
+        "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/1990-epistemic-cooperative/7158-zero-shot"
+      ],
+      "source": "atlas-docs.json",
+      "what": "يراجع ملفات المهارات وبرومبتات الوكلاء بحثًا عن نمطين يضعفان الاتباع: ذكر أفعال ممنوعة أو مسارات قديمة أو بدائل مرفوضة دون حاجة (يبقيها في انتباه النموذج)، وأمثلة few-shot تربط النموذج بحالات بعينها بدل المبدأ. قراءة فقط، والقرار للمؤلف. — Read-only audit of skill files and agent"
+    },
+    {
+      "id": "ADOCS-53",
+      "family": "atlas-docs",
+      "group": "documents",
+      "domain": "docs",
+      "name_en": "Book outline with per-chapter specs and a series bible",
+      "name_ar": "مخطط كتاب بمواصفة لكل فصل و'كتاب مرجعي' يحفظ الاتساق",
+      "status": "documented",
+      "requires": [],
+      "proof": [
+        "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/1376-velith/3225-book-outline"
+      ],
+      "source": "atlas-docs.json",
+      "what": "مخطط كتاب مفصل بما يكفي لكتابة كل فصل دون اختراع بنية: لكل فصل غرض وحالة دخول وخروج للقارئ (والبطل)، وسحب يشد القارئ، ومحتوى (مشاهد أو ادعاءات بأدلة أو مفاهيم)، مع 'كتاب مرجعي' للشخصيات والمصطلحات والقواعد، وتحقق ونقطة موافقة المؤلف. — A chapter-by-chapter outline with entry/exit"
+    },
+    {
+      "id": "ADOCS-54",
+      "family": "atlas-docs",
+      "group": "documents",
+      "domain": "docs",
+      "name_en": "Book publishing build: EPUB/PDF via Pandoc, epubcheck and metadata",
+      "name_ar": "بناء ونشر كتاب: EPUB وPDF عبر Pandoc مع epubcheck وبيانات النشر",
+      "status": "documented",
+      "requires": [
+        "pandoc"
+      ],
+      "proof": [
+        "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/1376-velith/3227-book-publish"
+      ],
+      "source": "atlas-docs.json",
+      "what": "يحول مسودات الكتاب النهائية إلى ملفات يقبلها الموزّع من أول رفع: بوابة جاهزية، بيانات وصفية، صفحات أمامية وخلفية (منها إفصاح استخدام الذكاء الاصطناعي حين يُطلب)، معالجة مسبقة للشعر والسيناريو والصور، بناء EPUB وPDF وغيرها بـPandoc، وفحص بـepubcheck. — Turns final drafts into dist"
+    },
+    {
+      "id": "ADOCS-55",
+      "family": "atlas-docs",
+      "group": "documents",
+      "domain": "docs",
+      "name_en": "Publish a digital collection through rights and cultural-sensitivity gates",
+      "name_ar": "نشر مجموعة رقمية بعد بوابتي الحقوق والحساسية الثقافية",
+      "status": "documented",
+      "requires": [],
+      "proof": [
+        "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/2342-museum-cultural-institution-operations/9003-publish-digital-collections-and-access"
+      ],
+      "source": "atlas-docs.json",
+      "what": "قبل نشر مقتنيات أو أرشيف على الإنترنت: بوابة حقوق (ملك عام، أو حقوق مُصرّح بها، أو غير مصرح فلا يُنشر إلا وصف وصورة مصغرة)، ثم بوابة حساسية ثقافية بالتشاور مع المجتمع المصدر، ثم قرار الوصول المفتوح أو المقيد بترخيص واضح، والبنية التقنية للنشر. — Rights gate, then community-consul"
     },
     {
       "id": "AMEDIA-01",
@@ -16404,6 +17029,97 @@
       "what": "يحلل مواصفة أو خطة بعدسات البنية والتنفيذ والافتراضات وعدم التطابق وأصحاب المصلحة، ثم يطرح أهم الأسئلة واحدًا تلو الآخر مع إجابة موصى بها. — Analyses a spec or plan through structure, execution, assumptions, mismatches and stakeholder lenses, then asks the top questions one at a "
     },
     {
+      "id": "AMIND-55",
+      "family": "atlas-mind",
+      "group": "thinking",
+      "domain": "mind",
+      "name_en": "Citation-support check: does each source really back its claim",
+      "name_ar": "التحقق من أن كل مصدر مذكور يدعم الادعاء فعلًا",
+      "status": "documented",
+      "requires": [],
+      "proof": [
+        "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/229-mas-ai-workflows/715-ai-citation-verification",
+        "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/1520-digital-marketing-pro/4131-verify-claims"
+      ],
+      "source": "atlas-mind.json",
+      "what": "يستخرج الادعاءات المادية ومصادرها من نص (إجابة ذكاء اصطناعي، محتوى تسويقي، تقرير) ويفتح المصدر الفعلي لكل ادعاء ويصنفه: مدعوم، مدعوم جزئيًا، متناقض، غير متاح، أو بلا مصدر، مع موضع الدليل. — Extracts material claims and their sources, opens each real source and classifies support "
+    },
+    {
+      "id": "AMIND-56",
+      "family": "atlas-mind",
+      "group": "thinking",
+      "domain": "mind",
+      "name_en": "arXiv prior-art check before designing a non-trivial mechanism",
+      "name_ar": "فحص الأدبيات السابقة على arXiv قبل تصميم آلية غير بسيطة",
+      "status": "documented",
+      "requires": [],
+      "proof": [
+        "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/3175-prior-art/13504-prior-art"
+      ],
+      "source": "atlas-mind.json",
+      "what": "قبل بناء آلية تقنية مكلفة (تخزين مؤقت، تنسيق، ترتيب واسترجاع، تقنية تدريب، بروتوكول) يبحث في arXiv عن أوراق حقيقية ويقرأ كل ورقة على حدة ثم يجمع ما تعلّمه، ومع ذلك لا يُشغّل إلا حين يستحق. — Before building an expensive mechanism, fetches real arXiv papers, reads each one in isol"
+    },
+    {
+      "id": "AMIND-57",
+      "family": "atlas-mind",
+      "group": "thinking",
+      "domain": "mind",
+      "name_en": "Verify a public numeric claim against the primary open-data series",
+      "name_ar": "التحقق من ادعاء رقمي عام مقابل البيانات المفتوحة الأولية",
+      "status": "documented",
+      "requires": [],
+      "proof": [
+        "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/3370-us-federal-open-data-claim-verification/13885-us-federal-open-data-claim-verification"
+      ],
+      "source": "atlas-mind.json",
+      "what": "الأرقام العامة تمر بطبقات (جهة رسمية ← خبر ← مجمّع ← منشور) حتى تتحول لسلسلة أخرى أو ضعف القيمة. يحدد أي سلسلة يسميها فعل الادعاء (عدد أم مبلغ)، وينزل لمستوى يمكنه نفي التعميمات، ويستعلم API البيانات المفتوحة مباشرة بأرقام غير مقرّبة واستعلام يمكن إعادته. — Picks the series the c"
+    },
+    {
+      "id": "AMIND-58",
+      "family": "atlas-mind",
+      "group": "thinking",
+      "domain": "mind",
+      "name_en": "Landing-fit check: does a result fit every place it reaches",
+      "name_ar": "فحص ملاءمة النتيجة لكل مكان تصل إليه وكل نية حُمّلت بها",
+      "status": "documented",
+      "requires": [],
+      "proof": [
+        "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/1989-epharmoge/7149-contextualize"
+      ],
+      "source": "atlas-mind.json",
+      "what": "النتيجة قد تكون صحيحة تقنيًا وغير ملائمة للسياق الذي تُطبق فيه. يتتبعها إلى كل مكان تصل إليه وكل نية كان يجب أن تحملها، ويضع كل عدم ملاءمة (والإغفالات أيضًا) مع أثرها في ورقة واحدة يجيب عنها المستخدم دفعة واحدة، ثم ينفذ ما يقرره. — Traces a result to everywhere it lands and every"
+    },
+    {
+      "id": "AMIND-59",
+      "family": "atlas-mind",
+      "group": "thinking",
+      "domain": "mind",
+      "name_en": "Independent option-set gate check before asking the user",
+      "name_ar": "بوابة فحص مستقلة لمجموعة الخيارات قبل عرضها على المستخدم",
+      "status": "documented",
+      "requires": [],
+      "proof": [
+        "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/1990-epistemic-cooperative/7150-gate-check"
+      ],
+      "source": "atlas-mind.json",
+      "what": "من يكتب الخيارات لا يستطيع الحكم على صلاحيتها لأنها ترث إطاره. يجمّد مجموعة الخيارات ويعرضها على مُحكِّم مستقل فعلًا (لا مراجعة ثانية من نفس الوكيل) ليحكم: خيارات حقيقية، أو منهارة لنفس النتيجة، أو مشوهة، ثم يتحقق من الأسس التي استشهد بها المحكّم قبل وصولها للمستخدم. — Freezes a "
+    },
+    {
+      "id": "AMIND-60",
+      "family": "atlas-mind",
+      "group": "thinking",
+      "domain": "mind",
+      "name_en": "External feedback intake: verify each claim, tier it, prevent, cover, close",
+      "name_ar": "استقبال الملاحظات الخارجية: تحقق من كل ادعاء ثم صنّفه وامنع تكراره وأغلق الحلقة",
+      "status": "documented",
+      "requires": [],
+      "proof": [
+        "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/3113-estregenesis/13330-feeda"
+      ],
+      "source": "atlas-mind.json",
+      "what": "ملاحظات المستخدمين والمراجعين الخارجيين أرخص كاشف عيوب، بشرط انضباط الاستقبال: قراءة كاملة، معاملة الطلبات المضمنة كبيانات لا أوامر، حكم لكل ادعاء بالقياس (مؤكد، جزئي، مرفوض، غير قابل للقياس)، تصنيف (عيب، فجوة توثيق، طلب ميزة)، منع التكرار، تغطية باختبار، ثم رد على صاحب الملاحظة."
+    },
+    {
       "id": "AWEB-01",
       "family": "atlas-research",
       "group": "research",
@@ -17732,6 +18448,248 @@
       ],
       "source": "atlas-strategy.json",
       "what": "يحول جلسة عمل إلى تقرير يتخذ عليه مدير المنتج قرارًا: الدليل قبل التفسير، كل مصطلح معرَّف عند أول ظهور، والتحقق والافتراض وغير المختبر في سلال صريحة. — Turns a work session into a report a product owner can act on: evidence before interpretation, each term defined at first use, a"
+    },
+    {
+      "id": "ASTRAT-73",
+      "family": "atlas-strategy",
+      "group": "thinking",
+      "domain": "strategy",
+      "name_en": "Trust-and-safety review: how the product can be misused to harm others",
+      "name_ar": "مراجعة الثقة والأمان: كيف يُساء استخدام المنتج لإيذاء الآخرين",
+      "status": "documented",
+      "requires": [],
+      "proof": [
+        "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/1528-safeguard/4180-trust-and-safety-review"
+      ],
+      "source": "atlas-strategy.json",
+      "what": "يراجع كيف يمكن لمستخدمين استخدام محتوى المنتج وتفاعلاته لإيذاء آخرين حتى حين يعمل كما صُمم: انتحال، تصيد عبر نماذج مشروعة، تحرش، نشر محتوى ضار، وثغرات في دورة البلاغ والإزالة. منفصل عن أمان التطبيق التقني. — Reviews how people can use the product's content and interactions to har"
+    },
+    {
+      "id": "ASTRAT-74",
+      "family": "atlas-strategy",
+      "group": "thinking",
+      "domain": "strategy",
+      "name_en": "Independent-contractor agreement review from the freelancer's side",
+      "name_ar": "مراجعة عقد مستقل من وجهة نظر المستقل",
+      "status": "documented",
+      "requires": [],
+      "proof": [
+        "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/1634-general-legal-assistant/4612-freelancer-review"
+      ],
+      "source": "atlas-strategy.json",
+      "what": "يقرأ عقد العمل الحر كما يقرؤه محامي المستقل: خطر تصنيف العلاقة كتوظيف مقنّع، ملكية الملكية الفكرية، شروط الدفع ومقابل الإلغاء، تحديد النطاق، عدم المنافسة، المسؤولية والتعويض، مع درجة لكل محور وبنود تفاوض مقترحة. ليس استشارة قانونية. — Reads a freelance contract the way the freela"
+    },
+    {
+      "id": "ASTRAT-75",
+      "family": "atlas-strategy",
+      "group": "thinking",
+      "domain": "strategy",
+      "name_en": "Write and rate internal-audit findings on the five Cs",
+      "name_ar": "كتابة وتقييم نتائج التدقيق الداخلي بالعناصر الخمسة",
+      "status": "documented",
+      "requires": [],
+      "proof": [
+        "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/2322-internal-audit/8913-rate-and-report-audit-findings"
+      ],
+      "source": "atlas-strategy.json",
+      "what": "يحوّل فجوات الرقابة المختبرة إلى نتائج تدقيق سليمة: المعيار، الحالة، السبب الجذري، الأثر، الإجراء التصحيحي، مع تقييم الأثر × الاحتمال للخطر المتبقي، وخطة إدارة يملكها أصحابها، وتقرير بمستوى الجمهور، وخطة متابعة للتحقق من الإغلاق. — Turns tested control gaps into five-C findings w"
+    },
+    {
+      "id": "ASTRAT-76",
+      "family": "atlas-strategy",
+      "group": "thinking",
+      "domain": "strategy",
+      "name_en": "Wire-fraud and trust-account controls",
+      "name_ar": "ضوابط احتيال التحويلات البنكية وحسابات الأمانة",
+      "status": "documented",
+      "requires": [],
+      "proof": [
+        "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/2397-title-escrow-settlement/9284-wire-fraud-and-trust-account-controls"
+      ],
+      "source": "atlas-strategy.json",
+      "what": "ضابطان يحميان أي جهة تحوّل أموال الغير: لا تحويل دون تحقق مستقل خارج القناة (اتصال برقم مصدره مستقل، تعليمات تتغير بالبريد = احتيال حتى يثبت العكس، موافقة شخصين)، وحساب الأمانة يُطابق ثلاثيًا ولا يُخلط ولا يصير أي سجل فيه سالبًا. ضوابط تشغيلية لا استشارة قانونية. — Two controls f"
+    },
+    {
+      "id": "ASTRAT-77",
+      "family": "atlas-strategy",
+      "group": "thinking",
+      "domain": "strategy",
+      "name_en": "PFMEA/DFMEA gap review against the AIAG-VDA method",
+      "name_ar": "مراجعة فجوات FMEA (تصميم وعملية) وفق AIAG-VDA",
+      "status": "documented",
+      "requires": [],
+      "proof": [
+        "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/2989-quality-engineering-skills/12642-fmea-reviewer"
+      ],
+      "source": "atlas-strategy.json",
+      "what": "يراجع جدول FMEA قائمًا ولا يقبله لأنه طويل أو يبدو كاملًا: الترويسة والنطاق والفريق، تحليل البنية والوظائف، سلسلة الأثر ← نمط الفشل ← السبب، تقييمات S/O/D وأولوية العمل، البنود عالية الأولوية بلا إجراء، والخصائص الخاصة وربطها بخطة التحكم. — Reviews an existing FMEA for missing fa"
+    },
+    {
+      "id": "ASTRAT-78",
+      "family": "atlas-strategy",
+      "group": "thinking",
+      "domain": "strategy",
+      "name_en": "APQP quality planning and PPAP submission",
+      "name_ar": "تخطيط جودة بدء الإنتاج APQP وحزمة اعتماد القطعة PPAP",
+      "status": "documented",
+      "requires": [],
+      "proof": [
+        "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/2989-quality-engineering-skills/12655-apqp",
+        "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/2989-quality-engineering-skills/12658-ppap"
+      ],
+      "source": "atlas-strategy.json",
+      "what": "يدير تقديم قطعة جديدة عبر مراحل APQP الخمس ببوابات ومخرجات لكل مرحلة، ثم يجهّز أو يراجع حزمة PPAP: تحديد المستوى، سبب إعادة التقديم، العناصر الثمانية عشر، وتشغيل إنتاجي تجريبي حقيقي. — Takes a new part through the five APQP phases with gates, then prepares or reviews the PPAP pac"
+    },
+    {
+      "id": "ASTRAT-79",
+      "family": "atlas-strategy",
+      "group": "thinking",
+      "domain": "strategy",
+      "name_en": "Quality-system internal audit: ISO 9001, IATF 16949 supplements, VDA 6.3 process audit",
+      "name_ar": "تدقيق داخلي لنظام الجودة: ISO 9001 وإضافات IATF 16949 وتدقيق عملية VDA 6.3",
+      "status": "documented",
+      "requires": [
+        "npm:p5"
+      ],
+      "proof": [
+        "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/2989-quality-engineering-skills/12648-iso-9001-internal-audit",
+        "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/2989-quality-engineering-skills/12647-iatf-16949-audit",
+        "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/2989-quality-engineering-skills/12649-vda-6-3-audit",
+        "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/2989-quality-engineering-skills/12640-audit-guide"
+      ],
+      "source": "atlas-strategy.json",
+      "what": "يخطط ويُجري تدقيقًا داخليًا بالأدلة: يبدأ بتدفق العملية ثم يربط بالبنود، أسئلة مفتوحة و'أرني'، عيّنات من عدة أشخاص وسجلات وفترات، تصنيف صحيح (رئيسي/ثانوي/فرصة تحسين)، وإضافات السيارات (ثلاثة أنواع تدقيق، متطلبات العميل، خطط الطوارئ) وتقييم VDA 6.3 من 0 إلى 10. — Plans and runs an"
+    },
+    {
+      "id": "ASTRAT-80",
+      "family": "atlas-strategy",
+      "group": "thinking",
+      "domain": "strategy",
+      "name_en": "DMAIC for chronic, data-driven process problems",
+      "name_ar": "حل مشكلة مزمنة بمنهج DMAIC (ستة سيجما)",
+      "status": "documented",
+      "requires": [
+        "pip:hypothesis"
+      ],
+      "proof": [
+        "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/2989-quality-engineering-skills/12661-dmaic"
+      ],
+      "source": "atlas-strategy.json",
+      "what": "منهج ستة سيجما لمشكلة تتكرر رغم الإجراءات التصحيحية: تعريف قابل للقياس بميثاق وSIPOC وخاصية حرجة للجودة، قياس بنظام قياس موثوق، تحليل إحصائي للأسباب، تحسين مثبت بالتجربة، ثم تحكم يمنع الرجوع. ليس بديلًا عن 8D للشكوى العاجلة ولا عن PDCA للتحسين البسيط. — Six Sigma's define-measure"
+    },
+    {
+      "id": "ASTRAT-81",
+      "family": "atlas-strategy",
+      "group": "thinking",
+      "domain": "strategy",
+      "name_en": "Is / Is-Not problem scoping",
+      "name_ar": "تحديد المشكلة بمصفوفة هي / ليست",
+      "status": "documented",
+      "requires": [
+        "pip:hypothesis"
+      ],
+      "proof": [
+        "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/2989-quality-engineering-skills/12663-is-is-not-scoping"
+      ],
+      "source": "atlas-strategy.json",
+      "what": "يحدد حدود المشكلة بدقة بمقارنة ما يُلاحظ فعلًا بما لا يُلاحظ في خمسة أبعاد (ماذا، أي قطعة، أين، متى، كم)، بحقائق مقاسة فقط، ثم يستبعد كل فرضية لا تفسّر النمط. — Bounds a problem by contrasting what is and is not observed across five dimensions, with measured facts only, then elim"
+    },
+    {
+      "id": "ASTRAT-82",
+      "family": "atlas-strategy",
+      "group": "thinking",
+      "domain": "strategy",
+      "name_en": "PDCA improvement cycle with a pre-defined pilot",
+      "name_ar": "دورة تحسين PDCA مع تجربة مسبقة التحديد",
+      "status": "documented",
+      "requires": [],
+      "proof": [
+        "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/2989-quality-engineering-skills/12664-pdca-improvement"
+      ],
+      "source": "atlas-strategy.json",
+      "what": "دورة خطط-نفّذ-افحص-تصرّف لتحسين استباقي: خط أساس مقاس وهدف SMART، تحليل السبب، خطة بمالكين ومخاطر تُراجع على FMEA، تجربة محدودة يُحدَّد حجمها ومعيار نجاحها قبل البدء، ثم تعميم أو تعديل. — Plan-do-check-act for proactive improvement, with the pilot's size and success criteria fixe"
+    },
+    {
+      "id": "ASTRAT-83",
+      "family": "atlas-strategy",
+      "group": "thinking",
+      "domain": "strategy",
+      "name_en": "Technical and management zeroing of a quality problem (double-five zeroing)",
+      "name_ar": "تصفير مشكلات الجودة تقنيًا وإداريًا (الصفر المزدوج)",
+      "status": "documented",
+      "requires": [],
+      "proof": [
+        "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/2989-quality-engineering-skills/12665-quality-problem-zeroing"
+      ],
+      "source": "atlas-strategy.json",
+      "what": "يغلق مشكلة جودة في المنتجات المعقدة أو الفضائية بأدلة على خمسة أمور: تحديد العطل وتفسيره، إزالة كل سبب جذري مؤكد والتحقق، إصلاح الضعف الإداري، تعميم الدرس على المنتجات والعمليات المعرضة، وعدم إخفاء أي إجراء أو خطر متبقٍّ عند الإغلاق. — Closes a complex-equipment quality problem w"
+    },
+    {
+      "id": "ASTRAT-84",
+      "family": "atlas-strategy",
+      "group": "thinking",
+      "domain": "strategy",
+      "name_en": "Executive forcing questions: six per C-suite lens to pressure-test a plan",
+      "name_ar": "أسئلة الإجبار التنفيذية: ستة أسئلة لكل دور قيادي تختبر الخطة",
+      "status": "documented",
+      "requires": [],
+      "proof": [
+        "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/146-c-level-agents/457-cco-review",
+        "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/146-c-level-agents/458-cdo-review",
+        "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/146-c-level-agents/460-ciso-review",
+        "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/146-c-level-agents/461-cmo-review",
+        "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/146-c-level-agents/462-cpo-review",
+        "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/146-c-level-agents/463-cro-review",
+        "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/146-c-level-agents/470-gc-review",
+        "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/146-c-level-agents/474-vpe-review"
+      ],
+      "source": "atlas-strategy.json",
+      "what": "يختبر خطة بعدسة كل دور قيادي يمسه القرار، بستة أسئلة محددة لكل دور تطلب رقمًا أو اسمًا لا رأيًا: الاحتفاظ الإجمالي لا الصافي، سبب المغادرة الأول، نموذج التهديد ونطاق الضرر، أي قرار تخدمه البيانات، ICP شخص حقيقي، تغطية خط المبيعات، معدل الدورة وDORA، وسقف المسؤولية في العقد. — Pre"
+    },
+    {
+      "id": "ASTRAT-85",
+      "family": "atlas-strategy",
+      "group": "thinking",
+      "domain": "strategy",
+      "name_en": "Multi-unit brand-standard audit turned into a coaching loop",
+      "name_ar": "تدقيق معايير العلامة عبر الفروع وتحويله إلى حلقة تدريب",
+      "status": "documented",
+      "requires": [],
+      "proof": [
+        "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/2300-franchise-operations/8825-run-brand-standard-audit"
+      ],
+      "source": "atlas-strategy.json",
+      "what": "قائمة تدقيق موزونة مربوطة بمعايير التشغيل التعاقدية (النظافة، المنتج، الخدمة، السلامة، العرض)، تُطبق على كل فرع بنفس الطريقة في نفس الفترة، وتحوّل الفجوات إلى مخاطر وإجراءات بمالك وتاريخ، ثم تدريب وإعادة تدقيق وترتيب الفروع. — A weighted, contract-anchored audit applied identical"
+    },
+    {
+      "id": "ASTRAT-86",
+      "family": "atlas-strategy",
+      "group": "thinking",
+      "domain": "strategy",
+      "name_en": "Define and validate an Ideal Customer Profile",
+      "name_ar": "تعريف العميل المثالي ICP والتحقق منه بخطة اختبار",
+      "status": "documented",
+      "requires": [],
+      "proof": [
+        "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/2216-majestic-sales/8360-icp-definition"
+      ],
+      "source": "atlas-strategy.json",
+      "what": "يحدد العميل المثالي للمبيعات: معايير ملاءمة (مؤسسية، تشغيلية، سلوكية، ومحفزات شراء) مشروطة بظرف يحتاج المنتج فعلًا، أدوار الشراء، قائمة 'ليس عميلنا' بمستبعدات صريحة، بطاقة نقاط بأوزان مبررة، وخطة تحقق بمعايير قبول ورفض. — Defines sales fit criteria, buyer roles, an anti-ICP, a sc"
+    },
+    {
+      "id": "ASTRAT-87",
+      "family": "atlas-strategy",
+      "group": "thinking",
+      "domain": "strategy",
+      "name_en": "Leader operating priorities: bottleneck, calendar audit, delegation",
+      "name_ar": "أولويات تشغيل القائد: عنق الزجاجة ومراجعة التقويم والتفويض",
+      "status": "documented",
+      "requires": [],
+      "proof": [
+        "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/2209-majestic-founder/8276-operating-priorities"
+      ],
+      "source": "atlas-strategy.json",
+      "what": "لقائد شركة مثقل أو مشتت: يحدد مرحلة الشركة ووظيفته الأساسية الآن وعنق الزجاجة الحالي، ثم النتائج الأعلى أثرًا لليوم والأسبوع والشهر، وما يُقطع أو يُفوض أو يُؤجل، ويعيد تشكيل التقويم حسب الغرض لا شكل الاجتماع، مع إيقاع مراجعة قصير. — For an overloaded leader: find the bottleneck, "
     },
     {
       "id": "SYNC-01",

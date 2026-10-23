@@ -31,8 +31,13 @@ class AtlasLedgerTests(unittest.TestCase):
         ids = {p["id"] for f in (SK / "data" / "powers").glob("*.json")
                for p in json.loads(f.read_text(encoding="utf-8"))}
         for rule in al.load_decisions():
-            self.assertTrue(rule["powers"], rule)
-            self.assertTrue(set(rule["powers"]) <= ids, rule)
+            self.assertIn(rule["status"], ("pattern", "skipped"), rule)
+            self.assertTrue(rule["reason"], rule)
+            if rule["status"] == "pattern":
+                self.assertTrue(rule["powers"], rule)
+                self.assertTrue(set(rule["powers"]) <= ids, rule)
+            else:
+                self.assertFalse(rule.get("powers"), rule)
 
     def test_unsafe_skills_never_pattern_or_pending(self):
         idx = {s["id"]: s for s in al.atlas_5000.load_index()["skills"]}

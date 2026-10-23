@@ -39,13 +39,14 @@ REA reports `inventory_state: partial` because of its documented Node path-race 
 
 | Status | Skills | Meaning |
 |---|---:|---|
-| covered | 2,359 | A KOSIF power cites the folder (proof link or `atlas.ids`) |
-| pattern | 1,322 | One vendor's instance of a lifecycle stage that a power already holds |
+| covered | 2,442 | A KOSIF power cites the folder (proof link or `atlas.ids`) |
+| pattern | 1,380 | One instance of a method a power already holds (a vendor's lifecycle stage, or a reviewed per-id mapping) |
 | duplicate | 543 | Same description or same normalised name as an earlier safe skill |
+| skipped | 66 | Read in full, nothing to transfer; the reason is recorded per rule |
 | excluded-review | 8,020 | Verdict `REVIEW_BEFORE_INSTALL`: ships scripts or install steps, so it is outside the safe rule |
 | excluded-copyleft | 78 | Copyleft license; referenced, never copied |
 | excluded-risk | 118 | KOSIF inspection raised risk flags |
-| pending | 2,353 | Safe and unique, waiting for its topic batch |
+| pending | 2,146 | Safe and unique, waiting for its topic batch |
 
 `python3 scripts/atlas_ledger.py stats` prints the counts per theme. `show <id>` explains one skill, and `list --status pending --theme <theme>` lists the next candidates.
 
@@ -72,11 +73,21 @@ Twenty-one of these stages already had a power. Nine had none. For those nine, t
 
 The stage-to-power rules are in `data/atlas-ledger-decisions.json`, and the sources and hashes are in `data/atlas-pass-20261023-saas-lifecycle.json`. Vendor endpoints and limits stay in each Atlas folder. They are found with `atlas_5000.py find "<vendor> <stage>"` and must be re-checked against the vendor's current docs.
 
+## Batch 2: verification and review
+
+All 239 pending skills in the verification-review theme were read in full. The result:
+
+- 60 new cards from 82 skills: ACODE-248..277, ASTRAT-73..87, ADATA-53..56, ADOCS-51..55 and AMIND-55..60 (sources and hashes in `data/atlas-pass-20261023-verification-review-*.json`)
+- 58 skills mapped to the power that already holds their method (status `pattern`)
+- 66 skills skipped with a reason: product-specific, a stub or thin wrapper, one lint rule, a single jurisdiction, or vendor reference material
+- 32 skills left pending for their own pack batches (universal-design-principles, digital-marketing-pro and twilio-developer-kit)
+
+The per-id decisions are rules at the top of `data/atlas-ledger-decisions.json`.
+
 ## What comes next
 
-The 2,353 pending skills are reviewed in small topic batches, largest themes first:
+The 2,146 pending skills are reviewed in small topic batches, largest themes first:
 
-- verification-review (239)
 - agent-workflow (165)
 - mcp-tooling (159)
 - planning-specs (126)
@@ -86,7 +97,7 @@ The 2,353 pending skills are reviewed in small topic batches, largest themes fir
 
 Each skill either becomes a new card, is mapped to the power that already holds its method, or is marked skipped with a reason.
 
-Whether the 8,020 `excluded-review` skills should also be read as text only, with no scripts run, is a decision for the owner.
+The owner chose to have the 8,020 `excluded-review` skills read as text only too, with no scripts run; they follow the safe batches.
 
 ## Boundaries
 

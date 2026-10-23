@@ -1,0 +1,84 @@
+{
+ "schema": "kosif.atlas-5000.mining-receipt.v1",
+ "date": "2026-10-23",
+ "batch": "verification-review-docs",
+ "atlas": "https://github.com/kosif199022-jpg/kosif-atlas",
+ "atlas_commit": "99bb108dff169880dd531359f474a01b73c4b233",
+ "powers_added": 5,
+ "sources_read": 6,
+ "scope_note": "Each SKILL.md was read in full as inert text and its method summarised in our own words on the card; with the owner's approval (2026-10-23) the whole skill folder (text files only) is also copied verbatim with its license into vendor/kosif-atlas, listed with hashes in vendor/kosif-atlas/KOSIF_INTEGRATION.json. Nothing from the Atlas was executed. Only READ_ONLY_OK, permissive-license, no-risk-flag skills were used.",
+ "sources": [
+  {
+   "atlas_id": 531,
+   "plugin": "code-tour",
+   "skill": "code-tour",
+   "license": "MIT",
+   "theme": "verification-review",
+   "path": "skills/162-code-tour/531-code-tour",
+   "skill_md_sha256": "3497bd672c185df19a2205190f897fddf64f9b55a599ad3c24443b87241139e6",
+   "bytes": 6332,
+   "read_in_full": true,
+   "power": "ADOCS-51"
+  },
+  {
+   "atlas_id": 7157,
+   "plugin": "epistemic-cooperative",
+   "skill": "white-bear",
+   "license": "MIT",
+   "theme": "verification-review",
+   "path": "skills/1990-epistemic-cooperative/7157-white-bear",
+   "skill_md_sha256": "45dae5139ab90504d4856cde1be19b65dd6619ed76b5af3982f1a7ef5e35a4e7",
+   "bytes": 10112,
+   "read_in_full": true,
+   "power": "ADOCS-52"
+  },
+  {
+   "atlas_id": 7158,
+   "plugin": "epistemic-cooperative",
+   "skill": "zero-shot",
+   "license": "MIT",
+   "theme": "verification-review",
+   "path": "skills/1990-epistemic-cooperative/7158-zero-shot",
+   "skill_md_sha256": "264d1ed8a2f4c6e94404403adf44357d316652a9e916e478c723403d982d42a0",
+   "bytes": 6725,
+   "read_in_full": true,
+   "power": "ADOCS-52"
+  },
+  {
+   "atlas_id": 3225,
+   "plugin": "velith",
+   "skill": "book-outline",
+   "license": "Apache-2.0",
+   "theme": "verification-review",
+   "path": "skills/1376-velith/3225-book-outline",
+   "skill_md_sha256": "6cd8d314b9180aa04d050b4b638614a7cf655c7a2f96112c7f074448d97e6fb8",
+   "bytes": 5374,
+   "read_in_full": true,
+   "power": "ADOCS-53"
+  },
+  {
+   "atlas_id": 3227,
+   "plugin": "velith",
+   "skill": "book-publish",
+   "license": "Apache-2.0",
+   "theme": "verification-review",
+   "path": "skills/1376-velith/3227-book-publish",
+   "skill_md_sha256": "1adb774b39c33805158a81fbca6c1fba00d369aee6c3bd1077534e65dffea1ae",
+   "bytes": 6477,
+   "read_in_full": true,
+   "power": "ADOCS-54"
+  },
+  {
+   "atlas_id": 9003,
+   "plugin": "museum-cultural-institution-operations",
+   "skill": "publish-digital-collections-and-access",
+   "license": "MIT",
+   "theme": "verification-review",
+   "path": "skills/2342-museum-cultural-institution-operations/9003-publish-digital-collections-and-access",
+   "skill_md_sha256": "ba94265b5692350aadb0e37a739c38891ed31d39d5f995d7290ccaa234f0549d",
+   "bytes": 5534,
+   "read_in_full": true,
+   "power": "ADOCS-55"
+  }
+ ]
+}

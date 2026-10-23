@@ -27,6 +27,6 @@ Rules:
 ## Smart capability index — Claude's 3-minute map
 
 Before exploring thousands of individual power cards, read `.claude/skills/kosif-superpowers/references/CLAUDE_3_MINUTE_MAP.md`.
-The deterministic index maps all 5,490 original powers (62 families) into 15 task-oriented groups; names, evidence, dependencies and original IDs are preserved.
+The deterministic index maps all 5,572 original powers (62 families) into 15 task-oriented groups; names, evidence, dependencies and original IDs are preserved.
 Run `python .claude/skills/kosif-superpowers/scripts/smart_capabilities.py groups` for the overview, `find "<task>" --json` for matched groups and powers, and `verify` to check the source-to-index mapping. Follow with `hub.py find` and `hub.py doctor` before any action.
 Grouping alone is not executable fusion: connect components only through tested workflows, and report missing runtime dependencies separately. Use REA/Ghidra only for suitable authorized executable targets, not catalog JSON.

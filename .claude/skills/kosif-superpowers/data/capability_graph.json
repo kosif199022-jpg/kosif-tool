@@ -15,7 +15,7 @@
    "id": "root",
    "kind": "root",
    "label": "KOSIF Superpowers",
-   "count": 5512
+   "count": 5572
   },
   {
    "id": "dom:motion",
@@ -483,10 +483,10 @@
    "label": "Atlas: engineering & code",
    "ar": "أطلس: الهندسة والكود",
    "prefix": "ACODE",
-   "count": 247,
+   "count": 277,
    "proven": 0,
    "status": {
-    "documented": 247
+    "documented": 277
    }
   },
   {
@@ -544,10 +544,10 @@
    "label": "Atlas: data, ML & charts",
    "ar": "أطلس: البيانات والتعلم الآلي",
    "prefix": "ADATA",
-   "count": 52,
+   "count": 56,
    "proven": 0,
    "status": {
-    "documented": 52
+    "documented": 56
    }
   },
   {
@@ -597,10 +597,10 @@
    "label": "Atlas: documents & diagrams",
    "ar": "أطلس: المستندات والمخططات",
    "prefix": "ADOCS",
-   "count": 50,
+   "count": 55,
    "proven": 0,
    "status": {
-    "documented": 50
+    "documented": 55
    }
   },
   {
@@ -662,10 +662,10 @@
    "label": "Atlas: agent workflows, planning & review",
    "ar": "أطلس: الوكلاء والتخطيط والمراجعة",
    "prefix": "AMIND",
-   "count": 54,
+   "count": 60,
    "proven": 0,
    "status": {
-    "documented": 54
+    "documented": 60
    }
   },
   {
@@ -705,10 +705,10 @@
    "label": "Atlas: product, marketing & business",
    "ar": "أطلس: المنتج والتسويق والأعمال",
    "prefix": "ASTRAT",
-   "count": 72,
+   "count": 87,
    "proven": 0,
    "status": {
-    "documented": 72
+    "documented": 87
    }
   },
   {
@@ -3048,7 +3048,7 @@
    "from": "dom:code",
    "to": "fam:atlas-code",
    "rel": "has",
-   "w": 247
+   "w": 277
   },
   {
    "from": "fam:atlas-code",
@@ -3070,13 +3070,13 @@
   },
   {
    "from": "fam:atlas-code",
-   "to": "req:gh",
+   "to": "req:node",
    "rel": "needs",
-   "w": 11
+   "w": 12
   },
   {
    "from": "fam:atlas-code",
-   "to": "req:node",
+   "to": "req:gh",
    "rel": "needs",
    "w": 11
   },
@@ -3084,19 +3084,19 @@
    "from": "fam:atlas-code",
    "to": "req:npm:react",
    "rel": "needs",
-   "w": 7
+   "w": 10
   },
   {
    "from": "fam:atlas-code",
    "to": "req:claude:tools",
    "rel": "needs",
-   "w": 6
+   "w": 7
   },
   {
    "from": "fam:atlas-code",
-   "to": "req:chromium",
+   "to": "req:os:macos",
    "rel": "needs",
-   "w": 4
+   "w": 5
   },
   {
    "from": "fam:atlas-code",
@@ -3156,13 +3156,13 @@
    "from": "dom:data",
    "to": "fam:atlas-data",
    "rel": "has",
-   "w": 52
+   "w": 56
   },
   {
    "from": "fam:atlas-data",
    "to": "req:python3",
    "rel": "needs",
-   "w": 4
+   "w": 5
   },
   {
    "from": "fam:atlas-data",
@@ -3195,6 +3195,18 @@
    "w": 1
   },
   {
+   "from": "fam:atlas-data",
+   "to": "req:chromium",
+   "rel": "needs",
+   "w": 1
+  },
+  {
+   "from": "fam:atlas-data",
+   "to": "req:npm:three",
+   "rel": "needs",
+   "w": 1
+  },
+  {
    "from": "root",
    "to": "dom:docs",
    "rel": "has",
@@ -3204,7 +3216,7 @@
    "from": "dom:docs",
    "to": "fam:atlas-docs",
    "rel": "has",
-   "w": 50
+   "w": 55
   },
   {
    "from": "fam:atlas-docs",
@@ -3324,7 +3336,7 @@
    "from": "dom:mind",
    "to": "fam:atlas-mind",
    "rel": "has",
-   "w": 54
+   "w": 60
   },
   {
    "from": "fam:atlas-mind",
@@ -3414,11 +3426,17 @@
    "from": "dom:strategy",
    "to": "fam:atlas-strategy",
    "rel": "has",
-   "w": 72
+   "w": 87
   },
   {
    "from": "fam:atlas-strategy",
    "to": "req:lean",
+   "rel": "needs",
+   "w": 3
+  },
+  {
+   "from": "fam:atlas-strategy",
+   "to": "req:pip:hypothesis",
    "rel": "needs",
    "w": 3
   },
@@ -3443,12 +3461,6 @@
   {
    "from": "fam:atlas-strategy",
    "to": "req:pip:matplotlib",
-   "rel": "needs",
-   "w": 1
-  },
-  {
-   "from": "fam:atlas-strategy",
-   "to": "req:pip:hypothesis",
    "rel": "needs",
    "w": 1
   },

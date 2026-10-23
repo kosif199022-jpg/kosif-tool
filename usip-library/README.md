@@ -12,7 +12,7 @@
 
 ## ما هذه المكتبة
 
-بطاقة بروتوكول لكل قدرة في الكتالوج (5,512) ولكل أداة قابلة للتشغيل (148)، في 78 ملفًا و411,028 سطرًا تقريبًا مع هذا الفهرس. كل بطاقة تجمع سجل القدرة نفسه (ما هي، متى، كيف، التثبيت، المتطلبات، الأدلة، الرخصة) مع قواعد البروتوكول مطبّقة عليها: خانات الاستقبال (A25)، والجاهزية والشارة الصادقة (A28)، وموضعها عقدةً منمّطة في الخطة (A26)، وبوابة التحقق لنوع مخرجها (A27)، وسلم التعافي لأخطائها المرجحة (A29). القواعد العامة تتكرر عمدًا في كل بطاقة لتُقرأ البطاقة وحدها؛ والمعرفة الفريدة في سجلات الكتالوج والملاحق. حالة الكتالوج ليست حالة الجلسة: افحص قبل أي شارة.
+بطاقة بروتوكول لكل قدرة في الكتالوج (5,572) ولكل أداة قابلة للتشغيل (148)، في 78 ملفًا و415,330 سطرًا تقريبًا مع هذا الفهرس. كل بطاقة تجمع سجل القدرة نفسه (ما هي، متى، كيف، التثبيت، المتطلبات، الأدلة، الرخصة) مع قواعد البروتوكول مطبّقة عليها: خانات الاستقبال (A25)، والجاهزية والشارة الصادقة (A28)، وموضعها عقدةً منمّطة في الخطة (A26)، وبوابة التحقق لنوع مخرجها (A27)، وسلم التعافي لأخطائها المرجحة (A29). القواعد العامة تتكرر عمدًا في كل بطاقة لتُقرأ البطاقة وحدها؛ والمعرفة الفريدة في سجلات الكتالوج والملاحق. حالة الكتالوج ليست حالة الجلسة: افحص قبل أي شارة.
 
 ## بطاقات القدرات
 
@@ -29,12 +29,12 @@
 | الصوت والموسيقى والتعليق | `audio-sync-captions` | 61 | 4,404 | [cards/audio/audio-sync-captions.md](cards/audio/audio-sync-captions.md) |
 | الصوت والموسيقى والتعليق | `music-beat-sound` | 306 | 21,436 | [cards/audio/music-beat-sound.md](cards/audio/music-beat-sound.md) |
 | الصوت والموسيقى والتعليق | `voice-tts` | 55 | 3,931 | [cards/audio/voice-tts.md](cards/audio/voice-tts.md) |
-| البيانات والرسوم والمواقع | `atlas-data` | 52 | 3,626 | [cards/data/atlas-data.md](cards/data/atlas-data.md) |
+| البيانات والرسوم والمواقع | `atlas-data` | 56 | 3,907 | [cards/data/atlas-data.md](cards/data/atlas-data.md) |
 | البيانات والرسوم والمواقع | `charts-data-infographic` | 105 | 7,557 | [cards/data/charts-data-infographic.md](cards/data/charts-data-infographic.md) |
 | البيانات والرسوم والمواقع | `data-analysis` | 39 | 2,742 | [cards/data/data-analysis.md](cards/data/data-analysis.md) |
 | البيانات والرسوم والمواقع | `maps-geo` | 62 | 4,405 | [cards/data/maps-geo.md](cards/data/maps-geo.md) |
 | المستندات والكتابة | `atlas-craft` | 26 | 1,807 | [cards/documents/atlas-craft.md](cards/documents/atlas-craft.md) |
-| المستندات والكتابة | `atlas-docs` | 50 | 3,473 | [cards/documents/atlas-docs.md](cards/documents/atlas-docs.md) |
+| المستندات والكتابة | `atlas-docs` | 55 | 3,824 | [cards/documents/atlas-docs.md](cards/documents/atlas-docs.md) |
 | المستندات والكتابة | `documents-office` | 34 | 2,363 | [cards/documents/documents-office.md](cards/documents/documents-office.md) |
 | المستندات والكتابة | `writing-humanizer` | 28 | 1,947 | [cards/documents/writing-humanizer.md](cards/documents/writing-humanizer.md) |
 | الرسم والأشكال والتصميم | `brand-logo-identity` | 43 | 3,143 | [cards/drawing/brand-logo-identity.md](cards/drawing/brand-logo-identity.md) |
@@ -66,11 +66,11 @@
 | البرمجة وبناء التطبيقات | `app-feature-transfer` | 139 | 10,422 | [cards/software/app-feature-transfer.md](cards/software/app-feature-transfer.md) |
 | البرمجة وبناء التطبيقات | `apps-artifacts` | 23 | 1,649 | [cards/software/apps-artifacts.md](cards/software/apps-artifacts.md) |
 | البرمجة وبناء التطبيقات | `atlas-build` | 52 | 3,767 | [cards/software/atlas-build.md](cards/software/atlas-build.md) |
-| البرمجة وبناء التطبيقات | `atlas-code` | 247 | 17,988 | [cards/software/atlas-code.md](cards/software/atlas-code.md) |
+| البرمجة وبناء التطبيقات | `atlas-code` | 277 | 20,197 | [cards/software/atlas-code.md](cards/software/atlas-code.md) |
 | البرمجة وبناء التطبيقات | `code-engineering` | 24 | 1,726 | [cards/software/code-engineering.md](cards/software/code-engineering.md) |
 | البرمجة وبناء التطبيقات | `ui-product-device` | 93 | 6,839 | [cards/software/ui-product-device.md](cards/software/ui-product-device.md) |
-| التفكير والتخطيط والاستراتيجية | `atlas-mind` | 54 | 3,679 | [cards/thinking/atlas-mind.md](cards/thinking/atlas-mind.md) |
-| التفكير والتخطيط والاستراتيجية | `atlas-strategy` | 72 | 4,908 | [cards/thinking/atlas-strategy.md](cards/thinking/atlas-strategy.md) |
+| التفكير والتخطيط والاستراتيجية | `atlas-mind` | 60 | 4,094 | [cards/thinking/atlas-mind.md](cards/thinking/atlas-mind.md) |
+| التفكير والتخطيط والاستراتيجية | `atlas-strategy` | 87 | 5,954 | [cards/thinking/atlas-strategy.md](cards/thinking/atlas-strategy.md) |
 | التفكير والتخطيط والاستراتيجية | `creativity-engine` | 29 | 2,024 | [cards/thinking/creativity-engine.md](cards/thinking/creativity-engine.md) |
 | التفكير والتخطيط والاستراتيجية | `mental-models` | 63 | 4,414 | [cards/thinking/mental-models.md](cards/thinking/mental-models.md) |
 | التفكير والتخطيط والاستراتيجية | `planning-execution` | 12 | 820 | [cards/thinking/planning-execution.md](cards/thinking/planning-execution.md) |

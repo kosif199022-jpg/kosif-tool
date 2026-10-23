@@ -2,7 +2,7 @@
 
 Generated from real repository data. Catalog evidence is NOT a live execution receipt.
 
-**5,512 powers / 62 families / 10 domains / 22 route descriptions.**
+**5,572 powers / 62 families / 10 domains / 22 route descriptions.**
 
 For a task in the user's words, `python3 scripts/hub.py find "<task>"` combines this atlas with the runnable tools and guides.
 
@@ -49,10 +49,10 @@ For a task in the user's words, `python3 scripts/hub.py find "<task>"` combines 
 - atlas-build: 52
 - apps-artifacts: 23
 
-### code: 595 powers
+### code: 625 powers
 
+- atlas-code: 277
 - software-investigation: 258
-- atlas-code: 247
 - code-engineering: 24
 - security-safety: 23
 - api-testing: 22
@@ -66,14 +66,14 @@ For a task in the user's words, `python3 scripts/hub.py find "<task>"` combines 
 - arabic-language: 22
 - typography-arabic: 2
 
-### data: 91 powers
+### data: 95 powers
 
-- atlas-data: 52
+- atlas-data: 56
 - data-analysis: 39
 
-### docs: 84 powers
+### docs: 89 powers
 
-- atlas-docs: 50
+- atlas-docs: 55
 - documents-office: 34
 
 ### media: 68 powers
@@ -81,10 +81,10 @@ For a task in the user's words, `python3 scripts/hub.py find "<task>"` combines 
 - media-image-audio: 41
 - atlas-media: 27
 
-### mind: 328 powers
+### mind: 334 powers
 
 - mental-models: 63
-- atlas-mind: 54
+- atlas-mind: 60
 - agent-orchestration: 46
 - thinking-core: 46
 - self-discovery: 43
@@ -130,9 +130,9 @@ For a task in the user's words, `python3 scripts/hub.py find "<task>"` combines 
 - web-research: 24
 - atlas-research: 11
 
-### strategy: 90 powers
+### strategy: 105 powers
 
-- atlas-strategy: 72
+- atlas-strategy: 87
 - strategy-finance: 18
 
 ## Decision flow

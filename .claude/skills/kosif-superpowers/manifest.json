@@ -15,13 +15,13 @@
  },
  "paths_note": "Tool paths and examples are relative to their root: 'skill' = this folder, 'repo' = the kosif-tool repository root.",
  "counts": {
-  "powers": 5512,
+  "powers": 5572,
   "families": 62,
   "domains": 10,
   "tools": 148,
   "guides": 108,
   "statuses": {
-   "documented": 2097,
+   "documented": 2157,
    "idea": 71,
    "install": 973,
    "key": 176,
@@ -302,9 +302,9 @@
    "domain": "code",
    "title_ar": "أطلس: الهندسة والكود",
    "title_en": "Atlas: engineering & code",
-   "count": 247,
+   "count": 277,
    "statuses": {
-    "documented": 247
+    "documented": 277
    },
    "chapter": "references/powers/atlas-code.md",
    "data": "data/powers/atlas-code.json"
@@ -328,9 +328,9 @@
    "domain": "data",
    "title_ar": "أطلس: البيانات والتعلم الآلي",
    "title_en": "Atlas: data, ML & charts",
-   "count": 52,
+   "count": 56,
    "statuses": {
-    "documented": 52
+    "documented": 56
    },
    "chapter": "references/powers/atlas-data.md",
    "data": "data/powers/atlas-data.json"
@@ -341,9 +341,9 @@
    "domain": "docs",
    "title_ar": "أطلس: المستندات والمخططات",
    "title_en": "Atlas: documents & diagrams",
-   "count": 50,
+   "count": 55,
    "statuses": {
-    "documented": 50
+    "documented": 55
    },
    "chapter": "references/powers/atlas-docs.md",
    "data": "data/powers/atlas-docs.json"
@@ -367,9 +367,9 @@
    "domain": "mind",
    "title_ar": "أطلس: الوكلاء والتخطيط والمراجعة",
    "title_en": "Atlas: agent workflows, planning & review",
-   "count": 54,
+   "count": 60,
    "statuses": {
-    "documented": 54
+    "documented": 60
    },
    "chapter": "references/powers/atlas-mind.md",
    "data": "data/powers/atlas-mind.json"
@@ -393,9 +393,9 @@
    "domain": "strategy",
    "title_ar": "أطلس: المنتج والتسويق والأعمال",
    "title_en": "Atlas: product, marketing & business",
-   "count": 72,
+   "count": 87,
    "statuses": {
-    "documented": 72
+    "documented": 87
    },
    "chapter": "references/powers/atlas-strategy.md",
    "data": "data/powers/atlas-strategy.json"

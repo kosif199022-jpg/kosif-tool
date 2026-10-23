@@ -2,8 +2,8 @@
  "atlas": {
   "atlas_total": 14793,
   "available": true,
-  "coverage_pct": 6.8,
-  "covered": 350,
+  "coverage_pct": 8.5,
+  "covered": 433,
   "next_candidates": [
    {
     "next": [
@@ -25,27 +25,6 @@
     ],
     "theme": "agent-workflow",
     "uncovered": 384
-   },
-   {
-    "next": [
-     {
-      "id": 7149,
-      "plugin": "epharmoge",
-      "skill": "contextualize"
-     },
-     {
-      "id": 7150,
-      "plugin": "epistemic-cooperative",
-      "skill": "gate-check"
-     },
-     {
-      "id": 9395,
-      "plugin": "codebase-health",
-      "skill": "audit"
-     }
-    ],
-    "theme": "verification-review",
-    "uncovered": 334
    },
    {
     "next": [
@@ -134,6 +113,27 @@
    {
     "next": [
      {
+      "id": 7153,
+      "plugin": "epistemic-cooperative",
+      "skill": "probe"
+     },
+     {
+      "id": 9395,
+      "plugin": "codebase-health",
+      "skill": "audit"
+     },
+     {
+      "id": 9627,
+      "plugin": "toolchain",
+      "skill": "check"
+     }
+    ],
+    "theme": "verification-review",
+    "uncovered": 251
+   },
+   {
+    "next": [
+     {
       "id": 14073,
       "plugin": "metaskills",
       "skill": "architecture-optimization"
@@ -181,12 +181,6 @@
     "covered": 0,
     "safe": 6,
     "theme": "hardware-embedded"
-   },
-   {
-    "coverage_pct": 1.2,
-    "covered": 4,
-    "safe": 338,
-    "theme": "verification-review"
    },
    {
     "coverage_pct": 1.3,
@@ -423,6 +417,12 @@
     "theme": "localization-language"
    },
    {
+    "coverage_pct": 25.7,
+    "covered": 87,
+    "safe": 338,
+    "theme": "verification-review"
+   },
+   {
     "coverage_pct": 33.3,
     "covered": 11,
     "safe": 33,
@@ -471,13 +471,13 @@
  },
  "counts": {
   "broken_links": 0,
-  "evals": 99,
+  "evals": 100,
   "families": 62,
   "gaps": {
    "family_without_tool": 21
   },
-  "powers": 5512,
-  "py_edges": 264,
+  "powers": 5572,
+  "py_edges": 265,
   "repo_tests": 35,
   "roles": {
    "helper": 2,
@@ -529,7 +529,7 @@
   },
   {
    "id": "atlas-code",
-   "powers": 247,
+   "powers": 277,
    "tools": 1
   },
   {
@@ -539,12 +539,12 @@
   },
   {
    "id": "atlas-data",
-   "powers": 52,
+   "powers": 56,
    "tools": 0
   },
   {
    "id": "atlas-docs",
-   "powers": 50,
+   "powers": 55,
    "tools": 0
   },
   {
@@ -554,7 +554,7 @@
   },
   {
    "id": "atlas-mind",
-   "powers": 54,
+   "powers": 60,
    "tools": 0
   },
   {
@@ -564,7 +564,7 @@
   },
   {
    "id": "atlas-strategy",
-   "powers": 72,
+   "powers": 87,
    "tools": 0
   },
   {
@@ -820,12 +820,12 @@
    "kind": "family_without_tool"
   },
   {
-   "detail": "52 powers, no tools.json entry lists this family",
+   "detail": "56 powers, no tools.json entry lists this family",
    "id": "atlas-data",
    "kind": "family_without_tool"
   },
   {
-   "detail": "50 powers, no tools.json entry lists this family",
+   "detail": "55 powers, no tools.json entry lists this family",
    "id": "atlas-docs",
    "kind": "family_without_tool"
   },
@@ -835,7 +835,7 @@
    "kind": "family_without_tool"
   },
   {
-   "detail": "54 powers, no tools.json entry lists this family",
+   "detail": "60 powers, no tools.json entry lists this family",
    "id": "atlas-mind",
    "kind": "family_without_tool"
   },
@@ -845,7 +845,7 @@
    "kind": "family_without_tool"
   },
   {
-   "detail": "72 powers, no tools.json entry lists this family",
+   "detail": "87 powers, no tools.json entry lists this family",
    "id": "atlas-strategy",
    "kind": "family_without_tool"
   },
@@ -1608,6 +1608,11 @@
    "from": "test_atlas_render",
    "kind": "imports",
    "to": "atlas_render"
+  },
+  {
+   "from": "test_atlas_vendor",
+   "kind": "imports",
+   "to": "atlas_5000"
   },
   {
    "from": "test_blender_bridge",
@@ -2889,7 +2894,8 @@
    ],
    "role": "registered",
    "tests": [
-    "evals/test_atlas_5000.py"
+    "evals/test_atlas_5000.py",
+    "evals/test_atlas_vendor.py"
    ],
    "tools": [
     "atlas-5000"
@@ -5213,9 +5219,9 @@
   "areas": {
    "(root)": 8,
    "assets": 4,
-   "data": 122,
+   "data": 127,
    "dua-wednesday": 10,
-   "evals": 92,
+   "evals": 93,
    "examples": 12,
    "montage-pro": 2,
    "proofs": 239,
@@ -5224,27 +5230,27 @@
    "schemas": 5,
    "scripts": 163,
    "templates": 16,
-   "vendor": 76
+   "vendor": 391
   },
-  "bytes": 56894034,
+  "bytes": 59051172,
   "extensions": {
-   "(none)": 8,
+   "(none)": 14,
    ".bru": 7,
    ".cjs": 6,
    ".html": 22,
    ".jpg": 23,
    ".js": 14,
-   ".json": 178,
-   ".md": 335,
+   ".json": 186,
+   ".md": 585,
    ".mjs": 9,
    ".png": 6,
-   ".py": 277,
-   ".sh": 5,
+   ".py": 278,
    ".ttf": 14,
    ".txt": 54,
-   ".woff2": 8
+   ".woff2": 8,
+   ".yaml": 57
   },
-  "files": 972,
+  "files": 1293,
   "symlinks": 0
  }
 }

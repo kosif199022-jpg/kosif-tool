@@ -24,12 +24,12 @@
 |---|---:|---|
 | `proven` | 49 | ✅ proven: a proof exists in the catalog; still check its requirements here before calling it ready |
 | `ready` | 18 | 🟢 ready: runnable without setup according to the catalog |
-| `documented` | 101 | 📄 documented: a described method; needs building or wiring before it runs |
+| `documented` | 105 | 📄 documented: a described method; needs building or wiring before it runs |
 | `seen` | 48 | 👁 seen: observed in a reference or demo, not executed here |
 | `install` | 34 | 📦 install: needs a package, binary or model first |
 | `key` | 7 | 🔑 key: needs an account, key or paid service (ask before any spend) |
 | `idea` | 1 | 💡 idea: not built |
-| **المجموع** | **258** | |
+| **المجموع** | **262** | |
 
 ## الأدوات القابلة للتشغيل / runnable tools
 
@@ -44,7 +44,7 @@
 
 | العائلة | القدرات | الفصل |
 |---|---:|---|
-| `atlas-data` | 52 | [atlas-data.md](../powers/atlas-data.md) |
+| `atlas-data` | 56 | [atlas-data.md](../powers/atlas-data.md) |
 | `charts-data-infographic` | 105 | [charts-data-infographic.md](../powers/charts-data-infographic.md) |
 | `data-analysis` | 39 | [data-analysis.md](../powers/data-analysis.md) |
 | `maps-geo` | 62 | [maps-geo.md](../powers/maps-geo.md) |
@@ -174,6 +174,10 @@
 | `ADATA-50` | التشريح المسبق: تعريف النجاح والفشل قبل البدء | Pre-mortem: define success and failure before starting | documented |  |
 | `ADATA-51` | ضبط العمليات إحصائيًا: اختيار مخطط التحكم وقدرة العملية | Statistical process control: chart choice and capability | documented |  |
 | `ADATA-52` | استخراج أرقام موثوقة من لوحة معلومات تُرسم في المتصفح | Trustworthy numbers from a client-rendered dashboard | documented |  |
+| `ADATA-53` | تنفيذ خطة تتبع الأحداث مع بوابة schema في CI وموافقة المستخدم من المصدر | Event instrumentation from a tracking plan with CI schema gate and consent at source | documented | chromium |
+| `ADATA-54` | تقييم أنظمة التوصية: تقسيم زمني وخط أساس شعبية والحكم للـA/B | Recommender evaluation: temporal split, popularity baseline, A/B as verdict | documented |  |
+| `ADATA-55` | تدقيق مصدر الأصفار في مقاييس متعددة المصادر قبل تصديقها | Zero-provenance audit for multi-source metrics before believing a 0 | documented |  |
+| `ADATA-56` | اختيار منهج جودة البيانات: اختبارات للقواعد المعروفة ومراقبة للمجهول وعقود عند المنتِج | Choose a data-quality approach: tests, monitors and contracts, and where each runs | documented | python3, npm:three |
 | `DATA-01` | اختيار المخطط حسب السؤال | Chart choice by analytical question | documented |  |
 | `DATA-02` | المسار أم الميل | Line path vs slope net-change | documented |  |
 | `DATA-03` | اختيار مخطط التوزيع | Distribution chart choice | documented |  |
