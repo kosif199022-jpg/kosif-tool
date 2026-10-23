@@ -63,7 +63,7 @@ SHA_RE = re.compile(r"^[0-9a-f]{64}$")
 LEAK_RE = re.compile(r"/tmp/claude-\d+/|scratchpad/|session_[0-9A-Za-z]{20,}|/root/\.claude/|/mnt/project-files/uploads/")
 EMAIL_RE = re.compile(r"(?<![\w.%+-])(?!git@|noreply@|no-reply@)[A-Za-z0-9._%+-]+@[A-Za-z0-9-]+\.[A-Za-z0-9.-]*[A-Za-z]")
 PHONE_RE = re.compile(r"(?<![\w.:/-])\+?\d[\d \-]{9,}\d(?![\w.])")
-IBAN_RE = re.compile(r"\\bSA[0-9]{22}\\b", re.IGNORECASE)
+IBAN_RE = re.compile(r"\bSA[0-9]{22}\b", re.IGNORECASE)
 PLACEHOLDER_RE = re.compile(r"^<[^<>]* [^<>]*>$")
 ABS_RE = re.compile(r"(?<![\w.:])(?:/home/|/Users/|/mnt/|/tmp/|[A-Za-z]:\\)")
 
