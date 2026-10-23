@@ -1,0 +1,86 @@
+{
+ "schema": "kosif.reasoning-modes.v1",
+ "about": "Reasoning modes for USIP v5.4 appendix A24 (references/protocol/A24-reasoning-modes-decision-gates.md). think.py modes ranks them for a task by keyword overlap; the procedure, trap and check are the method, the ranking is only a hint.",
+ "modes": [
+  {
+   "id": "deductive",
+   "ar": "الاستنباط",
+   "en": "Deductive",
+   "use_when": "rules, specs, contracts, schemas or laws are given and the question is what they imply",
+   "keywords": ["rule", "spec", "schema", "contract", "law", "policy", "must", "implies", "proof", "قاعدة", "مواصفة", "عقد", "قانون", "سياسة", "يلزم", "برهان", "شرط"],
+   "procedure": ["Write the premises as numbered statements, each with its source.", "Derive the conclusion step by step; cite the premise numbers on every step.", "Check each premise is actually true here (a valid argument from a false premise is still false)."],
+   "trap": "Treating an unverified premise as a fact; a sound-looking chain built on an assumption.",
+   "check": "Every step cites a premise; every premise has a source or is labelled an assumption."
+  },
+  {
+   "id": "inductive",
+   "ar": "الاستقراء",
+   "en": "Inductive",
+   "use_when": "there are many observations, logs, samples or past cases and the question is the general pattern",
+   "keywords": ["data", "samples", "logs", "pattern", "trend", "usually", "history", "cases", "statistics", "بيانات", "عينات", "سجلات", "نمط", "اتجاه", "غالبا", "تاريخ", "حالات", "إحصاء"],
+   "procedure": ["State the sample: how many cases, how they were selected, what is missing.", "State the pattern and its strength (count, rate, range), not just its direction.", "Look for the counter-example before generalising; one solid counter-example limits the claim."],
+   "trap": "Generalising from a small or self-selected sample; survivorship bias.",
+   "check": "The claim carries its sample size and selection; at least one search for a counter-example is recorded."
+  },
+  {
+   "id": "abductive",
+   "ar": "التفسير الأفضل",
+   "en": "Abductive (best explanation)",
+   "use_when": "something broke or looks odd and the question is why: debugging, diagnosis, incident review",
+   "keywords": ["why", "bug", "error", "fails", "broken", "crash", "diagnose", "root cause", "incident", "symptom", "لماذا", "ليه", "خطأ", "يفشل", "عطل", "تشخيص", "سبب", "مشكلة", "خربان"],
+   "procedure": ["List at least three rival explanations, including a boring one (config, typo, stale cache).", "For each, write what you would observe if it were true and what would rule it out.", "Run the cheapest discriminating test first; keep the explanation that survives, with its evidence."],
+   "trap": "Stopping at the first plausible story; fixing a symptom.",
+   "check": "Three or more hypotheses were written and the chosen one survived a test that could have killed it."
+  },
+  {
+   "id": "analogical",
+   "ar": "القياس والتمثيل",
+   "en": "Analogical",
+   "use_when": "the problem is new but resembles a solved one in another domain, product or codebase",
+   "keywords": ["like", "similar", "inspired", "reference", "as in", "transfer", "pattern from", "مثل", "شبيه", "مستوحى", "مرجع", "زي", "نقل", "على غرار"],
+   "procedure": ["Name the source case and map its parts to the target one by one.", "Mark where the mapping breaks (scale, users, constraints, licence).", "Transfer the mechanism, not the surface; test the transferred piece alone first."],
+   "trap": "Copying surface features; ignoring the place where the analogy breaks.",
+   "check": "A written part-to-part map with at least one stated break point."
+  },
+  {
+   "id": "causal",
+   "ar": "السببية والمضاد للواقع",
+   "en": "Causal and counterfactual",
+   "use_when": "the question is whether X causes Y, what an intervention will change, or what would have happened otherwise",
+   "keywords": ["cause", "effect", "impact", "because", "if we", "what if", "intervention", "experiment", "a/b", "uplift", "يسبب", "أثر", "تأثير", "بسبب", "لو", "ماذا لو", "تجربة", "تدخل"],
+   "procedure": ["Draw the causal chain X → mechanism → Y and name the confounders.", "State the counterfactual: what happens to Y without X?", "Prefer an intervention or a controlled comparison over a correlation; say which one you have."],
+   "trap": "Reading correlation as causation; forgetting the do-nothing baseline.",
+   "check": "A baseline or counterfactual is written next to every causal claim."
+  },
+  {
+   "id": "systems",
+   "ar": "التفكير النظمي",
+   "en": "Systems",
+   "use_when": "many parts interact: pipelines, organisations, feedback loops, second-order effects, long-running projects",
+   "keywords": ["system", "pipeline", "architecture", "feedback", "loop", "dependencies", "scale", "ecosystem", "second-order", "نظام", "منظومة", "خط إنتاج", "معمارية", "تغذية راجعة", "اعتماديات", "توسع", "تنظيم", "إعادة تنظيم"],
+   "procedure": ["Draw the stocks, flows and feedback loops (reinforcing and balancing).", "Find the bottleneck and the leverage point; change one thing there.", "Ask for the second-order effect of every change: who or what reacts?"],
+   "trap": "Optimising one part and moving the bottleneck; ignoring delays in feedback.",
+   "check": "The bottleneck is named and each change has a written second-order effect."
+  },
+  {
+   "id": "lateral",
+   "ar": "التفكير الجانبي",
+   "en": "Lateral (provocation)",
+   "use_when": "the usual answers are stale, the brief asks for something new, or every plan looks the same",
+   "keywords": ["creative", "new idea", "original", "innovative", "different", "fresh", "brainstorm", "stuck", "إبداع", "إبداعي", "فكرة جديدة", "مبتكر", "مختلف", "عصف", "جديد", "أصيل"],
+   "procedure": ["Write the dominant assumption of the field, then a provocation (Po) that reverses, removes, exaggerates or distorts it.", "Extract a usable principle from the provocation (movement, not judgement).", "Turn the principle into a concrete option and give it the same value test as the others (a five-minute experiment)."],
+   "trap": "Keeping an idea because it is surprising; skipping the value test.",
+   "check": "The provocation, the extracted principle and the value test are all written."
+  },
+  {
+   "id": "bayesian",
+   "ar": "الوزن البايزي",
+   "en": "Bayesian weighing",
+   "use_when": "evidence of different strength must be combined into a degree of belief before a decision",
+   "keywords": ["probability", "likely", "chance", "risk", "confidence", "evidence", "estimate", "uncertain", "odds", "احتمال", "مرجح", "فرصة", "مخاطرة", "ثقة", "دليل", "تقدير", "غير مؤكد"],
+   "procedure": ["Write the prior from a base rate (reference class), not from the story.", "For each piece of evidence write a likelihood ratio: how much more likely is it if the hypothesis is true than if it is false?", "Update with think.py bayes, then check whether the decision flips when any ratio is halved or doubled."],
+   "trap": "Ignoring the base rate; counting the same evidence twice; ratios of 100 from one anecdote.",
+   "check": "Prior has a reference class, evidence items are independent, and the sensitivity line is reported."
+  }
+ ]
+}

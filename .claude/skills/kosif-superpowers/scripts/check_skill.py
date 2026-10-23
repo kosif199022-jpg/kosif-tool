@@ -24,6 +24,8 @@ Checks (errors fail the run, warnings do not unless --strict):
                 old section ID, one "USIP vX.Y" across the core, its paste block, SESSION_PROMPT, CLAUDE.md, SKILL.md,
                 USIP_PORTABLE.md and both engines, and the canonical plan-letter definitions (evals/test_protocol_structure.py adds
                 the fusionforge.py command and required-flag check and the v5.2 text-retention check)
+  layout        every file under references/ sits in exactly one section of data/skill_layout.json, every listed file
+                exists, and references/LAYOUT.md is current (scripts/skill_layout.py build)
   portable      (run inside protocol) USIP_PORTABLE.md stays in step with the core: its contents list matches its headings, it quotes the
                 canonical plan letters, and it names every appendix added after the v5.3 split (A12 onward)
 
@@ -769,6 +771,20 @@ def strip_fences(text: str) -> str:
     return re.sub(r"^\s{0,3}(```|~~~).*$", "", text, flags=re.M)
 
 
+def check_layout(r: Report):
+    r.checks["layout"] += 1
+    try:
+        import skill_layout as SL
+    except ImportError:
+        r.add("info", "layout", "scripts/skill_layout.py not in this copy; layout check skipped")
+        return
+    if not SL.LAYOUT_JSON.is_file():
+        r.add("info", "layout", "no data/skill_layout.json in this copy; layout check skipped")
+        return
+    for level, msg in SL.problems():
+        r.add(level, "layout", msg)
+
+
 def check_protocol(r: Report):
     r.checks["protocol"] += 1
     for level, msg in protocol_problems():
@@ -946,6 +962,7 @@ def main(argv=None) -> int:
     check_tools(r)
     check_drift(r)
     check_protocol(r)
+    check_layout(r)
     errors, warns = r.count("error"), r.count("warn")
     failed = errors > 0 or (a.strict and warns > 0)
     if a.json:
