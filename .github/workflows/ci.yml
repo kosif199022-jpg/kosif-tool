@@ -115,6 +115,8 @@ jobs:
         run: python3 -m unittest discover -s .claude/skills/kosif-superpowers/evals -p 'test_montage_pro.py' -v
       - name: Reel factory (rights record, plan math; the render smoke test skips without ffmpeg/Chromium)
         run: python3 -m unittest discover -s .claude/skills/kosif-superpowers/evals -p 'test_reel_factory.py' -v
+      - name: Wednesday dua reel engine (render part skips without OpenCV and Playwright)
+        run: python3 -m unittest discover -s .claude/skills/kosif-superpowers/evals -p 'test_dua_wednesday.py' -v
       - name: Stream grabber
         run: python3 -m unittest discover -s .claude/skills/kosif-superpowers/evals -p 'test_stream_grabber.py' -v
       - name: Web app study guardrails and facts-only report (live browser part skips without REA)
