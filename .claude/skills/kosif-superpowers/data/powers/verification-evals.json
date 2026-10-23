@@ -1097,5 +1097,173 @@
   ],
   "section": "الاختبار الخفي التفاضلي — Differential hidden exam",
   "source": "https://github.com/softsweb/codex-clone-hidden-test-kit (no licence: methods only, no files copied); references/codex-agent-harness.md"
+ },
+ {
+  "id": "CHECK-36",
+  "family": "verification-evals",
+  "domain": "mind",
+  "name_ar": "سجل قيم بمصدر واقتباس لكل رقم",
+  "name_en": "One value registry: a source and the supporting sentence for every number",
+  "status": "documented",
+  "what": "كل رقم يظهر في درس أو شرح أو إنفوجراف له مدخل واحد: القيمة والوحدة وماذا يقيس والمدى ومرجع المصدر والجملة المقتبسة التي تثبته. — Every number a lesson, explainer or infographic shows has one entry: value, unit, what it measures, range, source ref and the quoted sentence that supports it.",
+  "when": "شرح أو فيديو تعليمي أو إنفوجراف بأرقام حقيقية / explainers, lesson films or infographics that show real numbers",
+  "how": "Keep values.json with sources{id:{title,url|citation}} and values{id:{value,unit,what,range?,source{ref,quote}}}. python3 scripts/lesson_integrity.py values --registry values.json fails on a number with no source and no gap note, an unknown ref, a missing quote or a value outside its range, and warns when the number is not in its quote. Cards EJ-01, EJ-05.",
+  "params": "",
+  "install": "",
+  "requires": [
+   "python3"
+  ],
+  "license": "owner",
+  "proof": [
+   "kosif-tool/.claude/skills/kosif-superpowers/evals/test_lesson_integrity.py"
+  ],
+  "proof_scope": "repo",
+  "styles": [],
+  "tags": [
+   "cited numbers",
+   "value registry",
+   "source quote",
+   "fact check",
+   "أرقام موثقة",
+   "سجل القيم",
+   "مصدر",
+   "اقتباس",
+   "كل رقم ليه مصدر",
+   "رقم متألف",
+   "سكربت فيديو تعليمي",
+   "فيديو تعليمي",
+   "every number sourced"
+  ],
+  "section": "أرقام الدرس الموثقة — Lesson number integrity",
+  "source": "https://github.com/iamtechartist/every-joule-lesson1 (no licence: methods only, no files copied); references/lesson-integrity-methods.md"
+ },
+ {
+  "id": "CHECK-37",
+  "family": "verification-evals",
+  "domain": "mind",
+  "name_ar": "النص يشير إلى الرقم بمعرّفه ويفشل مغلقًا",
+  "name_en": "Text refers to numbers by id and fails closed",
+  "status": "documented",
+  "what": "الجمل تكتب {v:id} لا الرقم نفسه؛ لو غاب المعرّف أو جُهلت طباعة الوحدة يتوقف البناء ولا يطبع تخمينًا. — Sentences write {v:id}, not the number; a missing id or an unknown unit print form stops the build instead of printing a guess.",
+  "when": "سكربت تعليق صوتي أو نص درس أو تسميات رسم فيها أرقام / narration scripts, lesson text or chart labels with numbers",
+  "how": "python3 scripts/lesson_integrity.py render --registry values.json --content script.md --strict --out script.out.md. {v:id} number+unit, {v:id|2} two decimals, {n:id} number only, unit 'fraction' prints as a percentage; --strict flags numbers with units typed into the text; nothing is written on error. Card EJ-02.",
+  "params": "",
+  "install": "",
+  "requires": [
+   "python3"
+  ],
+  "license": "owner",
+  "proof": [
+   "kosif-tool/.claude/skills/kosif-superpowers/evals/test_lesson_integrity.py"
+  ],
+  "proof_scope": "repo",
+  "styles": [],
+  "tags": [
+   "placeholders",
+   "fail closed",
+   "narration numbers",
+   "single source of truth",
+   "عناصر نائبة",
+   "رقم من السجل",
+   "تعليق صوتي"
+  ],
+  "section": "أرقام الدرس الموثقة — Lesson number integrity",
+  "source": "https://github.com/iamtechartist/every-joule-lesson1 (no licence: methods only, no files copied); references/lesson-integrity-methods.md"
+ },
+ {
+  "id": "CHECK-38",
+  "family": "verification-evals",
+  "domain": "mind",
+  "name_ar": "ملف فجوات بدل اختراع رقم",
+  "name_en": "An explicit gaps list instead of an invented number",
+  "status": "documented",
+  "what": "رقم بلا مصدر يُترك فارغًا مع سبب مكتوب ولا يُعرض، ويظهر كتحذير في التقرير. — A number with no source is left unset with a written reason, never shown, and reported as a warning.",
+  "when": "معلومة لم تجد لها مصدرًا موثوقًا / a figure you could not source",
+  "how": "Record it as {value:null, gap:'<why>'} (or a value with a gap note for a teacher estimate, which is then shown and warned). render refuses to print a null gap. State what the calculation does without it ('kinetic energy of the rider alone'). Card EJ-03.",
+  "params": "",
+  "install": "",
+  "requires": [],
+  "license": "owner",
+  "proof": [
+   "kosif-tool/.claude/skills/kosif-superpowers/evals/test_lesson_integrity.py"
+  ],
+  "proof_scope": "repo",
+  "styles": [],
+  "tags": [
+   "gaps",
+   "unsourced",
+   "do not invent",
+   "فجوات",
+   "بلا مصدر",
+   "لا تخترع"
+  ],
+  "section": "أرقام الدرس الموثقة — Lesson number integrity",
+  "source": "https://github.com/iamtechartist/every-joule-lesson1 (no licence: methods only, no files copied); references/lesson-integrity-methods.md"
+ },
+ {
+  "id": "CHECK-39",
+  "family": "verification-evals",
+  "domain": "mind",
+  "name_ar": "مراجعة حقائق تعيد الرقم المنشور",
+  "name_en": "A fact-check pass that restores the published figure",
+  "status": "documented",
+  "what": "حين يختلف رقم محسوب بالتحويل عن الرقم المنشور في المصدر نعرض المنشور ونكتب ملاحظة بالتصحيح ونعيد حساب ما اشتُق منه. — When a converted figure differs from the one the source publishes, show the published one, note the correction and recompute everything derived from it.",
+  "when": "مراجعة أرقام قبل النشر / reviewing numbers before publishing",
+  "how": "Read the rendered source page, not a conversion (290 kcal x 4.184 = 1213 is not the published 1210 kJ). Put the correction in the value's note; derived values carry {derived:{op:sum|product|difference|ratio, of:[ids]}} and lesson_integrity.py values fails when a part changed but the total did not. Cards EJ-04, EJ-05.",
+  "params": "",
+  "install": "",
+  "requires": [
+   "python3"
+  ],
+  "license": "owner",
+  "proof": [
+   "kosif-tool/.claude/skills/kosif-superpowers/evals/test_lesson_integrity.py"
+  ],
+  "proof_scope": "repo",
+  "styles": [],
+  "tags": [
+   "fact-check",
+   "published figure",
+   "derived values",
+   "مراجعة الحقائق",
+   "الرقم المنشور",
+   "قيم مشتقة"
+  ],
+  "section": "أرقام الدرس الموثقة — Lesson number integrity",
+  "source": "https://github.com/iamtechartist/every-joule-lesson1 (no licence: methods only, no files copied); references/lesson-integrity-methods.md"
+ },
+ {
+  "id": "CHECK-40",
+  "family": "verification-evals",
+  "domain": "mind",
+  "name_ar": "دفتر حفظ: ابحث عن كل وحدة",
+  "name_en": "A conservation ledger: account for every unit",
+  "status": "documented",
+  "what": "ما دخل يساوي ما خرج ضمن سماحية، بلا قيم سالبة، مع حصة كل مخرج والكفاءة. — What goes in equals what comes out within tolerance, with no negative amounts, each output's share and the efficiency.",
+  "when": "شرح طاقة أو ميزانية أو مخطط سانكي / energy explainers, budgets or Sankey diagrams",
+  "how": "ledger.json = {unit, in:{store:amount}, out:{store:amount}, useful:[stores], tolerance}. python3 scripts/lesson_integrity.py ledger --file ledger.json reports in, out, gap, shares and efficiency and exits 1 when anything is unaccounted for or appears from nowhere. Check it before drawing the Sankey or narrating 'all 14.7 J'. Card EJ-06.",
+  "params": "",
+  "install": "",
+  "requires": [
+   "python3"
+  ],
+  "license": "owner",
+  "proof": [
+   "kosif-tool/.claude/skills/kosif-superpowers/evals/test_lesson_integrity.py"
+  ],
+  "proof_scope": "repo",
+  "styles": [],
+  "tags": [
+   "conservation",
+   "energy ledger",
+   "Sankey",
+   "efficiency",
+   "حفظ الطاقة",
+   "سانكي",
+   "كفاءة",
+   "ميزانية"
+  ],
+  "section": "أرقام الدرس الموثقة — Lesson number integrity",
+  "source": "https://github.com/iamtechartist/every-joule-lesson1 (no licence: methods only, no files copied); references/lesson-integrity-methods.md"
  }
 ]

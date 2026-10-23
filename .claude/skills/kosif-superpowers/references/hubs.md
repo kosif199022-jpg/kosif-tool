@@ -18,7 +18,7 @@
 - [الخطوط والنصوص العربية واللاتينية — Typography & localization](#hub-type) · 212 قدرة · 18 خارقة · جاهز الآن 88
 - [البيانات والرسوم والمواقع — Data & visual analytics](#hub-data) · 261 قدرة · 23 خارقة · جاهز الآن 67
 - [المستندات والكتابة — Documents & writing](#hub-documents) · 136 قدرة · 12 خارقة · جاهز الآن 32
-- [الاختبارات والجودة والأمان — QA & security](#hub-quality) · 481 قدرة · 37 خارقة · جاهز الآن 152
+- [الاختبارات والجودة والأمان — QA & security](#hub-quality) · 485 قدرة · 38 خارقة · جاهز الآن 152
 - [التحليل العكسي وفحص البرامج — Reverse engineering](#hub-reverse) · 262 قدرة · 21 خارقة · جاهز الآن 30
 - [قدرات مساندة غير مصنفة — Other supporting capabilities](#hub-misc) · 27 قدرة · 3 خارقة · جاهز الآن 12
 
@@ -254,7 +254,7 @@
 | SP-0314 كشف الإيقاع · Beat grid detection | 14 | ✅ | 5 |
 | SP-0166 تفريغ HyperFrames · HyperFrames transcribe CLI | 9 | ✅ | 4 |
 
-…و23 قدرة خارقة أخرى: `python3 scripts/kosif_hubs.py show audio`
+…و24 قدرة خارقة أخرى: `python3 scripts/kosif_hubs.py show audio`
 
 <a id="hub-type"></a>
 ## الخطوط والنصوص العربية واللاتينية — Typography & localization (`type`)
@@ -338,7 +338,7 @@
 <a id="hub-quality"></a>
 ## الاختبارات والجودة والأمان — QA & security (`quality`)
 
-- **الحجم / size:** 481 قدرة ذرية في 37 قدرة خارقة · ✅94 🟢58 📦91 🔑15 👁3 📄215 💡5
+- **الحجم / size:** 485 قدرة ذرية في 38 قدرة خارقة · ✅94 🟢58 📦91 🔑15 👁3 📄219 💡5
 - **ابدأ / start:** `python3 scripts/verify_video.py --help` · خطة التثبيت: `python3 scripts/kosif_hubs.py install quality`
 - **السكربتات / scripts:** `scripts/verify_video.py` · `scripts/creative_quality_gate.py` · `scripts/check_skill.py`
 - **العائلات / families:** [api-testing](powers/api-testing.md) · [qa-verification](powers/qa-verification.md) · [security-safety](powers/security-safety.md) · [verification-evals](powers/verification-evals.md)
@@ -360,7 +360,7 @@
 | SP-0369 اختبارات وجود أصول الهوية وخفتها · Brand art presence & weight tests | 7 | ✅ | 5 |
 | SP-0371 فحص المقروئية · readable | 6 | ✅ | 5 |
 
-…و25 قدرة خارقة أخرى: `python3 scripts/kosif_hubs.py show quality`
+…و26 قدرة خارقة أخرى: `python3 scripts/kosif_hubs.py show quality`
 
 <a id="hub-reverse"></a>
 ## التحليل العكسي وفحص البرامج — Reverse engineering (`reverse`)

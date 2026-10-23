@@ -27,7 +27,7 @@ python scripts/smart_capabilities.py verify
 - **الخطوط والنصوص العربية واللاتينية** (`type`, 215): arabic-language, typography-arabic, typography-latin
 - **البيانات والرسوم والمواقع** (`data`, 258): atlas-data, charts-data-infographic, data-analysis, maps-geo
 - **المستندات والكتابة** (`documents`, 138): atlas-craft, atlas-docs, documents-office, writing-humanizer
-- **الاختبارات والجودة والأمان** (`quality`, 464): api-testing, qa-verification, security-safety, verification-evals
+- **الاختبارات والجودة والأمان** (`quality`, 469): api-testing, qa-verification, security-safety, verification-evals
 - **التحليل العكسي وفحص البرامج** (`reverse`, 258): software-investigation
 - **قدرات مساندة غير مصنفة** (`misc`, 27): other
 

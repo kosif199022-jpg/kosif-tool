@@ -44,7 +44,7 @@
 | `caption-lines` | سطور الترجمة: من توقيت الكلمات إلى ترجمة مقروءة | `python3 scripts/caption_lines.py group words.json -o captions.srt --rlm` | tested-here |
 | `installer-triage` | فرز المثبّتات | `python3 scripts/installer_triage.py scan ./setup.exe` | tested-here |
 | `kosif-remote-commander` | خادم KOSIF Remote Commander | `python3 scripts/kosif_remote_superpowers.py doctor` | tested-here |
-| `look-pipeline` | خط اللوك: تلوين واحد لـ ffmpeg وSVG وGLSL | `python3 scripts/look_pipeline.py presets` | tested-here |
+| `look-pipeline` | خط اللوك: تلوين واحد لـ ffmpeg وSVG وGLSL | `python3 scripts/look_pipeline.py presets` | tested-here · `lesson-integrity` · `python3 scripts/lesson_integrity.py values --registry values.json` |
 | `mosamem-rea-fusion` | تكامل مصمم وREA: فحص صور وتوليف مهارات آمن | `python3 scripts/mosamem_rea_fusion.py doctor` | tested-here |
 | `motion-kit-bridge` | جسر توقيتات Motion Starter Kit | `python3 scripts/motion_kit_bridge.py styles` | tested-here |
 | `motion-stack` | مولّد مشاريع بداية لمحركات الحركة | `python3 scripts/motion_stack.py list` | tested-here |
@@ -265,6 +265,10 @@
 | `APP-17` | اعرض ثلاثة خيارات بدل الأسئلة | Show three previews instead of asking | documented |  |
 | `APP-18` | فصل المنشئ عن الناقد | Separate maker from critic | documented | chromium, git |
 | `APP-19` | بوابة الإنهاء المرئية | Rendered finish gate | documented |  |
+| `APP-24` | تحدٍّ قابل للحل قبل عرضه | Check an interactive challenge is solvable before posing it | documented |  |
+| `APP-25` | مقياس 1-2-5 وتعريف بطولين | A 1-2-5 gauge scale and a two-length glossary | documented | python3 |
+| `APP-26` | مؤثرات من تسجيلات حقيقية في ملف واحد | One sound sprite cut from real CC0 recordings | documented | python3 |
+| `APP-27` | تفضيلات الحركة والعرض وشاشة تحميل فورية | Motion and display preferences and an inline loader | documented | npm:three |
 | `ABUILD-01` | تنفيذ خارطة الطريق تلقائياً: مرحلة لكل طلب دمج | Autonomous phase-per-PR roadmap execution loop | documented | claude:tools |
 | `ABUILD-02` | مسجل قياس تشغيل بالملاحظة فقط | Observation-only run telemetry recorder | documented |  |
 | `ABUILD-03` | خط وكلاء بأدوار ومراحل وأقفال كتابة واستئناف | Role-squad agent pipeline with stages, locks and resume | documented |  |

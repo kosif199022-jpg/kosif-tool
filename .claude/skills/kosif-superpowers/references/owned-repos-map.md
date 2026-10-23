@@ -67,7 +67,7 @@
 | type · الخطوط والنصوص العربية واللاتينية | 215 | 89 | 91 | 31 | 1 | kosif-tool, kosif-one, app | — |
 | data · البيانات والرسوم والمواقع | 258 | 67 | 149 | 34 | 7 | kosif-atlas, 100-superskills, kosif-earth-ci-fork, cloude, kosif-audit-studio, kosif-audit-pro, see, moon, smart-trial-balance-review | kosif-earth-ci-fork, cloude, kosif-audit-studio, kosif-audit-pro, see, moon |
 | documents · المستندات والكتابة | 138 | 32 | 94 | 8 | 4 | kosif-atlas, 100-superskills, kosif-earth-ci-fork, cloude, kosif-audit-studio, kosif-audit-pro, see, moon, smart-trial-balance-review, mafateeh-al-tharwa, mafateeh-al-tharwa2, new | kosif-earth-ci-fork, cloude, kosif-audit-studio, kosif-audit-pro, see, moon, mafateeh-al-tharwa |
-| quality · الاختبارات والجودة والأمان | 464 | 152 | 198 | 94 | 15 | kosif-tool, kosif-atlas, kosif-earth-ci-fork, cloude, kosif-audit-studio, kosif-audit-pro, see, moon, kosif-render-lab | kosif-earth-ci-fork, cloude, kosif-audit-studio, kosif-audit-pro, see, moon, kosif-render-lab |
+| quality · الاختبارات والجودة والأمان | 469 | 152 | 203 | 94 | 15 | kosif-tool, kosif-atlas, kosif-earth-ci-fork, cloude, kosif-audit-studio, kosif-audit-pro, see, moon, kosif-render-lab | kosif-earth-ci-fork, cloude, kosif-audit-studio, kosif-audit-pro, see, moon, kosif-render-lab |
 | reverse · التحليل العكسي وفحص البرامج | 258 | 30 | 180 | 48 | 0 | — | — |
 | misc · قدرات مساندة غير مصنفة | 27 | 12 | 11 | 2 | 2 | — | — |
 

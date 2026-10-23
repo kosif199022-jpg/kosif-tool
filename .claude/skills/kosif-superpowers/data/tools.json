@@ -14510,6 +14510,110 @@
         "photo-video-footage"
       ],
       "power_id": "TOOL-165"
+    },
+    {
+      "id": "lesson-integrity",
+      "path": "scripts/lesson_integrity.py",
+      "root": "skill",
+      "kind": "cli",
+      "area": "think",
+      "title_en": "Lesson number integrity checker",
+      "title_ar": "فاحص أرقام الدروس والشروح",
+      "summary_en": "Checks the numbers an explainer, lesson film, infographic or interactive lesson shows. values validates a registry where every value names its source and quotes the supporting sentence, or carries an explicit gap note, and recomputes derived sums and products; render fills {v:id}, {v:id|dp} and {n:id} placeholders in a script or page and fails closed on an unknown value, a gap or a unit with no print form (--strict also flags numbers typed straight into the text); ledger checks that a conservation ledger (energy, budget, time) balances and reports shares and efficiency; scale picks a 1-2-5 gauge capacity; sprite checks a sound-sprite manifest for overlapping regions, file length and a credited allowed licence per cue. Stdlib only; it runs nothing.",
+      "summary_ar": "يفحص الأرقام التي يعرضها شرح أو فيديو تعليمي أو إنفوجراف أو درس تفاعلي. values يتحقق من سجل قيم يذكر لكل رقم مصدره والجملة المقتبسة التي تثبته أو ملاحظة فجوة صريحة، ويعيد حساب المجاميع والحواصل المشتقة؛ render يملأ العناصر النائبة {v:id} و{v:id|dp} و{n:id} في السكربت أو الصفحة ويفشل مغلقًا على قيمة غير موجودة أو فجوة أو وحدة بلا شكل طباعة (و--strict يكشف الأرقام المكتوبة مباشرة في النص)؛ ledger يتحقق من توازن دفتر حفظ (طاقة، ميزانية، وقت) ويعرض الحصص والكفاءة؛ scale يختار سعة عدّاد 1-2-5؛ sprite يفحص قائمة مناطق ملف المؤثرات الصوتية (تداخل، طول الملف، رخصة معتمدة لكل مؤثر). مكتبة Python القياسية فقط، ولا يشغّل شيئًا.",
+      "use_when": [
+        "اتأكد إن كل رقم في سكربت الفيديو التعليمي ليه مصدر",
+        "تأكد أن مخطط سانكي للطاقة متوازن وما دخل يساوي ما خرج",
+        "check every number in my explainer script has a cited source",
+        "check my sound sprite regions and credits before shipping"
+      ],
+      "keywords": [
+        "cited numbers",
+        "value registry",
+        "fact check",
+        "placeholders",
+        "conservation",
+        "energy ledger",
+        "Sankey",
+        "nice scale",
+        "gauge",
+        "sound sprite",
+        "credits",
+        "lesson",
+        "explainer",
+        "أرقام موثقة",
+        "سجل القيم",
+        "مراجعة الحقائق",
+        "حفظ الطاقة",
+        "سانكي",
+        "درس تفاعلي",
+        "شرح",
+        "مؤثرات صوتية",
+        "اعتمادات",
+        "كل رقم ليه مصدر",
+        "فيديو تعليمي",
+        "سكربت",
+        "رقم متألف"
+      ],
+      "commands": [
+        {
+          "name": "values",
+          "example": "python3 scripts/lesson_integrity.py values --registry values.json",
+          "does": "Errors on a number with no source and no gap note, an unknown source ref, a missing quote, a value outside its range or a derived value that no longer matches its parts; warns when the number is not in its quote and for every gap."
+        },
+        {
+          "name": "render",
+          "example": "python3 scripts/lesson_integrity.py render --registry values.json --content script.md --strict --out script.out.md",
+          "does": "Fills the placeholders and writes --out only when there is no error; without --out prints the text."
+        },
+        {
+          "name": "ledger",
+          "example": "python3 scripts/lesson_integrity.py ledger --file ledger.json --json",
+          "does": "Reports in, out, gap, each output's share and the efficiency of the 'useful' outputs; exits 1 when the ledger does not balance or holds a negative amount."
+        },
+        {
+          "name": "scale",
+          "example": "python3 scripts/lesson_integrity.py scale 14.7",
+          "does": "Prints the smallest 1, 2 or 5 x 10^n capacity the value fills to at most --headroom (default 0.9)."
+        },
+        {
+          "name": "sprite",
+          "example": "python3 scripts/lesson_integrity.py sprite --manifest sounds.json --credits CREDITS.md --duration 20",
+          "does": "Checks regions and layers do not overlap, fit the file and that every cue has a credits row under an allowed licence (CC0, CC-BY 4.0, owner, original)."
+        },
+        {
+          "name": "self-test",
+          "example": "python3 scripts/lesson_integrity.py --self-test",
+          "does": "Runs the 11 built-in checks on synthetic data."
+        }
+      ],
+      "inputs": "A values.json registry ({sources, values}), a text or Markdown content file with placeholders, a ledger JSON ({unit, in, out, useful, tolerance}), a sound-sprite manifest JSON and its CREDITS.md table.",
+      "outputs": "A text report or JSON (schema kosif.lesson-integrity.v1) on stdout; render --out writes the filled text.",
+      "requires": {
+        "python": [],
+        "binaries": [
+          "python3"
+        ],
+        "node": [],
+        "optional": [],
+        "network": false
+      },
+      "safety": "read-only",
+      "consent": "render --out writes only that file, and only when every placeholder resolved.",
+      "limits": "It checks the registry against itself: it cannot tell whether a source is right or whether the quoted sentence really appears in it, it does not solve a physics model or generate challenges, and sprite reads the manifest and credits only, without decoding or measuring the audio. --strict recognises common SI units only.",
+      "evidence": "tested-here",
+      "evidence_note": "evals/test_lesson_integrity.py: 14/14 passed on this checkout; sprite also passed on the studied repository's published manifest and credits (read only, not copied).",
+      "tests": [
+        ".claude/skills/kosif-superpowers/evals/test_lesson_integrity.py"
+      ],
+      "docs": [
+        ".claude/skills/kosif-superpowers/references/lesson-integrity-methods.md"
+      ],
+      "families": [
+        "verification-evals",
+        "apps-artifacts"
+      ],
+      "power_id": "TOOL-166"
     }
   ]
 }

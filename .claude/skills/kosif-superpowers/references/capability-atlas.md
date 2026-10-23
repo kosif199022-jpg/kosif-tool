@@ -47,7 +47,7 @@ For a task in the user's words, `python3 scripts/hub.py find "<task>"` combines 
 - runnable-tools: 159
 - app-feature-transfer: 139
 - atlas-build: 52
-- apps-artifacts: 23
+- apps-artifacts: 27
 
 ### code: 599 powers
 
@@ -88,7 +88,7 @@ For a task in the user's words, `python3 scripts/hub.py find "<task>"` combines 
 - atlas-mind: 54
 - thinking-core: 47
 - self-discovery: 43
-- verification-evals: 35
+- verification-evals: 40
 - creativity-engine: 29
 - planning-execution: 14
 

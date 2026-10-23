@@ -58,7 +58,7 @@
 | الاختبارات والجودة والأمان | `api-testing` | 22 | 1,577 | [cards/quality/api-testing.md](cards/quality/api-testing.md) |
 | الاختبارات والجودة والأمان | `qa-verification` | 384 | 27,964 | [cards/quality/qa-verification.md](cards/quality/qa-verification.md) |
 | الاختبارات والجودة والأمان | `security-safety` | 23 | 1,636 | [cards/quality/security-safety.md](cards/quality/security-safety.md) |
-| الاختبارات والجودة والأمان | `verification-evals` | 35 | 2,548 | [cards/quality/verification-evals.md](cards/quality/verification-evals.md) |
+| الاختبارات والجودة والأمان | `verification-evals` | 40 | 2,902 | [cards/quality/verification-evals.md](cards/quality/verification-evals.md) |
 | البحث والمعرفة | `atlas-research` | 11 | 757 | [cards/research/atlas-research.md](cards/research/atlas-research.md) |
 | البحث والمعرفة | `knowledge-graph` | 23 | 1,643 | [cards/research/knowledge-graph.md](cards/research/knowledge-graph.md) |
 | البحث والمعرفة | `web-research` | 26 | 1,789 | [cards/research/web-research.md](cards/research/web-research.md) |

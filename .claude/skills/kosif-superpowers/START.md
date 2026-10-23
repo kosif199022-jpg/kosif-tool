@@ -34,7 +34,7 @@ python3 $SKILL_DIR/scripts/kosif_hubs.py install <hub>        # 4. ثبّت ال
 | `type` | الخطوط والنصوص العربية واللاتينية — Typography & localization | 212 | 88 | `python3 scripts/font_fidelity_lab.py --help` |
 | `data` | البيانات والرسوم والمواقع — Data & visual analytics | 261 | 67 | `python3 scripts/powers.py family data-analysis` |
 | `documents` | المستندات والكتابة — Documents & writing | 136 | 32 | `python3 scripts/tell_scan.py --help` |
-| `quality` | الاختبارات والجودة والأمان — QA & security | 481 | 152 | `python3 scripts/verify_video.py --help` |
+| `quality` | الاختبارات والجودة والأمان — QA & security | 485 | 152 | `python3 scripts/verify_video.py --help` |
 | `reverse` | التحليل العكسي وفحص البرامج — Reverse engineering | 262 | 30 | `python3 scripts/rea_bridge.py doctor` |
 | `misc` | قدرات مساندة غير مصنفة — Other supporting capabilities | 27 | 12 | `python3 scripts/powers.py family other` |
 
