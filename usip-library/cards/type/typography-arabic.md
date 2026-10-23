@@ -7040,7 +7040,7 @@
 
 **ما هي:** اعرض سطور المرجع نفسها بكل خط مفتوح مرشّح عبر Chromium (الخط مضمّن كـ data URL) وقارنها بقصاصات الفيديو جنبًا إلى جنب؛ القرار بالبصمات (المركّبات المتراكبة «جم» و«محمد»، شكل ﷺ، الكاف والتاء المربوطة) لا بتقاطع الظلال. — Render the reference lines in every open candidate through headless Chromium and compare side-by-side sheets; decide by letterform signatures (stacked جم/محمد, the ﷺ form, kaf/taa-marbuta), not by silhouette IoU.
 
-**متى:** a reference uses an unknown Arabic face and you must pick the closest open font honestly
+**متى:** حين يستخدم المرجع خطًا عربيًا مجهولًا وعليك اختيار أقرب خط مفتوح بأمانة. / a reference uses an unknown Arabic face and you must pick the closest open font honestly
 
 **كيف:** `node .claude/skills/kosif-superpowers/scripts/render_text.cjs spec.json out/` with spec items {text, font, weight, size, variation}; build sheets with Pillow (video crop on top, candidates below at equal width); width ratios between lines are tie-breakers only because kashida and shadows distort them. Method and pitfalls in references/font-matching.md. Verified on the Friday-greeting reference: Amiri Bold matched; Scheherazade/Noto set the ligatures flat.
 
@@ -7116,7 +7116,7 @@
 
 **ما هي:** حين تأتي العربية والأرقام من تصميمين مختلفين: اقتطع كل مصدر إلى نطاقات يونيكود منفصلة، ثبّت الأوزان من الخط المتغيّر، وحّد وحدات القياس والمقاييس الرأسية، ادمج بـ fontTools، وسمِّ العائلة باسم جديد لأن OFL تحجز الأسماء الأصلية. — Subset two OFL masters to disjoint ranges, instance the variable one, unify UPM and vertical metrics, merge with fontTools and rename (Reserved Font Names are never reused).
 
-**متى:** one open face cannot cover both the Arabic text and the figures/Latin of a reference
+**متى:** حين لا يستطيع خط مفتوح واحد تغطية النص العربي والأرقام/اللاتينية معًا في مرجع. / one open face cannot cover both the Arabic text and the figures/Latin of a reference
 
 **كيف:** `pip install fonttools brotli && python3 fonts/kosif-jumuah/build_font.py` → KOSIFJumuah-Regular/Bold .ttf + .woff2 from Amiri (Arabic, GSUB kept) and Bodoni Moda instanced at wght 400/600, opsz 11 (Latin figures); OFL.txt carries both notices; tests check family names, code points (letters, tatweel, ﷺ, digits), GSUB survival and fsType 0.
 
@@ -7188,7 +7188,7 @@
 
 **ما هي:** لا يوجد خط ثلث مفتوح الرخصة؛ ابنِ إيماءة العنوان من حدود حروف Amiri Bold: مطّ الألف واللام، تكبير الجيم حول مفصلها، كشيدة بعد الميم والعين، إمالة مجموعة «لجمعة» المتصلة لينحدر السطر مع بقاء الأعمدة رأسية، وتشكيل يوضع يدويًا؛ مسار لكل حرف ليُرسم تدريجيًا. — No open Thuluth exists; build the title's gesture from Amiri Bold outlines (stretched stems, scaled ج, kashida, a sheared connected group, hand-placed marks), one path per glyph for draw-on.
 
-**متى:** a reference title is hand-set calligraphy that no open font reproduces
+**متى:** حين يكون عنوان المرجع خط يد لا يعيد إنتاجه أي خط مفتوح. / a reference title is hand-set calligraphy that no open font reproduces
 
 **كيف:** `python3 fonts/kosif-jumuah/demo/compose_title.py --set shear=0.18 --set alef_sy=1.6 --set jeem_s=1.3` → title-aljumuah.svg, inlined in demo/jumuah.html and drawn on with strokeDasharray/Dashoffset per path. Honest limit: Naskh pen, not Thuluth; for an exact match a calligrapher's SVG replaces the file or a licensed Thuluth font goes in via --font (kept outside the repo if not OFL-compatible). Keep the SVG group id distinct from the page's #title (transform-origin rules leak into SVG).
 

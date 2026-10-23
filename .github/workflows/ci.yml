@@ -113,6 +113,8 @@ jobs:
         run: python3 -m unittest discover -s .claude/skills/kosif-superpowers/evals -p 'test_charter_index.py' -v
       - name: Pro council with the 100-persona roster (A13, A30)
         run: python3 -m unittest discover -s .claude/skills/kosif-superpowers/evals -p 'test_council.py' -v
+      - name: Family tools (decision math, particles, geo, prompts, diagrams, UI beats, stats, TTS, brand tokens, agent guard)
+        run: for t in decision_math particles geo_plate prompt_forge diagram_layout ui_beat stats_lab tts_script brand_tokens agent_guard; do python3 .claude/skills/kosif-superpowers/evals/test_$t.py -v || exit 1; done
       - name: Story question pack (A16)
         run: python3 -m unittest discover -s .claude/skills/kosif-superpowers/evals -p 'test_story_pack.py' -v
       - name: Prompt pack (warn-only lint, one code block per prompt)

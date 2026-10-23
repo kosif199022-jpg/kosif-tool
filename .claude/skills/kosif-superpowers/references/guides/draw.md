@@ -8,7 +8,7 @@ Commands below are typed from the skill folder (`.claude/skills/kosif-superpower
 
 <!-- hub:area:draw:start -->
 
-**الأدوات / tools (11)** — `python3 scripts/hub.py tool <id>` for every command, requirement and limit:
+**الأدوات / tools (14)** — `python3 scripts/hub.py tool <id>` for every command, requirement and limit:
 
 | tool | what it does | start with | evidence |
 |---|---|---|---|
@@ -23,6 +23,9 @@ Commands below are typed from the skill folder (`.claude/skills/kosif-superpower
 | `drawing-methods` | 48 original method cards distilled from drawing books, including 41 books from the user's own library read on 2026-10-23 (text, OCR or sample pages) (gesture, proportion, Loomis head, mannequin, shape language, silhouette, expression, light, cast shadows, hatching, anime heads, hair and cel shading, animation timing, walks, urban sketching, plants, products, creatures, practice); ranks them for an Arabic or English request, builds an ordered drawing plan or an image prompt, draws a head, figure, character, forms, a bouncing ball or a constructed cast shadow as a deterministic layered SVG (guide, construction, final, silhouette) and checks the drawing's geometry against the cards. | `python3 scripts/drawing_methods.py find "ارسم وش شخصية بتضحك"` | tested-here |
 | `perspective-color-lab` | Draws a geometrically constrained two-vanishing-point SVG and measures HSV/WCAG contrast of brand color swatches. | `python3 scripts/perspective_color_lab.py perspective --input scene.json --out out/scene.svg` | tested-elsewhere |
 | `drawing-visual-qa` | Routes art tasks to four original-book sections read in full chapter context, measures real raster three-value tone groups, transparency and color proxies, and checks that edited pixels remain in the user-authorized rectangular region. Separate from the PR92 SVG authoring engine; its PASS is not an aesthetic verdict. | `python3 scripts/drawing_visual_qa.py curriculum "ارسم شخصية كرتونية بمنظور وإضاءة" --out out/lessons.json` | tested-here |
+| `geo-plate` | Projects lon/lat points to pixel coordinates on a WxH plate (Web Mercator or equirectangular with a cos(lat) squash, world or bbox fitted with aspect kept), computes choropleth class breaks (quantile, equal interval, exact Fisher-Jenks) with GVF and a raw-count normalization warning or per-capita rates, and validates a coordinate ledger (ranges, swapped lat/lon, null island, CRS, duplicate ids, source and licence on every point). | `python3 scripts/geo_plate.py project --proj equirect --size 2000x1000 31.2357,30.0444 -0.1276,51.5072` | tested-here |
+| `diagram-layout` | Checks a node/edge graph for dangling edges, duplicate ids, self-loops, cycles, orphans, long labels and too many nodes; computes a deterministic longest-path layered layout (LR or TB, cycle edges reversed and reported, RTL mirroring x' = W - x - w); writes an SVG with role colours, arrow markers, paint-order layers and Arabic labels with direction rtl. | `python3 scripts/diagram_layout.py lint /tmp/graph.json --max-label 24 --max-nodes 9` | tested-here |
+| `brand-tokens` | Extracts every colour a logo SVG uses (fill, stroke, stop-color, style and <style> CSS; hex, rgb(), hsl() and named colours) normalised to #rrggbb with counts and roles; builds DTCG-style core (100-900 scales), semantic and component tokens plus CSS custom properties, choosing action, link and muted steps that pass AA; and computes the WCAG 2.x contrast matrix with AA/AAA verdicts for the intended text/background pairs. | `echo '<svg xmlns="http://www.w3.org/2000/svg"><rect fill="#1d4ed8"/><circle fill="#1D4ED8"/><path stroke="#f59e0b"/><text fill="#475569">K</text></svg>' \| python3 scripts/brand_tokens.py palette -` | tested-here |
 
 <!-- hub:area:draw:end -->
 

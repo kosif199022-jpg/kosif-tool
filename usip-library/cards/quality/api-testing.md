@@ -43,7 +43,7 @@
 
 **ما هي:** اكتب كل طلب API كملف ‎.bru نصي (طريقة، رابط، ترويسات، جسم، مصادقة، تأكيدات، اختبارات) داخل مجلد مع bruno.json، فيُراجَع ويُدار بالإصدارات مثل الكود. — Each request is a plain-text .bru file in a folder with bruno.json; reviewable and versioned like code, offline, no account.
 
-**متى:** building or documenting an HTTP API; replacing a Postman/Insomnia collection with a git-native one
+**متى:** عند بناء API من نوع HTTP أو توثيقه، أو استبدال مجموعة Postman/Insomnia بمجموعة أصلية في git / building or documenting an HTTP API; replacing a Postman/Insomnia collection with a git-native one
 
 **كيف:** Create bruno.json + <name>.bru files (meta/get\|post/headers/body/auth/assert/tests blocks). Verified here: a 6-request owned collection ran 6/6.
 
@@ -112,7 +112,7 @@
 
 **ما هي:** شغّل المجموعة كلها أو مجلدًا أو طلبًا واحدًا من سطر الأوامر مقابل بيئة مسماة؛ كل تأكيد واختبار يُحسب ويُلخَّص. — Run the whole collection, a folder, or one request against a named environment; assertions and tests are counted and summarised.
 
-**متى:** CI, pre-deploy checks, regression on an API you own or may test
+**متى:** في CI والفحوص قبل النشر واختبار الانحدار على API تملكه أو يحق لك اختباره / CI, pre-deploy checks, regression on an API you own or may test
 
 **كيف:** `bru run --env local`. Verified here: 6/6 requests, 8/8 assertions, 3/3 tests passed.
 
@@ -182,7 +182,7 @@
 
 **ما هي:** تأكيدات بصيغة `res.status: eq 200` و`res.body.count: gte 1` و`res.responseTime: lt 2000` دون كتابة كود. — Declarative assert block on status, body paths and response time, no code.
 
-**متى:** quick contract checks on a response
+**متى:** عند الفحوص السريعة لعقد الاستجابة / quick contract checks on a response
 
 **كيف:** assert { res.status: eq 200 ... }. Verified here: 8/8 assertions passed.
 
@@ -253,7 +253,7 @@
 
 **ما هي:** اكتب اختبارات بـ `test(...)` و`expect(res.getBody())...` بأسلوب Chai لمنطق أعقد من التأكيدات. — JavaScript test() blocks with Chai expect() for logic beyond simple asserts.
 
-**متى:** validating shapes, loops over arrays, conditional checks
+**متى:** عند التحقق من الأشكال، والمرور على المصفوفات، والفحوص الشرطية / validating shapes, loops over arrays, conditional checks
 
 **كيف:** tests { test('...', () => expect(res.getStatus()).to.equal(200)) }. Verified here: 3/3 tests, including a loop asserting every item's keys and non-negative price.
 
@@ -324,7 +324,7 @@
 
 **ما هي:** احفظ قيمة من استجابة (رمز دخول، معرّف منشأ) بـ `bru.setVar` في سكربت ما بعد الاستجابة، واستخدمها في الطلبات التالية. — Save a value (token, created id) with bru.setVar in a post-response script and use it in later requests.
 
-**متى:** login then authenticated calls; create then read-back
+**متى:** عند تسجيل الدخول ثم الاستدعاءات الموثقة، أو الإنشاء ثم القراءة للتحقق / login then authenticated calls; create then read-back
 
 **كيف:** script:post-response { bru.setVar('token', res.body.token) }. Verified here: login→list→create→get-by-id chained through a saved token and createdId.
 
@@ -395,7 +395,7 @@
 
 **ما هي:** اضبط المصادقة لكل طلب: Bearer وBasic وDigest وNTLM وAPI key وAWS Signature وOAuth 1.0/2.0 (رموز التفويض والاعتماد وكلمة المرور). — Per-request auth: Bearer, Basic, Digest, NTLM, API key, AWS Signature, OAuth 1.0/2.0 grant types.
 
-**متى:** calling protected endpoints
+**متى:** عند استدعاء نقاط نهاية محمية / calling protected endpoints
 
 **كيف:** auth:bearer { token: {{token}} } and an OAuth2 config block. Verified here: Bearer with a chained token on three requests; other modes documented at https://docs.usebruno.com/auth/overview.
 
@@ -468,7 +468,7 @@
 
 **ما هي:** متغيرات البيئة والعامة والمجموعة والمجلد والطلب ووقت التشغيل، مع استيفاء `{{var}}` في الروابط والأجسام. — Environment, global, collection, folder, request and runtime variables with {{var}} interpolation in URLs and bodies.
 
-**متى:** reusing a base URL, tokens, test data across requests
+**متى:** عند إعادة استخدام عنوان أساسي ورموز وبيانات اختبار عبر الطلبات / reusing a base URL, tokens, test data across requests
 
 **كيف:** environments/<env>.bru vars{} + bru.setVar/getVar. Verified here: baseUrl and user from the env file, token and createdId at runtime.
 
@@ -539,7 +539,7 @@
 
 **ما هي:** عرّف متغيرًا سرّيًا في `vars:secret`، ومرّر قيمته بـ `--env-var` أو من ملف ‎.env أو خزنة (HashiCorp/AWS/Azure/GCP)؛ يُحجب في التقارير. — Declare a secret var, pass its value via --env-var or a .env/secret vault; masked in reports.
 
-**متى:** passwords, API keys that must not be committed
+**متى:** عند كلمات المرور ومفاتيح API التي يجب ألا تُودَع في المستودع / passwords, API keys that must not be committed
 
 **كيف:** vars:secret [ password ] + `--env-var password=...`. Verified here: the password stayed out of the files and was passed at run time.
 
@@ -610,7 +610,7 @@
 
 **ما هي:** نفّذ JavaScript قبل الطلب (تجهيز بيانات) وبعده (استخراج، تحقق) عبر واجهة `bru`/`req`/`res` في صندوق آمن (safe) أو تطويري (developer) للحزم الخارجية. — Run JS before (set up data) and after (extract, verify) each request via the bru/req/res API in a safe or developer sandbox.
 
-**متى:** dynamic bodies, extracting values, conditional flow
+**متى:** عند الأجسام الديناميكية واستخراج القيم والتدفق الشرطي / dynamic bodies, extracting values, conditional flow
 
 **كيف:** script:pre-request / script:post-response. Verified here: a pre-request default for name/price and a post-response capture of the created id.
 
@@ -681,7 +681,7 @@
 
 **ما هي:** كرّر طلبًا أو مجموعة على كل صف من ملف CSV أو JSON (تسلسليًا أو بالتوازي) لاختبار حالات كثيرة. — Iterate a request or collection over each row of a CSV/JSON data file, sequentially or in parallel.
 
-**متى:** testing many inputs, fixture-driven suites
+**متى:** عند اختبار مدخلات كثيرة وحزم تعتمد على بيانات ثابتة / testing many inputs, fixture-driven suites
 
 **كيف:** `bru run ... --csv-file-path data.csv`. Verified here: 3 CSV rows each created a distinct item (فيديو إعلان، موشن شعار، ريل دعاء).
 
@@ -752,7 +752,7 @@
 
 **ما هي:** اكتب نتائج التشغيل بصيغة JSON (للبرمجة) أو JUnit (لأنظمة CI) أو HTML (للمراجعة). — Emit run results as JSON, JUnit XML (for CI dashboards) or a standalone HTML page.
 
-**متى:** CI pipelines, shareable run records
+**متى:** عند خطوط CI وسجلات التشغيل القابلة للمشاركة / CI pipelines, shareable run records
 
 **كيف:** `--reporter-json/--reporter-junit/--reporter-html`. Verified here: all three written; JUnit parsed to a valid testsuite.
 
@@ -823,7 +823,7 @@
 
 **ما هي:** يرجع رمز خروج غير صفري عند فشل أي طلب أو اختبار أو تأكيد، و`--bail` يوقف عند أول فشل، فيكسر خط CI بوضوح. — Non-zero exit on any failed request/test/assertion; --bail stops at the first failure, failing the pipeline.
 
-**متى:** gating a deploy on API health
+**متى:** عند ربط نشر ما بسلامة الـAPI / gating a deploy on API health
 
 **كيف:** `bru run ... --bail`. Verified here: a wrong password returned exit code 1.
 
@@ -894,7 +894,7 @@
 
 **ما هي:** حوّل مواصفة OpenAPI 3 / Swagger 2 (ملف أو رابط) إلى مجموعة ‎.bru مجمّعة حسب الوسوم أو المسار. — Convert an OpenAPI 3/Swagger 2 spec (file or URL) into a .bru collection grouped by tags or path.
 
-**متى:** bootstrapping tests from an existing API spec
+**متى:** عند بدء الاختبارات من مواصفة API موجودة / bootstrapping tests from an existing API spec
 
 **كيف:** `bru import openapi -s api.yaml -o out`. Verified here: our openapi.yaml became 10 .bru files under auth/items/system.
 
@@ -965,7 +965,7 @@
 
 **ما هي:** ولّد صفحة HTML مستقلة توثّق المجموعة وطلباتها وبيئاتها. — Generate a self-contained HTML documentation page for the collection.
 
-**متى:** sharing API docs without a service
+**متى:** عند مشاركة توثيق الـAPI دون خدمة / sharing API docs without a service
 
 **كيف:** `bru docs generate -o docs.html --all-envs`. Verified here: an HTML page was produced.
 
@@ -1036,7 +1036,7 @@
 
 **ما هي:** حوّل مجموعة Postman أو Insomnia إلى Bruno برمجيًا، مع ترجمة `pm.*` إلى `bru.*`. — Convert a Postman or Insomnia collection to Bruno in code, translating pm.* scripts to bru.*.
 
-**متى:** migrating off Postman/Insomnia
+**متى:** عند الانتقال من Postman/Insomnia / migrating off Postman/Insomnia
 
 **كيف:** `@usebruno/converters` postmanToBruno()/insomniaToBruno(). Verified here: a Postman collection converted with pm.test/pm.response/pm.environment.set translated to bru.* and 0 issues.
 
@@ -1107,7 +1107,7 @@
 
 **ما هي:** ليس REST فقط: Bruno يدعم طلبات GraphQL (مع متغيرات وباني استعلام) وgRPC (ملفات proto وبث) وWebSocket (أنواع رسائل) وSOAP وSSE. — Beyond REST: GraphQL (variables, query builder), gRPC (proto files, streaming), WebSocket (message types), SOAP and Server-Sent Events.
 
-**متى:** testing a non-REST API
+**متى:** عند اختبار API غير REST / testing a non-REST API
 
 **كيف:** Author the request with its type; most run from the desktop app, REST/GraphQL also from the CLI. Docs: https://docs.usebruno.com/send-requests/overview.
 
@@ -1176,7 +1176,7 @@
 
 **ما هي:** حوّل تعريف WSDL إلى مجموعة Bruno لاختبار خدمات SOAP. — Convert a WSDL definition into a Bruno collection for SOAP services.
 
-**متى:** testing a legacy SOAP service
+**متى:** عند اختبار خدمة SOAP قديمة / testing a legacy SOAP service
 
 **كيف:** `bru import wsdl -s service.wsdl -o out`. Documented at https://docs.usebruno.com/converters/wsdl-to-bruno.
 
@@ -1245,7 +1245,7 @@
 
 **ما هي:** شغّل خادم HTTP وهميًا محليًا يرد من أمثلة الاستجابات المحفوظة أو من مواصفة OpenAPI، للتطوير قبل جاهزية الخلفية. — Run a local mock HTTP server that replies from saved response examples or an OpenAPI spec.
 
-**متى:** front-end work before the backend is ready
+**متى:** عند العمل على الواجهة قبل جاهزية الخلفية / front-end work before the backend is ready
 
 **كيف:** Bruno desktop app → Mock Servers (Beta). Runs from the app, not the CLI; CORS on, request log of the last 500. Docs: https://docs.usebruno.com/mock-servers/overview.
 
@@ -1316,7 +1316,7 @@
 
 **ما هي:** لأن المجموعة ملفات نصية، التعاون يتم عبر git (GitHub/GitLab/Bitbucket/Azure) بفروع ومراجعات، بلا مزامنة سحابية. — Because collections are plain files, teams collaborate through git with branches and reviews, no cloud sync.
 
-**متى:** team-owned API suites in the repo
+**متى:** عند امتلاك الفريق حزم API داخل المستودع / team-owned API suites in the repo
 
 **كيف:** Commit the collection folder; review .bru diffs. Docs: https://docs.usebruno.com/git-integration/overview.
 
@@ -1385,7 +1385,7 @@
 
 **ما هي:** تتوفر في السكربتات مكتبات مثل jsonwebtoken وcrypto وlodash وmoment وuuid وajv دون تثبيت، مع دعم حزم npm في الوضع التطويري. — Scripts ship with libraries (jsonwebtoken, crypto-js, lodash, moment, uuid, ajv…) and can require npm packages in developer mode.
 
-**متى:** signing JWTs, hashing, schema validation inside a test
+**متى:** عند توقيع JWT أو التجزئة أو التحقق من المخطط داخل اختبار / signing JWTs, hashing, schema validation inside a test
 
 **كيف:** require('jsonwebtoken') in a script. Docs: https://docs.usebruno.com/testing/script/inbuilt-libraries.
 
@@ -1454,7 +1454,7 @@
 
 **ما هي:** أرسل طلبًا إضافيًا من داخل سكربت بـ `bru.sendRequest` (تجهيز بيانات، جلب رمز) دون إضافته للمجموعة. — Fire an extra HTTP request from inside a script with bru.sendRequest (set-up, token fetch) without adding it to the collection.
 
-**متى:** a login call needed only as setup
+**متى:** عند الحاجة إلى استدعاء تسجيل دخول للإعداد فقط / a login call needed only as setup
 
 **كيف:** bru.sendRequest({url, method}, cb). Docs: https://docs.usebruno.com/testing/script/javascript-reference.
 
@@ -1522,7 +1522,7 @@
 
 **ما هي:** المجموعة تُخزَّن بلغة Bru النصية أو بصيغة OpenCollection YAML المفتوحة، وكلاهما موثّق ومصمَّم للقراءة البشرية والدمج في git. — Collections persist as the Bru markup language or the open OpenCollection YAML format, both human-readable and git-friendly.
 
-**متى:** understanding or generating the file format directly
+**متى:** عند فهم صيغة الملف أو توليدها مباشرة / understanding or generating the file format directly
 
 **كيف:** Bru tag reference and OpenCollection YAML structure at https://docs.usebruno.com/bru-lang/tag-reference.
 

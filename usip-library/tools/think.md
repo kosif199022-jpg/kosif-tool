@@ -1,4 +1,4 @@
-# أدوات المجال `think` (11 أداة)
+# أدوات المجال `think` (13 أداة)
 
 > مولّد من `data/tools.json`. [الفهرس الرئيسي](../README.md) · `python3 scripts/hub.py tool <id>` للبطاقة الحية.
 
@@ -340,6 +340,57 @@
 
 - ابدأ بـ `think.py recover --message "<نص الخطأ>"`، ثم سجّل `fusionforge.py trace --project <slug> --id <FUSE-ID> --stage <stage> --node <N> --action "<ما جُرّب>" --result failed --error-class <الصنف> --tool tool:council --evidence <ملف>`.
 
+### `decision-math` — رياضيات القرار: نطاقات مونت كارلو ونقطة التعادل وترتيب ICE والقيمة الحالية ونقطة انقلاب القرار / Decision math: Monte Carlo ranges, break-even, ICE, NPV/IRR and flip thresholds
+
+| الحقل | القيمة |
+|---|---|
+| المسار | `scripts/decision_math.py` (جذر: skill) |
+| المجال | `think` |
+| الدليل | `tested-here` |
+| العائلات | `atlas-strategy`, `strategy-finance` |
+
+**ما تفعله:** يشغّل محاكاة مونت كارلو ببذرة ثابتة لنموذج ربح بمدخلات مثلثية/منتظمة/طبيعية (P10/P50/P90 واحتمال الخسارة)، ويحسب نقطة التعادل، ويرتب قائمة العمل بطريقة ICE، ويحسب القيمة الحالية الصافية ومعدل العائد الداخلي، ويجد بالتنصيف قيمة الافتراض التي ينقلب عندها القرار.
+
+**What it does:** Runs a seeded Monte Carlo over a profit model with triangular/uniform/normal inputs (P5/P10/P50/P90/P95 and probability of loss), computes break-even units and revenue, ranks a backlog by ICE, computes NPV and IRR by bisection, and finds by bisection the value of one assumption at which the go/no-go decision flips.
+
+#### متى تُستدعى
+
+- «احسب احتمال الخسارة ونطاق الربح للمشروع ده»
+- «عند كام وحدة هنغطي التكاليف؟»
+- «رتّب الأفكار دي بطريقة ICE»
+- «What is the probability this launch loses money?»
+- «At what price does this decision flip?»
+- «Compute NPV and IRR for these cash flows»
+
+#### الأوامر
+
+- **montecarlo**: P5-P95 profit range, mean, sd and probability of profit below target.
+  - `echo '{"inputs":{"price":{"dist":"triangular","low":8,"mode":10,"high":13},"units":{"dist":"uniform","low":800,"high":1200},"cost":{"dist":"normal","mean":6,"sd":0.5},"fixed":2500},"profit":"(price - cost) * units - fixed"}' \| python3 scripts/decision_math.py montecarlo - --runs 20000 --seed 7`
+- **breakeven**: Break-even units (exact and rounded up), revenue and contribution margin.
+  - `python3 scripts/decision_math.py breakeven --price 25 --fixed 10000 --variable 15`
+- **ice**: ICE ranking (impact x confidence x ease, 1-10 each) of a CSV backlog.
+  - `printf 'name,impact,confidence,ease\nA,8,7,5\nB,9,9,9\nC,3,4,10\n' \| python3 scripts/decision_math.py ice - --text`
+- **npv**: NPV at the rate and IRR by bisection (flags non-unique IRR).
+  - `python3 scripts/decision_math.py npv --rate 0.1 --flows -1000,300,400,500`
+- **flip**: Value of one input where profit crosses the target, with headroom from the base case.
+  - `echo '{"inputs":{"price":{"dist":"triangular","low":8,"mode":10,"high":13},"units":{"dist":"uniform","low":800,"high":1200},"cost":{"dist":"normal","mean":6,"sd":0.5},"fixed":2500},"profit":"(price - cost) * units - fixed"}' \| python3 scripts/decision_math.py flip - --var price`
+- **self-test**: Offline self-check.
+  - `python3 scripts/decision_math.py --self-test`
+
+#### المتطلبات والأمان
+
+- الأمان: read-only
+- الموافقة: —
+- الحدود: Inputs are sampled independently (no correlations); the profit expression allows arithmetic and min/max/abs/round only; flip varies one input with the others at their base values; IRR may be non-unique when flows change sign more than once.
+
+#### الاختبارات والأدلة
+
+- `.claude/skills/kosif-superpowers/evals/test_decision_math.py`
+
+#### عند الفشل (A29)
+
+- ابدأ بـ `think.py recover --message "<نص الخطأ>"`، ثم سجّل `fusionforge.py trace --project <slug> --id <FUSE-ID> --stage <stage> --node <N> --action "<ما جُرّب>" --result failed --error-class <الصنف> --tool tool:decision-math --evidence <ملف>`.
+
 ### `invention-lab` — مختبر الابتكار الهندسي / Invention Lab Candidates
 
 | الحقل | القيمة |
@@ -409,7 +460,7 @@
 - **--self-test**: Runs deterministic in-process shadow checks for Full Pro claim truth, incompatible typed edges, privacy and planning limits.
   - `python3 scripts/see_pro_cognitive_gate.py --self-test`
 - **check**: Checks a JSON reasoning packet and emits PASS/HARD_FAIL with concrete contract errors.
-  - `python3 scripts/see_pro_cognitive_gate.py check --file .claude/skills/kosif-superpowers/examples/see_pro_cognitive_packet.example.json`
+  - `python3 scripts/see_pro_cognitive_gate.py check --file examples/see_pro_cognitive_packet.example.json`
 
 #### المتطلبات والأمان
 
@@ -425,6 +476,53 @@
 #### عند الفشل (A29)
 
 - ابدأ بـ `think.py recover --message "<نص الخطأ>"`، ثم سجّل `fusionforge.py trace --project <slug> --id <FUSE-ID> --stage <stage> --node <N> --action "<ما جُرّب>" --result failed --error-class <الصنف> --tool tool:see-pro-cognitive-gate --evidence <ملف>`.
+
+### `stats-lab` — مختبر الإحصاء: اختبار A/B وحجم العينة ووصف عمود وأرباح الدفعات / Stats lab: A/B test, sample size, column statistics and FIFO/LIFO gains
+
+| الحقل | القيمة |
+|---|---|
+| المسار | `scripts/stats_lab.py` (جذر: skill) |
+| المجال | `think` |
+| الدليل | `tested-here` |
+| العائلات | `atlas-data`, `data-analysis` |
+
+**ما تفعله:** إحصاء حتمي للقرار: اختبار A/B بقيمة p وفترة ثقة للفرق والتحسن، وحجم العينة لكل مجموعة، ووصف عمود CSV مع القيم الشاذة وأرقام صفوفها، والأرباح المحققة لكل بيع بطريقة FIFO أو LIFO أو HIFO بحساب عشري دقيق.
+
+**What it does:** Deterministic decision statistics with the standard library: a pooled two-proportion z-test with p-value, Wald CI of the difference and log risk-ratio CI of the lift; visitors per arm for a target lift, alpha and power; n, mean, median, sd, quartiles and IQR outliers (with row numbers) for a CSV column; and realized gains per sell from a trades CSV by FIFO, LIFO or HIFO lots with fees and exact decimals.
+
+#### متى تُستدعى
+
+- «هل الفرق بين النسختين في اختبار A/B حقيقي؟»
+- «كم زائر أحتاج عشان أختبر تحسين 20%؟»
+- «احسب أرباحي المحققة من ملف الصفقات بطريقة FIFO»
+- «Is variant B's conversion lift statistically significant?»
+- «How many users per arm do I need for this A/B test?»
+- «Describe this CSV column and flag the outliers»
+
+#### الأوامر
+
+- **abtest**: Two-proportion z-test: z, p-value, CI of difference and lift, verdict.
+  - `python3 scripts/stats_lab.py abtest --a 1000,100 --b 1000,130`
+- **samplesize**: Visitors per arm and total for a relative (or --absolute) minimum detectable effect.
+  - `python3 scripts/stats_lab.py samplesize --base 0.10 --mde 0.20 --power 0.8`
+- **describe**: n, mean, median, sd, quartiles, IQR fences and outlier rows of one column.
+  - `printf 'region,revenue\nA,120\nB,95\nC,130\nD,110\nE,900\n' \| python3 scripts/stats_lab.py describe - --col revenue`
+- **lots**: Realized gain per sell with the lots used, totals per asset and open lots.
+  - `printf 'date,side,qty,price,fee\n2024-01-05,buy,10,100,5\n2024-03-01,buy,10,150,5\n2024-06-01,sell,12,200,4\n' \| python3 scripts/stats_lab.py lots - --method fifo`
+
+#### المتطلبات والأمان
+
+- الأمان: read-only
+- الموافقة: —
+- الحدود: Normal-approximation tests (not exact or Bayesian, no sequential-peeking correction); lots is arithmetic, not tax advice (no wash-sale or holding-period rules).
+
+#### الاختبارات والأدلة
+
+- `.claude/skills/kosif-superpowers/evals/test_stats_lab.py`
+
+#### عند الفشل (A29)
+
+- ابدأ بـ `think.py recover --message "<نص الخطأ>"`، ثم سجّل `fusionforge.py trace --project <slug> --id <FUSE-ID> --stage <stage> --node <N> --action "<ما جُرّب>" --result failed --error-class <الصنف> --tool tool:stats-lab --evidence <ملف>`.
 
 ### `tell-scan` — فاحص العبارات الكتابية النمطية / Writing Tell Scanner
 

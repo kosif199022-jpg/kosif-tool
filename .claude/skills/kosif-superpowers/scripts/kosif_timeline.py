@@ -226,6 +226,22 @@ def load_project(path):
     return json.loads(p.read_text(encoding="utf-8-sig"))
 
 
+def resolve_relative(project, base):
+    """Copy of project whose relative clip paths are anchored at base (the project file's folder).
+
+    Project files keep paths relative to their own folder so they stay portable and never leak a machine path."""
+    doc=json.loads(json.dumps(project))
+    base=Path(base)
+    for track in doc.get("tracks") or []:
+        for clip in track.get("clips") or []:
+            src=clip.get("path")
+            if isinstance(src,str) and src and "://" not in src:
+                path=Path(src).expanduser()
+                if not path.is_absolute():
+                    clip["path"]=str(base/path)
+    return doc
+
+
 def render(project, output, *, dry_run=False):
     if not shutil.which("ffmpeg") or not shutil.which("ffprobe"):
         raise ValueError("FFmpeg and FFprobe required")
@@ -335,13 +351,14 @@ def main():
                  "video":"H264","audio":"AAC","max_duration_s":60,"max_clips":MAX_CLIPS}))
             return 0
         data=load_project(a.project)
+        anchored=resolve_relative(data,Path(a.project).parent)
         if a.action=="check":
-            valid=validate(data)
+            valid=validate(anchored)
             print(json.dumps({"valid":True,"clips":len(valid["clips"]),"tracks":len(data["tracks"]),
                               "duration":valid["duration"],"fps":valid["fps"]}))
             return 0
         if a.action=="render":
-            print(json.dumps(render(data,a.output),ensure_ascii=False))
+            print(json.dumps(render(anchored,a.output),ensure_ascii=False))
             return 0
         out=Path(a.output)
         if out.suffix.lower()!=".json" or out.exists() or not out.parent.is_dir():

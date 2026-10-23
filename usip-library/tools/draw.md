@@ -1,6 +1,51 @@
-# أدوات المجال `draw` (11 أداة)
+# أدوات المجال `draw` (14 أداة)
 
 > مولّد من `data/tools.json`. [الفهرس الرئيسي](../README.md) · `python3 scripts/hub.py tool <id>` للبطاقة الحية.
+
+### `brand-tokens` — رموز الهوية: ألوان الشعار ورموز بثلاث طبقات ومصفوفة تباين WCAG / Brand tokens: SVG palette, 3-tier design tokens and WCAG contrast matrix
+
+| الحقل | القيمة |
+|---|---|
+| المسار | `scripts/brand_tokens.py` (جذر: skill) |
+| المجال | `draw` |
+| الدليل | `tested-here` |
+| العائلات | `brand-logo-identity` |
+
+**ما تفعله:** يستخرج ألوان الشعار من ملف SVG بعدد مرات الاستخدام، ويبني رموز تصميم بثلاث طبقات (أساسية ودلالية ومكونات) مع متغيرات CSS ويختار درجات تنجح في AA، ويحسب مصفوفة تباين WCAG للنص على الخلفية بأحكام AA وAAA.
+
+**What it does:** Extracts every colour a logo SVG uses (fill, stroke, stop-color, style and <style> CSS; hex, rgb(), hsl() and named colours) normalised to #rrggbb with counts and roles; builds DTCG-style core (100-900 scales), semantic and component tokens plus CSS custom properties, choosing action, link and muted steps that pass AA; and computes the WCAG 2.x contrast matrix with AA/AAA verdicts for the intended text/background pairs.
+
+#### متى تُستدعى
+
+- «استخرج ألوان الشعار من ملف SVG»
+- «اعمل design tokens للهوية من الألوان دي»
+- «هل تباين الألوان ده ناجح في WCAG؟»
+- «Extract the colour palette from this logo SVG»
+- «Turn our brand colours into primitive, semantic and component tokens»
+- «Check the WCAG contrast of our text and background colours»
+
+#### الأوامر
+
+- **palette**: Colours used with frequency, share, roles, alpha and HSL; unparsed values listed.
+  - `echo '<svg xmlns="http://www.w3.org/2000/svg"><rect fill="#1d4ed8"/><circle fill="#1D4ED8"/><path stroke="#f59e0b"/><text fill="#475569">K</text></svg>' \| python3 scripts/brand_tokens.py palette -`
+- **tokens**: Core/semantic/component tokens with aliases, resolved values and CSS (--css for CSS only).
+  - `echo '{"primary":"#1d4ed8","accent":"#f59e0b","neutral":"#64748b"}' \| python3 scripts/brand_tokens.py tokens -`
+- **contrast**: Contrast ratio and AA/AAA (normal and large text) per text/background pair.
+  - `echo '{"text":"#777777","bg":"#ffffff"}' \| python3 scripts/brand_tokens.py contrast -`
+
+#### المتطلبات والأمان
+
+- الأمان: read-only
+- الموافقة: —
+- الحدود: Reads colours written in the SVG text only (no rendering: implicit black fills, gradients' blended colours and raster images are not measured); tints/shades are sRGB mixes, not perceptual (OKLCH) scales; contrast follows WCAG 2.x, not APCA.
+
+#### الاختبارات والأدلة
+
+- `.claude/skills/kosif-superpowers/evals/test_brand_tokens.py`
+
+#### عند الفشل (A29)
+
+- ابدأ بـ `think.py recover --message "<نص الخطأ>"`، ثم سجّل `fusionforge.py trace --project <slug> --id <FUSE-ID> --stage <stage> --node <N> --action "<ما جُرّب>" --result failed --error-class <الصنف> --tool tool:brand-tokens --evidence <ملف>`.
 
 ### `character-fullbody` — تحريك الشخصية بكامل الجسم / Full-body character animator
 
@@ -255,6 +300,51 @@
 
 - ابدأ بـ `think.py recover --message "<نص الخطأ>"`، ثم سجّل `fusionforge.py trace --project <slug> --id <FUSE-ID> --stage <stage> --node <N> --action "<ما جُرّب>" --result failed --error-class <الصنف> --tool tool:creative-principles --evidence <ملف>`.
 
+### `diagram-layout` — تخطيط المخططات: فحص الرسم البياني وتخطيط طبقي حتمي وSVG جاهز للعربية / Diagram layout: graph lint, deterministic layered layout and RTL-ready SVG
+
+| الحقل | القيمة |
+|---|---|
+| المسار | `scripts/diagram_layout.py` (جذر: skill) |
+| المجال | `draw` |
+| الدليل | `tested-here` |
+| العائلات | `diagrams-explainers-code` |
+
+**ما تفعله:** يفحص المخطط (حواف معلقة، تكرار، حلقات، عقد يتيمة، عناوين طويلة)، ويحسب تخطيطًا طبقيًا حتميًا بأطول مسار مع عكس من اليمين لليسار، ويصدّر SVG بألوان الأدوار وأسهم وعناوين عربية.
+
+**What it does:** Checks a node/edge graph for dangling edges, duplicate ids, self-loops, cycles, orphans, long labels and too many nodes; computes a deterministic longest-path layered layout (LR or TB, cycle edges reversed and reported, RTL mirroring x' = W - x - w); writes an SVG with role colours, arrow markers, paint-order layers and Arabic labels with direction rtl.
+
+#### متى تُستدعى
+
+- «ارسم لي مخطط معماري للنظام من اليمين لليسار»
+- «افحص المخطط ده فيه حلقات أو عقد مقطوعة»
+- «Lay out this flowchart deterministically»
+- «Turn this graph JSON into an SVG diagram with Arabic labels»
+
+#### الأوامر
+
+- **lint**: Findings (DANGLING_EDGE, DUPLICATE_ID, SELF_LOOP, CYCLE, ORPHAN, LONG_LABEL, TOO_MANY_NODES, UNLABELLED_EDGE) and verdict.
+  - `python3 scripts/diagram_layout.py lint /tmp/graph.json --max-label 24 --max-nodes 9`
+- **layout**: Layer, slot, x/y/w/h per node and edge anchor points as JSON.
+  - `python3 scripts/diagram_layout.py layout /tmp/graph.json --rtl --direction lr`
+- **svg**: SVG on stdout or only the --out file.
+  - `python3 scripts/diagram_layout.py svg /tmp/graph.json --rtl --theme dark --out /tmp/flow.svg`
+- **self-test**: Offline self-check.
+  - `python3 scripts/diagram_layout.py --self-test`
+
+#### المتطلبات والأمان
+
+- الأمان: writes-files
+- الموافقة: Writes only the --out SVG path the user passes; otherwise stdout.
+- الحدود: Simple layered layout (one barycentre pass, straight/elbow edges, fixed box size): no crossing minimisation beyond that, no text measurement or wrapping, and Arabic shaping depends on the SVG viewer's fonts.
+
+#### الاختبارات والأدلة
+
+- `.claude/skills/kosif-superpowers/evals/test_diagram_layout.py`
+
+#### عند الفشل (A29)
+
+- ابدأ بـ `think.py recover --message "<نص الخطأ>"`، ثم سجّل `fusionforge.py trace --project <slug> --id <FUSE-ID> --stage <stage> --node <N> --action "<ما جُرّب>" --result failed --error-class <الصنف> --tool tool:diagram-layout --evidence <ملف>`.
+
 ### `drawing-academy` — أكاديمية الرسم والدروس المبنية على مصادر / Source-aware drawing school and user-authorized book audits
 
 | الحقل | القيمة |
@@ -400,6 +490,51 @@
 
 - ابدأ بـ `think.py recover --message "<نص الخطأ>"`، ثم سجّل `fusionforge.py trace --project <slug> --id <FUSE-ID> --stage <stage> --node <N> --action "<ما جُرّب>" --result failed --error-class <الصنف> --tool tool:drawing-visual-qa --evidence <ملف>`.
 
+### `geo-plate` — لوح الخرائط: إسقاط الإحداثيات إلى بكسلات وتصنيف الخرائط الملونة وسجل المصادر / Map plate: projection to pixels, choropleth classes and source ledger
+
+| الحقل | القيمة |
+|---|---|
+| المسار | `scripts/geo_plate.py` (جذر: skill) |
+| المجال | `draw` |
+| الدليل | `tested-here` |
+| العائلات | `maps-geo` |
+
+**ما تفعله:** يحوّل الإحداثيات إلى بكسلات على لوح بحجم محدد (مركاتور أو متساوي المسافات مع ضغط cos(lat))، ويحسب فواصل فئات الخريطة الملونة (كمّي، متساوٍ، جنكس) مع تحذير من الأعداد الخام أو تحويلها لمعدل لكل فرد، ويفحص سجل النقاط (المدى، تبديل خط الطول والعرض، نظام الإحداثيات، المصدر والترخيص).
+
+**What it does:** Projects lon/lat points to pixel coordinates on a WxH plate (Web Mercator or equirectangular with a cos(lat) squash, world or bbox fitted with aspect kept), computes choropleth class breaks (quantile, equal interval, exact Fisher-Jenks) with GVF and a raw-count normalization warning or per-capita rates, and validates a coordinate ledger (ranges, swapped lat/lon, null island, CRS, duplicate ids, source and licence on every point).
+
+#### متى تُستدعى
+
+- «حوّل الإحداثيات دي لمكانها على الخريطة بالبكسل»
+- «قسّم المحافظات لفئات ألوان للخريطة»
+- «Where do these cities land on a 1920x1080 map?»
+- «Check my map points have a source and licence»
+
+#### الأوامر
+
+- **project**: Pixel x,y of each LON,LAT on the plate, with a distortion note.
+  - `python3 scripts/geo_plate.py project --proj equirect --size 2000x1000 31.2357,30.0444 -0.1276,51.5072`
+- **classify**: Class breaks, per-row class, class counts, GVF and normalization warnings.
+  - `printf 'region,cases,pop\nA,10,1000\nB,20,1000\nC,300,1000\nD,1100,1000\nE,1200,1000\nF,2000,1000\n' \| python3 scripts/geo_plate.py classify - --value cases --per-capita pop --method jenks --classes 3`
+- **ledger**: Coordinate/CRS/source/licence errors and warnings with a pass/fail verdict.
+  - `echo '{"crs":"EPSG:4326","source":"Natural Earth","licence":"public domain","points":[{"id":"cairo","lon":31.2357,"lat":30.0444}]}' \| python3 scripts/geo_plate.py ledger -`
+- **self-test**: Offline self-check.
+  - `python3 scripts/geo_plate.py --self-test`
+
+#### المتطلبات والأمان
+
+- الأمان: read-only
+- الموافقة: —
+- الحدود: Spherical Web Mercator and plate carree only (no reprojection library, no ellipsoid, no polygon geometry); ledger ranges are checked for EPSG:4326-style degrees and EPSG:3857 metres, other CRS are only flagged; Jenks is exact but O(k n^2), capped at 5000 rows.
+
+#### الاختبارات والأدلة
+
+- `.claude/skills/kosif-superpowers/evals/test_geo_plate.py`
+
+#### عند الفشل (A29)
+
+- ابدأ بـ `think.py recover --message "<نص الخطأ>"`، ثم سجّل `fusionforge.py trace --project <slug> --id <FUSE-ID> --stage <stage> --node <N> --action "<ما جُرّب>" --result failed --error-class <الصنف> --tool tool:geo-plate --evidence <ملف>`.
+
 ### `perspective-color-lab` — منظور هندسي ومقاييس التباين اللوني / Original two-point perspective and numeric palette analysis
 
 | الحقل | القيمة |
@@ -503,7 +638,7 @@
 | الدليل | `tested-here` |
 | العائلات | `hand-drawn-draw-on`, `shapes-morph-geometry` |
 
-**ما تفعله:** ??? ?????? ???????? ??????? ?????? ??????? ??????? ?????? ?????? PNG ?SVG ?JSON ?GIF ?MP4.
+**ما تفعله:** يجمع الرسم الحر مع التقاط الخطوط (Smart Draw)، والأشكال والنصوص بالطبقات (Creative Paint)، والتحريك بالإطارات المفتاحية إلى GIF/MP4، في مشهد واحد مرتب وواجهة أوامر واحدة، ويصدّر PNG وSVG وJSON وGIF وMP4.
 
 **What it does:** Combines Smart Draw freehand stroke snapping, Creative Paint layered shapes and text, and keyframed GIF/MP4 animation behind one ordered scene and CLI.
 

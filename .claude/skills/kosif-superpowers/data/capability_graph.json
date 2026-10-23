@@ -15,7 +15,7 @@
    "id": "root",
    "kind": "root",
    "label": "KOSIF Superpowers",
-   "count": 5496
+   "count": 5581
   },
   {
    "id": "dom:motion",
@@ -1378,13 +1378,22 @@
    "label": "Runnable KOSIF tools",
    "ar": "الأدوات القابلة للتشغيل",
    "prefix": "TOOL",
-   "count": 70,
-   "proven": 60,
+   "count": 155,
+   "proven": 122,
    "status": {
-    "proven": 60,
-    "ready": 5,
-    "install": 5
+    "proven": 122,
+    "ready": 21,
+    "install": 12
    }
+  },
+  {
+   "id": "req:engine:ghidra",
+   "kind": "requirement",
+   "label": "engine:ghidra",
+   "ar": "تفكيك الثنائيات الأصلية",
+   "en": "native binary disassembly/decompilation",
+   "install": "Ghidra 12.1 from github.com/NationalSecurityAgency/ghidra + GHIDRA_INSTALL_DIR; or Hopper (rea setup), IDA MCP, Kuna",
+   "req_kind": "bin"
   },
   {
    "id": "script:scripts/hub.py",
@@ -1401,6 +1410,11 @@
    "id": "script:scripts/blender_bridge.py",
    "kind": "script",
    "label": "scripts/blender_bridge.py"
+  },
+  {
+   "id": "script:scripts/council.py",
+   "kind": "script",
+   "label": "scripts/council.py"
   },
   {
    "id": "script:scripts/boot.py",
@@ -1426,17 +1440,6 @@
    "id": "script:scripts/superpowers_unified.py",
    "kind": "script",
    "label": "scripts/superpowers_unified.py"
-  },
-  {
-   "id": "script:scripts/motion_kit_bridge.py",
-   "kind": "script",
-   "label": "scripts/motion_kit_bridge.py",
-   "executor_score": 1.21
-  },
-  {
-   "id": "script:scripts/motion_runtime.py",
-   "kind": "script",
-   "label": "scripts/motion_runtime.py"
   },
   {
    "id": "fam:security-safety",
@@ -1514,15 +1517,6 @@
     "proven": 30,
     "install": 48
    }
-  },
-  {
-   "id": "req:engine:ghidra",
-   "kind": "requirement",
-   "label": "engine:ghidra",
-   "ar": "تفكيك الثنائيات الأصلية",
-   "en": "native binary disassembly/decompilation",
-   "install": "Ghidra 12.1 from github.com/NationalSecurityAgency/ghidra + GHIDRA_INSTALL_DIR; or Hopper (rea setup), IDA MCP, Kuna",
-   "req_kind": "bin"
   },
   {
    "id": "req:engine:android",
@@ -1872,6 +1866,16 @@
    "label": "scripts/smart_capabilities.py"
   },
   {
+   "id": "script:scripts/agent_guard.py",
+   "kind": "script",
+   "label": "scripts/agent_guard.py"
+  },
+  {
+   "id": "script:scripts/_secrets.py",
+   "kind": "script",
+   "label": "scripts/_secrets.py"
+  },
+  {
    "id": "script:scripts/atlas_bulk_source_audit.py",
    "kind": "script",
    "label": "scripts/atlas_bulk_source_audit.py"
@@ -1977,11 +1981,6 @@
    "label": "scripts/charter_ingest.py"
   },
   {
-   "id": "script:scripts/_secrets.py",
-   "kind": "script",
-   "label": "scripts/_secrets.py"
-  },
-  {
    "id": "script:scripts/check_skill.py",
    "kind": "script",
    "label": "scripts/check_skill.py"
@@ -2000,11 +1999,6 @@
    "id": "script:scripts/cinematic_cut_planner.py",
    "kind": "script",
    "label": "scripts/cinematic_cut_planner.py"
-  },
-  {
-   "id": "script:scripts/council.py",
-   "kind": "script",
-   "label": "scripts/council.py"
   },
   {
    "id": "script:scripts/skill_intelligence.py",
@@ -2071,6 +2065,12 @@
    "id": "script:scripts/mimic/synthetic/synth.py",
    "kind": "script",
    "label": "scripts/mimic/synthetic/synth.py"
+  },
+  {
+   "id": "script:scripts/motion_kit_bridge.py",
+   "kind": "script",
+   "label": "scripts/motion_kit_bridge.py",
+   "executor_score": 1.21
   },
   {
    "id": "script:scripts/code_drawing_master.py",
@@ -2231,6 +2231,11 @@
    "id": "test:.claude/skills/kosif-superpowers/evals/test_usip_shadow.py",
    "kind": "test",
    "label": ".claude/skills/kosif-superpowers/evals/test_usip_shadow.py"
+  },
+  {
+   "id": "test:.claude/skills/kosif-superpowers/evals/test_agent_guard.py",
+   "kind": "test",
+   "label": ".claude/skills/kosif-superpowers/evals/test_agent_guard.py"
   },
   {
    "id": "test:.claude/skills/kosif-superpowers/evals/test_app_studio.py",
@@ -2423,11 +2428,6 @@
    "label": ".claude/skills/kosif-superpowers/evals/test_motion_reference_probe.py"
   },
   {
-   "id": "test:.claude/skills/kosif-superpowers/evals/test_motion_runtime.py",
-   "kind": "test",
-   "label": ".claude/skills/kosif-superpowers/evals/test_motion_runtime.py"
-  },
-  {
    "id": "test:tests/test_superpowers_unified.py",
    "kind": "test",
    "label": "tests/test_superpowers_unified.py"
@@ -2516,6 +2516,11 @@
    "id": "test:tests/test_think_reasoning.py",
    "kind": "test",
    "label": "tests/test_think_reasoning.py"
+  },
+  {
+   "id": "test:.claude/skills/kosif-superpowers/evals/test_motion_runtime.py",
+   "kind": "test",
+   "label": ".claude/skills/kosif-superpowers/evals/test_motion_runtime.py"
   },
   {
    "id": "test:tests/test_tools_extra.py",
@@ -5172,61 +5177,67 @@
    "from": "dom:build",
    "to": "fam:runnable-tools",
    "rel": "has",
-   "w": 70
+   "w": 155
   },
   {
    "from": "fam:runnable-tools",
    "to": "req:python3",
    "rel": "needs",
-   "w": 57
+   "w": 124
   },
   {
    "from": "fam:runnable-tools",
    "to": "req:ffmpeg",
    "rel": "needs",
-   "w": 14
+   "w": 37
   },
   {
    "from": "fam:runnable-tools",
    "to": "req:chromium",
    "rel": "needs",
-   "w": 9
-  },
-  {
-   "from": "fam:runnable-tools",
-   "to": "req:pip:pillow",
-   "rel": "needs",
-   "w": 8
-  },
-  {
-   "from": "fam:runnable-tools",
-   "to": "req:npm:rea",
-   "rel": "needs",
-   "w": 7
+   "w": 20
   },
   {
    "from": "fam:runnable-tools",
    "to": "req:blender",
    "rel": "needs",
-   "w": 7
+   "w": 19
+  },
+  {
+   "from": "fam:runnable-tools",
+   "to": "req:pip:pillow",
+   "rel": "needs",
+   "w": 18
+  },
+  {
+   "from": "fam:runnable-tools",
+   "to": "req:npm:rea",
+   "rel": "needs",
+   "w": 16
   },
   {
    "from": "fam:runnable-tools",
    "to": "req:node",
    "rel": "needs",
-   "w": 6
+   "w": 14
   },
   {
    "from": "fam:runnable-tools",
-   "to": "req:npm:remotion",
+   "to": "req:engine:ghidra",
    "rel": "needs",
-   "w": 3
+   "w": 11
   },
   {
    "from": "fam:runnable-tools",
    "to": "script:scripts/hub.py",
    "rel": "runs",
-   "w": 75
+   "w": 160
+  },
+  {
+   "from": "fam:runnable-tools",
+   "to": "script:scripts/app_studio.py",
+   "rel": "runs",
+   "w": 8
   },
   {
    "from": "fam:runnable-tools",
@@ -5237,6 +5248,12 @@
   {
    "from": "fam:runnable-tools",
    "to": "script:scripts/blender_bridge.py",
+   "rel": "runs",
+   "w": 6
+  },
+  {
+   "from": "fam:runnable-tools",
+   "to": "script:scripts/council.py",
    "rel": "runs",
    "w": 6
   },
@@ -5267,18 +5284,6 @@
   {
    "from": "fam:runnable-tools",
    "to": "script:scripts/superpowers_unified.py",
-   "rel": "runs",
-   "w": 5
-  },
-  {
-   "from": "fam:runnable-tools",
-   "to": "script:scripts/motion_kit_bridge.py",
-   "rel": "runs",
-   "w": 5
-  },
-  {
-   "from": "fam:runnable-tools",
-   "to": "script:scripts/motion_runtime.py",
    "rel": "runs",
    "w": 5
   },
@@ -6393,6 +6398,12 @@
    "w": 1
   },
   {
+   "from": "script:scripts/agent_guard.py",
+   "to": "script:scripts/_secrets.py",
+   "rel": "imports",
+   "w": 1
+  },
+  {
    "from": "script:scripts/app_studio.py",
    "to": "script:scripts/app_studio_paint.py",
    "rel": "imports",
@@ -7071,6 +7082,12 @@
    "w": 1
   },
   {
+   "from": "script:scripts/test_kosif_timeline.py",
+   "to": "script:scripts/kosif_timeline_demo.py",
+   "rel": "imports",
+   "w": 1
+  },
+  {
    "from": "script:scripts/test_telegram_typography_atlas.py",
    "to": "script:scripts/telegram_typography_atlas.py",
    "rel": "imports",
@@ -7211,6 +7228,12 @@
   {
    "from": "script:scripts/_secrets.py",
    "to": "test:.claude/skills/kosif-superpowers/evals/test_usip_shadow.py",
+   "rel": "tested_by",
+   "w": 1
+  },
+  {
+   "from": "script:scripts/agent_guard.py",
+   "to": "test:.claude/skills/kosif-superpowers/evals/test_agent_guard.py",
    "rel": "tested_by",
    "w": 1
   },
@@ -7559,12 +7582,6 @@
   {
    "from": "script:scripts/motion_reference_probe.py",
    "to": "test:.claude/skills/kosif-superpowers/evals/test_motion_reference_probe.py",
-   "rel": "tested_by",
-   "w": 1
-  },
-  {
-   "from": "script:scripts/motion_runtime.py",
-   "to": "test:.claude/skills/kosif-superpowers/evals/test_motion_runtime.py",
    "rel": "tested_by",
    "w": 1
   },

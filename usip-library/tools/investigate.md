@@ -2,7 +2,7 @@
 
 > مولّد من `data/tools.json`. [الفهرس الرئيسي](../README.md) · `python3 scripts/hub.py tool <id>` للبطاقة الحية.
 
-### `atlas-bulk-source-audit` — ????? ???? ?????? ???? / Atlas source-text audit
+### `atlas-bulk-source-audit` — تدقيق نصوص مصادر الأطلس / Atlas source-text audit
 
 | الحقل | القيمة |
 |---|---|
@@ -11,7 +11,7 @@
 | الدليل | `untested` |
 | العائلات | `software-investigation` |
 
-**ما تفعله:** ????? ???? ?????? ????? ?????? ????? ?? ???? ????? ??? ???????.
+**ما تفعله:** يدقق عينة محلية مأذونة من مصادر الأطلس ويسجّل الأدلة دون تشغيل كود مهارات طرف ثالث.
 
 **What it does:** Audits an authorized local Atlas source sample and records evidence without executing third-party skill code.
 
@@ -19,7 +19,8 @@
 
 - «Review documented Atlas or Blender capabilities»
 - «Inspect relevant tool arguments before running»
-- «????? ??????? ???????? ?? ???????»
+- «دقّق نصوص مصادر مهارات الأطلس المحلية دي من غير ما تشغّل كودها»
+- «سجّل أدلة عينة مصادر الأطلس»
 
 #### الأوامر
 
@@ -42,7 +43,7 @@
 
 - ابدأ بـ `think.py recover --message "<نص الخطأ>"`، ثم سجّل `fusionforge.py trace --project <slug> --id <FUSE-ID> --stage <stage> --node <N> --action "<ما جُرّب>" --result failed --error-class <الصنف> --tool tool:atlas-bulk-source-audit --evidence <ملف>`.
 
-### `atlas-deep-fusion` — ????? ??? ???? / Atlas read-only method selector
+### `atlas-deep-fusion` — منتقي مناهج الأطلس للقراءة فقط / Atlas read-only method selector
 
 | الحقل | القيمة |
 |---|---|
@@ -51,7 +52,7 @@
 | الدليل | `untested` |
 | العائلات | `software-investigation` |
 
-**ما تفعله:** ????? ??? ????? ?????? ????? ?? ???? ????? ??? ???????.
+**ما تفعله:** يختار مناهج من الأطلس مربوطة بمصادرها لمراجعتها مقابل فهرس أطلس محلي مأذون.
 
 **What it does:** Selects source-linked Atlas methods for review against an authorized local Atlas index.
 
@@ -59,7 +60,8 @@
 
 - «Review documented Atlas or Blender capabilities»
 - «Inspect relevant tool arguments before running»
-- «????? ??????? ???????? ?? ???????»
+- «اختار لي مناهج من الأطلس تنفع للمهمة دي»
+- «أي مهارات الأطلس تستاهل ننقل فكرتها للسوبر باور؟»
 
 #### الأوامر
 
@@ -82,7 +84,7 @@
 
 - ابدأ بـ `think.py recover --message "<نص الخطأ>"`، ثم سجّل `fusionforge.py trace --project <slug> --id <FUSE-ID> --stage <stage> --node <N> --action "<ما جُرّب>" --result failed --error-class <الصنف> --tool tool:atlas-deep-fusion --evidence <ملف>`.
 
-### `atlas-review-summary` — ???? ?????? ???? / Atlas review summary
+### `atlas-review-summary` — ملخص مراجعة الأطلس / Atlas review summary
 
 | الحقل | القيمة |
 |---|---|
@@ -91,7 +93,7 @@
 | الدليل | `untested` |
 | العائلات | `software-investigation` |
 
-**ما تفعله:** ???? ?????? ????? ?????? ????? ?? ???? ????? ??? ???????.
+**ما تفعله:** يلخّص أدلة تدقيق المصادر ومنشأها لمناهج الأطلس المرشحة.
 
 **What it does:** Summarizes source-audit evidence and provenance for candidate Atlas methods.
 
@@ -99,7 +101,8 @@
 
 - «Review documented Atlas or Blender capabilities»
 - «Inspect relevant tool arguments before running»
-- «????? ??????? ???????? ?? ???????»
+- «لخّص لي نتيجة مراجعة مصادر الأطلس»
+- «إيه أدلة ومنشأ المناهج المرشحة من الأطلس؟»
 
 #### الأوامر
 
@@ -122,7 +125,7 @@
 
 - ابدأ بـ `think.py recover --message "<نص الخطأ>"`، ثم سجّل `fusionforge.py trace --project <slug> --id <FUSE-ID> --stage <stage> --node <N> --action "<ما جُرّب>" --result failed --error-class <الصنف> --tool tool:atlas-review-summary --evidence <ملف>`.
 
-### `atlas-reviewed-methods-v3` — ??? ???? ???????? / Reviewed Atlas methods
+### `atlas-reviewed-methods-v3` — مناهج الأطلس المراجَعة / Reviewed Atlas methods
 
 | الحقل | القيمة |
 |---|---|
@@ -131,7 +134,7 @@
 | الدليل | `untested` |
 | العائلات | `software-investigation` |
 
-**ما تفعله:** ??? ???? ????????? ?????? ????? ?? ???? ????? ??? ???????.
+**ما تفعله:** يتعامل مع سجلات مناهج الأطلس المراجَعة ومنشئها.
 
 **What it does:** Works with reviewed Atlas method records and their provenance.
 
@@ -139,7 +142,8 @@
 
 - «Review documented Atlas or Blender capabilities»
 - «Inspect relevant tool arguments before running»
-- «????? ??????? ???????? ?? ???????»
+- «اعرض مناهج الأطلس اللي اتراجعت ومصادرها»
+- «دوّر في المناهج المراجَعة من الأطلس»
 
 #### الأوامر
 
@@ -162,7 +166,7 @@
 
 - ابدأ بـ `think.py recover --message "<نص الخطأ>"`، ثم سجّل `fusionforge.py trace --project <slug> --id <FUSE-ID> --stage <stage> --node <N> --action "<ما جُرّب>" --result failed --error-class <الصنف> --tool tool:atlas-reviewed-methods-v3 --evidence <ملف>`.
 
-### `atlas-transfer` — ??? ??? ???? / Atlas verified method transfer
+### `atlas-transfer` — نقل مناهج الأطلس المثبتة / Atlas verified method transfer
 
 | الحقل | القيمة |
 |---|---|
@@ -171,7 +175,7 @@
 | الدليل | `untested` |
 | العائلات | `software-investigation` |
 
-**ما تفعله:** ??? ??? ????? ?????? ????? ?? ???? ????? ??? ???????.
+**ما تفعله:** يحوّل سجلات الأطلس المراجَعة إلى بيانات كتالوج قدرات KOSIF، ولا يكتب ملفات إلا بموافقة صريحة.
 
 **What it does:** Converts reviewed Atlas records into KOSIF capability catalog data; writes files only when explicitly approved.
 
@@ -179,7 +183,8 @@
 
 - «Review documented Atlas or Blender capabilities»
 - «Inspect relevant tool arguments before running»
-- «????? ??????? ???????? ?? ???????»
+- «انقل مناهج الأطلس المراجَعة إلى كتالوج السوبر باور»
+- «حوّل سجلات الأطلس دي لبطاقات قدرات»
 
 #### الأوامر
 

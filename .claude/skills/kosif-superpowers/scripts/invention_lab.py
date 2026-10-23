@@ -3,6 +3,7 @@
 
 Generate structured engineering alternatives without pretending an LLM or expert council ran.
 Run: python3 invention_lab.py invent "problem statement" --count 12 --constraint "budget"
+     python3 invention_lab.py methods          # list the inventive methods (method, technique, experiment) as JSON
 """
 from __future__ import annotations
 import argparse

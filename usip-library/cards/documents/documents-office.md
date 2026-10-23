@@ -55,7 +55,7 @@
 
 **ما هي:** أنشئ ملف Word بعناوين وفقرات وجداول عربية من اليمين إلى اليسار، ثم اقرأه مرة أخرى للتحقق. — Create a Word file with right-to-left Arabic headings, paragraphs and tables, then read it back to verify.
 
-**متى:** reports, letters, contracts or forms the user wants as .docx
+**متى:** عند طلب تقارير أو خطابات أو عقود أو نماذج بصيغة .docx / reports, letters, contracts or forms the user wants as .docx
 
 **كيف:** python-docx has no RTL switch: add OxmlElement('w:bidi') to each paragraph's pPr; on each run add w:rtl, set w:rFonts w:cs='Amiri' (Arabic uses the complex-script font) and w:szCs; add w:bidiVisual to the table's tblPr so column 1 sits on the right. Read back with docx.Document(path) and check the XML for <w:bidi/>.
 
@@ -124,7 +124,7 @@
 
 **ما هي:** أنشئ مصنف Excel باتجاه ورقة من اليمين ومعادلات وتنسيقات أرقام ورسم بياني أصلي. — Build an Excel workbook with a right-to-left sheet, live formulas, number formats and a native chart.
 
-**متى:** the deliverable is a spreadsheet the user will keep editing
+**متى:** حين يكون المطلوب جدول بيانات سيواصل المستخدم تعديله / the deliverable is a spreadsheet the user will keep editing
 
 **كيف:** openpyxl: ws.sheet_view.rightToLeft=True; Alignment(horizontal='right', readingOrder=2); formulas as strings ('=SUM(B2:B5)'); number_format '#,##0' / '0.0%'; BarChart + Reference(..., titles_from_data=True); ws.add_chart(ch,'E2'). Proof: 6.9 KB workbook, chart read back.
 
@@ -191,7 +191,7 @@
 
 **ما هي:** openpyxl يكتب المعادلات ولا يحسبها؛ أعِد الحساب بتحويل LibreOffice ثم اقرأ القيم. — openpyxl writes formulas but never computes them; recalculate with a LibreOffice round trip, then read the values.
 
-**متى:** before quoting any number from a workbook you generated; before sending it to someone without Excel
+**متى:** قبل اقتباس أي رقم من مصنّف أنشأته، وقبل إرساله إلى من لا يملك Excel / before quoting any number from a workbook you generated; before sending it to someone without Excel
 
 **كيف:** soffice --headless --norestore --convert-to xlsx --outdir recalc book.xlsx (1.2 s), then openpyxl.load_workbook('recalc/book.xlsx', data_only=True). Before recalculation data_only returns None; after it the proof read 3340 and 0.3593.
 
@@ -260,7 +260,7 @@
 
 **ما هي:** أنشئ عرضًا بمقاس 16:9 بعناوين ونقاط عربية من اليمين ورسم بياني قابل للتعديل. — Build a 16:9 deck with right-to-left Arabic titles and bullets and an editable chart.
 
-**متى:** the user asks for a .pptx file (for a deck without a named format, prefer the host's slides type if it exists)
+**متى:** حين يطلب المستخدم ملف .pptx (وفي العرض بلا صيغة محددة يُفضَّل نوع الشرائح في المضيف إن وُجد) / the user asks for a .pptx file (for a deck without a named format, prefer the host's slides type if it exists)
 
 **كيف:** prs.slide_width, prs.slide_height = Inches(13.333), Inches(7.5); per paragraph pPr.set('rtl','1'), pPr.set('algn','r'); per run rPr.set('lang','ar-SA') and add a:latin + a:cs typeface='Cairo'; chart: CategoryChartData + shapes.add_chart(XL_CHART_TYPE.COLUMN_CLUSTERED, ...). Read back the categories from chart.plots[0].categories.
 
@@ -331,7 +331,7 @@
 
 **ما هي:** صمّم التقرير بـ HTML وCSS مع خطوط عربية مضمّنة، واطبعه PDF بحروف متصلة صحيحة. — Design the report in HTML/CSS with embedded Arabic fonts and print a PDF with correctly joined letters.
 
-**متى:** polished PDF reports, invoices or certificates; anything where CSS layout beats word-processor layout
+**متى:** لتقارير PDF أنيقة أو فواتير أو شهادات، وحيثما يتفوق تخطيط CSS على تخطيط معالج النصوص / polished PDF reports, invoices or certificates; anything where CSS layout beats word-processor layout
 
 **كيف:** <html lang=ar dir=rtl>; @font-face { font-family: Amiri; src: url(file:///.../Amiri-Regular.ttf) }; @page { size: A4; margin: 16mm }; isolate English with a direction:ltr class; weasyprint.HTML(string=html, base_url=dir).write_pdf(out). Proof: 0.33 s, 17.9 KB, fonts embedded as subsets.
 
@@ -400,7 +400,7 @@
 
 **ما هي:** اطبع أي صفحة HTML (حتى المعتمدة على JavaScript) إلى PDF عبر Chromium الخفي. — Print any HTML page, including JavaScript-driven ones, to PDF through headless Chromium.
 
-**متى:** the page uses JS charts or modern CSS that weasyprint does not support
+**متى:** حين تستخدم الصفحة رسومًا بـ JS أو CSS حديثًا لا يدعمه weasyprint / the page uses JS charts or modern CSS that weasyprint does not support
 
 **كيف:** Playwright: page.goto(file URL); await document.fonts.ready; page.pdf({path, format:'A4', printBackground:true}). Proof snap.cjs printed the RTL dashboard; pdffonts shows Tajawal-Bold embedded.
 
@@ -469,7 +469,7 @@
 
 **ما هي:** رسم PDF بالإحداثيات؛ reportlab لا يشكّل العربية فيجب تمريرها عبر reshaper وbidi. — Draw PDFs by coordinates; reportlab does not shape Arabic, so pass it through reshaper + bidi.
 
-**متى:** pixel-exact forms, labels or certificates; when HTML is overkill
+**متى:** للنماذج والملصقات والشهادات الدقيقة بالبكسل، وحين يكون HTML مبالغًا فيه / pixel-exact forms, labels or certificates; when HTML is overkill
 
 **كيف:** pdfmetrics.registerFont(TTFont('Amiri', path)); c.setFont('Amiri',22); c.drawRightString(x,y,get_display(arabic_reshaper.reshape(text))). The raw string draws unjoined and reversed (see contact.png, last tile).
 
@@ -539,7 +539,7 @@
 
 **ما هي:** إنشاء docx وpptx وxlsx وPDF من Node دون Python. — Create docx, pptx, xlsx and PDF from Node without Python.
 
-**متى:** a Node/TS project or an in-browser export button
+**متى:** في مشروع Node/TS أو زر تصدير داخل المتصفح / a Node/TS project or an in-browser export button
 
 **كيف:** npm i docx pptxgenjs exceljs pdf-lib; Packer.toBuffer(doc); pptx.writeFile(); workbook.xlsx.writeFile(); PDFDocument.create(). All four produced files in the arsenal snapshot (Latin text only; RTL not tested).
 
@@ -607,7 +607,7 @@
 
 **ما هي:** حوّل docx وpptx وxlsx إلى PDF في أمر واحد دون واجهة. — Convert docx, pptx and xlsx to PDF in one headless command.
 
-**متى:** the user needs a PDF of an office file; visual QA of a generated office file
+**متى:** حين يحتاج المستخدم PDF من ملف مكتبي، وللمراجعة البصرية لملف مكتبي مولَّد / the user needs a PDF of an office file; visual QA of a generated office file
 
 **كيف:** soffice --headless --norestore --convert-to pdf --outdir out a.docx b.pptx c.xlsx (1.6 s for three files). For sheets set fitToPage first (DOC-11). Then render the pages to PNG and look at them (DOC-18).
 
@@ -676,7 +676,7 @@
 
 **ما هي:** وجّه LibreOffice وweasyprint إلى خطوط المشروع بملف fonts.conf خاص بدل تثبيتها في النظام. — Point LibreOffice and weasyprint at project fonts through a private fonts.conf instead of installing them.
 
-**متى:** Arabic falls back to DejaVu/FreeSerif in converted PDFs; you must not modify the system
+**متى:** حين تعود العربية إلى DejaVu/FreeSerif في ملفات PDF المحوَّلة ولا يجوز تعديل النظام / Arabic falls back to DejaVu/FreeSerif in converted PDFs; you must not modify the system
 
 **كيف:** Write fonts.conf: <include>/etc/fonts/fonts.conf</include><dir>/path/to/fonts</dir><cachedir>/tmp/fc</cachedir>; run soffice with env FONTCONFIG_FILE=that file (also set os.environ for weasyprint). Proof: pdffonts lists Amiri-Regular/Amiri-Bold in the LibreOffice PDF.
 
@@ -744,7 +744,7 @@
 
 **ما هي:** بدون ضبط الملاءمة يقسم LibreOffice الرسم على صفحتين في الأوراق من اليمين. — Without fit-to-page, LibreOffice splits the chart of an RTL sheet across two pages.
 
-**متى:** any xlsx -> pdf conversion
+**متى:** عند أي تحويل من xlsx إلى pdf / any xlsx -> pdf conversion
 
 **كيف:** ws.page_setup.orientation='landscape'; ws.page_setup.fitToWidth=ws.page_setup.fitToHeight=1; ws.sheet_properties.pageSetUpPr.fitToPage=True. The first run produced 2 pages; after the fix, 1 page.
 
@@ -812,7 +812,7 @@
 
 **ما هي:** اكتب بـ Markdown وأخرج Word عربيًا، أو حوّل Word إلى Markdown للقراءة. — Write in Markdown and output Arabic Word, or turn Word into Markdown for reading.
 
-**متى:** long text drafted in Markdown; reading a .docx into context
+**متى:** حين يُكتب نص طويل بـ Markdown، وعند قراءة ملف .docx في السياق / long text drafted in Markdown; reading a .docx into context
 
 **كيف:** front matter 'dir: rtl' and 'lang: ar'; pandoc note.md -o note.docx; pandoc note.docx -t gfm. Proof: the Arabic table survived md -> docx -> md. Use --reference-doc=style.docx for house styles (not tested).
 
@@ -880,7 +880,7 @@
 
 **ما هي:** ادمج ملفات PDF ودوّر الصفحات واحمها بكلمة مرور AES-256. — Merge PDFs, rotate pages and protect them with an AES-256 password.
 
-**متى:** assembling a packet, fixing orientation, sharing a protected file
+**متى:** عند تجميع حزمة ملفات أو تصحيح الاتجاه أو مشاركة ملف محمي / assembling a packet, fixing orientation, sharing a protected file
 
 **كيف:** w=pypdf.PdfWriter(); w.append(f) per file; w.pages[0].rotate(90); w.encrypt(user_password=pw, algorithm='AES-256'); w.write(out); reopen: r.is_encrypted, r.decrypt(pw). Proof: 3 files -> 4 pages, /Rotate 90, the password works.
 
@@ -948,7 +948,7 @@
 
 **ما هي:** pypdf وpdftotext يعيدان العربية بالترتيب المنطقي، أما pdfplumber وpdfminer وmarkitdown فيعكسونها. — pypdf and pdftotext return Arabic in logical order; pdfplumber, pdfminer and markitdown return it reversed.
 
-**متى:** reading any Arabic or mixed PDF; building a search index; quoting a PDF
+**متى:** عند قراءة أي PDF عربي أو مختلط، وبناء فهرس بحث، والاقتباس من PDF / reading any Arabic or mixed PDF; building a search index; quoting a PDF
 
 **كيف:** Use pypdf.PdfReader(p).pages[i].extract_text() or `pdftotext -layout p -`; NFKC-normalise (undoes presentation forms) and strip U+202A..U+202E. Compare with a known phrase. Proof: pypdf and pdftotext gave 'تقرير المبيعات الربعي'; pdfplumber gave 'يعبرلا تاعيبملا ريرقت'.
 
@@ -1015,7 +1015,7 @@
 
 **ما هي:** قد يعيد pdftotext ربطة «لا» معكوسة («للاختبار» صارت «لالختبار») في ملفات Chromium. — pdftotext may reorder the lam-alef ligature in Chromium PDFs ('للاختبار' became 'لالختبار').
 
-**متى:** checking extracted Arabic against a source; searching inside PDFs
+**متى:** عند مطابقة العربية المستخرجة بالمصدر والبحث داخل ملفات PDF / checking extracted Arabic against a source; searching inside PDFs
 
 **كيف:** After extraction, diff against the source text with lam-alef-aware normalisation, or prefer the source HTML/DOCX when you have it. Seen on the dashboard PDF in the data proof.
 
@@ -1083,7 +1083,7 @@
 
 **ما هي:** حوّل docx وxlsx وpptx إلى Markdown لقراءتها في السياق؛ الحزمة تحتاج الإضافات. — Turn docx, xlsx and pptx into Markdown to read them into context; the package needs its extras.
 
-**متى:** the user uploads an office file and asks about its contents
+**متى:** حين يرفع المستخدم ملفًا مكتبيًا ويسأل عن محتواه / the user uploads an office file and asks about its contents
 
 **كيف:** pip install "markitdown[docx,pdf,xlsx,pptx]" (a bare install fails on docx with MissingDependencyException); MarkItDown().convert(path).text_content. Arabic is kept for docx/xlsx/pptx; for PDFs it comes out reversed (use DOC-14).
 
@@ -1151,7 +1151,7 @@
 
 **ما هي:** حوّل صفحة PDF بلا طبقة نص إلى صورة 300 نقطة واقرأها بـ tesseract العربي. — Rasterise a PDF page with no text layer at 300 dpi and read it with Arabic tesseract.
 
-**متى:** scans, photographed pages, PDFs where text extraction returns nothing
+**متى:** للمسوحات والصفحات المصوَّرة وملفات PDF التي لا يُخرج استخراج النص منها شيئًا / scans, photographed pages, PDFs where text extraction returns nothing
 
 **كيف:** img=pypdfium2.PdfDocument(p)[i].render(scale=300/72).to_pil().convert('L'); pytesseract.image_to_string(img, lang='ara+eng', config='--oem 1 --psm 4'). Proof: title and English line recovered in 0.78 s. Validate digits (see MEDIA OCR findings).
 
@@ -1219,7 +1219,7 @@
 
 **ما هي:** حوّل كل صفحة إلى صورة وقصّها حول الحبر واجمعها في ورقة اتصال، ثم انظر إليها قبل التسليم. — Render each page to an image, crop to the ink, tile a contact sheet, and look at it before delivery.
 
-**متى:** after generating or converting any document; Arabic shaping, overflow or missing-font checks
+**متى:** بعد إنشاء أي مستند أو تحويله، ولفحص تشكيل العربية والفيض والخطوط المفقودة / after generating or converting any document; Arabic shaping, overflow or missing-font checks
 
 **كيف:** pypdfium2: page.render(scale=2).to_pil(); crop with ImageChops.difference against white .getbbox(); tile with Pillow; quantize(128) to keep it < 300 KB; then open it with the Read tool and look. Proof contact.png: 50 KB, six documents.
 
@@ -1286,7 +1286,7 @@
 
 **ما هي:** مكتبة سريعة لاستخراج النص وتصيير الصفحات وتعديل PDF؛ رخصتها AGPL. — A fast library for PDF text, page rendering and edits; licensed AGPL.
 
-**متى:** large PDFs, or when you need edits/annotations; only as a tool, never vendored into closed code
+**متى:** لملفات PDF الكبيرة، أو حين تحتاج التعديل والتعليقات التوضيحية؛ أداةً فقط ولا تُدمج في شيفرة مغلقة / large PDFs, or when you need edits/annotations; only as a tool, never vendored into closed code
 
 **كيف:** import pymupdf (not `import fitz`, which is deprecated); doc[0].get_text(); doc[0].get_pixmap().save('p.png'). Arabic order not tested; check it like DOC-14.
 
@@ -1353,7 +1353,7 @@
 
 **ما هي:** pdfplumber يعطي إحداثيات الكلمات والجداول؛ ممتاز للإنجليزية ولكنه يعكس العربية. — pdfplumber gives word and table coordinates; excellent for English, but it reverses Arabic.
 
-**متى:** extracting tables from left-to-right PDFs (statements, invoices)
+**متى:** عند استخراج الجداول من ملفات PDF من اليسار إلى اليمين (كشوف الحساب والفواتير) / extracting tables from left-to-right PDFs (statements, invoices)
 
 **كيف:** page.extract_tables(); page.extract_words() for x/y. For Arabic cells reverse the string or re-read the region with pypdf/pdftotext -layout -x -y -W -H. Not run here: only pdfplumber extract_text was exercised (it returned Arabic reversed); extract_tables and extract_words are untested in this skill.
 
@@ -1421,7 +1421,7 @@
 
 **ما هي:** أدوات أثقل لاستخراج التخطيط والجداول المعقدة. — Heavier tools for layout and complex tables.
 
-**متى:** multi-column scientific PDFs or messy tables, after the simple tools fail
+**متى:** لملفات PDF العلمية متعددة الأعمدة أو الجداول المعقدة، بعد فشل الأدوات البسيطة / multi-column scientific PDFs or messy tables, after the simple tools fail
 
 **كيف:** docling pulls torch and models; camelot needs ghostscript/opencv; tabula needs Java. None of them was installed or run here.
 
@@ -1490,7 +1490,7 @@
 
 **ما هي:** اعزل المقاطع اللاتينية والأرقام داخل النص العربي حتى لا تنقلب علامات الترقيم والأقواس. — Isolate Latin runs and numbers inside Arabic text so punctuation and brackets do not flip.
 
-**متى:** Arabic text containing English names, codes, URLs, versions or percentages
+**متى:** حين يحتوي النص العربي أسماء إنجليزية أو رموزًا أو روابط أو إصدارات أو نسبًا مئوية / Arabic text containing English names, codes, URLs, versions or percentages
 
 **كيف:** HTML: <span dir=ltr> or <bdi>, or a class with direction:ltr; DOCX: keep LTR runs without w:rtl; PPTX: separate runs. Choose one numeral system per document (Arabic-Indic ٠-٩ or Western 0-9) and keep it. The proof PDF holds an LTR English line inside an RTL page.
 
@@ -1557,7 +1557,7 @@
 
 **ما هي:** weasyprint وLibreOffice وWord وPowerPoint وChromium وPillow 12 وmatplotlib 3.11 تشكّل بنفسها؛ reportlab وحده يحتاج reshaper وbidi. — weasyprint, LibreOffice, Word/PowerPoint XML, Chromium, Pillow 12 and matplotlib 3.11 shape Arabic themselves; only reportlab needs reshaper + bidi.
 
-**متى:** choosing a rendering path for Arabic
+**متى:** عند اختيار مسار التصيير للعربية / choosing a rendering path for Arabic
 
 **كيف:** Default to raw logical strings. Add arabic_reshaper.reshape + bidi.get_display only for engines without a shaper (reportlab, old PIL/matplotlib without raqm). Doing both reverses the text. All of these were exercised across the docs, data and media proofs.
 
@@ -1631,7 +1631,7 @@
 
 **ما هي:** لا تسلّم مستندًا قبل قراءته آليًا والنظر إلى صفحاته والتأكد من تطابق أرقامه. — Never deliver a document before reading it back, looking at its pages and reconciling its numbers.
 
-**متى:** every generated docx/xlsx/pptx/pdf
+**متى:** عند كل ملف docx/xlsx/pptx/pdf مولَّد / every generated docx/xlsx/pptx/pdf
 
 **كيف:** Checklist: 1) read back text with the format's own library; 2) recalc spreadsheets; 3) render pages to PNG and look (Arabic joined, right-aligned, nothing cut); 4) numbers come from the frozen results file (ANLY compute-freeze); 5) file size and page count are sensible; 6) state anything you could not verify (e.g., not opened in MS Office).
 
@@ -1697,7 +1697,7 @@
 
 **ما هي:** في بعض الحسابات تظهر مهارات جاهزة للمستندات؛ حمّلها قبل العمل إن وُجدت. — Some accounts list ready-made document skills; load them before working when they exist.
 
-**متى:** the session's skill list shows docx/xlsx/pptx/pdf skills (e.g. anthropic-skills:docx)
+**متى:** حين تعرض قائمة مهارات الجلسة مهارات docx/xlsx/pptx/pdf (مثل anthropic-skills:docx) / the session's skill list shows docx/xlsx/pptx/pdf skills (e.g. anthropic-skills:docx)
 
 **كيف:** Read the skill listing; invoke the matching skill first. It carries tested recipes, such as tracked changes and templates. They require the account feature; this session listed them (2026-10-16) and they were not invoked here.
 
@@ -1766,7 +1766,7 @@
 
 **ما هي:** مستندات مشتركة قابلة للتعليق والتصدير إلى Word وPDF عبر موصل الطرف الأول عند وجوده. — Shared, commentable documents that export to Word/PDF through the first-party connector, when present.
 
-**متى:** the user wants a document to share or edit together, and the host exposes the connector
+**متى:** حين يريد المستخدم مستندًا يُشارَك أو يُحرَّر معًا ويوفّر المضيف الموصّل / the user wants a document to share or edit together, and the host exposes the connector
 
 **كيف:** Follow the connector's own guide (create the skeleton first, then fill the sections). Only a host-designated first-party connector counts. Not exercised in this proof.
 
@@ -1834,7 +1834,7 @@
 
 **ما هي:** في تطبيق claude.ai يمكن إنشاء docx وxlsx وpptx وpdf داخل بيئة تنفيذ؛ الشبكة يحددها المسؤول. — In the claude.ai app, docx/xlsx/pptx/pdf can be created in a code-execution sandbox; network access is set by the admin.
 
-**متى:** working in the claude.ai chat surface rather than Claude Code
+**متى:** عند العمل في واجهة محادثة claude.ai بدلًا من Claude Code / working in the claude.ai chat surface rather than Claude Code
 
 **كيف:** Assume no apt and maybe no network: use preinstalled libraries and bundled fonts; verify with a quick import before promising. Per the help article (fetched 2026-10-16); not run from here.
 
@@ -1903,7 +1903,7 @@
 
 **ما هي:** تعديل ملفات Google Drive يمر عبر موصل وحساب المستخدم. — Editing Google Drive files goes through a connector and the user's account.
 
-**متى:** the user names Google Docs/Sheets/Slides or pastes a docs.google.com link
+**متى:** حين يذكر المستخدم Google Docs/Sheets/Slides أو يلصق رابط docs.google.com / the user names Google Docs/Sheets/Slides or pastes a docs.google.com link
 
 **كيف:** Load the host's google-workspace skill if listed, and use the connector's tools. Without a connector, export the file locally (DOC-01..05) and say so.
 
@@ -1971,7 +1971,7 @@
 
 **ما هي:** تحويل PDF وDOCX وPPTX إلى Markdown أو JSON منظم مع الحفاظ على الجداول. — Convert PDF/DOCX/PPTX to structured Markdown/JSON with tables kept. (Docling, ★69.1k, MIT).
 
-**متى:** document parsing tasks the user has the right to run
+**متى:** في مهام تحليل المستندات التي يحق للمستخدم تشغيلها / document parsing tasks the user has the right to run
 
 **كيف:** `pip install docling (layout/table models download, a few hundred MB)`. Licence note: permissive.
 
@@ -2039,7 +2039,7 @@
 
 **ما هي:** تحويل ملفات PDF الأكاديمية أو الممسوحة إلى Markdown مع المعادلات LaTeX. — Turn scanned or academic PDFs into Markdown with equations in LaTeX. (Marker, ★40.5k, Apache-2.0 code; model weights separate terms).
 
-**متى:** document parsing tasks the user has the right to run
+**متى:** في مهام تحليل المستندات التي يحق للمستخدم تشغيلها / document parsing tasks the user has the right to run
 
 **كيف:** `pip install marker-pdf (models ~1–2 GB)`. Licence note: custom: read before use.
 
@@ -2108,7 +2108,7 @@
 
 **ما هي:** كتابة عرض تقديمي بـMarkdown وتصديره PDF أو PNG. — Author a Markdown deck and export PDF/PNG. (Slidev, ★49.1k, MIT).
 
-**متى:** slides as code tasks the user has the right to run
+**متى:** في مهام الشرائح كشيفرة التي يحق للمستخدم تشغيلها / slides as code tasks the user has the right to run
 
 **كيف:** `npm i -D @slidev/cli playwright-chromium`. Licence note: permissive.
 
@@ -2176,7 +2176,7 @@
 
 **ما هي:** تحويل Markdown إلى شرائح PDF أو PPTX أو HTML بأمر واحد. — Markdown to PDF/PPTX/HTML decks in one command. (Marp CLI, ★3.9k, MIT).
 
-**متى:** slides as code tasks the user has the right to run
+**متى:** في مهام الشرائح كشيفرة التي يحق للمستخدم تشغيلها / slides as code tasks the user has the right to run
 
 **كيف:** `npm i -g @marp-team/marp-cli`. Licence note: permissive.
 
@@ -2244,7 +2244,7 @@
 
 **ما هي:** رسم مخططات انسيابية وتسلسلية وجانت من نص إلى SVG أو PNG. — Render flowcharts, sequence and Gantt diagrams from text to SVG/PNG. (Mermaid, ★90.7k, MIT).
 
-**متى:** diagrams as code tasks the user has the right to run
+**متى:** في مهام المخططات كشيفرة التي يحق للمستخدم تشغيلها / diagrams as code tasks the user has the right to run
 
 **كيف:** `npm i -g @mermaid-js/mermaid-cli`. Licence note: permissive.
 
@@ -2310,7 +2310,7 @@
 
 **ما هي:** توليد مخططات UML من نص. — Generate UML class/sequence/component diagrams from text. (PlantUML, ★13.4k, LGPL-3.0 (other editions exist)).
 
-**متى:** diagrams as code tasks the user has the right to run
+**متى:** في مهام المخططات كشيفرة التي يحق للمستخدم تشغيلها / diagrams as code tasks the user has the right to run
 
 **كيف:** `apt-get install -y plantuml`. Licence note: weak copyleft.
 

@@ -1,4 +1,4 @@
-# أدوات المجال `audio` (3 أداة)
+# أدوات المجال `audio` (4 أداة)
 
 > مولّد من `data/tools.json`. [الفهرس الرئيسي](../README.md) · `python3 scripts/hub.py tool <id>` للبطاقة الحية.
 
@@ -154,4 +154,49 @@
 #### عند الفشل (A29)
 
 - ابدأ بـ `think.py recover --message "<نص الخطأ>"`، ثم سجّل `fusionforge.py trace --project <slug> --id <FUSE-ID> --stage <stage> --node <N> --action "<ما جُرّب>" --result failed --error-class <الصنف> --tool tool:repo-words-convert --evidence <ملف>`.
+
+### `tts-script` — تجهيز نص التعليق الصوتي: تقطيع آمن وتقدير المدة وSSML / TTS script prep: prosody-safe chunks, duration estimate and SSML
+
+| الحقل | القيمة |
+|---|---|
+| المسار | `scripts/tts_script.py` (جذر: skill) |
+| المجال | `audio` |
+| الدليل | `tested-here` |
+| العائلات | `voice-tts` |
+
+**ما تفعله:** يجهز نص التعليق العربي أو المختلط لأي محرك تحويل نص إلى كلام: يقطعه عند نهايات الجمل ثم الفواصل ثم بين الكلمات دون كسر كلمة، ويقدر مدة كل قطعة بعدد الكلمات في الدقيقة مع الوقفات، ويكتب SSML بوقفات عند علامات الترقيم ووسوم لغة حول الكلمات الإنجليزية.
+
+**What it does:** Prepares an Arabic or mixed-language narration script for any TTS engine: splits it into request-sized chunks at sentence ends, then clause marks, then between words (never mid-word, never across paragraphs); estimates speech time per chunk from words per minute plus sentence, clause and paragraph pauses with Arabic word counting; and writes SSML 1.0 with paragraphs, sentences, breaks at punctuation and lang tags around Latin runs (or Arabic runs in a Latin script).
+
+#### متى تُستدعى
+
+- «قسم نص التعليق الصوتي لقطع مناسبة لـ ElevenLabs»
+- «التعليق ده هياخد كام ثانية؟»
+- «اعمل SSML للنص العربي بوقفات عند الفواصل»
+- «Split my narration script into TTS-safe chunks»
+- «Estimate how long this voice-over will run»
+- «Generate SSML with breaks and language tags for a mixed Arabic/English script»
+
+#### الأوامر
+
+- **chunk**: Chunks at most N characters with their end type (sentence, clause, word, paragraph).
+  - `printf 'مرحبا بكم في KOSIF Studio. هذا اختبار، قصير جدا!\n\nفقرة ثانية؟ نعم.\n' \| python3 scripts/tts_script.py chunk - --max-chars 30`
+- **estimate**: Seconds per chunk (speech + pauses), start times and total mm:ss.
+  - `printf 'مرحبا بكم في KOSIF Studio. هذا اختبار، قصير جدا!\n\nفقرة ثانية؟ نعم.\n' \| python3 scripts/tts_script.py estimate - --wpm 140`
+- **ssml**: SSML 1.0 document with <p>, <s>, <break> and <lang> around Latin runs.
+  - `printf 'مرحبا بكم في KOSIF Studio. هذا اختبار، قصير جدا!\n' \| python3 scripts/tts_script.py ssml - --lang ar-EG --xml`
+
+#### المتطلبات والأمان
+
+- الأمان: read-only
+- الموافقة: —
+- الحدود: Timing is a words-per-minute estimate (numbers and abbreviations count as one word; real length depends on the voice); SSML support for <lang> and break times varies by engine.
+
+#### الاختبارات والأدلة
+
+- `.claude/skills/kosif-superpowers/evals/test_tts_script.py`
+
+#### عند الفشل (A29)
+
+- ابدأ بـ `think.py recover --message "<نص الخطأ>"`، ثم سجّل `fusionforge.py trace --project <slug> --id <FUSE-ID> --stage <stage> --node <N> --action "<ما جُرّب>" --result failed --error-class <الصنف> --tool tool:tts-script --evidence <ملف>`.
 

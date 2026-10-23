@@ -12,7 +12,7 @@
 
 ## ما هذه المكتبة
 
-بطاقة بروتوكول لكل قدرة في الكتالوج (5,496) ولكل أداة قابلة للتشغيل (145)، في 78 ملفًا و409,769 سطرًا تقريبًا مع هذا الفهرس. كل بطاقة تجمع سجل القدرة نفسه (ما هي، متى، كيف، التثبيت، المتطلبات، الأدلة، الرخصة) مع قواعد البروتوكول مطبّقة عليها: خانات الاستقبال (A25)، والجاهزية والشارة الصادقة (A28)، وموضعها عقدةً منمّطة في الخطة (A26)، وبوابة التحقق لنوع مخرجها (A27)، وسلم التعافي لأخطائها المرجحة (A29). القواعد العامة تتكرر عمدًا في كل بطاقة لتُقرأ البطاقة وحدها؛ والمعرفة الفريدة في سجلات الكتالوج والملاحق. حالة الكتالوج ليست حالة الجلسة: افحص قبل أي شارة.
+بطاقة بروتوكول لكل قدرة في الكتالوج (5,581) ولكل أداة قابلة للتشغيل (155)، في 78 ملفًا و416,934 سطرًا تقريبًا مع هذا الفهرس. كل بطاقة تجمع سجل القدرة نفسه (ما هي، متى، كيف، التثبيت، المتطلبات، الأدلة، الرخصة) مع قواعد البروتوكول مطبّقة عليها: خانات الاستقبال (A25)، والجاهزية والشارة الصادقة (A28)، وموضعها عقدةً منمّطة في الخطة (A26)، وبوابة التحقق لنوع مخرجها (A27)، وسلم التعافي لأخطائها المرجحة (A29). القواعد العامة تتكرر عمدًا في كل بطاقة لتُقرأ البطاقة وحدها؛ والمعرفة الفريدة في سجلات الكتالوج والملاحق. حالة الكتالوج ليست حالة الجلسة: افحص قبل أي شارة.
 
 ## بطاقات القدرات
 
@@ -21,28 +21,28 @@
 | الثري دي والمحاكاة والرندر | `3d-spatial` | 52 | 3,660 | [cards/3d/3d-spatial.md](cards/3d/3d-spatial.md) |
 | الثري دي والمحاكاة والرندر | `engines-render-pipeline` | 443 | 30,775 | [cards/3d/engines-render-pipeline.md](cards/3d/engines-render-pipeline.md) |
 | الثري دي والمحاكاة والرندر | `light-glow-bloom` | 87 | 6,191 | [cards/3d/light-glow-bloom.md](cards/3d/light-glow-bloom.md) |
-| الثري دي والمحاكاة والرندر | `particles-fluids-physics` | 77 | 5,293 | [cards/3d/particles-fluids-physics.md](cards/3d/particles-fluids-physics.md) |
+| الثري دي والمحاكاة والرندر | `particles-fluids-physics` | 77 | 5,370 | [cards/3d/particles-fluids-physics.md](cards/3d/particles-fluids-physics.md) |
 | الثري دي والمحاكاة والرندر | `texture-material` | 96 | 6,666 | [cards/3d/texture-material.md](cards/3d/texture-material.md) |
 | الوكلاء والتوجيه الذكي | `agent-orchestration` | 46 | 3,169 | [cards/agents/agent-orchestration.md](cards/agents/agent-orchestration.md) |
-| الوكلاء والتوجيه الذكي | `runnable-tools` | 70 | 4,983 | [cards/agents/runnable-tools.md](cards/agents/runnable-tools.md) |
+| الوكلاء والتوجيه الذكي | `runnable-tools` | 155 | 11,044 | [cards/agents/runnable-tools.md](cards/agents/runnable-tools.md) |
 | الوكلاء والتوجيه الذكي | `self-discovery` | 43 | 3,070 | [cards/agents/self-discovery.md](cards/agents/self-discovery.md) |
 | الصوت والموسيقى والتعليق | `audio-sync-captions` | 61 | 4,404 | [cards/audio/audio-sync-captions.md](cards/audio/audio-sync-captions.md) |
 | الصوت والموسيقى والتعليق | `music-beat-sound` | 306 | 21,436 | [cards/audio/music-beat-sound.md](cards/audio/music-beat-sound.md) |
-| الصوت والموسيقى والتعليق | `voice-tts` | 55 | 3,931 | [cards/audio/voice-tts.md](cards/audio/voice-tts.md) |
-| البيانات والرسوم والمواقع | `atlas-data` | 52 | 3,626 | [cards/data/atlas-data.md](cards/data/atlas-data.md) |
+| الصوت والموسيقى والتعليق | `voice-tts` | 55 | 3,986 | [cards/audio/voice-tts.md](cards/audio/voice-tts.md) |
+| البيانات والرسوم والمواقع | `atlas-data` | 52 | 3,678 | [cards/data/atlas-data.md](cards/data/atlas-data.md) |
 | البيانات والرسوم والمواقع | `charts-data-infographic` | 105 | 7,557 | [cards/data/charts-data-infographic.md](cards/data/charts-data-infographic.md) |
 | البيانات والرسوم والمواقع | `data-analysis` | 39 | 2,742 | [cards/data/data-analysis.md](cards/data/data-analysis.md) |
-| البيانات والرسوم والمواقع | `maps-geo` | 62 | 4,405 | [cards/data/maps-geo.md](cards/data/maps-geo.md) |
+| البيانات والرسوم والمواقع | `maps-geo` | 62 | 4,467 | [cards/data/maps-geo.md](cards/data/maps-geo.md) |
 | المستندات والكتابة | `atlas-craft` | 26 | 1,807 | [cards/documents/atlas-craft.md](cards/documents/atlas-craft.md) |
 | المستندات والكتابة | `atlas-docs` | 50 | 3,473 | [cards/documents/atlas-docs.md](cards/documents/atlas-docs.md) |
 | المستندات والكتابة | `documents-office` | 34 | 2,363 | [cards/documents/documents-office.md](cards/documents/documents-office.md) |
 | المستندات والكتابة | `writing-humanizer` | 28 | 1,947 | [cards/documents/writing-humanizer.md](cards/documents/writing-humanizer.md) |
-| الرسم والأشكال والتصميم | `brand-logo-identity` | 43 | 3,143 | [cards/drawing/brand-logo-identity.md](cards/drawing/brand-logo-identity.md) |
-| الرسم والأشكال والتصميم | `diagrams-explainers-code` | 67 | 4,805 | [cards/drawing/diagrams-explainers-code.md](cards/drawing/diagrams-explainers-code.md) |
+| الرسم والأشكال والتصميم | `brand-logo-identity` | 43 | 3,186 | [cards/drawing/brand-logo-identity.md](cards/drawing/brand-logo-identity.md) |
+| الرسم والأشكال والتصميم | `diagrams-explainers-code` | 67 | 4,872 | [cards/drawing/diagrams-explainers-code.md](cards/drawing/diagrams-explainers-code.md) |
 | الرسم والأشكال والتصميم | `hand-drawn-draw-on` | 63 | 4,594 | [cards/drawing/hand-drawn-draw-on.md](cards/drawing/hand-drawn-draw-on.md) |
 | الرسم والأشكال والتصميم | `pixel-retro-stylized` | 32 | 2,317 | [cards/drawing/pixel-retro-stylized.md](cards/drawing/pixel-retro-stylized.md) |
 | الرسم والأشكال والتصميم | `shapes-morph-geometry` | 95 | 6,846 | [cards/drawing/shapes-morph-geometry.md](cards/drawing/shapes-morph-geometry.md) |
-| الصور والتحرير والتوليد | `ai-generation` | 93 | 6,756 | [cards/images/ai-generation.md](cards/images/ai-generation.md) |
+| الصور والتحرير والتوليد | `ai-generation` | 93 | 6,849 | [cards/images/ai-generation.md](cards/images/ai-generation.md) |
 | الصور والتحرير والتوليد | `atlas-media` | 27 | 1,908 | [cards/images/atlas-media.md](cards/images/atlas-media.md) |
 | الصور والتحرير والتوليد | `color-palette-grading` | 87 | 6,445 | [cards/images/color-palette-grading.md](cards/images/color-palette-grading.md) |
 | الصور والتحرير والتوليد | `media-image-audio` | 41 | 2,892 | [cards/images/media-image-audio.md](cards/images/media-image-audio.md) |
@@ -68,14 +68,14 @@
 | البرمجة وبناء التطبيقات | `atlas-build` | 52 | 3,767 | [cards/software/atlas-build.md](cards/software/atlas-build.md) |
 | البرمجة وبناء التطبيقات | `atlas-code` | 247 | 17,988 | [cards/software/atlas-code.md](cards/software/atlas-code.md) |
 | البرمجة وبناء التطبيقات | `code-engineering` | 24 | 1,726 | [cards/software/code-engineering.md](cards/software/code-engineering.md) |
-| البرمجة وبناء التطبيقات | `ui-product-device` | 93 | 6,839 | [cards/software/ui-product-device.md](cards/software/ui-product-device.md) |
+| البرمجة وبناء التطبيقات | `ui-product-device` | 93 | 6,932 | [cards/software/ui-product-device.md](cards/software/ui-product-device.md) |
 | التفكير والتخطيط والاستراتيجية | `atlas-mind` | 54 | 3,679 | [cards/thinking/atlas-mind.md](cards/thinking/atlas-mind.md) |
-| التفكير والتخطيط والاستراتيجية | `atlas-strategy` | 72 | 4,908 | [cards/thinking/atlas-strategy.md](cards/thinking/atlas-strategy.md) |
+| التفكير والتخطيط والاستراتيجية | `atlas-strategy` | 72 | 4,980 | [cards/thinking/atlas-strategy.md](cards/thinking/atlas-strategy.md) |
 | التفكير والتخطيط والاستراتيجية | `creativity-engine` | 29 | 2,024 | [cards/thinking/creativity-engine.md](cards/thinking/creativity-engine.md) |
 | التفكير والتخطيط والاستراتيجية | `mental-models` | 63 | 4,414 | [cards/thinking/mental-models.md](cards/thinking/mental-models.md) |
 | التفكير والتخطيط والاستراتيجية | `planning-execution` | 12 | 820 | [cards/thinking/planning-execution.md](cards/thinking/planning-execution.md) |
 | التفكير والتخطيط والاستراتيجية | `prompt-craft` | 25 | 1,734 | [cards/thinking/prompt-craft.md](cards/thinking/prompt-craft.md) |
-| التفكير والتخطيط والاستراتيجية | `strategy-finance` | 18 | 1,209 | [cards/thinking/strategy-finance.md](cards/thinking/strategy-finance.md) |
+| التفكير والتخطيط والاستراتيجية | `strategy-finance` | 18 | 1,227 | [cards/thinking/strategy-finance.md](cards/thinking/strategy-finance.md) |
 | التفكير والتخطيط والاستراتيجية | `thinking-core` | 46 | 3,214 | [cards/thinking/thinking-core.md](cards/thinking/thinking-core.md) |
 | الخطوط والنصوص العربية واللاتينية | `arabic-language` | 22 | 1,525 | [cards/type/arabic-language.md](cards/type/arabic-language.md) |
 | الخطوط والنصوص العربية واللاتينية | `typography-arabic` | 99 | 7,248 | [cards/type/typography-arabic.md](cards/type/typography-arabic.md) |
@@ -85,18 +85,18 @@
 
 | المجال | الأدوات | الأسطر | الملف |
 |---|---:|---:|---|
-| `3d` | 11 | 521 | [tools/3d.md](tools/3d.md) |
-| `audio` | 3 | 157 | [tools/audio.md](tools/audio.md) |
-| `discover` | 25 | 1,298 | [tools/discover.md](tools/discover.md) |
-| `draw` | 11 | 549 | [tools/draw.md](tools/draw.md) |
+| `3d` | 11 | 522 | [tools/3d.md](tools/3d.md) |
+| `audio` | 4 | 202 | [tools/audio.md](tools/audio.md) |
+| `discover` | 25 | 1,300 | [tools/discover.md](tools/discover.md) |
+| `draw` | 14 | 684 | [tools/draw.md](tools/draw.md) |
 | `edit` | 13 | 661 | [tools/edit.md](tools/edit.md) |
-| `image` | 10 | 550 | [tools/image.md](tools/image.md) |
-| `investigate` | 13 | 597 | [tools/investigate.md](tools/investigate.md) |
+| `image` | 11 | 597 | [tools/image.md](tools/image.md) |
+| `investigate` | 13 | 602 | [tools/investigate.md](tools/investigate.md) |
 | `local-computer` | 1 | 53 | [tools/local-computer.md](tools/local-computer.md) |
-| `maintain` | 12 | 603 | [tools/maintain.md](tools/maintain.md) |
-| `motion` | 18 | 978 | [tools/motion.md](tools/motion.md) |
+| `maintain` | 13 | 650 | [tools/maintain.md](tools/maintain.md) |
+| `motion` | 20 | 1,070 | [tools/motion.md](tools/motion.md) |
 | `sources` | 17 | 852 | [tools/sources.md](tools/sources.md) |
-| `think` | 11 | 580 | [tools/think.md](tools/think.md) |
+| `think` | 13 | 678 | [tools/think.md](tools/think.md) |
 
 ## المناهج
 

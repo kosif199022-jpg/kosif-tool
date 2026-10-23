@@ -32,13 +32,13 @@
 | الأداة | ما تفعله | ابدأ بـ | الدليل |
 |---|---|---|---|
 | `atlas-5000` | خريطة تغطية أطلس الـ5000 مهارة | `python3 scripts/atlas_5000.py stats --json` | tested-here |
-| `atlas-bulk-source-audit` | ????? ???? ?????? ???? | `python3 scripts/atlas_bulk_source_audit.py --help` | untested |
-| `atlas-capability-miner` | ???? ????? ???? | `python3 scripts/atlas_capability_miner.py --help` | tested-here |
-| `atlas-deep-fusion` | ????? ??? ???? | `python3 scripts/atlas_deep_fusion.py --help` | untested |
-| `atlas-review-summary` | ???? ?????? ???? | `python3 scripts/atlas_review_summary.py --help` | untested |
-| `atlas-reviewed-methods-v3` | ??? ???? ???????? | `python3 scripts/atlas_reviewed_methods_v3.py --help` | untested |
-| `atlas-task-method-router` | ????? ???? ???? | `python3 scripts/atlas_task_method_router.py --help` | untested |
-| `atlas-transfer` | ??? ??? ???? | `python3 scripts/atlas_transfer.py --help` | untested |
+| `atlas-bulk-source-audit` | تدقيق نصوص مصادر الأطلس | `python3 scripts/atlas_bulk_source_audit.py --help` | untested |
+| `atlas-capability-miner` | منقّب قدرات الأطلس من البيانات الوصفية | `python3 scripts/atlas_capability_miner.py --help` | tested-here |
+| `atlas-deep-fusion` | منتقي مناهج الأطلس للقراءة فقط | `python3 scripts/atlas_deep_fusion.py --help` | untested |
+| `atlas-review-summary` | ملخص مراجعة الأطلس | `python3 scripts/atlas_review_summary.py --help` | untested |
+| `atlas-reviewed-methods-v3` | مناهج الأطلس المراجَعة | `python3 scripts/atlas_reviewed_methods_v3.py --help` | untested |
+| `atlas-task-method-router` | موجّه مناهج الأطلس حسب المهمة | `python3 scripts/atlas_task_method_router.py --help` | untested |
+| `atlas-transfer` | نقل مناهج الأطلس المثبتة | `python3 scripts/atlas_transfer.py --help` | untested |
 | `blender-api-audit` | تدقيق واجهة بايثون في Blender | `python3 scripts/blender_api_audit.py --help` | tested-here |
 | `differential-exam` | مصحّح الامتحان الخفي التفاضلي | `python3 scripts/differential_exam.py seal ./exam --out ./exam-seal.json` | tested-here |
 | `installer-triage` | فرز المثبّتات | `python3 scripts/installer_triage.py scan ./setup.exe` | tested-here |

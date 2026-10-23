@@ -22,17 +22,18 @@
 
 | الحالة | العدد | المعنى |
 |---|---:|---|
-| `proven` | 87 | ✅ proven: a proof exists in the catalog; still check its requirements here before calling it ready |
-| `ready` | 5 | 🟢 ready: runnable without setup according to the catalog |
+| `proven` | 149 | ✅ proven: a proof exists in the catalog; still check its requirements here before calling it ready |
+| `ready` | 21 | 🟢 ready: runnable without setup according to the catalog |
 | `documented` | 57 | 📄 documented: a described method; needs building or wiring before it runs |
-| `install` | 8 | 📦 install: needs a package, binary or model first |
+| `install` | 15 | 📦 install: needs a package, binary or model first |
 | `key` | 2 | 🔑 key: needs an account, key or paid service (ask before any spend) |
-| **المجموع** | **159** | |
+| **المجموع** | **244** | |
 
 ## الأدوات القابلة للتشغيل / runnable tools
 
 | الأداة | ما تفعله | ابدأ بـ | الدليل |
 |---|---|---|---|
+| `agent-guard` | حارس الوكيل: فحص الأوامر قبل تشغيلها وكشف الأسرار وخطة فروع متوازية | `python3 scripts/agent_guard.py rules` | tested-here |
 | `ai-tool-discovery` | باحث القدرات ثنائي اللغة بلا اتصال | `python3 scripts/ai_tool_discovery.py "تحريك شخصيات فيديو" --top 8` | tested-here |
 | `atlas-5000` | خريطة تغطية أطلس الـ5000 مهارة | `python3 scripts/atlas_5000.py stats --json` | tested-here |
 | `atlas-ledger` | سجل الأطلس: حالة واحدة لكل مهارة | `python3 scripts/atlas_ledger.py stats --json` | tested-here |
@@ -78,7 +79,7 @@
 | العائلة | القدرات | الفصل |
 |---|---:|---|
 | `agent-orchestration` | 46 | [agent-orchestration.md](../powers/agent-orchestration.md) |
-| `runnable-tools` | 70 | [runnable-tools.md](../powers/runnable-tools.md) |
+| `runnable-tools` | 155 | [runnable-tools.md](../powers/runnable-tools.md) |
 | `self-discovery` | 43 | [self-discovery.md](../powers/self-discovery.md) |
 
 ## كل القدرات / every power
@@ -98,11 +99,54 @@
 | `TOOL-08` | فاحص وجود حزم بايثون | Python package presence probe | proven | chromium, pip:numpy, pip:pillow, pip:opencv |
 | `TOOL-09` | موجّه مهارات العمل ومثبّتها | Process-skill router and installer | proven | python3, imagemagick |
 | `TOOL-10` | مقدّر سعة الأنظمة | System Capacity Sizer | proven | python3 |
+| `TOOL-100` | خريطة ترتيب المهارة | Skill Layout Map | proven | python3 |
+| `TOOL-103` | فاحص سلامة أطلس الأنماط | Style atlas repository validator | proven | python3 |
+| `TOOL-105` | منقّب قدرات الأطلس من البيانات الوصفية | Atlas metadata capability miner | proven | python3, blender, npm:rea, engine:ghidra |
+| `TOOL-106` | خريطة تغطية أطلس الـ5000 مهارة | Atlas-5000 coverage map | proven | python3 |
+| `TOOL-107` | سجل الأطلس: حالة واحدة لكل مهارة | Atlas ledger: one status for every Atlas skill | proven | python3, npm:rea |
+| `TOOL-108` | خريطة سوبر باور بمنهج REA | Superpowers map, REA approach | proven | python3, npm:rea |
 | `TOOL-11` | مختبر الابتكار الهندسي | Invention Lab Candidates | proven | pip:hypothesis |
+| `TOOL-115` | الرسم الموحد: خطوط وأشكال وطبقات وتصدير | Unified Draw: freehand + geometry + layered export | proven | ffmpeg, pip:pillow |
+| `TOOL-116` | فهرس ذكي للقدرات من أجل Claude | Smart capability index for Claude | proven | python3, npm:rea, engine:ghidra |
+| `TOOL-117` | محرر الوسائط الموحد: صور ورسم وتحريك وفيديو | Unified Media: photo adjustments + drawn overlays + GIF/MP4 | proven | ffmpeg, imagemagick, pip:numpy, pip:pillow |
+| `TOOL-118` | السينما الموحدة: مونتاج الفيديو مع الصوت وحركة الكاميرا | Unified Cinematic: sound-clocked animation and video | proven | ffmpeg, imagemagick, pip:numpy, pip:pillow |
+| `TOOL-119` | دمج رندر Blender Cycles مع مونتاج KOSIF والصوت | Blender Cycles + KOSIF Cinematic compositor | proven | ffmpeg, blender, pip:pillow, npm:rea |
 | `TOOL-12` | جسر الصوت إلى لوحة القصة | Audio-to-Storyboard Bridge | proven | python3 |
+| `TOOL-120` | إنشاء مشهد إنقاذ قطة ثلاثي الأبعاد داخل Blender | Create an editable Blender 3D cat rescue demo | proven | python3, blender |
+| `TOOL-121` | تطوير فرو القطة والملامح في Blender Cycles | Blender Cat Fur Upgrade: renderable hair geometry and character detail | proven | python3, blender |
+| `TOOL-122` | محرر KOSIF Timeline: مونتاج متعدد المسارات مع تراجع وإعادة | KOSIF Timeline: genuine multitrack video, image and audio editor | proven | ffmpeg, pip:pillow |
+| `TOOL-123` | تجربة مونتاج KOSIF Timeline تلقائية بملفات أصلية مولدة | KOSIF Timeline one-command synthetic media demo | proven | ffmpeg, pip:pillow |
+| `TOOL-124` | محرك بروتوكول ذكاء المهارات الشامل | Universal Skill Intelligence Protocol engine | proven | python3 |
+| `TOOL-125` | FusionForge v2 لوصفات الـWorkflow المركبة داخل المشروع | FusionForge v2 project-scoped composite workflow recipes | proven | python3 |
+| `TOOL-127` | دمج القدرات في قدرات خارقة مترابطة | Superpower fusion (powers to connected superpowers) | proven | python3 |
+| `TOOL-128` | الخريطة الذهنية المرحلية وتدقيق التكرار | Task-stage capability mind map and duplicate audit | proven | python3, npm:mermaid |
+| `TOOL-129` | خريطة المجموعات مع القدرات الخارقة والسكربتات وخطط التثبيت | Group map with superpowers, scripts and install plans | proven | node, python3 |
 | `TOOL-13` | مُصرِّف حركة SVG المتزامنة مع الصوت | Audio-timed SVG motion compiler | proven | ffmpeg, node, python3, chromium |
+| `TOOL-130` | فريق مونتاج برو (صوت أو فيديو إلى مونتاج أو موشن) | Montage Pro task force (audio/video to montage or motion) | proven | ffmpeg, chromium, imagemagick, yt-dlp |
+| `TOOL-131` | مصنع الريلز: صوت وتوقيت كلمات ولقطات مرخصة ← ريلز 9:16 مفحوص | Reel factory: voice + word timings + licensed shots → verified 9:16 reel | proven | ffmpeg, node, chromium, fonts:arabic |
+| `TOOL-132` | دعاء يوم الأربعاء — محرك ريل دعاء موشن جرافيك 9:16 | Wednesday-morning dua reel (دعاء يوم الأربعاء) — 9:16 motion-graphics dua engine | proven | ffmpeg, node, chromium, yt-dlp |
+| `TOOL-133` | ملتقط بث DASH وHLS للمونتاج | DASH/HLS stream grabber for editing | proven | ffmpeg, python3 |
+| `TOOL-136` | أطلس مناهج كتب الرسم مع رسم بنائي بالطبقات | Drawing-book methods atlas with layered construction SVGs | proven | python3, tesseract |
+| `TOOL-138` | تكامل مصمم وREA: فحص صور وتوليف مهارات آمن | Mosamem x REA source-safe image preflight and capability fusion | proven | python3, chromium, npm:rea |
+| `TOOL-139` | إدخال قائمة الميثاق: مجلس الخبراء 500 فهرسًا للاستشارة | Charter roster ingest: the 500-expert council as a consultable index | proven | python3 |
 | `TOOL-14` | محرك حركة SVG | SVG motion engine runtime | proven | ffmpeg, node, python3, chromium |
+| `TOOL-140` | ذكاء الصور المحلي: إزالة الخلفية والملء الذكي بنموذج ONNX تختاره | Local image AI: remove background and smart fill with your own ONNX model | proven |  |
+| `TOOL-141` | حزمة المطالبات: كل مطالبة في كتلة كود قابلة للنسخ مع فحص يحذّر فقط | Prompt pack: copyable prompts, one code block each, with a warn-only lint | proven | python3, key:video-gen |
+| `TOOL-142` | فهرس المصادر: الذاكرة الفهرسية لمرفقات المستخدم داخل مجلد العمل | Sources index: per-work-dir index memory of the user's attachments | proven | pip:office |
+| `TOOL-143` | خريطة مستودعات المالك وخريطة المهارات | Owned-repositories map and skill map | proven | python3 |
+| `TOOL-144` | مدرب الرسم من فصول الكتب والتشخيص البصري المستقل | Book-chapter drawing coach and independent raster visual QA | proven | pip:pillow |
+| `TOOL-145` | رياضيات القرار: نطاقات مونت كارلو ونقطة التعادل وترتيب ICE والقيمة الحالية ونقطة انقلاب القرار | Decision math: Monte Carlo ranges, break-even, ICE, NPV/IRR and flip thresholds | proven | python3, npm:p5 |
+| `TOOL-146` | جسيمات قابلة للقفز: انفجار بصيغة مغلقة وفحص الميزانية وإطار SVG | Seekable particles: closed-form bursts, budget check and SVG frame | proven | python3, npm:three |
+| `TOOL-147` | لوح الخرائط: إسقاط الإحداثيات إلى بكسلات وتصنيف الخرائط الملونة وسجل المصادر | Map plate: projection to pixels, choropleth classes and source ledger | proven | python3, fonts:arabic |
+| `TOOL-148` | مصنع البرومبتات: برومبتات طبقية وفحص البرومبت وقائمة لقطات بإطارات دقيقة | Prompt forge: layered generator prompts, prompt lint and frame-exact shot lists | proven | python3 |
+| `TOOL-149` | تخطيط المخططات: فحص الرسم البياني وتخطيط طبقي حتمي وSVG جاهز للعربية | Diagram layout: graph lint, deterministic layered layout and RTL-ready SVG | proven | python3 |
 | `TOOL-15` | جسر توقيتات Motion Starter Kit | Motion Starter Kit timing bridge | proven | python3 |
+| `TOOL-150` | إيقاع الواجهات: مسار مؤشر بتسهيل وعكس تخطيط للعربية وفحص الحلقة المتصلة | UI beat: eased cursor keyframes, RTL layout mirror and seamless-loop check | proven | python3 |
+| `TOOL-151` | مختبر الإحصاء: اختبار A/B وحجم العينة ووصف عمود وأرباح الدفعات | Stats lab: A/B test, sample size, column statistics and FIFO/LIFO gains | proven | python3 |
+| `TOOL-152` | تجهيز نص التعليق الصوتي: تقطيع آمن وتقدير المدة وSSML | TTS script prep: prosody-safe chunks, duration estimate and SSML | proven | python3 |
+| `TOOL-153` | رموز الهوية: ألوان الشعار ورموز بثلاث طبقات ومصفوفة تباين WCAG | Brand tokens: SVG palette, 3-tier design tokens and WCAG contrast matrix | proven | python3, npm:axe |
+| `TOOL-154` | حارس الوكيل: فحص الأوامر قبل تشغيلها وكشف الأسرار وخطة فروع متوازية | Agent guard: shell preflight, transcript secret scan and worktree plans | proven | python3, git |
+| `TOOL-156` | البحث في كتالوج القدرات | Power catalog search | proven | python3, npm:mermaid |
 | `TOOL-16` | إنشاء فيلم سبورة مرسوم وتصييره | Doodle film runtime and renderer | proven | ffmpeg, node, python3, chromium |
 | `TOOL-17` | مولّد مشاريع بداية لمحركات الحركة | Third-party motion engine scaffolder | proven | python3, npm:three, npm:gsap, npm:remotion |
 | `TOOL-18` | مكتبة رياضيات الحركة | Motion math toolkit | proven | node, python3 |
@@ -148,6 +192,25 @@
 | `TOOL-68` | مجلس البرو: خمسة متعارضين أو مجلس مناسب من 100 شخصية، ثلاث جولات وحكم بالدرجات | Pro Council: five opposing members or a task-fitted council from 100 personas, three rounds, a scored verdict | proven | python3 |
 | `TOOL-69` | محرك التفكير وقوالبه | Thinking engine scaffolds | proven | python3 |
 | `TOOL-70` | مكتبة الأساليب: 586 أسلوبًا بصريًا بالاسم (86 من أطلس Futurepedia + 500 أصلي) — بحث ووصف وبرومنت وعينة وكتالوج PDF مصوّر | Style library — 586 visual styles by name (86 Futurepedia-derived + 500 original): find, describe, prompt, swatch, illustrated PDF catalog | proven | python3, chromium |
+| `TOOL-72` | مخطط متطلبات القدرات | Power requirements planner | proven | node, python3, key:unspecified |
+| `TOOL-73` | أداة سطر أوامر لأطلس أنماط KOSIF | KOSIF style atlas CLI | proven | python3, npm:remotion |
+| `TOOL-74` | بوابة حفظ الحقائق عند إعادة الصياغة | Rewrite Fact Anchor Gate | proven | python3 |
+| `TOOL-75` | فاحص العبارات الكتابية النمطية | Writing Tell Scanner | proven | python3 |
+| `TOOL-76` | فاحص عقود التفكير والتوليف KOSIF SEE Pro | SEE Pro Cognitive Fusion contract verifier | proven | python3, network |
+| `TOOL-77` | محلّل نِسَب أبعاد الفيديو | Flexible aspect ratio resolver | proven | python3 |
+| `TOOL-79` | بوابة فحص تسليم الفيديو | Video delivery gate | proven | ffmpeg, python3 |
+| `TOOL-80` | محلّل نسب العرض المرن | Flexible aspect ratio resolver | proven | python3 |
+| `TOOL-82` | بوابة فحص تسليم الفيديو | Video delivery gate | proven | ffmpeg, python3 |
+| `TOOL-85` | محرك محاكاة الفيديو المرجعي | KOSIF Mimic reference rebuilder | proven | ffmpeg, tesseract, pip:numpy, pip:pillow |
+| `TOOL-86` | محوّل الترجمات إلى توقيت الكلمات | Subtitle to words.json converter | proven | pip:faster-whisper |
+| `TOOL-88` | استوديو التطبيقات للصور والتصميم | App Studio photo & design CLI | proven | ffmpeg, chromium, pip:numpy, pip:pillow |
+| `TOOL-89` | حزمة الرسم في استوديو التطبيقات | App Studio painting batch | proven | chromium, pip:numpy, pip:pillow, pip:opencv |
+| `TOOL-91` | مراجعة ساكنة لنصوص مهارات الأطلس | Atlas skill-body static audit | proven | python3 |
+| `TOOL-93` | جلب المرجع المسموح وقياسه | Permitted reference fetch and measure | proven | ffmpeg, python3 |
+| `TOOL-95` | تحميل لقطات مجانية بلا مفتاح (Pexels وMixkit) | Keyless stock footage fetcher (Pexels, Mixkit) | proven | ffmpeg, python3, key:unspecified |
+| `TOOL-96` | خريطة المستودعات الخارجية | External repository tool map | proven | ffmpeg, chromium, pip:faster-whisper |
+| `TOOL-97` | فرز المثبّتات | Installer Triage | proven | python3, npm:rea, 7zip, innoextract |
+| `TOOL-98` | جسر أوامر REA | REA CLI Bridge | proven | python3, npm:rea |
 | `SELF-05` | اقرأ قائمة أدواتك | Read your own tool list | proven | pip:higgsfield, key:graphify |
 | `SELF-06` | حمّل الأدوات المؤجلة بـToolSearch | Load deferred tools with ToolSearch | proven | claude:tools |
 | `SELF-07` | جرد خوادم MCP وتكلفتها | MCP server inventory with cost flags | proven | pip:higgsfield, key:unspecified |
@@ -174,11 +237,27 @@
 | `SELF-32` | التوثيق الحي لا الذاكرة | Live docs over memory | proven | node, claude:tools |
 | `SELF-33` | واجهات الذاكرة قديمة | Training-data APIs are stale | proven | chromium, libreoffice, pip:numpy, pip:opencv |
 | `SELF-36` | حدود جلسة Claude Code السحابية | Claude Code cloud session limits | proven | python3, docker, npm:p5 |
+| `TOOL-101` | مولّد ملفات أطلس الأساليب | Style Atlas Builder | ready | python3 |
+| `TOOL-102` | فاحص أصالة الملفات الإبداعية | Brief originality checker | ready | python3 |
+| `TOOL-104` | تدقيق نصوص مصادر الأطلس | Atlas source-text audit | ready | python3, blender, engine:ghidra |
+| `TOOL-109` | منتقي مناهج الأطلس للقراءة فقط | Atlas read-only method selector | ready | python3, blender, engine:ghidra |
+| `TOOL-110` | ملخص مراجعة الأطلس | Atlas review summary | ready | python3, blender, engine:ghidra |
+| `TOOL-111` | مناهج الأطلس المراجَعة | Reviewed Atlas methods | ready | python3, blender, engine:ghidra |
+| `TOOL-112` | موجّه مناهج الأطلس حسب المهمة | Atlas task method router | ready | python3, blender, engine:ghidra |
+| `TOOL-113` | نقل مناهج الأطلس المثبتة | Atlas verified method transfer | ready | python3, blender, engine:ghidra |
+| `TOOL-114` | مساعد فيديو الحركة في Blender | Blender motion video helper | ready | python3, blender, engine:ghidra |
+| `TOOL-126` | ذاكرة FusionForge المشتركة بوصفات مهارات معزولة | FusionForge Shared Memory: reviewed cross-project skill structures | ready | python3 |
+| `TOOL-134` | دراسة الرسم التدريجي والظل الأصلي | Staged drawing and original three-value visual studies | ready | python3 |
+| `TOOL-135` | أكاديمية الرسم والدروس المبنية على مصادر | Source-aware drawing school and user-authorized book audits | ready | python3 |
+| `TOOL-137` | منظور هندسي ومقاييس التباين اللوني | Original two-point perspective and numeric palette analysis | ready | python3, npm:axe |
 | `TOOL-33` | تدقيق أدلة الكتالوج | Catalog Evidence Audit | ready | python3 |
 | `TOOL-56` | فحص سلامة المهارة | Skill Health Check | ready | python3 |
 | `TOOL-58` | إعادة تصنيف نطاق الأدلة | Proof Scope Relabeler | ready | python3 |
 | `TOOL-59` | استيراد الملفات الإبداعية | Creative brief importer | ready | python3 |
 | `TOOL-60` | مزامنة الكتالوج مع PromptsMotion | PromptsMotion catalog sync | ready | python3 |
+| `TOOL-71` | فحص قدرات الجهاز | Machine capability probe | ready | node, python3, docker, gpu |
+| `TOOL-92` | تحويل مراجعة الأطلس إلى بيان مُراجَع | Atlas audit to reviewed manifest | ready | python3, npm:rea |
+| `TOOL-99` | مولّد فصول العائلات | Family Chapter Generator | ready | python3 |
 | `AGENT-01` | متى تفوّض ومتى تعمل بنفسك | Delegate or do it yourself | documented | claude:tools |
 | `AGENT-02` | حزمة التنفيذ: موجز تفويض كامل | Execution packet (delegation brief) | documented | claude:tools |
 | `AGENT-03` | الاسترجاع التكراري | Iterative retrieval loop | documented | claude:tools |
@@ -244,5 +323,12 @@
 | `TOOL-49` | إعادة موازنة فهرس المستودعات الإبداعية | Rebalance creative repo catalog | install | python3, gh, npm:rea |
 | `TOOL-51` | استوديو التنزيل Cinema C للآيفون | Cinema C iPhone downloader studio | install | ffmpeg, python3, yt-dlp |
 | `TOOL-53` | تحليل REA لمستودعات المالك دفعةً واحدة | REA Owned-Repo Batch | install | python3, git, npm:rea |
+| `TOOL-78` | محوّل HTML إلى فيديو MP4 | HTML to MP4 renderer | install | ffmpeg, node, python3, chromium |
+| `TOOL-81` | محوّل حتمي من HTML إلى فيديو MP4 | Deterministic HTML-to-MP4 renderer | install | ffmpeg, python3, chromium, npm:gsap |
+| `TOOL-83` | قالب فيلم HTML Canvas | HTML Canvas film starter | install | ffmpeg, node, python3, chromium |
+| `TOOL-84` | قالب فيلم Remotion | Remotion film starter | install | ffmpeg, python3, npm:remotion, npm:react |
+| `TOOL-87` | رندر سينمائي بـBlender Cycles | Blender Cycles cinematic renders | install | ffmpeg, blender |
+| `TOOL-90` | أداة عرض النص بخطوط مرشّحة | Font candidate text renderer | install | node, python3, chromium, fonts:arabic |
+| `TOOL-94` | تنزيل الفيديو من الروابط للمونتاج | Video link downloader for montage | install | ffmpeg, python3, imagemagick, yt-dlp |
 | `AGENT-17` | مهام مجدولة وروتينات | Scheduled tasks & routines | key | claude:tools, key:unspecified |
 | `SELF-11` | الموصلات والمفاتيح | Connectors and keys | key | claude:tools, key:unspecified |

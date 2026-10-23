@@ -25,7 +25,7 @@
 
 #### ANLY-01 · تحليل الجداول بـ pandas · pandas groupby / pivot analysis · ✅ مُثبت هنا / proven here
 - **ماذا / what:** اجمع ولخّص وأعِد تشكيل الجداول (groupby وpivot_table) على ملفات CSV أو Excel. — Group, summarise and pivot tabular data from CSV/Excel with pandas.
-- **متى أستخدمها / when:** any table question: totals per group, shares, top-N, month-by-channel pivots; user uploads a CSV/XLSX
+- **متى أستخدمها / when:** عند أي سؤال عن جدول: مجاميع لكل مجموعة، ونسب، وأعلى N، ومحاور شهر-قناة؛ أو رفع المستخدم CSV/XLSX / any table question: totals per group, shares, top-N, month-by-channel pivots; user uploads a CSV/XLSX
 - **كيف / how:** pd.read_csv(path, encoding='utf-8-sig') -> df.groupby(key, sort=False)[cols].sum().sort_values(...) ; df.pivot_table(index, columns, values, aggfunc='sum'). Check shape against expectations (proof: 180 rows, pivot 12x3). pandas 3.x is current: check the installed version before you write code from memory. **أرقام / params:** encoding utf-8-sig for Arabic CSVs from Excel; keep money as integer minor units
 - **تثبيت / install:** `pip install pandas`
 - **يحتاج / needs:** [`pip:pandas`](../requirements.md#req-pip-pandas)
@@ -35,7 +35,7 @@
 
 #### ANLY-02 · SQL مباشرة على ملفات CSV بـ DuckDB · DuckDB SQL straight on CSV/Parquet · ✅ مُثبت هنا / proven here
 - **ماذا / what:** اكتب SQL كاملًا (CTE ودوال نافذة) على ملف CSV أو Parquet دون تحميله أو إنشاء قاعدة. — Run full SQL (CTEs, window functions) over CSV/Parquet files in-process, no server, no load step.
-- **متى أستخدمها / when:** joins, window functions (LAG, RANK, running totals), month-over-month, files bigger than comfortable pandas memory
+- **متى أستخدمها / when:** عند الربط والدوال النافذة (LAG وRANK والمجاميع الجارية) والمقارنة شهرًا بشهر، والملفات الأكبر من ذاكرة pandas المريحة / joins, window functions (LAG, RANK, running totals), month-over-month, files bigger than comfortable pandas memory
 - **كيف / how:** con=duckdb.connect(); con.sql("WITH m AS (SELECT month, region, SUM(revenue) rev FROM read_csv('f.csv', header=true) GROUP BY 1,2) SELECT *, rev-LAG(rev) OVER (PARTITION BY region ORDER BY month) mom, RANK() OVER (PARTITION BY month ORDER BY rev DESC) rk FROM m").df(). Proof ran a CTE + LAG + RANK + NULLIF query on the raw CSV in 0.05 s. **أرقام / params:** explicit column lists; NULLIF(x,0) guards; ORDER BY inside every window
 - **تثبيت / install:** `pip install duckdb`
 - **يحتاج / needs:** [`pip:duckdb`](../requirements.md#req-pip-duckdb)
@@ -45,7 +45,7 @@
 
 #### ANLY-03 · تصدير Parquet وقراءته · Parquet export and read-back · ✅ مُثبت هنا / proven here
 - **ماذا / what:** حوّل CSV إلى Parquet مضغوط بأنواع أعمدة ثابتة، وتحقق من عدد الصفوف بعد القراءة. — Convert CSV to typed, compressed Parquet and verify the row count on read-back.
-- **متى أستخدمها / when:** handing data to another tool or session; repeated queries on the same data; keeping types stable
+- **متى أستخدمها / when:** عند تسليم البيانات لأداة أو جلسة أخرى؛ وتكرار الاستعلامات على البيانات نفسها؛ وتثبيت الأنواع / handing data to another tool or session; repeated queries on the same data; keeping types stable
 - **كيف / how:** duckdb: COPY (SELECT cols FROM read_csv('f.csv', header=true)) TO 'f.parquet' (FORMAT parquet); then SELECT COUNT(*) FROM 'f.parquet'. pyarrow alternative: pq.write_table / pq.read_table. Proof: 180 rows -> 3,590 B -> 180 rows.
 - **تثبيت / install:** `pip install duckdb (or pyarrow)`
 - **يحتاج / needs:** [`pip:duckdb`](../requirements.md#req-pip-duckdb)
@@ -55,7 +55,7 @@
 
 #### ANLY-04 · polars للجداول الكبيرة · polars fast DataFrames (v2 API) · ✅ مُثبت هنا / proven here
 - **ماذا / what:** جداول سريعة بمحرك Rust واستعلامات كسولة؛ الإصدار 2.0 غيّر بعض الواجهات. — Rust-backed DataFrames with lazy queries; version 2.0 changed parts of the API.
-- **متى أستخدمها / when:** multi-million-row files, memory pressure, or when a lazy query plan helps
+- **متى أستخدمها / when:** عند ملفات بملايين الصفوف، أو ضغط الذاكرة، أو حين تفيد خطة استعلام كسولة / multi-million-row files, memory pressure, or when a lazy query plan helps
 - **كيف / how:** pl.scan_csv(path).group_by('k').agg(pl.col('v').sum()).collect(). Before writing code from memory, check `python -c 'import polars;print(polars.__version__)'`: the 2026-10-16 snapshot had 2.0.0 and its API differs from 1.x.
 - **تثبيت / install:** `pip install polars`
 - **يحتاج / needs:** [`pip:polars`](../requirements.md#req-pip-polars)
@@ -65,7 +65,7 @@
 
 #### ANLY-05 · ملفات CSV عربية تفتح صحيحة في Excel · Arabic-safe CSV (utf-8-sig) · ✅ مُثبت هنا / proven here
 - **ماذا / what:** اكتب CSV بترميز UTF-8 مع BOM حتى يعرض Excel الحروف العربية، واقرأه بالترميز نفسه. — Write CSV as UTF-8 with BOM so Excel shows Arabic, and read it back with the same codec.
-- **متى أستخدمها / when:** any CSV with Arabic headers or values that a person will open in Excel
+- **متى أستخدمها / when:** عند أي CSV بعناوين أو قيم عربية سيفتحه شخص في Excel / any CSV with Arabic headers or values that a person will open in Excel
 - **كيف / how:** open(p,'w',newline='',encoding='utf-8-sig') + csv.DictWriter; read with encoding='utf-8-sig' (otherwise the first header gets a \ufeff prefix). Proof wrote and re-read 180 Arabic rows; Excel itself was not opened.
 - **الدليل / proof:** `kosif-tool/.claude/skills/kosif-superpowers/proofs/general-data/README.md`
 - **المصدر / source:** proofs/general-data/make_data.py
@@ -74,7 +74,7 @@
 
 #### ANLY-06 · حل رياضي دقيق بـ sympy · Exact symbolic solving with sympy · ✅ مُثبت هنا / proven here
 - **ماذا / what:** حُلّ المعادلات والاشتقاق والتكامل حلًا رمزيًا دقيقًا بدل الحساب الذهني. — Solve equations, derivatives and integrals exactly instead of doing mental arithmetic.
-- **متى أستخدمها / when:** break-even, optimum price, closed-form answers, checking a numeric optimiser, any 'exact' number
+- **متى أستخدمها / when:** عند نقطة التعادل، وأمثل سعر، والإجابات بصيغة مغلقة، والتحقق من مُحسِّن عددي، وأي رقم «دقيق» / break-even, optimum price, closed-form answers, checking a numeric optimiser, any 'exact' number
 - **كيف / how:** Q,p=sp.symbols('Q p',positive=True); sp.solve(sp.Eq(50*Q-30*Q-120000,0),Q) -> [6000]; sp.solve(sp.diff((p-20)*(1000-10*p),p),p) -> [60] and diff twice = -20 < 0 confirms a maximum; sp.integrate(sp.exp(-x**2),(x,-sp.oo,sp.oo)) -> sqrt(pi).
 - **تثبيت / install:** `pip install sympy`
 - **يحتاج / needs:** [`pip:sympy`](../requirements.md#req-pip-sympy)
@@ -84,7 +84,7 @@
 
 #### ANLY-07 · اختبارات إحصائية وانحدار بـ scipy · scipy.stats regression and tests · ✅ مُثبت هنا / proven here
 - **ماذا / what:** قِس الاتجاه (انحدار خطي) وقارن مجموعتين باختبار Welch، وأبلغ عن الأثر والدلالة معًا. — Fit trends and compare groups (Welch t-test), reporting effect and significance together.
-- **متى أستخدمها / when:** 'is this growing?', 'is A different from B?', before claiming a difference in a report
+- **متى أستخدمها / when:** عند «هل هذا ينمو؟» و«هل A يختلف عن B؟»، وقبل الادعاء بوجود فرق في تقرير / 'is this growing?', 'is A different from B?', before claiming a difference in a report
 - **كيف / how:** r=stats.linregress(x,y) -> slope, r^2=r.rvalue**2; stats.ttest_ind(a,b,equal_var=False). Proof: slope +8,018/month, r^2 0.706; Welch t=3.60, p=2.2e-3 on synthetic data. Report the slope or difference with units, not just p. **أرقام / params:** Welch by default (unequal variances); n small -> say so
 - **تثبيت / install:** `pip install scipy`
 - **يحتاج / needs:** [`pip:scipy`](../requirements.md#req-pip-scipy)
@@ -94,7 +94,7 @@
 
 #### ANLY-08 · نماذج إحصائية بـ statsmodels · statsmodels OLS and time-series models · ✅ مُثبت هنا / proven here
 - **ماذا / what:** انحدار OLS بجداول معاملات كاملة ونماذج سلاسل زمنية. — OLS with full coefficient tables, plus time-series models.
-- **متى أستخدمها / when:** you need standard errors, confidence intervals and diagnostics, not just a slope
+- **متى أستخدمها / when:** عند الحاجة إلى أخطاء معيارية وفترات ثقة وتشخيصات لا مجرد ميل / you need standard errors, confidence intervals and diagnostics, not just a slope
 - **كيف / how:** sm.OLS(y, sm.add_constant(X)).fit().summary(). The arsenal smoke test recovered slope 2.0 on y=2x+1.
 - **تثبيت / install:** `pip install statsmodels`
 - **يحتاج / needs:** [`python3`](../requirements.md#req-python3)
@@ -104,7 +104,7 @@
 
 #### ANLY-09 · محاكاة مونت كارلو للمخاطر · Seeded Monte Carlo risk check · ✅ مُثبت هنا / proven here
 - **ماذا / what:** حوّل الافتراضات غير المؤكدة إلى توزيعات، واحسب احتمال الخسارة والنسب المئوية بدل رقم واحد. — Turn uncertain assumptions into distributions and report P(loss) and percentiles instead of one point estimate.
-- **متى أستخدمها / when:** plans, budgets and forecasts that rest on guessed inputs; 'how risky is this?'
+- **متى أستخدمها / when:** عند الخطط والميزانيات والتوقعات القائمة على مدخلات مخمَّنة؛ و«ما مدى خطورة هذا؟» / plans, budgets and forecasts that rest on guessed inputs; 'how risky is this?'
 - **كيف / how:** rng=np.random.default_rng(seed); draw demand ~N, price ~triangular, cost ~U (100k draws); profit=units*(price-cost)-fixed; report (profit<0).mean() and np.percentile(profit,[5,50,95]). Proof: P(loss)=0.356, P5 -33,252, P50 10,570, P95 61,457. **أرقام / params:** N=100,000, fixed seed, state the distributions in the output
 - **تثبيت / install:** `pip install numpy`
 - **يحتاج / needs:** [`pip:numpy`](../requirements.md#req-pip-numpy) · [`npm:p5`](../requirements.md#req-npm-p5)
@@ -116,7 +116,7 @@
 
 #### ANLY-10 · رسم بياني بعناوين عربية في matplotlib · matplotlib charts with Arabic labels · ✅ مُثبت هنا / proven here
 - **ماذا / what:** رسوم PNG ثابتة بعناوين عربية صحيحة الاتصال بخطوط محلية (Tajawal/Amiri). — Static PNG charts with correctly joined Arabic titles and labels, using bundled fonts.
-- **متى أستخدمها / when:** report figures, charts for docx/pptx/pdf, social images of data
+- **متى أستخدمها / when:** عند أشكال التقارير، ومخططات docx/pptx/pdf، وصور وسائل التواصل للبيانات / report figures, charts for docx/pptx/pdf, social images of data
 - **كيف / how:** font_manager.fontManager.addfont('Tajawal-Bold.ttf'); rcParams['font.family']=['Tajawal','DejaVu Sans']; title with loc='right' for RTL; label bars directly; spines top/right off; muted grid. Then open the PNG and look. Proof chart.png: 78 KB. **أرقام / params:** dpi 110-150; one series = one hue (#2a78d6); text in ink colours, not series colour
 - **تثبيت / install:** `pip install matplotlib`
 - **يحتاج / needs:** [`pip:matplotlib`](../requirements.md#req-pip-matplotlib) · [`fonts:arabic`](../requirements.md#req-fonts-arabic)
@@ -126,7 +126,7 @@
 
 #### ANLY-11 · اكتشاف libraqm قبل تشكيل العربية · Detect libraqm before shaping Arabic · ✅ مُثبت هنا / proven here
 - **ماذا / what:** matplotlib 3.11 وPillow 12 يشكّلان العربية بأنفسهما؛ إضافة reshaper+bidi فوقهما تعكس النص. — matplotlib 3.11 and Pillow 12 shape Arabic themselves; adding reshaper+bidi on top reverses the text.
-- **متى أستخدمها / when:** before drawing any Arabic in matplotlib or Pillow; when you see reversed or unjoined Arabic
+- **متى أستخدمها / when:** قبل رسم أي عربية في matplotlib أو Pillow؛ وعند رؤية عربية معكوسة أو غير متصلة / before drawing any Arabic in matplotlib or Pillow; when you see reversed or unjoined Arabic
 - **كيف / how:** RAQM=getattr(matplotlib.ft2font,'__libraqm_version__',None); text = s if RAQM else get_display(arabic_reshaper.reshape(s)). For Pillow: PIL.features.check('raqm'). Proof: libraqm 0.10.5 in both wheels; mpl_arabic_modes.png shows raw (correct) vs reshaped (reversed).
 - **يحتاج / needs:** [`pip:pillow`](../requirements.md#req-pip-pillow) · [`pip:matplotlib`](../requirements.md#req-pip-matplotlib) · [`pip:arabic-reshaper`](../requirements.md#req-pip-arabic-reshaper)
 - **الدليل / proof:** `kosif-tool/.claude/skills/kosif-superpowers/proofs/general-data/README.md` · `kosif-tool/.claude/skills/kosif-superpowers/proofs/general-media/README.md`
@@ -134,7 +134,7 @@
 
 #### ANLY-12 · فحص ألوان الرسم آليًا · Validate chart colours with the dataviz checker · ✅ مُثبت هنا / proven here
 - **ماذا / what:** شغّل مدقق ألوان مهارة dataviz (التباين، شريط الإضاءة، عمى الألوان) بدل الحكم بالعين. — Run the dataviz skill's palette validator (contrast, lightness band, colour-blind separation) instead of eyeballing.
-- **متى أستخدمها / when:** any chart with colour; always before multi-series categorical palettes
+- **متى أستخدمها / when:** عند أي رسم بألوان؛ ودائمًا قبل لوحات الألوان الفئوية متعددة السلاسل / any chart with colour; always before multi-series categorical palettes
 - **كيف / how:** Load the dataviz skill if the host lists it, then `node <skill>/scripts/validate_palette.js "#hex,#hex" --mode light` and again `--mode dark`. Fix every FAIL. Proof: #2a78d6 (light) and #3987e5 (dark) PASS all checks. **أرقام / params:** CVD dE >= 8 target; contrast >= 3:1 on surface; max 3 series for scatter-like forms
 - **يحتاج / needs:** [`node`](../requirements.md#req-node)
 - **الرخصة / license:** host skill
@@ -143,7 +143,7 @@
 
 #### ANLY-13 · رسوم تفاعلية HTML بـ plotly · plotly interactive HTML charts · ✅ مُثبت هنا / proven here
 - **ماذا / what:** رسوم تفاعلية بتلميحات وتكبير في ملف HTML؛ الحجم الافتراضي كبير لأن المكتبة تُضمَّن كاملة. — Interactive HTML charts with hover and zoom; by default the whole library is inlined, so the file is large.
-- **متى أستخدمها / when:** an exploratory chart someone will open in a browser; not for print
+- **متى أستخدمها / when:** عند مخطط استكشافي سيفتحه أحدهم في متصفح؛ وليس للطباعة / an exploratory chart someone will open in a browser; not for print
 - **كيف / how:** px.bar(df,x,y).write_html('c.html', include_plotlyjs='cdn') to avoid inlining the library. The arsenal run inlined it and got 4.8 MB; the 'cdn' variant was not timed. PNG export needs kaleido + Chrome.
 - **تثبيت / install:** `pip install plotly`
 - **يحتاج / needs:** [`pip:plotly`](../requirements.md#req-pip-plotly)
@@ -153,7 +153,7 @@
 
 #### ANLY-14 · مواصفات Vega-Lite بـ altair · altair / Vega-Lite chart specs · ✅ مُثبت هنا / proven here
 - **ماذا / what:** رسم تصريحي يُخرج JSON بمواصفة Vega-Lite يمكن عرضه في صفحة ويب. — Declarative charts that emit a Vega-Lite JSON spec for a web page.
-- **متى أستخدمها / when:** you want a portable chart spec rather than pixels
+- **متى أستخدمها / when:** حين تريد مواصفة رسم قابلة للنقل بدل الصور النقطية / you want a portable chart spec rather than pixels
 - **كيف / how:** alt.Chart(df).mark_bar().encode(x='k', y='v').to_json(). The arsenal run produced the JSON.
 - **تثبيت / install:** `pip install altair`
 - **يحتاج / needs:** [`python3`](../requirements.md#req-python3)
@@ -163,7 +163,7 @@
 
 #### ANLY-15 · رسوم إحصائية بـ seaborn · seaborn statistical plots · ✅ مُثبت هنا / proven here
 - **ماذا / what:** توزيعات وعلاقات بسطر واحد فوق matplotlib. — Distributions and relationships in one line, on top of matplotlib.
-- **متى أستخدمها / when:** histograms, box/violin plots, pair plots in exploratory analysis
+- **متى أستخدمها / when:** للمدرّجات التكرارية ومخططات الصندوق والكمان والرسوم الزوجية في التحليل الاستكشافي / histograms, box/violin plots, pair plots in exploratory analysis
 - **كيف / how:** sns.histplot(data); sns.boxplot(x=,y=,data=). Then apply the same Arabic/font rules as matplotlib.
 - **تثبيت / install:** `pip install seaborn`
 - **يحتاج / needs:** [`pip:matplotlib`](../requirements.md#req-pip-matplotlib)
@@ -175,7 +175,7 @@
 
 #### ANLY-16 · تعلم آلي كلاسيكي بـ scikit-learn · scikit-learn classic ML · ✅ مُثبت هنا / proven here
 - **ماذا / what:** تصنيف وانحدار وتجميع بخطوط معالجة موحدة. — Classification, regression and clustering through uniform pipelines.
-- **متى أستخدمها / when:** tabular prediction, clustering customers, baseline models before anything heavier
+- **متى أستخدمها / when:** عند التنبؤ بالبيانات الجدولية أو تقسيم العملاء إلى مجموعات أو بناء نماذج أساس قبل أي نموذج أثقل / tabular prediction, clustering customers, baseline models before anything heavier
 - **كيف / how:** Pipeline([('scale',StandardScaler()),('m',RandomForestClassifier(random_state=0))]); evaluate with cross_val_score, never with the training score. The arsenal smoke test fitted iris; its training score of 1.0 shows the API works and says nothing about accuracy.
 - **تثبيت / install:** `pip install scikit-learn`
 - **يحتاج / needs:** [`pip:sklearn`](../requirements.md#req-pip-sklearn)
@@ -185,7 +185,7 @@
 
 #### ANLY-17 · تعزيز متدرّج XGBoost وLightGBM · Gradient boosting (XGBoost, LightGBM) · ✅ مُثبت هنا / proven here
 - **ماذا / what:** أقوى خط أساس للبيانات الجدولية. — The strongest baseline for tabular data.
-- **متى أستخدمها / when:** tabular prediction where a random forest plateaus
+- **متى أستخدمها / when:** عند التنبؤ بالبيانات الجدولية حين تتوقف الغابة العشوائية عن التحسن / tabular prediction where a random forest plateaus
 - **كيف / how:** xgb.XGBRegressor(n_estimators=...).fit(X,y); lgb.LGBMRegressor(verbose=-1). Use early stopping on a validation split. Both ran fit/predict in the arsenal snapshot.
 - **تثبيت / install:** `pip install xgboost lightgbm`
 - **يحتاج / needs:** [`python3`](../requirements.md#req-python3)
@@ -195,7 +195,7 @@
 
 #### ANLY-18 · برمجة خطية لمزيج المنتجات · Linear programming with scipy/HiGHS · ✅ مُثبت هنا / proven here
 - **ماذا / what:** احسب التوليفة المثلى تحت القيود بمحلّل HiGHS، وتحقق من الرأس بحل دقيق. — Find the optimal mix under constraints with HiGHS and confirm the vertex exactly.
-- **متى أستخدمها / when:** allocation, product mix, schedules, budgets with limits
+- **متى أستخدمها / when:** عند توزيع الموارد ومزيج المنتجات والجداول والميزانيات ذات القيود / allocation, product mix, schedules, budgets with limits
 - **كيف / how:** optimize.linprog(c=[-40,-30], A_ub=[[1,1],[2,1]], b_ub=[40,60], bounds=[(0,None)]*2, method='highs') (negate to maximise) -> x=y=20, profit 1,400; confirm with sympy.solve on the two binding constraints.
 - **تثبيت / install:** `pip install scipy`
 - **يحتاج / needs:** [`pip:scipy`](../requirements.md#req-pip-scipy) · [`pip:sympy`](../requirements.md#req-pip-sympy)
@@ -205,7 +205,7 @@
 
 #### ANLY-19 · OR-Tools للجدولة والمسارات · OR-Tools (LP/MIP/CP-SAT/routing) · ✅ مُثبت هنا / proven here
 - **ماذا / what:** محللات Google للبرمجة الخطية والصحيحة والقيود والمسارات. — Google's solvers for LP, MIP, constraint programming and routing.
-- **متى أستخدمها / when:** integer decisions, scheduling, vehicle routing, assignment
+- **متى أستخدمها / when:** عند القرارات الصحيحة (العددية) والجدولة وتوجيه المركبات والإسناد / integer decisions, scheduling, vehicle routing, assignment
 - **كيف / how:** pywraplp.Solver.CreateSolver('GLOP') for LP, 'SCIP'/'CBC' for MIP; cp_model.CpModel() for CP-SAT. The arsenal GLOP run maximised 3x on [0,10] to 10.0. Do not import pulp 4 (highspy) and ortools in the same Python process: both bundle HiGHS, so ortools fails with ImportError (undefined symbol in libortools) or pulp reports "HiGHS: Not Available". Use separate processes or venvs.
 - **تثبيت / install:** `pip install ortools`
 - **يحتاج / needs:** [`pip:ortools`](../requirements.md#req-pip-ortools) · [`pip:pulp`](../requirements.md#req-pip-pulp)
@@ -215,7 +215,7 @@
 
 #### ANLY-20 · تغيّر واجهة PuLP 4.0 · PuLP 4.0 API change · ✅ مُثبت هنا / proven here
 - **ماذا / what:** الصيغة القديمة LpVariable وPULP_CBC_CMD تفشل في PuLP 4؛ المحلّل المتاح HiGHS. — The old LpVariable/PULP_CBC_CMD style fails in PuLP 4; the available solver is HiGHS.
-- **متى أستخدمها / when:** any code you remember from PuLP 2.x/3.x
+- **متى أستخدمها / when:** عند وجود أي شيفرة تتذكرها من PuLP 2.x/3.x / any code you remember from PuLP 2.x/3.x
 - **كيف / how:** x=m.add_variable('x',0,4); m.solve(pulp.HiGHS(msg=False)); pulp.listSolvers(onlyAvailable=True) -> ['HiGHS']. If you need OR-Tools instead, run it in a separate process or venv. Do not import pulp 4 (highspy) and ortools in the same Python process: both bundle HiGHS, so ortools fails with ImportError (undefined symbol in libortools) or pulp reports "HiGHS: Not Available". Use separate processes or venvs.
 - **تثبيت / install:** `pip install pulp`
 - **يحتاج / needs:** [`pip:ortools`](../requirements.md#req-pip-ortools) · [`pip:pulp`](../requirements.md#req-pip-pulp)
@@ -225,7 +225,7 @@
 
 #### ANLY-21 · تحسين محدّب بـ cvxpy · Convex optimisation with cvxpy · ✅ مُثبت هنا / proven here
 - **ماذا / what:** صُغ مسائل التحسين المحدّب كما تُكتب رياضيًا. — Write convex optimisation problems the way they look on paper.
-- **متى أستخدمها / when:** portfolio weights, least squares with constraints, regularised fits
+- **متى أستخدمها / when:** لأوزان المحافظ والمربعات الصغرى بقيود والتهيئات المنتظمة / portfolio weights, least squares with constraints, regularised fits
 - **كيف / how:** x=cp.Variable(); cp.Problem(cp.Minimize((x-2)**2)).solve() -> 2.0 (arsenal run).
 - **تثبيت / install:** `pip install cvxpy`
 - **يحتاج / needs:** [`python3`](../requirements.md#req-python3)
@@ -235,7 +235,7 @@
 
 #### ANLY-22 · حل قيود منطقية بـ z3 · z3 SMT constraint solving · ✅ مُثبت هنا / proven here
 - **ماذا / what:** أثبِت قيودًا منطقية وعددية أو جد حلولًا لها (ألغاز، جداول، تحقق). — Find or rule out solutions to logical/integer constraints (puzzles, rosters, verification).
-- **متى أستخدمها / when:** 'is there any assignment that…', configuration checks, puzzles
+- **متى أستخدمها / when:** عند سؤال «هل يوجد أي إسناد يحقق…» وفحص الإعدادات والألغاز / 'is there any assignment that…', configuration checks, puzzles
 - **كيف / how:** a,b=z3.Ints('a b'); s=z3.Solver(); s.add(a+b==10,a-b==4); s.check(); s.model() -> a=7,b=3 (arsenal run). unsat is itself a proof of impossibility.
 - **تثبيت / install:** `pip install z3-solver`
 - **يحتاج / needs:** [`pip:z3`](../requirements.md#req-pip-z3)
@@ -245,7 +245,7 @@
 
 #### ANLY-23 · خوارزميات الرسوم البيانية بـ networkx · Graph algorithms with networkx · ✅ مُثبت هنا / proven here
 - **ماذا / what:** أقصر مسار ومركزية ومجتمعات على شبكات العلاقات. — Shortest paths, centrality and communities on relationship networks.
-- **متى أستخدمها / when:** dependencies, org charts, routes, social graphs
+- **متى أستخدمها / when:** للاعتماديات والهياكل التنظيمية والمسارات والشبكات الاجتماعية / dependencies, org charts, routes, social graphs
 - **كيف / how:** nx.shortest_path(G,a,b); nx.pagerank(G); nx.community.louvain_communities(G). The arsenal run returned the shortest path on path_graph(5).
 - **تثبيت / install:** `pip install networkx`
 - **يحتاج / needs:** [`python3`](../requirements.md#req-python3)
@@ -255,7 +255,7 @@
 
 #### ANLY-24 · تحليل مكاني بـ geopandas · Spatial analysis (geopandas/shapely/pyproj) · ✅ مُثبت هنا / proven here
 - **ماذا / what:** مساحات ومسافات وإسقاطات وتجميع مكاني على بيانات جغرافية. — Areas, distances, projections and spatial joins on geographic data.
-- **متى أستخدمها / when:** per-city/area aggregation, distances, buffers; data feeding maps
+- **متى أستخدمها / when:** عند التجميع لكل مدينة/منطقة وحساب المسافات والنطاقات المحيطة، وعند تغذية الخرائط بالبيانات / per-city/area aggregation, distances, buffers; data feeding maps
 - **كيف / how:** gdf.to_crs(3857) before measuring metres; Transformer.from_crs(4326,3857,always_xy=True). The arsenal run gave Cairo lon 31.2 -> x 3,473,168 m.
 - **تثبيت / install:** `pip install geopandas shapely pyproj`
 - **يحتاج / needs:** [`fonts:arabic`](../requirements.md#req-fonts-arabic) · [`pip:geopandas`](../requirements.md#req-pip-geopandas) · [`pip:shapely`](../requirements.md#req-pip-shapely)
@@ -265,7 +265,7 @@
 
 #### ANLY-25 · تنبؤ الأعمال بـ prophet · Business forecasting with prophet · 📦 بأمر تثبيت / one install
 - **ماذا / what:** تنبؤ بسلاسل زمنية فيها موسمية وأعياد. — Forecasts for seasonal time series with holidays.
-- **متى أستخدمها / when:** weekly/daily business series with seasonality
+- **متى أستخدمها / when:** للسلاسل الأسبوعية/اليومية في الأعمال ذات الموسمية / weekly/daily business series with seasonality
 - **كيف / how:** Prophet().fit(df[['ds','y']]).predict(future). It pulls cmdstan (heavy), so try statsmodels first. Not installed or run here.
 - **تثبيت / install:** `pip install prophet`
 - **يحتاج / needs:** [`python3`](../requirements.md#req-python3)
@@ -277,7 +277,7 @@
 
 #### ANLY-26 · احسب في الكود ثم جمّد ثم اروِ · Compute in code, reconcile, freeze, then narrate · ✅ مُثبت هنا / proven here
 - **ماذا / what:** كل رقم دقيق يأتي من كود، ويُطابَق بطريقتين مستقلتين، ويُجمَّد في ملف، ثم يُكتب النص من الملف. — Every exact figure comes from code, is reconciled two independent ways, frozen to a file, and the prose is written from that file.
-- **متى أستخدمها / when:** any answer, report, dashboard or slide that contains numbers
+- **متى أستخدمها / when:** عند أي إجابة أو تقرير أو لوحة أو شريحة تحتوي أرقامًا / any answer, report, dashboard or slide that contains numbers
 - **كيف / how:** 1) compute; 2) control totals: plain csv sum == pandas == SQL, and subtotals add back to the total; 3) write results.json; 4) generate text/HTML from results.json, never by retyping; 5) if something does not reconcile, report the gap and never plug it. Proof: 3,281,841 matched three ways and the dashboard reads the frozen numbers. **أرقام / params:** integer money units; expected row count asserted
 - **يحتاج / needs:** [`pip:pandas`](../requirements.md#req-pip-pandas)
 - **الدليل / proof:** `kosif-tool/.claude/skills/kosif-superpowers/proofs/general-data/README.md`
@@ -285,14 +285,14 @@
 
 #### ANLY-27 · بوابات نظافة SQL · SQL hygiene gates · ✅ مُثبت هنا / proven here
 - **ماذا / what:** لا SELECT *، وأسماء CTE واضحة، وحماية من القسمة على صفر، وعدد صفوف متوقع يُتحقق منه. — No SELECT *, named CTEs, divide-by-zero guards, and an asserted expected row count.
-- **متى أستخدمها / when:** every query whose result feeds a decision
+- **متى أستخدمها / when:** عند كل استعلام تغذّي نتيجته قرارًا / every query whose result feeds a decision
 - **كيف / how:** Name the columns; use NULLIF(den,0); assert COUNT(*) against the expected grain (12x5=60); compare SUM to an independent total; sample-check five rows by hand. Proof query follows all of these.
 - **الدليل / proof:** `kosif-tool/.claude/skills/kosif-superpowers/proofs/general-data/README.md`
 - **المصدر / source:** owner: KOSIF SEE v1.7.5 skills/kosif-finance-data (paraphrased in own words)
 
 #### ANLY-28 · بيانات اختبار معلنة ومبذورة · Seeded, labelled synthetic data · ✅ مُثبت هنا / proven here
 - **ماذا / what:** ولّد بيانات تجريبية ببذرة ثابتة واكتب «اصطناعية» على كل مخرج؛ مكتبة faker لا تضمن أسماء عربية. — Generate fixtures from a fixed seed and label every output as synthetic; faker's Arabic locales are unreliable.
-- **متى أستخدمها / when:** demos, tests, proofs, examples without real data
+- **متى أستخدمها / when:** في العروض والاختبارات والإثباتات والأمثلة دون بيانات حقيقية / demos, tests, proofs, examples without real data
 - **كيف / how:** np.random.default_rng(7); write the seed in the output. faker('ar_EG').name() returned a Latin name in the arsenal run, so hand-write Arabic name lists. Proof chart and dashboard both say 'synthetic (seed 7)'.
 - **تثبيت / install:** `pip install numpy (faker optional)`
 - **يحتاج / needs:** [`pip:numpy`](../requirements.md#req-pip-numpy)
@@ -302,7 +302,7 @@
 
 #### ANLY-29 · هيكل نموذج الجداول المالية · Spreadsheet model structure · 📄 موصوف / documented only
 - **ماذا / what:** فصل المدخلات عن الحسابات عن المخرجات، دون أرقام مثبّتة داخل المعادلات، مع خلايا فحص تساوي صفرًا. — Separate inputs, calculations and outputs; no hard-coded numbers inside formulas; check cells that must equal zero.
-- **متى أستخدمها / when:** building or reviewing an Excel/Sheets model
+- **متى أستخدمها / when:** عند بناء نموذج Excel/Sheets أو مراجعته / building or reviewing an Excel/Sheets model
 - **كيف / how:** Sheets: Inputs (blue font, units, source), Calc (formulas only), Outputs (links only), Checks (balance - assets + liabilities = 0; sum of shares = 100%). Scenario overrides live on Inputs. Recalculate with LibreOffice (DOC-03) before you quote anything.
 - **يحتاج / needs:** [`libreoffice`](../requirements.md#req-libreoffice)
 - **الدليل / proof:** — (لا دليل تشغيل بعد / no run proof yet)
@@ -312,7 +312,7 @@
 
 #### ANLY-30 · SymPy: حل المعادلات وتبسيطها واشتقاقها وتكاملها بدقة رمزية · SymPy: Solve, simplify, differentiate and integrate exactly; export LaTeX · ✅ مُثبت هنا / proven here
 - **ماذا / what:** حل المعادلات وتبسيطها واشتقاقها وتكاملها بدقة رمزية وتصديرها LaTeX. — Solve, simplify, differentiate and integrate exactly; export LaTeX. (SymPy, ★15.0k, BSD-3-Clause).
-- **متى أستخدمها / when:** symbolic math tasks the user has the right to run
+- **متى أستخدمها / when:** في مهام الرياضيات الرمزية التي يحق للمستخدم تشغيلها / symbolic math tasks the user has the right to run
 - **كيف / how:** `pip install sympy`. Verified here 2026-10-18: roots [2, 3], ∫sin²=π/2, LaTeX \frac{\pi}{2} (sympy 1.14.0). Licence note: permissive.
 - **تثبيت / install:** `pip install sympy`
 - **يحتاج / needs:** [`latex`](../requirements.md#req-latex) · [`pip:sympy`](../requirements.md#req-pip-sympy)
@@ -322,7 +322,7 @@
 
 #### ANLY-31 · Z3 SMT solver: صياغة القيود وخصائص البرامج كمسائل SMT وإثباتها · Z3 SMT solver: Encode constraints or program properties as SMT and prove them or get a counterexample · ✅ مُثبت هنا / proven here
 - **ماذا / what:** صياغة القيود وخصائص البرامج كمسائل SMT وإثباتها أو إيجاد مثال مضاد. — Encode constraints or program properties as SMT and prove them or get a counterexample. (Z3 SMT solver, ★12.8k, MIT).
-- **متى أستخدمها / when:** formal proof tasks the user has the right to run
+- **متى أستخدمها / when:** في مهام الإثبات الصوري التي يحق للمستخدم تشغيلها / formal proof tasks the user has the right to run
 - **كيف / how:** `pip install z3-solver`. Verified here 2026-10-18: a+b=b+a proved (unsat negation); a²=49 ∧ a<0 → a=-7 (z3 ). Licence note: permissive.
 - **تثبيت / install:** `pip install z3-solver`
 - **يحتاج / needs:** [`pip:z3`](../requirements.md#req-pip-z3)
@@ -332,7 +332,7 @@
 
 #### ANLY-32 · Lean 4: كتابة براهين رياضية صورية والتحقق منها آليًا · Lean 4: Write and machine-check formal proofs of theorems · 📦 بأمر تثبيت / one install
 - **ماذا / what:** كتابة براهين رياضية صورية والتحقق منها آليًا. — Write and machine-check formal proofs of theorems. (Lean 4, ★9.6k, Apache-2.0).
-- **متى أستخدمها / when:** formal proof tasks the user has the right to run
+- **متى أستخدمها / when:** في مهام الإثبات الصوري التي يحق للمستخدم تشغيلها / formal proof tasks the user has the right to run
 - **كيف / how:** `curl -sSf https://raw.githubusercontent.com/leanprover/elan/master/elan-init.sh | sh -s -- -y  (Mathlib cache ~1–2 GB)`. Licence note: permissive.
 - **تثبيت / install:** `curl -sSf https://raw.githubusercontent.com/leanprover/elan/master/elan-init.sh | sh -s -- -y  (Mathlib cache ~1–2 GB)`
 - **يحتاج / needs:** [`network`](../requirements.md#req-network) · [`lean`](../requirements.md#req-lean)
@@ -342,7 +342,7 @@
 
 #### ANLY-33 · DuckDB: تنفيذ SQL مباشرة على ملفات CSV وParquet · DuckDB: Run SQL directly over multi-GB CSV/Parquet/JSON files in-process · ✅ مُثبت هنا / proven here
 - **ماذا / what:** تنفيذ SQL مباشرة على ملفات CSV وParquet وJSON ضخمة داخل العملية. — Run SQL directly over multi-GB CSV/Parquet/JSON files in-process. (DuckDB, ★42.2k, MIT).
-- **متى أستخدمها / when:** sql engines tasks the user has the right to run
+- **متى أستخدمها / when:** في مهام محركات SQL التي يحق للمستخدم تشغيلها / sql engines tasks the user has the right to run
 - **كيف / how:** `pip install duckdb`. Verified here 2026-10-18: group-by over 100k rows → 7 groups (duckdb 1.5.6). Licence note: permissive.
 - **تثبيت / install:** `pip install duckdb`
 - **يحتاج / needs:** [`pip:duckdb`](../requirements.md#req-pip-duckdb)
@@ -352,7 +352,7 @@
 
 #### ANLY-34 · Polars: تنظيف وتجميع جداول كبيرة بإطارات بيانات كسولة · Polars: Clean and aggregate large tables with lazy, multi-threaded dataframes · ✅ مُثبت هنا / proven here
 - **ماذا / what:** تنظيف وتجميع جداول كبيرة بإطارات بيانات كسولة متعددة الخيوط. — Clean and aggregate large tables with lazy, multi-threaded dataframes. (Polars, ★40.1k, MIT).
-- **متى أستخدمها / when:** dataframes tasks the user has the right to run
+- **متى أستخدمها / when:** في مهام أطر البيانات التي يحق للمستخدم تشغيلها / dataframes tasks the user has the right to run
 - **كيف / how:** `pip install polars`. Verified here 2026-10-18: lazy group_by sum a=4 b=7 c=4 (polars 2.0.0). Licence note: permissive.
 - **تثبيت / install:** `pip install polars`
 - **يحتاج / needs:** [`pip:polars`](../requirements.md#req-pip-polars)
@@ -362,7 +362,7 @@
 
 #### ANLY-35 · scikit-learn: تدريب نماذج التصنيف والانحدار على بيانات جدولية · scikit-learn: Train, cross-validate and explain classifiers and regressors on tabular data · ✅ مُثبت هنا / proven here
 - **ماذا / what:** تدريب نماذج التصنيف والانحدار على بيانات جدولية وتقييمها بالتحقق المتقاطع. — Train, cross-validate and explain classifiers and regressors on tabular data. (scikit-learn, ★67.7k, BSD-3-Clause).
-- **متى أستخدمها / when:** machine learning tasks the user has the right to run
+- **متى أستخدمها / when:** في مهام تعلّم الآلة التي يحق للمستخدم تشغيلها / machine learning tasks the user has the right to run
 - **كيف / how:** `pip install scikit-learn`. Verified here 2026-10-18: iris RandomForest 5-fold accuracy 0.960 (sklearn 1.9.1). Licence note: permissive.
 - **تثبيت / install:** `pip install scikit-learn`
 - **يحتاج / needs:** [`pip:sklearn`](../requirements.md#req-pip-sklearn)
@@ -372,7 +372,7 @@
 
 #### ANLY-36 · StatsForecast: بناء توقعات AutoARIMA وETS مع فترات ثقة · StatsForecast: Fit AutoARIMA/ETS forecasts with prediction intervals on many series · ✅ مُثبت هنا / proven here
 - **ماذا / what:** بناء توقعات AutoARIMA وETS مع فترات ثقة لسلاسل زمنية كثيرة. — Fit AutoARIMA/ETS forecasts with prediction intervals on many series. (StatsForecast, ★4.9k, Apache-2.0).
-- **متى أستخدمها / when:** forecasting tasks the user has the right to run
+- **متى أستخدمها / when:** في مهام التنبؤ التي يحق للمستخدم تشغيلها / forecasting tasks the user has the right to run
 - **كيف / how:** `pip install statsforecast`. Verified here 2026-10-18: 6-month forecast, first 196.0 with 80% interval (statsforecast 2.1.1). Licence note: permissive.
 - **تثبيت / install:** `pip install statsforecast`
 - **يحتاج / needs:** [`pip:statsforecast`](../requirements.md#req-pip-statsforecast)
@@ -382,7 +382,7 @@
 
 #### ANLY-37 · GeoPandas: ربط البيانات الجغرافية وإعادة إسقاطها بإحداثيات مترية · GeoPandas: Join, buffer and reproject vector geodata in true metric CRSs and export GeoJSON · ✅ مُثبت هنا / proven here
 - **ماذا / what:** ربط البيانات الجغرافية وإعادة إسقاطها بإحداثيات مترية حقيقية وتصديرها GeoJSON. — Join, buffer and reproject vector geodata in true metric CRSs and export GeoJSON. (GeoPandas, ★5.3k, BSD-3-Clause).
-- **متى أستخدمها / when:** geospatial tasks the user has the right to run
+- **متى أستخدمها / when:** في المهام الجغرافية المكانية التي يحق للمستخدم تشغيلها / geospatial tasks the user has the right to run
 - **كيف / how:** `pip install geopandas`. Verified here 2026-10-18: 1 km buffer around Cairo in UTM 36N → 3.1413 km² (π expected); lon span 0.0207° (geopandas 1.2.0). Licence note: permissive.
 - **تثبيت / install:** `pip install geopandas`
 - **يحتاج / needs:** [`fonts:arabic`](../requirements.md#req-fonts-arabic) · [`pip:geopandas`](../requirements.md#req-pip-geopandas)
@@ -392,7 +392,7 @@
 
 #### ANLY-38 · Biopython: قراءة FASTA وGenBank وترجمة التسلسلات ومحاذاتها · Biopython: Parse FASTA/GenBank, translate and align sequences · ✅ مُثبت هنا / proven here
 - **ماذا / what:** قراءة FASTA وGenBank وترجمة التسلسلات ومحاذاتها. — Parse FASTA/GenBank, translate and align sequences. (Biopython, ★5.2k, Biopython License / BSD-3-Clause).
-- **متى أستخدمها / when:** bioinformatics tasks the user has the right to run
+- **متى أستخدمها / when:** في مهام المعلوماتية الحيوية التي يحق للمستخدم تشغيلها / bioinformatics tasks the user has the right to run
 - **كيف / how:** `pip install biopython`. Verified here 2026-10-18: protein MAIVMGR, GC 0.56 (Bio 1.88). Licence note: permissive.
 - **تثبيت / install:** `pip install biopython`
 - **يحتاج / needs:** [`pip:biopython`](../requirements.md#req-pip-biopython)
@@ -402,7 +402,7 @@
 
 #### ANLY-39 · RDKit: قراءة صيغ SMILES وحساب الواصفات الجزيئية ورسم · RDKit: Parse SMILES, compute molecular descriptors and draw molecules · ✅ مُثبت هنا / proven here
 - **ماذا / what:** قراءة صيغ SMILES وحساب الواصفات الجزيئية ورسم الجزيئات. — Parse SMILES, compute molecular descriptors and draw molecules. (RDKit, ★3.6k, BSD-3-Clause).
-- **متى أستخدمها / when:** chemistry tasks the user has the right to run
+- **متى أستخدمها / when:** في مهام الكيمياء التي يحق للمستخدم تشغيلها / chemistry tasks the user has the right to run
 - **كيف / how:** `pip install rdkit`. Verified here 2026-10-18: aspirin MW 180.16, 13 heavy atoms (rdkit 2026.09.1). Licence note: permissive.
 - **تثبيت / install:** `pip install rdkit`
 - **يحتاج / needs:** [`pip:rdkit`](../requirements.md#req-pip-rdkit)

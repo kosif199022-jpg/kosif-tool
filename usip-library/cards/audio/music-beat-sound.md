@@ -325,7 +325,7 @@
 | نطاق الدليل | `sibling` |
 | الرخصة | MIT |
 
-**ما هي:** Measure integrated loudness first, then apply the measured values linearly so the mix lands on target without pumping.
+**ما هي:** قياس الجهارة الكلية أولًا، ثم تطبيق القيم المقيسة خطيًا ليستقر المزيج عند الهدف دون تضخيم متذبذب. — Measure integrated loudness first, then apply the measured values linearly so the mix lands on target without pumping.
 
 **متى:** حين يلزم ضبط علو الصوت النهائي على هدف ثابت لليوتيوب أو البودكاست دون تذبذب / when the final mix must land on a loudness target such as -14 LUFS accurately, without pumping
 
@@ -395,7 +395,7 @@
 | نطاق الدليل | `sibling` |
 | الرخصة | owner |
 
-**ما هي:** Ten synthesised effects placed at times the picture exports (contact frames, pops, settles).
+**ما هي:** عشرة مؤثرات مُركَّبة توضع في أوقات تحددها الصورة (إطارات التلامس والفرقعات والاستقرار). — Ten synthesised effects placed at times the picture exports (contact frames, pops, settles).
 
 **متى:** حين تحتاج مؤثرات قصيرة مركبة (نقرة، فرقعة، ووش) توضع على لحظات التلامس والظهور في الصورة / when synthesized sound effects must land on contact frames, pops and settles in the animation
 
@@ -465,7 +465,7 @@
 | نطاق الدليل | `sibling` |
 | الرخصة | owner |
 
-**ما هي:** Pitch and tempo dive together to a halt then dead air; the restart spins up from zero into the next section.
+**ما هي:** تنخفض طبقة الصوت والإيقاع معًا حتى التوقف ثم صمت تام؛ ويعود التشغيل من الصفر إلى القسم التالي. — Pitch and tempo dive together to a halt then dead air; the restart spins up from zero into the next section.
 
 **متى:** عند الرغبة في توقف الموسيقى كأن الشريط يبطئ حتى يصمت ثم يعود للدوران في القسم التالي / when the music should dive to a halt like a stopping tape, then spin back up into the next section
 
@@ -536,7 +536,7 @@
 | نطاق الدليل | `sibling` |
 | الرخصة | owner |
 
-**ما هي:** Per-clip literal sound cues and one short line, with a dialogue speed gate.
+**ما هي:** مؤثرات صوتية حرفية لكل مقطع وجملة قصيرة واحدة، مع بوابة لسرعة الحوار. — Per-clip literal sound cues and one short line, with a dialogue speed gate.
 
 **متى:** حين تصنع مقاطع رجل عصوي وتحتاج مؤثرات حرفية لكل لقطة وجملة حوار قصيرة بسرعة كلام محدودة / for stickman clips needing 2-4 literal sound effects per clip and one short, slow-paced dialogue line
 
@@ -605,7 +605,7 @@
 | نطاق الدليل | `sibling` |
 | الرخصة | owner |
 
-**ما هي:** Engine rise and tyre squeal on drift, tyre-air hiss, layered servo whooshes and metal separation ticks on expansion, small metallic clicks and low bass snap on reassembly, consistent room tone, no music.
+**ما هي:** ارتفاع صوت المحرك وصرير الإطارات عند الانزلاق، وهسيس هواء الإطار، وأصوات سيرفو متراكبة وطقطقات انفصال معدنية عند التوسع، ونقرات معدنية صغيرة وفرقعة جهيرة منخفضة عند إعادة التركيب، وضجيج غرفة ثابت، دون موسيقى. — Engine rise and tyre squeal on drift, tyre-air hiss, layered servo whooshes and metal separation ticks on expansion, small metallic clicks and low bass snap on reassembly, consistent room tone, no music.
 
 **متى:** عند تصميم صوت لفيديو سيارة تنجرف أو تتفكك: هدير محرك وصرير إطارات ونقرات معدنية بلا موسيقى / when a car drift or transformation video needs engine, tyre-squeal and metallic servo sounds with no music
 
@@ -671,7 +671,7 @@
 | نطاق الدليل | `sibling` |
 | الرخصة | owner |
 
-**ما هي:** Action-specific sounds (ice-on-glass clatter, wet sauce scrape, frying sizzle, cellophane crinkle) and 10 tasting-sound presets (crust crackle, straw slurp, fizzy sip, crispy crunch...).
+**ما هي:** أصوات خاصة بكل فعل (قرقعة الثلج في الكأس، كشط الصلصة الرطبة، فحيح القلي، خشخشة السلوفان) و10 إعدادات مسبقة لأصوات التذوق (طقطقة القشرة، شفط الماصّة، رشفة غازية، قرمشة...). — Action-specific sounds (ice-on-glass clatter, wet sauce scrape, frying sizzle, cellophane crinkle) and 10 tasting-sound presets (crust crackle, straw slurp, fizzy sip, crispy crunch...).
 
 **متى:** حين يحتاج فيديو طعام أصوات تحضير محسوسة مثل الأزيز والقرمشة وأصوات تذوق للقضمة الأخيرة / when a food video needs action sounds like sizzle and crunch plus tasting sounds for the final bite
 
@@ -739,7 +739,7 @@
 | نطاق الدليل | `sibling` |
 | الرخصة | owner |
 
-**ما هي:** Per-mode audio rules: viral motion prompts no VO and no music; food has foley only; kinetic none or soft transition SFX; vox locked narrator; fitness coach voice.
+**ما هي:** قواعد صوت لكل نمط: لا تعليق ولا موسيقى في موجّهات الحركة الفيروسية؛ الطعام مؤثرات فولي فقط؛ النمط الحركي بلا صوت أو بمؤثرات انتقال خفيفة؛ الفوكس راوٍ ثابت؛ اللياقة صوت مدرّب. — Per-mode audio rules: viral motion prompts no VO and no music; food has foley only; kinetic none or soft transition SFX; vox locked narrator; fitness coach voice.
 
 **متى:** عند تحديد قواعد الصوت لكل نوع فيديو: بلا موسيقى أو مؤثرات فقط أو راوٍ ثابت أو صوت مدرب / when deciding per-mode audio rules such as no music, foley only, a locked narrator or a coach voice
 
@@ -807,7 +807,7 @@
 | نطاق الدليل | `sibling` |
 | الرخصة | owner |
 
-**ما هي:** For a song, sections are found from lyric gaps and loudness, a ~30 s excerpt is chosen on a downbeat around the loud refrain, a whole-frame shot grid cuts faster where loud, clips are assigned without repeats and kept in their section folder, lyric concepts map to stock-footage queries.
+**ما هي:** للأغنية تُحدَّد الأقسام من فجوات الكلمات والجهارة، ويُختار مقطع نحو 30 ث على ضربة قوية حول اللازمة الأعلى صوتًا، وشبكة لقطات كاملة الإطار تقطع أسرع عند الجهارة، وتُوزَّع المقاطع دون تكرار وتبقى في مجلد قسمها، وتُحوَّل مفاهيم الكلمات إلى استعلامات لقطات أرشيفية. — For a song, sections are found from lyric gaps and loudness, a ~30 s excerpt is chosen on a downbeat around the loud refrain, a whole-frame shot grid cuts faster where loud, clips are assigned without repeats and kept in their section folder, lyric concepts map to stock-footage queries.
 
 **متى:** حين يريد المستخدم ريلز على أغنية: اختيار مقطع 30 ثانية حول الكورس وتقطيع أسرع في الأجزاء العالية / when making a song reel: pick a ~30 s excerpt around the loud refrain and plan shots that cut faster where loud
 
@@ -873,7 +873,7 @@
 | نطاق الدليل | `sibling` |
 | الرخصة | owner |
 
-**ما هي:** Delivered mixes target −14 LUFS; the browser exporter has a BS.1770 meter (gated silence) and normalises with a −1.5 dB peak ceiling that wins on spiky content.
+**ما هي:** تستهدف المزيجات المسلَّمة −14 LUFS؛ ولدى مُصدِّر المتصفح مقياس BS.1770 (يتجاهل الصمت) ويعايِر مع سقف ذروة −1.5 dB يغلب على المحتوى الحاد. — Delivered mixes target −14 LUFS; the browser exporter has a BS.1770 meter (gated silence) and normalises with a −1.5 dB peak ceiling that wins on spiky content.
 
 **متى:** عند التصدير من المتصفح وتحتاج قياس علو الصوت وتسويته على -14 LUFS مع سقف للقمم / when exporting from the browser and the mix must be metered and normalised to -14 LUFS with a peak ceiling
 
@@ -942,7 +942,7 @@
 | نطاق الدليل | `sibling` |
 | الرخصة | owner |
 
-**ما هي:** In the JSON timeline, music is ducked under clip speech with an FFmpeg sidechain compressor, with gain and fades.
+**ما هي:** في جدول JSON الزمني تُخفَض الموسيقى تحت كلام المقطع بضاغط sidechain في FFmpeg، مع الكسب والتلاشي. — In the JSON timeline, music is ducked under clip speech with an FFmpeg sidechain compressor, with gain and fades.
 
 **متى:** حين يتكلم شخص في المقطع وتريد خفض الموسيقى تحت كلامه تلقائيا داخل التايملاين / when clip speech should stay clear by automatically ducking the music in the JSON timeline
 
@@ -1010,7 +1010,7 @@
 | نطاق الدليل | `sibling` |
 | الرخصة | owner |
 
-**ما هي:** Measures the main speech and cleans it live and in renders: rumble cut, presence lift, gain to a broadcast-like level, compression and a limiter.
+**ما هي:** يقيس الكلام الرئيسي وينظّفه مباشرةً وفي التصيير: قطع الهدير، ورفع الحضور، وكسب إلى مستوى شبيه بالبث، وضغط ومحدِّد. — Measures the main speech and cleans it live and in renders: rumble cut, presence lift, gain to a broadcast-like level, compression and a limiter.
 
 **متى:** حين يكون صوت المتحدث ضعيفا أو فيه همهمة ويحتاج تنظيفا ورفعا لمستوى إذاعي / when a voice track needs rumble removal, presence lift, leveling, compression and limiting
 
@@ -1080,7 +1080,7 @@
 | نطاق الدليل | `sibling` |
 | الرخصة | owner |
 
-**ما هي:** In renders the room noise between words is pushed down so the gain that lifts speech does not lift the room.
+**ما هي:** في التصيير يُخفَض ضجيج الغرفة بين الكلمات كي لا يرفع الكسب الذي يرفع الكلام الغرفة معه. — In renders the room noise between words is pushed down so the gain that lifts speech does not lift the room.
 
 **متى:** حين تظهر ضوضاء الغرفة بين الكلمات بعد رفع مستوى الكلام / when room noise between spoken words rises after boosting speech gain
 
@@ -1149,7 +1149,7 @@
 | نطاق الدليل | `sibling` |
 | الرخصة | owner |
 
-**ما هي:** Audio-only clips get an animated spectrum: 48 rounded bars or a circular ring around a disc.
+**ما هي:** المقاطع الصوتية فقط تحصل على طيف متحرك: 48 عمودًا مستديرًا أو حلقة دائرية حول قرص. — Audio-only clips get an animated spectrum: 48 rounded bars or a circular ring around a disc.
 
 **متى:** عند تحويل مقطع صوتي إلى فيديو بأعمدة طيف أو حلقة دائرية متحركة / for audio-only clips that need an animated spectrum of bars or a circular ring
 
@@ -1218,7 +1218,7 @@
 | نطاق الدليل | `sibling` |
 | الرخصة | owner |
 
-**ما هي:** Picture, captions and progress bar pulse on each detected beat.
+**ما هي:** تنبض الصورة والعناوين وشريط التقدم مع كل ضربة مكتشفة. — Picture, captions and progress bar pulse on each detected beat.
 
 **متى:** حين يريد المستخدم أن تنبض الصورة والترجمة وشريط التقدم مع كل ضربة إيقاع / when picture, captions and progress bar should pulse on every detected beat
 
@@ -1288,7 +1288,7 @@
 | نطاق الدليل | `sibling` |
 | الرخصة | owner |
 
-**ما هي:** An audio-only upload becomes a video: animated gradient or pattern background, visualiser bars or circle, big centred captions and beat pulse.
+**ما هي:** رفع ملف صوت فقط يصبح فيديو: خلفية متدرجة أو نمطية متحركة، وأعمدة أو دائرة مصوِّرة، وعناوين كبيرة في المنتصف ونبض الإيقاع. — An audio-only upload becomes a video: animated gradient or pattern background, visualiser bars or circle, big centred captions and beat pulse.
 
 **متى:** عند رفع ملف صوتي فقط لكلام أو موسيقى وتحويله إلى فيديو بخلفية وترجمة / when an audio-only upload must become a video with background, visualiser and captions
 
@@ -1356,7 +1356,7 @@
 | نطاق الدليل | `sibling` |
 | الرخصة | Apache-2.0 |
 
-**ما هي:** Detect beat times + BPM from project audio (bpm-detective) -> JSON {ok,file,count,bpm}.
+**ما هي:** اكتشاف أوقات الضربات وBPM من صوت المشروع (bpm-detective) ← JSON {ok,file,count,bpm}. — Detect beat times + BPM from project audio (bpm-detective) -> JSON {ok,file,count,bpm}.
 
 **متى:** حين تحتاج أوقات الضربات وسرعة BPM من موسيقى المشروع كملف JSON / when you need beat times and BPM detected from project audio as JSON
 
@@ -1426,7 +1426,7 @@
 | نطاق الدليل | `sibling` |
 | الرخصة | Apache-2.0 |
 
-**ما هي:** Loudness-match target to reference audio; default target -16 LUFS; --write, --lufs negative.
+**ما هي:** مطابقة جهارة الهدف بصوت مرجعي؛ الهدف الافتراضي -16 LUFS؛ --write، و --lufs سالب. — Loudness-match target to reference audio; default target -16 LUFS; --write, --lufs negative.
 
 **متى:** عند مطابقة جهارة صوت مع ملف مرجعي أو ضبطه على مستوى LUFS محدد / when matching audio loudness to a reference file or a target LUFS level
 
@@ -1496,7 +1496,7 @@
 | نطاق الدليل | `sibling` |
 | الرخصة | Apache-2.0 |
 
-**ما هي:** Per-clip/group effects in signal order: highpass/lowpass/peaking/shelves, gain, compressor, limiter, gate, saturate (9 curves), bitcrush, delay, reverb, chorus, phaser, pitchshift ±12 st.
+**ما هي:** مؤثرات لكل مقطع/مجموعة بترتيب الإشارة: highpass/lowpass/peaking/shelves، كسب، ضاغط، محدِّد، بوابة، تشبع (9 منحنيات)، bitcrush، تأخير، ريفرب، كورَس، فيزر، تغيير طبقة ±12 نصف نغمة. — Per-clip/group effects in signal order: highpass/lowpass/peaking/shelves, gain, compressor, limiter, gate, saturate (9 curves), bitcrush, delay, reverb, chorus, phaser, pitchshift ±12 st.
 
 **متى:** حين يحتاج مقطع أو مجموعة مقاطع فلاتر وضغطا وصدى وتأخيرا أو تغيير طبقة الصوت / when a clip or group needs filters, compression, reverb, delay or pitch shift
 
@@ -1565,7 +1565,7 @@
 | نطاق الدليل | `sibling` |
 | الرخصة | Apache-2.0 |
 
-**ما هي:** Envelope points on volume or fx.<node>.<param> with curve -1..1 or via-points.
+**ما هي:** نقاط غلاف على الصوت أو fx.<node>.<param> بمنحنى -1..1 أو بنقاط وسيطة. — Envelope points on volume or fx.<node>.<param> with curve -1..1 or via-points.
 
 **متى:** عند رسم تغير مستوى الصوت أو معامل مؤثر عبر الزمن بنقاط ومنحنيات / when volume or an effect parameter must change over time with envelope points and curves
 
@@ -1632,7 +1632,7 @@
 | نطاق الدليل | `sibling` |
 | الرخصة | Apache-2.0 |
 
-**ما هي:** Cut footage/lyrics to detected beats.
+**ما هي:** قص اللقطات/الكلمات على الضربات المكتشفة. — Cut footage/lyrics to detected beats.
 
 **متى:** حين يريد المستخدم تقطيع اللقطات أو كلمات الأغنية على ضربات الموسيقى / when footage or lyrics should be cut to detected music beats
 
@@ -1699,7 +1699,7 @@
 | نطاق الدليل | `sibling` |
 | الرخصة | owner |
 
-**ما هي:** A stereo track's centred voice is cancelled to keep the music bed (novoice mode); mono input is refused for music mode.
+**ما هي:** يُلغى صوت المركز في المسار الستيريو للإبقاء على الخلفية الموسيقية (نمط novoice)؛ ويُرفض الإدخال أحادي القناة في نمط الموسيقى. — A stereo track's centred voice is cancelled to keep the music bed (novoice mode); mono input is refused for music mode.
 
 **متى:** عند الحاجة لإزالة الصوت البشري في منتصف أغنية ستريو والإبقاء على الموسيقى فقط / when you need to cancel the centred voice of a stereo track and keep only the music bed
 
@@ -1765,7 +1765,7 @@
 | نطاق الدليل | `sibling` |
 | الرخصة | Apache-2.0 |
 
-**ما هي:** A one-hit music sting: white/accent impact flash, tiny scale pulse on the subject and instant decay.
+**ما هي:** لسعة موسيقية بضربة واحدة: وميض صدمة أبيض/لوني، ونبضة تكبير صغيرة على الموضوع، واضمحلال فوري. — A one-hit music sting: white/accent impact flash, tiny scale pulse on the subject and instant decay.
 
 **متى:** عند الحاجة لضربة موسيقية واحدة بوميض قوي ونبضة حجم سريعة على العنصر / for a single music hit with an impact flash and a quick scale pulse on the subject
 
@@ -1837,7 +1837,7 @@
 | نطاق الدليل | `sibling` |
 | الرخصة | Apache-2.0 |
 
-**ما هي:** Backdrop glow and saturation pulse on a supplied list of beat times (seconds), so the background breathes with music.
+**ما هي:** يتوهج الخلفية وتنبض التشبعات عند قائمة أوقات ضربات مقدمة (بالثواني)، فتتنفس الخلفية مع الموسيقى. — Backdrop glow and saturation pulse on a supplied list of beat times (seconds), so the background breathes with music.
 
 **متى:** حين يجب أن تتنفس الخلفية بتوهج وتشبع لوني على أوقات ضربات معروفة / when the backdrop should glow and pulse in saturation on a list of beat times
 
@@ -1908,7 +1908,7 @@
 | نطاق الدليل | `sibling` |
 | الرخصة | Apache-2.0 |
 
-**ما هي:** Music-led sequence: speed ramp, beat-locked freeze-frame hit (flash, contour, outline, FREEZE badge) and hard cut.
+**ما هي:** تسلسل تقوده الموسيقى: تدرج سرعة، وضربة تجميد إطار مقفلة على الضربة (وميض وكنتور وحدّ وشارة FREEZE) وقطع حاد. — Music-led sequence: speed ramp, beat-locked freeze-frame hit (flash, contour, outline, FREEZE badge) and hard cut.
 
 **متى:** حين يطلب المستخدم تسريعا ثم تجميد كادر على الضربة مع وميض وقطع حاد / when a music edit needs a speed ramp, a beat-locked freeze frame with flash, then a hard cut
 
@@ -1980,7 +1980,7 @@
 | نطاق الدليل | `sibling` |
 | الرخصة | Apache-2.0 AND MIT |
 
-**ما هي:** Blue-to-pink equaliser bars pulsing like an audio visualiser (procedural, not audio-reactive). A 2 s WebGPU shader background/object from the Shaders library.
+**ما هي:** أعمدة موازن من الأزرق إلى الوردي تنبض كمصوّر صوتي (إجرائي، غير متفاعل مع الصوت). خلفية/عنصر ظلال WebGPU مدته 2 ث من مكتبة Shaders. — Blue-to-pink equaliser bars pulsing like an audio visualiser (procedural, not audio-reactive). A 2 s WebGPU shader background/object from the Shaders library.
 
 **متى:** عند الحاجة لخلفية أعمدة معادل صوتي ملونة متحركة لا تتبع الصوت الفعلي / for a colourful equaliser-bar background that is procedural, not audio-reactive
 
@@ -2052,7 +2052,7 @@
 | نطاق الدليل | `sibling` |
 | الرخصة | Apache-2.0 |
 
-**ما هي:** One rule: volume over time is a data-automation volume lane with clip-local points; a lane wins over a GSAP volume tween (lint audio_volume_double_automation).
+**ما هي:** قاعدة واحدة: الصوت عبر الزمن مسار أتمتة data-automation volume بنقاط محلية للمقطع؛ والمسار يغلب على تويين GSAP للصوت (فحص audio_volume_double_automation). — One rule: volume over time is a data-automation volume lane with clip-local points; a lane wins over a GSAP volume tween (lint audio_volume_double_automation).
 
 **متى:** حين تحتاج دخولا وخروجا تدريجيا للصوت أو خفضا مؤقتا للموسيقى عبر مسار أتمتة واحد / when volume needs fade-in, fade-out or a temporary duck using one automation lane
 
@@ -2121,7 +2121,7 @@
 | نطاق الدليل | `sibling` |
 | الرخصة | Apache-2.0 |
 
-**ما هي:** SFX clip data-start is set to the timeline position of the visual hit (tween position), with audio alignment recipes for offsetting transients.
+**ما هي:** يُضبط data-start لمقطع المؤثر على موضع الجدول الزمني للضربة المرئية (موضع التوين)، مع وصفات محاذاة صوتية لإزاحة الذروات العابرة. — SFX clip data-start is set to the timeline position of the visual hit (tween position), with audio alignment recipes for offsetting transients.
 
 **متى:** حين يجب أن يقع مؤثر صوتي تماما مع حركة أو ضربة تظهر على الشاشة / when a sound effect must land exactly on a visual hit in the timeline
 
@@ -2188,7 +2188,7 @@
 | نطاق الدليل | `sibling` |
 | الرخصة | Apache-2.0 |
 
-**ما هي:** Pre-extracted per-frame frequency bands drive GSAP properties: bass -> scale pulse, treble (bands 12-14) -> glow shadows, amplitude -> opacity/y/background, mids (4-8) -> radius/shape.
+**ما هي:** تقود نطاقات التردد المستخرجة مسبقًا لكل إطار خصائص GSAP: الجهير ← نبض تكبير، والحاد (النطاقات 12-14) ← ظلال توهج، والسعة ← opacity/y/الخلفية، والوسط (4-8) ← نصف القطر/الشكل. — Pre-extracted per-frame frequency bands drive GSAP properties: bass -> scale pulse, treble (bands 12-14) -> glow shadows, amplitude -> opacity/y/background, mids (4-8) -> radius/shape.
 
 **متى:** حين تريد أن تتحرك العناصر وتتوهج وفق الباص والترددات العالية لكل إطار / when bass, treble and mids per frame should drive scale, glow, opacity and shape
 
@@ -2260,7 +2260,7 @@
 | نطاق الدليل | `sibling` |
 | الرخصة | Apache-2.0 |
 
-**ما هي:** Effects are declared in signal order as JSON on the <audio>/<video> element; preview (live AudioContext) and render (OfflineAudioContext in headless Chrome) run the same Web Audio graph so what you scrub is what renders.
+**ما هي:** تُعلَن المؤثرات بترتيب الإشارة كـ JSON على عنصر <audio>/<video>؛ وتشغّل المعاينة (AudioContext حي) والتصيير (OfflineAudioContext في Chrome بلا واجهة) رسم Web Audio نفسه، فما تتصفحه هو ما يُصيَّر. — Effects are declared in signal order as JSON on the <audio>/<video> element; preview (live AudioContext) and render (OfflineAudioContext in headless Chrome) run the same Web Audio graph so what you scrub is what renders.
 
 **متى:** عند وضع مؤثرات صوتية بترتيب الإشارة على مسار صوت أو فيديو لتطابق المعاينة الرندر / when declaring ordered audio effects on a track so preview and render sound the same
 
@@ -2331,7 +2331,7 @@
 | نطاق الدليل | `sibling` |
 | الرخصة | Apache-2.0 |
 
-**ما هي:** Exact parameters per effect, e.g. highpass 20-20000 Hz default 300; lowpass default 8000; peaking gain -40..40 dB q default 1; compressor threshold -24 dB ratio 4 attack 20 ms release 250 ms knee 2.83; limiter -1 dB attack 5 ms release 50 ms; gate -35 dB range -24 ratio 10; saturate types tanh/atan/…
+**ما هي:** معاملات دقيقة لكل مؤثر، مثل highpass 20-20000 Hz افتراضي 300؛ lowpass افتراضي 8000؛ peaking كسب -40..40 dB وq افتراضي 1؛ ضاغط عتبة -24 dB ونسبة 4 وهجوم 20 ms وإطلاق 250 ms وركبة 2.83؛ محدِّد -1 dB هجوم 5 ms وإطلاق 50 ms؛ بوابة -35 dB ونطاق -24 ونسبة 10؛ أنواع التشبع tanh/atan/… — Exact parameters per effect, e.g. highpass 20-20000 Hz default 300; lowpass default 8000; peaking gain -40..40 dB q default 1; compressor threshold -24 dB ratio 4 attack 20 ms release 250 ms knee 2.83; limiter -1 dB attack 5 ms release 50 ms; gate -35 dB range -24 ratio 10; saturate types tanh/atan/…
 
 **متى:** حين تحتاج القيم الافتراضية والمدى الدقيق لمعاملات مؤثر صوتي قبل ضبطه / when you need exact ranges and defaults of an audio effect's parameters
 
@@ -2400,7 +2400,7 @@
 | نطاق الدليل | `sibling` |
 | الرخصة | Apache-2.0 |
 
-**ما هي:** Instead of ducking the whole bed, the bed is dipped only in the bands the voice occupies, as envelopes following the speech level, plus a slow-release level-match gain; settings live on the bed and name the voice sources; required whenever music plays under a voice.
+**ما هي:** بدلًا من خفض الخلفية كلها، تُخفَض فقط في النطاقات التي يشغلها الصوت، كأغلفة تتبع مستوى الكلام، مع كسب مطابقة مستوى بإطلاق بطيء؛ والإعدادات على الخلفية وتسمي مصادر الصوت؛ وهي مطلوبة كلما عُزفت موسيقى تحت صوت. — Instead of ducking the whole bed, the bed is dipped only in the bands the voice occupies, as envelopes following the speech level, plus a slow-release level-match gain; settings live on the bed and name the voice sources; required whenever music plays under a voice.
 
 **متى:** حين تعزف موسيقى تحت تعليق صوتي ويجب أن يبقى الكلام واضحا دون خفض الموسيقى كلها / when music plays under a voiceover and must dip only in the voice's frequency bands
 
@@ -2471,7 +2471,7 @@
 | نطاق الدليل | `sibling` |
 | الرخصة | CC0-1.0 |
 
-**ما هي:** Timeline specs can drop named kit sounds at times; default gain −10 dB; unknown names fail validation.
+**ما هي:** تستطيع مواصفات الجدول الزمني إسقاط أصوات مسماة من العدّة في أوقات محددة؛ الكسب الافتراضي −10 dB؛ والأسماء المجهولة تفشل في التحقق. — Timeline specs can drop named kit sounds at times; default gain −10 dB; unknown names fail validation.
 
 **متى:** حين تريد إسقاط مؤثرات جاهزة مثل جرس أو نقرة أو ظهور في توقيتات محددة داخل التايملاين / when dropping named ready-made sounds (reveal, bell, click, glitch) at set times in a timeline spec
 
@@ -2539,7 +2539,7 @@
 | نطاق الدليل | `sibling` |
 | الرخصة | Apache-2.0 |
 
-**ما هي:** One chain, one fader and one automation clock for several tracks (e.g. all narration clips) so a compressor hears the whole voice.
+**ما هي:** سلسلة واحدة وفادر واحد وساعة أتمتة واحدة لعدة مسارات (مثل كل مقاطع التعليق) ليسمع الضاغط الصوت كله. — One chain, one fader and one automation clock for several tracks (e.g. all narration clips) so a compressor hears the whole voice.
 
 **متى:** عند معالجة عدة مقاطع تعليق صوتي معا بسلسلة مؤثرات وفيدر واحد / when several tracks such as all narration clips should share one effects chain and fader
 
@@ -2606,7 +2606,7 @@
 | نطاق الدليل | `sibling` |
 | الرخصة | Apache-2.0 |
 
-**ما هي:** data-automation lanes ({target, points:[{t,v}]}) ride volume, rate or fx.<node>.<param>, and fx.preset.<id> fades a whole preset via presetAmount 0..1.
+**ما هي:** مسارات data-automation ({target, points:[{t,v}]}) تقود volume أو rate أو fx.<node>.<param>، و fx.preset.<id> يخفت إعدادًا مسبقًا كاملًا عبر presetAmount من 0..1. — data-automation lanes ({target, points:[{t,v}]}) ride volume, rate or fx.<node>.<param>, and fx.preset.<id> fades a whole preset via presetAmount 0..1.
 
 **متى:** حين يجب أن يتغير مستوى الصوت أو السرعة أو معامل مؤثر أو قوة إعداد مسبق مع الزمن / when volume, rate, any effect parameter or a whole preset should ride over time
 
@@ -2674,7 +2674,7 @@
 | نطاق الدليل | `sibling` |
 | الرخصة | Apache-2.0 |
 
-**ما هي:** room-tight, room-natural, hall, slap-echo, dub-throw for putting something behind something else; keep wet lower than sounds right solo.
+**ما هي:** room-tight وroom-natural وhall وslap-echo وdub-throw لوضع شيء خلف آخر؛ أبقِ الرطب أقل مما يبدو صحيحًا منفردًا. — room-tight, room-natural, hall, slap-echo, dub-throw for putting something behind something else; keep wet lower than sounds right solo.
 
 **متى:** حين تريد وضع صوت في غرفة أو قاعة أو صدى ارتدادي ليبدو خلف صوت آخر / when a sound should sit behind another in a room, hall, slap-echo or dub-throw space
 
@@ -2743,7 +2743,7 @@
 | نطاق الدليل | `sibling` |
 | الرخصة | Apache-2.0 |
 
-**ما هي:** Single 0..1 knobs: compressor Evenness, gate Tightness, saturate Warmth, reverb Space, bitcrush Crush.
+**ما هي:** مقابض 0..1 مفردة: انتظام الضاغط Evenness، وإحكام البوابة Tightness، ودفء التشبع Warmth، ومساحة الريفرب Space، وسحق bitcrush Crush. — Single 0..1 knobs: compressor Evenness, gate Tightness, saturate Warmth, reverb Space, bitcrush Crush.
 
 **متى:** عند ضبط مؤثر بسرعة بمقبض واحد مثل الدفء أو الإحكام أو المساحة بدل معاملات كثيرة / when you want a quick single 0..1 knob for warmth, tightness, space, evenness or crush
 
@@ -2812,7 +2812,7 @@
 | نطاق الدليل | `sibling` |
 | الرخصة | Apache-2.0 |
 
-**ما هي:** Rumble 20-80 Hz, Weight 80-250, Mud 250-600, Middle 600-2000, Presence 2000-5000, Edge 5000-10000, Air 10000-20000 Hz; voice and music fight mostly in 1-3 kHz.
+**ما هي:** Rumble 20-80 Hz، وWeight 80-250، وMud 250-600، وMiddle 600-2000، وPresence 2000-5000، وEdge 5000-10000، وAir 10000-20000 Hz؛ ويتنازع الصوت والموسيقى غالبًا في 1-3 kHz. — Rumble 20-80 Hz, Weight 80-250, Mud 250-600, Middle 600-2000, Presence 2000-5000, Edge 5000-10000, Air 10000-20000 Hz; voice and music fight mostly in 1-3 kHz.
 
 **متى:** عند تشخيص مشكلة صوتية وتسميتها بنطاقها الترددي قبل اختيار العلاج / when naming an audio problem by its frequency band before choosing a fix
 
@@ -2881,7 +2881,7 @@
 | نطاق الدليل | `sibling` |
 | الرخصة | Apache-2.0 |
 
-**ما هي:** Analyzes a project's local music <audio> (data-timeline-role=music or id containing music/bgm/soundtrack) in headless Chrome and writes a Studio-compatible beat file.
+**ما هي:** يحلّل <audio> الموسيقى المحلي للمشروع (data-timeline-role=music أو id يحوي music/bgm/soundtrack) في Chrome بلا واجهة ويكتب ملف ضربات متوافقًا مع Studio. — Analyzes a project's local music <audio> (data-timeline-role=music or id containing music/bgm/soundtrack) in headless Chrome and writes a Studio-compatible beat file.
 
 **متى:** حين تحتاج ملف إيقاع متوافقا مع الاستوديو من موسيقى المشروع المحلية / when you need a Studio-compatible beat file from the project's local music track
 
@@ -2951,7 +2951,7 @@
 | نطاق الدليل | `sibling` |
 | الرخصة | Apache-2.0 |
 
-**ما هي:** Emits a data-automation volume lane on the BGM element under narration (clip-local times) or bakes ducking for export.
+**ما هي:** يُصدر مسار data-automation volume على عنصر BGM تحت التعليق (بأزمنة محلية للمقطع) أو يخبز الخفض للتصدير. — Emits a data-automation volume lane on the BGM element under narration (clip-local times) or bakes ducking for export.
 
 **متى:** حين يجب خفض موسيقى الخلفية تلقائيا أثناء التعليق الصوتي أو تثبيت ذلك عند التصدير / when background music must auto-duck under narration or be baked for export
 
@@ -3020,7 +3020,7 @@
 | نطاق الدليل | `sibling` |
 | الرخصة | Pixabay Content License (manifest only; mp3 files absent in this copy) |
 
-**ما هي:** chime 2.5 s, click-soft 0.37, click 0.37, error 1.62, glitch-1 2.64, glitch-2 3.5, glitch-3 3.1, impact-bass-1 2.12, impact-bass-2 2.59, key-press 0.4, notification 2.46, ping 1.32, pop 0.72, riser 10.03, sparkle 1.8, typing 1.5, whoosh-cinematic 5.54, whoosh-short 0.57, whoosh 0.57; let impact deca…
+**ما هي:** chime 2.5 ث وclick-soft 0.37 وclick 0.37 وerror 1.62 وglitch-1 2.64 وglitch-2 3.5 وglitch-3 3.1 وimpact-bass-1 2.12 وimpact-bass-2 2.59 وkey-press 0.4 وnotification 2.46 وping 1.32 وpop 0.72 وriser 10.03 وsparkle 1.8 وtyping 1.5 وwhoosh-cinematic 5.54 وwhoosh-short 0.57 وwhoosh 0.57؛ دع الصدمة تتلاشى… — chime 2.5 s, click-soft 0.37, click 0.37, error 1.62, glitch-1 2.64, glitch-2 3.5, glitch-3 3.1, impact-bass-1 2.12, impact-bass-2 2.59, key-press 0.4, notification 2.46, ping 1.32, pop 0.72, riser 10.03, sparkle 1.8, typing 1.5, whoosh-cinematic 5.54, whoosh-short 0.57, whoosh 0.57; let impact deca…
 
 **متى:** حين يحتاج المونتاج مؤثرا جاهزا مثل ووش أو نقرة أو بوب أو ارتطام دون مفاتيح / when an edit needs a ready whoosh, click, pop, impact, riser or ping without credentials
 
@@ -3091,7 +3091,7 @@
 | نطاق الدليل | `sibling` |
 | الرخصة | Apache-2.0 |
 
-**ما هي:** Track is the spine: setup bgm -> analyze once to audiomap.json -> frame skeleton in STORYBOARD.md -> plan (brand preset + per-frame groups: template, free-compose or asset treatment) -> frame workers build compositions/frames/NN-*.html -> assemble -> verify -> render; lyric videos time lines by tran…
+**ما هي:** المسار هو العمود الفقري: إعداد bgm ← تحليل مرة واحدة إلى audiomap.json ← هيكل الإطارات في STORYBOARD.md ← تخطيط (إعداد العلامة + مجموعات لكل إطار: قالب أو تركيب حر أو معالجة أصل) ← عمّال الإطارات يبنون compositions/frames/NN-*.html ← تجميع ← تحقق ← تصيير؛ وفيديوهات الكلمات تزامن الأسطر بـ tran… — Track is the spine: setup bgm -> analyze once to audiomap.json -> frame skeleton in STORYBOARD.md -> plan (brand preset + per-frame groups: template, free-compose or asset treatment) -> frame workers build compositions/frames/NN-*.html -> assemble -> verify -> render; lyric videos time lines by tran…
 
 **متى:** حين يطلب المستخدم فيديو كاملا مبنيا على أغنية أو فيديو كلمات متزامنا مع الإيقاع / when building a whole video, or a lyric video, around a music track from analysis to render
 
@@ -3162,7 +3162,7 @@
 | نطاق الدليل | `sibling` |
 | الرخصة | Apache-2.0 |
 
-**ما هي:** librosa analysis producing energy phases (level/density/feel), onsets + onset_rate, rolls, silences, hard_stops, key_moments, phrases, tempo/grid; bpm and beats_sec trusted only on genuinely rhythmic music.
+**ما هي:** تحليل librosa ينتج أطوار الطاقة (المستوى/الكثافة/الإحساس)، والبدايات ومعدل البدايات، والرولات، والصمتات، والتوقفات الحادة، واللحظات الرئيسية، والعبارات، والإيقاع/الشبكة؛ ولا يوثق بـ bpm وbeats_sec إلا في الموسيقى الإيقاعية فعلًا. — librosa analysis producing energy phases (level/density/feel), onsets + onset_rate, rolls, silences, hard_stops, key_moments, phrases, tempo/grid; bpm and beats_sec trusted only on genuinely rhythmic music.
 
 **متى:** عند تحليل أغنية لمعرفة مراحل الطاقة والضربات والسكتات واللحظات المهمة قبل المونتاج / when analyzing a song for energy phases, onsets, silences, key moments and tempo
 
@@ -3234,7 +3234,7 @@
 | نطاق الدليل | `sibling` |
 | الرخصة | owner |
 
-**ما هي:** One music file starts with the project and ends with the file or the project (no looping), with its own trim and level, mixed under clip sound.
+**ما هي:** ملف موسيقى واحد يبدأ مع المشروع وينتهي بانتهاء الملف أو المشروع (بلا تكرار)، بقص ومستوى خاصين به، ويُمزج تحت صوت المقاطع. — One music file starts with the project and ends with the file or the project (no looping), with its own trim and level, mixed under clip sound.
 
 **متى:** عند إضافة ملف موسيقى واحد يبدأ مع المشروع بقص ومستوى صوت خاص تحت صوت اللقطات / when adding one music file to the project with its own trim and volume, mixed under clip sound
 
@@ -3304,7 +3304,7 @@
 | نطاق الدليل | `sibling` |
 | الرخصة | Apache-2.0 |
 
-**ما هي:** Catalogued moves without a standalone demo: chromatic-pressure (RGB tension on transients 0.1-0.5 s), color-grid-shuffle (cells recolored per onset), content-swap (0 ms percussive swap, the workhorse), freeze-hold (freeze system 0.5-2 s), negative-space-hold (one mark in empty space 1-6 s), overlay-…
+**ما هي:** حركات مفهرسة بلا عرض مستقل: chromatic-pressure (توتر RGB عند الذروات العابرة 0.1-0.5 ث)، color-grid-shuffle (إعادة تلوين الخلايا عند كل بداية)، content-swap (تبديل إيقاعي بـ 0 ms، حصان العمل)، freeze-hold (نظام تجميد 0.5-2 ث)، negative-space-hold (علامة واحدة في فراغ 1-6 ث)، overlay-… — Catalogued moves without a standalone demo: chromatic-pressure (RGB tension on transients 0.1-0.5 s), color-grid-shuffle (cells recolored per onset), content-swap (0 ms percussive swap, the workhorse), freeze-hold (freeze system 0.5-2 s), negative-space-hold (one mark in empty space 1-6 s), overlay-…
 
 **متى:** حين تختار حركة إيقاعية مثل تبديل المحتوى أو التجميد أو كتلة في فراغ / when choosing a beat move such as content swap, freeze hold or negative-space hold
 
@@ -3373,7 +3373,7 @@
 | نطاق الدليل | `sibling` |
 | الرخصة | Apache-2.0 |
 
-**ما هي:** Pads frame durations to fit audio and computes BGM volume relative to narration.
+**ما هي:** يوسّع مدد الإطارات لتناسب الصوت ويحسب مستوى BGM نسبةً إلى التعليق. — Pads frame durations to fit audio and computes BGM volume relative to narration.
 
 **متى:** عند ضبط مدد الإطارات لتطابق طول الصوت وحساب مستوى الموسيقى نسبة إلى التعليق / when padding frame durations to fit audio and setting music volume relative to narration
 
@@ -3441,7 +3441,7 @@
 | نطاق الدليل | `sibling` |
 | الرخصة | owner (three.js MIT) |
 
-**ما هي:** Spectrogram canyon ground, glitch pass (chroma, slice, negative tear, mono freeze, warp), sparks on tape clock, MOTION.channels.
+**ما هي:** أرض وادٍ من المخطط الطيفي، ومرور خلل (لون وشرائح وتمزق سلبي وتجميد أحادي والتواء)، وشرارات على ساعة الشريط، وMOTION.channels. — Spectrogram canyon ground, glitch pass (chroma, slice, negative tear, mono freeze, warp), sparks on tape clock, MOTION.channels.
 
 **متى:** حين يريد المستخدم مشهدا ثلاثي الأبعاد تحركه الموسيقى بأرض طيفية وخلل وشرارات / when a 3D scene should be driven by sound with spectrum ground, glitch pass and sparks
 
@@ -3511,7 +3511,7 @@
 | نطاق الدليل | `sibling` |
 | الرخصة | owner |
 
-**ما هي:** The music's spectrogram becomes a heightfield canyon the camera travels through, with a lava river from the bass and glowing walls, scrolled by the tape clock.
+**ما هي:** يصبح المخطط الطيفي للموسيقى وادي حقل ارتفاع تسير فيه الكاميرا، مع نهر حمم من الجهير وجدران متوهجة، تُمرَّر بساعة الشريط. — The music's spectrogram becomes a heightfield canyon the camera travels through, with a lava river from the bass and glowing walls, scrolled by the tape clock.
 
 **متى:** حين تتحول الموسيقى إلى تضاريس واد ثلاثي الأبعاد تعبره الكاميرا / when the music's spectrogram should become a 3D canyon terrain the camera travels through
 
@@ -3581,7 +3581,7 @@
 | نطاق الدليل | `sibling` |
 | الرخصة | owner |
 
-**ما هي:** All events are scheduled in beats rather than seconds so picture and score lock together.
+**ما هي:** تُجدول كل الأحداث بالضربات لا بالثواني لتقفل الصورة والمقطوعة معًا. — All events are scheduled in beats rather than seconds so picture and score lock together.
 
 **متى:** عند جدولة كل أحداث الفيلم بالضربات بدل الثواني لتتطابق الصورة مع الموسيقى / when scheduling every event of a film in beats so picture and score stay locked
 
@@ -3651,7 +3651,7 @@
 | نطاق الدليل | `sibling` |
 | الرخصة | owner |
 
-**ما هي:** When the music tape-stops the world freezes on the tape clock while the camera keeps moving on the wall clock; glitch accents are keyed to analysis: onsets split colour, tape acceleration slices the frame, the first frames of silence tear in negative, standing tape turns the world cold silver.
+**ما هي:** عند توقف شريط الموسيقى يتجمد العالم على ساعة الشريط بينما تواصل الكاميرا الحركة على ساعة الحائط؛ وتُربط لمسات الخلل بالتحليل: البدايات تشقّ اللون، وتسارع الشريط يقطّع الإطار، وأولى إطارات الصمت تتمزق سلبيًا، والشريط الواقف يحوّل العالم إلى فضي بارد. — When the music tape-stops the world freezes on the tape clock while the camera keeps moving on the wall clock; glitch accents are keyed to analysis: onsets split colour, tape acceleration slices the frame, the first frames of silence tear in negative, standing tape turns the world cold silver.
 
 **متى:** حين تتوقف الموسيقى بتأثير الشريط ويجب تجميد العالم مع استمرار الكاميرا ولمسات خلل / when a music tape-stop should freeze the world while the camera keeps moving, with glitch hits
 
@@ -3719,7 +3719,7 @@
 | نطاق الدليل | `sibling` |
 | الرخصة | owner |
 
-**ما هي:** Kick, bass and onset values map directly to physical motion: orb bob and squash, exposure pump, fov punch, camera shake/roll, spark bursts, ground glow and sky corona.
+**ما هي:** تُربط قيم الطبلة والجهير والبدايات مباشرةً بحركة فيزيائية: ارتجاج الكرة وانضغاطها، ونبض التعريض، وضربة fov، واهتزاز/دوران الكاميرا، وانفجارات الشرر، وتوهج الأرض وإكليل السماء. — Kick, bass and onset values map directly to physical motion: orb bob and squash, exposure pump, fov punch, camera shake/roll, spark bursts, ground glow and sky corona.
 
 **متى:** حين يجب أن تهتز الكاميرا وتنبض الإضاءة والعناصر مع الكيك والباص / when kick, bass and onsets should drive camera shake, fov punch, exposure and bounce
 
@@ -3786,7 +3786,7 @@
 | نطاق الدليل | `sibling` |
 | الرخصة | owner |
 
-**ما هي:** Music dips under speech automatically.
+**ما هي:** تنخفض الموسيقى تحت الكلام تلقائيًا. — Music dips under speech automatically.
 
 **متى:** حين يجب أن تنخفض الموسيقى تلقائيا كلما بدأ الكلام / when background music should dip automatically under speech
 
@@ -3856,7 +3856,7 @@
 | نطاق الدليل | `sibling` |
 | الرخصة | owner |
 
-**ما هي:** Shared beat clock for picture and sound.
+**ما هي:** ساعة ضربات مشتركة للصورة والصوت. — Shared beat clock for picture and sound.
 
 **متى:** عند الحاجة لساعة إيقاع مشتركة تضبط بها الصورة والصوت من BPM / when picture and sound need a shared beat clock from BPM and offset
 
@@ -3924,7 +3924,7 @@
 | نطاق الدليل | `sibling` |
 | الرخصة | owner |
 
-**ما هي:** Synthesised ambience when no licensed recording; disclose it.
+**ما هي:** صوت محيطي مُركَّب حين لا يوجد تسجيل مرخّص؛ مع الإفصاح عنه. — Synthesised ambience when no licensed recording; disclose it.
 
 **متى:** حين لا يتوفر تسجيل جو مرخص ويلزم صوت محيطي مركب مع الإفصاح عنه / when no licensed ambience recording exists and a disclosed synthesised one is needed
 
@@ -3992,7 +3992,7 @@
 | نطاق الدليل | `sibling` |
 | الرخصة | owner |
 
-**ما هي:** Spectral-flux onsets, tempo by autocorrelation with a prior near 120, beat phase by comb, refined to onsets; returns bpm, beats, downbeats, hits.
+**ما هي:** بدايات الطاقة الطيفية، والإيقاع بالارتباط الذاتي مع افتراض قريب من 120، وطور الضربة بالمشط، وتُصقل على البدايات؛ ويُرجع bpm والضربات والضربات القوية والنقرات. — Spectral-flux onsets, tempo by autocorrelation with a prior near 120, beat phase by comb, refined to onsets; returns bpm, beats, downbeats, hits.
 
 **متى:** حين تحتاج استخراج سرعة الأغنية ونبضاتها وضرباتها القوية من ملف صوتي لمزامنة الصورة / when you need bpm, beats, downbeats and hits from a track to sync the picture to the music
 
@@ -4061,7 +4061,7 @@
 | نطاق الدليل | `sibling` |
 | الرخصة | owner |
 
-**ما هي:** Synthesises an original track by BPM, length, mood.
+**ما هي:** يُركّب مقطوعة أصلية بحسب BPM والمدة والمزاج. — Synthesises an original track by BPM, length, mood.
 
 **متى:** حين يطلب المستخدم موسيقى أصلية مولدة بسرعة BPM وطول ومزاج محدد / when an original music track is needed for a given BPM, length and mood
 
@@ -4129,7 +4129,7 @@
 | نطاق الدليل | `sibling` |
 | الرخصة | owner |
 
-**ما هي:** Per-frame kick/bass/onset/centroid/silence/pitch channels; tape-stop detection.
+**ما هي:** قنوات لكل إطار للطبلة/الجهير/البداية/مركز الثقل/الصمت/الطبقة؛ وكشف توقف الشريط. — Per-frame kick/bass/onset/centroid/silence/pitch channels; tape-stop detection.
 
 **متى:** عند استخراج قنوات الكيك والباص والسكتات وطبقة الصوت لكل إطار واكتشاف توقف الشريط / when extracting per-frame kick, bass, onset, silence and pitch channels plus tape-stops
 
@@ -4196,7 +4196,7 @@
 | نطاق الدليل | `sibling` |
 | الرخصة | owner |
 
-**ما هي:** Finds tempo, a regular beat grid and transient onsets from any audio/video file so cuts can land on beats.
+**ما هي:** يجد الإيقاع وشبكة ضربات منتظمة وبدايات عابرة من أي ملف صوت/فيديو لتقع القطعات على الضربات. — Finds tempo, a regular beat grid and transient onsets from any audio/video file so cuts can land on beats.
 
 **متى:** حين يريد المستخدم معرفة سرعة الأغنية وشبكة ضربات منتظمة ليقطع عليها من أي ملف / when tempo, a regular beat grid and onsets are needed from any audio or video file for cuts
 
@@ -4267,7 +4267,7 @@
 | نطاق الدليل | `sibling` |
 | الرخصة | owner |
 
-**ما هي:** Background music should drop while narration plays.
+**ما هي:** ينبغي أن تنخفض الموسيقى الخلفية أثناء التعليق الصوتي. — Background music should drop while narration plays.
 
 **متى:** حين يجب خفض الموسيقى أثناء التعليق فعليا بدل مستوى ثابت باستخدام ffmpeg / when music should truly duck under narration with ffmpeg sidechaincompress, not a static gain
 
@@ -4338,7 +4338,7 @@
 | نطاق الدليل | `sibling` |
 | الرخصة | owner |
 
-**ما هي:** An original 18 s score generated in code with an Egyptian colour: Hijaz on D, qanun-like plucks, warm pads following the shots, risers and impacts on every cut, a pulse through the night city and a D-major resolve.
+**ما هي:** مقطوعة أصلية مدتها 18 ث مولّدة بالكود بلون مصري: حجاز على D، ونقرات شبيهة بالقانون، ووسائد دافئة تتبع اللقطات، ومصاعد وصدمات عند كل قطع، ونبض عبر مدينة الليل، وحلّ إلى D major. — An original 18 s score generated in code with an Egyptian colour: Hijaz on D, qanun-like plucks, warm pads following the shots, risers and impacts on every cut, a pulse through the night city and a D-major resolve.
 
 **متى:** حين يطلب المستخدم موسيقى أصلية بطابع مصري على مقام حجاز مولدة بالكود بلا عينات / when an original Egyptian-coloured Hijaz score must be generated in code without samples
 
@@ -4410,7 +4410,7 @@
 | نطاق الدليل | `sibling` |
 | الرخصة | owner |
 
-**ما هي:** A code-only master: convolution reverb from a synthetic decaying noise impulse, high-pass, presence/air shelf for phone speakers, RMS normalisation, soft tanh limiter and a 4x oversampled true-peak check.
+**ما هي:** ماستر بالكود فقط: ريفرب التفاف من نبضة ضجيج اصطناعية متلاشية، وhigh-pass، ورف حضور/هواء لمكبرات الهواتف، وتطبيع RMS، ومحدِّد tanh ناعم، وفحص ذروة حقيقية بعينات مضاعفة 4x. — A code-only master: convolution reverb from a synthetic decaying noise impulse, high-pass, presence/air shelf for phone speakers, RMS normalisation, soft tanh limiter and a 4x oversampled true-peak check.
 
 **متى:** عند إنهاء مقطع موسيقي بالكود بصدى وتعديل للحدة وضبط للجهارة ومنع لتجاوز الذروة / when mastering a track in code with reverb, presence shelf, loudness and a true-peak guard
 
@@ -4480,7 +4480,7 @@
 | نطاق الدليل | `sibling` |
 | الرخصة | owner |
 
-**ما هي:** The sun halo dips and recovers on every musical downbeat measured from the voice/music track, so the picture breathes with the sound.
+**ما هي:** تنخفض هالة الشمس وتعود مع كل ضربة موسيقية قوية مقيسة من مسار الصوت/الموسيقى، فتتنفس الصورة مع الصوت. — The sun halo dips and recovers on every musical downbeat measured from the voice/music track, so the picture breathes with the sound.
 
 **متى:** حين يجب أن تتنفس هالة أو إضاءة في الصورة مع كل ضربة قوية في الموسيقى / when a glow or halo should dip and recover on every musical downbeat
 
@@ -4551,7 +4551,7 @@
 | نطاق الدليل | `sibling` |
 | الرخصة | owner |
 
-**ما هي:** A per-frame analysis of the soundtrack that any visual can read: tempo, beat/downbeat/kick/onset lists and per-frame curves (rms, bass, mid, high, onset, centroid, silence, pitch dive/rise, speed, tape clock).
+**ما هي:** تحليل لكل إطار للمسار الصوتي يقرؤه أي مرئي: الإيقاع وقوائم الضربات والضربات القوية والطبلات والبدايات ومنحنيات لكل إطار (rms وجهير ووسط وحاد وبداية ومركز ثقل وصمت وهبوط/صعود الطبقة والسرعة وساعة الشريط). — A per-frame analysis of the soundtrack that any visual can read: tempo, beat/downbeat/kick/onset lists and per-frame curves (rms, bass, mid, high, onset, centroid, silence, pitch dive/rise, speed, tape clock).
 
 **متى:** عند الحاجة لتحليل الموسيقى لكل إطار لتقرأه أي حركة مرئية مثل الباص والكيك والسكتات / when any visual needs per-frame soundtrack features like bass, kick, onsets and silence
 
@@ -4621,7 +4621,7 @@
 | نطاق الدليل | `sibling` |
 | الرخصة | owner |
 
-**ما هي:** A sectioned arrangement written in beats so music follows the talk: pad only under the opening, bass and half-time kick in the story, plucks and hats in the joy section, a tape stop exactly on the act change, a riser into a boom at the payoff.
+**ما هي:** ترتيب مقسّم مكتوب بالضربات لتتبع الموسيقى الكلام: وسادة فقط تحت الافتتاح، وباص وطبلة نصف وتيرة في الحكاية، ونقرات وهات في قسم الفرح، وتوقف شريط تمامًا عند تغيّر الفصل، ومصعد نحو انفجار عند الذروة. — A sectioned arrangement written in beats so music follows the talk: pad only under the opening, bass and half-time kick in the story, plucks and hats in the joy section, a tape stop exactly on the act change, a riser into a boom at the payoff.
 
 **متى:** حين تحتاج موسيقى خلفية مقسمة تتبع مراحل الكلام مع توقف ورافع وانفجار في الذروة / when a background score must follow a talk's sections with a tape stop, riser and boom
 
@@ -4691,7 +4691,7 @@
 | نطاق الدليل | `sibling` |
 | الرخصة | owner |
 
-**ما هي:** Every sound effect is tied to something visible: thump on the first keyword, whoosh on scene changes, tick on numbers, pop on counters, boom on the punch, swish on the split, chime on the 'moment' rings.
+**ما هي:** كل مؤثر مرتبط بشيء مرئي: دقة على الكلمة المفتاحية الأولى، وصوت مرور عند تغيّر المشهد، وتكة على الأرقام، وفرقعة على العدادات، وانفجار على اللكمة، وحفيف على الانشقاق، وجرس على حلقات 'اللحظة'. — Every sound effect is tied to something visible: thump on the first keyword, whoosh on scene changes, tick on numbers, pop on counters, boom on the punch, swish on the split, chime on the 'moment' rings.
 
 **متى:** حين يجب ربط كل مؤثر صوتي بحدث مرئي مثل ووش عند تغيير المشهد وتك عند الأرقام / when every sound effect should be tied to something visible, like whooshes on scene changes
 
@@ -4760,7 +4760,7 @@
 | نطاق الدليل | `sibling` |
 | الرخصة | owner |
 
-**ما هي:** One shared attack/decay envelope for every punch, tick or kick so picture hits peak with their sound.
+**ما هي:** غلاف هجوم/اضمحلال مشترك واحد لكل لكمة أو نقرة أو طبلة ليبلغ ذروة ضربات الصورة مع صوتها. — One shared attack/decay envelope for every punch, tick or kick so picture hits peak with their sound.
 
 **متى:** حين تريد أن تنبض الأشكال تكبيرا أو لمعانا مع كل ضربة أو طرقة في الصوت في نفس اللحظة / when picture hits (scale or brightness punches) must peak together with each kick, tick or punch sound
 
@@ -4828,7 +4828,7 @@
 | نطاق الدليل | `sibling` |
 | الرخصة | owner |
 
-**ما هي:** Converts BPM or a measured beats JSON into times so picture and sound read the same clock.
+**ما هي:** يحوّل BPM أو JSON ضربات مقيسة إلى أزمنة لتقرأ الصورة والصوت الساعة نفسها. — Converts BPM or a measured beats JSON into times so picture and sound read the same clock.
 
 **متى:** عند تحويل سرعة BPM أو ملف ضربات مقاس إلى أزمنة يقرأها الرسم والصوت معا / when turning a BPM or a measured beats JSON into times shared by picture and sound
 
@@ -4895,7 +4895,7 @@
 | نطاق الدليل | `sibling` |
 | الرخصة | owner |
 
-**ما هي:** Spectral-flux onsets, peak picking and rough BPM to propose cut points.
+**ما هي:** بدايات الطاقة الطيفية والتقاط القمم وBPM تقريبي لاقتراح نقاط القطع. — Spectral-flux onsets, peak picking and rough BPM to propose cut points.
 
 **متى:** حين يريد المستخدم اقتراح نقاط قطع على الإيقاع من ملف صوتي تلقائيا / when you want suggested cut points from beats and onsets in an audio file
 
@@ -4965,7 +4965,7 @@
 | نطاق الدليل | `sibling` |
 | الرخصة | owner |
 
-**ما هي:** -14 LUFS integrated, -1 dBTP peak, music bed -18 dB under speech; measured not guessed.
+**ما هي:** -14 LUFS كلية، وذروة -1 dBTP، وخلفية موسيقى -18 dB تحت الكلام؛ مقيسة لا مخمَّنة. — -14 LUFS integrated, -1 dBTP peak, music bed -18 dB under speech; measured not guessed.
 
 **متى:** عند ضبط جهارة الفيديو النهائية للنشر ومستوى الموسيقى تحت الكلام / when setting final delivery loudness and the music bed level under speech
 
@@ -5032,7 +5032,7 @@
 | نطاق الدليل | `sibling` |
 | الرخصة | owner |
 
-**ما هي:** Resamples the spectrogram image onto tape time so the visible terrain is what is heard, freezing on tape stops.
+**ما هي:** يعيد أخذ عينات صورة المخطط الطيفي على زمن الشريط ليكون التضاريس المرئية هي المسموعة، وتتجمد عند توقفات الشريط. — Resamples the spectrogram image onto tape time so the visible terrain is what is heard, freezing on tape stops.
 
 **متى:** حين يجب أن تطابق التضاريس الطيفية المرئية ما يسمع وتتجمد عند توقف الشريط / when the visible spectrogram terrain must match what is heard and freeze on tape stops
 
@@ -5101,7 +5101,7 @@
 | نطاق الدليل | `sibling` |
 | الرخصة | owner |
 
-**ما هي:** Canvas light layer: halo breathes with rms, swells on kicks and flares at payoff; 72 rising motes lifted by onsets; expanding rings from kicks in the last 1.3 s.
+**ما هي:** طبقة ضوء Canvas: الهالة تتنفس مع rms، وتتضخم عند الطبلات، وتشتعل عند الذروة؛ و72 ذرة صاعدة ترفعها البدايات؛ وحلقات متوسعة من الطبلات في آخر 1.3 ث. — Canvas light layer: halo breathes with rms, swells on kicks and flares at payoff; 72 rising motes lifted by onsets; expanding rings from kicks in the last 1.3 s.
 
 **متى:** حين يريد المستخدم طبقة ضوء تتنفس مع الصوت وجسيمات صاعدة وحلقات مع الكيك / when a light layer should breathe with sound, with rising motes and kick rings
 
@@ -5170,7 +5170,7 @@
 | نطاق الدليل | `sibling` |
 | الرخصة | owner |
 
-**ما هي:** Every visual value is a measured per-frame channel; the world runs on a tape clock (freezes on tape stops) while the camera keeps orbiting (bullet time); spectrogram ground; glitch accents; proven loop seam.
+**ما هي:** كل قيمة مرئية قناة مقيسة لكل إطار؛ يجري العالم على ساعة شريط (يتجمد عند توقفات الشريط) بينما تواصل الكاميرا الدوران (وقت الرصاصة)؛ وأرض المخطط الطيفي؛ ولمسات الخلل؛ ودرزة حلقة مثبتة. — Every visual value is a measured per-frame channel; the world runs on a tape clock (freezes on tape stops) while the camera keeps orbiting (bullet time); spectrogram ground; glitch accents; proven loop seam.
 
 **متى:** حين يطلب المستخدم فيلما موسيقيا تتحكم القياسات الصوتية في كل قيمة مرئية فيه / when a music film must have every visual value driven by measured audio channels
 
@@ -5240,7 +5240,7 @@
 | نطاق الدليل | `repo` |
 | الرخصة | owner |
 
-**ما هي:** Audio-reactive waveform/bars driven by the voice or music.
+**ما هي:** موجة/أعمدة تتفاعل مع الصوت يقودها الصوت أو الموسيقى. — Audio-reactive waveform/bars driven by the voice or music.
 
 **متى:** حين يطلب المستخدم موجة صوت أو أعمدة تتحرك مع صوت المتحدث أو الموسيقى / when the user wants a waveform or bars that react to the voice or music
 
@@ -5312,7 +5312,7 @@
 | نطاق الدليل | `repo` |
 | الرخصة | owner |
 
-**ما هي:** Capability family 'music' (49 catalog entries) with a dedicated bilingual playbook of timings and recipes.
+**ما هي:** عائلة قدرات 'music' (49 مدخلًا في الفهرس) مع دليل ثنائي اللغة مخصص للتوقيتات والوصفات. — Capability family 'music' (49 catalog entries) with a dedicated bilingual playbook of timings and recipes.
 
 **متى:** عند البدء في أي فيديو موسيقي والحاجة لدليل التوقيتات والوصفات الخاص بالموسيقى / when starting any music-driven video and needing the music playbook of timings and recipes
 
@@ -5384,7 +5384,7 @@
 | نطاق الدليل | `repo` |
 | الرخصة | owner |
 
-**ما هي:** Duck music under voice and deliver at platform loudness.
+**ما هي:** خفض الموسيقى تحت الصوت والتسليم بجهارة المنصة. — Duck music under voice and deliver at platform loudness.
 
 **متى:** عند خفض الموسيقى تحت الصوت وتسليم الفيديو بجهارة مناسبة للمنصات / when ducking music under voice and delivering at platform loudness
 
@@ -5455,7 +5455,7 @@
 | نطاق الدليل | `repo` |
 | الرخصة | owner |
 
-**ما هي:** Detect beats with aubio or librosa.beat.beat_track, or tap tempo; verify 5 beats by ear.
+**ما هي:** اكتشف الضربات بـ aubio أو librosa.beat.beat_track، أو بنقر الإيقاع؛ وتحقق من 5 ضربات بالأذن. — Detect beats with aubio or librosa.beat.beat_track, or tap tempo; verify 5 beats by ear.
 
 **متى:** حين تحتاج كشف الضربات بأداة قياس أو بالنقر على الإيقاع ثم التحقق بالأذن / when beats must be detected with aubio, librosa or tap tempo and checked by ear
 
@@ -5522,7 +5522,7 @@
 | نطاق الدليل | `sibling` |
 | الرخصة | owner |
 
-**ما هي:** One clock shared by picture and sound: beat times from a BPM or from a measured beats JSON.
+**ما هي:** ساعة واحدة مشتركة بين الصورة والصوت: أوقات الضربات من BPM أو من ملف JSON للضربات المقيسة. — One clock shared by picture and sound: beat times from a BPM or from a measured beats JSON.
 
 **متى:** عند توقيت الحركات على الإيقاع بساعة واحدة للصورة والصوت من BPM أو ملف نبضات مقاس / when timing animation on the beat with one clock shared by picture and sound, from a BPM or a beats JSON
 
@@ -5591,7 +5591,7 @@
 | نطاق الدليل | `repo` |
 | الرخصة | owner |
 
-**ما هي:** Fast attack and eased decay scale pulse on each beat.
+**ما هي:** نبضة تكبير بهجوم سريع واضمحلال متدرج على كل ضربة. — Fast attack and eased decay scale pulse on each beat.
 
 **متى:** حين يجب أن يكبر العنصر قليلا بسرعة ثم يعود بنعومة مع كل ضربة / when an element should scale up fast and ease back on every beat
 
@@ -5661,7 +5661,7 @@
 | نطاق الدليل | `sibling` |
 | الرخصة | MIT |
 
-**ما هي:** Describe a sound (rain on tin roof, laser, forest loop) and get a rendered SFX file.
+**ما هي:** صف صوتًا (مطر على سقف صفيح، ليزر، حلقة غابة) واحصل على ملف مؤثر مصيَّر. — Describe a sound (rain on tin roof, laser, forest loop) and get a rendered SFX file.
 
 **متى:** حين يصف المستخدم صوتا مثل مطر أو ليزر ويريد ملف مؤثر صوتي مولدا منه / when the user describes a sound like rain or a laser and wants a generated SFX file
 
@@ -5731,7 +5731,7 @@
 | نطاق الدليل | `sibling` |
 | الرخصة | unknown |
 
-**ما هي:** A set of short hosted SFX (whoosh, whip, page-turn, switch, mouse-click, shutter, ding, record-scratch and meme sounds).
+**ما هي:** مجموعة مؤثرات قصيرة مستضافة (whoosh وwhip وتقليب صفحة ومفتاح ونقرة فأرة وغالق كاميرا وding وخدش أسطوانة وأصوات الميم). — A set of short hosted SFX (whoosh, whip, page-turn, switch, mouse-click, shutter, ding, record-scratch and meme sounds).
 
 **متى:** عند الحاجة السريعة لمؤثرات قصيرة جاهزة مثل ووش أو تقليب صفحة أو نقرة ماوس / when you quickly need short hosted SFX like whoosh, page-turn, shutter or mouse-click
 
@@ -5800,7 +5800,7 @@
 | نطاق الدليل | `sibling` |
 | الرخصة | MIT |
 
-**ما هي:** Generate custom whooshes/impacts/ambiences from a prompt.
+**ما هي:** ولّد whooshes/صدمات/أجواء مخصصة من موجّه نصي. — Generate custom whooshes/impacts/ambiences from a prompt.
 
 **متى:** حين يحتاج المونتاج ووش أو ارتطاما أو جوا مخصصا مولدا من وصف نصي / when custom whooshes, impacts or ambiences must be generated from a prompt
 
@@ -5872,7 +5872,7 @@
 | نطاق الدليل | `sibling` |
 | الرخصة | Apache-2.0 |
 
-**ما هي:** Generate produced/sung music as sections in whole bars with global styles, negatives, and per-section lyrics so section starts land on bar lines for video cuts.
+**ما هي:** توليد موسيقى منتجة/غنائية كأقسام بموازير كاملة مع أساليب عامة وسلبيات وكلمات لكل قسم لتقع بدايات الأقسام على خطوط الموازير لقطعات الفيديو. — Generate produced/sung music as sections in whole bars with global styles, negatives, and per-section lyrics so section starts land on bar lines for video cuts.
 
 **متى:** حين يطلب المستخدم أغنية مولدة بأقسام وكلمات تبدأ على حدود الموازير لتناسب القطعات / when generating a sung song in sections whose starts land on bar lines for video cuts
 
@@ -5943,7 +5943,7 @@
 | نطاق الدليل | `sibling` |
 | الرخصة | Apache-2.0 |
 
-**ما هي:** A prompt with lyrics beside it can return nothing sung; put words in plan sections and verify with STT; short hooks/contractions drift.
+**ما هي:** قد يعيد موجّه تجاوره الكلمات دون غناء؛ ضع الكلمات في أقسام الخطة وتحقق بـ STT؛ والخطّافات القصيرة والاختصارات تنحرف. — A prompt with lyrics beside it can return nothing sung; put words in plan sections and verify with STT; short hooks/contractions drift.
 
 **متى:** حين تخرج الأغنية المولدة بلا غناء رغم وجود الكلمات بجانب الوصف / when a generated song comes back unsung because lyrics were placed beside the prompt
 
@@ -6013,7 +6013,7 @@
 | نطاق الدليل | `sibling` |
 | الرخصة | MIT |
 
-**ما هي:** Order style descriptors genre → mood → instrumentation → vocal → BPM → production, with the genre front-loaded.
+**ما هي:** رتّب واصفات الأسلوب: النوع ← المزاج ← الآلات ← الصوت ← BPM ← الإنتاج، مع تقديم النوع في الأول. — Order style descriptors genre → mood → instrumentation → vocal → BPM → production, with the genre front-loaded.
 
 **متى:** عند كتابة وصف أسلوب لأغنية في Suno بترتيب النوع والمزاج والآلات والصوت والسرعة / when writing a Suno style prompt ordered genre, mood, instruments, vocal, BPM, production
 
@@ -6083,7 +6083,7 @@
 | نطاق الدليل | `sibling` |
 | الرخصة | MIT |
 
-**ما هي:** The lyrics field acts as a second style channel: each section tag can carry its own instrumentation and dynamics, building verse-chorus contrast for an edit.
+**ما هي:** يعمل حقل الكلمات كقناة أسلوب ثانية: يستطيع كل وسم قسم أن يحمل آلاته وديناميكياته، فيبني تباين المقطع والكورَس للمونتاج. — The lyrics field acts as a second style channel: each section tag can carry its own instrumentation and dynamics, building verse-chorus contrast for an edit.
 
 **متى:** حين تريد أن يختلف كل مقطع في أغنية Suno في الآلات والقوة لصنع تباين للمونتاج / when each Suno song section needs its own instruments and dynamics for verse-chorus contrast
 
@@ -6153,7 +6153,7 @@
 | نطاق الدليل | `sibling` |
 | الرخصة | MIT |
 
-**ما هي:** Structural tags ([Intro], [Verse 1], [Pre-Chorus], [Chorus], [Bridge], [Build-Up], [Drop], [Instrumental Break], [Outro], [End], [Fade Out]), vocal tags ([Whispered], [Belted], [Falsetto], [Choir], [Rapped], [Spoken Word]) and effect tags ([Crescendo], [Silence], [Echo]).
+**ما هي:** وسوم البنية ([Intro] و[Verse 1] و[Pre-Chorus] و[Chorus] و[Bridge] و[Build-Up] و[Drop] و[Instrumental Break] و[Outro] و[End] و[Fade Out])، ووسوم الصوت ([Whispered] و[Belted] و[Falsetto] و[Choir] و[Rapped] و[Spoken Word])، ووسوم المؤثرات ([Crescendo] و[Silence] و[Echo]). — Structural tags ([Intro], [Verse 1], [Pre-Chorus], [Chorus], [Bridge], [Build-Up], [Drop], [Instrumental Break], [Outro], [End], [Fade Out]), vocal tags ([Whispered], [Belted], [Falsetto], [Choir], [Rapped], [Spoken Word]) and effect tags ([Crescendo], [Silence], [Echo]).
 
 **متى:** عند هيكلة كلمات أغنية في Suno بوسوم المقدمة والمقطع والكورس والخاتمة وتلميحات الأداء / when structuring Suno lyrics with section, vocal and effect tags and inline cues
 
@@ -6223,7 +6223,7 @@
 | نطاق الدليل | `sibling` |
 | الرخصة | MIT |
 
-**ما هي:** Community-validated lyric formatting that shapes delivery (medium confidence).
+**ما هي:** تنسيق كلمات الأغاني المجرَّب من المجتمع لتشكيل الأداء (ثقة متوسطة). — Community-validated lyric formatting that shapes delivery (medium confidence).
 
 **متى:** حين تريد التحكم في أداء المغني في Suno مثل الخشونة أو مد الحروف أو وقفة النفس / when shaping Suno vocal delivery with caps, extra vowels, pauses and line breaks
 
@@ -6293,7 +6293,7 @@
 | نطاق الدليل | `sibling` |
 | الرخصة | owner |
 
-**ما هي:** Decides whether a clip already carries music by listening to the gaps between words (or the quiet floor when gaps are absent), so no competing track is added.
+**ما هي:** يقرر هل يحمل المقطع موسيقى بالفعل بالاستماع إلى الفجوات بين الكلمات (أو الأرضية الهادئة عند غيابها)، فلا تُضاف أغنية منافسة. — Decides whether a clip already carries music by listening to the gaps between words (or the quiet floor when gaps are absent), so no competing track is added.
 
 **متى:** حين تريد معرفة هل يحمل المقطع موسيقى خلفية بالفعل قبل إضافة موسيقى أخرى تتعارض معها / when checking whether a clip already carries music so that no competing track gets added
 
@@ -6362,7 +6362,7 @@
 | نطاق الدليل | `sibling` |
 | الرخصة | MIT |
 
-**ما هي:** Common prompt mistakes and the rewrites that fix them.
+**ما هي:** أخطاء الموجّهات الشائعة وإعادات الصياغة التي تصلحها. — Common prompt mistakes and the rewrites that fix them.
 
 **متى:** حين لا تلتزم أغنية Suno بما طلبته مثل ظهور غناء أو طبول غير مرغوبة / when a Suno result ignores your prompt, e.g. unwanted vocals or drums, and needs a rewrite
 
@@ -6432,7 +6432,7 @@
 | نطاق الدليل | `sibling` |
 | الرخصة | MIT |
 
-**ما هي:** Re-style a song keeping its melody (Cover), lengthen from a chosen point (Extend + Get Whole Song), regenerate one middle section with 2 alternates (Replace Section, Pro/Premier), and reuse a song's vibe (Persona).
+**ما هي:** إعادة تصميم أغنية مع إبقاء لحنها (Cover)، وتمديدها من نقطة مختارة (Extend + Get Whole Song)، وإعادة توليد قسم أوسط واحد مع بديلين (Replace Section، Pro/Premier)، وإعادة استخدام أجواء أغنية (Persona). — Re-style a song keeping its melody (Cover), lengthen from a chosen point (Extend + Get Whole Song), regenerate one middle section with 2 alternates (Replace Section, Pro/Premier), and reuse a song's vibe (Persona).
 
 **متى:** عند تعديل أغنية Suno موجودة بتغيير أسلوبها أو إطالتها أو إعادة توليد مقطع واحد / when restyling, extending or regenerating one section of an existing Suno song
 
@@ -6502,7 +6502,7 @@
 | نطاق الدليل | `sibling` |
 | الرخصة | MIT |
 
-**ما هي:** Suno exports stems that snap to a DAW grid, which makes beat-cut editing and ducking easier.
+**ما هي:** يصدّر Suno مسارات منفصلة تنطبق على شبكة DAW، ما يسهّل القص على الإيقاع وخفض الموسيقى. — Suno exports stems that snap to a DAW grid, which makes beat-cut editing and ducking easier.
 
 **متى:** حين تحتاج مسارات منفصلة من أغنية Suno مثل الطبول للقطع على الإيقاع والخفض / when you need separated stems, MIDI or tempo-locked WAV from Suno for beat cuts and ducking
 
@@ -6572,7 +6572,7 @@
 | نطاق الدليل | `sibling` |
 | الرخصة | MIT |
 
-**ما هي:** Suno auto-detects language from the lyrics; the sourced top tier is English, Spanish, Portuguese, French, Japanese, Korean, Mandarin, while Arabic quality is unsourced.
+**ما هي:** يكتشف Suno اللغة تلقائيًا من الكلمات؛ والفئة العليا الموثقة هي الإنجليزية والإسبانية والبرتغالية والفرنسية واليابانية والكورية والماندرين، أما جودة العربية فغير موثقة. — Suno auto-detects language from the lyrics; the sourced top tier is English, Spanish, Portuguese, French, Japanese, Korean, Mandarin, while Arabic quality is unsourced.
 
 **متى:** حين يطلب المستخدم أغنية عربية أو بطابع راي أو مقامات شرقية من Suno / when making Arabic-language or Arabic-flavoured songs such as Rai in Suno
 
@@ -6642,7 +6642,7 @@
 | نطاق الدليل | `sibling` |
 | الرخصة | MIT |
 
-**ما هي:** Twelve ready genre templates (pop, rock, hip-hop, trap, edm, jazz, classical, folk, metal, ambient, lofi, rnb) each with style prompt, lyric shell and tweak knobs, plus a taxonomy with BPM ranges.
+**ما هي:** اثنا عشر قالب نوع جاهزًا (pop وrock وhip-hop وtrap وedm وjazz وclassical وfolk وmetal وambient وlofi وrnb) لكل منها موجّه أسلوب وهيكل كلمات ومقابض تعديل، مع تصنيف بنطاقات BPM. — Twelve ready genre templates (pop, rock, hip-hop, trap, edm, jazz, classical, folk, metal, ambient, lofi, rnb) each with style prompt, lyric shell and tweak knobs, plus a taxonomy with BPM ranges.
 
 **متى:** حين تحتاج قالبا جاهزا لنوع موسيقي مثل لوفاي أو تراب أو موسيقى تريلر خلف الموشن / when you need a ready genre template like lofi, trap, ambient or trailer music
 
@@ -6712,7 +6712,7 @@
 | نطاق الدليل | `sibling` |
 | الرخصة | Apache-2.0 |
 
-**ما هي:** music_v2 accepts a composition plan of sections, each with exact length and its own styles, so section starts land on bar lines that cuts can use.
+**ما هي:** يقبل music_v2 خطة تأليف من أقسام، لكل قسم طول دقيق وأساليبه الخاصة، فتقع بدايات الأقسام على خطوط الموازير التي تستخدمها القطعات. — music_v2 accepts a composition plan of sections, each with exact length and its own styles, so section starts land on bar lines that cuts can use.
 
 **متى:** عند حساب أطوال أقسام الأغنية بالموازير لتبدأ على خطوط القطع في الفيديو / when computing song section lengths in whole bars so section starts line up with cuts
 
@@ -6782,7 +6782,7 @@
 | نطاق الدليل | `sibling` |
 | الرخصة | MIT |
 
-**ما هي:** Strip background noise/music from a user's voice track to get clean speech for captions and ducking.
+**ما هي:** إزالة ضجيج الخلفية/الموسيقى من مسار صوت المستخدم للحصول على كلام نقي للترجمات وخفض الموسيقى. — Strip background noise/music from a user's voice track to get clean speech for captions and ducking.
 
 **متى:** حين يكون صوت المستخدم مختلطا بضوضاء أو موسيقى ويلزم كلام نظيف للترجمة والخفض / when a voice track has background noise or music and clean speech is needed for captions
 
@@ -6852,7 +6852,7 @@
 | نطاق الدليل | `sibling` |
 | الرخصة | owner |
 
-**ما هي:** Optional denoise/voice isolation on the user's own machine through the KOSIF bridge; the cleaned WAV is added as a voice track.
+**ما هي:** إزالة ضجيج اختيارية/عزل للصوت على جهاز المستخدم عبر جسر KOSIF؛ ويُضاف ملف WAV المنظَّف كمسار صوت. — Optional denoise/voice isolation on the user's own machine through the KOSIF bridge; the cleaned WAV is added as a voice track.
 
 **متى:** حين يريد المستخدم إزالة الضوضاء أو عزل صوته على جهازه المحلي عبر الجسر / when denoising or isolating a voice locally on the user's own machine through the bridge
 
@@ -6921,7 +6921,7 @@
 | نطاق الدليل | `sibling` |
 | الرخصة | owner |
 
-**ما هي:** Everything an AI music generator needs to produce a usable song, including Arabic dialect and maqam guidance.
+**ما هي:** كل ما يحتاجه مولّد الموسيقى بالذكاء الاصطناعي لإنتاج أغنية صالحة، بما في ذلك إرشادات اللهجة العربية والمقام. — Everything an AI music generator needs to produce a usable song, including Arabic dialect and maqam guidance.
 
 **متى:** حين يطلب المستخدم كتابة أغنية كاملة لمولد موسيقى بلهجة عربية مع وصف الأسلوب والكلمات / when writing a complete song package for an AI music generator, including Arabic dialects
 
@@ -6992,7 +6992,7 @@
 | نطاق الدليل | `sibling` |
 | الرخصة | owner |
 
-**ما هي:** Timecoded sound-design plan with prompts for AI SFX tools.
+**ما هي:** خطة تصميم صوت بأكواد زمنية مع موجّهات لأدوات المؤثرات بالذكاء الاصطناعي. — Timecoded sound-design plan with prompts for AI SFX tools.
 
 **متى:** عند التخطيط لتصميم الصوت بجدول زمني لكل مؤثر مع مستواه ووصف لتوليده / when planning a timecoded sound-design sheet with levels, pan and AI SFX prompts
 
@@ -7060,7 +7060,7 @@
 | نطاق الدليل | `sibling` |
 | الرخصة | owner |
 
-**ما هي:** Normalises to streaming loudness and catches AAC overshoot with a limiter; the composition mux uses a two-pass linear loudnorm because one-pass overshot short films.
+**ما هي:** يوحّد الجهارة إلى مستوى البث ويلتقط تجاوز AAC بمحدِّد؛ ويستخدم دمج التركيب loudnorm خطيًا بمرورين لأن المرور الواحد تجاوز في الأفلام القصيرة. — Normalises to streaming loudness and catches AAC overshoot with a limiter; the composition mux uses a two-pass linear loudnorm because one-pass overshot short films.
 
 **متى:** عند تجهيز صوت المونتاج أو الريل للنشر بعلو -14 LUFS مع محدد يمنع تجاوز القمم بعد ترميز AAC / when mastering a montage or reel mix to streaming loudness while a limiter catches AAC overshoot
 
@@ -7131,7 +7131,7 @@
 | نطاق الدليل | `sibling` |
 | الرخصة | MIT/Apache-2.0 |
 
-**ما هي:** Skill ids curated for the audio engineer, voice director and storyteller agents.
+**ما هي:** معرّفات مهارات منتقاة لوكلاء مهندس الصوت ومخرج الصوت والراوي. — Skill ids curated for the audio engineer, voice director and storyteller agents.
 
 **متى:** عند اختيار مهارات جاهزة لوكلاء هندسة الصوت وإخراج التعليق والقصة / when picking curated skill ids for audio engineer, voice director and storyteller agents
 
@@ -7202,7 +7202,7 @@
 | نطاق الدليل | `style` |
 | الرخصة | owner-description |
 
-**ما هي:** cut every 2 or 4 beats (0.4/0.8 s)
+**ما هي:** قطع كل ضربتين أو أربع ضربات (0.4/0.8 ث) — cut every 2 or 4 beats (0.4/0.8 s)
 
 **متى:** حين يريد المستخدم قطعا كل ضربتين أو أربع على الإيقاع / when cuts should land every 2 or 4 beats
 
@@ -7269,7 +7269,7 @@
 | نطاق الدليل | `style` |
 | الرخصة | owner-description |
 
-**ما هي:** band-pass noise 0.7-4.5 kHz, modulated by 7-11 Hz pressure pulses, plus short grain crackles; gate it while the chalk is drawing
+**ما هي:** ضجيج تمرير نطاقي 0.7-4.5 kHz، مُعدَّل بنبضات ضغط 7-11 Hz، مع طقطقات حبيبية قصيرة؛ وتُبوَّب أثناء رسم الطباشير. — band-pass noise 0.7-4.5 kHz, modulated by 7-11 Hz pressure pulses, plus short grain crackles; gate it while the chalk is drawing
 
 **متى:** حين يرسم الطباشير على الشاشة وتحتاج صوت خربشة مولدا متزامنا مع الرسم / when chalk drawing on screen needs a generated scratch sound gated to the strokes
 
@@ -7337,7 +7337,7 @@
 | نطاق الدليل | `style` |
 | الرخصة | owner-description |
 
-**ما هي:** Hard-cut one giant uppercase word per beat with small footer label and page counter 01/05
+**ما هي:** قطع حاد لكلمة ضخمة واحدة بحروف كبيرة لكل ضربة مع وسم تذييل صغير وعداد صفحات 01/05 — Hard-cut one giant uppercase word per beat with small footer label and page counter 01/05
 
 **متى:** حين يطلب المستخدم كلمات ضخمة تتبدل بسرعة كلمة مع كل ضربة / when one giant word should hard-cut per beat with a small label and page counter
 
@@ -7406,7 +7406,7 @@
 | نطاق الدليل | `style` |
 | الرخصة | owner-description |
 
-**ما هي:** countdown → white flash → fireball (noise-displaced emissive sphere expanding) timed to music hit
+**ما هي:** عدّ تنازلي ← وميض أبيض ← كرة نار (كرة مشعة مُزاحة بالضجيج تتمدد) متزامنة مع ضربة الموسيقى — countdown → white flash → fireball (noise-displaced emissive sphere expanding) timed to music hit
 
 **متى:** حين تريد ذروة بعد عد تنازلي بوميض أبيض وكرة نار على ضربة الموسيقى / when a countdown should end in a white flash and fireball timed to the music hit
 
@@ -7474,7 +7474,7 @@
 | نطاق الدليل | `style` |
 | الرخصة | owner-description |
 
-**ما هي:** scene change every 4 beats at 120 BPM
+**ما هي:** تغيير المشهد كل 4 ضربات عند 120 BPM — scene change every 4 beats at 120 BPM
 
 **متى:** عند تغيير المشهد بانتظام كل أربع ضربات على موسيقى بسرعة 120 BPM / when changing scenes every 4 beats at 120 BPM
 
@@ -7542,7 +7542,7 @@
 | نطاق الدليل | `style` |
 | الرخصة | owner-description |
 
-**ما هي:** on the music drop hard-cut 3 full-bleed clips one beat each; each carries a dark rounded chip with avatar + @handle inside the safe area bottom-left
+**ما هي:** عند هبوط الموسيقى تُقطع 3 مقاطع بملء الشاشة قطعًا حادًا، ضربة لكل منها؛ ويحمل كل منها شارة داكنة مستديرة بصورة رمزية و@handle داخل المنطقة الآمنة أسفل اليسار — on the music drop hard-cut 3 full-bleed clips one beat each; each carries a dark rounded chip with avatar + @handle inside the safe area bottom-left
 
 **متى:** حين يطلب المستخدم ريلز يقطع بين ثلاث لقطات مع الدروب وشارة اسم الحساب / for a reel that hard-cuts 3 clips on the music drop, each with an avatar and @handle chip
 
@@ -7610,7 +7610,7 @@
 | نطاق الدليل | `style` |
 | الرخصة | owner-description |
 
-**ما هي:** Compute beat times (e.g., 128 BPM = 0.469 s); playhead sweeps, a bar spikes on each beat with a timestamp label; caption states that the chart is the music
+**ما هي:** احسب أوقات الضربات (مثلًا 128 BPM = 0.469 ث)؛ يمسح مؤشر التشغيل، ويرتفع عمود عند كل ضربة مع وسم زمني؛ وتنص الترجمة على أن المخطط هو الموسيقى — Compute beat times (e.g., 128 BPM = 0.469 s); playhead sweeps, a bar spikes on each beat with a timestamp label; caption states that the chart is the music
 
 **متى:** حين يجب أن يتحول مخطط بياني إلى تصور للموسيقى بعمود يقفز مع كل ضربة / when a bar chart should spike a bar on every beat as a playhead sweeps
 
@@ -7678,7 +7678,7 @@
 | نطاق الدليل | `style` |
 | الرخصة | owner-description |
 
-**ما هي:** corner brackets + mono labels; bottom-right 'BPM · BAR n/08' increments every bar (60/BPM*4 s); chapter name decodes from random glyphs to final over ~300 ms
+**ما هي:** أقواس زوايا ووسوم أحادية المسافة؛ أسفل اليمين 'BPM · BAR n/08' يزداد كل مازورة (60/BPM*4 ث)؛ ويفك اسم الفصل من رموز عشوائية إلى النهائي خلال نحو 300 ms — corner brackets + mono labels; bottom-right 'BPM · BAR n/08' increments every bar (60/BPM*4 s); chapter name decodes from random glyphs to final over ~300 ms
 
 **متى:** حين تريد واجهة HUD بعداد موازير يتغير مع الموسيقى وعناوين تتفكك حروفها / when a HUD overlay needs a bar counter ticking with the music and scramble-decoded titles
 
@@ -7746,7 +7746,7 @@
 | نطاق الدليل | `style` |
 | الرخصة | owner-description |
 
-**ما هي:** Precompute beat times; place platform i so ballistic arc from platform i-1 lands exactly at beat[i]; solve vy = (dy + 0.5 g t^2)/t per hop
+**ما هي:** احسب أوقات الضربات مسبقًا؛ وضع المنصة i بحيث يهبط المسار الباليستي من المنصة i-1 تمامًا عند beat[i]؛ وحلّ vy = (dy + 0.5 g t^2)/t لكل قفزة — Precompute beat times; place platform i so ballistic arc from platform i-1 lands exactly at beat[i]; solve vy = (dy + 0.5 g t^2)/t per hop
 
 **متى:** حين تريد عنصرا يقفز بين منصات ويهبط بدقة على كل ضربة / when a bouncing object should hop between platforms and land exactly on each beat
 
@@ -7814,7 +7814,7 @@
 | نطاق الدليل | `sibling` |
 | الرخصة | owner |
 
-**ما هي:** Turns a track into animation curves one value per frame: loudness, bass/mid/high bands, onset strength, kicks, onsets, brightness, silence, tape-stop dive/rise, playback speed and a tape clock; plus a magma spectrogram and a height map image.
+**ما هي:** يحوّل المسار إلى منحنيات حركة بقيمة لكل إطار: الجهارة، وحزم الجهير/الوسط/الحاد، وقوة البدايات، والطبلات، والبدايات، والسطوع، والصمت، وهبوط/صعود توقف الشريط، وسرعة التشغيل، وساعة الشريط؛ إضافةً إلى مخطط طيفي بلون magma وصورة خريطة ارتفاع. — Turns a track into animation curves one value per frame: loudness, bass/mid/high bands, onset strength, kicks, onsets, brightness, silence, tape-stop dive/rise, playback speed and a tape clock; plus a magma spectrogram and a height map image.
 
 **متى:** حين تريد تحويل الصوت إلى منحنيات حركة لكل إطار مثل العلو والباص والضربات والصمت / when turning a track into per-frame animation curves (loudness, bass, kicks, onsets, silence) plus a spectrogram
 
@@ -7884,7 +7884,7 @@
 | نطاق الدليل | `style` |
 | الرخصة | owner-description |
 
-**ما هي:** start with stroke-only letters, fill them left->right with footage while a row of thin bars below animates to audio amplitude
+**ما هي:** ابدأ بحروف خطوط فقط، واملأها من اليسار إلى اليمين باللقطات بينما يتحرك صف أعمدة رفيعة أسفلها بحسب سعة الصوت — start with stroke-only letters, fill them left->right with footage while a row of thin bars below animates to audio amplitude
 
 **متى:** حين تريد عنوانا بحروف مفرغة تمتلئ بالفيديو مع أعمدة صوت تتحرك تحتها / when outline letters should fill with footage while waveform bars move below
 
@@ -7952,7 +7952,7 @@
 | نطاق الدليل | `style` |
 | الرخصة | owner-description |
 
-**ما هي:** cut every beat 0.2-0.5 s
+**ما هي:** قطع كل ضربة 0.2-0.5 ث — cut every beat 0.2-0.5 s
 
 **متى:** حين يطلب المستخدم مونتاجا سريعا بقطع مع كل ضربة / when you want a fast montage cutting on every beat
 
@@ -8019,7 +8019,7 @@
 | نطاق الدليل | `style` |
 | الرخصة | owner-description |
 
-**ما هي:** For each note time t and key position, solve launch velocity from launcher so the parabola hits the key exactly at t (v = (dx/T, (dy - 0.5 g T²)/T)); fire at t - T
+**ما هي:** لكل زمن نغمة t وموضع مفتاح، احلّ سرعة الإطلاق من القاذف ليصيب القطع المكافئ المفتاح تمامًا عند t (v = (dx/T, (dy - 0.5 g T²)/T)); وأطلق عند t - T — For each note time t and key position, solve launch velocity from launcher so the parabola hits the key exactly at t (v = (dx/T, (dy - 0.5 g T²)/T)); fire at t - T
 
 **متى:** حين تريد مقذوفات تطلق مسبقا لتصيب كل مفتاح في لحظة نغمته بالضبط / when projectiles must be launched early so each hits a key exactly on its note time
 
@@ -8087,7 +8087,7 @@
 | نطاق الدليل | `style` |
 | الرخصة | owner-description |
 
-**ما هي:** precompute collision times from the deterministic sim; at each, schedule next note of a melody/scale via Web Audio oscillator (short pluck envelope) or render offline with OfflineAudioContext
+**ما هي:** احسب مسبقًا أوقات التصادم من المحاكاة الحتمية؛ وعند كل منها جدوِل النغمة التالية من لحن/سلم بمذبذب Web Audio (غلاف نقر قصير) أو صيّر دون اتصال بـ OfflineAudioContext — precompute collision times from the deterministic sim; at each, schedule next note of a melody/scale via Web Audio oscillator (short pluck envelope) or render offline with OfflineAudioContext
 
 **متى:** حين يجب أن يعزف كل اصطدام في محاكاة ارتداد النغمة التالية من لحن / when each collision in a bouncing simulation should play the next note of a melody
 
@@ -8155,7 +8155,7 @@
 | نطاق الدليل | `style` |
 | الرخصة | owner-description |
 
-**ما هي:** Draw dense vertical coral bars as audio waveform beneath a serif line; amplitude from audio RMS per frame
+**ما هي:** ارسم أعمدة مرجانية رأسية كثيفة كموجة صوتية أسفل سطر بخط serif؛ والسعة من RMS الصوت لكل إطار — Draw dense vertical coral bars as audio waveform beneath a serif line; amplitude from audio RMS per frame
 
 **متى:** حين تريد سطر نص أنيقا تحته أعمدة موجة صوتية كثيفة تتحرك مع الصوت / when a serif text line should sit over dense waveform bars driven by audio RMS
 
@@ -8223,7 +8223,7 @@
 | نطاق الدليل | `style` |
 | الرخصة | owner-description |
 
-**ما هي:** cut to near-black with only a tiny mono code line for ~0.5-1 s, then flash into the climax on the drop
+**ما هي:** قطع إلى شبه سواد مع سطر كود أحادي صغير فقط نحو 0.5-1 ث، ثم وميض إلى الذروة عند الهبوط — cut to near-black with only a tiny mono code line for ~0.5-1 s, then flash into the climax on the drop
 
 **متى:** حين تريد لحظة سواد قصيرة قبل الذروة ثم وميضا قويا مع الدروب / when a brief near-black pause should precede a flash into the climax on the drop
 
@@ -8291,7 +8291,7 @@
 | نطاق الدليل | `style` |
 | الرخصة | owner-description |
 
-**ما هي:** Compute beat times from BPM (t = offset + k*60/BPM) and place hard cuts ~2 frames before chosen beats; add whoosh SFX peaking on the cut
+**ما هي:** احسب أوقات الضربات من BPM (t = offset + k*60/BPM) وضع القطعات الحادة قبل الضربات المختارة بنحو إطارين؛ وأضف مؤثر whoosh تبلغ ذروته عند القطع — Compute beat times from BPM (t = offset + k*60/BPM) and place hard cuts ~2 frames before chosen beats; add whoosh SFX peaking on the cut
 
 **متى:** حين تريد قطعات حادة قبل الضربة بإطارين مع صوت ووش في لحظة القطع / when hard cuts should land about 2 frames before beats with a whoosh peaking on the cut
 
@@ -8359,7 +8359,7 @@
 | نطاق الدليل | `style` |
 | الرخصة | owner-description |
 
-**ما هي:** vertical bars left/right of the word driven by audio amplitude (or synthetic), word sits on top
+**ما هي:** أعمدة رأسية يمين الكلمة ويسارها تقودها سعة الصوت (أو اصطناعية)، والكلمة فوقها — vertical bars left/right of the word driven by audio amplitude (or synthetic), word sits on top
 
 **متى:** حين تريد كلمة في المنتصف تحيط بها أعمدة صوت تتحرك يمينا ويسارا / when a word should be flanked left and right by bars driven by audio amplitude
 
@@ -8427,7 +8427,7 @@
 | نطاق الدليل | `style` |
 | الرخصة | owner-description |
 
-**ما هي:** define BPM, compute beat times, synthesize kick/snare/bass/arp with oscillators+noise in OfflineAudioContext or numpy; schedule every visual cut on beat frames
+**ما هي:** عرّف BPM، واحسب أوقات الضربات، وركّب طبلة/سنير/باص/أربيج بمذبذبات وضجيج في OfflineAudioContext أو numpy؛ وجدوِل كل قطعة مرئية على إطارات الضربات — define BPM, compute beat times, synthesize kick/snare/bass/arp with oscillators+noise in OfflineAudioContext or numpy; schedule every visual cut on beat frames
 
 **متى:** حين تحتاج موسيقى مولدة بالكود من طبول وباص وتقطع كل لقطة على ضربتها / when generating a kick, snare, bass and arp soundtrack in code and cutting every shot on beat frames
 
@@ -8496,7 +8496,7 @@
 | نطاق الدليل | `style` |
 | الرخصة | owner-description |
 
-**ما هي:** Highlight token box on each step event
+**ما هي:** إبراز مربع الرمز عند كل حدث خطوة — Highlight token box on each step event
 
 **متى:** حين تريد إبراز أجزاء الكود واحدًا تلو الآخر مع إيقاع الموسيقى / when highlighting code tokens step by step in time with the music beat
 
@@ -8564,7 +8564,7 @@
 | نطاق الدليل | `sibling` |
 | الرخصة | owner |
 
-**ما هي:** Spectral-flux onsets → tempo by autocorrelation with a gentle prior near 120 BPM → beat phase by comb → beats snapped to onset peaks; downbeats from the strongest of four phases; strong hits listed.
+**ما هي:** بدايات الطاقة الطيفية ← الإيقاع بالارتباط الذاتي مع افتراض لطيف قرب 120 BPM ← طور الضربة بالمشط ← تُلصق الضربات على قمم البدايات؛ والضربات الأولى من أقوى أربعة أطوار؛ وتُدرج الضربات القوية. — Spectral-flux onsets → tempo by autocorrelation with a gentle prior near 120 BPM → beat phase by comb → beats snapped to onset peaks; downbeats from the strongest of four phases; strong hits listed.
 
 **متى:** عند الحاجة لمعرفة سرعة أغنية وتحديد نبضاتها وضرباتها القوية باستخدام numpy وحدها / when you need tempo, beats, downbeats and strong hits from a track using numpy only
 
@@ -8634,7 +8634,7 @@
 | نطاق الدليل | `style` |
 | الرخصة | owner-description |
 
-**ما هي:** Swap the result image every 16th note (60/BPM/4 s) among style variants of the same subject; a black pill chip rolls vertically to the new style name; thumbnail strip highlights current
+**ما هي:** بدّل صورة النتيجة كل نوتة سادسة عشرة (60/BPM/4 ث) بين أساليب مختلفة للموضوع نفسه؛ وتتدحرج شارة سوداء رأسيًا إلى اسم الأسلوب الجديد؛ ويبرز شريط المصغرات الحالي — Swap the result image every 16th note (60/BPM/4 s) among style variants of the same subject; a black pill chip rolls vertically to the new style name; thumbnail strip highlights current
 
 **متى:** حين تعرض نسخًا بأساليب مختلفة لنفس الصورة وتبدلها بسرعة على الإيقاع / when cycling style variants of one image on 16th notes with a rolling style-name chip
 
@@ -8702,7 +8702,7 @@
 | نطاق الدليل | `style` |
 | الرخصة | owner-description |
 
-**ما هي:** HUD showing BPM, 4 beat squares filled by beat index, 'BAR n/8' and a bottom progress line; switch scene exactly on bar boundaries
+**ما هي:** HUD يعرض BPM و4 مربعات ضربات تمتلئ بحسب فهرس الضربة و'BAR n/8' وخط تقدم سفلي؛ وبدّل المشهد تمامًا عند حدود الموازير — HUD showing BPM, 4 beat squares filled by beat index, 'BAR n/8' and a bottom progress line; switch scene exactly on bar boundaries
 
 **متى:** حين تحتاج واجهة تعرض السرعة والضربات والبارات وتنقل المشهد عند حدود البار / when you need an on-screen BPM and bar counter HUD with scene switches on bar boundaries
 
@@ -8770,7 +8770,7 @@
 | نطاق الدليل | `style` |
 | الرخصة | owner-description |
 
-**ما هي:** Each chapter lasts exactly one bar at the stated BPM; HUD bar counter advances on each cut
+**ما هي:** يستمر كل فصل مازورة واحدة بالضبط عند BPM المعلن؛ ويتقدم عداد الموازير في HUD مع كل قطع — Each chapter lasts exactly one bar at the stated BPM; HUD bar counter advances on each cut
 
 **متى:** حين تقسم الفيديو إلى فصول قصيرة طول كل منها مازورة واحدة / when splitting a video into chapters that each last exactly one musical bar
 
@@ -8838,7 +8838,7 @@
 | نطاق الدليل | `style` |
 | الرخصة | owner-description |
 
-**ما هي:** row of thin vertical bars across the frame whose heights pulse with the beat; every Nth bar in accent colour
+**ما هي:** صف أعمدة رأسية رفيعة عبر الإطار تنبض ارتفاعاتها مع الضربة؛ وكل عمود N بلون التمييز — row of thin vertical bars across the frame whose heights pulse with the beat; every Nth bar in accent colour
 
 **متى:** حين تريد صفًا من الأعمدة الرفيعة تنبض أطوالها مع الإيقاع عبر الكادر / when you want a row of thin bars pulsing with the beat across the frame
 
@@ -8906,7 +8906,7 @@
 | نطاق الدليل | `style` |
 | الرخصة | owner-description |
 
-**ما هي:** scene every 3 beats at 120 BPM = 1.5 s
+**ما هي:** مشهد كل 3 ضربات عند 120 BPM = 1.5 ث — scene every 3 beats at 120 BPM = 1.5 s
 
 **متى:** حين تريد تبديل المشهد كل عدد ثابت من الضربات حسب سرعة الأغنية / when changing scenes every fixed number of beats based on the track BPM
 
@@ -8972,7 +8972,7 @@
 | نطاق الدليل | `style` |
 | الرخصة | owner-description |
 
-**ما هي:** derive bar = floor(t*BPM/60/4)+1, beat = floor(t*BPM/60)%4+1 and print 'BAR 04 · BEAT 4' + timecode each frame
+**ما هي:** استنتج المازورة = floor(t*BPM/60/4)+1 والضربة = floor(t*BPM/60)%4+1 واطبع 'BAR 04 · BEAT 4' + الكود الزمني في كل إطار — derive bar = floor(t*BPM/60/4)+1, beat = floor(t*BPM/60)%4+1 and print 'BAR 04 · BEAT 4' + timecode each frame
 
 **متى:** حين تريد عدادًا على الشاشة يحسب رقم المازورة والضربة والتايم كود في كل إطار / when showing a per-frame bar, beat and timecode counter on screen
 
@@ -9040,7 +9040,7 @@
 | نطاق الدليل | `style` |
 | الرخصة | owner-description |
 
-**ما هي:** Define bpm=120 -> beat=0.5 s; schedule every hit on beat indices, show 'Bxx/40' counter; phrases of 8 beats (4 s) per message
+**ما هي:** عرّف bpm=120 ← الضربة=0.5 ث؛ جدوِل كل ضربة على فهارس الضربات، وأظهر عداد 'Bxx/40'؛ وعبارات من 8 ضربات (4 ث) لكل رسالة — Define bpm=120 -> beat=0.5 s; schedule every hit on beat indices, show 'Bxx/40' counter; phrases of 8 beats (4 s) per message
 
 **متى:** حين تبني خطًا زمنيًا يجدول كل حدث على أرقام الضربات وجملًا من 8 ضربات لكل رسالة / when building a timeline that schedules every hit on beat indices with 8-beat phrases
 
@@ -9108,7 +9108,7 @@
 | نطاق الدليل | `style` |
 | الرخصة | owner-description |
 
-**ما هي:** at 120 BPM place hard cuts on beats/half-beats (0.5/0.25 s); each cut shows one word or a full colour flash
+**ما هي:** عند 120 BPM ضع قطعات حادة على الضربات/أنصاف الضربات (0.5/0.25 ث)؛ ويُظهر كل قطع كلمة واحدة أو وميض لون كامل — at 120 BPM place hard cuts on beats/half-beats (0.5/0.25 s); each cut shows one word or a full colour flash
 
 **متى:** حين تريد ومضات كلمات أو ألوان بقطع حاد على كل ضربة أو نصفها / when flashing one word or a full colour per hard cut on beats and half-beats
 
@@ -9176,7 +9176,7 @@
 | نطاق الدليل | `style` |
 | الرخصة | owner-description |
 
-**ما هي:** Row of thin bars with heights from audio FFT or noise, under condensed headline
+**ما هي:** صف أعمدة رفيعة بارتفاعات من FFT الصوت أو ضجيج، أسفل عنوان مضغوط — Row of thin bars with heights from audio FFT or noise, under condensed headline
 
 **متى:** حين تضع أعمدة معادل صوتي تحت عنوان أو كلمة رئيسية / when placing a row of equaliser bars under a condensed headline word
 
@@ -9244,7 +9244,7 @@
 | نطاق الدليل | `style` |
 | الرخصة | owner-description |
 
-**ما هي:** Grid of diamonds scale/colour per beat index
+**ما هي:** شبكة معيّنات يتغير حجمها/لونها بحسب فهرس الضربة — Grid of diamonds scale/colour per beat index
 
 **متى:** حين تريد خلفية شبكة معينات يتغير حجمها ولونها مع كل ضربة / when you want a grid of diamonds that changes scale and colour on each beat
 
@@ -9312,7 +9312,7 @@
 | نطاق الدليل | `sibling` |
 | الرخصة | owner |
 
-**ما هي:** Writes an original track in beats from a JSON spec (sections, chords, drops, risers, booms, end bell, tape stops), with buses, stems and seeded randomness — no samples, no downloads.
+**ما هي:** يكتب مقطوعة أصلية بالضربات من مواصفة JSON (أقسام وأوتار وهبوطات ومصاعد وانفجارات وجرس نهاية وتوقفات شريط)، مع حافلات ومسارات منفصلة وعشوائية مبذورة، بلا عينات ولا تنزيلات. — Writes an original track in beats from a JSON spec (sections, chords, drops, risers, booms, end bell, tape stops), with buses, stems and seeded randomness — no samples, no downloads.
 
 **متى:** حين تحتاج موسيقى أصلية تكتب من مواصفة JSON على شبكة الإيقاع دون عينات أو تنزيلات / when you need an original track written on the beat grid from a JSON spec, with no samples or downloads
 
@@ -9383,7 +9383,7 @@
 | نطاق الدليل | `style` |
 | الرخصة | owner-description |
 
-**ما هي:** cut every 4 beats: 60/BPM*4
+**ما هي:** قطع كل 4 ضربات: 60/BPM*4 — cut every 4 beats: 60/BPM*4
 
 **متى:** حين تريد قطعًا كل أربع ضربات أي مرة في كل مازورة حسب السرعة / when cutting once per bar, every 4 beats, from the track tempo
 
@@ -9451,7 +9451,7 @@
 | نطاق الدليل | `style` |
 | الرخصة | owner-description |
 
-**ما هي:** cut every 0.47 s, stutter cuts 60ms near climax
+**ما هي:** قطع كل 0.47 ث، وقطعات متلعثمة 60ms قرب الذروة — cut every 0.47 s, stutter cuts 60ms near climax
 
 **متى:** حين تقطع على شبكة الإيقاع وتضيف تقطيعًا متلعثمًا سريعًا قرب الذروة / when cutting on a beat grid with fast stutter cuts near the climax
 
@@ -9517,7 +9517,7 @@
 | نطاق الدليل | `style` |
 | الرخصة | owner-description |
 
-**ما هي:** filtered noise 1.8-7 kHz, amplitude modulated by 9-14 Hz pulses with short squeaks; click per word; cap snap at end
+**ما هي:** ضجيج مُرشَّح 1.8-7 kHz، مُعدَّل السعة بنبضات 9-14 Hz مع صريرات قصيرة؛ نقرة لكل كلمة؛ وطقة غطاء في النهاية — filtered noise 1.8-7 kHz, amplitude modulated by 9-14 Hz pulses with short squeaks; click per word; cap snap at end
 
 **متى:** حين تحتاج صوت قلم ماركر يكتب يولد بالكود مع نقرة لكل كلمة / when you need a code-generated marker-pen squeak for writing with a click per word
 
@@ -9585,7 +9585,7 @@
 | نطاق الدليل | `sibling` |
 | الرخصة | Apache-2.0 |
 
-**ما هي:** Bass drives scale pulses, mids drive shape morphs, treble drives glow; text stays subtle, shapes can swing hard.
+**ما هي:** يقود الجهير نبضات الحجم، وتقود الترددات الوسطى تحولات الأشكال، ويقود الحاد التوهج؛ ويبقى النص خفيفًا، ويمكن للأشكال أن تتأرجح بقوة. — Bass drives scale pulses, mids drive shape morphs, treble drives glow; text stays subtle, shapes can swing hard.
 
 **متى:** حين تربط ترددات الموسيقى بخصائص بصرية: الجهير للحجم والوسط للشكل والحاد للتوهج / when mapping bass, mids and treble to scale, shape morphs and glow
 
@@ -9653,7 +9653,7 @@
 | نطاق الدليل | `sibling` |
 | الرخصة | Apache-2.0 |
 
-**ما هي:** For music, read per-frame band energy for each caption group's time range and bake scale/glow into the tweens instead of per-frame callbacks.
+**ما هي:** في الموسيقى، اقرأ طاقة النطاقات لكل إطار لنطاق زمن كل مجموعة ترجمة واخبز التكبير/التوهج داخل التوينات بدل استدعاءات لكل إطار. — For music, read per-frame band energy for each caption group's time range and bake scale/glow into the tweens instead of per-frame callbacks.
 
 **متى:** حين تريد ترجمة تنبض وتتوهج مع طاقة الموسيقى دون حسابات لكل إطار / when captions should scale and glow with music energy baked into tweens
 
@@ -9721,7 +9721,7 @@
 | نطاق الدليل | `sibling` |
 | الرخصة | Apache-2.0 |
 
-**ما هي:** Cut footage so every cut lands on a bar line of the music, title on the first bar, shots of one bar each, slow push-in on each shot.
+**ما هي:** قص اللقطات بحيث يقع كل قطع على خط مازورة في الموسيقى، والعنوان في المازورة الأولى، ولقطات من مازورة لكل منها، مع دفع بطيء للداخل على كل لقطة. — Cut footage so every cut lands on a bar line of the music, title on the first bar, shots of one bar each, slow push-in on each shot.
 
 **متى:** حين تصنع تريلر تقع كل قطعة فيه على خط البار مع دفع بطيء للكاميرا في كل لقطة / when cutting a trailer with every cut on a bar line and a slow push-in per shot
 
@@ -9790,7 +9790,7 @@
 | نطاق الدليل | `sibling` |
 | الرخصة | MIT |
 
-**ما هي:** Short UI sound durations and characters to pair with on-screen clicks in product films.
+**ما هي:** مدد وخصائص أصوات واجهة قصيرة لتقترن بنقرات الشاشة في أفلام المنتجات. — Short UI sound durations and characters to pair with on-screen clicks in product films.
 
 **متى:** حين تضيف أصوات نقر ونجاح وخطأ لواجهة منتج في فيديو وتحتاج أطوالها المناسبة / when adding click, success and error UI sounds to a product film
 
@@ -9858,7 +9858,7 @@
 | نطاق الدليل | `sibling` |
 | الرخصة | Apache-2.0 |
 
-**ما هي:** Find the song's bar lines, pick the busiest motion moments from the capture, one bar per shot, title card one bar, end card on the remainder; verify each cut lands within one frame of a sound onset.
+**ما هي:** إيجاد خطوط الموازير في الأغنية، واختيار أنشط لحظات الحركة من اللقطة، ومازورة لكل لقطة، وبطاقة العنوان مازورة، وبطاقة النهاية على الباقي؛ والتحقق من وقوع كل قطع خلال إطار واحد من بداية صوتية. — Find the song's bar lines, pick the busiest motion moments from the capture, one bar per shot, title card one bar, end card on the remainder; verify each cut lands within one frame of a sound onset.
 
 **متى:** حين تحول تسجيلًا طويلًا إلى مقطع دعائي مقصوص على بارات أغنية / when turning a capture into a promo trailer cut one bar per shot to a song
 
@@ -9930,7 +9930,7 @@
 | نطاق الدليل | `sibling` |
 | الرخصة | MIT |
 
-**ما هي:** Music is planned per section with an emotional target: intro bright/curious, core focused and under the voice, key reveal with a lift or swell, outro resolving; music dips under insights and rises slightly in B-roll and demos.
+**ما هي:** تُخطَّط الموسيقى لكل قسم بهدف عاطفي: المقدمة مشرقة/فضولية، والجوهر مركز وتحت الصوت، والكشف الرئيسي برفع أو تصاعد، والخاتمة تحل؛ وتنخفض الموسيقى تحت الاستنتاجات وترتفع قليلًا في B-roll والعروض. — Music is planned per section with an emotional target: intro bright/curious, core focused and under the voice, key reveal with a lift or swell, outro resolving; music dips under insights and rises slightly in B-roll and demos.
 
 **متى:** حين تخطط موسيقى كل قسم في الفيديو بهدف عاطفي وتخفضها تحت الصوت / when planning music per section with an emotional target, dips under voice and swells on reveals
 
@@ -9998,7 +9998,7 @@
 | نطاق الدليل | `sibling` |
 | الرخصة | MIT |
 
-**ما هي:** Align the audible transient of an effect (not the file start) to the visible action at one-frame accuracy; avoid fixed relative fader rules; work clip gain -> EQ -> dynamics -> time automation/ducking -> bus; time ducking entries and exits to sentences and breaths to avoid pumping; check mono.
+**ما هي:** حاذِ الذروة المسموعة للمؤثر (لا بداية الملف) مع الحدث المرئي بدقة إطار واحد؛ وتجنب قواعد الفادر النسبية الثابتة؛ واعمل: كسب المقطع ← EQ ← الديناميكيات ← أتمتة الزمن/الخفض ← الحافلة؛ وزمّن مداخل الخفض ومخارجه على الجمل والأنفاس لتجنب الضخ؛ وافحص المونو. — Align the audible transient of an effect (not the file start) to the visible action at one-frame accuracy; avoid fixed relative fader rules; work clip gain -> EQ -> dynamics -> time automation/ducking -> bus; time ducking entries and exits to sentences and breaths to avoid pumping; check mono.
 
 **متى:** حين تضبط توقيت المؤثرات على الحركة بدقة إطار وترتب خطوات المكساج / when syncing sound effects to visible action within one frame and ordering the mix
 
@@ -10068,7 +10068,7 @@
 | نطاق الدليل | `sibling` |
 | الرخصة | owner |
 
-**ما هي:** Closed-form drum and tone voices used by the score.
+**ما هي:** أصوات طبول ونغمات بصيغة مغلقة تستخدمها المقطوعة. — Closed-form drum and tone voices used by the score.
 
 **متى:** عند الحاجة لأصوات طبول ونغمات مركبة مثل الكيك والتصفيق والهاي هات والجرس والرايزر / for closed-form drum and tone voices such as kick, clap, hi-hat, sub, pluck, bell, pad, riser and boom
 
@@ -10136,7 +10136,7 @@
 | نطاق الدليل | `sibling` |
 | الرخصة | MIT |
 
-**ما هي:** Exact cuts on a musical grid need a whole number of frames per bar: at 60 fps frames/bar = 14400 / BPM and frames/beat = 3600 / BPM.
+**ما هي:** تتطلب القطعات الدقيقة على شبكة موسيقية عددًا صحيحًا من الإطارات لكل مازورة: عند 60 fps إطارات المازورة = 14400 / BPM وإطارات الضربة = 3600 / BPM. — Exact cuts on a musical grid need a whole number of frames per bar: at 60 fps frames/bar = 14400 / BPM and frames/beat = 3600 / BPM.
 
 **متى:** حين تختار سرعة أغنية تعطي عددًا صحيحًا من الإطارات لكل بار لقطع دقيق / when choosing a tempo with whole frames per bar for exact cuts at 60 or 30 fps
 
@@ -10206,7 +10206,7 @@
 | نطاق الدليل | `sibling` |
 | الرخصة | MIT |
 
-**ما هي:** Every edit accent (cut, caption slam, flash, logo slam) has a matching transient in the cue (crash, impact, stab, kick); cue structure follows the beat sheet (riser into cold-open hit, half-time sting, full drop, breakdown building to climax, hit-stop gap, logo slam, cadence fading within the last b…
+**ما هي:** لكل لمسة مونتاج (قطع، صدمة ترجمة، وميض، صدمة شعار) ذروة مطابقة في الإشارة (crash، impact، stab، kick)؛ وتتبع بنية الإشارة ورقة الضربات (مصعد إلى ضربة افتتاح بارد، لسعة نصف وتيرة، هبوط كامل، انهيار يبني نحو الذروة، فجوة إيقاف الضربة، صدمة الشعار، ويتلاشى الإيقاع في آخر b… — Every edit accent (cut, caption slam, flash, logo slam) has a matching transient in the cue (crash, impact, stab, kick); cue structure follows the beat sheet (riser into cold-open hit, half-time sting, full drop, breakdown building to climax, hit-stop gap, logo slam, cadence fading within the last b…
 
 **متى:** حين تريد أن تقابل كل قطعة أو ومضة أو ظهور شعار ضربة في الموسيقى / when every cut, flash or logo slam must land on a matching hit in the music cue
 
@@ -10274,7 +10274,7 @@
 | نطاق الدليل | `sibling` |
 | الرخصة | owner-original (no LICENSE file; package prepared for the KOSIF Atlas owner) |
 
-**ما هي:** The symbol pulses three times on the sound logo's hits, then returns to its true proportions.
+**ما هي:** يومض الرمز ثلاث مرات على ضربات الشعار الصوتي، ثم يعود إلى أبعاده الحقيقية. — The symbol pulses three times on the sound logo's hits, then returns to its true proportions.
 
 **متى:** حين ينبض رمز العلامة ثلاث مرات على ضربات اللوجو الصوتي ثم يستقر / when a brand symbol should pulse three times on a sonic logo's hits then settle
 
@@ -10344,7 +10344,7 @@
 | نطاق الدليل | `sibling` |
 | الرخصة | owner-original (no LICENSE file; package prepared for the KOSIF Atlas owner) |
 
-**ما هي:** Each beat reveals one word of a short phrase, then the whole phrase holds (MG-091); four short shots then a longer hold at the end of a musical phrase so the montage breathes (MG-099).
+**ما هي:** تكشف كل ضربة كلمة واحدة من عبارة قصيرة، ثم تثبت العبارة كاملة (MG-091)؛ وأربع لقطات قصيرة ثم تثبيت أطول في نهاية الجملة الموسيقية ليتنفس المونتاج (MG-099). — Each beat reveals one word of a short phrase, then the whole phrase holds (MG-091); four short shots then a longer hold at the end of a musical phrase so the montage breathes (MG-099).
 
 **متى:** حين تظهر كلمات جملة قصيرة كلمة على كل ضربة أو تقطع لقطات قصيرة على جملة موسيقية / when revealing a phrase one word per beat or cutting shots to a musical phrase
 
@@ -10416,7 +10416,7 @@
 | نطاق الدليل | `sibling` |
 | الرخصة | owner-original (no LICENSE file; package prepared for the KOSIF Atlas owner) |
 
-**ما هي:** After a freeze a dashed path shows the ball's direction and end point (MG-094); short lines appear behind a moving body and vanish when it stops (MG-098).
+**ما هي:** بعد التجميد يُظهر مسار متقطع اتجاه الكرة ونقطة نهايتها (MG-094)؛ وتظهر خطوط قصيرة خلف جسم متحرك وتختفي حين يتوقف (MG-098). — After a freeze a dashed path shows the ball's direction and end point (MG-094); short lines appear behind a moving body and vanish when it stops (MG-098).
 
 **متى:** حين تجمد اللقطة لرسم مسار الكرة أو تضيف خطوط سرعة خلف جسم متحرك / when freezing a shot to draw a ball's path or adding speed lines behind a moving body
 
@@ -10486,7 +10486,7 @@
 | نطاق الدليل | `sibling` |
 | الرخصة | owner-original (no LICENSE file; package prepared for the KOSIF Atlas owner) |
 
-**ما هي:** A few bars around a cover image react to the track's loudness.
+**ما هي:** بضعة أعمدة حول صورة غلاف تتفاعل مع جهارة المسار. — A few bars around a cover image react to the track's loudness.
 
 **متى:** حين تريد أعمدة حول غلاف أغنية تتفاعل مع علو الصوت / when bars around a track's cover art should react to its loudness
 
@@ -10557,7 +10557,7 @@
 | نطاق الدليل | `sibling` |
 | الرخصة | MIT |
 
-**ما هي:** Cuts land exactly on the music only if a bar is a whole number of video frames and of audio samples. At 60 fps frames/bar = 14400/BPM, frames/beat = 3600/BPM.
+**ما هي:** لا تقع القطعات على الموسيقى تمامًا إلا إذا كانت المازورة عددًا صحيحًا من إطارات الفيديو وعينات الصوت. عند 60 fps إطارات المازورة = 14400/BPM وإطارات الضربة = 3600/BPM. — Cuts land exactly on the music only if a bar is a whole number of video frames and of audio samples. At 60 fps frames/bar = 14400/BPM, frames/beat = 3600/BPM.
 
 **متى:** حين تحتاج سرعة إيقاع تجعل البار عددًا صحيحًا من الإطارات ليقع القطع بدقة / when picking a BPM whose bars are whole video frames so cuts land exactly
 
@@ -10625,7 +10625,7 @@
 | نطاق الدليل | `sibling` |
 | الرخصة | MIT |
 
-**ما هي:** Remove background noise from dialogue before transcription or mixing.
+**ما هي:** إزالة ضجيج الخلفية من الحوار قبل التفريغ أو المزج. — Remove background noise from dialogue before transcription or mixing.
 
 **متى:** حين يكون في الحوار ضوضاء خلفية وتريد تنظيفه قبل التفريغ أو المكساج / when dialogue has background noise to remove before transcription or mixing
 
@@ -10697,7 +10697,7 @@
 | نطاق الدليل | `sibling` |
 | الرخصة | MIT |
 
-**ما هي:** Build sound in roles: dialogue, room tone/ambience, real action foley, creative SFX (whoosh, impact, riser, graphic accents — never logged as real sound), tonal layers (pads/drones) and music; each layer must differ in frequency/attack/body/tail — duplicating a sample is not texture.
+**ما هي:** ابنِ الصوت بالأدوار: الحوار، ونبرة الغرفة/الأجواء، وفولي الحركة الحقيقية، ومؤثرات إبداعية (whoosh وimpact وriser ولمسات غرافيكية، لا تُسجَّل أبدًا كصوت حقيقي)، وطبقات نغمية (وسائد/دورون)، والموسيقى؛ ويجب أن تختلف كل طبقة في التردد/الهجوم/الجسم/الذيل، فتكرار عينة ليس نسيجًا. — Build sound in roles: dialogue, room tone/ambience, real action foley, creative SFX (whoosh, impact, riser, graphic accents — never logged as real sound), tonal layers (pads/drones) and music; each layer must differ in frequency/attack/body/tail — duplicating a sample is not texture.
 
 **متى:** حين تبني شريط الصوت بطبقات: حوار وجو المكان وفولي ومؤثرات وموسيقى / when building a soundtrack in layered roles: dialogue, ambience, foley, SFX and music
 
@@ -10765,7 +10765,7 @@
 | نطاق الدليل | `sibling` |
 | الرخصة | MIT |
 
-**ما هي:** Make room for speech by pulling drum/melody stems or ending music at a phrase end and holding space with room tone/pad/drone; when music stops keep the reverb tail; land reverse swells/risers on the next downbeat or scene change; switch songs at phrase ends — crossfade if compatible, else tail -> am…
+**ما هي:** أفسح مجالًا للكلام بسحب مسارات الطبول/اللحن أو إنهاء الموسيقى عند نهاية جملة والإبقاء على المساحة بنبرة الغرفة/وسادة/دورون؛ وحين تتوقف الموسيقى أبقِ ذيل الريفرب؛ وأنزل التصاعدات العكسية/المصاعد على الضربة القوية التالية أو تغيّر المشهد؛ وبدّل الأغاني عند نهايات الجمل، بتلاشٍ متقاطع إن توافقت، وإلا ذيل ← am… — Make room for speech by pulling drum/melody stems or ending music at a phrase end and holding space with room tone/pad/drone; when music stops keep the reverb tail; land reverse swells/risers on the next downbeat or scene change; switch songs at phrase ends — crossfade if compatible, else tail -> am…
 
 **متى:** حين توقف الموسيقى لإفساح المجال للكلام أو تعيدها أو تنتقل بين أغنيتين / when stopping music for speech, bringing it back or switching songs at phrase ends
 
@@ -10832,7 +10832,7 @@
 | نطاق الدليل | `sibling` |
 | الرخصة | owner |
 
-**ما هي:** Kick-driven pumping on bass and music, music dip under SFX, per-bus gains, short seeded room reverb, soft clip and end fade; stems optional.
+**ما هي:** ضخّ مدفوع بالطبلة على الجهير والموسيقى، وخفض الموسيقى تحت المؤثرات، وكسب لكل حافلة، وصدى غرفة قصير مبذور، وقصّ ناعم وتلاشي نهاية؛ والمسارات المنفصلة اختيارية. — Kick-driven pumping on bass and music, music dip under SFX, per-bus gains, short seeded room reverb, soft clip and end fade; stems optional.
 
 **متى:** حين تمزج الموسيقى المولدة: ضخ مع الكيك وخفض تحت المؤثرات وصدى قصير وتلاشٍ في النهاية / when mixing a generated score with kick pumping, a music dip under SFX, per-bus gains, reverb and an end fade
 
@@ -10900,7 +10900,7 @@
 | نطاق الدليل | `sibling` |
 | الرخصة | MIT |
 
-**ما هي:** Do not rely on fixed -6/-12 dB offsets; decide the hero sound per passage and go clip gain -> EQ carve -> dynamics -> automation/sidechain ducking -> bus.
+**ما هي:** لا تعتمد على إزاحات ثابتة -6/-12 dB؛ حدّد الصوت البطل لكل مقطع، ثم: كسب المقطع ← نحت EQ ← الديناميكيات ← أتمتة/خفض sidechain ← الحافلة. — Do not rely on fixed -6/-12 dB offsets; decide the hero sound per passage and go clip gain -> EQ carve -> dynamics -> automation/sidechain ducking -> bus.
 
 **متى:** حين تتعارض الموسيقى مع الكلام وتحتاج خفضها تحته بالترتيب الصحيح / when music fights speech and needs sidechain ducking and EQ carving under the voice
 
@@ -10970,7 +10970,7 @@
 | نطاق الدليل | `sibling` |
 | الرخصة | MIT |
 
-**ما هي:** Master the music cue around -16 LUFS with peaks under -1 dBFS so SFX can sit on top before the final -14 LUFS pass; cue sample rate resampled to 48 kHz for video.
+**ما هي:** أتقن إشارة الموسيقى قرب -16 LUFS وذروات تحت -1 dBFS ليستقر المؤثرات فوقها قبل المرور النهائي عند -14 LUFS؛ وأعد أخذ عينات الإشارة إلى 48 kHz للفيديو. — Master the music cue around -16 LUFS with peaks under -1 dBFS so SFX can sit on top before the final -14 LUFS pass; cue sample rate resampled to 48 kHz for video.
 
 **متى:** حين تجهز ملف الموسيقى بمستوى جهارة مناسب قبل إضافة المؤثرات والمكساج النهائي / when premastering a music cue's loudness before adding SFX and the final mix
 
@@ -11039,7 +11039,7 @@
 | نطاق الدليل | `sibling` |
 | الرخصة | MIT |
 
-**ما هي:** Lay a soft keyboard-typing SFX across the exact reveal span of a typewriter caption.
+**ما هي:** ضع مؤثر كتابة لوحة مفاتيح ناعمًا عبر مدى كشف ترجمة الآلة الكاتبة بالضبط. — Lay a soft keyboard-typing SFX across the exact reveal span of a typewriter caption.
 
 **متى:** حين يظهر نص بأسلوب الآلة الكاتبة وتريد صوت كتابة على الكيبورد تحته / when a typewriter caption reveal needs a soft keyboard typing sound under it
 
@@ -11107,7 +11107,7 @@
 | نطاق الدليل | `sibling` |
 | الرخصة | Apache-2.0 |
 
-**ما هي:** When on-brief (podcast, music promo), render animated waveform or spectrum bars.
+**ما هي:** عندما يتطلب الموجز ذلك (بودكاست، ترويج موسيقي)، صيّر موجة صوتية متحركة أو أعمدة طيف. — When on-brief (podcast, music promo), render animated waveform or spectrum bars.
 
 **متى:** حين تحتاج موجة صوت أو طيفًا متحركًا كعنصر بصري لبودكاست أو برومو موسيقي / when a podcast or music promo needs an animated waveform or spectrum
 
@@ -11175,7 +11175,7 @@
 | نطاق الدليل | `sibling` |
 | الرخصة | MIT |
 
-**ما هي:** Starting points: synth-funk 140-160 swing .08-.12; DnB 165-180; boss rock 160-180; chiptune 120-180; synth-pop 120-135; ambient 60-90; horror 50-80.
+**ما هي:** نقاط انطلاق: synth-funk 140-160 swing .08-.12؛ DnB 165-180؛ boss rock 160-180؛ chiptune 120-180؛ synth-pop 120-135؛ ambient 60-90؛ horror 50-80. — Starting points: synth-funk 140-160 swing .08-.12; DnB 165-180; boss rock 160-180; chiptune 120-180; synth-pop 120-135; ambient 60-90; horror 50-80.
 
 **متى:** حين تختار سرعة وتأرجح وآلات موسيقى أصلية حسب النوع الموسيقي المطلوب / when choosing BPM, swing and instruments for an original score by genre
 
@@ -11243,7 +11243,7 @@
 | نطاق الدليل | `sibling` |
 | الرخصة | MIT |
 
-**ما هي:** Never transcribe or imitate a recognisable tune; 'in the spirit of' means genre conventions.
+**ما هي:** لا تنسخ أو تقلّد لحنًا معروفًا أبدًا؛ و'بروح' تعني أعراف النوع. — Never transcribe or imitate a recognisable tune; 'in the spirit of' means genre conventions.
 
 **متى:** حين يطلب المستخدم موسيقى تشبه لحنًا معروفًا فتلتزم بأسلوب النوع دون تقليده / when a user asks for music like a known tune: use genre conventions, never imitate it
 
@@ -11309,7 +11309,7 @@
 | نطاق الدليل | `sibling` |
 | الرخصة | MIT |
 
-**ما هي:** Build hits/whooshes as transient (0-20ms, material), body (20-300ms, meaning), tail (100ms-2s, space).
+**ما هي:** ابنِ الضربات وصوت المرور كعابر (0-20ms، المادة) وجسم (20-300ms، المعنى) وذيل (100ms-2s، المساحة). — Build hits/whooshes as transient (0-20ms, material), body (20-300ms, meaning), tail (100ms-2s, space).
 
 **متى:** حين تصمم ضربة أو ووش من ثلاث طبقات: بداية حادة وجسم وذيل / when designing a hit or whoosh as transient, body and tail layers
 
@@ -11378,7 +11378,7 @@
 | نطاق الدليل | `sibling` |
 | الرخصة | MIT |
 
-**ما هي:** Rising = gain/positive, falling = loss; major intervals/bells = reward; minor 2nds/tritones = danger; low thump = weight; low-pass = distance.
+**ما هي:** الصاعد = كسب/إيجابي، والهابط = خسارة؛ الفواصل الكبيرة/الأجراس = مكافأة؛ الثانيات الصغيرة/ثلاثيات الدرجات = خطر؛ دقة منخفضة = ثقل؛ low-pass = بُعد. — Rising = gain/positive, falling = loss; major intervals/bells = reward; minor 2nds/tritones = danger; low thump = weight; low-pass = distance.
 
 **متى:** حين تختار نغمة المؤثر لتعبر عن المعنى: صعود للربح وهبوط للخسارة / when picking SFX pitch gestures to signal gain, loss, reward or danger
 
@@ -11446,7 +11446,7 @@
 | نطاق الدليل | `sibling` |
 | الرخصة | Apache-2.0 |
 
-**ما هي:** Below ~300Hz phones play almost nothing: add a knock/click above to any thud; danger cues need 1-4kHz content.
+**ما هي:** دون نحو 300Hz لا تعزف الهواتف شيئًا تقريبًا: أضف طقة/نقرة أعلى لأي دقة؛ وتحتاج إشارات الخطر محتوى 1-4kHz. — Below ~300Hz phones play almost nothing: add a knock/click above to any thud; danger cues need 1-4kHz content.
 
 **متى:** حين يجب أن تُسمع المؤثرات بوضوح على سماعة الجوال الصغيرة / when sound effects must stay audible on a phone speaker
 
@@ -11515,7 +11515,7 @@
 | نطاق الدليل | `sibling` |
 | الرخصة | MIT |
 
-**ما هي:** Repeated SFX get 3-4 round-robin variants (pitch ±1 semitone, filter ±15%) or runtime pitch jitter ±3-5%.
+**ما هي:** المؤثرات المتكررة تحصل على 3-4 تنويعات دوّارة (طبقة ±1 نصف نغمة، مرشح ±15%) أو اهتزاز طبقة وقت التشغيل ±3-5%. — Repeated SFX get 3-4 round-robin variants (pitch ±1 semitone, filter ±15%) or runtime pitch jitter ±3-5%.
 
 **متى:** حين يتكرر نفس المؤثر كثيرًا وتريد نسخًا متنوعة حتى لا يمل السامع / when a repeated sound effect needs round-robin variants to avoid listener fatigue
 
@@ -11584,7 +11584,7 @@
 | نطاق الدليل | `sibling` |
 | الرخصة | owner |
 
-**ما هي:** Ready JSON scores and cue sheets from shipped films to copy or adapt.
+**ما هي:** مقطوعات JSON وقوائم إشارات جاهزة من أفلام منجزة، للنسخ أو التعديل. — Ready JSON scores and cue sheets from shipped films to copy or adapt.
 
 **متى:** عند الرغبة في نسخ مواصفة موسيقى وورقة مؤثرات جاهزة من أفلام سابقة وتعديلها بدل البدء من الصفر / when you want ready JSON scores and cue sheets from shipped films to copy or adapt
 
@@ -11655,7 +11655,7 @@
 | نطاق الدليل | `sibling` |
 | الرخصة | Apache-2.0 |
 
-**ما هي:** An effect starting 30ms late feels laggy; trim leading silence, align audible transient not file start.
+**ما هي:** المؤثر الذي يبدأ متأخرًا 30ms يبدو متباطئًا؛ اقصّ الصمت في البداية، وحاذِ الذروة المسموعة لا بداية الملف. — An effect starting 30ms late feels laggy; trim leading silence, align audible transient not file start.
 
 **متى:** حين يبدو المؤثر متأخرًا عن الحركة بسبب صمت في بدايته / when a sound effect feels late because of leading silence before its transient
 
@@ -11725,7 +11725,7 @@
 | نطاق الدليل | `sibling` |
 | الرخصة | MIT |
 
-**ما هي:** Classify every sound: voice/location, room tone/ambience, Foley, creative SFX (whoosh/impact/riser), tonal/music, and deliberate silence; log cue id, TC, intent, asset, review reason.
+**ما هي:** صنّف كل صوت: صوت/موقع، ونبرة غرفة/أجواء، وفولي، ومؤثر إبداعي (whoosh/impact/riser)، ونغمي/موسيقى، وصمت متعمد؛ وسجّل معرّف الإشارة، والكود الزمني، والقصد، والأصل، وسبب المراجعة. — Classify every sound: voice/location, room tone/ambience, Foley, creative SFX (whoosh/impact/riser), tonal/music, and deliberate silence; log cue id, TC, intent, asset, review reason.
 
 **متى:** حين تحتاج جدولًا يصنف كل صوت في الفيلم ودوره وتوقيته وسبب مراجعته / when logging every sound by role, timecode and intent in a cue sheet
 
@@ -11791,7 +11791,7 @@
 | نطاق الدليل | `sibling` |
 | الرخصة | MIT |
 
-**ما هي:** Fill digital-silence holes from cuts with matching room tone to keep space continuous.
+**ما هي:** املأ ثقوب الصمت الرقمي الناتجة عن القطعات بنبرة غرفة مطابقة للحفاظ على استمرارية المكان. — Fill digital-silence holes from cuts with matching room tone to keep space continuous.
 
 **متى:** حين تترك القطعات فجوات صمت رقمي في الكلام وتريد ملأها بصوت الغرفة / when cuts leave digital silence gaps that need matching room tone
 
@@ -11857,7 +11857,7 @@
 | نطاق الدليل | `sibling` |
 | الرخصة | MIT |
 
-**ما هي:** Shorten/extend a track by cutting at matching phrase/bar/downbeat points.
+**ما هي:** قصّر/مدّد مسارًا بالقطع عند نقاط عبارات/موازير/ضربات قوية متطابقة. — Shorten/extend a track by cutting at matching phrase/bar/downbeat points.
 
 **متى:** حين تحتاج تقصير أغنية أو إطالتها بالقطع عند نقاط بار متطابقة / when shortening or extending a track to length by cutting on matching bars
 
@@ -11924,7 +11924,7 @@
 | نطاق الدليل | `sibling` |
 | الرخصة | MIT |
 
-**ما هي:** Dip music under narration automatically, judged on representative passages rather than fixed -6/-12 dB offsets.
+**ما هي:** اخفض الموسيقى تحت التعليق تلقائيًا، يُحكم عليه في مقاطع تمثيلية لا بإزاحات ثابتة -6/-12 dB. — Dip music under narration automatically, judged on representative passages rather than fixed -6/-12 dB offsets.
 
 **متى:** حين تريد خفض الموسيقى تلقائيًا تحت التعليق الصوتي / when music should dip automatically under narration
 
@@ -11992,7 +11992,7 @@
 | نطاق الدليل | `sibling` |
 | الرخصة | Apache-2.0 |
 
-**ما هي:** 1-3ms inter-channel delay cancels held tones in mono (-4dB loss); widen by detune/panning, offset only transients.
+**ما هي:** تأخير 1-3ms بين القناتين يلغي النغمات الممتدة في المونو (خسارة -4dB)؛ وسّع بالنشاز/التوزيع، وأزح العوابر فقط. — 1-3ms inter-channel delay cancels held tones in mono (-4dB loss); widen by detune/panning, offset only transients.
 
 **متى:** حين توسع الستيريو وتريد ألا يضيع الصوت عند تشغيله مونو / when widening stereo without tones cancelling on mono playback
 
@@ -12061,7 +12061,7 @@
 | نطاق الدليل | `sibling` |
 | الرخصة | MIT |
 
-**ما هي:** 28Hz high-pass, -1.5dB shelf at 10kHz, iterate normalize->limit until within 0.15 LU of target; sample ceiling -1.5 dBFS for Vorbis.
+**ما هي:** high-pass عند 28Hz، ورف -1.5dB عند 10kHz، وكرّر التطبيع ← المحدِّد حتى تصبح ضمن 0.15 LU من الهدف؛ وسقف العينة -1.5 dBFS لـ Vorbis. — 28Hz high-pass, -1.5dB shelf at 10kHz, iterate normalize->limit until within 0.15 LU of target; sample ceiling -1.5 dBFS for Vorbis.
 
 **متى:** حين تحتاج ماستر نهائي للموسيقى يصل لهدف الجهارة بدقة / when mastering a music track to hit a loudness target precisely
 
@@ -12131,7 +12131,7 @@
 | نطاق الدليل | `sibling` |
 | الرخصة | Apache-2.0 |
 
-**ما هي:** Pitch glides must integrate frequency into phase; sin(2πf(t)t) sweeps twice too fast.
+**ما هي:** يجب أن تُكامِل انزلاقات الطبقة التردد إلى طور؛ وsin(2πf(t)t) تمسح أسرع بمرتين. — Pitch glides must integrate frequency into phase; sin(2πf(t)t) sweeps twice too fast.
 
 **متى:** حين تولد بالكود انزلاقًا في النغمة أو اهتزازًا وتريد سرعة الانزلاق صحيحة / when synthesizing pitch glides or vibrato in code without sweeping too fast
 
@@ -12199,7 +12199,7 @@
 | نطاق الدليل | `sibling` |
 | الرخصة | Apache-2.0 |
 
-**ما هي:** Two-pass loudnorm: measure then apply measured values; socials -14 LUFS, podcast -16 LUFS, true peak -1.5, LRA 11.
+**ما هي:** loudnorm بمرورين: قِس ثم طبّق القيم المقيسة؛ التواصل -14 LUFS، والبودكاست -16 LUFS، والذروة الحقيقية -1.5، وLRA 11. — Two-pass loudnorm: measure then apply measured values; socials -14 LUFS, podcast -16 LUFS, true peak -1.5, LRA 11.
 
 **متى:** حين تضبط جهارة الفيديو أو البودكاست قبل النشر على السوشيال / when normalizing loudness for social video or podcast before publishing
 
@@ -12268,7 +12268,7 @@
 | نطاق الدليل | `sibling` |
 | الرخصة | owner |
 
-**ما هي:** Designed hits on contact/50% pop/97% settle frames; about 5 effects per 10 s.
+**ما هي:** ضربات مصممة على إطارات التلامس/50% pop/97% الاستقرار؛ نحو 5 مؤثرات لكل 10 ث. — Designed hits on contact/50% pop/97% settle frames; about 5 effects per 10 s.
 
 **متى:** حين تحدد كم مؤثرًا تضع وفي أي إطارات من حركة العنصر / when deciding how many sound effects to use and on which motion frames
 
@@ -12336,7 +12336,7 @@
 | نطاق الدليل | `sibling` |
 | الرخصة | owner |
 
-**ما هي:** Seeded stereo beds keyed to seconds: sea swell, wind, slow pad chords, rain with droplets, thunder roll, whooshes, dawn birdsong, water plinks and a brook.
+**ما هي:** خلفيات ستيريو مبذورة مرتبطة بالثواني: موج البحر، والريح، وأوتار هادئة بطيئة، ومطر بقطرات، ودوي رعد، وصوت مرور سريع، وتغريد الفجر، ونقرات الماء، وجدول. — Seeded stereo beds keyed to seconds: sea swell, wind, slow pad chords, rain with droplets, thunder roll, whooshes, dawn birdsong, water plinks and a brook.
 
 **متى:** حين يحتاج المشهد خلفية صوتية طبيعية مثل البحر والريح والمطر والرعد والعصافير في ثوان محددة / when a scene needs a seeded ambient bed of sea, wind, rain, thunder, birdsong or a brook keyed to seconds
 
@@ -12406,7 +12406,7 @@
 | نطاق الدليل | `sibling` |
 | الرخصة | owner |
 
-**ما هي:** Beat seconds = 60/BPM; place big visual changes on downbeats, punch zooms/keywords on off-beats.
+**ما هي:** ثواني الضربة = 60/BPM؛ ضع التغيرات البصرية الكبيرة على الضربات القوية، وتقريبات اللكمة/الكلمات المفتاحية على الضربات الضعيفة. — Beat seconds = 60/BPM; place big visual changes on downbeats, punch zooms/keywords on off-beats.
 
 **متى:** حين تحسب مدة الضربة من السرعة لتضع التغييرات الكبيرة والزوم على الإيقاع / when computing beat length from BPM to place big changes and punch zooms
 
@@ -12474,7 +12474,7 @@
 | نطاق الدليل | `sibling` |
 | الرخصة | owner |
 
-**ما هي:** Build anticipation with a riser 0.3-0.5 s before a cut.
+**ما هي:** ابنِ الترقب بمصعد قبل القطع بـ 0.3-0.5 ث. — Build anticipation with a riser 0.3-0.5 s before a cut.
 
 **متى:** حين تريد بناء ترقب قبل القطع بصوت صاعد / when building anticipation with a riser or whoosh just before a cut
 
@@ -12542,7 +12542,7 @@
 | نطاق الدليل | `sibling` |
 | الرخصة | owner |
 
-**ما هي:** Impact or sub-drop exactly at the cut frame.
+**ما هي:** ضربة أو هبوط سفلي تمامًا عند إطار القطع. — Impact or sub-drop exactly at the cut frame.
 
 **متى:** حين تريد ضربة قوية أو هبوطًا عميقًا يقع تمامًا على إطار القطع / when an impact or sub-drop should land exactly on the cut frame
 
@@ -12611,7 +12611,7 @@
 | نطاق الدليل | `sibling` |
 | الرخصة | owner |
 
-**ما هي:** Cuts a set of clips on the beat of a music track with a colour grade and a target ratio; length follows the music unless set.
+**ما هي:** يقص مجموعة مقاطع على ضربة مسار موسيقي مع تدرج لون ونسبة هدف؛ ويتبع الطول الموسيقى ما لم يُحدَّد. — Cuts a set of clips on the beat of a music track with a colour grade and a target ratio; length follows the music unless set.
 
 **متى:** حين يعطيك المستخدم مقاطع وأغنية ويريد مونتاج مقطوع على الإيقاع بتلوين / when the user gives clips and a song and wants a beat-cut montage with a colour grade
 
@@ -12681,7 +12681,7 @@
 | نطاق الدليل | `sibling` |
 | الرخصة | owner |
 
-**ما هي:** Synthesises an original music bed on a tempo grid as WAV, so a film can have royalty-free sound.
+**ما هي:** يركّب خلفية موسيقية أصلية على شبكة إيقاع كملف WAV، ليكون للفيلم صوت خالٍ من الإتاوات. — Synthesises an original music bed on a tempo grid as WAV, so a film can have royalty-free sound.
 
 **متى:** حين يحتاج الفيلم موسيقى خلفية أصلية بلا حقوق تولد على سرعة محددة / when a film needs an original royalty-free music bed generated at a set tempo
 
@@ -12750,7 +12750,7 @@
 | نطاق الدليل | `sibling` |
 | الرخصة | owner |
 
-**ما هي:** Sound design rule that sells transitions: build anticipation just before the cut and land a hit exactly on it.
+**ما هي:** قاعدة تصميم صوت تُقنع بالانتقالات: ابنِ الترقب قبل القطع مباشرةً وأنزل ضربة عليه تمامًا. — Sound design rule that sells transitions: build anticipation just before the cut and land a hit exactly on it.
 
 **متى:** حين تريد انتقالًا مقنعًا بصوت صاعد قبل القطع وضربة عليه / when selling a transition with a riser before the cut and an impact on it
 
@@ -12818,7 +12818,7 @@
 | نطاق الدليل | `sibling` |
 | الرخصة | owner |
 
-**ما هي:** A concrete processing order for voice and music.
+**ما هي:** ترتيب معالجة محدد للصوت والموسيقى. — A concrete processing order for voice and music.
 
 **متى:** حين تحتاج ترتيبًا وأرقامًا محددة لمعالجة الصوت والموسيقى دون برنامج مكساج / when you need a concrete processing order with numbers for voice and music
 
@@ -12887,7 +12887,7 @@
 | نطاق الدليل | `sibling` |
 | الرخصة | owner |
 
-**ما هي:** Mood-to-maqam map with prompt hints for scoring Arabic content.
+**ما هي:** خريطة من المزاج إلى المقام مع تلميحات موجّهات لتلحين المحتوى العربي. — Mood-to-maqam map with prompt hints for scoring Arabic content.
 
 **متى:** حين تختار مقامًا عربيًا يناسب مشاعر المحتوى عند كتابة وصف الموسيقى / when choosing an Arabic maqam by mood for a music prompt
 
@@ -12955,7 +12955,7 @@
 | نطاق الدليل | `sibling` |
 | الرخصة | owner |
 
-**ما هي:** Named Arabic rhythms with meters and stroke patterns for beat-synced edits and music prompts.
+**ما هي:** إيقاعات عربية مسماة بأوزانها وأنماط ضرباتها للمونتاج المتزامن مع الإيقاع وموجّهات الموسيقى. — Named Arabic rhythms with meters and stroke patterns for beat-synced edits and music prompts.
 
 **متى:** حين تحتاج إيقاعًا عربيًا كالمقسوم أو البلدي أو الخليجي لمونتاج أو وصف موسيقى / when picking an Arabic rhythm like maqsum or khaleeji for edits or music prompts
 
@@ -13023,7 +13023,7 @@
 | نطاق الدليل | `sibling` |
 | الرخصة | owner |
 
-**ما هي:** Instrument names for music prompts and sound design.
+**ما هي:** أسماء الآلات لموجّهات الموسيقى وتصميم الصوت. — Instrument names for music prompts and sound design.
 
 **متى:** حين تذكر آلات عربية كالعود والقانون والناي في وصف موسيقى أو تصميم صوت / when naming Arabic instruments like oud, qanun or ney in a music prompt
 
@@ -13091,7 +13091,7 @@
 | نطاق الدليل | `repo` |
 | الرخصة | owner |
 
-**ما هي:** Request presets: keep (voice untouched), music (licensed only, ducked under voice, -14 LUFS), sfx (short accents on key moments only), silent.
+**ما هي:** إعدادات طلب مسبقة: keep (الصوت دون مساس)، music (مرخّصة فقط، مخفوضة تحت الصوت، -14 LUFS)، sfx (لمسات قصيرة في اللحظات الرئيسية فقط)، silent. — Request presets: keep (voice untouched), music (licensed only, ducked under voice, -14 LUFS), sfx (short accents on key moments only), silent.
 
 **متى:** عند تحديد طريقة الصوت في الطلب: إبقاء الصوت الأصلي أو موسيقى مرخصة أو مؤثرات فقط أو صمت / when choosing a request's audio mode: keep the voice untouched, licensed ducked music, short SFX only, or silent
 
@@ -13161,7 +13161,7 @@
 | نطاق الدليل | `sibling` |
 | الرخصة | owner |
 
-**ما هي:** Original-lyrics song brief and the beat/bar timings for cutting video to music.
+**ما هي:** موجز أغنية بكلمات أصلية وأزمنة الضربات/الموازير لقص الفيديو على الموسيقى. — Original-lyrics song brief and the beat/bar timings for cutting video to music.
 
 **متى:** حين تكتب موجز أغنية بكلمات أصلية وتحتاج مدد الضربة والبار لقص الفيديو عليها / when writing an original-lyrics song brief and beat/bar timings for cutting video
 
@@ -13228,7 +13228,7 @@
 | نطاق الدليل | `sibling` |
 | الرخصة | owner |
 
-**ما هي:** Platform/video -14 LUFS, podcast -16 LUFS stereo (-19 mono), true peak -1 dBTP, adjacent scenes differ <=6 dB.
+**ما هي:** المنصة/الفيديو -14 LUFS، والبودكاست -16 LUFS ستيريو (-19 مونو)، وذروة حقيقية -1 dBTP، والمشاهد المتجاورة تختلف ≤6 dB. — Platform/video -14 LUFS, podcast -16 LUFS stereo (-19 mono), true peak -1 dBTP, adjacent scenes differ <=6 dB.
 
 **متى:** حين تحتاج مستوى الجهارة المناسب للمنصة أو البودكاست قبل التسليم / when you need the right loudness target for platform video or podcast
 
@@ -13299,7 +13299,7 @@
 | نطاق الدليل | `sibling` |
 | الرخصة | owner |
 
-**ما هي:** Music compressed by voice signal.
+**ما هي:** موسيقى مضغوطة بإشارة الصوت. — Music compressed by voice signal.
 
 **متى:** حين تريد أن تنخفض الموسيقى تلقائيًا كلما تكلم الصوت / when music should be compressed automatically whenever the voice speaks
 
@@ -13367,7 +13367,7 @@
 | نطاق الدليل | `sibling` |
 | الرخصة | owner |
 
-**ما هي:** Measure integrated LUFS, true peak, LRA, spectrum, clipping; clean (noise, hum) -> corrective EQ -> compression -> limiter; re-measure; before/after report.
+**ما هي:** قِس LUFS الكلي والذروة الحقيقية وLRA والطيف والقصّ؛ نظّف (ضجيج، همهمة) ← EQ تصحيحي ← ضغط ← محدِّد؛ أعد القياس؛ وتقرير قبل/بعد. — Measure integrated LUFS, true peak, LRA, spectrum, clipping; clean (noise, hum) -> corrective EQ -> compression -> limiter; re-measure; before/after report.
 
 **متى:** حين تريد ماستر لملف صوتي مع قياس قبل وبعد وتقرير بالنتيجة / when mastering an audio file with measurement, cleanup, EQ, limiting and a before/after report
 
@@ -13437,7 +13437,7 @@
 | نطاق الدليل | `sibling` |
 | الرخصة | owner |
 
-**ما هي:** Bass drives big moves (scale/glow/offset), treble details (sparkle/edges), RMS background brightness; 2-3 properties max; floor above zero; smoothing prev*s+raw*(1-s).
+**ما هي:** يقود الجهير الحركات الكبيرة (حجم/توهج/إزاحة)، والحاد التفاصيل (لمعان/حواف)، وRMS سطوع الخلفية؛ 2-3 خصائص كحد أقصى؛ حد أدنى فوق الصفر؛ تنعيم prev*s+raw*(1-s). — Bass drives big moves (scale/glow/offset), treble details (sparkle/edges), RMS background brightness; 2-3 properties max; floor above zero; smoothing prev*s+raw*(1-s).
 
 **متى:** حين تربط حركة العناصر بالصوت وتحتاج قواعد تنعيم وعدد خصائص محدود / when binding motion to audio with smoothing and only 2-3 driven properties
 
@@ -13505,7 +13505,7 @@
 | نطاق الدليل | `sibling` |
 | الرخصة | owner |
 
-**ما هي:** Cut every 1-2 beats; period 60/BPM; visual hit scale 1.06 for 0.35 s on beat; talking reels max one cut per 2.5 s.
+**ما هي:** قطع كل ضربة أو ضربتين؛ الفترة 60/BPM؛ ضربة مرئية بحجم 1.06 لمدة 0.35 ث على الضربة؛ وريلز الحديث بحد أقصى قطع واحد لكل 2.5 ث. — Cut every 1-2 beats; period 60/BPM; visual hit scale 1.06 for 0.35 s on beat; talking reels max one cut per 2.5 s.
 
 **متى:** حين تقطع على الإيقاع وتريد قواعد للمسافة بين القطعات ونبض الصورة / when cutting on beats with rules for cut spacing and a visual hit scale
 
@@ -13573,7 +13573,7 @@
 | نطاق الدليل | `sibling` |
 | الرخصة | owner |
 
-**ما هي:** Cut every beat or sentence; beat interval = 60/BPM.
+**ما هي:** قطع كل ضربة أو جملة؛ فاصل الضربة = 60/BPM. — Cut every beat or sentence; beat interval = 60/BPM.
 
 **متى:** حين تحدد نقاط القطع على كل ضربة أو نهاية جملة انطلاقًا من السرعة / when setting cut points on each beat or sentence from the track BPM
 
@@ -13639,7 +13639,7 @@
 | نطاق الدليل | `repo` |
 | الرخصة | owner |
 
-**ما هي:** Cuts on music grid, voice-over leads features, logo on final hit, deliver loudness target.
+**ما هي:** قطعات على شبكة الموسيقى، والتعليق يقود الميزات، والشعار على الضربة الأخيرة، وتسليم هدف الجهارة. — Cuts on music grid, voice-over leads features, logo on final hit, deliver loudness target.
 
 **متى:** حين تعمل صوت إعلان: قطع على الموسيقى وتعليق يقود المزايا وشعار على الضربة الأخيرة / when building ad audio: music-grid cuts, VO-led features, logo on the final hit
 
@@ -13707,7 +13707,7 @@
 | نطاق الدليل | `repo` |
 | الرخصة | owner |
 
-**ما هي:** Sidechain-duck music beneath narration.
+**ما هي:** خفض الموسيقى بـ sidechain تحت التعليق. — Sidechain-duck music beneath narration.
 
 **متى:** حين تريد خفض الموسيقى تحت صوت الراوي بالسايدتشين أو بمفاتيح الحجم / when ducking music under narration via sidechain or keyframed volume
 
@@ -13777,7 +13777,7 @@
 | نطاق الدليل | `repo` |
 | الرخصة | owner |
 
-**ما هي:** Normalize final mix for social delivery.
+**ما هي:** طبّع المزيج النهائي للتسليم على التواصل. — Normalize final mix for social delivery.
 
 **متى:** حين تضبط جهارة المكساج النهائي لنشره على السوشيال ميديا / when normalizing the final mix loudness for social media delivery
 
@@ -13846,7 +13846,7 @@
 | نطاق الدليل | `repo` |
 | الرخصة | owner |
 
-**ما هي:** Integrated LUFS, LRA and true peak parsed from ffmpeg ebur128=peak=true.
+**ما هي:** الجهارة الكلية وLRA وذروة true peak مستخرجة من ffmpeg ebur128=peak=true. — Integrated LUFS, LRA and true peak parsed from ffmpeg ebur128=peak=true.
 
 **متى:** حين تريد التحقق من علو صوت الفيديو النهائي وقمته الحقيقية ومداه قبل التسليم / when checking a delivered video's integrated LUFS, loudness range and true peak before handoff
 
@@ -13916,7 +13916,7 @@
 | نطاق الدليل | `repo` |
 | الرخصة | owner |
 
-**ما هي:** Optional quiet key clicks; execution on beat/pause.
+**ما هي:** نقرات مفاتيح هادئة اختيارية؛ التنفيذ على الضربة/التوقف. — Optional quiet key clicks; execution on beat/pause.
 
 **متى:** حين تضيف نقرات كيبورد خافتة اختيارية على الإيقاع أو التوقفات / when adding optional quiet keyboard clicks on beats or pauses
 
@@ -13984,7 +13984,7 @@
 | نطاق الدليل | `repo` |
 | الرخصة | owner |
 
-**ما هي:** Soft marker/chalk sounds only while drawing; objects finish on spoken names.
+**ما هي:** أصوات علامة/طباشير ناعمة أثناء الرسم فقط؛ وتنتهي العناصر على الأسماء المنطوقة. — Soft marker/chalk sounds only while drawing; objects finish on spoken names.
 
 **متى:** حين يرسم الفيديو بالماركر أو الطباشير وتريد صوتًا خافتًا أثناء الرسم فقط / when adding soft marker or chalk sounds only while drawing
 
@@ -14052,7 +14052,7 @@
 | نطاق الدليل | `repo` |
 | الرخصة | owner |
 
-**ما هي:** Map intro/verse/build/drop/outro and assign visual modes; save boldest frame for drop.
+**ما هي:** ارسم خريطة مقدمة/مقطع/بناء/هبوط/خاتمة وعيّن أنماطًا بصرية؛ واحفظ أجرأ إطار للهبوط. — Map intro/verse/build/drop/outro and assign visual modes; save boldest frame for drop.
 
 **متى:** حين تقسم الأغنية إلى مقدمة وبناء ودروب وخاتمة وتربط كل جزء بأسلوب بصري / when mapping a song's intro, verse, build, drop and outro to visual modes
 
@@ -14118,7 +14118,7 @@
 | نطاق الدليل | `repo` |
 | الرخصة | owner |
 
-**ما هي:** Strong beats (1,3 in 4/4) get cuts/big moves; weak beats small accents.
+**ما هي:** الضربات القوية (1 و3 في 4/4) تحصل على قطعات/حركات كبيرة؛ والضعيفة على لمسات صغيرة. — Strong beats (1,3 in 4/4) get cuts/big moves; weak beats small accents.
 
 **متى:** حين تفرق بين الضربات القوية والضعيفة فتضع القطع والحركات الكبيرة على القوية / when putting cuts and big moves on strong beats and small accents on weak ones
 
@@ -14186,7 +14186,7 @@
 | نطاق الدليل | `repo` |
 | الرخصة | owner |
 
-**ما هي:** Beat = 60/BPM s; round cuts to nearest frame and log rounding.
+**ما هي:** الضربة = 60/BPM ث؛ قرّب القطعات لأقرب إطار وسجّل التقريب. — Beat = 60/BPM s; round cuts to nearest frame and log rounding.
 
 **متى:** حين تحسب مدة الضربة وتقرب نقاط القطع لأقرب إطار / when calculating beat length and rounding cuts to the nearest frame
 
@@ -14254,7 +14254,7 @@
 | نطاق الدليل | `repo` |
 | الرخصة | owner |
 
-**ما هي:** RMS/bands smoothed and clamped; precompute envelope offline for determinism.
+**ما هي:** RMS/النطاقات منعّمة ومقيّدة؛ واحسب الغلاف مسبقًا دون اتصال للحتمية. — RMS/bands smoothed and clamped; precompute envelope offline for determinism.
 
 **متى:** حين تحتاج قيم صوت منعمة ومحسوبة مسبقًا لتحريك العناصر بثبات / when you need smoothed, precomputed audio values to drive animation deterministically
 
@@ -14326,7 +14326,7 @@
 | نطاق الدليل | `repo` |
 | الرخصة | owner |
 
-**ما هي:** Accelerating cuts, a beat of black before drop, hero frame on drop.
+**ما هي:** قطعات متسارعة، وضربة من السواد قبل الهبوط، وإطار بطل عند الهبوط. — Accelerating cuts, a beat of black before drop, hero frame on drop.
 
 **متى:** حين تبني تصاعدًا بقطعات متسارعة ثم لحظة سوداء ثم لقطة البطل على الدروب / when building up with accelerating cuts, a beat of black, then a hero frame on the drop
 
@@ -14394,7 +14394,7 @@
 | نطاق الدليل | `repo` |
 | الرخصة | owner |
 
-**ما هي:** FFT band bars, smoothed, mirrored.
+**ما هي:** أعمدة نطاقات FFT، منعّمة، ومتناظرة. — FFT band bars, smoothed, mirrored.
 
 **متى:** حين تريد أعمدة معادل صوتي متماثلة ومنعمة تتحرك مع الصوت / when you want smoothed, mirrored FFT equalizer bars
 
@@ -14462,7 +14462,7 @@
 | نطاق الدليل | `repo` |
 | الرخصة | owner |
 
-**ما هي:** Only user-provided or licensed music.
+**ما هي:** موسيقى يوفرها المستخدم أو مرخّصة فقط. — Only user-provided or licensed music.
 
 **متى:** حين تختار موسيقى للفيديو وتريد التأكد أنها من المستخدم أو مرخصة / when picking music for a video and it must be user-provided or licensed
 
@@ -14529,7 +14529,7 @@
 | نطاق الدليل | `repo` |
 | الرخصة | owner |
 
-**ما هي:** Optional licensed SFX at fixed levels, ducked under voice.
+**ما هي:** مؤثرات مرخّصة اختيارية بمستويات ثابتة، مخفوضة تحت الصوت. — Optional licensed SFX at fixed levels, ducked under voice.
 
 **متى:** حين تضيف أصوات نقر وسحب بمستويات ثابتة مخفضة تحت الصوت / when adding tap and swipe sounds at fixed levels ducked under voice
 
@@ -14597,7 +14597,7 @@
 | نطاق الدليل | `sibling` |
 | الرخصة | owner |
 
-**ما هي:** The soundtrack's spectrogram displaced into a canyon: bass glows as a lava river, harmonics rise as ridges, a playhead traces what is heard, scrolling on the tape clock.
+**ما هي:** يُزاح مخطط المسار الطيفي إلى وادٍ: يتوهج الجهير كنهر حمم، وترتفع التوافقيات حروفًا، ويتتبع مؤشر التشغيل ما يُسمع، مع تمرير على ساعة الشريط. — The soundtrack's spectrogram displaced into a canyon: bass glows as a lava river, harmonics rise as ridges, a playhead traces what is heard, scrolling on the tape clock.
 
 **متى:** حين تريد أن يتحول طيف الموسيقى إلى وادٍ وتضاريس متوهجة بنهر حمم تتحرك مع الصوت / when the soundtrack's spectrogram should become a canyon terrain with a lava river and a playhead tracing the sound
 
@@ -14669,7 +14669,7 @@
 | نطاق الدليل | `repo` |
 | الرخصة | owner |
 
-**ما هي:** One click per press, one swish per screen change, nothing on hovers/list items; press within ±100 ms of verb.
+**ما هي:** نقرة واحدة لكل ضغطة، وحفيف واحد لكل تغيير شاشة، ولا شيء عند التمرير/عناصر القائمة؛ والضغطة ضمن ±100 ms من الفعل. — One click per press, one swish per screen change, nothing on hovers/list items; press within ±100 ms of verb.
 
 **متى:** حين تضع أصوات الواجهة باعتدال: نقرة لكل ضغطة وصوت لكل تغيير شاشة / when keeping UI sound sparse: one click per press, one swish per screen change
 
@@ -14737,7 +14737,7 @@
 | نطاق الدليل | `sibling` |
 | الرخصة | CC0 |
 
-**ما هي:** Bundled UI/interface/impact/casino/keyboard OGG SFX with analysis (brightness, HF risk, envelope).
+**ما هي:** مؤثرات OGG مرفقة للواجهة/التفاعل/الصدمات/الكازينو/لوحة المفاتيح مع تحليل (السطوع، خطر الترددات العالية، الغلاف). — Bundled UI/interface/impact/casino/keyboard OGG SFX with analysis (brightness, HF risk, envelope).
 
 **متى:** حين تحتاج مؤثرات واجهة أو ضربات أو كيبورد جاهزة مرخصة CC0 ضمن المشروع / when you need bundled CC0 UI, impact or keyboard sound effects
 
@@ -14806,7 +14806,7 @@
 | نطاق الدليل | `sibling` |
 | الرخصة | unknown |
 
-**ما هي:** Per-track JSON/MD with tempo, beat grid and strongCue timestamps for planning first 20-25 s.
+**ما هي:** JSON/MD لكل مسار بالإيقاع وشبكة الضربات وأزمنة strongCue لتخطيط أول 20-25 ث. — Per-track JSON/MD with tempo, beat grid and strongCue timestamps for planning first 20-25 s.
 
 **متى:** حين تخطط أول ثواني الفيديو على لحظات قوية جاهزة في ملفات إشارات الموسيقى / when planning the first 20-25 s on strong cues from ready music cue files
 
@@ -14875,7 +14875,7 @@
 | نطاق الدليل | `sibling` |
 | الرخصة | Apache-2.0 |
 
-**ما هي:** Turn a podcast clip into a vertical video: denoised voice, -16 LUFS, word captions, subtle amplitude-driven glow on speaker card.
+**ما هي:** حوّل مقطع بودكاست إلى فيديو عمودي: صوت منزوع الضجيج، -16 LUFS، ترجمات كلمات، وتوهج خفيف بحسب السعة على بطاقة المتحدث. — Turn a podcast clip into a vertical video: denoised voice, -16 LUFS, word captions, subtle amplitude-driven glow on speaker card.
 
 **متى:** حين تحول مقطع بودكاست إلى فيديو عمودي بترجمة كلمة كلمة وصوت منظف / when turning a podcast clip into a vertical captioned video
 
@@ -14949,7 +14949,7 @@
 | نطاق الدليل | `style` |
 | الرخصة | owner |
 
-**ما هي:** Every sound (boing, xylophone, click, rustle) synthesized by oscillators and scheduled from the animation clock.
+**ما هي:** كل صوت (boing، زيلوفون، نقرة، حفيف) مُركَّب بمذبذبات ومجدوَل من ساعة الحركة. — Every sound (boing, xylophone, click, rustle) synthesized by oscillators and scheduled from the animation clock.
 
 **متى:** حين تريد مؤثرات كالنقرة والزيلوفون مولدة بالكود ومتزامنة مع ساعة الحركة / when synthesizing SFX like clicks or xylophone in Web Audio on the animation clock
 
@@ -15017,7 +15017,7 @@
 | نطاق الدليل | `style` |
 | الرخصة | owner |
 
-**ما هي:** Each appearing element gets one soft tick; otherwise silence, no music bed.
+**ما هي:** كل عنصر يظهر يحصل على تكة ناعمة واحدة؛ وإلا صمت، بلا خلفية موسيقية. — Each appearing element gets one soft tick; otherwise silence, no music bed.
 
 **متى:** حين تريد صوت تك خفيفًا لكل عنصر يظهر مع صمت فيما عدا ذلك وبلا موسيقى / when each appearing element gets one soft tick and there is no music bed
 
@@ -15083,7 +15083,7 @@
 | نطاق الدليل | `style` |
 | الرخصة | owner |
 
-**ما هي:** Every hit, mouth swap, set change derived from a beat grid; nothing off-grid.
+**ما هي:** كل ضربة وتبديل فم وتغيير مجموعة مشتقة من شبكة ضربات؛ ولا شيء خارج الشبكة. — Every hit, mouth swap, set change derived from a beat grid; nothing off-grid.
 
 **متى:** حين يجب اشتقاق كل ضربة وتبديل فم وتغيير ديكور من شبكة إيقاع واحدة / when every hit, mouth swap and set change must follow one beat grid
 
@@ -15151,7 +15151,7 @@
 | نطاق الدليل | `style` |
 | الرخصة | owner |
 
-**ما هي:** Detect track BPM and place all cuts on downbeats within 1 frame.
+**ما هي:** اكتشف BPM المسار وضع كل القطعات على الضربات القوية خلال إطار واحد. — Detect track BPM and place all cuts on downbeats within 1 frame.
 
 **متى:** حين لا تعرف سرعة الأغنية وتريد كشفها ووضع القطعات على الضربات الأولى / when you need to detect a track's BPM and place cuts on downbeats
 
@@ -15220,7 +15220,7 @@
 | نطاق الدليل | `style` |
 | الرخصة | owner |
 
-**ما هي:** Punch-ins within 2 frames of beat marker; final lockup ≥48 frames.
+**ما هي:** تقريبات اللكمة خلال إطارين من علامة الضربة؛ والإقفال النهائي ≥48 إطارًا. — Punch-ins within 2 frames of beat marker; final lockup ≥48 frames.
 
 **متى:** حين تريد زووم سريع يقع على علامات الضربات بدقة إطارين / when punch-in zooms must land within 2 frames of beat markers
 
@@ -15288,7 +15288,7 @@
 | نطاق الدليل | `style` |
 | الرخصة | owner |
 
-**ما هي:** Score density follows session arc; ducks under typing sounds.
+**ما هي:** تتبع كثافة المقطوعة قوس الجلسة؛ وتنخفض تحت أصوات الكتابة. — Score density follows session arc; ducks under typing sounds.
 
 **متى:** حين تتغير كثافة الموسيقى مع مراحل الجلسة وتنخفض تحت أصوات الكتابة / when music density follows the session arc and ducks under typing sounds
 
@@ -15356,7 +15356,7 @@
 | نطاق الدليل | `sibling` |
 | الرخصة | Apache-2.0 |
 
-**ما هي:** Decode audio, slide a large FFT window per video frame, and normalize per-band energies to 0-1 for animation data.
+**ما هي:** فك ترميز الصوت وتمرير نافذة FFT كبيرة لكل إطار فيديو، وتطبيع طاقة كل نطاق إلى 0-1 لبيانات الحركة. — Decode audio, slide a large FFT window per video frame, and normalize per-band energies to 0-1 for animation data.
 
 **متى:** عند تجهيز بيانات صوتية لكل إطار فيديو لتحريك العناصر حسب طاقة الترددات من الباص إلى الحاد / when preparing per-frame, 0-1 normalised frequency-band energies from audio as animation data
 
@@ -15427,7 +15427,7 @@
 | نطاق الدليل | `style` |
 | الرخصة | owner |
 
-**ما هي:** Cuts land on sound events; silence held ≥2 s once; no narration; one 1 s fade to black.
+**ما هي:** القطعات تقع على أحداث الصوت؛ يُحتفظ بالصمت ≥2 ث مرة؛ بلا تعليق؛ وتلاشٍ واحد 1 ث إلى الأسود. — Cuts land on sound events; silence held ≥2 s once; no narration; one 1 s fade to black.
 
 **متى:** حين تقطع على أحداث الصوت دون تعليق صوتي مع لحظة صمت مقصودة / when cutting on sound events with no narration and a deliberate held silence
 
@@ -15495,7 +15495,7 @@
 | نطاق الدليل | `style` |
 | الرخصة | owner |
 
-**ما هي:** Each gap pass raises pitch.
+**ما هي:** كل مرور فجوة يرفع الطبقة. — Each gap pass raises pitch.
 
 **متى:** حين تريد أن ترتفع النغمة درجة مع كل مرور أو تكرار / when each pass or repeat should raise the synth pitch a step
 
@@ -15561,7 +15561,7 @@
 | نطاق الدليل | `style` |
 | الرخصة | owner |
 
-**ما هي:** Every reaction within 1-2 frames of beat from shared timing table.
+**ما هي:** كل تفاعل خلال 1-2 إطار من الضربة بحسب جدول توقيت مشترك. — Every reaction within 1-2 frames of beat from shared timing table.
 
 **متى:** حين يجب أن تقع كل حركة تفاعلية خلال إطار أو اثنين من الضربة / when every reaction must land within 1-2 frames of the beat from a shared timing table
 
@@ -15629,7 +15629,7 @@
 | نطاق الدليل | `style` |
 | الرخصة | owner |
 
-**ما هي:** scale 1.0->1.06 on kick, exp decay 300 ms; push 2%/4 bars
+**ما هي:** تكبير 1.0->1.06 على الطبلة، واضمحلال أسي 300 ms؛ ودفع 2%/4 موازير — scale 1.0->1.06 on kick, exp decay 300 ms; push 2%/4 bars
 
 **متى:** حين يكبر العنصر قليلًا مع كل كيك ثم يعود بتلاش أسي / when an element should pump in scale on each kick drum and decay back
 
@@ -15695,7 +15695,7 @@
 | نطاق الدليل | `style` |
 | الرخصة | owner |
 
-**ما هي:** Tones per UI event, pitch from y.
+**ما هي:** نغمات لكل حدث واجهة، والطبقة من y. — Tones per UI event, pitch from y.
 
 **متى:** حين تريد نغمة مولدة لكل حدث في الواجهة تتغير حدتها حسب موضعه الرأسي / when generating a tone per UI event with pitch from vertical position
 
@@ -15763,7 +15763,7 @@
 | نطاق الدليل | `sibling` |
 | الرخصة | Apache-2.0 |
 
-**ما هي:** Logo pulses on bass, CTA glow on treble, background breathes with amplitude, sampled per frame from precomputed bands; no spectrum bars.
+**ما هي:** شعار ينبض مع الجهير، وتوهج زر الدعوة مع الحاد، وخلفية تتنفس مع السعة، تُؤخذ لكل إطار من نطاقات محسوبة مسبقًا؛ دون أعمدة طيف. — Logo pulses on bass, CTA glow on treble, background breathes with amplitude, sampled per frame from precomputed bands; no spectrum bars.
 
 **متى:** حين تريد شعارا ينبض مع الباص وزرا يتوهج مع الحدة وخلفية تتنفس مع الصوت دون أعمدة طيف / when a logo should pulse on bass, a CTA glow on treble and the background breathe with sound, without spectrum bars
 
@@ -15836,7 +15836,7 @@
 | نطاق الدليل | `sibling` |
 | الرخصة | Apache-2.0 |
 
-**ما هي:** Find the song's bar lines, pick the busiest moments of the footage by measured motion, and lay one shot per bar (title card one bar, end card on the remainder); a sync check requires the picture to change within one frame of each sound onset.
+**ما هي:** إيجاد خطوط الموازير في الأغنية، واختيار أنشط لحظات اللقطات بالحركة المقيسة، ووضع لقطة لكل مازورة (بطاقة العنوان مازورة، وبطاقة النهاية على الباقي)؛ ويشترط فحص المزامنة تغيّر الصورة خلال إطار واحد من كل بداية صوتية. — Find the song's bar lines, pick the busiest moments of the footage by measured motion, and lay one shot per bar (title card one bar, end card on the remainder); a sync check requires the picture to change within one frame of each sound onset.
 
 **متى:** حين تريد مونتاجا تلقائيا يضع لقطة لكل مازورة من أكثر لحظات الفيديو حركة مع فحص التزامن / when auto-building an edit with one shot per bar from the footage's busiest moments, with a sync check
 
@@ -15907,7 +15907,7 @@
 | نطاق الدليل | `sibling` |
 | الرخصة | Apache-2.0 |
 
-**ما هي:** Cut every shot on bar lines of the music: title card 1 bar, shots 1 bar each, end card on the remainder.
+**ما هي:** قطع كل لقطة على خطوط موازير الموسيقى: بطاقة العنوان مازورة، واللقطات مازورة لكل منها، وبطاقة النهاية على الباقي. — Cut every shot on bar lines of the music: title card 1 bar, shots 1 bar each, end card on the remainder.
 
 **متى:** عند تقطيع اللقطات على حدود المازورة: عنوان بمازورة ولقطة لكل مازورة وخاتمة على الباقي / when cutting every shot on the music's bar lines: title card one bar, one bar per shot, end card on the rest
 
@@ -15976,7 +15976,7 @@
 | نطاق الدليل | `sibling` |
 | الرخصة | MIT |
 
-**ما هي:** Level SFX by max momentary loudness into tiers so a set sits in a mix without rebalancing.
+**ما هي:** ضبط مستوى المؤثرات بأقصى جهارة لحظية في طبقات، ليستقر مجموعها في المزيج دون إعادة موازنة. — Level SFX by max momentary loudness into tiers so a set sits in a mix without rebalancing.
 
 **متى:** حين تضبط مستويات المؤثرات الصوتية في طبقات (كبيرة، حركات، متكررة، واجهة) لتجلس في المزج / when levelling a set of SFX into loudness tiers (big, actions, frequent, UI) so they sit in the mix
 
@@ -16045,7 +16045,7 @@
 | نطاق الدليل | `sibling` |
 | الرخصة | Apache-2.0 |
 
-**ما هي:** Render a section three times back-to-back and keep the middle so reverb/echo tails are already in its head; or wrap tail onto start.
+**ما هي:** تصيير المقطع ثلاث مرات متتالية والإبقاء على الأوسط، فتكون أذيال الصدى في بدايته؛ أو لف الذيل على البداية. — Render a section three times back-to-back and keep the middle so reverb/echo tails are already in its head; or wrap tail onto start.
 
 **متى:** عند صنع حلقة صوتية تتكرر بلا قفزة بحيث تكون ذيول الصدى موجودة في بدايتها / when making a seamless audio loop whose reverb and echo tails are already present at its head
 
@@ -16116,7 +16116,7 @@
 | نطاق الدليل | `sibling` |
 | الرخصة | Apache-2.0 |
 
-**ما هي:** Pads/bass dip on every kick and recover within half a beat for breathing groove.
+**ما هي:** تنخفض الوسائد/الباص مع كل طبلة وتعود خلال نصف ضربة لإيقاع يتنفس. — Pads/bass dip on every kick and recover within half a beat for breathing groove.
 
 **متى:** حين تريد إحساس تنفس في الإيقاع بخفض الباص والباد مع كل ضربة كيك ورجوعهما خلال نصف نبضة / when pads and bass should dip on every kick and recover within half a beat for a breathing groove
 
@@ -16185,7 +16185,7 @@
 | نطاق الدليل | `sibling` |
 | الرخصة | Apache-2.0 |
 
-**ما هي:** Bass drives scale, treble drives glow/textShadow of captions or shapes.
+**ما هي:** يقود الجهير الحجم، ويقود الحاد توهج/textShadow للعناوين أو الأشكال. — Bass drives scale, treble drives glow/textShadow of captions or shapes.
 
 **متى:** عند جعل النصوص أو الأشكال تكبر مع الباص وتتوهج مع الترددات الحادة / when captions or shapes should scale with the bass and glow with the treble
 
@@ -16252,7 +16252,7 @@
 | نطاق الدليل | `sibling` |
 | الرخصة | MIT |
 
-**ما هي:** Beat sheet -> cue/bar map from BPM -> EDL -> render shots -> assemble; overlays are pure functions of frame.
+**ما هي:** ورقة الضربات ← خريطة إشارات/موازير من BPM ← EDL ← تصيير اللقطات ← التجميع؛ والتراكبات دوال خالصة للإطار. — Beat sheet -> cue/bar map from BPM -> EDL -> render shots -> assemble; overlays are pure functions of frame.
 
 **متى:** حين تصنع تريلر يقطع على البار: من ورقة الإيقاع إلى خريطة البارات ثم قائمة القطع وتجميع اللقطات / when building a trailer cut to bars: beat sheet to bar map from BPM, then EDL, shot renders and assembly
 
@@ -16320,7 +16320,7 @@
 | نطاق الدليل | `sibling` |
 | الرخصة | Apache-2.0 |
 
-**ما هي:** Frequency bands drawn as bars, rings or glows driven by pre-analysed audio, a chart-like visualizer synced to the user's music or voice.
+**ما هي:** نطاقات التردد مرسومة أعمدةً أو حلقات أو توهجات تقودها بيانات صوت محللة مسبقًا، مصوّر شبيه بالمخططات متزامن مع موسيقى المستخدم أو صوته. — Frequency bands drawn as bars, rings or glows driven by pre-analysed audio, a chart-like visualizer synced to the user's music or voice.
 
 **متى:** حين يطلب المستخدم أعمدة طيف أو حلقات أو توهجا يتحرك مع موسيقاه أو صوته كمؤثر مرئي / when the user wants frequency bars, rings or glows animated to their music or voice as a visualizer
 
@@ -16390,7 +16390,7 @@
 | نطاق الدليل | `sibling` |
 | الرخصة | Apache-2.0 |
 
-**ما هي:** Master generated songs with two-pass loudness normalisation and a limiter, then measure.
+**ما هي:** إتقان الأغاني المولّدة بتطبيع الجهارة بمرورين ومحدِّد، ثم القياس. — Master generated songs with two-pass loudness normalisation and a limiter, then measure.
 
 **متى:** عند إنهاء موسيقى مولدة وتحتاج ماستر بتسوية على مرحلتين ومحدد ثم قياس العلو / when mastering generated songs with two-pass normalisation and a limiter, e.g. -14 LUFS for web or -18 for a bed
 
@@ -16459,7 +16459,7 @@
 | نطاق الدليل | `sibling` |
 | الرخصة | Apache-2.0 |
 
-**ما هي:** Cut a loop exactly on measured bar lines and crossfade tail into head so a short video can loop invisibly.
+**ما هي:** قص حلقة تمامًا على خطوط الموازير المقيسة ومزج ذيلها في بدايتها بالتلاشي المتقاطع، ليتكرر فيديو قصير بلا انقطاع ظاهر. — Cut a loop exactly on measured bar lines and crossfade tail into head so a short video can loop invisibly.
 
 **متى:** حين يحتاج فيديو قصير موسيقى تتكرر بلا قطع ملحوظ مقصوصة بالضبط على حدود المازورات / when a short video needs music that loops invisibly, cut on measured bar lines with a crossfade
 
@@ -16527,7 +16527,7 @@
 | نطاق الدليل | `sibling` |
 | الرخصة | owner |
 
-**ما هي:** Canvas visualiser of 48 rounded bars: while listening, bar height follows live mic RMS with a moving sine shimmer; while the assistant speaks, a synthetic sine wave animates; quiet mode draws flat bars.
+**ما هي:** مصوّر Canvas من 48 عمودًا مستديرًا: أثناء الاستماع يتبع ارتفاع العمود RMS الميكروفون الحي مع لمعان جيبي متحرك؛ وحين يتكلم المساعد تتحرك موجة جيبية اصطناعية؛ والوضع الهادئ يرسم أعمدة مسطحة. — Canvas visualiser of 48 rounded bars: while listening, bar height follows live mic RMS with a moving sine shimmer; while the assistant speaks, a synthetic sine wave animates; quiet mode draws flat bars.
 
 **متى:** حين تبني واجهة مساعد صوتي تعرض موجة أعمدة تتبع الميكروفون أثناء الاستماع وتتحرك أثناء الكلام / for a voice assistant UI showing a bar waveform that follows the live mic while listening and animates while speaking
 
@@ -16596,7 +16596,7 @@
 | نطاق الدليل | `sibling` |
 | الرخصة | owner |
 
-**ما هي:** Live input level 0..1 for driving a VU bar or reactive animation.
+**ما هي:** مستوى الإدخال الحي 0..1 لتحريك شريط VU أو حركة تفاعلية. — Live input level 0..1 for driving a VU bar or reactive animation.
 
 **متى:** عند الحاجة لقراءة مستوى صوت الميكروفون مباشرة لتحريك عداد أو رسوم متفاعلة / when you need a live 0-1 mic input level to drive a VU bar or a reactive animation
 
@@ -16665,7 +16665,7 @@
 | نطاق الدليل | `sibling` |
 | الرخصة | owner |
 
-**ما هي:** Short synthesised sine blip for scan/confirm feedback without audio files.
+**ما هي:** نبرة جيبية قصيرة مُركَّبة لتأكيد المسح/التأكيد دون ملفات صوت. — Short synthesised sine blip for scan/confirm feedback without audio files.
 
 **متى:** حين تحتاج صفارة تنبيه قصيرة عند المسح أو التأكيد في صفحة ويب دون ملفات صوت / when a web page needs a short synthesized beep for scan or confirm feedback without audio files
 
@@ -16733,7 +16733,7 @@
 | نطاق الدليل | `sibling` |
 | الرخصة | owner |
 
-**ما هي:** Editorial scenes carry SFX timing cues (paper whoosh, subtle UI click, light mechanical thud), not generated audio.
+**ما هي:** تحمل مشاهد المونتاج إشارات توقيت مؤثرات (حفيف ورق، نقرة واجهة خفيفة، دقة ميكانيكية خفيفة)، لا صوتًا مولّدًا. — Editorial scenes carry SFX timing cues (paper whoosh, subtle UI click, light mechanical thud), not generated audio.
 
 **متى:** عند كتابة ستوري بورد أو وصف حركة وتريد تحديد توقيت المؤثرات لكل مشهد دون توليد الصوت / when a storyboard or motion prompt should carry per-scene SFX timing cues instead of generated audio
 
@@ -16802,7 +16802,7 @@
 | نطاق الدليل | `sibling` |
 | الرخصة | owner |
 
-**ما هي:** numpy-only deterministic soundtrack on the beat grid (kick, clap, hat, bass, pad, riser, boom, contact SFX) and ambience (sea, wind, rain, thunder, whoosh, chords, birds, brook) with seeds; not in the vendor skills (which source/generate via HeyGen/Lyria/MusicGen).
+**ما هي:** موسيقى تصويرية حتمية بـ numpy فقط على شبكة الإيقاع (طبلة وتصفيق وهات وباص ووسادة ومصعد وانفجار ومؤثرات تلامس) وأجواء (بحر وريح ومطر ورعد وصوت مرور وأوتار وطيور وجدول) ببذور؛ وليست في المهارات الموردة (التي تحصّل/تولّد عبر HeyGen/Lyria/MusicGen). — numpy-only deterministic soundtrack on the beat grid (kick, clap, hat, bass, pad, riser, boom, contact SFX) and ambience (sea, wind, rain, thunder, whoosh, chords, birds, brook) with seeds; not in the vendor skills (which source/generate via HeyGen/Lyria/MusicGen).
 
 **متى:** حين تريد موسيقى وأصوات أجواء أصلية حتمية بالبذور على شبكة الإيقاع بدل الاعتماد على خدمات توليد / when you want a deterministic, seeded soundtrack and ambience synthesized with numpy instead of sourcing music
 
@@ -16870,7 +16870,7 @@
 | نطاق الدليل | `sibling` |
 | الرخصة | owner |
 
-**ما هي:** Shot plan of quick (~1 s) and breathing (~3 s) shots cut on beats, most active window per clip, fill crop, decaying zoom punches on downbeats (2x supersampled), grade, ducking, captions; takes folders/photos, blurred-bg for landscape in vertical.
+**ما هي:** خطة لقطات سريعة (~1 ث) ومتنفسة (~3 ث) مقطوعة على الضربات، وأنشط نافذة لكل مقطع، وقص ملء، ونبضات تقريب متلاشية على الضربات القوية (بعينات مضاعفة 2x)، وتلوين، وخفض موسيقى، وعناوين؛ تقبل مجلدات/صورًا، وخلفية ضبابية للأفقي داخل العمودي. — Shot plan of quick (~1 s) and breathing (~3 s) shots cut on beats, most active window per clip, fill crop, decaying zoom punches on downbeats (2x supersampled), grade, ducking, captions; takes folders/photos, blurred-bg for landscape in vertical.
 
 **متى:** حين يعطي المستخدم مقاطع أو صورا وأغنية ويريد مونتاجا مقطوعا على الإيقاع مع زووم وتلوين وكابشن / when the user gives clips or photos plus a track and wants a beat-cut montage with zoom punches, grade and captions
 
@@ -16940,7 +16940,7 @@
 | نطاق الدليل | `sibling` |
 | الرخصة | owner |
 
-**ما هي:** Original score: kick/clap/hats/sub/pad/pluck/lead, risers, booms, tape stops, designed SFX from cues.
+**ما هي:** مقطوعة أصلية: طبلة/تصفيق/هات/سب/وسادة/نقر/قيادة، ومصاعد وانفجارات وتوقفات شريط، ومؤثرات مصممة من الإشارات. — Original score: kick/clap/hats/sub/pad/pluck/lead, risers, booms, tape stops, designed SFX from cues.
 
 **متى:** عند الحاجة لموسيقى أصلية بطبول ورايزر وتوقفات شريط ومؤثرات مأخوذة من ورقة الإشارات / when you need an original score with drums, risers, booms, tape stops and cue-based designed SFX
 
@@ -17009,7 +17009,7 @@
 | نطاق الدليل | `sibling` |
 | الرخصة | owner |
 
-**ما هي:** Rain, sea, birds, brook, chords, whoosh, drops.
+**ما هي:** مطر وبحر وطيور وجدول وأوتار وصوت مرور وهبوطات. — Rain, sea, birds, brook, chords, whoosh, drops.
 
 **متى:** حين تحتاج خلفية أجواء مولدة مثل المطر والبحر والعصافير والجدول والقطرات / when a scene needs a generated ambient bed of rain, sea, birds, brook, chords, whooshes or drops
 
@@ -17078,7 +17078,7 @@
 | نطاق الدليل | `sibling` |
 | الرخصة | owner |
 
-**ما هي:** Track → beat grid, or per-frame JSON (beats, kicks, onsets, rms, bass/mid/high, centroid, silence, pitch dive/rise, tape) + spectrogram.
+**ما هي:** مسار ← شبكة إيقاع، أو JSON لكل إطار (ضربات وطبلات وبدايات وrms وجهير/وسط/حاد ومركز ثقل وصمت وهبوط/صعود طبقة وشريط) + مخطط طيفي. — Track → beat grid, or per-frame JSON (beats, kicks, onsets, rms, bass/mid/high, centroid, silence, pitch dive/rise, tape) + spectrogram.
 
 **متى:** عند تحليل أغنية لاستخراج شبكة الإيقاع أو بيانات لكل إطار مثل الضربات والباص والصمت مع طيف / when analysing a track into a beat grid or per-frame data (kicks, onsets, bass/mid/high, silence) plus a spectrogram
 
@@ -17149,7 +17149,7 @@
 | نطاق الدليل | `sibling` |
 | الرخصة | CC0 |
 
-**ما هي:** bell-1/2, bong, card-place, card-slide, chips, click, drop-1/2, glitch, key-1..6, reveal-1/2/3, select; cue at motion start.
+**ما هي:** bell-1/2 وbong وcard-place وcard-slide وchips وclick وdrop-1/2 وglitch وkey-1..6 وreveal-1/2/3 وselect؛ تُوضع الإشارة عند بدء الحركة. — bell-1/2, bong, card-place, card-slide, chips, click, drop-1/2, glitch, key-1..6, reveal-1/2/3, select; cue at motion start.
 
 **متى:** حين تحتاج مؤثرات واجهة قصيرة جاهزة مثل جرس ونقرة وكروت وغليتش تبدأ مع بداية الحركة / when you need short ready UI sounds (bell, click, card, glitch, keys) cued at the start of a motion
 
@@ -17220,7 +17220,7 @@
 | نطاق الدليل | `sibling` |
 | الرخصة | owner |
 
-**ما هي:** LUFS, peaks, BPM.
+**ما هي:** LUFS والذروات وBPM. — LUFS, peaks, BPM.
 
 **متى:** عند الحاجة لمعرفة علو ملف صوتي وقممه وسرعة إيقاعه بسرعة / when you need a quick read of an audio file's LUFS, peaks and BPM
 
@@ -17289,7 +17289,7 @@
 | نطاق الدليل | `sibling` |
 | الرخصة | owner |
 
-**ما هي:** One clock for picture and sound: beat times from a BPM or from the beats JSON written by motion.py beats.
+**ما هي:** ساعة واحدة للصورة والصوت: أوقات الضربات من BPM أو من JSON الضربات الذي يكتبه motion.py beats. — One clock for picture and sound: beat times from a BPM or from the beats JSON written by motion.py beats.
 
 **متى:** حين تضع الحركات والانتقالات على نبضات الموسيقى بساعة واحدة من BPM أو ملف الإيقاع / when placing tweens on music beats with one clock from a BPM or the beats JSON
 
@@ -17359,7 +17359,7 @@
 | نطاق الدليل | `sibling` |
 | الرخصة | owner |
 
-**ما هي:** Per-frame sound features (rms, bass/mid/high, onsets, kicks, beats, silence, tape clock) interpolated at any t to drive visuals.
+**ما هي:** ميزات الصوت لكل إطار (rms وجهير/وسط/حاد وبدايات وطبلات وضربات وصمت وساعة الشريط) تُستكمل عند أي t لتقود المرئيات. — Per-frame sound features (rms, bass/mid/high, onsets, kicks, beats, silence, tape clock) interpolated at any t to drive visuals.
 
 **متى:** عند ربط أي قيمة مرئية بالصوت مثل الباص والضربات والصمت في أي لحظة من الفيديو / when driving visuals from per-frame sound features (bass, kicks, onsets, silence, tape clock) at any time t
 
@@ -17429,7 +17429,7 @@
 | نطاق الدليل | `sibling` |
 | الرخصة | CC0-1.0 |
 
-**ما هي:** Short reveal, bell, drop, click, glitch, card and keyboard sounds with use notes, brightness and high-frequency risk.
+**ما هي:** أصوات قصيرة للكشف والجرس والهبوط والنقر والخلل والبطاقات ولوحة المفاتيح، مع ملاحظات استخدام وسطوع وخطر الترددات العالية. — Short reveal, bell, drop, click, glitch, card and keyboard sounds with use notes, brightness and high-frequency risk.
 
 **متى:** حين تحتاج أصواتا قصيرة للواجهة أو الحركة مثل الظهور والجرس والنقر والكيبورد مع ملاحظات استخدامها / when you need short reveal, bell, click, glitch, card or keyboard sounds with usage notes
 
@@ -17500,7 +17500,7 @@
 | نطاق الدليل | `sibling` |
 | الرخصة | owner |
 
-**ما هي:** Original music is written as a small JSON spec: tempo, key, scale, sections (in beats) with kick pattern, hats, clap, bass, pad and pluck/lead scale-degree patterns, a chord progression in Roman numerals, risers, booms, tape stops/starts and the end time.
+**ما هي:** تُكتب موسيقى أصلية بمواصفة JSON صغيرة: الإيقاع والمفتاح والسلم، وأقسام (بالضربات) بنمط طبلة وهات وتصفيق وباص ووسادة ونقر/قيادة بأنماط درجات السلم، وتتابع أوتار بالأرقام الرومانية، ومصاعد وانفجارات وتوقفات/بدايات شريط ووقت النهاية. — Original music is written as a small JSON spec: tempo, key, scale, sections (in beats) with kick pattern, hats, clap, bass, pad and pluck/lead scale-degree patterns, a chord progression in Roman numerals, risers, booms, tape stops/starts and the end time.
 
 **متى:** عند كتابة موسيقى أصلية كمواصفة JSON صغيرة: سرعة ومقام وأقسام وتتابع كوردات ورايزر وتوقفات / when writing original music as a small JSON spec: tempo, key, scale, sections, chord progression, risers and tape stops
 
@@ -17570,7 +17570,7 @@
 | نطاق الدليل | `sibling` |
 | الرخصة | owner |
 
-**ما هي:** Sound effects are listed with time, type, gain and stereo pan and mixed into the score at render, one hit per visual event.
+**ما هي:** تُدرج المؤثرات الصوتية بوقتها ونوعها وكسبها وتوزيعها الستيريو وتُمزج في المقطوعة عند التصيير، بضربة واحدة لكل حدث مرئي. — Sound effects are listed with time, type, gain and stereo pan and mixed into the score at render, one hit per visual event.
 
 **متى:** حين تريد أن يقابل كل حدث مرئي مؤثرا صوتيا بتوقيت ومستوى واتجاه ستريو محدد داخل الموسيقى / when each visual event needs one SFX hit with time, type, gain and stereo pan mixed into the score
 
@@ -17638,7 +17638,7 @@
 | نطاق الدليل | `sibling` |
 | الرخصة | owner |
 
-**ما هي:** A track is analysed into per-frame channels and event lists that any visual can read: beats, downbeats, kicks, onsets, RMS, bass/mid/high bands, spectral centroid, silence, pitch dive/rise, playback speed and a tape clock, plus a spectrogram and a height image.
+**ما هي:** يُحلَّل المسار إلى قنوات لكل إطار وقوائم أحداث يقرؤها أي مرئي: ضربات وضربات قوية وطبلات وبدايات وRMS ونطاقات جهير/وسط/حاد ومركز الطيف والصمت وهبوط/صعود الطبقة وسرعة التشغيل وساعة الشريط، إضافةً إلى مخطط طيفي وصورة ارتفاع. — A track is analysed into per-frame channels and event lists that any visual can read: beats, downbeats, kicks, onsets, RMS, bass/mid/high bands, spectral centroid, silence, pitch dive/rise, playback speed and a tape clock, plus a spectrogram and a height image.
 
 **متى:** عند تحليل مسار صوتي إلى قنوات لكل إطار وقوائم أحداث يقرؤها أي عنصر مرئي / when a track must be analysed into per-frame channels and event lists (beats, kicks, bands, silence) for visuals
 
@@ -17708,7 +17708,7 @@
 | نطاق الدليل | `sibling` |
 | الرخصة | owner |
 
-**ما هي:** Projects carry short rendered stereo beds: an ocean ambience and generated 5 s scores.
+**ما هي:** تحمل المشاريع خلفيات ستيريو قصيرة مصيَّرة: أجواء محيط ومقطوعات مولّدة مدتها 5 ث. — Projects carry short rendered stereo beds: an ocean ambience and generated 5 s scores.
 
 **متى:** حين تبحث عن ملفات صوت قصيرة جاهزة في المشاريع مثل أجواء محيط أو موسيقى مولدة مدتها 5 ثوان / when looking for short rendered stereo files in projects: an ocean ambience bed and generated 5 s scores
 
@@ -17776,7 +17776,7 @@
 | نطاق الدليل | `sibling` |
 | الرخصة | owner |
 
-**ما هي:** Synth score scale 'minor' for the numpy soundtrack generator.
+**ما هي:** السلم 'minor' لمولّد الموسيقى التصويرية بـ numpy. — Synth score scale 'minor' for the numpy soundtrack generator.
 
 **متى:** حين تريد أن تكون الموسيقى المولدة على السلم الصغير (مينور) / when the numpy-generated soundtrack should use the minor scale
 
@@ -17845,7 +17845,7 @@
 | نطاق الدليل | `sibling` |
 | الرخصة | owner |
 
-**ما هي:** Synth score scale 'major' for the numpy soundtrack generator.
+**ما هي:** السلم 'major' لمولّد الموسيقى التصويرية بـ numpy. — Synth score scale 'major' for the numpy soundtrack generator.
 
 **متى:** حين تريد أن تكون الموسيقى المولدة على السلم الكبير (ماجور) / when the numpy-generated soundtrack should use the major scale
 
@@ -17914,7 +17914,7 @@
 | نطاق الدليل | `sibling` |
 | الرخصة | owner |
 
-**ما هي:** Synth score scale 'dorian' for the numpy soundtrack generator.
+**ما هي:** السلم 'dorian' لمولّد الموسيقى التصويرية بـ numpy. — Synth score scale 'dorian' for the numpy soundtrack generator.
 
 **متى:** حين تريد أن تكون الموسيقى المولدة على سلم دوريان / when the numpy-generated soundtrack should use the dorian scale
 
@@ -17983,7 +17983,7 @@
 | نطاق الدليل | `sibling` |
 | الرخصة | owner |
 
-**ما هي:** Synth score scale 'hijaz' for the numpy soundtrack generator.
+**ما هي:** السلم 'hijaz' (الحجاز) لمولّد الموسيقى التصويرية بـ numpy. — Synth score scale 'hijaz' for the numpy soundtrack generator.
 
 **متى:** حين تريد أن تكون الموسيقى المولدة على مقام الحجاز / when the numpy-generated soundtrack should use the hijaz scale
 
@@ -18052,7 +18052,7 @@
 | نطاق الدليل | `sibling` |
 | الرخصة | owner |
 
-**ما هي:** Synth score scale 'pentatonic' for the numpy soundtrack generator.
+**ما هي:** السلم 'pentatonic' لمولّد الموسيقى التصويرية بـ numpy. — Synth score scale 'pentatonic' for the numpy soundtrack generator.
 
 **متى:** حين تريد أن تكون الموسيقى المولدة على السلم الخماسي / when the numpy-generated soundtrack should use the pentatonic scale
 
@@ -18121,7 +18121,7 @@
 | نطاق الدليل | `sibling` |
 | الرخصة | owner |
 
-**ما هي:** Synth score scale 'lydian' for the numpy soundtrack generator.
+**ما هي:** السلم 'lydian' لمولّد الموسيقى التصويرية بـ numpy. — Synth score scale 'lydian' for the numpy soundtrack generator.
 
 **متى:** حين تريد أن تكون الموسيقى المولدة على سلم ليديان / when the numpy-generated soundtrack should use the lydian scale
 
@@ -18190,7 +18190,7 @@
 | نطاق الدليل | `sibling` |
 | الرخصة | owner |
 
-**ما هي:** numpy spectral-flux onsets → autocorrelation tempo → beats/downbeats/hits.
+**ما هي:** بدايات الطاقة الطيفية بـ numpy ← إيقاع بالارتباط الذاتي ← ضربات/ضربات قوية/نقرات. — numpy spectral-flux onsets → autocorrelation tempo → beats/downbeats/hits.
 
 **متى:** عند الحاجة لكشف سرعة أغنية ونبضاتها وضرباتها القوية آليا / when you need a track's tempo, beats, downbeats and hits detected automatically
 
@@ -18259,7 +18259,7 @@
 | نطاق الدليل | `sibling` |
 | الرخصة | owner |
 
-**ما هي:** Cut clips to detected beats with punch-ins, grade, captions, voice.
+**ما هي:** قص المقاطع على الضربات المكتشفة مع تقريبات وتلوين وعناوين وصوت. — Cut clips to detected beats with punch-ins, grade, captions, voice.
 
 **متى:** حين يريد المستخدم تقطيع مقاطعه على إيقاع أغنية مع زووم وتلوين وكابشن بمقاس 9:16 أو 16:9 / when cutting clips to detected beats with punch-ins, grade, captions and voice at 9:16, 16:9, 1:1 or 4:5
 
@@ -18329,7 +18329,7 @@
 | نطاق الدليل | `sibling` |
 | الرخصة | owner |
 
-**ما هي:** numpy sea, wind, pad, rain, thunder, whoosh, birds, drops, brook at given seconds.
+**ما هي:** بحر وريح ووسادة ومطر ورعد وصوت مرور وطيور وقطرات وجدول بـ numpy في ثوانٍ محددة. — numpy sea, wind, pad, rain, thunder, whoosh, birds, drops, brook at given seconds.
 
 **متى:** حين تحتاج أصوات طبيعة مولدة مثل البحر والريح والمطر والرعد والعصافير في ثوان محددة / when you need generated sea, wind, rain, thunder, birds or brook sounds placed at given seconds
 
@@ -18398,7 +18398,7 @@
 | نطاق الدليل | `sibling` |
 | الرخصة | owner |
 
-**ما هي:** Beat-grid soundtrack with kick/hats/pad/pluck on cues, stems.
+**ما هي:** موسيقى تصويرية على شبكة الإيقاع بطبلة/هات/وسادة/نقر عند الإشارات، مع مسارات منفصلة. — Beat-grid soundtrack with kick/hats/pad/pluck on cues, stems.
 
 **متى:** عند الحاجة لموسيقى خلفية أصلية على الإيقاع بطبول وباد ونغمات مع إخراج المسارات منفصلة / when you need an original beat-grid soundtrack with kick, hats, pad and pluck on cues, plus separate stems
 
@@ -18465,7 +18465,7 @@
 | نطاق الدليل | `sibling` |
 | الرخصة | owner |
 
-**ما هي:** Song sections → footage search queries → beat cuts → verse overlay.
+**ما هي:** أقسام الأغنية ← استعلامات بحث لقطات ← قطع على الضربات ← تراكب الأبيات. — Song sections → footage search queries → beat cuts → verse overlay.
 
 **متى:** حين يريد المستخدم فيديو لأغنية تتحول أقسامها إلى لقطات مقطوعة على الإيقاع مع كلماتها على الشاشة / when making a song video where sections become footage searches, beat cuts and verse text overlays
 
@@ -18535,7 +18535,7 @@
 | نطاق الدليل | `sibling` |
 | الرخصة | MIT (Motion OS, Jason Lee 2026) |
 
-**ما هي:** When the reel declares a BPM, the timeline shows a beat tick every 60/BPM seconds aligned to the drop, downbeats every 4 beats emphasised and the drop as a blue line.
+**ما هي:** حين يعلن الريل عن BPM يعرض الجدول الزمني نقرة ضربة كل 60/BPM ثانية محاذية للذروة، وتُبرز الضربات القوية كل 4 ضربات، وتظهر الذروة خطًّا أزرق. — When the reel declares a BPM, the timeline shows a beat tick every 60/BPM seconds aligned to the drop, downbeats every 4 beats emphasised and the drop as a blue line.
 
 **متى:** عند مراجعة الريل وتريد رؤية النبضات والضربات القوية والدروب معلمة على التايملاين / when reviewing a reel and you want beat ticks, emphasised downbeats and the drop marked on the timeline
 
@@ -18603,7 +18603,7 @@
 | نطاق الدليل | `sibling` |
 | الرخصة | MIT (Motion OS, Jason Lee 2026) |
 
-**ما هي:** Swap the music track, see where the beat drop lands, and set music and effects volume; music plays in sync with the video at the chosen speed.
+**ما هي:** بدّل مسار الموسيقى، وشاهد أين تقع ذروة الضربات، واضبط مستوى الموسيقى والمؤثرات؛ وتعمل الموسيقى متزامنة مع الفيديو بالسرعة المختارة. — Swap the music track, see where the beat drop lands, and set music and effects volume; music plays in sync with the video at the chosen speed.
 
 **متى:** حين يريد المستخدم تغيير موسيقى الريل ورؤية موضع الدروب وضبط صوت الموسيقى والمؤثرات / when swapping a reel's music, checking where the drop lands and setting music and effects volume
 
@@ -18672,7 +18672,7 @@
 | نطاق الدليل | `sibling` |
 | الرخصة | owner |
 
-**ما هي:** Estimates beats per minute from the autocorrelation of positive log-spectral flux with sub-frame parabolic interpolation; reports a confidence and returns nothing for drones, tones or silence.
+**ما هي:** يقدّر الضربات في الدقيقة من الارتباط الذاتي للتدفق الطيفي اللوغاريتمي الموجب مع استكمال قطع مكافئ دون الإطار؛ ويعطي درجة ثقة ولا يعيد شيئًا للأزيز والنغمات الثابتة والصمت. — Estimates beats per minute from the autocorrelation of positive log-spectral flux with sub-frame parabolic interpolation; reports a confidence and returns nothing for drones, tones or silence.
 
 **متى:** عند الحاجة لتقدير سرعة أغنية بالـ BPM مع درجة ثقة دون نتيجة خاطئة للصمت أو النغمات الثابتة / when you need a track's BPM estimated with a confidence, returning nothing for drones, tones or silence
 
@@ -18740,7 +18740,7 @@
 | نطاق الدليل | `sibling` |
 | الرخصة | owner |
 
-**ما هي:** Normalizes the final mix for social/streaming delivery with a true-peak ceiling.
+**ما هي:** يطبّع المزيج النهائي للنشر على التواصل/البث مع سقف ذروة حقيقية. — Normalizes the final mix for social/streaming delivery with a true-peak ceiling.
 
 **متى:** حين يجهز الفيديو للنشر على السوشيال وتحتاج توحيد علو الصوت النهائي مع سقف للقمة / when the final mix needs normalising for social or streaming delivery with a true-peak ceiling
 
@@ -18811,7 +18811,7 @@
 | نطاق الدليل | `sibling` |
 | الرخصة | owner |
 
-**ما هي:** Picture and sound share one beat grid: from a BPM or from the JSON produced by motion.py beats.
+**ما هي:** تتشارك الصورة والصوت شبكة ضربات واحدة: من BPM أو من JSON الذي ينتجه motion.py beats. — Picture and sound share one beat grid: from a BPM or from the JSON produced by motion.py beats.
 
 **متى:** حين يجب أن تتشارك الصورة والصوت شبكة إيقاع واحدة لتوقيت الحركات بدقة / when picture and sound must share one beat grid, from a BPM or the beats JSON, to time motion
 
@@ -18880,7 +18880,7 @@
 | نطاق الدليل | `sibling` |
 | الرخصة | owner |
 
-**ما هي:** An original soundtrack synthesised with numpy (no samples): sections of kick/clap/hats/sub/bass/pad/pluck/lead/bell, chord progression, risers, booms and drops.
+**ما هي:** موسيقى تصويرية أصلية مُركَّبة بـ numpy (بلا عينات): أقسام من طبلة/تصفيق/هات/سب/باص/وسادة/نقر/قيادة/جرس، وتتابع أوتار ومصاعد وانفجارات وهبوطات. — An original soundtrack synthesised with numpy (no samples): sections of kick/clap/hats/sub/bass/pad/pluck/lead/bell, chord progression, risers, booms and drops.
 
 **متى:** عند الحاجة لموسيقى تصويرية أصلية بلا عينات فيها تتابع كوردات ورايزر ودروب / when you need an original numpy soundtrack without samples, with a chord progression, risers, booms and drops
 
@@ -18950,7 +18950,7 @@
 | نطاق الدليل | `sibling` |
 | الرخصة | owner |
 
-**ما هي:** Deterministic ambience: sea swell, wind, a soft pad on chords, rain with thunder roll, whooshes, dawn birdsong, water drops and a brook.
+**ما هي:** أجواء حتمية: موج البحر، والريح، ووسادة هادئة على الأوتار، ومطر مع دوي رعد، وصوت مرور، وتغريد الفجر، وقطرات الماء، وجدول. — Deterministic ambience: sea swell, wind, a soft pad on chords, rain with thunder roll, whooshes, dawn birdsong, water drops and a brook.
 
 **متى:** حين يحتاج المشهد أجواء صوتية حتمية مثل أمواج البحر والمطر والرعد وتغريد الفجر / when a scene needs deterministic ambience: sea swell, wind, rain with thunder, dawn birdsong, drops or a brook
 
@@ -19020,7 +19020,7 @@
 | نطاق الدليل | `sibling` |
 | الرخصة | owner |
 
-**ما هي:** Every mix normalised to -14 LUFS with a ceiling under -1 dBTP, AAC 256k 48 kHz.
+**ما هي:** كل مزيج يُطبَّع إلى -14 LUFS بسقف أقل من -1 dBTP، وAAC 256k 48 kHz. — Every mix normalised to -14 LUFS with a ceiling under -1 dBTP, AAC 256k 48 kHz.
 
 **متى:** حين يجب تسليم كل مزج بعلو -14 LUFS وسقف تحت -1 dBTP بصيغة AAC / when every mix must be delivered at -14 LUFS with a ceiling under -1 dBTP as AAC 256k 48 kHz
 
@@ -19091,7 +19091,7 @@
 | نطاق الدليل | `sibling` |
 | الرخصة | owner |
 
-**ما هي:** Music bed ducks under speech with real sidechain compression.
+**ما هي:** تنخفض خلفية الموسيقى تحت الكلام بضغط sidechain حقيقي. — Music bed ducks under speech with real sidechain compression.
 
 **متى:** حين يوجد تعليق صوتي أو كلام وتريد أن تنخفض الموسيقى تحته بضغط جانبي حقيقي / when a music bed must duck under voice-over or speech with real sidechain compression
 
@@ -19162,7 +19162,7 @@
 | نطاق الدليل | `sibling` |
 | الرخصة | owner |
 
-**ما هي:** Simple duck: music at -18 dB mixed under voice.
+**ما هي:** خفض بسيط: موسيقى عند -18 dB تُمزج تحت الصوت. — Simple duck: music at -18 dB mixed under voice.
 
 **متى:** عند الحاجة لخفض بسيط وثابت للموسيقى إلى -18 ديسيبل تحت الكلام مع تلاشٍ في النهاية / for a simple static duck: music at -18 dB mixed under the voice with a fade-out
 
@@ -19231,7 +19231,7 @@
 | نطاق الدليل | `sibling` |
 | الرخصة | owner |
 
-**ما هي:** ffmpeg->PCM, per video frame RMS, N log-spaced bands 40-10000 Hz normalised, spectral flux beats and histogram BPM.
+**ما هي:** ffmpeg ← PCM، وRMS لكل إطار فيديو، وN نطاقًا لوغاريتميًا بين 40-10000 Hz مطبّعة، وضربات بالتدفق الطيفي وBPM بالمدرج التكراري. — ffmpeg->PCM, per video frame RMS, N log-spaced bands 40-10000 Hz normalised, spectral flux beats and histogram BPM.
 
 **متى:** حين تحتاج ملف بيانات صوتية لكل إطار فيه العلو والنطاقات الترددية والنبضات وسرعة الإيقاع / when you need a per-frame audio-data JSON (RMS, log-spaced bands, beats, BPM) extracted from a track
 
@@ -19301,7 +19301,7 @@
 | نطاق الدليل | `sibling` |
 | الرخصة | owner |
 
-**ما هي:** Background canvas driven by bass/RMS, foreground by bands.
+**ما هي:** خلفية Canvas يقودها الجهير/RMS، والمقدمة تقودها النطاقات. — Background canvas driven by bass/RMS, foreground by bands.
 
 **متى:** عند البدء من قالب جاهز لمرئي يتفاعل مع الصوت: خلفية تتحرك مع الباص وعناصر أمامية مع الترددات / when starting an audio visualizer from a template: background driven by bass/RMS, foreground by bands
 
@@ -19370,7 +19370,7 @@
 | نطاق الدليل | `sibling` |
 | الرخصة | owner |
 
-**ما هي:** Reads per-frame audio analysis JSON so every visual value can come from the soundtrack (kick, onset, bass/mid/high, rms, tape clock, silence).
+**ما هي:** يقرأ JSON تحليل الصوت لكل إطار ليأتي كل قيمة مرئية من المسار الصوتي (طبلة وبداية وجهير/وسط/حاد وrms وساعة الشريط والصمت). — Reads per-frame audio analysis JSON so every visual value can come from the soundtrack (kick, onset, bass/mid/high, rms, tape clock, silence).
 
 **متى:** حين تريد أن تأتي كل قيمة مرئية من الموسيقى التصويرية مثل الكيك والباص والصمت / when every visual value should come from the soundtrack's per-frame analysis: kick, onset, bands, rms, silence
 
@@ -19439,7 +19439,7 @@
 | نطاق الدليل | `sibling` |
 | الرخصة | owner |
 
-**ما هي:** After a studio render, every <audio> tag (src, data-start, data-volume, data-fade-in/out, data-role) is placed and mixed; clips marked data-role=voice duck everything else through a sidechain compressor.
+**ما هي:** بعد تصيير الاستوديو توضع كل وسوم <audio> (src وdata-start وdata-volume وdata-fade-in/out وdata-role) وتُمزج؛ والمقاطع ذات data-role=voice تخفض كل ما سواها عبر ضاغط sidechain. — After a studio render, every <audio> tag (src, data-start, data-volume, data-fade-in/out, data-role) is placed and mixed; clips marked data-role=voice duck everything else through a sidechain compressor.
 
 **متى:** عند تجميع كل ملفات الصوت بعد رندر التركيب وخفض الباقي تحت صوت المتكلم ثم توحيد العلو / when mixing every audio tag after a studio render, ducking the rest under voice clips, then two-pass loudnorm
 
@@ -19509,7 +19509,7 @@
 | نطاق الدليل | `sibling` |
 | الرخصة | owner |
 
-**ما هي:** Music sits under speech via FFmpeg sidechaincompress with per-tool settings.
+**ما هي:** تجلس الموسيقى تحت الكلام عبر FFmpeg sidechaincompress بإعدادات لكل أداة. — Music sits under speech via FFmpeg sidechaincompress with per-tool settings.
 
 **متى:** حين تحتاج إعدادات جاهزة لخفض الموسيقى تحت الكلام في المونتاج أو الريل أو التركيب / when you need per-tool sidechain settings that sit music under speech in montage, reel or composition mux
 
@@ -19581,7 +19581,7 @@
 | نطاق الدليل | `sibling` |
 | الرخصة | owner |
 
-**ما هي:** launch: half-time intro with sparse pluck, four-on-floor build, a 2-beat stop at 55 % with riser and boom, drop with lead; calm: pad with sparse pluck.
+**ما هي:** launch: مقدمة نصف الوتيرة بنقر متفرق، وبناء أربع ضربات على الأرض، وتوقف ضربتين عند 55 % مع مصعد وانفجار، وهبوط بقيادة؛ calm: وسادة مع نقر متفرق. — launch: half-time intro with sparse pluck, four-on-floor build, a 2-beat stop at 55 % with riser and boom, drop with lead; calm: pad with sparse pluck.
 
 **متى:** عند اختيار ترتيب موسيقي جاهز: إطلاق ببناء وتوقف ورايزر ودروب، أو هادئ بباد ونغمات متفرقة / when picking a ready arrangement: launch with build, stop, riser, boom and drop, or calm with pad and sparse pluck
 
@@ -19650,7 +19650,7 @@
 | نطاق الدليل | `sibling` |
 | الرخصة | owner |
 
-**ما هي:** reel/direct add a low original pad (then pad + bass) only if the clip has no music; verse --music auto adds one only when the track has no bed.
+**ما هي:** يضيف الريل/direct وسادة أصلية منخفضة (ثم وسادة + باص) فقط إن خلا المقطع من الموسيقى؛ و verse --music auto يضيف واحدة فقط حين لا يحمل المسار خلفية. — reel/direct add a low original pad (then pad + bass) only if the clip has no music; verse --music auto adds one only when the track has no bed.
 
 **متى:** حين يخلو المقطع من موسيقى وتريد إضافة موسيقى أصلية منخفضة تلقائيا فقط عند غيابها / when a reel or verse clip has no music bed and should get a low original underscore automatically
 
@@ -19720,7 +19720,7 @@
 | نطاق الدليل | `sibling` |
 | الرخصة | MIT |
 
-**ما هي:** Real audio visualizers computed per frame from decoded audio.
+**ما هي:** مصورات صوتية حقيقية تُحسب لكل إطار من الصوت المفكوك. — Real audio visualizers computed per frame from decoded audio.
 
 **متى:** حين تعمل في Remotion وتحتاج أعمدة طيف أو خط موجة صوتية محسوبة من الصوت لكل إطار / when working in Remotion and you need real spectrum bars or a waveform line computed from the audio per frame
 
@@ -19789,7 +19789,7 @@
 | نطاق الدليل | `sibling` |
 | الرخصة | Apache-2.0 |
 
-**ما هي:** Free deterministic synthesized themes: tempo, key, instruments with level/pan/echo/reverb/duck, sections in bars with chords and patterns, arrangement, loops.
+**ما هي:** أنغام حتمية مجانية مُركَّبة بملف JSON: الإيقاع والمفتاح والآلات بمستوى/توزيع/صدى/ريفرب/خفض، وأقسام بالموازير مع أوتار وأنماط، وترتيب، وحلقات. — Free deterministic synthesized themes: tempo, key, instruments with level/pan/echo/reverb/duck, sections in bars with chords and patterns, arrangement, loops.
 
 **متى:** عند الحاجة لثيمات موسيقية مجانية حتمية تكتب بملف JSON فيه آلات وأقسام وكوردات وحلقات / when you need free deterministic synthesized themes from JSON: instruments, sections in bars, chords, arrangement and loops
 
@@ -19860,7 +19860,7 @@
 | نطاق الدليل | `sibling` |
 | الرخصة | MIT |
 
-**ما هي:** PolyBLEP oscillators, FM, supersaw, noise colours, ADSR, biquads, Freeverb, chorus, bitcrush, Karplus-Strong, 808 cymbal, sidechain envelope, BS.1770 meter, look-ahead limiter.
+**ما هي:** مذبذبات PolyBLEP وFM وsupersaw وألوان الضجيج وADSR وbiquads وFreeverb وchorus وbitcrush وKarplus-Strong وصنج 808 وغلاف sidechain ومقياس BS.1770 ومحدِّد استباقي. — PolyBLEP oscillators, FM, supersaw, noise colours, ADSR, biquads, Freeverb, chorus, bitcrush, Karplus-Strong, 808 cymbal, sidechain envelope, BS.1770 meter, look-ahead limiter.
 
 **متى:** حين تبني أصواتا وآلات مركبة ببايثون مثل المذبذبات وFM والفلاتر والصدى مع قياس العلو والمحدد / when building synthesized sounds in Python: oscillators, FM, supersaw, filters, reverb, Karplus-Strong, limiter and meter
 
@@ -19931,7 +19931,7 @@
 | نطاق الدليل | `sibling` |
 | الرخصة | MIT |
 
-**ما هي:** Write melodies/drums as one token per 16th step with rests, ties, accents, glides; chord-relative grooves.
+**ما هي:** كتابة الألحان والطبول برمز واحد لكل خطوة سادسة عشرة مع سكتات وربطات ونبرات وانزلاقات؛ وإيقاعات نسبية للوتر. — Write melodies/drums as one token per 16th step with rests, ties, accents, glides; chord-relative grooves.
 
 **متى:** عند كتابة لحن أو إيقاع طبول خطوة بخطوة بنوتة نصية لكل سدس عشر مع سكتات ونبر / when writing melodies or drum patterns as one text token per 16th step with rests, ties, accents and glides
 
@@ -20000,7 +20000,7 @@
 | نطاق الدليل | `sibling` |
 | الرخصة | MIT |
 
-**ما هي:** Pitched hits/pads must fit the actual chord at that moment, not just the song key.
+**ما هي:** يجب أن تلائم الضربات النغمية والوسائد الوتر الفعلي في تلك اللحظة، لا مفتاح الأغنية فحسب. — Pitched hits/pads must fit the actual chord at that moment, not just the song key.
 
 **متى:** حين تضيف مؤثرات أو نغمات لها طبقة وتريدها متوافقة مع الكورد الحالي لا مقام الأغنية فقط / when pitched hits or pads must fit the actual chord at that moment, not just the song key
 
@@ -20067,7 +20067,7 @@
 | نطاق الدليل | `sibling` |
 | الرخصة | owner |
 
-**ما هي:** Finds tempo, beat grid, downbeats and onsets of any audio file locally.
+**ما هي:** يجد الإيقاع وشبكة الضربات والضربات القوية والبدايات لأي ملف صوت محليًا. — Finds tempo, beat grid, downbeats and onsets of any audio file locally.
 
 **متى:** حين تريد معرفة سرعة وإيقاع أي ملف صوتي ونبضاته داخل المتصفح محليا / when finding the tempo, beat grid, downbeats and onsets of any audio file locally in the browser
 
@@ -20137,7 +20137,7 @@
 | نطاق الدليل | `sibling` |
 | الرخصة | owner |
 
-**ما هي:** Plans cut points on the beat grid in an editor's rhythm: a hook, quick cuts, and breathing shots that prefer downbeats.
+**ما هي:** يخطط نقاط القطع على شبكة الضربات بإيقاع محرر: خطّاف، وقطعات سريعة، ولقطات متنفسة تفضّل الضربات القوية. — Plans cut points on the beat grid in an editor's rhythm: a hook, quick cuts, and breathing shots that prefer downbeats.
 
 **متى:** حين تريد إيقاع مونتير في القطع: افتتاحية ثم قطعات سريعة ثم لقطة تنفس على الضربة القوية / when planning cut points in an editor's rhythm: a hook, quick cuts and breathing shots snapped to downbeats
 
@@ -20206,7 +20206,7 @@
 | نطاق الدليل | `sibling` |
 | الرخصة | owner |
 
-**ما هي:** Background music drops while someone is speaking and fades at the track edges, both live and in renders.
+**ما هي:** تنخفض الموسيقى الخلفية أثناء كلام أحد وتتلاشى عند حواف المسار، مباشرةً وفي التصيير. — Background music drops while someone is speaking and fades at the track edges, both live and in renders.
 
 **متى:** حين تريد أن تنخفض الموسيقى أثناء الكلام وتتلاشى عند الأطراف في المعاينة الحية والرندر / when background music should drop while someone speaks and fade at the edges, both live and in renders
 
@@ -20277,7 +20277,7 @@
 | نطاق الدليل | `sibling` |
 | الرخصة | MIT-derived (motion-starter-kit sfx.py) |
 
-**ما هي:** Sixteen deterministic sound effects synthesised in the browser with no downloads.
+**ما هي:** ستة عشر مؤثرًا صوتيًا حتميًا مُركَّبًا في المتصفح دون تنزيلات. — Sixteen deterministic sound effects synthesised in the browser with no downloads.
 
 **متى:** حين تحتاج مؤثرات مولدة في المتصفح بلا تحميل مثل النقرة والكتابة والفرقعة والارتطام / when you need deterministic sound effects synthesized in the browser with no downloads: tick, click, type, pop, hit, impact
 
@@ -20346,7 +20346,7 @@
 | نطاق الدليل | `sibling` |
 | الرخصة | owner |
 
-**ما هي:** Places named effects at event times so their perceived peak lands on the event, with pan and a soft clipper, and writes a stereo WAV track.
+**ما هي:** يضع مؤثرات مسماة في أوقات الأحداث ليقع ذروة إدراكها على الحدث، مع توزيع وقصّ ناعم، ويكتب مسار WAV ستيريو. — Places named effects at event times so their perceived peak lands on the event, with pan and a soft clipper, and writes a stereo WAV track.
 
 **متى:** عند وضع مؤثرات على أوقات الأحداث بحيث تقع ذروتها على الحدث وتصديرها كمسار WAV ستريو / when placing named effects at event times so their peak lands on the event, with pan, as a stereo WAV stem
 
@@ -20416,7 +20416,7 @@
 | نطاق الدليل | `sibling` |
 | الرخصة | MIT-derived (motion-starter-kit music.py) |
 
-**ما هي:** Generates a royalty-free background bed (pads, sub bass, arpeggio, kick, hats) for a given duration and mood, and returns its beat times.
+**ما هي:** يولّد خلفية موسيقية خالية من الإتاوات (وسائد وباص سفلي وأربيج وطبلة وهات) لمدة ومزاج معينين، ويعيد أوقات ضرباتها. — Generates a royalty-free background bed (pads, sub bass, arpeggio, kick, hats) for a given duration and mood, and returns its beat times.
 
 **متى:** حين تحتاج موسيقى خلفية بلا حقوق بمدة ومزاج محددين (هادئ، تقني، مشرق، ملحمي) مع أوقات النبضات / when you need a royalty-free background bed for a given duration and mood (calm, tech, bright, epic), with beat times
 
@@ -20485,7 +20485,7 @@
 | نطاق الدليل | `sibling` |
 | الرخصة | owner |
 
-**ما هي:** Each motion-film style declares sound roles; effects are placed on line starts, emphasised words, moves, writing and counting.
+**ما هي:** يعلن كل أسلوب فيلم حركي أدوار الصوت؛ وتوضع المؤثرات على بدايات الأسطر والكلمات المؤكدة والحركات والكتابة والعد. — Each motion-film style declares sound roles; effects are placed on line starts, emphasised words, moves, writing and counting.
 
 **متى:** حين تريد توزيع المؤثرات تلقائيا على بدايات الجمل والكلمات المميزة والكتابة والعد في فيلم موشن / when effects should auto-place on line starts, emphasised words, moves, writing and number counts in a motion film
 
@@ -20552,7 +20552,7 @@
 | نطاق الدليل | `sibling` |
 | الرخصة | owner |
 
-**ما هي:** Montage cuts and camera accents get matching effects automatically.
+**ما هي:** قطعات المونتاج وتأكيدات الكاميرا تحصل تلقائيًا على مؤثرات مطابقة. — Montage cuts and camera accents get matching effects automatically.
 
 **متى:** حين تريد أن تأخذ قطعات المونتاج وحركات الكاميرا مؤثرات مطابقة تلقائيا مثل الووش والارتطام / when montage cuts and camera accents (whip, flash, glitch, punch-in, crash zoom) should get matching effects automatically
 

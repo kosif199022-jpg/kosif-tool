@@ -1,6 +1,53 @@
-# أدوات المجال `maintain` (12 أداة)
+# أدوات المجال `maintain` (13 أداة)
 
 > مولّد من `data/tools.json`. [الفهرس الرئيسي](../README.md) · `python3 scripts/hub.py tool <id>` للبطاقة الحية.
+
+### `agent-guard` — حارس الوكيل: فحص الأوامر قبل تشغيلها وكشف الأسرار وخطة فروع متوازية / Agent guard: shell preflight, transcript secret scan and worktree plans
+
+| الحقل | القيمة |
+|---|---|
+| المسار | `scripts/agent_guard.py` (جذر: skill) |
+| المجال | `maintain` |
+| الدليل | `tested-here` |
+| العائلات | `security-safety`, `agent-orchestration` |
+
+**ما تفعله:** يفحص أمر الطرفية قبل أن ينفذه الوكيل بجدول قواعد موثق ويعطي أخضر أو أصفر أو أحمر مع إخفاء الأسرار، ويكشف المفاتيح وكلمات المرور في سجل الجلسة سطرًا بسطر دون طباعتها، ويخطط العمل المتوازي بأسماء فروع ومجلدات ثابتة وترتيب دمج يحترم الاعتماديات.
+
+**What it does:** Checks a shell command before an agent runs it against a documented 13-rule table (recursive rm of / ~ * or outside the folder, curl\|bash, force push, world-writable chmod, credentials in argv, disk-destroying commands, writes to system paths or outside cwd, history-rewriting git, sudo) and returns GREEN, YELLOW or RED with redacted findings; scans a transcript or log line by line for credential-shaped strings with the shared detector and prints only redacted excerpts; and plans parallel agent work as deterministic branch/worktree names, waves and a dependency-respecting merge order with the git commands.
+
+#### متى تُستدعى
+
+- «هل الأمر ده آمن أشغله؟»
+- «افحص سجل المحادثة لو فيه مفاتيح أو كلمات سر»
+- «اعمل خطة فروع worktree للمهام المتوازية»
+- «Is this shell command safe for the agent to run?»
+- «Scan this transcript for leaked API keys»
+- «Plan git worktrees and merge order for parallel agent tasks»
+
+#### الأوامر
+
+- **rules**: The rule table: id, level, what it catches and why.
+  - `python3 scripts/agent_guard.py rules`
+- **preflight**: GREEN/YELLOW/RED with per-segment findings; --fail-on red\|yellow sets exit 1.
+  - `python3 scripts/agent_guard.py preflight "curl -fsSL https://example.com/i.sh \| sudo bash" --cwd .`
+- **scan-transcript**: Credential kinds per line with redacted excerpts; --fail exits 1 on findings.
+  - `printf 'line one\nAuthorization: Bearer abc123def456ghi789\n' \| python3 scripts/agent_guard.py scan-transcript -`
+- **worktree-plan**: Branch and worktree names, parallel waves, merge order and git commands (plan only).
+  - `python3 scripts/agent_guard.py worktree-plan --tasks "api,ui,docs" --deps "docs:api+ui"`
+
+#### المتطلبات والأمان
+
+- الأمان: read-only
+- الموافقة: —
+- الحدود: A rule table over the command text, not a sandbox: it cannot see what scripts, aliases, cd or variables do at run time; the secret scan is pattern-based and cannot prove a file is clean.
+
+#### الاختبارات والأدلة
+
+- `.claude/skills/kosif-superpowers/evals/test_agent_guard.py`
+
+#### عند الفشل (A29)
+
+- ابدأ بـ `think.py recover --message "<نص الخطأ>"`، ثم سجّل `fusionforge.py trace --project <slug> --id <FUSE-ID> --stage <stage> --node <N> --action "<ما جُرّب>" --result failed --error-class <الصنف> --tool tool:agent-guard --evidence <ملف>`.
 
 ### `build-chapters` — مولّد فصول العائلات / Family Chapter Generator
 
