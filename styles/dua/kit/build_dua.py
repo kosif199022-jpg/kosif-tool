@@ -9,6 +9,7 @@ project.json
   "audio":   "voice.m4a",                               # optional; copied untouched (-c:a copy) when the codec fits MP4
   "date":    "22.08.2025",
   "subtitle":"ليلة جمعة مبـــاركة",                       # optional, default from the style
+  "title":   "الأربعاء",                                  # optional: another day's title instead of «الجُمُعَة»
   "lines":   [{"text": "اللَّهُمَّ في ليلة الجمعة", "start": 0.0, "end": 1.68}, ...],   # phrase timings (seconds)
   "asr":     "asr.json",                                # alternative to start/end: faster-whisper segments, one per line
   "duration": 15.4,                                     # optional (default: last end + 0.4)
@@ -87,6 +88,8 @@ def load_project(path: Path) -> dict:
 def render_layers(p: dict, out: Path) -> dict:
     out.mkdir(parents=True, exist_ok=True)
     req = {"date": p["date"], "subtitle": p["subtitle"], "lines": [l["text"] for l in p["lines"]]}
+    if p.get("title"):
+        req["title_text"] = p["title"]
     (out / "request.json").write_text(json.dumps(req, ensure_ascii=False), encoding="utf-8")
     r = subprocess.run(["node", str(KIT / "layers.cjs"), str(out / "request.json"), str(out)], capture_output=True, text=True)
     if r.returncode:
