@@ -981,6 +981,9 @@ V52_REPLACED = (
     ("أما توجيهات `brief` و`verify` (المستوى، الخطط، أوامر الإصلاح) فمسودات في البند 5 من ترتيب الأولوية: خذ منها ما وافق هذا البروتوكول.",
      "أما توجيهات `brief` و`verify` و`fusionforge.py` (المستوى، الخطط، الأسئلة، أوامر الإصلاح) فمسودات في البند 5 من ترتيب الأولوية",
      "Phase 11: fusionforge.py output is a draft too"),
+    ("وإن توفر shell فالأصل الاستنساخ: `git clone https://github.com/kosif199022-jpg/kosif-tool` ثم المرحلة 0 من جذر المستودع.",
+     "والقراءة أولًا دائمًا: في جلسة ليس المستودع مساحة عملها ولا المهارة مثبتة فيها، كود المستودع خارجي",
+     "repo-origin: clone-and-run is replaced by read first, run scripts only with consent (A34 §11, the Code from External denial)"),
 )
 
 
