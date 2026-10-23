@@ -79,7 +79,7 @@
 | نوع المخرج (A25، A27) | خطة واستراتيجية وقرار (`plan`) |
 | الحالة في الكتالوج | 📄 `documented`: منهج موصوف يحتاج بناءً أو ربطًا قبل التشغيل |
 | سقف التحقق قبل العمل (A27) | V1 حتى تُبنى وتُشغَّل؛ لا تقدَّم جاهزة أبدًا |
-| نطاق الدليل | `none` |
+| نطاق الدليل | `repo` |
 | الرخصة | owner |
 
 **ما هي:** What is true here regardless of how it is usually done? — اسأل: المبادئ الأولى. Output: a solution path derived from facts, with the dropped conventions named.
@@ -130,7 +130,7 @@
 
 #### 6. الأدلة
 
-- لا دليل مسجل: لا تُقدَّم أكثر من منهج.
+- `kosif-tool/.claude/skills/kosif-superpowers/references/cognition.md`
 
 #### 7. قدرات قريبة في العائلة
 
@@ -146,7 +146,7 @@
 | نوع المخرج (A25، A27) | خطة واستراتيجية وقرار (`plan`) |
 | الحالة في الكتالوج | 📄 `documented`: منهج موصوف يحتاج بناءً أو ربطًا قبل التشغيل |
 | سقف التحقق قبل العمل (A27) | V1 حتى تُبنى وتُشغَّل؛ لا تقدَّم جاهزة أبدًا |
-| نطاق الدليل | `none` |
+| نطاق الدليل | `repo` |
 | الرخصة | owner |
 
 **ما هي:** What would guarantee failure, and how do I avoid each item? — اسأل: العكس. Output: a short avoid-list turned into checks.
@@ -197,7 +197,7 @@
 
 #### 6. الأدلة
 
-- لا دليل مسجل: لا تُقدَّم أكثر من منهج.
+- `kosif-tool/.claude/skills/kosif-superpowers/references/cognition.md`
 
 #### 7. قدرات قريبة في العائلة
 
@@ -214,7 +214,7 @@
 | نوع المخرج (A25، A27) | خطة واستراتيجية وقرار (`plan`) |
 | الحالة في الكتالوج | 📄 `documented`: منهج موصوف يحتاج بناءً أو ربطًا قبل التشغيل |
 | سقف التحقق قبل العمل (A27) | V1 حتى تُبنى وتُشغَّل؛ لا تقدَّم جاهزة أبدًا |
-| نطاق الدليل | `none` |
+| نطاق الدليل | `repo` |
 | الرخصة | owner |
 
 **ما هي:** And then what happens, one and two steps later? — اسأل: آثار الدرجة الثانية. Output: an effects chain per stakeholder.
@@ -265,7 +265,7 @@
 
 #### 6. الأدلة
 
-- لا دليل مسجل: لا تُقدَّم أكثر من منهج.
+- `kosif-tool/.claude/skills/kosif-superpowers/references/cognition.md`
 
 #### 7. قدرات قريبة في العائلة
 
@@ -283,7 +283,7 @@
 | نوع المخرج (A25، A27) | خطة واستراتيجية وقرار (`plan`) |
 | الحالة في الكتالوج | 📄 `documented`: منهج موصوف يحتاج بناءً أو ربطًا قبل التشغيل |
 | سقف التحقق قبل العمل (A27) | V1 حتى تُبنى وتُشغَّل؛ لا تقدَّم جاهزة أبدًا |
-| نطاق الدليل | `none` |
+| نطاق الدليل | `repo` |
 | الرخصة | owner |
 
 **ما هي:** Where does my model differ from what is really there? — اسأل: الخريطة ليست الأرض. Output: the model's blind spots and one reality check.
@@ -334,7 +334,7 @@
 
 #### 6. الأدلة
 
-- لا دليل مسجل: لا تُقدَّم أكثر من منهج.
+- `kosif-tool/.claude/skills/kosif-superpowers/references/cognition.md`
 
 #### 7. قدرات قريبة في العائلة
 
@@ -352,7 +352,7 @@
 | نوع المخرج (A25، A27) | خطة واستراتيجية وقرار (`plan`) |
 | الحالة في الكتالوج | 📄 `documented`: منهج موصوف يحتاج بناءً أو ربطًا قبل التشغيل |
 | سقف التحقق قبل العمل (A27) | V1 حتى تُبنى وتُشغَّل؛ لا تقدَّم جاهزة أبدًا |
-| نطاق الدليل | `none` |
+| نطاق الدليل | `repo` |
 | الرخصة | owner |
 
 **ما هي:** Is this inside what I can verify, or outside it? — اسأل: دائرة الكفاءة. Output: claims split into verified / sourced / outside.
@@ -403,7 +403,7 @@
 
 #### 6. الأدلة
 
-- لا دليل مسجل: لا تُقدَّم أكثر من منهج.
+- `kosif-tool/.claude/skills/kosif-superpowers/references/cognition.md`
 
 #### 7. قدرات قريبة في العائلة
 
@@ -421,7 +421,7 @@
 | نوع المخرج (A25، A27) | خطة واستراتيجية وقرار (`plan`) |
 | الحالة في الكتالوج | 📄 `documented`: منهج موصوف يحتاج بناءً أو ربطًا قبل التشغيل |
 | سقف التحقق قبل العمل (A27) | V1 حتى تُبنى وتُشغَّل؛ لا تقدَّم جاهزة أبدًا |
-| نطاق الدليل | `none` |
+| نطاق الدليل | `repo` |
 | الرخصة | owner |
 
 **ما هي:** Which explanation needs the fewest new assumptions? — اسأل: شفرة أوكام. Output: a ranked list of explanations with the first test.
@@ -472,7 +472,7 @@
 
 #### 6. الأدلة
 
-- لا دليل مسجل: لا تُقدَّم أكثر من منهج.
+- `kosif-tool/.claude/skills/kosif-superpowers/references/cognition.md`
 
 #### 7. قدرات قريبة في العائلة
 
@@ -490,7 +490,7 @@
 | نوع المخرج (A25، A27) | خطة واستراتيجية وقرار (`plan`) |
 | الحالة في الكتالوج | 📄 `documented`: منهج موصوف يحتاج بناءً أو ربطًا قبل التشغيل |
 | سقف التحقق قبل العمل (A27) | V1 حتى تُبنى وتُشغَّل؛ لا تقدَّم جاهزة أبدًا |
-| نطاق الدليل | `none` |
+| نطاق الدليل | `repo` |
 | الرخصة | owner |
 
 **ما هي:** Is there a non-malicious explanation (missing info, rushed, unclear)? — اسأل: شفرة هانلون. Output: a charitable hypothesis and how to test it.
@@ -541,7 +541,7 @@
 
 #### 6. الأدلة
 
-- لا دليل مسجل: لا تُقدَّم أكثر من منهج.
+- `kosif-tool/.claude/skills/kosif-superpowers/references/cognition.md`
 
 #### 7. قدرات قريبة في العائلة
 
@@ -559,7 +559,7 @@
 | نوع المخرج (A25، A27) | خطة واستراتيجية وقرار (`plan`) |
 | الحالة في الكتالوج | 📄 `documented`: منهج موصوف يحتاج بناءً أو ربطًا قبل التشغيل |
 | سقف التحقق قبل العمل (A27) | V1 حتى تُبنى وتُشغَّل؛ لا تقدَّم جاهزة أبدًا |
-| نطاق الدليل | `none` |
+| نطاق الدليل | `repo` |
 | الرخصة | owner |
 
 **ما هي:** How much should this new evidence move my belief? — اسأل: التحديث البايزي. Output: prior → likelihood ratio → posterior, in numbers.
@@ -610,7 +610,7 @@
 
 #### 6. الأدلة
 
-- لا دليل مسجل: لا تُقدَّم أكثر من منهج.
+- `kosif-tool/.claude/skills/kosif-superpowers/references/cognition.md`
 
 #### 7. قدرات قريبة في العائلة
 
@@ -628,7 +628,7 @@
 | نوع المخرج (A25، A27) | خطة واستراتيجية وقرار (`plan`) |
 | الحالة في الكتالوج | 📄 `documented`: منهج موصوف يحتاج بناءً أو ربطًا قبل التشغيل |
 | سقف التحقق قبل العمل (A27) | V1 حتى تُبنى وتُشغَّل؛ لا تقدَّم جاهزة أبدًا |
-| نطاق الدليل | `none` |
+| نطاق الدليل | `repo` |
 | الرخصة | owner |
 
 **ما هي:** How often does this kind of thing happen in general? — اسأل: المعدلات الأساسية. Output: an estimate anchored on a reference class.
@@ -679,7 +679,7 @@
 
 #### 6. الأدلة
 
-- لا دليل مسجل: لا تُقدَّم أكثر من منهج.
+- `kosif-tool/.claude/skills/kosif-superpowers/references/cognition.md`
 
 #### 7. قدرات قريبة في العائلة
 
@@ -697,7 +697,7 @@
 | نوع المخرج (A25، A27) | خطة واستراتيجية وقرار (`plan`) |
 | الحالة في الكتالوج | 📄 `documented`: منهج موصوف يحتاج بناءً أو ربطًا قبل التشغيل |
 | سقف التحقق قبل العمل (A27) | V1 حتى تُبنى وتُشغَّل؛ لا تقدَّم جاهزة أبدًا |
-| نطاق الدليل | `none` |
+| نطاق الدليل | `repo` |
 | الرخصة | owner |
 
 **ما هي:** Can I break the unknown number into factors I can estimate? — اسأل: تقدير فيرمي. Output: a range with its factor tree.
@@ -748,7 +748,7 @@
 
 #### 6. الأدلة
 
-- لا دليل مسجل: لا تُقدَّم أكثر من منهج.
+- `kosif-tool/.claude/skills/kosif-superpowers/references/cognition.md`
 
 #### 7. قدرات قريبة في العائلة
 
@@ -766,7 +766,7 @@
 | نوع المخرج (A25، A27) | خطة واستراتيجية وقرار (`plan`) |
 | الحالة في الكتالوج | 📄 `documented`: منهج موصوف يحتاج بناءً أو ربطًا قبل التشغيل |
 | سقف التحقق قبل العمل (A27) | V1 حتى تُبنى وتُشغَّل؛ لا تقدَّم جاهزة أبدًا |
-| نطاق الدليل | `none` |
+| نطاق الدليل | `repo` |
 | الرخصة | owner |
 
 **ما هي:** Probability × payoff, summed over outcomes: which option wins? — اسأل: القيمة المتوقعة. Output: EV per option plus worst case.
@@ -817,7 +817,7 @@
 
 #### 6. الأدلة
 
-- لا دليل مسجل: لا تُقدَّم أكثر من منهج.
+- `kosif-tool/.claude/skills/kosif-superpowers/references/cognition.md`
 
 #### 7. قدرات قريبة في العائلة
 
@@ -835,7 +835,7 @@
 | نوع المخرج (A25، A27) | خطة واستراتيجية وقرار (`plan`) |
 | الحالة في الكتالوج | 📄 `documented`: منهج موصوف يحتاج بناءً أو ربطًا قبل التشغيل |
 | سقف التحقق قبل العمل (A27) | V1 حتى تُبنى وتُشغَّل؛ لا تقدَّم جاهزة أبدًا |
-| نطاق الدليل | `none` |
+| نطاق الدليل | `repo` |
 | الرخصة | owner |
 
 **ما هي:** Can this be undone cheaply? — اسأل: قرار قابل للرجوع أم لا. Output: door type and the matching speed.
@@ -886,7 +886,7 @@
 
 #### 6. الأدلة
 
-- لا دليل مسجل: لا تُقدَّم أكثر من منهج.
+- `kosif-tool/.claude/skills/kosif-superpowers/references/cognition.md`
 
 #### 7. قدرات قريبة في العائلة
 
@@ -904,7 +904,7 @@
 | نوع المخرج (A25، A27) | خطة واستراتيجية وقرار (`plan`) |
 | الحالة في الكتالوج | 📄 `documented`: منهج موصوف يحتاج بناءً أو ربطًا قبل التشغيل |
 | سقف التحقق قبل العمل (A27) | V1 حتى تُبنى وتُشغَّل؛ لا تقدَّم جاهزة أبدًا |
-| نطاق الدليل | `none` |
+| نطاق الدليل | `repo` |
 | الرخصة | owner |
 
 **ما هي:** What is the best thing I give up by doing this? — اسأل: تكلفة الفرصة البديلة. Output: the alternative and why this beats it.
@@ -955,7 +955,7 @@
 
 #### 6. الأدلة
 
-- لا دليل مسجل: لا تُقدَّم أكثر من منهج.
+- `kosif-tool/.claude/skills/kosif-superpowers/references/cognition.md`
 
 #### 7. قدرات قريبة في العائلة
 
@@ -973,7 +973,7 @@
 | نوع المخرج (A25، A27) | خطة واستراتيجية وقرار (`plan`) |
 | الحالة في الكتالوج | 📄 `documented`: منهج موصوف يحتاج بناءً أو ربطًا قبل التشغيل |
 | سقف التحقق قبل العمل (A27) | V1 حتى تُبنى وتُشغَّل؛ لا تقدَّم جاهزة أبدًا |
-| نطاق الدليل | `none` |
+| نطاق الدليل | `repo` |
 | الرخصة | owner |
 
 **ما هي:** How much buffer protects me if my estimate is wrong? — اسأل: هامش الأمان. Output: plan with explicit buffers.
@@ -1024,7 +1024,7 @@
 
 #### 6. الأدلة
 
-- لا دليل مسجل: لا تُقدَّم أكثر من منهج.
+- `kosif-tool/.claude/skills/kosif-superpowers/references/cognition.md`
 
 #### 7. قدرات قريبة في العائلة
 
@@ -1042,7 +1042,7 @@
 | نوع المخرج (A25، A27) | خطة واستراتيجية وقرار (`plan`) |
 | الحالة في الكتالوج | 📄 `documented`: منهج موصوف يحتاج بناءً أو ربطًا قبل التشغيل |
 | سقف التحقق قبل العمل (A27) | V1 حتى تُبنى وتُشغَّل؛ لا تقدَّم جاهزة أبدًا |
-| نطاق الدليل | `none` |
+| نطاق الدليل | `repo` |
 | الرخصة | owner |
 
 **ما هي:** Which 20% of the work gives 80% of the value? — اسأل: مبدأ باريتو. Output: a ranked slice to do first.
@@ -1093,7 +1093,7 @@
 
 #### 6. الأدلة
 
-- لا دليل مسجل: لا تُقدَّم أكثر من منهج.
+- `kosif-tool/.claude/skills/kosif-superpowers/references/cognition.md`
 
 #### 7. قدرات قريبة في العائلة
 
@@ -1111,7 +1111,7 @@
 | نوع المخرج (A25، A27) | خطة واستراتيجية وقرار (`plan`) |
 | الحالة في الكتالوج | 📄 `documented`: منهج موصوف يحتاج بناءً أو ربطًا قبل التشغيل |
 | سقف التحقق قبل العمل (A27) | V1 حتى تُبنى وتُشغَّل؛ لا تقدَّم جاهزة أبدًا |
-| نطاق الدليل | `none` |
+| نطاق الدليل | `repo` |
 | الرخصة | owner |
 
 **ما هي:** Where is the single bottleneck that limits the whole system? — اسأل: نظرية القيود. Output: the bottleneck and one action on it.
@@ -1162,7 +1162,7 @@
 
 #### 6. الأدلة
 
-- لا دليل مسجل: لا تُقدَّم أكثر من منهج.
+- `kosif-tool/.claude/skills/kosif-superpowers/references/cognition.md`
 
 #### 7. قدرات قريبة في العائلة
 
@@ -1180,7 +1180,7 @@
 | نوع المخرج (A25، A27) | خطة واستراتيجية وقرار (`plan`) |
 | الحالة في الكتالوج | 📄 `documented`: منهج موصوف يحتاج بناءً أو ربطًا قبل التشغيل |
 | سقف التحقق قبل العمل (A27) | V1 حتى تُبنى وتُشغَّل؛ لا تقدَّم جاهزة أبدًا |
-| نطاق الدليل | `none` |
+| نطاق الدليل | `repo` |
 | الرخصة | owner |
 
 **ما هي:** Which loops reinforce and which balance? — اسأل: حلقات التغذية الراجعة. Output: a causal loop sketch with leverage points.
@@ -1231,7 +1231,7 @@
 
 #### 6. الأدلة
 
-- لا دليل مسجل: لا تُقدَّم أكثر من منهج.
+- `kosif-tool/.claude/skills/kosif-superpowers/references/cognition.md`
 
 #### 7. قدرات قريبة في العائلة
 
@@ -1249,7 +1249,7 @@
 | نوع المخرج (A25، A27) | خطة واستراتيجية وقرار (`plan`) |
 | الحالة في الكتالوج | 📄 `documented`: منهج موصوف يحتاج بناءً أو ربطًا قبل التشغيل |
 | سقف التحقق قبل العمل (A27) | V1 حتى تُبنى وتُشغَّل؛ لا تقدَّم جاهزة أبدًا |
-| نطاق الدليل | `none` |
+| نطاق الدليل | `repo` |
 | الرخصة | owner |
 
 **ما هي:** What accumulates, and what fills or drains it? — اسأل: المخزون والتدفق. Output: a stock-flow model with a projection.
@@ -1300,7 +1300,7 @@
 
 #### 6. الأدلة
 
-- لا دليل مسجل: لا تُقدَّم أكثر من منهج.
+- `kosif-tool/.claude/skills/kosif-superpowers/references/cognition.md`
 
 #### 7. قدرات قريبة في العائلة
 
@@ -1318,7 +1318,7 @@
 | نوع المخرج (A25، A27) | خطة واستراتيجية وقرار (`plan`) |
 | الحالة في الكتالوج | 📄 `documented`: منهج موصوف يحتاج بناءً أو ربطًا قبل التشغيل |
 | سقف التحقق قبل العمل (A27) | V1 حتى تُبنى وتُشغَّل؛ لا تقدَّم جاهزة أبدًا |
-| نطاق الدليل | `none` |
+| نطاق الدليل | `repo` |
 | الرخصة | owner |
 
 **ما هي:** Where does a small change shift the whole system? — اسأل: نقاط الرافعة. Output: a chosen intervention with its level.
@@ -1369,7 +1369,7 @@
 
 #### 6. الأدلة
 
-- لا دليل مسجل: لا تُقدَّم أكثر من منهج.
+- `kosif-tool/.claude/skills/kosif-superpowers/references/cognition.md`
 
 #### 7. قدرات قريبة في العائلة
 
@@ -1387,7 +1387,7 @@
 | نوع المخرج (A25، A27) | خطة واستراتيجية وقرار (`plan`) |
 | الحالة في الكتالوج | 📄 `documented`: منهج موصوف يحتاج بناءً أو ربطًا قبل التشغيل |
 | سقف التحقق قبل العمل (A27) | V1 حتى تُبنى وتُشغَّل؛ لا تقدَّم جاهزة أبدًا |
-| نطاق الدليل | `none` |
+| نطاق الدليل | `repo` |
 | الرخصة | owner |
 
 **ما هي:** Is this clear, complicated, complex or chaotic? — اسأل: إطار كنفين. Output: domain label and first move.
@@ -1438,7 +1438,7 @@
 
 #### 6. الأدلة
 
-- لا دليل مسجل: لا تُقدَّم أكثر من منهج.
+- `kosif-tool/.claude/skills/kosif-superpowers/references/cognition.md`
 
 #### 7. قدرات قريبة في العائلة
 
@@ -1456,7 +1456,7 @@
 | نوع المخرج (A25، A27) | خطة واستراتيجية وقرار (`plan`) |
 | الحالة في الكتالوج | 📄 `documented`: منهج موصوف يحتاج بناءً أو ربطًا قبل التشغيل |
 | سقف التحقق قبل العمل (A27) | V1 حتى تُبنى وتُشغَّل؛ لا تقدَّم جاهزة أبدًا |
-| نطاق الدليل | `none` |
+| نطاق الدليل | `repo` |
 | الرخصة | owner |
 
 **ما هي:** Observe, orient, decide, act — how do I tighten the loop? — اسأل: حلقة أودا. Output: a short loop with the next step.
@@ -1508,7 +1508,7 @@
 
 #### 6. الأدلة
 
-- لا دليل مسجل: لا تُقدَّم أكثر من منهج.
+- `kosif-tool/.claude/skills/kosif-superpowers/references/cognition.md`
 
 #### 7. قدرات قريبة في العائلة
 
@@ -1526,7 +1526,7 @@
 | نوع المخرج (A25، A27) | خطة واستراتيجية وقرار (`plan`) |
 | الحالة في الكتالوج | 📄 `documented`: منهج موصوف يحتاج بناءً أو ربطًا قبل التشغيل |
 | سقف التحقق قبل العمل (A27) | V1 حتى تُبنى وتُشغَّل؛ لا تقدَّم جاهزة أبدًا |
-| نطاق الدليل | `none` |
+| نطاق الدليل | `repo` |
 | الرخصة | owner |
 
 **ما هي:** What is the strongest version of the view I reject? — اسأل: الحجة الأقوى للطرف الآخر. Output: the steelman and your reply.
@@ -1577,7 +1577,7 @@
 
 #### 6. الأدلة
 
-- لا دليل مسجل: لا تُقدَّم أكثر من منهج.
+- `kosif-tool/.claude/skills/kosif-superpowers/references/cognition.md`
 
 #### 7. قدرات قريبة في العائلة
 
@@ -1595,7 +1595,7 @@
 | نوع المخرج (A25، A27) | خطة واستراتيجية وقرار (`plan`) |
 | الحالة في الكتالوج | 📄 `documented`: منهج موصوف يحتاج بناءً أو ربطًا قبل التشغيل |
 | سقف التحقق قبل العمل (A27) | V1 حتى تُبنى وتُشغَّل؛ لا تقدَّم جاهزة أبدًا |
-| نطاق الدليل | `none` |
+| نطاق الدليل | `repo` |
 | الرخصة | owner |
 
 **ما هي:** If I wanted to break or refute this, how would I? — اسأل: الفريق الأحمر. Output: attack list with fixes.
@@ -1646,7 +1646,7 @@
 
 #### 6. الأدلة
 
-- لا دليل مسجل: لا تُقدَّم أكثر من منهج.
+- `kosif-tool/.claude/skills/kosif-superpowers/references/cognition.md`
 
 #### 7. قدرات قريبة في العائلة
 
@@ -1664,7 +1664,7 @@
 | نوع المخرج (A25، A27) | خطة واستراتيجية وقرار (`plan`) |
 | الحالة في الكتالوج | 📄 `documented`: منهج موصوف يحتاج بناءً أو ربطًا قبل التشغيل |
 | سقف التحقق قبل العمل (A27) | V1 حتى تُبنى وتُشغَّل؛ لا تقدَّم جاهزة أبدًا |
-| نطاق الدليل | `none` |
+| نطاق الدليل | `repo` |
 | الرخصة | owner |
 
 **ما هي:** It failed six months from now — why? — اسأل: التشريح المسبق. Output: failure causes with mitigations and signals.
@@ -1715,7 +1715,7 @@
 
 #### 6. الأدلة
 
-- لا دليل مسجل: لا تُقدَّم أكثر من منهج.
+- `kosif-tool/.claude/skills/kosif-superpowers/references/cognition.md`
 
 #### 7. قدرات قريبة في العائلة
 
@@ -1733,7 +1733,7 @@
 | نوع المخرج (A25، A27) | خطة واستراتيجية وقرار (`plan`) |
 | الحالة في الكتالوج | 📄 `documented`: منهج موصوف يحتاج بناءً أو ربطًا قبل التشغيل |
 | سقف التحقق قبل العمل (A27) | V1 حتى تُبنى وتُشغَّل؛ لا تقدَّم جاهزة أبدًا |
-| نطاق الدليل | `none` |
+| نطاق الدليل | `repo` |
 | الرخصة | owner |
 
 **ما هي:** Starting from the finished goal, what must be true just before it? — اسأل: التخطيط العكسي. Output: milestones derived from the goal.
@@ -1784,7 +1784,7 @@
 
 #### 6. الأدلة
 
-- لا دليل مسجل: لا تُقدَّم أكثر من منهج.
+- `kosif-tool/.claude/skills/kosif-superpowers/references/cognition.md`
 
 #### 7. قدرات قريبة في العائلة
 
@@ -1802,7 +1802,7 @@
 | نوع المخرج (A25، A27) | خطة واستراتيجية وقرار (`plan`) |
 | الحالة في الكتالوج | 📄 `documented`: منهج موصوف يحتاج بناءً أو ربطًا قبل التشغيل |
 | سقف التحقق قبل العمل (A27) | V1 حتى تُبنى وتُشغَّل؛ لا تقدَّم جاهزة أبدًا |
-| نطاق الدليل | `none` |
+| نطاق الدليل | `repo` |
 | الرخصة | owner |
 
 **ما هي:** Which chain of dependent tasks decides the finish date? — اسأل: المسار الحرج. Output: critical path and slack per task.
@@ -1853,7 +1853,7 @@
 
 #### 6. الأدلة
 
-- لا دليل مسجل: لا تُقدَّم أكثر من منهج.
+- `kosif-tool/.claude/skills/kosif-superpowers/references/cognition.md`
 
 #### 7. قدرات قريبة في العائلة
 
@@ -1871,7 +1871,7 @@
 | نوع المخرج (A25، A27) | خطة واستراتيجية وقرار (`plan`) |
 | الحالة في الكتالوج | 📄 `documented`: منهج موصوف يحتاج بناءً أو ربطًا قبل التشغيل |
 | سقف التحقق قبل العمل (A27) | V1 حتى تُبنى وتُشغَّل؛ لا تقدَّم جاهزة أبدًا |
-| نطاق الدليل | `none` |
+| نطاق الدليل | `repo` |
 | الرخصة | owner |
 
 **ما هي:** What are the smallest deliverable pieces, each with a done-test? — اسأل: تفكيك العمل. Output: a WBS with done criteria.
@@ -1922,7 +1922,7 @@
 
 #### 6. الأدلة
 
-- لا دليل مسجل: لا تُقدَّم أكثر من منهج.
+- `kosif-tool/.claude/skills/kosif-superpowers/references/cognition.md`
 
 #### 7. قدرات قريبة في العائلة
 
@@ -1940,7 +1940,7 @@
 | نوع المخرج (A25، A27) | خطة واستراتيجية وقرار (`plan`) |
 | الحالة في الكتالوج | 📄 `documented`: منهج موصوف يحتاج بناءً أو ربطًا قبل التشغيل |
 | سقف التحقق قبل العمل (A27) | V1 حتى تُبنى وتُشغَّل؛ لا تقدَّم جاهزة أبدًا |
-| نطاق الدليل | `none` |
+| نطاق الدليل | `repo` |
 | الرخصة | owner |
 
 **ما هي:** Are my categories mutually exclusive and collectively exhaustive? — اسأل: التقسيم الشامل غير المتداخل. Output: a clean issue tree.
@@ -1991,7 +1991,7 @@
 
 #### 6. الأدلة
 
-- لا دليل مسجل: لا تُقدَّم أكثر من منهج.
+- `kosif-tool/.claude/skills/kosif-superpowers/references/cognition.md`
 
 #### 7. قدرات قريبة في العائلة
 
@@ -2009,7 +2009,7 @@
 | نوع المخرج (A25، A27) | خطة واستراتيجية وقرار (`plan`) |
 | الحالة في الكتالوج | 📄 `documented`: منهج موصوف يحتاج بناءً أو ربطًا قبل التشغيل |
 | سقف التحقق قبل العمل (A27) | V1 حتى تُبنى وتُشغَّل؛ لا تقدَّم جاهزة أبدًا |
-| نطاق الدليل | `none` |
+| نطاق الدليل | `repo` |
 | الرخصة | owner |
 
 **ما هي:** What sub-questions, answered, solve the main question? — اسأل: شجرة المشكلة. Output: an issue tree with tests.
@@ -2060,7 +2060,7 @@
 
 #### 6. الأدلة
 
-- لا دليل مسجل: لا تُقدَّم أكثر من منهج.
+- `kosif-tool/.claude/skills/kosif-superpowers/references/cognition.md`
 
 #### 7. قدرات قريبة في العائلة
 
@@ -2078,7 +2078,7 @@
 | نوع المخرج (A25، A27) | خطة واستراتيجية وقرار (`plan`) |
 | الحالة في الكتالوج | 📄 `documented`: منهج موصوف يحتاج بناءً أو ربطًا قبل التشغيل |
 | سقف التحقق قبل العمل (A27) | V1 حتى تُبنى وتُشغَّل؛ لا تقدَّم جاهزة أبدًا |
-| نطاق الدليل | `none` |
+| نطاق الدليل | `repo` |
 | الرخصة | owner |
 
 **ما هي:** Why did that happen — and why that? — اسأل: لماذا خمس مرات. Output: causal chain with evidence.
@@ -2129,7 +2129,7 @@
 
 #### 6. الأدلة
 
-- لا دليل مسجل: لا تُقدَّم أكثر من منهج.
+- `kosif-tool/.claude/skills/kosif-superpowers/references/cognition.md`
 
 #### 7. قدرات قريبة في العائلة
 
@@ -2147,7 +2147,7 @@
 | نوع المخرج (A25، A27) | خطة واستراتيجية وقرار (`plan`) |
 | الحالة في الكتالوج | 📄 `documented`: منهج موصوف يحتاج بناءً أو ربطًا قبل التشغيل |
 | سقف التحقق قبل العمل (A27) | V1 حتى تُبنى وتُشغَّل؛ لا تقدَّم جاهزة أبدًا |
-| نطاق الدليل | `none` |
+| نطاق الدليل | `repo` |
 | الرخصة | owner |
 
 **ما هي:** Am I fixing the producer of the problem or patching its output? — اسأل: السبب الجذري مقابل العرض. Output: fix at the producing boundary.
@@ -2198,7 +2198,7 @@
 
 #### 6. الأدلة
 
-- لا دليل مسجل: لا تُقدَّم أكثر من منهج.
+- `kosif-tool/.claude/skills/kosif-superpowers/references/cognition.md`
 
 #### 7. قدرات قريبة في العائلة
 
@@ -2216,7 +2216,7 @@
 | نوع المخرج (A25، A27) | خطة واستراتيجية وقرار (`plan`) |
 | الحالة في الكتالوج | 📄 `documented`: منهج موصوف يحتاج بناءً أو ربطًا قبل التشغيل |
 | سقف التحقق قبل العمل (A27) | V1 حتى تُبنى وتُشغَّل؛ لا تقدَّم جاهزة أبدًا |
-| نطاق الدليل | `none` |
+| نطاق الدليل | `repo` |
 | الرخصة | owner |
 
 **ما هي:** Which distant field already solved a problem with this shape? — اسأل: نقل التشبيه. Output: borrowed mechanism with the adaptation.
@@ -2267,7 +2267,7 @@
 
 #### 6. الأدلة
 
-- لا دليل مسجل: لا تُقدَّم أكثر من منهج.
+- `kosif-tool/.claude/skills/kosif-superpowers/references/cognition.md`
 
 #### 7. قدرات قريبة في العائلة
 
@@ -2285,7 +2285,7 @@
 | نوع المخرج (A25، A27) | خطة واستراتيجية وقرار (`plan`) |
 | الحالة في الكتالوج | 📄 `documented`: منهج موصوف يحتاج بناءً أو ربطًا قبل التشغيل |
 | سقف التحقق قبل العمل (A27) | V1 حتى تُبنى وتُشغَّل؛ لا تقدَّم جاهزة أبدًا |
-| نطاق الدليل | `none` |
+| نطاق الدليل | `repo` |
 | الرخصة | owner |
 
 **ما هي:** What deliberate constraint would force an original answer? — اسأل: القيد كمحرك. Output: ideas born from a constraint.
@@ -2336,7 +2336,7 @@
 
 #### 6. الأدلة
 
-- لا دليل مسجل: لا تُقدَّم أكثر من منهج.
+- `kosif-tool/.claude/skills/kosif-superpowers/references/cognition.md`
 
 #### 7. قدرات قريبة في العائلة
 
@@ -2354,7 +2354,7 @@
 | نوع المخرج (A25، A27) | خطة واستراتيجية وقرار (`plan`) |
 | الحالة في الكتالوج | 📄 `documented`: منهج موصوف يحتاج بناءً أو ربطًا قبل التشغيل |
 | سقف التحقق قبل العمل (A27) | V1 حتى تُبنى وتُشغَّل؛ لا تقدَّم جاهزة أبدًا |
-| نطاق الدليل | `none` |
+| نطاق الدليل | `repo` |
 | الرخصة | owner |
 
 **ما هي:** Which two unrelated elements fuse into something new? — اسأل: الإبداع التركيبي. Output: a scored combination matrix.
@@ -2405,7 +2405,7 @@
 
 #### 6. الأدلة
 
-- لا دليل مسجل: لا تُقدَّم أكثر من منهج.
+- `kosif-tool/.claude/skills/kosif-superpowers/references/cognition.md`
 
 #### 7. قدرات قريبة في العائلة
 
@@ -2423,7 +2423,7 @@
 | نوع المخرج (A25، A27) | خطة واستراتيجية وقرار (`plan`) |
 | الحالة في الكتالوج | 📄 `documented`: منهج موصوف يحتاج بناءً أو ربطًا قبل التشغيل |
 | سقف التحقق قبل العمل (A27) | V1 حتى تُبنى وتُشغَّل؛ لا تقدَّم جاهزة أبدًا |
-| نطاق الدليل | `none` |
+| نطاق الدليل | `repo` |
 | الرخصة | owner |
 
 **ما هي:** Have I generated widely before judging? — اسأل: التباعد ثم التقارب. Output: many options → shortlist → pick.
@@ -2474,7 +2474,7 @@
 
 #### 6. الأدلة
 
-- لا دليل مسجل: لا تُقدَّم أكثر من منهج.
+- `kosif-tool/.claude/skills/kosif-superpowers/references/cognition.md`
 
 #### 7. قدرات قريبة في العائلة
 
@@ -2492,7 +2492,7 @@
 | نوع المخرج (A25، A27) | خطة واستراتيجية وقرار (`plan`) |
 | الحالة في الكتالوج | 📄 `documented`: منهج موصوف يحتاج بناءً أو ربطًا قبل التشغيل |
 | سقف التحقق قبل العمل (A27) | V1 حتى تُبنى وتُشغَّل؛ لا تقدَّم جاهزة أبدًا |
-| نطاق الدليل | `none` |
+| نطاق الدليل | `repo` |
 | الرخصة | owner |
 
 **ما هي:** What absurd statement could move me to a new position? — اسأل: التفكير الجانبي. Output: a provocation and the idea it moved to.
@@ -2543,7 +2543,7 @@
 
 #### 6. الأدلة
 
-- لا دليل مسجل: لا تُقدَّم أكثر من منهج.
+- `kosif-tool/.claude/skills/kosif-superpowers/references/cognition.md`
 
 #### 7. قدرات قريبة في العائلة
 
@@ -2561,7 +2561,7 @@
 | نوع المخرج (A25، A27) | خطة واستراتيجية وقرار (`plan`) |
 | الحالة في الكتالوج | 📄 `documented`: منهج موصوف يحتاج بناءً أو ربطًا قبل التشغيل |
 | سقف التحقق قبل العمل (A27) | V1 حتى تُبنى وتُشغَّل؛ لا تقدَّم جاهزة أبدًا |
-| نطاق الدليل | `none` |
+| نطاق الدليل | `repo` |
 | الرخصة | owner |
 
 **ما هي:** What job is the user hiring this for, in their situation? — اسأل: المهمة المطلوب إنجازها. Output: job statement and the current alternative.
@@ -2612,7 +2612,7 @@
 
 #### 6. الأدلة
 
-- لا دليل مسجل: لا تُقدَّم أكثر من منهج.
+- `kosif-tool/.claude/skills/kosif-superpowers/references/cognition.md`
 
 #### 7. قدرات قريبة في العائلة
 
@@ -2630,7 +2630,7 @@
 | نوع المخرج (A25، A27) | خطة واستراتيجية وقرار (`plan`) |
 | الحالة في الكتالوج | 📄 `documented`: منهج موصوف يحتاج بناءً أو ربطًا قبل التشغيل |
 | سقف التحقق قبل العمل (A27) | V1 حتى تُبنى وتُشغَّل؛ لا تقدَّم جاهزة أبدًا |
-| نطاق الدليل | `none` |
+| نطاق الدليل | `repo` |
 | الرخصة | owner |
 
 **ما هي:** What does this reader already know, want and fear? — اسأل: نموذج القارئ. Output: a reader model and an edited message.
@@ -2681,7 +2681,7 @@
 
 #### 6. الأدلة
 
-- لا دليل مسجل: لا تُقدَّم أكثر من منهج.
+- `kosif-tool/.claude/skills/kosif-superpowers/references/cognition.md`
 
 #### 7. قدرات قريبة في العائلة
 
@@ -2699,7 +2699,7 @@
 | نوع المخرج (A25، A27) | خطة واستراتيجية وقرار (`plan`) |
 | الحالة في الكتالوج | 📄 `documented`: منهج موصوف يحتاج بناءً أو ربطًا قبل التشغيل |
 | سقف التحقق قبل العمل (A27) | V1 حتى تُبنى وتُشغَّل؛ لا تقدَّم جاهزة أبدًا |
-| نطاق الدليل | `none` |
+| نطاق الدليل | `repo` |
 | الرخصة | owner |
 
 **ما هي:** Does the answer come first, with supporting points grouped below? — اسأل: مبدأ الهرم. Output: conclusion-first structure.
@@ -2750,7 +2750,7 @@
 
 #### 6. الأدلة
 
-- لا دليل مسجل: لا تُقدَّم أكثر من منهج.
+- `kosif-tool/.claude/skills/kosif-superpowers/references/cognition.md`
 
 #### 7. قدرات قريبة في العائلة
 
@@ -2768,7 +2768,7 @@
 | نوع المخرج (A25، A27) | خطة واستراتيجية وقرار (`plan`) |
 | الحالة في الكتالوج | 📄 `documented`: منهج موصوف يحتاج بناءً أو ربطًا قبل التشغيل |
 | سقف التحقق قبل العمل (A27) | V1 حتى تُبنى وتُشغَّل؛ لا تقدَّم جاهزة أبدًا |
-| نطاق الدليل | `none` |
+| نطاق الدليل | `repo` |
 | الرخصة | owner |
 
 **ما هي:** Can I explain it simply enough for a newcomer? — اسأل: تقنية فاينمان. Output: a simple explanation with the gaps fixed.
@@ -2819,7 +2819,7 @@
 
 #### 6. الأدلة
 
-- لا دليل مسجل: لا تُقدَّم أكثر من منهج.
+- `kosif-tool/.claude/skills/kosif-superpowers/references/cognition.md`
 
 #### 7. قدرات قريبة في العائلة
 
@@ -2837,7 +2837,7 @@
 | نوع المخرج (A25، A27) | خطة واستراتيجية وقرار (`plan`) |
 | الحالة في الكتالوج | 📄 `documented`: منهج موصوف يحتاج بناءً أو ربطًا قبل التشغيل |
 | سقف التحقق قبل العمل (A27) | V1 حتى تُبنى وتُشغَّل؛ لا تقدَّم جاهزة أبدًا |
-| نطاق الدليل | `none` |
+| نطاق الدليل | `repo` |
 | الرخصة | owner |
 
 **ما هي:** What exact sub-skill failed, and what drill fixes it? — اسأل: الممارسة المتعمدة. Output: drill plan with a metric.
@@ -2888,7 +2888,7 @@
 
 #### 6. الأدلة
 
-- لا دليل مسجل: لا تُقدَّم أكثر من منهج.
+- `kosif-tool/.claude/skills/kosif-superpowers/references/cognition.md`
 
 #### 7. قدرات قريبة في العائلة
 
@@ -2906,7 +2906,7 @@
 | نوع المخرج (A25، A27) | خطة واستراتيجية وقرار (`plan`) |
 | الحالة في الكتالوج | 📄 `documented`: منهج موصوف يحتاج بناءً أو ربطًا قبل التشغيل |
 | سقف التحقق قبل العمل (A27) | V1 حتى تُبنى وتُشغَّل؛ لا تقدَّم جاهزة أبدًا |
-| نطاق الدليل | `none` |
+| نطاق الدليل | `repo` |
 | الرخصة | owner |
 
 **ما هي:** If I say 80%, am I right about 80% of the time? — اسأل: المعايرة. Output: claims with calibrated confidence.
@@ -2957,7 +2957,7 @@
 
 #### 6. الأدلة
 
-- لا دليل مسجل: لا تُقدَّم أكثر من منهج.
+- `kosif-tool/.claude/skills/kosif-superpowers/references/cognition.md`
 
 #### 7. قدرات قريبة في العائلة
 
@@ -2975,7 +2975,7 @@
 | نوع المخرج (A25، A27) | خطة واستراتيجية وقرار (`plan`) |
 | الحالة في الكتالوج | 📄 `documented`: منهج موصوف يحتاج بناءً أو ربطًا قبل التشغيل |
 | سقف التحقق قبل العمل (A27) | V1 حتى تُبنى وتُشغَّل؛ لا تقدَّم جاهزة أبدًا |
-| نطاق الدليل | `none` |
+| نطاق الدليل | `repo` |
 | الرخصة | owner |
 
 **ما هي:** What observation would prove this wrong? — اسأل: قابلية الدحض. Output: claim + refutation test.
@@ -3026,7 +3026,7 @@
 
 #### 6. الأدلة
 
-- لا دليل مسجل: لا تُقدَّم أكثر من منهج.
+- `kosif-tool/.claude/skills/kosif-superpowers/references/cognition.md`
 
 #### 7. قدرات قريبة في العائلة
 
@@ -3044,7 +3044,7 @@
 | نوع المخرج (A25، A27) | خطة واستراتيجية وقرار (`plan`) |
 | الحالة في الكتالوج | 📄 `documented`: منهج موصوف يحتاج بناءً أو ربطًا قبل التشغيل |
 | سقف التحقق قبل العمل (A27) | V1 حتى تُبنى وتُشغَّل؛ لا تقدَّم جاهزة أبدًا |
-| نطاق الدليل | `none` |
+| نطاق الدليل | `repo` |
 | الرخصة | owner |
 
 **ما هي:** What about the cases that failed and are not visible? — اسأل: انحياز الناجين. Output: pattern checked against failures.
@@ -3095,7 +3095,7 @@
 
 #### 6. الأدلة
 
-- لا دليل مسجل: لا تُقدَّم أكثر من منهج.
+- `kosif-tool/.claude/skills/kosif-superpowers/references/cognition.md`
 
 #### 7. قدرات قريبة في العائلة
 
@@ -3113,7 +3113,7 @@
 | نوع المخرج (A25، A27) | خطة واستراتيجية وقرار (`plan`) |
 | الحالة في الكتالوج | 📄 `documented`: منهج موصوف يحتاج بناءً أو ربطًا قبل التشغيل |
 | سقف التحقق قبل العمل (A27) | V1 حتى تُبنى وتُشغَّل؛ لا تقدَّم جاهزة أبدًا |
-| نطاق الدليل | `none` |
+| نطاق الدليل | `repo` |
 | الرخصة | owner |
 
 **ما هي:** Have I looked for evidence that would change my mind? — اسأل: فحص انحياز التأكيد. Output: disconfirming search and its result.
@@ -3164,7 +3164,7 @@
 
 #### 6. الأدلة
 
-- لا دليل مسجل: لا تُقدَّم أكثر من منهج.
+- `kosif-tool/.claude/skills/kosif-superpowers/references/cognition.md`
 
 #### 7. قدرات قريبة في العائلة
 
@@ -3182,7 +3182,7 @@
 | نوع المخرج (A25، A27) | خطة واستراتيجية وقرار (`plan`) |
 | الحالة في الكتالوج | 📄 `documented`: منهج موصوف يحتاج بناءً أو ربطًا قبل التشغيل |
 | سقف التحقق قبل العمل (A27) | V1 حتى تُبنى وتُشغَّل؛ لا تقدَّم جاهزة أبدًا |
-| نطاق الدليل | `none` |
+| نطاق الدليل | `repo` |
 | الرخصة | owner |
 
 **ما هي:** Is my number pulled toward the first number I saw? — اسأل: فحص الإرساء. Output: independent estimate vs anchor.
@@ -3233,7 +3233,7 @@
 
 #### 6. الأدلة
 
-- لا دليل مسجل: لا تُقدَّم أكثر من منهج.
+- `kosif-tool/.claude/skills/kosif-superpowers/references/cognition.md`
 
 #### 7. قدرات قريبة في العائلة
 
@@ -3251,7 +3251,7 @@
 | نوع المخرج (A25، A27) | خطة واستراتيجية وقرار (`plan`) |
 | الحالة في الكتالوج | 📄 `documented`: منهج موصوف يحتاج بناءً أو ربطًا قبل التشغيل |
 | سقف التحقق قبل العمل (A27) | V1 حتى تُبنى وتُشغَّل؛ لا تقدَّم جاهزة أبدًا |
-| نطاق الدليل | `none` |
+| نطاق الدليل | `repo` |
 | الرخصة | owner |
 
 **ما هي:** Would I start this today, knowing what I know? — اسأل: فحص التكلفة الغارقة. Output: continue/stop on future value.
@@ -3302,7 +3302,7 @@
 
 #### 6. الأدلة
 
-- لا دليل مسجل: لا تُقدَّم أكثر من منهج.
+- `kosif-tool/.claude/skills/kosif-superpowers/references/cognition.md`
 
 #### 7. قدرات قريبة في العائلة
 
@@ -3320,7 +3320,7 @@
 | نوع المخرج (A25، A27) | خطة واستراتيجية وقرار (`plan`) |
 | الحالة في الكتالوج | 📄 `documented`: منهج موصوف يحتاج بناءً أو ربطًا قبل التشغيل |
 | سقف التحقق قبل العمل (A27) | V1 حتى تُبنى وتُشغَّل؛ لا تقدَّم جاهزة أبدًا |
-| نطاق الدليل | `none` |
+| نطاق الدليل | `repo` |
 | الرخصة | owner |
 
 **ما هي:** Which choice will I regret less in ten years? — اسأل: تقليل الندم. Output: regret comparison.
@@ -3371,7 +3371,7 @@
 
 #### 6. الأدلة
 
-- لا دليل مسجل: لا تُقدَّم أكثر من منهج.
+- `kosif-tool/.claude/skills/kosif-superpowers/references/cognition.md`
 
 #### 7. قدرات قريبة في العائلة
 
@@ -3389,7 +3389,7 @@
 | نوع المخرج (A25، A27) | خطة واستراتيجية وقرار (`plan`) |
 | الحالة في الكتالوج | 📄 `documented`: منهج موصوف يحتاج بناءً أو ربطًا قبل التشغيل |
 | سقف التحقق قبل العمل (A27) | V1 حتى تُبنى وتُشغَّل؛ لا تقدَّم جاهزة أبدًا |
-| نطاق الدليل | `none` |
+| نطاق الدليل | `repo` |
 | الرخصة | owner |
 
 **ما هي:** Which option wins on weighted criteria, and does the winner survive weight changes? — اسأل: مصفوفة القرار الموزونة. Output: scores, winner and whether it flips.
@@ -3440,7 +3440,7 @@
 
 #### 6. الأدلة
 
-- لا دليل مسجل: لا تُقدَّم أكثر من منهج.
+- `kosif-tool/.claude/skills/kosif-superpowers/references/cognition.md`
 
 #### 7. قدرات قريبة في العائلة
 
@@ -3458,7 +3458,7 @@
 | نوع المخرج (A25، A27) | خطة واستراتيجية وقرار (`plan`) |
 | الحالة في الكتالوج | 📄 `documented`: منهج موصوف يحتاج بناءً أو ربطًا قبل التشغيل |
 | سقف التحقق قبل العمل (A27) | V1 حتى تُبنى وتُشغَّل؛ لا تقدَّم جاهزة أبدًا |
-| نطاق الدليل | `none` |
+| نطاق الدليل | `repo` |
 | الرخصة | owner |
 
 **ما هي:** What signal, by when, makes us stop? — اسأل: معايير الإيقاف. Output: stop signal + date.
@@ -3509,7 +3509,7 @@
 
 #### 6. الأدلة
 
-- لا دليل مسجل: لا تُقدَّم أكثر من منهج.
+- `kosif-tool/.claude/skills/kosif-superpowers/references/cognition.md`
 
 #### 7. قدرات قريبة في العائلة
 
@@ -3527,7 +3527,7 @@
 | نوع المخرج (A25، A27) | خطة واستراتيجية وقرار (`plan`) |
 | الحالة في الكتالوج | 📄 `documented`: منهج موصوف يحتاج بناءً أو ربطًا قبل التشغيل |
 | سقف التحقق قبل العمل (A27) | V1 حتى تُبنى وتُشغَّل؛ لا تقدَّم جاهزة أبدًا |
-| نطاق الدليل | `none` |
+| نطاق الدليل | `repo` |
 | الرخصة | owner |
 
 **ما هي:** What is the thinnest end-to-end version that shows the idea working? — اسأل: الشريحة الأصغر القابلة للعرض. Output: a thin slice plan.
@@ -3578,7 +3578,7 @@
 
 #### 6. الأدلة
 
-- لا دليل مسجل: لا تُقدَّم أكثر من منهج.
+- `kosif-tool/.claude/skills/kosif-superpowers/references/cognition.md`
 
 #### 7. قدرات قريبة في العائلة
 
@@ -3596,7 +3596,7 @@
 | نوع المخرج (A25، A27) | خطة واستراتيجية وقرار (`plan`) |
 | الحالة في الكتالوج | 📄 `documented`: منهج موصوف يحتاج بناءً أو ربطًا قبل التشغيل |
 | سقف التحقق قبل العمل (A27) | V1 حتى تُبنى وتُشغَّل؛ لا تقدَّم جاهزة أبدًا |
-| نطاق الدليل | `none` |
+| نطاق الدليل | `repo` |
 | الرخصة | owner |
 
 **ما هي:** What are 3–4 plausible futures, and which moves work in all? — اسأل: تخطيط السيناريوهات. Output: scenario grid with robust moves.
@@ -3647,7 +3647,7 @@
 
 #### 6. الأدلة
 
-- لا دليل مسجل: لا تُقدَّم أكثر من منهج.
+- `kosif-tool/.claude/skills/kosif-superpowers/references/cognition.md`
 
 #### 7. قدرات قريبة في العائلة
 
@@ -3665,7 +3665,7 @@
 | نوع المخرج (A25، A27) | خطة واستراتيجية وقرار (`plan`) |
 | الحالة في الكتالوج | 📄 `documented`: منهج موصوف يحتاج بناءً أو ربطًا قبل التشغيل |
 | سقف التحقق قبل العمل (A27) | V1 حتى تُبنى وتُشغَّل؛ لا تقدَّم جاهزة أبدًا |
-| نطاق الدليل | `none` |
+| نطاق الدليل | `repo` |
 | الرخصة | owner |
 
 **ما هي:** How strong are rivals, entrants, substitutes, buyers and suppliers? — اسأل: قوى بورتر الخمس. Output: forces table with the binding force.
@@ -3716,7 +3716,7 @@
 
 #### 6. الأدلة
 
-- لا دليل مسجل: لا تُقدَّم أكثر من منهج.
+- `kosif-tool/.claude/skills/kosif-superpowers/references/cognition.md`
 
 #### 7. قدرات قريبة في العائلة
 
@@ -3734,7 +3734,7 @@
 | نوع المخرج (A25، A27) | خطة واستراتيجية وقرار (`plan`) |
 | الحالة في الكتالوج | 📄 `documented`: منهج موصوف يحتاج بناءً أو ربطًا قبل التشغيل |
 | سقف التحقق قبل العمل (A27) | V1 حتى تُبنى وتُشغَّل؛ لا تقدَّم جاهزة أبدًا |
-| نطاق الدليل | `none` |
+| نطاق الدليل | `repo` |
 | الرخصة | owner |
 
 **ما هي:** Which strengths meet which opportunities, and which weaknesses meet which threats? — اسأل: تحليل سوات إلى استراتيجيات. Output: paired strategic moves.
@@ -3785,7 +3785,7 @@
 
 #### 6. الأدلة
 
-- لا دليل مسجل: لا تُقدَّم أكثر من منهج.
+- `kosif-tool/.claude/skills/kosif-superpowers/references/cognition.md`
 
 #### 7. قدرات قريبة في العائلة
 
@@ -3803,7 +3803,7 @@
 | نوع المخرج (A25، A27) | خطة واستراتيجية وقرار (`plan`) |
 | الحالة في الكتالوج | 📄 `documented`: منهج موصوف يحتاج بناءً أو ربطًا قبل التشغيل |
 | سقف التحقق قبل العمل (A27) | V1 حتى تُبنى وتُشغَّل؛ لا تقدَّم جاهزة أبدًا |
-| نطاق الدليل | `none` |
+| نطاق الدليل | `repo` |
 | الرخصة | owner |
 
 **ما هي:** Does one unit make money once all costs are counted? — اسأل: اقتصاديات الوحدة. Output: per-unit P&L.
@@ -3854,7 +3854,7 @@
 
 #### 6. الأدلة
 
-- لا دليل مسجل: لا تُقدَّم أكثر من منهج.
+- `kosif-tool/.claude/skills/kosif-superpowers/references/cognition.md`
 
 #### 7. قدرات قريبة في العائلة
 
@@ -3872,7 +3872,7 @@
 | نوع المخرج (A25، A27) | خطة واستراتيجية وقرار (`plan`) |
 | الحالة في الكتالوج | 📄 `documented`: منهج موصوف يحتاج بناءً أو ربطًا قبل التشغيل |
 | سقف التحقق قبل العمل (A27) | V1 حتى تُبنى وتُشغَّل؛ لا تقدَّم جاهزة أبدًا |
-| نطاق الدليل | `none` |
+| نطاق الدليل | `repo` |
 | الرخصة | owner |
 
 **ما هي:** Who gains, who loses, who decides? — اسأل: خريطة أصحاب المصلحة. Output: stakeholder grid and messages.
@@ -3923,7 +3923,7 @@
 
 #### 6. الأدلة
 
-- لا دليل مسجل: لا تُقدَّم أكثر من منهج.
+- `kosif-tool/.claude/skills/kosif-superpowers/references/cognition.md`
 
 #### 7. قدرات قريبة في العائلة
 
@@ -3941,7 +3941,7 @@
 | نوع المخرج (A25، A27) | خطة واستراتيجية وقرار (`plan`) |
 | الحالة في الكتالوج | 📄 `documented`: منهج موصوف يحتاج بناءً أو ربطًا قبل التشغيل |
 | سقف التحقق قبل العمل (A27) | V1 حتى تُبنى وتُشغَّل؛ لا تقدَّم جاهزة أبدًا |
-| نطاق الدليل | `none` |
+| نطاق الدليل | `repo` |
 | الرخصة | owner |
 
 **ما هي:** What do you mean, how do you know, and what follows? — اسأل: التساؤل السقراطي. Output: a question sequence that exposes assumptions.
@@ -3992,7 +3992,7 @@
 
 #### 6. الأدلة
 
-- لا دليل مسجل: لا تُقدَّم أكثر من منهج.
+- `kosif-tool/.claude/skills/kosif-superpowers/references/cognition.md`
 
 #### 7. قدرات قريبة في العائلة
 
@@ -4010,7 +4010,7 @@
 | نوع المخرج (A25، A27) | خطة واستراتيجية وقرار (`plan`) |
 | الحالة في الكتالوج | 📄 `documented`: منهج موصوف يحتاج بناءً أو ربطًا قبل التشغيل |
 | سقف التحقق قبل العمل (A27) | V1 حتى تُبنى وتُشغَّل؛ لا تقدَّم جاهزة أبدًا |
-| نطاق الدليل | `none` |
+| نطاق الدليل | `repo` |
 | الرخصة | owner |
 
 **ما هي:** Do I know why this exists before removing it? — اسأل: سياج تشسترتون. Output: origin found before change.
@@ -4061,7 +4061,7 @@
 
 #### 6. الأدلة
 
-- لا دليل مسجل: لا تُقدَّم أكثر من منهج.
+- `kosif-tool/.claude/skills/kosif-superpowers/references/cognition.md`
 
 #### 7. قدرات قريبة في العائلة
 
@@ -4079,7 +4079,7 @@
 | نوع المخرج (A25، A27) | خطة واستراتيجية وقرار (`plan`) |
 | الحالة في الكتالوج | 📄 `documented`: منهج موصوف يحتاج بناءً أو ربطًا قبل التشغيل |
 | سقف التحقق قبل العمل (A27) | V1 حتى تُبنى وتُشغَّل؛ لا تقدَّم جاهزة أبدًا |
-| نطاق الدليل | `none` |
+| نطاق الدليل | `repo` |
 | الرخصة | owner |
 
 **ما هي:** Should I move up (why) or down (how, example)? — اسأل: سلّم التجريد. Output: message anchored at the right level.
@@ -4130,7 +4130,7 @@
 
 #### 6. الأدلة
 
-- لا دليل مسجل: لا تُقدَّم أكثر من منهج.
+- `kosif-tool/.claude/skills/kosif-superpowers/references/cognition.md`
 
 #### 7. قدرات قريبة في العائلة
 
@@ -4148,7 +4148,7 @@
 | نوع المخرج (A25، A27) | خطة واستراتيجية وقرار (`plan`) |
 | الحالة في الكتالوج | 📄 `documented`: منهج موصوف يحتاج بناءً أو ربطًا قبل التشغيل |
 | سقف التحقق قبل العمل (A27) | V1 حتى تُبنى وتُشغَّل؛ لا تقدَّم جاهزة أبدًا |
-| نطاق الدليل | `none` |
+| نطاق الدليل | `repo` |
 | الرخصة | owner |
 
 **ما هي:** Should I try something new or use what is known to work? — اسأل: الاستكشاف مقابل الاستغلال. Output: explore/exploit choice with reason.
@@ -4199,7 +4199,7 @@
 
 #### 6. الأدلة
 
-- لا دليل مسجل: لا تُقدَّم أكثر من منهج.
+- `kosif-tool/.claude/skills/kosif-superpowers/references/cognition.md`
 
 #### 7. قدرات قريبة في العائلة
 
@@ -4217,7 +4217,7 @@
 | نوع المخرج (A25، A27) | خطة واستراتيجية وقرار (`plan`) |
 | الحالة في الكتالوج | 📄 `documented`: منهج موصوف يحتاج بناءً أو ربطًا قبل التشغيل |
 | سقف التحقق قبل العمل (A27) | V1 حتى تُبنى وتُشغَّل؛ لا تقدَّم جاهزة أبدًا |
-| نطاق الدليل | `none` |
+| نطاق الدليل | `repo` |
 | الرخصة | owner |
 
 **ما هي:** Has this lasted long enough to probably keep lasting? — اسأل: تأثير ليندي. Output: durability-weighted choice.
@@ -4268,7 +4268,7 @@
 
 #### 6. الأدلة
 
-- لا دليل مسجل: لا تُقدَّم أكثر من منهج.
+- `kosif-tool/.claude/skills/kosif-superpowers/references/cognition.md`
 
 #### 7. قدرات قريبة في العائلة
 
@@ -4286,7 +4286,7 @@
 | نوع المخرج (A25، A27) | خطة واستراتيجية وقرار (`plan`) |
 | الحالة في الكتالوج | 📄 `documented`: منهج موصوف يحتاج بناءً أو ربطًا قبل التشغيل |
 | سقف التحقق قبل العمل (A27) | V1 حتى تُبنى وتُشغَّل؛ لا تقدَّم جاهزة أبدًا |
-| نطاق الدليل | `none` |
+| نطاق الدليل | `repo` |
 | الرخصة | owner |
 
 **ما هي:** Will optimising this metric stop it measuring what I care about? — اسأل: قانون جودهارت. Output: metric pair and an audit.
@@ -4337,7 +4337,7 @@
 
 #### 6. الأدلة
 
-- لا دليل مسجل: لا تُقدَّم أكثر من منهج.
+- `kosif-tool/.claude/skills/kosif-superpowers/references/cognition.md`
 
 #### 7. قدرات قريبة في العائلة
 
@@ -4354,7 +4354,7 @@
 | نوع المخرج (A25، A27) | خطة واستراتيجية وقرار (`plan`) |
 | الحالة في الكتالوج | 📄 `documented`: منهج موصوف يحتاج بناءً أو ربطًا قبل التشغيل |
 | سقف التحقق قبل العمل (A27) | V1 حتى تُبنى وتُشغَّل؛ لا تقدَّم جاهزة أبدًا |
-| نطاق الدليل | `none` |
+| نطاق الدليل | `repo` |
 | الرخصة | owner |
 
 **ما هي:** Is it truly impossible, or one install away? — اسأل: خريطة ثم فحص ثم تثبيت ثم بديل. Output: a capability verdict with evidence.
@@ -4405,7 +4405,7 @@
 
 #### 6. الأدلة
 
-- لا دليل مسجل: لا تُقدَّم أكثر من منهج.
+- `kosif-tool/.claude/skills/kosif-superpowers/references/cognition.md`
 
 #### 7. قدرات قريبة في العائلة
 

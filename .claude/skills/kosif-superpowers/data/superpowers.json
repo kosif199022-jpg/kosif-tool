@@ -1,7 +1,7 @@
 {
 "schema": "kosif.superpowers.v1",
 "atoms": 5581,
-"distinct_methods": 5301,
+"distinct_methods": 5299,
 "twin_groups": 178,
 "superpowers": 460,
 "per_target": 12,
@@ -2473,7 +2473,7 @@
 "sim": 0.178
 },
 {
-"id": "SP-0270",
+"id": "SP-0271",
 "sim": 0.16
 },
 {
@@ -6001,8 +6001,8 @@
 "sim": 0.121
 },
 {
-"id": "SP-0145",
-"sim": 0.105
+"id": "SP-0271",
+"sim": 0.115
 }
 ]
 },
@@ -6554,7 +6554,7 @@
 "sim": 0.19
 },
 {
-"id": "SP-0267",
+"id": "SP-0268",
 "sim": 0.124
 }
 ]
@@ -7259,12 +7259,12 @@
 "requires": [
 "git",
 "pip:hypothesis",
-"key:unspecified",
 "claude:tools",
 "pip:pandas",
 "pip:polars",
 "pip:pandera",
-"gh"
+"gh",
+"mcp:github"
 ],
 "pipeline": [
 {
@@ -7538,12 +7538,12 @@
 "requires": [
 "key:graphify",
 "python3",
-"key:unspecified",
 "git",
 "npm:d3",
 "npm:mermaid",
 "chromium",
-"yt-dlp"
+"yt-dlp",
+"pip:faster-whisper"
 ],
 "pipeline": [
 {
@@ -7559,16 +7559,16 @@
 "name_ar": "اسأل الخريطة بدل قراءة الملفات"
 },
 {
-"id": "GRAPH-21",
-"status": "proven",
-"name_en": "Reconcile a diverged branch with the hosted index",
-"name_ar": "مصالحة فرع متباعد بالفهرس المستضاف"
-},
-{
 "id": "GRAPH-05",
 "status": "proven",
 "name_en": "Keep the map fresh",
 "name_ar": "تحديث الخريطة بعد التعديلات"
+},
+{
+"id": "GRAPH-21",
+"status": "proven",
+"name_en": "Reconcile a diverged branch with the hosted index",
+"name_ar": "مصالحة فرع متباعد بالفهرس المستضاف"
 },
 {
 "id": "GRAPH-06",
@@ -7625,16 +7625,16 @@
 "name_ar": "الأثر والمخاطر والاختبارات المرتبطة"
 },
 {
-"id": "GRAPH-10",
-"status": "key",
-"name_en": "Docs, PDFs, images and media in the graph",
-"name_ar": "الوثائق والصور والفيديو داخل الخريطة"
-},
-{
 "id": "GRAPH-14",
 "status": "key",
 "name_en": "Shared workspace memory (remember / recall)",
 "name_ar": "ذاكرة مساحة العمل المشتركة"
+},
+{
+"id": "GRAPH-10",
+"status": "key",
+"name_en": "Docs, PDFs, images and media in the graph",
+"name_ar": "الوثائق والصور والفيديو داخل الخريطة"
 },
 {
 "id": "GRAPH-15",
@@ -7646,8 +7646,8 @@
 "proof": [
 "kosif-tool/.claude/skills/kosif-superpowers/proofs/general-graphify/README.md",
 "kosif-tool/.claude/skills/kosif-superpowers/proofs/general-graphify/run-log.txt",
-"kosif-tool/.claude/skills/kosif-superpowers/references/graphify.md",
-"kosif-tool/tests/test_superpowers_catalog.py"
+"kosif-tool/.claude/skills/kosif-superpowers/proofs/general-earlier-runs/README.md",
+"kosif-tool/.claude/skills/kosif-superpowers/references/graphify.md"
 ],
 "twins": [
 [
@@ -7659,19 +7659,19 @@
 "links": [
 {
 "id": "SP-0065",
-"sim": 0.119
+"sim": 0.116
 },
 {
 "id": "SP-0062",
-"sim": 0.109
+"sim": 0.107
 },
 {
 "id": "SP-0229",
-"sim": 0.101
+"sim": 0.099
 },
 {
 "id": "SP-0047",
-"sim": 0.097
+"sim": 0.094
 }
 ]
 },
@@ -7947,8 +7947,8 @@
 "atlas_folded": 4,
 "requires": [
 "gitleaks",
-"key:unspecified",
 "git",
+"key:unspecified",
 "mcp:github",
 "claude:tools",
 "gh",
@@ -10657,8 +10657,8 @@
 "sim": 0.201
 },
 {
-"id": "SP-0248",
-"sim": 0.133
+"id": "SP-0249",
+"sim": 0.134
 }
 ]
 },
@@ -11979,7 +11979,7 @@
 "distinct_methods": 6,
 "links": [
 {
-"id": "SP-0268",
+"id": "SP-0269",
 "sim": 0.375
 },
 {
@@ -12902,8 +12902,8 @@
 "sim": 0.115
 },
 {
-"id": "SP-0270",
-"sim": 0.092
+"id": "SP-0271",
+"sim": 0.094
 }
 ]
 },
@@ -13496,8 +13496,8 @@
 "sim": 0.178
 },
 {
-"id": "SP-0248",
-"sim": 0.133
+"id": "SP-0249",
+"sim": 0.134
 },
 {
 "id": "SP-0430",
@@ -14561,7 +14561,7 @@
 "sim": 0.094
 },
 {
-"id": "SP-0268",
+"id": "SP-0269",
 "sim": 0.071
 },
 {
@@ -14649,7 +14649,7 @@
 "sim": 0.121
 },
 {
-"id": "SP-0267",
+"id": "SP-0268",
 "sim": 0.105
 },
 {
@@ -14786,7 +14786,7 @@
 "links": [
 {
 "id": "SP-0171",
-"sim": 0.255
+"sim": 0.254
 },
 {
 "id": "SP-0189",
@@ -14921,7 +14921,7 @@
 "links": [
 {
 "id": "SP-0242",
-"sim": 0.321
+"sim": 0.325
 },
 {
 "id": "SP-0050",
@@ -14966,11 +14966,11 @@
 "python3",
 "node",
 "chromium",
-"key:unspecified",
 "claude:tools",
 "openscad",
 "pip:cadquery",
-"npm:esbuild"
+"npm:esbuild",
+"npm:react"
 ],
 "pipeline": [
 {
@@ -15477,8 +15477,8 @@
 "sim": 0.304
 },
 {
-"id": "SP-0248",
-"sim": 0.133
+"id": "SP-0249",
+"sim": 0.134
 },
 {
 "id": "SP-0133",
@@ -15931,8 +15931,8 @@
 "sim": 0.179
 },
 {
-"id": "SP-0270",
-"sim": 0.163
+"id": "SP-0271",
+"sim": 0.162
 }
 ]
 },
@@ -16391,7 +16391,7 @@
 "sim": 0.371
 },
 {
-"id": "SP-0268",
+"id": "SP-0269",
 "sim": 0.186
 },
 {
@@ -16908,7 +16908,7 @@
 "sim": 0.162
 },
 {
-"id": "SP-0267",
+"id": "SP-0268",
 "sim": 0.152
 },
 {
@@ -19489,7 +19489,7 @@
 },
 {
 "id": "SP-0263",
-"sim": 0.2
+"sim": 0.192
 },
 {
 "id": "SP-0195",
@@ -19661,7 +19661,7 @@
 "sim": 0.143
 },
 {
-"id": "SP-0267",
+"id": "SP-0268",
 "sim": 0.13
 },
 {
@@ -19711,7 +19711,7 @@
 "node",
 "ffmpeg",
 "npm:remotion",
-"key:unspecified"
+"tesseract"
 ],
 "pipeline": [
 {
@@ -21916,8 +21916,8 @@
 "requires": [
 "key:unspecified",
 "npm:hyperframes",
-"npm:gsap",
 "npm:three",
+"npm:gsap",
 "chromium",
 "key:video-gen",
 "npm:maplibre",
@@ -22027,16 +22027,16 @@
 "name_ar": "مخطط مشهد: رحلة الكاميرا"
 },
 {
-"id": "CAM-106",
-"status": "install",
-"name_en": "Virtual camera via .world wrapper",
-"name_ar": "كاميرا افتراضية بتحريك العالم"
-},
-{
 "id": "CAM-162",
 "status": "install",
 "name_en": "Smoothstep camera keys",
 "name_ar": "مفاتيح الكاميرا"
+},
+{
+"id": "CAM-106",
+"status": "install",
+"name_en": "Virtual camera via .world wrapper",
+"name_ar": "كاميرا افتراضية بتحريك العالم"
 },
 {
 "id": "CAM-66",
@@ -22147,16 +22147,16 @@
 "name_ar": "بانوراما المحطات"
 },
 {
-"id": "CAM-188",
-"status": "key",
-"name_en": "Camera grammar: real estate",
-"name_ar": "حركة كاميرا: real estate"
-},
-{
 "id": "CAM-189",
 "status": "key",
 "name_en": "Camera grammar: industrial",
 "name_ar": "حركة كاميرا: industrial"
+},
+{
+"id": "CAM-188",
+"status": "key",
+"name_en": "Camera grammar: real estate",
+"name_ar": "حركة كاميرا: real estate"
 },
 {
 "id": "CAM-184",
@@ -22225,16 +22225,16 @@
 "name_ar": "دوران ودفع الكاميرا"
 },
 {
-"id": "CAM-339",
-"status": "seen",
-"name_en": "Shared SVG+HTML camera transform",
-"name_ar": "كاميرا واحدة لطبقتي SVG وHTML"
-},
-{
 "id": "CAM-280",
 "status": "seen",
 "name_en": "Virtual camera over a big board",
 "name_ar": "كاميرا افتراضية فوق سبورة كبيرة"
+},
+{
+"id": "CAM-339",
+"status": "seen",
+"name_en": "Shared SVG+HTML camera transform",
+"name_ar": "كاميرا واحدة لطبقتي SVG وHTML"
 },
 {
 "id": "CAM-201",
@@ -22380,19 +22380,19 @@
 "links": [
 {
 "id": "SP-0189",
-"sim": 0.383
+"sim": 0.382
 },
 {
 "id": "SP-0173",
-"sim": 0.369
+"sim": 0.368
 },
 {
 "id": "SP-0180",
-"sim": 0.263
+"sim": 0.264
 },
 {
 "id": "SP-0115",
-"sim": 0.255
+"sim": 0.254
 }
 ]
 },
@@ -22803,15 +22803,15 @@
 },
 {
 "id": "SP-0171",
-"sim": 0.369
+"sim": 0.368
 },
 {
 "id": "SP-0402",
 "sim": 0.324
 },
 {
-"id": "SP-0414",
-"sim": 0.27
+"id": "SP-0416",
+"sim": 0.29
 },
 {
 "id": "SP-0115",
@@ -23033,8 +23033,8 @@
 "atlas_folded": 0,
 "requires": [
 "npm:hyperframes",
-"chromium",
 "npm:gsap",
+"chromium",
 "imagemagick",
 "ffmpeg"
 ],
@@ -23374,8 +23374,8 @@
 "requires": [
 "npm:hyperframes",
 "npm:gsap",
-"chromium",
 "npm:three",
+"chromium",
 "pip:opencv",
 "ffmpeg"
 ],
@@ -23512,7 +23512,7 @@
 "sim": 0.462
 },
 {
-"id": "SP-0250",
+"id": "SP-0251",
 "sim": 0.313
 },
 {
@@ -23833,24 +23833,24 @@
 "distinct_methods": 17,
 "links": [
 {
-"id": "SP-0191",
-"sim": 0.13
+"id": "SP-0446",
+"sim": 0.112
 },
 {
-"id": "SP-0446",
+"id": "SP-0191",
 "sim": 0.108
 },
 {
 "id": "SP-0194",
-"sim": 0.097
+"sim": 0.101
 },
 {
-"id": "SP-0280",
-"sim": 0.078
+"id": "SP-0248",
+"sim": 0.086
 },
 {
 "id": "SP-0089",
-"sim": 0.045
+"sim": 0.047
 }
 ]
 },
@@ -23880,9 +23880,9 @@
 },
 "atlas_folded": 0,
 "requires": [
+"npm:gsap",
 "chromium",
-"npm:hyperframes",
-"npm:gsap"
+"npm:hyperframes"
 ],
 "pipeline": [
 {
@@ -23994,7 +23994,7 @@
 "links": [
 {
 "id": "SP-0171",
-"sim": 0.263
+"sim": 0.264
 },
 {
 "id": "SP-0240",
@@ -24132,11 +24132,11 @@
 "links": [
 {
 "id": "SP-0171",
-"sim": 0.204
+"sim": 0.203
 },
 {
 "id": "SP-0198",
-"sim": 0.158
+"sim": 0.155
 },
 {
 "id": "SP-0154",
@@ -24176,7 +24176,8 @@
 },
 "atlas_folded": 0,
 "requires": [
-"ffmpeg"
+"ffmpeg",
+"npm:gsap"
 ],
 "pipeline": [
 {
@@ -24509,7 +24510,7 @@
 },
 {
 "id": "SP-0171",
-"sim": 0.105
+"sim": 0.104
 },
 {
 "id": "SP-0024",
@@ -24769,6 +24770,7 @@
 "requires": [
 "python3",
 "npm:hyperframes",
+"npm:gsap",
 "pip:opencv",
 "key:unspecified",
 "npm:remotion"
@@ -24945,12 +24947,12 @@
 "distinct_methods": 9,
 "links": [
 {
-"id": "SP-0271",
-"sim": 0.179
-},
-{
 "id": "SP-0408",
 "sim": 0.175
+},
+{
+"id": "SP-0267",
+"sim": 0.159
 },
 {
 "id": "SP-0199",
@@ -25058,7 +25060,7 @@
 "links": [
 {
 "id": "SP-0171",
-"sim": 0.383
+"sim": 0.382
 },
 {
 "id": "SP-0115",
@@ -25262,16 +25264,16 @@
 "distinct_methods": 8,
 "links": [
 {
-"id": "SP-0179",
-"sim": 0.13
-},
-{
 "id": "SP-0446",
-"sim": 0.117
+"sim": 0.118
 },
 {
 "id": "SP-0212",
-"sim": 0.115
+"sim": 0.114
+},
+{
+"id": "SP-0179",
+"sim": 0.108
 },
 {
 "id": "SP-0162",
@@ -25372,7 +25374,7 @@
 "sim": 0.402
 },
 {
-"id": "SP-0250",
+"id": "SP-0251",
 "sim": 0.291
 },
 {
@@ -25871,8 +25873,8 @@
 "sim": 0.38
 },
 {
-"id": "SP-0415",
-"sim": 0.251
+"id": "SP-0414",
+"sim": 0.252
 },
 {
 "id": "SP-0310",
@@ -25961,11 +25963,11 @@
 "links": [
 {
 "id": "SP-0181",
-"sim": 0.158
+"sim": 0.155
 },
 {
 "id": "SP-0173",
-"sim": 0.119
+"sim": 0.137
 },
 {
 "id": "SP-0192",
@@ -25973,7 +25975,7 @@
 },
 {
 "id": "SP-0410",
-"sim": 0.075
+"sim": 0.076
 },
 {
 "id": "SP-0128",
@@ -26053,7 +26055,7 @@
 },
 {
 "id": "SP-0407",
-"sim": 0.183
+"sim": 0.182
 },
 {
 "id": "SP-0431",
@@ -27258,7 +27260,7 @@
 "distinct_methods": 37,
 "links": [
 {
-"id": "SP-0268",
+"id": "SP-0269",
 "sim": 0.259
 },
 {
@@ -28910,7 +28912,7 @@
 "distinct_methods": 8,
 "links": [
 {
-"id": "SP-0416",
+"id": "SP-0415",
 "sim": 0.169
 },
 {
@@ -29016,7 +29018,7 @@
 "sim": 0.149
 },
 {
-"id": "SP-0416",
+"id": "SP-0415",
 "sim": 0.147
 },
 {
@@ -30163,7 +30165,7 @@
 },
 {
 "id": "SP-0263",
-"sim": 0.088
+"sim": 0.093
 },
 {
 "id": "SP-0138",
@@ -30361,7 +30363,7 @@
 "sim": 0.264
 },
 {
-"id": "SP-0250",
+"id": "SP-0251",
 "sim": 0.245
 },
 {
@@ -30513,12 +30515,12 @@
 "sim": 0.08
 },
 {
-"id": "SP-0263",
+"id": "SP-0158",
 "sim": 0.078
 },
 {
-"id": "SP-0158",
-"sim": 0.078
+"id": "SP-0428",
+"sim": 0.077
 },
 {
 "id": "SP-0058",
@@ -30643,7 +30645,7 @@
 "distinct_methods": 12,
 "links": [
 {
-"id": "SP-0250",
+"id": "SP-0251",
 "sim": 0.253
 },
 {
@@ -30656,7 +30658,7 @@
 },
 {
 "id": "SP-0263",
-"sim": 0.151
+"sim": 0.149
 },
 {
 "id": "SP-0124",
@@ -30784,12 +30786,12 @@
 "sim": 0.14
 },
 {
-"id": "SP-0263",
-"sim": 0.119
-},
-{
 "id": "SP-0305",
 "sim": 0.115
+},
+{
+"id": "SP-0263",
+"sim": 0.112
 },
 {
 "id": "SP-0079",
@@ -31160,7 +31162,7 @@
 "sim": 0.121
 },
 {
-"id": "SP-0416",
+"id": "SP-0415",
 "sim": 0.095
 },
 {
@@ -31432,19 +31434,19 @@
 "links": [
 {
 "id": "SP-0125",
-"sim": 0.147
+"sim": 0.14
 },
 {
 "id": "SP-0336",
-"sim": 0.095
+"sim": 0.089
 },
 {
-"id": "SP-0270",
-"sim": 0.091
-},
-{
-"id": "SP-0278",
+"id": "SP-0124",
 "sim": 0.088
+},
+{
+"id": "SP-0253",
+"sim": 0.084
 }
 ]
 },
@@ -31457,29 +31459,29 @@
 "focus": [
 "html",
 "seek",
-"hyperframes",
-"page"
+"page",
+"mp4"
 ],
-"size": 25,
+"size": 24,
 "best": "proven",
 "status_mix": {
 "proven": 3,
 "ready": 3,
 "install": 15,
-"documented": 4
+"documented": 3
 },
 "ready_now": 6,
 "families": {
-"engines-render-pipeline": 25
+"engines-render-pipeline": 24
 },
 "atlas_folded": 0,
 "requires": [
 "chromium",
 "npm:hyperframes",
-"python3",
-"npm:gsap",
 "ffmpeg",
 "node",
+"python3",
+"npm:gsap",
 "npm:three",
 "pip:pillow"
 ],
@@ -31533,16 +31535,16 @@
 "name_ar": "رندر HTML حتمي"
 },
 {
-"id": "ENG-167",
-"status": "install",
-"name_en": "HTML composition format",
-"name_ar": "صيغة التركيب HTML"
-},
-{
 "id": "ENG-265",
 "status": "install",
 "name_en": "Headless HTML frame render",
 "name_ar": "تصيير HTML"
+},
+{
+"id": "ENG-167",
+"status": "install",
+"name_en": "HTML composition format",
+"name_ar": "صيغة التركيب HTML"
 },
 {
 "id": "ENG-186",
@@ -31563,16 +31565,16 @@
 "name_ar": "مشروع موشن HTML"
 },
 {
-"id": "ENG-210",
-"status": "install",
-"name_en": "HyperFrames HTML composition contract",
-"name_ar": "عقد تركيب HyperFrames"
-},
-{
 "id": "ENG-297",
 "status": "install",
 "name_en": "HTML / Three.js page to one deterministic frame",
 "name_ar": "صفحة HTML/Three.js إلى إطار حتمي"
+},
+{
+"id": "ENG-210",
+"status": "install",
+"name_en": "HyperFrames HTML composition contract",
+"name_ar": "عقد تركيب HyperFrames"
 },
 {
 "id": "ENG-164",
@@ -31581,16 +31583,16 @@
 "name_ar": "مسار HyperFrames"
 },
 {
-"id": "ENG-221",
-"status": "install",
-"name_en": "Seekable HTML composition contract",
-"name_ar": "عقد التركيب القابل للتقديم إطاراً بإطار"
-},
-{
 "id": "ENG-125",
 "status": "install",
 "name_en": "HtmlInCanvas post-processing",
 "name_ar": "معالجة لاحقة لعناصر HTML"
+},
+{
+"id": "ENG-221",
+"status": "install",
+"name_en": "Seekable HTML composition contract",
+"name_ar": "عقد التركيب القابل للتقديم إطاراً بإطار"
 },
 {
 "id": "ENG-304",
@@ -31627,12 +31629,6 @@
 "status": "documented",
 "name_en": "Fixed-stage HTML deck",
 "name_ar": "عرض تقديمي HTML بمسرح ثابت"
-},
-{
-"id": "ENG-414",
-"status": "documented",
-"name_en": "HyperFrames composition contract (motion)",
-"name_ar": "عقد HyperFrames"
 }
 ],
 "proof": [
@@ -31642,23 +31638,23 @@
 "100-superskills/skills/kosif-montage-motion/scripts/web/wbcompat.py:122"
 ],
 "twins": [],
-"distinct_methods": 25,
+"distinct_methods": 24,
 "links": [
 {
 "id": "SP-0116",
-"sim": 0.321
+"sim": 0.325
 },
 {
 "id": "SP-0124",
 "sim": 0.298
 },
 {
-"id": "SP-0248",
+"id": "SP-0249",
 "sim": 0.18
 },
 {
 "id": "SP-0337",
-"sim": 0.166
+"sim": 0.168
 }
 ]
 },
@@ -31865,16 +31861,16 @@
 "sim": 0.429
 },
 {
-"id": "SP-0248",
-"sim": 0.19
+"id": "SP-0262",
+"sim": 0.202
 },
 {
 "id": "SP-0273",
 "sim": 0.187
 },
 {
-"id": "SP-0269",
-"sim": 0.174
+"id": "SP-0249",
+"sim": 0.183
 },
 {
 "id": "SP-0124",
@@ -32292,7 +32288,7 @@
 },
 {
 "id": "SP-0262",
-"sim": 0.091
+"sim": 0.088
 },
 {
 "id": "SP-0246",
@@ -32496,8 +32492,8 @@
 "sim": 0.139
 },
 {
-"id": "SP-0400",
-"sim": 0.119
+"id": "SP-0329",
+"sim": 0.116
 }
 ]
 },
@@ -32679,6 +32675,178 @@
 "id": "SP-0248",
 "domain": "motion",
 "family": "engines-render-pipeline",
+"name_ar": "جسر التصيير",
+"name_en": "Render shim (seek contract)",
+"focus": [
+"lottie",
+"seek",
+"shim",
+"contract"
+],
+"size": 17,
+"best": "proven",
+"status_mix": {
+"proven": 5,
+"ready": 2,
+"install": 4,
+"key": 3,
+"documented": 3
+},
+"ready_now": 7,
+"families": {
+"engines-render-pipeline": 17
+},
+"atlas_folded": 0,
+"requires": [
+"npm:gsap",
+"npm:hyperframes",
+"npm:lottie",
+"python3",
+"npm:remotion",
+"key:unspecified",
+"ffmpeg",
+"node"
+],
+"pipeline": [
+{
+"id": "ENG-10",
+"status": "proven",
+"name_en": "Render shim (seek contract)",
+"name_ar": "جسر التصيير"
+},
+{
+"id": "ENG-32",
+"status": "proven",
+"name_en": "Dual-engine shim (HyperFrames or studio renderer)",
+"name_ar": "طبقة تشغيل مزدوجة"
+},
+{
+"id": "ENG-07",
+"status": "proven",
+"name_en": "ffprobe shim",
+"name_ar": "بديل ffprobe"
+},
+{
+"id": "ENG-01",
+"status": "proven",
+"name_en": "HyperFrames composition contract",
+"name_ar": "عقد تركيب HyperFrames"
+},
+{
+"id": "ENG-29",
+"status": "proven",
+"name_en": "Robust media seeking for export",
+"name_ar": "تثبيت مواضع الوسائط عند التصدير"
+},
+{
+"id": "ENG-111",
+"status": "ready",
+"name_en": "Seek contract",
+"name_ar": "عقد seek"
+},
+{
+"id": "ENG-60",
+"status": "ready",
+"name_en": "Lottie text/logo layers",
+"name_ar": "طبقات Lottie"
+},
+{
+"id": "ENG-284",
+"status": "install",
+"name_en": "Dual-renderer shim + footage seek",
+"name_ar": "جسر المحرّكين"
+},
+{
+"id": "ENG-123",
+"status": "install",
+"name_en": "Lottie inside timelines",
+"name_ar": "لوتي داخل الفيديو"
+},
+{
+"id": "ENG-146",
+"status": "install",
+"name_en": "Lottie embedding",
+"name_ar": "تضمين لوتي"
+},
+{
+"id": "ENG-190",
+"status": "install",
+"name_en": "Composition root contract",
+"name_ar": "عقد جذر التركيب"
+},
+{
+"id": "ENG-343",
+"status": "key",
+"name_en": "Integration: Lottie Creator MCP",
+"name_ar": "تكامل: Lottie Creator MCP"
+},
+{
+"id": "ENG-344",
+"status": "key",
+"name_en": "Integration: LottieFiles platform MCP",
+"name_ar": "تكامل: LottieFiles platform MCP"
+},
+{
+"id": "ENG-324",
+"status": "key",
+"name_en": "After Effects ExtendScript automation",
+"name_ar": "أتمتة أفتر إفكتس"
+},
+{
+"id": "ENG-391",
+"status": "documented",
+"name_en": "Sandbox ffprobe stand-in",
+"name_ar": "بديل ffprobe في البيئات المغلقة"
+},
+{
+"id": "ENG-414",
+"status": "documented",
+"name_en": "HyperFrames composition contract (motion)",
+"name_ar": "عقد HyperFrames"
+},
+{
+"id": "ENG-411",
+"status": "documented",
+"name_en": "Video-tool landscape (500 tools / 33 integrations)",
+"name_ar": "خريطة أدوات الفيديو"
+}
+],
+"proof": [
+"100-superskills/skills/kosif-montage-motion/scripts/kit/motion-kit.js:466",
+"100-superskills/skills/kosif-montage-motion/scripts/kit/motion-kit.js:578",
+"kosif-one/tools/kosif-studio/motion/kit/motion-kit.js:466",
+"kosif-one/tools/kosif-studio/motion/references/hyperframes-authoring.md"
+],
+"twins": [
+[
+"ENG-07",
+"ENG-391"
+]
+],
+"distinct_methods": 16,
+"links": [
+{
+"id": "SP-0274",
+"sim": 0.233
+},
+{
+"id": "SP-0242",
+"sim": 0.163
+},
+{
+"id": "SP-0262",
+"sim": 0.126
+},
+{
+"id": "SP-0124",
+"sim": 0.125
+}
+]
+},
+{
+"id": "SP-0249",
+"domain": "motion",
+"family": "engines-render-pipeline",
 "name_ar": "التقاط الإطارات عبر متصفح Edge وكارت الشاشة",
 "name_en": "Playwright Edge D3D11 frame capture",
 "focus": [
@@ -32687,27 +32855,27 @@
 "gpu",
 "render"
 ],
-"size": 17,
+"size": 16,
 "best": "proven",
 "status_mix": {
 "proven": 1,
 "ready": 1,
 "install": 10,
 "seen": 1,
-"documented": 3,
+"documented": 2,
 "idea": 1
 },
 "ready_now": 2,
 "families": {
-"engines-render-pipeline": 17
+"engines-render-pipeline": 16
 },
 "atlas_folded": 0,
 "requires": [
 "chromium",
 "ffmpeg",
 "python3",
-"npm:hyperframes",
 "npm:three",
+"npm:hyperframes",
 "pip:opencv",
 "fonts:arabic"
 ],
@@ -32755,16 +32923,16 @@
 "name_ar": "التقاط سريع للإطارات عبر DevTools"
 },
 {
-"id": "ENG-272",
-"status": "install",
-"name_en": "SVG frame capture to MP4 (Playwright + ffmpeg)",
-"name_ar": "التقاط إطارات SVG إلى فيديو"
-},
-{
 "id": "ENG-174",
 "status": "install",
 "name_en": "CLI: capture",
 "name_ar": "أمر: التقاط موقع"
+},
+{
+"id": "ENG-272",
+"status": "install",
+"name_en": "SVG frame capture to MP4 (Playwright + ffmpeg)",
+"name_ar": "التقاط إطارات SVG إلى فيديو"
 },
 {
 "id": "ENG-180",
@@ -32803,12 +32971,6 @@
 "name_ar": "لا تسجيل شاشة للتسليم"
 },
 {
-"id": "ENG-379",
-"status": "documented",
-"name_en": "Web font loading for headless render",
-"name_ar": "تحميل الخطوط قبل الالتقاط"
-},
-{
 "id": "ENG-435",
 "status": "idea",
 "name_en": "Deterministic render(t) capture",
@@ -32821,32 +32983,32 @@
 "kosif-atlas/skills/2460-pixel-art/9526-scene/SKILL.md"
 ],
 "twins": [],
-"distinct_methods": 17,
+"distinct_methods": 16,
 "links": [
 {
 "id": "SP-0354",
-"sim": 0.401
+"sim": 0.403
 },
 {
 "id": "SP-0252",
-"sim": 0.314
-},
-{
-"id": "SP-0243",
-"sim": 0.19
+"sim": 0.305
 },
 {
 "id": "SP-0351",
-"sim": 0.182
+"sim": 0.191
 },
 {
-"id": "SP-0120",
-"sim": 0.133
+"id": "SP-0243",
+"sim": 0.183
+},
+{
+"id": "SP-0124",
+"sim": 0.135
 }
 ]
 },
 {
-"id": "SP-0249",
+"id": "SP-0250",
 "domain": "motion",
 "family": "engines-render-pipeline",
 "name_ar": "ترميز GPU بـ NVENC",
@@ -33005,13 +33167,13 @@
 "sim": 0.127
 },
 {
-"id": "SP-0248",
-"sim": 0.117
+"id": "SP-0249",
+"sim": 0.121
 }
 ]
 },
 {
-"id": "SP-0250",
+"id": "SP-0251",
 "domain": "motion",
 "family": "engines-render-pipeline",
 "name_ar": "ضبابية حركة حقيقية",
@@ -33166,166 +33328,6 @@
 ]
 },
 {
-"id": "SP-0251",
-"domain": "motion",
-"family": "engines-render-pipeline",
-"name_ar": "جسر التصيير",
-"name_en": "Render shim (seek contract)",
-"focus": [
-"lottie",
-"seek",
-"shim",
-"ffprobe"
-],
-"size": 15,
-"best": "proven",
-"status_mix": {
-"proven": 4,
-"ready": 2,
-"install": 4,
-"key": 3,
-"documented": 2
-},
-"ready_now": 6,
-"families": {
-"engines-render-pipeline": 15
-},
-"atlas_folded": 0,
-"requires": [
-"npm:lottie",
-"npm:gsap",
-"python3",
-"npm:hyperframes",
-"npm:remotion",
-"key:unspecified",
-"ffmpeg",
-"node"
-],
-"pipeline": [
-{
-"id": "ENG-10",
-"status": "proven",
-"name_en": "Render shim (seek contract)",
-"name_ar": "جسر التصيير"
-},
-{
-"id": "ENG-07",
-"status": "proven",
-"name_en": "ffprobe shim",
-"name_ar": "بديل ffprobe"
-},
-{
-"id": "ENG-01",
-"status": "proven",
-"name_en": "HyperFrames composition contract",
-"name_ar": "عقد تركيب HyperFrames"
-},
-{
-"id": "ENG-29",
-"status": "proven",
-"name_en": "Robust media seeking for export",
-"name_ar": "تثبيت مواضع الوسائط عند التصدير"
-},
-{
-"id": "ENG-111",
-"status": "ready",
-"name_en": "Seek contract",
-"name_ar": "عقد seek"
-},
-{
-"id": "ENG-60",
-"status": "ready",
-"name_en": "Lottie text/logo layers",
-"name_ar": "طبقات Lottie"
-},
-{
-"id": "ENG-123",
-"status": "install",
-"name_en": "Lottie inside timelines",
-"name_ar": "لوتي داخل الفيديو"
-},
-{
-"id": "ENG-284",
-"status": "install",
-"name_en": "Dual-renderer shim + footage seek",
-"name_ar": "جسر المحرّكين"
-},
-{
-"id": "ENG-146",
-"status": "install",
-"name_en": "Lottie embedding",
-"name_ar": "تضمين لوتي"
-},
-{
-"id": "ENG-190",
-"status": "install",
-"name_en": "Composition root contract",
-"name_ar": "عقد جذر التركيب"
-},
-{
-"id": "ENG-343",
-"status": "key",
-"name_en": "Integration: Lottie Creator MCP",
-"name_ar": "تكامل: Lottie Creator MCP"
-},
-{
-"id": "ENG-344",
-"status": "key",
-"name_en": "Integration: LottieFiles platform MCP",
-"name_ar": "تكامل: LottieFiles platform MCP"
-},
-{
-"id": "ENG-324",
-"status": "key",
-"name_en": "After Effects ExtendScript automation",
-"name_ar": "أتمتة أفتر إفكتس"
-},
-{
-"id": "ENG-391",
-"status": "documented",
-"name_en": "Sandbox ffprobe stand-in",
-"name_ar": "بديل ffprobe في البيئات المغلقة"
-},
-{
-"id": "ENG-411",
-"status": "documented",
-"name_en": "Video-tool landscape (500 tools / 33 integrations)",
-"name_ar": "خريطة أدوات الفيديو"
-}
-],
-"proof": [
-"100-superskills/skills/kosif-montage-motion/scripts/kit/motion-kit.js:466",
-"100-superskills/skills/kosif-montage-motion/scripts/kit/motion-kit.js:578",
-"100-superskills/skills/kosif-montage-motion/CHANGELOG.md",
-"kosif-studio/motion/motion.py:18"
-],
-"twins": [
-[
-"ENG-07",
-"ENG-391"
-]
-],
-"distinct_methods": 14,
-"links": [
-{
-"id": "SP-0274",
-"sim": 0.206
-},
-{
-"id": "SP-0242",
-"sim": 0.159
-},
-{
-"id": "SP-0124",
-"sim": 0.122
-},
-{
-"id": "SP-0261",
-"sim": 0.111
-}
-]
-},
-{
 "id": "SP-0252",
 "domain": "motion",
 "family": "engines-render-pipeline",
@@ -33460,8 +33462,8 @@
 "distinct_methods": 15,
 "links": [
 {
-"id": "SP-0248",
-"sim": 0.314
+"id": "SP-0249",
+"sim": 0.305
 },
 {
 "id": "SP-0120",
@@ -33772,7 +33774,7 @@
 },
 {
 "id": "SP-0409",
-"sim": 0.129
+"sim": 0.13
 }
 ]
 },
@@ -33920,7 +33922,7 @@
 "distinct_methods": 11,
 "links": [
 {
-"id": "SP-0249",
+"id": "SP-0250",
 "sim": 0.269
 },
 {
@@ -34394,8 +34396,8 @@
 },
 "atlas_folded": 0,
 "requires": [
-"npm:remotion",
 "npm:three",
+"npm:remotion",
 "python3",
 "npm:gsap",
 "ffmpeg",
@@ -34765,7 +34767,7 @@
 "links": [
 {
 "id": "SP-0263",
-"sim": 0.259
+"sim": 0.239
 },
 {
 "id": "SP-0348",
@@ -34776,8 +34778,8 @@
 "sim": 0.112
 },
 {
-"id": "SP-0251",
-"sim": 0.111
+"id": "SP-0248",
+"sim": 0.107
 },
 {
 "id": "SP-0132",
@@ -34794,14 +34796,14 @@
 "focus": [
 "renderer",
 "mode",
-"dual-engine",
-"studio"
+"studio",
+"composition"
 ],
 "size": 10,
 "best": "proven",
 "status_mix": {
-"proven": 2,
-"ready": 3,
+"proven": 1,
+"ready": 4,
 "install": 2,
 "key": 1,
 "documented": 2
@@ -34813,8 +34815,9 @@
 "atlas_folded": 0,
 "requires": [
 "chromium",
-"npm:hyperframes",
 "python3",
+"npm:gsap",
+"npm:hyperframes",
 "key:unspecified"
 ],
 "pipeline": [
@@ -34823,12 +34826,6 @@
 "status": "proven",
 "name_en": "Auto mode detection and relaunch",
 "name_ar": "اكتشاف الوضع تلقائيًا"
-},
-{
-"id": "ENG-32",
-"status": "proven",
-"name_en": "Dual-engine shim (HyperFrames or studio renderer)",
-"name_ar": "طبقة تشغيل مزدوجة"
 },
 {
 "id": "ENG-65",
@@ -34841,6 +34838,12 @@
 "status": "ready",
 "name_en": "Project kind auto-detection",
 "name_ar": "كشف نوع المشروع تلقائيًا"
+},
+{
+"id": "ENG-110",
+"status": "ready",
+"name_en": "render_html virtual-time mode",
+"name_ar": "وضع الزمن الافتراضي"
 },
 {
 "id": "ENG-68",
@@ -34880,28 +34883,26 @@
 }
 ],
 "proof": [
-"kosif-tool/tools/render_html.cjs:483",
-"kosif-one/tools/kosif-studio/motion/kit/motion-kit.js:466",
-"kosif-one/tools/kosif-studio/motion/references/hyperframes-authoring.md"
+"kosif-tool/tools/render_html.cjs:483"
 ],
 "twins": [],
 "distinct_methods": 10,
 "links": [
 {
 "id": "SP-0243",
-"sim": 0.166
+"sim": 0.202
+},
+{
+"id": "SP-0351",
+"sim": 0.131
 },
 {
 "id": "SP-0274",
-"sim": 0.155
+"sim": 0.127
 },
 {
-"id": "SP-0242",
-"sim": 0.122
-},
-{
-"id": "SP-0369",
-"sim": 0.116
+"id": "SP-0248",
+"sim": 0.126
 },
 {
 "id": "SP-0124",
@@ -34913,25 +34914,25 @@
 "id": "SP-0263",
 "domain": "motion",
 "family": "engines-render-pipeline",
-"name_ar": "محول إطارات CSS",
-"name_en": "CSS keyframes adapter",
+"name_ar": "تحويل دالة زمنية إلى مفاتيح",
+"name_en": "Function-of-time to GSAP keyframes (sampled)",
 "focus": [
 "css",
-"gsap",
 "keyframes",
-"waapi"
+"gsap",
+"sampled"
 ],
-"size": 9,
+"size": 8,
 "best": "proven",
 "status_mix": {
 "proven": 1,
-"ready": 3,
+"ready": 2,
 "install": 4,
 "documented": 1
 },
-"ready_now": 4,
+"ready_now": 3,
 "families": {
-"engines-render-pipeline": 9
+"engines-render-pipeline": 8
 },
 "atlas_folded": 0,
 "requires": [
@@ -34950,12 +34951,6 @@
 "status": "ready",
 "name_en": "Function-of-time to GSAP keyframes (sampled)",
 "name_ar": "تحويل دالة زمنية إلى مفاتيح"
-},
-{
-"id": "ENG-110",
-"status": "ready",
-"name_en": "render_html virtual-time mode",
-"name_ar": "وضع الزمن الافتراضي"
 },
 {
 "id": "ENG-75",
@@ -35000,27 +34995,27 @@
 "kosif-tool/tools/render_html.cjs:67"
 ],
 "twins": [],
-"distinct_methods": 9,
+"distinct_methods": 8,
 "links": [
 {
 "id": "SP-0261",
-"sim": 0.259
+"sim": 0.239
 },
 {
 "id": "SP-0151",
-"sim": 0.2
-},
-{
-"id": "SP-0242",
-"sim": 0.156
+"sim": 0.192
 },
 {
 "id": "SP-0235",
-"sim": 0.151
+"sim": 0.149
 },
 {
-"id": "SP-0124",
-"sim": 0.096
+"id": "SP-0348",
+"sim": 0.143
+},
+{
+"id": "SP-0118",
+"sim": 0.073
 }
 ]
 },
@@ -35215,19 +35210,19 @@
 "distinct_methods": 7,
 "links": [
 {
-"id": "SP-0267",
+"id": "SP-0268",
 "sim": 0.125
 },
 {
-"id": "SP-0248",
-"sim": 0.112
+"id": "SP-0249",
+"sim": 0.111
 },
 {
 "id": "SP-0252",
 "sim": 0.111
 },
 {
-"id": "SP-0249",
+"id": "SP-0250",
 "sim": 0.091
 },
 {
@@ -35336,6 +35331,103 @@
 "id": "SP-0267",
 "domain": "motion",
 "family": "engines-render-pipeline",
+"name_ar": "تحميل حسب القرب",
+"name_en": "Proximity-priority clip loading",
+"focus": [
+"loading",
+"scroll",
+"render",
+"clip"
+],
+"size": 6,
+"best": "proven",
+"status_mix": {
+"proven": 1,
+"install": 4,
+"documented": 1
+},
+"ready_now": 1,
+"families": {
+"engines-render-pipeline": 6
+},
+"atlas_folded": 0,
+"requires": [
+"npm:gsap",
+"python3",
+"chromium"
+],
+"pipeline": [
+{
+"id": "ENG-05",
+"status": "proven",
+"name_en": "Film-only-where-it-should gating + SW bypass",
+"name_ar": "تشغيل الفيلم بشروط وتجاوز عامل الخدمة"
+},
+{
+"id": "ENG-321",
+"status": "install",
+"name_en": "Proximity-priority clip loading",
+"name_ar": "تحميل حسب القرب"
+},
+{
+"id": "ENG-129",
+"status": "install",
+"name_en": "Smooth-scroll weight (Lenis) and its render caveat",
+"name_ar": "التمرير الناعم وتحذير الرندر"
+},
+{
+"id": "ENG-320",
+"status": "install",
+"name_en": "Piecewise scroll->clip time mapping",
+"name_ar": "ربط التمرير بالزمن"
+},
+{
+"id": "ENG-279",
+"status": "install",
+"name_en": "Deterministic render(t) scene contract",
+"name_ar": "عقد المشهد الحتمي render(t)"
+},
+{
+"id": "ENG-379",
+"status": "documented",
+"name_en": "Web font loading for headless render",
+"name_ar": "تحميل الخطوط قبل الالتقاط"
+}
+],
+"proof": [
+"kosif-earth-ci-fork/tools/brand_art.test.mjs",
+"kosif-earth-ci-fork/docs/design/HIGGSFIELD_VISUALS_ar.md",
+"kosif-earth-ci-fork/unlock.html:170"
+],
+"twins": [],
+"distinct_methods": 6,
+"links": [
+{
+"id": "SP-0351",
+"sim": 0.165
+},
+{
+"id": "SP-0188",
+"sim": 0.159
+},
+{
+"id": "SP-0243",
+"sim": 0.152
+},
+{
+"id": "SP-0433",
+"sim": 0.118
+},
+{
+"id": "SP-0131",
+"sim": 0.086
+}
+]
+},
+{
+"id": "SP-0268",
+"domain": "motion",
+"family": "engines-render-pipeline",
 "name_ar": "أمر: الكتالوج والإضافة",
 "name_en": "CLI: catalog / add",
 "focus": [
@@ -35427,7 +35519,7 @@
 ]
 },
 {
-"id": "SP-0268",
+"id": "SP-0269",
 "domain": "motion",
 "family": "engines-render-pipeline",
 "name_ar": "مشغّل كود أي ذكاء اصطناعي",
@@ -35520,7 +35612,7 @@
 ]
 },
 {
-"id": "SP-0269",
+"id": "SP-0270",
 "domain": "motion",
 "family": "engines-render-pipeline",
 "name_ar": "تشغيل دفعات",
@@ -35615,7 +35707,7 @@
 ]
 },
 {
-"id": "SP-0270",
+"id": "SP-0271",
 "domain": "motion",
 "family": "engines-render-pipeline",
 "name_ar": "تكامل: HyperFrames skills plugin",
@@ -35623,8 +35715,8 @@
 "focus": [
 "skills",
 "plugin",
-"skill",
-"integration"
+"integration",
+"skill"
 ],
 "size": 6,
 "best": "proven",
@@ -35697,11 +35789,11 @@
 "links": [
 {
 "id": "SP-0127",
-"sim": 0.177
+"sim": 0.173
 },
 {
 "id": "SP-0123",
-"sim": 0.163
+"sim": 0.162
 },
 {
 "id": "SP-0019",
@@ -35709,96 +35801,7 @@
 },
 {
 "id": "SP-0327",
-"sim": 0.153
-}
-]
-},
-{
-"id": "SP-0271",
-"domain": "motion",
-"family": "engines-render-pipeline",
-"name_ar": "التمرير الناعم وتحذير الرندر",
-"name_en": "Smooth-scroll weight (Lenis) and its render caveat",
-"focus": [
-"scroll",
-"loading",
-"clip",
-"lazy"
-],
-"size": 5,
-"best": "proven",
-"status_mix": {
-"proven": 1,
-"install": 4
-},
-"ready_now": 1,
-"families": {
-"engines-render-pipeline": 5
-},
-"atlas_folded": 0,
-"requires": [
-"npm:gsap",
-"python3"
-],
-"pipeline": [
-{
-"id": "ENG-05",
-"status": "proven",
-"name_en": "Film-only-where-it-should gating + SW bypass",
-"name_ar": "تشغيل الفيلم بشروط وتجاوز عامل الخدمة"
-},
-{
-"id": "ENG-129",
-"status": "install",
-"name_en": "Smooth-scroll weight (Lenis) and its render caveat",
-"name_ar": "التمرير الناعم وتحذير الرندر"
-},
-{
-"id": "ENG-320",
-"status": "install",
-"name_en": "Piecewise scroll->clip time mapping",
-"name_ar": "ربط التمرير بالزمن"
-},
-{
-"id": "ENG-321",
-"status": "install",
-"name_en": "Proximity-priority clip loading",
-"name_ar": "تحميل حسب القرب"
-},
-{
-"id": "ENG-279",
-"status": "install",
-"name_en": "Deterministic render(t) scene contract",
-"name_ar": "عقد المشهد الحتمي render(t)"
-}
-],
-"proof": [
-"kosif-earth-ci-fork/tools/brand_art.test.mjs",
-"kosif-earth-ci-fork/docs/design/HIGGSFIELD_VISUALS_ar.md",
-"kosif-earth-ci-fork/unlock.html:170"
-],
-"twins": [],
-"distinct_methods": 5,
-"links": [
-{
-"id": "SP-0188",
-"sim": 0.179
-},
-{
-"id": "SP-0351",
-"sim": 0.142
-},
-{
-"id": "SP-0243",
-"sim": 0.13
-},
-{
-"id": "SP-0390",
-"sim": 0.106
-},
-{
-"id": "SP-0124",
-"sim": 0.08
+"sim": 0.151
 }
 ]
 },
@@ -36041,12 +36044,8 @@
 "distinct_methods": 5,
 "links": [
 {
-"id": "SP-0251",
-"sim": 0.206
-},
-{
-"id": "SP-0262",
-"sim": 0.155
+"id": "SP-0248",
+"sim": 0.233
 },
 {
 "id": "SP-0161",
@@ -36055,6 +36054,10 @@
 {
 "id": "SP-0243",
 "sim": 0.129
+},
+{
+"id": "SP-0262",
+"sim": 0.127
 },
 {
 "id": "SP-0133",
@@ -36161,8 +36164,8 @@
 },
 "atlas_folded": 0,
 "requires": [
-"pip:pillow",
-"npm:three"
+"npm:three",
+"pip:pillow"
 ],
 "pipeline": [
 {
@@ -36193,16 +36196,16 @@
 "distinct_methods": 3,
 "links": [
 {
-"id": "SP-0262",
-"sim": 0.102
-},
-{
 "id": "SP-0430",
 "sim": 0.101
 },
 {
+"id": "SP-0262",
+"sim": 0.093
+},
+{
 "id": "SP-0409",
-"sim": 0.077
+"sim": 0.076
 },
 {
 "id": "SP-0446",
@@ -36480,7 +36483,7 @@
 "sim": 0.138
 },
 {
-"id": "SP-0249",
+"id": "SP-0250",
 "sim": 0.114
 },
 {
@@ -37139,7 +37142,7 @@
 "sim": 0.158
 },
 {
-"id": "SP-0268",
+"id": "SP-0269",
 "sim": 0.144
 }
 ]
@@ -37668,7 +37671,7 @@
 },
 {
 "id": "SP-0407",
-"sim": 0.084
+"sim": 0.085
 },
 {
 "id": "SP-0126",
@@ -38008,8 +38011,8 @@
 "sim": 0.247
 },
 {
-"id": "SP-0415",
-"sim": 0.233
+"id": "SP-0414",
+"sim": 0.23
 },
 {
 "id": "SP-0393",
@@ -38551,8 +38554,8 @@
 "sim": 0.242
 },
 {
-"id": "SP-0415",
-"sim": 0.188
+"id": "SP-0414",
+"sim": 0.189
 },
 {
 "id": "SP-0140",
@@ -38591,8 +38594,7 @@
 "npm:remotion",
 "npm:maplibre",
 "node",
-"key:video-gen",
-"key:unspecified"
+"key:video-gen"
 ],
 "pipeline": [
 {
@@ -38630,7 +38632,7 @@
 "distinct_methods": 4,
 "links": [
 {
-"id": "SP-0416",
+"id": "SP-0415",
 "sim": 0.415
 },
 {
@@ -38709,7 +38711,7 @@
 "links": [
 {
 "id": "SP-0404",
-"sim": 0.308
+"sim": 0.302
 },
 {
 "id": "SP-0422",
@@ -39790,11 +39792,11 @@
 "atlas_folded": 0,
 "requires": [
 "python3",
-"key:unspecified",
 "key:elevenlabs",
 "pip:numpy",
 "imagemagick",
 "npm:remotion",
+"key:unspecified",
 "ffmpeg"
 ],
 "pipeline": [
@@ -42075,7 +42077,8 @@
 },
 "atlas_folded": 0,
 "requires": [
-"python3"
+"python3",
+"npm:three"
 ],
 "pipeline": [
 {
@@ -42137,7 +42140,7 @@
 "links": [
 {
 "id": "SP-0404",
-"sim": 0.215
+"sim": 0.216
 },
 {
 "id": "SP-0304",
@@ -42993,7 +42996,7 @@
 "sim": 0.411
 },
 {
-"id": "SP-0267",
+"id": "SP-0268",
 "sim": 0.166
 },
 {
@@ -43001,8 +43004,8 @@
 "sim": 0.162
 },
 {
-"id": "SP-0270",
-"sim": 0.153
+"id": "SP-0271",
+"sim": 0.151
 }
 ]
 },
@@ -44415,7 +44418,7 @@
 "links": [
 {
 "id": "SP-0242",
-"sim": 0.166
+"sim": 0.168
 },
 {
 "id": "SP-0256",
@@ -44847,8 +44850,8 @@
 "sim": 0.146
 },
 {
-"id": "SP-0248",
-"sim": 0.126
+"id": "SP-0249",
+"sim": 0.128
 },
 {
 "id": "SP-0165",
@@ -45138,7 +45141,7 @@
 "links": [
 {
 "id": "SP-0404",
-"sim": 0.449
+"sim": 0.45
 },
 {
 "id": "SP-0295",
@@ -46278,7 +46281,7 @@
 "distinct_methods": 21,
 "links": [
 {
-"id": "SP-0250",
+"id": "SP-0251",
 "sim": 0.387
 },
 {
@@ -46500,8 +46503,8 @@
 "sim": 0.09
 },
 {
-"id": "SP-0242",
-"sim": 0.089
+"id": "SP-0042",
+"sim": 0.088
 }
 ]
 },
@@ -47287,8 +47290,8 @@
 "distinct_methods": 13,
 "links": [
 {
-"id": "SP-0248",
-"sim": 0.401
+"id": "SP-0249",
+"sim": 0.403
 },
 {
 "id": "SP-0347",
@@ -48293,12 +48296,12 @@
 "sim": 0.11
 },
 {
-"id": "SP-0269",
-"sim": 0.093
+"id": "SP-0263",
+"sim": 0.1
 },
 {
-"id": "SP-0263",
-"sim": 0.091
+"id": "SP-0270",
+"sim": 0.093
 },
 {
 "id": "SP-0118",
@@ -49018,7 +49021,7 @@
 },
 {
 "id": "SP-0262",
-"sim": 0.116
+"sim": 0.105
 },
 {
 "id": "SP-0246",
@@ -49170,8 +49173,8 @@
 "distinct_methods": 4,
 "links": [
 {
-"id": "SP-0416",
-"sim": 0.394
+"id": "SP-0415",
+"sim": 0.393
 },
 {
 "id": "SP-0294",
@@ -50016,7 +50019,7 @@
 "links": [
 {
 "id": "SP-0423",
-"sim": 0.256
+"sim": 0.253
 },
 {
 "id": "SP-0210",
@@ -51487,16 +51490,16 @@
 "sim": 0.146
 },
 {
-"id": "SP-0271",
-"sim": 0.106
-},
-{
 "id": "SP-0368",
 "sim": 0.1
 },
 {
 "id": "SP-0274",
 "sim": 0.093
+},
+{
+"id": "SP-0246",
+"sim": 0.087
 }
 ]
 },
@@ -52961,7 +52964,7 @@
 "links": [
 {
 "id": "SP-0407",
-"sim": 0.316
+"sim": 0.317
 },
 {
 "id": "SP-0422",
@@ -52969,7 +52972,7 @@
 },
 {
 "id": "SP-0400",
-"sim": 0.179
+"sim": 0.175
 },
 {
 "id": "SP-0340",
@@ -53090,28 +53093,16 @@
 "name_ar": "عائلة المسح"
 },
 {
-"id": "TRANS-59",
-"status": "ready",
-"name_en": "FFmpeg xfade transition set (58)",
-"name_ar": "انتقالات xfade"
-},
-{
-"id": "TRANS-64",
-"status": "ready",
-"name_en": "Slide family (FFmpeg xfade)",
-"name_ar": "عائلة الانزلاق"
-},
-{
-"id": "TRANS-77",
-"status": "ready",
-"name_en": "Distance transition (FFmpeg xfade)",
-"name_ar": "انتقال المسافة"
-},
-{
 "id": "TRANS-69",
 "status": "ready",
 "name_en": "Slice transitions (FFmpeg xfade)",
 "name_ar": "انتقالات الشرائح"
+},
+{
+"id": "TRANS-59",
+"status": "ready",
+"name_en": "FFmpeg xfade transition set (58)",
+"name_ar": "انتقالات xfade"
 },
 {
 "id": "TRANS-71",
@@ -53120,10 +53111,16 @@
 "name_ar": "انتقالات التغطية"
 },
 {
-"id": "TRANS-76",
+"id": "TRANS-77",
 "status": "ready",
-"name_en": "Horizontal blur transition (FFmpeg xfade)",
-"name_ar": "انتقال الضبابية الأفقية"
+"name_en": "Distance transition (FFmpeg xfade)",
+"name_ar": "انتقال المسافة"
+},
+{
+"id": "TRANS-64",
+"status": "ready",
+"name_en": "Slide family (FFmpeg xfade)",
+"name_ar": "عائلة الانزلاق"
 },
 {
 "id": "TRANS-58",
@@ -53138,22 +53135,28 @@
 "name_ar": "عائلة التلاشي"
 },
 {
+"id": "TRANS-76",
+"status": "ready",
+"name_en": "Horizontal blur transition (FFmpeg xfade)",
+"name_ar": "انتقال الضبابية الأفقية"
+},
+{
 "id": "TRANS-74",
 "status": "ready",
 "name_en": "Zoom-in transition (FFmpeg xfade)",
 "name_ar": "انتقال الزووم للداخل"
 },
 {
-"id": "TRANS-68",
-"status": "ready",
-"name_en": "Diagonal wipes (FFmpeg xfade)",
-"name_ar": "مسح قطري"
-},
-{
 "id": "TRANS-75",
 "status": "ready",
 "name_en": "Pixelize transition (FFmpeg xfade)",
 "name_ar": "انتقال التبكسل"
+},
+{
+"id": "TRANS-68",
+"status": "ready",
+"name_en": "Diagonal wipes (FFmpeg xfade)",
+"name_ar": "مسح قطري"
 },
 {
 "id": "TRANS-73",
@@ -53214,39 +53217,41 @@
 "TRANS-69"
 ],
 [
-"TRANS-63",
-"TRANS-65"
+"TRANS-72",
+"TRANS-71"
 ],
 [
+"TRANS-63",
 "TRANS-64",
-"TRANS-62"
+"TRANS-62",
+"TRANS-65"
 ],
 [
 "TRANS-58",
 "TRANS-82"
 ]
 ],
-"distinct_methods": 26,
+"distinct_methods": 24,
 "links": [
 {
 "id": "SP-0399",
-"sim": 0.179
+"sim": 0.175
 },
 {
 "id": "SP-0403",
-"sim": 0.149
+"sim": 0.146
 },
 {
-"id": "SP-0414",
-"sim": 0.135
+"id": "SP-0416",
+"sim": 0.132
 },
 {
 "id": "SP-0405",
-"sim": 0.129
+"sim": 0.127
 },
 {
 "id": "SP-0135",
-"sim": 0.086
+"sim": 0.089
 }
 ]
 },
@@ -53283,6 +53288,7 @@
 "ffmpeg",
 "npm:hyperframes",
 "chromium",
+"npm:gsap",
 "npm:remotion"
 ],
 "pipeline": [
@@ -53768,16 +53774,16 @@
 "name_ar": "انتقال CSS: احتراق الصفحة"
 },
 {
-"id": "TRANS-113",
-"status": "install",
-"name_en": "Shader transition: ridged-burn",
-"name_ar": "انتقال شيدر: احتراق متعرج"
-},
-{
 "id": "TRANS-146",
 "status": "install",
 "name_en": "Ridged Burn",
 "name_ar": "انتقال الحرق المتعرج"
+},
+{
+"id": "TRANS-113",
+"status": "install",
+"name_en": "Shader transition: ridged-burn",
+"name_ar": "انتقال شيدر: احتراق متعرج"
 },
 {
 "id": "TRANS-212",
@@ -53897,23 +53903,23 @@
 "links": [
 {
 "id": "SP-0409",
-"sim": 0.243
+"sim": 0.245
+},
+{
+"id": "SP-0416",
+"sim": 0.197
 },
 {
 "id": "SP-0414",
-"sim": 0.199
+"sim": 0.188
 },
 {
 "id": "SP-0411",
 "sim": 0.186
 },
 {
-"id": "SP-0415",
-"sim": 0.183
-},
-{
 "id": "SP-0135",
-"sim": 0.046
+"sim": 0.047
 }
 ]
 },
@@ -53979,16 +53985,16 @@
 "name_ar": "انتقال الغليتش"
 },
 {
-"id": "TRANS-103",
-"status": "install",
-"name_en": "RGB split and slice glitch technique",
-"name_ar": "انفصال الألوان والجليتش"
-},
-{
 "id": "TRANS-110",
 "status": "install",
 "name_en": "Shader transition: glitch",
 "name_ar": "انتقال شيدر: غلتش"
+},
+{
+"id": "TRANS-103",
+"status": "install",
+"name_en": "RGB split and slice glitch technique",
+"name_ar": "انفصال الألوان والجليتش"
 },
 {
 "id": "TRANS-170",
@@ -54090,19 +54096,19 @@
 "links": [
 {
 "id": "SP-0343",
-"sim": 0.449
+"sim": 0.45
 },
 {
 "id": "SP-0295",
-"sim": 0.308
+"sim": 0.302
 },
 {
 "id": "SP-0318",
-"sim": 0.215
+"sim": 0.216
 },
 {
 "id": "SP-0422",
-"sim": 0.184
+"sim": 0.186
 },
 {
 "id": "SP-0137",
@@ -54469,7 +54475,7 @@
 },
 {
 "id": "SP-0409",
-"sim": 0.199
+"sim": 0.195
 },
 {
 "id": "SP-0411",
@@ -54535,12 +54541,6 @@
 "name_ar": "انتقال القزحية"
 },
 {
-"id": "TRANS-115",
-"status": "install",
-"name_en": "Shader transition: sdf-iris",
-"name_ar": "انتقال شيدر: قزحية"
-},
-{
 "id": "TRANS-148",
 "status": "install",
 "name_en": "SDF Iris",
@@ -54551,6 +54551,12 @@
 "status": "install",
 "name_en": "iris / flood seams",
 "name_ar": "انتقال القزحية والفيضان"
+},
+{
+"id": "TRANS-115",
+"status": "install",
+"name_en": "Shader transition: sdf-iris",
+"name_ar": "انتقال شيدر: قزحية"
 },
 {
 "id": "TRANS-246",
@@ -54638,12 +54644,12 @@
 "TRANS-126"
 ],
 [
-"TRANS-115",
-"TRANS-214"
-],
-[
 "TRANS-231",
 "TRANS-246"
+],
+[
+"TRANS-115",
+"TRANS-214"
 ]
 ],
 "distinct_methods": 16,
@@ -54654,15 +54660,15 @@
 },
 {
 "id": "SP-0399",
-"sim": 0.316
+"sim": 0.317
 },
 {
 "id": "SP-0199",
-"sim": 0.183
+"sim": 0.182
 },
 {
 "id": "SP-0422",
-"sim": 0.166
+"sim": 0.167
 },
 {
 "id": "SP-0054",
@@ -54850,8 +54856,8 @@
 "name_en": "WebGL shader transition: domain-warp",
 "focus": [
 "transition",
-"webgl",
 "shader",
+"webgl",
 "warp"
 ],
 "size": 18,
@@ -54883,28 +54889,28 @@
 "name_ar": "انتقال شيدر: تشويه المجال"
 },
 {
-"id": "TRANS-111",
-"status": "install",
-"name_en": "Shader transition: gravitational-lens",
-"name_ar": "انتقال شيدر: عدسة جاذبية"
-},
-{
 "id": "TRANS-206",
 "status": "install",
 "name_en": "WebGL shader transition: cinematic-zoom",
 "name_ar": "انتقال شيدر WebGL: تقريب سينمائي"
 },
 {
-"id": "TRANS-210",
+"id": "TRANS-111",
 "status": "install",
-"name_en": "WebGL shader transition: gravitational-lens",
-"name_ar": "انتقال شيدر WebGL: عدسة جاذبية"
+"name_en": "Shader transition: gravitational-lens",
+"name_ar": "انتقال شيدر: عدسة جاذبية"
 },
 {
 "id": "TRANS-207",
 "status": "install",
 "name_en": "WebGL shader transition: cross-warp-morph",
 "name_ar": "انتقال شيدر WebGL: تحول بالتشويه المتقاطع"
+},
+{
+"id": "TRANS-210",
+"status": "install",
+"name_en": "WebGL shader transition: gravitational-lens",
+"name_ar": "انتقال شيدر WebGL: عدسة جاذبية"
 },
 {
 "id": "TRANS-215",
@@ -54919,10 +54925,10 @@
 "name_ar": "انتقال شيدر WebGL: انقسام لوني"
 },
 {
-"id": "TRANS-107",
+"id": "TRANS-92",
 "status": "install",
-"name_en": "Shader transition: cross-warp-morph",
-"name_ar": "انتقال شيدر: تحول التوائي"
+"name_en": "Shader transitions (WebGL)",
+"name_ar": "انتقالات الشيدر"
 },
 {
 "id": "TRANS-106",
@@ -54931,10 +54937,10 @@
 "name_ar": "انتقال شيدر: زوم سينمائي"
 },
 {
-"id": "TRANS-92",
+"id": "TRANS-107",
 "status": "install",
-"name_en": "Shader transitions (WebGL)",
-"name_ar": "انتقالات الشيدر"
+"name_en": "Shader transition: cross-warp-morph",
+"name_ar": "انتقال شيدر: تحول التوائي"
 },
 {
 "id": "TRANS-116",
@@ -54961,16 +54967,16 @@
 "name_ar": "انتقال العدسة الجاذبية"
 },
 {
-"id": "TRANS-149",
-"status": "install",
-"name_en": "Swirl Vortex",
-"name_ar": "انتقال الدوامة"
-},
-{
 "id": "TRANS-150",
 "status": "install",
 "name_en": "Thermal Distortion",
 "name_ar": "انتقال السراب الحراري"
+},
+{
+"id": "TRANS-149",
+"status": "install",
+"name_en": "Swirl Vortex",
+"name_ar": "انتقال الدوامة"
 },
 {
 "id": "TRANS-156",
@@ -54986,12 +54992,12 @@
 "TRANS-108"
 ],
 [
-"TRANS-111",
-"TRANS-210"
-],
-[
 "TRANS-206",
 "TRANS-106"
+],
+[
+"TRANS-111",
+"TRANS-210"
 ],
 [
 "TRANS-207",
@@ -55006,23 +55012,23 @@
 "links": [
 {
 "id": "SP-0423",
-"sim": 0.439
-},
-{
-"id": "SP-0422",
-"sim": 0.243
+"sim": 0.448
 },
 {
 "id": "SP-0403",
-"sim": 0.243
+"sim": 0.245
+},
+{
+"id": "SP-0422",
+"sim": 0.241
 },
 {
 "id": "SP-0420",
-"sim": 0.23
+"sim": 0.232
 },
 {
 "id": "SP-0135",
-"sim": 0.1
+"sim": 0.104
 }
 ]
 },
@@ -55332,7 +55338,7 @@
 "sim": 0.462
 },
 {
-"id": "SP-0250",
+"id": "SP-0251",
 "sim": 0.32
 },
 {
@@ -55358,21 +55364,21 @@
 "focus": [
 "whip",
 "pan",
-"blur",
+"transition",
 "whip-pan"
 ],
-"size": 14,
+"size": 15,
 "best": "ready",
 "status_mix": {
 "ready": 1,
-"install": 4,
+"install": 5,
 "seen": 6,
 "documented": 2,
 "idea": 1
 },
 "ready_now": 1,
 "families": {
-"transitions-cuts": 14
+"transitions-cuts": 15
 },
 "atlas_folded": 0,
 "requires": [
@@ -55380,6 +55386,8 @@
 "npm:three",
 "npm:gsap",
 "chromium",
+"pip:opencv",
+"pip:scipy",
 "ffmpeg"
 ],
 "pipeline": [
@@ -55402,16 +55410,22 @@
 "name_ar": "قطع السوط"
 },
 {
+"id": "TRANS-217",
+"status": "install",
+"name_en": "WebGL shader transition: whip-pan",
+"name_ar": "انتقال شيدر WebGL: حركة سوط سريعة"
+},
+{
 "id": "TRANS-118",
 "status": "install",
 "name_en": "Shader transition: whip-pan",
 "name_ar": "انتقال شيدر: سوط كاميرا"
 },
 {
-"id": "TRANS-217",
+"id": "TRANS-247",
 "status": "install",
-"name_en": "WebGL shader transition: whip-pan",
-"name_ar": "انتقال شيدر WebGL: حركة سوط سريعة"
+"name_en": "Phone-editor transition: whip (whipleft/whipright/whipup/whipdown)",
+"name_ar": "انتقال تطبيقات الموبايل: سوايب سريع"
 },
 {
 "id": "TRANS-374",
@@ -55475,19 +55489,19 @@
 "TRANS-135"
 ],
 [
-"TRANS-118",
-"TRANS-217"
+"TRANS-217",
+"TRANS-118"
 ],
 [
 "TRANS-374",
 "TRANS-350"
 ]
 ],
-"distinct_methods": 11,
+"distinct_methods": 12,
 "links": [
 {
-"id": "SP-0414",
-"sim": 0.238
+"id": "SP-0416",
+"sim": 0.232
 },
 {
 "id": "SP-0411",
@@ -55495,15 +55509,15 @@
 },
 {
 "id": "SP-0409",
-"sim": 0.169
+"sim": 0.181
 },
 {
 "id": "SP-0419",
-"sim": 0.152
+"sim": 0.155
 },
 {
 "id": "SP-0114",
-"sim": 0.035
+"sim": 0.033
 }
 ]
 },
@@ -55643,7 +55657,7 @@
 },
 {
 "id": "SP-0403",
-"sim": 0.158
+"sim": 0.159
 },
 {
 "id": "SP-0420",
@@ -55657,156 +55671,6 @@
 },
 {
 "id": "SP-0414",
-"domain": "motion",
-"family": "transitions-cuts",
-"name_ar": "انتقال CSS: دفع انزلاقي",
-"name_en": "CSS transition: Push slide",
-"focus": [
-"push",
-"transition",
-"slide",
-"phone-editor"
-],
-"size": 14,
-"best": "install",
-"status_mix": {
-"install": 10,
-"seen": 1,
-"documented": 3
-},
-"ready_now": 0,
-"families": {
-"transitions-cuts": 14
-},
-"atlas_folded": 0,
-"requires": [
-"npm:gsap",
-"npm:hyperframes",
-"pip:opencv",
-"pip:scipy",
-"chromium"
-],
-"pipeline": [
-{
-"id": "TRANS-173",
-"status": "install",
-"name_en": "CSS transition: Push slide",
-"name_ar": "انتقال CSS: دفع انزلاقي"
-},
-{
-"id": "TRANS-161",
-"status": "install",
-"name_en": "Push Transitions",
-"name_ar": "انتقالات الدفع"
-},
-{
-"id": "TRANS-251",
-"status": "install",
-"name_en": "Phone-editor transition: whipup",
-"name_ar": "ويب أعلى"
-},
-{
-"id": "TRANS-174",
-"status": "install",
-"name_en": "CSS transition: Vertical push",
-"name_ar": "انتقال CSS: دفع عمودي"
-},
-{
-"id": "TRANS-252",
-"status": "install",
-"name_en": "Phone-editor transition: whipdown",
-"name_ar": "ويب أسفل"
-},
-{
-"id": "TRANS-250",
-"status": "install",
-"name_en": "Phone-editor transition: whipright",
-"name_ar": "ويب يمين"
-},
-{
-"id": "TRANS-249",
-"status": "install",
-"name_en": "Phone-editor transition: whipleft",
-"name_ar": "ويب يسار"
-},
-{
-"id": "TRANS-247",
-"status": "install",
-"name_en": "Phone-editor transition: whip (whipleft/whipright/whipup/whipdown)",
-"name_ar": "انتقال تطبيقات الموبايل: سوايب سريع"
-},
-{
-"id": "TRANS-129",
-"status": "install",
-"name_en": "Page Slide",
-"name_ar": "انزلاق الصفحة"
-},
-{
-"id": "TRANS-91",
-"status": "install",
-"name_en": "Phone-editor transition: spin",
-"name_ar": "انتقال تطبيقات الموبايل: دوران"
-},
-{
-"id": "TRANS-335",
-"status": "seen",
-"name_en": "Sun whiteout bridge",
-"name_ar": "انتقال بالبياض الشمسي"
-},
-{
-"id": "TRANS-408",
-"status": "documented",
-"name_en": "CSS/GSAP push transitions",
-"name_ar": "انتقالات push"
-},
-{
-"id": "TRANS-437",
-"status": "documented",
-"name_en": "Swipe / screen push and modal sheet",
-"name_ar": "سحب الشاشة واللوحة المنبثقة"
-},
-{
-"id": "TRANS-X04",
-"status": "documented",
-"name_en": "Object carry contract in screen pixels",
-"name_ar": "حمل الجسم بإحداثيات الشاشة"
-}
-],
-"proof": [],
-"twins": [
-[
-"TRANS-173",
-"TRANS-161",
-"TRANS-174",
-"TRANS-408"
-]
-],
-"distinct_methods": 11,
-"links": [
-{
-"id": "SP-0173",
-"sim": 0.27
-},
-{
-"id": "SP-0412",
-"sim": 0.238
-},
-{
-"id": "SP-0411",
-"sim": 0.214
-},
-{
-"id": "SP-0409",
-"sim": 0.203
-},
-{
-"id": "SP-0115",
-"sim": 0.054
-}
-]
-},
-{
-"id": "SP-0415",
 "domain": "motion",
 "family": "transitions-cuts",
 "name_ar": "انتقال تسرب ضوئي",
@@ -55934,19 +55798,19 @@
 "links": [
 {
 "id": "SP-0197",
-"sim": 0.251
+"sim": 0.252
 },
 {
 "id": "SP-0289",
-"sim": 0.233
+"sim": 0.23
+},
+{
+"id": "SP-0409",
+"sim": 0.193
 },
 {
 "id": "SP-0293",
-"sim": 0.188
-},
-{
-"id": "SP-0403",
-"sim": 0.183
+"sim": 0.189
 },
 {
 "id": "SP-0114",
@@ -55955,7 +55819,7 @@
 ]
 },
 {
-"id": "SP-0416",
+"id": "SP-0415",
 "domain": "motion",
 "family": "transitions-cuts",
 "name_ar": "قطع وميضي",
@@ -56012,16 +55876,16 @@
 "name_ar": "ومضة بيضاء"
 },
 {
-"id": "TRANS-109",
-"status": "install",
-"name_en": "Shader transition: flash-through-white",
-"name_ar": "انتقال شيدر: وميض أبيض"
-},
-{
 "id": "TRANS-209",
 "status": "install",
 "name_en": "WebGL shader transition: flash-through-white",
 "name_ar": "انتقال شيدر WebGL: وميض عبر الأبيض"
+},
+{
+"id": "TRANS-109",
+"status": "install",
+"name_en": "Shader transition: flash-through-white",
+"name_ar": "انتقال شيدر: وميض أبيض"
 },
 {
 "id": "TRANS-242",
@@ -56080,8 +55944,8 @@
 "TRANS-235"
 ],
 [
-"TRANS-109",
-"TRANS-209"
+"TRANS-209",
+"TRANS-109"
 ]
 ],
 "distinct_methods": 9,
@@ -56092,7 +55956,7 @@
 },
 {
 "id": "SP-0371",
-"sim": 0.394
+"sim": 0.393
 },
 {
 "id": "SP-0222",
@@ -56104,7 +55968,151 @@
 },
 {
 "id": "SP-0112",
-"sim": 0.025
+"sim": 0.024
+}
+]
+},
+{
+"id": "SP-0416",
+"domain": "motion",
+"family": "transitions-cuts",
+"name_ar": "انتقال CSS: دفع انزلاقي",
+"name_en": "CSS transition: Push slide",
+"focus": [
+"push",
+"transition",
+"slide",
+"phone-editor"
+],
+"size": 13,
+"best": "install",
+"status_mix": {
+"install": 9,
+"seen": 1,
+"documented": 3
+},
+"ready_now": 0,
+"families": {
+"transitions-cuts": 13
+},
+"atlas_folded": 0,
+"requires": [
+"npm:gsap",
+"npm:hyperframes",
+"chromium",
+"pip:opencv",
+"pip:scipy"
+],
+"pipeline": [
+{
+"id": "TRANS-173",
+"status": "install",
+"name_en": "CSS transition: Push slide",
+"name_ar": "انتقال CSS: دفع انزلاقي"
+},
+{
+"id": "TRANS-161",
+"status": "install",
+"name_en": "Push Transitions",
+"name_ar": "انتقالات الدفع"
+},
+{
+"id": "TRANS-174",
+"status": "install",
+"name_en": "CSS transition: Vertical push",
+"name_ar": "انتقال CSS: دفع عمودي"
+},
+{
+"id": "TRANS-251",
+"status": "install",
+"name_en": "Phone-editor transition: whipup",
+"name_ar": "ويب أعلى"
+},
+{
+"id": "TRANS-252",
+"status": "install",
+"name_en": "Phone-editor transition: whipdown",
+"name_ar": "ويب أسفل"
+},
+{
+"id": "TRANS-250",
+"status": "install",
+"name_en": "Phone-editor transition: whipright",
+"name_ar": "ويب يمين"
+},
+{
+"id": "TRANS-249",
+"status": "install",
+"name_en": "Phone-editor transition: whipleft",
+"name_ar": "ويب يسار"
+},
+{
+"id": "TRANS-129",
+"status": "install",
+"name_en": "Page Slide",
+"name_ar": "انزلاق الصفحة"
+},
+{
+"id": "TRANS-91",
+"status": "install",
+"name_en": "Phone-editor transition: spin",
+"name_ar": "انتقال تطبيقات الموبايل: دوران"
+},
+{
+"id": "TRANS-335",
+"status": "seen",
+"name_en": "Sun whiteout bridge",
+"name_ar": "انتقال بالبياض الشمسي"
+},
+{
+"id": "TRANS-408",
+"status": "documented",
+"name_en": "CSS/GSAP push transitions",
+"name_ar": "انتقالات push"
+},
+{
+"id": "TRANS-437",
+"status": "documented",
+"name_en": "Swipe / screen push and modal sheet",
+"name_ar": "سحب الشاشة واللوحة المنبثقة"
+},
+{
+"id": "TRANS-X04",
+"status": "documented",
+"name_en": "Object carry contract in screen pixels",
+"name_ar": "حمل الجسم بإحداثيات الشاشة"
+}
+],
+"proof": [],
+"twins": [
+[
+"TRANS-173",
+"TRANS-161",
+"TRANS-174",
+"TRANS-408"
+]
+],
+"distinct_methods": 10,
+"links": [
+{
+"id": "SP-0173",
+"sim": 0.29
+},
+{
+"id": "SP-0412",
+"sim": 0.232
+},
+{
+"id": "SP-0411",
+"sim": 0.214
+},
+{
+"id": "SP-0409",
+"sim": 0.198
+},
+{
+"id": "SP-0115",
+"sim": 0.058
 }
 ]
 },
@@ -56485,7 +56493,7 @@
 "sim": 0.203
 },
 {
-"id": "SP-0250",
+"id": "SP-0251",
 "sim": 0.189
 },
 {
@@ -56601,15 +56609,15 @@
 "links": [
 {
 "id": "SP-0409",
-"sim": 0.23
+"sim": 0.232
 },
 {
-"id": "SP-0414",
-"sim": 0.175
+"id": "SP-0416",
+"sim": 0.169
 },
 {
 "id": "SP-0423",
-"sim": 0.157
+"sim": 0.161
 },
 {
 "id": "SP-0402",
@@ -56721,16 +56729,16 @@
 "sim": 0.194
 },
 {
-"id": "SP-0415",
-"sim": 0.14
+"id": "SP-0414",
+"sim": 0.141
 },
 {
-"id": "SP-0414",
-"sim": 0.104
+"id": "SP-0415",
+"sim": 0.101
 },
 {
 "id": "SP-0416",
-"sim": 0.101
+"sim": 0.091
 },
 {
 "id": "SP-0007",
@@ -56834,15 +56842,15 @@
 },
 {
 "id": "SP-0409",
-"sim": 0.243
+"sim": 0.241
 },
 {
 "id": "SP-0399",
 "sim": 0.229
 },
 {
-"id": "SP-0218",
-"sim": 0.185
+"id": "SP-0404",
+"sim": 0.186
 },
 {
 "id": "SP-0030",
@@ -56859,8 +56867,8 @@
 "focus": [
 "ripple",
 "transition",
-"wave",
-"ripple-waves"
+"ripple-waves",
+"wave"
 ],
 "size": 9,
 "best": "ready",
@@ -56951,23 +56959,23 @@
 "links": [
 {
 "id": "SP-0409",
-"sim": 0.439
+"sim": 0.448
 },
 {
 "id": "SP-0378",
-"sim": 0.256
+"sim": 0.253
 },
 {
 "id": "SP-0403",
-"sim": 0.164
+"sim": 0.168
 },
 {
 "id": "SP-0420",
-"sim": 0.157
+"sim": 0.161
 },
 {
 "id": "SP-0135",
-"sim": 0.062
+"sim": 0.065
 }
 ]
 },
@@ -57372,8 +57380,8 @@
 "distinct_methods": 3,
 "links": [
 {
-"id": "SP-0414",
-"sim": 0.161
+"id": "SP-0416",
+"sim": 0.17
 },
 {
 "id": "SP-0173",
@@ -57385,7 +57393,7 @@
 },
 {
 "id": "SP-0263",
-"sim": 0.096
+"sim": 0.092
 },
 {
 "id": "SP-0118",
@@ -58507,7 +58515,7 @@
 },
 {
 "id": "SP-0403",
-"sim": 0.115
+"sim": 0.114
 },
 {
 "id": "SP-0020",
@@ -59988,7 +59996,7 @@
 },
 {
 "id": "SP-0242",
-"sim": 0.162
+"sim": 0.164
 },
 {
 "id": "SP-0410",
@@ -60144,12 +60152,12 @@
 "sim": 0.122
 },
 {
-"id": "SP-0271",
-"sim": 0.087
-},
-{
 "id": "SP-0151",
 "sim": 0.086
+},
+{
+"id": "SP-0267",
+"sim": 0.085
 },
 {
 "id": "SP-0117",
@@ -60674,7 +60682,7 @@
 "sim": 0.307
 },
 {
-"id": "SP-0267",
+"id": "SP-0268",
 "sim": 0.228
 },
 {
@@ -60804,12 +60812,12 @@
 "sim": 0.12
 },
 {
-"id": "SP-0109",
-"sim": 0.081
+"id": "SP-0267",
+"sim": 0.105
 },
 {
-"id": "SP-0278",
-"sim": 0.078
+"id": "SP-0109",
+"sim": 0.081
 }
 ]
 },

@@ -15,8 +15,10 @@
    "python3"
   ],
   "license": "owner",
-  "proof": [],
-  "proof_scope": "none",
+  "proof": [
+   "kosif-tool/.claude/skills/kosif-superpowers/references/cognition.md"
+  ],
+  "proof_scope": "repo",
   "styles": [],
   "tags": [
    "reasoning",
@@ -46,8 +48,10 @@
    "python3"
   ],
   "license": "owner",
-  "proof": [],
-  "proof_scope": "none",
+  "proof": [
+   "kosif-tool/.claude/skills/kosif-superpowers/references/cognition.md"
+  ],
+  "proof_scope": "repo",
   "styles": [],
   "tags": [
    "reasoning",
@@ -77,8 +81,10 @@
    "python3"
   ],
   "license": "owner",
-  "proof": [],
-  "proof_scope": "none",
+  "proof": [
+   "kosif-tool/.claude/skills/kosif-superpowers/references/cognition.md"
+  ],
+  "proof_scope": "repo",
   "styles": [],
   "tags": [
    "systems",
@@ -108,8 +114,10 @@
    "python3"
   ],
   "license": "owner",
-  "proof": [],
-  "proof_scope": "none",
+  "proof": [
+   "kosif-tool/.claude/skills/kosif-superpowers/references/cognition.md"
+  ],
+  "proof_scope": "repo",
   "styles": [],
   "tags": [
    "epistemics",
@@ -139,8 +147,10 @@
    "python3"
   ],
   "license": "owner",
-  "proof": [],
-  "proof_scope": "none",
+  "proof": [
+   "kosif-tool/.claude/skills/kosif-superpowers/references/cognition.md"
+  ],
+  "proof_scope": "repo",
   "styles": [],
   "tags": [
    "epistemics",
@@ -170,8 +180,10 @@
    "python3"
   ],
   "license": "owner",
-  "proof": [],
-  "proof_scope": "none",
+  "proof": [
+   "kosif-tool/.claude/skills/kosif-superpowers/references/cognition.md"
+  ],
+  "proof_scope": "repo",
   "styles": [],
   "tags": [
    "reasoning",
@@ -201,8 +213,10 @@
    "pip:hypothesis"
   ],
   "license": "owner",
-  "proof": [],
-  "proof_scope": "none",
+  "proof": [
+   "kosif-tool/.claude/skills/kosif-superpowers/references/cognition.md"
+  ],
+  "proof_scope": "repo",
   "styles": [],
   "tags": [
    "people",
@@ -232,8 +246,10 @@
    "python3"
   ],
   "license": "owner",
-  "proof": [],
-  "proof_scope": "none",
+  "proof": [
+   "kosif-tool/.claude/skills/kosif-superpowers/references/cognition.md"
+  ],
+  "proof_scope": "repo",
   "styles": [],
   "tags": [
    "probability",
@@ -263,8 +279,10 @@
    "python3"
   ],
   "license": "owner",
-  "proof": [],
-  "proof_scope": "none",
+  "proof": [
+   "kosif-tool/.claude/skills/kosif-superpowers/references/cognition.md"
+  ],
+  "proof_scope": "repo",
   "styles": [],
   "tags": [
    "probability",
@@ -294,8 +312,10 @@
    "python3"
   ],
   "license": "owner",
-  "proof": [],
-  "proof_scope": "none",
+  "proof": [
+   "kosif-tool/.claude/skills/kosif-superpowers/references/cognition.md"
+  ],
+  "proof_scope": "repo",
   "styles": [],
   "tags": [
    "quantitative",
@@ -325,8 +345,10 @@
    "python3"
   ],
   "license": "owner",
-  "proof": [],
-  "proof_scope": "none",
+  "proof": [
+   "kosif-tool/.claude/skills/kosif-superpowers/references/cognition.md"
+  ],
+  "proof_scope": "repo",
   "styles": [],
   "tags": [
    "decision",
@@ -356,8 +378,10 @@
    "python3"
   ],
   "license": "owner",
-  "proof": [],
-  "proof_scope": "none",
+  "proof": [
+   "kosif-tool/.claude/skills/kosif-superpowers/references/cognition.md"
+  ],
+  "proof_scope": "repo",
   "styles": [],
   "tags": [
    "decision",
@@ -387,8 +411,10 @@
    "python3"
   ],
   "license": "owner",
-  "proof": [],
-  "proof_scope": "none",
+  "proof": [
+   "kosif-tool/.claude/skills/kosif-superpowers/references/cognition.md"
+  ],
+  "proof_scope": "repo",
   "styles": [],
   "tags": [
    "economics",
@@ -418,8 +444,10 @@
    "python3"
   ],
   "license": "owner",
-  "proof": [],
-  "proof_scope": "none",
+  "proof": [
+   "kosif-tool/.claude/skills/kosif-superpowers/references/cognition.md"
+  ],
+  "proof_scope": "repo",
   "styles": [],
   "tags": [
    "engineering",
@@ -449,8 +477,10 @@
    "python3"
   ],
   "license": "owner",
-  "proof": [],
-  "proof_scope": "none",
+  "proof": [
+   "kosif-tool/.claude/skills/kosif-superpowers/references/cognition.md"
+  ],
+  "proof_scope": "repo",
   "styles": [],
   "tags": [
    "prioritisation",
@@ -480,8 +510,10 @@
    "python3"
   ],
   "license": "owner",
-  "proof": [],
-  "proof_scope": "none",
+  "proof": [
+   "kosif-tool/.claude/skills/kosif-superpowers/references/cognition.md"
+  ],
+  "proof_scope": "repo",
   "styles": [],
   "tags": [
    "systems",
@@ -511,8 +543,10 @@
    "python3"
   ],
   "license": "owner",
-  "proof": [],
-  "proof_scope": "none",
+  "proof": [
+   "kosif-tool/.claude/skills/kosif-superpowers/references/cognition.md"
+  ],
+  "proof_scope": "repo",
   "styles": [],
   "tags": [
    "systems",
@@ -542,8 +576,10 @@
    "python3"
   ],
   "license": "owner",
-  "proof": [],
-  "proof_scope": "none",
+  "proof": [
+   "kosif-tool/.claude/skills/kosif-superpowers/references/cognition.md"
+  ],
+  "proof_scope": "repo",
   "styles": [],
   "tags": [
    "systems",
@@ -573,8 +609,10 @@
    "python3"
   ],
   "license": "owner",
-  "proof": [],
-  "proof_scope": "none",
+  "proof": [
+   "kosif-tool/.claude/skills/kosif-superpowers/references/cognition.md"
+  ],
+  "proof_scope": "repo",
   "styles": [],
   "tags": [
    "systems",
@@ -604,8 +642,10 @@
    "python3"
   ],
   "license": "owner",
-  "proof": [],
-  "proof_scope": "none",
+  "proof": [
+   "kosif-tool/.claude/skills/kosif-superpowers/references/cognition.md"
+  ],
+  "proof_scope": "repo",
   "styles": [],
   "tags": [
    "complexity",
@@ -636,8 +676,10 @@
    "npm:react"
   ],
   "license": "owner",
-  "proof": [],
-  "proof_scope": "none",
+  "proof": [
+   "kosif-tool/.claude/skills/kosif-superpowers/references/cognition.md"
+  ],
+  "proof_scope": "repo",
   "styles": [],
   "tags": [
    "decision",
@@ -667,8 +709,10 @@
    "python3"
   ],
   "license": "owner",
-  "proof": [],
-  "proof_scope": "none",
+  "proof": [
+   "kosif-tool/.claude/skills/kosif-superpowers/references/cognition.md"
+  ],
+  "proof_scope": "repo",
   "styles": [],
   "tags": [
    "argument",
@@ -698,8 +742,10 @@
    "python3"
   ],
   "license": "owner",
-  "proof": [],
-  "proof_scope": "none",
+  "proof": [
+   "kosif-tool/.claude/skills/kosif-superpowers/references/cognition.md"
+  ],
+  "proof_scope": "repo",
   "styles": [],
   "tags": [
    "argument",
@@ -729,8 +775,10 @@
    "python3"
   ],
   "license": "owner",
-  "proof": [],
-  "proof_scope": "none",
+  "proof": [
+   "kosif-tool/.claude/skills/kosif-superpowers/references/cognition.md"
+  ],
+  "proof_scope": "repo",
   "styles": [],
   "tags": [
    "planning",
@@ -760,8 +808,10 @@
    "python3"
   ],
   "license": "owner",
-  "proof": [],
-  "proof_scope": "none",
+  "proof": [
+   "kosif-tool/.claude/skills/kosif-superpowers/references/cognition.md"
+  ],
+  "proof_scope": "repo",
   "styles": [],
   "tags": [
    "planning",
@@ -791,8 +841,10 @@
    "python3"
   ],
   "license": "owner",
-  "proof": [],
-  "proof_scope": "none",
+  "proof": [
+   "kosif-tool/.claude/skills/kosif-superpowers/references/cognition.md"
+  ],
+  "proof_scope": "repo",
   "styles": [],
   "tags": [
    "planning",
@@ -822,8 +874,10 @@
    "python3"
   ],
   "license": "owner",
-  "proof": [],
-  "proof_scope": "none",
+  "proof": [
+   "kosif-tool/.claude/skills/kosif-superpowers/references/cognition.md"
+  ],
+  "proof_scope": "repo",
   "styles": [],
   "tags": [
    "planning",
@@ -853,8 +907,10 @@
    "python3"
   ],
   "license": "owner",
-  "proof": [],
-  "proof_scope": "none",
+  "proof": [
+   "kosif-tool/.claude/skills/kosif-superpowers/references/cognition.md"
+  ],
+  "proof_scope": "repo",
   "styles": [],
   "tags": [
    "structuring",
@@ -884,8 +940,10 @@
    "python3"
   ],
   "license": "owner",
-  "proof": [],
-  "proof_scope": "none",
+  "proof": [
+   "kosif-tool/.claude/skills/kosif-superpowers/references/cognition.md"
+  ],
+  "proof_scope": "repo",
   "styles": [],
   "tags": [
    "structuring",
@@ -915,8 +973,10 @@
    "python3"
   ],
   "license": "owner",
-  "proof": [],
-  "proof_scope": "none",
+  "proof": [
+   "kosif-tool/.claude/skills/kosif-superpowers/references/cognition.md"
+  ],
+  "proof_scope": "repo",
   "styles": [],
   "tags": [
    "diagnosis",
@@ -946,8 +1006,10 @@
    "python3"
   ],
   "license": "owner",
-  "proof": [],
-  "proof_scope": "none",
+  "proof": [
+   "kosif-tool/.claude/skills/kosif-superpowers/references/cognition.md"
+  ],
+  "proof_scope": "repo",
   "styles": [],
   "tags": [
    "diagnosis",
@@ -977,8 +1039,10 @@
    "python3"
   ],
   "license": "owner",
-  "proof": [],
-  "proof_scope": "none",
+  "proof": [
+   "kosif-tool/.claude/skills/kosif-superpowers/references/cognition.md"
+  ],
+  "proof_scope": "repo",
   "styles": [],
   "tags": [
    "creativity",
@@ -1008,8 +1072,10 @@
    "python3"
   ],
   "license": "owner",
-  "proof": [],
-  "proof_scope": "none",
+  "proof": [
+   "kosif-tool/.claude/skills/kosif-superpowers/references/cognition.md"
+  ],
+  "proof_scope": "repo",
   "styles": [],
   "tags": [
    "creativity",
@@ -1039,8 +1105,10 @@
    "python3"
   ],
   "license": "owner",
-  "proof": [],
-  "proof_scope": "none",
+  "proof": [
+   "kosif-tool/.claude/skills/kosif-superpowers/references/cognition.md"
+  ],
+  "proof_scope": "repo",
   "styles": [],
   "tags": [
    "creativity",
@@ -1070,8 +1138,10 @@
    "python3"
   ],
   "license": "owner",
-  "proof": [],
-  "proof_scope": "none",
+  "proof": [
+   "kosif-tool/.claude/skills/kosif-superpowers/references/cognition.md"
+  ],
+  "proof_scope": "repo",
   "styles": [],
   "tags": [
    "creativity",
@@ -1101,8 +1171,10 @@
    "python3"
   ],
   "license": "owner",
-  "proof": [],
-  "proof_scope": "none",
+  "proof": [
+   "kosif-tool/.claude/skills/kosif-superpowers/references/cognition.md"
+  ],
+  "proof_scope": "repo",
   "styles": [],
   "tags": [
    "creativity",
@@ -1132,8 +1204,10 @@
    "python3"
   ],
   "license": "owner",
-  "proof": [],
-  "proof_scope": "none",
+  "proof": [
+   "kosif-tool/.claude/skills/kosif-superpowers/references/cognition.md"
+  ],
+  "proof_scope": "repo",
   "styles": [],
   "tags": [
    "product",
@@ -1163,8 +1237,10 @@
    "python3"
   ],
   "license": "owner",
-  "proof": [],
-  "proof_scope": "none",
+  "proof": [
+   "kosif-tool/.claude/skills/kosif-superpowers/references/cognition.md"
+  ],
+  "proof_scope": "repo",
   "styles": [],
   "tags": [
    "communication",
@@ -1194,8 +1270,10 @@
    "python3"
   ],
   "license": "owner",
-  "proof": [],
-  "proof_scope": "none",
+  "proof": [
+   "kosif-tool/.claude/skills/kosif-superpowers/references/cognition.md"
+  ],
+  "proof_scope": "repo",
   "styles": [],
   "tags": [
    "communication",
@@ -1225,8 +1303,10 @@
    "python3"
   ],
   "license": "owner",
-  "proof": [],
-  "proof_scope": "none",
+  "proof": [
+   "kosif-tool/.claude/skills/kosif-superpowers/references/cognition.md"
+  ],
+  "proof_scope": "repo",
   "styles": [],
   "tags": [
    "learning",
@@ -1256,8 +1336,10 @@
    "python3"
   ],
   "license": "owner",
-  "proof": [],
-  "proof_scope": "none",
+  "proof": [
+   "kosif-tool/.claude/skills/kosif-superpowers/references/cognition.md"
+  ],
+  "proof_scope": "repo",
   "styles": [],
   "tags": [
    "learning",
@@ -1287,8 +1369,10 @@
    "python3"
   ],
   "license": "owner",
-  "proof": [],
-  "proof_scope": "none",
+  "proof": [
+   "kosif-tool/.claude/skills/kosif-superpowers/references/cognition.md"
+  ],
+  "proof_scope": "repo",
   "styles": [],
   "tags": [
    "epistemics",
@@ -1318,8 +1402,10 @@
    "pip:hypothesis"
   ],
   "license": "owner",
-  "proof": [],
-  "proof_scope": "none",
+  "proof": [
+   "kosif-tool/.claude/skills/kosif-superpowers/references/cognition.md"
+  ],
+  "proof_scope": "repo",
   "styles": [],
   "tags": [
    "epistemics",
@@ -1349,8 +1435,10 @@
    "python3"
   ],
   "license": "owner",
-  "proof": [],
-  "proof_scope": "none",
+  "proof": [
+   "kosif-tool/.claude/skills/kosif-superpowers/references/cognition.md"
+  ],
+  "proof_scope": "repo",
   "styles": [],
   "tags": [
    "biases",
@@ -1380,8 +1468,10 @@
    "python3"
   ],
   "license": "owner",
-  "proof": [],
-  "proof_scope": "none",
+  "proof": [
+   "kosif-tool/.claude/skills/kosif-superpowers/references/cognition.md"
+  ],
+  "proof_scope": "repo",
   "styles": [],
   "tags": [
    "biases",
@@ -1411,8 +1501,10 @@
    "python3"
   ],
   "license": "owner",
-  "proof": [],
-  "proof_scope": "none",
+  "proof": [
+   "kosif-tool/.claude/skills/kosif-superpowers/references/cognition.md"
+  ],
+  "proof_scope": "repo",
   "styles": [],
   "tags": [
    "biases",
@@ -1442,8 +1534,10 @@
    "python3"
   ],
   "license": "owner",
-  "proof": [],
-  "proof_scope": "none",
+  "proof": [
+   "kosif-tool/.claude/skills/kosif-superpowers/references/cognition.md"
+  ],
+  "proof_scope": "repo",
   "styles": [],
   "tags": [
    "biases",
@@ -1473,8 +1567,10 @@
    "python3"
   ],
   "license": "owner",
-  "proof": [],
-  "proof_scope": "none",
+  "proof": [
+   "kosif-tool/.claude/skills/kosif-superpowers/references/cognition.md"
+  ],
+  "proof_scope": "repo",
   "styles": [],
   "tags": [
    "decision",
@@ -1504,8 +1600,10 @@
    "python3"
   ],
   "license": "owner",
-  "proof": [],
-  "proof_scope": "none",
+  "proof": [
+   "kosif-tool/.claude/skills/kosif-superpowers/references/cognition.md"
+  ],
+  "proof_scope": "repo",
   "styles": [],
   "tags": [
    "decision",
@@ -1535,8 +1633,10 @@
    "python3"
   ],
   "license": "owner",
-  "proof": [],
-  "proof_scope": "none",
+  "proof": [
+   "kosif-tool/.claude/skills/kosif-superpowers/references/cognition.md"
+  ],
+  "proof_scope": "repo",
   "styles": [],
   "tags": [
    "planning",
@@ -1566,8 +1666,10 @@
    "python3"
   ],
   "license": "owner",
-  "proof": [],
-  "proof_scope": "none",
+  "proof": [
+   "kosif-tool/.claude/skills/kosif-superpowers/references/cognition.md"
+  ],
+  "proof_scope": "repo",
   "styles": [],
   "tags": [
    "planning",
@@ -1597,8 +1699,10 @@
    "python3"
   ],
   "license": "owner",
-  "proof": [],
-  "proof_scope": "none",
+  "proof": [
+   "kosif-tool/.claude/skills/kosif-superpowers/references/cognition.md"
+  ],
+  "proof_scope": "repo",
   "styles": [],
   "tags": [
    "strategy",
@@ -1628,8 +1732,10 @@
    "python3"
   ],
   "license": "owner",
-  "proof": [],
-  "proof_scope": "none",
+  "proof": [
+   "kosif-tool/.claude/skills/kosif-superpowers/references/cognition.md"
+  ],
+  "proof_scope": "repo",
   "styles": [],
   "tags": [
    "strategy",
@@ -1659,8 +1765,10 @@
    "python3"
   ],
   "license": "owner",
-  "proof": [],
-  "proof_scope": "none",
+  "proof": [
+   "kosif-tool/.claude/skills/kosif-superpowers/references/cognition.md"
+  ],
+  "proof_scope": "repo",
   "styles": [],
   "tags": [
    "strategy",
@@ -1690,8 +1798,10 @@
    "python3"
   ],
   "license": "owner",
-  "proof": [],
-  "proof_scope": "none",
+  "proof": [
+   "kosif-tool/.claude/skills/kosif-superpowers/references/cognition.md"
+  ],
+  "proof_scope": "repo",
   "styles": [],
   "tags": [
    "economics",
@@ -1721,8 +1831,10 @@
    "python3"
   ],
   "license": "owner",
-  "proof": [],
-  "proof_scope": "none",
+  "proof": [
+   "kosif-tool/.claude/skills/kosif-superpowers/references/cognition.md"
+  ],
+  "proof_scope": "repo",
   "styles": [],
   "tags": [
    "people",
@@ -1752,8 +1864,10 @@
    "python3"
   ],
   "license": "owner",
-  "proof": [],
-  "proof_scope": "none",
+  "proof": [
+   "kosif-tool/.claude/skills/kosif-superpowers/references/cognition.md"
+  ],
+  "proof_scope": "repo",
   "styles": [],
   "tags": [
    "learning",
@@ -1783,8 +1897,10 @@
    "python3"
   ],
   "license": "owner",
-  "proof": [],
-  "proof_scope": "none",
+  "proof": [
+   "kosif-tool/.claude/skills/kosif-superpowers/references/cognition.md"
+  ],
+  "proof_scope": "repo",
   "styles": [],
   "tags": [
    "engineering",
@@ -1814,8 +1930,10 @@
    "python3"
   ],
   "license": "owner",
-  "proof": [],
-  "proof_scope": "none",
+  "proof": [
+   "kosif-tool/.claude/skills/kosif-superpowers/references/cognition.md"
+  ],
+  "proof_scope": "repo",
   "styles": [],
   "tags": [
    "communication",
@@ -1845,8 +1963,10 @@
    "python3"
   ],
   "license": "owner",
-  "proof": [],
-  "proof_scope": "none",
+  "proof": [
+   "kosif-tool/.claude/skills/kosif-superpowers/references/cognition.md"
+  ],
+  "proof_scope": "repo",
   "styles": [],
   "tags": [
    "decision",
@@ -1876,8 +1996,10 @@
    "python3"
   ],
   "license": "owner",
-  "proof": [],
-  "proof_scope": "none",
+  "proof": [
+   "kosif-tool/.claude/skills/kosif-superpowers/references/cognition.md"
+  ],
+  "proof_scope": "repo",
   "styles": [],
   "tags": [
    "forecasting",
@@ -1907,8 +2029,10 @@
    "python3"
   ],
   "license": "owner",
-  "proof": [],
-  "proof_scope": "none",
+  "proof": [
+   "kosif-tool/.claude/skills/kosif-superpowers/references/cognition.md"
+  ],
+  "proof_scope": "repo",
   "styles": [],
   "tags": [
    "epistemics",
@@ -1938,8 +2062,10 @@
    "python3"
   ],
   "license": "owner",
-  "proof": [],
-  "proof_scope": "none",
+  "proof": [
+   "kosif-tool/.claude/skills/kosif-superpowers/references/cognition.md"
+  ],
+  "proof_scope": "repo",
   "styles": [],
   "tags": [
    "capability",

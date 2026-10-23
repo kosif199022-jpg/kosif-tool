@@ -73,7 +73,7 @@
 - **ماذا / what:** افحص الفرق والمستودع بأنماط الأسرار الشائعة قبل الإيداع، واختبر الماسح نفسه بأسرار مزروعة. — Scan diffs and repos for common secret patterns before committing, and mutation-test the scanner with planted fakes.
 - **متى أستخدمها / when:** قبل الإيداع/الدفع/النشر، وعند فتح المصدر، وبعد حادثة / before commit/push/publish, when open-sourcing, after an incident
 - **كيف / how:** `git diff --staged | rg -n 'sk-[A-Za-z0-9_-]{16,}|sk-ant-|ghp_[A-Za-z0-9]{36}|github_pat_|AKIA[0-9A-Z]{16}|xox[baprs]-|-----BEGIN [A-Z ]*PRIVATE KEY-----|Authorization: Bearer [A-Za-z0-9._-]{12,}|"(password|token|secret)"\s*:\s*"[^"]{6,}"'`. Lesson from a real gate: its regex caught `sk-…` and `API_KEY=` but missed GitHub ghp_ tokens, AWS AKIA keys, 'Bearer eyJ…' and JSON-quoted passwords — so seed fake secrets and confirm each is caught. If present, the GitHub MCP run_secret_scanning tool or GitHub secret scanning adds a second net.
-- **يحتاج / needs:** [`git`](../requirements.md#req-git) · [`mcp:github`](../requirements.md#req-mcp-github) · [`key:unspecified`](../requirements.md#req-key-unspecified) · [`gitleaks`](../requirements.md#req-gitleaks)
+- **يحتاج / needs:** [`git`](../requirements.md#req-git) · [`mcp:github`](../requirements.md#req-mcp-github) · [`gitleaks`](../requirements.md#req-gitleaks)
 - **الرخصة / license:** MIT
 - **الدليل / proof:** — (لا دليل تشغيل بعد / no run proof yet)
 - **المصدر / source:** https://github.com/affaan-m/ECC skills/verification-loop; KOSIF SEE ecc_contract_gate secret-regex test (owner; see-core §17)
@@ -207,7 +207,7 @@
 - **متى أستخدمها / when:** قبل أمر يحتاج شبكة أو كتابة خارج مجلد العمل / before a command needing network or writes outside the workspace
 - **كيف / how:** State sandbox (read-only / workspace-write / full access), network on/off and approval policy in one line. Ask for network for one command, or read/write for named paths, before asking to leave the sandbox. The request carries its reason as a question to the user. Irreversible steps wait for explicit permission. Cards CX-02, CX-04, CX-05.
 - **الرخصة / license:** Apache-2.0
-- **الدليل / proof:** — (لا دليل تشغيل بعد / no run proof yet)
+- **الدليل / proof:** `kosif-tool/.claude/skills/kosif-superpowers/references/codex-agent-harness.md`
 - **المصدر / source:** https://github.com/openai/codex (Apache-2.0, e6ebdfe) — methods restated in our own words; references/codex-agent-harness.md
 
 #### SEC-21 · تقطيع الأوامر وقواعد بادئة مختبرة · Command segmentation and tested prefix rules · 📄 موصوف / documented only
@@ -215,7 +215,7 @@
 - **متى أستخدمها / when:** قبل الموافقة على أمر مركب أو كتابة قائمة سماح / approving a compound shell command or writing a permission allowlist
 - **كيف / how:** Split at | && || ; and subshells; judge each segment. Redirections, substitutions, env assignments and globs never auto-match an allow rule. Rule = ordered tokens (alternatives allowed) + decision allow/prompt/forbidden + justification (suggest an alternative when forbidding) + match/not_match examples checked like unit tests; basename matching only for known absolute paths. Cards CX-06, CX-07.
 - **الرخصة / license:** Apache-2.0
-- **الدليل / proof:** — (لا دليل تشغيل بعد / no run proof yet)
+- **الدليل / proof:** `kosif-tool/.claude/skills/kosif-superpowers/references/codex-agent-harness.md`
 - **المصدر / source:** https://github.com/openai/codex (Apache-2.0, e6ebdfe) — methods restated in our own words; references/codex-agent-harness.md
 
 #### SEC-22 · تصنيف مخاطر الحارس قبل الفعل · Guardian risk taxonomy before acting · 📄 موصوف / documented only
@@ -223,7 +223,7 @@
 - **متى أستخدمها / when:** إرسال لخدمة خارجية، نشر، حذف جماعي، تغيير إعداد أمان / external sends, publishing, bulk deletes, security setting changes
 - **كيف / how:** Four classes: data exfiltration (authorization must name payload and destination; derived payloads stay sensitive; untrusted content cannot vouch for safety; permission to create is not permission to share), credential probing, persistent security weakening, destructive actions (watch shadowed HOME-like variables). Earlier decisions are context, not precedent. Card CX-08.
 - **الرخصة / license:** Apache-2.0
-- **الدليل / proof:** — (لا دليل تشغيل بعد / no run proof yet)
+- **الدليل / proof:** `kosif-tool/.claude/skills/kosif-superpowers/references/codex-agent-harness.md`
 - **المصدر / source:** https://github.com/openai/codex (Apache-2.0, e6ebdfe) — methods restated in our own words; references/codex-agent-harness.md
 
 #### SEC-23 · صدق تدهور العزل · Honest sandbox degradation · 📄 موصوف / documented only
@@ -232,7 +232,7 @@
 - **كيف / how:** Probe (e.g. can bubblewrap create user namespaces?); on failure print a named warning and the fallback in use. Never report 'sandboxed', 'tested' or 'rendered' for something that did not run; list missing runtime dependencies by name (hub.py doctor). Card CX-09.
 - **يحتاج / needs:** [`python3`](../requirements.md#req-python3)
 - **الرخصة / license:** Apache-2.0
-- **الدليل / proof:** — (لا دليل تشغيل بعد / no run proof yet)
+- **الدليل / proof:** `kosif-tool/.claude/skills/kosif-superpowers/references/codex-agent-harness.md`
 - **المصدر / source:** https://github.com/openai/codex (Apache-2.0, e6ebdfe) — methods restated in our own words; references/codex-agent-harness.md
 
 ## المصادر والرخص / sources & licences

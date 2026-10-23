@@ -161,7 +161,6 @@
   "requires": [
    "git",
    "mcp:github",
-   "key:unspecified",
    "gitleaks"
   ],
   "license": "MIT",
@@ -570,8 +569,10 @@
   "install": "",
   "requires": [],
   "license": "Apache-2.0",
-  "proof": [],
-  "proof_scope": "none",
+  "proof": [
+   "kosif-tool/.claude/skills/kosif-superpowers/references/codex-agent-harness.md"
+  ],
+  "proof_scope": "repo",
   "styles": [],
   "tags": [
    "approval policy",
@@ -600,8 +601,10 @@
   "install": "",
   "requires": [],
   "license": "Apache-2.0",
-  "proof": [],
-  "proof_scope": "none",
+  "proof": [
+   "kosif-tool/.claude/skills/kosif-superpowers/references/codex-agent-harness.md"
+  ],
+  "proof_scope": "repo",
   "styles": [],
   "tags": [
    "exec policy",
@@ -629,8 +632,10 @@
   "install": "",
   "requires": [],
   "license": "Apache-2.0",
-  "proof": [],
-  "proof_scope": "none",
+  "proof": [
+   "kosif-tool/.claude/skills/kosif-superpowers/references/codex-agent-harness.md"
+  ],
+  "proof_scope": "repo",
   "styles": [],
   "tags": [
    "exfiltration",
@@ -662,8 +667,10 @@
    "python3"
   ],
   "license": "Apache-2.0",
-  "proof": [],
-  "proof_scope": "none",
+  "proof": [
+   "kosif-tool/.claude/skills/kosif-superpowers/references/codex-agent-harness.md"
+  ],
+  "proof_scope": "repo",
   "styles": [],
   "tags": [
    "sandbox probe",

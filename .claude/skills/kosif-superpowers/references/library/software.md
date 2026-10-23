@@ -645,8 +645,8 @@
 | `APP-02` | قدرات الصفحة أثناء التشغيل | Artifact runtime capabilities | key | key:unspecified |
 | `APP-03` | صفوف وتعليقات الصفحة | ArtifactData and ArtifactComments tools | key | claude:tools |
 | `APP-12` | تطبيقات تستدعي Claude عبر API | Apps that call Claude via the API | key | node, pip:anthropic, key:unspecified |
-| `APP-14` | بناء مواقع بالذكاء الاصطناعي (مدفوع) | Hosted website builder (Higgsfield, paid) | key | pip:higgsfield, key:unspecified |
-| `CODE-17` | مراجعة طلب دمج بفريق وكلاء | PR review fan-out | key | gh, mcp:github, key:unspecified |
+| `APP-14` | بناء مواقع بالذكاء الاصطناعي (مدفوع) | Hosted website builder (Higgsfield, paid) | key | pip:higgsfield |
+| `CODE-17` | مراجعة طلب دمج بفريق وكلاء | PR review fan-out | key | gh, mcp:github |
 | `UI-76` | من فيجما إلى طبقات متحركة | Figma frame → animatable layers | key | key:unspecified |
 | `UI-46` | لحظة احتفال توقيعية | Signature celebration moment | idea |  |
 | `UI-57` | قلب الهاتف وتبديل الشاشة | Phone flip with mid-swap | idea |  |

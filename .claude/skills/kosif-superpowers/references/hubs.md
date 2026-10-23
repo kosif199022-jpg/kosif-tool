@@ -29,7 +29,7 @@
 - **ابدأ / start:** `python3 scripts/source_scout.py check` · خطة التثبيت: `python3 scripts/kosif_hubs.py install research`
 - **السكربتات / scripts:** `scripts/source_scout.py` · `scripts/creative_external_search.py` · `scripts/fetch_reference.py` · `scripts/atlas_capability_miner.py`
 - **العائلات / families:** [atlas-research](powers/atlas-research.md) · [web-research](powers/web-research.md) · [knowledge-graph](powers/knowledge-graph.md)
-- **المستلزمات / needs:** `key:graphify` · `python3` · `key:unspecified` · `claude:tools` · `chromium` · `node` · `npm:mermaid` · `network` · `git` · `npm:d3` · `pip:office` · `pip:trafilatura` · `yt-dlp` · `pip:faster-whisper`
+- **المستلزمات / needs:** `key:graphify` · `python3` · `claude:tools` · `chromium` · `key:unspecified` · `node` · `npm:mermaid` · `network` · `git` · `npm:d3` · `pip:office` · `pip:trafilatura` · `yt-dlp` · `pip:faster-whisper`
 - **يتصل بـ / links:** [software](#hub-software) · [reverse](#hub-reverse) · [data](#hub-data) · [agents](#hub-agents)
 
 | القدرة الخارقة | حجم | أفضل | جاهز |
@@ -210,7 +210,7 @@
 - **السكربتات / scripts:** `scripts/montage_pro.py` · `scripts/stream_grabber.py` · `scripts/motion_director.py` · `scripts/motion_stack.py` · `scripts/motion_runtime.py` · `scripts/reference_edit_engine.py` · `scripts/cinematic_cut_planner.py` · `scripts/cinematic_broll_render.py` · `scripts/fetch_video.py` · `scripts/media_sources.py` · `scripts/verify_video.py`
 - **العائلات / families:** [camera-composition-layout](powers/camera-composition-layout.md) · [characters-rigs](powers/characters-rigs.md) · [easing-timing-rhythm](powers/easing-timing-rhythm.md) · [formats-platforms](powers/formats-platforms.md) · [story-direction-ideas](powers/story-direction-ideas.md) · [transitions-cuts](powers/transitions-cuts.md) · [video-download](powers/video-download.md)
 - **المستلزمات / needs:** `npm:hyperframes` · `npm:gsap` · `ffmpeg` · `python3` · `npm:three` · `chromium` · `imagemagick` · `key:unspecified` · `npm:remotion` · `node` · `pip:opencv` · `pip:numpy` · `yt-dlp` · `key:video-gen`
-- **يتصل بـ / links:** [software](#hub-software) · [3d](#hub-3d) · [images](#hub-images) · [audio](#hub-audio)
+- **يتصل بـ / links:** [3d](#hub-3d) · [software](#hub-software) · [images](#hub-images) · [audio](#hub-audio)
 
 | القدرة الخارقة | حجم | أفضل | جاهز |
 |---|---|---|---|
@@ -236,7 +236,7 @@
 - **ابدأ / start:** `python3 scripts/audio_cue_mapper.py --help` · خطة التثبيت: `python3 scripts/kosif_hubs.py install audio`
 - **السكربتات / scripts:** `scripts/audio_cue_mapper.py` · `scripts/music_rhythm_engine.py` · `scripts/montage_pro.py`
 - **العائلات / families:** [audio-sync-captions](powers/audio-sync-captions.md) · [music-beat-sound](powers/music-beat-sound.md) · [voice-tts](powers/voice-tts.md)
-- **المستلزمات / needs:** `ffmpeg` · `python3` · `pip:numpy` · `npm:hyperframes` · `imagemagick` · `pip:faster-whisper` · `key:elevenlabs` · `key:unspecified` · `key:video-gen` · `npm:remotion` · `node` · `pip:piper` · `fonts:arabic` · `chromium`
+- **المستلزمات / needs:** `ffmpeg` · `python3` · `pip:numpy` · `npm:hyperframes` · `imagemagick` · `pip:faster-whisper` · `key:elevenlabs` · `key:video-gen` · `npm:remotion` · `key:unspecified` · `node` · `pip:piper` · `fonts:arabic` · `chromium`
 - **يتصل بـ / links:** [images](#hub-images) · [motion](#hub-motion) · [quality](#hub-quality) · [type](#hub-type)
 
 | القدرة الخارقة | حجم | أفضل | جاهز |

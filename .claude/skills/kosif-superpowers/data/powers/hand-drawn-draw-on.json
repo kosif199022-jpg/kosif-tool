@@ -2,6 +2,7 @@
  {
   "id": "DRAW-01",
   "family": "hand-drawn-draw-on",
+  "domain": "motion",
   "name_ar": "رسم المسار بإزاحة الشرطة",
   "name_en": "SVG stroke draw-on",
   "status": "proven",
@@ -41,6 +42,7 @@
  {
   "id": "DRAW-02",
   "family": "hand-drawn-draw-on",
+  "domain": "motion",
   "name_ar": "قلم مكتبة الحركة برأس يهبط",
   "name_en": "Kit drawPath with landing head & flowDash",
   "status": "ready",
@@ -70,6 +72,7 @@
  {
   "id": "DRAW-03",
   "family": "hand-drawn-draw-on",
+  "domain": "motion",
   "name_ar": "سرعة القلم والرفع",
   "name_en": "Pen speed & lifts",
   "status": "proven",
@@ -102,6 +105,7 @@
  {
   "id": "DRAW-04",
   "family": "hand-drawn-draw-on",
+  "domain": "motion",
   "name_ar": "ترتيب الرسم البشري ووصفة «ارسم وسمِّ»",
   "name_en": "Human draw order & draw-and-label",
   "status": "proven",
@@ -132,6 +136,7 @@
  {
   "id": "DRAW-05",
   "family": "hand-drawn-draw-on",
+  "domain": "motion",
   "name_ar": "رابط مخطط برأس سهم",
   "name_en": "Diagram edge draw-on with arrowhead",
   "status": "ready",
@@ -162,6 +167,7 @@
  {
   "id": "DRAW-06",
   "family": "hand-drawn-draw-on",
+  "domain": "motion",
   "name_ar": "رأس يتبع الخط: يد، ماركر، طباشيرة",
   "name_en": "Pen-tip followers: hand, marker, chalk",
   "status": "proven",
@@ -200,6 +206,7 @@
  {
   "id": "DRAW-07",
   "family": "hand-drawn-draw-on",
+  "domain": "motion",
   "name_ar": "رأس متوهج يجرّ الخط",
   "name_en": "Glowing head draw",
   "status": "proven",
@@ -239,6 +246,7 @@
  {
   "id": "DRAW-08",
   "family": "hand-drawn-draw-on",
+  "domain": "motion",
   "name_ar": "كشف متعدد الأجزاء بالطول التراكمي",
   "name_en": "Cumulative-length multi-segment reveal",
   "status": "documented",
@@ -267,6 +275,7 @@
  {
   "id": "DRAW-09",
   "family": "hand-drawn-draw-on",
+  "domain": "motion",
   "name_ar": "سلامة رسم المسارات",
   "name_en": "SVG draw-on safety",
   "status": "install",
@@ -294,6 +303,7 @@
  {
   "id": "DRAW-10",
   "family": "hand-drawn-draw-on",
+  "domain": "motion",
   "name_ar": "نهر يمتلئ ثم يجري",
   "name_en": "River fill then flow",
   "status": "ready",
@@ -321,6 +331,7 @@
  {
   "id": "DRAW-11",
   "family": "hand-drawn-draw-on",
+  "domain": "motion",
   "name_ar": "المحراب بقلم ذهبي",
   "name_en": "Gold-pen arch draw-on",
   "status": "ready",
@@ -347,6 +358,7 @@
  {
   "id": "DRAW-12",
   "family": "hand-drawn-draw-on",
+  "domain": "motion",
   "name_ar": "رسوم خطية صغيرة فوق الفيديو",
   "name_en": "Line micro-graphics over footage",
   "status": "ready",
@@ -375,6 +387,7 @@
  {
   "id": "DRAW-13",
   "family": "hand-drawn-draw-on",
+  "domain": "motion",
   "name_ar": "أيقونات المعنى المرسومة",
   "name_en": "Meaning icons drawn on",
   "status": "ready",
@@ -406,6 +419,7 @@
  {
   "id": "DRAW-14",
   "family": "hand-drawn-draw-on",
+  "domain": "motion",
   "name_ar": "قوالب موشن بالقلم",
   "name_en": "Pen-drawn motion templates",
   "status": "proven",
@@ -436,6 +450,7 @@
  {
   "id": "DRAW-15",
   "family": "hand-drawn-draw-on",
+  "domain": "motion",
   "name_ar": "كتابة بقناع فرشاة من اليمين",
   "name_en": "Brush-mask write-on (RTL)",
   "status": "proven",
@@ -472,6 +487,7 @@
  {
   "id": "DRAW-16",
   "family": "hand-drawn-draw-on",
+  "domain": "motion",
   "name_ar": "كتابة حقيقية بترتيب الضربات (لاتيني)",
   "name_en": "True glyph write-on with stroke order (Latin)",
   "status": "install",
@@ -507,6 +523,7 @@
  {
   "id": "DRAW-17",
   "family": "hand-drawn-draw-on",
+  "domain": "motion",
   "name_ar": "ترجمة بخط اليد تُكتب",
   "name_en": "Handwritten typewriter caption",
   "status": "documented",
@@ -536,6 +553,7 @@
  {
   "id": "DRAW-18",
   "family": "hand-drawn-draw-on",
+  "domain": "motion",
   "name_ar": "أنماط قلم التحديد",
   "name_en": "Marker emphasis modes",
   "status": "documented",
@@ -572,6 +590,7 @@
  {
   "id": "DRAW-19",
   "family": "hand-drawn-draw-on",
+  "domain": "motion",
   "name_ar": "دائرة يدوية مرتعشة",
   "name_en": "Hand-drawn circle emphasis",
   "status": "proven",
@@ -606,6 +625,7 @@
  {
   "id": "DRAW-20",
   "family": "hand-drawn-draw-on",
+  "domain": "motion",
   "name_ar": "خربشة توضيحية فوق الصورة",
   "name_en": "Doodle annotations on footage",
   "status": "seen",
@@ -637,6 +657,7 @@
  {
   "id": "DRAW-21",
   "family": "hand-drawn-draw-on",
+  "domain": "motion",
   "name_ar": "شطب بخربشة ثم إعادة كتابة",
   "name_en": "Scribble strike-through rewrite",
   "status": "seen",
@@ -664,6 +685,7 @@
  {
   "id": "DRAW-22",
   "family": "hand-drawn-draw-on",
+  "domain": "motion",
   "name_ar": "ملاحظة يدوية داخل إطار",
   "name_en": "Boxed handwritten callout",
   "status": "seen",
@@ -694,6 +716,7 @@
  {
   "id": "DRAW-23",
   "family": "hand-drawn-draw-on",
+  "domain": "motion",
   "name_ar": "علامات rough-notation",
   "name_en": "Rough-notation marks",
   "status": "install",
@@ -721,6 +744,7 @@
  {
   "id": "DRAW-24",
   "family": "hand-drawn-draw-on",
+  "domain": "motion",
   "name_ar": "خط الرحلة من اليمين",
   "name_en": "Journey line draw-on (RTL)",
   "status": "ready",
@@ -747,6 +771,7 @@
  {
   "id": "DRAW-25",
   "family": "hand-drawn-draw-on",
+  "domain": "motion",
   "name_ar": "عدم الكمال المقصود",
   "name_en": "Deliberate imperfection",
   "status": "documented",
@@ -781,6 +806,7 @@
  {
   "id": "DRAW-26",
   "family": "hand-drawn-draw-on",
+  "domain": "motion",
   "name_ar": "غليان الخط",
   "name_en": "Line boil",
   "status": "documented",
@@ -816,6 +842,7 @@
  {
   "id": "DRAW-27",
   "family": "hand-drawn-draw-on",
+  "domain": "motion",
   "name_ar": "رسم خشن بأسلوب Rough.js",
   "name_en": "Rough.js / Excalidraw sketch rendering",
   "status": "install",
@@ -845,6 +872,7 @@
  {
   "id": "DRAW-28",
   "family": "hand-drawn-draw-on",
+  "domain": "motion",
   "name_ar": "خطوط بضغط على طريقة perfect-freehand",
   "name_en": "Pressure strokes & clipped hatching",
   "status": "proven",
@@ -881,6 +909,7 @@
  {
   "id": "DRAW-29",
   "family": "hand-drawn-draw-on",
+  "domain": "motion",
   "name_ar": "حبر بصمة بضغط وتظليل",
   "name_en": "Basma INK pressure strokes & hatching",
   "status": "ready",
@@ -909,6 +938,7 @@
  {
   "id": "DRAW-30",
   "family": "hand-drawn-draw-on",
+  "domain": "motion",
   "name_ar": "محرك فرشاة الحبر الحتمي",
   "name_en": "Deterministic ink-brush engine",
   "status": "documented",
@@ -938,6 +968,7 @@
  {
   "id": "DRAW-31",
   "family": "hand-drawn-draw-on",
+  "domain": "motion",
   "name_ar": "ملمس الرصاص والطباشير بالمرشحات",
   "name_en": "Pencil & chalk texture filters",
   "status": "documented",
@@ -965,6 +996,7 @@
  {
   "id": "DRAW-32",
   "family": "hand-drawn-draw-on",
+  "domain": "motion",
   "name_ar": "خطوط ماء موازية للساحل",
   "name_en": "Triple coastline water lines",
   "status": "seen",
@@ -992,6 +1024,7 @@
  {
   "id": "DRAW-33",
   "family": "hand-drawn-draw-on",
+  "domain": "motion",
   "name_ar": "سبورة بيضاء",
   "name_en": "Whiteboard",
   "status": "proven",
@@ -1026,6 +1059,7 @@
  {
   "id": "DRAW-34",
   "family": "hand-drawn-draw-on",
+  "domain": "motion",
   "name_ar": "سبورة سينمائية",
   "name_en": "Whiteboard cinematic",
   "status": "ready",
@@ -1055,6 +1089,7 @@
  {
   "id": "DRAW-35",
   "family": "hand-drawn-draw-on",
+  "domain": "motion",
   "name_ar": "سبورة الطباشير",
   "name_en": "Chalkboard",
   "status": "ready",
@@ -1086,6 +1121,7 @@
  {
   "id": "DRAW-36",
   "family": "hand-drawn-draw-on",
+  "domain": "motion",
   "name_ar": "قصص الدودل",
   "name_en": "Doodle stories",
   "status": "ready",
@@ -1118,6 +1154,7 @@
  {
   "id": "DRAW-37",
   "family": "hand-drawn-draw-on",
+  "domain": "motion",
   "name_ar": "قلم البلوتر",
   "name_en": "Plotter pen",
   "status": "ready",
@@ -1150,6 +1187,7 @@
  {
   "id": "DRAW-38",
   "family": "hand-drawn-draw-on",
+  "domain": "motion",
   "name_ar": "إطار بإطار على اثنين",
   "name_en": "Frame-by-frame on twos",
   "status": "ready",
@@ -1180,6 +1218,7 @@
  {
   "id": "DRAW-39",
   "family": "hand-drawn-draw-on",
+  "domain": "motion",
   "name_ar": "رسومات الماركر للقصص",
   "name_en": "Marker-doodle story illustrations",
   "status": "documented",
@@ -1205,6 +1244,7 @@
  {
   "id": "DRAW-40",
   "family": "hand-drawn-draw-on",
+  "domain": "motion",
   "name_ar": "مشهد الرصاص الهادئ بلون واحد",
   "name_en": "Quiet pencil one-accent scene",
   "status": "documented",
@@ -1231,6 +1271,7 @@
  {
   "id": "DRAW-41",
   "family": "hand-drawn-draw-on",
+  "domain": "motion",
   "name_ar": "إطارات ستوري بورد بالرصاص",
   "name_en": "Pencil storyboard frames",
   "status": "documented",
@@ -1257,6 +1298,7 @@
  {
   "id": "DRAW-42",
   "family": "hand-drawn-draw-on",
+  "domain": "motion",
   "name_ar": "خريطة رحلة مرسومة باليد",
   "name_en": "Hand-drawn route sketch map",
   "status": "documented",
@@ -1282,6 +1324,7 @@
  {
   "id": "DRAW-43",
   "family": "hand-drawn-draw-on",
+  "domain": "motion",
   "name_ar": "مخططات تجادل لا تعرض",
   "name_en": "Diagrams that argue (sketch patterns)",
   "status": "documented",
@@ -1308,6 +1351,7 @@
  {
   "id": "DRAW-44",
   "family": "hand-drawn-draw-on",
+  "domain": "motion",
   "name_ar": "رسوم خطية استعارية تتحرك",
   "name_en": "Line-art metaphor motions",
   "status": "seen",
@@ -1344,6 +1388,7 @@
  {
   "id": "DRAW-45",
   "family": "hand-drawn-draw-on",
+  "domain": "motion",
   "name_ar": "قص الرسومات من صفحة الكراسة",
   "name_en": "Sketch cut-out lift & eraser wipe",
   "status": "documented",
@@ -1374,6 +1419,7 @@
  {
   "id": "DRAW-46",
   "family": "hand-drawn-draw-on",
+  "domain": "motion",
   "name_ar": "شريط مخطط يُرسم",
   "name_en": "Striped ribbon draw-on",
   "status": "seen",
@@ -1403,6 +1449,7 @@
  {
   "id": "DRAW-47",
   "family": "hand-drawn-draw-on",
+  "domain": "motion",
   "name_ar": "من مخطط سلكي إلى مجسم",
   "name_en": "Wireframe draw → solid formation",
   "status": "ready",
@@ -1435,6 +1482,7 @@
  {
   "id": "DRAW-48",
   "family": "hand-drawn-draw-on",
+  "domain": "motion",
   "name_ar": "ترتيب الرسام في الكشف",
   "name_en": "Painter reveal orders",
   "status": "proven",
@@ -1463,6 +1511,7 @@
  {
   "id": "DRAW-49",
   "family": "hand-drawn-draw-on",
+  "domain": "motion",
   "name_ar": "فيلم الرسم",
   "name_en": "Drawing film (picture forming as MP4)",
   "status": "proven",
@@ -1492,6 +1541,7 @@
  {
   "id": "DRAW-50",
   "family": "hand-drawn-draw-on",
+  "domain": "motion",
   "name_ar": "الرسم بترتيب الكود نفسه",
   "name_en": "PIL command recorder",
   "status": "proven",
@@ -1522,6 +1572,7 @@
  {
   "id": "DRAW-51",
   "family": "hand-drawn-draw-on",
+  "domain": "motion",
   "name_ar": "الرسم المطابق تمامًا",
   "name_en": "Exact-match painting",
   "status": "proven",
@@ -1551,6 +1602,7 @@
  {
   "id": "DRAW-52",
   "family": "hand-drawn-draw-on",
+  "domain": "motion",
   "name_ar": "صورة إلى برنامج بايثون",
   "name_en": "Image to standalone Pillow program",
   "status": "proven",
@@ -1579,6 +1631,7 @@
  {
   "id": "DRAW-53",
   "family": "hand-drawn-draw-on",
+  "domain": "motion",
   "name_ar": "استيراد SVG والتحويل إلى متجهات",
   "name_en": "SVG import & vectorize to draw steps",
   "status": "proven",
@@ -1609,6 +1662,7 @@
  {
   "id": "DRAW-54",
   "family": "hand-drawn-draw-on",
+  "domain": "motion",
   "name_ar": "محوّل مسارات SVG إلى نقاط",
   "name_en": "SVG path sampler",
   "status": "proven",
@@ -1637,6 +1691,7 @@
  {
   "id": "DRAW-55",
   "family": "hand-drawn-draw-on",
+  "domain": "motion",
   "name_ar": "الرسم بالفأرة في برنامج الرسام",
   "name_en": "Drawing by mouse in Windows Paint",
   "status": "documented",
@@ -1664,6 +1719,7 @@
  {
   "id": "DRAW-56",
   "family": "hand-drawn-draw-on",
+  "domain": "motion",
   "name_ar": "رسم فوق لقطات مولدة",
   "name_en": "Draw-over film on generated bases",
   "status": "documented",
@@ -1694,6 +1750,7 @@
  {
   "id": "DRAW-57",
   "family": "hand-drawn-draw-on",
+  "domain": "motion",
   "name_ar": "دراسة أسلوب مرسوم بالتتبع",
   "name_en": "Rotoscope style study & style pack",
   "status": "documented",
@@ -1721,6 +1778,7 @@
  {
   "id": "DRAW-58",
   "family": "hand-drawn-draw-on",
+  "domain": "motion",
   "name_ar": "إعادة رسم مخرجات مولدة كمتجهات",
   "name_en": "Generated raster → hand vector recreation",
   "status": "ready",
@@ -1747,6 +1805,7 @@
  {
   "id": "DRAW-59",
   "family": "hand-drawn-draw-on",
+  "domain": "motion",
   "name_ar": "مكونات HyperFrames للرسم اليدوي",
   "name_en": "HyperFrames hand-drawn components",
   "status": "install",
@@ -1780,6 +1839,7 @@
  {
   "id": "DRAW-60",
   "family": "hand-drawn-draw-on",
+  "domain": "motion",
   "name_ar": "مكتبات الرسم التدريجي",
   "name_en": "Draw-on libraries",
   "status": "install",
@@ -1808,6 +1868,7 @@
  {
   "id": "DRAW-P01",
   "family": "hand-drawn-draw-on",
+  "domain": "motion",
   "name_ar": "قصة الخط الواحد المستمر حتى الشعار",
   "name_en": "Continuous-line logo story (one stroke → three beats → wordmark loop)",
   "status": "documented",

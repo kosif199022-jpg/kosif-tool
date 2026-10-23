@@ -19,10 +19,10 @@
 | 3 | [`ffmpeg`](#req-ffmpeg) | bin | 447 | engines-render-pipeline, qa-verification, transitions-cuts, music-beat-sound, runnable-tools |  |
 | 4 | [`chromium`](#req-chromium) | bin | 364 | engines-render-pipeline, software-investigation, app-feature-transfer, qa-verification, transitions-cuts |  |
 | 5 | [`npm:rea`](#req-npm-rea) | npm | 279 | software-investigation, runnable-tools, app-feature-transfer, verification-evals |  |
-| 6 | [`npm:gsap`](#req-npm-gsap) | npm | 239 | transitions-cuts, engines-render-pipeline, camera-composition-layout, easing-timing-rhythm, typography-latin |  |
-| 7 | [`node`](#req-node) | bin | 177 | qa-verification, runnable-tools, atlas-code, engines-render-pipeline, color-palette-grading |  |
-| 8 | [`npm:three`](#req-npm-three) | npm | 177 | transitions-cuts, engines-render-pipeline, light-glow-bloom, texture-material, 3d-spatial |  |
-| 9 | [`key:unspecified`](#req-key-unspecified) | key | 177 | engines-render-pipeline, atlas-code, ai-generation, camera-composition-layout, qa-verification |  |
+| 6 | [`npm:gsap`](#req-npm-gsap) | npm | 246 | transitions-cuts, engines-render-pipeline, camera-composition-layout, easing-timing-rhythm, typography-latin |  |
+| 7 | [`npm:three`](#req-npm-three) | npm | 183 | transitions-cuts, engines-render-pipeline, light-glow-bloom, texture-material, 3d-spatial |  |
+| 8 | [`node`](#req-node) | bin | 177 | qa-verification, runnable-tools, atlas-code, engines-render-pipeline, color-palette-grading |  |
+| 9 | [`key:unspecified`](#req-key-unspecified) | key | 167 | engines-render-pipeline, atlas-code, ai-generation, camera-composition-layout, qa-verification |  |
 | 10 | [`pip:pillow`](#req-pip-pillow) | pip | 140 | app-feature-transfer, runnable-tools, qa-verification, engines-render-pipeline, typography-arabic |  |
 | 11 | [`pip:numpy`](#req-pip-numpy) | pip | 137 | app-feature-transfer, music-beat-sound, qa-verification, transitions-cuts, runnable-tools |  |
 | 12 | [`npm:remotion`](#req-npm-remotion) | npm | 118 | engines-render-pipeline, music-beat-sound, runnable-tools, typography-arabic, easing-timing-rhythm |  |
@@ -42,11 +42,11 @@
 | 26 | [`npm:axe`](#req-npm-axe) | npm | 28 | qa-verification, atlas-build, atlas-code, color-palette-grading, runnable-tools |  |
 | 27 | [`npm:esbuild`](#req-npm-esbuild) | npm | 25 | engines-render-pipeline, light-glow-bloom, particles-fluids-physics, texture-material, atlas-code |  |
 | 28 | [`npm:mermaid`](#req-npm-mermaid) | npm | 24 | atlas-docs, atlas-code, diagrams-explainers-code, atlas-craft, knowledge-graph |  |
-| 29 | [`tesseract`](#req-tesseract) | apt | 23 | media-image-audio, arabic-language, other, runnable-tools, self-discovery |  |
-| 30 | [`engine:wakaru`](#req-engine-wakaru) | bin | 23 | software-investigation |  |
-| 31 | [`network`](#req-network) | os | 23 | self-discovery, audio-sync-captions, web-research, media-image-audio, security-safety |  |
-| 32 | [`yt-dlp`](#req-yt-dlp) | pip | 22 | video-download, runnable-tools, atlas-media, audio-sync-captions, engines-render-pipeline |  |
-| 33 | [`key:graphify`](#req-key-graphify) | service | 22 | knowledge-graph, code-engineering, agent-orchestration, runnable-tools, security-safety |  |
+| 29 | [`key:graphify`](#req-key-graphify) | service | 24 | knowledge-graph, code-engineering, agent-orchestration, runnable-tools, security-safety |  |
+| 30 | [`tesseract`](#req-tesseract) | apt | 23 | media-image-audio, arabic-language, other, runnable-tools, self-discovery |  |
+| 31 | [`engine:wakaru`](#req-engine-wakaru) | bin | 23 | software-investigation |  |
+| 32 | [`network`](#req-network) | os | 23 | self-discovery, audio-sync-captions, web-research, media-image-audio, security-safety |  |
+| 33 | [`yt-dlp`](#req-yt-dlp) | pip | 22 | video-download, runnable-tools, atlas-media, audio-sync-captions, engines-render-pipeline |  |
 | 34 | [`npm:bruno`](#req-npm-bruno) | npm | 22 | api-testing |  |
 | 35 | [`pip:scipy`](#req-pip-scipy) | pip | 20 | transitions-cuts, data-analysis, music-beat-sound, self-discovery, atlas-media |  |
 | 36 | [`npm:d3`](#req-npm-d3) | npm | 20 | maps-geo, engines-render-pipeline, knowledge-graph, atlas-strategy, charts-data-infographic |  |
@@ -195,10 +195,20 @@
 
 - **النوع / kind:** npm (حزمة npm)
 - **التثبيت / install:** `npm i gsap  (GSAP standard licence: free for most uses; check the no-charge terms)`
-- **يفتح / unlocks:** 239 powers
-- **بالحالة / by status:** install 153 · documented 38 · ready 23 · proven 19 · idea 3 · key 2 · seen 1
-- **العائلات / families:** transitions-cuts (96), engines-render-pipeline (43), camera-composition-layout (29), easing-timing-rhythm (12), typography-latin (9), color-palette-grading (6), qa-verification (6), music-beat-sound (5)
+- **يفتح / unlocks:** 246 powers
+- **بالحالة / by status:** install 160 · documented 38 · ready 23 · proven 19 · idea 3 · key 2 · seen 1
+- **العائلات / families:** transitions-cuts (99), engines-render-pipeline (43), camera-composition-layout (33), easing-timing-rhythm (12), typography-latin (9), color-palette-grading (6), qa-verification (6), music-beat-sound (5)
 - **أمثلة / examples:** `ARAB-19` Word-mask reveal & hide · `ARAB-49` Eight Arabic motion templates · `COLOR-50` Harmony generator 2D/3D + harmony detector · `COLOR-66` Polarity flip ink↔paper at act boundaries · `EASE-01` Everything is a function of t · `EASE-09` Role-based easing tokens MOTION.E
+
+<a id="req-npm-three"></a>
+### `npm:three` — مشاهد WebGL ثلاثية الأبعاد ونص عربي ثلاثي الأبعاد / WebGL 3D scenes and 3D Arabic text
+
+- **النوع / kind:** npm (حزمة npm)
+- **التثبيت / install:** `npm i three@0.186.1 esbuild`
+- **يفتح / unlocks:** 183 powers
+- **بالحالة / by status:** install 105 · documented 26 · ready 26 · proven 19 · seen 3 · idea 2 · key 2
+- **العائلات / families:** transitions-cuts (46), engines-render-pipeline (32), light-glow-bloom (18), texture-material (15), 3d-spatial (11), color-palette-grading (10), particles-fluids-physics (10), camera-composition-layout (6)
+- **أمثلة / examples:** `3D-18` Raw-WebGL procedural crystal shards · `COLOR-36` Shader palettes as uniforms (Crystal World) · `COLOR-50` Harmony generator 2D/3D + harmony detector · `COLOR-64` Vignette in every engine · `EASE-01` Everything is a function of t · `ENG-04` WebGL robustness guards
 
 <a id="req-node"></a>
 ### `node` — تشغيل أدوات الرندر والمكتبات JavaScript / run the render tools and JavaScript libraries
@@ -210,25 +220,15 @@
 - **العائلات / families:** qa-verification (25), runnable-tools (14), atlas-code (11), engines-render-pipeline (11), color-palette-grading (7), ui-product-device (7), story-direction-ideas (6), typography-arabic (6)
 - **أمثلة / examples:** `ANLY-12` Validate chart colours with the dataviz checker · `APP-05` Phone-viewport screenshot + overflow check · `APP-06` HTML to MP4 renderer (repo tool) · `ARAB-74` Deterministic Arabic-Indic money formatter · `ARAB-X04` Font matching through a real shaper (Chromium/Ha · `BEAT-09` Loudness: −14 LUFS and BS.1770 meter
 
-<a id="req-npm-three"></a>
-### `npm:three` — مشاهد WebGL ثلاثية الأبعاد ونص عربي ثلاثي الأبعاد / WebGL 3D scenes and 3D Arabic text
-
-- **النوع / kind:** npm (حزمة npm)
-- **التثبيت / install:** `npm i three@0.186.1 esbuild`
-- **يفتح / unlocks:** 177 powers
-- **بالحالة / by status:** install 99 · documented 26 · ready 26 · proven 19 · seen 3 · idea 2 · key 2
-- **العائلات / families:** transitions-cuts (46), engines-render-pipeline (29), light-glow-bloom (18), texture-material (15), 3d-spatial (11), color-palette-grading (10), particles-fluids-physics (10), maps-geo (5)
-- **أمثلة / examples:** `3D-18` Raw-WebGL procedural crystal shards · `COLOR-36` Shader palettes as uniforms (Crystal World) · `COLOR-50` Harmony generator 2D/3D + harmony detector · `COLOR-64` Vignette in every engine · `EASE-01` Everything is a function of t · `ENG-04` WebGL robustness guards
-
 <a id="req-key-unspecified"></a>
 ### `key:unspecified` — حساب أو مفتاح أو موصل خارجي يذكره سجل القدرة / an account, key or connector named by the power
 
 - **النوع / kind:** key (مفتاح/حساب)
 - **التثبيت / install:** `an account, API key or connector named in the power's install/how text (ask the user; never guess a value)`
-- **يفتح / unlocks:** 177 powers
-- **بالحالة / by status:** key 122 · documented 42 · proven 9 · ready 2 · seen 1 · install 1
-- **العائلات / families:** engines-render-pipeline (27), atlas-code (17), ai-generation (15), camera-composition-layout (12), qa-verification (12), self-discovery (8), voice-tts (8), maps-geo (6)
-- **أمثلة / examples:** `API-06` Auth: Bearer, Basic, OAuth 2.0 and more · `ENG-24` Capability-token render jobs · `GRAPH-01` Install Graphify locally (venv) · `SELF-07` MCP server inventory with cost flags · `SELF-14` No GPU: plan for CPU · `SELF-17` Credentials by name only
+- **يفتح / unlocks:** 167 powers
+- **بالحالة / by status:** key 114 · documented 41 · proven 8 · ready 2 · seen 1 · install 1
+- **العائلات / families:** engines-render-pipeline (27), atlas-code (17), ai-generation (14), camera-composition-layout (12), qa-verification (12), self-discovery (8), voice-tts (8), maps-geo (6)
+- **أمثلة / examples:** `API-06` Auth: Bearer, Basic, OAuth 2.0 and more · `ENG-24` Capability-token render jobs · `SELF-07` MCP server inventory with cost flags · `SELF-14` No GPU: plan for CPU · `SELF-17` Credentials by name only · `TOOL-65` AI for business: 9 functions, 64 workflows, Clau
 
 <a id="req-pip-pillow"></a>
 ### `pip:pillow` — رسم الصور والنص العربي المشكَّل (raqm) / image drawing and shaped Arabic text (raqm)
@@ -420,6 +420,16 @@
 - **العائلات / families:** atlas-docs (8), atlas-code (4), diagrams-explainers-code (4), atlas-craft (3), knowledge-graph (2), runnable-tools (2), documents-office (1)
 - **أمثلة / examples:** `GRAPH-08` Exports and visual map pages · `GRAPH-17` Graph → communities → mind map · `TOOL-128` Task-stage capability mind map and duplicate aud · `TOOL-156` Power catalog search · `ACODE-174` Attack tree construction · `ACODE-177` Cited sequence diagram from code entry point
 
+<a id="req-key-graphify"></a>
+### `key:graphify` — خريطة معرفة الكود / code knowledge graph
+
+- **النوع / kind:** service (خدمة/موصل)
+- **التثبيت / install:** `Graphify hosted MCP connector (paid, consent + spend rules) or pip install graphify for local graphs`
+- **يفتح / unlocks:** 24 powers
+- **بالحالة / by status:** proven 14 · key 5 · documented 4 · idea 1
+- **العائلات / families:** knowledge-graph (18), code-engineering (2), agent-orchestration (1), runnable-tools (1), security-safety (1), self-discovery (1)
+- **أمثلة / examples:** `GRAPH-01` Install Graphify locally (venv) · `GRAPH-02` Map a codebase offline · `GRAPH-03` Query the graph instead of reading files · `GRAPH-04` Blast radius before a change · `GRAPH-05` Keep the map fresh · `GRAPH-06` Graph-backed lessons
+
 <a id="req-tesseract"></a>
 ### `tesseract` — تعرّف ضوئي على النص العربي في الإطارات والمستندات / OCR of Arabic text in frames and documents
 
@@ -459,16 +469,6 @@
 - **بالحالة / by status:** proven 9 · install 5 · documented 4 · ready 3 · key 1
 - **العائلات / families:** video-download (11), runnable-tools (5), atlas-media (1), audio-sync-captions (1), engines-render-pipeline (1), knowledge-graph (1), photo-video-footage (1), qa-verification (1)
 - **أمثلة / examples:** `DL-01` Download video from any URL · `DL-02` Batch of links from a file · `DL-03` Quality cap or audio-only · `DL-04` Edit-safe H.264/AAC copy · `DL-07` Update yt-dlp when a site breaks · `ENG-X06` Tool-map doctor before promising a stack
-
-<a id="req-key-graphify"></a>
-### `key:graphify` — خريطة معرفة الكود / code knowledge graph
-
-- **النوع / kind:** service (خدمة/موصل)
-- **التثبيت / install:** `Graphify hosted MCP connector (paid, consent + spend rules) or pip install graphify for local graphs`
-- **يفتح / unlocks:** 22 powers
-- **بالحالة / by status:** proven 14 · documented 4 · key 3 · idea 1
-- **العائلات / families:** knowledge-graph (16), code-engineering (2), agent-orchestration (1), runnable-tools (1), security-safety (1), self-discovery (1)
-- **أمثلة / examples:** `GRAPH-01` Install Graphify locally (venv) · `GRAPH-02` Map a codebase offline · `GRAPH-03` Query the graph instead of reading files · `GRAPH-04` Blast radius before a change · `GRAPH-05` Keep the map fresh · `GRAPH-06` Graph-backed lessons
 
 <a id="req-npm-bruno"></a>
 ### `npm:bruno` — اختبار API بمجموعات نصية في git / API testing with git-tracked collections (Bruno CLI)
@@ -1357,4 +1357,4 @@
 <a id="none"></a>
 ## قدرات بلا مستلزمات خارجية / no external requirement
 
-2486 powers need only Claude and this skill (thinking, writing, planning, review protocols). The rest name at least one requirement above.
+2473 powers need only Claude and this skill (thinking, writing, planning, review protocols). The rest name at least one requirement above.

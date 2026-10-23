@@ -13,8 +13,10 @@
   "install": "",
   "requires": [],
   "license": "",
-  "proof": [],
-  "proof_scope": "none",
+  "proof": [
+   "kosif-tool/.claude/skills/kosif-superpowers/references/humanizer.md"
+  ],
+  "proof_scope": "repo",
   "styles": [],
   "tags": [
    "causal model",
@@ -190,8 +192,10 @@
    "python3"
   ],
   "license": "",
-  "proof": [],
-  "proof_scope": "none",
+  "proof": [
+   "kosif-tool/.claude/skills/kosif-superpowers/references/humanizer.md"
+  ],
+  "proof_scope": "repo",
   "styles": [],
   "tags": [
    "rewrite",
@@ -436,8 +440,10 @@
    "python3"
   ],
   "license": "",
-  "proof": [],
-  "proof_scope": "none",
+  "proof": [
+   "kosif-tool/.claude/skills/kosif-superpowers/references/humanizer.md"
+  ],
+  "proof_scope": "repo",
   "styles": [],
   "tags": [
    "self edit",
@@ -496,8 +502,10 @@
   "install": "",
   "requires": [],
   "license": "",
-  "proof": [],
-  "proof_scope": "none",
+  "proof": [
+   "kosif-tool/.claude/skills/kosif-superpowers/references/humanizer.md"
+  ],
+  "proof_scope": "repo",
   "styles": [],
   "tags": [
    "false positive",
@@ -584,8 +592,10 @@
    "key:unspecified"
   ],
   "license": "",
-  "proof": [],
-  "proof_scope": "none",
+  "proof": [
+   "kosif-tool/.claude/skills/kosif-superpowers/references/humanizer.md"
+  ],
+  "proof_scope": "repo",
   "styles": [],
   "tags": [
    "register",
@@ -651,8 +661,10 @@
   "install": "",
   "requires": [],
   "license": "",
-  "proof": [],
-  "proof_scope": "none",
+  "proof": [
+   "kosif-tool/.claude/skills/kosif-superpowers/references/humanizer.md"
+  ],
+  "proof_scope": "repo",
   "styles": [],
   "tags": [
    "arabic style",
@@ -745,8 +757,10 @@
   "install": "",
   "requires": [],
   "license": "",
-  "proof": [],
-  "proof_scope": "none",
+  "proof": [
+   "kosif-tool/.claude/skills/kosif-superpowers/references/humanizer.md"
+  ],
+  "proof_scope": "repo",
   "styles": [],
   "tags": [
    "honesty",

@@ -963,8 +963,8 @@
 | `TRANS-373` | مسح بأشرطة ألوان أساسية | Primary-colour stripe wipe | seen |  |
 | `TRANS-374` | انتقال سوط ضبابي | Whip motion-blur transition | seen |  |
 | `TRANS-375` | قطع حاد بين الظلام والنور | Hard dark/light section flip | seen |  |
-| `CAM-100` | حركة كين بيرنز | Ken Burns pan on stills/footage | install |  |
-| `CAM-101` | إعادة التأطير بالقص | Crop / reframe with clip-path inset | install |  |
+| `CAM-100` | حركة كين بيرنز | Ken Burns pan on stills/footage | install | npm:gsap |
+| `CAM-101` | إعادة التأطير بالقص | Crop / reframe with clip-path inset | install | npm:gsap |
 | `CAM-102` | حركة ملء الشاشة بخلفيات مشتركة | Full-screen motion with shared backgrounds | install |  |
 | `CAM-103` | تقريب إلى هدف غير مركزي | Coordinate target zoom | install | npm:gsap, npm:hyperframes |
 | `CAM-104` | كاميرا تتبع مؤشر الكتابة | Camera tracks typing cursor | install | npm:gsap, npm:hyperframes |
@@ -996,11 +996,11 @@
 | `CAM-130` | البارالاكس | parallax | install |  |
 | `CAM-131` | تنفس اللقطة الثابتة | breathe holds | install |  |
 | `CAM-132` | مفردات اللقطات ككاميرات | Veo shot vocabulary as cameras | install | key:video-gen |
-| `CAM-133` | مسار الكاميرا المستمر | cameraPath Catmull-Rom | install |  |
+| `CAM-133` | مسار الكاميرا المستمر | cameraPath Catmull-Rom | install | npm:three |
 | `CAM-134` | كاميرا الدوران مع التوقفات | orbitWalk camera | install |  |
 | `CAM-135` | تظليل علوي لوضوح العنوان | Top shade for title legibility | install |  |
 | `CAM-136` | كاميرا ثنائية الأبعاد متزامنة مع الكلام | Word-synced 2D camera on a footage plate | install |  |
-| `CAM-137` | اهتزاز دقيق لأربعة إطارات | Seeded 4-frame micro shake | install |  |
+| `CAM-137` | اهتزاز دقيق لأربعة إطارات | Seeded 4-frame micro shake | install | npm:gsap |
 | `CAM-138` | دفع لوغاريتمي وثبات حي | Log-space push and living hold | install |  |
 | `CAM-139` | مدار ثلاثي الأبعاد مع اقتراب واهتزاز | 3D orbit with push-in, break shake and pull-back | install |  |
 | `CAM-140` | جولة كاميرا حول المشهد بتوقفات | Orbit walk with stops and holds | install |  |
@@ -1049,7 +1049,7 @@
 | `CAM-61` | رصّ البطاقات المثبتة أثناء التمرير | Sticky scroll-stack of cards | install | npm:gsap |
 | `CAM-62` | قصة تمرير بصورة مثبتة | Sticky-graphic scroll story | install | npm:gsap |
 | `CAM-63` | كشف بطاقات بميلان ثلاثي | Card batch reveal with 3D tilt-up | install | npm:gsap |
-| `CAM-64` | عمق الميدان / بوكيه | Depth of field (TSL dof) | install |  |
+| `CAM-64` | عمق الميدان / بوكيه | Depth of field (TSL dof) | install | npm:three |
 | `CAM-65` | معرض WebGL مدفوع بالزمن | Scroll/time-driven WebGL gallery | install | npm:three, npm:gsap |
 | `CAM-66` | حالات كاميرا مسماة | Named camera states | install | npm:gsap |
 | `CAM-67` | نص يتفادى العناصر | Obstacle-aware type layout | install | npm:matter |
@@ -1084,7 +1084,7 @@
 | `CAM-96` | دوار الرؤية | Carousel vision (styles 1-5) | install | npm:gsap, npm:hyperframes |
 | `CAM-97` | الشبكة السويسرية | Example project: swiss-grid | install | npm:hyperframes |
 | `CAM-98` | منطقة حجز الترجمة أسفل الإطار | Caption keep-out zone (bottom ~17%) | install |  |
-| `CAM-99` | تقريب مفاجئ على اللقطة | Punch-in zoom on footage | install |  |
+| `CAM-99` | تقريب مفاجئ على اللقطة | Punch-in zoom on footage | install | npm:gsap |
 | `CHAR-09` | شخصية ذكاء اصطناعي بالحالات | Stateful AI persona orb | install | node, chromium |
 | `CHAR-47` | تمثيل الشخصيات بلوتي | Lottie character acting | install | npm:gsap, npm:hyperframes, npm:lottie |
 | `EASE-17` | وصول مقدَّم الوزن | Front-loaded arrival (extended keyframe) | install | npm:hyperframes |
@@ -1170,7 +1170,7 @@
 | `TRANS-165` | تحطم الزجاج | Shatter | install | chromium, npm:three, npm:gsap, npm:hyperframes |
 | `TRANS-166` | انتقال شيدر السوط | Whip Pan | install | npm:three, npm:gsap, npm:hyperframes |
 | `TRANS-167` | نمط انتقال الشيدر من الصفحة | DOM-to-texture shader transition pattern | install | npm:three, npm:gsap |
-| `TRANS-168` | المسح بالقناع وتقسيم الشاشة | Clip-path wipe and split-screen | install |  |
+| `TRANS-168` | المسح بالقناع وتقسيم الشاشة | Clip-path wipe and split-screen | install | npm:gsap |
 | `TRANS-169` | مزج متقاطع للصورة والصوت | Crossfade with opposing volume envelopes | install |  |
 | `TRANS-170` | تشويش انقسام الألوان والشرائح | Chromatic RGB-split / slice glitch | install | npm:gsap, npm:hyperframes |
 | `TRANS-171` | تبديل بالتحجيم في نفس المركز | Scale swap morph | install | npm:gsap, npm:hyperframes |
@@ -1240,10 +1240,10 @@
 | `TRANS-235` | ومضة بيضاء | White flash accent | install |  |
 | `TRANS-236` | فتح قزحي من نقطة إلى اللقطة | Iris open from a point onto footage | install |  |
 | `TRANS-237` | الكلمة كسطح انتقال | Word as the transition plane | install |  |
-| `TRANS-238` | لقطة إلى بطاقة إلى انهيار إلى شعار | Footage → card → implode → lockup | install |  |
+| `TRANS-238` | لقطة إلى بطاقة إلى انهيار إلى شعار | Footage → card → implode → lockup | install | npm:gsap |
 | `TRANS-239` | خاتمة بالغطس إلى الأسود | Dip to black / dip to ink ending | install |  |
 | `TRANS-240` | شريطا السينما يفتحان ويغلقان | Cinematic letterbox open/close | install |  |
-| `TRANS-241` | قطع حاد مع إعادة تأطير الكاميرا | Hard cut with camera reframe | install |  |
+| `TRANS-241` | قطع حاد مع إعادة تأطير الكاميرا | Hard cut with camera reframe | install | npm:gsap |
 | `TRANS-242` | ضربة القطع: تمويه شعاعي ووميض | Cut kick (radial blur on cuts) + white flash | install |  |
 | `TRANS-243` | إيقاع الإظلام مع تداخل النص | Fade-through-black rhythm with overlapping text | install |  |
 | `TRANS-244` | شاشة مقسومة للمقارنة | Split-screen comparison with whip-in halves | install |  |

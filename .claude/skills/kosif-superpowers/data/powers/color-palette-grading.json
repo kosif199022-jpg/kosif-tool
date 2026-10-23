@@ -2,6 +2,7 @@
  {
   "id": "COLOR-01",
   "family": "color-palette-grading",
+  "domain": "motion",
   "name_ar": "أحد عشر لوكًا جاهزًا بـFFmpeg",
   "name_en": "Eleven FFmpeg grade presets",
   "status": "proven",
@@ -48,6 +49,7 @@
  {
   "id": "COLOR-02",
   "family": "color-palette-grading",
+  "domain": "motion",
   "name_ar": "ترميم الفوتيج القديم",
   "name_en": "Restore grade for old or soft footage",
   "status": "proven",
@@ -90,6 +92,7 @@
  {
   "id": "COLOR-03",
   "family": "color-palette-grading",
+  "domain": "motion",
   "name_ar": "تلوينات مشاريع بسطر واحد",
   "name_en": "One-line project grades (muted Ghorba, navy door + RTL mirror)",
   "status": "proven",
@@ -128,6 +131,7 @@
  {
   "id": "COLOR-04",
   "family": "color-palette-grading",
+  "domain": "motion",
   "name_ar": "خَبز أي تلوين في LUT",
   "name_en": "Bake any grade into a Hald CLUT / .cube and apply LUTs",
   "status": "proven",
@@ -169,6 +173,7 @@
  {
   "id": "COLOR-05",
   "family": "color-palette-grading",
+  "domain": "motion",
   "name_ar": "لوكات المتصفح بالفلاتر وطبقات الدمج",
   "name_en": "Browser looks: CSS filter + blend-mode tint layers",
   "status": "proven",
@@ -210,6 +215,7 @@
  {
   "id": "COLOR-06",
   "family": "color-palette-grading",
+  "domain": "motion",
   "name_ar": "سلسلة FFmpeg المُصدّرة من «بصمة»",
   "name_en": "Basma fingerprint grade chain export",
   "status": "ready",
@@ -247,6 +253,7 @@
  {
   "id": "COLOR-07",
   "family": "color-palette-grading",
+  "domain": "motion",
   "name_ar": "أمزجة فيلم الكلمات وتلوينها",
   "name_en": "Verse moods: palette plus matching footage grade",
   "status": "ready",
@@ -289,6 +296,7 @@
  {
   "id": "COLOR-08",
   "family": "color-palette-grading",
+  "domain": "motion",
   "name_ar": "مكتبة اللوكات المسماة",
   "name_en": "Named film-stock and photo looks library",
   "status": "documented",
@@ -331,6 +339,7 @@
  {
   "id": "COLOR-09",
   "family": "color-palette-grading",
+  "domain": "motion",
   "name_ar": "نموذج تلوين HyperFrames",
   "name_en": "HyperFrames WebGL grade model, 17 presets and media-treatment CLI",
   "status": "install",
@@ -373,6 +382,7 @@
  {
   "id": "COLOR-10",
   "family": "color-palette-grading",
+  "domain": "motion",
   "name_ar": "وصفات المعالجة وممرات الملاحظات",
   "name_en": "HyperFrames treatment recipes and feedback lanes",
   "status": "install",
@@ -413,6 +423,7 @@
  {
   "id": "COLOR-11",
   "family": "color-palette-grading",
+  "domain": "motion",
   "name_ar": "لوكات LUT مع بديل حتمي",
   "name_en": "LUT looks with deterministic buildCube fallback",
   "status": "install",
@@ -451,6 +462,7 @@
  {
   "id": "COLOR-12",
   "family": "color-palette-grading",
+  "domain": "motion",
   "name_ar": "كشف التلوين بالمقارنة",
   "name_en": "Grade Split Reveal (flat → graded sweep)",
   "status": "install",
@@ -488,6 +500,7 @@
  {
   "id": "COLOR-13",
   "family": "color-palette-grading",
+  "domain": "motion",
   "name_ar": "ترتيب عقد التلوين",
   "name_en": "Grade order: technical before creative",
   "status": "documented",
@@ -526,6 +539,7 @@
  {
   "id": "COLOR-14",
   "family": "color-palette-grading",
+  "domain": "motion",
   "name_ar": "كشف اللوج قبل LUT",
   "name_en": "Log detection before a conversion LUT",
   "status": "proven",
@@ -564,6 +578,7 @@
  {
   "id": "COLOR-15",
   "family": "color-palette-grading",
+  "domain": "motion",
   "name_ar": "التعريض حسب وقت اليوم",
   "name_en": "Exposure bands by time of day + cut jump caps",
   "status": "proven",
@@ -601,6 +616,7 @@
  {
   "id": "COLOR-16",
   "family": "color-palette-grading",
+  "domain": "motion",
   "name_ar": "توازن الأبيض بالبكسلات المحايدة",
   "name_en": "Neutral-pixel white balance",
   "status": "proven",
@@ -636,6 +652,7 @@
  {
   "id": "COLOR-17",
   "family": "color-palette-grading",
+  "domain": "motion",
   "name_ar": "تباين حول محور مع حماية القص",
   "name_en": "Pivot contrast with clip guard",
   "status": "proven",
@@ -670,6 +687,7 @@
  {
   "id": "COLOR-18",
   "family": "color-palette-grading",
+  "domain": "motion",
   "name_ar": "أرضية تشبع وانحدار سينمائي",
   "name_en": "Saturation floor with film roll-off",
   "status": "proven",
@@ -704,6 +722,7 @@
  {
   "id": "COLOR-19",
   "family": "color-palette-grading",
+  "domain": "motion",
   "name_ar": "تعزيز السماء فقط",
   "name_en": "Sky hue-window boost",
   "status": "proven",
@@ -741,6 +760,7 @@
  {
   "id": "COLOR-20",
   "family": "color-palette-grading",
+  "domain": "motion",
   "name_ar": "لوكات مقاسة بأهداف السكوب",
   "name_en": "Scope-target looks (Japan summer, New York, Still, Tokyo night)",
   "status": "documented",
@@ -778,6 +798,7 @@
  {
   "id": "COLOR-21",
   "family": "color-palette-grading",
+  "domain": "motion",
   "name_ar": "توجيه التلوين حسب اللقطة وأرضية الإضاءة",
   "name_en": "Per-shot-type direction, one light floor, value before colour",
   "status": "documented",
@@ -813,6 +834,7 @@
  {
   "id": "COLOR-22",
   "family": "color-palette-grading",
+  "domain": "motion",
   "name_ar": "تحليل حرارة اللون والميل والتشبع",
   "name_en": "Colour analysis: CCT, cast, colourfulness, 6-colour palette",
   "status": "proven",
@@ -852,6 +874,7 @@
  {
   "id": "COLOR-23",
   "family": "color-palette-grading",
+  "domain": "motion",
   "name_ar": "إزاحة الميرد واختيار الجل",
   "name_en": "Mired shift → CTO/CTB gel",
   "status": "proven",
@@ -891,6 +914,7 @@
  {
   "id": "COLOR-24",
   "family": "color-palette-grading",
+  "domain": "motion",
   "name_ar": "استخراج الباليت وتسمية الألوان",
   "name_en": "Palette extraction, colour naming and ΔE",
   "status": "proven",
@@ -930,6 +954,7 @@
  {
   "id": "COLOR-25",
   "family": "color-palette-grading",
+  "domain": "motion",
   "name_ar": "باليت وخلفية لكل نبضة من المرجع",
   "name_en": "Reference palette + background per beat",
   "status": "proven",
@@ -966,6 +991,7 @@
  {
   "id": "COLOR-26",
   "family": "color-palette-grading",
+  "domain": "motion",
   "name_ar": "نقل رينهارد إلى LUT لكل لقطة",
   "name_en": "Reinhard Lab transfer → per-shot .cube",
   "status": "proven",
@@ -1004,6 +1030,7 @@
  {
   "id": "COLOR-27",
   "family": "color-palette-grading",
+  "domain": "motion",
   "name_ar": "مطابقة اللقطات بنقل لوني محدود",
   "name_en": "Bounded colour transfer + Hungarian shot match",
   "status": "proven",
@@ -1041,6 +1068,7 @@
  {
   "id": "COLOR-28",
   "family": "color-palette-grading",
+  "domain": "motion",
   "name_ar": "إصلاح تلقائي ومطابقة مرجع في «بصمة»",
   "name_en": "Basma measured auto-fix, reference match and look classifier",
   "status": "install",
@@ -1078,6 +1106,7 @@
  {
   "id": "COLOR-29",
   "family": "color-palette-grading",
+  "domain": "motion",
   "name_ar": "تغيير لون بلون مع الحفاظ على الظل",
   "name_en": "Local recolour A→B keeping shading (Arabic requests)",
   "status": "proven",
@@ -1115,6 +1144,7 @@
  {
   "id": "COLOR-30",
   "family": "color-palette-grading",
+  "domain": "motion",
   "name_ar": "ألوان الشعار الحقيقية",
   "name_en": "Logo true colours + antialias-blend detection",
   "status": "install",
@@ -1153,6 +1183,7 @@
  {
   "id": "COLOR-31",
   "family": "color-palette-grading",
+  "domain": "motion",
   "name_ar": "هوية كاملة من لون واحد",
   "name_en": "One hex → full WCAG token set (+ 9 accent presets)",
   "status": "proven",
@@ -1195,6 +1226,7 @@
  {
   "id": "COLOR-32",
   "family": "color-palette-grading",
+  "domain": "motion",
   "name_ar": "هوية «دفتر KOSIF»",
   "name_en": "Dafter KOSIF ledger identity (default, light + night)",
   "status": "proven",
@@ -1234,6 +1266,7 @@
  {
   "id": "COLOR-33",
   "family": "color-palette-grading",
+  "domain": "motion",
   "name_ar": "مظاهر KOSIF EARTH",
   "name_en": "KOSIF EARTH identity looks (14)",
   "status": "ready",
@@ -1275,6 +1308,7 @@
  {
   "id": "COLOR-34",
   "family": "color-palette-grading",
+  "domain": "motion",
   "name_ar": "إعادة تلوين حسب الدور",
   "name_en": "Role-based palette remap (brandCSS)",
   "status": "proven",
@@ -1311,6 +1345,7 @@
  {
   "id": "COLOR-35",
   "family": "color-palette-grading",
+  "domain": "motion",
   "name_ar": "تحويل انتقائي ذهبي→جليدي",
   "name_en": "Selective gold→ice hue rotation (image and video)",
   "status": "proven",
@@ -1347,6 +1382,7 @@
  {
   "id": "COLOR-36",
   "family": "color-palette-grading",
+  "domain": "motion",
   "name_ar": "باليتات الشيدر كمتغيرات",
   "name_en": "Shader palettes as uniforms (Crystal World)",
   "status": "proven",
@@ -1383,6 +1419,7 @@
  {
   "id": "COLOR-37",
   "family": "color-palette-grading",
+  "domain": "motion",
   "name_ar": "باليتات منتجات التدقيق",
   "name_en": "KOSIF audit palettes + cascade-order theming",
   "status": "proven",
@@ -1423,6 +1460,7 @@
  {
   "id": "COLOR-38",
   "family": "color-palette-grading",
+  "domain": "motion",
   "name_ar": "ثيمات Kinetic Flow السبعة عشر",
   "name_en": "Kinetic-flow locked themes A–Q + custom R",
   "status": "proven",
@@ -1463,6 +1501,7 @@
  {
   "id": "COLOR-39",
   "family": "color-palette-grading",
+  "domain": "motion",
   "name_ar": "باليتات الافتتاحي الفيروسي",
   "name_en": "Viral-editorial palettes 1–3 + 80/20 rule",
   "status": "proven",
@@ -1500,6 +1539,7 @@
  {
   "id": "COLOR-40",
   "family": "color-palette-grading",
+  "domain": "motion",
   "name_ar": "باليتات أفلام المالك",
   "name_en": "Owner film palettes from shipped projects",
   "status": "ready",
@@ -1537,6 +1577,7 @@
  {
   "id": "COLOR-41",
   "family": "color-palette-grading",
+  "domain": "motion",
   "name_ar": "باليتات القوالب وخاناتها",
   "name_en": "Starter palettes and palette slots",
   "status": "proven",
@@ -1577,6 +1618,7 @@
  {
   "id": "COLOR-42",
   "family": "color-palette-grading",
+  "domain": "motion",
   "name_ar": "ثيمات HyperFrames وعقد الرموز",
   "name_en": "HyperFrames themes + 18-token contract",
   "status": "ready",
@@ -1615,6 +1657,7 @@
  {
   "id": "COLOR-43",
   "family": "color-palette-grading",
+  "domain": "motion",
   "name_ar": "مكتبات باليتات جاهزة",
   "name_en": "Ready palette libraries (families, deck presets, recut themes, demo kit, dark ladders)",
   "status": "documented",
@@ -1653,6 +1696,7 @@
  {
   "id": "COLOR-44",
   "family": "color-palette-grading",
+  "domain": "motion",
   "name_ar": "اللون حسب العاطفة والقطاع والثقافة",
   "name_en": "Brand colour by emotion, sector and culture",
   "status": "documented",
@@ -1691,6 +1735,7 @@
  {
   "id": "COLOR-45",
   "family": "color-palette-grading",
+  "domain": "motion",
   "name_ar": "ألوان الحالات الدلالية",
   "name_en": "Semantic status colours (soft-tint chips, 5-stop ladder)",
   "status": "proven",
@@ -1735,6 +1780,7 @@
  {
   "id": "COLOR-46",
   "family": "color-palette-grading",
+  "domain": "motion",
   "name_ar": "باليتات آمنة لعمى الألوان",
   "name_en": "Colour-blind-safe categorical palettes",
   "status": "ready",
@@ -1773,6 +1819,7 @@
  {
   "id": "COLOR-47",
   "family": "color-palette-grading",
+  "domain": "motion",
   "name_ar": "خرائط الألوان وتسلسل الرسم البياني",
   "name_en": "Colormap semantics and chart colour hierarchy",
   "status": "documented",
@@ -1811,6 +1858,7 @@
  {
   "id": "COLOR-48",
   "family": "color-palette-grading",
+  "domain": "motion",
   "name_ar": "التدرج الحراري بسبع محطات",
   "name_en": "Thermal 7-stop heat ramp",
   "status": "proven",
@@ -1845,6 +1893,7 @@
  {
   "id": "COLOR-49",
   "family": "color-palette-grading",
+  "domain": "motion",
   "name_ar": "تدرجا ماغما والجبل",
   "name_en": "Magma colormap and alpine terrain ramp",
   "status": "ready",
@@ -1881,6 +1930,7 @@
  {
   "id": "COLOR-50",
   "family": "color-palette-grading",
+  "domain": "motion",
   "name_ar": "مولّد التناغم اللوني",
   "name_en": "Harmony generator 2D/3D + harmony detector",
   "status": "proven",
@@ -1923,6 +1973,7 @@
  {
   "id": "COLOR-51",
   "family": "color-palette-grading",
+  "domain": "motion",
   "name_ar": "تدرجات إدراكية OKLCH وظلال بإزاحة الصبغة",
   "name_en": "Perceptual OKLCH ramps and hue-shifted shading",
   "status": "documented",
@@ -1965,6 +2016,7 @@
  {
   "id": "COLOR-52",
   "family": "color-palette-grading",
+  "domain": "motion",
   "name_ar": "حساب التباين WCAG",
   "name_en": "WCAG contrast math, role tiers and alpha flattening",
   "status": "proven",
@@ -2006,6 +2058,7 @@
  {
   "id": "COLOR-53",
   "family": "color-palette-grading",
+  "domain": "motion",
   "name_ar": "الوضع الداكن بلا قلب",
   "name_en": "Dark variant without inversion",
   "status": "documented",
@@ -2040,6 +2093,7 @@
  {
   "id": "COLOR-54",
   "family": "color-palette-grading",
+  "domain": "motion",
   "name_ar": "لون تمييز واحد بمعنى واحد",
   "name_en": "One accent, one meaning (~5% of the frame)",
   "status": "ready",
@@ -2085,6 +2139,7 @@
  {
   "id": "COLOR-55",
   "family": "color-palette-grading",
+  "domain": "motion",
   "name_ar": "أنظمة لونين أو ثلاثة صارمة",
   "name_en": "Strict two- and three-colour systems",
   "status": "seen",
@@ -2130,6 +2185,7 @@
  {
   "id": "COLOR-56",
   "family": "color-palette-grading",
+  "domain": "motion",
   "name_ar": "قفل الأسلوب وبصمة المرجع",
   "name_en": "Style lock and reference style-DNA (+ exact hex after generation)",
   "status": "proven",
@@ -2169,6 +2225,7 @@
  {
   "id": "COLOR-57",
   "family": "color-palette-grading",
+  "domain": "motion",
   "name_ar": "تحويل النغمات ACES وAgX وNeutral",
   "name_en": "Tone-mapping choice: ACES, AgX or Neutral",
   "status": "ready",
@@ -2210,6 +2267,7 @@
  {
   "id": "COLOR-58",
   "family": "color-palette-grading",
+  "domain": "motion",
   "name_ar": "تمريرة المظهر",
   "name_en": "Look pass: gamut mask, Purkinje night vision, split toning",
   "status": "ready",
@@ -2251,6 +2309,7 @@
  {
   "id": "COLOR-59",
   "family": "color-palette-grading",
+  "domain": "motion",
   "name_ar": "المنظور الجوي",
   "name_en": "Aerial perspective: 3-channel fog, fog toward the sun, sky bounce",
   "status": "ready",
@@ -2294,6 +2353,7 @@
  {
   "id": "COLOR-60",
   "family": "color-palette-grading",
+  "domain": "motion",
   "name_ar": "تمريرة تلوين الشيدر",
   "name_en": "Shader grade pass driven by story or music",
   "status": "ready",
@@ -2336,6 +2396,7 @@
  {
   "id": "COLOR-61",
   "family": "color-palette-grading",
+  "domain": "motion",
   "name_ar": "ألوان مصادر الضوء العملية",
   "name_en": "Named practical light colours (sodium, mercury, moon, flame)",
   "status": "ready",
@@ -2377,6 +2438,7 @@
  {
   "id": "COLOR-62",
   "family": "color-palette-grading",
+  "domain": "motion",
   "name_ar": "تشطيب الرسام الفيلمي",
   "name_en": "Painter filmic curve, split-tone grade and grain",
   "status": "proven",
@@ -2418,6 +2480,7 @@
  {
   "id": "COLOR-63",
   "family": "color-palette-grading",
+  "domain": "motion",
   "name_ar": "انضغاط الإضاءات العالية",
   "name_en": "Highlight roll-off quantiser",
   "status": "proven",
@@ -2454,6 +2517,7 @@
  {
   "id": "COLOR-64",
   "family": "color-palette-grading",
+  "domain": "motion",
   "name_ar": "التعتيم الطرفي في كل محرك",
   "name_en": "Vignette in every engine",
   "status": "proven",
@@ -2493,6 +2557,7 @@
  {
   "id": "COLOR-65",
   "family": "color-palette-grading",
+  "domain": "motion",
   "name_ar": "تدرجات بشفافية وأنماط دمج",
   "name_en": "Gradient paints with alpha stops and blend modes",
   "status": "proven",
@@ -2530,6 +2595,7 @@
  {
   "id": "COLOR-66",
   "family": "color-palette-grading",
+  "domain": "motion",
   "name_ar": "قلب القطبية بين الفصول",
   "name_en": "Polarity flip ink↔paper at act boundaries",
   "status": "proven",
@@ -2579,6 +2645,7 @@
  {
   "id": "COLOR-67",
   "family": "color-palette-grading",
+  "domain": "motion",
   "name_ar": "فصول وضربات بحقول لونية",
   "name_en": "Colour-field chapter and beat flips",
   "status": "seen",
@@ -2631,6 +2698,7 @@
  {
   "id": "COLOR-68",
   "family": "color-palette-grading",
+  "domain": "motion",
   "name_ar": "ضربة لون كامل للإطار",
   "name_en": "Full-bleed accent beat / brand flash fill",
   "status": "seen",
@@ -2674,6 +2742,7 @@
  {
   "id": "COLOR-69",
   "family": "color-palette-grading",
+  "domain": "motion",
   "name_ar": "تحريك تدرج السماء ووقت اليوم",
   "name_en": "Sky-stop tweening: time of day and seasons",
   "status": "ready",
@@ -2726,6 +2795,7 @@
  {
   "id": "COLOR-70",
   "family": "color-palette-grading",
+  "domain": "motion",
   "name_ar": "التلوين كقصة",
   "name_en": "Grade change as story (drain, bloom, freeze to grey)",
   "status": "ready",
@@ -2767,6 +2837,7 @@
  {
   "id": "COLOR-71",
   "family": "color-palette-grading",
+  "domain": "motion",
   "name_ar": "منطق الألوان السردي",
   "name_en": "Narrative colour logic (problem → solution)",
   "status": "seen",
@@ -2809,6 +2880,7 @@
  {
   "id": "COLOR-72",
   "family": "color-palette-grading",
+  "domain": "motion",
   "name_ar": "لون لكل عنصر",
   "name_en": "Per-item hue coding at equal luminance",
   "status": "seen",
@@ -2854,6 +2926,7 @@
  {
   "id": "COLOR-73",
   "family": "color-palette-grading",
+  "domain": "motion",
   "name_ar": "صبغة الإطار للحدث",
   "name_en": "Full-frame event tint and flash",
   "status": "seen",
@@ -2892,6 +2965,7 @@
  {
   "id": "COLOR-74",
   "family": "color-palette-grading",
+  "domain": "motion",
   "name_ar": "حلقات بتدرج الصبغة ودوران اللون",
   "name_en": "Hue-indexed rings and slow hue rotation",
   "status": "seen",
@@ -2931,6 +3005,7 @@
  {
   "id": "COLOR-75",
   "family": "color-palette-grading",
+  "domain": "motion",
   "name_ar": "عنوان بلونين وكلمة مميزة",
   "name_en": "Two-tone headline and accent word",
   "status": "seen",
@@ -2971,6 +3046,7 @@
  {
   "id": "COLOR-76",
   "family": "color-palette-grading",
+  "domain": "motion",
   "name_ar": "شريط عينات الألوان",
   "name_en": "Swatch-strip reveal",
   "status": "seen",
@@ -3004,6 +3080,7 @@
  {
   "id": "COLOR-77",
   "family": "color-palette-grading",
+  "domain": "motion",
   "name_ar": "باليت مفهرسة من 16 لونًا",
   "name_en": "Indexed 16-colour palette with alternating accent flash",
   "status": "idea",
@@ -3040,6 +3117,7 @@
  {
   "id": "COLOR-78",
   "family": "color-palette-grading",
+  "domain": "motion",
   "name_ar": "أرضيات داكنة شعاعية",
   "name_en": "Radial dark grounds",
   "status": "proven",
@@ -3084,6 +3162,7 @@
  {
   "id": "COLOR-79",
   "family": "color-palette-grading",
+  "domain": "motion",
   "name_ar": "أرضية ورقية كريمية",
   "name_en": "Warm paper editorial ground",
   "status": "seen",
@@ -3130,6 +3209,7 @@
  {
   "id": "COLOR-80",
   "family": "color-palette-grading",
+  "domain": "motion",
   "name_ar": "خلفية بقع ضبابية متحركة",
   "name_en": "Drifting blob / mesh-gradient ambient ground",
   "status": "install",
@@ -3182,6 +3262,7 @@
  {
   "id": "COLOR-81",
   "family": "color-palette-grading",
+  "domain": "motion",
   "name_ar": "لوحات شيدر WebGPU",
   "name_en": "WebGPU shader colour plates",
   "status": "install",
@@ -3222,6 +3303,7 @@
  {
   "id": "COLOR-82",
   "family": "color-palette-grading",
+  "domain": "motion",
   "name_ar": "توحيد الطبقات",
   "name_en": "Unify the stack: one grade, grain, vignette",
   "status": "documented",
@@ -3256,6 +3338,7 @@
  {
   "id": "COLOR-83",
   "family": "color-palette-grading",
+  "domain": "motion",
   "name_ar": "سلم المعالجة",
   "name_en": "Treatment ladder: colour → duotone → halftone → vector",
   "status": "documented",
@@ -3296,6 +3379,7 @@
  {
   "id": "COLOR-84",
   "family": "color-palette-grading",
+  "domain": "motion",
   "name_ar": "تشطيب الكولاج العتيق مع الوميض",
   "name_en": "Vintage collage finish with exposure flicker",
   "status": "seen",
@@ -3336,6 +3420,7 @@
  {
   "id": "COLOR-85",
   "family": "color-palette-grading",
+  "domain": "motion",
   "name_ar": "لوحات الغروب والسايكدلك والدفع الأحادي",
   "name_en": "Sunset/synthwave, psychedelic and monohue-push palettes",
   "status": "seen",
@@ -3381,6 +3466,7 @@
  {
   "id": "COLOR-86",
   "family": "color-palette-grading",
+  "domain": "motion",
   "name_ar": "طين أبيض ولون للبيانات فقط",
   "name_en": "White clay render with colour only for data",
   "status": "seen",

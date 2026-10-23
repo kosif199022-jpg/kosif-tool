@@ -2,6 +2,7 @@
  {
   "id": "STORY-01",
   "family": "story-direction-ideas",
+  "domain": "motion",
   "name_ar": "استقبال عربي بجولة واحدة",
   "name_en": "One-round Arabic intake with defaults",
   "status": "ready",
@@ -40,6 +41,7 @@
  {
   "id": "STORY-02",
   "family": "story-direction-ideas",
+  "domain": "motion",
   "name_ar": "موجّه الطلب الواحد (16 مسارًا)",
   "name_en": "One-request router (16 routes + add-ons)",
   "status": "proven",
@@ -79,6 +81,7 @@
  {
   "id": "STORY-03",
   "family": "story-direction-ideas",
+  "domain": "motion",
   "name_ar": "مخطط اللقطات الحتمي ProPlan",
   "name_en": "Deterministic shot planner (ProPlan)",
   "status": "proven",
@@ -117,6 +120,7 @@
  {
   "id": "STORY-04",
   "family": "story-direction-ideas",
+  "domain": "motion",
   "name_ar": "مولّد طلب Claude من الأسلوب",
   "name_en": "Style → Claude request generator",
   "status": "proven",
@@ -155,6 +159,7 @@
  {
   "id": "STORY-05",
   "family": "story-direction-ideas",
+  "domain": "motion",
   "name_ar": "بوابة اختيار الأسلوب قبل التخطيط",
   "name_en": "Style-choice gate: 3–5 directions, max 2 blended",
   "status": "ready",
@@ -192,6 +197,7 @@
  {
   "id": "STORY-06",
   "family": "story-direction-ideas",
+  "domain": "motion",
   "name_ar": "جدول الرد قبل البناء",
   "name_en": "Talk-before-build response table",
   "status": "documented",
@@ -224,6 +230,7 @@
  {
   "id": "STORY-07",
   "family": "story-direction-ideas",
+  "domain": "motion",
   "name_ar": "قائمة القوة الكاملة وفرصة الوسائط",
   "name_en": "Full-power checklist & media-opportunity pass",
   "status": "documented",
@@ -257,6 +264,7 @@
  {
   "id": "STORY-08",
   "family": "story-direction-ideas",
+  "domain": "motion",
   "name_ar": "STYLE.md وPLAN.md: المرصود والمفترض والجدول الموقوت",
   "name_en": "STYLE.md + PLAN.md: observed vs assumed + timed scene table",
   "status": "proven",
@@ -295,6 +303,7 @@
  {
   "id": "STORY-09",
   "family": "story-direction-ideas",
+  "domain": "motion",
   "name_ar": "عقد المشهد كبيانات",
   "name_en": "Scene contract as data (scene cards)",
   "status": "documented",
@@ -328,6 +337,7 @@
  {
   "id": "STORY-10",
   "family": "story-direction-ideas",
+  "domain": "motion",
   "name_ar": "اللوحات قبل الرندر",
   "name_en": "Boards-first production gate",
   "status": "documented",
@@ -362,6 +372,7 @@
  {
   "id": "STORY-11",
   "family": "story-direction-ideas",
+  "domain": "motion",
   "name_ar": "جدول النبضات بعمود «المعلومة الجديدة»",
   "name_en": "Timed beat sheet with a “new information” column",
   "status": "documented",
@@ -395,6 +406,7 @@
  {
   "id": "STORY-12",
   "family": "story-direction-ideas",
+  "domain": "motion",
   "name_ar": "نوتة الحركة",
   "name_en": "Motion score table",
   "status": "documented",
@@ -427,6 +439,7 @@
  {
   "id": "STORY-13",
   "family": "story-direction-ideas",
+  "domain": "motion",
   "name_ar": "حزمة المخرج السينمائي ومواصفة المشهد بسبع طبقات",
   "name_en": "Cinema deliverable package & 7-layer scene spec",
   "status": "documented",
@@ -464,6 +477,7 @@
  {
   "id": "STORY-14",
   "family": "story-direction-ideas",
+  "domain": "motion",
   "name_ar": "كتل القفل الحرفية للاستمرارية",
   "name_en": "Verbatim lock-block continuity",
   "status": "proven",
@@ -497,6 +511,7 @@
  {
   "id": "STORY-15",
   "family": "story-direction-ideas",
+  "domain": "motion",
   "name_ar": "ذاكرة الذوق والوصفات",
   "name_en": "Taste memory & recipe freeze",
   "status": "install",
@@ -533,6 +548,7 @@
  {
   "id": "STORY-16",
   "family": "story-direction-ideas",
+  "domain": "motion",
   "name_ar": "قانون الثانية الأولى",
   "name_en": "One-second hook law (0–1–3 s)",
   "status": "documented",
@@ -568,6 +584,7 @@
  {
   "id": "STORY-17",
   "family": "story-direction-ideas",
+  "domain": "motion",
   "name_ar": "مكتبة الخطافات المسماة",
   "name_en": "Named hook library",
   "status": "documented",
@@ -602,6 +619,7 @@
  {
   "id": "STORY-18",
   "family": "story-direction-ideas",
+  "domain": "motion",
   "name_ar": "خطاف الفلوج الصامت",
   "name_en": "Silent-vlog hook anatomy",
   "status": "documented",
@@ -636,6 +654,7 @@
  {
   "id": "STORY-19",
   "family": "story-direction-ideas",
+  "domain": "motion",
   "name_ar": "الإطار الأول دليل لا تدرّج",
   "name_en": "Product-proof first frame",
   "status": "documented",
@@ -669,6 +688,7 @@
  {
   "id": "STORY-20",
   "family": "story-direction-ideas",
+  "domain": "motion",
   "name_ar": "افتتاحيات مرصودة: سؤال، سطران متعاكسان، إشعارات الألم",
   "name_en": "Observed openers: question, two-line reversal, pain notifications",
   "status": "seen",
@@ -711,6 +731,7 @@
  {
   "id": "STORY-21",
   "family": "story-direction-ideas",
+  "domain": "motion",
   "name_ar": "محرك الصراع وstory_lint",
   "name_en": "Conflict engine + story_lint (GMC+S)",
   "status": "proven",
@@ -748,6 +769,7 @@
  {
   "id": "STORY-22",
   "family": "story-direction-ideas",
+  "domain": "motion",
   "name_ar": "منتقي الإطار السردي",
   "name_en": "Story framework chooser",
   "status": "documented",
@@ -784,6 +806,7 @@
  {
   "id": "STORY-23",
   "family": "story-direction-ideas",
+  "domain": "motion",
   "name_ar": "قوس القطعة القصيرة",
   "name_en": "Short-piece arc (hook → development → pressure → lift → payoff → end)",
   "status": "ready",
@@ -820,6 +843,7 @@
  {
   "id": "STORY-24",
   "family": "story-direction-ideas",
+  "domain": "motion",
   "name_ar": "وصفة فيلم الخمس ثوانٍ",
   "name_en": "Five-second film recipe",
   "status": "ready",
@@ -853,6 +877,7 @@
  {
   "id": "STORY-25",
   "family": "story-direction-ideas",
+  "domain": "motion",
   "name_ar": "هيكل الإعلان ووصفة إعلان التطبيق 15 ث",
   "name_en": "Ad beat skeleton & 15 s app-ad recipe",
   "status": "ready",
@@ -895,6 +920,7 @@
  {
   "id": "STORY-26",
   "family": "story-direction-ideas",
+  "domain": "motion",
   "name_ar": "أقواس العروض والإطلاق",
   "name_en": "Demo & launch arcs with second budgets",
   "status": "documented",
@@ -935,6 +961,7 @@
  {
   "id": "STORY-27",
   "family": "story-direction-ideas",
+  "domain": "motion",
   "name_ar": "فيلم العلامة: من المشكلة إلى الكشف",
   "name_en": "Brand film arc: problem → reveal (6 beats)",
   "status": "documented",
@@ -972,6 +999,7 @@
  {
   "id": "STORY-28",
   "family": "story-direction-ideas",
+  "domain": "motion",
   "name_ar": "هياكل الشرح",
   "name_en": "Explainer structures",
   "status": "documented",
@@ -1013,6 +1041,7 @@
  {
   "id": "STORY-29",
   "family": "story-direction-ideas",
+  "domain": "motion",
   "name_ar": "مقاييس أساليب المونتاج الطويل",
   "name_en": "Long-form edit style metrics (essay · diary · reflection)",
   "status": "documented",
@@ -1049,6 +1078,7 @@
  {
   "id": "STORY-30",
   "family": "story-direction-ideas",
+  "domain": "motion",
   "name_ar": "هيكل يوتيوب الطويل والاحتفاظ",
   "name_en": "Long-form YouTube skeleton & retention holds",
   "status": "documented",
@@ -1085,6 +1115,7 @@
  {
   "id": "STORY-31",
   "family": "story-direction-ideas",
+  "domain": "motion",
   "name_ar": "التريلر بالمازورات وقوس الطاقة",
   "name_en": "Trailer beat sheet in bars & energy arc",
   "status": "documented",
@@ -1123,6 +1154,7 @@
  {
   "id": "STORY-32",
   "family": "story-direction-ideas",
+  "domain": "motion",
   "name_ar": "قوس قصة البيانات",
   "name_en": "Data story arc & progressive layering",
   "status": "documented",
@@ -1156,6 +1188,7 @@
  {
   "id": "STORY-33",
   "family": "story-direction-ideas",
+  "domain": "motion",
   "name_ar": "أقواس العروض التقديمية كهياكل فيديو",
   "name_en": "Deck & pitch arcs as video skeletons",
   "status": "documented",
@@ -1190,6 +1223,7 @@
  {
   "id": "STORY-34",
   "family": "story-direction-ideas",
+  "domain": "motion",
   "name_ar": "قصص الأطفال: كتاب مصور ويوم كامل",
   "name_en": "Kids stories: picture book & day-to-night arc",
   "status": "seen",
@@ -1227,6 +1261,7 @@
  {
   "id": "STORY-35",
   "family": "story-direction-ideas",
+  "domain": "motion",
   "name_ar": "منهج المخرج: أطروحة ونقش ونوتة",
   "name_en": "Motion-director method: thesis, motif, score",
   "status": "documented",
@@ -1260,6 +1295,7 @@
  {
   "id": "STORY-36",
   "family": "story-direction-ideas",
+  "domain": "motion",
   "name_ar": "جرأة في مكان واحد",
   "name_en": "Spend boldness in one place",
   "status": "documented",
@@ -1293,6 +1329,7 @@
  {
   "id": "STORY-37",
   "family": "story-direction-ideas",
+  "domain": "motion",
   "name_ar": "قائمة «المظهر المولَّد» الممنوعة",
   "name_en": "Generated-look blacklist (anti-slop)",
   "status": "ready",
@@ -1330,6 +1367,7 @@
  {
   "id": "STORY-38",
   "family": "story-direction-ideas",
+  "domain": "motion",
   "name_ar": "شخصية حركة واحدة لكل فيلم",
   "name_en": "One motion personality per film",
   "status": "documented",
@@ -1368,6 +1406,7 @@
  {
   "id": "STORY-39",
   "family": "story-direction-ideas",
+  "domain": "motion",
   "name_ar": "من الشعور إلى الأرقام",
   "name_en": "Feeling → motion vocabulary map",
   "status": "documented",
@@ -1405,6 +1444,7 @@
  {
   "id": "STORY-40",
   "family": "story-direction-ideas",
+  "domain": "motion",
   "name_ar": "الأساليب المسماة الثمانية",
   "name_en": "Eight named visual styles (Swiss Pulse …)",
   "status": "documented",
@@ -1437,6 +1477,7 @@
  {
   "id": "STORY-41",
   "family": "story-direction-ideas",
+  "domain": "motion",
   "name_ar": "أنظمة جمالية جاهزة ولا تخلطها",
   "name_en": "Aesthetic systems & presets — never mix",
   "status": "documented",
@@ -1475,6 +1516,7 @@
  {
   "id": "STORY-42",
   "family": "story-direction-ideas",
+  "domain": "motion",
   "name_ar": "قواعد تصميم الحركة",
   "name_en": "Choreography rules (build · breathe · resolve, 1/3 rules)",
   "status": "ready",
@@ -1510,6 +1552,7 @@
  {
   "id": "STORY-43",
   "family": "story-direction-ideas",
+  "domain": "motion",
   "name_ar": "إخراج النبضة بأفعال الطاقة",
   "name_en": "Beat direction with energy verbs",
   "status": "documented",
@@ -1543,6 +1586,7 @@
  {
   "id": "STORY-44",
   "family": "story-direction-ideas",
+  "domain": "motion",
   "name_ar": "عدسات النقد قبل الرندر",
   "name_en": "Creative review lenses & aesthetics council",
   "status": "documented",
@@ -1577,6 +1621,7 @@
  {
   "id": "STORY-45",
   "family": "story-direction-ideas",
+  "domain": "motion",
   "name_ar": "التعلم من المرجع دون نسخه",
   "name_en": "Learn from references without cloning",
   "status": "proven",
@@ -1614,6 +1659,7 @@
  {
   "id": "STORY-46",
   "family": "story-direction-ideas",
+  "domain": "motion",
   "name_ar": "قواعد الصدق في الوعود",
   "name_en": "Honesty rules for claims",
   "status": "documented",
@@ -1650,6 +1696,7 @@
  {
   "id": "STORY-47",
   "family": "story-direction-ideas",
+  "domain": "motion",
   "name_ar": "الشيء المحمول عبر الفيلم",
   "name_en": "Travelling device / hero-object thread",
   "status": "ready",
@@ -1693,6 +1740,7 @@
  {
   "id": "STORY-48",
   "family": "story-direction-ideas",
+  "domain": "motion",
   "name_ar": "كشف جملة الذروة",
   "name_en": "Payoff-line detection",
   "status": "proven",
@@ -1727,6 +1775,7 @@
  {
   "id": "STORY-49",
   "family": "story-direction-ideas",
+  "domain": "motion",
   "name_ar": "من المعنى إلى الرمز",
   "name_en": "Concept-to-symbol motifs",
   "status": "ready",
@@ -1761,6 +1810,7 @@
  {
   "id": "STORY-50",
   "family": "story-direction-ideas",
+  "domain": "motion",
   "name_ar": "أنظمة الفصول المرقّمة",
   "name_en": "Chapter label systems",
   "status": "seen",
@@ -1807,6 +1857,7 @@
  {
   "id": "STORY-51",
   "family": "story-direction-ideas",
+  "domain": "motion",
   "name_ar": "خواتيم الملخص",
   "name_en": "Recap endings (grid · collage · board · progress)",
   "status": "seen",
@@ -1849,6 +1900,7 @@
  {
   "id": "STORY-52",
   "family": "story-direction-ideas",
+  "domain": "motion",
   "name_ar": "الإطار المغلق والحلقة",
   "name_en": "Bookends & loop endings",
   "status": "seen",
@@ -1890,6 +1942,7 @@
  {
   "id": "STORY-53",
   "family": "story-direction-ideas",
+  "domain": "motion",
   "name_ar": "بطاقات الجملة والصمت",
   "name_en": "Statement cards, caption beats & silence",
   "status": "seen",
@@ -1932,6 +1985,7 @@
  {
   "id": "STORY-54",
   "family": "story-direction-ideas",
+  "domain": "motion",
   "name_ar": "تبدّل المزاج: ظلام/نور، نهار/ليل",
   "name_en": "Mood shifts: dark↔light acts, day/night interludes",
   "status": "seen",
@@ -1973,6 +2027,7 @@
  {
   "id": "STORY-55",
   "family": "story-direction-ideas",
+  "domain": "motion",
   "name_ar": "نبضات كوميدية وعاطفية",
   "name_en": "Comic & emotional beats",
   "status": "seen",
@@ -2019,6 +2074,7 @@
  {
   "id": "STORY-56",
   "family": "story-direction-ideas",
+  "domain": "motion",
   "name_ar": "نبضات الحجة",
   "name_en": "Argument beats (pain triptych · THE FIX bar · cost reframing · paper-form)",
   "status": "seen",
@@ -2061,6 +2117,7 @@
  {
   "id": "STORY-57",
   "family": "story-direction-ideas",
+  "domain": "motion",
   "name_ar": "جسر الوميض والسحب للخلف إلى ملصق",
   "name_en": "Flash bridge + poster pull-back reveal",
   "status": "seen",
@@ -2095,6 +2152,7 @@
  {
   "id": "STORY-58",
   "family": "story-direction-ideas",
+  "domain": "motion",
   "name_ar": "نبضات العالم والحالة",
   "name_en": "World beats: surreal props, overload, one-take, beacon",
   "status": "seen",
@@ -2138,6 +2196,7 @@
  {
   "id": "STORY-59",
   "family": "story-direction-ideas",
+  "domain": "motion",
   "name_ar": "مونتاج مُخرَج لمقطع كلام",
   "name_en": "Directed edit of a talking clip",
   "status": "proven",
@@ -2174,6 +2233,7 @@
  {
   "id": "STORY-60",
   "family": "story-direction-ideas",
+  "domain": "motion",
   "name_ar": "قوس الريل التحفيزي (FINAL_EDIT)",
   "name_en": "Motivational talking-reel arc (FINAL_EDIT)",
   "status": "ready",
@@ -2208,6 +2268,7 @@
  {
   "id": "STORY-61",
   "family": "story-direction-ideas",
+  "domain": "motion",
   "name_ar": "فيلم الإطلاق من الموقع أو الكود",
   "name_en": "Launch video from a site or codebase (/brag)",
   "status": "ready",
@@ -2245,6 +2306,7 @@
  {
   "id": "STORY-62",
   "family": "story-direction-ideas",
+  "domain": "motion",
   "name_ar": "بنية ريل العرض 15 ث",
   "name_en": "Showreel beat structure (120 BPM)",
   "status": "ready",
@@ -2278,6 +2340,7 @@
  {
   "id": "STORY-63",
   "family": "story-direction-ideas",
+  "domain": "motion",
   "name_ar": "فيلم المختبر SHAPE→RANK",
   "name_en": "Product-lab film (SHAPE → JOINT → LOAD → BREAK → SWAP → RANK)",
   "status": "ready",
@@ -2312,6 +2375,7 @@
  {
   "id": "STORY-64",
   "family": "story-direction-ideas",
+  "domain": "motion",
   "name_ar": "قصة بلا كلام: مرشد وقفزة",
   "name_en": "Wordless short: a guide and a leap",
   "status": "ready",
@@ -2345,6 +2409,7 @@
  {
   "id": "STORY-65",
   "family": "story-direction-ideas",
+  "domain": "motion",
   "name_ar": "ستة أقواس لأنواع الستيكمان",
   "name_en": "Stickman six genre arcs",
   "status": "proven",
@@ -2377,6 +2442,7 @@
  {
   "id": "STORY-66",
   "family": "story-direction-ideas",
+  "domain": "motion",
   "name_ar": "قوس الحب بخمس نبضات وإطارين",
   "name_en": "Five-beat love arc with paired frames",
   "status": "proven",
@@ -2411,6 +2477,7 @@
  {
   "id": "STORY-67",
   "family": "story-direction-ideas",
+  "domain": "motion",
   "name_ar": "ملاءمة عدد المقاطع لخطوات الطبخ",
   "name_en": "Clip-count fitting (food flow)",
   "status": "proven",
@@ -2443,6 +2510,7 @@
  {
   "id": "STORY-68",
   "family": "story-direction-ideas",
+  "domain": "motion",
   "name_ar": "مخرج الفيرال بخمس بوابات",
   "name_en": "Viral five-stage gated director",
   "status": "proven",
@@ -2478,6 +2546,7 @@
  {
   "id": "STORY-69",
   "family": "story-direction-ideas",
+  "domain": "motion",
   "name_ar": "أفلام الدعاء والجمعة",
   "name_en": "Dua & Friday reels",
   "status": "ready",
@@ -2514,6 +2583,7 @@
  {
   "id": "STORY-70",
   "family": "story-direction-ideas",
+  "domain": "motion",
   "name_ar": "مونتاج الغربة بمعنى الأغنية",
   "name_en": "Meaning-matched song montage (Ghorba)",
   "status": "ready",
@@ -2549,6 +2619,7 @@
  {
   "id": "STORY-71",
   "family": "story-direction-ideas",
+  "domain": "motion",
   "name_ar": "مستقبل مصر 2120: خطاف وقاعدة تراث",
   "name_en": "Egypt 2120: one-second concept + heritage rule",
   "status": "ready",
@@ -2582,6 +2653,7 @@
  {
   "id": "STORY-72",
   "family": "story-direction-ideas",
+  "domain": "motion",
   "name_ar": "شرح «تعريفان للنجاح» على لوحات مولدة",
   "name_en": "Two-definitions-of-success voice explainer",
   "status": "ready",
@@ -2616,6 +2688,7 @@
  {
   "id": "STORY-73",
   "family": "story-direction-ideas",
+  "domain": "motion",
   "name_ar": "أشكال فيديو صانع المحتوى",
   "name_en": "Creator-video shapes & faceless VO",
   "status": "documented",
@@ -2650,6 +2723,7 @@
  {
   "id": "STORY-74",
   "family": "story-direction-ideas",
+  "domain": "motion",
   "name_ar": "قواعد مونتاج المدينة",
   "name_en": "City montage shot grammar",
   "status": "documented",
@@ -2685,6 +2759,7 @@
  {
   "id": "STORY-75",
   "family": "story-direction-ideas",
+  "domain": "motion",
   "name_ar": "معرض قوالب الأفلام (52) وقوالب البداية",
   "name_en": "Film template gallery (52) & starter briefs",
   "status": "install",
@@ -2721,6 +2796,7 @@
  {
   "id": "STORY-76",
   "family": "story-direction-ideas",
+  "domain": "motion",
   "name_ar": "لوحات المشهد المرسوم وموجّه الرسم",
   "name_en": "Painted-scene showcases & drawing request router",
   "status": "ready",
@@ -2757,6 +2833,7 @@
  {
   "id": "STORY-77",
   "family": "story-direction-ideas",
+  "domain": "motion",
   "name_ar": "كتاب العالم والكائنات الأصلية",
   "name_en": "Creature & world-bible kit",
   "status": "documented",
@@ -2792,6 +2869,7 @@
  {
   "id": "STORY-78",
   "family": "story-direction-ideas",
+  "domain": "motion",
   "name_ar": "توليد أفكار بعشوائية حقيقية",
   "name_en": "Lateral ideation with real randomness",
   "status": "ready",
@@ -2827,6 +2905,7 @@
  {
   "id": "STORY-79",
   "family": "story-direction-ideas",
+  "domain": "motion",
   "name_ar": "استخراج القصص والنُّقَط من النص",
   "name_en": "Story-mine & transcript nuggets",
   "status": "documented",
@@ -2860,6 +2939,7 @@
  {
   "id": "STORY-80",
   "family": "story-direction-ideas",
+  "domain": "motion",
   "name_ar": "العناوين: التوتر الصادق وخمسة اختبارات",
   "name_en": "Titles: honest charge & five tests",
   "status": "documented",
@@ -2895,6 +2975,7 @@
  {
   "id": "STORY-81",
   "family": "story-direction-ideas",
+  "domain": "motion",
   "name_ar": "خريطة الدعوة للفعل",
   "name_en": "CTA placement map",
   "status": "documented",
@@ -2927,6 +3008,7 @@
  {
   "id": "STORY-82",
   "family": "story-direction-ideas",
+  "domain": "motion",
   "name_ar": "الغلاف يبدأ من النفس لا من الصورة",
   "name_en": "Psychology-first thumbnail brainstorm",
   "status": "documented",
@@ -2960,6 +3042,7 @@
  {
   "id": "STORY-83",
   "family": "story-direction-ideas",
+  "domain": "motion",
   "name_ar": "أعمدة المحتوى والتقويم",
   "name_en": "Content pillars & publishing calendar",
   "status": "proven",
@@ -2996,6 +3079,7 @@
  {
   "id": "STORY-84",
   "family": "story-direction-ideas",
+  "domain": "motion",
   "name_ar": "موجة الموشن 2026: أنماط الطلب والميزانيات",
   "name_en": "Motion-wave prompt patterns & effort budgets",
   "status": "documented",
@@ -3029,6 +3113,7 @@
  {
   "id": "STORY-85",
   "family": "story-direction-ideas",
+  "domain": "motion",
   "name_ar": "وكلاء الإبداع الفرعيون وقرارات Jev",
   "name_en": "Creative sub-agents & Jev decisions",
   "status": "key",
@@ -3065,6 +3150,7 @@
  {
   "id": "STORY-P01",
   "family": "story-direction-ideas",
+  "domain": "motion",
   "name_ar": "عشرون وصفة أسلوب موشن بمحركاتها",
   "name_en": "20 motion style recipes (S01–S20) with engine candidates",
   "status": "documented",
@@ -3107,6 +3193,7 @@
  {
   "id": "STORY-P02",
   "family": "story-direction-ideas",
+  "domain": "motion",
   "name_ar": "الإحاطة السينمائية بثماني خانات",
   "name_en": "Eight-slot cinematic brief (PRODUCT → … → OUTPUT)",
   "status": "documented",
@@ -3145,6 +3232,7 @@
  {
   "id": "STORY-P03",
   "family": "story-direction-ideas",
+  "domain": "motion",
   "name_ar": "قاموس تحويل وصف الهواة إلى أوامر حركة",
   "name_en": "Amateur → pro motion lexicon (adjective → code direction)",
   "status": "documented",

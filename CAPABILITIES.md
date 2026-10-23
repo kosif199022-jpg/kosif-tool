@@ -181,10 +181,10 @@
 | `ffmpeg` | bin | 447 | `apt-get install -y ffmpeg  (or: conda install ffmpeg)` |
 | `chromium` | bin | 364 | `npm i playwright && npx playwright install chromium  (cloud: pre-installed at /opt/pw-browsers)` |
 | `npm:rea` | npm | 279 | `npm install -g rea-agents@6.7.0  (Node 22.19+/24.11+/26+)` |
-| `npm:gsap` | npm | 239 | `npm i gsap  (GSAP standard licence: free for most uses; check the no-charge terms)` |
-| `npm:three` | npm | 177 | `npm i three@0.186.1 esbuild` |
-| `key:unspecified` | key | 177 | `an account, API key or connector named in the power's install/how text (ask the user; never guess a value)` |
+| `npm:gsap` | npm | 246 | `npm i gsap  (GSAP standard licence: free for most uses; check the no-charge terms)` |
+| `npm:three` | npm | 183 | `npm i three@0.186.1 esbuild` |
 | `node` | bin | 177 | `https://nodejs.org (22+)  — apt-get install -y nodejs npm` |
+| `key:unspecified` | key | 167 | `an account, API key or connector named in the power's install/how text (ask the user; never guess a value)` |
 | `pip:pillow` | pip | 140 | `pip install pillow  (Arabic shaping needs a libraqm build: PIL.features.check('raqm'))` |
 | `pip:numpy` | pip | 137 | `pip install numpy` |
 | `npm:remotion` | npm | 118 | `npm i remotion@4.0.536 @remotion/cli@4.0.536  (Remotion licence: free for individuals, company licence above 3` |

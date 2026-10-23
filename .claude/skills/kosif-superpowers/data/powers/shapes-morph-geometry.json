@@ -2,6 +2,7 @@
  {
   "id": "SHAPE-01",
   "family": "shapes-morph-geometry",
+  "domain": "motion",
   "name_ar": "تحويل المسار بإعادة العينات",
   "name_en": "Seek-safe path morph (MOTION.morphPath)",
   "status": "proven",
@@ -40,6 +41,7 @@
  {
   "id": "SHAPE-02",
   "family": "shapes-morph-geometry",
+  "domain": "motion",
   "name_ar": "قانون التحويل: نقاط متساوية واتجاه واحد",
   "name_en": "Morph law: equal points, same winding",
   "status": "documented",
@@ -76,6 +78,7 @@
  {
   "id": "SHAPE-03",
   "family": "shapes-morph-geometry",
+  "domain": "motion",
   "name_ar": "فائق الإهليلج بحلقات صدى",
   "name_en": "Superellipse morph with echo rings",
   "status": "proven",
@@ -109,6 +112,7 @@
  {
   "id": "SHAPE-04",
   "family": "shapes-morph-geometry",
+  "domain": "motion",
   "name_ar": "تحويل بدالة قطبية",
   "name_en": "Polar-function shape morph",
   "status": "proven",
@@ -145,6 +149,7 @@
  {
   "id": "SHAPE-05",
   "family": "shapes-morph-geometry",
+  "domain": "motion",
   "name_ar": "تحويل المضلعات وأشكال باوهاوس",
   "name_en": "Polygon / Bauhaus primitive morph",
   "status": "seen",
@@ -180,6 +185,7 @@
  {
   "id": "SHAPE-06",
   "family": "shapes-morph-geometry",
+  "domain": "motion",
   "name_ar": "تحويل بنابض ونجوم تدور",
   "name_en": "Spring shape morph with orbiting stars",
   "status": "seen",
@@ -215,6 +221,7 @@
  {
   "id": "SHAPE-07",
   "family": "shapes-morph-geometry",
+  "domain": "motion",
   "name_ar": "تحويل بصدى ملون أو أثر ضبابي",
   "name_en": "Morph with coloured echo / blur trail",
   "status": "seen",
@@ -250,6 +257,7 @@
  {
   "id": "SHAPE-08",
   "family": "shapes-morph-geometry",
+  "domain": "motion",
   "name_ar": "تحويل داخل صندوق أداة تصميم",
   "name_en": "Design-tool gizmo morph",
   "status": "seen",
@@ -284,6 +292,7 @@
  {
   "id": "SHAPE-09",
   "family": "shapes-morph-geometry",
+  "domain": "motion",
   "name_ar": "تحويل سحابة نقاط إلى أيقونة أو شبكة",
   "name_en": "Dot-cloud morph (scatter → grid / icon)",
   "status": "seen",
@@ -320,6 +329,7 @@
  {
   "id": "SHAPE-10",
   "family": "shapes-morph-geometry",
+  "domain": "motion",
   "name_ar": "شريط ينثني فيصير حلقة",
   "name_en": "Bar bends into a ring",
   "status": "seen",
@@ -353,6 +363,7 @@
  {
   "id": "SHAPE-11",
   "family": "shapes-morph-geometry",
+  "domain": "motion",
   "name_ar": "رسم يدوي يصير نظيفًا",
   "name_en": "Sketch-to-clean morph",
   "status": "seen",
@@ -386,6 +397,7 @@
  {
   "id": "SHAPE-12",
   "family": "shapes-morph-geometry",
+  "domain": "motion",
   "name_ar": "تحول متعدد الأوجه",
   "name_en": "Facet morph (36 low-poly triangles)",
   "status": "install",
@@ -419,6 +431,7 @@
  {
   "id": "SHAPE-13",
   "family": "shapes-morph-geometry",
+  "domain": "motion",
   "name_ar": "تحويل SVG بإضافة MorphSVG",
   "name_en": "MorphSVG plugin morph (HyperFrames rule)",
   "status": "documented",
@@ -452,6 +465,7 @@
  {
   "id": "SHAPE-14",
   "family": "shapes-morph-geometry",
+  "domain": "motion",
   "name_ar": "أسلوب الأشكال السائلة",
   "name_en": "Liquid-morph style",
   "status": "documented",
@@ -488,6 +502,7 @@
  {
   "id": "SHAPE-15",
   "family": "shapes-morph-geometry",
+  "domain": "motion",
   "name_ar": "العنصر المشترك (FLIP)",
   "name_en": "FLIP / shared-element continuity",
   "status": "documented",
@@ -520,6 +535,7 @@
  {
   "id": "SHAPE-16",
   "family": "shapes-morph-geometry",
+  "domain": "motion",
   "name_ar": "البطاقة كمرساة انتقال",
   "name_en": "Card-morph anchor handoff",
   "status": "documented",
@@ -552,6 +568,7 @@
  {
   "id": "SHAPE-17",
   "family": "shapes-morph-geometry",
+  "domain": "motion",
   "name_ar": "سلسلة: نقطة → زر → شريط تقدم",
   "name_en": "Morph chain: dot → button → progress bar → full stop",
   "status": "ready",
@@ -584,6 +601,7 @@
  {
   "id": "SHAPE-18",
   "family": "shapes-morph-geometry",
+  "domain": "motion",
   "name_ar": "جزيرة ديناميكية وزر ينفتح نافذة",
   "name_en": "Dynamic-island / button-to-window morph",
   "status": "seen",
@@ -623,6 +641,7 @@
  {
   "id": "SHAPE-19",
   "family": "shapes-morph-geometry",
+  "domain": "motion",
   "name_ar": "مؤشر مطاطي بحافتين",
   "name_en": "Two-edge stretchy indicator",
   "status": "seen",
@@ -656,6 +675,7 @@
  {
   "id": "SHAPE-20",
   "family": "shapes-morph-geometry",
+  "domain": "motion",
   "name_ar": "أيقونة القائمة تصير إغلاقًا",
   "name_en": "Hamburger-to-close morph",
   "status": "documented",
@@ -687,6 +707,7 @@
  {
   "id": "SHAPE-21",
   "family": "shapes-morph-geometry",
+  "domain": "motion",
   "name_ar": "التحول عبر حالات الواجهة",
   "name_en": "Morph through UI states",
   "status": "documented",
@@ -717,6 +738,7 @@
  {
   "id": "SHAPE-22",
   "family": "shapes-morph-geometry",
+  "domain": "motion",
   "name_ar": "نقطة تتفتح إلى واجهة أو نظام",
   "name_en": "Dot-to-interface / dot-to-system bloom",
   "status": "seen",
@@ -752,6 +774,7 @@
  {
   "id": "SHAPE-23",
   "family": "shapes-morph-geometry",
+  "domain": "motion",
   "name_ar": "حلقة → قزحية → غمر لوني",
   "name_en": "Ring → iris → colour flood",
   "status": "ready",
@@ -785,6 +808,7 @@
  {
   "id": "SHAPE-24",
   "family": "shapes-morph-geometry",
+  "domain": "motion",
   "name_ar": "الشعار يصير بؤبؤ عين",
   "name_en": "Logo-to-iris / eye opening",
   "status": "seen",
@@ -820,6 +844,7 @@
  {
   "id": "SHAPE-25",
   "family": "shapes-morph-geometry",
+  "domain": "motion",
   "name_ar": "نقرة وتحول لعلامة صح",
   "name_en": "Tap ripple + circle-to-check morph",
   "status": "idea",
@@ -851,6 +876,7 @@
  {
   "id": "SHAPE-26",
   "family": "shapes-morph-geometry",
+  "domain": "motion",
   "name_ar": "ظرف يتحول لشارة / تجمع إلى شعار",
   "name_en": "Envelope→badge, converge→monogram, collapse→dot",
   "status": "idea",
@@ -885,6 +911,7 @@
  {
   "id": "SHAPE-27",
   "family": "shapes-morph-geometry",
+  "domain": "motion",
   "name_ar": "فلتر اللزوجة",
   "name_en": "SVG goo / metaball filter",
   "status": "proven",
@@ -920,6 +947,7 @@
  {
   "id": "SHAPE-28",
   "family": "shapes-morph-geometry",
+  "domain": "motion",
   "name_ar": "الانقسام اللزج والكتلة الناعمة",
   "name_en": "Gooey split & soft blob touch (HyperFrames)",
   "status": "install",
@@ -955,6 +983,7 @@
  {
   "id": "SHAPE-29",
   "family": "shapes-morph-geometry",
+  "domain": "motion",
   "name_ar": "تجمع الصلصال بالكرات",
   "name_en": "Metaball clay assembly",
   "status": "idea",
@@ -985,6 +1014,7 @@
  {
   "id": "SHAPE-30",
   "family": "shapes-morph-geometry",
+  "domain": "motion",
   "name_ar": "كتلة عضوية بضوضاء الرؤوس",
   "name_en": "Noise-displaced 3D blob",
   "status": "install",
@@ -1018,6 +1048,7 @@
  {
   "id": "SHAPE-31",
   "family": "shapes-morph-geometry",
+  "domain": "motion",
   "name_ar": "أشكال بدوال المسافة",
   "name_en": "2D signed-distance shapes (union, morph, glow)",
   "status": "documented",
@@ -1053,6 +1084,7 @@
  {
   "id": "SHAPE-32",
   "family": "shapes-morph-geometry",
+  "domain": "motion",
   "name_ar": "نحت بحقول المسافة إلى مجسم مغلق",
   "name_en": "SDF sculpting to a watertight mesh",
   "status": "proven",
@@ -1089,6 +1121,7 @@
  {
   "id": "SHAPE-33",
   "family": "shapes-morph-geometry",
+  "domain": "motion",
   "name_ar": "دمج ونحت وتقاطع ناعم",
   "name_en": "Smooth CSG (add / sub / and)",
   "status": "proven",
@@ -1122,6 +1155,7 @@
  {
   "id": "SHAPE-34",
   "family": "shapes-morph-geometry",
+  "domain": "motion",
   "name_ar": "استعلام الحقل لتثبيت العناصر",
   "name_en": "Field queries for placement",
   "status": "ready",
@@ -1154,6 +1188,7 @@
  {
   "id": "SHAPE-35",
   "family": "shapes-morph-geometry",
+  "domain": "motion",
   "name_ar": "حقل كتل وبقعة زاوية",
   "name_en": "Drifting blob field & corner blob",
   "status": "ready",
@@ -1189,6 +1224,7 @@
  {
   "id": "SHAPE-36",
   "family": "shapes-morph-geometry",
+  "domain": "motion",
   "name_ar": "كتلة متدرجة أو متحولة خلف النص",
   "name_en": "Gradient / morphing blob behind text",
   "status": "seen",
@@ -1224,6 +1260,7 @@
  {
   "id": "SHAPE-37",
   "family": "shapes-morph-geometry",
+  "domain": "motion",
   "name_ar": "إطار مطاطي وقناع قضمة",
   "name_en": "Rubber-frame strain & bite mask",
   "status": "seen",
@@ -1259,6 +1296,7 @@
  {
   "id": "SHAPE-38",
   "family": "shapes-morph-geometry",
+  "domain": "motion",
   "name_ar": "تموج ضغطة بحرارة",
   "name_en": "Press ripple with heat bloom",
   "status": "documented",
@@ -1290,6 +1328,7 @@
  {
   "id": "SHAPE-39",
   "family": "shapes-morph-geometry",
+  "domain": "motion",
   "name_ar": "الحركة على مسار SVG",
   "name_en": "Motion along an SVG path",
   "status": "install",
@@ -1329,6 +1368,7 @@
  {
   "id": "SHAPE-40",
   "family": "shapes-morph-geometry",
+  "domain": "motion",
   "name_ar": "اختيار المنحنى وسرعة ثابتة",
   "name_en": "Spline choice + arc-length constant speed",
   "status": "documented",
@@ -1361,6 +1401,7 @@
  {
   "id": "SHAPE-41",
   "family": "shapes-morph-geometry",
+  "domain": "motion",
   "name_ar": "محلل لغة مسارات SVG كاملة",
   "name_en": "Full SVG path parser (Studio)",
   "status": "proven",
@@ -1394,6 +1435,7 @@
  {
   "id": "SHAPE-42",
   "family": "shapes-morph-geometry",
+  "domain": "motion",
   "name_ar": "أشكال مركبة بثقوب",
   "name_en": "Even-odd compound shapes & holes",
   "status": "proven",
@@ -1432,6 +1474,7 @@
  {
   "id": "SHAPE-43",
   "family": "shapes-morph-geometry",
+  "domain": "motion",
   "name_ar": "عدة الأشكال الأساسية ولغة المشهد",
   "name_en": "Basic shape kit & Step scene language",
   "status": "proven",
@@ -1466,6 +1509,7 @@
  {
   "id": "SHAPE-44",
   "family": "shapes-morph-geometry",
+  "domain": "motion",
   "name_ar": "منحنيات كاتمول-روم",
   "name_en": "Catmull-Rom smooth curves",
   "status": "ready",
@@ -1496,6 +1540,7 @@
  {
   "id": "SHAPE-45",
   "family": "shapes-morph-geometry",
+  "domain": "motion",
   "name_ar": "أنبوب بنصف قطر متغير",
   "name_en": "Variable-radius tube (limbs, tails, flames, hair)",
   "status": "ready",
@@ -1531,6 +1576,7 @@
  {
   "id": "SHAPE-46",
   "family": "shapes-morph-geometry",
+  "domain": "motion",
   "name_ar": "سلاسل جبال بالإزاحة",
   "name_en": "Midpoint-displacement mountain ridges",
   "status": "ready",
@@ -1562,6 +1608,7 @@
  {
   "id": "SHAPE-47",
   "family": "shapes-morph-geometry",
+  "domain": "motion",
   "name_ar": "صندوق أيزومتري بثلاث درجات",
   "name_en": "Three-tone isometric box",
   "status": "seen",
@@ -1594,6 +1641,7 @@
  {
   "id": "SHAPE-48",
   "family": "shapes-morph-geometry",
+  "domain": "motion",
   "name_ar": "بناء نقطة ثم خط ثم مستوى",
   "name_en": "Point → line → plane build",
   "status": "seen",
@@ -1627,6 +1675,7 @@
  {
   "id": "SHAPE-49",
   "family": "shapes-morph-geometry",
+  "domain": "motion",
   "name_ar": "خطوط متدفقة ومسارات مخططة",
   "name_en": "Flowing dashes, striped tubes, dotted trails",
   "status": "seen",
@@ -1669,6 +1718,7 @@
  {
   "id": "SHAPE-50",
   "family": "shapes-morph-geometry",
+  "domain": "motion",
   "name_ar": "خيوط موجية وأشرطة متلوية",
   "name_en": "Sine strands & ribbon loops",
   "status": "ready",
@@ -1707,6 +1757,7 @@
  {
   "id": "SHAPE-51",
   "family": "shapes-morph-geometry",
+  "domain": "motion",
   "name_ar": "خطان قطريان فقط",
   "name_en": "Exactly two drifting diagonal lines",
   "status": "ready",
@@ -1742,6 +1793,7 @@
  {
   "id": "SHAPE-52",
   "family": "shapes-morph-geometry",
+  "domain": "motion",
   "name_ar": "شبكة بلاطات باوهاوس",
   "name_en": "Bauhaus tile grid (glyph swap on a distance wave)",
   "status": "proven",
@@ -1784,6 +1836,7 @@
  {
   "id": "SHAPE-53",
   "family": "shapes-morph-geometry",
+  "domain": "motion",
   "name_ar": "بلاطات تروشيه بموجة تلوين",
   "name_en": "Truchet tiles with a recolour wave",
   "status": "proven",
@@ -1821,6 +1874,7 @@
  {
   "id": "SHAPE-54",
   "family": "shapes-morph-geometry",
+  "domain": "motion",
   "name_ar": "موجة في شبكة أشكال",
   "name_en": "Distance-delayed grid wave (rotate / scale / morph)",
   "status": "seen",
@@ -1866,6 +1920,7 @@
  {
   "id": "SHAPE-55",
   "family": "shapes-morph-geometry",
+  "domain": "motion",
   "name_ar": "بلاطات تنقلب وشريط لا ينتهي",
   "name_en": "Tile flips & endless strip loops (MG-116/117)",
   "status": "documented",
@@ -1897,6 +1952,7 @@
  {
   "id": "SHAPE-56",
   "family": "shapes-morph-geometry",
+  "domain": "motion",
   "name_ar": "زهرة النقاط الذهبية",
   "name_en": "Phyllotaxis dot flower (137.5°)",
   "status": "proven",
@@ -1935,6 +1991,7 @@
  {
   "id": "SHAPE-57",
   "family": "shapes-morph-geometry",
+  "domain": "motion",
   "name_ar": "منحنيات ليساجو",
   "name_en": "Lissajous curves & tangles",
   "status": "seen",
@@ -1970,6 +2027,7 @@
  {
   "id": "SHAPE-58",
   "family": "shapes-morph-geometry",
+  "domain": "motion",
   "name_ar": "خطوط توليدية بأسلوب Joy Division",
   "name_en": "Ridge-line generative waves",
   "status": "seen",
@@ -2003,6 +2061,7 @@
  {
   "id": "SHAPE-59",
   "family": "shapes-morph-geometry",
+  "domain": "motion",
   "name_ar": "كسيريات وزخارف رياضية",
   "name_en": "Fractals, kolam, golden spiral, kaleidoscope",
   "status": "seen",
@@ -2043,6 +2102,7 @@
  {
   "id": "SHAPE-60",
   "family": "shapes-morph-geometry",
+  "domain": "motion",
   "name_ar": "جدار أيقونات مائل",
   "name_en": "Tilted icon wall",
   "status": "seen",
@@ -2075,6 +2135,7 @@
  {
   "id": "SHAPE-61",
   "family": "shapes-morph-geometry",
+  "domain": "motion",
   "name_ar": "كتل أنماط شيدرية وشبكة متحركة",
   "name_en": "HyperFrames pattern shaders & dynamic grid",
   "status": "install",
@@ -2111,6 +2172,7 @@
  {
   "id": "SHAPE-62",
   "family": "shapes-morph-geometry",
+  "domain": "motion",
   "name_ar": "حلقات دوران بنسب صحيحة",
   "name_en": "Integer-ratio rotation loops (MG-112/115)",
   "status": "documented",
@@ -2143,6 +2205,7 @@
  {
   "id": "SHAPE-63",
   "family": "shapes-morph-geometry",
+  "domain": "motion",
   "name_ar": "حلقات متحدة المركز بفجوات",
   "name_en": "Rotating gapped concentric rings",
   "status": "proven",
@@ -2178,6 +2241,7 @@
  {
   "id": "SHAPE-64",
   "family": "shapes-morph-geometry",
+  "domain": "motion",
   "name_ar": "عنقود أقواس مدارية ونواة نابضة",
   "name_en": "Orbiting arc cluster + pulsing donut core",
   "status": "ready",
@@ -2211,6 +2275,7 @@
  {
   "id": "SHAPE-65",
   "family": "shapes-morph-geometry",
+  "domain": "motion",
   "name_ar": "حلقات مدارية إهليلجية",
   "name_en": "Orbital ellipse rings & accents",
   "status": "ready",
@@ -2246,6 +2311,7 @@
  {
   "id": "SHAPE-66",
   "family": "shapes-morph-geometry",
+  "domain": "motion",
   "name_ar": "انفجار خطوط شعاعي",
   "name_en": "Radial line burst",
   "status": "proven",
@@ -2287,6 +2353,7 @@
  {
   "id": "SHAPE-67",
   "family": "shapes-morph-geometry",
+  "domain": "motion",
   "name_ar": "حلقة صدمة أرضية ونبض قلب",
   "name_en": "Shockwave ring & heartbeat ripple",
   "status": "proven",
@@ -2322,6 +2389,7 @@
  {
   "id": "SHAPE-68",
   "family": "shapes-morph-geometry",
+  "domain": "motion",
   "name_ar": "أشعة شمسية دوارة",
   "name_en": "Rotating sunburst ground",
   "status": "proven",
@@ -2359,6 +2427,7 @@
  {
   "id": "SHAPE-69",
   "family": "shapes-morph-geometry",
+  "domain": "motion",
   "name_ar": "حلقة نقاط تتسع بخطوط شعاعية",
   "name_en": "Expanding dot ring with radial lines",
   "status": "seen",
@@ -2392,6 +2461,7 @@
  {
   "id": "SHAPE-70",
   "family": "shapes-morph-geometry",
+  "domain": "motion",
   "name_ar": "نفق مربعات حلزوني",
   "name_en": "Spiral square tunnel & nested squares",
   "status": "seen",
@@ -2428,6 +2498,7 @@
  {
   "id": "SHAPE-71",
   "family": "shapes-morph-geometry",
+  "domain": "motion",
   "name_ar": "مربع يصير دائرة مع أقمار",
   "name_en": "Square→circle with satellites & star pop",
   "status": "seen",
@@ -2462,6 +2533,7 @@
  {
   "id": "SHAPE-72",
   "family": "shapes-morph-geometry",
+  "domain": "motion",
   "name_ar": "بوابة دوامية ومصباح فرينل",
   "name_en": "Swirl portal & Fresnel lamp room",
   "status": "seen",
@@ -2497,6 +2569,7 @@
  {
   "id": "SHAPE-73",
   "family": "shapes-morph-geometry",
+  "domain": "motion",
   "name_ar": "الزخرفة الثمانية من الكود",
   "name_en": "Islamic eight-point rosette builder",
   "status": "ready",
@@ -2530,6 +2603,7 @@
  {
   "id": "SHAPE-74",
   "family": "shapes-morph-geometry",
+  "domain": "motion",
   "name_ar": "وردة الفواصل الموسيقية",
   "name_en": "Interlude rosette (verse template)",
   "status": "ready",
@@ -2566,6 +2640,7 @@
  {
   "id": "SHAPE-75",
   "family": "shapes-morph-geometry",
+  "domain": "motion",
   "name_ar": "فوانيس ومسجد ونوافذ",
   "name_en": "Swaying lanterns & mosque silhouette",
   "status": "ready",
@@ -2598,6 +2673,7 @@
  {
   "id": "SHAPE-76",
   "family": "shapes-morph-geometry",
+  "domain": "motion",
   "name_ar": "غيمة من دوائر تكبر وتعتم",
   "name_en": "Circle-cluster cloud that grows and darkens",
   "status": "ready",
@@ -2629,6 +2705,7 @@
  {
   "id": "SHAPE-77",
   "family": "shapes-morph-geometry",
+  "domain": "motion",
   "name_ar": "مكتبة 16 أيقونة متجهة",
   "name_en": "16-icon vector hero library",
   "status": "ready",
@@ -2660,6 +2737,7 @@
  {
   "id": "SHAPE-78",
   "family": "shapes-morph-geometry",
+  "domain": "motion",
   "name_ar": "أيقونات SVG حية",
   "name_en": "Living SVG icons",
   "status": "documented",
@@ -2691,6 +2769,7 @@
  {
   "id": "SHAPE-79",
   "family": "shapes-morph-geometry",
+  "domain": "motion",
   "name_ar": "قواعد الأيقونة: شبكة 24 والإغلاق",
   "name_en": "Icon rules: 24 px grid & closure",
   "status": "documented",
@@ -2722,6 +2801,7 @@
  {
   "id": "SHAPE-80",
   "family": "shapes-morph-geometry",
+  "domain": "motion",
   "name_ar": "طبقات أشكال وملصقات منبثقة",
   "name_en": "Shape layers & sticker/emoji pop-ups",
   "status": "install",
@@ -2758,6 +2838,7 @@
  {
   "id": "SHAPE-81",
   "family": "shapes-morph-geometry",
+  "domain": "motion",
   "name_ar": "ملصقات زخرفية وكبسولات وسوم",
   "name_en": "Decor stickers, hazard tape & floating tag pills",
   "status": "seen",
@@ -2794,6 +2875,7 @@
  {
   "id": "SHAPE-82",
   "family": "shapes-morph-geometry",
+  "domain": "motion",
   "name_ar": "مروحة بطاقات وصور",
   "name_en": "Card / photo / swatch fan-out",
   "status": "seen",
@@ -2833,6 +2915,7 @@
  {
   "id": "SHAPE-83",
   "family": "shapes-morph-geometry",
+  "domain": "motion",
   "name_ar": "شريط تظليل مائل خلف النص",
   "name_en": "Slanted highlighter bar wipe",
   "status": "seen",
@@ -2866,6 +2949,7 @@
  {
   "id": "SHAPE-84",
   "family": "shapes-morph-geometry",
+  "domain": "motion",
   "name_ar": "تغيير لون الكلمة داخل الكرة",
   "name_en": "Clip-path colour flip over a moving lens",
   "status": "seen",
@@ -2899,6 +2983,7 @@
  {
   "id": "SHAPE-85",
   "family": "shapes-morph-geometry",
+  "domain": "motion",
   "name_ar": "تجميع من شظايا أو قطع",
   "name_en": "Shard / piece assembly along a path",
   "status": "seen",
@@ -2934,6 +3019,7 @@
  {
   "id": "SHAPE-86",
   "family": "shapes-morph-geometry",
+  "domain": "motion",
   "name_ar": "شاشة مقسومة واستعارة الكسوف",
   "name_en": "Split-screen eclipse metaphor",
   "status": "seen",
@@ -2966,6 +3052,7 @@
  {
   "id": "SHAPE-87",
   "family": "shapes-morph-geometry",
+  "domain": "motion",
   "name_ar": "بحر خطوط مع شخصية رمزية",
   "name_en": "Line-art sea with mascot",
   "status": "seen",
@@ -3001,6 +3088,7 @@
  {
   "id": "SHAPE-88",
   "family": "shapes-morph-geometry",
+  "domain": "motion",
   "name_ar": "فاصل بشعرة",
   "name_en": "Hairline separator (HyperFrames)",
   "status": "install",
@@ -3033,6 +3121,7 @@
  {
   "id": "SHAPE-89",
   "family": "shapes-morph-geometry",
+  "domain": "motion",
   "name_ar": "وحدة 24 وشبكة أعمدة",
   "name_en": "Base-unit grid system",
   "status": "documented",
@@ -3065,6 +3154,7 @@
  {
   "id": "SHAPE-90",
   "family": "shapes-morph-geometry",
+  "domain": "motion",
   "name_ar": "سلالم الأقطار والخطوط والفراغ",
   "name_en": "Primitive, radius & stroke scales",
   "status": "documented",
@@ -3097,6 +3187,7 @@
  {
   "id": "SHAPE-91",
   "family": "shapes-morph-geometry",
+  "domain": "motion",
   "name_ar": "انضغاط وتمدد بحفظ المساحة",
   "name_en": "Area-preserving squash & stretch",
   "status": "ready",
@@ -3130,6 +3221,7 @@
  {
   "id": "SHAPE-92",
   "family": "shapes-morph-geometry",
+  "domain": "motion",
   "name_ar": "التصاق مغناطيسي وكل شيء من المركز",
   "name_en": "Magnet snap spring & centre-origin rule",
   "status": "idea",
@@ -3164,6 +3256,7 @@
  {
   "id": "SHAPE-93",
   "family": "shapes-morph-geometry",
+  "domain": "motion",
   "name_ar": "أسلوب المرح الهندسي (S07)",
   "name_en": "Playful geometric style (S07)",
   "status": "documented",

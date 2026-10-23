@@ -1141,8 +1141,10 @@
   "install": "",
   "requires": [],
   "license": "Apache-2.0",
-  "proof": [],
-  "proof_scope": "none",
+  "proof": [
+   "kosif-tool/.claude/skills/kosif-superpowers/references/codex-agent-harness.md"
+  ],
+  "proof_scope": "repo",
   "styles": [],
   "tags": [
    "AGENTS.md",
@@ -1170,8 +1172,10 @@
   "install": "",
   "requires": [],
   "license": "Apache-2.0",
-  "proof": [],
-  "proof_scope": "none",
+  "proof": [
+   "kosif-tool/.claude/skills/kosif-superpowers/references/codex-agent-harness.md"
+  ],
+  "proof_scope": "repo",
   "styles": [],
   "tags": [
    "compaction",
@@ -1199,8 +1203,10 @@
   "install": "",
   "requires": [],
   "license": "Apache-2.0",
-  "proof": [],
-  "proof_scope": "none",
+  "proof": [
+   "kosif-tool/.claude/skills/kosif-superpowers/references/codex-agent-harness.md"
+  ],
+  "proof_scope": "repo",
   "styles": [],
   "tags": [
    "plan mode",
@@ -1227,8 +1233,10 @@
   "install": "",
   "requires": [],
   "license": "Apache-2.0",
-  "proof": [],
-  "proof_scope": "none",
+  "proof": [
+   "kosif-tool/.claude/skills/kosif-superpowers/references/codex-agent-harness.md"
+  ],
+  "proof_scope": "repo",
   "styles": [],
   "tags": [
    "update_plan",
@@ -1256,8 +1264,10 @@
   "install": "",
   "requires": [],
   "license": "Apache-2.0",
-  "proof": [],
-  "proof_scope": "none",
+  "proof": [
+   "kosif-tool/.claude/skills/kosif-superpowers/references/codex-agent-harness.md"
+  ],
+  "proof_scope": "repo",
   "styles": [],
   "tags": [
    "goal",
@@ -1285,8 +1295,10 @@
   "install": "",
   "requires": [],
   "license": "Apache-2.0",
-  "proof": [],
-  "proof_scope": "none",
+  "proof": [
+   "kosif-tool/.claude/skills/kosif-superpowers/references/codex-agent-harness.md"
+  ],
+  "proof_scope": "repo",
   "styles": [],
   "tags": [
    "follow-up",
@@ -1315,8 +1327,10 @@
    "chromium"
   ],
   "license": "Apache-2.0",
-  "proof": [],
-  "proof_scope": "none",
+  "proof": [
+   "kosif-tool/.claude/skills/kosif-superpowers/references/codex-agent-harness.md"
+  ],
+  "proof_scope": "repo",
   "styles": [],
   "tags": [
    "tool output",
@@ -1345,8 +1359,10 @@
   "install": "",
   "requires": [],
   "license": "Apache-2.0",
-  "proof": [],
-  "proof_scope": "none",
+  "proof": [
+   "kosif-tool/.claude/skills/kosif-superpowers/references/codex-agent-harness.md"
+  ],
+  "proof_scope": "repo",
   "styles": [],
   "tags": [
    "memory",

@@ -2,6 +2,7 @@
  {
   "id": "RETRO-01",
   "family": "pixel-retro-stylized",
+  "domain": "motion",
   "name_ar": "مشهد بكسل في ملف HTML واحد",
   "name_en": "Self-contained pixel cutscene (one HTML)",
   "status": "proven",
@@ -46,6 +47,7 @@
  {
   "id": "RETRO-02",
   "family": "pixel-retro-stylized",
+  "domain": "motion",
   "name_ar": "الإضاءة والتلاشي بدثر Bayer",
   "name_en": "Bayer-dither fades & palette-stepped light",
   "status": "proven",
@@ -79,6 +81,7 @@
  {
   "id": "RETRO-03",
   "family": "pixel-retro-stylized",
+  "domain": "motion",
   "name_ar": "عفريتات مقفلة اللوحة ومولّد الوضعيات",
   "name_en": "Palette-locked sprites & procedural pose generator",
   "status": "ready",
@@ -117,6 +120,7 @@
  {
   "id": "RETRO-04",
   "family": "pixel-retro-stylized",
+  "domain": "motion",
   "name_ar": "مؤثرات بكسل بخطوات اللوحة",
   "name_en": "Palette-stepped pixel VFX sheets",
   "status": "documented",
@@ -155,6 +159,7 @@
  {
   "id": "RETRO-05",
   "family": "pixel-retro-stylized",
+  "domain": "motion",
   "name_ar": "البلاطات والبارالاكس",
   "name_en": "Seamless tiles & parallax rules",
   "status": "documented",
@@ -192,6 +197,7 @@
  {
   "id": "RETRO-06",
   "family": "pixel-retro-stylized",
+  "domain": "motion",
   "name_ar": "حركة على شبكة صحيحة والرسم على الاثنين",
   "name_en": "Integer-grid motion & animating on twos",
   "status": "proven",
@@ -226,6 +232,7 @@
  {
   "id": "RETRO-07",
   "family": "pixel-retro-stylized",
+  "domain": "motion",
   "name_ar": "ديوراما بكسل بانعكاس ماء",
   "name_en": "Pixel diorama with water reflection",
   "status": "seen",
@@ -262,6 +269,7 @@
  {
   "id": "RETRO-08",
   "family": "pixel-retro-stylized",
+  "domain": "motion",
   "name_ar": "واجهات ألعاب 8-بت: HUD وحوار وبطاقة عنوان",
   "name_en": "8-bit HUD, dialogue box & game title card",
   "status": "seen",
@@ -304,6 +312,7 @@
  {
   "id": "RETRO-09",
   "family": "pixel-retro-stylized",
+  "domain": "motion",
   "name_ar": "فاصل بكسل داخل مونتاج حديث",
   "name_en": "Pixel chapter break inside a modern edit",
   "status": "idea",
@@ -336,6 +345,7 @@
  {
   "id": "RETRO-10",
   "family": "pixel-retro-stylized",
+  "domain": "motion",
   "name_ar": "هافتون وشاشات CMYK",
   "name_en": "Halftone & CMYK screens",
   "status": "proven",
@@ -375,6 +385,7 @@
  {
   "id": "RETRO-11",
   "family": "pixel-retro-stylized",
+  "domain": "motion",
   "name_ar": "ريزوغراف وانزياح الحبر",
   "name_en": "Risograph misregistration & two-ink print",
   "status": "proven",
@@ -415,6 +426,7 @@
  {
   "id": "RETRO-12",
   "family": "pixel-retro-stylized",
+  "domain": "motion",
   "name_ar": "الذكريات على شرائط الفيلم",
   "name_en": "Memories on film strips",
   "status": "documented",
@@ -449,6 +461,7 @@
  {
   "id": "RETRO-13",
   "family": "pixel-retro-stylized",
+  "domain": "motion",
   "name_ar": "ملصق مسطّح من صورة (k ألوان)",
   "name_en": "Flat-paint poster vectorisation (k colours)",
   "status": "ready",
@@ -484,6 +497,7 @@
  {
   "id": "RETRO-14",
   "family": "pixel-retro-stylized",
+  "domain": "motion",
   "name_ar": "معالجات الصورة الطباعية في HyperFrames",
   "name_en": "HyperFrames print treatments (engraving, crosshatch, Kuwahara, two-ink, halftone)",
   "status": "install",
@@ -518,6 +532,7 @@
  {
   "id": "RETRO-15",
   "family": "pixel-retro-stylized",
+  "domain": "motion",
   "name_ar": "عالم المانغا: خطوط سرعة وحبر",
   "name_en": "Manga speed-line burst world",
   "status": "seen",
@@ -554,6 +569,7 @@
  {
   "id": "RETRO-16",
   "family": "pixel-retro-stylized",
+  "domain": "motion",
   "name_ar": "CRT وخطوط المسح وVHS",
   "name_en": "CRT, scanlines & VHS damage",
   "status": "proven",
@@ -593,6 +609,7 @@
  {
   "id": "RETRO-17",
   "family": "pixel-retro-stylized",
+  "domain": "motion",
   "name_ar": "لقطات تبدو على شاشة حقيقية",
   "name_en": "On-screen display & camcorder HUD",
   "status": "install",
@@ -630,6 +647,7 @@
  {
   "id": "RETRO-18",
   "family": "pixel-retro-stylized",
+  "domain": "motion",
   "name_ar": "لوحة LED نقطية وشريط أخبار",
   "name_en": "LED dot-matrix ticker",
   "status": "seen",
@@ -664,6 +682,7 @@
  {
   "id": "RETRO-19",
   "family": "pixel-retro-stylized",
+  "domain": "motion",
   "name_ar": "أثر الأوسيلوسكوب الفوسفوري",
   "name_en": "Oscilloscope phosphor trace",
   "status": "install",
@@ -697,6 +716,7 @@
  {
   "id": "RETRO-20",
   "family": "pixel-retro-stylized",
+  "domain": "motion",
   "name_ar": "سينث ويف / ريترو ويف",
   "name_en": "Synthwave / retrowave",
   "status": "documented",
@@ -736,6 +756,7 @@
  {
   "id": "RETRO-21",
   "family": "pixel-retro-stylized",
+  "domain": "motion",
   "name_ar": "تليمتري CRT الداكن",
   "name_en": "Tactical telemetry / CRT-dark system",
   "status": "documented",
@@ -769,6 +790,7 @@
  {
   "id": "RETRO-22",
   "family": "pixel-retro-stylized",
+  "domain": "motion",
   "name_ar": "تحويل المشهد إلى ASCII",
   "name_en": "ASCII render pass",
   "status": "proven",
@@ -809,6 +831,7 @@
  {
   "id": "RETRO-23",
   "family": "pixel-retro-stylized",
+  "domain": "motion",
   "name_ar": "عائلة الخلايا: LED، ليغو، كروشيه، زجاج مموج",
   "name_en": "Cell-pattern family: LED, Lego, crochet, fluted glass, threshold matrices",
   "status": "documented",
@@ -845,6 +868,7 @@
  {
   "id": "RETRO-24",
   "family": "pixel-retro-stylized",
+  "domain": "motion",
   "name_ar": "الدثر المرتب والدثر بالانتشار",
   "name_en": "Ordered & error-diffusion dither passes",
   "status": "proven",
@@ -885,6 +909,7 @@
  {
   "id": "RETRO-25",
   "family": "pixel-retro-stylized",
+  "domain": "motion",
   "name_ar": "تموّج أوب آرت",
   "name_en": "Op-art concentric moiré",
   "status": "seen",
@@ -918,6 +943,7 @@
  {
   "id": "RETRO-26",
   "family": "pixel-retro-stylized",
+  "domain": "motion",
   "name_ar": "تقطيع رقمي قصير للعناصر",
   "name_en": "DOM glitch stutter (motion-kit)",
   "status": "ready",
@@ -952,6 +978,7 @@
  {
   "id": "RETRO-27",
   "family": "pixel-retro-stylized",
+  "domain": "motion",
   "name_ar": "تمريرة غليتش ثلاثية الأبعاد",
   "name_en": "Analysis-keyed 3D glitch pass",
   "status": "ready",
@@ -987,6 +1014,7 @@
  {
   "id": "RETRO-28",
   "family": "pixel-retro-stylized",
+  "domain": "motion",
   "name_ar": "كلمة غليتش RGB على النوتات",
   "name_en": "RGB-split glitch word on the beat",
   "status": "proven",
@@ -1028,6 +1056,7 @@
  {
   "id": "RETRO-29",
   "family": "pixel-retro-stylized",
+  "domain": "motion",
   "name_ar": "ثيمات التايب الحركي المقفلة (J، K، N، Q)",
   "name_en": "Locked kinetic themes: Brutalist Acid · Retro 70s · Paper Craft · Y2K Chrome",
   "status": "proven",
@@ -1063,6 +1092,7 @@
  {
   "id": "RETRO-30",
   "family": "pixel-retro-stylized",
+  "domain": "motion",
   "name_ar": "لوفاي دافئ متكرر",
   "name_en": "Lo-fi / cozy loop",
   "status": "documented",
@@ -1097,6 +1127,7 @@
  {
   "id": "RETRO-31",
   "family": "pixel-retro-stylized",
+  "domain": "motion",
   "name_ar": "بذور لوكات الريترو",
   "name_en": "Retro seed presets (vintage OS, arcade, neobrutalism, neon)",
   "status": "documented",

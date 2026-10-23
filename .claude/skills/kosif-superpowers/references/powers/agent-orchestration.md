@@ -382,7 +382,7 @@
 - **متى أستخدمها / when:** قبل تعديل ملف في مجلد فرعي / before editing a file in a subfolder of a repo with AGENTS.md or CLAUDE.md files
 - **كيف / how:** 1) Root-to-cwd instruction files are already loaded. 2) For a file outside cwd or deeper, search for a nearer AGENTS.md/CLAUDE.md. 3) Style rules apply only inside their scope. 4) User/system messages override all files. Check: name the nearest instruction file for every file you changed. Card CX-01.
 - **الرخصة / license:** Apache-2.0
-- **الدليل / proof:** — (لا دليل تشغيل بعد / no run proof yet)
+- **الدليل / proof:** `kosif-tool/.claude/skills/kosif-superpowers/references/codex-agent-harness.md`
 - **المصدر / source:** https://github.com/openai/codex (Apache-2.0, e6ebdfe) — methods restated in our own words; references/codex-agent-harness.md
 
 #### AGENT-40 · ضغط السياق بملخص تسليم · Context compaction as a handoff · 📄 موصوف / documented only
@@ -390,7 +390,7 @@
 - **متى أستخدمها / when:** سياق طويل أو تسليم لخيط أو وكيل آخر / long sessions, handing work to another thread or subagent, saving project memory
 - **كيف / how:** Four fields: progress and key decisions; constraints and user preferences; remaining work as clear next steps; critical data, examples and references. Check: a reader of the summary alone can continue. Card CX-03.
 - **الرخصة / license:** Apache-2.0
-- **الدليل / proof:** — (لا دليل تشغيل بعد / no run proof yet)
+- **الدليل / proof:** `kosif-tool/.claude/skills/kosif-superpowers/references/codex-agent-harness.md`
 - **المصدر / source:** https://github.com/openai/codex (Apache-2.0, e6ebdfe) — methods restated in our own words; references/codex-agent-harness.md
 
 #### AGENT-41 · وضع التخطيط غير المعدِّل · Non-mutating plan mode · 📄 موصوف / documented only
@@ -398,7 +398,7 @@
 - **متى أستخدمها / when:** قبل تقرير الخطط A/B/C أو حين يطلب المستخدم خطة فقط / before the USIP plan report or when the user asks for a plan only
 - **كيف / how:** Allowed: read, search, static analysis, dry runs, tests that write only caches. Not allowed: edits, rewriting formatters, patches, migrations. An execution request in plan mode means 'plan the execution'. Ask only what the repo cannot answer. Check: no question in the report is answerable from a file. Card CX-10.
 - **الرخصة / license:** Apache-2.0
-- **الدليل / proof:** — (لا دليل تشغيل بعد / no run proof yet)
+- **الدليل / proof:** `kosif-tool/.claude/skills/kosif-superpowers/references/codex-agent-harness.md`
 - **المصدر / source:** https://github.com/openai/codex (Apache-2.0, e6ebdfe) — methods restated in our own words; references/codex-agent-harness.md
 
 #### AGENT-42 · انضباط قائمة الخطوات · Plan checklist discipline · 📄 موصوف / documented only
@@ -406,7 +406,7 @@
 - **متى أستخدمها / when:** مهمة متعددة المراحل / any multi-phase task with a visible progress checklist
 - **كيف / how:** No filler steps, no plan for single-step work, no step you cannot do (e.g. untestable tests). Mark a step done before starting the next; when the plan changes, say why; do not repeat the whole plan in the reply. Check: each step has a visible result. Card CX-11.
 - **الرخصة / license:** Apache-2.0
-- **الدليل / proof:** — (لا دليل تشغيل بعد / no run proof yet)
+- **الدليل / proof:** `kosif-tool/.claude/skills/kosif-superpowers/references/codex-agent-harness.md`
 - **المصدر / source:** https://github.com/openai/codex (Apache-2.0, e6ebdfe) — methods restated in our own words; references/codex-agent-harness.md
 
 #### AGENT-43 · الهدف المستمر وتدقيق الإكمال · Persistent goal and completion audit · 📄 موصوف / documented only
@@ -414,7 +414,7 @@
 - **متى أستخدمها / when:** مهمة طويلة عبر أدوار أو بعد استيقاظ تلقائي / long work across turns, automatic continuations, before marking anything done or verified
 - **كيف / how:** Turn = progress (state changed or evidence changed the next action) / verified wait (a live handle polled now) / no progress (restated status, unexecuted plan). Completion: requirement → evidence → proves/contradicts/incomplete/weak/missing; weak = not done; scope of the check must match the claim. 'Blocked' only after the same blocker repeats three consecutive turns; never because work is hard; never pause on your own initiative. Card CX-12.
 - **الرخصة / license:** Apache-2.0
-- **الدليل / proof:** — (لا دليل تشغيل بعد / no run proof yet)
+- **الدليل / proof:** `kosif-tool/.claude/skills/kosif-superpowers/references/codex-agent-harness.md`
 - **المصدر / source:** https://github.com/openai/codex (Apache-2.0, e6ebdfe) — methods restated in our own words; references/codex-agent-harness.md
 
 #### AGENT-44 · المتابعة الاستباقية المحدودة · Bounded proactive follow-up · 📄 موصوف / documented only
@@ -422,7 +422,7 @@
 - **متى أستخدمها / when:** بعد تسليم PR أو نشر أو مهمة خلفية / after a PR, a deploy or a background job
 - **كيف / how:** Write scope, wanted outcome, evidence and stop condition first. Prefer completion notifications to polling; back off waits. Anything needing new authority is proposed, not done. Never resend a message already delivered. Card CX-13.
 - **الرخصة / license:** Apache-2.0
-- **الدليل / proof:** — (لا دليل تشغيل بعد / no run proof yet)
+- **الدليل / proof:** `kosif-tool/.claude/skills/kosif-superpowers/references/codex-agent-harness.md`
 - **المصدر / source:** https://github.com/openai/codex (Apache-2.0, e6ebdfe) — methods restated in our own words; references/codex-agent-harness.md
 
 #### AGENT-45 · غلاف نتيجة الأداة وتيار الأحداث · Tool result envelope and typed event stream · 📄 موصوف / documented only
@@ -431,7 +431,7 @@
 - **كيف / how:** Envelope: id, wall time, exit code, original token/byte count, output; truncate with a header, never silently. Fixed, matchable error strings. Events: thread/turn started, item started/updated/completed (message, reasoning, command, file change, search, todo), turn completed with usage or failed. Give JSON outputs a 'schema' field. Cards CX-16, CX-17.
 - **يحتاج / needs:** [`chromium`](../requirements.md#req-chromium)
 - **الرخصة / license:** Apache-2.0
-- **الدليل / proof:** — (لا دليل تشغيل بعد / no run proof yet)
+- **الدليل / proof:** `kosif-tool/.claude/skills/kosif-superpowers/references/codex-agent-harness.md`
 - **المصدر / source:** https://github.com/openai/codex (Apache-2.0, e6ebdfe) — methods restated in our own words; references/codex-agent-harness.md
 
 #### AGENT-46 · ذاكرة على مرحلتين بعقود إيجار · Two-phase memory with leased jobs · 📄 موصوف / documented only
@@ -439,7 +439,7 @@
 - **متى أستخدمها / when:** تصميم ذاكرة مشروع أو تعلّم بإذن / designing project memory or consent-gated learning
 - **كيف / how:** Phase 1 per session: detailed memory + short summary; skip ephemeral and sub-agent sessions; claim each job with a lease; failures retry with backoff; 'succeeded, no output' is valid. Phase 2 consolidates. Redact secrets before storing. KOSIF analogue: FusionForge shared memory (opt-in, reviewed promotion). Card CX-21.
 - **الرخصة / license:** Apache-2.0
-- **الدليل / proof:** — (لا دليل تشغيل بعد / no run proof yet)
+- **الدليل / proof:** `kosif-tool/.claude/skills/kosif-superpowers/references/codex-agent-harness.md`
 - **المصدر / source:** https://github.com/openai/codex (Apache-2.0, e6ebdfe) — methods restated in our own words; references/codex-agent-harness.md
 
 ## المصادر والرخص / sources & licences
