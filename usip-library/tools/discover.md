@@ -1,4 +1,4 @@
-# أدوات المجال `discover` (24 أداة)
+# أدوات المجال `discover` (25 أداة)
 
 > مولّد من `data/tools.json`. [الفهرس الرئيسي](../README.md) · `python3 scripts/hub.py tool <id>` للبطاقة الحية.
 
@@ -133,6 +133,57 @@
 #### عند الفشل (A29)
 
 - ابدأ بـ `think.py recover --message "<نص الخطأ>"`، ثم سجّل `fusionforge.py trace --project <slug> --id <FUSE-ID> --stage <stage> --node <N> --action "<ما جُرّب>" --result failed --error-class <الصنف> --tool tool:atlas-capability-miner --evidence <ملف>`.
+
+### `atlas-ledger` — سجل الأطلس: حالة واحدة لكل مهارة / Atlas ledger: one status for every Atlas skill
+
+| الحقل | القيمة |
+|---|---|
+| المسار | `scripts/atlas_ledger.py` (جذر: skill) |
+| المجال | `discover` |
+| الدليل | `tested-here` |
+| العائلات | `self-discovery`, `atlas-code` |
+
+**ما تفعله:** يعطي كل مهارة من مهارات أطلس KOSIF الـ14,793 حالة مراجعة واحدة: مغطاة (قدرة تستشهد بها)، أو نمط (نسخة مزوّد من منهج تملكه قدرة)، أو مكررة، أو مستبعدة (تحتاج مراجعة تثبيت أو رخصة copyleft أو علامات خطر)، أو معلّقة (آمنة وفريدة ولم يُقرر فيها بعد). يُبنى من فهرس الأطلس الوصفي وملفات القدرات وقواعد المراجعة، وإيصال REA لبصمات الأطلس كله في proofs/atlas-rea/.
+
+**What it does:** Gives every one of the 14,793 KOSIF Atlas skills exactly one review status: covered (a power cites it), pattern (one vendor's instance of a method a power already holds), duplicate, excluded (needs install review, copyleft or risk-flagged) or pending (safe, unique and not yet decided). Built from the inert Atlas metadata index, the power files and the reviewed rules in data/atlas-ledger-decisions.json; REA's hash receipt for the whole Atlas is in proofs/atlas-rea/.
+
+#### متى تُستدعى
+
+- «كل مهارة في الأطلس حصل لها ايه؟ كام اتنقلت وكام اتسابت وليه؟»
+- «ايه مهارات الأطلس الآمنة اللي لسه ما اتراجعتش في موضوع الأمان؟»
+- «What happened to each Atlas skill: covered, duplicate, excluded or pending?»
+- «List pending safe Atlas skills for the next transfer batch»
+
+#### الأوامر
+
+- **stats**: Counts per status, overall and per theme.
+  - `python3 scripts/atlas_ledger.py stats --json`
+- **show**: One Atlas skill's status, covering powers, reason and folder link; unknown exits 2.
+  - `python3 scripts/atlas_ledger.py show 6802`
+- **list**: Skills with one status, optionally one theme.
+  - `python3 scripts/atlas_ledger.py list --status pending --theme security --top 20`
+- **build**: Writes data/atlas_ledger.json.gz; --check exits 1 when it is stale.
+  - `python3 scripts/atlas_ledger.py build`
+- **self-test**: Synthetic index covering every status; prints ok or FAIL per check.
+  - `python3 scripts/atlas_ledger.py --self-test`
+
+#### المتطلبات والأمان
+
+- binaries: python3
+- optional: rea (only to refresh proofs/atlas-rea/receipt.json, run separately)
+- الأمان: read-only
+- الموافقة: None needed.
+- الحدود: A status is a review decision over metadata and SKILL.md text read as data, not an execution receipt; pattern means the method is held, while vendor endpoints and limits still live in the Atlas folder and must be re-checked against current vendor docs.
+
+#### الاختبارات والأدلة
+
+- `.claude/skills/kosif-superpowers/evals/test_atlas_ledger.py`
+- مرجع: `.claude/skills/kosif-superpowers/references/atlas-ledger-20261023.md`
+- مرجع: `.claude/skills/kosif-superpowers/references/guides/discover.md`
+
+#### عند الفشل (A29)
+
+- ابدأ بـ `think.py recover --message "<نص الخطأ>"`، ثم سجّل `fusionforge.py trace --project <slug> --id <FUSE-ID> --stage <stage> --node <N> --action "<ما جُرّب>" --result failed --error-class <الصنف> --tool tool:atlas-ledger --evidence <ملف>`.
 
 ### `atlas-task-method-router` — ????? ???? ???? / Atlas task method router
 

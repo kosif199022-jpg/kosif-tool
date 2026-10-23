@@ -13593,5 +13593,665 @@
     "2242": "56fa88f33452f15e8b4fc8821d7c1bdb0f452ff7a0e28449c126bc36ee1c353e"
    }
   }
+ },
+ {
+  "id": "ACODE-238",
+  "family": "atlas-code",
+  "domain": "code",
+  "name_ar": "تشخيص أعطال تكامل SaaS المستعصية طبقةً طبقة",
+  "name_en": "Layer-by-layer deep debugging of a stubborn SaaS integration",
+  "status": "documented",
+  "what": "يعزل العطل المتقطع أو الغامض في تكامل مع خدمة خارجية بفحص كل طبقة على حدة حتى أول طبقة تفشل، ويجمع أدلة جاهزة للتصعيد للمزوّد. — Isolates an intermittent or puzzling third-party integration failure by testing each layer independently until the first failing one, and packages escalation-ready evidence.",
+  "when": "فشل متقطع، أخطاء throttling غير مفهومة، webhooks تختفي، التشخيص العادي لم يكفِ / intermittent failures, unexplained throttling, missing webhooks, standard troubleshooting exhausted",
+  "how": "1) Write down the exact symptom, first-seen time, affected tenant or table, and whether it is continuous or intermittent. 2) Probe each layer on its own with a harmless request: DNS/TLS, vendor auth, the vendor API call, your callback or webhook endpoint, your queue and worker; the first layer that fails is where to dig. 3) Turn on any vendor cost or debug headers and capture the vendor request ID from every response. 4) For query-cost APIs (e.g. GraphQL), compute requested cost from page size multiplied through nested connections before blaming the vendor. 5) Check the vendor's delivery log for webhooks and compare with what you received. 6) Wrap calls in a timing/error logger for a bounded window to find patterns by time, payload size or tenant. 7) Hand over: symptom, failing layer, request IDs, timings, minimal repro; never include keys or customer data.",
+  "params": "vendor, failing operation, time window",
+  "install": "",
+  "requires": [],
+  "license": "method paraphrased from Atlas skills under MIT; the skills keep their own licenses — see each folder's SOURCE.md",
+  "proof": [
+   "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/1836-clay-pack/5262-clay-advanced-troubleshooting",
+   "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/1905-shopify-pack/6771-shopify-advanced-troubleshooting"
+  ],
+  "proof_scope": "url",
+  "styles": [],
+  "tags": [
+   "SaaS",
+   "integration",
+   "debugging",
+   "request id",
+   "webhook delivery",
+   "تكامل",
+   "تشخيص"
+  ],
+  "section": "التصحيح — Debugging & diagnosis",
+  "source": "KOSIF Atlas exhaustive pass 2026-10-23, batch saas-lifecycle (https://github.com/kosif199022-jpg/kosif-atlas @ 99bb108d): clay-pack/clay-advanced-troubleshooting (#5262); shopify-pack/shopify-advanced-troubleshooting (#6771) · SKILL.md read in full as inert text",
+  "atlas": {
+   "ids": [
+    "5262",
+    "6771"
+   ],
+   "examples": [
+    {
+     "id": "5262",
+     "plugin": "clay-pack",
+     "skill": "clay-advanced-troubleshooting",
+     "url": "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/1836-clay-pack/5262-clay-advanced-troubleshooting"
+    },
+    {
+     "id": "6771",
+     "plugin": "shopify-pack",
+     "skill": "shopify-advanced-troubleshooting",
+     "url": "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/1905-shopify-pack/6771-shopify-advanced-troubleshooting"
+    }
+   ],
+   "theme": "debugging",
+   "risk_notes": "Method guidance only; no Atlas code imported or executed.",
+   "kosif_overlap_ids": [],
+   "stage": "extracted",
+   "verified_by": "atlas-pass-20261023-saas-lifecycle.json",
+   "skill_md_sha256": {
+    "5262": "c63b9fe8dbb8aab79c11b7cce091696caf7b9ea8c15365b3d06800dff619ff43",
+    "6771": "1b16ebc38bd4fb3bf216446176b359c7ca4efb0f0792613fcd68450382c0b48b"
+   }
+  }
+ },
+ {
+  "id": "ACODE-239",
+  "family": "atlas-code",
+  "domain": "code",
+  "name_ar": "دورة حياة البيانات المارّة بخدمة خارجية: تصنيف واحتفاظ وحذف",
+  "name_en": "Data lifecycle governance for data sent through a SaaS vendor",
+  "status": "documented",
+  "what": "يجرد كل صنف بيانات يعبر تكاملًا خارجيًا (مدخلات، مخرجات، روابط مؤقتة، سجلات) ويحدد لكل صنف المالك والأساس القانوني ومدة الاحتفاظ ومسار الحذف ويختبر الحذف فعلًا. — Inventories every data class crossing a vendor integration and fixes owner, legal basis, retention and deletion path for each, then proves deletion works.",
+  "when": "تكامل يمرر بيانات شخصية أو محتوى عملاء لمزوّد، مراجعة GDPR/CCPA، تصميم سياسة احتفاظ / an integration sends PII or customer content to a vendor, GDPR/CCPA review, designing retention",
+  "how": "1) List each data class: inputs, enrichment or generated outputs, uploaded media, temporary vendor URLs, async job IDs, logs, metrics, backups, training sets. 2) Classify sensitivity (public, business, personal, restricted) per field and record purpose, rights basis, region and owner. 3) Validate and minimise inputs before sending; strip unneeded metadata. 4) Keep content out of queues, traces and incident evidence; store IDs, not payloads. 5) Download vendor outputs promptly to tenant-scoped storage and discard expiring URLs; never treat a vendor URL as durable or as authorisation. 6) Apply retention, legal holds, export and deletion per class. 7) Test deletion end to end across primary store, cache, queue, backups policy and vendor-side records, and keep the receipt.",
+  "params": "vendor, data classes, retention policy",
+  "install": "",
+  "requires": [],
+  "license": "method paraphrased from Atlas skills under MIT; the skills keep their own licenses — see each folder's SOURCE.md",
+  "proof": [
+   "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/1836-clay-pack/5269-clay-data-handling",
+   "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/1869-ideogram-pack/5949-ideogram-data-handling"
+  ],
+  "proof_scope": "url",
+  "styles": [],
+  "tags": [
+   "privacy",
+   "GDPR",
+   "retention",
+   "PII",
+   "data governance",
+   "خصوصية",
+   "احتفاظ بالبيانات"
+  ],
+  "section": "الأمان — Security & compliance",
+  "source": "KOSIF Atlas exhaustive pass 2026-10-23, batch saas-lifecycle (https://github.com/kosif199022-jpg/kosif-atlas @ 99bb108d): clay-pack/clay-data-handling (#5269); ideogram-pack/ideogram-data-handling (#5949) · SKILL.md read in full as inert text",
+  "atlas": {
+   "ids": [
+    "5269",
+    "5949"
+   ],
+   "examples": [
+    {
+     "id": "5269",
+     "plugin": "clay-pack",
+     "skill": "clay-data-handling",
+     "url": "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/1836-clay-pack/5269-clay-data-handling"
+    },
+    {
+     "id": "5949",
+     "plugin": "ideogram-pack",
+     "skill": "ideogram-data-handling",
+     "url": "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/1869-ideogram-pack/5949-ideogram-data-handling"
+    }
+   ],
+   "theme": "security",
+   "risk_notes": "Method guidance only; no Atlas code imported or executed.",
+   "kosif_overlap_ids": [],
+   "stage": "extracted",
+   "verified_by": "atlas-pass-20261023-saas-lifecycle.json",
+   "skill_md_sha256": {
+    "5269": "9ef9df6d70a603725e4b95491edafe6a46de26a9901f93a63d6b97ed5de09609",
+    "5949": "a474b619f95bc5bfa42408ca4b6419244e4e9d5e2b438b14bb4aad1ab26f7f96"
+   }
+  }
+ },
+ {
+  "id": "ACODE-240",
+  "family": "atlas-code",
+  "domain": "code",
+  "name_ar": "ربط أدوار المزوّد بصلاحيات التطبيق ومفاتيح الخدمة",
+  "name_en": "Map vendor roles to application RBAC and scoped service keys",
+  "status": "documented",
+  "what": "يفصل إدارة المزوّد البشرية (المالك، المسؤول، العضو) عن هويات التشغيل، ويطبّق صلاحيات دقيقة لكل مستأجر داخل التطبيق لأن أدوار المزوّد وحدها ليست RBAC. — Separates human vendor administration from runtime identities and enforces tenant-level authorisation in the application, because vendor roles alone are not RBAC.",
+  "when": "عدة فرق أو مستأجرين يستخدمون حساب مزوّد واحد، SSO/SCIM، مراجعة مفاتيح API / several teams share a vendor account, SSO/SCIM rollout, API-key review",
+  "how": "1) Inventory vendor orgs/projects/teams, members, roles, keys, environments, service identities and billing owners. 2) Map each vendor role's real powers (membership, production keys, billing) to least-privilege job functions and separation of duties. 3) Issue scoped keys per workload (read-only for BI, write only where needed) from a secret manager, one per environment. 4) Enforce tenant, model/endpoint, tool and spend policy in your application before any vendor call. 5) Use SSO/SAML and SCIM where the plan supports it, and verify entitlements on the live plan instead of assuming. 6) Review members, keys, usage and audit logs on a fixed cadence. 7) Test member removal, key rotation and revocation, cross-tenant denial and break-glass access. Role changes and key rotation are owner-approved actions.",
+  "params": "vendor, teams, environments",
+  "install": "",
+  "requires": [],
+  "license": "method paraphrased from Atlas skills under MIT; the skills keep their own licenses — see each folder's SOURCE.md",
+  "proof": [
+   "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/1841-cohere-pack/5396-cohere-enterprise-rbac",
+   "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/1894-posthog-pack/6533-posthog-enterprise-rbac"
+  ],
+  "proof_scope": "url",
+  "styles": [],
+  "tags": [
+   "RBAC",
+   "SSO",
+   "SCIM",
+   "API keys",
+   "least privilege",
+   "صلاحيات",
+   "مفاتيح"
+  ],
+  "section": "الأمان — Security & compliance",
+  "source": "KOSIF Atlas exhaustive pass 2026-10-23, batch saas-lifecycle (https://github.com/kosif199022-jpg/kosif-atlas @ 99bb108d): cohere-pack/cohere-enterprise-rbac (#5396); posthog-pack/posthog-enterprise-rbac (#6533) · SKILL.md read in full as inert text",
+  "atlas": {
+   "ids": [
+    "5396",
+    "6533"
+   ],
+   "examples": [
+    {
+     "id": "5396",
+     "plugin": "cohere-pack",
+     "skill": "cohere-enterprise-rbac",
+     "url": "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/1841-cohere-pack/5396-cohere-enterprise-rbac"
+    },
+    {
+     "id": "6533",
+     "plugin": "posthog-pack",
+     "skill": "posthog-enterprise-rbac",
+     "url": "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/1894-posthog-pack/6533-posthog-enterprise-rbac"
+    }
+   ],
+   "theme": "security",
+   "risk_notes": "Method guidance only; no Atlas code imported or executed.",
+   "kosif_overlap_ids": [],
+   "stage": "extracted",
+   "verified_by": "atlas-pass-20261023-saas-lifecycle.json",
+   "skill_md_sha256": {
+    "5396": "23839a3d9b244acc671b8975971baa0af47b0b83c54416244c06e2eb6bbf8e28",
+    "6533": "db78da3ae24c3c994da2a37b3fbbcc375e7f5852129b451bff72a04963fbf33e"
+   }
+  }
+ },
+ {
+  "id": "ACODE-241",
+  "family": "atlas-code",
+  "domain": "code",
+  "name_ar": "مراجعة مطبات التكامل المتكررة قبل الإصدار",
+  "name_en": "Recurring integration pitfall audit before release",
+  "status": "documented",
+  "what": "يراجع كود التكامل مقابل قائمة المطبات المتكررة: الهوية والصلاحيات، إصدار الـAPI، الترقيم، الـwebhooks، والكتابة دون idempotency، ويرتب النتائج حسب الأثر. — Audits integration code against the recurring pitfalls (identity vs access, API version, pagination, webhooks, non-idempotent writes) and ranks findings by impact.",
+  "when": "قبل إصدار تكامل، أخطاء محيّرة متكررة، تسليم تكامل لفريق جديد / before releasing an integration, recurring confusing failures, onboarding a team to an integration",
+  "how": "1) Inventory clients, pinned API versions, tokens, object IDs, operations and data flows. 2) Trace every object-shape assumption to current first-party docs or a recorded fixture. 3) Check identity vs access: a 404 is often missing sharing, not a bug; never fix it by widening access. 4) Check pagination is followed to the end, size limits, unknown fields tolerated, error classes and Retry-After honoured with a retry budget. 5) Check writes are idempotent with pre-state capture, read-back and compensation; destructive actions need approval. 6) Check webhooks: signature, duplicates, ordering, fetch-current-state and periodic reconciliation (a webhook stream is not a ledger). 7) For AI-tool integrations, also check scope of prompts and workspace size, and that every proposed diff is reviewed. 8) Rank by exploitability, data impact and recurrence, each with a verification test.",
+  "params": "repository, vendor, risk focus",
+  "install": "",
+  "requires": [],
+  "license": "method paraphrased from Atlas skills under MIT; the skills keep their own licenses — see each folder's SOURCE.md",
+  "proof": [
+   "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/1887-notion-pack/6390-notion-known-pitfalls",
+   "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/1915-windsurf-pack/7023-windsurf-known-pitfalls"
+  ],
+  "proof_scope": "url",
+  "styles": [],
+  "tags": [
+   "code review",
+   "pitfalls",
+   "pagination",
+   "idempotency",
+   "webhooks",
+   "مراجعة",
+   "أخطاء شائعة"
+  ],
+  "section": "إدارة المعرفة — Notes, knowledge bases & personal memory",
+  "source": "KOSIF Atlas exhaustive pass 2026-10-23, batch saas-lifecycle (https://github.com/kosif199022-jpg/kosif-atlas @ 99bb108d): notion-pack/notion-known-pitfalls (#6390); windsurf-pack/windsurf-known-pitfalls (#7023) · SKILL.md read in full as inert text",
+  "atlas": {
+   "ids": [
+    "6390",
+    "7023"
+   ],
+   "examples": [
+    {
+     "id": "6390",
+     "plugin": "notion-pack",
+     "skill": "notion-known-pitfalls",
+     "url": "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/1887-notion-pack/6390-notion-known-pitfalls"
+    },
+    {
+     "id": "7023",
+     "plugin": "windsurf-pack",
+     "skill": "windsurf-known-pitfalls",
+     "url": "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/1915-windsurf-pack/7023-windsurf-known-pitfalls"
+    }
+   ],
+   "theme": "knowledge-management",
+   "risk_notes": "Method guidance only; no Atlas code imported or executed.",
+   "kosif_overlap_ids": [],
+   "stage": "extracted",
+   "verified_by": "atlas-pass-20261023-saas-lifecycle.json",
+   "skill_md_sha256": {
+    "6390": "ed2e0364c2c05869eebc1fce360bfb4984fcd8a0a4e7a24e444418b01548a78b",
+    "7023": "4f23a78f8b9d40b3aeaad3d11231092dd099403fb102da8d669fd98e36c30009"
+   }
+  }
+ },
+ {
+  "id": "ACODE-242",
+  "family": "atlas-code",
+  "domain": "code",
+  "name_ar": "عزل بيئات التطوير والتجربة والإنتاج في التكامل",
+  "name_en": "Prove dev/staging/production isolation for an integration",
+  "status": "documented",
+  "what": "يجعل حدود البيئات صريحة بحيث لا يستهلك اختبار محلي مفاتيح أو أحداث أو بيانات الإنتاج، ويثبت العزل بأدلة الفشل لا بأسماء البيئات. — Makes environment boundaries explicit so local or PR jobs can never reach production credentials, events or data, proven by failure-path tests rather than names.",
+  "when": "تكامل واحد يعمل في عدة بيئات، webhook إنتاج يصل لبيئة تجربة، مشاركة مفتاح بين البيئات / one integration across environments, production webhooks reaching staging, shared keys",
+  "how": "1) Inventory per environment: vendor app/account, callback and webhook URLs, signing secret, API key, queues, stores, quotas, data class and owner. 2) Use separate app registrations and secrets wherever blast radius or callback ownership differs; signing secrets are never reused as API keys. 3) Forbid production fallback: config validation at startup fails if a non-production job resolves a production secret name or endpoint, without logging the value. 4) Use environment-specific HTTPS webhook URLs, queues and dead letters. 5) Allow only synthetic data in development and reviewed records in staging. 6) Tag content-free metrics with environment. 7) Test misrouting, stale secret, rotation and rollback per environment before go-live.",
+  "params": "repository, environments",
+  "install": "",
+  "requires": [
+   "key:unspecified"
+  ],
+  "license": "method paraphrased from Atlas skills under MIT; the skills keep their own licenses — see each folder's SOURCE.md",
+  "proof": [
+   "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/1878-linear-pack/6189-linear-multi-env-setup",
+   "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/1854-fireflies-pack/5694-fireflies-multi-env-setup"
+  ],
+  "proof_scope": "url",
+  "styles": [],
+  "tags": [
+   "environments",
+   "staging",
+   "secrets",
+   "isolation",
+   "webhooks",
+   "بيئات",
+   "عزل"
+  ],
+  "section": "تكاملات الإنتاجية — Productivity & SaaS integrations",
+  "source": "KOSIF Atlas exhaustive pass 2026-10-23, batch saas-lifecycle (https://github.com/kosif199022-jpg/kosif-atlas @ 99bb108d): linear-pack/linear-multi-env-setup (#6189); fireflies-pack/fireflies-multi-env-setup (#5694) · SKILL.md read in full as inert text",
+  "atlas": {
+   "ids": [
+    "6189",
+    "5694"
+   ],
+   "examples": [
+    {
+     "id": "6189",
+     "plugin": "linear-pack",
+     "skill": "linear-multi-env-setup",
+     "url": "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/1878-linear-pack/6189-linear-multi-env-setup"
+    },
+    {
+     "id": "5694",
+     "plugin": "fireflies-pack",
+     "skill": "fireflies-multi-env-setup",
+     "url": "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/1854-fireflies-pack/5694-fireflies-multi-env-setup"
+    }
+   ],
+   "theme": "productivity-integrations",
+   "risk_notes": "Method guidance only; no Atlas code imported or executed.",
+   "kosif_overlap_ids": [],
+   "stage": "extracted",
+   "verified_by": "atlas-pass-20261023-saas-lifecycle.json",
+   "skill_md_sha256": {
+    "6189": "5236e937d2b02687514dd674d653808a56aa1d894cf6977ec50b17d98653976c",
+    "5694": "23d320861dcf9b417fad5ff2d55596ee5864034e353622ecf17afb063472afd0"
+   }
+  }
+ },
+ {
+  "id": "ACODE-243",
+  "family": "atlas-code",
+  "domain": "code",
+  "name_ar": "قياس صحة تكامل خارجي ونتائجه بمقامات صريحة",
+  "name_en": "Integration observability with explicit denominators",
+  "status": "documented",
+  "what": "يعرّف مقاييس تكامل خارجي (تبنٍّ، زمن، جودة، استخدام، حوادث) من مصادر موثقة للمزوّد مع حفظ المقام لكل نسبة، ولا يستنتج أكثر مما تسمح به العينة. — Defines integration metrics from documented vendor sources, keeps the denominator of every rate, and does not infer beyond the sample.",
+  "when": "لوحة متابعة لتكامل، هل الأداة الخارجية مفيدة فعلًا، تقرير جودة دوري / a dashboard for an integration, is a vendor tool actually helping, periodic quality report",
+  "how": "1) State the decision the metric serves, the population, the UTC window and each metric's definition. 2) Pull from the vendor's documented dashboards, exports or metrics API, not by scraping bot comments or UI text; record filters, pagination and exclusions. 3) Compute coverage, latency, resolution and usage with numerators and denominators shown. 4) For quality, sample a minimal authorised set, score with a stable rubric by qualified reviewers and record disagreement. 5) Compare cohorts against a baseline before publishing thresholds. 6) Keep secrets, identities and customer content out of metrics; tag by environment and operation only. 7) Publish findings, limitations, owners and the next review date.",
+  "params": "vendor, metrics, window",
+  "install": "",
+  "requires": [],
+  "license": "method paraphrased from Atlas skills under MIT; the skills keep their own licenses — see each folder's SOURCE.md",
+  "proof": [
+   "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/1840-coderabbit-pack/5379-coderabbit-observability",
+   "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/1890-openevidence-pack/6464-openevidence-observability"
+  ],
+  "proof_scope": "url",
+  "styles": [],
+  "tags": [
+   "observability",
+   "metrics",
+   "dashboard",
+   "quality",
+   "denominator",
+   "مراقبة",
+   "مقاييس"
+  ],
+  "section": "التصحيح — Debugging & diagnosis",
+  "source": "KOSIF Atlas exhaustive pass 2026-10-23, batch saas-lifecycle (https://github.com/kosif199022-jpg/kosif-atlas @ 99bb108d): coderabbit-pack/coderabbit-observability (#5379); openevidence-pack/openevidence-observability (#6464) · SKILL.md read in full as inert text",
+  "atlas": {
+   "ids": [
+    "5379",
+    "6464"
+   ],
+   "examples": [
+    {
+     "id": "5379",
+     "plugin": "coderabbit-pack",
+     "skill": "coderabbit-observability",
+     "url": "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/1840-coderabbit-pack/5379-coderabbit-observability"
+    },
+    {
+     "id": "6464",
+     "plugin": "openevidence-pack",
+     "skill": "openevidence-observability",
+     "url": "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/1890-openevidence-pack/6464-openevidence-observability"
+    }
+   ],
+   "theme": "debugging",
+   "risk_notes": "Method guidance only; no Atlas code imported or executed.",
+   "kosif_overlap_ids": [],
+   "stage": "extracted",
+   "verified_by": "atlas-pass-20261023-saas-lifecycle.json",
+   "skill_md_sha256": {
+    "5379": "79071eb58289bcbe56630440a1b2406c4e870903076166b3e98bd0bd01d0fa15",
+    "6464": "71b081e4a14132ace87afd656acc916a9d966b33980815ed0644084b1167583c"
+   }
+  }
+ },
+ {
+  "id": "ACODE-244",
+  "family": "atlas-code",
+  "domain": "code",
+  "name_ar": "معمارية مرجعية لتكامل خارجي: بوابة سياسات ومحوّل وتسوية",
+  "name_en": "Reference architecture for a vendor integration: policy gateway, adapter, reconciliation",
+  "status": "documented",
+  "what": "يصمم أو يراجع معمارية تكامل مع خدمة خارجية مبنية على أدلة المستودع: النظام المصدر هو المرجع، بوابة سياسات للهوية والمستأجر والميزانية، محوّلات typed للمزوّد، وطوابير وتسوية للأعمال غير المتزامنة. — Designs or reviews a repo-grounded vendor architecture: source of truth stays yours, a policy gateway, typed adapters, queues and reconciliation.",
+  "when": "بداية تكامل جديد، توحيد عدة خدمات تستخدم نفس المزوّد، مراجعة تكامل قائم / starting an integration, standardising services on one vendor, reviewing an existing one",
+  "how": "1) Map current components, stores, producers, consumers, credentials and environments from the repository, not from a generic diagram. 2) Keep your source system authoritative; treat the vendor as a derived projection or a side-effect surface. 3) Put identity, tenancy, moderation, budgets and bounds in a gateway; inject vendor keys only in trusted adapters, one least-privilege credential per machine actor. 4) Hide each vendor surface behind a typed adapter; keep preview or stateful APIs behind versioned boundaries. 5) Use queues and idempotency for async jobs and reconcile vendor state with yours on a schedule. 6) Model failures: source lag, partial sync, key denial, vendor degradation, quality regressions. 7) Output decisions, interfaces, tests, observability, phased rollout, rollback and a provider exit path; mark optional paid features as optional.",
+  "params": "repository, workloads, data boundary",
+  "install": "",
+  "requires": [],
+  "license": "method paraphrased from Atlas skills under MIT; the skills keep their own licenses — see each folder's SOURCE.md",
+  "proof": [
+   "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/1821-algolia-pack/4955-algolia-reference-architecture",
+   "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/1885-mistral-pack/6344-mistral-reference-architecture"
+  ],
+  "proof_scope": "url",
+  "styles": [],
+  "tags": [
+   "architecture",
+   "adapter",
+   "gateway",
+   "reconciliation",
+   "integration",
+   "معمارية",
+   "تكامل"
+  ],
+  "section": "إعادة الهيكلة والمعمارية — Refactoring, architecture & patterns",
+  "source": "KOSIF Atlas exhaustive pass 2026-10-23, batch saas-lifecycle (https://github.com/kosif199022-jpg/kosif-atlas @ 99bb108d): algolia-pack/algolia-reference-architecture (#4955); mistral-pack/mistral-reference-architecture (#6344) · SKILL.md read in full as inert text",
+  "atlas": {
+   "ids": [
+    "4955",
+    "6344"
+   ],
+   "examples": [
+    {
+     "id": "4955",
+     "plugin": "algolia-pack",
+     "skill": "algolia-reference-architecture",
+     "url": "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/1821-algolia-pack/4955-algolia-reference-architecture"
+    },
+    {
+     "id": "6344",
+     "plugin": "mistral-pack",
+     "skill": "mistral-reference-architecture",
+     "url": "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/1885-mistral-pack/6344-mistral-reference-architecture"
+    }
+   ],
+   "theme": "refactoring-architecture",
+   "risk_notes": "Method guidance only; no Atlas code imported or executed.",
+   "kosif_overlap_ids": [],
+   "stage": "extracted",
+   "verified_by": "atlas-pass-20261023-saas-lifecycle.json",
+   "skill_md_sha256": {
+    "4955": "b40461fddfd90315355dc846e39c482ef8759a4405ca8b4f353fb560ee6302d3",
+    "6344": "fdd46d1356fdaaf1f9abf34a1ea1bc8968a355f7fa2538557b923faf3db87130"
+   }
+  }
+ },
+ {
+  "id": "ACODE-245",
+  "family": "atlas-code",
+  "domain": "code",
+  "name_ar": "أنماط موثوقية تكامل خارجي: هوية عمل واحدة لكل إعادة",
+  "name_en": "Integration reliability: one idempotency model for every retry path",
+  "status": "documented",
+  "what": "يجعل كل وحدة عمل قابلة للاسترداد بلا تكرار: هوية عمل ثابتة، فصل الإرسال عن الإكمال، إعادة محاولة للأخطاء القابلة فقط، قاطع دائرة، تدهور سلس، وتسوية دورية. — Makes every unit of work recoverable without duplicates: stable work identity, submit/complete split, retries only for retryable classes, circuit breaker, graceful degradation and reconciliation.",
+  "when": "تكامل إنتاجي يتعطل مع انقطاع المزوّد، طلبات مكررة، عواصف إعادة webhooks / a production integration breaks during vendor outages, duplicate orders, webhook retry storms",
+  "how": "1) Derive a stable work identity from tenant, operation, input and version; persist attempts and downstream state. 2) Persist the vendor job ID before acknowledging; resume status and pagination from durable state. 3) Classify errors (validation, auth, quota, rate, timeout, server, downstream) and retry only documented retryable classes with jitter, Retry-After, max attempts and a total deadline. 4) Wrap calls in a circuit breaker counting only 5xx/timeouts; serve cached or alternative data when open and log the degraded source. 5) Acknowledge webhooks fast, verify signatures, enqueue, and deduplicate by delivery ID. 6) Make client retry, queue replay, webhook redelivery and operator replay share the same idempotency key. 7) Reconcile jobs, pages and totals on a schedule. 8) Test crash-after-submit, crash-after-write, duplicate delivery, partial pages and outage. Never rotate keys to dodge limits.",
+  "params": "repository, operation",
+  "install": "",
+  "requires": [],
+  "license": "method paraphrased from Atlas skills under MIT; the skills keep their own licenses — see each folder's SOURCE.md",
+  "proof": [
+   "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/1853-firecrawl-pack/5675-firecrawl-reliability-patterns",
+   "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/1905-shopify-pack/6802-shopify-reliability-patterns"
+  ],
+  "proof_scope": "url",
+  "styles": [],
+  "tags": [
+   "reliability",
+   "idempotency",
+   "circuit breaker",
+   "retry",
+   "webhooks",
+   "موثوقية",
+   "إعادة المحاولة"
+  ],
+  "section": "البحث على الويب — Research, search & fact-checking",
+  "source": "KOSIF Atlas exhaustive pass 2026-10-23, batch saas-lifecycle (https://github.com/kosif199022-jpg/kosif-atlas @ 99bb108d): firecrawl-pack/firecrawl-reliability-patterns (#5675); shopify-pack/shopify-reliability-patterns (#6802) · SKILL.md read in full as inert text",
+  "atlas": {
+   "ids": [
+    "5675",
+    "6802"
+   ],
+   "examples": [
+    {
+     "id": "5675",
+     "plugin": "firecrawl-pack",
+     "skill": "firecrawl-reliability-patterns",
+     "url": "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/1853-firecrawl-pack/5675-firecrawl-reliability-patterns"
+    },
+    {
+     "id": "6802",
+     "plugin": "shopify-pack",
+     "skill": "shopify-reliability-patterns",
+     "url": "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/1905-shopify-pack/6802-shopify-reliability-patterns"
+    }
+   ],
+   "theme": "web-research",
+   "risk_notes": "Method guidance only; no Atlas code imported or executed.",
+   "kosif_overlap_ids": [],
+   "stage": "extracted",
+   "verified_by": "atlas-pass-20261023-saas-lifecycle.json",
+   "skill_md_sha256": {
+    "5675": "73304a25c6bdb984092b9737d5c9342d08cd5672f3366eaf601ba850343a8538",
+    "6802": "37c69de853a771d423dc38a5de1d40a01a55e3793050bd57434a6172a6c18616"
+   }
+  }
+ },
+ {
+  "id": "ACODE-246",
+  "family": "atlas-code",
+  "domain": "code",
+  "name_ar": "ترحيل عقد API لدى المزوّد بأدلة الحركة والقراءة المزدوجة",
+  "name_en": "Vendor API contract migration with traffic evidence and dual reads",
+  "status": "documented",
+  "what": "يرحّل عملية محددة من عقد API قديم إلى بديله الموثّق: إثبات من يستدعي القديم، مقارنة العقدين، محوّل توافق، تحقق جنبًا إلى جنب، طرح تدريجي، ثم حذف المسار القديم عند صفر حركة. — Migrates one concrete vendor operation to its documented replacement: prove callers, diff contracts, compatibility adapter, side-by-side checks, cohort rollout, remove at zero traffic.",
+  "when": "إعلان إهمال endpoint، ترقية إصدار SDK أو API، تغير شكل payload لـwebhook / an endpoint deprecation, SDK or API version upgrade, webhook payload change",
+  "how": "1) Name the exact deprecated route/method/version/payload and its documented replacement; never claim a blanket version upgrade without endpoint-level docs. 2) Prove affected traffic from vendor activity reports or your logs, and grep every service, job and adapter for callers. 3) Diff paths, headers, IDs, params, request/response fields, pagination, permissions, status codes and webhook schema. 4) Put the new contract behind a resource-specific adapter that preserves vendor errors and metadata. 5) Compare reads side by side by sanitised results or state hashes; for writes use sandbox fixtures, never duplicate live mutations. 6) Canary by cohort with error and rate monitoring and a clear rollback while the old route is supported. 7) Remove old code, fixtures and config once traffic is zero, and keep the receipt. A migration must not widen permissions.",
+  "params": "old contract, new contract",
+  "install": "",
+  "requires": [],
+  "license": "method paraphrased from Atlas skills under MIT; the skills keep their own licenses — see each folder's SOURCE.md",
+  "proof": [
+   "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/1818-abridge-pack/4886-abridge-upgrade-migration",
+   "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/1895-procore-pack/6571-procore-upgrade-migration"
+  ],
+  "proof_scope": "url",
+  "styles": [],
+  "tags": [
+   "migration",
+   "deprecation",
+   "API version",
+   "canary",
+   "adapter",
+   "ترحيل",
+   "ترقية"
+  ],
+  "section": "إعادة الهيكلة والمعمارية — Refactoring, architecture & patterns",
+  "source": "KOSIF Atlas exhaustive pass 2026-10-23, batch saas-lifecycle (https://github.com/kosif199022-jpg/kosif-atlas @ 99bb108d): abridge-pack/abridge-upgrade-migration (#4886); procore-pack/procore-upgrade-migration (#6571) · SKILL.md read in full as inert text",
+  "atlas": {
+   "ids": [
+    "4886",
+    "6571"
+   ],
+   "examples": [
+    {
+     "id": "4886",
+     "plugin": "abridge-pack",
+     "skill": "abridge-upgrade-migration",
+     "url": "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/1818-abridge-pack/4886-abridge-upgrade-migration"
+    },
+    {
+     "id": "6571",
+     "plugin": "procore-pack",
+     "skill": "procore-upgrade-migration",
+     "url": "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/1895-procore-pack/6571-procore-upgrade-migration"
+    }
+   ],
+   "theme": "refactoring-architecture",
+   "risk_notes": "Method guidance only; no Atlas code imported or executed.",
+   "kosif_overlap_ids": [],
+   "stage": "extracted",
+   "verified_by": "atlas-pass-20261023-saas-lifecycle.json",
+   "skill_md_sha256": {
+    "4886": "94747f4588bebc6deeca8db16a20c74e4f433723bc4e7746118f4b3be03e0559",
+    "6571": "200922f1e9c68670530f25e553c551c1f906e4eb9f5156f7478026347384521e"
+   }
+  }
+ },
+ {
+  "id": "ACODE-247",
+  "family": "atlas-code",
+  "domain": "code",
+  "name_ar": "خريطة دورة حياة تكامل SaaS: من التثبيت إلى الحوادث",
+  "name_en": "SaaS integration lifecycle map: install to incident",
+  "status": "documented",
+  "what": "خريطة توجيه لنحو 30 مرحلة تتكرر في حزم تكامل الخدمات بالأطلس (أكثر من 90 مزوّدًا): لكل مرحلة القدرة المقابلة في سوبر باور، والتفاصيل الخاصة بالمزوّد تبقى في مجلد الأطلس. — A routing map of the ~30 stages that repeat across the Atlas vendor packs (90+ vendors): each stage points to the matching superpower, and vendor specifics stay in the Atlas folder.",
+  "when": "بناء أو مراجعة تكامل مع خدمة خارجية (Shopify، Notion، Linear، Twilio، Klaviyo…) وتريد معرفة الخطوة التالية / building or reviewing any third-party integration and deciding the next step",
+  "how": "Walk the stages in order and use the listed power for each: install-auth and hello-world → ACODE-51; sdk-patterns → ACODE-50; local-dev-loop → ACODE-11; core workflows → the domain power for the task; rate-limits → ACODE-41/ACODE-64; webhooks-events → ACODE-52..55 and ACODE-65; common-errors and debug-bundle → ACODE-99/ACODE-102; advanced-troubleshooting → ACODE-238; data-handling → ACODE-239; enterprise-rbac → ACODE-240; known-pitfalls → ACODE-241; multi-env-setup → ACODE-242; observability → ACODE-243 (plus ACODE-110 for low-cardinality telemetry); reference-architecture and architecture-variants → ACODE-244; reliability-patterns and load-scale → ACODE-245; upgrade-migration → ACODE-246; ci-integration → ACODE-140/ACODE-130; deploy-integration → ACODE-146/ACODE-151; prod-checklist and security-basics → ACODE-60 with ACODE-51 for key hygiene; cost-tuning → ASTRAT-40; performance-tuning → ACODE-160 (written for the Claude API, the same retry and concurrency method applies); incident-runbook → ACODE-145; migration-deep-dive → ACODE-246, plus ACODE-96 when a database moves; policy-guardrails → ASTRAT-41. For the vendor's own endpoints and limits, run `python3 scripts/atlas_5000.py find \"<vendor> <stage>\"`, read that folder's SKILL.md as inert text, and re-check the vendor's current docs before any live call.",
+  "params": "vendor, stage",
+  "install": "",
+  "requires": [
+   "python3"
+  ],
+  "license": "method paraphrased from Atlas skills under MIT; the skills keep their own licenses — see each folder's SOURCE.md",
+  "proof": [
+   "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/1836-clay-pack/5262-clay-advanced-troubleshooting",
+   "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/1905-shopify-pack/6771-shopify-advanced-troubleshooting",
+   "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/1836-clay-pack/5269-clay-data-handling",
+   "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/1887-notion-pack/6390-notion-known-pitfalls",
+   "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/1878-linear-pack/6189-linear-multi-env-setup",
+   "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/1853-firecrawl-pack/5675-firecrawl-reliability-patterns",
+   "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/1818-abridge-pack/4886-abridge-upgrade-migration"
+  ],
+  "proof_scope": "url",
+  "styles": [],
+  "tags": [
+   "SaaS",
+   "integration",
+   "lifecycle",
+   "vendor",
+   "routing",
+   "تكامل",
+   "خدمات خارجية",
+   "دورة حياة"
+  ],
+  "section": "التصحيح — Debugging & diagnosis",
+  "source": "KOSIF Atlas exhaustive pass 2026-10-23, batch saas-lifecycle (https://github.com/kosif199022-jpg/kosif-atlas @ 99bb108d): clay-pack/clay-advanced-troubleshooting (#5262); shopify-pack/shopify-advanced-troubleshooting (#6771); clay-pack/clay-data-handling (#5269); notion-pack/notion-known-pitfalls (#6390); linear-pack/linear-multi-env-setup (#6189); firecrawl-pack/firecrawl-reliability-patterns (#5675); abridge-pack/abridge-upgrade-migration (#4886) · SKILL.md read in full as inert text",
+  "atlas": {
+   "ids": [
+    "5262",
+    "6771",
+    "5269",
+    "6390",
+    "6189",
+    "5675",
+    "4886"
+   ],
+   "examples": [
+    {
+     "id": "5262",
+     "plugin": "clay-pack",
+     "skill": "clay-advanced-troubleshooting",
+     "url": "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/1836-clay-pack/5262-clay-advanced-troubleshooting"
+    },
+    {
+     "id": "6771",
+     "plugin": "shopify-pack",
+     "skill": "shopify-advanced-troubleshooting",
+     "url": "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/1905-shopify-pack/6771-shopify-advanced-troubleshooting"
+    },
+    {
+     "id": "5269",
+     "plugin": "clay-pack",
+     "skill": "clay-data-handling",
+     "url": "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/1836-clay-pack/5269-clay-data-handling"
+    },
+    {
+     "id": "6390",
+     "plugin": "notion-pack",
+     "skill": "notion-known-pitfalls",
+     "url": "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/1887-notion-pack/6390-notion-known-pitfalls"
+    },
+    {
+     "id": "6189",
+     "plugin": "linear-pack",
+     "skill": "linear-multi-env-setup",
+     "url": "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/1878-linear-pack/6189-linear-multi-env-setup"
+    },
+    {
+     "id": "5675",
+     "plugin": "firecrawl-pack",
+     "skill": "firecrawl-reliability-patterns",
+     "url": "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/1853-firecrawl-pack/5675-firecrawl-reliability-patterns"
+    },
+    {
+     "id": "4886",
+     "plugin": "abridge-pack",
+     "skill": "abridge-upgrade-migration",
+     "url": "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/1818-abridge-pack/4886-abridge-upgrade-migration"
+    }
+   ],
+   "theme": "debugging",
+   "risk_notes": "Method guidance only; no Atlas code imported or executed.",
+   "kosif_overlap_ids": [],
+   "stage": "extracted",
+   "verified_by": "atlas-pass-20261023-saas-lifecycle.json",
+   "skill_md_sha256": {
+    "5262": "c63b9fe8dbb8aab79c11b7cce091696caf7b9ea8c15365b3d06800dff619ff43",
+    "6771": "1b16ebc38bd4fb3bf216446176b359c7ca4efb0f0792613fcd68450382c0b48b",
+    "5269": "9ef9df6d70a603725e4b95491edafe6a46de26a9901f93a63d6b97ed5de09609",
+    "6390": "ed2e0364c2c05869eebc1fce360bfb4984fcd8a0a4e7a24e444418b01548a78b",
+    "6189": "5236e937d2b02687514dd674d653808a56aa1d894cf6977ec50b17d98653976c",
+    "5675": "73304a25c6bdb984092b9737d5c9342d08cd5672f3366eaf601ba850343a8538",
+    "4886": "94747f4588bebc6deeca8db16a20c74e4f433723bc4e7746118f4b3be03e0559"
+   }
+  }
  }
 ]
