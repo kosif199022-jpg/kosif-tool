@@ -312,5 +312,68 @@
   ],
   "section": "Planning",
   "source": "kosif-tool/.claude/skills/kosif-superpowers/references/cognition.md"
+ },
+ {
+  "id": "PLAN-13",
+  "family": "planning-execution",
+  "domain": "mind",
+  "name_ar": "تطوير يقوده المواصفات",
+  "name_en": "Spec-driven development",
+  "status": "documented",
+  "what": "مبادئ ثابتة أولًا، ثم مواصفة تقول ماذا ولماذا دون كيف، ثم توضيح المبهم، ثم خطة تقنية، ثم مهام مرتبة بالاختبار أولًا، ثم التنفيذ، مع فحص اتساق بينها. — Fixed principles first, then a spec of what and why without how, then clarification, a technical plan, ordered test-first tasks, implementation, and a consistency check across them.",
+  "when": "ميزة جديدة أو تطبيق من الصفر / a new feature or an app from scratch",
+  "how": "constitution (5-9 non-negotiables: tests first, no secrets, accessibility …) → specify (user stories, acceptance criteria; mark gaps [NEEDS CLARIFICATION]) → clarify (resolve each mark with the user or a stated assumption) → plan (stack, data model, interfaces, how each criterion will be tested) → tasks (numbered, files named, [P] = can run in parallel, test task before its code task) → implement. Before implementing, check every acceptance criterion has a task and a test, and every task traces to a criterion.",
+  "params": "",
+  "install": "",
+  "requires": [],
+  "license": "MIT",
+  "proof": [],
+  "proof_scope": "none",
+  "styles": [],
+  "tags": [
+   "spec-kit",
+   "specification",
+   "constitution",
+   "tasks",
+   "sdd",
+   "مواصفات",
+   "خطة",
+   "مهام"
+  ],
+  "section": "أكبر مستودعات GitHub — Top GitHub repositories (2026-10-23)",
+  "source": "https://github.com/github/spec-kit (MIT) — restated in our own words"
+ },
+ {
+  "id": "PLAN-14",
+  "family": "planning-execution",
+  "domain": "mind",
+  "name_ar": "عصف ثم خطة ثم وكيل لكل مهمة بالاختبار أولًا",
+  "name_en": "Brainstorm, plan, then a test-first subagent per task",
+  "status": "documented",
+  "what": "صمّم بالأسئلة قبل الكود، واكتب خطة مهام صغيرة بملفاتها وطريقة تحققها، وأعطِ كل مهمة لوكيل فرعي جديد، وراجع بين المهام، ولا تقل «تم» قبل التحقق. — Design by questions before code, write a plan of small tasks with files and verification, give each task to a fresh subagent, review between tasks, and never say done before verifying.",
+  "when": "تنفيذ برمجي من عدة خطوات بوكلاء / multi-step coding done with agents",
+  "how": "Brainstorm: ask one question at a time until the design is agreed; write it down. Plan: tasks of 2-5 minutes each, with exact file paths, the code shape and the command that proves it. Execute: one fresh subagent per task (clean context), red → green → refactor; a reviewer checks the diff against the plan before the next task. Finish: run the full suite and show the output before claiming completion.",
+  "params": "",
+  "install": "",
+  "requires": [
+   "claude:tools"
+  ],
+  "license": "MIT",
+  "proof": [],
+  "proof_scope": "none",
+  "styles": [],
+  "tags": [
+   "superpowers",
+   "brainstorming",
+   "writing plans",
+   "subagent",
+   "tdd",
+   "verification",
+   "عصف ذهني",
+   "خطة",
+   "اختبار أولًا"
+  ],
+  "section": "أكبر مستودعات GitHub — Top GitHub repositories (2026-10-23)",
+  "source": "https://github.com/obra/superpowers (MIT; skills: brainstorming, writing-plans, subagent-driven development, verification) — restated in our own words"
  }
 ]

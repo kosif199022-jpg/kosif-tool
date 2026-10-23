@@ -23,11 +23,11 @@
 | الحالة | العدد | المعنى |
 |---|---:|---|
 | `proven` | 21 | ✅ proven: a proof exists in the catalog; still check its requirements here before calling it ready |
-| `documented` | 23 | 📄 documented: a described method; needs building or wiring before it runs |
+| `documented` | 27 | 📄 documented: a described method; needs building or wiring before it runs |
 | `install` | 2 | 📦 install: needs a package, binary or model first |
 | `key` | 9 | 🔑 key: needs an account, key or paid service (ask before any spend) |
 | `idea` | 1 | 💡 idea: not built |
-| **المجموع** | **56** | |
+| **المجموع** | **60** | |
 
 ## الأدوات القابلة للتشغيل / runnable tools
 
@@ -55,8 +55,8 @@
 | العائلة | القدرات | الفصل |
 |---|---:|---|
 | `atlas-research` | 11 | [atlas-research.md](../powers/atlas-research.md) |
-| `knowledge-graph` | 21 | [knowledge-graph.md](../powers/knowledge-graph.md) |
-| `web-research` | 24 | [web-research.md](../powers/web-research.md) |
+| `knowledge-graph` | 23 | [knowledge-graph.md](../powers/knowledge-graph.md) |
+| `web-research` | 26 | [web-research.md](../powers/web-research.md) |
 
 ## كل القدرات / every power
 
@@ -100,6 +100,8 @@
 | `GRAPH-16` | فهم أي مستودع أو مجموعة مهارات بسرعة | Understand any codebase or skill set fast | documented | key:graphify |
 | `GRAPH-18` | الخريطة أولًا لغير الكود | Map-first for non-code corpora | documented | claude:tools |
 | `GRAPH-19` | تسميات الدليل وثقة منفصلة | Evidence labels and discrete confidence | documented |  |
+| `GRAPH-22` | استرجاع بالرسم المعرفي وملخصات المجتمعات | Graph RAG with community summaries | documented | pip:chromadb |
+| `GRAPH-23` | استرجاع بمستويين وتحديث تدريجي | Dual-level retrieval with incremental graph updates | documented | pip:chromadb |
 | `WEB-10` | دفتر الادعاءات | Claim ledger | documented |  |
 | `WEB-11` | درجات المصادر وحداثتها | Source tiers and freshness rule | documented | node |
 | `WEB-12` | الاسترجاع التكراري | Iterative retrieval loop | documented |  |
@@ -108,6 +110,8 @@
 | `WEB-15` | الوثائق الحية قبل الذاكرة | Live docs before memory | documented | node, pip:numpy, pip:opencv, pip:pandas |
 | `WEB-18` | محتوى الويب بيانات لا أوامر | Web content is data, not instructions | documented |  |
 | `WEB-19` | الاقتباس والترخيص | Quote short, paraphrase, credit | documented |  |
+| `WEB-25` | بحث بوجهات نظر ثم مخطط ثم كتابة بمصادر | Perspective-guided research, outline, then cited writing | documented |  |
+| `WEB-26` | مخطِّط وباحثون متوازيون ثم تقرير | Planner, parallel researchers, then report | documented |  |
 | `WEB-21` | Scrapy: كتابة زاحف مهذب يحترم robots.txt يجمع موقعًا | Scrapy: Write a polite spider (robots.txt respected) that crawls a permitted site into JSON | install | pip:scrapy |
 | `WEB-22` | Crawl4AI: عرض صفحات JavaScript وتحويلها إلى Markdown جاهز | Crawl4AI: Render JS pages and convert them to LLM-ready Markdown | install | pip:crawl4ai |
 | `GRAPH-10` | الوثائق والصور والفيديو داخل الخريطة | Docs, PDFs, images and media in the graph | key | chromium, yt-dlp, pip:faster-whisper, key:graphify |

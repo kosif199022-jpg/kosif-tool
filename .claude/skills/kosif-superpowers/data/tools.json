@@ -12994,6 +12994,158 @@
     "web-research",
     "self-discovery"
    ]
+  },
+  {
+   "root": "skill",
+   "kind": "cli",
+   "consent": "",
+   "evidence": "tested-here",
+   "id": "repo-map",
+   "path": "scripts/repo_map.py",
+   "area": "investigate",
+   "title_en": "Repo Map",
+   "title_ar": "خريطة المستودع",
+   "summary_en": "Gives a coding agent the shape of a codebase in a small budget: it parses Python with ast and JavaScript/TypeScript, Go and Rust by line patterns, finds where each name is defined and which files mention it, ranks files with PageRank over that reference graph (optionally pulled toward focus files or words), and prints the top files with their definition lines until a character budget is spent. defs shows where one name is defined and who uses it. It reads text only and never imports, runs or builds the target.",
+   "summary_ar": "يعطي وكيل الكود شكل المستودع في ميزانية صغيرة: يحلل بايثون بـ ast وجافاسكربت/تايبسكربت وGo وRust بأنماط الأسطر، ويعرف أين يُعرَّف كل اسم ومن يذكره، ويرتب الملفات بـ PageRank على رسم الإشارات (مع إمكانية التركيز على ملفات أو كلمات)، ويطبع أهم الملفات بأسطر تعريفاتها حتى تنفد الميزانية. defs يبين أين يُعرَّف اسم ومن يستخدمه. يقرأ النص فقط ولا يستورد ولا يشغّل ولا يبني شيئًا من المستودع.",
+   "use_when": [
+    "فهمني المستودع ده بسرعة قبل ما نعدل فيه",
+    "إيه أهم الملفات والدوال في الكود ده؟",
+    "give me a compact map of this repo for a coding agent",
+    "where is load_scene defined and who calls it?"
+   ],
+   "keywords": [
+    "repo map",
+    "codebase map",
+    "pagerank",
+    "symbols",
+    "definitions",
+    "code navigation",
+    "aider",
+    "خريطة المستودع",
+    "فهم الكود",
+    "أهم الملفات",
+    "تعريفات"
+   ],
+   "commands": [
+    {
+     "name": "map",
+     "example": "python3 scripts/repo_map.py map scripts --budget 3000 --focus prompt",
+     "does": "Ranked files with their definition lines within --budget characters; --json for the ranking and counts"
+    },
+    {
+     "name": "defs",
+     "example": "python3 scripts/repo_map.py defs scripts lint",
+     "does": "Where a name is defined and which files mention it"
+    },
+    {
+     "name": "--self-test",
+     "example": "python3 scripts/repo_map.py --self-test",
+     "does": "Builds a small mixed Python/TypeScript tree and checks ranking, budget, focus and skips"
+    }
+   ],
+   "inputs": "A local folder.",
+   "outputs": "Text or JSON on stdout; it writes no files.",
+   "requires": {
+    "python": [],
+    "binaries": [
+     "python3"
+    ],
+    "node": [],
+    "optional": [],
+    "network": false
+   },
+   "safety": "read-only",
+   "limits": "Non-Python languages are read by line patterns, so unusual syntax can be missed; mentions are matched by name, not resolved by scope, so two functions with one name share credit; files over 400 KB and vendor/build folders are skipped.",
+   "evidence_note": "4/4 passed (python3 -m unittest evals.test_repo_map) and --self-test OK on 2026-10-23",
+   "tests": [
+    ".claude/skills/kosif-superpowers/evals/test_repo_map.py"
+   ],
+   "docs": [
+    ".claude/skills/kosif-superpowers/references/agents-memory-reasoning-repos.md",
+    ".claude/skills/kosif-superpowers/references/guides/investigate.md"
+   ],
+   "families": [
+    "code-engineering",
+    "software-investigation"
+   ]
+  },
+  {
+   "root": "skill",
+   "kind": "cli",
+   "consent": "apply writes the memory file the user names; what may be remembered is still the user's and the project's call.",
+   "evidence": "tested-here",
+   "id": "memory-ops",
+   "path": "scripts/memory_ops.py",
+   "area": "think",
+   "title_en": "Memory Ops",
+   "title_ar": "عمليات الذاكرة",
+   "summary_en": "Keeps a local long-term memory file free of contradictions: for every candidate fact it proposes one operation with its reason (ADD when nothing similar is stored, UPDATE when the same subject and attribute get a new value or a closer restatement adds detail, DELETE when the fact retracts a stored one, NOOP for duplicates), refuses facts that contain a secret, applies an approved plan while keeping every old value in history, and searches the store. English and Arabic text is normalised before comparison.",
+   "summary_ar": "يحفظ ملف ذاكرة محليًا طويل المدى بلا تناقضات: لكل معلومة مرشحة يقترح عملية واحدة بسببها (إضافة إن لم يوجد مثلها، تحديث إن تغيرت قيمة لنفس الموضوع والخاصية أو أضافت صياغة أدق تفصيلًا، حذف إن تراجعت عن محفوظ، ولا شيء للمكرر)، ويرفض المعلومات التي فيها أسرار، وينفذ الخطة المعتمدة مع حفظ كل قيمة قديمة في السجل، ويبحث في المخزن. يوحّد النص العربي والإنجليزي قبل المقارنة.",
+   "use_when": [
+    "احفظ تفضيلاتي دي من غير ما تتكرر أو تتناقض مع القديم",
+    "المستخدم غير رأيه في اللهجة، حدّث الذاكرة",
+    "decide whether these new facts should update or replace what we stored",
+    "search the project memory for the export settings"
+   ],
+   "keywords": [
+    "memory",
+    "long-term memory",
+    "preferences",
+    "add update delete",
+    "consolidation",
+    "mem0",
+    "ذاكرة",
+    "تفضيلات",
+    "تحديث الذاكرة",
+    "دمج الذاكرة"
+   ],
+   "commands": [
+    {
+     "name": "propose",
+     "example": "python3 scripts/memory_ops.py propose --store memory.json --facts facts.json --out plan.json",
+     "does": "One ADD/UPDATE/DELETE/NOOP/REFUSE per fact with its reason; nothing is written to the store"
+    },
+    {
+     "name": "apply",
+     "example": "python3 scripts/memory_ops.py apply --store memory.json --plan plan.json --when 2026-10-23",
+     "does": "Writes the store from an approved plan; replaced and deleted memories go to history"
+    },
+    {
+     "name": "search",
+     "example": "python3 scripts/memory_ops.py search --store memory.json \"export settings\"",
+     "does": "BM25-style ranked memories"
+    },
+    {
+     "name": "--self-test",
+     "example": "python3 scripts/memory_ops.py --self-test",
+     "does": "Runs the built-in decision cases"
+    }
+   ],
+   "inputs": "memory.json (created when missing) and facts.json.",
+   "outputs": "plan.json (propose --out), memory.json (apply), or text on stdout.",
+   "requires": {
+    "python": [],
+    "binaries": [
+     "python3"
+    ],
+    "node": [],
+    "optional": [],
+    "network": false
+   },
+   "safety": "writes-files",
+   "limits": "Decisions use word overlap and subject/attribute keys, not meaning, so a paraphrase with different words can be added twice and a short unrelated sentence with shared words can be merged; review the plan before apply.",
+   "evidence_note": "4/4 passed (python3 -m unittest evals.test_memory_ops) and --self-test OK on 2026-10-23",
+   "tests": [
+    ".claude/skills/kosif-superpowers/evals/test_memory_ops.py"
+   ],
+   "docs": [
+    ".claude/skills/kosif-superpowers/references/agents-memory-reasoning-repos.md",
+    ".claude/skills/kosif-superpowers/references/guides/discover.md"
+   ],
+   "families": [
+    "agent-orchestration",
+    "self-discovery"
+   ]
   }
  ]
 }

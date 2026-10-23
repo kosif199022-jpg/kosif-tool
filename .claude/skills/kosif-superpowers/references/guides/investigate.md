@@ -8,7 +8,7 @@ Commands below are typed from the skill folder (`.claude/skills/kosif-superpower
 
 <!-- hub:area:investigate:start -->
 
-**الأدوات / tools (13)** — `python3 scripts/hub.py tool <id>` for every command, requirement and limit:
+**الأدوات / tools (14)** — `python3 scripts/hub.py tool <id>` for every command, requirement and limit:
 
 | tool | what it does | start with | evidence |
 |---|---|---|---|
@@ -25,6 +25,7 @@ Commands below are typed from the skill folder (`.claude/skills/kosif-superpower
 | `atlas-reviewed-methods-v3` | Works with reviewed Atlas method records and their provenance. | `python3 scripts/atlas_reviewed_methods_v3.py --help` | untested |
 | `atlas-transfer` | Converts reviewed Atlas records into KOSIF capability catalog data; writes files only when explicitly approved. | `python3 scripts/atlas_transfer.py --help` | untested |
 | `differential-exam` | Scores a candidate run against a reference run folder by folder and file by file (<run>/<scenario>/<files>), comparing JSON and JSONL as data and other files as text after masking volatile values (UUIDs, timestamps, epochs, temp names, long hex ids, durations, named root paths and dropped keys). It seals an exam with SHA-256 hashes before the work starts and verifies the seal later, and its self-check refuses to trust the scorer until reference against reference scores 100%. Stdlib only; it runs nothing. | `python3 scripts/differential_exam.py seal ./exam --out ./exam-seal.json` | tested-here |
+| `repo-map` | Gives a coding agent the shape of a codebase in a small budget: it parses Python with ast and JavaScript/TypeScript, Go and Rust by line patterns, finds where each name is defined and which files mention it, ranks files with PageRank over that reference graph (optionally pulled toward focus files or words), and prints the top files with their definition lines until a character budget is spent. defs shows where one name is defined and who uses it. It reads text only and never imports, runs or builds the target. | `python3 scripts/repo_map.py map scripts --budget 3000 --focus prompt` | tested-here |
 
 <!-- hub:area:investigate:end -->
 

@@ -23,13 +23,13 @@
 | الحالة | العدد | المعنى |
 |---|---:|---|
 | `proven` | 111 | ✅ proven: a proof exists in the catalog; still check its requirements here before calling it ready |
-| `ready` | 16 | 🟢 ready: runnable without setup according to the catalog |
-| `documented` | 394 | 📄 documented: a described method; needs building or wiring before it runs |
+| `ready` | 17 | 🟢 ready: runnable without setup according to the catalog |
+| `documented` | 395 | 📄 documented: a described method; needs building or wiring before it runs |
 | `seen` | 16 | 👁 seen: observed in a reference or demo, not executed here |
 | `install` | 32 | 📦 install: needs a package, binary or model first |
 | `key` | 7 | 🔑 key: needs an account, key or paid service (ask before any spend) |
 | `idea` | 2 | 💡 idea: not built |
-| **المجموع** | **578** | |
+| **المجموع** | **580** | |
 
 ## الأدوات القابلة للتشغيل / runnable tools
 
@@ -48,6 +48,7 @@
 | `motion-stack` | مولّد مشاريع بداية لمحركات الحركة | `python3 scripts/motion_stack.py list` | tested-here |
 | `package-skill` | تحزيم المهارة للرفع إلى claude.ai | `python3 scripts/package_skill.py` | tested-here |
 | `rea-owned-repo-batch` | تحليل REA لمستودعات المالك دفعةً واحدة | `python3 scripts/rea_owned_repo_batch.py --private-output "$HOME/kosif-private" --rea-cli ./node_modules/rea-agents/scripts/rea.mjs --max-repos 16 --max-size-kb 8000` | untested |
+| `repo-map` | خريطة المستودع | `python3 scripts/repo_map.py map scripts --budget 3000 --focus prompt` | tested-here |
 | `repository-capability-packer` | فحص المستودعات وحزمها | `python3 scripts/repository_capability_packer.py inspect ./repo --out ./repo-report.json` | tested-here |
 | `source-scout` | مستكشف مصادر المجتمع | `python3 scripts/source_scout.py check` | tested-here |
 | `web-app-study` | دراسة تطبيق ويب عام بـ REA (حقائق فقط) | `python3 scripts/web_app_study.py doctor` | tested-here |
@@ -62,7 +63,7 @@
 | `apps-artifacts` | 23 | [apps-artifacts.md](../powers/apps-artifacts.md) |
 | `atlas-build` | 52 | [atlas-build.md](../powers/atlas-build.md) |
 | `atlas-code` | 247 | [atlas-code.md](../powers/atlas-code.md) |
-| `code-engineering` | 24 | [code-engineering.md](../powers/code-engineering.md) |
+| `code-engineering` | 26 | [code-engineering.md](../powers/code-engineering.md) |
 | `ui-product-device` | 93 | [ui-product-device.md](../powers/ui-product-device.md) |
 
 ## كل القدرات / every power
@@ -183,6 +184,7 @@
 | `UI-87` | مشغّل HTML مستقل بشريط تقديم | Standalone HTML player with seek & reduced motion | proven | node |
 | `UI-X03` | تسجيل عرض واجهة بـPlaywright | Playwright UI demo recording (WebM) | proven | ffmpeg, node, chromium |
 | `APPX-108` | التسييل (Liquify) | Liquify: push, pinch, bloat, twirl | ready | pip:numpy, pip:opencv |
+| `CODE-25` | خريطة مستودع مرتبة بالأهمية | Ranked repository map | ready | python3 |
 | `UI-04` | إعادة بناء الشاشة كطبقات | Layered screen rebuild | ready |  |
 | `UI-05` | حقيبة أصول من أجزاء حقيقية | Animation kit from real parts | ready | chromium, pip:pillow |
 | `UI-14` | حلقة الضغط والتموج | Press ring & click ripple | ready |  |
@@ -563,6 +565,7 @@
 | `CODE-20` | الحتمي أولًا والنموذج للذيل | Deterministic first, model for the tail | documented |  |
 | `CODE-21` | ذاكرة مؤقتة ببصمة المحتوى | Content-hash cache | documented | key:graphify |
 | `CODE-22` | نظافة الإيداع وكلمات الحالة | Commit hygiene & status words | documented | git |
+| `CODE-26` | تعديلات بكتل بحث واستبدال | Search/replace edit blocks | documented |  |
 | `UI-01` | العرض الصامت: الواجهة تحكي | Silent product demo — the UI tells the story | documented |  |
 | `UI-02` | ثلاثية النية والفعل والاستجابة | Intent → action → response with real latency | documented |  |
 | `UI-03` | محتوى واجهة حقيقي ومحلي | Real, locale-correct UI content | documented |  |
