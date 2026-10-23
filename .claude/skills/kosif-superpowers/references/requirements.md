@@ -14,9 +14,9 @@
 
 | # | requirement | kind | powers unlocked | families | here now |
 |---|---|---|---|---|---|
-| 1 | [`python3`](#req-python3) | bin | 664 | engines-render-pipeline, qa-verification, mental-models, runnable-tools, music-beat-sound |  |
+| 1 | [`python3`](#req-python3) | bin | 665 | engines-render-pipeline, qa-verification, mental-models, runnable-tools, music-beat-sound |  |
 | 2 | [`npm:hyperframes`](#req-npm-hyperframes) | npm | 461 | transitions-cuts, engines-render-pipeline, camera-composition-layout, typography-latin, qa-verification |  |
-| 3 | [`ffmpeg`](#req-ffmpeg) | bin | 419 | engines-render-pipeline, qa-verification, transitions-cuts, music-beat-sound, photo-video-footage |  |
+| 3 | [`ffmpeg`](#req-ffmpeg) | bin | 421 | engines-render-pipeline, qa-verification, transitions-cuts, music-beat-sound, photo-video-footage |  |
 | 4 | [`chromium`](#req-chromium) | bin | 345 | engines-render-pipeline, software-investigation, app-feature-transfer, qa-verification, transitions-cuts |  |
 | 5 | [`npm:rea`](#req-npm-rea) | npm | 256 | software-investigation, runnable-tools, app-feature-transfer |  |
 | 6 | [`npm:gsap`](#req-npm-gsap) | npm | 237 | transitions-cuts, engines-render-pipeline, camera-composition-layout, easing-timing-rhythm, typography-latin |  |
@@ -24,17 +24,17 @@
 | 8 | [`key:unspecified`](#req-key-unspecified) | key | 173 | engines-render-pipeline, ai-generation, atlas-code, camera-composition-layout, qa-verification |  |
 | 9 | [`node`](#req-node) | bin | 167 | qa-verification, engines-render-pipeline, atlas-code, color-palette-grading, ui-product-device |  |
 | 10 | [`pip:numpy`](#req-pip-numpy) | pip | 131 | app-feature-transfer, music-beat-sound, qa-verification, transitions-cuts, media-image-audio |  |
-| 11 | [`pip:pillow`](#req-pip-pillow) | pip | 128 | app-feature-transfer, qa-verification, engines-render-pipeline, typography-arabic, media-image-audio |  |
+| 11 | [`pip:pillow`](#req-pip-pillow) | pip | 130 | app-feature-transfer, qa-verification, engines-render-pipeline, typography-arabic, media-image-audio |  |
 | 12 | [`npm:remotion`](#req-npm-remotion) | npm | 115 | engines-render-pipeline, music-beat-sound, typography-arabic, easing-timing-rhythm, transitions-cuts |  |
 | 13 | [`pip:opencv`](#req-pip-opencv) | pip | 94 | app-feature-transfer, transitions-cuts, media-image-audio, engines-render-pipeline, photo-video-footage |  |
-| 14 | [`fonts:arabic`](#req-fonts-arabic) | font | 92 | typography-arabic, documents-office, typography-latin, audio-sync-captions, arabic-language |  |
+| 14 | [`fonts:arabic`](#req-fonts-arabic) | font | 94 | typography-arabic, typography-latin, documents-office, audio-sync-captions, arabic-language |  |
 | 15 | [`imagemagick`](#req-imagemagick) | bin | 82 | engines-render-pipeline, music-beat-sound, transitions-cuts, photo-video-footage, qa-verification |  |
 | 16 | [`engine:ghidra`](#req-engine-ghidra) | bin | 77 | software-investigation, runnable-tools |  |
 | 17 | [`claude:tools`](#req-claude-tools) | service | 73 | agent-orchestration, thinking-core, atlas-mind, atlas-code, self-discovery |  |
-| 18 | [`key:video-gen`](#req-key-video-gen) | service | 65 | ai-generation, music-beat-sound, camera-composition-layout, atlas-strategy, prompt-craft |  |
+| 18 | [`key:video-gen`](#req-key-video-gen) | service | 66 | ai-generation, music-beat-sound, camera-composition-layout, atlas-strategy, prompt-craft |  |
 | 19 | [`npm:react`](#req-npm-react) | npm | 52 | engines-render-pipeline, atlas-code, transitions-cuts, atlas-build, 3d-spatial |  |
 | 20 | [`git`](#req-git) | bin | 48 | atlas-code, agent-orchestration, atlas-mind, atlas-docs, code-engineering |  |
-| 21 | [`pip:faster-whisper`](#req-pip-faster-whisper) | model | 47 | audio-sync-captions, qa-verification, engines-render-pipeline, photo-video-footage, runnable-tools |  |
+| 21 | [`pip:faster-whisper`](#req-pip-faster-whisper) | model | 48 | audio-sync-captions, qa-verification, engines-render-pipeline, photo-video-footage, runnable-tools |  |
 | 22 | [`pip:office`](#req-pip-office) | pip | 37 | documents-office, self-discovery, atlas-docs, app-feature-transfer, arabic-language |  |
 | 23 | [`engine:android`](#req-engine-android) | bin | 36 | software-investigation, runnable-tools |  |
 | 24 | [`os:macos`](#req-os-macos) | os | 34 | software-investigation, ui-product-device, atlas-code, engines-render-pipeline, atlas-build |  |
@@ -48,9 +48,9 @@
 | 32 | [`tesseract`](#req-tesseract) | apt | 20 | media-image-audio, arabic-language, other, self-discovery, ai-generation |  |
 | 33 | [`pip:scipy`](#req-pip-scipy) | pip | 20 | transitions-cuts, data-analysis, music-beat-sound, self-discovery, atlas-media |  |
 | 34 | [`key:openai`](#req-key-openai) | key | 20 | ai-generation, atlas-code, audio-sync-captions, characters-rigs, prompt-craft |  |
-| 35 | [`npm:d3`](#req-npm-d3) | npm | 19 | maps-geo, engines-render-pipeline, knowledge-graph, charts-data-infographic, creativity-engine |  |
-| 36 | [`key:elevenlabs`](#req-key-elevenlabs) | key | 19 | music-beat-sound, voice-tts, atlas-media, audio-sync-captions, formats-platforms |  |
-| 37 | [`yt-dlp`](#req-yt-dlp) | pip | 18 | video-download, runnable-tools, atlas-media, audio-sync-captions, engines-render-pipeline |  |
+| 35 | [`yt-dlp`](#req-yt-dlp) | pip | 19 | video-download, runnable-tools, atlas-media, audio-sync-captions, engines-render-pipeline |  |
+| 36 | [`npm:d3`](#req-npm-d3) | npm | 19 | maps-geo, engines-render-pipeline, knowledge-graph, charts-data-infographic, creativity-engine |  |
+| 37 | [`key:elevenlabs`](#req-key-elevenlabs) | key | 19 | music-beat-sound, voice-tts, atlas-media, audio-sync-captions, formats-platforms |  |
 | 38 | [`docker`](#req-docker) | bin | 17 | engines-render-pipeline, self-discovery, atlas-code, atlas-build, atlas-docs |  |
 | 39 | [`pip:matplotlib`](#req-pip-matplotlib) | pip | 17 | engines-render-pipeline, data-analysis, media-image-audio, qa-verification, self-discovery |  |
 | 40 | [`pip:higgsfield`](#req-pip-higgsfield) | key | 17 | ai-generation, self-discovery, apps-artifacts, camera-composition-layout, engines-render-pipeline |  |
@@ -145,8 +145,8 @@
 
 - **النوع / kind:** bin (أداة)
 - **التثبيت / install:** `apt-get install -y python3 python3-pip python3-venv`
-- **يفتح / unlocks:** 664 powers
-- **بالحالة / by status:** proven 235 · documented 173 · ready 140 · install 100 · key 13 · seen 3
+- **يفتح / unlocks:** 665 powers
+- **بالحالة / by status:** proven 235 · documented 174 · ready 140 · install 100 · key 13 · seen 3
 - **العائلات / families:** engines-render-pipeline (97), qa-verification (79), mental-models (61), runnable-tools (52), music-beat-sound (45), app-feature-transfer (24), photo-video-footage (16), formats-platforms (15)
 - **أمثلة / examples:** `ANLY-08` statsmodels OLS and time-series models · `ANLY-14` altair / Vega-Lite chart specs · `ANLY-17` Gradient boosting (XGBoost, LightGBM) · `ANLY-21` Convex optimisation with cvxpy · `ANLY-23` Graph algorithms with networkx · `APP-06` HTML to MP4 renderer (repo tool)
 
@@ -165,8 +165,8 @@
 
 - **النوع / kind:** bin (أداة)
 - **التثبيت / install:** `apt-get install -y ffmpeg  (or: conda install ffmpeg)`
-- **يفتح / unlocks:** 419 powers
-- **بالحالة / by status:** documented 147 · proven 126 · ready 71 · install 52 · key 10 · seen 9 · idea 4
+- **يفتح / unlocks:** 421 powers
+- **بالحالة / by status:** documented 149 · proven 126 · ready 71 · install 52 · key 10 · seen 9 · idea 4
 - **العائلات / families:** engines-render-pipeline (68), qa-verification (63), transitions-cuts (54), music-beat-sound (49), photo-video-footage (22), app-feature-transfer (19), color-palette-grading (15), formats-platforms (14)
 - **أمثلة / examples:** `APPX-01` Speed curve (ramp) · `APPX-02` Chroma key · `APPX-03` Auto reframe to 9:16 · `APPX-04` Scene edit detection · `APPX-05` Loudness normalisation (-14 LUFS) · `APPX-06` Colour look from a .cube LUT
 
@@ -245,9 +245,9 @@
 
 - **النوع / kind:** pip (حزمة بايثون)
 - **التثبيت / install:** `pip install pillow  (Arabic shaping needs a libraqm build: PIL.features.check('raqm'))`
-- **يفتح / unlocks:** 128 powers
-- **بالحالة / by status:** proven 74 · documented 22 · ready 21 · install 7 · key 2 · idea 1 · seen 1
-- **العائلات / families:** app-feature-transfer (37), qa-verification (15), engines-render-pipeline (14), typography-arabic (9), media-image-audio (8), runnable-tools (8), texture-material (5), color-palette-grading (3)
+- **يفتح / unlocks:** 130 powers
+- **بالحالة / by status:** proven 76 · documented 22 · ready 21 · install 7 · key 2 · idea 1 · seen 1
+- **العائلات / families:** app-feature-transfer (37), qa-verification (15), engines-render-pipeline (14), typography-arabic (10), media-image-audio (8), runnable-tools (8), texture-material (5), color-palette-grading (3)
 - **أمثلة / examples:** `ANLY-11` Detect libraqm before shaping Arabic · `APPX-105` Blend modes (24) and layer stacks → PNG or OpenR · `APPX-113` Sticker: cut-out with white border and soft shad · `APPX-38` Watermark with exact opacity · `APPX-39` Perceptual JPEG recompression (JPEGmini-style) · `APPX-40` Contact sheet / print templates
 
 <a id="req-npm-remotion"></a>
@@ -275,9 +275,9 @@
 
 - **النوع / kind:** font (خطوط)
 - **التثبيت / install:** `OFL Arabic fonts (Amiri, Cairo, Tajawal, Reem Kufi, Aref Ruqaa, Lalezar) ship in proofs/_shared/fonts; more from fonts.google.com`
-- **يفتح / unlocks:** 92 powers
-- **بالحالة / by status:** proven 41 · ready 19 · documented 17 · install 13 · seen 1 · key 1
-- **العائلات / families:** typography-arabic (26), documents-office (6), typography-latin (6), audio-sync-captions (5), arabic-language (4), brand-logo-identity (4), maps-geo (4), data-analysis (3)
+- **يفتح / unlocks:** 94 powers
+- **بالحالة / by status:** proven 43 · ready 19 · documented 17 · install 13 · seen 1 · key 1
+- **العائلات / families:** typography-arabic (27), typography-latin (7), documents-office (6), audio-sync-captions (5), arabic-language (4), brand-logo-identity (4), maps-geo (4), data-analysis (3)
 - **أمثلة / examples:** `ANLY-10` matplotlib charts with Arabic labels · `ANLY-24` Spatial analysis (geopandas/shapely/pyproj) · `ANLY-37` GeoPandas: Join, buffer and reproject vector geo · `APPX-88` Template design (JSON → PNG/PDF) · `ARAB-06` Shaping-engine routing · `ARAB-09` Real type over generated plates
 
 <a id="req-imagemagick"></a>
@@ -315,8 +315,8 @@
 
 - **النوع / kind:** service (خدمة/موصل)
 - **التثبيت / install:** `an account on the named generator (Runway, Kling, Veo, Pika, Luma…) — paid credits`
-- **يفتح / unlocks:** 65 powers
-- **بالحالة / by status:** key 32 · documented 20 · proven 7 · install 4 · ready 2
+- **يفتح / unlocks:** 66 powers
+- **بالحالة / by status:** key 32 · documented 21 · proven 7 · install 4 · ready 2
 - **العائلات / families:** ai-generation (32), music-beat-sound (12), camera-composition-layout (7), atlas-strategy (2), prompt-craft (2), qa-verification (2), atlas-media (1), formats-platforms (1)
 - **أمثلة / examples:** `ARAB-09` Real type over generated plates · `GEN-10` Prompt forge: one spec → 9 generator prompts · `GEN-11` Video-model platform DNA (Veo / Runway / Kling / · `GEN-12` Image spec schema → 6 platform builders · `GEN-13` Shot list → 7 video-platform prompts with durati · `GEN-14` kmotion aiprompts: 7-layer per-shot prompts
 
@@ -345,9 +345,9 @@
 
 - **النوع / kind:** model (نموذج/أوزان)
 - **التثبيت / install:** `pip install faster-whisper  (models from huggingface.co: small 466 MB, large-v3 3.1 GB; CPU works)`
-- **يفتح / unlocks:** 47 powers
-- **بالحالة / by status:** proven 14 · install 11 · documented 8 · ready 7 · key 4 · seen 2 · idea 1
-- **العائلات / families:** audio-sync-captions (12), qa-verification (7), engines-render-pipeline (4), photo-video-footage (2), runnable-tools (2), self-discovery (2), voice-tts (2), ai-generation (1)
+- **يفتح / unlocks:** 48 powers
+- **بالحالة / by status:** proven 14 · install 11 · documented 9 · ready 7 · key 4 · seen 2 · idea 1
+- **العائلات / families:** audio-sync-captions (13), qa-verification (7), engines-render-pipeline (4), photo-video-footage (2), runnable-tools (2), self-discovery (2), voice-tts (2), ai-generation (1)
 - **أمثلة / examples:** `APPX-13` Word-timed auto captions · `ENG-X06` Tool-map doctor before promising a stack · `FOOT-D03` Measure a reel's style from its frames · `SELF-14` No GPU: plan for CPU · `SELF-28` Heavy ML is possible on CPU · `STORY-59` Directed edit of a talking clip
 
 <a id="req-pip-office"></a>
@@ -480,6 +480,16 @@
 - **العائلات / families:** ai-generation (10), atlas-code (3), audio-sync-captions (1), characters-rigs (1), prompt-craft (1), qa-verification (1), typography-latin (1), voice-tts (1)
 - **أمثلة / examples:** `GEN-10` Prompt forge: one spec → 9 generator prompts · `GEN-11` Video-model platform DNA (Veo / Runway / Kling / · `GEN-13` Shot list → 7 video-platform prompts with durati · `GEN-14` kmotion aiprompts: 7-layer per-shot prompts · `WRITE-15` Tool-artifact and placeholder cleanup · `ACODE-158` Agent SDK app and hooks design
 
+<a id="req-yt-dlp"></a>
+### `yt-dlp` — تحميل وسائط مرخّصة أو مملوكة من روابط / download licensed or owned media from links
+
+- **النوع / kind:** pip (حزمة بايثون)
+- **التثبيت / install:** `pip install yt-dlp`
+- **يفتح / unlocks:** 19 powers
+- **بالحالة / by status:** proven 7 · documented 4 · install 4 · ready 3 · key 1
+- **العائلات / families:** video-download (11), runnable-tools (2), atlas-media (1), audio-sync-captions (1), engines-render-pipeline (1), knowledge-graph (1), photo-video-footage (1), qa-verification (1)
+- **أمثلة / examples:** `DL-01` Download video from any URL · `DL-02` Batch of links from a file · `DL-03` Quality cap or audio-only · `DL-04` Edit-safe H.264/AAC copy · `DL-07` Update yt-dlp when a site breaks · `ENG-X06` Tool-map doctor before promising a stack
+
 <a id="req-npm-d3"></a>
 ### `npm:d3` — رسوم بيانية وخرائط مدفوعة بالبيانات / data-driven charts and maps
 
@@ -499,16 +509,6 @@
 - **بالحالة / by status:** key 13 · documented 5 · seen 1
 - **العائلات / families:** music-beat-sound (8), voice-tts (6), atlas-media (2), audio-sync-captions (1), formats-platforms (1), qa-verification (1)
 - **أمثلة / examples:** `AMEDIA-01` ElevenLabs TTS, cloning and sound effects · `AMEDIA-07` Lyrics and Suno music prompt crafting · `BEAT-161` Text-to-sound-effects generation · `BEAT-163` Text-to-SFX generation · `BEAT-164` ElevenLabs Music composition plan · `BEAT-175` ElevenLabs Music composition plan in whole bars
-
-<a id="req-yt-dlp"></a>
-### `yt-dlp` — تحميل وسائط مرخّصة أو مملوكة من روابط / download licensed or owned media from links
-
-- **النوع / kind:** pip (حزمة بايثون)
-- **التثبيت / install:** `pip install yt-dlp`
-- **يفتح / unlocks:** 18 powers
-- **بالحالة / by status:** proven 7 · install 4 · documented 3 · ready 3 · key 1
-- **العائلات / families:** video-download (10), runnable-tools (2), atlas-media (1), audio-sync-captions (1), engines-render-pipeline (1), knowledge-graph (1), photo-video-footage (1), qa-verification (1)
-- **أمثلة / examples:** `DL-01` Download video from any URL · `DL-02` Batch of links from a file · `DL-03` Quality cap or audio-only · `DL-04` Edit-safe H.264/AAC copy · `DL-07` Update yt-dlp when a site breaks · `ENG-X06` Tool-map doctor before promising a stack
 
 <a id="req-docker"></a>
 ### `docker` — حاويات معزولة / isolated containers
@@ -1357,4 +1357,4 @@
 <a id="none"></a>
 ## قدرات بلا مستلزمات خارجية / no external requirement
 
-2390 powers need only Claude and this skill (thinking, writing, planning, review protocols). The rest name at least one requirement above.
+2402 powers need only Claude and this skill (thinking, writing, planning, review protocols). The rest name at least one requirement above.

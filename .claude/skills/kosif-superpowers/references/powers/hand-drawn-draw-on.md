@@ -484,3 +484,15 @@ _قدرات أُضيفت في الإصدار الثاني من حزم المال
 - **الرخصة / license:** owner (song audio and lyrics are third-party; not included)
 - **المصدر / source:** `owner-upload:film_project/film/film.js`
 - **الدليل / proof:** `owner-upload:film_project/film/film.js`
+
+## إضافات مرفقات 2026-10-23 — 2026-10-23 upload additions
+
+_من مراجعة مرفقات المالك: [owner-uploads-review-20261023.md](../owner-uploads-review-20261023.md). — From the owner-upload review._
+
+
+#### DRAW-U01 · فيلم يد مرسومة حتمي بـmake_frame(t) · Deterministic hand-drawn film via make_frame(t) · 📄 موصوف / documented
+- **ماذا / what:** كل إطار يُحسب من الزمن المطلق (لا ساعة متراكمة): القفز والإعادة بلا انجراف والرندر المتوازي ممكن؛ سنّ القلم مربوط بنهاية الخط النشط وكشف الحبر على المسار وملمس ورق؛ الصوت الأصلي مسار رئيسي. اذكر دقة الرسم الأصلية (720×1280 مكبّرة إلى 1080×1920 في المشروع) وأن المشاهد تقريبية حين لا توجد محاذاة كلمات. — From the owner's doodle and hand-drawn projects.
+- **متى أستخدمها / when:** فيلم رسم باليد على تسجيل صوتي / a hand-drawn film over a voice recording
+- **كيف / how:** render.py --fps 30 --resolution 1080x1920؛ ثم ffprobe في تقرير QA. **أرقام / params:** 97.88 s, 13 beats, 30 fps
+- **الرخصة / license:** owner
+- **الدليل / proof:** `kosif-tool/.claude/skills/kosif-superpowers/references/owner-uploads-review-20261023.md`

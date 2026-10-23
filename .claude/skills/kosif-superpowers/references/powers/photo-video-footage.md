@@ -509,3 +509,29 @@ _قدرات أُضيفت في الإصدار الثاني من حزم المال
 - **الرخصة / license:** owner
 - **المصدر / source:** `owner-upload:KOSIF_SEE_Humanizer_Optimize_Graphify_v1.7.5/skills/kosif-see/references/VIDEO_IMITATION_ROUTING_V1.md`
 - **الدليل / proof:** `owner-upload:KOSIF_SEE_Humanizer_Optimize_Graphify_v1.7.5/skills/kosif-see/references/VIDEO_IMITATION_ROUTING_V1.md`
+
+## إضافات مرفقات 2026-10-23 — 2026-10-23 upload additions
+
+_من مراجعة مرفقات المالك: [owner-uploads-review-20261023.md](../owner-uploads-review-20261023.md). — From the owner-upload review._
+
+
+#### FOOT-U01 · مطابقة المسودة بلقطات المصدر · Match a draft back to its source shots · 📄 موصوف / documented
+- **ماذا / what:** صغّر كل إطار من المسودة والمصادر إلى 96×54 رمادي واختر أقل متوسط فرق مطلق ← (اللقطة، زمن المصدر) لكل إطار؛ خطأ < 15 = استخدام كامل، وأعلى = داخل بطاقة أو بمؤثر؛ ملاءمة خطية تعطي الإزاحة (src = t − c). — Recover which shot and source time each frame of a user mock-up uses.
+- **متى أستخدمها / when:** المستخدم أرسل مسودة مونتاج ويريدها بجودة عالية / rebuilding a user's rough draft
+- **كيف / how:** قفزات السطوع حيث تفشل المطابقة غالبًا مؤثرات مخبوزة: افحصها قبل «إصلاحها». **أرقام / params:** 96×54 gray; MAD < 15 = full frame
+- **الرخصة / license:** Claude AI Motion Graphics (Tao Prompts) — ideas and numbers only, code not copied
+- **الدليل / proof:** `kosif-tool/.claude/skills/kosif-superpowers/references/owner-uploads-review-20261023.md`
+
+#### FOOT-U02 · كاشف القفزات: اقطع قبل القفزة · Jump-cut finder: cut on the frame before · 📄 موصوف / documented
+- **ماذا / what:** إطار تغيّره عن السابق > نسبة × الوسيط المحلي = قفزة داخل لقطة مركبة من عدة مآخذ؛ ضع قطع القسم على الإطار قبل القفزة وإلا ومض المأخذ التالي إطارًا واحدًا. — Find hard cuts inside a talking-head clip; cut one frame before them.
+- **متى أستخدمها / when:** قص فيديو متكلم مركب من مآخذ / editing a multi-take talking head
+- **كيف / how:** على مجلد إطارات؛ نسبة افتراضية ~4–6 × الوسيط المحلي.
+- **الرخصة / license:** Claude AI Motion Graphics (Tao Prompts) — ideas and numbers only, code not copied
+- **الدليل / proof:** `kosif-tool/.claude/skills/kosif-superpowers/references/owner-uploads-review-20261023.md`
+
+#### FOOT-U03 · قناع شخص بلا تعلم آلي · Person matte without ML · 📄 موصوف / documented
+- **ماذا / what:** GrabCut بنصف الدقة ببذور (بيضاوي الوجه والجذع أمامي ومناطق خلفية معروفة) يُنشر من قناع الإطار السابق (مُآكل = أمامي، شريط موسّع = محتمل)، ثم مرشح موجّه بالدقة الكاملة (r=10 eps=2e-4 ثم r=4 eps=1e-4) ومزج زمني؛ النص خلف الرأس = النص ثم person × matte. — Seeded, propagated GrabCut + guided filter for text behind a speaker.
+- **متى أستخدمها / when:** نص خلف الشخص بلا نموذج تقطيع / text behind a person without a segmentation model
+- **كيف / how:** البذور تهم في الإطار الأول فقط؛ للكاميرا الثابتة أضف مضلعًا أماميًا ثابتًا (مكتب). **أرقام / params:** guided filter r=10/eps=2e-4 then r=4/eps=1e-4
+- **الرخصة / license:** Claude AI Motion Graphics (Tao Prompts) — ideas and numbers only, code not copied
+- **الدليل / proof:** `kosif-tool/.claude/skills/kosif-superpowers/references/owner-uploads-review-20261023.md`

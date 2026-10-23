@@ -30,7 +30,7 @@
 <a id="numbers"></a>
 ## 2. الأرقام / numbers
 
-**5,334** قدرة · **62** عائلة · **10** مجالات · ✅ 923 مُثبتة بتشغيل فعلي · 🟢 645 جاهزة · 📦 973 بأمر تثبيت · 🔑 176 بمفتاح أو حساب · 👁 609 شوهدت في فيديو مرجعي · 📄 1937 طريقة موصوفة · 💡 71 فكرة.
+**5,352** قدرة · **62** عائلة · **10** مجالات · ✅ 928 مُثبتة بتشغيل فعلي · 🟢 645 جاهزة · 📦 973 بأمر تثبيت · 🔑 176 بمفتاح أو حساب · 👁 609 شوهدت في فيديو مرجعي · 📄 1950 طريقة موصوفة · 💡 71 فكرة.
 المستلزمات المسجّلة: **122** (أدوات، حزم، مفاتيح، منصات، خطوط، نماذج)؛ النماذج الذهنية: **63**؛ خريطة الأدوات: **125** مستودعًا موثّق الترخيص؛ أطلس الموشن: **289** أسلوبًا؛ الأدوات القابلة للتشغيل: **133**.
 
 <a id="tools"></a>
@@ -56,40 +56,40 @@
 <a id="domains"></a>
 ## 4. المجالات والعائلات / domains and families
 
-### الموشن والمونتاج / motion — 3,801 powers · ✅ 542
+### الموشن والمونتاج / motion — 3,818 powers · ✅ 547
 
 | family | prefix | powers | ✅ | examples (proven first) |
 |---|---|---|---|---|
-| [الانتقالات والقطعات — Transitions & cuts](https://github.com/kosif199022-jpg/kosif-tool/blob/main/.claude/skills/kosif-superpowers/references/powers/transitions-cuts.md) | TRANS | 473 | 28 | TRANS-01 Phone-editor transition: dipblack; TRANS-02 Phone-editor transition: dipwhite; TRANS-03 Phone-editor transition: flash |
+| [الانتقالات والقطعات — Transitions & cuts](https://github.com/kosif199022-jpg/kosif-tool/blob/main/.claude/skills/kosif-superpowers/references/powers/transitions-cuts.md) | TRANS | 474 | 29 | TRANS-01 Phone-editor transition: dipblack; TRANS-02 Phone-editor transition: dipwhite; TRANS-03 Phone-editor transition: flash |
 | [المحركات وخط الرندر — Engines & render pipeline](https://github.com/kosif199022-jpg/kosif-tool/blob/main/.claude/skills/kosif-superpowers/references/powers/engines-render-pipeline.md) | ENG | 443 | 55 | ENG-01 HyperFrames composition contract; ENG-02 Deterministic scene module contract; ENG-03 Shot assembly by frame windows |
-| [الكاميرا والتكوين — Camera & composition](https://github.com/kosif199022-jpg/kosif-tool/blob/main/.claude/skills/kosif-superpowers/references/powers/camera-composition-layout.md) | CAM | 424 | 13 | CAM-01 Log-space zoom track; CAM-02 Three-column RTL workspace shell; CAM-03 RTL logical-property layout |
-| [الجودة والتحقق — QA & verification](https://github.com/kosif199022-jpg/kosif-tool/blob/main/.claude/skills/kosif-superpowers/references/powers/qa-verification.md) | QA | 383 | 73 | QA-01 Delivery gate (inspect); QA-02 Seamless loop check; QA-03 verify_video delivery gate |
-| [الموسيقى والإيقاع والمؤثرات — Music, beat & sound](https://github.com/kosif199022-jpg/kosif-tool/blob/main/.claude/skills/kosif-superpowers/references/powers/music-beat-sound.md) | BEAT | 305 | 27 | BEAT-01 Two-pass loudness normalisation; BEAT-02 Designed SFX on picture cues; BEAT-03 Tape-stop / tape-start |
+| [الكاميرا والتكوين — Camera & composition](https://github.com/kosif199022-jpg/kosif-tool/blob/main/.claude/skills/kosif-superpowers/references/powers/camera-composition-layout.md) | CAM | 425 | 13 | CAM-01 Log-space zoom track; CAM-02 Three-column RTL workspace shell; CAM-03 RTL logical-property layout |
+| [الجودة والتحقق — QA & verification](https://github.com/kosif199022-jpg/kosif-tool/blob/main/.claude/skills/kosif-superpowers/references/powers/qa-verification.md) | QA | 384 | 74 | QA-01 Delivery gate (inspect); QA-02 Seamless loop check; QA-03 verify_video delivery gate |
+| [الموسيقى والإيقاع والمؤثرات — Music, beat & sound](https://github.com/kosif199022-jpg/kosif-tool/blob/main/.claude/skills/kosif-superpowers/references/powers/music-beat-sound.md) | BEAT | 306 | 27 | BEAT-01 Two-pass loudness normalisation; BEAT-02 Designed SFX on picture cues; BEAT-03 Tape-stop / tape-start |
 | [البيانات والرسوم البيانية — Charts & data](https://github.com/kosif199022-jpg/kosif-tool/blob/main/.claude/skills/kosif-superpowers/references/powers/charts-data-infographic.md) | DATA | 105 | 9 | DATA-19 Tabular count-up counter; DATA-20 stat-counter template (count + drawn ring); DATA-29 Spoken number → clock-ring motif |
 | [التوقيت والإيقاع والتسهيل — Easing, timing & rhythm](https://github.com/kosif199022-jpg/kosif-tool/blob/main/.claude/skills/kosif-superpowers/references/powers/easing-timing-rhythm.md) | EASE | 102 | 27 | EASE-01 Everything is a function of t; EASE-02 Half-open frame arithmetic; EASE-04 Auto beat-count storyboard splitter |
+| [الخط العربي المتحرك — Arabic typography](https://github.com/kosif199022-jpg/kosif-tool/blob/main/.claude/skills/kosif-superpowers/references/powers/typography-arabic.md) | ARAB | 97 | 23 | ARAB-01 Whole-word law; ARAB-02 RTL scoping for renderers; ARAB-06 Shaping-engine routing |
 | [الملمس والخامات — Texture & material](https://github.com/kosif199022-jpg/kosif-tool/blob/main/.claude/skills/kosif-superpowers/references/powers/texture-material.md) | TEX | 96 | 18 | TEX-01 Seekable stepped SVG grain (motion-kit); TEX-02 Frame-seeded grain (seek pages); TEX-04 ffmpeg film finish chain |
-| [الخط العربي المتحرك — Arabic typography](https://github.com/kosif199022-jpg/kosif-tool/blob/main/.claude/skills/kosif-superpowers/references/powers/typography-arabic.md) | ARAB | 96 | 22 | ARAB-01 Whole-word law; ARAB-02 RTL scoping for renderers; ARAB-06 Shaping-engine routing |
 | [الأشكال والتحوّل — Shapes & morphing](https://github.com/kosif199022-jpg/kosif-tool/blob/main/.claude/skills/kosif-superpowers/references/powers/shapes-morph-geometry.md) | SHAPE | 95 | 16 | SHAPE-01 Seek-safe path morph (MOTION.morphPath); SHAPE-03 Superellipse morph with echo rings; SHAPE-04 Polar-function shape morph |
-| [القصة والإخراج — Story & direction](https://github.com/kosif199022-jpg/kosif-tool/blob/main/.claude/skills/kosif-superpowers/references/powers/story-direction-ideas.md) | STORY | 94 | 14 | STORY-02 One-request router (16 routes + add-ons); STORY-03 Deterministic shot planner (ProPlan); STORY-04 Style → Claude request generator |
+| [القصة والإخراج — Story & direction](https://github.com/kosif199022-jpg/kosif-tool/blob/main/.claude/skills/kosif-superpowers/references/powers/story-direction-ideas.md) | STORY | 95 | 14 | STORY-02 One-request router (16 routes + add-ons); STORY-03 Deterministic shot planner (ProPlan); STORY-04 Style → Claude request generator |
+| [التايبوغرافي اللاتيني والحركي — Latin & kinetic typography](https://github.com/kosif199022-jpg/kosif-tool/blob/main/.claude/skills/kosif-superpowers/references/powers/typography-latin.md) | TYPE | 94 | 3 | TYPE-40 Lead / hero / tail beat splitter; TYPE-79 Letter-spaced cinematic title; TYPE-U01 Poppins bundled (OFL) |
 | [التوليد بالذكاء الاصطناعي — AI generation](https://github.com/kosif199022-jpg/kosif-tool/blob/main/.claude/skills/kosif-superpowers/references/powers/ai-generation.md) | GEN | 93 | 14 | GEN-02 Iron rules: physical cues beat hype words; GEN-10 Prompt forge: one spec → 9 generator prompts; GEN-11 Video-model platform DNA (Veo / Runway / Kling |
 | [الواجهات والمنتجات والأجهزة — UI, product & devices](https://github.com/kosif199022-jpg/kosif-tool/blob/main/.claude/skills/kosif-superpowers/references/powers/ui-product-device.md) | UI | 93 | 6 | UI-11 motion-kit physics cursor + press + typeOn; UI-12 Canvas product UI draw(t) recipe; UI-44 Stepper, progress ring & progress bars |
-| [التايبوغرافي اللاتيني والحركي — Latin & kinetic typography](https://github.com/kosif199022-jpg/kosif-tool/blob/main/.claude/skills/kosif-superpowers/references/powers/typography-latin.md) | TYPE | 92 | 2 | TYPE-40 Lead / hero / tail beat splitter; TYPE-79 Letter-spaced cinematic title; TYPE-01 Video type sizing & contrast |
 | [الألوان واللوحات والتلوين — Colour, palettes & grading](https://github.com/kosif199022-jpg/kosif-tool/blob/main/.claude/skills/kosif-superpowers/references/powers/color-palette-grading.md) | COLOR | 87 | 38 | COLOR-01 Eleven FFmpeg grade presets; COLOR-02 Restore grade for old or soft footage; COLOR-03 One-line project grades (muted Ghorba, navy do |
 | [التوهج والإضاءة — Glow, light & bloom](https://github.com/kosif199022-jpg/kosif-tool/blob/main/.claude/skills/kosif-superpowers/references/powers/light-glow-bloom.md) | GLOW | 87 | 29 | GLOW-01 Living Arabic neon sign (ignition · wall light; GLOW-02 Ignition & faulty-tube flicker schedule; GLOW-03 SVG neon tube (4-stroke stack) |
-| [الجسيمات والسوائل والفيزياء — Particles, fluids & physics](https://github.com/kosif199022-jpg/kosif-tool/blob/main/.claude/skills/kosif-superpowers/references/powers/particles-fluids-physics.md) | PART | 76 | 17 | PART-01 Deterministic hash / seeded RNG; PART-02 Closed-form particles (state-free seek); PART-06 Seeded analytic burst |
+| [الجسيمات والسوائل والفيزياء — Particles, fluids & physics](https://github.com/kosif199022-jpg/kosif-tool/blob/main/.claude/skills/kosif-superpowers/references/powers/particles-fluids-physics.md) | PART | 77 | 18 | PART-01 Deterministic hash / seeded RNG; PART-02 Closed-form particles (state-free seek); PART-06 Seeded analytic burst |
+| [الصور والفيديو الخام — Photos & footage](https://github.com/kosif199022-jpg/kosif-tool/blob/main/.claude/skills/kosif-superpowers/references/powers/photo-video-footage.md) | FOOT | 71 | 20 | FOOT-08 Scene/shot detection → timeline; FOOT-09 Contact sheet & cover-frame mining; FOOT-13 Reference-reel study (mimic) |
 | [المقاسات والمنصات — Formats & platforms](https://github.com/kosif199022-jpg/kosif-tool/blob/main/.claude/skills/kosif-superpowers/references/powers/formats-platforms.md) | FMT | 70 | 17 | FMT-02 Aspect presets across the owner tools; FMT-03 Cinematic 2.35/2.39:1 and letterbox bars; FMT-08 9:16 UI safe zone |
-| [الصور والفيديو الخام — Photos & footage](https://github.com/kosif199022-jpg/kosif-tool/blob/main/.claude/skills/kosif-superpowers/references/powers/photo-video-footage.md) | FOOT | 68 | 20 | FOOT-08 Scene/shot detection → timeline; FOOT-09 Contact sheet & cover-frame mining; FOOT-13 Reference-reel study (mimic) |
-| [المخططات والشرح والكود — Diagrams, explainers & code](https://github.com/kosif199022-jpg/kosif-tool/blob/main/.claude/skills/kosif-superpowers/references/powers/diagrams-explainers-code.md) | EXPL | 65 | 2 | EXPL-50 Structural twin truss solver; EXPL-54 Flat educational water cycle; EXPL-01 Explainer diagram composition |
-| [الرسم اليدوي والرسم الحي — Hand-drawn & draw-on](https://github.com/kosif199022-jpg/kosif-tool/blob/main/.claude/skills/kosif-superpowers/references/powers/hand-drawn-draw-on.md) | DRAW | 62 | 17 | DRAW-01 SVG stroke draw-on; DRAW-03 Pen speed & lifts; DRAW-04 Human draw order & draw-and-label |
+| [المخططات والشرح والكود — Diagrams, explainers & code](https://github.com/kosif199022-jpg/kosif-tool/blob/main/.claude/skills/kosif-superpowers/references/powers/diagrams-explainers-code.md) | EXPL | 67 | 2 | EXPL-50 Structural twin truss solver; EXPL-54 Flat educational water cycle; EXPL-01 Explainer diagram composition |
+| [الرسم اليدوي والرسم الحي — Hand-drawn & draw-on](https://github.com/kosif199022-jpg/kosif-tool/blob/main/.claude/skills/kosif-superpowers/references/powers/hand-drawn-draw-on.md) | DRAW | 63 | 17 | DRAW-01 SVG stroke draw-on; DRAW-03 Pen speed & lifts; DRAW-04 Human draw order & draw-and-label |
 | [الخرائط — Maps & geo](https://github.com/kosif199022-jpg/kosif-tool/blob/main/.claude/skills/kosif-superpowers/references/powers/maps-geo.md) | MAP | 62 | 4 | MAP-29 Camera corridor path preparation; MAP-31 Arabic place-name normalisation; MAP-45 Schematic Saudi Arabia map — 13 regions, drill |
-| [التزامن مع الكلام والترجمة — Audio sync & captions](https://github.com/kosif199022-jpg/kosif-tool/blob/main/.claude/skills/kosif-superpowers/references/powers/audio-sync-captions.md) | SYNC | 60 | 20 | SYNC-01 Audio is the master clock; SYNC-02 words.json master timing schema; SYNC-03 Subtitle/transcript → words.json converter |
+| [التزامن مع الكلام والترجمة — Audio sync & captions](https://github.com/kosif199022-jpg/kosif-tool/blob/main/.claude/skills/kosif-superpowers/references/powers/audio-sync-captions.md) | SYNC | 61 | 20 | SYNC-01 Audio is the master clock; SYNC-02 words.json master timing schema; SYNC-03 Subtitle/transcript → words.json converter |
 | [الصوت المولّد والتعليق — Voice & TTS](https://github.com/kosif199022-jpg/kosif-tool/blob/main/.claude/skills/kosif-superpowers/references/powers/voice-tts.md) | VOICE | 55 | 12 | VOICE-01 Piper offline Arabic TTS; VOICE-19 Read speed by content — regenerate, never stre; VOICE-27 Locked documentary narrator voice |
 | [الأبعاد الثلاثية — 3D & spatial](https://github.com/kosif199022-jpg/kosif-tool/blob/main/.claude/skills/kosif-superpowers/references/powers/3d-spatial.md) | 3D | 52 | 2 | 3D-18 Raw-WebGL procedural crystal shards; 3D-42 SDF sculpting & surface-nets mesher; 3D-01 Real 3D vs 2.5D decision |
 | [الشخصيات والتحريك الهيكلي — Characters & rigs](https://github.com/kosif199022-jpg/kosif-tool/blob/main/.claude/skills/kosif-superpowers/references/powers/characters-rigs.md) | CHAR | 51 | 12 | CHAR-05 Fastify character bibles & reference locks; CHAR-11 Two-bone IK limbs; CHAR-13 Swap-shape faces, mouths & expressions |
 | [الهوية والشعار — Brand & logo](https://github.com/kosif199022-jpg/kosif-tool/blob/main/.claude/skills/kosif-superpowers/references/powers/brand-logo-identity.md) | BRAND | 43 | 8 | BRAND-08 Site → film material (palette, fonts, CTAs); BRAND-13 Raster logo → true-colour vector layers; BRAND-14 Icon families, app icons & favicon sets |
 | [البكسل والريترو والأساليب الخاصة — Pixel, retro & stylised](https://github.com/kosif199022-jpg/kosif-tool/blob/main/.claude/skills/kosif-superpowers/references/powers/pixel-retro-stylized.md) | RETRO | 32 | 10 | RETRO-01 Self-contained pixel cutscene (one HTML); RETRO-02 Bayer-dither fades & palette-stepped light; RETRO-06 Integer-grid motion & animating on twos |
 | [قدرات مساندة — Supporting powers](https://github.com/kosif199022-jpg/kosif-tool/blob/main/.claude/skills/kosif-superpowers/references/powers/other.md) | MISC | 27 | 5 | MISC-01 Style catalogue search · list · show; MISC-04 Auto skill selection & deterministic capabilit; MISC-05 Studio MCP server for Claude Code (22 tools) |
-| [تحميل الفيديو من الروابط — Video download](https://github.com/kosif199022-jpg/kosif-tool/blob/main/.claude/skills/kosif-superpowers/references/powers/video-download.md) | DL | 10 | 5 | DL-01 Download video from any URL; DL-02 Batch of links from a file; DL-03 Quality cap or audio-only |
+| [تحميل الفيديو من الروابط — Video download](https://github.com/kosif199022-jpg/kosif-tool/blob/main/.claude/skills/kosif-superpowers/references/powers/video-download.md) | DL | 11 | 5 | DL-01 Download video from any URL; DL-02 Batch of links from a file; DL-03 Quality cap or audio-only |
 
 ### الهندسة والكود / code — 547 powers · ✅ 60
 
@@ -102,7 +102,7 @@
 | [الرسم المعرفي والخرائط الذهنية — Knowledge graph & mind maps](https://github.com/kosif199022-jpg/kosif-tool/blob/main/.claude/skills/kosif-superpowers/references/powers/knowledge-graph.md) | GRAPH | 21 | 11 | GRAPH-01 Install Graphify locally (venv); GRAPH-02 Map a codebase offline; GRAPH-03 Query the graph instead of reading files |
 | [الأمان والسلامة — Security & safety](https://github.com/kosif199022-jpg/kosif-tool/blob/main/.claude/skills/kosif-superpowers/references/powers/security-safety.md) | SEC | 19 | 1 | SEC-14 Run foreign tools in a scrubbed sandbox; SEC-01 Untrusted content is data, not instructions; SEC-02 Hidden-text and payload scan |
 
-### العقل والتفكير / mind — 304 powers · ✅ 42
+### العقل والتفكير / mind — 305 powers · ✅ 42
 
 | family | prefix | powers | ✅ | examples (proven first) |
 |---|---|---|---|---|
@@ -111,8 +111,8 @@
 | [أطلس: الوكلاء والتخطيط والمراجعة — Atlas: agent workflows, planning & review](https://github.com/kosif199022-jpg/kosif-tool/blob/main/.claude/skills/kosif-superpowers/references/powers/atlas-mind.md) | AMIND | 44 | 0 | AMIND-01 Agent memory design, eval and poisoning audit; AMIND-02 Agentic approach triage, tool design and eval ; AMIND-03 Auto-memory curation and promotion |
 | [اكتشاف القدرات — Self-discovery & capability inventory](https://github.com/kosif199022-jpg/kosif-tool/blob/main/.claude/skills/kosif-superpowers/references/powers/self-discovery.md) | SELF | 43 | 26 | SELF-05 Read your own tool list; SELF-06 Load deferred tools with ToolSearch; SELF-07 MCP server inventory with cost flags |
 | [تنسيق الوكلاء — Agent orchestration](https://github.com/kosif199022-jpg/kosif-tool/blob/main/.claude/skills/kosif-superpowers/references/powers/agent-orchestration.md) | AGENT | 38 | 1 | AGENT-37 Chroma: Index documents into a vector store an; AGENT-01 Delegate or do it yourself; AGENT-02 Execution packet (delegation brief) |
+| [التحقق والتقييم — Verification & evals](https://github.com/kosif199022-jpg/kosif-tool/blob/main/.claude/skills/kosif-superpowers/references/powers/verification-evals.md) | CHECK | 30 | 4 | CHECK-02 Postcondition gate on the delivered file (ffpr; CHECK-03 Look at the output: contact sheets, frames, sc; CHECK-22 Catalog snapshot: powers.py stats + repo valid |
 | [محرك الإبداع — Creativity engine](https://github.com/kosif199022-jpg/kosif-tool/blob/main/.claude/skills/kosif-superpowers/references/powers/creativity-engine.md) | IDEA | 29 | 2 | IDEA-26 Idea matrix: operators × powers; IDEA-29 Feasibility from requirements, not optimism; IDEA-01 Diverge → converge protocol |
-| [التحقق والتقييم — Verification & evals](https://github.com/kosif199022-jpg/kosif-tool/blob/main/.claude/skills/kosif-superpowers/references/powers/verification-evals.md) | CHECK | 29 | 4 | CHECK-02 Postcondition gate on the delivered file (ffpr; CHECK-03 Look at the output: contact sheets, frames, sc; CHECK-22 Catalog snapshot: powers.py stats + repo valid |
 | [التخطيط والتنفيذ — Planning & execution](https://github.com/kosif199022-jpg/kosif-tool/blob/main/.claude/skills/kosif-superpowers/references/powers/planning-execution.md) | PLAN | 12 | 2 | PLAN-01 Full plan scaffold from a goal; PLAN-05 Requirements gate before scheduling; PLAN-02 Backcasting from the end state |
 
 ### التطبيقات والواجهات / build — 277 powers · ✅ 157
@@ -176,9 +176,9 @@
 
 | requirement | kind | powers | install |
 |---|---|---|---|
-| `python3` | bin | 664 | `apt-get install -y python3 python3-pip python3-venv` |
+| `python3` | bin | 665 | `apt-get install -y python3 python3-pip python3-venv` |
 | `npm:hyperframes` | npm | 461 | `npm i -D hyperframes@0.8.164  (Apache-2.0; some components load GSAP from a CDN)` |
-| `ffmpeg` | bin | 419 | `apt-get install -y ffmpeg  (or: conda install ffmpeg)` |
+| `ffmpeg` | bin | 421 | `apt-get install -y ffmpeg  (or: conda install ffmpeg)` |
 | `chromium` | bin | 345 | `npm i playwright && npx playwright install chromium  (cloud: pre-installed at /opt/pw-browsers)` |
 | `npm:rea` | npm | 256 | `npm install -g rea-agents@6.7.0  (Node 22.19+/24.11+/26+)` |
 | `npm:gsap` | npm | 237 | `npm i gsap  (GSAP standard licence: free for most uses; check the no-charge terms)` |
@@ -186,17 +186,17 @@
 | `key:unspecified` | key | 173 | `an account, API key or connector named in the power's install/how text (ask the user; never guess a value)` |
 | `node` | bin | 167 | `https://nodejs.org (22+)  — apt-get install -y nodejs npm` |
 | `pip:numpy` | pip | 131 | `pip install numpy` |
-| `pip:pillow` | pip | 128 | `pip install pillow  (Arabic shaping needs a libraqm build: PIL.features.check('raqm'))` |
+| `pip:pillow` | pip | 130 | `pip install pillow  (Arabic shaping needs a libraqm build: PIL.features.check('raqm'))` |
 | `npm:remotion` | npm | 115 | `npm i remotion@4.0.536 @remotion/cli@4.0.536  (Remotion licence: free for individuals, company licence above 3` |
+| `fonts:arabic` | font | 94 | `OFL Arabic fonts (Amiri, Cairo, Tajawal, Reem Kufi, Aref Ruqaa, Lalezar) ship in proofs/_shared/fonts; more fr` |
 | `pip:opencv` | pip | 94 | `pip install opencv-python-headless` |
-| `fonts:arabic` | font | 92 | `OFL Arabic fonts (Amiri, Cairo, Tajawal, Reem Kufi, Aref Ruqaa, Lalezar) ship in proofs/_shared/fonts; more fr` |
 | `imagemagick` | bin | 82 | `apt-get install -y imagemagick` |
 | `engine:ghidra` | bin | 77 | `Ghidra 12.1 from github.com/NationalSecurityAgency/ghidra + GHIDRA_INSTALL_DIR; or Hopper (rea setup), IDA MCP` |
 | `claude:tools` | service | 73 | `Claude Code (CLI, desktop, web) — Agent, Workflow, Artifact, WebFetch/WebSearch, ToolSearch` |
-| `key:video-gen` | service | 65 | `an account on the named generator (Runway, Kling, Veo, Pika, Luma…) — paid credits` |
+| `key:video-gen` | service | 66 | `an account on the named generator (Runway, Kling, Veo, Pika, Luma…) — paid credits` |
 | `npm:react` | npm | 52 | `npm i react react-dom  (or next, svelte, vue)` |
 | `git` | bin | 48 | `apt-get install -y git` |
-| `pip:faster-whisper` | model | 47 | `pip install faster-whisper  (models from huggingface.co: small 466 MB, large-v3 3.1 GB; CPU works)` |
+| `pip:faster-whisper` | model | 48 | `pip install faster-whisper  (models from huggingface.co: small 466 MB, large-v3 3.1 GB; CPU works)` |
 | `pip:office` | pip | 37 | `pip install python-docx openpyxl python-pptx reportlab pypdf` |
 | `engine:android` | bin | 36 | `Android platform-tools (adb) + jadx-headless-mcp 0.7.1 JAR + apktool; device with USB debugging authorised` |
 | `os:macos` | os | 34 | `a macOS machine with Xcode command-line tools` |

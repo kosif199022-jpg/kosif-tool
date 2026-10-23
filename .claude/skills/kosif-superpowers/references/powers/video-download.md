@@ -55,3 +55,15 @@
 - **ماذا / what:** سلسلة كاملة: حمّل ← --safe ← قِس المدة والقطعات (scenedetect/ffmpeg scene) ← فرّغ الصوت (faster-whisper) ← قص على الإيقاع (librosa) ← انتقالات xfade وتلوين وترجمة عربية ← loudnorm -14 ← verify_video.
 - **كيف / how:** انظر proofs/ffmpeg-montage وفصل FOOT وSYNC وTRANS.
 - **الدليل / proof:** `kosif-tool/.claude/skills/kosif-superpowers/references/video-download.md`
+
+## إضافات مرفقات 2026-10-23 — 2026-10-23 upload additions
+
+_من مراجعة مرفقات المالك: [owner-uploads-review-20261023.md](../owner-uploads-review-20261023.md). — From the owner-upload review._
+
+
+#### DL-11 · سجل سلسلة Cinema C للآيفون · Cinema C iPhone lineage ledger (V13 → V34) · 📄 موصوف / documented
+- **ماذا / what:** أداة واحدة عبر 17 نسخة: c ← رابط ← جودة ← تحميل ← MP4 آمن للآيفون ← الصور. السجل يحفظ ما تعلمته كل نسخة: V17 تتبع الملف الدقيق، V22 تحقق صارم (ffprobe + فك إطار + حجر Unverified + إصلاح آخر ملف)، V24 إزالة ffprobe و--print-to-file لأنها جمّدت a-Shell ورفض التخمين حين يكتمل أكثر من ملف، V25 نسخة PhotosSafe (H.264 VideoToolbox ثم libx264، AAC، yuv420p، faststart) بفحص فك إطار واحد، V26–V28 حصر ملف فيسبوك بأفضل جهد مع download-archive. — One tool across 17 versions; the ledger keeps what each version learned so V34 changes do not repeat paid mistakes.
+- **متى أستخدمها / when:** حين تعدّل سكربت التحميل للآيفون أو يفشل الحفظ في الصور / when changing the iPhone downloader or a save-to-Photos fails
+- **كيف / how:** اقرأ §3 من الملحق قبل تعديل tools/a-shell/Cinema_C_V34_Studio_iPhone.sh؛ لا تُعد last_output.txt (V24)؛ فيسبوك لملفك أو محتوى تملك حقه فقط، والكوكيز تبقى على الجهاز. **أرقام / params:** PhotosSafe: -c:v h264_videotoolbox -b:v 6000k || libx264 -crf 18 -preset veryfast; -pix_fmt yuv420p -c:a aac -b:a 192k -movflags +faststart; sanity: -frames:v 1 -f null
+- **الرخصة / license:** owner
+- **الدليل / proof:** `kosif-tool/.claude/skills/kosif-superpowers/references/owner-uploads-review-20261023.md`

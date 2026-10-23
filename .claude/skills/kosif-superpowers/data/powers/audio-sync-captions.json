@@ -2043,5 +2043,46 @@
   ],
   "section": "إضافات v2 — v2 additions",
   "source": "owner-upload:Claude_edit_skill_1/Claude edit skill/implementation/browser-reference/captions.js"
+ },
+ {
+  "id": "SYNC-U01",
+  "family": "audio-sync-captions",
+  "domain": "motion",
+  "name_ar": "وسم مصدر التوقيت: عرض أم صوت أم تقديري",
+  "name_en": "Timing provenance labels (display / voice / estimated)",
+  "status": "documented",
+  "what": "كل توقيت يحمل مصدره: ظهور العبارة على الشاشة من البكسلات (~33 ms عند 30 fps) توقيت عرض لا بداية صوت؛ الكلمات الموزعة تقديريًا داخل العبارة تُوسم ESTIMATED في اسم الملف؛ ملف JSON فيه timing_methods لكل نوع وtranscript_method. التفريغ الآلي فاته أول ~13 ث في إحدى الحزم وصححه النص الظاهر. — Never present estimated word timing as audio-aligned.",
+  "how": "المحاذاة الحقيقية: faster-whisper أو whisper.cpp بطوابع كلمات ثم مقارنة بالنص الظاهر؛ وإلا فاذكر «تقديري».",
+  "params": "",
+  "install": "",
+  "requires": [
+   "pip:faster-whisper"
+  ],
+  "license": "owner",
+  "proof": [
+   "kosif-tool/.claude/skills/kosif-superpowers/references/owner-uploads-review-20261023.md"
+  ],
+  "proof_scope": "repo",
+  "styles": [],
+  "tags": [
+   "timing",
+   "توقيت",
+   "word timing",
+   "توقيت الكلمات",
+   "estimated",
+   "تقديري",
+   "srt",
+   "lrc",
+   "alignment",
+   "محاذاة",
+   "دقيق",
+   "الكلمات",
+   "أغنية",
+   "song",
+   "lyrics"
+  ],
+  "when": "تسليم توقيت كلمات أو ترجمة متزامنة / delivering word timing or synced captions",
+  "section": "إضافات مرفقات 2026-10-23 — 2026-10-23 upload additions",
+  "source": "owner-upload:2026-10-23"
  }
 ]

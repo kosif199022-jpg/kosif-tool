@@ -500,3 +500,15 @@ _قدرات أُضيفت في الإصدار الثاني من حزم المال
 - **الرخصة / license:** unknown (reference only)
 - **المصدر / source:** `owner-upload:Claude_edit_skill_1/Claude edit skill/implementation/browser-reference/captions.js`
 - **الدليل / proof:** `owner-upload:Claude_edit_skill_1/Claude edit skill/implementation/browser-reference/captions.js`
+
+## إضافات مرفقات 2026-10-23 — 2026-10-23 upload additions
+
+_من مراجعة مرفقات المالك: [owner-uploads-review-20261023.md](../owner-uploads-review-20261023.md). — From the owner-upload review._
+
+
+#### SYNC-U01 · وسم مصدر التوقيت: عرض أم صوت أم تقديري · Timing provenance labels (display / voice / estimated) · 📄 موصوف / documented
+- **ماذا / what:** كل توقيت يحمل مصدره: ظهور العبارة على الشاشة من البكسلات (~33 ms عند 30 fps) توقيت عرض لا بداية صوت؛ الكلمات الموزعة تقديريًا داخل العبارة تُوسم ESTIMATED في اسم الملف؛ ملف JSON فيه timing_methods لكل نوع وtranscript_method. التفريغ الآلي فاته أول ~13 ث في إحدى الحزم وصححه النص الظاهر. — Never present estimated word timing as audio-aligned.
+- **متى أستخدمها / when:** تسليم توقيت كلمات أو ترجمة متزامنة / delivering word timing or synced captions
+- **كيف / how:** المحاذاة الحقيقية: faster-whisper أو whisper.cpp بطوابع كلمات ثم مقارنة بالنص الظاهر؛ وإلا فاذكر «تقديري».
+- **الرخصة / license:** owner
+- **الدليل / proof:** `kosif-tool/.claude/skills/kosif-superpowers/references/owner-uploads-review-20261023.md`

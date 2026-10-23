@@ -23,7 +23,7 @@
 
 | المستودع | الحالة | استشهادات | الغرض | المجموعات | ما يُستفاد منه |
 |---|---|---|---|---|---|
-| `kosif199022-jpg/kosif-tool` | مدمج في سوبر باور | 2088 | بيت مهارة سوبر باور: الكتالوج والبروتوكول USIP وFusionForge وأطلس الأساليب وأدوات الرندر | agents, motion, drawing, 3d, type, quality | الكتالوج 5,334 قدرة؛ 132 أداة قابلة للتشغيل؛ أطلس الأساليب والقوالب |
+| `kosif199022-jpg/kosif-tool` | مدمج في سوبر باور | 2113 | بيت مهارة سوبر باور: الكتالوج والبروتوكول USIP وFusionForge وأطلس الأساليب وأدوات الرندر | agents, motion, drawing, 3d, type, quality | الكتالوج 5,334 قدرة؛ 132 أداة قابلة للتشغيل؛ أطلس الأساليب والقوالب |
 | `kosif199022-jpg/kosif-one` | مدمج في سوبر باور | 1610 | المستودع المرجعي الموحّد لأدوات الأنيميشن والمونتاج والكلام مع مشاريع مرجعية منفّذة | motion, audio, type, agents, 3d | kosif-montage-motion؛ kosif-mimic؛ kosif-social؛ مشاريع مرجعية: غربة، دعاء الخميس، دورة الماء؛ vendor: hyperframes |
 | `kosif199022-jpg/kosif-atlas` | مدمج في سوبر باور | 1391 | مكتبة أطلس: آلاف المهارات الخارجية بتراخيص تسمح بإعادة النشر، كل مهارة بملفاتها ومصدرها وترخيصها | research, agents, software, quality, documents, data | 15,121 SKILL.md؛ فهرس CSV/JSON بالمصدر والترخيص؛ تقارير الاستبعاد (copyleft) |
 | `kosif199022-jpg/100-superskills` | مدمج في سوبر باور | 1274 | 110 مهارة جاهزة لكلاود وChatGPT مركّبة من الأطلس: أنيميشن ترند، برومبتات صور وفيديو، إكسل، عروض، كود | motion, images, software, documents, thinking, data | character-animation-2d؛ svg-illustration-icons؛ comics-picture-books؛ pixel-art-game-assets؛ excel-financial-models؛ prompt-master-pro |
@@ -59,15 +59,15 @@
 | thinking · التفكير والتخطيط والاستراتيجية | 291 | 17 | 272 | 2 | 0 | 100-superskills, think, kosif-omni, CLOUDFLARE_API_TOKEN, new | think, kosif-omni |
 | agents · الوكلاء والتوجيه الذكي | 146 | 87 | 49 | 8 | 2 | kosif-tool, kosif-one, kosif-atlas, fastify-motion-bro, cloude, see, think, kosif-omni, kosif-atlas-private, CLOUDFLARE_API_TOKEN, whatsapp-personal-bridge | cloude, see, think, kosif-omni |
 | software · البرمجة وبناء التطبيقات | 545 | 127 | 377 | 32 | 7 | kosif-atlas, 100-superskills, kosif-earth-ci-fork, cloude, kosif-audit-pro, see, whatsapp-personal-bridge, mafateeh-al-tharwa | kosif-earth-ci-fork, cloude, kosif-audit-pro, see, mafateeh-al-tharwa |
-| drawing · الرسم والأشكال والتصميم | 297 | 108 | 146 | 31 | 4 | kosif-tool, kosif-studio, fastify-motion-bro | — |
-| images · الصور والتحرير والتوليد | 303 | 138 | 101 | 27 | 35 | 100-superskills, kosif-studio | — |
-| 3d · الثري دي والمحاكاة والرندر | 754 | 262 | 199 | 258 | 31 | kosif-tool, kosif-one, kosif-render-lab | kosif-render-lab |
-| motion · الموشن والمونتاج والسينما | 1224 | 296 | 558 | 314 | 23 | kosif-tool, kosif-one, 100-superskills, kosif-studio, app, fastify-motion-bro, kosif-render-lab | kosif-render-lab |
-| audio · الصوت والموسيقى والتعليق | 420 | 133 | 157 | 82 | 36 | kosif-one, app, mafateeh-al-tharwa, mafateeh-al-tharwa2 | mafateeh-al-tharwa |
-| type · الخطوط والنصوص العربية واللاتينية | 212 | 87 | 90 | 31 | 1 | kosif-tool, kosif-one, app | — |
+| drawing · الرسم والأشكال والتصميم | 300 | 108 | 149 | 31 | 4 | kosif-tool, kosif-studio, fastify-motion-bro | — |
+| images · الصور والتحرير والتوليد | 306 | 138 | 104 | 27 | 35 | 100-superskills, kosif-studio | — |
+| 3d · الثري دي والمحاكاة والرندر | 755 | 263 | 199 | 258 | 31 | kosif-tool, kosif-one, kosif-render-lab | kosif-render-lab |
+| motion · الموشن والمونتاج والسينما | 1228 | 297 | 561 | 314 | 23 | kosif-tool, kosif-one, 100-superskills, kosif-studio, app, fastify-motion-bro, kosif-render-lab | kosif-render-lab |
+| audio · الصوت والموسيقى والتعليق | 422 | 133 | 159 | 82 | 36 | kosif-one, app, mafateeh-al-tharwa, mafateeh-al-tharwa2 | mafateeh-al-tharwa |
+| type · الخطوط والنصوص العربية واللاتينية | 215 | 89 | 91 | 31 | 1 | kosif-tool, kosif-one, app | — |
 | data · البيانات والرسوم والمواقع | 253 | 67 | 144 | 34 | 7 | kosif-atlas, 100-superskills, kosif-earth-ci-fork, cloude, kosif-audit-studio, kosif-audit-pro, see, moon, smart-trial-balance-review | kosif-earth-ci-fork, cloude, kosif-audit-studio, kosif-audit-pro, see, moon |
 | documents · المستندات والكتابة | 110 | 32 | 66 | 8 | 4 | kosif-atlas, 100-superskills, kosif-earth-ci-fork, cloude, kosif-audit-studio, kosif-audit-pro, see, moon, smart-trial-balance-review, mafateeh-al-tharwa, mafateeh-al-tharwa2, new | kosif-earth-ci-fork, cloude, kosif-audit-studio, kosif-audit-pro, see, moon, mafateeh-al-tharwa |
-| quality · الاختبارات والجودة والأمان | 453 | 151 | 188 | 94 | 15 | kosif-tool, kosif-atlas, kosif-earth-ci-fork, cloude, kosif-audit-studio, kosif-audit-pro, see, moon, kosif-render-lab | kosif-earth-ci-fork, cloude, kosif-audit-studio, kosif-audit-pro, see, moon, kosif-render-lab |
+| quality · الاختبارات والجودة والأمان | 455 | 152 | 189 | 94 | 15 | kosif-tool, kosif-atlas, kosif-earth-ci-fork, cloude, kosif-audit-studio, kosif-audit-pro, see, moon, kosif-render-lab | kosif-earth-ci-fork, cloude, kosif-audit-studio, kosif-audit-pro, see, moon, kosif-render-lab |
 | reverse · التحليل العكسي وفحص البرامج | 245 | 30 | 167 | 48 | 0 | — | — |
 | misc · قدرات مساندة غير مصنفة | 27 | 12 | 11 | 2 | 2 | — | — |
 

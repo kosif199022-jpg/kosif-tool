@@ -1,7 +1,7 @@
 {
   "schema": "kosif.smart-capability-index.v1",
   "origin": "data/powers/*.json (catalog); no original records changed",
-  "catalog_powers": 5334,
+  "catalog_powers": 5352,
   "group_count": 15,
   "family_count": 62,
   "tool_count": 133,
@@ -253,9 +253,9 @@
         "الدمج في مشهد/لوحة",
         "التصدير والتحقق"
       ],
-      "count": 297,
+      "count": 300,
       "status_counts": {
-        "documented": 80,
+        "documented": 83,
         "idea": 8,
         "install": 31,
         "key": 4,
@@ -265,8 +265,8 @@
       },
       "family_counts": {
         "brand-logo-identity": 43,
-        "diagrams-explainers-code": 65,
-        "hand-drawn-draw-on": 62,
+        "diagrams-explainers-code": 67,
+        "hand-drawn-draw-on": 63,
         "pixel-retro-stylized": 32,
         "shapes-morph-geometry": 95
       },
@@ -316,9 +316,9 @@
         "التوليد الاختياري",
         "تصدير النتيجة"
       ],
-      "count": 303,
+      "count": 306,
       "status_counts": {
-        "documented": 79,
+        "documented": 82,
         "idea": 2,
         "install": 27,
         "key": 35,
@@ -331,7 +331,7 @@
         "atlas-media": 14,
         "color-palette-grading": 87,
         "media-image-audio": 41,
-        "photo-video-footage": 68
+        "photo-video-footage": 71
       },
       "examples": [
         {
@@ -379,13 +379,13 @@
         "المحاكاة/التحريك",
         "الرندر والتحقق"
       ],
-      "count": 754,
+      "count": 755,
       "status_counts": {
         "documented": 125,
         "idea": 4,
         "install": 258,
         "key": 31,
-        "proven": 121,
+        "proven": 122,
         "ready": 141,
         "seen": 74
       },
@@ -393,7 +393,7 @@
         "3d-spatial": 52,
         "engines-render-pipeline": 443,
         "light-glow-bloom": 87,
-        "particles-fluids-physics": 76,
+        "particles-fluids-physics": 77,
         "texture-material": 96
       },
       "examples": [
@@ -444,24 +444,24 @@
         "التحريك والمونتاج",
         "التصدير"
       ],
-      "count": 1224,
+      "count": 1228,
       "status_counts": {
-        "documented": 266,
+        "documented": 269,
         "idea": 33,
         "install": 314,
         "key": 23,
-        "proven": 116,
+        "proven": 117,
         "ready": 180,
         "seen": 292
       },
       "family_counts": {
-        "camera-composition-layout": 424,
+        "camera-composition-layout": 425,
         "characters-rigs": 51,
         "easing-timing-rhythm": 102,
         "formats-platforms": 70,
-        "story-direction-ideas": 94,
-        "transitions-cuts": 473,
-        "video-download": 10
+        "story-direction-ideas": 95,
+        "transitions-cuts": 474,
+        "video-download": 11
       },
       "examples": [
         {
@@ -507,9 +507,9 @@
         "التعليق والترجمة",
         "التحقق"
       ],
-      "count": 420,
+      "count": 422,
       "status_counts": {
-        "documented": 115,
+        "documented": 117,
         "idea": 12,
         "install": 82,
         "key": 36,
@@ -518,8 +518,8 @@
         "seen": 42
       },
       "family_counts": {
-        "audio-sync-captions": 60,
-        "music-beat-sound": 305,
+        "audio-sync-captions": 61,
+        "music-beat-sound": 306,
         "voice-tts": 55
       },
       "examples": [
@@ -561,20 +561,20 @@
       ],
       "keywords": "arabic text typography font subtitle rtl letter line خط خطوط عربي كتابة تنسيق نص",
       "workflow": [],
-      "count": 212,
+      "count": 215,
       "status_counts": {
-        "documented": 44,
+        "documented": 45,
         "idea": 3,
         "install": 31,
         "key": 1,
-        "proven": 38,
+        "proven": 40,
         "ready": 49,
         "seen": 46
       },
       "family_counts": {
         "arabic-language": 22,
-        "typography-arabic": 98,
-        "typography-latin": 92
+        "typography-arabic": 99,
+        "typography-latin": 94
       },
       "examples": [
         {
@@ -735,21 +735,21 @@
         "اختبارات الانحدار",
         "إثبات النتائج"
       ],
-      "count": 453,
+      "count": 455,
       "status_counts": {
-        "documented": 185,
+        "documented": 186,
         "idea": 5,
         "install": 94,
         "key": 15,
-        "proven": 93,
+        "proven": 94,
         "ready": 58,
         "seen": 3
       },
       "family_counts": {
         "api-testing": 22,
-        "qa-verification": 383,
+        "qa-verification": 384,
         "security-safety": 19,
-        "verification-evals": 29
+        "verification-evals": 30
       },
       "examples": [
         {
@@ -17023,6 +17023,23 @@
       "what": "الكلمات تظهر واحدة واحدة في مكانها النهائي، والمقطع يحتفظ بموضع واحد طوال عمره حتى لو قُطعت الصورة تحته. — Words appear one by one in their final place, and a caption chunk keeps one position for its whole life even when the picture cuts underneath."
     },
     {
+      "id": "SYNC-U01",
+      "family": "audio-sync-captions",
+      "group": "audio",
+      "domain": "motion",
+      "name_en": "Timing provenance labels (display / voice / estimated)",
+      "name_ar": "وسم مصدر التوقيت: عرض أم صوت أم تقديري",
+      "status": "documented",
+      "requires": [
+        "pip:faster-whisper"
+      ],
+      "proof": [
+        "kosif-tool/.claude/skills/kosif-superpowers/references/owner-uploads-review-20261023.md"
+      ],
+      "source": "audio-sync-captions.json",
+      "what": "كل توقيت يحمل مصدره: ظهور العبارة على الشاشة من البكسلات (~33 ms عند 30 fps) توقيت عرض لا بداية صوت؛ الكلمات الموزعة تقديريًا داخل العبارة تُوسم ESTIMATED في اسم الملف؛ ملف JSON فيه timing_methods لكل نوع وtranscript_method. التفريغ الآلي فاته أول ~13 ث في إحدى الحزم وصححه النص ا"
+    },
+    {
       "id": "BRAND-01",
       "family": "brand-logo-identity",
       "group": "drawing",
@@ -24621,6 +24638,21 @@
       "what": "فيلم علامة يُروى بحركة كاميرا مهيمنة واحدة وينتهي بدفع بطيء نحو العلامة لا يتراجع أبدًا. — A brand film told with one dominant camera verb that ends on a slow push toward the brand and never retreats."
     },
     {
+      "id": "CAM-U01",
+      "family": "camera-composition-layout",
+      "group": "motion",
+      "domain": "motion",
+      "name_en": "Ground homography chain and world-anchored billboards",
+      "name_ar": "تتبع الأرض بالهوموغرافيا ولوحات مثبتة في العالم",
+      "status": "documented",
+      "requires": [],
+      "proof": [
+        "kosif-tool/.claude/skills/kosif-superpowers/references/owner-uploads-review-20261023.md"
+      ],
+      "source": "camera-composition-layout.json",
+      "what": "SIFT (2500 نقطة) بنصف الدقة، اختبار نسبة 0.72، RANSAC 5 px، وسلسلة مصفوفات تنقل أي نقطة أرضية لأي إطار؛ اللوحة = المرساة + الإزاحة × المقياس^0.6 وتواجه الكاميرا؛ التتبع الكامل يجعل النص ينزلق ويصعب قراءته فخفّفه أو استخدم مساحة الشاشة. — Planar tracking for tabletop/diorama foota"
+    },
+    {
       "id": "CHAR-01",
       "family": "characters-rigs",
       "group": "motion",
@@ -31557,6 +31589,36 @@
       ],
       "source": "diagrams-explainers-code.json",
       "what": "لشرح فكرة رياضية أو تقنية: جملة بصرية واحدة، ثم 3–6 مشاهد يثبت كل منها شيئًا واحدًا، ورندر سريع منخفض الجودة قبل الصقل. — For a math or technical idea: one visual thesis sentence, 3–6 scenes each proving one thing, and a fast low-quality render before polish."
+    },
+    {
+      "id": "EXPL-U01",
+      "family": "diagrams-explainers-code",
+      "group": "drawing",
+      "domain": "motion",
+      "name_en": "Five code-rendered motion-graphics styles menu",
+      "name_ar": "قائمة الأساليب الخمسة للموشن بالكود",
+      "status": "documented",
+      "requires": [],
+      "proof": [
+        "kosif-tool/.claude/skills/kosif-superpowers/references/owner-uploads-review-20261023.md"
+      ],
+      "source": "diagrams-explainers-code.json",
+      "what": "اختر أسلوبًا وسمِّه قبل البناء: Editorial Explainer (ريلز 9:16 بطابع Vox، فحم وورق، لون تمييز أحمر واحد)، AI Film FX (رسوم داخل لقطات مولّدة)، 2D Animated Explainer (ظل 2.5D بشرائح لونية، من تعليق صوتي)، 3D Voxel Animation (زوم لوغاريتمي عبر المقاييس)، Cartoon Music Video. التبدي"
+    },
+    {
+      "id": "EXPL-U02",
+      "family": "diagrams-explainers-code",
+      "group": "drawing",
+      "domain": "motion",
+      "name_en": "Frozen analysis beat overlay",
+      "name_ar": "لقطة التحليل المجمّدة",
+      "status": "documented",
+      "requires": [],
+      "proof": [
+        "kosif-tool/.claude/skills/kosif-superpowers/references/owner-uploads-review-20261023.md"
+      ],
+      "source": "diagrams-explainers-code.json",
+      "what": "للحظة «التحليل» جمّد إطارًا حادًا واحدًا بدل الإبطاء، عتّمه 30٪ وانزع إشباعه 40٪، ثم شبكة أرض بيضاء بحد داكن، 20–30 نقطة مميزة، و3–4 صناديق بأقواس زوايا سميكة وبطاقات اسم وإحداثيات. — Hold one sharp frame, dim 30 % and desaturate 40 %, then grid, 20–30 feature points and 3–4 brac"
     },
     {
       "id": "DOC-01",
@@ -44228,6 +44290,24 @@
       "what": "يد بريشة تتبع حافة الحبر المتقدمة للسطر نفسه، فتبدو كأنها تكتب كلمات الأغنية حقًا. — A quill hand follows the advancing ink frontier of the line itself, so it truly seems to write the lyric."
     },
     {
+      "id": "DRAW-U01",
+      "family": "hand-drawn-draw-on",
+      "group": "drawing",
+      "domain": "motion",
+      "name_en": "Deterministic hand-drawn film via make_frame(t)",
+      "name_ar": "فيلم يد مرسومة حتمي بـmake_frame(t)",
+      "status": "documented",
+      "requires": [
+        "ffmpeg",
+        "python3"
+      ],
+      "proof": [
+        "kosif-tool/.claude/skills/kosif-superpowers/references/owner-uploads-review-20261023.md"
+      ],
+      "source": "hand-drawn-draw-on.json",
+      "what": "كل إطار يُحسب من الزمن المطلق (لا ساعة متراكمة): القفز والإعادة بلا انجراف والرندر المتوازي ممكن؛ سنّ القلم مربوط بنهاية الخط النشط وكشف الحبر على المسار وملمس ورق؛ الصوت الأصلي مسار رئيسي. اذكر دقة الرسم الأصلية (720×1280 مكبّرة إلى 1080×1920 في المشروع) وأن المشاهد تقريبية حين "
+    },
+    {
       "id": "GRAPH-01",
       "family": "knowledge-graph",
       "group": "research",
@@ -54101,6 +54181,21 @@
       "what": "سلّم العنوان والكلمات والأسلوب والاستبعاد في أربع كتل منفصلة جاهزة للنسخ، وافحصها بمعيار من 11 بندًا. — Hand back Title, Lyrics, Style and Exclude as four separate copy-ready blocks and check them against an 11-point rubric."
     },
     {
+      "id": "BEAT-U01",
+      "family": "music-beat-sound",
+      "group": "audio",
+      "domain": "motion",
+      "name_en": "Subtle SFX palette without whooshes",
+      "name_ar": "لوحة مؤثرات بلا whoosh وفراش صوت اللقطات",
+      "status": "documented",
+      "requires": [],
+      "proof": [
+        "kosif-tool/.claude/skills/kosif-superpowers/references/owner-uploads-review-20261023.md"
+      ],
+      "source": "music-beat-sound.json",
+      "what": "الصوت البشري سائد؛ المؤثرات 0.02–0.06 مقابل قمة صوت ~0.5؛ pop للنصوص والبطاقات، swell نغمي للكلمات الكبيرة وتغيير المشهد، glass للوحات، tick للنقر والكتابة، chime عند الاكتمال؛ بلا whoosh؛ صوت اللقطات نفسها فراشًا بنحو −16 dB في مواضعها؛ صدّر مسار مؤثرات منفصلًا وأعد توقيته مع كل"
+    },
+    {
       "id": "MISC-01",
       "family": "other",
       "group": "misc",
@@ -55904,6 +55999,22 @@
       "what": "عدّة «داخل النظام»: مطر رموز وتيارات حروف على منحنيات وحلقات صدمة من الرموز ولحظة انهيار. — An 'inside the system' kit: code rain, glyph streams on curves, glyph shockwave rings and a crash beat."
     },
     {
+      "id": "PART-U01",
+      "family": "particles-fluids-physics",
+      "group": "3d",
+      "domain": "motion",
+      "name_en": "Noise + centre-distance reveal field",
+      "name_ar": "حقل كشف بالضجيج والمسافة من المركز",
+      "status": "proven",
+      "requires": [],
+      "proof": [
+        "kosif-tool/.claude/skills/kosif-superpowers/proofs/owner-uploads-20261023/proof_uploads.py",
+        "kosif-tool/.claude/skills/kosif-superpowers/proofs/owner-uploads-20261023/receipt.json"
+      ],
+      "source": "particles-fluids-physics.json",
+      "what": "field = 0.55·noise + 0.45·|x−0.5|·2 و alpha = clip((p·1.15 − field)/0.12) مع شريط مضيء على الجبهة؛ الجسيمات تبدأ قبل الجبهة بـ0.2 ث فقط (110–340 px إزاحة، مسارات منحنية) وتصل مع مرورها. — Organic dissolve that reveals from the centre outward; particles arrive with the front."
+    },
+    {
       "id": "FOOT-01",
       "family": "photo-video-footage",
       "group": "images",
@@ -57160,6 +57271,51 @@
       ],
       "source": "photo-video-footage.json",
       "what": "تحويل ريل مرجعي إلى مواصفة قابلة للتنفيذ: القطعات وتطابقها مع العبارات، ألوان النص بأقنعة، صناديق الطبقات، الهالة، تلوين اللقطات بـLab، الانتقالات، والصوت (LUFS وتفريغ). / Turn a reference reel into an executable spec: cuts vs phrase onsets, text colours via masks, layer boxes, h"
+    },
+    {
+      "id": "FOOT-U01",
+      "family": "photo-video-footage",
+      "group": "images",
+      "domain": "",
+      "name_en": "Match a draft back to its source shots",
+      "name_ar": "مطابقة المسودة بلقطات المصدر",
+      "status": "documented",
+      "requires": [],
+      "proof": [
+        "kosif-tool/.claude/skills/kosif-superpowers/references/owner-uploads-review-20261023.md"
+      ],
+      "source": "photo-video-footage.json",
+      "what": "صغّر كل إطار من المسودة والمصادر إلى 96×54 رمادي واختر أقل متوسط فرق مطلق ← (اللقطة، زمن المصدر) لكل إطار؛ خطأ < 15 = استخدام كامل، وأعلى = داخل بطاقة أو بمؤثر؛ ملاءمة خطية تعطي الإزاحة (src = t − c). — Recover which shot and source time each frame of a user mock-up uses."
+    },
+    {
+      "id": "FOOT-U02",
+      "family": "photo-video-footage",
+      "group": "images",
+      "domain": "",
+      "name_en": "Jump-cut finder: cut on the frame before",
+      "name_ar": "كاشف القفزات: اقطع قبل القفزة",
+      "status": "documented",
+      "requires": [],
+      "proof": [
+        "kosif-tool/.claude/skills/kosif-superpowers/references/owner-uploads-review-20261023.md"
+      ],
+      "source": "photo-video-footage.json",
+      "what": "إطار تغيّره عن السابق > نسبة × الوسيط المحلي = قفزة داخل لقطة مركبة من عدة مآخذ؛ ضع قطع القسم على الإطار قبل القفزة وإلا ومض المأخذ التالي إطارًا واحدًا. — Find hard cuts inside a talking-head clip; cut one frame before them."
+    },
+    {
+      "id": "FOOT-U03",
+      "family": "photo-video-footage",
+      "group": "images",
+      "domain": "",
+      "name_en": "Person matte without ML",
+      "name_ar": "قناع شخص بلا تعلم آلي",
+      "status": "documented",
+      "requires": [],
+      "proof": [
+        "kosif-tool/.claude/skills/kosif-superpowers/references/owner-uploads-review-20261023.md"
+      ],
+      "source": "photo-video-footage.json",
+      "what": "GrabCut بنصف الدقة ببذور (بيضاوي الوجه والجذع أمامي ومناطق خلفية معروفة) يُنشر من قناع الإطار السابق (مُآكل = أمامي، شريط موسّع = محتمل)، ثم مرشح موجّه بالدقة الكاملة (r=10 eps=2e-4 ثم r=4 eps=1e-4) ومزج زمني؛ النص خلف الرأس = النص ثم person × matte. — Seeded, propagated GrabCut "
     },
     {
       "id": "RETRO-01",
@@ -64788,6 +64944,22 @@
       ],
       "source": "qa-verification.json",
       "what": "ولّد مرجعًا اصطناعيًا تعرف حقيقته (لقطات، انتقالات، أحداث نص بخطوط معلومة)، حلّله بالخط نفسه الذي ستستخدمه على فيديو المستخدم، وقارن النوع والمدى والتوقيت والخط بالحقيقة قبل أن تثق بأي قياس على مرجع حقيقي. — Generate a synthetic reference whose truth you wrote (shots, transitions"
+    },
+    {
+      "id": "QA-U01",
+      "family": "qa-verification",
+      "group": "quality",
+      "domain": "motion",
+      "name_en": "Graphics-only layer from two aligned renders",
+      "name_ar": "طبقة الرسوم وحدها من رندرين",
+      "status": "proven",
+      "requires": [],
+      "proof": [
+        "kosif-tool/.claude/skills/kosif-superpowers/proofs/owner-uploads-20261023/proof_uploads.py",
+        "kosif-tool/.claude/skills/kosif-superpowers/proofs/owner-uploads-20261023/receipt.json"
+      ],
+      "source": "qa-verification.json",
+      "what": "diff = max_channel|graphics − original| و alpha = clip((diff − 0.10)/0.12) ثم توسيع 3 px وتنعيم 1 px: يعطي طبقة RGBA للرسوم وحدها لتسليمها للمحرر أو لفحص ما أُضيف. — Recover an RGBA graphics layer from a with/without render pair."
     },
     {
       "id": "TOOL-01",
@@ -74841,6 +75013,23 @@
       ],
       "source": "story-direction-ideas.json",
       "what": "لاكتشاف الذوق ابنِ ثلاثة إطارات معاينة مختلفة فعلًا ودع المستخدم يختار، بدل قائمة أسئلة. — To discover taste, build three genuinely different single-frame previews and let the user pick, instead of a questionnaire."
+    },
+    {
+      "id": "STORY-U01",
+      "family": "story-direction-ideas",
+      "group": "motion",
+      "domain": "motion",
+      "name_en": "Cartoon music-video pipeline",
+      "name_ar": "خط فيلم الأغنية الكرتوني",
+      "status": "documented",
+      "requires": [
+        "key:video-gen"
+      ],
+      "proof": [
+        "kosif-tool/.claude/skills/kosif-superpowers/references/owner-uploads-review-20261023.md"
+      ],
+      "source": "story-direction-ideas.json",
+      "what": "أغنية ~40 ث (مقطع بين شخصيتين ولازمة واحدة معًا، سطور حرفية بسيطة) ← صفحة شخصيات وبيئات 2×2 ومؤثرات 5×2 مولّدة ← تُعاد رسمها بالكود ولا تُلصق ← رندر بقطع متداخلة قابلة للاستئناف ← لقطات ثابتة بأفواه مغلقة لمزامنة الشفاه. — Song → sheets → repaint in code → resumable render → lip-"
     },
     {
       "id": "PROD-01",
@@ -85425,6 +85614,23 @@
       "what": "لا تخمّن الانتقال من شكل منحنى الفرق؛ ارسم كل نوع مرشح (54 من xfade في FFmpeg + 11 من محررات الهاتف) من الإطارين النقيين قبل وبعد عند 25 قيمة تقدّم، واختر مسارًا رتيبًا بالبرمجة الديناميكية؛ الناتج نوع ومعاملات ومدى ومنحنى تقدّم مقاس يُعاد تشغيله حرفيًا في البناء. — Instead of gu"
     },
     {
+      "id": "TRANS-U01",
+      "family": "transitions-cuts",
+      "group": "motion",
+      "domain": "motion",
+      "name_en": "Before/after slider: glide → crawl → reveal",
+      "name_ar": "منحنى منزلق قبل/بعد: انزلاق ثم زحف ثم كشف",
+      "status": "proven",
+      "requires": [],
+      "proof": [
+        "kosif-tool/.claude/skills/kosif-superpowers/proofs/owner-uploads-20261023/proof_uploads.py",
+        "kosif-tool/.claude/skills/kosif-superpowers/proofs/owner-uploads-20261023/receipt.json",
+        "kosif-tool/.claude/skills/kosif-superpowers/proofs/owner-uploads-20261023/sheet.jpg"
+      ],
+      "source": "transitions-cuts.json",
+      "what": "p = 0.46·easeOut((t−t0)/0.8) + 0.10·smoothstep((t−t0−0.5)/2.05) + 0.44·easeInOut((t−t0−2.3)/0.95): ينزلق سريعًا إلى المنتصف، يزحف ببطء دون توقف ~1.5–2 ث للمقارنة، ثم يتسارع إلى كشف كامل. — Fast glide to the middle, a slow never-stopping crawl for comparison, then an accelerating "
+    },
+    {
       "id": "ARAB-01",
       "family": "typography-arabic",
       "group": "type",
@@ -87190,6 +87396,26 @@
       "what": "IBM Plex Sans Arabic وCairo وTajawal وAmiri، كلها برخصة SIL OFL 1.1، ويمكن جلبها من مستودعاتها الأصلية لا من مصمم. — All four are SIL OFL 1.1; fetch them from their own upstream repositories, not from Mosamem."
     },
     {
+      "id": "ARAB-U01",
+      "family": "typography-arabic",
+      "group": "type",
+      "domain": "motion",
+      "name_en": "El Messiri Arabic display font bundled (OFL)",
+      "name_ar": "خط El Messiri العربي مضمّن",
+      "status": "proven",
+      "requires": [
+        "pip:pillow",
+        "fonts:arabic"
+      ],
+      "proof": [
+        "kosif-tool/.claude/skills/kosif-superpowers/proofs/_shared/fonts/ElMessiri[wght].ttf",
+        "kosif-tool/.claude/skills/kosif-superpowers/proofs/_shared/fonts/OFL-ElMessiri.txt",
+        "kosif-tool/.claude/skills/kosif-superpowers/proofs/owner-uploads-20261023/sheet.jpg"
+      ],
+      "source": "typography-arabic.json",
+      "what": "El Messiri متغير (Regular–Bold، v2.020) مضمّن في proofs/_shared/fonts مع OFL-ElMessiri.txt؛ رسمتُه بتشكيل raqm صحيح في إثبات الرفع. خط عرض عربي أنيق للعناوين والأفلام الغنائية. — Elegant Arabic display face for titles and lyric films."
+    },
+    {
       "id": "TYPE-01",
       "family": "typography-latin",
       "group": "type",
@@ -88856,6 +89082,41 @@
       ],
       "source": "typography-latin.json",
       "what": "ثلاث عائلات فقط (بلا تذييل، بتذييل، أحادية)، والوزن الثقيل وزن 800 من العائلة نفسها لا عائلة رابعة، ومصدر واحد يكتب متغيرات CSS للـDOM والـcanvas معًا. — Exactly three families (sans, serif, mono); 'heavy' is weight 800 of the sans, not a fourth family; one source writes the CSS "
+    },
+    {
+      "id": "TYPE-U01",
+      "family": "typography-latin",
+      "group": "type",
+      "domain": "motion",
+      "name_en": "Poppins bundled (OFL)",
+      "name_ar": "خط Poppins مضمّن",
+      "status": "proven",
+      "requires": [
+        "pip:pillow",
+        "fonts:arabic"
+      ],
+      "proof": [
+        "kosif-tool/.claude/skills/kosif-superpowers/proofs/_shared/fonts/Poppins-Bold.ttf",
+        "kosif-tool/.claude/skills/kosif-superpowers/proofs/_shared/fonts/OFL-Poppins.txt",
+        "kosif-tool/.claude/skills/kosif-superpowers/proofs/owner-uploads-20261023/sheet.jpg"
+      ],
+      "source": "typography-latin.json",
+      "what": "Poppins Regular وBold مضمنان في proofs/_shared/fonts مع OFL-Poppins.txt؛ رسمتُهما بـPillow في إثبات الرفع. — Geometric sans for Latin captions and UI labels, bundled under OFL 1.1."
+    },
+    {
+      "id": "TYPE-U02",
+      "family": "typography-latin",
+      "group": "type",
+      "domain": "motion",
+      "name_en": "Caption readability rules over footage",
+      "name_ar": "قواعد قراءة الترجمة فوق اللقطات",
+      "status": "documented",
+      "requires": [],
+      "proof": [
+        "kosif-tool/.claude/skills/kosif-superpowers/references/owner-uploads-review-20261023.md"
+      ],
+      "source": "typography-latin.json",
+      "what": "نص أبيض عريض بظل ناعم قوي وتدرج داكن أسفل الإطار؛ ترجمة ~56 px، عبارة مفتاح ~96 px، تسميات 32–40 px؛ أسفل الوسط لا أعلى الإطار؛ نفس الارتفاع للترجمات المتتالية؛ كبسولة الكلمة المفتاح موسّطة على حدود الحبر؛ لا قطع بين لقطتين والترجمة ظاهرة؛ كل كلمة تصعد قبل وقتها بـ0.04–0.1 ث. — R"
     },
     {
       "id": "UI-01",
@@ -90966,6 +91227,19 @@
       "what": "أعد محاولة الجزء الفاشل وحده مرة واحدة بتعليمات أضيق، واحتفظ بنتائج الأجزاء الناجحة، ولا تُضعف بوابات الأمان أو الإذن أو التكلفة لتكمل. — Retry only the failed piece, once, with a narrower instruction; keep successful peers; never weaken safety, permission or cost gates to finish"
     },
     {
+      "id": "CHECK-30",
+      "family": "verification-evals",
+      "group": "quality",
+      "domain": "mind",
+      "name_en": "Closed-set judge asked twice with reversed options, a 'none' option and a declared fallback",
+      "name_ar": "حَكَم مغلق الخيارات مرتين بترتيب معكوس",
+      "status": "documented",
+      "requires": [],
+      "proof": [],
+      "source": "verification-evals.json",
+      "what": "لاختيار بين مرشحين (مهارة، خطة، أداة) اسأل الحكم بخيارات مغلقة ومعها «لا شيء»، مرتين بالتوازي والترتيب معكوس في الثانية؛ الاتفاق = حكم ثابت، الاختلاف = متوسط الترتيبين، غياب الحكم = الترتيب الحتمي، وسجّل decided_by. — Pick among candidates with a closed-set judge asked twice (opt"
+    },
+    {
       "id": "DL-01",
       "family": "video-download",
       "group": "motion",
@@ -91146,6 +91420,24 @@
       ],
       "source": "video-download.json",
       "what": "سلسلة كاملة: حمّل ← --safe ← قِس المدة والقطعات (scenedetect/ffmpeg scene) ← فرّغ الصوت (faster-whisper) ← قص على الإيقاع (librosa) ← انتقالات xfade وتلوين وترجمة عربية ← loudnorm -14 ← verify_video."
+    },
+    {
+      "id": "DL-11",
+      "family": "video-download",
+      "group": "motion",
+      "domain": "",
+      "name_en": "Cinema C iPhone lineage ledger (V13 → V34)",
+      "name_ar": "سجل سلسلة Cinema C للآيفون",
+      "status": "documented",
+      "requires": [
+        "ffmpeg",
+        "yt-dlp"
+      ],
+      "proof": [
+        "kosif-tool/.claude/skills/kosif-superpowers/references/owner-uploads-review-20261023.md"
+      ],
+      "source": "video-download.json",
+      "what": "أداة واحدة عبر 17 نسخة: c ← رابط ← جودة ← تحميل ← MP4 آمن للآيفون ← الصور. السجل يحفظ ما تعلمته كل نسخة: V17 تتبع الملف الدقيق، V22 تحقق صارم (ffprobe + فك إطار + حجر Unverified + إصلاح آخر ملف)، V24 إزالة ffprobe و--print-to-file لأنها جمّدت a-Shell ورفض التخمين حين يكتمل أكثر م"
     },
     {
       "id": "VOICE-01",

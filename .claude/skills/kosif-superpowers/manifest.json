@@ -15,17 +15,17 @@
  },
  "paths_note": "Tool paths and examples are relative to their root: 'skill' = this folder, 'repo' = the kosif-tool repository root.",
  "counts": {
-  "powers": 5334,
+  "powers": 5352,
   "families": 62,
   "domains": 10,
   "tools": 133,
-  "guides": 97,
+  "guides": 98,
   "statuses": {
-   "documented": 1937,
+   "documented": 1950,
    "idea": 71,
    "install": 973,
    "key": 176,
-   "proven": 923,
+   "proven": 928,
    "ready": 645,
    "seen": 609
   }
@@ -406,9 +406,9 @@
    "domain": "motion",
    "title_ar": "التزامن مع الكلام والترجمة",
    "title_en": "Audio sync & captions",
-   "count": 60,
+   "count": 61,
    "statuses": {
-    "documented": 18,
+    "documented": 19,
     "install": 7,
     "key": 1,
     "proven": 20,
@@ -443,9 +443,9 @@
    "domain": "motion",
    "title_ar": "الكاميرا والتكوين",
    "title_en": "Camera & composition",
-   "count": 424,
+   "count": 425,
    "statuses": {
-    "documented": 70,
+    "documented": 71,
     "idea": 15,
     "install": 122,
     "key": 14,
@@ -561,9 +561,9 @@
    "domain": "motion",
    "title_ar": "المخططات والشرح والكود",
    "title_en": "Diagrams, explainers & code",
-   "count": 65,
+   "count": 67,
    "statuses": {
-    "documented": 26,
+    "documented": 28,
     "idea": 2,
     "install": 11,
     "key": 1,
@@ -650,9 +650,9 @@
    "domain": "motion",
    "title_ar": "الرسم اليدوي والرسم الحي",
    "title_en": "Hand-drawn & draw-on",
-   "count": 62,
+   "count": 63,
    "statuses": {
-    "documented": 18,
+    "documented": 19,
     "install": 6,
     "proven": 17,
     "ready": 15,
@@ -749,9 +749,9 @@
    "domain": "motion",
    "title_ar": "الموسيقى والإيقاع والمؤثرات",
    "title_en": "Music, beat & sound",
-   "count": 305,
+   "count": 306,
    "statuses": {
-    "documented": 79,
+    "documented": 80,
     "idea": 12,
     "install": 74,
     "key": 22,
@@ -785,13 +785,13 @@
    "domain": "motion",
    "title_ar": "الجسيمات والسوائل والفيزياء",
    "title_en": "Particles, fluids & physics",
-   "count": 76,
+   "count": 77,
    "statuses": {
     "documented": 11,
     "idea": 1,
     "install": 13,
     "key": 1,
-    "proven": 17,
+    "proven": 18,
     "ready": 13,
     "seen": 20
    },
@@ -804,9 +804,9 @@
    "domain": "motion",
    "title_ar": "الصور والفيديو الخام",
    "title_en": "Photos & footage",
-   "count": 68,
+   "count": 71,
    "statuses": {
-    "documented": 19,
+    "documented": 22,
     "install": 7,
     "key": 3,
     "proven": 20,
@@ -868,13 +868,13 @@
    "domain": "motion",
    "title_ar": "الجودة والتحقق",
    "title_en": "QA & verification",
-   "count": 383,
+   "count": 384,
    "statuses": {
     "documented": 142,
     "idea": 5,
     "install": 88,
     "key": 14,
-    "proven": 73,
+    "proven": 74,
     "ready": 58,
     "seen": 3
    },
@@ -965,9 +965,9 @@
    "domain": "motion",
    "title_ar": "القصة والإخراج",
    "title_en": "Story & direction",
-   "count": 94,
+   "count": 95,
    "statuses": {
-    "documented": 46,
+    "documented": 47,
     "install": 2,
     "key": 1,
     "proven": 14,
@@ -1030,13 +1030,13 @@
    "domain": "motion",
    "title_ar": "الانتقالات والقطعات",
    "title_en": "Transitions & cuts",
-   "count": 473,
+   "count": 474,
    "statuses": {
     "documented": 79,
     "idea": 18,
     "install": 175,
     "key": 1,
-    "proven": 28,
+    "proven": 29,
     "ready": 58,
     "seen": 114
    },
@@ -1049,12 +1049,12 @@
    "domain": "motion",
    "title_ar": "الخط العربي المتحرك",
    "title_en": "Arabic typography",
-   "count": 98,
+   "count": 99,
    "statuses": {
     "documented": 21,
     "idea": 1,
     "install": 7,
-    "proven": 22,
+    "proven": 23,
     "ready": 36,
     "seen": 11
    },
@@ -1067,13 +1067,13 @@
    "domain": "motion",
    "title_ar": "التايبوغرافي اللاتيني والحركي",
    "title_en": "Latin & kinetic typography",
-   "count": 92,
+   "count": 94,
    "statuses": {
-    "documented": 19,
+    "documented": 20,
     "idea": 2,
     "install": 20,
     "key": 1,
-    "proven": 2,
+    "proven": 3,
     "ready": 13,
     "seen": 35
    },
@@ -1105,9 +1105,9 @@
    "domain": "mind",
    "title_ar": "التحقق والتقييم",
    "title_en": "Verification & evals",
-   "count": 29,
+   "count": 30,
    "statuses": {
-    "documented": 25,
+    "documented": 26,
     "proven": 4
    },
    "chapter": "references/powers/verification-evals.md",
@@ -1119,9 +1119,9 @@
    "domain": "motion",
    "title_ar": "تحميل الفيديو من الروابط",
    "title_en": "Video download",
-   "count": 10,
+   "count": 11,
    "statuses": {
-    "documented": 2,
+    "documented": 3,
     "proven": 5,
     "ready": 3
    },
@@ -13099,6 +13099,12 @@
    "path": "references/owned-repos-map.md",
    "title": "خريطة مستودعات المالك ← سوبر باور / Owned repositories map",
    "area": "discover",
+   "summary": ""
+  },
+  {
+   "path": "references/owner-uploads-review-20261023.md",
+   "title": "مراجعة مرفقات المالك — Owner uploads review (2026-10-23)",
+   "area": "general",
    "summary": ""
   },
   {

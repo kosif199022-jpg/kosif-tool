@@ -390,5 +390,41 @@
    "beat cut"
   ],
   "when": "حين يريد المستخدم من رابط واحد مونتاجًا كاملًا: تحميل ثم تفريغ وقص على الإيقاع وانتقالات وترجمة عربية / when the user wants a full montage from a link: download, transcribe, beat cuts, transitions, Arabic subtitles"
+ },
+ {
+  "id": "DL-11",
+  "family": "video-download",
+  "name_ar": "سجل سلسلة Cinema C للآيفون",
+  "name_en": "Cinema C iPhone lineage ledger (V13 → V34)",
+  "status": "documented",
+  "what": "أداة واحدة عبر 17 نسخة: c ← رابط ← جودة ← تحميل ← MP4 آمن للآيفون ← الصور. السجل يحفظ ما تعلمته كل نسخة: V17 تتبع الملف الدقيق، V22 تحقق صارم (ffprobe + فك إطار + حجر Unverified + إصلاح آخر ملف)، V24 إزالة ffprobe و--print-to-file لأنها جمّدت a-Shell ورفض التخمين حين يكتمل أكثر من ملف، V25 نسخة PhotosSafe (H.264 VideoToolbox ثم libx264، AAC، yuv420p، faststart) بفحص فك إطار واحد، V26–V28 حصر ملف فيسبوك بأفضل جهد مع download-archive. — One tool across 17 versions; the ledger keeps what each version learned so V34 changes do not repeat paid mistakes.",
+  "how": "اقرأ §3 من الملحق قبل تعديل tools/a-shell/Cinema_C_V34_Studio_iPhone.sh؛ لا تُعد last_output.txt (V24)؛ فيسبوك لملفك أو محتوى تملك حقه فقط، والكوكيز تبقى على الجهاز.",
+  "params": "PhotosSafe: -c:v h264_videotoolbox -b:v 6000k || libx264 -crf 18 -preset veryfast; -pix_fmt yuv420p -c:a aac -b:a 192k -movflags +faststart; sanity: -frames:v 1 -f null",
+  "install": "",
+  "requires": [
+   "ffmpeg",
+   "yt-dlp"
+  ],
+  "license": "owner",
+  "proof": [
+   "kosif-tool/.claude/skills/kosif-superpowers/references/owner-uploads-review-20261023.md"
+  ],
+  "proof_scope": "repo",
+  "styles": [],
+  "tags": [
+   "cinema c",
+   "a-shell",
+   "iphone",
+   "آيفون",
+   "تحميل",
+   "photos",
+   "الصور",
+   "facebook",
+   "فيسبوك",
+   "yt-dlp",
+   "verify",
+   "تحقق"
+  ],
+  "when": "حين تعدّل سكربت التحميل للآيفون أو يفشل الحفظ في الصور / when changing the iPhone downloader or a save-to-Photos fails"
  }
 ]

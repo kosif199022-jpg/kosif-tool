@@ -2,7 +2,7 @@
 
 Generated from real repository data. Catalog evidence is NOT a live execution receipt.
 
-**5,334 powers / 62 families / 10 domains / 22 route descriptions.**
+**5,352 powers / 62 families / 10 domains / 22 route descriptions.**
 
 For a task in the user's words, `python3 scripts/hub.py find "<task>"` combines this atlas with the runnable tools and guides.
 
@@ -81,49 +81,49 @@ For a task in the user's words, `python3 scripts/hub.py find "<task>"` combines 
 - media-image-audio: 41
 - atlas-media: 14
 
-### mind: 304 powers
+### mind: 305 powers
 
 - mental-models: 63
 - thinking-core: 46
 - atlas-mind: 44
 - self-discovery: 43
 - agent-orchestration: 38
+- verification-evals: 30
 - creativity-engine: 29
-- verification-evals: 29
 - planning-execution: 12
 
-### motion: 3,801 powers
+### motion: 3,818 powers
 
-- transitions-cuts: 473
+- transitions-cuts: 474
 - engines-render-pipeline: 443
-- camera-composition-layout: 424
-- qa-verification: 383
-- music-beat-sound: 305
+- camera-composition-layout: 425
+- qa-verification: 384
+- music-beat-sound: 306
 - charts-data-infographic: 105
 - easing-timing-rhythm: 102
+- typography-arabic: 97
 - texture-material: 96
-- typography-arabic: 96
 - shapes-morph-geometry: 95
-- story-direction-ideas: 94
+- story-direction-ideas: 95
+- typography-latin: 94
 - ai-generation: 93
 - ui-product-device: 93
-- typography-latin: 92
 - color-palette-grading: 87
 - light-glow-bloom: 87
-- particles-fluids-physics: 76
+- particles-fluids-physics: 77
+- photo-video-footage: 71
 - formats-platforms: 70
-- photo-video-footage: 68
-- diagrams-explainers-code: 65
-- hand-drawn-draw-on: 62
+- diagrams-explainers-code: 67
+- hand-drawn-draw-on: 63
 - maps-geo: 62
-- audio-sync-captions: 60
+- audio-sync-captions: 61
 - voice-tts: 55
 - 3d-spatial: 52
 - characters-rigs: 51
 - brand-logo-identity: 43
 - pixel-retro-stylized: 32
 - other: 27
-- video-download: 10
+- video-download: 11
 
 ### research: 33 powers
 

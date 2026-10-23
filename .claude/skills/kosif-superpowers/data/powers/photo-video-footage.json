@@ -2367,5 +2367,94 @@
   "section": "أسلوب «الدعاء» — «الدعاء» style kit",
   "source": "",
   "when": "حين تريد تحويل ريل مرجعي إلى مواصفة أسلوب مقاسة: القطعات وألوان النص والهالة والتلوين والانتقالات والصوت / when turning a reference reel into a measured style spec: cuts, text colours, halo, grade, transitions, loudness"
+ },
+ {
+  "id": "FOOT-U01",
+  "family": "photo-video-footage",
+  "name_ar": "مطابقة المسودة بلقطات المصدر",
+  "name_en": "Match a draft back to its source shots",
+  "status": "documented",
+  "what": "صغّر كل إطار من المسودة والمصادر إلى 96×54 رمادي واختر أقل متوسط فرق مطلق ← (اللقطة، زمن المصدر) لكل إطار؛ خطأ < 15 = استخدام كامل، وأعلى = داخل بطاقة أو بمؤثر؛ ملاءمة خطية تعطي الإزاحة (src = t − c). — Recover which shot and source time each frame of a user mock-up uses.",
+  "how": "قفزات السطوع حيث تفشل المطابقة غالبًا مؤثرات مخبوزة: افحصها قبل «إصلاحها».",
+  "params": "96×54 gray; MAD < 15 = full frame",
+  "install": "",
+  "requires": [],
+  "license": "Claude AI Motion Graphics (Tao Prompts) — ideas and numbers only, code not copied",
+  "proof": [
+   "kosif-tool/.claude/skills/kosif-superpowers/references/owner-uploads-review-20261023.md"
+  ],
+  "proof_scope": "repo",
+  "styles": [],
+  "tags": [
+   "draft",
+   "مسودة",
+   "match",
+   "مطابقة",
+   "source",
+   "mock-up",
+   "offset"
+  ],
+  "when": "المستخدم أرسل مسودة مونتاج ويريدها بجودة عالية / rebuilding a user's rough draft",
+  "section": "إضافات مرفقات 2026-10-23 — 2026-10-23 upload additions",
+  "source": "owner-upload:2026-10-23"
+ },
+ {
+  "id": "FOOT-U02",
+  "family": "photo-video-footage",
+  "name_ar": "كاشف القفزات: اقطع قبل القفزة",
+  "name_en": "Jump-cut finder: cut on the frame before",
+  "status": "documented",
+  "what": "إطار تغيّره عن السابق > نسبة × الوسيط المحلي = قفزة داخل لقطة مركبة من عدة مآخذ؛ ضع قطع القسم على الإطار قبل القفزة وإلا ومض المأخذ التالي إطارًا واحدًا. — Find hard cuts inside a talking-head clip; cut one frame before them.",
+  "how": "على مجلد إطارات؛ نسبة افتراضية ~4–6 × الوسيط المحلي.",
+  "params": "",
+  "install": "",
+  "requires": [],
+  "license": "Claude AI Motion Graphics (Tao Prompts) — ideas and numbers only, code not copied",
+  "proof": [
+   "kosif-tool/.claude/skills/kosif-superpowers/references/owner-uploads-review-20261023.md"
+  ],
+  "proof_scope": "repo",
+  "styles": [],
+  "tags": [
+   "jump cut",
+   "قفزة",
+   "talking head",
+   "cut",
+   "قطع",
+   "frame"
+  ],
+  "when": "قص فيديو متكلم مركب من مآخذ / editing a multi-take talking head",
+  "section": "إضافات مرفقات 2026-10-23 — 2026-10-23 upload additions",
+  "source": "owner-upload:2026-10-23"
+ },
+ {
+  "id": "FOOT-U03",
+  "family": "photo-video-footage",
+  "name_ar": "قناع شخص بلا تعلم آلي",
+  "name_en": "Person matte without ML",
+  "status": "documented",
+  "what": "GrabCut بنصف الدقة ببذور (بيضاوي الوجه والجذع أمامي ومناطق خلفية معروفة) يُنشر من قناع الإطار السابق (مُآكل = أمامي، شريط موسّع = محتمل)، ثم مرشح موجّه بالدقة الكاملة (r=10 eps=2e-4 ثم r=4 eps=1e-4) ومزج زمني؛ النص خلف الرأس = النص ثم person × matte. — Seeded, propagated GrabCut + guided filter for text behind a speaker.",
+  "how": "البذور تهم في الإطار الأول فقط؛ للكاميرا الثابتة أضف مضلعًا أماميًا ثابتًا (مكتب).",
+  "params": "guided filter r=10/eps=2e-4 then r=4/eps=1e-4",
+  "install": "",
+  "requires": [],
+  "license": "Claude AI Motion Graphics (Tao Prompts) — ideas and numbers only, code not copied",
+  "proof": [
+   "kosif-tool/.claude/skills/kosif-superpowers/references/owner-uploads-review-20261023.md"
+  ],
+  "proof_scope": "repo",
+  "styles": [],
+  "tags": [
+   "matte",
+   "قناع",
+   "rotoscope",
+   "behind head",
+   "خلف الرأس",
+   "grabcut",
+   "person"
+  ],
+  "when": "نص خلف الشخص بلا نموذج تقطيع / text behind a person without a segmentation model",
+  "section": "إضافات مرفقات 2026-10-23 — 2026-10-23 upload additions",
+  "source": "owner-upload:2026-10-23"
  }
 ]
