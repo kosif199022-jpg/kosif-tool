@@ -1,6 +1,6 @@
 {
  "schema": "kosif.hubs-index.v1",
- "atoms": 5727,
+ "atoms": 5728,
  "superpowers": 475,
  "hubs": [
   {
@@ -104,9 +104,9 @@
    "requires": [
     "key:graphify",
     "python3",
-    "key:unspecified",
     "claude:tools",
     "chromium",
+    "key:unspecified",
     "node",
     "npm:mermaid",
     "pip:chromadb",
@@ -423,9 +423,9 @@
      "id": "SP-0133",
      "name_ar": "منقّب قدرات الأطلس من البيانات الوصفية",
      "name_en": "Atlas metadata capability miner",
-     "size": 32,
+     "size": 33,
      "best": "proven",
-     "ready_now": 32
+     "ready_now": 33
     },
     {
      "id": "SP-0134",
@@ -516,15 +516,15 @@
      "ready_now": 8
     }
    ],
-   "powers": 278,
+   "powers": 279,
    "status_mix": {
-    "proven": 161,
+    "proven": 162,
     "ready": 22,
     "install": 15,
     "key": 2,
     "documented": 78
    },
-   "ready_now": 183,
+   "ready_now": 184,
    "requires": [
     "python3",
     "ffmpeg",
@@ -599,8 +599,8 @@
    "links": [
     "thinking",
     "quality",
-    "3d",
-    "software"
+    "software",
+    "3d"
    ]
   },
   {
@@ -1585,8 +1585,8 @@
    ],
    "links": [
     "agents",
-    "motion",
     "software",
+    "motion",
     "quality"
    ]
   },
@@ -1683,11 +1683,10 @@
     "SP-0252",
     "SP-0296",
     "SP-0220",
-    "SP-0414",
     "SP-0416",
     "SP-0417",
     "SP-0193",
-    "SP-0430",
+    "SP-0429",
     "SP-0197",
     "SP-0200",
     "SP-0438",
@@ -1695,11 +1694,12 @@
     "SP-0210",
     "SP-0444",
     "SP-0222",
+    "SP-0414",
     "SP-0187",
     "SP-0422",
     "SP-0192",
     "SP-0427",
-    "SP-0431",
+    "SP-0430",
     "SP-0432",
     "SP-0196",
     "SP-0433",
@@ -1717,7 +1717,7 @@
     "SP-0421",
     "SP-0424",
     "SP-0428",
-    "SP-0429",
+    "SP-0431",
     "SP-0198",
     "SP-0199",
     "SP-0202",
@@ -1741,9 +1741,9 @@
      "id": "SP-0415",
      "name_ar": "انتقالات الكشف",
      "name_en": "Reveal transitions (FFmpeg xfade)",
-     "size": 30,
+     "size": 31,
      "best": "proven",
-     "ready_now": 29
+     "ready_now": 30
     },
     {
      "id": "SP-0292",
@@ -2081,9 +2081,9 @@
     "imagemagick",
     "pip:faster-whisper",
     "key:elevenlabs",
-    "key:unspecified",
     "key:video-gen",
     "npm:remotion",
+    "key:unspecified",
     "node",
     "pip:piper",
     "fonts:arabic",
@@ -2099,6 +2099,7 @@
     "pip:pyannote",
     "yt-dlp",
     "os:macos",
+    "npm:three",
     "npm:d3",
     "pip:onnxruntime",
     "docker"

@@ -2,6 +2,7 @@
  {
   "id": "EXPL-01",
   "family": "diagrams-explainers-code",
+  "domain": "motion",
   "name_ar": "قواعد تركيب مخطط الشرح",
   "name_en": "Explainer diagram composition",
   "status": "documented",
@@ -30,6 +31,7 @@
  {
   "id": "EXPL-02",
   "family": "diagrams-explainers-code",
+  "domain": "motion",
   "name_ar": "قواعد العقد والروابط",
   "name_en": "Node & edge grammar",
   "status": "documented",
@@ -61,6 +63,7 @@
  {
   "id": "EXPL-03",
   "family": "diagrams-explainers-code",
+  "domain": "motion",
   "name_ar": "اختيار نوع المخطط والتخطيط",
   "name_en": "Diagram type & layout chooser",
   "status": "documented",
@@ -92,6 +95,7 @@
  {
   "id": "EXPL-04",
   "family": "diagrams-explainers-code",
+  "domain": "motion",
   "name_ar": "ترتيب البناء السببي وحالات العقد",
   "name_en": "Causal build order & node states",
   "status": "documented",
@@ -121,6 +125,7 @@
  {
   "id": "EXPL-05",
   "family": "diagrams-explainers-code",
+  "domain": "motion",
   "name_ar": "عكس المخطط للعربية",
   "name_en": "Mirrored RTL diagrams",
   "status": "documented",
@@ -148,6 +153,7 @@
  {
   "id": "EXPL-06",
   "family": "diagrams-explainers-code",
+  "domain": "motion",
   "name_ar": "ألوان دلالية للأدوار",
   "name_en": "Semantic role colours",
   "status": "documented",
@@ -176,6 +182,7 @@
  {
   "id": "EXPL-07",
   "family": "diagrams-explainers-code",
+  "domain": "motion",
   "name_ar": "إطار الشرح الأحادي",
   "name_en": "Learning-mono explainer frame",
   "status": "documented",
@@ -201,6 +208,7 @@
  {
   "id": "EXPL-08",
   "family": "diagrams-explainers-code",
+  "domain": "motion",
   "name_ar": "حدود الأيقونات المختصرة",
   "name_en": "Closure limits for minimal icons",
   "status": "documented",
@@ -226,6 +234,7 @@
  {
   "id": "EXPL-09",
   "family": "diagrams-explainers-code",
+  "domain": "motion",
   "name_ar": "توليد أيقونات بخلفية شفافة",
   "name_en": "Transparent icon generation",
   "status": "key",
@@ -256,6 +265,7 @@
  {
   "id": "EXPL-10",
   "family": "diagrams-explainers-code",
+  "domain": "motion",
   "name_ar": "مخططات SVG برمجية بالملليمتر",
   "name_en": "Programmatic SVG schematics",
   "status": "documented",
@@ -286,6 +296,7 @@
  {
   "id": "EXPL-11",
   "family": "diagrams-explainers-code",
+  "domain": "motion",
   "name_ar": "مخططات Mermaid من نص",
   "name_en": "Mermaid text-to-diagram",
   "status": "install",
@@ -314,6 +325,7 @@
  {
   "id": "EXPL-12",
   "family": "diagrams-explainers-code",
+  "domain": "motion",
   "name_ar": "مخططات D2",
   "name_en": "D2 declarative diagrams",
   "status": "documented",
@@ -341,6 +353,7 @@
  {
   "id": "EXPL-13",
   "family": "diagrams-explainers-code",
+  "domain": "motion",
   "name_ar": "سبورة Excalidraw ولوحات JSON Canvas",
   "name_en": "Excalidraw & JSON Canvas boards",
   "status": "install",
@@ -371,6 +384,7 @@
  {
   "id": "EXPL-14",
   "family": "diagrams-explainers-code",
+  "domain": "motion",
   "name_ar": "شبكة مفاهيم بقوة الجذب",
   "name_en": "Force-directed concept graph",
   "status": "install",
@@ -399,6 +413,7 @@
  {
   "id": "EXPL-15",
   "family": "diagrams-explainers-code",
+  "domain": "motion",
   "name_ar": "خريطة الكيان في المنتصف",
   "name_en": "Entity node map with flow edges",
   "status": "ready",
@@ -426,6 +441,7 @@
  {
   "id": "EXPL-16",
   "family": "diagrams-explainers-code",
+  "domain": "motion",
   "name_ar": "عملية من ثلاث خطوات",
   "name_en": "Three-step process recipe",
   "status": "documented",
@@ -453,6 +469,7 @@
  {
   "id": "EXPL-17",
   "family": "diagrams-explainers-code",
+  "domain": "motion",
   "name_ar": "نبضة بيانات على الرابط",
   "name_en": "Data pulse along edges",
   "status": "documented",
@@ -491,6 +508,7 @@
  {
   "id": "EXPL-18",
   "family": "diagrams-explainers-code",
+  "domain": "motion",
   "name_ar": "خطوط تدفق متحركة",
   "name_en": "Marching-dash flow edges",
   "status": "ready",
@@ -521,6 +539,7 @@
  {
   "id": "EXPL-19",
   "family": "diagrams-explainers-code",
+  "domain": "motion",
   "name_ar": "محور وأذرع ومدارات",
   "name_en": "Hub-and-spoke, constellations & orbits",
   "status": "install",
@@ -563,6 +582,7 @@
  {
   "id": "EXPL-20",
   "family": "diagrams-explainers-code",
+  "domain": "motion",
   "name_ar": "التفرع إلى عدة",
   "name_en": "Fan-out branches & tree cascades",
   "status": "seen",
@@ -602,6 +622,7 @@
  {
   "id": "EXPL-21",
   "family": "diagrams-explainers-code",
+  "domain": "motion",
   "name_ar": "مخطط يُبنى مع الصوت",
   "name_en": "Voice-synced diagram build",
   "status": "seen",
@@ -632,6 +653,7 @@
  {
   "id": "EXPL-22",
   "family": "diagrams-explainers-code",
+  "domain": "motion",
   "name_ar": "التكبير على مكوّن وقبل/بعد",
   "name_en": "Zoom into component & before/after diagram",
   "status": "documented",
@@ -660,6 +682,7 @@
  {
   "id": "EXPL-23",
   "family": "diagrams-explainers-code",
+  "domain": "motion",
   "name_ar": "الخط الزمني برأس تشغيل",
   "name_en": "Timeline with playhead",
   "status": "documented",
@@ -690,6 +713,7 @@
  {
   "id": "EXPL-24",
   "family": "diagrams-explainers-code",
+  "domain": "motion",
   "name_ar": "مسار قرار ومخطط انسيابي",
   "name_en": "Decision path & flowchart",
   "status": "install",
@@ -722,6 +746,7 @@
  {
   "id": "EXPL-25",
   "family": "diagrams-explainers-code",
+  "domain": "motion",
   "name_ar": "دورة ورمز ينتقل",
   "name_en": "Cycle diagram, travelling token & loop arrow",
   "status": "ready",
@@ -748,6 +773,7 @@
  {
   "id": "EXPL-26",
   "family": "diagrams-explainers-code",
+  "domain": "motion",
   "name_ar": "شريط المراحل ومؤشر الخطوات",
   "name_en": "Stage tracker pills & steppers",
   "status": "ready",
@@ -781,6 +807,7 @@
  {
   "id": "EXPL-27",
   "family": "diagrams-explainers-code",
+  "domain": "motion",
   "name_ar": "خطأ ثم تصحيح",
   "name_en": "Mistake then correction",
   "status": "documented",
@@ -809,6 +836,7 @@
  {
   "id": "EXPL-28",
   "family": "diagrams-explainers-code",
+  "domain": "motion",
   "name_ar": "مقارنة سرعة عادلة",
   "name_en": "Fair speed comparison",
   "status": "documented",
@@ -834,6 +862,7 @@
  {
   "id": "EXPL-29",
   "family": "diagrams-explainers-code",
+  "domain": "motion",
   "name_ar": "تسميات بخطوط قائدة",
   "name_en": "Leader-line callouts (2D & 3D)",
   "status": "ready",
@@ -869,6 +898,7 @@
  {
   "id": "EXPL-30",
   "family": "diagrams-explainers-code",
+  "domain": "motion",
   "name_ar": "طبقات شفافة إيزومترية",
   "name_en": "Isometric translucent layer stack",
   "status": "seen",
@@ -896,6 +926,7 @@
  {
   "id": "EXPL-31",
   "family": "diagrams-explainers-code",
+  "domain": "motion",
   "name_ar": "التضخيم والمقارنة بالمقياس",
   "name_en": "Exaggerated scale & size comparison",
   "status": "seen",
@@ -925,6 +956,7 @@
  {
   "id": "EXPL-32",
   "family": "diagrams-explainers-code",
+  "domain": "motion",
   "name_ar": "طباعة الكود على الشاشة",
   "name_en": "On-screen code typography",
   "status": "documented",
@@ -951,6 +983,7 @@
  {
   "id": "EXPL-33",
   "family": "diagrams-explainers-code",
+  "domain": "motion",
   "name_ar": "كتابة بتذبذب مزروع",
   "name_en": "Seeded typing animation",
   "status": "install",
@@ -981,6 +1014,7 @@
  {
   "id": "EXPL-34",
   "family": "diagrams-explainers-code",
+  "domain": "motion",
   "name_ar": "جلسة الطرفية",
   "name_en": "Terminal session scene",
   "status": "documented",
@@ -1019,6 +1053,7 @@
  {
   "id": "EXPL-35",
   "family": "diagrams-explainers-code",
+  "domain": "motion",
   "name_ar": "إبراز السطر والتمرير والخطأ",
   "name_en": "Line highlight, scroll & error sweep",
   "status": "documented",
@@ -1050,6 +1085,7 @@
  {
   "id": "EXPL-36",
   "family": "diagrams-explainers-code",
+  "domain": "motion",
   "name_ar": "كشف الفرق",
   "name_en": "Diff reveal",
   "status": "documented",
@@ -1076,6 +1112,7 @@
  {
   "id": "EXPL-37",
   "family": "diagrams-explainers-code",
+  "domain": "motion",
   "name_ar": "نافذة كود مشروحة",
   "name_en": "Annotated code-window figure",
   "status": "documented",
@@ -1101,6 +1138,7 @@
  {
   "id": "EXPL-38",
   "family": "diagrams-explainers-code",
+  "domain": "motion",
   "name_ar": "كود ومعاينة حية",
   "name_en": "Code + live preview split",
   "status": "seen",
@@ -1130,6 +1168,7 @@
  {
   "id": "EXPL-39",
   "family": "diagrams-explainers-code",
+  "domain": "motion",
   "name_ar": "كود مجرد ورقائق",
   "name_en": "Abstract code pills & token chips",
   "status": "seen",
@@ -1164,6 +1203,7 @@
  {
   "id": "EXPL-40",
   "family": "diagrams-explainers-code",
+  "domain": "motion",
   "name_ar": "كتل HyperFrames للكود",
   "name_en": "HyperFrames code blocks",
   "status": "install",
@@ -1197,6 +1237,7 @@
  {
   "id": "EXPL-41",
   "family": "diagrams-explainers-code",
+  "domain": "motion",
   "name_ar": "من طلب دمج أو نص إلى فيديو شرح",
   "name_en": "PR-to-video & faceless explainer pipelines",
   "status": "install",
@@ -1227,6 +1268,7 @@
  {
   "id": "EXPL-42",
   "family": "diagrams-explainers-code",
+  "domain": "motion",
   "name_ar": "حرّك ما يفعله الكود",
   "name_en": "Mechanism beat: animate behaviour, not code",
   "status": "documented",
@@ -1260,6 +1302,7 @@
  {
   "id": "EXPL-43",
   "family": "diagrams-explainers-code",
+  "domain": "motion",
   "name_ar": "شجرة ملفات تتحول إلى أعمدة",
   "name_en": "Folder tree to bar chart",
   "status": "idea",
@@ -1285,6 +1328,7 @@
  {
   "id": "EXPL-44",
   "family": "diagrams-explainers-code",
+  "domain": "motion",
   "name_ar": "معادلة تتكون خطوة خطوة",
   "name_en": "Equation built step by step (bidi-safe)",
   "status": "install",
@@ -1314,6 +1358,7 @@
  {
   "id": "EXPL-45",
   "family": "diagrams-explainers-code",
+  "domain": "motion",
   "name_ar": "Manim للاشتقاق والنهايات",
   "name_en": "Manim derivations & limits",
   "status": "install",
@@ -1345,6 +1390,7 @@
  {
   "id": "EXPL-46",
   "family": "diagrams-explainers-code",
+  "domain": "motion",
   "name_ar": "دوائر فورييه والجيب",
   "name_en": "Fourier epicycles & unit-circle sine",
   "status": "seen",
@@ -1373,6 +1419,7 @@
  {
   "id": "EXPL-47",
   "family": "diagrams-explainers-code",
+  "domain": "motion",
   "name_ar": "برهان بصري بطيران الخلايا",
   "name_en": "Cell-flight visual proof",
   "status": "seen",
@@ -1400,6 +1447,7 @@
  {
   "id": "EXPL-48",
   "family": "diagrams-explainers-code",
+  "domain": "motion",
   "name_ar": "شروح تعلم الآلة",
   "name_en": "ML explainer devices",
   "status": "seen",
@@ -1431,6 +1479,7 @@
  {
   "id": "EXPL-49",
   "family": "diagrams-explainers-code",
+  "domain": "motion",
   "name_ar": "لوحة قياسات حية",
   "name_en": "Live telemetry & math HUD",
   "status": "seen",
@@ -1461,6 +1510,7 @@
  {
   "id": "EXPL-50",
   "family": "diagrams-explainers-code",
+  "domain": "motion",
   "name_ar": "التوأم الإنشائي: حلّال الجملونات",
   "name_en": "Structural twin truss solver",
   "status": "proven",
@@ -1492,6 +1542,7 @@
  {
   "id": "EXPL-51",
   "family": "diagrams-explainers-code",
+  "domain": "motion",
   "name_ar": "فيلم التوأم الإنشائي",
   "name_en": "Structural twin film (truss on a character)",
   "status": "ready",
@@ -1522,6 +1573,7 @@
  {
   "id": "EXPL-52",
   "family": "diagrams-explainers-code",
+  "domain": "motion",
   "name_ar": "منظر تخطيطي ومفكك",
   "name_en": "Schematic, wireframe & exploded view",
   "status": "ready",
@@ -1548,6 +1600,7 @@
  {
   "id": "EXPL-53",
   "family": "diagrams-explainers-code",
+  "domain": "motion",
   "name_ar": "شرح علمي ثلاثي الأبعاد بأربع مراحل",
   "name_en": "Four-stage 3D science explainer",
   "status": "ready",
@@ -1575,6 +1628,7 @@
  {
   "id": "EXPL-54",
   "family": "diagrams-explainers-code",
+  "domain": "motion",
   "name_ar": "دورة الماء التعليمية المسطحة",
   "name_en": "Flat educational water cycle",
   "status": "proven",
@@ -1606,6 +1660,7 @@
  {
   "id": "EXPL-55",
   "family": "diagrams-explainers-code",
+  "domain": "motion",
   "name_ar": "قواعد الدقة والوضوح للأطفال",
   "name_en": "Science accuracy & causal-step rules",
   "status": "documented",
@@ -1634,6 +1689,7 @@
  {
   "id": "EXPL-56",
   "family": "diagrams-explainers-code",
+  "domain": "motion",
   "name_ar": "نظام بطاقات الفيديو الشارح",
   "name_en": "Explainer card system",
   "status": "documented",
@@ -1663,6 +1719,7 @@
  {
   "id": "EXPL-57",
   "family": "diagrams-explainers-code",
+  "domain": "motion",
   "name_ar": "الوثيقة المصدر وقلم التظليل",
   "name_en": "Source document & article excerpt overlay",
   "status": "documented",
@@ -1690,6 +1747,7 @@
  {
   "id": "EXPL-58",
   "family": "diagrams-explainers-code",
+  "domain": "motion",
   "name_ar": "فئات المخططات والكود في بصمة",
   "name_en": "Basma diagram & code film categories",
   "status": "ready",
@@ -1717,6 +1775,7 @@
  {
   "id": "EXPL-59",
   "family": "diagrams-explainers-code",
+  "domain": "motion",
   "name_ar": "رسومات استعارية لكل جملة",
   "name_en": "Metaphor graphic per spoken claim",
   "status": "ready",
@@ -1743,6 +1802,7 @@
  {
   "id": "EXPL-60",
   "family": "diagrams-explainers-code",
+  "domain": "motion",
   "name_ar": "بطاقات المقارنة والتشبيه والقوائم",
   "name_en": "Trade-off, analogy & checklist cards",
   "status": "seen",
@@ -1774,6 +1834,7 @@
  {
   "id": "EXPL-61",
   "family": "diagrams-explainers-code",
+  "domain": "motion",
   "name_ar": "أدوات بصرية للشرح",
   "name_en": "Explainer visual devices",
   "status": "seen",
@@ -1810,6 +1871,7 @@
  {
   "id": "EXPL-62",
   "family": "diagrams-explainers-code",
+  "domain": "motion",
   "name_ar": "أسلوب الرسومات التقنية",
   "name_en": "Tech blueprint style",
   "status": "ready",
@@ -1841,6 +1903,7 @@
  {
   "id": "EXPL-63",
   "family": "diagrams-explainers-code",
+  "domain": "motion",
   "name_ar": "لوحات ستوري بورد SVG مصغرة",
   "name_en": "SVG thumbnail storyboards",
   "status": "documented",
@@ -1866,6 +1929,7 @@
  {
   "id": "EXPL-64",
   "family": "diagrams-explainers-code",
+  "domain": "motion",
   "name_ar": "نموذج مجرة الأدلة",
   "name_en": "Evidence galaxy graph model",
   "status": "idea",

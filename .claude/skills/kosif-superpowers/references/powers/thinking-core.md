@@ -30,7 +30,7 @@
 - **متى أستخدمها / when:** مع كل طلب جديد، ومجددًا كلما تغيّر الطلب. الطلب البسيط يأخذ نسخة بمرور واحد لكنها تتحقق. / Every new request, and again whenever the request changes. A trivial ask gets a one-pass version that still verifies.
 - **كيف / how:** 1 FRAME: goal sentence + done-criteria (THINK-02). 2 RECALL powers: inventory + catalog search (THINK-03, THINK-04). 3 EXPLORE: read ground truth, broad then narrow, ≥3 options (THINK-05). 4 DECIDE: small rubric + pre-mortem, pick the first thin slice (THINK-06). 5 BUILD: thin end-to-end slice, probe instead of guessing, pause after each tool result (THINK-07, THINK-08). 6 VERIFY: tools first, then eyes, then a rubric (CHECK-01). 7 REPORT: outcome first, evidence badges, user's language (THINK-09). Size it: trivial = one pass; medium = full loop once; large = loop + plan file on disk + subagents; research = broad-then-narrow fan-out. **أرقام / params:** trivial ≤5 tool calls · medium 5–20 · comparison 2–4 subagents · broad 5–10+ subagents only when value justifies ≈15× tokens
 - **يحتاج / needs:** [`claude:tools`](../requirements.md#req-claude-tools)
-- **الدليل / proof:** — (لا دليل تشغيل بعد / no run proof yet)
+- **الدليل / proof:** `kosif-tool/.claude/skills/kosif-superpowers/references/thinking.md`
 - **المصدر / source:** Synthesis: https://www.anthropic.com/engineering/multi-agent-research-system (fetched 2026-10-16; copyrighted, paraphrased, link only); https://www.anthropic.com/engineering/claude-code-best-practices (from memory); owner-upload:KOSIF_SEE_Humanizer_Optimize_Graphify_v1.7.5/skills/kosif-see/references/COGNITIVE_CORE.md (owner). Narrative: references/thinking.md
 
 #### THINK-02 · تأطير الطلب ومعيار الإنجاز · Frame the request: contract + done-criteria · 📄 موصوف / documented only
@@ -377,7 +377,7 @@
 - **متى أستخدمها / when:** عند الطلبات الغامضة أو على مستوى العَرَض / vague or symptom-level requests
 - **كيف / how:** cognition.md §3.
 - **الرخصة / license:** owner
-- **الدليل / proof:** — (لا دليل تشغيل بعد / no run proof yet)
+- **الدليل / proof:** `kosif-tool/.claude/skills/kosif-superpowers/references/cognition.md`
 - **المصدر / source:** kosif-tool/.claude/skills/kosif-superpowers/references/cognition.md
 
 #### THINK-42 · إعادة التأطير مرتين · Reframe twice before solving · 📄 موصوف / documented only
@@ -385,7 +385,7 @@
 - **متى أستخدمها / when:** عند التعثر أو النتائج العامة / stuck or generic results
 - **كيف / how:** cognition.md §3.
 - **الرخصة / license:** owner
-- **الدليل / proof:** — (لا دليل تشغيل بعد / no run proof yet)
+- **الدليل / proof:** `kosif-tool/.claude/skills/kosif-superpowers/references/cognition.md`
 - **المصدر / source:** kosif-tool/.claude/skills/kosif-superpowers/references/cognition.md
 
 #### THINK-43 · محاكاة الخبير · Expert simulation · 📄 موصوف / documented only
@@ -393,7 +393,7 @@
 - **متى أستخدمها / when:** عند المجالات خارج الممارسة اليومية / domains outside daily practice
 - **كيف / how:** cognition.md §8 q5; pair with circle of competence (MODEL-05).
 - **الرخصة / license:** owner
-- **الدليل / proof:** — (لا دليل تشغيل بعد / no run proof yet)
+- **الدليل / proof:** `kosif-tool/.claude/skills/kosif-superpowers/references/cognition.md`
 - **المصدر / source:** kosif-tool/.claude/skills/kosif-superpowers/references/cognition.md
 
 #### THINK-44 · نموذج القارئ البشري · Reader model (theory of mind) · 📄 موصوف / documented only
@@ -401,7 +401,7 @@
 - **متى أستخدمها / when:** عند كل إجابة سيتصرف بناءً عليها شخص / every answer a person will act on
 - **كيف / how:** MODEL-38 + cognition.md §7.
 - **الرخصة / license:** owner
-- **الدليل / proof:** — (لا دليل تشغيل بعد / no run proof yet)
+- **الدليل / proof:** `kosif-tool/.claude/skills/kosif-superpowers/references/cognition.md`
 - **المصدر / source:** kosif-tool/.claude/skills/kosif-superpowers/references/cognition.md
 
 #### THINK-45 · المراقبة الذاتية عند الحدود · Metacognition checkpoint · 📄 موصوف / documented only
@@ -409,7 +409,7 @@
 - **متى أستخدمها / when:** عند حدود المراحل؛ والفشل المتكرر / phase boundaries; repeated failure
 - **كيف / how:** cognition.md §8.
 - **الرخصة / license:** owner
-- **الدليل / proof:** — (لا دليل تشغيل بعد / no run proof yet)
+- **الدليل / proof:** `kosif-tool/.claude/skills/kosif-superpowers/references/cognition.md`
 - **المصدر / source:** kosif-tool/.claude/skills/kosif-superpowers/references/cognition.md
 
 #### THINK-46 · عادات العبقرية العشر · Ten genius habits as procedures · 📄 موصوف / documented only
@@ -417,7 +417,7 @@
 - **متى أستخدمها / when:** عند الأعمال الإبداعية أو عالية المخاطر / creative or high-stakes work
 - **كيف / how:** cognition.md §3 table.
 - **الرخصة / license:** owner
-- **الدليل / proof:** — (لا دليل تشغيل بعد / no run proof yet)
+- **الدليل / proof:** `kosif-tool/.claude/skills/kosif-superpowers/references/cognition.md`
 - **المصدر / source:** kosif-tool/.claude/skills/kosif-superpowers/references/cognition.md
 
 ## أكبر مستودعات GitHub — Top GitHub repositories (2026-10-23)

@@ -1,7 +1,7 @@
 {
 "schema": "kosif.superpowers.v1",
-"atoms": 5727,
-"distinct_methods": 5449,
+"atoms": 5728,
+"distinct_methods": 5448,
 "twin_groups": 176,
 "superpowers": 475,
 "per_target": 12,
@@ -2679,7 +2679,7 @@
 },
 {
 "id": "SP-0285",
-"sim": 0.161
+"sim": 0.162
 },
 {
 "id": "SP-0107",
@@ -3172,7 +3172,7 @@
 },
 {
 "id": "SP-0133",
-"sim": 0.192
+"sim": 0.194
 },
 {
 "id": "SP-0065",
@@ -6656,7 +6656,7 @@
 },
 {
 "id": "SP-0285",
-"sim": 0.157
+"sim": 0.172
 },
 {
 "id": "SP-0092",
@@ -8223,12 +8223,12 @@
 "requires": [
 "key:graphify",
 "python3",
-"key:unspecified",
 "git",
 "npm:d3",
 "npm:mermaid",
 "chromium",
-"yt-dlp"
+"yt-dlp",
+"pip:faster-whisper"
 ],
 "pipeline": [
 {
@@ -8304,12 +8304,6 @@
 "name_ar": "التنقل في الكود عبر الخدمة المستضافة"
 },
 {
-"id": "GRAPH-10",
-"status": "key",
-"name_en": "Docs, PDFs, images and media in the graph",
-"name_ar": "الوثائق والصور والفيديو داخل الخريطة"
-},
-{
 "id": "GRAPH-13",
 "status": "key",
 "name_en": "Impact, risk and linked tests (hosted)",
@@ -8320,6 +8314,12 @@
 "status": "key",
 "name_en": "Shared workspace memory (remember / recall)",
 "name_ar": "ذاكرة مساحة العمل المشتركة"
+},
+{
+"id": "GRAPH-10",
+"status": "key",
+"name_en": "Docs, PDFs, images and media in the graph",
+"name_ar": "الوثائق والصور والفيديو داخل الخريطة"
 },
 {
 "id": "GRAPH-15",
@@ -8350,19 +8350,19 @@
 "links": [
 {
 "id": "SP-0067",
-"sim": 0.13
+"sim": 0.127
 },
 {
 "id": "SP-0243",
-"sim": 0.123
+"sim": 0.12
 },
 {
 "id": "SP-0070",
-"sim": 0.118
+"sim": 0.115
 },
 {
 "id": "SP-0138",
-"sim": 0.104
+"sim": 0.102
 }
 ]
 },
@@ -8651,8 +8651,8 @@
 },
 "atlas_folded": 4,
 "requires": [
-"key:unspecified",
 "gitleaks",
+"key:unspecified",
 "claude:tools",
 "git",
 "mcp:github",
@@ -15895,7 +15895,7 @@
 "links": [
 {
 "id": "SP-0184",
-"sim": 0.256
+"sim": 0.255
 },
 {
 "id": "SP-0202",
@@ -16078,12 +16078,12 @@
 "requires": [
 "python3",
 "node",
-"key:unspecified",
 "chromium",
 "claude:tools",
 "pip:cadquery",
 "openscad",
-"npm:esbuild"
+"npm:esbuild",
+"npm:react"
 ],
 "pipeline": [
 {
@@ -16833,15 +16833,15 @@
 "capability",
 "kosif"
 ],
-"size": 32,
+"size": 33,
 "best": "proven",
 "status_mix": {
-"proven": 23,
+"proven": 24,
 "ready": 9
 },
-"ready_now": 32,
+"ready_now": 33,
 "families": {
-"runnable-tools": 32
+"runnable-tools": 33
 },
 "atlas_folded": 0,
 "requires": [
@@ -16934,16 +16934,22 @@
 "name_ar": "باني خريطة القدرات المترابطة"
 },
 {
+"id": "TOOL-161",
+"status": "proven",
+"name_en": "Micro index: one line per power, tool and superpower",
+"name_ar": "الفهرس الدقيق: سطر لكل قدرة وأداة وقدرة خارقة"
+},
+{
+"id": "TOOL-129",
+"status": "proven",
+"name_en": "Group map with superpowers, scripts and install plans",
+"name_ar": "خريطة المجموعات مع القدرات الخارقة والسكربتات وخطط التثبيت"
+},
+{
 "id": "TOOL-04",
 "status": "proven",
 "name_en": "Capability runtime router",
 "name_ar": "موجّه القدرات التنفيذية"
-},
-{
-"id": "TOOL-06",
-"status": "proven",
-"name_en": "KOSIF catalog MCP server",
-"name_ar": "خادم MCP لكتالوج KOSIF"
 },
 {
 "id": "TOOL-127",
@@ -16964,10 +16970,10 @@
 "name_ar": "مخطط متطلبات القدرات"
 },
 {
-"id": "TOOL-129",
+"id": "TOOL-06",
 "status": "proven",
-"name_en": "Group map with superpowers, scripts and install plans",
-"name_ar": "خريطة المجموعات مع القدرات الخارقة والسكربتات وخطط التثبيت"
+"name_en": "KOSIF catalog MCP server",
+"name_ar": "خادم MCP لكتالوج KOSIF"
 },
 {
 "id": "TOOL-54",
@@ -17067,23 +17073,23 @@
 "TOOL-109"
 ]
 ],
-"distinct_methods": 27,
+"distinct_methods": 28,
 "links": [
 {
 "id": "SP-0341",
-"sim": 0.393
+"sim": 0.394
 },
 {
 "id": "SP-0139",
-"sim": 0.334
+"sim": 0.342
 },
 {
 "id": "SP-0025",
-"sim": 0.192
+"sim": 0.194
 },
 {
-"id": "SP-0285",
-"sim": 0.16
+"id": "SP-0138",
+"sim": 0.178
 }
 ]
 },
@@ -17170,7 +17176,7 @@
 "name_ar": "رسم الشخصيات والمشاهد بالكود"
 },
 {
-"id": "TOOL-168",
+"id": "TOOL-169",
 "status": "proven",
 "name_en": "Colour media engine: coloured pencil, oil brush and watercolour painting of a photo",
 "name_ar": "محرك الخامات الملوّنة: ألوان خشبية وفرشاة زيت وألوان مائية لأي صورة"
@@ -17363,13 +17369,13 @@
 "name_ar": "دعاء يوم الأربعاء — محرك ريل دعاء موشن جرافيك 9:16"
 },
 {
-"id": "TOOL-165",
+"id": "TOOL-166",
 "status": "proven",
 "name_en": "Look pipeline: one colour grade for ffmpeg, SVG/CSS and GLSL",
 "name_ar": "خط اللوك: تلوين واحد لـ ffmpeg وSVG وGLSL"
 },
 {
-"id": "TOOL-167",
+"id": "TOOL-168",
 "status": "proven",
 "name_en": "Fast Edit: keyframe-aware instant cut, voice presets, low-light lift, audio extract",
 "name_ar": "التعديل السريع: قص فوري يعرف الإطارات المفتاحية، مغيّر صوت، تفتيح الفيديو المظلم، استخراج الصوت"
@@ -17491,7 +17497,7 @@
 "name_ar": "بوابة فحص تسليم الفيديو"
 },
 {
-"id": "TOOL-163",
+"id": "TOOL-164",
 "status": "proven",
 "name_en": "Motion Physics",
 "name_ar": "فيزياء الحركة"
@@ -17675,7 +17681,7 @@
 "name_ar": "مقدّر سعة الأنظمة"
 },
 {
-"id": "TOOL-162",
+"id": "TOOL-163",
 "status": "proven",
 "name_en": "Memory Ops",
 "name_ar": "عمليات الذاكرة"
@@ -17687,7 +17693,7 @@
 "name_ar": "رياضيات القرار: نطاقات مونت كارلو ونقطة التعادل وترتيب ICE والقيمة الحالية ونقطة انقلاب القرار"
 },
 {
-"id": "TOOL-166",
+"id": "TOOL-167",
 "status": "proven",
 "name_en": "Lesson number integrity checker",
 "name_ar": "فاحص أرقام الدروس والشروح"
@@ -17779,7 +17785,7 @@
 "name_ar": "خريطة سوبر باور بمنهج REA"
 },
 {
-"id": "TOOL-161",
+"id": "TOOL-162",
 "status": "proven",
 "name_en": "Repo Map",
 "name_ar": "خريطة المستودع"
@@ -17976,7 +17982,7 @@
 "links": [
 {
 "id": "SP-0133",
-"sim": 0.334
+"sim": 0.342
 },
 {
 "id": "SP-0283",
@@ -18184,7 +18190,7 @@
 "name_ar": "جسر توقيتات Motion Starter Kit"
 },
 {
-"id": "TOOL-164",
+"id": "TOOL-165",
 "status": "proven",
 "name_en": "Caption lines: word timings to readable SRT/VTT",
 "name_ar": "سطور الترجمة: من توقيت الكلمات إلى ترجمة مقروءة"
@@ -18637,7 +18643,7 @@
 },
 {
 "id": "SP-0285",
-"sim": 0.182
+"sim": 0.181
 },
 {
 "id": "SP-0027",
@@ -20989,7 +20995,7 @@
 "links": [
 {
 "id": "SP-0184",
-"sim": 0.179
+"sim": 0.182
 },
 {
 "id": "SP-0202",
@@ -21217,7 +21223,7 @@
 "node",
 "npm:remotion",
 "ffmpeg",
-"key:unspecified"
+"tesseract"
 ],
 "pipeline": [
 {
@@ -23418,8 +23424,8 @@
 "requires": [
 "key:unspecified",
 "npm:hyperframes",
-"npm:gsap",
 "npm:three",
+"npm:gsap",
 "chromium",
 "key:video-gen",
 "npm:maplibre",
@@ -23529,16 +23535,16 @@
 "name_ar": "مخطط مشهد: رحلة الكاميرا"
 },
 {
-"id": "CAM-106",
-"status": "install",
-"name_en": "Virtual camera via .world wrapper",
-"name_ar": "كاميرا افتراضية بتحريك العالم"
-},
-{
 "id": "CAM-162",
 "status": "install",
 "name_en": "Smoothstep camera keys",
 "name_ar": "مفاتيح الكاميرا"
+},
+{
+"id": "CAM-106",
+"status": "install",
+"name_en": "Virtual camera via .world wrapper",
+"name_ar": "كاميرا افتراضية بتحريك العالم"
 },
 {
 "id": "CAM-66",
@@ -23727,16 +23733,16 @@
 "name_ar": "دوران ودفع الكاميرا"
 },
 {
-"id": "CAM-339",
-"status": "seen",
-"name_en": "Shared SVG+HTML camera transform",
-"name_ar": "كاميرا واحدة لطبقتي SVG وHTML"
-},
-{
 "id": "CAM-280",
 "status": "seen",
 "name_en": "Virtual camera over a big board",
 "name_ar": "كاميرا افتراضية فوق سبورة كبيرة"
+},
+{
+"id": "CAM-339",
+"status": "seen",
+"name_en": "Shared SVG+HTML camera transform",
+"name_ar": "كاميرا واحدة لطبقتي SVG وHTML"
 },
 {
 "id": "CAM-201",
@@ -23886,7 +23892,7 @@
 },
 {
 "id": "SP-0186",
-"sim": 0.369
+"sim": 0.368
 },
 {
 "id": "SP-0193",
@@ -23894,7 +23900,7 @@
 },
 {
 "id": "SP-0124",
-"sim": 0.256
+"sim": 0.255
 }
 ]
 },
@@ -24305,15 +24311,15 @@
 },
 {
 "id": "SP-0184",
-"sim": 0.369
+"sim": 0.368
 },
 {
 "id": "SP-0417",
 "sim": 0.326
 },
 {
-"id": "SP-0429",
-"sim": 0.27
+"id": "SP-0431",
+"sim": 0.291
 },
 {
 "id": "SP-0124",
@@ -24535,8 +24541,8 @@
 "atlas_folded": 0,
 "requires": [
 "npm:hyperframes",
-"chromium",
 "npm:gsap",
+"chromium",
 "imagemagick",
 "ffmpeg"
 ],
@@ -24876,8 +24882,8 @@
 "requires": [
 "npm:hyperframes",
 "npm:gsap",
-"chromium",
 "npm:three",
+"chromium",
 "pip:opencv",
 "ffmpeg"
 ],
@@ -25189,7 +25195,7 @@
 },
 {
 "id": "SP-0184",
-"sim": 0.131
+"sim": 0.132
 },
 {
 "id": "SP-0120",
@@ -25300,16 +25306,16 @@
 "name_ar": "قواعد التكوين للفيديو"
 },
 {
-"id": "CAM-371",
-"status": "documented",
-"name_en": "Composition: Golden ratio/spiral",
-"name_ar": "تكوين: Golden ratio/spiral"
-},
-{
 "id": "CAM-391",
 "status": "documented",
 "name_en": "Composition rules for painted stills",
 "name_ar": "قواعد التكوين للوحات"
+},
+{
+"id": "CAM-371",
+"status": "documented",
+"name_en": "Composition: Golden ratio/spiral",
+"name_ar": "تكوين: Golden ratio/spiral"
 },
 {
 "id": "CAM-377",
@@ -25335,20 +25341,20 @@
 "distinct_methods": 17,
 "links": [
 {
-"id": "SP-0204",
-"sim": 0.131
+"id": "SP-0461",
+"sim": 0.112
 },
 {
-"id": "SP-0461",
-"sim": 0.108
+"id": "SP-0204",
+"sim": 0.109
 },
 {
 "id": "SP-0207",
-"sim": 0.097
+"sim": 0.101
 },
 {
 "id": "SP-0256",
-"sim": 0.082
+"sim": 0.086
 },
 {
 "id": "SP-0093",
@@ -25382,9 +25388,9 @@
 },
 "atlas_folded": 0,
 "requires": [
+"npm:gsap",
 "chromium",
-"npm:hyperframes",
-"npm:gsap"
+"npm:hyperframes"
 ],
 "pipeline": [
 {
@@ -25634,11 +25640,11 @@
 "links": [
 {
 "id": "SP-0184",
-"sim": 0.205
+"sim": 0.204
 },
 {
 "id": "SP-0211",
-"sim": 0.158
+"sim": 0.156
 },
 {
 "id": "SP-0167",
@@ -25678,7 +25684,8 @@
 },
 "atlas_folded": 0,
 "requires": [
-"ffmpeg"
+"ffmpeg",
+"npm:gsap"
 ],
 "pipeline": [
 {
@@ -26011,7 +26018,7 @@
 },
 {
 "id": "SP-0184",
-"sim": 0.105
+"sim": 0.104
 },
 {
 "id": "SP-0026",
@@ -26271,6 +26278,7 @@
 "requires": [
 "python3",
 "npm:hyperframes",
+"npm:gsap",
 "pip:opencv",
 "key:unspecified",
 "npm:remotion"
@@ -26760,16 +26768,16 @@
 "distinct_methods": 8,
 "links": [
 {
-"id": "SP-0192",
-"sim": 0.131
-},
-{
 "id": "SP-0461",
-"sim": 0.116
+"sim": 0.118
 },
 {
 "id": "SP-0226",
-"sim": 0.116
+"sim": 0.115
+},
+{
+"id": "SP-0192",
+"sim": 0.109
 },
 {
 "id": "SP-0175",
@@ -27369,8 +27377,8 @@
 "sim": 0.38
 },
 {
-"id": "SP-0430",
-"sim": 0.252
+"id": "SP-0429",
+"sim": 0.253
 },
 {
 "id": "SP-0324",
@@ -27459,15 +27467,15 @@
 "links": [
 {
 "id": "SP-0194",
-"sim": 0.158
+"sim": 0.156
 },
 {
 "id": "SP-0186",
-"sim": 0.119
+"sim": 0.137
 },
 {
 "id": "SP-0163",
-"sim": 0.088
+"sim": 0.089
 },
 {
 "id": "SP-0205",
@@ -27551,7 +27559,7 @@
 },
 {
 "id": "SP-0421",
-"sim": 0.183
+"sim": 0.182
 },
 {
 "id": "SP-0446",
@@ -29243,8 +29251,8 @@
 "sim": 0.118
 },
 {
-"id": "SP-0204",
-"sim": 0.116
+"id": "SP-0209",
+"sim": 0.115
 },
 {
 "id": "SP-0028",
@@ -30458,7 +30466,7 @@
 "distinct_methods": 8,
 "links": [
 {
-"id": "SP-0431",
+"id": "SP-0430",
 "sim": 0.169
 },
 {
@@ -30560,7 +30568,7 @@
 "distinct_methods": 6,
 "links": [
 {
-"id": "SP-0431",
+"id": "SP-0430",
 "sim": 0.148
 },
 {
@@ -31345,11 +31353,11 @@
 "sim": 0.17
 },
 {
-"id": "SP-0066",
-"sim": 0.123
+"id": "SP-0049",
+"sim": 0.12
 },
 {
-"id": "SP-0049",
+"id": "SP-0066",
 "sim": 0.12
 }
 ]
@@ -32730,7 +32738,7 @@
 "sim": 0.162
 },
 {
-"id": "SP-0431",
+"id": "SP-0430",
 "sim": 0.095
 },
 {
@@ -32883,16 +32891,16 @@
 "name_ar": "محرك خارجي: Twick"
 },
 {
-"id": "ENG-251",
-"status": "install",
-"name_en": "External engine: Diffusion Studio Core",
-"name_ar": "محرك خارجي: Diffusion Studio Core"
-},
-{
 "id": "ENG-248",
 "status": "install",
 "name_en": "External engine: VideoRenderingEngine",
 "name_ar": "محرك خارجي: VideoRenderingEngine"
+},
+{
+"id": "ENG-251",
+"status": "install",
+"name_en": "External engine: Diffusion Studio Core",
+"name_ar": "محرك خارجي: Diffusion Studio Core"
 },
 {
 "id": "ENG-250",
@@ -33002,19 +33010,19 @@
 "links": [
 {
 "id": "SP-0135",
-"sim": 0.127
+"sim": 0.121
 },
 {
 "id": "SP-0259",
-"sim": 0.096
+"sim": 0.089
+},
+{
+"id": "SP-0268",
+"sim": 0.085
 },
 {
 "id": "SP-0350",
-"sim": 0.091
-},
-{
-"id": "SP-0285",
-"sim": 0.091
+"sim": 0.085
 }
 ]
 },
@@ -33852,7 +33860,7 @@
 "sim": 0.146
 },
 {
-"id": "SP-0415",
+"id": "SP-0343",
 "sim": 0.114
 }
 ]
@@ -34939,8 +34947,8 @@
 "chromium",
 "ffmpeg",
 "python3",
-"npm:hyperframes",
 "npm:three",
+"npm:hyperframes",
 "pip:opencv"
 ],
 "pipeline": [
@@ -35511,8 +35519,8 @@
 },
 "atlas_folded": 0,
 "requires": [
-"npm:remotion",
 "npm:three",
+"npm:remotion",
 "python3",
 "npm:gsap",
 "ffmpeg",
@@ -36279,7 +36287,7 @@
 },
 {
 "id": "SP-0276",
-"sim": 0.116
+"sim": 0.117
 },
 {
 "id": "SP-0136",
@@ -36297,7 +36305,7 @@
 "lottie",
 "lottiefiles",
 "mcp",
-"bodymovin"
+"integration"
 ],
 "size": 10,
 "best": "ready",
@@ -36388,7 +36396,7 @@
 "links": [
 {
 "id": "SP-0275",
-"sim": 0.116
+"sim": 0.117
 },
 {
 "id": "SP-0180",
@@ -36396,11 +36404,11 @@
 },
 {
 "id": "SP-0070",
-"sim": 0.095
+"sim": 0.097
 },
 {
 "id": "SP-0050",
-"sim": 0.086
+"sim": 0.091
 }
 ]
 },
@@ -37242,8 +37250,8 @@
 "focus": [
 "skills",
 "plugin",
-"skill",
-"integration"
+"integration",
+"skill"
 ],
 "size": 6,
 "best": "proven",
@@ -37316,19 +37324,19 @@
 "links": [
 {
 "id": "SP-0138",
-"sim": 0.186
+"sim": 0.183
 },
 {
 "id": "SP-0145",
-"sim": 0.182
+"sim": 0.181
+},
+{
+"id": "SP-0050",
+"sim": 0.172
 },
 {
 "id": "SP-0021",
-"sim": 0.161
-},
-{
-"id": "SP-0133",
-"sim": 0.16
+"sim": 0.162
 }
 ]
 },
@@ -37795,8 +37803,8 @@
 },
 "atlas_folded": 0,
 "requires": [
-"pip:pillow",
-"npm:three"
+"npm:three",
+"pip:pillow"
 ],
 "pipeline": [
 {
@@ -37840,7 +37848,7 @@
 },
 {
 "id": "SP-0424",
-"sim": 0.077
+"sim": 0.075
 },
 {
 "id": "SP-0136",
@@ -39311,7 +39319,7 @@
 },
 {
 "id": "SP-0421",
-"sim": 0.092
+"sim": 0.093
 },
 {
 "id": "SP-0297",
@@ -39655,8 +39663,8 @@
 "sim": 0.247
 },
 {
-"id": "SP-0430",
-"sim": 0.234
+"id": "SP-0429",
+"sim": 0.231
 },
 {
 "id": "SP-0408",
@@ -40198,8 +40206,8 @@
 "sim": 0.242
 },
 {
-"id": "SP-0430",
-"sim": 0.189
+"id": "SP-0429",
+"sim": 0.19
 },
 {
 "id": "SP-0004",
@@ -40238,8 +40246,7 @@
 "npm:remotion",
 "npm:maplibre",
 "node",
-"key:video-gen",
-"key:unspecified"
+"key:video-gen"
 ],
 "pipeline": [
 {
@@ -40277,8 +40284,8 @@
 "distinct_methods": 4,
 "links": [
 {
-"id": "SP-0431",
-"sim": 0.414
+"id": "SP-0430",
+"sim": 0.413
 },
 {
 "id": "SP-0386",
@@ -40356,7 +40363,7 @@
 "links": [
 {
 "id": "SP-0419",
-"sim": 0.308
+"sim": 0.302
 },
 {
 "id": "SP-0438",
@@ -41107,7 +41114,7 @@
 },
 {
 "id": "SP-0421",
-"sim": 0.13
+"sim": 0.131
 },
 {
 "id": "SP-0091",
@@ -41523,11 +41530,11 @@
 "atlas_folded": 0,
 "requires": [
 "python3",
-"key:unspecified",
 "key:elevenlabs",
 "pip:numpy",
 "imagemagick",
 "npm:remotion",
+"key:unspecified",
 "ffmpeg"
 ],
 "pipeline": [
@@ -43632,7 +43639,8 @@
 },
 "atlas_folded": 0,
 "requires": [
-"python3"
+"python3",
+"npm:three"
 ],
 "pipeline": [
 {
@@ -43697,7 +43705,7 @@
 },
 {
 "id": "SP-0419",
-"sim": 0.228
+"sim": 0.229
 },
 {
 "id": "SP-0148",
@@ -44563,7 +44571,7 @@
 "links": [
 {
 "id": "SP-0133",
-"sim": 0.393
+"sim": 0.394
 },
 {
 "id": "SP-0139",
@@ -44575,7 +44583,7 @@
 },
 {
 "id": "SP-0285",
-"sim": 0.152
+"sim": 0.151
 }
 ]
 },
@@ -46346,7 +46354,7 @@
 },
 {
 "id": "SP-0414",
-"sim": 0.13
+"sim": 0.132
 },
 {
 "id": "SP-0020",
@@ -46716,7 +46724,7 @@
 "links": [
 {
 "id": "SP-0419",
-"sim": 0.45
+"sim": 0.451
 },
 {
 "id": "SP-0310",
@@ -50833,8 +50841,8 @@
 "distinct_methods": 4,
 "links": [
 {
-"id": "SP-0431",
-"sim": 0.394
+"id": "SP-0430",
+"sim": 0.393
 },
 {
 "id": "SP-0309",
@@ -51807,7 +51815,7 @@
 "links": [
 {
 "id": "SP-0439",
-"sim": 0.243
+"sim": 0.24
 },
 {
 "id": "SP-0224",
@@ -54265,36 +54273,27 @@
 "transition",
 "circle"
 ],
-"size": 50,
-"best": "proven",
+"size": 49,
+"best": "ready",
 "status_mix": {
-"proven": 1,
 "ready": 1,
 "install": 11,
 "seen": 29,
 "documented": 5,
 "idea": 3
 },
-"ready_now": 2,
+"ready_now": 1,
 "families": {
-"transitions-cuts": 50
+"transitions-cuts": 49
 },
 "atlas_folded": 0,
 "requires": [
 "npm:gsap",
 "npm:hyperframes",
-"ffmpeg",
-"pip:numpy",
 "chromium",
 "pip:rembg"
 ],
 "pipeline": [
-{
-"id": "TRANS-14",
-"status": "proven",
-"name_en": "Wipes (xfade)",
-"name_ar": "مسح"
-},
 {
 "id": "TRANS-52",
 "status": "ready",
@@ -54434,16 +54433,16 @@
 "name_ar": "مسح بأشرطة لونية"
 },
 {
-"id": "TRANS-342",
-"status": "seen",
-"name_en": "Tile grid wipe",
-"name_ar": "مسح بشبكة مربعات"
-},
-{
 "id": "TRANS-339",
 "status": "seen",
 "name_en": "Circle wipe scene change",
 "name_ar": "انتقال بمسح دائري"
+},
+{
+"id": "TRANS-342",
+"status": "seen",
+"name_en": "Tile grid wipe",
+"name_ar": "مسح بشبكة مربعات"
 },
 {
 "id": "TRANS-360",
@@ -54458,16 +54457,16 @@
 "name_ar": "مسح دائري ناعم من النقطة"
 },
 {
-"id": "TRANS-303",
-"status": "seen",
-"name_en": "Cream end wipe",
-"name_ar": "مسح ختامي كريمي"
-},
-{
 "id": "TRANS-267",
 "status": "seen",
 "name_en": "Tri-band panel wipe",
 "name_ar": "مسح بثلاث شرائح لونية"
+},
+{
+"id": "TRANS-303",
+"status": "seen",
+"name_en": "Cream end wipe",
+"name_ar": "مسح ختامي كريمي"
 },
 {
 "id": "TRANS-272",
@@ -54524,16 +54523,16 @@
 "name_ar": "مسح بنقاط الحبر الإلكتروني"
 },
 {
-"id": "TRANS-281",
-"status": "seen",
-"name_en": "Mode toggle with dither wipe",
-"name_ar": "مفتاح أوضاع بمسح نقطي"
-},
-{
 "id": "TRANS-313",
 "status": "seen",
 "name_en": "Tunnel wipe scene change",
 "name_ar": "انتقال بالنفق المظلم"
+},
+{
+"id": "TRANS-281",
+"status": "seen",
+"name_en": "Mode toggle with dither wipe",
+"name_ar": "مفتاح أوضاع بمسح نقطي"
 },
 {
 "id": "TRANS-291",
@@ -54590,9 +54589,7 @@
 "name_ar": "انتقال بلا قطع"
 }
 ],
-"proof": [
-"kosif-tool/.claude/skills/kosif-superpowers/scripts/mimic/mm_transitions.py"
-],
+"proof": [],
 "twins": [
 [
 "TRANS-159",
@@ -54611,27 +54608,27 @@
 "TRANS-451"
 ]
 ],
-"distinct_methods": 46,
+"distinct_methods": 45,
 "links": [
 {
 "id": "SP-0421",
-"sim": 0.313
+"sim": 0.317
 },
 {
 "id": "SP-0438",
-"sim": 0.225
+"sim": 0.229
 },
 {
 "id": "SP-0415",
-"sim": 0.157
+"sim": 0.176
 },
 {
 "id": "SP-0354",
-"sim": 0.13
+"sim": 0.132
 },
 {
 "id": "SP-0012",
-"sim": 0.05
+"sim": 0.049
 }
 ]
 },
@@ -54647,16 +54644,16 @@
 "transitions",
 "family"
 ],
-"size": 30,
+"size": 31,
 "best": "proven",
 "status_mix": {
-"proven": 10,
+"proven": 11,
 "ready": 19,
 "install": 1
 },
-"ready_now": 29,
+"ready_now": 30,
 "families": {
-"transitions-cuts": 30
+"transitions-cuts": 31
 },
 "atlas_folded": 0,
 "requires": [
@@ -54690,10 +54687,22 @@
 "name_ar": "قطري"
 },
 {
+"id": "TRANS-14",
+"status": "proven",
+"name_en": "Wipes (xfade)",
+"name_ar": "مسح"
+},
+{
 "id": "TRANS-17",
 "status": "proven",
 "name_en": "Circle and rect shapes (xfade)",
 "name_ar": "دوائر ومستطيلات"
+},
+{
+"id": "TRANS-16",
+"status": "proven",
+"name_en": "Smooth wipes (xfade)",
+"name_ar": "مسح ناعم"
 },
 {
 "id": "TRANS-22",
@@ -54706,12 +54715,6 @@
 "status": "proven",
 "name_en": "Cover and reveal (xfade)",
 "name_ar": "تغطية وكشف"
-},
-{
-"id": "TRANS-16",
-"status": "proven",
-"name_en": "Smooth wipes (xfade)",
-"name_ar": "مسح ناعم"
 },
 {
 "id": "TRANS-20",
@@ -54738,10 +54741,10 @@
 "name_ar": "عائلة المسح"
 },
 {
-"id": "TRANS-64",
+"id": "TRANS-69",
 "status": "ready",
-"name_en": "Slide family (FFmpeg xfade)",
-"name_ar": "عائلة الانزلاق"
+"name_en": "Slice transitions (FFmpeg xfade)",
+"name_ar": "انتقالات الشرائح"
 },
 {
 "id": "TRANS-59",
@@ -54750,22 +54753,28 @@
 "name_ar": "انتقالات xfade"
 },
 {
-"id": "TRANS-77",
-"status": "ready",
-"name_en": "Distance transition (FFmpeg xfade)",
-"name_ar": "انتقال المسافة"
-},
-{
 "id": "TRANS-71",
 "status": "ready",
 "name_en": "Cover transitions (FFmpeg xfade)",
 "name_ar": "انتقالات التغطية"
 },
 {
-"id": "TRANS-69",
+"id": "TRANS-77",
 "status": "ready",
-"name_en": "Slice transitions (FFmpeg xfade)",
-"name_ar": "انتقالات الشرائح"
+"name_en": "Distance transition (FFmpeg xfade)",
+"name_ar": "انتقال المسافة"
+},
+{
+"id": "TRANS-64",
+"status": "ready",
+"name_en": "Slide family (FFmpeg xfade)",
+"name_ar": "عائلة الانزلاق"
+},
+{
+"id": "TRANS-62",
+"status": "ready",
+"name_en": "Cross-fade family (FFmpeg xfade)",
+"name_ar": "عائلة التلاشي"
 },
 {
 "id": "TRANS-76",
@@ -54780,12 +54789,6 @@
 "name_ar": "انتقالات xfade"
 },
 {
-"id": "TRANS-62",
-"status": "ready",
-"name_en": "Cross-fade family (FFmpeg xfade)",
-"name_ar": "عائلة التلاشي"
-},
-{
 "id": "TRANS-74",
 "status": "ready",
 "name_en": "Zoom-in transition (FFmpeg xfade)",
@@ -54798,16 +54801,16 @@
 "name_ar": "انتقال التبكسل"
 },
 {
-"id": "TRANS-73",
-"status": "ready",
-"name_en": "Squeeze transitions (FFmpeg xfade)",
-"name_ar": "انتقالات الضغط"
-},
-{
 "id": "TRANS-68",
 "status": "ready",
 "name_en": "Diagonal wipes (FFmpeg xfade)",
 "name_ar": "مسح قطري"
+},
+{
+"id": "TRANS-73",
+"status": "ready",
+"name_en": "Squeeze transitions (FFmpeg xfade)",
+"name_ar": "انتقالات الضغط"
 },
 {
 "id": "TRANS-65",
@@ -54862,39 +54865,41 @@
 "TRANS-69"
 ],
 [
-"TRANS-63",
-"TRANS-65"
+"TRANS-72",
+"TRANS-71"
 ],
 [
+"TRANS-63",
 "TRANS-64",
-"TRANS-62"
+"TRANS-62",
+"TRANS-65"
 ],
 [
 "TRANS-58",
 "TRANS-82"
 ]
 ],
-"distinct_methods": 25,
+"distinct_methods": 24,
 "links": [
 {
 "id": "SP-0414",
-"sim": 0.157
+"sim": 0.176
 },
 {
 "id": "SP-0418",
-"sim": 0.151
+"sim": 0.147
 },
 {
-"id": "SP-0429",
-"sim": 0.139
+"id": "SP-0431",
+"sim": 0.132
 },
 {
 "id": "SP-0422",
-"sim": 0.129
+"sim": 0.125
 },
 {
 "id": "SP-0146",
-"sim": 0.088
+"sim": 0.089
 }
 ]
 },
@@ -54929,6 +54934,7 @@
 "npm:hyperframes",
 "imagemagick",
 "chromium",
+"npm:gsap",
 "npm:remotion"
 ],
 "pipeline": [
@@ -55373,16 +55379,16 @@
 "name_ar": "انتقال CSS: احتراق الصفحة"
 },
 {
-"id": "TRANS-113",
-"status": "install",
-"name_en": "Shader transition: ridged-burn",
-"name_ar": "انتقال شيدر: احتراق متعرج"
-},
-{
 "id": "TRANS-146",
 "status": "install",
 "name_en": "Ridged Burn",
 "name_ar": "انتقال الحرق المتعرج"
+},
+{
+"id": "TRANS-113",
+"status": "install",
+"name_en": "Shader transition: ridged-burn",
+"name_ar": "انتقال شيدر: احتراق متعرج"
 },
 {
 "id": "TRANS-212",
@@ -55409,12 +55415,6 @@
 "name_ar": "انتقالات التدمير"
 },
 {
-"id": "TRANS-97",
-"status": "install",
-"name_en": "Noise-dissolve between two rendered scenes",
-"name_ar": "ذوبان ضوضائي بين مشهدين"
-},
-{
 "id": "TRANS-200",
 "status": "install",
 "name_en": "CSS transition: Gravity drop",
@@ -55425,6 +55425,12 @@
 "status": "install",
 "name_en": "Other Transitions",
 "name_ar": "انتقالات متنوعة"
+},
+{
+"id": "TRANS-97",
+"status": "install",
+"name_en": "Noise-dissolve between two rendered scenes",
+"name_ar": "ذوبان ضوضائي بين مشهدين"
 },
 {
 "id": "TRANS-153",
@@ -55502,23 +55508,23 @@
 "links": [
 {
 "id": "SP-0424",
-"sim": 0.243
+"sim": 0.245
+},
+{
+"id": "SP-0431",
+"sim": 0.197
 },
 {
 "id": "SP-0429",
-"sim": 0.198
+"sim": 0.188
 },
 {
 "id": "SP-0426",
-"sim": 0.186
-},
-{
-"id": "SP-0430",
-"sim": 0.184
+"sim": 0.187
 },
 {
 "id": "SP-0146",
-"sim": 0.046
+"sim": 0.048
 }
 ]
 },
@@ -55695,19 +55701,19 @@
 "links": [
 {
 "id": "SP-0357",
-"sim": 0.45
+"sim": 0.451
 },
 {
 "id": "SP-0310",
-"sim": 0.308
+"sim": 0.302
 },
 {
 "id": "SP-0332",
-"sim": 0.228
+"sim": 0.229
 },
 {
 "id": "SP-0438",
-"sim": 0.184
+"sim": 0.186
 },
 {
 "id": "SP-0103",
@@ -55882,7 +55888,7 @@
 },
 {
 "id": "SP-0424",
-"sim": 0.199
+"sim": 0.195
 },
 {
 "id": "SP-0426",
@@ -55948,12 +55954,6 @@
 "name_ar": "انتقال القزحية"
 },
 {
-"id": "TRANS-115",
-"status": "install",
-"name_en": "Shader transition: sdf-iris",
-"name_ar": "انتقال شيدر: قزحية"
-},
-{
 "id": "TRANS-148",
 "status": "install",
 "name_en": "SDF Iris",
@@ -55964,6 +55964,12 @@
 "status": "install",
 "name_en": "iris / flood seams",
 "name_ar": "انتقال القزحية والفيضان"
+},
+{
+"id": "TRANS-115",
+"status": "install",
+"name_en": "Shader transition: sdf-iris",
+"name_ar": "انتقال شيدر: قزحية"
 },
 {
 "id": "TRANS-246",
@@ -56051,12 +56057,12 @@
 "TRANS-126"
 ],
 [
-"TRANS-115",
-"TRANS-214"
-],
-[
 "TRANS-231",
 "TRANS-246"
+],
+[
+"TRANS-115",
+"TRANS-214"
 ]
 ],
 "distinct_methods": 16,
@@ -56067,15 +56073,15 @@
 },
 {
 "id": "SP-0414",
-"sim": 0.313
+"sim": 0.317
 },
 {
 "id": "SP-0212",
-"sim": 0.183
+"sim": 0.182
 },
 {
 "id": "SP-0438",
-"sim": 0.166
+"sim": 0.167
 },
 {
 "id": "SP-0059",
@@ -56449,8 +56455,8 @@
 "name_en": "WebGL shader transition: domain-warp",
 "focus": [
 "transition",
-"webgl",
 "shader",
+"webgl",
 "warp"
 ],
 "size": 18,
@@ -56482,28 +56488,28 @@
 "name_ar": "انتقال شيدر: تشويه المجال"
 },
 {
-"id": "TRANS-111",
-"status": "install",
-"name_en": "Shader transition: gravitational-lens",
-"name_ar": "انتقال شيدر: عدسة جاذبية"
-},
-{
 "id": "TRANS-206",
 "status": "install",
 "name_en": "WebGL shader transition: cinematic-zoom",
 "name_ar": "انتقال شيدر WebGL: تقريب سينمائي"
 },
 {
-"id": "TRANS-210",
+"id": "TRANS-111",
 "status": "install",
-"name_en": "WebGL shader transition: gravitational-lens",
-"name_ar": "انتقال شيدر WebGL: عدسة جاذبية"
+"name_en": "Shader transition: gravitational-lens",
+"name_ar": "انتقال شيدر: عدسة جاذبية"
 },
 {
 "id": "TRANS-207",
 "status": "install",
 "name_en": "WebGL shader transition: cross-warp-morph",
 "name_ar": "انتقال شيدر WebGL: تحول بالتشويه المتقاطع"
+},
+{
+"id": "TRANS-210",
+"status": "install",
+"name_en": "WebGL shader transition: gravitational-lens",
+"name_ar": "انتقال شيدر WebGL: عدسة جاذبية"
 },
 {
 "id": "TRANS-215",
@@ -56518,10 +56524,10 @@
 "name_ar": "انتقال شيدر WebGL: انقسام لوني"
 },
 {
-"id": "TRANS-107",
+"id": "TRANS-92",
 "status": "install",
-"name_en": "Shader transition: cross-warp-morph",
-"name_ar": "انتقال شيدر: تحول التوائي"
+"name_en": "Shader transitions (WebGL)",
+"name_ar": "انتقالات الشيدر"
 },
 {
 "id": "TRANS-106",
@@ -56530,10 +56536,10 @@
 "name_ar": "انتقال شيدر: زوم سينمائي"
 },
 {
-"id": "TRANS-92",
+"id": "TRANS-107",
 "status": "install",
-"name_en": "Shader transitions (WebGL)",
-"name_ar": "انتقالات الشيدر"
+"name_en": "Shader transition: cross-warp-morph",
+"name_ar": "انتقال شيدر: تحول التوائي"
 },
 {
 "id": "TRANS-116",
@@ -56560,16 +56566,16 @@
 "name_ar": "انتقال العدسة الجاذبية"
 },
 {
-"id": "TRANS-149",
-"status": "install",
-"name_en": "Swirl Vortex",
-"name_ar": "انتقال الدوامة"
-},
-{
 "id": "TRANS-150",
 "status": "install",
 "name_en": "Thermal Distortion",
 "name_ar": "انتقال السراب الحراري"
+},
+{
+"id": "TRANS-149",
+"status": "install",
+"name_en": "Swirl Vortex",
+"name_ar": "انتقال الدوامة"
 },
 {
 "id": "TRANS-156",
@@ -56585,12 +56591,12 @@
 "TRANS-108"
 ],
 [
-"TRANS-111",
-"TRANS-210"
-],
-[
 "TRANS-206",
 "TRANS-106"
+],
+[
+"TRANS-111",
+"TRANS-210"
 ],
 [
 "TRANS-207",
@@ -56605,23 +56611,23 @@
 "links": [
 {
 "id": "SP-0439",
-"sim": 0.462
+"sim": 0.469
 },
 {
 "id": "SP-0434",
-"sim": 0.25
-},
-{
-"id": "SP-0438",
-"sim": 0.244
+"sim": 0.253
 },
 {
 "id": "SP-0418",
-"sim": 0.243
+"sim": 0.245
+},
+{
+"id": "SP-0438",
+"sim": 0.242
 },
 {
 "id": "SP-0146",
-"sim": 0.101
+"sim": 0.104
 }
 ]
 },
@@ -56963,21 +56969,21 @@
 "focus": [
 "whip",
 "pan",
-"blur",
+"transition",
 "whip-pan"
 ],
-"size": 14,
+"size": 15,
 "best": "ready",
 "status_mix": {
 "ready": 1,
-"install": 4,
+"install": 5,
 "seen": 6,
 "documented": 2,
 "idea": 1
 },
 "ready_now": 1,
 "families": {
-"transitions-cuts": 14
+"transitions-cuts": 15
 },
 "atlas_folded": 0,
 "requires": [
@@ -56985,6 +56991,8 @@
 "npm:three",
 "npm:gsap",
 "chromium",
+"pip:opencv",
+"pip:scipy",
 "ffmpeg"
 ],
 "pipeline": [
@@ -57007,16 +57015,22 @@
 "name_ar": "قطع السوط"
 },
 {
+"id": "TRANS-217",
+"status": "install",
+"name_en": "WebGL shader transition: whip-pan",
+"name_ar": "انتقال شيدر WebGL: حركة سوط سريعة"
+},
+{
 "id": "TRANS-118",
 "status": "install",
 "name_en": "Shader transition: whip-pan",
 "name_ar": "انتقال شيدر: سوط كاميرا"
 },
 {
-"id": "TRANS-217",
+"id": "TRANS-247",
 "status": "install",
-"name_en": "WebGL shader transition: whip-pan",
-"name_ar": "انتقال شيدر WebGL: حركة سوط سريعة"
+"name_en": "Phone-editor transition: whip (whipleft/whipright/whipup/whipdown)",
+"name_ar": "انتقال تطبيقات الموبايل: سوايب سريع"
 },
 {
 "id": "TRANS-374",
@@ -57080,19 +57094,19 @@
 "TRANS-135"
 ],
 [
-"TRANS-118",
-"TRANS-217"
+"TRANS-217",
+"TRANS-118"
 ],
 [
 "TRANS-374",
 "TRANS-350"
 ]
 ],
-"distinct_methods": 11,
+"distinct_methods": 12,
 "links": [
 {
-"id": "SP-0429",
-"sim": 0.239
+"id": "SP-0431",
+"sim": 0.232
 },
 {
 "id": "SP-0426",
@@ -57100,15 +57114,15 @@
 },
 {
 "id": "SP-0424",
-"sim": 0.17
+"sim": 0.181
 },
 {
-"id": "SP-0246",
-"sim": 0.152
+"id": "SP-0435",
+"sim": 0.156
 },
 {
 "id": "SP-0123",
-"sim": 0.035
+"sim": 0.033
 }
 ]
 },
@@ -57264,156 +57278,6 @@
 "id": "SP-0429",
 "domain": "motion",
 "family": "transitions-cuts",
-"name_ar": "انتقال CSS: دفع انزلاقي",
-"name_en": "CSS transition: Push slide",
-"focus": [
-"push",
-"transition",
-"slide",
-"phone-editor"
-],
-"size": 14,
-"best": "install",
-"status_mix": {
-"install": 10,
-"seen": 1,
-"documented": 3
-},
-"ready_now": 0,
-"families": {
-"transitions-cuts": 14
-},
-"atlas_folded": 0,
-"requires": [
-"npm:gsap",
-"npm:hyperframes",
-"pip:opencv",
-"pip:scipy",
-"chromium"
-],
-"pipeline": [
-{
-"id": "TRANS-173",
-"status": "install",
-"name_en": "CSS transition: Push slide",
-"name_ar": "انتقال CSS: دفع انزلاقي"
-},
-{
-"id": "TRANS-161",
-"status": "install",
-"name_en": "Push Transitions",
-"name_ar": "انتقالات الدفع"
-},
-{
-"id": "TRANS-251",
-"status": "install",
-"name_en": "Phone-editor transition: whipup",
-"name_ar": "ويب أعلى"
-},
-{
-"id": "TRANS-174",
-"status": "install",
-"name_en": "CSS transition: Vertical push",
-"name_ar": "انتقال CSS: دفع عمودي"
-},
-{
-"id": "TRANS-252",
-"status": "install",
-"name_en": "Phone-editor transition: whipdown",
-"name_ar": "ويب أسفل"
-},
-{
-"id": "TRANS-250",
-"status": "install",
-"name_en": "Phone-editor transition: whipright",
-"name_ar": "ويب يمين"
-},
-{
-"id": "TRANS-249",
-"status": "install",
-"name_en": "Phone-editor transition: whipleft",
-"name_ar": "ويب يسار"
-},
-{
-"id": "TRANS-247",
-"status": "install",
-"name_en": "Phone-editor transition: whip (whipleft/whipright/whipup/whipdown)",
-"name_ar": "انتقال تطبيقات الموبايل: سوايب سريع"
-},
-{
-"id": "TRANS-91",
-"status": "install",
-"name_en": "Phone-editor transition: spin",
-"name_ar": "انتقال تطبيقات الموبايل: دوران"
-},
-{
-"id": "TRANS-129",
-"status": "install",
-"name_en": "Page Slide",
-"name_ar": "انزلاق الصفحة"
-},
-{
-"id": "TRANS-335",
-"status": "seen",
-"name_en": "Sun whiteout bridge",
-"name_ar": "انتقال بالبياض الشمسي"
-},
-{
-"id": "TRANS-408",
-"status": "documented",
-"name_en": "CSS/GSAP push transitions",
-"name_ar": "انتقالات push"
-},
-{
-"id": "TRANS-437",
-"status": "documented",
-"name_en": "Swipe / screen push and modal sheet",
-"name_ar": "سحب الشاشة واللوحة المنبثقة"
-},
-{
-"id": "TRANS-X04",
-"status": "documented",
-"name_en": "Object carry contract in screen pixels",
-"name_ar": "حمل الجسم بإحداثيات الشاشة"
-}
-],
-"proof": [],
-"twins": [
-[
-"TRANS-173",
-"TRANS-161",
-"TRANS-174",
-"TRANS-408"
-]
-],
-"distinct_methods": 11,
-"links": [
-{
-"id": "SP-0186",
-"sim": 0.27
-},
-{
-"id": "SP-0427",
-"sim": 0.239
-},
-{
-"id": "SP-0426",
-"sim": 0.212
-},
-{
-"id": "SP-0424",
-"sim": 0.202
-},
-{
-"id": "SP-0124",
-"sim": 0.054
-}
-]
-},
-{
-"id": "SP-0430",
-"domain": "motion",
-"family": "transitions-cuts",
 "name_ar": "انتقال تسرب ضوئي",
 "name_en": "Light-leak transition",
 "focus": [
@@ -57539,19 +57403,19 @@
 "links": [
 {
 "id": "SP-0210",
-"sim": 0.252
+"sim": 0.253
 },
 {
 "id": "SP-0304",
-"sim": 0.234
+"sim": 0.231
+},
+{
+"id": "SP-0424",
+"sim": 0.193
 },
 {
 "id": "SP-0308",
-"sim": 0.189
-},
-{
-"id": "SP-0418",
-"sim": 0.184
+"sim": 0.19
 },
 {
 "id": "SP-0123",
@@ -57560,7 +57424,7 @@
 ]
 },
 {
-"id": "SP-0431",
+"id": "SP-0430",
 "domain": "motion",
 "family": "transitions-cuts",
 "name_ar": "قطع وميضي",
@@ -57617,16 +57481,16 @@
 "name_ar": "ومضة بيضاء"
 },
 {
-"id": "TRANS-109",
-"status": "install",
-"name_en": "Shader transition: flash-through-white",
-"name_ar": "انتقال شيدر: وميض أبيض"
-},
-{
 "id": "TRANS-209",
 "status": "install",
 "name_en": "WebGL shader transition: flash-through-white",
 "name_ar": "انتقال شيدر WebGL: وميض عبر الأبيض"
+},
+{
+"id": "TRANS-109",
+"status": "install",
+"name_en": "Shader transition: flash-through-white",
+"name_ar": "انتقال شيدر: وميض أبيض"
 },
 {
 "id": "TRANS-242",
@@ -57685,19 +57549,19 @@
 "TRANS-235"
 ],
 [
-"TRANS-109",
-"TRANS-209"
+"TRANS-209",
+"TRANS-109"
 ]
 ],
 "distinct_methods": 9,
 "links": [
 {
 "id": "SP-0309",
-"sim": 0.414
+"sim": 0.413
 },
 {
 "id": "SP-0386",
-"sim": 0.394
+"sim": 0.393
 },
 {
 "id": "SP-0236",
@@ -57710,6 +57574,150 @@
 {
 "id": "SP-0121",
 "sim": 0.024
+}
+]
+},
+{
+"id": "SP-0431",
+"domain": "motion",
+"family": "transitions-cuts",
+"name_ar": "انتقال CSS: دفع انزلاقي",
+"name_en": "CSS transition: Push slide",
+"focus": [
+"push",
+"transition",
+"slide",
+"phone-editor"
+],
+"size": 13,
+"best": "install",
+"status_mix": {
+"install": 9,
+"seen": 1,
+"documented": 3
+},
+"ready_now": 0,
+"families": {
+"transitions-cuts": 13
+},
+"atlas_folded": 0,
+"requires": [
+"npm:gsap",
+"npm:hyperframes",
+"chromium",
+"pip:opencv",
+"pip:scipy"
+],
+"pipeline": [
+{
+"id": "TRANS-173",
+"status": "install",
+"name_en": "CSS transition: Push slide",
+"name_ar": "انتقال CSS: دفع انزلاقي"
+},
+{
+"id": "TRANS-161",
+"status": "install",
+"name_en": "Push Transitions",
+"name_ar": "انتقالات الدفع"
+},
+{
+"id": "TRANS-174",
+"status": "install",
+"name_en": "CSS transition: Vertical push",
+"name_ar": "انتقال CSS: دفع عمودي"
+},
+{
+"id": "TRANS-251",
+"status": "install",
+"name_en": "Phone-editor transition: whipup",
+"name_ar": "ويب أعلى"
+},
+{
+"id": "TRANS-252",
+"status": "install",
+"name_en": "Phone-editor transition: whipdown",
+"name_ar": "ويب أسفل"
+},
+{
+"id": "TRANS-250",
+"status": "install",
+"name_en": "Phone-editor transition: whipright",
+"name_ar": "ويب يمين"
+},
+{
+"id": "TRANS-249",
+"status": "install",
+"name_en": "Phone-editor transition: whipleft",
+"name_ar": "ويب يسار"
+},
+{
+"id": "TRANS-129",
+"status": "install",
+"name_en": "Page Slide",
+"name_ar": "انزلاق الصفحة"
+},
+{
+"id": "TRANS-91",
+"status": "install",
+"name_en": "Phone-editor transition: spin",
+"name_ar": "انتقال تطبيقات الموبايل: دوران"
+},
+{
+"id": "TRANS-335",
+"status": "seen",
+"name_en": "Sun whiteout bridge",
+"name_ar": "انتقال بالبياض الشمسي"
+},
+{
+"id": "TRANS-408",
+"status": "documented",
+"name_en": "CSS/GSAP push transitions",
+"name_ar": "انتقالات push"
+},
+{
+"id": "TRANS-437",
+"status": "documented",
+"name_en": "Swipe / screen push and modal sheet",
+"name_ar": "سحب الشاشة واللوحة المنبثقة"
+},
+{
+"id": "TRANS-X04",
+"status": "documented",
+"name_en": "Object carry contract in screen pixels",
+"name_ar": "حمل الجسم بإحداثيات الشاشة"
+}
+],
+"proof": [],
+"twins": [
+[
+"TRANS-173",
+"TRANS-161",
+"TRANS-174",
+"TRANS-408"
+]
+],
+"distinct_methods": 10,
+"links": [
+{
+"id": "SP-0186",
+"sim": 0.291
+},
+{
+"id": "SP-0427",
+"sim": 0.232
+},
+{
+"id": "SP-0426",
+"sim": 0.214
+},
+{
+"id": "SP-0424",
+"sim": 0.199
+},
+{
+"id": "SP-0124",
+"sim": 0.058
 }
 ]
 },
@@ -58089,15 +58097,15 @@
 "links": [
 {
 "id": "SP-0424",
-"sim": 0.25
+"sim": 0.253
 },
 {
-"id": "SP-0429",
-"sim": 0.191
+"id": "SP-0431",
+"sim": 0.184
 },
 {
 "id": "SP-0439",
-"sim": 0.172
+"sim": 0.177
 },
 {
 "id": "SP-0417",
@@ -58455,16 +58463,16 @@
 "sim": 0.192
 },
 {
-"id": "SP-0430",
-"sim": 0.141
-},
-{
 "id": "SP-0429",
-"sim": 0.102
+"sim": 0.141
 },
 {
 "id": "SP-0416",
 "sim": 0.102
+},
+{
+"id": "SP-0430",
+"sim": 0.101
 },
 {
 "id": "SP-0008",
@@ -58568,15 +58576,15 @@
 },
 {
 "id": "SP-0424",
-"sim": 0.244
+"sim": 0.242
 },
 {
 "id": "SP-0414",
-"sim": 0.225
+"sim": 0.229
 },
 {
 "id": "SP-0419",
-"sim": 0.184
+"sim": 0.186
 },
 {
 "id": "SP-0033",
@@ -58593,8 +58601,8 @@
 "focus": [
 "ripple",
 "transition",
-"wave",
-"ripple-waves"
+"ripple-waves",
+"wave"
 ],
 "size": 8,
 "best": "ready",
@@ -58679,23 +58687,23 @@
 "links": [
 {
 "id": "SP-0424",
-"sim": 0.462
+"sim": 0.469
 },
 {
 "id": "SP-0394",
-"sim": 0.243
+"sim": 0.24
 },
 {
 "id": "SP-0434",
-"sim": 0.172
+"sim": 0.177
 },
 {
 "id": "SP-0418",
-"sim": 0.171
+"sim": 0.175
 },
 {
 "id": "SP-0146",
-"sim": 0.064
+"sim": 0.067
 }
 ]
 },
@@ -59024,8 +59032,8 @@
 "distinct_methods": 3,
 "links": [
 {
-"id": "SP-0429",
-"sim": 0.161
+"id": "SP-0431",
+"sim": 0.171
 },
 {
 "id": "SP-0186",
@@ -60159,7 +60167,7 @@
 },
 {
 "id": "SP-0418",
-"sim": 0.114
+"sim": 0.113
 },
 {
 "id": "SP-0022",

@@ -471,20 +471,20 @@
  },
  "counts": {
   "broken_links": 0,
-  "evals": 118,
+  "evals": 119,
   "families": 62,
   "gaps": {
    "family_without_tool": 11
   },
-  "powers": 5727,
-  "py_edges": 297,
+  "powers": 5728,
+  "py_edges": 302,
   "repo_tests": 35,
   "roles": {
    "helper": 2,
-   "registered": 149
+   "registered": 150
   },
-  "scripts": 151,
-  "tools": 167
+  "scripts": 152,
+  "tools": 168
  },
  "families": [
   {
@@ -709,7 +709,7 @@
   },
   {
    "id": "runnable-tools",
-   "powers": 167,
+   "powers": 168,
    "tools": 0
   },
   {
@@ -720,7 +720,7 @@
   {
    "id": "self-discovery",
    "powers": 43,
-   "tools": 35
+   "tools": 36
   },
   {
    "id": "shapes-morph-geometry",
@@ -850,7 +850,7 @@
    "kind": "family_without_tool"
   },
   {
-   "detail": "167 powers, no tools.json entry lists this family",
+   "detail": "168 powers, no tools.json entry lists this family",
    "id": "runnable-tools",
    "kind": "family_without_tool"
   }
@@ -1288,6 +1288,16 @@
    "from": "memory_ops",
    "kind": "imports",
    "to": "_secrets"
+  },
+  {
+   "from": "micro_index",
+   "kind": "imports",
+   "to": "powers"
+  },
+  {
+   "from": "micro_index",
+   "kind": "invokes",
+   "to": "hub"
   },
   {
    "from": "motion_director",
@@ -1893,6 +1903,21 @@
    "from": "test_memory_ops",
    "kind": "invokes",
    "to": "memory_ops"
+  },
+  {
+   "from": "test_micro_index",
+   "kind": "imports",
+   "to": "micro_index"
+  },
+  {
+   "from": "test_micro_index",
+   "kind": "imports",
+   "to": "powers"
+  },
+  {
+   "from": "test_micro_index",
+   "kind": "invokes",
+   "to": "micro_index"
   },
   {
    "from": "test_montage_pro",
@@ -3644,7 +3669,7 @@
    "powers": [
     "APPX-140",
     "APPX-141",
-    "TOOL-164"
+    "TOOL-165"
    ],
    "role": "registered",
    "tests": [
@@ -3814,7 +3839,7 @@
    "path": "scripts/color_media.py",
    "power_count": 1,
    "powers": [
-    "TOOL-168"
+    "TOOL-169"
    ],
    "role": "registered",
    "tests": [
@@ -4091,7 +4116,7 @@
    "path": "scripts/fast_edit.py",
    "power_count": 1,
    "powers": [
-    "TOOL-167"
+    "TOOL-168"
    ],
    "role": "registered",
    "tests": [
@@ -4246,11 +4271,12 @@
     "capability_atlas",
     "check_skill",
     "kosif_mcp",
+    "micro_index",
     "skill_intelligence",
     "smart_capabilities"
    ],
    "path": "scripts/hub.py",
-   "power_count": 167,
+   "power_count": 168,
    "powers": [
     "TOOL-01",
     "TOOL-02",
@@ -4445,7 +4471,7 @@
     "CHECK-36",
     "CHECK-37",
     "CHECK-40",
-    "TOOL-166"
+    "TOOL-167"
    ],
    "role": "registered",
    "tests": [
@@ -4498,7 +4524,7 @@
    "powers": [
     "APPX-142",
     "APPX-143",
-    "TOOL-165"
+    "TOOL-166"
    ],
    "role": "registered",
    "tests": [
@@ -4535,7 +4561,7 @@
    "power_count": 2,
    "powers": [
     "AGENT-50",
-    "TOOL-162"
+    "TOOL-163"
    ],
    "role": "registered",
    "tests": [
@@ -4543,6 +4569,23 @@
    ],
    "tools": [
     "memory-ops"
+   ]
+  },
+  {
+   "ci": true,
+   "id": "micro_index",
+   "imported_by": [],
+   "path": "scripts/micro_index.py",
+   "power_count": 1,
+   "powers": [
+    "TOOL-161"
+   ],
+   "role": "registered",
+   "tests": [
+    "evals/test_micro_index.py"
+   ],
+   "tools": [
+    "micro-index"
    ]
   },
   {
@@ -4630,7 +4673,7 @@
     "EASE-G01",
     "EASE-G02",
     "EASE-G03",
-    "TOOL-163"
+    "TOOL-164"
    ],
    "role": "registered",
    "tests": [
@@ -4847,6 +4890,7 @@
     "hub",
     "kosif_hubs",
     "kosif_mcp",
+    "micro_index",
     "owned_repos",
     "probe_env",
     "requirements",
@@ -4873,6 +4917,7 @@
     "evals/test_hub.py",
     "evals/test_installer_triage.py",
     "evals/test_kosif_hubs.py",
+    "evals/test_micro_index.py",
     "evals/test_protocol_structure.py",
     "evals/test_rea_routing.py",
     "evals/test_superpower_fusion.py",
@@ -5184,7 +5229,7 @@
    "power_count": 2,
    "powers": [
     "CODE-25",
-    "TOOL-161"
+    "TOOL-162"
    ],
    "role": "registered",
    "tests": [
@@ -5793,22 +5838,22 @@
  ],
  "structure": {
   "areas": {
-   "(root)": 8,
+   "(root)": 9,
    "assets": 4,
-   "data": 128,
+   "data": 129,
    "dua-wednesday": 10,
-   "evals": 111,
+   "evals": 112,
    "examples": 12,
    "montage-pro": 2,
    "proofs": 239,
-   "references": 225,
+   "references": 244,
    "resources": 3,
    "schemas": 5,
-   "scripts": 182,
+   "scripts": 183,
    "templates": 16,
    "vendor": 391
   },
-  "bytes": 62359596,
+  "bytes": 66475092,
   "extensions": {
    "(none)": 14,
    ".bru": 7,
@@ -5816,17 +5861,17 @@
    ".html": 22,
    ".jpg": 23,
    ".js": 14,
-   ".json": 187,
-   ".md": 590,
+   ".json": 188,
+   ".md": 610,
    ".mjs": 9,
    ".png": 6,
-   ".py": 315,
+   ".py": 317,
    ".ttf": 14,
    ".txt": 54,
    ".woff2": 8,
    ".yaml": 57
   },
-  "files": 1336,
+  "files": 1359,
   "symlinks": 0
  }
 }

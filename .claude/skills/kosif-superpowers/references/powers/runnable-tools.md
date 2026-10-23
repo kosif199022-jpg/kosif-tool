@@ -3,7 +3,7 @@
 
 > **قوتك هنا / what this gives you:** كل سكربت في المهارة والمستودع يُشغَّل فعلًا ولم يكن له سجل في الكتالوج: ماذا يفعل، ومتى، وأمره الأول، ومستلزماته، ودليله. مولَّدة من data/tools.json بأمر hub.py build؛ hub.py tool <id> يعطي البطاقة كاملة. — Every script in the skill and repository that really runs and had no catalog record: what it does, when, its first command, requirements and proof. Generated from data/tools.json by hub.py build; hub.py tool <id> gives the full card.
 > **أقوى دليل / strongest evidence:** **TOOL-01** Offline bilingual capability finder (`kosif-tool/.claude/skills/kosif-superpowers/evals/test_ai_tool_discovery.py`) · **TOOL-02** Session boot briefing (`kosif-tool/tests/test_boot.py`)
-> **167 powers follow** — ✅ 134 · 🟢 21 · 📦 12 · 🔑 0 · 👁 0 · 📄 0 · 💡 0.
+> **168 powers follow** — ✅ 135 · 🟢 21 · 📦 12 · 🔑 0 · 👁 0 · 📄 0 · 💡 0.
 
 **الحالة / status:** ✅ مُثبت (شُغّل فعلًا وله مسار دليل) · 🟢 جاهز (كود موجود يعمل بما هو متاح عادة) · 📦 بأمر تثبيت واحد · 🔑 يحتاج مفتاحًا أو حسابًا أو موصلًا · 👁 شوهد في فيديو مرجعي (للموشن فقط) · 📄 طريقة موثقة · 💡 فكرة. الشارة هي أدنى مستوى صادق — the badge is the lowest level that is true.
 مسارات الدليل نسبية إلى `/home/user/`؛ و`session-<date>:<file>#<section>` تشير إلى تشغيل موثق في جلسة سابقة؛ و`owner-upload:` إلى ملف داخل أرشيف أرسله المالك. Proof paths are relative to `/home/user/`.
@@ -13,13 +13,13 @@
 
 ## الفهرس / contents
 
-- **Discover and route / اكتشاف القدرات والتوجيه** — TOOL-01 … TOOL-156 (25)
-- **Think, ideate and write / التفكير والأفكار والكتابة** — TOOL-10 … TOOL-166 (16)
-- **Motion graphics and rendering / الموشن والرندر** — TOOL-12 … TOOL-163 (21)
-- **Editing and reference video / المونتاج والفيديو المرجعي** — TOOL-19 … TOOL-167 (15)
-- **Audio and rhythm / الصوت والإيقاع** — TOOL-25 … TOOL-164 (5)
-- **Drawing and characters / الرسم والشخصيات** — TOOL-27 … TOOL-168 (17)
-- **Software investigation / فحص البرامج** — TOOL-32 … TOOL-161 (14)
+- **Discover and route / اكتشاف القدرات والتوجيه** — TOOL-01 … TOOL-161 (26)
+- **Think, ideate and write / التفكير والأفكار والكتابة** — TOOL-10 … TOOL-167 (16)
+- **Motion graphics and rendering / الموشن والرندر** — TOOL-12 … TOOL-164 (21)
+- **Editing and reference video / المونتاج والفيديو المرجعي** — TOOL-19 … TOOL-168 (15)
+- **Audio and rhythm / الصوت والإيقاع** — TOOL-25 … TOOL-165 (5)
+- **Drawing and characters / الرسم والشخصيات** — TOOL-27 … TOOL-169 (17)
+- **Software investigation / فحص البرامج** — TOOL-32 … TOOL-162 (14)
 - **Maintain and build / الصيانة والبناء** — TOOL-33 … TOOL-154 (13)
 - **3D / ثلاثي الأبعاد** — TOOL-36 … TOOL-121 (11)
 - **Image, design and fonts / الصور والتصميم والخطوط** — TOOL-42 … TOOL-148 (11)
@@ -246,6 +246,14 @@
 - **الدليل / proof:** `kosif-tool/tests/test_superpowers.py` · `kosif-tool/.claude/skills/kosif-superpowers/evals/test_rea_routing.py` · `kosif-tool/.claude/skills/kosif-superpowers/evals/test_installer_triage.py` · `kosif-tool/.claude/skills/kosif-superpowers/scripts/powers.py`
 - **المصدر / source:** data/tools.json
 
+#### TOOL-161 · الفهرس الدقيق: سطر لكل قدرة وأداة وقدرة خارقة · Micro index: one line per power, tool and superpower · ✅ مُثبت هنا / proven here
+- **ماذا / what:** يبني أدق خريطة للمهارة: لكل قدرة ذرية وأداة قابلة للتشغيل وقدرة خارقة مدخل واحد فيه مجموعتها ومجالها وعائلتها وقدرتها الخارقة وشارتها ومستلزماتها وأدوات عائلتها وفصلها وبطاقتها في المكتبة. يكتب data/micro_index.json وreferences/micro-index/ (صفحة لكل مجموعة وصفحة للأدوات وأخرى للقدرات الخارقة)؛ find يبحث فيه بالعربية أو الإنجليزية وshow يعرض أي معرّف مع جيرانه. الخيار --check يبلغ عن الملفات غير المحدّثة دون كتابة. — Builds the finest-grained map of the skill: every atomic power, runnable tool and fused superpower gets one entry with its group, domain, family, superpower, badge, requirements, the tools of its family, its chapter and its library card. Writes data/micro_index.json and references/micro-index/ (one page per group plus tools and superpowers); find searches it in Arabic or English and show prints any id with its neighbours. --check reports stale files without writing.
+- **متى أستخدمها / when:** اعرض لي الفهرس الدقيق لكل القدرات / Find every power, tool and superpower about loudness
+- **كيف / how:** build: `python3 scripts/micro_index.py build`; find: `python3 scripts/micro_index.py find "قص على الإيقاع" --top 10`; show: `python3 scripts/micro_index.py show SP-0001`; stats: `python3 scripts/micro_index.py stats`. Full card: `python3 scripts/hub.py tool micro-index`. Limits: An entry is an address, not a proof: badges are the records' own and a proven badge still needs a real run. **أرقام / params:** in: data/powers/*.json, data/tools.json, data/superpowers.json, data/smart_capability_index.json · out: data/micro_index.json and references/micro-index/*.md; matches on stdout
+- **يحتاج / needs:** [`python3`](../requirements.md#req-python3)
+- **الدليل / proof:** `kosif-tool/.claude/skills/kosif-superpowers/evals/test_micro_index.py` · `kosif-tool/.claude/skills/kosif-superpowers/scripts/micro_index.py`
+- **المصدر / source:** data/tools.json
+
 ## Think, ideate and write / التفكير والأفكار والكتابة
 
 #### TOOL-10 · مقدّر سعة الأنظمة · System Capacity Sizer · ✅ مُثبت هنا / proven here
@@ -362,7 +370,7 @@
 - **الدليل / proof:** `kosif-tool/.claude/skills/kosif-superpowers/evals/test_prompt_lab.py` · `kosif-tool/.claude/skills/kosif-superpowers/scripts/prompt_lab.py`
 - **المصدر / source:** data/tools.json
 
-#### TOOL-162 · عمليات الذاكرة · Memory Ops · ✅ مُثبت هنا / proven here
+#### TOOL-163 · عمليات الذاكرة · Memory Ops · ✅ مُثبت هنا / proven here
 - **ماذا / what:** يحفظ ملف ذاكرة محليًا طويل المدى بلا تناقضات: لكل معلومة مرشحة يقترح عملية واحدة بسببها (إضافة إن لم يوجد مثلها، تحديث إن تغيرت قيمة لنفس الموضوع والخاصية أو أضافت صياغة أدق تفصيلًا، حذف إن تراجعت عن محفوظ، ولا شيء للمكرر)، ويرفض المعلومات التي فيها أسرار، وينفذ الخطة المعتمدة مع حفظ كل قيمة قديمة في السجل، ويبحث في المخزن. يوحّد النص العربي والإنجليزي قبل المقارنة. — Keeps a local long-term memory file free of contradictions: for every candidate fact it proposes one operation with its reason (ADD when nothing similar is stored, UPDATE when the same subject and attribute get a new value or a closer restatement adds detail, DELETE when the fact retracts a stored one, NOOP for duplicates), refuses facts that contain a secret, applies an approved plan while keeping every old value in history, and searches the store. English and Arabic text is normalised before comparison.
 - **متى أستخدمها / when:** احفظ تفضيلاتي دي من غير ما تتكرر أو تتناقض مع القديم / decide whether these new facts should update or replace what we stored
 - **كيف / how:** propose: `python3 scripts/memory_ops.py propose --store memory.json --facts facts.json --out plan.json`; apply: `python3 scripts/memory_ops.py apply --store memory.json --plan plan.json --when 2026-10-23`; search: `python3 scripts/memory_ops.py search --store memory.json "export settings"`; --self-test: `python3 scripts/memory_ops.py --self-test`. Full card: `python3 scripts/hub.py tool memory-ops`. Limits: Decisions use word overlap and subject/attribute keys, not meaning, so a paraphrase with different words can be added twice and a short unrelated sentence with shared words can be merged; review the plan before apply. **أرقام / params:** in: memory.json (created when missing) and facts.json. · out: plan.json (propose --out), memory.json (apply), or text on stdout.
@@ -371,7 +379,7 @@
 - **الدليل / proof:** `kosif-tool/.claude/skills/kosif-superpowers/evals/test_memory_ops.py` · `kosif-tool/.claude/skills/kosif-superpowers/scripts/memory_ops.py`
 - **المصدر / source:** data/tools.json
 
-#### TOOL-166 · فاحص أرقام الدروس والشروح · Lesson number integrity checker · ✅ مُثبت هنا / proven here
+#### TOOL-167 · فاحص أرقام الدروس والشروح · Lesson number integrity checker · ✅ مُثبت هنا / proven here
 - **ماذا / what:** يفحص الأرقام التي يعرضها شرح أو فيديو تعليمي أو إنفوجراف أو درس تفاعلي. values يتحقق من سجل قيم يذكر لكل رقم مصدره والجملة المقتبسة التي تثبته أو ملاحظة فجوة صريحة، ويعيد حساب المجاميع والحواصل المشتقة؛ render يملأ العناصر النائبة {v:id} و{v:id|dp} و{n:id} في السكربت أو الصفحة ويفشل مغلقًا على قيمة غير موجودة أو فجوة أو وحدة بلا شكل طباعة (و--strict يكشف الأرقام المكتوبة مباشرة في النص)؛ ledger يتحقق من توازن دفتر حفظ (طاقة، ميزانية، وقت) ويعرض الحصص والكفاءة؛ scale يختار سعة عدّاد 1-2-5؛ sprite يفحص قائمة مناطق ملف المؤثرات الصوتية (تداخل، طول الملف، رخصة معتمدة لكل مؤثر). مكتبة Python القياسية فقط، ولا يشغّل شيئًا. — Checks the numbers an explainer, lesson film, infographic or interactive lesson shows. values validates a registry where every value names its source and quotes the supporting sentence, or carries an explicit gap note, and recomputes derived sums and products; render fills {v:id}, {v:id|dp} and {n:id} placeholders in a script or page and fails closed on an unknown value, a gap or a unit with no print form (--strict also flags numbers typed straight into the text); ledger checks that a conservation ledger (energy, budget, time) balances and reports shares and efficiency; scale picks a 1-2-5 gauge capacity; sprite checks a sound-sprite manifest for overlapping regions, file length and a credited allowed licence per cue. Stdlib only; it runs nothing.
 - **متى أستخدمها / when:** اتأكد إن كل رقم في سكربت الفيديو التعليمي ليه مصدر / check every number in my explainer script has a cited source
 - **كيف / how:** values: `python3 scripts/lesson_integrity.py values --registry values.json`; render: `python3 scripts/lesson_integrity.py render --registry values.json --content script.md --strict --out script.out.md`; ledger: `python3 scripts/lesson_integrity.py ledger --file ledger.json --json`; scale: `python3 scripts/lesson_integrity.py scale 14.7`. Full card: `python3 scripts/hub.py tool lesson-integrity`. Limits: It checks the registry against itself: it cannot tell whether a source is right or whether the quoted sentence really appears in it, it does not solve a physics model or generate challenges, and sprite reads the manifest and credits only, without decoding or measuring the audio. --strict recognises common SI units only. **أرقام / params:** in: A values.json registry ({sources, values}), a text or Markdown content file with placeholders, a ledger JSON ({unit, in, out, useful, tolerance}), a sound-sprite manifest JSON and its CREDITS.md table. · out: A text report or JSON (schema kosif.lesson-integrity.v1) on stdout; render --out writes the filled text.
@@ -556,7 +564,7 @@
 - **الدليل / proof:** `kosif-tool/.claude/skills/kosif-superpowers/evals/test_ui_beat.py` · `kosif-tool/.claude/skills/kosif-superpowers/scripts/ui_beat.py`
 - **المصدر / source:** data/tools.json
 
-#### TOOL-163 · فيزياء الحركة · Motion Physics · ✅ مُثبت هنا / proven here
+#### TOOL-164 · فيزياء الحركة · Motion Physics · ✅ مُثبت هنا / proven here
 - **ماذا / what:** يحسب أرقام الحركة بدل تخمينها: نابض من الصلابة والتخميد والكتلة (القيمة في كل إطار ونسبة التخميد وزمن الاستقرار والتجاوز، أو إطارات CSS)، وأي منحنى cubic-bezier أو تسهيل CSS مسمى بنفس حساب المتصفح، وتأخيرات التتابع من نقطة أصل (الأول أو الأخير أو المنتصف أو الأطراف أو عنصر بعينه) في صف أو شبكة، وعينات خط مفاتيح لكل إطار بتسهيل. مكتبة بايثون القياسية فقط؛ يطبع JSON أو CSS ولا يكتب ملفات. — Computes motion numbers instead of guessing them: a spring from stiffness, damping and mass (value per frame, damping ratio, settle time, overshoot, or CSS @keyframes), any CSS cubic-bezier or named easing sampled exactly as a browser does, stagger delays from an origin (first, last, center, edges or an index) on a row or a grid, and a keyframe track sampled per frame with an easing. Pure standard library; prints JSON or CSS and writes no files.
 - **متى أستخدمها / when:** عايز ارتداد نابض طبيعي للعنوان، اطلعلي القيم لكل فريم / give me stagger delays from the center of a 4x3 grid
 - **كيف / how:** spring: `python3 scripts/motion_physics.py spring --from 0 --to 1 --stiffness 170 --damping 26 --fps 30`; bezier: `python3 scripts/motion_physics.py bezier 0.25 0.1 0.25 1 --frames 30`; stagger: `python3 scripts/motion_physics.py stagger --count 12 --each 0.06 --from center --grid 4x3 --ease out`; keyframes: `python3 scripts/motion_physics.py keyframes --track 0:0,0.5:120,1.2:100 --ease out --fps 30`. Full card: `python3 scripts/hub.py tool motion-physics`. Limits: The spring is integrated numerically (16 sub-steps per frame), so values match an analytic spring to about 1e-3, not exactly; one dimension at a time; settle uses a 0.1 % rest threshold; easing names cover the CSS keywords plus a few common curves, not every library's presets. **أرقام / params:** in: Numbers on the command line. · out: JSON or CSS on stdout; it writes no files.
@@ -681,7 +689,7 @@
 - **الدليل / proof:** `kosif-tool/.claude/skills/kosif-superpowers/evals/test_dua_wednesday.py` · `kosif-tool/.claude/skills/kosif-superpowers/scripts/dua_wednesday.py`
 - **المصدر / source:** data/tools.json
 
-#### TOOL-165 · خط اللوك: تلوين واحد لـ ffmpeg وSVG وGLSL · Look pipeline: one colour grade for ffmpeg, SVG/CSS and GLSL · ✅ مُثبت هنا / proven here
+#### TOOL-166 · خط اللوك: تلوين واحد لـ ffmpeg وSVG وGLSL · Look pipeline: one colour grade for ffmpeg, SVG/CSS and GLSL · ✅ مُثبت هنا / proven here
 - **ماذا / what:** كُتبت بعد دراسة «مونتاجي»: 11 لوكًا وثمانية معاملات تصبح خطوة خطية ومصفوفة 3×3، تخرج بالأرقام نفسها لـ ffmpeg وSVG وCSS وGLSL فتتطابق المعاينة والتصدير؛ verify يقيس الفرق بكسلًا بكسلًا، وapply يلوّن فيديو في ملف جديد. — Written after a read-only study of the Montaji Arabic video editor: eleven colour looks (natural, vivid, bright, warm, cool, cinematic, vintage, faded, dramatic, mono, night-dua) and eight parameters become one per-channel affine step plus one 3x3 matrix, emitted with the same numbers as an ffmpeg chain (lutrgb + colorchannelmixer + vignette), an SVG filter, CSS and a GLSL shader. verify pushes a test frame through ffmpeg and compares every pixel with the reference maths; apply grades a video into a new file.
 - **متى أستخدمها / when:** لوّن الفيديو ده لوك سينمائي وخلي المعاينة زي التصدير / Give me the same warm grade as an ffmpeg filter and a CSS filter
 - **كيف / how:** presets: `python3 scripts/look_pipeline.py presets`; build: `python3 scripts/look_pipeline.py build --preset cinematic --amount 0.8 --target ffmpeg`; verify: `python3 scripts/look_pipeline.py verify --all`; apply: `python3 scripts/look_pipeline.py apply in.mp4 graded.mp4 --preset warm --amount 0.6`. Full card: `python3 scripts/hub.py tool look-pipeline`. Limits: Per-pixel looks only (no curves, LUT files or skin masks); vignette is emitted for every renderer but left out of the parity check; SVG and GLSL parity follow from the same numbers and are not rendered here. **أرقام / params:** in: A preset name, a 0..1 amount and optional KEY=VALUE overrides; a video file for apply. · out: Filter text for the chosen renderer, kosif.look.v1 JSON, a PASS/FAIL parity table, or a new graded MP4.
@@ -690,7 +698,7 @@
 - **الدليل / proof:** `kosif-tool/.claude/skills/kosif-superpowers/evals/test_look_pipeline.py` · `kosif-tool/.claude/skills/kosif-superpowers/scripts/look_pipeline.py`
 - **المصدر / source:** data/tools.json
 
-#### TOOL-167 · التعديل السريع: قص فوري يعرف الإطارات المفتاحية، مغيّر صوت، تفتيح الفيديو المظلم، استخراج الصوت · Fast Edit: keyframe-aware instant cut, voice presets, low-light lift, audio extract · ✅ مُثبت هنا / proven here
+#### TOOL-168 · التعديل السريع: قص فوري يعرف الإطارات المفتاحية، مغيّر صوت، تفتيح الفيديو المظلم، استخراج الصوت · Fast Edit: keyframe-aware instant cut, voice presets, low-light lift, audio extract · ✅ مُثبت هنا / proven here
 - **ماذا / what:** عمليات سريعة على ملف واحد بإيصال JSON: يعرض الإطارات المفتاحية، ويقص بالنسخ المباشر لو البداية على إطار مفتاحي وإلا يعيد الترميز بدقة ويقول قد إيه كان النسخ هيبدأ بدري، ويغيّر الصوت بنفس معدل العينة ونفس الطول، ويفتّح الفيديو المظلم ويقيس الإضاءة قبل وبعد، ويستخرج الصوت بدون إعادة ترميز لما ينفع. — Single-file FFmpeg operations with JSON receipts: lists keyframes; cuts by stream copy when the start sits on (or within a tolerance of) a keyframe and by exact re-encode otherwise, reporting how far a copy would have drifted; applies voice presets (chipmunk, deep, robot, echo, radio, telephone) at the file's real sample rate with the length kept and video stream-copied; lifts low-light video with an optional denoise and measures mean luma before and after, skipping clips that are already bright; extracts audio bit-exact when the container allows it.
 - **متى أستخدمها / when:** قص الفيديو من الدقيقة دي للدقيقة دي بسرعة من غير ما يبوظ الجودة / Cut a clip from 1:05 to 1:40 instantly without re-encoding if possible
 - **كيف / how:** doctor: `python3 scripts/fast_edit.py doctor`; keyframes: `python3 scripts/fast_edit.py keyframes --input ./clip.mp4`; cut: `python3 scripts/fast_edit.py cut --input ./clip.mp4 --start 65 --end 100 --output ./cut.mp4`; voice: `python3 scripts/fast_edit.py voice --input ./talk.mp4 --preset robot --output ./robot.mp4`. Full card: `python3 scripts/hub.py tool fast-edit`. Limits: One file per command, no timeline. A copy cut starts on the keyframe at or before the start and may keep a frame or two past the end (B-frame reordering); use --mode exact for frame accuracy. Voice presets are classic DSP effects, not AI voice conversion. Brighten is a fixed tone curve measured by mean luma, not a learned low-light model. **أرقام / params:** in: One local video or audio file the user owns or may edit, plus times in seconds and a preset name. · out: A new media file and a kosif.fast_edit.receipt.v1 JSON receipt (plan, measured durations, SHA-256, luma or copy flags); the source is never modified and an existing output is kept unless --force.
@@ -736,7 +744,7 @@
 - **الدليل / proof:** `kosif-tool/.claude/skills/kosif-superpowers/evals/test_tts_script.py` · `kosif-tool/.claude/skills/kosif-superpowers/scripts/tts_script.py`
 - **المصدر / source:** data/tools.json
 
-#### TOOL-164 · سطور الترجمة: من توقيت الكلمات إلى ترجمة مقروءة · Caption lines: word timings to readable SRT/VTT · ✅ مُثبت هنا / proven here
+#### TOOL-165 · سطور الترجمة: من توقيت الكلمات إلى ترجمة مقروءة · Caption lines: word timings to readable SRT/VTT · ✅ مُثبت هنا / proven here
 - **ماذا / what:** كُتبت بعد دراسة «مونتاجي»: تقسم توقيت الكلمات إلى سطور ترجمة قصيرة بحد للكلمات والحروف والمدة، وتكسر عند الوقفة ونهاية الجملة والفاصلة، وتسد الفجوات القصيرة، وتضيف علامة الاتجاه للعربي، وتحذف ما يخترعه نموذج التفريغ مثل «ترجمة نانسي» و«اشتركوا في القناة» مع سرده؛ وlint يفحص أي ملف ترجمة. — Written after a read-only study of the Montaji Arabic video editor: groups word timings (atlas words.json, whisper.cpp -oj or faster-whisper JSON) into short caption lines by word count, characters, time on screen, pauses, sentence ends (including ؟ and ؛) and commas; closes short holes, extends short lines only into silence, can add a right-to-left mark for Arabic, and drops and lists phrases speech models invent (subtitle credits, subscribe outros, sound tags, punctuation-only and looping lines). lint checks any SRT/VTT/JSON for overlaps, durations, reading speed and the same phrases.
 - **متى أستخدمها / when:** قسّم التفريغ ده لسطور ترجمة قصيرة SRT / Turn these Whisper word timestamps into readable captions
 - **كيف / how:** group: `python3 scripts/caption_lines.py group words.json -o captions.srt --rlm`; lint: `python3 scripts/caption_lines.py lint captions.srt`. Full card: `python3 scripts/hub.py tool caption-lines`. Limits: Does not transcribe: pair it with whisper.cpp or faster-whisper. The suspect-phrase list is short and generic, so a real spoken 'subscribe' is dropped too (use --keep-suspect). Line breaking counts characters, not rendered width. **أرقام / params:** in: Word timings: atlas words.json, {"words": [...]}, whisper.cpp -oj JSON (one word per entry with -ml 1) or faster-whisper/openai segments[].words; or an SRT/VTT/JSON caption file for lint. · out: captions .srt, .vtt or kosif.caption-lines.v1 JSON (lines, the rule that broke each line, dropped lines with the reason).
@@ -882,7 +890,7 @@
 - **الدليل / proof:** `kosif-tool/.claude/skills/kosif-superpowers/evals/test_drawing_council.py` · `kosif-tool/.claude/skills/kosif-superpowers/scripts/drawing_council.py`
 - **المصدر / source:** data/tools.json
 
-#### TOOL-168 · محرك الخامات الملوّنة: ألوان خشبية وفرشاة زيت وألوان مائية لأي صورة · Colour media engine: coloured pencil, oil brush and watercolour painting of a photo · ✅ مُثبت هنا / proven here
+#### TOOL-169 · محرك الخامات الملوّنة: ألوان خشبية وفرشاة زيت وألوان مائية لأي صورة · Colour media engine: coloured pencil, oil brush and watercolour painting of a photo · ✅ مُثبت هنا / proven here
 - **ماذا / what:** محرك الألوان لخط البورتريه: يقيس المرجع كما في الرصاص ثم يلوّن لوحة فارغة بالألوان الخشبية (30 قلمًا بطبقات من الفاتح للغامق) أو فرشاة الزيت (ضربات منحنية من الكبيرة للصغيرة بسماكة) أو الألوان المائية (رسم قلم خفيف ثم غسلات شفافة). لا ينسخ أي بكسل من الصورة. يُستدعى عادة عبر portrait_pipeline.py. — The portrait pipeline's colour engine. It measures the reference as for graphite and paints a blank canvas: coloured pencil (30 named pencils glazed light to dark), oil (toned ground, coarse-to-fine curved brush strokes with bristle streaks and lit impasto) or watercolour (pencil underdrawing, transparent washes light to dark with edge darkening and granulation). No photo pixel is copied. Usually called through portrait_pipeline.py --medium colored-pencil|oil|watercolor.
 - **متى أستخدمها / when:** ارسم صورتي بالألوان الخشبية / Paint this photo as an oil painting with visible brush strokes
 - **كيف / how:** draw: `python3 scripts/color_media.py draw --photo in.png --out out/x --medium oil`; palette: `python3 scripts/color_media.py palette`. Full card: `python3 scripts/hub.py tool color-media`. Limits: Algorithmic rendering, not a human hand or neural model; oil takes each stroke's colour from a blurred reference and watercolour washes are flat per segmented shape; impasto, weave and granulation are simulated. **أرقام / params:** in: A photo (any subject); optional MediaPipe models dir for portraits · out: <name>.png, <name>.svg, receipt.json in --out
@@ -1009,7 +1017,7 @@
 - **الدليل / proof:** `kosif-tool/.claude/skills/kosif-superpowers/scripts/atlas_transfer.py`
 - **المصدر / source:** data/tools.json
 
-#### TOOL-161 · خريطة المستودع · Repo Map · ✅ مُثبت هنا / proven here
+#### TOOL-162 · خريطة المستودع · Repo Map · ✅ مُثبت هنا / proven here
 - **ماذا / what:** يعطي وكيل الكود شكل المستودع في ميزانية صغيرة: يحلل بايثون بـ ast وجافاسكربت/تايبسكربت وGo وRust بأنماط الأسطر، ويعرف أين يُعرَّف كل اسم ومن يذكره، ويرتب الملفات بـ PageRank على رسم الإشارات (مع إمكانية التركيز على ملفات أو كلمات)، ويطبع أهم الملفات بأسطر تعريفاتها حتى تنفد الميزانية. defs يبين أين يُعرَّف اسم ومن يستخدمه. يقرأ النص فقط ولا يستورد ولا يشغّل ولا يبني شيئًا من المستودع. — Gives a coding agent the shape of a codebase in a small budget: it parses Python with ast and JavaScript/TypeScript, Go and Rust by line patterns, finds where each name is defined and which files mention it, ranks files with PageRank over that reference graph (optionally pulled toward focus files or words), and prints the top files with their definition lines until a character budget is spent. defs shows where one name is defined and who uses it. It reads text only and never imports, runs or builds the target.
 - **متى أستخدمها / when:** فهمني المستودع ده بسرعة قبل ما نعدل فيه / give me a compact map of this repo for a coding agent
 - **كيف / how:** map: `python3 scripts/repo_map.py map scripts --budget 3000 --focus prompt`; defs: `python3 scripts/repo_map.py defs scripts lint`; --self-test: `python3 scripts/repo_map.py --self-test`. Full card: `python3 scripts/hub.py tool repo-map`. Limits: Non-Python languages are read by line patterns, so unusual syntax can be missed; mentions are matched by name, not resolved by scope, so two functions with one name share credit; files over 400 KB and vendor/build folders are skipped. **أرقام / params:** in: A local folder. · out: Text or JSON on stdout; it writes no files.
@@ -1498,7 +1506,7 @@
 
 ## المصادر والرخص / sources & licences
 
-- الرخص / licences: — (167)
+- الرخص / licences: — (168)
 - الأفكار مكتوبة بكلماتنا مع رابط المصدر؛ لا يُنسخ نص طرف ثالث طويل. Ideas are paraphrased with a link to the source; no long third-party text is copied. `—` = no licence recorded (own method or own wording).
 
 ---

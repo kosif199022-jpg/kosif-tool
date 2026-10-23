@@ -1,6 +1,6 @@
 # `engines-render-pipeline` — الثري دي والمحاكاة والرندر (445 بطاقة)
 
-> مكتبة بروتوكول USIP v5.5 الكاملة، مولّدة بـ `smart_capabilities.py cards` من `data/powers/engines-render-pipeline.json` وقواعد الملاحق A25–A29؛ لا تُحرَّر يدويًا. [الفهرس الرئيسي](../../README.md) · [فصل المجموعة](../../../.claude/skills/kosif-superpowers/references/library/3d.md) · [النواة](../../../.claude/skills/kosif-superpowers/PROTOCOL.md)
+> مكتبة بروتوكول USIP v5.6 الكاملة، مولّدة بـ `smart_capabilities.py cards` من `data/powers/engines-render-pipeline.json` وقواعد الملاحق A25–A29؛ لا تُحرَّر يدويًا. [الفهرس الرئيسي](../../README.md) · [فصل المجموعة](../../../.claude/skills/kosif-superpowers/references/library/3d.md) · [النواة](../../../.claude/skills/kosif-superpowers/PROTOCOL.md)
 
 ## الفهرس / contents
 
@@ -4036,7 +4036,7 @@
 
 **المعاملات:** r183 rename
 
-**التثبيت:** see arsenal-libraries.md
+**التثبيت:** npm i three@0.186.1 (MIT; version from arsenal-libraries.md)
 
 **الوسوم:** مؤثرات · بوست بروسيسنج · تأثيرات بصرية · post-processing · effects
 
@@ -4048,7 +4048,7 @@
 
 #### 2. الجاهزية والشارة (A28)
 
-- لا متطلبات مسجلة؛ افحص المسار والأداة بـ `hub.py doctor` قبل الشارة.
+- `npm:three` ← npm ls three أو وجود node_modules/three
 - الوضع 1: شارة «هنا الآن» بعد الفحص، لا 📦 الكتالوج تلقائيًا · الوضع 2: `كتالوج: 📦 · هنا: غير مفحوص` · الوضع 3: بلا شارة ولا معرّف.
 
 #### 3. موضعها في الخطة (A26)
@@ -4174,7 +4174,7 @@
 
 **المعاملات:** outline edgeStrength 3.0, thickness 1.0
 
-**التثبيت:** see arsenal-libraries.md
+**التثبيت:** npm i three@0.186.1 (MIT; version from arsenal-libraries.md)
 
 **الوسوم:** ظلال · تنعيم الحواف · حدود العناصر · antialiasing · ambient occlusion · reflections
 
@@ -4186,7 +4186,7 @@
 
 #### 2. الجاهزية والشارة (A28)
 
-- لا متطلبات مسجلة؛ افحص المسار والأداة بـ `hub.py doctor` قبل الشارة.
+- `npm:three` ← npm ls three أو وجود node_modules/three
 - الوضع 1: شارة «هنا الآن» بعد الفحص، لا 📦 الكتالوج تلقائيًا · الوضع 2: `كتالوج: 📦 · هنا: غير مفحوص` · الوضع 3: بلا شارة ولا معرّف.
 
 #### 3. موضعها في الخطة (A26)
@@ -4240,7 +4240,7 @@
 
 **كيف:** wgslFn() per docs/wgsl-integration.md.
 
-**التثبيت:** see arsenal-libraries.md
+**التثبيت:** npm i three@0.186.1 (MIT; version from arsenal-libraries.md)
 
 **الوسوم:** شيدر مخصص · كود GPU · دالة مخصصة · custom shader · gpu code
 
@@ -4252,7 +4252,7 @@
 
 #### 2. الجاهزية والشارة (A28)
 
-- لا متطلبات مسجلة؛ افحص المسار والأداة بـ `hub.py doctor` قبل الشارة.
+- `npm:three` ← npm ls three أو وجود node_modules/three
 - الوضع 1: شارة «هنا الآن» بعد الفحص، لا 📦 الكتالوج تلقائيًا · الوضع 2: `كتالوج: 📦 · هنا: غير مفحوص` · الوضع 3: بلا شارة ولا معرّف.
 
 #### 3. موضعها في الخطة (A26)
@@ -11512,7 +11512,7 @@
 | نطاق الدليل | `sibling` |
 | الرخصة | unknown |
 
-**ما هي:** أداة فيديو مباشرة بالشيفرة/الخط الزمني من كتالوج HyperFrames ذي 500 أداة (رابط فقط، غير مثبّتة). — Direct code/timeline video tool from the 500-tool HyperFrames catalog (link only, not installed).
+**ما هي:** محرك خارجي: Editly: أداة فيديو مباشرة بالشيفرة/الخط الزمني من كتالوج HyperFrames ذي 500 أداة (رابط فقط، غير مثبّتة). — External engine: Editly: Direct code/timeline video tool from the 500-tool HyperFrames catalog (link only, not installed).
 
 **متى:** حين يسأل المستخدم عن Editly أو عن محرك خارجي لصنع الفيديو بالكود أو بخط زمني (رابط فقط) / when asking about Editly or another external code/timeline video engine (link only, not installed)
 
@@ -11578,7 +11578,7 @@
 | نطاق الدليل | `sibling` |
 | الرخصة | unknown |
 
-**ما هي:** أداة فيديو مباشرة بالشيفرة/الخط الزمني من كتالوج HyperFrames ذي 500 أداة (رابط فقط، غير مثبّتة). — Direct code/timeline video tool from the 500-tool HyperFrames catalog (link only, not installed).
+**ما هي:** محرك خارجي: FFCreator: أداة فيديو مباشرة بالشيفرة/الخط الزمني من كتالوج HyperFrames ذي 500 أداة (رابط فقط، غير مثبّتة). — External engine: FFCreator: Direct code/timeline video tool from the 500-tool HyperFrames catalog (link only, not installed).
 
 **متى:** حين يسأل المستخدم عن FFCreator أو عن محرك خارجي لصنع الفيديو بالكود أو بخط زمني (رابط فقط) / when asking about FFCreator or another external code/timeline video engine (link only, not installed)
 
@@ -11714,7 +11714,7 @@
 | نطاق الدليل | `sibling` |
 | الرخصة | unknown |
 
-**ما هي:** أداة فيديو مباشرة بالشيفرة/الخط الزمني من كتالوج HyperFrames ذي 500 أداة (رابط فقط، غير مثبّتة). — Direct code/timeline video tool from the 500-tool HyperFrames catalog (link only, not installed).
+**ما هي:** محرك خارجي: fframes (MIT): أداة فيديو مباشرة بالشيفرة/الخط الزمني من كتالوج HyperFrames ذي 500 أداة (رابط فقط، غير مثبّتة). — External engine: fframes (MIT): Direct code/timeline video tool from the 500-tool HyperFrames catalog (link only, not installed).
 
 **متى:** حين يسأل المستخدم عن fframes أو عن محرك خارجي لصنع الفيديو بالكود أو بخط زمني (رابط فقط) / when asking about fframes or another external code/timeline video engine (link only, not installed)
 
@@ -11780,7 +11780,7 @@
 | نطاق الدليل | `sibling` |
 | الرخصة | unknown |
 
-**ما هي:** أداة فيديو مباشرة بالشيفرة/الخط الزمني من كتالوج HyperFrames ذي 500 أداة (رابط فقط، غير مثبّتة). — Direct code/timeline video tool from the 500-tool HyperFrames catalog (link only, not installed).
+**ما هي:** محرك خارجي: Manim Community (MIT): أداة فيديو مباشرة بالشيفرة/الخط الزمني من كتالوج HyperFrames ذي 500 أداة (رابط فقط، غير مثبّتة). — External engine: Manim Community (MIT): Direct code/timeline video tool from the 500-tool HyperFrames catalog (link only, not installed).
 
 **متى:** حين يسأل المستخدم عن Manim Community أو عن محرك خارجي لصنع الفيديو بالكود أو بخط زمني (رابط فقط) / when asking about Manim Community or another external code/timeline video engine (link only, not installed)
 
@@ -11846,7 +11846,7 @@
 | نطاق الدليل | `sibling` |
 | الرخصة | unknown |
 
-**ما هي:** أداة فيديو مباشرة بالشيفرة/الخط الزمني من كتالوج HyperFrames ذي 500 أداة (رابط فقط، غير مثبّتة). — Direct code/timeline video tool from the 500-tool HyperFrames catalog (link only, not installed).
+**ما هي:** محرك خارجي: Motion Canvas: أداة فيديو مباشرة بالشيفرة/الخط الزمني من كتالوج HyperFrames ذي 500 أداة (رابط فقط، غير مثبّتة). — External engine: Motion Canvas: Direct code/timeline video tool from the 500-tool HyperFrames catalog (link only, not installed).
 
 **متى:** حين يسأل المستخدم عن Motion Canvas أو عن محرك خارجي لصنع الفيديو بالكود أو بخط زمني (رابط فقط) / when asking about Motion Canvas or another external code/timeline video engine (link only, not installed)
 
@@ -11912,7 +11912,7 @@
 | نطاق الدليل | `sibling` |
 | الرخصة | unknown |
 
-**ما هي:** أداة فيديو مباشرة بالشيفرة/الخط الزمني من كتالوج HyperFrames ذي 500 أداة (رابط فقط، غير مثبّتة). — Direct code/timeline video tool from the 500-tool HyperFrames catalog (link only, not installed).
+**ما هي:** محرك خارجي: MoviePy: أداة فيديو مباشرة بالشيفرة/الخط الزمني من كتالوج HyperFrames ذي 500 أداة (رابط فقط، غير مثبّتة). — External engine: MoviePy: Direct code/timeline video tool from the 500-tool HyperFrames catalog (link only, not installed).
 
 **متى:** حين يسأل المستخدم عن MoviePy أو عن محرك خارجي لصنع الفيديو بالكود أو بخط زمني (رابط فقط) / when asking about MoviePy or another external code/timeline video engine (link only, not installed)
 
@@ -11978,7 +11978,7 @@
 | نطاق الدليل | `sibling` |
 | الرخصة | unknown |
 
-**ما هي:** أداة فيديو مباشرة بالشيفرة/الخط الزمني من كتالوج HyperFrames ذي 500 أداة (رابط فقط، غير مثبّتة). — Direct code/timeline video tool from the 500-tool HyperFrames catalog (link only, not installed).
+**ما هي:** محرك خارجي: Remotion: أداة فيديو مباشرة بالشيفرة/الخط الزمني من كتالوج HyperFrames ذي 500 أداة (رابط فقط، غير مثبّتة). — External engine: Remotion: Direct code/timeline video tool from the 500-tool HyperFrames catalog (link only, not installed).
 
 **متى:** حين يسأل المستخدم عن Remotion أو عن محرك خارجي لصنع الفيديو بالكود أو بخط زمني (رابط فقط) / when asking about Remotion or another external code/timeline video engine (link only, not installed)
 
@@ -12045,7 +12045,7 @@
 | نطاق الدليل | `sibling` |
 | الرخصة | unknown |
 
-**ما هي:** أداة فيديو مباشرة بالشيفرة/الخط الزمني من كتالوج HyperFrames ذي 500 أداة (رابط فقط، غير مثبّتة). — Direct code/timeline video tool from the 500-tool HyperFrames catalog (link only, not installed).
+**ما هي:** محرك خارجي: Rendervid: أداة فيديو مباشرة بالشيفرة/الخط الزمني من كتالوج HyperFrames ذي 500 أداة (رابط فقط، غير مثبّتة). — External engine: Rendervid: Direct code/timeline video tool from the 500-tool HyperFrames catalog (link only, not installed).
 
 **متى:** حين يسأل المستخدم عن Rendervid أو عن محرك خارجي لصنع الفيديو بالكود أو بخط زمني (رابط فقط) / when asking about Rendervid or another external code/timeline video engine (link only, not installed)
 
@@ -12111,7 +12111,7 @@
 | نطاق الدليل | `sibling` |
 | الرخصة | unknown |
 
-**ما هي:** أداة فيديو مباشرة بالشيفرة/الخط الزمني من كتالوج HyperFrames ذي 500 أداة (رابط فقط، غير مثبّتة). — Direct code/timeline video tool from the 500-tool HyperFrames catalog (link only, not installed).
+**ما هي:** محرك خارجي: Revideo: أداة فيديو مباشرة بالشيفرة/الخط الزمني من كتالوج HyperFrames ذي 500 أداة (رابط فقط، غير مثبّتة). — External engine: Revideo: Direct code/timeline video tool from the 500-tool HyperFrames catalog (link only, not installed).
 
 **متى:** حين يسأل المستخدم عن Revideo أو عن محرك خارجي لصنع الفيديو بالكود أو بخط زمني (رابط فقط) / when asking about Revideo or another external code/timeline video engine (link only, not installed)
 
@@ -12177,7 +12177,7 @@
 | نطاق الدليل | `sibling` |
 | الرخصة | unknown |
 
-**ما هي:** أداة فيديو مباشرة بالشيفرة/الخط الزمني من كتالوج HyperFrames ذي 500 أداة (رابط فقط، غير مثبّتة). — Direct code/timeline video tool from the 500-tool HyperFrames catalog (link only, not installed).
+**ما هي:** محرك خارجي: VideoFlow (Apache-2.0): أداة فيديو مباشرة بالشيفرة/الخط الزمني من كتالوج HyperFrames ذي 500 أداة (رابط فقط، غير مثبّتة). — External engine: VideoFlow (Apache-2.0): Direct code/timeline video tool from the 500-tool HyperFrames catalog (link only, not installed).
 
 **متى:** حين يسأل المستخدم عن VideoFlow أو عن محرك خارجي لصنع الفيديو بالكود أو بخط زمني (رابط فقط) / when asking about VideoFlow or another external code/timeline video engine (link only, not installed)
 
@@ -12243,7 +12243,7 @@
 | نطاق الدليل | `sibling` |
 | الرخصة | unknown |
 
-**ما هي:** أداة فيديو مباشرة بالشيفرة/الخط الزمني من كتالوج HyperFrames ذي 500 أداة (رابط فقط، غير مثبّتة). — Direct code/timeline video tool from the 500-tool HyperFrames catalog (link only, not installed).
+**ما هي:** محرك خارجي: VideoRenderingEngine: أداة فيديو مباشرة بالشيفرة/الخط الزمني من كتالوج HyperFrames ذي 500 أداة (رابط فقط، غير مثبّتة). — External engine: VideoRenderingEngine: Direct code/timeline video tool from the 500-tool HyperFrames catalog (link only, not installed).
 
 **متى:** حين يسأل المستخدم عن VideoRenderingEngine أو عن محرك خارجي لصنع الفيديو بالكود أو بخط زمني (رابط فقط) / when asking about VideoRenderingEngine or another external code/timeline video engine (link only, not installed)
 
@@ -12309,7 +12309,7 @@
 | نطاق الدليل | `sibling` |
 | الرخصة | unknown |
 
-**ما هي:** أداة فيديو مباشرة بالشيفرة/الخط الزمني من كتالوج HyperFrames ذي 500 أداة (رابط فقط، غير مثبّتة). — Direct code/timeline video tool from the 500-tool HyperFrames catalog (link only, not installed).
+**ما هي:** محرك خارجي: VidPy: أداة فيديو مباشرة بالشيفرة/الخط الزمني من كتالوج HyperFrames ذي 500 أداة (رابط فقط، غير مثبّتة). — External engine: VidPy: Direct code/timeline video tool from the 500-tool HyperFrames catalog (link only, not installed).
 
 **متى:** حين يسأل المستخدم عن VidPy أو عن محرك خارجي لصنع الفيديو بالكود أو بخط زمني (رابط فقط) / when asking about VidPy or another external code/timeline video engine (link only, not installed)
 
@@ -12444,7 +12444,7 @@
 | نطاق الدليل | `sibling` |
 | الرخصة | unknown |
 
-**ما هي:** أداة فيديو مباشرة بالشيفرة/الخط الزمني من كتالوج HyperFrames ذي 500 أداة (رابط فقط، غير مثبّتة). — Direct code/timeline video tool from the 500-tool HyperFrames catalog (link only, not installed).
+**ما هي:** محرك خارجي: WebMotion (MIT): أداة فيديو مباشرة بالشيفرة/الخط الزمني من كتالوج HyperFrames ذي 500 أداة (رابط فقط، غير مثبّتة). — External engine: WebMotion (MIT): Direct code/timeline video tool from the 500-tool HyperFrames catalog (link only, not installed).
 
 **متى:** حين يسأل المستخدم عن WebMotion أو عن محرك خارجي لصنع الفيديو بالكود أو بخط زمني (رابط فقط) / when asking about WebMotion or another external code/timeline video engine (link only, not installed)
 
@@ -12510,7 +12510,7 @@
 | نطاق الدليل | `sibling` |
 | الرخصة | unknown |
 
-**ما هي:** أداة فيديو مباشرة بالشيفرة/الخط الزمني من كتالوج HyperFrames ذي 500 أداة (رابط فقط، غير مثبّتة). — Direct code/timeline video tool from the 500-tool HyperFrames catalog (link only, not installed).
+**ما هي:** محرك خارجي: Diffusion Studio Core: أداة فيديو مباشرة بالشيفرة/الخط الزمني من كتالوج HyperFrames ذي 500 أداة (رابط فقط، غير مثبّتة). — External engine: Diffusion Studio Core: Direct code/timeline video tool from the 500-tool HyperFrames catalog (link only, not installed).
 
 **متى:** حين يسأل المستخدم عن Diffusion Studio Core أو عن محرك خارجي لصنع الفيديو بالكود أو بخط زمني (رابط فقط) / when asking about Diffusion Studio Core or another external code/timeline video engine (link only, not installed)
 
@@ -12576,7 +12576,7 @@
 | نطاق الدليل | `sibling` |
 | الرخصة | unknown |
 
-**ما هي:** أداة فيديو مباشرة بالشيفرة/الخط الزمني من كتالوج HyperFrames ذي 500 أداة (رابط فقط، غير مثبّتة). — Direct code/timeline video tool from the 500-tool HyperFrames catalog (link only, not installed).
+**ما هي:** محرك خارجي: Etro (GPL-3.0): أداة فيديو مباشرة بالشيفرة/الخط الزمني من كتالوج HyperFrames ذي 500 أداة (رابط فقط، غير مثبّتة). — External engine: Etro (GPL-3.0): Direct code/timeline video tool from the 500-tool HyperFrames catalog (link only, not installed).
 
 **متى:** حين يسأل المستخدم عن Etro أو عن محرك خارجي لصنع الفيديو بالكود أو بخط زمني (رابط فقط) / when asking about Etro or another external code/timeline video engine (link only, not installed)
 
@@ -12642,7 +12642,7 @@
 | نطاق الدليل | `sibling` |
 | الرخصة | unknown |
 
-**ما هي:** أداة فيديو مباشرة بالشيفرة/الخط الزمني من كتالوج HyperFrames ذي 500 أداة (رابط فقط، غير مثبّتة). — Direct code/timeline video tool from the 500-tool HyperFrames catalog (link only, not installed).
+**ما هي:** محرك خارجي: Movie Masher (MPL-2.0): أداة فيديو مباشرة بالشيفرة/الخط الزمني من كتالوج HyperFrames ذي 500 أداة (رابط فقط، غير مثبّتة). — External engine: Movie Masher (MPL-2.0): Direct code/timeline video tool from the 500-tool HyperFrames catalog (link only, not installed).
 
 **متى:** حين يسأل المستخدم عن Movie Masher أو عن محرك خارجي لصنع الفيديو بالكود أو بخط زمني (رابط فقط) / when asking about Movie Masher or another external code/timeline video engine (link only, not installed)
 
@@ -12708,7 +12708,7 @@
 | نطاق الدليل | `sibling` |
 | الرخصة | unknown |
 
-**ما هي:** أداة فيديو مباشرة بالشيفرة/الخط الزمني من كتالوج HyperFrames ذي 500 أداة (رابط فقط، غير مثبّتة). — Direct code/timeline video tool from the 500-tool HyperFrames catalog (link only, not installed).
+**ما هي:** محرك خارجي: Twick: أداة فيديو مباشرة بالشيفرة/الخط الزمني من كتالوج HyperFrames ذي 500 أداة (رابط فقط، غير مثبّتة). — External engine: Twick: Direct code/timeline video tool from the 500-tool HyperFrames catalog (link only, not installed).
 
 **متى:** حين يسأل المستخدم عن Twick أو عن محرك خارجي لصنع الفيديو بالكود أو بخط زمني (رابط فقط) / when asking about Twick or another external code/timeline video engine (link only, not installed)
 
@@ -12774,7 +12774,7 @@
 | نطاق الدليل | `sibling` |
 | الرخصة | unknown |
 
-**ما هي:** أداة فيديو مباشرة بالشيفرة/الخط الزمني من كتالوج HyperFrames ذي 500 أداة (رابط فقط، غير مثبّتة). — Direct code/timeline video tool from the 500-tool HyperFrames catalog (link only, not installed).
+**ما هي:** محرك خارجي: WebAV: أداة فيديو مباشرة بالشيفرة/الخط الزمني من كتالوج HyperFrames ذي 500 أداة (رابط فقط، غير مثبّتة). — External engine: WebAV: Direct code/timeline video tool from the 500-tool HyperFrames catalog (link only, not installed).
 
 **متى:** حين يسأل المستخدم عن WebAV أو عن محرك خارجي لصنع الفيديو بالكود أو بخط زمني (رابط فقط) / when asking about WebAV or another external code/timeline video engine (link only, not installed)
 
@@ -12840,7 +12840,7 @@
 | نطاق الدليل | `sibling` |
 | الرخصة | unknown |
 
-**ما هي:** أداة فيديو مباشرة بالشيفرة/الخط الزمني من كتالوج HyperFrames ذي 500 أداة (رابط فقط، غير مثبّتة). — Direct code/timeline video tool from the 500-tool HyperFrames catalog (link only, not installed).
+**ما هي:** محرك خارجي: Creatomate: أداة فيديو مباشرة بالشيفرة/الخط الزمني من كتالوج HyperFrames ذي 500 أداة (رابط فقط، غير مثبّتة). — External engine: Creatomate: Direct code/timeline video tool from the 500-tool HyperFrames catalog (link only, not installed).
 
 **متى:** حين يسأل المستخدم عن Creatomate أو عن محرك خارجي لصنع الفيديو بالكود أو بخط زمني (رابط فقط) / when asking about Creatomate or another external code/timeline video engine (link only, not installed)
 
@@ -12906,7 +12906,7 @@
 | نطاق الدليل | `sibling` |
 | الرخصة | unknown |
 
-**ما هي:** أداة فيديو مباشرة بالشيفرة/الخط الزمني من كتالوج HyperFrames ذي 500 أداة (رابط فقط، غير مثبّتة). — Direct code/timeline video tool from the 500-tool HyperFrames catalog (link only, not installed).
+**ما هي:** محرك خارجي: iLoveVideoEditor: أداة فيديو مباشرة بالشيفرة/الخط الزمني من كتالوج HyperFrames ذي 500 أداة (رابط فقط، غير مثبّتة). — External engine: iLoveVideoEditor: Direct code/timeline video tool from the 500-tool HyperFrames catalog (link only, not installed).
 
 **متى:** حين يسأل المستخدم عن iLoveVideoEditor أو عن محرك خارجي لصنع الفيديو بالكود أو بخط زمني (رابط فقط) / when asking about iLoveVideoEditor or another external code/timeline video engine (link only, not installed)
 
@@ -12972,7 +12972,7 @@
 | نطاق الدليل | `sibling` |
 | الرخصة | unknown |
 
-**ما هي:** أداة فيديو مباشرة بالشيفرة/الخط الزمني من كتالوج HyperFrames ذي 500 أداة (رابط فقط، غير مثبّتة). — Direct code/timeline video tool from the 500-tool HyperFrames catalog (link only, not installed).
+**ما هي:** محرك خارجي: JSON2Video: أداة فيديو مباشرة بالشيفرة/الخط الزمني من كتالوج HyperFrames ذي 500 أداة (رابط فقط، غير مثبّتة). — External engine: JSON2Video: Direct code/timeline video tool from the 500-tool HyperFrames catalog (link only, not installed).
 
 **متى:** حين يسأل المستخدم عن JSON2Video أو عن محرك خارجي لصنع الفيديو بالكود أو بخط زمني (رابط فقط) / when asking about JSON2Video or another external code/timeline video engine (link only, not installed)
 
@@ -13038,7 +13038,7 @@
 | نطاق الدليل | `sibling` |
 | الرخصة | unknown |
 
-**ما هي:** أداة فيديو مباشرة بالشيفرة/الخط الزمني من كتالوج HyperFrames ذي 500 أداة (رابط فقط، غير مثبّتة). — Direct code/timeline video tool from the 500-tool HyperFrames catalog (link only, not installed).
+**ما هي:** محرك خارجي: Shotstack: أداة فيديو مباشرة بالشيفرة/الخط الزمني من كتالوج HyperFrames ذي 500 أداة (رابط فقط، غير مثبّتة). — External engine: Shotstack: Direct code/timeline video tool from the 500-tool HyperFrames catalog (link only, not installed).
 
 **متى:** حين يسأل المستخدم عن Shotstack أو عن محرك خارجي لصنع الفيديو بالكود أو بخط زمني (رابط فقط) / when asking about Shotstack or another external code/timeline video engine (link only, not installed)
 
@@ -13243,7 +13243,7 @@
 | نطاق الدليل | `sibling` |
 | الرخصة | source-available |
 
-**ما هي:** مهارة/MCP/مكتبة مفهرسة (رابط فقط؛ غير مثبّتة هنا). — Catalogued skill/MCP/library (link only; not installed here).
+**ما هي:** تكامل: Remotion Agent Skills: مهارة/MCP/مكتبة مفهرسة (رابط فقط؛ غير مثبّتة هنا). — Integration: Remotion Agent Skills: Catalogued skill/MCP/library (link only; not installed here).
 
 **متى:** حين يسأل المستخدم عن مهارات Remotion للوكلاء ويحتاج رابط الإعداد الرسمي لأنها غير مثبتة هنا / when the user asks about Remotion Agent Skills and needs the official setup link (not installed here)
 
@@ -13309,7 +13309,7 @@
 | نطاق الدليل | `sibling` |
 | الرخصة | Apache-2.0 |
 
-**ما هي:** مهارة/MCP/مكتبة مفهرسة (رابط فقط؛ غير مثبّتة هنا). — Catalogued skill/MCP/library (link only; not installed here).
+**ما هي:** تكامل: HyperFrames skills plugin: مهارة/MCP/مكتبة مفهرسة (رابط فقط؛ غير مثبّتة هنا). — Integration: HyperFrames skills plugin: Catalogued skill/MCP/library (link only; not installed here).
 
 **متى:** حين يسأل المستخدم عن إضافة مهارات HyperFrames ويحتاج رابط إعدادها الرسمي لأنها غير مثبتة هنا / when the user asks about the HyperFrames skills plugin and needs its official setup link (not installed here)
 
@@ -13375,7 +13375,7 @@
 | نطاق الدليل | `sibling` |
 | الرخصة | MIT |
 
-**ما هي:** مهارة/MCP/مكتبة مفهرسة (رابط فقط؛ غير مثبّتة هنا). — Catalogued skill/MCP/library (link only; not installed here).
+**ما هي:** تكامل: PixiJS + skills: مهارة/MCP/مكتبة مفهرسة (رابط فقط؛ غير مثبّتة هنا). — Integration: PixiJS + skills: Catalogued skill/MCP/library (link only; not installed here).
 
 **متى:** حين يسأل المستخدم عن PixiJS مع مهاراتها ويحتاج رابط الإعداد الرسمي لأنها غير مثبتة هنا / when the user asks about PixiJS with skills and needs the official setup link (not installed here)
 
@@ -19456,7 +19456,7 @@
 | نطاق الدليل | `sibling` |
 | الرخصة | unknown |
 
-**ما هي:** مهارة/MCP/مكتبة مفهرسة (رابط فقط؛ غير مثبّتة هنا). — Catalogued skill/MCP/library (link only; not installed here).
+**ما هي:** تكامل: Lottie Creator MCP: مهارة/MCP/مكتبة مفهرسة (رابط فقط؛ غير مثبّتة هنا). — Integration: Lottie Creator MCP: Catalogued skill/MCP/library (link only; not installed here).
 
 **متى:** حين يذكر المستخدم Lottie Creator أو يحتاج أداة MCP له، وهو رابط مفهرس غير مثبت هنا / when the user mentions the Lottie Creator MCP; a catalogued link only, not installed here
 
@@ -19524,7 +19524,7 @@
 | نطاق الدليل | `sibling` |
 | الرخصة | proprietary |
 
-**ما هي:** مهارة/MCP/مكتبة مفهرسة (رابط فقط؛ غير مثبّتة هنا). — Catalogued skill/MCP/library (link only; not installed here).
+**ما هي:** تكامل: LottieFiles platform MCP: مهارة/MCP/مكتبة مفهرسة (رابط فقط؛ غير مثبّتة هنا). — Integration: LottieFiles platform MCP: Catalogued skill/MCP/library (link only; not installed here).
 
 **متى:** حين يحتاج المستخدم منصة LottieFiles عبر MCP، وهي رابط مفهرس غير مثبت هنا / when the user needs the LottieFiles platform MCP; a catalogued link only, not installed here
 

@@ -1,4 +1,4 @@
-"""USIP v5.5 full protocol library: one protocol card per catalog power and per runnable tool.
+"""USIP v5.6 full protocol library: one protocol card per catalog power and per runnable tool.
 
 Used by `smart_capabilities.py cards|cards-check`. Every card applies the rules of appendices A25-A29
 (data/usip_intelligence.json) to one record of data/powers/*.json or data/tools.json, so the library is
@@ -259,7 +259,7 @@ def build() -> dict:
         ev = {t["id"]: t.get("evidence") for t in reg["tools"]}
         tools = sorted(set(fam_tools.get(fam, [])), key=lambda i: (ev.get(i) != "tested-here", i))   # tested here first
         L = [f"# `{fam}` — {groups[group]['ar']} ({len(recs):,} بطاقة)", "",
-             f"> مكتبة بروتوكول USIP v5.5 الكاملة، مولّدة بـ `smart_capabilities.py cards` من `data/powers/{fam}.json` وقواعد الملاحق A25–A29؛ لا تُحرَّر يدويًا. "
+             f"> مكتبة بروتوكول USIP v5.6 الكاملة، مولّدة بـ `smart_capabilities.py cards` من `data/powers/{fam}.json` وقواعد الملاحق A25–A29؛ لا تُحرَّر يدويًا. "
              f"[الفهرس الرئيسي](../../README.md) · [فصل المجموعة]({SK_REL}/references/library/{group}.md) · [النواة]({SK_REL}/PROTOCOL.md)", "",
              "## الفهرس / contents", ""]
         L += [f"- [`{r['id']}` {_c(r['name_ar'])}](#{_slug(card_title(r))})" for r in recs]
@@ -284,7 +284,7 @@ def build() -> dict:
         tool_rows.append((area, len(ts), len(L), f"tools/{area}.md"))
     pages.update(methods_pages(intel))
     total = sum(len(v) + 1 for v in pages.values())
-    I = ["# مكتبة بروتوكول USIP v5.5 الكاملة / the full USIP v5.5 protocol library", "",
+    I = ["# مكتبة بروتوكول USIP v5.6 الكاملة / the full USIP v5.6 protocol library", "",
          f"> مولّدة بـ `python3 .claude/skills/kosif-superpowers/scripts/smart_capabilities.py cards` من كتالوج KOSIF وقواعد الملاحق A25–A29؛ لا تُحرَّر يدويًا، وتُفحص بـ `cards-check`. "
          f"النواة المحمولة للصق: [USIP_PORTABLE.md]({SK_REL[6:]}/USIP_PORTABLE.md).", "",
          "## الفهرس / contents", "", "- [ما هذه المكتبة](#ما-هذه-المكتبة)", "- [بطاقات القدرات](#بطاقات-القدرات)",

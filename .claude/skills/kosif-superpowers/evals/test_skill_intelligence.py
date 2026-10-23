@@ -180,7 +180,7 @@ class V53RoutingFixes(unittest.TestCase):
 
     def test_protocol_version_and_contract_fields(self):
         b = self.meta
-        self.assertEqual(b["protocol"], "USIP v5.5")
+        self.assertEqual(b["protocol"], "USIP v5.6")
         self.assertTrue(b["schema"].startswith("kosif.skill-intelligence"))
         self.assertTrue(b["coverage"]["complete"])
         self.assertEqual(set(b["plan_definitions"]), set("ABCD"))

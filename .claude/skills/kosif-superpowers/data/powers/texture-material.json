@@ -2,6 +2,7 @@
  {
   "id": "TEX-01",
   "family": "texture-material",
+  "domain": "motion",
   "name_ar": "حبيبات SVG متدرجة قابلة للبحث",
   "name_en": "Seekable stepped SVG grain (motion-kit)",
   "status": "proven",
@@ -39,6 +40,7 @@
  {
   "id": "TEX-02",
   "family": "texture-material",
+  "domain": "motion",
   "name_ar": "حبيبات ببذرة رقم الإطار",
   "name_en": "Frame-seeded grain (seek pages)",
   "status": "proven",
@@ -73,6 +75,7 @@
  {
   "id": "TEX-03",
   "family": "texture-material",
+  "domain": "motion",
   "name_ar": "حبيبات غاوسية في Pillow",
   "name_en": "Seeded Gaussian luminance grain (Studio painter)",
   "status": "ready",
@@ -107,6 +110,7 @@
  {
   "id": "TEX-04",
   "family": "texture-material",
+  "domain": "motion",
   "name_ar": "سلسلة تشطيب ffmpeg",
   "name_en": "ffmpeg film finish chain",
   "status": "proven",
@@ -144,6 +148,7 @@
  {
   "id": "TEX-05",
   "family": "texture-material",
+  "domain": "motion",
   "name_ar": "مطابقة اللوك: تعتيم وحبيبات وأشرطة",
   "name_en": "Look replication solver (vignette/grain/letterbox/fades)",
   "status": "ready",
@@ -176,6 +181,7 @@
  {
   "id": "TEX-06",
   "family": "texture-material",
+  "domain": "motion",
   "name_ar": "حبيبات ثلاثية الأبعاد (FilmPass)",
   "name_en": "3D film grain pass",
   "status": "ready",
@@ -211,6 +217,7 @@
  {
   "id": "TEX-07",
   "family": "texture-material",
+  "domain": "motion",
   "name_ar": "حبيبات 2% وانحراف لوني على الحواف",
   "name_en": "2% grain + edge-only chromatic aberration",
   "status": "documented",
@@ -242,6 +249,7 @@
  {
   "id": "TEX-08",
   "family": "texture-material",
+  "domain": "motion",
   "name_ar": "تلوين عتيق بغبار وخدوش",
   "name_en": "Vintage film grade: dust, scratches, split-tone",
   "status": "seen",
@@ -279,6 +287,7 @@
  {
   "id": "TEX-09",
   "family": "texture-material",
+  "domain": "motion",
   "name_ar": "أسود دافئ بحبيبات وتعتيم",
   "name_en": "Warm-black grain + vignette grade",
   "status": "seen",
@@ -320,6 +329,7 @@
  {
   "id": "TEX-10",
   "family": "texture-material",
+  "domain": "motion",
   "name_ar": "درجة الورق التحريري",
   "name_en": "Editorial paper grade",
   "status": "seen",
@@ -353,6 +363,7 @@
  {
   "id": "TEX-11",
   "family": "texture-material",
+  "domain": "motion",
   "name_ar": "حبيبات مع زوايا HUD",
   "name_en": "Film grain + HUD corners",
   "status": "seen",
@@ -385,6 +396,7 @@
  {
   "id": "TEX-12",
   "family": "texture-material",
+  "domain": "motion",
   "name_ar": "عنوان محبب متوهج",
   "name_en": "Grain-glow title card",
   "status": "seen",
@@ -418,6 +430,7 @@
  {
   "id": "TEX-13",
   "family": "texture-material",
+  "domain": "motion",
   "name_ar": "خلفية ورق ثابتة 5–10%",
   "name_en": "Static paper/board texture",
   "status": "documented",
@@ -450,6 +463,7 @@
  {
   "id": "TEX-14",
   "family": "texture-material",
+  "domain": "motion",
   "name_ar": "ورق ألوان مائية",
   "name_en": "Watercolour paper ground",
   "status": "seen",
@@ -483,6 +497,7 @@
  {
   "id": "TEX-15",
   "family": "texture-material",
+  "domain": "motion",
   "name_ar": "رق قديم بحواف ونقاط رمل",
   "name_en": "Parchment vignette + sand stipple",
   "status": "seen",
@@ -517,6 +532,7 @@
  {
   "id": "TEX-16",
   "family": "texture-material",
+  "domain": "motion",
   "name_ar": "كولاج ورقي (S04)",
   "name_en": "Paper collage style (S04)",
   "status": "documented",
@@ -551,6 +567,7 @@
  {
   "id": "TEX-17",
   "family": "texture-material",
+  "domain": "motion",
   "name_ar": "لوحة قصاصات وشريط يثبّتها",
   "name_en": "Cut-out board + tape pin (MG-101/102)",
   "status": "documented",
@@ -583,6 +600,7 @@
  {
   "id": "TEX-18",
   "family": "texture-material",
+  "domain": "motion",
   "name_ar": "تمزيق ورق يكشف ما تحته",
   "name_en": "Paper tear reveal",
   "status": "proven",
@@ -619,6 +637,7 @@
  {
   "id": "TEX-19",
   "family": "texture-material",
+  "domain": "motion",
   "name_ar": "رسمة ممسوحة كملصق",
   "name_en": "Scanned drawing as sticker cut-out",
   "status": "seen",
@@ -656,6 +675,7 @@
  {
   "id": "TEX-20",
   "family": "texture-material",
+  "domain": "motion",
   "name_ar": "قصاصة جريدة ونقش",
   "name_en": "Newspaper / engraving cut-out",
   "status": "seen",
@@ -691,6 +711,7 @@
  {
   "id": "TEX-21",
   "family": "texture-material",
+  "domain": "motion",
   "name_ar": "قفل أسلوب الأرشيف",
   "name_en": "Archival scrapbook style lock",
   "status": "ready",
@@ -723,6 +744,7 @@
  {
   "id": "TEX-22",
   "family": "texture-material",
+  "domain": "motion",
   "name_ar": "قفل الخلفية الورقية",
   "name_en": "Paper sketch background lock",
   "status": "ready",
@@ -754,6 +776,7 @@
  {
   "id": "TEX-23",
   "family": "texture-material",
+  "domain": "motion",
   "name_ar": "الورق المقصوص بعمق ثلاث طبقات",
   "name_en": "Paper cut-out style (3-depth parallax)",
   "status": "documented",
@@ -790,6 +813,7 @@
  {
   "id": "TEX-24",
   "family": "texture-material",
+  "domain": "motion",
   "name_ar": "ستوب موشن بارتعاش البذرة",
   "name_en": "Stop-motion seeded hold jitter",
   "status": "documented",
@@ -827,6 +851,7 @@
  {
   "id": "TEX-25",
   "family": "texture-material",
+  "domain": "motion",
   "name_ar": "صلصال مطفي وبصمات",
   "name_en": "Claymation matte + fingerprint texture",
   "status": "documented",
@@ -865,6 +890,7 @@
  {
   "id": "TEX-26",
   "family": "texture-material",
+  "domain": "motion",
   "name_ar": "مشهد أطفال بالكرايون",
   "name_en": "Crayon paper-craft kids scene",
   "status": "seen",
@@ -898,6 +924,7 @@
  {
   "id": "TEX-27",
   "family": "texture-material",
+  "domain": "motion",
   "name_ar": "النقص المقصود",
   "name_en": "Intentional imperfection (wabi-sabi)",
   "status": "documented",
@@ -928,6 +955,7 @@
  {
   "id": "TEX-28",
   "family": "texture-material",
+  "domain": "motion",
   "name_ar": "إزالة الخلفية بلون الزاوية",
   "name_en": "Corner-colour background knockout",
   "status": "ready",
@@ -961,6 +989,7 @@
  {
   "id": "TEX-29",
   "family": "texture-material",
+  "domain": "motion",
   "name_ar": "تظليل كرة بالهالفتون",
   "name_en": "Halftone sphere (Lambert dots)",
   "status": "proven",
@@ -995,6 +1024,7 @@
  {
   "id": "TEX-30",
   "family": "texture-material",
+  "domain": "motion",
   "name_ar": "هالفتون CMYK",
   "name_en": "CMYK / gooey halftone",
   "status": "documented",
@@ -1028,6 +1058,7 @@
  {
   "id": "TEX-31",
   "family": "texture-material",
+  "domain": "motion",
   "name_ar": "نقاط هالفتون على القصاصة",
   "name_en": "Clipped halftone on a cut-out card",
   "status": "ready",
@@ -1059,6 +1090,7 @@
  {
   "id": "TEX-32",
   "family": "texture-material",
+  "domain": "motion",
   "name_ar": "موجة هالفتون ومواريه",
   "name_en": "Halftone ripple & moiré overprint",
   "status": "seen",
@@ -1099,6 +1131,7 @@
  {
   "id": "TEX-33",
   "family": "texture-material",
+  "domain": "motion",
   "name_ar": "خلفية أشرطة ضوء منقطة",
   "name_en": "Halftone light-band backdrop",
   "status": "seen",
@@ -1134,6 +1167,7 @@
  {
   "id": "TEX-34",
   "family": "texture-material",
+  "domain": "motion",
   "name_ar": "صورة هالفتون ماكرو",
   "name_en": "Halftone macro image",
   "status": "seen",
@@ -1169,6 +1203,7 @@
  {
   "id": "TEX-35",
   "family": "texture-material",
+  "domain": "motion",
   "name_ar": "سماء متدرجة بتنقيط Bayer",
   "name_en": "Bayer-dithered sky + stepped stars",
   "status": "proven",
@@ -1203,6 +1238,7 @@
  {
   "id": "TEX-36",
   "family": "texture-material",
+  "domain": "motion",
   "name_ar": "تعبئة تنقيط أحادية البت",
   "name_en": "1-bit dither fill with threshold sweep",
   "status": "seen",
@@ -1236,6 +1272,7 @@
  {
   "id": "TEX-37",
   "family": "texture-material",
+  "domain": "motion",
   "name_ar": "تعبئة حبيبات ريزو",
   "name_en": "Riso grain fill",
   "status": "seen",
@@ -1269,6 +1306,7 @@
  {
   "id": "TEX-38",
   "family": "texture-material",
+  "domain": "motion",
   "name_ar": "طبقة حبيبات نقطية",
   "name_en": "Dot-lattice grain overlay",
   "status": "proven",
@@ -1300,6 +1338,7 @@
  {
   "id": "TEX-39",
   "family": "texture-material",
+  "domain": "motion",
   "name_ar": "مؤثرات الشيدر على الصورة والفيديو (18)",
   "name_en": "HyperFrames shader media effects (18 keys)",
   "status": "install",
@@ -1340,6 +1379,7 @@
  {
   "id": "TEX-40",
   "family": "texture-material",
+  "domain": "motion",
   "name_ar": "بطاقة زجاجية فاخرة بعمق",
   "name_en": "Luxury depth glass cards",
   "status": "proven",
@@ -1374,6 +1414,7 @@
  {
   "id": "TEX-41",
   "family": "texture-material",
+  "domain": "motion",
   "name_ar": "وصفة الزجاج الداكن",
   "name_en": "Dark-only frosted glass panel recipe",
   "status": "documented",
@@ -1406,6 +1447,7 @@
  {
   "id": "TEX-42",
   "family": "texture-material",
+  "domain": "motion",
   "name_ar": "وصفات زجاج الواجهات",
   "name_en": "Glassmorphism UI recipes (menus, toasts, bars, dialogs)",
   "status": "ready",
@@ -1442,6 +1484,7 @@
  {
   "id": "TEX-43",
   "family": "texture-material",
+  "domain": "motion",
   "name_ar": "غلاف زجاجي فوق عالم ثلاثي",
   "name_en": "Glass shell over a live 3D background",
   "status": "ready",
@@ -1476,6 +1519,7 @@
  {
   "id": "TEX-44",
   "family": "texture-material",
+  "domain": "motion",
   "name_ar": "زجاج سائل بانكسار الحافة",
   "name_en": "Liquid glass control (edge refraction)",
   "status": "seen",
@@ -1513,6 +1557,7 @@
  {
   "id": "TEX-45",
   "family": "texture-material",
+  "domain": "motion",
   "name_ar": "حروف وأشكال من زجاج متجمد",
   "name_en": "Frosted glass shapes and letters",
   "status": "seen",
@@ -1548,6 +1593,7 @@
  {
   "id": "TEX-46",
   "family": "texture-material",
+  "domain": "motion",
   "name_ar": "زجاج بانكسار وتشتت لوني (3D)",
   "name_en": "Refraction + chromatic dispersion glass",
   "status": "install",
@@ -1583,6 +1629,7 @@
  {
   "id": "TEX-47",
   "family": "texture-material",
+  "domain": "motion",
   "name_ar": "ذهب معدني بلمعة متحركة",
   "name_en": "Metallic gold with moving sheen",
   "status": "proven",
@@ -1616,6 +1663,7 @@
  {
   "id": "TEX-48",
   "family": "texture-material",
+  "domain": "motion",
   "name_ar": "كرة لامعة من تدرجات",
   "name_en": "Glossy 2D sphere / orb from gradients",
   "status": "seen",
@@ -1652,6 +1700,7 @@
  {
   "id": "TEX-49",
   "family": "texture-material",
+  "domain": "motion",
   "name_ar": "كروم يعكس المشهد حيًا",
   "name_en": "Chrome via live CubeCamera reflection",
   "status": "install",
@@ -1690,6 +1739,7 @@
  {
   "id": "TEX-50",
   "family": "texture-material",
+  "domain": "motion",
   "name_ar": "ظلال ارتفاع ناعمة متعددة",
   "name_en": "Layered soft elevation shadows",
   "status": "ready",
@@ -1721,6 +1771,7 @@
  {
   "id": "TEX-51",
   "family": "texture-material",
+  "domain": "motion",
   "name_ar": "نسيج الضوضاء الكسرية",
   "name_en": "Fractal value-noise material (Studio painter)",
   "status": "proven",
@@ -1759,6 +1810,7 @@
  {
   "id": "TEX-52",
   "family": "texture-material",
+  "domain": "motion",
   "name_ar": "نقش الحراشف والقرميد",
   "name_en": "Scales / tiles pattern",
   "status": "proven",
@@ -1796,6 +1848,7 @@
  {
   "id": "TEX-53",
   "family": "texture-material",
+  "domain": "motion",
   "name_ar": "إضاءة بارزة بخريطة ارتفاع",
   "name_en": "Relief lighting (height field + SSS)",
   "status": "proven",
@@ -1830,6 +1883,7 @@
  {
   "id": "TEX-54",
   "family": "texture-material",
+  "domain": "motion",
   "name_ar": "سطح ماء يلمع",
   "name_en": "Water surface with light glints (Studio)",
   "status": "ready",
@@ -1865,6 +1919,7 @@
  {
   "id": "TEX-55",
   "family": "texture-material",
+  "domain": "motion",
   "name_ar": "ضوضاء بيرلين وfbm وridged ببذرة",
   "name_en": "Seeded CPU Perlin / fBm / ridged noise",
   "status": "ready",
@@ -1901,6 +1956,7 @@
  {
   "id": "TEX-56",
   "family": "texture-material",
+  "domain": "motion",
   "name_ar": "خامات مولّدة بلا تنزيل",
   "name_en": "Generated textures: noiseCanvas / normalFromHeight / spriteTex",
   "status": "ready",
@@ -1936,6 +1992,7 @@
  {
   "id": "TEX-57",
   "family": "texture-material",
+  "domain": "motion",
   "name_ar": "خامة بدن خشبي مدهون",
   "name_en": "Procedural painted wooden hull",
   "status": "proven",
@@ -1970,6 +2027,7 @@
  {
   "id": "TEX-58",
   "family": "texture-material",
+  "domain": "motion",
   "name_ar": "خامة قمر إجرائية",
   "name_en": "Procedural moon texture",
   "status": "proven",
@@ -2003,6 +2061,7 @@
  {
   "id": "TEX-59",
   "family": "texture-material",
+  "domain": "motion",
   "name_ar": "طوب إجرائي يتلوّن بالضوء",
   "name_en": "Procedural brick lit by a light map (multiply)",
   "status": "proven",
@@ -2036,6 +2095,7 @@
  {
   "id": "TEX-60",
   "family": "texture-material",
+  "domain": "motion",
   "name_ar": "غيوم SVG إجرائية",
   "name_en": "Procedural SVG clouds (feTurbulence + displacement)",
   "status": "proven",
@@ -2069,6 +2129,7 @@
  {
   "id": "TEX-61",
   "family": "texture-material",
+  "domain": "motion",
   "name_ar": "كلمة عربية مملوءة بسائل",
   "name_en": "Fluid-noise filled Arabic word",
   "status": "proven",
@@ -2107,6 +2168,7 @@
  {
   "id": "TEX-62",
   "family": "texture-material",
+  "domain": "motion",
   "name_ar": "نص بأقنعة الخامات (66 قناعًا)",
   "name_en": "Texture-mask text (66 PBR masks)",
   "status": "install",
@@ -2144,6 +2206,7 @@
  {
   "id": "TEX-63",
   "family": "texture-material",
+  "domain": "motion",
   "name_ar": "كتل شيدر المواد (WebGPU)",
   "name_en": "HyperFrames material shader blocks",
   "status": "install",
@@ -2184,6 +2247,7 @@
  {
   "id": "TEX-64",
   "family": "texture-material",
+  "domain": "motion",
   "name_ar": "حقل الحبيبات ونزف الحبر",
   "name_en": "Grain field & ink-bleed reveal (HyperFrames)",
   "status": "install",
@@ -2220,6 +2284,7 @@
  {
   "id": "TEX-65",
   "family": "texture-material",
+  "domain": "motion",
   "name_ar": "غيوم بخطوط فرشاة وسماء سديمية",
   "name_en": "Painterly streak clouds & nebula skies",
   "status": "seen",
@@ -2258,6 +2323,7 @@
  {
   "id": "TEX-66",
   "family": "texture-material",
+  "domain": "motion",
   "name_ar": "أرضية حمم بعروق مضيئة",
   "name_en": "Veined lava floor shader",
   "status": "seen",
@@ -2291,6 +2357,7 @@
  {
   "id": "TEX-67",
   "family": "texture-material",
+  "domain": "motion",
   "name_ar": "شيدر ضربات فرشاة",
   "name_en": "Stroke-based painterly shader",
   "status": "idea",
@@ -2327,6 +2394,7 @@
  {
   "id": "TEX-68",
   "family": "texture-material",
+  "domain": "motion",
   "name_ar": "طبقات درجات للفرشاة الجافة",
   "name_en": "Tone layers for a dry-brush look (rotoscope)",
   "status": "install",
@@ -2361,6 +2429,7 @@
  {
   "id": "TEX-69",
   "family": "texture-material",
+  "domain": "motion",
   "name_ar": "فحص قابلية التكرار للخامات المولدة",
   "name_en": "Seamless-tile check for AI textures",
   "status": "ready",
@@ -2392,6 +2461,7 @@
  {
   "id": "TEX-70",
   "family": "texture-material",
+  "domain": "motion",
   "name_ar": "كتيب وصفات المواد للرسام",
   "name_en": "Material recipe sheet (flame, spray, steam, fur, atmosphere)",
   "status": "documented",
@@ -2425,6 +2495,7 @@
  {
   "id": "TEX-71",
   "family": "texture-material",
+  "domain": "motion",
   "name_ar": "تدرج شبكي وشبكة خطوط",
   "name_en": "Mesh-gradient + grid backgrounds",
   "status": "documented",
@@ -2460,6 +2531,7 @@
  {
   "id": "TEX-72",
   "family": "texture-material",
+  "domain": "motion",
   "name_ar": "ست خلفيات نقشية متحركة",
   "name_en": "Basma animated pattern backgrounds (6 + gradient)",
   "status": "install",
@@ -2497,6 +2569,7 @@
  {
   "id": "TEX-73",
   "family": "texture-material",
+  "domain": "motion",
   "name_ar": "شبكة خطوط قطرية منجرفة",
   "name_en": "Drifting diagonal line grid",
   "status": "ready",
@@ -2528,6 +2601,7 @@
  {
   "id": "TEX-74",
   "family": "texture-material",
+  "domain": "motion",
   "name_ar": "شبكة نقطية تحريرية دقيقة",
   "name_en": "Fine dot-dash editorial grid",
   "status": "ready",
@@ -2559,6 +2633,7 @@
  {
   "id": "TEX-75",
   "family": "texture-material",
+  "domain": "motion",
   "name_ar": "ورق مربعات وشبكة قياس",
   "name_en": "Graph-paper & graticule grids",
   "status": "seen",
@@ -2594,6 +2669,7 @@
  {
   "id": "TEX-76",
   "family": "texture-material",
+  "domain": "motion",
   "name_ar": "جدار نص وبيانات خافت",
   "name_en": "Faint data/text wall",
   "status": "seen",
@@ -2631,6 +2707,7 @@
  {
   "id": "TEX-77",
   "family": "texture-material",
+  "domain": "motion",
   "name_ar": "أفق مدينة ليلي إجرائي",
   "name_en": "Procedural night skyline with lit windows",
   "status": "ready",
@@ -2663,6 +2740,7 @@
  {
   "id": "TEX-78",
   "family": "texture-material",
+  "domain": "motion",
   "name_ar": "انعكاسات الشارع المبتل",
   "name_en": "Wet street / floor reflections",
   "status": "proven",
@@ -2696,6 +2774,7 @@
  {
   "id": "TEX-79",
   "family": "texture-material",
+  "domain": "motion",
   "name_ar": "سبورة بآثار مسح",
   "name_en": "Whiteboard eraser-smudge texture",
   "status": "seen",
@@ -2728,6 +2807,7 @@
  {
   "id": "TEX-80",
   "family": "texture-material",
+  "domain": "motion",
   "name_ar": "حبيبات الطباشير",
   "name_en": "Chalk grain overlay",
   "status": "seen",
@@ -2760,6 +2840,7 @@
  {
   "id": "TEX-81",
   "family": "texture-material",
+  "domain": "motion",
   "name_ar": "تهشير داخل حدود الشكل",
   "name_en": "Clipped hatching / scribble fill",
   "status": "seen",
@@ -2795,6 +2876,7 @@
  {
   "id": "TEX-82",
   "family": "texture-material",
+  "domain": "motion",
   "name_ar": "أرضيات ورقية وبلاط",
   "name_en": "Paper doodle ground & tile floor",
   "status": "seen",
@@ -2831,6 +2913,7 @@
  {
   "id": "TEX-83",
   "family": "texture-material",
+  "domain": "motion",
   "name_ar": "مثال الحبيبات الدافئة",
   "name_en": "warm-grain example project (HyperFrames)",
   "status": "install",
@@ -2865,6 +2948,7 @@
  {
   "id": "TEX-84",
   "family": "texture-material",
+  "domain": "motion",
   "name_ar": "عائلة مواد مطفية واحدة",
   "name_en": "One matte material family",
   "status": "documented",
@@ -2899,6 +2983,7 @@
  {
   "id": "TEX-85",
   "family": "texture-material",
+  "domain": "motion",
   "name_ar": "وصفات PBR سريعة",
   "name_en": "Quick PBR recipes (Three.js)",
   "status": "documented",
@@ -2933,6 +3018,7 @@
  {
   "id": "TEX-86",
   "family": "texture-material",
+  "domain": "motion",
   "name_ar": "خامة القطيفة المحشوة",
   "name_en": "Plush felt material (velvet sheen + fibre)",
   "status": "ready",
@@ -2967,6 +3053,7 @@
  {
   "id": "TEX-87",
   "family": "texture-material",
+  "domain": "motion",
   "name_ar": "لمعان clearcoat للعين والأنف",
   "name_en": "Glossy clearcoat + eye with catch-lights",
   "status": "ready",
@@ -3000,6 +3087,7 @@
  {
   "id": "TEX-88",
   "family": "texture-material",
+  "domain": "motion",
   "name_ar": "طقم مواد المختبر",
   "name_en": "Lab material set (plush/gloss/leather/metal)",
   "status": "ready",
@@ -3034,6 +3122,7 @@
  {
   "id": "TEX-89",
   "family": "texture-material",
+  "domain": "motion",
   "name_ar": "فرو بالطبقات",
   "name_en": "Shell fur",
   "status": "ready",
@@ -3069,6 +3158,7 @@
  {
   "id": "TEX-90",
   "family": "texture-material",
+  "domain": "motion",
   "name_ar": "بقع لونية على المجسم",
   "name_en": "Colour paint stamps on SDF",
   "status": "ready",
@@ -3101,6 +3191,7 @@
  {
   "id": "TEX-91",
   "family": "texture-material",
+  "domain": "motion",
   "name_ar": "شفافية الأشعة السينية للدمية",
   "name_en": "Plush X-ray during analysis",
   "status": "ready",
@@ -3132,6 +3223,7 @@
  {
   "id": "TEX-92",
   "family": "texture-material",
+  "domain": "motion",
   "name_ar": "حصى وقصب",
   "name_en": "Pebbles & reed blades",
   "status": "ready",
@@ -3165,6 +3257,7 @@
  {
   "id": "TEX-93",
   "family": "texture-material",
+  "domain": "motion",
   "name_ar": "قاع بركة بانكسارات ضوئية",
   "name_en": "Pond bed terrain with caustics",
   "status": "install",
@@ -3203,6 +3296,7 @@
  {
   "id": "TEX-94",
   "family": "texture-material",
+  "domain": "motion",
   "name_ar": "أسفلت مبلل وطلاء عاكس",
   "name_en": "Wet asphalt + retro-reflective road paint",
   "status": "install",

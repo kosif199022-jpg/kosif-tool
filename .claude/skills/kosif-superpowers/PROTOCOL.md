@@ -1,8 +1,8 @@
-# KOSIF SUPERPOWERS × KOSIF SEE — UNIVERSAL SKILL INTELLIGENCE PROTOCOL (USIP v5.5)
+# KOSIF SUPERPOWERS × KOSIF SEE — UNIVERSAL SKILL INTELLIGENCE PROTOCOL (USIP v5.6)
 
 بروتوكول الفهم الشامل والتفكير الإبداعي واختيار القدرات قبل التنفيذ — تعليمات دائمة لـ Claude داخل مستودع [kosif-tool](https://github.com/kosif199022-jpg/kosif-tool)، مسار المهارة `.claude/skills/kosif-superpowers/`. نصفه الآلي `scripts/skill_intelligence.py` (إيصال، ترشيح، مسودة خطط وأسئلة) و`scripts/fusionforge.py` (وصفة المشروع وسجل التجربة)، ونصفه العقلي هذه الصفحة (فهم، تنقيح، حكم).
 
-> **USIP v5.5 — 23-10-2026:** ذكاء الاستقبال والتوضيح ([A25](references/protocol/A25-task-intake-clarification.md))، والتخطيط والتفكيك ([A26](references/protocol/A26-planning-decomposition.md))، والتحقق ومعايير الجودة ([A27](references/protocol/A27-verification-quality-standards.md))، واختيار الأدوات في أي بيئة مع مكتبة 15 مجموعة ([A28](references/protocol/A28-capability-routing.md))، والتعافي من الفشل ([A29](references/protocol/A29-failure-recovery.md))، بأوامر `think.py intake/decompose/qa/recover` المختبرة. v5.4 (A24 والترتيب) وv5.3 وما قبلها في [CHANGELOG](references/protocol/CHANGELOG.md).
+> **USIP v5.6 — 23-10-2026:** طبقة الدقة ([A34](references/protocol/A34-usip-v56-precision-layer.md)): الفهرس الدقيق (`micro_index.py find/show`، سطر لكل قدرة وأداة وقدرة خارقة)، والبروتوكول المختصر للصق في أي مساعد (`USIP_PASTE.md`)، وكل أداة لها بطاقة `TOOL-NN`، وقواعد صحة التوجيه وصدق البطاقات، وسلم البرو بأقصى قوة، وقواعد العمل المتوازي وطابور الدمج. v5.5 (A25–A29) وما قبلها في [CHANGELOG](references/protocol/CHANGELOG.md).
 
 ## الفهرس / contents
 
@@ -63,6 +63,7 @@
 | [A29 التعافي من الفشل](references/protocol/A29-failure-recovery.md) | خطأ أو قياس دون العتبة، أو قبل إعادة محاولة | جديد؛ البند 5 من المرحلة 9 | `think.py recover` |
 | [A31 مجلس خبراء الرسم](references/protocol/A31-drawing-council.md) | قبل إرسال أي صورة أو رسمة (القانون 27) | جديد | `drawing_council.py` |
 | [A33 تعدين المستودعات والبرومبت](references/protocol/A33-open-source-mining-prompts.md) | التعلم من مستودعات GitHub أو الويب، أو كتابة برومبت لنموذج أو مولد أو وكيل | جديد؛ بوابات الترخيص والبرومبت | `github_top_repos.py`، `prompt_lab.py` |
+| [A34 طبقة الدقة v5.6](references/protocol/A34-usip-v56-precision-layer.md) | تبحث عن قدرة أو أداة بعينها، أو تنسخ البروتوكول لمساعد آخر، أو تضيف أداة أو بطاقة أو تعدّل التوجيه، أو تعمل بطابور دمج | جديد؛ الفهرس الدقيق والنسخة المختصرة | `micro_index.py`، `USIP_PASTE.md` |
 | [CHANGELOG](references/protocol/CHANGELOG.md) | تبحث عن قسم قديم برقمه أو عن تاريخ الإصدارات | خريطة كل قسم قديم إلى مكانه | — |
 
 ## المستودع الأصل — اقرأه كاملًا حتى لو لم تكن المهارة مثبتة
@@ -473,7 +474,7 @@ python3 .claude/skills/kosif-superpowers/scripts/fusionforge.py propose "<اله
 
 المعاني المعتمدة في كل ملف ومحرك (النواة، الملاحق، `SESSION_PROMPT.md`، `CLAUDE.md`، `SKILL.md`، `skill_intelligence.py`، `fusionforge.py`):
 
-**الإصدارات:** البروتوكول **USIP v5.5** (23-10-2026)؛ محرك الوصفات **FusionForge v2** (مخطط `kosif.fusionforge.recipe.v2`).
+**الإصدارات:** البروتوكول **USIP v5.6** (23-10-2026)؛ محرك الوصفات **FusionForge v2** (مخطط `kosif.fusionforge.recipe.v2`).
 
 **الخطط** (تعريفات المرحلة 6 هي المصدر الوحيد):
 - **A — الذكية السريعة:** أبسط مسار يحقق كل متطلب إلزامي (لا الأرخص؛ خطة تفوّت متطلبًا إلزاميًا ليست A). — `simplest path that meets every must-have`
@@ -501,8 +502,8 @@ python3 .claude/skills/kosif-superpowers/scripts/fusionforge.py propose "<اله
 
 ## النسخة المختصرة للصق في مشروع claude.ai
 
-> **USIP v5.5 لكامل منهج KOSIF SEE مع FusionForge v2:** ابدأ بـ Stage-0 (11 عدسة تفكير: صياغة الطلب، المنظورات، حساسية القرار، النقد المسبق، الأدلة، التوقع، التقييم، PRD، المعمارية، الأرقام، السببية). اختر أصغر مجموعة مناسبة من 9 حزم SEE هي مناهج تفكير لا أدوات: Research, Agent Contracts, Eval & Trust, Engineering, Product, Finance, Prompt Architecture, Media & Motion, Skill Orchestrator؛ سقف <=2 عاديًا و<=4 Deep/Full Pro، والمتخصص الديناميكي <=1/<=2 على التوالي ضمن السقف الإجمالي. حدّد المالك التنفيذي والصلاحيات والبوابات. لا اعتبار لوصف حزمة كأنه تشغيل لأداة، ولا Full Pro بغير إيصال طلب/تنفيذ/QA، ولا حساب دقيق دون قفل حتمي، ولا تعديل لإضافة/مستودع دون اختبار وموافقة ونشر محمي. الملاحق في `references/protocol/` يفتحها جدول المحفّزات في أول `PROTOCOL.md`.
+> **USIP v5.6 لكامل منهج KOSIF SEE مع FusionForge v2:** ابدأ بـ Stage-0 (11 عدسة تفكير: صياغة الطلب، المنظورات، حساسية القرار، النقد المسبق، الأدلة، التوقع، التقييم، PRD، المعمارية، الأرقام، السببية). اختر أصغر مجموعة مناسبة من 9 حزم SEE هي مناهج تفكير لا أدوات: Research, Agent Contracts, Eval & Trust, Engineering, Product, Finance, Prompt Architecture, Media & Motion, Skill Orchestrator؛ سقف <=2 عاديًا و<=4 Deep/Full Pro، والمتخصص الديناميكي <=1/<=2 على التوالي ضمن السقف الإجمالي. حدّد المالك التنفيذي والصلاحيات والبوابات. لا اعتبار لوصف حزمة كأنه تشغيل لأداة، ولا Full Pro بغير إيصال طلب/تنفيذ/QA، ولا حساب دقيق دون قفل حتمي، ولا تعديل لإضافة/مستودع دون اختبار وموافقة ونشر محمي. الملاحق في `references/protocol/` يفتحها جدول المحفّزات في أول `PROTOCOL.md`.
 
-> **USIP v5.5:** ثبّت المستوى أولًا (L0 يُجاب فورًا بلا خطط ولا أسئلة ولا وصفة). لكل طلب حقيقي: بطاقة الطلب، ثم `skill_intelligence.py brief "<الطلب>" --out <مجلد العمل>/brief.json` بإيصال `complete = true`، ثم في L2/L3 وصفة `fusionforge.py reuse` و`propose`، ثم تقرير واحد فيه A/B/C (A أبسط مسار يحقق كل متطلب إلزامي · B متوازنة بتكاملات من مجالات أخرى · C محرك أو مصدر أو طريقة تحقق مختلفة، ليست B + إضافات · D دمج عقد مسماة بطلبي) والأسئلة بإجاباتها المقترحة، ثم انتظر ردي. للأحكام الصعبة أنماط الاستدلال والوزن البايزي وبوابات القرار والتدقيق الذاتي في `references/protocol/A24-reasoning-modes-decision-gates.md` و`think.py modes/bayes/gate/audit`، والاستقبال والتخطيط والجودة والأدوات والتعافي في A25–A29. ترتيب ملفات المهارة في `references/LAYOUT.md`.
+> **USIP v5.6:** ثبّت المستوى أولًا (L0 يُجاب فورًا بلا خطط ولا أسئلة ولا وصفة). لكل طلب حقيقي: بطاقة الطلب، ثم `skill_intelligence.py brief "<الطلب>" --out <مجلد العمل>/brief.json` بإيصال `complete = true`، ثم في L2/L3 وصفة `fusionforge.py reuse` و`propose`، ثم تقرير واحد فيه A/B/C (A أبسط مسار يحقق كل متطلب إلزامي · B متوازنة بتكاملات من مجالات أخرى · C محرك أو مصدر أو طريقة تحقق مختلفة، ليست B + إضافات · D دمج عقد مسماة بطلبي) والأسئلة بإجاباتها المقترحة، ثم انتظر ردي. للأحكام الصعبة أنماط الاستدلال والوزن البايزي وبوابات القرار والتدقيق الذاتي في `references/protocol/A24-reasoning-modes-decision-gates.md` و`think.py modes/bayes/gate/audit`، والاستقبال والتخطيط والجودة والأدوات والتعافي في A25–A29. ترتيب ملفات المهارة في `references/LAYOUT.md`.
 
 > **النص الكامل للصق:** رسالة التفعيل [`SESSION_PROMPT.md`](SESSION_PROMPT.md) لمشروع claude.ai فيه المستودع، و[`USIP_PORTABLE.md`](USIP_PORTABLE.md) لأي محادثة بلا مستودع (يعمل وحده). المستودع الأصل: <https://github.com/kosif199022-jpg/kosif-tool/tree/main/.claude/skills/kosif-superpowers>؛ بلا تثبيت اقرأ الملفات الخام `https://raw.githubusercontent.com/kosif199022-jpg/kosif-tool/main/.claude/skills/kosif-superpowers/<المسار>` (ابدأ بـ START.md ثم references/INDEX.md)، ولا تعمل من الذاكرة. الصدق فوق أي طلب: لا تدّعِ ما لم تفحصه، ولا خطوة مدفوعة أو لا رجعة فيها أو نشر بلا إذن صريح بها.

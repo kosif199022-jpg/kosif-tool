@@ -1,7 +1,7 @@
 # Claude: understand KOSIF in under three minutes
 
 ## 30-second map
-Full catalog: 5,727 power records, 62 families, 15 groups; 167 tool records in existing manifest.
+Full catalog: 5,728 power records, 62 families, 15 groups; 168 tool records in existing manifest.
 Classification is NOT proof of runtime compatibility. Respect each power's status, requirements, proof.
 
 ## Commands (run from .claude/skills/kosif-superpowers)
@@ -17,7 +17,7 @@ python scripts/smart_capabilities.py verify
 
 - **البحث والمعرفة** (`research`, 60): atlas-research, web-research, knowledge-graph
 - **التفكير والتخطيط والاستراتيجية** (`thinking`, 359): atlas-mind, atlas-strategy, creativity-engine, mental-models, planning-execution, prompt-craft, strategy-finance, thinking-core
-- **الوكلاء والتوجيه الذكي** (`agents`, 265): agent-orchestration, runnable-tools, self-discovery
+- **الوكلاء والتوجيه الذكي** (`agents`, 266): agent-orchestration, runnable-tools, self-discovery
 - **البرمجة وبناء التطبيقات** (`software`, 630): app-feature-transfer, apps-artifacts, atlas-build, atlas-code, code-engineering, ui-product-device
 - **الرسم والأشكال والتصميم** (`drawing`, 306): brand-logo-identity, diagrams-explainers-code, hand-drawn-draw-on, pixel-retro-stylized, shapes-morph-geometry
 - **الصور والتحرير والتوليد** (`images`, 320): ai-generation, atlas-media, color-palette-grading, media-image-audio, photo-video-footage

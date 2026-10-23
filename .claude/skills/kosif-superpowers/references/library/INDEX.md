@@ -1,6 +1,6 @@
-# مكتبة البروتوكول — USIP v5.5 protocol library
+# مكتبة البروتوكول — USIP v5.6 protocol library
 
-> مولّدة بـ `scripts/smart_capabilities.py library`؛ لا تُحرَّر يدويًا. 5,727 قدرة في 62 عائلة و15 مجموعة، و167 أداة مسجلة. الدليل: [A28](../protocol/A28-capability-routing.md) · [النواة](../../PROTOCOL.md#متى-تفتح-الملاحق--appendix-triggers)
+> مولّدة بـ `scripts/smart_capabilities.py library`؛ لا تُحرَّر يدويًا. 5,728 قدرة في 62 عائلة و15 مجموعة، و168 أداة مسجلة. الدليل: [A28](../protocol/A28-capability-routing.md) · [النواة](../../PROTOCOL.md#متى-تفتح-الملاحق--appendix-triggers)
 
 ## الفهرس / contents
 
@@ -21,7 +21,7 @@
 |---|---:|---:|---:|---:|---|
 | البحث والمعرفة (`research`) | 60 | 21 | 0 | 14 | [research.md](research.md) |
 | التفكير والتخطيط والاستراتيجية (`thinking`) | 359 | 17 | 8 | 21 | [thinking.md](thinking.md) |
-| الوكلاء والتوجيه الذكي (`agents`) | 265 | 161 | 22 | 40 | [agents.md](agents.md) |
+| الوكلاء والتوجيه الذكي (`agents`) | 266 | 162 | 22 | 41 | [agents.md](agents.md) |
 | البرمجة وبناء التطبيقات (`software`) | 630 | 115 | 17 | 21 | [software.md](software.md) |
 | الرسم والأشكال والتصميم (`drawing`) | 306 | 53 | 55 | 26 | [drawing.md](drawing.md) |
 | الصور والتحرير والتوليد (`images`) | 320 | 96 | 42 | 30 | [images.md](images.md) |
@@ -35,7 +35,7 @@
 | التحليل العكسي وفحص البرامج (`reverse`) | 258 | 30 | 0 | 21 | [reverse.md](reverse.md) |
 | قدرات مساندة غير مصنفة (`misc`) | 27 | 5 | 7 | 0 | [misc.md](misc.md) |
 
-الفصول الـ15 معًا 6,886 سطرًا، وكل قدرة في فصل واحد بالضبط.
+الفصول الـ15 معًا 6,888 سطرًا، وكل قدرة في فصل واحد بالضبط.
 
 ## من أي محادثة / from any chat
 

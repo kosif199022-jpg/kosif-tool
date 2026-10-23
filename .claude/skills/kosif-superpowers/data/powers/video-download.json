@@ -2,6 +2,7 @@
  {
   "id": "DL-01",
   "family": "video-download",
+  "domain": "motion",
   "name_ar": "تحميل فيديو من أي رابط",
   "name_en": "Download video from any URL",
   "status": "proven",
@@ -42,6 +43,7 @@
  {
   "id": "DL-02",
   "family": "video-download",
+  "domain": "motion",
   "name_ar": "قائمة روابط دفعة واحدة",
   "name_en": "Batch of links from a file",
   "status": "proven",
@@ -81,6 +83,7 @@
  {
   "id": "DL-03",
   "family": "video-download",
+  "domain": "motion",
   "name_ar": "جودة محددة أو صوت فقط",
   "name_en": "Quality cap or audio-only",
   "status": "proven",
@@ -119,6 +122,7 @@
  {
   "id": "DL-04",
   "family": "video-download",
+  "domain": "motion",
   "name_ar": "نسخة آمنة للمونتاج",
   "name_en": "Edit-safe H.264/AAC copy",
   "status": "proven",
@@ -159,6 +163,7 @@
  {
   "id": "DL-05",
   "family": "video-download",
+  "domain": "motion",
   "name_ar": "كوكيز للمحتوى الخاص",
   "name_en": "Cookies for private / age-gated posts",
   "status": "ready",
@@ -197,6 +202,7 @@
  {
   "id": "DL-06",
   "family": "video-download",
+  "domain": "motion",
   "name_ar": "محاكاة متصفح عند الحظر",
   "name_en": "Browser impersonation retry",
   "status": "ready",
@@ -237,6 +243,7 @@
  {
   "id": "DL-07",
   "family": "video-download",
+  "domain": "motion",
   "name_ar": "تحديث yt-dlp عند تغيّر الموقع",
   "name_en": "Update yt-dlp when a site breaks",
   "status": "proven",
@@ -276,6 +283,7 @@
  {
   "id": "DL-08",
   "family": "video-download",
+  "domain": "motion",
   "name_ar": "حدود هذه الحاوية السحابية",
   "name_en": "Limits of this cloud container",
   "status": "documented",
@@ -314,6 +322,7 @@
  {
   "id": "DL-09",
   "family": "video-download",
+  "domain": "motion",
   "name_ar": "المصدر ثم الاستخدام: ترخيص وحقوق",
   "name_en": "Rights check before editing",
   "status": "documented",
@@ -352,6 +361,7 @@
  {
   "id": "DL-10",
   "family": "video-download",
+  "domain": "motion",
   "name_ar": "من الرابط إلى المونتاج",
   "name_en": "Link → analyse → montage",
   "status": "ready",
@@ -394,6 +404,7 @@
  {
   "id": "DL-11",
   "family": "video-download",
+  "domain": "motion",
   "name_ar": "سجل سلسلة Cinema C للآيفون",
   "name_en": "Cinema C iPhone lineage ledger (V13 → V34)",
   "status": "documented",

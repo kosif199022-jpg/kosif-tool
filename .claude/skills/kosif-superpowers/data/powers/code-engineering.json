@@ -482,8 +482,7 @@
   "install": "",
   "requires": [
    "gh",
-   "mcp:github",
-   "key:unspecified"
+   "mcp:github"
   ],
   "license": "MIT",
   "proof": [],

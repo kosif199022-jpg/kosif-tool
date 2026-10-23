@@ -70,7 +70,7 @@
 - **متى أستخدمها / when:** عند تنظيف العربية المشكولة أو البحث فيها أو عرضها أو توليدها / Cleaning, searching, displaying or generating vowelled Arabic.
 - **كيف / how:** Matching: strip (ARL-01). Display: never "fix" or strip the diacritics of Quran, hadith or poetry; render full tashkeel with a font and engine that support it (Amiri + RAQM or a browser; leave headroom, ARAB-05). Writing: partial tashkeel only on words a reader could misread (عَلِم/عُلِم); random partial tashkeel on common words is a style tell. Automatic diacritization needs morphological models (ARL-11); review every result by eye and never auto-vowel sacred text. For speech alignment prefer vowelled source text over ASR output (ARAB-70).
 - **يحتاج / needs:** [`pip:pillow`](../requirements.md#req-pip-pillow) · [`fonts:arabic`](../requirements.md#req-fonts-arabic)
-- **الدليل / proof:** — (لا دليل تشغيل بعد / no run proof yet)
+- **الدليل / proof:** `kosif-tool/.claude/skills/kosif-superpowers/references/humanizer.md` · `kosif-tool/.claude/skills/kosif-superpowers/references/powers/typography-arabic.md`
 - **المصدر / source:** references/humanizer.md §7.3, §7.5; references/powers/typography-arabic.md
 
 #### ARL-16 · إصلاح الترميز المشوّه · Mojibake repair · ✅ مُثبت هنا / proven here
@@ -99,7 +99,7 @@
 - **متى أستخدمها / when:** عند النصوص العربية/الإنجليزية المختلطة في واجهات المستخدم ورسائل الدردشة وملفات CSV المصدّرة والترجمات المرافقة التي فيها أسماء علامات أو أسعار / Mixed Arabic/English UI strings, chat messages, CSV exports, captions with brand names or prices.
 - **كيف / how:** Processing: remove LRM U+200E, RLM U+200F, ALM U+061C, embeddings U+202A–202E, isolates U+2066–2069 and BOM before matching (anchor_gate does this; tested on OCR output). Display: wrap embedded runs in FSI U+2068 … PDI U+2069 (or <bdi> / dir="auto" in HTML), keep % and currency with their number, never reverse strings by hand. Renderer-specific isolation for motion: ARAB-72.
 - **يحتاج / needs:** [`tesseract`](../requirements.md#req-tesseract)
-- **الدليل / proof:** — (لا دليل تشغيل بعد / no run proof yet)
+- **الدليل / proof:** `kosif-tool/.claude/skills/kosif-superpowers/scripts/anchor_gate.py` · `kosif-tool/.claude/skills/kosif-superpowers/references/powers/typography-arabic.md`
 - **المصدر / source:** scripts/anchor_gate.py (mark stripping); references/powers/typography-arabic.md ARAB-72
 
 #### ARL-08 · خطوط عربية: فحص وتثبيت · Arabic fonts: check and install · ✅ مُثبت هنا / proven here
@@ -181,7 +181,7 @@
 - **متى أستخدمها / when:** عند أي مخرجات عربية: ترجمات مرافقة ومنشورات وسكربتات ونصوص واجهات وردود على مستخدم يكتب بلهجة / Any Arabic output: captions, posts, scripts, UI text, replies to a user who writes in dialect.
 - **كيف / how:** Reply in the user's register unless asked otherwise. Egyptian markers: مش، هـ/حـ (future)، اللي، ده/دي/دول، إزاي، دلوقتي. Levantine: شو، هلّق، كتير، منيح. Gulf: وايد، شلون، زين. Maghrebi: برشا، بزاف. Do not Egyptianize other dialects or judge them by MSA rules; keep one spelling convention; no fake dialect sprinkles. Automatic dialect ID exists in full camel-tools (ARL-11, not run here). Rewriting between registers: WRITE-19.
 - **يحتاج / needs:** [`pip:camel-tools`](../requirements.md#req-pip-camel-tools)
-- **الدليل / proof:** — (لا دليل تشغيل بعد / no run proof yet)
+- **الدليل / proof:** `kosif-tool/.claude/skills/kosif-superpowers/references/humanizer.md`
 - **المصدر / source:** references/humanizer.md §7.2; owner-upload:KOSIF_SEE_Humanizer_Optimize_Graphify_v1.7.5 (register choice, owner)
 
 #### ARL-18 · النقل الحرفي والرومنة · Transliteration and romanization · ✅ مُثبت هنا / proven here
@@ -198,7 +198,7 @@
 - **ماذا / what:** كل نقل للفاعل أو تغيير للعدد يغيّر المطابقة: "قررت اللجنة" لكن "حضر الطلاب" ثم "الطلاب حضروا"، والعدد من 3 إلى 10 يخالف المعدود. — Moving the subject or changing a count changes agreement; numbers 3–10 take the opposite gender of the counted noun.
 - **متى أستخدمها / when:** بعد إعادة كتابة الجمل العربية أو إعادة هيكلتها أو قولبتها (فعلية ↔ اسمية، مفرد ↔ جمع، أرقام مُدرجة) / After rewriting, restructuring or templating Arabic sentences (verb-first ↔ subject-first, singular ↔ plural, inserted numbers).
 - **كيف / how:** Verb before a plural subject stays singular (حضر الطلاب); after it, it agrees in number (الطلاب حضروا). Feminine subjects take feminine verbs (أجّلت اللجنة). Numbers 3–10 reverse gender (ثلاثة أيام، ثلاث ساعات); 11–99 take a singular accusative noun; dual nouns take dual agreement. For generated templates with counts, use the plural rules in ARAB-76. Read the final text once only for agreement.
-- **الدليل / proof:** — (لا دليل تشغيل بعد / no run proof yet)
+- **الدليل / proof:** `kosif-tool/.claude/skills/kosif-superpowers/references/humanizer.md` · `kosif-tool/.claude/skills/kosif-superpowers/references/powers/typography-arabic.md`
 - **المصدر / source:** references/humanizer.md §7.6; references/powers/typography-arabic.md ARAB-76
 
 ## Extended toolbelt (2026-10-18)

@@ -2,6 +2,7 @@
  {
   "id": "3D-01",
   "family": "3d-spatial",
+  "domain": "motion",
   "name_ar": "متى يكون 3D مبررًا",
   "name_en": "Real 3D vs 2.5D decision",
   "status": "documented",
@@ -32,6 +33,7 @@
  {
   "id": "3D-02",
   "family": "3d-spatial",
+  "domain": "motion",
   "name_ar": "منصة العمق 2.5D",
   "name_en": "2.5D CSS depth rig",
   "status": "ready",
@@ -65,6 +67,7 @@
  {
   "id": "3D-03",
   "family": "3d-spatial",
+  "domain": "motion",
   "name_ar": "صورة ثابتة بعمق طبقات",
   "name_en": "Still photo with layered depth",
   "status": "documented",
@@ -94,6 +97,7 @@
  {
   "id": "3D-04",
   "family": "3d-spatial",
+  "domain": "motion",
   "name_ar": "جسم ذهبي بسماكة مزيفة",
   "name_en": "Fake-3D extrusion & parallel projection",
   "status": "ready",
@@ -124,6 +128,7 @@
  {
   "id": "3D-05",
   "family": "3d-spatial",
+  "domain": "motion",
   "name_ar": "العالم الأيزومتري",
   "name_en": "Isometric worlds",
   "status": "ready",
@@ -161,6 +166,7 @@
  {
   "id": "3D-06",
   "family": "3d-spatial",
+  "domain": "motion",
   "name_ar": "حقول المكعبات المتموجة",
   "name_en": "Cube heightfield waves & voxel ripples",
   "status": "seen",
@@ -198,6 +204,7 @@
  {
   "id": "3D-07",
   "family": "3d-spatial",
+  "domain": "motion",
   "name_ar": "جدران البطاقات المائلة",
   "name_en": "Tilted card & screenshot walls",
   "status": "seen",
@@ -234,6 +241,7 @@
  {
   "id": "3D-08",
   "family": "3d-spatial",
+  "domain": "motion",
   "name_ar": "تحويلات البطاقات ثلاثية الأبعاد بالـCSS",
   "name_en": "CSS 3D card transforms",
   "status": "documented",
@@ -270,6 +278,7 @@
  {
   "id": "3D-09",
   "family": "3d-spatial",
+  "domain": "motion",
   "name_ar": "طيران الكاميرا في عالم CSS",
   "name_en": "CSS 3D camera flight & depth scatter",
   "status": "documented",
@@ -302,6 +311,7 @@
  {
   "id": "3D-10",
   "family": "3d-spatial",
+  "domain": "motion",
   "name_ar": "الأرضيات الشبكية والخريطة المائلة",
   "name_en": "Perspective grid floors & tilted planes",
   "status": "seen",
@@ -337,6 +347,7 @@
  {
   "id": "3D-11",
   "family": "3d-spatial",
+  "domain": "motion",
   "name_ar": "حلقات مدارية مائلة ورفع العقد",
   "name_en": "Pseudo-3D orbit rings & hover lift",
   "status": "ready",
@@ -363,6 +374,7 @@
  {
   "id": "3D-12",
   "family": "3d-spatial",
+  "domain": "motion",
   "name_ar": "الأنفاق",
   "name_en": "Tunnels",
   "status": "seen",
@@ -395,6 +407,7 @@
  {
   "id": "3D-13",
   "family": "3d-spatial",
+  "domain": "motion",
   "name_ar": "مكونات HyperFrames ثلاثية الأبعاد",
   "name_en": "HyperFrames 3D components & blocks",
   "status": "install",
@@ -426,6 +439,7 @@
  {
   "id": "3D-14",
   "family": "3d-spatial",
+  "domain": "motion",
   "name_ar": "مشروع three-kit ثلاثي الأبعاد",
   "name_en": "KOSIF three-kit 3D project",
   "status": "ready",
@@ -459,6 +473,7 @@
  {
   "id": "3D-15",
   "family": "3d-spatial",
+  "domain": "motion",
   "name_ar": "عقد مشهد Three.js الحتمي",
   "name_en": "Deterministic Three.js seek scene",
   "status": "ready",
@@ -493,6 +508,7 @@
  {
   "id": "3D-16",
   "family": "3d-spatial",
+  "domain": "motion",
   "name_ar": "ثلاثي الأبعاد في Remotion",
   "name_en": "Remotion ThreeCanvas",
   "status": "install",
@@ -522,6 +538,7 @@
  {
   "id": "3D-17",
   "family": "3d-spatial",
+  "domain": "motion",
   "name_ar": "بوابات ومشهد داخل مشهد",
   "name_en": "Portals & render-to-texture",
   "status": "install",
@@ -550,6 +567,7 @@
  {
   "id": "3D-18",
   "family": "3d-spatial",
+  "domain": "motion",
   "name_ar": "عالم البلورات بـ WebGL خام",
   "name_en": "Raw-WebGL procedural crystal shards",
   "status": "proven",
@@ -579,6 +597,7 @@
  {
   "id": "3D-19",
   "family": "3d-spatial",
+  "domain": "motion",
   "name_ar": "3D مرسوم برمجيًا على Canvas",
   "name_en": "Software-rendered 3D on canvas",
   "status": "seen",
@@ -615,6 +634,7 @@
  {
   "id": "3D-20",
   "family": "3d-spatial",
+  "domain": "motion",
   "name_ar": "كرات وحلقات من النقاط",
   "name_en": "Point spheres, particle tori & dot globes",
   "status": "seen",
@@ -657,6 +677,7 @@
  {
   "id": "3D-21",
   "family": "3d-spatial",
+  "domain": "motion",
   "name_ar": "الرسم بالأشعة ودوال المسافة",
   "name_en": "Raymarched SDF scenes",
   "status": "seen",
@@ -692,6 +713,7 @@
  {
   "id": "3D-22",
   "family": "3d-spatial",
+  "domain": "motion",
   "name_ar": "نماذج GLB بحركة مضبوطة على الزمن",
   "name_en": "GLB models with seeked animation",
   "status": "ready",
@@ -723,6 +745,7 @@
  {
   "id": "3D-23",
   "family": "3d-spatial",
+  "domain": "motion",
   "name_ar": "Blender بلا واجهة",
   "name_en": "Headless Blender (bpy)",
   "status": "install",
@@ -754,6 +777,7 @@
  {
   "id": "3D-24",
   "family": "3d-spatial",
+  "domain": "motion",
   "name_ar": "تحليق Cesium فوق تضاريس ومدن حقيقية",
   "name_en": "Cesium terrain & city flyovers",
   "status": "key",
@@ -783,6 +807,7 @@
  {
   "id": "3D-25",
   "family": "3d-spatial",
+  "domain": "motion",
   "name_ar": "تضاريس إجرائية",
   "name_en": "Procedural terrain",
   "status": "ready",
@@ -814,6 +839,7 @@
  {
   "id": "3D-26",
   "family": "3d-spatial",
+  "domain": "motion",
   "name_ar": "غابة صنوبر بالمثيلات",
   "name_en": "Instanced conifer forest",
   "status": "ready",
@@ -840,6 +866,7 @@
  {
   "id": "3D-27",
   "family": "3d-spatial",
+  "domain": "motion",
   "name_ar": "السماء والشمس والإضاءة البيئية",
   "name_en": "Sky, sun & gradient IBL",
   "status": "ready",
@@ -869,6 +896,7 @@
  {
   "id": "3D-28",
   "family": "3d-spatial",
+  "domain": "motion",
   "name_ar": "البحر والماء",
   "name_en": "Sea & water surfaces",
   "status": "ready",
@@ -900,6 +928,7 @@
  {
   "id": "3D-29",
   "family": "3d-spatial",
+  "domain": "motion",
   "name_ar": "السحب",
   "name_en": "Clouds",
   "status": "ready",
@@ -928,6 +957,7 @@
  {
   "id": "3D-30",
   "family": "3d-spatial",
+  "domain": "motion",
   "name_ar": "بركة الكوي والعشب والتفاصيل الحية",
   "name_en": "Koi pond, reeds & living details",
   "status": "ready",
@@ -955,6 +985,7 @@
  {
   "id": "3D-31",
   "family": "3d-spatial",
+  "domain": "motion",
   "name_ar": "مؤشرات المقياس: جبال وطريق وأضواء بعيدة",
   "name_en": "Scale cues: ridge layers, road ribbon, far lights",
   "status": "ready",
@@ -983,6 +1014,7 @@
  {
   "id": "3D-32",
   "family": "3d-spatial",
+  "domain": "motion",
   "name_ar": "بدن قارب بمعادلات",
   "name_en": "Parametric lofted boat hull",
   "status": "ready",
@@ -1009,6 +1041,7 @@
  {
   "id": "3D-33",
   "family": "3d-spatial",
+  "domain": "motion",
   "name_ar": "مدينة المستقبل: نوافذ وطاقة وعمارة",
   "name_en": "Future city kit (windows, solar fields, architecture)",
   "status": "ready",
@@ -1038,6 +1071,7 @@
  {
   "id": "3D-34",
   "family": "3d-spatial",
+  "domain": "motion",
   "name_ar": "مركبات ودعائم من أشكال أولية",
   "name_en": "Props & vehicles from primitives",
   "status": "seen",
@@ -1073,6 +1107,7 @@
  {
   "id": "3D-35",
   "family": "3d-spatial",
+  "domain": "motion",
   "name_ar": "مناورات طيران على مسار",
   "name_en": "Aircraft spline manoeuvres & chase cam",
   "status": "seen",
@@ -1103,6 +1138,7 @@
  {
   "id": "3D-36",
   "family": "3d-spatial",
+  "domain": "motion",
   "name_ar": "وصفة الإضاءة السينمائية",
   "name_en": "Cinematic 3D lighting recipe",
   "status": "ready",
@@ -1131,6 +1167,7 @@
  {
   "id": "3D-37",
   "family": "3d-spatial",
+  "domain": "motion",
   "name_ar": "المواد الفيزيائية",
   "name_en": "Physical materials (glass, chrome, wet, iridescent)",
   "status": "ready",
@@ -1165,6 +1202,7 @@
  {
   "id": "3D-38",
   "family": "3d-spatial",
+  "domain": "motion",
   "name_ar": "سلسلة ما بعد المعالجة",
   "name_en": "Post stack (bloom, ACES, film)",
   "status": "ready",
@@ -1194,6 +1232,7 @@
  {
   "id": "3D-39",
   "family": "3d-spatial",
+  "domain": "motion",
   "name_ar": "استوديو المنتج الكريمي",
   "name_en": "Studio sweep, backdrop & stage disc",
   "status": "ready",
@@ -1221,6 +1260,7 @@
  {
   "id": "3D-40",
   "family": "3d-spatial",
+  "domain": "motion",
   "name_ar": "مجسمات بطل جاهزة",
   "name_en": "Hero objects (geode, knot, coin)",
   "status": "ready",
@@ -1252,6 +1292,7 @@
  {
   "id": "3D-41",
   "family": "3d-spatial",
+  "domain": "motion",
   "name_ar": "مشهد سينمائي بإطار واحد",
   "name_en": "Cinematic single-frame 3D page recipe",
   "status": "ready",
@@ -1283,6 +1324,7 @@
  {
   "id": "3D-42",
   "family": "3d-spatial",
+  "domain": "motion",
   "name_ar": "نحت SDF وشبكة الأسطح",
   "name_en": "SDF sculpting & surface-nets mesher",
   "status": "proven",
@@ -1311,6 +1353,7 @@
  {
   "id": "3D-43",
   "family": "3d-spatial",
+  "domain": "motion",
   "name_ar": "حركات الكاميرا على مسار",
   "name_en": "Spline camera moves & narrated fly-throughs",
   "status": "ready",
@@ -1346,6 +1389,7 @@
  {
   "id": "3D-44",
   "family": "3d-spatial",
+  "domain": "motion",
   "name_ar": "المنصة الدوارة للمنتج",
   "name_en": "Product turntable recipe",
   "status": "documented",
@@ -1373,6 +1417,7 @@
  {
   "id": "3D-45",
   "family": "3d-spatial",
+  "domain": "motion",
   "name_ar": "المنظر المفكك",
   "name_en": "Exploded view",
   "status": "documented",
@@ -1405,6 +1450,7 @@
  {
   "id": "3D-46",
   "family": "3d-spatial",
+  "domain": "motion",
   "name_ar": "سيارة مفككة بالتوليد",
   "name_en": "Generated car exploded-view pipeline",
   "status": "key",
@@ -1435,6 +1481,7 @@
  {
   "id": "3D-47",
   "family": "3d-spatial",
+  "domain": "motion",
   "name_ar": "المقاطع العرضية ومشاهد التضاريس العلمية",
   "name_en": "Cutaways & honest terrain science scenes",
   "status": "documented",
@@ -1465,6 +1512,7 @@
  {
   "id": "3D-48",
   "family": "3d-spatial",
+  "domain": "motion",
   "name_ar": "عنصر واحد يحمل القصة",
   "name_en": "Persistent subject across chapters",
   "status": "documented",
@@ -1493,6 +1541,7 @@
  {
   "id": "3D-49",
   "family": "3d-spatial",
+  "domain": "motion",
   "name_ar": "النص داخل المشهد ثلاثي الأبعاد",
   "name_en": "Type in 3D space",
   "status": "seen",
@@ -1525,6 +1574,7 @@
  {
   "id": "3D-50",
   "family": "3d-spatial",
+  "domain": "motion",
   "name_ar": "أزرار وأجهزة ثلاثية الأبعاد",
   "name_en": "3D product interactions (button, lid)",
   "status": "seen",
@@ -1556,6 +1606,7 @@
  {
   "id": "3D-51",
   "family": "3d-spatial",
+  "domain": "motion",
   "name_ar": "الأرض يرسمها الصوت",
   "name_en": "Music-driven 3D land",
   "status": "ready",
@@ -1584,6 +1635,7 @@
  {
   "id": "3D-52",
   "family": "3d-spatial",
+  "domain": "motion",
   "name_ar": "أفكار ثلاثية الأبعاد غير منفذة",
   "name_en": "Unbuilt 3D ideas",
   "status": "idea",

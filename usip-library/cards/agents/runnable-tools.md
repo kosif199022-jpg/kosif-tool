@@ -1,6 +1,6 @@
-# `runnable-tools` — الوكلاء والتوجيه الذكي (167 بطاقة)
+# `runnable-tools` — الوكلاء والتوجيه الذكي (168 بطاقة)
 
-> مكتبة بروتوكول USIP v5.5 الكاملة، مولّدة بـ `smart_capabilities.py cards` من `data/powers/runnable-tools.json` وقواعد الملاحق A25–A29؛ لا تُحرَّر يدويًا. [الفهرس الرئيسي](../../README.md) · [فصل المجموعة](../../../.claude/skills/kosif-superpowers/references/library/agents.md) · [النواة](../../../.claude/skills/kosif-superpowers/PROTOCOL.md)
+> مكتبة بروتوكول USIP v5.6 الكاملة، مولّدة بـ `smart_capabilities.py cards` من `data/powers/runnable-tools.json` وقواعد الملاحق A25–A29؛ لا تُحرَّر يدويًا. [الفهرس الرئيسي](../../README.md) · [فصل المجموعة](../../../.claude/skills/kosif-superpowers/references/library/agents.md) · [النواة](../../../.claude/skills/kosif-superpowers/PROTOCOL.md)
 
 ## الفهرس / contents
 
@@ -80,14 +80,15 @@
 - [`TOOL-159` مختبر البرومبت](#tool-159--مختبر-البرومبت--prompt-lab)
 - [`TOOL-16` إنشاء فيلم سبورة مرسوم وتصييره](#tool-16--إنشاء-فيلم-سبورة-مرسوم-وتصييره--doodle-film-runtime-and-renderer)
 - [`TOOL-160` متابعة أشهر 1000 مستودع](#tool-160--متابعة-أشهر-1000-مستودع--github-top-1000-tracker)
-- [`TOOL-161` خريطة المستودع](#tool-161--خريطة-المستودع--repo-map)
-- [`TOOL-162` عمليات الذاكرة](#tool-162--عمليات-الذاكرة--memory-ops)
-- [`TOOL-163` فيزياء الحركة](#tool-163--فيزياء-الحركة--motion-physics)
-- [`TOOL-164` سطور الترجمة: من توقيت الكلمات إلى ترجمة مقروءة](#tool-164--سطور-الترجمة-من-توقيت-الكلمات-إلى-ترجمة-مقروءة--caption-lines-word-timings-to-readable-srtvtt)
-- [`TOOL-165` خط اللوك: تلوين واحد لـ ffmpeg وSVG وGLSL](#tool-165--خط-اللوك-تلوين-واحد-لـ-ffmpeg-وsvg-وglsl--look-pipeline-one-colour-grade-for-ffmpeg-svgcss-and-glsl)
-- [`TOOL-166` فاحص أرقام الدروس والشروح](#tool-166--فاحص-أرقام-الدروس-والشروح--lesson-number-integrity-checker)
-- [`TOOL-167` التعديل السريع: قص فوري يعرف الإطارات المفتاحية، مغيّر صوت، تفتيح الفيديو المظلم، استخراج الصوت](#tool-167--التعديل-السريع-قص-فوري-يعرف-الإطارات-المفتاحية-مغيّر-صوت-تفتيح-الفيديو-المظلم-استخراج-الصوت--fast-edit-keyframe-aware-instant-cut-voice-presets-low-light-lift-audio-extract)
-- [`TOOL-168` محرك الخامات الملوّنة: ألوان خشبية وفرشاة زيت وألوان مائية لأي صورة](#tool-168--محرك-الخامات-الملوّنة-ألوان-خشبية-وفرشاة-زيت-وألوان-مائية-لأي-صورة--colour-media-engine-coloured-pencil-oil-brush-and-watercolour-painting-of-a-photo)
+- [`TOOL-161` الفهرس الدقيق: سطر لكل قدرة وأداة وقدرة خارقة](#tool-161--الفهرس-الدقيق-سطر-لكل-قدرة-وأداة-وقدرة-خارقة--micro-index-one-line-per-power-tool-and-superpower)
+- [`TOOL-162` خريطة المستودع](#tool-162--خريطة-المستودع--repo-map)
+- [`TOOL-163` عمليات الذاكرة](#tool-163--عمليات-الذاكرة--memory-ops)
+- [`TOOL-164` فيزياء الحركة](#tool-164--فيزياء-الحركة--motion-physics)
+- [`TOOL-165` سطور الترجمة: من توقيت الكلمات إلى ترجمة مقروءة](#tool-165--سطور-الترجمة-من-توقيت-الكلمات-إلى-ترجمة-مقروءة--caption-lines-word-timings-to-readable-srtvtt)
+- [`TOOL-166` خط اللوك: تلوين واحد لـ ffmpeg وSVG وGLSL](#tool-166--خط-اللوك-تلوين-واحد-لـ-ffmpeg-وsvg-وglsl--look-pipeline-one-colour-grade-for-ffmpeg-svgcss-and-glsl)
+- [`TOOL-167` فاحص أرقام الدروس والشروح](#tool-167--فاحص-أرقام-الدروس-والشروح--lesson-number-integrity-checker)
+- [`TOOL-168` التعديل السريع: قص فوري يعرف الإطارات المفتاحية، مغيّر صوت، تفتيح الفيديو المظلم، استخراج الصوت](#tool-168--التعديل-السريع-قص-فوري-يعرف-الإطارات-المفتاحية-مغيّر-صوت-تفتيح-الفيديو-المظلم-استخراج-الصوت--fast-edit-keyframe-aware-instant-cut-voice-presets-low-light-lift-audio-extract)
+- [`TOOL-169` محرك الخامات الملوّنة: ألوان خشبية وفرشاة زيت وألوان مائية لأي صورة](#tool-169--محرك-الخامات-الملوّنة-ألوان-خشبية-وفرشاة-زيت-وألوان-مائية-لأي-صورة--colour-media-engine-coloured-pencil-oil-brush-and-watercolour-painting-of-a-photo)
 - [`TOOL-17` مولّد مشاريع بداية لمحركات الحركة](#tool-17--مولّد-مشاريع-بداية-لمحركات-الحركة--third-party-motion-engine-scaffolder)
 - [`TOOL-18` مكتبة رياضيات الحركة](#tool-18--مكتبة-رياضيات-الحركة--motion-math-toolkit)
 - [`TOOL-19` تصيير لقطات B-roll بحركة كاميرا](#tool-19--تصيير-لقطات-b-roll-بحركة-كاميرا--cinematic-b-roll-renderer)
@@ -5427,7 +5428,7 @@
 - `TOOL-158` مجلس خبراء الرسم: أحد عشر خبيرًا من بطاقات الكتب الـ48 يراجعون الصورة قبل إرسالها / Drawing council: eleven experts from the 48 method cards review an image before it is sent (proven)
 - `TOOL-159` مختبر البرومبت / Prompt Lab (proven)
 - `TOOL-160` متابعة أشهر 1000 مستودع / GitHub Top-1000 Tracker (proven)
-- `TOOL-161` خريطة المستودع / Repo Map (proven)
+- `TOOL-161` الفهرس الدقيق: سطر لكل قدرة وأداة وقدرة خارقة / Micro index: one line per power, tool and superpower (proven)
 
 ### `TOOL-160` — متابعة أشهر 1000 مستودع / GitHub Top-1000 Tracker
 
@@ -5495,10 +5496,79 @@
 
 - `TOOL-159` مختبر البرومبت / Prompt Lab (proven)
 - `TOOL-16` إنشاء فيلم سبورة مرسوم وتصييره / Doodle film runtime and renderer (proven)
-- `TOOL-161` خريطة المستودع / Repo Map (proven)
-- `TOOL-162` عمليات الذاكرة / Memory Ops (proven)
+- `TOOL-161` الفهرس الدقيق: سطر لكل قدرة وأداة وقدرة خارقة / Micro index: one line per power, tool and superpower (proven)
+- `TOOL-162` خريطة المستودع / Repo Map (proven)
 
-### `TOOL-161` — خريطة المستودع / Repo Map
+### `TOOL-161` — الفهرس الدقيق: سطر لكل قدرة وأداة وقدرة خارقة / Micro index: one line per power, tool and superpower
+
+| الحقل | القيمة |
+|---|---|
+| العائلة | `runnable-tools` ([فصل العائلة](../../../.claude/skills/kosif-superpowers/references/powers/runnable-tools.md)) |
+| المجموعة | الوكلاء والتوجيه الذكي (`agents`) |
+| نوع المخرج (A25، A27) | خطة واستراتيجية وقرار (`plan`) |
+| الحالة في الكتالوج | ✅ `proven`: مثبتة في الكتالوج؛ افحص متطلباتها هنا قبل كتابة ✅ في الخطة |
+| سقف التحقق قبل العمل (A27) | V3 بعد تشغيلها هنا وقياس معيار، لا قبل ذلك |
+| نطاق الدليل | `repo` |
+| الرخصة | غير مذكورة في السجل: تُؤكَّد من المصدر قبل التسليم |
+
+**ما هي:** يبني أدق خريطة للمهارة: لكل قدرة ذرية وأداة قابلة للتشغيل وقدرة خارقة مدخل واحد فيه مجموعتها ومجالها وعائلتها وقدرتها الخارقة وشارتها ومستلزماتها وأدوات عائلتها وفصلها وبطاقتها في المكتبة. يكتب data/micro_index.json وreferences/micro-index/ (صفحة لكل مجموعة وصفحة للأدوات وأخرى للقدرات الخارقة)؛ find يبحث فيه بالعربية أو الإنجليزية وshow يعرض أي معرّف مع جيرانه. الخيار --check يبلغ عن الملفات غير المحدّثة دون كتابة. — Builds the finest-grained map of the skill: every atomic power, runnable tool and fused superpower gets one entry with its group, domain, family, superpower, badge, requirements, the tools of its family, its chapter and its library card. Writes data/micro_index.json and references/micro-index/ (one page per group plus tools and superpowers); find searches it in Arabic or English and show prints any id with its neighbours. --check reports stale files without writing.
+
+**متى:** اعرض لي الفهرس الدقيق لكل القدرات / Find every power, tool and superpower about loudness
+
+**كيف:** build: `python3 scripts/micro_index.py build`; find: `python3 scripts/micro_index.py find "قص على الإيقاع" --top 10`; show: `python3 scripts/micro_index.py show SP-0001`; stats: `python3 scripts/micro_index.py stats`. Full card: `python3 scripts/hub.py tool micro-index`. Limits: An entry is an address, not a proof: badges are the records' own and a proven badge still needs a real run.
+
+**المعاملات:** in: data/powers/*.json, data/tools.json, data/superpowers.json, data/smart_capability_index.json · out: data/micro_index.json and references/micro-index/*.md; matches on stdout
+
+**التثبيت:** لا خطوة تثبيت مسجلة
+
+**الوسوم:** micro-index · micro index · index · find · show · catalog · map · فهرس · فهرس دقيق · بحث · خريطة · قدرات
+
+#### 1. الاستقبال (A25)
+
+- الهدف القابل للقياس: سؤال بإجابة مقترحة ← هدف مقترح بعتبة رقمية يُعرض للتعديل
+- الأفق الزمني: افتراض مكتوب ← 90 يومًا
+- الموارد والميزانية: افتراض مكتوب ← شخص واحد بلا صرف
+- لا تُفترض أبدًا: مادة الإنتاج نفسها، والإذن بخطوة مدفوعة أو منشورة أو لا رجعة فيها، والهوية والحقوق.
+
+#### 2. الجاهزية والشارة (A28)
+
+- `python3` ← افحص وجوده بأمر واحد قبل كتابة الشارة
+- الوضع 1: شارة «هنا الآن» بعد الفحص، لا ✅ الكتالوج تلقائيًا · الوضع 2: `كتالوج: ✅ · هنا: غير مفحوص` · الوضع 3: بلا شارة ولا معرّف.
+
+#### 3. موضعها في الخطة (A26)
+
+- عقدة منمّطة: المدخل `brief` ← المخرج `plan`، والمنفّذ `method:TOOL-161` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
+- لا أداة مسجلة تخدم عائلتها: التنفيذ بالمكتبات أو بأداة من مجموعة أخرى.
+- مراحل النوع: الهدف بمؤشره ← ثلاثة خيارات مختلفة ← تقييم وحساسية ← تشريح مسبق ← بوابات مكتوبة ← خطوة أولى قابلة للتراجع.
+- إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
+
+#### 4. بوابة التحقق (A27)
+
+- إلزامي: لكل هدف مؤشر وعتبة وتاريخ ← جدول المؤشرات
+- إلزامي: ثلاثة خيارات مختلفة المنهج مع توصية ← جدول المقارنة
+- جودة: تشريح مسبق بأهم أسباب الفشل والوقاية ← think.py plan
+- جودة: بوابات go/pivot/kill مكتوبة قبل النتائج ← think.py gate
+- إلزامي: خطوة أولى صغيرة قابلة للتراجع هذا الأسبوع ← مراجعة
+- أمر الحكم في الوضع 1: `think.py qa plan --answers qa.json` (PASS / FAIL / INCOMPLETE).
+
+#### 5. التعافي (A29)
+
+- `missing_dependency` (اعتمادية مفقودة، ميزانية 2): سمِّ الاعتمادية بالضبط (حزمة، برنامج، خط، نموذج) ← ثبّت محليًا في بيئة العمل إن كان مجانيًا ومسموحًا (pip --user أو venv أو npm محلي) · البديل: مسار المكتبة القياسية أو أداة أخرى من نفس المجموعة · تصعيد: تثبيت نظامي أو مدفوع أو يحتاج مفتاحًا: توقف واسأل
+- `quality_below_threshold` (جودة دون العتبة، ميزانية 3): أي معيار فشل وبكم (المقيس مقابل العتبة) ← عالج السبب الأكبر وحده ثم أعد القياس · البديل: المنهج البديل المكتوب للمرحلة في الخطة · تصعيد: معيار إلزامي لا يتحقق بعد البديل: توقف وأبلغ بالأرقام
+
+#### 6. الأدلة
+
+- `kosif-tool/.claude/skills/kosif-superpowers/evals/test_micro_index.py`
+- `kosif-tool/.claude/skills/kosif-superpowers/scripts/micro_index.py`
+
+#### 7. قدرات قريبة في العائلة
+
+- `TOOL-16` إنشاء فيلم سبورة مرسوم وتصييره / Doodle film runtime and renderer (proven)
+- `TOOL-160` متابعة أشهر 1000 مستودع / GitHub Top-1000 Tracker (proven)
+- `TOOL-162` خريطة المستودع / Repo Map (proven)
+- `TOOL-163` عمليات الذاكرة / Memory Ops (proven)
+
+### `TOOL-162` — خريطة المستودع / Repo Map
 
 | الحقل | القيمة |
 |---|---|
@@ -5536,7 +5606,7 @@
 
 #### 3. موضعها في الخطة (A26)
 
-- عقدة منمّطة: المدخل `brief` ← المخرج `plan`، والمنفّذ `method:TOOL-161` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
+- عقدة منمّطة: المدخل `brief` ← المخرج `plan`، والمنفّذ `method:TOOL-162` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
 - لا أداة مسجلة تخدم عائلتها: التنفيذ بالمكتبات أو بأداة من مجموعة أخرى.
 - مراحل النوع: الهدف بمؤشره ← ثلاثة خيارات مختلفة ← تقييم وحساسية ← تشريح مسبق ← بوابات مكتوبة ← خطوة أولى قابلة للتراجع.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
@@ -5562,12 +5632,12 @@
 
 #### 7. قدرات قريبة في العائلة
 
-- `TOOL-16` إنشاء فيلم سبورة مرسوم وتصييره / Doodle film runtime and renderer (proven)
 - `TOOL-160` متابعة أشهر 1000 مستودع / GitHub Top-1000 Tracker (proven)
-- `TOOL-162` عمليات الذاكرة / Memory Ops (proven)
-- `TOOL-163` فيزياء الحركة / Motion Physics (proven)
+- `TOOL-161` الفهرس الدقيق: سطر لكل قدرة وأداة وقدرة خارقة / Micro index: one line per power, tool and superpower (proven)
+- `TOOL-163` عمليات الذاكرة / Memory Ops (proven)
+- `TOOL-164` فيزياء الحركة / Motion Physics (proven)
 
-### `TOOL-162` — عمليات الذاكرة / Memory Ops
+### `TOOL-163` — عمليات الذاكرة / Memory Ops
 
 | الحقل | القيمة |
 |---|---|
@@ -5605,7 +5675,7 @@
 
 #### 3. موضعها في الخطة (A26)
 
-- عقدة منمّطة: المدخل `brief` ← المخرج `plan`، والمنفّذ `method:TOOL-162` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
+- عقدة منمّطة: المدخل `brief` ← المخرج `plan`، والمنفّذ `method:TOOL-163` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
 - لا أداة مسجلة تخدم عائلتها: التنفيذ بالمكتبات أو بأداة من مجموعة أخرى.
 - مراحل النوع: الهدف بمؤشره ← ثلاثة خيارات مختلفة ← تقييم وحساسية ← تشريح مسبق ← بوابات مكتوبة ← خطوة أولى قابلة للتراجع.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
@@ -5631,12 +5701,12 @@
 
 #### 7. قدرات قريبة في العائلة
 
-- `TOOL-160` متابعة أشهر 1000 مستودع / GitHub Top-1000 Tracker (proven)
-- `TOOL-161` خريطة المستودع / Repo Map (proven)
-- `TOOL-163` فيزياء الحركة / Motion Physics (proven)
-- `TOOL-164` سطور الترجمة: من توقيت الكلمات إلى ترجمة مقروءة / Caption lines: word timings to readable SRT/VTT (proven)
+- `TOOL-161` الفهرس الدقيق: سطر لكل قدرة وأداة وقدرة خارقة / Micro index: one line per power, tool and superpower (proven)
+- `TOOL-162` خريطة المستودع / Repo Map (proven)
+- `TOOL-164` فيزياء الحركة / Motion Physics (proven)
+- `TOOL-165` سطور الترجمة: من توقيت الكلمات إلى ترجمة مقروءة / Caption lines: word timings to readable SRT/VTT (proven)
 
-### `TOOL-163` — فيزياء الحركة / Motion Physics
+### `TOOL-164` — فيزياء الحركة / Motion Physics
 
 | الحقل | القيمة |
 |---|---|
@@ -5676,7 +5746,7 @@
 
 #### 3. موضعها في الخطة (A26)
 
-- عقدة منمّطة: المدخل `brief` ← المخرج `plan`، والمنفّذ `method:TOOL-163` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
+- عقدة منمّطة: المدخل `brief` ← المخرج `plan`، والمنفّذ `method:TOOL-164` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
 - لا أداة مسجلة تخدم عائلتها: التنفيذ بالمكتبات أو بأداة من مجموعة أخرى.
 - مراحل النوع: الهدف بمؤشره ← ثلاثة خيارات مختلفة ← تقييم وحساسية ← تشريح مسبق ← بوابات مكتوبة ← خطوة أولى قابلة للتراجع.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
@@ -5702,12 +5772,12 @@
 
 #### 7. قدرات قريبة في العائلة
 
-- `TOOL-161` خريطة المستودع / Repo Map (proven)
-- `TOOL-162` عمليات الذاكرة / Memory Ops (proven)
-- `TOOL-164` سطور الترجمة: من توقيت الكلمات إلى ترجمة مقروءة / Caption lines: word timings to readable SRT/VTT (proven)
-- `TOOL-165` خط اللوك: تلوين واحد لـ ffmpeg وSVG وGLSL / Look pipeline: one colour grade for ffmpeg, SVG/CSS and GLSL (proven)
+- `TOOL-162` خريطة المستودع / Repo Map (proven)
+- `TOOL-163` عمليات الذاكرة / Memory Ops (proven)
+- `TOOL-165` سطور الترجمة: من توقيت الكلمات إلى ترجمة مقروءة / Caption lines: word timings to readable SRT/VTT (proven)
+- `TOOL-166` خط اللوك: تلوين واحد لـ ffmpeg وSVG وGLSL / Look pipeline: one colour grade for ffmpeg, SVG/CSS and GLSL (proven)
 
-### `TOOL-164` — سطور الترجمة: من توقيت الكلمات إلى ترجمة مقروءة / Caption lines: word timings to readable SRT/VTT
+### `TOOL-165` — سطور الترجمة: من توقيت الكلمات إلى ترجمة مقروءة / Caption lines: word timings to readable SRT/VTT
 
 | الحقل | القيمة |
 |---|---|
@@ -5746,7 +5816,7 @@
 
 #### 3. موضعها في الخطة (A26)
 
-- عقدة منمّطة: المدخل `brief` ← المخرج `plan`، والمنفّذ `method:TOOL-164` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
+- عقدة منمّطة: المدخل `brief` ← المخرج `plan`، والمنفّذ `method:TOOL-165` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
 - لا أداة مسجلة تخدم عائلتها: التنفيذ بالمكتبات أو بأداة من مجموعة أخرى.
 - مراحل النوع: الهدف بمؤشره ← ثلاثة خيارات مختلفة ← تقييم وحساسية ← تشريح مسبق ← بوابات مكتوبة ← خطوة أولى قابلة للتراجع.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
@@ -5773,12 +5843,12 @@
 
 #### 7. قدرات قريبة في العائلة
 
-- `TOOL-162` عمليات الذاكرة / Memory Ops (proven)
-- `TOOL-163` فيزياء الحركة / Motion Physics (proven)
-- `TOOL-165` خط اللوك: تلوين واحد لـ ffmpeg وSVG وGLSL / Look pipeline: one colour grade for ffmpeg, SVG/CSS and GLSL (proven)
-- `TOOL-166` فاحص أرقام الدروس والشروح / Lesson number integrity checker (proven)
+- `TOOL-163` عمليات الذاكرة / Memory Ops (proven)
+- `TOOL-164` فيزياء الحركة / Motion Physics (proven)
+- `TOOL-166` خط اللوك: تلوين واحد لـ ffmpeg وSVG وGLSL / Look pipeline: one colour grade for ffmpeg, SVG/CSS and GLSL (proven)
+- `TOOL-167` فاحص أرقام الدروس والشروح / Lesson number integrity checker (proven)
 
-### `TOOL-165` — خط اللوك: تلوين واحد لـ ffmpeg وSVG وGLSL / Look pipeline: one colour grade for ffmpeg, SVG/CSS and GLSL
+### `TOOL-166` — خط اللوك: تلوين واحد لـ ffmpeg وSVG وGLSL / Look pipeline: one colour grade for ffmpeg, SVG/CSS and GLSL
 
 | الحقل | القيمة |
 |---|---|
@@ -5817,7 +5887,7 @@
 
 #### 3. موضعها في الخطة (A26)
 
-- عقدة منمّطة: المدخل `brief` ← المخرج `plan`، والمنفّذ `method:TOOL-165` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
+- عقدة منمّطة: المدخل `brief` ← المخرج `plan`، والمنفّذ `method:TOOL-166` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
 - لا أداة مسجلة تخدم عائلتها: التنفيذ بالمكتبات أو بأداة من مجموعة أخرى.
 - مراحل النوع: الهدف بمؤشره ← ثلاثة خيارات مختلفة ← تقييم وحساسية ← تشريح مسبق ← بوابات مكتوبة ← خطوة أولى قابلة للتراجع.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
@@ -5843,12 +5913,12 @@
 
 #### 7. قدرات قريبة في العائلة
 
-- `TOOL-163` فيزياء الحركة / Motion Physics (proven)
-- `TOOL-164` سطور الترجمة: من توقيت الكلمات إلى ترجمة مقروءة / Caption lines: word timings to readable SRT/VTT (proven)
-- `TOOL-166` فاحص أرقام الدروس والشروح / Lesson number integrity checker (proven)
-- `TOOL-167` التعديل السريع: قص فوري يعرف الإطارات المفتاحية، مغيّر صوت، تفتيح الفيديو المظلم، استخراج الصوت / Fast Edit: keyframe-aware instant cut, voice presets, low-light lift, audio extract (proven)
+- `TOOL-164` فيزياء الحركة / Motion Physics (proven)
+- `TOOL-165` سطور الترجمة: من توقيت الكلمات إلى ترجمة مقروءة / Caption lines: word timings to readable SRT/VTT (proven)
+- `TOOL-167` فاحص أرقام الدروس والشروح / Lesson number integrity checker (proven)
+- `TOOL-168` التعديل السريع: قص فوري يعرف الإطارات المفتاحية، مغيّر صوت، تفتيح الفيديو المظلم، استخراج الصوت / Fast Edit: keyframe-aware instant cut, voice presets, low-light lift, audio extract (proven)
 
-### `TOOL-166` — فاحص أرقام الدروس والشروح / Lesson number integrity checker
+### `TOOL-167` — فاحص أرقام الدروس والشروح / Lesson number integrity checker
 
 | الحقل | القيمة |
 |---|---|
@@ -5886,7 +5956,7 @@
 
 #### 3. موضعها في الخطة (A26)
 
-- عقدة منمّطة: المدخل `brief` ← المخرج `plan`، والمنفّذ `method:TOOL-166` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
+- عقدة منمّطة: المدخل `brief` ← المخرج `plan`، والمنفّذ `method:TOOL-167` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
 - لا أداة مسجلة تخدم عائلتها: التنفيذ بالمكتبات أو بأداة من مجموعة أخرى.
 - مراحل النوع: الهدف بمؤشره ← ثلاثة خيارات مختلفة ← تقييم وحساسية ← تشريح مسبق ← بوابات مكتوبة ← خطوة أولى قابلة للتراجع.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
@@ -5912,12 +5982,12 @@
 
 #### 7. قدرات قريبة في العائلة
 
-- `TOOL-164` سطور الترجمة: من توقيت الكلمات إلى ترجمة مقروءة / Caption lines: word timings to readable SRT/VTT (proven)
-- `TOOL-165` خط اللوك: تلوين واحد لـ ffmpeg وSVG وGLSL / Look pipeline: one colour grade for ffmpeg, SVG/CSS and GLSL (proven)
-- `TOOL-167` التعديل السريع: قص فوري يعرف الإطارات المفتاحية، مغيّر صوت، تفتيح الفيديو المظلم، استخراج الصوت / Fast Edit: keyframe-aware instant cut, voice presets, low-light lift, audio extract (proven)
-- `TOOL-168` محرك الخامات الملوّنة: ألوان خشبية وفرشاة زيت وألوان مائية لأي صورة / Colour media engine: coloured pencil, oil brush and watercolour painting of a photo (proven)
+- `TOOL-165` سطور الترجمة: من توقيت الكلمات إلى ترجمة مقروءة / Caption lines: word timings to readable SRT/VTT (proven)
+- `TOOL-166` خط اللوك: تلوين واحد لـ ffmpeg وSVG وGLSL / Look pipeline: one colour grade for ffmpeg, SVG/CSS and GLSL (proven)
+- `TOOL-168` التعديل السريع: قص فوري يعرف الإطارات المفتاحية، مغيّر صوت، تفتيح الفيديو المظلم، استخراج الصوت / Fast Edit: keyframe-aware instant cut, voice presets, low-light lift, audio extract (proven)
+- `TOOL-169` محرك الخامات الملوّنة: ألوان خشبية وفرشاة زيت وألوان مائية لأي صورة / Colour media engine: coloured pencil, oil brush and watercolour painting of a photo (proven)
 
-### `TOOL-167` — التعديل السريع: قص فوري يعرف الإطارات المفتاحية، مغيّر صوت، تفتيح الفيديو المظلم، استخراج الصوت / Fast Edit: keyframe-aware instant cut, voice presets, low-light lift, audio extract
+### `TOOL-168` — التعديل السريع: قص فوري يعرف الإطارات المفتاحية، مغيّر صوت، تفتيح الفيديو المظلم، استخراج الصوت / Fast Edit: keyframe-aware instant cut, voice presets, low-light lift, audio extract
 
 | الحقل | القيمة |
 |---|---|
@@ -5956,7 +6026,7 @@
 
 #### 3. موضعها في الخطة (A26)
 
-- عقدة منمّطة: المدخل `brief` ← المخرج `plan`، والمنفّذ `method:TOOL-167` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
+- عقدة منمّطة: المدخل `brief` ← المخرج `plan`، والمنفّذ `method:TOOL-168` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
 - لا أداة مسجلة تخدم عائلتها: التنفيذ بالمكتبات أو بأداة من مجموعة أخرى.
 - مراحل النوع: الهدف بمؤشره ← ثلاثة خيارات مختلفة ← تقييم وحساسية ← تشريح مسبق ← بوابات مكتوبة ← خطوة أولى قابلة للتراجع.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
@@ -5982,12 +6052,12 @@
 
 #### 7. قدرات قريبة في العائلة
 
-- `TOOL-165` خط اللوك: تلوين واحد لـ ffmpeg وSVG وGLSL / Look pipeline: one colour grade for ffmpeg, SVG/CSS and GLSL (proven)
-- `TOOL-166` فاحص أرقام الدروس والشروح / Lesson number integrity checker (proven)
-- `TOOL-168` محرك الخامات الملوّنة: ألوان خشبية وفرشاة زيت وألوان مائية لأي صورة / Colour media engine: coloured pencil, oil brush and watercolour painting of a photo (proven)
+- `TOOL-166` خط اللوك: تلوين واحد لـ ffmpeg وSVG وGLSL / Look pipeline: one colour grade for ffmpeg, SVG/CSS and GLSL (proven)
+- `TOOL-167` فاحص أرقام الدروس والشروح / Lesson number integrity checker (proven)
+- `TOOL-169` محرك الخامات الملوّنة: ألوان خشبية وفرشاة زيت وألوان مائية لأي صورة / Colour media engine: coloured pencil, oil brush and watercolour painting of a photo (proven)
 - `TOOL-17` مولّد مشاريع بداية لمحركات الحركة / Third-party motion engine scaffolder (proven)
 
-### `TOOL-168` — محرك الخامات الملوّنة: ألوان خشبية وفرشاة زيت وألوان مائية لأي صورة / Colour media engine: coloured pencil, oil brush and watercolour painting of a photo
+### `TOOL-169` — محرك الخامات الملوّنة: ألوان خشبية وفرشاة زيت وألوان مائية لأي صورة / Colour media engine: coloured pencil, oil brush and watercolour painting of a photo
 
 | الحقل | القيمة |
 |---|---|
@@ -6028,7 +6098,7 @@
 
 #### 3. موضعها في الخطة (A26)
 
-- عقدة منمّطة: المدخل `brief` ← المخرج `plan`، والمنفّذ `method:TOOL-168` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
+- عقدة منمّطة: المدخل `brief` ← المخرج `plan`، والمنفّذ `method:TOOL-169` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
 - لا أداة مسجلة تخدم عائلتها: التنفيذ بالمكتبات أو بأداة من مجموعة أخرى.
 - مراحل النوع: الهدف بمؤشره ← ثلاثة خيارات مختلفة ← تقييم وحساسية ← تشريح مسبق ← بوابات مكتوبة ← خطوة أولى قابلة للتراجع.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
@@ -6054,8 +6124,8 @@
 
 #### 7. قدرات قريبة في العائلة
 
-- `TOOL-166` فاحص أرقام الدروس والشروح / Lesson number integrity checker (proven)
-- `TOOL-167` التعديل السريع: قص فوري يعرف الإطارات المفتاحية، مغيّر صوت، تفتيح الفيديو المظلم، استخراج الصوت / Fast Edit: keyframe-aware instant cut, voice presets, low-light lift, audio extract (proven)
+- `TOOL-167` فاحص أرقام الدروس والشروح / Lesson number integrity checker (proven)
+- `TOOL-168` التعديل السريع: قص فوري يعرف الإطارات المفتاحية، مغيّر صوت، تفتيح الفيديو المظلم، استخراج الصوت / Fast Edit: keyframe-aware instant cut, voice presets, low-light lift, audio extract (proven)
 - `TOOL-17` مولّد مشاريع بداية لمحركات الحركة / Third-party motion engine scaffolder (proven)
 - `TOOL-18` مكتبة رياضيات الحركة / Motion math toolkit (proven)
 
@@ -6129,8 +6199,8 @@
 
 #### 7. قدرات قريبة في العائلة
 
-- `TOOL-167` التعديل السريع: قص فوري يعرف الإطارات المفتاحية، مغيّر صوت، تفتيح الفيديو المظلم، استخراج الصوت / Fast Edit: keyframe-aware instant cut, voice presets, low-light lift, audio extract (proven)
-- `TOOL-168` محرك الخامات الملوّنة: ألوان خشبية وفرشاة زيت وألوان مائية لأي صورة / Colour media engine: coloured pencil, oil brush and watercolour painting of a photo (proven)
+- `TOOL-168` التعديل السريع: قص فوري يعرف الإطارات المفتاحية، مغيّر صوت، تفتيح الفيديو المظلم، استخراج الصوت / Fast Edit: keyframe-aware instant cut, voice presets, low-light lift, audio extract (proven)
+- `TOOL-169` محرك الخامات الملوّنة: ألوان خشبية وفرشاة زيت وألوان مائية لأي صورة / Colour media engine: coloured pencil, oil brush and watercolour painting of a photo (proven)
 - `TOOL-18` مكتبة رياضيات الحركة / Motion math toolkit (proven)
 - `TOOL-19` تصيير لقطات B-roll بحركة كاميرا / Cinematic B-roll Renderer (proven)
 
@@ -6199,7 +6269,7 @@
 
 #### 7. قدرات قريبة في العائلة
 
-- `TOOL-168` محرك الخامات الملوّنة: ألوان خشبية وفرشاة زيت وألوان مائية لأي صورة / Colour media engine: coloured pencil, oil brush and watercolour painting of a photo (proven)
+- `TOOL-169` محرك الخامات الملوّنة: ألوان خشبية وفرشاة زيت وألوان مائية لأي صورة / Colour media engine: coloured pencil, oil brush and watercolour painting of a photo (proven)
 - `TOOL-17` مولّد مشاريع بداية لمحركات الحركة / Third-party motion engine scaffolder (proven)
 - `TOOL-19` تصيير لقطات B-roll بحركة كاميرا / Cinematic B-roll Renderer (proven)
 - `TOOL-20` مُخطِّط قطعات اللقطات الحقيقية / Footage-First Cut Planner (proven)

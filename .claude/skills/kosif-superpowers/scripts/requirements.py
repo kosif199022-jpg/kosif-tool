@@ -66,7 +66,23 @@ def derive_one(rec: dict, pats) -> list:
         hits = [h for h in hits if not (h.startswith("pip:") and h[4:].lower() in optional and h[4:].lower() not in required)]
     if rec.get("status") == "key" and not any(reg_kind(h) in ("key", "service") for h in hits):
         hits.append("key:unspecified")
+    # a reviewed record whose generic key words name one registered provider keeps that provider only
+    named = unspecified_named().get(str(rec.get("id", "")))
+    if named and named in hits and "key:unspecified" in hits:
+        hits.remove("key:unspecified")
     return hits
+
+
+_NAMED = None
+
+
+def unspecified_named() -> dict:
+    """id → registered key, from data/requirements.json `_unspecified_named` (a reviewed list)."""
+    global _NAMED
+    if _NAMED is None:
+        raw = json.loads(REG.read_text(encoding="utf-8")).get("_unspecified_named") or {}
+        _NAMED = {k: v for k, v in raw.items() if not k.startswith("_") and isinstance(v, str)}
+    return _NAMED
 
 
 _REG = None

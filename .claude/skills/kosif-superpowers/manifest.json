@@ -15,17 +15,17 @@
  },
  "paths_note": "Tool paths and examples are relative to their root: 'skill' = this folder, 'repo' = the kosif-tool repository root.",
  "counts": {
-  "powers": 5727,
+  "powers": 5728,
   "families": 62,
   "domains": 10,
-  "tools": 167,
+  "tools": 168,
   "guides": 112,
   "statuses": {
    "documented": 2206,
    "idea": 71,
    "install": 980,
    "key": 176,
-   "proven": 1011,
+   "proven": 1012,
    "ready": 674,
    "seen": 609
   }
@@ -890,10 +890,10 @@
    "domain": "build",
    "title_ar": "الأدوات القابلة للتشغيل",
    "title_en": "Runnable KOSIF tools",
-   "count": 167,
+   "count": 168,
    "statuses": {
     "install": 12,
-    "proven": 134,
+    "proven": 135,
     "ready": 21
    },
    "chapter": "references/powers/runnable-tools.md",
@@ -15032,7 +15032,7 @@
     "hand-drawn-draw-on",
     "story-direction-ideas"
    ],
-   "power_id": "TOOL-168"
+   "power_id": "TOOL-169"
   },
   {
    "id": "drawing-council",
@@ -15385,7 +15385,7 @@
     "code-engineering",
     "software-investigation"
    ],
-   "power_id": "TOOL-161"
+   "power_id": "TOOL-162"
   },
   {
    "root": "skill",
@@ -15464,7 +15464,7 @@
     "agent-orchestration",
     "self-discovery"
    ],
-   "power_id": "TOOL-162"
+   "power_id": "TOOL-163"
   },
   {
    "root": "skill",
@@ -15553,7 +15553,7 @@
    "families": [
     "easing-timing-rhythm"
    ],
-   "power_id": "TOOL-163"
+   "power_id": "TOOL-164"
   },
   {
    "id": "caption-lines",
@@ -15623,7 +15623,7 @@
     "app-feature-transfer",
     "typography-arabic"
    ],
-   "power_id": "TOOL-164"
+   "power_id": "TOOL-165"
   },
   {
    "id": "look-pipeline",
@@ -15706,7 +15706,7 @@
     "app-feature-transfer",
     "photo-video-footage"
    ],
-   "power_id": "TOOL-165"
+   "power_id": "TOOL-166"
   },
   {
    "id": "lesson-integrity",
@@ -15810,7 +15810,7 @@
     "verification-evals",
     "apps-artifacts"
    ],
-   "power_id": "TOOL-166"
+   "power_id": "TOOL-167"
   },
   {
    "id": "fast-edit",
@@ -15927,7 +15927,82 @@
     "transitions-cuts",
     "audio-sync-captions"
    ],
-   "power_id": "TOOL-167"
+   "power_id": "TOOL-168"
+  },
+  {
+   "id": "micro-index",
+   "path": "scripts/micro_index.py",
+   "root": "skill",
+   "kind": "cli",
+   "area": "discover",
+   "title_en": "Micro index: one line per power, tool and superpower",
+   "title_ar": "الفهرس الدقيق: سطر لكل قدرة وأداة وقدرة خارقة",
+   "summary_en": "Builds the finest-grained map of the skill: every atomic power, runnable tool and fused superpower gets one entry with its group, domain, family, superpower, badge, requirements, the tools of its family, its chapter and its library card. Writes data/micro_index.json and references/micro-index/ (one page per group plus tools and superpowers); find searches it in Arabic or English and show prints any id with its neighbours. --check reports stale files without writing.",
+   "summary_ar": "يبني أدق خريطة للمهارة: لكل قدرة ذرية وأداة قابلة للتشغيل وقدرة خارقة مدخل واحد فيه مجموعتها ومجالها وعائلتها وقدرتها الخارقة وشارتها ومستلزماتها وأدوات عائلتها وفصلها وبطاقتها في المكتبة. يكتب data/micro_index.json وreferences/micro-index/ (صفحة لكل مجموعة وصفحة للأدوات وأخرى للقدرات الخارقة)؛ find يبحث فيه بالعربية أو الإنجليزية وshow يعرض أي معرّف مع جيرانه. الخيار --check يبلغ عن الملفات غير المحدّثة دون كتابة.",
+   "use_when": [
+    "اعرض لي الفهرس الدقيق لكل القدرات",
+    "فين القدرة دي وإيه الأدوات اللي معاها",
+    "Find every power, tool and superpower about loudness",
+    "Show SP-0042 with its members and links"
+   ],
+   "keywords": [
+    "micro index",
+    "index",
+    "find",
+    "show",
+    "catalog",
+    "map",
+    "فهرس",
+    "فهرس دقيق",
+    "بحث",
+    "خريطة",
+    "قدرات"
+   ],
+   "commands": [
+    {
+     "name": "build",
+     "example": "python3 scripts/micro_index.py build",
+     "does": "Writes data/micro_index.json and the pages under references/micro-index/; --check writes nothing and exits 1 when stale."
+    },
+    {
+     "name": "find",
+     "example": "python3 scripts/micro_index.py find \"قص على الإيقاع\" --top 10",
+     "does": "Ranked one-line matches across powers, tools and superpowers; --kind narrows, --json for machines."
+    },
+    {
+     "name": "show",
+     "example": "python3 scripts/micro_index.py show SP-0001",
+     "does": "One id (power, TOOL-NN, tool id or SP-NNNN) with its superpower, family tools, chapter, card, members or links."
+    },
+    {
+     "name": "stats",
+     "example": "python3 scripts/micro_index.py stats",
+     "does": "Counts per kind, status and group."
+    }
+   ],
+   "inputs": "data/powers/*.json, data/tools.json, data/superpowers.json, data/smart_capability_index.json",
+   "outputs": "data/micro_index.json and references/micro-index/*.md; matches on stdout",
+   "requires": {
+    "python": [],
+    "binaries": [],
+    "node": [],
+    "optional": [],
+    "network": false
+   },
+   "safety": "writes-files",
+   "consent": "build writes only its own generated files; find, show and stats only read.",
+   "limits": "An entry is an address, not a proof: badges are the records' own and a proven badge still needs a real run.",
+   "tests": [
+    ".claude/skills/kosif-superpowers/evals/test_micro_index.py"
+   ],
+   "docs": [
+    ".claude/skills/kosif-superpowers/references/micro-index/README.md"
+   ],
+   "families": [
+    "self-discovery"
+   ],
+   "evidence": "tested-here",
+   "power_id": "TOOL-161"
   }
  ],
  "guides": [

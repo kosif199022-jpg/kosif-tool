@@ -2,6 +2,7 @@
  {
   "id": "GEN-01",
   "family": "ai-generation",
+  "domain": "motion",
   "section": "تشريح البرومبت وقواعده — Prompt anatomy & rules",
   "name_ar": "تشريح البرومبت السباعي والمعادلة الذهبية",
   "name_en": "Seven-layer prompt anatomy & golden formula",
@@ -32,6 +33,7 @@
  {
   "id": "GEN-02",
   "family": "ai-generation",
+  "domain": "motion",
   "section": "تشريح البرومبت وقواعده — Prompt anatomy & rules",
   "name_ar": "القواعد الحديدية والكلمات القوية",
   "name_en": "Iron rules: physical cues beat hype words",
@@ -64,6 +66,7 @@
  {
   "id": "GEN-03",
   "family": "ai-generation",
+  "domain": "motion",
   "section": "تشريح البرومبت وقواعده — Prompt anatomy & rules",
   "name_ar": "قائمة النفي الأساسية والصياغة الإيجابية",
   "name_en": "Negative baseline vs positive framing",
@@ -94,6 +97,7 @@
  {
   "id": "GEN-04",
   "family": "ai-generation",
+  "domain": "motion",
   "section": "تشريح البرومبت وقواعده — Prompt anatomy & rules",
   "name_ar": "معادلة برومبت الصورة ذات الخانات الست",
   "name_en": "Six-slot still prompt formula",
@@ -120,6 +124,7 @@
  {
   "id": "GEN-05",
   "family": "ai-generation",
+  "domain": "motion",
   "section": "تشريح البرومبت وقواعده — Prompt anatomy & rules",
   "name_ar": "برومبت سردي لنانو بنانا / Gemini",
   "name_en": "Narrative prose brief for Gemini / Nano Banana",
@@ -147,6 +152,7 @@
  {
   "id": "GEN-06",
   "family": "ai-generation",
+  "domain": "motion",
   "section": "تشريح البرومبت وقواعده — Prompt anatomy & rules",
   "name_ar": "دليل صياغة كل مولّد وترجمة صيغة ميدجورني",
   "name_en": "Per-generator syntax & Midjourney→natural-language translation",
@@ -180,6 +186,7 @@
  {
   "id": "GEN-07",
   "family": "ai-generation",
+  "domain": "motion",
   "section": "تشريح البرومبت وقواعده — Prompt anatomy & rules",
   "name_ar": "معادلة برومبت لقطة الفيديو",
   "name_en": "Video shot prompt formula",
@@ -211,6 +218,7 @@
  {
   "id": "GEN-08",
   "family": "ai-generation",
+  "domain": "motion",
   "section": "تشريح البرومبت وقواعده — Prompt anatomy & rules",
   "name_ar": "منع الموسيقى والترجمة المزيفة في الفيديو المولد",
   "name_en": "Suppress generated music bed & fake subtitles",
@@ -240,6 +248,7 @@
  {
   "id": "GEN-09",
   "family": "ai-generation",
+  "domain": "motion",
   "section": "تشريح البرومبت وقواعده — Prompt anatomy & rules",
   "name_ar": "حدود مولدات الفيديو الحالية",
   "name_en": "Known limits of current video generators",
@@ -268,6 +277,7 @@
  {
   "id": "GEN-10",
   "family": "ai-generation",
+  "domain": "motion",
   "section": "مصانع البرومبت المُختبرة — Tested prompt forges & profile packs",
   "name_ar": "مصنع البرومبت: مواصفة واحدة ← تسع منصات",
   "name_en": "Prompt forge: one spec → 9 generator prompts",
@@ -300,6 +310,7 @@
  {
   "id": "GEN-11",
   "family": "ai-generation",
+  "domain": "motion",
   "section": "مصانع البرومبت المُختبرة — Tested prompt forges & profile packs",
   "name_ar": "خصائص منصات الفيديو (DNA)",
   "name_en": "Video-model platform DNA (Veo / Runway / Kling / Sora)",
@@ -332,6 +343,7 @@
  {
   "id": "GEN-12",
   "family": "ai-generation",
+  "domain": "motion",
   "section": "مصانع البرومبت المُختبرة — Tested prompt forges & profile packs",
   "name_ar": "مواصفة الصورة الموحدة وستة مُنشئات",
   "name_en": "Image spec schema → 6 platform builders",
@@ -365,6 +377,7 @@
  {
   "id": "GEN-13",
   "family": "ai-generation",
+  "domain": "motion",
   "section": "مصانع البرومبت المُختبرة — Tested prompt forges & profile packs",
   "name_ar": "قوالب لقطات الفيديو لسبع منصات مع قص المدة",
   "name_en": "Shot list → 7 video-platform prompts with duration clamping",
@@ -399,6 +412,7 @@
  {
   "id": "GEN-14",
   "family": "ai-generation",
+  "domain": "motion",
   "section": "مصانع البرومبت المُختبرة — Tested prompt forges & profile packs",
   "name_ar": "برومبتات اللقطات السباعية (kmotion aiprompts)",
   "name_en": "kmotion aiprompts: 7-layer per-shot prompts",
@@ -432,6 +446,7 @@
  {
   "id": "GEN-15",
   "family": "ai-generation",
+  "domain": "motion",
   "section": "مصانع البرومبت المُختبرة — Tested prompt forges & profile packs",
   "name_ar": "من فيديو مرجعي إلى برومبت Omni Flash",
   "name_en": "Reference breakdown → Omni Flash generation prompt",
@@ -463,6 +478,7 @@
  {
   "id": "GEN-16",
   "family": "ai-generation",
+  "domain": "motion",
   "section": "مصانع البرومبت المُختبرة — Tested prompt forges & profile packs",
   "name_ar": "مواصفة مشهد مكتوبة وبصمة SHA-256",
   "name_en": "Typed SceneSpec compile + SHA-256 digest",
@@ -492,6 +508,7 @@
  {
   "id": "GEN-17",
   "family": "ai-generation",
+  "domain": "motion",
   "section": "مصانع البرومبت المُختبرة — Tested prompt forges & profile packs",
   "name_ar": "أقفال الشخصية والأسلوب والمكان",
   "name_en": "Character / style / location locks",
@@ -520,6 +537,7 @@
  {
   "id": "GEN-18",
   "family": "ai-generation",
+  "domain": "motion",
   "section": "مصانع البرومبت المُختبرة — Tested prompt forges & profile packs",
   "name_ar": "واجهة الأنماط المرحلية (Fastify)",
   "name_en": "Stage-gated profile CLI",
@@ -550,6 +568,7 @@
  {
   "id": "GEN-19",
   "family": "ai-generation",
+  "domain": "motion",
   "section": "مصانع البرومبت المُختبرة — Tested prompt forges & profile packs",
   "name_ar": "سلاسل برومبتات الأنماط الخمسة",
   "name_en": "Five profile prompt series (stickman, fitness, car, history, food)",
@@ -584,6 +603,7 @@
  {
   "id": "GEN-20",
   "family": "ai-generation",
+  "domain": "motion",
   "section": "مصانع البرومبت المُختبرة — Tested prompt forges & profile packs",
   "name_ar": "حزمة الكينتك فلو واللقطة النظيفة",
   "name_en": "Kinetic Flow prompt pack + clean plate & overlay sheet",
@@ -615,6 +635,7 @@
  {
   "id": "GEN-21",
   "family": "ai-generation",
+  "domain": "motion",
   "section": "مصانع البرومبت المُختبرة — Tested prompt forges & profile packs",
   "name_ar": "برومبتات البوستر والحركة التحريرية",
   "name_en": "Viral-editorial poster + silent motion prompts",
@@ -643,6 +664,7 @@
  {
   "id": "GEN-22",
   "family": "ai-generation",
+  "domain": "motion",
   "section": "مصانع البرومبت المُختبرة — Tested prompt forges & profile packs",
   "name_ar": "بذور برومبت في كل سقالة",
   "name_en": "Per-shot AI prompt seeds written by the scaffold",
@@ -669,6 +691,7 @@
  {
   "id": "GEN-23",
   "family": "ai-generation",
+  "domain": "motion",
   "section": "مصانع البرومبت المُختبرة — Tested prompt forges & profile packs",
   "name_ar": "تخطيط موجه لنماذج الفيديو",
   "name_en": "ProPlan model-prompt stage with continuity locks",
@@ -699,6 +722,7 @@
  {
   "id": "GEN-24",
   "family": "ai-generation",
+  "domain": "motion",
   "section": "مصانع البرومبت المُختبرة — Tested prompt forges & profile packs",
   "name_ar": "معادلة برومبت النماذج اللغوية ومدققها",
   "name_en": "LLM prompt formula + linter (prompts for agents & generators)",
@@ -730,6 +754,7 @@
  {
   "id": "GEN-25",
   "family": "ai-generation",
+  "domain": "motion",
   "section": "مصانع البرومبت المُختبرة — Tested prompt forges & profile packs",
   "name_ar": "مثال مصر 2120: حزمة برومبتات كاملة",
   "name_en": "Worked example: Egypt 2120 multi-platform pack",
@@ -759,6 +784,7 @@
  {
   "id": "GEN-26",
   "family": "ai-generation",
+  "domain": "motion",
   "section": "مكتبات المظهر والأسلوب — Look, style & vocabulary libraries",
   "name_ar": "كتالوج الأساليب المسماة (أكثر من 30 مظهرًا)",
   "name_en": "Named look catalogue (30+ looks)",
@@ -789,6 +815,7 @@
  {
   "id": "GEN-27",
   "family": "ai-generation",
+  "domain": "motion",
   "section": "مكتبات المظهر والأسلوب — Look, style & vocabulary libraries",
   "name_ar": "مقدمات الأسلوب المتطابقة بايتًا",
   "name_en": "Byte-identical style preambles",
@@ -815,6 +842,7 @@
  {
   "id": "GEN-28",
   "family": "ai-generation",
+  "domain": "motion",
   "section": "مكتبات المظهر والأسلوب — Look, style & vocabulary libraries",
   "name_ar": "استخراج قفل الأسلوب",
   "name_en": "Style-lock extraction",
@@ -844,6 +872,7 @@
  {
   "id": "GEN-29",
   "family": "ai-generation",
+  "domain": "motion",
   "section": "مكتبات المظهر والأسلوب — Look, style & vocabulary libraries",
   "name_ar": "مكتبات المعدِّلات حسب المجال وقوالب التصوير",
   "name_en": "Domain modifiers, photo templates & camera bodies",
@@ -873,6 +902,7 @@
  {
   "id": "GEN-30",
   "family": "ai-generation",
+  "domain": "motion",
   "section": "مكتبات المظهر والأسلوب — Look, style & vocabulary libraries",
   "name_ar": "مفردات التلوين وحزم أسلوب الفيديو",
   "name_en": "Grade vocabulary, film stocks & video style packs",
@@ -901,6 +931,7 @@
  {
   "id": "GEN-31",
   "family": "ai-generation",
+  "domain": "motion",
   "section": "مكتبات المظهر والأسلوب — Look, style & vocabulary libraries",
   "name_ar": "وصفات أساليب كلينج بنطاقات cfg_scale",
   "name_en": "Kling style recipes with cfg_scale bands",
@@ -928,6 +959,7 @@
  {
   "id": "GEN-32",
   "family": "ai-generation",
+  "domain": "motion",
   "section": "مكتبات المظهر والأسلوب — Look, style & vocabulary libraries",
   "name_ar": "البرومبت العكسي ونقد الصورة",
   "name_en": "Reverse prompt & image critique",
@@ -959,6 +991,7 @@
  {
   "id": "GEN-33",
   "family": "ai-generation",
+  "domain": "motion",
   "section": "توليد الصور — Image generation routes",
   "name_ar": "أنت المولّد: صورة من وصف بالكود (SVG / Canvas / PIL / Three.js)",
   "name_en": "You are the generator: picture from a description as code",
@@ -991,6 +1024,7 @@
  {
   "id": "GEN-34",
   "family": "ai-generation",
+  "domain": "motion",
   "section": "توليد الصور — Image generation routes",
   "name_ar": "استخراج الكود من رد الذكاء الاصطناعي",
   "name_en": "AI-reply code extraction",
@@ -1020,6 +1054,7 @@
  {
   "id": "GEN-35",
   "family": "ai-generation",
+  "domain": "motion",
   "section": "توليد الصور — Image generation routes",
   "name_ar": "جسر الذكاء في الاستوديو (Claude CLI / API / يدوي)",
   "name_en": "Studio AI bridge: Claude CLI → API → manual",
@@ -1050,6 +1085,7 @@
  {
   "id": "GEN-36",
   "family": "ai-generation",
+  "domain": "motion",
   "section": "توليد الصور — Image generation routes",
   "name_ar": "صورة فوتوغرافية محلية sd-turbo أو Pollinations",
   "name_en": "Photo from prompt: local sd-turbo or Pollinations",
@@ -1083,6 +1119,7 @@
  {
   "id": "GEN-37",
   "family": "ai-generation",
+  "domain": "motion",
   "section": "توليد الصور — Image generation routes",
   "name_ar": "توليد وتعديل الصور بـ Gemini (نانو بنانا)",
   "name_en": "Gemini / Nano Banana image generate & edit",
@@ -1115,6 +1152,7 @@
  {
   "id": "GEN-38",
   "family": "ai-generation",
+  "domain": "motion",
   "section": "توليد الصور — Image generation routes",
   "name_ar": "تحرير بمراجع متعددة قبل التحريك (نانو بنانا)",
   "name_en": "Nano Banana multi-reference edit before animation",
@@ -1145,6 +1183,7 @@
  {
   "id": "GEN-39",
   "family": "ai-generation",
+  "domain": "motion",
   "section": "توليد الصور — Image generation routes",
   "name_ar": "عائلة FLUX عبر Together وحلقة Kontext",
   "name_en": "FLUX via Together + Kontext edit round-trip + LoRA",
@@ -1174,6 +1213,7 @@
  {
   "id": "GEN-40",
   "family": "ai-generation",
+  "domain": "motion",
   "section": "توليد الصور — Image generation routes",
   "name_ar": "GPT Image وIdeogram للصور ذات النص",
   "name_en": "GPT Image & Ideogram V4 (text-capable stills, edit, describe)",
@@ -1206,6 +1246,7 @@
  {
   "id": "GEN-41",
   "family": "ai-generation",
+  "domain": "motion",
   "section": "توليد الصور — Image generation routes",
   "name_ar": "صور Higgsfield (Soul v2 / Marketing Studio / gpt_image_2)",
   "name_en": "Higgsfield image generation",
@@ -1236,6 +1277,7 @@
  {
   "id": "GEN-42",
   "family": "ai-generation",
+  "domain": "motion",
   "section": "توليد الصور — Image generation routes",
   "name_ar": "وصفة صور الهوية: كائن معدني وكريستال (ذهبي/جليدي)",
   "name_en": "Brand-still recipe: metal + crystal object on brand ground",
@@ -1266,6 +1308,7 @@
  {
   "id": "GEN-43",
   "family": "ai-generation",
+  "domain": "motion",
   "section": "توليد الصور — Image generation routes",
   "name_ar": "لقطات بمساحة فارغة للكتابة",
   "name_en": "AI plates that reserve typography space",
@@ -1294,6 +1337,7 @@
  {
   "id": "GEN-44",
   "family": "ai-generation",
+  "domain": "motion",
   "section": "توليد الصور — Image generation routes",
   "name_ar": "أيقونات شفافة بثيم وشرائط سبرايت ثابتة",
   "name_en": "Themed transparent icons & consistent sprite strips",
@@ -1326,6 +1370,7 @@
  {
   "id": "GEN-45",
   "family": "ai-generation",
+  "domain": "motion",
   "section": "توليد الصور — Image generation routes",
   "name_ar": "تعديل قبل إعادة التوليد: توسيع وترميم وقص وتكبير",
   "name_en": "Edit before regenerate: outpaint, inpaint, cut-out, upscale",
@@ -1358,6 +1403,7 @@
  {
   "id": "GEN-46",
   "family": "ai-generation",
+  "domain": "motion",
   "section": "توليد الصور — Image generation routes",
   "name_ar": "شجرة اختيار نموذج الصور والترخيص أولًا",
   "name_en": "Image-model routing tree (licence first)",
@@ -1388,6 +1434,7 @@
  {
   "id": "GEN-47",
   "family": "ai-generation",
+  "domain": "motion",
   "section": "توليد الصور — Image generation routes",
   "name_ar": "وصفات ComfyUI: المُعيِّن والجدولة وقياس منحنيات الضوضاء",
   "name_en": "ComfyUI sampler/scheduler recipes & measured sigma curves",
@@ -1415,6 +1462,7 @@
  {
   "id": "GEN-48",
   "family": "ai-generation",
+  "domain": "motion",
   "section": "توليد الصور — Image generation routes",
   "name_ar": "LoRA وControlNet والترميم في ComfyUI",
   "name_en": "ComfyUI LoRA bands, ControlNet & inpainting",
@@ -1442,6 +1490,7 @@
  {
   "id": "GEN-49",
   "family": "ai-generation",
+  "domain": "motion",
   "section": "توليد الفيديو — Video generation routes",
   "name_ar": "شجرة اختيار نموذج الفيديو ومسودة رخيصة ثم نهائي",
   "name_en": "Video-model routing tree & cheap draft → premium final",
@@ -1473,6 +1522,7 @@
  {
   "id": "GEN-50",
   "family": "ai-generation",
+  "domain": "motion",
   "section": "توليد الفيديو — Video generation routes",
   "name_ar": "صورة مفتاحية أولًا ثم تحريكها",
   "name_en": "Keyframe-first image-to-video",
@@ -1501,6 +1551,7 @@
  {
   "id": "GEN-51",
   "family": "ai-generation",
+  "domain": "motion",
   "section": "توليد الفيديو — Video generation routes",
   "name_ar": "Seedance 2.5 عبر Higgsfield (محروس ومدفوع)",
   "name_en": "Seedance 2.5 text/image-to-video via Higgsfield (guarded)",
@@ -1533,6 +1584,7 @@
  {
   "id": "GEN-52",
   "family": "ai-generation",
+  "domain": "motion",
   "section": "توليد الفيديو — Video generation routes",
   "name_ar": "حلقات فيديو Kling للهوية وواجهة Kling",
   "name_en": "Kling text/image-to-video API (+ real brand loops)",
@@ -1564,6 +1616,7 @@
  {
   "id": "GEN-53",
   "family": "ai-generation",
+  "domain": "motion",
   "section": "توليد الفيديو — Video generation routes",
   "name_ar": "فرشاة الحركة والقناع الثابت (سينماغراف)",
   "name_en": "Kling motion brush & static mask (cinemagraph)",
@@ -1592,6 +1645,7 @@
  {
   "id": "GEN-54",
   "family": "ai-generation",
+  "domain": "motion",
   "section": "توليد الفيديو — Video generation routes",
   "name_ar": "تمديد فيديو Kling بالتسلسل ونظام الرصيد",
   "name_en": "Kling extension chain & credit model",
@@ -1622,6 +1676,7 @@
  {
   "id": "GEN-55",
   "family": "ai-generation",
+  "domain": "motion",
   "section": "توليد الفيديو — Video generation routes",
   "name_ar": "واجهة Runway حسب النموذج والتزامن",
   "name_en": "Runway task API & concurrency model",
@@ -1651,6 +1706,7 @@
  {
   "id": "GEN-56",
   "family": "ai-generation",
+  "domain": "motion",
   "section": "توليد الفيديو — Video generation routes",
   "name_ar": "قواعد المراجع في Seedance 2.0 R2V",
   "name_en": "Seedance 2.0 reference-to-video grammar",
@@ -1681,6 +1737,7 @@
  {
   "id": "GEN-57",
   "family": "ai-generation",
+  "domain": "motion",
   "section": "توليد الفيديو — Video generation routes",
   "name_ar": "لقطة أداء مولدة متزامنة مع مقطع الأغنية",
   "name_en": "Reference-to-video performance shot synced to a song slice",
@@ -1711,6 +1768,7 @@
  {
   "id": "GEN-58",
   "family": "ai-generation",
+  "domain": "motion",
   "section": "توليد الفيديو — Video generation routes",
   "name_ar": "ثبات الصوت عبر مرجع صوتي",
   "name_en": "Voice continuity via reference audio",
@@ -1739,6 +1797,7 @@
  {
   "id": "GEN-59",
   "family": "ai-generation",
+  "domain": "motion",
   "section": "توليد الفيديو — Video generation routes",
   "name_ar": "Veo عبر Gemini وقيود Sora 2",
   "name_en": "Veo via Gemini & Sora 2 constraints",
@@ -1771,6 +1830,7 @@
  {
   "id": "GEN-60",
   "family": "ai-generation",
+  "domain": "motion",
   "section": "توليد الفيديو — Video generation routes",
   "name_ar": "منصات التجميع: fal وTogether وWaveSpeed وHF Spaces وVertex",
   "name_en": "Aggregator hubs: fal, Together, WaveSpeed, HF Spaces, Vertex",
@@ -1804,6 +1864,7 @@
  {
   "id": "GEN-61",
   "family": "ai-generation",
+  "domain": "motion",
   "section": "توليد الفيديو — Video generation routes",
   "name_ar": "خياطة الإطارات وسلاسل البداية/النهاية",
   "name_en": "Frame stitching & start/end-image chains for long AI video",
@@ -1837,6 +1898,7 @@
  {
   "id": "GEN-62",
   "family": "ai-generation",
+  "domain": "motion",
   "section": "توليد الفيديو — Video generation routes",
   "name_ar": "فيديو مفتوح الأوزان: Wan 2.x وLTX وAnimateDiff",
   "name_en": "Open-weights video: Wan 2.x, LTX-Video, AnimateDiff",
@@ -1868,6 +1930,7 @@
  {
   "id": "GEN-63",
   "family": "ai-generation",
+  "domain": "motion",
   "section": "توليد الفيديو — Video generation routes",
   "name_ar": "وصلة Higgsfield كمسار برومبت فقط",
   "name_en": "Higgsfield / paid clip route as prompt-only deliverable",
@@ -1897,6 +1960,7 @@
  {
   "id": "GEN-64",
   "family": "ai-generation",
+  "domain": "motion",
   "section": "الصوت والموسيقى والوسائط المساعدة — Music, avatars & assisted media",
   "name_ar": "توليد الموسيقى: Lyria وMusicGen",
   "name_en": "Music generation: Lyria & MusicGen",
@@ -1929,6 +1993,7 @@
  {
   "id": "GEN-65",
   "family": "ai-generation",
+  "domain": "motion",
   "section": "الصوت والموسيقى والوسائط المساعدة — Music, avatars & assisted media",
   "name_ar": "كلمات أغنية وموجز Suno/Udio",
   "name_en": "Song lyrics + Suno/Udio brief",
@@ -1958,6 +2023,7 @@
  {
   "id": "GEN-66",
   "family": "ai-generation",
+  "domain": "motion",
   "section": "الصوت والموسيقى والوسائط المساعدة — Music, avatars & assisted media",
   "name_ar": "أمر واحد لجلب أي وسائط",
   "name_en": "Media resolve: one verb for any asset",
@@ -1989,6 +2055,7 @@
  {
   "id": "GEN-67",
   "family": "ai-generation",
+  "domain": "motion",
   "section": "الصوت والموسيقى والوسائط المساعدة — Music, avatars & assisted media",
   "name_ar": "مقدم افتراضي ودبلجة وترجمة فيديو وتكبير",
   "name_en": "Avatar presenter, dub, video translate & upscale",
@@ -2022,6 +2089,7 @@
  {
   "id": "GEN-68",
   "family": "ai-generation",
+  "domain": "motion",
   "section": "الصوت والموسيقى والوسائط المساعدة — Music, avatars & assisted media",
   "name_ar": "توليد مجسمات ثلاثية بالذكاء",
   "name_en": "Text/image → 3D model (Meshy, Tripo, Rodin, TRELLIS)",
@@ -2055,6 +2123,7 @@
  {
   "id": "GEN-69",
   "family": "ai-generation",
+  "domain": "motion",
   "section": "الصوت والموسيقى والوسائط المساعدة — Music, avatars & assisted media",
   "name_ar": "توجيه مزودي الإبداع وشبكة الموصلات",
   "name_en": "Creative provider routing & connector mesh",
@@ -2088,6 +2157,7 @@
  {
   "id": "GEN-70",
   "family": "ai-generation",
+  "domain": "motion",
   "section": "الصوت والموسيقى والوسائط المساعدة — Music, avatars & assisted media",
   "name_ar": "خوادم المالك: KOSIF Think وJev والمنصة الخاصة",
   "name_en": "Owner MCP runtimes: KOSIF Think, Jev arbiter, private Workbench",
@@ -2121,6 +2191,7 @@
  {
   "id": "GEN-71",
   "family": "ai-generation",
+  "domain": "motion",
   "section": "الصوت والموسيقى والوسائط المساعدة — Music, avatars & assisted media",
   "name_ar": "البحث في مكتبة برومبتات المالك",
   "name_en": "Owner prompt-system corpus search",
@@ -2147,6 +2218,7 @@
  {
   "id": "GEN-72",
   "family": "ai-generation",
+  "domain": "motion",
   "section": "الهجين: الذكاء الاصطناعي قاعدة والكود مظهر — Hybrid: AI as base, code as look",
   "name_ar": "الرسم فوق لقطات مولدة (Draw-over)",
   "name_en": "Draw-over on generated bases",
@@ -2177,6 +2249,7 @@
  {
   "id": "GEN-73",
   "family": "ai-generation",
+  "domain": "motion",
   "section": "الهجين: الذكاء الاصطناعي قاعدة والكود مظهر — Hybrid: AI as base, code as look",
   "name_ar": "توليد ثم تتبّع",
   "name_en": "Generate-then-trace",
@@ -2207,6 +2280,7 @@
  {
   "id": "GEN-74",
   "family": "ai-generation",
+  "domain": "motion",
   "section": "الهجين: الذكاء الاصطناعي قاعدة والكود مظهر — Hybrid: AI as base, code as look",
   "name_ar": "واجهات «جارٍ التوليد» من HyperFrames",
   "name_en": "AI-UI motion blocks (streaming text, typed prompt, chat reveal…)",
@@ -2239,6 +2313,7 @@
  {
   "id": "GEN-75",
   "family": "ai-generation",
+  "domain": "motion",
   "section": "الهجين: الذكاء الاصطناعي قاعدة والكود مظهر — Hybrid: AI as base, code as look",
   "name_ar": "بطاقات توليد من الضبابية إلى الوضوح",
   "name_en": "Blur-to-sharp 'Generating…' tiles",
@@ -2269,6 +2344,7 @@
  {
   "id": "GEN-76",
   "family": "ai-generation",
+  "domain": "motion",
   "section": "الهجين: الذكاء الاصطناعي قاعدة والكود مظهر — Hybrid: AI as base, code as look",
   "name_ar": "صورة مولدة كمحتوى بطل داخل واجهة",
   "name_en": "AI photo as the 'result' inside a UI mock",
@@ -2298,6 +2374,7 @@
  {
   "id": "GEN-77",
   "family": "ai-generation",
+  "domain": "motion",
   "section": "الهجين: الذكاء الاصطناعي قاعدة والكود مظهر — Hybrid: AI as base, code as look",
   "name_ar": "شريط استعراض أصول مولدة بإخراج فني واحد",
   "name_en": "AI-generated asset showreel with one art direction",
@@ -2327,6 +2404,7 @@
  {
   "id": "GEN-78",
   "family": "ai-generation",
+  "domain": "motion",
   "section": "الهجين: الذكاء الاصطناعي قاعدة والكود مظهر — Hybrid: AI as base, code as look",
   "name_ar": "عمل فني سائل قزحي",
   "name_en": "Iridescent liquid artwork (generated or shaded)",
@@ -2357,6 +2435,7 @@
  {
   "id": "GEN-79",
   "family": "ai-generation",
+  "domain": "motion",
   "section": "الهجين: الذكاء الاصطناعي قاعدة والكود مظهر — Hybrid: AI as base, code as look",
   "name_ar": "لقطة صلصال مولدة",
   "name_en": "Claymation AI shot",
@@ -2388,6 +2467,7 @@
  {
   "id": "GEN-80",
   "family": "ai-generation",
+  "domain": "motion",
   "section": "الهجين: الذكاء الاصطناعي قاعدة والكود مظهر — Hybrid: AI as base, code as look",
   "name_ar": "خلفية لوحة زيتية مولدة بحركة كن برنز",
   "name_en": "Painterly AI backdrop with slow Ken Burns",
@@ -2417,6 +2497,7 @@
  {
   "id": "GEN-81",
   "family": "ai-generation",
+  "domain": "motion",
   "section": "الهجين: الذكاء الاصطناعي قاعدة والكود مظهر — Hybrid: AI as base, code as look",
   "name_ar": "كولاج مقصوص وبوابات زووم لا نهائي",
   "name_en": "Cutout collage portals for infinite zoom (generated or sourced cutouts)",
@@ -2449,6 +2530,7 @@
  {
   "id": "GEN-82",
   "family": "ai-generation",
+  "domain": "motion",
   "section": "الهجين: الذكاء الاصطناعي قاعدة والكود مظهر — Hybrid: AI as base, code as look",
   "name_ar": "فيلم موشن بستوري بورد يكتب Claude كوده",
   "name_en": "Storyboard-first motion film with Claude-written, sandboxed scene code",
@@ -2481,6 +2563,7 @@
  {
   "id": "GEN-83",
   "family": "ai-generation",
+  "domain": "motion",
   "section": "الثبات والميزانية والأخلاق — Consistency, budget, licence & ethics",
   "name_ar": "فرز: توليد أم تركيب",
   "name_en": "Generate-or-compose triage",
@@ -2509,6 +2592,7 @@
  {
   "id": "GEN-84",
   "family": "ai-generation",
+  "domain": "motion",
   "section": "الثبات والميزانية والأخلاق — Consistency, budget, licence & ethics",
   "name_ar": "النص فوق الصورة لا داخلها",
   "name_en": "Overlay text, never bake it",
@@ -2538,6 +2622,7 @@
  {
   "id": "GEN-85",
   "family": "ai-generation",
+  "domain": "motion",
   "section": "الثبات والميزانية والأخلاق — Consistency, budget, licence & ethics",
   "name_ar": "المراسي الأربع للثبات البصري",
   "name_en": "Four anchors of visual consistency",
@@ -2565,6 +2650,7 @@
  {
   "id": "GEN-86",
   "family": "ai-generation",
+  "domain": "motion",
   "section": "الثبات والميزانية والأخلاق — Consistency, budget, licence & ethics",
   "name_ar": "انضباط ميزانية التوليد المدفوع",
   "name_en": "Paid-generation budget discipline",
@@ -2594,6 +2680,7 @@
  {
   "id": "GEN-87",
   "family": "ai-generation",
+  "domain": "motion",
   "section": "الثبات والميزانية والأخلاق — Consistency, budget, licence & ethics",
   "name_ar": "الترخيص أولًا وFirefly المحمي قانونيًا",
   "name_en": "Licence-first model choice & indemnified Firefly",
@@ -2624,6 +2711,7 @@
  {
   "id": "GEN-88",
   "family": "ai-generation",
+  "domain": "motion",
   "section": "الثبات والميزانية والأخلاق — Consistency, budget, licence & ethics",
   "name_ar": "الإفصاح عن الوسائط المصطنعة وحدود التوليد",
   "name_en": "Synthetic-media disclosure, provenance & ethical limits",
@@ -2653,6 +2741,7 @@
  {
   "id": "GEN-89",
   "family": "ai-generation",
+  "domain": "motion",
   "section": "الثبات والميزانية والأخلاق — Consistency, budget, licence & ethics",
   "name_ar": "التمييز بين البرومبت والوسائط",
   "name_en": "Prompt ≠ media honesty rule",
@@ -2682,6 +2771,7 @@
  {
   "id": "GEN-90",
   "family": "ai-generation",
+  "domain": "motion",
   "section": "الثبات والميزانية والأخلاق — Consistency, budget, licence & ethics",
   "name_ar": "خدمة الصور المصغرة المدفوعة",
   "name_en": "Thumbnail generation via paid MCP",
@@ -2710,6 +2800,7 @@
  {
   "id": "GEN-P01",
   "family": "ai-generation",
+  "domain": "motion",
   "name_ar": "مراجعة ثانية مدفوعة من Claude API بقفلين",
   "name_en": "Optional paid Claude API second-opinion review (double opt-in)",
   "status": "key",
@@ -2757,8 +2848,7 @@
   "params": "1080p; 4–30 s; ≈ 12 credits/s; reserve 30 %; ≤ 12 per batch",
   "install": "",
   "requires": [
-   "pip:higgsfield",
-   "key:unspecified"
+   "pip:higgsfield"
   ],
   "license": "owner (no LICENSE file)",
   "proof": [

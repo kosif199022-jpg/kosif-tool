@@ -44,8 +44,10 @@
   "install": "",
   "requires": [],
   "license": "owner",
-  "proof": [],
-  "proof_scope": "none",
+  "proof": [
+   "kosif-tool/.claude/skills/kosif-superpowers/references/cognition.md"
+  ],
+  "proof_scope": "repo",
   "styles": [],
   "tags": [
    "plan",
@@ -69,8 +71,10 @@
   "install": "",
   "requires": [],
   "license": "owner",
-  "proof": [],
-  "proof_scope": "none",
+  "proof": [
+   "kosif-tool/.claude/skills/kosif-superpowers/references/cognition.md"
+  ],
+  "proof_scope": "repo",
   "styles": [],
   "tags": [
    "plan",
@@ -94,8 +98,10 @@
   "install": "",
   "requires": [],
   "license": "owner",
-  "proof": [],
-  "proof_scope": "none",
+  "proof": [
+   "kosif-tool/.claude/skills/kosif-superpowers/references/cognition.md"
+  ],
+  "proof_scope": "repo",
   "styles": [],
   "tags": [
    "plan",
@@ -150,8 +156,10 @@
   "install": "",
   "requires": [],
   "license": "owner",
-  "proof": [],
-  "proof_scope": "none",
+  "proof": [
+   "kosif-tool/.claude/skills/kosif-superpowers/references/cognition.md"
+  ],
+  "proof_scope": "repo",
   "styles": [],
   "tags": [
    "plan",
@@ -175,8 +183,10 @@
   "install": "",
   "requires": [],
   "license": "owner",
-  "proof": [],
-  "proof_scope": "none",
+  "proof": [
+   "kosif-tool/.claude/skills/kosif-superpowers/references/cognition.md"
+  ],
+  "proof_scope": "repo",
   "styles": [],
   "tags": [
    "plan",
@@ -200,8 +210,10 @@
   "install": "",
   "requires": [],
   "license": "owner",
-  "proof": [],
-  "proof_scope": "none",
+  "proof": [
+   "kosif-tool/.claude/skills/kosif-superpowers/references/cognition.md"
+  ],
+  "proof_scope": "repo",
   "styles": [],
   "tags": [
    "plan",
@@ -225,8 +237,10 @@
   "install": "",
   "requires": [],
   "license": "owner",
-  "proof": [],
-  "proof_scope": "none",
+  "proof": [
+   "kosif-tool/.claude/skills/kosif-superpowers/references/cognition.md"
+  ],
+  "proof_scope": "repo",
   "styles": [],
   "tags": [
    "plan",
@@ -252,8 +266,10 @@
    "claude:tools"
   ],
   "license": "owner",
-  "proof": [],
-  "proof_scope": "none",
+  "proof": [
+   "kosif-tool/.claude/skills/kosif-superpowers/references/cognition.md"
+  ],
+  "proof_scope": "repo",
   "styles": [],
   "tags": [
    "plan",
@@ -277,8 +293,10 @@
   "install": "",
   "requires": [],
   "license": "owner",
-  "proof": [],
-  "proof_scope": "none",
+  "proof": [
+   "kosif-tool/.claude/skills/kosif-superpowers/references/cognition.md"
+  ],
+  "proof_scope": "repo",
   "styles": [],
   "tags": [
    "plan",
@@ -302,8 +320,10 @@
   "install": "",
   "requires": [],
   "license": "owner",
-  "proof": [],
-  "proof_scope": "none",
+  "proof": [
+   "kosif-tool/.claude/skills/kosif-superpowers/references/cognition.md"
+  ],
+  "proof_scope": "repo",
   "styles": [],
   "tags": [
    "plan",
