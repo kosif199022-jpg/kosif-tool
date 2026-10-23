@@ -857,7 +857,7 @@ def cmd_build(a) -> int:
         if stale:
             print("stale: " + ", ".join(p.relative_to(SKILL).as_posix() for p in stale) + " — run: python3 scripts/hub.py build", file=sys.stderr)
             for p in stale:
-                if p in (MANIFEST, INDEX):
+                if p in (MANIFEST, INDEX_MD):
                     previous = p.read_text(encoding="utf-8") if p.is_file() else ""
                     lines = list(difflib.unified_diff(previous.splitlines(), outs[p].splitlines(),
                                                      fromfile="committed/" + p.name,

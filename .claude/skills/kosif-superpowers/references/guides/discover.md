@@ -8,7 +8,7 @@ Commands below are typed from the skill folder (`.claude/skills/kosif-superpower
 
 <!-- hub:area:discover:start -->
 
-**الأدوات / tools (22)** — `python3 scripts/hub.py tool <id>` for every command, requirement and limit:
+**الأدوات / tools (23)** — `python3 scripts/hub.py tool <id>` for every command, requirement and limit:
 
 | tool | what it does | start with | evidence |
 |---|---|---|---|
@@ -34,6 +34,7 @@ Commands below are typed from the skill folder (`.claude/skills/kosif-superpower
 | `fusionforge-shared` | Audits verified project-private FusionForge v2 promotion proposals; counts independent QA proofs across distinct projects, requires separate human privacy/security/collision and baseline-improvement review before exporting only allowlisted structural skill graphs. Never exports client objectives, transcripts, evidence, secrets or project names. | `python3 scripts/fusionforge_shared.py audit` | untested |
 | `superpower-fusion` | Partitions every catalog power into exactly one fused superpower (per-family TF-IDF k-means, near-identical powers unified, tiny groups absorbed), marks twin powers that do the same job, links each superpower to its nearest neighbours in one connected graph, and reports an honest status mix. | `python3 scripts/superpower_fusion.py build` | tested-here |
 | `kosif-groups` | For each of the 15 smart groups lists its fused superpowers ordered by readiness, entry scripts, a start command, linked groups and a per-group install plan that separates pip/npm lines (run with --apply) from system tools and keys that need the user's approval. | `python3 scripts/kosif_hubs.py` | tested-here |
+| `owned-repos` | Joins every repository on the owner's GitHub account to the 15 smart capability groups: a curated purpose and state (integrated, partial, learnable, reference, archive, empty) per repo, a static gitingest-style digest of shallow clones (files, languages, SKILL.md, tests, CI, manifests, secret-like pattern counts without values), live catalog proof citations per repo, relations between repos and the live Cloudflare services they build (atlas edge API, Jev decision service, KOSIF Think Full Pro server) with their safety rules, and a have-now vs learnable table per capability group. | `python3 scripts/owned_repos.py find "رسم شخصيات"` | tested-here |
 
 <!-- hub:area:discover:end -->
 
@@ -148,3 +149,7 @@ Read the suggested original process skill's `SKILL.md` from `vendor/obra-superpo
 The bundled 15 process skills are installed alongside the KOSIF main skill for Claude Code discovery via an explicitly invoked `superpowers_unified.py install`. Existing unrelated user skills are preserved; name conflicts are skipped unless separately authorized and backed up. Details, provenance, commands and rollback: [Superpowers unification](../superpowers-unification.md).
 
 **Do not confuse vendor source presence with actual installation, invocation, or proven task execution. No paid tools, outside publication, system-wide installs or external media uploads without authorization.**
+
+## Owned repositories — reuse what the owner already built
+
+Before building a capability from scratch, check whether one of the owner's own repositories already has it: `python3 scripts/owned_repos.py find "<task>"` (from the skill folder). `skills` prints, per capability group, what Claude has now (✅ proven + 🟢 ready), the methods it applies directly, what becomes available after an install or a key, and which owned repos are still `learnable`. The full table, relations and findings live in [owned-repos-map.md](../owned-repos-map.md). To refresh after the account changes: shallow-clone the repos outside the repository, run `digest` then `merge`, `render` and `verify`. Private repositories stay counts-only in this public skill.

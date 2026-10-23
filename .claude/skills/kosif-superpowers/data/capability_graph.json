@@ -2038,6 +2038,11 @@
    "label": "scripts/code_drawing_master.py"
   },
   {
+   "id": "script:scripts/owned_repos.py",
+   "kind": "script",
+   "label": "scripts/owned_repos.py"
+  },
+  {
    "id": "script:scripts/package_skill.py",
    "kind": "script",
    "label": "scripts/package_skill.py"
@@ -6755,6 +6760,12 @@
   {
    "from": "script:scripts/motion_kit_bridge.py",
    "to": "script:scripts/motion_director.py",
+   "rel": "imports",
+   "w": 1
+  },
+  {
+   "from": "script:scripts/owned_repos.py",
+   "to": "script:scripts/powers.py",
    "rel": "imports",
    "w": 1
   },

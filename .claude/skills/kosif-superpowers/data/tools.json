@@ -11583,6 +11583,113 @@
    "evidence": "tested-here",
    "evidence_note": "evals/test_book_methods.py passed on 2026-10-23 (10 sources, 45 methods, 8 tests).",
    "power_id": "TOOL-66"
+  },
+  {
+   "id": "owned-repos",
+   "path": "scripts/owned_repos.py",
+   "root": "skill",
+   "kind": "cli",
+   "area": "discover",
+   "title_en": "Owned-repositories map and skill map",
+   "title_ar": "خريطة مستودعات المالك وخريطة المهارات",
+   "summary_en": "Joins every repository on the owner's GitHub account to the 15 smart capability groups: a curated purpose and state (integrated, partial, learnable, reference, archive, empty) per repo, a static gitingest-style digest of shallow clones (files, languages, SKILL.md, tests, CI, manifests, secret-like pattern counts without values), live catalog proof citations per repo, relations between repos and the live Cloudflare services they build (atlas edge API, Jev decision service, KOSIF Think Full Pro server) with their safety rules, and a have-now vs learnable table per capability group.",
+   "summary_ar": "يربط كل مستودع على حساب المالك بمجموعات القدرات الخمس عشرة: غرض وحالة لكل مستودع (مدمج، جزئي، قابل للتعلّم، مرجع، أرشيف، فارغ)، ومسحًا ساكنًا بنمط gitingest للنسخ الضحلة (ملفات، لغات، مهارات، اختبارات، CI، ملفات تعريف، وعدد أنماط تشبه المفاتيح بلا قيمها)، وعدد استشهادات الكتالوج لكل مستودع، والعلاقات بين المستودعات والخدمات الحية التي تبنيها على Cloudflare (مكتبة الحافة، Jev، خادم KOSIF Think) مع قواعد أمانها، وجدول المتاح الآن والقابل للتعلّم لكل مجموعة.",
+   "use_when": [
+    "راجع كل مستودعاتي واعرف إيه اللي ممكن نستفيد منه",
+    "ايه المهارات اللي عندي واللي ممكن اتعلمها؟",
+    "Which of my repos helps with an audit report?",
+    "Map all my GitHub repositories into the superpowers skill"
+   ],
+   "keywords": [
+    "owned repos",
+    "my repositories",
+    "github account",
+    "repo map",
+    "skill map",
+    "learnable",
+    "gitingest",
+    "digest",
+    "مستودعاتي",
+    "المستودعات",
+    "خريطة المهارات",
+    "قابل للتعلم",
+    "حساب جيت هاب"
+   ],
+   "commands": [
+    {
+     "name": "find",
+     "example": "python3 scripts/owned_repos.py find \"رسم شخصيات\"",
+     "does": "Ranks owned repos for a task by word overlap with purpose, keywords and their capability groups; archive and empty repos rank lower."
+    },
+    {
+     "name": "skills",
+     "example": "python3 scripts/owned_repos.py skills",
+     "does": "Per capability group: powers, have now (proven+ready), methods, learnable by install or key, owned repos feeding it and those still to learn from."
+    },
+    {
+     "name": "list",
+     "example": "python3 scripts/owned_repos.py list",
+     "does": "One line per repo with visibility, state, live catalog citations and groups."
+    },
+    {
+     "name": "show",
+     "example": "python3 scripts/owned_repos.py show think",
+     "does": "Prints one registry entry in full."
+    },
+    {
+     "name": "digest",
+     "example": "python3 scripts/owned_repos.py digest <clones-dir> --out <work-dir>/digest.json",
+     "does": "Static scan of shallow clones named owner_repo; reads files only, counts secret-like patterns by name."
+    },
+    {
+     "name": "merge",
+     "example": "python3 scripts/owned_repos.py merge <work-dir>/digest.json",
+     "does": "Refreshes measured fields; private repos keep counts only."
+    },
+    {
+     "name": "render",
+     "example": "python3 scripts/owned_repos.py render --check",
+     "does": "Writes or checks references/owned-repos-map.md."
+    },
+    {
+     "name": "verify",
+     "example": "python3 scripts/owned_repos.py verify",
+     "does": "Checks states, groups, links, privacy, the repo count, citations for integrated repos and the rendered doc."
+    },
+    {
+     "name": "--self-test",
+     "example": "python3 scripts/owned_repos.py --self-test",
+     "does": "Digest, privacy and routing self-test on a temporary fixture."
+    }
+   ],
+   "inputs": "A task phrase, or a directory of shallow clones for digest. Reads data/owned_repos.json, data/smart_capability_index.json and data/powers/.",
+   "outputs": "Text or JSON on stdout; merge writes data/owned_repos.json, render writes references/owned-repos-map.md.",
+   "requires": {
+    "python": [],
+    "binaries": [
+     "python3"
+    ],
+    "node": [],
+    "optional": [
+     "git (to make the clones)"
+    ],
+    "network": false
+   },
+   "safety": "read-only",
+   "consent": "Cloning private repositories needs the owner's access in the session; never commit private repo content to a public repo.",
+   "limits": "Purposes and states are curated judgements refreshed by hand; the digest is a static file count, not a test run, and a secret-like hit is a pattern match to check, not proof of a live key.",
+   "evidence": "tested-here",
+   "evidence_note": "7/7 passed",
+   "tests": [
+    ".claude/skills/kosif-superpowers/evals/test_owned_repos.py"
+   ],
+   "docs": [
+    ".claude/skills/kosif-superpowers/references/owned-repos-map.md",
+    ".claude/skills/kosif-superpowers/references/guides/discover.md"
+   ],
+   "families": [
+    "self-discovery"
+   ]
   }
  ]
 }
