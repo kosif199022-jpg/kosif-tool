@@ -30,7 +30,7 @@
 <a id="numbers"></a>
 ## 2. الأرقام / numbers
 
-**5,331** قدرة · **62** عائلة · **10** مجالات · ✅ 920 مُثبتة بتشغيل فعلي · 🟢 645 جاهزة · 📦 973 بأمر تثبيت · 🔑 176 بمفتاح أو حساب · 👁 609 شوهدت في فيديو مرجعي · 📄 1937 طريقة موصوفة · 💡 71 فكرة.
+**5,334** قدرة · **62** عائلة · **10** مجالات · ✅ 923 مُثبتة بتشغيل فعلي · 🟢 645 جاهزة · 📦 973 بأمر تثبيت · 🔑 176 بمفتاح أو حساب · 👁 609 شوهدت في فيديو مرجعي · 📄 1937 طريقة موصوفة · 💡 71 فكرة.
 المستلزمات المسجّلة: **122** (أدوات، حزم، مفاتيح، منصات، خطوط، نماذج)؛ النماذج الذهنية: **63**؛ خريطة الأدوات: **125** مستودعًا موثّق الترخيص؛ أطلس الموشن: **289** أسلوبًا؛ الأدوات القابلة للتشغيل: **132**.
 
 <a id="tools"></a>
@@ -115,12 +115,12 @@
 | [التحقق والتقييم — Verification & evals](https://github.com/kosif199022-jpg/kosif-tool/blob/main/.claude/skills/kosif-superpowers/references/powers/verification-evals.md) | CHECK | 29 | 4 | CHECK-02 Postcondition gate on the delivered file (ffpr; CHECK-03 Look at the output: contact sheets, frames, sc; CHECK-22 Catalog snapshot: powers.py stats + repo valid |
 | [التخطيط والتنفيذ — Planning & execution](https://github.com/kosif199022-jpg/kosif-tool/blob/main/.claude/skills/kosif-superpowers/references/powers/planning-execution.md) | PLAN | 12 | 2 | PLAN-01 Full plan scaffold from a goal; PLAN-05 Requirements gate before scheduling; PLAN-02 Backcasting from the end state |
 
-### التطبيقات والواجهات / build — 274 powers · ✅ 154
+### التطبيقات والواجهات / build — 277 powers · ✅ 157
 
 | family | prefix | powers | ✅ | examples (proven first) |
 |---|---|---|---|---|
 | [قدرات التطبيقات المحللة — Analyzed app capabilities](https://github.com/kosif199022-jpg/kosif-tool/blob/main/.claude/skills/kosif-superpowers/references/powers/app-feature-transfer.md) | APPX | 139 | 96 | APPX-01 Speed curve (ramp); APPX-02 Chroma key; APPX-03 Auto reframe to 9:16 |
-| [الأدوات القابلة للتشغيل — Runnable KOSIF tools](https://github.com/kosif199022-jpg/kosif-tool/blob/main/.claude/skills/kosif-superpowers/references/powers/runnable-tools.md) | TOOL | 62 | 52 | TOOL-01 Offline bilingual capability finder; TOOL-02 Session boot briefing; TOOL-03 Capability Atlas search and planner |
+| [الأدوات القابلة للتشغيل — Runnable KOSIF tools](https://github.com/kosif199022-jpg/kosif-tool/blob/main/.claude/skills/kosif-superpowers/references/powers/runnable-tools.md) | TOOL | 65 | 55 | TOOL-01 Offline bilingual capability finder; TOOL-02 Session boot briefing; TOOL-03 Capability Atlas search and planner |
 | [أطلس: التطبيقات والواجهات والتكاملات — Atlas: apps, UI & integrations](https://github.com/kosif199022-jpg/kosif-tool/blob/main/.claude/skills/kosif-superpowers/references/powers/atlas-build.md) | ABUILD | 50 | 0 | ABUILD-01 Autonomous phase-per-PR roadmap execution loop; ABUILD-02 Observation-only run telemetry recorder; ABUILD-03 Role-squad agent pipeline with stages, locks a |
 | [التطبيقات والواجهات — Apps & artifacts](https://github.com/kosif199022-jpg/kosif-tool/blob/main/.claude/skills/kosif-superpowers/references/powers/apps-artifacts.md) | APP | 23 | 6 | APP-04 Dependency-free RTL dashboard page; APP-05 Phone-viewport screenshot + overflow check; APP-06 HTML to MP4 renderer (repo tool) |
 
@@ -176,14 +176,14 @@
 
 | requirement | kind | powers | install |
 |---|---|---|---|
-| `python3` | bin | 661 | `apt-get install -y python3 python3-pip python3-venv` |
+| `python3` | bin | 664 | `apt-get install -y python3 python3-pip python3-venv` |
 | `npm:hyperframes` | npm | 461 | `npm i -D hyperframes@0.8.164  (Apache-2.0; some components load GSAP from a CDN)` |
-| `ffmpeg` | bin | 418 | `apt-get install -y ffmpeg  (or: conda install ffmpeg)` |
-| `chromium` | bin | 344 | `npm i playwright && npx playwright install chromium  (cloud: pre-installed at /opt/pw-browsers)` |
+| `ffmpeg` | bin | 419 | `apt-get install -y ffmpeg  (or: conda install ffmpeg)` |
+| `chromium` | bin | 345 | `npm i playwright && npx playwright install chromium  (cloud: pre-installed at /opt/pw-browsers)` |
 | `npm:rea` | npm | 256 | `npm install -g rea-agents@6.7.0  (Node 22.19+/24.11+/26+)` |
 | `npm:gsap` | npm | 237 | `npm i gsap  (GSAP standard licence: free for most uses; check the no-charge terms)` |
 | `npm:three` | npm | 174 | `npm i three@0.186.1 esbuild` |
-| `key:unspecified` | key | 172 | `an account, API key or connector named in the power's install/how text (ask the user; never guess a value)` |
+| `key:unspecified` | key | 173 | `an account, API key or connector named in the power's install/how text (ask the user; never guess a value)` |
 | `node` | bin | 167 | `https://nodejs.org (22+)  — apt-get install -y nodejs npm` |
 | `pip:numpy` | pip | 131 | `pip install numpy` |
 | `pip:pillow` | pip | 128 | `pip install pillow  (Arabic shaping needs a libraqm build: PIL.features.check('raqm'))` |

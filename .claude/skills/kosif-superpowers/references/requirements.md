@@ -14,14 +14,14 @@
 
 | # | requirement | kind | powers unlocked | families | here now |
 |---|---|---|---|---|---|
-| 1 | [`python3`](#req-python3) | bin | 661 | engines-render-pipeline, qa-verification, mental-models, runnable-tools, music-beat-sound |  |
+| 1 | [`python3`](#req-python3) | bin | 664 | engines-render-pipeline, qa-verification, mental-models, runnable-tools, music-beat-sound |  |
 | 2 | [`npm:hyperframes`](#req-npm-hyperframes) | npm | 461 | transitions-cuts, engines-render-pipeline, camera-composition-layout, typography-latin, qa-verification |  |
-| 3 | [`ffmpeg`](#req-ffmpeg) | bin | 418 | engines-render-pipeline, qa-verification, transitions-cuts, music-beat-sound, photo-video-footage |  |
-| 4 | [`chromium`](#req-chromium) | bin | 344 | engines-render-pipeline, software-investigation, app-feature-transfer, qa-verification, transitions-cuts |  |
+| 3 | [`ffmpeg`](#req-ffmpeg) | bin | 419 | engines-render-pipeline, qa-verification, transitions-cuts, music-beat-sound, photo-video-footage |  |
+| 4 | [`chromium`](#req-chromium) | bin | 345 | engines-render-pipeline, software-investigation, app-feature-transfer, qa-verification, transitions-cuts |  |
 | 5 | [`npm:rea`](#req-npm-rea) | npm | 256 | software-investigation, runnable-tools, app-feature-transfer |  |
 | 6 | [`npm:gsap`](#req-npm-gsap) | npm | 237 | transitions-cuts, engines-render-pipeline, camera-composition-layout, easing-timing-rhythm, typography-latin |  |
 | 7 | [`npm:three`](#req-npm-three) | npm | 174 | transitions-cuts, engines-render-pipeline, light-glow-bloom, texture-material, 3d-spatial |  |
-| 8 | [`key:unspecified`](#req-key-unspecified) | key | 172 | engines-render-pipeline, ai-generation, atlas-code, camera-composition-layout, qa-verification |  |
+| 8 | [`key:unspecified`](#req-key-unspecified) | key | 173 | engines-render-pipeline, ai-generation, atlas-code, camera-composition-layout, qa-verification |  |
 | 9 | [`node`](#req-node) | bin | 167 | qa-verification, engines-render-pipeline, atlas-code, color-palette-grading, ui-product-device |  |
 | 10 | [`pip:numpy`](#req-pip-numpy) | pip | 131 | app-feature-transfer, music-beat-sound, qa-verification, transitions-cuts, media-image-audio |  |
 | 11 | [`pip:pillow`](#req-pip-pillow) | pip | 128 | app-feature-transfer, qa-verification, engines-render-pipeline, typography-arabic, media-image-audio |  |
@@ -145,9 +145,9 @@
 
 - **النوع / kind:** bin (أداة)
 - **التثبيت / install:** `apt-get install -y python3 python3-pip python3-venv`
-- **يفتح / unlocks:** 661 powers
-- **بالحالة / by status:** proven 232 · documented 173 · ready 140 · install 100 · key 13 · seen 3
-- **العائلات / families:** engines-render-pipeline (97), qa-verification (79), mental-models (61), runnable-tools (49), music-beat-sound (45), app-feature-transfer (24), photo-video-footage (16), formats-platforms (15)
+- **يفتح / unlocks:** 664 powers
+- **بالحالة / by status:** proven 235 · documented 173 · ready 140 · install 100 · key 13 · seen 3
+- **العائلات / families:** engines-render-pipeline (97), qa-verification (79), mental-models (61), runnable-tools (52), music-beat-sound (45), app-feature-transfer (24), photo-video-footage (16), formats-platforms (15)
 - **أمثلة / examples:** `ANLY-08` statsmodels OLS and time-series models · `ANLY-14` altair / Vega-Lite chart specs · `ANLY-17` Gradient boosting (XGBoost, LightGBM) · `ANLY-21` Convex optimisation with cvxpy · `ANLY-23` Graph algorithms with networkx · `APP-06` HTML to MP4 renderer (repo tool)
 
 <a id="req-npm-hyperframes"></a>
@@ -165,8 +165,8 @@
 
 - **النوع / kind:** bin (أداة)
 - **التثبيت / install:** `apt-get install -y ffmpeg  (or: conda install ffmpeg)`
-- **يفتح / unlocks:** 418 powers
-- **بالحالة / by status:** documented 147 · proven 125 · ready 71 · install 52 · key 10 · seen 9 · idea 4
+- **يفتح / unlocks:** 419 powers
+- **بالحالة / by status:** documented 147 · proven 126 · ready 71 · install 52 · key 10 · seen 9 · idea 4
 - **العائلات / families:** engines-render-pipeline (68), qa-verification (63), transitions-cuts (54), music-beat-sound (49), photo-video-footage (22), app-feature-transfer (19), color-palette-grading (15), formats-platforms (14)
 - **أمثلة / examples:** `APPX-01` Speed curve (ramp) · `APPX-02` Chroma key · `APPX-03` Auto reframe to 9:16 · `APPX-04` Scene edit detection · `APPX-05` Loudness normalisation (-14 LUFS) · `APPX-06` Colour look from a .cube LUT
 
@@ -175,8 +175,8 @@
 
 - **النوع / kind:** bin (أداة)
 - **التثبيت / install:** `npm i playwright && npx playwright install chromium  (cloud: pre-installed at /opt/pw-browsers)`
-- **يفتح / unlocks:** 344 powers
-- **بالحالة / by status:** install 111 · proven 108 · documented 90 · ready 26 · key 6 · idea 2 · seen 1
+- **يفتح / unlocks:** 345 powers
+- **بالحالة / by status:** install 111 · proven 109 · documented 90 · ready 26 · key 6 · idea 2 · seen 1
 - **العائلات / families:** engines-render-pipeline (59), software-investigation (56), app-feature-transfer (33), qa-verification (24), transitions-cuts (22), camera-composition-layout (15), atlas-build (12), ui-product-device (12)
 - **أمثلة / examples:** `APP-05` Phone-viewport screenshot + overflow check · `APP-06` HTML to MP4 renderer (repo tool) · `APPX-31` Dehaze (ClearView-style) · `APPX-32` Tiered noise reduction · `APPX-33` Auto keystone / perspective · `APPX-34` Lens distortion correction
 
@@ -215,8 +215,8 @@
 
 - **النوع / kind:** key (مفتاح/حساب)
 - **التثبيت / install:** `an account, API key or connector named in the power's install/how text (ask the user; never guess a value)`
-- **يفتح / unlocks:** 172 powers
-- **بالحالة / by status:** key 122 · documented 40 · proven 6 · ready 2 · seen 1 · install 1
+- **يفتح / unlocks:** 173 powers
+- **بالحالة / by status:** key 122 · documented 40 · proven 7 · ready 2 · seen 1 · install 1
 - **العائلات / families:** engines-render-pipeline (27), ai-generation (15), atlas-code (15), camera-composition-layout (12), qa-verification (12), self-discovery (8), voice-tts (8), maps-geo (6)
 - **أمثلة / examples:** `API-06` Auth: Bearer, Basic, OAuth 2.0 and more · `ENG-24` Capability-token render jobs · `GRAPH-01` Install Graphify locally (venv) · `SELF-07` MCP server inventory with cost flags · `SELF-14` No GPU: plan for CPU · `SELF-17` Credentials by name only
 

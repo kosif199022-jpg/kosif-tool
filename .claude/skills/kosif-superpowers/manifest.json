@@ -15,7 +15,7 @@
  },
  "paths_note": "Tool paths and examples are relative to their root: 'skill' = this folder, 'repo' = the kosif-tool repository root.",
  "counts": {
-  "powers": 5331,
+  "powers": 5334,
   "families": 62,
   "domains": 10,
   "tools": 132,
@@ -25,7 +25,7 @@
    "idea": 71,
    "install": 973,
    "key": 176,
-   "proven": 920,
+   "proven": 923,
    "ready": 645,
    "seen": 609
   }
@@ -887,10 +887,10 @@
    "domain": "build",
    "title_ar": "الأدوات القابلة للتشغيل",
    "title_en": "Runnable KOSIF tools",
-   "count": 62,
+   "count": 65,
    "statuses": {
     "install": 5,
-    "proven": 52,
+    "proven": 55,
     "ready": 5
    },
    "chapter": "references/powers/runnable-tools.md",
@@ -12029,7 +12029,8 @@
     "story-direction-ideas"
    ],
    "evidence": "tested-here",
-   "evidence_note": "evals/test_style_atlas_bridge.py passed on 2026-10-23 in a Claude cloud container (86 methods, brief, scaffold, 86 distinct SVG studies)."
+   "evidence_note": "evals/test_style_atlas_bridge.py passed on 2026-10-23 in a Claude cloud container (86 methods, brief, scaffold, 86 distinct SVG studies).",
+   "power_id": "TOOL-63"
   },
   {
    "id": "mosamem-rea-fusion",
@@ -12501,7 +12502,8 @@
     "story-direction-ideas"
    ],
    "evidence": "tested-here",
-   "evidence_note": "evals/test_atlas_render.py passed on 2026-10-23; full 17 s render: 510 frames 1280x720 h264 + aac, deterministic, 29 ms/frame (proofs/style-atlas-86)."
+   "evidence_note": "evals/test_atlas_render.py passed on 2026-10-23; full 17 s render: 510 frames 1280x720 h264 + aac, deterministic, 29 ms/frame (proofs/style-atlas-86).",
+   "power_id": "TOOL-64"
   },
   {
    "id": "business-workflows",
@@ -12579,7 +12581,8 @@
     "agent-orchestration"
    ],
    "evidence": "tested-here",
-   "evidence_note": "evals/test_business_workflows.py passed on 2026-10-23 (64 workflows, 286 steps, 220 native)."
+   "evidence_note": "evals/test_business_workflows.py passed on 2026-10-23 (64 workflows, 286 steps, 220 native).",
+   "power_id": "TOOL-65"
   }
  ],
  "guides": [

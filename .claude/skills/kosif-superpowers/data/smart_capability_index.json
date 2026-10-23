@@ -1,10 +1,10 @@
 {
   "schema": "kosif.smart-capability-index.v1",
   "origin": "data/powers/*.json (catalog); no original records changed",
-  "catalog_powers": 5331,
+  "catalog_powers": 5334,
   "group_count": 15,
   "family_count": 62,
-  "tool_count": 131,
+  "tool_count": 132,
   "groups": [
     {
       "id": "research",
@@ -129,17 +129,17 @@
       ],
       "keywords": "agent orchestration tool routing discover automation وكلاء أدوات توجيه بحث",
       "workflow": [],
-      "count": 143,
+      "count": 146,
       "status_counts": {
         "documented": 49,
         "install": 8,
         "key": 2,
-        "proven": 79,
+        "proven": 82,
         "ready": 5
       },
       "family_counts": {
         "agent-orchestration": 38,
-        "runnable-tools": 62,
+        "runnable-tools": 65,
         "self-discovery": 43
       },
       "examples": [
@@ -65975,6 +65975,63 @@
       ],
       "source": "runnable-tools.json",
       "what": "يدرس صفحة ويب عامة للقراءة فقط: متصفح بلا تسجيل دخول وملف شخصي جديد يُحذف بعد التشغيل، ثم يلتقط REA الصفحة وأدوات WebMCP المعلنة ولقطة شاشة والسكربتات العامة ببصمات SHA-256. التقرير حقائق فقط: الإطار وإصداره، ومكتبات اللوحة والمحرر والتزامن، والخدمات المستنتجة من أسماء مفاتيح الت"
+    },
+    {
+      "id": "TOOL-63",
+      "family": "runnable-tools",
+      "group": "agents",
+      "domain": "build",
+      "name_en": "Futurepedia AI Style Atlas — all 86 methods: search, fusion, storyboard-first briefs and engine scaffolds",
+      "name_ar": "أطلس الأساليب الكامل (86 طريقة): بحث وتوليف وموجز إنتاج وهيكل مشروع شرح",
+      "status": "proven",
+      "requires": [
+        "python3"
+      ],
+      "proof": [
+        "kosif-tool/.claude/skills/kosif-superpowers/evals/test_style_atlas_bridge.py",
+        "kosif-tool/.claude/skills/kosif-superpowers/scripts/style_atlas_bridge.py"
+      ],
+      "source": "runnable-tools.json",
+      "what": "يبحث في 86 طريقة من أطلس Futurepedia في 14 عائلة (الشكل، الحركة، قواعد الشرح، الخطوط، الألوان، التقنيات، الأصوات)، ويدمج طريقتين 85/15، ويكتب موجز إنتاج بستوريبورد أولًا، ويُنشئ مشروع شرح جاهزًا على محرك KOSIF الأصلي. — Searches the 86 paraphrased Futurepedia AI Style Atlas metho"
+    },
+    {
+      "id": "TOOL-64",
+      "family": "runnable-tools",
+      "group": "agents",
+      "domain": "build",
+      "name_en": "Atlas explainer renderer: storyboard, determinism check and real MP4 with synthesized score",
+      "name_ar": "رندر أفلام الشرح: ستوريبورد وفحص حتمية وMP4 حقيقي بصوت مُركّب",
+      "status": "proven",
+      "requires": [
+        "ffmpeg",
+        "python3",
+        "chromium"
+      ],
+      "proof": [
+        "kosif-tool/.claude/skills/kosif-superpowers/evals/test_atlas_render.py",
+        "kosif-tool/.claude/skills/kosif-superpowers/scripts/atlas_render.py"
+      ],
+      "source": "runnable-tools.json",
+      "what": "يشغّل صفحة شرح A15 في متصفح بلا واجهة: لوحة ستوريبورد، لقطات، فحص حتمية وسرعة، رندر MP4 إطارًا بإطار مع صوت مُركّب متزامن، وحزمة HTML واحدة. — Drives an A15 explainer page (window.seek/DURATION/scoreSound) in headless Chromium: storyboard grid PNG, single stills, a determinism an"
+    },
+    {
+      "id": "TOOL-65",
+      "family": "runnable-tools",
+      "group": "agents",
+      "domain": "build",
+      "name_en": "AI for business: 9 functions, 64 workflows, Claude-native gated runbooks",
+      "name_ar": "الذكاء الاصطناعي في الأعمال: 9 وظائف و64 خطة عمل بخطط تشغيل لClaude",
+      "status": "proven",
+      "requires": [
+        "python3",
+        "key:unspecified"
+      ],
+      "proof": [
+        "kosif-tool/.claude/skills/kosif-superpowers/evals/test_business_workflows.py",
+        "kosif-tool/.claude/skills/kosif-superpowers/scripts/business_workflows.py"
+      ],
+      "source": "runnable-tools.json",
+      "what": "يبحث في مؤشر تبني الذكاء الاصطناعي لـ9 وظائف و64 خطة عمل، ويعيد توجيه كل خطوة إلى ما ينفذه Claude بنفسه أو إلى موصّل، ويكتب خطة تشغيل عربية ببوابات موافقة. — Searches Futurepedia's business adoption index and 64 workflow playbooks (36 library + 28 creator), re-routes every step f"
     },
     {
       "id": "SEC-01",

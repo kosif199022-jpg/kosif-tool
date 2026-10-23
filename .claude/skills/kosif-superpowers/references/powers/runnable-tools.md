@@ -3,7 +3,7 @@
 
 > **قوتك هنا / what this gives you:** كل سكربت في المهارة والمستودع يُشغَّل فعلًا ولم يكن له سجل في الكتالوج: ماذا يفعل، ومتى، وأمره الأول، ومستلزماته، ودليله. مولَّدة من data/tools.json بأمر hub.py build؛ hub.py tool <id> يعطي البطاقة كاملة. — Every script in the skill and repository that really runs and had no catalog record: what it does, when, its first command, requirements and proof. Generated from data/tools.json by hub.py build; hub.py tool <id> gives the full card.
 > **أقوى دليل / strongest evidence:** **TOOL-01** Offline bilingual capability finder (`kosif-tool/.claude/skills/kosif-superpowers/evals/test_ai_tool_discovery.py`) · **TOOL-02** Session boot briefing (`kosif-tool/tests/test_boot.py`)
-> **62 powers follow** — ✅ 52 · 🟢 5 · 📦 5 · 🔑 0 · 👁 0 · 📄 0 · 💡 0.
+> **65 powers follow** — ✅ 55 · 🟢 5 · 📦 5 · 🔑 0 · 👁 0 · 📄 0 · 💡 0.
 
 **الحالة / status:** ✅ مُثبت (شُغّل فعلًا وله مسار دليل) · 🟢 جاهز (كود موجود يعمل بما هو متاح عادة) · 📦 بأمر تثبيت واحد · 🔑 يحتاج مفتاحًا أو حسابًا أو موصلًا · 👁 شوهد في فيديو مرجعي (للموشن فقط) · 📄 طريقة موثقة · 💡 فكرة. الشارة هي أدنى مستوى صادق — the badge is the lowest level that is true.
 مسارات الدليل نسبية إلى `/home/user/`؛ و`session-<date>:<file>#<section>` تشير إلى تشغيل موثق في جلسة سابقة؛ و`owner-upload:` إلى ملف داخل أرشيف أرسله المالك. Proof paths are relative to `/home/user/`.
@@ -14,8 +14,8 @@
 ## الفهرس / contents
 
 - **Discover and route / اكتشاف القدرات والتوجيه** — TOOL-01 … TOOL-34 (10)
-- **Think, ideate and write / التفكير والأفكار والكتابة** — TOOL-10 … TOOL-11 (2)
-- **Motion graphics and rendering / الموشن والرندر** — TOOL-12 … TOOL-18 (7)
+- **Think, ideate and write / التفكير والأفكار والكتابة** — TOOL-10 … TOOL-65 (3)
+- **Motion graphics and rendering / الموشن والرندر** — TOOL-12 … TOOL-64 (9)
 - **Editing and reference video / المونتاج والفيديو المرجعي** — TOOL-19 … TOOL-35 (7)
 - **Audio and rhythm / الصوت والإيقاع** — TOOL-25 … TOOL-26 (2)
 - **Drawing and characters / الرسم والشخصيات** — TOOL-27 … TOOL-31 (5)
@@ -134,6 +134,14 @@
 - **الدليل / proof:** `kosif-tool/tests/test_invention_lab.py` · `kosif-tool/.claude/skills/kosif-superpowers/scripts/invention_lab.py`
 - **المصدر / source:** data/tools.json
 
+#### TOOL-65 · الذكاء الاصطناعي في الأعمال: 9 وظائف و64 خطة عمل بخطط تشغيل لClaude · AI for business: 9 functions, 64 workflows, Claude-native gated runbooks · ✅ مُثبت هنا / proven here
+- **ماذا / what:** يبحث في مؤشر تبني الذكاء الاصطناعي لـ9 وظائف و64 خطة عمل، ويعيد توجيه كل خطوة إلى ما ينفذه Claude بنفسه أو إلى موصّل، ويكتب خطة تشغيل عربية ببوابات موافقة. — Searches Futurepedia's business adoption index and 64 workflow playbooks (36 library + 28 creator), re-routes every step from the named third-party tool to what Claude can do in the session or to a connector, measures native coverage, and writes an Arabic runbook with approval gates for send, post, spend and recording.
+- **متى أستخدمها / when:** اعمل لي workflow للمبيعات بالذكاء الاصطناعي / Turn a podcast into a content plan with AI
+- **كيف / how:** functions: `python3 scripts/business_workflows.py functions`; search: `python3 scripts/business_workflows.py search "بودكاست"`; coverage: `python3 scripts/business_workflows.py coverage`; plan: `python3 scripts/business_workflows.py plan --workflow FW-07 --context "حلقة بودكاست عربية" --out out/biz/plan.md`. Full card: `python3 scripts/hub.py tool business-workflows`. Limits: Facts only from the site (no prompts); third-party tool features and prices change; connector availability is checked at run time, not here. **أرقام / params:** in: data/futurepedia_business_workflows.json and the user's situation · out: JSON listings and a Markdown runbook
+- **يحتاج / needs:** [`python3`](../requirements.md#req-python3) · [`key:unspecified`](../requirements.md#req-key-unspecified)
+- **الدليل / proof:** `kosif-tool/.claude/skills/kosif-superpowers/evals/test_business_workflows.py` · `kosif-tool/.claude/skills/kosif-superpowers/scripts/business_workflows.py`
+- **المصدر / source:** data/tools.json
+
 ## Motion graphics and rendering / الموشن والرندر
 
 #### TOOL-12 · جسر الصوت إلى لوحة القصة · Audio-to-Storyboard Bridge · ✅ مُثبت هنا / proven here
@@ -195,6 +203,23 @@
 - **تثبيت / install:** `needs on PATH: node`
 - **يحتاج / needs:** [`node`](../requirements.md#req-node) · [`python3`](../requirements.md#req-python3)
 - **الدليل / proof:** `kosif-tool/.claude/skills/kosif-superpowers/evals/test_motion_toolkit.mjs` · `kosif-tool/.claude/skills/kosif-superpowers/resources/motion-runtime/motion_toolkit.mjs`
+- **المصدر / source:** data/tools.json
+
+#### TOOL-63 · أطلس الأساليب الكامل (86 طريقة): بحث وتوليف وموجز إنتاج وهيكل مشروع شرح · Futurepedia AI Style Atlas — all 86 methods: search, fusion, storyboard-first briefs and engine scaffolds · ✅ مُثبت هنا / proven here
+- **ماذا / what:** يبحث في 86 طريقة من أطلس Futurepedia في 14 عائلة (الشكل، الحركة، قواعد الشرح، الخطوط، الألوان، التقنيات، الأصوات)، ويدمج طريقتين 85/15، ويكتب موجز إنتاج بستوريبورد أولًا، ويُنشئ مشروع شرح جاهزًا على محرك KOSIF الأصلي. — Searches the 86 paraphrased Futurepedia AI Style Atlas methods in 14 families (look, motion, explainer grammar, fonts, palette, techniques, sounds), fuses up to two (85/15), writes a storyboard-first production brief, scaffolds an explainer project on the original KOSIF engine, and draws static SVG studies.
+- **متى أستخدمها / when:** ادمج أساليب Futurepedia في الرسم / Find Futurepedia AI Style Atlas methods
+- **كيف / how:** families: `python3 scripts/style_atlas_bridge.py families`; search: `python3 scripts/style_atlas_bridge.py search "سبورة"`; show: `python3 scripts/style_atlas_bridge.py show FA-45`; brief: `python3 scripts/style_atlas_bridge.py brief --topic "كيف تعمل البطارية" --style FA-45 --accent FA-16 --out out/atlas/brief.md`. Full card: `python3 scripts/hub.py tool style-atlas-bridge`. Limits: Method cards are paraphrases; a scaffold starts from the FA-23 chalkboard demo, so each other method's medium must still be drawn per project before rendering. Nothing is rendered until atlas_render.py runs. **أرقام / params:** in: data/futurepedia_style_atlas_86.json and a user topic · out: Search results, method cards, briefs, fusion recipes, scaffolded explainer projects, SVG studies
+- **يحتاج / needs:** [`python3`](../requirements.md#req-python3)
+- **الدليل / proof:** `kosif-tool/.claude/skills/kosif-superpowers/evals/test_style_atlas_bridge.py` · `kosif-tool/.claude/skills/kosif-superpowers/scripts/style_atlas_bridge.py`
+- **المصدر / source:** data/tools.json
+
+#### TOOL-64 · رندر أفلام الشرح: ستوريبورد وفحص حتمية وMP4 حقيقي بصوت مُركّب · Atlas explainer renderer: storyboard, determinism check and real MP4 with synthesized score · ✅ مُثبت هنا / proven here
+- **ماذا / what:** يشغّل صفحة شرح A15 في متصفح بلا واجهة: لوحة ستوريبورد، لقطات، فحص حتمية وسرعة، رندر MP4 إطارًا بإطار مع صوت مُركّب متزامن، وحزمة HTML واحدة. — Drives an A15 explainer page (window.seek/DURATION/scoreSound) in headless Chromium: storyboard grid PNG, single stills, a determinism and speed check, frame-by-frame H.264 render with the KSound score rendered offline and muxed as AAC, and a single-file HTML bundle.
+- **متى أستخدمها / when:** رندر فيلم الشرح إلى MP4 / Render the explainer page to video
+- **كيف / how:** check: `python3 scripts/atlas_render.py check`; storyboard: `python3 scripts/atlas_render.py storyboard --out out/atlas/storyboard.png`; render: `python3 scripts/atlas_render.py render --fps 30 --out out/atlas/film.mp4`; bundle: `python3 scripts/atlas_render.py bundle --out out/atlas/single.html`. Full card: `python3 scripts/hub.py tool atlas-render`. Limits: Needs Playwright with Chromium and ffmpeg; frame capture is ~4-6 fps of wall time at 1280x720; audio is the page's synthesized score (no voice-over mixing yet). **أرقام / params:** in: An explainer HTML page following the A15 contract (default: templates/atlas_explainer.html) · out: PNG storyboard/stills, MP4 (h264+aac), single-file HTML, JSON reports
+- **تثبيت / install:** `pip install playwright · needs on PATH: ffmpeg`
+- **يحتاج / needs:** [`ffmpeg`](../requirements.md#req-ffmpeg) · [`python3`](../requirements.md#req-python3) · [`chromium`](../requirements.md#req-chromium)
+- **الدليل / proof:** `kosif-tool/.claude/skills/kosif-superpowers/evals/test_atlas_render.py` · `kosif-tool/.claude/skills/kosif-superpowers/scripts/atlas_render.py`
 - **المصدر / source:** data/tools.json
 
 ## Editing and reference video / المونتاج والفيديو المرجعي
@@ -589,7 +614,7 @@
 
 ## المصادر والرخص / sources & licences
 
-- الرخص / licences: — (62)
+- الرخص / licences: — (65)
 - الأفكار مكتوبة بكلماتنا مع رابط المصدر؛ لا يُنسخ نص طرف ثالث طويل. Ideas are paraphrased with a link to the source; no long third-party text is copied. `—` = no licence recorded (own method or own wording).
 
 ---

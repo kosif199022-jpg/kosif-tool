@@ -1,14 +1,14 @@
 {
 "schema": "kosif.superpowers.v1",
-"atoms": 5331,
-"distinct_methods": 5065,
-"twin_groups": 163,
+"atoms": 5334,
+"distinct_methods": 5069,
+"twin_groups": 162,
 "superpowers": 445,
 "per_target": 12,
-"fusion_ratio": 11.98,
-"atlas_folded_into_native": 37,
+"fusion_ratio": 11.99,
+"atlas_folded_into_native": 36,
 "tiny_absorbed": 23,
-"lookalikes_unified": 9,
+"lookalikes_unified": 8,
 "graph_components": 1,
 "note": "Each atomic power belongs to exactly one superpower; atomic IDs, proofs and badges stay the evidence. 'best' = strongest member badge, status_mix = honest distribution. Built by scripts/superpower_fusion.py.",
 "items": [
@@ -156,7 +156,7 @@
 "links": [
 {
 "id": "SP-0005",
-"sim": 0.392
+"sim": 0.391
 },
 {
 "id": "SP-0041",
@@ -164,7 +164,7 @@
 },
 {
 "id": "SP-0116",
-"sim": 0.219
+"sim": 0.218
 },
 {
 "id": "SP-0131",
@@ -502,7 +502,7 @@
 "links": [
 {
 "id": "SP-0027",
-"sim": 0.382
+"sim": 0.383
 },
 {
 "id": "SP-0333",
@@ -764,7 +764,7 @@
 },
 {
 "id": "SP-0001",
-"sim": 0.392
+"sim": 0.391
 }
 ]
 },
@@ -772,8 +772,8 @@
 "id": "SP-0006",
 "domain": "mind",
 "family": "atlas-mind",
-"name_ar": "قاطع التكرار العقيم بعد محاولتين فاشلتين",
-"name_en": "Anti-thrashing circuit breaker after two failed fixes",
+"name_ar": "مراجعة الافتراضات وإعادة التقييم",
+"name_en": "Challenge approach before commitment",
 "focus": [
 "approach",
 "failed",
@@ -923,7 +923,7 @@
 },
 {
 "id": "SP-0233",
-"sim": 0.168
+"sim": 0.169
 },
 {
 "id": "SP-0215",
@@ -2151,7 +2151,7 @@
 },
 {
 "id": "SP-0147",
-"sim": 0.148
+"sim": 0.146
 }
 ]
 },
@@ -2387,7 +2387,7 @@
 },
 {
 "id": "SP-0094",
-"sim": 0.148
+"sim": 0.146
 }
 ]
 },
@@ -2620,7 +2620,7 @@
 "links": [
 {
 "id": "SP-0058",
-"sim": 0.128
+"sim": 0.127
 },
 {
 "id": "SP-0337",
@@ -2865,7 +2865,7 @@
 },
 {
 "id": "SP-0117",
-"sim": 0.219
+"sim": 0.215
 },
 {
 "id": "SP-0056",
@@ -3265,7 +3265,7 @@
 "links": [
 {
 "id": "SP-0004",
-"sim": 0.382
+"sim": 0.383
 },
 {
 "id": "SP-0333",
@@ -3462,8 +3462,8 @@
 "id": "SP-0029",
 "domain": "craft",
 "family": "arabic-language",
-"name_ar": "تحقق من أرقام OCR ببوابة المراسي",
-"name_en": "Verify OCR numbers with the anchor gate",
+"name_ar": "مراجعة المطابقة النحوية بعد التعديل",
+"name_en": "Agreement check after editing",
 "focus": [
 "ocr",
 "agreement",
@@ -3757,11 +3757,11 @@
 "links": [
 {
 "id": "SP-0140",
-"sim": 0.485
+"sim": 0.486
 },
 {
 "id": "SP-0342",
-"sim": 0.247
+"sim": 0.248
 },
 {
 "id": "SP-0370",
@@ -3960,15 +3960,15 @@
 },
 {
 "id": "SP-0147",
-"sim": 0.087
+"sim": 0.086
 },
 {
 "id": "SP-0302",
-"sim": 0.082
+"sim": 0.083
 },
 {
 "id": "SP-0123",
-"sim": 0.077
+"sim": 0.082
 }
 ]
 },
@@ -4075,7 +4075,7 @@
 },
 {
 "id": "SP-0343",
-"sim": 0.15
+"sim": 0.149
 },
 {
 "id": "SP-0416",
@@ -4429,7 +4429,7 @@
 "links": [
 {
 "id": "SP-0037",
-"sim": 0.447
+"sim": 0.448
 },
 {
 "id": "SP-0039",
@@ -4437,7 +4437,7 @@
 },
 {
 "id": "SP-0147",
-"sim": 0.244
+"sim": 0.246
 },
 {
 "id": "SP-0082",
@@ -4510,7 +4510,7 @@
 "links": [
 {
 "id": "SP-0036",
-"sim": 0.447
+"sim": 0.448
 },
 {
 "id": "SP-0039",
@@ -4681,16 +4681,16 @@
 "name_ar": "أساس منصة كوبرنتس متعددة المستأجرين"
 },
 {
-"id": "ACODE-122",
-"status": "documented",
-"name_en": "Bounded CI failure repair loop",
-"name_ar": "حلقة إصلاح إخفاقات CI محدودة"
-},
-{
 "id": "ACODE-131",
 "status": "documented",
 "name_en": "Gated Azure prepare-validate-deploy workflow",
 "name_ar": "مسار نشر Azure بثلاث بوابات"
+},
+{
+"id": "ACODE-122",
+"status": "documented",
+"name_en": "Bounded CI failure repair loop",
+"name_ar": "حلقة إصلاح إخفاقات CI محدودة"
 },
 {
 "id": "ACODE-145",
@@ -4753,16 +4753,16 @@
 "name_ar": "أنماط Bash وzsh الدفاعية"
 },
 {
-"id": "ACODE-150",
-"status": "documented",
-"name_en": "Serverless runtime hardening checklist",
-"name_ar": "قائمة تحصين بيئة serverless"
-},
-{
 "id": "ACODE-140",
 "status": "documented",
 "name_en": "Integration CI gate: offline fixtures plus guarded live smoke",
 "name_ar": "بوابة CI للتكامل: فحوص بلا اتصال واختبار حي محمي"
+},
+{
+"id": "ACODE-150",
+"status": "documented",
+"name_en": "Serverless runtime hardening checklist",
+"name_ar": "قائمة تحصين بيئة serverless"
 },
 {
 "id": "ACODE-132",
@@ -5335,7 +5335,7 @@
 },
 {
 "id": "SP-0131",
-"sim": 0.505
+"sim": 0.504
 },
 {
 "id": "SP-0116",
@@ -5949,12 +5949,12 @@
 "sim": 0.133
 },
 {
-"id": "SP-0123",
-"sim": 0.126
-},
-{
 "id": "SP-0250",
 "sim": 0.123
+},
+{
+"id": "SP-0123",
+"sim": 0.12
 },
 {
 "id": "SP-0049",
@@ -6360,7 +6360,7 @@
 "links": [
 {
 "id": "SP-0094",
-"sim": 0.171
+"sim": 0.168
 },
 {
 "id": "SP-0005",
@@ -6866,7 +6866,7 @@
 },
 {
 "id": "SP-0094",
-"sim": 0.096
+"sim": 0.097
 }
 ]
 },
@@ -7731,16 +7731,16 @@
 "name_ar": "REA MCP: العلامات"
 },
 {
-"id": "REA-186",
-"status": "documented",
-"name_en": "REA MCP tool `get_objc_classes`",
-"name_ar": "REA MCP: أصناف Objective-C"
-},
-{
 "id": "REA-191",
 "status": "documented",
 "name_en": "REA MCP tool `find_xrefs_to_name`",
 "name_ar": "REA MCP: المراجع المتقاطعة"
+},
+{
+"id": "REA-186",
+"status": "documented",
+"name_en": "REA MCP tool `get_objc_classes`",
+"name_ar": "REA MCP: أصناف Objective-C"
 },
 {
 "id": "REA-187",
@@ -8156,7 +8156,7 @@
 },
 {
 "id": "SP-0063",
-"sim": 0.222
+"sim": 0.223
 },
 {
 "id": "SP-0120",
@@ -8351,7 +8351,7 @@
 },
 {
 "id": "SP-0071",
-"sim": 0.266
+"sim": 0.267
 },
 {
 "id": "SP-0068",
@@ -8359,7 +8359,7 @@
 },
 {
 "id": "SP-0120",
-"sim": 0.114
+"sim": 0.115
 }
 ]
 },
@@ -8829,12 +8829,12 @@
 "sim": 0.362
 },
 {
-"id": "SP-0347",
+"id": "SP-0346",
 "sim": 0.332
 },
 {
 "id": "SP-0072",
-"sim": 0.261
+"sim": 0.262
 }
 ]
 },
@@ -9498,7 +9498,7 @@
 },
 {
 "id": "SP-0066",
-"sim": 0.261
+"sim": 0.262
 },
 {
 "id": "SP-0065",
@@ -9781,7 +9781,7 @@
 },
 {
 "id": "SP-0064",
-"sim": 0.239
+"sim": 0.24
 },
 {
 "id": "SP-0237",
@@ -9870,7 +9870,7 @@
 },
 {
 "id": "SP-0231",
-"sim": 0.073
+"sim": 0.074
 }
 ]
 },
@@ -10426,7 +10426,7 @@
 },
 {
 "id": "SP-0041",
-"sim": 0.201
+"sim": 0.2
 },
 {
 "id": "SP-0116",
@@ -10579,11 +10579,11 @@
 "links": [
 {
 "id": "SP-0130",
-"sim": 0.178
+"sim": 0.177
 },
 {
 "id": "SP-0089",
-"sim": 0.16
+"sim": 0.159
 },
 {
 "id": "SP-0090",
@@ -10778,7 +10778,7 @@
 },
 {
 "id": "SP-0080",
-"sim": 0.085
+"sim": 0.086
 }
 ]
 },
@@ -11429,7 +11429,7 @@
 "links": [
 {
 "id": "SP-0130",
-"sim": 0.376
+"sim": 0.374
 },
 {
 "id": "SP-0052",
@@ -11437,7 +11437,7 @@
 },
 {
 "id": "SP-0083",
-"sim": 0.16
+"sim": 0.159
 },
 {
 "id": "SP-0095",
@@ -11553,7 +11553,7 @@
 },
 {
 "id": "SP-0128",
-"sim": 0.089
+"sim": 0.09
 },
 {
 "id": "SP-0056",
@@ -11740,7 +11740,7 @@
 },
 {
 "id": "SP-0028",
-"sim": 0.14
+"sim": 0.139
 },
 {
 "id": "SP-0314",
@@ -11878,7 +11878,7 @@
 },
 {
 "id": "SP-0343",
-"sim": 0.09
+"sim": 0.089
 }
 ]
 },
@@ -11886,8 +11886,8 @@
 "id": "SP-0094",
 "domain": "docs",
 "family": "documents-office",
-"name_ar": "ملفات Google عبر الموصل",
-"name_en": "Google Docs/Sheets/Slides via connector",
+"name_ar": "موصل المستندات الحية",
+"name_en": "Living-docs connector (Claude Docs)",
 "focus": [
 "connector",
 "docs",
@@ -11927,15 +11927,15 @@
 "links": [
 {
 "id": "SP-0051",
-"sim": 0.171
+"sim": 0.168
 },
 {
 "id": "SP-0019",
-"sim": 0.148
+"sim": 0.146
 },
 {
 "id": "SP-0056",
-"sim": 0.096
+"sim": 0.097
 },
 {
 "id": "SP-0088",
@@ -12688,7 +12688,7 @@
 "distinct_methods": 20,
 "links": [
 {
-"id": "SP-0344",
+"id": "SP-0347",
 "sim": 0.051
 },
 {
@@ -13017,7 +13017,7 @@
 "sim": 0.079
 },
 {
-"id": "SP-0296",
+"id": "SP-0295",
 "sim": 0.077
 },
 {
@@ -13759,11 +13759,11 @@
 },
 {
 "id": "SP-0121",
-"sim": 0.212
+"sim": 0.213
 },
 {
 "id": "SP-0338",
-"sim": 0.206
+"sim": 0.205
 }
 ]
 },
@@ -13792,16 +13792,16 @@
 "requires": [],
 "pipeline": [
 {
-"id": "APPX-60",
-"status": "documented",
-"name_en": "Vertical swipe video player (Android)",
-"name_ar": "مشغل فيديو عمودي بالسحب"
-},
-{
 "id": "APPX-59",
 "status": "documented",
 "name_en": "Virtual camera from a video file",
 "name_ar": "كاميرا افتراضية من فيديو"
+},
+{
+"id": "APPX-60",
+"status": "documented",
+"name_en": "Vertical swipe video player (Android)",
+"name_ar": "مشغل فيديو عمودي بالسحب"
 }
 ],
 "proof": [],
@@ -13980,8 +13980,8 @@
 "sim": 0.166
 },
 {
-"id": "SP-0147",
-"sim": 0.132
+"id": "SP-0002",
+"sim": 0.131
 }
 ]
 },
@@ -14071,7 +14071,7 @@
 "links": [
 {
 "id": "SP-0072",
-"sim": 0.105
+"sim": 0.104
 },
 {
 "id": "SP-0110",
@@ -14373,7 +14373,7 @@
 "links": [
 {
 "id": "SP-0235",
-"sim": 0.307
+"sim": 0.308
 },
 {
 "id": "SP-0237",
@@ -14385,7 +14385,7 @@
 },
 {
 "id": "SP-0304",
-"sim": 0.102
+"sim": 0.101
 }
 ]
 },
@@ -14461,16 +14461,16 @@
 "name_ar": "مسار توقيع وإصدار تطبيقات الجوال والمكتب"
 },
 {
-"id": "ABUILD-09",
-"status": "documented",
-"name_en": "PWA manifest and service worker generation",
-"name_ar": "توليد PWA مع service worker"
-},
-{
 "id": "ABUILD-13",
 "status": "documented",
 "name_en": "Wix headless site build from SDK recipes",
 "name_ar": "بناء موقع Wix هيدلس من وصفات SDK"
+},
+{
+"id": "ABUILD-09",
+"status": "documented",
+"name_en": "PWA manifest and service worker generation",
+"name_ar": "توليد PWA مع service worker"
 }
 ],
 "proof": [],
@@ -14483,7 +14483,7 @@
 },
 {
 "id": "SP-0263",
-"sim": 0.152
+"sim": 0.151
 },
 {
 "id": "SP-0100",
@@ -14637,11 +14637,11 @@
 },
 {
 "id": "SP-0131",
-"sim": 0.349
+"sim": 0.348
 },
 {
 "id": "SP-0001",
-"sim": 0.219
+"sim": 0.218
 }
 ]
 },
@@ -14654,19 +14654,19 @@
 "focus": [
 "catalog",
 "atlas",
-"capability",
-"search"
+"search",
+"capability"
 ],
-"size": 21,
+"size": 22,
 "best": "proven",
 "status_mix": {
-"proven": 16,
+"proven": 17,
 "ready": 3,
 "install": 2
 },
-"ready_now": 19,
+"ready_now": 20,
 "families": {
-"runnable-tools": 21
+"runnable-tools": 22
 },
 "atlas_folded": 0,
 "requires": [
@@ -14733,6 +14733,12 @@
 "status": "proven",
 "name_en": "Capability runtime router",
 "name_ar": "موجّه القدرات التنفيذية"
+},
+{
+"id": "TOOL-63",
+"status": "proven",
+"name_en": "Futurepedia AI Style Atlas — all 86 methods: search, fusion, storyboard-first briefs and engine scaffolds",
+"name_ar": "أطلس الأساليب الكامل (86 طريقة): بحث وتوليف وموجز إنتاج وهيكل مشروع شرح"
 },
 {
 "id": "TOOL-05",
@@ -14814,23 +14820,23 @@
 "kosif-tool/.claude/skills/kosif-superpowers/scripts/ai_tool_discovery.py"
 ],
 "twins": [],
-"distinct_methods": 21,
+"distinct_methods": 22,
 "links": [
 {
 "id": "SP-0312",
-"sim": 0.377
+"sim": 0.384
 },
 {
 "id": "SP-0255",
-"sim": 0.261
+"sim": 0.262
 },
 {
 "id": "SP-0023",
-"sim": 0.219
+"sim": 0.215
 },
 {
 "id": "SP-0232",
-"sim": 0.161
+"sim": 0.158
 }
 ]
 },
@@ -14844,25 +14850,25 @@
 "motion",
 "svg",
 "blender",
-"reference"
+"graphics"
 ],
-"size": 19,
+"size": 20,
 "best": "proven",
 "status_mix": {
-"proven": 18,
+"proven": 19,
 "install": 1
 },
-"ready_now": 18,
+"ready_now": 19,
 "families": {
-"runnable-tools": 19
+"runnable-tools": 20
 },
 "atlas_folded": 0,
 "requires": [
 "python3",
 "ffmpeg",
 "node",
-"pip:pillow",
 "chromium",
+"pip:pillow",
 "blender",
 "npm:remotion",
 "npm:react"
@@ -14947,10 +14953,10 @@
 "name_ar": "مولّد مشاريع بداية لمحركات الحركة"
 },
 {
-"id": "TOOL-24",
+"id": "TOOL-30",
 "status": "proven",
-"name_en": "Video Workflow Bridge",
-"name_ar": "جسر سير عمل الفيديو"
+"name_en": "Creative Paint layered renderer",
+"name_ar": "الرسم الإبداعي بالطبقات"
 },
 {
 "id": "TOOL-27",
@@ -14959,10 +14965,16 @@
 "name_ar": "تحريك الشخصية بكامل الجسم"
 },
 {
-"id": "TOOL-30",
+"id": "TOOL-24",
 "status": "proven",
-"name_en": "Creative Paint layered renderer",
-"name_ar": "الرسم الإبداعي بالطبقات"
+"name_en": "Video Workflow Bridge",
+"name_ar": "جسر سير عمل الفيديو"
+},
+{
+"id": "TOOL-64",
+"status": "proven",
+"name_en": "Atlas explainer renderer: storyboard, determinism check and real MP4 with synthesized score",
+"name_ar": "رندر أفلام الشرح: ستوريبورد وفحص حتمية وMP4 حقيقي بصوت مُركّب"
 },
 {
 "id": "TOOL-20",
@@ -14990,7 +15002,7 @@
 "kosif-tool/.claude/skills/kosif-superpowers/evals/test_motion_engine.mjs"
 ],
 "twins": [],
-"distinct_methods": 19,
+"distinct_methods": 20,
 "links": [
 {
 "id": "SP-0108",
@@ -14998,15 +15010,15 @@
 },
 {
 "id": "SP-0268",
-"sim": 0.228
+"sim": 0.22
 },
 {
 "id": "SP-0232",
-"sim": 0.205
+"sim": 0.2
 },
 {
 "id": "SP-0321",
-"sim": 0.169
+"sim": 0.165
 }
 ]
 },
@@ -15108,11 +15120,11 @@
 "links": [
 {
 "id": "SP-0124",
-"sim": 0.213
+"sim": 0.19
 },
 {
-"id": "SP-0344",
-"sim": 0.17
+"id": "SP-0347",
+"sim": 0.172
 },
 {
 "id": "SP-0292",
@@ -15304,7 +15316,7 @@
 },
 {
 "id": "SP-0108",
-"sim": 0.212
+"sim": 0.213
 },
 {
 "id": "SP-0261",
@@ -15326,21 +15338,22 @@
 "capacity",
 "font",
 "invention",
-"lab"
+"ideate"
 ],
-"size": 3,
+"size": 4,
 "best": "proven",
 "status_mix": {
-"proven": 3
+"proven": 4
 },
-"ready_now": 3,
+"ready_now": 4,
 "families": {
-"runnable-tools": 3
+"runnable-tools": 4
 },
 "atlas_folded": 0,
 "requires": [
-"pip:hypothesis",
 "python3",
+"pip:hypothesis",
+"key:unspecified",
 "pip:pillow",
 "fonts:arabic"
 ],
@@ -15358,6 +15371,12 @@
 "name_ar": "مقدّر سعة الأنظمة"
 },
 {
+"id": "TOOL-65",
+"status": "proven",
+"name_en": "AI for business: 9 functions, 64 workflows, Claude-native gated runbooks",
+"name_ar": "الذكاء الاصطناعي في الأعمال: 9 وظائف و64 خطة عمل بخطط تشغيل لClaude"
+},
+{
 "id": "TOOL-42",
 "status": "proven",
 "name_en": "Arabic-aware font fidelity lab",
@@ -15371,23 +15390,23 @@
 "kosif-tool/.claude/skills/kosif-superpowers/scripts/architecture_sizer.py"
 ],
 "twins": [],
-"distinct_methods": 3,
+"distinct_methods": 4,
 "links": [
 {
 "id": "SP-0418",
-"sim": 0.277
+"sim": 0.232
 },
 {
 "id": "SP-0424",
-"sim": 0.118
+"sim": 0.091
 },
 {
-"id": "SP-0016",
-"sim": 0.093
+"id": "SP-0130",
+"sim": 0.061
 },
 {
-"id": "SP-0429",
-"sim": 0.075
+"id": "SP-0005",
+"sim": 0.06
 }
 ]
 },
@@ -15401,18 +15420,18 @@
 "music",
 "voice",
 "tts",
-"elevenlabs"
+"audio"
 ],
-"size": 11,
+"size": 12,
 "best": "documented",
 "status_mix": {
-"documented": 11
+"documented": 12
 },
 "ready_now": 0,
 "families": {
-"atlas-media": 11
+"atlas-media": 12
 },
-"atlas_folded": 11,
+"atlas_folded": 12,
 "requires": [
 "ffmpeg",
 "key:elevenlabs",
@@ -15431,6 +15450,12 @@
 "name_ar": "تحويل نص لصوت واستنساخ وMؤثرات ElevenLabs"
 },
 {
+"id": "AMEDIA-10",
+"status": "documented",
+"name_en": "Synthesized score with seamless loops",
+"name_ar": "مقطوعة مُصنَّعة بحلقات متصلة"
+},
+{
 "id": "AMEDIA-11",
 "status": "documented",
 "name_en": "Voice-agent ASR/TTS stack selection",
@@ -15443,16 +15468,16 @@
 "name_ar": "صياغة كلمات الأغاني وموجّهات Suno"
 },
 {
-"id": "AMEDIA-10",
-"status": "documented",
-"name_en": "Synthesized score with seamless loops",
-"name_ar": "مقطوعة مُصنَّعة بحلقات متصلة"
-},
-{
 "id": "AMEDIA-04",
 "status": "documented",
 "name_en": "Hosted STT with diarization and timestamps",
 "name_ar": "تفريغ سحابي مع فصل المتحدثين والتوقيت"
+},
+{
+"id": "AMEDIA-03",
+"status": "documented",
+"name_en": "Game SFX sets with loudness classes",
+"name_ar": "مجموعات مؤثرات لعبة بمستويات صوت"
 },
 {
 "id": "AMEDIA-06",
@@ -15461,16 +15486,16 @@
 "name_ar": "تفريغ محلي بـ whisper للملفات والبث"
 },
 {
+"id": "AMEDIA-02",
+"status": "documented",
+"name_en": "Final mix delivery check for YouTube 4K",
+"name_ar": "فحص تسليم المزيج النهائي ليوتيوب 4K"
+},
+{
 "id": "AMEDIA-05",
 "status": "documented",
 "name_en": "Joined-audio timestamp drift fix",
 "name_ar": "إصلاح انحراف التوقيت في دمج الصوت"
-},
-{
-"id": "AMEDIA-03",
-"status": "documented",
-"name_en": "Game SFX sets with loudness classes",
-"name_ar": "مجموعات مؤثرات لعبة بمستويات صوت"
 },
 {
 "id": "AMEDIA-13",
@@ -15493,23 +15518,23 @@
 ],
 "proof": [],
 "twins": [],
-"distinct_methods": 11,
+"distinct_methods": 12,
 "links": [
 {
 "id": "SP-0441",
-"sim": 0.351
+"sim": 0.36
 },
 {
 "id": "SP-0124",
-"sim": 0.285
-},
-{
-"id": "SP-0288",
-"sim": 0.236
+"sim": 0.316
 },
 {
 "id": "SP-0443",
-"sim": 0.23
+"sim": 0.251
+},
+{
+"id": "SP-0288",
+"sim": 0.25
 }
 ]
 },
@@ -15525,18 +15550,18 @@
 "python",
 "transcode"
 ],
-"size": 14,
+"size": 13,
 "best": "proven",
 "status_mix": {
 "proven": 11,
-"documented": 3
+"documented": 2
 },
 "ready_now": 11,
 "families": {
 "media-image-audio": 11,
-"atlas-media": 3
+"atlas-media": 2
 },
-"atlas_folded": 3,
+"atlas_folded": 2,
 "requires": [
 "ffmpeg",
 "pip:numpy",
@@ -15555,22 +15580,16 @@
 "name_ar": "توليد إشارات صوتية للاختبار"
 },
 {
-"id": "MEDIA-24",
-"status": "proven",
-"name_en": "Audio effects (pedalboard, GPL)",
-"name_ar": "مؤثرات صوتية بـ pedalboard"
-},
-{
 "id": "MEDIA-22",
 "status": "proven",
 "name_en": "Slice, fade and export with pydub (Python 3.13)",
 "name_ar": "قص وتلاشي وتصدير بـ pydub"
 },
 {
-"id": "MEDIA-18",
+"id": "MEDIA-24",
 "status": "proven",
-"name_en": "Loudness measurement (LUFS)",
-"name_ar": "قياس الجهارة LUFS"
+"name_en": "Audio effects (pedalboard, GPL)",
+"name_ar": "مؤثرات صوتية بـ pedalboard"
 },
 {
 "id": "MEDIA-16",
@@ -15585,10 +15604,10 @@
 "name_ar": "تطبيع الجهارة بمرورين خطّيين"
 },
 {
-"id": "MEDIA-23",
+"id": "MEDIA-18",
 "status": "proven",
-"name_en": "Transcode and verify duration",
-"name_ar": "تحويل الصيغ والتحقق من المدة"
+"name_en": "Loudness measurement (LUFS)",
+"name_ar": "قياس الجهارة LUFS"
 },
 {
 "id": "MEDIA-20",
@@ -15609,6 +15628,12 @@
 "name_ar": "كشف بدايات الأصوات والإيقاع"
 },
 {
+"id": "MEDIA-23",
+"status": "proven",
+"name_en": "Transcode and verify duration",
+"name_ar": "تحويل الصيغ والتحقق من المدة"
+},
+{
 "id": "MEDIA-31",
 "status": "proven",
 "name_en": "music21: Build, parse and analyse scores (MIDI/MusicXML): keys, chords, voice leading",
@@ -15625,12 +15650,6 @@
 "status": "documented",
 "name_en": "Procedural game audio from Python code",
 "name_ar": "صوت ألعاب إجرائي بالكود"
-},
-{
-"id": "AMEDIA-02",
-"status": "documented",
-"name_en": "Final mix delivery check for YouTube 4K",
-"name_ar": "فحص تسليم المزيج النهائي ليوتيوب 4K"
 }
 ],
 "proof": [
@@ -15640,22 +15659,22 @@
 "kosif-tool/.claude/skills/kosif-superpowers/proofs/toolbelt-smoke/README.md"
 ],
 "twins": [],
-"distinct_methods": 14,
+"distinct_methods": 13,
 "links": [
 {
-"id": "SP-0345",
-"sim": 0.472
+"id": "SP-0344",
+"sim": 0.469
 },
 {
 "id": "SP-0292",
-"sim": 0.402
+"sim": 0.4
 },
 {
-"id": "SP-0296",
-"sim": 0.387
+"id": "SP-0295",
+"sim": 0.361
 },
 {
-"id": "SP-0441",
+"id": "SP-0123",
 "sim": 0.316
 }
 ]
@@ -16026,7 +16045,7 @@
 },
 {
 "id": "SP-0342",
-"sim": 0.144
+"sim": 0.145
 },
 {
 "id": "SP-0302",
@@ -16185,7 +16204,7 @@
 },
 {
 "id": "SP-0261",
-"sim": 0.097
+"sim": 0.098
 }
 ]
 },
@@ -16409,7 +16428,7 @@
 "links": [
 {
 "id": "SP-0089",
-"sim": 0.376
+"sim": 0.374
 },
 {
 "id": "SP-0014",
@@ -16417,7 +16436,7 @@
 },
 {
 "id": "SP-0083",
-"sim": 0.178
+"sim": 0.177
 },
 {
 "id": "SP-0134",
@@ -16514,11 +16533,11 @@
 },
 {
 "id": "SP-0041",
-"sim": 0.505
+"sim": 0.504
 },
 {
 "id": "SP-0116",
-"sim": 0.349
+"sim": 0.348
 },
 {
 "id": "SP-0001",
@@ -16611,8 +16630,8 @@
 "sim": 0.332
 },
 {
-"id": "SP-0344",
-"sim": 0.107
+"id": "SP-0347",
+"sim": 0.109
 },
 {
 "id": "SP-0200",
@@ -17005,7 +17024,7 @@
 },
 {
 "id": "SP-0286",
-"sim": 0.09
+"sim": 0.089
 },
 {
 "id": "SP-0283",
@@ -17149,11 +17168,11 @@
 },
 {
 "id": "SP-0118",
-"sim": 0.169
+"sim": 0.164
 },
 {
 "id": "SP-0276",
-"sim": 0.155
+"sim": 0.154
 }
 ]
 },
@@ -17270,7 +17289,7 @@
 },
 {
 "id": "SP-0251",
-"sim": 0.191
+"sim": 0.192
 },
 {
 "id": "SP-0163",
@@ -17689,7 +17708,7 @@
 "links": [
 {
 "id": "SP-0031",
-"sim": 0.485
+"sim": 0.486
 },
 {
 "id": "SP-0342",
@@ -17985,7 +18004,7 @@
 "links": [
 {
 "id": "SP-0147",
-"sim": 0.165
+"sim": 0.157
 },
 {
 "id": "SP-0168",
@@ -18110,7 +18129,7 @@
 },
 {
 "id": "SP-0417",
-"sim": 0.095
+"sim": 0.096
 },
 {
 "id": "SP-0128",
@@ -18219,8 +18238,8 @@
 "sim": 0.079
 },
 {
-"id": "SP-0344",
-"sim": 0.078
+"id": "SP-0347",
+"sim": 0.079
 }
 ]
 },
@@ -18236,26 +18255,26 @@
 "avatars",
 "lyria"
 ],
-"size": 7,
+"size": 8,
 "best": "key",
 "status_mix": {
 "key": 6,
-"documented": 1
+"documented": 2
 },
 "ready_now": 0,
 "families": {
-"ai-generation": 7
+"ai-generation": 8
 },
 "atlas_folded": 0,
 "requires": [
 "key:unspecified",
 "npm:hyperframes",
 "python3",
+"key:video-gen",
 "npm:three",
 "npm:react",
 "node",
-"pip:higgsfield",
-"key:video-gen"
+"pip:higgsfield"
 ],
 "pipeline": [
 {
@@ -18277,6 +18296,12 @@
 "name_ar": "خوادم المالك: KOSIF Think وJev والمنصة الخاصة"
 },
 {
+"id": "GEN-64",
+"status": "key",
+"name_en": "Music generation: Lyria & MusicGen",
+"name_ar": "توليد الموسيقى: Lyria وMusicGen"
+},
+{
 "id": "GEN-67",
 "status": "key",
 "name_en": "Avatar presenter, dub, video translate & upscale",
@@ -18289,41 +18314,37 @@
 "name_ar": "توجيه مزودي الإبداع وشبكة الموصلات"
 },
 {
-"id": "GEN-64",
-"status": "key",
-"name_en": "Music generation: Lyria & MusicGen",
-"name_ar": "توليد الموسيقى: Lyria وMusicGen"
-},
-{
 "id": "GEN-71",
 "status": "documented",
 "name_en": "Owner prompt-system corpus search",
 "name_ar": "البحث في مكتبة برومبتات المالك"
+},
+{
+"id": "GEN-65",
+"status": "documented",
+"name_en": "Song lyrics + Suno/Udio brief",
+"name_ar": "كلمات أغنية وموجز Suno/Udio"
 }
 ],
 "proof": [],
 "twins": [],
-"distinct_methods": 7,
+"distinct_methods": 8,
 "links": [
 {
+"id": "SP-0296",
+"sim": 0.171
+},
+{
 "id": "SP-0288",
+"sim": 0.122
+},
+{
+"id": "SP-0297",
 "sim": 0.121
 },
 {
-"id": "SP-0325",
-"sim": 0.102
-},
-{
-"id": "SP-0342",
-"sim": 0.086
-},
-{
-"id": "SP-0141",
-"sim": 0.084
-},
-{
 "id": "SP-0123",
-"sim": 0.075
+"sim": 0.117
 }
 ]
 },
@@ -18387,12 +18408,12 @@
 "distinct_methods": 5,
 "links": [
 {
-"id": "SP-0344",
-"sim": 0.317
+"id": "SP-0347",
+"sim": 0.315
 },
 {
 "id": "SP-0370",
-"sim": 0.295
+"sim": 0.294
 },
 {
 "id": "SP-0205",
@@ -18414,7 +18435,7 @@
 "claude",
 "api",
 "bridge",
-"sandboxed"
+"storyboard-first"
 ],
 "size": 3,
 "best": "ready",
@@ -18459,19 +18480,19 @@
 "links": [
 {
 "id": "SP-0313",
-"sim": 0.308
+"sim": 0.305
 },
 {
 "id": "SP-0036",
-"sim": 0.244
+"sim": 0.246
 },
 {
 "id": "SP-0142",
-"sim": 0.165
+"sim": 0.157
 },
 {
 "id": "SP-0017",
-"sim": 0.148
+"sim": 0.146
 }
 ]
 },
@@ -18714,7 +18735,7 @@
 },
 {
 "id": "SP-0118",
-"sim": 0.112
+"sim": 0.109
 }
 ]
 },
@@ -18836,7 +18857,7 @@
 },
 {
 "id": "SP-0123",
-"sim": 0.208
+"sim": 0.201
 },
 {
 "id": "SP-0442",
@@ -18946,12 +18967,12 @@
 "sim": 0.318
 },
 {
-"id": "SP-0345",
+"id": "SP-0344",
 "sim": 0.306
 },
 {
 "id": "SP-0124",
-"sim": 0.299
+"sim": 0.305
 },
 {
 "id": "SP-0300",
@@ -19065,8 +19086,8 @@
 "sim": 0.229
 },
 {
-"id": "SP-0295",
-"sim": 0.153
+"id": "SP-0296",
+"sim": 0.144
 },
 {
 "id": "SP-0402",
@@ -19074,7 +19095,7 @@
 },
 {
 "id": "SP-0123",
-"sim": 0.101
+"sim": 0.099
 }
 ]
 },
@@ -19142,8 +19163,8 @@
 "sim": 0.171
 },
 {
-"id": "SP-0243",
-"sim": 0.133
+"id": "SP-0246",
+"sim": 0.126
 },
 {
 "id": "SP-0416",
@@ -19151,7 +19172,7 @@
 },
 {
 "id": "SP-0118",
-"sim": 0.045
+"sim": 0.043
 }
 ]
 },
@@ -19371,16 +19392,16 @@
 "sim": 0.113
 },
 {
-"id": "SP-0394",
+"id": "SP-0274",
+"sim": 0.104
+},
+{
+"id": "SP-0249",
 "sim": 0.103
 },
 {
-"id": "SP-0274",
-"sim": 0.1
-},
-{
-"id": "SP-0269",
-"sim": 0.099
+"id": "SP-0394",
+"sim": 0.103
 },
 {
 "id": "SP-0112",
@@ -19570,7 +19591,7 @@
 },
 {
 "id": "SP-0122",
-"sim": 0.064
+"sim": 0.056
 }
 ]
 },
@@ -19654,7 +19675,7 @@
 },
 {
 "id": "SP-0263",
-"sim": 0.13
+"sim": 0.131
 },
 {
 "id": "SP-0216",
@@ -19994,16 +20015,16 @@
 "name_ar": "كاميرا مطاردة بتأخير"
 },
 {
-"id": "CAM-221",
-"status": "seen",
-"name_en": "World-layer camera (focus x, y, log-scale)",
-"name_ar": "كاميرا عالم واحد بمحاور تركيز وتكبير لوغاريتمي"
-},
-{
 "id": "CAM-269",
 "status": "seen",
 "name_en": "Virtual camera over one big UI canvas",
 "name_ar": "كاميرا افتراضية تتجول فوق لوحة واجهة كبيرة"
+},
+{
+"id": "CAM-221",
+"status": "seen",
+"name_en": "World-layer camera (focus x, y, log-scale)",
+"name_ar": "كاميرا عالم واحد بمحاور تركيز وتكبير لوغاريتمي"
 },
 {
 "id": "CAM-204",
@@ -20388,7 +20409,7 @@
 },
 {
 "id": "SP-0184",
-"sim": 0.194
+"sim": 0.195
 },
 {
 "id": "SP-0108",
@@ -20964,7 +20985,7 @@
 },
 {
 "id": "SP-0118",
-"sim": 0.077
+"sim": 0.075
 }
 ]
 },
@@ -21622,8 +21643,8 @@
 "sim": 0.132
 },
 {
-"id": "SP-0246",
-"sim": 0.088
+"id": "SP-0249",
+"sim": 0.09
 },
 {
 "id": "SP-0185",
@@ -22169,11 +22190,11 @@
 "links": [
 {
 "id": "SP-0171",
-"sim": 0.189
+"sim": 0.19
 },
 {
 "id": "SP-0184",
-"sim": 0.134
+"sim": 0.135
 },
 {
 "id": "SP-0438",
@@ -22305,7 +22326,7 @@
 },
 {
 "id": "SP-0024",
-"sim": 0.073
+"sim": 0.072
 }
 ]
 },
@@ -22869,7 +22890,7 @@
 "sim": 0.111
 },
 {
-"id": "SP-0407",
+"id": "SP-0195",
 "sim": 0.078
 },
 {
@@ -23072,7 +23093,7 @@
 "distinct_methods": 8,
 "links": [
 {
-"id": "SP-0347",
+"id": "SP-0346",
 "sim": 0.22
 },
 {
@@ -23292,7 +23313,7 @@
 },
 {
 "id": "SP-0332",
-"sim": 0.281
+"sim": 0.28
 },
 {
 "id": "SP-0289",
@@ -23761,7 +23782,7 @@
 "links": [
 {
 "id": "SP-0311",
-"sim": 0.207
+"sim": 0.208
 },
 {
 "id": "SP-0171",
@@ -23769,7 +23790,7 @@
 },
 {
 "id": "SP-0158",
-"sim": 0.194
+"sim": 0.195
 },
 {
 "id": "SP-0172",
@@ -23777,7 +23798,7 @@
 },
 {
 "id": "SP-0117",
-"sim": 0.088
+"sim": 0.085
 }
 ]
 },
@@ -23864,7 +23885,7 @@
 },
 {
 "id": "SP-0118",
-"sim": 0.027
+"sim": 0.026
 }
 ]
 },
@@ -24092,7 +24113,7 @@
 },
 {
 "id": "SP-0118",
-"sim": 0.033
+"sim": 0.032
 }
 ]
 },
@@ -24154,7 +24175,7 @@
 },
 {
 "id": "SP-0353",
-"sim": 0.174
+"sim": 0.164
 },
 {
 "id": "SP-0207",
@@ -24364,7 +24385,7 @@
 },
 {
 "id": "SP-0118",
-"sim": 0.09
+"sim": 0.088
 },
 {
 "id": "SP-0370",
@@ -24547,7 +24568,7 @@
 },
 {
 "id": "SP-0118",
-"sim": 0.063
+"sim": 0.061
 }
 ]
 },
@@ -24698,15 +24719,19 @@
 },
 {
 "id": "SP-0268",
-"sim": 0.106
+"sim": 0.105
 },
 {
 "id": "SP-0417",
 "sim": 0.097
 },
 {
+"id": "SP-0232",
+"sim": 0.094
+},
+{
 "id": "SP-0118",
-"sim": 0.095
+"sim": 0.092
 }
 ]
 },
@@ -25066,7 +25091,7 @@
 },
 {
 "id": "SP-0291",
-"sim": 0.202
+"sim": 0.203
 },
 {
 "id": "SP-0198",
@@ -25781,11 +25806,11 @@
 },
 {
 "id": "SP-0400",
-"sim": 0.077
+"sim": 0.076
 },
 {
-"id": "SP-0123",
-"sim": 0.046
+"id": "SP-0033",
+"sim": 0.039
 }
 ]
 },
@@ -25859,7 +25884,7 @@
 "links": [
 {
 "id": "SP-0371",
-"sim": 0.197
+"sim": 0.198
 },
 {
 "id": "SP-0262",
@@ -26203,8 +26228,8 @@
 "sim": 0.186
 },
 {
-"id": "SP-0344",
-"sim": 0.179
+"id": "SP-0347",
+"sim": 0.181
 },
 {
 "id": "SP-0331",
@@ -26358,7 +26383,7 @@
 },
 {
 "id": "SP-0209",
-"sim": 0.097
+"sim": 0.096
 }
 ]
 },
@@ -26475,7 +26500,7 @@
 "links": [
 {
 "id": "SP-0275",
-"sim": 0.181
+"sim": 0.187
 },
 {
 "id": "SP-0377",
@@ -26724,7 +26749,7 @@
 },
 {
 "id": "SP-0118",
-"sim": 0.046
+"sim": 0.044
 }
 ]
 },
@@ -27227,7 +27252,7 @@
 "links": [
 {
 "id": "SP-0375",
-"sim": 0.28
+"sim": 0.276
 },
 {
 "id": "SP-0088",
@@ -27235,11 +27260,11 @@
 },
 {
 "id": "SP-0437",
-"sim": 0.107
+"sim": 0.108
 },
 {
 "id": "SP-0341",
-"sim": 0.098
+"sim": 0.099
 }
 ]
 },
@@ -27493,7 +27518,7 @@
 },
 {
 "id": "SP-0268",
-"sim": 0.129
+"sim": 0.128
 },
 {
 "id": "SP-0054",
@@ -27727,7 +27752,7 @@
 },
 {
 "id": "SP-0436",
-"sim": 0.109
+"sim": 0.11
 },
 {
 "id": "SP-0056",
@@ -27935,8 +27960,8 @@
 "sim": 0.134
 },
 {
-"id": "SP-0249",
-"sim": 0.117
+"id": "SP-0245",
+"sim": 0.112
 },
 {
 "id": "SP-0219",
@@ -28139,7 +28164,7 @@
 "links": [
 {
 "id": "SP-0396",
-"sim": 0.264
+"sim": 0.265
 },
 {
 "id": "SP-0236",
@@ -28155,7 +28180,7 @@
 },
 {
 "id": "SP-0118",
-"sim": 0.108
+"sim": 0.106
 }
 ]
 },
@@ -28796,7 +28821,7 @@
 },
 {
 "id": "SP-0118",
-"sim": 0.066
+"sim": 0.065
 }
 ]
 },
@@ -29213,7 +29238,7 @@
 "links": [
 {
 "id": "SP-0118",
-"sim": 0.108
+"sim": 0.105
 },
 {
 "id": "SP-0321",
@@ -29224,7 +29249,7 @@
 "sim": 0.093
 },
 {
-"id": "SP-0061",
+"id": "SP-0240",
 "sim": 0.088
 }
 ]
@@ -29445,7 +29470,7 @@
 },
 {
 "id": "SP-0433",
-"sim": 0.162
+"sim": 0.161
 }
 ]
 },
@@ -29661,7 +29686,7 @@
 "sim": 0.208
 },
 {
-"id": "SP-0244",
+"id": "SP-0243",
 "sim": 0.2
 },
 {
@@ -29883,7 +29908,7 @@
 },
 {
 "id": "SP-0338",
-"sim": 0.161
+"sim": 0.16
 },
 {
 "id": "SP-0263",
@@ -29907,17 +29932,17 @@
 "kmotion",
 "lab"
 ],
-"size": 20,
+"size": 21,
 "best": "proven",
 "status_mix": {
 "proven": 4,
 "ready": 5,
-"install": 10,
+"install": 11,
 "documented": 1
 },
 "ready_now": 9,
 "families": {
-"engines-render-pipeline": 20
+"engines-render-pipeline": 21
 },
 "atlas_folded": 0,
 "requires": [
@@ -30010,6 +30035,12 @@
 "name_ar": "أمر: إنشاء مشروع"
 },
 {
+"id": "ENG-212",
+"status": "install",
+"name_en": "New canvas project",
+"name_ar": "مشروع كانفس"
+},
+{
 "id": "ENG-289",
 "status": "install",
 "name_en": "HyperFrames GSAP composition template",
@@ -30068,27 +30099,27 @@
 "ENG-211"
 ]
 ],
-"distinct_methods": 18,
+"distinct_methods": 19,
 "links": [
 {
 "id": "SP-0354",
-"sim": 0.255
+"sim": 0.256
 },
 {
 "id": "SP-0314",
-"sim": 0.242
+"sim": 0.244
 },
 {
 "id": "SP-0241",
-"sim": 0.143
+"sim": 0.14
 },
 {
-"id": "SP-0243",
-"sim": 0.093
+"id": "SP-0246",
+"sim": 0.099
 },
 {
 "id": "SP-0064",
-"sim": 0.077
+"sim": 0.078
 }
 ]
 },
@@ -30257,7 +30288,7 @@
 "links": [
 {
 "id": "SP-0118",
-"sim": 0.205
+"sim": 0.2
 },
 {
 "id": "SP-0313",
@@ -30269,7 +30300,7 @@
 },
 {
 "id": "SP-0117",
-"sim": 0.161
+"sim": 0.158
 }
 ]
 },
@@ -30443,14 +30474,14 @@
 },
 {
 "id": "SP-0008",
-"sim": 0.168
+"sim": 0.169
 },
 {
 "id": "SP-0228",
 "sim": 0.157
 },
 {
-"id": "SP-0262",
+"id": "SP-0118",
 "sim": 0.15
 }
 ]
@@ -30626,7 +30657,7 @@
 },
 {
 "id": "SP-0118",
-"sim": 0.101
+"sim": 0.098
 }
 ]
 },
@@ -30773,7 +30804,7 @@
 "links": [
 {
 "id": "SP-0113",
-"sim": 0.307
+"sim": 0.308
 },
 {
 "id": "SP-0237",
@@ -31092,7 +31123,7 @@
 },
 {
 "id": "SP-0338",
-"sim": 0.181
+"sim": 0.18
 },
 {
 "id": "SP-0098",
@@ -31248,7 +31279,7 @@
 },
 {
 "id": "SP-0118",
-"sim": 0.138
+"sim": 0.139
 }
 ]
 },
@@ -31381,7 +31412,7 @@
 "links": [
 {
 "id": "SP-0267",
-"sim": 0.454
+"sim": 0.453
 },
 {
 "id": "SP-0233",
@@ -31392,12 +31423,12 @@
 "sim": 0.134
 },
 {
-"id": "SP-0244",
+"id": "SP-0243",
 "sim": 0.133
 },
 {
 "id": "SP-0119",
-"sim": 0.106
+"sim": 0.105
 }
 ]
 },
@@ -31534,7 +31565,7 @@
 },
 {
 "id": "SP-0118",
-"sim": 0.098
+"sim": 0.095
 }
 ]
 },
@@ -31814,7 +31845,7 @@
 "sim": 0.177
 },
 {
-"id": "SP-0345",
+"id": "SP-0344",
 "sim": 0.14
 },
 {
@@ -31825,145 +31856,6 @@
 },
 {
 "id": "SP-0243",
-"domain": "motion",
-"family": "engines-render-pipeline",
-"name_ar": "قالب الكانفاس",
-"name_en": "Canvas route template",
-"focus": [
-"canvas",
-"template",
-"renderer",
-"scale"
-],
-"size": 12,
-"best": "ready",
-"status_mix": {
-"ready": 3,
-"install": 5,
-"key": 1,
-"documented": 3
-},
-"ready_now": 3,
-"families": {
-"engines-render-pipeline": 12
-},
-"atlas_folded": 0,
-"requires": [
-"python3",
-"chromium",
-"npm:gsap",
-"pip:opencv",
-"key:unspecified",
-"npm:three",
-"ffmpeg"
-],
-"pipeline": [
-{
-"id": "ENG-63",
-"status": "ready",
-"name_en": "Native Canvas time-seekable renderer",
-"name_ar": "محرك Canvas الأصلي القابل للتقديم"
-},
-{
-"id": "ENG-61",
-"status": "ready",
-"name_en": "Canvas retained scene model",
-"name_ar": "نموذج مشهد محفوظ للـ Canvas"
-},
-{
-"id": "ENG-81",
-"status": "ready",
-"name_en": "Canvas route template (pure function of t)",
-"name_ar": "مسار الكانفس"
-},
-{
-"id": "ENG-288",
-"status": "install",
-"name_en": "Canvas route template",
-"name_ar": "قالب الكانفاس"
-},
-{
-"id": "ENG-212",
-"status": "install",
-"name_en": "New canvas project",
-"name_ar": "مشروع كانفس"
-},
-{
-"id": "ENG-117",
-"status": "install",
-"name_en": "GSAP proxy object driving Canvas",
-"name_ar": "كائن وسيط يحرك الكانفس"
-},
-{
-"id": "ENG-294",
-"status": "install",
-"name_en": "Native-resolution canvas with viewer-style fit",
-"name_ar": "لوحة بدقتها الأصلية مع عرض ملائم"
-},
-{
-"id": "ENG-287",
-"status": "install",
-"name_en": "Draft scale for fast 3D drafts",
-"name_ar": "مسودة منخفضة الدقة"
-},
-{
-"id": "ENG-348",
-"status": "key",
-"name_en": "Previz-then-final tiering",
-"name_ar": "مسودة ثم نهائي"
-},
-{
-"id": "ENG-381",
-"status": "documented",
-"name_en": "Renderer ladder SVG -> Canvas -> WebGL",
-"name_ar": "سلم المصيّرات SVG ثم Canvas ثم WebGL"
-},
-{
-"id": "ENG-425",
-"status": "documented",
-"name_en": "Supersampled output (--scale)",
-"name_ar": "تكبير دقة الإخراج"
-},
-{
-"id": "ENG-384",
-"status": "documented",
-"name_en": "Honest local upscale to 4K (Lanczos + unsharp)",
-"name_ar": "رفع دقة محلي صادق إلى 4K"
-}
-],
-"proof": [],
-"twins": [
-[
-"ENG-81",
-"ENG-288"
-]
-],
-"distinct_methods": 11,
-"links": [
-{
-"id": "SP-0433",
-"sim": 0.183
-},
-{
-"id": "SP-0152",
-"sim": 0.133
-},
-{
-"id": "SP-0137",
-"sim": 0.119
-},
-{
-"id": "SP-0325",
-"sim": 0.101
-},
-{
-"id": "SP-0063",
-"sim": 0.078
-}
-]
-},
-{
-"id": "SP-0244",
 "domain": "motion",
 "family": "engines-render-pipeline",
 "name_ar": "تجميع اللقطات بنوافذ إطارات",
@@ -32096,7 +31988,7 @@
 ]
 },
 {
-"id": "SP-0245",
+"id": "SP-0244",
 "domain": "motion",
 "family": "engines-render-pipeline",
 "name_ar": "عشوائية ببذرة ثابتة",
@@ -32231,94 +32123,99 @@
 ]
 },
 {
-"id": "SP-0246",
+"id": "SP-0245",
 "domain": "motion",
 "family": "engines-render-pipeline",
-"name_ar": "تكامل: Lottie Creator MCP",
-"name_en": "Integration: Lottie Creator MCP",
+"name_ar": "محول Anime.js",
+"name_en": "Anime.js adapter",
 "focus": [
-"lottie",
-"root",
-"mcp",
-"lottiefiles"
+"animation",
+"anime.js",
+"library",
+"gsap"
 ],
-"size": 10,
-"best": "proven",
+"size": 11,
+"best": "ready",
 "status_mix": {
-"proven": 1,
 "ready": 1,
-"install": 3,
-"key": 3,
-"documented": 2
+"install": 9,
+"documented": 1
 },
-"ready_now": 2,
+"ready_now": 1,
 "families": {
-"engines-render-pipeline": 10
+"engines-render-pipeline": 11
 },
 "atlas_folded": 0,
 "requires": [
-"npm:lottie",
-"npm:remotion",
+"npm:animejs",
 "npm:gsap",
-"key:unspecified",
 "npm:hyperframes",
-"python3",
-"blender"
+"npm:d3",
+"npm:p5",
+"npm:remotion",
+"npm:three",
+"npm:lottie"
 ],
 "pipeline": [
 {
-"id": "ENG-01",
-"status": "proven",
-"name_en": "HyperFrames composition contract",
-"name_ar": "عقد تركيب HyperFrames"
-},
-{
-"id": "ENG-60",
+"id": "ENG-112",
 "status": "ready",
-"name_en": "Lottie text/logo layers",
-"name_ar": "طبقات Lottie"
+"name_en": "Blob-URL seekable video",
+"name_ar": "فيديو قابل للبحث عبر Blob"
 },
 {
-"id": "ENG-146",
+"id": "ENG-196",
 "status": "install",
-"name_en": "Lottie embedding",
-"name_ar": "تضمين لوتي"
+"name_en": "Anime.js adapter",
+"name_ar": "محول Anime.js"
 },
 {
-"id": "ENG-123",
+"id": "ENG-291",
 "status": "install",
-"name_en": "Lottie inside timelines",
-"name_ar": "لوتي داخل الفيديو"
+"name_en": "In-page animation library list",
+"name_ar": "مكتبات الحركة داخل الصفحة"
 },
 {
-"id": "ENG-190",
+"id": "ENG-170",
 "status": "install",
-"name_en": "Composition root contract",
-"name_ar": "عقد جذر التركيب"
+"name_en": "Frame adapters (GSAP, CSS, Anime.js, Lottie, Three.js, WAAPI, TypeGPU)",
+"name_ar": "محولات الإطارات"
 },
 {
-"id": "ENG-343",
-"status": "key",
-"name_en": "Integration: Lottie Creator MCP",
-"name_ar": "تكامل: Lottie Creator MCP"
+"id": "ENG-260",
+"status": "install",
+"name_en": "In-page motion/drawing library list",
+"name_ar": "مكتبات الحركة داخل الصفحة"
 },
 {
-"id": "ENG-344",
-"status": "key",
-"name_en": "Integration: LottieFiles platform MCP",
-"name_ar": "تكامل: LottieFiles platform MCP"
+"id": "ENG-301",
+"status": "install",
+"name_en": "Scene animation through build_t(t)",
+"name_ar": "تحريك المشهد عبر build_t(t)"
 },
 {
-"id": "ENG-324",
-"status": "key",
-"name_en": "After Effects ExtendScript automation",
-"name_ar": "أتمتة أفتر إفكتس"
+"id": "ENG-198",
+"status": "install",
+"name_en": "Web Animations API adapter",
+"name_ar": "محول واجهة الحركة في المتصفح"
 },
 {
-"id": "ENG-411",
-"status": "documented",
-"name_en": "Video-tool landscape (500 tools / 33 integrations)",
-"name_ar": "خريطة أدوات الفيديو"
+"id": "ENG-114",
+"status": "install",
+"name_en": "GSAP tween trio (to / from / fromTo / set)",
+"name_ar": "حركات GSAP الأساسية"
+},
+{
+"id": "ENG-126",
+"status": "install",
+"name_en": "Framer Motion layout & spring",
+"name_ar": "فريمر موشن"
+},
+{
+"id": "ENG-161",
+"status": "install",
+"name_en": "Local video library",
+"name_ar": "مكتبة فيديوهاتي"
 },
 {
 "id": "ENG-382",
@@ -32327,30 +32224,163 @@
 "name_ar": "ساعة حركة مدفوعة بالإطار"
 }
 ],
-"proof": [
-"kosif-studio/motion/motion.py:18",
-"kosif-studio/motion/motion.py:126",
-"kosif-studio/tests/test_studio.py:549",
-"kosif-one/tools/kosif-studio/motion/references/hyperframes-authoring.md"
+"proof": [],
+"twins": [
+[
+"ENG-291",
+"ENG-260"
+]
 ],
-"twins": [],
 "distinct_methods": 10,
 "links": [
 {
-"id": "SP-0249",
-"sim": 0.122
+"id": "SP-0251",
+"sim": 0.254
 },
 {
-"id": "SP-0061",
-"sim": 0.105
+"id": "SP-0332",
+"sim": 0.233
 },
 {
-"id": "SP-0257",
-"sim": 0.101
+"id": "SP-0118",
+"sim": 0.135
 },
 {
-"id": "SP-0153",
-"sim": 0.097
+"id": "SP-0218",
+"sim": 0.112
+}
+]
+},
+{
+"id": "SP-0246",
+"domain": "motion",
+"family": "engines-render-pipeline",
+"name_ar": "قالب الكانفاس",
+"name_en": "Canvas route template",
+"focus": [
+"canvas",
+"template",
+"renderer",
+"scale"
+],
+"size": 11,
+"best": "ready",
+"status_mix": {
+"ready": 3,
+"install": 4,
+"key": 1,
+"documented": 3
+},
+"ready_now": 3,
+"families": {
+"engines-render-pipeline": 11
+},
+"atlas_folded": 0,
+"requires": [
+"python3",
+"chromium",
+"pip:opencv",
+"npm:gsap",
+"key:unspecified",
+"npm:three",
+"ffmpeg"
+],
+"pipeline": [
+{
+"id": "ENG-63",
+"status": "ready",
+"name_en": "Native Canvas time-seekable renderer",
+"name_ar": "محرك Canvas الأصلي القابل للتقديم"
+},
+{
+"id": "ENG-81",
+"status": "ready",
+"name_en": "Canvas route template (pure function of t)",
+"name_ar": "مسار الكانفس"
+},
+{
+"id": "ENG-61",
+"status": "ready",
+"name_en": "Canvas retained scene model",
+"name_ar": "نموذج مشهد محفوظ للـ Canvas"
+},
+{
+"id": "ENG-288",
+"status": "install",
+"name_en": "Canvas route template",
+"name_ar": "قالب الكانفاس"
+},
+{
+"id": "ENG-294",
+"status": "install",
+"name_en": "Native-resolution canvas with viewer-style fit",
+"name_ar": "لوحة بدقتها الأصلية مع عرض ملائم"
+},
+{
+"id": "ENG-117",
+"status": "install",
+"name_en": "GSAP proxy object driving Canvas",
+"name_ar": "كائن وسيط يحرك الكانفس"
+},
+{
+"id": "ENG-287",
+"status": "install",
+"name_en": "Draft scale for fast 3D drafts",
+"name_ar": "مسودة منخفضة الدقة"
+},
+{
+"id": "ENG-348",
+"status": "key",
+"name_en": "Previz-then-final tiering",
+"name_ar": "مسودة ثم نهائي"
+},
+{
+"id": "ENG-381",
+"status": "documented",
+"name_en": "Renderer ladder SVG -> Canvas -> WebGL",
+"name_ar": "سلم المصيّرات SVG ثم Canvas ثم WebGL"
+},
+{
+"id": "ENG-425",
+"status": "documented",
+"name_en": "Supersampled output (--scale)",
+"name_ar": "تكبير دقة الإخراج"
+},
+{
+"id": "ENG-384",
+"status": "documented",
+"name_en": "Honest local upscale to 4K (Lanczos + unsharp)",
+"name_ar": "رفع دقة محلي صادق إلى 4K"
+}
+],
+"proof": [],
+"twins": [
+[
+"ENG-81",
+"ENG-288"
+]
+],
+"distinct_methods": 10,
+"links": [
+{
+"id": "SP-0433",
+"sim": 0.161
+},
+{
+"id": "SP-0152",
+"sim": 0.126
+},
+{
+"id": "SP-0137",
+"sim": 0.112
+},
+{
+"id": "SP-0325",
+"sim": 0.11
+},
+{
+"id": "SP-0063",
+"sim": 0.085
 }
 ]
 },
@@ -32598,15 +32628,15 @@
 },
 {
 "id": "SP-0377",
-"sim": 0.12
+"sim": 0.119
 },
 {
 "id": "SP-0214",
 "sim": 0.104
 },
 {
-"id": "SP-0243",
-"sim": 0.1
+"id": "SP-0240",
+"sim": 0.096
 },
 {
 "id": "SP-0134",
@@ -32618,121 +32648,117 @@
 "id": "SP-0249",
 "domain": "motion",
 "family": "engines-render-pipeline",
-"name_ar": "محول Anime.js",
-"name_en": "Anime.js adapter",
+"name_ar": "تكامل: Lottie Creator MCP",
+"name_en": "Integration: Lottie Creator MCP",
 "focus": [
-"animation",
-"anime.js",
-"library",
-"gsap"
+"lottie",
+"root",
+"mcp",
+"lottiefiles"
 ],
-"size": 10,
-"best": "ready",
+"size": 9,
+"best": "proven",
 "status_mix": {
+"proven": 1,
 "ready": 1,
-"install": 9
+"install": 3,
+"key": 3,
+"documented": 1
 },
-"ready_now": 1,
+"ready_now": 2,
 "families": {
-"engines-render-pipeline": 10
+"engines-render-pipeline": 9
 },
 "atlas_folded": 0,
 "requires": [
-"npm:animejs",
-"npm:gsap",
-"npm:hyperframes",
-"npm:d3",
-"npm:p5",
-"npm:three",
 "npm:lottie",
-"python3"
+"npm:gsap",
+"npm:remotion",
+"key:unspecified",
+"npm:hyperframes",
+"python3",
+"blender"
 ],
 "pipeline": [
 {
-"id": "ENG-112",
+"id": "ENG-01",
+"status": "proven",
+"name_en": "HyperFrames composition contract",
+"name_ar": "عقد تركيب HyperFrames"
+},
+{
+"id": "ENG-60",
 "status": "ready",
-"name_en": "Blob-URL seekable video",
-"name_ar": "فيديو قابل للبحث عبر Blob"
+"name_en": "Lottie text/logo layers",
+"name_ar": "طبقات Lottie"
 },
 {
-"id": "ENG-196",
+"id": "ENG-146",
 "status": "install",
-"name_en": "Anime.js adapter",
-"name_ar": "محول Anime.js"
+"name_en": "Lottie embedding",
+"name_ar": "تضمين لوتي"
 },
 {
-"id": "ENG-291",
+"id": "ENG-123",
 "status": "install",
-"name_en": "In-page animation library list",
-"name_ar": "مكتبات الحركة داخل الصفحة"
+"name_en": "Lottie inside timelines",
+"name_ar": "لوتي داخل الفيديو"
 },
 {
-"id": "ENG-260",
+"id": "ENG-190",
 "status": "install",
-"name_en": "In-page motion/drawing library list",
-"name_ar": "مكتبات الحركة داخل الصفحة"
+"name_en": "Composition root contract",
+"name_ar": "عقد جذر التركيب"
 },
 {
-"id": "ENG-170",
-"status": "install",
-"name_en": "Frame adapters (GSAP, CSS, Anime.js, Lottie, Three.js, WAAPI, TypeGPU)",
-"name_ar": "محولات الإطارات"
+"id": "ENG-343",
+"status": "key",
+"name_en": "Integration: Lottie Creator MCP",
+"name_ar": "تكامل: Lottie Creator MCP"
 },
 {
-"id": "ENG-198",
-"status": "install",
-"name_en": "Web Animations API adapter",
-"name_ar": "محول واجهة الحركة في المتصفح"
+"id": "ENG-344",
+"status": "key",
+"name_en": "Integration: LottieFiles platform MCP",
+"name_ar": "تكامل: LottieFiles platform MCP"
 },
 {
-"id": "ENG-301",
-"status": "install",
-"name_en": "Scene animation through build_t(t)",
-"name_ar": "تحريك المشهد عبر build_t(t)"
+"id": "ENG-324",
+"status": "key",
+"name_en": "After Effects ExtendScript automation",
+"name_ar": "أتمتة أفتر إفكتس"
 },
 {
-"id": "ENG-114",
-"status": "install",
-"name_en": "GSAP tween trio (to / from / fromTo / set)",
-"name_ar": "حركات GSAP الأساسية"
-},
-{
-"id": "ENG-126",
-"status": "install",
-"name_en": "Framer Motion layout & spring",
-"name_ar": "فريمر موشن"
-},
-{
-"id": "ENG-161",
-"status": "install",
-"name_en": "Local video library",
-"name_ar": "مكتبة فيديوهاتي"
+"id": "ENG-411",
+"status": "documented",
+"name_en": "Video-tool landscape (500 tools / 33 integrations)",
+"name_ar": "خريطة أدوات الفيديو"
 }
 ],
-"proof": [],
-"twins": [
-[
-"ENG-291",
-"ENG-260"
-]
+"proof": [
+"kosif-studio/motion/motion.py:18",
+"kosif-studio/motion/motion.py:126",
+"kosif-studio/tests/test_studio.py:549",
+"kosif-one/tools/kosif-studio/motion/references/hyperframes-authoring.md"
 ],
+"twins": [],
 "distinct_methods": 9,
 "links": [
 {
-"id": "SP-0332",
-"sim": 0.228
+"id": "SP-0061",
+"sim": 0.108
 },
 {
-"id": "SP-0251",
-"sim": 0.208
+"id": "SP-0153",
+"sim": 0.103
 },
 {
-"id": "SP-0118",
-"sim": 0.133
+"id": "SP-0257",
+"sim": 0.103
 },
 {
-"id": "SP-0246",
-"sim": 0.122
+"id": "SP-0165",
+"sim": 0.09
 }
 ]
 },
@@ -32846,7 +32872,7 @@
 },
 {
 "id": "SP-0413",
-"sim": 0.146
+"sim": 0.145
 },
 {
 "id": "SP-0268",
@@ -32854,7 +32880,7 @@
 },
 {
 "id": "SP-0369",
-"sim": 0.128
+"sim": 0.127
 },
 {
 "id": "SP-0046",
@@ -32950,12 +32976,12 @@
 "distinct_methods": 8,
 "links": [
 {
-"id": "SP-0249",
-"sim": 0.208
+"id": "SP-0245",
+"sim": 0.254
 },
 {
 "id": "SP-0137",
-"sim": 0.191
+"sim": 0.192
 },
 {
 "id": "SP-0221",
@@ -32967,7 +32993,7 @@
 },
 {
 "id": "SP-0118",
-"sim": 0.082
+"sim": 0.081
 }
 ]
 },
@@ -33066,7 +33092,7 @@
 },
 {
 "id": "SP-0235",
-"sim": 0.109
+"sim": 0.11
 },
 {
 "id": "SP-0237",
@@ -33259,12 +33285,12 @@
 "sim": 0.099
 },
 {
-"id": "SP-0244",
+"id": "SP-0243",
 "sim": 0.098
 },
 {
 "id": "SP-0124",
-"sim": 0.09
+"sim": 0.088
 }
 ]
 },
@@ -33341,7 +33367,7 @@
 "links": [
 {
 "id": "SP-0117",
-"sim": 0.261
+"sim": 0.262
 },
 {
 "id": "SP-0439",
@@ -33539,7 +33565,7 @@
 },
 {
 "id": "SP-0117",
-"sim": 0.125
+"sim": 0.126
 },
 {
 "id": "SP-0002",
@@ -34188,8 +34214,8 @@
 "name_ar": "مواصفات معاينة متجر التطبيقات",
 "name_en": "App-store preview video spec",
 "focus": [
-"store",
 "app",
+"store",
 "promo",
 "webm"
 ],
@@ -34293,11 +34319,11 @@
 },
 {
 "id": "SP-0114",
-"sim": 0.152
+"sim": 0.151
 },
 {
 "id": "SP-0341",
-"sim": 0.141
+"sim": 0.142
 },
 {
 "id": "SP-0230",
@@ -34412,12 +34438,12 @@
 "sim": 0.225
 },
 {
-"id": "SP-0296",
+"id": "SP-0295",
 "sim": 0.185
 },
 {
 "id": "SP-0124",
-"sim": 0.163
+"sim": 0.161
 }
 ]
 },
@@ -34683,7 +34709,7 @@
 "links": [
 {
 "id": "SP-0239",
-"sim": 0.454
+"sim": 0.453
 },
 {
 "id": "SP-0300",
@@ -34691,11 +34717,15 @@
 },
 {
 "id": "SP-0233",
-"sim": 0.142
+"sim": 0.141
+},
+{
+"id": "SP-0344",
+"sim": 0.113
 },
 {
 "id": "SP-0124",
-"sim": 0.12
+"sim": 0.107
 }
 ]
 },
@@ -34910,7 +34940,7 @@
 "links": [
 {
 "id": "SP-0118",
-"sim": 0.228
+"sim": 0.22
 },
 {
 "id": "SP-0232",
@@ -35032,12 +35062,12 @@
 "sim": 0.109
 },
 {
-"id": "SP-0153",
-"sim": 0.099
+"id": "SP-0347",
+"sim": 0.106
 },
 {
-"id": "SP-0344",
-"sim": 0.097
+"id": "SP-0153",
+"sim": 0.099
 },
 {
 "id": "SP-0369",
@@ -35045,7 +35075,7 @@
 },
 {
 "id": "SP-0118",
-"sim": 0.053
+"sim": 0.052
 }
 ]
 },
@@ -35277,7 +35307,7 @@
 },
 {
 "id": "SP-0104",
-"sim": 0.048
+"sim": 0.049
 }
 ]
 },
@@ -35453,8 +35483,8 @@
 "sim": 0.085
 },
 {
-"id": "SP-0016",
-"sim": 0.04
+"id": "SP-0118",
+"sim": 0.047
 }
 ]
 },
@@ -35468,20 +35498,20 @@
 "glow",
 "neon",
 "word",
-"shadow"
+"magic"
 ],
-"size": 21,
+"size": 20,
 "best": "proven",
 "status_mix": {
 "proven": 10,
-"ready": 2,
+"ready": 1,
 "install": 3,
 "seen": 5,
 "documented": 1
 },
-"ready_now": 12,
+"ready_now": 11,
 "families": {
-"light-glow-bloom": 21
+"light-glow-bloom": 20
 },
 "atlas_folded": 0,
 "requires": [
@@ -35532,16 +35562,16 @@
 "name_ar": "توهج مضاف متدرج في الرسم بالكود"
 },
 {
-"id": "GLOW-23",
-"status": "proven",
-"name_en": "Burst word with glow & expanding ring",
-"name_ar": "كلمة تنفجر بتوهج وحلقة"
-},
-{
 "id": "GLOW-06",
 "status": "proven",
 "name_en": "Two-layer ASS glow for Arabic captions",
 "name_ar": "ترجمة عربية بتوهج ASS مزدوج الطبقة"
+},
+{
+"id": "GLOW-23",
+"status": "proven",
+"name_en": "Burst word with glow & expanding ring",
+"name_ar": "كلمة تنفجر بتوهج وحلقة"
 },
 {
 "id": "GLOW-16",
@@ -35560,12 +35590,6 @@
 "status": "ready",
 "name_en": "Thermal heat-ramp field & Doppler-beamed glow",
 "name_ar": "حقل حراري وتلوين دوبلر"
-},
-{
-"id": "GLOW-70",
-"status": "ready",
-"name_en": "One-key consistency: shadow, lit edge & reflection",
-"name_ar": "ظل وانعكاس متسقان مع مفتاح واحد"
 },
 {
 "id": "GLOW-05",
@@ -35629,27 +35653,27 @@
 "kosif-tool/tools/render_html.cjs"
 ],
 "twins": [],
-"distinct_methods": 21,
+"distinct_methods": 20,
 "links": [
 {
-"id": "SP-0421",
-"sim": 0.158
-},
-{
 "id": "SP-0148",
-"sim": 0.13
+"sim": 0.149
 },
 {
-"id": "SP-0327",
-"sim": 0.118
+"id": "SP-0421",
+"sim": 0.146
 },
 {
 "id": "SP-0402",
-"sim": 0.116
+"sim": 0.118
+},
+{
+"id": "SP-0327",
+"sim": 0.112
 },
 {
 "id": "SP-0118",
-"sim": 0.071
+"sim": 0.07
 }
 ]
 },
@@ -35662,20 +35686,20 @@
 "focus": [
 "light",
 "lighting",
-"softness",
-"trails"
+"reflection",
+"softness"
 ],
-"size": 15,
+"size": 16,
 "best": "proven",
 "status_mix": {
 "proven": 5,
-"ready": 5,
+"ready": 6,
 "install": 3,
 "documented": 2
 },
-"ready_now": 10,
+"ready_now": 11,
 "families": {
-"light-glow-bloom": 15
+"light-glow-bloom": 16
 },
 "atlas_folded": 0,
 "requires": [
@@ -35726,6 +35750,12 @@
 "status": "ready",
 "name_en": "Long-exposure lighten stack & continuous light trails",
 "name_ar": "التعريض الطويل وخطوط الضوء"
+},
+{
+"id": "GLOW-70",
+"status": "ready",
+"name_en": "One-key consistency: shadow, lit edge & reflection",
+"name_ar": "ظل وانعكاس متسقان مع مفتاح واحد"
 },
 {
 "id": "GLOW-75",
@@ -35783,27 +35813,27 @@
 "kosif-studio/scenes/whale_dragon.py:30"
 ],
 "twins": [],
-"distinct_methods": 15,
+"distinct_methods": 16,
 "links": [
 {
 "id": "SP-0279",
-"sim": 0.245
+"sim": 0.246
 },
 {
 "id": "SP-0378",
-"sim": 0.2
+"sim": 0.204
 },
 {
 "id": "SP-0206",
-"sim": 0.181
+"sim": 0.187
 },
 {
 "id": "SP-0398",
-"sim": 0.159
+"sim": 0.156
 },
 {
 "id": "SP-0133",
-"sim": 0.021
+"sim": 0.035
 }
 ]
 },
@@ -35942,7 +35972,7 @@
 },
 {
 "id": "SP-0136",
-"sim": 0.155
+"sim": 0.154
 },
 {
 "id": "SP-0279",
@@ -36087,7 +36117,7 @@
 },
 {
 "id": "SP-0275",
-"sim": 0.156
+"sim": 0.153
 },
 {
 "id": "SP-0105",
@@ -36202,12 +36232,12 @@
 "sim": 0.377
 },
 {
-"id": "SP-0275",
-"sim": 0.103
-},
-{
 "id": "SP-0435",
 "sim": 0.102
+},
+{
+"id": "SP-0275",
+"sim": 0.101
 },
 {
 "id": "SP-0136",
@@ -36322,7 +36352,7 @@
 "links": [
 {
 "id": "SP-0275",
-"sim": 0.245
+"sim": 0.246
 },
 {
 "id": "SP-0207",
@@ -36421,7 +36451,7 @@
 },
 {
 "id": "SP-0275",
-"sim": 0.135
+"sim": 0.144
 },
 {
 "id": "SP-0285",
@@ -37080,7 +37110,7 @@
 },
 {
 "id": "SP-0118",
-"sim": 0.078
+"sim": 0.075
 }
 ]
 },
@@ -37167,7 +37197,7 @@
 },
 {
 "id": "SP-0135",
-"sim": 0.09
+"sim": 0.089
 },
 {
 "id": "SP-0172",
@@ -37602,7 +37632,7 @@
 "links": [
 {
 "id": "SP-0123",
-"sim": 0.236
+"sim": 0.25
 },
 {
 "id": "SP-0298",
@@ -37904,11 +37934,11 @@
 },
 {
 "id": "SP-0306",
-"sim": 0.285
+"sim": 0.286
 },
 {
 "id": "SP-0124",
-"sim": 0.059
+"sim": 0.064
 }
 ]
 },
@@ -38177,15 +38207,15 @@
 },
 {
 "id": "SP-0123",
-"sim": 0.161
+"sim": 0.151
 },
 {
-"id": "SP-0345",
+"id": "SP-0344",
 "sim": 0.151
 },
 {
 "id": "SP-0301",
-"sim": 0.14
+"sim": 0.139
 }
 ]
 },
@@ -38338,16 +38368,16 @@
 "distinct_methods": 18,
 "links": [
 {
-"id": "SP-0345",
+"id": "SP-0344",
 "sim": 0.263
 },
 {
 "id": "SP-0124",
-"sim": 0.254
+"sim": 0.259
 },
 {
 "id": "SP-0195",
-"sim": 0.202
+"sim": 0.203
 },
 {
 "id": "SP-0441",
@@ -38505,10 +38535,10 @@
 "links": [
 {
 "id": "SP-0124",
-"sim": 0.402
+"sim": 0.4
 },
 {
-"id": "SP-0345",
+"id": "SP-0344",
 "sim": 0.353
 },
 {
@@ -38826,146 +38856,12 @@
 },
 {
 "id": "SP-0123",
-"sim": 0.078
+"sim": 0.077
 }
 ]
 },
 {
 "id": "SP-0295",
-"domain": "motion",
-"family": "music-beat-sound",
-"name_ar": "برومبت الأسلوب السداسي في Suno",
-"name_en": "Suno six-layer style prompt",
-"focus": [
-"suno",
-"song",
-"udio",
-"style"
-],
-"size": 13,
-"best": "key",
-"status_mix": {
-"key": 12,
-"documented": 1
-},
-"ready_now": 0,
-"families": {
-"music-beat-sound": 12,
-"ai-generation": 1
-},
-"atlas_folded": 0,
-"requires": [
-"key:video-gen"
-],
-"pipeline": [
-{
-"id": "BEAT-166",
-"status": "key",
-"name_en": "Suno six-layer style prompt",
-"name_ar": "برومبت الأسلوب السداسي في Suno"
-},
-{
-"id": "BEAT-173",
-"status": "key",
-"name_en": "Suno language and Arabic-flavoured genres",
-"name_ar": "اللغة والأنماط العربية في Suno"
-},
-{
-"id": "BEAT-178",
-"status": "key",
-"name_en": "Suno/Udio song package",
-"name_ar": "حزمة أغنية لـ Suno/Udio"
-},
-{
-"id": "BEAT-X08",
-"status": "key",
-"name_en": "Suno Style field order and Exclude rules",
-"name_ar": "حقل الأسلوب والاستبعاد في Suno"
-},
-{
-"id": "BEAT-167",
-"status": "key",
-"name_en": "Suno per-section style overrides",
-"name_ar": "تجاوز الأسلوب لكل مقطع في Suno"
-},
-{
-"id": "BEAT-169",
-"status": "key",
-"name_en": "Suno vocal performance tricks",
-"name_ar": "حيل الأداء الصوتي في Suno"
-},
-{
-"id": "BEAT-170",
-"status": "key",
-"name_en": "Suno anti-patterns and fixes",
-"name_ar": "أخطاء Suno الشائعة وحلولها"
-},
-{
-"id": "BEAT-171",
-"status": "key",
-"name_en": "Suno editing: Cover, Extend, Replace Section, Personas",
-"name_ar": "تحرير Suno: الغلاف والتمديد واستبدال المقطع"
-},
-{
-"id": "BEAT-168",
-"status": "key",
-"name_en": "Suno tag taxonomy and inline cues",
-"name_ar": "تصنيف وسوم Suno والتلميحات المضمنة"
-},
-{
-"id": "BEAT-174",
-"status": "key",
-"name_en": "Suno genre templates",
-"name_ar": "قوالب الأنماط الموسيقية في Suno"
-},
-{
-"id": "BEAT-172",
-"status": "key",
-"name_en": "Suno stems, tempo-locked WAV and MIDI for editing",
-"name_ar": "تقسيم Suno إلى مسارات وملفات بإيقاع مقفل"
-},
-{
-"id": "BEAT-X09",
-"status": "key",
-"name_en": "Surgical song iteration map",
-"name_ar": "خريطة الإصلاح الجراحي للأغنية"
-},
-{
-"id": "GEN-65",
-"status": "documented",
-"name_en": "Song lyrics + Suno/Udio brief",
-"name_ar": "كلمات أغنية وموجز Suno/Udio"
-}
-],
-"proof": [],
-"twins": [
-[
-"BEAT-178",
-"GEN-65"
-]
-],
-"distinct_methods": 12,
-"links": [
-{
-"id": "SP-0297",
-"sim": 0.258
-},
-{
-"id": "SP-0123",
-"sim": 0.191
-},
-{
-"id": "SP-0151",
-"sim": 0.153
-},
-{
-"id": "SP-0146",
-"sim": 0.086
-}
-]
-},
-{
-"id": "SP-0296",
 "domain": "motion",
 "family": "music-beat-sound",
 "name_ar": "تطبيع الجهارة -14 LUFS",
@@ -39083,12 +38979,12 @@
 "distinct_methods": 12,
 "links": [
 {
-"id": "SP-0345",
+"id": "SP-0344",
 "sim": 0.502
 },
 {
 "id": "SP-0124",
-"sim": 0.387
+"sim": 0.361
 },
 {
 "id": "SP-0300",
@@ -39097,6 +38993,127 @@
 {
 "id": "SP-0443",
 "sim": 0.221
+}
+]
+},
+{
+"id": "SP-0296",
+"domain": "motion",
+"family": "music-beat-sound",
+"name_ar": "برومبت الأسلوب السداسي في Suno",
+"name_en": "Suno six-layer style prompt",
+"focus": [
+"suno",
+"song",
+"style",
+"prompt"
+],
+"size": 12,
+"best": "key",
+"status_mix": {
+"key": 12
+},
+"ready_now": 0,
+"families": {
+"music-beat-sound": 12
+},
+"atlas_folded": 0,
+"requires": [
+"key:video-gen"
+],
+"pipeline": [
+{
+"id": "BEAT-166",
+"status": "key",
+"name_en": "Suno six-layer style prompt",
+"name_ar": "برومبت الأسلوب السداسي في Suno"
+},
+{
+"id": "BEAT-173",
+"status": "key",
+"name_en": "Suno language and Arabic-flavoured genres",
+"name_ar": "اللغة والأنماط العربية في Suno"
+},
+{
+"id": "BEAT-X08",
+"status": "key",
+"name_en": "Suno Style field order and Exclude rules",
+"name_ar": "حقل الأسلوب والاستبعاد في Suno"
+},
+{
+"id": "BEAT-167",
+"status": "key",
+"name_en": "Suno per-section style overrides",
+"name_ar": "تجاوز الأسلوب لكل مقطع في Suno"
+},
+{
+"id": "BEAT-169",
+"status": "key",
+"name_en": "Suno vocal performance tricks",
+"name_ar": "حيل الأداء الصوتي في Suno"
+},
+{
+"id": "BEAT-170",
+"status": "key",
+"name_en": "Suno anti-patterns and fixes",
+"name_ar": "أخطاء Suno الشائعة وحلولها"
+},
+{
+"id": "BEAT-178",
+"status": "key",
+"name_en": "Suno/Udio song package",
+"name_ar": "حزمة أغنية لـ Suno/Udio"
+},
+{
+"id": "BEAT-171",
+"status": "key",
+"name_en": "Suno editing: Cover, Extend, Replace Section, Personas",
+"name_ar": "تحرير Suno: الغلاف والتمديد واستبدال المقطع"
+},
+{
+"id": "BEAT-168",
+"status": "key",
+"name_en": "Suno tag taxonomy and inline cues",
+"name_ar": "تصنيف وسوم Suno والتلميحات المضمنة"
+},
+{
+"id": "BEAT-174",
+"status": "key",
+"name_en": "Suno genre templates",
+"name_ar": "قوالب الأنماط الموسيقية في Suno"
+},
+{
+"id": "BEAT-172",
+"status": "key",
+"name_en": "Suno stems, tempo-locked WAV and MIDI for editing",
+"name_ar": "تقسيم Suno إلى مسارات وملفات بإيقاع مقفل"
+},
+{
+"id": "BEAT-X09",
+"status": "key",
+"name_en": "Surgical song iteration map",
+"name_ar": "خريطة الإصلاح الجراحي للأغنية"
+}
+],
+"proof": [],
+"twins": [],
+"distinct_methods": 12,
+"links": [
+{
+"id": "SP-0297",
+"sim": 0.24
+},
+{
+"id": "SP-0123",
+"sim": 0.178
+},
+{
+"id": "SP-0145",
+"sim": 0.171
+},
+{
+"id": "SP-0151",
+"sim": 0.144
 }
 ]
 },
@@ -39211,12 +39228,12 @@
 "sim": 0.479
 },
 {
-"id": "SP-0295",
-"sim": 0.258
+"id": "SP-0296",
+"sim": 0.24
 },
 {
 "id": "SP-0123",
-"sim": 0.162
+"sim": 0.165
 },
 {
 "id": "SP-0299",
@@ -39330,7 +39347,7 @@
 },
 {
 "id": "SP-0301",
-"sim": 0.145
+"sim": 0.144
 },
 {
 "id": "SP-0299",
@@ -39338,7 +39355,7 @@
 },
 {
 "id": "SP-0123",
-"sim": 0.075
+"sim": 0.074
 }
 ]
 },
@@ -39449,7 +39466,7 @@
 },
 {
 "id": "SP-0123",
-"sim": 0.047
+"sim": 0.049
 }
 ]
 },
@@ -39539,16 +39556,16 @@
 "distinct_methods": 8,
 "links": [
 {
-"id": "SP-0296",
+"id": "SP-0295",
 "sim": 0.313
 },
 {
-"id": "SP-0345",
+"id": "SP-0344",
 "sim": 0.301
 },
 {
 "id": "SP-0124",
-"sim": 0.252
+"sim": 0.244
 },
 {
 "id": "SP-0307",
@@ -39646,23 +39663,23 @@
 "links": [
 {
 "id": "SP-0310",
-"sim": 0.197
+"sim": 0.196
 },
 {
 "id": "SP-0316",
-"sim": 0.146
+"sim": 0.147
 },
 {
 "id": "SP-0298",
-"sim": 0.145
+"sim": 0.144
 },
 {
 "id": "SP-0290",
-"sim": 0.14
+"sim": 0.139
 },
 {
 "id": "SP-0124",
-"sim": 0.074
+"sim": 0.077
 }
 ]
 },
@@ -39757,7 +39774,7 @@
 "sim": 0.215
 },
 {
-"id": "SP-0345",
+"id": "SP-0344",
 "sim": 0.181
 },
 {
@@ -39844,14 +39861,14 @@
 "links": [
 {
 "id": "SP-0124",
-"sim": 0.198
+"sim": 0.201
 },
 {
 "id": "SP-0292",
 "sim": 0.174
 },
 {
-"id": "SP-0345",
+"id": "SP-0344",
 "sim": 0.127
 },
 {
@@ -39932,7 +39949,7 @@
 "links": [
 {
 "id": "SP-0124",
-"sim": 0.153
+"sim": 0.156
 },
 {
 "id": "SP-0292",
@@ -39943,7 +39960,7 @@
 "sim": 0.124
 },
 {
-"id": "SP-0345",
+"id": "SP-0344",
 "sim": 0.116
 }
 ]
@@ -40028,12 +40045,12 @@
 "sim": 0.245
 },
 {
-"id": "SP-0345",
+"id": "SP-0344",
 "sim": 0.213
 },
 {
 "id": "SP-0124",
-"sim": 0.188
+"sim": 0.189
 },
 {
 "id": "SP-0135",
@@ -40126,11 +40143,11 @@
 },
 {
 "id": "SP-0289",
-"sim": 0.285
+"sim": 0.286
 },
 {
 "id": "SP-0124",
-"sim": 0.048
+"sim": 0.053
 }
 ]
 },
@@ -40202,14 +40219,14 @@
 },
 {
 "id": "SP-0124",
-"sim": 0.218
+"sim": 0.223
 },
 {
 "id": "SP-0411",
 "sim": 0.195
 },
 {
-"id": "SP-0345",
+"id": "SP-0344",
 "sim": 0.181
 }
 ]
@@ -40301,7 +40318,7 @@
 },
 {
 "id": "SP-0124",
-"sim": 0.101
+"sim": 0.105
 }
 ]
 },
@@ -40445,11 +40462,11 @@
 "links": [
 {
 "id": "SP-0124",
-"sim": 0.249
+"sim": 0.251
 },
 {
 "id": "SP-0301",
-"sim": 0.197
+"sim": 0.196
 },
 {
 "id": "SP-0307",
@@ -40675,7 +40692,7 @@
 "links": [
 {
 "id": "SP-0117",
-"sim": 0.377
+"sim": 0.384
 },
 {
 "id": "SP-0255",
@@ -40781,7 +40798,7 @@
 "links": [
 {
 "id": "SP-0147",
-"sim": 0.308
+"sim": 0.305
 },
 {
 "id": "SP-0232",
@@ -40863,7 +40880,7 @@
 },
 {
 "id": "SP-0231",
-"sim": 0.242
+"sim": 0.244
 },
 {
 "id": "SP-0354",
@@ -41049,7 +41066,7 @@
 "sim": 0.15
 },
 {
-"id": "SP-0245",
+"id": "SP-0244",
 "sim": 0.124
 },
 {
@@ -41194,7 +41211,7 @@
 "links": [
 {
 "id": "SP-0301",
-"sim": 0.146
+"sim": 0.147
 },
 {
 "id": "SP-0138",
@@ -41922,7 +41939,7 @@
 },
 {
 "id": "SP-0118",
-"sim": 0.169
+"sim": 0.165
 }
 ]
 },
@@ -42081,7 +42098,7 @@
 "distinct_methods": 16,
 "links": [
 {
-"id": "SP-0244",
+"id": "SP-0243",
 "sim": 0.176
 },
 {
@@ -42331,8 +42348,8 @@
 "distinct_methods": 7,
 "links": [
 {
-"id": "SP-0344",
-"sim": 0.148
+"id": "SP-0347",
+"sim": 0.15
 },
 {
 "id": "SP-0119",
@@ -42504,7 +42521,7 @@
 "distinct_methods": 3,
 "links": [
 {
-"id": "SP-0244",
+"id": "SP-0243",
 "sim": 0.193
 },
 {
@@ -42698,7 +42715,7 @@
 },
 {
 "id": "SP-0274",
-"sim": 0.118
+"sim": 0.112
 },
 {
 "id": "SP-0329",
@@ -43241,7 +43258,7 @@
 "sim": 0.186
 },
 {
-"id": "SP-0296",
+"id": "SP-0295",
 "sim": 0.168
 },
 {
@@ -43713,11 +43730,11 @@
 },
 {
 "id": "SP-0179",
-"sim": 0.281
+"sim": 0.28
 },
 {
-"id": "SP-0249",
-"sim": 0.228
+"id": "SP-0245",
+"sim": 0.233
 },
 {
 "id": "SP-0221",
@@ -43933,7 +43950,7 @@
 },
 {
 "id": "SP-0339",
-"sim": 0.219
+"sim": 0.22
 },
 {
 "id": "SP-0055",
@@ -44135,7 +44152,7 @@
 },
 {
 "id": "SP-0124",
-"sim": 0.136
+"sim": 0.138
 },
 {
 "id": "SP-0330",
@@ -44829,12 +44846,12 @@
 "sim": 0.418
 },
 {
-"id": "SP-0245",
+"id": "SP-0244",
 "sim": 0.242
 },
 {
 "id": "SP-0108",
-"sim": 0.206
+"sim": 0.205
 },
 {
 "id": "SP-0235",
@@ -44969,7 +44986,7 @@
 },
 {
 "id": "SP-0333",
-"sim": 0.219
+"sim": 0.22
 },
 {
 "id": "SP-0309",
@@ -44977,7 +44994,7 @@
 },
 {
 "id": "SP-0235",
-"sim": 0.128
+"sim": 0.129
 },
 {
 "id": "SP-0072",
@@ -45115,7 +45132,7 @@
 },
 {
 "id": "SP-0032",
-"sim": 0.1
+"sim": 0.101
 },
 {
 "id": "SP-0128",
@@ -45243,7 +45260,7 @@
 },
 {
 "id": "SP-0263",
-"sim": 0.141
+"sim": 0.142
 },
 {
 "id": "SP-0109",
@@ -45251,7 +45268,7 @@
 },
 {
 "id": "SP-0212",
-"sim": 0.098
+"sim": 0.099
 }
 ]
 },
@@ -45373,7 +45390,7 @@
 },
 {
 "id": "SP-0031",
-"sim": 0.247
+"sim": 0.248
 },
 {
 "id": "SP-0126",
@@ -45507,133 +45524,6 @@
 "id": "SP-0344",
 "domain": "motion",
 "family": "qa-verification",
-"name_ar": "دراسة فيلم مرجعي",
-"name_en": "Reference study",
-"focus": [
-"reference",
-"style",
-"study",
-"guide"
-],
-"size": 11,
-"best": "proven",
-"status_mix": {
-"proven": 1,
-"ready": 3,
-"install": 7
-},
-"ready_now": 4,
-"families": {
-"qa-verification": 11
-},
-"atlas_folded": 0,
-"requires": [
-"python3",
-"ffmpeg"
-],
-"pipeline": [
-{
-"id": "QA-66",
-"status": "proven",
-"name_en": "kosif.py validate / stats",
-"name_ar": "فحص المستودع والإحصاءات"
-},
-{
-"id": "QA-99",
-"status": "ready",
-"name_en": "Reference study",
-"name_ar": "دراسة فيلم مرجعي"
-},
-{
-"id": "QA-90",
-"status": "ready",
-"name_en": "study reference",
-"name_ar": "دراسة مرجع"
-},
-{
-"id": "QA-75",
-"status": "ready",
-"name_en": "Reference capture for style matching",
-"name_ar": "التقاط إطارات مرجعية لمطابقة الأسلوب"
-},
-{
-"id": "QA-211",
-"status": "install",
-"name_en": "Reference film study",
-"name_ar": "دراسة فيلم مرجعي"
-},
-{
-"id": "QA-190",
-"status": "install",
-"name_en": "Reference film study (boundaries, looks, text zones)",
-"name_ar": "دراسة الفيديو المرجعي"
-},
-{
-"id": "QA-140",
-"status": "install",
-"name_en": "Style DNA deep reference study",
-"name_ar": "تحليل بصمة المرجع العميق"
-},
-{
-"id": "QA-198",
-"status": "install",
-"name_en": "Reference video analyser",
-"name_ar": "محلل الفيديو المرجعي"
-},
-{
-"id": "QA-186",
-"status": "install",
-"name_en": "Batch style library",
-"name_ar": "مكتبة الأساليب"
-},
-{
-"id": "QA-129",
-"status": "install",
-"name_en": "Style pack with statistical bands",
-"name_ar": "حزمة أسلوب بنطاقات إحصائية"
-},
-{
-"id": "QA-185",
-"status": "install",
-"name_en": "Video analyze breakdown",
-"name_ar": "تحليل الفيديو"
-}
-],
-"proof": [
-"kosif-tool/tools/kosif.py:606",
-"kosif-tool/tools/kosif.py:614"
-],
-"twins": [
-[
-"QA-99",
-"QA-90",
-"QA-211"
-]
-],
-"distinct_methods": 9,
-"links": [
-{
-"id": "SP-0146",
-"sim": 0.317
-},
-{
-"id": "SP-0370",
-"sim": 0.265
-},
-{
-"id": "SP-0204",
-"sim": 0.179
-},
-{
-"id": "SP-0119",
-"sim": 0.17
-}
-]
-},
-{
-"id": "SP-0345",
-"domain": "motion",
-"family": "qa-verification",
 "name_ar": "قياس الجهارة والذروة",
 "name_en": "Loudness / true-peak verification",
 "focus": [
@@ -45728,12 +45618,12 @@
 "distinct_methods": 10,
 "links": [
 {
-"id": "SP-0296",
+"id": "SP-0295",
 "sim": 0.502
 },
 {
 "id": "SP-0124",
-"sim": 0.472
+"sim": 0.469
 },
 {
 "id": "SP-0292",
@@ -45746,7 +45636,7 @@
 ]
 },
 {
-"id": "SP-0346",
+"id": "SP-0345",
 "domain": "motion",
 "family": "qa-verification",
 "name_ar": "درجة التشابه مع المرجع وتصليحها",
@@ -45860,7 +45750,7 @@
 ]
 },
 {
-"id": "SP-0347",
+"id": "SP-0346",
 "domain": "motion",
 "family": "qa-verification",
 "name_ar": "عرض المرجع والأصل والمنتج",
@@ -45984,6 +45874,123 @@
 ]
 },
 {
+"id": "SP-0347",
+"domain": "motion",
+"family": "qa-verification",
+"name_ar": "دراسة فيلم مرجعي",
+"name_en": "Reference study",
+"focus": [
+"reference",
+"style",
+"study",
+"guide"
+],
+"size": 10,
+"best": "ready",
+"status_mix": {
+"ready": 3,
+"install": 7
+},
+"ready_now": 3,
+"families": {
+"qa-verification": 10
+},
+"atlas_folded": 0,
+"requires": [
+"python3",
+"ffmpeg"
+],
+"pipeline": [
+{
+"id": "QA-99",
+"status": "ready",
+"name_en": "Reference study",
+"name_ar": "دراسة فيلم مرجعي"
+},
+{
+"id": "QA-90",
+"status": "ready",
+"name_en": "study reference",
+"name_ar": "دراسة مرجع"
+},
+{
+"id": "QA-75",
+"status": "ready",
+"name_en": "Reference capture for style matching",
+"name_ar": "التقاط إطارات مرجعية لمطابقة الأسلوب"
+},
+{
+"id": "QA-211",
+"status": "install",
+"name_en": "Reference film study",
+"name_ar": "دراسة فيلم مرجعي"
+},
+{
+"id": "QA-190",
+"status": "install",
+"name_en": "Reference film study (boundaries, looks, text zones)",
+"name_ar": "دراسة الفيديو المرجعي"
+},
+{
+"id": "QA-140",
+"status": "install",
+"name_en": "Style DNA deep reference study",
+"name_ar": "تحليل بصمة المرجع العميق"
+},
+{
+"id": "QA-198",
+"status": "install",
+"name_en": "Reference video analyser",
+"name_ar": "محلل الفيديو المرجعي"
+},
+{
+"id": "QA-186",
+"status": "install",
+"name_en": "Batch style library",
+"name_ar": "مكتبة الأساليب"
+},
+{
+"id": "QA-129",
+"status": "install",
+"name_en": "Style pack with statistical bands",
+"name_ar": "حزمة أسلوب بنطاقات إحصائية"
+},
+{
+"id": "QA-185",
+"status": "install",
+"name_en": "Video analyze breakdown",
+"name_ar": "تحليل الفيديو"
+}
+],
+"proof": [],
+"twins": [
+[
+"QA-99",
+"QA-90",
+"QA-211"
+]
+],
+"distinct_methods": 8,
+"links": [
+{
+"id": "SP-0146",
+"sim": 0.315
+},
+{
+"id": "SP-0370",
+"sim": 0.267
+},
+{
+"id": "SP-0204",
+"sim": 0.181
+},
+{
+"id": "SP-0119",
+"sim": 0.172
+}
+]
+},
+{
 "id": "SP-0348",
 "domain": "motion",
 "family": "qa-verification",
@@ -46074,7 +46081,7 @@
 "sim": 0.104
 },
 {
-"id": "SP-0244",
+"id": "SP-0243",
 "sim": 0.089
 },
 {
@@ -46307,7 +46314,7 @@
 },
 {
 "id": "SP-0123",
-"sim": 0.087
+"sim": 0.077
 }
 ]
 },
@@ -46523,19 +46530,19 @@
 "focus": [
 "time",
 "readability",
-"hold",
-"readable"
+"stats",
+"hold"
 ],
-"size": 5,
+"size": 6,
 "best": "proven",
 "status_mix": {
-"proven": 2,
+"proven": 3,
 "ready": 2,
 "idea": 1
 },
-"ready_now": 4,
+"ready_now": 5,
 "families": {
-"qa-verification": 5
+"qa-verification": 6
 },
 "atlas_folded": 0,
 "requires": [
@@ -46553,6 +46560,12 @@
 "status": "proven",
 "name_en": "Best time from own analytics",
 "name_ar": "أفضل وقت نشر"
+},
+{
+"id": "QA-66",
+"status": "proven",
+"name_en": "kosif.py validate / stats",
+"name_ar": "فحص المستودع والإحصاءات"
 },
 {
 "id": "QA-92",
@@ -46575,30 +46588,32 @@
 ],
 "proof": [
 "100-superskills/skills/kosif-montage-motion/tests/test_launch.py:54",
-"100-superskills/skills/kosif-social/scripts/social.py:583"
+"100-superskills/skills/kosif-social/scripts/social.py:583",
+"kosif-tool/tools/kosif.py:606",
+"kosif-tool/tools/kosif.py:614"
 ],
 "twins": [],
-"distinct_methods": 5,
+"distinct_methods": 6,
 "links": [
 {
 "id": "SP-0189",
-"sim": 0.174
+"sim": 0.164
 },
 {
 "id": "SP-0219",
-"sim": 0.13
+"sim": 0.118
 },
 {
 "id": "SP-0417",
-"sim": 0.125
+"sim": 0.118
 },
 {
 "id": "SP-0422",
-"sim": 0.117
+"sim": 0.11
 },
 {
 "id": "SP-0067",
-"sim": 0.071
+"sim": 0.069
 }
 ]
 },
@@ -46673,7 +46688,7 @@
 "links": [
 {
 "id": "SP-0231",
-"sim": 0.255
+"sim": 0.256
 },
 {
 "id": "SP-0314",
@@ -46685,7 +46700,7 @@
 },
 {
 "id": "SP-0376",
-"sim": 0.064
+"sim": 0.063
 },
 {
 "id": "SP-0121",
@@ -47424,7 +47439,7 @@
 },
 {
 "id": "SP-0118",
-"sim": 0.061
+"sim": 0.059
 }
 ]
 },
@@ -47810,7 +47825,7 @@
 },
 {
 "id": "SP-0274",
-"sim": 0.089
+"sim": 0.09
 },
 {
 "id": "SP-0368",
@@ -48427,7 +48442,7 @@
 },
 {
 "id": "SP-0250",
-"sim": 0.128
+"sim": 0.127
 },
 {
 "id": "SP-0405",
@@ -48435,11 +48450,11 @@
 },
 {
 "id": "SP-0428",
-"sim": 0.123
+"sim": 0.124
 },
 {
 "id": "SP-0010",
-"sim": 0.049
+"sim": 0.05
 }
 ]
 },
@@ -48588,11 +48603,11 @@
 "links": [
 {
 "id": "SP-0146",
-"sim": 0.295
+"sim": 0.294
 },
 {
-"id": "SP-0344",
-"sim": 0.265
+"id": "SP-0347",
+"sim": 0.267
 },
 {
 "id": "SP-0140",
@@ -48744,7 +48759,7 @@
 "links": [
 {
 "id": "SP-0202",
-"sim": 0.197
+"sim": 0.198
 },
 {
 "id": "SP-0332",
@@ -49148,7 +49163,7 @@
 "links": [
 {
 "id": "SP-0212",
-"sim": 0.28
+"sim": 0.276
 },
 {
 "id": "SP-0265",
@@ -49164,7 +49179,7 @@
 },
 {
 "id": "SP-0123",
-"sim": 0.117
+"sim": 0.106
 }
 ]
 },
@@ -49235,11 +49250,11 @@
 },
 {
 "id": "SP-0353",
-"sim": 0.115
+"sim": 0.101
 },
 {
 "id": "SP-0238",
-"sim": 0.101
+"sim": 0.1
 },
 {
 "id": "SP-0356",
@@ -49450,7 +49465,7 @@
 },
 {
 "id": "SP-0248",
-"sim": 0.12
+"sim": 0.119
 },
 {
 "id": "SP-0081",
@@ -49611,7 +49626,7 @@
 },
 {
 "id": "SP-0275",
-"sim": 0.2
+"sim": 0.204
 },
 {
 "id": "SP-0279",
@@ -50918,7 +50933,7 @@
 },
 {
 "id": "SP-0124",
-"sim": 0.071
+"sim": 0.072
 }
 ]
 },
@@ -51525,7 +51540,7 @@
 },
 {
 "id": "SP-0118",
-"sim": 0.065
+"sim": 0.063
 }
 ]
 },
@@ -52973,7 +52988,7 @@
 },
 {
 "id": "SP-0219",
-"sim": 0.264
+"sim": 0.265
 },
 {
 "id": "SP-0108",
@@ -53869,7 +53884,7 @@
 },
 {
 "id": "SP-0386",
-"sim": 0.261
+"sim": 0.262
 },
 {
 "id": "SP-0148",
@@ -53881,7 +53896,7 @@
 },
 {
 "id": "SP-0118",
-"sim": 0.079
+"sim": 0.076
 }
 ]
 },
@@ -54133,7 +54148,7 @@
 },
 {
 "id": "SP-0118",
-"sim": 0.097
+"sim": 0.096
 }
 ]
 },
@@ -54255,7 +54270,7 @@
 "sim": 0.31
 },
 {
-"id": "SP-0118",
+"id": "SP-0123",
 "sim": 0.062
 }
 ]
@@ -54495,7 +54510,7 @@
 "sim": 0.101
 },
 {
-"id": "SP-0386",
+"id": "SP-0397",
 "sim": 0.101
 },
 {
@@ -54607,7 +54622,7 @@
 "sim": 0.229
 },
 {
-"id": "SP-0398",
+"id": "SP-0204",
 "sim": 0.186
 },
 {
@@ -54701,7 +54716,7 @@
 },
 {
 "id": "SP-0124",
-"sim": 0.089
+"sim": 0.094
 }
 ]
 },
@@ -55021,7 +55036,7 @@
 },
 {
 "id": "SP-0250",
-"sim": 0.146
+"sim": 0.145
 },
 {
 "id": "SP-0175",
@@ -55161,7 +55176,7 @@
 "links": [
 {
 "id": "SP-0063",
-"sim": 0.088
+"sim": 0.087
 },
 {
 "id": "SP-0395",
@@ -55763,16 +55778,16 @@
 "distinct_methods": 12,
 "links": [
 {
-"id": "SP-0122",
-"sim": 0.277
-},
-{
 "id": "SP-0424",
 "sim": 0.265
 },
 {
 "id": "SP-0429",
 "sim": 0.243
+},
+{
+"id": "SP-0122",
+"sim": 0.232
 },
 {
 "id": "SP-0155",
@@ -55879,7 +55894,7 @@
 },
 {
 "id": "SP-0028",
-"sim": 0.079
+"sim": 0.078
 }
 ]
 },
@@ -56060,16 +56075,16 @@
 "sim": 0.16
 },
 {
-"id": "SP-0274",
-"sim": 0.158
-},
-{
 "id": "SP-0430",
 "sim": 0.152
 },
 {
 "id": "SP-0417",
 "sim": 0.148
+},
+{
+"id": "SP-0274",
+"sim": 0.146
 },
 {
 "id": "SP-0028",
@@ -57079,8 +57094,8 @@
 "sim": 0.176
 },
 {
-"id": "SP-0122",
-"sim": 0.075
+"id": "SP-0094",
+"sim": 0.068
 }
 ]
 },
@@ -57632,12 +57647,12 @@
 "sim": 0.423
 },
 {
-"id": "SP-0243",
-"sim": 0.183
+"id": "SP-0228",
+"sim": 0.161
 },
 {
-"id": "SP-0228",
-"sim": 0.162
+"id": "SP-0246",
+"sim": 0.161
 },
 {
 "id": "SP-0395",
@@ -58051,11 +58066,11 @@
 },
 {
 "id": "SP-0217",
-"sim": 0.109
+"sim": 0.11
 },
 {
 "id": "SP-0375",
-"sim": 0.108
+"sim": 0.107
 },
 {
 "id": "SP-0169",
@@ -58150,11 +58165,11 @@
 },
 {
 "id": "SP-0212",
-"sim": 0.107
+"sim": 0.108
 },
 {
 "id": "SP-0204",
-"sim": 0.106
+"sim": 0.105
 },
 {
 "id": "SP-0155",
@@ -58162,7 +58177,7 @@
 },
 {
 "id": "SP-0117",
-"sim": 0.048
+"sim": 0.05
 }
 ]
 },
@@ -58657,20 +58672,20 @@
 "distinct_methods": 26,
 "links": [
 {
+"id": "SP-0123",
+"sim": 0.36
+},
+{
 "id": "SP-0302",
 "sim": 0.355
 },
 {
-"id": "SP-0123",
-"sim": 0.351
-},
-{
 "id": "SP-0124",
-"sim": 0.316
+"sim": 0.307
 },
 {
 "id": "SP-0443",
-"sim": 0.267
+"sim": 0.268
 }
 ]
 },
@@ -58912,20 +58927,20 @@
 "distinct_methods": 9,
 "links": [
 {
-"id": "SP-0124",
-"sim": 0.274
-},
-{
 "id": "SP-0441",
-"sim": 0.267
+"sim": 0.268
 },
 {
-"id": "SP-0345",
+"id": "SP-0124",
+"sim": 0.259
+},
+{
+"id": "SP-0344",
 "sim": 0.255
 },
 {
 "id": "SP-0123",
-"sim": 0.23
+"sim": 0.251
 }
 ]
 },
@@ -59070,7 +59085,7 @@
 "sim": 0.061
 },
 {
-"id": "SP-0346",
+"id": "SP-0345",
 "sim": 0.06
 },
 {

@@ -1,6 +1,6 @@
 {
  "schema": "kosif.hubs-index.v1",
- "atoms": 5331,
+ "atoms": 5334,
  "superpowers": 445,
  "hubs": [
   {
@@ -396,17 +396,17 @@
      "id": "SP-0117",
      "name_ar": "أطلس القدرات للبحث والتخطيط",
      "name_en": "Capability Atlas search and planner",
-     "size": 21,
+     "size": 22,
      "best": "proven",
-     "ready_now": 19
+     "ready_now": 20
     },
     {
      "id": "SP-0118",
      "name_ar": "مُصرِّف حركة SVG المتزامنة مع الصوت",
      "name_en": "Audio-timed SVG motion compiler",
-     "size": 19,
+     "size": 20,
      "best": "proven",
-     "ready_now": 18
+     "ready_now": 19
     },
     {
      "id": "SP-0018",
@@ -460,9 +460,9 @@
      "id": "SP-0122",
      "name_ar": "مختبر الابتكار الهندسي",
      "name_en": "Invention Lab Candidates",
-     "size": 3,
+     "size": 4,
      "best": "proven",
-     "ready_now": 3
+     "ready_now": 4
     },
     {
      "id": "SP-0002",
@@ -489,15 +489,15 @@
      "ready_now": 0
     }
    ],
-   "powers": 152,
+   "powers": 155,
    "status_mix": {
-    "proven": 79,
+    "proven": 82,
     "ready": 5,
     "install": 8,
     "key": 2,
     "documented": 58
    },
-   "ready_now": 84,
+   "ready_now": 87,
    "requires": [
     "python3",
     "ffmpeg",
@@ -1147,7 +1147,7 @@
      "id": "SP-0124",
      "name_ar": "صوت PipeWire داخل الحاويات",
      "name_en": "PipeWire audio in containers",
-     "size": 14,
+     "size": 13,
      "best": "proven",
      "ready_now": 11
     },
@@ -1208,14 +1208,14 @@
      "ready_now": 4
     }
    ],
-   "powers": 307,
+   "powers": 308,
    "status_mix": {
     "proven": 97,
     "ready": 43,
     "install": 27,
     "key": 35,
     "seen": 22,
-    "documented": 81,
+    "documented": 82,
     "idea": 2
    },
    "ready_now": 140,
@@ -1320,8 +1320,8 @@
    "superpowers": [
     "SP-0274",
     "SP-0135",
-    "SP-0377",
     "SP-0275",
+    "SP-0377",
     "SP-0231",
     "SP-0315",
     "SP-0232",
@@ -1338,7 +1338,7 @@
     "SP-0277",
     "SP-0318",
     "SP-0236",
-    "SP-0245",
+    "SP-0244",
     "SP-0381",
     "SP-0278",
     "SP-0234",
@@ -1354,19 +1354,19 @@
     "SP-0251",
     "SP-0227",
     "SP-0229",
-    "SP-0243",
+    "SP-0246",
     "SP-0319",
     "SP-0138",
     "SP-0383",
     "SP-0237",
     "SP-0241",
-    "SP-0244",
-    "SP-0246",
+    "SP-0243",
+    "SP-0249",
     "SP-0252",
     "SP-0280",
     "SP-0281",
     "SP-0242",
-    "SP-0249",
+    "SP-0245",
     "SP-0253",
     "SP-0320",
     "SP-0256",
@@ -1386,9 +1386,9 @@
      "id": "SP-0274",
      "name_ar": "توهج النص النيوني بثلاثة ظلال لكل كلمة",
      "name_en": "Neon text glow (triple shadow, per word)",
-     "size": 21,
+     "size": 20,
      "best": "proven",
-     "ready_now": 12
+     "ready_now": 11
     },
     {
      "id": "SP-0135",
@@ -1396,6 +1396,14 @@
      "name_en": "Cesium terrain & city flyovers",
      "size": 18,
      "best": "ready",
+     "ready_now": 11
+    },
+    {
+     "id": "SP-0275",
+     "name_ar": "قراءة إضاءة صورة مرجعية",
+     "name_en": "Read the light of a reference image",
+     "size": 16,
+     "best": "proven",
      "ready_now": 11
     },
     {
@@ -1407,18 +1415,10 @@
      "ready_now": 10
     },
     {
-     "id": "SP-0275",
-     "name_ar": "قراءة إضاءة صورة مرجعية",
-     "name_en": "Read the light of a reference image",
-     "size": 15,
-     "best": "proven",
-     "ready_now": 10
-    },
-    {
      "id": "SP-0231",
      "name_ar": "مشروع أنيميشن جديد",
      "name_en": "New animation project (2D / 3D / lab)",
-     "size": 20,
+     "size": 21,
      "best": "proven",
      "ready_now": 9
     },
@@ -1888,7 +1888,7 @@
     "SP-0292",
     "SP-0293",
     "SP-0150",
-    "SP-0296",
+    "SP-0295",
     "SP-0294",
     "SP-0301",
     "SP-0149",
@@ -1908,7 +1908,7 @@
     "SP-0307",
     "SP-0308",
     "SP-0152",
-    "SP-0295",
+    "SP-0296",
     "SP-0303",
     "SP-0304",
     "SP-0306",
@@ -1981,7 +1981,7 @@
      "ready_now": 7
     },
     {
-     "id": "SP-0296",
+     "id": "SP-0295",
      "name_ar": "تطبيع الجهارة -14 LUFS",
      "name_en": "Loudness normalisation -14 LUFS",
      "size": 12,
@@ -2013,14 +2013,14 @@
      "ready_now": 4
     }
    ],
-   "powers": 417,
+   "powers": 416,
    "status_mix": {
     "proven": 59,
     "ready": 74,
     "install": 79,
     "key": 36,
     "seen": 41,
-    "documented": 116,
+    "documented": 115,
     "idea": 12
    },
    "ready_now": 133,
@@ -2033,8 +2033,8 @@
     "pip:faster-whisper",
     "key:elevenlabs",
     "key:unspecified",
-    "key:video-gen",
     "npm:remotion",
+    "key:video-gen",
     "node",
     "pip:piper",
     "fonts:arabic",
@@ -2254,9 +2254,9 @@
    ],
    "links": [
     "motion",
+    "documents",
     "agents",
-    "data",
-    "3d"
+    "data"
    ]
   },
   {
@@ -2594,8 +2594,8 @@
     },
     {
      "id": "SP-0094",
-     "name_ar": "ملفات Google عبر الموصل",
-     "name_en": "Google Docs/Sheets/Slides via connector",
+     "name_ar": "موصل المستندات الحية",
+     "name_en": "Living-docs connector (Claude Docs)",
      "size": 2,
      "best": "key",
      "ready_now": 0
@@ -2695,19 +2695,19 @@
     "SP-0339",
     "SP-0341",
     "SP-0333",
+    "SP-0353",
     "SP-0335",
     "SP-0025",
     "SP-0343",
-    "SP-0344",
-    "SP-0353",
+    "SP-0347",
     "SP-0348",
     "SP-0354",
     "SP-0355",
     "SP-0359",
     "SP-0338",
+    "SP-0344",
     "SP-0345",
     "SP-0346",
-    "SP-0347",
     "SP-0349",
     "SP-0351",
     "SP-0059",
@@ -2812,12 +2812,12 @@
      "ready_now": 6
     },
     {
-     "id": "SP-0335",
-     "name_ar": "فحص التركيب",
-     "name_en": "lint composition",
-     "size": 22,
+     "id": "SP-0353",
+     "name_ar": "فحص المقروئية",
+     "name_en": "readable",
+     "size": 6,
      "best": "proven",
-     "ready_now": 4
+     "ready_now": 5
     }
    ],
    "powers": 465,
