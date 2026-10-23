@@ -436,6 +436,54 @@
 
 - ابدأ بـ `think.py recover --message "<نص الخطأ>"`، ثم سجّل `fusionforge.py trace --project <slug> --id <FUSE-ID> --stage <stage> --node <N> --action "<ما جُرّب>" --result failed --error-class <الصنف> --tool tool:invention-lab --evidence <ملف>`.
 
+### `memory-ops` — عمليات الذاكرة / Memory Ops
+
+| الحقل | القيمة |
+|---|---|
+| المسار | `scripts/memory_ops.py` (جذر: skill) |
+| المجال | `think` |
+| الدليل | `tested-here` |
+| العائلات | `agent-orchestration`, `self-discovery` |
+
+**ما تفعله:** يحفظ ملف ذاكرة محليًا طويل المدى بلا تناقضات: لكل معلومة مرشحة يقترح عملية واحدة بسببها (إضافة إن لم يوجد مثلها، تحديث إن تغيرت قيمة لنفس الموضوع والخاصية أو أضافت صياغة أدق تفصيلًا، حذف إن تراجعت عن محفوظ، ولا شيء للمكرر)، ويرفض المعلومات التي فيها أسرار، وينفذ الخطة المعتمدة مع حفظ كل قيمة قديمة في السجل، ويبحث في المخزن. يوحّد النص العربي والإنجليزي قبل المقارنة.
+
+**What it does:** Keeps a local long-term memory file free of contradictions: for every candidate fact it proposes one operation with its reason (ADD when nothing similar is stored, UPDATE when the same subject and attribute get a new value or a closer restatement adds detail, DELETE when the fact retracts a stored one, NOOP for duplicates), refuses facts that contain a secret, applies an approved plan while keeping every old value in history, and searches the store. English and Arabic text is normalised before comparison.
+
+#### متى تُستدعى
+
+- «احفظ تفضيلاتي دي من غير ما تتكرر أو تتناقض مع القديم»
+- «المستخدم غير رأيه في اللهجة، حدّث الذاكرة»
+- «decide whether these new facts should update or replace what we stored»
+- «search the project memory for the export settings»
+
+#### الأوامر
+
+- **propose**: One ADD/UPDATE/DELETE/NOOP/REFUSE per fact with its reason; nothing is written to the store
+  - `python3 scripts/memory_ops.py propose --store memory.json --facts facts.json --out plan.json`
+- **apply**: Writes the store from an approved plan; replaced and deleted memories go to history
+  - `python3 scripts/memory_ops.py apply --store memory.json --plan plan.json --when 2026-10-23`
+- **search**: BM25-style ranked memories
+  - `python3 scripts/memory_ops.py search --store memory.json "export settings"`
+- **--self-test**: Runs the built-in decision cases
+  - `python3 scripts/memory_ops.py --self-test`
+
+#### المتطلبات والأمان
+
+- binaries: python3
+- الأمان: writes-files
+- الموافقة: apply writes the memory file the user names; what may be remembered is still the user's and the project's call.
+- الحدود: Decisions use word overlap and subject/attribute keys, not meaning, so a paraphrase with different words can be added twice and a short unrelated sentence with shared words can be merged; review the plan before apply.
+
+#### الاختبارات والأدلة
+
+- `.claude/skills/kosif-superpowers/evals/test_memory_ops.py`
+- مرجع: `.claude/skills/kosif-superpowers/references/agents-memory-reasoning-repos.md`
+- مرجع: `.claude/skills/kosif-superpowers/references/guides/discover.md`
+
+#### عند الفشل (A29)
+
+- ابدأ بـ `think.py recover --message "<نص الخطأ>"`، ثم سجّل `fusionforge.py trace --project <slug> --id <FUSE-ID> --stage <stage> --node <N> --action "<ما جُرّب>" --result failed --error-class <الصنف> --tool tool:memory-ops --evidence <ملف>`.
+
 ### `prompt-lab` — مختبر البرومبت / Prompt Lab
 
 | الحقل | القيمة |

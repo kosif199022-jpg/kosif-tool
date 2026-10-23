@@ -2,7 +2,7 @@
 
 > **قوتك هنا:** أنت تبني عوالم ثلاثية الأبعاد بالكود لا بالبرامج الثقيلة: تضاريس وغابات وبحار وسماوات إجرائية، مجسمات منحوتة بدوال المسافة، زجاج وكروم وتوهج، كاميرا على مسار — وكل إطار دالة للزمن تُرندر في متصفح بلا واجهة. وحين لا يلزم 3D حقيقي، تصنع عمقًا مقنعًا بطبقات 2.5D أو إسقاط أيزومتري.
 > **أقوى دليل:** مرّت هنا اختبارات نحت دوال المسافة (`test_shape_kit` 4/4: كرة بنسبة حجم 0.9996 وصفر حواف مفتوحة، وأرنب بأكثر من 50 ألف مثلث) واختبارات «عالم البلورات» بـ WebGL الخام في `kosif-earth-ci-fork` (4/4)؛ ومكتبة three-kit تحمل التضاريس والغابة والبحر والسماء جاهزة بلا npm.
-> **You can:** decide 2.5D vs real 3D, sculpt, light, shade, post-process and fly a camera through procedural worlds, and route to GLB/Blender/Cesium only when needed. **52 powers follow** — ✅ 2 · 🟢 24 · 📦 4 · 🔑 2 · 👁 11 · 📄 8 · 💡 1.
+> **You can:** decide 2.5D vs real 3D, sculpt, light, shade, post-process and fly a camera through procedural worlds, and route to GLB/Blender/Cesium only when needed. **53 powers follow** — ✅ 2 · 🟢 24 · 📦 4 · 🔑 2 · 👁 11 · 📄 9 · 💡 1.
 
 **الحالة / status:** ✅ مُثبت هنا (كود + اختبار أو رندر في هذه الحاوية) · 🟢 جاهز (كود المالك يعمل بلا إضافات) · 📦 بأمر تثبيت · 🔑 مفتاح أو خدمة · 👁 شوهد في فيديو أنتجتَه (وصفة البناء مرفقة) · 📄 موصوف فقط · 💡 فكرة.
 مسارات الدليل نسبية إلى `/home/user/`؛ `style:<id>` = فيديو مرجعي أنتجتَه سابقًا (ملاحظاته في `kosif-tool/styles/<id>/`).
@@ -17,6 +17,7 @@
 - **النحت بدوال المسافة — SDF sculpting** — 3D-42 … 3D-42 (1)
 - **الكاميرا والحركة في 3D — 3D camera & motion recipes** — 3D-43 … 3D-52 (10)
 - توليفات قوية / power combos · أخطاء ممنوعة / never do · أقوى 5 حركات توقيع / 5 signature moves
+- **من أكبر مستودعات GitHub — from the top GitHub repositories (2026-10-23)** — 3D-G01 (1)
 
 ## القرار والعمق المزيف — Deciding 3D & faking depth (2.5D)
 
@@ -402,3 +403,14 @@ _مسار واحد لكل لقطة، وكل شيء دالة للزمن._
 3. **3D-02 — منصة العمق 2.5D:** أرخص عمق مقنع: أربع طبقات، دوران ≤6°، مدار 8° في 2–3 ث.
 4. **3D-05 — العالم الأيزومتري:** دالة إسقاط واحدة وموجة بناء قطرية بـ 40 ملّي ثانية لكل بلاطة.
 5. **3D-37 + 3D-38 — زجاج وبلوم:** زجاج فيزيائي يكسر العنوان خلفه وبلوم بعتبة عالية — لقطة البطل الفاخرة.
+
+## من أكبر مستودعات GitHub — from the top GitHub repositories (2026-10-23)
+
+_قدرات من أشهر مستودعات GitHub ذات الترخيص المفتوح (MIT)، مكتوبة بكلماتنا لا منسوخة، وسجل كل مستودع في [github-top-1000.md](../github-top-1000.md). 🟢 = الكود هنا في `scripts/motion_physics.py` واختباره `evals/test_motion_physics.py`. — Powers from the most-starred open-licence (MIT) GitHub repositories, restated in our own words; per-repo record in github-top-1000.md; 🟢 = code here in scripts/motion_physics.py with its test._
+
+#### 3D-G01 · حلقة رندر three.js حتمية · Deterministic three.js render loop · 📄 موصوف / documented only
+- **ماذا / what:** حرّك المشهد بالزمن لا بعدد الإطارات، واضبط الألوان والدقة مرة واحدة، وفي التصدير اجعل الزمن مدخلًا تبحث إليه لا ساعة حقيقية. — Drive the scene by time, not frame count, set colour and resolution once, and for export make time an input you seek to, not the wall clock.
+- **متى أستخدمها / when:** مشهد ثلاثي الأبعاد للويب أو لفيديو / a 3D scene for the web or for a video
+- **كيف / how:** update(t) sets every transform from t; live: t from a clock delta; export: t = frame / fps (no requestAnimationFrame timing). renderer.setPixelRatio(min(devicePixelRatio, 2)), sRGB output colour space, ACES filmic tone mapping with exposure ≈1; damped orbit controls need update() every frame; dispose geometries, materials and textures when a shot ends. Render frames headless and verify duration and fps (tools/verify_video.py). **أرقام / params:** pixel ratio ≤ 2; export t = frame/fps.
+- **الرخصة / license:** MIT
+- **المصدر / source:** https://github.com/mrdoob/three.js (MIT) — restated in our own words

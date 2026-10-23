@@ -449,6 +449,84 @@
   },
   "zhaoxuya520/reverse-skill": {
    "topic": "security"
+  },
+  "Aider-AI/aider": {
+   "transferred": [
+    "CODE-25",
+    "CODE-26",
+    "repo-map"
+   ]
+  },
+  "All-Hands-AI/OpenHands": {
+   "transferred": [
+    "AGENT-55"
+   ]
+  },
+  "assafelovic/gpt-researcher": {
+   "transferred": [
+    "WEB-26"
+   ]
+  },
+  "crewAIInc/crewAI": {
+   "transferred": [
+    "AGENT-48"
+   ]
+  },
+  "FoundationAgents/MetaGPT": {
+   "transferred": [
+    "AGENT-49"
+   ]
+  },
+  "github/spec-kit": {
+   "transferred": [
+    "PLAN-13"
+   ]
+  },
+  "HKUDS/LightRAG": {
+   "transferred": [
+    "GRAPH-23"
+   ]
+  },
+  "huggingface/smolagents": {
+   "transferred": [
+    "AGENT-53"
+   ]
+  },
+  "langchain-ai/langgraph": {
+   "transferred": [
+    "AGENT-47"
+   ]
+  },
+  "mem0ai/mem0": {
+   "transferred": [
+    "AGENT-50",
+    "memory-ops"
+   ]
+  },
+  "microsoft/graphrag": {
+   "transferred": [
+    "GRAPH-22"
+   ]
+  },
+  "obra/superpowers": {
+   "transferred": [
+    "PLAN-14"
+   ]
+  },
+  "openai/openai-agents-python": {
+   "transferred": [
+    "AGENT-54"
+   ]
+  },
+  "stanford-oval/storm": {
+   "transferred": [
+    "WEB-25"
+   ]
+  },
+  "thedotmack/claude-mem": {
+   "transferred": [
+    "AGENT-52"
+   ]
   }
  },
  "extra": {
@@ -487,6 +565,24 @@
    "description": "A guidance language for controlling large language models.",
    "transferred": [
     "PROMPT-36"
+   ]
+  },
+  "karpathy/llm-council": {
+   "stars": 25338,
+   "license": "none",
+   "topic": "llm-reasoning-memory",
+   "description": "LLM Council works together to answer your hardest questions",
+   "transferred": [
+    "THINK-47"
+   ]
+  },
+  "letta-ai/letta": {
+   "stars": 25156,
+   "license": "Apache-2.0",
+   "topic": "llm-reasoning-memory",
+   "description": "Platform for stateful agents: AI with advanced memory that can learn and self-improve over time.",
+   "transferred": [
+    "AGENT-51"
    ]
   }
  }

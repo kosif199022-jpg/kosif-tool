@@ -1,4 +1,4 @@
-# `transitions-cuts` — الموشن والمونتاج والسينما (474 بطاقة)
+# `transitions-cuts` — الموشن والمونتاج والسينما (475 بطاقة)
 
 > مكتبة بروتوكول USIP v5.5 الكاملة، مولّدة بـ `smart_capabilities.py cards` من `data/powers/transitions-cuts.json` وقواعد الملاحق A25–A29؛ لا تُحرَّر يدويًا. [الفهرس الرئيسي](../../README.md) · [فصل المجموعة](../../../.claude/skills/kosif-superpowers/references/library/motion.md) · [النواة](../../../.claude/skills/kosif-superpowers/PROTOCOL.md)
 
@@ -464,6 +464,7 @@
 - [`TRANS-97` ذوبان ضوضائي بين مشهدين](#trans-97--ذوبان-ضوضائي-بين-مشهدين--noise-dissolve-between-two-rendered-scenes)
 - [`TRANS-98` انتقال المسح بطبقة غطاء](#trans-98--انتقال-المسح-بطبقة-غطاء--overlay-wipe-page-transition)
 - [`TRANS-99` انتقال تحلل بالنويز بين مشهدين](#trans-99--انتقال-تحلل-بالنويز-بين-مشهدين--noise-dissolve-scene-transition)
+- [`TRANS-G01` انتقال سحري بين حالتين](#trans-g01--انتقال-سحري-بين-حالتين--auto-animate-between-two-states-magic-move)
 - [`TRANS-U01` منحنى منزلق قبل/بعد: انزلاق ثم زحف ثم كشف](#trans-u01--منحنى-منزلق-قبلبعد-انزلاق-ثم-زحف-ثم-كشف--beforeafter-slider-glide--crawl--reveal)
 - [`TRANS-X01` لكل انتقال سبب يُسمّى](#trans-x01--لكل-انتقال-سبب-يُسمّى--every-transition-needs-a-nameable-cause)
 - [`TRANS-X02` زوم الإبرة على جسم مستمر](#trans-x02--زوم-الإبرة-على-جسم-مستمر--needle-zoom-on-a-persistent-object)
@@ -35409,7 +35410,7 @@
 - `TRANS-96` متى نستخدم انتقال شيدر أو CSS أو قطع حاد / When to use shader vs CSS vs hard cut (install)
 - `TRANS-97` ذوبان ضوضائي بين مشهدين / Noise-dissolve between two rendered scenes (install)
 - `TRANS-99` انتقال تحلل بالنويز بين مشهدين / Noise-dissolve scene transition (install)
-- `TRANS-U01` منحنى منزلق قبل/بعد: انزلاق ثم زحف ثم كشف / Before/after slider: glide → crawl → reveal (proven)
+- `TRANS-G01` انتقال سحري بين حالتين / Auto-animate between two states (magic move) (documented)
 
 ### `TRANS-99` — انتقال تحلل بالنويز بين مشهدين / Noise-dissolve scene transition
 
@@ -35484,6 +35485,81 @@
 
 - `TRANS-97` ذوبان ضوضائي بين مشهدين / Noise-dissolve between two rendered scenes (install)
 - `TRANS-98` انتقال المسح بطبقة غطاء / Overlay wipe page transition (install)
+- `TRANS-G01` انتقال سحري بين حالتين / Auto-animate between two states (magic move) (documented)
+- `TRANS-U01` منحنى منزلق قبل/بعد: انزلاق ثم زحف ثم كشف / Before/after slider: glide → crawl → reveal (proven)
+
+### `TRANS-G01` — انتقال سحري بين حالتين / Auto-animate between two states (magic move)
+
+| الحقل | القيمة |
+|---|---|
+| العائلة | `transitions-cuts` ([فصل العائلة](../../../.claude/skills/kosif-superpowers/references/powers/transitions-cuts.md)) |
+| المجموعة | الموشن والمونتاج والسينما (`motion`) |
+| نوع المخرج (A25، A27) | فيديو وموشن ومونتاج (`video`) |
+| الحالة في الكتالوج | 📄 `documented`: منهج موصوف يحتاج بناءً أو ربطًا قبل التشغيل |
+| سقف التحقق قبل العمل (A27) | V1 حتى تُبنى وتُشغَّل؛ لا تقدَّم جاهزة أبدًا |
+| نطاق الدليل | `none` |
+| الرخصة | MIT |
+
+**ما هي:** طابق العناصر بين حالتين بمعرّف ثابت، وحرّك الموضع والحجم واللون للمتطابق، وأظهر أو أخفِ غير المتطابق، فيبدو الانتقال حركة واحدة. — Match elements between two states by a stable id, tween position, size and colour of matches, and fade the rest, so the change reads as one move.
+
+**متى:** شرائح أو شاشات تطبيق أو لوحات بيانات تتغير / slides, app screens or dashboards that change
+
+**كيف:** Give each persistent element a data-id in both states; measure both layouts; tween matched boxes (FLIP: first, last, invert, play) with one easing; unmatched: fade 150-250 ms; text that changes content cross-fades in place. Keep durations 0.4-0.8 s; more than ~12 moving matches turns into noise.
+
+**المعاملات:** 0.4-0.8 s; unmatched fade 150-250 ms
+
+**التثبيت:** لا خطوة تثبيت مسجلة
+
+**الوسوم:** auto-animate · magic move · flip · reveal.js · transition · انتقال · شرائح · حركة سحرية
+
+#### 1. الاستقبال (A25)
+
+- المقاس والمنصة: افتراض مكتوب ← 9:16 لمنصات المقاطع القصيرة
+- المدة: افتراض مكتوب ← مدة الصوت المرفوع، وإلا 30 ثانية
+- الصوت المصدر: سؤال بإجابة مقترحة ← بلا صوت مرفوع: موسيقى مرخصة هادئة أو صمت، يُسأل عنها
+- اللقطات والأصول: افتراض مكتوب ← لقطات مجانية مرخصة مع تسجيل رخصة كل لقطة
+- الأسلوب البصري: افتراض مكتوب ← أسلوب واحد متسق يقترحه التقرير
+- النص الظاهر واللغة: افتراض مكتوب ← عربية RTL بلغة الطلب
+- لا تُفترض أبدًا: مادة الإنتاج نفسها، والإذن بخطوة مدفوعة أو منشورة أو لا رجعة فيها، والهوية والحقوق.
+
+#### 2. الجاهزية والشارة (A28)
+
+- لا متطلبات مسجلة؛ افحص المسار والأداة بـ `hub.py doctor` قبل الشارة.
+- الوضع 1: شارة «هنا الآن» بعد الفحص، لا 📄 الكتالوج تلقائيًا · الوضع 2: `كتالوج: 📄 · هنا: غير مفحوص` · الوضع 3: بلا شارة ولا معرّف.
+
+#### 3. موضعها في الخطة (A26)
+
+- عقدة منمّطة: المدخل `audio` ← المخرج `video`، والمنفّذ `method:TRANS-G01` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `cinematic-cut-planner` · `creative-quality-gate` · `dua-wednesday` · `fetch-reference` · `kosif-timeline` · `kosif-timeline-demo`.
+- مراحل النوع: قياس الصوت والأصول ← ستوريبورد ← بناء المشهد ← معاينة رخيصة ← رندر ← تحقق ← تسليم.
+- إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
+
+#### 4. بوابة التحقق (A27)
+
+- إلزامي: المدة والمقاس وfps مطابقة بالقياس ← tools/verify_video.py أو ffprobe
+- إلزامي: صوت المستخدم منسوخ بلا تعديل (MD5 مطابق) ← ffmpeg -f md5
+- جودة: تزامن الكلمات ضمن ±2 إطار من words.json ← سجل seek
+- إلزامي: العربية متصلة الحروف وصحيحة الاتجاه ← لوحة لقطات
+- إلزامي: حركة حقيقية (كاميرا أو رسم أو تحويل) لا شرائح ثابتة ← لوحة لقطات كل ثانيتين
+- جودة: النص داخل المنطقة الآمنة للمنصة ← لقطة بإطار المنطقة الآمنة
+- إلزامي: رخصة كل لقطة وموسيقى وخط مسجلة ← rights.json أو جدول المصادر
+- جودة: معاينة رخيصة قبل الرندر الكامل ← render_html.cjs --preview
+- أمر الحكم في الوضع 1: `think.py qa video --answers qa.json` (PASS / FAIL / INCOMPLETE).
+
+#### 5. التعافي (A29)
+
+- `wrong_input_kind` (نوع مدخل خاطئ، ميزانية 2): افحص المدخل الفعلي (file، ffprobe، أول بايتات، ترميز النص) ← أضف محوّلًا صريحًا بين العقدتين (مثلًا ffmpeg لتحويل الصيغة) واحفظ الأصل كما هو · البديل: اطلب المدخل بالصيغة الصحيحة مع أمر تحويل جاهز · تصعيد: إن كان التحويل يفقد جودة أو بيانات: اسأل قبل التحويل
+- `quality_below_threshold` (جودة دون العتبة، ميزانية 3): أي معيار فشل وبكم (المقيس مقابل العتبة) ← عالج السبب الأكبر وحده ثم أعد القياس · البديل: المنهج البديل المكتوب للمرحلة في الخطة · تصعيد: معيار إلزامي لا يتحقق بعد البديل: توقف وأبلغ بالأرقام
+- `tool_error` (خطأ أداة، ميزانية 3): اقرأ آخر سطر في الخطأ ثم أول سطر من كودك فيه ← أصلح السبب المثبت وحده، ثم شغّل الاختبار المتعلق · البديل: أداة أخرى أو مسار يدوي للمرحلة نفسها · تصعيد: خطأ في أداة خارجية لا تملكها: بلّغ بإعادة الإنتاج ولا تخفه
+
+#### 6. الأدلة
+
+- لا دليل مسجل: لا تُقدَّم أكثر من منهج.
+
+#### 7. قدرات قريبة في العائلة
+
+- `TRANS-98` انتقال المسح بطبقة غطاء / Overlay wipe page transition (install)
+- `TRANS-99` انتقال تحلل بالنويز بين مشهدين / Noise-dissolve scene transition (install)
 - `TRANS-U01` منحنى منزلق قبل/بعد: انزلاق ثم زحف ثم كشف / Before/after slider: glide → crawl → reveal (proven)
 - `TRANS-X01` لكل انتقال سبب يُسمّى / Every transition needs a nameable cause (documented)
 
@@ -35559,8 +35635,8 @@
 
 #### 7. قدرات قريبة في العائلة
 
-- `TRANS-98` انتقال المسح بطبقة غطاء / Overlay wipe page transition (install)
 - `TRANS-99` انتقال تحلل بالنويز بين مشهدين / Noise-dissolve scene transition (install)
+- `TRANS-G01` انتقال سحري بين حالتين / Auto-animate between two states (magic move) (documented)
 - `TRANS-X01` لكل انتقال سبب يُسمّى / Every transition needs a nameable cause (documented)
 - `TRANS-X02` زوم الإبرة على جسم مستمر / Needle zoom on a persistent object (documented)
 
@@ -35635,7 +35711,7 @@
 
 #### 7. قدرات قريبة في العائلة
 
-- `TRANS-99` انتقال تحلل بالنويز بين مشهدين / Noise-dissolve scene transition (install)
+- `TRANS-G01` انتقال سحري بين حالتين / Auto-animate between two states (magic move) (documented)
 - `TRANS-U01` منحنى منزلق قبل/بعد: انزلاق ثم زحف ثم كشف / Before/after slider: glide → crawl → reveal (proven)
 - `TRANS-X02` زوم الإبرة على جسم مستمر / Needle zoom on a persistent object (documented)
 - `TRANS-X03` استمرار الطيران عبر الأشياء / Fly-through continuation rule (documented)

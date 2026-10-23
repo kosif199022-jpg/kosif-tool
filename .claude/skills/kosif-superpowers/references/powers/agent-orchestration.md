@@ -3,13 +3,13 @@
 
 > **قوتك هنا / what this gives you:** تقسيم العمل على وكلاء فرعيين ومسارات متوازية ومهام مجدولة مع بوابات أمان. — Split work across subagents, parallel tracks and scheduled tasks, with safety gates.
 > **أقوى دليل / strongest evidence:** **AGENT-37** Chroma: Index documents into a vector store and answer semantic queries (RAG) (`kosif-tool/.claude/skills/kosif-superpowers/proofs/toolbelt-smoke/README.md`)
-> **46 powers follow** — ✅ 1 · 🟢 0 · 📦 3 · 🔑 1 · 👁 0 · 📄 41 · 💡 0.
+> **55 powers follow** — ✅ 1 · 🟢 1 · 📦 3 · 🔑 1 · 👁 0 · 📄 49 · 💡 0.
 
 **الحالة / status:** ✅ مُثبت (شُغّل فعلًا وله مسار دليل) · 🟢 جاهز (كود موجود يعمل بما هو متاح عادة) · 📦 بأمر تثبيت واحد · 🔑 يحتاج مفتاحًا أو حسابًا أو موصلًا · 👁 شوهد في فيديو مرجعي (للموشن فقط) · 📄 طريقة موثقة · 💡 فكرة. الشارة هي أدنى مستوى صادق — the badge is the lowest level that is true.
 مسارات الدليل نسبية إلى `/home/user/`؛ و`session-<date>:<file>#<section>` تشير إلى تشغيل موثق في جلسة سابقة؛ و`owner-upload:` إلى ملف داخل أرشيف أرسله المالك. Proof paths are relative to `/home/user/`.
 
 **المجال / domain:** العقل والتفكير — Mind & thinking · **البادئة / prefix:** `AGENT` · **البيانات / data:** `data/powers/agent-orchestration.json` · **بحث / search:** `python3 scripts/powers.py family agent-orchestration`
-**مراجع ذات صلة / related references:** [CLAUDE_3_MINUTE_MAP.md](../CLAUDE_3_MINUTE_MAP.md) · [atlas-source-review-20261020.md](../atlas-source-review-20261020.md) · [capability-audit.md](../capability-audit.md) · [codex-agent-harness.md](../codex-agent-harness.md) · [codex-repos-study-20261023.md](../codex-repos-study-20261023.md) · [ecc-harness.md](../ecc-harness.md) · [ecc-skills-index.md](../ecc-skills-index.md) · [github-top-1000.md](../github-top-1000.md) · [hubs.md](../hubs.md) · [rea-superpowers-frontier-20261023.md](../rea-superpowers-frontier-20261023.md)
+**مراجع ذات صلة / related references:** [CLAUDE_3_MINUTE_MAP.md](../CLAUDE_3_MINUTE_MAP.md) · [agents-memory-reasoning-repos.md](../agents-memory-reasoning-repos.md) · [atlas-source-review-20261020.md](../atlas-source-review-20261020.md) · [capability-audit.md](../capability-audit.md) · [codex-agent-harness.md](../codex-agent-harness.md) · [codex-repos-study-20261023.md](../codex-repos-study-20261023.md) · [ecc-harness.md](../ecc-harness.md) · [ecc-skills-index.md](../ecc-skills-index.md) · [github-top-1000.md](../github-top-1000.md) · [hubs.md](../hubs.md) · [rea-superpowers-frontier-20261023.md](../rea-superpowers-frontier-20261023.md)
 
 ## الفهرس / contents
 
@@ -24,6 +24,7 @@
 - **حزمة ECC — The ECC harness** — AGENT-34 … AGENT-35 (2)
 - **Extended toolbelt (2026-10-18)** — AGENT-36 … AGENT-38 (3)
 - **حزام Codex: حلقة الوكيل — Codex harness: agent loop** — AGENT-39 … AGENT-46 (8)
+- **أكبر مستودعات GitHub — Top GitHub repositories (2026-10-23)** — AGENT-47 … AGENT-55 (9)
 - المصادر والرخص / sources & licences
 
 ## التفويض والوكلاء الفرعيون — Delegation & subagents
@@ -442,9 +443,85 @@
 - **الدليل / proof:** — (لا دليل تشغيل بعد / no run proof yet)
 - **المصدر / source:** https://github.com/openai/codex (Apache-2.0, e6ebdfe) — methods restated in our own words; references/codex-agent-harness.md
 
+## أكبر مستودعات GitHub — Top GitHub repositories (2026-10-23)
+
+#### AGENT-47 · رسم حالة بنقاط حفظ واستئناف · Checkpointed state graph with resume and approval interrupts · 📄 موصوف / documented only
+- **ماذا / what:** اكتب سير العمل كعقد وحواف على حالة مشتركة، واحفظ نقطة بعد كل عقدة، وتوقف قبل العقد الخطرة لموافقة المستخدم. — Model the workflow as nodes and edges over one shared state, checkpoint after every node, and pause before risky nodes for the user's approval.
+- **متى أستخدمها / when:** مهمة طويلة متعددة الخطوات قد تنقطع أو تحتاج موافقة / a long multi-step job that may break or needs approval
+- **كيف / how:** State = one typed record (inputs, artifacts, decisions, errors). Each node reads state and returns a partial update; edges may be conditional. After each node write the checkpoint (thread id, step, state hash) to the work dir. On failure resume from the last good checkpoint instead of restarting. Put an interrupt before publish, spend, delete or send: show the pending state, wait, then continue. To try an alternative, fork from an earlier checkpoint rather than editing history. KOSIF mapping: FusionForge trace per node + A5 state receipts.
+- **الرخصة / license:** MIT
+- **الدليل / proof:** — (لا دليل تشغيل بعد / no run proof yet)
+- **المصدر / source:** https://github.com/langchain-ai/langgraph (MIT; durable execution, interrupts) — method restated in our own words
+
+#### AGENT-48 · فريق بأدوار ومهام ومخرج متوقع · Role-goal crew with expected outputs · 📄 موصوف / documented only
+- **ماذا / what:** لكل وكيل دور وهدف وحدود، ولكل مهمة وصف ومخرج متوقع مكتوب ووكيل مسؤول ومهام سابقة تغذيها. — Each agent has a role, a goal and limits; each task has a description, a written expected output, one owner and the earlier tasks that feed it.
+- **متى أستخدمها / when:** تقسيم عمل بين عدة وكلاء فرعيين / splitting work across several subagents
+- **كيف / how:** Task card: description · expected_output (format + acceptance check) · agent · context (ids of the tasks whose outputs it reads). Run sequentially when outputs chain; hierarchical when a manager must assign and validate. The manager rejects an output that misses its expected_output and returns it once with the gap named. Keep backstory to constraints that change behaviour (audience, standard), not persona theatre (PROMPT-13).
+- **الرخصة / license:** MIT
+- **الدليل / proof:** — (لا دليل تشغيل بعد / no run proof yet)
+- **المصدر / source:** https://github.com/crewAIInc/crewAI (MIT; agents, tasks, processes) — restated in our own words
+
+#### AGENT-49 · خط إنتاج بإجراءات قياسية ووثائق تسليم · SOP assembly line with document handoffs · 📄 موصوف / documented only
+- **ماذا / what:** كل دور ينشر وثيقة منظمة بقالب ثابت (متطلبات، تصميم، قائمة مهام، كود، تقرير اختبار)، والدور التالي يقرأ الوثيقة لا المحادثة. — Each role publishes a structured document from a fixed template, and the next role reads the document, not the chat.
+- **متى أستخدمها / when:** مشروع برمجي أو إنتاجي من فكرة إلى تسليم / a software or production project from idea to delivery
+- **كيف / how:** Order: requirements (goals, user stories, non-goals) → design (components, interfaces, data) → task list (files, order, owner) → implementation → test report. Templates force completeness: an empty required field blocks the handoff. Roles subscribe to the document types they need from a shared pool, so a change in requirements re-triggers only the roles that read it. Pairs with PLAN-13 and FusionForge typed handoffs.
+- **الرخصة / license:** MIT
+- **الدليل / proof:** — (لا دليل تشغيل بعد / no run proof yet)
+- **المصدر / source:** https://github.com/FoundationAgents/MetaGPT (MIT; SOP-driven roles and message pool) — restated in our own words
+
+#### AGENT-50 · قرار الذاكرة: إضافة أو تحديث أو حذف أو لا شيء · Memory decision step: add, update, delete or no-op · 🟢 جاهز / ready
+- **ماذا / what:** قبل حفظ أي معلومة قارنها بالمحفوظ: جديدة تُضاف، وتعديل لقيمة قديمة يُحدّث مع حفظ القديم في السجل، والتراجع يحذف، والمكرر لا يُحفظ. — Before storing a fact compare it with the store: new is added, a changed value updates with the old one kept in history, a retraction deletes, a duplicate is skipped.
+- **متى أستخدمها / when:** ذاكرة طويلة لمشروع أو تفضيلات مستخدم / long-term project memory or user preferences
+- **كيف / how:** facts.json [{text, subject?, attribute?, value?, op?}] → `python3 scripts/memory_ops.py propose --store memory.json --facts facts.json --out plan.json` (one op per fact with its reason; secrets refused) → review → `python3 scripts/memory_ops.py apply --store memory.json --plan plan.json` (history keeps every old value) → `python3 scripts/memory_ops.py search --store memory.json "<query>"`. Same subject+attribute with a new value is an UPDATE, not a second fact; 'no longer' / 'لم يعد' retracts. Local file only and opt-in; project memory rules still decide what may be stored.
+- **يحتاج / needs:** [`python3`](../requirements.md#req-python3)
+- **الرخصة / license:** Apache-2.0
+- **الدليل / proof:** `kosif-tool/.claude/skills/kosif-superpowers/scripts/memory_ops.py` · `kosif-tool/.claude/skills/kosif-superpowers/evals/test_memory_ops.py`
+- **المصدر / source:** https://github.com/mem0ai/mem0 (Apache-2.0; memory update operations) — method restated, our own code in scripts/memory_ops.py
+
+#### AGENT-51 · ذاكرة بطبقات يحررها الوكيل · Tiered self-editing memory · 📄 موصوف / documented only
+- **ماذا / what:** كتل صغيرة دائمة في السياق (من المستخدم، ما المشروع) بحد حجم، ومخزن أرشيفي يُبحث فيه عند الحاجة، والوكيل يعدّل الكتل بأدوات صريحة. — Small always-in-context blocks with size limits, an archival store searched on demand, and explicit tools for the agent to edit the blocks.
+- **متى أستخدمها / when:** وكيل يعمل عبر جلسات كثيرة / an agent that works across many sessions
+- **كيف / how:** Core blocks (e.g. user: 2,000 chars, project: 2,000 chars) are injected every turn; when a block is full, summarise or move detail to archival. Archival = searchable records (AGENT-50 store). Edits go through named operations (append, replace, delete) so they are logged. When the context window fills, evict the oldest turns into a recursive summary instead of truncating silently.
+- **الرخصة / license:** Apache-2.0
+- **الدليل / proof:** — (لا دليل تشغيل بعد / no run proof yet)
+- **المصدر / source:** https://github.com/letta-ai/letta (Apache-2.0; memory blocks, archival memory; outside the top 1,000) — restated in our own words
+
+#### AGENT-52 · التقاط ملاحظات الجلسة وحقنها في التالية · Session observation capture and injection · 📄 موصوف / documented only
+- **ماذا / what:** سجّل ما فعله الوكيل في الجلسة (أوامر، ملفات، قرارات) واضغطه في ملخص عند الانتهاء، واحقن الملخص المناسب في بداية الجلسة التالية. — Record what the agent did (commands, files, decisions), compress it into a summary at the end, and inject the relevant summary at the next session's start.
+- **متى أستخدمها / when:** عمل يمتد عبر جلسات أو خيوط / work that spans sessions or threads
+- **كيف / how:** Capture only observations (tool, target, outcome), never secrets or private content marked private. At session end write: done · decisions with reasons · open items · files touched. At start inject the latest summary plus a search over older ones for the current task. Keep it opt-in and visible to the user; in this skill use the project memory folder or FusionForge lessons.
+- **الرخصة / license:** Apache-2.0
+- **الدليل / proof:** — (لا دليل تشغيل بعد / no run proof yet)
+- **المصدر / source:** https://github.com/thedotmack/claude-mem (Apache-2.0) — restated in our own words
+
+#### AGENT-53 · وكيل يتصرف بالكود · Code-as-action agent · 📄 موصوف / documented only
+- **ماذا / what:** بدل أن يطلب الوكيل أداة واحدة كل خطوة، يكتب مقطع بايثون يستدعي الأدوات كدوال ويجمع نتائجها، ويُنفَّذ في بيئة معزولة بحدود. — Instead of one tool call per step the agent writes a Python snippet that calls tools as functions and combines their results, run in a sandbox with limits.
+- **متى أستخدمها / when:** مهام فيها حلقات أو حساب أو أدوات كثيرة / tasks with loops, arithmetic or many tool calls
+- **كيف / how:** Expose tools as typed functions; allow a short import whitelist; cap max_steps (e.g. 10) and add a planning step every 3 steps that restates the plan. Every snippet's stdout is the observation. Never give the sandbox credentials or network it does not need; never run model-written code outside it.
+- **يحتاج / needs:** [`python3`](../requirements.md#req-python3)
+- **الرخصة / license:** Apache-2.0
+- **الدليل / proof:** — (لا دليل تشغيل بعد / no run proof yet)
+- **المصدر / source:** https://github.com/huggingface/smolagents (Apache-2.0; CodeAgent) — restated in our own words
+
+#### AGENT-54 · حواجز تفعيل وتسليم لمتخصص · Tripwire guardrails and specialist handoffs · 📄 موصوف / documented only
+- **ماذا / what:** فحص دخول يعمل بالتوازي مع الوكيل ويوقفه فورًا إن انطلق، وفحص خروج على الناتج النهائي، وتسليم المهمة لوكيل متخصص كاستدعاء أداة بسجل مفلتر. — An input check that runs alongside the agent and halts it when tripped, an output check on the final result, and handoff to a specialist as a tool call with filtered history.
+- **متى أستخدمها / when:** مساعد يخدم طلبات متنوعة أو حساسة / an assistant serving varied or sensitive requests
+- **كيف / how:** Input tripwire: cheap classifier for out-of-scope, unsafe or secret-bearing input; on trip stop and say why. Output check: schema, policy, numbers-from-runs. Handoff: 'transfer_to_<specialist>' with only the turns it needs. Trace every span (agent, tool, handoff, guardrail) so a failure can be located.
+- **الرخصة / license:** MIT
+- **الدليل / proof:** — (لا دليل تشغيل بعد / no run proof yet)
+- **المصدر / source:** https://github.com/openai/openai-agents-python (MIT) — restated in our own words
+
+#### AGENT-55 · تيار أحداث قابل لإعادة التشغيل · Replayable event-stream agent · 📄 موصوف / documented only
+- **ماذا / what:** كل فعل وكل ملاحظة يُضاف إلى تيار أحداث واحد مرتب، والتنفيذ في بيئة معزولة، والأحداث القديمة تُلخَّص لا تُحذف. — Every action and observation is appended to one ordered event stream, execution happens in a sandbox, and old events are condensed, not dropped.
+- **متى أستخدمها / when:** وكيل برمجي طويل تريد تدقيقه أو استئنافه / a long coding agent you want to audit or resume
+- **كيف / how:** Event = {id, time, kind: action|observation, source, payload}. The agent's next step reads a view of the stream (recent events in full + a condensed summary of older ones). Replaying the stream rebuilds state for debugging. Pairs with AGENT-47 checkpoints and A5 receipts.
+- **الرخصة / license:** MIT
+- **الدليل / proof:** — (لا دليل تشغيل بعد / no run proof yet)
+- **المصدر / source:** https://github.com/All-Hands-AI/OpenHands (MIT) — restated in our own words
+
 ## المصادر والرخص / sources & licences
 
-- الرخص / licences: MIT (26) · Apache-2.0 (9) · owner (6) · — (4) · MIT → Apache-2.0 (1)
+- الرخص / licences: MIT (31) · Apache-2.0 (13) · owner (6) · — (4) · MIT → Apache-2.0 (1)
 - الأفكار مكتوبة بكلماتنا مع رابط المصدر؛ لا يُنسخ نص طرف ثالث طويل. Ideas are paraphrased with a link to the source; no long third-party text is copied. `—` = no licence recorded (own method or own wording).
 
 ---

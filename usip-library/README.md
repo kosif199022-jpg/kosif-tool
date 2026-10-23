@@ -18,8 +18,8 @@
 
 | المجموعة | العائلة | البطاقات | الأسطر | الملف |
 |---|---|---:|---:|---|
-| الثري دي والمحاكاة والرندر | `3d-spatial` | 52 | 3,660 | [cards/3d/3d-spatial.md](cards/3d/3d-spatial.md) |
-| الثري دي والمحاكاة والرندر | `engines-render-pipeline` | 443 | 30,775 | [cards/3d/engines-render-pipeline.md](cards/3d/engines-render-pipeline.md) |
+| الثري دي والمحاكاة والرندر | `3d-spatial` | 53 | 3,731 | [cards/3d/3d-spatial.md](cards/3d/3d-spatial.md) |
+| الثري دي والمحاكاة والرندر | `engines-render-pipeline` | 445 | 30,910 | [cards/3d/engines-render-pipeline.md](cards/3d/engines-render-pipeline.md) |
 | الثري دي والمحاكاة والرندر | `light-glow-bloom` | 87 | 6,191 | [cards/3d/light-glow-bloom.md](cards/3d/light-glow-bloom.md) |
 | الثري دي والمحاكاة والرندر | `particles-fluids-physics` | 77 | 5,370 | [cards/3d/particles-fluids-physics.md](cards/3d/particles-fluids-physics.md) |
 | الثري دي والمحاكاة والرندر | `texture-material` | 96 | 6,666 | [cards/3d/texture-material.md](cards/3d/texture-material.md) |
@@ -50,18 +50,18 @@
 | قدرات مساندة غير مصنفة | `other` | 27 | 1,904 | [cards/misc/other.md](cards/misc/other.md) |
 | الموشن والمونتاج والسينما | `camera-composition-layout` | 425 | 32,479 | [cards/motion/camera-composition-layout.md](cards/motion/camera-composition-layout.md) |
 | الموشن والمونتاج والسينما | `characters-rigs` | 51 | 4,026 | [cards/motion/characters-rigs.md](cards/motion/characters-rigs.md) |
-| الموشن والمونتاج والسينما | `easing-timing-rhythm` | 102 | 8,061 | [cards/motion/easing-timing-rhythm.md](cards/motion/easing-timing-rhythm.md) |
+| الموشن والمونتاج والسينما | `easing-timing-rhythm` | 106 | 8,371 | [cards/motion/easing-timing-rhythm.md](cards/motion/easing-timing-rhythm.md) |
 | الموشن والمونتاج والسينما | `formats-platforms` | 70 | 5,549 | [cards/motion/formats-platforms.md](cards/motion/formats-platforms.md) |
 | الموشن والمونتاج والسينما | `story-direction-ideas` | 95 | 7,557 | [cards/motion/story-direction-ideas.md](cards/motion/story-direction-ideas.md) |
-| الموشن والمونتاج والسينما | `transitions-cuts` | 474 | 36,547 | [cards/motion/transitions-cuts.md](cards/motion/transitions-cuts.md) |
+| الموشن والمونتاج والسينما | `transitions-cuts` | 475 | 36,623 | [cards/motion/transitions-cuts.md](cards/motion/transitions-cuts.md) |
 | الموشن والمونتاج والسينما | `video-download` | 11 | 856 | [cards/motion/video-download.md](cards/motion/video-download.md) |
 | الاختبارات والجودة والأمان | `api-testing` | 22 | 1,577 | [cards/quality/api-testing.md](cards/quality/api-testing.md) |
 | الاختبارات والجودة والأمان | `qa-verification` | 384 | 27,964 | [cards/quality/qa-verification.md](cards/quality/qa-verification.md) |
 | الاختبارات والجودة والأمان | `security-safety` | 23 | 1,636 | [cards/quality/security-safety.md](cards/quality/security-safety.md) |
 | الاختبارات والجودة والأمان | `verification-evals` | 35 | 2,548 | [cards/quality/verification-evals.md](cards/quality/verification-evals.md) |
 | البحث والمعرفة | `atlas-research` | 11 | 757 | [cards/research/atlas-research.md](cards/research/atlas-research.md) |
-| البحث والمعرفة | `knowledge-graph` | 21 | 1,507 | [cards/research/knowledge-graph.md](cards/research/knowledge-graph.md) |
-| البحث والمعرفة | `web-research` | 24 | 1,655 | [cards/research/web-research.md](cards/research/web-research.md) |
+| البحث والمعرفة | `knowledge-graph` | 23 | 1,643 | [cards/research/knowledge-graph.md](cards/research/knowledge-graph.md) |
+| البحث والمعرفة | `web-research` | 26 | 1,789 | [cards/research/web-research.md](cards/research/web-research.md) |
 | التحليل العكسي وفحص البرامج | `software-investigation` | 258 | 19,140 | [cards/reverse/software-investigation.md](cards/reverse/software-investigation.md) |
 | البرمجة وبناء التطبيقات | `app-feature-transfer` | 139 | 10,422 | [cards/software/app-feature-transfer.md](cards/software/app-feature-transfer.md) |
 | البرمجة وبناء التطبيقات | `apps-artifacts` | 23 | 1,649 | [cards/software/apps-artifacts.md](cards/software/apps-artifacts.md) |
@@ -73,7 +73,7 @@
 | التفكير والتخطيط والاستراتيجية | `atlas-strategy` | 72 | 4,980 | [cards/thinking/atlas-strategy.md](cards/thinking/atlas-strategy.md) |
 | التفكير والتخطيط والاستراتيجية | `creativity-engine` | 29 | 2,024 | [cards/thinking/creativity-engine.md](cards/thinking/creativity-engine.md) |
 | التفكير والتخطيط والاستراتيجية | `mental-models` | 63 | 4,414 | [cards/thinking/mental-models.md](cards/thinking/mental-models.md) |
-| التفكير والتخطيط والاستراتيجية | `planning-execution` | 12 | 820 | [cards/thinking/planning-execution.md](cards/thinking/planning-execution.md) |
+| التفكير والتخطيط والاستراتيجية | `planning-execution` | 14 | 955 | [cards/thinking/planning-execution.md](cards/thinking/planning-execution.md) |
 | التفكير والتخطيط والاستراتيجية | `prompt-craft` | 41 | 2,840 | [cards/thinking/prompt-craft.md](cards/thinking/prompt-craft.md) |
 | التفكير والتخطيط والاستراتيجية | `strategy-finance` | 18 | 1,227 | [cards/thinking/strategy-finance.md](cards/thinking/strategy-finance.md) |
 | التفكير والتخطيط والاستراتيجية | `thinking-core` | 46 | 3,214 | [cards/thinking/thinking-core.md](cards/thinking/thinking-core.md) |

@@ -39,6 +39,7 @@
 - [أقوى 5 حركات توقيع / 5 signature moves](#أقوى-5-حركات-توقيع--5-signature-moves)
 - [إضافات من Cinematic Director PRO v5](#إضافات-من-cinematic-director-pro-v5)
 - [إضافات v2 — v2 additions](#إضافات-v2--v2-additions)
+- **من أكبر مستودعات GitHub — from the top GitHub repositories (2026-10-23)** — GEN-G01 (1)
 
 ## 1. تشريح البرومبت وقواعده — Prompt anatomy & rules
 
@@ -737,3 +738,14 @@ _قدرات أُضيفت في الإصدار الثاني من حزم المال
 - **الرخصة / license:** MIT (ECC, (c) 2026 Affaan Mustafa)
 - **المصدر / source:** `https://github.com/affaan-m/ECC/tree/main/skills/taste-application/SKILL.md`
 - **الدليل / proof:** `https://github.com/affaan-m/ECC/tree/main/skills/taste-application/SKILL.md`
+
+## من أكبر مستودعات GitHub — from the top GitHub repositories (2026-10-23)
+
+_قدرات من أشهر مستودعات GitHub ذات الترخيص المفتوح (MIT)، مكتوبة بكلماتنا لا منسوخة، وسجل كل مستودع في [github-top-1000.md](../github-top-1000.md). 🟢 = الكود هنا في `scripts/motion_physics.py` واختباره `evals/test_motion_physics.py`. — Powers from the most-starred open-licence (MIT) GitHub repositories, restated in our own words; per-repo record in github-top-1000.md; 🟢 = code here in scripts/motion_physics.py with its test._
+
+#### GEN-G01 · خط إنتاج من موضوع إلى فيديو قصير · Topic-to-short pipeline with reviewable stages · 📄 موصوف / documented only
+- **ماذا / what:** موضوع ← نص ← كلمات بحث لكل جملة ← لقطات مرخصة ← صوت ← ترجمة بتوقيت الكلمات ← تجميع مع خفض الموسيقى، وكل مرحلة ملف يُراجع قبل التالية. — Topic → script → search terms per sentence → licensed clips → voice → word-timed subtitles → assembly with ducked music, each stage a file reviewed before the next.
+- **متى أستخدمها / when:** فيديوهات قصيرة متكررة من مواضيع / recurring short videos from topics
+- **كيف / how:** Stage files: script.md, terms.json (2-3 visual terms per sentence), clips.json (source URL, licence, in/out), voice.wav, words.json, edit.json, film.mp4 + credits.txt. Clips only from sources whose licence allows reuse (Pexels/Pixabay terms, own footage); never the user's voice cloned without consent; the user approves script and clips before render. KOSIF executors: stock_fetch.py, montage_pro.py, render_html.cjs.
+- **الرخصة / license:** MIT
+- **المصدر / source:** https://github.com/harry0703/MoneyPrinterTurbo (MIT) — pipeline restated in our own words

@@ -1,4 +1,4 @@
-# `thinking-core` — التفكير والتخطيط والاستراتيجية (46 بطاقة)
+# `thinking-core` — التفكير والتخطيط والاستراتيجية (47 بطاقة)
 
 > مكتبة بروتوكول USIP v5.5 الكاملة، مولّدة بـ `smart_capabilities.py cards` من `data/powers/thinking-core.json` وقواعد الملاحق A25–A29؛ لا تُحرَّر يدويًا. [الفهرس الرئيسي](../../README.md) · [فصل المجموعة](../../../.claude/skills/kosif-superpowers/references/library/thinking.md) · [النواة](../../../.claude/skills/kosif-superpowers/PROTOCOL.md)
 
@@ -50,6 +50,7 @@
 - [`THINK-44` نموذج القارئ البشري](#think-44--نموذج-القارئ-البشري--reader-model-theory-of-mind)
 - [`THINK-45` المراقبة الذاتية عند الحدود](#think-45--المراقبة-الذاتية-عند-الحدود--metacognition-checkpoint)
 - [`THINK-46` عادات العبقرية العشر](#think-46--عادات-العبقرية-العشر--ten-genius-habits-as-procedures)
+- [`THINK-47` مجلس بتقييم متبادل مجهول الهوية](#think-47--مجلس-بتقييم-متبادل-مجهول-الهوية--anonymous-peer-ranked-council)
 
 ## البطاقات / cards
 
@@ -3147,6 +3148,7 @@
 - `THINK-43` محاكاة الخبير / Expert simulation (documented)
 - `THINK-44` نموذج القارئ البشري / Reader model (theory of mind) (documented)
 - `THINK-46` عادات العبقرية العشر / Ten genius habits as procedures (documented)
+- `THINK-47` مجلس بتقييم متبادل مجهول الهوية / Anonymous peer-ranked council (documented)
 
 ### `THINK-46` — عادات العبقرية العشر / Ten genius habits as procedures
 
@@ -3211,4 +3213,70 @@
 
 - `THINK-44` نموذج القارئ البشري / Reader model (theory of mind) (documented)
 - `THINK-45` المراقبة الذاتية عند الحدود / Metacognition checkpoint (documented)
+- `THINK-47` مجلس بتقييم متبادل مجهول الهوية / Anonymous peer-ranked council (documented)
+
+### `THINK-47` — مجلس بتقييم متبادل مجهول الهوية / Anonymous peer-ranked council
+
+| الحقل | القيمة |
+|---|---|
+| العائلة | `thinking-core` ([فصل العائلة](../../../.claude/skills/kosif-superpowers/references/powers/thinking-core.md)) |
+| المجموعة | التفكير والتخطيط والاستراتيجية (`thinking`) |
+| نوع المخرج (A25، A27) | خطة واستراتيجية وقرار (`plan`) |
+| الحالة في الكتالوج | 📄 `documented`: منهج موصوف يحتاج بناءً أو ربطًا قبل التشغيل |
+| سقف التحقق قبل العمل (A27) | V1 حتى تُبنى وتُشغَّل؛ لا تقدَّم جاهزة أبدًا |
+| نطاق الدليل | `none` |
+| الرخصة | none (idea only) |
+
+**ما هي:** عدة نماذج تجيب، ثم كل نموذج يرتب إجابات الآخرين بعد إخفاء أصحابها، ثم رئيس يكتب الإجابة النهائية مستعينًا بالترتيب. — Several models answer, each ranks the others' answers with authors hidden, then a chair writes the final answer using the rankings.
+
+**متى:** سؤال صعب تريد له أكثر من رأي / a hard question that deserves more than one view
+
+**كيف:** Stage 1: N independent answers (different models or framings). Stage 2: label them A, B, C… in shuffled order; each member ranks all but its own with one line per rank. Stage 3: aggregate (Borda count), the chair synthesises from the top answers and states remaining disagreement. Shuffle order per member to cancel position bias (PROMPT-41). In this skill the five-lane version is scripts/council.py. Licence of the source not stated: idea only.
+
+**التثبيت:** لا خطوة تثبيت مسجلة
+
+**الوسوم:** llm council · peer review · ranking · borda · synthesis · مجلس · تقييم متبادل
+
+#### 1. الاستقبال (A25)
+
+- الهدف القابل للقياس: سؤال بإجابة مقترحة ← هدف مقترح بعتبة رقمية يُعرض للتعديل
+- الأفق الزمني: افتراض مكتوب ← 90 يومًا
+- الموارد والميزانية: افتراض مكتوب ← شخص واحد بلا صرف
+- لا تُفترض أبدًا: مادة الإنتاج نفسها، والإذن بخطوة مدفوعة أو منشورة أو لا رجعة فيها، والهوية والحقوق.
+
+#### 2. الجاهزية والشارة (A28)
+
+- `python3` ← افحص وجوده بأمر واحد قبل كتابة الشارة
+- الوضع 1: شارة «هنا الآن» بعد الفحص، لا 📄 الكتالوج تلقائيًا · الوضع 2: `كتالوج: 📄 · هنا: غير مفحوص` · الوضع 3: بلا شارة ولا معرّف.
+
+#### 3. موضعها في الخطة (A26)
+
+- عقدة منمّطة: المدخل `brief` ← المخرج `plan`، والمنفّذ `method:THINK-47` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `invention-lab` · `think`.
+- مراحل النوع: الهدف بمؤشره ← ثلاثة خيارات مختلفة ← تقييم وحساسية ← تشريح مسبق ← بوابات مكتوبة ← خطوة أولى قابلة للتراجع.
+- إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
+
+#### 4. بوابة التحقق (A27)
+
+- إلزامي: لكل هدف مؤشر وعتبة وتاريخ ← جدول المؤشرات
+- إلزامي: ثلاثة خيارات مختلفة المنهج مع توصية ← جدول المقارنة
+- جودة: تشريح مسبق بأهم أسباب الفشل والوقاية ← think.py plan
+- جودة: بوابات go/pivot/kill مكتوبة قبل النتائج ← think.py gate
+- إلزامي: خطوة أولى صغيرة قابلة للتراجع هذا الأسبوع ← مراجعة
+- أمر الحكم في الوضع 1: `think.py qa plan --answers qa.json` (PASS / FAIL / INCOMPLETE).
+
+#### 5. التعافي (A29)
+
+- `missing_dependency` (اعتمادية مفقودة، ميزانية 2): سمِّ الاعتمادية بالضبط (حزمة، برنامج، خط، نموذج) ← ثبّت محليًا في بيئة العمل إن كان مجانيًا ومسموحًا (pip --user أو venv أو npm محلي) · البديل: مسار المكتبة القياسية أو أداة أخرى من نفس المجموعة · تصعيد: تثبيت نظامي أو مدفوع أو يحتاج مفتاحًا: توقف واسأل
+- `quality_below_threshold` (جودة دون العتبة، ميزانية 3): أي معيار فشل وبكم (المقيس مقابل العتبة) ← عالج السبب الأكبر وحده ثم أعد القياس · البديل: المنهج البديل المكتوب للمرحلة في الخطة · تصعيد: معيار إلزامي لا يتحقق بعد البديل: توقف وأبلغ بالأرقام
+- `tool_error` (خطأ أداة، ميزانية 3): اقرأ آخر سطر في الخطأ ثم أول سطر من كودك فيه ← أصلح السبب المثبت وحده، ثم شغّل الاختبار المتعلق · البديل: أداة أخرى أو مسار يدوي للمرحلة نفسها · تصعيد: خطأ في أداة خارجية لا تملكها: بلّغ بإعادة الإنتاج ولا تخفه
+
+#### 6. الأدلة
+
+- لا دليل مسجل: لا تُقدَّم أكثر من منهج.
+
+#### 7. قدرات قريبة في العائلة
+
+- `THINK-45` المراقبة الذاتية عند الحدود / Metacognition checkpoint (documented)
+- `THINK-46` عادات العبقرية العشر / Ten genius habits as procedures (documented)
 

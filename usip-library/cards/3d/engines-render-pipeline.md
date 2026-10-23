@@ -1,4 +1,4 @@
-# `engines-render-pipeline` — الثري دي والمحاكاة والرندر (443 بطاقة)
+# `engines-render-pipeline` — الثري دي والمحاكاة والرندر (445 بطاقة)
 
 > مكتبة بروتوكول USIP v5.5 الكاملة، مولّدة بـ `smart_capabilities.py cards` من `data/powers/engines-render-pipeline.json` وقواعد الملاحق A25–A29؛ لا تُحرَّر يدويًا. [الفهرس الرئيسي](../../README.md) · [فصل المجموعة](../../../.claude/skills/kosif-superpowers/references/library/3d.md) · [النواة](../../../.claude/skills/kosif-superpowers/PROTOCOL.md)
 
@@ -439,6 +439,8 @@
 - [`ENG-97` kmotion: قائمة عربية لكل الأدوات](#eng-97--kmotion-قائمة-عربية-لكل-الأدوات--kmotion-one-arabic-menu-for-48-commands)
 - [`ENG-98` استيراد SVG كخطوات رسم](#eng-98--استيراد-svg-كخطوات-رسم--svg-import-as-paint-steps)
 - [`ENG-99` تشغيل كود الرسم من أي ذكاء اصطناعي](#eng-99--تشغيل-كود-الرسم-من-أي-ذكاء-اصطناعي--run-any-ai-drawing-code-in-painter-order)
+- [`ENG-G01` تصدير لوتي يعمل في كل مشغل](#eng-g01--تصدير-لوتي-يعمل-في-كل-مشغل--lottie-export-that-plays-everywhere)
+- [`ENG-G02` رسم ثنائي الأبعاد بآلاف العناصر](#eng-g02--رسم-ثنائي-الأبعاد-بآلاف-العناصر--2d-scenes-with-thousands-of-sprites)
 - [`ENG-P01` مخطط المشهد المصغّر CineGraph: JSON إلى MP4 بأنبوب مباشر](#eng-p01--مخطط-المشهد-المصغّر-cinegraph-json-إلى-mp4-بأنبوب-مباشر--cinegraph-mini-scene-graph-json--pillow-frames--ffmpeg-rawvideo-pipe)
 - [`ENG-X01` ضبابية حركة تكيفية](#eng-x01--ضبابية-حركة-تكيفية--adaptive-motion-blur-sample-count-180-shutter)
 - [`ENG-X02` عمال رندر متداخلون وبوابة استمرار](#eng-x02--عمال-رندر-متداخلون-وبوابة-استمرار--interleaved-render-workers-and-a-continuity-gate)
@@ -30131,7 +30133,7 @@
 - `ENG-96` فحص قدرات الجهاز / Machine capability check and routes A/B/C (ready)
 - `ENG-97` kmotion: قائمة عربية لكل الأدوات / kmotion: one Arabic menu for 48 commands (ready)
 - `ENG-99` تشغيل كود الرسم من أي ذكاء اصطناعي / Run any AI drawing code in painter order (ready)
-- `ENG-P01` مخطط المشهد المصغّر CineGraph: JSON إلى MP4 بأنبوب مباشر / CineGraph mini scene graph: JSON → Pillow frames → ffmpeg rawvideo pipe (documented)
+- `ENG-G01` تصدير لوتي يعمل في كل مشغل / Lottie export that plays everywhere (documented)
 
 ### `ENG-99` — تشغيل كود الرسم من أي ذكاء اصطناعي / Run any AI drawing code in painter order
 
@@ -30200,6 +30202,139 @@
 
 - `ENG-97` kmotion: قائمة عربية لكل الأدوات / kmotion: one Arabic menu for 48 commands (ready)
 - `ENG-98` استيراد SVG كخطوات رسم / SVG import as paint steps (ready)
+- `ENG-G01` تصدير لوتي يعمل في كل مشغل / Lottie export that plays everywhere (documented)
+- `ENG-G02` رسم ثنائي الأبعاد بآلاف العناصر / 2D scenes with thousands of sprites (documented)
+
+### `ENG-G01` — تصدير لوتي يعمل في كل مشغل / Lottie export that plays everywhere
+
+| الحقل | القيمة |
+|---|---|
+| العائلة | `engines-render-pipeline` ([فصل العائلة](../../../.claude/skills/kosif-superpowers/references/powers/engines-render-pipeline.md)) |
+| المجموعة | الثري دي والمحاكاة والرندر (`3d`) |
+| نوع المخرج (A25، A27) | ثلاثي الأبعاد (`model3d`) |
+| الحالة في الكتالوج | 📄 `documented`: منهج موصوف يحتاج بناءً أو ربطًا قبل التشغيل |
+| سقف التحقق قبل العمل (A27) | V1 حتى تُبنى وتُشغَّل؛ لا تقدَّم جاهزة أبدًا |
+| نطاق الدليل | `none` |
+| الرخصة | MIT |
+
+**ما هي:** صمم بطبقات أشكال متجهة فقط، وتجنب المؤثرات والتعبيرات غير المدعومة، وضع علامات للمقاطع، واختبر في المشغل قبل التسليم. — Design with vector shape layers only, avoid unsupported effects and expressions, add markers for segments, and test in the player before delivery.
+
+**متى:** أيقونات متحركة أو رسوم واجهة أو ستيكرات / animated icons, UI animations or stickers
+
+**كيف:** Allowed: shape layers, trim paths, masks, transforms, solid fills/strokes, precomps; avoid: layer effects, blending modes, 3D layers, heavy expressions, raster images unless needed. Markers name segments (intro, loop, outro) for segment playback. Ship .json plus .lottie (zipped) and a poster frame; check size (< 100 KB for UI) and play it in lottie-web at 1×, 2× and in reverse.
+
+**المعاملات:** UI files < 100 KB; 30 or 60 fps
+
+**التثبيت:** لا خطوة تثبيت مسجلة
+
+**الوسوم:** lottie · bodymovin · dotlottie · vector animation · markers · لوتي · أيقونات متحركة
+
+#### 1. الاستقبال (A25)
+
+- صيغة التسليم: افتراض مكتوب ← GLB للمجسم أو MP4 للرندر
+- العتاد وزمن الرندر: افتراض مكتوب ← CPU بلا GPU، بمعاينة منخفضة أولًا
+- لا تُفترض أبدًا: مادة الإنتاج نفسها، والإذن بخطوة مدفوعة أو منشورة أو لا رجعة فيها، والهوية والحقوق.
+
+#### 2. الجاهزية والشارة (A28)
+
+- `npm:lottie` ← npm ls lottie أو وجود node_modules/lottie
+- الوضع 1: شارة «هنا الآن» بعد الفحص، لا 📄 الكتالوج تلقائيًا · الوضع 2: `كتالوج: 📄 · هنا: غير مفحوص` · الوضع 3: بلا شارة ولا معرّف.
+
+#### 3. موضعها في الخطة (A26)
+
+- عقدة منمّطة: المدخل `spec` ← المخرج `model3d`، والمنفّذ `method:ENG-G01` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `blender-bridge` · `blender-cat-fur-upgrade` · `blender-cinematic-bridge` · `blender-cycles-render` · `blender-rescue-scene` · `character-fullbody`.
+- مراحل النوع: المقياس والوحدات ← المجسم ← الخامات والإضاءة ← معاينة منخفضة ← رندر ← فتح في عارض مستقل.
+- إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
+
+#### 4. بوابة التحقق (A27)
+
+- إلزامي: المقياس والوحدات صحيحة ← قياس الأبعاد
+- إلزامي: الملف يُفتح في عارض مستقل ← عارض glTF
+- جودة: الإضاءة والكاميرا تخدم القراءة ← لقطات ثابتة
+- جودة: زمن الرندر ضمن المتاح، بمعاينة قبله ← توقيت إطار واحد × عدد الإطارات
+- أمر الحكم في الوضع 1: `think.py qa model3d --answers qa.json` (PASS / FAIL / INCOMPLETE).
+
+#### 5. التعافي (A29)
+
+- `missing_dependency` (اعتمادية مفقودة، ميزانية 2): سمِّ الاعتمادية بالضبط (حزمة، برنامج، خط، نموذج) ← ثبّت محليًا في بيئة العمل إن كان مجانيًا ومسموحًا (pip --user أو venv أو npm محلي) · البديل: مسار المكتبة القياسية أو أداة أخرى من نفس المجموعة · تصعيد: تثبيت نظامي أو مدفوع أو يحتاج مفتاحًا: توقف واسأل
+- `wrong_input_kind` (نوع مدخل خاطئ، ميزانية 2): افحص المدخل الفعلي (file، ffprobe، أول بايتات، ترميز النص) ← أضف محوّلًا صريحًا بين العقدتين (مثلًا ffmpeg لتحويل الصيغة) واحفظ الأصل كما هو · البديل: اطلب المدخل بالصيغة الصحيحة مع أمر تحويل جاهز · تصعيد: إن كان التحويل يفقد جودة أو بيانات: اسأل قبل التحويل
+- `quality_below_threshold` (جودة دون العتبة، ميزانية 3): أي معيار فشل وبكم (المقيس مقابل العتبة) ← عالج السبب الأكبر وحده ثم أعد القياس · البديل: المنهج البديل المكتوب للمرحلة في الخطة · تصعيد: معيار إلزامي لا يتحقق بعد البديل: توقف وأبلغ بالأرقام
+- `tool_error` (خطأ أداة، ميزانية 3): اقرأ آخر سطر في الخطأ ثم أول سطر من كودك فيه ← أصلح السبب المثبت وحده، ثم شغّل الاختبار المتعلق · البديل: أداة أخرى أو مسار يدوي للمرحلة نفسها · تصعيد: خطأ في أداة خارجية لا تملكها: بلّغ بإعادة الإنتاج ولا تخفه
+
+#### 6. الأدلة
+
+- لا دليل مسجل: لا تُقدَّم أكثر من منهج.
+
+#### 7. قدرات قريبة في العائلة
+
+- `ENG-98` استيراد SVG كخطوات رسم / SVG import as paint steps (ready)
+- `ENG-99` تشغيل كود الرسم من أي ذكاء اصطناعي / Run any AI drawing code in painter order (ready)
+- `ENG-G02` رسم ثنائي الأبعاد بآلاف العناصر / 2D scenes with thousands of sprites (documented)
+- `ENG-P01` مخطط المشهد المصغّر CineGraph: JSON إلى MP4 بأنبوب مباشر / CineGraph mini scene graph: JSON → Pillow frames → ffmpeg rawvideo pipe (documented)
+
+### `ENG-G02` — رسم ثنائي الأبعاد بآلاف العناصر / 2D scenes with thousands of sprites
+
+| الحقل | القيمة |
+|---|---|
+| العائلة | `engines-render-pipeline` ([فصل العائلة](../../../.claude/skills/kosif-superpowers/references/powers/engines-render-pipeline.md)) |
+| المجموعة | الثري دي والمحاكاة والرندر (`3d`) |
+| نوع المخرج (A25، A27) | ثلاثي الأبعاد (`model3d`) |
+| الحالة في الكتالوج | 📄 `documented`: منهج موصوف يحتاج بناءً أو ربطًا قبل التشغيل |
+| سقف التحقق قبل العمل (A27) | V1 حتى تُبنى وتُشغَّل؛ لا تقدَّم جاهزة أبدًا |
+| نطاق الدليل | `none` |
+| الرخصة | MIT |
+
+**ما هي:** اجمع الصور في أطلس واحد، وارسم العناصر الكثيرة في حاوية جسيمات، وحرّك بفرق الزمن، فتبقى آلاف العناصر سلسة. — Pack images into one atlas, draw many elements in a particle container and move them by time delta, so thousands stay smooth.
+
+**متى:** خلفيات جسيمات أو حشود أو مطر أو ثلج في 2D / particle backgrounds, crowds, rain or snow in 2D
+
+**كيف:** One texture atlas → one draw call; ParticleContainer for >1,000 sprites with only position/scale/rotation/alpha changing; ticker deltaTime for motion; pool objects instead of creating per frame; cap total sprites and measure frame time before adding effects.
+
+**التثبيت:** لا خطوة تثبيت مسجلة
+
+**الوسوم:** pixijs · sprites · atlas · batching · particles · بكسي · جسيمات · أطلس
+
+#### 1. الاستقبال (A25)
+
+- صيغة التسليم: افتراض مكتوب ← GLB للمجسم أو MP4 للرندر
+- العتاد وزمن الرندر: افتراض مكتوب ← CPU بلا GPU، بمعاينة منخفضة أولًا
+- لا تُفترض أبدًا: مادة الإنتاج نفسها، والإذن بخطوة مدفوعة أو منشورة أو لا رجعة فيها، والهوية والحقوق.
+
+#### 2. الجاهزية والشارة (A28)
+
+- لا متطلبات مسجلة؛ افحص المسار والأداة بـ `hub.py doctor` قبل الشارة.
+- الوضع 1: شارة «هنا الآن» بعد الفحص، لا 📄 الكتالوج تلقائيًا · الوضع 2: `كتالوج: 📄 · هنا: غير مفحوص` · الوضع 3: بلا شارة ولا معرّف.
+
+#### 3. موضعها في الخطة (A26)
+
+- عقدة منمّطة: المدخل `spec` ← المخرج `model3d`، والمنفّذ `method:ENG-G02` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `blender-bridge` · `blender-cat-fur-upgrade` · `blender-cinematic-bridge` · `blender-cycles-render` · `blender-rescue-scene` · `character-fullbody`.
+- مراحل النوع: المقياس والوحدات ← المجسم ← الخامات والإضاءة ← معاينة منخفضة ← رندر ← فتح في عارض مستقل.
+- إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
+
+#### 4. بوابة التحقق (A27)
+
+- إلزامي: المقياس والوحدات صحيحة ← قياس الأبعاد
+- إلزامي: الملف يُفتح في عارض مستقل ← عارض glTF
+- جودة: الإضاءة والكاميرا تخدم القراءة ← لقطات ثابتة
+- جودة: زمن الرندر ضمن المتاح، بمعاينة قبله ← توقيت إطار واحد × عدد الإطارات
+- أمر الحكم في الوضع 1: `think.py qa model3d --answers qa.json` (PASS / FAIL / INCOMPLETE).
+
+#### 5. التعافي (A29)
+
+- `wrong_input_kind` (نوع مدخل خاطئ، ميزانية 2): افحص المدخل الفعلي (file، ffprobe، أول بايتات، ترميز النص) ← أضف محوّلًا صريحًا بين العقدتين (مثلًا ffmpeg لتحويل الصيغة) واحفظ الأصل كما هو · البديل: اطلب المدخل بالصيغة الصحيحة مع أمر تحويل جاهز · تصعيد: إن كان التحويل يفقد جودة أو بيانات: اسأل قبل التحويل
+- `quality_below_threshold` (جودة دون العتبة، ميزانية 3): أي معيار فشل وبكم (المقيس مقابل العتبة) ← عالج السبب الأكبر وحده ثم أعد القياس · البديل: المنهج البديل المكتوب للمرحلة في الخطة · تصعيد: معيار إلزامي لا يتحقق بعد البديل: توقف وأبلغ بالأرقام
+- `tool_error` (خطأ أداة، ميزانية 3): اقرأ آخر سطر في الخطأ ثم أول سطر من كودك فيه ← أصلح السبب المثبت وحده، ثم شغّل الاختبار المتعلق · البديل: أداة أخرى أو مسار يدوي للمرحلة نفسها · تصعيد: خطأ في أداة خارجية لا تملكها: بلّغ بإعادة الإنتاج ولا تخفه
+
+#### 6. الأدلة
+
+- لا دليل مسجل: لا تُقدَّم أكثر من منهج.
+
+#### 7. قدرات قريبة في العائلة
+
+- `ENG-99` تشغيل كود الرسم من أي ذكاء اصطناعي / Run any AI drawing code in painter order (ready)
+- `ENG-G01` تصدير لوتي يعمل في كل مشغل / Lottie export that plays everywhere (documented)
 - `ENG-P01` مخطط المشهد المصغّر CineGraph: JSON إلى MP4 بأنبوب مباشر / CineGraph mini scene graph: JSON → Pillow frames → ffmpeg rawvideo pipe (documented)
 - `ENG-X01` ضبابية حركة تكيفية / Adaptive motion-blur sample count (180° shutter) (documented)
 
@@ -30270,8 +30405,8 @@
 
 #### 7. قدرات قريبة في العائلة
 
-- `ENG-98` استيراد SVG كخطوات رسم / SVG import as paint steps (ready)
-- `ENG-99` تشغيل كود الرسم من أي ذكاء اصطناعي / Run any AI drawing code in painter order (ready)
+- `ENG-G01` تصدير لوتي يعمل في كل مشغل / Lottie export that plays everywhere (documented)
+- `ENG-G02` رسم ثنائي الأبعاد بآلاف العناصر / 2D scenes with thousands of sprites (documented)
 - `ENG-X01` ضبابية حركة تكيفية / Adaptive motion-blur sample count (180° shutter) (documented)
 - `ENG-X02` عمال رندر متداخلون وبوابة استمرار / Interleaved render workers and a continuity gate (documented)
 
@@ -30337,7 +30472,7 @@
 
 #### 7. قدرات قريبة في العائلة
 
-- `ENG-99` تشغيل كود الرسم من أي ذكاء اصطناعي / Run any AI drawing code in painter order (ready)
+- `ENG-G02` رسم ثنائي الأبعاد بآلاف العناصر / 2D scenes with thousands of sprites (documented)
 - `ENG-P01` مخطط المشهد المصغّر CineGraph: JSON إلى MP4 بأنبوب مباشر / CineGraph mini scene graph: JSON → Pillow frames → ffmpeg rawvideo pipe (documented)
 - `ENG-X02` عمال رندر متداخلون وبوابة استمرار / Interleaved render workers and a continuity gate (documented)
 - `ENG-X03` أخطاء رندر دُفع ثمنها / Render bugs already paid for (documented)

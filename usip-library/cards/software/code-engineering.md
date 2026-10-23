@@ -1,4 +1,4 @@
-# `code-engineering` — البرمجة وبناء التطبيقات (24 بطاقة)
+# `code-engineering` — البرمجة وبناء التطبيقات (26 بطاقة)
 
 > مكتبة بروتوكول USIP v5.5 الكاملة، مولّدة بـ `smart_capabilities.py cards` من `data/powers/code-engineering.json` وقواعد الملاحق A25–A29؛ لا تُحرَّر يدويًا. [الفهرس الرئيسي](../../README.md) · [فصل المجموعة](../../../.claude/skills/kosif-superpowers/references/library/software.md) · [النواة](../../../.claude/skills/kosif-superpowers/PROTOCOL.md)
 
@@ -28,6 +28,8 @@
 - [`CODE-22` نظافة الإيداع وكلمات الحالة](#code-22--نظافة-الإيداع-وكلمات-الحالة--commit-hygiene--status-words)
 - [`CODE-23` Hypothesis: اختبارات قائمة على الخصائص تولّد مدخلات فاشلة](#code-23--hypothesis-اختبارات-قائمة-على-الخصائص-تولّد-مدخلات-فاشلة--hypothesis-property-based-tests-that-generate-and-shrink-failing-inputs)
 - [`CODE-24` Pandera: تعريف عقود بيانات لإطارات pandas وPolars وفرضها](#code-24--pandera-تعريف-عقود-بيانات-لإطارات-pandas-وpolars-وفرضها--pandera-declare-and-enforce-schemas-on-pandaspolars-dataframes-data-contracts)
+- [`CODE-25` خريطة مستودع مرتبة بالأهمية](#code-25--خريطة-مستودع-مرتبة-بالأهمية--ranked-repository-map)
+- [`CODE-26` تعديلات بكتل بحث واستبدال](#code-26--تعديلات-بكتل-بحث-واستبدال--searchreplace-edit-blocks)
 
 ## البطاقات / cards
 
@@ -70,7 +72,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `spec` ← المخرج `code`، والمنفّذ `method:CODE-01` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `architecture-sizer` · `capability-graph` · `kosif-remote-commander` · `motion-stack` · `package-skill` · `repository-capability-packer`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `architecture-sizer` · `capability-graph` · `kosif-remote-commander` · `motion-stack` · `package-skill` · `repo-map`.
 - مراحل النوع: قراءة الكود والاختبارات ← إعادة إنتاج أو اختبار جديد ← أصغر تغيير ← الاختبارات ← مراجعة الفرق ← فرع وPR.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -141,7 +143,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `spec` ← المخرج `code`، والمنفّذ `method:CODE-02` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `architecture-sizer` · `capability-graph` · `kosif-remote-commander` · `motion-stack` · `package-skill` · `repository-capability-packer`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `architecture-sizer` · `capability-graph` · `kosif-remote-commander` · `motion-stack` · `package-skill` · `repo-map`.
 - مراحل النوع: قراءة الكود والاختبارات ← إعادة إنتاج أو اختبار جديد ← أصغر تغيير ← الاختبارات ← مراجعة الفرق ← فرع وPR.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -212,7 +214,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `spec` ← المخرج `code`، والمنفّذ `method:CODE-03` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `architecture-sizer` · `capability-graph` · `kosif-remote-commander` · `motion-stack` · `package-skill` · `repository-capability-packer`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `architecture-sizer` · `capability-graph` · `kosif-remote-commander` · `motion-stack` · `package-skill` · `repo-map`.
 - مراحل النوع: قراءة الكود والاختبارات ← إعادة إنتاج أو اختبار جديد ← أصغر تغيير ← الاختبارات ← مراجعة الفرق ← فرع وPR.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -282,7 +284,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `spec` ← المخرج `code`، والمنفّذ `method:CODE-04` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `architecture-sizer` · `capability-graph` · `kosif-remote-commander` · `motion-stack` · `package-skill` · `repository-capability-packer`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `architecture-sizer` · `capability-graph` · `kosif-remote-commander` · `motion-stack` · `package-skill` · `repo-map`.
 - مراحل النوع: قراءة الكود والاختبارات ← إعادة إنتاج أو اختبار جديد ← أصغر تغيير ← الاختبارات ← مراجعة الفرق ← فرع وPR.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -352,7 +354,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `spec` ← المخرج `code`، والمنفّذ `method:CODE-05` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `architecture-sizer` · `capability-graph` · `kosif-remote-commander` · `motion-stack` · `package-skill` · `repository-capability-packer`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `architecture-sizer` · `capability-graph` · `kosif-remote-commander` · `motion-stack` · `package-skill` · `repo-map`.
 - مراحل النوع: قراءة الكود والاختبارات ← إعادة إنتاج أو اختبار جديد ← أصغر تغيير ← الاختبارات ← مراجعة الفرق ← فرع وPR.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -421,7 +423,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `spec` ← المخرج `code`، والمنفّذ `method:CODE-06` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `architecture-sizer` · `capability-graph` · `kosif-remote-commander` · `motion-stack` · `package-skill` · `repository-capability-packer`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `architecture-sizer` · `capability-graph` · `kosif-remote-commander` · `motion-stack` · `package-skill` · `repo-map`.
 - مراحل النوع: قراءة الكود والاختبارات ← إعادة إنتاج أو اختبار جديد ← أصغر تغيير ← الاختبارات ← مراجعة الفرق ← فرع وPR.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -490,7 +492,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `spec` ← المخرج `code`، والمنفّذ `method:CODE-07` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `architecture-sizer` · `capability-graph` · `kosif-remote-commander` · `motion-stack` · `package-skill` · `repository-capability-packer`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `architecture-sizer` · `capability-graph` · `kosif-remote-commander` · `motion-stack` · `package-skill` · `repo-map`.
 - مراحل النوع: قراءة الكود والاختبارات ← إعادة إنتاج أو اختبار جديد ← أصغر تغيير ← الاختبارات ← مراجعة الفرق ← فرع وPR.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -561,7 +563,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `spec` ← المخرج `code`، والمنفّذ `method:CODE-08` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `architecture-sizer` · `capability-graph` · `kosif-remote-commander` · `motion-stack` · `package-skill` · `repository-capability-packer`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `architecture-sizer` · `capability-graph` · `kosif-remote-commander` · `motion-stack` · `package-skill` · `repo-map`.
 - مراحل النوع: قراءة الكود والاختبارات ← إعادة إنتاج أو اختبار جديد ← أصغر تغيير ← الاختبارات ← مراجعة الفرق ← فرع وPR.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -635,7 +637,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `spec` ← المخرج `code`، والمنفّذ `method:CODE-09` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `architecture-sizer` · `capability-graph` · `kosif-remote-commander` · `motion-stack` · `package-skill` · `repository-capability-packer`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `architecture-sizer` · `capability-graph` · `kosif-remote-commander` · `motion-stack` · `package-skill` · `repo-map`.
 - مراحل النوع: قراءة الكود والاختبارات ← إعادة إنتاج أو اختبار جديد ← أصغر تغيير ← الاختبارات ← مراجعة الفرق ← فرع وPR.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -708,7 +710,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `spec` ← المخرج `code`، والمنفّذ `method:CODE-10` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `architecture-sizer` · `capability-graph` · `kosif-remote-commander` · `motion-stack` · `package-skill` · `repository-capability-packer`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `architecture-sizer` · `capability-graph` · `kosif-remote-commander` · `motion-stack` · `package-skill` · `repo-map`.
 - مراحل النوع: قراءة الكود والاختبارات ← إعادة إنتاج أو اختبار جديد ← أصغر تغيير ← الاختبارات ← مراجعة الفرق ← فرع وPR.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -777,7 +779,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `spec` ← المخرج `code`، والمنفّذ `method:CODE-11` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `architecture-sizer` · `capability-graph` · `kosif-remote-commander` · `motion-stack` · `package-skill` · `repository-capability-packer`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `architecture-sizer` · `capability-graph` · `kosif-remote-commander` · `motion-stack` · `package-skill` · `repo-map`.
 - مراحل النوع: قراءة الكود والاختبارات ← إعادة إنتاج أو اختبار جديد ← أصغر تغيير ← الاختبارات ← مراجعة الفرق ← فرع وPR.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -847,7 +849,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `spec` ← المخرج `code`، والمنفّذ `method:CODE-12` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `architecture-sizer` · `capability-graph` · `kosif-remote-commander` · `motion-stack` · `package-skill` · `repository-capability-packer`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `architecture-sizer` · `capability-graph` · `kosif-remote-commander` · `motion-stack` · `package-skill` · `repo-map`.
 - مراحل النوع: قراءة الكود والاختبارات ← إعادة إنتاج أو اختبار جديد ← أصغر تغيير ← الاختبارات ← مراجعة الفرق ← فرع وPR.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -916,7 +918,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `spec` ← المخرج `code`، والمنفّذ `method:CODE-13` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `architecture-sizer` · `capability-graph` · `kosif-remote-commander` · `motion-stack` · `package-skill` · `repository-capability-packer`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `architecture-sizer` · `capability-graph` · `kosif-remote-commander` · `motion-stack` · `package-skill` · `repo-map`.
 - مراحل النوع: قراءة الكود والاختبارات ← إعادة إنتاج أو اختبار جديد ← أصغر تغيير ← الاختبارات ← مراجعة الفرق ← فرع وPR.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -985,7 +987,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `spec` ← المخرج `code`، والمنفّذ `method:CODE-14` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `architecture-sizer` · `capability-graph` · `kosif-remote-commander` · `motion-stack` · `package-skill` · `repository-capability-packer`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `architecture-sizer` · `capability-graph` · `kosif-remote-commander` · `motion-stack` · `package-skill` · `repo-map`.
 - مراحل النوع: قراءة الكود والاختبارات ← إعادة إنتاج أو اختبار جديد ← أصغر تغيير ← الاختبارات ← مراجعة الفرق ← فرع وPR.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -1054,7 +1056,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `spec` ← المخرج `code`، والمنفّذ `method:CODE-15` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `architecture-sizer` · `capability-graph` · `kosif-remote-commander` · `motion-stack` · `package-skill` · `repository-capability-packer`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `architecture-sizer` · `capability-graph` · `kosif-remote-commander` · `motion-stack` · `package-skill` · `repo-map`.
 - مراحل النوع: قراءة الكود والاختبارات ← إعادة إنتاج أو اختبار جديد ← أصغر تغيير ← الاختبارات ← مراجعة الفرق ← فرع وPR.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -1125,7 +1127,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `spec` ← المخرج `code`، والمنفّذ `method:CODE-16` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `architecture-sizer` · `capability-graph` · `kosif-remote-commander` · `motion-stack` · `package-skill` · `repository-capability-packer`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `architecture-sizer` · `capability-graph` · `kosif-remote-commander` · `motion-stack` · `package-skill` · `repo-map`.
 - مراحل النوع: قراءة الكود والاختبارات ← إعادة إنتاج أو اختبار جديد ← أصغر تغيير ← الاختبارات ← مراجعة الفرق ← فرع وPR.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -1196,7 +1198,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `spec` ← المخرج `code`، والمنفّذ `method:CODE-17` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `architecture-sizer` · `capability-graph` · `kosif-remote-commander` · `motion-stack` · `package-skill` · `repository-capability-packer`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `architecture-sizer` · `capability-graph` · `kosif-remote-commander` · `motion-stack` · `package-skill` · `repo-map`.
 - مراحل النوع: قراءة الكود والاختبارات ← إعادة إنتاج أو اختبار جديد ← أصغر تغيير ← الاختبارات ← مراجعة الفرق ← فرع وPR.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -1267,7 +1269,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `spec` ← المخرج `code`، والمنفّذ `method:CODE-18` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `architecture-sizer` · `capability-graph` · `kosif-remote-commander` · `motion-stack` · `package-skill` · `repository-capability-packer`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `architecture-sizer` · `capability-graph` · `kosif-remote-commander` · `motion-stack` · `package-skill` · `repo-map`.
 - مراحل النوع: قراءة الكود والاختبارات ← إعادة إنتاج أو اختبار جديد ← أصغر تغيير ← الاختبارات ← مراجعة الفرق ← فرع وPR.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -1338,7 +1340,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `spec` ← المخرج `code`، والمنفّذ `method:CODE-19` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `architecture-sizer` · `capability-graph` · `kosif-remote-commander` · `motion-stack` · `package-skill` · `repository-capability-packer`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `architecture-sizer` · `capability-graph` · `kosif-remote-commander` · `motion-stack` · `package-skill` · `repo-map`.
 - مراحل النوع: قراءة الكود والاختبارات ← إعادة إنتاج أو اختبار جديد ← أصغر تغيير ← الاختبارات ← مراجعة الفرق ← فرع وPR.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -1409,7 +1411,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `spec` ← المخرج `code`، والمنفّذ `method:CODE-20` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `architecture-sizer` · `capability-graph` · `kosif-remote-commander` · `motion-stack` · `package-skill` · `repository-capability-packer`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `architecture-sizer` · `capability-graph` · `kosif-remote-commander` · `motion-stack` · `package-skill` · `repo-map`.
 - مراحل النوع: قراءة الكود والاختبارات ← إعادة إنتاج أو اختبار جديد ← أصغر تغيير ← الاختبارات ← مراجعة الفرق ← فرع وPR.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -1478,7 +1480,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `spec` ← المخرج `code`، والمنفّذ `method:CODE-21` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `architecture-sizer` · `capability-graph` · `kosif-remote-commander` · `motion-stack` · `package-skill` · `repository-capability-packer`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `architecture-sizer` · `capability-graph` · `kosif-remote-commander` · `motion-stack` · `package-skill` · `repo-map`.
 - مراحل النوع: قراءة الكود والاختبارات ← إعادة إنتاج أو اختبار جديد ← أصغر تغيير ← الاختبارات ← مراجعة الفرق ← فرع وPR.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -1549,7 +1551,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `spec` ← المخرج `code`، والمنفّذ `method:CODE-22` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `architecture-sizer` · `capability-graph` · `kosif-remote-commander` · `motion-stack` · `package-skill` · `repository-capability-packer`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `architecture-sizer` · `capability-graph` · `kosif-remote-commander` · `motion-stack` · `package-skill` · `repo-map`.
 - مراحل النوع: قراءة الكود والاختبارات ← إعادة إنتاج أو اختبار جديد ← أصغر تغيير ← الاختبارات ← مراجعة الفرق ← فرع وPR.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -1619,7 +1621,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `spec` ← المخرج `code`، والمنفّذ `method:CODE-23` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `architecture-sizer` · `capability-graph` · `kosif-remote-commander` · `motion-stack` · `package-skill` · `repository-capability-packer`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `architecture-sizer` · `capability-graph` · `kosif-remote-commander` · `motion-stack` · `package-skill` · `repo-map`.
 - مراحل النوع: قراءة الكود والاختبارات ← إعادة إنتاج أو اختبار جديد ← أصغر تغيير ← الاختبارات ← مراجعة الفرق ← فرع وPR.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -1651,6 +1653,7 @@
 - `CODE-21` ذاكرة مؤقتة ببصمة المحتوى / Content-hash cache (documented)
 - `CODE-22` نظافة الإيداع وكلمات الحالة / Commit hygiene & status words (documented)
 - `CODE-24` Pandera: تعريف عقود بيانات لإطارات pandas وPolars وفرضها / Pandera: Declare and enforce schemas on pandas/Polars dataframes (data contracts) (proven)
+- `CODE-25` خريطة مستودع مرتبة بالأهمية / Ranked repository map (ready)
 
 ### `CODE-24` — Pandera: تعريف عقود بيانات لإطارات pandas وPolars وفرضها / Pandera: Declare and enforce schemas on pandas/Polars dataframes (data contracts)
 
@@ -1692,7 +1695,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `spec` ← المخرج `code`، والمنفّذ `method:CODE-24` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `architecture-sizer` · `capability-graph` · `kosif-remote-commander` · `motion-stack` · `package-skill` · `repository-capability-packer`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `architecture-sizer` · `capability-graph` · `kosif-remote-commander` · `motion-stack` · `package-skill` · `repo-map`.
 - مراحل النوع: قراءة الكود والاختبارات ← إعادة إنتاج أو اختبار جديد ← أصغر تغيير ← الاختبارات ← مراجعة الفرق ← فرع وPR.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -1723,4 +1726,143 @@
 
 - `CODE-22` نظافة الإيداع وكلمات الحالة / Commit hygiene & status words (documented)
 - `CODE-23` Hypothesis: اختبارات قائمة على الخصائص تولّد مدخلات فاشلة / Hypothesis: Property-based tests that generate and shrink failing inputs (proven)
+- `CODE-25` خريطة مستودع مرتبة بالأهمية / Ranked repository map (ready)
+- `CODE-26` تعديلات بكتل بحث واستبدال / Search/replace edit blocks (documented)
+
+### `CODE-25` — خريطة مستودع مرتبة بالأهمية / Ranked repository map
+
+| الحقل | القيمة |
+|---|---|
+| العائلة | `code-engineering` ([فصل العائلة](../../../.claude/skills/kosif-superpowers/references/powers/code-engineering.md)) |
+| المجموعة | البرمجة وبناء التطبيقات (`software`) |
+| نوع المخرج (A25، A27) | كود وتطبيقات ومواقع (`code`) |
+| الحالة في الكتالوج | 🟢 `ready`: جاهزة حسب الكتالوج بلا إعداد |
+| سقف التحقق قبل العمل (A27) | V2 بعد تشغيلها، وV3 بعد قياس معيار |
+| نطاق الدليل | `repo` |
+| الرخصة | Apache-2.0 |
+
+**ما هي:** أهم الملفات والتعريفات في مستودع ضمن ميزانية صغيرة، مرتبة بمن يشير إليها أكثر. — The most important files and definitions of a repository within a small budget, ranked by how much the rest of the code refers to them.
+
+**متى:** قبل تعديل مستودع غريب أو تكليف وكيل بكود / before editing an unfamiliar repo or briefing a coding agent
+
+**كيف:** `python3 scripts/repo_map.py map <dir> --budget 6000 [--focus <file-or-word> …] [--json]` parses Python with ast and JS/TS, Go and Rust by line patterns, builds a reference graph (who mentions whose definitions, damped for generic names), ranks files with PageRank (pulled toward --focus), and prints each top file with its definition lines. `python3 scripts/repo_map.py defs <dir> <name>` shows where a name is defined and who mentions it. Read-only: it never imports or runs the target, so it is safe on untrusted checkouts. Paste the map into a code brief (PROMPT-40, kind code).
+
+**التثبيت:** لا خطوة تثبيت مسجلة
+
+**الوسوم:** repo map · aider · pagerank · code navigation · symbols · خريطة المستودع · فهم الكود · تعريفات
+
+#### 1. الاستقبال (A25)
+
+- اللغة والإطار: افتراض مكتوب ← لغة المستودع الموجود، وإلا Python أو HTML/JS بلا اعتماديات
+- أين يعمل: افتراض مكتوب ← المتصفح أو سطر الأوامر حسب المخرج
+- مستودع أو ملفات موجودة: سؤال بإجابة مقترحة ← مشروع جديد مستقل
+- متى يكون ناجحًا: افتراض مكتوب ← الاختبارات الموجودة تمر + اختبار لكل سلوك جديد
+- لا تُفترض أبدًا: مادة الإنتاج نفسها، والإذن بخطوة مدفوعة أو منشورة أو لا رجعة فيها، والهوية والحقوق.
+
+#### 2. الجاهزية والشارة (A28)
+
+- `python3` ← افحص وجوده بأمر واحد قبل كتابة الشارة
+- الوضع 1: شارة «هنا الآن» بعد الفحص، لا 🟢 الكتالوج تلقائيًا · الوضع 2: `كتالوج: 🟢 · هنا: غير مفحوص` · الوضع 3: بلا شارة ولا معرّف.
+
+#### 3. موضعها في الخطة (A26)
+
+- عقدة منمّطة: المدخل `spec` ← المخرج `code`، والمنفّذ `method:CODE-25` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `architecture-sizer` · `capability-graph` · `kosif-remote-commander` · `motion-stack` · `package-skill` · `repo-map`.
+- مراحل النوع: قراءة الكود والاختبارات ← إعادة إنتاج أو اختبار جديد ← أصغر تغيير ← الاختبارات ← مراجعة الفرق ← فرع وPR.
+- إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
+
+#### 4. بوابة التحقق (A27)
+
+- إلزامي: الاختبارات الموجودة تمر قبل التعديل وبعده ← أمر الاختبار
+- إلزامي: اختبار لكل سلوك جديد أو خطأ مُصلح ← الاختبار الجديد يفشل قبل الإصلاح
+- إلزامي: لا أسرار ولا مسارات جلسة في الشيفرة ← بحث أنماط الأسرار
+- جودة: يطابق أسلوب الكود المحيط وتسمياته ← مراجعة الفرق
+- جودة: طريقة تشغيل مكتوبة ومجرَّبة ← تشغيل الأمر المكتوب
+- جودة: الفرق أصغر ما يحقق الطلب بلا إعادة كتابة غير مطلوبة ← git diff --stat
+- جودة: المدخل الخاطئ يعطي خطأ واضحًا لا انهيارًا صامتًا ← تشغيل بمدخل خاطئ
+- أمر الحكم في الوضع 1: `think.py qa code --answers qa.json` (PASS / FAIL / INCOMPLETE).
+
+#### 5. التعافي (A29)
+
+- `missing_dependency` (اعتمادية مفقودة، ميزانية 2): سمِّ الاعتمادية بالضبط (حزمة، برنامج، خط، نموذج) ← ثبّت محليًا في بيئة العمل إن كان مجانيًا ومسموحًا (pip --user أو venv أو npm محلي) · البديل: مسار المكتبة القياسية أو أداة أخرى من نفس المجموعة · تصعيد: تثبيت نظامي أو مدفوع أو يحتاج مفتاحًا: توقف واسأل
+- `quality_below_threshold` (جودة دون العتبة، ميزانية 3): أي معيار فشل وبكم (المقيس مقابل العتبة) ← عالج السبب الأكبر وحده ثم أعد القياس · البديل: المنهج البديل المكتوب للمرحلة في الخطة · تصعيد: معيار إلزامي لا يتحقق بعد البديل: توقف وأبلغ بالأرقام
+- `tool_error` (خطأ أداة، ميزانية 3): اقرأ آخر سطر في الخطأ ثم أول سطر من كودك فيه ← أصلح السبب المثبت وحده، ثم شغّل الاختبار المتعلق · البديل: أداة أخرى أو مسار يدوي للمرحلة نفسها · تصعيد: خطأ في أداة خارجية لا تملكها: بلّغ بإعادة الإنتاج ولا تخفه
+
+#### 6. الأدلة
+
+- `kosif-tool/.claude/skills/kosif-superpowers/scripts/repo_map.py`
+- `kosif-tool/.claude/skills/kosif-superpowers/evals/test_repo_map.py`
+
+#### 7. قدرات قريبة في العائلة
+
+- `CODE-23` Hypothesis: اختبارات قائمة على الخصائص تولّد مدخلات فاشلة / Hypothesis: Property-based tests that generate and shrink failing inputs (proven)
+- `CODE-24` Pandera: تعريف عقود بيانات لإطارات pandas وPolars وفرضها / Pandera: Declare and enforce schemas on pandas/Polars dataframes (data contracts) (proven)
+- `CODE-26` تعديلات بكتل بحث واستبدال / Search/replace edit blocks (documented)
+
+### `CODE-26` — تعديلات بكتل بحث واستبدال / Search/replace edit blocks
+
+| الحقل | القيمة |
+|---|---|
+| العائلة | `code-engineering` ([فصل العائلة](../../../.claude/skills/kosif-superpowers/references/powers/code-engineering.md)) |
+| المجموعة | البرمجة وبناء التطبيقات (`software`) |
+| نوع المخرج (A25، A27) | كود وتطبيقات ومواقع (`code`) |
+| الحالة في الكتالوج | 📄 `documented`: منهج موصوف يحتاج بناءً أو ربطًا قبل التشغيل |
+| سقف التحقق قبل العمل (A27) | V1 حتى تُبنى وتُشغَّل؛ لا تقدَّم جاهزة أبدًا |
+| نطاق الدليل | `none` |
+| الرخصة | Apache-2.0 |
+
+**ما هي:** عبّر عن كل تعديل كنص أصلي حرفي ونص بديل، واشترط أن يطابق الأصلي موضعًا واحدًا، وافشل بصوت عالٍ إن لم يوجد، ثم شغّل الفحص بعد كل تعديل. — Express each edit as an exact original block and its replacement, require the original to match exactly once, fail loudly when it does not, and run checks after every edit.
+
+**متى:** تعديل كود بنموذج أو وكيل / editing code through a model or agent
+
+**كيف:** Block: file path, SEARCH (copied verbatim, enough lines to be unique), REPLACE. Reject when SEARCH matches 0 or >1 times and show the nearest lines instead of guessing. Never rewrite a whole file for a small change. After applying: lint/tests; on failure feed the exact error back once (PROMPT-36). Commit each logical change with a message that says why.
+
+**التثبيت:** لا خطوة تثبيت مسجلة
+
+**الوسوم:** aider · edit format · search replace · diff · code editing · تعديل الكود · بحث واستبدال
+
+#### 1. الاستقبال (A25)
+
+- اللغة والإطار: افتراض مكتوب ← لغة المستودع الموجود، وإلا Python أو HTML/JS بلا اعتماديات
+- أين يعمل: افتراض مكتوب ← المتصفح أو سطر الأوامر حسب المخرج
+- مستودع أو ملفات موجودة: سؤال بإجابة مقترحة ← مشروع جديد مستقل
+- متى يكون ناجحًا: افتراض مكتوب ← الاختبارات الموجودة تمر + اختبار لكل سلوك جديد
+- لا تُفترض أبدًا: مادة الإنتاج نفسها، والإذن بخطوة مدفوعة أو منشورة أو لا رجعة فيها، والهوية والحقوق.
+
+#### 2. الجاهزية والشارة (A28)
+
+- لا متطلبات مسجلة؛ افحص المسار والأداة بـ `hub.py doctor` قبل الشارة.
+- الوضع 1: شارة «هنا الآن» بعد الفحص، لا 📄 الكتالوج تلقائيًا · الوضع 2: `كتالوج: 📄 · هنا: غير مفحوص` · الوضع 3: بلا شارة ولا معرّف.
+
+#### 3. موضعها في الخطة (A26)
+
+- عقدة منمّطة: المدخل `spec` ← المخرج `code`، والمنفّذ `method:CODE-26` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `architecture-sizer` · `capability-graph` · `kosif-remote-commander` · `motion-stack` · `package-skill` · `repo-map`.
+- مراحل النوع: قراءة الكود والاختبارات ← إعادة إنتاج أو اختبار جديد ← أصغر تغيير ← الاختبارات ← مراجعة الفرق ← فرع وPR.
+- إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
+
+#### 4. بوابة التحقق (A27)
+
+- إلزامي: الاختبارات الموجودة تمر قبل التعديل وبعده ← أمر الاختبار
+- إلزامي: اختبار لكل سلوك جديد أو خطأ مُصلح ← الاختبار الجديد يفشل قبل الإصلاح
+- إلزامي: لا أسرار ولا مسارات جلسة في الشيفرة ← بحث أنماط الأسرار
+- جودة: يطابق أسلوب الكود المحيط وتسمياته ← مراجعة الفرق
+- جودة: طريقة تشغيل مكتوبة ومجرَّبة ← تشغيل الأمر المكتوب
+- جودة: الفرق أصغر ما يحقق الطلب بلا إعادة كتابة غير مطلوبة ← git diff --stat
+- جودة: المدخل الخاطئ يعطي خطأ واضحًا لا انهيارًا صامتًا ← تشغيل بمدخل خاطئ
+- أمر الحكم في الوضع 1: `think.py qa code --answers qa.json` (PASS / FAIL / INCOMPLETE).
+
+#### 5. التعافي (A29)
+
+- `quality_below_threshold` (جودة دون العتبة، ميزانية 3): أي معيار فشل وبكم (المقيس مقابل العتبة) ← عالج السبب الأكبر وحده ثم أعد القياس · البديل: المنهج البديل المكتوب للمرحلة في الخطة · تصعيد: معيار إلزامي لا يتحقق بعد البديل: توقف وأبلغ بالأرقام
+- `tool_error` (خطأ أداة، ميزانية 3): اقرأ آخر سطر في الخطأ ثم أول سطر من كودك فيه ← أصلح السبب المثبت وحده، ثم شغّل الاختبار المتعلق · البديل: أداة أخرى أو مسار يدوي للمرحلة نفسها · تصعيد: خطأ في أداة خارجية لا تملكها: بلّغ بإعادة الإنتاج ولا تخفه
+
+#### 6. الأدلة
+
+- لا دليل مسجل: لا تُقدَّم أكثر من منهج.
+
+#### 7. قدرات قريبة في العائلة
+
+- `CODE-24` Pandera: تعريف عقود بيانات لإطارات pandas وPolars وفرضها / Pandera: Declare and enforce schemas on pandas/Polars dataframes (data contracts) (proven)
+- `CODE-25` خريطة مستودع مرتبة بالأهمية / Ranked repository map (ready)
 

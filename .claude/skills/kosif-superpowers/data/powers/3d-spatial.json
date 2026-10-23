@@ -1615,5 +1615,39 @@
    "أفكار"
   ],
   "when": "حين يطلب المستخدم شيئًا جديدًا من هذا النوع / when a user asks for one of these."
+ },
+ {
+  "id": "3D-G01",
+  "family": "3d-spatial",
+  "domain": "motion",
+  "name_ar": "حلقة رندر three.js حتمية",
+  "name_en": "Deterministic three.js render loop",
+  "status": "documented",
+  "what": "حرّك المشهد بالزمن لا بعدد الإطارات، واضبط الألوان والدقة مرة واحدة، وفي التصدير اجعل الزمن مدخلًا تبحث إليه لا ساعة حقيقية. — Drive the scene by time, not frame count, set colour and resolution once, and for export make time an input you seek to, not the wall clock.",
+  "when": "مشهد ثلاثي الأبعاد للويب أو لفيديو / a 3D scene for the web or for a video",
+  "how": "update(t) sets every transform from t; live: t from a clock delta; export: t = frame / fps (no requestAnimationFrame timing). renderer.setPixelRatio(min(devicePixelRatio, 2)), sRGB output colour space, ACES filmic tone mapping with exposure ≈1; damped orbit controls need update() every frame; dispose geometries, materials and textures when a shot ends. Render frames headless and verify duration and fps (tools/verify_video.py).",
+  "params": "pixel ratio ≤ 2; export t = frame/fps",
+  "install": "",
+  "requires": [
+   "python3",
+   "chromium",
+   "npm:three"
+  ],
+  "license": "MIT",
+  "proof": [],
+  "proof_scope": "none",
+  "styles": [],
+  "tags": [
+   "three.js",
+   "render loop",
+   "deterministic",
+   "tone mapping",
+   "webgl",
+   "ثري جي إس",
+   "ثلاثي الأبعاد",
+   "رندر"
+  ],
+  "section": "من أكبر مستودعات GitHub — from the top GitHub repositories (2026-10-23)",
+  "source": "https://github.com/mrdoob/three.js (MIT) — restated in our own words"
  }
 ]

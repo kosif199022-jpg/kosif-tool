@@ -24,12 +24,12 @@
 |---|---:|---|
 | `proven` | 53 | ✅ proven: a proof exists in the catalog; still check its requirements here before calling it ready |
 | `ready` | 55 | 🟢 ready: runnable without setup according to the catalog |
-| `documented` | 83 | 📄 documented: a described method; needs building or wiring before it runs |
+| `documented` | 89 | 📄 documented: a described method; needs building or wiring before it runs |
 | `seen` | 66 | 👁 seen: observed in a reference or demo, not executed here |
 | `install` | 31 | 📦 install: needs a package, binary or model first |
 | `key` | 4 | 🔑 key: needs an account, key or paid service (ask before any spend) |
 | `idea` | 8 | 💡 idea: not built |
-| **المجموع** | **300** | |
+| **المجموع** | **306** | |
 
 ## الأدوات القابلة للتشغيل / runnable tools
 
@@ -68,10 +68,10 @@
 | العائلة | القدرات | الفصل |
 |---|---:|---|
 | `brand-logo-identity` | 43 | [brand-logo-identity.md](../powers/brand-logo-identity.md) |
-| `diagrams-explainers-code` | 67 | [diagrams-explainers-code.md](../powers/diagrams-explainers-code.md) |
-| `hand-drawn-draw-on` | 63 | [hand-drawn-draw-on.md](../powers/hand-drawn-draw-on.md) |
+| `diagrams-explainers-code` | 69 | [diagrams-explainers-code.md](../powers/diagrams-explainers-code.md) |
+| `hand-drawn-draw-on` | 65 | [hand-drawn-draw-on.md](../powers/hand-drawn-draw-on.md) |
 | `pixel-retro-stylized` | 32 | [pixel-retro-stylized.md](../powers/pixel-retro-stylized.md) |
-| `shapes-morph-geometry` | 95 | [shapes-morph-geometry.md](../powers/shapes-morph-geometry.md) |
+| `shapes-morph-geometry` | 97 | [shapes-morph-geometry.md](../powers/shapes-morph-geometry.md) |
 
 ## كل القدرات / every power
 
@@ -221,6 +221,8 @@
 | `EXPL-56` | نظام بطاقات الفيديو الشارح | Explainer card system | documented | node, chromium |
 | `EXPL-57` | الوثيقة المصدر وقلم التظليل | Source document & article excerpt overlay | documented |  |
 | `EXPL-63` | لوحات ستوري بورد SVG مصغرة | SVG thumbnail storyboards | documented |  |
+| `EXPL-G01` | قواعد مشهد الشرح الرياضي | Explainer scene grammar | documented |  |
+| `EXPL-G02` | مخطط بنية سحابية بالكود ثم كشفه | Architecture diagram as code, revealed by cluster | documented |  |
 | `EXPL-U01` | قائمة الأساليب الخمسة للموشن بالكود | Five code-rendered motion-graphics styles menu | documented |  |
 | `EXPL-U02` | لقطة التحليل المجمّدة | Frozen analysis beat overlay | documented |  |
 | `DRAW-08` | كشف متعدد الأجزاء بالطول التراكمي | Cumulative-length multi-segment reveal | documented |  |
@@ -239,6 +241,8 @@
 | `DRAW-55` | الرسم بالفأرة في برنامج الرسام | Drawing by mouse in Windows Paint | documented |  |
 | `DRAW-56` | رسم فوق لقطات مولدة | Draw-over film on generated bases | documented | ffmpeg, chromium |
 | `DRAW-57` | دراسة أسلوب مرسوم بالتتبع | Rotoscope style study & style pack | documented |  |
+| `DRAW-G01` | رسم يدوي خشن ثابت البذرة | Seeded rough hand-drawn rendering | documented |  |
+| `DRAW-G02` | زخم السحب والارتداد المطاطي | Drag momentum and rubber-band edges | documented |  |
 | `DRAW-P01` | قصة الخط الواحد المستمر حتى الشعار | Continuous-line logo story (one stroke → three beats → wordmark loop) | documented | pip:numpy |
 | `DRAW-U01` | فيلم يد مرسومة حتمي بـmake_frame(t) | Deterministic hand-drawn film via make_frame(t) | documented | ffmpeg, python3 |
 | `DRAW-X01` | ريشة تكتب السطر الفعلي | Quill that writes the actual line (ink frontier) | documented |  |
@@ -268,6 +272,8 @@
 | `SHAPE-89` | وحدة 24 وشبكة أعمدة | Base-unit grid system | documented |  |
 | `SHAPE-90` | سلالم الأقطار والخطوط والفراغ | Primitive, radius & stroke scales | documented |  |
 | `SHAPE-93` | أسلوب المرح الهندسي (S07) | Playful geometric style (S07) | documented | node, chromium |
+| `SHAPE-G01` | رقم متحرك واحد يقود كل الأشكال | One animated value drives every dependent shape | documented |  |
+| `SHAPE-G02` | تحويل يطابق الأجزاء المشتركة | Morph that matches shared parts | documented |  |
 | `SHAPE-X01` | تحوّل هندسي بلا مزج | Geometric morph without a crossfade (letter → planet) | documented |  |
 | `SHAPE-X02` | لقطة متصلة من عناصر مشتركة | One continuous shot from shared elements | documented |  |
 | `BRAND-21` | الرمز وحده ثم الكلمة تنكشف بجانبه | Mark alone, then wordmark unfolds beside it | seen |  |

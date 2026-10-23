@@ -1,4 +1,4 @@
-# `planning-execution` — التفكير والتخطيط والاستراتيجية (12 بطاقة)
+# `planning-execution` — التفكير والتخطيط والاستراتيجية (14 بطاقة)
 
 > مكتبة بروتوكول USIP v5.5 الكاملة، مولّدة بـ `smart_capabilities.py cards` من `data/powers/planning-execution.json` وقواعد الملاحق A25–A29؛ لا تُحرَّر يدويًا. [الفهرس الرئيسي](../../README.md) · [فصل المجموعة](../../../.claude/skills/kosif-superpowers/references/library/thinking.md) · [النواة](../../../.claude/skills/kosif-superpowers/PROTOCOL.md)
 
@@ -16,6 +16,8 @@
 - [`PLAN-10` توزيع العمل على وكلاء متوازيين](#plan-10--توزيع-العمل-على-وكلاء-متوازيين--parallel-lanes-for-agents-and-workflows)
 - [`PLAN-11` مراجعة الخطة كل مرحلة](#plan-11--مراجعة-الخطة-كل-مرحلة--phase-boundary-plan-review)
 - [`PLAN-12` خطة تسليم بإيصال](#plan-12--خطة-تسليم-بإيصال--delivery-plan-with-a-receipt)
+- [`PLAN-13` تطوير يقوده المواصفات](#plan-13--تطوير-يقوده-المواصفات--spec-driven-development)
+- [`PLAN-14` عصف ثم خطة ثم وكيل لكل مهمة بالاختبار أولًا](#plan-14--عصف-ثم-خطة-ثم-وكيل-لكل-مهمة-بالاختبار-أولًا--brainstorm-plan-then-a-test-first-subagent-per-task)
 
 ## البطاقات / cards
 
@@ -753,6 +755,7 @@
 - `PLAN-09` سيناريوهات المستقبل والحركات المتينة / Scenario grid and robust moves (documented)
 - `PLAN-10` توزيع العمل على وكلاء متوازيين / Parallel lanes for agents and workflows (documented)
 - `PLAN-12` خطة تسليم بإيصال / Delivery plan with a receipt (documented)
+- `PLAN-13` تطوير يقوده المواصفات / Spec-driven development (documented)
 
 ### `PLAN-12` — خطة تسليم بإيصال / Delivery plan with a receipt
 
@@ -817,4 +820,136 @@
 
 - `PLAN-10` توزيع العمل على وكلاء متوازيين / Parallel lanes for agents and workflows (documented)
 - `PLAN-11` مراجعة الخطة كل مرحلة / Phase-boundary plan review (documented)
+- `PLAN-13` تطوير يقوده المواصفات / Spec-driven development (documented)
+- `PLAN-14` عصف ثم خطة ثم وكيل لكل مهمة بالاختبار أولًا / Brainstorm, plan, then a test-first subagent per task (documented)
+
+### `PLAN-13` — تطوير يقوده المواصفات / Spec-driven development
+
+| الحقل | القيمة |
+|---|---|
+| العائلة | `planning-execution` ([فصل العائلة](../../../.claude/skills/kosif-superpowers/references/powers/planning-execution.md)) |
+| المجموعة | التفكير والتخطيط والاستراتيجية (`thinking`) |
+| نوع المخرج (A25، A27) | خطة واستراتيجية وقرار (`plan`) |
+| الحالة في الكتالوج | 📄 `documented`: منهج موصوف يحتاج بناءً أو ربطًا قبل التشغيل |
+| سقف التحقق قبل العمل (A27) | V1 حتى تُبنى وتُشغَّل؛ لا تقدَّم جاهزة أبدًا |
+| نطاق الدليل | `none` |
+| الرخصة | MIT |
+
+**ما هي:** مبادئ ثابتة أولًا، ثم مواصفة تقول ماذا ولماذا دون كيف، ثم توضيح المبهم، ثم خطة تقنية، ثم مهام مرتبة بالاختبار أولًا، ثم التنفيذ، مع فحص اتساق بينها. — Fixed principles first, then a spec of what and why without how, then clarification, a technical plan, ordered test-first tasks, implementation, and a consistency check across them.
+
+**متى:** ميزة جديدة أو تطبيق من الصفر / a new feature or an app from scratch
+
+**كيف:** constitution (5-9 non-negotiables: tests first, no secrets, accessibility …) → specify (user stories, acceptance criteria; mark gaps [NEEDS CLARIFICATION]) → clarify (resolve each mark with the user or a stated assumption) → plan (stack, data model, interfaces, how each criterion will be tested) → tasks (numbered, files named, [P] = can run in parallel, test task before its code task) → implement. Before implementing, check every acceptance criterion has a task and a test, and every task traces to a criterion.
+
+**التثبيت:** لا خطوة تثبيت مسجلة
+
+**الوسوم:** spec-kit · specification · constitution · tasks · sdd · مواصفات · خطة · مهام
+
+#### 1. الاستقبال (A25)
+
+- الهدف القابل للقياس: سؤال بإجابة مقترحة ← هدف مقترح بعتبة رقمية يُعرض للتعديل
+- الأفق الزمني: افتراض مكتوب ← 90 يومًا
+- الموارد والميزانية: افتراض مكتوب ← شخص واحد بلا صرف
+- لا تُفترض أبدًا: مادة الإنتاج نفسها، والإذن بخطوة مدفوعة أو منشورة أو لا رجعة فيها، والهوية والحقوق.
+
+#### 2. الجاهزية والشارة (A28)
+
+- لا متطلبات مسجلة؛ افحص المسار والأداة بـ `hub.py doctor` قبل الشارة.
+- الوضع 1: شارة «هنا الآن» بعد الفحص، لا 📄 الكتالوج تلقائيًا · الوضع 2: `كتالوج: 📄 · هنا: غير مفحوص` · الوضع 3: بلا شارة ولا معرّف.
+
+#### 3. موضعها في الخطة (A26)
+
+- عقدة منمّطة: المدخل `brief` ← المخرج `plan`، والمنفّذ `method:PLAN-13` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `architecture-sizer` · `book-methods` · `business-workflows` · `capability-atlas` · `capability-mindmap` · `capability-runtime-router`.
+- مراحل النوع: الهدف بمؤشره ← ثلاثة خيارات مختلفة ← تقييم وحساسية ← تشريح مسبق ← بوابات مكتوبة ← خطوة أولى قابلة للتراجع.
+- إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
+
+#### 4. بوابة التحقق (A27)
+
+- إلزامي: لكل هدف مؤشر وعتبة وتاريخ ← جدول المؤشرات
+- إلزامي: ثلاثة خيارات مختلفة المنهج مع توصية ← جدول المقارنة
+- جودة: تشريح مسبق بأهم أسباب الفشل والوقاية ← think.py plan
+- جودة: بوابات go/pivot/kill مكتوبة قبل النتائج ← think.py gate
+- إلزامي: خطوة أولى صغيرة قابلة للتراجع هذا الأسبوع ← مراجعة
+- أمر الحكم في الوضع 1: `think.py qa plan --answers qa.json` (PASS / FAIL / INCOMPLETE).
+
+#### 5. التعافي (A29)
+
+- `quality_below_threshold` (جودة دون العتبة، ميزانية 3): أي معيار فشل وبكم (المقيس مقابل العتبة) ← عالج السبب الأكبر وحده ثم أعد القياس · البديل: المنهج البديل المكتوب للمرحلة في الخطة · تصعيد: معيار إلزامي لا يتحقق بعد البديل: توقف وأبلغ بالأرقام
+- `tool_error` (خطأ أداة، ميزانية 3): اقرأ آخر سطر في الخطأ ثم أول سطر من كودك فيه ← أصلح السبب المثبت وحده، ثم شغّل الاختبار المتعلق · البديل: أداة أخرى أو مسار يدوي للمرحلة نفسها · تصعيد: خطأ في أداة خارجية لا تملكها: بلّغ بإعادة الإنتاج ولا تخفه
+
+#### 6. الأدلة
+
+- لا دليل مسجل: لا تُقدَّم أكثر من منهج.
+
+#### 7. قدرات قريبة في العائلة
+
+- `PLAN-11` مراجعة الخطة كل مرحلة / Phase-boundary plan review (documented)
+- `PLAN-12` خطة تسليم بإيصال / Delivery plan with a receipt (documented)
+- `PLAN-14` عصف ثم خطة ثم وكيل لكل مهمة بالاختبار أولًا / Brainstorm, plan, then a test-first subagent per task (documented)
+
+### `PLAN-14` — عصف ثم خطة ثم وكيل لكل مهمة بالاختبار أولًا / Brainstorm, plan, then a test-first subagent per task
+
+| الحقل | القيمة |
+|---|---|
+| العائلة | `planning-execution` ([فصل العائلة](../../../.claude/skills/kosif-superpowers/references/powers/planning-execution.md)) |
+| المجموعة | التفكير والتخطيط والاستراتيجية (`thinking`) |
+| نوع المخرج (A25، A27) | خطة واستراتيجية وقرار (`plan`) |
+| الحالة في الكتالوج | 📄 `documented`: منهج موصوف يحتاج بناءً أو ربطًا قبل التشغيل |
+| سقف التحقق قبل العمل (A27) | V1 حتى تُبنى وتُشغَّل؛ لا تقدَّم جاهزة أبدًا |
+| نطاق الدليل | `none` |
+| الرخصة | MIT |
+
+**ما هي:** صمّم بالأسئلة قبل الكود، واكتب خطة مهام صغيرة بملفاتها وطريقة تحققها، وأعطِ كل مهمة لوكيل فرعي جديد، وراجع بين المهام، ولا تقل «تم» قبل التحقق. — Design by questions before code, write a plan of small tasks with files and verification, give each task to a fresh subagent, review between tasks, and never say done before verifying.
+
+**متى:** تنفيذ برمجي من عدة خطوات بوكلاء / multi-step coding done with agents
+
+**كيف:** Brainstorm: ask one question at a time until the design is agreed; write it down. Plan: tasks of 2-5 minutes each, with exact file paths, the code shape and the command that proves it. Execute: one fresh subagent per task (clean context), red → green → refactor; a reviewer checks the diff against the plan before the next task. Finish: run the full suite and show the output before claiming completion.
+
+**التثبيت:** لا خطوة تثبيت مسجلة
+
+**الوسوم:** superpowers · brainstorming · writing plans · subagent · tdd · verification · عصف ذهني · خطة · اختبار أولًا
+
+#### 1. الاستقبال (A25)
+
+- الهدف القابل للقياس: سؤال بإجابة مقترحة ← هدف مقترح بعتبة رقمية يُعرض للتعديل
+- الأفق الزمني: افتراض مكتوب ← 90 يومًا
+- الموارد والميزانية: افتراض مكتوب ← شخص واحد بلا صرف
+- لا تُفترض أبدًا: مادة الإنتاج نفسها، والإذن بخطوة مدفوعة أو منشورة أو لا رجعة فيها، والهوية والحقوق.
+
+#### 2. الجاهزية والشارة (A28)
+
+- `claude:tools` ← افحص وجوده بأمر واحد قبل كتابة الشارة
+- الوضع 1: شارة «هنا الآن» بعد الفحص، لا 📄 الكتالوج تلقائيًا · الوضع 2: `كتالوج: 📄 · هنا: غير مفحوص` · الوضع 3: بلا شارة ولا معرّف.
+
+#### 3. موضعها في الخطة (A26)
+
+- عقدة منمّطة: المدخل `brief` ← المخرج `plan`، والمنفّذ `method:PLAN-14` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `architecture-sizer` · `book-methods` · `business-workflows` · `capability-atlas` · `capability-mindmap` · `capability-runtime-router`.
+- مراحل النوع: الهدف بمؤشره ← ثلاثة خيارات مختلفة ← تقييم وحساسية ← تشريح مسبق ← بوابات مكتوبة ← خطوة أولى قابلة للتراجع.
+- إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
+
+#### 4. بوابة التحقق (A27)
+
+- إلزامي: لكل هدف مؤشر وعتبة وتاريخ ← جدول المؤشرات
+- إلزامي: ثلاثة خيارات مختلفة المنهج مع توصية ← جدول المقارنة
+- جودة: تشريح مسبق بأهم أسباب الفشل والوقاية ← think.py plan
+- جودة: بوابات go/pivot/kill مكتوبة قبل النتائج ← think.py gate
+- إلزامي: خطوة أولى صغيرة قابلة للتراجع هذا الأسبوع ← مراجعة
+- أمر الحكم في الوضع 1: `think.py qa plan --answers qa.json` (PASS / FAIL / INCOMPLETE).
+
+#### 5. التعافي (A29)
+
+- `missing_dependency` (اعتمادية مفقودة، ميزانية 2): سمِّ الاعتمادية بالضبط (حزمة، برنامج، خط، نموذج) ← ثبّت محليًا في بيئة العمل إن كان مجانيًا ومسموحًا (pip --user أو venv أو npm محلي) · البديل: مسار المكتبة القياسية أو أداة أخرى من نفس المجموعة · تصعيد: تثبيت نظامي أو مدفوع أو يحتاج مفتاحًا: توقف واسأل
+- `quality_below_threshold` (جودة دون العتبة، ميزانية 3): أي معيار فشل وبكم (المقيس مقابل العتبة) ← عالج السبب الأكبر وحده ثم أعد القياس · البديل: المنهج البديل المكتوب للمرحلة في الخطة · تصعيد: معيار إلزامي لا يتحقق بعد البديل: توقف وأبلغ بالأرقام
+- `tool_error` (خطأ أداة، ميزانية 3): اقرأ آخر سطر في الخطأ ثم أول سطر من كودك فيه ← أصلح السبب المثبت وحده، ثم شغّل الاختبار المتعلق · البديل: أداة أخرى أو مسار يدوي للمرحلة نفسها · تصعيد: خطأ في أداة خارجية لا تملكها: بلّغ بإعادة الإنتاج ولا تخفه
+
+#### 6. الأدلة
+
+- لا دليل مسجل: لا تُقدَّم أكثر من منهج.
+
+#### 7. قدرات قريبة في العائلة
+
+- `PLAN-12` خطة تسليم بإيصال / Delivery plan with a receipt (documented)
+- `PLAN-13` تطوير يقوده المواصفات / Spec-driven development (documented)
 

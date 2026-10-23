@@ -22,6 +22,7 @@ _الإدخالات مرتبة من الأقوى دليلًا؛ ابحث بال�
 - إضافات من Cinematic Director PRO v5
 - إضافات v2 — v2 additions
 - إضافات v3 — v3 additions
+- **من أكبر مستودعات GitHub — from the top GitHub repositories (2026-10-23)** — ENG-G01 … ENG-G02 (2)
 
 #### ENG-01 · عقد تركيب HyperFrames · HyperFrames composition contract · ✅ مُثبت هنا
 - **ماذا / what:** Every film is one index.html whose root div carries data-composition-id, data-width, data-height, data-duration and data-fps, with GSAP timelines registered in window.__timelines and the motion-kit shim so either engine can seek it.
@@ -2708,3 +2709,21 @@ _قدرات أُثبتت في هذه الجلسة: مطابقة الخطوط و�
 - **كيف / how:** Read `references/mimic.md`. `mm_analyze.analyze('ref.mp4','work')` → review `work/analysis.md` and `work/sheets/` → fill `shots[].replacement.path` from the user's or licensed clips (never scraped) → `mm_build.build('work', preview=True)` then full → `tools/verify_video.py`. `placeholder=True` drafts without footage. **أرقام / params:** H.264 bt709 CRF 17, same w×h, fps and frame count as the reference; preview = half size; needs numpy, Pillow(raqm), ffmpeg; OpenCV/SciPy optional
 - **الرخصة / license:** owner (mm_transitions.py LGPL-2.1-or-later)
 - **الدليل / proof:** `kosif-tool/.claude/skills/kosif-superpowers/scripts/mimic/mm_build.py` · `kosif-tool/.claude/skills/kosif-superpowers/references/mimic.md` · `kosif-tool/.claude/skills/kosif-superpowers/proofs/mimic-synthetic/README.md`
+
+## من أكبر مستودعات GitHub — from the top GitHub repositories (2026-10-23)
+
+_قدرات من أشهر مستودعات GitHub ذات الترخيص المفتوح (MIT)، مكتوبة بكلماتنا لا منسوخة، وسجل كل مستودع في [github-top-1000.md](../github-top-1000.md). 🟢 = الكود هنا في `scripts/motion_physics.py` واختباره `evals/test_motion_physics.py`. — Powers from the most-starred open-licence (MIT) GitHub repositories, restated in our own words; per-repo record in github-top-1000.md; 🟢 = code here in scripts/motion_physics.py with its test._
+
+#### ENG-G01 · تصدير لوتي يعمل في كل مشغل · Lottie export that plays everywhere · 📄 موصوف / documented only
+- **ماذا / what:** صمم بطبقات أشكال متجهة فقط، وتجنب المؤثرات والتعبيرات غير المدعومة، وضع علامات للمقاطع، واختبر في المشغل قبل التسليم. — Design with vector shape layers only, avoid unsupported effects and expressions, add markers for segments, and test in the player before delivery.
+- **متى أستخدمها / when:** أيقونات متحركة أو رسوم واجهة أو ستيكرات / animated icons, UI animations or stickers
+- **كيف / how:** Allowed: shape layers, trim paths, masks, transforms, solid fills/strokes, precomps; avoid: layer effects, blending modes, 3D layers, heavy expressions, raster images unless needed. Markers name segments (intro, loop, outro) for segment playback. Ship .json plus .lottie (zipped) and a poster frame; check size (< 100 KB for UI) and play it in lottie-web at 1×, 2× and in reverse. **أرقام / params:** UI files < 100 KB; 30 or 60 fps.
+- **الرخصة / license:** MIT
+- **المصدر / source:** https://github.com/airbnb/lottie-web (MIT) — restated in our own words
+
+#### ENG-G02 · رسم ثنائي الأبعاد بآلاف العناصر · 2D scenes with thousands of sprites · 📄 موصوف / documented only
+- **ماذا / what:** اجمع الصور في أطلس واحد، وارسم العناصر الكثيرة في حاوية جسيمات، وحرّك بفرق الزمن، فتبقى آلاف العناصر سلسة. — Pack images into one atlas, draw many elements in a particle container and move them by time delta, so thousands stay smooth.
+- **متى أستخدمها / when:** خلفيات جسيمات أو حشود أو مطر أو ثلج في 2D / particle backgrounds, crowds, rain or snow in 2D
+- **كيف / how:** One texture atlas → one draw call; ParticleContainer for >1,000 sprites with only position/scale/rotation/alpha changing; ticker deltaTime for motion; pool objects instead of creating per frame; cap total sprites and measure frame time before adding effects.
+- **الرخصة / license:** MIT
+- **المصدر / source:** https://github.com/pixijs/pixijs (MIT) — restated in our own words

@@ -24,12 +24,12 @@
 |---|---:|---|
 | `proven` | 96 | ✅ proven: a proof exists in the catalog; still check its requirements here before calling it ready |
 | `ready` | 42 | 🟢 ready: runnable without setup according to the catalog |
-| `documented` | 95 | 📄 documented: a described method; needs building or wiring before it runs |
+| `documented` | 96 | 📄 documented: a described method; needs building or wiring before it runs |
 | `seen` | 22 | 👁 seen: observed in a reference or demo, not executed here |
 | `install` | 27 | 📦 install: needs a package, binary or model first |
 | `key` | 35 | 🔑 key: needs an account, key or paid service (ask before any spend) |
 | `idea` | 2 | 💡 idea: not built |
-| **المجموع** | **319** | |
+| **المجموع** | **320** | |
 
 ## الأدوات القابلة للتشغيل / runnable tools
 
@@ -70,7 +70,7 @@
 
 | العائلة | القدرات | الفصل |
 |---|---:|---|
-| `ai-generation` | 93 | [ai-generation.md](../powers/ai-generation.md) |
+| `ai-generation` | 94 | [ai-generation.md](../powers/ai-generation.md) |
 | `atlas-media` | 27 | [atlas-media.md](../powers/atlas-media.md) |
 | `color-palette-grading` | 87 | [color-palette-grading.md](../powers/color-palette-grading.md) |
 | `media-image-audio` | 41 | [media-image-audio.md](../powers/media-image-audio.md) |
@@ -250,6 +250,7 @@
 | `GEN-85` | المراسي الأربع للثبات البصري | Four anchors of visual consistency | documented |  |
 | `GEN-87` | الترخيص أولًا وFirefly المحمي قانونيًا | Licence-first model choice & indemnified Firefly | documented | key:unspecified |
 | `GEN-88` | الإفصاح عن الوسائط المصطنعة وحدود التوليد | Synthetic-media disclosure, provenance & ethical limits | documented |  |
+| `GEN-G01` | خط إنتاج من موضوع إلى فيديو قصير | Topic-to-short pipeline with reviewable stages | documented | node, python3, chromium |
 | `GEN-X02` | توليد متصل ثم قص | One continuous generation, then cut | documented |  |
 | `AMEDIA-01` | تحويل نص لصوت واستنساخ وMؤثرات ElevenLabs | ElevenLabs TTS, cloning and sound effects | documented | key:elevenlabs, key:unspecified |
 | `AMEDIA-02` | فحص تسليم المزيج النهائي ليوتيوب 4K | Final mix delivery check for YouTube 4K | documented | ffmpeg |

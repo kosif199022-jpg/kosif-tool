@@ -23,13 +23,13 @@
 | الحالة | العدد | المعنى |
 |---|---:|---|
 | `proven` | 117 | ✅ proven: a proof exists in the catalog; still check its requirements here before calling it ready |
-| `ready` | 180 | 🟢 ready: runnable without setup according to the catalog |
-| `documented` | 269 | 📄 documented: a described method; needs building or wiring before it runs |
+| `ready` | 183 | 🟢 ready: runnable without setup according to the catalog |
+| `documented` | 271 | 📄 documented: a described method; needs building or wiring before it runs |
 | `seen` | 292 | 👁 seen: observed in a reference or demo, not executed here |
 | `install` | 314 | 📦 install: needs a package, binary or model first |
 | `key` | 23 | 🔑 key: needs an account, key or paid service (ask before any spend) |
 | `idea` | 33 | 💡 idea: not built |
-| **المجموع** | **1,228** | |
+| **المجموع** | **1,233** | |
 
 ## الأدوات القابلة للتشغيل / runnable tools
 
@@ -62,6 +62,7 @@
 | `mimic` | محرك محاكاة الفيديو المرجعي | `python3 -c "import sys; sys.path.insert(0,'scripts/mimic'); import mm_analyze; mm_analyze.analyze('./in.mp4','./work')"` | tested-here |
 | `montage-pro` | فريق مونتاج برو (صوت أو فيديو إلى مونتاج أو موشن) | `python3 scripts/montage_pro.py doctor` | tested-here |
 | `motion-engine-js` | محرك حركة SVG | `python3 scripts/motion_director.py compile ./scene.json --out ./out/film.html` | tested-here |
+| `motion-physics` | فيزياء الحركة | `python3 scripts/motion_physics.py spring --from 0 --to 1 --stiffness 170 --damping 26 --fps 30` | tested-here |
 | `motion-reference-probe` | فاحص توقيت الفيديو المرجعي | `python3 scripts/motion_reference_probe.py ./in.mp4` | tested-here |
 | `motion-toolkit` | مكتبة رياضيات الحركة | `node --input-type=module -e "import {ease, timeCode} from './resources/motion-runtime/motion_toolkit.mjs'; console.log(ease(0.5,'cubic'), timeCode(2.5,30))"` | tested-here |
 | `music-rhythm-engine` | فرضيات إيقاع الموسيقى | `python3 scripts/music_rhythm_engine.py ./out/cues.json --out ./out/rhythm.json` | tested-here |
@@ -95,10 +96,10 @@
 |---|---:|---|
 | `camera-composition-layout` | 425 | [camera-composition-layout.md](../powers/camera-composition-layout.md) |
 | `characters-rigs` | 51 | [characters-rigs.md](../powers/characters-rigs.md) |
-| `easing-timing-rhythm` | 102 | [easing-timing-rhythm.md](../powers/easing-timing-rhythm.md) |
+| `easing-timing-rhythm` | 106 | [easing-timing-rhythm.md](../powers/easing-timing-rhythm.md) |
 | `formats-platforms` | 70 | [formats-platforms.md](../powers/formats-platforms.md) |
 | `story-direction-ideas` | 95 | [story-direction-ideas.md](../powers/story-direction-ideas.md) |
-| `transitions-cuts` | 474 | [transitions-cuts.md](../powers/transitions-cuts.md) |
+| `transitions-cuts` | 475 | [transitions-cuts.md](../powers/transitions-cuts.md) |
 | `video-download` | 11 | [video-download.md](../powers/video-download.md) |
 
 ## كل القدرات / every power
@@ -308,6 +309,9 @@
 | `EASE-82` | زمن الرسم حسب حجم الخطوة | Drawing-time model | ready |  |
 | `EASE-83` | تفاعلات الضغط والمرور والنوافذ | Press, hover & dialog entrances | ready |  |
 | `EASE-85` | زر تهدئة الحركة وتقليلها | Quiet-motion toggle & reduced motion | ready |  |
+| `EASE-G01` | نابض بالفيزياء يطبع كل إطار | Spring solved frame by frame | ready | python3 |
+| `EASE-G02` | منحنى CSS محسوب كما يحسبه المتصفح | Browser-exact cubic-bezier sampling | ready | python3 |
+| `EASE-G03` | تتابع من نقطة أصل على شبكة | Stagger from an origin on a grid | ready | python3 |
 | `FMT-01` | المقاس من الوجهة | Derive the canvas from the destination | ready | python3 |
 | `FMT-11` | قواعد المقروئية على الهاتف | Phone legibility gate | ready | imagemagick |
 | `FMT-15` | تحجيم مع حشو لأي إطار | Scale + pad / centre crop | ready |  |
@@ -512,6 +516,7 @@
 | `EASE-70` | قواعد الوقفات في قص المتكلم | Speech pause grammar | documented | ffmpeg, pip:faster-whisper |
 | `EASE-88` | تنعيم أثر المؤشر بالمسافة | Distance-sampled pointer trail | documented |  |
 | `EASE-89` | توقيتات الصور وضربات الميزات | Photo & feature-beat timings | documented | imagemagick |
+| `EASE-G04` | خط زمني بإزاحات نسبية وعلامات | Timeline with relative offsets and labels | documented | npm:gsap, npm:animejs |
 | `EASE-X06` | جداول منحنيات بالاسم والنية | Named curves: AE ↔ CSS table and intent eases | documented |  |
 | `EASE-X07` | أرقام نعومة قبلها العميل | Client-approved smoothness numbers | documented |  |
 | `EASE-X08` | قراءات مسموحة وميزانية السكون | Listed reads and the still-time budget | documented |  |
@@ -658,6 +663,7 @@
 | `TRANS-440` | قطع وميضي | Flash cut | documented |  |
 | `TRANS-441` | قطع بالتكبير | Zoom cut entrance | documented |  |
 | `TRANS-442` | تلاشي مع تحجيم | Scale crossfade | documented |  |
+| `TRANS-G01` | انتقال سحري بين حالتين | Auto-animate between two states (magic move) | documented |  |
 | `TRANS-X01` | لكل انتقال سبب يُسمّى | Every transition needs a nameable cause | documented |  |
 | `TRANS-X02` | زوم الإبرة على جسم مستمر | Needle zoom on a persistent object | documented |  |
 | `TRANS-X03` | استمرار الطيران عبر الأشياء | Fly-through continuation rule | documented |  |

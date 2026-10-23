@@ -3,17 +3,18 @@
 
 > **قوتك هنا / what this gives you:** من الهدف إلى خطة قابلة للتنفيذ: تخطيط عكسي، تفكيك، مسار حرج، بوابة المستلزمات، تشريح مسبق، معايير إيقاف. — From goal to executable plan: backcasting, breakdown, critical path, requirements gate, pre-mortem, kill criteria.
 > **أقوى دليل / strongest evidence:** **PLAN-01** Full plan scaffold from a goal (`kosif-tool/.claude/skills/kosif-superpowers/scripts/think.py`) · **PLAN-05** Requirements gate before scheduling (`kosif-tool/.claude/skills/kosif-superpowers/scripts/think.py`)
-> **12 powers follow** — ✅ 2 · 🟢 0 · 📦 0 · 🔑 0 · 👁 0 · 📄 10 · 💡 0.
+> **14 powers follow** — ✅ 2 · 🟢 0 · 📦 0 · 🔑 0 · 👁 0 · 📄 12 · 💡 0.
 
 **الحالة / status:** ✅ مُثبت (شُغّل فعلًا وله مسار دليل) · 🟢 جاهز (كود موجود يعمل بما هو متاح عادة) · 📦 بأمر تثبيت واحد · 🔑 يحتاج مفتاحًا أو حسابًا أو موصلًا · 👁 شوهد في فيديو مرجعي (للموشن فقط) · 📄 طريقة موثقة · 💡 فكرة. الشارة هي أدنى مستوى صادق — the badge is the lowest level that is true.
 مسارات الدليل نسبية إلى `/home/user/`؛ و`session-<date>:<file>#<section>` تشير إلى تشغيل موثق في جلسة سابقة؛ و`owner-upload:` إلى ملف داخل أرشيف أرسله المالك. Proof paths are relative to `/home/user/`.
 
 **المجال / domain:** العقل والتفكير — Mind & thinking · **البادئة / prefix:** `PLAN` · **البيانات / data:** `data/powers/planning-execution.json` · **بحث / search:** `python3 scripts/powers.py family planning-execution`
-**مراجع ذات صلة / related references:** [CLAUDE_3_MINUTE_MAP.md](../CLAUDE_3_MINUTE_MAP.md) · [cognition.md](../cognition.md) · [hubs.md](../hubs.md)
+**مراجع ذات صلة / related references:** [CLAUDE_3_MINUTE_MAP.md](../CLAUDE_3_MINUTE_MAP.md) · [agents-memory-reasoning-repos.md](../agents-memory-reasoning-repos.md) · [cognition.md](../cognition.md) · [github-top-1000.md](../github-top-1000.md) · [hubs.md](../hubs.md)
 
 ## الفهرس / contents
 
 - **Planning** — PLAN-01 … PLAN-12 (12)
+- **أكبر مستودعات GitHub — Top GitHub repositories (2026-10-23)** — PLAN-13 … PLAN-14 (2)
 - المصادر والرخص / sources & licences
 
 ## Planning
@@ -117,9 +118,28 @@
 - **الدليل / proof:** — (لا دليل تشغيل بعد / no run proof yet)
 - **المصدر / source:** kosif-tool/.claude/skills/kosif-superpowers/references/cognition.md
 
+## أكبر مستودعات GitHub — Top GitHub repositories (2026-10-23)
+
+#### PLAN-13 · تطوير يقوده المواصفات · Spec-driven development · 📄 موصوف / documented only
+- **ماذا / what:** مبادئ ثابتة أولًا، ثم مواصفة تقول ماذا ولماذا دون كيف، ثم توضيح المبهم، ثم خطة تقنية، ثم مهام مرتبة بالاختبار أولًا، ثم التنفيذ، مع فحص اتساق بينها. — Fixed principles first, then a spec of what and why without how, then clarification, a technical plan, ordered test-first tasks, implementation, and a consistency check across them.
+- **متى أستخدمها / when:** ميزة جديدة أو تطبيق من الصفر / a new feature or an app from scratch
+- **كيف / how:** constitution (5-9 non-negotiables: tests first, no secrets, accessibility …) → specify (user stories, acceptance criteria; mark gaps [NEEDS CLARIFICATION]) → clarify (resolve each mark with the user or a stated assumption) → plan (stack, data model, interfaces, how each criterion will be tested) → tasks (numbered, files named, [P] = can run in parallel, test task before its code task) → implement. Before implementing, check every acceptance criterion has a task and a test, and every task traces to a criterion.
+- **الرخصة / license:** MIT
+- **الدليل / proof:** — (لا دليل تشغيل بعد / no run proof yet)
+- **المصدر / source:** https://github.com/github/spec-kit (MIT) — restated in our own words
+
+#### PLAN-14 · عصف ثم خطة ثم وكيل لكل مهمة بالاختبار أولًا · Brainstorm, plan, then a test-first subagent per task · 📄 موصوف / documented only
+- **ماذا / what:** صمّم بالأسئلة قبل الكود، واكتب خطة مهام صغيرة بملفاتها وطريقة تحققها، وأعطِ كل مهمة لوكيل فرعي جديد، وراجع بين المهام، ولا تقل «تم» قبل التحقق. — Design by questions before code, write a plan of small tasks with files and verification, give each task to a fresh subagent, review between tasks, and never say done before verifying.
+- **متى أستخدمها / when:** تنفيذ برمجي من عدة خطوات بوكلاء / multi-step coding done with agents
+- **كيف / how:** Brainstorm: ask one question at a time until the design is agreed; write it down. Plan: tasks of 2-5 minutes each, with exact file paths, the code shape and the command that proves it. Execute: one fresh subagent per task (clean context), red → green → refactor; a reviewer checks the diff against the plan before the next task. Finish: run the full suite and show the output before claiming completion.
+- **يحتاج / needs:** [`claude:tools`](../requirements.md#req-claude-tools)
+- **الرخصة / license:** MIT
+- **الدليل / proof:** — (لا دليل تشغيل بعد / no run proof yet)
+- **المصدر / source:** https://github.com/obra/superpowers (MIT; skills: brainstorming, writing-plans, subagent-driven development, verification) — restated in our own words
+
 ## المصادر والرخص / sources & licences
 
-- الرخص / licences: owner (12)
+- الرخص / licences: owner (12) · MIT (2)
 - الأفكار مكتوبة بكلماتنا مع رابط المصدر؛ لا يُنسخ نص طرف ثالث طويل. Ideas are paraphrased with a link to the source; no long third-party text is copied. `—` = no licence recorded (own method or own wording).
 
 ---

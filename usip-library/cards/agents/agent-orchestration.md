@@ -1,4 +1,4 @@
-# `agent-orchestration` — الوكلاء والتوجيه الذكي (46 بطاقة)
+# `agent-orchestration` — الوكلاء والتوجيه الذكي (55 بطاقة)
 
 > مكتبة بروتوكول USIP v5.5 الكاملة، مولّدة بـ `smart_capabilities.py cards` من `data/powers/agent-orchestration.json` وقواعد الملاحق A25–A29؛ لا تُحرَّر يدويًا. [الفهرس الرئيسي](../../README.md) · [فصل المجموعة](../../../.claude/skills/kosif-superpowers/references/library/agents.md) · [النواة](../../../.claude/skills/kosif-superpowers/PROTOCOL.md)
 
@@ -50,6 +50,15 @@
 - [`AGENT-44` المتابعة الاستباقية المحدودة](#agent-44--المتابعة-الاستباقية-المحدودة--bounded-proactive-follow-up)
 - [`AGENT-45` غلاف نتيجة الأداة وتيار الأحداث](#agent-45--غلاف-نتيجة-الأداة-وتيار-الأحداث--tool-result-envelope-and-typed-event-stream)
 - [`AGENT-46` ذاكرة على مرحلتين بعقود إيجار](#agent-46--ذاكرة-على-مرحلتين-بعقود-إيجار--two-phase-memory-with-leased-jobs)
+- [`AGENT-47` رسم حالة بنقاط حفظ واستئناف](#agent-47--رسم-حالة-بنقاط-حفظ-واستئناف--checkpointed-state-graph-with-resume-and-approval-interrupts)
+- [`AGENT-48` فريق بأدوار ومهام ومخرج متوقع](#agent-48--فريق-بأدوار-ومهام-ومخرج-متوقع--role-goal-crew-with-expected-outputs)
+- [`AGENT-49` خط إنتاج بإجراءات قياسية ووثائق تسليم](#agent-49--خط-إنتاج-بإجراءات-قياسية-ووثائق-تسليم--sop-assembly-line-with-document-handoffs)
+- [`AGENT-50` قرار الذاكرة: إضافة أو تحديث أو حذف أو لا شيء](#agent-50--قرار-الذاكرة-إضافة-أو-تحديث-أو-حذف-أو-لا-شيء--memory-decision-step-add-update-delete-or-no-op)
+- [`AGENT-51` ذاكرة بطبقات يحررها الوكيل](#agent-51--ذاكرة-بطبقات-يحررها-الوكيل--tiered-self-editing-memory)
+- [`AGENT-52` التقاط ملاحظات الجلسة وحقنها في التالية](#agent-52--التقاط-ملاحظات-الجلسة-وحقنها-في-التالية--session-observation-capture-and-injection)
+- [`AGENT-53` وكيل يتصرف بالكود](#agent-53--وكيل-يتصرف-بالكود--code-as-action-agent)
+- [`AGENT-54` حواجز تفعيل وتسليم لمتخصص](#agent-54--حواجز-تفعيل-وتسليم-لمتخصص--tripwire-guardrails-and-specialist-handoffs)
+- [`AGENT-55` تيار أحداث قابل لإعادة التشغيل](#agent-55--تيار-أحداث-قابل-لإعادة-التشغيل--replayable-event-stream-agent)
 
 ## البطاقات / cards
 
@@ -3102,6 +3111,7 @@
 - `AGENT-43` الهدف المستمر وتدقيق الإكمال / Persistent goal and completion audit (documented)
 - `AGENT-44` المتابعة الاستباقية المحدودة / Bounded proactive follow-up (documented)
 - `AGENT-46` ذاكرة على مرحلتين بعقود إيجار / Two-phase memory with leased jobs (documented)
+- `AGENT-47` رسم حالة بنقاط حفظ واستئناف / Checkpointed state graph with resume and approval interrupts (documented)
 
 ### `AGENT-46` — ذاكرة على مرحلتين بعقود إيجار / Two-phase memory with leased jobs
 
@@ -3166,4 +3176,600 @@
 
 - `AGENT-44` المتابعة الاستباقية المحدودة / Bounded proactive follow-up (documented)
 - `AGENT-45` غلاف نتيجة الأداة وتيار الأحداث / Tool result envelope and typed event stream (documented)
+- `AGENT-47` رسم حالة بنقاط حفظ واستئناف / Checkpointed state graph with resume and approval interrupts (documented)
+- `AGENT-48` فريق بأدوار ومهام ومخرج متوقع / Role-goal crew with expected outputs (documented)
+
+### `AGENT-47` — رسم حالة بنقاط حفظ واستئناف / Checkpointed state graph with resume and approval interrupts
+
+| الحقل | القيمة |
+|---|---|
+| العائلة | `agent-orchestration` ([فصل العائلة](../../../.claude/skills/kosif-superpowers/references/powers/agent-orchestration.md)) |
+| المجموعة | الوكلاء والتوجيه الذكي (`agents`) |
+| نوع المخرج (A25، A27) | خطة واستراتيجية وقرار (`plan`) |
+| الحالة في الكتالوج | 📄 `documented`: منهج موصوف يحتاج بناءً أو ربطًا قبل التشغيل |
+| سقف التحقق قبل العمل (A27) | V1 حتى تُبنى وتُشغَّل؛ لا تقدَّم جاهزة أبدًا |
+| نطاق الدليل | `none` |
+| الرخصة | MIT |
+
+**ما هي:** اكتب سير العمل كعقد وحواف على حالة مشتركة، واحفظ نقطة بعد كل عقدة، وتوقف قبل العقد الخطرة لموافقة المستخدم. — Model the workflow as nodes and edges over one shared state, checkpoint after every node, and pause before risky nodes for the user's approval.
+
+**متى:** مهمة طويلة متعددة الخطوات قد تنقطع أو تحتاج موافقة / a long multi-step job that may break or needs approval
+
+**كيف:** State = one typed record (inputs, artifacts, decisions, errors). Each node reads state and returns a partial update; edges may be conditional. After each node write the checkpoint (thread id, step, state hash) to the work dir. On failure resume from the last good checkpoint instead of restarting. Put an interrupt before publish, spend, delete or send: show the pending state, wait, then continue. To try an alternative, fork from an earlier checkpoint rather than editing history. KOSIF mapping: FusionForge trace per node + A5 state receipts.
+
+**التثبيت:** لا خطوة تثبيت مسجلة
+
+**الوسوم:** langgraph · state graph · checkpoint · resume · human in the loop · interrupt · نقطة حفظ · استئناف · موافقة
+
+#### 1. الاستقبال (A25)
+
+- الهدف القابل للقياس: سؤال بإجابة مقترحة ← هدف مقترح بعتبة رقمية يُعرض للتعديل
+- الأفق الزمني: افتراض مكتوب ← 90 يومًا
+- الموارد والميزانية: افتراض مكتوب ← شخص واحد بلا صرف
+- لا تُفترض أبدًا: مادة الإنتاج نفسها، والإذن بخطوة مدفوعة أو منشورة أو لا رجعة فيها، والهوية والحقوق.
+
+#### 2. الجاهزية والشارة (A28)
+
+- لا متطلبات مسجلة؛ افحص المسار والأداة بـ `hub.py doctor` قبل الشارة.
+- الوضع 1: شارة «هنا الآن» بعد الفحص، لا 📄 الكتالوج تلقائيًا · الوضع 2: `كتالوج: 📄 · هنا: غير مفحوص` · الوضع 3: بلا شارة ولا معرّف.
+
+#### 3. موضعها في الخطة (A26)
+
+- عقدة منمّطة: المدخل `brief` ← المخرج `plan`، والمنفّذ `method:AGENT-47` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `business-workflows` · `charter-ingest` · `council` · `fusionforge` · `hub` · `kosif-mcp`.
+- مراحل النوع: الهدف بمؤشره ← ثلاثة خيارات مختلفة ← تقييم وحساسية ← تشريح مسبق ← بوابات مكتوبة ← خطوة أولى قابلة للتراجع.
+- إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
+
+#### 4. بوابة التحقق (A27)
+
+- إلزامي: لكل هدف مؤشر وعتبة وتاريخ ← جدول المؤشرات
+- إلزامي: ثلاثة خيارات مختلفة المنهج مع توصية ← جدول المقارنة
+- جودة: تشريح مسبق بأهم أسباب الفشل والوقاية ← think.py plan
+- جودة: بوابات go/pivot/kill مكتوبة قبل النتائج ← think.py gate
+- إلزامي: خطوة أولى صغيرة قابلة للتراجع هذا الأسبوع ← مراجعة
+- أمر الحكم في الوضع 1: `think.py qa plan --answers qa.json` (PASS / FAIL / INCOMPLETE).
+
+#### 5. التعافي (A29)
+
+- `quality_below_threshold` (جودة دون العتبة، ميزانية 3): أي معيار فشل وبكم (المقيس مقابل العتبة) ← عالج السبب الأكبر وحده ثم أعد القياس · البديل: المنهج البديل المكتوب للمرحلة في الخطة · تصعيد: معيار إلزامي لا يتحقق بعد البديل: توقف وأبلغ بالأرقام
+- `tool_error` (خطأ أداة، ميزانية 3): اقرأ آخر سطر في الخطأ ثم أول سطر من كودك فيه ← أصلح السبب المثبت وحده، ثم شغّل الاختبار المتعلق · البديل: أداة أخرى أو مسار يدوي للمرحلة نفسها · تصعيد: خطأ في أداة خارجية لا تملكها: بلّغ بإعادة الإنتاج ولا تخفه
+
+#### 6. الأدلة
+
+- لا دليل مسجل: لا تُقدَّم أكثر من منهج.
+
+#### 7. قدرات قريبة في العائلة
+
+- `AGENT-45` غلاف نتيجة الأداة وتيار الأحداث / Tool result envelope and typed event stream (documented)
+- `AGENT-46` ذاكرة على مرحلتين بعقود إيجار / Two-phase memory with leased jobs (documented)
+- `AGENT-48` فريق بأدوار ومهام ومخرج متوقع / Role-goal crew with expected outputs (documented)
+- `AGENT-49` خط إنتاج بإجراءات قياسية ووثائق تسليم / SOP assembly line with document handoffs (documented)
+
+### `AGENT-48` — فريق بأدوار ومهام ومخرج متوقع / Role-goal crew with expected outputs
+
+| الحقل | القيمة |
+|---|---|
+| العائلة | `agent-orchestration` ([فصل العائلة](../../../.claude/skills/kosif-superpowers/references/powers/agent-orchestration.md)) |
+| المجموعة | الوكلاء والتوجيه الذكي (`agents`) |
+| نوع المخرج (A25، A27) | خطة واستراتيجية وقرار (`plan`) |
+| الحالة في الكتالوج | 📄 `documented`: منهج موصوف يحتاج بناءً أو ربطًا قبل التشغيل |
+| سقف التحقق قبل العمل (A27) | V1 حتى تُبنى وتُشغَّل؛ لا تقدَّم جاهزة أبدًا |
+| نطاق الدليل | `none` |
+| الرخصة | MIT |
+
+**ما هي:** لكل وكيل دور وهدف وحدود، ولكل مهمة وصف ومخرج متوقع مكتوب ووكيل مسؤول ومهام سابقة تغذيها. — Each agent has a role, a goal and limits; each task has a description, a written expected output, one owner and the earlier tasks that feed it.
+
+**متى:** تقسيم عمل بين عدة وكلاء فرعيين / splitting work across several subagents
+
+**كيف:** Task card: description · expected_output (format + acceptance check) · agent · context (ids of the tasks whose outputs it reads). Run sequentially when outputs chain; hierarchical when a manager must assign and validate. The manager rejects an output that misses its expected_output and returns it once with the gap named. Keep backstory to constraints that change behaviour (audience, standard), not persona theatre (PROMPT-13).
+
+**التثبيت:** لا خطوة تثبيت مسجلة
+
+**الوسوم:** crewai · roles · tasks · expected output · manager · multi-agent · فريق وكلاء · أدوار · مهام
+
+#### 1. الاستقبال (A25)
+
+- الهدف القابل للقياس: سؤال بإجابة مقترحة ← هدف مقترح بعتبة رقمية يُعرض للتعديل
+- الأفق الزمني: افتراض مكتوب ← 90 يومًا
+- الموارد والميزانية: افتراض مكتوب ← شخص واحد بلا صرف
+- لا تُفترض أبدًا: مادة الإنتاج نفسها، والإذن بخطوة مدفوعة أو منشورة أو لا رجعة فيها، والهوية والحقوق.
+
+#### 2. الجاهزية والشارة (A28)
+
+- لا متطلبات مسجلة؛ افحص المسار والأداة بـ `hub.py doctor` قبل الشارة.
+- الوضع 1: شارة «هنا الآن» بعد الفحص، لا 📄 الكتالوج تلقائيًا · الوضع 2: `كتالوج: 📄 · هنا: غير مفحوص` · الوضع 3: بلا شارة ولا معرّف.
+
+#### 3. موضعها في الخطة (A26)
+
+- عقدة منمّطة: المدخل `brief` ← المخرج `plan`، والمنفّذ `method:AGENT-48` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `business-workflows` · `charter-ingest` · `council` · `fusionforge` · `hub` · `kosif-mcp`.
+- مراحل النوع: الهدف بمؤشره ← ثلاثة خيارات مختلفة ← تقييم وحساسية ← تشريح مسبق ← بوابات مكتوبة ← خطوة أولى قابلة للتراجع.
+- إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
+
+#### 4. بوابة التحقق (A27)
+
+- إلزامي: لكل هدف مؤشر وعتبة وتاريخ ← جدول المؤشرات
+- إلزامي: ثلاثة خيارات مختلفة المنهج مع توصية ← جدول المقارنة
+- جودة: تشريح مسبق بأهم أسباب الفشل والوقاية ← think.py plan
+- جودة: بوابات go/pivot/kill مكتوبة قبل النتائج ← think.py gate
+- إلزامي: خطوة أولى صغيرة قابلة للتراجع هذا الأسبوع ← مراجعة
+- أمر الحكم في الوضع 1: `think.py qa plan --answers qa.json` (PASS / FAIL / INCOMPLETE).
+
+#### 5. التعافي (A29)
+
+- `quality_below_threshold` (جودة دون العتبة، ميزانية 3): أي معيار فشل وبكم (المقيس مقابل العتبة) ← عالج السبب الأكبر وحده ثم أعد القياس · البديل: المنهج البديل المكتوب للمرحلة في الخطة · تصعيد: معيار إلزامي لا يتحقق بعد البديل: توقف وأبلغ بالأرقام
+- `tool_error` (خطأ أداة، ميزانية 3): اقرأ آخر سطر في الخطأ ثم أول سطر من كودك فيه ← أصلح السبب المثبت وحده، ثم شغّل الاختبار المتعلق · البديل: أداة أخرى أو مسار يدوي للمرحلة نفسها · تصعيد: خطأ في أداة خارجية لا تملكها: بلّغ بإعادة الإنتاج ولا تخفه
+
+#### 6. الأدلة
+
+- لا دليل مسجل: لا تُقدَّم أكثر من منهج.
+
+#### 7. قدرات قريبة في العائلة
+
+- `AGENT-46` ذاكرة على مرحلتين بعقود إيجار / Two-phase memory with leased jobs (documented)
+- `AGENT-47` رسم حالة بنقاط حفظ واستئناف / Checkpointed state graph with resume and approval interrupts (documented)
+- `AGENT-49` خط إنتاج بإجراءات قياسية ووثائق تسليم / SOP assembly line with document handoffs (documented)
+- `AGENT-50` قرار الذاكرة: إضافة أو تحديث أو حذف أو لا شيء / Memory decision step: add, update, delete or no-op (ready)
+
+### `AGENT-49` — خط إنتاج بإجراءات قياسية ووثائق تسليم / SOP assembly line with document handoffs
+
+| الحقل | القيمة |
+|---|---|
+| العائلة | `agent-orchestration` ([فصل العائلة](../../../.claude/skills/kosif-superpowers/references/powers/agent-orchestration.md)) |
+| المجموعة | الوكلاء والتوجيه الذكي (`agents`) |
+| نوع المخرج (A25، A27) | خطة واستراتيجية وقرار (`plan`) |
+| الحالة في الكتالوج | 📄 `documented`: منهج موصوف يحتاج بناءً أو ربطًا قبل التشغيل |
+| سقف التحقق قبل العمل (A27) | V1 حتى تُبنى وتُشغَّل؛ لا تقدَّم جاهزة أبدًا |
+| نطاق الدليل | `none` |
+| الرخصة | MIT |
+
+**ما هي:** كل دور ينشر وثيقة منظمة بقالب ثابت (متطلبات، تصميم، قائمة مهام، كود، تقرير اختبار)، والدور التالي يقرأ الوثيقة لا المحادثة. — Each role publishes a structured document from a fixed template, and the next role reads the document, not the chat.
+
+**متى:** مشروع برمجي أو إنتاجي من فكرة إلى تسليم / a software or production project from idea to delivery
+
+**كيف:** Order: requirements (goals, user stories, non-goals) → design (components, interfaces, data) → task list (files, order, owner) → implementation → test report. Templates force completeness: an empty required field blocks the handoff. Roles subscribe to the document types they need from a shared pool, so a change in requirements re-triggers only the roles that read it. Pairs with PLAN-13 and FusionForge typed handoffs.
+
+**التثبيت:** لا خطوة تثبيت مسجلة
+
+**الوسوم:** metagpt · sop · handoff · prd · assembly line · وثائق تسليم · إجراءات قياسية · خط إنتاج
+
+#### 1. الاستقبال (A25)
+
+- الهدف القابل للقياس: سؤال بإجابة مقترحة ← هدف مقترح بعتبة رقمية يُعرض للتعديل
+- الأفق الزمني: افتراض مكتوب ← 90 يومًا
+- الموارد والميزانية: افتراض مكتوب ← شخص واحد بلا صرف
+- لا تُفترض أبدًا: مادة الإنتاج نفسها، والإذن بخطوة مدفوعة أو منشورة أو لا رجعة فيها، والهوية والحقوق.
+
+#### 2. الجاهزية والشارة (A28)
+
+- لا متطلبات مسجلة؛ افحص المسار والأداة بـ `hub.py doctor` قبل الشارة.
+- الوضع 1: شارة «هنا الآن» بعد الفحص، لا 📄 الكتالوج تلقائيًا · الوضع 2: `كتالوج: 📄 · هنا: غير مفحوص` · الوضع 3: بلا شارة ولا معرّف.
+
+#### 3. موضعها في الخطة (A26)
+
+- عقدة منمّطة: المدخل `brief` ← المخرج `plan`، والمنفّذ `method:AGENT-49` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `business-workflows` · `charter-ingest` · `council` · `fusionforge` · `hub` · `kosif-mcp`.
+- مراحل النوع: الهدف بمؤشره ← ثلاثة خيارات مختلفة ← تقييم وحساسية ← تشريح مسبق ← بوابات مكتوبة ← خطوة أولى قابلة للتراجع.
+- إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
+
+#### 4. بوابة التحقق (A27)
+
+- إلزامي: لكل هدف مؤشر وعتبة وتاريخ ← جدول المؤشرات
+- إلزامي: ثلاثة خيارات مختلفة المنهج مع توصية ← جدول المقارنة
+- جودة: تشريح مسبق بأهم أسباب الفشل والوقاية ← think.py plan
+- جودة: بوابات go/pivot/kill مكتوبة قبل النتائج ← think.py gate
+- إلزامي: خطوة أولى صغيرة قابلة للتراجع هذا الأسبوع ← مراجعة
+- أمر الحكم في الوضع 1: `think.py qa plan --answers qa.json` (PASS / FAIL / INCOMPLETE).
+
+#### 5. التعافي (A29)
+
+- `quality_below_threshold` (جودة دون العتبة، ميزانية 3): أي معيار فشل وبكم (المقيس مقابل العتبة) ← عالج السبب الأكبر وحده ثم أعد القياس · البديل: المنهج البديل المكتوب للمرحلة في الخطة · تصعيد: معيار إلزامي لا يتحقق بعد البديل: توقف وأبلغ بالأرقام
+- `tool_error` (خطأ أداة، ميزانية 3): اقرأ آخر سطر في الخطأ ثم أول سطر من كودك فيه ← أصلح السبب المثبت وحده، ثم شغّل الاختبار المتعلق · البديل: أداة أخرى أو مسار يدوي للمرحلة نفسها · تصعيد: خطأ في أداة خارجية لا تملكها: بلّغ بإعادة الإنتاج ولا تخفه
+
+#### 6. الأدلة
+
+- لا دليل مسجل: لا تُقدَّم أكثر من منهج.
+
+#### 7. قدرات قريبة في العائلة
+
+- `AGENT-47` رسم حالة بنقاط حفظ واستئناف / Checkpointed state graph with resume and approval interrupts (documented)
+- `AGENT-48` فريق بأدوار ومهام ومخرج متوقع / Role-goal crew with expected outputs (documented)
+- `AGENT-50` قرار الذاكرة: إضافة أو تحديث أو حذف أو لا شيء / Memory decision step: add, update, delete or no-op (ready)
+- `AGENT-51` ذاكرة بطبقات يحررها الوكيل / Tiered self-editing memory (documented)
+
+### `AGENT-50` — قرار الذاكرة: إضافة أو تحديث أو حذف أو لا شيء / Memory decision step: add, update, delete or no-op
+
+| الحقل | القيمة |
+|---|---|
+| العائلة | `agent-orchestration` ([فصل العائلة](../../../.claude/skills/kosif-superpowers/references/powers/agent-orchestration.md)) |
+| المجموعة | الوكلاء والتوجيه الذكي (`agents`) |
+| نوع المخرج (A25، A27) | خطة واستراتيجية وقرار (`plan`) |
+| الحالة في الكتالوج | 🟢 `ready`: جاهزة حسب الكتالوج بلا إعداد |
+| سقف التحقق قبل العمل (A27) | V2 بعد تشغيلها، وV3 بعد قياس معيار |
+| نطاق الدليل | `repo` |
+| الرخصة | Apache-2.0 |
+
+**ما هي:** قبل حفظ أي معلومة قارنها بالمحفوظ: جديدة تُضاف، وتعديل لقيمة قديمة يُحدّث مع حفظ القديم في السجل، والتراجع يحذف، والمكرر لا يُحفظ. — Before storing a fact compare it with the store: new is added, a changed value updates with the old one kept in history, a retraction deletes, a duplicate is skipped.
+
+**متى:** ذاكرة طويلة لمشروع أو تفضيلات مستخدم / long-term project memory or user preferences
+
+**كيف:** facts.json [{text, subject?, attribute?, value?, op?}] → `python3 scripts/memory_ops.py propose --store memory.json --facts facts.json --out plan.json` (one op per fact with its reason; secrets refused) → review → `python3 scripts/memory_ops.py apply --store memory.json --plan plan.json` (history keeps every old value) → `python3 scripts/memory_ops.py search --store memory.json "<query>"`. Same subject+attribute with a new value is an UPDATE, not a second fact; 'no longer' / 'لم يعد' retracts. Local file only and opt-in; project memory rules still decide what may be stored.
+
+**التثبيت:** لا خطوة تثبيت مسجلة
+
+**الوسوم:** mem0 · memory · add update delete · consolidation · preferences · ذاكرة · تحديث الذاكرة · تفضيلات
+
+#### 1. الاستقبال (A25)
+
+- الهدف القابل للقياس: سؤال بإجابة مقترحة ← هدف مقترح بعتبة رقمية يُعرض للتعديل
+- الأفق الزمني: افتراض مكتوب ← 90 يومًا
+- الموارد والميزانية: افتراض مكتوب ← شخص واحد بلا صرف
+- لا تُفترض أبدًا: مادة الإنتاج نفسها، والإذن بخطوة مدفوعة أو منشورة أو لا رجعة فيها، والهوية والحقوق.
+
+#### 2. الجاهزية والشارة (A28)
+
+- `python3` ← افحص وجوده بأمر واحد قبل كتابة الشارة
+- الوضع 1: شارة «هنا الآن» بعد الفحص، لا 🟢 الكتالوج تلقائيًا · الوضع 2: `كتالوج: 🟢 · هنا: غير مفحوص` · الوضع 3: بلا شارة ولا معرّف.
+
+#### 3. موضعها في الخطة (A26)
+
+- عقدة منمّطة: المدخل `brief` ← المخرج `plan`، والمنفّذ `method:AGENT-50` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `business-workflows` · `charter-ingest` · `council` · `fusionforge` · `hub` · `kosif-mcp`.
+- مراحل النوع: الهدف بمؤشره ← ثلاثة خيارات مختلفة ← تقييم وحساسية ← تشريح مسبق ← بوابات مكتوبة ← خطوة أولى قابلة للتراجع.
+- إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
+
+#### 4. بوابة التحقق (A27)
+
+- إلزامي: لكل هدف مؤشر وعتبة وتاريخ ← جدول المؤشرات
+- إلزامي: ثلاثة خيارات مختلفة المنهج مع توصية ← جدول المقارنة
+- جودة: تشريح مسبق بأهم أسباب الفشل والوقاية ← think.py plan
+- جودة: بوابات go/pivot/kill مكتوبة قبل النتائج ← think.py gate
+- إلزامي: خطوة أولى صغيرة قابلة للتراجع هذا الأسبوع ← مراجعة
+- أمر الحكم في الوضع 1: `think.py qa plan --answers qa.json` (PASS / FAIL / INCOMPLETE).
+
+#### 5. التعافي (A29)
+
+- `missing_dependency` (اعتمادية مفقودة، ميزانية 2): سمِّ الاعتمادية بالضبط (حزمة، برنامج، خط، نموذج) ← ثبّت محليًا في بيئة العمل إن كان مجانيًا ومسموحًا (pip --user أو venv أو npm محلي) · البديل: مسار المكتبة القياسية أو أداة أخرى من نفس المجموعة · تصعيد: تثبيت نظامي أو مدفوع أو يحتاج مفتاحًا: توقف واسأل
+- `quality_below_threshold` (جودة دون العتبة، ميزانية 3): أي معيار فشل وبكم (المقيس مقابل العتبة) ← عالج السبب الأكبر وحده ثم أعد القياس · البديل: المنهج البديل المكتوب للمرحلة في الخطة · تصعيد: معيار إلزامي لا يتحقق بعد البديل: توقف وأبلغ بالأرقام
+- `tool_error` (خطأ أداة، ميزانية 3): اقرأ آخر سطر في الخطأ ثم أول سطر من كودك فيه ← أصلح السبب المثبت وحده، ثم شغّل الاختبار المتعلق · البديل: أداة أخرى أو مسار يدوي للمرحلة نفسها · تصعيد: خطأ في أداة خارجية لا تملكها: بلّغ بإعادة الإنتاج ولا تخفه
+
+#### 6. الأدلة
+
+- `kosif-tool/.claude/skills/kosif-superpowers/scripts/memory_ops.py`
+- `kosif-tool/.claude/skills/kosif-superpowers/evals/test_memory_ops.py`
+
+#### 7. قدرات قريبة في العائلة
+
+- `AGENT-48` فريق بأدوار ومهام ومخرج متوقع / Role-goal crew with expected outputs (documented)
+- `AGENT-49` خط إنتاج بإجراءات قياسية ووثائق تسليم / SOP assembly line with document handoffs (documented)
+- `AGENT-51` ذاكرة بطبقات يحررها الوكيل / Tiered self-editing memory (documented)
+- `AGENT-52` التقاط ملاحظات الجلسة وحقنها في التالية / Session observation capture and injection (documented)
+
+### `AGENT-51` — ذاكرة بطبقات يحررها الوكيل / Tiered self-editing memory
+
+| الحقل | القيمة |
+|---|---|
+| العائلة | `agent-orchestration` ([فصل العائلة](../../../.claude/skills/kosif-superpowers/references/powers/agent-orchestration.md)) |
+| المجموعة | الوكلاء والتوجيه الذكي (`agents`) |
+| نوع المخرج (A25، A27) | خطة واستراتيجية وقرار (`plan`) |
+| الحالة في الكتالوج | 📄 `documented`: منهج موصوف يحتاج بناءً أو ربطًا قبل التشغيل |
+| سقف التحقق قبل العمل (A27) | V1 حتى تُبنى وتُشغَّل؛ لا تقدَّم جاهزة أبدًا |
+| نطاق الدليل | `none` |
+| الرخصة | Apache-2.0 |
+
+**ما هي:** كتل صغيرة دائمة في السياق (من المستخدم، ما المشروع) بحد حجم، ومخزن أرشيفي يُبحث فيه عند الحاجة، والوكيل يعدّل الكتل بأدوات صريحة. — Small always-in-context blocks with size limits, an archival store searched on demand, and explicit tools for the agent to edit the blocks.
+
+**متى:** وكيل يعمل عبر جلسات كثيرة / an agent that works across many sessions
+
+**كيف:** Core blocks (e.g. user: 2,000 chars, project: 2,000 chars) are injected every turn; when a block is full, summarise or move detail to archival. Archival = searchable records (AGENT-50 store). Edits go through named operations (append, replace, delete) so they are logged. When the context window fills, evict the oldest turns into a recursive summary instead of truncating silently.
+
+**التثبيت:** لا خطوة تثبيت مسجلة
+
+**الوسوم:** letta · memgpt · core memory · archival memory · context window · ذاكرة دائمة · أرشيف · سياق
+
+#### 1. الاستقبال (A25)
+
+- الهدف القابل للقياس: سؤال بإجابة مقترحة ← هدف مقترح بعتبة رقمية يُعرض للتعديل
+- الأفق الزمني: افتراض مكتوب ← 90 يومًا
+- الموارد والميزانية: افتراض مكتوب ← شخص واحد بلا صرف
+- لا تُفترض أبدًا: مادة الإنتاج نفسها، والإذن بخطوة مدفوعة أو منشورة أو لا رجعة فيها، والهوية والحقوق.
+
+#### 2. الجاهزية والشارة (A28)
+
+- لا متطلبات مسجلة؛ افحص المسار والأداة بـ `hub.py doctor` قبل الشارة.
+- الوضع 1: شارة «هنا الآن» بعد الفحص، لا 📄 الكتالوج تلقائيًا · الوضع 2: `كتالوج: 📄 · هنا: غير مفحوص` · الوضع 3: بلا شارة ولا معرّف.
+
+#### 3. موضعها في الخطة (A26)
+
+- عقدة منمّطة: المدخل `brief` ← المخرج `plan`، والمنفّذ `method:AGENT-51` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `business-workflows` · `charter-ingest` · `council` · `fusionforge` · `hub` · `kosif-mcp`.
+- مراحل النوع: الهدف بمؤشره ← ثلاثة خيارات مختلفة ← تقييم وحساسية ← تشريح مسبق ← بوابات مكتوبة ← خطوة أولى قابلة للتراجع.
+- إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
+
+#### 4. بوابة التحقق (A27)
+
+- إلزامي: لكل هدف مؤشر وعتبة وتاريخ ← جدول المؤشرات
+- إلزامي: ثلاثة خيارات مختلفة المنهج مع توصية ← جدول المقارنة
+- جودة: تشريح مسبق بأهم أسباب الفشل والوقاية ← think.py plan
+- جودة: بوابات go/pivot/kill مكتوبة قبل النتائج ← think.py gate
+- إلزامي: خطوة أولى صغيرة قابلة للتراجع هذا الأسبوع ← مراجعة
+- أمر الحكم في الوضع 1: `think.py qa plan --answers qa.json` (PASS / FAIL / INCOMPLETE).
+
+#### 5. التعافي (A29)
+
+- `quality_below_threshold` (جودة دون العتبة، ميزانية 3): أي معيار فشل وبكم (المقيس مقابل العتبة) ← عالج السبب الأكبر وحده ثم أعد القياس · البديل: المنهج البديل المكتوب للمرحلة في الخطة · تصعيد: معيار إلزامي لا يتحقق بعد البديل: توقف وأبلغ بالأرقام
+- `tool_error` (خطأ أداة، ميزانية 3): اقرأ آخر سطر في الخطأ ثم أول سطر من كودك فيه ← أصلح السبب المثبت وحده، ثم شغّل الاختبار المتعلق · البديل: أداة أخرى أو مسار يدوي للمرحلة نفسها · تصعيد: خطأ في أداة خارجية لا تملكها: بلّغ بإعادة الإنتاج ولا تخفه
+
+#### 6. الأدلة
+
+- لا دليل مسجل: لا تُقدَّم أكثر من منهج.
+
+#### 7. قدرات قريبة في العائلة
+
+- `AGENT-49` خط إنتاج بإجراءات قياسية ووثائق تسليم / SOP assembly line with document handoffs (documented)
+- `AGENT-50` قرار الذاكرة: إضافة أو تحديث أو حذف أو لا شيء / Memory decision step: add, update, delete or no-op (ready)
+- `AGENT-52` التقاط ملاحظات الجلسة وحقنها في التالية / Session observation capture and injection (documented)
+- `AGENT-53` وكيل يتصرف بالكود / Code-as-action agent (documented)
+
+### `AGENT-52` — التقاط ملاحظات الجلسة وحقنها في التالية / Session observation capture and injection
+
+| الحقل | القيمة |
+|---|---|
+| العائلة | `agent-orchestration` ([فصل العائلة](../../../.claude/skills/kosif-superpowers/references/powers/agent-orchestration.md)) |
+| المجموعة | الوكلاء والتوجيه الذكي (`agents`) |
+| نوع المخرج (A25، A27) | خطة واستراتيجية وقرار (`plan`) |
+| الحالة في الكتالوج | 📄 `documented`: منهج موصوف يحتاج بناءً أو ربطًا قبل التشغيل |
+| سقف التحقق قبل العمل (A27) | V1 حتى تُبنى وتُشغَّل؛ لا تقدَّم جاهزة أبدًا |
+| نطاق الدليل | `none` |
+| الرخصة | Apache-2.0 |
+
+**ما هي:** سجّل ما فعله الوكيل في الجلسة (أوامر، ملفات، قرارات) واضغطه في ملخص عند الانتهاء، واحقن الملخص المناسب في بداية الجلسة التالية. — Record what the agent did (commands, files, decisions), compress it into a summary at the end, and inject the relevant summary at the next session's start.
+
+**متى:** عمل يمتد عبر جلسات أو خيوط / work that spans sessions or threads
+
+**كيف:** Capture only observations (tool, target, outcome), never secrets or private content marked private. At session end write: done · decisions with reasons · open items · files touched. At start inject the latest summary plus a search over older ones for the current task. Keep it opt-in and visible to the user; in this skill use the project memory folder or FusionForge lessons.
+
+**التثبيت:** لا خطوة تثبيت مسجلة
+
+**الوسوم:** claude-mem · session memory · summary · context injection · hooks · ملخص الجلسة · ذاكرة الجلسات
+
+#### 1. الاستقبال (A25)
+
+- الهدف القابل للقياس: سؤال بإجابة مقترحة ← هدف مقترح بعتبة رقمية يُعرض للتعديل
+- الأفق الزمني: افتراض مكتوب ← 90 يومًا
+- الموارد والميزانية: افتراض مكتوب ← شخص واحد بلا صرف
+- لا تُفترض أبدًا: مادة الإنتاج نفسها، والإذن بخطوة مدفوعة أو منشورة أو لا رجعة فيها، والهوية والحقوق.
+
+#### 2. الجاهزية والشارة (A28)
+
+- لا متطلبات مسجلة؛ افحص المسار والأداة بـ `hub.py doctor` قبل الشارة.
+- الوضع 1: شارة «هنا الآن» بعد الفحص، لا 📄 الكتالوج تلقائيًا · الوضع 2: `كتالوج: 📄 · هنا: غير مفحوص` · الوضع 3: بلا شارة ولا معرّف.
+
+#### 3. موضعها في الخطة (A26)
+
+- عقدة منمّطة: المدخل `brief` ← المخرج `plan`، والمنفّذ `method:AGENT-52` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `business-workflows` · `charter-ingest` · `council` · `fusionforge` · `hub` · `kosif-mcp`.
+- مراحل النوع: الهدف بمؤشره ← ثلاثة خيارات مختلفة ← تقييم وحساسية ← تشريح مسبق ← بوابات مكتوبة ← خطوة أولى قابلة للتراجع.
+- إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
+
+#### 4. بوابة التحقق (A27)
+
+- إلزامي: لكل هدف مؤشر وعتبة وتاريخ ← جدول المؤشرات
+- إلزامي: ثلاثة خيارات مختلفة المنهج مع توصية ← جدول المقارنة
+- جودة: تشريح مسبق بأهم أسباب الفشل والوقاية ← think.py plan
+- جودة: بوابات go/pivot/kill مكتوبة قبل النتائج ← think.py gate
+- إلزامي: خطوة أولى صغيرة قابلة للتراجع هذا الأسبوع ← مراجعة
+- أمر الحكم في الوضع 1: `think.py qa plan --answers qa.json` (PASS / FAIL / INCOMPLETE).
+
+#### 5. التعافي (A29)
+
+- `quality_below_threshold` (جودة دون العتبة، ميزانية 3): أي معيار فشل وبكم (المقيس مقابل العتبة) ← عالج السبب الأكبر وحده ثم أعد القياس · البديل: المنهج البديل المكتوب للمرحلة في الخطة · تصعيد: معيار إلزامي لا يتحقق بعد البديل: توقف وأبلغ بالأرقام
+- `tool_error` (خطأ أداة، ميزانية 3): اقرأ آخر سطر في الخطأ ثم أول سطر من كودك فيه ← أصلح السبب المثبت وحده، ثم شغّل الاختبار المتعلق · البديل: أداة أخرى أو مسار يدوي للمرحلة نفسها · تصعيد: خطأ في أداة خارجية لا تملكها: بلّغ بإعادة الإنتاج ولا تخفه
+
+#### 6. الأدلة
+
+- لا دليل مسجل: لا تُقدَّم أكثر من منهج.
+
+#### 7. قدرات قريبة في العائلة
+
+- `AGENT-50` قرار الذاكرة: إضافة أو تحديث أو حذف أو لا شيء / Memory decision step: add, update, delete or no-op (ready)
+- `AGENT-51` ذاكرة بطبقات يحررها الوكيل / Tiered self-editing memory (documented)
+- `AGENT-53` وكيل يتصرف بالكود / Code-as-action agent (documented)
+- `AGENT-54` حواجز تفعيل وتسليم لمتخصص / Tripwire guardrails and specialist handoffs (documented)
+
+### `AGENT-53` — وكيل يتصرف بالكود / Code-as-action agent
+
+| الحقل | القيمة |
+|---|---|
+| العائلة | `agent-orchestration` ([فصل العائلة](../../../.claude/skills/kosif-superpowers/references/powers/agent-orchestration.md)) |
+| المجموعة | الوكلاء والتوجيه الذكي (`agents`) |
+| نوع المخرج (A25، A27) | خطة واستراتيجية وقرار (`plan`) |
+| الحالة في الكتالوج | 📄 `documented`: منهج موصوف يحتاج بناءً أو ربطًا قبل التشغيل |
+| سقف التحقق قبل العمل (A27) | V1 حتى تُبنى وتُشغَّل؛ لا تقدَّم جاهزة أبدًا |
+| نطاق الدليل | `none` |
+| الرخصة | Apache-2.0 |
+
+**ما هي:** بدل أن يطلب الوكيل أداة واحدة كل خطوة، يكتب مقطع بايثون يستدعي الأدوات كدوال ويجمع نتائجها، ويُنفَّذ في بيئة معزولة بحدود. — Instead of one tool call per step the agent writes a Python snippet that calls tools as functions and combines their results, run in a sandbox with limits.
+
+**متى:** مهام فيها حلقات أو حساب أو أدوات كثيرة / tasks with loops, arithmetic or many tool calls
+
+**كيف:** Expose tools as typed functions; allow a short import whitelist; cap max_steps (e.g. 10) and add a planning step every 3 steps that restates the plan. Every snippet's stdout is the observation. Never give the sandbox credentials or network it does not need; never run model-written code outside it.
+
+**التثبيت:** لا خطوة تثبيت مسجلة
+
+**الوسوم:** smolagents · code agent · sandbox · max steps · planning interval · وكيل كود · بيئة معزولة
+
+#### 1. الاستقبال (A25)
+
+- الهدف القابل للقياس: سؤال بإجابة مقترحة ← هدف مقترح بعتبة رقمية يُعرض للتعديل
+- الأفق الزمني: افتراض مكتوب ← 90 يومًا
+- الموارد والميزانية: افتراض مكتوب ← شخص واحد بلا صرف
+- لا تُفترض أبدًا: مادة الإنتاج نفسها، والإذن بخطوة مدفوعة أو منشورة أو لا رجعة فيها، والهوية والحقوق.
+
+#### 2. الجاهزية والشارة (A28)
+
+- `python3` ← افحص وجوده بأمر واحد قبل كتابة الشارة
+- الوضع 1: شارة «هنا الآن» بعد الفحص، لا 📄 الكتالوج تلقائيًا · الوضع 2: `كتالوج: 📄 · هنا: غير مفحوص` · الوضع 3: بلا شارة ولا معرّف.
+
+#### 3. موضعها في الخطة (A26)
+
+- عقدة منمّطة: المدخل `brief` ← المخرج `plan`، والمنفّذ `method:AGENT-53` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `business-workflows` · `charter-ingest` · `council` · `fusionforge` · `hub` · `kosif-mcp`.
+- مراحل النوع: الهدف بمؤشره ← ثلاثة خيارات مختلفة ← تقييم وحساسية ← تشريح مسبق ← بوابات مكتوبة ← خطوة أولى قابلة للتراجع.
+- إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
+
+#### 4. بوابة التحقق (A27)
+
+- إلزامي: لكل هدف مؤشر وعتبة وتاريخ ← جدول المؤشرات
+- إلزامي: ثلاثة خيارات مختلفة المنهج مع توصية ← جدول المقارنة
+- جودة: تشريح مسبق بأهم أسباب الفشل والوقاية ← think.py plan
+- جودة: بوابات go/pivot/kill مكتوبة قبل النتائج ← think.py gate
+- إلزامي: خطوة أولى صغيرة قابلة للتراجع هذا الأسبوع ← مراجعة
+- أمر الحكم في الوضع 1: `think.py qa plan --answers qa.json` (PASS / FAIL / INCOMPLETE).
+
+#### 5. التعافي (A29)
+
+- `missing_dependency` (اعتمادية مفقودة، ميزانية 2): سمِّ الاعتمادية بالضبط (حزمة، برنامج، خط، نموذج) ← ثبّت محليًا في بيئة العمل إن كان مجانيًا ومسموحًا (pip --user أو venv أو npm محلي) · البديل: مسار المكتبة القياسية أو أداة أخرى من نفس المجموعة · تصعيد: تثبيت نظامي أو مدفوع أو يحتاج مفتاحًا: توقف واسأل
+- `quality_below_threshold` (جودة دون العتبة، ميزانية 3): أي معيار فشل وبكم (المقيس مقابل العتبة) ← عالج السبب الأكبر وحده ثم أعد القياس · البديل: المنهج البديل المكتوب للمرحلة في الخطة · تصعيد: معيار إلزامي لا يتحقق بعد البديل: توقف وأبلغ بالأرقام
+- `tool_error` (خطأ أداة، ميزانية 3): اقرأ آخر سطر في الخطأ ثم أول سطر من كودك فيه ← أصلح السبب المثبت وحده، ثم شغّل الاختبار المتعلق · البديل: أداة أخرى أو مسار يدوي للمرحلة نفسها · تصعيد: خطأ في أداة خارجية لا تملكها: بلّغ بإعادة الإنتاج ولا تخفه
+
+#### 6. الأدلة
+
+- لا دليل مسجل: لا تُقدَّم أكثر من منهج.
+
+#### 7. قدرات قريبة في العائلة
+
+- `AGENT-51` ذاكرة بطبقات يحررها الوكيل / Tiered self-editing memory (documented)
+- `AGENT-52` التقاط ملاحظات الجلسة وحقنها في التالية / Session observation capture and injection (documented)
+- `AGENT-54` حواجز تفعيل وتسليم لمتخصص / Tripwire guardrails and specialist handoffs (documented)
+- `AGENT-55` تيار أحداث قابل لإعادة التشغيل / Replayable event-stream agent (documented)
+
+### `AGENT-54` — حواجز تفعيل وتسليم لمتخصص / Tripwire guardrails and specialist handoffs
+
+| الحقل | القيمة |
+|---|---|
+| العائلة | `agent-orchestration` ([فصل العائلة](../../../.claude/skills/kosif-superpowers/references/powers/agent-orchestration.md)) |
+| المجموعة | الوكلاء والتوجيه الذكي (`agents`) |
+| نوع المخرج (A25، A27) | خطة واستراتيجية وقرار (`plan`) |
+| الحالة في الكتالوج | 📄 `documented`: منهج موصوف يحتاج بناءً أو ربطًا قبل التشغيل |
+| سقف التحقق قبل العمل (A27) | V1 حتى تُبنى وتُشغَّل؛ لا تقدَّم جاهزة أبدًا |
+| نطاق الدليل | `none` |
+| الرخصة | MIT |
+
+**ما هي:** فحص دخول يعمل بالتوازي مع الوكيل ويوقفه فورًا إن انطلق، وفحص خروج على الناتج النهائي، وتسليم المهمة لوكيل متخصص كاستدعاء أداة بسجل مفلتر. — An input check that runs alongside the agent and halts it when tripped, an output check on the final result, and handoff to a specialist as a tool call with filtered history.
+
+**متى:** مساعد يخدم طلبات متنوعة أو حساسة / an assistant serving varied or sensitive requests
+
+**كيف:** Input tripwire: cheap classifier for out-of-scope, unsafe or secret-bearing input; on trip stop and say why. Output check: schema, policy, numbers-from-runs. Handoff: 'transfer_to_<specialist>' with only the turns it needs. Trace every span (agent, tool, handoff, guardrail) so a failure can be located.
+
+**التثبيت:** لا خطوة تثبيت مسجلة
+
+**الوسوم:** agents sdk · guardrails · tripwire · handoff · tracing · حواجز · تسليم · تتبع
+
+#### 1. الاستقبال (A25)
+
+- الهدف القابل للقياس: سؤال بإجابة مقترحة ← هدف مقترح بعتبة رقمية يُعرض للتعديل
+- الأفق الزمني: افتراض مكتوب ← 90 يومًا
+- الموارد والميزانية: افتراض مكتوب ← شخص واحد بلا صرف
+- لا تُفترض أبدًا: مادة الإنتاج نفسها، والإذن بخطوة مدفوعة أو منشورة أو لا رجعة فيها، والهوية والحقوق.
+
+#### 2. الجاهزية والشارة (A28)
+
+- لا متطلبات مسجلة؛ افحص المسار والأداة بـ `hub.py doctor` قبل الشارة.
+- الوضع 1: شارة «هنا الآن» بعد الفحص، لا 📄 الكتالوج تلقائيًا · الوضع 2: `كتالوج: 📄 · هنا: غير مفحوص` · الوضع 3: بلا شارة ولا معرّف.
+
+#### 3. موضعها في الخطة (A26)
+
+- عقدة منمّطة: المدخل `brief` ← المخرج `plan`، والمنفّذ `method:AGENT-54` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `business-workflows` · `charter-ingest` · `council` · `fusionforge` · `hub` · `kosif-mcp`.
+- مراحل النوع: الهدف بمؤشره ← ثلاثة خيارات مختلفة ← تقييم وحساسية ← تشريح مسبق ← بوابات مكتوبة ← خطوة أولى قابلة للتراجع.
+- إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
+
+#### 4. بوابة التحقق (A27)
+
+- إلزامي: لكل هدف مؤشر وعتبة وتاريخ ← جدول المؤشرات
+- إلزامي: ثلاثة خيارات مختلفة المنهج مع توصية ← جدول المقارنة
+- جودة: تشريح مسبق بأهم أسباب الفشل والوقاية ← think.py plan
+- جودة: بوابات go/pivot/kill مكتوبة قبل النتائج ← think.py gate
+- إلزامي: خطوة أولى صغيرة قابلة للتراجع هذا الأسبوع ← مراجعة
+- أمر الحكم في الوضع 1: `think.py qa plan --answers qa.json` (PASS / FAIL / INCOMPLETE).
+
+#### 5. التعافي (A29)
+
+- `quality_below_threshold` (جودة دون العتبة، ميزانية 3): أي معيار فشل وبكم (المقيس مقابل العتبة) ← عالج السبب الأكبر وحده ثم أعد القياس · البديل: المنهج البديل المكتوب للمرحلة في الخطة · تصعيد: معيار إلزامي لا يتحقق بعد البديل: توقف وأبلغ بالأرقام
+- `tool_error` (خطأ أداة، ميزانية 3): اقرأ آخر سطر في الخطأ ثم أول سطر من كودك فيه ← أصلح السبب المثبت وحده، ثم شغّل الاختبار المتعلق · البديل: أداة أخرى أو مسار يدوي للمرحلة نفسها · تصعيد: خطأ في أداة خارجية لا تملكها: بلّغ بإعادة الإنتاج ولا تخفه
+
+#### 6. الأدلة
+
+- لا دليل مسجل: لا تُقدَّم أكثر من منهج.
+
+#### 7. قدرات قريبة في العائلة
+
+- `AGENT-52` التقاط ملاحظات الجلسة وحقنها في التالية / Session observation capture and injection (documented)
+- `AGENT-53` وكيل يتصرف بالكود / Code-as-action agent (documented)
+- `AGENT-55` تيار أحداث قابل لإعادة التشغيل / Replayable event-stream agent (documented)
+
+### `AGENT-55` — تيار أحداث قابل لإعادة التشغيل / Replayable event-stream agent
+
+| الحقل | القيمة |
+|---|---|
+| العائلة | `agent-orchestration` ([فصل العائلة](../../../.claude/skills/kosif-superpowers/references/powers/agent-orchestration.md)) |
+| المجموعة | الوكلاء والتوجيه الذكي (`agents`) |
+| نوع المخرج (A25، A27) | خطة واستراتيجية وقرار (`plan`) |
+| الحالة في الكتالوج | 📄 `documented`: منهج موصوف يحتاج بناءً أو ربطًا قبل التشغيل |
+| سقف التحقق قبل العمل (A27) | V1 حتى تُبنى وتُشغَّل؛ لا تقدَّم جاهزة أبدًا |
+| نطاق الدليل | `none` |
+| الرخصة | MIT |
+
+**ما هي:** كل فعل وكل ملاحظة يُضاف إلى تيار أحداث واحد مرتب، والتنفيذ في بيئة معزولة، والأحداث القديمة تُلخَّص لا تُحذف. — Every action and observation is appended to one ordered event stream, execution happens in a sandbox, and old events are condensed, not dropped.
+
+**متى:** وكيل برمجي طويل تريد تدقيقه أو استئنافه / a long coding agent you want to audit or resume
+
+**كيف:** Event = {id, time, kind: action\|observation, source, payload}. The agent's next step reads a view of the stream (recent events in full + a condensed summary of older ones). Replaying the stream rebuilds state for debugging. Pairs with AGENT-47 checkpoints and A5 receipts.
+
+**التثبيت:** لا خطوة تثبيت مسجلة
+
+**الوسوم:** openhands · event stream · condenser · sandbox · replay · تيار أحداث · إعادة تشغيل
+
+#### 1. الاستقبال (A25)
+
+- الهدف القابل للقياس: سؤال بإجابة مقترحة ← هدف مقترح بعتبة رقمية يُعرض للتعديل
+- الأفق الزمني: افتراض مكتوب ← 90 يومًا
+- الموارد والميزانية: افتراض مكتوب ← شخص واحد بلا صرف
+- لا تُفترض أبدًا: مادة الإنتاج نفسها، والإذن بخطوة مدفوعة أو منشورة أو لا رجعة فيها، والهوية والحقوق.
+
+#### 2. الجاهزية والشارة (A28)
+
+- لا متطلبات مسجلة؛ افحص المسار والأداة بـ `hub.py doctor` قبل الشارة.
+- الوضع 1: شارة «هنا الآن» بعد الفحص، لا 📄 الكتالوج تلقائيًا · الوضع 2: `كتالوج: 📄 · هنا: غير مفحوص` · الوضع 3: بلا شارة ولا معرّف.
+
+#### 3. موضعها في الخطة (A26)
+
+- عقدة منمّطة: المدخل `brief` ← المخرج `plan`، والمنفّذ `method:AGENT-55` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `business-workflows` · `charter-ingest` · `council` · `fusionforge` · `hub` · `kosif-mcp`.
+- مراحل النوع: الهدف بمؤشره ← ثلاثة خيارات مختلفة ← تقييم وحساسية ← تشريح مسبق ← بوابات مكتوبة ← خطوة أولى قابلة للتراجع.
+- إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
+
+#### 4. بوابة التحقق (A27)
+
+- إلزامي: لكل هدف مؤشر وعتبة وتاريخ ← جدول المؤشرات
+- إلزامي: ثلاثة خيارات مختلفة المنهج مع توصية ← جدول المقارنة
+- جودة: تشريح مسبق بأهم أسباب الفشل والوقاية ← think.py plan
+- جودة: بوابات go/pivot/kill مكتوبة قبل النتائج ← think.py gate
+- إلزامي: خطوة أولى صغيرة قابلة للتراجع هذا الأسبوع ← مراجعة
+- أمر الحكم في الوضع 1: `think.py qa plan --answers qa.json` (PASS / FAIL / INCOMPLETE).
+
+#### 5. التعافي (A29)
+
+- `quality_below_threshold` (جودة دون العتبة، ميزانية 3): أي معيار فشل وبكم (المقيس مقابل العتبة) ← عالج السبب الأكبر وحده ثم أعد القياس · البديل: المنهج البديل المكتوب للمرحلة في الخطة · تصعيد: معيار إلزامي لا يتحقق بعد البديل: توقف وأبلغ بالأرقام
+- `tool_error` (خطأ أداة، ميزانية 3): اقرأ آخر سطر في الخطأ ثم أول سطر من كودك فيه ← أصلح السبب المثبت وحده، ثم شغّل الاختبار المتعلق · البديل: أداة أخرى أو مسار يدوي للمرحلة نفسها · تصعيد: خطأ في أداة خارجية لا تملكها: بلّغ بإعادة الإنتاج ولا تخفه
+
+#### 6. الأدلة
+
+- لا دليل مسجل: لا تُقدَّم أكثر من منهج.
+
+#### 7. قدرات قريبة في العائلة
+
+- `AGENT-53` وكيل يتصرف بالكود / Code-as-action agent (documented)
+- `AGENT-54` حواجز تفعيل وتسليم لمتخصص / Tripwire guardrails and specialist handoffs (documented)
 

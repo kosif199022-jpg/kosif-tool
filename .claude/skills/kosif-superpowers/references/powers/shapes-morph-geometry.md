@@ -2,7 +2,7 @@
 
 > **قوتك هنا:** أنت تبني الصورة من أشكال صافية وتجعلها تتحول بلا قطع — دائرة تصير نجمة ثم مربعًا، زر يصير شريط تقدم، نقطة تتفتح إلى واجهة، كتل لزجة تندمج، حلقات تدور بنسب صحيحة فتلتف بلا قفزة، شبكات باوهاوس وتروشيه تتموج من المركز، وزخارف ثمانية تُرسم على الإيقاع — بأرقام تجعل الحركة مقروءة لا عشوائية.
 > **أقوى دليل:** مختبر أشكال رندرتُه في هذه الحاوية (2026-10-16، 90 إطارًا، VERIFY OK): `MOTION.morphPath` من motion-kit يحوّل دائرة→نجمة→مربعًا، فلتر اللزوجة 18/−7، زهرة 137.5°، تروشيه وباوهاوس بموجة مسافة، فائق الإهليلج بحلقات صدى، حلقات بفجوات، انفجار خطوط وحلقة صدمة، ودالة قطبية تتحول — واختبارات النحت بحقول المسافة `test_shape_kit` ‏(4/4) ومحرك أشكال Studio ‏(10/10) نجحت هنا.
-> **You can:** morph paths, containers and dot clouds, sculpt SDF solids, draw curves and compound holes, choreograph grids, orbit rings and bursts, and build Islamic ornament from code. **95 powers follow** — ✅ 16 · 🟢 17 · 📦 7 · 🔑 0 · 👁 32 · 📄 19 · 💡 4.
+> **You can:** morph paths, containers and dot clouds, sculpt SDF solids, draw curves and compound holes, choreograph grids, orbit rings and bursts, and build Islamic ornament from code. **97 powers follow** — ✅ 16 · 🟢 17 · 📦 7 · 🔑 0 · 👁 32 · 📄 21 · 💡 4.
 
 **الحالة / status:** ✅ مُثبت هنا (كود + اختبار أو رندر في هذه الحاوية) · 🟢 جاهز (كود المالك يعمل بلا إضافات) · 📦 بأمر تثبيت · 🔑 مفتاح أو خدمة · 👁 شوهد في فيديو أنتجتَه (وصفة البناء مرفقة) · 📄 موصوف فقط · 💡 فكرة.
 مسارات الدليل نسبية إلى `/home/user/`؛ `style:<id>` = فيديو مرجعي أنتجتَه سابقًا (ملاحظاته في `kosif-tool/styles/<id>/`).
@@ -20,6 +20,7 @@
 - **نظام الأشكال وقواعده — Shape system & rules** — SHAPE-89 … SHAPE-93 (5)
 - توليفات قوية / power combos · أخطاء ممنوعة / never do · أقوى 5 حركات توقيع / 5 signature moves
 - **إضافات v2 — v2 additions** — SHAPE-X01 … SHAPE-X02 (2)
+- **من أكبر مستودعات GitHub — from the top GitHub repositories (2026-10-23)** — SHAPE-G01 … SHAPE-G02 (2)
 
 ## تحويل شكل إلى شكل — Path & shape morphing
 
@@ -725,3 +726,21 @@ _قدرات أُضيفت في الإصدار الثاني من حزم المال
 - **الرخصة / license:** owner (no LICENSE file)
 - **المصدر / source:** `owner-upload:motion-saas_skill/higgsfield-motion-saas/references/transitions.md`
 - **الدليل / proof:** `owner-upload:motion-saas_skill/higgsfield-motion-saas/references/transitions.md`
+
+## من أكبر مستودعات GitHub — from the top GitHub repositories (2026-10-23)
+
+_قدرات من أشهر مستودعات GitHub ذات الترخيص المفتوح (MIT)، مكتوبة بكلماتنا لا منسوخة، وسجل كل مستودع في [github-top-1000.md](../github-top-1000.md). 🟢 = الكود هنا في `scripts/motion_physics.py` واختباره `evals/test_motion_physics.py`. — Powers from the most-starred open-licence (MIT) GitHub repositories, restated in our own words; per-repo record in github-top-1000.md; 🟢 = code here in scripts/motion_physics.py with its test._
+
+#### SHAPE-G01 · رقم متحرك واحد يقود كل الأشكال · One animated value drives every dependent shape · 📄 موصوف / documented only
+- **ماذا / what:** حرّك قيمة واحدة (متتبع) واجعل كل شكل يعتمد عليها يُعاد رسمه من دالة في كل إطار، بدل تحريك كل شكل وحده. — Animate one value (a tracker) and redraw every dependent shape from a function of it each frame, instead of animating each shape alone.
+- **متى أستخدمها / when:** رسوم شرح فيها نقطة على منحنى، أو عداد وأعمدة، أو زاوية ومثلث / explainers with a dot on a curve, a counter and bars, or an angle and a triangle
+- **كيف / how:** Manim pattern: ValueTracker t → always_redraw(lambda: Dot(axes.c2p(t, f(t)))) plus a label and a tangent from the same t; then animate only t. In HTML: one state value, every element computed in render(t). Dependencies can never drift apart, and seeking any frame is exact.
+- **الرخصة / license:** MIT
+- **المصدر / source:** https://github.com/3b1b/manim and https://github.com/ManimCommunity/manim (MIT) — restated in our own words
+
+#### SHAPE-G02 · تحويل يطابق الأجزاء المشتركة · Morph that matches shared parts · 📄 موصوف / documented only
+- **ماذا / what:** عند تحويل معادلة أو نص أو شكل إلى آخر، أبقِ الأجزاء المتطابقة في مكانها وحرّكها، وحوّل المختلف فقط، بدل ذوبان كل شيء في كل شيء. — When morphing one equation, text or shape into another, keep matching parts and move them, morph only what differs, instead of melting everything into everything.
+- **متى أستخدمها / when:** خطوات حل معادلة، تغيير كلمة في عنوان، تطور شعار / equation steps, swapping a word in a title, logo evolution
+- **كيف / how:** Split both states into parts with stable keys (tokens, glyphs, sub-paths); matched keys tween position/scale; unmatched old parts fade or shrink out, new ones fade or grow in; order point lists before a path morph so vertices pair by position. Manim: TransformMatchingTex / TransformMatchingShapes; ReplacementTransform when the target object replaces the source in the scene.
+- **الرخصة / license:** MIT
+- **المصدر / source:** https://github.com/ManimCommunity/manim (MIT; TransformMatchingTex/Shapes) — restated in our own words
