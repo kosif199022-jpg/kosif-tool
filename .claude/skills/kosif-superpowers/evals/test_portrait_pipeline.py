@@ -86,6 +86,31 @@ class PortraitDrawTest(unittest.TestCase):
                 self.assertEqual(rv.returncode, 0, rv.stdout)
             self.assertNotEqual(round(means["ink"]), round(means["charcoal"]))
 
+    def test_colour_media_follow_the_colours(self):
+        with tempfile.TemporaryDirectory() as tmp:
+            tmp = Path(tmp)
+            h, w = 180, 150
+            img = np.zeros((h, w, 3), np.uint8)
+            img[:] = (190, 120, 40)                                          # BGR: a blue field
+            cv2.circle(img, (75, 95), 42, (40, 50, 210), -1)                 # a red disc
+            cv2.imwrite(str(tmp / "ref.png"), img)
+            for medium, source in (("colored-pencil", "strokes_only"), ("oil", "brush_strokes_only"),
+                                   ("watercolor", "washes_and_strokes")):
+                out = tmp / medium
+                subprocess.run([sys.executable, str(SCRIPT), "draw", "--photo", str(tmp / "ref.png"), "--out", str(out),
+                                "--medium", medium, "--subject", "scene", "--seed", "4"], check=True, capture_output=True)
+                rec = json.loads((out / "receipt.json").read_text())
+                self.assertEqual((rec["medium"], rec["canvas_source"]), (medium, source))
+                self.assertFalse(rec["photo_pixels_in_output"])
+                g = cv2.imread(rec["png"], cv2.IMREAD_COLOR).astype(float)
+                disc, field = g[85:105, 65:85].mean((0, 1)), g[5:25, 5:25].mean((0, 1))
+                self.assertGreater(disc[2] - disc[0], 40, medium)          # red reads red
+                self.assertGreater(field[0] - field[2], 40, medium)        # blue reads blue
+                self.assertGreater(np.abs(g - img.astype(float)).mean(), 4, medium)   # not the photo itself
+                subprocess.run([sys.executable, str(SCRIPT), "review", "--dir", str(out)], capture_output=True)
+                checks = {c["id"]: c for c in json.loads((out / "review.json").read_text())["checks"]}
+                self.assertTrue(checks["colour-fidelity"]["pass"], (medium, checks["colour-fidelity"]))
+
 
 if __name__ == "__main__":
     unittest.main()
