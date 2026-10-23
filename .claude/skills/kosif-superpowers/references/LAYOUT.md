@@ -247,7 +247,7 @@ Executable motion, montage, rhythm, reference transfer and cinematic direction.
 
 Code drawing, paint runtimes, unified draw/media, Blender bridges and the native 3D core.
 
-`draw-3d` · 15 file(s) · planned folder `references/draw-3d/`
+`draw-3d` · 16 file(s) · planned folder `references/draw-3d/`
 
 - [references/code-drawing-master.md](code-drawing-master.md)
 - [references/creative-paint-runtime.md](creative-paint-runtime.md)
@@ -264,6 +264,7 @@ Code drawing, paint runtimes, unified draw/media, Blender bridges and the native
 - [references/native-zbuffer-rasterizer.md](native-zbuffer-rasterizer.md)
 - [references/cloud-browser-and-app-capability-matrix.md](cloud-browser-and-app-capability-matrix.md)
 - [references/drawing-methods-atlas.md](drawing-methods-atlas.md)
+- [references/portrait-drawing.md](portrait-drawing.md)
 
 ## 9. الخطوط والصور / Typography and images
 

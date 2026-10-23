@@ -163,7 +163,8 @@
     "references/native-primitives-and-research-v2.md",
     "references/native-zbuffer-rasterizer.md",
     "references/cloud-browser-and-app-capability-matrix.md",
-    "references/drawing-methods-atlas.md"
+    "references/drawing-methods-atlas.md",
+    "references/portrait-drawing.md"
    ],
    "globs": []
   },

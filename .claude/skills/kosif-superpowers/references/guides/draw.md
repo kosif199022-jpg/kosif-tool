@@ -8,7 +8,7 @@ Commands below are typed from the skill folder (`.claude/skills/kosif-superpower
 
 <!-- hub:area:draw:start -->
 
-**الأدوات / tools (11)** — `python3 scripts/hub.py tool <id>` for every command, requirement and limit:
+**الأدوات / tools (12)** — `python3 scripts/hub.py tool <id>` for every command, requirement and limit:
 
 | tool | what it does | start with | evidence |
 |---|---|---|---|
@@ -21,6 +21,7 @@ Commands below are typed from the skill folder (`.claude/skills/kosif-superpower
 | `creative-principles` | Builds original SVG drawing stages, three-value tone breakdown, and intercut tonal distribution flags from supplied arrays. | `python3 scripts/creative_principles.py construct --input original-shapes.json --out-prefix out/stage` | tested-elsewhere |
 | `drawing-academy` | Eight source-anchored skill lessons, rights-scoped text keyword scans, scores tied to actual artifacts and provenance. | `python3 scripts/drawing_academy.py index` | tested-elsewhere |
 | `drawing-methods` | 48 original method cards distilled from drawing books, including 41 books from the user's own library read on 2026-10-23 (text, OCR or sample pages) (gesture, proportion, Loomis head, mannequin, shape language, silhouette, expression, light, cast shadows, hatching, anime heads, hair and cel shading, animation timing, walks, urban sketching, plants, products, creatures, practice); ranks them for an Arabic or English request, builds an ordered drawing plan or an image prompt, draws a head, figure, character, forms, a bouncing ball or a constructed cast shadow as a deterministic layered SVG (guide, construction, final, silhouette) and checks the drawing's geometry against the cards. | `python3 scripts/drawing_methods.py find "ارسم وش شخصية بتضحك"` | tested-here |
+| `portrait-pipeline` | Turns a photo reference into a hand-drawn-looking pencil portrait without copying a single photo pixel: it measures the sitter (MediaPipe face landmarks and hair/skin/clothes segmentation, optional), lays in faint Loomis construction and a straight-line envelope, plans values with the background held back, renders four tonal passes of tapered strokes that follow the form and stop at edges, blends the skin with a stump pass, adds lost-and-found edges and feature accents, lifts highlights and catchlights with an eraser pass, and deposits graphite through simulated paper tooth. Writes PNG, a layered editable SVG (one group per stage) and a receipt; review runs the rule-27 anatomy/contact gate plus value-fidelity checks. 16 portrait method cards (Loomis, Bridgman, Bargue, Speed, Vanderpoel, Hampton, Gurney, Dodson, Hammond, atelier sight-size) in data/portrait_methods.json name the stage that executes each. | `python3 scripts/portrait_pipeline.py draw --photo photo.png --out out/portrait --models <dir with face_landmarker.task and selfie_multiclass.tflite>` | tested-here |
 | `perspective-color-lab` | Draws a geometrically constrained two-vanishing-point SVG and measures HSV/WCAG contrast of brand color swatches. | `python3 scripts/perspective_color_lab.py perspective --input scene.json --out out/scene.svg` | tested-elsewhere |
 | `drawing-visual-qa` | Routes art tasks to four original-book sections read in full chapter context, measures real raster three-value tone groups, transparency and color proxies, and checks that edited pixels remain in the user-authorized rectangular region. Separate from the PR92 SVG authoring engine; its PASS is not an aesthetic verdict. | `python3 scripts/drawing_visual_qa.py curriculum "ارسم شخصية كرتونية بمنظور وإضاءة" --out out/lessons.json` | tested-here |
 
@@ -63,4 +64,10 @@ For a Claude task requiring a drawn person to walk, run, wave, smile, blink or n
 قبل رسم أي شخصية أو وجه أو جسم، شغّل `python3 scripts/drawing_methods.py plan "<الطلب>"` لتحصل على مناهج كتب الرسم المناسبة (الإيماءة، النسب بوحدة الرأس، بناء الرأس بالكرة، المانيكان، لغة الأشكال، السيلويت، التعبير، الضوء والقيم، الظل الساقط، التهشير، رأس الأنمي وشعره وتلوينه، توقيت التحريك والمشي، المدن والنبات والمنتجات والمخلوقات) مرتبة من النية إلى التحقق. ثم ابدأ من هيكل صحيح بـ `draw head|figure|character|forms|bounce|shadow --out <file.svg>` وافحصه بـ `check --svg <file.svg>`. للصور المولّدة استعمل `prompt` (لا يستدعي أي نموذج). التفاصيل والجدول الكامل للكتب في [أطلس مناهج كتب الرسم](../drawing-methods-atlas.md).
 
 Before drawing a character, face or figure, run `plan` for the matching drawing-book methods in order (gesture, head-unit proportion, ball-and-plane head, mannequin, shape language, silhouette, expression, light and value), start from a correct structure with `draw`, and verify it with `check`. The cards are original summaries, not copied book text; `check` measures geometry, not artistic quality.
+
+## Realistic portrait from a photo — بورتريه واقعي من صورة
+
+لرسم شخص حقيقي من صورته بالقلم الرصاص كأنه مرسوم باليد، دون تغيير التكوين: `python3 scripts/portrait_pipeline.py draw --photo <صورة> --out out/<مجلد> --models <مجلد النماذج>` ثم `review --dir out/<مجلد>` حتى PASS، ثم افتح الـPNG وانظر إليه وقارنه بأفضل جولة سابقة قبل التسليم. اللوحة تبدأ ورقًا فارغًا وكل علامة فيها خط مولَّد (لا بكسل من الصورة). البطاقات PM-01..PM-16 والخطوات في [رسم البورتريه](../portrait-drawing.md).
+
+To draw a real person from a photo as a pencil portrait, run `portrait_pipeline.py draw`, then `review` until PASS, then open the PNG and compare it with the best earlier round before delivery. The canvas is paper plus generated strokes only; the method cards and the loop rules are in [Portrait drawing](../portrait-drawing.md).
 

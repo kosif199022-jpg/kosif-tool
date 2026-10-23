@@ -18,8 +18,8 @@
   "powers": 5492,
   "families": 62,
   "domains": 10,
-  "tools": 144,
-  "guides": 107,
+  "tools": 145,
+  "guides": 108,
   "statuses": {
    "documented": 2086,
    "idea": 71,
@@ -12698,6 +12698,94 @@
    "evidence_note": "10 unit tests passed on this checkout (cloud container, 2026-10-23), including draw+check of 9 variants and a rendered visual review of head, figure, character and forms SVGs."
   },
   {
+   "id": "portrait-pipeline",
+   "path": "scripts/portrait_pipeline.py",
+   "root": "skill",
+   "kind": "cli",
+   "area": "draw",
+   "title_en": "Realistic portrait from a photo, drawn stroke by stroke in graphite",
+   "title_ar": "بورتريه واقعي من صورة مرسوم خطًا بخط بالجرافيت",
+   "summary_en": "Turns a photo reference into a hand-drawn-looking pencil portrait without copying a single photo pixel: it measures the sitter (MediaPipe face landmarks and hair/skin/clothes segmentation, optional), lays in faint Loomis construction and a straight-line envelope, plans values with the background held back, renders four tonal passes of tapered strokes that follow the form and stop at edges, blends the skin with a stump pass, adds lost-and-found edges and feature accents, lifts highlights and catchlights with an eraser pass, and deposits graphite through simulated paper tooth. Writes PNG, a layered editable SVG (one group per stage) and a receipt; review runs the rule-27 anatomy/contact gate plus value-fidelity checks. 16 portrait method cards (Loomis, Bridgman, Bargue, Speed, Vanderpoel, Hampton, Gurney, Dodson, Hammond, atelier sight-size) in data/portrait_methods.json name the stage that executes each.",
+   "summary_ar": "يحوّل صورة مرجعية إلى بورتريه بالقلم الرصاص يبدو مرسومًا باليد دون نسخ أي بكسل من الصورة: يقيس الشخص (نقاط ملامح الوجه وتقسيم الشعر والجلد والملابس، اختياري)، ويضع بناء لوميس الخفيف وغلافًا بخطوط مستقيمة، ويخطط القيم مع تخفيف الخلفية، ويرسم أربع طبقات تهشير بخطوط مستدقة تتبع الشكل وتتوقف عند الحواف، ويموّه البشرة، ويضيف حوافًا ضائعة وظاهرة ولمسات الملامح، ويرفع الإضاءات ولمعة العين بالممحاة، ويرسب الجرافيت عبر ملمس ورق. يكتب PNG وSVG بطبقات قابلة للتحرير وإيصالًا، والمراجعة تشغّل بوابة القاعدة 27 وفحوص دقة القيم. 16 بطاقة منهج للبورتريه في data/portrait_methods.json.",
+   "use_when": [
+    "ارسم الصورة دي بورتريه بالقلم الرصاص كأنها مرسومة باليد",
+    "حوّل صورتي لرسم واقعي بالرصاص من غير ما تغير التكوين",
+    "Draw this photo as a realistic pencil portrait from scratch",
+    "Make a graphite portrait drawing of this person",
+    "ارسم بورتريه واقعي بالتهشير"
+   ],
+   "keywords": [
+    "portrait",
+    "بورتريه",
+    "pencil portrait",
+    "رسم بالرصاص",
+    "graphite",
+    "جرافيت",
+    "realistic drawing",
+    "رسم واقعي",
+    "hatching",
+    "تهشير",
+    "cross-hatching",
+    "loomis",
+    "لوميس",
+    "bargue",
+    "بارج",
+    "sight-size",
+    "charcoal",
+    "فحم",
+    "photo to drawing",
+    "صورة لرسم",
+    "face drawing",
+    "رسم الوجه"
+   ],
+   "commands": [
+    {
+     "name": "draw",
+     "example": "python3 scripts/portrait_pipeline.py draw --photo photo.png --out out/portrait --models <dir with face_landmarker.task and selfie_multiclass.tflite>",
+     "does": "Measures the photo and writes portrait.png, portrait.svg (layers construction, lay-in, cross-hatch, deep-shadow, accents, edges + a hidden rule-27 figure group) and receipt.json."
+    },
+    {
+     "name": "review",
+     "example": "python3 scripts/portrait_pipeline.py review --dir out/portrait",
+     "does": "Rule-27 anatomy/contact gate (drawing_methods review) plus value-mass, value-detail, face-likeness, value-range and stroke-texture checks; writes review.json; exit 1 on any failure."
+    },
+    {
+     "name": "cards",
+     "example": "python3 scripts/portrait_pipeline.py cards --id PM-02",
+     "does": "Lists or shows the portrait method cards."
+    }
+   ],
+   "inputs": "A photo (PNG/JPG; phone-screenshot bars are trimmed) and optional MediaPipe model files",
+   "outputs": "portrait.png, layered editable portrait.svg, receipt.json, review.json",
+   "requires": {
+    "python": [
+     "numpy",
+     "opencv-python-headless"
+    ],
+    "binaries": [],
+    "node": [],
+    "optional": [
+     "mediapipe (+ face_landmarker.task, selfie_multiclass_256x256.tflite from storage.googleapis.com/mediapipe-models)"
+    ],
+    "network": false
+   },
+   "safety": "writes-files",
+   "consent": "Writes only into --out; no network, model calls or spend. A photo of a real person is personal data: draw people only with their consent and never publish without the user's permission.",
+   "limits": "Algorithmic rendering from measured construction and a value map, not a human hand and not a neural model; likeness depends on the measurement step. Method cards paraphrase widely taught methods (only those marked user_copy_read_paraphrased rest on books read). review measures value fidelity, texture and figure connectivity, not beauty.",
+   "tests": [
+    ".claude/skills/kosif-superpowers/evals/test_portrait_pipeline.py"
+   ],
+   "docs": [
+    ".claude/skills/kosif-superpowers/references/portrait-drawing.md"
+   ],
+   "families": [
+    "hand-drawn-draw-on",
+    "story-direction-ideas"
+   ],
+   "evidence": "tested-here",
+   "evidence_note": "3 unit tests passed on this checkout (cloud container, 2026-10-23); full portrait of a 1320x2345 reference drawn, reviewed and visually inspected over several rounds."
+  },
+  {
    "id": "perspective-color-lab",
    "path": "scripts/perspective_color_lab.py",
    "root": "skill",
@@ -14251,6 +14339,12 @@
    "path": "references/owner-uploads-review-20261023.md",
    "title": "مراجعة مرفقات المالك — Owner uploads review (2026-10-23)",
    "area": "general",
+   "summary": ""
+  },
+  {
+   "path": "references/portrait-drawing.md",
+   "title": "رسم البورتريه الواقعي — Realistic portrait drawing",
+   "area": "draw",
    "summary": ""
   },
   {
