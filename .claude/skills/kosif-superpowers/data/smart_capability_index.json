@@ -1,10 +1,10 @@
 {
   "schema": "kosif.smart-capability-index.v1",
   "origin": "data/powers/*.json (catalog); no original records changed",
-  "catalog_powers": 5728,
+  "catalog_powers": 5729,
   "group_count": 15,
   "family_count": 62,
-  "tool_count": 168,
+  "tool_count": 169,
   "groups": [
     {
       "id": "research",
@@ -130,17 +130,17 @@
       ],
       "keywords": "agent orchestration tool routing discover automation وكلاء أدوات توجيه بحث",
       "workflow": [],
-      "count": 266,
+      "count": 267,
       "status_counts": {
         "documented": 65,
         "install": 15,
         "key": 2,
-        "proven": 162,
+        "proven": 163,
         "ready": 22
       },
       "family_counts": {
         "agent-orchestration": 55,
-        "runnable-tools": 168,
+        "runnable-tools": 169,
         "self-discovery": 43
       },
       "examples": [
@@ -72187,6 +72187,24 @@
       ],
       "source": "runnable-tools.json",
       "what": "محرك الألوان لخط البورتريه: يقيس المرجع كما في الرصاص ثم يلوّن لوحة فارغة بالألوان الخشبية (30 قلمًا بطبقات من الفاتح للغامق) أو فرشاة الزيت (ضربات منحنية من الكبيرة للصغيرة بسماكة) أو الألوان المائية (رسم قلم خفيف ثم غسلات شفافة). لا ينسخ أي بكسل من الصورة. يُستدعى عادة عبر port"
+    },
+    {
+      "id": "TOOL-170",
+      "family": "runnable-tools",
+      "group": "agents",
+      "domain": "build",
+      "name_en": "Task history: record every finished task and repeat it later",
+      "name_ar": "سجل المهام: سجل لكل مهمة منجزة لإعادتها لاحقًا",
+      "status": "proven",
+      "requires": [
+        "python3"
+      ],
+      "proof": [
+        "kosif-tool/.claude/skills/kosif-superpowers/evals/test_task_history.py",
+        "kosif-tool/.claude/skills/kosif-superpowers/scripts/task_history.py"
+      ],
+      "source": "runnable-tools.json",
+      "what": "ذاكرة مهام على GitHub: سجل JSON واحد لكل مهمة منجزة تحت history/tasks/ بجذر المستودع، فيه الطلب بكلمات المستخدم والوضع والخطة والأدوات والأوامر بمعاملاتها والمدخلات والمخرجات (مع sha256 للملفات المحلية) وطريقة الإعادة. list وshow يجيبان «إيه المهام اللي عملتها؟»، وreplay يطبع خطة"
     },
     {
       "id": "SEC-01",

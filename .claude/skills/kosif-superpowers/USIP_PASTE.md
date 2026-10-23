@@ -35,6 +35,12 @@
    - `نفّذ مباشرة`: ابدأ التنفيذ فورًا.
    - `كمّل بدوني`: كمّل واختر أنت عند كل سؤال.
 7. **نفّذ وتحقّق.** قِس كل معيار نجاح بأداة حقيقية، وسلّم الدليل مع المخرج.
+8. **سجّل المهمة في ذاكرة GitHub** بعد كل مهمة سلّمت فيها مخرجًا (فيديو، صورة، كود، مستند...):
+   - اكتب سجلًا واحدًا `history/tasks/<YYYYMMDD>-<اسم>.json` فيه: طلبي بكلماتي، والوضع (`موافق` أو الخطة)، والأدوات والأوامر بكل معاملاتها، والمدخلات والمخرجات، وطريقة الإعادة. الحقول والقواعد في الملحق A35.
+   - إن استطعت الكتابة إلى GitHub فأضفه إلى `main` (هذا إذن دائم مني مقصور على مجلد `history/`)، أو مع فرع المهمة. وبـ shell: `python3 .claude/skills/kosif-superpowers/scripts/task_history.py add --from <الملف>`.
+   - إن لم تستطع، فسلّمني في آخر ردك اسم الملف ونص JSON جاهزًا وأمر حفظ في سطر واحد ورابط GitHub يفتح الملف مملوءًا (`add --print` يولّدها)، وقل إن الحفظ ينتظرني.
+   - لا مفاتيح ولا بريد ولا أرقام هاتف ولا مسارات جلسة في السجل، لأن `main` عام.
+9. **حين أسأل «إيه المهام اللي عملتها؟»** اقرأ فهرس السجل (الرابط أدناه) واعرض جدولًا مرقّمًا، الأحدث أولًا. **وحين أقول «كررها» أو «كرر رقم N»** فنفّذ السجل نفسه: الطلب والخطة والأدوات والمعاملات والمدخلات نفسها بلا خطط جديدة، وتحقق من المدخلات أولًا، واطلب إذني من جديد لأي خطوة صرف أو نشر، ثم قارن المخرجات الجديدة بالمسجلة وقل ما تطابق بالأرقام.
 
 **قواعد لا تُكسر:**
 - لا تدّعِ تشغيل شيء لم تشغّله، ولا مشاهدة ما لم تفتحه، ولا خبراء عملوا وهم لم يعملوا.
@@ -49,6 +55,8 @@
 - خريطة الدقائق الثلاث، وتجمع كل القدرات في 15 مجموعة: https://raw.githubusercontent.com/kosif199022-jpg/kosif-tool/main/.claude/skills/kosif-superpowers/references/CLAUDE_3_MINUTE_MAP.md
 - الفهرس الدقيق، سطر لكل قدرة وأداة وقدرة خارقة: https://raw.githubusercontent.com/kosif199022-jpg/kosif-tool/main/.claude/skills/kosif-superpowers/references/micro-index/README.md
 - فهرس المهارة وأدواتها: https://raw.githubusercontent.com/kosif199022-jpg/kosif-tool/main/.claude/skills/kosif-superpowers/references/INDEX.md
+- سجل المهام، جدول كل المهام المنجزة: https://raw.githubusercontent.com/kosif199022-jpg/kosif-tool/main/history/INDEX.md (والسجلات نفسها: https://github.com/kosif199022-jpg/kosif-tool/tree/main/history/tasks)
+- قواعد السجل والإعادة (A35): https://raw.githubusercontent.com/kosif199022-jpg/kosif-tool/main/.claude/skills/kosif-superpowers/references/protocol/A35-task-history.md
 - رسالة التفعيل المفصّلة: https://raw.githubusercontent.com/kosif199022-jpg/kosif-tool/main/.claude/skills/kosif-superpowers/SESSION_PROMPT.md
 - نسخة البروتوكول في ملف واحد، لمن لا يستطيع فتح ملفات كثيرة: https://raw.githubusercontent.com/kosif199022-jpg/kosif-tool/main/.claude/skills/kosif-superpowers/USIP_PORTABLE.md
 

@@ -7355,5 +7355,49 @@
   ],
   "section": "Drawing and characters / الرسم والشخصيات",
   "source": "data/tools.json"
+ },
+ {
+  "id": "TOOL-170",
+  "family": "runnable-tools",
+  "domain": "build",
+  "name_ar": "سجل المهام: سجل لكل مهمة منجزة لإعادتها لاحقًا",
+  "name_en": "Task history: record every finished task and repeat it later",
+  "status": "proven",
+  "what": "ذاكرة مهام على GitHub: سجل JSON واحد لكل مهمة منجزة تحت history/tasks/ بجذر المستودع، فيه الطلب بكلمات المستخدم والوضع والخطة والأدوات والأوامر بمعاملاتها والمدخلات والمخرجات (مع sha256 للملفات المحلية) وطريقة الإعادة. list وshow يجيبان «إيه المهام اللي عملتها؟»، وreplay يطبع خطة أو سكربت يعيد مهمة (لا يشغّل شيئًا ويعلّق خطوات الإذن)، وcompare يقارن المخرجات الجديدة بالبصمات المسجلة، وbuild يكتب history/INDEX.md وindex.json. والخيار add --print لا يكتب شيئًا ويعطي السجل وأمر حفظ في سطر ورابط GitHub مملوءًا لتطبيقات المحادثة التي لا تدفع. ويُرفض السجل الذي فيه مفتاح أو مسار جلسة أو رفع أو بريد أو هاتف. — Keeps a task memory on GitHub: one JSON record per finished task under history/tasks/ at the repo root, with the request in the user's words, the mode and plan, the tools and exact commands with their parameters, the inputs and outputs (sha256 added for local files) and how to reproduce it. list and show answer \"what tasks have you done?\", replay prints the plan or a shell script that repeats one (it runs nothing and keeps permission steps commented out), compare checks new outputs against the recorded hashes, and build writes history/INDEX.md and index.json. add --print writes nothing and gives the record, a one-line save command and a pre-filled GitHub new-file link for chat apps that cannot push. Records holding a credential, a session or upload path, an e-mail address or a phone number are refused.",
+  "when": "إيه المهام اللي عملتها قبل كده / What tasks have you done? Repeat the Friday dua video",
+  "how": "new: `python3 scripts/task_history.py new --kind video`; add: `python3 scripts/task_history.py add --from entry.json`; list: `python3 scripts/task_history.py list --kind video`; show: `python3 scripts/task_history.py show last`. Full card: `python3 scripts/hub.py tool task-history`. Limits: A record is what the assistant reports it ran: replay repeats the recorded commands but cannot bring back a deleted input, an expired link or a paid model's randomness, and compare checks bytes only for outputs marked deterministic.",
+  "params": "in: a record JSON file or stdin; history/tasks/*.json · out: history/tasks/<id>.json, history/INDEX.md, history/index.json; plans, scripts and comparisons on stdout",
+  "install": "",
+  "requires": [
+   "python3"
+  ],
+  "license": "",
+  "proof": [
+   "kosif-tool/.claude/skills/kosif-superpowers/evals/test_task_history.py",
+   "kosif-tool/.claude/skills/kosif-superpowers/scripts/task_history.py"
+  ],
+  "proof_scope": "repo",
+  "styles": [],
+  "tags": [
+   "task-history",
+   "history",
+   "task history",
+   "memory",
+   "repeat",
+   "replay",
+   "reproduce",
+   "log",
+   "record",
+   "سجل",
+   "سجل المهام",
+   "هيستوري",
+   "ذاكرة",
+   "كرر",
+   "كررها",
+   "إعادة",
+   "المهام اللي عملتها"
+  ],
+  "section": "Think, ideate and write / التفكير والأفكار والكتابة",
+  "source": "data/tools.json"
  }
 ]

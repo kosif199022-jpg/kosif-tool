@@ -316,93 +316,93 @@ chapter: [atlas-strategy](../powers/atlas-strategy.md) · card: `usip-library/ca
 
 | ID | | القدرة / power | SP | يحتاج / requires |
 |---|---|---|---|---|
-| ASTRAT-10 | 📄 | فحص كلمات ASO وتدقيق القائمة · App Store Optimization keyword probe and lint | SP-0152 Subtractive design review from the cust… | — |
-| ASTRAT-11 | 📄 | رحلة من الفكرة إلى التطبيق بمتتبع · Idea-to-app journey with docs tracker | SP-0152 Subtractive design review from the cust… | — |
-| ASTRAT-12 | 📄 | مراجعة مخاطر ما قبل البناء · Pre-build risk review and kill-test | SP-0152 Subtractive design review from the cust… | — |
-| ASTRAT-14 | 📄 | اختبار استراتيجية تداول بمقاييس المخاطر · Backtest trading strategy with risk metrics | SP-0152 Subtractive design review from the cust… | pip:numpy, pip:pandas, pip:matplotlib |
-| ASTRAT-15 | 📄 | تقييم DCF متين مع فحوص تقاطعية · Defensible DCF valuation with cross-checks | SP-0152 Subtractive design review from the cust… | — |
-| ASTRAT-16 | 📄 | سجل مخاطر مؤسسي مع التقييم · Enterprise risk register with scoring | SP-0152 Subtractive design review from the cust… | — |
-| ASTRAT-17 | 📄 | بناء الأعمال ومراجعة طلب التمويل للمؤسسين · Founder business building and fundraising review | SP-0152 Subtractive design review from the cust… | key:video-gen |
-| ASTRAT-18 | 📄 | بروتوكول مداولات مجلس إدارة متعدد الأدوار · Multi-role board deliberation protocol | SP-0152 Subtractive design review from the cust… | — |
-| ASTRAT-19 | 📄 | تصميم استراتيجية التسعير والربحية · Pricing and monetization strategy design | SP-0152 Subtractive design review from the cust… | — |
-| ASTRAT-20 | 📄 | ميزانية البحث والتطوير والحرق وتوجيه الرسملة · R&D program budget, burn and capitalization routing | SP-0152 Subtractive design review from the cust… | key:video-gen |
-| ASTRAT-21 | 📄 | نموذج جدول الملكية وتخفيف الحصص · Startup cap table and dilution model | SP-0152 Subtractive design review from the cust… | — |
-| ASTRAT-24 | 📄 | تقسيم العملاء والمستخدمين حسب القيمة · Customer and user segmentation by value | SP-0152 Subtractive design review from the cust… | — |
-| ASTRAT-45 | 📄 | مراجعة برنامج مكافحة غسل الأموال · AML program review against FATF/FFIEC | SP-0152 Subtractive design review from the cust… | — |
-| ASTRAT-47 | 📄 | مراجعة التصميم بالقواعد الإرشادية · Design review heuristics and critique | SP-0152 Subtractive design review from the cust… | — |
-| ASTRAT-48 | 📄 | جولة موازنة اقتصاد اللعبة · Game balance and economy tuning pass | SP-0152 Subtractive design review from the cust… | python3 |
-| ASTRAT-49 | 📄 | تصميم الآليات وتجربة اللاعب · Game mechanics and player experience design | SP-0152 Subtractive design review from the cust… | — |
-| ASTRAT-58 | 📄 | الوظائف المطلوب إنجازها بأبعادها الثلاثة · Jobs to Be Done with all three dimensions | SP-0152 Subtractive design review from the cust… | — |
-| ASTRAT-59 | 📄 | التموضع: السياق قبل الرسالة · Positioning as context (Obviously Awesome canvas) | SP-0152 Subtractive design review from the cust… | — |
-| ASTRAT-60 | 📄 | تحسين التحويل: اكتشف ولا تخمّن · Conversion optimisation: discover, do not guess | SP-0152 Subtractive design review from the cust… | — |
-| ASTRAT-61 | 📄 | تحسين الظهور في البحث ومحركات الإجابة والذكاء التوليدي · SEO, answer-engine and generative-engine visibility | SP-0152 Subtractive design review from the cust… | — |
-| ASTRAT-62 | 📄 | مراجعة تصميم بأسلوب الطرح حتى الجوهر · Subtractive design review from the customer backwards | SP-0152 Subtractive design review from the cust… | — |
-| ASTRAT-65 | 📄 | التفاوض بالتعاطف التكتيكي والأسئلة المعايَرة · Negotiation with tactical empathy and calibrated questions | SP-0152 Subtractive design review from the cust… | — |
-| ASTRAT-66 | 📄 | تصميم الفرق للتدفق السريع: أربعة أنواع وثلاثة أنماط تفاعل · Team Topologies: four team types, three interaction modes | SP-0152 Subtractive design review from the cust… | — |
-| ASTRAT-68 | 📄 | كتابة تقرير إجراء تصحيحي CAR/CAPA قابل للإغلاق · Closable corrective action report (CAR/CAPA) | SP-0152 Subtractive design review from the cust… | — |
-| ASTRAT-70 | 📄 | سلّم أنظمة دعم العملاء من الخدمة الذاتية إلى مركز الاتصال · Customer-support system ladder: self-service to contact center | SP-0152 Subtractive design review from the cust… | — |
-| ASTRAT-71 | 📄 | صياغة الردود للعمل أولًا لقارئ مشتت الانتباه · Action-first response shape for an ADHD reader | SP-0152 Subtractive design review from the cust… | — |
-| ASTRAT-73 | 📄 | مراجعة الثقة والأمان: كيف يُساء استخدام المنتج لإيذاء الآخرين · Trust-and-safety review: how the product can be misused to harm others | SP-0152 Subtractive design review from the cust… | — |
-| ASTRAT-74 | 📄 | مراجعة عقد مستقل من وجهة نظر المستقل · Independent-contractor agreement review from the freelancer's side | SP-0152 Subtractive design review from the cust… | — |
-| ASTRAT-76 | 📄 | ضوابط احتيال التحويلات البنكية وحسابات الأمانة · Wire-fraud and trust-account controls | SP-0152 Subtractive design review from the cust… | — |
-| ASTRAT-77 | 📄 | مراجعة فجوات FMEA (تصميم وعملية) وفق AIAG-VDA · PFMEA/DFMEA gap review against the AIAG-VDA method | SP-0152 Subtractive design review from the cust… | — |
-| ASTRAT-78 | 📄 | تخطيط جودة بدء الإنتاج APQP وحزمة اعتماد القطعة PPAP · APQP quality planning and PPAP submission | SP-0152 Subtractive design review from the cust… | — |
-| ASTRAT-79 | 📄 | تدقيق داخلي لنظام الجودة: ISO 9001 وإضافات IATF 16949 وتدقيق عملية VDA 6.3 · Quality-system internal audit: ISO 9001, IATF 16949 supplements, VDA 6.3 process audit | SP-0152 Subtractive design review from the cust… | npm:p5 |
-| ASTRAT-82 | 📄 | دورة تحسين PDCA مع تجربة مسبقة التحديد · PDCA improvement cycle with a pre-defined pilot | SP-0152 Subtractive design review from the cust… | — |
-| ASTRAT-84 | 📄 | أسئلة الإجبار التنفيذية: ستة أسئلة لكل دور قيادي تختبر الخطة · Executive forcing questions: six per C-suite lens to pressure-test a plan | SP-0152 Subtractive design review from the cust… | — |
-| ASTRAT-86 | 📄 | تعريف العميل المثالي ICP والتحقق منه بخطة اختبار · Define and validate an Ideal Customer Profile | SP-0152 Subtractive design review from the cust… | — |
-| ASTRAT-13 | 📄 | قرار تخزين البيانات على السلسلة أو خارجها · On-chain versus off-chain data placement | SP-0153 Usage-driven cost tuning audit for SaaS… | — |
-| ASTRAT-25 | 📄 | مواصفة تجربة مع بوابة قرار · Experiment design spec with go/no-go gate | SP-0153 Usage-driven cost tuning audit for SaaS… | pip:hypothesis |
-| ASTRAT-26 | 📄 | تشخيص تسرب القمع والاحتفاظ · Funnel and retention drop-off diagnosis | SP-0153 Usage-driven cost tuning audit for SaaS… | — |
-| ASTRAT-27 | 📄 | هيكلة المقاييس ووثائق التعريف · Metrics architecture and definition docs | SP-0153 Usage-driven cost tuning audit for SaaS… | lean |
-| ASTRAT-28 | 📄 | تحليل الأسباب الجذرية والمخاطر · Root-cause and risk analysis (fishbone, PFMEA, lean) | SP-0153 Usage-driven cost tuning audit for SaaS… | lean |
-| ASTRAT-29 | 📄 | دراسة الاستعداد للدفع وتغيير الأسعار · Willingness-to-pay and price change planning | SP-0153 Usage-driven cost tuning audit for SaaS… | — |
-| ASTRAT-30 | 📄 | قرار البث مقابل الدفعات · Streaming versus batch decision | SP-0153 Usage-driven cost tuning audit for SaaS… | — |
-| ASTRAT-31 | 📄 | اختيار قاعدة بيانات سحابية مناسبة · Cloud database selection and managed-service routing | SP-0153 Usage-driven cost tuning audit for SaaS… | — |
-| ASTRAT-36 | 📄 | إسناد تكلفة استخدام API وضوابط الإنفاق · API usage cost attribution and spend controls | SP-0153 Usage-driven cost tuning audit for SaaS… | — |
-| ASTRAT-37 | 📄 | أدلة قرارات معمارية السحابة · Cloud architecture decision playbooks | SP-0153 Usage-driven cost tuning audit for SaaS… | — |
-| ASTRAT-38 | 📄 | حصاد هدر السحابة وترتيب تسرب التكلفة · Cloud waste harvest and cost leak ranking | SP-0153 Usage-driven cost tuning audit for SaaS… | — |
-| ASTRAT-40 | 📄 | تدقيق خفض التكلفة المبني على الاستخدام · Usage-driven cost tuning audit for SaaS/API spend | SP-0153 Usage-driven cost tuning audit for SaaS… | — |
-| ASTRAT-64 | 📄 | خطاب تقديم وظيفي مفصّل على الإعلان بلا عبارات آلية · Tailored cover letter without AI tells | SP-0153 Usage-driven cost tuning audit for SaaS… | latex |
-| ASTRAT-01 | 📄 | تدقيق جدوى تعدد الوكلاء مقابل وكيل واحد · Audit multi-agent topology against single-agent baseline | SP-0154 Autonomous backlog-draining loop and si… | — |
-| ASTRAT-02 | 📄 | حلقة مستقلة لتصريف قائمة المهام · Autonomous backlog-draining loop and single-task ralph loop | SP-0154 Autonomous backlog-draining loop and si… | — |
-| ASTRAT-03 | 📄 | توجيه أسئلة المؤسس إلى أدوار المستشارين التنفيذيين · Route founder questions to C-suite advisor roles | SP-0154 Autonomous backlog-draining loop and si… | — |
-| ASTRAT-04 | 📄 | إرسال المهام على موجات مع بوابات تحقق · Sequential wave dispatch with verification gates | SP-0154 Autonomous backlog-draining loop and si… | — |
-| ASTRAT-05 | 📄 | تقدير ميزانية الوكلاء قبل التشغيل · Size agent budget before running a workflow | SP-0154 Autonomous backlog-draining loop and si… | — |
-| ASTRAT-06 | 📄 | خريطة تذاكر قرارات للعمل الضخم · Wayfinder decision-ticket map for huge work | SP-0154 Autonomous backlog-draining loop and si… | — |
-| ASTRAT-23 | 📄 | توقع نقدي متدحرج 13 أسبوع · 13-week rolling cash forecast with variance loop | SP-0154 Autonomous backlog-draining loop and si… | — |
-| ASTRAT-50 | 📄 | تصنيف مؤشرات DORA الأربعة · DORA four keys classification | SP-0154 Autonomous backlog-draining loop and si… | — |
-| ASTRAT-52 | 📄 | تفكيك المتطلبات لمهام قابلة للتنفيذ · Task breakdown with sizing rules | SP-0154 Autonomous backlog-draining loop and si… | — |
-| ASTRAT-85 | 📄 | تدقيق معايير العلامة عبر الفروع وتحويله إلى حلقة تدريب · Multi-unit brand-standard audit turned into a coaching loop | SP-0154 Autonomous backlog-draining loop and si… | — |
-| ASTRAT-32 | 📄 | سلسلة خمسة لماذا مع تحقق · 5-Why root cause chain with validation | SP-0155 Incident vs problem triage and severity | — |
-| ASTRAT-33 | 📄 | دليل حادثة: فرز واحتواء واستعادة ومراجعة · Incident runbook: triage, contain, recover, review | SP-0155 Incident vs problem triage and severity | — |
-| ASTRAT-34 | 📄 | فرز الحادث مقابل المشكلة وتحديد الخطورة · Incident vs problem triage and severity | SP-0155 Incident vs problem triage and severity | — |
-| ASTRAT-35 | 📄 | تحليل السبب الجذري بخمسة لماذا وإيشيكاوا · Root cause analysis with 5 Whys and fishbone | SP-0155 Incident vs problem triage and severity | — |
-| ASTRAT-39 | 📄 | تعريف SLI وSLO وميزانية الخطأ · Define SLIs, SLOs and error budgets | SP-0155 Incident vs problem triage and severity | — |
-| ASTRAT-51 | 📄 | قراءة المؤشرات التشغيلية الصناعية · Frequency vs severity operating metrics | SP-0155 Incident vs problem triage and severity | — |
-| ASTRAT-80 | 📄 | حل مشكلة مزمنة بمنهج DMAIC (ستة سيجما) · DMAIC for chronic, data-driven process problems | SP-0155 Incident vs problem triage and severity | pip:hypothesis |
-| ASTRAT-81 | 📄 | تحديد المشكلة بمصفوفة هي / ليست · Is / Is-Not problem scoping | SP-0155 Incident vs problem triage and severity | pip:hypothesis |
-| ASTRAT-83 | 📄 | تصفير مشكلات الجودة تقنيًا وإداريًا (الصفر المزدوج) · Technical and management zeroing of a quality problem (double-five zeroing) | SP-0155 Incident vs problem triage and severity | — |
-| ASTRAT-22 | 📄 | لوحات الاستراتيجية وSWOT وفحص الافتراضات · Strategy canvases, SWOT and red-team | SP-0156 LLM cost audit and routing | lean |
-| ASTRAT-41 | 📄 | خطة اختبار اختراق للذكاء الاصطناعي ومعالجتها · AI red-team plan and remediation | SP-0156 LLM cost audit and routing | — |
-| ASTRAT-42 | 📄 | سلم توجيه النماذج حسب التكلفة · Cost-per-task model routing ladder | SP-0156 LLM cost audit and routing | — |
-| ASTRAT-43 | 📄 | جاهزية قانون الذكاء الأوروبي وفحص التحيز · EU AI Act readiness and bias check | SP-0156 LLM cost audit and routing | — |
-| ASTRAT-44 | 📄 | تدقيق تكلفة LLM والتوجيه · LLM cost audit and routing | SP-0156 LLM cost audit and routing | — |
-| ASTRAT-53 | 📄 | إصدار أمني منسق · Coordinated security release | SP-0156 LLM cost audit and routing | — |
-| ASTRAT-75 | 📄 | كتابة وتقييم نتائج التدقيق الداخلي بالعناصر الخمسة · Write and rate internal-audit findings on the five Cs | SP-0156 LLM cost audit and routing | — |
-| ASTRAT-54 | 📄 | بطاقات أنكي عبر AnkiConnect · Anki flashcards via AnkiConnect | SP-0157 Multi-session learning coach with persi… | os:macos, network |
-| ASTRAT-55 | 📄 | إعداد دورة Google Classroom والطلاب · Google Classroom course setup and roster | SP-0157 Multi-session learning coach with persi… | — |
-| ASTRAT-56 | 📄 | مدرب تعلم متعدد الجلسات بحالة محفوظة · Multi-session learning coach with persistent state | SP-0157 Multi-session learning coach with persi… | — |
-| ASTRAT-57 | 📄 | بروتوكول تدريس سقراطي سؤال واحد كل مرة · Socratic one-question-at-a-time tutoring protocol | SP-0157 Multi-session learning coach with persi… | — |
-| ASTRAT-63 | 📄 | مقابلة سؤال-بسؤال لاستخراج النية الحقيقية قبل البناء · One-question interview to extract real intent | SP-0157 Multi-session learning coach with persi… | — |
-| ASTRAT-67 | 📄 | تحقيق 8D ببوابات تحقق لكل مرحلة · Gated 8D investigation coach | SP-0157 Multi-session learning coach with persi… | npm:d3 |
-| ASTRAT-69 | 📄 | وصفة إعدادات LoRA وQLoRA للضبط الدقيق · LoRA and QLoRA fine-tuning recipe | SP-0157 Multi-session learning coach with persi… | pip:torch, gpu |
-| ASTRAT-07 | 📄 | تأهيل العميل بمراحل وبوابات تحقق · Client onboarding with phase gate checks | SP-0158 Practice utilisation and WIP variance r… | — |
-| ASTRAT-08 | 📄 | تقرير استخدام الطاقة وانحراف العمل قيد التنفيذ · Practice utilisation and WIP variance report | SP-0158 Practice utilisation and WIP variance r… | — |
-| ASTRAT-09 | 📄 | تخطيط دفعة الموردين الأسبوعية مع الاستثناءات · Weekly supplier pay-run planning with exclusions | SP-0158 Practice utilisation and WIP variance r… | — |
-| ASTRAT-72 | 📄 | تقرير جلسة برمجة لصاحب قرار غير تقني · Session report for a non-technical stakeholder | SP-0158 Practice utilisation and WIP variance r… | git |
-| ASTRAT-46 | 📄 | تشخيص هامش الربح ومزيج الخدمات · Small-business margin and mix diagnostics | SP-0159 Small-business margin and mix diagnosti… | — |
-| ASTRAT-87 | 📄 | أولويات تشغيل القائد: عنق الزجاجة ومراجعة التقويم والتفويض · Leader operating priorities: bottleneck, calendar audit, delegation | SP-0159 Small-business margin and mix diagnosti… | — |
+| ASTRAT-10 | 📄 | فحص كلمات ASO وتدقيق القائمة · App Store Optimization keyword probe and lint | SP-0153 Subtractive design review from the cust… | — |
+| ASTRAT-11 | 📄 | رحلة من الفكرة إلى التطبيق بمتتبع · Idea-to-app journey with docs tracker | SP-0153 Subtractive design review from the cust… | — |
+| ASTRAT-12 | 📄 | مراجعة مخاطر ما قبل البناء · Pre-build risk review and kill-test | SP-0153 Subtractive design review from the cust… | — |
+| ASTRAT-14 | 📄 | اختبار استراتيجية تداول بمقاييس المخاطر · Backtest trading strategy with risk metrics | SP-0153 Subtractive design review from the cust… | pip:numpy, pip:pandas, pip:matplotlib |
+| ASTRAT-15 | 📄 | تقييم DCF متين مع فحوص تقاطعية · Defensible DCF valuation with cross-checks | SP-0153 Subtractive design review from the cust… | — |
+| ASTRAT-16 | 📄 | سجل مخاطر مؤسسي مع التقييم · Enterprise risk register with scoring | SP-0153 Subtractive design review from the cust… | — |
+| ASTRAT-17 | 📄 | بناء الأعمال ومراجعة طلب التمويل للمؤسسين · Founder business building and fundraising review | SP-0153 Subtractive design review from the cust… | key:video-gen |
+| ASTRAT-18 | 📄 | بروتوكول مداولات مجلس إدارة متعدد الأدوار · Multi-role board deliberation protocol | SP-0153 Subtractive design review from the cust… | — |
+| ASTRAT-19 | 📄 | تصميم استراتيجية التسعير والربحية · Pricing and monetization strategy design | SP-0153 Subtractive design review from the cust… | — |
+| ASTRAT-20 | 📄 | ميزانية البحث والتطوير والحرق وتوجيه الرسملة · R&D program budget, burn and capitalization routing | SP-0153 Subtractive design review from the cust… | key:video-gen |
+| ASTRAT-21 | 📄 | نموذج جدول الملكية وتخفيف الحصص · Startup cap table and dilution model | SP-0153 Subtractive design review from the cust… | — |
+| ASTRAT-24 | 📄 | تقسيم العملاء والمستخدمين حسب القيمة · Customer and user segmentation by value | SP-0153 Subtractive design review from the cust… | — |
+| ASTRAT-45 | 📄 | مراجعة برنامج مكافحة غسل الأموال · AML program review against FATF/FFIEC | SP-0153 Subtractive design review from the cust… | — |
+| ASTRAT-47 | 📄 | مراجعة التصميم بالقواعد الإرشادية · Design review heuristics and critique | SP-0153 Subtractive design review from the cust… | — |
+| ASTRAT-48 | 📄 | جولة موازنة اقتصاد اللعبة · Game balance and economy tuning pass | SP-0153 Subtractive design review from the cust… | python3 |
+| ASTRAT-49 | 📄 | تصميم الآليات وتجربة اللاعب · Game mechanics and player experience design | SP-0153 Subtractive design review from the cust… | — |
+| ASTRAT-58 | 📄 | الوظائف المطلوب إنجازها بأبعادها الثلاثة · Jobs to Be Done with all three dimensions | SP-0153 Subtractive design review from the cust… | — |
+| ASTRAT-59 | 📄 | التموضع: السياق قبل الرسالة · Positioning as context (Obviously Awesome canvas) | SP-0153 Subtractive design review from the cust… | — |
+| ASTRAT-60 | 📄 | تحسين التحويل: اكتشف ولا تخمّن · Conversion optimisation: discover, do not guess | SP-0153 Subtractive design review from the cust… | — |
+| ASTRAT-61 | 📄 | تحسين الظهور في البحث ومحركات الإجابة والذكاء التوليدي · SEO, answer-engine and generative-engine visibility | SP-0153 Subtractive design review from the cust… | — |
+| ASTRAT-62 | 📄 | مراجعة تصميم بأسلوب الطرح حتى الجوهر · Subtractive design review from the customer backwards | SP-0153 Subtractive design review from the cust… | — |
+| ASTRAT-65 | 📄 | التفاوض بالتعاطف التكتيكي والأسئلة المعايَرة · Negotiation with tactical empathy and calibrated questions | SP-0153 Subtractive design review from the cust… | — |
+| ASTRAT-66 | 📄 | تصميم الفرق للتدفق السريع: أربعة أنواع وثلاثة أنماط تفاعل · Team Topologies: four team types, three interaction modes | SP-0153 Subtractive design review from the cust… | — |
+| ASTRAT-68 | 📄 | كتابة تقرير إجراء تصحيحي CAR/CAPA قابل للإغلاق · Closable corrective action report (CAR/CAPA) | SP-0153 Subtractive design review from the cust… | — |
+| ASTRAT-70 | 📄 | سلّم أنظمة دعم العملاء من الخدمة الذاتية إلى مركز الاتصال · Customer-support system ladder: self-service to contact center | SP-0153 Subtractive design review from the cust… | — |
+| ASTRAT-71 | 📄 | صياغة الردود للعمل أولًا لقارئ مشتت الانتباه · Action-first response shape for an ADHD reader | SP-0153 Subtractive design review from the cust… | — |
+| ASTRAT-73 | 📄 | مراجعة الثقة والأمان: كيف يُساء استخدام المنتج لإيذاء الآخرين · Trust-and-safety review: how the product can be misused to harm others | SP-0153 Subtractive design review from the cust… | — |
+| ASTRAT-74 | 📄 | مراجعة عقد مستقل من وجهة نظر المستقل · Independent-contractor agreement review from the freelancer's side | SP-0153 Subtractive design review from the cust… | — |
+| ASTRAT-76 | 📄 | ضوابط احتيال التحويلات البنكية وحسابات الأمانة · Wire-fraud and trust-account controls | SP-0153 Subtractive design review from the cust… | — |
+| ASTRAT-77 | 📄 | مراجعة فجوات FMEA (تصميم وعملية) وفق AIAG-VDA · PFMEA/DFMEA gap review against the AIAG-VDA method | SP-0153 Subtractive design review from the cust… | — |
+| ASTRAT-78 | 📄 | تخطيط جودة بدء الإنتاج APQP وحزمة اعتماد القطعة PPAP · APQP quality planning and PPAP submission | SP-0153 Subtractive design review from the cust… | — |
+| ASTRAT-79 | 📄 | تدقيق داخلي لنظام الجودة: ISO 9001 وإضافات IATF 16949 وتدقيق عملية VDA 6.3 · Quality-system internal audit: ISO 9001, IATF 16949 supplements, VDA 6.3 process audit | SP-0153 Subtractive design review from the cust… | npm:p5 |
+| ASTRAT-82 | 📄 | دورة تحسين PDCA مع تجربة مسبقة التحديد · PDCA improvement cycle with a pre-defined pilot | SP-0153 Subtractive design review from the cust… | — |
+| ASTRAT-84 | 📄 | أسئلة الإجبار التنفيذية: ستة أسئلة لكل دور قيادي تختبر الخطة · Executive forcing questions: six per C-suite lens to pressure-test a plan | SP-0153 Subtractive design review from the cust… | — |
+| ASTRAT-86 | 📄 | تعريف العميل المثالي ICP والتحقق منه بخطة اختبار · Define and validate an Ideal Customer Profile | SP-0153 Subtractive design review from the cust… | — |
+| ASTRAT-13 | 📄 | قرار تخزين البيانات على السلسلة أو خارجها · On-chain versus off-chain data placement | SP-0154 Usage-driven cost tuning audit for SaaS… | — |
+| ASTRAT-25 | 📄 | مواصفة تجربة مع بوابة قرار · Experiment design spec with go/no-go gate | SP-0154 Usage-driven cost tuning audit for SaaS… | pip:hypothesis |
+| ASTRAT-26 | 📄 | تشخيص تسرب القمع والاحتفاظ · Funnel and retention drop-off diagnosis | SP-0154 Usage-driven cost tuning audit for SaaS… | — |
+| ASTRAT-27 | 📄 | هيكلة المقاييس ووثائق التعريف · Metrics architecture and definition docs | SP-0154 Usage-driven cost tuning audit for SaaS… | lean |
+| ASTRAT-28 | 📄 | تحليل الأسباب الجذرية والمخاطر · Root-cause and risk analysis (fishbone, PFMEA, lean) | SP-0154 Usage-driven cost tuning audit for SaaS… | lean |
+| ASTRAT-29 | 📄 | دراسة الاستعداد للدفع وتغيير الأسعار · Willingness-to-pay and price change planning | SP-0154 Usage-driven cost tuning audit for SaaS… | — |
+| ASTRAT-30 | 📄 | قرار البث مقابل الدفعات · Streaming versus batch decision | SP-0154 Usage-driven cost tuning audit for SaaS… | — |
+| ASTRAT-31 | 📄 | اختيار قاعدة بيانات سحابية مناسبة · Cloud database selection and managed-service routing | SP-0154 Usage-driven cost tuning audit for SaaS… | — |
+| ASTRAT-36 | 📄 | إسناد تكلفة استخدام API وضوابط الإنفاق · API usage cost attribution and spend controls | SP-0154 Usage-driven cost tuning audit for SaaS… | — |
+| ASTRAT-37 | 📄 | أدلة قرارات معمارية السحابة · Cloud architecture decision playbooks | SP-0154 Usage-driven cost tuning audit for SaaS… | — |
+| ASTRAT-38 | 📄 | حصاد هدر السحابة وترتيب تسرب التكلفة · Cloud waste harvest and cost leak ranking | SP-0154 Usage-driven cost tuning audit for SaaS… | — |
+| ASTRAT-40 | 📄 | تدقيق خفض التكلفة المبني على الاستخدام · Usage-driven cost tuning audit for SaaS/API spend | SP-0154 Usage-driven cost tuning audit for SaaS… | — |
+| ASTRAT-64 | 📄 | خطاب تقديم وظيفي مفصّل على الإعلان بلا عبارات آلية · Tailored cover letter without AI tells | SP-0154 Usage-driven cost tuning audit for SaaS… | latex |
+| ASTRAT-01 | 📄 | تدقيق جدوى تعدد الوكلاء مقابل وكيل واحد · Audit multi-agent topology against single-agent baseline | SP-0155 Autonomous backlog-draining loop and si… | — |
+| ASTRAT-02 | 📄 | حلقة مستقلة لتصريف قائمة المهام · Autonomous backlog-draining loop and single-task ralph loop | SP-0155 Autonomous backlog-draining loop and si… | — |
+| ASTRAT-03 | 📄 | توجيه أسئلة المؤسس إلى أدوار المستشارين التنفيذيين · Route founder questions to C-suite advisor roles | SP-0155 Autonomous backlog-draining loop and si… | — |
+| ASTRAT-04 | 📄 | إرسال المهام على موجات مع بوابات تحقق · Sequential wave dispatch with verification gates | SP-0155 Autonomous backlog-draining loop and si… | — |
+| ASTRAT-05 | 📄 | تقدير ميزانية الوكلاء قبل التشغيل · Size agent budget before running a workflow | SP-0155 Autonomous backlog-draining loop and si… | — |
+| ASTRAT-06 | 📄 | خريطة تذاكر قرارات للعمل الضخم · Wayfinder decision-ticket map for huge work | SP-0155 Autonomous backlog-draining loop and si… | — |
+| ASTRAT-23 | 📄 | توقع نقدي متدحرج 13 أسبوع · 13-week rolling cash forecast with variance loop | SP-0155 Autonomous backlog-draining loop and si… | — |
+| ASTRAT-50 | 📄 | تصنيف مؤشرات DORA الأربعة · DORA four keys classification | SP-0155 Autonomous backlog-draining loop and si… | — |
+| ASTRAT-52 | 📄 | تفكيك المتطلبات لمهام قابلة للتنفيذ · Task breakdown with sizing rules | SP-0155 Autonomous backlog-draining loop and si… | — |
+| ASTRAT-85 | 📄 | تدقيق معايير العلامة عبر الفروع وتحويله إلى حلقة تدريب · Multi-unit brand-standard audit turned into a coaching loop | SP-0155 Autonomous backlog-draining loop and si… | — |
+| ASTRAT-32 | 📄 | سلسلة خمسة لماذا مع تحقق · 5-Why root cause chain with validation | SP-0156 Incident vs problem triage and severity | — |
+| ASTRAT-33 | 📄 | دليل حادثة: فرز واحتواء واستعادة ومراجعة · Incident runbook: triage, contain, recover, review | SP-0156 Incident vs problem triage and severity | — |
+| ASTRAT-34 | 📄 | فرز الحادث مقابل المشكلة وتحديد الخطورة · Incident vs problem triage and severity | SP-0156 Incident vs problem triage and severity | — |
+| ASTRAT-35 | 📄 | تحليل السبب الجذري بخمسة لماذا وإيشيكاوا · Root cause analysis with 5 Whys and fishbone | SP-0156 Incident vs problem triage and severity | — |
+| ASTRAT-39 | 📄 | تعريف SLI وSLO وميزانية الخطأ · Define SLIs, SLOs and error budgets | SP-0156 Incident vs problem triage and severity | — |
+| ASTRAT-51 | 📄 | قراءة المؤشرات التشغيلية الصناعية · Frequency vs severity operating metrics | SP-0156 Incident vs problem triage and severity | — |
+| ASTRAT-80 | 📄 | حل مشكلة مزمنة بمنهج DMAIC (ستة سيجما) · DMAIC for chronic, data-driven process problems | SP-0156 Incident vs problem triage and severity | pip:hypothesis |
+| ASTRAT-81 | 📄 | تحديد المشكلة بمصفوفة هي / ليست · Is / Is-Not problem scoping | SP-0156 Incident vs problem triage and severity | pip:hypothesis |
+| ASTRAT-83 | 📄 | تصفير مشكلات الجودة تقنيًا وإداريًا (الصفر المزدوج) · Technical and management zeroing of a quality problem (double-five zeroing) | SP-0156 Incident vs problem triage and severity | — |
+| ASTRAT-22 | 📄 | لوحات الاستراتيجية وSWOT وفحص الافتراضات · Strategy canvases, SWOT and red-team | SP-0157 LLM cost audit and routing | lean |
+| ASTRAT-41 | 📄 | خطة اختبار اختراق للذكاء الاصطناعي ومعالجتها · AI red-team plan and remediation | SP-0157 LLM cost audit and routing | — |
+| ASTRAT-42 | 📄 | سلم توجيه النماذج حسب التكلفة · Cost-per-task model routing ladder | SP-0157 LLM cost audit and routing | — |
+| ASTRAT-43 | 📄 | جاهزية قانون الذكاء الأوروبي وفحص التحيز · EU AI Act readiness and bias check | SP-0157 LLM cost audit and routing | — |
+| ASTRAT-44 | 📄 | تدقيق تكلفة LLM والتوجيه · LLM cost audit and routing | SP-0157 LLM cost audit and routing | — |
+| ASTRAT-53 | 📄 | إصدار أمني منسق · Coordinated security release | SP-0157 LLM cost audit and routing | — |
+| ASTRAT-75 | 📄 | كتابة وتقييم نتائج التدقيق الداخلي بالعناصر الخمسة · Write and rate internal-audit findings on the five Cs | SP-0157 LLM cost audit and routing | — |
+| ASTRAT-54 | 📄 | بطاقات أنكي عبر AnkiConnect · Anki flashcards via AnkiConnect | SP-0158 Multi-session learning coach with persi… | os:macos, network |
+| ASTRAT-55 | 📄 | إعداد دورة Google Classroom والطلاب · Google Classroom course setup and roster | SP-0158 Multi-session learning coach with persi… | — |
+| ASTRAT-56 | 📄 | مدرب تعلم متعدد الجلسات بحالة محفوظة · Multi-session learning coach with persistent state | SP-0158 Multi-session learning coach with persi… | — |
+| ASTRAT-57 | 📄 | بروتوكول تدريس سقراطي سؤال واحد كل مرة · Socratic one-question-at-a-time tutoring protocol | SP-0158 Multi-session learning coach with persi… | — |
+| ASTRAT-63 | 📄 | مقابلة سؤال-بسؤال لاستخراج النية الحقيقية قبل البناء · One-question interview to extract real intent | SP-0158 Multi-session learning coach with persi… | — |
+| ASTRAT-67 | 📄 | تحقيق 8D ببوابات تحقق لكل مرحلة · Gated 8D investigation coach | SP-0158 Multi-session learning coach with persi… | npm:d3 |
+| ASTRAT-69 | 📄 | وصفة إعدادات LoRA وQLoRA للضبط الدقيق · LoRA and QLoRA fine-tuning recipe | SP-0158 Multi-session learning coach with persi… | pip:torch, gpu |
+| ASTRAT-07 | 📄 | تأهيل العميل بمراحل وبوابات تحقق · Client onboarding with phase gate checks | SP-0159 Practice utilisation and WIP variance r… | — |
+| ASTRAT-08 | 📄 | تقرير استخدام الطاقة وانحراف العمل قيد التنفيذ · Practice utilisation and WIP variance report | SP-0159 Practice utilisation and WIP variance r… | — |
+| ASTRAT-09 | 📄 | تخطيط دفعة الموردين الأسبوعية مع الاستثناءات · Weekly supplier pay-run planning with exclusions | SP-0159 Practice utilisation and WIP variance r… | — |
+| ASTRAT-72 | 📄 | تقرير جلسة برمجة لصاحب قرار غير تقني · Session report for a non-technical stakeholder | SP-0159 Practice utilisation and WIP variance r… | git |
+| ASTRAT-46 | 📄 | تشخيص هامش الربح ومزيج الخدمات · Small-business margin and mix diagnostics | SP-0160 Small-business margin and mix diagnosti… | — |
+| ASTRAT-87 | 📄 | أولويات تشغيل القائد: عنق الزجاجة ومراجعة التقويم والتفويض · Leader operating priorities: bottleneck, calendar audit, delegation | SP-0160 Small-business margin and mix diagnosti… | — |
 
 ## strategy-finance (strategy)
 
@@ -410,21 +410,21 @@ chapter: [strategy-finance](../powers/strategy-finance.md) · card: `usip-librar
 
 | ID | | القدرة / power | SP | يحتاج / requires |
 |---|---|---|---|---|
-| PROD-10 | ✅ | مزيج إنتاج أمثل · Optimal product mix (LP) | SP-0160 Optimal price and break-even | pip:scipy, pip:sympy, pip:ortools |
-| PROD-11 | ✅ | السعر الأمثل ونقطة التعادل · Optimal price and break-even | SP-0160 Optimal price and break-even | pip:sympy |
-| PROD-16 | ✅ | OR-Tools: حل مسائل الجدولة والتوجيه والتعيين بأمثلية عبر · OR-Tools: Solve scheduling, routing and assignment problems optimally with CP-SAT | SP-0160 Optimal price and break-even | pip:ortools |
-| PROD-17 | ✅ | PuLP: نمذجة مسائل البرمجة الخطية والصحيحة كتوزيع الميزانيات · PuLP: Model linear and integer programs such as budget splits and blends | SP-0160 Optimal price and break-even | pip:ortools, pip:pulp |
-| PROD-15 | 📦 | بيانات الأسواق (غير رسمية) · Market data libraries (unofficial sources) | SP-0160 Optimal price and break-even | pip:pandas |
-| PROD-18 | 📦 | MuJoCo: محاكاة ديناميكيات الأجسام الصلبة والروبوتات وتسجيل المسارات · MuJoCo: Simulate rigid-body and robot dynamics and log trajectories | SP-0160 Optimal price and break-even | pip:mujoco |
-| PROD-02 | 📄 | الافتراضات التي تقلب القرار · Decision-flipping assumptions (computed thresholds) | SP-0160 Optimal price and break-even | pip:sympy |
-| PROD-08 | 📄 | متطلبات منتج قابلة للقياس · Measurable PRD and acceptance criteria | SP-0160 Optimal price and break-even | — |
-| PROD-09 | 📄 | عدسة المنتج وأولويات ICE · Product lens + ICE prioritisation | SP-0160 Optimal price and break-even | — |
-| PROD-12 | 📄 | تتبع القيد المحاسبي · Accounting trace and balanced entries | SP-0160 Optimal price and break-even | — |
-| PROD-13 | 📄 | المطابقة دون سدّ الفجوات · Reconcile without plugs | SP-0160 Optimal price and break-even | — |
-| PROD-14 | 📄 | نموذج مالي بمحركات أعمال · Driver-based financial model | SP-0160 Optimal price and break-even | libreoffice |
-| PROD-03 | ✅ | المخاطر كتوزيع لا كرقم · Risk as a distribution (Monte Carlo) | SP-0161 Three real options plus do-nothing | pip:numpy, npm:p5 |
-| PROD-01 | 📄 | ثلاثة خيارات حقيقية وعدم الفعل · Three real options plus do-nothing | SP-0161 Three real options plus do-nothing | — |
-| PROD-04 | 📄 | تشريح ما قبل الفشل · Premortem on the favourite option | SP-0161 Three real options plus do-nothing | — |
-| PROD-05 | 📄 | مجلس آراء مستقلة · Independent council (anti-anchoring) | SP-0161 Three real options plus do-nothing | claude:tools |
-| PROD-06 | 📄 | دفتر القرارات · Decision ledger | SP-0161 Three real options plus do-nothing | — |
-| PROD-07 | 📄 | تنفيذ مرحلي بمعايير إيقاف · Staged rollout with kill criteria | SP-0161 Three real options plus do-nothing | — |
+| PROD-10 | ✅ | مزيج إنتاج أمثل · Optimal product mix (LP) | SP-0161 Optimal price and break-even | pip:scipy, pip:sympy, pip:ortools |
+| PROD-11 | ✅ | السعر الأمثل ونقطة التعادل · Optimal price and break-even | SP-0161 Optimal price and break-even | pip:sympy |
+| PROD-16 | ✅ | OR-Tools: حل مسائل الجدولة والتوجيه والتعيين بأمثلية عبر · OR-Tools: Solve scheduling, routing and assignment problems optimally with CP-SAT | SP-0161 Optimal price and break-even | pip:ortools |
+| PROD-17 | ✅ | PuLP: نمذجة مسائل البرمجة الخطية والصحيحة كتوزيع الميزانيات · PuLP: Model linear and integer programs such as budget splits and blends | SP-0161 Optimal price and break-even | pip:ortools, pip:pulp |
+| PROD-15 | 📦 | بيانات الأسواق (غير رسمية) · Market data libraries (unofficial sources) | SP-0161 Optimal price and break-even | pip:pandas |
+| PROD-18 | 📦 | MuJoCo: محاكاة ديناميكيات الأجسام الصلبة والروبوتات وتسجيل المسارات · MuJoCo: Simulate rigid-body and robot dynamics and log trajectories | SP-0161 Optimal price and break-even | pip:mujoco |
+| PROD-02 | 📄 | الافتراضات التي تقلب القرار · Decision-flipping assumptions (computed thresholds) | SP-0161 Optimal price and break-even | pip:sympy |
+| PROD-08 | 📄 | متطلبات منتج قابلة للقياس · Measurable PRD and acceptance criteria | SP-0161 Optimal price and break-even | — |
+| PROD-09 | 📄 | عدسة المنتج وأولويات ICE · Product lens + ICE prioritisation | SP-0161 Optimal price and break-even | — |
+| PROD-12 | 📄 | تتبع القيد المحاسبي · Accounting trace and balanced entries | SP-0161 Optimal price and break-even | — |
+| PROD-13 | 📄 | المطابقة دون سدّ الفجوات · Reconcile without plugs | SP-0161 Optimal price and break-even | — |
+| PROD-14 | 📄 | نموذج مالي بمحركات أعمال · Driver-based financial model | SP-0161 Optimal price and break-even | libreoffice |
+| PROD-03 | ✅ | المخاطر كتوزيع لا كرقم · Risk as a distribution (Monte Carlo) | SP-0162 Three real options plus do-nothing | pip:numpy, npm:p5 |
+| PROD-01 | 📄 | ثلاثة خيارات حقيقية وعدم الفعل · Three real options plus do-nothing | SP-0162 Three real options plus do-nothing | — |
+| PROD-04 | 📄 | تشريح ما قبل الفشل · Premortem on the favourite option | SP-0162 Three real options plus do-nothing | — |
+| PROD-05 | 📄 | مجلس آراء مستقلة · Independent council (anti-anchoring) | SP-0162 Three real options plus do-nothing | claude:tools |
+| PROD-06 | 📄 | دفتر القرارات · Decision ledger | SP-0162 Three real options plus do-nothing | — |
+| PROD-07 | 📄 | تنفيذ مرحلي بمعايير إيقاف · Staged rollout with kill criteria | SP-0162 Three real options plus do-nothing | — |

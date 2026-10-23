@@ -1,4 +1,4 @@
-# `runnable-tools` — الوكلاء والتوجيه الذكي (168 بطاقة)
+# `runnable-tools` — الوكلاء والتوجيه الذكي (169 بطاقة)
 
 > مكتبة بروتوكول USIP v5.6 الكاملة، مولّدة بـ `smart_capabilities.py cards` من `data/powers/runnable-tools.json` وقواعد الملاحق A25–A29؛ لا تُحرَّر يدويًا. [الفهرس الرئيسي](../../README.md) · [فصل المجموعة](../../../.claude/skills/kosif-superpowers/references/library/agents.md) · [النواة](../../../.claude/skills/kosif-superpowers/PROTOCOL.md)
 
@@ -90,6 +90,7 @@
 - [`TOOL-168` التعديل السريع: قص فوري يعرف الإطارات المفتاحية، مغيّر صوت، تفتيح الفيديو المظلم، استخراج الصوت](#tool-168--التعديل-السريع-قص-فوري-يعرف-الإطارات-المفتاحية-مغيّر-صوت-تفتيح-الفيديو-المظلم-استخراج-الصوت--fast-edit-keyframe-aware-instant-cut-voice-presets-low-light-lift-audio-extract)
 - [`TOOL-169` محرك الخامات الملوّنة: ألوان خشبية وفرشاة زيت وألوان مائية لأي صورة](#tool-169--محرك-الخامات-الملوّنة-ألوان-خشبية-وفرشاة-زيت-وألوان-مائية-لأي-صورة--colour-media-engine-coloured-pencil-oil-brush-and-watercolour-painting-of-a-photo)
 - [`TOOL-17` مولّد مشاريع بداية لمحركات الحركة](#tool-17--مولّد-مشاريع-بداية-لمحركات-الحركة--third-party-motion-engine-scaffolder)
+- [`TOOL-170` سجل المهام: سجل لكل مهمة منجزة لإعادتها لاحقًا](#tool-170--سجل-المهام-سجل-لكل-مهمة-منجزة-لإعادتها-لاحقًا--task-history-record-every-finished-task-and-repeat-it-later)
 - [`TOOL-18` مكتبة رياضيات الحركة](#tool-18--مكتبة-رياضيات-الحركة--motion-math-toolkit)
 - [`TOOL-19` تصيير لقطات B-roll بحركة كاميرا](#tool-19--تصيير-لقطات-b-roll-بحركة-كاميرا--cinematic-b-roll-renderer)
 - [`TOOL-20` مُخطِّط قطعات اللقطات الحقيقية](#tool-20--مُخطِّط-قطعات-اللقطات-الحقيقية--footage-first-cut-planner)
@@ -6127,7 +6128,7 @@
 - `TOOL-167` فاحص أرقام الدروس والشروح / Lesson number integrity checker (proven)
 - `TOOL-168` التعديل السريع: قص فوري يعرف الإطارات المفتاحية، مغيّر صوت، تفتيح الفيديو المظلم، استخراج الصوت / Fast Edit: keyframe-aware instant cut, voice presets, low-light lift, audio extract (proven)
 - `TOOL-17` مولّد مشاريع بداية لمحركات الحركة / Third-party motion engine scaffolder (proven)
-- `TOOL-18` مكتبة رياضيات الحركة / Motion math toolkit (proven)
+- `TOOL-170` سجل المهام: سجل لكل مهمة منجزة لإعادتها لاحقًا / Task history: record every finished task and repeat it later (proven)
 
 ### `TOOL-17` — مولّد مشاريع بداية لمحركات الحركة / Third-party motion engine scaffolder
 
@@ -6201,6 +6202,75 @@
 
 - `TOOL-168` التعديل السريع: قص فوري يعرف الإطارات المفتاحية، مغيّر صوت، تفتيح الفيديو المظلم، استخراج الصوت / Fast Edit: keyframe-aware instant cut, voice presets, low-light lift, audio extract (proven)
 - `TOOL-169` محرك الخامات الملوّنة: ألوان خشبية وفرشاة زيت وألوان مائية لأي صورة / Colour media engine: coloured pencil, oil brush and watercolour painting of a photo (proven)
+- `TOOL-170` سجل المهام: سجل لكل مهمة منجزة لإعادتها لاحقًا / Task history: record every finished task and repeat it later (proven)
+- `TOOL-18` مكتبة رياضيات الحركة / Motion math toolkit (proven)
+
+### `TOOL-170` — سجل المهام: سجل لكل مهمة منجزة لإعادتها لاحقًا / Task history: record every finished task and repeat it later
+
+| الحقل | القيمة |
+|---|---|
+| العائلة | `runnable-tools` ([فصل العائلة](../../../.claude/skills/kosif-superpowers/references/powers/runnable-tools.md)) |
+| المجموعة | الوكلاء والتوجيه الذكي (`agents`) |
+| نوع المخرج (A25، A27) | خطة واستراتيجية وقرار (`plan`) |
+| الحالة في الكتالوج | ✅ `proven`: مثبتة في الكتالوج؛ افحص متطلباتها هنا قبل كتابة ✅ في الخطة |
+| سقف التحقق قبل العمل (A27) | V3 بعد تشغيلها هنا وقياس معيار، لا قبل ذلك |
+| نطاق الدليل | `repo` |
+| الرخصة | غير مذكورة في السجل: تُؤكَّد من المصدر قبل التسليم |
+
+**ما هي:** ذاكرة مهام على GitHub: سجل JSON واحد لكل مهمة منجزة تحت history/tasks/ بجذر المستودع، فيه الطلب بكلمات المستخدم والوضع والخطة والأدوات والأوامر بمعاملاتها والمدخلات والمخرجات (مع sha256 للملفات المحلية) وطريقة الإعادة. list وshow يجيبان «إيه المهام اللي عملتها؟»، وreplay يطبع خطة أو سكربت يعيد مهمة (لا يشغّل شيئًا ويعلّق خطوات الإذن)، وcompare يقارن المخرجات الجديدة بالبصمات المسجلة، وbuild يكتب history/INDEX.md وindex.json. والخيار add --print لا يكتب شيئًا ويعطي السجل وأمر حفظ في سطر ورابط GitHub مملوءًا لتطبيقات المحادثة التي لا تدفع. ويُرفض السجل الذي فيه مفتاح أو مسار جلسة أو رفع أو بريد أو هاتف. — Keeps a task memory on GitHub: one JSON record per finished task under history/tasks/ at the repo root, with the request in the user's words, the mode and plan, the tools and exact commands with their parameters, the inputs and outputs (sha256 added for local files) and how to reproduce it. list and show answer "what tasks have you done?", replay prints the plan or a shell script that repeats one (it runs nothing and keeps permission steps commented out), compare checks new outputs against the recorded hashes, and build writes history/INDEX.md and index.json. add --print writes nothing and gives the record, a one-line save command and a pre-filled GitHub new-file link for chat apps that cannot push. Records holding a credential, a session or upload path, an e-mail address or a phone number are refused.
+
+**متى:** إيه المهام اللي عملتها قبل كده / What tasks have you done? Repeat the Friday dua video
+
+**كيف:** new: `python3 scripts/task_history.py new --kind video`; add: `python3 scripts/task_history.py add --from entry.json`; list: `python3 scripts/task_history.py list --kind video`; show: `python3 scripts/task_history.py show last`. Full card: `python3 scripts/hub.py tool task-history`. Limits: A record is what the assistant reports it ran: replay repeats the recorded commands but cannot bring back a deleted input, an expired link or a paid model's randomness, and compare checks bytes only for outputs marked deterministic.
+
+**المعاملات:** in: a record JSON file or stdin; history/tasks/*.json · out: history/tasks/<id>.json, history/INDEX.md, history/index.json; plans, scripts and comparisons on stdout
+
+**التثبيت:** لا خطوة تثبيت مسجلة
+
+**الوسوم:** task-history · history · task history · memory · repeat · replay · reproduce · log · record · سجل · سجل المهام · هيستوري · ذاكرة · كرر · كررها · إعادة · المهام اللي عملتها
+
+#### 1. الاستقبال (A25)
+
+- الهدف القابل للقياس: سؤال بإجابة مقترحة ← هدف مقترح بعتبة رقمية يُعرض للتعديل
+- الأفق الزمني: افتراض مكتوب ← 90 يومًا
+- الموارد والميزانية: افتراض مكتوب ← شخص واحد بلا صرف
+- لا تُفترض أبدًا: مادة الإنتاج نفسها، والإذن بخطوة مدفوعة أو منشورة أو لا رجعة فيها، والهوية والحقوق.
+
+#### 2. الجاهزية والشارة (A28)
+
+- `python3` ← افحص وجوده بأمر واحد قبل كتابة الشارة
+- الوضع 1: شارة «هنا الآن» بعد الفحص، لا ✅ الكتالوج تلقائيًا · الوضع 2: `كتالوج: ✅ · هنا: غير مفحوص` · الوضع 3: بلا شارة ولا معرّف.
+
+#### 3. موضعها في الخطة (A26)
+
+- عقدة منمّطة: المدخل `brief` ← المخرج `plan`، والمنفّذ `method:TOOL-170` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
+- لا أداة مسجلة تخدم عائلتها: التنفيذ بالمكتبات أو بأداة من مجموعة أخرى.
+- مراحل النوع: الهدف بمؤشره ← ثلاثة خيارات مختلفة ← تقييم وحساسية ← تشريح مسبق ← بوابات مكتوبة ← خطوة أولى قابلة للتراجع.
+- إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
+
+#### 4. بوابة التحقق (A27)
+
+- إلزامي: لكل هدف مؤشر وعتبة وتاريخ ← جدول المؤشرات
+- إلزامي: ثلاثة خيارات مختلفة المنهج مع توصية ← جدول المقارنة
+- جودة: تشريح مسبق بأهم أسباب الفشل والوقاية ← think.py plan
+- جودة: بوابات go/pivot/kill مكتوبة قبل النتائج ← think.py gate
+- إلزامي: خطوة أولى صغيرة قابلة للتراجع هذا الأسبوع ← مراجعة
+- أمر الحكم في الوضع 1: `think.py qa plan --answers qa.json` (PASS / FAIL / INCOMPLETE).
+
+#### 5. التعافي (A29)
+
+- `missing_dependency` (اعتمادية مفقودة، ميزانية 2): سمِّ الاعتمادية بالضبط (حزمة، برنامج، خط، نموذج) ← ثبّت محليًا في بيئة العمل إن كان مجانيًا ومسموحًا (pip --user أو venv أو npm محلي) · البديل: مسار المكتبة القياسية أو أداة أخرى من نفس المجموعة · تصعيد: تثبيت نظامي أو مدفوع أو يحتاج مفتاحًا: توقف واسأل
+- `quality_below_threshold` (جودة دون العتبة، ميزانية 3): أي معيار فشل وبكم (المقيس مقابل العتبة) ← عالج السبب الأكبر وحده ثم أعد القياس · البديل: المنهج البديل المكتوب للمرحلة في الخطة · تصعيد: معيار إلزامي لا يتحقق بعد البديل: توقف وأبلغ بالأرقام
+
+#### 6. الأدلة
+
+- `kosif-tool/.claude/skills/kosif-superpowers/evals/test_task_history.py`
+- `kosif-tool/.claude/skills/kosif-superpowers/scripts/task_history.py`
+
+#### 7. قدرات قريبة في العائلة
+
+- `TOOL-169` محرك الخامات الملوّنة: ألوان خشبية وفرشاة زيت وألوان مائية لأي صورة / Colour media engine: coloured pencil, oil brush and watercolour painting of a photo (proven)
+- `TOOL-17` مولّد مشاريع بداية لمحركات الحركة / Third-party motion engine scaffolder (proven)
 - `TOOL-18` مكتبة رياضيات الحركة / Motion math toolkit (proven)
 - `TOOL-19` تصيير لقطات B-roll بحركة كاميرا / Cinematic B-roll Renderer (proven)
 
@@ -6269,8 +6339,8 @@
 
 #### 7. قدرات قريبة في العائلة
 
-- `TOOL-169` محرك الخامات الملوّنة: ألوان خشبية وفرشاة زيت وألوان مائية لأي صورة / Colour media engine: coloured pencil, oil brush and watercolour painting of a photo (proven)
 - `TOOL-17` مولّد مشاريع بداية لمحركات الحركة / Third-party motion engine scaffolder (proven)
+- `TOOL-170` سجل المهام: سجل لكل مهمة منجزة لإعادتها لاحقًا / Task history: record every finished task and repeat it later (proven)
 - `TOOL-19` تصيير لقطات B-roll بحركة كاميرا / Cinematic B-roll Renderer (proven)
 - `TOOL-20` مُخطِّط قطعات اللقطات الحقيقية / Footage-First Cut Planner (proven)
 
@@ -6339,7 +6409,7 @@
 
 #### 7. قدرات قريبة في العائلة
 
-- `TOOL-17` مولّد مشاريع بداية لمحركات الحركة / Third-party motion engine scaffolder (proven)
+- `TOOL-170` سجل المهام: سجل لكل مهمة منجزة لإعادتها لاحقًا / Task history: record every finished task and repeat it later (proven)
 - `TOOL-18` مكتبة رياضيات الحركة / Motion math toolkit (proven)
 - `TOOL-20` مُخطِّط قطعات اللقطات الحقيقية / Footage-First Cut Planner (proven)
 - `TOOL-21` فاحص توقيت الفيديو المرجعي / Reference Video Timing Probe (proven)

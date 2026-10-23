@@ -471,20 +471,20 @@
  },
  "counts": {
   "broken_links": 0,
-  "evals": 119,
+  "evals": 120,
   "families": 62,
   "gaps": {
    "family_without_tool": 11
   },
-  "powers": 5728,
-  "py_edges": 302,
+  "powers": 5729,
+  "py_edges": 305,
   "repo_tests": 35,
   "roles": {
    "helper": 2,
-   "registered": 150
+   "registered": 151
   },
-  "scripts": 152,
-  "tools": 168
+  "scripts": 153,
+  "tools": 169
  },
  "families": [
   {
@@ -709,7 +709,7 @@
   },
   {
    "id": "runnable-tools",
-   "powers": 168,
+   "powers": 169,
    "tools": 0
   },
   {
@@ -720,7 +720,7 @@
   {
    "id": "self-discovery",
    "powers": 43,
-   "tools": 36
+   "tools": 37
   },
   {
    "id": "shapes-morph-geometry",
@@ -850,7 +850,7 @@
    "kind": "family_without_tool"
   },
   {
-   "detail": "168 powers, no tools.json entry lists this family",
+   "detail": "169 powers, no tools.json entry lists this family",
    "id": "runnable-tools",
    "kind": "family_without_tool"
   }
@@ -1488,6 +1488,11 @@
    "from": "superpowers_unified",
    "kind": "invokes",
    "to": "capability_atlas"
+  },
+  {
+   "from": "task_history",
+   "kind": "imports",
+   "to": "_secrets"
   },
   {
    "from": "think",
@@ -2245,6 +2250,16 @@
    "to": "superpower_fusion"
   },
   {
+   "from": "test_task_history",
+   "kind": "imports",
+   "to": "task_history"
+  },
+  {
+   "from": "test_task_history",
+   "kind": "invokes",
+   "to": "task_history"
+  },
+  {
    "from": "test_tts_script",
    "kind": "imports",
    "to": "tts_script"
@@ -2849,7 +2864,8 @@
     "fusionforge",
     "memory_ops",
     "prompt_pack",
-    "sources_index"
+    "sources_index",
+    "task_history"
    ],
    "path": "scripts/_secrets.py",
    "power_count": 0,
@@ -4276,7 +4292,7 @@
     "smart_capabilities"
    ],
    "path": "scripts/hub.py",
-   "power_count": 168,
+   "power_count": 169,
    "powers": [
     "TOOL-01",
     "TOOL-02",
@@ -5595,6 +5611,23 @@
    ]
   },
   {
+   "ci": true,
+   "id": "task_history",
+   "imported_by": [],
+   "path": "scripts/task_history.py",
+   "power_count": 1,
+   "powers": [
+    "TOOL-170"
+   ],
+   "role": "registered",
+   "tests": [
+    "evals/test_task_history.py"
+   ],
+   "tools": [
+    "task-history"
+   ]
+  },
+  {
    "ci": false,
    "id": "telegram_typography_atlas",
    "imported_by": [
@@ -5842,18 +5875,18 @@
    "assets": 4,
    "data": 129,
    "dua-wednesday": 10,
-   "evals": 112,
+   "evals": 113,
    "examples": 12,
    "montage-pro": 2,
    "proofs": 239,
-   "references": 244,
+   "references": 245,
    "resources": 3,
    "schemas": 5,
-   "scripts": 183,
+   "scripts": 184,
    "templates": 16,
    "vendor": 391
   },
-  "bytes": 66580417,
+  "bytes": 66672005,
   "extensions": {
    "(none)": 14,
    ".bru": 7,
@@ -5862,16 +5895,16 @@
    ".jpg": 23,
    ".js": 14,
    ".json": 188,
-   ".md": 610,
+   ".md": 611,
    ".mjs": 9,
    ".png": 6,
-   ".py": 317,
+   ".py": 319,
    ".ttf": 14,
    ".txt": 54,
    ".woff2": 8,
    ".yaml": 57
   },
-  "files": 1359,
+  "files": 1362,
   "symlinks": 0
  }
 }

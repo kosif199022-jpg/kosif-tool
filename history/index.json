@@ -1,0 +1,14 @@
+{
+ "schema": "kosif.task-history-index.v1",
+ "count": 1,
+ "tasks": [
+  {
+   "id": "20261023-task-history-memory",
+   "date": "2026-10-23",
+   "kind": "code",
+   "mode": "نفّذ مباشرة",
+   "status": "DONE_VERIFIED",
+   "title": "Task history memory on GitHub"
+  }
+ ]
+}

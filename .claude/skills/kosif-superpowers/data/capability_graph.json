@@ -15,7 +15,7 @@
    "id": "root",
    "kind": "root",
    "label": "KOSIF Superpowers",
-   "count": 5728
+   "count": 5729
   },
   {
    "id": "dom:motion",
@@ -1406,10 +1406,10 @@
    "label": "Runnable KOSIF tools",
    "ar": "الأدوات القابلة للتشغيل",
    "prefix": "TOOL",
-   "count": 168,
-   "proven": 135,
+   "count": 169,
+   "proven": 136,
    "status": {
-    "proven": 135,
+    "proven": 136,
     "ready": 21,
     "install": 12
    }
@@ -2215,6 +2215,11 @@
    "label": "scripts/sources_index.py"
   },
   {
+   "id": "script:scripts/task_history.py",
+   "kind": "script",
+   "label": "scripts/task_history.py"
+  },
+  {
    "id": "script:scripts/test_atlas_reviewed_methods_v3.py",
    "kind": "script",
    "label": "scripts/test_atlas_reviewed_methods_v3.py"
@@ -2603,6 +2608,11 @@
    "id": "test:.claude/skills/kosif-superpowers/evals/test_superpower_fusion.py",
    "kind": "test",
    "label": ".claude/skills/kosif-superpowers/evals/test_superpower_fusion.py"
+  },
+  {
+   "id": "test:.claude/skills/kosif-superpowers/evals/test_task_history.py",
+   "kind": "test",
+   "label": ".claude/skills/kosif-superpowers/evals/test_task_history.py"
   },
   {
    "id": "test:tests/test_think.py",
@@ -5345,13 +5355,13 @@
    "from": "dom:build",
    "to": "fam:runnable-tools",
    "rel": "has",
-   "w": 168
+   "w": 169
   },
   {
    "from": "fam:runnable-tools",
    "to": "req:python3",
    "rel": "needs",
-   "w": 133
+   "w": 134
   },
   {
    "from": "fam:runnable-tools",
@@ -5399,7 +5409,7 @@
    "from": "fam:runnable-tools",
    "to": "script:scripts/hub.py",
    "rel": "runs",
-   "w": 173
+   "w": 174
   },
   {
    "from": "fam:runnable-tools",
@@ -7268,6 +7278,12 @@
    "w": 1
   },
   {
+   "from": "script:scripts/task_history.py",
+   "to": "script:scripts/_secrets.py",
+   "rel": "imports",
+   "w": 1
+  },
+  {
    "from": "script:scripts/test_atlas_reviewed_methods_v3.py",
    "to": "script:scripts/atlas_reviewed_methods_v3.py",
    "rel": "imports",
@@ -8050,6 +8066,12 @@
   {
    "from": "script:scripts/superpowers_unified.py",
    "to": "test:tests/test_superpowers_unified.py",
+   "rel": "tested_by",
+   "w": 1
+  },
+  {
+   "from": "script:scripts/task_history.py",
+   "to": "test:.claude/skills/kosif-superpowers/evals/test_task_history.py",
    "rel": "tested_by",
    "w": 1
   },

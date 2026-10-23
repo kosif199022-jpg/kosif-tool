@@ -15,17 +15,17 @@
  },
  "paths_note": "Tool paths and examples are relative to their root: 'skill' = this folder, 'repo' = the kosif-tool repository root.",
  "counts": {
-  "powers": 5728,
+  "powers": 5729,
   "families": 62,
   "domains": 10,
-  "tools": 168,
+  "tools": 169,
   "guides": 112,
   "statuses": {
    "documented": 2206,
    "idea": 71,
    "install": 980,
    "key": 176,
-   "proven": 1012,
+   "proven": 1013,
    "ready": 674,
    "seen": 609
   }
@@ -890,10 +890,10 @@
    "domain": "build",
    "title_ar": "الأدوات القابلة للتشغيل",
    "title_en": "Runnable KOSIF tools",
-   "count": 168,
+   "count": 169,
    "statuses": {
     "install": 12,
-    "proven": 135,
+    "proven": 136,
     "ready": 21
    },
    "chapter": "references/powers/runnable-tools.md",
@@ -16003,6 +16003,108 @@
    ],
    "evidence": "tested-here",
    "power_id": "TOOL-161"
+  },
+  {
+   "id": "task-history",
+   "path": "scripts/task_history.py",
+   "root": "skill",
+   "kind": "cli",
+   "area": "think",
+   "title_en": "Task history: record every finished task and repeat it later",
+   "title_ar": "سجل المهام: سجل لكل مهمة منجزة لإعادتها لاحقًا",
+   "summary_en": "Keeps a task memory on GitHub: one JSON record per finished task under history/tasks/ at the repo root, with the request in the user's words, the mode and plan, the tools and exact commands with their parameters, the inputs and outputs (sha256 added for local files) and how to reproduce it. list and show answer \"what tasks have you done?\", replay prints the plan or a shell script that repeats one (it runs nothing and keeps permission steps commented out), compare checks new outputs against the recorded hashes, and build writes history/INDEX.md and index.json. add --print writes nothing and gives the record, a one-line save command and a pre-filled GitHub new-file link for chat apps that cannot push. Records holding a credential, a session or upload path, an e-mail address or a phone number are refused.",
+   "summary_ar": "ذاكرة مهام على GitHub: سجل JSON واحد لكل مهمة منجزة تحت history/tasks/ بجذر المستودع، فيه الطلب بكلمات المستخدم والوضع والخطة والأدوات والأوامر بمعاملاتها والمدخلات والمخرجات (مع sha256 للملفات المحلية) وطريقة الإعادة. list وshow يجيبان «إيه المهام اللي عملتها؟»، وreplay يطبع خطة أو سكربت يعيد مهمة (لا يشغّل شيئًا ويعلّق خطوات الإذن)، وcompare يقارن المخرجات الجديدة بالبصمات المسجلة، وbuild يكتب history/INDEX.md وindex.json. والخيار add --print لا يكتب شيئًا ويعطي السجل وأمر حفظ في سطر ورابط GitHub مملوءًا لتطبيقات المحادثة التي لا تدفع. ويُرفض السجل الذي فيه مفتاح أو مسار جلسة أو رفع أو بريد أو هاتف.",
+   "use_when": [
+    "إيه المهام اللي عملتها قبل كده",
+    "كرر المهمة رقم 3 بنفس النتيجة",
+    "سجّل المهمة دي في الهيستوري على جيت هاب",
+    "What tasks have you done? Repeat the Friday dua video",
+    "Record this finished task so it can be reproduced"
+   ],
+   "keywords": [
+    "history",
+    "task history",
+    "memory",
+    "repeat",
+    "replay",
+    "reproduce",
+    "log",
+    "record",
+    "سجل",
+    "سجل المهام",
+    "هيستوري",
+    "ذاكرة",
+    "كرر",
+    "كررها",
+    "إعادة",
+    "المهام اللي عملتها"
+   ],
+   "commands": [
+    {
+     "name": "new",
+     "example": "python3 scripts/task_history.py new --kind video",
+     "does": "Prints a record template to fill."
+    },
+    {
+     "name": "add",
+     "example": "python3 scripts/task_history.py add --from entry.json",
+     "does": "Validates the record (fields, privacy gate), adds sha256 and bytes for local files, writes history/tasks/<id>.json and rebuilds the index; --print writes nothing and prints the record, a one-line save command and a GitHub link."
+    },
+    {
+     "name": "list",
+     "example": "python3 scripts/task_history.py list --kind video",
+     "does": "The recorded tasks, newest first and numbered; --q filters by words, --json for machines."
+    },
+    {
+     "name": "show",
+     "example": "python3 scripts/task_history.py show last",
+     "does": "One task in full by id, unique prefix, list number or last."
+    },
+    {
+     "name": "replay",
+     "example": "python3 scripts/task_history.py replay last --format sh",
+     "does": "Prints the replay plan (md), a script that checks input hashes then runs the recorded commands (sh), or JSON; it runs nothing."
+    },
+    {
+     "name": "compare",
+     "example": "python3 scripts/task_history.py compare last",
+     "does": "Compares the outputs now on disk with the recorded hashes: identical, DIFFERENT, differs (not deterministic) or missing; exits 1 unless the result is the same."
+    },
+    {
+     "name": "build",
+     "example": "python3 scripts/task_history.py build --check",
+     "does": "Writes history/INDEX.md and history/index.json; --check writes nothing and exits 1 when stale."
+    },
+    {
+     "name": "validate",
+     "example": "python3 scripts/task_history.py validate",
+     "does": "Checks every record; --strict also fails on a stale index."
+    }
+   ],
+   "inputs": "a record JSON file or stdin; history/tasks/*.json",
+   "outputs": "history/tasks/<id>.json, history/INDEX.md, history/index.json; plans, scripts and comparisons on stdout",
+   "requires": {
+    "python": [],
+    "binaries": [],
+    "node": [],
+    "optional": [],
+    "network": false
+   },
+   "safety": "writes-files",
+   "consent": "add and build write only under history/; adding a record to main is covered by the user's standing permission limited to history/ (A35). list, show, replay, compare and validate only read.",
+   "limits": "A record is what the assistant reports it ran: replay repeats the recorded commands but cannot bring back a deleted input, an expired link or a paid model's randomness, and compare checks bytes only for outputs marked deterministic.",
+   "tests": [
+    ".claude/skills/kosif-superpowers/evals/test_task_history.py"
+   ],
+   "docs": [
+    ".claude/skills/kosif-superpowers/references/protocol/A35-task-history.md",
+    "history/README.md"
+   ],
+   "families": [
+    "self-discovery"
+   ],
+   "evidence": "tested-here",
+   "power_id": "TOOL-170"
   }
  ],
  "guides": [

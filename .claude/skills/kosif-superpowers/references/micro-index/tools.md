@@ -242,6 +242,7 @@
 | `prompt-lab` | TOOL-159 | مختبر البرومبت · Prompt Lab | `python3 scripts/prompt_lab.py kinds` | 1 |
 | `see-pro-cognitive-gate` | TOOL-76 | فاحص عقود التفكير والتوليف KOSIF SEE Pro · SEE Pro Cognitive Fusion contract verifier | `python3 scripts/see_pro_cognitive_gate.py --self-test` | 1 |
 | `stats-lab` | TOOL-151 | مختبر الإحصاء: اختبار A/B وحجم العينة ووصف عمود وأرباح الدفعات · Stats lab: A/B test, sample size, column statistics and FIFO/LIFO gains | `python3 scripts/stats_lab.py abtest --a 1000,100 --b 1000,130` | 1 |
+| `task-history` | TOOL-170 | سجل المهام: سجل لكل مهمة منجزة لإعادتها لاحقًا · Task history: record every finished task and repeat it later | `python3 scripts/task_history.py new --kind video` | 1 |
 | `tell-scan` | TOOL-75 | فاحص العبارات الكتابية النمطية · Writing Tell Scanner | `python3 scripts/tell_scan.py proofs/general-writing/samples/en_ai.txt` | 1 |
 | `think` | TOOL-69 | محرك التفكير وقوالبه · Thinking engine scaffolds | `python3 scripts/think.py ladder "design a 30-day plan for a course la…` | 4 |
 

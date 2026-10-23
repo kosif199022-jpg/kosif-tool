@@ -1,4 +1,4 @@
-# أدوات المجال `think` (16 أداة)
+# أدوات المجال `think` (17 أداة)
 
 > مولّد من `data/tools.json`. [الفهرس الرئيسي](../README.md) · `python3 scripts/hub.py tool <id>` للبطاقة الحية.
 
@@ -676,6 +676,62 @@
 #### عند الفشل (A29)
 
 - ابدأ بـ `think.py recover --message "<نص الخطأ>"`، ثم سجّل `fusionforge.py trace --project <slug> --id <FUSE-ID> --stage <stage> --node <N> --action "<ما جُرّب>" --result failed --error-class <الصنف> --tool tool:stats-lab --evidence <ملف>`.
+
+### `task-history` — سجل المهام: سجل لكل مهمة منجزة لإعادتها لاحقًا / Task history: record every finished task and repeat it later
+
+| الحقل | القيمة |
+|---|---|
+| المسار | `scripts/task_history.py` (جذر: skill) |
+| المجال | `think` |
+| الدليل | `tested-here` |
+| العائلات | `self-discovery` |
+
+**ما تفعله:** ذاكرة مهام على GitHub: سجل JSON واحد لكل مهمة منجزة تحت history/tasks/ بجذر المستودع، فيه الطلب بكلمات المستخدم والوضع والخطة والأدوات والأوامر بمعاملاتها والمدخلات والمخرجات (مع sha256 للملفات المحلية) وطريقة الإعادة. list وshow يجيبان «إيه المهام اللي عملتها؟»، وreplay يطبع خطة أو سكربت يعيد مهمة (لا يشغّل شيئًا ويعلّق خطوات الإذن)، وcompare يقارن المخرجات الجديدة بالبصمات المسجلة، وbuild يكتب history/INDEX.md وindex.json. والخيار add --print لا يكتب شيئًا ويعطي السجل وأمر حفظ في سطر ورابط GitHub مملوءًا لتطبيقات المحادثة التي لا تدفع. ويُرفض السجل الذي فيه مفتاح أو مسار جلسة أو رفع أو بريد أو هاتف.
+
+**What it does:** Keeps a task memory on GitHub: one JSON record per finished task under history/tasks/ at the repo root, with the request in the user's words, the mode and plan, the tools and exact commands with their parameters, the inputs and outputs (sha256 added for local files) and how to reproduce it. list and show answer "what tasks have you done?", replay prints the plan or a shell script that repeats one (it runs nothing and keeps permission steps commented out), compare checks new outputs against the recorded hashes, and build writes history/INDEX.md and index.json. add --print writes nothing and gives the record, a one-line save command and a pre-filled GitHub new-file link for chat apps that cannot push. Records holding a credential, a session or upload path, an e-mail address or a phone number are refused.
+
+#### متى تُستدعى
+
+- «إيه المهام اللي عملتها قبل كده»
+- «كرر المهمة رقم 3 بنفس النتيجة»
+- «سجّل المهمة دي في الهيستوري على جيت هاب»
+- «What tasks have you done? Repeat the Friday dua video»
+- «Record this finished task so it can be reproduced»
+
+#### الأوامر
+
+- **new**: Prints a record template to fill.
+  - `python3 scripts/task_history.py new --kind video`
+- **add**: Validates the record (fields, privacy gate), adds sha256 and bytes for local files, writes history/tasks/<id>.json and rebuilds the index; --print writes nothing and prints the record, a one-line save command and a GitHub link.
+  - `python3 scripts/task_history.py add --from entry.json`
+- **list**: The recorded tasks, newest first and numbered; --q filters by words, --json for machines.
+  - `python3 scripts/task_history.py list --kind video`
+- **show**: One task in full by id, unique prefix, list number or last.
+  - `python3 scripts/task_history.py show last`
+- **replay**: Prints the replay plan (md), a script that checks input hashes then runs the recorded commands (sh), or JSON; it runs nothing.
+  - `python3 scripts/task_history.py replay last --format sh`
+- **compare**: Compares the outputs now on disk with the recorded hashes: identical, DIFFERENT, differs (not deterministic) or missing; exits 1 unless the result is the same.
+  - `python3 scripts/task_history.py compare last`
+- **build**: Writes history/INDEX.md and history/index.json; --check writes nothing and exits 1 when stale.
+  - `python3 scripts/task_history.py build --check`
+- **validate**: Checks every record; --strict also fails on a stale index.
+  - `python3 scripts/task_history.py validate`
+
+#### المتطلبات والأمان
+
+- الأمان: writes-files
+- الموافقة: add and build write only under history/; adding a record to main is covered by the user's standing permission limited to history/ (A35). list, show, replay, compare and validate only read.
+- الحدود: A record is what the assistant reports it ran: replay repeats the recorded commands but cannot bring back a deleted input, an expired link or a paid model's randomness, and compare checks bytes only for outputs marked deterministic.
+
+#### الاختبارات والأدلة
+
+- `.claude/skills/kosif-superpowers/evals/test_task_history.py`
+- مرجع: `.claude/skills/kosif-superpowers/references/protocol/A35-task-history.md`
+- مرجع: `history/README.md`
+
+#### عند الفشل (A29)
+
+- ابدأ بـ `think.py recover --message "<نص الخطأ>"`، ثم سجّل `fusionforge.py trace --project <slug> --id <FUSE-ID> --stage <stage> --node <N> --action "<ما جُرّب>" --result failed --error-class <الصنف> --tool tool:task-history --evidence <ملف>`.
 
 ### `tell-scan` — فاحص العبارات الكتابية النمطية / Writing Tell Scanner
 
