@@ -2,7 +2,7 @@
 
 Gives Claude a single, target-aware way to write or improve a prompt: route the request, freeze what must not change, fill the gaps honestly, pick the cheapest technique that works, render it for the target, check it, and prove it when it will be reused.
 Open it when the user asks to optimize or write a prompt (/optimize، حسّن البرومبت، اكتب لي برومبت), and whenever Claude itself writes a prompt for someone else: a subagent brief, a scheduled-task prompt, a system prompt for an app, an image or video generator call.
-Powers: PROMPT-01…PROMPT-22 in `data/powers/prompt-craft.json`. The preservation check runs on `scripts/anchor_gate.py --mode prompt` (proof: `proofs/general-writing/README.md`).
+Powers: PROMPT-01…PROMPT-38 in `data/powers/prompt-craft.json`; PROMPT-23…38 came from the GitHub top-1000 review (§15) and the runnable lab `scripts/prompt_lab.py`. The preservation check runs on `scripts/anchor_gate.py --mode prompt` (proof: `proofs/general-writing/README.md`).
 
 ## Contents
 1. [Rules that always hold](#1-rules-that-always-hold)
@@ -19,6 +19,7 @@ Powers: PROMPT-01…PROMPT-22 in `data/powers/prompt-craft.json`. The preservati
 12. [Routing evals](#12-routing-evals)
 13. [Keeping model notes fresh](#13-keeping-model-notes-fresh)
 14. [Sources and licenses](#14-sources-and-licenses)
+15. [The prompt lab and methods from the top repositories](#15-the-prompt-lab-and-methods-from-the-top-repositories)
 
 ---
 
@@ -255,3 +256,23 @@ Vendor guidance changes with every model release (prefill, thinking controls, ef
 - **OpenAI prompt engineering guide** (https://developers.openai.com/api/docs/guides/prompt-engineering): paraphrased, link only.
 - **Google Cloud, Video generation prompt guide** (https://docs.cloud.google.com/vertex-ai/generative-ai/docs/video/video-gen-prompt-guide), CC BY 4.0: the element list in §7.6 (subject, action, scene, angle, movement, lens, style, temporal elements, audio in separate sentences, negatives without "no") is adapted from it, with changes.
 - Examples in §11 and the files in `proofs/general-writing/pairs/prompt_*` are original to this skill.
+
+## 15. The prompt lab and methods from the top repositories
+
+`scripts/prompt_lab.py` runs the method above (stdlib, offline, deterministic):
+
+```bash
+python3 scripts/prompt_lab.py kinds                                          # system, agent, code, research, writing, judge, image, video
+python3 scripts/prompt_lab.py build --kind agent --goal "Fix the date parser" --set tools="may run tests" --set stop="before pushing"
+python3 scripts/prompt_lab.py lint PROMPT.txt --kind image                   # 20-point proxy of §9, gates, fixes (exit 1 on rewrite/gate)
+python3 scripts/prompt_lab.py refine PROMPT.txt --kind writing               # ordered fixes + missing-slot skeleton
+python3 scripts/prompt_lab.py eval --cases cases.json --outputs outputs.json --baseline A   # keep only a win with no regression
+python3 scripts/prompt_lab.py pairwise --plan --a A.txt --b B.txt --task "…"  # two judge prompts, order swapped (Jev's rule)
+```
+
+The linter only sees text (slots present, anti-patterns, gates), so a high score means "well formed", not "works": the proof is `eval` on outputs from real runs, then `pairwise` for qualities no assertion can measure.
+
+**How to pick a method (PROMPT-25):** diagnose the failure, then add one technique. Wrong format → schema and validate-and-retry (PROMPT-33). Bad arithmetic → program-aided answer (PROMPT-27). Wavering answers → self-consistency vote (PROMPT-26). Repeated mistakes → lesson memory (PROMPT-28). A prompt that runs hundreds of times → signature first (PROMPT-23), then compile few-shot examples against a metric (PROMPT-24) or let the model propose instructions and test them (PROMPT-35). Reused prompts live as pattern files with fixed sections (PROMPT-29), stable content first for caching (PROMPT-30). Image series use a slot template with a lock line (PROMPT-32); a one-line idea is expanded with the user's words locked (PROMPT-34).
+
+**Sources (methods restated in our own words, nothing copied):** dair-ai/Prompt-Engineering-Guide (MIT), stanfordnlp/dspy (MIT), danielmiessler/Fabric (MIT), anthropics/anthropic-cookbook (MIT), freestylefly/awesome-gpt-image-2 (MIT), promptfoo/promptfoo (MIT), 567-labs/instructor (MIT), dottxt-ai/outlines (Apache-2.0), guidance-ai/guidance (MIT); lllyasviel/Fooocus (GPL-3.0) is referenced for an idea only. Collections of leaked proprietary system prompts are excluded on purpose. The full review of the 1,000 most-starred repositories, with each one's licence and decision, is [github-top-1000.md](github-top-1000.md).
+

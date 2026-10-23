@@ -1,0 +1,493 @@
+{
+ "schema": "kosif.github-top1000.review.v1",
+ "about": "Hand review on top of the automatic classification in scripts/github_top_repos.py: 'topic' fixes a keyword misfire, 'decision'+'why' records an exclusion (safety, ethics, terms, copyright), 'transferred' lists the power or tool ids that now carry a repository's methods (restated in our own words). 'extra' holds repositories below the top-1,000 star cut-off that were still mined.",
+ "repos": {
+  "acheong08/ChatGPT": {
+   "decision": "skip",
+   "why": "terms: reverse-engineered or resold access to hosted AI services"
+  },
+  "adam-p/markdown-here": {
+   "topic": "docs-writing-knowledge"
+  },
+  "adobe/brackets": {
+   "topic": "engineering-general"
+  },
+  "ai/nanoid": {
+   "topic": "engineering-general"
+  },
+  "airbnb/lottie-ios": {
+   "topic": "motion-animation"
+  },
+  "alibaba/nacos": {
+   "topic": "engineering-general"
+  },
+  "AllThingsSmitty/css-protips": {
+   "topic": "design-ui-type"
+  },
+  "Anil-matcha/Open-Generative-AI": {
+   "why": "advertised as 'unrestricted': link only, the skill's content rules still apply"
+  },
+  "ansible/ansible": {
+   "topic": "engineering-general"
+  },
+  "anthropics/anthropic-cookbook": {
+   "transferred": [
+    "PROMPT-30"
+   ]
+  },
+  "apache/kafka": {
+   "topic": "engineering-general"
+  },
+  "apify/crawlee": {
+   "topic": "research-web"
+  },
+  "ApolloAuto/apollo": {
+   "topic": "engineering-general"
+  },
+  "apple/container": {
+   "topic": "engineering-general"
+  },
+  "appwrite/appwrite": {
+   "topic": "engineering-general"
+  },
+  "Asabeneh/30-Days-Of-JavaScript": {
+   "topic": "methods-curricula"
+  },
+  "Asabeneh/30-Days-Of-Python": {
+   "topic": "methods-curricula"
+  },
+  "Asabeneh/30-Days-Of-React": {
+   "topic": "methods-curricula"
+  },
+  "asgeirtj/system_prompts_leaks": {
+   "decision": "skip",
+   "why": "ethics: extracted proprietary system prompts; not imported and not used as examples"
+  },
+  "ashishps1/awesome-low-level-design": {
+   "topic": "methods-curricula"
+  },
+  "ashishps1/awesome-system-design-resources": {
+   "topic": "methods-curricula"
+  },
+  "Automattic/mongoose": {
+   "topic": "engineering-general"
+  },
+  "babel/babel": {
+   "topic": "engineering-general"
+  },
+  "babysor/MockingBird": {
+   "why": "voice cloning: only with the speaker's recorded consent (voice-tts family rules); link and method only"
+  },
+  "blueimp/jQuery-File-Upload": {
+   "topic": "engineering-general"
+  },
+  "bradtraversy/design-resources-for-developers": {
+   "topic": "design-ui-type"
+  },
+  "bvaughn/react-virtualized": {
+   "topic": "engineering-general"
+  },
+  "Chalarangelo/30-seconds-of-code": {
+   "topic": "methods-curricula"
+  },
+  "chartjs/Chart.js": {
+   "topic": "data-viz-diagrams"
+  },
+  "cockroachdb/cockroach": {
+   "topic": "engineering-general"
+  },
+  "codex-team/editor.js": {
+   "topic": "engineering-general"
+  },
+  "colinhacks/zod": {
+   "topic": "engineering-general"
+  },
+  "CorentinJ/Real-Time-Voice-Cloning": {
+   "why": "voice cloning: only with the speaker's recorded consent (voice-tts family rules); link and method only"
+  },
+  "CorentinTh/it-tools": {
+   "topic": "engineering-general"
+  },
+  "d3/d3": {
+   "topic": "data-viz-diagrams"
+  },
+  "dair-ai/Prompt-Engineering-Guide": {
+   "transferred": [
+    "PROMPT-25",
+    "PROMPT-26",
+    "PROMPT-27",
+    "PROMPT-28",
+    "PROMPT-35"
+   ]
+  },
+  "danielmiessler/Fabric": {
+   "transferred": [
+    "PROMPT-29"
+   ]
+  },
+  "deepinsight/insightface": {
+   "topic": "ai-ml-vision"
+  },
+  "Developer-Y/cs-video-courses": {
+   "topic": "methods-curricula"
+  },
+  "directus/directus": {
+   "topic": "engineering-general"
+  },
+  "discourse/discourse": {
+   "topic": "engineering-general"
+  },
+  "donnemartin/system-design-primer": {
+   "topic": "methods-curricula"
+  },
+  "DovAmir/awesome-design-patterns": {
+   "topic": "methods-curricula"
+  },
+  "Ebazhanov/linkedin-skill-assessments-quizzes": {
+   "topic": "methods-curricula"
+  },
+  "elastic/elasticsearch": {
+   "topic": "engineering-general"
+  },
+  "electron/electron": {
+   "topic": "engineering-general"
+  },
+  "facebook/folly": {
+   "topic": "engineering-general"
+  },
+  "facebook/rocksdb": {
+   "topic": "engineering-general"
+  },
+  "facebook/zstd": {
+   "topic": "engineering-general"
+  },
+  "facebookresearch/Detectron": {
+   "topic": "ai-ml-vision"
+  },
+  "facebookresearch/fastText": {
+   "topic": "ai-ml-vision"
+  },
+  "facebookresearch/segment-anything": {
+   "topic": "ai-ml-vision"
+  },
+  "facefusion/facefusion": {
+   "decision": "skip",
+   "why": "safety: real-time face swap / deepfake tooling is not imported"
+  },
+  "faif/python-patterns": {
+   "topic": "methods-curricula"
+  },
+  "florinpop17/app-ideas": {
+   "topic": "methods-curricula"
+  },
+  "freestylefly/awesome-gpt-image-2": {
+   "transferred": [
+    "PROMPT-32"
+   ]
+  },
+  "gedoor/legado": {
+   "topic": "engineering-general"
+  },
+  "ggml-org/whisper.cpp": {
+   "topic": "media-audio-video"
+  },
+  "gin-gonic/gin": {
+   "topic": "engineering-general"
+  },
+  "git/git": {
+   "topic": "engineering-general"
+  },
+  "GitSquared/edex-ui": {
+   "topic": "engineering-general"
+  },
+  "google/flatbuffers": {
+   "topic": "engineering-general"
+  },
+  "google/zx": {
+   "topic": "engineering-general"
+  },
+  "GorvGoyl/Clone-Wars": {
+   "topic": "methods-curricula"
+  },
+  "hacksider/Deep-Live-Cam": {
+   "decision": "skip",
+   "why": "safety: real-time face swap / deepfake tooling is not imported"
+  },
+  "hankcs/HanLP": {
+   "topic": "ai-ml-vision"
+  },
+  "hehonghui/awesome-english-ebooks": {
+   "decision": "skip",
+   "why": "copyright: redistributes paid magazines or textbooks"
+  },
+  "houshanren/hangzhou_house_knowledge": {
+   "topic": "engineering-general"
+  },
+  "huggingface/pytorch-image-models": {
+   "topic": "ai-ml-vision"
+  },
+  "iluwatar/java-design-patterns": {
+   "topic": "methods-curricula"
+  },
+  "iperov/DeepFaceLive": {
+   "decision": "skip",
+   "why": "safety: real-time face swap / deepfake tooling is not imported"
+  },
+  "jesseduffield/lazygit": {
+   "topic": "engineering-general"
+  },
+  "jitsi/jitsi-meet": {
+   "topic": "engineering-general"
+  },
+  "justjavac/wechat-miniapp-radar": {
+   "topic": "engineering-general"
+  },
+  "keepassxreboot/keepassxc": {
+   "topic": "engineering-general"
+  },
+  "Kong/kong": {
+   "topic": "engineering-general"
+  },
+  "lbjlaq/Antigravity-Manager": {
+   "decision": "skip",
+   "why": "terms: reverse-engineered or resold access to hosted AI services"
+  },
+  "linexjlin/GPTs": {
+   "decision": "skip",
+   "why": "ethics: extracted proprietary system prompts; not imported and not used as examples"
+  },
+  "lissy93/dashy": {
+   "topic": "engineering-general"
+  },
+  "lllyasviel/Fooocus": {
+   "transferred": [
+    "PROMPT-34"
+   ]
+  },
+  "maboloshi/github-chinese": {
+   "topic": "engineering-general"
+  },
+  "marmelab/react-admin": {
+   "topic": "engineering-general"
+  },
+  "massgravel/Microsoft-Activation-Scripts": {
+   "decision": "skip",
+   "why": "licence and terms: software activation bypass"
+  },
+  "mastodon/mastodon": {
+   "topic": "engineering-general"
+  },
+  "MichaelCade/90DaysOfDevOps": {
+   "topic": "methods-curricula"
+  },
+  "microsoft/qlib": {
+   "topic": "engineering-general"
+  },
+  "microsoft/winget-cli": {
+   "topic": "engineering-general"
+  },
+  "Modernizr/Modernizr": {
+   "topic": "engineering-general"
+  },
+  "mouredev/Hello-Python": {
+   "topic": "methods-curricula"
+  },
+  "myshell-ai/OpenVoice": {
+   "why": "voice cloning: only with the speaker's recorded consent (voice-tts family rules); link and method only"
+  },
+  "netdata/netdata": {
+   "topic": "engineering-general"
+  },
+  "nilbuild/design-patterns-for-humans": {
+   "topic": "methods-curricula"
+  },
+  "nrwl/nx": {
+   "topic": "engineering-general"
+  },
+  "nwjs/nw.js": {
+   "topic": "engineering-general"
+  },
+  "ohmyzsh/ohmyzsh": {
+   "topic": "engineering-general"
+  },
+  "openai/CLIP": {
+   "topic": "ai-ml-vision"
+  },
+  "openai/gym": {
+   "topic": "ai-ml-vision"
+  },
+  "openai/whisper": {
+   "topic": "media-audio-video"
+  },
+  "p-e-w/heretic": {
+   "decision": "skip",
+   "why": "safety: removes model safety training"
+  },
+  "PaddlePaddle/PaddleOCR": {
+   "topic": "docs-writing-knowledge"
+  },
+  "papers-we-love/papers-we-love": {
+   "topic": "methods-curricula"
+  },
+  "pcottle/learnGitBranching": {
+   "topic": "methods-curricula"
+  },
+  "pingcap/tidb": {
+   "topic": "engineering-general"
+  },
+  "poteto/hiring-without-whiteboards": {
+   "topic": "engineering-general"
+  },
+  "projectdiscovery/nuclei": {
+   "topic": "security"
+  },
+  "raysan5/raylib": {
+   "topic": "graphics-3d-games"
+  },
+  "redis/redis": {
+   "topic": "engineering-general"
+  },
+  "romkatv/powerlevel10k": {
+   "topic": "engineering-general"
+  },
+  "rstacruz/nprogress": {
+   "topic": "design-ui-type"
+  },
+  "ruvnet/RuView": {
+   "topic": "engineering-general"
+  },
+  "RVC-Boss/GPT-SoVITS": {
+   "why": "voice cloning: only with the speaker's recorded consent (voice-tts family rules); link and method only"
+  },
+  "seaweedfs/seaweedfs": {
+   "topic": "engineering-general"
+  },
+  "servo/servo": {
+   "topic": "engineering-general"
+  },
+  "sherlock-project/sherlock": {
+   "decision": "skip",
+   "why": "privacy: finds people's accounts by username; not imported"
+  },
+  "SimplifyJobs/Summer2027-Internships": {
+   "topic": "engineering-general"
+  },
+  "Snailclimb/JavaGuide": {
+   "topic": "methods-curricula"
+  },
+  "soimort/you-get": {
+   "topic": "media-audio-video"
+  },
+  "square/leakcanary": {
+   "topic": "engineering-general"
+  },
+  "stanfordnlp/dspy": {
+   "transferred": [
+    "PROMPT-23",
+    "PROMPT-24"
+   ]
+  },
+  "strapi/strapi": {
+   "topic": "engineering-general"
+  },
+  "styled-components/styled-components": {
+   "topic": "design-ui-type"
+  },
+  "sunface/rust-course": {
+   "topic": "methods-curricula"
+  },
+  "surrealdb/surrealdb": {
+   "topic": "engineering-general"
+  },
+  "swagger-api/swagger-ui": {
+   "topic": "engineering-general"
+  },
+  "taosdata/TDengine": {
+   "topic": "engineering-general"
+  },
+  "TapXWorld/ChinaTextbook": {
+   "decision": "skip",
+   "why": "copyright: redistributes paid magazines or textbooks"
+  },
+  "TheAlgorithms/C-Plus-Plus": {
+   "topic": "methods-curricula"
+  },
+  "thedaviddias/Front-End-Checklist": {
+   "topic": "methods-curricula"
+  },
+  "tmrts/go-patterns": {
+   "topic": "methods-curricula"
+  },
+  "tokio-rs/tokio": {
+   "topic": "engineering-general"
+  },
+  "twentyhq/twenty": {
+   "topic": "engineering-general"
+  },
+  "ueberdosis/tiptap": {
+   "topic": "docs-writing-knowledge"
+  },
+  "ValveSoftware/Proton": {
+   "topic": "engineering-general"
+  },
+  "webpack/webpack": {
+   "topic": "engineering-general"
+  },
+  "webtorrent/webtorrent": {
+   "topic": "engineering-general"
+  },
+  "Wei-Shaw/sub2api": {
+   "decision": "skip",
+   "why": "terms: reverse-engineered or resold access to hosted AI services"
+  },
+  "x1xhlol/system-prompts-and-models-of-ai-tools": {
+   "decision": "skip",
+   "why": "ethics: extracted proprietary system prompts; not imported and not used as examples"
+  },
+  "YunaiV/ruoyi-vue-pro": {
+   "topic": "engineering-general"
+  },
+  "zhaoxuya520/reverse-skill": {
+   "topic": "security"
+  }
+ },
+ "extra": {
+  "promptfoo/promptfoo": {
+   "stars": 26070,
+   "license": "MIT",
+   "topic": "prompt-engineering",
+   "description": "Test prompts, agents and RAGs with declarative configs; red teaming.",
+   "transferred": [
+    "PROMPT-31",
+    "prompt-lab"
+   ]
+  },
+  "567-labs/instructor": {
+   "stars": 14042,
+   "license": "MIT",
+   "topic": "prompt-engineering",
+   "description": "Structured outputs for LLMs.",
+   "transferred": [
+    "PROMPT-33"
+   ]
+  },
+  "dottxt-ai/outlines": {
+   "stars": 15963,
+   "license": "Apache-2.0",
+   "topic": "prompt-engineering",
+   "description": "Structured outputs.",
+   "transferred": [
+    "PROMPT-33"
+   ]
+  },
+  "guidance-ai/guidance": {
+   "stars": 21803,
+   "license": "MIT",
+   "topic": "prompt-engineering",
+   "description": "A guidance language for controlling large language models.",
+   "transferred": [
+    "PROMPT-33"
+   ]
+  }
+ }
+}

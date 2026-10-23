@@ -60,6 +60,7 @@
 | [A27 التحقق والجودة](references/protocol/A27-verification-quality-standards.md) | معايير النجاح، كيف تقيس، قبل أي «تم» أو تسليم | جديد؛ 12 نوع مخرج | `think.py qa` |
 | [A28 اختيار الأدوات](references/protocol/A28-capability-routing.md) | اختيار أداة أو مهارة أو مجموعة، أو العمل خارج المستودع | جديد؛ المكتبة `references/library/` | `hub.py`، `smart_capabilities.py library` |
 | [A29 التعافي من الفشل](references/protocol/A29-failure-recovery.md) | خطأ أو قياس دون العتبة، أو قبل إعادة محاولة | جديد؛ البند 5 من المرحلة 9 | `think.py recover` |
+| [A33 تعدين المستودعات والبرومبت](references/protocol/A33-open-source-mining-prompts.md) | التعلم من مستودعات GitHub أو الويب، أو كتابة برومبت لنموذج أو مولد أو وكيل | جديد؛ بوابات الترخيص والبرومبت | `github_top_repos.py`، `prompt_lab.py` |
 | [CHANGELOG](references/protocol/CHANGELOG.md) | تبحث عن قسم قديم برقمه أو عن تاريخ الإصدارات | خريطة كل قسم قديم إلى مكانه | — |
 
 ## المستودع الأصل — اقرأه كاملًا حتى لو لم تكن المهارة مثبتة

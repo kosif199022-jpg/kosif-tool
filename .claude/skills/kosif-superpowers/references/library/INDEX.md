@@ -1,6 +1,6 @@
 # مكتبة البروتوكول — USIP v5.5 protocol library
 
-> مولّدة بـ `scripts/smart_capabilities.py library`؛ لا تُحرَّر يدويًا. 5,490 قدرة في 62 عائلة و15 مجموعة، و144 أداة مسجلة. الدليل: [A28](../protocol/A28-capability-routing.md) · [النواة](../../PROTOCOL.md#متى-تفتح-الملاحق--appendix-triggers)
+> مولّدة بـ `scripts/smart_capabilities.py library`؛ لا تُحرَّر يدويًا. 5,506 قدرة في 62 عائلة و15 مجموعة، و146 أداة مسجلة. الدليل: [A28](../protocol/A28-capability-routing.md) · [النواة](../../PROTOCOL.md#متى-تفتح-الملاحق--appendix-triggers)
 
 ## الفهرس / contents
 
@@ -19,9 +19,9 @@
 
 | المجموعة | القدرات | proven | ready | الأدوات | الفصل |
 |---|---:|---:|---:|---:|---|
-| البحث والمعرفة (`research`) | 56 | 21 | 0 | 13 | [research.md](research.md) |
-| التفكير والتخطيط والاستراتيجية (`thinking`) | 316 | 17 | 0 | 18 | [thinking.md](thinking.md) |
-| الوكلاء والتوجيه الذكي (`agents`) | 156 | 84 | 5 | 37 | [agents.md](agents.md) |
+| البحث والمعرفة (`research`) | 56 | 21 | 0 | 14 | [research.md](research.md) |
+| التفكير والتخطيط والاستراتيجية (`thinking`) | 332 | 17 | 5 | 19 | [thinking.md](thinking.md) |
+| الوكلاء والتوجيه الذكي (`agents`) | 156 | 84 | 5 | 38 | [agents.md](agents.md) |
 | البرمجة وبناء التطبيقات (`software`) | 578 | 111 | 16 | 16 | [software.md](software.md) |
 | الرسم والأشكال والتصميم (`drawing`) | 300 | 53 | 55 | 21 | [drawing.md](drawing.md) |
 | الصور والتحرير والتوليد (`images`) | 319 | 96 | 42 | 26 | [images.md](images.md) |
@@ -31,11 +31,11 @@
 | الخطوط والنصوص العربية واللاتينية (`type`) | 215 | 40 | 49 | 12 | [type.md](type.md) |
 | البيانات والرسوم والمواقع (`data`) | 258 | 49 | 18 | 2 | [data.md](data.md) |
 | المستندات والكتابة (`documents`) | 138 | 32 | 0 | 2 | [documents.md](documents.md) |
-| الاختبارات والجودة والأمان (`quality`) | 464 | 94 | 58 | 34 | [quality.md](quality.md) |
+| الاختبارات والجودة والأمان (`quality`) | 464 | 94 | 58 | 35 | [quality.md](quality.md) |
 | التحليل العكسي وفحص البرامج (`reverse`) | 258 | 30 | 0 | 20 | [reverse.md](reverse.md) |
 | قدرات مساندة غير مصنفة (`misc`) | 27 | 5 | 7 | 0 | [misc.md](misc.md) |
 
-الفصول الـ15 معًا 6,610 سطرًا، وكل قدرة في فصل واحد بالضبط.
+الفصول الـ15 معًا 6,631 سطرًا، وكل قدرة في فصل واحد بالضبط.
 
 ## من أي محادثة / from any chat
 
