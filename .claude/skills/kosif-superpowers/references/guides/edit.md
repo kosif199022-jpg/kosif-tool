@@ -8,7 +8,7 @@ Commands below are typed from the skill folder (`.claude/skills/kosif-superpower
 
 <!-- hub:area:edit:start -->
 
-**الأدوات / tools (13)** — `python3 scripts/hub.py tool <id>` for every command, requirement and limit:
+**الأدوات / tools (15)** — `python3 scripts/hub.py tool <id>` for every command, requirement and limit:
 
 | tool | what it does | start with | evidence |
 |---|---|---|---|
@@ -25,6 +25,8 @@ Commands below are typed from the skill folder (`.claude/skills/kosif-superpower
 | `montage-pro` | A 13-role team over an uploaded audio or video: measures it (ffprobe, loudness, energy cues, cuts, contact sheet), offers an option menu with a stage plan, acquires licensed footage IDM-style (segmented resumable download, DASH/HLS grab, rights.json), conforms to an edit mezzanine with proxies, and builds a kinetic film, visualizer, reframe, highlight reel, look or a reference-remix Remotion project, each verified with verify_video.py; the master audio is never modified; its transcribe command writes word timings (kosif-words/1 words.json) locally with faster-whisper, skipping silence and refusing to write into jobs/ or tracked paths. | `python3 scripts/montage_pro.py doctor` | tested-here |
 | `reel-factory` | A thin wrapper over existing tools: records the audio's declared rights and every shot's licence in rights.json (advisory, never blocking — gaps are listed and said once), takes words.json or runs montage_pro transcribe, plans one shot per phrase with xfades centred on the cuts (duration = audio + 1 s), builds a 4:5 footage plate with ffmpeg, renders a word-by-word Arabic scene (Aref Ruqaa / Reem Kufi, gold frame draw-on, handle and credit inside the safe zone, parametric styles) through tools/render_html.cjs, muxes the original audio with -c copy and gates the result with verify_video.py --source-audio. Outputs go to the git-ignored out/reels/<slug>. | `python3 scripts/reel_factory.py plan --audio ./voice.m4a --audio-rights owned --words ./words.json --shots-manifest ./stock/manifest.json --shot-ids 17928486,8165467,20382699 --title "دعاء يوم الخميس" --handle @kosif` | tested-here |
 | `dua-wednesday` | Rebuilds the approved Wednesday-morning dua reel style on new footage and voice: one dua phrase per licensed shot cut just before the voice onset with nine different transitions (light leak, whip, gold ink reveal, zoom-through, gold iris, film burn, spin zoom, bokeh, slide), word-by-word Arabic text timed with faster-whisper and audio energy with a gold karaoke highlight, a gold Ruqaa day title under a drawn-on mihrab crowned by a crescent, golden dust, god rays, bloom, warm grade and grain. The voice is stream-copied and checked byte for byte. | `python3 scripts/dua_wednesday.py doctor` | tested-here |
+| `look-pipeline` | Written after a read-only study of the Montaji Arabic video editor: eleven colour looks (natural, vivid, bright, warm, cool, cinematic, vintage, faded, dramatic, mono, night-dua) and eight parameters become one per-channel affine step plus one 3x3 matrix, emitted with the same numbers as an ffmpeg chain (lutrgb + colorchannelmixer + vignette), an SVG filter, CSS and a GLSL shader. verify pushes a test frame through ffmpeg and compares every pixel with the reference maths; apply grades a video into a new file. | `python3 scripts/look_pipeline.py presets` | tested-here |
+| `fast-edit` | Single-file FFmpeg operations with JSON receipts: lists keyframes; cuts by stream copy when the start sits on (or within a tolerance of) a keyframe and by exact re-encode otherwise, reporting how far a copy would have drifted; applies voice presets (chipmunk, deep, robot, echo, radio, telephone) at the file's real sample rate with the length kept and video stream-copied; lifts low-light video with an optional denoise and measures mean luma before and after, skipping clips that are already bright; extracts audio bit-exact when the container allows it. | `python3 scripts/fast_edit.py doctor` | tested-here |
 
 <!-- hub:area:edit:end -->
 
@@ -38,6 +40,7 @@ Commands below are typed from the skill folder (`.claude/skills/kosif-superpower
 6. [Footage-first FFmpeg film rendering and REA-derived editor benchmark (2026-10-19)](#footage-first-ffmpeg-film-rendering-and-rea-derived-editor-benchmark-2026-10-19)
 7. [Global Video Platform Intelligence / Video Workflow Bridge (2026-10-19)](#global-video-platform-intelligence--video-workflow-bridge-2026-10-19)
 8. [دعاء يوم الأربعاء — Wednesday-morning dua reel (2026-10-21)](#دعاء-يوم-الأربعاء--wednesday-morning-dua-reel-2026-10-21)
+9. [التعديل السريع — Fast Edit: honest instant cut, voice presets, low-light lift (2026-10-23)](#التعديل-السريع--fast-edit-honest-instant-cut-voice-presets-low-light-lift-2026-10-23)
 
 **Katana analysis-only policy:** إذا طلب المستخدم تحليل صور/مقاطع أو مرجع مونتاج، طبّق [سياسة Katana في A8](../protocol/A8-motion-brain.md#katana--higgsfield--سياسة-التحليل-فقط-وحفظ-الرصيد): النتيجة ردود وتحليل نصي، وليس إعادة إنشاء/إخراج صور أو فيديو عبر Katana، ولا استخدام أرصدة توليد Higgsfield. لا تفترض أن Katana لديها واجهة تحليل read-only؛ عند عدم إثباتها استخدم أدوات فحص KOSIF/FFmpeg أو الرؤية مباشرة مع تمييز المصدر.
 
@@ -104,3 +107,13 @@ When the owner sends a dua video or voice and asks for «نفس استايل د�
 licensed clips → `prep` → `sprites` → `stills` (review) → `render`. Keep the fixed idea (one phrase = one shot, a different
 transition per cut, word-by-word gold karaoke text, mihrab + crescent, untouched voice, no star ornament); change the
 footage, text, day title and dates, and add new animation on top only through `Engine.transition` or a new draw function.
+
+## One colour look for preview and export
+
+`look_pipeline.py` keeps a grade as numbers (a per-channel affine step, then a 3×3 matrix) and writes the same numbers for ffmpeg, an SVG/CSS filter and a GLSL shader, so a browser preview and the exported MP4 agree. `verify` measures that agreement on a test frame instead of assuming it.
+
+    python3 $SKILL_DIR/scripts/look_pipeline.py build --preset cinematic --amount 0.8 --target svg
+    python3 $SKILL_DIR/scripts/look_pipeline.py verify --all
+    python3 $SKILL_DIR/scripts/look_pipeline.py apply ./in.mp4 ./graded.mp4 --preset warm
+
+Background: [montaji.md](../app-studies/montaji.md).

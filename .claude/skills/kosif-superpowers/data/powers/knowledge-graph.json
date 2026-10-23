@@ -696,5 +696,68 @@
   ],
   "source": "this session (hosted MCP) + references/graphify.md",
   "section": "Graphify المستضاف عبر MCP — Hosted Graphify MCP"
+ },
+ {
+  "id": "GRAPH-22",
+  "family": "knowledge-graph",
+  "domain": "code",
+  "name_ar": "استرجاع بالرسم المعرفي وملخصات المجتمعات",
+  "name_en": "Graph RAG with community summaries",
+  "status": "documented",
+  "what": "استخرج الكيانات والعلاقات من كل مقطع، وجمّعها في مجتمعات، ولخص كل مجتمع؛ الأسئلة العامة تُجاب بتجميع ملخصات المجتمعات، والمحددة من جوار الكيان. — Extract entities and relations per chunk, cluster them into communities, summarise each; global questions map-reduce over community summaries, specific ones use the entity's neighbourhood.",
+  "when": "أسئلة عن مجموعة مستندات كبيرة كلها (موضوعات، اتجاهات) / questions about a whole large corpus (themes, trends)",
+  "how": "1 chunk the corpus; 2 extract (entity, type, description) and (source, relation, target) per chunk; 3 merge duplicates; 4 cluster the graph (modularity communities) at 2-3 levels; 5 summarise each community; 6 global query: ask each community summary, keep answers with a relevance score, combine the top ones; local query: entity → neighbours → their source chunks. Cite chunk ids. Costly to build: use plain retrieval for small corpora.",
+  "params": "",
+  "install": "",
+  "requires": [
+   "pip:chromadb"
+  ],
+  "license": "MIT",
+  "proof": [],
+  "proof_scope": "none",
+  "styles": [],
+  "tags": [
+   "graphrag",
+   "knowledge graph",
+   "community",
+   "global search",
+   "local search",
+   "rag",
+   "رسم معرفي",
+   "استرجاع"
+  ],
+  "section": "أكبر مستودعات GitHub — Top GitHub repositories (2026-10-23)",
+  "source": "https://github.com/microsoft/graphrag (MIT) — restated in our own words"
+ },
+ {
+  "id": "GRAPH-23",
+  "family": "knowledge-graph",
+  "domain": "code",
+  "name_ar": "استرجاع بمستويين وتحديث تدريجي",
+  "name_en": "Dual-level retrieval with incremental graph updates",
+  "status": "documented",
+  "what": "قسّم كلمات السؤال إلى مستوى منخفض (كيانات محددة) ومرتفع (موضوعات)، واسترجع بالاثنين، وأضف المستندات الجديدة للرسم دون إعادة بنائه. — Split the query's keywords into low-level (specific entities) and high-level (themes), retrieve with both, and add new documents to the graph without rebuilding it.",
+  "when": "قاعدة معرفة تتغير باستمرار / a knowledge base that keeps changing",
+  "how": "Ask the model for two keyword lists; match low-level ones to entity nodes and high-level ones to relation/theme descriptions; union the neighbourhoods and rank. New document → extract its entities/relations → merge into existing nodes by name+type. Cheaper than community rebuilds (GRAPH-22).",
+  "params": "",
+  "install": "",
+  "requires": [
+   "pip:chromadb"
+  ],
+  "license": "MIT",
+  "proof": [],
+  "proof_scope": "none",
+  "styles": [],
+  "tags": [
+   "lightrag",
+   "dual-level",
+   "incremental",
+   "graph",
+   "rag",
+   "استرجاع",
+   "تحديث تدريجي"
+  ],
+  "section": "أكبر مستودعات GitHub — Top GitHub repositories (2026-10-23)",
+  "source": "https://github.com/HKUDS/LightRAG (MIT) — restated in our own words"
  }
 ]

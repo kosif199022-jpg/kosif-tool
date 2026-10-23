@@ -24,9 +24,9 @@
 |---|---:|---|
 | `proven` | 17 | ✅ proven: a proof exists in the catalog; still check its requirements here before calling it ready |
 | `ready` | 8 | 🟢 ready: runnable without setup according to the catalog |
-| `documented` | 308 | 📄 documented: a described method; needs building or wiring before it runs |
+| `documented` | 332 | 📄 documented: a described method; needs building or wiring before it runs |
 | `install` | 2 | 📦 install: needs a package, binary or model first |
-| **المجموع** | **335** | |
+| **المجموع** | **359** | |
 
 ## الأدوات القابلة للتشغيل / runnable tools
 
@@ -60,14 +60,14 @@
 
 | العائلة | القدرات | الفصل |
 |---|---:|---|
-| `atlas-mind` | 54 | [atlas-mind.md](../powers/atlas-mind.md) |
-| `atlas-strategy` | 72 | [atlas-strategy.md](../powers/atlas-strategy.md) |
+| `atlas-mind` | 60 | [atlas-mind.md](../powers/atlas-mind.md) |
+| `atlas-strategy` | 87 | [atlas-strategy.md](../powers/atlas-strategy.md) |
 | `creativity-engine` | 29 | [creativity-engine.md](../powers/creativity-engine.md) |
 | `mental-models` | 63 | [mental-models.md](../powers/mental-models.md) |
-| `planning-execution` | 12 | [planning-execution.md](../powers/planning-execution.md) |
+| `planning-execution` | 14 | [planning-execution.md](../powers/planning-execution.md) |
 | `prompt-craft` | 41 | [prompt-craft.md](../powers/prompt-craft.md) |
 | `strategy-finance` | 18 | [strategy-finance.md](../powers/strategy-finance.md) |
-| `thinking-core` | 46 | [thinking-core.md](../powers/thinking-core.md) |
+| `thinking-core` | 47 | [thinking-core.md](../powers/thinking-core.md) |
 
 ## كل القدرات / every power
 
@@ -154,6 +154,12 @@
 | `AMIND-52` | خطة تحقق يدوي مرقمة قابلة للاستئناف | Resumable numbered manual verification plan | documented |  |
 | `AMIND-53` | الإطلاق في الظل لاختبار نظام بديل تحت حمل الإنتاج | Shadow mode (dark launch) to validate a replacement under real load | documented |  |
 | `AMIND-54` | تنقيح المواصفات بتحليل الفجوات وأسئلة متتابعة مرجّحة | Specification refinement: gap analysis and ranked one-at-a-time questions | documented |  |
+| `AMIND-55` | التحقق من أن كل مصدر مذكور يدعم الادعاء فعلًا | Citation-support check: does each source really back its claim | documented |  |
+| `AMIND-56` | فحص الأدبيات السابقة على arXiv قبل تصميم آلية غير بسيطة | arXiv prior-art check before designing a non-trivial mechanism | documented |  |
+| `AMIND-57` | التحقق من ادعاء رقمي عام مقابل البيانات المفتوحة الأولية | Verify a public numeric claim against the primary open-data series | documented |  |
+| `AMIND-58` | فحص ملاءمة النتيجة لكل مكان تصل إليه وكل نية حُمّلت بها | Landing-fit check: does a result fit every place it reaches | documented |  |
+| `AMIND-59` | بوابة فحص مستقلة لمجموعة الخيارات قبل عرضها على المستخدم | Independent option-set gate check before asking the user | documented |  |
+| `AMIND-60` | استقبال الملاحظات الخارجية: تحقق من كل ادعاء ثم صنّفه وامنع تكراره وأغلق الحلقة | External feedback intake: verify each claim, tier it, prevent, cover, close | documented |  |
 | `ASTRAT-01` | تدقيق جدوى تعدد الوكلاء مقابل وكيل واحد | Audit multi-agent topology against single-agent baseline | documented |  |
 | `ASTRAT-02` | حلقة مستقلة لتصريف قائمة المهام | Autonomous backlog-draining loop and single-task ralph loop | documented |  |
 | `ASTRAT-03` | توجيه أسئلة المؤسس إلى أدوار المستشارين التنفيذيين | Route founder questions to C-suite advisor roles | documented |  |
@@ -226,6 +232,21 @@
 | `ASTRAT-70` | سلّم أنظمة دعم العملاء من الخدمة الذاتية إلى مركز الاتصال | Customer-support system ladder: self-service to contact center | documented |  |
 | `ASTRAT-71` | صياغة الردود للعمل أولًا لقارئ مشتت الانتباه | Action-first response shape for an ADHD reader | documented |  |
 | `ASTRAT-72` | تقرير جلسة برمجة لصاحب قرار غير تقني | Session report for a non-technical stakeholder | documented | git |
+| `ASTRAT-73` | مراجعة الثقة والأمان: كيف يُساء استخدام المنتج لإيذاء الآخرين | Trust-and-safety review: how the product can be misused to harm others | documented |  |
+| `ASTRAT-74` | مراجعة عقد مستقل من وجهة نظر المستقل | Independent-contractor agreement review from the freelancer's side | documented |  |
+| `ASTRAT-75` | كتابة وتقييم نتائج التدقيق الداخلي بالعناصر الخمسة | Write and rate internal-audit findings on the five Cs | documented |  |
+| `ASTRAT-76` | ضوابط احتيال التحويلات البنكية وحسابات الأمانة | Wire-fraud and trust-account controls | documented |  |
+| `ASTRAT-77` | مراجعة فجوات FMEA (تصميم وعملية) وفق AIAG-VDA | PFMEA/DFMEA gap review against the AIAG-VDA method | documented |  |
+| `ASTRAT-78` | تخطيط جودة بدء الإنتاج APQP وحزمة اعتماد القطعة PPAP | APQP quality planning and PPAP submission | documented |  |
+| `ASTRAT-79` | تدقيق داخلي لنظام الجودة: ISO 9001 وإضافات IATF 16949 وتدقيق عملية VDA 6.3 | Quality-system internal audit: ISO 9001, IATF 16949 supplements, VDA 6.3 process audit | documented | npm:p5 |
+| `ASTRAT-80` | حل مشكلة مزمنة بمنهج DMAIC (ستة سيجما) | DMAIC for chronic, data-driven process problems | documented | pip:hypothesis |
+| `ASTRAT-81` | تحديد المشكلة بمصفوفة هي / ليست | Is / Is-Not problem scoping | documented | pip:hypothesis |
+| `ASTRAT-82` | دورة تحسين PDCA مع تجربة مسبقة التحديد | PDCA improvement cycle with a pre-defined pilot | documented |  |
+| `ASTRAT-83` | تصفير مشكلات الجودة تقنيًا وإداريًا (الصفر المزدوج) | Technical and management zeroing of a quality problem (double-five zeroing) | documented |  |
+| `ASTRAT-84` | أسئلة الإجبار التنفيذية: ستة أسئلة لكل دور قيادي تختبر الخطة | Executive forcing questions: six per C-suite lens to pressure-test a plan | documented |  |
+| `ASTRAT-85` | تدقيق معايير العلامة عبر الفروع وتحويله إلى حلقة تدريب | Multi-unit brand-standard audit turned into a coaching loop | documented |  |
+| `ASTRAT-86` | تعريف العميل المثالي ICP والتحقق منه بخطة اختبار | Define and validate an Ideal Customer Profile | documented |  |
+| `ASTRAT-87` | أولويات تشغيل القائد: عنق الزجاجة ومراجعة التقويم والتفويض | Leader operating priorities: bottleneck, calendar audit, delegation | documented |  |
 | `IDEA-01` | التباعد ثم التقارب | Diverge → converge protocol | documented | python3 |
 | `IDEA-02` | التفكير من المبادئ الأولى | First principles | documented |  |
 | `IDEA-03` | القلب: كيف نضمن الفشل؟ | Inversion | documented |  |
@@ -326,6 +347,8 @@
 | `PLAN-10` | توزيع العمل على وكلاء متوازيين | Parallel lanes for agents and workflows | documented | claude:tools |
 | `PLAN-11` | مراجعة الخطة كل مرحلة | Phase-boundary plan review | documented |  |
 | `PLAN-12` | خطة تسليم بإيصال | Delivery plan with a receipt | documented |  |
+| `PLAN-13` | تطوير يقوده المواصفات | Spec-driven development | documented |  |
+| `PLAN-14` | عصف ثم خطة ثم وكيل لكل مهمة بالاختبار أولًا | Brainstorm, plan, then a test-first subagent per task | documented | claude:tools |
 | `PROMPT-01` | توجيه الطلب: تحسين فقط أم تنفيذ | Route the request: optimize-only, do, both, or Claude-authored | documented | claude:tools |
 | `PROMPT-03` | الخانات الثماني لأي برومبت | Eight core slots | documented |  |
 | `PROMPT-04` | الملء الأمين: افتراض مكتوب أو سؤال واحد | Fill honestly: stated assumption or one question | documented |  |
@@ -408,5 +431,6 @@
 | `THINK-44` | نموذج القارئ البشري | Reader model (theory of mind) | documented |  |
 | `THINK-45` | المراقبة الذاتية عند الحدود | Metacognition checkpoint | documented |  |
 | `THINK-46` | عادات العبقرية العشر | Ten genius habits as procedures | documented |  |
+| `THINK-47` | مجلس بتقييم متبادل مجهول الهوية | Anonymous peer-ranked council | documented | python3 |
 | `PROD-15` | بيانات الأسواق (غير رسمية) | Market data libraries (unofficial sources) | install | pip:pandas |
 | `PROD-18` | MuJoCo: محاكاة ديناميكيات الأجسام الصلبة والروبوتات وتسجيل المسارات | MuJoCo: Simulate rigid-body and robot dynamics and log trajectories | install | pip:mujoco |

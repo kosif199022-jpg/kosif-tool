@@ -37,6 +37,7 @@
 |---|---|---|---|
 | `audio-cue-mapper` | مستخرج إشارات التوقيت من الصوت | `python3 scripts/audio_cue_mapper.py ./voice.wav --out ./out/cues.json` | tested-here |
 | `blender-cinematic-bridge` | دمج رندر Blender Cycles مع مونتاج KOSIF والصوت | `python3 scripts/blender_cinematic_bridge.py doctor` | tested-here |
+| `caption-lines` | سطور الترجمة: من توقيت الكلمات إلى ترجمة مقروءة | `python3 scripts/caption_lines.py group words.json -o captions.srt --rlm` | tested-here |
 | `character-fullbody` | تحريك الشخصية بكامل الجسم | `python3 scripts/character_fullbody.py doctor` | tested-here |
 | `character-ik` | تحريك ذراع الشخصية بالحركية العكسية | `python3 scripts/character_ik.py doctor` | tested-here |
 | `cinematic-cut-planner` | مُخطِّط قطعات اللقطات الحقيقية | `python3 scripts/cinematic_cut_planner.py --words ./words.json --clips ./clips.json --duration 48.5 --fps 30 --out ./out/edl.json` | tested-here |
@@ -44,6 +45,7 @@
 | `creative-quality-gate` | بوابة جودة خطة المونتاج | `python3 scripts/creative_quality_gate.py ./my-project/src/plan.json --out ./out/quality-audit.json` | tested-here |
 | `creative-reasoning-bridge` | جسر الصوت إلى لوحة القصة | `python3 scripts/creative_reasoning_bridge.py ./cues.json --style auto --out ./out/scene.json --report ./out/decision.json` | tested-here |
 | `dua-wednesday` | دعاء يوم الأربعاء — محرك ريل دعاء موشن جرافيك 9:16 | `python3 scripts/dua_wednesday.py doctor` | tested-here |
+| `fast-edit` | التعديل السريع: قص فوري يعرف الإطارات المفتاحية، مغيّر صوت، تفتيح الفيديو المظلم، استخراج الصوت | `python3 scripts/fast_edit.py doctor` | tested-here |
 | `kosif-timeline` | محرر KOSIF Timeline: مونتاج متعدد المسارات مع تراجع وإعادة | `python3 scripts/kosif_timeline.py doctor` | tested-here |
 | `montage-pro` | فريق مونتاج برو (صوت أو فيديو إلى مونتاج أو موشن) | `python3 scripts/montage_pro.py doctor` | tested-here |
 | `motion-director` | مُصرِّف حركة SVG المتزامنة مع الصوت | `python3 scripts/motion_director.py doctor` | tested-here |

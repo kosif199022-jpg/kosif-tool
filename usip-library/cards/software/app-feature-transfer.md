@@ -1,4 +1,4 @@
-# `app-feature-transfer` — البرمجة وبناء التطبيقات (139 بطاقة)
+# `app-feature-transfer` — البرمجة وبناء التطبيقات (155 بطاقة)
 
 > مكتبة بروتوكول USIP v5.6 الكاملة، مولّدة بـ `smart_capabilities.py cards` من `data/powers/app-feature-transfer.json` وقواعد الملاحق A25–A29؛ لا تُحرَّر يدويًا. [الفهرس الرئيسي](../../README.md) · [فصل المجموعة](../../../.claude/skills/kosif-superpowers/references/library/software.md) · [النواة](../../../.claude/skills/kosif-superpowers/PROTOCOL.md)
 
@@ -58,7 +58,23 @@
 - [`APPX-138` جسر MCP باتجاهين مع تلميح التحديد الحالي](#appx-138--جسر-mcp-باتجاهين-مع-تلميح-التحديد-الحالي--two-way-mcp-bridge-with-a-current-selection-hint)
 - [`APPX-139` المهارات: تحميل بالوصف وتثبيت صريح واستيراد نصي آمن](#appx-139--المهارات-تحميل-بالوصف-وتثبيت-صريح-واستيراد-نصي-آمن--skills-description-matched-loading-explicit-pinning-safe-text-only-import)
 - [`APPX-14` إزالة خلفية صورة](#appx-14--إزالة-خلفية-صورة--background-removal-on-a-still)
+- [`APPX-140` سطور ترجمة بقواعد قراءة](#appx-140--سطور-ترجمة-بقواعد-قراءة--caption-lines-with-reading-rules)
+- [`APPX-141` تنقية هلوسة نموذج التفريغ](#appx-141--تنقية-هلوسة-نموذج-التفريغ--screen-speech-model-inventions)
+- [`APPX-142` لوك ألوان واحد لكل المحركات](#appx-142--لوك-ألوان-واحد-لكل-المحركات--one-colour-look-for-every-renderer)
+- [`APPX-143` إثبات تطابق المعاينة والتصدير بالقياس](#appx-143--إثبات-تطابق-المعاينة-والتصدير-بالقياس--measured-previewexport-colour-parity)
+- [`APPX-144` مسار رئيسي مغناطيسي بانتقالات محسوبة](#appx-144--مسار-رئيسي-مغناطيسي-بانتقالات-محسوبة--magnetic-main-track-with-clamped-transitions)
+- [`APPX-145` أي سرعة صوت بسلسلة atempo](#appx-145--أي-سرعة-صوت-بسلسلة-atempo--any-audio-speed-with-an-atempo-chain)
+- [`APPX-146` خلفية مموهة رخيصة للمقاس العمودي](#appx-146--خلفية-مموهة-رخيصة-للمقاس-العمودي--cheap-blurred-background-fill)
+- [`APPX-147` نص عربي مرسوم بوحدات مرجعية](#appx-147--نص-عربي-مرسوم-بوحدات-مرجعية--arabic-text-raster-in-reference-units)
+- [`APPX-148` تجهيز الوسائط لمحرر](#appx-148--تجهيز-الوسائط-لمحرر--media-prep-for-an-editor)
+- [`APPX-149` ترميز بالعتاد مع رجوع للبرمجي](#appx-149--ترميز-بالعتاد-مع-رجوع-للبرمجي--hardware-encoder-with-software-fallback)
 - [`APPX-15` تصدير EDL ومطابقته](#appx-15--تصدير-edl-ومطابقته--edl-interchange-and-conform)
+- [`APPX-150` خادم محلي آمن لأداة مونتاج](#appx-150--خادم-محلي-آمن-لأداة-مونتاج--a-safe-local-editor-server)
+- [`APPX-151` تنزيل نماذج موثَّق](#appx-151--تنزيل-نماذج-موثَّق--verified-model-downloads)
+- [`APPX-152` تراجع يجمع سحب المنزلقات](#appx-152--تراجع-يجمع-سحب-المنزلقات--undo-that-groups-slider-drags)
+- [`APPX-153` اختبار ذاتي داخل المضيف الحقيقي](#appx-153--اختبار-ذاتي-داخل-المضيف-الحقيقي--self-test-inside-the-real-host)
+- [`APPX-154` ذاكرة وسائط بالمحتوى واستئناف](#appx-154--ذاكرة-وسائط-بالمحتوى-واستئناف--content-addressed-media-cache-with-resume)
+- [`APPX-155` تفريغ عربي محلي بلا إنترنت](#appx-155--تفريغ-عربي-محلي-بلا-إنترنت--offline-arabic-speech-stack)
 - [`APPX-16` عكس المقطع وتجميد الإطار](#appx-16--عكس-المقطع-وتجميد-الإطار--reverse-and-freeze-frame)
 - [`APPX-17` اختيار الغلاف تلقائيًا](#appx-17--اختيار-الغلاف-تلقائيًا--automatic-cover-pick)
 - [`APPX-18` منتقي الشاشة للتسجيل](#appx-18--منتقي-الشاشة-للتسجيل--display-media-picker-for-screen-recording)
@@ -186,7 +202,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `spec` ← المخرج `code`، والمنفّذ `method:APPX-01` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `app-studio` · `app-studio-paint` · `browser-scout` · `installer-triage` · `motion-kit-bridge` · `source-scout`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `app-studio` · `app-studio-paint` · `browser-scout` · `caption-lines` · `installer-triage` · `look-pipeline`.
 - مراحل النوع: قراءة الكود والاختبارات ← إعادة إنتاج أو اختبار جديد ← أصغر تغيير ← الاختبارات ← مراجعة الفرق ← فرع وPR.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -257,7 +273,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `spec` ← المخرج `code`، والمنفّذ `method:APPX-02` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `app-studio` · `app-studio-paint` · `browser-scout` · `installer-triage` · `motion-kit-bridge` · `source-scout`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `app-studio` · `app-studio-paint` · `browser-scout` · `caption-lines` · `installer-triage` · `look-pipeline`.
 - مراحل النوع: قراءة الكود والاختبارات ← إعادة إنتاج أو اختبار جديد ← أصغر تغيير ← الاختبارات ← مراجعة الفرق ← فرع وPR.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -331,7 +347,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `spec` ← المخرج `code`، والمنفّذ `method:APPX-03` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `app-studio` · `app-studio-paint` · `browser-scout` · `installer-triage` · `motion-kit-bridge` · `source-scout`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `app-studio` · `app-studio-paint` · `browser-scout` · `caption-lines` · `installer-triage` · `look-pipeline`.
 - مراحل النوع: قراءة الكود والاختبارات ← إعادة إنتاج أو اختبار جديد ← أصغر تغيير ← الاختبارات ← مراجعة الفرق ← فرع وPR.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -404,7 +420,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `spec` ← المخرج `code`، والمنفّذ `method:APPX-04` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `app-studio` · `app-studio-paint` · `browser-scout` · `installer-triage` · `motion-kit-bridge` · `source-scout`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `app-studio` · `app-studio-paint` · `browser-scout` · `caption-lines` · `installer-triage` · `look-pipeline`.
 - مراحل النوع: قراءة الكود والاختبارات ← إعادة إنتاج أو اختبار جديد ← أصغر تغيير ← الاختبارات ← مراجعة الفرق ← فرع وPR.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -477,7 +493,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `spec` ← المخرج `code`، والمنفّذ `method:APPX-05` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `app-studio` · `app-studio-paint` · `browser-scout` · `installer-triage` · `motion-kit-bridge` · `source-scout`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `app-studio` · `app-studio-paint` · `browser-scout` · `caption-lines` · `installer-triage` · `look-pipeline`.
 - مراحل النوع: قراءة الكود والاختبارات ← إعادة إنتاج أو اختبار جديد ← أصغر تغيير ← الاختبارات ← مراجعة الفرق ← فرع وPR.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -550,7 +566,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `spec` ← المخرج `code`، والمنفّذ `method:APPX-06` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `app-studio` · `app-studio-paint` · `browser-scout` · `installer-triage` · `motion-kit-bridge` · `source-scout`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `app-studio` · `app-studio-paint` · `browser-scout` · `caption-lines` · `installer-triage` · `look-pipeline`.
 - مراحل النوع: قراءة الكود والاختبارات ← إعادة إنتاج أو اختبار جديد ← أصغر تغيير ← الاختبارات ← مراجعة الفرق ← فرع وPR.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -623,7 +639,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `spec` ← المخرج `code`، والمنفّذ `method:APPX-07` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `app-studio` · `app-studio-paint` · `browser-scout` · `installer-triage` · `motion-kit-bridge` · `source-scout`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `app-studio` · `app-studio-paint` · `browser-scout` · `caption-lines` · `installer-triage` · `look-pipeline`.
 - مراحل النوع: قراءة الكود والاختبارات ← إعادة إنتاج أو اختبار جديد ← أصغر تغيير ← الاختبارات ← مراجعة الفرق ← فرع وPR.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -696,7 +712,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `spec` ← المخرج `code`، والمنفّذ `method:APPX-08` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `app-studio` · `app-studio-paint` · `browser-scout` · `installer-triage` · `motion-kit-bridge` · `source-scout`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `app-studio` · `app-studio-paint` · `browser-scout` · `caption-lines` · `installer-triage` · `look-pipeline`.
 - مراحل النوع: قراءة الكود والاختبارات ← إعادة إنتاج أو اختبار جديد ← أصغر تغيير ← الاختبارات ← مراجعة الفرق ← فرع وPR.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -769,7 +785,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `spec` ← المخرج `code`، والمنفّذ `method:APPX-09` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `app-studio` · `app-studio-paint` · `browser-scout` · `installer-triage` · `motion-kit-bridge` · `source-scout`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `app-studio` · `app-studio-paint` · `browser-scout` · `caption-lines` · `installer-triage` · `look-pipeline`.
 - مراحل النوع: قراءة الكود والاختبارات ← إعادة إنتاج أو اختبار جديد ← أصغر تغيير ← الاختبارات ← مراجعة الفرق ← فرع وPR.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -842,7 +858,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `spec` ← المخرج `code`، والمنفّذ `method:APPX-10` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `app-studio` · `app-studio-paint` · `browser-scout` · `installer-triage` · `motion-kit-bridge` · `source-scout`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `app-studio` · `app-studio-paint` · `browser-scout` · `caption-lines` · `installer-triage` · `look-pipeline`.
 - مراحل النوع: قراءة الكود والاختبارات ← إعادة إنتاج أو اختبار جديد ← أصغر تغيير ← الاختبارات ← مراجعة الفرق ← فرع وPR.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -916,7 +932,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `spec` ← المخرج `code`، والمنفّذ `method:APPX-100` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `app-studio` · `app-studio-paint` · `browser-scout` · `installer-triage` · `motion-kit-bridge` · `source-scout`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `app-studio` · `app-studio-paint` · `browser-scout` · `caption-lines` · `installer-triage` · `look-pipeline`.
 - مراحل النوع: قراءة الكود والاختبارات ← إعادة إنتاج أو اختبار جديد ← أصغر تغيير ← الاختبارات ← مراجعة الفرق ← فرع وPR.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -991,7 +1007,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `spec` ← المخرج `code`، والمنفّذ `method:APPX-101` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `app-studio` · `app-studio-paint` · `browser-scout` · `installer-triage` · `motion-kit-bridge` · `source-scout`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `app-studio` · `app-studio-paint` · `browser-scout` · `caption-lines` · `installer-triage` · `look-pipeline`.
 - مراحل النوع: قراءة الكود والاختبارات ← إعادة إنتاج أو اختبار جديد ← أصغر تغيير ← الاختبارات ← مراجعة الفرق ← فرع وPR.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -1066,7 +1082,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `spec` ← المخرج `code`، والمنفّذ `method:APPX-102` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `app-studio` · `app-studio-paint` · `browser-scout` · `installer-triage` · `motion-kit-bridge` · `source-scout`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `app-studio` · `app-studio-paint` · `browser-scout` · `caption-lines` · `installer-triage` · `look-pipeline`.
 - مراحل النوع: قراءة الكود والاختبارات ← إعادة إنتاج أو اختبار جديد ← أصغر تغيير ← الاختبارات ← مراجعة الفرق ← فرع وPR.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -1141,7 +1157,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `spec` ← المخرج `code`، والمنفّذ `method:APPX-103` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `app-studio` · `app-studio-paint` · `browser-scout` · `installer-triage` · `motion-kit-bridge` · `source-scout`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `app-studio` · `app-studio-paint` · `browser-scout` · `caption-lines` · `installer-triage` · `look-pipeline`.
 - مراحل النوع: قراءة الكود والاختبارات ← إعادة إنتاج أو اختبار جديد ← أصغر تغيير ← الاختبارات ← مراجعة الفرق ← فرع وPR.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -1216,7 +1232,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `spec` ← المخرج `code`، والمنفّذ `method:APPX-104` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `app-studio` · `app-studio-paint` · `browser-scout` · `installer-triage` · `motion-kit-bridge` · `source-scout`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `app-studio` · `app-studio-paint` · `browser-scout` · `caption-lines` · `installer-triage` · `look-pipeline`.
 - مراحل النوع: قراءة الكود والاختبارات ← إعادة إنتاج أو اختبار جديد ← أصغر تغيير ← الاختبارات ← مراجعة الفرق ← فرع وPR.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -1292,7 +1308,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `spec` ← المخرج `code`، والمنفّذ `method:APPX-105` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `app-studio` · `app-studio-paint` · `browser-scout` · `installer-triage` · `motion-kit-bridge` · `source-scout`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `app-studio` · `app-studio-paint` · `browser-scout` · `caption-lines` · `installer-triage` · `look-pipeline`.
 - مراحل النوع: قراءة الكود والاختبارات ← إعادة إنتاج أو اختبار جديد ← أصغر تغيير ← الاختبارات ← مراجعة الفرق ← فرع وPR.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -1367,7 +1383,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `spec` ← المخرج `code`، والمنفّذ `method:APPX-106` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `app-studio` · `app-studio-paint` · `browser-scout` · `installer-triage` · `motion-kit-bridge` · `source-scout`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `app-studio` · `app-studio-paint` · `browser-scout` · `caption-lines` · `installer-triage` · `look-pipeline`.
 - مراحل النوع: قراءة الكود والاختبارات ← إعادة إنتاج أو اختبار جديد ← أصغر تغيير ← الاختبارات ← مراجعة الفرق ← فرع وPR.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -1442,7 +1458,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `spec` ← المخرج `code`، والمنفّذ `method:APPX-107` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `app-studio` · `app-studio-paint` · `browser-scout` · `installer-triage` · `motion-kit-bridge` · `source-scout`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `app-studio` · `app-studio-paint` · `browser-scout` · `caption-lines` · `installer-triage` · `look-pipeline`.
 - مراحل النوع: قراءة الكود والاختبارات ← إعادة إنتاج أو اختبار جديد ← أصغر تغيير ← الاختبارات ← مراجعة الفرق ← فرع وPR.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -1517,7 +1533,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `spec` ← المخرج `code`، والمنفّذ `method:APPX-108` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `app-studio` · `app-studio-paint` · `browser-scout` · `installer-triage` · `motion-kit-bridge` · `source-scout`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `app-studio` · `app-studio-paint` · `browser-scout` · `caption-lines` · `installer-triage` · `look-pipeline`.
 - مراحل النوع: قراءة الكود والاختبارات ← إعادة إنتاج أو اختبار جديد ← أصغر تغيير ← الاختبارات ← مراجعة الفرق ← فرع وPR.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -1592,7 +1608,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `spec` ← المخرج `code`، والمنفّذ `method:APPX-109` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `app-studio` · `app-studio-paint` · `browser-scout` · `installer-triage` · `motion-kit-bridge` · `source-scout`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `app-studio` · `app-studio-paint` · `browser-scout` · `caption-lines` · `installer-triage` · `look-pipeline`.
 - مراحل النوع: قراءة الكود والاختبارات ← إعادة إنتاج أو اختبار جديد ← أصغر تغيير ← الاختبارات ← مراجعة الفرق ← فرع وPR.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -1666,7 +1682,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `spec` ← المخرج `code`، والمنفّذ `method:APPX-11` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `app-studio` · `app-studio-paint` · `browser-scout` · `installer-triage` · `motion-kit-bridge` · `source-scout`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `app-studio` · `app-studio-paint` · `browser-scout` · `caption-lines` · `installer-triage` · `look-pipeline`.
 - مراحل النوع: قراءة الكود والاختبارات ← إعادة إنتاج أو اختبار جديد ← أصغر تغيير ← الاختبارات ← مراجعة الفرق ← فرع وPR.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -1740,7 +1756,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `spec` ← المخرج `code`، والمنفّذ `method:APPX-110` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `app-studio` · `app-studio-paint` · `browser-scout` · `installer-triage` · `motion-kit-bridge` · `source-scout`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `app-studio` · `app-studio-paint` · `browser-scout` · `caption-lines` · `installer-triage` · `look-pipeline`.
 - مراحل النوع: قراءة الكود والاختبارات ← إعادة إنتاج أو اختبار جديد ← أصغر تغيير ← الاختبارات ← مراجعة الفرق ← فرع وPR.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -1815,7 +1831,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `spec` ← المخرج `code`، والمنفّذ `method:APPX-111` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `app-studio` · `app-studio-paint` · `browser-scout` · `installer-triage` · `motion-kit-bridge` · `source-scout`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `app-studio` · `app-studio-paint` · `browser-scout` · `caption-lines` · `installer-triage` · `look-pipeline`.
 - مراحل النوع: قراءة الكود والاختبارات ← إعادة إنتاج أو اختبار جديد ← أصغر تغيير ← الاختبارات ← مراجعة الفرق ← فرع وPR.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -1890,7 +1906,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `spec` ← المخرج `code`، والمنفّذ `method:APPX-112` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `app-studio` · `app-studio-paint` · `browser-scout` · `installer-triage` · `motion-kit-bridge` · `source-scout`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `app-studio` · `app-studio-paint` · `browser-scout` · `caption-lines` · `installer-triage` · `look-pipeline`.
 - مراحل النوع: قراءة الكود والاختبارات ← إعادة إنتاج أو اختبار جديد ← أصغر تغيير ← الاختبارات ← مراجعة الفرق ← فرع وPR.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -1966,7 +1982,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `spec` ← المخرج `code`، والمنفّذ `method:APPX-113` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `app-studio` · `app-studio-paint` · `browser-scout` · `installer-triage` · `motion-kit-bridge` · `source-scout`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `app-studio` · `app-studio-paint` · `browser-scout` · `caption-lines` · `installer-triage` · `look-pipeline`.
 - مراحل النوع: قراءة الكود والاختبارات ← إعادة إنتاج أو اختبار جديد ← أصغر تغيير ← الاختبارات ← مراجعة الفرق ← فرع وPR.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -2041,7 +2057,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `spec` ← المخرج `code`، والمنفّذ `method:APPX-114` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `app-studio` · `app-studio-paint` · `browser-scout` · `installer-triage` · `motion-kit-bridge` · `source-scout`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `app-studio` · `app-studio-paint` · `browser-scout` · `caption-lines` · `installer-triage` · `look-pipeline`.
 - مراحل النوع: قراءة الكود والاختبارات ← إعادة إنتاج أو اختبار جديد ← أصغر تغيير ← الاختبارات ← مراجعة الفرق ← فرع وPR.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -2118,7 +2134,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `spec` ← المخرج `code`، والمنفّذ `method:APPX-115` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `app-studio` · `app-studio-paint` · `browser-scout` · `installer-triage` · `motion-kit-bridge` · `source-scout`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `app-studio` · `app-studio-paint` · `browser-scout` · `caption-lines` · `installer-triage` · `look-pipeline`.
 - مراحل النوع: قراءة الكود والاختبارات ← إعادة إنتاج أو اختبار جديد ← أصغر تغيير ← الاختبارات ← مراجعة الفرق ← فرع وPR.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -2193,7 +2209,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `spec` ← المخرج `code`، والمنفّذ `method:APPX-116` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `app-studio` · `app-studio-paint` · `browser-scout` · `installer-triage` · `motion-kit-bridge` · `source-scout`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `app-studio` · `app-studio-paint` · `browser-scout` · `caption-lines` · `installer-triage` · `look-pipeline`.
 - مراحل النوع: قراءة الكود والاختبارات ← إعادة إنتاج أو اختبار جديد ← أصغر تغيير ← الاختبارات ← مراجعة الفرق ← فرع وPR.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -2270,7 +2286,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `spec` ← المخرج `code`، والمنفّذ `method:APPX-117` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `app-studio` · `app-studio-paint` · `browser-scout` · `installer-triage` · `motion-kit-bridge` · `source-scout`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `app-studio` · `app-studio-paint` · `browser-scout` · `caption-lines` · `installer-triage` · `look-pipeline`.
 - مراحل النوع: قراءة الكود والاختبارات ← إعادة إنتاج أو اختبار جديد ← أصغر تغيير ← الاختبارات ← مراجعة الفرق ← فرع وPR.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -2345,7 +2361,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `spec` ← المخرج `code`، والمنفّذ `method:APPX-118` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `app-studio` · `app-studio-paint` · `browser-scout` · `installer-triage` · `motion-kit-bridge` · `source-scout`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `app-studio` · `app-studio-paint` · `browser-scout` · `caption-lines` · `installer-triage` · `look-pipeline`.
 - مراحل النوع: قراءة الكود والاختبارات ← إعادة إنتاج أو اختبار جديد ← أصغر تغيير ← الاختبارات ← مراجعة الفرق ← فرع وPR.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -2418,7 +2434,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `spec` ← المخرج `code`، والمنفّذ `method:APPX-119` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `app-studio` · `app-studio-paint` · `browser-scout` · `installer-triage` · `motion-kit-bridge` · `source-scout`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `app-studio` · `app-studio-paint` · `browser-scout` · `caption-lines` · `installer-triage` · `look-pipeline`.
 - مراحل النوع: قراءة الكود والاختبارات ← إعادة إنتاج أو اختبار جديد ← أصغر تغيير ← الاختبارات ← مراجعة الفرق ← فرع وPR.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -2491,7 +2507,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `spec` ← المخرج `code`، والمنفّذ `method:APPX-12` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `app-studio` · `app-studio-paint` · `browser-scout` · `installer-triage` · `motion-kit-bridge` · `source-scout`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `app-studio` · `app-studio-paint` · `browser-scout` · `caption-lines` · `installer-triage` · `look-pipeline`.
 - مراحل النوع: قراءة الكود والاختبارات ← إعادة إنتاج أو اختبار جديد ← أصغر تغيير ← الاختبارات ← مراجعة الفرق ← فرع وPR.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -2564,7 +2580,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `spec` ← المخرج `code`، والمنفّذ `method:APPX-120` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `app-studio` · `app-studio-paint` · `browser-scout` · `installer-triage` · `motion-kit-bridge` · `source-scout`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `app-studio` · `app-studio-paint` · `browser-scout` · `caption-lines` · `installer-triage` · `look-pipeline`.
 - مراحل النوع: قراءة الكود والاختبارات ← إعادة إنتاج أو اختبار جديد ← أصغر تغيير ← الاختبارات ← مراجعة الفرق ← فرع وPR.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -2635,7 +2651,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `spec` ← المخرج `code`، والمنفّذ `method:APPX-121` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `app-studio` · `app-studio-paint` · `browser-scout` · `installer-triage` · `motion-kit-bridge` · `source-scout`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `app-studio` · `app-studio-paint` · `browser-scout` · `caption-lines` · `installer-triage` · `look-pipeline`.
 - مراحل النوع: قراءة الكود والاختبارات ← إعادة إنتاج أو اختبار جديد ← أصغر تغيير ← الاختبارات ← مراجعة الفرق ← فرع وPR.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -2707,7 +2723,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `spec` ← المخرج `code`، والمنفّذ `method:APPX-122` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `app-studio` · `app-studio-paint` · `browser-scout` · `installer-triage` · `motion-kit-bridge` · `source-scout`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `app-studio` · `app-studio-paint` · `browser-scout` · `caption-lines` · `installer-triage` · `look-pipeline`.
 - مراحل النوع: قراءة الكود والاختبارات ← إعادة إنتاج أو اختبار جديد ← أصغر تغيير ← الاختبارات ← مراجعة الفرق ← فرع وPR.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -2780,7 +2796,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `spec` ← المخرج `code`، والمنفّذ `method:APPX-123` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `app-studio` · `app-studio-paint` · `browser-scout` · `installer-triage` · `motion-kit-bridge` · `source-scout`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `app-studio` · `app-studio-paint` · `browser-scout` · `caption-lines` · `installer-triage` · `look-pipeline`.
 - مراحل النوع: قراءة الكود والاختبارات ← إعادة إنتاج أو اختبار جديد ← أصغر تغيير ← الاختبارات ← مراجعة الفرق ← فرع وPR.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -2852,7 +2868,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `spec` ← المخرج `code`، والمنفّذ `method:APPX-124` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `app-studio` · `app-studio-paint` · `browser-scout` · `installer-triage` · `motion-kit-bridge` · `source-scout`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `app-studio` · `app-studio-paint` · `browser-scout` · `caption-lines` · `installer-triage` · `look-pipeline`.
 - مراحل النوع: قراءة الكود والاختبارات ← إعادة إنتاج أو اختبار جديد ← أصغر تغيير ← الاختبارات ← مراجعة الفرق ← فرع وPR.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -2923,7 +2939,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `spec` ← المخرج `code`، والمنفّذ `method:APPX-125` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `app-studio` · `app-studio-paint` · `browser-scout` · `installer-triage` · `motion-kit-bridge` · `source-scout`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `app-studio` · `app-studio-paint` · `browser-scout` · `caption-lines` · `installer-triage` · `look-pipeline`.
 - مراحل النوع: قراءة الكود والاختبارات ← إعادة إنتاج أو اختبار جديد ← أصغر تغيير ← الاختبارات ← مراجعة الفرق ← فرع وPR.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -2994,7 +3010,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `spec` ← المخرج `code`، والمنفّذ `method:APPX-126` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `app-studio` · `app-studio-paint` · `browser-scout` · `installer-triage` · `motion-kit-bridge` · `source-scout`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `app-studio` · `app-studio-paint` · `browser-scout` · `caption-lines` · `installer-triage` · `look-pipeline`.
 - مراحل النوع: قراءة الكود والاختبارات ← إعادة إنتاج أو اختبار جديد ← أصغر تغيير ← الاختبارات ← مراجعة الفرق ← فرع وPR.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -3065,7 +3081,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `spec` ← المخرج `code`، والمنفّذ `method:APPX-127` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `app-studio` · `app-studio-paint` · `browser-scout` · `installer-triage` · `motion-kit-bridge` · `source-scout`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `app-studio` · `app-studio-paint` · `browser-scout` · `caption-lines` · `installer-triage` · `look-pipeline`.
 - مراحل النوع: قراءة الكود والاختبارات ← إعادة إنتاج أو اختبار جديد ← أصغر تغيير ← الاختبارات ← مراجعة الفرق ← فرع وPR.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -3137,7 +3153,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `spec` ← المخرج `code`، والمنفّذ `method:APPX-128` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `app-studio` · `app-studio-paint` · `browser-scout` · `installer-triage` · `motion-kit-bridge` · `source-scout`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `app-studio` · `app-studio-paint` · `browser-scout` · `caption-lines` · `installer-triage` · `look-pipeline`.
 - مراحل النوع: قراءة الكود والاختبارات ← إعادة إنتاج أو اختبار جديد ← أصغر تغيير ← الاختبارات ← مراجعة الفرق ← فرع وPR.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -3209,7 +3225,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `spec` ← المخرج `code`، والمنفّذ `method:APPX-129` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `app-studio` · `app-studio-paint` · `browser-scout` · `installer-triage` · `motion-kit-bridge` · `source-scout`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `app-studio` · `app-studio-paint` · `browser-scout` · `caption-lines` · `installer-triage` · `look-pipeline`.
 - مراحل النوع: قراءة الكود والاختبارات ← إعادة إنتاج أو اختبار جديد ← أصغر تغيير ← الاختبارات ← مراجعة الفرق ← فرع وPR.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -3280,7 +3296,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `spec` ← المخرج `code`، والمنفّذ `method:APPX-13` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `app-studio` · `app-studio-paint` · `browser-scout` · `installer-triage` · `motion-kit-bridge` · `source-scout`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `app-studio` · `app-studio-paint` · `browser-scout` · `caption-lines` · `installer-triage` · `look-pipeline`.
 - مراحل النوع: قراءة الكود والاختبارات ← إعادة إنتاج أو اختبار جديد ← أصغر تغيير ← الاختبارات ← مراجعة الفرق ← فرع وPR.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -3353,7 +3369,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `spec` ← المخرج `code`، والمنفّذ `method:APPX-130` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `app-studio` · `app-studio-paint` · `browser-scout` · `installer-triage` · `motion-kit-bridge` · `source-scout`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `app-studio` · `app-studio-paint` · `browser-scout` · `caption-lines` · `installer-triage` · `look-pipeline`.
 - مراحل النوع: قراءة الكود والاختبارات ← إعادة إنتاج أو اختبار جديد ← أصغر تغيير ← الاختبارات ← مراجعة الفرق ← فرع وPR.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -3425,7 +3441,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `spec` ← المخرج `code`، والمنفّذ `method:APPX-131` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `app-studio` · `app-studio-paint` · `browser-scout` · `installer-triage` · `motion-kit-bridge` · `source-scout`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `app-studio` · `app-studio-paint` · `browser-scout` · `caption-lines` · `installer-triage` · `look-pipeline`.
 - مراحل النوع: قراءة الكود والاختبارات ← إعادة إنتاج أو اختبار جديد ← أصغر تغيير ← الاختبارات ← مراجعة الفرق ← فرع وPR.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -3497,7 +3513,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `spec` ← المخرج `code`، والمنفّذ `method:APPX-132` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `app-studio` · `app-studio-paint` · `browser-scout` · `installer-triage` · `motion-kit-bridge` · `source-scout`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `app-studio` · `app-studio-paint` · `browser-scout` · `caption-lines` · `installer-triage` · `look-pipeline`.
 - مراحل النوع: قراءة الكود والاختبارات ← إعادة إنتاج أو اختبار جديد ← أصغر تغيير ← الاختبارات ← مراجعة الفرق ← فرع وPR.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -3568,7 +3584,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `spec` ← المخرج `code`، والمنفّذ `method:APPX-133` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `app-studio` · `app-studio-paint` · `browser-scout` · `installer-triage` · `motion-kit-bridge` · `source-scout`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `app-studio` · `app-studio-paint` · `browser-scout` · `caption-lines` · `installer-triage` · `look-pipeline`.
 - مراحل النوع: قراءة الكود والاختبارات ← إعادة إنتاج أو اختبار جديد ← أصغر تغيير ← الاختبارات ← مراجعة الفرق ← فرع وPR.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -3640,7 +3656,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `spec` ← المخرج `code`، والمنفّذ `method:APPX-134` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `app-studio` · `app-studio-paint` · `browser-scout` · `installer-triage` · `motion-kit-bridge` · `source-scout`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `app-studio` · `app-studio-paint` · `browser-scout` · `caption-lines` · `installer-triage` · `look-pipeline`.
 - مراحل النوع: قراءة الكود والاختبارات ← إعادة إنتاج أو اختبار جديد ← أصغر تغيير ← الاختبارات ← مراجعة الفرق ← فرع وPR.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -3712,7 +3728,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `spec` ← المخرج `code`، والمنفّذ `method:APPX-135` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `app-studio` · `app-studio-paint` · `browser-scout` · `installer-triage` · `motion-kit-bridge` · `source-scout`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `app-studio` · `app-studio-paint` · `browser-scout` · `caption-lines` · `installer-triage` · `look-pipeline`.
 - مراحل النوع: قراءة الكود والاختبارات ← إعادة إنتاج أو اختبار جديد ← أصغر تغيير ← الاختبارات ← مراجعة الفرق ← فرع وPR.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -3783,7 +3799,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `spec` ← المخرج `code`، والمنفّذ `method:APPX-136` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `app-studio` · `app-studio-paint` · `browser-scout` · `installer-triage` · `motion-kit-bridge` · `source-scout`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `app-studio` · `app-studio-paint` · `browser-scout` · `caption-lines` · `installer-triage` · `look-pipeline`.
 - مراحل النوع: قراءة الكود والاختبارات ← إعادة إنتاج أو اختبار جديد ← أصغر تغيير ← الاختبارات ← مراجعة الفرق ← فرع وPR.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -3855,7 +3871,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `spec` ← المخرج `code`، والمنفّذ `method:APPX-137` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `app-studio` · `app-studio-paint` · `browser-scout` · `installer-triage` · `motion-kit-bridge` · `source-scout`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `app-studio` · `app-studio-paint` · `browser-scout` · `caption-lines` · `installer-triage` · `look-pipeline`.
 - مراحل النوع: قراءة الكود والاختبارات ← إعادة إنتاج أو اختبار جديد ← أصغر تغيير ← الاختبارات ← مراجعة الفرق ← فرع وPR.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -3927,7 +3943,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `spec` ← المخرج `code`، والمنفّذ `method:APPX-138` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `app-studio` · `app-studio-paint` · `browser-scout` · `installer-triage` · `motion-kit-bridge` · `source-scout`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `app-studio` · `app-studio-paint` · `browser-scout` · `caption-lines` · `installer-triage` · `look-pipeline`.
 - مراحل النوع: قراءة الكود والاختبارات ← إعادة إنتاج أو اختبار جديد ← أصغر تغيير ← الاختبارات ← مراجعة الفرق ← فرع وPR.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -3999,7 +4015,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `spec` ← المخرج `code`، والمنفّذ `method:APPX-139` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `app-studio` · `app-studio-paint` · `browser-scout` · `installer-triage` · `motion-kit-bridge` · `source-scout`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `app-studio` · `app-studio-paint` · `browser-scout` · `caption-lines` · `installer-triage` · `look-pipeline`.
 - مراحل النوع: قراءة الكود والاختبارات ← إعادة إنتاج أو اختبار جديد ← أصغر تغيير ← الاختبارات ← مراجعة الفرق ← فرع وPR.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -4029,7 +4045,7 @@
 - `APPX-137` الرسم التقريبي الموسوم للبنية والمرجع للمظهر / Labeled rough sketch for structure; reference for look (documented)
 - `APPX-138` جسر MCP باتجاهين مع تلميح التحديد الحالي / Two-way MCP bridge with a current-selection hint (documented)
 - `APPX-14` إزالة خلفية صورة / Background removal on a still (proven)
-- `APPX-15` تصدير EDL ومطابقته / EDL interchange and conform (proven)
+- `APPX-140` سطور ترجمة بقواعد قراءة / Caption lines with reading rules (proven)
 
 ### `APPX-14` — إزالة خلفية صورة / Background removal on a still
 
@@ -4071,7 +4087,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `spec` ← المخرج `code`، والمنفّذ `method:APPX-14` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `app-studio` · `app-studio-paint` · `browser-scout` · `installer-triage` · `motion-kit-bridge` · `source-scout`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `app-studio` · `app-studio-paint` · `browser-scout` · `caption-lines` · `installer-triage` · `look-pipeline`.
 - مراحل النوع: قراءة الكود والاختبارات ← إعادة إنتاج أو اختبار جديد ← أصغر تغيير ← الاختبارات ← مراجعة الفرق ← فرع وPR.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -4102,8 +4118,735 @@
 
 - `APPX-138` جسر MCP باتجاهين مع تلميح التحديد الحالي / Two-way MCP bridge with a current-selection hint (documented)
 - `APPX-139` المهارات: تحميل بالوصف وتثبيت صريح واستيراد نصي آمن / Skills: description-matched loading, explicit pinning, safe text-only import (documented)
+- `APPX-140` سطور ترجمة بقواعد قراءة / Caption lines with reading rules (proven)
+- `APPX-141` تنقية هلوسة نموذج التفريغ / Screen speech-model inventions (proven)
+
+### `APPX-140` — سطور ترجمة بقواعد قراءة / Caption lines with reading rules
+
+| الحقل | القيمة |
+|---|---|
+| العائلة | `app-feature-transfer` ([فصل العائلة](../../../.claude/skills/kosif-superpowers/references/powers/app-feature-transfer.md)) |
+| المجموعة | البرمجة وبناء التطبيقات (`software`) |
+| نوع المخرج (A25، A27) | كود وتطبيقات ومواقع (`code`) |
+| الحالة في الكتالوج | ✅ `proven`: مثبتة في الكتالوج؛ افحص متطلباتها هنا قبل كتابة ✅ في الخطة |
+| سقف التحقق قبل العمل (A27) | V3 بعد تشغيلها هنا وقياس معيار، لا قبل ذلك |
+| نطاق الدليل | `repo` |
+| الرخصة | recipe and code: owner (KOSIF); idea from Montaji (no licence, private) — idea only, no code copied |
+
+**ما هي:** يحوّل توقيت الكلمات إلى سطور ترجمة قصيرة مقروءة: حد للكلمات والحروف والمدة، وكسر عند الوقفة ونهاية الجملة (؟ ؛ . !) وعند الفاصلة بعد كلمتين، وسد الفجوات القصيرة، وحد أدنى للمدة بلا تداخل — word timings to readable SRT/VTT/JSON lines.
+
+**متى:** ترجمة تلقائية لريل أو فيديو بعد التفريغ / auto captions after transcription
+
+**كيف:** `python3 $SKILL_DIR/scripts/caption_lines.py group words.json -o captions.srt --rlm` (atlas words.json, whisper.cpp -oj, faster-whisper)
+
+**المعاملات:** --max-words 4 --max-chars 32 --max-dur 3.2 --gap 0.6 --min-dur 0.4 --bridge 0.3 --rlm
+
+**التثبيت:** لا خطوة تثبيت مسجلة
+
+**الوسوم:** captions · subtitles · srt · vtt · line breaking · ترجمة · سطور الترجمة · تقسيم الترجمة · montaji · مونتاجي · ويسبر · whisper · تفريغ · سطور قصيرة · subtitle lines
+
+#### 1. الاستقبال (A25)
+
+- اللغة والإطار: افتراض مكتوب ← لغة المستودع الموجود، وإلا Python أو HTML/JS بلا اعتماديات
+- أين يعمل: افتراض مكتوب ← المتصفح أو سطر الأوامر حسب المخرج
+- مستودع أو ملفات موجودة: سؤال بإجابة مقترحة ← مشروع جديد مستقل
+- متى يكون ناجحًا: افتراض مكتوب ← الاختبارات الموجودة تمر + اختبار لكل سلوك جديد
+- لا تُفترض أبدًا: مادة الإنتاج نفسها، والإذن بخطوة مدفوعة أو منشورة أو لا رجعة فيها، والهوية والحقوق.
+
+#### 2. الجاهزية والشارة (A28)
+
+- `pip:faster-whisper` ← python3 -c "import faster-whisper" (اسم الاستيراد قد يختلف عن اسم الحزمة)
+- الوضع 1: شارة «هنا الآن» بعد الفحص، لا ✅ الكتالوج تلقائيًا · الوضع 2: `كتالوج: ✅ · هنا: غير مفحوص` · الوضع 3: بلا شارة ولا معرّف.
+
+#### 3. موضعها في الخطة (A26)
+
+- عقدة منمّطة: المدخل `spec` ← المخرج `code`، والمنفّذ `method:APPX-140` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `app-studio` · `app-studio-paint` · `browser-scout` · `caption-lines` · `installer-triage` · `look-pipeline`.
+- مراحل النوع: قراءة الكود والاختبارات ← إعادة إنتاج أو اختبار جديد ← أصغر تغيير ← الاختبارات ← مراجعة الفرق ← فرع وPR.
+- إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
+
+#### 4. بوابة التحقق (A27)
+
+- إلزامي: الاختبارات الموجودة تمر قبل التعديل وبعده ← أمر الاختبار
+- إلزامي: اختبار لكل سلوك جديد أو خطأ مُصلح ← الاختبار الجديد يفشل قبل الإصلاح
+- إلزامي: لا أسرار ولا مسارات جلسة في الشيفرة ← بحث أنماط الأسرار
+- جودة: يطابق أسلوب الكود المحيط وتسمياته ← مراجعة الفرق
+- جودة: طريقة تشغيل مكتوبة ومجرَّبة ← تشغيل الأمر المكتوب
+- جودة: الفرق أصغر ما يحقق الطلب بلا إعادة كتابة غير مطلوبة ← git diff --stat
+- جودة: المدخل الخاطئ يعطي خطأ واضحًا لا انهيارًا صامتًا ← تشغيل بمدخل خاطئ
+- أمر الحكم في الوضع 1: `think.py qa code --answers qa.json` (PASS / FAIL / INCOMPLETE).
+
+#### 5. التعافي (A29)
+
+- `missing_dependency` (اعتمادية مفقودة، ميزانية 2): سمِّ الاعتمادية بالضبط (حزمة، برنامج، خط، نموذج) ← ثبّت محليًا في بيئة العمل إن كان مجانيًا ومسموحًا (pip --user أو venv أو npm محلي) · البديل: مسار المكتبة القياسية أو أداة أخرى من نفس المجموعة · تصعيد: تثبيت نظامي أو مدفوع أو يحتاج مفتاحًا: توقف واسأل
+- `quality_below_threshold` (جودة دون العتبة، ميزانية 3): أي معيار فشل وبكم (المقيس مقابل العتبة) ← عالج السبب الأكبر وحده ثم أعد القياس · البديل: المنهج البديل المكتوب للمرحلة في الخطة · تصعيد: معيار إلزامي لا يتحقق بعد البديل: توقف وأبلغ بالأرقام
+- `tool_error` (خطأ أداة، ميزانية 3): اقرأ آخر سطر في الخطأ ثم أول سطر من كودك فيه ← أصلح السبب المثبت وحده، ثم شغّل الاختبار المتعلق · البديل: أداة أخرى أو مسار يدوي للمرحلة نفسها · تصعيد: خطأ في أداة خارجية لا تملكها: بلّغ بإعادة الإنتاج ولا تخفه
+
+#### 6. الأدلة
+
+- `kosif-tool/.claude/skills/kosif-superpowers/scripts/caption_lines.py`
+- `kosif-tool/.claude/skills/kosif-superpowers/evals/test_caption_lines.py`
+- `kosif-tool/.claude/skills/kosif-superpowers/references/app-studies/montaji.md`
+
+#### 7. قدرات قريبة في العائلة
+
+- `APPX-139` المهارات: تحميل بالوصف وتثبيت صريح واستيراد نصي آمن / Skills: description-matched loading, explicit pinning, safe text-only import (documented)
+- `APPX-14` إزالة خلفية صورة / Background removal on a still (proven)
+- `APPX-141` تنقية هلوسة نموذج التفريغ / Screen speech-model inventions (proven)
+- `APPX-142` لوك ألوان واحد لكل المحركات / One colour look for every renderer (proven)
+
+### `APPX-141` — تنقية هلوسة نموذج التفريغ / Screen speech-model inventions
+
+| الحقل | القيمة |
+|---|---|
+| العائلة | `app-feature-transfer` ([فصل العائلة](../../../.claude/skills/kosif-superpowers/references/powers/app-feature-transfer.md)) |
+| المجموعة | البرمجة وبناء التطبيقات (`software`) |
+| نوع المخرج (A25، A27) | كود وتطبيقات ومواقع (`code`) |
+| الحالة في الكتالوج | ✅ `proven`: مثبتة في الكتالوج؛ افحص متطلباتها هنا قبل كتابة ✅ في الخطة |
+| سقف التحقق قبل العمل (A27) | V3 بعد تشغيلها هنا وقياس معيار، لا قبل ذلك |
+| نطاق الدليل | `repo` |
+| الرخصة | recipe and code: owner (KOSIF); idea from Montaji (no licence, private) — idea only, no code copied |
+
+**ما هي:** يحذف من الترجمة ما يخترعه نموذج الكلام فوق الصمت أو الموسيقى: حقوق الترجمة، و«اشتركوا في القناة»، و«شكرا للمشاهدة»، ووسوم الصوت، والنقط وحدها، وتكرار السطر نفسه ثلاث مرات — ويسرد المحذوف ليرجعه إنسان.
+
+**متى:** بعد Whisper وقبل نشر الترجمة / after Whisper, before publishing captions
+
+**كيف:** `caption_lines.py group … --keep-suspect` يعلّمها بدل حذفها؛ `caption_lines.py lint captions.srt` يفحص أي ملف ترجمة
+
+**المعاملات:** --keep-suspect · lint --max-cps 17
+
+**التثبيت:** لا خطوة تثبيت مسجلة
+
+**الوسوم:** whisper · hallucination · هلوسة · ترجمة نانسي · subscribe · caption qa · تدقيق الترجمة · ويسبر · تفريغ · سطور ترجمة
+
+#### 1. الاستقبال (A25)
+
+- اللغة والإطار: افتراض مكتوب ← لغة المستودع الموجود، وإلا Python أو HTML/JS بلا اعتماديات
+- أين يعمل: افتراض مكتوب ← المتصفح أو سطر الأوامر حسب المخرج
+- مستودع أو ملفات موجودة: سؤال بإجابة مقترحة ← مشروع جديد مستقل
+- متى يكون ناجحًا: افتراض مكتوب ← الاختبارات الموجودة تمر + اختبار لكل سلوك جديد
+- لا تُفترض أبدًا: مادة الإنتاج نفسها، والإذن بخطوة مدفوعة أو منشورة أو لا رجعة فيها، والهوية والحقوق.
+
+#### 2. الجاهزية والشارة (A28)
+
+- `pip:faster-whisper` ← python3 -c "import faster-whisper" (اسم الاستيراد قد يختلف عن اسم الحزمة)
+- الوضع 1: شارة «هنا الآن» بعد الفحص، لا ✅ الكتالوج تلقائيًا · الوضع 2: `كتالوج: ✅ · هنا: غير مفحوص` · الوضع 3: بلا شارة ولا معرّف.
+
+#### 3. موضعها في الخطة (A26)
+
+- عقدة منمّطة: المدخل `spec` ← المخرج `code`، والمنفّذ `method:APPX-141` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `app-studio` · `app-studio-paint` · `browser-scout` · `caption-lines` · `installer-triage` · `look-pipeline`.
+- مراحل النوع: قراءة الكود والاختبارات ← إعادة إنتاج أو اختبار جديد ← أصغر تغيير ← الاختبارات ← مراجعة الفرق ← فرع وPR.
+- إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
+
+#### 4. بوابة التحقق (A27)
+
+- إلزامي: الاختبارات الموجودة تمر قبل التعديل وبعده ← أمر الاختبار
+- إلزامي: اختبار لكل سلوك جديد أو خطأ مُصلح ← الاختبار الجديد يفشل قبل الإصلاح
+- إلزامي: لا أسرار ولا مسارات جلسة في الشيفرة ← بحث أنماط الأسرار
+- جودة: يطابق أسلوب الكود المحيط وتسمياته ← مراجعة الفرق
+- جودة: طريقة تشغيل مكتوبة ومجرَّبة ← تشغيل الأمر المكتوب
+- جودة: الفرق أصغر ما يحقق الطلب بلا إعادة كتابة غير مطلوبة ← git diff --stat
+- جودة: المدخل الخاطئ يعطي خطأ واضحًا لا انهيارًا صامتًا ← تشغيل بمدخل خاطئ
+- أمر الحكم في الوضع 1: `think.py qa code --answers qa.json` (PASS / FAIL / INCOMPLETE).
+
+#### 5. التعافي (A29)
+
+- `missing_dependency` (اعتمادية مفقودة، ميزانية 2): سمِّ الاعتمادية بالضبط (حزمة، برنامج، خط، نموذج) ← ثبّت محليًا في بيئة العمل إن كان مجانيًا ومسموحًا (pip --user أو venv أو npm محلي) · البديل: مسار المكتبة القياسية أو أداة أخرى من نفس المجموعة · تصعيد: تثبيت نظامي أو مدفوع أو يحتاج مفتاحًا: توقف واسأل
+- `quality_below_threshold` (جودة دون العتبة، ميزانية 3): أي معيار فشل وبكم (المقيس مقابل العتبة) ← عالج السبب الأكبر وحده ثم أعد القياس · البديل: المنهج البديل المكتوب للمرحلة في الخطة · تصعيد: معيار إلزامي لا يتحقق بعد البديل: توقف وأبلغ بالأرقام
+- `tool_error` (خطأ أداة، ميزانية 3): اقرأ آخر سطر في الخطأ ثم أول سطر من كودك فيه ← أصلح السبب المثبت وحده، ثم شغّل الاختبار المتعلق · البديل: أداة أخرى أو مسار يدوي للمرحلة نفسها · تصعيد: خطأ في أداة خارجية لا تملكها: بلّغ بإعادة الإنتاج ولا تخفه
+
+#### 6. الأدلة
+
+- `kosif-tool/.claude/skills/kosif-superpowers/scripts/caption_lines.py`
+- `kosif-tool/.claude/skills/kosif-superpowers/evals/test_caption_lines.py`
+- `kosif-tool/.claude/skills/kosif-superpowers/references/app-studies/montaji.md`
+
+#### 7. قدرات قريبة في العائلة
+
+- `APPX-14` إزالة خلفية صورة / Background removal on a still (proven)
+- `APPX-140` سطور ترجمة بقواعد قراءة / Caption lines with reading rules (proven)
+- `APPX-142` لوك ألوان واحد لكل المحركات / One colour look for every renderer (proven)
+- `APPX-143` إثبات تطابق المعاينة والتصدير بالقياس / Measured preview/export colour parity (proven)
+
+### `APPX-142` — لوك ألوان واحد لكل المحركات / One colour look for every renderer
+
+| الحقل | القيمة |
+|---|---|
+| العائلة | `app-feature-transfer` ([فصل العائلة](../../../.claude/skills/kosif-superpowers/references/powers/app-feature-transfer.md)) |
+| المجموعة | البرمجة وبناء التطبيقات (`software`) |
+| نوع المخرج (A25، A27) | كود وتطبيقات ومواقع (`code`) |
+| الحالة في الكتالوج | ✅ `proven`: مثبتة في الكتالوج؛ افحص متطلباتها هنا قبل كتابة ✅ في الخطة |
+| سقف التحقق قبل العمل (A27) | V3 بعد تشغيلها هنا وقياس معيار، لا قبل ذلك |
+| نطاق الدليل | `repo` |
+| الرخصة | recipe and code: owner (KOSIF); idea from Montaji (no licence, private) — idea only, no code copied |
+
+**ما هي:** اللوك أرقام: خطوة خطية لكل قناة ثم مصفوفة 3×3، تخرج منها فلاتر ffmpeg (lutrgb + colorchannelmixer) وSVG/CSS وGLSL بالأرقام نفسها؛ 11 لوك (سينمائي، دافئ، أبيض وأسود، ليلي هادئ…) مع شدة وتعديل يدوي.
+
+**متى:** تلوين فيديو مع معاينة في المتصفح تطابق التصدير / grade with a browser preview that matches the export
+
+**كيف:** `python3 $SKILL_DIR/scripts/look_pipeline.py build --preset cinematic --amount 0.8 --target ffmpeg\|svg\|css\|glsl\|json` ; `apply in.mp4 out.mp4 --preset warm`
+
+**المعاملات:** brightness contrast saturation temperature (-1..1) · fade sepia teal vignette (0..1)
+
+**التثبيت:** ffmpeg (apply/verify only)
+
+**الوسوم:** color grade · lut · look · filter · تلوين · فلتر · لوك · svg filter · glsl · colorchannelmixer
+
+#### 1. الاستقبال (A25)
+
+- اللغة والإطار: افتراض مكتوب ← لغة المستودع الموجود، وإلا Python أو HTML/JS بلا اعتماديات
+- أين يعمل: افتراض مكتوب ← المتصفح أو سطر الأوامر حسب المخرج
+- مستودع أو ملفات موجودة: سؤال بإجابة مقترحة ← مشروع جديد مستقل
+- متى يكون ناجحًا: افتراض مكتوب ← الاختبارات الموجودة تمر + اختبار لكل سلوك جديد
+- لا تُفترض أبدًا: مادة الإنتاج نفسها، والإذن بخطوة مدفوعة أو منشورة أو لا رجعة فيها، والهوية والحقوق.
+
+#### 2. الجاهزية والشارة (A28)
+
+- `ffmpeg` ← افحص وجوده بأمر واحد قبل كتابة الشارة
+- `python3` ← افحص وجوده بأمر واحد قبل كتابة الشارة
+- الوضع 1: شارة «هنا الآن» بعد الفحص، لا ✅ الكتالوج تلقائيًا · الوضع 2: `كتالوج: ✅ · هنا: غير مفحوص` · الوضع 3: بلا شارة ولا معرّف.
+
+#### 3. موضعها في الخطة (A26)
+
+- عقدة منمّطة: المدخل `spec` ← المخرج `code`، والمنفّذ `method:APPX-142` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `app-studio` · `app-studio-paint` · `browser-scout` · `caption-lines` · `installer-triage` · `look-pipeline`.
+- مراحل النوع: قراءة الكود والاختبارات ← إعادة إنتاج أو اختبار جديد ← أصغر تغيير ← الاختبارات ← مراجعة الفرق ← فرع وPR.
+- إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
+
+#### 4. بوابة التحقق (A27)
+
+- إلزامي: الاختبارات الموجودة تمر قبل التعديل وبعده ← أمر الاختبار
+- إلزامي: اختبار لكل سلوك جديد أو خطأ مُصلح ← الاختبار الجديد يفشل قبل الإصلاح
+- إلزامي: لا أسرار ولا مسارات جلسة في الشيفرة ← بحث أنماط الأسرار
+- جودة: يطابق أسلوب الكود المحيط وتسمياته ← مراجعة الفرق
+- جودة: طريقة تشغيل مكتوبة ومجرَّبة ← تشغيل الأمر المكتوب
+- جودة: الفرق أصغر ما يحقق الطلب بلا إعادة كتابة غير مطلوبة ← git diff --stat
+- جودة: المدخل الخاطئ يعطي خطأ واضحًا لا انهيارًا صامتًا ← تشغيل بمدخل خاطئ
+- أمر الحكم في الوضع 1: `think.py qa code --answers qa.json` (PASS / FAIL / INCOMPLETE).
+
+#### 5. التعافي (A29)
+
+- `missing_dependency` (اعتمادية مفقودة، ميزانية 2): سمِّ الاعتمادية بالضبط (حزمة، برنامج، خط، نموذج) ← ثبّت محليًا في بيئة العمل إن كان مجانيًا ومسموحًا (pip --user أو venv أو npm محلي) · البديل: مسار المكتبة القياسية أو أداة أخرى من نفس المجموعة · تصعيد: تثبيت نظامي أو مدفوع أو يحتاج مفتاحًا: توقف واسأل
+- `quality_below_threshold` (جودة دون العتبة، ميزانية 3): أي معيار فشل وبكم (المقيس مقابل العتبة) ← عالج السبب الأكبر وحده ثم أعد القياس · البديل: المنهج البديل المكتوب للمرحلة في الخطة · تصعيد: معيار إلزامي لا يتحقق بعد البديل: توقف وأبلغ بالأرقام
+- `tool_error` (خطأ أداة، ميزانية 3): اقرأ آخر سطر في الخطأ ثم أول سطر من كودك فيه ← أصلح السبب المثبت وحده، ثم شغّل الاختبار المتعلق · البديل: أداة أخرى أو مسار يدوي للمرحلة نفسها · تصعيد: خطأ في أداة خارجية لا تملكها: بلّغ بإعادة الإنتاج ولا تخفه
+
+#### 6. الأدلة
+
+- `kosif-tool/.claude/skills/kosif-superpowers/scripts/look_pipeline.py`
+- `kosif-tool/.claude/skills/kosif-superpowers/evals/test_look_pipeline.py`
+- `kosif-tool/.claude/skills/kosif-superpowers/references/app-studies/montaji.md`
+
+#### 7. قدرات قريبة في العائلة
+
+- `APPX-140` سطور ترجمة بقواعد قراءة / Caption lines with reading rules (proven)
+- `APPX-141` تنقية هلوسة نموذج التفريغ / Screen speech-model inventions (proven)
+- `APPX-143` إثبات تطابق المعاينة والتصدير بالقياس / Measured preview/export colour parity (proven)
+- `APPX-144` مسار رئيسي مغناطيسي بانتقالات محسوبة / Magnetic main track with clamped transitions (documented)
+
+### `APPX-143` — إثبات تطابق المعاينة والتصدير بالقياس / Measured preview/export colour parity
+
+| الحقل | القيمة |
+|---|---|
+| العائلة | `app-feature-transfer` ([فصل العائلة](../../../.claude/skills/kosif-superpowers/references/powers/app-feature-transfer.md)) |
+| المجموعة | البرمجة وبناء التطبيقات (`software`) |
+| نوع المخرج (A25، A27) | كود وتطبيقات ومواقع (`code`) |
+| الحالة في الكتالوج | ✅ `proven`: مثبتة في الكتالوج؛ افحص متطلباتها هنا قبل كتابة ✅ في الخطة |
+| سقف التحقق قبل العمل (A27) | V3 بعد تشغيلها هنا وقياس معيار، لا قبل ذلك |
+| نطاق الدليل | `repo` |
+| الرخصة | recipe and code: owner (KOSIF); idea from Montaji (no licence, private) — idea only, no code copied |
+
+**ما هي:** يمرّر إطار اختبار في ffmpeg ويقارن كل بكسل بالمعادلة المرجعية؛ أقصى فرق هنا 1 من 255 في كل اللوكات — قياس لا ادعاء.
+
+**متى:** قبل الاعتماد على معاينة لون في محرر ويب / before trusting a web preview's colour
+
+**كيف:** `python3 $SKILL_DIR/scripts/look_pipeline.py verify --all --tolerance 3`
+
+**المعاملات:** --preset · --all · --tolerance
+
+**التثبيت:** ffmpeg
+
+**الوسوم:** parity · preview · export · تطابق · معاينة · تصدير · color qa
+
+#### 1. الاستقبال (A25)
+
+- اللغة والإطار: افتراض مكتوب ← لغة المستودع الموجود، وإلا Python أو HTML/JS بلا اعتماديات
+- أين يعمل: افتراض مكتوب ← المتصفح أو سطر الأوامر حسب المخرج
+- مستودع أو ملفات موجودة: سؤال بإجابة مقترحة ← مشروع جديد مستقل
+- متى يكون ناجحًا: افتراض مكتوب ← الاختبارات الموجودة تمر + اختبار لكل سلوك جديد
+- لا تُفترض أبدًا: مادة الإنتاج نفسها، والإذن بخطوة مدفوعة أو منشورة أو لا رجعة فيها، والهوية والحقوق.
+
+#### 2. الجاهزية والشارة (A28)
+
+- `ffmpeg` ← افحص وجوده بأمر واحد قبل كتابة الشارة
+- `python3` ← افحص وجوده بأمر واحد قبل كتابة الشارة
+- الوضع 1: شارة «هنا الآن» بعد الفحص، لا ✅ الكتالوج تلقائيًا · الوضع 2: `كتالوج: ✅ · هنا: غير مفحوص` · الوضع 3: بلا شارة ولا معرّف.
+
+#### 3. موضعها في الخطة (A26)
+
+- عقدة منمّطة: المدخل `spec` ← المخرج `code`، والمنفّذ `method:APPX-143` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `app-studio` · `app-studio-paint` · `browser-scout` · `caption-lines` · `installer-triage` · `look-pipeline`.
+- مراحل النوع: قراءة الكود والاختبارات ← إعادة إنتاج أو اختبار جديد ← أصغر تغيير ← الاختبارات ← مراجعة الفرق ← فرع وPR.
+- إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
+
+#### 4. بوابة التحقق (A27)
+
+- إلزامي: الاختبارات الموجودة تمر قبل التعديل وبعده ← أمر الاختبار
+- إلزامي: اختبار لكل سلوك جديد أو خطأ مُصلح ← الاختبار الجديد يفشل قبل الإصلاح
+- إلزامي: لا أسرار ولا مسارات جلسة في الشيفرة ← بحث أنماط الأسرار
+- جودة: يطابق أسلوب الكود المحيط وتسمياته ← مراجعة الفرق
+- جودة: طريقة تشغيل مكتوبة ومجرَّبة ← تشغيل الأمر المكتوب
+- جودة: الفرق أصغر ما يحقق الطلب بلا إعادة كتابة غير مطلوبة ← git diff --stat
+- جودة: المدخل الخاطئ يعطي خطأ واضحًا لا انهيارًا صامتًا ← تشغيل بمدخل خاطئ
+- أمر الحكم في الوضع 1: `think.py qa code --answers qa.json` (PASS / FAIL / INCOMPLETE).
+
+#### 5. التعافي (A29)
+
+- `missing_dependency` (اعتمادية مفقودة، ميزانية 2): سمِّ الاعتمادية بالضبط (حزمة، برنامج، خط، نموذج) ← ثبّت محليًا في بيئة العمل إن كان مجانيًا ومسموحًا (pip --user أو venv أو npm محلي) · البديل: مسار المكتبة القياسية أو أداة أخرى من نفس المجموعة · تصعيد: تثبيت نظامي أو مدفوع أو يحتاج مفتاحًا: توقف واسأل
+- `quality_below_threshold` (جودة دون العتبة، ميزانية 3): أي معيار فشل وبكم (المقيس مقابل العتبة) ← عالج السبب الأكبر وحده ثم أعد القياس · البديل: المنهج البديل المكتوب للمرحلة في الخطة · تصعيد: معيار إلزامي لا يتحقق بعد البديل: توقف وأبلغ بالأرقام
+- `tool_error` (خطأ أداة، ميزانية 3): اقرأ آخر سطر في الخطأ ثم أول سطر من كودك فيه ← أصلح السبب المثبت وحده، ثم شغّل الاختبار المتعلق · البديل: أداة أخرى أو مسار يدوي للمرحلة نفسها · تصعيد: خطأ في أداة خارجية لا تملكها: بلّغ بإعادة الإنتاج ولا تخفه
+
+#### 6. الأدلة
+
+- `kosif-tool/.claude/skills/kosif-superpowers/scripts/look_pipeline.py`
+- `kosif-tool/.claude/skills/kosif-superpowers/evals/test_look_pipeline.py`
+- `kosif-tool/.claude/skills/kosif-superpowers/references/app-studies/montaji.md`
+
+#### 7. قدرات قريبة في العائلة
+
+- `APPX-141` تنقية هلوسة نموذج التفريغ / Screen speech-model inventions (proven)
+- `APPX-142` لوك ألوان واحد لكل المحركات / One colour look for every renderer (proven)
+- `APPX-144` مسار رئيسي مغناطيسي بانتقالات محسوبة / Magnetic main track with clamped transitions (documented)
+- `APPX-145` أي سرعة صوت بسلسلة atempo / Any audio speed with an atempo chain (documented)
+
+### `APPX-144` — مسار رئيسي مغناطيسي بانتقالات محسوبة / Magnetic main track with clamped transitions
+
+| الحقل | القيمة |
+|---|---|
+| العائلة | `app-feature-transfer` ([فصل العائلة](../../../.claude/skills/kosif-superpowers/references/powers/app-feature-transfer.md)) |
+| المجموعة | البرمجة وبناء التطبيقات (`software`) |
+| نوع المخرج (A25، A27) | كود وتطبيقات ومواقع (`code`) |
+| الحالة في الكتالوج | 📄 `documented`: منهج موصوف يحتاج بناءً أو ربطًا قبل التشغيل |
+| سقف التحقق قبل العمل (A27) | V1 حتى تُبنى وتُشغَّل؛ لا تقدَّم جاهزة أبدًا |
+| نطاق الدليل | `repo` |
+| الرخصة | method idea from Montaji (no licence, private); idea only, in KOSIF's terms |
+
+**ما هي:** اللقطات تتبع بعضها بلا فراغ؛ الانتقال يُخزَّن على اللقطة الخارجة ولا يزيد على نصف أي من الجارتين؛ في ffmpeg: xfade بإزاحة = الطول المتراكم − مدة الانتقال، وacrossfade للصوت، وconcat عند غياب الانتقال.
+
+**متى:** تصدير تايملاين فيه انتقالات بين اللقطات / exporting a cut list with transitions
+
+**كيف:** `[v0][v1]xfade=transition=fade:duration=T:offset=ACC-T` ثم ACC = ACC + dur − T؛ `[a0][a1]acrossfade=d=T`؛ قرّب كل الأزمنة لإطار (round(t·fps)/fps). الفجوة: kosif_timeline.py يدعم التلاشي بالشفافية فقط.
+
+**المعاملات:** T ≤ min(dur_a, dur_b)/2
+
+**التثبيت:** ffmpeg
+
+**الوسوم:** xfade · transitions · magnetic timeline · انتقالات · تايملاين مغناطيسي · acrossfade
+
+#### 1. الاستقبال (A25)
+
+- اللغة والإطار: افتراض مكتوب ← لغة المستودع الموجود، وإلا Python أو HTML/JS بلا اعتماديات
+- أين يعمل: افتراض مكتوب ← المتصفح أو سطر الأوامر حسب المخرج
+- مستودع أو ملفات موجودة: سؤال بإجابة مقترحة ← مشروع جديد مستقل
+- متى يكون ناجحًا: افتراض مكتوب ← الاختبارات الموجودة تمر + اختبار لكل سلوك جديد
+- لا تُفترض أبدًا: مادة الإنتاج نفسها، والإذن بخطوة مدفوعة أو منشورة أو لا رجعة فيها، والهوية والحقوق.
+
+#### 2. الجاهزية والشارة (A28)
+
+- `ffmpeg` ← افحص وجوده بأمر واحد قبل كتابة الشارة
+- `python3` ← افحص وجوده بأمر واحد قبل كتابة الشارة
+- الوضع 1: شارة «هنا الآن» بعد الفحص، لا 📄 الكتالوج تلقائيًا · الوضع 2: `كتالوج: 📄 · هنا: غير مفحوص` · الوضع 3: بلا شارة ولا معرّف.
+
+#### 3. موضعها في الخطة (A26)
+
+- عقدة منمّطة: المدخل `spec` ← المخرج `code`، والمنفّذ `method:APPX-144` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `app-studio` · `app-studio-paint` · `browser-scout` · `caption-lines` · `installer-triage` · `look-pipeline`.
+- مراحل النوع: قراءة الكود والاختبارات ← إعادة إنتاج أو اختبار جديد ← أصغر تغيير ← الاختبارات ← مراجعة الفرق ← فرع وPR.
+- إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
+
+#### 4. بوابة التحقق (A27)
+
+- إلزامي: الاختبارات الموجودة تمر قبل التعديل وبعده ← أمر الاختبار
+- إلزامي: اختبار لكل سلوك جديد أو خطأ مُصلح ← الاختبار الجديد يفشل قبل الإصلاح
+- إلزامي: لا أسرار ولا مسارات جلسة في الشيفرة ← بحث أنماط الأسرار
+- جودة: يطابق أسلوب الكود المحيط وتسمياته ← مراجعة الفرق
+- جودة: طريقة تشغيل مكتوبة ومجرَّبة ← تشغيل الأمر المكتوب
+- جودة: الفرق أصغر ما يحقق الطلب بلا إعادة كتابة غير مطلوبة ← git diff --stat
+- جودة: المدخل الخاطئ يعطي خطأ واضحًا لا انهيارًا صامتًا ← تشغيل بمدخل خاطئ
+- أمر الحكم في الوضع 1: `think.py qa code --answers qa.json` (PASS / FAIL / INCOMPLETE).
+
+#### 5. التعافي (A29)
+
+- `missing_dependency` (اعتمادية مفقودة، ميزانية 2): سمِّ الاعتمادية بالضبط (حزمة، برنامج، خط، نموذج) ← ثبّت محليًا في بيئة العمل إن كان مجانيًا ومسموحًا (pip --user أو venv أو npm محلي) · البديل: مسار المكتبة القياسية أو أداة أخرى من نفس المجموعة · تصعيد: تثبيت نظامي أو مدفوع أو يحتاج مفتاحًا: توقف واسأل
+- `quality_below_threshold` (جودة دون العتبة، ميزانية 3): أي معيار فشل وبكم (المقيس مقابل العتبة) ← عالج السبب الأكبر وحده ثم أعد القياس · البديل: المنهج البديل المكتوب للمرحلة في الخطة · تصعيد: معيار إلزامي لا يتحقق بعد البديل: توقف وأبلغ بالأرقام
+- `tool_error` (خطأ أداة، ميزانية 3): اقرأ آخر سطر في الخطأ ثم أول سطر من كودك فيه ← أصلح السبب المثبت وحده، ثم شغّل الاختبار المتعلق · البديل: أداة أخرى أو مسار يدوي للمرحلة نفسها · تصعيد: خطأ في أداة خارجية لا تملكها: بلّغ بإعادة الإنتاج ولا تخفه
+
+#### 6. الأدلة
+
+- `kosif-tool/.claude/skills/kosif-superpowers/references/app-studies/montaji.md`
+
+#### 7. قدرات قريبة في العائلة
+
+- `APPX-142` لوك ألوان واحد لكل المحركات / One colour look for every renderer (proven)
+- `APPX-143` إثبات تطابق المعاينة والتصدير بالقياس / Measured preview/export colour parity (proven)
+- `APPX-145` أي سرعة صوت بسلسلة atempo / Any audio speed with an atempo chain (documented)
+- `APPX-146` خلفية مموهة رخيصة للمقاس العمودي / Cheap blurred background fill (documented)
+
+### `APPX-145` — أي سرعة صوت بسلسلة atempo / Any audio speed with an atempo chain
+
+| الحقل | القيمة |
+|---|---|
+| العائلة | `app-feature-transfer` ([فصل العائلة](../../../.claude/skills/kosif-superpowers/references/powers/app-feature-transfer.md)) |
+| المجموعة | البرمجة وبناء التطبيقات (`software`) |
+| نوع المخرج (A25، A27) | كود وتطبيقات ومواقع (`code`) |
+| الحالة في الكتالوج | 📄 `documented`: منهج موصوف يحتاج بناءً أو ربطًا قبل التشغيل |
+| سقف التحقق قبل العمل (A27) | V1 حتى تُبنى وتُشغَّل؛ لا تقدَّم جاهزة أبدًا |
+| نطاق الدليل | `repo` |
+| الرخصة | method idea from Montaji (no licence, private); idea only, in KOSIF's terms |
+
+**ما هي:** atempo يقبل 0.5 إلى 100 فقط؛ قسّم المعامل إلى خطوات (0.25 = 0.5×0.5) ليبقى الصوت متزامنًا مع setpts للفيديو.
+
+**متى:** تسريع أو إبطاء مقطع بصوته / speed change with sound
+
+**كيف:** فيديو: `setpts=PTS/S`؛ صوت: كرر atempo=0.5 حتى يصبح الباقي ≥ 0.5 (و100 للأعلى) ثم atempo=الباقي.
+
+**المعاملات:** S = speed
+
+**التثبيت:** ffmpeg
+
+**الوسوم:** atempo · speed · سرعة · تسريع · إبطاء
+
+#### 1. الاستقبال (A25)
+
+- اللغة والإطار: افتراض مكتوب ← لغة المستودع الموجود، وإلا Python أو HTML/JS بلا اعتماديات
+- أين يعمل: افتراض مكتوب ← المتصفح أو سطر الأوامر حسب المخرج
+- مستودع أو ملفات موجودة: سؤال بإجابة مقترحة ← مشروع جديد مستقل
+- متى يكون ناجحًا: افتراض مكتوب ← الاختبارات الموجودة تمر + اختبار لكل سلوك جديد
+- لا تُفترض أبدًا: مادة الإنتاج نفسها، والإذن بخطوة مدفوعة أو منشورة أو لا رجعة فيها، والهوية والحقوق.
+
+#### 2. الجاهزية والشارة (A28)
+
+- `ffmpeg` ← افحص وجوده بأمر واحد قبل كتابة الشارة
+- الوضع 1: شارة «هنا الآن» بعد الفحص، لا 📄 الكتالوج تلقائيًا · الوضع 2: `كتالوج: 📄 · هنا: غير مفحوص` · الوضع 3: بلا شارة ولا معرّف.
+
+#### 3. موضعها في الخطة (A26)
+
+- عقدة منمّطة: المدخل `spec` ← المخرج `code`، والمنفّذ `method:APPX-145` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `app-studio` · `app-studio-paint` · `browser-scout` · `caption-lines` · `installer-triage` · `look-pipeline`.
+- مراحل النوع: قراءة الكود والاختبارات ← إعادة إنتاج أو اختبار جديد ← أصغر تغيير ← الاختبارات ← مراجعة الفرق ← فرع وPR.
+- إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
+
+#### 4. بوابة التحقق (A27)
+
+- إلزامي: الاختبارات الموجودة تمر قبل التعديل وبعده ← أمر الاختبار
+- إلزامي: اختبار لكل سلوك جديد أو خطأ مُصلح ← الاختبار الجديد يفشل قبل الإصلاح
+- إلزامي: لا أسرار ولا مسارات جلسة في الشيفرة ← بحث أنماط الأسرار
+- جودة: يطابق أسلوب الكود المحيط وتسمياته ← مراجعة الفرق
+- جودة: طريقة تشغيل مكتوبة ومجرَّبة ← تشغيل الأمر المكتوب
+- جودة: الفرق أصغر ما يحقق الطلب بلا إعادة كتابة غير مطلوبة ← git diff --stat
+- جودة: المدخل الخاطئ يعطي خطأ واضحًا لا انهيارًا صامتًا ← تشغيل بمدخل خاطئ
+- أمر الحكم في الوضع 1: `think.py qa code --answers qa.json` (PASS / FAIL / INCOMPLETE).
+
+#### 5. التعافي (A29)
+
+- `missing_dependency` (اعتمادية مفقودة، ميزانية 2): سمِّ الاعتمادية بالضبط (حزمة، برنامج، خط، نموذج) ← ثبّت محليًا في بيئة العمل إن كان مجانيًا ومسموحًا (pip --user أو venv أو npm محلي) · البديل: مسار المكتبة القياسية أو أداة أخرى من نفس المجموعة · تصعيد: تثبيت نظامي أو مدفوع أو يحتاج مفتاحًا: توقف واسأل
+- `quality_below_threshold` (جودة دون العتبة، ميزانية 3): أي معيار فشل وبكم (المقيس مقابل العتبة) ← عالج السبب الأكبر وحده ثم أعد القياس · البديل: المنهج البديل المكتوب للمرحلة في الخطة · تصعيد: معيار إلزامي لا يتحقق بعد البديل: توقف وأبلغ بالأرقام
+- `tool_error` (خطأ أداة، ميزانية 3): اقرأ آخر سطر في الخطأ ثم أول سطر من كودك فيه ← أصلح السبب المثبت وحده، ثم شغّل الاختبار المتعلق · البديل: أداة أخرى أو مسار يدوي للمرحلة نفسها · تصعيد: خطأ في أداة خارجية لا تملكها: بلّغ بإعادة الإنتاج ولا تخفه
+
+#### 6. الأدلة
+
+- `kosif-tool/.claude/skills/kosif-superpowers/references/app-studies/montaji.md`
+
+#### 7. قدرات قريبة في العائلة
+
+- `APPX-143` إثبات تطابق المعاينة والتصدير بالقياس / Measured preview/export colour parity (proven)
+- `APPX-144` مسار رئيسي مغناطيسي بانتقالات محسوبة / Magnetic main track with clamped transitions (documented)
+- `APPX-146` خلفية مموهة رخيصة للمقاس العمودي / Cheap blurred background fill (documented)
+- `APPX-147` نص عربي مرسوم بوحدات مرجعية / Arabic text raster in reference units (documented)
+
+### `APPX-146` — خلفية مموهة رخيصة للمقاس العمودي / Cheap blurred background fill
+
+| الحقل | القيمة |
+|---|---|
+| العائلة | `app-feature-transfer` ([فصل العائلة](../../../.claude/skills/kosif-superpowers/references/powers/app-feature-transfer.md)) |
+| المجموعة | البرمجة وبناء التطبيقات (`software`) |
+| نوع المخرج (A25، A27) | كود وتطبيقات ومواقع (`code`) |
+| الحالة في الكتالوج | 📄 `documented`: منهج موصوف يحتاج بناءً أو ربطًا قبل التشغيل |
+| سقف التحقق قبل العمل (A27) | V1 حتى تُبنى وتُشغَّل؛ لا تقدَّم جاهزة أبدًا |
+| نطاق الدليل | `repo` |
+| الرخصة | method idea from Montaji (no licence, private); idea only, in KOSIF's terms |
+
+**ما هي:** لملء 9:16 بلقطة أفقية: صغّر نسخة إلى ربع المقاس، املأ وقص، طبّق gblur، ثم كبّر — أسرع بكثير من التمويه بالحجم الكامل والنتيجة نفسها بصريًا.
+
+**متى:** فيديو أفقي في ريل عمودي / landscape clip in a vertical reel
+
+**كيف:** `split[a][b];[b]scale=W/4:H/4:force_original_aspect_ratio=increase,crop=W/4:H/4,gblur=sigma=s,scale=W:H[bg];[bg][a]overlay=(W-w)/2:(H-h)/2`
+
+**المعاملات:** sigma ≈ 3% of the short side / 4
+
+**التثبيت:** ffmpeg
+
+**الوسوم:** blur background · 9:16 · خلفية مموهة · ريلز · reframe
+
+#### 1. الاستقبال (A25)
+
+- اللغة والإطار: افتراض مكتوب ← لغة المستودع الموجود، وإلا Python أو HTML/JS بلا اعتماديات
+- أين يعمل: افتراض مكتوب ← المتصفح أو سطر الأوامر حسب المخرج
+- مستودع أو ملفات موجودة: سؤال بإجابة مقترحة ← مشروع جديد مستقل
+- متى يكون ناجحًا: افتراض مكتوب ← الاختبارات الموجودة تمر + اختبار لكل سلوك جديد
+- لا تُفترض أبدًا: مادة الإنتاج نفسها، والإذن بخطوة مدفوعة أو منشورة أو لا رجعة فيها، والهوية والحقوق.
+
+#### 2. الجاهزية والشارة (A28)
+
+- `ffmpeg` ← افحص وجوده بأمر واحد قبل كتابة الشارة
+- الوضع 1: شارة «هنا الآن» بعد الفحص، لا 📄 الكتالوج تلقائيًا · الوضع 2: `كتالوج: 📄 · هنا: غير مفحوص` · الوضع 3: بلا شارة ولا معرّف.
+
+#### 3. موضعها في الخطة (A26)
+
+- عقدة منمّطة: المدخل `spec` ← المخرج `code`، والمنفّذ `method:APPX-146` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `app-studio` · `app-studio-paint` · `browser-scout` · `caption-lines` · `installer-triage` · `look-pipeline`.
+- مراحل النوع: قراءة الكود والاختبارات ← إعادة إنتاج أو اختبار جديد ← أصغر تغيير ← الاختبارات ← مراجعة الفرق ← فرع وPR.
+- إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
+
+#### 4. بوابة التحقق (A27)
+
+- إلزامي: الاختبارات الموجودة تمر قبل التعديل وبعده ← أمر الاختبار
+- إلزامي: اختبار لكل سلوك جديد أو خطأ مُصلح ← الاختبار الجديد يفشل قبل الإصلاح
+- إلزامي: لا أسرار ولا مسارات جلسة في الشيفرة ← بحث أنماط الأسرار
+- جودة: يطابق أسلوب الكود المحيط وتسمياته ← مراجعة الفرق
+- جودة: طريقة تشغيل مكتوبة ومجرَّبة ← تشغيل الأمر المكتوب
+- جودة: الفرق أصغر ما يحقق الطلب بلا إعادة كتابة غير مطلوبة ← git diff --stat
+- جودة: المدخل الخاطئ يعطي خطأ واضحًا لا انهيارًا صامتًا ← تشغيل بمدخل خاطئ
+- أمر الحكم في الوضع 1: `think.py qa code --answers qa.json` (PASS / FAIL / INCOMPLETE).
+
+#### 5. التعافي (A29)
+
+- `missing_dependency` (اعتمادية مفقودة، ميزانية 2): سمِّ الاعتمادية بالضبط (حزمة، برنامج، خط، نموذج) ← ثبّت محليًا في بيئة العمل إن كان مجانيًا ومسموحًا (pip --user أو venv أو npm محلي) · البديل: مسار المكتبة القياسية أو أداة أخرى من نفس المجموعة · تصعيد: تثبيت نظامي أو مدفوع أو يحتاج مفتاحًا: توقف واسأل
+- `quality_below_threshold` (جودة دون العتبة، ميزانية 3): أي معيار فشل وبكم (المقيس مقابل العتبة) ← عالج السبب الأكبر وحده ثم أعد القياس · البديل: المنهج البديل المكتوب للمرحلة في الخطة · تصعيد: معيار إلزامي لا يتحقق بعد البديل: توقف وأبلغ بالأرقام
+- `tool_error` (خطأ أداة، ميزانية 3): اقرأ آخر سطر في الخطأ ثم أول سطر من كودك فيه ← أصلح السبب المثبت وحده، ثم شغّل الاختبار المتعلق · البديل: أداة أخرى أو مسار يدوي للمرحلة نفسها · تصعيد: خطأ في أداة خارجية لا تملكها: بلّغ بإعادة الإنتاج ولا تخفه
+
+#### 6. الأدلة
+
+- `kosif-tool/.claude/skills/kosif-superpowers/references/app-studies/montaji.md`
+
+#### 7. قدرات قريبة في العائلة
+
+- `APPX-144` مسار رئيسي مغناطيسي بانتقالات محسوبة / Magnetic main track with clamped transitions (documented)
+- `APPX-145` أي سرعة صوت بسلسلة atempo / Any audio speed with an atempo chain (documented)
+- `APPX-147` نص عربي مرسوم بوحدات مرجعية / Arabic text raster in reference units (documented)
+- `APPX-148` تجهيز الوسائط لمحرر / Media prep for an editor (documented)
+
+### `APPX-147` — نص عربي مرسوم بوحدات مرجعية / Arabic text raster in reference units
+
+| الحقل | القيمة |
+|---|---|
+| العائلة | `app-feature-transfer` ([فصل العائلة](../../../.claude/skills/kosif-superpowers/references/powers/app-feature-transfer.md)) |
+| المجموعة | البرمجة وبناء التطبيقات (`software`) |
+| نوع المخرج (A25، A27) | كود وتطبيقات ومواقع (`code`) |
+| الحالة في الكتالوج | 📄 `documented`: منهج موصوف يحتاج بناءً أو ربطًا قبل التشغيل |
+| سقف التحقق قبل العمل (A27) | V1 حتى تُبنى وتُشغَّل؛ لا تقدَّم جاهزة أبدًا |
+| نطاق الدليل | `repo` |
+| الرخصة | method idea from Montaji (no licence, private); idea only, in KOSIF's terms |
+
+**ما هي:** ارسم النص في المتصفح (تشكيل عربي صحيح وحدّ وظل وخلفية مستديرة) بقياسات مرجعية للضلع القصير 1080 ثم كبّر مرة واحدة، فتبقى فواصل الأسطر واحدة في كل مقاس؛ قص الصورة على حدود النص بعد الدوران، ودع ffmpeg يحرّكها ويخفيها بتعابير تطابق منحنى المعاينة.
+
+**متى:** نصوص عربية في فيديو مصدَّر بمقاسات مختلفة / Arabic titles exported at several sizes
+
+**كيف:** Canvas: layout at short=1080, ctx.scale(k); export PNG cropped to rotated bounds; ffmpeg `loop`, `fade=alpha=1`, `overlay=x='X+dx*pow(1-p,2)'`. انظر playbooks/arabic-typography.md.
+
+**المعاملات:** k = short side / 1080
+
+**التثبيت:** لا خطوة تثبيت مسجلة
+
+**الوسوم:** arabic text · نص عربي · typography · overlay · canvas · rtl
+
+#### 1. الاستقبال (A25)
+
+- اللغة والإطار: افتراض مكتوب ← لغة المستودع الموجود، وإلا Python أو HTML/JS بلا اعتماديات
+- أين يعمل: افتراض مكتوب ← المتصفح أو سطر الأوامر حسب المخرج
+- مستودع أو ملفات موجودة: سؤال بإجابة مقترحة ← مشروع جديد مستقل
+- متى يكون ناجحًا: افتراض مكتوب ← الاختبارات الموجودة تمر + اختبار لكل سلوك جديد
+- لا تُفترض أبدًا: مادة الإنتاج نفسها، والإذن بخطوة مدفوعة أو منشورة أو لا رجعة فيها، والهوية والحقوق.
+
+#### 2. الجاهزية والشارة (A28)
+
+- `ffmpeg` ← افحص وجوده بأمر واحد قبل كتابة الشارة
+- الوضع 1: شارة «هنا الآن» بعد الفحص، لا 📄 الكتالوج تلقائيًا · الوضع 2: `كتالوج: 📄 · هنا: غير مفحوص` · الوضع 3: بلا شارة ولا معرّف.
+
+#### 3. موضعها في الخطة (A26)
+
+- عقدة منمّطة: المدخل `spec` ← المخرج `code`، والمنفّذ `method:APPX-147` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `app-studio` · `app-studio-paint` · `browser-scout` · `caption-lines` · `installer-triage` · `look-pipeline`.
+- مراحل النوع: قراءة الكود والاختبارات ← إعادة إنتاج أو اختبار جديد ← أصغر تغيير ← الاختبارات ← مراجعة الفرق ← فرع وPR.
+- إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
+
+#### 4. بوابة التحقق (A27)
+
+- إلزامي: الاختبارات الموجودة تمر قبل التعديل وبعده ← أمر الاختبار
+- إلزامي: اختبار لكل سلوك جديد أو خطأ مُصلح ← الاختبار الجديد يفشل قبل الإصلاح
+- إلزامي: لا أسرار ولا مسارات جلسة في الشيفرة ← بحث أنماط الأسرار
+- جودة: يطابق أسلوب الكود المحيط وتسمياته ← مراجعة الفرق
+- جودة: طريقة تشغيل مكتوبة ومجرَّبة ← تشغيل الأمر المكتوب
+- جودة: الفرق أصغر ما يحقق الطلب بلا إعادة كتابة غير مطلوبة ← git diff --stat
+- جودة: المدخل الخاطئ يعطي خطأ واضحًا لا انهيارًا صامتًا ← تشغيل بمدخل خاطئ
+- أمر الحكم في الوضع 1: `think.py qa code --answers qa.json` (PASS / FAIL / INCOMPLETE).
+
+#### 5. التعافي (A29)
+
+- `missing_dependency` (اعتمادية مفقودة، ميزانية 2): سمِّ الاعتمادية بالضبط (حزمة، برنامج، خط، نموذج) ← ثبّت محليًا في بيئة العمل إن كان مجانيًا ومسموحًا (pip --user أو venv أو npm محلي) · البديل: مسار المكتبة القياسية أو أداة أخرى من نفس المجموعة · تصعيد: تثبيت نظامي أو مدفوع أو يحتاج مفتاحًا: توقف واسأل
+- `quality_below_threshold` (جودة دون العتبة، ميزانية 3): أي معيار فشل وبكم (المقيس مقابل العتبة) ← عالج السبب الأكبر وحده ثم أعد القياس · البديل: المنهج البديل المكتوب للمرحلة في الخطة · تصعيد: معيار إلزامي لا يتحقق بعد البديل: توقف وأبلغ بالأرقام
+- `tool_error` (خطأ أداة، ميزانية 3): اقرأ آخر سطر في الخطأ ثم أول سطر من كودك فيه ← أصلح السبب المثبت وحده، ثم شغّل الاختبار المتعلق · البديل: أداة أخرى أو مسار يدوي للمرحلة نفسها · تصعيد: خطأ في أداة خارجية لا تملكها: بلّغ بإعادة الإنتاج ولا تخفه
+
+#### 6. الأدلة
+
+- `kosif-tool/.claude/skills/kosif-superpowers/references/app-studies/montaji.md`
+
+#### 7. قدرات قريبة في العائلة
+
+- `APPX-145` أي سرعة صوت بسلسلة atempo / Any audio speed with an atempo chain (documented)
+- `APPX-146` خلفية مموهة رخيصة للمقاس العمودي / Cheap blurred background fill (documented)
+- `APPX-148` تجهيز الوسائط لمحرر / Media prep for an editor (documented)
+- `APPX-149` ترميز بالعتاد مع رجوع للبرمجي / Hardware encoder with software fallback (documented)
+
+### `APPX-148` — تجهيز الوسائط لمحرر / Media prep for an editor
+
+| الحقل | القيمة |
+|---|---|
+| العائلة | `app-feature-transfer` ([فصل العائلة](../../../.claude/skills/kosif-superpowers/references/powers/app-feature-transfer.md)) |
+| المجموعة | البرمجة وبناء التطبيقات (`software`) |
+| نوع المخرج (A25، A27) | كود وتطبيقات ومواقع (`code`) |
+| الحالة في الكتالوج | 📄 `documented`: منهج موصوف يحتاج بناءً أو ربطًا قبل التشغيل |
+| سقف التحقق قبل العمل (A27) | V1 حتى تُبنى وتُشغَّل؛ لا تقدَّم جاهزة أبدًا |
+| نطاق الدليل | `repo` |
+| الرخصة | method idea from Montaji (no licence, private); idea only, in KOSIF's terms |
+
+**ما هي:** عند الاستيراد: افحص بـ ffprobe (الدوران 90° يبدّل العرض والارتفاع)، صورة غلاف عند 10% (حتى ثانية)، شريط مصغرات من لقطات بحث سريع على دفعات ثم tile، غلاف موجة 50 قيمة/ث بجذر تربيعي، وبروكسي فقط إذا كان الترميز أو صيغة البكسل أو الحاوية لا تعمل في المتصفح.
+
+**متى:** بناء تايملاين أو واجهة مونتاج / building a timeline UI
+
+**كيف:** `-noaccurate_seek -ss t -i src` × 8 per call → `tile=Nx1`؛ peaks: s16le 4 kHz → max per 80 samples → sqrt(v/max)·255؛ proxy if not (h264\|hevc\|vp9\|av1 in yuv420p in mp4/mov/webm).
+
+**التثبيت:** ffmpeg
+
+**الوسوم:** filmstrip · waveform · proxy · thumbnails · شريط مصغرات · موجة الصوت · بروكسي
+
+#### 1. الاستقبال (A25)
+
+- اللغة والإطار: افتراض مكتوب ← لغة المستودع الموجود، وإلا Python أو HTML/JS بلا اعتماديات
+- أين يعمل: افتراض مكتوب ← المتصفح أو سطر الأوامر حسب المخرج
+- مستودع أو ملفات موجودة: سؤال بإجابة مقترحة ← مشروع جديد مستقل
+- متى يكون ناجحًا: افتراض مكتوب ← الاختبارات الموجودة تمر + اختبار لكل سلوك جديد
+- لا تُفترض أبدًا: مادة الإنتاج نفسها، والإذن بخطوة مدفوعة أو منشورة أو لا رجعة فيها، والهوية والحقوق.
+
+#### 2. الجاهزية والشارة (A28)
+
+- `ffmpeg` ← افحص وجوده بأمر واحد قبل كتابة الشارة
+- الوضع 1: شارة «هنا الآن» بعد الفحص، لا 📄 الكتالوج تلقائيًا · الوضع 2: `كتالوج: 📄 · هنا: غير مفحوص` · الوضع 3: بلا شارة ولا معرّف.
+
+#### 3. موضعها في الخطة (A26)
+
+- عقدة منمّطة: المدخل `spec` ← المخرج `code`، والمنفّذ `method:APPX-148` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `app-studio` · `app-studio-paint` · `browser-scout` · `caption-lines` · `installer-triage` · `look-pipeline`.
+- مراحل النوع: قراءة الكود والاختبارات ← إعادة إنتاج أو اختبار جديد ← أصغر تغيير ← الاختبارات ← مراجعة الفرق ← فرع وPR.
+- إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
+
+#### 4. بوابة التحقق (A27)
+
+- إلزامي: الاختبارات الموجودة تمر قبل التعديل وبعده ← أمر الاختبار
+- إلزامي: اختبار لكل سلوك جديد أو خطأ مُصلح ← الاختبار الجديد يفشل قبل الإصلاح
+- إلزامي: لا أسرار ولا مسارات جلسة في الشيفرة ← بحث أنماط الأسرار
+- جودة: يطابق أسلوب الكود المحيط وتسمياته ← مراجعة الفرق
+- جودة: طريقة تشغيل مكتوبة ومجرَّبة ← تشغيل الأمر المكتوب
+- جودة: الفرق أصغر ما يحقق الطلب بلا إعادة كتابة غير مطلوبة ← git diff --stat
+- جودة: المدخل الخاطئ يعطي خطأ واضحًا لا انهيارًا صامتًا ← تشغيل بمدخل خاطئ
+- أمر الحكم في الوضع 1: `think.py qa code --answers qa.json` (PASS / FAIL / INCOMPLETE).
+
+#### 5. التعافي (A29)
+
+- `missing_dependency` (اعتمادية مفقودة، ميزانية 2): سمِّ الاعتمادية بالضبط (حزمة، برنامج، خط، نموذج) ← ثبّت محليًا في بيئة العمل إن كان مجانيًا ومسموحًا (pip --user أو venv أو npm محلي) · البديل: مسار المكتبة القياسية أو أداة أخرى من نفس المجموعة · تصعيد: تثبيت نظامي أو مدفوع أو يحتاج مفتاحًا: توقف واسأل
+- `quality_below_threshold` (جودة دون العتبة، ميزانية 3): أي معيار فشل وبكم (المقيس مقابل العتبة) ← عالج السبب الأكبر وحده ثم أعد القياس · البديل: المنهج البديل المكتوب للمرحلة في الخطة · تصعيد: معيار إلزامي لا يتحقق بعد البديل: توقف وأبلغ بالأرقام
+- `tool_error` (خطأ أداة، ميزانية 3): اقرأ آخر سطر في الخطأ ثم أول سطر من كودك فيه ← أصلح السبب المثبت وحده، ثم شغّل الاختبار المتعلق · البديل: أداة أخرى أو مسار يدوي للمرحلة نفسها · تصعيد: خطأ في أداة خارجية لا تملكها: بلّغ بإعادة الإنتاج ولا تخفه
+
+#### 6. الأدلة
+
+- `kosif-tool/.claude/skills/kosif-superpowers/references/app-studies/montaji.md`
+
+#### 7. قدرات قريبة في العائلة
+
+- `APPX-146` خلفية مموهة رخيصة للمقاس العمودي / Cheap blurred background fill (documented)
+- `APPX-147` نص عربي مرسوم بوحدات مرجعية / Arabic text raster in reference units (documented)
+- `APPX-149` ترميز بالعتاد مع رجوع للبرمجي / Hardware encoder with software fallback (documented)
 - `APPX-15` تصدير EDL ومطابقته / EDL interchange and conform (proven)
-- `APPX-16` عكس المقطع وتجميد الإطار / Reverse and freeze frame (proven)
+
+### `APPX-149` — ترميز بالعتاد مع رجوع للبرمجي / Hardware encoder with software fallback
+
+| الحقل | القيمة |
+|---|---|
+| العائلة | `app-feature-transfer` ([فصل العائلة](../../../.claude/skills/kosif-superpowers/references/powers/app-feature-transfer.md)) |
+| المجموعة | البرمجة وبناء التطبيقات (`software`) |
+| نوع المخرج (A25، A27) | كود وتطبيقات ومواقع (`code`) |
+| الحالة في الكتالوج | 📄 `documented`: منهج موصوف يحتاج بناءً أو ربطًا قبل التشغيل |
+| سقف التحقق قبل العمل (A27) | V1 حتى تُبنى وتُشغَّل؛ لا تقدَّم جاهزة أبدًا |
+| نطاق الدليل | `repo` |
+| الرخصة | method idea from Montaji (no licence, private); idea only, in KOSIF's terms |
+
+**ما هي:** جرّب مرمّز العتاد أولًا (VideoToolbox/NVENC) بمعدل بت = بت لكل بكسل × العرض × الارتفاع × الإطارات، وإن فشل فتح المرمّز أعد المحاولة بـ libx264/libx265 بـ CRF؛ احذف الملف الناقص عند الفشل.
+
+**متى:** تصدير سريع على أجهزة مختلفة / fast export on unknown machines
+
+**كيف:** bpp: normal 0.07 · high 0.12 · max 0.2 (H.264)، HEVC × 0.65؛ retry only on encoder-open errors; `-movflags +faststart`.
+
+**التثبيت:** ffmpeg
+
+**الوسوم:** videotoolbox · nvenc · encoder · bitrate · تصدير · ترميز
+
+#### 1. الاستقبال (A25)
+
+- اللغة والإطار: افتراض مكتوب ← لغة المستودع الموجود، وإلا Python أو HTML/JS بلا اعتماديات
+- أين يعمل: افتراض مكتوب ← المتصفح أو سطر الأوامر حسب المخرج
+- مستودع أو ملفات موجودة: سؤال بإجابة مقترحة ← مشروع جديد مستقل
+- متى يكون ناجحًا: افتراض مكتوب ← الاختبارات الموجودة تمر + اختبار لكل سلوك جديد
+- لا تُفترض أبدًا: مادة الإنتاج نفسها، والإذن بخطوة مدفوعة أو منشورة أو لا رجعة فيها، والهوية والحقوق.
+
+#### 2. الجاهزية والشارة (A28)
+
+- `ffmpeg` ← افحص وجوده بأمر واحد قبل كتابة الشارة
+- الوضع 1: شارة «هنا الآن» بعد الفحص، لا 📄 الكتالوج تلقائيًا · الوضع 2: `كتالوج: 📄 · هنا: غير مفحوص` · الوضع 3: بلا شارة ولا معرّف.
+
+#### 3. موضعها في الخطة (A26)
+
+- عقدة منمّطة: المدخل `spec` ← المخرج `code`، والمنفّذ `method:APPX-149` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `app-studio` · `app-studio-paint` · `browser-scout` · `caption-lines` · `installer-triage` · `look-pipeline`.
+- مراحل النوع: قراءة الكود والاختبارات ← إعادة إنتاج أو اختبار جديد ← أصغر تغيير ← الاختبارات ← مراجعة الفرق ← فرع وPR.
+- إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
+
+#### 4. بوابة التحقق (A27)
+
+- إلزامي: الاختبارات الموجودة تمر قبل التعديل وبعده ← أمر الاختبار
+- إلزامي: اختبار لكل سلوك جديد أو خطأ مُصلح ← الاختبار الجديد يفشل قبل الإصلاح
+- إلزامي: لا أسرار ولا مسارات جلسة في الشيفرة ← بحث أنماط الأسرار
+- جودة: يطابق أسلوب الكود المحيط وتسمياته ← مراجعة الفرق
+- جودة: طريقة تشغيل مكتوبة ومجرَّبة ← تشغيل الأمر المكتوب
+- جودة: الفرق أصغر ما يحقق الطلب بلا إعادة كتابة غير مطلوبة ← git diff --stat
+- جودة: المدخل الخاطئ يعطي خطأ واضحًا لا انهيارًا صامتًا ← تشغيل بمدخل خاطئ
+- أمر الحكم في الوضع 1: `think.py qa code --answers qa.json` (PASS / FAIL / INCOMPLETE).
+
+#### 5. التعافي (A29)
+
+- `missing_dependency` (اعتمادية مفقودة، ميزانية 2): سمِّ الاعتمادية بالضبط (حزمة، برنامج، خط، نموذج) ← ثبّت محليًا في بيئة العمل إن كان مجانيًا ومسموحًا (pip --user أو venv أو npm محلي) · البديل: مسار المكتبة القياسية أو أداة أخرى من نفس المجموعة · تصعيد: تثبيت نظامي أو مدفوع أو يحتاج مفتاحًا: توقف واسأل
+- `quality_below_threshold` (جودة دون العتبة، ميزانية 3): أي معيار فشل وبكم (المقيس مقابل العتبة) ← عالج السبب الأكبر وحده ثم أعد القياس · البديل: المنهج البديل المكتوب للمرحلة في الخطة · تصعيد: معيار إلزامي لا يتحقق بعد البديل: توقف وأبلغ بالأرقام
+- `tool_error` (خطأ أداة، ميزانية 3): اقرأ آخر سطر في الخطأ ثم أول سطر من كودك فيه ← أصلح السبب المثبت وحده، ثم شغّل الاختبار المتعلق · البديل: أداة أخرى أو مسار يدوي للمرحلة نفسها · تصعيد: خطأ في أداة خارجية لا تملكها: بلّغ بإعادة الإنتاج ولا تخفه
+
+#### 6. الأدلة
+
+- `kosif-tool/.claude/skills/kosif-superpowers/references/app-studies/montaji.md`
+
+#### 7. قدرات قريبة في العائلة
+
+- `APPX-147` نص عربي مرسوم بوحدات مرجعية / Arabic text raster in reference units (documented)
+- `APPX-148` تجهيز الوسائط لمحرر / Media prep for an editor (documented)
+- `APPX-15` تصدير EDL ومطابقته / EDL interchange and conform (proven)
+- `APPX-150` خادم محلي آمن لأداة مونتاج / A safe local editor server (documented)
 
 ### `APPX-15` — تصدير EDL ومطابقته / EDL interchange and conform
 
@@ -4145,7 +4888,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `spec` ← المخرج `code`، والمنفّذ `method:APPX-15` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `app-studio` · `app-studio-paint` · `browser-scout` · `installer-triage` · `motion-kit-bridge` · `source-scout`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `app-studio` · `app-studio-paint` · `browser-scout` · `caption-lines` · `installer-triage` · `look-pipeline`.
 - مراحل النوع: قراءة الكود والاختبارات ← إعادة إنتاج أو اختبار جديد ← أصغر تغيير ← الاختبارات ← مراجعة الفرق ← فرع وPR.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -4173,8 +4916,427 @@
 
 #### 7. قدرات قريبة في العائلة
 
-- `APPX-139` المهارات: تحميل بالوصف وتثبيت صريح واستيراد نصي آمن / Skills: description-matched loading, explicit pinning, safe text-only import (documented)
-- `APPX-14` إزالة خلفية صورة / Background removal on a still (proven)
+- `APPX-148` تجهيز الوسائط لمحرر / Media prep for an editor (documented)
+- `APPX-149` ترميز بالعتاد مع رجوع للبرمجي / Hardware encoder with software fallback (documented)
+- `APPX-150` خادم محلي آمن لأداة مونتاج / A safe local editor server (documented)
+- `APPX-151` تنزيل نماذج موثَّق / Verified model downloads (documented)
+
+### `APPX-150` — خادم محلي آمن لأداة مونتاج / A safe local editor server
+
+| الحقل | القيمة |
+|---|---|
+| العائلة | `app-feature-transfer` ([فصل العائلة](../../../.claude/skills/kosif-superpowers/references/powers/app-feature-transfer.md)) |
+| المجموعة | البرمجة وبناء التطبيقات (`software`) |
+| نوع المخرج (A25، A27) | كود وتطبيقات ومواقع (`code`) |
+| الحالة في الكتالوج | 📄 `documented`: منهج موصوف يحتاج بناءً أو ربطًا قبل التشغيل |
+| سقف التحقق قبل العمل (A27) | V1 حتى تُبنى وتُشغَّل؛ لا تقدَّم جاهزة أبدًا |
+| نطاق الدليل | `repo` |
+| الرخصة | method idea from Montaji (no licence, private); idea only, in KOSIF's terms |
+
+**ما هي:** لأي أداة تفتح واجهة على localhost: استمع على 127.0.0.1 فقط، اقبل Host معروفًا فقط (ضد DNS rebinding)، واطلب رأسًا خاصًا في كل طلب يغيّر شيئًا ليجبر المتصفح على preflight فلا تتحكم مواقع أخرى بالأداة، وطبّع المسارات، وتحقق من المعرّفات بنمط، واخرج عند الخمول أو موت العملية الأم.
+
+**متى:** عند بناء أداة ويب محلية / building any loopback web tool
+
+**كيف:** checklist: bind 127.0.0.1 · Host allowlist · X-<app>: 1 on non-GET · path.normalize + prefix check · id regex · idle exit · ppid==1 exit.
+
+**التثبيت:** لا خطوة تثبيت مسجلة
+
+**الوسوم:** localhost · security · dns rebinding · cors · أمان · خادم محلي
+
+#### 1. الاستقبال (A25)
+
+- اللغة والإطار: افتراض مكتوب ← لغة المستودع الموجود، وإلا Python أو HTML/JS بلا اعتماديات
+- أين يعمل: افتراض مكتوب ← المتصفح أو سطر الأوامر حسب المخرج
+- مستودع أو ملفات موجودة: سؤال بإجابة مقترحة ← مشروع جديد مستقل
+- متى يكون ناجحًا: افتراض مكتوب ← الاختبارات الموجودة تمر + اختبار لكل سلوك جديد
+- لا تُفترض أبدًا: مادة الإنتاج نفسها، والإذن بخطوة مدفوعة أو منشورة أو لا رجعة فيها، والهوية والحقوق.
+
+#### 2. الجاهزية والشارة (A28)
+
+- لا متطلبات مسجلة؛ افحص المسار والأداة بـ `hub.py doctor` قبل الشارة.
+- الوضع 1: شارة «هنا الآن» بعد الفحص، لا 📄 الكتالوج تلقائيًا · الوضع 2: `كتالوج: 📄 · هنا: غير مفحوص` · الوضع 3: بلا شارة ولا معرّف.
+
+#### 3. موضعها في الخطة (A26)
+
+- عقدة منمّطة: المدخل `spec` ← المخرج `code`، والمنفّذ `method:APPX-150` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `app-studio` · `app-studio-paint` · `browser-scout` · `caption-lines` · `installer-triage` · `look-pipeline`.
+- مراحل النوع: قراءة الكود والاختبارات ← إعادة إنتاج أو اختبار جديد ← أصغر تغيير ← الاختبارات ← مراجعة الفرق ← فرع وPR.
+- إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
+
+#### 4. بوابة التحقق (A27)
+
+- إلزامي: الاختبارات الموجودة تمر قبل التعديل وبعده ← أمر الاختبار
+- إلزامي: اختبار لكل سلوك جديد أو خطأ مُصلح ← الاختبار الجديد يفشل قبل الإصلاح
+- إلزامي: لا أسرار ولا مسارات جلسة في الشيفرة ← بحث أنماط الأسرار
+- جودة: يطابق أسلوب الكود المحيط وتسمياته ← مراجعة الفرق
+- جودة: طريقة تشغيل مكتوبة ومجرَّبة ← تشغيل الأمر المكتوب
+- جودة: الفرق أصغر ما يحقق الطلب بلا إعادة كتابة غير مطلوبة ← git diff --stat
+- جودة: المدخل الخاطئ يعطي خطأ واضحًا لا انهيارًا صامتًا ← تشغيل بمدخل خاطئ
+- أمر الحكم في الوضع 1: `think.py qa code --answers qa.json` (PASS / FAIL / INCOMPLETE).
+
+#### 5. التعافي (A29)
+
+- `quality_below_threshold` (جودة دون العتبة، ميزانية 3): أي معيار فشل وبكم (المقيس مقابل العتبة) ← عالج السبب الأكبر وحده ثم أعد القياس · البديل: المنهج البديل المكتوب للمرحلة في الخطة · تصعيد: معيار إلزامي لا يتحقق بعد البديل: توقف وأبلغ بالأرقام
+- `tool_error` (خطأ أداة، ميزانية 3): اقرأ آخر سطر في الخطأ ثم أول سطر من كودك فيه ← أصلح السبب المثبت وحده، ثم شغّل الاختبار المتعلق · البديل: أداة أخرى أو مسار يدوي للمرحلة نفسها · تصعيد: خطأ في أداة خارجية لا تملكها: بلّغ بإعادة الإنتاج ولا تخفه
+
+#### 6. الأدلة
+
+- `kosif-tool/.claude/skills/kosif-superpowers/references/app-studies/montaji.md`
+
+#### 7. قدرات قريبة في العائلة
+
+- `APPX-149` ترميز بالعتاد مع رجوع للبرمجي / Hardware encoder with software fallback (documented)
+- `APPX-15` تصدير EDL ومطابقته / EDL interchange and conform (proven)
+- `APPX-151` تنزيل نماذج موثَّق / Verified model downloads (documented)
+- `APPX-152` تراجع يجمع سحب المنزلقات / Undo that groups slider drags (documented)
+
+### `APPX-151` — تنزيل نماذج موثَّق / Verified model downloads
+
+| الحقل | القيمة |
+|---|---|
+| العائلة | `app-feature-transfer` ([فصل العائلة](../../../.claude/skills/kosif-superpowers/references/powers/app-feature-transfer.md)) |
+| المجموعة | البرمجة وبناء التطبيقات (`software`) |
+| نوع المخرج (A25، A27) | كود وتطبيقات ومواقع (`code`) |
+| الحالة في الكتالوج | 📄 `documented`: منهج موصوف يحتاج بناءً أو ربطًا قبل التشغيل |
+| سقف التحقق قبل العمل (A27) | V1 حتى تُبنى وتُشغَّل؛ لا تقدَّم جاهزة أبدًا |
+| نطاق الدليل | `repo` |
+| الرخصة | method idea from Montaji (no licence, private); idea only, in KOSIF's terms |
+
+**ما هي:** نزّل النموذج إلى ملف .part مع تقدم مرئي وإلغاء، احسب SHA-256 أثناء التنزيل وقارنه ببصمة مثبتة، ثم أعد التسمية ذريًا؛ مرآة محلية للاختبارات فقط.
+
+**متى:** أول استعمال لنموذج ذكاء اصطناعي محلي / first use of a local AI model
+
+**كيف:** stream → hashlib.sha256().update(chunk) → compare → os.replace(part, final); remove .part on error or cancel.
+
+**التثبيت:** لا خطوة تثبيت مسجلة
+
+**الوسوم:** model download · sha256 · checksum · تنزيل نموذج · تحقق
+
+#### 1. الاستقبال (A25)
+
+- اللغة والإطار: افتراض مكتوب ← لغة المستودع الموجود، وإلا Python أو HTML/JS بلا اعتماديات
+- أين يعمل: افتراض مكتوب ← المتصفح أو سطر الأوامر حسب المخرج
+- مستودع أو ملفات موجودة: سؤال بإجابة مقترحة ← مشروع جديد مستقل
+- متى يكون ناجحًا: افتراض مكتوب ← الاختبارات الموجودة تمر + اختبار لكل سلوك جديد
+- لا تُفترض أبدًا: مادة الإنتاج نفسها، والإذن بخطوة مدفوعة أو منشورة أو لا رجعة فيها، والهوية والحقوق.
+
+#### 2. الجاهزية والشارة (A28)
+
+- `network` ← افحص وجوده بأمر واحد قبل كتابة الشارة
+- الوضع 1: شارة «هنا الآن» بعد الفحص، لا 📄 الكتالوج تلقائيًا · الوضع 2: `كتالوج: 📄 · هنا: غير مفحوص` · الوضع 3: بلا شارة ولا معرّف.
+
+#### 3. موضعها في الخطة (A26)
+
+- عقدة منمّطة: المدخل `spec` ← المخرج `code`، والمنفّذ `method:APPX-151` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `app-studio` · `app-studio-paint` · `browser-scout` · `caption-lines` · `installer-triage` · `look-pipeline`.
+- مراحل النوع: قراءة الكود والاختبارات ← إعادة إنتاج أو اختبار جديد ← أصغر تغيير ← الاختبارات ← مراجعة الفرق ← فرع وPR.
+- إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
+
+#### 4. بوابة التحقق (A27)
+
+- إلزامي: الاختبارات الموجودة تمر قبل التعديل وبعده ← أمر الاختبار
+- إلزامي: اختبار لكل سلوك جديد أو خطأ مُصلح ← الاختبار الجديد يفشل قبل الإصلاح
+- إلزامي: لا أسرار ولا مسارات جلسة في الشيفرة ← بحث أنماط الأسرار
+- جودة: يطابق أسلوب الكود المحيط وتسمياته ← مراجعة الفرق
+- جودة: طريقة تشغيل مكتوبة ومجرَّبة ← تشغيل الأمر المكتوب
+- جودة: الفرق أصغر ما يحقق الطلب بلا إعادة كتابة غير مطلوبة ← git diff --stat
+- جودة: المدخل الخاطئ يعطي خطأ واضحًا لا انهيارًا صامتًا ← تشغيل بمدخل خاطئ
+- أمر الحكم في الوضع 1: `think.py qa code --answers qa.json` (PASS / FAIL / INCOMPLETE).
+
+#### 5. التعافي (A29)
+
+- `missing_dependency` (اعتمادية مفقودة، ميزانية 2): سمِّ الاعتمادية بالضبط (حزمة، برنامج، خط، نموذج) ← ثبّت محليًا في بيئة العمل إن كان مجانيًا ومسموحًا (pip --user أو venv أو npm محلي) · البديل: مسار المكتبة القياسية أو أداة أخرى من نفس المجموعة · تصعيد: تثبيت نظامي أو مدفوع أو يحتاج مفتاحًا: توقف واسأل
+- `quality_below_threshold` (جودة دون العتبة، ميزانية 3): أي معيار فشل وبكم (المقيس مقابل العتبة) ← عالج السبب الأكبر وحده ثم أعد القياس · البديل: المنهج البديل المكتوب للمرحلة في الخطة · تصعيد: معيار إلزامي لا يتحقق بعد البديل: توقف وأبلغ بالأرقام
+- `tool_error` (خطأ أداة، ميزانية 3): اقرأ آخر سطر في الخطأ ثم أول سطر من كودك فيه ← أصلح السبب المثبت وحده، ثم شغّل الاختبار المتعلق · البديل: أداة أخرى أو مسار يدوي للمرحلة نفسها · تصعيد: خطأ في أداة خارجية لا تملكها: بلّغ بإعادة الإنتاج ولا تخفه
+
+#### 6. الأدلة
+
+- `kosif-tool/.claude/skills/kosif-superpowers/references/app-studies/montaji.md`
+
+#### 7. قدرات قريبة في العائلة
+
+- `APPX-15` تصدير EDL ومطابقته / EDL interchange and conform (proven)
+- `APPX-150` خادم محلي آمن لأداة مونتاج / A safe local editor server (documented)
+- `APPX-152` تراجع يجمع سحب المنزلقات / Undo that groups slider drags (documented)
+- `APPX-153` اختبار ذاتي داخل المضيف الحقيقي / Self-test inside the real host (documented)
+
+### `APPX-152` — تراجع يجمع سحب المنزلقات / Undo that groups slider drags
+
+| الحقل | القيمة |
+|---|---|
+| العائلة | `app-feature-transfer` ([فصل العائلة](../../../.claude/skills/kosif-superpowers/references/powers/app-feature-transfer.md)) |
+| المجموعة | البرمجة وبناء التطبيقات (`software`) |
+| نوع المخرج (A25، A27) | كود وتطبيقات ومواقع (`code`) |
+| الحالة في الكتالوج | 📄 `documented`: منهج موصوف يحتاج بناءً أو ربطًا قبل التشغيل |
+| سقف التحقق قبل العمل (A27) | V1 حتى تُبنى وتُشغَّل؛ لا تقدَّم جاهزة أبدًا |
+| نطاق الدليل | `repo` |
+| الرخصة | method idea from Montaji (no licence, private); idea only, in KOSIF's terms |
+
+**ما هي:** كل تعديل يمر بدالة واحدة تحفظ لقطة JSON (حتى 150)؛ التعديلات المتتالية بالمفتاح نفسه خلال ثانية ونصف خطوة واحدة؛ حفظ تلقائي مؤجل 0.7 ث بكتابة ذرية ونسخة .bak.
+
+**متى:** محرر تفاعلي أو ملف مشروع يُعدَّل كثيرًا / interactive editors
+
+**كيف:** change(fn, {merge:key}) → push snapshot unless same key within 1.5 s; save: write tmp → rename; keep project.json.bak.
+
+**التثبيت:** لا خطوة تثبيت مسجلة
+
+**الوسوم:** undo · redo · autosave · تراجع · حفظ تلقائي
+
+#### 1. الاستقبال (A25)
+
+- اللغة والإطار: افتراض مكتوب ← لغة المستودع الموجود، وإلا Python أو HTML/JS بلا اعتماديات
+- أين يعمل: افتراض مكتوب ← المتصفح أو سطر الأوامر حسب المخرج
+- مستودع أو ملفات موجودة: سؤال بإجابة مقترحة ← مشروع جديد مستقل
+- متى يكون ناجحًا: افتراض مكتوب ← الاختبارات الموجودة تمر + اختبار لكل سلوك جديد
+- لا تُفترض أبدًا: مادة الإنتاج نفسها، والإذن بخطوة مدفوعة أو منشورة أو لا رجعة فيها، والهوية والحقوق.
+
+#### 2. الجاهزية والشارة (A28)
+
+- لا متطلبات مسجلة؛ افحص المسار والأداة بـ `hub.py doctor` قبل الشارة.
+- الوضع 1: شارة «هنا الآن» بعد الفحص، لا 📄 الكتالوج تلقائيًا · الوضع 2: `كتالوج: 📄 · هنا: غير مفحوص` · الوضع 3: بلا شارة ولا معرّف.
+
+#### 3. موضعها في الخطة (A26)
+
+- عقدة منمّطة: المدخل `spec` ← المخرج `code`، والمنفّذ `method:APPX-152` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `app-studio` · `app-studio-paint` · `browser-scout` · `caption-lines` · `installer-triage` · `look-pipeline`.
+- مراحل النوع: قراءة الكود والاختبارات ← إعادة إنتاج أو اختبار جديد ← أصغر تغيير ← الاختبارات ← مراجعة الفرق ← فرع وPR.
+- إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
+
+#### 4. بوابة التحقق (A27)
+
+- إلزامي: الاختبارات الموجودة تمر قبل التعديل وبعده ← أمر الاختبار
+- إلزامي: اختبار لكل سلوك جديد أو خطأ مُصلح ← الاختبار الجديد يفشل قبل الإصلاح
+- إلزامي: لا أسرار ولا مسارات جلسة في الشيفرة ← بحث أنماط الأسرار
+- جودة: يطابق أسلوب الكود المحيط وتسمياته ← مراجعة الفرق
+- جودة: طريقة تشغيل مكتوبة ومجرَّبة ← تشغيل الأمر المكتوب
+- جودة: الفرق أصغر ما يحقق الطلب بلا إعادة كتابة غير مطلوبة ← git diff --stat
+- جودة: المدخل الخاطئ يعطي خطأ واضحًا لا انهيارًا صامتًا ← تشغيل بمدخل خاطئ
+- أمر الحكم في الوضع 1: `think.py qa code --answers qa.json` (PASS / FAIL / INCOMPLETE).
+
+#### 5. التعافي (A29)
+
+- `quality_below_threshold` (جودة دون العتبة، ميزانية 3): أي معيار فشل وبكم (المقيس مقابل العتبة) ← عالج السبب الأكبر وحده ثم أعد القياس · البديل: المنهج البديل المكتوب للمرحلة في الخطة · تصعيد: معيار إلزامي لا يتحقق بعد البديل: توقف وأبلغ بالأرقام
+- `tool_error` (خطأ أداة، ميزانية 3): اقرأ آخر سطر في الخطأ ثم أول سطر من كودك فيه ← أصلح السبب المثبت وحده، ثم شغّل الاختبار المتعلق · البديل: أداة أخرى أو مسار يدوي للمرحلة نفسها · تصعيد: خطأ في أداة خارجية لا تملكها: بلّغ بإعادة الإنتاج ولا تخفه
+
+#### 6. الأدلة
+
+- `kosif-tool/.claude/skills/kosif-superpowers/references/app-studies/montaji.md`
+
+#### 7. قدرات قريبة في العائلة
+
+- `APPX-150` خادم محلي آمن لأداة مونتاج / A safe local editor server (documented)
+- `APPX-151` تنزيل نماذج موثَّق / Verified model downloads (documented)
+- `APPX-153` اختبار ذاتي داخل المضيف الحقيقي / Self-test inside the real host (documented)
+- `APPX-154` ذاكرة وسائط بالمحتوى واستئناف / Content-addressed media cache with resume (documented)
+
+### `APPX-153` — اختبار ذاتي داخل المضيف الحقيقي / Self-test inside the real host
+
+| الحقل | القيمة |
+|---|---|
+| العائلة | `app-feature-transfer` ([فصل العائلة](../../../.claude/skills/kosif-superpowers/references/powers/app-feature-transfer.md)) |
+| المجموعة | البرمجة وبناء التطبيقات (`software`) |
+| نوع المخرج (A25، A27) | كود وتطبيقات ومواقع (`code`) |
+| الحالة في الكتالوج | 📄 `documented`: منهج موصوف يحتاج بناءً أو ربطًا قبل التشغيل |
+| سقف التحقق قبل العمل (A27) | V1 حتى تُبنى وتُشغَّل؛ لا تقدَّم جاهزة أبدًا |
+| نطاق الدليل | `repo` |
+| الرخصة | method idea from Montaji (no licence, private); idea only, in KOSIF's terms |
+
+**ما هي:** افتح الواجهة بمعامل selftest فتجري خطوات حقيقية (لون، نص عربي، مشروع، استيراد، فك ترميز، فلتر، تصدير، ترجمة) داخل المتصفح الفعلي، كل خطوة ok/error، مع فحص بكسلات (نسبة الإضاءة، رمادية الأبيض والأسود)، ويُكتب التقرير إلى ملف.
+
+**متى:** قبل تسليم أداة تعمل في WebKit أو Chromium / before shipping a web-view tool
+
+**كيف:** ?selftest=1 → steps → JSON report → POST to a local file; pixel probes: lit ratio > 0.2, \|r−g\|<4 for mono.
+
+**التثبيت:** لا خطوة تثبيت مسجلة
+
+**الوسوم:** selftest · e2e · qa · اختبار ذاتي · webview
+
+#### 1. الاستقبال (A25)
+
+- اللغة والإطار: افتراض مكتوب ← لغة المستودع الموجود، وإلا Python أو HTML/JS بلا اعتماديات
+- أين يعمل: افتراض مكتوب ← المتصفح أو سطر الأوامر حسب المخرج
+- مستودع أو ملفات موجودة: سؤال بإجابة مقترحة ← مشروع جديد مستقل
+- متى يكون ناجحًا: افتراض مكتوب ← الاختبارات الموجودة تمر + اختبار لكل سلوك جديد
+- لا تُفترض أبدًا: مادة الإنتاج نفسها، والإذن بخطوة مدفوعة أو منشورة أو لا رجعة فيها، والهوية والحقوق.
+
+#### 2. الجاهزية والشارة (A28)
+
+- لا متطلبات مسجلة؛ افحص المسار والأداة بـ `hub.py doctor` قبل الشارة.
+- الوضع 1: شارة «هنا الآن» بعد الفحص، لا 📄 الكتالوج تلقائيًا · الوضع 2: `كتالوج: 📄 · هنا: غير مفحوص` · الوضع 3: بلا شارة ولا معرّف.
+
+#### 3. موضعها في الخطة (A26)
+
+- عقدة منمّطة: المدخل `spec` ← المخرج `code`، والمنفّذ `method:APPX-153` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `app-studio` · `app-studio-paint` · `browser-scout` · `caption-lines` · `installer-triage` · `look-pipeline`.
+- مراحل النوع: قراءة الكود والاختبارات ← إعادة إنتاج أو اختبار جديد ← أصغر تغيير ← الاختبارات ← مراجعة الفرق ← فرع وPR.
+- إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
+
+#### 4. بوابة التحقق (A27)
+
+- إلزامي: الاختبارات الموجودة تمر قبل التعديل وبعده ← أمر الاختبار
+- إلزامي: اختبار لكل سلوك جديد أو خطأ مُصلح ← الاختبار الجديد يفشل قبل الإصلاح
+- إلزامي: لا أسرار ولا مسارات جلسة في الشيفرة ← بحث أنماط الأسرار
+- جودة: يطابق أسلوب الكود المحيط وتسمياته ← مراجعة الفرق
+- جودة: طريقة تشغيل مكتوبة ومجرَّبة ← تشغيل الأمر المكتوب
+- جودة: الفرق أصغر ما يحقق الطلب بلا إعادة كتابة غير مطلوبة ← git diff --stat
+- جودة: المدخل الخاطئ يعطي خطأ واضحًا لا انهيارًا صامتًا ← تشغيل بمدخل خاطئ
+- أمر الحكم في الوضع 1: `think.py qa code --answers qa.json` (PASS / FAIL / INCOMPLETE).
+
+#### 5. التعافي (A29)
+
+- `quality_below_threshold` (جودة دون العتبة، ميزانية 3): أي معيار فشل وبكم (المقيس مقابل العتبة) ← عالج السبب الأكبر وحده ثم أعد القياس · البديل: المنهج البديل المكتوب للمرحلة في الخطة · تصعيد: معيار إلزامي لا يتحقق بعد البديل: توقف وأبلغ بالأرقام
+- `tool_error` (خطأ أداة، ميزانية 3): اقرأ آخر سطر في الخطأ ثم أول سطر من كودك فيه ← أصلح السبب المثبت وحده، ثم شغّل الاختبار المتعلق · البديل: أداة أخرى أو مسار يدوي للمرحلة نفسها · تصعيد: خطأ في أداة خارجية لا تملكها: بلّغ بإعادة الإنتاج ولا تخفه
+
+#### 6. الأدلة
+
+- `kosif-tool/.claude/skills/kosif-superpowers/references/app-studies/montaji.md`
+
+#### 7. قدرات قريبة في العائلة
+
+- `APPX-151` تنزيل نماذج موثَّق / Verified model downloads (documented)
+- `APPX-152` تراجع يجمع سحب المنزلقات / Undo that groups slider drags (documented)
+- `APPX-154` ذاكرة وسائط بالمحتوى واستئناف / Content-addressed media cache with resume (documented)
+- `APPX-155` تفريغ عربي محلي بلا إنترنت / Offline Arabic speech stack (documented)
+
+### `APPX-154` — ذاكرة وسائط بالمحتوى واستئناف / Content-addressed media cache with resume
+
+| الحقل | القيمة |
+|---|---|
+| العائلة | `app-feature-transfer` ([فصل العائلة](../../../.claude/skills/kosif-superpowers/references/powers/app-feature-transfer.md)) |
+| المجموعة | البرمجة وبناء التطبيقات (`software`) |
+| نوع المخرج (A25، A27) | كود وتطبيقات ومواقع (`code`) |
+| الحالة في الكتالوج | 📄 `documented`: منهج موصوف يحتاج بناءً أو ربطًا قبل التشغيل |
+| سقف التحقق قبل العمل (A27) | V1 حتى تُبنى وتُشغَّل؛ لا تقدَّم جاهزة أبدًا |
+| نطاق الدليل | `repo` |
+| الرخصة | method idea from Montaji (no licence, private); idea only, in KOSIF's terms |
+
+**ما هي:** معرّف الوسائط = بصمة (المسار، الحجم، وقت التعديل)، فلا يُعاد تجهيز ملف لم يتغير؛ طابور عمل باثنين معًا، ويستأنف عند التشغيل التالي ما انقطع؛ الأصل لا يُنسخ ولا يُعدَّل.
+
+**متى:** استيراد ملفات كثيرة أو كبيرة / importing many or large files
+
+**كيف:** id = sha1(f'{path}\|{size}\|{mtime}')[:16]; index.json written atomically and debounced; on start re-queue status=processing.
+
+**التثبيت:** لا خطوة تثبيت مسجلة
+
+**الوسوم:** cache · media library · resume · ذاكرة مؤقتة · استيراد
+
+#### 1. الاستقبال (A25)
+
+- اللغة والإطار: افتراض مكتوب ← لغة المستودع الموجود، وإلا Python أو HTML/JS بلا اعتماديات
+- أين يعمل: افتراض مكتوب ← المتصفح أو سطر الأوامر حسب المخرج
+- مستودع أو ملفات موجودة: سؤال بإجابة مقترحة ← مشروع جديد مستقل
+- متى يكون ناجحًا: افتراض مكتوب ← الاختبارات الموجودة تمر + اختبار لكل سلوك جديد
+- لا تُفترض أبدًا: مادة الإنتاج نفسها، والإذن بخطوة مدفوعة أو منشورة أو لا رجعة فيها، والهوية والحقوق.
+
+#### 2. الجاهزية والشارة (A28)
+
+- لا متطلبات مسجلة؛ افحص المسار والأداة بـ `hub.py doctor` قبل الشارة.
+- الوضع 1: شارة «هنا الآن» بعد الفحص، لا 📄 الكتالوج تلقائيًا · الوضع 2: `كتالوج: 📄 · هنا: غير مفحوص` · الوضع 3: بلا شارة ولا معرّف.
+
+#### 3. موضعها في الخطة (A26)
+
+- عقدة منمّطة: المدخل `spec` ← المخرج `code`، والمنفّذ `method:APPX-154` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `app-studio` · `app-studio-paint` · `browser-scout` · `caption-lines` · `installer-triage` · `look-pipeline`.
+- مراحل النوع: قراءة الكود والاختبارات ← إعادة إنتاج أو اختبار جديد ← أصغر تغيير ← الاختبارات ← مراجعة الفرق ← فرع وPR.
+- إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
+
+#### 4. بوابة التحقق (A27)
+
+- إلزامي: الاختبارات الموجودة تمر قبل التعديل وبعده ← أمر الاختبار
+- إلزامي: اختبار لكل سلوك جديد أو خطأ مُصلح ← الاختبار الجديد يفشل قبل الإصلاح
+- إلزامي: لا أسرار ولا مسارات جلسة في الشيفرة ← بحث أنماط الأسرار
+- جودة: يطابق أسلوب الكود المحيط وتسمياته ← مراجعة الفرق
+- جودة: طريقة تشغيل مكتوبة ومجرَّبة ← تشغيل الأمر المكتوب
+- جودة: الفرق أصغر ما يحقق الطلب بلا إعادة كتابة غير مطلوبة ← git diff --stat
+- جودة: المدخل الخاطئ يعطي خطأ واضحًا لا انهيارًا صامتًا ← تشغيل بمدخل خاطئ
+- أمر الحكم في الوضع 1: `think.py qa code --answers qa.json` (PASS / FAIL / INCOMPLETE).
+
+#### 5. التعافي (A29)
+
+- `quality_below_threshold` (جودة دون العتبة، ميزانية 3): أي معيار فشل وبكم (المقيس مقابل العتبة) ← عالج السبب الأكبر وحده ثم أعد القياس · البديل: المنهج البديل المكتوب للمرحلة في الخطة · تصعيد: معيار إلزامي لا يتحقق بعد البديل: توقف وأبلغ بالأرقام
+- `tool_error` (خطأ أداة، ميزانية 3): اقرأ آخر سطر في الخطأ ثم أول سطر من كودك فيه ← أصلح السبب المثبت وحده، ثم شغّل الاختبار المتعلق · البديل: أداة أخرى أو مسار يدوي للمرحلة نفسها · تصعيد: خطأ في أداة خارجية لا تملكها: بلّغ بإعادة الإنتاج ولا تخفه
+
+#### 6. الأدلة
+
+- `kosif-tool/.claude/skills/kosif-superpowers/references/app-studies/montaji.md`
+
+#### 7. قدرات قريبة في العائلة
+
+- `APPX-152` تراجع يجمع سحب المنزلقات / Undo that groups slider drags (documented)
+- `APPX-153` اختبار ذاتي داخل المضيف الحقيقي / Self-test inside the real host (documented)
+- `APPX-155` تفريغ عربي محلي بلا إنترنت / Offline Arabic speech stack (documented)
+- `APPX-16` عكس المقطع وتجميد الإطار / Reverse and freeze frame (proven)
+
+### `APPX-155` — تفريغ عربي محلي بلا إنترنت / Offline Arabic speech stack
+
+| الحقل | القيمة |
+|---|---|
+| العائلة | `app-feature-transfer` ([فصل العائلة](../../../.claude/skills/kosif-superpowers/references/powers/app-feature-transfer.md)) |
+| المجموعة | البرمجة وبناء التطبيقات (`software`) |
+| نوع المخرج (A25، A27) | كود وتطبيقات ومواقع (`code`) |
+| الحالة في الكتالوج | 📄 `documented`: منهج موصوف يحتاج بناءً أو ربطًا قبل التشغيل |
+| سقف التحقق قبل العمل (A27) | V1 حتى تُبنى وتُشغَّل؛ لا تقدَّم جاهزة أبدًا |
+| نطاق الدليل | `repo` |
+| الرخصة | method idea from Montaji (no licence, private); idea only, in KOSIF's terms |
+
+**ما هي:** whisper.cpp مع large-v3-turbo-q5_0 (574 ميجا، الأدق للعربي) أو small-q5_1 (190 ميجا) وSilero VAD، بكلمة لكل مدخل؛ يُمزج صوت التايملاين إلى 16 كيلوهرتز أحادي قبل التفريغ.
+
+**متى:** ترجمة عربية على الجهاز / Arabic captions on the device
+
+**كيف:** `whisper-cli -m ggml-large-v3-turbo-q5_0.bin -f audio.wav -l ar -ml 1 -sow -oj --vad -vm ggml-silero-v5.1.2.bin` ثم `caption_lines.py group audio.json -o captions.srt`.
+
+**المعاملات:** -l ar -ml 1 -sow -oj --vad
+
+**التثبيت:** whisper.cpp (MIT) + models from huggingface.co/ggerganov/whisper.cpp
+
+**الوسوم:** whisper.cpp · arabic transcription · تفريغ عربي · offline · vad · silero
+
+#### 1. الاستقبال (A25)
+
+- اللغة والإطار: افتراض مكتوب ← لغة المستودع الموجود، وإلا Python أو HTML/JS بلا اعتماديات
+- أين يعمل: افتراض مكتوب ← المتصفح أو سطر الأوامر حسب المخرج
+- مستودع أو ملفات موجودة: سؤال بإجابة مقترحة ← مشروع جديد مستقل
+- متى يكون ناجحًا: افتراض مكتوب ← الاختبارات الموجودة تمر + اختبار لكل سلوك جديد
+- لا تُفترض أبدًا: مادة الإنتاج نفسها، والإذن بخطوة مدفوعة أو منشورة أو لا رجعة فيها، والهوية والحقوق.
+
+#### 2. الجاهزية والشارة (A28)
+
+- `pip:faster-whisper` ← python3 -c "import faster-whisper" (اسم الاستيراد قد يختلف عن اسم الحزمة)
+- `network` ← افحص وجوده بأمر واحد قبل كتابة الشارة
+- الوضع 1: شارة «هنا الآن» بعد الفحص، لا 📄 الكتالوج تلقائيًا · الوضع 2: `كتالوج: 📄 · هنا: غير مفحوص` · الوضع 3: بلا شارة ولا معرّف.
+
+#### 3. موضعها في الخطة (A26)
+
+- عقدة منمّطة: المدخل `spec` ← المخرج `code`، والمنفّذ `method:APPX-155` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `app-studio` · `app-studio-paint` · `browser-scout` · `caption-lines` · `installer-triage` · `look-pipeline`.
+- مراحل النوع: قراءة الكود والاختبارات ← إعادة إنتاج أو اختبار جديد ← أصغر تغيير ← الاختبارات ← مراجعة الفرق ← فرع وPR.
+- إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
+
+#### 4. بوابة التحقق (A27)
+
+- إلزامي: الاختبارات الموجودة تمر قبل التعديل وبعده ← أمر الاختبار
+- إلزامي: اختبار لكل سلوك جديد أو خطأ مُصلح ← الاختبار الجديد يفشل قبل الإصلاح
+- إلزامي: لا أسرار ولا مسارات جلسة في الشيفرة ← بحث أنماط الأسرار
+- جودة: يطابق أسلوب الكود المحيط وتسمياته ← مراجعة الفرق
+- جودة: طريقة تشغيل مكتوبة ومجرَّبة ← تشغيل الأمر المكتوب
+- جودة: الفرق أصغر ما يحقق الطلب بلا إعادة كتابة غير مطلوبة ← git diff --stat
+- جودة: المدخل الخاطئ يعطي خطأ واضحًا لا انهيارًا صامتًا ← تشغيل بمدخل خاطئ
+- أمر الحكم في الوضع 1: `think.py qa code --answers qa.json` (PASS / FAIL / INCOMPLETE).
+
+#### 5. التعافي (A29)
+
+- `missing_dependency` (اعتمادية مفقودة، ميزانية 2): سمِّ الاعتمادية بالضبط (حزمة، برنامج، خط، نموذج) ← ثبّت محليًا في بيئة العمل إن كان مجانيًا ومسموحًا (pip --user أو venv أو npm محلي) · البديل: مسار المكتبة القياسية أو أداة أخرى من نفس المجموعة · تصعيد: تثبيت نظامي أو مدفوع أو يحتاج مفتاحًا: توقف واسأل
+- `quality_below_threshold` (جودة دون العتبة، ميزانية 3): أي معيار فشل وبكم (المقيس مقابل العتبة) ← عالج السبب الأكبر وحده ثم أعد القياس · البديل: المنهج البديل المكتوب للمرحلة في الخطة · تصعيد: معيار إلزامي لا يتحقق بعد البديل: توقف وأبلغ بالأرقام
+- `tool_error` (خطأ أداة، ميزانية 3): اقرأ آخر سطر في الخطأ ثم أول سطر من كودك فيه ← أصلح السبب المثبت وحده، ثم شغّل الاختبار المتعلق · البديل: أداة أخرى أو مسار يدوي للمرحلة نفسها · تصعيد: خطأ في أداة خارجية لا تملكها: بلّغ بإعادة الإنتاج ولا تخفه
+
+#### 6. الأدلة
+
+- `kosif-tool/.claude/skills/kosif-superpowers/references/app-studies/montaji.md`
+
+#### 7. قدرات قريبة في العائلة
+
+- `APPX-153` اختبار ذاتي داخل المضيف الحقيقي / Self-test inside the real host (documented)
+- `APPX-154` ذاكرة وسائط بالمحتوى واستئناف / Content-addressed media cache with resume (documented)
 - `APPX-16` عكس المقطع وتجميد الإطار / Reverse and freeze frame (proven)
 - `APPX-17` اختيار الغلاف تلقائيًا / Automatic cover pick (proven)
 
@@ -4218,7 +5380,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `spec` ← المخرج `code`، والمنفّذ `method:APPX-16` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `app-studio` · `app-studio-paint` · `browser-scout` · `installer-triage` · `motion-kit-bridge` · `source-scout`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `app-studio` · `app-studio-paint` · `browser-scout` · `caption-lines` · `installer-triage` · `look-pipeline`.
 - مراحل النوع: قراءة الكود والاختبارات ← إعادة إنتاج أو اختبار جديد ← أصغر تغيير ← الاختبارات ← مراجعة الفرق ← فرع وPR.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -4246,8 +5408,8 @@
 
 #### 7. قدرات قريبة في العائلة
 
-- `APPX-14` إزالة خلفية صورة / Background removal on a still (proven)
-- `APPX-15` تصدير EDL ومطابقته / EDL interchange and conform (proven)
+- `APPX-154` ذاكرة وسائط بالمحتوى واستئناف / Content-addressed media cache with resume (documented)
+- `APPX-155` تفريغ عربي محلي بلا إنترنت / Offline Arabic speech stack (documented)
 - `APPX-17` اختيار الغلاف تلقائيًا / Automatic cover pick (proven)
 - `APPX-18` منتقي الشاشة للتسجيل / Display-media picker for screen recording (documented)
 
@@ -4291,7 +5453,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `spec` ← المخرج `code`، والمنفّذ `method:APPX-17` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `app-studio` · `app-studio-paint` · `browser-scout` · `installer-triage` · `motion-kit-bridge` · `source-scout`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `app-studio` · `app-studio-paint` · `browser-scout` · `caption-lines` · `installer-triage` · `look-pipeline`.
 - مراحل النوع: قراءة الكود والاختبارات ← إعادة إنتاج أو اختبار جديد ← أصغر تغيير ← الاختبارات ← مراجعة الفرق ← فرع وPR.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -4319,7 +5481,7 @@
 
 #### 7. قدرات قريبة في العائلة
 
-- `APPX-15` تصدير EDL ومطابقته / EDL interchange and conform (proven)
+- `APPX-155` تفريغ عربي محلي بلا إنترنت / Offline Arabic speech stack (documented)
 - `APPX-16` عكس المقطع وتجميد الإطار / Reverse and freeze frame (proven)
 - `APPX-18` منتقي الشاشة للتسجيل / Display-media picker for screen recording (documented)
 - `APPX-19` غرفة تحكم التسجيل / Recording mission-control and overlay windows (documented)
@@ -4364,7 +5526,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `spec` ← المخرج `code`، والمنفّذ `method:APPX-18` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `app-studio` · `app-studio-paint` · `browser-scout` · `installer-triage` · `motion-kit-bridge` · `source-scout`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `app-studio` · `app-studio-paint` · `browser-scout` · `caption-lines` · `installer-triage` · `look-pipeline`.
 - مراحل النوع: قراءة الكود والاختبارات ← إعادة إنتاج أو اختبار جديد ← أصغر تغيير ← الاختبارات ← مراجعة الفرق ← فرع وPR.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -4436,7 +5598,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `spec` ← المخرج `code`، والمنفّذ `method:APPX-19` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `app-studio` · `app-studio-paint` · `browser-scout` · `installer-triage` · `motion-kit-bridge` · `source-scout`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `app-studio` · `app-studio-paint` · `browser-scout` · `caption-lines` · `installer-triage` · `look-pipeline`.
 - مراحل النوع: قراءة الكود والاختبارات ← إعادة إنتاج أو اختبار جديد ← أصغر تغيير ← الاختبارات ← مراجعة الفرق ← فرع وPR.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -4508,7 +5670,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `spec` ← المخرج `code`، والمنفّذ `method:APPX-20` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `app-studio` · `app-studio-paint` · `browser-scout` · `installer-triage` · `motion-kit-bridge` · `source-scout`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `app-studio` · `app-studio-paint` · `browser-scout` · `caption-lines` · `installer-triage` · `look-pipeline`.
 - مراحل النوع: قراءة الكود والاختبارات ← إعادة إنتاج أو اختبار جديد ← أصغر تغيير ← الاختبارات ← مراجعة الفرق ← فرع وPR.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -4580,7 +5742,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `spec` ← المخرج `code`، والمنفّذ `method:APPX-21` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `app-studio` · `app-studio-paint` · `browser-scout` · `installer-triage` · `motion-kit-bridge` · `source-scout`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `app-studio` · `app-studio-paint` · `browser-scout` · `caption-lines` · `installer-triage` · `look-pipeline`.
 - مراحل النوع: قراءة الكود والاختبارات ← إعادة إنتاج أو اختبار جديد ← أصغر تغيير ← الاختبارات ← مراجعة الفرق ← فرع وPR.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -4652,7 +5814,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `spec` ← المخرج `code`، والمنفّذ `method:APPX-22` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `app-studio` · `app-studio-paint` · `browser-scout` · `installer-triage` · `motion-kit-bridge` · `source-scout`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `app-studio` · `app-studio-paint` · `browser-scout` · `caption-lines` · `installer-triage` · `look-pipeline`.
 - مراحل النوع: قراءة الكود والاختبارات ← إعادة إنتاج أو اختبار جديد ← أصغر تغيير ← الاختبارات ← مراجعة الفرق ← فرع وPR.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -4724,7 +5886,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `spec` ← المخرج `code`، والمنفّذ `method:APPX-23` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `app-studio` · `app-studio-paint` · `browser-scout` · `installer-triage` · `motion-kit-bridge` · `source-scout`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `app-studio` · `app-studio-paint` · `browser-scout` · `caption-lines` · `installer-triage` · `look-pipeline`.
 - مراحل النوع: قراءة الكود والاختبارات ← إعادة إنتاج أو اختبار جديد ← أصغر تغيير ← الاختبارات ← مراجعة الفرق ← فرع وPR.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -4796,7 +5958,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `spec` ← المخرج `code`، والمنفّذ `method:APPX-24` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `app-studio` · `app-studio-paint` · `browser-scout` · `installer-triage` · `motion-kit-bridge` · `source-scout`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `app-studio` · `app-studio-paint` · `browser-scout` · `caption-lines` · `installer-triage` · `look-pipeline`.
 - مراحل النوع: قراءة الكود والاختبارات ← إعادة إنتاج أو اختبار جديد ← أصغر تغيير ← الاختبارات ← مراجعة الفرق ← فرع وPR.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -4868,7 +6030,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `spec` ← المخرج `code`، والمنفّذ `method:APPX-25` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `app-studio` · `app-studio-paint` · `browser-scout` · `installer-triage` · `motion-kit-bridge` · `source-scout`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `app-studio` · `app-studio-paint` · `browser-scout` · `caption-lines` · `installer-triage` · `look-pipeline`.
 - مراحل النوع: قراءة الكود والاختبارات ← إعادة إنتاج أو اختبار جديد ← أصغر تغيير ← الاختبارات ← مراجعة الفرق ← فرع وPR.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -4940,7 +6102,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `spec` ← المخرج `code`، والمنفّذ `method:APPX-26` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `app-studio` · `app-studio-paint` · `browser-scout` · `installer-triage` · `motion-kit-bridge` · `source-scout`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `app-studio` · `app-studio-paint` · `browser-scout` · `caption-lines` · `installer-triage` · `look-pipeline`.
 - مراحل النوع: قراءة الكود والاختبارات ← إعادة إنتاج أو اختبار جديد ← أصغر تغيير ← الاختبارات ← مراجعة الفرق ← فرع وPR.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -5012,7 +6174,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `spec` ← المخرج `code`، والمنفّذ `method:APPX-27` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `app-studio` · `app-studio-paint` · `browser-scout` · `installer-triage` · `motion-kit-bridge` · `source-scout`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `app-studio` · `app-studio-paint` · `browser-scout` · `caption-lines` · `installer-triage` · `look-pipeline`.
 - مراحل النوع: قراءة الكود والاختبارات ← إعادة إنتاج أو اختبار جديد ← أصغر تغيير ← الاختبارات ← مراجعة الفرق ← فرع وPR.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -5085,7 +6247,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `spec` ← المخرج `code`، والمنفّذ `method:APPX-28` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `app-studio` · `app-studio-paint` · `browser-scout` · `installer-triage` · `motion-kit-bridge` · `source-scout`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `app-studio` · `app-studio-paint` · `browser-scout` · `caption-lines` · `installer-triage` · `look-pipeline`.
 - مراحل النوع: قراءة الكود والاختبارات ← إعادة إنتاج أو اختبار جديد ← أصغر تغيير ← الاختبارات ← مراجعة الفرق ← فرع وPR.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -5157,7 +6319,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `spec` ← المخرج `code`، والمنفّذ `method:APPX-29` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `app-studio` · `app-studio-paint` · `browser-scout` · `installer-triage` · `motion-kit-bridge` · `source-scout`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `app-studio` · `app-studio-paint` · `browser-scout` · `caption-lines` · `installer-triage` · `look-pipeline`.
 - مراحل النوع: قراءة الكود والاختبارات ← إعادة إنتاج أو اختبار جديد ← أصغر تغيير ← الاختبارات ← مراجعة الفرق ← فرع وPR.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -5230,7 +6392,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `spec` ← المخرج `code`، والمنفّذ `method:APPX-30` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `app-studio` · `app-studio-paint` · `browser-scout` · `installer-triage` · `motion-kit-bridge` · `source-scout`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `app-studio` · `app-studio-paint` · `browser-scout` · `caption-lines` · `installer-triage` · `look-pipeline`.
 - مراحل النوع: قراءة الكود والاختبارات ← إعادة إنتاج أو اختبار جديد ← أصغر تغيير ← الاختبارات ← مراجعة الفرق ← فرع وPR.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -5304,7 +6466,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `spec` ← المخرج `code`، والمنفّذ `method:APPX-31` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `app-studio` · `app-studio-paint` · `browser-scout` · `installer-triage` · `motion-kit-bridge` · `source-scout`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `app-studio` · `app-studio-paint` · `browser-scout` · `caption-lines` · `installer-triage` · `look-pipeline`.
 - مراحل النوع: قراءة الكود والاختبارات ← إعادة إنتاج أو اختبار جديد ← أصغر تغيير ← الاختبارات ← مراجعة الفرق ← فرع وPR.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -5380,7 +6542,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `spec` ← المخرج `code`، والمنفّذ `method:APPX-32` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `app-studio` · `app-studio-paint` · `browser-scout` · `installer-triage` · `motion-kit-bridge` · `source-scout`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `app-studio` · `app-studio-paint` · `browser-scout` · `caption-lines` · `installer-triage` · `look-pipeline`.
 - مراحل النوع: قراءة الكود والاختبارات ← إعادة إنتاج أو اختبار جديد ← أصغر تغيير ← الاختبارات ← مراجعة الفرق ← فرع وPR.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -5455,7 +6617,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `spec` ← المخرج `code`، والمنفّذ `method:APPX-33` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `app-studio` · `app-studio-paint` · `browser-scout` · `installer-triage` · `motion-kit-bridge` · `source-scout`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `app-studio` · `app-studio-paint` · `browser-scout` · `caption-lines` · `installer-triage` · `look-pipeline`.
 - مراحل النوع: قراءة الكود والاختبارات ← إعادة إنتاج أو اختبار جديد ← أصغر تغيير ← الاختبارات ← مراجعة الفرق ← فرع وPR.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -5530,7 +6692,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `spec` ← المخرج `code`، والمنفّذ `method:APPX-34` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `app-studio` · `app-studio-paint` · `browser-scout` · `installer-triage` · `motion-kit-bridge` · `source-scout`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `app-studio` · `app-studio-paint` · `browser-scout` · `caption-lines` · `installer-triage` · `look-pipeline`.
 - مراحل النوع: قراءة الكود والاختبارات ← إعادة إنتاج أو اختبار جديد ← أصغر تغيير ← الاختبارات ← مراجعة الفرق ← فرع وPR.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -5605,7 +6767,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `spec` ← المخرج `code`، والمنفّذ `method:APPX-35` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `app-studio` · `app-studio-paint` · `browser-scout` · `installer-triage` · `motion-kit-bridge` · `source-scout`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `app-studio` · `app-studio-paint` · `browser-scout` · `caption-lines` · `installer-triage` · `look-pipeline`.
 - مراحل النوع: قراءة الكود والاختبارات ← إعادة إنتاج أو اختبار جديد ← أصغر تغيير ← الاختبارات ← مراجعة الفرق ← فرع وPR.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -5682,7 +6844,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `spec` ← المخرج `code`، والمنفّذ `method:APPX-36` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `app-studio` · `app-studio-paint` · `browser-scout` · `installer-triage` · `motion-kit-bridge` · `source-scout`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `app-studio` · `app-studio-paint` · `browser-scout` · `caption-lines` · `installer-triage` · `look-pipeline`.
 - مراحل النوع: قراءة الكود والاختبارات ← إعادة إنتاج أو اختبار جديد ← أصغر تغيير ← الاختبارات ← مراجعة الفرق ← فرع وPR.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -5759,7 +6921,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `spec` ← المخرج `code`، والمنفّذ `method:APPX-37` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `app-studio` · `app-studio-paint` · `browser-scout` · `installer-triage` · `motion-kit-bridge` · `source-scout`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `app-studio` · `app-studio-paint` · `browser-scout` · `caption-lines` · `installer-triage` · `look-pipeline`.
 - مراحل النوع: قراءة الكود والاختبارات ← إعادة إنتاج أو اختبار جديد ← أصغر تغيير ← الاختبارات ← مراجعة الفرق ← فرع وPR.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -5834,7 +6996,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `spec` ← المخرج `code`، والمنفّذ `method:APPX-38` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `app-studio` · `app-studio-paint` · `browser-scout` · `installer-triage` · `motion-kit-bridge` · `source-scout`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `app-studio` · `app-studio-paint` · `browser-scout` · `caption-lines` · `installer-triage` · `look-pipeline`.
 - مراحل النوع: قراءة الكود والاختبارات ← إعادة إنتاج أو اختبار جديد ← أصغر تغيير ← الاختبارات ← مراجعة الفرق ← فرع وPR.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -5910,7 +7072,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `spec` ← المخرج `code`، والمنفّذ `method:APPX-39` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `app-studio` · `app-studio-paint` · `browser-scout` · `installer-triage` · `motion-kit-bridge` · `source-scout`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `app-studio` · `app-studio-paint` · `browser-scout` · `caption-lines` · `installer-triage` · `look-pipeline`.
 - مراحل النوع: قراءة الكود والاختبارات ← إعادة إنتاج أو اختبار جديد ← أصغر تغيير ← الاختبارات ← مراجعة الفرق ← فرع وPR.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -5984,7 +7146,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `spec` ← المخرج `code`، والمنفّذ `method:APPX-40` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `app-studio` · `app-studio-paint` · `browser-scout` · `installer-triage` · `motion-kit-bridge` · `source-scout`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `app-studio` · `app-studio-paint` · `browser-scout` · `caption-lines` · `installer-triage` · `look-pipeline`.
 - مراحل النوع: قراءة الكود والاختبارات ← إعادة إنتاج أو اختبار جديد ← أصغر تغيير ← الاختبارات ← مراجعة الفرق ← فرع وPR.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -6058,7 +7220,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `spec` ← المخرج `code`، والمنفّذ `method:APPX-41` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `app-studio` · `app-studio-paint` · `browser-scout` · `installer-triage` · `motion-kit-bridge` · `source-scout`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `app-studio` · `app-studio-paint` · `browser-scout` · `caption-lines` · `installer-triage` · `look-pipeline`.
 - مراحل النوع: قراءة الكود والاختبارات ← إعادة إنتاج أو اختبار جديد ← أصغر تغيير ← الاختبارات ← مراجعة الفرق ← فرع وPR.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -6132,7 +7294,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `spec` ← المخرج `code`، والمنفّذ `method:APPX-42` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `app-studio` · `app-studio-paint` · `browser-scout` · `installer-triage` · `motion-kit-bridge` · `source-scout`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `app-studio` · `app-studio-paint` · `browser-scout` · `caption-lines` · `installer-triage` · `look-pipeline`.
 - مراحل النوع: قراءة الكود والاختبارات ← إعادة إنتاج أو اختبار جديد ← أصغر تغيير ← الاختبارات ← مراجعة الفرق ← فرع وPR.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -6207,7 +7369,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `spec` ← المخرج `code`، والمنفّذ `method:APPX-43` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `app-studio` · `app-studio-paint` · `browser-scout` · `installer-triage` · `motion-kit-bridge` · `source-scout`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `app-studio` · `app-studio-paint` · `browser-scout` · `caption-lines` · `installer-triage` · `look-pipeline`.
 - مراحل النوع: قراءة الكود والاختبارات ← إعادة إنتاج أو اختبار جديد ← أصغر تغيير ← الاختبارات ← مراجعة الفرق ← فرع وPR.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -6281,7 +7443,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `spec` ← المخرج `code`، والمنفّذ `method:APPX-44` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `app-studio` · `app-studio-paint` · `browser-scout` · `installer-triage` · `motion-kit-bridge` · `source-scout`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `app-studio` · `app-studio-paint` · `browser-scout` · `caption-lines` · `installer-triage` · `look-pipeline`.
 - مراحل النوع: قراءة الكود والاختبارات ← إعادة إنتاج أو اختبار جديد ← أصغر تغيير ← الاختبارات ← مراجعة الفرق ← فرع وPR.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -6355,7 +7517,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `spec` ← المخرج `code`، والمنفّذ `method:APPX-45` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `app-studio` · `app-studio-paint` · `browser-scout` · `installer-triage` · `motion-kit-bridge` · `source-scout`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `app-studio` · `app-studio-paint` · `browser-scout` · `caption-lines` · `installer-triage` · `look-pipeline`.
 - مراحل النوع: قراءة الكود والاختبارات ← إعادة إنتاج أو اختبار جديد ← أصغر تغيير ← الاختبارات ← مراجعة الفرق ← فرع وPR.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -6429,7 +7591,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `spec` ← المخرج `code`، والمنفّذ `method:APPX-46` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `app-studio` · `app-studio-paint` · `browser-scout` · `installer-triage` · `motion-kit-bridge` · `source-scout`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `app-studio` · `app-studio-paint` · `browser-scout` · `caption-lines` · `installer-triage` · `look-pipeline`.
 - مراحل النوع: قراءة الكود والاختبارات ← إعادة إنتاج أو اختبار جديد ← أصغر تغيير ← الاختبارات ← مراجعة الفرق ← فرع وPR.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -6503,7 +7665,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `spec` ← المخرج `code`، والمنفّذ `method:APPX-47` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `app-studio` · `app-studio-paint` · `browser-scout` · `installer-triage` · `motion-kit-bridge` · `source-scout`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `app-studio` · `app-studio-paint` · `browser-scout` · `caption-lines` · `installer-triage` · `look-pipeline`.
 - مراحل النوع: قراءة الكود والاختبارات ← إعادة إنتاج أو اختبار جديد ← أصغر تغيير ← الاختبارات ← مراجعة الفرق ← فرع وPR.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -6576,7 +7738,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `spec` ← المخرج `code`، والمنفّذ `method:APPX-48` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `app-studio` · `app-studio-paint` · `browser-scout` · `installer-triage` · `motion-kit-bridge` · `source-scout`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `app-studio` · `app-studio-paint` · `browser-scout` · `caption-lines` · `installer-triage` · `look-pipeline`.
 - مراحل النوع: قراءة الكود والاختبارات ← إعادة إنتاج أو اختبار جديد ← أصغر تغيير ← الاختبارات ← مراجعة الفرق ← فرع وPR.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -6651,7 +7813,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `spec` ← المخرج `code`، والمنفّذ `method:APPX-49` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `app-studio` · `app-studio-paint` · `browser-scout` · `installer-triage` · `motion-kit-bridge` · `source-scout`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `app-studio` · `app-studio-paint` · `browser-scout` · `caption-lines` · `installer-triage` · `look-pipeline`.
 - مراحل النوع: قراءة الكود والاختبارات ← إعادة إنتاج أو اختبار جديد ← أصغر تغيير ← الاختبارات ← مراجعة الفرق ← فرع وPR.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -6726,7 +7888,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `spec` ← المخرج `code`، والمنفّذ `method:APPX-50` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `app-studio` · `app-studio-paint` · `browser-scout` · `installer-triage` · `motion-kit-bridge` · `source-scout`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `app-studio` · `app-studio-paint` · `browser-scout` · `caption-lines` · `installer-triage` · `look-pipeline`.
 - مراحل النوع: قراءة الكود والاختبارات ← إعادة إنتاج أو اختبار جديد ← أصغر تغيير ← الاختبارات ← مراجعة الفرق ← فرع وPR.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -6800,7 +7962,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `spec` ← المخرج `code`، والمنفّذ `method:APPX-51` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `app-studio` · `app-studio-paint` · `browser-scout` · `installer-triage` · `motion-kit-bridge` · `source-scout`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `app-studio` · `app-studio-paint` · `browser-scout` · `caption-lines` · `installer-triage` · `look-pipeline`.
 - مراحل النوع: قراءة الكود والاختبارات ← إعادة إنتاج أو اختبار جديد ← أصغر تغيير ← الاختبارات ← مراجعة الفرق ← فرع وPR.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -6872,7 +8034,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `spec` ← المخرج `code`، والمنفّذ `method:APPX-52` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `app-studio` · `app-studio-paint` · `browser-scout` · `installer-triage` · `motion-kit-bridge` · `source-scout`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `app-studio` · `app-studio-paint` · `browser-scout` · `caption-lines` · `installer-triage` · `look-pipeline`.
 - مراحل النوع: قراءة الكود والاختبارات ← إعادة إنتاج أو اختبار جديد ← أصغر تغيير ← الاختبارات ← مراجعة الفرق ← فرع وPR.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -6944,7 +8106,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `spec` ← المخرج `code`، والمنفّذ `method:APPX-53` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `app-studio` · `app-studio-paint` · `browser-scout` · `installer-triage` · `motion-kit-bridge` · `source-scout`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `app-studio` · `app-studio-paint` · `browser-scout` · `caption-lines` · `installer-triage` · `look-pipeline`.
 - مراحل النوع: قراءة الكود والاختبارات ← إعادة إنتاج أو اختبار جديد ← أصغر تغيير ← الاختبارات ← مراجعة الفرق ← فرع وPR.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -7018,7 +8180,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `spec` ← المخرج `code`، والمنفّذ `method:APPX-54` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `app-studio` · `app-studio-paint` · `browser-scout` · `installer-triage` · `motion-kit-bridge` · `source-scout`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `app-studio` · `app-studio-paint` · `browser-scout` · `caption-lines` · `installer-triage` · `look-pipeline`.
 - مراحل النوع: قراءة الكود والاختبارات ← إعادة إنتاج أو اختبار جديد ← أصغر تغيير ← الاختبارات ← مراجعة الفرق ← فرع وPR.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -7090,7 +8252,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `spec` ← المخرج `code`، والمنفّذ `method:APPX-55` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `app-studio` · `app-studio-paint` · `browser-scout` · `installer-triage` · `motion-kit-bridge` · `source-scout`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `app-studio` · `app-studio-paint` · `browser-scout` · `caption-lines` · `installer-triage` · `look-pipeline`.
 - مراحل النوع: قراءة الكود والاختبارات ← إعادة إنتاج أو اختبار جديد ← أصغر تغيير ← الاختبارات ← مراجعة الفرق ← فرع وPR.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -7163,7 +8325,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `spec` ← المخرج `code`، والمنفّذ `method:APPX-56` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `app-studio` · `app-studio-paint` · `browser-scout` · `installer-triage` · `motion-kit-bridge` · `source-scout`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `app-studio` · `app-studio-paint` · `browser-scout` · `caption-lines` · `installer-triage` · `look-pipeline`.
 - مراحل النوع: قراءة الكود والاختبارات ← إعادة إنتاج أو اختبار جديد ← أصغر تغيير ← الاختبارات ← مراجعة الفرق ← فرع وPR.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -7238,7 +8400,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `spec` ← المخرج `code`، والمنفّذ `method:APPX-57` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `app-studio` · `app-studio-paint` · `browser-scout` · `installer-triage` · `motion-kit-bridge` · `source-scout`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `app-studio` · `app-studio-paint` · `browser-scout` · `caption-lines` · `installer-triage` · `look-pipeline`.
 - مراحل النوع: قراءة الكود والاختبارات ← إعادة إنتاج أو اختبار جديد ← أصغر تغيير ← الاختبارات ← مراجعة الفرق ← فرع وPR.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -7313,7 +8475,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `spec` ← المخرج `code`، والمنفّذ `method:APPX-58` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `app-studio` · `app-studio-paint` · `browser-scout` · `installer-triage` · `motion-kit-bridge` · `source-scout`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `app-studio` · `app-studio-paint` · `browser-scout` · `caption-lines` · `installer-triage` · `look-pipeline`.
 - مراحل النوع: قراءة الكود والاختبارات ← إعادة إنتاج أو اختبار جديد ← أصغر تغيير ← الاختبارات ← مراجعة الفرق ← فرع وPR.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -7385,7 +8547,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `spec` ← المخرج `code`، والمنفّذ `method:APPX-59` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `app-studio` · `app-studio-paint` · `browser-scout` · `installer-triage` · `motion-kit-bridge` · `source-scout`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `app-studio` · `app-studio-paint` · `browser-scout` · `caption-lines` · `installer-triage` · `look-pipeline`.
 - مراحل النوع: قراءة الكود والاختبارات ← إعادة إنتاج أو اختبار جديد ← أصغر تغيير ← الاختبارات ← مراجعة الفرق ← فرع وPR.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -7457,7 +8619,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `spec` ← المخرج `code`، والمنفّذ `method:APPX-60` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `app-studio` · `app-studio-paint` · `browser-scout` · `installer-triage` · `motion-kit-bridge` · `source-scout`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `app-studio` · `app-studio-paint` · `browser-scout` · `caption-lines` · `installer-triage` · `look-pipeline`.
 - مراحل النوع: قراءة الكود والاختبارات ← إعادة إنتاج أو اختبار جديد ← أصغر تغيير ← الاختبارات ← مراجعة الفرق ← فرع وPR.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -7532,7 +8694,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `spec` ← المخرج `code`، والمنفّذ `method:APPX-61` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `app-studio` · `app-studio-paint` · `browser-scout` · `installer-triage` · `motion-kit-bridge` · `source-scout`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `app-studio` · `app-studio-paint` · `browser-scout` · `caption-lines` · `installer-triage` · `look-pipeline`.
 - مراحل النوع: قراءة الكود والاختبارات ← إعادة إنتاج أو اختبار جديد ← أصغر تغيير ← الاختبارات ← مراجعة الفرق ← فرع وPR.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -7608,7 +8770,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `spec` ← المخرج `code`، والمنفّذ `method:APPX-62` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `app-studio` · `app-studio-paint` · `browser-scout` · `installer-triage` · `motion-kit-bridge` · `source-scout`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `app-studio` · `app-studio-paint` · `browser-scout` · `caption-lines` · `installer-triage` · `look-pipeline`.
 - مراحل النوع: قراءة الكود والاختبارات ← إعادة إنتاج أو اختبار جديد ← أصغر تغيير ← الاختبارات ← مراجعة الفرق ← فرع وPR.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -7684,7 +8846,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `spec` ← المخرج `code`، والمنفّذ `method:APPX-63` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `app-studio` · `app-studio-paint` · `browser-scout` · `installer-triage` · `motion-kit-bridge` · `source-scout`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `app-studio` · `app-studio-paint` · `browser-scout` · `caption-lines` · `installer-triage` · `look-pipeline`.
 - مراحل النوع: قراءة الكود والاختبارات ← إعادة إنتاج أو اختبار جديد ← أصغر تغيير ← الاختبارات ← مراجعة الفرق ← فرع وPR.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -7760,7 +8922,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `spec` ← المخرج `code`، والمنفّذ `method:APPX-64` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `app-studio` · `app-studio-paint` · `browser-scout` · `installer-triage` · `motion-kit-bridge` · `source-scout`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `app-studio` · `app-studio-paint` · `browser-scout` · `caption-lines` · `installer-triage` · `look-pipeline`.
 - مراحل النوع: قراءة الكود والاختبارات ← إعادة إنتاج أو اختبار جديد ← أصغر تغيير ← الاختبارات ← مراجعة الفرق ← فرع وPR.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -7836,7 +8998,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `spec` ← المخرج `code`، والمنفّذ `method:APPX-65` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `app-studio` · `app-studio-paint` · `browser-scout` · `installer-triage` · `motion-kit-bridge` · `source-scout`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `app-studio` · `app-studio-paint` · `browser-scout` · `caption-lines` · `installer-triage` · `look-pipeline`.
 - مراحل النوع: قراءة الكود والاختبارات ← إعادة إنتاج أو اختبار جديد ← أصغر تغيير ← الاختبارات ← مراجعة الفرق ← فرع وPR.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -7912,7 +9074,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `spec` ← المخرج `code`، والمنفّذ `method:APPX-66` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `app-studio` · `app-studio-paint` · `browser-scout` · `installer-triage` · `motion-kit-bridge` · `source-scout`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `app-studio` · `app-studio-paint` · `browser-scout` · `caption-lines` · `installer-triage` · `look-pipeline`.
 - مراحل النوع: قراءة الكود والاختبارات ← إعادة إنتاج أو اختبار جديد ← أصغر تغيير ← الاختبارات ← مراجعة الفرق ← فرع وPR.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -7988,7 +9150,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `spec` ← المخرج `code`، والمنفّذ `method:APPX-67` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `app-studio` · `app-studio-paint` · `browser-scout` · `installer-triage` · `motion-kit-bridge` · `source-scout`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `app-studio` · `app-studio-paint` · `browser-scout` · `caption-lines` · `installer-triage` · `look-pipeline`.
 - مراحل النوع: قراءة الكود والاختبارات ← إعادة إنتاج أو اختبار جديد ← أصغر تغيير ← الاختبارات ← مراجعة الفرق ← فرع وPR.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -8064,7 +9226,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `spec` ← المخرج `code`، والمنفّذ `method:APPX-68` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `app-studio` · `app-studio-paint` · `browser-scout` · `installer-triage` · `motion-kit-bridge` · `source-scout`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `app-studio` · `app-studio-paint` · `browser-scout` · `caption-lines` · `installer-triage` · `look-pipeline`.
 - مراحل النوع: قراءة الكود والاختبارات ← إعادة إنتاج أو اختبار جديد ← أصغر تغيير ← الاختبارات ← مراجعة الفرق ← فرع وPR.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -8140,7 +9302,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `spec` ← المخرج `code`، والمنفّذ `method:APPX-69` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `app-studio` · `app-studio-paint` · `browser-scout` · `installer-triage` · `motion-kit-bridge` · `source-scout`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `app-studio` · `app-studio-paint` · `browser-scout` · `caption-lines` · `installer-triage` · `look-pipeline`.
 - مراحل النوع: قراءة الكود والاختبارات ← إعادة إنتاج أو اختبار جديد ← أصغر تغيير ← الاختبارات ← مراجعة الفرق ← فرع وPR.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -8216,7 +9378,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `spec` ← المخرج `code`، والمنفّذ `method:APPX-70` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `app-studio` · `app-studio-paint` · `browser-scout` · `installer-triage` · `motion-kit-bridge` · `source-scout`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `app-studio` · `app-studio-paint` · `browser-scout` · `caption-lines` · `installer-triage` · `look-pipeline`.
 - مراحل النوع: قراءة الكود والاختبارات ← إعادة إنتاج أو اختبار جديد ← أصغر تغيير ← الاختبارات ← مراجعة الفرق ← فرع وPR.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -8292,7 +9454,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `spec` ← المخرج `code`، والمنفّذ `method:APPX-71` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `app-studio` · `app-studio-paint` · `browser-scout` · `installer-triage` · `motion-kit-bridge` · `source-scout`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `app-studio` · `app-studio-paint` · `browser-scout` · `caption-lines` · `installer-triage` · `look-pipeline`.
 - مراحل النوع: قراءة الكود والاختبارات ← إعادة إنتاج أو اختبار جديد ← أصغر تغيير ← الاختبارات ← مراجعة الفرق ← فرع وPR.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -8368,7 +9530,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `spec` ← المخرج `code`، والمنفّذ `method:APPX-72` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `app-studio` · `app-studio-paint` · `browser-scout` · `installer-triage` · `motion-kit-bridge` · `source-scout`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `app-studio` · `app-studio-paint` · `browser-scout` · `caption-lines` · `installer-triage` · `look-pipeline`.
 - مراحل النوع: قراءة الكود والاختبارات ← إعادة إنتاج أو اختبار جديد ← أصغر تغيير ← الاختبارات ← مراجعة الفرق ← فرع وPR.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -8444,7 +9606,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `spec` ← المخرج `code`، والمنفّذ `method:APPX-73` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `app-studio` · `app-studio-paint` · `browser-scout` · `installer-triage` · `motion-kit-bridge` · `source-scout`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `app-studio` · `app-studio-paint` · `browser-scout` · `caption-lines` · `installer-triage` · `look-pipeline`.
 - مراحل النوع: قراءة الكود والاختبارات ← إعادة إنتاج أو اختبار جديد ← أصغر تغيير ← الاختبارات ← مراجعة الفرق ← فرع وPR.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -8517,7 +9679,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `spec` ← المخرج `code`، والمنفّذ `method:APPX-74` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `app-studio` · `app-studio-paint` · `browser-scout` · `installer-triage` · `motion-kit-bridge` · `source-scout`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `app-studio` · `app-studio-paint` · `browser-scout` · `caption-lines` · `installer-triage` · `look-pipeline`.
 - مراحل النوع: قراءة الكود والاختبارات ← إعادة إنتاج أو اختبار جديد ← أصغر تغيير ← الاختبارات ← مراجعة الفرق ← فرع وPR.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -8593,7 +9755,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `spec` ← المخرج `code`، والمنفّذ `method:APPX-75` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `app-studio` · `app-studio-paint` · `browser-scout` · `installer-triage` · `motion-kit-bridge` · `source-scout`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `app-studio` · `app-studio-paint` · `browser-scout` · `caption-lines` · `installer-triage` · `look-pipeline`.
 - مراحل النوع: قراءة الكود والاختبارات ← إعادة إنتاج أو اختبار جديد ← أصغر تغيير ← الاختبارات ← مراجعة الفرق ← فرع وPR.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -8668,7 +9830,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `spec` ← المخرج `code`، والمنفّذ `method:APPX-76` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `app-studio` · `app-studio-paint` · `browser-scout` · `installer-triage` · `motion-kit-bridge` · `source-scout`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `app-studio` · `app-studio-paint` · `browser-scout` · `caption-lines` · `installer-triage` · `look-pipeline`.
 - مراحل النوع: قراءة الكود والاختبارات ← إعادة إنتاج أو اختبار جديد ← أصغر تغيير ← الاختبارات ← مراجعة الفرق ← فرع وPR.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -8741,7 +9903,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `spec` ← المخرج `code`، والمنفّذ `method:APPX-77` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `app-studio` · `app-studio-paint` · `browser-scout` · `installer-triage` · `motion-kit-bridge` · `source-scout`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `app-studio` · `app-studio-paint` · `browser-scout` · `caption-lines` · `installer-triage` · `look-pipeline`.
 - مراحل النوع: قراءة الكود والاختبارات ← إعادة إنتاج أو اختبار جديد ← أصغر تغيير ← الاختبارات ← مراجعة الفرق ← فرع وPR.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -8817,7 +9979,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `spec` ← المخرج `code`، والمنفّذ `method:APPX-78` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `app-studio` · `app-studio-paint` · `browser-scout` · `installer-triage` · `motion-kit-bridge` · `source-scout`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `app-studio` · `app-studio-paint` · `browser-scout` · `caption-lines` · `installer-triage` · `look-pipeline`.
 - مراحل النوع: قراءة الكود والاختبارات ← إعادة إنتاج أو اختبار جديد ← أصغر تغيير ← الاختبارات ← مراجعة الفرق ← فرع وPR.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -8893,7 +10055,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `spec` ← المخرج `code`، والمنفّذ `method:APPX-79` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `app-studio` · `app-studio-paint` · `browser-scout` · `installer-triage` · `motion-kit-bridge` · `source-scout`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `app-studio` · `app-studio-paint` · `browser-scout` · `caption-lines` · `installer-triage` · `look-pipeline`.
 - مراحل النوع: قراءة الكود والاختبارات ← إعادة إنتاج أو اختبار جديد ← أصغر تغيير ← الاختبارات ← مراجعة الفرق ← فرع وPR.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -8966,7 +10128,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `spec` ← المخرج `code`، والمنفّذ `method:APPX-80` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `app-studio` · `app-studio-paint` · `browser-scout` · `installer-triage` · `motion-kit-bridge` · `source-scout`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `app-studio` · `app-studio-paint` · `browser-scout` · `caption-lines` · `installer-triage` · `look-pipeline`.
 - مراحل النوع: قراءة الكود والاختبارات ← إعادة إنتاج أو اختبار جديد ← أصغر تغيير ← الاختبارات ← مراجعة الفرق ← فرع وPR.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -9042,7 +10204,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `spec` ← المخرج `code`، والمنفّذ `method:APPX-81` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `app-studio` · `app-studio-paint` · `browser-scout` · `installer-triage` · `motion-kit-bridge` · `source-scout`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `app-studio` · `app-studio-paint` · `browser-scout` · `caption-lines` · `installer-triage` · `look-pipeline`.
 - مراحل النوع: قراءة الكود والاختبارات ← إعادة إنتاج أو اختبار جديد ← أصغر تغيير ← الاختبارات ← مراجعة الفرق ← فرع وPR.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -9118,7 +10280,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `spec` ← المخرج `code`، والمنفّذ `method:APPX-82` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `app-studio` · `app-studio-paint` · `browser-scout` · `installer-triage` · `motion-kit-bridge` · `source-scout`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `app-studio` · `app-studio-paint` · `browser-scout` · `caption-lines` · `installer-triage` · `look-pipeline`.
 - مراحل النوع: قراءة الكود والاختبارات ← إعادة إنتاج أو اختبار جديد ← أصغر تغيير ← الاختبارات ← مراجعة الفرق ← فرع وPR.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -9191,7 +10353,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `spec` ← المخرج `code`، والمنفّذ `method:APPX-83` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `app-studio` · `app-studio-paint` · `browser-scout` · `installer-triage` · `motion-kit-bridge` · `source-scout`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `app-studio` · `app-studio-paint` · `browser-scout` · `caption-lines` · `installer-triage` · `look-pipeline`.
 - مراحل النوع: قراءة الكود والاختبارات ← إعادة إنتاج أو اختبار جديد ← أصغر تغيير ← الاختبارات ← مراجعة الفرق ← فرع وPR.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -9264,7 +10426,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `spec` ← المخرج `code`، والمنفّذ `method:APPX-84` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `app-studio` · `app-studio-paint` · `browser-scout` · `installer-triage` · `motion-kit-bridge` · `source-scout`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `app-studio` · `app-studio-paint` · `browser-scout` · `caption-lines` · `installer-triage` · `look-pipeline`.
 - مراحل النوع: قراءة الكود والاختبارات ← إعادة إنتاج أو اختبار جديد ← أصغر تغيير ← الاختبارات ← مراجعة الفرق ← فرع وPR.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -9337,7 +10499,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `spec` ← المخرج `code`، والمنفّذ `method:APPX-85` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `app-studio` · `app-studio-paint` · `browser-scout` · `installer-triage` · `motion-kit-bridge` · `source-scout`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `app-studio` · `app-studio-paint` · `browser-scout` · `caption-lines` · `installer-triage` · `look-pipeline`.
 - مراحل النوع: قراءة الكود والاختبارات ← إعادة إنتاج أو اختبار جديد ← أصغر تغيير ← الاختبارات ← مراجعة الفرق ← فرع وPR.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -9411,7 +10573,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `spec` ← المخرج `code`، والمنفّذ `method:APPX-86` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `app-studio` · `app-studio-paint` · `browser-scout` · `installer-triage` · `motion-kit-bridge` · `source-scout`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `app-studio` · `app-studio-paint` · `browser-scout` · `caption-lines` · `installer-triage` · `look-pipeline`.
 - مراحل النوع: قراءة الكود والاختبارات ← إعادة إنتاج أو اختبار جديد ← أصغر تغيير ← الاختبارات ← مراجعة الفرق ← فرع وPR.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -9484,7 +10646,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `spec` ← المخرج `code`، والمنفّذ `method:APPX-87` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `app-studio` · `app-studio-paint` · `browser-scout` · `installer-triage` · `motion-kit-bridge` · `source-scout`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `app-studio` · `app-studio-paint` · `browser-scout` · `caption-lines` · `installer-triage` · `look-pipeline`.
 - مراحل النوع: قراءة الكود والاختبارات ← إعادة إنتاج أو اختبار جديد ← أصغر تغيير ← الاختبارات ← مراجعة الفرق ← فرع وPR.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -9560,7 +10722,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `spec` ← المخرج `code`، والمنفّذ `method:APPX-88` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `app-studio` · `app-studio-paint` · `browser-scout` · `installer-triage` · `motion-kit-bridge` · `source-scout`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `app-studio` · `app-studio-paint` · `browser-scout` · `caption-lines` · `installer-triage` · `look-pipeline`.
 - مراحل النوع: قراءة الكود والاختبارات ← إعادة إنتاج أو اختبار جديد ← أصغر تغيير ← الاختبارات ← مراجعة الفرق ← فرع وPR.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -9636,7 +10798,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `spec` ← المخرج `code`، والمنفّذ `method:APPX-89` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `app-studio` · `app-studio-paint` · `browser-scout` · `installer-triage` · `motion-kit-bridge` · `source-scout`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `app-studio` · `app-studio-paint` · `browser-scout` · `caption-lines` · `installer-triage` · `look-pipeline`.
 - مراحل النوع: قراءة الكود والاختبارات ← إعادة إنتاج أو اختبار جديد ← أصغر تغيير ← الاختبارات ← مراجعة الفرق ← فرع وPR.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -9711,7 +10873,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `spec` ← المخرج `code`، والمنفّذ `method:APPX-90` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `app-studio` · `app-studio-paint` · `browser-scout` · `installer-triage` · `motion-kit-bridge` · `source-scout`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `app-studio` · `app-studio-paint` · `browser-scout` · `caption-lines` · `installer-triage` · `look-pipeline`.
 - مراحل النوع: قراءة الكود والاختبارات ← إعادة إنتاج أو اختبار جديد ← أصغر تغيير ← الاختبارات ← مراجعة الفرق ← فرع وPR.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -9785,7 +10947,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `spec` ← المخرج `code`، والمنفّذ `method:APPX-91` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `app-studio` · `app-studio-paint` · `browser-scout` · `installer-triage` · `motion-kit-bridge` · `source-scout`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `app-studio` · `app-studio-paint` · `browser-scout` · `caption-lines` · `installer-triage` · `look-pipeline`.
 - مراحل النوع: قراءة الكود والاختبارات ← إعادة إنتاج أو اختبار جديد ← أصغر تغيير ← الاختبارات ← مراجعة الفرق ← فرع وPR.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -9861,7 +11023,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `spec` ← المخرج `code`، والمنفّذ `method:APPX-92` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `app-studio` · `app-studio-paint` · `browser-scout` · `installer-triage` · `motion-kit-bridge` · `source-scout`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `app-studio` · `app-studio-paint` · `browser-scout` · `caption-lines` · `installer-triage` · `look-pipeline`.
 - مراحل النوع: قراءة الكود والاختبارات ← إعادة إنتاج أو اختبار جديد ← أصغر تغيير ← الاختبارات ← مراجعة الفرق ← فرع وPR.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -9937,7 +11099,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `spec` ← المخرج `code`، والمنفّذ `method:APPX-93` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `app-studio` · `app-studio-paint` · `browser-scout` · `installer-triage` · `motion-kit-bridge` · `source-scout`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `app-studio` · `app-studio-paint` · `browser-scout` · `caption-lines` · `installer-triage` · `look-pipeline`.
 - مراحل النوع: قراءة الكود والاختبارات ← إعادة إنتاج أو اختبار جديد ← أصغر تغيير ← الاختبارات ← مراجعة الفرق ← فرع وPR.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -10014,7 +11176,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `spec` ← المخرج `code`، والمنفّذ `method:APPX-94` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `app-studio` · `app-studio-paint` · `browser-scout` · `installer-triage` · `motion-kit-bridge` · `source-scout`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `app-studio` · `app-studio-paint` · `browser-scout` · `caption-lines` · `installer-triage` · `look-pipeline`.
 - مراحل النوع: قراءة الكود والاختبارات ← إعادة إنتاج أو اختبار جديد ← أصغر تغيير ← الاختبارات ← مراجعة الفرق ← فرع وPR.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -10089,7 +11251,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `spec` ← المخرج `code`، والمنفّذ `method:APPX-95` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `app-studio` · `app-studio-paint` · `browser-scout` · `installer-triage` · `motion-kit-bridge` · `source-scout`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `app-studio` · `app-studio-paint` · `browser-scout` · `caption-lines` · `installer-triage` · `look-pipeline`.
 - مراحل النوع: قراءة الكود والاختبارات ← إعادة إنتاج أو اختبار جديد ← أصغر تغيير ← الاختبارات ← مراجعة الفرق ← فرع وPR.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -10164,7 +11326,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `spec` ← المخرج `code`، والمنفّذ `method:APPX-96` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `app-studio` · `app-studio-paint` · `browser-scout` · `installer-triage` · `motion-kit-bridge` · `source-scout`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `app-studio` · `app-studio-paint` · `browser-scout` · `caption-lines` · `installer-triage` · `look-pipeline`.
 - مراحل النوع: قراءة الكود والاختبارات ← إعادة إنتاج أو اختبار جديد ← أصغر تغيير ← الاختبارات ← مراجعة الفرق ← فرع وPR.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -10238,7 +11400,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `spec` ← المخرج `code`، والمنفّذ `method:APPX-97` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `app-studio` · `app-studio-paint` · `browser-scout` · `installer-triage` · `motion-kit-bridge` · `source-scout`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `app-studio` · `app-studio-paint` · `browser-scout` · `caption-lines` · `installer-triage` · `look-pipeline`.
 - مراحل النوع: قراءة الكود والاختبارات ← إعادة إنتاج أو اختبار جديد ← أصغر تغيير ← الاختبارات ← مراجعة الفرق ← فرع وPR.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -10314,7 +11476,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `spec` ← المخرج `code`، والمنفّذ `method:APPX-98` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `app-studio` · `app-studio-paint` · `browser-scout` · `installer-triage` · `motion-kit-bridge` · `source-scout`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `app-studio` · `app-studio-paint` · `browser-scout` · `caption-lines` · `installer-triage` · `look-pipeline`.
 - مراحل النوع: قراءة الكود والاختبارات ← إعادة إنتاج أو اختبار جديد ← أصغر تغيير ← الاختبارات ← مراجعة الفرق ← فرع وPR.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -10388,7 +11550,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `spec` ← المخرج `code`، والمنفّذ `method:APPX-99` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `app-studio` · `app-studio-paint` · `browser-scout` · `installer-triage` · `motion-kit-bridge` · `source-scout`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `app-studio` · `app-studio-paint` · `browser-scout` · `caption-lines` · `installer-triage` · `look-pipeline`.
 - مراحل النوع: قراءة الكود والاختبارات ← إعادة إنتاج أو اختبار جديد ← أصغر تغيير ← الاختبارات ← مراجعة الفرق ← فرع وPR.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 

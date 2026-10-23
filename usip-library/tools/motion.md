@@ -1,4 +1,4 @@
-# أدوات المجال `motion` (20 أداة)
+# أدوات المجال `motion` (21 أداة)
 
 > مولّد من `data/tools.json`. [الفهرس الرئيسي](../README.md) · `python3 scripts/hub.py tool <id>` للبطاقة الحية.
 
@@ -297,6 +297,56 @@
 #### عند الفشل (A29)
 
 - ابدأ بـ `think.py recover --message "<نص الخطأ>"`، ثم سجّل `fusionforge.py trace --project <slug> --id <FUSE-ID> --stage <stage> --node <N> --action "<ما جُرّب>" --result failed --error-class <الصنف> --tool tool:motion-kit-bridge --evidence <ملف>`.
+
+### `motion-physics` — فيزياء الحركة / Motion Physics
+
+| الحقل | القيمة |
+|---|---|
+| المسار | `scripts/motion_physics.py` (جذر: skill) |
+| المجال | `motion` |
+| الدليل | `tested-here` |
+| العائلات | `easing-timing-rhythm` |
+
+**ما تفعله:** يحسب أرقام الحركة بدل تخمينها: نابض من الصلابة والتخميد والكتلة (القيمة في كل إطار ونسبة التخميد وزمن الاستقرار والتجاوز، أو إطارات CSS)، وأي منحنى cubic-bezier أو تسهيل CSS مسمى بنفس حساب المتصفح، وتأخيرات التتابع من نقطة أصل (الأول أو الأخير أو المنتصف أو الأطراف أو عنصر بعينه) في صف أو شبكة، وعينات خط مفاتيح لكل إطار بتسهيل. مكتبة بايثون القياسية فقط؛ يطبع JSON أو CSS ولا يكتب ملفات.
+
+**What it does:** Computes motion numbers instead of guessing them: a spring from stiffness, damping and mass (value per frame, damping ratio, settle time, overshoot, or CSS @keyframes), any CSS cubic-bezier or named easing sampled exactly as a browser does, stagger delays from an origin (first, last, center, edges or an index) on a row or a grid, and a keyframe track sampled per frame with an easing. Pure standard library; prints JSON or CSS and writes no files.
+
+#### متى تُستدعى
+
+- «عايز ارتداد نابض طبيعي للعنوان، اطلعلي القيم لكل فريم»
+- «حوّل cubic-bezier ده لقيم لكل فريم»
+- «give me stagger delays from the center of a 4x3 grid»
+- «spring keyframes with stiffness 180 and damping 12 as CSS»
+
+#### الأوامر
+
+- **spring**: Values per frame, damping ratio, regime, settle time and overshoot; --css NAME prints @keyframes
+  - `python3 scripts/motion_physics.py spring --from 0 --to 1 --stiffness 170 --damping 26 --fps 30`
+- **bezier**: A CSS cubic-bezier sampled at --frames + 1 evenly spaced points
+  - `python3 scripts/motion_physics.py bezier 0.25 0.1 0.25 1 --frames 30`
+- **stagger**: Delay in seconds for each element from an origin on a row or a grid
+  - `python3 scripts/motion_physics.py stagger --count 12 --each 0.06 --from center --grid 4x3 --ease out`
+- **keyframes**: A time:value track sampled per frame with an easing
+  - `python3 scripts/motion_physics.py keyframes --track 0:0,0.5:120,1.2:100 --ease out --fps 30`
+- **--self-test**: Checks spring regimes, the CSS 'ease' value at 0.5, stagger origins and track sampling
+  - `python3 scripts/motion_physics.py --self-test`
+
+#### المتطلبات والأمان
+
+- binaries: python3
+- الأمان: read-only
+- الموافقة: —
+- الحدود: The spring is integrated numerically (16 sub-steps per frame), so values match an analytic spring to about 1e-3, not exactly; one dimension at a time; settle uses a 0.1 % rest threshold; easing names cover the CSS keywords plus a few common curves, not every library's presets.
+
+#### الاختبارات والأدلة
+
+- `.claude/skills/kosif-superpowers/evals/test_motion_physics.py`
+- مرجع: `.claude/skills/kosif-superpowers/references/powers/easing-timing-rhythm.md`
+- مرجع: `.claude/skills/kosif-superpowers/references/guides/motion.md`
+
+#### عند الفشل (A29)
+
+- ابدأ بـ `think.py recover --message "<نص الخطأ>"`، ثم سجّل `fusionforge.py trace --project <slug> --id <FUSE-ID> --stage <stage> --node <N> --action "<ما جُرّب>" --result failed --error-class <الصنف> --tool tool:motion-physics --evidence <ملف>`.
 
 ### `motion-runtime` — إنشاء فيلم سبورة مرسوم وتصييره / Doodle film runtime and renderer
 

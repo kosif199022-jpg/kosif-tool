@@ -109,7 +109,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `audio` ← المخرج `dataset`، والمنفّذ `method:SYNC-01` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `audio-cue-mapper` · `blender-cinematic-bridge` · `character-fullbody` · `character-ik` · `cinematic-cut-planner` · `code-drawing-master`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `audio-cue-mapper` · `blender-cinematic-bridge` · `caption-lines` · `character-fullbody` · `character-ik` · `cinematic-cut-planner`.
 - مراحل النوع: قياس الملف (مدة، جهارة) ← معالجة على نسخة ← تفريغ أو مزامنة ← عينات استماع ← تسليم.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -180,7 +180,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `audio` ← المخرج `dataset`، والمنفّذ `method:SYNC-02` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `audio-cue-mapper` · `blender-cinematic-bridge` · `character-fullbody` · `character-ik` · `cinematic-cut-planner` · `code-drawing-master`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `audio-cue-mapper` · `blender-cinematic-bridge` · `caption-lines` · `character-fullbody` · `character-ik` · `cinematic-cut-planner`.
 - مراحل النوع: قياس الملف (مدة، جهارة) ← معالجة على نسخة ← تفريغ أو مزامنة ← عينات استماع ← تسليم.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -251,7 +251,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `audio` ← المخرج `dataset`، والمنفّذ `method:SYNC-03` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `audio-cue-mapper` · `blender-cinematic-bridge` · `character-fullbody` · `character-ik` · `cinematic-cut-planner` · `code-drawing-master`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `audio-cue-mapper` · `blender-cinematic-bridge` · `caption-lines` · `character-fullbody` · `character-ik` · `cinematic-cut-planner`.
 - مراحل النوع: قياس الملف (مدة، جهارة) ← معالجة على نسخة ← تفريغ أو مزامنة ← عينات استماع ← تسليم.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -323,7 +323,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `audio` ← المخرج `dataset`، والمنفّذ `method:SYNC-04` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `audio-cue-mapper` · `blender-cinematic-bridge` · `character-fullbody` · `character-ik` · `cinematic-cut-planner` · `code-drawing-master`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `audio-cue-mapper` · `blender-cinematic-bridge` · `caption-lines` · `character-fullbody` · `character-ik` · `cinematic-cut-planner`.
 - مراحل النوع: قياس الملف (مدة، جهارة) ← معالجة على نسخة ← تفريغ أو مزامنة ← عينات استماع ← تسليم.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -395,7 +395,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `audio` ← المخرج `dataset`، والمنفّذ `method:SYNC-05` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `audio-cue-mapper` · `blender-cinematic-bridge` · `character-fullbody` · `character-ik` · `cinematic-cut-planner` · `code-drawing-master`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `audio-cue-mapper` · `blender-cinematic-bridge` · `caption-lines` · `character-fullbody` · `character-ik` · `cinematic-cut-planner`.
 - مراحل النوع: قياس الملف (مدة، جهارة) ← معالجة على نسخة ← تفريغ أو مزامنة ← عينات استماع ← تسليم.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -466,7 +466,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `audio` ← المخرج `dataset`، والمنفّذ `method:SYNC-06` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `audio-cue-mapper` · `blender-cinematic-bridge` · `character-fullbody` · `character-ik` · `cinematic-cut-planner` · `code-drawing-master`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `audio-cue-mapper` · `blender-cinematic-bridge` · `caption-lines` · `character-fullbody` · `character-ik` · `cinematic-cut-planner`.
 - مراحل النوع: قياس الملف (مدة، جهارة) ← معالجة على نسخة ← تفريغ أو مزامنة ← عينات استماع ← تسليم.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -537,7 +537,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `audio` ← المخرج `dataset`، والمنفّذ `method:SYNC-07` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `audio-cue-mapper` · `blender-cinematic-bridge` · `character-fullbody` · `character-ik` · `cinematic-cut-planner` · `code-drawing-master`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `audio-cue-mapper` · `blender-cinematic-bridge` · `caption-lines` · `character-fullbody` · `character-ik` · `cinematic-cut-planner`.
 - مراحل النوع: قياس الملف (مدة، جهارة) ← معالجة على نسخة ← تفريغ أو مزامنة ← عينات استماع ← تسليم.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -611,7 +611,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `audio` ← المخرج `dataset`، والمنفّذ `method:SYNC-08` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `audio-cue-mapper` · `blender-cinematic-bridge` · `character-fullbody` · `character-ik` · `cinematic-cut-planner` · `code-drawing-master`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `audio-cue-mapper` · `blender-cinematic-bridge` · `caption-lines` · `character-fullbody` · `character-ik` · `cinematic-cut-planner`.
 - مراحل النوع: قياس الملف (مدة، جهارة) ← معالجة على نسخة ← تفريغ أو مزامنة ← عينات استماع ← تسليم.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -684,7 +684,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `audio` ← المخرج `dataset`، والمنفّذ `method:SYNC-09` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `audio-cue-mapper` · `blender-cinematic-bridge` · `character-fullbody` · `character-ik` · `cinematic-cut-planner` · `code-drawing-master`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `audio-cue-mapper` · `blender-cinematic-bridge` · `caption-lines` · `character-fullbody` · `character-ik` · `cinematic-cut-planner`.
 - مراحل النوع: قياس الملف (مدة، جهارة) ← معالجة على نسخة ← تفريغ أو مزامنة ← عينات استماع ← تسليم.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -756,7 +756,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `audio` ← المخرج `dataset`، والمنفّذ `method:SYNC-10` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `audio-cue-mapper` · `blender-cinematic-bridge` · `character-fullbody` · `character-ik` · `cinematic-cut-planner` · `code-drawing-master`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `audio-cue-mapper` · `blender-cinematic-bridge` · `caption-lines` · `character-fullbody` · `character-ik` · `cinematic-cut-planner`.
 - مراحل النوع: قياس الملف (مدة، جهارة) ← معالجة على نسخة ← تفريغ أو مزامنة ← عينات استماع ← تسليم.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -826,7 +826,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `audio` ← المخرج `dataset`، والمنفّذ `method:SYNC-11` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `audio-cue-mapper` · `blender-cinematic-bridge` · `character-fullbody` · `character-ik` · `cinematic-cut-planner` · `code-drawing-master`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `audio-cue-mapper` · `blender-cinematic-bridge` · `caption-lines` · `character-fullbody` · `character-ik` · `cinematic-cut-planner`.
 - مراحل النوع: قياس الملف (مدة، جهارة) ← معالجة على نسخة ← تفريغ أو مزامنة ← عينات استماع ← تسليم.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -897,7 +897,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `audio` ← المخرج `dataset`، والمنفّذ `method:SYNC-12` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `audio-cue-mapper` · `blender-cinematic-bridge` · `character-fullbody` · `character-ik` · `cinematic-cut-planner` · `code-drawing-master`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `audio-cue-mapper` · `blender-cinematic-bridge` · `caption-lines` · `character-fullbody` · `character-ik` · `cinematic-cut-planner`.
 - مراحل النوع: قياس الملف (مدة، جهارة) ← معالجة على نسخة ← تفريغ أو مزامنة ← عينات استماع ← تسليم.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -968,7 +968,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `audio` ← المخرج `dataset`، والمنفّذ `method:SYNC-13` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `audio-cue-mapper` · `blender-cinematic-bridge` · `character-fullbody` · `character-ik` · `cinematic-cut-planner` · `code-drawing-master`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `audio-cue-mapper` · `blender-cinematic-bridge` · `caption-lines` · `character-fullbody` · `character-ik` · `cinematic-cut-planner`.
 - مراحل النوع: قياس الملف (مدة، جهارة) ← معالجة على نسخة ← تفريغ أو مزامنة ← عينات استماع ← تسليم.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -1039,7 +1039,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `audio` ← المخرج `dataset`، والمنفّذ `method:SYNC-14` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `audio-cue-mapper` · `blender-cinematic-bridge` · `character-fullbody` · `character-ik` · `cinematic-cut-planner` · `code-drawing-master`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `audio-cue-mapper` · `blender-cinematic-bridge` · `caption-lines` · `character-fullbody` · `character-ik` · `cinematic-cut-planner`.
 - مراحل النوع: قياس الملف (مدة، جهارة) ← معالجة على نسخة ← تفريغ أو مزامنة ← عينات استماع ← تسليم.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -1112,7 +1112,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `audio` ← المخرج `dataset`، والمنفّذ `method:SYNC-15` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `audio-cue-mapper` · `blender-cinematic-bridge` · `character-fullbody` · `character-ik` · `cinematic-cut-planner` · `code-drawing-master`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `audio-cue-mapper` · `blender-cinematic-bridge` · `caption-lines` · `character-fullbody` · `character-ik` · `cinematic-cut-planner`.
 - مراحل النوع: قياس الملف (مدة، جهارة) ← معالجة على نسخة ← تفريغ أو مزامنة ← عينات استماع ← تسليم.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -1183,7 +1183,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `audio` ← المخرج `dataset`، والمنفّذ `method:SYNC-16` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `audio-cue-mapper` · `blender-cinematic-bridge` · `character-fullbody` · `character-ik` · `cinematic-cut-planner` · `code-drawing-master`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `audio-cue-mapper` · `blender-cinematic-bridge` · `caption-lines` · `character-fullbody` · `character-ik` · `cinematic-cut-planner`.
 - مراحل النوع: قياس الملف (مدة، جهارة) ← معالجة على نسخة ← تفريغ أو مزامنة ← عينات استماع ← تسليم.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -1253,7 +1253,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `audio` ← المخرج `dataset`، والمنفّذ `method:SYNC-17` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `audio-cue-mapper` · `blender-cinematic-bridge` · `character-fullbody` · `character-ik` · `cinematic-cut-planner` · `code-drawing-master`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `audio-cue-mapper` · `blender-cinematic-bridge` · `caption-lines` · `character-fullbody` · `character-ik` · `cinematic-cut-planner`.
 - مراحل النوع: قياس الملف (مدة، جهارة) ← معالجة على نسخة ← تفريغ أو مزامنة ← عينات استماع ← تسليم.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -1324,7 +1324,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `audio` ← المخرج `dataset`، والمنفّذ `method:SYNC-18` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `audio-cue-mapper` · `blender-cinematic-bridge` · `character-fullbody` · `character-ik` · `cinematic-cut-planner` · `code-drawing-master`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `audio-cue-mapper` · `blender-cinematic-bridge` · `caption-lines` · `character-fullbody` · `character-ik` · `cinematic-cut-planner`.
 - مراحل النوع: قياس الملف (مدة، جهارة) ← معالجة على نسخة ← تفريغ أو مزامنة ← عينات استماع ← تسليم.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -1395,7 +1395,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `audio` ← المخرج `dataset`، والمنفّذ `method:SYNC-19` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `audio-cue-mapper` · `blender-cinematic-bridge` · `character-fullbody` · `character-ik` · `cinematic-cut-planner` · `code-drawing-master`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `audio-cue-mapper` · `blender-cinematic-bridge` · `caption-lines` · `character-fullbody` · `character-ik` · `cinematic-cut-planner`.
 - مراحل النوع: قياس الملف (مدة، جهارة) ← معالجة على نسخة ← تفريغ أو مزامنة ← عينات استماع ← تسليم.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -1464,7 +1464,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `audio` ← المخرج `dataset`، والمنفّذ `method:SYNC-20` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `audio-cue-mapper` · `blender-cinematic-bridge` · `character-fullbody` · `character-ik` · `cinematic-cut-planner` · `code-drawing-master`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `audio-cue-mapper` · `blender-cinematic-bridge` · `caption-lines` · `character-fullbody` · `character-ik` · `cinematic-cut-planner`.
 - مراحل النوع: قياس الملف (مدة، جهارة) ← معالجة على نسخة ← تفريغ أو مزامنة ← عينات استماع ← تسليم.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -1535,7 +1535,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `audio` ← المخرج `dataset`، والمنفّذ `method:SYNC-21` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `audio-cue-mapper` · `blender-cinematic-bridge` · `character-fullbody` · `character-ik` · `cinematic-cut-planner` · `code-drawing-master`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `audio-cue-mapper` · `blender-cinematic-bridge` · `caption-lines` · `character-fullbody` · `character-ik` · `cinematic-cut-planner`.
 - مراحل النوع: قياس الملف (مدة، جهارة) ← معالجة على نسخة ← تفريغ أو مزامنة ← عينات استماع ← تسليم.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -1607,7 +1607,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `audio` ← المخرج `dataset`، والمنفّذ `method:SYNC-22` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `audio-cue-mapper` · `blender-cinematic-bridge` · `character-fullbody` · `character-ik` · `cinematic-cut-planner` · `code-drawing-master`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `audio-cue-mapper` · `blender-cinematic-bridge` · `caption-lines` · `character-fullbody` · `character-ik` · `cinematic-cut-planner`.
 - مراحل النوع: قياس الملف (مدة، جهارة) ← معالجة على نسخة ← تفريغ أو مزامنة ← عينات استماع ← تسليم.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -1678,7 +1678,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `audio` ← المخرج `dataset`، والمنفّذ `method:SYNC-23` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `audio-cue-mapper` · `blender-cinematic-bridge` · `character-fullbody` · `character-ik` · `cinematic-cut-planner` · `code-drawing-master`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `audio-cue-mapper` · `blender-cinematic-bridge` · `caption-lines` · `character-fullbody` · `character-ik` · `cinematic-cut-planner`.
 - مراحل النوع: قياس الملف (مدة، جهارة) ← معالجة على نسخة ← تفريغ أو مزامنة ← عينات استماع ← تسليم.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -1749,7 +1749,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `audio` ← المخرج `dataset`، والمنفّذ `method:SYNC-24` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `audio-cue-mapper` · `blender-cinematic-bridge` · `character-fullbody` · `character-ik` · `cinematic-cut-planner` · `code-drawing-master`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `audio-cue-mapper` · `blender-cinematic-bridge` · `caption-lines` · `character-fullbody` · `character-ik` · `cinematic-cut-planner`.
 - مراحل النوع: قياس الملف (مدة، جهارة) ← معالجة على نسخة ← تفريغ أو مزامنة ← عينات استماع ← تسليم.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -1819,7 +1819,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `audio` ← المخرج `dataset`، والمنفّذ `method:SYNC-25` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `audio-cue-mapper` · `blender-cinematic-bridge` · `character-fullbody` · `character-ik` · `cinematic-cut-planner` · `code-drawing-master`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `audio-cue-mapper` · `blender-cinematic-bridge` · `caption-lines` · `character-fullbody` · `character-ik` · `cinematic-cut-planner`.
 - مراحل النوع: قياس الملف (مدة، جهارة) ← معالجة على نسخة ← تفريغ أو مزامنة ← عينات استماع ← تسليم.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -1890,7 +1890,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `audio` ← المخرج `dataset`، والمنفّذ `method:SYNC-26` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `audio-cue-mapper` · `blender-cinematic-bridge` · `character-fullbody` · `character-ik` · `cinematic-cut-planner` · `code-drawing-master`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `audio-cue-mapper` · `blender-cinematic-bridge` · `caption-lines` · `character-fullbody` · `character-ik` · `cinematic-cut-planner`.
 - مراحل النوع: قياس الملف (مدة، جهارة) ← معالجة على نسخة ← تفريغ أو مزامنة ← عينات استماع ← تسليم.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -1963,7 +1963,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `audio` ← المخرج `dataset`، والمنفّذ `method:SYNC-27` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `audio-cue-mapper` · `blender-cinematic-bridge` · `character-fullbody` · `character-ik` · `cinematic-cut-planner` · `code-drawing-master`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `audio-cue-mapper` · `blender-cinematic-bridge` · `caption-lines` · `character-fullbody` · `character-ik` · `cinematic-cut-planner`.
 - مراحل النوع: قياس الملف (مدة، جهارة) ← معالجة على نسخة ← تفريغ أو مزامنة ← عينات استماع ← تسليم.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -2035,7 +2035,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `audio` ← المخرج `dataset`، والمنفّذ `method:SYNC-28` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `audio-cue-mapper` · `blender-cinematic-bridge` · `character-fullbody` · `character-ik` · `cinematic-cut-planner` · `code-drawing-master`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `audio-cue-mapper` · `blender-cinematic-bridge` · `caption-lines` · `character-fullbody` · `character-ik` · `cinematic-cut-planner`.
 - مراحل النوع: قياس الملف (مدة، جهارة) ← معالجة على نسخة ← تفريغ أو مزامنة ← عينات استماع ← تسليم.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -2107,7 +2107,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `audio` ← المخرج `dataset`، والمنفّذ `method:SYNC-29` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `audio-cue-mapper` · `blender-cinematic-bridge` · `character-fullbody` · `character-ik` · `cinematic-cut-planner` · `code-drawing-master`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `audio-cue-mapper` · `blender-cinematic-bridge` · `caption-lines` · `character-fullbody` · `character-ik` · `cinematic-cut-planner`.
 - مراحل النوع: قياس الملف (مدة، جهارة) ← معالجة على نسخة ← تفريغ أو مزامنة ← عينات استماع ← تسليم.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -2177,7 +2177,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `audio` ← المخرج `dataset`، والمنفّذ `method:SYNC-30` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `audio-cue-mapper` · `blender-cinematic-bridge` · `character-fullbody` · `character-ik` · `cinematic-cut-planner` · `code-drawing-master`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `audio-cue-mapper` · `blender-cinematic-bridge` · `caption-lines` · `character-fullbody` · `character-ik` · `cinematic-cut-planner`.
 - مراحل النوع: قياس الملف (مدة، جهارة) ← معالجة على نسخة ← تفريغ أو مزامنة ← عينات استماع ← تسليم.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -2249,7 +2249,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `audio` ← المخرج `dataset`، والمنفّذ `method:SYNC-31` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `audio-cue-mapper` · `blender-cinematic-bridge` · `character-fullbody` · `character-ik` · `cinematic-cut-planner` · `code-drawing-master`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `audio-cue-mapper` · `blender-cinematic-bridge` · `caption-lines` · `character-fullbody` · `character-ik` · `cinematic-cut-planner`.
 - مراحل النوع: قياس الملف (مدة، جهارة) ← معالجة على نسخة ← تفريغ أو مزامنة ← عينات استماع ← تسليم.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -2319,7 +2319,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `audio` ← المخرج `dataset`، والمنفّذ `method:SYNC-32` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `audio-cue-mapper` · `blender-cinematic-bridge` · `character-fullbody` · `character-ik` · `cinematic-cut-planner` · `code-drawing-master`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `audio-cue-mapper` · `blender-cinematic-bridge` · `caption-lines` · `character-fullbody` · `character-ik` · `cinematic-cut-planner`.
 - مراحل النوع: قياس الملف (مدة، جهارة) ← معالجة على نسخة ← تفريغ أو مزامنة ← عينات استماع ← تسليم.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -2389,7 +2389,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `audio` ← المخرج `dataset`، والمنفّذ `method:SYNC-33` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `audio-cue-mapper` · `blender-cinematic-bridge` · `character-fullbody` · `character-ik` · `cinematic-cut-planner` · `code-drawing-master`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `audio-cue-mapper` · `blender-cinematic-bridge` · `caption-lines` · `character-fullbody` · `character-ik` · `cinematic-cut-planner`.
 - مراحل النوع: قياس الملف (مدة، جهارة) ← معالجة على نسخة ← تفريغ أو مزامنة ← عينات استماع ← تسليم.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -2461,7 +2461,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `audio` ← المخرج `dataset`، والمنفّذ `method:SYNC-34` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `audio-cue-mapper` · `blender-cinematic-bridge` · `character-fullbody` · `character-ik` · `cinematic-cut-planner` · `code-drawing-master`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `audio-cue-mapper` · `blender-cinematic-bridge` · `caption-lines` · `character-fullbody` · `character-ik` · `cinematic-cut-planner`.
 - مراحل النوع: قياس الملف (مدة، جهارة) ← معالجة على نسخة ← تفريغ أو مزامنة ← عينات استماع ← تسليم.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -2532,7 +2532,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `audio` ← المخرج `dataset`، والمنفّذ `method:SYNC-35` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `audio-cue-mapper` · `blender-cinematic-bridge` · `character-fullbody` · `character-ik` · `cinematic-cut-planner` · `code-drawing-master`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `audio-cue-mapper` · `blender-cinematic-bridge` · `caption-lines` · `character-fullbody` · `character-ik` · `cinematic-cut-planner`.
 - مراحل النوع: قياس الملف (مدة، جهارة) ← معالجة على نسخة ← تفريغ أو مزامنة ← عينات استماع ← تسليم.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -2603,7 +2603,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `audio` ← المخرج `dataset`، والمنفّذ `method:SYNC-36` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `audio-cue-mapper` · `blender-cinematic-bridge` · `character-fullbody` · `character-ik` · `cinematic-cut-planner` · `code-drawing-master`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `audio-cue-mapper` · `blender-cinematic-bridge` · `caption-lines` · `character-fullbody` · `character-ik` · `cinematic-cut-planner`.
 - مراحل النوع: قياس الملف (مدة، جهارة) ← معالجة على نسخة ← تفريغ أو مزامنة ← عينات استماع ← تسليم.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -2674,7 +2674,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `audio` ← المخرج `dataset`، والمنفّذ `method:SYNC-37` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `audio-cue-mapper` · `blender-cinematic-bridge` · `character-fullbody` · `character-ik` · `cinematic-cut-planner` · `code-drawing-master`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `audio-cue-mapper` · `blender-cinematic-bridge` · `caption-lines` · `character-fullbody` · `character-ik` · `cinematic-cut-planner`.
 - مراحل النوع: قياس الملف (مدة، جهارة) ← معالجة على نسخة ← تفريغ أو مزامنة ← عينات استماع ← تسليم.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -2745,7 +2745,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `audio` ← المخرج `dataset`، والمنفّذ `method:SYNC-38` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `audio-cue-mapper` · `blender-cinematic-bridge` · `character-fullbody` · `character-ik` · `cinematic-cut-planner` · `code-drawing-master`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `audio-cue-mapper` · `blender-cinematic-bridge` · `caption-lines` · `character-fullbody` · `character-ik` · `cinematic-cut-planner`.
 - مراحل النوع: قياس الملف (مدة، جهارة) ← معالجة على نسخة ← تفريغ أو مزامنة ← عينات استماع ← تسليم.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -2816,7 +2816,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `audio` ← المخرج `dataset`، والمنفّذ `method:SYNC-39` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `audio-cue-mapper` · `blender-cinematic-bridge` · `character-fullbody` · `character-ik` · `cinematic-cut-planner` · `code-drawing-master`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `audio-cue-mapper` · `blender-cinematic-bridge` · `caption-lines` · `character-fullbody` · `character-ik` · `cinematic-cut-planner`.
 - مراحل النوع: قياس الملف (مدة، جهارة) ← معالجة على نسخة ← تفريغ أو مزامنة ← عينات استماع ← تسليم.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -2886,7 +2886,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `audio` ← المخرج `dataset`، والمنفّذ `method:SYNC-40` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `audio-cue-mapper` · `blender-cinematic-bridge` · `character-fullbody` · `character-ik` · `cinematic-cut-planner` · `code-drawing-master`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `audio-cue-mapper` · `blender-cinematic-bridge` · `caption-lines` · `character-fullbody` · `character-ik` · `cinematic-cut-planner`.
 - مراحل النوع: قياس الملف (مدة، جهارة) ← معالجة على نسخة ← تفريغ أو مزامنة ← عينات استماع ← تسليم.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -2954,7 +2954,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `audio` ← المخرج `dataset`، والمنفّذ `method:SYNC-41` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `audio-cue-mapper` · `blender-cinematic-bridge` · `character-fullbody` · `character-ik` · `cinematic-cut-planner` · `code-drawing-master`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `audio-cue-mapper` · `blender-cinematic-bridge` · `caption-lines` · `character-fullbody` · `character-ik` · `cinematic-cut-planner`.
 - مراحل النوع: قياس الملف (مدة، جهارة) ← معالجة على نسخة ← تفريغ أو مزامنة ← عينات استماع ← تسليم.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -3024,7 +3024,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `audio` ← المخرج `dataset`، والمنفّذ `method:SYNC-42` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `audio-cue-mapper` · `blender-cinematic-bridge` · `character-fullbody` · `character-ik` · `cinematic-cut-planner` · `code-drawing-master`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `audio-cue-mapper` · `blender-cinematic-bridge` · `caption-lines` · `character-fullbody` · `character-ik` · `cinematic-cut-planner`.
 - مراحل النوع: قياس الملف (مدة، جهارة) ← معالجة على نسخة ← تفريغ أو مزامنة ← عينات استماع ← تسليم.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -3095,7 +3095,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `audio` ← المخرج `dataset`، والمنفّذ `method:SYNC-43` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `audio-cue-mapper` · `blender-cinematic-bridge` · `character-fullbody` · `character-ik` · `cinematic-cut-planner` · `code-drawing-master`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `audio-cue-mapper` · `blender-cinematic-bridge` · `caption-lines` · `character-fullbody` · `character-ik` · `cinematic-cut-planner`.
 - مراحل النوع: قياس الملف (مدة، جهارة) ← معالجة على نسخة ← تفريغ أو مزامنة ← عينات استماع ← تسليم.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -3166,7 +3166,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `audio` ← المخرج `dataset`، والمنفّذ `method:SYNC-44` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `audio-cue-mapper` · `blender-cinematic-bridge` · `character-fullbody` · `character-ik` · `cinematic-cut-planner` · `code-drawing-master`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `audio-cue-mapper` · `blender-cinematic-bridge` · `caption-lines` · `character-fullbody` · `character-ik` · `cinematic-cut-planner`.
 - مراحل النوع: قياس الملف (مدة، جهارة) ← معالجة على نسخة ← تفريغ أو مزامنة ← عينات استماع ← تسليم.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -3239,7 +3239,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `audio` ← المخرج `dataset`، والمنفّذ `method:SYNC-45` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `audio-cue-mapper` · `blender-cinematic-bridge` · `character-fullbody` · `character-ik` · `cinematic-cut-planner` · `code-drawing-master`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `audio-cue-mapper` · `blender-cinematic-bridge` · `caption-lines` · `character-fullbody` · `character-ik` · `cinematic-cut-planner`.
 - مراحل النوع: قياس الملف (مدة، جهارة) ← معالجة على نسخة ← تفريغ أو مزامنة ← عينات استماع ← تسليم.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -3312,7 +3312,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `audio` ← المخرج `dataset`، والمنفّذ `method:SYNC-46` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `audio-cue-mapper` · `blender-cinematic-bridge` · `character-fullbody` · `character-ik` · `cinematic-cut-planner` · `code-drawing-master`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `audio-cue-mapper` · `blender-cinematic-bridge` · `caption-lines` · `character-fullbody` · `character-ik` · `cinematic-cut-planner`.
 - مراحل النوع: قياس الملف (مدة، جهارة) ← معالجة على نسخة ← تفريغ أو مزامنة ← عينات استماع ← تسليم.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -3384,7 +3384,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `audio` ← المخرج `dataset`، والمنفّذ `method:SYNC-47` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `audio-cue-mapper` · `blender-cinematic-bridge` · `character-fullbody` · `character-ik` · `cinematic-cut-planner` · `code-drawing-master`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `audio-cue-mapper` · `blender-cinematic-bridge` · `caption-lines` · `character-fullbody` · `character-ik` · `cinematic-cut-planner`.
 - مراحل النوع: قياس الملف (مدة، جهارة) ← معالجة على نسخة ← تفريغ أو مزامنة ← عينات استماع ← تسليم.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -3452,7 +3452,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `audio` ← المخرج `dataset`، والمنفّذ `method:SYNC-48` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `audio-cue-mapper` · `blender-cinematic-bridge` · `character-fullbody` · `character-ik` · `cinematic-cut-planner` · `code-drawing-master`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `audio-cue-mapper` · `blender-cinematic-bridge` · `caption-lines` · `character-fullbody` · `character-ik` · `cinematic-cut-planner`.
 - مراحل النوع: قياس الملف (مدة، جهارة) ← معالجة على نسخة ← تفريغ أو مزامنة ← عينات استماع ← تسليم.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -3523,7 +3523,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `audio` ← المخرج `dataset`، والمنفّذ `method:SYNC-49` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `audio-cue-mapper` · `blender-cinematic-bridge` · `character-fullbody` · `character-ik` · `cinematic-cut-planner` · `code-drawing-master`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `audio-cue-mapper` · `blender-cinematic-bridge` · `caption-lines` · `character-fullbody` · `character-ik` · `cinematic-cut-planner`.
 - مراحل النوع: قياس الملف (مدة، جهارة) ← معالجة على نسخة ← تفريغ أو مزامنة ← عينات استماع ← تسليم.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -3594,7 +3594,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `audio` ← المخرج `dataset`، والمنفّذ `method:SYNC-50` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `audio-cue-mapper` · `blender-cinematic-bridge` · `character-fullbody` · `character-ik` · `cinematic-cut-planner` · `code-drawing-master`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `audio-cue-mapper` · `blender-cinematic-bridge` · `caption-lines` · `character-fullbody` · `character-ik` · `cinematic-cut-planner`.
 - مراحل النوع: قياس الملف (مدة، جهارة) ← معالجة على نسخة ← تفريغ أو مزامنة ← عينات استماع ← تسليم.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -3667,7 +3667,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `audio` ← المخرج `dataset`، والمنفّذ `method:SYNC-51` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `audio-cue-mapper` · `blender-cinematic-bridge` · `character-fullbody` · `character-ik` · `cinematic-cut-planner` · `code-drawing-master`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `audio-cue-mapper` · `blender-cinematic-bridge` · `caption-lines` · `character-fullbody` · `character-ik` · `cinematic-cut-planner`.
 - مراحل النوع: قياس الملف (مدة، جهارة) ← معالجة على نسخة ← تفريغ أو مزامنة ← عينات استماع ← تسليم.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -3738,7 +3738,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `audio` ← المخرج `dataset`، والمنفّذ `method:SYNC-52` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `audio-cue-mapper` · `blender-cinematic-bridge` · `character-fullbody` · `character-ik` · `cinematic-cut-planner` · `code-drawing-master`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `audio-cue-mapper` · `blender-cinematic-bridge` · `caption-lines` · `character-fullbody` · `character-ik` · `cinematic-cut-planner`.
 - مراحل النوع: قياس الملف (مدة، جهارة) ← معالجة على نسخة ← تفريغ أو مزامنة ← عينات استماع ← تسليم.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -3811,7 +3811,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `audio` ← المخرج `dataset`، والمنفّذ `method:SYNC-53` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `audio-cue-mapper` · `blender-cinematic-bridge` · `character-fullbody` · `character-ik` · `cinematic-cut-planner` · `code-drawing-master`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `audio-cue-mapper` · `blender-cinematic-bridge` · `caption-lines` · `character-fullbody` · `character-ik` · `cinematic-cut-planner`.
 - مراحل النوع: قياس الملف (مدة، جهارة) ← معالجة على نسخة ← تفريغ أو مزامنة ← عينات استماع ← تسليم.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -3883,7 +3883,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `audio` ← المخرج `dataset`، والمنفّذ `method:SYNC-54` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `audio-cue-mapper` · `blender-cinematic-bridge` · `character-fullbody` · `character-ik` · `cinematic-cut-planner` · `code-drawing-master`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `audio-cue-mapper` · `blender-cinematic-bridge` · `caption-lines` · `character-fullbody` · `character-ik` · `cinematic-cut-planner`.
 - مراحل النوع: قياس الملف (مدة، جهارة) ← معالجة على نسخة ← تفريغ أو مزامنة ← عينات استماع ← تسليم.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -3953,7 +3953,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `audio` ← المخرج `dataset`، والمنفّذ `method:SYNC-55` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `audio-cue-mapper` · `blender-cinematic-bridge` · `character-fullbody` · `character-ik` · `cinematic-cut-planner` · `code-drawing-master`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `audio-cue-mapper` · `blender-cinematic-bridge` · `caption-lines` · `character-fullbody` · `character-ik` · `cinematic-cut-planner`.
 - مراحل النوع: قياس الملف (مدة، جهارة) ← معالجة على نسخة ← تفريغ أو مزامنة ← عينات استماع ← تسليم.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -4025,7 +4025,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `audio` ← المخرج `dataset`، والمنفّذ `method:SYNC-56` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `audio-cue-mapper` · `blender-cinematic-bridge` · `character-fullbody` · `character-ik` · `cinematic-cut-planner` · `code-drawing-master`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `audio-cue-mapper` · `blender-cinematic-bridge` · `caption-lines` · `character-fullbody` · `character-ik` · `cinematic-cut-planner`.
 - مراحل النوع: قياس الملف (مدة، جهارة) ← معالجة على نسخة ← تفريغ أو مزامنة ← عينات استماع ← تسليم.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -4096,7 +4096,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `audio` ← المخرج `dataset`، والمنفّذ `method:SYNC-57` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `audio-cue-mapper` · `blender-cinematic-bridge` · `character-fullbody` · `character-ik` · `cinematic-cut-planner` · `code-drawing-master`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `audio-cue-mapper` · `blender-cinematic-bridge` · `caption-lines` · `character-fullbody` · `character-ik` · `cinematic-cut-planner`.
 - مراحل النوع: قياس الملف (مدة، جهارة) ← معالجة على نسخة ← تفريغ أو مزامنة ← عينات استماع ← تسليم.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -4169,7 +4169,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `audio` ← المخرج `dataset`، والمنفّذ `method:SYNC-58` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `audio-cue-mapper` · `blender-cinematic-bridge` · `character-fullbody` · `character-ik` · `cinematic-cut-planner` · `code-drawing-master`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `audio-cue-mapper` · `blender-cinematic-bridge` · `caption-lines` · `character-fullbody` · `character-ik` · `cinematic-cut-planner`.
 - مراحل النوع: قياس الملف (مدة، جهارة) ← معالجة على نسخة ← تفريغ أو مزامنة ← عينات استماع ← تسليم.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -4238,7 +4238,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `audio` ← المخرج `dataset`، والمنفّذ `method:SYNC-U01` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `audio-cue-mapper` · `blender-cinematic-bridge` · `character-fullbody` · `character-ik` · `cinematic-cut-planner` · `code-drawing-master`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `audio-cue-mapper` · `blender-cinematic-bridge` · `caption-lines` · `character-fullbody` · `character-ik` · `cinematic-cut-planner`.
 - مراحل النوع: قياس الملف (مدة، جهارة) ← معالجة على نسخة ← تفريغ أو مزامنة ← عينات استماع ← تسليم.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -4307,7 +4307,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `audio` ← المخرج `dataset`، والمنفّذ `method:SYNC-X01` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `audio-cue-mapper` · `blender-cinematic-bridge` · `character-fullbody` · `character-ik` · `cinematic-cut-planner` · `code-drawing-master`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `audio-cue-mapper` · `blender-cinematic-bridge` · `caption-lines` · `character-fullbody` · `character-ik` · `cinematic-cut-planner`.
 - مراحل النوع: قياس الملف (مدة، جهارة) ← معالجة على نسخة ← تفريغ أو مزامنة ← عينات استماع ← تسليم.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -4375,7 +4375,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `audio` ← المخرج `dataset`، والمنفّذ `method:SYNC-X02` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `audio-cue-mapper` · `blender-cinematic-bridge` · `character-fullbody` · `character-ik` · `cinematic-cut-planner` · `code-drawing-master`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `audio-cue-mapper` · `blender-cinematic-bridge` · `caption-lines` · `character-fullbody` · `character-ik` · `cinematic-cut-planner`.
 - مراحل النوع: قياس الملف (مدة، جهارة) ← معالجة على نسخة ← تفريغ أو مزامنة ← عينات استماع ← تسليم.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 

@@ -14108,5 +14108,35 @@
   "when": "مقارنة قبل/بعد في فيديو / a before/after comparison",
   "section": "إضافات مرفقات 2026-10-23 — 2026-10-23 upload additions",
   "source": "owner-upload:2026-10-23"
+ },
+ {
+  "id": "TRANS-G01",
+  "family": "transitions-cuts",
+  "domain": "motion",
+  "name_ar": "انتقال سحري بين حالتين",
+  "name_en": "Auto-animate between two states (magic move)",
+  "status": "documented",
+  "what": "طابق العناصر بين حالتين بمعرّف ثابت، وحرّك الموضع والحجم واللون للمتطابق، وأظهر أو أخفِ غير المتطابق، فيبدو الانتقال حركة واحدة. — Match elements between two states by a stable id, tween position, size and colour of matches, and fade the rest, so the change reads as one move.",
+  "when": "شرائح أو شاشات تطبيق أو لوحات بيانات تتغير / slides, app screens or dashboards that change",
+  "how": "Give each persistent element a data-id in both states; measure both layouts; tween matched boxes (FLIP: first, last, invert, play) with one easing; unmatched: fade 150-250 ms; text that changes content cross-fades in place. Keep durations 0.4-0.8 s; more than ~12 moving matches turns into noise.",
+  "params": "0.4-0.8 s; unmatched fade 150-250 ms",
+  "install": "",
+  "requires": [],
+  "license": "MIT",
+  "proof": [],
+  "proof_scope": "none",
+  "styles": [],
+  "tags": [
+   "auto-animate",
+   "magic move",
+   "flip",
+   "reveal.js",
+   "transition",
+   "انتقال",
+   "شرائح",
+   "حركة سحرية"
+  ],
+  "section": "من أكبر مستودعات GitHub — from the top GitHub repositories (2026-10-23)",
+  "source": "https://github.com/hakimel/reveal.js (MIT; auto-animate) — restated in our own words"
  }
 ]

@@ -2,7 +2,7 @@
 
 > **قوتك هنا:** أنت تشرح بالحركة: مخطط يُبنى بالترتيب السببي مع الصوت، عقدة تقفز ثم رابط يُرسم ثم نبضة بيانات تجري، كود يُكتب ويُبرز ويتحول، معادلة تتكون خطوة خطوة دون أن تنعكس داخل جملة عربية، ونموذج هندسي حقيقي تُحسب أرقامه ثم تتحول إلى فيلم.
 > **أقوى دليل:** حلّال «التوأم الإنشائي» شُغّل هنا فأعطى معامل أول انهيار 2.946× لعيّنة المثلث، ومرّت اختباراته (17/17)، ومرّ فحص القواعد الثابتة لتركيب دورة المياه في `kosif-studio`، واختبار تحويل الصورة إلى برنامج بايثون مطابق.
-> **You can:** plan, lay out, build, animate and narrate diagrams, code scenes and math/science explainers — RTL-aware. **65 powers follow** — ✅ 2 · 🟢 11 · 📦 11 · 🔑 1 · 👁 12 · 📄 26 · 💡 2.
+> **You can:** plan, lay out, build, animate and narrate diagrams, code scenes and math/science explainers — RTL-aware. **67 powers follow** — ✅ 2 · 🟢 11 · 📦 11 · 🔑 1 · 👁 12 · 📄 28 · 💡 2.
 
 **الحالة / status:** ✅ مُثبت هنا (كود + اختبار أو رندر في هذه الحاوية) · 🟢 جاهز (كود المالك يعمل بلا إضافات) · 📦 بأمر تثبيت · 🔑 مفتاح أو خدمة · 👁 شوهد في فيديو أنتجتَه (وصفة البناء مرفقة) · 📄 موصوف فقط · 💡 فكرة.
 مسارات الدليل نسبية إلى `/home/user/`؛ `style:<id>` = فيديو مرجعي أنتجتَه سابقًا (ملاحظاته في `kosif-tool/styles/<id>/`).
@@ -18,6 +18,7 @@
 - **بطاقات الشرح والوثائق — Explainer cards & documents** — EXPL-56 … EXPL-64 (9)
 - توليفات قوية / power combos · أخطاء ممنوعة / never do · أقوى 5 حركات توقيع / 5 signature moves
 - **إضافات v2 — v2 additions** — EXPL-X01 (1)
+- **من أكبر مستودعات GitHub — from the top GitHub repositories (2026-10-23)** — EXPL-G01 … EXPL-G02 (2)
 
 ## قواعد المخطط — Diagram grammar & composition
 
@@ -514,3 +515,21 @@ _من مراجعة مرفقات المالك: [owner-uploads-review-20261023.md]
 - **كيف / how:** أقل وأجرأ أفضل من كثير ورفيع؛ امسحها قبل لقطات الحركة. **أرقام / params:** dim 0.30; desaturate 0.40; 20–30 points; 3–4 boxes
 - **الرخصة / license:** Claude AI Motion Graphics (Tao Prompts) — ideas and numbers only, code not copied
 - **الدليل / proof:** `kosif-tool/.claude/skills/kosif-superpowers/references/owner-uploads-review-20261023.md`
+
+## من أكبر مستودعات GitHub — from the top GitHub repositories (2026-10-23)
+
+_قدرات من أشهر مستودعات GitHub ذات الترخيص المفتوح (MIT)، مكتوبة بكلماتنا لا منسوخة، وسجل كل مستودع في [github-top-1000.md](../github-top-1000.md). 🟢 = الكود هنا في `scripts/motion_physics.py` واختباره `evals/test_motion_physics.py`. — Powers from the most-starred open-licence (MIT) GitHub repositories, restated in our own words; per-repo record in github-top-1000.md; 🟢 = code here in scripts/motion_physics.py with its test._
+
+#### EXPL-G01 · قواعد مشهد الشرح الرياضي · Explainer scene grammar · 📄 موصوف / documented only
+- **ماذا / what:** فكرة واحدة لكل مشهد: اكتب أو ارسم العنصر عند تقديمه، حوّله عند تغيّر معناه، تتابع بنسبة تأخير للمجموعات، حرّك الكاميرا نحو التفصيلة، واترك وقفة بعد كل خطوة. — One idea per scene: write or draw an element when it is introduced, transform it when its meaning changes, lag groups, move the camera to the detail, and hold a beat after each step.
+- **متى أستخدمها / when:** فيديو شرح رياضي أو علمي أو تقني / a maths, science or technical explainer
+- **كيف / how:** Grammar: Create/Write (introduce) → Transform (same thing, new form) → FadeOut (done) ; LaggedStart(lag_ratio≈0.1-0.25) for lists; camera frame moves rather than shrinking content; wait 0.5-1 s after each idea; colour = meaning (same quantity, same colour across scenes). Narration first, then animate to the words (words.json). **أرقام / params:** lag_ratio 0.1-0.25; hold 0.5-1 s per idea.
+- **الرخصة / license:** MIT
+- **المصدر / source:** https://github.com/3b1b/manim (MIT) — restated in our own words
+
+#### EXPL-G02 · مخطط بنية سحابية بالكود ثم كشفه · Architecture diagram as code, revealed by cluster · 📄 موصوف / documented only
+- **ماذا / what:** اكتب مخطط البنية كودًا (عُقد بأيقونات مزود الخدمة ومجموعات وحواف)، ولّده صورة متجهة، ثم اكشفه مجموعة بعد مجموعة مع السرد. — Write the architecture as code (provider-icon nodes, clusters, edges), render it to a vector image, then reveal it cluster by cluster with the narration.
+- **متى أستخدمها / when:** شرح بنية نظام أو تدفق بيانات / explaining a system architecture or data flow
+- **كيف / how:** Clusters = boundaries the viewer must understand (VPC, service, team); edges labelled with what flows; render to SVG; give every cluster an id; animate in narration order: cluster outline draws on, then its nodes stagger in (EASE-G03), then edges draw along their direction. Keep ≤ 12 nodes on screen at once; split bigger systems into scenes. **أرقام / params:** ≤ 12 nodes per shot.
+- **الرخصة / license:** MIT
+- **المصدر / source:** https://github.com/mingrammer/diagrams (MIT) — restated in our own words

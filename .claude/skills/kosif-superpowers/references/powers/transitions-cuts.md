@@ -19,6 +19,7 @@ _الإدخالات مرتبة من الأقوى دليلًا؛ ابحث بال�
 - 📄 موصوف: TRANS-X01 … TRANS-X12 (12)
 - إضافات v2 — v2 additions
 - إضافات v3 — v3 additions
+- **من أكبر مستودعات GitHub — from the top GitHub repositories (2026-10-23)** — TRANS-G01 (1)
 
 #### TRANS-01 · انتقال تطبيقات الموبايل: غمس للأسود · Phone-editor transition: dipblack · ✅ مُثبت هنا
 - **ماذا / what:** Custom transition modelling what CapCut/InShot do: dip to black.
@@ -2846,3 +2847,14 @@ _من مراجعة مرفقات المالك: [owner-uploads-review-20261023.md]
 - **كيف / how:** img[:, :x] = graphics[:, :x] مع x = W·p؛ فاصل أبيض 1–2 px بتوهج ومقبض زجاجي ≈52×128 وبطاقتا تسمية تتلاشيان مع تقلص جانبهما. **أرقام / params:** crawl 0.47→0.55 between 0.9 and 2.2 s (measured)
 - **الرخصة / license:** Claude AI Motion Graphics (Tao Prompts) — ideas and numbers only, code not copied
 - **الدليل / proof:** `kosif-tool/.claude/skills/kosif-superpowers/proofs/owner-uploads-20261023/proof_uploads.py` · `kosif-tool/.claude/skills/kosif-superpowers/proofs/owner-uploads-20261023/receipt.json` · `kosif-tool/.claude/skills/kosif-superpowers/proofs/owner-uploads-20261023/sheet.jpg`
+
+## من أكبر مستودعات GitHub — from the top GitHub repositories (2026-10-23)
+
+_قدرات من أشهر مستودعات GitHub ذات الترخيص المفتوح (MIT)، مكتوبة بكلماتنا لا منسوخة، وسجل كل مستودع في [github-top-1000.md](../github-top-1000.md). 🟢 = الكود هنا في `scripts/motion_physics.py` واختباره `evals/test_motion_physics.py`. — Powers from the most-starred open-licence (MIT) GitHub repositories, restated in our own words; per-repo record in github-top-1000.md; 🟢 = code here in scripts/motion_physics.py with its test._
+
+#### TRANS-G01 · انتقال سحري بين حالتين · Auto-animate between two states (magic move) · 📄 موصوف / documented only
+- **ماذا / what:** طابق العناصر بين حالتين بمعرّف ثابت، وحرّك الموضع والحجم واللون للمتطابق، وأظهر أو أخفِ غير المتطابق، فيبدو الانتقال حركة واحدة. — Match elements between two states by a stable id, tween position, size and colour of matches, and fade the rest, so the change reads as one move.
+- **متى أستخدمها / when:** شرائح أو شاشات تطبيق أو لوحات بيانات تتغير / slides, app screens or dashboards that change
+- **كيف / how:** Give each persistent element a data-id in both states; measure both layouts; tween matched boxes (FLIP: first, last, invert, play) with one easing; unmatched: fade 150-250 ms; text that changes content cross-fades in place. Keep durations 0.4-0.8 s; more than ~12 moving matches turns into noise. **أرقام / params:** 0.4-0.8 s; unmatched fade 150-250 ms.
+- **الرخصة / license:** MIT
+- **المصدر / source:** https://github.com/hakimel/reveal.js (MIT; auto-animate) — restated in our own words

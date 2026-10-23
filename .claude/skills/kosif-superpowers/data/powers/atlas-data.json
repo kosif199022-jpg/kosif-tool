@@ -2946,5 +2946,234 @@
     "13800": "0699c3e20003c03cc64ea92ace9723cb824904c7b6fe0d43103693c04422b6a8"
    }
   }
+ },
+ {
+  "id": "ADATA-53",
+  "family": "atlas-data",
+  "domain": "data",
+  "name_ar": "تنفيذ خطة تتبع الأحداث مع بوابة schema في CI وموافقة المستخدم من المصدر",
+  "name_en": "Event instrumentation from a tracking plan with CI schema gate and consent at source",
+  "status": "documented",
+  "what": "يحوّل خطة التتبع إلى جمع أحداث فعلي: مكتبة تتبع typed مولّدة من الخطة، توزيع الأحداث بين العميل والخادم، ربط الهوية كما صُمم، بوابة CI تُفشل أي حدث خارج الخطة، وحجب الجمع قبل الموافقة (Consent Mode v2، TCF، GPC). — Turns a tracking plan into typed collection with a CI schema gate and consent gating before events fire.",
+  "when": "إضافة analytics لتطبيق، أحداث ناقصة أو مكررة، ربط Consent Mode، إعداد Segment/RudderStack / adding analytics, missing or duplicated events, wiring consent, setting up a CDP",
+  "how": "1) Treat the tracking plan as the contract: an event not in the plan gets no track call; send gaps back to the plan owner. 2) Generate typed tracking wrappers from the plan so code and plan cannot drift; never hand-write stringly-typed calls. 3) Place revenue, conversion and anything ad-blockers drop server-side; UI-context events client-side; both where hybrid. 4) Wire identity exactly as designed: identify on known users, alias/merge on anonymous→known, a stable anonymous ID; keep PII in traits behind a consent category, out of event properties. 5) Generate JSON Schema from the plan and add a CI gate that fails a PR on off-plan or mistyped events. 6) Gate collection at the source by consent category before the event fires: Consent Mode v2 signals, TCF strings where applicable, the GPC header. 7) Wire destinations and reverse ETL, then QA the live stream against the plan (missing, duplicate, mistyped events). Full original skill(s) with license: vendor/kosif-atlas/skills/2332-martech-event-instrumentation/8954-implement-event-instrumentation-and-cons.",
+  "params": "tracking plan, CDP",
+  "install": "mkdir -p ~/.claude/skills && cp -r .claude/skills/kosif-superpowers/vendor/kosif-atlas/skills/2332-martech-event-instrumentation/8954-implement-event-instrumentation-and-cons ~/.claude/skills/implement-event-instrumentation-and-cons",
+  "requires": [
+   "chromium"
+  ],
+  "license": "card in our own words; the original skill folders are copied verbatim with their MIT license and SOURCE.md under vendor/kosif-atlas",
+  "proof": [
+   "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/2332-martech-event-instrumentation/8954-implement-event-instrumentation-and-cons"
+  ],
+  "proof_scope": "url",
+  "styles": [],
+  "tags": [
+   "analytics",
+   "event tracking",
+   "tracking plan",
+   "consent mode",
+   "GDPR",
+   "CDP",
+   "تتبع الأحداث",
+   "موافقة"
+  ],
+  "section": "المراجعة والتحقق — Review, verification & quality gates",
+  "source": "KOSIF Atlas exhaustive pass 2026-10-23, batch verification-review-data (https://github.com/kosif199022-jpg/kosif-atlas @ 99bb108d): martech-event-instrumentation/implement-event-instrumentation-and-consent (#8954) · SKILL.md read in full as inert text",
+  "atlas": {
+   "ids": [
+    "8954"
+   ],
+   "examples": [
+    {
+     "id": "8954",
+     "plugin": "martech-event-instrumentation",
+     "skill": "implement-event-instrumentation-and-consent",
+     "url": "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/2332-martech-event-instrumentation/8954-implement-event-instrumentation-and-cons"
+    }
+   ],
+   "theme": "verification-review",
+   "risk_notes": "Method guidance only; no Atlas code imported or executed.",
+   "kosif_overlap_ids": [],
+   "stage": "extracted",
+   "verified_by": "atlas-pass-20261023-verification-review-data.json",
+   "skill_md_sha256": {
+    "8954": "531a6a43eab504c753c437aaaeae088da02b8a34c6f326892032aa9f29c5a997"
+   },
+   "vendored": [
+    "vendor/kosif-atlas/skills/2332-martech-event-instrumentation/8954-implement-event-instrumentation-and-cons"
+   ]
+  }
+ },
+ {
+  "id": "ADATA-54",
+  "family": "atlas-data",
+  "domain": "data",
+  "name_ar": "تقييم أنظمة التوصية: تقسيم زمني وخط أساس شعبية والحكم للـA/B",
+  "name_en": "Recommender evaluation: temporal split, popularity baseline, A/B as verdict",
+  "status": "documented",
+  "what": "يبني تقييمًا صادقًا لنظام توصية: تقسيم زمني بدل العشوائي، مقارنة دائمة بخط أساس الشعبية، مقاييس تناسب كل مرحلة، حواجز التغطية والتنوع والجدة، مراعاة انحياز الموضع، وتجربة A/B هي الحكم النهائي. — Builds an honest recommender evaluation where offline metrics filter and the online A/B decides.",
+  "when": "مقارنة نماذج توصية، تحسن offline لم يظهر online، بناء حزمة تقييم / comparing recommenders, an offline win that did not reproduce online, building an eval harness",
+  "how": "1) Split by time: train on the past, test on the future; a random split leaks future interactions and inflates every metric. 2) Report every metric for the candidate and a popularity baseline; a model that cannot beat popularity offline will not beat it online. 3) Match metric to stage: recall@k with candidate count for retrieval; nDCG, MAP, precision@k for ranking. 4) Add guardrails: catalogue coverage, intra-list diversity, novelty, to catch an accurate filter bubble. 5) Account for exposure and position bias in logged data; use bias-aware or off-policy estimates where possible and treat offline as directional. 6) Design the online A/B with a primary metric, guardrails (latency, diversity, revenue, complaints) and a power/MDE calculation; ship on the online result. 7) When offline and online disagree, check feedback-loop bias, metric mismatch, train/serve skew, popularity leakage in features and hidden guardrail regressions. Full original skill(s) with license: vendor/kosif-atlas/skills/2367-recommendation-systems-engineering/9140-evaluate-recommenders.",
+  "params": "models, interaction logs",
+  "install": "mkdir -p ~/.claude/skills && cp -r .claude/skills/kosif-superpowers/vendor/kosif-atlas/skills/2367-recommendation-systems-engineering/9140-evaluate-recommenders ~/.claude/skills/evaluate-recommenders",
+  "requires": [],
+  "license": "card in our own words; the original skill folders are copied verbatim with their MIT license and SOURCE.md under vendor/kosif-atlas",
+  "proof": [
+   "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/2367-recommendation-systems-engineering/9140-evaluate-recommenders"
+  ],
+  "proof_scope": "url",
+  "styles": [],
+  "tags": [
+   "recommender systems",
+   "evaluation",
+   "nDCG",
+   "A/B testing",
+   "machine learning",
+   "نظام توصية",
+   "تقييم"
+  ],
+  "section": "المراجعة والتحقق — Review, verification & quality gates",
+  "source": "KOSIF Atlas exhaustive pass 2026-10-23, batch verification-review-data (https://github.com/kosif199022-jpg/kosif-atlas @ 99bb108d): recommendation-systems-engineering/evaluate-recommenders (#9140) · SKILL.md read in full as inert text",
+  "atlas": {
+   "ids": [
+    "9140"
+   ],
+   "examples": [
+    {
+     "id": "9140",
+     "plugin": "recommendation-systems-engineering",
+     "skill": "evaluate-recommenders",
+     "url": "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/2367-recommendation-systems-engineering/9140-evaluate-recommenders"
+    }
+   ],
+   "theme": "verification-review",
+   "risk_notes": "Method guidance only; no Atlas code imported or executed.",
+   "kosif_overlap_ids": [],
+   "stage": "extracted",
+   "verified_by": "atlas-pass-20261023-verification-review-data.json",
+   "skill_md_sha256": {
+    "9140": "e962cc95bcdce7ed6f4f6007d1cfc54a67eb28b1853cc05f0edb64a77ded33a9"
+   },
+   "vendored": [
+    "vendor/kosif-atlas/skills/2367-recommendation-systems-engineering/9140-evaluate-recommenders"
+   ]
+  }
+ },
+ {
+  "id": "ADATA-55",
+  "family": "atlas-data",
+  "domain": "data",
+  "name_ar": "تدقيق مصدر الأصفار في مقاييس متعددة المصادر قبل تصديقها",
+  "name_en": "Zero-provenance audit for multi-source metrics before believing a 0",
+  "status": "documented",
+  "what": "حين يجمع أداة واحدة مقاييس من عدة مصادر في مخطط ثابت، يعني الصفر واحدًا من ثلاثة: لم تفعل ذلك فعلًا، أو أن مصدرك لا يبلغ عن هذا الحقل أصلًا، أو أنك فعلته بطريقة لا يتعرف عليها الكاشف. يبحث عن الدالة التي تزيد كل حقل قبل تصديق أي صفر. — In a shared multi-source schema a 0 can mean not done, not reported, or not recognised; find the incrementer before believing it.",
+  "when": "تقرير أو درجة يظهر فيها 0 لشيء تفعله، أداة تقيّمك من سجلاتك المحلية، تحديد هل المشكلة PR أم issue / a report shows 0 for something you do, a tool grades you from local activity",
+  "how": "1) For every zero-valued field, grep for the code that writes it; read the assignment, not the schema, docs or field name. 2) Build a table: field, function that increments it, reachable from my source?, meaning of my 0 (genuine / not-applicable). 3) For reachable fields, inspect the recogniser: hardcoded allowlists of tool names, file names or conventions that encode one way of working; the same act done differently reads as 0. 4) Note server-side scoring you cannot see and do not guess its weights. 5) Separate findings: collector bugs and recogniser gaps that a small PR can fix, versus design questions for an issue. 6) Never change real behaviour to satisfy a parsing gap. Full original skill(s) with license: vendor/kosif-atlas/skills/3331-metrics-zero-provenance-audit/13845-metrics-zero-provenance-audit.",
+  "params": "metrics client source, report",
+  "install": "mkdir -p ~/.claude/skills && cp -r .claude/skills/kosif-superpowers/vendor/kosif-atlas/skills/3331-metrics-zero-provenance-audit/13845-metrics-zero-provenance-audit ~/.claude/skills/metrics-zero-provenance-audit",
+  "requires": [],
+  "license": "card in our own words; the original skill folders are copied verbatim with their MIT license and SOURCE.md under vendor/kosif-atlas",
+  "proof": [
+   "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/3331-metrics-zero-provenance-audit/13845-metrics-zero-provenance-audit"
+  ],
+  "proof_scope": "url",
+  "styles": [],
+  "tags": [
+   "metrics",
+   "telemetry",
+   "data quality",
+   "provenance",
+   "audit",
+   "مقاييس",
+   "أصفار"
+  ],
+  "section": "المراجعة والتحقق — Review, verification & quality gates",
+  "source": "KOSIF Atlas exhaustive pass 2026-10-23, batch verification-review-data (https://github.com/kosif199022-jpg/kosif-atlas @ 99bb108d): metrics-zero-provenance-audit/metrics-zero-provenance-audit (#13845) · SKILL.md read in full as inert text",
+  "atlas": {
+   "ids": [
+    "13845"
+   ],
+   "examples": [
+    {
+     "id": "13845",
+     "plugin": "metrics-zero-provenance-audit",
+     "skill": "metrics-zero-provenance-audit",
+     "url": "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/3331-metrics-zero-provenance-audit/13845-metrics-zero-provenance-audit"
+    }
+   ],
+   "theme": "verification-review",
+   "risk_notes": "Method guidance only; no Atlas code imported or executed.",
+   "kosif_overlap_ids": [
+    "DATA-09"
+   ],
+   "stage": "extracted",
+   "verified_by": "atlas-pass-20261023-verification-review-data.json",
+   "skill_md_sha256": {
+    "13845": "0340ce8a3cfb1e933ba96a924a28a85e89c8f491634a79663ccfd31ab457e36e"
+   },
+   "vendored": [
+    "vendor/kosif-atlas/skills/3331-metrics-zero-provenance-audit/13845-metrics-zero-provenance-audit"
+   ]
+  }
+ },
+ {
+  "id": "ADATA-56",
+  "family": "atlas-data",
+  "domain": "data",
+  "name_ar": "اختيار منهج جودة البيانات: اختبارات للقواعد المعروفة ومراقبة للمجهول وعقود عند المنتِج",
+  "name_en": "Choose a data-quality approach: tests, monitors and contracts, and where each runs",
+  "status": "documented",
+  "what": "يقرر كيف تُضمن جودة البيانات لمجموعة محددة: القاعدة المعروفة (لا قيم فارغة، فريدة، مرجعية) اختبار، والمجهول عبر الزمن (تأخر التحديث، الحجم، انحراف المخطط والتوزيع) مراقب، وضمان حدود المنتِج عقد؛ ثم الأداة ومكان التشغيل وسياسة الإيقاف أو التحذير والـSLA. — Decides the mix of tests, monitors and contracts, the tool, where checks run and block-vs-warn policy.",
+  "when": "dbt tests أم Great Expectations أم Soda أم منصة مدارة؟ بيانات سيئة يكتشفها أصحاب المصلحة، ضغط تدقيق / choosing data-quality tooling, stakeholders finding bad data, audit pressure",
+  "how": "1) Restate the situation: warehouse and orchestrator, on dbt or not, the pain (silent bad data, stakeholder-found errors, no coverage, audit), team size and budget, datasets and their consumers. 2) Classify each concern: known rule → test; unknown over time → monitor; producer-boundary guarantee a consumer relies on → contract. Most programmes need all three. 3) Sequence by return: freshness and volume monitors first (cheap, catch most incidents), contracts on the highest-value sources next, column tests where they earn their keep; '200 tests, zero monitors' is inverted. 4) Choose tooling: dbt tests if already on dbt; a Python expectation framework for non-dbt pipelines; a monitoring platform when anomaly detection at scale is worth paying for. 5) Decide where checks run (at ingestion, in the transform, before publish) and which block the pipeline vs warn. 6) Set SLAs per dataset and name the one or two facts that would change the recommendation. Full original skill(s) with license: vendor/kosif-atlas/skills/2271-data-quality-observability/8666-choose-data-quality-approach.",
+  "params": "stack, datasets, pain",
+  "install": "mkdir -p ~/.claude/skills && cp -r .claude/skills/kosif-superpowers/vendor/kosif-atlas/skills/2271-data-quality-observability/8666-choose-data-quality-approach ~/.claude/skills/choose-data-quality-approach",
+  "requires": [
+   "python3",
+   "npm:three"
+  ],
+  "license": "card in our own words; the original skill folders are copied verbatim with their MIT license and SOURCE.md under vendor/kosif-atlas",
+  "proof": [
+   "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/2271-data-quality-observability/8666-choose-data-quality-approach"
+  ],
+  "proof_scope": "url",
+  "styles": [],
+  "tags": [
+   "data quality",
+   "data contracts",
+   "dbt",
+   "data observability",
+   "monitoring",
+   "جودة البيانات"
+  ],
+  "section": "المراجعة والتحقق — Review, verification & quality gates",
+  "source": "KOSIF Atlas exhaustive pass 2026-10-23, batch verification-review-data (https://github.com/kosif199022-jpg/kosif-atlas @ 99bb108d): data-quality-observability/choose-data-quality-approach (#8666) · SKILL.md read in full as inert text",
+  "atlas": {
+   "ids": [
+    "8666"
+   ],
+   "examples": [
+    {
+     "id": "8666",
+     "plugin": "data-quality-observability",
+     "skill": "choose-data-quality-approach",
+     "url": "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/2271-data-quality-observability/8666-choose-data-quality-approach"
+    }
+   ],
+   "theme": "verification-review",
+   "risk_notes": "Method guidance only; no Atlas code imported or executed.",
+   "kosif_overlap_ids": [
+    "CODE-24"
+   ],
+   "stage": "extracted",
+   "verified_by": "atlas-pass-20261023-verification-review-data.json",
+   "skill_md_sha256": {
+    "8666": "460605987401ea3a173149958953f801194dc14a084ee0dcfa069fcbba2d8e12"
+   },
+   "vendored": [
+    "vendor/kosif-atlas/skills/2271-data-quality-observability/8666-choose-data-quality-approach"
+   ]
+  }
  }
 ]

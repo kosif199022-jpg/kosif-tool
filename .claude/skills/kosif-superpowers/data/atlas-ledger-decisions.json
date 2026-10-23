@@ -1,7 +1,426 @@
 {
  "schema": "kosif.atlas-ledger-decisions.v1",
- "note": "Reviewed rules applied by scripts/atlas_ledger.py to safe, unique Atlas skills that no power cites. First matching rule wins; longer suffixes are listed first. Each rule records a review decision over SKILL.md text read as inert data, with the evidence in data/atlas-pass-20261023-*.json.",
+ "note": "Reviewed rules (vendor-pack stage rules and per-id batch decisions) applied by scripts/atlas_ledger.py to safe, unique Atlas skills that no power cites. First matching rule wins; longer suffixes are listed first. Each rule records a review decision over SKILL.md text read as inert data, with the evidence in data/atlas-pass-20261023-*.json.",
  "rules": [
+  {
+   "match": {
+    "ids": [
+     10636,
+     10647,
+     10660,
+     10665,
+     10668,
+     10671,
+     10673,
+     10675,
+     10678,
+     10718,
+     10757,
+     10758,
+     10759,
+     10760,
+     10773,
+     10815,
+     10818,
+     10848,
+     10875,
+     10877
+    ]
+   },
+   "status": "skipped",
+   "reason": "product-specific: workflows for one commercial agent product (charly-*); nothing portable beyond what CODE-17 and SEC-08 hold; verification-review batch, SKILL.md read as inert text (data/atlas-pass-20261023-verification-review-*.json)"
+  },
+  {
+   "match": {
+    "ids": [
+     14364,
+     14366,
+     14368,
+     14371,
+     14381,
+     14382,
+     14383,
+     14389,
+     14393,
+     14394,
+     14395,
+     14399,
+     14400
+    ]
+   },
+   "status": "skipped",
+   "reason": "product-specific: one vendor's assistant commands (xbert-*); no transferable method; verification-review batch, SKILL.md read as inert text (data/atlas-pass-20261023-verification-review-*.json)"
+  },
+  {
+   "match": {
+    "ids": [
+     1292,
+     2496,
+     2977,
+     3236,
+     7140,
+     8448,
+     8449,
+     9344,
+     9346,
+     9660
+    ]
+   },
+   "status": "skipped",
+   "reason": "product-specific: bound to one named product or service API; verification-review batch, SKILL.md read as inert text (data/atlas-pass-20261023-verification-review-*.json)"
+  },
+  {
+   "match": {
+    "ids": [
+     2719,
+     2730,
+     2757,
+     3229,
+     11875,
+     11876,
+     13090,
+     13149,
+     13157,
+     13159,
+     13515,
+     7153
+    ]
+   },
+   "status": "skipped",
+   "reason": "stub or thin wrapper: delegates to another command or holds only a few lines; verification-review batch, SKILL.md read as inert text (data/atlas-pass-20261023-verification-review-*.json)"
+  },
+  {
+   "match": {
+    "ids": [
+     9911,
+     10082,
+     12830
+    ]
+   },
+   "status": "skipped",
+   "reason": "a single lint or import rule for one library; too narrow for a power; verification-review batch, SKILL.md read as inert text (data/atlas-pass-20261023-verification-review-*.json)"
+  },
+  {
+   "match": {
+    "ids": [
+     9211,
+     9303
+    ]
+   },
+   "status": "skipped",
+   "reason": "niche jurisdiction-specific procedure; would mislead outside that jurisdiction; verification-review batch, SKILL.md read as inert text (data/atlas-pass-20261023-verification-review-*.json)"
+  },
+  {
+   "match": {
+    "ids": [
+     3427
+    ]
+   },
+   "status": "skipped",
+   "reason": "vendor reference material, not a method; verification-review batch, SKILL.md read as inert text (data/atlas-pass-20261023-verification-review-*.json)"
+  },
+  {
+   "match": {
+    "ids": [
+     7252,
+     7253
+    ]
+   },
+   "status": "skipped",
+   "reason": "devbook notes tied to one project's layout; verification-review batch, SKILL.md read as inert text (data/atlas-pass-20261023-verification-review-*.json)"
+  },
+  {
+   "match": {
+    "ids": [
+     13540,
+     13541
+    ]
+   },
+   "status": "skipped",
+   "reason": "Russian-language typography rules; KOSIF writes Arabic and English, and ADOCS-42 holds the plain-writing method; verification-review batch, SKILL.md read as inert text (data/atlas-pass-20261023-verification-review-*.json)"
+  },
+  {
+   "match": {
+    "ids": [
+     732
+    ]
+   },
+   "status": "skipped",
+   "reason": "the deterministic-number rule (compute totals with a script, never by the model) is already a KOSIF core rule; verification-review batch, SKILL.md read as inert text (data/atlas-pass-20261023-verification-review-*.json)"
+  },
+  {
+   "match": {
+    "ids": [
+     720
+    ]
+   },
+   "status": "pattern",
+   "powers": [
+    "ACODE-172"
+   ],
+   "reason": "structured LLM output checks; verification-review batch, SKILL.md read as inert text (data/atlas-pass-20261023-verification-review-*.json)"
+  },
+  {
+   "match": {
+    "ids": [
+     776,
+     13232,
+     8206,
+     13530,
+     11561,
+     11562,
+     12808,
+     11713,
+     12081,
+     12082,
+     12629,
+     12630,
+     13039
+    ]
+   },
+   "status": "pattern",
+   "powers": [
+    "CODE-17",
+    "SEC-08"
+   ],
+   "reason": "generic PR or code-review workflow; verification-review batch, SKILL.md read as inert text (data/atlas-pass-20261023-verification-review-*.json)"
+  },
+  {
+   "match": {
+    "ids": [
+     4179
+    ]
+   },
+   "status": "pattern",
+   "powers": [
+    "SEC-08"
+   ],
+   "reason": "security review of a change; verification-review batch, SKILL.md read as inert text (data/atlas-pass-20261023-verification-review-*.json)"
+  },
+  {
+   "match": {
+    "ids": [
+     2227,
+     2250,
+     14494,
+     14495,
+     14488
+    ]
+   },
+   "status": "pattern",
+   "powers": [
+    "CODE-16"
+   ],
+   "reason": "code review checklist; verification-review batch, SKILL.md read as inert text (data/atlas-pass-20261023-verification-review-*.json)"
+  },
+  {
+   "match": {
+    "ids": [
+     2365,
+     14503,
+     9632
+    ]
+   },
+   "status": "pattern",
+   "powers": [
+    "CHECK-06"
+   ],
+   "reason": "build, types, lint, tests verification loop; verification-review batch, SKILL.md read as inert text (data/atlas-pass-20261023-verification-review-*.json)"
+  },
+  {
+   "match": {
+    "ids": [
+     2532,
+     7852,
+     9628
+    ]
+   },
+   "status": "pattern",
+   "powers": [
+    "ACODE-227"
+   ],
+   "reason": "Python lint and format setup; verification-review batch, SKILL.md read as inert text (data/atlas-pass-20261023-verification-review-*.json)"
+  },
+  {
+   "match": {
+    "ids": [
+     8248
+    ]
+   },
+   "status": "pattern",
+   "powers": [
+    "CODE-24"
+   ],
+   "reason": "dataframe schema validation; verification-review batch, SKILL.md read as inert text (data/atlas-pass-20261023-verification-review-*.json)"
+  },
+  {
+   "match": {
+    "ids": [
+     9395,
+     9421,
+     9422,
+     4819,
+     9415
+    ]
+   },
+   "status": "pattern",
+   "powers": [
+    "ADOCS-28"
+   ],
+   "reason": "docs drift against code; verification-review batch, SKILL.md read as inert text (data/atlas-pass-20261023-verification-review-*.json)"
+  },
+  {
+   "match": {
+    "ids": [
+     14528,
+     11565
+    ]
+   },
+   "status": "pattern",
+   "powers": [
+    "ACODE-196"
+   ],
+   "reason": "dead code and import cleanup; verification-review batch, SKILL.md read as inert text (data/atlas-pass-20261023-verification-review-*.json)"
+  },
+  {
+   "match": {
+    "ids": [
+     12660
+    ]
+   },
+   "status": "pattern",
+   "powers": [
+    "ASTRAT-67"
+   ],
+   "reason": "8D problem solving; verification-review batch, SKILL.md read as inert text (data/atlas-pass-20261023-verification-review-*.json)"
+  },
+  {
+   "match": {
+    "ids": [
+     8446
+    ]
+   },
+   "status": "pattern",
+   "powers": [
+    "ACODE-135"
+   ],
+   "reason": "CI runner cost; verification-review batch, SKILL.md read as inert text (data/atlas-pass-20261023-verification-review-*.json)"
+  },
+  {
+   "match": {
+    "ids": [
+     2229
+    ]
+   },
+   "status": "pattern",
+   "powers": [
+    "ACODE-129"
+   ],
+   "reason": "shell script conventions; verification-review batch, SKILL.md read as inert text (data/atlas-pass-20261023-verification-review-*.json)"
+  },
+  {
+   "match": {
+    "ids": [
+     13331
+    ]
+   },
+   "status": "pattern",
+   "powers": [
+    "AMIND-47"
+   ],
+   "reason": "requirements elicitation; verification-review batch, SKILL.md read as inert text (data/atlas-pass-20261023-verification-review-*.json)"
+  },
+  {
+   "match": {
+    "ids": [
+     716,
+     721,
+     8938,
+     8939,
+     9115,
+     13087,
+     13288
+    ]
+   },
+   "status": "pattern",
+   "powers": [
+    "CHECK-11",
+    "PROMPT-15",
+    "QA-335"
+   ],
+   "reason": "LLM eval suites and prompt regression gates; verification-review batch, SKILL.md read as inert text (data/atlas-pass-20261023-verification-review-*.json)"
+  },
+  {
+   "match": {
+    "ids": [
+     902
+    ]
+   },
+   "status": "pattern",
+   "powers": [
+    "ADOCS-02",
+    "ACODE-277"
+   ],
+   "reason": "CLAUDE.md audit and improvement; verification-review batch, SKILL.md read as inert text (data/atlas-pass-20261023-verification-review-*.json)"
+  },
+  {
+   "match": {
+    "ids": [
+     9830,
+     4650,
+     4818,
+     7091
+    ]
+   },
+   "status": "pattern",
+   "powers": [
+    "TOOL-56",
+    "ACODE-277"
+   ],
+   "reason": "skill, plugin and agent-artifact audit; verification-review batch, SKILL.md read as inert text (data/atlas-pass-20261023-verification-review-*.json)"
+  },
+  {
+   "match": {
+    "ids": [
+     9417,
+     9428,
+     11566,
+     11665,
+     7986,
+     11346
+    ]
+   },
+   "status": "pattern",
+   "powers": [
+    "ADOCS-42",
+    "CHECK-04"
+   ],
+   "reason": "plain, concise writing review; verification-review batch, SKILL.md read as inert text (data/atlas-pass-20261023-verification-review-*.json)"
+  },
+  {
+   "match": {
+    "ids": [
+     4643
+    ]
+   },
+   "status": "pattern",
+   "powers": [
+    "ADATA-56"
+   ],
+   "reason": "data quality checks; verification-review batch, SKILL.md read as inert text (data/atlas-pass-20261023-verification-review-*.json)"
+  },
+  {
+   "match": {
+    "ids": [
+     12866
+    ]
+   },
+   "status": "pattern",
+   "powers": [
+    "ACODE-261"
+   ],
+   "reason": "UX heuristic or experience review; verification-review batch, SKILL.md read as inert text (data/atlas-pass-20261023-verification-review-*.json)"
+  },
   {
    "match": {
     "source_prefix": "https://github.com/jeremylongshore/tons-of-skills-marketplace",

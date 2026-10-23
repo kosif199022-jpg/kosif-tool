@@ -3,19 +3,20 @@
 
 > **قوتك هنا / what this gives you:** حوّل الكود والمستندات والأفكار إلى رسوم معرفية وخرائط ذهنية يمكن الاستعلام عنها. — Turn code, documents and ideas into queryable knowledge graphs and mind maps.
 > **أقوى دليل / strongest evidence:** **GRAPH-01** Install Graphify locally (venv) (`kosif-tool/.claude/skills/kosif-superpowers/proofs/general-graphify/README.md`) · **GRAPH-02** Map a codebase offline (`kosif-tool/.claude/skills/kosif-superpowers/proofs/general-graphify/README.md`)
-> **21 powers follow** — ✅ 11 · 🟢 0 · 📦 0 · 🔑 5 · 👁 0 · 📄 4 · 💡 1.
+> **23 powers follow** — ✅ 11 · 🟢 0 · 📦 0 · 🔑 5 · 👁 0 · 📄 6 · 💡 1.
 
 **الحالة / status:** ✅ مُثبت (شُغّل فعلًا وله مسار دليل) · 🟢 جاهز (كود موجود يعمل بما هو متاح عادة) · 📦 بأمر تثبيت واحد · 🔑 يحتاج مفتاحًا أو حسابًا أو موصلًا · 👁 شوهد في فيديو مرجعي (للموشن فقط) · 📄 طريقة موثقة · 💡 فكرة. الشارة هي أدنى مستوى صادق — the badge is the lowest level that is true.
 مسارات الدليل نسبية إلى `/home/user/`؛ و`session-<date>:<file>#<section>` تشير إلى تشغيل موثق في جلسة سابقة؛ و`owner-upload:` إلى ملف داخل أرشيف أرسله المالك. Proof paths are relative to `/home/user/`.
 
 **المجال / domain:** الهندسة والكود — Code & engineering · **البادئة / prefix:** `GRAPH` · **البيانات / data:** `data/powers/knowledge-graph.json` · **بحث / search:** `python3 scripts/powers.py family knowledge-graph`
-**مراجع ذات صلة / related references:** [CLAUDE_3_MINUTE_MAP.md](../CLAUDE_3_MINUTE_MAP.md) · [creativity.md](../creativity.md) · [ecc-harness.md](../ecc-harness.md) · [ecc-skills-index.md](../ecc-skills-index.md) · [graphify.md](../graphify.md) · [hubs.md](../hubs.md)
+**مراجع ذات صلة / related references:** [CLAUDE_3_MINUTE_MAP.md](../CLAUDE_3_MINUTE_MAP.md) · [agents-memory-reasoning-repos.md](../agents-memory-reasoning-repos.md) · [creativity.md](../creativity.md) · [ecc-harness.md](../ecc-harness.md) · [ecc-skills-index.md](../ecc-skills-index.md) · [github-top-1000.md](../github-top-1000.md) · [graphify.md](../graphify.md) · [hubs.md](../hubs.md)
 
 ## الفهرس / contents
 
 - **Graphify محليًا: سطر الأوامر — Local Graphify CLI** — GRAPH-01 … GRAPH-10 (10)
 - **Graphify المستضاف عبر MCP — Hosted Graphify MCP** — GRAPH-11 … GRAPH-21 (6)
 - **التفكير بالخرائط — Map-first thinking** — GRAPH-16 … GRAPH-20 (5)
+- **أكبر مستودعات GitHub — Top GitHub repositories (2026-10-23)** — GRAPH-22 … GRAPH-23 (2)
 - المصادر والرخص / sources & licences
 
 ## Graphify محليًا: سطر الأوامر — Local Graphify CLI
@@ -208,9 +209,29 @@
 - **الدليل / proof:** — (لا دليل تشغيل بعد / no run proof yet)
 - **المصدر / source:** graphify distillation §6 (motion hooks)
 
+## أكبر مستودعات GitHub — Top GitHub repositories (2026-10-23)
+
+#### GRAPH-22 · استرجاع بالرسم المعرفي وملخصات المجتمعات · Graph RAG with community summaries · 📄 موصوف / documented only
+- **ماذا / what:** استخرج الكيانات والعلاقات من كل مقطع، وجمّعها في مجتمعات، ولخص كل مجتمع؛ الأسئلة العامة تُجاب بتجميع ملخصات المجتمعات، والمحددة من جوار الكيان. — Extract entities and relations per chunk, cluster them into communities, summarise each; global questions map-reduce over community summaries, specific ones use the entity's neighbourhood.
+- **متى أستخدمها / when:** أسئلة عن مجموعة مستندات كبيرة كلها (موضوعات، اتجاهات) / questions about a whole large corpus (themes, trends)
+- **كيف / how:** 1 chunk the corpus; 2 extract (entity, type, description) and (source, relation, target) per chunk; 3 merge duplicates; 4 cluster the graph (modularity communities) at 2-3 levels; 5 summarise each community; 6 global query: ask each community summary, keep answers with a relevance score, combine the top ones; local query: entity → neighbours → their source chunks. Cite chunk ids. Costly to build: use plain retrieval for small corpora.
+- **يحتاج / needs:** [`pip:chromadb`](../requirements.md#req-pip-chromadb)
+- **الرخصة / license:** MIT
+- **الدليل / proof:** — (لا دليل تشغيل بعد / no run proof yet)
+- **المصدر / source:** https://github.com/microsoft/graphrag (MIT) — restated in our own words
+
+#### GRAPH-23 · استرجاع بمستويين وتحديث تدريجي · Dual-level retrieval with incremental graph updates · 📄 موصوف / documented only
+- **ماذا / what:** قسّم كلمات السؤال إلى مستوى منخفض (كيانات محددة) ومرتفع (موضوعات)، واسترجع بالاثنين، وأضف المستندات الجديدة للرسم دون إعادة بنائه. — Split the query's keywords into low-level (specific entities) and high-level (themes), retrieve with both, and add new documents to the graph without rebuilding it.
+- **متى أستخدمها / when:** قاعدة معرفة تتغير باستمرار / a knowledge base that keeps changing
+- **كيف / how:** Ask the model for two keyword lists; match low-level ones to entity nodes and high-level ones to relation/theme descriptions; union the neighbourhoods and rank. New document → extract its entities/relations → merge into existing nodes by name+type. Cheaper than community rebuilds (GRAPH-22).
+- **يحتاج / needs:** [`pip:chromadb`](../requirements.md#req-pip-chromadb)
+- **الرخصة / license:** MIT
+- **الدليل / proof:** — (لا دليل تشغيل بعد / no run proof yet)
+- **المصدر / source:** https://github.com/HKUDS/LightRAG (MIT) — restated in our own words
+
 ## المصادر والرخص / sources & licences
 
-- الرخص / licences: Apache-2.0 (12) · — (8) · owner (1)
+- الرخص / licences: Apache-2.0 (12) · — (8) · MIT (2) · owner (1)
 - الأفكار مكتوبة بكلماتنا مع رابط المصدر؛ لا يُنسخ نص طرف ثالث طويل. Ideas are paraphrased with a link to the source; no long third-party text is copied. `—` = no licence recorded (own method or own wording).
 
 ---

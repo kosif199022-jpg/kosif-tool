@@ -24,12 +24,12 @@
 |---|---:|---|
 | `proven` | 96 | ✅ proven: a proof exists in the catalog; still check its requirements here before calling it ready |
 | `ready` | 42 | 🟢 ready: runnable without setup according to the catalog |
-| `documented` | 95 | 📄 documented: a described method; needs building or wiring before it runs |
+| `documented` | 96 | 📄 documented: a described method; needs building or wiring before it runs |
 | `seen` | 22 | 👁 seen: observed in a reference or demo, not executed here |
 | `install` | 27 | 📦 install: needs a package, binary or model first |
 | `key` | 35 | 🔑 key: needs an account, key or paid service (ask before any spend) |
 | `idea` | 2 | 💡 idea: not built |
-| **المجموع** | **319** | |
+| **المجموع** | **320** | |
 
 ## الأدوات القابلة للتشغيل / runnable tools
 
@@ -41,11 +41,13 @@
 | `cinematic-cut-planner` | مُخطِّط قطعات اللقطات الحقيقية | `python3 scripts/cinematic_cut_planner.py --words ./words.json --clips ./clips.json --duration 48.5 --fps 30 --out ./out/edl.json` | tested-here |
 | `creative-external-search` | بحث المصادر الإبداعية دون اتصال | `python3 scripts/creative_external_search.py search "kinetic typography" --kind repo --top 5` | tested-here |
 | `dua-wednesday` | دعاء يوم الأربعاء — محرك ريل دعاء موشن جرافيك 9:16 | `python3 scripts/dua_wednesday.py doctor` | tested-here |
+| `fast-edit` | التعديل السريع: قص فوري يعرف الإطارات المفتاحية، مغيّر صوت، تفتيح الفيديو المظلم، استخراج الصوت | `python3 scripts/fast_edit.py doctor` | tested-here |
 | `fetch-reference` | جلب المرجع المسموح وقياسه | `python3 scripts/fetch_reference.py https://example.com/page --list --json` | tested-here |
 | `fetch-video` | تنزيل الفيديو من الروابط للمونتاج | `python3 scripts/fetch_video.py --doctor` | tested-elsewhere |
 | `image-local-ai` | ذكاء الصور المحلي: إزالة الخلفية والملء الذكي بنموذج ONNX تختاره | `python3 scripts/image_local_ai.py models --json` | tested-here |
 | `kosif-timeline` | محرر KOSIF Timeline: مونتاج متعدد المسارات مع تراجع وإعادة | `python3 scripts/kosif_timeline.py doctor` | tested-here |
 | `kosif-timeline-demo` | تجربة مونتاج KOSIF Timeline تلقائية بملفات أصلية مولدة | `python3 scripts/kosif_timeline_demo.py --dir ./fresh-kosif-timeline-demo` | tested-here |
+| `look-pipeline` | خط اللوك: تلوين واحد لـ ffmpeg وSVG وGLSL | `python3 scripts/look_pipeline.py presets` | tested-here |
 | `media-sources` | بوابة الوسائط المرخّصة | `python3 scripts/media_sources.py list` | tested-here |
 | `mimic` | محرك محاكاة الفيديو المرجعي | `python3 -c "import sys; sys.path.insert(0,'scripts/mimic'); import mm_analyze; mm_analyze.analyze('./in.mp4','./work')"` | tested-here |
 | `montage-pro` | فريق مونتاج برو (صوت أو فيديو إلى مونتاج أو موشن) | `python3 scripts/montage_pro.py doctor` | tested-here |
@@ -70,7 +72,7 @@
 
 | العائلة | القدرات | الفصل |
 |---|---:|---|
-| `ai-generation` | 93 | [ai-generation.md](../powers/ai-generation.md) |
+| `ai-generation` | 94 | [ai-generation.md](../powers/ai-generation.md) |
 | `atlas-media` | 27 | [atlas-media.md](../powers/atlas-media.md) |
 | `color-palette-grading` | 87 | [color-palette-grading.md](../powers/color-palette-grading.md) |
 | `media-image-audio` | 41 | [media-image-audio.md](../powers/media-image-audio.md) |
@@ -250,6 +252,7 @@
 | `GEN-85` | المراسي الأربع للثبات البصري | Four anchors of visual consistency | documented |  |
 | `GEN-87` | الترخيص أولًا وFirefly المحمي قانونيًا | Licence-first model choice & indemnified Firefly | documented | key:unspecified |
 | `GEN-88` | الإفصاح عن الوسائط المصطنعة وحدود التوليد | Synthetic-media disclosure, provenance & ethical limits | documented |  |
+| `GEN-G01` | خط إنتاج من موضوع إلى فيديو قصير | Topic-to-short pipeline with reviewable stages | documented | node, python3, chromium |
 | `GEN-X02` | توليد متصل ثم قص | One continuous generation, then cut | documented |  |
 | `AMEDIA-01` | تحويل نص لصوت واستنساخ وMؤثرات ElevenLabs | ElevenLabs TTS, cloning and sound effects | documented | key:elevenlabs, key:unspecified |
 | `AMEDIA-02` | فحص تسليم المزيج النهائي ليوتيوب 4K | Final mix delivery check for YouTube 4K | documented | ffmpeg |

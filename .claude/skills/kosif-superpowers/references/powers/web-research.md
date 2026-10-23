@@ -3,13 +3,13 @@
 
 > **قوتك هنا / what this gives you:** البحث في المصادر وقراءتها والاستشهاد بها والتحقق من المعلومات. — Search, read, cite and fact-check sources on the web.
 > **أقوى دليل / strongest evidence:** **WEB-01** Built-in WebSearch tool (`kosif-tool/.claude/skills/kosif-superpowers/proofs/general-docs/README.md`) · **WEB-02** Built-in WebFetch tool (`kosif-tool/.claude/skills/kosif-superpowers/proofs/general-docs/README.md`)
-> **24 powers follow** — ✅ 10 · 🟢 0 · 📦 2 · 🔑 4 · 👁 0 · 📄 8 · 💡 0.
+> **26 powers follow** — ✅ 10 · 🟢 0 · 📦 2 · 🔑 4 · 👁 0 · 📄 10 · 💡 0.
 
 **الحالة / status:** ✅ مُثبت (شُغّل فعلًا وله مسار دليل) · 🟢 جاهز (كود موجود يعمل بما هو متاح عادة) · 📦 بأمر تثبيت واحد · 🔑 يحتاج مفتاحًا أو حسابًا أو موصلًا · 👁 شوهد في فيديو مرجعي (للموشن فقط) · 📄 طريقة موثقة · 💡 فكرة. الشارة هي أدنى مستوى صادق — the badge is the lowest level that is true.
 مسارات الدليل نسبية إلى `/home/user/`؛ و`session-<date>:<file>#<section>` تشير إلى تشغيل موثق في جلسة سابقة؛ و`owner-upload:` إلى ملف داخل أرشيف أرسله المالك. Proof paths are relative to `/home/user/`.
 
 **المجال / domain:** البحث والويب — Research & web · **البادئة / prefix:** `WEB` · **البيانات / data:** `data/powers/web-research.json` · **بحث / search:** `python3 scripts/powers.py family web-research`
-**مراجع ذات صلة / related references:** [CLAUDE_3_MINUTE_MAP.md](../CLAUDE_3_MINUTE_MAP.md) · [capability-audit.md](../capability-audit.md) · [creativity.md](../creativity.md) · [github-top-1000.md](../github-top-1000.md) · [hubs.md](../hubs.md) · [method-packs.md](../method-packs.md) · [rea-superpowers-frontier-20261023.md](../rea-superpowers-frontier-20261023.md) · [superpowers-rea-map.md](../superpowers-rea-map.md)
+**مراجع ذات صلة / related references:** [CLAUDE_3_MINUTE_MAP.md](../CLAUDE_3_MINUTE_MAP.md) · [agents-memory-reasoning-repos.md](../agents-memory-reasoning-repos.md) · [capability-audit.md](../capability-audit.md) · [creativity.md](../creativity.md) · [github-top-1000.md](../github-top-1000.md) · [hubs.md](../hubs.md) · [method-packs.md](../method-packs.md) · [rea-superpowers-frontier-20261023.md](../rea-superpowers-frontier-20261023.md) · [superpowers-rea-map.md](../superpowers-rea-map.md)
 
 ## الفهرس / contents
 
@@ -18,6 +18,7 @@
 - **منهج البحث — Research method** — WEB-10 … WEB-15 (6)
 - **الحدود والأمان — Limits & safety** — WEB-16 … WEB-20 (5)
 - **Extended toolbelt (2026-10-18)** — WEB-21 … WEB-24 (4)
+- **أكبر مستودعات GitHub — Top GitHub repositories (2026-10-23)** — WEB-25 … WEB-26 (2)
 - المصادر والرخص / sources & licences
 
 ## أدوات الويب — Web tools
@@ -235,9 +236,27 @@
 - **الدليل / proof:** — (لا دليل تشغيل بعد / no run proof yet)
 - **المصدر / source:** https://github.com/browser-use/browser-use
 
+## أكبر مستودعات GitHub — Top GitHub repositories (2026-10-23)
+
+#### WEB-25 · بحث بوجهات نظر ثم مخطط ثم كتابة بمصادر · Perspective-guided research, outline, then cited writing · 📄 موصوف / documented only
+- **ماذا / what:** اكتشف وجهات النظر حول الموضوع، واسأل من كل وجهة أسئلة يجيب عنها بحث حقيقي، واجمع المقاطع بمصادرها، ثم ابنِ المخطط، ثم اكتب كل قسم بمراجعه. — Discover the perspectives on a topic, ask questions from each perspective answered by real search, collect cited snippets, build the outline, then write each section with its references.
+- **متى أستخدمها / when:** تقرير أو مقال شامل عن موضوع / a comprehensive report or article on a topic
+- **كيف / how:** 1 survey related articles to list 3-6 perspectives (historian, engineer, critic, user …); 2 per perspective run a writer↔expert loop of 3-5 questions, each answered from search results with URLs; 3 dedupe snippets; 4 draft the outline from the snippets, not from memory; 5 write section by section citing snippet ids; 6 check every claim maps to a snippet (A6). Unanswered questions become 'open questions', not invented answers.
+- **الرخصة / license:** MIT
+- **الدليل / proof:** — (لا دليل تشغيل بعد / no run proof yet)
+- **المصدر / source:** https://github.com/stanford-oval/storm (MIT) — restated in our own words
+
+#### WEB-26 · مخطِّط وباحثون متوازيون ثم تقرير · Planner, parallel researchers, then report · 📄 موصوف / documented only
+- **ماذا / what:** قسّم السؤال إلى أسئلة فرعية، ووزعها على باحثين متوازيين يبحث كل منهم ويلخص بمصادره، ثم يجمع محرر واحد التقرير بقائمة مصادر. — Split the question into sub-questions, give each to a parallel researcher that searches and summarises with sources, then one editor writes the report with a source list.
+- **متى أستخدمها / when:** سؤال بحثي واسع يحتاج سرعة / a broad research question that needs speed
+- **كيف / how:** Planner: 3-6 non-overlapping sub-questions + what a good answer needs. Researcher: ≤N sources each, summary with quotes and URLs, flags conflicts. Editor: merges, resolves or reports conflicts, writes the answer first then the detail, ends with the source list. Budget the sources and stop; a researcher that finds nothing says so.
+- **الرخصة / license:** Apache-2.0
+- **الدليل / proof:** — (لا دليل تشغيل بعد / no run proof yet)
+- **المصدر / source:** https://github.com/assafelovic/gpt-researcher (Apache-2.0) — restated in our own words
+
 ## المصادر والرخص / sources & licences
 
-- الرخص / licences: — (15) · Apache-2.0 (3) · BSD-3-Clause (2) · Apache-2.0 / MIT / BSD-3-Clause (1) · BSD-2-Clause (1) · MIT (1) · MIT (SDK) (1)
+- الرخص / licences: — (15) · Apache-2.0 (4) · BSD-3-Clause (2) · MIT (2) · Apache-2.0 / MIT / BSD-3-Clause (1) · BSD-2-Clause (1) · MIT (SDK) (1)
 - الأفكار مكتوبة بكلماتنا مع رابط المصدر؛ لا يُنسخ نص طرف ثالث طويل. Ideas are paraphrased with a link to the source; no long third-party text is copied. `—` = no licence recorded (own method or own wording).
 
 ---

@@ -1,0 +1,60 @@
+{
+ "schema": "kosif.atlas-5000.mining-receipt.v1",
+ "date": "2026-10-23",
+ "batch": "verification-review-data",
+ "atlas": "https://github.com/kosif199022-jpg/kosif-atlas",
+ "atlas_commit": "99bb108dff169880dd531359f474a01b73c4b233",
+ "powers_added": 4,
+ "sources_read": 4,
+ "scope_note": "Each SKILL.md was read in full as inert text and its method summarised in our own words on the card; with the owner's approval (2026-10-23) the whole skill folder (text files only) is also copied verbatim with its license into vendor/kosif-atlas, listed with hashes in vendor/kosif-atlas/KOSIF_INTEGRATION.json. Nothing from the Atlas was executed. Only READ_ONLY_OK, permissive-license, no-risk-flag skills were used.",
+ "sources": [
+  {
+   "atlas_id": 8954,
+   "plugin": "martech-event-instrumentation",
+   "skill": "implement-event-instrumentation-and-consent",
+   "license": "MIT",
+   "theme": "verification-review",
+   "path": "skills/2332-martech-event-instrumentation/8954-implement-event-instrumentation-and-cons",
+   "skill_md_sha256": "531a6a43eab504c753c437aaaeae088da02b8a34c6f326892032aa9f29c5a997",
+   "bytes": 5289,
+   "read_in_full": true,
+   "power": "ADATA-53"
+  },
+  {
+   "atlas_id": 9140,
+   "plugin": "recommendation-systems-engineering",
+   "skill": "evaluate-recommenders",
+   "license": "MIT",
+   "theme": "verification-review",
+   "path": "skills/2367-recommendation-systems-engineering/9140-evaluate-recommenders",
+   "skill_md_sha256": "e962cc95bcdce7ed6f4f6007d1cfc54a67eb28b1853cc05f0edb64a77ded33a9",
+   "bytes": 2986,
+   "read_in_full": true,
+   "power": "ADATA-54"
+  },
+  {
+   "atlas_id": 13845,
+   "plugin": "metrics-zero-provenance-audit",
+   "skill": "metrics-zero-provenance-audit",
+   "license": "MIT",
+   "theme": "verification-review",
+   "path": "skills/3331-metrics-zero-provenance-audit/13845-metrics-zero-provenance-audit",
+   "skill_md_sha256": "0340ce8a3cfb1e933ba96a924a28a85e89c8f491634a79663ccfd31ab457e36e",
+   "bytes": 12689,
+   "read_in_full": true,
+   "power": "ADATA-55"
+  },
+  {
+   "atlas_id": 8666,
+   "plugin": "data-quality-observability",
+   "skill": "choose-data-quality-approach",
+   "license": "MIT",
+   "theme": "verification-review",
+   "path": "skills/2271-data-quality-observability/8666-choose-data-quality-approach",
+   "skill_md_sha256": "460605987401ea3a173149958953f801194dc14a084ee0dcfa069fcbba2d8e12",
+   "bytes": 5876,
+   "read_in_full": true,
+   "power": "ADATA-56"
+  }
+ ]
+}

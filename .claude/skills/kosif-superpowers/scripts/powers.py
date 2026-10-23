@@ -298,6 +298,12 @@ _merge_intents({
     "ترجمة تلقائية": ["captions", "subtitles", "whisper", "@SYNC", "@APPX"], "ترجمة الفيديو": ["captions", "subtitles", "@SYNC", "@APPX"],
     "ترجمة فيديو": ["captions", "subtitles", "@SYNC", "@APPX"], "ترجمة للفيديو": ["captions", "subtitles", "@SYNC", "@APPX"],
     "auto captions": ["captions", "whisper", "@SYNC", "@APPX"],
+    # «ترجمة» is also "subtitles": these phrases mean caption lines, not translation (Montaji study, APPX-140/141)
+    "سطور ترجمة": ["captions", "caption lines", "subtitles", "@APPX", "@SYNC"], "سطور الترجمة": ["captions", "caption lines", "subtitles", "@APPX", "@SYNC"],
+    "ملف ترجمة": ["captions", "srt", "subtitles", "@APPX", "@SYNC"], "ملف الترجمة": ["captions", "srt", "subtitles", "@APPX", "@SYNC"],
+    "ترجمة نانسي": ["hallucination", "whisper", "captions", "@APPX"], "هلوسة": ["hallucination", "whisper", "captions", "@APPX"],
+    "ويسبر": ["whisper", "transcription", "word timestamps", "@SYNC"],
+    "caption lines": ["captions", "srt", "@APPX"], "colour look": ["color grade", "look", "@APPX", "@COLOR"],
     "قدرات التطبيقات": ["@APPX"], "مزايا التطبيق": ["@APPX"], "app features": ["@APPX"],
     # second batch (2026-10-19): photo developers, type, vector, procedural, download, animation
     "dxo": ["dxo", "@APPX"], "photolab": ["dxo", "@APPX"], "capture one": ["capture one", "@APPX"],

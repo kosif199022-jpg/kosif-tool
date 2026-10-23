@@ -4,7 +4,7 @@
 The photo is used the way an atelier student uses a sitter: it is measured, never copied. The canvas
 starts as blank paper and every mark on it is a generated stroke, so the output contains no photo
 pixels (the receipt proves it: `canvas_source = strokes_only`). Stages follow the portrait method
-cards PM-01..PM-16 in data/portrait_methods.json:
+cards PM-01..PM-18 in data/portrait_methods.json (colour media, PM-19..PM-24, live in color_media.py):
 
   measure     face landmarks (MediaPipe, optional) and a body/hair/skin/clothes segmentation give the
               proportional checks a sight-size or Loomis student would make (thirds, eye spacing).
@@ -91,6 +91,7 @@ MEDIUMS = {
               "tooth": 1.0, "sheen": 0.0},
 }
 MED = dict(MEDIUMS["graphite"])
+COLOR_MEDIA = ("colored-pencil", "oil", "watercolor")       # scripts/color_media.py
 
 
 def _need():
@@ -303,6 +304,36 @@ def paper_tooth(h, w, rng):
     return t
 
 
+def stroke_mask(pts, width, spacing, hw, rng, ss=3, taper="both"):
+    """Coverage mask of one tapered stroke (0..1, supersampled then area-averaged) and its bounding box."""
+    import cv2
+    import numpy as np
+    h, w = hw
+    pad = int(math.ceil(max(width, spacing))) + 2
+    x0 = max(int(pts[:, 0].min()) - pad, 0)
+    y0 = max(int(pts[:, 1].min()) - pad, 0)
+    x1 = min(int(pts[:, 0].max()) + pad + 1, w)
+    y1 = min(int(pts[:, 1].max()) + pad + 1, h)
+    if x1 - x0 < 2 or y1 - y0 < 2:
+        return None
+    n = len(pts)
+    t = np.linspace(0, 1, n)
+    if taper == "both":
+        p = np.sin(np.pi * np.clip(t * 0.94 + 0.03, 0, 1)) ** 0.55
+    elif taper == "flick":
+        p = (1 - t) ** 0.7 * np.clip(t * 6, 0, 1) ** 0.5
+    else:
+        p = np.ones(n)
+    p = np.clip(p * (0.85 + 0.15 * rng.random()), 0.05, 1)
+    hi = np.zeros(((y1 - y0) * ss, (x1 - x0) * ss), np.uint8)
+    q = ((pts - [x0, y0]) * ss * 16).astype(np.int32)
+    for i in range(n - 1):
+        th = max(1, int(round(width * ss * (0.55 + 0.45 * p[i]))))
+        cv2.line(hi, tuple(q[i]), tuple(q[i + 1]), int(255 * p[i]), th, cv2.LINE_AA, shift=4)
+    m = cv2.resize(hi, (x1 - x0, y1 - y0), interpolation=cv2.INTER_AREA).astype(np.float32) / 255.0
+    return m, (x0, y0, x1, y1)
+
+
 class Canvas:
     def __init__(self, h, w, tooth, rng, ss=3):
         import numpy as np
@@ -320,29 +351,11 @@ class Canvas:
         if len(pts) < 2:
             return
         width, alpha = width * MED["w"], min(alpha * MED["a"], 0.95)
-        pad = int(math.ceil(max(width, spacing))) + 2
-        x0 = max(int(pts[:, 0].min()) - pad, 0)
-        y0 = max(int(pts[:, 1].min()) - pad, 0)
-        x1 = min(int(pts[:, 0].max()) + pad + 1, self.w)
-        y1 = min(int(pts[:, 1].max()) + pad + 1, self.h)
-        if x1 - x0 < 2 or y1 - y0 < 2:
+        got = stroke_mask(pts, width, spacing, (self.h, self.w), self.rng, self.ss, taper)
+        if got is None:
             return
-        ss = self.ss
+        m, (x0, y0, x1, y1) = got
         n = len(pts)
-        t = np.linspace(0, 1, n)
-        if taper == "both":
-            p = np.sin(np.pi * np.clip(t * 0.94 + 0.03, 0, 1)) ** 0.55
-        elif taper == "flick":
-            p = (1 - t) ** 0.7 * np.clip(t * 6, 0, 1) ** 0.5
-        else:
-            p = np.ones(n)
-        p = np.clip(p * (0.85 + 0.15 * self.rng.random()), 0.05, 1)
-        hi = np.zeros(((y1 - y0) * ss, (x1 - x0) * ss), np.uint8)
-        q = ((pts - [x0, y0]) * ss * 16).astype(np.int32)
-        for i in range(n - 1):
-            th = max(1, int(round(width * ss * (0.55 + 0.45 * p[i]))))
-            cv2.line(hi, tuple(q[i]), tuple(q[i + 1]), int(255 * p[i]), th, cv2.LINE_AA, shift=4)
-        m = cv2.resize(hi, (x1 - x0, y1 - y0), interpolation=cv2.INTER_AREA).astype(np.float32) / 255.0
         tooth = self.tooth[y0:y1, x0:x1]
         k = 0.55 * min(MED["tooth"], 1.0)
         dep = alpha * m * ((1 - k) + k * tooth ** ((1.4 - 0.8 * alpha) * max(MED["tooth"], 1.0)))
@@ -675,6 +688,9 @@ def has_person(labels):
 
 def draw(args, ref=None, source=None):
     """Draw a photo, or any reference image (an imagined scene rendered by code), from strokes only."""
+    if getattr(args, "medium", "graphite") in COLOR_MEDIA:      # coloured pencil, oil (brush), watercolour
+        import color_media
+        return color_media.draw(args, ref=ref, source=source)
     _need()
     import cv2
     import numpy as np
@@ -826,7 +842,10 @@ def review(args):
     img = cv2.imread(rec["png"], cv2.IMREAD_GRAYSCALE).astype(np.float32) / 255.0
     D = np.load(d / "_target_darkness.npy").astype(np.float32)
     labels = np.load(d / "_labels.npy")
-    pr = MEDIUMS.get(rec.get("medium", "graphite"), MEDIUMS["graphite"])["paper"]
+    medium = rec.get("medium", "graphite")
+    pr = MEDIUMS.get(medium, MEDIUMS["graphite"])["paper"]
+    if medium in COLOR_MEDIA:     # colour media are judged against white: an oil ground is painted over
+        pr = (255, 255, 255) if medium == "oil" else (250, 248, 242)
     paper = (0.299 * pr[0] + 0.587 * pr[1] + 0.114 * pr[2]) * 0.975 / 255.0
     drawn = np.clip(1 - img / paper, 0, 1)
     checks = []
@@ -856,8 +875,21 @@ def review(args):
     tex = float(np.abs(lap)[dark].mean()) if dark.any() else 0.0
     add("stroke-texture", tex > 0.01, {"dark_mass_laplacian": round(tex, 4)},
         "visible pencil texture (not flat fill) on large dark masses")
-    add("strokes-only", rec.get("canvas_source") == "strokes_only", rec.get("canvas_source"),
-        "receipt: canvas built from paper + strokes only")
+    if rec.get("canvas_source") == "washes_and_strokes":
+        add("washes-and-strokes", not rec.get("photo_pixels_in_output", True), rec.get("canvas_source"),
+            "receipt: paper + pencil underdrawing + flat washes per shape; no photo pixels")
+    else:
+        add("strokes-only", rec.get("canvas_source") in ("strokes_only", "brush_strokes_only"),
+            rec.get("canvas_source"), "receipt: canvas built from paper (or ground) + strokes only")
+    if (d / "_target_colour.npy").exists():
+        tgt = np.load(d / "_target_colour.npy").astype(np.float32)
+        import color_media
+        got = cv2.cvtColor(cv2.imread(rec["png"], cv2.IMREAD_COLOR), cv2.COLOR_BGR2RGB)
+        got = cv2.resize(got, (tgt.shape[1], tgt.shape[0]), interpolation=cv2.INTER_AREA).astype(np.float32) / 255
+        dE = np.sqrt(((color_media.srgb_to_oklab(cv2.GaussianBlur(got, (0, 0), 1.5))
+                       - color_media.srgb_to_oklab(cv2.GaussianBlur(tgt, (0, 0), 1.5))) ** 2).sum(-1))
+        add("colour-fidelity", float(dE.mean()) < 0.07, {"mean_oklab_dE": round(float(dE.mean()), 4)},
+            "squinted colour (quarter size, blur 1.5) vs the reference colour, OKLab distance")
     res = {"schema": "kosif.portrait.review.v1", "dir": str(d), "anatomy_gate": gate,
            "checks": checks, "max_darkness": round(full, 3),
            "pass": all(c["pass"] for c in checks) and gate.get("pass", False),
@@ -904,7 +936,8 @@ def main(argv=None):
     i.add_argument("--blend", type=float, default=0.55)
     i.add_argument("--seed", type=int, default=7)
     for q in (d, i):
-        q.add_argument("--medium", choices=sorted(MEDIUMS), default="graphite")
+        q.add_argument("--medium", choices=sorted(MEDIUMS) + list(COLOR_MEDIA), default="graphite",
+                       help="graphite, charcoal, ink, sepia; colour: colored-pencil, oil (brush), watercolor")
         q.add_argument("--subject", choices=("auto", "portrait", "scene"), default="auto",
                        help="auto: portrait when a person is found, otherwise scene")
         q.add_argument("--background", choices=("auto", "straight", "flow"), default="auto",

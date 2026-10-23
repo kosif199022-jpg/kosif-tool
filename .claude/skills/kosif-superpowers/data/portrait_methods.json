@@ -1,6 +1,6 @@
 {
   "schema": "kosif.portrait.methods.v1",
-  "revision": "2026-10-23a",
+  "revision": "2026-10-23b",
   "status": "original_method_summaries_NOT_fulltext_copy_NOT_model_training",
   "notes": [
     "Each card restates, in original words, a portrait or head-drawing method that is widely taught in the named books and ateliers. No book text, page, diagram or illustration is copied or bundled.",
@@ -149,6 +149,41 @@
       "author": "James Gurney",
       "year": 2009,
       "review_status": "general_teaching_knowledge"
+    },
+    {
+      "id": "PS-20",
+      "title": "Painterly Rendering with Curved Brush Strokes of Multiple Sizes (SIGGRAPH 98)",
+      "author": "Aaron Hertzmann",
+      "year": 1998,
+      "review_status": "algorithm_known_reimplemented"
+    },
+    {
+      "id": "PS-21",
+      "title": "Computer-Generated Watercolor (SIGGRAPH 97)",
+      "author": "Cassidy J. Curtis, Sean E. Anderson, Joshua E. Seims, Kurt W. Fleischer, David H. Salesin",
+      "year": 1997,
+      "review_status": "algorithm_known_effects_approximated"
+    },
+    {
+      "id": "PS-22",
+      "title": "Colored Pencil Painting Bible",
+      "author": "Alyona Nickelsen",
+      "year": 2009,
+      "review_status": "general_teaching_knowledge"
+    },
+    {
+      "id": "PS-23",
+      "title": "Watercolor Painting Step-by-Step",
+      "author": "Arthur L. Guptill",
+      "year": 1957,
+      "review_status": "general_teaching_knowledge"
+    },
+    {
+      "id": "PS-24",
+      "title": "A perceptual color space for image processing (OKLab)",
+      "author": "Björn Ottosson",
+      "year": 2020,
+      "review_status": "formula_implemented"
     }
   ],
   "methods": [
@@ -458,6 +493,112 @@
       "checks": [
         "distant plane mean darkness lower than the foreground's",
         "edge weight falls with depth"
+      ]
+    },
+    {
+      "id": "PM-19",
+      "name_en": "Coloured pencil: layer light to dark",
+      "name_ar": "الألوان الخشبية: طبقات من الفاتح إلى الغامق",
+      "sources": [
+        "PS-22",
+        "PS-05"
+      ],
+      "principle_en": "Wax pencil is transparent and cannot be erased well, so build colour in many light hatched layers, each in a new direction, from the lightest colours to the darkest; burnish (press the wax into the tooth with a blender) only once enough layers are down, then put the darkest accents and edges on top.",
+      "principle_ar": "شمع القلم الملون شفاف ولا يُمحى بسهولة، فابنِ اللون بطبقات تهشير خفيفة كثيرة، كل طبقة باتجاه جديد، من الأفتح إلى الأغمق؛ ولا تصقل (ضغط الشمع في حبيبات الورق بالقلم الممزج) إلا بعد أن تكفي الطبقات، ثم ضع أغمق اللمسات والحواف في الأعلى.",
+      "pipeline_stage": "render (colored-pencil)",
+      "executed_by": "color_media.PENCIL_PASSES + pencil_pass() + burnish()",
+      "checks": [
+        "four passes in four hatch directions",
+        "burnish on skin only after layer 2",
+        "edges and accents drawn last"
+      ]
+    },
+    {
+      "id": "PM-20",
+      "name_en": "Coloured pencil: mix colour on the paper, darks from colour",
+      "name_ar": "الألوان الخشبية: امزج اللون على الورق والغوامق من الألوان",
+      "sources": [
+        "PS-22",
+        "PS-07"
+      ],
+      "principle_en": "A limited set of pencils makes every colour by glazing one over another (blue over yellow reads green). Choose each layer by what it does to the colour already on the paper, and build darks from deep colours (indigo, umber, crimson) rather than from black and grey, which deaden the drawing; keep neutrals for neutral areas.",
+      "principle_ar": "مجموعة أقلام محدودة تصنع كل لون بتراكب طبقة فوق أخرى (الأزرق فوق الأصفر يبدو أخضر). اختر كل طبقة بحسب ما تفعله باللون الموجود على الورق، وابنِ الغوامق من ألوان عميقة (نيلي، أومبر، قرمزي) لا من الأسود والرمادي اللذين يطفئان الرسم؛ واحتفظ بالمحايدات للمساحات المحايدة.",
+      "pipeline_stage": "render (colored-pencil)",
+      "executed_by": "PencilCanvas.choose(): glaze model + OKLab distance + neutral penalty; 30 named pencils",
+      "checks": [
+        "every stroke uses one of the named pencils",
+        "neutral pencils penalised where the target has chroma > 0.03"
+      ]
+    },
+    {
+      "id": "PM-21",
+      "name_en": "Brush: big to small, block-in to detail",
+      "name_ar": "الفرشاة: من الكبيرة إلى الصغيرة، من الكتل إلى التفاصيل",
+      "sources": [
+        "PS-15",
+        "PS-20"
+      ],
+      "principle_en": "Cover the toned ground with the biggest brush first, stating the large colour masses; then go back with smaller brushes only where the painting still differs from the subject, and save the smallest brush for the focal area (the face). Each layer is judged against the subject seen at that brush's scale (squinting).",
+      "principle_ar": "غطِّ الأرضية الملونة بأكبر فرشاة أولًا لتضع كتل اللون الكبيرة، ثم عد بفرش أصغر فقط حيث ما زالت اللوحة تختلف عن الموضوع، واحتفظ بأصغر فرشاة لمنطقة التركيز (الوجه). كل طبقة تُقارن بالموضوع كما يُرى بمقياس تلك الفرشاة (بتضييق العين).",
+      "pipeline_stage": "render (oil)",
+      "executed_by": "color_media.draw_oil(): radii max(h,w)/48../380 (+/640 on the face), error grid per layer",
+      "checks": [
+        "first layer covers the ground",
+        "later layers only where colour error > threshold",
+        "finest brush only inside the face"
+      ]
+    },
+    {
+      "id": "PM-22",
+      "name_en": "Brush: one mixed colour per stroke, along the form",
+      "name_ar": "الفرشاة: لون ممزوج واحد لكل ضربة على اتجاه الشكل",
+      "sources": [
+        "PS-15",
+        "PS-20",
+        "PS-06"
+      ],
+      "principle_en": "Mix the colour first, then lay it in one confident stroke that follows the form and stops when the subject changes colour; the brush runs out of paint towards the end (dry-brush break-up), bristles leave parallel streaks, and thick paint catches the light.",
+      "principle_ar": "اخلط اللون أولًا ثم ضعه بضربة واثقة واحدة تتبع الشكل وتتوقف حين يتغير لون الموضوع؛ الفرشاة يقل حبرها في آخر الضربة (تكسّر الفرشاة الجافة)، والشعيرات تترك خطوطًا متوازية، والطلاء السميك يلتقط الضوء.",
+      "pipeline_stage": "render (oil)",
+      "executed_by": "_brush_stroke(): Hertzmann stop rule, curvature filter, bristle lines, dry-brush gaps, impasto height lit upper-left",
+      "checks": [
+        "stroke colour constant along the stroke",
+        "stroke stops where reference matches canvas better than brush"
+      ]
+    },
+    {
+      "id": "PM-23",
+      "name_en": "Watercolour: light to dark, save the whites",
+      "name_ar": "الألوان المائية: من الفاتح إلى الغامق واحفظ الأبيض",
+      "sources": [
+        "PS-23",
+        "PS-21"
+      ],
+      "principle_en": "Watercolour cannot add light, so plan the whites and leave them as paper. Start with a soft wet-in-wet wash for the general colour, then flat washes over whole shapes, then smaller darker shapes, each glaze transparent over the last; a light pencil underdrawing may stay visible. Let the background fade out towards the edges of the paper.",
+      "principle_ar": "الألوان المائية لا تضيف الضوء، فخطط الأبيض واتركه ورقًا. ابدأ بغسلة ناعمة مبللة على مبلل للون العام، ثم غسلات مسطحة على أشكال كاملة، ثم أشكال أصغر أغمق، كل طبقة شفافة فوق السابقة؛ ويجوز أن يبقى رسم القلم الخفيف تحتها ظاهرًا. واجعل الخلفية تتلاشى نحو أطراف الورقة.",
+      "pipeline_stage": "render (watercolor)",
+      "executed_by": "color_media.draw_watercolor(): underdrawing, wet-in-wet g1, shape washes g2, darks g3, accents g4, vignette",
+      "checks": [
+        "glazes only darken (transmittance <= 1)",
+        "near-white shapes left as paper",
+        "background density fades to the paper edge"
+      ]
+    },
+    {
+      "id": "PM-24",
+      "name_en": "Watercolour: edges, pigment and paper",
+      "name_ar": "الألوان المائية: الحواف والصبغة والورق",
+      "sources": [
+        "PS-21",
+        "PS-23"
+      ],
+      "principle_en": "A drying wash pulls pigment to its edge, so shapes end in a slightly darker rim; granulating pigments settle into the valleys of the paper; hand-laid edges wobble. These marks are what make a wash read as watercolour rather than as a flat digital fill.",
+      "principle_ar": "الغسلة وهي تجف تسحب الصبغة إلى حافتها، فتنتهي الأشكال بإطار أغمق قليلًا؛ والأصباغ المحببة تستقر في تجاويف الورق؛ والحواف المرسومة باليد تتموج. هذه العلامات هي ما يجعل الغسلة تُقرأ كألوان مائية لا كتعبئة رقمية مسطحة.",
+      "pipeline_stage": "render (watercolor)",
+      "executed_by": "_flat_wash(): edge darkening exp(-d/2.5), granulation by paper tooth, _wobble() displaced edges",
+      "checks": [
+        "optical density higher within 3 px of shape edges",
+        "density varies with paper tooth"
       ]
     }
   ]

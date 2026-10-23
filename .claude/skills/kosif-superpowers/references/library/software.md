@@ -22,14 +22,14 @@
 
 | الحالة | العدد | المعنى |
 |---|---:|---|
-| `proven` | 111 | ✅ proven: a proof exists in the catalog; still check its requirements here before calling it ready |
-| `ready` | 16 | 🟢 ready: runnable without setup according to the catalog |
-| `documented` | 394 | 📄 documented: a described method; needs building or wiring before it runs |
+| `proven` | 115 | ✅ proven: a proof exists in the catalog; still check its requirements here before calling it ready |
+| `ready` | 17 | 🟢 ready: runnable without setup according to the catalog |
+| `documented` | 441 | 📄 documented: a described method; needs building or wiring before it runs |
 | `seen` | 16 | 👁 seen: observed in a reference or demo, not executed here |
 | `install` | 32 | 📦 install: needs a package, binary or model first |
 | `key` | 7 | 🔑 key: needs an account, key or paid service (ask before any spend) |
 | `idea` | 2 | 💡 idea: not built |
-| **المجموع** | **578** | |
+| **المجموع** | **630** | |
 
 ## الأدوات القابلة للتشغيل / runnable tools
 
@@ -41,13 +41,17 @@
 | `atlas-ledger` | سجل الأطلس: حالة واحدة لكل مهارة | `python3 scripts/atlas_ledger.py stats --json` | tested-here |
 | `browser-scout` | مستكشف المواقع بالمتصفح | `python3 scripts/browser_scout.py doctor` | tested-here |
 | `capability-graph` | باني خريطة القدرات المترابطة | `python3 scripts/capability_graph.py build` | tested-here |
+| `caption-lines` | سطور الترجمة: من توقيت الكلمات إلى ترجمة مقروءة | `python3 scripts/caption_lines.py group words.json -o captions.srt --rlm` | tested-here |
 | `installer-triage` | فرز المثبّتات | `python3 scripts/installer_triage.py scan ./setup.exe` | tested-here |
 | `kosif-remote-commander` | خادم KOSIF Remote Commander | `python3 scripts/kosif_remote_superpowers.py doctor` | tested-here |
+| `lesson-integrity` | فاحص أرقام الدروس والشروح | `python3 scripts/lesson_integrity.py values --registry values.json` | tested-here |
+| `look-pipeline` | خط اللوك: تلوين واحد لـ ffmpeg وSVG وGLSL | `python3 scripts/look_pipeline.py presets` | tested-here |
 | `mosamem-rea-fusion` | تكامل مصمم وREA: فحص صور وتوليف مهارات آمن | `python3 scripts/mosamem_rea_fusion.py doctor` | tested-here |
 | `motion-kit-bridge` | جسر توقيتات Motion Starter Kit | `python3 scripts/motion_kit_bridge.py styles` | tested-here |
 | `motion-stack` | مولّد مشاريع بداية لمحركات الحركة | `python3 scripts/motion_stack.py list` | tested-here |
 | `package-skill` | تحزيم المهارة للرفع إلى claude.ai | `python3 scripts/package_skill.py` | tested-here |
 | `rea-owned-repo-batch` | تحليل REA لمستودعات المالك دفعةً واحدة | `python3 scripts/rea_owned_repo_batch.py --private-output "$HOME/kosif-private" --rea-cli ./node_modules/rea-agents/scripts/rea.mjs --max-repos 16 --max-size-kb 8000` | untested |
+| `repo-map` | خريطة المستودع | `python3 scripts/repo_map.py map scripts --budget 3000 --focus prompt` | tested-here |
 | `repository-capability-packer` | فحص المستودعات وحزمها | `python3 scripts/repository_capability_packer.py inspect ./repo --out ./repo-report.json` | tested-here |
 | `source-scout` | مستكشف مصادر المجتمع | `python3 scripts/source_scout.py check` | tested-here |
 | `ui-beat` | إيقاع الواجهات: مسار مؤشر بتسهيل وعكس تخطيط للعربية وفحص الحلقة المتصلة | `python3 scripts/ui_beat.py cursor --from 900,1700 --to 540,960 --dur 0.8 --fps 30 --ease ease-in-out --arc 0.12` | tested-here |
@@ -59,11 +63,11 @@
 
 | العائلة | القدرات | الفصل |
 |---|---:|---|
-| `app-feature-transfer` | 139 | [app-feature-transfer.md](../powers/app-feature-transfer.md) |
-| `apps-artifacts` | 23 | [apps-artifacts.md](../powers/apps-artifacts.md) |
+| `app-feature-transfer` | 155 | [app-feature-transfer.md](../powers/app-feature-transfer.md) |
+| `apps-artifacts` | 27 | [apps-artifacts.md](../powers/apps-artifacts.md) |
 | `atlas-build` | 52 | [atlas-build.md](../powers/atlas-build.md) |
-| `atlas-code` | 247 | [atlas-code.md](../powers/atlas-code.md) |
-| `code-engineering` | 24 | [code-engineering.md](../powers/code-engineering.md) |
+| `atlas-code` | 277 | [atlas-code.md](../powers/atlas-code.md) |
+| `code-engineering` | 26 | [code-engineering.md](../powers/code-engineering.md) |
 | `ui-product-device` | 93 | [ui-product-device.md](../powers/ui-product-device.md) |
 
 ## كل القدرات / every power
@@ -103,6 +107,10 @@
 | `APPX-12` | تنقية الكلام من الضجيج | Speech noise reduction | proven | ffmpeg |
 | `APPX-13` | ترجمة تلقائية بتوقيت الكلمات | Word-timed auto captions | proven | pip:faster-whisper |
 | `APPX-14` | إزالة خلفية صورة | Background removal on a still | proven | pip:opencv |
+| `APPX-140` | سطور ترجمة بقواعد قراءة | Caption lines with reading rules | proven | pip:faster-whisper |
+| `APPX-141` | تنقية هلوسة نموذج التفريغ | Screen speech-model inventions | proven | pip:faster-whisper |
+| `APPX-142` | لوك ألوان واحد لكل المحركات | One colour look for every renderer | proven | ffmpeg, python3 |
+| `APPX-143` | إثبات تطابق المعاينة والتصدير بالقياس | Measured preview/export colour parity | proven | ffmpeg, python3 |
 | `APPX-15` | تصدير EDL ومطابقته | EDL interchange and conform | proven | ffmpeg |
 | `APPX-16` | عكس المقطع وتجميد الإطار | Reverse and freeze frame | proven | ffmpeg |
 | `APPX-17` | اختيار الغلاف تلقائيًا | Automatic cover pick | proven | pip:opencv |
@@ -184,6 +192,7 @@
 | `UI-87` | مشغّل HTML مستقل بشريط تقديم | Standalone HTML player with seek & reduced motion | proven | node |
 | `UI-X03` | تسجيل عرض واجهة بـPlaywright | Playwright UI demo recording (WebM) | proven | ffmpeg, node, chromium |
 | `APPX-108` | التسييل (Liquify) | Liquify: push, pinch, bloat, twirl | ready | pip:numpy, pip:opencv |
+| `CODE-25` | خريطة مستودع مرتبة بالأهمية | Ranked repository map | ready | python3 |
 | `UI-04` | إعادة بناء الشاشة كطبقات | Layered screen rebuild | ready |  |
 | `UI-05` | حقيبة أصول من أجزاء حقيقية | Animation kit from real parts | ready | chromium, pip:pillow |
 | `UI-14` | حلقة الضغط والتموج | Press ring & click ripple | ready |  |
@@ -221,6 +230,18 @@
 | `APPX-137` | الرسم التقريبي الموسوم للبنية والمرجع للمظهر | Labeled rough sketch for structure; reference for look | documented | python3 |
 | `APPX-138` | جسر MCP باتجاهين مع تلميح التحديد الحالي | Two-way MCP bridge with a current-selection hint | documented | python3 |
 | `APPX-139` | المهارات: تحميل بالوصف وتثبيت صريح واستيراد نصي آمن | Skills: description-matched loading, explicit pinning, safe text-only import | documented | python3 |
+| `APPX-144` | مسار رئيسي مغناطيسي بانتقالات محسوبة | Magnetic main track with clamped transitions | documented | ffmpeg, python3 |
+| `APPX-145` | أي سرعة صوت بسلسلة atempo | Any audio speed with an atempo chain | documented | ffmpeg |
+| `APPX-146` | خلفية مموهة رخيصة للمقاس العمودي | Cheap blurred background fill | documented | ffmpeg |
+| `APPX-147` | نص عربي مرسوم بوحدات مرجعية | Arabic text raster in reference units | documented | ffmpeg |
+| `APPX-148` | تجهيز الوسائط لمحرر | Media prep for an editor | documented | ffmpeg |
+| `APPX-149` | ترميز بالعتاد مع رجوع للبرمجي | Hardware encoder with software fallback | documented | ffmpeg |
+| `APPX-150` | خادم محلي آمن لأداة مونتاج | A safe local editor server | documented |  |
+| `APPX-151` | تنزيل نماذج موثَّق | Verified model downloads | documented | network |
+| `APPX-152` | تراجع يجمع سحب المنزلقات | Undo that groups slider drags | documented |  |
+| `APPX-153` | اختبار ذاتي داخل المضيف الحقيقي | Self-test inside the real host | documented |  |
+| `APPX-154` | ذاكرة وسائط بالمحتوى واستئناف | Content-addressed media cache with resume | documented |  |
+| `APPX-155` | تفريغ عربي محلي بلا إنترنت | Offline Arabic speech stack | documented | pip:faster-whisper, network |
 | `APPX-18` | منتقي الشاشة للتسجيل | Display-media picker for screen recording | documented |  |
 | `APPX-19` | غرفة تحكم التسجيل | Recording mission-control and overlay windows | documented |  |
 | `APPX-20` | واجهة احتياطية بلا إنترنت | Offline fallback renderer | documented |  |
@@ -245,6 +266,10 @@
 | `APP-17` | اعرض ثلاثة خيارات بدل الأسئلة | Show three previews instead of asking | documented |  |
 | `APP-18` | فصل المنشئ عن الناقد | Separate maker from critic | documented | chromium, git |
 | `APP-19` | بوابة الإنهاء المرئية | Rendered finish gate | documented |  |
+| `APP-24` | تحدٍّ قابل للحل قبل عرضه | Check an interactive challenge is solvable before posing it | documented |  |
+| `APP-25` | مقياس 1-2-5 وتعريف بطولين | A 1-2-5 gauge scale and a two-length glossary | documented | python3 |
+| `APP-26` | مؤثرات من تسجيلات حقيقية في ملف واحد | One sound sprite cut from real CC0 recordings | documented | python3 |
+| `APP-27` | تفضيلات الحركة والعرض وشاشة تحميل فورية | Motion and display preferences and an inline loader | documented | npm:three |
 | `ABUILD-01` | تنفيذ خارطة الطريق تلقائياً: مرحلة لكل طلب دمج | Autonomous phase-per-PR roadmap execution loop | documented | claude:tools |
 | `ABUILD-02` | مسجل قياس تشغيل بالملاحظة فقط | Observation-only run telemetry recorder | documented |  |
 | `ABUILD-03` | خط وكلاء بأدوار ومراحل وأقفال كتابة واستئناف | Role-squad agent pipeline with stages, locks and resume | documented |  |
@@ -459,7 +484,7 @@
 | `ACODE-236` | دليل سردي لمستودع غير مألوف للمساهمين الجدد | Narrative codebase guide for newcomers | documented | npm:mermaid |
 | `ACODE-237` | تثبيت كل أسطح الإصدارات لتقوية سلسلة التوريد | Pin every version surface for supply-chain hardening | documented | node, python3 |
 | `ACODE-238` | تشخيص أعطال تكامل SaaS المستعصية طبقةً طبقة | Layer-by-layer deep debugging of a stubborn SaaS integration | documented |  |
-| `ACODE-239` | دورة حياة البيانات المارّة بخدمة خارجية: تصنيف واحتفاظ وحذف | Data lifecycle governance for data sent through a SaaS vendor | documented |  |
+| `ACODE-239` | دورة حياة البيانات المارّة بخدمة خارجية: تصنيف واحتفاظ وحذف | Data lifecycle governance for data sent through a SaaS vendor | documented | key:video-gen |
 | `ACODE-24` | أنماط خدمات الواجهة الخلفية بعدة لغات | Backend service patterns: Node, Go, .NET, Django | documented |  |
 | `ACODE-240` | ربط أدوار المزوّد بصلاحيات التطبيق ومفاتيح الخدمة | Map vendor roles to application RBAC and scoped service keys | documented |  |
 | `ACODE-241` | مراجعة مطبات التكامل المتكررة قبل الإصدار | Recurring integration pitfall audit before release | documented |  |
@@ -469,9 +494,39 @@
 | `ACODE-245` | أنماط موثوقية تكامل خارجي: هوية عمل واحدة لكل إعادة | Integration reliability: one idempotency model for every retry path | documented |  |
 | `ACODE-246` | ترحيل عقد API لدى المزوّد بأدلة الحركة والقراءة المزدوجة | Vendor API contract migration with traffic evidence and dual reads | documented |  |
 | `ACODE-247` | خريطة دورة حياة تكامل SaaS: من التثبيت إلى الحوادث | SaaS integration lifecycle map: install to incident | documented | python3 |
+| `ACODE-248` | تدقيق التبعيات بأدوات كل منظومة: ثغرات وتأخر إصدارات ورخص وتبعيات غير مستخدمة | Ecosystem-native dependency audit: vulnerabilities, lag, licences, unused deps | documented | node |
+| `ACODE-249` | تدقيق قياس OpenTelemetry: إعداد SDK ونظافة الـspans وانتشار السياق | OpenTelemetry instrumentation audit: SDK setup, span hygiene, propagation | documented |  |
 | `ACODE-25` | اختيار وتخزين مفاتيح الـAPI بأمان | Choose and store API credentials safely | documented | chromium, key:unspecified |
+| `ACODE-250` | تدقيق تطبيق ويب تقدمي (PWA) وقائمة الإطلاق الحتمية | PWA audit and deterministic launch checklist | documented | chromium |
+| `ACODE-251` | تجهيز مدخلات منقّحة من البيانات الشخصية قبل إرسالها لخدمة ذكاء اصطناعي خارجية | PII-redacted payload review before sending to an external AI | documented |  |
+| `ACODE-252` | إثبات بصري لواجهة طرفية (TUI) عبر PTY حقيقي ومتصفح محلي | Visual proof of a terminal UI through a real PTY and a local browser | documented |  |
+| `ACODE-253` | مراجعة إعداد Dependabot وفرز طلبات الترقية التي يفتحها | Dependabot config review and upgrade-PR triage | documented |  |
+| `ACODE-254` | تدقيق أذونات إضافة المتصفح وفق أقل صلاحية وManifest V3 | Browser-extension manifest audit: least privilege and MV3 | documented |  |
+| `ACODE-255` | مراجعة المخطط ولوحة PCB قبل التصنيع | Schematic and PCB layout review before fab | documented |  |
+| `ACODE-256` | تشخيص أعطال توقيع تطبيقات macOS والـentitlements | macOS code-signing and entitlements failure diagnosis | documented | os:macos |
+| `ACODE-257` | تطبيقات macOS بـSwiftUI: قياس خفيف بـLogger وتبنّي Liquid Glass بأقل تخصيص | macOS SwiftUI apps: lightweight Logger telemetry and minimal-chrome Liquid Glass | documented | os:macos |
+| `ACODE-258` | مراجعة كود SystemVerilog: الأنواع وكتل always والقابلية للتوليف | SystemVerilog review: types, always blocks, synthesisability | documented |  |
+| `ACODE-259` | تدقيق حالات الواجهة الأربع وحالات الحدود في مكونات React | UI state completeness and edge-case audit for React components | documented | npm:react |
 | `ACODE-26` | اختيار واجهة Zoom المناسبة | Choose Zoom surface: REST, webhooks, WebSocket, SDK | documented | key:unspecified |
+| `ACODE-260` | تدقيق جاهزية الواجهة للتعريب والتدويل والاتجاه من اليمين | i18n readiness audit: hardcoded strings, concatenation, locale formats, RTL | documented |  |
+| `ACODE-261` | تقييم استكشافي للواجهة بثلاثة مقيّمين مستقلين ثم توفيق النتائج | Heuristic evaluation with three independent evaluators and reconciliation | documented |  |
+| `ACODE-262` | مراجعة طلبات الدمج التي يكتبها وكيل: المواءمة مع المتطلبات والمراجع الوهمية | Agent-authored PR review: alignment passes and hallucinated references | documented |  |
+| `ACODE-263` | تصميم سعة المراجعة وبوابات الإصدار لعصر الوكلاء | Review capacity and release gates for agent-speed delivery | documented |  |
+| `ACODE-264` | تدقيق الأسرار في كل تاريخ git قبل جعل المستودع عامًا، وإعادة التدقيق حين يقدم | Whole-history secret audit before open-sourcing, and stale-audit reruns | documented | gitleaks |
+| `ACODE-265` | جعل كتل check في Terraform تُفشل CI فعلًا | Make Terraform check blocks actually fail CI | documented |  |
+| `ACODE-266` | سجل تدقيق موقّع لكل استدعاء أداة يقوم به الوكيل | Signed, offline-verifiable audit trail for agent tool calls | documented | claude:tools |
+| `ACODE-267` | تشخيص أي بوابة صلاحيات رفضت الأمر، وخطر توريث قائمة السماح في خدمة | Which permission gate refused, and services that inherit an operator's allow-list | documented |  |
+| `ACODE-268` | تبنّي إصدار رئيسي جديد لبوابة أمان تعتمد عليها | Adopting a new major of a security gate you consume | documented |  |
+| `ACODE-269` | ترحيل أدوات الفحص: ESLint/Prettier إلى Biome وflake8/isort إلى ruff | Linter migration: ESLint/Prettier → Biome and flake8/isort → ruff | documented | npm:react |
 | `ACODE-27` | اختبار عقود API من جهة المستهلك بـ Pact | Consumer-driven API contract testing with Pact | documented |  |
+| `ACODE-270` | تدقيق مشروع لعبة libGDX: الإعداد ودورة الشاشات والأصول والرسم | libGDX game project audit: setup, screen lifecycle, assets, rendering | documented |  |
+| `ACODE-271` | مراجعة هندسة المنصات: ويب أحادي الصفحة وPWA وموبايل وElectron وTauri | Cross-platform engineering review: SPA, PWA, mobile, Electron, Tauri | documented | npm:react |
+| `ACODE-272` | تصميم حزمة تحقق موحدة للمستودع بطبقات وأوامر لكل نوع تغيير | Repository validation harness: layered matrix, one entrypoint, honest fallbacks | documented |  |
+| `ACODE-273` | تدقيق الفجوة بين ما يُفترض أن يفعله النظام وما يفعله الكود فعلًا | Intended-vs-implemented gap audit | documented |  |
+| `ACODE-274` | تثبيت قوائم مراجعة موحّدة يقرؤها Copilot وCodex وClaude عند مراجعة طلبات الدمج | Install shared review checklists for Copilot, Codex and Claude PR reviewers | documented |  |
+| `ACODE-275` | فرز فحص CI أحمر لمراجعة يقوم بها ذكاء اصطناعي: أربعة أسباب مختلفة | Triage a red AI-review CI check: four causes with opposite responses | documented |  |
+| `ACODE-276` | التحقق من إعدادات Home Assistant: YAML والأسرار والمفاتيح المكررة | Home Assistant configuration validation: YAML, secrets, duplicate keys | documented | docker |
+| `ACODE-277` | تدقيق طبقات التعليمات كلها: هل طُبّقت القاعدة يومًا؟ وأين تتعارض الطبقات؟ | Cross-layer instruction-stack audit: rule-firing evidence, conflicts, permission bypasses | documented |  |
 | `ACODE-28` | استخراج عميل API مستقل من تسجيل HAR | Derive standalone API client from HAR recording | documented |  |
 | `ACODE-29` | قائمة تحصين نقطة GraphQL | GraphQL endpoint hardening checklist | documented |  |
 | `ACODE-30` | مصادقة JWT مع تدوير التحديث وصلاحيات الأدوار | JWT auth with refresh rotation and RBAC | documented | key:unspecified |
@@ -564,6 +619,7 @@
 | `CODE-20` | الحتمي أولًا والنموذج للذيل | Deterministic first, model for the tail | documented |  |
 | `CODE-21` | ذاكرة مؤقتة ببصمة المحتوى | Content-hash cache | documented | key:graphify |
 | `CODE-22` | نظافة الإيداع وكلمات الحالة | Commit hygiene & status words | documented | git |
+| `CODE-26` | تعديلات بكتل بحث واستبدال | Search/replace edit blocks | documented |  |
 | `UI-01` | العرض الصامت: الواجهة تحكي | Silent product demo — the UI tells the story | documented |  |
 | `UI-02` | ثلاثية النية والفعل والاستجابة | Intent → action → response with real latency | documented |  |
 | `UI-03` | محتوى واجهة حقيقي ومحلي | Real, locale-correct UI content | documented |  |

@@ -2,7 +2,7 @@
 
 > **قوتك هنا:** أنت ترسم أمام المشاهد: خط يكتب نفسه بسرعة قلم حقيقية، رأس قلم أو ماركر أو شرارة يتبع الطرف، دوائر وأسهم وخطوط تأكيد بيد مرتعشة، تظليل بالماركر، وارتعاش «الغليان» على اثنين — ثم تذهب أبعد: استوديو يرسم أي صورة بكسلًا بكسلًا بترتيب رسّام وينتهي مطابقًا للأصل في كل قيمة RGBA.
 > **أقوى دليل:** فيلم الإثبات `proofs/whiteboard-draw` (سبورة 9:16 بقلم ماركر مرسوم بالكود، ضربات بضغط وتدبيب، تظليل مقصوص على الشكل، عنوان عربي بقناع من اليمين، 13/13) و`proofs/glass-luxury-logo` حيث يُرسم خاتم ثماني بخط ذهبي بين 4.0 و5.6 ث (`pathLength=1` + `dashoffset`) و`proofs/neon-glow` حيث يسري الضوء في أنبوب الفنجان وهو يُرسم — كلاهما رُندر وفُحص هنا (13/13)؛ ومرّت هنا اختبارات استوديو الرسام في `kosif-studio` (ترتيب الكشف، استيراد SVG، الرسم المطابق، فيلم الرسم، مسجل أوامر PIL: 23 اختبارًا)، واختبارات محوّل مسارات SVG في omni (4/4)، وتوليد قوالب logo-reveal وbullet-list بعلامات صح مرسومة.
-> **You can:** draw on any path, write titles by mask, annotate footage, boil lines, hatch fills, and paint pictures stroke by stroke. **62 powers follow** — ✅ 18 · 🟢 15 · 📦 6 · 🔑 0 · 👁 6 · 📄 17 · 💡 0.
+> **You can:** draw on any path, write titles by mask, annotate footage, boil lines, hatch fills, and paint pictures stroke by stroke. **64 powers follow** — ✅ 18 · 🟢 15 · 📦 6 · 🔑 0 · 👁 6 · 📄 19 · 💡 0.
 
 **الحالة / status:** ✅ مُثبت هنا (كود + اختبار أو رندر في هذه الحاوية) · 🟢 جاهز (كود المالك يعمل بلا إضافات) · 📦 بأمر تثبيت · 🔑 مفتاح أو خدمة · 👁 شوهد في فيديو أنتجتَه (وصفة البناء مرفقة) · 📄 موصوف فقط · 💡 فكرة.
 مسارات الدليل نسبية إلى `/home/user/`؛ `style:<id>` = فيديو مرجعي أنتجتَه سابقًا (ملاحظاته في `kosif-tool/styles/<id>/`).
@@ -20,6 +20,7 @@
 - توليفات قوية / power combos · أخطاء ممنوعة / never do · أقوى 5 حركات توقيع / 5 signature moves
 - إضافات من Cinematic Director PRO v5
 - **إضافات v2 — v2 additions** — DRAW-X01 (1)
+- **من أكبر مستودعات GitHub — from the top GitHub repositories (2026-10-23)** — DRAW-G01 … DRAW-G02 (2)
 
 ## رسم المسار — Path draw-on core
 
@@ -496,3 +497,21 @@ _من مراجعة مرفقات المالك: [owner-uploads-review-20261023.md]
 - **كيف / how:** render.py --fps 30 --resolution 1080x1920؛ ثم ffprobe في تقرير QA. **أرقام / params:** 97.88 s, 13 beats, 30 fps
 - **الرخصة / license:** owner
 - **الدليل / proof:** `kosif-tool/.claude/skills/kosif-superpowers/references/owner-uploads-review-20261023.md`
+
+## من أكبر مستودعات GitHub — from the top GitHub repositories (2026-10-23)
+
+_قدرات من أشهر مستودعات GitHub ذات الترخيص المفتوح (MIT)، مكتوبة بكلماتنا لا منسوخة، وسجل كل مستودع في [github-top-1000.md](../github-top-1000.md). 🟢 = الكود هنا في `scripts/motion_physics.py` واختباره `evals/test_motion_physics.py`. — Powers from the most-starred open-licence (MIT) GitHub repositories, restated in our own words; per-repo record in github-top-1000.md; 🟢 = code here in scripts/motion_physics.py with its test._
+
+#### DRAW-G01 · رسم يدوي خشن ثابت البذرة · Seeded rough hand-drawn rendering · 📄 موصوف / documented only
+- **ماذا / what:** ارسم الأشكال بمظهر يدوي (خشونة، انحناء، تهشير) ببذرة ثابتة لكل شكل حتى لا يرتعش عند إعادة الرسم، ثم اكشفه بطول المسار. — Draw shapes with a hand-made look (roughness, bowing, hachure) with one fixed seed per shape so it does not jitter on redraw, then reveal it by path length.
+- **متى أستخدمها / when:** شرح بأسلوب السبورة أو الكراسة / whiteboard or notebook-style explainers
+- **كيف / how:** Parameters: roughness 1-2, bowing 1, hachure fill with angle −41° and gap 4-8 px, stroke width 1.5-2.5; a seed per shape id (never Math.random per frame); animate with stroke-dasharray/offset over each generated path in drawing order (outline, then fill). For a lively loop change the seed every 3-4 frames on purpose ('boiling line'), not every frame. **أرقام / params:** roughness 1-2; boil every 3-4 frames.
+- **الرخصة / license:** MIT
+- **المصدر / source:** https://github.com/excalidraw/excalidraw (MIT; built on rough.js, MIT) — restated in our own words
+
+#### DRAW-G02 · زخم السحب والارتداد المطاطي · Drag momentum and rubber-band edges · 📄 موصوف / documented only
+- **ماذا / what:** بعد إفلات السحب تستمر الحركة بسرعتها ثم تتباطأ أسيًا، وعند الحافة تقاوم بمعامل مطاطي ثم ترتد. — After a drag is released motion continues at its speed and decays exponentially; at the edge it resists with a rubber-band factor and springs back.
+- **متى أستخدمها / when:** محاكاة تمرير أو سلايدر داخل فيديو منتج أو تطبيق / simulating a scroll or slider inside a product or app video
+- **كيف / how:** Release velocity v0 from the last ~100 ms of drag; position x(t) = x0 + v0·τ·(1 − e^(−t/τ)) with τ ≈ 0.325 s; overscroll displayed = (1 − 1/(d·0.55/W + 1))·W for distance d past the edge and width W; return with a critically damped spring (EASE-G01). Feels like a real phone, so screen recordings and mock-ups read as genuine. **أرقام / params:** τ ≈ 0.325 s; rubber-band 0.55.
+- **الرخصة / license:** MIT
+- **المصدر / source:** https://github.com/nolimits4web/swiper (MIT) — behaviour restated in our own words; the constants are common platform values

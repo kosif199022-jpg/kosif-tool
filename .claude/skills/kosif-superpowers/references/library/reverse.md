@@ -49,6 +49,7 @@
 | `rea-family-router` | موجّه عائلات REA | `python3 scripts/rea_family_router.py list` | tested-here |
 | `rea-owned-repo-batch` | تحليل REA لمستودعات المالك دفعةً واحدة | `python3 scripts/rea_owned_repo_batch.py --private-output "$HOME/kosif-private" --rea-cli ./node_modules/rea-agents/scripts/rea.mjs --max-repos 16 --max-size-kb 8000` | untested |
 | `rea-superpowers-map` | خريطة سوبر باور بمنهج REA | `python3 scripts/rea_superpowers_map.py build` | tested-here |
+| `repo-map` | خريطة المستودع | `python3 scripts/repo_map.py map scripts --budget 3000 --focus prompt` | tested-here |
 | `repository-capability-packer` | فحص المستودعات وحزمها | `python3 scripts/repository_capability_packer.py inspect ./repo --out ./repo-report.json` | tested-here |
 | `web-app-study` | دراسة تطبيق ويب عام بـ REA (حقائق فقط) | `python3 scripts/web_app_study.py doctor` | tested-here |
 

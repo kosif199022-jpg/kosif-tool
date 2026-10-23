@@ -3,13 +3,13 @@
 
 > **قوتك هنا / what this gives you:** أثبت قبل أن تدّعي: اختبارات وتقييمات ومعايير قبول وإيصالات تشغيل. — Prove before claiming: tests, evals, acceptance criteria and run receipts.
 > **أقوى دليل / strongest evidence:** **CHECK-02** Postcondition gate on the delivered file (ffprobe / verify_video.py / measured sync) (`kosif-tool/.claude/skills/kosif-superpowers/proofs/README.md`) · **CHECK-03** Look at the output: contact sheets, frames, screenshots (`kosif-tool/.claude/skills/kosif-superpowers/proofs/beat-sync/sheet.jpg`)
-> **35 powers follow** — ✅ 4 · 🟢 0 · 📦 0 · 🔑 0 · 👁 0 · 📄 31 · 💡 0.
+> **40 powers follow** — ✅ 4 · 🟢 0 · 📦 0 · 🔑 0 · 👁 0 · 📄 36 · 💡 0.
 
 **الحالة / status:** ✅ مُثبت (شُغّل فعلًا وله مسار دليل) · 🟢 جاهز (كود موجود يعمل بما هو متاح عادة) · 📦 بأمر تثبيت واحد · 🔑 يحتاج مفتاحًا أو حسابًا أو موصلًا · 👁 شوهد في فيديو مرجعي (للموشن فقط) · 📄 طريقة موثقة · 💡 فكرة. الشارة هي أدنى مستوى صادق — the badge is the lowest level that is true.
 مسارات الدليل نسبية إلى `/home/user/`؛ و`session-<date>:<file>#<section>` تشير إلى تشغيل موثق في جلسة سابقة؛ و`owner-upload:` إلى ملف داخل أرشيف أرسله المالك. Proof paths are relative to `/home/user/`.
 
 **المجال / domain:** العقل والتفكير — Mind & thinking · **البادئة / prefix:** `CHECK` · **البيانات / data:** `data/powers/verification-evals.json` · **بحث / search:** `python3 scripts/powers.py family verification-evals`
-**مراجع ذات صلة / related references:** [CLAUDE_3_MINUTE_MAP.md](../CLAUDE_3_MINUTE_MAP.md) · [capability-audit.md](../capability-audit.md) · [cinematic-director-pro.md](../cinematic-director-pro.md) · [codex-agent-harness.md](../codex-agent-harness.md) · [codex-repos-study-20261023.md](../codex-repos-study-20261023.md) · [hubs.md](../hubs.md) · [owner-uploads-review-20261023.md](../owner-uploads-review-20261023.md) · [rea-superpowers-frontier-20261023.md](../rea-superpowers-frontier-20261023.md) · [thinking.md](../thinking.md) · [verification.md](../verification.md)
+**مراجع ذات صلة / related references:** [CLAUDE_3_MINUTE_MAP.md](../CLAUDE_3_MINUTE_MAP.md) · [capability-audit.md](../capability-audit.md) · [cinematic-director-pro.md](../cinematic-director-pro.md) · [codex-agent-harness.md](../codex-agent-harness.md) · [codex-repos-study-20261023.md](../codex-repos-study-20261023.md) · [every-joule-study-20261023.md](../every-joule-study-20261023.md) · [hubs.md](../hubs.md) · [lesson-integrity-methods.md](../lesson-integrity-methods.md) · [owner-uploads-review-20261023.md](../owner-uploads-review-20261023.md) · [rea-superpowers-frontier-20261023.md](../rea-superpowers-frontier-20261023.md) · [thinking.md](../thinking.md) · [verification.md](../verification.md)
 
 ## الفهرس / contents
 
@@ -21,6 +21,7 @@
 - **تصنيف الأعطال — Failure taxonomy** — CHECK-27 … CHECK-29 (3)
 - **إضافات مرفقات 2026-10-23 — 2026-10-23 upload additions** — CHECK-30 (1)
 - **الاختبار الخفي التفاضلي — Differential hidden exam** — CHECK-31 … CHECK-35 (5)
+- **أرقام الدرس الموثقة — Lesson number integrity** — CHECK-36 … CHECK-40 (5)
 - المصادر والرخص / sources & licences
 
 ## حلقة التحقق — Verification loop
@@ -335,9 +336,55 @@
 - **الدليل / proof:** `kosif-tool/.claude/skills/kosif-superpowers/references/codex-agent-harness.md`
 - **المصدر / source:** https://github.com/softsweb/codex-clone-hidden-test-kit (no licence: methods only, no files copied); references/codex-agent-harness.md
 
+## أرقام الدرس الموثقة — Lesson number integrity
+
+#### CHECK-36 · سجل قيم بمصدر واقتباس لكل رقم · One value registry: a source and the supporting sentence for every number · 📄 موصوف / documented only
+- **ماذا / what:** كل رقم يظهر في درس أو شرح أو إنفوجراف له مدخل واحد: القيمة والوحدة وماذا يقيس والمدى ومرجع المصدر والجملة المقتبسة التي تثبته. — Every number a lesson, explainer or infographic shows has one entry: value, unit, what it measures, range, source ref and the quoted sentence that supports it.
+- **متى أستخدمها / when:** شرح أو فيديو تعليمي أو إنفوجراف بأرقام حقيقية / explainers, lesson films or infographics that show real numbers
+- **كيف / how:** Keep values.json with sources{id:{title,url|citation}} and values{id:{value,unit,what,range?,source{ref,quote}}}. python3 scripts/lesson_integrity.py values --registry values.json fails on a number with no source and no gap note, an unknown ref, a missing quote or a value outside its range, and warns when the number is not in its quote. Cards EJ-01, EJ-05.
+- **يحتاج / needs:** [`python3`](../requirements.md#req-python3)
+- **الرخصة / license:** owner
+- **الدليل / proof:** `kosif-tool/.claude/skills/kosif-superpowers/evals/test_lesson_integrity.py`
+- **المصدر / source:** https://github.com/iamtechartist/every-joule-lesson1 (no licence: methods only, no files copied); references/lesson-integrity-methods.md
+
+#### CHECK-37 · النص يشير إلى الرقم بمعرّفه ويفشل مغلقًا · Text refers to numbers by id and fails closed · 📄 موصوف / documented only
+- **ماذا / what:** الجمل تكتب {v:id} لا الرقم نفسه؛ لو غاب المعرّف أو جُهلت طباعة الوحدة يتوقف البناء ولا يطبع تخمينًا. — Sentences write {v:id}, not the number; a missing id or an unknown unit print form stops the build instead of printing a guess.
+- **متى أستخدمها / when:** سكربت تعليق صوتي أو نص درس أو تسميات رسم فيها أرقام / narration scripts, lesson text or chart labels with numbers
+- **كيف / how:** python3 scripts/lesson_integrity.py render --registry values.json --content script.md --strict --out script.out.md. {v:id} number+unit, {v:id|2} two decimals, {n:id} number only, unit 'fraction' prints as a percentage; --strict flags numbers with units typed into the text; nothing is written on error. Card EJ-02.
+- **يحتاج / needs:** [`python3`](../requirements.md#req-python3)
+- **الرخصة / license:** owner
+- **الدليل / proof:** `kosif-tool/.claude/skills/kosif-superpowers/evals/test_lesson_integrity.py`
+- **المصدر / source:** https://github.com/iamtechartist/every-joule-lesson1 (no licence: methods only, no files copied); references/lesson-integrity-methods.md
+
+#### CHECK-38 · ملف فجوات بدل اختراع رقم · An explicit gaps list instead of an invented number · 📄 موصوف / documented only
+- **ماذا / what:** رقم بلا مصدر يُترك فارغًا مع سبب مكتوب ولا يُعرض، ويظهر كتحذير في التقرير. — A number with no source is left unset with a written reason, never shown, and reported as a warning.
+- **متى أستخدمها / when:** معلومة لم تجد لها مصدرًا موثوقًا / a figure you could not source
+- **كيف / how:** Record it as {value:null, gap:'<why>'} (or a value with a gap note for a teacher estimate, which is then shown and warned). render refuses to print a null gap. State what the calculation does without it ('kinetic energy of the rider alone'). Card EJ-03.
+- **الرخصة / license:** owner
+- **الدليل / proof:** `kosif-tool/.claude/skills/kosif-superpowers/evals/test_lesson_integrity.py`
+- **المصدر / source:** https://github.com/iamtechartist/every-joule-lesson1 (no licence: methods only, no files copied); references/lesson-integrity-methods.md
+
+#### CHECK-39 · مراجعة حقائق تعيد الرقم المنشور · A fact-check pass that restores the published figure · 📄 موصوف / documented only
+- **ماذا / what:** حين يختلف رقم محسوب بالتحويل عن الرقم المنشور في المصدر نعرض المنشور ونكتب ملاحظة بالتصحيح ونعيد حساب ما اشتُق منه. — When a converted figure differs from the one the source publishes, show the published one, note the correction and recompute everything derived from it.
+- **متى أستخدمها / when:** مراجعة أرقام قبل النشر / reviewing numbers before publishing
+- **كيف / how:** Read the rendered source page, not a conversion (290 kcal x 4.184 = 1213 is not the published 1210 kJ). Put the correction in the value's note; derived values carry {derived:{op:sum|product|difference|ratio, of:[ids]}} and lesson_integrity.py values fails when a part changed but the total did not. Cards EJ-04, EJ-05.
+- **يحتاج / needs:** [`python3`](../requirements.md#req-python3)
+- **الرخصة / license:** owner
+- **الدليل / proof:** `kosif-tool/.claude/skills/kosif-superpowers/evals/test_lesson_integrity.py`
+- **المصدر / source:** https://github.com/iamtechartist/every-joule-lesson1 (no licence: methods only, no files copied); references/lesson-integrity-methods.md
+
+#### CHECK-40 · دفتر حفظ: ابحث عن كل وحدة · A conservation ledger: account for every unit · 📄 موصوف / documented only
+- **ماذا / what:** ما دخل يساوي ما خرج ضمن سماحية، بلا قيم سالبة، مع حصة كل مخرج والكفاءة. — What goes in equals what comes out within tolerance, with no negative amounts, each output's share and the efficiency.
+- **متى أستخدمها / when:** شرح طاقة أو ميزانية أو مخطط سانكي / energy explainers, budgets or Sankey diagrams
+- **كيف / how:** ledger.json = {unit, in:{store:amount}, out:{store:amount}, useful:[stores], tolerance}. python3 scripts/lesson_integrity.py ledger --file ledger.json reports in, out, gap, shares and efficiency and exits 1 when anything is unaccounted for or appears from nowhere. Check it before drawing the Sankey or narrating 'all 14.7 J'. Card EJ-06.
+- **يحتاج / needs:** [`python3`](../requirements.md#req-python3)
+- **الرخصة / license:** owner
+- **الدليل / proof:** `kosif-tool/.claude/skills/kosif-superpowers/evals/test_lesson_integrity.py`
+- **المصدر / source:** https://github.com/iamtechartist/every-joule-lesson1 (no licence: methods only, no files copied); references/lesson-integrity-methods.md
+
 ## المصادر والرخص / sources & licences
 
-- الرخص / licences: owner (21) · MIT (12) · — (2)
+- الرخص / licences: owner (26) · MIT (12) · — (2)
 - الأفكار مكتوبة بكلماتنا مع رابط المصدر؛ لا يُنسخ نص طرف ثالث طويل. Ideas are paraphrased with a link to the source; no long third-party text is copied. `—` = no licence recorded (own method or own wording).
 
 ---

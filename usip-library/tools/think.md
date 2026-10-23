@@ -1,4 +1,4 @@
-# أدوات المجال `think` (14 أداة)
+# أدوات المجال `think` (16 أداة)
 
 > مولّد من `data/tools.json`. [الفهرس الرئيسي](../README.md) · `python3 scripts/hub.py tool <id>` للبطاقة الحية.
 
@@ -435,6 +435,105 @@
 #### عند الفشل (A29)
 
 - ابدأ بـ `think.py recover --message "<نص الخطأ>"`، ثم سجّل `fusionforge.py trace --project <slug> --id <FUSE-ID> --stage <stage> --node <N> --action "<ما جُرّب>" --result failed --error-class <الصنف> --tool tool:invention-lab --evidence <ملف>`.
+
+### `lesson-integrity` — فاحص أرقام الدروس والشروح / Lesson number integrity checker
+
+| الحقل | القيمة |
+|---|---|
+| المسار | `scripts/lesson_integrity.py` (جذر: skill) |
+| المجال | `think` |
+| الدليل | `tested-here` |
+| العائلات | `verification-evals`, `apps-artifacts` |
+
+**ما تفعله:** يفحص الأرقام التي يعرضها شرح أو فيديو تعليمي أو إنفوجراف أو درس تفاعلي. values يتحقق من سجل قيم يذكر لكل رقم مصدره والجملة المقتبسة التي تثبته أو ملاحظة فجوة صريحة، ويعيد حساب المجاميع والحواصل المشتقة؛ render يملأ العناصر النائبة {v:id} و{v:id\|dp} و{n:id} في السكربت أو الصفحة ويفشل مغلقًا على قيمة غير موجودة أو فجوة أو وحدة بلا شكل طباعة (و--strict يكشف الأرقام المكتوبة مباشرة في النص)؛ ledger يتحقق من توازن دفتر حفظ (طاقة، ميزانية، وقت) ويعرض الحصص والكفاءة؛ scale يختار سعة عدّاد 1-2-5؛ sprite يفحص قائمة مناطق ملف المؤثرات الصوتية (تداخل، طول الملف، رخصة معتمدة لكل مؤثر). مكتبة Python القياسية فقط، ولا يشغّل شيئًا.
+
+**What it does:** Checks the numbers an explainer, lesson film, infographic or interactive lesson shows. values validates a registry where every value names its source and quotes the supporting sentence, or carries an explicit gap note, and recomputes derived sums and products; render fills {v:id}, {v:id\|dp} and {n:id} placeholders in a script or page and fails closed on an unknown value, a gap or a unit with no print form (--strict also flags numbers typed straight into the text); ledger checks that a conservation ledger (energy, budget, time) balances and reports shares and efficiency; scale picks a 1-2-5 gauge capacity; sprite checks a sound-sprite manifest for overlapping regions, file length and a credited allowed licence per cue. Stdlib only; it runs nothing.
+
+#### متى تُستدعى
+
+- «اتأكد إن كل رقم في سكربت الفيديو التعليمي ليه مصدر»
+- «تأكد أن مخطط سانكي للطاقة متوازن وما دخل يساوي ما خرج»
+- «check every number in my explainer script has a cited source»
+- «check my sound sprite regions and credits before shipping»
+
+#### الأوامر
+
+- **values**: Errors on a number with no source and no gap note, an unknown source ref, a missing quote, a value outside its range or a derived value that no longer matches its parts; warns when the number is not in its quote and for every gap.
+  - `python3 scripts/lesson_integrity.py values --registry values.json`
+- **render**: Fills the placeholders and writes --out only when there is no error; without --out prints the text.
+  - `python3 scripts/lesson_integrity.py render --registry values.json --content script.md --strict --out script.out.md`
+- **ledger**: Reports in, out, gap, each output's share and the efficiency of the 'useful' outputs; exits 1 when the ledger does not balance or holds a negative amount.
+  - `python3 scripts/lesson_integrity.py ledger --file ledger.json --json`
+- **scale**: Prints the smallest 1, 2 or 5 x 10^n capacity the value fills to at most --headroom (default 0.9).
+  - `python3 scripts/lesson_integrity.py scale 14.7`
+- **sprite**: Checks regions and layers do not overlap, fit the file and that every cue has a credits row under an allowed licence (CC0, CC-BY 4.0, owner, original).
+  - `python3 scripts/lesson_integrity.py sprite --manifest sounds.json --credits CREDITS.md --duration 20`
+- **self-test**: Runs the 11 built-in checks on synthetic data.
+  - `python3 scripts/lesson_integrity.py --self-test`
+
+#### المتطلبات والأمان
+
+- binaries: python3
+- الأمان: read-only
+- الموافقة: render --out writes only that file, and only when every placeholder resolved.
+- الحدود: It checks the registry against itself: it cannot tell whether a source is right or whether the quoted sentence really appears in it, it does not solve a physics model or generate challenges, and sprite reads the manifest and credits only, without decoding or measuring the audio. --strict recognises common SI units only.
+
+#### الاختبارات والأدلة
+
+- `.claude/skills/kosif-superpowers/evals/test_lesson_integrity.py`
+- مرجع: `.claude/skills/kosif-superpowers/references/lesson-integrity-methods.md`
+
+#### عند الفشل (A29)
+
+- ابدأ بـ `think.py recover --message "<نص الخطأ>"`، ثم سجّل `fusionforge.py trace --project <slug> --id <FUSE-ID> --stage <stage> --node <N> --action "<ما جُرّب>" --result failed --error-class <الصنف> --tool tool:lesson-integrity --evidence <ملف>`.
+
+### `memory-ops` — عمليات الذاكرة / Memory Ops
+
+| الحقل | القيمة |
+|---|---|
+| المسار | `scripts/memory_ops.py` (جذر: skill) |
+| المجال | `think` |
+| الدليل | `tested-here` |
+| العائلات | `agent-orchestration`, `self-discovery` |
+
+**ما تفعله:** يحفظ ملف ذاكرة محليًا طويل المدى بلا تناقضات: لكل معلومة مرشحة يقترح عملية واحدة بسببها (إضافة إن لم يوجد مثلها، تحديث إن تغيرت قيمة لنفس الموضوع والخاصية أو أضافت صياغة أدق تفصيلًا، حذف إن تراجعت عن محفوظ، ولا شيء للمكرر)، ويرفض المعلومات التي فيها أسرار، وينفذ الخطة المعتمدة مع حفظ كل قيمة قديمة في السجل، ويبحث في المخزن. يوحّد النص العربي والإنجليزي قبل المقارنة.
+
+**What it does:** Keeps a local long-term memory file free of contradictions: for every candidate fact it proposes one operation with its reason (ADD when nothing similar is stored, UPDATE when the same subject and attribute get a new value or a closer restatement adds detail, DELETE when the fact retracts a stored one, NOOP for duplicates), refuses facts that contain a secret, applies an approved plan while keeping every old value in history, and searches the store. English and Arabic text is normalised before comparison.
+
+#### متى تُستدعى
+
+- «احفظ تفضيلاتي دي من غير ما تتكرر أو تتناقض مع القديم»
+- «المستخدم غير رأيه في اللهجة، حدّث الذاكرة»
+- «decide whether these new facts should update or replace what we stored»
+- «search the project memory for the export settings»
+
+#### الأوامر
+
+- **propose**: One ADD/UPDATE/DELETE/NOOP/REFUSE per fact with its reason; nothing is written to the store
+  - `python3 scripts/memory_ops.py propose --store memory.json --facts facts.json --out plan.json`
+- **apply**: Writes the store from an approved plan; replaced and deleted memories go to history
+  - `python3 scripts/memory_ops.py apply --store memory.json --plan plan.json --when 2026-10-23`
+- **search**: BM25-style ranked memories
+  - `python3 scripts/memory_ops.py search --store memory.json "export settings"`
+- **--self-test**: Runs the built-in decision cases
+  - `python3 scripts/memory_ops.py --self-test`
+
+#### المتطلبات والأمان
+
+- binaries: python3
+- الأمان: writes-files
+- الموافقة: apply writes the memory file the user names; what may be remembered is still the user's and the project's call.
+- الحدود: Decisions use word overlap and subject/attribute keys, not meaning, so a paraphrase with different words can be added twice and a short unrelated sentence with shared words can be merged; review the plan before apply.
+
+#### الاختبارات والأدلة
+
+- `.claude/skills/kosif-superpowers/evals/test_memory_ops.py`
+- مرجع: `.claude/skills/kosif-superpowers/references/agents-memory-reasoning-repos.md`
+- مرجع: `.claude/skills/kosif-superpowers/references/guides/discover.md`
+
+#### عند الفشل (A29)
+
+- ابدأ بـ `think.py recover --message "<نص الخطأ>"`، ثم سجّل `fusionforge.py trace --project <slug> --id <FUSE-ID> --stage <stage> --node <N> --action "<ما جُرّب>" --result failed --error-class <الصنف> --tool tool:memory-ops --evidence <ملف>`.
 
 ### `prompt-lab` — مختبر البرومبت / Prompt Lab
 

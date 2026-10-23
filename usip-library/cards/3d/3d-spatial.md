@@ -1,4 +1,4 @@
-# `3d-spatial` — الثري دي والمحاكاة والرندر (52 بطاقة)
+# `3d-spatial` — الثري دي والمحاكاة والرندر (53 بطاقة)
 
 > مكتبة بروتوكول USIP v5.6 الكاملة، مولّدة بـ `smart_capabilities.py cards` من `data/powers/3d-spatial.json` وقواعد الملاحق A25–A29؛ لا تُحرَّر يدويًا. [الفهرس الرئيسي](../../README.md) · [فصل المجموعة](../../../.claude/skills/kosif-superpowers/references/library/3d.md) · [النواة](../../../.claude/skills/kosif-superpowers/PROTOCOL.md)
 
@@ -56,6 +56,7 @@
 - [`3D-50` أزرار وأجهزة ثلاثية الأبعاد](#3d-50--أزرار-وأجهزة-ثلاثية-الأبعاد--3d-product-interactions-button-lid)
 - [`3D-51` الأرض يرسمها الصوت](#3d-51--الأرض-يرسمها-الصوت--music-driven-3d-land)
 - [`3D-52` أفكار ثلاثية الأبعاد غير منفذة](#3d-52--أفكار-ثلاثية-الأبعاد-غير-منفذة--unbuilt-3d-ideas)
+- [`3D-G01` حلقة رندر three.js حتمية](#3d-g01--حلقة-رندر-threejs-حتمية--deterministic-threejs-render-loop)
 
 ## البطاقات / cards
 
@@ -3588,6 +3589,7 @@
 - `3D-49` النص داخل المشهد ثلاثي الأبعاد / Type in 3D space (seen)
 - `3D-50` أزرار وأجهزة ثلاثية الأبعاد / 3D product interactions (button, lid) (seen)
 - `3D-52` أفكار ثلاثية الأبعاد غير منفذة / Unbuilt 3D ideas (idea)
+- `3D-G01` حلقة رندر three.js حتمية / Deterministic three.js render loop (documented)
 
 ### `3D-52` — أفكار ثلاثية الأبعاد غير منفذة / Unbuilt 3D ideas
 
@@ -3657,4 +3659,73 @@
 
 - `3D-50` أزرار وأجهزة ثلاثية الأبعاد / 3D product interactions (button, lid) (seen)
 - `3D-51` الأرض يرسمها الصوت / Music-driven 3D land (ready)
+- `3D-G01` حلقة رندر three.js حتمية / Deterministic three.js render loop (documented)
+
+### `3D-G01` — حلقة رندر three.js حتمية / Deterministic three.js render loop
+
+| الحقل | القيمة |
+|---|---|
+| العائلة | `3d-spatial` ([فصل العائلة](../../../.claude/skills/kosif-superpowers/references/powers/3d-spatial.md)) |
+| المجموعة | الثري دي والمحاكاة والرندر (`3d`) |
+| نوع المخرج (A25، A27) | ثلاثي الأبعاد (`model3d`) |
+| الحالة في الكتالوج | 📄 `documented`: منهج موصوف يحتاج بناءً أو ربطًا قبل التشغيل |
+| سقف التحقق قبل العمل (A27) | V1 حتى تُبنى وتُشغَّل؛ لا تقدَّم جاهزة أبدًا |
+| نطاق الدليل | `none` |
+| الرخصة | MIT |
+
+**ما هي:** حرّك المشهد بالزمن لا بعدد الإطارات، واضبط الألوان والدقة مرة واحدة، وفي التصدير اجعل الزمن مدخلًا تبحث إليه لا ساعة حقيقية. — Drive the scene by time, not frame count, set colour and resolution once, and for export make time an input you seek to, not the wall clock.
+
+**متى:** مشهد ثلاثي الأبعاد للويب أو لفيديو / a 3D scene for the web or for a video
+
+**كيف:** update(t) sets every transform from t; live: t from a clock delta; export: t = frame / fps (no requestAnimationFrame timing). renderer.setPixelRatio(min(devicePixelRatio, 2)), sRGB output colour space, ACES filmic tone mapping with exposure ≈1; damped orbit controls need update() every frame; dispose geometries, materials and textures when a shot ends. Render frames headless and verify duration and fps (tools/verify_video.py).
+
+**المعاملات:** pixel ratio ≤ 2; export t = frame/fps
+
+**التثبيت:** لا خطوة تثبيت مسجلة
+
+**الوسوم:** three.js · render loop · deterministic · tone mapping · webgl · ثري جي إس · ثلاثي الأبعاد · رندر
+
+#### 1. الاستقبال (A25)
+
+- صيغة التسليم: افتراض مكتوب ← GLB للمجسم أو MP4 للرندر
+- العتاد وزمن الرندر: افتراض مكتوب ← CPU بلا GPU، بمعاينة منخفضة أولًا
+- لا تُفترض أبدًا: مادة الإنتاج نفسها، والإذن بخطوة مدفوعة أو منشورة أو لا رجعة فيها، والهوية والحقوق.
+
+#### 2. الجاهزية والشارة (A28)
+
+- `python3` ← افحص وجوده بأمر واحد قبل كتابة الشارة
+- `chromium` ← افحص وجوده بأمر واحد قبل كتابة الشارة
+- `npm:three` ← npm ls three أو وجود node_modules/three
+- الوضع 1: شارة «هنا الآن» بعد الفحص، لا 📄 الكتالوج تلقائيًا · الوضع 2: `كتالوج: 📄 · هنا: غير مفحوص` · الوضع 3: بلا شارة ولا معرّف.
+
+#### 3. موضعها في الخطة (A26)
+
+- عقدة منمّطة: المدخل `spec` ← المخرج `model3d`، والمنفّذ `method:3D-G01` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `blender-api-audit` · `blender-bridge` · `blender-cat-fur-upgrade` · `blender-cinematic-bridge` · `blender-cycles-render` · `blender-rescue-scene`.
+- مراحل النوع: المقياس والوحدات ← المجسم ← الخامات والإضاءة ← معاينة منخفضة ← رندر ← فتح في عارض مستقل.
+- إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
+
+#### 4. بوابة التحقق (A27)
+
+- إلزامي: المقياس والوحدات صحيحة ← قياس الأبعاد
+- إلزامي: الملف يُفتح في عارض مستقل ← عارض glTF
+- جودة: الإضاءة والكاميرا تخدم القراءة ← لقطات ثابتة
+- جودة: زمن الرندر ضمن المتاح، بمعاينة قبله ← توقيت إطار واحد × عدد الإطارات
+- أمر الحكم في الوضع 1: `think.py qa model3d --answers qa.json` (PASS / FAIL / INCOMPLETE).
+
+#### 5. التعافي (A29)
+
+- `missing_dependency` (اعتمادية مفقودة، ميزانية 2): سمِّ الاعتمادية بالضبط (حزمة، برنامج، خط، نموذج) ← ثبّت محليًا في بيئة العمل إن كان مجانيًا ومسموحًا (pip --user أو venv أو npm محلي) · البديل: مسار المكتبة القياسية أو أداة أخرى من نفس المجموعة · تصعيد: تثبيت نظامي أو مدفوع أو يحتاج مفتاحًا: توقف واسأل
+- `wrong_input_kind` (نوع مدخل خاطئ، ميزانية 2): افحص المدخل الفعلي (file، ffprobe، أول بايتات، ترميز النص) ← أضف محوّلًا صريحًا بين العقدتين (مثلًا ffmpeg لتحويل الصيغة) واحفظ الأصل كما هو · البديل: اطلب المدخل بالصيغة الصحيحة مع أمر تحويل جاهز · تصعيد: إن كان التحويل يفقد جودة أو بيانات: اسأل قبل التحويل
+- `quality_below_threshold` (جودة دون العتبة، ميزانية 3): أي معيار فشل وبكم (المقيس مقابل العتبة) ← عالج السبب الأكبر وحده ثم أعد القياس · البديل: المنهج البديل المكتوب للمرحلة في الخطة · تصعيد: معيار إلزامي لا يتحقق بعد البديل: توقف وأبلغ بالأرقام
+- `tool_error` (خطأ أداة، ميزانية 3): اقرأ آخر سطر في الخطأ ثم أول سطر من كودك فيه ← أصلح السبب المثبت وحده، ثم شغّل الاختبار المتعلق · البديل: أداة أخرى أو مسار يدوي للمرحلة نفسها · تصعيد: خطأ في أداة خارجية لا تملكها: بلّغ بإعادة الإنتاج ولا تخفه
+
+#### 6. الأدلة
+
+- لا دليل مسجل: لا تُقدَّم أكثر من منهج.
+
+#### 7. قدرات قريبة في العائلة
+
+- `3D-51` الأرض يرسمها الصوت / Music-driven 3D land (ready)
+- `3D-52` أفكار ثلاثية الأبعاد غير منفذة / Unbuilt 3D ideas (idea)
 

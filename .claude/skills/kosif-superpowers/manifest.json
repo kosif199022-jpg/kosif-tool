@@ -15,18 +15,18 @@
  },
  "paths_note": "Tool paths and examples are relative to their root: 'skill' = this folder, 'repo' = the kosif-tool repository root.",
  "counts": {
-  "powers": 5602,
+  "powers": 5728,
   "families": 62,
   "domains": 10,
-  "tools": 160,
-  "guides": 109,
+  "tools": 168,
+  "guides": 112,
   "statuses": {
-   "documented": 2097,
+   "documented": 2206,
    "idea": 71,
    "install": 980,
    "key": 176,
-   "proven": 1000,
-   "ready": 669,
+   "proven": 1012,
+   "ready": 674,
    "seen": 609
   }
  },
@@ -172,9 +172,9 @@
    "domain": "motion",
    "title_ar": "الأبعاد الثلاثية",
    "title_en": "3D & spatial",
-   "count": 52,
+   "count": 53,
    "statuses": {
-    "documented": 8,
+    "documented": 9,
     "idea": 1,
     "install": 4,
     "key": 2,
@@ -191,12 +191,13 @@
    "domain": "mind",
    "title_ar": "تنسيق الوكلاء",
    "title_en": "Agent orchestration",
-   "count": 46,
+   "count": 55,
    "statuses": {
-    "documented": 41,
+    "documented": 49,
     "install": 3,
     "key": 1,
-    "proven": 1
+    "proven": 1,
+    "ready": 1
    },
    "chapter": "references/powers/agent-orchestration.md",
    "data": "data/powers/agent-orchestration.json"
@@ -207,9 +208,9 @@
    "domain": "motion",
    "title_ar": "التوليد بالذكاء الاصطناعي",
    "title_en": "AI generation",
-   "count": 93,
+   "count": 94,
    "statuses": {
-    "documented": 31,
+    "documented": 32,
     "idea": 1,
     "install": 3,
     "key": 30,
@@ -242,11 +243,11 @@
    "domain": "build",
    "title_ar": "قدرات التطبيقات المحللة",
    "title_en": "Analyzed app capabilities",
-   "count": 139,
+   "count": 155,
    "statuses": {
-    "documented": 41,
+    "documented": 53,
     "install": 1,
-    "proven": 96,
+    "proven": 100,
     "ready": 1
    },
    "chapter": "references/powers/app-feature-transfer.md",
@@ -258,9 +259,9 @@
    "domain": "build",
    "title_ar": "التطبيقات والواجهات",
    "title_en": "Apps & artifacts",
-   "count": 23,
+   "count": 27,
    "statuses": {
-    "documented": 5,
+    "documented": 9,
     "install": 7,
     "key": 5,
     "proven": 6
@@ -302,9 +303,9 @@
    "domain": "code",
    "title_ar": "أطلس: الهندسة والكود",
    "title_en": "Atlas: engineering & code",
-   "count": 247,
+   "count": 277,
    "statuses": {
-    "documented": 247
+    "documented": 277
    },
    "chapter": "references/powers/atlas-code.md",
    "data": "data/powers/atlas-code.json"
@@ -328,9 +329,9 @@
    "domain": "data",
    "title_ar": "أطلس: البيانات والتعلم الآلي",
    "title_en": "Atlas: data, ML & charts",
-   "count": 52,
+   "count": 56,
    "statuses": {
-    "documented": 52
+    "documented": 56
    },
    "chapter": "references/powers/atlas-data.md",
    "data": "data/powers/atlas-data.json"
@@ -341,9 +342,9 @@
    "domain": "docs",
    "title_ar": "أطلس: المستندات والمخططات",
    "title_en": "Atlas: documents & diagrams",
-   "count": 50,
+   "count": 55,
    "statuses": {
-    "documented": 50
+    "documented": 55
    },
    "chapter": "references/powers/atlas-docs.md",
    "data": "data/powers/atlas-docs.json"
@@ -367,9 +368,9 @@
    "domain": "mind",
    "title_ar": "أطلس: الوكلاء والتخطيط والمراجعة",
    "title_en": "Atlas: agent workflows, planning & review",
-   "count": 54,
+   "count": 60,
    "statuses": {
-    "documented": 54
+    "documented": 60
    },
    "chapter": "references/powers/atlas-mind.md",
    "data": "data/powers/atlas-mind.json"
@@ -393,9 +394,9 @@
    "domain": "strategy",
    "title_ar": "أطلس: المنتج والتسويق والأعمال",
    "title_en": "Atlas: product, marketing & business",
-   "count": 72,
+   "count": 87,
    "statuses": {
-    "documented": 72
+    "documented": 87
    },
    "chapter": "references/powers/atlas-strategy.md",
    "data": "data/powers/atlas-strategy.json"
@@ -499,11 +500,12 @@
    "domain": "code",
    "title_ar": "هندسة البرمجيات",
    "title_en": "Code engineering",
-   "count": 24,
+   "count": 26,
    "statuses": {
-    "documented": 20,
+    "documented": 21,
     "key": 1,
-    "proven": 3
+    "proven": 3,
+    "ready": 1
    },
    "chapter": "references/powers/code-engineering.md",
    "data": "data/powers/code-engineering.json"
@@ -561,9 +563,9 @@
    "domain": "motion",
    "title_ar": "المخططات والشرح والكود",
    "title_en": "Diagrams, explainers & code",
-   "count": 67,
+   "count": 69,
    "statuses": {
-    "documented": 28,
+    "documented": 30,
     "idea": 2,
     "install": 11,
     "key": 1,
@@ -596,12 +598,12 @@
    "domain": "motion",
    "title_ar": "التوقيت والإيقاع والتسهيل",
    "title_en": "Easing, timing & rhythm",
-   "count": 102,
+   "count": 106,
    "statuses": {
-    "documented": 32,
+    "documented": 33,
     "install": 7,
     "proven": 27,
-    "ready": 26,
+    "ready": 29,
     "seen": 10
    },
    "chapter": "references/powers/easing-timing-rhythm.md",
@@ -613,9 +615,9 @@
    "domain": "motion",
    "title_ar": "المحركات وخط الرندر",
    "title_en": "Engines & render pipeline",
-   "count": 443,
+   "count": 445,
    "statuses": {
-    "documented": 83,
+    "documented": 85,
     "idea": 1,
     "install": 209,
     "key": 27,
@@ -650,9 +652,9 @@
    "domain": "motion",
    "title_ar": "الرسم اليدوي والرسم الحي",
    "title_en": "Hand-drawn & draw-on",
-   "count": 63,
+   "count": 65,
    "statuses": {
-    "documented": 19,
+    "documented": 21,
     "install": 6,
     "proven": 17,
     "ready": 15,
@@ -667,9 +669,9 @@
    "domain": "code",
    "title_ar": "الرسم المعرفي والخرائط الذهنية",
    "title_en": "Knowledge graph & mind maps",
-   "count": 21,
+   "count": 23,
    "statuses": {
-    "documented": 4,
+    "documented": 6,
     "idea": 1,
     "key": 5,
     "proven": 11
@@ -840,9 +842,9 @@
    "domain": "mind",
    "title_ar": "التخطيط والتنفيذ",
    "title_en": "Planning & execution",
-   "count": 12,
+   "count": 14,
    "statuses": {
-    "documented": 10,
+    "documented": 12,
     "proven": 2
    },
    "chapter": "references/powers/planning-execution.md",
@@ -888,10 +890,10 @@
    "domain": "build",
    "title_ar": "الأدوات القابلة للتشغيل",
    "title_en": "Runnable KOSIF tools",
-   "count": 160,
+   "count": 168,
    "statuses": {
     "install": 12,
-    "proven": 127,
+    "proven": 135,
     "ready": 21
    },
    "chapter": "references/powers/runnable-tools.md",
@@ -933,9 +935,9 @@
    "domain": "motion",
    "title_ar": "الأشكال والتحوّل",
    "title_en": "Shapes & morphing",
-   "count": 95,
+   "count": 97,
    "statuses": {
-    "documented": 19,
+    "documented": 21,
     "idea": 4,
     "install": 7,
     "proven": 16,
@@ -1017,9 +1019,9 @@
    "domain": "mind",
    "title_ar": "نواة التفكير",
    "title_en": "Thinking core",
-   "count": 46,
+   "count": 47,
    "statuses": {
-    "documented": 39,
+    "documented": 40,
     "proven": 7
    },
    "chapter": "references/powers/thinking-core.md",
@@ -1031,9 +1033,9 @@
    "domain": "motion",
    "title_ar": "الانتقالات والقطعات",
    "title_en": "Transitions & cuts",
-   "count": 474,
+   "count": 475,
    "statuses": {
-    "documented": 79,
+    "documented": 80,
     "idea": 18,
     "install": 175,
     "key": 1,
@@ -1106,9 +1108,9 @@
    "domain": "mind",
    "title_ar": "التحقق والتقييم",
    "title_en": "Verification & evals",
-   "count": 35,
+   "count": 40,
    "statuses": {
-    "documented": 31,
+    "documented": 36,
     "proven": 4
    },
    "chapter": "references/powers/verification-evals.md",
@@ -1153,9 +1155,9 @@
    "domain": "research",
    "title_ar": "البحث على الويب",
    "title_en": "Web research",
-   "count": 24,
+   "count": 26,
    "statuses": {
-    "documented": 8,
+    "documented": 10,
     "install": 2,
     "key": 4,
     "proven": 10
@@ -12117,81 +12119,6 @@
    "power_id": "TOOL-129"
   },
   {
-   "id": "micro-index",
-   "path": "scripts/micro_index.py",
-   "root": "skill",
-   "kind": "cli",
-   "area": "discover",
-   "title_en": "Micro index: one line per power, tool and superpower",
-   "title_ar": "الفهرس الدقيق: سطر لكل قدرة وأداة وقدرة خارقة",
-   "summary_en": "Builds the finest-grained map of the skill: every atomic power, runnable tool and fused superpower gets one entry with its group, domain, family, superpower, badge, requirements, the tools of its family, its chapter and its library card. Writes data/micro_index.json and references/micro-index/ (one page per group plus tools and superpowers); find searches it in Arabic or English and show prints any id with its neighbours. --check reports stale files without writing.",
-   "summary_ar": "يبني أدق خريطة للمهارة: لكل قدرة ذرية وأداة قابلة للتشغيل وقدرة خارقة مدخل واحد فيه مجموعتها ومجالها وعائلتها وقدرتها الخارقة وشارتها ومستلزماتها وأدوات عائلتها وفصلها وبطاقتها في المكتبة. يكتب data/micro_index.json وreferences/micro-index/ (صفحة لكل مجموعة وصفحة للأدوات وأخرى للقدرات الخارقة)؛ find يبحث فيه بالعربية أو الإنجليزية وshow يعرض أي معرّف مع جيرانه. الخيار --check يبلغ عن الملفات غير المحدّثة دون كتابة.",
-   "use_when": [
-    "اعرض لي الفهرس الدقيق لكل القدرات",
-    "فين القدرة دي وإيه الأدوات اللي معاها",
-    "Find every power, tool and superpower about loudness",
-    "Show SP-0042 with its members and links"
-   ],
-   "keywords": [
-    "micro index",
-    "index",
-    "find",
-    "show",
-    "catalog",
-    "map",
-    "فهرس",
-    "فهرس دقيق",
-    "بحث",
-    "خريطة",
-    "قدرات"
-   ],
-   "commands": [
-    {
-     "name": "build",
-     "example": "python3 scripts/micro_index.py build",
-     "does": "Writes data/micro_index.json and the pages under references/micro-index/; --check writes nothing and exits 1 when stale."
-    },
-    {
-     "name": "find",
-     "example": "python3 scripts/micro_index.py find \"قص على الإيقاع\" --top 10",
-     "does": "Ranked one-line matches across powers, tools and superpowers; --kind narrows, --json for machines."
-    },
-    {
-     "name": "show",
-     "example": "python3 scripts/micro_index.py show SP-0001",
-     "does": "One id (power, TOOL-NN, tool id or SP-NNNN) with its superpower, family tools, chapter, card, members or links."
-    },
-    {
-     "name": "stats",
-     "example": "python3 scripts/micro_index.py stats",
-     "does": "Counts per kind, status and group."
-    }
-   ],
-   "inputs": "data/powers/*.json, data/tools.json, data/superpowers.json, data/smart_capability_index.json",
-   "outputs": "data/micro_index.json and references/micro-index/*.md; matches on stdout",
-   "requires": {
-    "python": [],
-    "binaries": [],
-    "node": [],
-    "optional": [],
-    "network": false
-   },
-   "safety": "writes-files",
-   "consent": "build writes only its own generated files; find, show and stats only read.",
-   "limits": "An entry is an address, not a proof: badges are the records' own and a proven badge still needs a real run.",
-   "tests": [
-    ".claude/skills/kosif-superpowers/evals/test_micro_index.py"
-   ],
-   "docs": [
-    ".claude/skills/kosif-superpowers/references/micro-index/README.md"
-   ],
-   "families": [
-    "self-discovery"
-   ],
-   "evidence": "tested-here",
-   "power_id": "TOOL-161"
-  },
-  {
    "id": "montage-pro",
    "path": "scripts/montage_pro.py",
    "root": "skill",
@@ -14909,10 +14836,10 @@
    "root": "skill",
    "kind": "cli",
    "area": "draw",
-   "title_en": "Hand-drawn pencil, charcoal or ink drawing of any photo or imagined scene, built stroke by stroke",
-   "title_ar": "رسم يدوي المظهر بالرصاص أو الفحم أو الحبر لأي صورة أو مشهد متخيَّل، خطًا بخط",
-   "summary_en": "Turns any photo (portrait, object, place) or any scene Claude imagines into a hand-drawn-looking drawing without copying a single photo pixel: it measures the sitter (MediaPipe face landmarks and hair/skin/clothes segmentation, optional), lays in faint Loomis construction and a straight-line envelope, plans values with the background held back, renders four tonal passes of tapered strokes that follow the form and stop at edges, blends the skin with a stump pass, adds lost-and-found edges and feature accents, lifts highlights and catchlights with an eraser pass, and deposits graphite through simulated paper tooth. Writes PNG, a layered editable SVG (one group per stage) and a receipt; review runs the rule-27 anatomy/contact gate plus value-fidelity checks. 16 portrait method cards (Loomis, Bridgman, Bargue, Speed, Vanderpoel, Hampton, Gurney, Dodson, Hammond, atelier sight-size) in data/portrait_methods.json name the stage that executes each. Non-portrait photos switch to scene mode (GrabCut subject + colour-cluster shape boundaries, short straight hatching). `imagine` draws scenes from imagination: Claude writes the scene as an SVG maquette (one light, gradients for the light and shadow families, far planes lighter) or passes any rendered PNG (unified_draw, drawing_methods, Blender or native 3D), and it is drawn like a photo. Media: graphite, charcoal, ink, sepia.",
-   "summary_ar": "يحوّل صورة مرجعية إلى بورتريه بالقلم الرصاص يبدو مرسومًا باليد دون نسخ أي بكسل من الصورة: يقيس الشخص (نقاط ملامح الوجه وتقسيم الشعر والجلد والملابس، اختياري)، ويضع بناء لوميس الخفيف وغلافًا بخطوط مستقيمة، ويخطط القيم مع تخفيف الخلفية، ويرسم أربع طبقات تهشير بخطوط مستدقة تتبع الشكل وتتوقف عند الحواف، ويموّه البشرة، ويضيف حوافًا ضائعة وظاهرة ولمسات الملامح، ويرفع الإضاءات ولمعة العين بالممحاة، ويرسب الجرافيت عبر ملمس ورق. يكتب PNG وSVG بطبقات قابلة للتحرير وإيصالًا، والمراجعة تشغّل بوابة القاعدة 27 وفحوص دقة القيم. 16 بطاقة منهج للبورتريه في data/portrait_methods.json. يعمل على أي صورة (وضع المشهد لغير البورتريه)، و`imagine` يرسم مشاهد من الخيال: Claude يكتب المشهد كمجسّم SVG بإضاءة واحدة أو يمرر أي صورة مصيّرة من أدوات الرسم أو ثلاثي الأبعاد، ثم يُرسم خطًا بخط. الخامات: رصاص، فحم، حبر، سيبيا.",
+   "title_en": "Hand-drawn or hand-painted version of any photo or imagined scene: pencil, charcoal, ink, coloured pencil, oil brush or watercolour",
+   "title_ar": "نسخة مرسومة أو ملوّنة باليد لأي صورة أو مشهد متخيَّل: رصاص، فحم، حبر، ألوان خشبية، فرشاة زيت أو ألوان مائية",
+   "summary_en": "Turns any photo (portrait, object, place) or any scene Claude imagines into a hand-drawn-looking drawing without copying a single photo pixel: it measures the sitter (MediaPipe face landmarks and hair/skin/clothes segmentation, optional), lays in faint Loomis construction and a straight-line envelope, plans values with the background held back, renders four tonal passes of tapered strokes that follow the form and stop at edges, blends the skin with a stump pass, adds lost-and-found edges and feature accents, lifts highlights and catchlights with an eraser pass, and deposits graphite through simulated paper tooth. Writes PNG, a layered editable SVG (one group per stage) and a receipt; review runs the rule-27 anatomy/contact gate plus value-fidelity checks. 24 method cards (Loomis, Bridgman, Bargue, Speed, Vanderpoel, Hampton, Gurney, Dodson, Hammond, atelier sight-size) in data/portrait_methods.json name the stage that executes each. Non-portrait photos switch to scene mode (GrabCut subject + colour-cluster shape boundaries, short straight hatching). `imagine` draws scenes from imagination: Claude writes the scene as an SVG maquette (one light, gradients for the light and shadow families, far planes lighter) or passes any rendered PNG (unified_draw, drawing_methods, Blender or native 3D), and it is drawn like a photo. Media: graphite, charcoal, ink, sepia, and in colour (scripts/color_media.py): colored-pencil (30 named pencils layered light to dark, each stroke choosing the pencil whose wax glaze moves the paper closest to the reference, burnishing on skin), oil (toned ground, Hertzmann coarse-to-fine curved brush strokes with bristle streaks, dry-brush ends and lit impasto) and watercolor (pencil underdrawing, wet-in-wet wash, flat shape washes light to dark with edge darkening and granulation, whites left as paper).",
+   "summary_ar": "يحوّل صورة مرجعية إلى بورتريه بالقلم الرصاص يبدو مرسومًا باليد دون نسخ أي بكسل من الصورة: يقيس الشخص (نقاط ملامح الوجه وتقسيم الشعر والجلد والملابس، اختياري)، ويضع بناء لوميس الخفيف وغلافًا بخطوط مستقيمة، ويخطط القيم مع تخفيف الخلفية، ويرسم أربع طبقات تهشير بخطوط مستدقة تتبع الشكل وتتوقف عند الحواف، ويموّه البشرة، ويضيف حوافًا ضائعة وظاهرة ولمسات الملامح، ويرفع الإضاءات ولمعة العين بالممحاة، ويرسب الجرافيت عبر ملمس ورق. يكتب PNG وSVG بطبقات قابلة للتحرير وإيصالًا، والمراجعة تشغّل بوابة القاعدة 27 وفحوص دقة القيم. 24 بطاقة منهج للبورتريه في data/portrait_methods.json. يعمل على أي صورة (وضع المشهد لغير البورتريه)، و`imagine` يرسم مشاهد من الخيال: Claude يكتب المشهد كمجسّم SVG بإضاءة واحدة أو يمرر أي صورة مصيّرة من أدوات الرسم أو ثلاثي الأبعاد، ثم يُرسم خطًا بخط. الخامات: رصاص، فحم، حبر، سيبيا، وبالألوان: ألوان خشبية (30 قلمًا بطبقات من الفاتح للغامق)، فرشاة زيت (ضربات منحنية من الكبيرة للصغيرة بشعيرات وسماكة)، وألوان مائية (رسم قلم خفيف ثم غسلات شفافة بحواف غامقة وحبيبات ورق).",
    "use_when": [
     "ارسم الصورة دي بورتريه بالقلم الرصاص كأنها مرسومة باليد",
     "حوّل صورتي لرسم واقعي بالرصاص من غير ما تغير التكوين",
@@ -14922,7 +14849,12 @@
     "ارسم من خيالك منارة على جرف بالرصاص كأنها مرسومة باليد",
     "ارسم أي صورة أبعتها لك بالفحم",
     "Draw an imagined scene in pencil, stroke by stroke",
-    "Turn this landscape photo into an ink hatching drawing"
+    "Turn this landscape photo into an ink hatching drawing",
+    "ارسم صورتي بالألوان الخشبية",
+    "ارسم الصورة دي بالفرشاة كأنها لوحة زيت",
+    "حوّل الصورة للوحة ألوان مائية",
+    "Paint this photo as an oil painting with visible brush strokes",
+    "Draw this in coloured pencils"
    ],
    "keywords": [
     "portrait",
@@ -14959,13 +14891,32 @@
     "landscape drawing",
     "رسم منظر",
     "maquette",
-    "مجسم"
+    "مجسم",
+    "colored pencil",
+    "coloured pencil",
+    "ألوان خشبية",
+    "أقلام ملونة",
+    "oil painting",
+    "لوحة زيت",
+    "brush",
+    "فرشاة",
+    "فرشة",
+    "watercolor",
+    "watercolour",
+    "ألوان مائية",
+    "painterly",
+    "impasto"
    ],
    "commands": [
     {
      "name": "draw",
      "example": "python3 scripts/portrait_pipeline.py draw --photo photo.png --out out/portrait --models <dir with face_landmarker.task and selfie_multiclass.tflite>",
-     "does": "Measures the photo and writes portrait.png, portrait.svg (layers construction, lay-in, cross-hatch, deep-shadow, accents, edges + a hidden rule-27 figure group) and receipt.json. --medium graphite|charcoal|ink|sepia, --subject auto|portrait|scene, --background straight|flow."
+     "does": "Measures the photo and writes portrait.png, portrait.svg (layers construction, lay-in, cross-hatch, deep-shadow, accents, edges + a hidden rule-27 figure group) and receipt.json. --medium graphite|charcoal|ink|sepia|colored-pencil|oil|watercolor, --subject auto|portrait|scene, --background straight|flow."
+    },
+    {
+     "name": "draw (colour)",
+     "example": "python3 scripts/portrait_pipeline.py draw --photo photo.png --out out/oil --medium oil --models <dir>",
+     "does": "Colour media through scripts/color_media.py: colored-pencil writes a layered SVG (strokes grouped by pencil), oil and watercolor write the PNG plus a small SVG carrying the rule-27 figure group; the receipt names the canvas source (strokes_only, brush_strokes_only, washes_and_strokes)."
     },
     {
      "name": "imagine",
@@ -14975,7 +14926,7 @@
     {
      "name": "review",
      "example": "python3 scripts/portrait_pipeline.py review --dir out/portrait",
-     "does": "Rule-27 anatomy/contact gate (drawing_methods review) plus value-mass, value-detail, face-likeness, value-range and stroke-texture checks; writes review.json; exit 1 on any failure."
+     "does": "Rule-27 anatomy/contact gate (drawing_methods review) plus value-mass, value-detail, face-likeness, value-range stroke-texture and (colour media) colour-fidelity checks; writes review.json; exit 1 on any failure."
     },
     {
      "name": "cards",
@@ -14984,7 +14935,7 @@
     }
    ],
    "inputs": "A photo of anything, or an imagined scene as an SVG maquette / rendered PNG; optional MediaPipe models for portraits",
-   "outputs": "portrait.png, layered editable portrait.svg, receipt.json, review.json",
+   "outputs": "<name>.png, layered editable <name>.svg, receipt.json, review.json",
    "requires": {
     "python": [
      "numpy",
@@ -14999,7 +14950,7 @@
    },
    "safety": "writes-files",
    "consent": "Writes only into --out; no network, model calls or spend. A photo of a real person is personal data: draw people only with their consent and never publish without the user's permission.",
-   "limits": "Algorithmic rendering from a measured reference and a value map, not a human hand and not a neural model. An imagined scene is only as convincing as the maquette Claude builds for it: flat vector maquettes give illustration-like drawings. Method cards paraphrase widely taught methods (only those marked user_copy_read_paraphrased rest on books read). review measures value fidelity, texture and figure connectivity, not beauty.",
+   "limits": "Algorithmic rendering from a measured reference and a value map, not a human hand and not a neural model. An imagined scene is only as convincing as the maquette Claude builds for it: flat vector maquettes give illustration-like drawings. Method cards paraphrase widely taught methods (only those marked user_copy_read_paraphrased rest on books read). review measures value fidelity, texture and figure connectivity, not beauty. Colour media: oil takes each stroke's colour from a blurred reference (the painter's mixed colour) and watercolour washes are flat per segmented shape, so they follow the photo's colours closely; impasto, weave and granulation are simulated.",
    "tests": [
     ".claude/skills/kosif-superpowers/evals/test_portrait_pipeline.py"
    ],
@@ -15011,8 +14962,77 @@
     "story-direction-ideas"
    ],
    "evidence": "tested-here",
-   "evidence_note": "Unit tests passed on this checkout (cloud container, 2026-10-23); the portrait of a 1320x2345 reference (5 rounds), an imagined lighthouse scene from an SVG maquette (3 rounds), a drawing_methods head SVG in ink, and the portrait in charcoal and ink were drawn, reviewed and visually inspected.",
+   "evidence_note": "Unit tests passed on this checkout (cloud container, 2026-10-23); the portrait of a 1320x2345 reference (5 rounds), an imagined lighthouse scene from an SVG maquette (3 rounds), a drawing_methods head SVG in ink, and the portrait in charcoal and ink were drawn, reviewed and visually inspected. Colour media (colored-pencil, oil, watercolor) drawn on the same portrait and the lighthouse maquette, reviewed and visually inspected.",
    "power_id": "TOOL-157"
+  },
+  {
+   "id": "color-media",
+   "path": "scripts/color_media.py",
+   "root": "skill",
+   "kind": "cli",
+   "area": "draw",
+   "title_en": "Colour media engine: coloured pencil, oil brush and watercolour painting of a photo",
+   "title_ar": "محرك الخامات الملوّنة: ألوان خشبية وفرشاة زيت وألوان مائية لأي صورة",
+   "summary_en": "The portrait pipeline's colour engine. It measures the reference as for graphite and paints a blank canvas: coloured pencil (30 named pencils glazed light to dark), oil (toned ground, coarse-to-fine curved brush strokes with bristle streaks and lit impasto) or watercolour (pencil underdrawing, transparent washes light to dark with edge darkening and granulation). No photo pixel is copied. Usually called through portrait_pipeline.py --medium colored-pencil|oil|watercolor.",
+   "summary_ar": "محرك الألوان لخط البورتريه: يقيس المرجع كما في الرصاص ثم يلوّن لوحة فارغة بالألوان الخشبية (30 قلمًا بطبقات من الفاتح للغامق) أو فرشاة الزيت (ضربات منحنية من الكبيرة للصغيرة بسماكة) أو الألوان المائية (رسم قلم خفيف ثم غسلات شفافة). لا ينسخ أي بكسل من الصورة. يُستدعى عادة عبر portrait_pipeline.py.",
+   "use_when": [
+    "ارسم صورتي بالألوان الخشبية",
+    "حوّل الصورة للوحة ألوان مائية",
+    "Paint this photo as an oil painting with visible brush strokes"
+   ],
+   "keywords": [
+    "colored pencil",
+    "ألوان خشبية",
+    "oil painting",
+    "لوحة زيت",
+    "watercolor",
+    "ألوان مائية",
+    "brush",
+    "فرشاة",
+    "painterly"
+   ],
+   "commands": [
+    {
+     "name": "draw",
+     "example": "python3 scripts/color_media.py draw --photo in.png --out out/x --medium oil",
+     "does": "Paints the photo in the chosen colour medium; writes PNG, SVG and receipt into --out."
+    },
+    {
+     "name": "palette",
+     "example": "python3 scripts/color_media.py palette",
+     "does": "Lists the 30 pencils of the coloured-pencil set with their colours."
+    }
+   ],
+   "inputs": "A photo (any subject); optional MediaPipe models dir for portraits",
+   "outputs": "<name>.png, <name>.svg, receipt.json in --out",
+   "requires": {
+    "python": [
+     "numpy",
+     "opencv-python-headless"
+    ],
+    "binaries": [],
+    "node": [],
+    "optional": [
+     "mediapipe (+ face_landmarker.task, selfie_multiclass_256x256.tflite from storage.googleapis.com/mediapipe-models)"
+    ],
+    "network": false
+   },
+   "safety": "writes-files",
+   "consent": "Writes only into --out; no network, model calls or spend. A photo of a real person is personal data: draw people only with their consent and never publish without the user's permission.",
+   "limits": "Algorithmic rendering, not a human hand or neural model; oil takes each stroke's colour from a blurred reference and watercolour washes are flat per segmented shape; impasto, weave and granulation are simulated.",
+   "evidence": "tested-here",
+   "evidence_note": "Exercised through portrait_pipeline.py colour media runs (colored-pencil, oil, watercolor) on this checkout, 2026-10-23; see portrait-pipeline.",
+   "tests": [
+    ".claude/skills/kosif-superpowers/evals/test_portrait_pipeline.py"
+   ],
+   "docs": [
+    ".claude/skills/kosif-superpowers/references/portrait-drawing.md"
+   ],
+   "families": [
+    "hand-drawn-draw-on",
+    "story-direction-ideas"
+   ],
+   "power_id": "TOOL-169"
   },
   {
    "id": "drawing-council",
@@ -15291,6 +15311,698 @@
     "self-discovery"
    ],
    "power_id": "TOOL-160"
+  },
+  {
+   "root": "skill",
+   "kind": "cli",
+   "consent": "",
+   "evidence": "tested-here",
+   "id": "repo-map",
+   "path": "scripts/repo_map.py",
+   "area": "investigate",
+   "title_en": "Repo Map",
+   "title_ar": "خريطة المستودع",
+   "summary_en": "Gives a coding agent the shape of a codebase in a small budget: it parses Python with ast and JavaScript/TypeScript, Go and Rust by line patterns, finds where each name is defined and which files mention it, ranks files with PageRank over that reference graph (optionally pulled toward focus files or words), and prints the top files with their definition lines until a character budget is spent. defs shows where one name is defined and who uses it. It reads text only and never imports, runs or builds the target.",
+   "summary_ar": "يعطي وكيل الكود شكل المستودع في ميزانية صغيرة: يحلل بايثون بـ ast وجافاسكربت/تايبسكربت وGo وRust بأنماط الأسطر، ويعرف أين يُعرَّف كل اسم ومن يذكره، ويرتب الملفات بـ PageRank على رسم الإشارات (مع إمكانية التركيز على ملفات أو كلمات)، ويطبع أهم الملفات بأسطر تعريفاتها حتى تنفد الميزانية. defs يبين أين يُعرَّف اسم ومن يستخدمه. يقرأ النص فقط ولا يستورد ولا يشغّل ولا يبني شيئًا من المستودع.",
+   "use_when": [
+    "فهمني المستودع ده بسرعة قبل ما نعدل فيه",
+    "إيه أهم الملفات والدوال في الكود ده؟",
+    "give me a compact map of this repo for a coding agent",
+    "where is load_scene defined and who calls it?"
+   ],
+   "keywords": [
+    "repo map",
+    "codebase map",
+    "pagerank",
+    "symbols",
+    "definitions",
+    "code navigation",
+    "aider",
+    "خريطة المستودع",
+    "فهم الكود",
+    "أهم الملفات",
+    "تعريفات"
+   ],
+   "commands": [
+    {
+     "name": "map",
+     "example": "python3 scripts/repo_map.py map scripts --budget 3000 --focus prompt",
+     "does": "Ranked files with their definition lines within --budget characters; --json for the ranking and counts"
+    },
+    {
+     "name": "defs",
+     "example": "python3 scripts/repo_map.py defs scripts lint",
+     "does": "Where a name is defined and which files mention it"
+    },
+    {
+     "name": "--self-test",
+     "example": "python3 scripts/repo_map.py --self-test",
+     "does": "Builds a small mixed Python/TypeScript tree and checks ranking, budget, focus and skips"
+    }
+   ],
+   "inputs": "A local folder.",
+   "outputs": "Text or JSON on stdout; it writes no files.",
+   "requires": {
+    "python": [],
+    "binaries": [
+     "python3"
+    ],
+    "node": [],
+    "optional": [],
+    "network": false
+   },
+   "safety": "read-only",
+   "limits": "Non-Python languages are read by line patterns, so unusual syntax can be missed; mentions are matched by name, not resolved by scope, so two functions with one name share credit; files over 400 KB and vendor/build folders are skipped.",
+   "evidence_note": "4/4 passed (python3 -m unittest evals.test_repo_map) and --self-test OK on 2026-10-23",
+   "tests": [
+    ".claude/skills/kosif-superpowers/evals/test_repo_map.py"
+   ],
+   "docs": [
+    ".claude/skills/kosif-superpowers/references/agents-memory-reasoning-repos.md",
+    ".claude/skills/kosif-superpowers/references/guides/investigate.md"
+   ],
+   "families": [
+    "code-engineering",
+    "software-investigation"
+   ],
+   "power_id": "TOOL-162"
+  },
+  {
+   "root": "skill",
+   "kind": "cli",
+   "consent": "apply writes the memory file the user names; what may be remembered is still the user's and the project's call.",
+   "evidence": "tested-here",
+   "id": "memory-ops",
+   "path": "scripts/memory_ops.py",
+   "area": "think",
+   "title_en": "Memory Ops",
+   "title_ar": "عمليات الذاكرة",
+   "summary_en": "Keeps a local long-term memory file free of contradictions: for every candidate fact it proposes one operation with its reason (ADD when nothing similar is stored, UPDATE when the same subject and attribute get a new value or a closer restatement adds detail, DELETE when the fact retracts a stored one, NOOP for duplicates), refuses facts that contain a secret, applies an approved plan while keeping every old value in history, and searches the store. English and Arabic text is normalised before comparison.",
+   "summary_ar": "يحفظ ملف ذاكرة محليًا طويل المدى بلا تناقضات: لكل معلومة مرشحة يقترح عملية واحدة بسببها (إضافة إن لم يوجد مثلها، تحديث إن تغيرت قيمة لنفس الموضوع والخاصية أو أضافت صياغة أدق تفصيلًا، حذف إن تراجعت عن محفوظ، ولا شيء للمكرر)، ويرفض المعلومات التي فيها أسرار، وينفذ الخطة المعتمدة مع حفظ كل قيمة قديمة في السجل، ويبحث في المخزن. يوحّد النص العربي والإنجليزي قبل المقارنة.",
+   "use_when": [
+    "احفظ تفضيلاتي دي من غير ما تتكرر أو تتناقض مع القديم",
+    "المستخدم غير رأيه في اللهجة، حدّث الذاكرة",
+    "decide whether these new facts should update or replace what we stored",
+    "search the project memory for the export settings"
+   ],
+   "keywords": [
+    "memory",
+    "long-term memory",
+    "preferences",
+    "add update delete",
+    "consolidation",
+    "mem0",
+    "ذاكرة",
+    "تفضيلات",
+    "تحديث الذاكرة",
+    "دمج الذاكرة"
+   ],
+   "commands": [
+    {
+     "name": "propose",
+     "example": "python3 scripts/memory_ops.py propose --store memory.json --facts facts.json --out plan.json",
+     "does": "One ADD/UPDATE/DELETE/NOOP/REFUSE per fact with its reason; nothing is written to the store"
+    },
+    {
+     "name": "apply",
+     "example": "python3 scripts/memory_ops.py apply --store memory.json --plan plan.json --when 2026-10-23",
+     "does": "Writes the store from an approved plan; replaced and deleted memories go to history"
+    },
+    {
+     "name": "search",
+     "example": "python3 scripts/memory_ops.py search --store memory.json \"export settings\"",
+     "does": "BM25-style ranked memories"
+    },
+    {
+     "name": "--self-test",
+     "example": "python3 scripts/memory_ops.py --self-test",
+     "does": "Runs the built-in decision cases"
+    }
+   ],
+   "inputs": "memory.json (created when missing) and facts.json.",
+   "outputs": "plan.json (propose --out), memory.json (apply), or text on stdout.",
+   "requires": {
+    "python": [],
+    "binaries": [
+     "python3"
+    ],
+    "node": [],
+    "optional": [],
+    "network": false
+   },
+   "safety": "writes-files",
+   "limits": "Decisions use word overlap and subject/attribute keys, not meaning, so a paraphrase with different words can be added twice and a short unrelated sentence with shared words can be merged; review the plan before apply.",
+   "evidence_note": "4/4 passed (python3 -m unittest evals.test_memory_ops) and --self-test OK on 2026-10-23",
+   "tests": [
+    ".claude/skills/kosif-superpowers/evals/test_memory_ops.py"
+   ],
+   "docs": [
+    ".claude/skills/kosif-superpowers/references/agents-memory-reasoning-repos.md",
+    ".claude/skills/kosif-superpowers/references/guides/discover.md"
+   ],
+   "families": [
+    "agent-orchestration",
+    "self-discovery"
+   ],
+   "power_id": "TOOL-163"
+  },
+  {
+   "root": "skill",
+   "kind": "cli",
+   "consent": "",
+   "evidence": "tested-here",
+   "id": "motion-physics",
+   "path": "scripts/motion_physics.py",
+   "area": "motion",
+   "title_en": "Motion Physics",
+   "title_ar": "فيزياء الحركة",
+   "summary_en": "Computes motion numbers instead of guessing them: a spring from stiffness, damping and mass (value per frame, damping ratio, settle time, overshoot, or CSS @keyframes), any CSS cubic-bezier or named easing sampled exactly as a browser does, stagger delays from an origin (first, last, center, edges or an index) on a row or a grid, and a keyframe track sampled per frame with an easing. Pure standard library; prints JSON or CSS and writes no files.",
+   "summary_ar": "يحسب أرقام الحركة بدل تخمينها: نابض من الصلابة والتخميد والكتلة (القيمة في كل إطار ونسبة التخميد وزمن الاستقرار والتجاوز، أو إطارات CSS)، وأي منحنى cubic-bezier أو تسهيل CSS مسمى بنفس حساب المتصفح، وتأخيرات التتابع من نقطة أصل (الأول أو الأخير أو المنتصف أو الأطراف أو عنصر بعينه) في صف أو شبكة، وعينات خط مفاتيح لكل إطار بتسهيل. مكتبة بايثون القياسية فقط؛ يطبع JSON أو CSS ولا يكتب ملفات.",
+   "use_when": [
+    "عايز ارتداد نابض طبيعي للعنوان، اطلعلي القيم لكل فريم",
+    "حوّل cubic-bezier ده لقيم لكل فريم",
+    "give me stagger delays from the center of a 4x3 grid",
+    "spring keyframes with stiffness 180 and damping 12 as CSS"
+   ],
+   "keywords": [
+    "spring",
+    "spring physics",
+    "cubic-bezier",
+    "easing",
+    "stagger",
+    "keyframes",
+    "overshoot",
+    "settle time",
+    "react-spring",
+    "anime.js",
+    "نابض",
+    "ارتداد",
+    "تسهيل",
+    "تتابع",
+    "فيزياء الحركة",
+    "فريمات"
+   ],
+   "commands": [
+    {
+     "name": "spring",
+     "example": "python3 scripts/motion_physics.py spring --from 0 --to 1 --stiffness 170 --damping 26 --fps 30",
+     "does": "Values per frame, damping ratio, regime, settle time and overshoot; --css NAME prints @keyframes"
+    },
+    {
+     "name": "bezier",
+     "example": "python3 scripts/motion_physics.py bezier 0.25 0.1 0.25 1 --frames 30",
+     "does": "A CSS cubic-bezier sampled at --frames + 1 evenly spaced points"
+    },
+    {
+     "name": "stagger",
+     "example": "python3 scripts/motion_physics.py stagger --count 12 --each 0.06 --from center --grid 4x3 --ease out",
+     "does": "Delay in seconds for each element from an origin on a row or a grid"
+    },
+    {
+     "name": "keyframes",
+     "example": "python3 scripts/motion_physics.py keyframes --track 0:0,0.5:120,1.2:100 --ease out --fps 30",
+     "does": "A time:value track sampled per frame with an easing"
+    },
+    {
+     "name": "--self-test",
+     "example": "python3 scripts/motion_physics.py --self-test",
+     "does": "Checks spring regimes, the CSS 'ease' value at 0.5, stagger origins and track sampling"
+    }
+   ],
+   "inputs": "Numbers on the command line.",
+   "outputs": "JSON or CSS on stdout; it writes no files.",
+   "requires": {
+    "python": [],
+    "binaries": [
+     "python3"
+    ],
+    "node": [],
+    "optional": [],
+    "network": false
+   },
+   "safety": "read-only",
+   "limits": "The spring is integrated numerically (16 sub-steps per frame), so values match an analytic spring to about 1e-3, not exactly; one dimension at a time; settle uses a 0.1 % rest threshold; easing names cover the CSS keywords plus a few common curves, not every library's presets.",
+   "evidence_note": "5/5 passed (python3 -m unittest evals.test_motion_physics) and --self-test OK on 2026-10-23",
+   "tests": [
+    ".claude/skills/kosif-superpowers/evals/test_motion_physics.py"
+   ],
+   "docs": [
+    ".claude/skills/kosif-superpowers/references/powers/easing-timing-rhythm.md",
+    ".claude/skills/kosif-superpowers/references/guides/motion.md"
+   ],
+   "families": [
+    "easing-timing-rhythm"
+   ],
+   "power_id": "TOOL-164"
+  },
+  {
+   "id": "caption-lines",
+   "path": "scripts/caption_lines.py",
+   "root": "skill",
+   "kind": "cli",
+   "area": "audio",
+   "title_en": "Caption lines: word timings to readable SRT/VTT",
+   "title_ar": "سطور الترجمة: من توقيت الكلمات إلى ترجمة مقروءة",
+   "summary_en": "Written after a read-only study of the Montaji Arabic video editor: groups word timings (atlas words.json, whisper.cpp -oj or faster-whisper JSON) into short caption lines by word count, characters, time on screen, pauses, sentence ends (including ؟ and ؛) and commas; closes short holes, extends short lines only into silence, can add a right-to-left mark for Arabic, and drops and lists phrases speech models invent (subtitle credits, subscribe outros, sound tags, punctuation-only and looping lines). lint checks any SRT/VTT/JSON for overlaps, durations, reading speed and the same phrases.",
+   "summary_ar": "كُتبت بعد دراسة «مونتاجي»: تقسم توقيت الكلمات إلى سطور ترجمة قصيرة بحد للكلمات والحروف والمدة، وتكسر عند الوقفة ونهاية الجملة والفاصلة، وتسد الفجوات القصيرة، وتضيف علامة الاتجاه للعربي، وتحذف ما يخترعه نموذج التفريغ مثل «ترجمة نانسي» و«اشتركوا في القناة» مع سرده؛ وlint يفحص أي ملف ترجمة.",
+   "use_when": [
+    "قسّم التفريغ ده لسطور ترجمة قصيرة SRT",
+    "Turn these Whisper word timestamps into readable captions",
+    "نظّف الترجمة من الهلوسة زي ترجمة نانسي واشتركوا في القناة",
+    "Lint this SRT for overlaps and reading speed"
+   ],
+   "keywords": [
+    "captions",
+    "subtitles",
+    "srt",
+    "vtt",
+    "whisper",
+    "word timestamps",
+    "hallucination",
+    "reading speed",
+    "ترجمة",
+    "سطور",
+    "تفريغ",
+    "هلوسة",
+    "سبتايتل"
+   ],
+   "commands": [
+    {
+     "name": "group",
+     "example": "python3 scripts/caption_lines.py group words.json -o captions.srt --rlm",
+     "does": "Words to SRT, VTT or JSON lines; reports the suspect lines it dropped."
+    },
+    {
+     "name": "lint",
+     "example": "python3 scripts/caption_lines.py lint captions.srt",
+     "does": "Overlaps, too-short lines, reading speed above 17 chars/s and suspect phrases; exits 1 on any issue."
+    }
+   ],
+   "inputs": "Word timings: atlas words.json, {\"words\": [...]}, whisper.cpp -oj JSON (one word per entry with -ml 1) or faster-whisper/openai segments[].words; or an SRT/VTT/JSON caption file for lint.",
+   "outputs": "captions .srt, .vtt or kosif.caption-lines.v1 JSON (lines, the rule that broke each line, dropped lines with the reason).",
+   "requires": {
+    "python": [],
+    "binaries": [],
+    "node": [],
+    "optional": [],
+    "network": false
+   },
+   "safety": "writes-files",
+   "consent": "Reads and writes local files only; captions of someone else's speech follow the media's rights.",
+   "limits": "Does not transcribe: pair it with whisper.cpp or faster-whisper. The suspect-phrase list is short and generic, so a real spoken 'subscribe' is dropped too (use --keep-suspect). Line breaking counts characters, not rendered width.",
+   "evidence": "tested-here",
+   "evidence_note": "2026-10-23: evals/test_caption_lines.py 8/8 on this checkout (rules, screening, four input shapes, SRT/VTT/JSON round trip, lint).",
+   "tests": [
+    ".claude/skills/kosif-superpowers/evals/test_caption_lines.py"
+   ],
+   "docs": [
+    ".claude/skills/kosif-superpowers/references/app-studies/montaji.md"
+   ],
+   "families": [
+    "audio-sync-captions",
+    "app-feature-transfer",
+    "typography-arabic"
+   ],
+   "power_id": "TOOL-165"
+  },
+  {
+   "id": "look-pipeline",
+   "path": "scripts/look_pipeline.py",
+   "root": "skill",
+   "kind": "cli",
+   "area": "edit",
+   "title_en": "Look pipeline: one colour grade for ffmpeg, SVG/CSS and GLSL",
+   "title_ar": "خط اللوك: تلوين واحد لـ ffmpeg وSVG وGLSL",
+   "summary_en": "Written after a read-only study of the Montaji Arabic video editor: eleven colour looks (natural, vivid, bright, warm, cool, cinematic, vintage, faded, dramatic, mono, night-dua) and eight parameters become one per-channel affine step plus one 3x3 matrix, emitted with the same numbers as an ffmpeg chain (lutrgb + colorchannelmixer + vignette), an SVG filter, CSS and a GLSL shader. verify pushes a test frame through ffmpeg and compares every pixel with the reference maths; apply grades a video into a new file.",
+   "summary_ar": "كُتبت بعد دراسة «مونتاجي»: 11 لوكًا وثمانية معاملات تصبح خطوة خطية ومصفوفة 3×3، تخرج بالأرقام نفسها لـ ffmpeg وSVG وCSS وGLSL فتتطابق المعاينة والتصدير؛ verify يقيس الفرق بكسلًا بكسلًا، وapply يلوّن فيديو في ملف جديد.",
+   "use_when": [
+    "لوّن الفيديو ده لوك سينمائي وخلي المعاينة زي التصدير",
+    "Give me the same warm grade as an ffmpeg filter and a CSS filter",
+    "Check that my web preview colour matches the exported MP4",
+    "عايز فلتر أبيض وأسود للفيديو"
+   ],
+   "keywords": [
+    "color grade",
+    "colour",
+    "look",
+    "lut",
+    "filter",
+    "preset",
+    "svg filter",
+    "glsl",
+    "shader",
+    "colorchannelmixer",
+    "تلوين",
+    "لوك",
+    "فلتر",
+    "سينمائي"
+   ],
+   "commands": [
+    {
+     "name": "presets",
+     "example": "python3 scripts/look_pipeline.py presets",
+     "does": "The eleven looks and their parameters."
+    },
+    {
+     "name": "build",
+     "example": "python3 scripts/look_pipeline.py build --preset cinematic --amount 0.8 --target ffmpeg",
+     "does": "Emit one look for ffmpeg, svg, css, glsl or json, with --set overrides."
+    },
+    {
+     "name": "verify",
+     "example": "python3 scripts/look_pipeline.py verify --all",
+     "does": "ffmpeg output vs the reference maths on a 64x36 test frame; exits 1 above the tolerance."
+    },
+    {
+     "name": "apply",
+     "example": "python3 scripts/look_pipeline.py apply in.mp4 graded.mp4 --preset warm --amount 0.6",
+     "does": "Grade a video into a new H.264 file, audio copied; refuses to overwrite."
+    }
+   ],
+   "inputs": "A preset name, a 0..1 amount and optional KEY=VALUE overrides; a video file for apply.",
+   "outputs": "Filter text for the chosen renderer, kosif.look.v1 JSON, a PASS/FAIL parity table, or a new graded MP4.",
+   "requires": {
+    "python": [],
+    "binaries": [
+     "ffmpeg"
+    ],
+    "node": [],
+    "optional": [],
+    "network": false
+   },
+   "safety": "writes-files",
+   "consent": "apply writes a new file next to the user's media and never overwrites the source.",
+   "limits": "Per-pixel looks only (no curves, LUT files or skin masks); vignette is emitted for every renderer but left out of the parity check; SVG and GLSL parity follow from the same numbers and are not rendered here.",
+   "evidence": "tested-here",
+   "evidence_note": "2026-10-23: evals/test_look_pipeline.py 6/6; verify --all: 11/11 looks within 1/255 of the reference maths on this checkout (ffmpeg 6).",
+   "tests": [
+    ".claude/skills/kosif-superpowers/evals/test_look_pipeline.py"
+   ],
+   "docs": [
+    ".claude/skills/kosif-superpowers/references/app-studies/montaji.md"
+   ],
+   "families": [
+    "color-palette-grading",
+    "app-feature-transfer",
+    "photo-video-footage"
+   ],
+   "power_id": "TOOL-166"
+  },
+  {
+   "id": "lesson-integrity",
+   "path": "scripts/lesson_integrity.py",
+   "root": "skill",
+   "kind": "cli",
+   "area": "think",
+   "title_en": "Lesson number integrity checker",
+   "title_ar": "فاحص أرقام الدروس والشروح",
+   "summary_en": "Checks the numbers an explainer, lesson film, infographic or interactive lesson shows. values validates a registry where every value names its source and quotes the supporting sentence, or carries an explicit gap note, and recomputes derived sums and products; render fills {v:id}, {v:id|dp} and {n:id} placeholders in a script or page and fails closed on an unknown value, a gap or a unit with no print form (--strict also flags numbers typed straight into the text); ledger checks that a conservation ledger (energy, budget, time) balances and reports shares and efficiency; scale picks a 1-2-5 gauge capacity; sprite checks a sound-sprite manifest for overlapping regions, file length and a credited allowed licence per cue. Stdlib only; it runs nothing.",
+   "summary_ar": "يفحص الأرقام التي يعرضها شرح أو فيديو تعليمي أو إنفوجراف أو درس تفاعلي. values يتحقق من سجل قيم يذكر لكل رقم مصدره والجملة المقتبسة التي تثبته أو ملاحظة فجوة صريحة، ويعيد حساب المجاميع والحواصل المشتقة؛ render يملأ العناصر النائبة {v:id} و{v:id|dp} و{n:id} في السكربت أو الصفحة ويفشل مغلقًا على قيمة غير موجودة أو فجوة أو وحدة بلا شكل طباعة (و--strict يكشف الأرقام المكتوبة مباشرة في النص)؛ ledger يتحقق من توازن دفتر حفظ (طاقة، ميزانية، وقت) ويعرض الحصص والكفاءة؛ scale يختار سعة عدّاد 1-2-5؛ sprite يفحص قائمة مناطق ملف المؤثرات الصوتية (تداخل، طول الملف، رخصة معتمدة لكل مؤثر). مكتبة Python القياسية فقط، ولا يشغّل شيئًا.",
+   "use_when": [
+    "اتأكد إن كل رقم في سكربت الفيديو التعليمي ليه مصدر",
+    "تأكد أن مخطط سانكي للطاقة متوازن وما دخل يساوي ما خرج",
+    "check every number in my explainer script has a cited source",
+    "check my sound sprite regions and credits before shipping"
+   ],
+   "keywords": [
+    "cited numbers",
+    "value registry",
+    "fact check",
+    "placeholders",
+    "conservation",
+    "energy ledger",
+    "Sankey",
+    "nice scale",
+    "gauge",
+    "sound sprite",
+    "credits",
+    "lesson",
+    "explainer",
+    "أرقام موثقة",
+    "سجل القيم",
+    "مراجعة الحقائق",
+    "حفظ الطاقة",
+    "سانكي",
+    "درس تفاعلي",
+    "شرح",
+    "مؤثرات صوتية",
+    "اعتمادات",
+    "كل رقم ليه مصدر",
+    "فيديو تعليمي",
+    "سكربت",
+    "رقم متألف"
+   ],
+   "commands": [
+    {
+     "name": "values",
+     "example": "python3 scripts/lesson_integrity.py values --registry values.json",
+     "does": "Errors on a number with no source and no gap note, an unknown source ref, a missing quote, a value outside its range or a derived value that no longer matches its parts; warns when the number is not in its quote and for every gap."
+    },
+    {
+     "name": "render",
+     "example": "python3 scripts/lesson_integrity.py render --registry values.json --content script.md --strict --out script.out.md",
+     "does": "Fills the placeholders and writes --out only when there is no error; without --out prints the text."
+    },
+    {
+     "name": "ledger",
+     "example": "python3 scripts/lesson_integrity.py ledger --file ledger.json --json",
+     "does": "Reports in, out, gap, each output's share and the efficiency of the 'useful' outputs; exits 1 when the ledger does not balance or holds a negative amount."
+    },
+    {
+     "name": "scale",
+     "example": "python3 scripts/lesson_integrity.py scale 14.7",
+     "does": "Prints the smallest 1, 2 or 5 x 10^n capacity the value fills to at most --headroom (default 0.9)."
+    },
+    {
+     "name": "sprite",
+     "example": "python3 scripts/lesson_integrity.py sprite --manifest sounds.json --credits CREDITS.md --duration 20",
+     "does": "Checks regions and layers do not overlap, fit the file and that every cue has a credits row under an allowed licence (CC0, CC-BY 4.0, owner, original)."
+    },
+    {
+     "name": "self-test",
+     "example": "python3 scripts/lesson_integrity.py --self-test",
+     "does": "Runs the 11 built-in checks on synthetic data."
+    }
+   ],
+   "inputs": "A values.json registry ({sources, values}), a text or Markdown content file with placeholders, a ledger JSON ({unit, in, out, useful, tolerance}), a sound-sprite manifest JSON and its CREDITS.md table.",
+   "outputs": "A text report or JSON (schema kosif.lesson-integrity.v1) on stdout; render --out writes the filled text.",
+   "requires": {
+    "python": [],
+    "binaries": [
+     "python3"
+    ],
+    "node": [],
+    "optional": [],
+    "network": false
+   },
+   "safety": "read-only",
+   "consent": "render --out writes only that file, and only when every placeholder resolved.",
+   "limits": "It checks the registry against itself: it cannot tell whether a source is right or whether the quoted sentence really appears in it, it does not solve a physics model or generate challenges, and sprite reads the manifest and credits only, without decoding or measuring the audio. --strict recognises common SI units only.",
+   "evidence": "tested-here",
+   "evidence_note": "evals/test_lesson_integrity.py: 14/14 passed on this checkout; sprite also passed on the studied repository's published manifest and credits (read only, not copied).",
+   "tests": [
+    ".claude/skills/kosif-superpowers/evals/test_lesson_integrity.py"
+   ],
+   "docs": [
+    ".claude/skills/kosif-superpowers/references/lesson-integrity-methods.md"
+   ],
+   "families": [
+    "verification-evals",
+    "apps-artifacts"
+   ],
+   "power_id": "TOOL-167"
+  },
+  {
+   "id": "fast-edit",
+   "path": "scripts/fast_edit.py",
+   "root": "skill",
+   "kind": "cli",
+   "area": "edit",
+   "title_en": "Fast Edit: keyframe-aware instant cut, voice presets, low-light lift, audio extract",
+   "title_ar": "التعديل السريع: قص فوري يعرف الإطارات المفتاحية، مغيّر صوت، تفتيح الفيديو المظلم، استخراج الصوت",
+   "summary_en": "Single-file FFmpeg operations with JSON receipts: lists keyframes; cuts by stream copy when the start sits on (or within a tolerance of) a keyframe and by exact re-encode otherwise, reporting how far a copy would have drifted; applies voice presets (chipmunk, deep, robot, echo, radio, telephone) at the file's real sample rate with the length kept and video stream-copied; lifts low-light video with an optional denoise and measures mean luma before and after, skipping clips that are already bright; extracts audio bit-exact when the container allows it.",
+   "summary_ar": "عمليات سريعة على ملف واحد بإيصال JSON: يعرض الإطارات المفتاحية، ويقص بالنسخ المباشر لو البداية على إطار مفتاحي وإلا يعيد الترميز بدقة ويقول قد إيه كان النسخ هيبدأ بدري، ويغيّر الصوت بنفس معدل العينة ونفس الطول، ويفتّح الفيديو المظلم ويقيس الإضاءة قبل وبعد، ويستخرج الصوت بدون إعادة ترميز لما ينفع.",
+   "use_when": [
+    "Cut a clip from 1:05 to 1:40 instantly without re-encoding if possible",
+    "Make this voice sound like a chipmunk / robot / radio without changing its length",
+    "Brighten this dark night video and remove the noise",
+    "Extract the audio from this video without losing quality",
+    "قص الفيديو من الدقيقة دي للدقيقة دي بسرعة من غير ما يبوظ الجودة",
+    "غيّر الصوت لصوت روبوت أو صوت تخين",
+    "فتّح الفيديو المظلم وشيل التشويش",
+    "استخرج الصوت من الفيديو"
+   ],
+   "keywords": [
+    "lossless cut",
+    "stream copy",
+    "instant cut",
+    "keyframe",
+    "gop",
+    "trim",
+    "voice changer",
+    "pitch shift",
+    "chipmunk",
+    "robot voice",
+    "echo",
+    "radio voice",
+    "low light",
+    "brighten",
+    "dark video",
+    "denoise",
+    "extract audio",
+    "mp3",
+    "m4a",
+    "ffmpeg",
+    "قص سريع",
+    "قص بدون فقد",
+    "إطار مفتاحي",
+    "مغير الصوت",
+    "تغيير الصوت",
+    "تفتيح",
+    "فيديو مظلم",
+    "استخراج الصوت"
+   ],
+   "commands": [
+    {
+     "name": "doctor",
+     "example": "python3 scripts/fast_edit.py doctor",
+     "does": "Check ffmpeg/ffprobe and list the voice presets."
+    },
+    {
+     "name": "keyframes",
+     "example": "python3 scripts/fast_edit.py keyframes --input ./clip.mp4",
+     "does": "List video keyframe times and the largest gap between them."
+    },
+    {
+     "name": "cut",
+     "example": "python3 scripts/fast_edit.py cut --input ./clip.mp4 --start 65 --end 100 --output ./cut.mp4",
+     "does": "Cut [start, end): stream copy when the start is within --tolerance of a keyframe, exact re-encode otherwise (--mode copy|exact forces one); the receipt gives the copy drift and measured stream durations."
+    },
+    {
+     "name": "voice",
+     "example": "python3 scripts/fast_edit.py voice --input ./talk.mp4 --preset robot --output ./robot.mp4",
+     "does": "Apply a voice preset at the real sample rate, keeping the length; video is stream-copied (audio-only extensions drop it)."
+    },
+    {
+     "name": "brighten",
+     "example": "python3 scripts/fast_edit.py brighten --input ./night.mp4 --denoise --output ./lifted.mp4",
+     "does": "Lift shadows and midtones (strength 0..1, optional hqdn3d denoise), audio stream-copied; reports mean luma before/after and skips clips that are already bright unless --force-lift."
+    },
+    {
+     "name": "extract-audio",
+     "example": "python3 scripts/fast_edit.py extract-audio --input ./clip.mp4 --output ./voice.m4a",
+     "does": "Extract the first audio stream: bit-exact copy when the extension can hold the codec, otherwise re-encoded (WAV, FLAC, MP3, M4A, AAC, Opus, Ogg)."
+    },
+    {
+     "name": "tests",
+     "example": "python3 -m unittest discover -s evals -p 'test_fast_edit.py' -v",
+     "does": "Run 17 tests: cut planning, filter building and real FFmpeg runs (skipped without ffmpeg)."
+    }
+   ],
+   "inputs": "One local video or audio file the user owns or may edit, plus times in seconds and a preset name.",
+   "outputs": "A new media file and a kosif.fast_edit.receipt.v1 JSON receipt (plan, measured durations, SHA-256, luma or copy flags); the source is never modified and an existing output is kept unless --force.",
+   "requires": {
+    "python": [],
+    "binaries": [
+     "ffmpeg",
+     "ffprobe"
+    ],
+    "node": [],
+    "optional": [],
+    "network": false
+   },
+   "safety": "writes-files",
+   "consent": "Use only media the user owns or is licensed to edit; outputs are new files.",
+   "limits": "One file per command, no timeline. A copy cut starts on the keyframe at or before the start and may keep a frame or two past the end (B-frame reordering); use --mode exact for frame accuracy. Voice presets are classic DSP effects, not AI voice conversion. Brighten is a fixed tone curve measured by mean luma, not a learned low-light model.",
+   "evidence": "tested-here",
+   "evidence_note": "2026-10-23: 17/17 tests passed on this checkout with FFmpeg: keyframe-on cut copied with zero start error, a mid-GOP cut re-encoded to 1.5 s exactly, a forced copy reported -0.5 s start error, the chipmunk preset moved a 440 Hz tone to about 594 Hz at 48 kHz with the length kept, the low-light lift gained over 10 luma levels and a bright clip was skipped. Ideas only came from studying a user-supplied Electron editor; no code from it is used.",
+   "tests": [
+    ".claude/skills/kosif-superpowers/evals/test_fast_edit.py"
+   ],
+   "docs": [
+    ".claude/skills/kosif-superpowers/references/guides/edit.md"
+   ],
+   "families": [
+    "photo-video-footage",
+    "transitions-cuts",
+    "audio-sync-captions"
+   ],
+   "power_id": "TOOL-168"
+  },
+  {
+   "id": "micro-index",
+   "path": "scripts/micro_index.py",
+   "root": "skill",
+   "kind": "cli",
+   "area": "discover",
+   "title_en": "Micro index: one line per power, tool and superpower",
+   "title_ar": "الفهرس الدقيق: سطر لكل قدرة وأداة وقدرة خارقة",
+   "summary_en": "Builds the finest-grained map of the skill: every atomic power, runnable tool and fused superpower gets one entry with its group, domain, family, superpower, badge, requirements, the tools of its family, its chapter and its library card. Writes data/micro_index.json and references/micro-index/ (one page per group plus tools and superpowers); find searches it in Arabic or English and show prints any id with its neighbours. --check reports stale files without writing.",
+   "summary_ar": "يبني أدق خريطة للمهارة: لكل قدرة ذرية وأداة قابلة للتشغيل وقدرة خارقة مدخل واحد فيه مجموعتها ومجالها وعائلتها وقدرتها الخارقة وشارتها ومستلزماتها وأدوات عائلتها وفصلها وبطاقتها في المكتبة. يكتب data/micro_index.json وreferences/micro-index/ (صفحة لكل مجموعة وصفحة للأدوات وأخرى للقدرات الخارقة)؛ find يبحث فيه بالعربية أو الإنجليزية وshow يعرض أي معرّف مع جيرانه. الخيار --check يبلغ عن الملفات غير المحدّثة دون كتابة.",
+   "use_when": [
+    "اعرض لي الفهرس الدقيق لكل القدرات",
+    "فين القدرة دي وإيه الأدوات اللي معاها",
+    "Find every power, tool and superpower about loudness",
+    "Show SP-0042 with its members and links"
+   ],
+   "keywords": [
+    "micro index",
+    "index",
+    "find",
+    "show",
+    "catalog",
+    "map",
+    "فهرس",
+    "فهرس دقيق",
+    "بحث",
+    "خريطة",
+    "قدرات"
+   ],
+   "commands": [
+    {
+     "name": "build",
+     "example": "python3 scripts/micro_index.py build",
+     "does": "Writes data/micro_index.json and the pages under references/micro-index/; --check writes nothing and exits 1 when stale."
+    },
+    {
+     "name": "find",
+     "example": "python3 scripts/micro_index.py find \"قص على الإيقاع\" --top 10",
+     "does": "Ranked one-line matches across powers, tools and superpowers; --kind narrows, --json for machines."
+    },
+    {
+     "name": "show",
+     "example": "python3 scripts/micro_index.py show SP-0001",
+     "does": "One id (power, TOOL-NN, tool id or SP-NNNN) with its superpower, family tools, chapter, card, members or links."
+    },
+    {
+     "name": "stats",
+     "example": "python3 scripts/micro_index.py stats",
+     "does": "Counts per kind, status and group."
+    }
+   ],
+   "inputs": "data/powers/*.json, data/tools.json, data/superpowers.json, data/smart_capability_index.json",
+   "outputs": "data/micro_index.json and references/micro-index/*.md; matches on stdout",
+   "requires": {
+    "python": [],
+    "binaries": [],
+    "node": [],
+    "optional": [],
+    "network": false
+   },
+   "safety": "writes-files",
+   "consent": "build writes only its own generated files; find, show and stats only read.",
+   "limits": "An entry is an address, not a proof: badges are the records' own and a proven badge still needs a real run.",
+   "tests": [
+    ".claude/skills/kosif-superpowers/evals/test_micro_index.py"
+   ],
+   "docs": [
+    ".claude/skills/kosif-superpowers/references/micro-index/README.md"
+   ],
+   "families": [
+    "self-discovery"
+   ],
+   "evidence": "tested-here",
+   "power_id": "TOOL-161"
   }
  ],
  "guides": [
@@ -15358,6 +16070,12 @@
    "path": "references/guides/sources.md",
    "title": "المصادر والمراجع والتحميل — Sources, references and media",
    "area": "sources",
+   "summary": ""
+  },
+  {
+   "path": "references/agents-memory-reasoning-repos.md",
+   "title": "الوكلاء والذاكرة والاستدلال من أكبر المستودعات / Agents, memory and reasoning from the top repositories",
+   "area": "investigate",
    "summary": ""
   },
   {
@@ -15613,6 +16331,12 @@
    "summary": ""
   },
   {
+   "path": "references/every-joule-study-20261023.md",
+   "title": "دراسة every-joule-lesson1 — 23-10-2026 / every-joule-lesson1 study",
+   "area": "general",
+   "summary": ""
+  },
+  {
    "path": "references/executable-creative-motion.md",
    "title": "KOSIF Superpowers — Executable Creative Motion Lab v1",
    "area": "motion",
@@ -15682,6 +16406,12 @@
    "path": "references/LAYOUT.md",
    "title": "ترتيب المهارة — KOSIF Superpowers layout",
    "area": "maintain",
+   "summary": ""
+  },
+  {
+   "path": "references/lesson-integrity-methods.md",
+   "title": "دروس تفاعلية لا تكذب أرقامها — Lesson integrity methods",
+   "area": "think",
    "summary": ""
   },
   {

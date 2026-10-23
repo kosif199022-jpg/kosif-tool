@@ -1,4 +1,4 @@
-# `verification-evals` — الاختبارات والجودة والأمان (35 بطاقة)
+# `verification-evals` — الاختبارات والجودة والأمان (40 بطاقة)
 
 > مكتبة بروتوكول USIP v5.6 الكاملة، مولّدة بـ `smart_capabilities.py cards` من `data/powers/verification-evals.json` وقواعد الملاحق A25–A29؛ لا تُحرَّر يدويًا. [الفهرس الرئيسي](../../README.md) · [فصل المجموعة](../../../.claude/skills/kosif-superpowers/references/library/quality.md) · [النواة](../../../.claude/skills/kosif-superpowers/PROTOCOL.md)
 
@@ -39,6 +39,11 @@
 - [`CHECK-33` قائمة سطح الملاحظة](#check-33--قائمة-سطح-الملاحظة--observable-surface-checklist)
 - [`CHECK-34` المصحّح يعطي 100% على نفسه أولًا](#check-34--المصحّح-يعطي-100-على-نفسه-أولًا--scorer-must-score-100-on-itself-first)
 - [`CHECK-35` ملاحظات استرداد صادقة وخط أساس](#check-35--ملاحظات-استرداد-صادقة-وخط-أساس--honest-recovery-notes-and-a-measured-baseline)
+- [`CHECK-36` سجل قيم بمصدر واقتباس لكل رقم](#check-36--سجل-قيم-بمصدر-واقتباس-لكل-رقم--one-value-registry-a-source-and-the-supporting-sentence-for-every-number)
+- [`CHECK-37` النص يشير إلى الرقم بمعرّفه ويفشل مغلقًا](#check-37--النص-يشير-إلى-الرقم-بمعرّفه-ويفشل-مغلقًا--text-refers-to-numbers-by-id-and-fails-closed)
+- [`CHECK-38` ملف فجوات بدل اختراع رقم](#check-38--ملف-فجوات-بدل-اختراع-رقم--an-explicit-gaps-list-instead-of-an-invented-number)
+- [`CHECK-39` مراجعة حقائق تعيد الرقم المنشور](#check-39--مراجعة-حقائق-تعيد-الرقم-المنشور--a-fact-check-pass-that-restores-the-published-figure)
+- [`CHECK-40` دفتر حفظ: ابحث عن كل وحدة](#check-40--دفتر-حفظ-ابحث-عن-كل-وحدة--a-conservation-ledger-account-for-every-unit)
 
 ## البطاقات / cards
 
@@ -82,7 +87,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `spec` ← المخرج `code`، والمنفّذ `method:CHECK-01` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `council` · `differential-exam` · `package-skill` · `prompt-lab` · `prompt-pack` · `repo-validate`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `council` · `differential-exam` · `lesson-integrity` · `package-skill` · `prompt-lab` · `prompt-pack`.
 - مراحل النوع: قراءة الكود والاختبارات ← إعادة إنتاج أو اختبار جديد ← أصغر تغيير ← الاختبارات ← مراجعة الفرق ← فرع وPR.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -153,7 +158,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `spec` ← المخرج `code`، والمنفّذ `method:CHECK-02` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `council` · `differential-exam` · `package-skill` · `prompt-lab` · `prompt-pack` · `repo-validate`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `council` · `differential-exam` · `lesson-integrity` · `package-skill` · `prompt-lab` · `prompt-pack`.
 - مراحل النوع: قراءة الكود والاختبارات ← إعادة إنتاج أو اختبار جديد ← أصغر تغيير ← الاختبارات ← مراجعة الفرق ← فرع وPR.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -229,7 +234,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `spec` ← المخرج `code`، والمنفّذ `method:CHECK-03` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `council` · `differential-exam` · `package-skill` · `prompt-lab` · `prompt-pack` · `repo-validate`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `council` · `differential-exam` · `lesson-integrity` · `package-skill` · `prompt-lab` · `prompt-pack`.
 - مراحل النوع: قراءة الكود والاختبارات ← إعادة إنتاج أو اختبار جديد ← أصغر تغيير ← الاختبارات ← مراجعة الفرق ← فرع وPR.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -303,7 +308,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `spec` ← المخرج `code`، والمنفّذ `method:CHECK-04` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `council` · `differential-exam` · `package-skill` · `prompt-lab` · `prompt-pack` · `repo-validate`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `council` · `differential-exam` · `lesson-integrity` · `package-skill` · `prompt-lab` · `prompt-pack`.
 - مراحل النوع: قراءة الكود والاختبارات ← إعادة إنتاج أو اختبار جديد ← أصغر تغيير ← الاختبارات ← مراجعة الفرق ← فرع وPR.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -374,7 +379,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `spec` ← المخرج `code`، والمنفّذ `method:CHECK-05` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `council` · `differential-exam` · `package-skill` · `prompt-lab` · `prompt-pack` · `repo-validate`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `council` · `differential-exam` · `lesson-integrity` · `package-skill` · `prompt-lab` · `prompt-pack`.
 - مراحل النوع: قراءة الكود والاختبارات ← إعادة إنتاج أو اختبار جديد ← أصغر تغيير ← الاختبارات ← مراجعة الفرق ← فرع وPR.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -448,7 +453,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `spec` ← المخرج `code`، والمنفّذ `method:CHECK-06` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `council` · `differential-exam` · `package-skill` · `prompt-lab` · `prompt-pack` · `repo-validate`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `council` · `differential-exam` · `lesson-integrity` · `package-skill` · `prompt-lab` · `prompt-pack`.
 - مراحل النوع: قراءة الكود والاختبارات ← إعادة إنتاج أو اختبار جديد ← أصغر تغيير ← الاختبارات ← مراجعة الفرق ← فرع وPR.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -521,7 +526,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `spec` ← المخرج `code`، والمنفّذ `method:CHECK-07` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `council` · `differential-exam` · `package-skill` · `prompt-lab` · `prompt-pack` · `repo-validate`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `council` · `differential-exam` · `lesson-integrity` · `package-skill` · `prompt-lab` · `prompt-pack`.
 - مراحل النوع: قراءة الكود والاختبارات ← إعادة إنتاج أو اختبار جديد ← أصغر تغيير ← الاختبارات ← مراجعة الفرق ← فرع وPR.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -592,7 +597,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `spec` ← المخرج `code`، والمنفّذ `method:CHECK-08` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `council` · `differential-exam` · `package-skill` · `prompt-lab` · `prompt-pack` · `repo-validate`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `council` · `differential-exam` · `lesson-integrity` · `package-skill` · `prompt-lab` · `prompt-pack`.
 - مراحل النوع: قراءة الكود والاختبارات ← إعادة إنتاج أو اختبار جديد ← أصغر تغيير ← الاختبارات ← مراجعة الفرق ← فرع وPR.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -663,7 +668,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `spec` ← المخرج `code`، والمنفّذ `method:CHECK-09` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `council` · `differential-exam` · `package-skill` · `prompt-lab` · `prompt-pack` · `repo-validate`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `council` · `differential-exam` · `lesson-integrity` · `package-skill` · `prompt-lab` · `prompt-pack`.
 - مراحل النوع: قراءة الكود والاختبارات ← إعادة إنتاج أو اختبار جديد ← أصغر تغيير ← الاختبارات ← مراجعة الفرق ← فرع وPR.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -735,7 +740,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `spec` ← المخرج `code`، والمنفّذ `method:CHECK-10` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `council` · `differential-exam` · `package-skill` · `prompt-lab` · `prompt-pack` · `repo-validate`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `council` · `differential-exam` · `lesson-integrity` · `package-skill` · `prompt-lab` · `prompt-pack`.
 - مراحل النوع: قراءة الكود والاختبارات ← إعادة إنتاج أو اختبار جديد ← أصغر تغيير ← الاختبارات ← مراجعة الفرق ← فرع وPR.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -806,7 +811,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `spec` ← المخرج `code`، والمنفّذ `method:CHECK-11` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `council` · `differential-exam` · `package-skill` · `prompt-lab` · `prompt-pack` · `repo-validate`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `council` · `differential-exam` · `lesson-integrity` · `package-skill` · `prompt-lab` · `prompt-pack`.
 - مراحل النوع: قراءة الكود والاختبارات ← إعادة إنتاج أو اختبار جديد ← أصغر تغيير ← الاختبارات ← مراجعة الفرق ← فرع وPR.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -877,7 +882,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `spec` ← المخرج `code`، والمنفّذ `method:CHECK-12` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `council` · `differential-exam` · `package-skill` · `prompt-lab` · `prompt-pack` · `repo-validate`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `council` · `differential-exam` · `lesson-integrity` · `package-skill` · `prompt-lab` · `prompt-pack`.
 - مراحل النوع: قراءة الكود والاختبارات ← إعادة إنتاج أو اختبار جديد ← أصغر تغيير ← الاختبارات ← مراجعة الفرق ← فرع وPR.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -948,7 +953,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `spec` ← المخرج `code`، والمنفّذ `method:CHECK-13` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `council` · `differential-exam` · `package-skill` · `prompt-lab` · `prompt-pack` · `repo-validate`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `council` · `differential-exam` · `lesson-integrity` · `package-skill` · `prompt-lab` · `prompt-pack`.
 - مراحل النوع: قراءة الكود والاختبارات ← إعادة إنتاج أو اختبار جديد ← أصغر تغيير ← الاختبارات ← مراجعة الفرق ← فرع وPR.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -1019,7 +1024,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `spec` ← المخرج `code`، والمنفّذ `method:CHECK-14` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `council` · `differential-exam` · `package-skill` · `prompt-lab` · `prompt-pack` · `repo-validate`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `council` · `differential-exam` · `lesson-integrity` · `package-skill` · `prompt-lab` · `prompt-pack`.
 - مراحل النوع: قراءة الكود والاختبارات ← إعادة إنتاج أو اختبار جديد ← أصغر تغيير ← الاختبارات ← مراجعة الفرق ← فرع وPR.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -1091,7 +1096,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `spec` ← المخرج `code`، والمنفّذ `method:CHECK-15` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `council` · `differential-exam` · `package-skill` · `prompt-lab` · `prompt-pack` · `repo-validate`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `council` · `differential-exam` · `lesson-integrity` · `package-skill` · `prompt-lab` · `prompt-pack`.
 - مراحل النوع: قراءة الكود والاختبارات ← إعادة إنتاج أو اختبار جديد ← أصغر تغيير ← الاختبارات ← مراجعة الفرق ← فرع وPR.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -1163,7 +1168,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `spec` ← المخرج `code`، والمنفّذ `method:CHECK-16` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `council` · `differential-exam` · `package-skill` · `prompt-lab` · `prompt-pack` · `repo-validate`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `council` · `differential-exam` · `lesson-integrity` · `package-skill` · `prompt-lab` · `prompt-pack`.
 - مراحل النوع: قراءة الكود والاختبارات ← إعادة إنتاج أو اختبار جديد ← أصغر تغيير ← الاختبارات ← مراجعة الفرق ← فرع وPR.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -1235,7 +1240,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `spec` ← المخرج `code`، والمنفّذ `method:CHECK-17` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `council` · `differential-exam` · `package-skill` · `prompt-lab` · `prompt-pack` · `repo-validate`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `council` · `differential-exam` · `lesson-integrity` · `package-skill` · `prompt-lab` · `prompt-pack`.
 - مراحل النوع: قراءة الكود والاختبارات ← إعادة إنتاج أو اختبار جديد ← أصغر تغيير ← الاختبارات ← مراجعة الفرق ← فرع وPR.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -1306,7 +1311,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `spec` ← المخرج `code`، والمنفّذ `method:CHECK-18` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `council` · `differential-exam` · `package-skill` · `prompt-lab` · `prompt-pack` · `repo-validate`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `council` · `differential-exam` · `lesson-integrity` · `package-skill` · `prompt-lab` · `prompt-pack`.
 - مراحل النوع: قراءة الكود والاختبارات ← إعادة إنتاج أو اختبار جديد ← أصغر تغيير ← الاختبارات ← مراجعة الفرق ← فرع وPR.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -1378,7 +1383,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `spec` ← المخرج `code`، والمنفّذ `method:CHECK-19` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `council` · `differential-exam` · `package-skill` · `prompt-lab` · `prompt-pack` · `repo-validate`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `council` · `differential-exam` · `lesson-integrity` · `package-skill` · `prompt-lab` · `prompt-pack`.
 - مراحل النوع: قراءة الكود والاختبارات ← إعادة إنتاج أو اختبار جديد ← أصغر تغيير ← الاختبارات ← مراجعة الفرق ← فرع وPR.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -1449,7 +1454,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `spec` ← المخرج `code`، والمنفّذ `method:CHECK-20` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `council` · `differential-exam` · `package-skill` · `prompt-lab` · `prompt-pack` · `repo-validate`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `council` · `differential-exam` · `lesson-integrity` · `package-skill` · `prompt-lab` · `prompt-pack`.
 - مراحل النوع: قراءة الكود والاختبارات ← إعادة إنتاج أو اختبار جديد ← أصغر تغيير ← الاختبارات ← مراجعة الفرق ← فرع وPR.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -1520,7 +1525,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `spec` ← المخرج `code`، والمنفّذ `method:CHECK-21` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `council` · `differential-exam` · `package-skill` · `prompt-lab` · `prompt-pack` · `repo-validate`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `council` · `differential-exam` · `lesson-integrity` · `package-skill` · `prompt-lab` · `prompt-pack`.
 - مراحل النوع: قراءة الكود والاختبارات ← إعادة إنتاج أو اختبار جديد ← أصغر تغيير ← الاختبارات ← مراجعة الفرق ← فرع وPR.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -1592,7 +1597,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `spec` ← المخرج `code`، والمنفّذ `method:CHECK-22` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `council` · `differential-exam` · `package-skill` · `prompt-lab` · `prompt-pack` · `repo-validate`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `council` · `differential-exam` · `lesson-integrity` · `package-skill` · `prompt-lab` · `prompt-pack`.
 - مراحل النوع: قراءة الكود والاختبارات ← إعادة إنتاج أو اختبار جديد ← أصغر تغيير ← الاختبارات ← مراجعة الفرق ← فرع وPR.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -1667,7 +1672,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `spec` ← المخرج `code`، والمنفّذ `method:CHECK-23` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `council` · `differential-exam` · `package-skill` · `prompt-lab` · `prompt-pack` · `repo-validate`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `council` · `differential-exam` · `lesson-integrity` · `package-skill` · `prompt-lab` · `prompt-pack`.
 - مراحل النوع: قراءة الكود والاختبارات ← إعادة إنتاج أو اختبار جديد ← أصغر تغيير ← الاختبارات ← مراجعة الفرق ← فرع وPR.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -1738,7 +1743,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `spec` ← المخرج `code`، والمنفّذ `method:CHECK-24` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `council` · `differential-exam` · `package-skill` · `prompt-lab` · `prompt-pack` · `repo-validate`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `council` · `differential-exam` · `lesson-integrity` · `package-skill` · `prompt-lab` · `prompt-pack`.
 - مراحل النوع: قراءة الكود والاختبارات ← إعادة إنتاج أو اختبار جديد ← أصغر تغيير ← الاختبارات ← مراجعة الفرق ← فرع وPR.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -1810,7 +1815,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `spec` ← المخرج `code`، والمنفّذ `method:CHECK-25` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `council` · `differential-exam` · `package-skill` · `prompt-lab` · `prompt-pack` · `repo-validate`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `council` · `differential-exam` · `lesson-integrity` · `package-skill` · `prompt-lab` · `prompt-pack`.
 - مراحل النوع: قراءة الكود والاختبارات ← إعادة إنتاج أو اختبار جديد ← أصغر تغيير ← الاختبارات ← مراجعة الفرق ← فرع وPR.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -1881,7 +1886,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `spec` ← المخرج `code`، والمنفّذ `method:CHECK-26` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `council` · `differential-exam` · `package-skill` · `prompt-lab` · `prompt-pack` · `repo-validate`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `council` · `differential-exam` · `lesson-integrity` · `package-skill` · `prompt-lab` · `prompt-pack`.
 - مراحل النوع: قراءة الكود والاختبارات ← إعادة إنتاج أو اختبار جديد ← أصغر تغيير ← الاختبارات ← مراجعة الفرق ← فرع وPR.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -1952,7 +1957,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `spec` ← المخرج `code`، والمنفّذ `method:CHECK-27` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `council` · `differential-exam` · `package-skill` · `prompt-lab` · `prompt-pack` · `repo-validate`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `council` · `differential-exam` · `lesson-integrity` · `package-skill` · `prompt-lab` · `prompt-pack`.
 - مراحل النوع: قراءة الكود والاختبارات ← إعادة إنتاج أو اختبار جديد ← أصغر تغيير ← الاختبارات ← مراجعة الفرق ← فرع وPR.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -2026,7 +2031,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `spec` ← المخرج `code`، والمنفّذ `method:CHECK-28` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `council` · `differential-exam` · `package-skill` · `prompt-lab` · `prompt-pack` · `repo-validate`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `council` · `differential-exam` · `lesson-integrity` · `package-skill` · `prompt-lab` · `prompt-pack`.
 - مراحل النوع: قراءة الكود والاختبارات ← إعادة إنتاج أو اختبار جديد ← أصغر تغيير ← الاختبارات ← مراجعة الفرق ← فرع وPR.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -2098,7 +2103,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `spec` ← المخرج `code`، والمنفّذ `method:CHECK-29` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `council` · `differential-exam` · `package-skill` · `prompt-lab` · `prompt-pack` · `repo-validate`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `council` · `differential-exam` · `lesson-integrity` · `package-skill` · `prompt-lab` · `prompt-pack`.
 - مراحل النوع: قراءة الكود والاختبارات ← إعادة إنتاج أو اختبار جديد ← أصغر تغيير ← الاختبارات ← مراجعة الفرق ← فرع وPR.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -2169,7 +2174,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `spec` ← المخرج `code`، والمنفّذ `method:CHECK-30` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `council` · `differential-exam` · `package-skill` · `prompt-lab` · `prompt-pack` · `repo-validate`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `council` · `differential-exam` · `lesson-integrity` · `package-skill` · `prompt-lab` · `prompt-pack`.
 - مراحل النوع: قراءة الكود والاختبارات ← إعادة إنتاج أو اختبار جديد ← أصغر تغيير ← الاختبارات ← مراجعة الفرق ← فرع وPR.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -2238,7 +2243,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `spec` ← المخرج `code`، والمنفّذ `method:CHECK-31` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `council` · `differential-exam` · `package-skill` · `prompt-lab` · `prompt-pack` · `repo-validate`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `council` · `differential-exam` · `lesson-integrity` · `package-skill` · `prompt-lab` · `prompt-pack`.
 - مراحل النوع: قراءة الكود والاختبارات ← إعادة إنتاج أو اختبار جديد ← أصغر تغيير ← الاختبارات ← مراجعة الفرق ← فرع وPR.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -2308,7 +2313,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `spec` ← المخرج `code`، والمنفّذ `method:CHECK-32` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `council` · `differential-exam` · `package-skill` · `prompt-lab` · `prompt-pack` · `repo-validate`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `council` · `differential-exam` · `lesson-integrity` · `package-skill` · `prompt-lab` · `prompt-pack`.
 - مراحل النوع: قراءة الكود والاختبارات ← إعادة إنتاج أو اختبار جديد ← أصغر تغيير ← الاختبارات ← مراجعة الفرق ← فرع وPR.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -2378,7 +2383,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `spec` ← المخرج `code`، والمنفّذ `method:CHECK-33` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `council` · `differential-exam` · `package-skill` · `prompt-lab` · `prompt-pack` · `repo-validate`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `council` · `differential-exam` · `lesson-integrity` · `package-skill` · `prompt-lab` · `prompt-pack`.
 - مراحل النوع: قراءة الكود والاختبارات ← إعادة إنتاج أو اختبار جديد ← أصغر تغيير ← الاختبارات ← مراجعة الفرق ← فرع وPR.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -2447,7 +2452,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `spec` ← المخرج `code`، والمنفّذ `method:CHECK-34` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `council` · `differential-exam` · `package-skill` · `prompt-lab` · `prompt-pack` · `repo-validate`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `council` · `differential-exam` · `lesson-integrity` · `package-skill` · `prompt-lab` · `prompt-pack`.
 - مراحل النوع: قراءة الكود والاختبارات ← إعادة إنتاج أو اختبار جديد ← أصغر تغيير ← الاختبارات ← مراجعة الفرق ← فرع وPR.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -2477,6 +2482,7 @@
 - `CHECK-32` خادم نموذج وهمي مسجِّل / Recording mock model server (documented)
 - `CHECK-33` قائمة سطح الملاحظة / Observable-surface checklist (documented)
 - `CHECK-35` ملاحظات استرداد صادقة وخط أساس / Honest recovery notes and a measured baseline (documented)
+- `CHECK-36` سجل قيم بمصدر واقتباس لكل رقم / One value registry: a source and the supporting sentence for every number (documented)
 
 ### `CHECK-35` — ملاحظات استرداد صادقة وخط أساس / Honest recovery notes and a measured baseline
 
@@ -2516,7 +2522,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `spec` ← المخرج `code`، والمنفّذ `method:CHECK-35` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `council` · `differential-exam` · `package-skill` · `prompt-lab` · `prompt-pack` · `repo-validate`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `council` · `differential-exam` · `lesson-integrity` · `package-skill` · `prompt-lab` · `prompt-pack`.
 - مراحل النوع: قراءة الكود والاختبارات ← إعادة إنتاج أو اختبار جديد ← أصغر تغيير ← الاختبارات ← مراجعة الفرق ← فرع وPR.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -2545,4 +2551,352 @@
 
 - `CHECK-33` قائمة سطح الملاحظة / Observable-surface checklist (documented)
 - `CHECK-34` المصحّح يعطي 100% على نفسه أولًا / Scorer must score 100% on itself first (documented)
+- `CHECK-36` سجل قيم بمصدر واقتباس لكل رقم / One value registry: a source and the supporting sentence for every number (documented)
+- `CHECK-37` النص يشير إلى الرقم بمعرّفه ويفشل مغلقًا / Text refers to numbers by id and fails closed (documented)
+
+### `CHECK-36` — سجل قيم بمصدر واقتباس لكل رقم / One value registry: a source and the supporting sentence for every number
+
+| الحقل | القيمة |
+|---|---|
+| العائلة | `verification-evals` ([فصل العائلة](../../../.claude/skills/kosif-superpowers/references/powers/verification-evals.md)) |
+| المجموعة | الاختبارات والجودة والأمان (`quality`) |
+| نوع المخرج (A25، A27) | كود وتطبيقات ومواقع (`code`) |
+| الحالة في الكتالوج | 📄 `documented`: منهج موصوف يحتاج بناءً أو ربطًا قبل التشغيل |
+| سقف التحقق قبل العمل (A27) | V1 حتى تُبنى وتُشغَّل؛ لا تقدَّم جاهزة أبدًا |
+| نطاق الدليل | `repo` |
+| الرخصة | owner |
+
+**ما هي:** كل رقم يظهر في درس أو شرح أو إنفوجراف له مدخل واحد: القيمة والوحدة وماذا يقيس والمدى ومرجع المصدر والجملة المقتبسة التي تثبته. — Every number a lesson, explainer or infographic shows has one entry: value, unit, what it measures, range, source ref and the quoted sentence that supports it.
+
+**متى:** شرح أو فيديو تعليمي أو إنفوجراف بأرقام حقيقية / explainers, lesson films or infographics that show real numbers
+
+**كيف:** Keep values.json with sources{id:{title,url\|citation}} and values{id:{value,unit,what,range?,source{ref,quote}}}. python3 scripts/lesson_integrity.py values --registry values.json fails on a number with no source and no gap note, an unknown ref, a missing quote or a value outside its range, and warns when the number is not in its quote. Cards EJ-01, EJ-05.
+
+**التثبيت:** لا خطوة تثبيت مسجلة
+
+**الوسوم:** cited numbers · value registry · source quote · fact check · أرقام موثقة · سجل القيم · مصدر · اقتباس · كل رقم ليه مصدر · رقم متألف · سكربت فيديو تعليمي · فيديو تعليمي · every number sourced
+
+#### 1. الاستقبال (A25)
+
+- اللغة والإطار: افتراض مكتوب ← لغة المستودع الموجود، وإلا Python أو HTML/JS بلا اعتماديات
+- أين يعمل: افتراض مكتوب ← المتصفح أو سطر الأوامر حسب المخرج
+- مستودع أو ملفات موجودة: سؤال بإجابة مقترحة ← مشروع جديد مستقل
+- متى يكون ناجحًا: افتراض مكتوب ← الاختبارات الموجودة تمر + اختبار لكل سلوك جديد
+- لا تُفترض أبدًا: مادة الإنتاج نفسها، والإذن بخطوة مدفوعة أو منشورة أو لا رجعة فيها، والهوية والحقوق.
+
+#### 2. الجاهزية والشارة (A28)
+
+- `python3` ← افحص وجوده بأمر واحد قبل كتابة الشارة
+- الوضع 1: شارة «هنا الآن» بعد الفحص، لا 📄 الكتالوج تلقائيًا · الوضع 2: `كتالوج: 📄 · هنا: غير مفحوص` · الوضع 3: بلا شارة ولا معرّف.
+
+#### 3. موضعها في الخطة (A26)
+
+- عقدة منمّطة: المدخل `spec` ← المخرج `code`، والمنفّذ `method:CHECK-36` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `council` · `differential-exam` · `lesson-integrity` · `package-skill` · `prompt-lab` · `prompt-pack`.
+- مراحل النوع: قراءة الكود والاختبارات ← إعادة إنتاج أو اختبار جديد ← أصغر تغيير ← الاختبارات ← مراجعة الفرق ← فرع وPR.
+- إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
+
+#### 4. بوابة التحقق (A27)
+
+- إلزامي: الاختبارات الموجودة تمر قبل التعديل وبعده ← أمر الاختبار
+- إلزامي: اختبار لكل سلوك جديد أو خطأ مُصلح ← الاختبار الجديد يفشل قبل الإصلاح
+- إلزامي: لا أسرار ولا مسارات جلسة في الشيفرة ← بحث أنماط الأسرار
+- جودة: يطابق أسلوب الكود المحيط وتسمياته ← مراجعة الفرق
+- جودة: طريقة تشغيل مكتوبة ومجرَّبة ← تشغيل الأمر المكتوب
+- جودة: الفرق أصغر ما يحقق الطلب بلا إعادة كتابة غير مطلوبة ← git diff --stat
+- جودة: المدخل الخاطئ يعطي خطأ واضحًا لا انهيارًا صامتًا ← تشغيل بمدخل خاطئ
+- أمر الحكم في الوضع 1: `think.py qa code --answers qa.json` (PASS / FAIL / INCOMPLETE).
+
+#### 5. التعافي (A29)
+
+- `missing_dependency` (اعتمادية مفقودة، ميزانية 2): سمِّ الاعتمادية بالضبط (حزمة، برنامج، خط، نموذج) ← ثبّت محليًا في بيئة العمل إن كان مجانيًا ومسموحًا (pip --user أو venv أو npm محلي) · البديل: مسار المكتبة القياسية أو أداة أخرى من نفس المجموعة · تصعيد: تثبيت نظامي أو مدفوع أو يحتاج مفتاحًا: توقف واسأل
+- `quality_below_threshold` (جودة دون العتبة، ميزانية 3): أي معيار فشل وبكم (المقيس مقابل العتبة) ← عالج السبب الأكبر وحده ثم أعد القياس · البديل: المنهج البديل المكتوب للمرحلة في الخطة · تصعيد: معيار إلزامي لا يتحقق بعد البديل: توقف وأبلغ بالأرقام
+- `tool_error` (خطأ أداة، ميزانية 3): اقرأ آخر سطر في الخطأ ثم أول سطر من كودك فيه ← أصلح السبب المثبت وحده، ثم شغّل الاختبار المتعلق · البديل: أداة أخرى أو مسار يدوي للمرحلة نفسها · تصعيد: خطأ في أداة خارجية لا تملكها: بلّغ بإعادة الإنتاج ولا تخفه
+
+#### 6. الأدلة
+
+- `kosif-tool/.claude/skills/kosif-superpowers/evals/test_lesson_integrity.py`
+
+#### 7. قدرات قريبة في العائلة
+
+- `CHECK-34` المصحّح يعطي 100% على نفسه أولًا / Scorer must score 100% on itself first (documented)
+- `CHECK-35` ملاحظات استرداد صادقة وخط أساس / Honest recovery notes and a measured baseline (documented)
+- `CHECK-37` النص يشير إلى الرقم بمعرّفه ويفشل مغلقًا / Text refers to numbers by id and fails closed (documented)
+- `CHECK-38` ملف فجوات بدل اختراع رقم / An explicit gaps list instead of an invented number (documented)
+
+### `CHECK-37` — النص يشير إلى الرقم بمعرّفه ويفشل مغلقًا / Text refers to numbers by id and fails closed
+
+| الحقل | القيمة |
+|---|---|
+| العائلة | `verification-evals` ([فصل العائلة](../../../.claude/skills/kosif-superpowers/references/powers/verification-evals.md)) |
+| المجموعة | الاختبارات والجودة والأمان (`quality`) |
+| نوع المخرج (A25، A27) | كود وتطبيقات ومواقع (`code`) |
+| الحالة في الكتالوج | 📄 `documented`: منهج موصوف يحتاج بناءً أو ربطًا قبل التشغيل |
+| سقف التحقق قبل العمل (A27) | V1 حتى تُبنى وتُشغَّل؛ لا تقدَّم جاهزة أبدًا |
+| نطاق الدليل | `repo` |
+| الرخصة | owner |
+
+**ما هي:** الجمل تكتب {v:id} لا الرقم نفسه؛ لو غاب المعرّف أو جُهلت طباعة الوحدة يتوقف البناء ولا يطبع تخمينًا. — Sentences write {v:id}, not the number; a missing id or an unknown unit print form stops the build instead of printing a guess.
+
+**متى:** سكربت تعليق صوتي أو نص درس أو تسميات رسم فيها أرقام / narration scripts, lesson text or chart labels with numbers
+
+**كيف:** python3 scripts/lesson_integrity.py render --registry values.json --content script.md --strict --out script.out.md. {v:id} number+unit, {v:id\|2} two decimals, {n:id} number only, unit 'fraction' prints as a percentage; --strict flags numbers with units typed into the text; nothing is written on error. Card EJ-02.
+
+**التثبيت:** لا خطوة تثبيت مسجلة
+
+**الوسوم:** placeholders · fail closed · narration numbers · single source of truth · عناصر نائبة · رقم من السجل · تعليق صوتي
+
+#### 1. الاستقبال (A25)
+
+- اللغة والإطار: افتراض مكتوب ← لغة المستودع الموجود، وإلا Python أو HTML/JS بلا اعتماديات
+- أين يعمل: افتراض مكتوب ← المتصفح أو سطر الأوامر حسب المخرج
+- مستودع أو ملفات موجودة: سؤال بإجابة مقترحة ← مشروع جديد مستقل
+- متى يكون ناجحًا: افتراض مكتوب ← الاختبارات الموجودة تمر + اختبار لكل سلوك جديد
+- لا تُفترض أبدًا: مادة الإنتاج نفسها، والإذن بخطوة مدفوعة أو منشورة أو لا رجعة فيها، والهوية والحقوق.
+
+#### 2. الجاهزية والشارة (A28)
+
+- `python3` ← افحص وجوده بأمر واحد قبل كتابة الشارة
+- الوضع 1: شارة «هنا الآن» بعد الفحص، لا 📄 الكتالوج تلقائيًا · الوضع 2: `كتالوج: 📄 · هنا: غير مفحوص` · الوضع 3: بلا شارة ولا معرّف.
+
+#### 3. موضعها في الخطة (A26)
+
+- عقدة منمّطة: المدخل `spec` ← المخرج `code`، والمنفّذ `method:CHECK-37` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `council` · `differential-exam` · `lesson-integrity` · `package-skill` · `prompt-lab` · `prompt-pack`.
+- مراحل النوع: قراءة الكود والاختبارات ← إعادة إنتاج أو اختبار جديد ← أصغر تغيير ← الاختبارات ← مراجعة الفرق ← فرع وPR.
+- إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
+
+#### 4. بوابة التحقق (A27)
+
+- إلزامي: الاختبارات الموجودة تمر قبل التعديل وبعده ← أمر الاختبار
+- إلزامي: اختبار لكل سلوك جديد أو خطأ مُصلح ← الاختبار الجديد يفشل قبل الإصلاح
+- إلزامي: لا أسرار ولا مسارات جلسة في الشيفرة ← بحث أنماط الأسرار
+- جودة: يطابق أسلوب الكود المحيط وتسمياته ← مراجعة الفرق
+- جودة: طريقة تشغيل مكتوبة ومجرَّبة ← تشغيل الأمر المكتوب
+- جودة: الفرق أصغر ما يحقق الطلب بلا إعادة كتابة غير مطلوبة ← git diff --stat
+- جودة: المدخل الخاطئ يعطي خطأ واضحًا لا انهيارًا صامتًا ← تشغيل بمدخل خاطئ
+- أمر الحكم في الوضع 1: `think.py qa code --answers qa.json` (PASS / FAIL / INCOMPLETE).
+
+#### 5. التعافي (A29)
+
+- `missing_dependency` (اعتمادية مفقودة، ميزانية 2): سمِّ الاعتمادية بالضبط (حزمة، برنامج، خط، نموذج) ← ثبّت محليًا في بيئة العمل إن كان مجانيًا ومسموحًا (pip --user أو venv أو npm محلي) · البديل: مسار المكتبة القياسية أو أداة أخرى من نفس المجموعة · تصعيد: تثبيت نظامي أو مدفوع أو يحتاج مفتاحًا: توقف واسأل
+- `quality_below_threshold` (جودة دون العتبة، ميزانية 3): أي معيار فشل وبكم (المقيس مقابل العتبة) ← عالج السبب الأكبر وحده ثم أعد القياس · البديل: المنهج البديل المكتوب للمرحلة في الخطة · تصعيد: معيار إلزامي لا يتحقق بعد البديل: توقف وأبلغ بالأرقام
+- `tool_error` (خطأ أداة، ميزانية 3): اقرأ آخر سطر في الخطأ ثم أول سطر من كودك فيه ← أصلح السبب المثبت وحده، ثم شغّل الاختبار المتعلق · البديل: أداة أخرى أو مسار يدوي للمرحلة نفسها · تصعيد: خطأ في أداة خارجية لا تملكها: بلّغ بإعادة الإنتاج ولا تخفه
+
+#### 6. الأدلة
+
+- `kosif-tool/.claude/skills/kosif-superpowers/evals/test_lesson_integrity.py`
+
+#### 7. قدرات قريبة في العائلة
+
+- `CHECK-35` ملاحظات استرداد صادقة وخط أساس / Honest recovery notes and a measured baseline (documented)
+- `CHECK-36` سجل قيم بمصدر واقتباس لكل رقم / One value registry: a source and the supporting sentence for every number (documented)
+- `CHECK-38` ملف فجوات بدل اختراع رقم / An explicit gaps list instead of an invented number (documented)
+- `CHECK-39` مراجعة حقائق تعيد الرقم المنشور / A fact-check pass that restores the published figure (documented)
+
+### `CHECK-38` — ملف فجوات بدل اختراع رقم / An explicit gaps list instead of an invented number
+
+| الحقل | القيمة |
+|---|---|
+| العائلة | `verification-evals` ([فصل العائلة](../../../.claude/skills/kosif-superpowers/references/powers/verification-evals.md)) |
+| المجموعة | الاختبارات والجودة والأمان (`quality`) |
+| نوع المخرج (A25، A27) | كود وتطبيقات ومواقع (`code`) |
+| الحالة في الكتالوج | 📄 `documented`: منهج موصوف يحتاج بناءً أو ربطًا قبل التشغيل |
+| سقف التحقق قبل العمل (A27) | V1 حتى تُبنى وتُشغَّل؛ لا تقدَّم جاهزة أبدًا |
+| نطاق الدليل | `repo` |
+| الرخصة | owner |
+
+**ما هي:** رقم بلا مصدر يُترك فارغًا مع سبب مكتوب ولا يُعرض، ويظهر كتحذير في التقرير. — A number with no source is left unset with a written reason, never shown, and reported as a warning.
+
+**متى:** معلومة لم تجد لها مصدرًا موثوقًا / a figure you could not source
+
+**كيف:** Record it as {value:null, gap:'<why>'} (or a value with a gap note for a teacher estimate, which is then shown and warned). render refuses to print a null gap. State what the calculation does without it ('kinetic energy of the rider alone'). Card EJ-03.
+
+**التثبيت:** لا خطوة تثبيت مسجلة
+
+**الوسوم:** gaps · unsourced · do not invent · فجوات · بلا مصدر · لا تخترع
+
+#### 1. الاستقبال (A25)
+
+- اللغة والإطار: افتراض مكتوب ← لغة المستودع الموجود، وإلا Python أو HTML/JS بلا اعتماديات
+- أين يعمل: افتراض مكتوب ← المتصفح أو سطر الأوامر حسب المخرج
+- مستودع أو ملفات موجودة: سؤال بإجابة مقترحة ← مشروع جديد مستقل
+- متى يكون ناجحًا: افتراض مكتوب ← الاختبارات الموجودة تمر + اختبار لكل سلوك جديد
+- لا تُفترض أبدًا: مادة الإنتاج نفسها، والإذن بخطوة مدفوعة أو منشورة أو لا رجعة فيها، والهوية والحقوق.
+
+#### 2. الجاهزية والشارة (A28)
+
+- لا متطلبات مسجلة؛ افحص المسار والأداة بـ `hub.py doctor` قبل الشارة.
+- الوضع 1: شارة «هنا الآن» بعد الفحص، لا 📄 الكتالوج تلقائيًا · الوضع 2: `كتالوج: 📄 · هنا: غير مفحوص` · الوضع 3: بلا شارة ولا معرّف.
+
+#### 3. موضعها في الخطة (A26)
+
+- عقدة منمّطة: المدخل `spec` ← المخرج `code`، والمنفّذ `method:CHECK-38` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `council` · `differential-exam` · `lesson-integrity` · `package-skill` · `prompt-lab` · `prompt-pack`.
+- مراحل النوع: قراءة الكود والاختبارات ← إعادة إنتاج أو اختبار جديد ← أصغر تغيير ← الاختبارات ← مراجعة الفرق ← فرع وPR.
+- إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
+
+#### 4. بوابة التحقق (A27)
+
+- إلزامي: الاختبارات الموجودة تمر قبل التعديل وبعده ← أمر الاختبار
+- إلزامي: اختبار لكل سلوك جديد أو خطأ مُصلح ← الاختبار الجديد يفشل قبل الإصلاح
+- إلزامي: لا أسرار ولا مسارات جلسة في الشيفرة ← بحث أنماط الأسرار
+- جودة: يطابق أسلوب الكود المحيط وتسمياته ← مراجعة الفرق
+- جودة: طريقة تشغيل مكتوبة ومجرَّبة ← تشغيل الأمر المكتوب
+- جودة: الفرق أصغر ما يحقق الطلب بلا إعادة كتابة غير مطلوبة ← git diff --stat
+- جودة: المدخل الخاطئ يعطي خطأ واضحًا لا انهيارًا صامتًا ← تشغيل بمدخل خاطئ
+- أمر الحكم في الوضع 1: `think.py qa code --answers qa.json` (PASS / FAIL / INCOMPLETE).
+
+#### 5. التعافي (A29)
+
+- `quality_below_threshold` (جودة دون العتبة، ميزانية 3): أي معيار فشل وبكم (المقيس مقابل العتبة) ← عالج السبب الأكبر وحده ثم أعد القياس · البديل: المنهج البديل المكتوب للمرحلة في الخطة · تصعيد: معيار إلزامي لا يتحقق بعد البديل: توقف وأبلغ بالأرقام
+- `tool_error` (خطأ أداة، ميزانية 3): اقرأ آخر سطر في الخطأ ثم أول سطر من كودك فيه ← أصلح السبب المثبت وحده، ثم شغّل الاختبار المتعلق · البديل: أداة أخرى أو مسار يدوي للمرحلة نفسها · تصعيد: خطأ في أداة خارجية لا تملكها: بلّغ بإعادة الإنتاج ولا تخفه
+
+#### 6. الأدلة
+
+- `kosif-tool/.claude/skills/kosif-superpowers/evals/test_lesson_integrity.py`
+
+#### 7. قدرات قريبة في العائلة
+
+- `CHECK-36` سجل قيم بمصدر واقتباس لكل رقم / One value registry: a source and the supporting sentence for every number (documented)
+- `CHECK-37` النص يشير إلى الرقم بمعرّفه ويفشل مغلقًا / Text refers to numbers by id and fails closed (documented)
+- `CHECK-39` مراجعة حقائق تعيد الرقم المنشور / A fact-check pass that restores the published figure (documented)
+- `CHECK-40` دفتر حفظ: ابحث عن كل وحدة / A conservation ledger: account for every unit (documented)
+
+### `CHECK-39` — مراجعة حقائق تعيد الرقم المنشور / A fact-check pass that restores the published figure
+
+| الحقل | القيمة |
+|---|---|
+| العائلة | `verification-evals` ([فصل العائلة](../../../.claude/skills/kosif-superpowers/references/powers/verification-evals.md)) |
+| المجموعة | الاختبارات والجودة والأمان (`quality`) |
+| نوع المخرج (A25، A27) | كود وتطبيقات ومواقع (`code`) |
+| الحالة في الكتالوج | 📄 `documented`: منهج موصوف يحتاج بناءً أو ربطًا قبل التشغيل |
+| سقف التحقق قبل العمل (A27) | V1 حتى تُبنى وتُشغَّل؛ لا تقدَّم جاهزة أبدًا |
+| نطاق الدليل | `repo` |
+| الرخصة | owner |
+
+**ما هي:** حين يختلف رقم محسوب بالتحويل عن الرقم المنشور في المصدر نعرض المنشور ونكتب ملاحظة بالتصحيح ونعيد حساب ما اشتُق منه. — When a converted figure differs from the one the source publishes, show the published one, note the correction and recompute everything derived from it.
+
+**متى:** مراجعة أرقام قبل النشر / reviewing numbers before publishing
+
+**كيف:** Read the rendered source page, not a conversion (290 kcal x 4.184 = 1213 is not the published 1210 kJ). Put the correction in the value's note; derived values carry {derived:{op:sum\|product\|difference\|ratio, of:[ids]}} and lesson_integrity.py values fails when a part changed but the total did not. Cards EJ-04, EJ-05.
+
+**التثبيت:** لا خطوة تثبيت مسجلة
+
+**الوسوم:** fact-check · published figure · derived values · مراجعة الحقائق · الرقم المنشور · قيم مشتقة
+
+#### 1. الاستقبال (A25)
+
+- اللغة والإطار: افتراض مكتوب ← لغة المستودع الموجود، وإلا Python أو HTML/JS بلا اعتماديات
+- أين يعمل: افتراض مكتوب ← المتصفح أو سطر الأوامر حسب المخرج
+- مستودع أو ملفات موجودة: سؤال بإجابة مقترحة ← مشروع جديد مستقل
+- متى يكون ناجحًا: افتراض مكتوب ← الاختبارات الموجودة تمر + اختبار لكل سلوك جديد
+- لا تُفترض أبدًا: مادة الإنتاج نفسها، والإذن بخطوة مدفوعة أو منشورة أو لا رجعة فيها، والهوية والحقوق.
+
+#### 2. الجاهزية والشارة (A28)
+
+- `python3` ← افحص وجوده بأمر واحد قبل كتابة الشارة
+- الوضع 1: شارة «هنا الآن» بعد الفحص، لا 📄 الكتالوج تلقائيًا · الوضع 2: `كتالوج: 📄 · هنا: غير مفحوص` · الوضع 3: بلا شارة ولا معرّف.
+
+#### 3. موضعها في الخطة (A26)
+
+- عقدة منمّطة: المدخل `spec` ← المخرج `code`، والمنفّذ `method:CHECK-39` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `council` · `differential-exam` · `lesson-integrity` · `package-skill` · `prompt-lab` · `prompt-pack`.
+- مراحل النوع: قراءة الكود والاختبارات ← إعادة إنتاج أو اختبار جديد ← أصغر تغيير ← الاختبارات ← مراجعة الفرق ← فرع وPR.
+- إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
+
+#### 4. بوابة التحقق (A27)
+
+- إلزامي: الاختبارات الموجودة تمر قبل التعديل وبعده ← أمر الاختبار
+- إلزامي: اختبار لكل سلوك جديد أو خطأ مُصلح ← الاختبار الجديد يفشل قبل الإصلاح
+- إلزامي: لا أسرار ولا مسارات جلسة في الشيفرة ← بحث أنماط الأسرار
+- جودة: يطابق أسلوب الكود المحيط وتسمياته ← مراجعة الفرق
+- جودة: طريقة تشغيل مكتوبة ومجرَّبة ← تشغيل الأمر المكتوب
+- جودة: الفرق أصغر ما يحقق الطلب بلا إعادة كتابة غير مطلوبة ← git diff --stat
+- جودة: المدخل الخاطئ يعطي خطأ واضحًا لا انهيارًا صامتًا ← تشغيل بمدخل خاطئ
+- أمر الحكم في الوضع 1: `think.py qa code --answers qa.json` (PASS / FAIL / INCOMPLETE).
+
+#### 5. التعافي (A29)
+
+- `missing_dependency` (اعتمادية مفقودة، ميزانية 2): سمِّ الاعتمادية بالضبط (حزمة، برنامج، خط، نموذج) ← ثبّت محليًا في بيئة العمل إن كان مجانيًا ومسموحًا (pip --user أو venv أو npm محلي) · البديل: مسار المكتبة القياسية أو أداة أخرى من نفس المجموعة · تصعيد: تثبيت نظامي أو مدفوع أو يحتاج مفتاحًا: توقف واسأل
+- `quality_below_threshold` (جودة دون العتبة، ميزانية 3): أي معيار فشل وبكم (المقيس مقابل العتبة) ← عالج السبب الأكبر وحده ثم أعد القياس · البديل: المنهج البديل المكتوب للمرحلة في الخطة · تصعيد: معيار إلزامي لا يتحقق بعد البديل: توقف وأبلغ بالأرقام
+- `tool_error` (خطأ أداة، ميزانية 3): اقرأ آخر سطر في الخطأ ثم أول سطر من كودك فيه ← أصلح السبب المثبت وحده، ثم شغّل الاختبار المتعلق · البديل: أداة أخرى أو مسار يدوي للمرحلة نفسها · تصعيد: خطأ في أداة خارجية لا تملكها: بلّغ بإعادة الإنتاج ولا تخفه
+
+#### 6. الأدلة
+
+- `kosif-tool/.claude/skills/kosif-superpowers/evals/test_lesson_integrity.py`
+
+#### 7. قدرات قريبة في العائلة
+
+- `CHECK-37` النص يشير إلى الرقم بمعرّفه ويفشل مغلقًا / Text refers to numbers by id and fails closed (documented)
+- `CHECK-38` ملف فجوات بدل اختراع رقم / An explicit gaps list instead of an invented number (documented)
+- `CHECK-40` دفتر حفظ: ابحث عن كل وحدة / A conservation ledger: account for every unit (documented)
+
+### `CHECK-40` — دفتر حفظ: ابحث عن كل وحدة / A conservation ledger: account for every unit
+
+| الحقل | القيمة |
+|---|---|
+| العائلة | `verification-evals` ([فصل العائلة](../../../.claude/skills/kosif-superpowers/references/powers/verification-evals.md)) |
+| المجموعة | الاختبارات والجودة والأمان (`quality`) |
+| نوع المخرج (A25، A27) | كود وتطبيقات ومواقع (`code`) |
+| الحالة في الكتالوج | 📄 `documented`: منهج موصوف يحتاج بناءً أو ربطًا قبل التشغيل |
+| سقف التحقق قبل العمل (A27) | V1 حتى تُبنى وتُشغَّل؛ لا تقدَّم جاهزة أبدًا |
+| نطاق الدليل | `repo` |
+| الرخصة | owner |
+
+**ما هي:** ما دخل يساوي ما خرج ضمن سماحية، بلا قيم سالبة، مع حصة كل مخرج والكفاءة. — What goes in equals what comes out within tolerance, with no negative amounts, each output's share and the efficiency.
+
+**متى:** شرح طاقة أو ميزانية أو مخطط سانكي / energy explainers, budgets or Sankey diagrams
+
+**كيف:** ledger.json = {unit, in:{store:amount}, out:{store:amount}, useful:[stores], tolerance}. python3 scripts/lesson_integrity.py ledger --file ledger.json reports in, out, gap, shares and efficiency and exits 1 when anything is unaccounted for or appears from nowhere. Check it before drawing the Sankey or narrating 'all 14.7 J'. Card EJ-06.
+
+**التثبيت:** لا خطوة تثبيت مسجلة
+
+**الوسوم:** conservation · energy ledger · Sankey · efficiency · حفظ الطاقة · سانكي · كفاءة · ميزانية
+
+#### 1. الاستقبال (A25)
+
+- اللغة والإطار: افتراض مكتوب ← لغة المستودع الموجود، وإلا Python أو HTML/JS بلا اعتماديات
+- أين يعمل: افتراض مكتوب ← المتصفح أو سطر الأوامر حسب المخرج
+- مستودع أو ملفات موجودة: سؤال بإجابة مقترحة ← مشروع جديد مستقل
+- متى يكون ناجحًا: افتراض مكتوب ← الاختبارات الموجودة تمر + اختبار لكل سلوك جديد
+- لا تُفترض أبدًا: مادة الإنتاج نفسها، والإذن بخطوة مدفوعة أو منشورة أو لا رجعة فيها، والهوية والحقوق.
+
+#### 2. الجاهزية والشارة (A28)
+
+- `python3` ← افحص وجوده بأمر واحد قبل كتابة الشارة
+- الوضع 1: شارة «هنا الآن» بعد الفحص، لا 📄 الكتالوج تلقائيًا · الوضع 2: `كتالوج: 📄 · هنا: غير مفحوص` · الوضع 3: بلا شارة ولا معرّف.
+
+#### 3. موضعها في الخطة (A26)
+
+- عقدة منمّطة: المدخل `spec` ← المخرج `code`، والمنفّذ `method:CHECK-40` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `council` · `differential-exam` · `lesson-integrity` · `package-skill` · `prompt-lab` · `prompt-pack`.
+- مراحل النوع: قراءة الكود والاختبارات ← إعادة إنتاج أو اختبار جديد ← أصغر تغيير ← الاختبارات ← مراجعة الفرق ← فرع وPR.
+- إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
+
+#### 4. بوابة التحقق (A27)
+
+- إلزامي: الاختبارات الموجودة تمر قبل التعديل وبعده ← أمر الاختبار
+- إلزامي: اختبار لكل سلوك جديد أو خطأ مُصلح ← الاختبار الجديد يفشل قبل الإصلاح
+- إلزامي: لا أسرار ولا مسارات جلسة في الشيفرة ← بحث أنماط الأسرار
+- جودة: يطابق أسلوب الكود المحيط وتسمياته ← مراجعة الفرق
+- جودة: طريقة تشغيل مكتوبة ومجرَّبة ← تشغيل الأمر المكتوب
+- جودة: الفرق أصغر ما يحقق الطلب بلا إعادة كتابة غير مطلوبة ← git diff --stat
+- جودة: المدخل الخاطئ يعطي خطأ واضحًا لا انهيارًا صامتًا ← تشغيل بمدخل خاطئ
+- أمر الحكم في الوضع 1: `think.py qa code --answers qa.json` (PASS / FAIL / INCOMPLETE).
+
+#### 5. التعافي (A29)
+
+- `missing_dependency` (اعتمادية مفقودة، ميزانية 2): سمِّ الاعتمادية بالضبط (حزمة، برنامج، خط، نموذج) ← ثبّت محليًا في بيئة العمل إن كان مجانيًا ومسموحًا (pip --user أو venv أو npm محلي) · البديل: مسار المكتبة القياسية أو أداة أخرى من نفس المجموعة · تصعيد: تثبيت نظامي أو مدفوع أو يحتاج مفتاحًا: توقف واسأل
+- `quality_below_threshold` (جودة دون العتبة، ميزانية 3): أي معيار فشل وبكم (المقيس مقابل العتبة) ← عالج السبب الأكبر وحده ثم أعد القياس · البديل: المنهج البديل المكتوب للمرحلة في الخطة · تصعيد: معيار إلزامي لا يتحقق بعد البديل: توقف وأبلغ بالأرقام
+- `tool_error` (خطأ أداة، ميزانية 3): اقرأ آخر سطر في الخطأ ثم أول سطر من كودك فيه ← أصلح السبب المثبت وحده، ثم شغّل الاختبار المتعلق · البديل: أداة أخرى أو مسار يدوي للمرحلة نفسها · تصعيد: خطأ في أداة خارجية لا تملكها: بلّغ بإعادة الإنتاج ولا تخفه
+
+#### 6. الأدلة
+
+- `kosif-tool/.claude/skills/kosif-superpowers/evals/test_lesson_integrity.py`
+
+#### 7. قدرات قريبة في العائلة
+
+- `CHECK-38` ملف فجوات بدل اختراع رقم / An explicit gaps list instead of an invented number (documented)
+- `CHECK-39` مراجعة حقائق تعيد الرقم المنشور / A fact-check pass that restores the published figure (documented)
 

@@ -1,4 +1,4 @@
-# أدوات المجال `investigate` (13 أداة)
+# أدوات المجال `investigate` (14 أداة)
 
 > مولّد من `data/tools.json`. [الفهرس الرئيسي](../README.md) · `python3 scripts/hub.py tool <id>` للبطاقة الحية.
 
@@ -507,6 +507,52 @@
 #### عند الفشل (A29)
 
 - ابدأ بـ `think.py recover --message "<نص الخطأ>"`، ثم سجّل `fusionforge.py trace --project <slug> --id <FUSE-ID> --stage <stage> --node <N> --action "<ما جُرّب>" --result failed --error-class <الصنف> --tool tool:rea-owned-repo-batch --evidence <ملف>`.
+
+### `repo-map` — خريطة المستودع / Repo Map
+
+| الحقل | القيمة |
+|---|---|
+| المسار | `scripts/repo_map.py` (جذر: skill) |
+| المجال | `investigate` |
+| الدليل | `tested-here` |
+| العائلات | `code-engineering`, `software-investigation` |
+
+**ما تفعله:** يعطي وكيل الكود شكل المستودع في ميزانية صغيرة: يحلل بايثون بـ ast وجافاسكربت/تايبسكربت وGo وRust بأنماط الأسطر، ويعرف أين يُعرَّف كل اسم ومن يذكره، ويرتب الملفات بـ PageRank على رسم الإشارات (مع إمكانية التركيز على ملفات أو كلمات)، ويطبع أهم الملفات بأسطر تعريفاتها حتى تنفد الميزانية. defs يبين أين يُعرَّف اسم ومن يستخدمه. يقرأ النص فقط ولا يستورد ولا يشغّل ولا يبني شيئًا من المستودع.
+
+**What it does:** Gives a coding agent the shape of a codebase in a small budget: it parses Python with ast and JavaScript/TypeScript, Go and Rust by line patterns, finds where each name is defined and which files mention it, ranks files with PageRank over that reference graph (optionally pulled toward focus files or words), and prints the top files with their definition lines until a character budget is spent. defs shows where one name is defined and who uses it. It reads text only and never imports, runs or builds the target.
+
+#### متى تُستدعى
+
+- «فهمني المستودع ده بسرعة قبل ما نعدل فيه»
+- «إيه أهم الملفات والدوال في الكود ده؟»
+- «give me a compact map of this repo for a coding agent»
+- «where is load_scene defined and who calls it?»
+
+#### الأوامر
+
+- **map**: Ranked files with their definition lines within --budget characters; --json for the ranking and counts
+  - `python3 scripts/repo_map.py map scripts --budget 3000 --focus prompt`
+- **defs**: Where a name is defined and which files mention it
+  - `python3 scripts/repo_map.py defs scripts lint`
+- **--self-test**: Builds a small mixed Python/TypeScript tree and checks ranking, budget, focus and skips
+  - `python3 scripts/repo_map.py --self-test`
+
+#### المتطلبات والأمان
+
+- binaries: python3
+- الأمان: read-only
+- الموافقة: —
+- الحدود: Non-Python languages are read by line patterns, so unusual syntax can be missed; mentions are matched by name, not resolved by scope, so two functions with one name share credit; files over 400 KB and vendor/build folders are skipped.
+
+#### الاختبارات والأدلة
+
+- `.claude/skills/kosif-superpowers/evals/test_repo_map.py`
+- مرجع: `.claude/skills/kosif-superpowers/references/agents-memory-reasoning-repos.md`
+- مرجع: `.claude/skills/kosif-superpowers/references/guides/investigate.md`
+
+#### عند الفشل (A29)
+
+- ابدأ بـ `think.py recover --message "<نص الخطأ>"`، ثم سجّل `fusionforge.py trace --project <slug> --id <FUSE-ID> --stage <stage> --node <N> --action "<ما جُرّب>" --result failed --error-class <الصنف> --tool tool:repo-map --evidence <ملف>`.
 
 ### `repository-capability-packer` — فحص المستودعات وحزمها / Repository Capability Packer
 

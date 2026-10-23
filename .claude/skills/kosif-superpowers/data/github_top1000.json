@@ -13,9 +13,9 @@
   "relevant": 502,
   "decision": {
    "skip": 507,
-   "mine": 261,
+   "mine": 234,
    "reference": 210,
-   "transferred": 22
+   "transferred": 49
   },
   "topic": {
    "engineering-general": 468,
@@ -41,7 +41,7 @@
    "none": 82,
    "unknown": 29
   },
-  "transferred_ids": 180
+  "transferred_ids": 213
  },
  "rows": [
   {
@@ -213,9 +213,11 @@
    "license_class": "permissive",
    "topic": "agents-skills",
    "relevant": true,
-   "decision": "mine",
+   "decision": "transferred",
    "why": "relevant (agents-skills) and MIT: methods and code patterns may be reused with credit",
-   "transferred": [],
+   "transferred": [
+    "PLAN-14"
+   ],
    "credited_in_repos_json": true,
    "url": "https://github.com/obra/superpowers",
    "description": "An agentic skills framework & software development methodology that works."
@@ -1112,9 +1114,11 @@
    "license_class": "permissive",
    "topic": "agents-skills",
    "relevant": true,
-   "decision": "mine",
+   "decision": "transferred",
    "why": "relevant (agents-skills) and MIT: methods and code patterns may be reused with credit",
-   "transferred": [],
+   "transferred": [
+    "PLAN-13"
+   ],
    "credited_in_repos_json": false,
    "url": "https://github.com/github/spec-kit",
    "description": "💫 Toolkit to help you get started with SDD or any other process!"
@@ -1256,9 +1260,11 @@
    "license_class": "permissive",
    "topic": "data-viz-diagrams",
    "relevant": true,
-   "decision": "mine",
+   "decision": "transferred",
    "why": "relevant (data-viz-diagrams) and MIT: methods and code patterns may be reused with credit",
-   "transferred": [],
+   "transferred": [
+    "DRAW-G01"
+   ],
    "credited_in_repos_json": true,
    "url": "https://github.com/excalidraw/excalidraw",
    "description": "Virtual whiteboard for sketching hand-drawn like diagrams"
@@ -1272,9 +1278,11 @@
    "license_class": "permissive",
    "topic": "media-audio-video",
    "relevant": true,
-   "decision": "mine",
+   "decision": "transferred",
    "why": "relevant (media-audio-video) and MIT: methods and code patterns may be reused with credit",
-   "transferred": [],
+   "transferred": [
+    "GEN-G01"
+   ],
    "credited_in_repos_json": false,
    "url": "https://github.com/harry0703/MoneyPrinterTurbo",
    "description": "利用 AI 大模型和自动化工作流，根据主题或关键词一键生成高清短视频。Generate HD short videos from a topic or keyword with an automated AI workflow."
@@ -1577,9 +1585,11 @@
    "license_class": "permissive",
    "topic": "graphics-3d-games",
    "relevant": true,
-   "decision": "mine",
+   "decision": "transferred",
    "why": "relevant (graphics-3d-games) and MIT: methods and code patterns may be reused with credit",
-   "transferred": [],
+   "transferred": [
+    "3D-G01"
+   ],
    "credited_in_repos_json": true,
    "url": "https://github.com/mrdoob/three.js",
    "description": "JavaScript 3D Library."
@@ -1913,9 +1923,11 @@
    "license_class": "permissive",
    "topic": "agents-skills",
    "relevant": true,
-   "decision": "mine",
+   "decision": "transferred",
    "why": "relevant (agents-skills) and Apache-2.0: methods and code patterns may be reused with credit",
-   "transferred": [],
+   "transferred": [
+    "AGENT-52"
+   ],
    "credited_in_repos_json": false,
    "url": "https://github.com/thedotmack/claude-mem",
    "description": "Persistent Context Across Sessions for Every Agent – Captures everything your agent does during sessions, compresses it with AI, and injects relevant context back into future sessions. Works with Claude Code, OpenClaw, Codex, Gemini, Hermes, Copilot, OpenCode + More"
@@ -2153,9 +2165,12 @@
    "license_class": "permissive",
    "topic": "motion-animation",
    "relevant": true,
-   "decision": "mine",
+   "decision": "transferred",
    "why": "relevant (motion-animation) and MIT: methods and code patterns may be reused with credit",
-   "transferred": [],
+   "transferred": [
+    "EXPL-G01",
+    "SHAPE-G01"
+   ],
    "credited_in_repos_json": false,
    "url": "https://github.com/3b1b/manim",
    "description": "Animation engine for explanatory math videos"
@@ -2475,9 +2490,11 @@
    "license_class": "permissive",
    "topic": "ai-ml-vision",
    "relevant": true,
-   "decision": "mine",
+   "decision": "transferred",
    "why": "relevant (ai-ml-vision) and MIT: methods and code patterns may be reused with credit",
-   "transferred": [],
+   "transferred": [
+    "AGENT-55"
+   ],
    "credited_in_repos_json": false,
    "url": "https://github.com/All-Hands-AI/OpenHands",
    "description": "🙌 OpenHands: AI-Driven Development"
@@ -3717,9 +3734,12 @@
    "license_class": "permissive",
    "topic": "motion-animation",
    "relevant": true,
-   "decision": "mine",
+   "decision": "transferred",
    "why": "relevant (motion-animation) and MIT: methods and code patterns may be reused with credit",
-   "transferred": [],
+   "transferred": [
+    "EASE-G03",
+    "EASE-G04"
+   ],
    "credited_in_repos_json": true,
    "url": "https://github.com/juliangarnier/anime",
    "description": "JavaScript animation engine"
@@ -3781,9 +3801,11 @@
    "license_class": "permissive",
    "topic": "design-ui-type",
    "relevant": true,
-   "decision": "mine",
+   "decision": "transferred",
    "why": "relevant (design-ui-type) and MIT: methods and code patterns may be reused with credit",
-   "transferred": [],
+   "transferred": [
+    "TRANS-G01"
+   ],
    "credited_in_repos_json": false,
    "url": "https://github.com/hakimel/reveal.js",
    "description": "The HTML Presentation Framework"
@@ -3909,9 +3931,11 @@
    "license_class": "permissive",
    "topic": "agents-skills",
    "relevant": true,
-   "decision": "mine",
+   "decision": "transferred",
    "why": "relevant (agents-skills) and MIT: methods and code patterns may be reused with credit",
-   "transferred": [],
+   "transferred": [
+    "AGENT-49"
+   ],
    "credited_in_repos_json": false,
    "url": "https://github.com/FoundationAgents/MetaGPT",
    "description": "🌟 The Multi-Agent Framework: First AI Software Company, Towards Natural Language Programming"
@@ -4185,9 +4209,12 @@
    "license_class": "permissive",
    "topic": "agents-skills",
    "relevant": true,
-   "decision": "mine",
+   "decision": "transferred",
    "why": "relevant (agents-skills) and Apache-2.0: methods and code patterns may be reused with credit",
-   "transferred": [],
+   "transferred": [
+    "AGENT-50",
+    "memory-ops"
+   ],
    "credited_in_repos_json": false,
    "url": "https://github.com/mem0ai/mem0",
    "description": "The Memory Layer for AI Agents - Drop-in memory infrastructure for AI agents and apps. Context that persists. Built for production."
@@ -5069,9 +5096,11 @@
    "license_class": "permissive",
    "topic": "agents-skills",
    "relevant": true,
-   "decision": "mine",
+   "decision": "transferred",
    "why": "relevant (agents-skills) and MIT: methods and code patterns may be reused with credit",
-   "transferred": [],
+   "transferred": [
+    "AGENT-48"
+   ],
    "credited_in_repos_json": false,
    "url": "https://github.com/crewAIInc/crewAI",
    "description": "Framework for orchestrating role-playing, autonomous AI agents. By fostering collaborative intelligence, CrewAI empowers agents to work together seamlessly, tackling complex tasks."
@@ -6560,9 +6589,13 @@
    "license_class": "permissive",
    "topic": "ai-ml-vision",
    "relevant": true,
-   "decision": "mine",
+   "decision": "transferred",
    "why": "relevant (ai-ml-vision) and Apache-2.0: methods and code patterns may be reused with credit",
-   "transferred": [],
+   "transferred": [
+    "CODE-25",
+    "CODE-26",
+    "repo-map"
+   ],
    "credited_in_repos_json": false,
    "url": "https://github.com/Aider-AI/aider",
    "description": "aider is AI pair programming in your terminal"
@@ -6754,9 +6787,11 @@
    "license_class": "permissive",
    "topic": "graphics-3d-games",
    "relevant": true,
-   "decision": "mine",
+   "decision": "transferred",
    "why": "relevant (graphics-3d-games) and MIT: methods and code patterns may be reused with credit",
-   "transferred": [],
+   "transferred": [
+    "ENG-G02"
+   ],
    "credited_in_repos_json": true,
    "url": "https://github.com/pixijs/pixijs",
    "description": "The HTML5 Creation Engine: Create beautiful digital content with the fastest, most flexible 2D WebGL renderer."
@@ -7796,9 +7831,11 @@
    "license_class": "permissive",
    "topic": "agents-skills",
    "relevant": true,
-   "decision": "mine",
+   "decision": "transferred",
    "why": "relevant (agents-skills) and MIT: methods and code patterns may be reused with credit",
-   "transferred": [],
+   "transferred": [
+    "AGENT-47"
+   ],
    "credited_in_repos_json": false,
    "url": "https://github.com/langchain-ai/langgraph",
    "description": "Build resilient agents."
@@ -7972,9 +8009,11 @@
    "license_class": "permissive",
    "topic": "data-viz-diagrams",
    "relevant": true,
-   "decision": "mine",
+   "decision": "transferred",
    "why": "relevant (data-viz-diagrams) and MIT: methods and code patterns may be reused with credit",
-   "transferred": [],
+   "transferred": [
+    "EXPL-G02"
+   ],
    "credited_in_repos_json": false,
    "url": "https://github.com/mingrammer/diagrams",
    "description": ":art: Diagram as Code for prototyping cloud system architectures"
@@ -8166,9 +8205,11 @@
    "license_class": "permissive",
    "topic": "motion-animation",
    "relevant": true,
-   "decision": "mine",
+   "decision": "transferred",
    "why": "relevant (motion-animation) and MIT: methods and code patterns may be reused with credit",
-   "transferred": [],
+   "transferred": [
+    "DRAW-G02"
+   ],
    "credited_in_repos_json": false,
    "url": "https://github.com/nolimits4web/swiper",
    "description": "Most modern mobile touch slider with hardware accelerated transitions"
@@ -8214,9 +8255,12 @@
    "license_class": "permissive",
    "topic": "motion-animation",
    "relevant": true,
-   "decision": "mine",
+   "decision": "transferred",
    "why": "relevant (motion-animation) and MIT: methods and code patterns may be reused with credit",
-   "transferred": [],
+   "transferred": [
+    "SHAPE-G01",
+    "SHAPE-G02"
+   ],
    "credited_in_repos_json": true,
    "url": "https://github.com/ManimCommunity/manim",
    "description": "A community-maintained Python framework for creating mathematical animations."
@@ -8678,9 +8722,11 @@
    "license_class": "permissive",
    "topic": "llm-reasoning-memory",
    "relevant": true,
-   "decision": "mine",
+   "decision": "transferred",
    "why": "relevant (llm-reasoning-memory) and MIT: methods and code patterns may be reused with credit",
-   "transferred": [],
+   "transferred": [
+    "GRAPH-23"
+   ],
    "credited_in_repos_json": false,
    "url": "https://github.com/HKUDS/LightRAG",
    "description": "[EMNLP2025] LightRAG: Simple and Fast Retrieval-Augmented Generation"
@@ -10251,9 +10297,11 @@
    "license_class": "permissive",
    "topic": "llm-reasoning-memory",
    "relevant": true,
-   "decision": "mine",
+   "decision": "transferred",
    "why": "relevant (llm-reasoning-memory) and MIT: methods and code patterns may be reused with credit",
-   "transferred": [],
+   "transferred": [
+    "GRAPH-22"
+   ],
    "credited_in_repos_json": false,
    "url": "https://github.com/microsoft/graphrag",
    "description": "A modular graph-based Retrieval-Augmented Generation (RAG) system"
@@ -12319,9 +12367,11 @@
    "license_class": "permissive",
    "topic": "motion-animation",
    "relevant": true,
-   "decision": "mine",
+   "decision": "transferred",
    "why": "relevant (motion-animation) and MIT: methods and code patterns may be reused with credit",
-   "transferred": [],
+   "transferred": [
+    "ENG-G01"
+   ],
    "credited_in_repos_json": true,
    "url": "https://github.com/airbnb/lottie-web",
    "description": "Render After Effects animations natively on Web, Android and iOS, and React Native. http://airbnb.io/lottie/"
@@ -12767,9 +12817,11 @@
    "license_class": "permissive",
    "topic": "llm-reasoning-memory",
    "relevant": true,
-   "decision": "mine",
+   "decision": "transferred",
    "why": "relevant (llm-reasoning-memory) and MIT: methods and code patterns may be reused with credit",
-   "transferred": [],
+   "transferred": [
+    "WEB-25"
+   ],
    "credited_in_repos_json": false,
    "url": "https://github.com/stanford-oval/storm",
    "description": "An LLM-powered knowledge curation system that researches a topic and generates a full-length report with citations."
@@ -13647,9 +13699,11 @@
    "license_class": "permissive",
    "topic": "agents-skills",
    "relevant": true,
-   "decision": "mine",
+   "decision": "transferred",
    "why": "relevant (agents-skills) and MIT: methods and code patterns may be reused with credit",
-   "transferred": [],
+   "transferred": [
+    "AGENT-54"
+   ],
    "credited_in_repos_json": false,
    "url": "https://github.com/openai/openai-agents-python",
    "description": "A lightweight, powerful framework for multi-agent workflows"
@@ -13711,9 +13765,11 @@
    "license_class": "permissive",
    "topic": "agents-skills",
    "relevant": true,
-   "decision": "mine",
+   "decision": "transferred",
    "why": "relevant (agents-skills) and Apache-2.0: methods and code patterns may be reused with credit",
-   "transferred": [],
+   "transferred": [
+    "WEB-26"
+   ],
    "credited_in_repos_json": false,
    "url": "https://github.com/assafelovic/gpt-researcher",
    "description": "An autonomous agent that conducts deep research on any data using any LLM providers"
@@ -13903,9 +13959,11 @@
    "license_class": "permissive",
    "topic": "agents-skills",
    "relevant": true,
-   "decision": "mine",
+   "decision": "transferred",
    "why": "relevant (agents-skills) and Apache-2.0: methods and code patterns may be reused with credit",
-   "transferred": [],
+   "transferred": [
+    "AGENT-53"
+   ],
    "credited_in_repos_json": false,
    "url": "https://github.com/huggingface/smolagents",
    "description": "🤗 smolagents: a barebones library for agents that think in code."
@@ -14431,9 +14489,11 @@
    "license_class": "permissive",
    "topic": "motion-animation",
    "relevant": true,
-   "decision": "mine",
+   "decision": "transferred",
    "why": "relevant (motion-animation) and MIT: methods and code patterns may be reused with credit",
-   "transferred": [],
+   "transferred": [
+    "EASE-G01"
+   ],
    "credited_in_repos_json": false,
    "url": "https://github.com/pmndrs/react-spring",
    "description": "✌️ A spring physics based React animation library"
@@ -16301,6 +16361,42 @@
    "credited_in_repos_json": false,
    "url": "https://github.com/guidance-ai/guidance",
    "description": "A guidance language for controlling large language models."
+  },
+  {
+   "rank": null,
+   "repo": "karpathy/llm-council",
+   "stars": 25338,
+   "language": "",
+   "license": "none",
+   "license_class": "none",
+   "topic": "llm-reasoning-memory",
+   "relevant": true,
+   "decision": "transferred",
+   "why": "licence none: link and own-words method only until the licence is read",
+   "transferred": [
+    "THINK-47"
+   ],
+   "credited_in_repos_json": false,
+   "url": "https://github.com/karpathy/llm-council",
+   "description": "LLM Council works together to answer your hardest questions"
+  },
+  {
+   "rank": null,
+   "repo": "letta-ai/letta",
+   "stars": 25156,
+   "language": "",
+   "license": "Apache-2.0",
+   "license_class": "permissive",
+   "topic": "llm-reasoning-memory",
+   "relevant": true,
+   "decision": "transferred",
+   "why": "relevant (llm-reasoning-memory) and Apache-2.0: methods and code patterns may be reused with credit",
+   "transferred": [
+    "AGENT-51"
+   ],
+   "credited_in_repos_json": false,
+   "url": "https://github.com/letta-ai/letta",
+   "description": "Platform for stateful agents: AI with advanced memory that can learn and self-improve over time."
   },
   {
    "rank": null,

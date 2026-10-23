@@ -1,4 +1,4 @@
-# `knowledge-graph` — البحث والمعرفة (21 بطاقة)
+# `knowledge-graph` — البحث والمعرفة (23 بطاقة)
 
 > مكتبة بروتوكول USIP v5.6 الكاملة، مولّدة بـ `smart_capabilities.py cards` من `data/powers/knowledge-graph.json` وقواعد الملاحق A25–A29؛ لا تُحرَّر يدويًا. [الفهرس الرئيسي](../../README.md) · [فصل المجموعة](../../../.claude/skills/kosif-superpowers/references/library/research.md) · [النواة](../../../.claude/skills/kosif-superpowers/PROTOCOL.md)
 
@@ -25,6 +25,8 @@
 - [`GRAPH-19` تسميات الدليل وثقة منفصلة](#graph-19--تسميات-الدليل-وثقة-منفصلة--evidence-labels-and-discrete-confidence)
 - [`GRAPH-20` الخريطة مادةً لفيلم موشن](#graph-20--الخريطة-مادةً-لفيلم-موشن--codebase-map-as-motion-graphics)
 - [`GRAPH-21` مصالحة فرع متباعد بالفهرس المستضاف](#graph-21--مصالحة-فرع-متباعد-بالفهرس-المستضاف--reconcile-a-diverged-branch-with-the-hosted-index)
+- [`GRAPH-22` استرجاع بالرسم المعرفي وملخصات المجتمعات](#graph-22--استرجاع-بالرسم-المعرفي-وملخصات-المجتمعات--graph-rag-with-community-summaries)
+- [`GRAPH-23` استرجاع بمستويين وتحديث تدريجي](#graph-23--استرجاع-بمستويين-وتحديث-تدريجي--dual-level-retrieval-with-incremental-graph-updates)
 
 ## البطاقات / cards
 
@@ -1431,6 +1433,7 @@
 - `GRAPH-18` الخريطة أولًا لغير الكود / Map-first for non-code corpora (documented)
 - `GRAPH-19` تسميات الدليل وثقة منفصلة / Evidence labels and discrete confidence (documented)
 - `GRAPH-21` مصالحة فرع متباعد بالفهرس المستضاف / Reconcile a diverged branch with the hosted index (proven)
+- `GRAPH-22` استرجاع بالرسم المعرفي وملخصات المجتمعات / Graph RAG with community summaries (documented)
 
 ### `GRAPH-21` — مصالحة فرع متباعد بالفهرس المستضاف / Reconcile a diverged branch with the hosted index
 
@@ -1502,4 +1505,137 @@
 
 - `GRAPH-19` تسميات الدليل وثقة منفصلة / Evidence labels and discrete confidence (documented)
 - `GRAPH-20` الخريطة مادةً لفيلم موشن / Codebase map as motion graphics (idea)
+- `GRAPH-22` استرجاع بالرسم المعرفي وملخصات المجتمعات / Graph RAG with community summaries (documented)
+- `GRAPH-23` استرجاع بمستويين وتحديث تدريجي / Dual-level retrieval with incremental graph updates (documented)
+
+### `GRAPH-22` — استرجاع بالرسم المعرفي وملخصات المجتمعات / Graph RAG with community summaries
+
+| الحقل | القيمة |
+|---|---|
+| العائلة | `knowledge-graph` ([فصل العائلة](../../../.claude/skills/kosif-superpowers/references/powers/knowledge-graph.md)) |
+| المجموعة | البحث والمعرفة (`research`) |
+| نوع المخرج (A25، A27) | بحث وتقرير ومقارنة (`research`) |
+| الحالة في الكتالوج | 📄 `documented`: منهج موصوف يحتاج بناءً أو ربطًا قبل التشغيل |
+| سقف التحقق قبل العمل (A27) | V1 حتى تُبنى وتُشغَّل؛ لا تقدَّم جاهزة أبدًا |
+| نطاق الدليل | `none` |
+| الرخصة | MIT |
+
+**ما هي:** استخرج الكيانات والعلاقات من كل مقطع، وجمّعها في مجتمعات، ولخص كل مجتمع؛ الأسئلة العامة تُجاب بتجميع ملخصات المجتمعات، والمحددة من جوار الكيان. — Extract entities and relations per chunk, cluster them into communities, summarise each; global questions map-reduce over community summaries, specific ones use the entity's neighbourhood.
+
+**متى:** أسئلة عن مجموعة مستندات كبيرة كلها (موضوعات، اتجاهات) / questions about a whole large corpus (themes, trends)
+
+**كيف:** 1 chunk the corpus; 2 extract (entity, type, description) and (source, relation, target) per chunk; 3 merge duplicates; 4 cluster the graph (modularity communities) at 2-3 levels; 5 summarise each community; 6 global query: ask each community summary, keep answers with a relevance score, combine the top ones; local query: entity → neighbours → their source chunks. Cite chunk ids. Costly to build: use plain retrieval for small corpora.
+
+**التثبيت:** لا خطوة تثبيت مسجلة
+
+**الوسوم:** graphrag · knowledge graph · community · global search · local search · rag · رسم معرفي · استرجاع
+
+#### 1. الاستقبال (A25)
+
+- النطاق والسؤال الدقيق: افتراض مكتوب ← السؤال كما كُتب مع حدود مكتوبة
+- حداثة المصادر: افتراض مكتوب ← آخر 24 شهرًا للحقائق المتغيرة
+- الطول والعمق: افتراض مكتوب ← خلاصة في أعلى الصفحة ثم تفصيل
+- لا تُفترض أبدًا: مادة الإنتاج نفسها، والإذن بخطوة مدفوعة أو منشورة أو لا رجعة فيها، والهوية والحقوق.
+
+#### 2. الجاهزية والشارة (A28)
+
+- `pip:chromadb` ← python3 -c "import chromadb" (اسم الاستيراد قد يختلف عن اسم الحزمة)
+- الوضع 1: شارة «هنا الآن» بعد الفحص، لا 📄 الكتالوج تلقائيًا · الوضع 2: `كتالوج: 📄 · هنا: غير مفحوص` · الوضع 3: بلا شارة ولا معرّف.
+
+#### 3. موضعها في الخطة (A26)
+
+- عقدة منمّطة: المدخل `brief` ← المخرج `report`، والمنفّذ `method:GRAPH-22` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `capability-graph` · `powers` · `superpower-fusion`.
+- مراحل النوع: السؤال والنطاق ← مصادر بتواريخها ← حقائق بمراجعها ← تركيب ورأي مخالف ← تدقيق ادعاء ← دليل ← تسليم.
+- إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
+
+#### 4. بوابة التحقق (A27)
+
+- إلزامي: كل حقيقة غير بديهية لها مصدر مفتوح فعلًا ← رابط لكل ادعاء
+- إلزامي: تاريخ كل معلومة متغيرة مكتوب ← مراجعة
+- جودة: أقوى رأي مخالف مذكور ومردود عليه ← قسم الاعتراضات
+- جودة: الجواب في أول سطرين ← قراءة الافتتاح
+- إلزامي: ما لم يُعرف أو لم يُفتح مكتوب صراحة ← قسم الحدود
+- أمر الحكم في الوضع 1: `think.py qa research --answers qa.json` (PASS / FAIL / INCOMPLETE).
+
+#### 5. التعافي (A29)
+
+- `missing_dependency` (اعتمادية مفقودة، ميزانية 2): سمِّ الاعتمادية بالضبط (حزمة، برنامج، خط، نموذج) ← ثبّت محليًا في بيئة العمل إن كان مجانيًا ومسموحًا (pip --user أو venv أو npm محلي) · البديل: مسار المكتبة القياسية أو أداة أخرى من نفس المجموعة · تصعيد: تثبيت نظامي أو مدفوع أو يحتاج مفتاحًا: توقف واسأل
+- `quality_below_threshold` (جودة دون العتبة، ميزانية 3): أي معيار فشل وبكم (المقيس مقابل العتبة) ← عالج السبب الأكبر وحده ثم أعد القياس · البديل: المنهج البديل المكتوب للمرحلة في الخطة · تصعيد: معيار إلزامي لا يتحقق بعد البديل: توقف وأبلغ بالأرقام
+- `tool_error` (خطأ أداة، ميزانية 3): اقرأ آخر سطر في الخطأ ثم أول سطر من كودك فيه ← أصلح السبب المثبت وحده، ثم شغّل الاختبار المتعلق · البديل: أداة أخرى أو مسار يدوي للمرحلة نفسها · تصعيد: خطأ في أداة خارجية لا تملكها: بلّغ بإعادة الإنتاج ولا تخفه
+
+#### 6. الأدلة
+
+- لا دليل مسجل: لا تُقدَّم أكثر من منهج.
+
+#### 7. قدرات قريبة في العائلة
+
+- `GRAPH-20` الخريطة مادةً لفيلم موشن / Codebase map as motion graphics (idea)
+- `GRAPH-21` مصالحة فرع متباعد بالفهرس المستضاف / Reconcile a diverged branch with the hosted index (proven)
+- `GRAPH-23` استرجاع بمستويين وتحديث تدريجي / Dual-level retrieval with incremental graph updates (documented)
+
+### `GRAPH-23` — استرجاع بمستويين وتحديث تدريجي / Dual-level retrieval with incremental graph updates
+
+| الحقل | القيمة |
+|---|---|
+| العائلة | `knowledge-graph` ([فصل العائلة](../../../.claude/skills/kosif-superpowers/references/powers/knowledge-graph.md)) |
+| المجموعة | البحث والمعرفة (`research`) |
+| نوع المخرج (A25، A27) | بحث وتقرير ومقارنة (`research`) |
+| الحالة في الكتالوج | 📄 `documented`: منهج موصوف يحتاج بناءً أو ربطًا قبل التشغيل |
+| سقف التحقق قبل العمل (A27) | V1 حتى تُبنى وتُشغَّل؛ لا تقدَّم جاهزة أبدًا |
+| نطاق الدليل | `none` |
+| الرخصة | MIT |
+
+**ما هي:** قسّم كلمات السؤال إلى مستوى منخفض (كيانات محددة) ومرتفع (موضوعات)، واسترجع بالاثنين، وأضف المستندات الجديدة للرسم دون إعادة بنائه. — Split the query's keywords into low-level (specific entities) and high-level (themes), retrieve with both, and add new documents to the graph without rebuilding it.
+
+**متى:** قاعدة معرفة تتغير باستمرار / a knowledge base that keeps changing
+
+**كيف:** Ask the model for two keyword lists; match low-level ones to entity nodes and high-level ones to relation/theme descriptions; union the neighbourhoods and rank. New document → extract its entities/relations → merge into existing nodes by name+type. Cheaper than community rebuilds (GRAPH-22).
+
+**التثبيت:** لا خطوة تثبيت مسجلة
+
+**الوسوم:** lightrag · dual-level · incremental · graph · rag · استرجاع · تحديث تدريجي
+
+#### 1. الاستقبال (A25)
+
+- النطاق والسؤال الدقيق: افتراض مكتوب ← السؤال كما كُتب مع حدود مكتوبة
+- حداثة المصادر: افتراض مكتوب ← آخر 24 شهرًا للحقائق المتغيرة
+- الطول والعمق: افتراض مكتوب ← خلاصة في أعلى الصفحة ثم تفصيل
+- لا تُفترض أبدًا: مادة الإنتاج نفسها، والإذن بخطوة مدفوعة أو منشورة أو لا رجعة فيها، والهوية والحقوق.
+
+#### 2. الجاهزية والشارة (A28)
+
+- `pip:chromadb` ← python3 -c "import chromadb" (اسم الاستيراد قد يختلف عن اسم الحزمة)
+- الوضع 1: شارة «هنا الآن» بعد الفحص، لا 📄 الكتالوج تلقائيًا · الوضع 2: `كتالوج: 📄 · هنا: غير مفحوص` · الوضع 3: بلا شارة ولا معرّف.
+
+#### 3. موضعها في الخطة (A26)
+
+- عقدة منمّطة: المدخل `brief` ← المخرج `report`، والمنفّذ `method:GRAPH-23` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `capability-graph` · `powers` · `superpower-fusion`.
+- مراحل النوع: السؤال والنطاق ← مصادر بتواريخها ← حقائق بمراجعها ← تركيب ورأي مخالف ← تدقيق ادعاء ← دليل ← تسليم.
+- إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
+
+#### 4. بوابة التحقق (A27)
+
+- إلزامي: كل حقيقة غير بديهية لها مصدر مفتوح فعلًا ← رابط لكل ادعاء
+- إلزامي: تاريخ كل معلومة متغيرة مكتوب ← مراجعة
+- جودة: أقوى رأي مخالف مذكور ومردود عليه ← قسم الاعتراضات
+- جودة: الجواب في أول سطرين ← قراءة الافتتاح
+- إلزامي: ما لم يُعرف أو لم يُفتح مكتوب صراحة ← قسم الحدود
+- أمر الحكم في الوضع 1: `think.py qa research --answers qa.json` (PASS / FAIL / INCOMPLETE).
+
+#### 5. التعافي (A29)
+
+- `missing_dependency` (اعتمادية مفقودة، ميزانية 2): سمِّ الاعتمادية بالضبط (حزمة، برنامج، خط، نموذج) ← ثبّت محليًا في بيئة العمل إن كان مجانيًا ومسموحًا (pip --user أو venv أو npm محلي) · البديل: مسار المكتبة القياسية أو أداة أخرى من نفس المجموعة · تصعيد: تثبيت نظامي أو مدفوع أو يحتاج مفتاحًا: توقف واسأل
+- `quality_below_threshold` (جودة دون العتبة، ميزانية 3): أي معيار فشل وبكم (المقيس مقابل العتبة) ← عالج السبب الأكبر وحده ثم أعد القياس · البديل: المنهج البديل المكتوب للمرحلة في الخطة · تصعيد: معيار إلزامي لا يتحقق بعد البديل: توقف وأبلغ بالأرقام
+- `tool_error` (خطأ أداة، ميزانية 3): اقرأ آخر سطر في الخطأ ثم أول سطر من كودك فيه ← أصلح السبب المثبت وحده، ثم شغّل الاختبار المتعلق · البديل: أداة أخرى أو مسار يدوي للمرحلة نفسها · تصعيد: خطأ في أداة خارجية لا تملكها: بلّغ بإعادة الإنتاج ولا تخفه
+
+#### 6. الأدلة
+
+- لا دليل مسجل: لا تُقدَّم أكثر من منهج.
+
+#### 7. قدرات قريبة في العائلة
+
+- `GRAPH-21` مصالحة فرع متباعد بالفهرس المستضاف / Reconcile a diverged branch with the hosted index (proven)
+- `GRAPH-22` استرجاع بالرسم المعرفي وملخصات المجتمعات / Graph RAG with community summaries (documented)
 

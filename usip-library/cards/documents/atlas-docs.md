@@ -1,4 +1,4 @@
-# `atlas-docs` — المستندات والكتابة (50 بطاقة)
+# `atlas-docs` — المستندات والكتابة (55 بطاقة)
 
 > مكتبة بروتوكول USIP v5.6 الكاملة، مولّدة بـ `smart_capabilities.py cards` من `data/powers/atlas-docs.json` وقواعد الملاحق A25–A29؛ لا تُحرَّر يدويًا. [الفهرس الرئيسي](../../README.md) · [فصل المجموعة](../../../.claude/skills/kosif-superpowers/references/library/documents.md) · [النواة](../../../.claude/skills/kosif-superpowers/PROTOCOL.md)
 
@@ -54,6 +54,11 @@
 - [`ADOCS-48` عروض تقديمية للمطورين بـ Slidev من Markdown](#adocs-48--عروض-تقديمية-للمطورين-بـ-slidev-من-markdown--developer-slide-decks-in-markdown-with-slidev)
 - [`ADOCS-49` كتابة README يجذب المطور في ثلاث ثوانٍ ويشغله في دقيقة](#adocs-49--كتابة-readme-يجذب-المطور-في-ثلاث-ثوانٍ-ويشغله-في-دقيقة--readme-that-hooks-in-3-seconds-and-runs-in-60)
 - [`ADOCS-50` تعليقات الكود الملائمة: معلومة لا يحملها الكود](#adocs-50--تعليقات-الكود-الملائمة-معلومة-لا-يحملها-الكود--appropriate-code-comments-information-the-code-cannot-carry)
+- [`ADOCS-51` جولات CodeTour في الكود موجّهة لشخصية القارئ](#adocs-51--جولات-codetour-في-الكود-موجّهة-لشخصية-القارئ--persona-targeted-codetour-walkthroughs-with-verified-anchors)
+- [`ADOCS-52` تدقيق نصوص التعليمات الموجهة للنموذج: نواهٍ تلفت الانتباه وأمثلة تقيّد](#adocs-52--تدقيق-نصوص-التعليمات-الموجهة-للنموذج-نواهٍ-تلفت-الانتباه-وأمثلة-تقيّد--llm-facing-prose-audit-priming-prohibitions-and-anchoring-examples)
+- [`ADOCS-53` مخطط كتاب بمواصفة لكل فصل و'كتاب مرجعي' يحفظ الاتساق](#adocs-53--مخطط-كتاب-بمواصفة-لكل-فصل-وكتاب-مرجعي-يحفظ-الاتساق--book-outline-with-per-chapter-specs-and-a-series-bible)
+- [`ADOCS-54` بناء ونشر كتاب: EPUB وPDF عبر Pandoc مع epubcheck وبيانات النشر](#adocs-54--بناء-ونشر-كتاب-epub-وpdf-عبر-pandoc-مع-epubcheck-وبيانات-النشر--book-publishing-build-epubpdf-via-pandoc-epubcheck-and-metadata)
+- [`ADOCS-55` نشر مجموعة رقمية بعد بوابتي الحقوق والحساسية الثقافية](#adocs-55--نشر-مجموعة-رقمية-بعد-بوابتي-الحقوق-والحساسية-الثقافية--publish-a-digital-collection-through-rights-and-cultural-sensitivity-gates)
 
 ## البطاقات / cards
 
@@ -3406,6 +3411,7 @@
 - `ADOCS-47` تنقيح المستندات حقًا وإثبات ما سُلِّم ببصمات sha256 / True redaction and a sha256 delivery manifest (documented)
 - `ADOCS-48` عروض تقديمية للمطورين بـ Slidev من Markdown / Developer slide decks in Markdown with Slidev (documented)
 - `ADOCS-50` تعليقات الكود الملائمة: معلومة لا يحملها الكود / Appropriate code comments: information the code cannot carry (documented)
+- `ADOCS-51` جولات CodeTour في الكود موجّهة لشخصية القارئ / Persona-targeted CodeTour walkthroughs with verified anchors (documented)
 
 ### `ADOCS-50` — تعليقات الكود الملائمة: معلومة لا يحملها الكود / Appropriate code comments: information the code cannot carry
 
@@ -3470,4 +3476,349 @@
 
 - `ADOCS-48` عروض تقديمية للمطورين بـ Slidev من Markdown / Developer slide decks in Markdown with Slidev (documented)
 - `ADOCS-49` كتابة README يجذب المطور في ثلاث ثوانٍ ويشغله في دقيقة / README that hooks in 3 seconds and runs in 60 (documented)
+- `ADOCS-51` جولات CodeTour في الكود موجّهة لشخصية القارئ / Persona-targeted CodeTour walkthroughs with verified anchors (documented)
+- `ADOCS-52` تدقيق نصوص التعليمات الموجهة للنموذج: نواهٍ تلفت الانتباه وأمثلة تقيّد / LLM-facing prose audit: priming prohibitions and anchoring examples (documented)
+
+### `ADOCS-51` — جولات CodeTour في الكود موجّهة لشخصية القارئ / Persona-targeted CodeTour walkthroughs with verified anchors
+
+| الحقل | القيمة |
+|---|---|
+| العائلة | `atlas-docs` ([فصل العائلة](../../../.claude/skills/kosif-superpowers/references/powers/atlas-docs.md)) |
+| المجموعة | المستندات والكتابة (`documents`) |
+| نوع المخرج (A25، A27) | مستند وكتابة ومحتوى (`document`) |
+| الحالة في الكتالوج | 📄 `documented`: منهج موصوف يحتاج بناءً أو ربطًا قبل التشغيل |
+| سقف التحقق قبل العمل (A27) | V1 حتى تُبنى وتُشغَّل؛ لا تقدَّم جاهزة أبدًا |
+| نطاق الدليل | `url` |
+| الرخصة | card in our own words; the original skill folders are copied verbatim with their MIT license and SOURCE.md under vendor/kosif-atlas |
+
+**ما هي:** يكتب ملفات .tour لإضافة CodeTour: جولة قصصية خطوة بخطوة في المستودع لشخص محدد (منضم جديد، مراجع PR، محقق سبب جذري، معماري، مراجع أمان)، كل خطوة مربوطة بملف وسطر حقيقيين، دون تعديل أي كود. — Writes CodeTour .tour files: a narrative, persona-specific walkthrough anchored to real files and lines, without touching source.
+
+**متى:** تأهيل مطوّر جديد، شرح PR، شرح كيف يعمل جزء من النظام، جولة لتحقيق في عطل / onboarding, PR walkthrough, explaining a subsystem, RCA tour
+
+**كيف:** 1) Explore first: root listing, README, config, languages, frameworks, entry points, 1–2 levels of folders. 2) Infer persona and depth from the request (PR → reviewer, 'why did X break' → RCA, 'onboarding' → new joiner, 'architecture' → architect deep); default new joiner, standard depth. 3) Read every file you will point to and verify each path and line; a wrong line is worse than no tour. 4) Use step types deliberately: at most two content-only steps (intro/close), directory steps to orient, file+line as the workhorse, selection for blocks, pattern anchors for volatile files, URI steps for PRs/issues/docs. 5) Size: quick 5–8 steps, standard 9–13, deep 14–18. 6) Write each description as: what this is, why it matters, how it connects, and what to look at next. 7) Save as .tours/<persona>-<focus>.tour. Full original skill(s) with license: vendor/kosif-atlas/skills/162-code-tour/531-code-tour.
+
+**المعاملات:** repo, persona, focus
+
+**التثبيت:** mkdir -p ~/.claude/skills && cp -r .claude/skills/kosif-superpowers/vendor/kosif-atlas/skills/162-code-tour/531-code-tour ~/.claude/skills/code-tour
+
+**الوسوم:** CodeTour · onboarding · walkthrough · VS Code · code tour · جولة كود · تأهيل
+
+#### 1. الاستقبال (A25)
+
+- الجمهور: افتراض مكتوب ← قارئ عام ذكي غير متخصص
+- النبرة واللهجة: افتراض مكتوب ← لغة الطلب ولهجته
+- الطول: افتراض مكتوب ← أقصر طول يحقق الغرض
+- الصيغة: افتراض مكتوب ← نص في الرد، أو مستند إن طُلب ملف
+- لا تُفترض أبدًا: مادة الإنتاج نفسها، والإذن بخطوة مدفوعة أو منشورة أو لا رجعة فيها، والهوية والحقوق.
+
+#### 2. الجاهزية والشارة (A28)
+
+- لا متطلبات مسجلة؛ افحص المسار والأداة بـ `hub.py doctor` قبل الشارة.
+- الوضع 1: شارة «هنا الآن» بعد الفحص، لا 📄 الكتالوج تلقائيًا · الوضع 2: `كتالوج: 📄 · هنا: غير مفحوص` · الوضع 3: بلا شارة ولا معرّف.
+
+#### 3. موضعها في الخطة (A26)
+
+- عقدة منمّطة: المدخل `brief` ← المخرج `document`، والمنفّذ `method:ADOCS-51` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
+- لا أداة مسجلة تخدم عائلتها: التنفيذ بالمكتبات أو بأداة من مجموعة أخرى.
+- مراحل النوع: الغرض والقارئ ← هيكل العناوين ← مسودة ← مراجعة الحقائق ← تحرير اللغة ← فتح الملف بصيغته ← تسليم.
+- إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
+
+#### 4. بوابة التحقق (A27)
+
+- إلزامي: يحقق الغرض في أول فقرة ← قراءة الافتتاح
+- إلزامي: عربية سليمة إملاءً ونحوًا ← مراجعة سطر بسطر
+- جودة: بلا حشو ولا عبارات عامة بلا مضمون ← think.py critic
+- إلزامي: كل رقم أو اسم أو تاريخ متحقق منه ← مصدر لكل حقيقة
+- إلزامي: الملف المطلوب يُفتح فعلًا بصيغته ← فتح الملف
+- أمر الحكم في الوضع 1: `think.py qa document --answers qa.json` (PASS / FAIL / INCOMPLETE).
+
+#### 5. التعافي (A29)
+
+- `missing_dependency` (اعتمادية مفقودة، ميزانية 2): سمِّ الاعتمادية بالضبط (حزمة، برنامج، خط، نموذج) ← ثبّت محليًا في بيئة العمل إن كان مجانيًا ومسموحًا (pip --user أو venv أو npm محلي) · البديل: مسار المكتبة القياسية أو أداة أخرى من نفس المجموعة · تصعيد: تثبيت نظامي أو مدفوع أو يحتاج مفتاحًا: توقف واسأل
+- `quality_below_threshold` (جودة دون العتبة، ميزانية 3): أي معيار فشل وبكم (المقيس مقابل العتبة) ← عالج السبب الأكبر وحده ثم أعد القياس · البديل: المنهج البديل المكتوب للمرحلة في الخطة · تصعيد: معيار إلزامي لا يتحقق بعد البديل: توقف وأبلغ بالأرقام
+
+#### 6. الأدلة
+
+- `https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/162-code-tour/531-code-tour`
+
+#### 7. قدرات قريبة في العائلة
+
+- `ADOCS-49` كتابة README يجذب المطور في ثلاث ثوانٍ ويشغله في دقيقة / README that hooks in 3 seconds and runs in 60 (documented)
+- `ADOCS-50` تعليقات الكود الملائمة: معلومة لا يحملها الكود / Appropriate code comments: information the code cannot carry (documented)
+- `ADOCS-52` تدقيق نصوص التعليمات الموجهة للنموذج: نواهٍ تلفت الانتباه وأمثلة تقيّد / LLM-facing prose audit: priming prohibitions and anchoring examples (documented)
+- `ADOCS-53` مخطط كتاب بمواصفة لكل فصل و'كتاب مرجعي' يحفظ الاتساق / Book outline with per-chapter specs and a series bible (documented)
+
+### `ADOCS-52` — تدقيق نصوص التعليمات الموجهة للنموذج: نواهٍ تلفت الانتباه وأمثلة تقيّد / LLM-facing prose audit: priming prohibitions and anchoring examples
+
+| الحقل | القيمة |
+|---|---|
+| العائلة | `atlas-docs` ([فصل العائلة](../../../.claude/skills/kosif-superpowers/references/powers/atlas-docs.md)) |
+| المجموعة | المستندات والكتابة (`documents`) |
+| نوع المخرج (A25، A27) | مستند وكتابة ومحتوى (`document`) |
+| الحالة في الكتالوج | 📄 `documented`: منهج موصوف يحتاج بناءً أو ربطًا قبل التشغيل |
+| سقف التحقق قبل العمل (A27) | V1 حتى تُبنى وتُشغَّل؛ لا تقدَّم جاهزة أبدًا |
+| نطاق الدليل | `url` |
+| الرخصة | card in our own words; the original skill folders are copied verbatim with their MIT license and SOURCE.md under vendor/kosif-atlas |
+
+**ما هي:** يراجع ملفات المهارات وبرومبتات الوكلاء بحثًا عن نمطين يضعفان الاتباع: ذكر أفعال ممنوعة أو مسارات قديمة أو بدائل مرفوضة دون حاجة (يبقيها في انتباه النموذج)، وأمثلة few-shot تربط النموذج بحالات بعينها بدل المبدأ. قراءة فقط، والقرار للمؤلف. — Read-only audit of skill files and agent prompts for unnecessary prohibitions and anchoring few-shot examples.
+
+**متى:** قبل نشر SKILL.md أو برومبت نظام، النموذج يفعل بالضبط ما نُهي عنه، مخرجات تقلد الأمثلة حرفيًا / before shipping a SKILL.md or system prompt, the model does the forbidden thing, outputs copy the examples
+
+**كيف:** 1) Scope: LLM-facing prose only (skill bodies, agent prompts, output styles); skip code fences, formal definition blocks and human-facing docs. 2) Prohibition pass: flag 'do not X', mentions of retired paths and named rejected alternatives; keep a mention only if it is load-bearing (a real hazard the model would otherwise take). 3) For each flagged line propose the positive rewrite: the current path plus its reason ('Use Y because Z'). 4) Anchoring pass: flag principles followed by example lists whose main effect is to pin the model to those instances; boundary test: would removing the example widen correct application without losing format reliability? 5) Propose a sharper principle instead of the examples; keep examples that define an output format or delimit scope. 6) Emit structured findings (file, line, type, proposed text, load-bearing yes/no) and write no fixes; the author decides. Full original skill(s) with license: vendor/kosif-atlas/skills/1990-epistemic-cooperative/7157-white-bear, vendor/kosif-atlas/skills/1990-epistemic-cooperative/7158-zero-shot.
+
+**المعاملات:** files or glob
+
+**التثبيت:** mkdir -p ~/.claude/skills && cp -r .claude/skills/kosif-superpowers/vendor/kosif-atlas/skills/1990-epistemic-cooperative/7157-white-bear ~/.claude/skills/white-bear ; mkdir -p ~/.claude/skills && cp -r .claude/skills/kosif-superpowers/vendor/kosif-atlas/skills/1990-epistemic-cooperative/7158-zero-shot ~/.claude/skills/zero-shot
+
+**الوسوم:** prompt engineering · SKILL.md · system prompt · few-shot · negative instructions · برومبت · تعليمات
+
+#### 1. الاستقبال (A25)
+
+- الجمهور: افتراض مكتوب ← قارئ عام ذكي غير متخصص
+- النبرة واللهجة: افتراض مكتوب ← لغة الطلب ولهجته
+- الطول: افتراض مكتوب ← أقصر طول يحقق الغرض
+- الصيغة: افتراض مكتوب ← نص في الرد، أو مستند إن طُلب ملف
+- لا تُفترض أبدًا: مادة الإنتاج نفسها، والإذن بخطوة مدفوعة أو منشورة أو لا رجعة فيها، والهوية والحقوق.
+
+#### 2. الجاهزية والشارة (A28)
+
+- لا متطلبات مسجلة؛ افحص المسار والأداة بـ `hub.py doctor` قبل الشارة.
+- الوضع 1: شارة «هنا الآن» بعد الفحص، لا 📄 الكتالوج تلقائيًا · الوضع 2: `كتالوج: 📄 · هنا: غير مفحوص` · الوضع 3: بلا شارة ولا معرّف.
+
+#### 3. موضعها في الخطة (A26)
+
+- عقدة منمّطة: المدخل `brief` ← المخرج `document`، والمنفّذ `method:ADOCS-52` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
+- لا أداة مسجلة تخدم عائلتها: التنفيذ بالمكتبات أو بأداة من مجموعة أخرى.
+- مراحل النوع: الغرض والقارئ ← هيكل العناوين ← مسودة ← مراجعة الحقائق ← تحرير اللغة ← فتح الملف بصيغته ← تسليم.
+- إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
+
+#### 4. بوابة التحقق (A27)
+
+- إلزامي: يحقق الغرض في أول فقرة ← قراءة الافتتاح
+- إلزامي: عربية سليمة إملاءً ونحوًا ← مراجعة سطر بسطر
+- جودة: بلا حشو ولا عبارات عامة بلا مضمون ← think.py critic
+- إلزامي: كل رقم أو اسم أو تاريخ متحقق منه ← مصدر لكل حقيقة
+- إلزامي: الملف المطلوب يُفتح فعلًا بصيغته ← فتح الملف
+- أمر الحكم في الوضع 1: `think.py qa document --answers qa.json` (PASS / FAIL / INCOMPLETE).
+
+#### 5. التعافي (A29)
+
+- `missing_dependency` (اعتمادية مفقودة، ميزانية 2): سمِّ الاعتمادية بالضبط (حزمة، برنامج، خط، نموذج) ← ثبّت محليًا في بيئة العمل إن كان مجانيًا ومسموحًا (pip --user أو venv أو npm محلي) · البديل: مسار المكتبة القياسية أو أداة أخرى من نفس المجموعة · تصعيد: تثبيت نظامي أو مدفوع أو يحتاج مفتاحًا: توقف واسأل
+- `quality_below_threshold` (جودة دون العتبة، ميزانية 3): أي معيار فشل وبكم (المقيس مقابل العتبة) ← عالج السبب الأكبر وحده ثم أعد القياس · البديل: المنهج البديل المكتوب للمرحلة في الخطة · تصعيد: معيار إلزامي لا يتحقق بعد البديل: توقف وأبلغ بالأرقام
+
+#### 6. الأدلة
+
+- `https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/1990-epistemic-cooperative/7157-white-bear`
+- `https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/1990-epistemic-cooperative/7158-zero-shot`
+
+#### 7. قدرات قريبة في العائلة
+
+- `ADOCS-50` تعليقات الكود الملائمة: معلومة لا يحملها الكود / Appropriate code comments: information the code cannot carry (documented)
+- `ADOCS-51` جولات CodeTour في الكود موجّهة لشخصية القارئ / Persona-targeted CodeTour walkthroughs with verified anchors (documented)
+- `ADOCS-53` مخطط كتاب بمواصفة لكل فصل و'كتاب مرجعي' يحفظ الاتساق / Book outline with per-chapter specs and a series bible (documented)
+- `ADOCS-54` بناء ونشر كتاب: EPUB وPDF عبر Pandoc مع epubcheck وبيانات النشر / Book publishing build: EPUB/PDF via Pandoc, epubcheck and metadata (documented)
+
+### `ADOCS-53` — مخطط كتاب بمواصفة لكل فصل و'كتاب مرجعي' يحفظ الاتساق / Book outline with per-chapter specs and a series bible
+
+| الحقل | القيمة |
+|---|---|
+| العائلة | `atlas-docs` ([فصل العائلة](../../../.claude/skills/kosif-superpowers/references/powers/atlas-docs.md)) |
+| المجموعة | المستندات والكتابة (`documents`) |
+| نوع المخرج (A25، A27) | مستند وكتابة ومحتوى (`document`) |
+| الحالة في الكتالوج | 📄 `documented`: منهج موصوف يحتاج بناءً أو ربطًا قبل التشغيل |
+| سقف التحقق قبل العمل (A27) | V1 حتى تُبنى وتُشغَّل؛ لا تقدَّم جاهزة أبدًا |
+| نطاق الدليل | `url` |
+| الرخصة | card in our own words; the original skill folders are copied verbatim with their Apache-2.0 license and SOURCE.md under vendor/kosif-atlas |
+
+**ما هي:** مخطط كتاب مفصل بما يكفي لكتابة كل فصل دون اختراع بنية: لكل فصل غرض وحالة دخول وخروج للقارئ (والبطل)، وسحب يشد القارئ، ومحتوى (مشاهد أو ادعاءات بأدلة أو مفاهيم)، مع 'كتاب مرجعي' للشخصيات والمصطلحات والقواعد، وتحقق ونقطة موافقة المؤلف. — A chapter-by-chapter outline with entry/exit states and pull per chapter, plus a bible, validated and author-approved.
+
+**متى:** كتابة رواية أو كتاب غير قصصي أو تقني طويل، مسودات فصول تتناقض، قبل البدء في الكتابة / writing a novel, nonfiction or technical book, chapters contradicting each other
+
+**كيف:** 1) Read the brief, style guide, ideas and source index first. 2) For each chapter specify: working title, purpose (what it changes for the reader; two chapters with the same purpose means one is redundant), entry state and exit state (what the reader or protagonist knows, wants, fears, believes), the pull (question or tension carrying the reader), and content: 2–5 scene seeds for fiction (situation, turn, stakes), claims with source IDs and an anchoring story for nonfiction, concepts and the code arc for technical books. 3) Draw a pacing map across chapters. 4) Start the bible: characters, places, terms, rules of the world or the argument, timeline. 5) Validate structure (score and issues); revise once if weak, then surface remaining issues to the author instead of iterating blindly. 6) Stop for author approval with the shape, chapter list, pacing map and top three risks; record the approval date. Full original skill(s) with license: vendor/kosif-atlas/skills/1376-velith/3225-book-outline.
+
+**المعاملات:** brief, genre
+
+**التثبيت:** mkdir -p ~/.claude/skills && cp -r .claude/skills/kosif-superpowers/vendor/kosif-atlas/skills/1376-velith/3225-book-outline ~/.claude/skills/book-outline
+
+**الوسوم:** book writing · outline · novel · nonfiction · story structure · كتابة كتاب · مخطط
+
+#### 1. الاستقبال (A25)
+
+- الجمهور: افتراض مكتوب ← قارئ عام ذكي غير متخصص
+- النبرة واللهجة: افتراض مكتوب ← لغة الطلب ولهجته
+- الطول: افتراض مكتوب ← أقصر طول يحقق الغرض
+- الصيغة: افتراض مكتوب ← نص في الرد، أو مستند إن طُلب ملف
+- لا تُفترض أبدًا: مادة الإنتاج نفسها، والإذن بخطوة مدفوعة أو منشورة أو لا رجعة فيها، والهوية والحقوق.
+
+#### 2. الجاهزية والشارة (A28)
+
+- لا متطلبات مسجلة؛ افحص المسار والأداة بـ `hub.py doctor` قبل الشارة.
+- الوضع 1: شارة «هنا الآن» بعد الفحص، لا 📄 الكتالوج تلقائيًا · الوضع 2: `كتالوج: 📄 · هنا: غير مفحوص` · الوضع 3: بلا شارة ولا معرّف.
+
+#### 3. موضعها في الخطة (A26)
+
+- عقدة منمّطة: المدخل `brief` ← المخرج `document`، والمنفّذ `method:ADOCS-53` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
+- لا أداة مسجلة تخدم عائلتها: التنفيذ بالمكتبات أو بأداة من مجموعة أخرى.
+- مراحل النوع: الغرض والقارئ ← هيكل العناوين ← مسودة ← مراجعة الحقائق ← تحرير اللغة ← فتح الملف بصيغته ← تسليم.
+- إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
+
+#### 4. بوابة التحقق (A27)
+
+- إلزامي: يحقق الغرض في أول فقرة ← قراءة الافتتاح
+- إلزامي: عربية سليمة إملاءً ونحوًا ← مراجعة سطر بسطر
+- جودة: بلا حشو ولا عبارات عامة بلا مضمون ← think.py critic
+- إلزامي: كل رقم أو اسم أو تاريخ متحقق منه ← مصدر لكل حقيقة
+- إلزامي: الملف المطلوب يُفتح فعلًا بصيغته ← فتح الملف
+- أمر الحكم في الوضع 1: `think.py qa document --answers qa.json` (PASS / FAIL / INCOMPLETE).
+
+#### 5. التعافي (A29)
+
+- `missing_dependency` (اعتمادية مفقودة، ميزانية 2): سمِّ الاعتمادية بالضبط (حزمة، برنامج، خط، نموذج) ← ثبّت محليًا في بيئة العمل إن كان مجانيًا ومسموحًا (pip --user أو venv أو npm محلي) · البديل: مسار المكتبة القياسية أو أداة أخرى من نفس المجموعة · تصعيد: تثبيت نظامي أو مدفوع أو يحتاج مفتاحًا: توقف واسأل
+- `quality_below_threshold` (جودة دون العتبة، ميزانية 3): أي معيار فشل وبكم (المقيس مقابل العتبة) ← عالج السبب الأكبر وحده ثم أعد القياس · البديل: المنهج البديل المكتوب للمرحلة في الخطة · تصعيد: معيار إلزامي لا يتحقق بعد البديل: توقف وأبلغ بالأرقام
+
+#### 6. الأدلة
+
+- `https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/1376-velith/3225-book-outline`
+
+#### 7. قدرات قريبة في العائلة
+
+- `ADOCS-51` جولات CodeTour في الكود موجّهة لشخصية القارئ / Persona-targeted CodeTour walkthroughs with verified anchors (documented)
+- `ADOCS-52` تدقيق نصوص التعليمات الموجهة للنموذج: نواهٍ تلفت الانتباه وأمثلة تقيّد / LLM-facing prose audit: priming prohibitions and anchoring examples (documented)
+- `ADOCS-54` بناء ونشر كتاب: EPUB وPDF عبر Pandoc مع epubcheck وبيانات النشر / Book publishing build: EPUB/PDF via Pandoc, epubcheck and metadata (documented)
+- `ADOCS-55` نشر مجموعة رقمية بعد بوابتي الحقوق والحساسية الثقافية / Publish a digital collection through rights and cultural-sensitivity gates (documented)
+
+### `ADOCS-54` — بناء ونشر كتاب: EPUB وPDF عبر Pandoc مع epubcheck وبيانات النشر / Book publishing build: EPUB/PDF via Pandoc, epubcheck and metadata
+
+| الحقل | القيمة |
+|---|---|
+| العائلة | `atlas-docs` ([فصل العائلة](../../../.claude/skills/kosif-superpowers/references/powers/atlas-docs.md)) |
+| المجموعة | المستندات والكتابة (`documents`) |
+| نوع المخرج (A25، A27) | مستند وكتابة ومحتوى (`document`) |
+| الحالة في الكتالوج | 📄 `documented`: منهج موصوف يحتاج بناءً أو ربطًا قبل التشغيل |
+| سقف التحقق قبل العمل (A27) | V1 حتى تُبنى وتُشغَّل؛ لا تقدَّم جاهزة أبدًا |
+| نطاق الدليل | `url` |
+| الرخصة | card in our own words; the original skill folders are copied verbatim with their Apache-2.0 license and SOURCE.md under vendor/kosif-atlas |
+
+**ما هي:** يحول مسودات الكتاب النهائية إلى ملفات يقبلها الموزّع من أول رفع: بوابة جاهزية، بيانات وصفية، صفحات أمامية وخلفية (منها إفصاح استخدام الذكاء الاصطناعي حين يُطلب)، معالجة مسبقة للشعر والسيناريو والصور، بناء EPUB وPDF وغيرها بـPandoc، وفحص بـepubcheck. — Turns final drafts into distributor-ready files with front/back matter, pre-processing, Pandoc builds and epubcheck validation.
+
+**متى:** نشر كتاب على Kindle أو متاجر الكتب، تجهيز EPUB وPDF، رفض ملف من منصة نشر / publishing an e-book or print PDF, a rejected upload
+
+**كيف:** 1) Gate in: a readiness report says pass and every chapter is final; a forced override is recorded. 2) Write metadata (title, author, language, identifiers, description, keywords) and front matter (title, copyright with optional AI-assistance line, dedication, epigraph) and back matter (about the author, acknowledgements, further reading, glossary, source index). Some stores require AI-generated-text disclosure at upload. 3) Build from the final drafts, never from editing notes. 4) Pre-process: strip each chapter's YAML front matter into temp copies (concatenated blocks collide), add two trailing spaces to poem lines to keep breaks, monospace PDF without TOC for screenplays, drop a missing cover key with a note, and set --resource-path so images resolve (list files explicitly on Windows). 5) Run pandoc to EPUB, PDF and the other requested formats. 6) Validate the EPUB with epubcheck and open the PDF to check fonts, images and page breaks. 7) Produce title candidates, cover concepts and a launch checklist as separate notes. Full original skill(s) with license: vendor/kosif-atlas/skills/1376-velith/3227-book-publish.
+
+**المعاملات:** manuscript folder, formats
+
+**التثبيت:** mkdir -p ~/.claude/skills && cp -r .claude/skills/kosif-superpowers/vendor/kosif-atlas/skills/1376-velith/3227-book-publish ~/.claude/skills/book-publish
+
+**الوسوم:** publishing · EPUB · PDF · Pandoc · epubcheck · Kindle · نشر كتاب
+
+#### 1. الاستقبال (A25)
+
+- الجمهور: افتراض مكتوب ← قارئ عام ذكي غير متخصص
+- النبرة واللهجة: افتراض مكتوب ← لغة الطلب ولهجته
+- الطول: افتراض مكتوب ← أقصر طول يحقق الغرض
+- الصيغة: افتراض مكتوب ← نص في الرد، أو مستند إن طُلب ملف
+- لا تُفترض أبدًا: مادة الإنتاج نفسها، والإذن بخطوة مدفوعة أو منشورة أو لا رجعة فيها، والهوية والحقوق.
+
+#### 2. الجاهزية والشارة (A28)
+
+- `pandoc` ← افحص وجوده بأمر واحد قبل كتابة الشارة
+- الوضع 1: شارة «هنا الآن» بعد الفحص، لا 📄 الكتالوج تلقائيًا · الوضع 2: `كتالوج: 📄 · هنا: غير مفحوص` · الوضع 3: بلا شارة ولا معرّف.
+
+#### 3. موضعها في الخطة (A26)
+
+- عقدة منمّطة: المدخل `brief` ← المخرج `document`، والمنفّذ `method:ADOCS-54` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
+- لا أداة مسجلة تخدم عائلتها: التنفيذ بالمكتبات أو بأداة من مجموعة أخرى.
+- مراحل النوع: الغرض والقارئ ← هيكل العناوين ← مسودة ← مراجعة الحقائق ← تحرير اللغة ← فتح الملف بصيغته ← تسليم.
+- إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
+
+#### 4. بوابة التحقق (A27)
+
+- إلزامي: يحقق الغرض في أول فقرة ← قراءة الافتتاح
+- إلزامي: عربية سليمة إملاءً ونحوًا ← مراجعة سطر بسطر
+- جودة: بلا حشو ولا عبارات عامة بلا مضمون ← think.py critic
+- إلزامي: كل رقم أو اسم أو تاريخ متحقق منه ← مصدر لكل حقيقة
+- إلزامي: الملف المطلوب يُفتح فعلًا بصيغته ← فتح الملف
+- أمر الحكم في الوضع 1: `think.py qa document --answers qa.json` (PASS / FAIL / INCOMPLETE).
+
+#### 5. التعافي (A29)
+
+- `missing_dependency` (اعتمادية مفقودة، ميزانية 2): سمِّ الاعتمادية بالضبط (حزمة، برنامج، خط، نموذج) ← ثبّت محليًا في بيئة العمل إن كان مجانيًا ومسموحًا (pip --user أو venv أو npm محلي) · البديل: مسار المكتبة القياسية أو أداة أخرى من نفس المجموعة · تصعيد: تثبيت نظامي أو مدفوع أو يحتاج مفتاحًا: توقف واسأل
+- `quality_below_threshold` (جودة دون العتبة، ميزانية 3): أي معيار فشل وبكم (المقيس مقابل العتبة) ← عالج السبب الأكبر وحده ثم أعد القياس · البديل: المنهج البديل المكتوب للمرحلة في الخطة · تصعيد: معيار إلزامي لا يتحقق بعد البديل: توقف وأبلغ بالأرقام
+
+#### 6. الأدلة
+
+- `https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/1376-velith/3227-book-publish`
+
+#### 7. قدرات قريبة في العائلة
+
+- `ADOCS-52` تدقيق نصوص التعليمات الموجهة للنموذج: نواهٍ تلفت الانتباه وأمثلة تقيّد / LLM-facing prose audit: priming prohibitions and anchoring examples (documented)
+- `ADOCS-53` مخطط كتاب بمواصفة لكل فصل و'كتاب مرجعي' يحفظ الاتساق / Book outline with per-chapter specs and a series bible (documented)
+- `ADOCS-55` نشر مجموعة رقمية بعد بوابتي الحقوق والحساسية الثقافية / Publish a digital collection through rights and cultural-sensitivity gates (documented)
+
+### `ADOCS-55` — نشر مجموعة رقمية بعد بوابتي الحقوق والحساسية الثقافية / Publish a digital collection through rights and cultural-sensitivity gates
+
+| الحقل | القيمة |
+|---|---|
+| العائلة | `atlas-docs` ([فصل العائلة](../../../.claude/skills/kosif-superpowers/references/powers/atlas-docs.md)) |
+| المجموعة | المستندات والكتابة (`documents`) |
+| نوع المخرج (A25، A27) | مستند وكتابة ومحتوى (`document`) |
+| الحالة في الكتالوج | 📄 `documented`: منهج موصوف يحتاج بناءً أو ربطًا قبل التشغيل |
+| سقف التحقق قبل العمل (A27) | V1 حتى تُبنى وتُشغَّل؛ لا تقدَّم جاهزة أبدًا |
+| نطاق الدليل | `url` |
+| الرخصة | card in our own words; the original skill folders are copied verbatim with their MIT license and SOURCE.md under vendor/kosif-atlas |
+
+**ما هي:** قبل نشر مقتنيات أو أرشيف على الإنترنت: بوابة حقوق (ملك عام، أو حقوق مُصرّح بها، أو غير مصرح فلا يُنشر إلا وصف وصورة مصغرة)، ثم بوابة حساسية ثقافية بالتشاور مع المجتمع المصدر، ثم قرار الوصول المفتوح أو المقيد بترخيص واضح، والبنية التقنية للنشر. — Rights gate, then community-consultation sensitivity gate, then the open-vs-restricted decision and the publishing stack.
+
+**متى:** متحف أو مكتبة أو أرشيف يريد نشر مجموعته رقميًا، مواد حساسة ثقافيًا أو دينيًا، اختيار CC0 أم ترخيص مقيد / a museum, library or archive publishing a collection online
+
+**كيف:** 1) Rights gate per item: public domain (openness possible), in copyright with rights held or cleared (publish under a licence), in copyright and not cleared (metadata and thumbnail only until cleared). Never publish a full image you have not cleared. 2) Sensitivity gate: culturally or religiously sensitive or community-restricted material needs consultation with the source community, traditional-knowledge labels and restriction or context as they advise; this can override public-domain status. 3) Where rights and sensitivity allow, default toward openness (CC0 or CC-BY); otherwise publish under a clear licence with access terms and standard rights statements. 4) Choose the stack: digital asset management, an online catalogue, IIIF image delivery, and virtual exhibitions where useful. 5) Record decisions per item so they can be audited and revisited. Full original skill(s) with license: vendor/kosif-atlas/skills/2342-museum-cultural-institution-operations/9003-publish-digital-collections-and-access.
+
+**المعاملات:** collection, rights data
+
+**التثبيت:** mkdir -p ~/.claude/skills && cp -r .claude/skills/kosif-superpowers/vendor/kosif-atlas/skills/2342-museum-cultural-institution-operations/9003-publish-digital-collections-and-access ~/.claude/skills/publish-digital-collections-and-access
+
+**الوسوم:** digital collections · copyright · open access · IIIF · museum · archive · حقوق النشر · أرشيف رقمي
+
+#### 1. الاستقبال (A25)
+
+- الجمهور: افتراض مكتوب ← قارئ عام ذكي غير متخصص
+- النبرة واللهجة: افتراض مكتوب ← لغة الطلب ولهجته
+- الطول: افتراض مكتوب ← أقصر طول يحقق الغرض
+- الصيغة: افتراض مكتوب ← نص في الرد، أو مستند إن طُلب ملف
+- لا تُفترض أبدًا: مادة الإنتاج نفسها، والإذن بخطوة مدفوعة أو منشورة أو لا رجعة فيها، والهوية والحقوق.
+
+#### 2. الجاهزية والشارة (A28)
+
+- لا متطلبات مسجلة؛ افحص المسار والأداة بـ `hub.py doctor` قبل الشارة.
+- الوضع 1: شارة «هنا الآن» بعد الفحص، لا 📄 الكتالوج تلقائيًا · الوضع 2: `كتالوج: 📄 · هنا: غير مفحوص` · الوضع 3: بلا شارة ولا معرّف.
+
+#### 3. موضعها في الخطة (A26)
+
+- عقدة منمّطة: المدخل `brief` ← المخرج `document`، والمنفّذ `method:ADOCS-55` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
+- لا أداة مسجلة تخدم عائلتها: التنفيذ بالمكتبات أو بأداة من مجموعة أخرى.
+- مراحل النوع: الغرض والقارئ ← هيكل العناوين ← مسودة ← مراجعة الحقائق ← تحرير اللغة ← فتح الملف بصيغته ← تسليم.
+- إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
+
+#### 4. بوابة التحقق (A27)
+
+- إلزامي: يحقق الغرض في أول فقرة ← قراءة الافتتاح
+- إلزامي: عربية سليمة إملاءً ونحوًا ← مراجعة سطر بسطر
+- جودة: بلا حشو ولا عبارات عامة بلا مضمون ← think.py critic
+- إلزامي: كل رقم أو اسم أو تاريخ متحقق منه ← مصدر لكل حقيقة
+- إلزامي: الملف المطلوب يُفتح فعلًا بصيغته ← فتح الملف
+- أمر الحكم في الوضع 1: `think.py qa document --answers qa.json` (PASS / FAIL / INCOMPLETE).
+
+#### 5. التعافي (A29)
+
+- `missing_dependency` (اعتمادية مفقودة، ميزانية 2): سمِّ الاعتمادية بالضبط (حزمة، برنامج، خط، نموذج) ← ثبّت محليًا في بيئة العمل إن كان مجانيًا ومسموحًا (pip --user أو venv أو npm محلي) · البديل: مسار المكتبة القياسية أو أداة أخرى من نفس المجموعة · تصعيد: تثبيت نظامي أو مدفوع أو يحتاج مفتاحًا: توقف واسأل
+- `quality_below_threshold` (جودة دون العتبة، ميزانية 3): أي معيار فشل وبكم (المقيس مقابل العتبة) ← عالج السبب الأكبر وحده ثم أعد القياس · البديل: المنهج البديل المكتوب للمرحلة في الخطة · تصعيد: معيار إلزامي لا يتحقق بعد البديل: توقف وأبلغ بالأرقام
+
+#### 6. الأدلة
+
+- `https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/2342-museum-cultural-institution-operations/9003-publish-digital-collections-and-access`
+
+#### 7. قدرات قريبة في العائلة
+
+- `ADOCS-53` مخطط كتاب بمواصفة لكل فصل و'كتاب مرجعي' يحفظ الاتساق / Book outline with per-chapter specs and a series bible (documented)
+- `ADOCS-54` بناء ونشر كتاب: EPUB وPDF عبر Pandoc مع epubcheck وبيانات النشر / Book publishing build: EPUB/PDF via Pandoc, epubcheck and metadata (documented)
 

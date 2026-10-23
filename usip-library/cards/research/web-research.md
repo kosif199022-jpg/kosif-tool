@@ -1,4 +1,4 @@
-# `web-research` — البحث والمعرفة (24 بطاقة)
+# `web-research` — البحث والمعرفة (26 بطاقة)
 
 > مكتبة بروتوكول USIP v5.6 الكاملة، مولّدة بـ `smart_capabilities.py cards` من `data/powers/web-research.json` وقواعد الملاحق A25–A29؛ لا تُحرَّر يدويًا. [الفهرس الرئيسي](../../README.md) · [فصل المجموعة](../../../.claude/skills/kosif-superpowers/references/library/research.md) · [النواة](../../../.claude/skills/kosif-superpowers/PROTOCOL.md)
 
@@ -28,6 +28,8 @@
 - [`WEB-22` Crawl4AI: عرض صفحات JavaScript وتحويلها إلى Markdown جاهز](#web-22--crawl4ai-عرض-صفحات-javascript-وتحويلها-إلى-markdown-جاهز--crawl4ai-render-js-pages-and-convert-them-to-llm-ready-markdown)
 - [`WEB-23` Trafilatura: استخراج نص المقال الرئيسي وبياناته من HTML](#web-23--trafilatura-استخراج-نص-المقال-الرئيسي-وبياناته-من-html--trafilatura-extract-main-article-text-and-metadata-from-html-dropping-boilerplate-arabic-works)
 - [`WEB-24` browser-use: قيادة متصفح بلا واجهة لإنجاز مهام ويب](#web-24--browser-use-قيادة-متصفح-بلا-واجهة-لإنجاز-مهام-ويب--browser-use-drive-a-headless-browser-through-multi-step-web-tasks-from-a-goal)
+- [`WEB-25` بحث بوجهات نظر ثم مخطط ثم كتابة بمصادر](#web-25--بحث-بوجهات-نظر-ثم-مخطط-ثم-كتابة-بمصادر--perspective-guided-research-outline-then-cited-writing)
+- [`WEB-26` مخطِّط وباحثون متوازيون ثم تقرير](#web-26--مخطِّط-وباحثون-متوازيون-ثم-تقرير--planner-parallel-researchers-then-report)
 
 ## البطاقات / cards
 
@@ -1584,6 +1586,7 @@
 - `WEB-21` Scrapy: كتابة زاحف مهذب يحترم robots.txt يجمع موقعًا / Scrapy: Write a polite spider (robots.txt respected) that crawls a permitted site into JSON (install)
 - `WEB-22` Crawl4AI: عرض صفحات JavaScript وتحويلها إلى Markdown جاهز / Crawl4AI: Render JS pages and convert them to LLM-ready Markdown (install)
 - `WEB-24` browser-use: قيادة متصفح بلا واجهة لإنجاز مهام ويب / browser-use: Drive a headless browser through multi-step web tasks from a goal (key)
+- `WEB-25` بحث بوجهات نظر ثم مخطط ثم كتابة بمصادر / Perspective-guided research, outline, then cited writing (documented)
 
 ### `WEB-24` — browser-use: قيادة متصفح بلا واجهة لإنجاز مهام ويب / browser-use: Drive a headless browser through multi-step web tasks from a goal
 
@@ -1652,4 +1655,135 @@
 
 - `WEB-22` Crawl4AI: عرض صفحات JavaScript وتحويلها إلى Markdown جاهز / Crawl4AI: Render JS pages and convert them to LLM-ready Markdown (install)
 - `WEB-23` Trafilatura: استخراج نص المقال الرئيسي وبياناته من HTML / Trafilatura: Extract main article text and metadata from HTML, dropping boilerplate (Arabic works) (proven)
+- `WEB-25` بحث بوجهات نظر ثم مخطط ثم كتابة بمصادر / Perspective-guided research, outline, then cited writing (documented)
+- `WEB-26` مخطِّط وباحثون متوازيون ثم تقرير / Planner, parallel researchers, then report (documented)
+
+### `WEB-25` — بحث بوجهات نظر ثم مخطط ثم كتابة بمصادر / Perspective-guided research, outline, then cited writing
+
+| الحقل | القيمة |
+|---|---|
+| العائلة | `web-research` ([فصل العائلة](../../../.claude/skills/kosif-superpowers/references/powers/web-research.md)) |
+| المجموعة | البحث والمعرفة (`research`) |
+| نوع المخرج (A25، A27) | بحث وتقرير ومقارنة (`research`) |
+| الحالة في الكتالوج | 📄 `documented`: منهج موصوف يحتاج بناءً أو ربطًا قبل التشغيل |
+| سقف التحقق قبل العمل (A27) | V1 حتى تُبنى وتُشغَّل؛ لا تقدَّم جاهزة أبدًا |
+| نطاق الدليل | `none` |
+| الرخصة | MIT |
+
+**ما هي:** اكتشف وجهات النظر حول الموضوع، واسأل من كل وجهة أسئلة يجيب عنها بحث حقيقي، واجمع المقاطع بمصادرها، ثم ابنِ المخطط، ثم اكتب كل قسم بمراجعه. — Discover the perspectives on a topic, ask questions from each perspective answered by real search, collect cited snippets, build the outline, then write each section with its references.
+
+**متى:** تقرير أو مقال شامل عن موضوع / a comprehensive report or article on a topic
+
+**كيف:** 1 survey related articles to list 3-6 perspectives (historian, engineer, critic, user …); 2 per perspective run a writer↔expert loop of 3-5 questions, each answered from search results with URLs; 3 dedupe snippets; 4 draft the outline from the snippets, not from memory; 5 write section by section citing snippet ids; 6 check every claim maps to a snippet (A6). Unanswered questions become 'open questions', not invented answers.
+
+**التثبيت:** لا خطوة تثبيت مسجلة
+
+**الوسوم:** storm · perspectives · outline · citations · research report · بحث · وجهات نظر · مراجع
+
+#### 1. الاستقبال (A25)
+
+- النطاق والسؤال الدقيق: افتراض مكتوب ← السؤال كما كُتب مع حدود مكتوبة
+- حداثة المصادر: افتراض مكتوب ← آخر 24 شهرًا للحقائق المتغيرة
+- الطول والعمق: افتراض مكتوب ← خلاصة في أعلى الصفحة ثم تفصيل
+- لا تُفترض أبدًا: مادة الإنتاج نفسها، والإذن بخطوة مدفوعة أو منشورة أو لا رجعة فيها، والهوية والحقوق.
+
+#### 2. الجاهزية والشارة (A28)
+
+- لا متطلبات مسجلة؛ افحص المسار والأداة بـ `hub.py doctor` قبل الشارة.
+- الوضع 1: شارة «هنا الآن» بعد الفحص، لا 📄 الكتالوج تلقائيًا · الوضع 2: `كتالوج: 📄 · هنا: غير مفحوص` · الوضع 3: بلا شارة ولا معرّف.
+
+#### 3. موضعها في الخطة (A26)
+
+- عقدة منمّطة: المدخل `brief` ← المخرج `report`، والمنفّذ `method:WEB-25` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `atlas-body-audit` · `atlas-external-bridge` · `browser-scout` · `creative-external-search` · `github-top-repos` · `source-scout`.
+- مراحل النوع: السؤال والنطاق ← مصادر بتواريخها ← حقائق بمراجعها ← تركيب ورأي مخالف ← تدقيق ادعاء ← دليل ← تسليم.
+- إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
+
+#### 4. بوابة التحقق (A27)
+
+- إلزامي: كل حقيقة غير بديهية لها مصدر مفتوح فعلًا ← رابط لكل ادعاء
+- إلزامي: تاريخ كل معلومة متغيرة مكتوب ← مراجعة
+- جودة: أقوى رأي مخالف مذكور ومردود عليه ← قسم الاعتراضات
+- جودة: الجواب في أول سطرين ← قراءة الافتتاح
+- إلزامي: ما لم يُعرف أو لم يُفتح مكتوب صراحة ← قسم الحدود
+- أمر الحكم في الوضع 1: `think.py qa research --answers qa.json` (PASS / FAIL / INCOMPLETE).
+
+#### 5. التعافي (A29)
+
+- `quality_below_threshold` (جودة دون العتبة، ميزانية 3): أي معيار فشل وبكم (المقيس مقابل العتبة) ← عالج السبب الأكبر وحده ثم أعد القياس · البديل: المنهج البديل المكتوب للمرحلة في الخطة · تصعيد: معيار إلزامي لا يتحقق بعد البديل: توقف وأبلغ بالأرقام
+- `tool_error` (خطأ أداة، ميزانية 3): اقرأ آخر سطر في الخطأ ثم أول سطر من كودك فيه ← أصلح السبب المثبت وحده، ثم شغّل الاختبار المتعلق · البديل: أداة أخرى أو مسار يدوي للمرحلة نفسها · تصعيد: خطأ في أداة خارجية لا تملكها: بلّغ بإعادة الإنتاج ولا تخفه
+
+#### 6. الأدلة
+
+- لا دليل مسجل: لا تُقدَّم أكثر من منهج.
+
+#### 7. قدرات قريبة في العائلة
+
+- `WEB-23` Trafilatura: استخراج نص المقال الرئيسي وبياناته من HTML / Trafilatura: Extract main article text and metadata from HTML, dropping boilerplate (Arabic works) (proven)
+- `WEB-24` browser-use: قيادة متصفح بلا واجهة لإنجاز مهام ويب / browser-use: Drive a headless browser through multi-step web tasks from a goal (key)
+- `WEB-26` مخطِّط وباحثون متوازيون ثم تقرير / Planner, parallel researchers, then report (documented)
+
+### `WEB-26` — مخطِّط وباحثون متوازيون ثم تقرير / Planner, parallel researchers, then report
+
+| الحقل | القيمة |
+|---|---|
+| العائلة | `web-research` ([فصل العائلة](../../../.claude/skills/kosif-superpowers/references/powers/web-research.md)) |
+| المجموعة | البحث والمعرفة (`research`) |
+| نوع المخرج (A25، A27) | بحث وتقرير ومقارنة (`research`) |
+| الحالة في الكتالوج | 📄 `documented`: منهج موصوف يحتاج بناءً أو ربطًا قبل التشغيل |
+| سقف التحقق قبل العمل (A27) | V1 حتى تُبنى وتُشغَّل؛ لا تقدَّم جاهزة أبدًا |
+| نطاق الدليل | `none` |
+| الرخصة | Apache-2.0 |
+
+**ما هي:** قسّم السؤال إلى أسئلة فرعية، ووزعها على باحثين متوازيين يبحث كل منهم ويلخص بمصادره، ثم يجمع محرر واحد التقرير بقائمة مصادر. — Split the question into sub-questions, give each to a parallel researcher that searches and summarises with sources, then one editor writes the report with a source list.
+
+**متى:** سؤال بحثي واسع يحتاج سرعة / a broad research question that needs speed
+
+**كيف:** Planner: 3-6 non-overlapping sub-questions + what a good answer needs. Researcher: ≤N sources each, summary with quotes and URLs, flags conflicts. Editor: merges, resolves or reports conflicts, writes the answer first then the detail, ends with the source list. Budget the sources and stop; a researcher that finds nothing says so.
+
+**التثبيت:** لا خطوة تثبيت مسجلة
+
+**الوسوم:** gpt-researcher · deep research · parallel · planner · report · بحث عميق · باحثون متوازيون
+
+#### 1. الاستقبال (A25)
+
+- النطاق والسؤال الدقيق: افتراض مكتوب ← السؤال كما كُتب مع حدود مكتوبة
+- حداثة المصادر: افتراض مكتوب ← آخر 24 شهرًا للحقائق المتغيرة
+- الطول والعمق: افتراض مكتوب ← خلاصة في أعلى الصفحة ثم تفصيل
+- لا تُفترض أبدًا: مادة الإنتاج نفسها، والإذن بخطوة مدفوعة أو منشورة أو لا رجعة فيها، والهوية والحقوق.
+
+#### 2. الجاهزية والشارة (A28)
+
+- لا متطلبات مسجلة؛ افحص المسار والأداة بـ `hub.py doctor` قبل الشارة.
+- الوضع 1: شارة «هنا الآن» بعد الفحص، لا 📄 الكتالوج تلقائيًا · الوضع 2: `كتالوج: 📄 · هنا: غير مفحوص` · الوضع 3: بلا شارة ولا معرّف.
+
+#### 3. موضعها في الخطة (A26)
+
+- عقدة منمّطة: المدخل `brief` ← المخرج `report`، والمنفّذ `method:WEB-26` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `atlas-body-audit` · `atlas-external-bridge` · `browser-scout` · `creative-external-search` · `github-top-repos` · `source-scout`.
+- مراحل النوع: السؤال والنطاق ← مصادر بتواريخها ← حقائق بمراجعها ← تركيب ورأي مخالف ← تدقيق ادعاء ← دليل ← تسليم.
+- إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
+
+#### 4. بوابة التحقق (A27)
+
+- إلزامي: كل حقيقة غير بديهية لها مصدر مفتوح فعلًا ← رابط لكل ادعاء
+- إلزامي: تاريخ كل معلومة متغيرة مكتوب ← مراجعة
+- جودة: أقوى رأي مخالف مذكور ومردود عليه ← قسم الاعتراضات
+- جودة: الجواب في أول سطرين ← قراءة الافتتاح
+- إلزامي: ما لم يُعرف أو لم يُفتح مكتوب صراحة ← قسم الحدود
+- أمر الحكم في الوضع 1: `think.py qa research --answers qa.json` (PASS / FAIL / INCOMPLETE).
+
+#### 5. التعافي (A29)
+
+- `quality_below_threshold` (جودة دون العتبة، ميزانية 3): أي معيار فشل وبكم (المقيس مقابل العتبة) ← عالج السبب الأكبر وحده ثم أعد القياس · البديل: المنهج البديل المكتوب للمرحلة في الخطة · تصعيد: معيار إلزامي لا يتحقق بعد البديل: توقف وأبلغ بالأرقام
+- `tool_error` (خطأ أداة، ميزانية 3): اقرأ آخر سطر في الخطأ ثم أول سطر من كودك فيه ← أصلح السبب المثبت وحده، ثم شغّل الاختبار المتعلق · البديل: أداة أخرى أو مسار يدوي للمرحلة نفسها · تصعيد: خطأ في أداة خارجية لا تملكها: بلّغ بإعادة الإنتاج ولا تخفه
+
+#### 6. الأدلة
+
+- لا دليل مسجل: لا تُقدَّم أكثر من منهج.
+
+#### 7. قدرات قريبة في العائلة
+
+- `WEB-24` browser-use: قيادة متصفح بلا واجهة لإنجاز مهام ويب / browser-use: Drive a headless browser through multi-step web tasks from a goal (key)
+- `WEB-25` بحث بوجهات نظر ثم مخطط ثم كتابة بمصادر / Perspective-guided research, outline, then cited writing (documented)
 

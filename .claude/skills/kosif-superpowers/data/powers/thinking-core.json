@@ -1428,5 +1428,36 @@
   ],
   "section": "Cognition layer",
   "source": "kosif-tool/.claude/skills/kosif-superpowers/references/cognition.md"
+ },
+ {
+  "id": "THINK-47",
+  "family": "thinking-core",
+  "domain": "mind",
+  "name_ar": "مجلس بتقييم متبادل مجهول الهوية",
+  "name_en": "Anonymous peer-ranked council",
+  "status": "documented",
+  "what": "عدة نماذج تجيب، ثم كل نموذج يرتب إجابات الآخرين بعد إخفاء أصحابها، ثم رئيس يكتب الإجابة النهائية مستعينًا بالترتيب. — Several models answer, each ranks the others' answers with authors hidden, then a chair writes the final answer using the rankings.",
+  "when": "سؤال صعب تريد له أكثر من رأي / a hard question that deserves more than one view",
+  "how": "Stage 1: N independent answers (different models or framings). Stage 2: label them A, B, C… in shuffled order; each member ranks all but its own with one line per rank. Stage 3: aggregate (Borda count), the chair synthesises from the top answers and states remaining disagreement. Shuffle order per member to cancel position bias (PROMPT-41). In this skill the five-lane version is scripts/council.py. Licence of the source not stated: idea only.",
+  "params": "",
+  "install": "",
+  "requires": [
+   "python3"
+  ],
+  "license": "none (idea only)",
+  "proof": [],
+  "proof_scope": "none",
+  "styles": [],
+  "tags": [
+   "llm council",
+   "peer review",
+   "ranking",
+   "borda",
+   "synthesis",
+   "مجلس",
+   "تقييم متبادل"
+  ],
+  "section": "أكبر مستودعات GitHub — Top GitHub repositories (2026-10-23)",
+  "source": "https://github.com/karpathy/llm-council (no licence detected; referenced, idea restated in our own words, nothing copied)"
  }
 ]

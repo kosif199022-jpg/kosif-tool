@@ -3,13 +3,13 @@
 
 > **قوتك هنا / what this gives you:** بناء صفحات وتطبيقات ولوحات تفاعلية ومعاينتها ونشرها. — Build, preview and publish interactive pages, apps and dashboards.
 > **أقوى دليل / strongest evidence:** **APP-04** Dependency-free RTL dashboard page (`kosif-tool/.claude/skills/kosif-superpowers/proofs/general-data/README.md`) · **APP-05** Phone-viewport screenshot + overflow check (`kosif-tool/.claude/skills/kosif-superpowers/proofs/general-data/README.md`)
-> **23 powers follow** — ✅ 6 · 🟢 0 · 📦 7 · 🔑 5 · 👁 0 · 📄 5 · 💡 0.
+> **27 powers follow** — ✅ 6 · 🟢 0 · 📦 7 · 🔑 5 · 👁 0 · 📄 9 · 💡 0.
 
 **الحالة / status:** ✅ مُثبت (شُغّل فعلًا وله مسار دليل) · 🟢 جاهز (كود موجود يعمل بما هو متاح عادة) · 📦 بأمر تثبيت واحد · 🔑 يحتاج مفتاحًا أو حسابًا أو موصلًا · 👁 شوهد في فيديو مرجعي (للموشن فقط) · 📄 طريقة موثقة · 💡 فكرة. الشارة هي أدنى مستوى صادق — the badge is the lowest level that is true.
 مسارات الدليل نسبية إلى `/home/user/`؛ و`session-<date>:<file>#<section>` تشير إلى تشغيل موثق في جلسة سابقة؛ و`owner-upload:` إلى ملف داخل أرشيف أرسله المالك. Proof paths are relative to `/home/user/`.
 
 **المجال / domain:** التطبيقات والواجهات — Apps & artifacts · **البادئة / prefix:** `APP` · **البيانات / data:** `data/powers/apps-artifacts.json` · **بحث / search:** `python3 scripts/powers.py family apps-artifacts`
-**مراجع ذات صلة / related references:** [CLAUDE_3_MINUTE_MAP.md](../CLAUDE_3_MINUTE_MAP.md) · [creativity.md](../creativity.md) · [hubs.md](../hubs.md) · [method-packs.md](../method-packs.md)
+**مراجع ذات صلة / related references:** [CLAUDE_3_MINUTE_MAP.md](../CLAUDE_3_MINUTE_MAP.md) · [creativity.md](../creativity.md) · [every-joule-study-20261023.md](../every-joule-study-20261023.md) · [hubs.md](../hubs.md) · [lesson-integrity-methods.md](../lesson-integrity-methods.md) · [method-packs.md](../method-packs.md)
 
 ## الفهرس / contents
 
@@ -18,6 +18,7 @@
 - **الخوادم والوكلاء — Servers & agents** — APP-09 … APP-14 (6)
 - **منهج التصميم والجودة — Design & quality method** — APP-15 … APP-19 (5)
 - **Extended toolbelt (2026-10-18)** — APP-20 … APP-23 (4)
+- **صفحات الدروس التفاعلية — Interactive lesson pages** — APP-24 … APP-27 (4)
 - المصادر والرخص / sources & licences
 
 ## الصفحات المنشورة — Published pages (Artifacts)
@@ -233,9 +234,46 @@
 - **الدليل / proof:** — (لا دليل تشغيل بعد / no run proof yet)
 - **المصدر / source:** https://github.com/pa11y/pa11y
 
+## صفحات الدروس التفاعلية — Interactive lesson pages
+
+#### APP-24 · تحدٍّ قابل للحل قبل عرضه · Check an interactive challenge is solvable before posing it · 📄 موصوف / documented only
+- **ماذا / what:** الهدف يُولّد من نموذج الدرس نفسه ويُفحص أنه ممكن ضمن حدود الأدوات، وإلا يقول الدرس صراحة إنه غير ممكن. — The target comes from the lesson's own model and is checked reachable within the controls' limits; otherwise the lesson says plainly it cannot be reached.
+- **متى أستخدمها / when:** درس أو لعبة تعليمية فيها هدف رقمي / a lesson or learning game with a numeric goal
+- **كيف / how:** Sweep the control range through the model (drop height → second bounce peak) and keep the target only if some setting meets it within tolerance; store {met, value, target, tolerance, possible} and word the prompt from 'possible'. Card EJ-07.
+- **الرخصة / license:** owner
+- **الدليل / proof:** — (لا دليل تشغيل بعد / no run proof yet)
+- **المصدر / source:** https://github.com/iamtechartist/every-joule-lesson1 (no licence: methods only, no files copied); references/lesson-integrity-methods.md
+
+#### APP-25 · مقياس 1-2-5 وتعريف بطولين · A 1-2-5 gauge scale and a two-length glossary · 📄 موصوف / documented only
+- **ماذا / what:** سعة العدّاد = أصغر 1 أو 2 أو 5 × 10ⁿ تملؤها القيمة 90% على الأكثر؛ ولكل مصطلح تعريف كامل وتعريف قصير للتلميح. — Gauge capacity is the smallest 1, 2 or 5 x 10^n the value fills to at most 90%; each term has a full and a short definition.
+- **متى أستخدمها / when:** عدّادات ومخازن وأشرطة في درس أو لوحة / gauges, jars and bars in a lesson or dashboard
+- **كيف / how:** python3 scripts/lesson_integrity.py scale 14.7 → capacity 20, fill 0.735 (--headroom to change 0.9). Keep glossary entries as {long, short}: long for the page, short for tooltips and captions. Cards EJ-08, EJ-10.
+- **يحتاج / needs:** [`python3`](../requirements.md#req-python3)
+- **الرخصة / license:** owner
+- **الدليل / proof:** `kosif-tool/.claude/skills/kosif-superpowers/evals/test_lesson_integrity.py`
+- **المصدر / source:** https://github.com/iamtechartist/every-joule-lesson1 (no licence: methods only, no files copied); references/lesson-integrity-methods.md
+
+#### APP-26 · مؤثرات من تسجيلات حقيقية في ملف واحد · One sound sprite cut from real CC0 recordings · 📄 موصوف / documented only
+- **ماذا / what:** كل المؤثرات في ملف واحد مضبوط الجهارة مع قائمة مناطق وعلامة محاذاة وجدول اعتمادات برخصة كل مؤثر. — Every effect in one loudness-matched file with a region manifest, an alignment marker and a credits table naming each cue's licence.
+- **متى أستخدمها / when:** صوت لصفحة تفاعلية أو درس أو لعبة / sound for an interactive page, lesson or game
+- **كيف / how:** sounds.json {file, sampleRate, marker, sounds:{cue:{loop, variants:[[start,len]], layers?}}} plus CREDITS.md with one row per cue and its licence; keep source checksums. python3 scripts/lesson_integrity.py sprite --manifest sounds.json --credits CREDITS.md --duration <s> checks overlap, file length and allowed licences. Card EJ-11.
+- **يحتاج / needs:** [`python3`](../requirements.md#req-python3)
+- **الرخصة / license:** owner
+- **الدليل / proof:** `kosif-tool/.claude/skills/kosif-superpowers/evals/test_lesson_integrity.py`
+- **المصدر / source:** https://github.com/iamtechartist/every-joule-lesson1 (no licence: methods only, no files copied); references/lesson-integrity-methods.md
+
+#### APP-27 · تفضيلات الحركة والعرض وشاشة تحميل فورية · Motion and display preferences and an inline loader · 📄 موصوف / documented only
+- **ماذا / what:** احترام تقليل الحركة ووضع ثابت محفوظ ووضع بروجكتر وبديل نصي حين يفشل WebGL أو JavaScript ورابط تخطٍّ، وCSS شاشة التحميل داخل الصفحة. — Honour reduced motion, a remembered still mode, a projector mode, a text path when WebGL or JavaScript fails, a skip link, and inline loader CSS.
+- **متى أستخدمها / when:** صفحة تعليمية أو أرتيفاكت سيُعرض في فصل / a lesson page or artifact shown in a classroom
+- **كيف / how:** @media (prefers-reduced-motion) plus a body.still class saved in localStorage inside try/catch; a projector toggle (larger type, stronger contrast); #nogl and <noscript> panels that point to the text version; a .sr skip link that appears on focus; critical loader CSS inline using the same font files the page loads later. Cards EJ-12, EJ-13.
+- **يحتاج / needs:** [`npm:three`](../requirements.md#req-npm-three)
+- **الرخصة / license:** owner
+- **الدليل / proof:** — (لا دليل تشغيل بعد / no run proof yet)
+- **المصدر / source:** https://github.com/iamtechartist/every-joule-lesson1 (no licence: methods only, no files copied); references/lesson-integrity-methods.md
+
 ## المصادر والرخص / sources & licences
 
-- الرخص / licences: — (11) · MIT (4) · Apache-2.0 (3) · BSD-3-Clause (1) · GPL-2.0 (1) · LGPL-3.0 (1) · MIT (python SDKs); see README for @anthropic-ai/claude-agent-sdk (1) · MPL-2.0 (1)
+- الرخص / licences: — (11) · MIT (4) · owner (4) · Apache-2.0 (3) · BSD-3-Clause (1) · GPL-2.0 (1) · LGPL-3.0 (1) · MIT (python SDKs); see README for @anthropic-ai/claude-agent-sdk (1) · MPL-2.0 (1)
 - الأفكار مكتوبة بكلماتنا مع رابط المصدر؛ لا يُنسخ نص طرف ثالث طويل. Ideas are paraphrased with a link to the source; no long third-party text is copied. `—` = no licence recorded (own method or own wording).
 
 ---

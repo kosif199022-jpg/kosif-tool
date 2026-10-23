@@ -23,10 +23,10 @@
 | الحالة | العدد | المعنى |
 |---|---:|---|
 | `proven` | 32 | ✅ proven: a proof exists in the catalog; still check its requirements here before calling it ready |
-| `documented` | 94 | 📄 documented: a described method; needs building or wiring before it runs |
+| `documented` | 99 | 📄 documented: a described method; needs building or wiring before it runs |
 | `install` | 8 | 📦 install: needs a package, binary or model first |
 | `key` | 4 | 🔑 key: needs an account, key or paid service (ask before any spend) |
-| **المجموع** | **138** | |
+| **المجموع** | **143** | |
 
 ## الأدوات القابلة للتشغيل / runnable tools
 
@@ -42,7 +42,7 @@
 | العائلة | القدرات | الفصل |
 |---|---:|---|
 | `atlas-craft` | 26 | [atlas-craft.md](../powers/atlas-craft.md) |
-| `atlas-docs` | 50 | [atlas-docs.md](../powers/atlas-docs.md) |
+| `atlas-docs` | 55 | [atlas-docs.md](../powers/atlas-docs.md) |
 | `documents-office` | 34 | [documents-office.md](../powers/documents-office.md) |
 | `writing-humanizer` | 28 | [writing-humanizer.md](../powers/writing-humanizer.md) |
 
@@ -160,6 +160,11 @@
 | `ADOCS-48` | عروض تقديمية للمطورين بـ Slidev من Markdown | Developer slide decks in Markdown with Slidev | documented | chromium, latex, pip:office, npm:mermaid |
 | `ADOCS-49` | كتابة README يجذب المطور في ثلاث ثوانٍ ويشغله في دقيقة | README that hooks in 3 seconds and runs in 60 | documented | npm:mermaid |
 | `ADOCS-50` | تعليقات الكود الملائمة: معلومة لا يحملها الكود | Appropriate code comments: information the code cannot carry | documented |  |
+| `ADOCS-51` | جولات CodeTour في الكود موجّهة لشخصية القارئ | Persona-targeted CodeTour walkthroughs with verified anchors | documented |  |
+| `ADOCS-52` | تدقيق نصوص التعليمات الموجهة للنموذج: نواهٍ تلفت الانتباه وأمثلة تقيّد | LLM-facing prose audit: priming prohibitions and anchoring examples | documented |  |
+| `ADOCS-53` | مخطط كتاب بمواصفة لكل فصل و'كتاب مرجعي' يحفظ الاتساق | Book outline with per-chapter specs and a series bible | documented |  |
+| `ADOCS-54` | بناء ونشر كتاب: EPUB وPDF عبر Pandoc مع epubcheck وبيانات النشر | Book publishing build: EPUB/PDF via Pandoc, epubcheck and metadata | documented | pandoc |
+| `ADOCS-55` | نشر مجموعة رقمية بعد بوابتي الحقوق والحساسية الثقافية | Publish a digital collection through rights and cultural-sensitivity gates | documented |  |
 | `DOC-24` | مراجعة المستند قبل التسليم | Document delivery gate | documented |  |
 | `WRITE-01` | سؤال واحد لكل جملة: هل تضيف جديدًا للقارئ؟ | One-question causal model for every sentence | documented |  |
 | `WRITE-06` | إعادة الصياغة في أربع خطوات | Four-step rewrite: mark, draft, check, final | documented | python3 |

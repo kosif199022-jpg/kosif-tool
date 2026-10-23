@@ -1,4 +1,4 @@
-# `ai-generation` — الصور والتحرير والتوليد (93 بطاقة)
+# `ai-generation` — الصور والتحرير والتوليد (94 بطاقة)
 
 > مكتبة بروتوكول USIP v5.6 الكاملة، مولّدة بـ `smart_capabilities.py cards` من `data/powers/ai-generation.json` وقواعد الملاحق A25–A29؛ لا تُحرَّر يدويًا. [الفهرس الرئيسي](../../README.md) · [فصل المجموعة](../../../.claude/skills/kosif-superpowers/references/library/images.md) · [النواة](../../../.claude/skills/kosif-superpowers/PROTOCOL.md)
 
@@ -94,6 +94,7 @@
 - [`GEN-88` الإفصاح عن الوسائط المصطنعة وحدود التوليد](#gen-88--الإفصاح-عن-الوسائط-المصطنعة-وحدود-التوليد--synthetic-media-disclosure-provenance--ethical-limits)
 - [`GEN-89` التمييز بين البرومبت والوسائط](#gen-89--التمييز-بين-البرومبت-والوسائط--prompt--media-honesty-rule)
 - [`GEN-90` خدمة الصور المصغرة المدفوعة](#gen-90--خدمة-الصور-المصغرة-المدفوعة--thumbnail-generation-via-paid-mcp)
+- [`GEN-G01` خط إنتاج من موضوع إلى فيديو قصير](#gen-g01--خط-إنتاج-من-موضوع-إلى-فيديو-قصير--topic-to-short-pipeline-with-reviewable-stages)
 - [`GEN-P01` مراجعة ثانية مدفوعة من Claude API بقفلين](#gen-p01--مراجعة-ثانية-مدفوعة-من-claude-api-بقفلين--optional-paid-claude-api-second-opinion-review-double-opt-in)
 - [`GEN-X01` إنتاج فيديو مرجعي عبر Higgsfield](#gen-x01--إنتاج-فيديو-مرجعي-عبر-higgsfield--higgsfield-reference-video-production-parameters-and-prompt-skeleton)
 - [`GEN-X02` توليد متصل ثم قص](#gen-x02--توليد-متصل-ثم-قص--one-continuous-generation-then-cut)
@@ -6560,7 +6561,7 @@
 - `GEN-87` الترخيص أولًا وFirefly المحمي قانونيًا / Licence-first model choice & indemnified Firefly (documented)
 - `GEN-88` الإفصاح عن الوسائط المصطنعة وحدود التوليد / Synthetic-media disclosure, provenance & ethical limits (documented)
 - `GEN-90` خدمة الصور المصغرة المدفوعة / Thumbnail generation via paid MCP (key)
-- `GEN-P01` مراجعة ثانية مدفوعة من Claude API بقفلين / Optional paid Claude API second-opinion review (double opt-in) (key)
+- `GEN-G01` خط إنتاج من موضوع إلى فيديو قصير / Topic-to-short pipeline with reviewable stages (documented)
 
 ### `GEN-90` — خدمة الصور المصغرة المدفوعة / Thumbnail generation via paid MCP
 
@@ -6632,6 +6633,76 @@
 
 - `GEN-88` الإفصاح عن الوسائط المصطنعة وحدود التوليد / Synthetic-media disclosure, provenance & ethical limits (documented)
 - `GEN-89` التمييز بين البرومبت والوسائط / Prompt ≠ media honesty rule (ready)
+- `GEN-G01` خط إنتاج من موضوع إلى فيديو قصير / Topic-to-short pipeline with reviewable stages (documented)
+- `GEN-P01` مراجعة ثانية مدفوعة من Claude API بقفلين / Optional paid Claude API second-opinion review (double opt-in) (key)
+
+### `GEN-G01` — خط إنتاج من موضوع إلى فيديو قصير / Topic-to-short pipeline with reviewable stages
+
+| الحقل | القيمة |
+|---|---|
+| العائلة | `ai-generation` ([فصل العائلة](../../../.claude/skills/kosif-superpowers/references/powers/ai-generation.md)) |
+| المجموعة | الصور والتحرير والتوليد (`images`) |
+| نوع المخرج (A25، A27) | صور وتصميم وشعار (`image`) |
+| الحالة في الكتالوج | 📄 `documented`: منهج موصوف يحتاج بناءً أو ربطًا قبل التشغيل |
+| سقف التحقق قبل العمل (A27) | V1 حتى تُبنى وتُشغَّل؛ لا تقدَّم جاهزة أبدًا |
+| نطاق الدليل | `none` |
+| الرخصة | MIT |
+
+**ما هي:** موضوع ← نص ← كلمات بحث لكل جملة ← لقطات مرخصة ← صوت ← ترجمة بتوقيت الكلمات ← تجميع مع خفض الموسيقى، وكل مرحلة ملف يُراجع قبل التالية. — Topic → script → search terms per sentence → licensed clips → voice → word-timed subtitles → assembly with ducked music, each stage a file reviewed before the next.
+
+**متى:** فيديوهات قصيرة متكررة من مواضيع / recurring short videos from topics
+
+**كيف:** Stage files: script.md, terms.json (2-3 visual terms per sentence), clips.json (source URL, licence, in/out), voice.wav, words.json, edit.json, film.mp4 + credits.txt. Clips only from sources whose licence allows reuse (Pexels/Pixabay terms, own footage); never the user's voice cloned without consent; the user approves script and clips before render. KOSIF executors: stock_fetch.py, montage_pro.py, render_html.cjs.
+
+**التثبيت:** لا خطوة تثبيت مسجلة
+
+**الوسوم:** moneyprinter · automation · stock footage · tts · subtitles · shorts · فيديو قصير · أتمتة · مونتاج
+
+#### 1. الاستقبال (A25)
+
+- المقاس والاستخدام: افتراض مكتوب ← مقاس منصة الاستخدام المذكورة
+- الهوية والألوان والخطوط: افتراض مكتوب ← لوحة ألوان مقترحة بتباين WCAG AA
+- صيغة قابلة للتعديل: افتراض مكتوب ← SVG أو مصدر قابل للتعديل مع PNG
+- لا تُفترض أبدًا: مادة الإنتاج نفسها، والإذن بخطوة مدفوعة أو منشورة أو لا رجعة فيها، والهوية والحقوق.
+
+#### 2. الجاهزية والشارة (A28)
+
+- `node` ← افحص وجوده بأمر واحد قبل كتابة الشارة
+- `python3` ← افحص وجوده بأمر واحد قبل كتابة الشارة
+- `chromium` ← افحص وجوده بأمر واحد قبل كتابة الشارة
+- الوضع 1: شارة «هنا الآن» بعد الفحص، لا 📄 الكتالوج تلقائيًا · الوضع 2: `كتالوج: 📄 · هنا: غير مفحوص` · الوضع 3: بلا شارة ولا معرّف.
+
+#### 3. موضعها في الخطة (A26)
+
+- عقدة منمّطة: المدخل `spec` ← المخرج `image`، والمنفّذ `method:GEN-G01` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `prompt-forge`.
+- مراحل النوع: المقاس والهوية ← ثلاث مصغرات ← تطوير المختارة ← اختبار التصغير والتباين ← تصدير قابل للتعديل + PNG.
+- إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
+
+#### 4. بوابة التحقق (A27)
+
+- إلزامي: مقروء بمقاس صغير (اختبار التصغير) ← تصغير إلى 15%
+- إلزامي: تباين النص ≥ 4.5:1 ← حساب نسبة التباين
+- إلزامي: رخصة كل خط مؤكدة من مصدره ← ملف الرخصة
+- إلزامي: أصالة بلا نسخ لعمل آخر ← مقارنة بالمراجع
+- إلزامي: تشكيل الحروف العربية واتصالها صحيح ← رندر فعلي ونظرة
+- أمر الحكم في الوضع 1: `think.py qa image --answers qa.json` (PASS / FAIL / INCOMPLETE).
+
+#### 5. التعافي (A29)
+
+- `missing_dependency` (اعتمادية مفقودة، ميزانية 2): سمِّ الاعتمادية بالضبط (حزمة، برنامج، خط، نموذج) ← ثبّت محليًا في بيئة العمل إن كان مجانيًا ومسموحًا (pip --user أو venv أو npm محلي) · البديل: مسار المكتبة القياسية أو أداة أخرى من نفس المجموعة · تصعيد: تثبيت نظامي أو مدفوع أو يحتاج مفتاحًا: توقف واسأل
+- `wrong_input_kind` (نوع مدخل خاطئ، ميزانية 2): افحص المدخل الفعلي (file، ffprobe، أول بايتات، ترميز النص) ← أضف محوّلًا صريحًا بين العقدتين (مثلًا ffmpeg لتحويل الصيغة) واحفظ الأصل كما هو · البديل: اطلب المدخل بالصيغة الصحيحة مع أمر تحويل جاهز · تصعيد: إن كان التحويل يفقد جودة أو بيانات: اسأل قبل التحويل
+- `quality_below_threshold` (جودة دون العتبة، ميزانية 3): أي معيار فشل وبكم (المقيس مقابل العتبة) ← عالج السبب الأكبر وحده ثم أعد القياس · البديل: المنهج البديل المكتوب للمرحلة في الخطة · تصعيد: معيار إلزامي لا يتحقق بعد البديل: توقف وأبلغ بالأرقام
+- `tool_error` (خطأ أداة، ميزانية 3): اقرأ آخر سطر في الخطأ ثم أول سطر من كودك فيه ← أصلح السبب المثبت وحده، ثم شغّل الاختبار المتعلق · البديل: أداة أخرى أو مسار يدوي للمرحلة نفسها · تصعيد: خطأ في أداة خارجية لا تملكها: بلّغ بإعادة الإنتاج ولا تخفه
+
+#### 6. الأدلة
+
+- لا دليل مسجل: لا تُقدَّم أكثر من منهج.
+
+#### 7. قدرات قريبة في العائلة
+
+- `GEN-89` التمييز بين البرومبت والوسائط / Prompt ≠ media honesty rule (ready)
+- `GEN-90` خدمة الصور المصغرة المدفوعة / Thumbnail generation via paid MCP (key)
 - `GEN-P01` مراجعة ثانية مدفوعة من Claude API بقفلين / Optional paid Claude API second-opinion review (double opt-in) (key)
 - `GEN-X01` إنتاج فيديو مرجعي عبر Higgsfield / Higgsfield reference-video production parameters and prompt skeleton (key)
 
@@ -6704,8 +6775,8 @@
 
 #### 7. قدرات قريبة في العائلة
 
-- `GEN-89` التمييز بين البرومبت والوسائط / Prompt ≠ media honesty rule (ready)
 - `GEN-90` خدمة الصور المصغرة المدفوعة / Thumbnail generation via paid MCP (key)
+- `GEN-G01` خط إنتاج من موضوع إلى فيديو قصير / Topic-to-short pipeline with reviewable stages (documented)
 - `GEN-X01` إنتاج فيديو مرجعي عبر Higgsfield / Higgsfield reference-video production parameters and prompt skeleton (key)
 - `GEN-X02` توليد متصل ثم قص / One continuous generation, then cut (documented)
 
@@ -6774,7 +6845,7 @@
 
 #### 7. قدرات قريبة في العائلة
 
-- `GEN-90` خدمة الصور المصغرة المدفوعة / Thumbnail generation via paid MCP (key)
+- `GEN-G01` خط إنتاج من موضوع إلى فيديو قصير / Topic-to-short pipeline with reviewable stages (documented)
 - `GEN-P01` مراجعة ثانية مدفوعة من Claude API بقفلين / Optional paid Claude API second-opinion review (double opt-in) (key)
 - `GEN-X02` توليد متصل ثم قص / One continuous generation, then cut (documented)
 

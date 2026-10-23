@@ -3,13 +3,13 @@
 
 > **قوتك هنا / what this gives you:** إجراءات تفكير تجعل الاستدلال أدق: التفكيك والفرضيات واختبار الافتراضات ثم القرار. — Reasoning procedures that sharpen answers: decompose, hypothesise, test assumptions, decide.
 > **أقوى دليل / strongest evidence:** **THINK-04** Recall powers from the catalog (powers.py suggest / search / show) (`session-2026-10-16:skill-audit.md#2`) · **THINK-35** Cognition ladder L0–L6 (`kosif-tool/.claude/skills/kosif-superpowers/scripts/think.py`)
-> **46 powers follow** — ✅ 7 · 🟢 0 · 📦 0 · 🔑 0 · 👁 0 · 📄 39 · 💡 0.
+> **47 powers follow** — ✅ 7 · 🟢 0 · 📦 0 · 🔑 0 · 👁 0 · 📄 40 · 💡 0.
 
 **الحالة / status:** ✅ مُثبت (شُغّل فعلًا وله مسار دليل) · 🟢 جاهز (كود موجود يعمل بما هو متاح عادة) · 📦 بأمر تثبيت واحد · 🔑 يحتاج مفتاحًا أو حسابًا أو موصلًا · 👁 شوهد في فيديو مرجعي (للموشن فقط) · 📄 طريقة موثقة · 💡 فكرة. الشارة هي أدنى مستوى صادق — the badge is the lowest level that is true.
 مسارات الدليل نسبية إلى `/home/user/`؛ و`session-<date>:<file>#<section>` تشير إلى تشغيل موثق في جلسة سابقة؛ و`owner-upload:` إلى ملف داخل أرشيف أرسله المالك. Proof paths are relative to `/home/user/`.
 
 **المجال / domain:** العقل والتفكير — Mind & thinking · **البادئة / prefix:** `THINK` · **البيانات / data:** `data/powers/thinking-core.json` · **بحث / search:** `python3 scripts/powers.py family thinking-core`
-**مراجع ذات صلة / related references:** [CLAUDE_3_MINUTE_MAP.md](../CLAUDE_3_MINUTE_MAP.md) · [capability-audit.md](../capability-audit.md) · [cognition.md](../cognition.md) · [creativity.md](../creativity.md) · [hubs.md](../hubs.md) · [repository-capability-transfer.md](../repository-capability-transfer.md) · [thinking.md](../thinking.md) · [verification.md](../verification.md)
+**مراجع ذات صلة / related references:** [CLAUDE_3_MINUTE_MAP.md](../CLAUDE_3_MINUTE_MAP.md) · [agents-memory-reasoning-repos.md](../agents-memory-reasoning-repos.md) · [capability-audit.md](../capability-audit.md) · [cognition.md](../cognition.md) · [creativity.md](../creativity.md) · [github-top-1000.md](../github-top-1000.md) · [hubs.md](../hubs.md) · [repository-capability-transfer.md](../repository-capability-transfer.md) · [thinking.md](../thinking.md) · [verification.md](../verification.md)
 
 ## الفهرس / contents
 
@@ -20,6 +20,7 @@
 - **التخطيط والتفويض — Planning & delegation** — THINK-25 … THINK-33 (9)
 - **الأنماط المضادة — Anti-patterns** — THINK-34 (1)
 - **Cognition layer** — THINK-35 … THINK-46 (12)
+- **أكبر مستودعات GitHub — Top GitHub repositories (2026-10-23)** — THINK-47 (1)
 - المصادر والرخص / sources & licences
 
 ## حلقة التفكير — Thinking Loop
@@ -419,9 +420,20 @@
 - **الدليل / proof:** `kosif-tool/.claude/skills/kosif-superpowers/references/cognition.md`
 - **المصدر / source:** kosif-tool/.claude/skills/kosif-superpowers/references/cognition.md
 
+## أكبر مستودعات GitHub — Top GitHub repositories (2026-10-23)
+
+#### THINK-47 · مجلس بتقييم متبادل مجهول الهوية · Anonymous peer-ranked council · 📄 موصوف / documented only
+- **ماذا / what:** عدة نماذج تجيب، ثم كل نموذج يرتب إجابات الآخرين بعد إخفاء أصحابها، ثم رئيس يكتب الإجابة النهائية مستعينًا بالترتيب. — Several models answer, each ranks the others' answers with authors hidden, then a chair writes the final answer using the rankings.
+- **متى أستخدمها / when:** سؤال صعب تريد له أكثر من رأي / a hard question that deserves more than one view
+- **كيف / how:** Stage 1: N independent answers (different models or framings). Stage 2: label them A, B, C… in shuffled order; each member ranks all but its own with one line per rank. Stage 3: aggregate (Borda count), the chair synthesises from the top answers and states remaining disagreement. Shuffle order per member to cancel position bias (PROMPT-41). In this skill the five-lane version is scripts/council.py. Licence of the source not stated: idea only.
+- **يحتاج / needs:** [`python3`](../requirements.md#req-python3)
+- **الرخصة / license:** none (idea only)
+- **الدليل / proof:** — (لا دليل تشغيل بعد / no run proof yet)
+- **المصدر / source:** https://github.com/karpathy/llm-council (no licence detected; referenced, idea restated in our own words, nothing copied)
+
 ## المصادر والرخص / sources & licences
 
-- الرخص / licences: owner (24) · MIT (14) · — (8)
+- الرخص / licences: owner (24) · MIT (14) · — (8) · none (idea only) (1)
 - الأفكار مكتوبة بكلماتنا مع رابط المصدر؛ لا يُنسخ نص طرف ثالث طويل. Ideas are paraphrased with a link to the source; no long third-party text is copied. `—` = no licence recorded (own method or own wording).
 
 ---
