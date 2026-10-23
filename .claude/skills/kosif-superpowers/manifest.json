@@ -18,7 +18,7 @@
   "powers": 5480,
   "families": 62,
   "domains": 10,
-  "tools": 143,
+  "tools": 144,
   "guides": 106,
   "statuses": {
    "documented": 2076,
@@ -12570,6 +12570,89 @@
    ],
    "evidence": "tested-here",
    "evidence_note": "10 unit tests passed on this checkout (cloud container, 2026-10-23), including draw+check of 9 variants and a rendered visual review of head, figure, character and forms SVGs."
+  },
+  {
+   "id": "drawing-council",
+   "path": "scripts/drawing_council.py",
+   "root": "skill",
+   "kind": "cli",
+   "area": "draw",
+   "title_en": "Drawing council: eleven experts from the 48 method cards review an image before it is sent",
+   "title_ar": "مجلس خبراء الرسم: أحد عشر خبيرًا من بطاقات الكتب الـ48 يراجعون الصورة قبل إرسالها",
+   "summary_en": "PROTOCOL law 27 gate after drawing_methods.py review. Groups the 48 drawing-book method cards into eleven experts (construction, anatomy and proportion, gesture, logic and physics, perspective, light, colour, composition, line, character design, animals and nature), runs the automated gates (law-27 contact review, card checks, tone metrics), writes one prompt per expert with its card checks, common errors and veto conditions, records each expert's pass/fix/veto with correctness, craft and beauty scores, and computes a deterministic PASS/FAIL verdict with the fixes still required; it also exports the experts in the general council persona schema.",
+   "summary_ar": "بوابة القانون 27 بعد فحص review: يجمع بطاقات كتب الرسم الـ48 في أحد عشر خبيرًا (البناء، التشريح والنسب، الإيماءة، المنطق والفيزياء، المنظور، الضوء، اللون، التكوين، الخط، تصميم الشخصيات، الحيوان والطبيعة)، ويشغّل الفحوص الآلية، ويكتب لكل خبير برومبت بفحوص بطاقاته وأخطائها وشروط الرفض، ويسجل حكم كل خبير pass/fix/veto ودرجات الصحة والحرفة والجمال، ويحسب حكمًا PASS/FAIL بالتصليحات المطلوبة؛ ويصدّر الخبراء بصيغة شخصيات المجلس العام.",
+   "use_when": [
+    "راجع الرسمة دي قبل ما تبعتها",
+    "اعمل مجلس خبراء رسم يراجع الصورة",
+    "Review this drawing with the drawing council before sending",
+    "Check the image for anatomy, perspective, light and colour mistakes"
+   ],
+   "keywords": [
+    "drawing council",
+    "مجلس الرسم",
+    "مجلس خبراء",
+    "review",
+    "مراجعة",
+    "critique",
+    "نقد",
+    "anatomy",
+    "تشريح",
+    "perspective",
+    "منظور",
+    "colour",
+    "لون",
+    "beauty",
+    "جمال",
+    "veto"
+   ],
+   "commands": [
+    {
+     "name": "roster",
+     "example": "python3 scripts/drawing_council.py roster --markdown",
+     "does": "The eleven experts with their cards, books and veto conditions (JSON, Markdown, or --personas for council.py)."
+    },
+    {
+     "name": "plan",
+     "example": "python3 scripts/drawing_council.py plan --png out/scene.png --svg out/scene.svg --brief \"رجل ينقذ قطة\" --dir out/council-r1",
+     "does": "Runs the automated gates and writes prompts/E01..E11.md; refuses an existing council dir without --force."
+    },
+    {
+     "name": "ingest",
+     "example": "python3 scripts/drawing_council.py ingest --dir out/council-r1 --expert E04 --file e04.json",
+     "does": "Validates and records one expert's answer, bound to the PNG's hash; --simulated when written in the main context."
+    },
+    {
+     "name": "verdict",
+     "example": "python3 scripts/drawing_council.py verdict --dir out/council-r1",
+     "does": "Writes verdict.json and minutes.md; exits 0 only on PASS."
+    }
+   ],
+   "inputs": "A rendered PNG, optionally its SVG (tagged for law 27), the brief, and each expert's JSON answer",
+   "outputs": "council.json, one prompt per expert, recorded answers, verdict.json and Arabic minutes.md with required fixes",
+   "requires": {
+    "python": [],
+    "binaries": [],
+    "node": [],
+    "optional": [
+     "pillow"
+    ],
+    "network": false
+   },
+   "safety": "writes-files",
+   "consent": "Writes only inside the council directory you pass; no network, model calls or spend.",
+   "limits": "The automated gates measure geometry and tone only. Scores are the experts' recorded judgements against their cards, not a proof of beauty; the verdict says SIMULATED when one context played the experts. Cards summarise the books' methods, not the books.",
+   "tests": [
+    ".claude/skills/kosif-superpowers/evals/test_drawing_council.py"
+   ],
+   "docs": [
+    ".claude/skills/kosif-superpowers/references/protocol/A31-drawing-council.md"
+   ],
+   "families": [
+    "hand-drawn-draw-on",
+    "story-direction-ideas"
+   ],
+   "evidence": "tested-here",
+   "evidence_note": "10 unit tests passed on this checkout (cloud container, 2026-10-23), and the man-and-cat drawing was reviewed by eleven separate expert agents."
   },
   {
    "id": "perspective-color-lab",
