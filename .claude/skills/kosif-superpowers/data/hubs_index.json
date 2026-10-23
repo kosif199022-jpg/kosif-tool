@@ -1,6 +1,6 @@
 {
  "schema": "kosif.hubs-index.v1",
- "atoms": 5389,
+ "atoms": 5390,
  "superpowers": 448,
  "hubs": [
   {
@@ -339,8 +339,8 @@
    "links": [
     "software",
     "quality",
-    "data",
-    "agents"
+    "agents",
+    "data"
    ]
   },
   {
@@ -451,16 +451,16 @@
     },
     {
      "id": "SP-0122",
-     "name_ar": "تحزيم المهارة للرفع إلى claude.ai",
-     "name_en": "Skill Packager for claude.ai",
-     "size": 4,
+     "name_ar": "مختبر الابتكار الهندسي",
+     "name_en": "Invention Lab Candidates",
+     "size": 5,
      "best": "proven",
-     "ready_now": 4
+     "ready_now": 5
     },
     {
      "id": "SP-0123",
-     "name_ar": "مختبر الابتكار الهندسي",
-     "name_en": "Invention Lab Candidates",
+     "name_ar": "تحزيم المهارة للرفع إلى claude.ai",
+     "name_en": "Skill Packager for claude.ai",
      "size": 4,
      "best": "proven",
      "ready_now": 4
@@ -490,15 +490,15 @@
      "ready_now": 0
     }
    ],
-   "powers": 155,
+   "powers": 156,
    "status_mix": {
-    "proven": 82,
+    "proven": 83,
     "ready": 5,
     "install": 8,
     "key": 2,
     "documented": 58
    },
-   "ready_now": 87,
+   "ready_now": 88,
    "requires": [
     "python3",
     "ffmpeg",

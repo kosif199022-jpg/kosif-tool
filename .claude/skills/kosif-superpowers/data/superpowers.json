@@ -1,7 +1,7 @@
 {
 "schema": "kosif.superpowers.v1",
-"atoms": 5389,
-"distinct_methods": 5121,
+"atoms": 5390,
+"distinct_methods": 5122,
 "twin_groups": 165,
 "superpowers": 448,
 "per_target": 12,
@@ -310,7 +310,7 @@
 },
 {
 "id": "SP-0023",
-"sim": 0.154
+"sim": 0.153
 },
 {
 "id": "SP-0075",
@@ -823,16 +823,16 @@
 "requires": [],
 "pipeline": [
 {
-"id": "AMIND-39",
-"status": "documented",
-"name_en": "Anti-thrashing circuit breaker after two failed fixes",
-"name_ar": "قاطع التكرار العقيم بعد محاولتين فاشلتين"
-},
-{
 "id": "AMIND-42",
 "status": "documented",
 "name_en": "Challenge approach before commitment",
 "name_ar": "مراجعة الافتراضات وإعادة التقييم"
+},
+{
+"id": "AMIND-39",
+"status": "documented",
+"name_en": "Anti-thrashing circuit breaker after two failed fixes",
+"name_ar": "قاطع التكرار العقيم بعد محاولتين فاشلتين"
 }
 ],
 "proof": [],
@@ -1136,16 +1136,16 @@
 "sim": 0.072
 },
 {
+"id": "SP-0122",
+"sim": 0.054
+},
+{
 "id": "SP-0343",
 "sim": 0.054
 },
 {
 "id": "SP-0139",
-"sim": 0.049
-},
-{
-"id": "SP-0374",
-"sim": 0.046
+"sim": 0.048
 }
 ]
 },
@@ -1544,16 +1544,16 @@
 "name_ar": "المعدلات الأساسية"
 },
 {
-"id": "MODEL-13",
-"status": "documented",
-"name_en": "Opportunity cost",
-"name_ar": "تكلفة الفرصة البديلة"
-},
-{
 "id": "MODEL-36",
 "status": "documented",
 "name_en": "Lateral thinking (provocation)",
 "name_ar": "التفكير الجانبي"
+},
+{
+"id": "MODEL-13",
+"status": "documented",
+"name_en": "Opportunity cost",
+"name_ar": "تكلفة الفرصة البديلة"
 },
 {
 "id": "MODEL-59",
@@ -2329,8 +2329,8 @@
 "sim": 0.171
 },
 {
-"id": "SP-0122",
-"sim": 0.16
+"id": "SP-0123",
+"sim": 0.159
 },
 {
 "id": "SP-0037",
@@ -2658,15 +2658,15 @@
 "links": [
 {
 "id": "SP-0059",
-"sim": 0.127
+"sim": 0.126
 },
 {
 "id": "SP-0340",
-"sim": 0.087
+"sim": 0.088
 },
 {
 "id": "SP-0006",
-"sim": 0.061
+"sim": 0.06
 },
 {
 "id": "SP-0414",
@@ -3143,8 +3143,8 @@
 "distinct_methods": 19,
 "links": [
 {
-"id": "SP-0122",
-"sim": 0.214
+"id": "SP-0123",
+"sim": 0.213
 },
 {
 "id": "SP-0026",
@@ -3355,12 +3355,6 @@
 ],
 "pipeline": [
 {
-"id": "ARL-21",
-"status": "proven",
-"name_en": "spaCy: Tokenise Arabic and match rules (blank 'ar'); NER with downloaded models",
-"name_ar": "spaCy: تقطيع العربية ومطابقة القواعد؛ واستخراج الكيانات مع"
-},
-{
 "id": "ARL-01",
 "status": "proven",
 "name_en": "Normalize Arabic for search and matching",
@@ -3371,6 +3365,12 @@
 "status": "proven",
 "name_en": "camel-tools character utilities without models",
 "name_ar": "أدوات CAMeL Tools الخفيفة بلا نماذج"
+},
+{
+"id": "ARL-21",
+"status": "proven",
+"name_en": "spaCy: Tokenise Arabic and match rules (blank 'ar'); NER with downloaded models",
+"name_ar": "spaCy: تقطيع العربية ومطابقة القواعد؛ واستخراج الكيانات مع"
 },
 {
 "id": "ARL-03",
@@ -3439,16 +3439,16 @@
 "name_ar": "تحليل صرفي وتعرّف اللهجة والكيانات (CAMeL Tools كاملة)"
 },
 {
-"id": "ARL-13",
-"status": "install",
-"name_en": "Farasa segmenter via farasapy",
-"name_ar": "مقطّع Farasa عبر farasapy"
-},
-{
 "id": "ARL-22",
 "status": "install",
 "name_en": "Argos Translate: Translate Arabic↔English fully offline",
 "name_ar": "Argos Translate: ترجمة عربي-إنجليزي دون اتصال تمامًا"
+},
+{
+"id": "ARL-13",
+"status": "install",
+"name_en": "Farasa segmenter via farasapy",
+"name_ar": "مقطّع Farasa عبر farasapy"
 },
 {
 "id": "ARL-09",
@@ -3470,10 +3470,10 @@
 }
 ],
 "proof": [
+"kosif-tool/.claude/skills/kosif-superpowers/proofs/general-writing/README.md",
+"kosif-tool/.claude/skills/kosif-superpowers/proofs/general-writing/arabic_probe.py",
 "kosif-tool/.claude/skills/kosif-superpowers/proofs/toolbelt-smoke/README.md",
-"kosif-tool/.claude/skills/kosif-superpowers/proofs/toolbelt-smoke/smoke.py",
-"kosif-tool/.claude/skills/kosif-superpowers/proofs/toolbelt-smoke/results.json",
-"kosif-tool/.claude/skills/kosif-superpowers/proofs/general-writing/README.md"
+"kosif-tool/.claude/skills/kosif-superpowers/proofs/toolbelt-smoke/smoke.py"
 ],
 "twins": [],
 "distinct_methods": 19,
@@ -3488,7 +3488,7 @@
 },
 {
 "id": "SP-0127",
-"sim": 0.197
+"sim": 0.203
 },
 {
 "id": "SP-0035",
@@ -3500,8 +3500,8 @@
 "id": "SP-0029",
 "domain": "craft",
 "family": "arabic-language",
-"name_ar": "تحقق من أرقام OCR ببوابة المراسي",
-"name_en": "Verify OCR numbers with the anchor gate",
+"name_ar": "مراجعة المطابقة النحوية بعد التعديل",
+"name_en": "Agreement check after editing",
 "focus": [
 "ocr",
 "agreement",
@@ -3957,7 +3957,7 @@
 },
 {
 "id": "SP-0033",
-"sim": 0.127
+"sim": 0.126
 },
 {
 "id": "SP-0373",
@@ -4029,7 +4029,7 @@
 "links": [
 {
 "id": "SP-0032",
-"sim": 0.127
+"sim": 0.126
 },
 {
 "id": "SP-0134",
@@ -4270,12 +4270,12 @@
 "sim": 0.15
 },
 {
-"id": "SP-0419",
-"sim": 0.124
-},
-{
 "id": "SP-0339",
 "sim": 0.122
+},
+{
+"id": "SP-0419",
+"sim": 0.116
 }
 ]
 },
@@ -8277,16 +8277,16 @@
 "name_ar": "التقاط screen ADB"
 },
 {
-"id": "REA-098",
-"status": "documented",
-"name_en": "List one device directory with kinds, permissions, and sizes",
-"name_ar": "سرد مجلد ADB"
-},
-{
 "id": "REA-049",
 "status": "documented",
 "name_en": "Report the display's declared size and density",
 "name_ar": "فحص الشاشة ADB"
+},
+{
+"id": "REA-098",
+"status": "documented",
+"name_en": "List one device directory with kinds, permissions, and sizes",
+"name_ar": "سرد مجلد ADB"
 },
 {
 "id": "REA-050",
@@ -9444,7 +9444,7 @@
 },
 {
 "id": "SP-0066",
-"sim": 0.208
+"sim": 0.209
 },
 {
 "id": "SP-0002",
@@ -10833,7 +10833,7 @@
 "links": [
 {
 "id": "SP-0130",
-"sim": 0.207
+"sim": 0.208
 },
 {
 "id": "SP-0091",
@@ -11032,7 +11032,7 @@
 },
 {
 "id": "SP-0081",
-"sim": 0.085
+"sim": 0.086
 }
 ]
 },
@@ -11813,16 +11813,16 @@
 "requires": [],
 "pipeline": [
 {
-"id": "ADOCS-12",
-"status": "documented",
-"name_en": "Blameless postmortem with timeline and action items",
-"name_ar": "مراجعة ما بعد الحادث بلا لوم"
-},
-{
 "id": "ADOCS-13",
 "status": "documented",
 "name_en": "Secret-safe redacted diagnostic bundle for support",
 "name_ar": "حزمة تشخيص مُنقّحة وآمنة للدعم"
+},
+{
+"id": "ADOCS-12",
+"status": "documented",
+"name_en": "Blameless postmortem with timeline and action items",
+"name_ar": "مراجعة ما بعد الحادث بلا لوم"
 }
 ],
 "proof": [],
@@ -12014,7 +12014,7 @@
 "links": [
 {
 "id": "SP-0094",
-"sim": 0.311
+"sim": 0.31
 },
 {
 "id": "SP-0127",
@@ -12148,7 +12148,7 @@
 "links": [
 {
 "id": "SP-0093",
-"sim": 0.311
+"sim": 0.31
 },
 {
 "id": "SP-0419",
@@ -12324,7 +12324,7 @@
 },
 {
 "id": "SP-0083",
-"sim": 0.111
+"sim": 0.112
 },
 {
 "id": "SP-0081",
@@ -12728,16 +12728,16 @@
 "name_ar": "تحكم لوني لكل نطاق"
 },
 {
-"id": "APPX-70",
-"status": "proven",
-"name_en": "Background blur (portrait)",
-"name_ar": "تغبيش الخلفية"
-},
-{
 "id": "APPX-62",
 "status": "proven",
 "name_en": "Clarity / texture (local contrast)",
 "name_ar": "الوضوح والملمس"
+},
+{
+"id": "APPX-70",
+"status": "proven",
+"name_en": "Background blur (portrait)",
+"name_ar": "تغبيش الخلفية"
 },
 {
 "id": "APPX-40",
@@ -12979,11 +12979,11 @@
 },
 {
 "id": "SP-0002",
-"sim": 0.05
+"sim": 0.051
 },
 {
-"id": "SP-0316",
-"sim": 0.04
+"id": "SP-0122",
+"sim": 0.048
 }
 ]
 },
@@ -14040,7 +14040,7 @@
 "sim": 0.235
 },
 {
-"id": "SP-0122",
+"id": "SP-0123",
 "sim": 0.213
 },
 {
@@ -15118,7 +15118,7 @@
 },
 {
 "id": "SP-0235",
-"sim": 0.159
+"sim": 0.158
 }
 ]
 },
@@ -15529,6 +15529,94 @@
 "id": "SP-0122",
 "domain": "build",
 "family": "runnable-tools",
+"name_ar": "مختبر الابتكار الهندسي",
+"name_en": "Invention Lab Candidates",
+"focus": [
+"capacity",
+"font",
+"ideate",
+"invention"
+],
+"size": 5,
+"best": "proven",
+"status_mix": {
+"proven": 5
+},
+"ready_now": 5,
+"families": {
+"runnable-tools": 5
+},
+"atlas_folded": 0,
+"requires": [
+"python3",
+"pip:hypothesis",
+"key:unspecified",
+"pip:pillow",
+"fonts:arabic"
+],
+"pipeline": [
+{
+"id": "TOOL-11",
+"status": "proven",
+"name_en": "Invention Lab Candidates",
+"name_ar": "مختبر الابتكار الهندسي"
+},
+{
+"id": "TOOL-10",
+"status": "proven",
+"name_en": "System Capacity Sizer",
+"name_ar": "مقدّر سعة الأنظمة"
+},
+{
+"id": "TOOL-65",
+"status": "proven",
+"name_en": "AI for business: 9 functions, 64 workflows, Claude-native gated runbooks",
+"name_ar": "الذكاء الاصطناعي في الأعمال: 9 وظائف و64 خطة عمل بخطط تشغيل لClaude"
+},
+{
+"id": "TOOL-66",
+"status": "proven",
+"name_en": "Book-distilled methods: lateral ideas, pragmatic engineering, Bayesian evidence, personality, accounting checks, prompt clarity",
+"name_ar": "مناهج مستخلصة من الكتب: التفكير الجانبي والهندسة العملية والأدلة البايزية والشخصية وفحوص المحاسبة ووضوح البرومنت"
+},
+{
+"id": "TOOL-42",
+"status": "proven",
+"name_en": "Arabic-aware font fidelity lab",
+"name_ar": "مختبر مطابقة الخطوط العربية"
+}
+],
+"proof": [
+"kosif-tool/tests/test_invention_lab.py",
+"kosif-tool/.claude/skills/kosif-superpowers/scripts/invention_lab.py",
+"kosif-tool/.claude/skills/kosif-superpowers/evals/test_system_python.py",
+"kosif-tool/.claude/skills/kosif-superpowers/scripts/architecture_sizer.py"
+],
+"twins": [],
+"distinct_methods": 5,
+"links": [
+{
+"id": "SP-0421",
+"sim": 0.207
+},
+{
+"id": "SP-0032",
+"sim": 0.082
+},
+{
+"id": "SP-0427",
+"sim": 0.082
+},
+{
+"id": "SP-0193",
+"sim": 0.055
+}
+]
+},
+{
+"id": "SP-0123",
+"domain": "build",
+"family": "runnable-tools",
 "name_ar": "تحزيم المهارة للرفع إلى claude.ai",
 "name_en": "Skill Packager for claude.ai",
 "focus": [
@@ -15594,7 +15682,7 @@
 "links": [
 {
 "id": "SP-0025",
-"sim": 0.214
+"sim": 0.213
 },
 {
 "id": "SP-0109",
@@ -15606,89 +15694,7 @@
 },
 {
 "id": "SP-0018",
-"sim": 0.16
-}
-]
-},
-{
-"id": "SP-0123",
-"domain": "build",
-"family": "runnable-tools",
-"name_ar": "مختبر الابتكار الهندسي",
-"name_en": "Invention Lab Candidates",
-"focus": [
-"capacity",
-"font",
-"invention",
-"ideate"
-],
-"size": 4,
-"best": "proven",
-"status_mix": {
-"proven": 4
-},
-"ready_now": 4,
-"families": {
-"runnable-tools": 4
-},
-"atlas_folded": 0,
-"requires": [
-"python3",
-"pip:hypothesis",
-"key:unspecified",
-"pip:pillow",
-"fonts:arabic"
-],
-"pipeline": [
-{
-"id": "TOOL-11",
-"status": "proven",
-"name_en": "Invention Lab Candidates",
-"name_ar": "مختبر الابتكار الهندسي"
-},
-{
-"id": "TOOL-10",
-"status": "proven",
-"name_en": "System Capacity Sizer",
-"name_ar": "مقدّر سعة الأنظمة"
-},
-{
-"id": "TOOL-65",
-"status": "proven",
-"name_en": "AI for business: 9 functions, 64 workflows, Claude-native gated runbooks",
-"name_ar": "الذكاء الاصطناعي في الأعمال: 9 وظائف و64 خطة عمل بخطط تشغيل لClaude"
-},
-{
-"id": "TOOL-42",
-"status": "proven",
-"name_en": "Arabic-aware font fidelity lab",
-"name_ar": "مختبر مطابقة الخطوط العربية"
-}
-],
-"proof": [
-"kosif-tool/tests/test_invention_lab.py",
-"kosif-tool/.claude/skills/kosif-superpowers/scripts/invention_lab.py",
-"kosif-tool/.claude/skills/kosif-superpowers/evals/test_system_python.py",
-"kosif-tool/.claude/skills/kosif-superpowers/scripts/architecture_sizer.py"
-],
-"twins": [],
-"distinct_methods": 4,
-"links": [
-{
-"id": "SP-0421",
-"sim": 0.233
-},
-{
-"id": "SP-0427",
-"sim": 0.09
-},
-{
-"id": "SP-0005",
-"sim": 0.062
-},
-{
-"id": "SP-0130",
-"sim": 0.059
+"sim": 0.159
 }
 ]
 },
@@ -16235,7 +16241,7 @@
 },
 {
 "id": "SP-0028",
-"sim": 0.197
+"sim": 0.203
 },
 {
 "id": "SP-0093",
@@ -16646,7 +16652,7 @@
 },
 {
 "id": "SP-0084",
-"sim": 0.207
+"sim": 0.208
 },
 {
 "id": "SP-0336",
@@ -16766,7 +16772,7 @@
 },
 {
 "id": "SP-0287",
-"sim": 0.117
+"sim": 0.118
 },
 {
 "id": "SP-0134",
@@ -17261,7 +17267,7 @@
 },
 {
 "id": "SP-0085",
-"sim": 0.074
+"sim": 0.075
 },
 {
 "id": "SP-0083",
@@ -18210,7 +18216,7 @@
 },
 {
 "id": "SP-0345",
-"sim": 0.283
+"sim": 0.282
 },
 {
 "id": "SP-0146",
@@ -19666,7 +19672,7 @@
 },
 {
 "id": "SP-0119",
-"sim": 0.044
+"sim": 0.043
 }
 ]
 },
@@ -20515,16 +20521,16 @@
 "name_ar": "كاميرا مطاردة بتأخير"
 },
 {
-"id": "CAM-221",
-"status": "seen",
-"name_en": "World-layer camera (focus x, y, log-scale)",
-"name_ar": "كاميرا عالم واحد بمحاور تركيز وتكبير لوغاريتمي"
-},
-{
 "id": "CAM-269",
 "status": "seen",
 "name_en": "Virtual camera over one big UI canvas",
 "name_ar": "كاميرا افتراضية تتجول فوق لوحة واجهة كبيرة"
+},
+{
+"id": "CAM-221",
+"status": "seen",
+"name_en": "World-layer camera (focus x, y, log-scale)",
+"name_ar": "كاميرا عالم واحد بمحاور تركيز وتكبير لوغاريتمي"
 },
 {
 "id": "CAM-204",
@@ -23407,7 +23413,7 @@
 },
 {
 "id": "SP-0109",
-"sim": 0.069
+"sim": 0.07
 }
 ]
 },
@@ -23930,7 +23936,7 @@
 },
 {
 "id": "SP-0032",
-"sim": 0.116
+"sim": 0.115
 }
 ]
 },
@@ -24675,7 +24681,7 @@
 },
 {
 "id": "SP-0210",
-"sim": 0.157
+"sim": 0.158
 },
 {
 "id": "SP-0030",
@@ -24885,7 +24891,7 @@
 },
 {
 "id": "SP-0373",
-"sim": 0.076
+"sim": 0.074
 },
 {
 "id": "SP-0031",
@@ -25055,16 +25061,16 @@
 "sim": 0.142
 },
 {
-"id": "SP-0383",
-"sim": 0.076
-},
-{
 "id": "SP-0336",
 "sim": 0.076
 },
 {
+"id": "SP-0383",
+"sim": 0.076
+},
+{
 "id": "SP-0031",
-"sim": 0.068
+"sim": 0.067
 }
 ]
 },
@@ -26454,7 +26460,7 @@
 },
 {
 "id": "SP-0321",
-"sim": 0.118
+"sim": 0.119
 },
 {
 "id": "SP-0113",
@@ -27000,7 +27006,7 @@
 },
 {
 "id": "SP-0376",
-"sim": 0.122
+"sim": 0.123
 },
 {
 "id": "SP-0055",
@@ -29733,11 +29739,11 @@
 "sim": 0.093
 },
 {
-"id": "SP-0062",
+"id": "SP-0119",
 "sim": 0.089
 },
 {
-"id": "SP-0119",
+"id": "SP-0062",
 "sim": 0.089
 }
 ]
@@ -30776,7 +30782,7 @@
 "links": [
 {
 "id": "SP-0316",
-"sim": 0.2
+"sim": 0.201
 },
 {
 "id": "SP-0119",
@@ -30788,7 +30794,7 @@
 },
 {
 "id": "SP-0118",
-"sim": 0.159
+"sim": 0.158
 }
 ]
 },
@@ -33677,7 +33683,7 @@
 "sim": 0.083
 },
 {
-"id": "SP-0122",
+"id": "SP-0123",
 "sim": 0.079
 },
 {
@@ -34391,7 +34397,7 @@
 "sim": 0.18
 },
 {
-"id": "SP-0122",
+"id": "SP-0123",
 "sim": 0.167
 },
 {
@@ -41174,7 +41180,7 @@
 },
 {
 "id": "SP-0235",
-"sim": 0.121
+"sim": 0.12
 }
 ]
 },
@@ -41272,7 +41278,7 @@
 },
 {
 "id": "SP-0235",
-"sim": 0.2
+"sim": 0.201
 },
 {
 "id": "SP-0062",
@@ -41958,7 +41964,7 @@
 },
 {
 "id": "SP-0206",
-"sim": 0.118
+"sim": 0.119
 },
 {
 "id": "SP-0370",
@@ -43290,7 +43296,7 @@
 "links": [
 {
 "id": "SP-0393",
-"sim": 0.449
+"sim": 0.45
 },
 {
 "id": "SP-0284",
@@ -45852,7 +45858,7 @@
 },
 {
 "id": "SP-0143",
-"sim": 0.283
+"sim": 0.282
 },
 {
 "id": "SP-0032",
@@ -49344,7 +49350,7 @@
 "links": [
 {
 "id": "SP-0439",
-"sim": 0.158
+"sim": 0.159
 },
 {
 "id": "SP-0324",
@@ -49448,7 +49454,7 @@
 "links": [
 {
 "id": "SP-0209",
-"sim": 0.122
+"sim": 0.123
 },
 {
 "id": "SP-0253",
@@ -52399,7 +52405,7 @@
 "links": [
 {
 "id": "SP-0331",
-"sim": 0.449
+"sim": 0.45
 },
 {
 "id": "SP-0284",
@@ -53129,7 +53135,7 @@
 },
 {
 "id": "SP-0419",
-"sim": 0.205
+"sim": 0.209
 },
 {
 "id": "SP-0179",
@@ -54368,7 +54374,7 @@
 },
 {
 "id": "SP-0119",
-"sim": 0.077
+"sim": 0.076
 }
 ]
 },
@@ -55792,12 +55798,6 @@
 "name_ar": "دخول الكلمة من العمق"
 },
 {
-"id": "ARAB-55",
-"status": "ready",
-"name_en": "Bilingual Arabic/English stacks & HUD",
-"name_ar": "مكدّس عربي/إنجليزي"
-},
-{
 "id": "ARAB-18",
 "status": "ready",
 "name_en": "Kinetic Arabic grammar",
@@ -55808,6 +55808,12 @@
 "status": "ready",
 "name_en": "*Asterisk* emphasis convention",
 "name_ar": "تمييز الكلمة بالنجمة"
+},
+{
+"id": "ARAB-55",
+"status": "ready",
+"name_en": "Bilingual Arabic/English stacks & HUD",
+"name_ar": "مكدّس عربي/إنجليزي"
 },
 {
 "id": "ARAB-72",
@@ -55888,6 +55894,12 @@
 "name_ar": "الكلمة المنطوقة تضيء"
 },
 {
+"id": "ARAB-56",
+"status": "seen",
+"name_en": "RTL character card",
+"name_ar": "بطاقة شخصية من اليمين"
+},
+{
 "id": "ARAB-32",
 "status": "seen",
 "name_en": "Ink-bleed / focus-pull word reveal",
@@ -55904,12 +55916,6 @@
 "status": "seen",
 "name_en": "Squiggle underline highlight",
 "name_ar": "خط متموّج تحت الكلمة المفتاحية"
-},
-{
-"id": "ARAB-56",
-"status": "seen",
-"name_en": "RTL character card",
-"name_ar": "بطاقة شخصية من اليمين"
 },
 {
 "id": "ARAB-X01",
@@ -56258,12 +56264,12 @@
 "sim": 0.243
 },
 {
-"id": "SP-0123",
-"sim": 0.233
-},
-{
 "id": "SP-0158",
 "sim": 0.209
+},
+{
+"id": "SP-0122",
+"sim": 0.207
 }
 ]
 },
@@ -58227,10 +58233,10 @@
 "name_ar": "رموز تصميم الواجهة وسلالمها"
 },
 {
-"id": "UI-09",
+"id": "UI-06",
 "status": "documented",
-"name_en": "Seamless UI component loop (3–6 s)",
-"name_ar": "مقطع حلقة لمكوّن واحد"
+"name_en": "RTL product-UI mirroring",
+"name_ar": "عكس الواجهة للعربية"
 },
 {
 "id": "UI-08",
@@ -58239,10 +58245,10 @@
 "name_ar": "تشريح التفاعل الدقيق كوحدة مشهد"
 },
 {
-"id": "UI-06",
+"id": "UI-09",
 "status": "documented",
-"name_en": "RTL product-UI mirroring",
-"name_ar": "عكس الواجهة للعربية"
+"name_en": "Seamless UI component loop (3–6 s)",
+"name_ar": "مقطع حلقة لمكوّن واحد"
 },
 {
 "id": "UI-62",
@@ -58276,11 +58282,11 @@
 "sim": 0.122
 },
 {
-"id": "SP-0414",
-"sim": 0.105
+"id": "SP-0261",
+"sim": 0.086
 },
 {
-"id": "SP-0261",
+"id": "SP-0140",
 "sim": 0.086
 },
 {
@@ -58534,7 +58540,7 @@
 "links": [
 {
 "id": "SP-0375",
-"sim": 0.158
+"sim": 0.159
 },
 {
 "id": "SP-0220",
@@ -59557,12 +59563,12 @@
 "sim": 0.093
 },
 {
-"id": "SP-0419",
-"sim": 0.061
-},
-{
 "id": "SP-0348",
 "sim": 0.06
+},
+{
+"id": "SP-0419",
+"sim": 0.055
 }
 ]
 }

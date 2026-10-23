@@ -35,7 +35,7 @@
 | الملحق | افتحه عندما | أقسامه القديمة | الحالة هنا |
 |---|---|---|---|
 | [A1 عدسات SEE للتفكير والتخطيط](references/protocol/A1-see-thinking.md) | تحتاج Stage-0 مفصلة، أو حزمة SEE، أو بطاقة الخطة، أو IdeaForge، أو محاور الأسئلة، أو حساسية القرار، أو نص جسر SEE لمرحلة | -1، -1.1…-1.6، -1.10.أ، -1.12، -1.15، -1.23، -1.24، -1.31، -1.41، جسور المراحل 0–9 | منهج موثَّق؛ سقالات: `think.py frame/ideas/decide`؛ حزم SEE التسع خارجية |
-| [A2 المنفذون وFull Pro والجسور](references/protocol/A2-executors-fullpro.md) | ذكرتُ Full Pro أو مجلسًا أو Think أو Flagship/Astra، أو طلبت فعلًا على جهاز أو متصفح أو واتساب أو صوت | -1.7، -1.8، -1.18…-1.21، -1.39، -1.40، -1.42، -1.43، -1.48 | خارجي: لا منفذ منها هنا (`.mcp.json` يسجل `kosif-superpowers` وحده) |
+| [A2 المنفذون وFull Pro والجسور](references/protocol/A2-executors-fullpro.md) | ذكرتُ Full Pro أو مجلسًا أو Think أو Flagship/Astra، أو طلبت فعلًا على جهاز أو متصفح أو واتساب أو صوت | -1.7، -1.8، -1.18…-1.21، -1.39، -1.40، -1.42، -1.43، -1.48 | خارجي: لا منفذ منها هنا |
 | [A3 Release Bridge](references/protocol/A3-release-bridge.md) | دفع أو دمج أو إصدار أو نشر | -1.44 + صف kosif-tool | إجراء موثَّق؛ النشر هنا GitHub Pages لا Cloudflare |
 | [A4 FusionForge والتركيب](references/protocol/A4-fusionforge-composition.md) | أي L2/L3، أو تركيب مهارات، أو وصفة أو دروس مشروع | -1.22، -1.35…-1.37، -1.45 + أوامر v2 | قابل للتنفيذ ومختبر: `scripts/fusionforge.py` + `evals/test_fusionforge.py` |
 | [A5 الحالة والإيصالات](references/protocol/A5-state-receipts.md) | عمل طويل أو قابل للاستئناف أو متعدد الوكلاء، أو رمز حالة أو تعافٍ | -1.10.ب، -1.17، -1.28، -1.29، -1.33، -1.46 | إجراء موثَّق؛ لا كود يكتب هذه السجلات |
@@ -45,13 +45,14 @@
 | [A9 Shadow Evals](references/protocol/A9-shadow-evals.md) | تعديل البروتوكول أو المهارة، أو قبل نشرهما | -1.11، -1.16، -1.32، -1.38، -1.47 في جدول موحد | مواصفات؛ المختبر منها آليًا مسمّى في الجدول |
 | [A10 التطور الذاتي](references/protocol/A10-self-evolution.md) | تطوير SEE أو هذا البروتوكول أو المهارة | -1.10، -1.34، جسر المرحلة 10 | موثَّق + `check_skill.py` و`evals/test_protocol_structure.py` |
 | [A11 لقطات 21-10-2026](references/protocol/A11-snapshots-20261021.md) | سؤال عن حالة SEE أو Think المسجلة يومها | لقطات مؤرخة من -1.1 و-1.18 و-1.20 و-1.21 والمستودع الأصل، وسطر عنوان v5.2 | تاريخية؛ أعد الفحص حيًا |
-| [A12 SEE Pro Cognitive Fusion](references/protocol/A12-see-pro-cognitive-fusion.md) | تفكير SEE Pro وL2/L3 | جديد | `see_pro_cognitive_gate.py`؛ Full Pro خارجي |
+| [A12 SEE Pro Cognitive Fusion](references/protocol/A12-see-pro-cognitive-fusion.md) | تفكير SEE Pro وL2/L3 | جديد | `see_pro_cognitive_gate.py` |
 | [A13 مجلس البرو](references/protocol/A13-pro-council.md) | مجلس Pro | جديد | `council.py` |
-| [A14 أكاديمية الرسم والمونتاج](references/protocol/A14-drawing-cinematic-academy.md) | كتب الرسم والإضاءة وتصميم الفيديو | جديد | `drawing_academy.py` و`creative_principles.py` (جزئي) |
-| [A15 Style Atlas 86](references/protocol/A15-futurepedia-style-atlas.md) | أسلوب بصري أو فيلم شرح (سبورة، نيون، بكسل…) | 86 طريقة + محرك أصلي | `style_atlas_bridge.py` و`atlas_render.py` (→ MP4) |
+| [A14 أكاديمية الرسم والمونتاج](references/protocol/A14-drawing-cinematic-academy.md) | كتب الرسم والإضاءة وتصميم الفيديو | جديد | `drawing_academy.py` (جزئي) |
+| [A15 Style Atlas 86](references/protocol/A15-futurepedia-style-atlas.md) | أسلوب بصري أو فيلم شرح | 86 طريقة + محرك أصلي | `atlas_render.py` (→ MP4) |
 | [A16 Mosamem × REA](references/protocol/A16-mosamem-rea-capability-fusion.md) | صور، PSD، تحليل برامج | جديد | تخطيط فقط |
 | [A17 القصة](references/protocol/A17-story-scene-charter.md) | قصة وبرومنتات | جديد | `prompt_pack.py` |
 | [A18 For Business](references/protocol/A18-futurepedia-business-workflows.md) | AI لوظيفة عمل أو workflow | 64 خطة ببوابات | `business_workflows.py` |
+| [A20 مناهج الكتب](references/protocol/A20-book-distilled-methods.md) | أفكار، كود، أدلة، شخصية، محاسبة | 45 منهجًا | `book_methods.py` |
 | [CHANGELOG](references/protocol/CHANGELOG.md) | تبحث عن قسم قديم برقمه أو عن تاريخ الإصدارات | خريطة كل قسم قديم إلى مكانه | — |
 
 ## المستودع الأصل — اقرأه كاملًا حتى لو لم تكن المهارة مثبتة
