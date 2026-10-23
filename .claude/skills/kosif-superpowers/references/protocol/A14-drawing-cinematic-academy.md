@@ -83,6 +83,31 @@ Palette input example: {"colors":["#18392E","#F5E5C4","#AC8136"]}
 
 لرسم **شخصية أو وجه أو جسم أو أشكال** افتح [أطلس مناهج كتب الرسم](../drawing-methods-atlas.md): 26 بطاقة منهج أصلية (DM-01…DM-26) تلخّص بكلماتنا طرق التعليم المعروفة في كتب Loomis وHampton وBridgman وBetty Edwards وNicolaides وMattesi وScott Robertson وGurney وBancroft وPreston Blair وRichard Williams وMcCloud وغيرهم، مربوطة بمعرّفات فهرس الـ200. لكل بطاقة: المبدأ بالعربي والإنجليزي، الخطوات، وصفة تنفيذ بالكود، مصطلحات برومبت الصور، بنود فحص، وأخطاء شائعة. الأداة `scripts/drawing_methods.py`: `find` و`plan` (من النية إلى التحقق) و`prompt` (بلا استدعاء نموذج) و`draw head|figure|character|forms` (SVG بطبقات guide/construction/final/silhouette) و`check` (يقيس النسب والأثلاث والميل المتعاكس ولغة الأشكال واتساق التعبير). الاختبار: `evals/test_drawing_methods.py`. البطاقات ليست قراءة كاملة للكتب الحديثة ولا تدريب أوزان، والفحص هندسي لا حكم جمالي.
 
+## قراءة فعلية لأربعة فصول + اختبار بصري مستقل — 23 أكتوبر 2026
+
+هذه الإضافة مبنية على **فصول محددة مفتوحة تم الاطلاع على نصوصها الأصلية** لا على قوائم عناوين الكتب. تم الاستعانة بنصوص Project Gutenberg مع الاحتفاظ برابط الفصل؛ الكتب الـ200 في الفهرس لا تزال مرشحين، وملفات الكتب الكاملة لم تُنزل على الكمبيوتر بسبب خطأ التحقق من شهادة HTTPS، الذي **لم يُتجاوز**.
+
+| الكتاب المقروء منه | النص المراجع | المهارة المترجمة إلى اختبار/تمرين |
+|---|---|---|
+| [Harold Speed، *The Practice and Science of Drawing*](https://www.gutenberg.org/cache/epub/14264/pg14264-images.html) | الفصل IX، Mass Drawing Practical | فصل كتلة الظل/النصف/الضوء إلى ثلاث درجات قبل معالجة التفاصيل؛ التشخيص يحسب نسب الدرجات، لا يدعي نسبة جمالية مثالية |
+| [Arthur W. Dow، *Composition*](https://www.gutenberg.org/cache/epub/45410/pg45410-images.html) | الفصل VIII، Harmony-Building with Dark-and-Light | Notan وبناء لقطات صغيرة تعتمد علاقات الكتل؛ المقياس يسرد توزيع الكتل الداكنة دون فرض تماثل مصطنع |
+| [G. A. Storey، *The Theory and Practice of Perspective*](https://www.gutenberg.org/cache/epub/20165/pg20165-images.html) | الفصول XXV–XXVII، Vanishing Scale / Figures | تمرين المنظور وربط ارتفاعات الأشكال بالأفق ونقاط التلاشي؛ يحتاج تدقيق هندسي منفصل ولا يُثبت تلقائيًا من صورة نقطية |
+| [A. H. Munsell، *A Color Notation*](https://www.gutenberg.org/cache/epub/26054/pg26054-images.html) | الفصل II، Color Qualities | فصل أسئلة Hue وValue وChroma؛ HSV المستخدم في التشخيص **بديل تقريبي وليس إحداثيات Munsell الأصلية** |
+
+**محرك `drawing_visual_qa.py`** (تنفيذ فعلي مستقل عن `drawing_methods.py`): يقرأ PNG/JPEG/WebP/TIFF محليًا، ويقيس نسب الظل/المتوسط/الضوء وتوازن الكتل والشفافية وبعض الإشباع الرقمي على عينة محدودة. يقارن صورة «قبل وبعد» ويكشف تغييرات خارج المستطيل المأذون به. يخرج تشخيصًا JSON متضمنًا بصمات SHA-256، وتحذيرات تقنية، وتمارين مفهرسة بمصادر الكتب.
+
+```bash
+SK=.claude/skills/kosif-superpowers
+python3 "$SK/scripts/drawing_visual_qa.py" curriculum "أرسم شخصيات بعمق وألوان" --out report/lesson.json
+python3 "$SK/scripts/drawing_visual_qa.py" diagnose original.png --out report/visual.json
+python3 "$SK/scripts/drawing_visual_qa.py" compare original.png edited.png --roi 120 230 360 180 --out report/diff.json
+python3 -m unittest discover -s "$SK/evals" -p test_drawing_visual_qa.py -v
+```
+
+النتيجة `SCOPE_PRESERVED` تعني عدم تجاوز النطاق المسموح **فقط**؛ لا تثبت أن الكتابة العربية صحيحة، أو أن الرسم رائع، أو أن الوجه مطابق، أو أن المنظور حقيقي. كل خطوة تطوير تُقارن بعينة أساسية ويُرفق تقييم بصري بشري قبل ترقية وصفة FusionForge. تمنع الأداة الكتابة فوق تقارير موجودة، ولا تحتاج حساب AI أو تنزيل أدوات مدفوعة.
+
+**دليل تحقق:** 14/14 اختبارًا للصور الاصطناعية الحقيقية لمقارنة التعديلات ونسب درجات اللون + 10/10 اختبارًا قائمًا لمحرك الرسم PR #92 على الكمبيوتر LAPTOP-5T3VFM48 في 23 أكتوبر 2026. هذا فحص وحدات، **ليس شهادة احتراف فني**. 
+
 ## حلقة التعليم للفن الإبداعي
 
 **A: مصادر موثوقة** → B: محضر مصادر مع مقاطع/صفحات وحقوق → C: قدرة `method card` أصلية بمدخلات ومخرجات محددة → D: تمارين رسم أو إعداد لقطة → E: معاينة حقيقية وأدلة بصريّة → F: نقد على النسب والتكوين والقيم الضوئية والاتساق عبر الإطارات → G: تحسين ثم مقارنة مسار قديم/جديد وإيصال نتائج. اربط بالمحركات المثبتة، ولا تُسند لها وظيفة خارج نطاقها: `code_drawing_master.py` للشخصيات الأصلية، `unified_draw.py` للرسم الحركي، `montage_pro.py` للمونتاج، `verify_video.py` لفحص MP4. قبل الإدعاء بأن Claude «تعلّم» طبّق تمارين غير موجودة في المصادر، وحكماً مستقلاً، وقارن المخرجات بطريقة عادلة.
