@@ -1,4 +1,4 @@
-# أدوات المجال `draw` (12 أداة)
+# أدوات المجال `draw` (13 أداة)
 
 > مولّد من `data/tools.json`. [الفهرس الرئيسي](../README.md) · `python3 scripts/hub.py tool <id>` للبطاقة الحية.
 
@@ -488,6 +488,59 @@
 #### عند الفشل (A29)
 
 - ابدأ بـ `think.py recover --message "<نص الخطأ>"`، ثم سجّل `fusionforge.py trace --project <slug> --id <FUSE-ID> --stage <stage> --node <N> --action "<ما جُرّب>" --result failed --error-class <الصنف> --tool tool:perspective-color-lab --evidence <ملف>`.
+
+### `portrait-pipeline` — رسم يدوي المظهر بالرصاص أو الفحم أو الحبر لأي صورة أو مشهد متخيَّل، خطًا بخط / Hand-drawn pencil, charcoal or ink drawing of any photo or imagined scene, built stroke by stroke
+
+| الحقل | القيمة |
+|---|---|
+| المسار | `scripts/portrait_pipeline.py` (جذر: skill) |
+| المجال | `draw` |
+| الدليل | `tested-here` |
+| العائلات | `hand-drawn-draw-on`, `story-direction-ideas` |
+
+**ما تفعله:** يحوّل صورة مرجعية إلى بورتريه بالقلم الرصاص يبدو مرسومًا باليد دون نسخ أي بكسل من الصورة: يقيس الشخص (نقاط ملامح الوجه وتقسيم الشعر والجلد والملابس، اختياري)، ويضع بناء لوميس الخفيف وغلافًا بخطوط مستقيمة، ويخطط القيم مع تخفيف الخلفية، ويرسم أربع طبقات تهشير بخطوط مستدقة تتبع الشكل وتتوقف عند الحواف، ويموّه البشرة، ويضيف حوافًا ضائعة وظاهرة ولمسات الملامح، ويرفع الإضاءات ولمعة العين بالممحاة، ويرسب الجرافيت عبر ملمس ورق. يكتب PNG وSVG بطبقات قابلة للتحرير وإيصالًا، والمراجعة تشغّل بوابة القاعدة 27 وفحوص دقة القيم. 16 بطاقة منهج للبورتريه في data/portrait_methods.json. يعمل على أي صورة (وضع المشهد لغير البورتريه)، و`imagine` يرسم مشاهد من الخيال: Claude يكتب المشهد كمجسّم SVG بإضاءة واحدة أو يمرر أي صورة مصيّرة من أدوات الرسم أو ثلاثي الأبعاد، ثم يُرسم خطًا بخط. الخامات: رصاص، فحم، حبر، سيبيا.
+
+**What it does:** Turns any photo (portrait, object, place) or any scene Claude imagines into a hand-drawn-looking drawing without copying a single photo pixel: it measures the sitter (MediaPipe face landmarks and hair/skin/clothes segmentation, optional), lays in faint Loomis construction and a straight-line envelope, plans values with the background held back, renders four tonal passes of tapered strokes that follow the form and stop at edges, blends the skin with a stump pass, adds lost-and-found edges and feature accents, lifts highlights and catchlights with an eraser pass, and deposits graphite through simulated paper tooth. Writes PNG, a layered editable SVG (one group per stage) and a receipt; review runs the rule-27 anatomy/contact gate plus value-fidelity checks. 16 portrait method cards (Loomis, Bridgman, Bargue, Speed, Vanderpoel, Hampton, Gurney, Dodson, Hammond, atelier sight-size) in data/portrait_methods.json name the stage that executes each. Non-portrait photos switch to scene mode (GrabCut subject + colour-cluster shape boundaries, short straight hatching). `imagine` draws scenes from imagination: Claude writes the scene as an SVG maquette (one light, gradients for the light and shadow families, far planes lighter) or passes any rendered PNG (unified_draw, drawing_methods, Blender or native 3D), and it is drawn like a photo. Media: graphite, charcoal, ink, sepia.
+
+#### متى تُستدعى
+
+- «ارسم الصورة دي بورتريه بالقلم الرصاص كأنها مرسومة باليد»
+- «حوّل صورتي لرسم واقعي بالرصاص من غير ما تغير التكوين»
+- «Draw this photo as a realistic pencil portrait from scratch»
+- «Make a graphite portrait drawing of this person»
+- «ارسم بورتريه واقعي بالتهشير»
+- «ارسم من خيالك منارة على جرف بالرصاص كأنها مرسومة باليد»
+- «ارسم أي صورة أبعتها لك بالفحم»
+- «Draw an imagined scene in pencil, stroke by stroke»
+- «Turn this landscape photo into an ink hatching drawing»
+
+#### الأوامر
+
+- **draw**: Measures the photo and writes portrait.png, portrait.svg (layers construction, lay-in, cross-hatch, deep-shadow, accents, edges + a hidden rule-27 figure group) and receipt.json. --medium graphite\|charcoal\|ink\|sepia, --subject auto\|portrait\|scene, --background straight\|flow.
+  - `python3 scripts/portrait_pipeline.py draw --photo photo.png --out out/portrait --models <dir with face_landmarker.task and selfie_multiclass.tflite>`
+- **imagine**: Rasterises a Claude-authored SVG maquette (Chromium or rsvg-convert) or takes --png from any renderer, then draws it from strokes only; keeps _reference.png beside the drawing.
+  - `python3 scripts/portrait_pipeline.py imagine --svg scene.svg --out out/scene --medium graphite`
+- **review**: Rule-27 anatomy/contact gate (drawing_methods review) plus value-mass, value-detail, face-likeness, value-range and stroke-texture checks; writes review.json; exit 1 on any failure.
+  - `python3 scripts/portrait_pipeline.py review --dir out/portrait`
+- **cards**: Lists or shows the portrait method cards.
+  - `python3 scripts/portrait_pipeline.py cards --id PM-02`
+
+#### المتطلبات والأمان
+
+- optional: mediapipe (+ face_landmarker.task, selfie_multiclass_256x256.tflite from storage.googleapis.com/mediapipe-models)
+- python: numpy, opencv-python-headless
+- الأمان: writes-files
+- الموافقة: Writes only into --out; no network, model calls or spend. A photo of a real person is personal data: draw people only with their consent and never publish without the user's permission.
+- الحدود: Algorithmic rendering from a measured reference and a value map, not a human hand and not a neural model. An imagined scene is only as convincing as the maquette Claude builds for it: flat vector maquettes give illustration-like drawings. Method cards paraphrase widely taught methods (only those marked user_copy_read_paraphrased rest on books read). review measures value fidelity, texture and figure connectivity, not beauty.
+
+#### الاختبارات والأدلة
+
+- `.claude/skills/kosif-superpowers/evals/test_portrait_pipeline.py`
+- مرجع: `.claude/skills/kosif-superpowers/references/portrait-drawing.md`
+
+#### عند الفشل (A29)
+
+- ابدأ بـ `think.py recover --message "<نص الخطأ>"`، ثم سجّل `fusionforge.py trace --project <slug> --id <FUSE-ID> --stage <stage> --node <N> --action "<ما جُرّب>" --result failed --error-class <الصنف> --tool tool:portrait-pipeline --evidence <ملف>`.
 
 ### `smart-draw` — الرسم الذكي ومساعد الأشكال / Smart Draw shape assist
 

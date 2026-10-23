@@ -78,6 +78,8 @@ jobs:
         run: python3 -m pip install --disable-pip-version-check 'Pillow==12.3.0' 'fonttools[woff]==4.60.1' 'beautifulsoup4==4.15.0' 'opencv-python-headless==4.12.0.88'
       - name: KOSIF Creative Paint PNG/SVG/GIF/MP4 functionality and safety
         run: python3 -m unittest discover -s .claude/skills/kosif-superpowers/evals -p 'test_creative_paint.py' -v
+      - name: KOSIF portrait pipeline (stroke-built graphite portrait, method cards, review gate)
+        run: python3 -m unittest discover -s .claude/skills/kosif-superpowers/evals -p 'test_portrait_pipeline.py' -v
       - name: IK character motion and immutable AAC audio packet tests
         run: python3 -m unittest discover -s .claude/skills/kosif-superpowers/evals -p 'test_character_ik.py' -v
       - name: Verify original Blender five-second movie

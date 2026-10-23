@@ -1,6 +1,6 @@
 # مكتبة البروتوكول — USIP v5.5 protocol library
 
-> مولّدة بـ `scripts/smart_capabilities.py library`؛ لا تُحرَّر يدويًا. 5,545 قدرة في 62 عائلة و15 مجموعة، و151 أداة مسجلة. الدليل: [A28](../protocol/A28-capability-routing.md) · [النواة](../../PROTOCOL.md#متى-تفتح-الملاحق--appendix-triggers)
+> مولّدة بـ `scripts/smart_capabilities.py library`؛ لا تُحرَّر يدويًا. 5,545 قدرة في 62 عائلة و15 مجموعة، و152 أداة مسجلة. الدليل: [A28](../protocol/A28-capability-routing.md) · [النواة](../../PROTOCOL.md#متى-تفتح-الملاحق--appendix-triggers)
 
 ## الفهرس / contents
 
@@ -23,10 +23,10 @@
 | التفكير والتخطيط والاستراتيجية (`thinking`) | 338 | 17 | 8 | 20 | [thinking.md](thinking.md) |
 | الوكلاء والتوجيه الذكي (`agents`) | 168 | 87 | 6 | 39 | [agents.md](agents.md) |
 | البرمجة وبناء التطبيقات (`software`) | 580 | 111 | 17 | 17 | [software.md](software.md) |
-| الرسم والأشكال والتصميم (`drawing`) | 306 | 53 | 55 | 22 | [drawing.md](drawing.md) |
+| الرسم والأشكال والتصميم (`drawing`) | 306 | 53 | 55 | 23 | [drawing.md](drawing.md) |
 | الصور والتحرير والتوليد (`images`) | 320 | 96 | 42 | 27 | [images.md](images.md) |
 | الثري دي والمحاكاة والرندر (`3d`) | 758 | 122 | 141 | 27 | [3d.md](3d.md) |
-| الموشن والمونتاج والسينما (`motion`) | 1,233 | 117 | 183 | 51 | [motion.md](motion.md) |
+| الموشن والمونتاج والسينما (`motion`) | 1,233 | 117 | 183 | 52 | [motion.md](motion.md) |
 | الصوت والموسيقى والتعليق (`audio`) | 422 | 59 | 74 | 22 | [audio.md](audio.md) |
 | الخطوط والنصوص العربية واللاتينية (`type`) | 215 | 40 | 49 | 12 | [type.md](type.md) |
 | البيانات والرسوم والمواقع (`data`) | 258 | 49 | 18 | 2 | [data.md](data.md) |
@@ -35,7 +35,7 @@
 | التحليل العكسي وفحص البرامج (`reverse`) | 258 | 30 | 0 | 21 | [reverse.md](reverse.md) |
 | قدرات مساندة غير مصنفة (`misc`) | 27 | 5 | 7 | 0 | [misc.md](misc.md) |
 
-الفصول الـ15 معًا 6,679 سطرًا، وكل قدرة في فصل واحد بالضبط.
+الفصول الـ15 معًا 6,681 سطرًا، وكل قدرة في فصل واحد بالضبط.
 
 ## من أي محادثة / from any chat
 

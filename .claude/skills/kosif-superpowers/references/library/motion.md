@@ -68,6 +68,7 @@
 | `music-rhythm-engine` | فرضيات إيقاع الموسيقى | `python3 scripts/music_rhythm_engine.py ./out/cues.json --out ./out/rhythm.json` | tested-here |
 | `native-glb` | مُصدِّر GLB مستقل عن Blender | `python3 scripts/native_glb.py --scene templates/blender-demo.json --output ./out/scene.glb` | tested-here |
 | `perspective-color-lab` | منظور هندسي ومقاييس التباين اللوني | `python3 scripts/perspective_color_lab.py perspective --input scene.json --out out/scene.svg` | tested-elsewhere |
+| `portrait-pipeline` | رسم يدوي المظهر بالرصاص أو الفحم أو الحبر لأي صورة أو مشهد متخيَّل، خطًا بخط | `python3 scripts/portrait_pipeline.py draw --photo photo.png --out out/portrait --models <dir with face_landmarker.task and selfie_multiclass.tflite>` | tested-here |
 | `reel-factory` | مصنع الريلز: صوت وتوقيت كلمات ولقطات مرخصة ← ريلز 9:16 مفحوص | `python3 scripts/reel_factory.py plan --audio ./voice.m4a --audio-rights owned --words ./words.json --shots-manifest ./stock/manifest.json --shot-ids 17928486,8165467,20382699 --title "دعاء يوم الخميس" --handle @kosif` | tested-here |
 | `reference-edit-engine` | محرك إعادة بناء المونتاج المرجعي | `python3 scripts/reference_edit_engine.py --probe ./cuts.json --out ./new-edit` | tested-here |
 | `reference-visual-fingerprint` | البصمة البصرية للفيديو المرجعي | `python3 scripts/reference_visual_fingerprint.py ./in.mp4 --probe ./cuts.json --out ./reference-look.json` | tested-here |

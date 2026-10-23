@@ -2120,6 +2120,11 @@
    "label": "scripts/package_skill.py"
   },
   {
+   "id": "script:scripts/portrait_pipeline.py",
+   "kind": "script",
+   "label": "scripts/portrait_pipeline.py"
+  },
+  {
    "id": "script:scripts/prompt_pack.py",
    "kind": "script",
    "label": "scripts/prompt_pack.py"
@@ -2483,6 +2488,11 @@
    "id": "test:tests/test_superpowers_unified.py",
    "kind": "test",
    "label": "tests/test_superpowers_unified.py"
+  },
+  {
+   "id": "test:.claude/skills/kosif-superpowers/evals/test_portrait_pipeline.py",
+   "kind": "test",
+   "label": ".claude/skills/kosif-superpowers/evals/test_portrait_pipeline.py"
   },
   {
    "id": "test:.claude/skills/kosif-superpowers/evals/test_catalog_evidence_audit.py",
@@ -7055,6 +7065,12 @@
    "w": 1
   },
   {
+   "from": "script:scripts/portrait_pipeline.py",
+   "to": "script:scripts/drawing_methods.py",
+   "rel": "imports",
+   "w": 1
+  },
+  {
    "from": "script:scripts/powers.py",
    "to": "script:scripts/probe_env.py",
    "rel": "imports",
@@ -7717,6 +7733,12 @@
   {
    "from": "script:scripts/package_skill.py",
    "to": "test:tests/test_superpowers_unified.py",
+   "rel": "tested_by",
+   "w": 1
+  },
+  {
+   "from": "script:scripts/portrait_pipeline.py",
+   "to": "test:.claude/skills/kosif-superpowers/evals/test_portrait_pipeline.py",
    "rel": "tested_by",
    "w": 1
   },
