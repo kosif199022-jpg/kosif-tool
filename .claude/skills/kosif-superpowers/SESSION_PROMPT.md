@@ -2,6 +2,11 @@
 
 > آخر تحديث: 21-10-2026 · المصدر: `kosif199022-jpg/kosif-tool` → `.claude/skills/kosif-superpowers/SESSION_PROMPT.md` · تطابق `PROTOCOL.md` (USIP v5.3) بمعانيه؛ وعند أي اختلاف فالبروتوكول هو المرجع.
 
+## الفهرس / contents
+- FusionForge v2 — وصفة لكل تجربة، وتعلّم من كل تجربة داخل المشروع نفسه
+- تكامل الجسور (من v5.2، في الملحقين A2 وA3) — واجهة واحدة وملاك تنفيذ منفصلون
+- ما تعلمناه في الجلسات السابقة ويجب أن تعرفه
+
 ---
 
 فعّل بروتوكول **KOSIF Superpowers × KOSIF SEE — USIP v5.3** (مع محرك الوصفات FusionForge v2) باعتباره منهج العمل الأساسي في هذا المشروع.
@@ -9,6 +14,8 @@
 **SEE Pro Cognitive Fusion:** في المهام L2/L3 المعقدة أو عندما أطلب تطوير الذكاء، اقرأ الملحق [A12 — SEE Pro Cognitive Fusion](references/protocol/A12-see-pro-cognitive-fusion.md) بعد النواة، وطبّق 11 عدسة Stage-0 بصورة متناسبة. اجمع قدرات Superpowers في Workflow سببي بأنواع مدخلات ومخرجات واضحة؛ اختر حزم SEE التسع حسب الحاجة فقط (Standard 2/1، Deep 4/2)، واعرض 3 خطط مختلفة واختبر baseline والحل الجديد، واسألني الأسئلة المؤثرة على الإبداع فقط. بوابة scripts/see_pro_cognitive_gate.py تفحص عقد التفكير ولا تزعم تشغيل أدوات. **Full Pro لا يُعتبر منفذًا إلا بإيصال خاص بنفس الطلب من مالكه KOSIF Think.** لا تنسخ بيانات الشركات أو أصول الخدمات الخارجية.
 
 **Mosamem × REA — الملحق A16:** حين أطلب تصميم عربي بطبقات، PSD، إزالة خلفية، أو تحليل تطبيقات لتحسين Superpowers، افتح `references/protocol/A16-mosamem-rea-capability-fusion.md`. نفّذ `scripts/mosamem_rea_fusion.py doctor|catalog|plan|inspect|rea-plan` حسب الحاجة. مصمم v0.1.0 برنامج مستقل GPL-3.0-or-later، وليس محركًا مثبتًا في KOSIF، وREA يعمل من الجسر المصرّح به أصلاً. لا تنسخ كود GPL، لا تُنزّل نماذج AI دون إذن، لا تدّعِ التعديل أو التشغيل دون آثار QA، وحافظ على عزل الشركات.
+
+**تطوير الرسم من مصادر موثقة واختبارات مستقلة:** في مهام الرسم والبوسترات والشخصيات استخدم `scripts/drawing_methods.py` من PR #92 للتصميم ثم `scripts/drawing_visual_qa.py curriculum|diagnose|compare` لمناهج الفصول الأربعة المقروءة وتحليل التدرجات والتعديلات خارج النطاق. لا تعلن جودة فنية دون مراجعة الناتج بصريًا، ولا تزعم قراءة 200 كتاب أو تعديل أوزان النموذج. راجع الملحق A14 وخزن التجربة المُثبتة فقط في FusionForge.
 
 **أكاديمية تعليم الرسم والفنون والمونتاج A14:** عند ذكر كتب فنون أو رسم أو تصوير أو إضاءة أو تحريك أو مونتاج، افتح [A14](references/protocol/A14-drawing-cinematic-academy.md). استخدم `data/creative_books_200_index.json` للفهرس، و`drawing_academy.py` للدروس وتحليل المصادر المحلية المخوّلة، و`creative_principles.py` لتطبيق بناء الرسم تدريجيًا وقيم الضوء/الظل واستمرارية القطع. لرسم شخصية أو وجه أو جسم شغّل `drawing_methods.py plan` ثم `draw` ثم `check` ([أطلس مناهج كتب الرسم](references/drawing-methods-atlas.md)). اخرج بتمرين ومخرج فني واختبار، لا بقائمة أسماء فقط؛ لا تدّعِ أن 200 كتاب قُرئت أو أن أوزان Claude تغيرت. ولا تغيّر قانون Katana (تحليل فقط بلا رصيد إنتاج).
 

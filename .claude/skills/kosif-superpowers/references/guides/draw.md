@@ -8,7 +8,7 @@ Commands below are typed from the skill folder (`.claude/skills/kosif-superpower
 
 <!-- hub:area:draw:start -->
 
-**الأدوات / tools (10)** — `python3 scripts/hub.py tool <id>` for every command, requirement and limit:
+**الأدوات / tools (11)** — `python3 scripts/hub.py tool <id>` for every command, requirement and limit:
 
 | tool | what it does | start with | evidence |
 |---|---|---|---|
@@ -22,6 +22,7 @@ Commands below are typed from the skill folder (`.claude/skills/kosif-superpower
 | `drawing-academy` | Eight source-anchored skill lessons, rights-scoped text keyword scans, scores tied to actual artifacts and provenance. | `python3 scripts/drawing_academy.py index` | tested-elsewhere |
 | `drawing-methods` | 48 original method cards distilled from drawing books, including 41 books from the user's own library read on 2026-10-23 (text, OCR or sample pages) (gesture, proportion, Loomis head, mannequin, shape language, silhouette, expression, light, cast shadows, hatching, anime heads, hair and cel shading, animation timing, walks, urban sketching, plants, products, creatures, practice); ranks them for an Arabic or English request, builds an ordered drawing plan or an image prompt, draws a head, figure, character, forms, a bouncing ball or a constructed cast shadow as a deterministic layered SVG (guide, construction, final, silhouette) and checks the drawing's geometry against the cards. | `python3 scripts/drawing_methods.py find "ارسم وش شخصية بتضحك"` | tested-here |
 | `perspective-color-lab` | Draws a geometrically constrained two-vanishing-point SVG and measures HSV/WCAG contrast of brand color swatches. | `python3 scripts/perspective_color_lab.py perspective --input scene.json --out out/scene.svg` | tested-elsewhere |
+| `drawing-visual-qa` | Routes art tasks to four original-book sections read in full chapter context, measures real raster three-value tone groups, transparency and color proxies, and checks that edited pixels remain in the user-authorized rectangular region. Separate from the PR92 SVG authoring engine; its PASS is not an aesthetic verdict. | `python3 scripts/drawing_visual_qa.py curriculum "ارسم شخصية كرتونية بمنظور وإضاءة" --out out/lessons.json` | tested-here |
 
 <!-- hub:area:draw:end -->
 

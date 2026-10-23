@@ -12134,6 +12134,93 @@
    "families": [
     "self-discovery"
    ]
+  },
+  {
+   "id": "drawing-visual-qa",
+   "path": "scripts/drawing_visual_qa.py",
+   "root": "skill",
+   "kind": "cli",
+   "area": "draw",
+   "title_en": "Book-chapter drawing coach and independent raster visual QA",
+   "title_ar": "مدرب الرسم من فصول الكتب والتشخيص البصري المستقل",
+   "summary_en": "Routes art tasks to four original-book sections read in full chapter context, measures real raster three-value tone groups, transparency and color proxies, and checks that edited pixels remain in the user-authorized rectangular region. Separate from the PR92 SVG authoring engine; its PASS is not an aesthetic verdict.",
+   "summary_ar": "يبني تمارين من أربعة فصول موثّقة في كتب الرسم والتكوين والمنظور والألوان؛ ويفحص التدرج الداكن والمتوسط والفاتح والشفافية ودرجة اللون في الصور، ثم يقارن صور قبل/بعد ويكشف التعديل خارج النطاق المسموح. أداة تشخيص وليست شهادة احتراف.",
+   "use_when": [
+    "علّمني الرسم من الكتب بتطبيق عملي",
+    "حلّل توزيع الظل في رسمي",
+    "قارن صورة قبل وبعد واحفظ بقية الصورة",
+    "طوّر شخصية ورسومات من مناهج الفن",
+    "Review drawing book exercises with measurable evidence",
+    "Check unwanted edits outside a poster region"
+   ],
+   "keywords": [
+    "رسم",
+    "كتب الرسم",
+    "المراجعة",
+    "الظل",
+    "التكوين",
+    "الألوان",
+    "الاحتراف",
+    "نقّح",
+    "البوستر",
+    "تحسين الرسم",
+    "drawing",
+    "drawing critique",
+    "notan",
+    "light shadow",
+    "color",
+    "colour",
+    "preserve",
+    "visual qa",
+    "raster",
+    "before after",
+    "ROI",
+    "art book",
+    "composition"
+   ],
+   "commands": [
+    {
+     "name": "curriculum",
+     "example": "python3 scripts/drawing_visual_qa.py curriculum \"ارسم شخصية كرتونية بمنظور وإضاءة\" --out out/lessons.json",
+     "does": "Produces staged source-linked exercises from four chapter-read public-domain books. Reports that 200 other entries are not fully reviewed."
+    },
+    {
+     "name": "diagnose",
+     "example": "python3 scripts/drawing_visual_qa.py diagnose out/character.png --out out/visual-qa.json",
+     "does": "Reads authorized raster locally and measures three-value histogram, visible alpha fraction and dark-mass balance. No aesthetic confidence claim."
+    },
+    {
+     "name": "compare",
+     "example": "python3 scripts/drawing_visual_qa.py compare original.png edited.png --roi 120 230 360 180 --out out/scope-check.json",
+     "does": "Compares real image pixels and SHA-256s; fails if edits leak outside allowed rectangle beyond the tiny pixel tolerance."
+    }
+   ],
+   "inputs": "User-authorized raster images PNG/JPEG/WebP/TIFF, a text brief, or before+after and an allowed x/y/width/height region",
+   "outputs": "Source-backed lesson JSON, independent image metrics JSON and edit-region preservation JSON",
+   "requires": {
+    "python": [
+     "Pillow"
+    ],
+    "binaries": [],
+    "node": [],
+    "optional": [],
+    "network": false
+   },
+   "safety": "writes-files",
+   "consent": "Only reads paths supplied by the user or explicit workspace; outputs a new JSON report and refuses overwrites. Never uploads photos.",
+   "limits": "The four named Gutenberg chapters were reviewed; the 200-index is not fully read. HSV is not Munsell HVC. Pixel changes do not establish beauty, facial identity, Arabic spelling or semantic faithfulness.",
+   "tests": [
+    ".claude/skills/kosif-superpowers/evals/test_drawing_visual_qa.py"
+   ],
+   "docs": [
+    ".claude/skills/kosif-superpowers/references/protocol/A14-drawing-cinematic-academy.md"
+   ],
+   "families": [
+    "hand-drawn-draw-on",
+    "story-direction-ideas"
+   ],
+   "evidence": "tested-here",
+   "evidence_note": "14 independent raster tests passed on authorized Windows laptop LAPTOP-5T3VFM48, 2026-10-23; PR92 existing 10 SVG tests also passed."
   }
  ]
 }
