@@ -13,7 +13,7 @@
 - [ثلاث قدرات فعلية داخل KOSIF](#ثلاث-قدرات-فعلية-داخل-kosif)
   - [أوامر التشغيل من جذر المستودع](#أوامر-التشغيل-من-جذر-المستودع)
 - [C-SPACE-01 و C-COLOR-01 — قدرات المصدر العملية](#c-space-01-و-c-color-01--قدرات-المصدر-العملية)
-- [أطلس مناهج كتب الرسم — 26 بطاقة ورسم بنائي قابل للفحص](#أطلس-مناهج-كتب-الرسم--26-بطاقة-ورسم-بنائي-قابل-للفحص)
+- [أطلس مناهج كتب الرسم — 47 بطاقة ورسم بنائي قابل للفحص](#أطلس-مناهج-كتب-الرسم--47-بطاقة-ورسم-بنائي-قابل-للفحص)
 - [حلقة التعليم للفن الإبداعي](#حلقة-التعليم-للفن-الإبداعي)
 
 ## هدف الميزة وحالة العمل
@@ -79,9 +79,9 @@ Perspective input example: {"width":800,"height":800,"horizon_y":300,"left_vp_x"
 Palette input example: {"colors":["#18392E","#F5E5C4","#AC8136"]}
 
 **Verification state as of 22-10-2026:** 7 construction/tonal tests + 7 source-aware academy tests + 8 projection/color tests passed on authorized Windows laptop (22 total). The wider legacy v5.2 fixture-reproduction test had a preexisting hash-parsing drift: manual retention report showed 0 missing v5.2 units, but historic fixture hashes did not reproduce. Do not count this as a clean complete protocol run. Fetching all 8 public-domain source texts to the laptop hit SSL CERTIFICATE_VERIFY_FAILED; TLS checks were not bypassed. Source anchors from verified texts and selected sections are not a full-text review of 200 books.
-## أطلس مناهج كتب الرسم — 26 بطاقة ورسم بنائي قابل للفحص
+## أطلس مناهج كتب الرسم — 47 بطاقة ورسم بنائي قابل للفحص
 
-لرسم **شخصية أو وجه أو جسم أو أشكال** افتح [أطلس مناهج كتب الرسم](../drawing-methods-atlas.md): 26 بطاقة منهج أصلية (DM-01…DM-26) تلخّص بكلماتنا طرق التعليم المعروفة في كتب Loomis وHampton وBridgman وBetty Edwards وNicolaides وMattesi وScott Robertson وGurney وBancroft وPreston Blair وRichard Williams وMcCloud وغيرهم، مربوطة بمعرّفات فهرس الـ200. لكل بطاقة: المبدأ بالعربي والإنجليزي، الخطوات، وصفة تنفيذ بالكود، مصطلحات برومبت الصور، بنود فحص، وأخطاء شائعة. الأداة `scripts/drawing_methods.py`: `find` و`plan` (من النية إلى التحقق) و`prompt` (بلا استدعاء نموذج) و`draw head|figure|character|forms` (SVG بطبقات guide/construction/final/silhouette) و`check` (يقيس النسب والأثلاث والميل المتعاكس ولغة الأشكال واتساق التعبير). الاختبار: `evals/test_drawing_methods.py`. البطاقات ليست قراءة كاملة للكتب الحديثة ولا تدريب أوزان، والفحص هندسي لا حكم جمالي.
+لرسم **شخصية أو وجه أو جسم أو أشكال** افتح [أطلس مناهج كتب الرسم](../drawing-methods-atlas.md): 47 بطاقة منهج أصلية (DM-01…DM-47) تلخّص بكلماتنا طرق التعليم في كتب Loomis وHampton وBridgman وBetty Edwards وNicolaides وMattesi وScott Robertson وGurney وBancroft وPreston Blair وRichard Williams وMcCloud وغيرهم، مربوطة بمعرّفات فهرس الـ200، ومنها 41 كتابًا من مكتبة المستخدم نفسه (`UBK-01…UBK-41`) قُرئت في هذه الجلسة بطبقة النص أو OCR أو صفحات العينة ثم أُعيدت صياغتها: التحريك والتوقيت والمشي، الظل الساقط المبني، التهشير والملمس، رأس الأنمي وشعره وتلوين بشرته، رسم المدن والنبات والمنتجات والمخلوقات، ونظام التمرين. لكل بطاقة: المبدأ بالعربي والإنجليزي، الخطوات، وصفة تنفيذ بالكود، مصطلحات برومبت الصور، بنود فحص، وأخطاء شائعة. الأداة `scripts/drawing_methods.py`: `find` و`plan` (من النية إلى التحقق) و`prompt` (بلا استدعاء نموذج) و`draw head|figure|character|forms|bounce|shadow` (SVG بطبقات guide/construction/final/silhouette) و`check` (يقيس النسب والأثلاث والميل المتعاكس ولغة الأشكال واتساق التعبير وثبات حجم الكرة وتباعدها وتقاطع أشعة الظل). الاختبار: `evals/test_drawing_methods.py`. البطاقات إعادة صياغة لا نسخ، و`review_status` يقول لكل بطاقة هل قُرئت نسخة المستخدم أم هي معرفة تعليمية عامة؛ وليست تدريب أوزان، والفحص هندسي لا حكم جمالي.
 
 ## حلقة التعليم للفن الإبداعي
 

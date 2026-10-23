@@ -1,4 +1,5 @@
 import json
+import re
 import subprocess
 import sys
 import tempfile
@@ -19,7 +20,7 @@ class AtlasTests(unittest.TestCase):
 
     def test_cards_are_complete_and_sourced(self):
         books = dm.book_ids()
-        ext = {b["id"] for b in self.data["external_books"]}
+        ext = {b["id"] for b in self.data["external_books"]} | {b["id"] for b in self.data["user_library"]}
         levels = set(self.data["review_status_levels"])
         self.assertGreaterEqual(len(self.data["methods"]), 20)
         for m in self.data["methods"]:
@@ -28,17 +29,42 @@ class AtlasTests(unittest.TestCase):
             for b in m["books"]:
                 self.assertIn(b, books | ext, f"{m['id']} names unknown book {b}")
             self.assertIn(m["review_status"], levels)
-        for b in self.data["external_books"]:
+        for b in self.data["external_books"] + self.data["user_library"]:
             self.assertIn(b["review_status"], levels, b["id"])
 
-    def test_status_never_claims_training_or_fulltext(self):
-        self.assertIn("NOT_fulltext_review", self.data["status"])
+    def test_status_never_claims_training_or_copied_text(self):
+        self.assertIn("NOT_fulltext_copy", self.data["status"])
         self.assertIn("NOT_model_training", self.data["status"])
+
+    def test_user_library_is_metadata_only_and_read_cards_cite_it(self):
+        lib = {b["id"]: b for b in self.data["user_library"]}
+        self.assertGreaterEqual(len(lib), 40)
+        for b in lib.values():
+            self.assertEqual(set(b) - {"id", "title", "author", "pages", "read_via", "index_id", "review_status"}, set(), b["id"])
+        index = dm.book_ids()
+        for b in lib.values():
+            if "index_id" in b:
+                self.assertIn(b["index_id"], index, b["id"])
+        read = [m for m in self.data["methods"] if m["review_status"] == "user_copy_read_paraphrased"]
+        self.assertGreaterEqual(len(read), 20)
+        mapped = {b["index_id"] for b in lib.values() if "index_id" in b}
+        for m in read:
+            self.assertTrue(any(b in lib or b in mapped for b in m["books"]), m["id"])
+        cited = {b for m in self.data["methods"] for b in m["books"]}
+        unused = [i for i, b in lib.items() if i not in cited and b.get("index_id") not in cited]
+        self.assertEqual(unused, [], "every book read must feed at least one card")
+
+    def test_every_card_is_reachable_from_the_pipeline(self):
+        staged = {mid for st in self.data["pipeline"] for mid in st["methods"]}
+        self.assertEqual([m["id"] for m in self.data["methods"] if m["id"] not in staged and int(m["id"][3:]) > 26], [])
 
     def test_arabic_requests_route_to_the_right_cards(self):
         cases = {"ارسم وش شخصية بتضحك": "DM-16", "عايز أرسم بورتريه وجه من زاوية": "DM-09",
                  "وضعية جسم ديناميكية وخط الفعل": "DM-06", "منظور ونقطة تلاشي للمدينة": "DM-05",
-                 "draw a cute character with clear shape language": "DM-13", "ظل وإضاءة على كرة": "DM-19"}
+                 "draw a cute character with clear shape language": "DM-13", "ظل وإضاءة على كرة": "DM-19",
+                 "عايز أعمل انيميشن كرة بتنط": "DM-27", "توقيت الحركة والإطارات": "DM-28", "ارسم ظل ساقط لصندوق من مصباح": "DM-32",
+                 "شعر أنمي بيطير في الهوا": "DM-35", "تلوين بشرة أنمي": "DM-36", "رسم شارع ومباني": "DM-37",
+                 "ارسم وردة": "DM-38", "تهشير بالحبر": "DM-33", "شخص بيجري للأمام": "DM-29"}
         for q, want in cases.items():
             got = [r["id"] for r in dm.find(self.data, q, top=3)]
             self.assertIn(want, got, q)
@@ -69,7 +95,9 @@ class DrawTests(unittest.TestCase):
         variants = [("head",), ("head", "--yaw", "-45", "--pitch", "15"), ("figure",),
                     ("figure", "--pose", "action", "--heads", "7.5"), ("figure", "--pose", "stand", "--heads", "3"),
                     ("character",), ("character", "--shape", "triangle", "--age", "adult", "--expression", "angry"),
-                    ("character", "--shape", "square", "--age", "elder", "--expression", "surprised"), ("forms",)]
+                    ("character", "--shape", "square", "--age", "elder", "--expression", "surprised"), ("forms",),
+                    ("bounce",), ("bounce", "--frames", "9", "--bounce-height", "0.3"), ("shadow",),
+                    ("shadow", "--light-x", "0.85", "--light-height", "0.3")]
         with tempfile.TemporaryDirectory() as tmp:
             for i, v in enumerate(variants):
                 out = Path(tmp) / f"{i}.svg"
@@ -92,6 +120,20 @@ class DrawTests(unittest.TestCase):
             res = dm.check_svg(p)
             self.assertEqual(res["status"], "FAIL")
             self.assertFalse(next(c for c in res["checks"] if c["id"] == "heads-tall")["pass"])
+
+    def test_check_catches_lost_volume_and_a_wrong_shadow(self):
+        svg = dm.draw_bounce()[0]
+        with tempfile.TemporaryDirectory() as tmp:
+            p = Path(tmp) / "b.svg"
+            p.write_text(re.sub(r'rx="([\d.]+)"(?=[^>]*data-part="ball" data-frame="3")',
+                                lambda m: f'rx="{float(m.group(1)) * 1.3}"', svg, count=1), encoding="utf-8")
+            res = dm.check_svg(p)
+            self.assertFalse(next(c for c in res["checks"] if c["id"] == "volume-preserved")["pass"])
+            svg = dm.draw_shadow()[0]
+            moved = re.sub(r'(<circle class="sh" cx=")([\d.]+)', lambda m: m.group(1) + str(float(m.group(2)) + 25), svg, count=1)
+            p.write_text(moved, encoding="utf-8")
+            res = dm.check_svg(p)
+            self.assertFalse(next(c for c in res["checks"] if c["id"] == "shadow-rays-meet")["pass"])
 
     def test_refuses_overwrite_and_bad_parameters(self):
         with tempfile.TemporaryDirectory() as tmp:
