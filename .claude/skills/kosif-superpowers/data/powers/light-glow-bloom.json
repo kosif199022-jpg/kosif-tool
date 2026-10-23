@@ -2,6 +2,7 @@
  {
   "id": "GLOW-01",
   "family": "light-glow-bloom",
+  "domain": "motion",
   "name_ar": "لافتة نيون عربية حيّة",
   "name_en": "Living Arabic neon sign (ignition · wall light · wet reflection · synced hum)",
   "status": "proven",
@@ -51,6 +52,7 @@
  {
   "id": "GLOW-02",
   "family": "light-glow-bloom",
+  "domain": "motion",
   "name_ar": "جدول الاشتعال والوميض المعطوب",
   "name_en": "Ignition & faulty-tube flicker schedule",
   "status": "proven",
@@ -94,6 +96,7 @@
  {
   "id": "GLOW-03",
   "family": "light-glow-bloom",
+  "domain": "motion",
   "name_ar": "أنبوب نيون SVG بأربع طبقات",
   "name_en": "SVG neon tube (4-stroke stack)",
   "status": "proven",
@@ -129,6 +132,7 @@
  {
   "id": "GLOW-04",
   "family": "light-glow-bloom",
+  "domain": "motion",
   "name_ar": "توهج النص النيوني بثلاثة ظلال لكل كلمة",
   "name_en": "Neon text glow (triple shadow, per word)",
   "status": "proven",
@@ -174,6 +178,7 @@
  {
   "id": "GLOW-05",
   "family": "light-glow-bloom",
+  "domain": "motion",
   "name_ar": "توهج الكلمة النشطة في الترجمة",
   "name_en": "Active caption-word glow",
   "status": "install",
@@ -213,6 +218,7 @@
  {
   "id": "GLOW-06",
   "family": "light-glow-bloom",
+  "domain": "motion",
   "name_ar": "ترجمة عربية بتوهج ASS مزدوج الطبقة",
   "name_en": "Two-layer ASS glow for Arabic captions",
   "status": "proven",
@@ -253,6 +259,7 @@
  {
   "id": "GLOW-07",
   "family": "light-glow-bloom",
+  "domain": "motion",
   "name_ar": "مرشح توهج SVG ونسخة مموهة",
   "name_en": "SVG blur-merge glow & blurred duplicate",
   "status": "proven",
@@ -293,6 +300,7 @@
  {
   "id": "GLOW-08",
   "family": "light-glow-bloom",
+  "domain": "motion",
   "name_ar": "رأس ضوئي يسري على الخط وشطب متوهج",
   "name_en": "Travelling light head on a stroke (glint, comet, glowing strike)",
   "status": "proven",
@@ -338,6 +346,7 @@
  {
   "id": "GLOW-09",
   "family": "light-glow-bloom",
+  "domain": "motion",
   "name_ar": "خط كهربائي متوهج برأس أبيض",
   "name_en": "Electric draw-head route line",
   "status": "install",
@@ -378,6 +387,7 @@
  {
   "id": "GLOW-10",
   "family": "light-glow-bloom",
+  "domain": "motion",
   "name_ar": "توهج فوسفوري وخطوط نيون على Canvas",
   "name_en": "Phosphor / canvas neon stroke glow",
   "status": "seen",
@@ -416,6 +426,7 @@
  {
   "id": "GLOW-11",
   "family": "light-glow-bloom",
+  "domain": "motion",
   "name_ar": "حافة متدرجة متوهجة وظل بلون العنصر",
   "name_en": "Gradient rim-glow border & hue-matched glow shadow",
   "status": "install",
@@ -465,6 +476,7 @@
  {
   "id": "GLOW-12",
   "family": "light-glow-bloom",
+  "domain": "motion",
   "name_ar": "كلمة من نقاط مضيئة",
   "name_en": "Dot-matrix glowing word",
   "status": "seen",
@@ -499,6 +511,7 @@
  {
   "id": "GLOW-13",
   "family": "light-glow-bloom",
+  "domain": "motion",
   "name_ar": "نفق نيون واندفاع للأمام",
   "name_en": "Neon tunnel / streak zoom-through",
   "status": "seen",
@@ -537,6 +550,7 @@
  {
   "id": "GLOW-14",
   "family": "light-glow-bloom",
+  "domain": "motion",
   "name_ar": "توهج مضاف متدرج في الرسم بالكود",
   "name_en": "Painter additive glow stack (blades, magic, embers)",
   "status": "proven",
@@ -577,6 +591,7 @@
  {
   "id": "GLOW-15",
   "family": "light-glow-bloom",
+  "domain": "motion",
   "name_ar": "وصفة البرق والقوس الكهربائي",
   "name_en": "Lightning bolt, electric arc & 3D double flash",
   "status": "ready",
@@ -620,6 +635,7 @@
  {
   "id": "GLOW-16",
   "family": "light-glow-bloom",
+  "domain": "motion",
   "name_ar": "بركة ضوء شعاعية خلف العنوان",
   "name_en": "Hero radial glow pool (bloom-in, bounded breathe, point origin)",
   "status": "proven",
@@ -666,6 +682,7 @@
  {
   "id": "GLOW-17",
   "family": "light-glow-bloom",
+  "domain": "motion",
   "name_ar": "غسيل خلفية بعدة توهجات وقاعدة الخلفية الحية",
   "name_en": "Multi-blob wash, corner glows & the living-backdrop rule",
   "status": "ready",
@@ -703,6 +720,7 @@
  {
   "id": "GLOW-18",
   "family": "light-glow-bloom",
+  "domain": "motion",
   "name_ar": "خلفيات الاستوديو الإجرائية: شفق وغروب ومدار",
   "name_en": "Studio procedural glow backdrops (aurora · sunset · grid)",
   "status": "proven",
@@ -740,6 +758,7 @@
  {
   "id": "GLOW-19",
   "family": "light-glow-bloom",
+  "domain": "motion",
   "name_ar": "ستارة الشفق",
   "name_en": "Aurora drift / aurora curtains",
   "status": "install",
@@ -779,6 +798,7 @@
  {
   "id": "GLOW-20",
   "family": "light-glow-bloom",
+  "domain": "motion",
   "name_ar": "بقعة ضوء تتبع العنصر",
   "name_en": "Follow-spot & feathered spotlight",
   "status": "install",
@@ -821,6 +841,7 @@
  {
   "id": "GLOW-21",
   "family": "light-glow-bloom",
+  "domain": "motion",
   "name_ar": "حلقات هالة متحدة المركز",
   "name_en": "Concentric halo rings",
   "status": "ready",
@@ -859,6 +880,7 @@
  {
   "id": "GLOW-22",
   "family": "light-glow-bloom",
+  "domain": "motion",
   "name_ar": "نبضة وهالة لفت الانتباه",
   "name_en": "Pulse ring, halo & the attention set",
   "status": "ready",
@@ -900,6 +922,7 @@
  {
   "id": "GLOW-23",
   "family": "light-glow-bloom",
+  "domain": "motion",
   "name_ar": "كلمة تنفجر بتوهج وحلقة",
   "name_en": "Burst word with glow & expanding ring",
   "status": "proven",
@@ -935,6 +958,7 @@
  {
   "id": "GLOW-24",
   "family": "light-glow-bloom",
+  "domain": "motion",
   "name_ar": "هالة تتنفس مع الصوت وأشعة وغبار القصيدة",
   "name_en": "Voice/beat-breathing halo, shafts & dust (verse light)",
   "status": "install",
@@ -978,6 +1002,7 @@
  {
   "id": "GLOW-25",
   "family": "light-glow-bloom",
+  "domain": "motion",
   "name_ar": "دائرة سحرية بكسل بتوهج منقّط",
   "name_en": "Pixel magic circle (dithered glow)",
   "status": "seen",
@@ -1014,6 +1039,7 @@
  {
   "id": "GLOW-26",
   "family": "light-glow-bloom",
+  "domain": "motion",
   "name_ar": "سلسلة ما بعد المعالجة السينمائية (makePost)",
   "name_en": "Three-kit cinematic post stack (makePost)",
   "status": "proven",
@@ -1059,6 +1085,7 @@
  {
   "id": "GLOW-27",
   "family": "light-glow-bloom",
+  "domain": "motion",
   "name_ar": "بلوم بلون مصدره على المواد المشعة",
   "name_en": "Emissive colour-corona bloom (and hit-lit rings)",
   "status": "proven",
@@ -1099,6 +1126,7 @@
  {
   "id": "GLOW-28",
   "family": "light-glow-bloom",
+  "domain": "motion",
   "name_ar": "جدول البلوم والتعريض لكل لقطة",
   "name_en": "Per-shot bloom & exposure presets (cinematic · lite · lab)",
   "status": "ready",
@@ -1139,6 +1167,7 @@
  {
   "id": "GLOW-29",
   "family": "light-glow-bloom",
+  "domain": "motion",
   "name_ar": "بلوم TSL وWebGPU",
   "name_en": "TSL / WebGPU bloom, selective MRT & lens nodes",
   "status": "install",
@@ -1178,6 +1207,7 @@
  {
   "id": "GLOW-30",
   "family": "light-glow-bloom",
+  "domain": "motion",
   "name_ar": "بلوم الرسم الثابت",
   "name_en": "Painter highlight bloom (stills & painted films)",
   "status": "install",
@@ -1217,6 +1247,7 @@
  {
   "id": "GLOW-31",
   "family": "light-glow-bloom",
+  "domain": "motion",
   "name_ar": "الدمج المضاف على لوحة عائمة",
   "name_en": "Float-canvas light compositing (add / screen above 1.0)",
   "status": "proven",
@@ -1253,6 +1284,7 @@
  {
   "id": "GLOW-32",
   "family": "light-glow-bloom",
+  "domain": "motion",
   "name_ar": "تعتيم الأطراف",
   "name_en": "Vignette (CSS · canvas · kit · painter)",
   "status": "proven",
@@ -1290,6 +1322,7 @@
  {
   "id": "GLOW-33",
   "family": "light-glow-bloom",
+  "domain": "motion",
   "name_ar": "الانحراف اللوني للعدسة",
   "name_en": "Lens chromatic aberration (edge-weighted)",
   "status": "proven",
@@ -1326,6 +1359,7 @@
  {
   "id": "GLOW-34",
   "family": "light-glow-bloom",
+  "domain": "motion",
   "name_ar": "انقسام RGB على الضربة",
   "name_en": "RGB-split hit jitter",
   "status": "seen",
@@ -1370,6 +1404,7 @@
  {
   "id": "GLOW-35",
   "family": "light-glow-bloom",
+  "domain": "motion",
   "name_ar": "تمويه السرعة وتلطيخ التكبير وكشف التركيز",
   "name_en": "Velocity blur, zoom-smear title & focus-pull glow",
   "status": "seen",
@@ -1413,6 +1448,7 @@
  {
   "id": "GLOW-36",
   "family": "light-glow-bloom",
+  "domain": "motion",
   "name_ar": "مؤثرات وسائط HyperFrames وسلسلة VFX",
   "name_en": "HyperFrames media effects & per-pixel VFX chain",
   "status": "install",
@@ -1451,6 +1487,7 @@
  {
   "id": "GLOW-37",
   "family": "light-glow-bloom",
+  "domain": "motion",
   "name_ar": "مكتبة مؤثرات ريموشن",
   "name_en": "Remotion @remotion/effects (glow · lightLeak · starburst · shine)",
   "status": "documented",
@@ -1489,6 +1526,7 @@
  {
   "id": "GLOW-38",
   "family": "light-glow-bloom",
+  "domain": "motion",
   "name_ar": "تأثيرات ما بعد المعالجة على عناصر HTML",
   "name_en": "HTML-in-canvas post-FX & TypeGPU liquid glass",
   "status": "documented",
@@ -1524,6 +1562,7 @@
  {
   "id": "GLOW-39",
   "family": "light-glow-bloom",
+  "domain": "motion",
   "name_ar": "مظهر الهولوجرام",
   "name_en": "Hologram look",
   "status": "install",
@@ -1561,6 +1600,7 @@
  {
   "id": "GLOW-40",
   "family": "light-glow-bloom",
+  "domain": "motion",
   "name_ar": "التوهج على النص علامة توليد",
   "name_en": "QA: glow on type is a tell",
   "status": "proven",
@@ -1597,6 +1637,7 @@
  {
   "id": "GLOW-41",
   "family": "light-glow-bloom",
+  "domain": "motion",
   "name_ar": "مسحة ضوء على جملة الذروة",
   "name_en": "Payoff light sweep through letterforms",
   "status": "proven",
@@ -1637,6 +1678,7 @@
  {
   "id": "GLOW-42",
   "family": "light-glow-bloom",
+  "domain": "motion",
   "name_ar": "لمعة البطاقة والزر وانعكاس الزجاج",
   "name_en": "UI sheen family: card scan, button glint, one-pass glass band",
   "status": "ready",
@@ -1678,6 +1720,7 @@
  {
   "id": "GLOW-43",
   "family": "light-glow-bloom",
+  "domain": "motion",
   "name_ar": "مرور الضوء المفتاحي على المنتج",
   "name_en": "Travelling key-light pass (product hero, light-thread reveal)",
   "status": "install",
@@ -1718,6 +1761,7 @@
  {
   "id": "GLOW-44",
   "family": "light-glow-bloom",
+  "domain": "motion",
   "name_ar": "لمعة تدور مع الجسم",
   "name_en": "Rotation-locked specular sheen (fake 3D, chrome)",
   "status": "seen",
@@ -1757,6 +1801,7 @@
  {
   "id": "GLOW-45",
   "family": "light-glow-bloom",
+  "domain": "motion",
   "name_ar": "خط مسح ليزري وشريط إضاءة يمسح الكود",
   "name_en": "Laser scan line & scanning highlight bar",
   "status": "ready",
@@ -1795,6 +1840,7 @@
  {
   "id": "GLOW-46",
   "family": "light-glow-bloom",
+  "domain": "motion",
   "name_ar": "بريق نجمي وشرر القلم",
   "name_en": "Twinkle sparkles & pen sparks",
   "status": "seen",
@@ -1831,6 +1877,7 @@
  {
   "id": "GLOW-47",
   "family": "light-glow-bloom",
+  "domain": "motion",
   "name_ar": "أشعة إلهية وبلوم فوق اللقطة بـ CSS",
   "name_en": "CSS god rays & bloom layer over footage",
   "status": "proven",
@@ -1870,6 +1917,7 @@
  {
   "id": "GLOW-48",
   "family": "light-glow-bloom",
+  "domain": "motion",
   "name_ar": "أشعة الشمس في المشهد ثلاثي الأبعاد",
   "name_en": "Screen-space god rays (3D sun)",
   "status": "ready",
@@ -1908,6 +1956,7 @@
  {
   "id": "GLOW-49",
   "family": "light-glow-bloom",
+  "domain": "motion",
   "name_ar": "انفجار أشعة شمسي دوّار",
   "name_en": "Rotating sunburst / ray-burst backdrop",
   "status": "seen",
@@ -1950,6 +1999,7 @@
  {
   "id": "GLOW-50",
   "family": "light-glow-bloom",
+  "domain": "motion",
   "name_ar": "وهج العدسة ثلاثي الأبعاد",
   "name_en": "3D lens flare that follows the sun",
   "status": "ready",
@@ -1987,6 +2037,7 @@
  {
   "id": "GLOW-51",
   "family": "light-glow-bloom",
+  "domain": "motion",
   "name_ar": "فلير أنامورفي بأشباح",
   "name_en": "Anamorphic flare with ghosts (painter + streak field)",
   "status": "proven",
@@ -2030,6 +2081,7 @@
  {
   "id": "GLOW-52",
   "family": "light-glow-bloom",
+  "domain": "motion",
   "name_ar": "ألواح ضوء WebGPU جاهزة",
   "name_en": "WebGPU shader light plates (Godrays · LensFlare · LightEdge · Prism …)",
   "status": "install",
@@ -2070,6 +2122,7 @@
  {
   "id": "GLOW-53",
   "family": "light-glow-bloom",
+  "domain": "motion",
   "name_ar": "تسريب ضوء وحرق فيلم",
   "name_en": "Light leak, overexposure & film-burn transition",
   "status": "install",
@@ -2113,6 +2166,7 @@
  {
   "id": "GLOW-54",
   "family": "light-glow-bloom",
+  "domain": "motion",
   "name_ar": "ومضة الإطار وانفجار الضوء",
   "name_en": "Flash frame, double strike & light-burst transition",
   "status": "proven",
@@ -2154,6 +2208,7 @@
  {
   "id": "GLOW-55",
   "family": "light-glow-bloom",
+  "domain": "motion",
   "name_ar": "أشعة يلقيها النص ونص بشعاع المؤشر",
   "name_en": "Volumetric rays cast by a wordmark / cursor-light text",
   "status": "install",
@@ -2191,6 +2246,7 @@
  {
   "id": "GLOW-56",
   "family": "light-glow-bloom",
+  "domain": "motion",
   "name_ar": "الشمس والهالة والكسوف",
   "name_en": "Blooming sun, corona & eclipse (2D and 3D)",
   "status": "install",
@@ -2237,6 +2293,7 @@
  {
   "id": "GLOW-57",
   "family": "light-glow-bloom",
+  "domain": "motion",
   "name_ar": "إضاءة ثلاثية بالوقفات والكلفن",
   "name_en": "Three-point rig in stops & Kelvin (K3.lightRig)",
   "status": "proven",
@@ -2277,6 +2334,7 @@
  {
   "id": "GLOW-58",
   "family": "light-glow-bloom",
+  "domain": "motion",
   "name_ar": "قوالب البورتريه السبعة",
   "name_en": "Seven portrait rig presets (K3.lightPreset)",
   "status": "ready",
@@ -2312,6 +2370,7 @@
  {
   "id": "GLOW-59",
   "family": "light-glow-bloom",
+  "domain": "motion",
   "name_ar": "ثمانية عشر إعداد إضاءة وخطة الطاقم",
   "name_en": "18 named lighting setups & the /lightplan deliverable",
   "status": "documented",
@@ -2350,6 +2409,7 @@
  {
   "id": "GLOW-60",
   "family": "light-glow-bloom",
+  "domain": "motion",
   "name_ar": "حاسبة الضوء",
   "name_en": "Light calculator (ratio · softness · falloff · EV · guide number · shutter angle · mired)",
   "status": "proven",
@@ -2391,6 +2451,7 @@
  {
   "id": "GLOW-61",
   "family": "light-glow-bloom",
+  "domain": "motion",
   "name_ar": "حرارة اللون والجيلاتين ومصادر مسماة",
   "name_en": "Kelvin → RGB, gels & 19 named light sources",
   "status": "proven",
@@ -2432,6 +2493,7 @@
  {
   "id": "GLOW-62",
   "family": "light-glow-bloom",
+  "domain": "motion",
   "name_ar": "ارتداد السماء وضباب نحو الشمس",
   "name_en": "Sky bounce, fog toward the sun & blue-hour painting",
   "status": "ready",
@@ -2469,6 +2531,7 @@
  {
   "id": "GLOW-63",
   "family": "light-glow-bloom",
+  "domain": "motion",
   "name_ar": "إضاءة الحافة في الرسم",
   "name_en": "Painter rim light & two-colour wet rims",
   "status": "proven",
@@ -2506,6 +2569,7 @@
  {
   "id": "GLOW-64",
   "family": "light-glow-bloom",
+  "domain": "motion",
   "name_ar": "تظليل الحجم نحو الضوء",
   "name_en": "Form shading toward a light point",
   "status": "proven",
@@ -2543,6 +2607,7 @@
  {
   "id": "GLOW-65",
   "family": "light-glow-bloom",
+  "domain": "motion",
   "name_ar": "جسم مضاء فيزيائيًا وسحب مجسمة",
   "name_en": "Physically lit relief bodies & cloud decks",
   "status": "install",
@@ -2583,6 +2648,7 @@
  {
   "id": "GLOW-66",
   "family": "light-glow-bloom",
+  "domain": "motion",
   "name_ar": "مظلل البلورة: فرينل ولمعة وانعكاس سماء",
   "name_en": "Fresnel + Blinn glass/crystal shader",
   "status": "proven",
@@ -2620,6 +2686,7 @@
  {
   "id": "GLOW-67",
   "family": "light-glow-bloom",
+  "domain": "motion",
   "name_ar": "زجاج بانكسار وتشتت وكرات زجاجية",
   "name_en": "Refraction, dispersion & glass orbs",
   "status": "install",
@@ -2665,6 +2732,7 @@
  {
   "id": "GLOW-68",
   "family": "light-glow-bloom",
+  "domain": "motion",
   "name_ar": "حافة نيون من ألوان الواجهة وإضاءة نابضة",
   "name_en": "Accent rim rig from the UI palette (pulsing)",
   "status": "install",
@@ -2704,6 +2772,7 @@
  {
   "id": "GLOW-69",
   "family": "light-glow-bloom",
+  "domain": "motion",
   "name_ar": "استوديو كريمي بثلاث إضاءات",
   "name_en": "Cream studio sweep with a soft 3-light rig",
   "status": "ready",
@@ -2739,6 +2808,7 @@
  {
   "id": "GLOW-70",
   "family": "light-glow-bloom",
+  "domain": "motion",
   "name_ar": "ظل وانعكاس متسقان مع مفتاح واحد",
   "name_en": "One-key consistency: shadow, lit edge & reflection",
   "status": "ready",
@@ -2777,6 +2847,7 @@
  {
   "id": "GLOW-71",
   "family": "light-glow-bloom",
+  "domain": "motion",
   "name_ar": "قراءة إضاءة صورة مرجعية",
   "name_en": "Read the light of a reference image",
   "status": "ready",
@@ -2811,6 +2882,7 @@
  {
   "id": "GLOW-72",
   "family": "light-glow-bloom",
+  "domain": "motion",
   "name_ar": "وصفات إضاءة مقفلة لمولدات الصور والفيديو",
   "name_en": "Locked lighting phrases for AI plates",
   "status": "key",
@@ -2820,8 +2892,7 @@
   "install": "",
   "requires": [
    "node",
-   "key:video-gen",
-   "key:unspecified"
+   "key:video-gen"
   ],
   "license": "",
   "proof": [
@@ -2853,6 +2924,7 @@
  {
   "id": "GLOW-73",
   "family": "light-glow-bloom",
+  "domain": "motion",
   "name_ar": "سماء فيزيائية وشمس وبيئة من تدرج",
   "name_en": "Physical sky, sun, fill & gradient environment",
   "status": "ready",
@@ -2891,6 +2963,7 @@
  {
   "id": "GLOW-74",
   "family": "light-glow-bloom",
+  "domain": "motion",
   "name_ar": "ضوء متسلل بين الأوراق",
   "name_en": "Dappled sunlight (komorebi gobo)",
   "status": "ready",
@@ -2927,6 +3000,7 @@
  {
   "id": "GLOW-75",
   "family": "light-glow-bloom",
+  "domain": "motion",
   "name_ar": "كاوستكس تحت الماء",
   "name_en": "Underwater caustics & absorption",
   "status": "ready",
@@ -2962,6 +3036,7 @@
  {
   "id": "GLOW-76",
   "family": "light-glow-bloom",
+  "domain": "motion",
   "name_ar": "التعريض الطويل وخطوط الضوء",
   "name_en": "Long-exposure lighten stack & continuous light trails",
   "status": "ready",
@@ -3003,6 +3078,7 @@
  {
   "id": "GLOW-77",
   "family": "light-glow-bloom",
+  "domain": "motion",
   "name_ar": "هالات ومخاريط المصابيح ثنائية الأبعاد",
   "name_en": "2D practical halos, lamp cones, lit windows & fireflies",
   "status": "proven",
@@ -3047,6 +3123,7 @@
  {
   "id": "GLOW-78",
   "family": "light-glow-bloom",
+  "domain": "motion",
   "name_ar": "أضواء المدينة الليلية ثلاثية الأبعاد",
   "name_en": "3D night practicals: sodium lamps, additive point sprites & bokeh",
   "status": "install",
@@ -3090,6 +3167,7 @@
  {
   "id": "GLOW-79",
   "family": "light-glow-bloom",
+  "domain": "motion",
   "name_ar": "ارتعاش الفانوس والشمعة",
   "name_en": "Lantern & candle flicker (organic)",
   "status": "install",
@@ -3129,6 +3207,7 @@
  {
   "id": "GLOW-80",
   "family": "light-glow-bloom",
+  "domain": "motion",
   "name_ar": "شعاع منارة دوّار",
   "name_en": "Rotating lighthouse / beacon beam",
   "status": "install",
@@ -3171,6 +3250,7 @@
  {
   "id": "GLOW-81",
   "family": "light-glow-bloom",
+  "domain": "motion",
   "name_ar": "قمر مرسوم بهالة",
   "name_en": "Painted moon with halo",
   "status": "ready",
@@ -3205,6 +3285,7 @@
  {
   "id": "GLOW-82",
   "family": "light-glow-bloom",
+  "domain": "motion",
   "name_ar": "انعكاس الضوء على الأرض المبللة والماء",
   "name_en": "Wet-floor & water reflections of light and titles",
   "status": "proven",
@@ -3246,6 +3327,7 @@
  {
   "id": "GLOW-83",
   "family": "light-glow-bloom",
+  "domain": "motion",
   "name_ar": "حقل حراري وتلوين دوبلر",
   "name_en": "Thermal heat-ramp field & Doppler-beamed glow",
   "status": "ready",
@@ -3285,6 +3367,7 @@
  {
   "id": "GLOW-84",
   "family": "light-glow-bloom",
+  "domain": "motion",
   "name_ar": "عناوين الضباب وشق الضوء وكشف الفخامة الهادئة",
   "name_en": "Fog-layer & light-slit titles (quiet premium)",
   "status": "documented",
@@ -3321,6 +3404,7 @@
  {
   "id": "GLOW-P01",
   "family": "light-glow-bloom",
+  "domain": "motion",
   "name_ar": "كتابة مسار نيون نقطية بطبقتي توهج في Pillow",
   "name_en": "Raster neon path-write in Pillow (blurred halo + hot core)",
   "status": "documented",

@@ -393,7 +393,7 @@
 | `GEN-82` | فيلم موشن بستوري بورد يكتب Claude كوده | Storyboard-first motion film with Claude-written, sandboxed scene code | key | key:unspecified |
 | `GEN-90` | خدمة الصور المصغرة المدفوعة | Thumbnail generation via paid MCP | key | key:openai, key:unspecified |
 | `GEN-P01` | مراجعة ثانية مدفوعة من Claude API بقفلين | Optional paid Claude API second-opinion review (double opt-in) | key | ffmpeg, pip:anthropic, key:unspecified |
-| `GEN-X01` | إنتاج فيديو مرجعي عبر Higgsfield | Higgsfield reference-video production parameters and prompt skeleton | key | pip:higgsfield, key:unspecified |
+| `GEN-X01` | إنتاج فيديو مرجعي عبر Higgsfield | Higgsfield reference-video production parameters and prompt skeleton | key | pip:higgsfield |
 | `MEDIA-29` | توليد وتحسين الصور والأصوات بالذكاء الاصطناعي (مدفوع) | AI image/audio generation and upscaling (paid connector) | key | pip:higgsfield, key:unspecified |
 | `MEDIA-34` | pyannote.audio: تحديد من تحدث ومتى لبناء ترجمة لكل | pyannote.audio: Label who spoke when, for per-speaker captions | key | pip:pyannote |
 | `FOOT-56` | ريلز من فيديو طويل | Reels from a long video | key | key:unspecified |

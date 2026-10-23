@@ -1126,6 +1126,15 @@
    }
   },
   {
+   "id": "req:yt-dlp",
+   "kind": "requirement",
+   "label": "yt-dlp",
+   "ar": "تحميل وسائط مرخّصة أو مملوكة من روابط",
+   "en": "download licensed or owned media from links",
+   "install": "pip install yt-dlp",
+   "req_kind": "pip"
+  },
+  {
    "id": "fam:light-glow-bloom",
    "kind": "family",
    "label": "Glow, light & bloom",
@@ -1768,15 +1777,6 @@
     "ready": 3,
     "documented": 3
    }
-  },
-  {
-   "id": "req:yt-dlp",
-   "kind": "requirement",
-   "label": "yt-dlp",
-   "ar": "تحميل وسائط مرخّصة أو مملوكة من روابط",
-   "en": "download licensed or owned media from links",
-   "install": "pip install yt-dlp",
-   "req_kind": "pip"
   },
   {
    "id": "req:pip:librosa",
@@ -2719,13 +2719,13 @@
   },
   {
    "from": "fam:ai-generation",
-   "to": "req:key:unspecified",
+   "to": "req:python3",
    "rel": "needs",
-   "w": 15
+   "w": 14
   },
   {
    "from": "fam:ai-generation",
-   "to": "req:python3",
+   "to": "req:key:unspecified",
    "rel": "needs",
    "w": 14
   },
@@ -2905,13 +2905,13 @@
   },
   {
    "from": "fam:apps-artifacts",
-   "to": "req:key:unspecified",
+   "to": "req:npm:react",
    "rel": "needs",
-   "w": 3
+   "w": 2
   },
   {
    "from": "fam:apps-artifacts",
-   "to": "req:npm:react",
+   "to": "req:key:unspecified",
    "rel": "needs",
    "w": 2
   },
@@ -2991,7 +2991,7 @@
    "from": "fam:arabic-language",
    "to": "script:scripts/anchor_gate.py",
    "rel": "runs",
-   "w": 1
+   "w": 2
   },
   {
    "from": "root",
@@ -3621,7 +3621,7 @@
    "from": "fam:camera-composition-layout",
    "to": "req:npm:gsap",
    "rel": "needs",
-   "w": 29
+   "w": 33
   },
   {
    "from": "fam:camera-composition-layout",
@@ -3655,9 +3655,9 @@
   },
   {
    "from": "fam:camera-composition-layout",
-   "to": "req:node",
+   "to": "req:npm:three",
    "rel": "needs",
-   "w": 4
+   "w": 6
   },
   {
    "from": "fam:camera-composition-layout",
@@ -3823,12 +3823,6 @@
   },
   {
    "from": "fam:code-engineering",
-   "to": "req:key:unspecified",
-   "rel": "needs",
-   "w": 2
-  },
-  {
-   "from": "fam:code-engineering",
    "to": "req:pip:hypothesis",
    "rel": "needs",
    "w": 2
@@ -3848,6 +3842,12 @@
   {
    "from": "fam:code-engineering",
    "to": "req:ffmpeg",
+   "rel": "needs",
+   "w": 1
+  },
+  {
+   "from": "fam:code-engineering",
+   "to": "req:key:unspecified",
    "rel": "needs",
    "w": 1
   },
@@ -4293,7 +4293,7 @@
    "from": "fam:engines-render-pipeline",
    "to": "req:npm:three",
    "rel": "needs",
-   "w": 29
+   "w": 32
   },
   {
    "from": "fam:engines-render-pipeline",
@@ -4455,19 +4455,13 @@
    "from": "fam:knowledge-graph",
    "to": "req:key:graphify",
    "rel": "needs",
-   "w": 16
+   "w": 18
   },
   {
    "from": "fam:knowledge-graph",
    "to": "req:python3",
    "rel": "needs",
    "w": 7
-  },
-  {
-   "from": "fam:knowledge-graph",
-   "to": "req:key:unspecified",
-   "rel": "needs",
-   "w": 5
   },
   {
    "from": "fam:knowledge-graph",
@@ -4498,6 +4492,12 @@
    "to": "req:git",
    "rel": "needs",
    "w": 2
+  },
+  {
+   "from": "fam:knowledge-graph",
+   "to": "req:yt-dlp",
+   "rel": "needs",
+   "w": 1
   },
   {
    "from": "root",
@@ -5365,12 +5365,6 @@
   },
   {
    "from": "fam:security-safety",
-   "to": "req:key:unspecified",
-   "rel": "needs",
-   "w": 2
-  },
-  {
-   "from": "fam:security-safety",
    "to": "req:gitleaks",
    "rel": "needs",
    "w": 2
@@ -5390,6 +5384,12 @@
   {
    "from": "fam:security-safety",
    "to": "req:claude:tools",
+   "rel": "needs",
+   "w": 1
+  },
+  {
+   "from": "fam:security-safety",
+   "to": "req:key:unspecified",
    "rel": "needs",
    "w": 1
   },
@@ -5883,7 +5883,7 @@
    "from": "fam:transitions-cuts",
    "to": "req:npm:gsap",
    "rel": "needs",
-   "w": 96
+   "w": 99
   },
   {
    "from": "fam:transitions-cuts",

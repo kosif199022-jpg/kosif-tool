@@ -170,7 +170,7 @@
 - **ماذا / what:** وزّع مراجعة طلب الدمج على مراجعين متخصصين بالتوازي، ثم أزل التكرار وتحقق، ثم انشر تعليقات مرتبطة بالأسطر. — Fan a PR review out to specialist reviewers in parallel, dedupe and verify, then post line-level comments.
 - **متى أستخدمها / when:** عند رقم أو رابط طلب دمج على GitHub؛ وحين يطلب المستخدم مراجعة شاملة / a GitHub PR number or URL; the user asks for a thorough review
 - **كيف / how:** Fetch the diff (`gh pr diff <n>` or the GitHub MCP pull_request_read). In one message run: code-reviewer, comment-analyzer (comment rot), pr-test-analyzer (behavioural coverage), silent-failure-hunter, type-design-analyzer. Merge, dedupe, verify each serious finding (AGENT-14). Post with the GitHub MCP review flow: create a pending review → add_comment_to_pending_review per finding → submit. Needs the GitHub connector or `gh auth`.
-- **يحتاج / needs:** [`gh`](../requirements.md#req-gh) · [`mcp:github`](../requirements.md#req-mcp-github) · [`key:unspecified`](../requirements.md#req-key-unspecified)
+- **يحتاج / needs:** [`gh`](../requirements.md#req-gh) · [`mcp:github`](../requirements.md#req-mcp-github)
 - **الرخصة / license:** MIT
 - **الدليل / proof:** — (لا دليل تشغيل بعد / no run proof yet)
 - **المصدر / source:** https://github.com/affaan-m/ECC commands/review-pr.md; GitHub MCP server instructions

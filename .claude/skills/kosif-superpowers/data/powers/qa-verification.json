@@ -1,6 +1,7 @@
 [
  {
   "family": "qa-verification",
+  "domain": "motion",
   "name_ar": "بوابة التسليم",
   "name_en": "Delivery gate (inspect)",
   "status": "proven",
@@ -32,6 +33,7 @@
  },
  {
   "family": "qa-verification",
+  "domain": "motion",
   "name_ar": "فحص الحلقة بلا درزة",
   "name_en": "Seamless loop check",
   "status": "proven",
@@ -62,6 +64,7 @@
  },
  {
   "family": "qa-verification",
+  "domain": "motion",
   "name_ar": "بوابة فحص التسليم",
   "name_en": "verify_video delivery gate",
   "status": "proven",
@@ -93,6 +96,7 @@
  },
  {
   "family": "qa-verification",
+  "domain": "motion",
   "name_ar": "فحص التسليم من الملف نفسه",
   "name_en": "Delivery QA from the decoded file",
   "status": "proven",
@@ -122,6 +126,7 @@
  },
  {
   "family": "qa-verification",
+  "domain": "motion",
   "name_ar": "سياسة الإطارات الصادقة",
   "name_en": "Honest-frame capture policy",
   "status": "proven",
@@ -153,6 +158,7 @@
  },
  {
   "family": "qa-verification",
+  "domain": "motion",
   "name_ar": "كشف تغير المشهد",
   "name_en": "Scene-change detection",
   "status": "proven",
@@ -182,6 +188,7 @@
  },
  {
   "family": "qa-verification",
+  "domain": "motion",
   "name_ar": "تدقيق القص على الإيقاع",
   "name_en": "Cut-to-beat audit",
   "status": "proven",
@@ -208,6 +215,7 @@
  },
  {
   "family": "qa-verification",
+  "domain": "motion",
   "name_ar": "إصلاح انزياح التوقيت عند الدمج",
   "name_en": "Concat drift fix: encode once",
   "status": "proven",
@@ -236,6 +244,7 @@
  },
  {
   "family": "qa-verification",
+  "domain": "motion",
   "name_ar": "عتبات التباين وتدقيق اللوحة",
   "name_en": "Contrast thresholds and palette audit",
   "status": "proven",
@@ -267,6 +276,7 @@
  },
  {
   "family": "qa-verification",
+  "domain": "motion",
   "name_ar": "عقد تباين الألوان والمسافة الإدراكية",
   "name_en": "Palette contrast + perceptual-distance contract",
   "status": "proven",
@@ -295,6 +305,7 @@
  },
  {
   "family": "qa-verification",
+  "domain": "motion",
   "name_ar": "عقد الحركة المخفضة",
   "name_en": "Reduced-motion contract",
   "status": "proven",
@@ -322,6 +333,7 @@
  },
  {
   "family": "qa-verification",
+  "domain": "motion",
   "name_ar": "اختبار عقد الحركة",
   "name_en": "Motion contract test",
   "status": "proven",
@@ -350,6 +362,7 @@
  },
  {
   "family": "qa-verification",
+  "domain": "motion",
   "name_ar": "اختبار عقد التجاوب",
   "name_en": "Responsive layout contract test",
   "status": "proven",
@@ -378,6 +391,7 @@
  },
  {
   "family": "qa-verification",
+  "domain": "motion",
   "name_ar": "فحص الأصول والصياغة الثابت",
   "name_en": "Static asset and syntax check",
   "status": "proven",
@@ -406,6 +420,7 @@
  },
  {
   "family": "qa-verification",
+  "domain": "motion",
   "name_ar": "اختبار تثبيت الثيم",
   "name_en": "Theme lock test (dashboard/editorial)",
   "status": "proven",
@@ -435,6 +450,7 @@
  },
  {
   "family": "qa-verification",
+  "domain": "motion",
   "name_ar": "محاكاة حركة المناطق من المرجع",
   "name_en": "Regional motion clone (4x4 block motion)",
   "status": "proven",
@@ -463,6 +479,7 @@
  },
  {
   "family": "qa-verification",
+  "domain": "motion",
   "name_ar": "اختبارات CI",
   "name_en": "CI and regression tests",
   "status": "proven",
@@ -494,6 +511,7 @@
  },
  {
   "family": "qa-verification",
+  "domain": "motion",
   "name_ar": "سياسة تقليل الحركة",
   "name_en": "Reduced-motion policy",
   "status": "proven",
@@ -522,6 +540,7 @@
  },
  {
   "family": "qa-verification",
+  "domain": "motion",
   "name_ar": "اختبارات توحيد الهوية",
   "name_en": "Single-identity enforcement tests",
   "status": "proven",
@@ -551,6 +570,7 @@
  },
  {
   "family": "qa-verification",
+  "domain": "motion",
   "name_ar": "مقياس انحراف الهوية",
   "name_en": "Identity drift ratchet (identity_audit)",
   "status": "proven",
@@ -580,6 +600,7 @@
  },
  {
   "family": "qa-verification",
+  "domain": "motion",
   "name_ar": "اختبارات وجود أصول الهوية وخفتها",
   "name_en": "Brand art presence & weight tests",
   "status": "proven",
@@ -608,6 +629,7 @@
  },
  {
   "family": "qa-verification",
+  "domain": "motion",
   "name_ar": "اختبار محرك ثلاثي الأبعاد دون متصفح",
   "name_en": "3D engine unit test without a browser",
   "status": "proven",
@@ -638,6 +660,7 @@
  },
  {
   "family": "qa-verification",
+  "domain": "motion",
   "name_ar": "مدقق ملخص المشروع",
   "name_en": "Brief validator",
   "status": "proven",
@@ -665,6 +688,7 @@
  },
  {
   "family": "qa-verification",
+  "domain": "motion",
   "name_ar": "عبارة اعتماد التصدير النهائي",
   "name_en": "Typed final-render approval phrase",
   "status": "proven",
@@ -696,6 +720,7 @@
  },
  {
   "family": "qa-verification",
+  "domain": "motion",
   "name_ar": "حزمة الاختبارات",
   "name_en": "Unit test suite (24 tests)",
   "status": "proven",
@@ -726,6 +751,7 @@
  },
  {
   "family": "qa-verification",
+  "domain": "motion",
   "name_ar": "علم التحقق التاريخي",
   "name_en": "Historical fact-check flag",
   "status": "proven",
@@ -753,6 +779,7 @@
  },
  {
   "family": "qa-verification",
+  "domain": "motion",
   "name_ar": "خصائص قابلة للتعديل وملف مشاهد داخل التركيب",
   "name_en": "Editable props + reel JSON inside the composition",
   "status": "proven",
@@ -781,6 +808,7 @@
  },
  {
   "family": "qa-verification",
+  "domain": "motion",
   "name_ar": "كشف الانتقالات: قطع وذوبان وغطس",
   "name_en": "Transition detection: cut, dissolve, dip",
   "status": "proven",
@@ -808,6 +836,7 @@
  },
  {
   "family": "qa-verification",
+  "domain": "motion",
   "name_ar": "حلّال إنشائي بتحقق يدوي وبوابات ثقة",
   "name_en": "Structural solver with hand-calc and trust gates",
   "status": "proven",
@@ -836,6 +865,7 @@
  },
  {
   "family": "qa-verification",
+  "domain": "motion",
   "name_ar": "اختبارات حتمية لهندسة الفيلم",
   "name_en": "Deterministic geometry tests for a film function",
   "status": "proven",
@@ -864,6 +894,7 @@
  },
  {
   "family": "qa-verification",
+  "domain": "motion",
   "name_ar": "اختبار المشغل بمحاكاة DOM",
   "name_en": "Mocked-DOM player test harness",
   "status": "proven",
@@ -892,6 +923,7 @@
  },
  {
   "family": "qa-verification",
+  "domain": "motion",
   "name_ar": "بوابة قابلية قراءة النص",
   "name_en": "Readability gate for on-screen text",
   "status": "proven",
@@ -918,6 +950,7 @@
  },
  {
   "family": "qa-verification",
+  "domain": "motion",
   "name_ar": "قواعد نص المشاركة",
   "name_en": "Share-copy rules",
   "status": "proven",
@@ -944,6 +977,7 @@
  },
  {
   "family": "qa-verification",
+  "domain": "motion",
   "name_ar": "توليد القوالب مع فحص",
   "name_en": "Template generation + lint gate",
   "status": "proven",
@@ -970,6 +1004,7 @@
  },
  {
   "family": "qa-verification",
+  "domain": "motion",
   "name_ar": "حلقة مراجعة مشهد بمشهد مع الكتابة للمصدر",
   "name_en": "Scene-by-scene review loop with write-back",
   "status": "proven",
@@ -997,6 +1032,7 @@
  },
  {
   "family": "qa-verification",
+  "domain": "motion",
   "name_ar": "عميل التصيير البعيد وبوابات الأمان",
   "name_en": "Remote render client and bridge safety gates",
   "status": "proven",
@@ -1024,6 +1060,7 @@
  },
  {
   "family": "qa-verification",
+  "domain": "motion",
   "name_ar": "مدقق الخطة",
   "name_en": "Plan validator",
   "status": "proven",
@@ -1050,6 +1087,7 @@
  },
  {
   "family": "qa-verification",
+  "domain": "motion",
   "name_ar": "قواعد التحقق من manifest",
   "name_en": "Manifest validation rules",
   "status": "proven",
@@ -1077,6 +1115,7 @@
  },
  {
   "family": "qa-verification",
+  "domain": "motion",
   "name_ar": "حماية الواجهة المحلية من المواقع الأخرى",
   "name_en": "Cross-origin guard for the local API",
   "status": "proven",
@@ -1105,6 +1144,7 @@
  },
  {
   "family": "qa-verification",
+  "domain": "motion",
   "name_ar": "صفحة المراجعة مشهدًا بمشهد",
   "name_en": "Scene-by-scene review page (KOSIF Review / Motion OS player)",
   "status": "proven",
@@ -1133,6 +1173,7 @@
  },
  {
   "family": "qa-verification",
+  "domain": "motion",
   "name_ar": "منظف مشروع Studio",
   "name_en": "Studio project sanitiser",
   "status": "proven",
@@ -1162,6 +1203,7 @@
  },
  {
   "family": "qa-verification",
+  "domain": "motion",
   "name_ar": "مدقق مواصفة المشهد الصارم",
   "name_en": "Strict SceneSpec validator (25 fields)",
   "status": "proven",
@@ -1192,6 +1234,7 @@
  },
  {
   "family": "qa-verification",
+  "domain": "motion",
   "name_ar": "مدقق برومبت الصور والفيديو",
   "name_en": "Image/video prompt linter",
   "status": "proven",
@@ -1221,6 +1264,7 @@
  },
  {
   "family": "qa-verification",
+  "domain": "motion",
   "name_ar": "عقد التنفيذ البصري",
   "name_en": "Visual execution contract (build/verify/repair/jev)",
   "status": "proven",
@@ -1249,6 +1293,7 @@
  },
  {
   "family": "qa-verification",
+  "domain": "motion",
   "name_ar": "تدقيق صفحات الويب",
   "name_en": "Static web/HTML audit",
   "status": "proven",
@@ -1279,6 +1324,7 @@
  },
  {
   "family": "qa-verification",
+  "domain": "motion",
   "name_ar": "بوابة فحص الجودة وإيصال الإنتاج",
   "name_en": "ffprobe delivery gate + receipt",
   "status": "proven",
@@ -1309,6 +1355,7 @@
  },
  {
   "family": "qa-verification",
+  "domain": "motion",
   "name_ar": "اختبارات A/B",
   "name_en": "A/B test plan and read",
   "status": "proven",
@@ -1338,6 +1385,7 @@
  },
  {
   "family": "qa-verification",
+  "domain": "motion",
   "name_ar": "أفضل وقت نشر",
   "name_en": "Best time from own analytics",
   "status": "proven",
@@ -1366,6 +1414,7 @@
  },
  {
   "family": "qa-verification",
+  "domain": "motion",
   "name_ar": "تجارب A/B",
   "name_en": "A/B plan and read",
   "status": "proven",
@@ -1394,6 +1443,7 @@
  },
  {
   "family": "qa-verification",
+  "domain": "motion",
   "name_ar": "فحص الإطارات الآلي",
   "name_en": "Frame QA: black/white/freeze/cut scan",
   "status": "proven",
@@ -1422,6 +1472,7 @@
  },
  {
   "family": "qa-verification",
+  "domain": "motion",
   "name_ar": "بوابة الستوري بورد",
   "name_en": "Storyboard gate",
   "status": "proven",
@@ -1451,6 +1502,7 @@
  },
  {
   "family": "qa-verification",
+  "domain": "motion",
   "name_ar": "دليل رندر demo2d",
   "name_en": "demo2d proof render",
   "status": "proven",
@@ -1478,6 +1530,7 @@
  },
  {
   "family": "qa-verification",
+  "domain": "motion",
   "name_ar": "فحص البرومبت",
   "name_en": "Image prompt lint",
   "status": "proven",
@@ -1505,6 +1558,7 @@
  },
  {
   "family": "qa-verification",
+  "domain": "motion",
   "name_ar": "فحص الفيديو المولد",
   "name_en": "Post-generation video QA",
   "status": "proven",
@@ -1531,6 +1585,7 @@
  },
  {
   "family": "qa-verification",
+  "domain": "motion",
   "name_ar": "فحص أمان الكود قبل التشغيل",
   "name_en": "Code safety gate before running pasted code",
   "status": "proven",
@@ -1561,6 +1616,7 @@
  },
  {
   "family": "qa-verification",
+  "domain": "motion",
   "name_ar": "تمييز الصورة الفوتوغرافية عن الرسم المسطح",
   "name_en": "Photo vs flat-art classifier",
   "status": "proven",
@@ -1588,6 +1644,7 @@
  },
  {
   "family": "qa-verification",
+  "domain": "motion",
   "name_ar": "فحص الحتمية والذوق",
   "name_en": "Composition lint (determinism + contract + taste)",
   "status": "proven",
@@ -1618,6 +1675,7 @@
  },
  {
   "family": "qa-verification",
+  "domain": "motion",
   "name_ar": "لوحات النقد",
   "name_en": "Critique contact sheets",
   "status": "proven",
@@ -1647,6 +1705,7 @@
  },
  {
   "family": "qa-verification",
+  "domain": "motion",
   "name_ar": "قاعدة الصدق في التوقيت",
   "name_en": "Truthful-timing rule",
   "status": "proven",
@@ -1675,6 +1734,7 @@
  },
  {
   "family": "qa-verification",
+  "domain": "motion",
   "name_ar": "مجموعة اختبارات الموشن",
   "name_en": "Motion test suite",
   "status": "proven",
@@ -1707,6 +1767,7 @@
  },
  {
   "family": "qa-verification",
+  "domain": "motion",
   "name_ar": "أفلام مرجعية مقاسة",
   "name_en": "Shipped-film benchmark (measured)",
   "status": "proven",
@@ -1735,6 +1796,7 @@
  },
  {
   "family": "qa-verification",
+  "domain": "motion",
   "name_ar": "فحص الأصالة",
   "name_en": "Originality check",
   "status": "proven",
@@ -1763,6 +1825,7 @@
  },
  {
   "family": "qa-verification",
+  "domain": "motion",
   "name_ar": "لوحة معاينة 8 إطارات",
   "name_en": "Contact-sheet preview (--preview)",
   "status": "proven",
@@ -1794,6 +1857,7 @@
  },
  {
   "family": "qa-verification",
+  "domain": "motion",
   "name_ar": "سطر التحقق بعد الرندر",
   "name_en": "Post-render ffprobe VERIFY line",
   "status": "proven",
@@ -1823,6 +1887,7 @@
  },
  {
   "family": "qa-verification",
+  "domain": "motion",
   "name_ar": "تقرير الفحص بـ 16 بندًا",
   "name_en": "TEST_REPORT 16-check QA template",
   "status": "proven",
@@ -1851,6 +1916,7 @@
  },
  {
   "family": "qa-verification",
+  "domain": "motion",
   "name_ar": "فحص المستودع والإحصاءات",
   "name_en": "kosif.py validate / stats",
   "status": "proven",
@@ -1880,6 +1946,7 @@
  },
  {
   "family": "qa-verification",
+  "domain": "motion",
   "name_ar": "مجموعة الاختبارات",
   "name_en": "Test suite (node --test + unittest)",
   "status": "proven",
@@ -1912,6 +1979,7 @@
  },
  {
   "family": "qa-verification",
+  "domain": "motion",
   "name_ar": "فحص إزاحة مزامنة الشفاه بالارتباط المتقاطع",
   "name_en": "Lip-sync offset check by cross-correlation",
   "status": "ready",
@@ -1939,6 +2007,7 @@
  },
  {
   "family": "qa-verification",
+  "domain": "motion",
   "name_ar": "حارس القيم الشاذة",
   "name_en": "NaN/Inf guard pass",
   "status": "ready",
@@ -1967,6 +2036,7 @@
  },
  {
   "family": "qa-verification",
+  "domain": "motion",
   "name_ar": "فحص التركيب",
   "name_en": "Composition lint rules",
   "status": "ready",
@@ -1996,6 +2066,7 @@
  },
  {
   "family": "qa-verification",
+  "domain": "motion",
   "name_ar": "قياس طاقة الحركة",
   "name_en": "Motion energy measure",
   "status": "ready",
@@ -2026,6 +2097,7 @@
  },
  {
   "family": "qa-verification",
+  "domain": "motion",
   "name_ar": "كشف مكتبات الحركة ونموذج التفاعل",
   "name_en": "Motion-library and interaction-model detection",
   "status": "ready",
@@ -2058,6 +2130,7 @@
  },
  {
   "family": "qa-verification",
+  "domain": "motion",
   "name_ar": "مقارنة صور بدون اعتمادات",
   "name_en": "Dependency-free PNG visual diff",
   "status": "ready",
@@ -2088,6 +2161,7 @@
  },
  {
   "family": "qa-verification",
+  "domain": "motion",
   "name_ar": "إعدادات التقاط واجهة قابلة للتكرار",
   "name_en": "Reproducible UI capture settings",
   "status": "ready",
@@ -2116,6 +2190,7 @@
  },
  {
   "family": "qa-verification",
+  "domain": "motion",
   "name_ar": "التقاط إطارات مرجعية لمطابقة الأسلوب",
   "name_en": "Reference capture for style matching",
   "status": "ready",
@@ -2145,6 +2220,7 @@
  },
  {
   "family": "qa-verification",
+  "domain": "motion",
   "name_ar": "ورقة إطارات الكلمات وبوابة تزامن الضربات",
   "name_en": "Word-frame sheet and hit-sync gate",
   "status": "ready",
@@ -2171,6 +2247,7 @@
  },
  {
   "family": "qa-verification",
+  "domain": "motion",
   "name_ar": "قراءة بيانات التوليد المضمنة",
   "name_en": "Embedded generation metadata readback",
   "status": "ready",
@@ -2199,6 +2276,7 @@
  },
  {
   "family": "qa-verification",
+  "domain": "motion",
   "name_ar": "وثيقة الهوية المولدة من الرموز",
   "name_en": "Identity doc generated from tokens",
   "status": "ready",
@@ -2228,6 +2306,7 @@
  },
  {
   "family": "qa-verification",
+  "domain": "motion",
   "name_ar": "مسح بصري بـ Playwright",
   "name_en": "Playwright visual sweeps (desktop + 390/320px phones)",
   "status": "ready",
@@ -2259,6 +2338,7 @@
  },
  {
   "family": "qa-verification",
+  "domain": "motion",
   "name_ar": "بوابة المعاينة قبل التصدير",
   "name_en": "Preview-before-final-render gate",
   "status": "ready",
@@ -2289,6 +2369,7 @@
  },
  {
   "family": "qa-verification",
+  "domain": "motion",
   "name_ar": "إيصال الفحص الفني",
   "name_en": "ffprobe QA receipt",
   "status": "ready",
@@ -2318,6 +2399,7 @@
  },
  {
   "family": "qa-verification",
+  "domain": "motion",
   "name_ar": "إثبات التغير الزمني بالبصمة",
   "name_en": "Temporal-change frame-hash proof",
   "status": "ready",
@@ -2346,6 +2428,7 @@
  },
  {
   "family": "qa-verification",
+  "domain": "motion",
   "name_ar": "تعليم المقاطع الخطرة نصياً",
   "name_en": "Text-risk clip flagging",
   "status": "ready",
@@ -2372,6 +2455,7 @@
  },
  {
   "family": "qa-verification",
+  "domain": "motion",
   "name_ar": "تحديد موقع عنصر في صورة بشبكة مرقمة",
   "name_en": "Grid-index visual grounding (locate X in an image)",
   "status": "ready",
@@ -2401,6 +2485,7 @@
  },
  {
   "family": "qa-verification",
+  "domain": "motion",
   "name_ar": "كوسف: بوابة التسليم وقياسات الحركة",
   "name_en": "KOSIF: delivery inspect gate and motion measures",
   "status": "ready",
@@ -2431,6 +2516,7 @@
  },
  {
   "family": "qa-verification",
+  "domain": "motion",
   "name_ar": "فحص الملفات والخطوط",
   "name_en": "probe / fonts",
   "status": "ready",
@@ -2459,6 +2545,7 @@
  },
  {
   "family": "qa-verification",
+  "domain": "motion",
   "name_ar": "بوابة التسليم",
   "name_en": "inspect delivery gate",
   "status": "ready",
@@ -2489,6 +2576,7 @@
  },
  {
   "family": "qa-verification",
+  "domain": "motion",
   "name_ar": "ورقة المراجعة",
   "name_en": "sheet contact review",
   "status": "ready",
@@ -2519,6 +2607,7 @@
  },
  {
   "family": "qa-verification",
+  "domain": "motion",
   "name_ar": "فحص التركيب",
   "name_en": "lint composition",
   "status": "ready",
@@ -2549,6 +2638,7 @@
  },
  {
   "family": "qa-verification",
+  "domain": "motion",
   "name_ar": "دراسة مرجع",
   "name_en": "study reference",
   "status": "ready",
@@ -2579,6 +2669,7 @@
  },
  {
   "family": "qa-verification",
+  "domain": "motion",
   "name_ar": "فحص الحلقة",
   "name_en": "loopcheck",
   "status": "ready",
@@ -2609,6 +2700,7 @@
  },
  {
   "family": "qa-verification",
+  "domain": "motion",
   "name_ar": "فحص المقروئية",
   "name_en": "readable",
   "status": "ready",
@@ -2639,6 +2731,7 @@
  },
  {
   "family": "qa-verification",
+  "domain": "motion",
   "name_ar": "تثبيت الغلاف",
   "name_en": "poster bake",
   "status": "ready",
@@ -2669,6 +2762,7 @@
  },
  {
   "family": "qa-verification",
+  "domain": "motion",
   "name_ar": "بوابة العربية",
   "name_en": "Arabic delivery gate",
   "status": "ready",
@@ -2699,6 +2793,7 @@
  },
  {
   "family": "qa-verification",
+  "domain": "motion",
   "name_ar": "صفحة المراجعة",
   "name_en": "Review page (Motion OS)",
   "status": "ready",
@@ -2729,6 +2824,7 @@
  },
  {
   "family": "qa-verification",
+  "domain": "motion",
   "name_ar": "مشغل المعاينة",
   "name_en": "Self-playing preview player",
   "status": "ready",
@@ -2757,6 +2853,7 @@
  },
  {
   "family": "qa-verification",
+  "domain": "motion",
   "name_ar": "وسوم الأمانة للمحاكاة التوضيحية",
   "name_en": "Honesty labels for illustrative simulations",
   "status": "ready",
@@ -2785,6 +2882,7 @@
  },
  {
   "family": "qa-verification",
+  "domain": "motion",
   "name_ar": "ورقة لقطات وفحص السرعة",
   "name_en": "Contact sheet + speed check",
   "status": "ready",
@@ -2811,6 +2909,7 @@
  },
  {
   "family": "qa-verification",
+  "domain": "motion",
   "name_ar": "دراسة فيلم مرجعي",
   "name_en": "Reference study",
   "status": "ready",
@@ -2837,6 +2936,7 @@
  },
  {
   "family": "qa-verification",
+  "domain": "motion",
   "name_ar": "مراجعة المشاهد",
   "name_en": "Review loop",
   "status": "ready",
@@ -2863,6 +2963,7 @@
  },
  {
   "family": "qa-verification",
+  "domain": "motion",
   "name_ar": "فحص البيئة",
   "name_en": "Environment check",
   "status": "ready",
@@ -2891,6 +2992,7 @@
  },
  {
   "family": "qa-verification",
+  "domain": "motion",
   "name_ar": "شارات حالة البيئة",
   "name_en": "Environment status pills",
   "status": "ready",
@@ -2921,6 +3023,7 @@
  },
  {
   "family": "qa-verification",
+  "domain": "motion",
   "name_ar": "المراجعة: معاينة شبحية للعناصر المنقولة",
   "name_en": "Review: ghost preview of moved elements",
   "status": "ready",
@@ -2947,6 +3050,7 @@
  },
  {
   "family": "qa-verification",
+  "domain": "motion",
   "name_ar": "المراجعة: ملاحظات مثبتة على الإطار",
   "name_en": "Review: pinned frame notes",
   "status": "ready",
@@ -2973,6 +3077,7 @@
  },
  {
   "family": "qa-verification",
+  "domain": "motion",
   "name_ar": "المراجعة: إعادة التحميل التلقائي والروابط العميقة",
   "name_en": "Review: auto-reload on new version and deep links",
   "status": "ready",
@@ -3000,6 +3105,7 @@
  },
  {
   "family": "qa-verification",
+  "domain": "motion",
   "name_ar": "تقرير التصدير",
   "name_en": "Export report object",
   "status": "ready",
@@ -3026,6 +3132,7 @@
  },
  {
   "family": "qa-verification",
+  "domain": "motion",
   "name_ar": "قياس الحدة والضجيج",
   "name_en": "Sharpness and noise measurement",
   "status": "ready",
@@ -3054,6 +3161,7 @@
  },
  {
   "family": "qa-verification",
+  "domain": "motion",
   "name_ar": "مقارنة صورتين لاستمرارية اللقطات",
   "name_en": "A/B image comparison for shot continuity",
   "status": "ready",
@@ -3082,6 +3190,7 @@
  },
  {
   "family": "qa-verification",
+  "domain": "motion",
   "name_ar": "لوحة فحص 4×4 من الإطارات",
   "name_en": "Contact sheet 4x4 (every 15th frame)",
   "status": "ready",
@@ -3111,6 +3220,7 @@
  },
  {
   "family": "qa-verification",
+  "domain": "motion",
   "name_ar": "فاحص جودة الفيديو",
   "name_en": "Video QA inspector (black/freeze/loudness)",
   "status": "ready",
@@ -3143,6 +3253,7 @@
  },
  {
   "family": "qa-verification",
+  "domain": "motion",
   "name_ar": "تحليل صوتي مقاس",
   "name_en": "Measured audio analysis (BS.1770 loudness, true peak, BPM, spectrum)",
   "status": "ready",
@@ -3175,6 +3286,7 @@
  },
  {
   "family": "qa-verification",
+  "domain": "motion",
   "name_ar": "تحليل صورة مقاس",
   "name_en": "Measured image analysis",
   "status": "ready",
@@ -3206,6 +3318,7 @@
  },
  {
   "family": "qa-verification",
+  "domain": "motion",
   "name_ar": "مقارنة إطارين",
   "name_en": "A/B frame comparison",
   "status": "ready",
@@ -3234,6 +3347,7 @@
  },
  {
   "family": "qa-verification",
+  "domain": "motion",
   "name_ar": "لوحة معاينة المصادر",
   "name_en": "Source contact sheet for footage triage",
   "status": "ready",
@@ -3265,6 +3379,7 @@
  },
  {
   "family": "qa-verification",
+  "domain": "motion",
   "name_ar": "أوراق المراجعة",
   "name_en": "Critique sheets: contact, phone, strip + review.md",
   "status": "ready",
@@ -3294,6 +3409,7 @@
  },
  {
   "family": "qa-verification",
+  "domain": "motion",
   "name_ar": "فحص مسبق لمهمة الوسائط",
   "name_en": "Media job preflight (proplan)",
   "status": "ready",
@@ -3322,6 +3438,7 @@
  },
  {
   "family": "qa-verification",
+  "domain": "motion",
   "name_ar": "فحص الملفات والدفعات والخطوط",
   "name_en": "Probe, batch and Arabic font scan",
   "status": "ready",
@@ -3350,6 +3467,7 @@
  },
  {
   "family": "qa-verification",
+  "domain": "motion",
   "name_ar": "فحص أمان الكود الملصوق",
   "name_en": "Pasted-code safety scan + sandbox",
   "status": "ready",
@@ -3377,6 +3495,7 @@
  },
  {
   "family": "qa-verification",
+  "domain": "motion",
   "name_ar": "أوراق مراجعة المحاكاة",
   "name_en": "Review contact sheets (shots, transitions, texts, side by side)",
   "status": "ready",
@@ -3403,6 +3522,7 @@
  },
  {
   "family": "qa-verification",
+  "domain": "motion",
   "name_ar": "فحص المصدر بـ ffprobe",
   "name_en": "ffprobe source inspection",
   "status": "ready",
@@ -3433,6 +3553,7 @@
  },
  {
   "family": "qa-verification",
+  "domain": "motion",
   "name_ar": "مشغل الكود الآمن",
   "name_en": "Sandboxed AI code runner",
   "status": "ready",
@@ -3462,6 +3583,7 @@
  },
  {
   "family": "qa-verification",
+  "domain": "motion",
   "name_ar": "مقياس طاقة الحركة",
   "name_en": "Motion energy meter vs reference",
   "status": "ready",
@@ -3490,6 +3612,7 @@
  },
  {
   "family": "qa-verification",
+  "domain": "motion",
   "name_ar": "فحص الملف",
   "name_en": "Probe media",
   "status": "ready",
@@ -3518,6 +3641,7 @@
  },
  {
   "family": "qa-verification",
+  "domain": "motion",
   "name_ar": "أدوات المعاينة الحية",
   "name_en": "Live preview controls (play/scrub/?t=)",
   "status": "ready",
@@ -3545,6 +3669,7 @@
  },
  {
   "family": "qa-verification",
+  "domain": "motion",
   "name_ar": "فاحص أصالة النصوص",
   "name_en": "Brief originality n-gram checker",
   "status": "ready",
@@ -3573,6 +3698,7 @@
  },
  {
   "family": "qa-verification",
+  "domain": "motion",
   "name_ar": "فحص التباين عبر الزمن",
   "name_en": "WCAG contrast audit over time",
   "status": "install",
@@ -3604,6 +3730,7 @@
  },
  {
   "family": "qa-verification",
+  "domain": "motion",
   "name_ar": "فحص تجاوز النصوص على الخط الزمني",
   "name_en": "Layout inspect sweep",
   "status": "install",
@@ -3634,6 +3761,7 @@
  },
  {
   "family": "qa-verification",
+  "domain": "motion",
   "name_ar": "خريطة الحركة لتدقيق الكوريغرافيا",
   "name_en": "Animation map (choreography audit)",
   "status": "install",
@@ -3663,6 +3791,7 @@
  },
  {
   "family": "qa-verification",
+  "domain": "motion",
   "name_ar": "حزمة أسلوب بنطاقات إحصائية",
   "name_en": "Style pack with statistical bands",
   "status": "install",
@@ -3689,6 +3818,7 @@
  },
  {
   "family": "qa-verification",
+  "domain": "motion",
   "name_ar": "قالب تحليل فيديو مرجعي",
   "name_en": "Reference-video breakdown template",
   "status": "install",
@@ -3719,6 +3849,7 @@
  },
  {
   "family": "qa-verification",
+  "domain": "motion",
   "name_ar": "اختبار الإطارات الذهبية بأداة odiff",
   "name_en": "Golden-frame regression with odiff",
   "status": "install",
@@ -3750,6 +3881,7 @@
  },
  {
   "family": "qa-verification",
+  "domain": "motion",
   "name_ar": "سجل ألوان العلامات",
   "name_en": "Marker colour registry",
   "status": "install",
@@ -3777,6 +3909,7 @@
  },
  {
   "family": "qa-verification",
+  "domain": "motion",
   "name_ar": "مشاهدة فيديو مرجعي بالإطارات والتفريغ",
   "name_en": "Watch a reference video (frames + transcript)",
   "status": "install",
@@ -3809,6 +3942,7 @@
  },
  {
   "family": "qa-verification",
+  "domain": "motion",
   "name_ar": "التحقق من تزامن القطع مع الضربة",
   "name_en": "Onset-sync verification",
   "status": "install",
@@ -3839,6 +3973,7 @@
  },
  {
   "family": "qa-verification",
+  "domain": "motion",
   "name_ar": "التعامل مع فقد جهاز GPU",
   "name_en": "WebGPU device-loss handling",
   "status": "install",
@@ -3868,6 +4003,7 @@
  },
  {
   "family": "qa-verification",
+  "domain": "motion",
   "name_ar": "بوابات جودة الروتوسكوب",
   "name_en": "Rotoscope fidelity gates",
   "status": "install",
@@ -3894,6 +4030,7 @@
  },
  {
   "family": "qa-verification",
+  "domain": "motion",
   "name_ar": "نظافة البيانات المكانية",
   "name_en": "Spatial data hygiene",
   "status": "install",
@@ -3922,6 +4059,7 @@
  },
  {
   "family": "qa-verification",
+  "domain": "motion",
   "name_ar": "قياس مستوى الكلام والضوضاء",
   "name_en": "Speech level and noise-floor measurement",
   "status": "install",
@@ -3949,6 +4087,7 @@
  },
  {
   "family": "qa-verification",
+  "domain": "motion",
   "name_ar": "اكتشاف القطعات في الفيديو",
   "name_en": "Footage shot/cut detection (reference probe)",
   "status": "install",
@@ -3975,6 +4114,7 @@
  },
  {
   "family": "qa-verification",
+  "domain": "motion",
   "name_ar": "تحليل بصمة المرجع العميق",
   "name_en": "Style DNA deep reference study",
   "status": "install",
@@ -4004,6 +4144,7 @@
  },
  {
   "family": "qa-verification",
+  "domain": "motion",
   "name_ar": "درجة التشابه مع المرجع وتصليحها",
   "name_en": "Fingerprint similarity score and auto-fix",
   "status": "install",
@@ -4032,6 +4173,7 @@
  },
  {
   "family": "qa-verification",
+  "domain": "motion",
   "name_ar": "تقدير التكلفة وحد الصرف",
   "name_en": "Cost estimate and spending limit",
   "status": "install",
@@ -4062,6 +4204,7 @@
  },
  {
   "family": "qa-verification",
+  "domain": "motion",
   "name_ar": "نصايح الكوتش بضغطة",
   "name_en": "Coach tips with one-tap fixes (no AI)",
   "status": "install",
@@ -4088,6 +4231,7 @@
  },
  {
   "family": "qa-verification",
+  "domain": "motion",
   "name_ar": "بوابة التسليم",
   "name_en": "Delivery gate",
   "status": "install",
@@ -4114,6 +4258,7 @@
  },
  {
   "family": "qa-verification",
+  "domain": "motion",
   "name_ar": "صفحة فحص الربط",
   "name_en": "Integration health check page",
   "status": "install",
@@ -4142,6 +4287,7 @@
  },
  {
   "family": "qa-verification",
+  "domain": "motion",
   "name_ar": "عرض المرجع والأصل والمنتج",
   "name_en": "Multi-monitor compare view",
   "status": "install",
@@ -4169,6 +4315,7 @@
  },
  {
   "family": "qa-verification",
+  "domain": "motion",
   "name_ar": "رندر تجريبي سريع",
   "name_en": "Smoke render mode",
   "status": "install",
@@ -4198,6 +4345,7 @@
  },
  {
   "family": "qa-verification",
+  "domain": "motion",
   "name_ar": "أمر: فحص ثابت",
   "name_en": "CLI: lint",
   "status": "install",
@@ -4227,6 +4375,7 @@
  },
  {
   "family": "qa-verification",
+  "domain": "motion",
   "name_ar": "أمر: فحص بصري",
   "name_en": "CLI: check",
   "status": "install",
@@ -4257,6 +4406,7 @@
  },
  {
   "family": "qa-verification",
+  "domain": "motion",
   "name_ar": "أمر: لقطات",
   "name_en": "CLI: snapshot",
   "status": "install",
@@ -4286,6 +4436,7 @@
  },
  {
   "family": "qa-verification",
+  "domain": "motion",
   "name_ar": "أمر: إطارات مفتاحية",
   "name_en": "CLI: keyframes",
   "status": "install",
@@ -4315,6 +4466,7 @@
  },
  {
   "family": "qa-verification",
+  "domain": "motion",
   "name_ar": "أمر: مقارنة",
   "name_en": "CLI: compare / grade-compare",
   "status": "install",
@@ -4344,6 +4496,7 @@
  },
  {
   "family": "qa-verification",
+  "domain": "motion",
   "name_ar": "قواعد الأداء",
   "name_en": "Performance rules",
   "status": "install",
@@ -4371,6 +4524,7 @@
  },
  {
   "family": "qa-verification",
+  "domain": "motion",
   "name_ar": "حلقة المراجعة: خطة ثم رسومات ثم بناء ثم معاينة",
   "name_en": "Review loop: plan -> sketch sheet -> build -> final look",
   "status": "install",
@@ -4400,6 +4554,7 @@
  },
  {
   "family": "qa-verification",
+  "domain": "motion",
   "name_ar": "تثبيت وترقية إصدار الأداة في المشروع",
   "name_en": "Pin and upgrade the project CLI",
   "status": "install",
@@ -4428,6 +4583,7 @@
  },
  {
   "family": "qa-verification",
+  "domain": "motion",
   "name_ar": "محظورات الحتمية",
   "name_en": "Determinism bans",
   "status": "install",
@@ -4454,6 +4610,7 @@
  },
  {
   "family": "qa-verification",
+  "domain": "motion",
   "name_ar": "أخطاء الفحص الأولى الشائعة",
   "name_en": "Lint first-pass gotchas",
   "status": "install",
@@ -4480,6 +4637,7 @@
  },
  {
   "family": "qa-verification",
+  "domain": "motion",
   "name_ar": "أمر فحص الخط الزمني",
   "name_en": "Timeline inspection command",
   "status": "install",
@@ -4509,6 +4667,7 @@
  },
  {
   "family": "qa-verification",
+  "domain": "motion",
   "name_ar": "انتقالات CSS محظورة",
   "name_en": "Banned CSS transitions",
   "status": "install",
@@ -4535,6 +4694,7 @@
  },
  {
   "family": "qa-verification",
+  "domain": "motion",
   "name_ar": "سكربت خريطة الحركة للتدقيق",
   "name_en": "Animation map audit script",
   "status": "install",
@@ -4566,6 +4726,7 @@
  },
  {
   "family": "qa-verification",
+  "domain": "motion",
   "name_ar": "أدوات تشخيص الحركة",
   "name_en": "Keyframe diagnostics CLI (keyframes / --shot / --ghost / strip)",
   "status": "install",
@@ -4596,6 +4757,7 @@
  },
  {
   "family": "qa-verification",
+  "domain": "motion",
   "name_ar": "التحقق من الالتزام بالتصميم",
   "name_en": "Design adherence verification",
   "status": "install",
@@ -4622,6 +4784,7 @@
  },
  {
   "family": "qa-verification",
+  "domain": "motion",
   "name_ar": "تقرير التباين من الإطارات",
   "name_en": "Contrast report from rendered frames",
   "status": "install",
@@ -4651,6 +4814,7 @@
  },
  {
   "family": "qa-verification",
+  "domain": "motion",
   "name_ar": "فحص البنية الثابت",
   "name_en": "Lint (static) gate",
   "status": "install",
@@ -4680,6 +4844,7 @@
  },
  {
   "family": "qa-verification",
+  "domain": "motion",
   "name_ar": "الفحص في المتصفح: الأخطاء والتخطيط والحركة والتباين",
   "name_en": "Check (browser gate: runtime, layout, motion, WCAG contrast)",
   "status": "install",
@@ -4711,6 +4876,7 @@
  },
  {
   "family": "qa-verification",
+  "domain": "motion",
   "name_ar": "تأكيدات الحركة الجانبية",
   "name_en": "Motion sidecar assertions (*.motion.json)",
   "status": "install",
@@ -4737,6 +4903,7 @@
  },
  {
   "family": "qa-verification",
+  "domain": "motion",
   "name_ar": "لقطات ثابتة لورقة الاتصال",
   "name_en": "Snapshot contact sheets",
   "status": "install",
@@ -4766,6 +4933,7 @@
  },
  {
   "family": "qa-verification",
+  "domain": "motion",
   "name_ar": "سطر تشخيص التصيير",
   "name_en": "Render diagnostics line (capture path)",
   "status": "install",
@@ -4795,6 +4963,7 @@
  },
  {
   "family": "qa-verification",
+  "domain": "motion",
   "name_ar": "مقارنة النسخ ودرجات اللون",
   "name_en": "Compare variants and color grades",
   "status": "install",
@@ -4824,6 +4993,7 @@
  },
  {
   "family": "qa-verification",
+  "domain": "motion",
   "name_ar": "سجل المشروع والتراجع لكل دورة",
   "name_en": "Project history undo per agent turn",
   "status": "install",
@@ -4853,6 +5023,7 @@
  },
  {
   "family": "qa-verification",
+  "domain": "motion",
   "name_ar": "معيار جودة المكونات والمساهمة",
   "name_en": "Component quality bar and contribution",
   "status": "install",
@@ -4882,6 +5053,7 @@
  },
  {
   "family": "qa-verification",
+  "domain": "motion",
   "name_ar": "فحص جودة النص المفرغ وتنظيفه",
   "name_en": "Transcript quality check and cleaning",
   "status": "install",
@@ -4909,6 +5081,7 @@
  },
  {
   "family": "qa-verification",
+  "domain": "motion",
   "name_ar": "بوابة قرار الترجمة",
   "name_en": "Caption decision gate (refuse bad clips)",
   "status": "install",
@@ -4938,6 +5111,7 @@
  },
  {
   "family": "qa-verification",
+  "domain": "motion",
   "name_ar": "معاينة سريعة للإطارات المركبة",
   "name_en": "Fast composite preview frames (no render)",
   "status": "install",
@@ -4967,6 +5141,7 @@
  },
  {
   "family": "qa-verification",
+  "domain": "motion",
   "name_ar": "بوابات فحص الترجمة",
   "name_en": "Caption render gates (timing / occlusion / overflow / hand-off)",
   "status": "install",
@@ -4998,6 +5173,7 @@
  },
  {
   "family": "qa-verification",
+  "domain": "motion",
   "name_ar": "أخطاء الترجمة المعروفة",
   "name_en": "Caption failure modes (learned)",
   "status": "install",
@@ -5027,6 +5203,7 @@
  },
  {
   "family": "qa-verification",
+  "domain": "motion",
   "name_ar": "بوابة دقة حركة فيجما",
   "name_en": "Figma motion fidelity gate (motion-energy PSNR)",
   "status": "install",
@@ -5055,6 +5232,7 @@
  },
  {
   "family": "qa-verification",
+  "domain": "motion",
   "name_ar": "بوابة الإطارات المفتاحية",
   "name_en": "Keyframe gate frames",
   "status": "install",
@@ -5084,6 +5262,7 @@
  },
  {
   "family": "qa-verification",
+  "domain": "motion",
   "name_ar": "مفاتيح إخفاء العناصر لتصحيح المشهد",
   "name_en": "Debug visibility toggles for heavy 3D scenes",
   "status": "install",
@@ -5111,6 +5290,7 @@
  },
  {
   "family": "qa-verification",
+  "domain": "motion",
   "name_ar": "بناء المحاكاة وبوابة المقارنة",
   "name_en": "Mimic build + compare gate",
   "status": "install",
@@ -5137,6 +5317,7 @@
  },
  {
   "family": "qa-verification",
+  "domain": "motion",
   "name_ar": "فخاخ المحاكاة",
   "name_en": "Mimic traps rules",
   "status": "install",
@@ -5165,6 +5346,7 @@
  },
  {
   "family": "qa-verification",
+  "domain": "motion",
   "name_ar": "معاينة وفحص القراءة",
   "name_en": "Preview + readability check",
   "status": "install",
@@ -5191,6 +5373,7 @@
  },
  {
   "family": "qa-verification",
+  "domain": "motion",
   "name_ar": "مراجعة المستخدم",
   "name_en": "Review site markup",
   "status": "install",
@@ -5219,6 +5402,7 @@
  },
  {
   "family": "qa-verification",
+  "domain": "motion",
   "name_ar": "التصيير النهائي والبوابة",
   "name_en": "Final render + inspect gate",
   "status": "install",
@@ -5246,6 +5430,7 @@
  },
  {
   "family": "qa-verification",
+  "domain": "motion",
   "name_ar": "تحليل الفيديو",
   "name_en": "Video analyze breakdown",
   "status": "install",
@@ -5274,6 +5459,7 @@
  },
  {
   "family": "qa-verification",
+  "domain": "motion",
   "name_ar": "مكتبة الأساليب",
   "name_en": "Batch style library",
   "status": "install",
@@ -5300,6 +5486,7 @@
  },
  {
   "family": "qa-verification",
+  "domain": "motion",
   "name_ar": "رسم الموجة والطيف",
   "name_en": "Waveform + spectrum plot",
   "status": "install",
@@ -5328,6 +5515,7 @@
  },
  {
   "family": "qa-verification",
+  "domain": "motion",
   "name_ar": "شريط تقدم حقيقي من FFmpeg",
   "name_en": "Live render progress from ffmpeg -progress",
   "status": "install",
@@ -5359,6 +5547,7 @@
  },
  {
   "family": "qa-verification",
+  "domain": "motion",
   "name_ar": "تتبع أخطاء الشيدر بالعزل",
   "name_en": "Shader isolation debugging",
   "status": "install",
@@ -5388,6 +5577,7 @@
  },
  {
   "family": "qa-verification",
+  "domain": "motion",
   "name_ar": "دراسة الفيديو المرجعي",
   "name_en": "Reference film study (boundaries, looks, text zones)",
   "status": "install",
@@ -5415,6 +5605,7 @@
  },
  {
   "family": "qa-verification",
+  "domain": "motion",
   "name_ar": "فحص المطابقة بالإطارات والصوت",
   "name_en": "Mimic comparison QA (frames + audio correlation)",
   "status": "install",
@@ -5441,6 +5632,7 @@
  },
  {
   "family": "qa-verification",
+  "domain": "motion",
   "name_ar": "مشغل معاينة داخل المتصفح",
   "name_en": "Built-in browser preview player",
   "status": "install",
@@ -5469,6 +5661,7 @@
  },
  {
   "family": "qa-verification",
+  "domain": "motion",
   "name_ar": "بوابة الإطارات المفتاحية",
   "name_en": "Key frames gate",
   "status": "install",
@@ -5497,6 +5690,7 @@
  },
  {
   "family": "qa-verification",
+  "domain": "motion",
   "name_ar": "قياس سرعة الحركة على الشاشة",
   "name_en": "On-screen speed gate (optical flow)",
   "status": "install",
@@ -5526,6 +5720,7 @@
  },
  {
   "family": "qa-verification",
+  "domain": "motion",
   "name_ar": "حكم الواقعية للصور",
   "name_en": "Realism judge for still renders",
   "status": "install",
@@ -5555,6 +5750,7 @@
  },
  {
   "family": "qa-verification",
+  "domain": "motion",
   "name_ar": "تحليل حدود اللقطات والمظهر",
   "name_en": "Shot boundary and look analysis",
   "status": "install",
@@ -5581,6 +5777,7 @@
  },
  {
   "family": "qa-verification",
+  "domain": "motion",
   "name_ar": "اختبار المحاكاة بفيديو اصطناعي",
   "name_en": "Synthetic regression harness for mimic",
   "status": "install",
@@ -5610,6 +5807,7 @@
  },
  {
   "family": "qa-verification",
+  "domain": "motion",
   "name_ar": "محلل الفيديو المرجعي",
   "name_en": "Reference video analyser",
   "status": "install",
@@ -5639,6 +5837,7 @@
  },
  {
   "family": "qa-verification",
+  "domain": "motion",
   "name_ar": "اختبار المحاكاة الاصطناعي",
   "name_en": "Synthetic regression for mimic",
   "status": "install",
@@ -5667,6 +5866,7 @@
  },
  {
   "family": "qa-verification",
+  "domain": "motion",
   "name_ar": "حكم الواقعية",
   "name_en": "Realism judge metric",
   "status": "install",
@@ -5696,6 +5896,7 @@
  },
  {
   "family": "qa-verification",
+  "domain": "motion",
   "name_ar": "مشغّل المعاينة",
   "name_en": "In-browser preview player",
   "status": "install",
@@ -5724,6 +5925,7 @@
  },
  {
   "family": "qa-verification",
+  "domain": "motion",
   "name_ar": "اللمسات الأخيرة حسب وضوح الفرق",
   "name_en": "Final-touch passes ordered by visibility (Delta E bands)",
   "status": "install",
@@ -5752,6 +5954,7 @@
  },
  {
   "family": "qa-verification",
+  "domain": "motion",
   "name_ar": "خطط رسم مقاسة يختار بينها حَكَم",
   "name_en": "Measured painting plans chosen by a judge",
   "status": "install",
@@ -5780,6 +5983,7 @@
  },
  {
   "family": "qa-verification",
+  "domain": "motion",
   "name_ar": "التحقق من المطابقة التامة",
   "name_en": "Exact-match verification badge",
   "status": "install",
@@ -5808,6 +6012,7 @@
  },
  {
   "family": "qa-verification",
+  "domain": "motion",
   "name_ar": "كود الصورة كبيانات تُقرأ دون تنفيذ",
   "name_en": "Image code as pure data (read without executing)",
   "status": "install",
@@ -5836,6 +6041,7 @@
  },
  {
   "family": "qa-verification",
+  "domain": "motion",
   "name_ar": "بوابة الواقعية",
   "name_en": "Realism gate (judge.py)",
   "status": "install",
@@ -5866,6 +6072,7 @@
  },
  {
   "family": "qa-verification",
+  "domain": "motion",
   "name_ar": "حلقة المراجعة بالقياس",
   "name_en": "Measured review loop for painted scenes",
   "status": "install",
@@ -5894,6 +6101,7 @@
  },
  {
   "family": "qa-verification",
+  "domain": "motion",
   "name_ar": "مجموعة اختبارات الاستوديو",
   "name_en": "KOSIF Studio regression suite",
   "status": "install",
@@ -5923,6 +6131,7 @@
  },
  {
   "family": "qa-verification",
+  "domain": "motion",
   "name_ar": "لقطات مراجعة مفتاحية",
   "name_en": "Key-frame review grabs",
   "status": "install",
@@ -5951,6 +6160,7 @@
  },
  {
   "family": "qa-verification",
+  "domain": "motion",
   "name_ar": "سرعة الحركة على الشاشة",
   "name_en": "On-screen speed by optical flow",
   "status": "install",
@@ -5980,6 +6190,7 @@
  },
  {
   "family": "qa-verification",
+  "domain": "motion",
   "name_ar": "دراسة فيلم مرجعي",
   "name_en": "Reference film study",
   "status": "install",
@@ -6008,6 +6219,7 @@
  },
  {
   "family": "qa-verification",
+  "domain": "motion",
   "name_ar": "فحص التسليم",
   "name_en": "Delivery verification",
   "status": "install",
@@ -6037,6 +6249,7 @@
  },
  {
   "family": "qa-verification",
+  "domain": "motion",
   "name_ar": "بوابة الفحص قبل الرندر",
   "name_en": "hyperframes check gate",
   "status": "install",
@@ -6067,6 +6280,7 @@
  },
  {
   "family": "qa-verification",
+  "domain": "motion",
   "name_ar": "صورة مفهوم أولاً ثم تنفيذ مطابق",
   "name_en": "Concept-image first, then faithful build",
   "status": "key",
@@ -6096,6 +6310,7 @@
  },
  {
   "family": "qa-verification",
+  "domain": "motion",
   "name_ar": "رندر مدفوع بسقف ميزانية",
   "name_en": "Budget-capped paid render",
   "status": "key",
@@ -6124,6 +6339,7 @@
  },
  {
   "family": "qa-verification",
+  "domain": "motion",
   "name_ar": "التحقق من الكلمات المغناة بتحويل الكلام لنص",
   "name_en": "Sung-lyric verification by speech-to-text",
   "status": "key",
@@ -6153,6 +6369,7 @@
  },
  {
   "family": "qa-verification",
+  "domain": "motion",
   "name_ar": "دليل الأسلوب وحلقة التوليد والفحص",
   "name_en": "Theme bible + generate/QA loop for figure sets",
   "status": "key",
@@ -6183,6 +6400,7 @@
  },
  {
   "family": "qa-verification",
+  "domain": "motion",
   "name_ar": "حكم Jev المغلق",
   "name_en": "Jev closed-set judge",
   "status": "key",
@@ -6213,6 +6431,7 @@
  },
  {
   "family": "qa-verification",
+  "domain": "motion",
   "name_ar": "ترتيب خطوات الإنتاج وسد الفراغات",
   "name_en": "Production step ordering + gap filling + auto review",
   "status": "key",
@@ -6244,6 +6463,7 @@
  },
  {
   "family": "qa-verification",
+  "domain": "motion",
   "name_ar": "مراجعة الفريم الحالي",
   "name_en": "Single-frame director review",
   "status": "key",
@@ -6272,6 +6492,7 @@
  },
  {
   "family": "qa-verification",
+  "domain": "motion",
   "name_ar": "مطابقة النص مع الكلام",
   "name_en": "Transcript verification against speech",
   "status": "key",
@@ -6300,6 +6521,7 @@
  },
  {
   "family": "qa-verification",
+  "domain": "motion",
   "name_ar": "سد فراغات المونتاج قبل الريندر",
   "name_en": "Gap filling before render",
   "status": "key",
@@ -6329,6 +6551,7 @@
  },
  {
   "family": "qa-verification",
+  "domain": "motion",
   "name_ar": "فحص الاستهلاك المتبقي",
   "name_en": "Usage and plan-window check",
   "status": "key",
@@ -6358,6 +6581,7 @@
  },
  {
   "family": "qa-verification",
+  "domain": "motion",
   "name_ar": "الحكم جيف",
   "name_en": "Jev order-robust judge",
   "status": "key",
@@ -6386,6 +6610,7 @@
  },
  {
   "family": "qa-verification",
+  "domain": "motion",
   "name_ar": "رندر من دافنشي مع تحقق",
   "name_en": "Resolve render + verify",
   "status": "key",
@@ -6417,6 +6642,7 @@
  },
  {
   "family": "qa-verification",
+  "domain": "motion",
   "name_ar": "حَكَم Jev المقاوم للترتيب",
   "name_en": "Jev order-robust judge client",
   "status": "key",
@@ -6446,6 +6672,7 @@
  },
  {
   "family": "qa-verification",
+  "domain": "motion",
   "name_ar": "مقارنة ثلاثة نماذج",
   "name_en": "Three-model transition bake-off",
   "status": "key",
@@ -6474,6 +6701,7 @@
  },
  {
   "family": "qa-verification",
+  "domain": "motion",
   "name_ar": "تعاقب حلقات تشغيل المعاينات في الشبكة",
   "name_en": "Staggered loop phases for live grids",
   "status": "seen",
@@ -6502,6 +6730,7 @@
  },
  {
   "family": "qa-verification",
+  "domain": "motion",
   "name_ar": "مقارنة إعادة بناء لقطة بلقطة",
   "name_en": "Shot-for-shot remake comparison",
   "status": "seen",
@@ -6532,6 +6761,7 @@
  },
  {
   "family": "qa-verification",
+  "domain": "motion",
   "name_ar": "إغلاق حلقة بلا تقطيع",
   "name_en": "Seamless loop closure",
   "status": "seen",
@@ -6560,6 +6790,7 @@
  },
  {
   "family": "qa-verification",
+  "domain": "motion",
   "name_ar": "حلقة النقد ثلاث جولات",
   "name_en": "Critique loop ≥3 rounds",
   "status": "documented",
@@ -6589,6 +6820,7 @@
  },
  {
   "family": "qa-verification",
+  "domain": "motion",
   "name_ar": "قياس إزاحة مزامنة الشفاه",
   "name_en": "GCC-PHAT lip-sync lag check",
   "status": "documented",
@@ -6615,6 +6847,7 @@
  },
  {
   "family": "qa-verification",
+  "domain": "motion",
   "name_ar": "قواعد الأمانة في اللقطات",
   "name_en": "Honest capture rules",
   "status": "documented",
@@ -6642,6 +6875,7 @@
  },
  {
   "family": "qa-verification",
+  "domain": "motion",
   "name_ar": "ورقة لقطات للمراجعة",
   "name_en": "Contact sheet review",
   "status": "documented",
@@ -6671,6 +6905,7 @@
  },
  {
   "family": "qa-verification",
+  "domain": "motion",
   "name_ar": "إطار مرجعي للمقارنة",
   "name_en": "Golden still regression",
   "status": "documented",
@@ -6700,6 +6935,7 @@
  },
  {
   "family": "qa-verification",
+  "domain": "motion",
   "name_ar": "إخفاء البيانات الحساسة في لقطات الواجهة",
   "name_en": "Privacy masking for UI footage",
   "status": "documented",
@@ -6729,6 +6965,7 @@
  },
  {
   "family": "qa-verification",
+  "domain": "motion",
   "name_ar": "فحص التسليم للفيديو",
   "name_en": "Delivery QA for web/social video",
   "status": "documented",
@@ -6760,6 +6997,7 @@
  },
  {
   "family": "qa-verification",
+  "domain": "motion",
   "name_ar": "مراجعة اللقطات الثابتة قبل الرندر",
   "name_en": "Stills-before-render review",
   "status": "documented",
@@ -6791,6 +7029,7 @@
  },
  {
   "family": "qa-verification",
+  "domain": "motion",
   "name_ar": "بديل الحركة المخففة والإطار الثابت",
   "name_en": "Reduced-motion and static-frame fallback",
   "status": "documented",
@@ -6821,6 +7060,7 @@
  },
  {
   "family": "qa-verification",
+  "domain": "motion",
   "name_ar": "لا تخترع الرقم الذي يصنع الخطاف",
   "name_en": "Never invent the hook statistic",
   "status": "documented",
@@ -6849,6 +7089,7 @@
  },
  {
   "family": "qa-verification",
+  "domain": "motion",
   "name_ar": "ترجمة مدمجة وحدود الوميض",
   "name_en": "Burned captions and photosensitivity limits",
   "status": "documented",
@@ -6877,6 +7118,7 @@
  },
  {
   "family": "qa-verification",
+  "domain": "motion",
   "name_ar": "فحص تباين النص فوق الصورة",
   "name_en": "Text-over-photo contrast check",
   "status": "documented",
@@ -6908,6 +7150,7 @@
  },
  {
   "family": "qa-verification",
+  "domain": "motion",
   "name_ar": "بوابات وضوح الإعلان الثابت",
   "name_en": "Static-ad legibility gates",
   "status": "documented",
@@ -6936,6 +7179,7 @@
  },
  {
   "family": "qa-verification",
+  "domain": "motion",
   "name_ar": "انضباط اختبار الإبداعات",
   "name_en": "Creative testing discipline",
   "status": "documented",
@@ -6965,6 +7209,7 @@
  },
  {
   "family": "qa-verification",
+  "domain": "motion",
   "name_ar": "سلم تقييم مشاهد الخطاف",
   "name_en": "Hook scene scoring rubric",
   "status": "documented",
@@ -6993,6 +7238,7 @@
  },
  {
   "family": "qa-verification",
+  "domain": "motion",
   "name_ar": "بوابة فحص الملف المسلّم",
   "name_en": "Delivered-file QA gate",
   "status": "documented",
@@ -7023,6 +7269,7 @@
  },
  {
   "family": "qa-verification",
+  "domain": "motion",
   "name_ar": "مقياس الالتصاق SUCCESs",
   "name_en": "SUCCESs stickiness score",
   "status": "documented",
@@ -7049,6 +7296,7 @@
  },
  {
   "family": "qa-verification",
+  "domain": "motion",
   "name_ar": "مراجعة الثمبنيل بست نقاط",
   "name_en": "Six-check thumbnail review",
   "status": "documented",
@@ -7077,6 +7325,7 @@
  },
  {
   "family": "qa-verification",
+  "domain": "motion",
   "name_ar": "اختيار ذكي للإطارات لمشاهدة الفيديو",
   "name_en": "Smart frame selection for watching videos",
   "status": "documented",
@@ -7107,6 +7356,7 @@
  },
  {
   "family": "qa-verification",
+  "domain": "motion",
   "name_ar": "بحث تغليف نزيه",
   "name_en": "Honest packaging research",
   "status": "documented",
@@ -7134,6 +7384,7 @@
  },
  {
   "family": "qa-verification",
+  "domain": "motion",
   "name_ar": "قائمة فحص قبل اعتماد الموشن",
   "name_en": "Pre-delivery motion QA checklist",
   "status": "documented",
@@ -7163,6 +7414,7 @@
  },
  {
   "family": "qa-verification",
+  "domain": "motion",
   "name_ar": "ضوابط الصدق لكل فئة موشن",
   "name_en": "Category truth guardrails",
   "status": "documented",
@@ -7191,6 +7443,7 @@
  },
  {
   "family": "qa-verification",
+  "domain": "motion",
   "name_ar": "تراكب شفاف 50/50 لكشف الفروق الدقيقة",
   "name_en": "Onion-skin overlay for subtle visual diffs",
   "status": "documented",
@@ -7220,6 +7473,7 @@
  },
  {
   "family": "qa-verification",
+  "domain": "motion",
   "name_ar": "ترتيب استبعاد النسخ المولدة",
   "name_en": "Elimination order for generated variants",
   "status": "documented",
@@ -7248,6 +7502,7 @@
  },
  {
   "family": "qa-verification",
+  "domain": "motion",
   "name_ar": "اختبار القوالب بمحتوى متطرف",
   "name_en": "Content-stress testing of templates",
   "status": "documented",
@@ -7276,6 +7531,7 @@
  },
  {
   "family": "qa-verification",
+  "domain": "motion",
   "name_ar": "قياس الجهارة والذروة",
   "name_en": "Loudness / true-peak verification",
   "status": "documented",
@@ -7305,6 +7561,7 @@
  },
  {
   "family": "qa-verification",
+  "domain": "motion",
   "name_ar": "تحويل معدل إطارات متغير إلى ثابت",
   "name_en": "VFR to CFR fix for sync drift",
   "status": "documented",
@@ -7333,6 +7590,7 @@
  },
  {
   "family": "qa-verification",
+  "domain": "motion",
   "name_ar": "حد أمان الوميض",
   "name_en": "Flash-safety cap",
   "status": "documented",
@@ -7360,6 +7618,7 @@
  },
  {
   "family": "qa-verification",
+  "domain": "motion",
   "name_ar": "حد أدنى لحجم الترجمة",
   "name_en": "Readable caption size floor",
   "status": "documented",
@@ -7386,6 +7645,7 @@
  },
  {
   "family": "qa-verification",
+  "domain": "motion",
   "name_ar": "فحص جودة التفريغ",
   "name_en": "Transcript quality gate",
   "status": "documented",
@@ -7415,6 +7675,7 @@
  },
  {
   "family": "qa-verification",
+  "domain": "motion",
   "name_ar": "قياس التلوين بالمقاييس",
   "name_en": "Scope-based grade measurement",
   "status": "documented",
@@ -7444,6 +7705,7 @@
  },
  {
   "family": "qa-verification",
+  "domain": "motion",
   "name_ar": "تحديث العناصر بعد إعادة القص",
   "name_en": "Recut propagation",
   "status": "documented",
@@ -7471,6 +7733,7 @@
  },
  {
   "family": "qa-verification",
+  "domain": "motion",
   "name_ar": "جدول التحقق من الرندر النهائي",
   "name_en": "Final render verification table",
   "status": "documented",
@@ -7501,6 +7764,7 @@
  },
  {
   "family": "qa-verification",
+  "domain": "motion",
   "name_ar": "قاعدة المشاهدة مرتين",
   "name_en": "Watch twice rule",
   "status": "documented",
@@ -7528,6 +7792,7 @@
  },
  {
   "family": "qa-verification",
+  "domain": "motion",
   "name_ar": "فحص جودة التفريغ وإعادة المحاولة",
   "name_en": "Transcript quality gate + retry",
   "status": "documented",
@@ -7554,6 +7819,7 @@
  },
  {
   "family": "qa-verification",
+  "domain": "motion",
   "name_ar": "قياس دقة التفريغ وضبط الصمت",
   "name_en": "ASR WER and endpointing discipline",
   "status": "documented",
@@ -7582,6 +7848,7 @@
  },
  {
   "family": "qa-verification",
+  "domain": "motion",
   "name_ar": "صورة طيف وموجة للمراجعة",
   "name_en": "Spectrogram + waveform review image",
   "status": "documented",
@@ -7611,6 +7878,7 @@
  },
  {
   "family": "qa-verification",
+  "domain": "motion",
   "name_ar": "ترتيب الميكس والفحص",
   "name_en": "Mix order & listening checks",
   "status": "documented",
@@ -7639,6 +7907,7 @@
  },
  {
   "family": "qa-verification",
+  "domain": "motion",
   "name_ar": "تنبيه علو المؤثرات القصيرة",
   "name_en": "Short-SFX loudness caveat",
   "status": "documented",
@@ -7666,6 +7935,7 @@
  },
  {
   "family": "qa-verification",
+  "domain": "motion",
   "name_ar": "حفظ الصوت الأصلي بنسخة",
   "name_en": "Preserve original audio via duplicate",
   "status": "documented",
@@ -7693,6 +7963,7 @@
  },
  {
   "family": "qa-verification",
+  "domain": "motion",
   "name_ar": "علامات مراجعة للأحكام الذوقية",
   "name_en": "Review markers for subjective calls",
   "status": "documented",
@@ -7720,6 +7991,7 @@
  },
  {
   "family": "qa-verification",
+  "domain": "motion",
   "name_ar": "فخ إعادة الإسناد في TSL",
   "name_en": "TSL reassignment pitfall",
   "status": "documented",
@@ -7746,6 +8018,7 @@
  },
  {
   "family": "qa-verification",
+  "domain": "motion",
   "name_ar": "ميزانية أداء الشيدر",
   "name_en": "Shader cost budget",
   "status": "documented",
@@ -7773,6 +8046,7 @@
  },
  {
   "family": "qa-verification",
+  "domain": "motion",
   "name_ar": "قائمة تحقق الريندر الأسود",
   "name_en": "Blender black-render checklist",
   "status": "documented",
@@ -7801,6 +8075,7 @@
  },
  {
   "family": "qa-verification",
+  "domain": "motion",
   "name_ar": "حدود التباين",
   "name_en": "WCAG contrast floors",
   "status": "documented",
@@ -7830,6 +8105,7 @@
  },
  {
   "family": "qa-verification",
+  "domain": "motion",
   "name_ar": "احترام تقليل الحركة",
   "name_en": "Reduced-motion respect",
   "status": "documented",
@@ -7857,6 +8133,7 @@
  },
  {
   "family": "qa-verification",
+  "domain": "motion",
   "name_ar": "اختبار ثنائي الاتجاه",
   "name_en": "Bidi pseudo-locale stress test",
   "status": "documented",
@@ -7883,6 +8160,7 @@
  },
  {
   "family": "qa-verification",
+  "domain": "motion",
   "name_ar": "لا تخترع رموزا",
   "name_en": "No invented glyphs",
   "status": "documented",
@@ -7911,6 +8189,7 @@
  },
  {
   "family": "qa-verification",
+  "domain": "motion",
   "name_ar": "فحص النقط عند حافة القناع",
   "name_en": "Mask-edge dot check",
   "status": "documented",
@@ -7937,6 +8216,7 @@
  },
  {
   "family": "qa-verification",
+  "domain": "motion",
   "name_ar": "التحقق من اللوك بالمقاييس",
   "name_en": "Scope-target look verification",
   "status": "documented",
@@ -7967,6 +8247,7 @@
  },
  {
   "family": "qa-verification",
+  "domain": "motion",
   "name_ar": "قائمة مراجعة التحريك",
   "name_en": "Animation review checklist (contact/passing)",
   "status": "documented",
@@ -7993,6 +8274,7 @@
  },
  {
   "family": "qa-verification",
+  "domain": "motion",
   "name_ar": "فحص الشفافية والهالات",
   "name_en": "Real alpha and halo checks",
   "status": "documented",
@@ -8022,6 +8304,7 @@
  },
  {
   "family": "qa-verification",
+  "domain": "motion",
   "name_ar": "تعليق الإشارة مقابل الضجيج",
   "name_en": "Signal-vs-noise annotation",
   "status": "documented",
@@ -8049,6 +8332,7 @@
  },
  {
   "family": "qa-verification",
+  "domain": "motion",
   "name_ar": "حلقة فحص: قياس ثم حكم",
   "name_en": "Measure-then-judge figure QA loop",
   "status": "documented",
@@ -8077,6 +8361,7 @@
  },
  {
   "family": "qa-verification",
+  "domain": "motion",
   "name_ar": "حالات ثابتة لاختبار الصور",
   "name_en": "Stable visual regression states",
   "status": "documented",
@@ -8104,6 +8389,7 @@
  },
  {
   "family": "qa-verification",
+  "domain": "motion",
   "name_ar": "التحقق من تصيير الخرائط",
   "name_en": "Map render verification",
   "status": "documented",
@@ -8132,6 +8418,7 @@
  },
  {
   "family": "qa-verification",
+  "domain": "motion",
   "name_ar": "تحقق من واجهات البيانات",
   "name_en": "Trust-but-verify data APIs",
   "status": "documented",
@@ -8159,6 +8446,7 @@
  },
  {
   "family": "qa-verification",
+  "domain": "motion",
   "name_ar": "فحص عمى الألوان والرمادي",
   "name_en": "Colorblind and grayscale check",
   "status": "documented",
@@ -8187,6 +8475,7 @@
  },
  {
   "family": "qa-verification",
+  "domain": "motion",
   "name_ar": "سجل المصدر والإفصاح عن الذكاء الاصطناعي",
   "name_en": "Provenance ledger and AI disclosure",
   "status": "documented",
@@ -8215,6 +8504,7 @@
  },
  {
   "family": "qa-verification",
+  "domain": "motion",
   "name_ar": "منهج تدقيق الكثافة قبل وبعد",
   "name_en": "Before/after visual density audit method",
   "status": "documented",
@@ -8241,6 +8531,7 @@
  },
  {
   "family": "qa-verification",
+  "domain": "motion",
   "name_ar": "سجل مصدر الأصول",
   "name_en": "Asset provenance ledger",
   "status": "documented",
@@ -8269,6 +8560,7 @@
  },
  {
   "family": "qa-verification",
+  "domain": "motion",
   "name_ar": "قياس جهارة صوت المقدمة",
   "name_en": "Intro audio loudness (measured)",
   "status": "documented",
@@ -8297,6 +8589,7 @@
  },
  {
   "family": "qa-verification",
+  "domain": "motion",
   "name_ar": "ميزانية أداء الطبقة الزخرفية",
   "name_en": "Decorative-layer perf budget",
   "status": "documented",
@@ -8323,6 +8616,7 @@
  },
  {
   "family": "qa-verification",
+  "domain": "motion",
   "name_ar": "ميثاق عدم الادعاء",
   "name_en": "No-false-claims honesty contract",
   "status": "documented",
@@ -8353,6 +8647,7 @@
  },
  {
   "family": "qa-verification",
+  "domain": "motion",
   "name_ar": "قائمة مراجعة الرندر",
   "name_en": "Render review checklist",
   "status": "documented",
@@ -8379,6 +8674,7 @@
  },
  {
   "family": "qa-verification",
+  "domain": "motion",
   "name_ar": "فحص بوابات المحرر في CI",
   "name_en": "CI editorial gate check",
   "status": "documented",
@@ -8410,6 +8706,7 @@
  },
  {
   "family": "qa-verification",
+  "domain": "motion",
   "name_ar": "مراجعة الإطار الأول والأوسط والأخير",
   "name_en": "First/middle/last frame review",
   "status": "documented",
@@ -8439,6 +8736,7 @@
  },
  {
   "family": "qa-verification",
+  "domain": "motion",
   "name_ar": "تصيير حتمي بدوكر",
   "name_en": "Docker deterministic render",
   "status": "documented",
@@ -8470,6 +8768,7 @@
  },
  {
   "family": "qa-verification",
+  "domain": "motion",
   "name_ar": "تشخيص صوت لا يمكن سماعه",
   "name_en": "Diagnose audio you cannot hear",
   "status": "documented",
@@ -8498,6 +8797,7 @@
  },
  {
   "family": "qa-verification",
+  "domain": "motion",
   "name_ar": "فخاخ HyperFrames",
   "name_en": "HyperFrames traps",
   "status": "documented",
@@ -8528,6 +8828,7 @@
  },
  {
   "family": "qa-verification",
+  "domain": "motion",
   "name_ar": "حدود السرعة",
   "name_en": "Speed limits",
   "status": "documented",
@@ -8554,6 +8855,7 @@
  },
  {
   "family": "qa-verification",
+  "domain": "motion",
   "name_ar": "طاقة اختلاف الإطارات",
   "name_en": "Frame-difference energy",
   "status": "documented",
@@ -8580,6 +8882,7 @@
  },
  {
   "family": "qa-verification",
+  "domain": "motion",
   "name_ar": "قاعدة الصدق",
   "name_en": "Honesty rule",
   "status": "documented",
@@ -8608,6 +8911,7 @@
  },
  {
   "family": "qa-verification",
+  "domain": "motion",
   "name_ar": "تقرير فحص التسليم لفيديو صوتي",
   "name_en": "Delivery QA report for a voice-driven render",
   "status": "documented",
@@ -8634,6 +8938,7 @@
  },
  {
   "family": "qa-verification",
+  "domain": "motion",
   "name_ar": "حلقة النقد الثمانية",
   "name_en": "8-criterion critique loop",
   "status": "documented",
@@ -8661,6 +8966,7 @@
  },
  {
   "family": "qa-verification",
+  "domain": "motion",
   "name_ar": "قائمة جودة الحركة",
   "name_en": "LottieFiles quality checklist",
   "status": "documented",
@@ -8689,6 +8995,7 @@
  },
  {
   "family": "qa-verification",
+  "domain": "motion",
   "name_ar": "مراجعة بثلاث عدسات",
   "name_en": "Three-lens review receipt",
   "status": "documented",
@@ -8715,6 +9022,7 @@
  },
  {
   "family": "qa-verification",
+  "domain": "motion",
   "name_ar": "إطارات المراجعة",
   "name_en": "Review frames (eight-second gate)",
   "status": "documented",
@@ -8743,6 +9051,7 @@
  },
  {
   "family": "qa-verification",
+  "domain": "motion",
   "name_ar": "فحص الحتمية والذوق",
   "name_en": "Determinism and taste lint",
   "status": "documented",
@@ -8771,6 +9080,7 @@
  },
  {
   "family": "qa-verification",
+  "domain": "motion",
   "name_ar": "بوابة التسليم",
   "name_en": "Delivery gate (black, freeze, LUFS, peak, exposure)",
   "status": "documented",
@@ -8799,6 +9109,7 @@
  },
  {
   "family": "qa-verification",
+  "domain": "motion",
   "name_ar": "لوحة النقد",
   "name_en": "Critique sheet (frames + phone view)",
   "status": "documented",
@@ -8827,6 +9138,7 @@
  },
  {
   "family": "qa-verification",
+  "domain": "motion",
   "name_ar": "معلومات الملف",
   "name_en": "File probe",
   "status": "documented",
@@ -8856,6 +9168,7 @@
  },
  {
   "family": "qa-verification",
+  "domain": "motion",
   "name_ar": "فحص البيئة",
   "name_en": "Environment doctor",
   "status": "documented",
@@ -8885,6 +9198,7 @@
  },
  {
   "family": "qa-verification",
+  "domain": "motion",
   "name_ar": "مخطط reel.json ومدققه",
   "name_en": "reel.json schema and checker",
   "status": "documented",
@@ -8915,6 +9229,7 @@
  },
  {
   "family": "qa-verification",
+  "domain": "motion",
   "name_ar": "بوابات جودة التسليم",
   "name_en": "Delivery quality gates (montage)",
   "status": "documented",
@@ -8943,6 +9258,7 @@
  },
  {
   "family": "qa-verification",
+  "domain": "motion",
   "name_ar": "قائمة منع أخطاء التوليد",
   "name_en": "Generator failure-prevention checklist",
   "status": "documented",
@@ -8970,6 +9286,7 @@
  },
  {
   "family": "qa-verification",
+  "domain": "motion",
   "name_ar": "أتمتة المتصفح ولقطات الفحص",
   "name_en": "Browser automation & screenshot QA (Playwright patterns)",
   "status": "documented",
@@ -8999,6 +9316,7 @@
  },
  {
   "family": "qa-verification",
+  "domain": "motion",
   "name_ar": "مستويات القدرة وقواعد الصدق",
   "name_en": "Capability tiers & truth rules",
   "status": "documented",
@@ -9027,6 +9345,7 @@
  },
  {
   "family": "qa-verification",
+  "domain": "motion",
   "name_ar": "قاعدة نظافة المصادر",
   "name_en": "Source hygiene rule (no burned-in text, logos, screen recordings)",
   "status": "documented",
@@ -9054,6 +9373,7 @@
  },
  {
   "family": "qa-verification",
+  "domain": "motion",
   "name_ar": "حلقة النقد الذاتي",
   "name_en": "Critique loop rubric (8 criteria, >= 3 rounds)",
   "status": "documented",
@@ -9083,6 +9403,7 @@
  },
  {
   "family": "qa-verification",
+  "domain": "motion",
   "name_ar": "تشخيص أعطال ffmpeg",
   "name_en": "ffmpeg troubleshooting table",
   "status": "documented",
@@ -9111,6 +9432,7 @@
  },
  {
   "family": "qa-verification",
+  "domain": "motion",
   "name_ar": "بوابات تسليم المونتاج",
   "name_en": "Editor delivery gates",
   "status": "documented",
@@ -9139,6 +9461,7 @@
  },
  {
   "family": "qa-verification",
+  "domain": "motion",
   "name_ar": "قياس بالـ Scopes عبر لقطات",
   "name_en": "Scope measurement via stills",
   "status": "documented",
@@ -9167,6 +9490,7 @@
  },
  {
   "family": "qa-verification",
+  "domain": "motion",
   "name_ar": "سجل العلامات الملوّنة",
   "name_en": "Resolve marker registry",
   "status": "documented",
@@ -9193,6 +9517,7 @@
  },
  {
   "family": "qa-verification",
+  "domain": "motion",
   "name_ar": "كشف اللقطات الرديئة",
   "name_en": "Bad-segment detection",
   "status": "documented",
@@ -9221,6 +9546,7 @@
  },
  {
   "family": "qa-verification",
+  "domain": "motion",
   "name_ar": "فحص ما قبل الرندر",
   "name_en": "Pre-render checklist (Resolve)",
   "status": "documented",
@@ -9247,6 +9573,7 @@
  },
  {
   "family": "qa-verification",
+  "domain": "motion",
   "name_ar": "بوابة الخطوط والألوان المحظورة",
   "name_en": "Banned-font / default-colour gate",
   "status": "documented",
@@ -9277,6 +9604,7 @@
  },
  {
   "family": "qa-verification",
+  "domain": "motion",
   "name_ar": "بوابة المقروئية",
   "name_en": "Readability gate",
   "status": "documented",
@@ -9303,6 +9631,7 @@
  },
  {
   "family": "qa-verification",
+  "domain": "motion",
   "name_ar": "علامات التصميم الآلي",
   "name_en": "AI-design tells blacklist",
   "status": "documented",
@@ -9329,6 +9658,7 @@
  },
  {
   "family": "qa-verification",
+  "domain": "motion",
   "name_ar": "بوابة الثماني ثوانٍ",
   "name_en": "Eight-second gate + weakest-beat gate",
   "status": "documented",
@@ -9355,6 +9685,7 @@
  },
  {
   "family": "qa-verification",
+  "domain": "motion",
   "name_ar": "اختبار التجميد",
   "name_en": "Freeze test for fake motion",
   "status": "documented",
@@ -9381,6 +9712,7 @@
  },
  {
   "family": "qa-verification",
+  "domain": "motion",
   "name_ar": "2). تدقيق وإصلاح الإتاحة",
   "name_en": "Accessibility (WCAG 2",
   "status": "documented",
@@ -9408,6 +9740,7 @@
  },
  {
   "family": "qa-verification",
+  "domain": "motion",
   "name_ar": "فحص الادعاءات والأرقام والاقتباسات والاس",
   "name_en": "Fact-Checker & Verifier",
   "status": "documented",
@@ -9434,6 +9767,7 @@
  },
  {
   "family": "qa-verification",
+  "domain": "motion",
   "name_ar": "تقييم مخرجات الذكاء الاصطناعي بأرقام تصم",
   "name_en": "LLM Judge & Eval Lab",
   "status": "documented",
@@ -9459,6 +9793,7 @@
  },
  {
   "family": "qa-verification",
+  "domain": "motion",
   "name_ar": "تقييم أي ميزة ذكاء اصطناعي بأرقام",
   "name_en": "LLM Judge & Eval Suites",
   "status": "documented",
@@ -9484,6 +9819,7 @@
  },
  {
   "family": "qa-verification",
+  "domain": "motion",
   "name_ar": "اختبارات تثبت أن الكود يعمل",
   "name_en": "Complete Testing Suite",
   "status": "documented",
@@ -9510,6 +9846,7 @@
  },
  {
   "family": "qa-verification",
+  "domain": "motion",
   "name_ar": "اختبار الفهم بلا صوت",
   "name_en": "Silent-readability test",
   "status": "documented",
@@ -9536,6 +9873,7 @@
  },
  {
   "family": "qa-verification",
+  "domain": "motion",
   "name_ar": "نسختان A/B",
   "name_en": "A/B thumbnail single-variable",
   "status": "documented",
@@ -9564,6 +9902,7 @@
  },
  {
   "family": "qa-verification",
+  "domain": "motion",
   "name_ar": "قياسات الصورة",
   "name_en": "Image metrics by code",
   "status": "documented",
@@ -9593,6 +9932,7 @@
  },
  {
   "family": "qa-verification",
+  "domain": "motion",
   "name_ar": "تقييم بخمس معايير",
   "name_en": "5x20 critique score",
   "status": "documented",
@@ -9619,6 +9959,7 @@
  },
  {
   "family": "qa-verification",
+  "domain": "motion",
   "name_ar": "حدّ نابض الأذن",
   "name_en": "Ear spring speed limit",
   "status": "documented",
@@ -9645,6 +9986,7 @@
  },
  {
   "family": "qa-verification",
+  "domain": "motion",
   "name_ar": "قائمة جودة الحركة",
   "name_en": "Motion quality checklist",
   "status": "documented",
@@ -9673,6 +10015,7 @@
  },
  {
   "family": "qa-verification",
+  "domain": "motion",
   "name_ar": "الدقة وإتاحة الوصول",
   "name_en": "Meaning, data truth and accessibility",
   "status": "documented",
@@ -9699,6 +10042,7 @@
  },
  {
   "family": "qa-verification",
+  "domain": "motion",
   "name_ar": "قائمة الفيديو القابل للتكرار",
   "name_en": "Reproducible video checklist",
   "status": "documented",
@@ -9727,6 +10071,7 @@
  },
  {
   "family": "qa-verification",
+  "domain": "motion",
   "name_ar": "بوابة التسليم",
   "name_en": "Delivery inspect gate",
   "status": "documented",
@@ -9756,6 +10101,7 @@
  },
  {
   "family": "qa-verification",
+  "domain": "motion",
   "name_ar": "معيار النقد بمراجعين",
   "name_en": "Two-reviewer critique rubric",
   "status": "documented",
@@ -9782,6 +10128,7 @@
  },
  {
   "family": "qa-verification",
+  "domain": "motion",
   "name_ar": "العدسات الجمالية الاثنتا عشرة",
   "name_en": "Twelve aesthetic lenses",
   "status": "documented",
@@ -9808,6 +10155,7 @@
  },
  {
   "family": "qa-verification",
+  "domain": "motion",
   "name_ar": "قائمة صيد العيوب",
   "name_en": "Failure hunt list",
   "status": "documented",
@@ -9834,6 +10182,7 @@
  },
  {
   "family": "qa-verification",
+  "domain": "motion",
   "name_ar": "معاينة قبل الرندر النهائي",
   "name_en": "Preview-before-render approval gate",
   "status": "documented",
@@ -9860,6 +10209,7 @@
  },
  {
   "family": "qa-verification",
+  "domain": "motion",
   "name_ar": "أخطاء الـ3D الشائعة",
   "name_en": "3D anti-patterns",
   "status": "documented",
@@ -9886,6 +10236,7 @@
  },
  {
   "family": "qa-verification",
+  "domain": "motion",
   "name_ar": "قائمة فحص الإعلان",
   "name_en": "Ad QA checklist",
   "status": "documented",
@@ -9912,6 +10263,7 @@
  },
  {
   "family": "qa-verification",
+  "domain": "motion",
   "name_ar": "فحص الطباعة العربية",
   "name_en": "Arabic typography QA",
   "status": "documented",
@@ -9939,6 +10291,7 @@
  },
  {
   "family": "qa-verification",
+  "domain": "motion",
   "name_ar": "فحص التزامن في ثلاث لحظات",
   "name_en": "Three-point sync spot check",
   "status": "documented",
@@ -9965,6 +10318,7 @@
  },
  {
   "family": "qa-verification",
+  "domain": "motion",
   "name_ar": "أخطاء تحريك الشخصيات",
   "name_en": "Character anti-patterns",
   "status": "documented",
@@ -9990,6 +10344,7 @@
  },
  {
   "family": "qa-verification",
+  "domain": "motion",
   "name_ar": "أخطاء الرسوم البيانية",
   "name_en": "Chart anti-patterns",
   "status": "documented",
@@ -10017,6 +10372,7 @@
  },
  {
   "family": "qa-verification",
+  "domain": "motion",
   "name_ar": "أخطاء مشاهد الكود",
   "name_en": "Code anti-patterns",
   "status": "documented",
@@ -10043,6 +10399,7 @@
  },
  {
   "family": "qa-verification",
+  "domain": "motion",
   "name_ar": "أخطاء التايبوغرافي الحركي",
   "name_en": "Kinetic-type anti-patterns",
   "status": "documented",
@@ -10069,6 +10426,7 @@
  },
  {
   "family": "qa-verification",
+  "domain": "motion",
   "name_ar": "حد الوميض الآمن",
   "name_en": "Flash safety limit",
   "status": "documented",
@@ -10095,6 +10453,7 @@
  },
  {
   "family": "qa-verification",
+  "domain": "motion",
   "name_ar": "أخطاء الجسيمات",
   "name_en": "Particle anti-patterns",
   "status": "documented",
@@ -10121,6 +10480,7 @@
  },
  {
   "family": "qa-verification",
+  "domain": "motion",
   "name_ar": "قائمة فحص الرندر",
   "name_en": "Render QA checklist",
   "status": "documented",
@@ -10147,6 +10507,7 @@
  },
  {
   "family": "qa-verification",
+  "domain": "motion",
   "name_ar": "أخطاء أفلام الهاتف",
   "name_en": "Phone anti-patterns",
   "status": "documented",
@@ -10173,6 +10534,7 @@
  },
  {
   "family": "qa-verification",
+  "domain": "motion",
   "name_ar": "أخطاء أفلام الصور",
   "name_en": "Photo anti-patterns",
   "status": "documented",
@@ -10201,6 +10563,7 @@
  },
  {
   "family": "qa-verification",
+  "domain": "motion",
   "name_ar": "أخطاء أفلام المنتج",
   "name_en": "Product UI anti-patterns",
   "status": "documented",
@@ -10227,6 +10590,7 @@
  },
  {
   "family": "qa-verification",
+  "domain": "motion",
   "name_ar": "تقييم حدة المؤثرات",
   "name_en": "SFX high-frequency risk scoring",
   "status": "documented",
@@ -10253,6 +10617,7 @@
  },
  {
   "family": "qa-verification",
+  "domain": "motion",
   "name_ar": "اختيار إطار الغلاف",
   "name_en": "Settled poster frame pick",
   "status": "documented",
@@ -10281,6 +10646,7 @@
  },
  {
   "family": "qa-verification",
+  "domain": "motion",
   "name_ar": "قاعدة الوصلة المتطابقة",
   "name_en": "Frame-identical seam rule",
   "status": "documented",
@@ -10310,6 +10676,7 @@
  },
  {
   "family": "qa-verification",
+  "domain": "motion",
   "name_ar": "فحص الوصلات",
   "name_en": "Seam QA pass",
   "status": "documented",
@@ -10336,6 +10703,7 @@
  },
  {
   "family": "qa-verification",
+  "domain": "motion",
   "name_ar": "حد أدنى للقراءة",
   "name_en": "Readability hold & 400 ms floor",
   "status": "idea",
@@ -10364,6 +10732,7 @@
  },
  {
   "family": "qa-verification",
+  "domain": "motion",
   "name_ar": "قاعدة العلامات التجارية",
   "name_en": "Trademark safety rule",
   "status": "idea",
@@ -10392,6 +10761,7 @@
  },
  {
   "family": "qa-verification",
+  "domain": "motion",
   "name_ar": "تشغيل قابل للتكرار",
   "name_en": "Reproducible seeded runs",
   "status": "idea",
@@ -10420,6 +10790,7 @@
  },
  {
   "family": "qa-verification",
+  "domain": "motion",
   "name_ar": "منع النص فوق الوجه",
   "name_en": "Face-region text ban",
   "status": "idea",
@@ -10448,6 +10819,7 @@
  },
  {
   "family": "qa-verification",
+  "domain": "motion",
   "name_ar": "حد الوميض الآمن",
   "name_en": "Flash photosensitivity cap",
   "status": "idea",
@@ -10477,6 +10849,7 @@
  {
   "id": "QA-P01",
   "family": "qa-verification",
+  "domain": "motion",
   "name_ar": "إيصال تنفيذ مُتحقَّق منه: لا نجاح بلا دليل",
   "name_en": "Evidence receipt validator (no verified success without evidence)",
   "status": "documented",
@@ -10515,6 +10888,7 @@
  {
   "id": "QA-P02",
   "family": "qa-verification",
+  "domain": "motion",
   "name_ar": "حلقة مراجعة الرندر المحدودة",
   "name_en": "Bounded iterative render review (½-second frames, 2–4 rounds)",
   "status": "documented",

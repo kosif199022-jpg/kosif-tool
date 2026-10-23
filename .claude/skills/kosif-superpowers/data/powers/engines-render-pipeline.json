@@ -1,6 +1,7 @@
 [
  {
   "family": "engines-render-pipeline",
+  "domain": "motion",
   "name_ar": "عقد تركيب HyperFrames",
   "name_en": "HyperFrames composition contract",
   "status": "proven",
@@ -34,6 +35,7 @@
  },
  {
   "family": "engines-render-pipeline",
+  "domain": "motion",
   "name_ar": "عقد وحدة المشهد الحتمي",
   "name_en": "Deterministic scene module contract",
   "status": "proven",
@@ -66,6 +68,7 @@
  },
  {
   "family": "engines-render-pipeline",
+  "domain": "motion",
   "name_ar": "تجميع اللقطات بنوافذ إطارات",
   "name_en": "Shot assembly by frame windows",
   "status": "proven",
@@ -97,6 +100,7 @@
  },
  {
   "family": "engines-render-pipeline",
+  "domain": "motion",
   "name_ar": "حمايات أداء WebGL",
   "name_en": "WebGL robustness guards",
   "status": "proven",
@@ -127,6 +131,7 @@
  },
  {
   "family": "engines-render-pipeline",
+  "domain": "motion",
   "name_ar": "تشغيل الفيلم بشروط وتجاوز عامل الخدمة",
   "name_en": "Film-only-where-it-should gating + SW bypass",
   "status": "proven",
@@ -155,6 +160,7 @@
  },
  {
   "family": "engines-render-pipeline",
+  "domain": "motion",
   "name_ar": "مُجمّع ستوري بورد التحرير",
   "name_en": "Editorial storyboard compiler",
   "status": "proven",
@@ -184,6 +190,7 @@
  },
  {
   "family": "engines-render-pipeline",
+  "domain": "motion",
   "name_ar": "بديل ffprobe",
   "name_en": "ffprobe shim",
   "status": "proven",
@@ -213,6 +220,7 @@
  },
  {
   "family": "engines-render-pipeline",
+  "domain": "motion",
   "name_ar": "التايملاين JSON إلى فيلم",
   "name_en": "JSON timeline → film",
   "status": "proven",
@@ -243,6 +251,7 @@
  },
  {
   "family": "engines-render-pipeline",
+  "domain": "motion",
   "name_ar": "فيلم بدون متصفح",
   "name_en": "workbench no-browser 2D film",
   "status": "proven",
@@ -272,6 +281,7 @@
  },
  {
   "family": "engines-render-pipeline",
+  "domain": "motion",
   "name_ar": "جسر التصيير",
   "name_en": "Render shim (seek contract)",
   "status": "proven",
@@ -301,6 +311,7 @@
  },
  {
   "family": "engines-render-pipeline",
+  "domain": "motion",
   "name_ar": "سلسلة المعالجة السينمائية",
   "name_en": "Cinematic post stack (makePost)",
   "status": "proven",
@@ -328,6 +339,7 @@
  },
  {
   "family": "engines-render-pipeline",
+  "domain": "motion",
   "name_ar": "حزمة ثلاثية الأبعاد جاهزة",
   "name_en": "Pre-bundled 3D kit (window.K3)",
   "status": "proven",
@@ -360,6 +372,7 @@
  },
  {
   "family": "engines-render-pipeline",
+  "domain": "motion",
   "name_ar": "فيلم SVG كدالة نقية بلا مكتبات",
   "name_en": "Pure-function SVG film (no libraries)",
   "status": "proven",
@@ -387,6 +400,7 @@
  },
  {
   "family": "engines-render-pipeline",
+  "domain": "motion",
   "name_ar": "مزامنة العدّة للمشاريع الخفيفة",
   "name_en": "Kit sync for lightweight example projects",
   "status": "proven",
@@ -417,6 +431,7 @@
  },
  {
   "family": "engines-render-pipeline",
+  "domain": "motion",
   "name_ar": "تقسيم الإطارات لتصيير متوازٍ",
   "name_en": "Shard plan for parallel rendering",
   "status": "proven",
@@ -443,6 +458,7 @@
  },
  {
   "family": "engines-render-pipeline",
+  "domain": "motion",
   "name_ar": "تطبيق الاستوديو المحلي وخادم MCP",
   "name_en": "Local studio web app + MCP server",
   "status": "proven",
@@ -470,6 +486,7 @@
  },
  {
   "family": "engines-render-pipeline",
+  "domain": "motion",
   "name_ar": "تصدير MP4 من محرر المتصفح",
   "name_en": "Browser editor offline MP4 export (WebCodecs)",
   "status": "proven",
@@ -500,6 +517,7 @@
  },
  {
   "family": "engines-render-pipeline",
+  "domain": "motion",
   "name_ar": "استوديو KOSIF Motion Web المحلي",
   "name_en": "KOSIF Motion Web local studio server",
   "status": "proven",
@@ -531,6 +549,7 @@
  },
  {
   "family": "engines-render-pipeline",
+  "domain": "motion",
   "name_ar": "كتالوج الوصفات كنماذج",
   "name_en": "Recipe catalogue as typed forms",
   "status": "proven",
@@ -561,6 +580,7 @@
  },
  {
   "family": "engines-render-pipeline",
+  "domain": "motion",
   "name_ar": "مشغل المهام مع سجل حي",
   "name_en": "Background job runner with live SSE log",
   "status": "proven",
@@ -591,6 +611,7 @@
  },
  {
   "family": "engines-render-pipeline",
+  "domain": "motion",
   "name_ar": "تبويب المشاريع: تركيبات بمعاينة وتعديل مباشر",
   "name_en": "Projects tab: compositions with live preview and in-place editing",
   "status": "proven",
@@ -619,6 +640,7 @@
  },
  {
   "family": "engines-render-pipeline",
+  "domain": "motion",
   "name_ar": "مترجم الخطة إلى manifest وصفحة HTML",
   "name_en": "Plan → manifest + self-contained 2D HTML compiler",
   "status": "proven",
@@ -646,6 +668,7 @@
  },
  {
   "family": "engines-render-pipeline",
+  "domain": "motion",
   "name_ar": "مصيّر manifest على الخادم بـ Pillow",
   "name_en": "Pillow server-side manifest renderer with ffprobe verification",
   "status": "proven",
@@ -677,6 +700,7 @@
  },
  {
   "family": "engines-render-pipeline",
+  "domain": "motion",
   "name_ar": "مهام التصيير برمز وصول",
   "name_en": "Capability-token render jobs",
   "status": "proven",
@@ -706,6 +730,7 @@
  },
  {
   "family": "engines-render-pipeline",
+  "domain": "motion",
   "name_ar": "تصدير بالتسجيل المباشر",
   "name_en": "Live recording export (MediaRecorder)",
   "status": "proven",
@@ -734,6 +759,7 @@
  },
  {
   "family": "engines-render-pipeline",
+  "domain": "motion",
   "name_ar": "تصدير MP4 دقيق بلا زمن حقيقي",
   "name_en": "Frame-accurate offline MP4 export (WebCodecs + mp4-muxer)",
   "status": "proven",
@@ -762,6 +788,7 @@
  },
  {
   "family": "engines-render-pipeline",
+  "domain": "motion",
   "name_ar": "سلسلة احتياط ملف H.264",
   "name_en": "H.264 profile fallback chain",
   "status": "proven",
@@ -788,6 +815,7 @@
  },
  {
   "family": "engines-render-pipeline",
+  "domain": "motion",
   "name_ar": "احتياط ترميز الصوت",
   "name_en": "AAC → Opus audio codec fallback",
   "status": "proven",
@@ -814,6 +842,7 @@
  },
  {
   "family": "engines-render-pipeline",
+  "domain": "motion",
   "name_ar": "تثبيت مواضع الوسائط عند التصدير",
   "name_en": "Robust media seeking for export",
   "status": "proven",
@@ -843,6 +872,7 @@
  },
  {
   "family": "engines-render-pipeline",
+  "domain": "motion",
   "name_ar": "خادم MCP لكوسيف أومني",
   "name_en": "KOSIF Omni MCP server (65 tools)",
   "status": "proven",
@@ -874,6 +904,7 @@
  },
  {
   "family": "engines-render-pipeline",
+  "domain": "motion",
   "name_ar": "رسم SVG إجرائي ببايثون",
   "name_en": "Procedural SVG illustration from Python",
   "status": "proven",
@@ -904,6 +935,7 @@
  },
  {
   "family": "engines-render-pipeline",
+  "domain": "motion",
   "name_ar": "طبقة تشغيل مزدوجة",
   "name_en": "Dual-engine shim (HyperFrames or studio renderer)",
   "status": "proven",
@@ -933,6 +965,7 @@
  },
  {
   "family": "engines-render-pipeline",
+  "domain": "motion",
   "name_ar": "خريطة الخطوات إلى المهارات",
   "name_en": "Step-to-skill map",
   "status": "proven",
@@ -963,6 +996,7 @@
  },
  {
   "family": "engines-render-pipeline",
+  "domain": "motion",
   "name_ar": "عشوائية ببذرة",
   "name_en": "Seeded RNG (mulberry32) and hash",
   "status": "proven",
@@ -990,6 +1024,7 @@
  },
  {
   "family": "engines-render-pipeline",
+  "domain": "motion",
   "name_ar": "أقنعة أشكال مُنعّمة بالعيّنات الفائقة",
   "name_en": "Antialiased supersampled shape masks",
   "status": "proven",
@@ -1020,6 +1055,7 @@
  },
  {
   "family": "engines-render-pipeline",
+  "domain": "motion",
   "name_ar": "مستورد SVG",
   "name_en": "SVG importer (shapes, CSS, transforms, gradients, Arabic text)",
   "status": "proven",
@@ -1048,6 +1084,7 @@
  },
  {
   "family": "engines-render-pipeline",
+  "domain": "motion",
   "name_ar": "مسارات إنشاء المشروع",
   "name_en": "Project scaffold routes (flat / 3D / canvas / lab)",
   "status": "proven",
@@ -1080,6 +1117,7 @@
  },
  {
   "family": "engines-render-pipeline",
+  "domain": "motion",
   "name_ar": "واجهة kmotion الموحدة بقائمة عربية",
   "name_en": "kmotion one-command hub with Arabic menu",
   "status": "proven",
@@ -1110,6 +1148,7 @@
  },
  {
   "family": "engines-render-pipeline",
+  "domain": "motion",
   "name_ar": "تجهيز مشروع",
   "name_en": "Project scaffold",
   "status": "proven",
@@ -1140,6 +1179,7 @@
  },
  {
   "family": "engines-render-pipeline",
+  "domain": "motion",
   "name_ar": "خط الإنتاج الكامل من الطلب إلى التسليم",
   "name_en": "End-to-end KOSIF production pipeline",
   "status": "proven",
@@ -1172,6 +1212,7 @@
  },
  {
   "family": "engines-render-pipeline",
+  "domain": "motion",
   "name_ar": "محرك الرندر بوضع seek",
   "name_en": "render_html seek driver (window.__kosif contract)",
   "status": "proven",
@@ -1203,6 +1244,7 @@
  },
  {
   "family": "engines-render-pipeline",
+  "domain": "motion",
   "name_ar": "وضع الزمن الافتراضي لأي صفحة متحركة",
   "name_en": "render_html virtual-time driver (any CSS/WAAPI/GSAP/rAF page)",
   "status": "proven",
@@ -1234,6 +1276,7 @@
  },
  {
   "family": "engines-render-pipeline",
+  "domain": "motion",
   "name_ar": "اكتشاف الوضع تلقائيًا",
   "name_en": "Auto mode detection and relaunch",
   "status": "proven",
@@ -1262,6 +1305,7 @@
  },
  {
   "family": "engines-render-pipeline",
+  "domain": "motion",
   "name_ar": "رندر بلا شبكة",
   "name_en": "Offline render (--offline)",
   "status": "proven",
@@ -1290,6 +1334,7 @@
  },
  {
   "family": "engines-render-pipeline",
+  "domain": "motion",
   "name_ar": "تشفير H.264 مع دمج الصوت دون تعديل",
   "name_en": "H.264 encode with untouched audio mux",
   "status": "proven",
@@ -1317,6 +1362,7 @@
  },
  {
   "family": "engines-render-pipeline",
+  "domain": "motion",
   "name_ar": "رندر جزء من الفيلم",
   "name_en": "Partial render (--start/--duration)",
   "status": "proven",
@@ -1343,6 +1389,7 @@
  },
  {
   "family": "engines-render-pipeline",
+  "domain": "motion",
   "name_ar": "حفظ الإطارات PNG",
   "name_en": "Frame dump (--frames-dir/--keep-frames)",
   "status": "proven",
@@ -1370,6 +1417,7 @@
  },
  {
   "family": "engines-render-pipeline",
+  "domain": "motion",
   "name_ar": "إيجاد Playwright و Chromium",
   "name_en": "Playwright/Chromium resolution order",
   "status": "proven",
@@ -1399,6 +1447,7 @@
  },
  {
   "family": "engines-render-pipeline",
+  "domain": "motion",
   "name_ar": "محرك الخط الزمني الحتمي",
   "name_en": "html-canvas deterministic Timeline engine",
   "status": "proven",
@@ -1426,6 +1475,7 @@
  },
  {
   "family": "engines-render-pipeline",
+  "domain": "motion",
   "name_ar": "إنشاء مجلد مشروع",
   "name_en": "kosif.py scaffold (project folder)",
   "status": "proven",
@@ -1455,6 +1505,7 @@
  },
  {
   "family": "engines-render-pipeline",
+  "domain": "motion",
   "name_ar": "خيار التقنية: auto",
   "name_en": "Stack option: auto",
   "status": "proven",
@@ -1485,6 +1536,7 @@
  },
  {
   "family": "engines-render-pipeline",
+  "domain": "motion",
   "name_ar": "خيار التقنية: canvas",
   "name_en": "Stack option: canvas",
   "status": "proven",
@@ -1512,6 +1564,7 @@
  },
  {
   "family": "engines-render-pipeline",
+  "domain": "motion",
   "name_ar": "خيار التقنية: svg",
   "name_en": "Stack option: svg",
   "status": "proven",
@@ -1541,6 +1594,7 @@
  },
  {
   "family": "engines-render-pipeline",
+  "domain": "motion",
   "name_ar": "فحص البيئة ومسارات A/B/C",
   "name_en": "Environment route check A/B/C",
   "status": "ready",
@@ -1571,6 +1625,7 @@
  },
  {
   "family": "engines-render-pipeline",
+  "domain": "motion",
   "name_ar": "تشغيل دفعات",
   "name_en": "Batch jobs",
   "status": "ready",
@@ -1600,6 +1655,7 @@
  },
  {
   "family": "engines-render-pipeline",
+  "domain": "motion",
   "name_ar": "ضبابية حركة حقيقية",
   "name_en": "GPU sub-frame motion blur",
   "status": "ready",
@@ -1629,6 +1685,7 @@
  },
  {
   "family": "engines-render-pipeline",
+  "domain": "motion",
   "name_ar": "انضباط صفحة الهبوط في ملف واحد",
   "name_en": "Landing-page single-file HTML discipline",
   "status": "ready",
@@ -1660,6 +1717,7 @@
  },
  {
   "family": "engines-render-pipeline",
+  "domain": "motion",
   "name_ar": "تحويل HTML إلى صورة PNG مع قص تلقائي",
   "name_en": "HTML-to-PNG still with auto-trim",
   "status": "ready",
@@ -1693,6 +1751,7 @@
  },
  {
   "family": "engines-render-pipeline",
+  "domain": "motion",
   "name_ar": "توليد FCPXML لفاينل كت",
   "name_en": "FCPXML generation",
   "status": "ready",
@@ -1723,6 +1782,7 @@
  },
  {
   "family": "engines-render-pipeline",
+  "domain": "motion",
   "name_ar": "طبقات Lottie",
   "name_en": "Lottie text/logo layers",
   "status": "ready",
@@ -1751,6 +1811,7 @@
  },
  {
   "family": "engines-render-pipeline",
+  "domain": "motion",
   "name_ar": "نموذج مشهد محفوظ للـ Canvas",
   "name_en": "Canvas retained scene model",
   "status": "ready",
@@ -1778,6 +1839,7 @@
  },
  {
   "family": "engines-render-pipeline",
+  "domain": "motion",
   "name_ar": "تصدير البصمة كملف وكود",
   "name_en": "Fingerprint export: JSON, style bible, runnable ffmpeg script",
   "status": "ready",
@@ -1809,6 +1871,7 @@
  },
  {
   "family": "engines-render-pipeline",
+  "domain": "motion",
   "name_ar": "محرك Canvas الأصلي القابل للتقديم",
   "name_en": "Native Canvas time-seekable renderer",
   "status": "ready",
@@ -1838,6 +1901,7 @@
  },
  {
   "family": "engines-render-pipeline",
+  "domain": "motion",
   "name_ar": "استوديو المعاينة في المتصفح",
   "name_en": "Browser preview studio",
   "status": "ready",
@@ -1868,6 +1932,7 @@
  },
  {
   "family": "engines-render-pipeline",
+  "domain": "motion",
   "name_ar": "اختيار المحرك حسب الملف",
   "name_en": "Renderer switch by storyboard.profile",
   "status": "ready",
@@ -1896,6 +1961,7 @@
  },
  {
   "family": "engines-render-pipeline",
+  "domain": "motion",
   "name_ar": "خادم المعاينة المحلي",
   "name_en": "Local preview server",
   "status": "ready",
@@ -1924,6 +1990,7 @@
  },
  {
   "family": "engines-render-pipeline",
+  "domain": "motion",
   "name_ar": "مخطط ستوري بورد JSON",
   "name_en": "Storyboard JSON schema",
   "status": "ready",
@@ -1954,6 +2021,7 @@
  },
  {
   "family": "engines-render-pipeline",
+  "domain": "motion",
   "name_ar": "محرك الكولاج التحريري 2.5D",
   "name_en": "Editorial 2.5D collage renderer",
   "status": "ready",
@@ -1981,6 +2049,7 @@
  },
  {
   "family": "engines-render-pipeline",
+  "domain": "motion",
   "name_ar": "قانون الحركة القابلة للتقديم",
   "name_en": "Seek-safe deterministic motion law",
   "status": "ready",
@@ -2011,6 +2080,7 @@
  },
  {
   "family": "engines-render-pipeline",
+  "domain": "motion",
   "name_ar": "كوسف: أداة kmotion الموحدة",
   "name_en": "KOSIF: kmotion one-command toolbox",
   "status": "ready",
@@ -2042,6 +2112,7 @@
  },
  {
   "family": "engines-render-pipeline",
+  "domain": "motion",
   "name_ar": "واجهة kmotion الموحدة",
   "name_en": "Single CLI entry kmotion",
   "status": "ready",
@@ -2071,6 +2142,7 @@
  },
  {
   "family": "engines-render-pipeline",
+  "domain": "motion",
   "name_ar": "معاينة تشغيل ذاتي",
   "name_en": "Self-playing composition preview",
   "status": "ready",
@@ -2097,6 +2169,7 @@
  },
  {
   "family": "engines-render-pipeline",
+  "domain": "motion",
   "name_ar": "استيراد مشروع Studio",
   "name_en": "Studio import",
   "status": "ready",
@@ -2126,6 +2199,7 @@
  },
  {
   "family": "engines-render-pipeline",
+  "domain": "motion",
   "name_ar": "حزمة claude.ai",
   "name_en": "build_package claude.ai upload",
   "status": "ready",
@@ -2154,6 +2228,7 @@
  },
  {
   "family": "engines-render-pipeline",
+  "domain": "motion",
   "name_ar": "تحويل الدالة إلى مفاتيح",
   "name_en": "Function-to-keyframes sampler (sampled)",
   "status": "ready",
@@ -2182,6 +2257,7 @@
  },
  {
   "family": "engines-render-pipeline",
+  "domain": "motion",
   "name_ar": "عشوائية ببذرة",
   "name_en": "Seeded randomness (mulberry32 + hash)",
   "status": "ready",
@@ -2210,6 +2286,7 @@
  },
  {
   "family": "engines-render-pipeline",
+  "domain": "motion",
   "name_ar": "مُصيّر WebGL مع منحنيات الإضاءة",
   "name_en": "WebGL renderer with tone curves",
   "status": "ready",
@@ -2240,6 +2317,7 @@
  },
  {
   "family": "engines-render-pipeline",
+  "domain": "motion",
   "name_ar": "معالجة خفيفة",
   "name_en": "Lite post stack",
   "status": "ready",
@@ -2266,6 +2344,7 @@
  },
  {
   "family": "engines-render-pipeline",
+  "domain": "motion",
   "name_ar": "معالجة المختبر",
   "name_en": "Lab lightweight post",
   "status": "ready",
@@ -2292,6 +2371,7 @@
  },
  {
   "family": "engines-render-pipeline",
+  "domain": "motion",
   "name_ar": "مسودات سريعة ثلاثية",
   "name_en": "Draft-scale 3D renders",
   "status": "ready",
@@ -2320,6 +2400,7 @@
  },
  {
   "family": "engines-render-pipeline",
+  "domain": "motion",
   "name_ar": "مسار الكانفس",
   "name_en": "Canvas route template (pure function of t)",
   "status": "ready",
@@ -2349,6 +2430,7 @@
  },
  {
   "family": "engines-render-pipeline",
+  "domain": "motion",
   "name_ar": "فيلم بدون متصفح",
   "name_en": "Workbench Pillow film",
   "status": "ready",
@@ -2377,6 +2459,7 @@
  },
  {
   "family": "engines-render-pipeline",
+  "domain": "motion",
   "name_ar": "خط زمني JSON",
   "name_en": "Timeline JSON → FFmpeg",
   "status": "ready",
@@ -2407,6 +2490,7 @@
  },
  {
   "family": "engines-render-pipeline",
+  "domain": "motion",
   "name_ar": "استيراد مشروع ستوديو",
   "name_en": "Studio project import",
   "status": "ready",
@@ -2435,6 +2519,7 @@
  },
  {
   "family": "engines-render-pipeline",
+  "domain": "motion",
   "name_ar": "كشف نوع المشروع تلقائيًا",
   "name_en": "Project kind auto-detection",
   "status": "ready",
@@ -2461,6 +2546,7 @@
  },
  {
   "family": "engines-render-pipeline",
+  "domain": "motion",
   "name_ar": "تبويب Workbench",
   "name_en": "Workbench tab (plan → validate → manifest → preview → MP4 → project)",
   "status": "ready",
@@ -2488,6 +2574,7 @@
  },
  {
   "family": "engines-render-pipeline",
+  "domain": "motion",
   "name_ar": "عقد تصيير صفحات HTML",
   "name_en": "HTML composition render contract (window.render / __ready / ?capture)",
   "status": "ready",
@@ -2516,6 +2603,7 @@
  },
  {
   "family": "engines-render-pipeline",
+  "domain": "motion",
   "name_ar": "ساعة المشهد الحتمية render(t)",
   "name_en": "Deterministic render(t) scene clock",
   "status": "ready",
@@ -2544,6 +2632,7 @@
  },
  {
   "family": "engines-render-pipeline",
+  "domain": "motion",
   "name_ar": "إنشاء مشروع أنيميشن 2D/3D",
   "name_en": "Animation project scaffold (2D/3D)",
   "status": "ready",
@@ -2575,6 +2664,7 @@
  },
  {
   "family": "engines-render-pipeline",
+  "domain": "motion",
   "name_ar": "تجميع الإطارات إلى فيديو MP4",
   "name_en": "PNG sequence to H.264 MP4 encode",
   "status": "ready",
@@ -2604,6 +2694,7 @@
  },
  {
   "family": "engines-render-pipeline",
+  "domain": "motion",
   "name_ar": "تحويل دالة زمنية إلى مفاتيح",
   "name_en": "Function-of-time to GSAP keyframes (sampled)",
   "status": "ready",
@@ -2632,6 +2723,7 @@
  },
  {
   "family": "engines-render-pipeline",
+  "domain": "motion",
   "name_ar": "عشوائية ببذرة ثابتة",
   "name_en": "Seeded randomness (mulberry32 rng + hash)",
   "status": "ready",
@@ -2659,6 +2751,7 @@
  },
  {
   "family": "engines-render-pipeline",
+  "domain": "motion",
   "name_ar": "معاينة ذاتية بشريط تحكم",
   "name_en": "Self-playing browser preview with scrub bar",
   "status": "ready",
@@ -2687,6 +2780,7 @@
  },
  {
   "family": "engines-render-pipeline",
+  "domain": "motion",
   "name_ar": "تمويه حركة حقيقي وتراكم الإضاءة",
   "name_en": "GPU sub-frame motion blur and lighten stacking",
   "status": "ready",
@@ -2717,6 +2811,7 @@
  },
  {
   "family": "engines-render-pipeline",
+  "domain": "motion",
   "name_ar": "قوالب مشاريع جاهزة",
   "name_en": "Project scaffolds: 2D, 3D, canvas, lab",
   "status": "ready",
@@ -2750,6 +2845,7 @@
  },
  {
   "family": "engines-render-pipeline",
+  "domain": "motion",
   "name_ar": "فحص قدرات الجهاز",
   "name_en": "Machine capability check and routes A/B/C",
   "status": "ready",
@@ -2780,6 +2876,7 @@
  },
  {
   "family": "engines-render-pipeline",
+  "domain": "motion",
   "name_ar": "kmotion: قائمة عربية لكل الأدوات",
   "name_en": "kmotion: one Arabic menu for 48 commands",
   "status": "ready",
@@ -2809,6 +2906,7 @@
  },
  {
   "family": "engines-render-pipeline",
+  "domain": "motion",
   "name_ar": "استيراد SVG كخطوات رسم",
   "name_en": "SVG import as paint steps",
   "status": "ready",
@@ -2835,6 +2933,7 @@
  },
  {
   "family": "engines-render-pipeline",
+  "domain": "motion",
   "name_ar": "تشغيل كود الرسم من أي ذكاء اصطناعي",
   "name_en": "Run any AI drawing code in painter order",
   "status": "ready",
@@ -2865,6 +2964,7 @@
  },
  {
   "family": "engines-render-pipeline",
+  "domain": "motion",
   "name_ar": "EDL إلى أمر ffmpeg واحد",
   "name_en": "EDL JSON to single filter_complex",
   "status": "ready",
@@ -2896,6 +2996,7 @@
  },
  {
   "family": "engines-render-pipeline",
+  "domain": "motion",
   "name_ar": "تجميع MP4 ولوحة تحقق",
   "name_en": "ffmpeg H.264 encode + contact sheet + GIF",
   "status": "ready",
@@ -2925,6 +3026,7 @@
  },
  {
   "family": "engines-render-pipeline",
+  "domain": "motion",
   "name_ar": "عشوائية مبذورة",
   "name_en": "Seeded PRNG (mulberry32)",
   "status": "ready",
@@ -2951,6 +3053,7 @@
  },
  {
   "family": "engines-render-pipeline",
+  "domain": "motion",
   "name_ar": "ذاكرة بصمة التصيير",
   "name_en": "Render fingerprint cache",
   "status": "ready",
@@ -2978,6 +3081,7 @@
  },
  {
   "family": "engines-render-pipeline",
+  "domain": "motion",
   "name_ar": "مجلد العمل القابل للكتابة",
   "name_en": "Writable home for projects (KOSIF_MOTION_HOME)",
   "status": "ready",
@@ -3005,6 +3109,7 @@
  },
  {
   "family": "engines-render-pipeline",
+  "domain": "motion",
   "name_ar": "أعلام كروميوم للثبات",
   "name_en": "Deterministic Chromium flags",
   "status": "ready",
@@ -3034,6 +3139,7 @@
  },
  {
   "family": "engines-render-pipeline",
+  "domain": "motion",
   "name_ar": "بذرة عشوائية ثابتة",
   "name_en": "Seeded Math.random in renderer (--seed)",
   "status": "ready",
@@ -3060,6 +3166,7 @@
  },
  {
   "family": "engines-render-pipeline",
+  "domain": "motion",
   "name_ar": "بوابات الجاهزية قبل الرندر",
   "name_en": "Readiness gates (fonts + __kosifReady + settle)",
   "status": "ready",
@@ -3086,6 +3193,7 @@
  },
  {
   "family": "engines-render-pipeline",
+  "domain": "motion",
   "name_ar": "قاعدة الحتمية",
   "name_en": "Determinism rule frame=f(t)",
   "status": "ready",
@@ -3116,6 +3224,7 @@
  },
  {
   "family": "engines-render-pipeline",
+  "domain": "motion",
   "name_ar": "وضع seek في render_html",
   "name_en": "render_html.cjs seek mode",
   "status": "ready",
@@ -3146,6 +3255,7 @@
  },
  {
   "family": "engines-render-pipeline",
+  "domain": "motion",
   "name_ar": "وضع الزمن الافتراضي",
   "name_en": "render_html virtual-time mode",
   "status": "ready",
@@ -3176,6 +3286,7 @@
  },
  {
   "family": "engines-render-pipeline",
+  "domain": "motion",
   "name_ar": "عقد seek",
   "name_en": "Seek contract",
   "status": "ready",
@@ -3203,6 +3314,7 @@
  },
  {
   "family": "engines-render-pipeline",
+  "domain": "motion",
   "name_ar": "فيديو قابل للبحث عبر Blob",
   "name_en": "Blob-URL seekable video",
   "status": "ready",
@@ -3230,6 +3342,7 @@
  },
  {
   "family": "engines-render-pipeline",
+  "domain": "motion",
   "name_ar": "محرك السحب بالتمرير",
   "name_en": "mountScrollWorld scrub engine",
   "status": "ready",
@@ -3256,6 +3369,7 @@
  },
  {
   "family": "engines-render-pipeline",
+  "domain": "motion",
   "name_ar": "حركات GSAP الأساسية",
   "name_en": "GSAP tween trio (to / from / fromTo / set)",
   "status": "install",
@@ -3284,6 +3398,7 @@
  },
  {
   "family": "engines-render-pipeline",
+  "domain": "motion",
   "name_ar": "دوران موجه وقيم نسبية ومتغيرات CSS",
   "name_en": "GSAP directional rotation, relative values & CSS vars",
   "status": "install",
@@ -3313,6 +3428,7 @@
  },
  {
   "family": "engines-render-pipeline",
+  "domain": "motion",
   "name_ar": "quickTo و matchMedia وتقليل الحركة",
   "name_en": "GSAP quickTo / matchMedia / reduced motion",
   "status": "install",
@@ -3341,6 +3457,7 @@
  },
  {
   "family": "engines-render-pipeline",
+  "domain": "motion",
   "name_ar": "كائن وسيط يحرك الكانفس",
   "name_en": "GSAP proxy object driving Canvas",
   "status": "install",
@@ -3369,6 +3486,7 @@
  },
  {
   "family": "engines-render-pipeline",
+  "domain": "motion",
   "name_ar": "هايبر فريمز: HTML كمصدر للفيديو",
   "name_en": "HyperFrames: HTML as video source",
   "status": "install",
@@ -3401,6 +3519,7 @@
  },
  {
   "family": "engines-render-pipeline",
+  "domain": "motion",
   "name_ar": "تركيبات فرعية ومسارات",
   "name_en": "Sub-compositions and tracks",
   "status": "install",
@@ -3427,6 +3546,7 @@
  },
  {
   "family": "engines-render-pipeline",
+  "domain": "motion",
   "name_ar": "أوامر تصيير هايبر فريمز",
   "name_en": "HyperFrames CLI render matrix",
   "status": "install",
@@ -3456,6 +3576,7 @@
  },
  {
   "family": "engines-render-pipeline",
+  "domain": "motion",
   "name_ar": "تحريك ريموشن المعتمد على رقم الإطار",
   "name_en": "Remotion frame-driven animation",
   "status": "install",
@@ -3487,6 +3608,7 @@
  },
  {
   "family": "engines-render-pipeline",
+  "domain": "motion",
   "name_ar": "التسلسل والسلاسل والتحميل المسبق",
   "name_en": "Sequence / Series / premount",
   "status": "install",
@@ -3514,6 +3636,7 @@
  },
  {
   "family": "engines-render-pipeline",
+  "domain": "motion",
   "name_ar": "لوتي داخل الفيديو",
   "name_en": "Lottie inside timelines",
   "status": "install",
@@ -3545,6 +3668,7 @@
  },
  {
   "family": "engines-render-pipeline",
+  "domain": "motion",
   "name_ar": "كود قابل للتحرير في الاستوديو",
   "name_en": "Studio-editable markup",
   "status": "install",
@@ -3573,6 +3697,7 @@
  },
  {
   "family": "engines-render-pipeline",
+  "domain": "motion",
   "name_ar": "معالجة لاحقة لعناصر HTML",
   "name_en": "HtmlInCanvas post-processing",
   "status": "install",
@@ -3601,6 +3726,7 @@
  },
  {
   "family": "engines-render-pipeline",
+  "domain": "motion",
   "name_ar": "فريمر موشن",
   "name_en": "Framer Motion layout & spring",
   "status": "install",
@@ -3632,6 +3758,7 @@
  },
  {
   "family": "engines-render-pipeline",
+  "domain": "motion",
   "name_ar": "بطاقات جرافيك لعلامات المونتاج",
   "name_en": "GFX cards for NLE markers",
   "status": "install",
@@ -3660,6 +3787,7 @@
  },
  {
   "family": "engines-render-pipeline",
+  "domain": "motion",
   "name_ar": "عقد طبقات خلفية الشيدر خلف الواجهة",
   "name_en": "Shader-backed product stage contract",
   "status": "install",
@@ -3686,6 +3814,7 @@
  },
  {
   "family": "engines-render-pipeline",
+  "domain": "motion",
   "name_ar": "التمرير الناعم وتحذير الرندر",
   "name_en": "Smooth-scroll weight (Lenis) and its render caveat",
   "status": "install",
@@ -3715,6 +3844,7 @@
  },
  {
   "family": "engines-render-pipeline",
+  "domain": "motion",
   "name_ar": "فيديو إطلاق بمعاملات في ريموشن",
   "name_en": "Parameterized launch video in Remotion",
   "status": "install",
@@ -3744,6 +3874,7 @@
  },
  {
   "family": "engines-render-pipeline",
+  "domain": "motion",
   "name_ar": "مخطط YAML لفيديو الشرح",
   "name_en": "Screencast guide YAML schema",
   "status": "install",
@@ -3774,6 +3905,7 @@
  },
  {
   "family": "engines-render-pipeline",
+  "domain": "motion",
   "name_ar": "كتالوج مكتبات المكونات المتحركة وتراخيصها",
   "name_en": "Animated component library catalog with licenses",
   "status": "install",
@@ -3804,6 +3936,7 @@
  },
  {
   "family": "engines-render-pipeline",
+  "domain": "motion",
   "name_ar": "تراكيب ريموشن قابلة للتهيئة",
   "name_en": "Parameterized Remotion compositions",
   "status": "install",
@@ -3833,6 +3966,7 @@
  },
  {
   "family": "engines-render-pipeline",
+  "domain": "motion",
   "name_ar": "أدوات تصميم النقرات في Slidev",
   "name_en": "Slidev click choreography toolkit",
   "status": "install",
@@ -3863,6 +3997,7 @@
  },
  {
   "family": "engines-render-pipeline",
+  "domain": "motion",
   "name_ar": "الانضباط غير الهدام في التايملاين",
   "name_en": "Non-destructive timeline discipline",
   "status": "install",
@@ -3892,6 +4027,7 @@
  },
  {
   "family": "engines-render-pipeline",
+  "domain": "motion",
   "name_ar": "أنماط التايملاين في Remotion",
   "name_en": "Remotion editable timeline patterns",
   "status": "install",
@@ -3922,6 +4058,7 @@
  },
  {
   "family": "engines-render-pipeline",
+  "domain": "motion",
   "name_ar": "إعدادات رندر HyperFrames",
   "name_en": "HyperFrames render settings",
   "status": "install",
@@ -3953,6 +4090,7 @@
  },
  {
   "family": "engines-render-pipeline",
+  "domain": "motion",
   "name_ar": "ريندر WebGPU مع مواد TSL",
   "name_en": "WebGPU renderer + TSL node materials",
   "status": "install",
@@ -3984,14 +4122,17 @@
  },
  {
   "family": "engines-render-pipeline",
+  "domain": "motion",
   "name_ar": "سلسلة ما بعد المعالجة في TSL",
   "name_en": "TSL RenderPipeline post stack",
   "status": "install",
   "what": "ركّب مؤثرات ما بعد المعالجة كمخطط عقد: تمرير المشهد ← عقد المؤثرات ← outputNode. — Compose post effects as a node graph: scene pass -> effect nodes -> outputNode.",
   "how": "RenderPipeline(renderer) (renamed from PostProcessing in r183); pass(scene,camera).getTextureNode('output'); renderPipeline.render() instead of renderer.render().",
   "params": "r183 rename",
-  "install": "see arsenal-libraries.md",
-  "requires": [],
+  "install": "npm i three@0.186.1  (MIT; version from arsenal-libraries.md)",
+  "requires": [
+   "npm:three"
+  ],
   "license": "MIT",
   "proof": [
    "kosif-atlas/skills/2221-webgpu-threejs-tsl/8405-webgpu-threejs-tsl/docs/post-processing.md"
@@ -4010,14 +4151,17 @@
  },
  {
   "family": "engines-render-pipeline",
+  "domain": "motion",
   "name_ar": "إطباق محيطي وانعكاسات وحدود",
   "name_en": "SSAO / SSR / Outline / FXAA / SMAA nodes",
   "status": "install",
   "what": "تمريرات TSL مضمّنة في فضاء الشاشة للظلال التلامسية والانعكاسات وحدود التحديد ومضادّ التسنن. — Built-in TSL screen-space passes for contact shadows, reflections, selection outlines and antialiasing.",
   "how": "ao(depth,normal,camera) multiply; ssr(color,depth,normal,camera); outline(scene,camera,objs,{edgeStrength:3,edgeThickness:1}); fxaa()/smaa().",
   "params": "outline edgeStrength 3.0, thickness 1.0",
-  "install": "see arsenal-libraries.md",
-  "requires": [],
+  "install": "npm i three@0.186.1  (MIT; version from arsenal-libraries.md)",
+  "requires": [
+   "npm:three"
+  ],
   "license": "MIT",
   "proof": [
    "kosif-atlas/skills/2221-webgpu-threejs-tsl/8405-webgpu-threejs-tsl/docs/post-processing.md"
@@ -4037,14 +4181,17 @@
  },
  {
   "family": "engines-render-pipeline",
+  "domain": "motion",
   "name_ar": "دوال WGSL مخصصة",
   "name_en": "WGSL custom functions in TSL",
   "status": "install",
   "what": "حقن شيفرة WGSL الخام كعقد قابلة للاستدعاء حين يفتقر TSL إلى وحدة أولية. — Inject raw WGSL code as callable nodes when TSL lacks a primitive.",
   "how": "wgslFn() per docs/wgsl-integration.md.",
   "params": "",
-  "install": "see arsenal-libraries.md",
-  "requires": [],
+  "install": "npm i three@0.186.1  (MIT; version from arsenal-libraries.md)",
+  "requires": [
+   "npm:three"
+  ],
   "license": "MIT",
   "proof": [
    "kosif-atlas/skills/2221-webgpu-threejs-tsl/8405-webgpu-threejs-tsl/docs/wgsl-integration.md"
@@ -4063,6 +4210,7 @@
  },
  {
   "family": "engines-render-pipeline",
+  "domain": "motion",
   "name_ar": "هيكل شيدر في React Three Fiber",
   "name_en": "R3F shaderMaterial scaffold",
   "status": "install",
@@ -4092,6 +4240,7 @@
  },
  {
   "family": "engines-render-pipeline",
+  "domain": "motion",
   "name_ar": "ريندر بلندر بدون واجهة",
   "name_en": "Headless Blender Cycles render",
   "status": "install",
@@ -4122,6 +4271,7 @@
  },
  {
   "family": "engines-render-pipeline",
+  "domain": "motion",
   "name_ar": "خريطة اختيار المحرك",
   "name_en": "Engine selection map",
   "status": "install",
@@ -4150,6 +4300,7 @@
  },
  {
   "family": "engines-render-pipeline",
+  "domain": "motion",
   "name_ar": "تقليص الخط",
   "name_en": "Font subsetting",
   "status": "install",
@@ -4179,6 +4330,7 @@
  },
  {
   "family": "engines-render-pipeline",
+  "domain": "motion",
   "name_ar": "تضمين لوتي",
   "name_en": "Lottie embedding",
   "status": "install",
@@ -4211,6 +4363,7 @@
  },
  {
   "family": "engines-render-pipeline",
+  "domain": "motion",
   "name_ar": "تصيير خرائط WebGL حتمي",
   "name_en": "Deterministic WebGL map rendering",
   "status": "install",
@@ -4242,6 +4395,7 @@
  },
  {
   "family": "engines-render-pipeline",
+  "domain": "motion",
   "name_ar": "خط مخططات بايثون الثابتة",
   "name_en": "Python static chart pipeline",
   "status": "install",
@@ -4273,6 +4427,7 @@
  },
  {
   "family": "engines-render-pipeline",
+  "domain": "motion",
   "name_ar": "القواعد التصريحية للمخططات",
   "name_en": "Declarative grammars (Vega-Lite / Observable Plot)",
   "status": "install",
@@ -4304,6 +4459,7 @@
  },
  {
   "family": "engines-render-pipeline",
+  "domain": "motion",
   "name_ar": "D3 كمحرك رياضيات وهندسة",
   "name_en": "D3 as math and geometry engine",
   "status": "install",
@@ -4334,6 +4490,7 @@
  },
  {
   "family": "engines-render-pipeline",
+  "domain": "motion",
   "name_ar": "مكتبات المخططات الجاهزة",
   "name_en": "Product chart libraries",
   "status": "install",
@@ -4366,6 +4523,7 @@
  },
  {
   "family": "engines-render-pipeline",
+  "domain": "motion",
   "name_ar": "صيغة JSON لسير عمل ComfyUI",
   "name_en": "ComfyUI API-format workflow JSON",
   "status": "install",
@@ -4395,6 +4553,7 @@
  },
  {
   "family": "engines-render-pipeline",
+  "domain": "motion",
   "name_ar": "التحكم في ComfyUI عبر REST وWebSocket",
   "name_en": "ComfyUI REST and WebSocket control",
   "status": "install",
@@ -4422,6 +4581,7 @@
  },
  {
   "family": "engines-render-pipeline",
+  "domain": "motion",
   "name_ar": "قوالب ComfyUI الفرعية ووضع التطبيق",
   "name_en": "Reusable ComfyUI subgraph blueprints and app mode",
   "status": "install",
@@ -4448,6 +4608,7 @@
  },
  {
   "family": "engines-render-pipeline",
+  "domain": "motion",
   "name_ar": "مكساج الصوت أوفلاين",
   "name_en": "Offline audio mixdown",
   "status": "install",
@@ -4477,6 +4638,7 @@
  },
  {
   "family": "engines-render-pipeline",
+  "domain": "motion",
   "name_ar": "بناء فيلم بستايل من المكتبة",
   "name_en": "Motion-kit film builder (11 styles)",
   "status": "install",
@@ -4505,6 +4667,7 @@
  },
  {
   "family": "engines-render-pipeline",
+  "domain": "motion",
   "name_ar": "مركز الملفات وأدوارها",
   "name_en": "Input hub with file roles and document text",
   "status": "install",
@@ -4536,6 +4699,7 @@
  },
  {
   "family": "engines-render-pipeline",
+  "domain": "motion",
   "name_ar": "الريندر السريع",
   "name_en": "Fast realtime render (MediaRecorder)",
   "status": "install",
@@ -4563,6 +4727,7 @@
  },
  {
   "family": "engines-render-pipeline",
+  "domain": "motion",
   "name_ar": "ريندر دقيق إطار بإطار",
   "name_en": "Frame-accurate MP4 render (WebCodecs + mp4-muxer)",
   "status": "install",
@@ -4591,6 +4756,7 @@
  },
  {
   "family": "engines-render-pipeline",
+  "domain": "motion",
   "name_ar": "حفظ المشروع والتراجع",
   "name_en": "Project file, autosave and undo",
   "status": "install",
@@ -4619,6 +4785,7 @@
  },
  {
   "family": "engines-render-pipeline",
+  "domain": "motion",
   "name_ar": "مكتبة فيديوهاتي",
   "name_en": "Local video library",
   "status": "install",
@@ -4647,6 +4814,7 @@
  },
  {
   "family": "engines-render-pipeline",
+  "domain": "motion",
   "name_ar": "جسر السيرفر الآمن",
   "name_en": "Server bridge with SSRF guard",
   "status": "install",
@@ -4676,6 +4844,7 @@
  },
  {
   "family": "engines-render-pipeline",
+  "domain": "motion",
   "name_ar": "مسار Remotion",
   "name_en": "Remotion route (target)",
   "status": "install",
@@ -4706,6 +4875,7 @@
  },
  {
   "family": "engines-render-pipeline",
+  "domain": "motion",
   "name_ar": "مسار HyperFrames",
   "name_en": "HyperFrames route (target)",
   "status": "install",
@@ -4735,6 +4905,7 @@
  },
  {
   "family": "engines-render-pipeline",
+  "domain": "motion",
   "name_ar": "تصدير MP4 حتمي",
   "name_en": "Deterministic Playwright->FFmpeg MP4 export",
   "status": "install",
@@ -4766,6 +4937,7 @@
  },
  {
   "family": "engines-render-pipeline",
+  "domain": "motion",
   "name_ar": "خدمة الملفات دون خادم",
   "name_en": "Offline route-interception asset serving",
   "status": "install",
@@ -4795,6 +4967,7 @@
  },
  {
   "family": "engines-render-pipeline",
+  "domain": "motion",
   "name_ar": "صيغة التركيب HTML",
   "name_en": "HTML composition format",
   "status": "install",
@@ -4823,6 +4996,7 @@
  },
  {
   "family": "engines-render-pipeline",
+  "domain": "motion",
   "name_ar": "تراكيب فرعية متداخلة",
   "name_en": "Nested sub-compositions",
   "status": "install",
@@ -4849,6 +5023,7 @@
  },
  {
   "family": "engines-render-pipeline",
+  "domain": "motion",
   "name_ar": "نموذج زمن حتمي بالبحث",
   "name_en": "Seek-driven deterministic time model",
   "status": "install",
@@ -4878,6 +5053,7 @@
  },
  {
   "family": "engines-render-pipeline",
+  "domain": "motion",
   "name_ar": "محولات الإطارات",
   "name_en": "Frame adapters (GSAP, CSS, Anime.js, Lottie, Three.js, WAAPI, TypeGPU)",
   "status": "install",
@@ -4910,6 +5086,7 @@
  },
  {
   "family": "engines-render-pipeline",
+  "domain": "motion",
   "name_ar": "أمر: إنشاء مشروع",
   "name_en": "CLI: init",
   "status": "install",
@@ -4941,6 +5118,7 @@
  },
  {
   "family": "engines-render-pipeline",
+  "domain": "motion",
   "name_ar": "أمر: تصيير",
   "name_en": "CLI: render",
   "status": "install",
@@ -4971,6 +5149,7 @@
  },
  {
   "family": "engines-render-pipeline",
+  "domain": "motion",
   "name_ar": "أمر: معاينة",
   "name_en": "CLI: preview",
   "status": "install",
@@ -5000,6 +5179,7 @@
  },
  {
   "family": "engines-render-pipeline",
+  "domain": "motion",
   "name_ar": "أمر: التقاط موقع",
   "name_en": "CLI: capture",
   "status": "install",
@@ -5029,6 +5209,7 @@
  },
  {
   "family": "engines-render-pipeline",
+  "domain": "motion",
   "name_ar": "أمر: الكتالوج والإضافة",
   "name_en": "CLI: catalog / add",
   "status": "install",
@@ -5058,6 +5239,7 @@
  },
  {
   "family": "engines-render-pipeline",
+  "domain": "motion",
   "name_ar": "أمر: عرض ونشر",
   "name_en": "CLI: present / play / publish",
   "status": "install",
@@ -5087,6 +5269,7 @@
  },
  {
   "family": "engines-render-pipeline",
+  "domain": "motion",
   "name_ar": "أمر: أدوات الصيانة",
   "name_en": "CLI: doctor / info / compositions / benchmark / clean / upgrade / browser",
   "status": "install",
@@ -5116,6 +5299,7 @@
  },
  {
   "family": "engines-render-pipeline",
+  "domain": "motion",
   "name_ar": "أمر: التصيير السحابي",
   "name_en": "CLI: cloud / lambda / cloudrun",
   "status": "install",
@@ -5145,6 +5329,7 @@
  },
  {
   "family": "engines-render-pipeline",
+  "domain": "motion",
   "name_ar": "أمر: استيراد التصميم",
   "name_en": "CLI: figma / events / claude-design",
   "status": "install",
@@ -5174,6 +5359,7 @@
  },
  {
   "family": "engines-render-pipeline",
+  "domain": "motion",
   "name_ar": "محرك التصيير المحلي",
   "name_en": "Render backends: local Chrome + FFmpeg",
   "status": "install",
@@ -5206,6 +5392,7 @@
  },
  {
   "family": "engines-render-pipeline",
+  "domain": "motion",
   "name_ar": "استوديو التحرير",
   "name_en": "Studio editor + WebMCP",
   "status": "install",
@@ -5236,6 +5423,7 @@
  },
  {
   "family": "engines-render-pipeline",
+  "domain": "motion",
   "name_ar": "حزمة SDK للتحرير",
   "name_en": "SDK open/edit/serialize",
   "status": "install",
@@ -5264,6 +5452,7 @@
  },
  {
   "family": "engines-render-pipeline",
+  "domain": "motion",
   "name_ar": "عقد تركيب المكونات",
   "name_en": "Component mount contract",
   "status": "install",
@@ -5293,6 +5482,7 @@
  },
  {
   "family": "engines-render-pipeline",
+  "domain": "motion",
   "name_ar": "بحث دلالي في الكتالوج",
   "name_en": "Semantic catalog search",
   "status": "install",
@@ -5324,6 +5514,7 @@
  },
  {
   "family": "engines-render-pipeline",
+  "domain": "motion",
   "name_ar": "واجهات HTML داخل الكانفس",
   "name_en": "HTML-in-Canvas live screens",
   "status": "install",
@@ -5355,6 +5546,7 @@
  },
  {
   "family": "engines-render-pipeline",
+  "domain": "motion",
   "name_ar": "نموذج التركيب: HTML يتحول إلى فيديو",
   "name_en": "HTML-to-video composition model",
   "status": "install",
@@ -5388,6 +5580,7 @@
  },
  {
   "family": "engines-render-pipeline",
+  "domain": "motion",
   "name_ar": "حلقة الإنتاج كمخطط اعتمادات",
   "name_en": "Production loop as dependency graph",
   "status": "install",
@@ -5414,6 +5607,7 @@
  },
  {
   "family": "engines-render-pipeline",
+  "domain": "motion",
   "name_ar": "عمّال الإطارات المتوازيون",
   "name_en": "Parallel frame workers (subagent dispatch)",
   "status": "install",
@@ -5443,6 +5637,7 @@
  },
  {
   "family": "engines-render-pipeline",
+  "domain": "motion",
   "name_ar": "محرر المعاينة Studio وتطبيق سطح المكتب",
   "name_en": "Studio preview editor + desktop app handoff",
   "status": "install",
@@ -5472,6 +5667,7 @@
  },
  {
   "family": "engines-render-pipeline",
+  "domain": "motion",
   "name_ar": "عقد جذر التركيب",
   "name_en": "Composition root contract",
   "status": "install",
@@ -5500,6 +5696,7 @@
  },
  {
   "family": "engines-render-pipeline",
+  "domain": "motion",
   "name_ar": "سمات المقاطع والمسارات",
   "name_en": "Clip attributes and tracks",
   "status": "install",
@@ -5527,6 +5724,7 @@
  },
  {
   "family": "engines-render-pipeline",
+  "domain": "motion",
   "name_ar": "التركيبات الفرعية داخل template",
   "name_en": "Sub-compositions with <template>",
   "status": "install",
@@ -5554,6 +5752,7 @@
  },
  {
   "family": "engines-render-pipeline",
+  "domain": "motion",
   "name_ar": "متغيرات التركيب وربط البيانات",
   "name_en": "Composition variables and data binding",
   "status": "install",
@@ -5581,6 +5780,7 @@
  },
  {
   "family": "engines-render-pipeline",
+  "domain": "motion",
   "name_ar": "تركيبات بـ Tailwind v4",
   "name_en": "Tailwind v4 compositions",
   "status": "install",
@@ -5609,6 +5809,7 @@
  },
  {
   "family": "engines-render-pipeline",
+  "domain": "motion",
   "name_ar": "قواعد التحويلات والأداء",
   "name_en": "GSAP transforms and performance rules",
   "status": "install",
@@ -5638,6 +5839,7 @@
  },
  {
   "family": "engines-render-pipeline",
+  "domain": "motion",
   "name_ar": "محول Anime.js",
   "name_en": "Anime.js adapter",
   "status": "install",
@@ -5666,6 +5868,7 @@
  },
  {
   "family": "engines-render-pipeline",
+  "domain": "motion",
   "name_ar": "محول إطارات CSS",
   "name_en": "CSS keyframes adapter",
   "status": "install",
@@ -5692,6 +5895,7 @@
  },
  {
   "family": "engines-render-pipeline",
+  "domain": "motion",
   "name_ar": "محول واجهة الحركة في المتصفح",
   "name_en": "Web Animations API adapter",
   "status": "install",
@@ -5720,6 +5924,7 @@
  },
  {
   "family": "engines-render-pipeline",
+  "domain": "motion",
   "name_ar": "حلقة التطوير بأداة سطر الأوامر",
   "name_en": "HyperFrames CLI dev loop",
   "status": "install",
@@ -5749,6 +5954,7 @@
  },
  {
   "family": "engines-render-pipeline",
+  "domain": "motion",
   "name_ar": "إنشاء مشروع بالأمثلة والوسائط",
   "name_en": "Scaffold project (init) with examples and media",
   "status": "install",
@@ -5781,6 +5987,7 @@
  },
  {
   "family": "engines-render-pipeline",
+  "domain": "motion",
   "name_ar": "الفحص البيئي وإدارة المتصفح",
   "name_en": "Doctor and browser management",
   "status": "install",
@@ -5811,6 +6018,7 @@
  },
  {
   "family": "engines-render-pipeline",
+  "domain": "motion",
   "name_ar": "بحث دلالي محلي في الكتالوج",
   "name_en": "Offline semantic catalog search",
   "status": "install",
@@ -5841,6 +6049,7 @@
  },
  {
   "family": "engines-render-pipeline",
+  "domain": "motion",
   "name_ar": "أوامر مساعدة متنوعة",
   "name_en": "Info / upgrade / compositions / docs / benchmark / clean",
   "status": "install",
@@ -5869,6 +6078,7 @@
  },
  {
   "family": "engines-render-pipeline",
+  "domain": "motion",
   "name_ar": "تنظيم المسارات حسب النوع",
   "name_en": "Studio layout conventions (tracks by kind, one caption track)",
   "status": "install",
@@ -5897,6 +6107,7 @@
  },
  {
   "family": "engines-render-pipeline",
+  "domain": "motion",
   "name_ar": "مكتبة الكتل والمكونات الجاهزة",
   "name_en": "Registry blocks and components (hyperframes add)",
   "status": "install",
@@ -5928,6 +6139,7 @@
  },
  {
   "family": "engines-render-pipeline",
+  "domain": "motion",
   "name_ar": "التصيير ثم تركيب القناع",
   "name_en": "Render + matte overlay composite",
   "status": "install",
@@ -5957,6 +6169,7 @@
  },
  {
   "family": "engines-render-pipeline",
+  "domain": "motion",
   "name_ar": "مجمّع الفهرس وحاقن الانتقالات",
   "name_en": "Index assembler and transition injector",
   "status": "install",
@@ -5987,6 +6200,7 @@
  },
  {
   "family": "engines-render-pipeline",
+  "domain": "motion",
   "name_ar": "تحويل مشاريع Remotion",
   "name_en": "Remotion to HyperFrames port",
   "status": "install",
@@ -6020,6 +6234,7 @@
  },
  {
   "family": "engines-render-pipeline",
+  "domain": "motion",
   "name_ar": "تجهيز بيئة claude.ai",
   "name_en": "Cloud sandbox setup",
   "status": "install",
@@ -6050,6 +6265,7 @@
  },
  {
   "family": "engines-render-pipeline",
+  "domain": "motion",
   "name_ar": "عقد تركيب HyperFrames",
   "name_en": "HyperFrames HTML composition contract",
   "status": "install",
@@ -6078,6 +6294,7 @@
  },
  {
   "family": "engines-render-pipeline",
+  "domain": "motion",
   "name_ar": "مشروع موشن ثنائي الأبعاد",
   "name_en": "New flat 2D project (GSAP+motion-kit)",
   "status": "install",
@@ -6107,6 +6324,7 @@
  },
  {
   "family": "engines-render-pipeline",
+  "domain": "motion",
   "name_ar": "مشروع كانفس",
   "name_en": "New canvas project",
   "status": "install",
@@ -6135,6 +6353,7 @@
  },
  {
   "family": "engines-render-pipeline",
+  "domain": "motion",
   "name_ar": "معاينة مسودة",
   "name_en": "Draft preview render",
   "status": "install",
@@ -6164,6 +6383,7 @@
  },
  {
   "family": "engines-render-pipeline",
+  "domain": "motion",
   "name_ar": "المصيّر المتوازي",
   "name_en": "Parallel studio renderer",
   "status": "install",
@@ -6193,6 +6413,7 @@
  },
  {
   "family": "engines-render-pipeline",
+  "domain": "motion",
   "name_ar": "التقاط سريع عبر CDP",
   "name_en": "CDP optimizeForSpeed capture",
   "status": "install",
@@ -6223,6 +6444,7 @@
  },
  {
   "family": "engines-render-pipeline",
+  "domain": "motion",
   "name_ar": "كاش بصمة التصيير",
   "name_en": "Fingerprint render cache",
   "status": "install",
@@ -6249,6 +6471,7 @@
  },
  {
   "family": "engines-render-pipeline",
+  "domain": "motion",
   "name_ar": "تمويه الحركة",
   "name_en": "Motion blur render pass",
   "status": "install",
@@ -6278,6 +6501,7 @@
  },
  {
   "family": "engines-render-pipeline",
+  "domain": "motion",
   "name_ar": "التصيير النهائي عالي الجودة",
   "name_en": "Quality-first final render",
   "status": "install",
@@ -6306,6 +6530,7 @@
  },
  {
   "family": "engines-render-pipeline",
+  "domain": "motion",
   "name_ar": "استوديو الويب المحلي",
   "name_en": "KOSIF Motion Web local studio",
   "status": "install",
@@ -6335,6 +6560,7 @@
  },
  {
   "family": "engines-render-pipeline",
+  "domain": "motion",
   "name_ar": "محرر المتصفح بتصدير دقيق",
   "name_en": "Browser Studio frame-accurate MP4",
   "status": "install",
@@ -6366,6 +6592,7 @@
  },
  {
   "family": "engines-render-pipeline",
+  "domain": "motion",
   "name_ar": "عقد التركيب القابل للتقديم إطاراً بإطار",
   "name_en": "Seekable HTML composition contract",
   "status": "install",
@@ -6397,6 +6624,7 @@
  },
  {
   "family": "engines-render-pipeline",
+  "domain": "motion",
   "name_ar": "مشهد ثلاثي الأبعاد مع طبقة نصوص على ساعة واحدة",
   "name_en": "Three.js scene + DOM overlay on one clock",
   "status": "install",
@@ -6427,6 +6655,7 @@
  },
  {
   "family": "engines-render-pipeline",
+  "domain": "motion",
   "name_ar": "تصدير إطارات SVG ثم ترميز MP4",
   "name_en": "SVG frame export + ffmpeg encode",
   "status": "install",
@@ -6458,6 +6687,7 @@
  },
  {
   "family": "engines-render-pipeline",
+  "domain": "motion",
   "name_ar": "مسارات الصوت واللقطات معلنة داخل الصفحة",
   "name_en": "Audio and footage tracks declared in markup",
   "status": "install",
@@ -6486,6 +6716,7 @@
  },
  {
   "family": "engines-render-pipeline",
+  "domain": "motion",
   "name_ar": "تجميع مشهد ES-module بـ esbuild",
   "name_en": "ES-module scene bundling with esbuild",
   "status": "install",
@@ -6517,6 +6748,7 @@
  },
  {
   "family": "engines-render-pipeline",
+  "domain": "motion",
   "name_ar": "ضبابية حركة بإطارات فرعية وتعريض طويل",
   "name_en": "Sub-frame motion blur and long-exposure stacking",
   "status": "install",
@@ -6547,6 +6779,7 @@
  },
  {
   "family": "engines-render-pipeline",
+  "domain": "motion",
   "name_ar": "تصيير متوازٍ بمقاطع تُدمج بلا إعادة ترميز",
   "name_en": "Parallel chunked browser render joined without re-encode",
   "status": "install",
@@ -6574,6 +6807,7 @@
  },
  {
   "family": "engines-render-pipeline",
+  "domain": "motion",
   "name_ar": "وصفة مشروع المختبر",
   "name_en": "Lab project recipe (new → score → frames → render → inspect)",
   "status": "install",
@@ -6600,6 +6834,7 @@
  },
  {
   "family": "engines-render-pipeline",
+  "domain": "motion",
   "name_ar": "فيلم ثنائي الأبعاد بلا متصفح",
   "name_en": "Browser-free 2D workbench film",
   "status": "install",
@@ -6629,6 +6864,7 @@
  },
  {
   "family": "engines-render-pipeline",
+  "domain": "motion",
   "name_ar": "قواعد عقد التصيير",
   "name_en": "HyperFrames render-contract lints",
   "status": "install",
@@ -6659,6 +6895,7 @@
  },
  {
   "family": "engines-render-pipeline",
+  "domain": "motion",
   "name_ar": "إعداد السحابة",
   "name_en": "Cloud setup on claude.ai",
   "status": "install",
@@ -6689,6 +6926,7 @@
  },
  {
   "family": "engines-render-pipeline",
+  "domain": "motion",
   "name_ar": "مشروع موشن جديد",
   "name_en": "New motion project 2D/3D",
   "status": "install",
@@ -6716,6 +6954,7 @@
  },
  {
   "family": "engines-render-pipeline",
+  "domain": "motion",
   "name_ar": "الاستوديو المحلي",
   "name_en": "Local KOSIF Motion Web studio",
   "status": "install",
@@ -6745,6 +6984,7 @@
  },
  {
   "family": "engines-render-pipeline",
+  "domain": "motion",
   "name_ar": "MCP الاستوديو",
   "name_en": "kosif-web MCP",
   "status": "install",
@@ -6771,6 +7011,7 @@
  },
  {
   "family": "engines-render-pipeline",
+  "domain": "motion",
   "name_ar": "تصدير MP4 دقيق",
   "name_en": "KOSIF Studio exact MP4 export",
   "status": "install",
@@ -6800,6 +7041,7 @@
  },
  {
   "family": "engines-render-pipeline",
+  "domain": "motion",
   "name_ar": "تقسيم التصيير",
   "name_en": "Shard render",
   "status": "install",
@@ -6830,6 +7072,7 @@
  },
  {
   "family": "engines-render-pipeline",
+  "domain": "motion",
   "name_ar": "مواصفة الخط الزمني",
   "name_en": "JSON timeline spec",
   "status": "install",
@@ -6860,10 +7103,11 @@
  },
  {
   "family": "engines-render-pipeline",
+  "domain": "motion",
   "name_ar": "محرك خارجي: Editly",
   "name_en": "External engine: Editly",
   "status": "install",
-  "what": "أداة فيديو مباشرة بالشيفرة/الخط الزمني من كتالوج HyperFrames ذي 500 أداة (رابط فقط، غير مثبّتة). — Direct code/timeline video tool from the 500-tool HyperFrames catalog (link only, not installed).",
+  "what": "محرك خارجي: Editly: أداة فيديو مباشرة بالشيفرة/الخط الزمني من كتالوج HyperFrames ذي 500 أداة (رابط فقط، غير مثبّتة). — External engine: Editly: Direct code/timeline video tool from the 500-tool HyperFrames catalog (link only, not installed).",
   "how": "external",
   "params": "",
   "install": "see arsenal-libraries.md",
@@ -6888,10 +7132,11 @@
  },
  {
   "family": "engines-render-pipeline",
+  "domain": "motion",
   "name_ar": "محرك خارجي: FFCreator",
   "name_en": "External engine: FFCreator",
   "status": "install",
-  "what": "أداة فيديو مباشرة بالشيفرة/الخط الزمني من كتالوج HyperFrames ذي 500 أداة (رابط فقط، غير مثبّتة). — Direct code/timeline video tool from the 500-tool HyperFrames catalog (link only, not installed).",
+  "what": "محرك خارجي: FFCreator: أداة فيديو مباشرة بالشيفرة/الخط الزمني من كتالوج HyperFrames ذي 500 أداة (رابط فقط، غير مثبّتة). — External engine: FFCreator: Direct code/timeline video tool from the 500-tool HyperFrames catalog (link only, not installed).",
   "how": "external",
   "params": "",
   "install": "see arsenal-libraries.md",
@@ -6916,10 +7161,11 @@
  },
  {
   "family": "engines-render-pipeline",
+  "domain": "motion",
   "name_ar": "محرك خارجي: fframes (MIT)",
   "name_en": "External engine: fframes (MIT)",
   "status": "install",
-  "what": "أداة فيديو مباشرة بالشيفرة/الخط الزمني من كتالوج HyperFrames ذي 500 أداة (رابط فقط، غير مثبّتة). — Direct code/timeline video tool from the 500-tool HyperFrames catalog (link only, not installed).",
+  "what": "محرك خارجي: fframes (MIT): أداة فيديو مباشرة بالشيفرة/الخط الزمني من كتالوج HyperFrames ذي 500 أداة (رابط فقط، غير مثبّتة). — External engine: fframes (MIT): Direct code/timeline video tool from the 500-tool HyperFrames catalog (link only, not installed).",
   "how": "external",
   "params": "",
   "install": "see arsenal-libraries.md",
@@ -6944,10 +7190,11 @@
  },
  {
   "family": "engines-render-pipeline",
+  "domain": "motion",
   "name_ar": "محرك خارجي: Manim Community (MIT)",
   "name_en": "External engine: Manim Community (MIT)",
   "status": "install",
-  "what": "أداة فيديو مباشرة بالشيفرة/الخط الزمني من كتالوج HyperFrames ذي 500 أداة (رابط فقط، غير مثبّتة). — Direct code/timeline video tool from the 500-tool HyperFrames catalog (link only, not installed).",
+  "what": "محرك خارجي: Manim Community (MIT): أداة فيديو مباشرة بالشيفرة/الخط الزمني من كتالوج HyperFrames ذي 500 أداة (رابط فقط، غير مثبّتة). — External engine: Manim Community (MIT): Direct code/timeline video tool from the 500-tool HyperFrames catalog (link only, not installed).",
   "how": "external",
   "params": "",
   "install": "see arsenal-libraries.md",
@@ -6972,10 +7219,11 @@
  },
  {
   "family": "engines-render-pipeline",
+  "domain": "motion",
   "name_ar": "محرك خارجي: Motion Canvas",
   "name_en": "External engine: Motion Canvas",
   "status": "install",
-  "what": "أداة فيديو مباشرة بالشيفرة/الخط الزمني من كتالوج HyperFrames ذي 500 أداة (رابط فقط، غير مثبّتة). — Direct code/timeline video tool from the 500-tool HyperFrames catalog (link only, not installed).",
+  "what": "محرك خارجي: Motion Canvas: أداة فيديو مباشرة بالشيفرة/الخط الزمني من كتالوج HyperFrames ذي 500 أداة (رابط فقط، غير مثبّتة). — External engine: Motion Canvas: Direct code/timeline video tool from the 500-tool HyperFrames catalog (link only, not installed).",
   "how": "external",
   "params": "",
   "install": "see arsenal-libraries.md",
@@ -7000,10 +7248,11 @@
  },
  {
   "family": "engines-render-pipeline",
+  "domain": "motion",
   "name_ar": "محرك خارجي: MoviePy",
   "name_en": "External engine: MoviePy",
   "status": "install",
-  "what": "أداة فيديو مباشرة بالشيفرة/الخط الزمني من كتالوج HyperFrames ذي 500 أداة (رابط فقط، غير مثبّتة). — Direct code/timeline video tool from the 500-tool HyperFrames catalog (link only, not installed).",
+  "what": "محرك خارجي: MoviePy: أداة فيديو مباشرة بالشيفرة/الخط الزمني من كتالوج HyperFrames ذي 500 أداة (رابط فقط، غير مثبّتة). — External engine: MoviePy: Direct code/timeline video tool from the 500-tool HyperFrames catalog (link only, not installed).",
   "how": "external",
   "params": "",
   "install": "see arsenal-libraries.md",
@@ -7028,10 +7277,11 @@
  },
  {
   "family": "engines-render-pipeline",
+  "domain": "motion",
   "name_ar": "محرك خارجي: Remotion",
   "name_en": "External engine: Remotion",
   "status": "install",
-  "what": "أداة فيديو مباشرة بالشيفرة/الخط الزمني من كتالوج HyperFrames ذي 500 أداة (رابط فقط، غير مثبّتة). — Direct code/timeline video tool from the 500-tool HyperFrames catalog (link only, not installed).",
+  "what": "محرك خارجي: Remotion: أداة فيديو مباشرة بالشيفرة/الخط الزمني من كتالوج HyperFrames ذي 500 أداة (رابط فقط، غير مثبّتة). — External engine: Remotion: Direct code/timeline video tool from the 500-tool HyperFrames catalog (link only, not installed).",
   "how": "external",
   "params": "",
   "install": "see arsenal-libraries.md",
@@ -7057,10 +7307,11 @@
  },
  {
   "family": "engines-render-pipeline",
+  "domain": "motion",
   "name_ar": "محرك خارجي: Rendervid",
   "name_en": "External engine: Rendervid",
   "status": "install",
-  "what": "أداة فيديو مباشرة بالشيفرة/الخط الزمني من كتالوج HyperFrames ذي 500 أداة (رابط فقط، غير مثبّتة). — Direct code/timeline video tool from the 500-tool HyperFrames catalog (link only, not installed).",
+  "what": "محرك خارجي: Rendervid: أداة فيديو مباشرة بالشيفرة/الخط الزمني من كتالوج HyperFrames ذي 500 أداة (رابط فقط، غير مثبّتة). — External engine: Rendervid: Direct code/timeline video tool from the 500-tool HyperFrames catalog (link only, not installed).",
   "how": "external",
   "params": "",
   "install": "see arsenal-libraries.md",
@@ -7085,10 +7336,11 @@
  },
  {
   "family": "engines-render-pipeline",
+  "domain": "motion",
   "name_ar": "محرك خارجي: Revideo",
   "name_en": "External engine: Revideo",
   "status": "install",
-  "what": "أداة فيديو مباشرة بالشيفرة/الخط الزمني من كتالوج HyperFrames ذي 500 أداة (رابط فقط، غير مثبّتة). — Direct code/timeline video tool from the 500-tool HyperFrames catalog (link only, not installed).",
+  "what": "محرك خارجي: Revideo: أداة فيديو مباشرة بالشيفرة/الخط الزمني من كتالوج HyperFrames ذي 500 أداة (رابط فقط، غير مثبّتة). — External engine: Revideo: Direct code/timeline video tool from the 500-tool HyperFrames catalog (link only, not installed).",
   "how": "external",
   "params": "",
   "install": "see arsenal-libraries.md",
@@ -7113,10 +7365,11 @@
  },
  {
   "family": "engines-render-pipeline",
+  "domain": "motion",
   "name_ar": "محرك خارجي: VideoFlow (Apache-2.0)",
   "name_en": "External engine: VideoFlow (Apache-2.0)",
   "status": "install",
-  "what": "أداة فيديو مباشرة بالشيفرة/الخط الزمني من كتالوج HyperFrames ذي 500 أداة (رابط فقط، غير مثبّتة). — Direct code/timeline video tool from the 500-tool HyperFrames catalog (link only, not installed).",
+  "what": "محرك خارجي: VideoFlow (Apache-2.0): أداة فيديو مباشرة بالشيفرة/الخط الزمني من كتالوج HyperFrames ذي 500 أداة (رابط فقط، غير مثبّتة). — External engine: VideoFlow (Apache-2.0): Direct code/timeline video tool from the 500-tool HyperFrames catalog (link only, not installed).",
   "how": "external",
   "params": "",
   "install": "see arsenal-libraries.md",
@@ -7141,10 +7394,11 @@
  },
  {
   "family": "engines-render-pipeline",
+  "domain": "motion",
   "name_ar": "محرك خارجي: VideoRenderingEngine",
   "name_en": "External engine: VideoRenderingEngine",
   "status": "install",
-  "what": "أداة فيديو مباشرة بالشيفرة/الخط الزمني من كتالوج HyperFrames ذي 500 أداة (رابط فقط، غير مثبّتة). — Direct code/timeline video tool from the 500-tool HyperFrames catalog (link only, not installed).",
+  "what": "محرك خارجي: VideoRenderingEngine: أداة فيديو مباشرة بالشيفرة/الخط الزمني من كتالوج HyperFrames ذي 500 أداة (رابط فقط، غير مثبّتة). — External engine: VideoRenderingEngine: Direct code/timeline video tool from the 500-tool HyperFrames catalog (link only, not installed).",
   "how": "external",
   "params": "",
   "install": "see arsenal-libraries.md",
@@ -7169,10 +7423,11 @@
  },
  {
   "family": "engines-render-pipeline",
+  "domain": "motion",
   "name_ar": "محرك خارجي: VidPy",
   "name_en": "External engine: VidPy",
   "status": "install",
-  "what": "أداة فيديو مباشرة بالشيفرة/الخط الزمني من كتالوج HyperFrames ذي 500 أداة (رابط فقط، غير مثبّتة). — Direct code/timeline video tool from the 500-tool HyperFrames catalog (link only, not installed).",
+  "what": "محرك خارجي: VidPy: أداة فيديو مباشرة بالشيفرة/الخط الزمني من كتالوج HyperFrames ذي 500 أداة (رابط فقط، غير مثبّتة). — External engine: VidPy: Direct code/timeline video tool from the 500-tool HyperFrames catalog (link only, not installed).",
   "how": "external",
   "params": "",
   "install": "see arsenal-libraries.md",
@@ -7197,10 +7452,11 @@
  },
  {
   "family": "engines-render-pipeline",
+  "domain": "motion",
   "name_ar": "محرك خارجي: WebMotion (MIT)",
   "name_en": "External engine: WebMotion (MIT)",
   "status": "install",
-  "what": "أداة فيديو مباشرة بالشيفرة/الخط الزمني من كتالوج HyperFrames ذي 500 أداة (رابط فقط، غير مثبّتة). — Direct code/timeline video tool from the 500-tool HyperFrames catalog (link only, not installed).",
+  "what": "محرك خارجي: WebMotion (MIT): أداة فيديو مباشرة بالشيفرة/الخط الزمني من كتالوج HyperFrames ذي 500 أداة (رابط فقط، غير مثبّتة). — External engine: WebMotion (MIT): Direct code/timeline video tool from the 500-tool HyperFrames catalog (link only, not installed).",
   "how": "external",
   "params": "",
   "install": "see arsenal-libraries.md",
@@ -7225,10 +7481,11 @@
  },
  {
   "family": "engines-render-pipeline",
+  "domain": "motion",
   "name_ar": "محرك خارجي: Diffusion Studio Core",
   "name_en": "External engine: Diffusion Studio Core",
   "status": "install",
-  "what": "أداة فيديو مباشرة بالشيفرة/الخط الزمني من كتالوج HyperFrames ذي 500 أداة (رابط فقط، غير مثبّتة). — Direct code/timeline video tool from the 500-tool HyperFrames catalog (link only, not installed).",
+  "what": "محرك خارجي: Diffusion Studio Core: أداة فيديو مباشرة بالشيفرة/الخط الزمني من كتالوج HyperFrames ذي 500 أداة (رابط فقط، غير مثبّتة). — External engine: Diffusion Studio Core: Direct code/timeline video tool from the 500-tool HyperFrames catalog (link only, not installed).",
   "how": "external",
   "params": "",
   "install": "see arsenal-libraries.md",
@@ -7253,10 +7510,11 @@
  },
  {
   "family": "engines-render-pipeline",
+  "domain": "motion",
   "name_ar": "محرك خارجي: Etro (GPL-3.0)",
   "name_en": "External engine: Etro (GPL-3.0)",
   "status": "install",
-  "what": "أداة فيديو مباشرة بالشيفرة/الخط الزمني من كتالوج HyperFrames ذي 500 أداة (رابط فقط، غير مثبّتة). — Direct code/timeline video tool from the 500-tool HyperFrames catalog (link only, not installed).",
+  "what": "محرك خارجي: Etro (GPL-3.0): أداة فيديو مباشرة بالشيفرة/الخط الزمني من كتالوج HyperFrames ذي 500 أداة (رابط فقط، غير مثبّتة). — External engine: Etro (GPL-3.0): Direct code/timeline video tool from the 500-tool HyperFrames catalog (link only, not installed).",
   "how": "external",
   "params": "",
   "install": "see arsenal-libraries.md",
@@ -7281,10 +7539,11 @@
  },
  {
   "family": "engines-render-pipeline",
+  "domain": "motion",
   "name_ar": "محرك خارجي: Movie Masher (MPL-2.0)",
   "name_en": "External engine: Movie Masher (MPL-2.0)",
   "status": "install",
-  "what": "أداة فيديو مباشرة بالشيفرة/الخط الزمني من كتالوج HyperFrames ذي 500 أداة (رابط فقط، غير مثبّتة). — Direct code/timeline video tool from the 500-tool HyperFrames catalog (link only, not installed).",
+  "what": "محرك خارجي: Movie Masher (MPL-2.0): أداة فيديو مباشرة بالشيفرة/الخط الزمني من كتالوج HyperFrames ذي 500 أداة (رابط فقط، غير مثبّتة). — External engine: Movie Masher (MPL-2.0): Direct code/timeline video tool from the 500-tool HyperFrames catalog (link only, not installed).",
   "how": "external",
   "params": "",
   "install": "see arsenal-libraries.md",
@@ -7309,10 +7568,11 @@
  },
  {
   "family": "engines-render-pipeline",
+  "domain": "motion",
   "name_ar": "محرك خارجي: Twick",
   "name_en": "External engine: Twick",
   "status": "install",
-  "what": "أداة فيديو مباشرة بالشيفرة/الخط الزمني من كتالوج HyperFrames ذي 500 أداة (رابط فقط، غير مثبّتة). — Direct code/timeline video tool from the 500-tool HyperFrames catalog (link only, not installed).",
+  "what": "محرك خارجي: Twick: أداة فيديو مباشرة بالشيفرة/الخط الزمني من كتالوج HyperFrames ذي 500 أداة (رابط فقط، غير مثبّتة). — External engine: Twick: Direct code/timeline video tool from the 500-tool HyperFrames catalog (link only, not installed).",
   "how": "external",
   "params": "",
   "install": "see arsenal-libraries.md",
@@ -7337,10 +7597,11 @@
  },
  {
   "family": "engines-render-pipeline",
+  "domain": "motion",
   "name_ar": "محرك خارجي: WebAV",
   "name_en": "External engine: WebAV",
   "status": "install",
-  "what": "أداة فيديو مباشرة بالشيفرة/الخط الزمني من كتالوج HyperFrames ذي 500 أداة (رابط فقط، غير مثبّتة). — Direct code/timeline video tool from the 500-tool HyperFrames catalog (link only, not installed).",
+  "what": "محرك خارجي: WebAV: أداة فيديو مباشرة بالشيفرة/الخط الزمني من كتالوج HyperFrames ذي 500 أداة (رابط فقط، غير مثبّتة). — External engine: WebAV: Direct code/timeline video tool from the 500-tool HyperFrames catalog (link only, not installed).",
   "how": "external",
   "params": "",
   "install": "see arsenal-libraries.md",
@@ -7365,10 +7626,11 @@
  },
  {
   "family": "engines-render-pipeline",
+  "domain": "motion",
   "name_ar": "محرك خارجي: Creatomate",
   "name_en": "External engine: Creatomate",
   "status": "install",
-  "what": "أداة فيديو مباشرة بالشيفرة/الخط الزمني من كتالوج HyperFrames ذي 500 أداة (رابط فقط، غير مثبّتة). — Direct code/timeline video tool from the 500-tool HyperFrames catalog (link only, not installed).",
+  "what": "محرك خارجي: Creatomate: أداة فيديو مباشرة بالشيفرة/الخط الزمني من كتالوج HyperFrames ذي 500 أداة (رابط فقط، غير مثبّتة). — External engine: Creatomate: Direct code/timeline video tool from the 500-tool HyperFrames catalog (link only, not installed).",
   "how": "external",
   "params": "",
   "install": "see arsenal-libraries.md",
@@ -7393,10 +7655,11 @@
  },
  {
   "family": "engines-render-pipeline",
+  "domain": "motion",
   "name_ar": "محرك خارجي: iLoveVideoEditor",
   "name_en": "External engine: iLoveVideoEditor",
   "status": "install",
-  "what": "أداة فيديو مباشرة بالشيفرة/الخط الزمني من كتالوج HyperFrames ذي 500 أداة (رابط فقط، غير مثبّتة). — Direct code/timeline video tool from the 500-tool HyperFrames catalog (link only, not installed).",
+  "what": "محرك خارجي: iLoveVideoEditor: أداة فيديو مباشرة بالشيفرة/الخط الزمني من كتالوج HyperFrames ذي 500 أداة (رابط فقط، غير مثبّتة). — External engine: iLoveVideoEditor: Direct code/timeline video tool from the 500-tool HyperFrames catalog (link only, not installed).",
   "how": "external",
   "params": "",
   "install": "see arsenal-libraries.md",
@@ -7421,10 +7684,11 @@
  },
  {
   "family": "engines-render-pipeline",
+  "domain": "motion",
   "name_ar": "محرك خارجي: JSON2Video",
   "name_en": "External engine: JSON2Video",
   "status": "install",
-  "what": "أداة فيديو مباشرة بالشيفرة/الخط الزمني من كتالوج HyperFrames ذي 500 أداة (رابط فقط، غير مثبّتة). — Direct code/timeline video tool from the 500-tool HyperFrames catalog (link only, not installed).",
+  "what": "محرك خارجي: JSON2Video: أداة فيديو مباشرة بالشيفرة/الخط الزمني من كتالوج HyperFrames ذي 500 أداة (رابط فقط، غير مثبّتة). — External engine: JSON2Video: Direct code/timeline video tool from the 500-tool HyperFrames catalog (link only, not installed).",
   "how": "external",
   "params": "",
   "install": "see arsenal-libraries.md",
@@ -7449,10 +7713,11 @@
  },
  {
   "family": "engines-render-pipeline",
+  "domain": "motion",
   "name_ar": "محرك خارجي: Shotstack",
   "name_en": "External engine: Shotstack",
   "status": "install",
-  "what": "أداة فيديو مباشرة بالشيفرة/الخط الزمني من كتالوج HyperFrames ذي 500 أداة (رابط فقط، غير مثبّتة). — Direct code/timeline video tool from the 500-tool HyperFrames catalog (link only, not installed).",
+  "what": "محرك خارجي: Shotstack: أداة فيديو مباشرة بالشيفرة/الخط الزمني من كتالوج HyperFrames ذي 500 أداة (رابط فقط، غير مثبّتة). — External engine: Shotstack: Direct code/timeline video tool from the 500-tool HyperFrames catalog (link only, not installed).",
   "how": "external",
   "params": "",
   "install": "see arsenal-libraries.md",
@@ -7477,6 +7742,7 @@
  },
  {
   "family": "engines-render-pipeline",
+  "domain": "motion",
   "name_ar": "مكتبات الحركة داخل الصفحة",
   "name_en": "In-page motion/drawing library list",
   "status": "install",
@@ -7509,10 +7775,11 @@
  },
  {
   "family": "engines-render-pipeline",
+  "domain": "motion",
   "name_ar": "تكامل: Remotion Agent Skills",
   "name_en": "Integration: Remotion Agent Skills",
   "status": "install",
-  "what": "مهارة/MCP/مكتبة مفهرسة (رابط فقط؛ غير مثبّتة هنا). — Catalogued skill/MCP/library (link only; not installed here).",
+  "what": "تكامل: Remotion Agent Skills: مهارة/MCP/مكتبة مفهرسة (رابط فقط؛ غير مثبّتة هنا). — Integration: Remotion Agent Skills: Catalogued skill/MCP/library (link only; not installed here).",
   "how": "see official setup",
   "params": "",
   "install": "see arsenal-libraries.md",
@@ -7537,10 +7804,11 @@
  },
  {
   "family": "engines-render-pipeline",
+  "domain": "motion",
   "name_ar": "تكامل: HyperFrames skills plugin",
   "name_en": "Integration: HyperFrames skills plugin",
   "status": "install",
-  "what": "مهارة/MCP/مكتبة مفهرسة (رابط فقط؛ غير مثبّتة هنا). — Catalogued skill/MCP/library (link only; not installed here).",
+  "what": "تكامل: HyperFrames skills plugin: مهارة/MCP/مكتبة مفهرسة (رابط فقط؛ غير مثبّتة هنا). — Integration: HyperFrames skills plugin: Catalogued skill/MCP/library (link only; not installed here).",
   "how": "see official setup",
   "params": "",
   "install": "see arsenal-libraries.md",
@@ -7565,10 +7833,11 @@
  },
  {
   "family": "engines-render-pipeline",
+  "domain": "motion",
   "name_ar": "تكامل: PixiJS + skills",
   "name_en": "Integration: PixiJS + skills",
   "status": "install",
-  "what": "مهارة/MCP/مكتبة مفهرسة (رابط فقط؛ غير مثبّتة هنا). — Catalogued skill/MCP/library (link only; not installed here).",
+  "what": "تكامل: PixiJS + skills: مهارة/MCP/مكتبة مفهرسة (رابط فقط؛ غير مثبّتة هنا). — Integration: PixiJS + skills: Catalogued skill/MCP/library (link only; not installed here).",
   "how": "see official setup",
   "params": "",
   "install": "see arsenal-libraries.md",
@@ -7591,6 +7860,7 @@
  },
  {
   "family": "engines-render-pipeline",
+  "domain": "motion",
   "name_ar": "مشروع موشن HTML",
   "name_en": "HTML motion project",
   "status": "install",
@@ -7621,6 +7891,7 @@
  },
  {
   "family": "engines-render-pipeline",
+  "domain": "motion",
   "name_ar": "تصيير HTML",
   "name_en": "Headless HTML frame render",
   "status": "install",
@@ -7650,6 +7921,7 @@
  },
  {
   "family": "engines-render-pipeline",
+  "domain": "motion",
   "name_ar": "تقسيم التصيير",
   "name_en": "Render sharding",
   "status": "install",
@@ -7678,6 +7950,7 @@
  },
  {
   "family": "engines-render-pipeline",
+  "domain": "motion",
   "name_ar": "التقاط الإطارات عبر متصفح Edge وكارت الشاشة",
   "name_en": "Playwright Edge D3D11 frame capture",
   "status": "install",
@@ -7708,6 +7981,7 @@
  },
  {
   "family": "engines-render-pipeline",
+  "domain": "motion",
   "name_ar": "عرض حتمي render(t) والتقاط الإطارات",
   "name_en": "Deterministic render(t) + frame capture (WebGL)",
   "status": "install",
@@ -7740,6 +8014,7 @@
  },
  {
   "family": "engines-render-pipeline",
+  "domain": "motion",
   "name_ar": "خط زمني JSON إلى فيلم",
   "name_en": "JSON timeline -> film (fadeblack, overlays, voice)",
   "status": "install",
@@ -7768,6 +8043,7 @@
  },
  {
   "family": "engines-render-pipeline",
+  "domain": "motion",
   "name_ar": "هيكل تركيب HyperFrames",
   "name_en": "HyperFrames composition skeleton",
   "status": "install",
@@ -7799,6 +8075,7 @@
  },
  {
   "family": "engines-render-pipeline",
+  "domain": "motion",
   "name_ar": "قالب SVG حتمي بدوال مساعدة",
   "name_en": "SVG render(t) template with seg/fadeWin/mix helpers",
   "status": "install",
@@ -7826,6 +8103,7 @@
  },
  {
   "family": "engines-render-pipeline",
+  "domain": "motion",
   "name_ar": "التقاط إطارات SVG إلى فيديو",
   "name_en": "SVG frame capture to MP4 (Playwright + ffmpeg)",
   "status": "install",
@@ -7856,6 +8134,7 @@
  },
  {
   "family": "engines-render-pipeline",
+  "domain": "motion",
   "name_ar": "عشوائية بذرية",
   "name_en": "Seeded RNG and hash (mulberry32)",
   "status": "install",
@@ -7883,6 +8162,7 @@
  },
  {
   "family": "engines-render-pipeline",
+  "domain": "motion",
   "name_ar": "جسر العرض ومزامنة الفيديو",
   "name_en": "Renderer shim + footage seeking",
   "status": "install",
@@ -7911,6 +8191,7 @@
  },
  {
   "family": "engines-render-pipeline",
+  "domain": "motion",
   "name_ar": "تصيير إلى MP4",
   "name_en": "Render to MP4 (HyperFrames CLI or studio engine)",
   "status": "install",
@@ -7943,6 +8224,7 @@
  },
  {
   "family": "engines-render-pipeline",
+  "domain": "motion",
   "name_ar": "تجميع المشروع بـ esbuild",
   "name_en": "esbuild bundling of 3D projects",
   "status": "install",
@@ -7974,6 +8256,7 @@
  },
  {
   "family": "engines-render-pipeline",
+  "domain": "motion",
   "name_ar": "صورة إلى برنامج بايثون",
   "name_en": "Image -> standalone Pillow program",
   "status": "install",
@@ -8003,6 +8286,7 @@
  },
  {
   "family": "engines-render-pipeline",
+  "domain": "motion",
   "name_ar": "باني النسخة المقلّدة",
   "name_en": "Mimic remake builder",
   "status": "install",
@@ -8032,6 +8316,7 @@
  },
  {
   "family": "engines-render-pipeline",
+  "domain": "motion",
   "name_ar": "عقد المشهد الحتمي render(t)",
   "name_en": "Deterministic render(t) scene contract",
   "status": "install",
@@ -8061,6 +8346,7 @@
  },
  {
   "family": "engines-render-pipeline",
+  "domain": "motion",
   "name_ar": "تصوير الإطارات بـ Playwright",
   "name_en": "Playwright frame capture",
   "status": "install",
@@ -8091,6 +8377,7 @@
  },
  {
   "family": "engines-render-pipeline",
+  "domain": "motion",
   "name_ar": "مسار Remotion",
   "name_en": "Remotion equivalent path",
   "status": "install",
@@ -8120,6 +8407,7 @@
  },
  {
   "family": "engines-render-pipeline",
+  "domain": "motion",
   "name_ar": "عدة KOSIF Motion فوق HyperFrames",
   "name_en": "KOSIF Motion kit on HyperFrames (delta)",
   "status": "install",
@@ -8150,6 +8438,7 @@
  },
  {
   "family": "engines-render-pipeline",
+  "domain": "motion",
   "name_ar": "أوامر ffmpeg",
   "name_en": "ffmpeg cut/concat/burn/reframe",
   "status": "install",
@@ -8179,6 +8468,7 @@
  },
  {
   "family": "engines-render-pipeline",
+  "domain": "motion",
   "name_ar": "جسر المحرّكين",
   "name_en": "Dual-renderer shim + footage seek",
   "status": "install",
@@ -8208,6 +8498,7 @@
  },
  {
   "family": "engines-render-pipeline",
+  "domain": "motion",
   "name_ar": "حلقة الإطار مع تمويه الحركة",
   "name_en": "GPU motion-blur / long-exposure frame loop",
   "status": "install",
@@ -8238,6 +8529,7 @@
  },
  {
   "family": "engines-render-pipeline",
+  "domain": "motion",
   "name_ar": "حزمة three-kit الجاهزة",
   "name_en": "Prebuilt three-kit bundle (window.K3)",
   "status": "install",
@@ -8269,6 +8561,7 @@
  },
  {
   "family": "engines-render-pipeline",
+  "domain": "motion",
   "name_ar": "مسودة منخفضة الدقة",
   "name_en": "Draft scale for fast 3D drafts",
   "status": "install",
@@ -8297,6 +8590,7 @@
  },
  {
   "family": "engines-render-pipeline",
+  "domain": "motion",
   "name_ar": "قالب الكانفاس",
   "name_en": "Canvas route template",
   "status": "install",
@@ -8326,6 +8620,7 @@
  },
  {
   "family": "engines-render-pipeline",
+  "domain": "motion",
   "name_ar": "قالب تركيب HyperFrames",
   "name_en": "HyperFrames GSAP composition template",
   "status": "install",
@@ -8357,6 +8652,7 @@
  },
  {
   "family": "engines-render-pipeline",
+  "domain": "motion",
   "name_ar": "أوامر HyperFrames",
   "name_en": "HyperFrames CLI pipeline",
   "status": "install",
@@ -8385,6 +8681,7 @@
  },
  {
   "family": "engines-render-pipeline",
+  "domain": "motion",
   "name_ar": "مكتبات الحركة داخل الصفحة",
   "name_en": "In-page animation library list",
   "status": "install",
@@ -8416,6 +8713,7 @@
  },
  {
   "family": "engines-render-pipeline",
+  "domain": "motion",
   "name_ar": "برنامج الصورة: خطوات وعمليات متجهة",
   "name_en": "KOSIF picture program (Step/ops vector renderer)",
   "status": "install",
@@ -8447,6 +8745,7 @@
  },
  {
   "family": "engines-render-pipeline",
+  "domain": "motion",
   "name_ar": "نافذة الرسم بيكسلاً ببيكسل",
   "name_en": "Pixel-by-pixel painting window (KOSIF Studio)",
   "status": "install",
@@ -8477,6 +8776,7 @@
  },
  {
   "family": "engines-render-pipeline",
+  "domain": "motion",
   "name_ar": "لوحة بدقتها الأصلية مع عرض ملائم",
   "name_en": "Native-resolution canvas with viewer-style fit",
   "status": "install",
@@ -8507,6 +8807,7 @@
  },
  {
   "family": "engines-render-pipeline",
+  "domain": "motion",
   "name_ar": "مشغّل كود أي ذكاء اصطناعي",
   "name_en": "Any-AI code runner (SVG / scene / PIL / matplotlib / turtle / HTML / image code)",
   "status": "install",
@@ -8538,6 +8839,7 @@
  },
  {
   "family": "engines-render-pipeline",
+  "domain": "motion",
   "name_ar": "التقاط رسوم matplotlib وturtle",
   "name_en": "matplotlib and turtle capture",
   "status": "install",
@@ -8568,6 +8870,7 @@
  },
  {
   "family": "engines-render-pipeline",
+  "domain": "motion",
   "name_ar": "صفحة HTML/Three.js إلى إطار حتمي",
   "name_en": "HTML / Three.js page to one deterministic frame",
   "status": "install",
@@ -8600,6 +8903,7 @@
  },
  {
   "family": "engines-render-pipeline",
+  "domain": "motion",
   "name_ar": "تصيير صفحة قابلة للتقديم إلى فيديو",
   "name_en": "Seekable page animation renderer (render(t)/seek(t) -> MP4)",
   "status": "install",
@@ -8632,6 +8936,7 @@
  },
  {
   "family": "engines-render-pipeline",
+  "domain": "motion",
   "name_ar": "عمّال تصيير متوازون ودمج بلا فقد",
   "name_en": "Parallel browser render workers with lossless concat",
   "status": "install",
@@ -8664,6 +8969,7 @@
  },
  {
   "family": "engines-render-pipeline",
+  "domain": "motion",
   "name_ar": "التقاط سريع للإطارات عبر DevTools",
   "name_en": "Fast frame capture via DevTools",
   "status": "install",
@@ -8696,6 +9002,7 @@
  },
  {
   "family": "engines-render-pipeline",
+  "domain": "motion",
   "name_ar": "تحريك المشهد عبر build_t(t)",
   "name_en": "Scene animation through build_t(t)",
   "status": "install",
@@ -8724,6 +9031,7 @@
  },
  {
   "family": "engines-render-pipeline",
+  "domain": "motion",
   "name_ar": "أوامر الاستوديو من سطر الأوامر",
   "name_en": "Studio command-line modes",
   "status": "install",
@@ -8753,6 +9061,7 @@
  },
  {
   "family": "engines-render-pipeline",
+  "domain": "motion",
   "name_ar": "قائمة الأنيميشن في الاستوديو",
   "name_en": "Studio animation menu bridging to KOSIF Motion",
   "status": "install",
@@ -8784,6 +9093,7 @@
  },
  {
   "family": "engines-render-pipeline",
+  "domain": "motion",
   "name_ar": "عقد الصفحة القابلة للتقديم",
   "name_en": "Seekable HTML page contract",
   "status": "install",
@@ -8812,6 +9122,7 @@
  },
  {
   "family": "engines-render-pipeline",
+  "domain": "motion",
   "name_ar": "التصيير بمحركين",
   "name_en": "Dual-engine renderer (HyperFrames CLI or studio browser renderer)",
   "status": "install",
@@ -8843,6 +9154,7 @@
  },
  {
   "family": "engines-render-pipeline",
+  "domain": "motion",
   "name_ar": "مسودة معاينة سريعة",
   "name_en": "Draft preview cut",
   "status": "install",
@@ -8872,6 +9184,7 @@
  },
  {
   "family": "engines-render-pipeline",
+  "domain": "motion",
   "name_ar": "ضبابية الحركة والتعريض الطويل",
   "name_en": "Sub-frame motion blur and long exposure",
   "status": "install",
@@ -8902,6 +9215,7 @@
  },
  {
   "family": "engines-render-pipeline",
+  "domain": "motion",
   "name_ar": "تصيير متوازٍ بعدة متصفحات",
   "name_en": "Parallel browser workers",
   "status": "install",
@@ -8931,6 +9245,7 @@
  },
  {
   "family": "engines-render-pipeline",
+  "domain": "motion",
   "name_ar": "تجميع المشهد بـ esbuild",
   "name_en": "esbuild scene bundling",
   "status": "install",
@@ -8963,6 +9278,7 @@
  },
  {
   "family": "engines-render-pipeline",
+  "domain": "motion",
   "name_ar": "رندر HTML حتمي",
   "name_en": "HTML seek renderer",
   "status": "install",
@@ -8995,6 +9311,7 @@
  },
  {
   "family": "engines-render-pipeline",
+  "domain": "motion",
   "name_ar": "قواعد الحتمية",
   "name_en": "Determinism rules",
   "status": "install",
@@ -9022,6 +9339,7 @@
  },
  {
   "family": "engines-render-pipeline",
+  "domain": "motion",
   "name_ar": "تركيبة KosifFilm في Remotion",
   "name_en": "Remotion KosifFilm composition",
   "status": "install",
@@ -9053,6 +9371,7 @@
  },
  {
   "family": "engines-render-pipeline",
+  "domain": "motion",
   "name_ar": "استخدام كروميوم المحلي مع Remotion",
   "name_en": "Local Chromium reuse for Remotion",
   "status": "install",
@@ -9082,6 +9401,7 @@
  },
  {
   "family": "engines-render-pipeline",
+  "domain": "motion",
   "name_ar": "خيار التقنية: remotion",
   "name_en": "Stack option: remotion",
   "status": "install",
@@ -9111,6 +9431,7 @@
  },
  {
   "family": "engines-render-pipeline",
+  "domain": "motion",
   "name_ar": "مشهد Three.js قابل للتقديم الحتمي",
   "name_en": "Deterministic Three.js seek scene",
   "status": "install",
@@ -9141,6 +9462,7 @@
  },
  {
   "family": "engines-render-pipeline",
+  "domain": "motion",
   "name_ar": "تكامل Remotion مع Three",
   "name_en": "@remotion/three integration",
   "status": "install",
@@ -9170,6 +9492,7 @@
  },
  {
   "family": "engines-render-pipeline",
+  "domain": "motion",
   "name_ar": "مسار تسليم Remotion",
   "name_en": "Remotion delivery path",
   "status": "install",
@@ -9199,6 +9522,7 @@
  },
  {
   "family": "engines-render-pipeline",
+  "domain": "motion",
   "name_ar": "موجز التكوين لـHyperframes",
   "name_en": "Composition brief handoff",
   "status": "install",
@@ -9227,6 +9551,7 @@
  },
  {
   "family": "engines-render-pipeline",
+  "domain": "motion",
   "name_ar": "رندر مسودة ونهائي",
   "name_en": "Draft/high render quality",
   "status": "install",
@@ -9255,6 +9580,7 @@
  },
  {
   "family": "engines-render-pipeline",
+  "domain": "motion",
   "name_ar": "ربط التمرير بالزمن",
   "name_en": "Piecewise scroll->clip time mapping",
   "status": "install",
@@ -9283,6 +9609,7 @@
  },
  {
   "family": "engines-render-pipeline",
+  "domain": "motion",
   "name_ar": "تحميل حسب القرب",
   "name_en": "Proximity-priority clip loading",
   "status": "install",
@@ -9310,6 +9637,7 @@
  },
  {
   "family": "engines-render-pipeline",
+  "domain": "motion",
   "name_ar": "تصيير موزع على لامبدا",
   "name_en": "AWS Lambda distributed render",
   "status": "key",
@@ -9342,6 +9670,7 @@
  },
  {
   "family": "engines-render-pipeline",
+  "domain": "motion",
   "name_ar": "التصيير السحابي",
   "name_en": "Remotion rendering at scale",
   "status": "key",
@@ -9372,6 +9701,7 @@
  },
  {
   "family": "engines-render-pipeline",
+  "domain": "motion",
   "name_ar": "أتمتة أفتر إفكتس",
   "name_en": "After Effects ExtendScript automation",
   "status": "key",
@@ -9400,6 +9730,7 @@
  },
  {
   "family": "engines-render-pipeline",
+  "domain": "motion",
   "name_ar": "مداخل البرمجة لبرامج المونتاج",
   "name_en": "NLE scripting entry points",
   "status": "key",
@@ -9431,6 +9762,7 @@
  },
  {
   "family": "engines-render-pipeline",
+  "domain": "motion",
   "name_ar": "أتمتة بريمير وأفتر إفكتس بالسكربت",
   "name_en": "Premiere/AE scripting automation",
   "status": "key",
@@ -9460,6 +9792,7 @@
  },
  {
   "family": "engines-render-pipeline",
+  "domain": "motion",
   "name_ar": "تشغيل سكربتات DaVinci Resolve",
   "name_en": "Resolve scripting bootstrap",
   "status": "key",
@@ -9490,6 +9823,7 @@
  },
  {
   "family": "engines-render-pipeline",
+  "domain": "motion",
   "name_ar": "مزالق واجهة ريزولف البرمجية",
   "name_en": "Resolve API pitfalls",
   "status": "key",
@@ -9519,6 +9853,7 @@
  },
  {
   "family": "engines-render-pipeline",
+  "domain": "motion",
   "name_ar": "محرر خارجي يقوده وكيل",
   "name_en": "Agent-driven external editor (Cassette)",
   "status": "key",
@@ -9547,6 +9882,7 @@
  },
  {
   "family": "engines-render-pipeline",
+  "domain": "motion",
   "name_ar": "أنريل إنجن عبر MCP",
   "name_en": "Unreal Engine via MCP",
   "status": "key",
@@ -9576,6 +9912,7 @@
  },
  {
   "family": "engines-render-pipeline",
+  "domain": "motion",
   "name_ar": "آليات تصيير سيزيوم دون واجهة",
   "name_en": "Cesium headless render mechanics",
   "status": "key",
@@ -9609,6 +9946,7 @@
  },
  {
   "family": "engines-render-pipeline",
+  "domain": "motion",
   "name_ar": "توجيه المهام للموديلات",
   "name_en": "AI router: task-to-model and effort",
   "status": "key",
@@ -9639,6 +9977,7 @@
  },
  {
   "family": "engines-render-pipeline",
+  "domain": "motion",
   "name_ar": "وكيل الأدوات بخطوات ظاهرة",
   "name_en": "Agent tool runner with live steps",
   "status": "key",
@@ -9670,6 +10009,7 @@
  },
  {
   "family": "engines-render-pipeline",
+  "domain": "motion",
   "name_ar": "تصيير على كلاود رن",
   "name_en": "GCP Cloud Run render",
   "status": "key",
@@ -9700,6 +10040,7 @@
  },
  {
   "family": "engines-render-pipeline",
+  "domain": "motion",
   "name_ar": "تصيير كوبرنيتس",
   "name_en": "Kubernetes jobs render",
   "status": "key",
@@ -9728,6 +10069,7 @@
  },
  {
   "family": "engines-render-pipeline",
+  "domain": "motion",
   "name_ar": "التصيير السحابي",
   "name_en": "Cloud render (HeyGen-hosted)",
   "status": "key",
@@ -9757,6 +10099,7 @@
  },
  {
   "family": "engines-render-pipeline",
+  "domain": "motion",
   "name_ar": "التصيير على Cloud Run",
   "name_en": "Google Cloud Run render",
   "status": "key",
@@ -9787,6 +10130,7 @@
  },
  {
   "family": "engines-render-pipeline",
+  "domain": "motion",
   "name_ar": "تغليف الإضافة لعدة وكلاء",
   "name_en": "Multi-agent plugin packaging",
   "status": "key",
@@ -9818,6 +10162,7 @@
  },
  {
   "family": "engines-render-pipeline",
+  "domain": "motion",
   "name_ar": "الجسر البعيد",
   "name_en": "Site bridge / render client (remote)",
   "status": "key",
@@ -9848,6 +10193,7 @@
  },
  {
   "family": "engines-render-pipeline",
+  "domain": "motion",
   "name_ar": "عميل التصيير الخارجي",
   "name_en": "External Python render client",
   "status": "key",
@@ -9879,6 +10225,7 @@
  },
  {
   "family": "engines-render-pipeline",
+  "domain": "motion",
   "name_ar": "جسر الموقع",
   "name_en": "Site bridge planner",
   "status": "key",
@@ -9909,6 +10256,7 @@
  },
  {
   "family": "engines-render-pipeline",
+  "domain": "motion",
   "name_ar": "تصيير على GitHub",
   "name_en": "GitHub Actions render",
   "status": "key",
@@ -9937,10 +10285,11 @@
  },
  {
   "family": "engines-render-pipeline",
+  "domain": "motion",
   "name_ar": "تكامل: Lottie Creator MCP",
   "name_en": "Integration: Lottie Creator MCP",
   "status": "key",
-  "what": "مهارة/MCP/مكتبة مفهرسة (رابط فقط؛ غير مثبّتة هنا). — Catalogued skill/MCP/library (link only; not installed here).",
+  "what": "تكامل: Lottie Creator MCP: مهارة/MCP/مكتبة مفهرسة (رابط فقط؛ غير مثبّتة هنا). — Integration: Lottie Creator MCP: Catalogued skill/MCP/library (link only; not installed here).",
   "how": "see official setup",
   "params": "",
   "install": "",
@@ -9966,10 +10315,11 @@
  },
  {
   "family": "engines-render-pipeline",
+  "domain": "motion",
   "name_ar": "تكامل: LottieFiles platform MCP",
   "name_en": "Integration: LottieFiles platform MCP",
   "status": "key",
-  "what": "مهارة/MCP/مكتبة مفهرسة (رابط فقط؛ غير مثبّتة هنا). — Catalogued skill/MCP/library (link only; not installed here).",
+  "what": "تكامل: LottieFiles platform MCP: مهارة/MCP/مكتبة مفهرسة (رابط فقط؛ غير مثبّتة هنا). — Integration: LottieFiles platform MCP: Catalogued skill/MCP/library (link only; not installed here).",
   "how": "see official setup",
   "params": "",
   "install": "",
@@ -9994,6 +10344,7 @@
  },
  {
   "family": "engines-render-pipeline",
+  "domain": "motion",
   "name_ar": "حزمة الأطلس لمهارات الفيديو والحركة",
   "name_en": "Atlas skill pack: video/motion pipeline skills",
   "status": "key",
@@ -10025,6 +10376,7 @@
  },
  {
   "family": "engines-render-pipeline",
+  "domain": "motion",
   "name_ar": "خط DaVinci بالسكربت",
   "name_en": "Resolve scripting pipeline CLI",
   "status": "key",
@@ -10055,6 +10407,7 @@
  },
  {
   "family": "engines-render-pipeline",
+  "domain": "motion",
   "name_ar": "خريطة محركات الفيديو بالكود",
   "name_en": "Code-video engine landscape (22 direct tools)",
   "status": "key",
@@ -10089,6 +10442,7 @@
  },
  {
   "family": "engines-render-pipeline",
+  "domain": "motion",
   "name_ar": "مسودة ثم نهائي",
   "name_en": "Previz-then-final tiering",
   "status": "key",
@@ -10117,6 +10471,7 @@
  },
  {
   "family": "engines-render-pipeline",
+  "domain": "motion",
   "name_ar": "ضبابية حركة بإطارات فرعية",
   "name_en": "Sub-frame motion blur",
   "status": "seen",
@@ -10149,6 +10504,7 @@
  },
  {
   "family": "engines-render-pipeline",
+  "domain": "motion",
   "name_ar": "استخدام مكونات المنتج الحقيقية",
   "name_en": "Real component reuse",
   "status": "seen",
@@ -10180,6 +10536,7 @@
  },
  {
   "family": "engines-render-pipeline",
+  "domain": "motion",
   "name_ar": "كرة لامعة مرسومة بالأشعة مع ظل",
   "name_en": "Ray-traced glossy sphere with contact shadow",
   "status": "seen",
@@ -10208,6 +10565,7 @@
  },
  {
   "family": "engines-render-pipeline",
+  "domain": "motion",
   "name_ar": "عرض حتمي بدالة الإطار",
   "name_en": "Deterministic seek(frame) rendering",
   "status": "seen",
@@ -10238,6 +10596,7 @@
  },
  {
   "family": "engines-render-pipeline",
+  "domain": "motion",
   "name_ar": "مواصفة لقطات بأرقام الإطارات",
   "name_en": "Frame-addressed shot spec",
   "status": "seen",
@@ -10267,6 +10626,7 @@
  },
  {
   "family": "engines-render-pipeline",
+  "domain": "motion",
   "name_ar": "محاكاة حتمية كدالة في الزمن",
   "name_en": "Deterministic f(t) simulation",
   "status": "seen",
@@ -10295,6 +10655,7 @@
  },
  {
   "family": "engines-render-pipeline",
+  "domain": "motion",
   "name_ar": "خط إنتاج لفيلم طويل مع صوت وترجمة",
   "name_en": "Long-form render pipeline",
   "status": "seen",
@@ -10326,6 +10687,7 @@
  },
  {
   "family": "engines-render-pipeline",
+  "domain": "motion",
   "name_ar": "قاعدة كل شيء مولّد بالكود",
   "name_en": "Code-only asset rule",
   "status": "seen",
@@ -10355,6 +10717,7 @@
  },
  {
   "family": "engines-render-pipeline",
+  "domain": "motion",
   "name_ar": "اختيار أصغر محرك كافٍ",
   "name_en": "Smallest capable engine choice",
   "status": "documented",
@@ -10387,6 +10750,7 @@
  },
  {
   "family": "engines-render-pipeline",
+  "domain": "motion",
   "name_ar": "قواعد الحتمية للتصيير إطارًا بإطار",
   "name_en": "Seekable-timeline determinism rules",
   "status": "documented",
@@ -10417,6 +10781,7 @@
  },
  {
   "family": "engines-render-pipeline",
+  "domain": "motion",
   "name_ar": "ظهور بإطارات CSS",
   "name_en": "CSS/WAAPI keyframe reveals",
   "status": "documented",
@@ -10445,6 +10810,7 @@
  },
  {
   "family": "engines-render-pipeline",
+  "domain": "motion",
   "name_ar": "خط عرض توضيحي من HTML إلى فيديو",
   "name_en": "Single-prompt demo pipeline (HTML -> TTS -> ffmpeg)",
   "status": "documented",
@@ -10477,6 +10843,7 @@
  },
  {
   "family": "engines-render-pipeline",
+  "domain": "motion",
   "name_ar": "قواعد أداء الحركة في المتصفح",
   "name_en": "Web-motion performance rules for renders",
   "status": "documented",
@@ -10506,6 +10873,7 @@
  },
  {
   "family": "engines-render-pipeline",
+  "domain": "motion",
   "name_ar": "مواصفات تسليم يوتيوب 4K وفحص الجهارة",
   "name_en": "YouTube 4K delivery spec and loudness check",
   "status": "documented",
@@ -10536,6 +10904,7 @@
  },
  {
   "family": "engines-render-pipeline",
+  "domain": "motion",
   "name_ar": "اصطلاح المسارات والعلامات في المونتاج",
   "name_en": "Editing track and marker convention",
   "status": "documented",
@@ -10563,6 +10932,7 @@
  },
  {
   "family": "engines-render-pipeline",
+  "domain": "motion",
   "name_ar": "وصفة ترميز التريلر وحلقة الجيف",
   "name_en": "Trailer encode and GIF loop recipe",
   "status": "documented",
@@ -10593,6 +10963,7 @@
  },
  {
   "family": "engines-render-pipeline",
+  "domain": "motion",
   "name_ar": "خط تحويل مشاهد HTML إلى فيديو",
   "name_en": "HTML scenes to MP4 pipeline",
   "status": "documented",
@@ -10622,6 +10993,7 @@
  },
  {
   "family": "engines-render-pipeline",
+  "domain": "motion",
   "name_ar": "نموذج التركيب بمحور زمني واحد",
   "name_en": "Single time-axis composition model",
   "status": "documented",
@@ -10649,6 +11021,7 @@
  },
  {
   "family": "engines-render-pipeline",
+  "domain": "motion",
   "name_ar": "عرض تقديمي HTML بمسرح ثابت",
   "name_en": "Fixed-stage HTML deck",
   "status": "documented",
@@ -10677,6 +11050,7 @@
  },
  {
   "family": "engines-render-pipeline",
+  "domain": "motion",
   "name_ar": "مصفوفة اختيار البرنامج المنفذ",
   "name_en": "Editor routing matrix",
   "status": "documented",
@@ -10708,6 +11082,7 @@
  },
  {
   "family": "engines-render-pipeline",
+  "domain": "motion",
   "name_ar": "تسلسل مراحل ما بعد الإنتاج",
   "name_en": "Post-production dependency chain",
   "status": "documented",
@@ -10739,6 +11114,7 @@
  },
  {
   "family": "engines-render-pipeline",
+  "domain": "motion",
   "name_ar": "تغيير الحاوية بدون إعادة ترميز",
   "name_en": "Lossless remux / container swap",
   "status": "documented",
@@ -10769,6 +11145,7 @@
  },
  {
   "family": "engines-render-pipeline",
+  "domain": "motion",
   "name_ar": "الترميز بالعتاد مع بديل برمجي",
   "name_en": "Hardware encoder fallback",
   "status": "documented",
@@ -10800,6 +11177,7 @@
  },
  {
   "family": "engines-render-pipeline",
+  "domain": "motion",
   "name_ar": "مسارات مسماة بالأدوار",
   "name_en": "Named role tracks",
   "status": "documented",
@@ -10831,6 +11209,7 @@
  },
  {
   "family": "engines-render-pipeline",
+  "domain": "motion",
   "name_ar": "ترتيب مراحل ما بعد الإنتاج",
   "name_en": "Post pipeline order",
   "status": "documented",
@@ -10860,6 +11239,7 @@
  },
  {
   "family": "engines-render-pipeline",
+  "domain": "motion",
   "name_ar": "وسائط بديلة للأداء",
   "name_en": "Proxy and performance workflow",
   "status": "documented",
@@ -10890,6 +11270,7 @@
  },
  {
   "family": "engines-render-pipeline",
+  "domain": "motion",
   "name_ar": "أخذ عينات حتمي للرندر",
   "name_en": "Deterministic sampling for render",
   "status": "documented",
@@ -10919,6 +11300,7 @@
  },
  {
   "family": "engines-render-pipeline",
+  "domain": "motion",
   "name_ar": "فخاخ ffmpeg الصوتية",
   "name_en": "ffmpeg audio traps",
   "status": "documented",
@@ -10948,6 +11330,7 @@
  },
  {
   "family": "engines-render-pipeline",
+  "domain": "motion",
   "name_ar": "اختيار معمارية الصوت اللحظي",
   "name_en": "Realtime audio architecture choice",
   "status": "documented",
@@ -10976,6 +11359,7 @@
  },
  {
   "family": "engines-render-pipeline",
+  "domain": "motion",
   "name_ar": "زمن حتمي للريندر",
   "name_en": "Deterministic time for offline render",
   "status": "documented",
@@ -11007,6 +11391,7 @@
  },
  {
   "family": "engines-render-pipeline",
+  "domain": "motion",
   "name_ar": "تحميل الخطوط قبل الالتقاط",
   "name_en": "Web font loading for headless render",
   "status": "documented",
@@ -11037,6 +11422,7 @@
  },
  {
   "family": "engines-render-pipeline",
+  "domain": "motion",
   "name_ar": "تحويلات ImageMagick",
   "name_en": "ImageMagick batch conversions",
   "status": "documented",
@@ -11066,6 +11452,7 @@
  },
  {
   "family": "engines-render-pipeline",
+  "domain": "motion",
   "name_ar": "سلم المصيّرات SVG ثم Canvas ثم WebGL",
   "name_en": "Renderer ladder SVG -> Canvas -> WebGL",
   "status": "documented",
@@ -11097,6 +11484,7 @@
  },
  {
   "family": "engines-render-pipeline",
+  "domain": "motion",
   "name_ar": "ساعة حركة مدفوعة بالإطار",
   "name_en": "Frame-driven animation clock",
   "status": "documented",
@@ -11128,6 +11516,7 @@
  },
  {
   "family": "engines-render-pipeline",
+  "domain": "motion",
   "name_ar": "طبقات برمجية فوق اللقطات المولدة",
   "name_en": "Programmatic overlays over AI footage",
   "status": "documented",
@@ -11160,6 +11549,7 @@
  },
  {
   "family": "engines-render-pipeline",
+  "domain": "motion",
   "name_ar": "رفع دقة محلي صادق إلى 4K",
   "name_en": "Honest local upscale to 4K (Lanczos + unsharp)",
   "status": "documented",
@@ -11190,6 +11580,7 @@
  },
  {
   "family": "engines-render-pipeline",
+  "domain": "motion",
   "name_ar": "موجّه المحركات",
   "name_en": "Engine router",
   "status": "documented",
@@ -11221,6 +11612,7 @@
  },
  {
   "family": "engines-render-pipeline",
+  "domain": "motion",
   "name_ar": "مسار KOSIF Motion",
   "name_en": "KOSIF Motion route (target)",
   "status": "documented",
@@ -11252,6 +11644,7 @@
  },
  {
   "family": "engines-render-pipeline",
+  "domain": "motion",
   "name_ar": "إعادة الترميز بإطارات مفتاحية كثيفة",
   "name_en": "Dense-keyframe re-encode for seekable footage",
   "status": "documented",
@@ -11281,6 +11674,7 @@
  },
  {
   "family": "engines-render-pipeline",
+  "domain": "motion",
   "name_ar": "عقد الزمن الحتمي render(t)",
   "name_en": "Deterministic render(t) contract",
   "status": "documented",
@@ -11311,6 +11705,7 @@
  },
  {
   "family": "engines-render-pipeline",
+  "domain": "motion",
   "name_ar": "تقسيم التصيير على أجهزة",
   "name_en": "Render farm shard",
   "status": "documented",
@@ -11340,6 +11735,7 @@
  },
  {
   "family": "engines-render-pipeline",
+  "domain": "motion",
   "name_ar": "تسريع العتاد عبر Edge",
   "name_en": "Edge D3D11 GPU flags",
   "status": "documented",
@@ -11368,6 +11764,7 @@
  },
  {
   "family": "engines-render-pipeline",
+  "domain": "motion",
   "name_ar": "بديل ffprobe في البيئات المغلقة",
   "name_en": "Sandbox ffprobe stand-in",
   "status": "documented",
@@ -11398,6 +11795,7 @@
  },
  {
   "family": "engines-render-pipeline",
+  "domain": "motion",
   "name_ar": "فيديو حتمي قابل للقفز",
   "name_en": "Deterministic seekable video",
   "status": "documented",
@@ -11426,6 +11824,7 @@
  },
  {
   "family": "engines-render-pipeline",
+  "domain": "motion",
   "name_ar": "جدول أزمنة التصيير",
   "name_en": "Render farm timing table",
   "status": "documented",
@@ -11453,6 +11852,7 @@
  },
  {
   "family": "engines-render-pipeline",
+  "domain": "motion",
   "name_ar": "ترند: Program is the film: seek(t) route A",
   "name_en": "Trend: Program is the film: seek(t) route A",
   "status": "documented",
@@ -11482,6 +11882,7 @@
  },
  {
   "family": "engines-render-pipeline",
+  "domain": "motion",
   "name_ar": "ترند: Closed-form springs for UI morphs",
   "name_en": "Trend: Closed-form springs for UI morphs",
   "status": "documented",
@@ -11509,6 +11910,7 @@
  },
  {
   "family": "engines-render-pipeline",
+  "domain": "motion",
   "name_ar": "ترند: 4 sub-frame motion blur",
   "name_en": "Trend: 4 sub-frame motion blur",
   "status": "documented",
@@ -11535,6 +11937,7 @@
  },
  {
   "family": "engines-render-pipeline",
+  "domain": "motion",
   "name_ar": "ترند: One clock picture+sound",
   "name_en": "Trend: One clock picture+sound",
   "status": "documented",
@@ -11562,6 +11965,7 @@
  },
  {
   "family": "engines-render-pipeline",
+  "domain": "motion",
   "name_ar": "ترند: Self-critique on frames",
   "name_en": "Trend: Self-critique on frames",
   "status": "documented",
@@ -11589,6 +11993,7 @@
  },
  {
   "family": "engines-render-pipeline",
+  "domain": "motion",
   "name_ar": "ترند: Effort xhigh/max",
   "name_en": "Trend: Effort xhigh/max",
   "status": "documented",
@@ -11616,6 +12021,7 @@
  },
  {
   "family": "engines-render-pipeline",
+  "domain": "motion",
   "name_ar": "ترند: Generate-then-trace",
   "name_en": "Trend: Generate-then-trace",
   "status": "documented",
@@ -11643,6 +12049,7 @@
  },
  {
   "family": "engines-render-pipeline",
+  "domain": "motion",
   "name_ar": "ترند: Listen with math (@kloss_xyz)",
   "name_en": "Trend: Listen with math (@kloss_xyz)",
   "status": "documented",
@@ -11672,6 +12079,7 @@
  },
  {
   "family": "engines-render-pipeline",
+  "domain": "motion",
   "name_ar": "ترند: Measure real motion (@aicreataro)",
   "name_en": "Trend: Measure real motion (@aicreataro)",
   "status": "documented",
@@ -11701,6 +12109,7 @@
  },
  {
   "family": "engines-render-pipeline",
+  "domain": "motion",
   "name_ar": "ترند: Arabic kinetic type gap",
   "name_en": "Trend: Arabic kinetic type gap",
   "status": "documented",
@@ -11728,6 +12137,7 @@
  },
  {
   "family": "engines-render-pipeline",
+  "domain": "motion",
   "name_ar": "تايملاين JSON إلى فيلم",
   "name_en": "JSON timeline → film renderer",
   "status": "documented",
@@ -11757,6 +12167,7 @@
  },
  {
   "family": "engines-render-pipeline",
+  "domain": "motion",
   "name_ar": "مشروع أنيميشن جديد",
   "name_en": "New animation project (2D / 3D / lab)",
   "status": "documented",
@@ -11786,6 +12197,7 @@
  },
  {
   "family": "engines-render-pipeline",
+  "domain": "motion",
   "name_ar": "مسودة سريعة",
   "name_en": "Fast draft render",
   "status": "documented",
@@ -11815,6 +12227,7 @@
  },
  {
   "family": "engines-render-pipeline",
+  "domain": "motion",
   "name_ar": "تصيير الفيلم بمتصفحات متوازية",
   "name_en": "Parallel browser film render",
   "status": "documented",
@@ -11845,6 +12258,7 @@
  },
  {
   "family": "engines-render-pipeline",
+  "domain": "motion",
   "name_ar": "المراجعة: وضع التركيبة الحية",
   "name_en": "Review: live composition mode",
   "status": "documented",
@@ -11873,6 +12287,7 @@
  },
  {
   "family": "engines-render-pipeline",
+  "domain": "motion",
   "name_ar": "المراجعة: تصدير MP4 بالتعديلات",
   "name_en": "Review: export MP4 with edits baked in",
   "status": "documented",
@@ -11901,6 +12316,7 @@
  },
  {
   "family": "engines-render-pipeline",
+  "domain": "motion",
   "name_ar": "مواصفة خط زمني للمونتاج",
   "name_en": "Montage timeline spec (JSON)",
   "status": "documented",
@@ -11932,6 +12348,7 @@
  },
  {
   "family": "engines-render-pipeline",
+  "domain": "motion",
   "name_ar": "خريطة أدوات الفيديو",
   "name_en": "Video-tool landscape (500 tools / 33 integrations)",
   "status": "documented",
@@ -11964,6 +12381,7 @@
  },
  {
   "family": "engines-render-pipeline",
+  "domain": "motion",
   "name_ar": "إعدادات التصدير",
   "name_en": "Export presets",
   "status": "documented",
@@ -11991,6 +12409,7 @@
  },
  {
   "family": "engines-render-pipeline",
+  "domain": "motion",
   "name_ar": "خط زمني أصلي ونسخة عمل",
   "name_en": "Protected A / working B timelines",
   "status": "documented",
@@ -12019,6 +12438,7 @@
  },
  {
   "family": "engines-render-pipeline",
+  "domain": "motion",
   "name_ar": "عقد HyperFrames",
   "name_en": "HyperFrames composition contract (motion)",
   "status": "documented",
@@ -12050,6 +12470,7 @@
  },
  {
   "family": "engines-render-pipeline",
+  "domain": "motion",
   "name_ar": "سكربتات Python/Bash/PowerShell وأدوات CL",
   "name_en": "Automation Scripts & CLI Tools",
   "status": "documented",
@@ -12077,6 +12498,7 @@
  },
  {
   "family": "engines-render-pipeline",
+  "domain": "motion",
   "name_ar": "تشغيل المتصفح برمجياً للاختبار والجمع وا",
   "name_en": "Browser Automation (Playwright)",
   "status": "documented",
@@ -12106,6 +12528,7 @@
  },
  {
   "family": "engines-render-pipeline",
+  "domain": "motion",
   "name_ar": "حاوية ونشر مستمر لأي مشروع",
   "name_en": "Docker & CI/CD",
   "status": "documented",
@@ -12135,6 +12558,7 @@
  },
  {
   "family": "engines-render-pipeline",
+  "domain": "motion",
   "name_ar": "ألعاب متصفح كاملة",
   "name_en": "Web Game Development",
   "status": "documented",
@@ -12164,6 +12588,7 @@
  },
  {
   "family": "engines-render-pipeline",
+  "domain": "motion",
   "name_ar": "تسريع المواقع والتطبيقات والاستعلامات با",
   "name_en": "Performance Optimization",
   "status": "documented",
@@ -12191,6 +12616,7 @@
  },
  {
   "family": "engines-render-pipeline",
+  "domain": "motion",
   "name_ar": "كود Python إنتاجي",
   "name_en": "Python Pro",
   "status": "documented",
@@ -12219,6 +12645,7 @@
  },
  {
   "family": "engines-render-pipeline",
+  "domain": "motion",
   "name_ar": "كود TypeScript صارم لـ Node وBun وDeno",
   "name_en": "TypeScript & Node Pro",
   "status": "documented",
@@ -12246,6 +12673,7 @@
  },
  {
   "family": "engines-render-pipeline",
+  "domain": "motion",
   "name_ar": "ترميز NVENC",
   "name_en": "NVENC encode flags (vendored)",
   "status": "documented",
@@ -12276,6 +12704,7 @@
  },
  {
   "family": "engines-render-pipeline",
+  "domain": "motion",
   "name_ar": "قواعد قابلية القفز",
   "name_en": "Seekability rules",
   "status": "documented",
@@ -12308,6 +12737,7 @@
  },
  {
   "family": "engines-render-pipeline",
+  "domain": "motion",
   "name_ar": "سياسة تشغيل المتصفح: GPU أو برمجي",
   "name_en": "GPU vs software WebGL launch policy",
   "status": "documented",
@@ -12341,6 +12771,7 @@
  },
  {
   "family": "engines-render-pipeline",
+  "domain": "motion",
   "name_ar": "تكبير دقة الإخراج",
   "name_en": "Supersampled output (--scale)",
   "status": "documented",
@@ -12367,6 +12798,7 @@
  },
  {
   "family": "engines-render-pipeline",
+  "domain": "motion",
   "name_ar": "خيار التقنية: three",
   "name_en": "Stack option: three",
   "status": "documented",
@@ -12397,6 +12829,7 @@
  },
  {
   "family": "engines-render-pipeline",
+  "domain": "motion",
   "name_ar": "المعاينة قبل الرندر",
   "name_en": "Preview-before-render gate",
   "status": "documented",
@@ -12425,6 +12858,7 @@
  },
  {
   "family": "engines-render-pipeline",
+  "domain": "motion",
   "name_ar": "لا تسجيل شاشة للتسليم",
   "name_en": "No screen recording for delivery",
   "status": "documented",
@@ -12451,6 +12885,7 @@
  },
  {
   "family": "engines-render-pipeline",
+  "domain": "motion",
   "name_ar": "قواعد الرندر الحتمي",
   "name_en": "Render determinism checklist",
   "status": "documented",
@@ -12479,6 +12914,7 @@
  },
  {
   "family": "engines-render-pipeline",
+  "domain": "motion",
   "name_ar": "مسارات المتصفح في الجهاز السحابي",
   "name_en": "Cloud machine browser paths",
   "status": "documented",
@@ -12509,6 +12945,7 @@
  },
  {
   "family": "engines-render-pipeline",
+  "domain": "motion",
   "name_ar": "التسليم القياسي بست خطوات",
   "name_en": "Standard 6-step delivery",
   "status": "documented",
@@ -12536,6 +12973,7 @@
  },
  {
   "family": "engines-render-pipeline",
+  "domain": "motion",
   "name_ar": "ترميز يدوي من الإطارات",
   "name_en": "Manual ffmpeg encode from frames",
   "status": "documented",
@@ -12565,6 +13003,7 @@
  },
  {
   "family": "engines-render-pipeline",
+  "domain": "motion",
   "name_ar": "وضع brag-slim",
   "name_en": "brag-slim single-file mode",
   "status": "documented",
@@ -12593,6 +13032,7 @@
  },
  {
   "family": "engines-render-pipeline",
+  "domain": "motion",
   "name_ar": "ترميز مناسب للسحب",
   "name_en": "Scrub-friendly encode",
   "status": "documented",
@@ -12623,6 +13063,7 @@
  },
  {
   "family": "engines-render-pipeline",
+  "domain": "motion",
   "name_ar": "عرض حتمي إطار بإطار",
   "name_en": "Deterministic render(t) capture",
   "status": "idea",
@@ -12656,6 +13097,7 @@
  {
   "id": "ENG-P01",
   "family": "engines-render-pipeline",
+  "domain": "motion",
   "name_ar": "مخطط المشهد المصغّر CineGraph: JSON إلى MP4 بأنبوب مباشر",
   "name_en": "CineGraph mini scene graph: JSON → Pillow frames → ffmpeg rawvideo pipe",
   "status": "documented",

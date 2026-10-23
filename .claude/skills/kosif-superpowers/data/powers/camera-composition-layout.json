@@ -1,6 +1,7 @@
 [
  {
   "family": "camera-composition-layout",
+  "domain": "motion",
   "name_ar": "مسار تكبير لوغاريتمي",
   "name_en": "Log-space zoom track",
   "status": "proven",
@@ -28,6 +29,7 @@
  },
  {
   "family": "camera-composition-layout",
+  "domain": "motion",
   "name_ar": "هيكل مساحة عمل بثلاثة أعمدة",
   "name_en": "Three-column RTL workspace shell",
   "status": "proven",
@@ -56,6 +58,7 @@
  },
  {
   "family": "camera-composition-layout",
+  "domain": "motion",
   "name_ar": "تخطيط بخصائص منطقية للاتجاه",
   "name_en": "RTL logical-property layout",
   "status": "proven",
@@ -83,6 +86,7 @@
  },
  {
   "family": "camera-composition-layout",
+  "domain": "motion",
   "name_ar": "تخطيط حسب المقاس",
   "name_en": "Aspect-specific kinetic layout",
   "status": "proven",
@@ -110,6 +114,7 @@
  },
  {
   "family": "camera-composition-layout",
+  "domain": "motion",
   "name_ar": "تدرج أحجام اللقطات",
   "name_en": "Stickman shot-size progression",
   "status": "proven",
@@ -138,6 +143,7 @@
  },
  {
   "family": "camera-composition-layout",
+  "domain": "motion",
   "name_ar": "تغطية بعدستين 35/85",
   "name_en": "Two-lens emotional coverage (35/85 mm)",
   "status": "proven",
@@ -165,6 +171,7 @@
  },
  {
   "family": "camera-composition-layout",
+  "domain": "motion",
   "name_ar": "كاميرا طعام ثابتة 45°",
   "name_en": "Locked 45° food macro camera",
   "status": "proven",
@@ -191,6 +198,7 @@
  },
  {
   "family": "camera-composition-layout",
+  "domain": "motion",
   "name_ar": "مفاتيح الكاميرا",
   "name_en": "Camera keys (smoothstep)",
   "status": "proven",
@@ -217,6 +225,7 @@
  },
  {
   "family": "camera-composition-layout",
+  "domain": "motion",
   "name_ar": "بارالاكس متعدد الطبقات مع اقتراب",
   "name_en": "Multi-plane SVG parallax with push-in",
   "status": "proven",
@@ -243,6 +252,7 @@
  },
  {
   "family": "camera-composition-layout",
+  "domain": "motion",
   "name_ar": "وضع النص بعيداً عن الوجه ضمن الحدود الآمنة",
   "name_en": "Safe-area and face-aware text placement",
   "status": "proven",
@@ -271,6 +281,7 @@
  },
  {
   "family": "camera-composition-layout",
+  "domain": "motion",
   "name_ar": "مفردات حركة الكاميرا",
   "name_en": "Camera-move vocabulary + one-move rule",
   "status": "proven",
@@ -298,6 +309,7 @@
  },
  {
   "family": "camera-composition-layout",
+  "domain": "motion",
   "name_ar": "ترتيب النص الآمن حول الوجه",
   "name_en": "Text-safe layout stack",
   "status": "proven",
@@ -325,6 +337,7 @@
  },
  {
   "family": "camera-composition-layout",
+  "domain": "motion",
   "name_ar": "كاميرا ثنائية الأبعاد بمفاتيح",
   "name_en": "Keyframed 2D camera (cameraAt/applyCamera)",
   "status": "proven",
@@ -352,6 +365,7 @@
  },
  {
   "family": "camera-composition-layout",
+  "domain": "motion",
   "name_ar": "ثبات حي",
   "name_en": "Living hold (breathe)",
   "status": "ready",
@@ -380,6 +394,7 @@
  },
  {
   "family": "camera-composition-layout",
+  "domain": "motion",
   "name_ar": "اختلاف المنظر",
   "name_en": "Layer parallax",
   "status": "ready",
@@ -409,6 +424,7 @@
  },
  {
   "family": "camera-composition-layout",
+  "domain": "motion",
   "name_ar": "نقل البؤرة",
   "name_en": "Rack focus without animated blur",
   "status": "ready",
@@ -437,6 +453,7 @@
  },
  {
   "family": "camera-composition-layout",
+  "domain": "motion",
   "name_ar": "اهتزاز الكاميرا",
   "name_en": "Camera shake / hit",
   "status": "ready",
@@ -465,6 +482,7 @@
  },
  {
   "family": "camera-composition-layout",
+  "domain": "motion",
   "name_ar": "مسار كاميرا منحني",
   "name_en": "Centripetal Catmull-Rom camera path",
   "status": "ready",
@@ -493,6 +511,7 @@
  },
  {
   "family": "camera-composition-layout",
+  "domain": "motion",
   "name_ar": "دوللي زووم",
   "name_en": "Dolly zoom (Vertigo)",
   "status": "ready",
@@ -520,6 +539,7 @@
  },
  {
   "family": "camera-composition-layout",
+  "domain": "motion",
   "name_ar": "دوران الكاميرا مع توقفات",
   "name_en": "Orbit walk with stops",
   "status": "ready",
@@ -547,6 +567,7 @@
  },
  {
   "family": "camera-composition-layout",
+  "domain": "motion",
   "name_ar": "كشف العناصر عند دخولها الإطار",
   "name_en": "Scroll reveal via IntersectionObserver",
   "status": "ready",
@@ -575,6 +596,7 @@
  },
  {
   "family": "camera-composition-layout",
+  "domain": "motion",
   "name_ar": "حركة كين بيرنز على لقطات الموقع",
   "name_en": "Ken Burns on captured screenshots",
   "status": "ready",
@@ -605,6 +627,7 @@
  },
  {
   "family": "camera-composition-layout",
+  "domain": "motion",
   "name_ar": "تقريب الكاميرا عبر viewBox",
   "name_en": "SVG viewBox camera zoom (drill-down)",
   "status": "ready",
@@ -633,6 +656,7 @@
  },
  {
   "family": "camera-composition-layout",
+  "domain": "motion",
   "name_ar": "كاميرا بارالاكس بالمؤشر واللمس والتمرير",
   "name_en": "Pointer / touch / scroll parallax camera",
   "status": "ready",
@@ -660,6 +684,7 @@
  },
  {
   "family": "camera-composition-layout",
+  "domain": "motion",
   "name_ar": "أغطية تدرّج لقراءة النص فوق الفيديو",
   "name_en": "Legibility veils over footage",
   "status": "ready",
@@ -688,6 +713,7 @@
  },
  {
   "family": "camera-composition-layout",
+  "domain": "motion",
   "name_ar": "تلاشي الصورة داخل البطاقة بالقناع",
   "name_en": "Masked art fade on cards",
   "status": "ready",
@@ -716,6 +742,7 @@
  },
  {
   "family": "camera-composition-layout",
+  "domain": "motion",
   "name_ar": "كاميرا مقيدة بدفع بصري",
   "name_en": "Locked restrained camera",
   "status": "ready",
@@ -744,6 +771,7 @@
  },
  {
   "family": "camera-composition-layout",
+  "domain": "motion",
   "name_ar": "تخطيط آمن للهاتف",
   "name_en": "Phone-safe vertical layout",
   "status": "ready",
@@ -771,6 +799,7 @@
  },
  {
   "family": "camera-composition-layout",
+  "domain": "motion",
   "name_ar": "تخطيطات الفيديو والبطاقة الأربعة",
   "name_en": "Recut layouts: split / stack / pip / overlay",
   "status": "ready",
@@ -799,6 +828,7 @@
  },
  {
   "family": "camera-composition-layout",
+  "domain": "motion",
   "name_ar": "إطارات الفيديو الزخرفية",
   "name_en": "Recut video frames: clean / hairline / polaroid",
   "status": "ready",
@@ -827,6 +857,7 @@
  },
  {
   "family": "camera-composition-layout",
+  "domain": "motion",
   "name_ar": "حركة الكاميرا للمسرح",
   "name_en": "Stage camera move (camera)",
   "status": "ready",
@@ -853,6 +884,7 @@
  },
  {
   "family": "camera-composition-layout",
+  "domain": "motion",
   "name_ar": "دفع الكاميرا",
   "name_en": "Log-space camera push (push)",
   "status": "ready",
@@ -880,6 +912,7 @@
  },
  {
   "family": "camera-composition-layout",
+  "domain": "motion",
   "name_ar": "تحويل البؤرة",
   "name_en": "Rack focus by crossfade",
   "status": "ready",
@@ -906,6 +939,7 @@
  },
  {
   "family": "camera-composition-layout",
+  "domain": "motion",
   "name_ar": "عمق الميدان",
   "name_en": "Bokeh depth of field",
   "status": "ready",
@@ -933,6 +967,7 @@
  },
  {
   "family": "camera-composition-layout",
+  "domain": "motion",
   "name_ar": "لغة اللقطات",
   "name_en": "Shot language cameras (20 kinds)",
   "status": "ready",
@@ -961,6 +996,7 @@
  },
  {
   "family": "camera-composition-layout",
+  "domain": "motion",
   "name_ar": "كاميرا محمولة",
   "name_en": "Handheld camera noise",
   "status": "ready",
@@ -987,6 +1023,7 @@
  },
  {
   "family": "camera-composition-layout",
+  "domain": "motion",
   "name_ar": "كاميرا تدور وتتوقف",
   "name_en": "Orbit walk camera with stops",
   "status": "ready",
@@ -1013,6 +1050,7 @@
  },
  {
   "family": "camera-composition-layout",
+  "domain": "motion",
   "name_ar": "زووم كين بيرنز",
   "name_en": "Ken Burns zoom",
   "status": "ready",
@@ -1039,6 +1077,7 @@
  },
  {
   "family": "camera-composition-layout",
+  "domain": "motion",
   "name_ar": "ملاءمة الإطار",
   "name_en": "Fit modes cover/contain/blur",
   "status": "ready",
@@ -1066,6 +1105,7 @@
  },
  {
   "family": "camera-composition-layout",
+  "domain": "motion",
   "name_ar": "إعادة تأطير ذكية",
   "name_en": "Smart reframe",
   "status": "ready",
@@ -1095,6 +1135,7 @@
  },
  {
   "family": "camera-composition-layout",
+  "domain": "motion",
   "name_ar": "مفردات حركة الكاميرا",
   "name_en": "Camera move vocabulary (2D and 3D)",
   "status": "ready",
@@ -1122,6 +1163,7 @@
  },
  {
   "family": "camera-composition-layout",
+  "domain": "motion",
   "name_ar": "ملاءمة اللقطة: ملء أو احتواء",
   "name_en": "Clip fit: cover vs contain",
   "status": "ready",
@@ -1149,6 +1191,7 @@
  },
  {
   "family": "camera-composition-layout",
+  "domain": "motion",
   "name_ar": "كاميرا بارالاكس متعددة الطبقات",
   "name_en": "Multi-plane parallax camera with slow push",
   "status": "ready",
@@ -1176,6 +1219,7 @@
  },
  {
   "family": "camera-composition-layout",
+  "domain": "motion",
   "name_ar": "إطار سينمائي: أشرطة ونقش وبطاقات",
   "name_en": "Cinematic frame: letterbox bars, vignette and minimalist cards",
   "status": "ready",
@@ -1203,6 +1247,7 @@
  },
  {
   "family": "camera-composition-layout",
+  "domain": "motion",
   "name_ar": "فحص التكوين",
   "name_en": "Composition check: saliency centroid, thirds, symmetry",
   "status": "ready",
@@ -1232,6 +1277,7 @@
  },
  {
   "family": "camera-composition-layout",
+  "domain": "motion",
   "name_ar": "التعريض المكافئ",
   "name_en": "Equivalent exposure",
   "status": "ready",
@@ -1261,6 +1307,7 @@
  },
  {
   "family": "camera-composition-layout",
+  "domain": "motion",
   "name_ar": "زاوية الغالق إلى سرعة الغالق",
   "name_en": "Shutter angle → shutter speed (motion blur)",
   "status": "ready",
@@ -1290,6 +1337,7 @@
  },
  {
   "family": "camera-composition-layout",
+  "domain": "motion",
   "name_ar": "كاميرا المسرح الواحدة",
   "name_en": "Single 2D stage camera",
   "status": "ready",
@@ -1318,6 +1366,7 @@
  },
  {
   "family": "camera-composition-layout",
+  "domain": "motion",
   "name_ar": "دفع الكاميرا للداخل",
   "name_en": "Log-space camera push",
   "status": "ready",
@@ -1346,6 +1395,7 @@
  },
  {
   "family": "camera-composition-layout",
+  "domain": "motion",
   "name_ar": "تمويه السرعة الاتجاهي",
   "name_en": "Directional speed blur",
   "status": "ready",
@@ -1373,6 +1423,7 @@
  },
  {
   "family": "camera-composition-layout",
+  "domain": "motion",
   "name_ar": "مفاتيح كاميرا ناعمة",
   "name_en": "Smooth camera keys (3D)",
   "status": "ready",
@@ -1399,6 +1450,7 @@
  },
  {
   "family": "camera-composition-layout",
+  "domain": "motion",
   "name_ar": "مفردات اللقطات ككاميرات",
   "name_en": "Shot vocabulary as deterministic 3D cameras",
   "status": "ready",
@@ -1430,6 +1482,7 @@
  },
  {
   "family": "camera-composition-layout",
+  "domain": "motion",
   "name_ar": "تمويه البؤرة والحركة",
   "name_en": "Lens defocus and motion blur ops",
   "status": "ready",
@@ -1458,6 +1511,7 @@
  },
  {
   "family": "camera-composition-layout",
+  "domain": "motion",
   "name_ar": "ترتيب طبقات الكاميرا",
   "name_en": "Camera stack order",
   "status": "ready",
@@ -1487,6 +1541,7 @@
  },
  {
   "family": "camera-composition-layout",
+  "domain": "motion",
   "name_ar": "أشرطة السينما 16:9",
   "name_en": "Cinema letterbox 16:9",
   "status": "ready",
@@ -1515,6 +1570,7 @@
  },
  {
   "family": "camera-composition-layout",
+  "domain": "motion",
   "name_ar": "العمق الجوي وضباب الوادي",
   "name_en": "Atmospheric depth veil and valley fog",
   "status": "ready",
@@ -1544,6 +1600,7 @@
  },
  {
   "family": "camera-composition-layout",
+  "domain": "motion",
   "name_ar": "ضربة تكبير على النبضة",
   "name_en": "Zoom punch on downbeats",
   "status": "ready",
@@ -1573,6 +1630,7 @@
  },
  {
   "family": "camera-composition-layout",
+  "domain": "motion",
   "name_ar": "إعادة التأطير الذكي",
   "name_en": "Smart reframe (face / motion / blur pad)",
   "status": "ready",
@@ -1604,6 +1662,7 @@
  },
  {
   "family": "camera-composition-layout",
+  "domain": "motion",
   "name_ar": "طبقات عمق بتتبع المؤشر",
   "name_en": "Mouse-parallax depth layers",
   "status": "install",
@@ -1633,6 +1692,7 @@
  },
  {
   "family": "camera-composition-layout",
+  "domain": "motion",
   "name_ar": "بارالاكس مرتبط بالتمرير ومشاهد مثبتة",
   "name_en": "Scroll-scrubbed parallax and pinned acts",
   "status": "install",
@@ -1664,6 +1724,7 @@
  },
  {
   "family": "camera-composition-layout",
+  "domain": "motion",
   "name_ar": "رصّ البطاقات المثبتة أثناء التمرير",
   "name_en": "Sticky scroll-stack of cards",
   "status": "install",
@@ -1693,6 +1754,7 @@
  },
  {
   "family": "camera-composition-layout",
+  "domain": "motion",
   "name_ar": "قصة تمرير بصورة مثبتة",
   "name_en": "Sticky-graphic scroll story",
   "status": "install",
@@ -1722,6 +1784,7 @@
  },
  {
   "family": "camera-composition-layout",
+  "domain": "motion",
   "name_ar": "كشف بطاقات بميلان ثلاثي",
   "name_en": "Card batch reveal with 3D tilt-up",
   "status": "install",
@@ -1751,14 +1814,17 @@
  },
  {
   "family": "camera-composition-layout",
+  "domain": "motion",
   "name_ar": "عمق الميدان / بوكيه",
   "name_en": "Depth of field (TSL dof)",
   "status": "install",
   "what": "سحب بؤرة وتمويه بوكيه من عمق المشهد. — Focus pull and bokeh blur from view depth.",
   "how": "dof(colorNode, viewZNode, focusDistance, focalLength, bokehScale); animate focusDistance for rack focus.",
   "params": "e.g. 5.0, 25.0, 1.0; API reimplemented in r181 (old options object broken)",
-  "install": "see arsenal-libraries.md",
-  "requires": [],
+  "install": "npm i three@0.186.1  (MIT; version from arsenal-libraries.md)",
+  "requires": [
+   "npm:three"
+  ],
   "license": "MIT",
   "proof": [
    "kosif-atlas/skills/2221-webgpu-threejs-tsl/8405-webgpu-threejs-tsl/docs/post-processing.md"
@@ -1778,6 +1844,7 @@
  },
  {
   "family": "camera-composition-layout",
+  "domain": "motion",
   "name_ar": "معرض WebGL مدفوع بالزمن",
   "name_en": "Scroll/time-driven WebGL gallery",
   "status": "install",
@@ -1808,6 +1875,7 @@
  },
  {
   "family": "camera-composition-layout",
+  "domain": "motion",
   "name_ar": "حالات كاميرا مسماة",
   "name_en": "Named camera states",
   "status": "install",
@@ -1837,6 +1905,7 @@
  },
  {
   "family": "camera-composition-layout",
+  "domain": "motion",
   "name_ar": "نص يتفادى العناصر",
   "name_en": "Obstacle-aware type layout",
   "status": "install",
@@ -1866,6 +1935,7 @@
  },
  {
   "family": "camera-composition-layout",
+  "domain": "motion",
   "name_ar": "تصميم حركة الكاميرا مع المسار",
   "name_en": "Route camera choreography",
   "status": "install",
@@ -1896,6 +1966,7 @@
  },
  {
   "family": "camera-composition-layout",
+  "domain": "motion",
   "name_ar": "أنماط الزووم",
   "name_en": "Zoom modes (punch, Ken Burns, drift, pulse)",
   "status": "install",
@@ -1924,6 +1995,7 @@
  },
  {
   "family": "camera-composition-layout",
+  "domain": "motion",
   "name_ar": "حركات الكاميرا السينمائية",
   "name_en": "Cinematic camera moves (19)",
   "status": "install",
@@ -1952,6 +2024,7 @@
  },
  {
   "family": "camera-composition-layout",
+  "domain": "motion",
   "name_ar": "قاعدة تغطية الدوران",
   "name_en": "Rotation coverage rule",
   "status": "install",
@@ -1982,6 +2055,7 @@
  },
  {
   "family": "camera-composition-layout",
+  "domain": "motion",
   "name_ar": "تخطيط الكاميرا حسب المود",
   "name_en": "Mood-based camera planner",
   "status": "install",
@@ -2010,6 +2084,7 @@
  },
  {
   "family": "camera-composition-layout",
+  "domain": "motion",
   "name_ar": "عرض الفيديو كامل بخلفية ضبابية",
   "name_en": "Fit vs cover framing with blurred fill",
   "status": "install",
@@ -2038,6 +2113,7 @@
  },
  {
   "family": "camera-composition-layout",
+  "domain": "motion",
   "name_ar": "شرايط السينما",
   "name_en": "Cinema letterbox bars",
   "status": "install",
@@ -2065,6 +2141,7 @@
  },
  {
   "family": "camera-composition-layout",
+  "domain": "motion",
   "name_ar": "نافذة صغيرة فوق الفيديو",
   "name_en": "Picture-in-picture inserts",
   "status": "install",
@@ -2092,6 +2169,7 @@
  },
  {
   "family": "camera-composition-layout",
+  "domain": "motion",
   "name_ar": "نقل لغة كاميرا المرجع",
   "name_en": "Reference camera language transfer",
   "status": "install",
@@ -2119,6 +2197,7 @@
  },
  {
   "family": "camera-composition-layout",
+  "domain": "motion",
   "name_ar": "اهتزاز الكاميرا",
   "name_en": "Camera Shake",
   "status": "install",
@@ -2151,6 +2230,7 @@
  },
  {
   "family": "camera-composition-layout",
+  "domain": "motion",
   "name_ar": "تكبير يتبع النقرات",
   "name_en": "Zoom Follow Cursor",
   "status": "install",
@@ -2183,6 +2263,7 @@
  },
  {
   "family": "camera-composition-layout",
+  "domain": "motion",
   "name_ar": "ثبات حي",
   "name_en": "Drift Hold",
   "status": "install",
@@ -2216,6 +2297,7 @@
  },
  {
   "family": "camera-composition-layout",
+  "domain": "motion",
   "name_ar": "نقل التركيز",
   "name_en": "Focus Rack",
   "status": "install",
@@ -2248,6 +2330,7 @@
  },
  {
   "family": "camera-composition-layout",
+  "domain": "motion",
   "name_ar": "بانوراما المحطات",
   "name_en": "Pan Stations",
   "status": "install",
@@ -2280,6 +2363,7 @@
  },
  {
   "family": "camera-composition-layout",
+  "domain": "motion",
   "name_ar": "الغوص في الجهاز",
   "name_en": "Parallax Device Dive",
   "status": "install",
@@ -2311,6 +2395,7 @@
  },
  {
   "family": "camera-composition-layout",
+  "domain": "motion",
   "name_ar": "تصغير بارالاكس",
   "name_en": "Parallax Unzoom",
   "status": "install",
@@ -2342,6 +2427,7 @@
  },
  {
   "family": "camera-composition-layout",
+  "domain": "motion",
   "name_ar": "تكبير بارالاكس",
   "name_en": "Parallax Zoom",
   "status": "install",
@@ -2374,6 +2460,7 @@
  },
  {
   "family": "camera-composition-layout",
+  "domain": "motion",
   "name_ar": "كشف بالتراجع",
   "name_en": "Pull Back Reveal",
   "status": "install",
@@ -2406,6 +2493,7 @@
  },
  {
   "family": "camera-composition-layout",
+  "domain": "motion",
   "name_ar": "دفع الكاميرا",
   "name_en": "Push In",
   "status": "install",
@@ -2437,6 +2525,7 @@
  },
  {
   "family": "camera-composition-layout",
+  "domain": "motion",
   "name_ar": "قصة التمرير",
   "name_en": "Scroll Camera Story",
   "status": "install",
@@ -2468,6 +2557,7 @@
  },
  {
   "family": "camera-composition-layout",
+  "domain": "motion",
   "name_ar": "تكبير على الواجهة",
   "name_en": "UI Focus Zoom",
   "status": "install",
@@ -2499,6 +2589,7 @@
  },
  {
   "family": "camera-composition-layout",
+  "domain": "motion",
   "name_ar": "حركات كاميرا يوتيوب",
   "name_en": "Camera Punch-In",
   "status": "install",
@@ -2530,6 +2621,7 @@
  },
  {
   "family": "camera-composition-layout",
+  "domain": "motion",
   "name_ar": "دوللي زووم (فيرتيغو)",
   "name_en": "Dolly Zoom (Vertigo Shot)",
   "status": "install",
@@ -2561,6 +2653,7 @@
  },
  {
   "family": "camera-composition-layout",
+  "domain": "motion",
   "name_ar": "نقل البؤرة بالبوكيه",
   "name_en": "Rack Focus",
   "status": "install",
@@ -2593,6 +2686,7 @@
  },
  {
   "family": "camera-composition-layout",
+  "domain": "motion",
   "name_ar": "دوار دائري",
   "name_en": "Carousel circle (styles 1-5)",
   "status": "install",
@@ -2624,6 +2718,7 @@
  },
  {
   "family": "camera-composition-layout",
+  "domain": "motion",
   "name_ar": "دوار كروي",
   "name_en": "Carousel orbit (styles 1-5)",
   "status": "install",
@@ -2655,6 +2750,7 @@
  },
  {
   "family": "camera-composition-layout",
+  "domain": "motion",
   "name_ar": "دوار على مسار",
   "name_en": "Carousel path (styles 1-5)",
   "status": "install",
@@ -2686,6 +2782,7 @@
  },
  {
   "family": "camera-composition-layout",
+  "domain": "motion",
   "name_ar": "عنوان مع دوار دائري",
   "name_en": "Carousel text-circle (styles 1-5)",
   "status": "install",
@@ -2717,6 +2814,7 @@
  },
  {
   "family": "camera-composition-layout",
+  "domain": "motion",
   "name_ar": "دوار الرؤية",
   "name_en": "Carousel vision (styles 1-5)",
   "status": "install",
@@ -2748,6 +2846,7 @@
  },
  {
   "family": "camera-composition-layout",
+  "domain": "motion",
   "name_ar": "الشبكة السويسرية",
   "name_en": "Example project: swiss-grid",
   "status": "install",
@@ -2778,6 +2877,7 @@
  },
  {
   "family": "camera-composition-layout",
+  "domain": "motion",
   "name_ar": "منطقة حجز الترجمة أسفل الإطار",
   "name_en": "Caption keep-out zone (bottom ~17%)",
   "status": "install",
@@ -2804,14 +2904,17 @@
  },
  {
   "family": "camera-composition-layout",
+  "domain": "motion",
   "name_ar": "تقريب مفاجئ على اللقطة",
   "name_en": "Punch-in zoom on footage",
   "status": "install",
   "what": "تحرّك حركة التكبير/الضربة الغلاف الداخلي للمقطع، ولا تحرّك عنصر المقطع المؤقت أبدًا. — Zoom/punch animates the inner wrapper of a clip, never the timed clip element.",
   "how": "tl.to('#clip .inner',{scale:1.35,xPercent:-8,duration:0.18},1).",
   "params": "scale 1.35, 0.18 s",
-  "install": "see arsenal-libraries.md",
-  "requires": [],
+  "install": "npm i gsap@3.15.0  (GSAP Standard no-charge licence, not OSI; version from arsenal-libraries.md)",
+  "requires": [
+   "npm:gsap"
+  ],
   "license": "Apache-2.0",
   "proof": [
    "kosif-one/vendor/hyperframes/skills/hyperframes-core/references/creator-editing-recipes.md"
@@ -2830,14 +2933,17 @@
  },
  {
   "family": "camera-composition-layout",
+  "domain": "motion",
   "name_ar": "حركة كين بيرنز",
   "name_en": "Ken Burns pan on stills/footage",
   "status": "install",
   "what": "انجراف بطيء بالتحجيم والإزاحة عبر صورة أو مقطع. — Slow scale + translate drift across an image or clip.",
   "how": "tl.fromTo('#clip .inner',{scale:1.05,xPercent:0},{scale:1.2,xPercent:-12,duration:4,ease:'none'},0).",
   "params": "scale 1.05->1.2, xPercent 0->-12, 4 s linear",
-  "install": "see arsenal-libraries.md",
-  "requires": [],
+  "install": "npm i gsap@3.15.0  (GSAP Standard no-charge licence, not OSI; version from arsenal-libraries.md)",
+  "requires": [
+   "npm:gsap"
+  ],
   "license": "Apache-2.0",
   "proof": [
    "kosif-one/vendor/hyperframes/skills/hyperframes-core/references/creator-editing-recipes.md"
@@ -2856,14 +2962,17 @@
  },
  {
   "family": "camera-composition-layout",
+  "domain": "motion",
   "name_ar": "إعادة التأطير بالقص",
   "name_en": "Crop / reframe with clip-path inset",
   "status": "install",
   "what": "يعيد تأطير مقطع بتحريك inset الخاص بـ clipPath والإزاحة على الغلاف الداخلي. — Reframe a clip by tweening clipPath inset and offset on the inner wrapper.",
   "how": "tl.to('#clip .inner',{clipPath:'inset(8% 12% 6% 10%)',xPercent:-4,duration:1},2).",
   "params": "",
-  "install": "see arsenal-libraries.md",
-  "requires": [],
+  "install": "npm i gsap@3.15.0  (GSAP Standard no-charge licence, not OSI; version from arsenal-libraries.md)",
+  "requires": [
+   "npm:gsap"
+  ],
   "license": "Apache-2.0",
   "proof": [
    "kosif-one/vendor/hyperframes/skills/hyperframes-core/references/creator-editing-recipes.md"
@@ -2882,6 +2991,7 @@
  },
  {
   "family": "camera-composition-layout",
+  "domain": "motion",
   "name_ar": "حركة ملء الشاشة بخلفيات مشتركة",
   "name_en": "Full-screen motion with shared backgrounds",
   "status": "install",
@@ -2909,6 +3019,7 @@
  },
  {
   "family": "camera-composition-layout",
+  "domain": "motion",
   "name_ar": "تقريب إلى هدف غير مركزي",
   "name_en": "Coordinate target zoom",
   "status": "install",
@@ -2939,6 +3050,7 @@
  },
  {
   "family": "camera-composition-layout",
+  "domain": "motion",
   "name_ar": "كاميرا تتبع مؤشر الكتابة",
   "name_en": "Camera tracks typing cursor",
   "status": "install",
@@ -2969,6 +3081,7 @@
  },
  {
   "family": "camera-composition-layout",
+  "domain": "motion",
   "name_ar": "كاميرا متعددة المراحل مع انجراف",
   "name_en": "Multi-phase camera push/pull with drift",
   "status": "install",
@@ -2999,6 +3112,7 @@
  },
  {
   "family": "camera-composition-layout",
+  "domain": "motion",
   "name_ar": "كاميرا افتراضية بتحريك العالم",
   "name_en": "Virtual camera via .world wrapper",
   "status": "install",
@@ -3029,6 +3143,7 @@
  },
  {
   "family": "camera-composition-layout",
+  "domain": "motion",
   "name_ar": "عمق الميدان وسحب التركيز",
   "name_en": "Depth-of-field rack focus",
   "status": "install",
@@ -3059,6 +3174,7 @@
  },
  {
   "family": "camera-composition-layout",
+  "domain": "motion",
   "name_ar": "انتشار من المركز إلى الخارج",
   "name_en": "Center-outward expansion",
   "status": "install",
@@ -3089,6 +3205,7 @@
  },
  {
   "family": "camera-composition-layout",
+  "domain": "motion",
   "name_ar": "بطاقتان مائلتان متقابلتان",
   "name_en": "Split tilt cards",
   "status": "install",
@@ -3119,6 +3236,7 @@
  },
  {
   "family": "camera-composition-layout",
+  "domain": "motion",
   "name_ar": "مخطط مشهد: محطات على لوحة كبيرة تتنقل بينها الكاميرا",
   "name_en": "Blueprint: Spatial pan stations",
   "status": "install",
@@ -3148,6 +3266,7 @@
  },
  {
   "family": "camera-composition-layout",
+  "domain": "motion",
   "name_ar": "مخطط مشهد: رحلة الكاميرا",
   "name_en": "Blueprint: Camera journey",
   "status": "install",
@@ -3177,6 +3296,7 @@
  },
  {
   "family": "camera-composition-layout",
+  "domain": "motion",
   "name_ar": "مخطط مشهد: كشف بالتبعيد عن مساحة العمل",
   "name_en": "Blueprint: Zoom-out workspace reveal",
   "status": "install",
@@ -3206,6 +3326,7 @@
  },
  {
   "family": "camera-composition-layout",
+  "domain": "motion",
   "name_ar": "مخطط مشهد: تجميع شبكة البطاقات",
   "name_en": "Blueprint: Grid card assemble",
   "status": "install",
@@ -3235,6 +3356,7 @@
  },
  {
   "family": "camera-composition-layout",
+  "domain": "motion",
   "name_ar": "مخطط مشهد: مقارنة منقسمة",
   "name_en": "Blueprint: Comparison split",
   "status": "install",
@@ -3264,6 +3386,7 @@
  },
  {
   "family": "camera-composition-layout",
+  "domain": "motion",
   "name_ar": "قواعد مقياس الفيديو",
   "name_en": "Video-scale composition rules",
   "status": "install",
@@ -3290,6 +3413,7 @@
  },
  {
   "family": "camera-composition-layout",
+  "domain": "motion",
   "name_ar": "نمط صورة داخل صورة",
   "name_en": "Composition pattern: picture-in-picture",
   "status": "install",
@@ -3316,6 +3440,7 @@
  },
  {
   "family": "camera-composition-layout",
+  "domain": "motion",
   "name_ar": "بطاقة عنوان وعرض شرائح",
   "name_en": "Composition pattern: title card fade / slideshow with section headers",
   "status": "install",
@@ -3342,6 +3467,7 @@
  },
  {
   "family": "camera-composition-layout",
+  "domain": "motion",
   "name_ar": "المناطق الآمنة للبث",
   "name_en": "Broadcast safe zones",
   "status": "install",
@@ -3370,6 +3496,7 @@
  },
  {
   "family": "camera-composition-layout",
+  "domain": "motion",
   "name_ar": "حساب المناطق الآمنة من القناع",
   "name_en": "Safe zones from subject matte",
   "status": "install",
@@ -3398,6 +3525,7 @@
  },
  {
   "family": "camera-composition-layout",
+  "domain": "motion",
   "name_ar": "أنواع المشاهد وقواعد تموضع الترجمة",
   "name_en": "Caption scene types and layout heuristics",
   "status": "install",
@@ -3425,6 +3553,7 @@
  },
  {
   "family": "camera-composition-layout",
+  "domain": "motion",
   "name_ar": "تفاعلات اللوح: تعتيم وصدمة واهتزاز وحبيبات",
   "name_en": "Theme plate reactions (dim, punch, shake, grain)",
   "status": "install",
@@ -3453,6 +3582,7 @@
  },
  {
   "family": "camera-composition-layout",
+  "domain": "motion",
   "name_ar": "مناطق البطاقات",
   "name_en": "Recut card zones",
   "status": "install",
@@ -3479,6 +3609,7 @@
  },
  {
   "family": "camera-composition-layout",
+  "domain": "motion",
   "name_ar": "حركة إيقاعية: screen-shake",
   "name_en": "Beat motion primitive: screen-shake",
   "status": "install",
@@ -3508,6 +3639,7 @@
  },
  {
   "family": "camera-composition-layout",
+  "domain": "motion",
   "name_ar": "حركة إيقاعية: dolly-zoom",
   "name_en": "Beat motion primitive: dolly-zoom",
   "status": "install",
@@ -3537,6 +3669,7 @@
  },
  {
   "family": "camera-composition-layout",
+  "domain": "motion",
   "name_ar": "حركة إيقاعية: crash-zoom-in",
   "name_en": "Beat motion primitive: crash-zoom-in",
   "status": "install",
@@ -3566,6 +3699,7 @@
  },
  {
   "family": "camera-composition-layout",
+  "domain": "motion",
   "name_ar": "حركة إيقاعية: mosaic-pack",
   "name_en": "Beat motion primitive: mosaic-pack",
   "status": "install",
@@ -3595,6 +3729,7 @@
  },
  {
   "family": "camera-composition-layout",
+  "domain": "motion",
   "name_ar": "حركة إيقاعية: tile-mosaic",
   "name_en": "Beat motion primitive: tile-mosaic",
   "status": "install",
@@ -3624,6 +3759,7 @@
  },
  {
   "family": "camera-composition-layout",
+  "domain": "motion",
   "name_ar": "تكبير لوغاريتمي",
   "name_en": "Log-space zoom lmix/push/zoomTrack",
   "status": "install",
@@ -3652,6 +3788,7 @@
  },
  {
   "family": "camera-composition-layout",
+  "domain": "motion",
   "name_ar": "اهتزاز الكاميرا",
   "name_en": "shake",
   "status": "install",
@@ -3680,6 +3817,7 @@
  },
  {
   "family": "camera-composition-layout",
+  "domain": "motion",
   "name_ar": "البارالاكس",
   "name_en": "parallax",
   "status": "install",
@@ -3708,6 +3846,7 @@
  },
  {
   "family": "camera-composition-layout",
+  "domain": "motion",
   "name_ar": "تنفس اللقطة الثابتة",
   "name_en": "breathe holds",
   "status": "install",
@@ -3736,6 +3875,7 @@
  },
  {
   "family": "camera-composition-layout",
+  "domain": "motion",
   "name_ar": "مفردات اللقطات ككاميرات",
   "name_en": "Veo shot vocabulary as cameras",
   "status": "install",
@@ -3765,14 +3905,17 @@
  },
  {
   "family": "camera-composition-layout",
+  "domain": "motion",
   "name_ar": "مسار الكاميرا المستمر",
   "name_en": "cameraPath Catmull-Rom",
   "status": "install",
   "what": "كاميرا واحدة مستمرة عبر المفاتيح دون توقفات. — One continuous camera through keys without stops.",
   "how": "three-kit.js (window.K3) in a --3d project; render --engine studio",
   "params": "centripetal Catmull-Rom",
-  "install": "see arsenal-libraries.md",
-  "requires": [],
+  "install": "npm i three@0.186.1  (MIT; version from arsenal-libraries.md)",
+  "requires": [
+   "npm:three"
+  ],
   "license": "owner (three.js MIT)",
   "proof": [
    "100-superskills/skills/kosif-montage-motion/SKILL.md:106",
@@ -3792,6 +3935,7 @@
  },
  {
   "family": "camera-composition-layout",
+  "domain": "motion",
   "name_ar": "كاميرا الدوران مع التوقفات",
   "name_en": "orbitWalk camera",
   "status": "install",
@@ -3820,6 +3964,7 @@
  },
  {
   "family": "camera-composition-layout",
+  "domain": "motion",
   "name_ar": "تظليل علوي لوضوح العنوان",
   "name_en": "Top shade for title legibility",
   "status": "install",
@@ -3847,6 +3992,7 @@
  },
  {
   "family": "camera-composition-layout",
+  "domain": "motion",
   "name_ar": "كاميرا ثنائية الأبعاد متزامنة مع الكلام",
   "name_en": "Word-synced 2D camera on a footage plate",
   "status": "install",
@@ -3873,14 +4019,17 @@
  },
  {
   "family": "camera-composition-layout",
+  "domain": "motion",
   "name_ar": "اهتزاز دقيق لأربعة إطارات",
   "name_en": "Seeded 4-frame micro shake",
   "status": "install",
   "what": "اهتزاز حتمي صغير على أقوى كلمة يرسّخ الأثر دون عشوائية بين عمليات التصيير. — A tiny deterministic shake on the hardest word sells impact without randomness between renders.",
   "how": "tl.set(cam, {x, y}) at 10.90 + d for [(0,6,−4), (1/30,−5,3), (2/30,3,−2), (3/30,0,0)] plus #dim .22 flash.",
   "params": "",
-  "install": "see arsenal-libraries.md",
-  "requires": [],
+  "install": "npm i gsap@3.15.0  (GSAP Standard no-charge licence, not OSI; version from arsenal-libraries.md)",
+  "requires": [
+   "npm:gsap"
+  ],
   "license": "owner",
   "proof": [
    "100-superskills/skills/kosif-montage-motion/scripts/projects/premium_edit/index.html:141"
@@ -3899,6 +4048,7 @@
  },
  {
   "family": "camera-composition-layout",
+  "domain": "motion",
   "name_ar": "دفع لوغاريتمي وثبات حي",
   "name_en": "Log-space push and living hold",
   "status": "install",
@@ -3927,6 +4077,7 @@
  },
  {
   "family": "camera-composition-layout",
+  "domain": "motion",
   "name_ar": "مدار ثلاثي الأبعاد مع اقتراب واهتزاز",
   "name_en": "3D orbit with push-in, break shake and pull-back",
   "status": "install",
@@ -3953,6 +4104,7 @@
  },
  {
   "family": "camera-composition-layout",
+  "domain": "motion",
   "name_ar": "جولة كاميرا حول المشهد بتوقفات",
   "name_en": "Orbit walk with stops and holds",
   "status": "install",
@@ -3979,6 +4131,7 @@
  },
  {
   "family": "camera-composition-layout",
+  "domain": "motion",
   "name_ar": "مفاتيح كاميرا هيرميت ووقت الرصاصة",
   "name_en": "Hermite camera keys with bullet time",
   "status": "install",
@@ -4007,6 +4160,7 @@
  },
  {
   "family": "camera-composition-layout",
+  "domain": "motion",
   "name_ar": "مسارات كاميرا بمفاتيح",
   "name_en": "Keyed camera paths (cameraPath / cameraKeys)",
   "status": "install",
@@ -4035,6 +4189,7 @@
  },
  {
   "family": "camera-composition-layout",
+  "domain": "motion",
   "name_ar": "دفع بطيء من مستوى الطريق",
   "name_en": "Road-level tripod push-in (Veo shot language)",
   "status": "install",
@@ -4064,6 +4219,7 @@
  },
  {
   "family": "camera-composition-layout",
+  "domain": "motion",
   "name_ar": "إسقاط نقطة ثلاثية على الشاشة لوسم",
   "name_en": "Project 3D point to screen for HUD callout",
   "status": "install",
@@ -4091,6 +4247,7 @@
  },
  {
   "family": "camera-composition-layout",
+  "domain": "motion",
   "name_ar": "زووم كين بيرنز",
   "name_en": "Ken Burns raised-cosine zoom",
   "status": "install",
@@ -4117,6 +4274,7 @@
  },
  {
   "family": "camera-composition-layout",
+  "domain": "motion",
   "name_ar": "كاميرا تقترب في قوس",
   "name_en": "Dolly-in arc camera (time-driven)",
   "status": "install",
@@ -4144,6 +4302,7 @@
  },
  {
   "family": "camera-composition-layout",
+  "domain": "motion",
   "name_ar": "زووم نبضي لرفع الاحتفاظ",
   "name_en": "Retention zoom punches",
   "status": "install",
@@ -4174,6 +4333,7 @@
  },
  {
   "family": "camera-composition-layout",
+  "domain": "motion",
   "name_ar": "حركات كاميرا بالمسارات",
   "name_en": "Spline camera flights and eased dollies",
   "status": "install",
@@ -4202,6 +4362,7 @@
  },
  {
   "family": "camera-composition-layout",
+  "domain": "motion",
   "name_ar": "طبقة قراءة وحجاب خارج المحراب",
   "name_en": "Readability glass and arch veil",
   "status": "install",
@@ -4229,6 +4390,7 @@
  },
  {
   "family": "camera-composition-layout",
+  "domain": "motion",
   "name_ar": "تنفس الكاميرا ودفعات الإبراز",
   "name_en": "Camera breath and punctuating pushes (2D stage)",
   "status": "install",
@@ -4255,6 +4417,7 @@
  },
  {
   "family": "camera-composition-layout",
+  "domain": "motion",
   "name_ar": "لقطات تدخل وهي تتحرك",
   "name_en": "Plates that arrive already moving (punch-in drift)",
   "status": "install",
@@ -4283,6 +4446,7 @@
  },
  {
   "family": "camera-composition-layout",
+  "domain": "motion",
   "name_ar": "ضربة عاطفية مع اهتزاز",
   "name_en": "Emotional punch + camera shake",
   "status": "install",
@@ -4309,6 +4473,7 @@
  },
  {
   "family": "camera-composition-layout",
+  "domain": "motion",
   "name_ar": "حركات الكاميرا على المسرح",
   "name_en": "Stage camera moves (camera, log push, breathe)",
   "status": "install",
@@ -4335,6 +4500,7 @@
  },
  {
   "family": "camera-composition-layout",
+  "domain": "motion",
   "name_ar": "حركة كين برنز",
   "name_en": "Ken Burns move detection and replay",
   "status": "install",
@@ -4362,6 +4528,7 @@
  },
  {
   "family": "camera-composition-layout",
+  "domain": "motion",
   "name_ar": "ملاءمة اللقطة وكن برنز",
   "name_en": "Shot fit modes + Ken Burns",
   "status": "install",
@@ -4388,6 +4555,7 @@
  },
  {
   "family": "camera-composition-layout",
+  "domain": "motion",
   "name_ar": "عمق مجال",
   "name_en": "Scene op: defocus depth of field",
   "status": "install",
@@ -4415,6 +4583,7 @@
  },
  {
   "family": "camera-composition-layout",
+  "domain": "motion",
   "name_ar": "تمويه حركة",
   "name_en": "Scene op: motion blur",
   "status": "install",
@@ -4442,6 +4611,7 @@
  },
  {
   "family": "camera-composition-layout",
+  "domain": "motion",
   "name_ar": "تكوين الثمبنيل",
   "name_en": "Thumbnail composition rule",
   "status": "install",
@@ -4470,6 +4640,7 @@
  },
  {
   "family": "camera-composition-layout",
+  "domain": "motion",
   "name_ar": "كاميرا المسرح",
   "name_en": "2D stage camera move",
   "status": "install",
@@ -4496,6 +4667,7 @@
  },
  {
   "family": "camera-composition-layout",
+  "domain": "motion",
   "name_ar": "دفع الكاميرا",
   "name_en": "Log-space push-in",
   "status": "install",
@@ -4523,6 +4695,7 @@
  },
  {
   "family": "camera-composition-layout",
+  "domain": "motion",
   "name_ar": "اهتزاز الكاميرا",
   "name_en": "Camera shake (seeded)",
   "status": "install",
@@ -4549,6 +4722,7 @@
  },
  {
   "family": "camera-composition-layout",
+  "domain": "motion",
   "name_ar": "مفاتيح الكاميرا",
   "name_en": "Smoothstep camera keys",
   "status": "install",
@@ -4575,6 +4749,7 @@
  },
  {
   "family": "camera-composition-layout",
+  "domain": "motion",
   "name_ar": "مسار كاميرا مستمر",
   "name_en": "Continuous Catmull-Rom camera path",
   "status": "install",
@@ -4601,6 +4776,7 @@
  },
  {
   "family": "camera-composition-layout",
+  "domain": "motion",
   "name_ar": "مفردات اللقطات",
   "name_en": "Shot vocabulary camera (20 kinds)",
   "status": "install",
@@ -4630,6 +4806,7 @@
  },
  {
   "family": "camera-composition-layout",
+  "domain": "motion",
   "name_ar": "اهتزاز يدوي",
   "name_en": "Seeded handheld sway",
   "status": "install",
@@ -4656,6 +4833,7 @@
  },
  {
   "family": "camera-composition-layout",
+  "domain": "motion",
   "name_ar": "لقطة من الكلمات",
   "name_en": "Shot from words",
   "status": "install",
@@ -4682,6 +4860,7 @@
  },
  {
   "family": "camera-composition-layout",
+  "domain": "motion",
   "name_ar": "خلفية الاستوديو",
   "name_en": "Studio backdrop gradient",
   "status": "install",
@@ -4708,6 +4887,7 @@
  },
  {
   "family": "camera-composition-layout",
+  "domain": "motion",
   "name_ar": "استوديو كريمي",
   "name_en": "Cream studio sweep",
   "status": "install",
@@ -4734,6 +4914,7 @@
  },
  {
   "family": "camera-composition-layout",
+  "domain": "motion",
   "name_ar": "ضبابية الحركة بالإطارات الفرعية والتعريض الطويل",
   "name_en": "Sub-frame shutter motion blur and lighten stacking",
   "status": "install",
@@ -4764,6 +4945,7 @@
  },
  {
   "family": "camera-composition-layout",
+  "domain": "motion",
   "name_ar": "عمق المجال",
   "name_en": "Depth of field (defocus)",
   "status": "install",
@@ -4791,6 +4973,7 @@
  },
  {
   "family": "camera-composition-layout",
+  "domain": "motion",
   "name_ar": "ضبابية حركة اتجاهية",
   "name_en": "Directional motion blur",
   "status": "install",
@@ -4820,6 +5003,7 @@
  },
  {
   "family": "camera-composition-layout",
+  "domain": "motion",
   "name_ar": "التشتت اللوني",
   "name_en": "Chromatic aberration",
   "status": "install",
@@ -4846,6 +5030,7 @@
  },
  {
   "family": "camera-composition-layout",
+  "domain": "motion",
   "name_ar": "كاميرا رقمية موجهة على مقطع متكلم",
   "name_en": "Directed digital camera on a talking clip",
   "status": "install",
@@ -4874,6 +5059,7 @@
  },
  {
   "family": "camera-composition-layout",
+  "domain": "motion",
   "name_ar": "كاميرا تلقائية تتبع الموضوع",
   "name_en": "Auto camera from subject boxes",
   "status": "install",
@@ -4903,6 +5089,7 @@
  },
  {
   "family": "camera-composition-layout",
+  "domain": "motion",
   "name_ar": "إبعاد النص عن الوجه",
   "name_en": "Type off the face over pictures",
   "status": "install",
@@ -4929,6 +5116,7 @@
  },
  {
   "family": "camera-composition-layout",
+  "domain": "motion",
   "name_ar": "شرائط السينما",
   "name_en": "Letterbox open/close",
   "status": "install",
@@ -4958,6 +5146,7 @@
  },
  {
   "family": "camera-composition-layout",
+  "domain": "motion",
   "name_ar": "عدسة تدور حول المشهد",
   "name_en": "Orbit-walk lens with holds",
   "status": "install",
@@ -4984,6 +5173,7 @@
  },
  {
   "family": "camera-composition-layout",
+  "domain": "motion",
   "name_ar": "جولة سينمائية",
   "name_en": "Style: Cinematic journey (higgsfield-journey)",
   "status": "install",
@@ -5015,6 +5205,7 @@
  },
  {
   "family": "camera-composition-layout",
+  "domain": "motion",
   "name_ar": "كاميرا Remotion بانجراف بطيء",
   "name_en": "CameraRig slow drift push/pan/rotate",
   "status": "install",
@@ -5041,6 +5232,7 @@
  },
  {
   "family": "camera-composition-layout",
+  "domain": "motion",
   "name_ar": "مسار كاميرا منحني",
   "name_en": "Spline camera path",
   "status": "install",
@@ -5069,6 +5261,7 @@
  },
  {
   "family": "camera-composition-layout",
+  "domain": "motion",
   "name_ar": "رياضيات كاميرا التحليق",
   "name_en": "Flyover camera math",
   "status": "key",
@@ -5098,6 +5291,7 @@
  },
  {
   "family": "camera-composition-layout",
+  "domain": "motion",
   "name_ar": "مفردات التكوين وترك فراغ للنص",
   "name_en": "Composition keywords that reserve space for type",
   "status": "key",
@@ -5127,6 +5321,7 @@
  },
  {
   "family": "camera-composition-layout",
+  "domain": "motion",
   "name_ar": "مفردات حركة الكاميرا لنماذج الفيديو",
   "name_en": "Camera-move vocabulary for video models",
   "status": "key",
@@ -5157,6 +5352,7 @@
  },
  {
   "family": "camera-composition-layout",
+  "domain": "motion",
   "name_ar": "التحكم البسيط بالكاميرا في كلينج",
   "name_en": "Kling simple camera control",
   "status": "key",
@@ -5185,6 +5381,7 @@
  },
  {
   "family": "camera-composition-layout",
+  "domain": "motion",
   "name_ar": "تأطير الإطار الأول لكل مقطع بدل حركة الكاميرا",
   "name_en": "First-frame framing per segment (not camera motion)",
   "status": "key",
@@ -5213,6 +5410,7 @@
  },
  {
   "family": "camera-composition-layout",
+  "domain": "motion",
   "name_ar": "تتبع الشخص في القص",
   "name_en": "Subject-follow reframing (bridge cv2)",
   "status": "key",
@@ -5244,10 +5442,11 @@
  },
  {
   "family": "camera-composition-layout",
+  "domain": "motion",
   "name_ar": "حركة كاميرا: luxury product",
   "name_en": "Camera grammar: luxury product",
   "status": "key",
-  "what": "حركة كاميرا وسطية مطابقة للمفهوم. — Concept-matched mid-leg camera move.",
+  "what": "حركة كاميرا: luxury product: حركة كاميرا وسطية مطابقة للمفهوم. — Camera grammar: luxury product: Concept-matched mid-leg camera move.",
   "how": "Add to leg prompt from move library.",
   "params": "slow half-orbit around hero object",
   "install": "",
@@ -5273,10 +5472,11 @@
  },
  {
   "family": "camera-composition-layout",
+  "domain": "motion",
   "name_ar": "حركة كاميرا: real estate",
   "name_en": "Camera grammar: real estate",
   "status": "key",
-  "what": "حركة كاميرا وسطية مطابقة للمفهوم. — Concept-matched mid-leg camera move.",
+  "what": "حركة كاميرا: real estate: حركة كاميرا وسطية مطابقة للمفهوم. — Camera grammar: real estate: Concept-matched mid-leg camera move.",
   "how": "Add to leg prompt from move library.",
   "params": "steadicam glide through doorways, crane-up in atria",
   "install": "",
@@ -5302,10 +5502,11 @@
  },
  {
   "family": "camera-composition-layout",
+  "domain": "motion",
   "name_ar": "حركة كاميرا: industrial",
   "name_en": "Camera grammar: industrial",
   "status": "key",
-  "what": "حركة كاميرا وسطية مطابقة للمفهوم. — Concept-matched mid-leg camera move.",
+  "what": "حركة كاميرا: industrial: حركة كاميرا وسطية مطابقة للمفهوم. — Camera grammar: industrial: Concept-matched mid-leg camera move.",
   "how": "Add to leg prompt from move library.",
   "params": "low lateral track with foreground parallax",
   "install": "",
@@ -5331,10 +5532,11 @@
  },
  {
   "family": "camera-composition-layout",
+  "domain": "motion",
   "name_ar": "حركة كاميرا: travel",
   "name_en": "Camera grammar: travel",
   "status": "key",
-  "what": "حركة كاميرا وسطية مطابقة للمفهوم. — Concept-matched mid-leg camera move.",
+  "what": "حركة كاميرا: travel: حركة كاميرا وسطية مطابقة للمفهوم. — Camera grammar: travel: Concept-matched mid-leg camera move.",
   "how": "Add to leg prompt from move library.",
   "params": "drone rise-and-reveal then descending swoop",
   "install": "",
@@ -5360,10 +5562,11 @@
  },
  {
   "family": "camera-composition-layout",
+  "domain": "motion",
   "name_ar": "حركة كاميرا: food/craft",
   "name_en": "Camera grammar: food/craft",
   "status": "key",
-  "what": "حركة كاميرا وسطية مطابقة للمفهوم. — Concept-matched mid-leg camera move.",
+  "what": "حركة كاميرا: food/craft: حركة كاميرا وسطية مطابقة للمفهوم. — Camera grammar: food/craft: Concept-matched mid-leg camera move.",
   "how": "Add to leg prompt from move library.",
   "params": "push in to craft moment, ease back",
   "install": "",
@@ -5389,10 +5592,11 @@
  },
  {
   "family": "camera-composition-layout",
+  "domain": "motion",
   "name_ar": "حركة كاميرا: miniature",
   "name_en": "Camera grammar: miniature",
   "status": "key",
-  "what": "حركة كاميرا وسطية مطابقة للمفهوم. — Concept-matched mid-leg camera move.",
+  "what": "حركة كاميرا: miniature: حركة كاميرا وسطية مطابقة للمفهوم. — Camera grammar: miniature: Concept-matched mid-leg camera move.",
   "how": "Add to leg prompt from move library.",
   "params": "dives + aerial hops",
   "install": "",
@@ -5418,6 +5622,7 @@
  },
  {
   "family": "camera-composition-layout",
+  "domain": "motion",
   "name_ar": "انزلاق إيزومتري ثابت",
   "name_en": "Locked-iso glide",
   "status": "key",
@@ -5447,6 +5652,7 @@
  },
  {
   "family": "camera-composition-layout",
+  "domain": "motion",
   "name_ar": "معماريتا اللقطة المتصلة",
   "name_en": "Architecture A continuous take vs B dive+connector",
   "status": "key",
@@ -5475,6 +5681,7 @@
  },
  {
   "family": "camera-composition-layout",
+  "domain": "motion",
   "name_ar": "إطار HUD للريل",
   "name_en": "Showreel HUD frame",
   "status": "seen",
@@ -5510,6 +5717,7 @@
  },
  {
   "family": "camera-composition-layout",
+  "domain": "motion",
   "name_ar": "إطار HUD",
   "name_en": "HUD frame overlay",
   "status": "seen",
@@ -5544,6 +5752,7 @@
  },
  {
   "family": "camera-composition-layout",
+  "domain": "motion",
   "name_ar": "إطار HUD ثابت للشوريل",
   "name_en": "Persistent HUD reel frame",
   "status": "seen",
@@ -5576,6 +5785,7 @@
  },
  {
   "family": "camera-composition-layout",
+  "domain": "motion",
   "name_ar": "إطار معلومات HUD",
   "name_en": "HUD frame chrome",
   "status": "seen",
@@ -5608,6 +5818,7 @@
  },
  {
   "family": "camera-composition-layout",
+  "domain": "motion",
   "name_ar": "إطار معاينة بزوايا وتايمكود",
   "name_en": "Viewfinder HUD frame",
   "status": "seen",
@@ -5638,6 +5849,7 @@
  },
  {
   "family": "camera-composition-layout",
+  "domain": "motion",
   "name_ar": "إطار HUD للريل",
   "name_en": "HUD showreel frame",
   "status": "seen",
@@ -5668,6 +5880,7 @@
  },
  {
   "family": "camera-composition-layout",
+  "domain": "motion",
   "name_ar": "جولة كاميرا على عناصر الدرس",
   "name_en": "Lesson camera tour",
   "status": "seen",
@@ -5696,6 +5909,7 @@
  },
  {
   "family": "camera-composition-layout",
+  "domain": "motion",
   "name_ar": "عالم متصل بكاميرا واحدة",
   "name_en": "One-take world strip camera",
   "status": "seen",
@@ -5724,6 +5938,7 @@
  },
  {
   "family": "camera-composition-layout",
+  "domain": "motion",
   "name_ar": "غرفة بزاوية من مضلعات مسقطة",
   "name_en": "Oblique room from projected polygons",
   "status": "seen",
@@ -5752,6 +5967,7 @@
  },
  {
   "family": "camera-composition-layout",
+  "domain": "motion",
   "name_ar": "كاميرا بمفاتيح في إحداثيات العالم مع تتبع",
   "name_en": "World-space camera keys + follow blend",
   "status": "seen",
@@ -5780,6 +5996,7 @@
  },
  {
   "family": "camera-composition-layout",
+  "domain": "motion",
   "name_ar": "كاميرا تتبع مع زووم حسب المرحلة",
   "name_en": "Follow camera with leg-based zoom",
   "status": "seen",
@@ -5808,6 +6025,7 @@
  },
  {
   "family": "camera-composition-layout",
+  "domain": "motion",
   "name_ar": "حقل شارات طافية فوضوية",
   "name_en": "Floating badge chaos field",
   "status": "seen",
@@ -5836,6 +6054,7 @@
  },
  {
   "family": "camera-composition-layout",
+  "domain": "motion",
   "name_ar": "شريط خطوات مرقمة",
   "name_en": "Numbered step tab bar",
   "status": "seen",
@@ -5864,6 +6083,7 @@
  },
  {
   "family": "camera-composition-layout",
+  "domain": "motion",
   "name_ar": "إطار HUD",
   "name_en": "HUD corner frame",
   "status": "seen",
@@ -5892,6 +6112,7 @@
  },
  {
   "family": "camera-composition-layout",
+  "domain": "motion",
   "name_ar": "خاتمة بأشعة وحلقة شخصيات",
   "name_en": "Sunburst finale ring",
   "status": "seen",
@@ -5920,6 +6141,7 @@
  },
  {
   "family": "camera-composition-layout",
+  "domain": "motion",
   "name_ar": "إطار HUD مرقم للشوريل",
   "name_en": "Numbered HUD reel frame",
   "status": "seen",
@@ -5948,6 +6170,7 @@
  },
  {
   "family": "camera-composition-layout",
+  "domain": "motion",
   "name_ar": "تخطيط ميزة: نص يسار ونافذة يمين",
   "name_en": "Feature beat split layout",
   "status": "seen",
@@ -5976,6 +6199,7 @@
  },
  {
   "family": "camera-composition-layout",
+  "domain": "motion",
   "name_ar": "تقريب بطيء داخل الواجهة",
   "name_en": "Ken-burns inside UI",
   "status": "seen",
@@ -6004,6 +6228,7 @@
  },
  {
   "family": "camera-composition-layout",
+  "domain": "motion",
   "name_ar": "شريط تنقل سفلي",
   "name_en": "Bottom nav progress",
   "status": "seen",
@@ -6032,6 +6257,7 @@
  },
  {
   "family": "camera-composition-layout",
+  "domain": "motion",
   "name_ar": "التحليق فوق حقل بطاقات متوهجة",
   "name_en": "Glowing card field fly-over",
   "status": "seen",
@@ -6060,6 +6286,7 @@
  },
  {
   "family": "camera-composition-layout",
+  "domain": "motion",
   "name_ar": "طبقة HUD فيلمية",
   "name_en": "Film HUD overlay",
   "status": "seen",
@@ -6088,6 +6315,7 @@
  },
  {
   "family": "camera-composition-layout",
+  "domain": "motion",
   "name_ar": "تخطيط نص وواجهة",
   "name_en": "Split text/UI layout",
   "status": "seen",
@@ -6116,6 +6344,7 @@
  },
  {
   "family": "camera-composition-layout",
+  "domain": "motion",
   "name_ar": "دفع الكاميرا نحو الشخصية",
   "name_en": "Push-in camera dolly",
   "status": "seen",
@@ -6144,6 +6373,7 @@
  },
  {
   "family": "camera-composition-layout",
+  "domain": "motion",
   "name_ar": "أقواس وإحداثيات",
   "name_en": "Geo HUD brackets",
   "status": "seen",
@@ -6172,6 +6402,7 @@
  },
  {
   "family": "camera-composition-layout",
+  "domain": "motion",
   "name_ar": "رفع الكاميرا للقطة علوية ختامية",
   "name_en": "Crane to top-down hero end card",
   "status": "seen",
@@ -6200,6 +6431,7 @@
  },
  {
   "family": "camera-composition-layout",
+  "domain": "motion",
   "name_ar": "عنوان صغير بمساحة فارغة واسعة",
   "name_en": "Negative-space headline",
   "status": "seen",
@@ -6228,6 +6460,7 @@
  },
  {
   "family": "camera-composition-layout",
+  "domain": "motion",
   "name_ar": "كاميرا عالم واحد بمحاور تركيز وتكبير لوغاريتمي",
   "name_en": "World-layer camera (focus x, y, log-scale)",
   "status": "seen",
@@ -6256,6 +6489,7 @@
  },
  {
   "family": "camera-composition-layout",
+  "domain": "motion",
   "name_ar": "خلفية جدار بطاقات مائل مع عمق ميدان",
   "name_en": "Tilted DOF card wall backdrop",
   "status": "seen",
@@ -6284,6 +6518,7 @@
  },
  {
   "family": "camera-composition-layout",
+  "domain": "motion",
   "name_ar": "إحساس السرعة بمرور أعمدة السياج",
   "name_en": "Rail parallax for speed",
   "status": "seen",
@@ -6312,6 +6547,7 @@
  },
  {
   "family": "camera-composition-layout",
+  "domain": "motion",
   "name_ar": "تجميع شبكة بينتو",
   "name_en": "Bento grid assembly",
   "status": "seen",
@@ -6340,6 +6576,7 @@
  },
  {
   "family": "camera-composition-layout",
+  "domain": "motion",
   "name_ar": "شبكة بطاقات",
   "name_en": "Bento principle grid",
   "status": "seen",
@@ -6368,6 +6605,7 @@
  },
  {
   "family": "camera-composition-layout",
+  "domain": "motion",
   "name_ar": "علامات قص زاوية للإطار",
   "name_en": "Corner crop marks frame",
   "status": "seen",
@@ -6396,6 +6634,7 @@
  },
  {
   "family": "camera-composition-layout",
+  "domain": "motion",
   "name_ar": "مسرح مستدير فوق خلفية متدرجة",
   "name_en": "Rounded stage over atmospheric gradient",
   "status": "seen",
@@ -6424,6 +6663,7 @@
  },
  {
   "family": "camera-composition-layout",
+  "domain": "motion",
   "name_ar": "اقتراب من الجهاز",
   "name_en": "Device push-in",
   "status": "seen",
@@ -6452,6 +6692,7 @@
  },
  {
   "family": "camera-composition-layout",
+  "domain": "motion",
   "name_ar": "تسميات صغيرة بأسلوب الملصق",
   "name_en": "Poster HUD micro-labels",
   "status": "seen",
@@ -6480,6 +6721,7 @@
  },
  {
   "family": "camera-composition-layout",
+  "domain": "motion",
   "name_ar": "عرض دوّار للنموذج",
   "name_en": "Turntable orbit showcase",
   "status": "seen",
@@ -6508,6 +6750,7 @@
  },
  {
   "family": "camera-composition-layout",
+  "domain": "motion",
   "name_ar": "عنوان يسار وبطاقة واجهة يمين",
   "name_en": "Split headline + UI card",
   "status": "seen",
@@ -6536,6 +6779,7 @@
  },
  {
   "family": "camera-composition-layout",
+  "domain": "motion",
   "name_ar": "تقريب على تفاصيل الواجهة",
   "name_en": "Macro zoom into UI",
   "status": "seen",
@@ -6564,6 +6808,7 @@
  },
  {
   "family": "camera-composition-layout",
+  "domain": "motion",
   "name_ar": "بطاقات خلفية ضبابية",
   "name_en": "Depth-of-field cards",
   "status": "seen",
@@ -6592,6 +6837,7 @@
  },
  {
   "family": "camera-composition-layout",
+  "domain": "motion",
   "name_ar": "نظام وسوم الفصول",
   "name_en": "Chapter tag system",
   "status": "seen",
@@ -6620,6 +6866,7 @@
  },
  {
   "family": "camera-composition-layout",
+  "domain": "motion",
   "name_ar": "ترويسة تحريرية",
   "name_en": "Editorial header",
   "status": "seen",
@@ -6648,6 +6895,7 @@
  },
  {
   "family": "camera-composition-layout",
+  "domain": "motion",
   "name_ar": "شبكة شاشات",
   "name_en": "Split-screen grid",
   "status": "seen",
@@ -6676,6 +6924,7 @@
  },
  {
   "family": "camera-composition-layout",
+  "domain": "motion",
   "name_ar": "ترويسة فصل مرقّمة",
   "name_en": "Numbered chapter header",
   "status": "seen",
@@ -6704,6 +6953,7 @@
  },
  {
   "family": "camera-composition-layout",
+  "domain": "motion",
   "name_ar": "بطاقة عنوان سوداء تتقلص",
   "name_en": "Black title card shrink-out",
   "status": "seen",
@@ -6732,6 +6982,7 @@
  },
  {
   "family": "camera-composition-layout",
+  "domain": "motion",
   "name_ar": "حركة كاميرا بطيئة تكشف المعلم",
   "name_en": "Slow reveal dolly",
   "status": "seen",
@@ -6760,6 +7011,7 @@
  },
  {
   "family": "camera-composition-layout",
+  "domain": "motion",
   "name_ar": "لوحة فارغة بسيطة",
   "name_en": "Negative-space minimal canvas",
   "status": "seen",
@@ -6788,6 +7040,7 @@
  },
  {
   "family": "camera-composition-layout",
+  "domain": "motion",
   "name_ar": "بطاقات مبعثرة تستقر في صف منظم",
   "name_en": "Scatter-to-grid card settle",
   "status": "seen",
@@ -6816,6 +7069,7 @@
  },
  {
   "family": "camera-composition-layout",
+  "domain": "motion",
   "name_ar": "عداد إطارات كجزء من التصميم",
   "name_en": "Frame-counter meta HUD",
   "status": "seen",
@@ -6844,6 +7098,7 @@
  },
  {
   "family": "camera-composition-layout",
+  "domain": "motion",
   "name_ar": "عمق ميدان للواجهة",
   "name_en": "Depth-of-field UI",
   "status": "seen",
@@ -6872,6 +7127,7 @@
  },
  {
   "family": "camera-composition-layout",
+  "domain": "motion",
   "name_ar": "بطاقات بنتو للميزات",
   "name_en": "Bento feature cards",
   "status": "seen",
@@ -6900,6 +7156,7 @@
  },
  {
   "family": "camera-composition-layout",
+  "domain": "motion",
   "name_ar": "قالب بطاقة موحد لكل عنصر",
   "name_en": "Templated listicle card",
   "status": "seen",
@@ -6930,6 +7187,7 @@
  },
  {
   "family": "camera-composition-layout",
+  "domain": "motion",
   "name_ar": "شرطات تقدم المقاطع",
   "name_en": "Segment progress dashes",
   "status": "seen",
@@ -6958,6 +7216,7 @@
  },
  {
   "family": "camera-composition-layout",
+  "domain": "motion",
   "name_ar": "إطار كاميرا تسجيل",
   "name_en": "Camcorder HUD frame",
   "status": "seen",
@@ -6986,6 +7245,7 @@
  },
  {
   "family": "camera-composition-layout",
+  "domain": "motion",
   "name_ar": "واجهة كاميرا",
   "name_en": "Viewfinder HUD",
   "status": "seen",
@@ -7014,6 +7274,7 @@
  },
  {
   "family": "camera-composition-layout",
+  "domain": "motion",
   "name_ar": "تقريب كولاج طبقي",
   "name_en": "Collage push-in parallax",
   "status": "seen",
@@ -7042,6 +7303,7 @@
  },
  {
   "family": "camera-composition-layout",
+  "domain": "motion",
   "name_ar": "كاميرا مطاردة بتأخير",
   "name_en": "Chase camera with lag",
   "status": "seen",
@@ -7070,6 +7332,7 @@
  },
  {
   "family": "camera-composition-layout",
+  "domain": "motion",
   "name_ar": "HUD يشرح التقنية",
   "name_en": "Self-annotating HUD",
   "status": "seen",
@@ -7098,6 +7361,7 @@
  },
  {
   "family": "camera-composition-layout",
+  "domain": "motion",
   "name_ar": "مقارنة: ما كُتب مقابل البديل",
   "name_en": "Evidence pair: typed vs instead",
   "status": "seen",
@@ -7126,6 +7390,7 @@
  },
  {
   "family": "camera-composition-layout",
+  "domain": "motion",
   "name_ar": "عدادات ركنية أحادية",
   "name_en": "Mono corner counters",
   "status": "seen",
@@ -7154,6 +7419,7 @@
  },
  {
   "family": "camera-composition-layout",
+  "domain": "motion",
   "name_ar": "شريط زمني بنقاط مفاتيح",
   "name_en": "Editor timeline HUD",
   "status": "seen",
@@ -7182,6 +7448,7 @@
  },
  {
   "family": "camera-composition-layout",
+  "domain": "motion",
   "name_ar": "دفع كاميرا على واجهة مائلة",
   "name_en": "Tilted UI push-in",
   "status": "seen",
@@ -7210,6 +7477,7 @@
  },
  {
   "family": "camera-composition-layout",
+  "domain": "motion",
   "name_ar": "إطار HUD ورقي",
   "name_en": "Paper HUD frame",
   "status": "seen",
@@ -7238,6 +7506,7 @@
  },
  {
   "family": "camera-composition-layout",
+  "domain": "motion",
   "name_ar": "لقطة ميزة بتقسيم تحريري",
   "name_en": "Editorial split feature beat",
   "status": "seen",
@@ -7266,6 +7535,7 @@
  },
  {
   "family": "camera-composition-layout",
+  "domain": "motion",
   "name_ar": "إطار HUD لعبة ثابت",
   "name_en": "Persistent game HUD frame",
   "status": "seen",
@@ -7294,6 +7564,7 @@
  },
  {
   "family": "camera-composition-layout",
+  "domain": "motion",
   "name_ar": "رقم فهرس مع اسم النموذج",
   "name_en": "Index + model lower-third",
   "status": "seen",
@@ -7322,6 +7593,7 @@
  },
  {
   "family": "camera-composition-layout",
+  "domain": "motion",
   "name_ar": "منظر متحرك من نافذة بطبقات بارالاكس",
   "name_en": "Window parallax travel",
   "status": "seen",
@@ -7350,6 +7622,7 @@
  },
  {
   "family": "camera-composition-layout",
+  "domain": "motion",
   "name_ar": "تكوين متناظر بأسلوب ويس أندرسون",
   "name_en": "Symmetrical Wes-Anderson frame",
   "status": "seen",
@@ -7379,6 +7652,7 @@
  },
  {
   "family": "camera-composition-layout",
+  "domain": "motion",
   "name_ar": "مؤشر المشاهد",
   "name_en": "Scene index HUD",
   "status": "seen",
@@ -7407,6 +7681,7 @@
  },
  {
   "family": "camera-composition-layout",
+  "domain": "motion",
   "name_ar": "كاميرا مطاردة مائلة",
   "name_en": "Chase camera with bank",
   "status": "seen",
@@ -7435,6 +7710,7 @@
  },
  {
   "family": "camera-composition-layout",
+  "domain": "motion",
   "name_ar": "اقتراب للشاشة مع كتابة طرفية",
   "name_en": "Push-in terminal typewriter",
   "status": "seen",
@@ -7464,6 +7740,7 @@
  },
  {
   "family": "camera-composition-layout",
+  "domain": "motion",
   "name_ar": "إطار HUD للشوريل",
   "name_en": "Showreel HUD overlay",
   "status": "seen",
@@ -7492,6 +7769,7 @@
  },
  {
   "family": "camera-composition-layout",
+  "domain": "motion",
   "name_ar": "إطار بعلامات قص",
   "name_en": "Crop-mark frame",
   "status": "seen",
@@ -7520,6 +7798,7 @@
  },
  {
   "family": "camera-composition-layout",
+  "domain": "motion",
   "name_ar": "عنوان فوق نافذة المنتج",
   "name_en": "Headline over product window",
   "status": "seen",
@@ -7548,6 +7827,7 @@
  },
  {
   "family": "camera-composition-layout",
+  "domain": "motion",
   "name_ar": "عناصر زوايا ثابتة",
   "name_en": "Persistent corner chrome",
   "status": "seen",
@@ -7576,6 +7856,7 @@
  },
  {
   "family": "camera-composition-layout",
+  "domain": "motion",
   "name_ar": "كاميرا افتراضية تتجول فوق لوحة واجهة كبيرة",
   "name_en": "Virtual camera over one big UI canvas",
   "status": "seen",
@@ -7604,6 +7885,7 @@
  },
  {
   "family": "camera-composition-layout",
+  "domain": "motion",
   "name_ar": "تخطيط صفوف الآلات",
   "name_en": "Instrument tier diagram layout",
   "status": "seen",
@@ -7632,6 +7914,7 @@
  },
  {
   "family": "camera-composition-layout",
+  "domain": "motion",
   "name_ar": "دخول وخروج من الشاشة",
   "name_en": "Push into screen bookend",
   "status": "seen",
@@ -7660,6 +7943,7 @@
  },
  {
   "family": "camera-composition-layout",
+  "domain": "motion",
   "name_ar": "لوحات ثلاثية للأقسام",
   "name_en": "Triptych category panels",
   "status": "seen",
@@ -7688,6 +7972,7 @@
  },
  {
   "family": "camera-composition-layout",
+  "domain": "motion",
   "name_ar": "عنوان جانبي عمودي",
   "name_en": "Vertical side label",
   "status": "seen",
@@ -7716,6 +8001,7 @@
  },
  {
   "family": "camera-composition-layout",
+  "domain": "motion",
   "name_ar": "كشف اللوحة بالابتعاد",
   "name_en": "Canvas zoom-out reveal",
   "status": "seen",
@@ -7744,6 +8030,7 @@
  },
  {
   "family": "camera-composition-layout",
+  "domain": "motion",
   "name_ar": "عناوين فصول وشريط زمني",
   "name_en": "Chapter HUD + timeline marker",
   "status": "seen",
@@ -7772,6 +8059,7 @@
  },
  {
   "family": "camera-composition-layout",
+  "domain": "motion",
   "name_ar": "شريط تبويبات كأداة تنقل بين الفصول",
   "name_en": "Pill tab bar as chapter navigator",
   "status": "seen",
@@ -7800,6 +8088,7 @@
  },
  {
   "family": "camera-composition-layout",
+  "domain": "motion",
   "name_ar": "زووم لا نهائي أُسّي",
   "name_en": "Exponential infinite zoom",
   "status": "seen",
@@ -7828,6 +8117,7 @@
  },
  {
   "family": "camera-composition-layout",
+  "domain": "motion",
   "name_ar": "دوران ودفع الكاميرا",
   "name_en": "Orbit push-in",
   "status": "seen",
@@ -7856,6 +8146,7 @@
  },
  {
   "family": "camera-composition-layout",
+  "domain": "motion",
   "name_ar": "خطوة مع تعليق",
   "name_en": "Step label + caption",
   "status": "seen",
@@ -7884,6 +8175,7 @@
  },
  {
   "family": "camera-composition-layout",
+  "domain": "motion",
   "name_ar": "كاميرا افتراضية فوق سبورة كبيرة",
   "name_en": "Virtual camera over a big board",
   "status": "seen",
@@ -7912,6 +8204,7 @@
  },
  {
   "family": "camera-composition-layout",
+  "domain": "motion",
   "name_ar": "تقريب الكاميرا على عنصر الواجهة",
   "name_en": "UI camera push-in",
   "status": "seen",
@@ -7940,6 +8233,7 @@
  },
  {
   "family": "camera-composition-layout",
+  "domain": "motion",
   "name_ar": "إطار سويسري ثابت بعداد فصول ووقت",
   "name_en": "Swiss HUD frame with chapter counter",
   "status": "seen",
@@ -7968,6 +8262,7 @@
  },
  {
   "family": "camera-composition-layout",
+  "domain": "motion",
   "name_ar": "عدسة مكبرة لكشف التفاصيل",
   "name_en": "Magnifier zoom-in proof",
   "status": "seen",
@@ -7996,6 +8291,7 @@
  },
  {
   "family": "camera-composition-layout",
+  "domain": "motion",
   "name_ar": "تراكب عمق بخلفية مموهة",
   "name_en": "Background blur depth stack",
   "status": "seen",
@@ -8024,6 +8320,7 @@
  },
  {
   "family": "camera-composition-layout",
+  "domain": "motion",
   "name_ar": "واجهة فصول",
   "name_en": "Chapter HUD",
   "status": "seen",
@@ -8052,6 +8349,7 @@
  },
  {
   "family": "camera-composition-layout",
+  "domain": "motion",
   "name_ar": "خاتمة بأشرطة سينمائية تنغلق",
   "name_en": "Letterbox squeeze outro",
   "status": "seen",
@@ -8080,6 +8378,7 @@
  },
  {
   "family": "camera-composition-layout",
+  "domain": "motion",
   "name_ar": "مزج كتابة رأسية وأفقية",
   "name_en": "Vertical + horizontal type pairing",
   "status": "seen",
@@ -8108,6 +8407,7 @@
  },
  {
   "family": "camera-composition-layout",
+  "domain": "motion",
   "name_ar": "تسميات صغيرة في الزوايا",
   "name_en": "Corner meta labels",
   "status": "seen",
@@ -8136,6 +8436,7 @@
  },
  {
   "family": "camera-composition-layout",
+  "domain": "motion",
   "name_ar": "شارة خطوة مرقمة",
   "name_en": "Numbered step chip",
   "status": "seen",
@@ -8164,6 +8465,7 @@
  },
  {
   "family": "camera-composition-layout",
+  "domain": "motion",
   "name_ar": "طيران الكاميرا بين الفصول",
   "name_en": "Camera chapter fly-to",
   "status": "seen",
@@ -8192,6 +8494,7 @@
  },
  {
   "family": "camera-composition-layout",
+  "domain": "motion",
   "name_ar": "إطار HUD بزوايا وعدّاد زمني",
   "name_en": "HUD corner frame with running timecode",
   "status": "seen",
@@ -8220,6 +8523,7 @@
  },
  {
   "family": "camera-composition-layout",
+  "domain": "motion",
   "name_ar": "نفق لا نهائي",
   "name_en": "Infinite tunnel zoom",
   "status": "seen",
@@ -8248,6 +8552,7 @@
  },
  {
   "family": "camera-composition-layout",
+  "domain": "motion",
   "name_ar": "إطار HUD بفصول مرقمة",
   "name_en": "Chaptered HUD frame",
   "status": "seen",
@@ -8276,6 +8581,7 @@
  },
  {
   "family": "camera-composition-layout",
+  "domain": "motion",
   "name_ar": "كاميرا مطاردة تدور مع الطائرة",
   "name_en": "Chase camera with roll",
   "status": "seen",
@@ -8304,6 +8610,7 @@
  },
  {
   "family": "camera-composition-layout",
+  "domain": "motion",
   "name_ar": "مقارنة أنت/أنا بتقسيم الشاشة",
   "name_en": "You/me split comparison",
   "status": "seen",
@@ -8332,6 +8639,7 @@
  },
  {
   "family": "camera-composition-layout",
+  "domain": "motion",
   "name_ar": "إطار HUD سينمائي",
   "name_en": "Cinematic HUD chrome",
   "status": "seen",
@@ -8360,6 +8668,7 @@
  },
  {
   "family": "camera-composition-layout",
+  "domain": "motion",
   "name_ar": "خط تقدم على حافة الشاشة السفلية",
   "name_en": "Bottom-edge progress line",
   "status": "seen",
@@ -8388,6 +8697,7 @@
  },
  {
   "family": "camera-composition-layout",
+  "domain": "motion",
   "name_ar": "بيانات وصفية في زوايا الملصق",
   "name_en": "Poster metadata HUD",
   "status": "seen",
@@ -8416,6 +8726,7 @@
  },
  {
   "family": "camera-composition-layout",
+  "domain": "motion",
   "name_ar": "بطاقة مقسومة فاتح/داكن للنتيجة",
   "name_en": "Split light/dark result card",
   "status": "seen",
@@ -8444,6 +8755,7 @@
  },
  {
   "family": "camera-composition-layout",
+  "domain": "motion",
   "name_ar": "شريط فصول",
   "name_en": "Chapter progress bar",
   "status": "seen",
@@ -8472,6 +8784,7 @@
  },
  {
   "family": "camera-composition-layout",
+  "domain": "motion",
   "name_ar": "جدار بطاقات",
   "name_en": "Card wall drift",
   "status": "seen",
@@ -8500,6 +8813,7 @@
  },
  {
   "family": "camera-composition-layout",
+  "domain": "motion",
   "name_ar": "عنوان جانبي مع بطاقة واجهة طافية",
   "name_en": "Split headline + floating UI card",
   "status": "seen",
@@ -8528,6 +8842,7 @@
  },
  {
   "family": "camera-composition-layout",
+  "domain": "motion",
   "name_ar": "اقتراب بطيء جدًا نحو الهدف",
   "name_en": "Ultra-slow approach dolly",
   "status": "seen",
@@ -8556,6 +8871,7 @@
  },
  {
   "family": "camera-composition-layout",
+  "domain": "motion",
   "name_ar": "إطار HUD للفصول",
   "name_en": "Chapter HUD frame",
   "status": "seen",
@@ -8584,6 +8900,7 @@
  },
  {
   "family": "camera-composition-layout",
+  "domain": "motion",
   "name_ar": "واجهة قراءات حية",
   "name_en": "Scope HUD with live readouts",
   "status": "seen",
@@ -8612,6 +8929,7 @@
  },
  {
   "family": "camera-composition-layout",
+  "domain": "motion",
   "name_ar": "صور تطير لتكوين شبكة إلهام",
   "name_en": "Fly-in moodboard grid",
   "status": "seen",
@@ -8640,6 +8958,7 @@
  },
  {
   "family": "camera-composition-layout",
+  "domain": "motion",
   "name_ar": "دفع كاميرا مستمر بلا ارتداد",
   "name_en": "Continuous push camera",
   "status": "seen",
@@ -8668,6 +8987,7 @@
  },
  {
   "family": "camera-composition-layout",
+  "domain": "motion",
   "name_ar": "إطار سينمائي",
   "name_en": "Letterbox cinematic",
   "status": "seen",
@@ -8697,6 +9017,7 @@
  },
  {
   "family": "camera-composition-layout",
+  "domain": "motion",
   "name_ar": "شبكة ملخص مرقمة",
   "name_en": "Recap grid with numbered badges",
   "status": "seen",
@@ -8726,6 +9047,7 @@
  },
  {
   "family": "camera-composition-layout",
+  "domain": "motion",
   "name_ar": "إطار HUD سينمائي ثابت",
   "name_en": "Persistent cinematic HUD frame",
   "status": "seen",
@@ -8754,6 +9076,7 @@
  },
  {
   "family": "camera-composition-layout",
+  "domain": "motion",
   "name_ar": "كلمات تسقط في خلايا شبكة",
   "name_en": "Paper grid drop-in",
   "status": "seen",
@@ -8782,6 +9105,7 @@
  },
  {
   "family": "camera-composition-layout",
+  "domain": "motion",
   "name_ar": "ملصقات فصول HUD",
   "name_en": "Chapter HUD labels",
   "status": "seen",
@@ -8810,6 +9134,7 @@
  },
  {
   "family": "camera-composition-layout",
+  "domain": "motion",
   "name_ar": "جدار بطاقات مائل متحرك",
   "name_en": "Tilted masonry card wall",
   "status": "seen",
@@ -8838,6 +9163,7 @@
  },
  {
   "family": "camera-composition-layout",
+  "domain": "motion",
   "name_ar": "بطاقة فصل أسفل اليسار",
   "name_en": "Chapter text card bottom-left",
   "status": "seen",
@@ -8866,6 +9192,7 @@
  },
  {
   "family": "camera-composition-layout",
+  "domain": "motion",
   "name_ar": "إطار عدسة كاميرا بفصول مرقمة",
   "name_en": "Viewfinder HUD chapters",
   "status": "seen",
@@ -8894,6 +9221,7 @@
  },
  {
   "family": "camera-composition-layout",
+  "domain": "motion",
   "name_ar": "شريحة عنوان ضخم مع جسم ثلاثي الأبعاد",
   "name_en": "Editorial headline + 3D object slide",
   "status": "seen",
@@ -8922,6 +9250,7 @@
  },
  {
   "family": "camera-composition-layout",
+  "domain": "motion",
   "name_ar": "تراجع لكشف الكولاج",
   "name_en": "Collage pull-back reveal",
   "status": "seen",
@@ -8950,6 +9279,7 @@
  },
  {
   "family": "camera-composition-layout",
+  "domain": "motion",
   "name_ar": "مرور الكاميرا على أوراق مع ختم",
   "name_en": "Paperwork dolly + stamp",
   "status": "seen",
@@ -8978,6 +9308,7 @@
  },
  {
   "family": "camera-composition-layout",
+  "domain": "motion",
   "name_ar": "خطوة مرقمة مع واجهة",
   "name_en": "Numbered step split",
   "status": "seen",
@@ -9006,6 +9337,7 @@
  },
  {
   "family": "camera-composition-layout",
+  "domain": "motion",
   "name_ar": "سبورة بيضاء مؤطرة على جدار داكن",
   "name_en": "Framed whiteboard set",
   "status": "seen",
@@ -9034,6 +9366,7 @@
  },
  {
   "family": "camera-composition-layout",
+  "domain": "motion",
   "name_ar": "إطار HUD إنتاجي",
   "name_en": "Production HUD frame",
   "status": "seen",
@@ -9062,6 +9395,7 @@
  },
  {
   "family": "camera-composition-layout",
+  "domain": "motion",
   "name_ar": "عنوان مع دليل بصري",
   "name_en": "Headline + proof layout",
   "status": "seen",
@@ -9090,6 +9424,7 @@
  },
  {
   "family": "camera-composition-layout",
+  "domain": "motion",
   "name_ar": "HUD تقني بتسميات FIG",
   "name_en": "FIG-caption technical HUD",
   "status": "seen",
@@ -9118,6 +9453,7 @@
  },
  {
   "family": "camera-composition-layout",
+  "domain": "motion",
   "name_ar": "شخص صغير لإبراز الضخامة",
   "name_en": "Scale figure in frame",
   "status": "seen",
@@ -9146,6 +9482,7 @@
  },
  {
   "family": "camera-composition-layout",
+  "domain": "motion",
   "name_ar": "شريط مراحل",
   "name_en": "Stage progress rail",
   "status": "seen",
@@ -9174,6 +9511,7 @@
  },
  {
   "family": "camera-composition-layout",
+  "domain": "motion",
   "name_ar": "كولاج بطاقات متناثرة",
   "name_en": "Scattered card collage",
   "status": "seen",
@@ -9202,6 +9540,7 @@
  },
  {
   "family": "camera-composition-layout",
+  "domain": "motion",
   "name_ar": "شبكة بطاقات صور متتابعة",
   "name_en": "Staggered photo card grid",
   "status": "seen",
@@ -9230,6 +9569,7 @@
  },
  {
   "family": "camera-composition-layout",
+  "domain": "motion",
   "name_ar": "إطار HUD للريل",
   "name_en": "HUD reel chrome",
   "status": "seen",
@@ -9258,6 +9598,7 @@
  },
  {
   "family": "camera-composition-layout",
+  "domain": "motion",
   "name_ar": "عناوين خطوات مرقمة",
   "name_en": "Numbered step headers",
   "status": "seen",
@@ -9286,6 +9627,7 @@
  },
  {
   "family": "camera-composition-layout",
+  "domain": "motion",
   "name_ar": "مسطرة زمنية للفصول",
   "name_en": "Chapter ruler timeline",
   "status": "seen",
@@ -9314,6 +9656,7 @@
  },
  {
   "family": "camera-composition-layout",
+  "domain": "motion",
   "name_ar": "جدار لقطات مائل ينزلق بسرعة",
   "name_en": "Tilted screenshot wall sweep",
   "status": "seen",
@@ -9342,6 +9685,7 @@
  },
  {
   "family": "camera-composition-layout",
+  "domain": "motion",
   "name_ar": "بطاقات مكدسة مائلة",
   "name_en": "Stacked badge cards",
   "status": "seen",
@@ -9370,6 +9714,7 @@
  },
  {
   "family": "camera-composition-layout",
+  "domain": "motion",
   "name_ar": "ملصقات منحنيات التسهيل",
   "name_en": "HUD ease labels",
   "status": "seen",
@@ -9398,6 +9743,7 @@
  },
  {
   "family": "camera-composition-layout",
+  "domain": "motion",
   "name_ar": "دفع الكاميرا داخل نافذة التطبيق",
   "name_en": "Push into app window",
   "status": "seen",
@@ -9426,6 +9772,7 @@
  },
  {
   "family": "camera-composition-layout",
+  "domain": "motion",
   "name_ar": "إطار ستارة",
   "name_en": "Stage curtain frame",
   "status": "seen",
@@ -9454,6 +9801,7 @@
  },
  {
   "family": "camera-composition-layout",
+  "domain": "motion",
   "name_ar": "عبور الكاميرا بين كروت طائرة",
   "name_en": "Z-space card fly-through",
   "status": "seen",
@@ -9483,6 +9831,7 @@
  },
  {
   "family": "camera-composition-layout",
+  "domain": "motion",
   "name_ar": "اهتزاز الكاميرا عند الارتطام",
   "name_en": "Impact camera shake",
   "status": "seen",
@@ -9511,6 +9860,7 @@
  },
  {
   "family": "camera-composition-layout",
+  "domain": "motion",
   "name_ar": "تكوين خشبة مسرح جانبي",
   "name_en": "Stage-set side-view layout",
   "status": "seen",
@@ -9539,6 +9889,7 @@
  },
  {
   "family": "camera-composition-layout",
+  "domain": "motion",
   "name_ar": "كاميرا واحدة لطبقتي SVG وHTML",
   "name_en": "Shared SVG+HTML camera transform",
   "status": "seen",
@@ -9567,6 +9918,7 @@
  },
  {
   "family": "camera-composition-layout",
+  "domain": "motion",
   "name_ar": "مونتاج شبكي للهوية",
   "name_en": "Brand grid montage",
   "status": "documented",
@@ -9595,6 +9947,7 @@
  },
  {
   "family": "camera-composition-layout",
+  "domain": "motion",
   "name_ar": "التخطيط قبل التحريك",
   "name_en": "Layout-before-animation (hero frame first)",
   "status": "documented",
@@ -9621,6 +9974,7 @@
  },
  {
   "family": "camera-composition-layout",
+  "domain": "motion",
   "name_ar": "قواعد تكوين الكادر للفيديو",
   "name_en": "Video-frame composition rules",
   "status": "documented",
@@ -9648,6 +10002,7 @@
  },
  {
   "family": "camera-composition-layout",
+  "domain": "motion",
   "name_ar": "اختيار المنحنيات وسرعة ثابتة على المسار",
   "name_en": "Spline choice & arc-length speed",
   "status": "documented",
@@ -9675,6 +10030,7 @@
  },
  {
   "family": "camera-composition-layout",
+  "domain": "motion",
   "name_ar": "مسرح ثابت 16:9",
   "name_en": "Fixed 16:9 stage",
   "status": "documented",
@@ -9702,6 +10058,7 @@
  },
  {
   "family": "camera-composition-layout",
+  "domain": "motion",
   "name_ar": "شبكة 8 بكسل وقاعدة الزوايا المتداخلة",
   "name_en": "Layered 8px grid and nested radius rule",
   "status": "documented",
@@ -9728,6 +10085,7 @@
  },
  {
   "family": "camera-composition-layout",
+  "domain": "motion",
   "name_ar": "تكوين غير متماثل يتجاوز الإطار",
   "name_en": "Asymmetric bleed composition",
   "status": "documented",
@@ -9754,6 +10112,7 @@
  },
  {
   "family": "camera-composition-layout",
+  "domain": "motion",
   "name_ar": "تقسيم مشهد العرض 15/65/20",
   "name_en": "Demo scene zoning 15/65/20",
   "status": "documented",
@@ -9781,6 +10140,7 @@
  },
  {
   "family": "camera-composition-layout",
+  "domain": "motion",
   "name_ar": "إعدادات تصوير بدون إظهار الوجه",
   "name_en": "Face-free camera setups",
   "status": "documented",
@@ -9808,6 +10168,7 @@
  },
  {
   "family": "camera-composition-layout",
+  "domain": "motion",
   "name_ar": "S01 مينيمال نظيف",
   "name_en": "S01 Minimal clean",
   "status": "documented",
@@ -9835,6 +10196,7 @@
  },
  {
   "family": "camera-composition-layout",
+  "domain": "motion",
   "name_ar": "S06 سينمائي جوي",
   "name_en": "S06 Atmospheric cinematic",
   "status": "documented",
@@ -9865,6 +10227,7 @@
  },
  {
   "family": "camera-composition-layout",
+  "domain": "motion",
   "name_ar": "S09 تحريري حديث",
   "name_en": "S09 Modern editorial",
   "status": "documented",
@@ -9896,6 +10259,7 @@
  },
  {
   "family": "camera-composition-layout",
+  "domain": "motion",
   "name_ar": "MG-085 تكبير من الكل إلى الجزء",
   "name_en": "MG-085 Whole-to-part zoom with minimap",
   "status": "documented",
@@ -9924,6 +10288,7 @@
  },
  {
   "family": "camera-composition-layout",
+  "domain": "motion",
   "name_ar": "وظيفة كل لقطة",
   "name_en": "Shot-purpose ladder",
   "status": "documented",
@@ -9952,6 +10317,7 @@
  },
  {
   "family": "camera-composition-layout",
+  "domain": "motion",
   "name_ar": "معايرة الشكل والخلفية للطبقات فوق الفيديو",
   "name_en": "Figure-ground calibration for overlays",
   "status": "documented",
@@ -9982,6 +10348,7 @@
  },
  {
   "family": "camera-composition-layout",
+  "domain": "motion",
   "name_ar": "تدقيق الزخرفة ونسبة الإشارة للضجيج",
   "name_en": "Decoration audit (signal-to-noise)",
   "status": "documented",
@@ -10009,6 +10376,7 @@
  },
  {
   "family": "camera-composition-layout",
+  "domain": "motion",
   "name_ar": "رندر عمودي أصلي بدلاً من القص",
   "name_en": "Native vertical render over crop",
   "status": "documented",
@@ -10041,6 +10409,7 @@
  },
  {
   "family": "camera-composition-layout",
+  "domain": "motion",
   "name_ar": "صورة داخل صورة وجنباً إلى جنب",
   "name_en": "Picture-in-picture and side-by-side",
   "status": "documented",
@@ -10068,6 +10437,7 @@
  },
  {
   "family": "camera-composition-layout",
+  "domain": "motion",
   "name_ar": "نص واحد في الإطار",
   "name_en": "One text-bearing object per frame",
   "status": "documented",
@@ -10094,6 +10464,7 @@
  },
  {
   "family": "camera-composition-layout",
+  "domain": "motion",
   "name_ar": "هامش تمدد النص",
   "name_en": "Text expansion headroom",
   "status": "documented",
@@ -10121,6 +10492,7 @@
  },
  {
   "family": "camera-composition-layout",
+  "domain": "motion",
   "name_ar": "التشابه الجشطالتي باللون",
   "name_en": "Gestalt similarity via colour",
   "status": "documented",
@@ -10148,6 +10520,7 @@
  },
  {
   "family": "camera-composition-layout",
+  "domain": "motion",
   "name_ar": "التسلسل الهرمي باللون والدرجة",
   "name_en": "Hierarchy via colour and tone",
   "status": "documented",
@@ -10176,6 +10549,7 @@
  },
  {
   "family": "camera-composition-layout",
+  "domain": "motion",
   "name_ar": "أنواع لقطات بدون وجه",
   "name_en": "Faceless shot types table",
   "status": "documented",
@@ -10202,6 +10576,7 @@
  },
  {
   "family": "camera-composition-layout",
+  "domain": "motion",
   "name_ar": "قاعدة 3-30-300 لمستويات الانتباه",
   "name_en": "3-30-300 attention tiers",
   "status": "documented",
@@ -10229,6 +10604,7 @@
  },
  {
   "family": "camera-composition-layout",
+  "domain": "motion",
   "name_ar": "شبكة 8px والأقطار المتداخلة",
   "name_en": "Spacing grid & nested radii rule",
   "status": "documented",
@@ -10257,6 +10633,7 @@
  },
  {
   "family": "camera-composition-layout",
+  "domain": "motion",
   "name_ar": "تكوين الفراغ لجهة النص العربي",
   "name_en": "RTL negative-space composition",
   "status": "documented",
@@ -10287,6 +10664,7 @@
  },
  {
   "family": "camera-composition-layout",
+  "domain": "motion",
   "name_ar": "معايير دفع الكاميرا",
   "name_en": "Camera push norms",
   "status": "documented",
@@ -10313,6 +10691,7 @@
  },
  {
   "family": "camera-composition-layout",
+  "domain": "motion",
   "name_ar": "زووم نبضي",
   "name_en": "Dynamic zoom punch",
   "status": "documented",
@@ -10339,6 +10718,7 @@
  },
  {
   "family": "camera-composition-layout",
+  "domain": "motion",
   "name_ar": "قيادة البطل والحركة المعاكسة",
   "name_en": "Hero-led choreography + counter-motion",
   "status": "documented",
@@ -10365,6 +10745,7 @@
  },
  {
   "family": "camera-composition-layout",
+  "domain": "motion",
   "name_ar": "كاميرا بحاوية واحدة",
   "name_en": "Single-container camera",
   "status": "documented",
@@ -10391,10 +10772,11 @@
  },
  {
   "family": "camera-composition-layout",
+  "domain": "motion",
   "name_ar": "تكوين: Rule of thirds",
   "name_en": "Composition: Rule of thirds",
   "status": "documented",
-  "what": "قاعدة تكوين للبرومبتات/اللقطات. — Composition rule for prompts/shots.",
+  "what": "تكوين: Rule of thirds: قاعدة تكوين للبرومبتات/اللقطات. — Composition: Rule of thirds: Composition rule for prompts/shots.",
   "how": "Composition rule for prompts/shots.",
   "params": "",
   "install": "",
@@ -10417,10 +10799,11 @@
  },
  {
   "family": "camera-composition-layout",
+  "domain": "motion",
   "name_ar": "تكوين: Golden ratio/spiral",
   "name_en": "Composition: Golden ratio/spiral",
   "status": "documented",
-  "what": "قاعدة تكوين للبرومبتات/اللقطات. — Composition rule for prompts/shots.",
+  "what": "تكوين: Golden ratio/spiral: قاعدة تكوين للبرومبتات/اللقطات. — Composition: Golden ratio/spiral: Composition rule for prompts/shots.",
   "how": "Composition rule for prompts/shots.",
   "params": "",
   "install": "",
@@ -10443,10 +10826,11 @@
  },
  {
   "family": "camera-composition-layout",
+  "domain": "motion",
   "name_ar": "تكوين: Centred symmetry",
   "name_en": "Composition: Centred symmetry",
   "status": "documented",
-  "what": "قاعدة تكوين للبرومبتات/اللقطات. — Composition rule for prompts/shots.",
+  "what": "تكوين: Centred symmetry: قاعدة تكوين للبرومبتات/اللقطات. — Composition: Centred symmetry: Composition rule for prompts/shots.",
   "how": "Composition rule for prompts/shots.",
   "params": "",
   "install": "",
@@ -10469,10 +10853,11 @@
  },
  {
   "family": "camera-composition-layout",
+  "domain": "motion",
   "name_ar": "تكوين: Leading lines",
   "name_en": "Composition: Leading lines",
   "status": "documented",
-  "what": "قاعدة تكوين للبرومبتات/اللقطات. — Composition rule for prompts/shots.",
+  "what": "تكوين: Leading lines: قاعدة تكوين للبرومبتات/اللقطات. — Composition: Leading lines: Composition rule for prompts/shots.",
   "how": "Composition rule for prompts/shots.",
   "params": "",
   "install": "",
@@ -10495,10 +10880,11 @@
  },
  {
   "family": "camera-composition-layout",
+  "domain": "motion",
   "name_ar": "تكوين: Negative space",
   "name_en": "Composition: Negative space",
   "status": "documented",
-  "what": "قاعدة تكوين للبرومبتات/اللقطات. — Composition rule for prompts/shots.",
+  "what": "تكوين: Negative space: قاعدة تكوين للبرومبتات/اللقطات. — Composition: Negative space: Composition rule for prompts/shots.",
   "how": "Composition rule for prompts/shots.",
   "params": "",
   "install": "",
@@ -10521,10 +10907,11 @@
  },
  {
   "family": "camera-composition-layout",
+  "domain": "motion",
   "name_ar": "تكوين: Frame-within-frame",
   "name_en": "Composition: Frame-within-frame",
   "status": "documented",
-  "what": "قاعدة تكوين للبرومبتات/اللقطات. — Composition rule for prompts/shots.",
+  "what": "تكوين: Frame-within-frame: قاعدة تكوين للبرومبتات/اللقطات. — Composition: Frame-within-frame: Composition rule for prompts/shots.",
   "how": "Composition rule for prompts/shots.",
   "params": "",
   "install": "",
@@ -10547,10 +10934,11 @@
  },
  {
   "family": "camera-composition-layout",
+  "domain": "motion",
   "name_ar": "تكوين: Low-angle hero / high-angle vulnerability",
   "name_en": "Composition: Low-angle hero / high-angle vulnerability",
   "status": "documented",
-  "what": "قاعدة تكوين للبرومبتات/اللقطات. — Composition rule for prompts/shots.",
+  "what": "تكوين: Low-angle hero / high-angle vulnerability: قاعدة تكوين للبرومبتات/اللقطات. — Composition: Low-angle hero / high-angle vulnerability: Composition rule for prompts/shots.",
   "how": "Composition rule for prompts/shots.",
   "params": "",
   "install": "",
@@ -10573,10 +10961,11 @@
  },
  {
   "family": "camera-composition-layout",
+  "domain": "motion",
   "name_ar": "تكوين: Depth stacking",
   "name_en": "Composition: Depth stacking",
   "status": "documented",
-  "what": "قاعدة تكوين للبرومبتات/اللقطات. — Composition rule for prompts/shots.",
+  "what": "تكوين: Depth stacking: قاعدة تكوين للبرومبتات/اللقطات. — Composition: Depth stacking: Composition rule for prompts/shots.",
   "how": "Composition rule for prompts/shots.",
   "params": "",
   "install": "",
@@ -10599,6 +10988,7 @@
  },
  {
   "family": "camera-composition-layout",
+  "domain": "motion",
   "name_ar": "العدسات",
   "name_en": "Lens list",
   "status": "documented",
@@ -10625,6 +11015,7 @@
  },
  {
   "family": "camera-composition-layout",
+  "domain": "motion",
   "name_ar": "أحجام اللقطات والزوايا",
   "name_en": "Shot sizes + angles",
   "status": "documented",
@@ -10652,6 +11043,7 @@
  },
  {
   "family": "camera-composition-layout",
+  "domain": "motion",
   "name_ar": "حركات الكاميرا",
   "name_en": "Camera motion vocabulary",
   "status": "documented",
@@ -10679,6 +11071,7 @@
  },
  {
   "family": "camera-composition-layout",
+  "domain": "motion",
   "name_ar": "قائمة قواعد التكوين",
   "name_en": "Composition rule menu",
   "status": "documented",
@@ -10705,6 +11098,7 @@
  },
  {
   "family": "camera-composition-layout",
+  "domain": "motion",
   "name_ar": "قائمة الاستمرارية",
   "name_en": "Continuity checklist (180-degree rule etc.)",
   "status": "documented",
@@ -10732,6 +11126,7 @@
  },
  {
   "family": "camera-composition-layout",
+  "domain": "motion",
   "name_ar": "كتالوج العدسات",
   "name_en": "Lens catalog and focal-length meaning",
   "status": "documented",
@@ -10760,6 +11155,7 @@
  },
  {
   "family": "camera-composition-layout",
+  "domain": "motion",
   "name_ar": "مفردات اللقطات والزوايا وحركة الكاميرا",
   "name_en": "Shot sizes, angles and camera-move vocabulary",
   "status": "documented",
@@ -10788,6 +11184,7 @@
  },
  {
   "family": "camera-composition-layout",
+  "domain": "motion",
   "name_ar": "قواعد التكوين للفيديو",
   "name_en": "Video composition rules",
   "status": "documented",
@@ -10815,6 +11212,7 @@
  },
  {
   "family": "camera-composition-layout",
+  "domain": "motion",
   "name_ar": "التخطيط قبل الحركة",
   "name_en": "Layout-before-motion (hero frame)",
   "status": "documented",
@@ -10843,6 +11241,7 @@
  },
  {
   "family": "camera-composition-layout",
+  "domain": "motion",
   "name_ar": "منع النمو في المكان",
   "name_en": "No grow-in-place hero entrance",
   "status": "documented",
@@ -10869,6 +11268,7 @@
  },
  {
   "family": "camera-composition-layout",
+  "domain": "motion",
   "name_ar": "ميزانية الكاميرا",
   "name_en": "Named camera events budget",
   "status": "documented",
@@ -10896,6 +11296,7 @@
  },
  {
   "family": "camera-composition-layout",
+  "domain": "motion",
   "name_ar": "تحكم كاميرا Kling",
   "name_en": "Kling camera control reference",
   "status": "documented",
@@ -10923,6 +11324,7 @@
  },
  {
   "family": "camera-composition-layout",
+  "domain": "motion",
   "name_ar": "قواعد الكاميرا ثنائية الأبعاد",
   "name_en": "2D camera rules",
   "status": "documented",
@@ -10950,6 +11352,7 @@
  },
  {
   "family": "camera-composition-layout",
+  "domain": "motion",
   "name_ar": "قواعد التكوين للوحات",
   "name_en": "Composition rules for painted stills",
   "status": "documented",
@@ -10977,6 +11380,7 @@
  },
  {
   "family": "camera-composition-layout",
+  "domain": "motion",
   "name_ar": "مفردات حركة الكاميرا",
   "name_en": "Camera move vocabulary",
   "status": "documented",
@@ -11005,6 +11409,7 @@
  },
  {
   "family": "camera-composition-layout",
+  "domain": "motion",
   "name_ar": "إعدادات العدسة وزاوية الرؤية",
   "name_en": "Lens / FOV presets",
   "status": "documented",
@@ -11035,6 +11440,7 @@
  },
  {
   "family": "camera-composition-layout",
+  "domain": "motion",
   "name_ar": "نسب البارالاكس للطبقات",
   "name_en": "2.5D parallax depth ratios",
   "status": "documented",
@@ -11061,6 +11467,7 @@
  },
  {
   "family": "camera-composition-layout",
+  "domain": "motion",
   "name_ar": "عمق ميدان مزيف",
   "name_en": "Fake depth of field",
   "status": "documented",
@@ -11087,6 +11494,7 @@
  },
  {
   "family": "camera-composition-layout",
+  "domain": "motion",
   "name_ar": "حدود كاميرا الرسوم",
   "name_en": "Chart camera limits",
   "status": "documented",
@@ -11113,6 +11521,7 @@
  },
  {
   "family": "camera-composition-layout",
+  "domain": "motion",
   "name_ar": "كاميرا فصول المخطط",
   "name_en": "Diagram camera chapters",
   "status": "documented",
@@ -11139,6 +11548,7 @@
  },
  {
   "family": "camera-composition-layout",
+  "domain": "motion",
   "name_ar": "حجم الجهاز لكل نسبة",
   "name_en": "Device scale per aspect",
   "status": "documented",
@@ -11165,6 +11575,7 @@
  },
  {
   "family": "camera-composition-layout",
+  "domain": "motion",
   "name_ar": "القص الآمن للجهاز",
   "name_en": "Device safe crops",
   "status": "documented",
@@ -11191,6 +11602,7 @@
  },
  {
   "family": "camera-composition-layout",
+  "domain": "motion",
   "name_ar": "دفع الكاميرا والتقريب عند النقر",
   "name_en": "Device camera push and tap dolly",
   "status": "documented",
@@ -11217,6 +11629,7 @@
  },
  {
   "family": "camera-composition-layout",
+  "domain": "motion",
   "name_ar": "كاميرا واحدة لكل تسلسل",
   "name_en": "One camera rig per sequence",
   "status": "documented",
@@ -11243,6 +11656,7 @@
  },
  {
   "family": "camera-composition-layout",
+  "domain": "motion",
   "name_ar": "حدود تأطير البورتريه",
   "name_en": "Portrait framing limits",
   "status": "documented",
@@ -11269,6 +11683,7 @@
  },
  {
   "family": "camera-composition-layout",
+  "domain": "motion",
   "name_ar": "أرقام تأطير الشاشة",
   "name_en": "Screen framing numbers",
   "status": "documented",
@@ -11295,6 +11710,7 @@
  },
  {
   "family": "camera-composition-layout",
+  "domain": "motion",
   "name_ar": "كاميرا بتحويل مجموعة واحد",
   "name_en": "CameraRig single group transform",
   "status": "documented",
@@ -11323,6 +11739,7 @@
  },
  {
   "family": "camera-composition-layout",
+  "domain": "motion",
   "name_ar": "عقد تسليم الحركة",
   "name_en": "Motion handoff contract",
   "status": "documented",
@@ -11350,6 +11767,7 @@
  },
  {
   "family": "camera-composition-layout",
+  "domain": "motion",
   "name_ar": "مسافات معتمدة",
   "name_en": "Spacing token set",
   "status": "documented",
@@ -11376,6 +11794,7 @@
  },
  {
   "family": "camera-composition-layout",
+  "domain": "motion",
   "name_ar": "اهتزاز 2 بكسل",
   "name_en": "2-px screen shake once",
   "status": "idea",
@@ -11404,6 +11823,7 @@
  },
  {
   "family": "camera-composition-layout",
+  "domain": "motion",
   "name_ar": "دفع مع اهتزاز يدوي",
   "name_en": "Push + handheld drift camera",
   "status": "idea",
@@ -11432,6 +11852,7 @@
  },
  {
   "family": "camera-composition-layout",
+  "domain": "motion",
   "name_ar": "شبكة ثابتة للمحاذاة",
   "name_en": "Persistent snap grid",
   "status": "idea",
@@ -11460,6 +11881,7 @@
  },
  {
   "family": "camera-composition-layout",
+  "domain": "motion",
   "name_ar": "دفع بطيء للكاميرا",
   "name_en": "Gentle camera push/pan",
   "status": "idea",
@@ -11488,6 +11910,7 @@
  },
  {
   "family": "camera-composition-layout",
+  "domain": "motion",
   "name_ar": "دولي في الكورس",
   "name_en": "Chorus dolly",
   "status": "idea",
@@ -11516,6 +11939,7 @@
  },
  {
   "family": "camera-composition-layout",
+  "domain": "motion",
   "name_ar": "كاميرا تتبع متأخرة",
   "name_en": "Ball-tracking lag camera",
   "status": "idea",
@@ -11544,6 +11968,7 @@
  },
  {
   "family": "camera-composition-layout",
+  "domain": "motion",
   "name_ar": "شريط سينمائي",
   "name_en": "2.35:1 letterbox",
   "status": "idea",
@@ -11572,6 +11997,7 @@
  },
  {
   "family": "camera-composition-layout",
+  "domain": "motion",
   "name_ar": "تقريب وذروة",
   "name_en": "Climax zoom and hit shake",
   "status": "idea",
@@ -11600,6 +12026,7 @@
  },
  {
   "family": "camera-composition-layout",
+  "domain": "motion",
   "name_ar": "كاميرا 2.5D",
   "name_en": "2.5D parallax UI camera",
   "status": "idea",
@@ -11628,6 +12055,7 @@
  },
  {
   "family": "camera-composition-layout",
+  "domain": "motion",
   "name_ar": "زوم صادم لحظي",
   "name_en": "Single-frame punch-in",
   "status": "idea",
@@ -11656,6 +12084,7 @@
  },
  {
   "family": "camera-composition-layout",
+  "domain": "motion",
   "name_ar": "زوم نفقي ثابت",
   "name_en": "Constant-rate tunnel zoom",
   "status": "idea",
@@ -11684,6 +12113,7 @@
  },
  {
   "family": "camera-composition-layout",
+  "domain": "motion",
   "name_ar": "كاميرا ثابتة ودفعتان",
   "name_en": "Static cam with two push-ins",
   "status": "idea",
@@ -11712,6 +12142,7 @@
  },
  {
   "family": "camera-composition-layout",
+  "domain": "motion",
   "name_ar": "عمق بالمقياس والظل",
   "name_en": "Locked cam, depth by scale+shadow",
   "status": "idea",
@@ -11740,6 +12171,7 @@
  },
  {
   "family": "camera-composition-layout",
+  "domain": "motion",
   "name_ar": "بارالاكس طبقتين",
   "name_en": "Two-layer grid parallax",
   "status": "idea",
@@ -11768,6 +12200,7 @@
  },
  {
   "family": "camera-composition-layout",
+  "domain": "motion",
   "name_ar": "لقطة واحدة",
   "name_en": "One-shot slow push",
   "status": "idea",

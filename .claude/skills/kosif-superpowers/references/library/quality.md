@@ -392,7 +392,7 @@
 | `SEC-03` | تغليف المدخلات غير الموثوقة للنموذج | Wrap untrusted input before a model reads it | documented | claude:tools |
 | `SEC-04` | افصل القارئ عن المنفّذ | Split the reader from the actor | documented |  |
 | `SEC-05` | نظافة الأسرار | Secrets hygiene | documented | key:unspecified |
-| `SEC-06` | البحث عن الأسرار المسرّبة | Leaked-secret scanning | documented | git, mcp:github, key:unspecified, gitleaks |
+| `SEC-06` | البحث عن الأسرار المسرّبة | Leaked-secret scanning | documented | git, mcp:github, gitleaks |
 | `SEC-07` | عند تسرّب سر | When a secret leaks | documented |  |
 | `SEC-08` | مراجعة أمان للتغييرات | Security review of a change | documented | node |
 | `SEC-10` | المهارات والإضافات سلسلة توريد | Skills, plugins and MCP servers are supply chain | documented |  |

@@ -30,7 +30,7 @@
 - **متى أستخدمها / when:** في خطوة التحقق من THINK-01؛ وقبل أي قول «تم» أو «أُصلح» أو «صُيِّر» أو «يعمل». / VERIFY step of THINK-01; before any 'done', 'fixed', 'rendered' or 'works'.
 - **كيف / how:** 1 Define checks before building: each done-criterion → an observable test (unit test, ffprobe value, screenshot, row count, link opens). 2 Objective checks with tools: tests/linters/build, ffprobe, checksums (user audio untouched), schema validators, repo validators. 3 Perceptual checks: render a frame strip or screenshot and look at it (CHECK-03). 4 Rubric self-critique, with at least one concrete weakness per pass (CHECK-04). 5 Red-team with edge inputs (CHECK-05). 6 Diff against the request: coverage ledger (THINK-18). 7 Record evidence: command → output → badge. 8 Stop rule (CHECK-07). **أرقام / params:** 8 steps · ≥1 weakness found per pass · 2–3 visual iterations
 - **يحتاج / needs:** [`ffmpeg`](../requirements.md#req-ffmpeg)
-- **الدليل / proof:** — (لا دليل تشغيل بعد / no run proof yet)
+- **الدليل / proof:** `kosif-tool/.claude/skills/kosif-superpowers/references/verification.md`
 - **المصدر / source:** session-2026-10-16 distill thinking-methods §5 (own words); https://www.anthropic.com/engineering/building-effective-agents (from memory, re-fetch before quoting numbers) (ground truth from the environment). Narrative: references/verification.md
 
 #### CHECK-02 · بوابة ما بعد الرندر · Postcondition gate on the delivered file (ffprobe / verify_video.py / measured sync) · ✅ مُثبت هنا / proven here
@@ -107,7 +107,7 @@
 - **متى أستخدمها / when:** عند كل تحديث للتقدم وفي التقرير النهائي. / Every progress update and final report.
 - **كيف / how:** Code: inspected · changed locally · verified locally (which command) · committed · pushed · blocked (reason + next step). Motion: CODE_WRITTEN ≠ PREVIEWED ≠ VIDEO_RENDERED ≠ QA_PASS. Documents: drafted · exported · opened and checked. Never merge stages ('done') when only the first happened. **أرقام / params:** 6 code words · 4 motion stages
 - **الرخصة / license:** MIT
-- **الدليل / proof:** — (لا دليل تشغيل بعد / no run proof yet)
+- **الدليل / proof:** `kosif-tool/.claude/skills/kosif-superpowers/references/cinematic-director-pro.md`
 - **المصدر / source:** github.com/affaan-m/ECC skills/terminal-ops (MIT © 2026 Affaan Mustafa; paraphrased); references/cinematic-director-pro.md rule CODE_WRITTEN ≠ VIDEO_RENDERED ≠ QA_PASS (owner)
 
 ## التقييمات — Evals
@@ -306,7 +306,7 @@
 - **كيف / how:** Script the model's replies per scenario (text, tool calls, server errors 500/401, bad JSON). Save every request body and headers to the scenario folder; save stdout, stderr, exit code and the workdir effects. Then compare runs with differential_exam.py. Card HX-02.
 - **يحتاج / needs:** [`python3`](../requirements.md#req-python3)
 - **الرخصة / license:** owner
-- **الدليل / proof:** — (لا دليل تشغيل بعد / no run proof yet)
+- **الدليل / proof:** `kosif-tool/.claude/skills/kosif-superpowers/references/codex-agent-harness.md`
 - **المصدر / source:** https://github.com/softsweb/codex-clone-hidden-test-kit (no licence: methods only, no files copied); references/codex-agent-harness.md
 
 #### CHECK-33 · قائمة سطح الملاحظة · Observable-surface checklist · 📄 موصوف / documented only
@@ -314,7 +314,7 @@
 - **متى أستخدمها / when:** تصميم امتحان مقارنة / designing a comparison exam
 - **كيف / how:** Thirteen checks: request count, request shape, instructions, tools, environment context, user messages, tool results, file effects, final answer, JSON events, exit code, stderr errors, headers. Cover hard paths too: model matrix, stdin, -C, images, env/PATH, server errors, unknown tool, long output truncation, non-zero exit. Cards HX-03, HX-05.
 - **الرخصة / license:** owner
-- **الدليل / proof:** — (لا دليل تشغيل بعد / no run proof yet)
+- **الدليل / proof:** `kosif-tool/.claude/skills/kosif-superpowers/references/codex-agent-harness.md`
 - **المصدر / source:** https://github.com/softsweb/codex-clone-hidden-test-kit (no licence: methods only, no files copied); references/codex-agent-harness.md
 
 #### CHECK-34 · المصحّح يعطي 100% على نفسه أولًا · Scorer must score 100% on itself first · 📄 موصوف / documented only
@@ -332,7 +332,7 @@
 - **كيف / how:** Separate what came from the tool (e.g. REA reads) from what came from your own scripts. List what was not tested. When a tool chokes on a huge target, shrink the target (carve one section) and confirm bulk findings with tool reads. Report baseline vs upgrade (kit: 75.4% → 98.5% with REA mandatory). Cards HX-06…HX-08.
 - **يحتاج / needs:** [`npm:rea`](../requirements.md#req-npm-rea)
 - **الرخصة / license:** owner
-- **الدليل / proof:** — (لا دليل تشغيل بعد / no run proof yet)
+- **الدليل / proof:** `kosif-tool/.claude/skills/kosif-superpowers/references/codex-agent-harness.md`
 - **المصدر / source:** https://github.com/softsweb/codex-clone-hidden-test-kit (no licence: methods only, no files copied); references/codex-agent-harness.md
 
 ## المصادر والرخص / sources & licences

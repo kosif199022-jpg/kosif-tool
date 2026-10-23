@@ -2,6 +2,7 @@
  {
   "id": "TYPE-01",
   "family": "typography-latin",
+  "domain": "motion",
   "name_ar": "مقاسات الخط للفيديو",
   "name_en": "Video type sizing & contrast",
   "status": "documented",
@@ -34,6 +35,7 @@
  {
   "id": "TYPE-02",
   "family": "typography-latin",
+  "domain": "motion",
   "name_ar": "ميزانية الكلمات والأسطر",
   "name_en": "Word & line budgets (on-screen copy ≠ narration)",
   "status": "documented",
@@ -65,6 +67,7 @@
  {
   "id": "TYPE-03",
   "family": "typography-latin",
+  "domain": "motion",
   "name_ar": "زمن القراءة والثبات",
   "name_en": "Read-time & hold rules",
   "status": "documented",
@@ -96,6 +99,7 @@
  {
   "id": "TYPE-04",
   "family": "typography-latin",
+  "domain": "motion",
   "name_ar": "سلّم الأحجام والأوزان والتباعد",
   "name_en": "Scale, weight, leading & tracking tokens",
   "status": "documented",
@@ -131,6 +135,7 @@
  {
   "id": "TYPE-05",
   "family": "typography-latin",
+  "domain": "motion",
   "name_ar": "اختيار الخط وتزويجه",
   "name_en": "Choosing & pairing faces",
   "status": "documented",
@@ -164,6 +169,7 @@
  {
   "id": "TYPE-06",
   "family": "typography-latin",
+  "domain": "motion",
   "name_ar": "أرقام جدولية وخصائص OpenType",
   "name_en": "Tabular numerals & OpenType features",
   "status": "documented",
@@ -194,6 +200,7 @@
  {
   "id": "TYPE-07",
   "family": "typography-latin",
+  "domain": "motion",
   "name_ar": "ملاءمة النص للعرض وقياسه",
   "name_en": "Fit-to-width & text measuring",
   "status": "install",
@@ -226,6 +233,7 @@
  {
   "id": "TYPE-08",
   "family": "typography-latin",
+  "domain": "motion",
   "name_ar": "نص SVG حاد وهالات التسميات",
   "name_en": "Crisp SVG text & label halos",
   "status": "documented",
@@ -254,6 +262,7 @@
  {
   "id": "TYPE-09",
   "family": "typography-latin",
+  "domain": "motion",
   "name_ar": "تراخيص الخطوط ونظافتها",
   "name_en": "Font licensing & font hygiene",
   "status": "documented",
@@ -289,6 +298,7 @@
  {
   "id": "TYPE-10",
   "family": "typography-latin",
+  "domain": "motion",
   "name_ar": "حدود النص داخل صور الذكاء الاصطناعي",
   "name_en": "Text-in-AI-image ladder",
   "status": "key",
@@ -320,6 +330,7 @@
  {
   "id": "TYPE-11",
   "family": "typography-latin",
+  "domain": "motion",
   "name_ar": "خطوط لاتينية مدمجة جاهزة",
   "name_en": "Owner-bundled Latin fonts (offline)",
   "status": "ready",
@@ -353,6 +364,7 @@
  {
   "id": "TYPE-12",
   "family": "typography-latin",
+  "domain": "motion",
   "name_ar": "تضمين الخطوط داخل الملف",
   "name_en": "Offline font inlining (base64)",
   "status": "ready",
@@ -387,6 +399,7 @@
  {
   "id": "TYPE-13",
   "family": "typography-latin",
+  "domain": "motion",
   "name_ar": "مجموعة Google Fonts للتبديل الحي",
   "name_en": "Curated Google Fonts swap set",
   "status": "ready",
@@ -416,6 +429,7 @@
  {
   "id": "TYPE-14",
   "family": "typography-latin",
+  "domain": "motion",
   "name_ar": "صعود من خلف خط القاعدة",
   "name_en": "Baseline mask rise (lines & words)",
   "status": "ready",
@@ -454,6 +468,7 @@
  {
   "id": "TYPE-15",
   "family": "typography-latin",
+  "domain": "motion",
   "name_ar": "صعود من حالة جزئية",
   "name_en": "Rise from a partial state (riseWords)",
   "status": "ready",
@@ -483,6 +498,7 @@
  {
   "id": "TYPE-16",
   "family": "typography-latin",
+  "domain": "motion",
   "name_ar": "ظهور من الضباب (سحب البؤرة)",
   "name_en": "Blur-to-sharp focus pull",
   "status": "install",
@@ -525,6 +541,7 @@
  {
   "id": "TYPE-17",
   "family": "typography-latin",
+  "domain": "motion",
   "name_ar": "إضاءة الكلمات بترتيب القراءة",
   "name_en": "Reading-order light-up & blur manifesto",
   "status": "seen",
@@ -556,6 +573,7 @@
  {
   "id": "TYPE-18",
   "family": "typography-latin",
+  "domain": "motion",
   "name_ar": "تتابع الحروف سقوطًا وصعودًا",
   "name_en": "Per-letter drop & rise cascades",
   "status": "install",
@@ -598,6 +616,7 @@
  {
   "id": "TYPE-19",
   "family": "typography-latin",
+  "domain": "motion",
   "name_ar": "تبعثر وتدحرج وتجميع",
   "name_en": "Scatter, tumble & gravity assemble",
   "status": "install",
@@ -641,6 +660,7 @@
  {
   "id": "TYPE-20",
   "family": "typography-latin",
+  "domain": "motion",
   "name_ar": "تقارب الحروف",
   "name_en": "Tracking-in collapse (Latin only)",
   "status": "install",
@@ -678,6 +698,7 @@
  {
   "id": "TYPE-21",
   "family": "typography-latin",
+  "domain": "motion",
   "name_ar": "تكديس الأسطر ودفعها وتبديلها",
   "name_en": "Line stack, push & swap",
   "status": "install",
@@ -712,6 +733,7 @@
  {
   "id": "TYPE-22",
   "family": "typography-latin",
+  "domain": "motion",
   "name_ar": "الدخول الشلالي",
   "name_en": "Waterfall entry cascade",
   "status": "documented",
@@ -741,6 +763,7 @@
  {
   "id": "TYPE-23",
   "family": "typography-latin",
+  "domain": "motion",
   "name_ar": "بناء من المركز",
   "name_en": "Kinetic center build",
   "status": "install",
@@ -769,6 +792,7 @@
  {
   "id": "TYPE-24",
   "family": "typography-latin",
+  "domain": "motion",
   "name_ar": "مسح الكلمة الكبيرة بالقناع",
   "name_en": "Clip-path big-word wipe",
   "status": "documented",
@@ -797,6 +821,7 @@
  {
   "id": "TYPE-25",
   "family": "typography-latin",
+  "domain": "motion",
   "name_ar": "كشف بالشرائح",
   "name_en": "Strip-slice letter reveal",
   "status": "seen",
@@ -824,6 +849,7 @@
  {
   "id": "TYPE-26",
   "family": "typography-latin",
+  "domain": "motion",
   "name_ar": "بناء الكلمة على شبكة إنشائية",
   "name_en": "Construction-grid & guide-line build",
   "status": "seen",
@@ -855,6 +881,7 @@
  {
   "id": "TYPE-27",
   "family": "typography-latin",
+  "domain": "motion",
   "name_ar": "عنوان قماشي من 1–4 كلمات مع اتجاه تلقائي",
   "name_en": "Canvas 1–4-word headline with auto-RTL",
   "status": "ready",
@@ -882,6 +909,7 @@
  {
   "id": "TYPE-28",
   "family": "typography-latin",
+  "domain": "motion",
   "name_ar": "موجة الحروف",
   "name_en": "Per-letter sine bounce & wave",
   "status": "seen",
@@ -913,6 +941,7 @@
  {
   "id": "TYPE-29",
   "family": "typography-latin",
+  "domain": "motion",
   "name_ar": "مفردات حركة النص للستوري بورد",
   "name_en": "Text-motion vocabulary for storyboards",
   "status": "documented",
@@ -940,6 +969,7 @@
  {
   "id": "TYPE-30",
   "family": "typography-latin",
+  "domain": "motion",
   "name_ar": "الكلمة المختفية",
   "name_en": "Invisible-word blink",
   "status": "documented",
@@ -967,6 +997,7 @@
  {
   "id": "TYPE-31",
   "family": "typography-latin",
+  "domain": "motion",
   "name_ar": "آلة كاتبة متدرجة بمؤشر",
   "name_en": "Eased typewriter with caret (typeOn)",
   "status": "ready",
@@ -1020,6 +1051,7 @@
  {
   "id": "TYPE-32",
   "family": "typography-latin",
+  "domain": "motion",
   "name_ar": "كتابة بشرية: أخطاء ومسح ومؤشر ملوّن",
   "name_en": "Human typing: typos, backspace, caret swap",
   "status": "install",
@@ -1057,6 +1089,7 @@
  {
   "id": "TYPE-33",
   "family": "typography-latin",
+  "domain": "motion",
   "name_ar": "فك التشفير",
   "name_en": "Scramble / decode reveal",
   "status": "ready",
@@ -1096,6 +1129,7 @@
  {
   "id": "TYPE-34",
   "family": "typography-latin",
+  "domain": "motion",
   "name_ar": "قلب الحروف ثلاثي الأبعاد",
   "name_en": "Hacker-flip 3D decode",
   "status": "documented",
@@ -1125,6 +1159,7 @@
  {
   "id": "TYPE-35",
   "family": "typography-latin",
+  "domain": "motion",
   "name_ar": "لوحة المطار القلّابة",
   "name_en": "Split-flap (Solari) board",
   "status": "install",
@@ -1159,6 +1194,7 @@
  {
   "id": "TYPE-36",
   "family": "typography-latin",
+  "domain": "motion",
   "name_ar": "عدّاد الأسطوانة الدوّار",
   "name_en": "Odometer digit roll",
   "status": "seen",
@@ -1194,6 +1230,7 @@
  {
   "id": "TYPE-37",
   "family": "typography-latin",
+  "domain": "motion",
   "name_ar": "عدّاد بأرقام جدولية",
   "name_en": "Tabular counter (MOTION.counter)",
   "status": "ready",
@@ -1229,6 +1266,7 @@
  {
   "id": "TYPE-38",
   "family": "typography-latin",
+  "domain": "motion",
   "name_ar": "بكرة الكلمات وعدّاد نابض",
   "name_en": "Slot-machine word roll & spring ticker",
   "status": "install",
@@ -1268,6 +1306,7 @@
  {
   "id": "TYPE-39",
   "family": "typography-latin",
+  "domain": "motion",
   "name_ar": "تبديل كلمة في خانة ثابتة واستيلاء الشريط",
   "name_en": "Word-slot swap & ticker takeover",
   "status": "install",
@@ -1304,6 +1343,7 @@
  {
   "id": "TYPE-40",
   "family": "typography-latin",
+  "domain": "motion",
   "name_ar": "إيقاع البادئة/البطل/الذيل",
   "name_en": "Lead / hero / tail beat splitter",
   "status": "proven",
@@ -1337,6 +1377,7 @@
  {
   "id": "TYPE-41",
   "family": "typography-latin",
+  "domain": "motion",
   "name_ar": "صدمة العنوان وضربة الكلمة على الإيقاع",
   "name_en": "Headline slam & beat word punch",
   "status": "install",
@@ -1382,6 +1423,7 @@
  {
   "id": "TYPE-42",
   "family": "typography-latin",
+  "domain": "motion",
   "name_ar": "متتاليات الضرب وجمل تُبنى بالضربات",
   "name_en": "Beat-slam sequences & stacked statements",
   "status": "seen",
@@ -1416,6 +1458,7 @@
  {
   "id": "TYPE-43",
   "family": "typography-latin",
+  "domain": "motion",
   "name_ar": "وصفة سطر الافتتاح",
   "name_en": "Hook-line recipe & kinetic-type beats",
   "status": "documented",
@@ -1446,6 +1489,7 @@
  {
   "id": "TYPE-44",
   "family": "typography-latin",
+  "domain": "motion",
   "name_ar": "ختم وملصق وكلمة مؤثر صوتي",
   "name_en": "Stamp, sticker & SFX word pop",
   "status": "seen",
@@ -1487,6 +1531,7 @@
  {
   "id": "TYPE-45",
   "family": "typography-latin",
+  "domain": "motion",
   "name_ar": "انزلاق بضبابية حركة ولطخة لونية",
   "name_en": "Motion-blur slide, smear & stretch",
   "status": "seen",
@@ -1525,6 +1570,7 @@
  {
   "id": "TYPE-46",
   "family": "typography-latin",
+  "domain": "motion",
   "name_ar": "كلمة بانفصال RGB وتشويش",
   "name_en": "RGB-split glitch word",
   "status": "ready",
@@ -1560,6 +1606,7 @@
  {
   "id": "TYPE-47",
   "family": "typography-latin",
+  "domain": "motion",
   "name_ar": "بدائيات حركة النص على الموسيقى",
   "name_en": "Music-anchored type primitives & templates",
   "status": "install",
@@ -1594,6 +1641,7 @@
  {
   "id": "TYPE-48",
   "family": "typography-latin",
+  "domain": "motion",
   "name_ar": "نص بإطارات ممسوكة",
   "name_en": "Held-frame stepped type",
   "status": "idea",
@@ -1627,6 +1675,7 @@
  {
   "id": "TYPE-49",
   "family": "typography-latin",
+  "domain": "motion",
   "name_ar": "قلم التظليل والخط السفلي",
   "name_en": "Highlighter & underline swipe",
   "status": "install",
@@ -1676,6 +1725,7 @@
  {
   "id": "TYPE-50",
   "family": "typography-latin",
+  "domain": "motion",
   "name_ar": "كلمات داخل كبسولات",
   "name_en": "Keyword pills",
   "status": "seen",
@@ -1711,6 +1761,7 @@
  {
   "id": "TYPE-51",
   "family": "typography-latin",
+  "domain": "motion",
   "name_ar": "شطب واستبدال",
   "name_en": "Strike-through & replace",
   "status": "install",
@@ -1751,6 +1802,7 @@
  {
   "id": "TYPE-52",
   "family": "typography-latin",
+  "domain": "motion",
   "name_ar": "عنوان بلونين وكلمة لون",
   "name_en": "Two-tone lines & accent-word colour",
   "status": "seen",
@@ -1801,6 +1853,7 @@
  {
   "id": "TYPE-53",
   "family": "typography-latin",
+  "domain": "motion",
   "name_ar": "غروتسك عريض مع كلمة سيريف مائلة",
   "name_en": "Grotesk + italic-serif accent",
   "status": "ready",
@@ -1850,6 +1903,7 @@
  {
   "id": "TYPE-54",
   "family": "typography-latin",
+  "domain": "motion",
   "name_ar": "عنوان سيريف تحريري بكلمة مائلة",
   "name_en": "Editorial serif headline & keyword title",
   "status": "seen",
@@ -1893,6 +1947,7 @@
  {
   "id": "TYPE-55",
   "family": "typography-latin",
+  "domain": "motion",
   "name_ar": "تعبئة متدرجة ومعدنية",
   "name_en": "Gradient & metallic word fills",
   "status": "seen",
@@ -1930,6 +1985,7 @@
  {
   "id": "TYPE-56",
   "family": "typography-latin",
+  "domain": "motion",
   "name_ar": "أقواس تحديد وصندوق أداة تصميم",
   "name_en": "Selection brackets & design-tool bounding box",
   "status": "seen",
@@ -1961,6 +2017,7 @@
  {
   "id": "TYPE-57",
   "family": "typography-latin",
+  "domain": "motion",
   "name_ar": "صور ووجوه وأيقونات داخل السطر",
   "name_en": "Inline avatars & icons inside a headline",
   "status": "seen",
@@ -1990,6 +2047,7 @@
  {
   "id": "TYPE-58",
   "family": "typography-latin",
+  "domain": "motion",
   "name_ar": "الكلمة تؤدي معناها",
   "name_en": "Word performs its meaning",
   "status": "seen",
@@ -2022,6 +2080,7 @@
  {
   "id": "TYPE-59",
   "family": "typography-latin",
+  "domain": "motion",
   "name_ar": "قوائم تخفت السابق",
   "name_en": "Dim-previous stacks & active-item lists",
   "status": "seen",
@@ -2059,6 +2118,7 @@
  {
   "id": "TYPE-60",
   "family": "typography-latin",
+  "domain": "motion",
   "name_ar": "النقطة الختامية وإبدال الحرف",
   "name_en": "Full-stop dot & glyph substitution",
   "status": "seen",
@@ -2094,6 +2154,7 @@
  {
   "id": "TYPE-61",
   "family": "typography-latin",
+  "domain": "motion",
   "name_ar": "الخط المتغير: محاور ووزن متموج وعرض",
   "name_en": "Variable-font motion: axis tween, weight wave, width swell",
   "status": "install",
@@ -2137,6 +2198,7 @@
  {
   "id": "TYPE-62",
   "family": "typography-latin",
+  "domain": "motion",
   "name_ar": "خط مفرّغ: أرقام مجوفة ومن محيط إلى تعبئة",
   "name_en": "Outline type: hollow numerals, outline → fill, glowing outline",
   "status": "install",
@@ -2180,6 +2242,7 @@
  {
   "id": "TYPE-63",
   "family": "typography-latin",
+  "domain": "motion",
   "name_ar": "طباعة شبحية خلفية",
   "name_en": "Giant ghost background type & ghost rows",
   "status": "ready",
@@ -2220,6 +2283,7 @@
  {
   "id": "TYPE-64",
   "family": "typography-latin",
+  "domain": "motion",
   "name_ar": "نص بارز بظلال مكدسة",
   "name_en": "Extruded & stacked-shadow type",
   "status": "seen",
@@ -2263,6 +2327,7 @@
  {
   "id": "TYPE-65",
   "family": "typography-latin",
+  "domain": "motion",
   "name_ar": "أثر الصدى والنسخ المحيطية",
   "name_en": "Echo trail & outline echo stack",
   "status": "seen",
@@ -2303,6 +2368,7 @@
  {
   "id": "TYPE-66",
   "family": "typography-latin",
+  "domain": "motion",
   "name_ar": "نص مملوء بصورة أو فيديو",
   "name_en": "Image- & video-filled text",
   "status": "seen",
@@ -2340,6 +2406,7 @@
  {
   "id": "TYPE-67",
   "family": "typography-latin",
+  "domain": "motion",
   "name_ar": "نص لزج متحول",
   "name_en": "Gooey morph text",
   "status": "install",
@@ -2370,6 +2437,7 @@
  {
   "id": "TYPE-68",
   "family": "typography-latin",
+  "domain": "motion",
   "name_ar": "حروف منفوخة بالفيزياء",
   "name_en": "Inflated physics letterforms",
   "status": "install",
@@ -2399,6 +2467,7 @@
  {
   "id": "TYPE-69",
   "family": "typography-latin",
+  "domain": "motion",
   "name_ar": "جسيمات تتجمع لتكوّن كلمة",
   "name_en": "Particles assemble into a word",
   "status": "seen",
@@ -2427,6 +2496,7 @@
  {
   "id": "TYPE-70",
   "family": "typography-latin",
+  "domain": "motion",
   "name_ar": "خط الخلايا: ASCII ونقاط المصفوفة",
   "name_en": "Cell-based type: ASCII blocks & dot-matrix numerals",
   "status": "seen",
@@ -2460,6 +2530,7 @@
  {
   "id": "TYPE-71",
   "family": "typography-latin",
+  "domain": "motion",
   "name_ar": "كلمات مدمجة داخل اللقطة",
   "name_en": "Words embedded in footage (composition craft)",
   "status": "documented",
@@ -2489,6 +2560,7 @@
  {
   "id": "TYPE-72",
   "family": "typography-latin",
+  "domain": "motion",
   "name_ar": "نص على حلقات ومدارات",
   "name_en": "Text rings & orbiting words",
   "status": "seen",
@@ -2534,6 +2606,7 @@
  {
   "id": "TYPE-73",
   "family": "typography-latin",
+  "domain": "motion",
   "name_ar": "نفق النص ودوامته",
   "name_en": "Circular text tunnel & spiral vortex",
   "status": "seen",
@@ -2565,6 +2638,7 @@
  {
   "id": "TYPE-74",
   "family": "typography-latin",
+  "domain": "motion",
   "name_ar": "أسطوانة نص ثلاثية الأبعاد وشرائط حلزونية",
   "name_en": "3D text cylinder & helix ribbons",
   "status": "seen",
@@ -2598,6 +2672,7 @@
  {
   "id": "TYPE-75",
   "family": "typography-latin",
+  "domain": "motion",
   "name_ar": "جدار الشرائط المتعاكسة",
   "name_en": "Bidirectional marquee wall",
   "status": "seen",
@@ -2639,6 +2714,7 @@
  {
   "id": "TYPE-76",
   "family": "typography-latin",
+  "domain": "motion",
   "name_ar": "شريط مائل وجدار منظوري",
   "name_en": "Tilted ticker band & perspective word wall",
   "status": "seen",
@@ -2670,6 +2746,7 @@
  {
   "id": "TYPE-77",
   "family": "typography-latin",
+  "domain": "motion",
   "name_ar": "جدار نص يندفع وينضغط إلى شعار",
   "name_en": "Text-wall rush & compress into a logo",
   "status": "idea",
@@ -2697,6 +2774,7 @@
  {
   "id": "TYPE-78",
   "family": "typography-latin",
+  "domain": "motion",
   "name_ar": "كلمات كعمارة ودوران الأرباع",
   "name_en": "Words as architecture & quadrant rotation",
   "status": "seen",
@@ -2728,6 +2806,7 @@
  {
   "id": "TYPE-79",
   "family": "typography-latin",
+  "domain": "motion",
   "name_ar": "عنوان سينمائي متباعد الحروف",
   "name_en": "Letter-spaced cinematic title",
   "status": "proven",
@@ -2765,6 +2844,7 @@
  {
   "id": "TYPE-80",
   "family": "typography-latin",
+  "domain": "motion",
   "name_ar": "بطاقة عنوان هادئة وقفل الشعار",
   "name_en": "Calm title card & lockup",
   "status": "install",
@@ -2796,6 +2876,7 @@
  {
   "id": "TYPE-81",
   "family": "typography-latin",
+  "domain": "motion",
   "name_ar": "بطاقات الفصول والأرقام الضخمة",
   "name_en": "Numbered chapter blocks & giant-number cards",
   "status": "seen",
@@ -2833,6 +2914,7 @@
  {
   "id": "TYPE-82",
   "family": "typography-latin",
+  "domain": "motion",
   "name_ar": "الشرائط السفلية ولوحات الأسماء",
   "name_en": "Lower-thirds & name plates",
   "status": "ready",
@@ -2870,6 +2952,7 @@
  {
   "id": "TYPE-83",
   "family": "typography-latin",
+  "domain": "motion",
   "name_ar": "أنظمة الأصوات الطباعية",
   "name_en": "Multi-voice type systems",
   "status": "seen",
@@ -2910,6 +2993,7 @@
  {
   "id": "TYPE-84",
   "family": "typography-latin",
+  "domain": "motion",
   "name_ar": "مظهر الترجمة حسب النبرة والعالم",
   "name_en": "Caption look by tone & theme",
   "status": "seen",
@@ -2941,6 +3025,7 @@
  {
   "id": "TYPE-85",
   "family": "typography-latin",
+  "domain": "motion",
   "name_ar": "تكديس هرمي بأحجام متدرجة",
   "name_en": "Size-stepped hierarchy stacks",
   "status": "seen",
@@ -2972,6 +3057,7 @@
  {
   "id": "TYPE-86",
   "family": "typography-latin",
+  "domain": "motion",
   "name_ar": "عنوان سيريف متراكب يُبنى كلمة كلمة",
   "name_en": "Stacked serif title build",
   "status": "seen",
@@ -3001,6 +3087,7 @@
  {
   "id": "TYPE-87",
   "family": "typography-latin",
+  "domain": "motion",
   "name_ar": "بطاقة حرف أو كلمة بملء الشاشة",
   "name_en": "Full-bleed glyph & word cards",
   "status": "seen",
@@ -3032,6 +3119,7 @@
  {
   "id": "TYPE-88",
   "family": "typography-latin",
+  "domain": "motion",
   "name_ar": "تجميع المعادلات",
   "name_en": "Equation assembly",
   "status": "seen",
@@ -3061,6 +3149,7 @@
  {
   "id": "TYPE-89",
   "family": "typography-latin",
+  "domain": "motion",
   "name_ar": "استايلات حركية في الكتالوج",
   "name_en": "Catalog kinetic styles: brutalist · minimal · typewriter",
   "status": "documented",
@@ -3100,6 +3189,7 @@
  {
   "id": "TYPE-90",
   "family": "typography-latin",
+  "domain": "motion",
   "name_ar": "تزويجات ولوحات جاهزة للعناوين",
   "name_en": "Preset pairings & palettes for title systems",
   "status": "documented",

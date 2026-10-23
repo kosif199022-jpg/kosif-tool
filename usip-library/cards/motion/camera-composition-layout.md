@@ -1197,7 +1197,7 @@
 
 **المعاملات:** scale 1.05->1.2, xPercent 0->-12, 4 s linear
 
-**التثبيت:** see arsenal-libraries.md
+**التثبيت:** npm i gsap@3.15.0 (GSAP Standard no-charge licence, not OSI; version from arsenal-libraries.md)
 
 **الوسوم:** تحريك الصور · صورة ثابتة · زووم بطيء · photo pan · slow zoom
 
@@ -1213,7 +1213,7 @@
 
 #### 2. الجاهزية والشارة (A28)
 
-- لا متطلبات مسجلة؛ افحص المسار والأداة بـ `hub.py doctor` قبل الشارة.
+- `npm:gsap` ← npm ls gsap أو وجود node_modules/gsap
 - الوضع 1: شارة «هنا الآن» بعد الفحص، لا 📦 الكتالوج تلقائيًا · الوضع 2: `كتالوج: 📦 · هنا: غير مفحوص` · الوضع 3: بلا شارة ولا معرّف.
 
 #### 3. موضعها في الخطة (A26)
@@ -1271,7 +1271,7 @@
 
 **كيف:** tl.to('#clip .inner',{clipPath:'inset(8% 12% 6% 10%)',xPercent:-4,duration:1},2).
 
-**التثبيت:** see arsenal-libraries.md
+**التثبيت:** npm i gsap@3.15.0 (GSAP Standard no-charge licence, not OSI; version from arsenal-libraries.md)
 
 **الوسوم:** قص الفيديو · كروب · تأطير · crop animation · mask
 
@@ -1287,7 +1287,7 @@
 
 #### 2. الجاهزية والشارة (A28)
 
-- لا متطلبات مسجلة؛ افحص المسار والأداة بـ `hub.py doctor` قبل الشارة.
+- `npm:gsap` ← npm ls gsap أو وجود node_modules/gsap
 - الوضع 1: شارة «هنا الآن» بعد الفحص، لا 📦 الكتالوج تلقائيًا · الوضع 2: `كتالوج: 📦 · هنا: غير مفحوص` · الوضع 3: بلا شارة ولا معرّف.
 
 #### 3. موضعها في الخطة (A26)
@@ -3957,7 +3957,7 @@
 
 **المعاملات:** centripetal Catmull-Rom
 
-**التثبيت:** see arsenal-libraries.md
+**التثبيت:** npm i three@0.186.1 (MIT; version from arsenal-libraries.md)
 
 **الوسوم:** مسار سلس · حركة متصلة · نقاط مفتاحية · spline camera · keyframes
 
@@ -3973,7 +3973,7 @@
 
 #### 2. الجاهزية والشارة (A28)
 
-- لا متطلبات مسجلة؛ افحص المسار والأداة بـ `hub.py doctor` قبل الشارة.
+- `npm:three` ← npm ls three أو وجود node_modules/three
 - الوضع 1: شارة «هنا الآن» بعد الفحص، لا 📦 الكتالوج تلقائيًا · الوضع 2: `كتالوج: 📦 · هنا: غير مفحوص` · الوضع 3: بلا شارة ولا معرّف.
 
 #### 3. موضعها في الخطة (A26)
@@ -4259,7 +4259,7 @@
 
 **كيف:** tl.set(cam, {x, y}) at 10.90 + d for [(0,6,−4), (1/30,−5,3), (2/30,3,−2), (3/30,0,0)] plus #dim .22 flash.
 
-**التثبيت:** see arsenal-libraries.md
+**التثبيت:** npm i gsap@3.15.0 (GSAP Standard no-charge licence, not OSI; version from arsenal-libraries.md)
 
 **الوسوم:** رجة خفيفة · اهتزاز على الكلمة · تأثير الصدمة · micro shake · impact
 
@@ -4275,7 +4275,7 @@
 
 #### 2. الجاهزية والشارة (A28)
 
-- لا متطلبات مسجلة؛ افحص المسار والأداة بـ `hub.py doctor` قبل الشارة.
+- `npm:gsap` ← npm ls gsap أو وجود node_modules/gsap
 - الوضع 1: شارة «هنا الآن» بعد الفحص، لا 📦 الكتالوج تلقائيًا · الوضع 2: `كتالوج: 📦 · هنا: غير مفحوص` · الوضع 3: بلا شارة ولا معرّف.
 
 #### 3. موضعها في الخطة (A26)
@@ -8444,7 +8444,7 @@
 | نطاق الدليل | `sibling` |
 | الرخصة | MIT |
 
-**ما هي:** حركة كاميرا وسطية مطابقة للمفهوم. — Concept-matched mid-leg camera move.
+**ما هي:** حركة كاميرا: luxury product: حركة كاميرا وسطية مطابقة للمفهوم. — Camera grammar: luxury product: Concept-matched mid-leg camera move.
 
 **متى:** حين تكتب برومبت مقطع لمنتج فاخر وتحتاج حركة كاميرا مناسبة كنصف دوران بطيء حوله / for a luxury product leg prompt that needs a slow half-orbit around the hero object
 
@@ -8522,7 +8522,7 @@
 | نطاق الدليل | `sibling` |
 | الرخصة | MIT |
 
-**ما هي:** حركة كاميرا وسطية مطابقة للمفهوم. — Concept-matched mid-leg camera move.
+**ما هي:** حركة كاميرا: real estate: حركة كاميرا وسطية مطابقة للمفهوم. — Camera grammar: real estate: Concept-matched mid-leg camera move.
 
 **متى:** حين تصنع فيديو عقاريا وتحتاج كاميرا تنساب عبر الأبواب وترتفع في الردهات / for a real-estate leg prompt: steadicam glide through doorways and crane-up in atria
 
@@ -8600,7 +8600,7 @@
 | نطاق الدليل | `sibling` |
 | الرخصة | MIT |
 
-**ما هي:** حركة كاميرا وسطية مطابقة للمفهوم. — Concept-matched mid-leg camera move.
+**ما هي:** حركة كاميرا: industrial: حركة كاميرا وسطية مطابقة للمفهوم. — Camera grammar: industrial: Concept-matched mid-leg camera move.
 
 **متى:** حين تصنع مشهدا بطابع صناعي وتحتاج تتبعا جانبيا منخفضا مع بارالاكس في المقدمة / for an industrial leg prompt: a low lateral track with foreground parallax
 
@@ -8754,7 +8754,7 @@
 | نطاق الدليل | `sibling` |
 | الرخصة | MIT |
 
-**ما هي:** حركة كاميرا وسطية مطابقة للمفهوم. — Concept-matched mid-leg camera move.
+**ما هي:** حركة كاميرا: travel: حركة كاميرا وسطية مطابقة للمفهوم. — Camera grammar: travel: Concept-matched mid-leg camera move.
 
 **متى:** حين تصنع فيديو سفر وتريد لقطة درون ترتفع لتكشف المكان ثم تنقض نازلة / for a travel leg prompt: a drone rise-and-reveal followed by a descending swoop
 
@@ -8832,7 +8832,7 @@
 | نطاق الدليل | `sibling` |
 | الرخصة | MIT |
 
-**ما هي:** حركة كاميرا وسطية مطابقة للمفهوم. — Concept-matched mid-leg camera move.
+**ما هي:** حركة كاميرا: food/craft: حركة كاميرا وسطية مطابقة للمفهوم. — Camera grammar: food/craft: Concept-matched mid-leg camera move.
 
 **متى:** حين تصنع مقطع طبخ أو حرفة يدوية وتريد دفع الكاميرا نحو لحظة العمل ثم التراجع بهدوء / for a food or craft leg prompt: push in on the craft moment, then ease back
 
@@ -8910,7 +8910,7 @@
 | نطاق الدليل | `sibling` |
 | الرخصة | MIT |
 
-**ما هي:** حركة كاميرا وسطية مطابقة للمفهوم. — Concept-matched mid-leg camera move.
+**ما هي:** حركة كاميرا: miniature: حركة كاميرا وسطية مطابقة للمفهوم. — Camera grammar: miniature: Concept-matched mid-leg camera move.
 
 **متى:** حين تصنع عالما مصغرا وتريد كاميرا تغوص فيه وتقفز جويا بين أجزائه / for a miniature-world leg prompt with dives and aerial hops
 
@@ -23561,7 +23561,7 @@
 | نطاق الدليل | `sibling` |
 | الرخصة | owner |
 
-**ما هي:** قاعدة تكوين للبرومبتات/اللقطات. — Composition rule for prompts/shots.
+**ما هي:** تكوين: Rule of thirds: قاعدة تكوين للبرومبتات/اللقطات. — Composition: Rule of thirds: Composition rule for prompts/shots.
 
 **متى:** حين تكتب برومبت لصورة أو تخطط لقطة وتريد وضع الموضوع على خطوط الأثلاث / when writing an image prompt or planning a shot that places the subject on the thirds grid
 
@@ -23634,7 +23634,7 @@
 | نطاق الدليل | `sibling` |
 | الرخصة | owner |
 
-**ما هي:** قاعدة تكوين للبرومبتات/اللقطات. — Composition rule for prompts/shots.
+**ما هي:** تكوين: Golden ratio/spiral: قاعدة تكوين للبرومبتات/اللقطات. — Composition: Golden ratio/spiral: Composition rule for prompts/shots.
 
 **متى:** حين تكتب برومبت أو تخطط لقطة بتكوين النسبة الذهبية أو الحلزون الذهبي / when writing a prompt or planning a shot with golden ratio or golden spiral composition
 
@@ -23707,7 +23707,7 @@
 | نطاق الدليل | `sibling` |
 | الرخصة | owner |
 
-**ما هي:** قاعدة تكوين للبرومبتات/اللقطات. — Composition rule for prompts/shots.
+**ما هي:** تكوين: Centred symmetry: قاعدة تكوين للبرومبتات/اللقطات. — Composition: Centred symmetry: Composition rule for prompts/shots.
 
 **متى:** حين يحتاج البرومبت أو اللقطة كادرًا متماثلًا والموضوع في منتصفه تمامًا / when a prompt or shot calls for a centred, symmetrical frame
 
@@ -23780,7 +23780,7 @@
 | نطاق الدليل | `sibling` |
 | الرخصة | owner |
 
-**ما هي:** قاعدة تكوين للبرومبتات/اللقطات. — Composition rule for prompts/shots.
+**ما هي:** تكوين: Leading lines: قاعدة تكوين للبرومبتات/اللقطات. — Composition: Leading lines: Composition rule for prompts/shots.
 
 **متى:** حين تريد توجيه عين المشاهد نحو الموضوع بخطوط داخل الكادر في برومبت أو لقطة / when a prompt or shot should guide the eye to the subject with lines in the frame
 
@@ -23853,7 +23853,7 @@
 | نطاق الدليل | `sibling` |
 | الرخصة | owner |
 
-**ما هي:** قاعدة تكوين للبرومبتات/اللقطات. — Composition rule for prompts/shots.
+**ما هي:** تكوين: Negative space: قاعدة تكوين للبرومبتات/اللقطات. — Composition: Negative space: Composition rule for prompts/shots.
 
 **متى:** حين يحتاج البرومبت أو اللقطة مساحة فارغة واسعة حول الموضوع / when a prompt or shot needs generous empty space around the subject
 
@@ -23926,7 +23926,7 @@
 | نطاق الدليل | `sibling` |
 | الرخصة | owner |
 
-**ما هي:** قاعدة تكوين للبرومبتات/اللقطات. — Composition rule for prompts/shots.
+**ما هي:** تكوين: Frame-within-frame: قاعدة تكوين للبرومبتات/اللقطات. — Composition: Frame-within-frame: Composition rule for prompts/shots.
 
 **متى:** حين تريد تأطير الموضوع داخل إطار آخر ضمن المشهد في برومبت أو لقطة / when a prompt or shot frames the subject inside another frame within the scene
 
@@ -23999,7 +23999,7 @@
 | نطاق الدليل | `sibling` |
 | الرخصة | owner |
 
-**ما هي:** قاعدة تكوين للبرومبتات/اللقطات. — Composition rule for prompts/shots.
+**ما هي:** تكوين: Low-angle hero / high-angle vulnerability: قاعدة تكوين للبرومبتات/اللقطات. — Composition: Low-angle hero / high-angle vulnerability: Composition rule for prompts/shots.
 
 **متى:** حين تريد إظهار الشخصية قوية بزاوية منخفضة أو ضعيفة بزاوية مرتفعة في برومبت أو لقطة / when a prompt or shot should make a subject look heroic from low or vulnerable from high
 
@@ -24072,7 +24072,7 @@
 | نطاق الدليل | `sibling` |
 | الرخصة | owner |
 
-**ما هي:** قاعدة تكوين للبرومبتات/اللقطات. — Composition rule for prompts/shots.
+**ما هي:** تكوين: Depth stacking: قاعدة تكوين للبرومبتات/اللقطات. — Composition: Depth stacking: Composition rule for prompts/shots.
 
 **متى:** حين تريد عمقًا في اللقطة بطبقات أمامية ووسطى وخلفية في برومبت أو تصوير / when a prompt or shot needs depth via stacked foreground, midground and background
 
@@ -29416,7 +29416,7 @@
 
 **المعاملات:** e.g. 5.0, 25.0, 1.0; API reimplemented in r181 (old options object broken)
 
-**التثبيت:** see arsenal-libraries.md
+**التثبيت:** npm i three@0.186.1 (MIT; version from arsenal-libraries.md)
 
 **الوسوم:** بوكيه · خلفية ضبابية · نقل البؤرة · bokeh · tsl · focus pull
 
@@ -29432,7 +29432,7 @@
 
 #### 2. الجاهزية والشارة (A28)
 
-- لا متطلبات مسجلة؛ افحص المسار والأداة بـ `hub.py doctor` قبل الشارة.
+- `npm:three` ← npm ls three أو وجود node_modules/three
 - الوضع 1: شارة «هنا الآن» بعد الفحص، لا 📦 الكتالوج تلقائيًا · الوضع 2: `كتالوج: 📦 · هنا: غير مفحوص` · الوضع 3: بلا شارة ولا معرّف.
 
 #### 3. موضعها في الخطة (A26)
@@ -32123,7 +32123,7 @@
 
 **المعاملات:** scale 1.35, 0.18 s
 
-**التثبيت:** see arsenal-libraries.md
+**التثبيت:** npm i gsap@3.15.0 (GSAP Standard no-charge licence, not OSI; version from arsenal-libraries.md)
 
 **الوسوم:** زووم سريع · تكبير مفاجئ · لقطة فيديو · snap zoom · zoom hit
 
@@ -32139,7 +32139,7 @@
 
 #### 2. الجاهزية والشارة (A28)
 
-- لا متطلبات مسجلة؛ افحص المسار والأداة بـ `hub.py doctor` قبل الشارة.
+- `npm:gsap` ← npm ls gsap أو وجود node_modules/gsap
 - الوضع 1: شارة «هنا الآن» بعد الفحص، لا 📦 الكتالوج تلقائيًا · الوضع 2: `كتالوج: 📦 · هنا: غير مفحوص` · الوضع 3: بلا شارة ولا معرّف.
 
 #### 3. موضعها في الخطة (A26)

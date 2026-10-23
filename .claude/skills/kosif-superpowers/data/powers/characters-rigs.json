@@ -2,6 +2,7 @@
  {
   "id": "CHAR-01",
   "family": "characters-rigs",
+  "domain": "motion",
   "name_ar": "ورقة تصميم الشخصية واختبار الظل",
   "name_en": "Model sheet & silhouette test",
   "status": "documented",
@@ -30,6 +31,7 @@
  {
   "id": "CHAR-02",
   "family": "characters-rigs",
+  "domain": "motion",
   "name_ar": "وصفة اللطافة",
   "name_en": "Cute character recipe",
   "status": "documented",
@@ -57,6 +59,7 @@
  {
   "id": "CHAR-03",
   "family": "characters-rigs",
+  "domain": "motion",
   "name_ar": "أقفال الهوية النصية",
   "name_en": "Identity lock text (CHR/LOC sheets)",
   "status": "documented",
@@ -88,6 +91,7 @@
  {
   "id": "CHAR-04",
   "family": "characters-rigs",
+  "domain": "motion",
   "name_ar": "قفل الشخصية النفسي",
   "name_en": "Personality lock",
   "status": "documented",
@@ -114,6 +118,7 @@
  {
   "id": "CHAR-05",
   "family": "characters-rigs",
+  "domain": "motion",
   "name_ar": "بايبلات شخصيات fastify",
   "name_en": "Fastify character bibles & reference locks",
   "status": "proven",
@@ -143,6 +148,7 @@
  {
   "id": "CHAR-06",
   "family": "characters-rigs",
+  "domain": "motion",
   "name_ar": "ثبات الشخصية في التوليد بالمراجع",
   "name_en": "Reference-based consistency in generators",
   "status": "key",
@@ -174,6 +180,7 @@
  {
   "id": "CHAR-07",
   "family": "characters-rigs",
+  "domain": "motion",
   "name_ar": "شريط حركة كامل من إطار واحد",
   "name_en": "Whole-strip sprite from one seed frame",
   "status": "key",
@@ -201,6 +208,7 @@
  {
   "id": "CHAR-08",
   "family": "characters-rigs",
+  "domain": "motion",
   "name_ar": "الأفاتار الناطق",
   "name_en": "AI talking avatars",
   "status": "key",
@@ -231,6 +239,7 @@
  {
   "id": "CHAR-09",
   "family": "characters-rigs",
+  "domain": "motion",
   "name_ar": "شخصية ذكاء اصطناعي بالحالات",
   "name_en": "Stateful AI persona orb",
   "status": "install",
@@ -260,6 +269,7 @@
  {
   "id": "CHAR-10",
   "family": "characters-rigs",
+  "domain": "motion",
   "name_ar": "هيكل SVG بنقاط دوران",
   "name_en": "SVG cut-out rig with pivots",
   "status": "ready",
@@ -294,6 +304,7 @@
  {
   "id": "CHAR-11",
   "family": "characters-rigs",
+  "domain": "motion",
   "name_ar": "أطراف بـ IK بعظمتين",
   "name_en": "Two-bone IK limbs",
   "status": "proven",
@@ -326,6 +337,7 @@
  {
   "id": "CHAR-12",
   "family": "characters-rigs",
+  "domain": "motion",
   "name_ar": "انحناء الجسم والمط حسب السرعة",
   "name_en": "Velocity-driven body bend & squash",
   "status": "seen",
@@ -354,6 +366,7 @@
  {
   "id": "CHAR-13",
   "family": "characters-rigs",
+  "domain": "motion",
   "name_ar": "وجوه بتبديل الأشكال",
   "name_en": "Swap-shape faces, mouths & expressions",
   "status": "proven",
@@ -388,6 +401,7 @@
  {
   "id": "CHAR-14",
   "family": "characters-rigs",
+  "domain": "motion",
   "name_ar": "شخصية قصاصات بمؤشر اتجاه",
   "name_en": "Cut-out rig with facing dial",
   "status": "seen",
@@ -416,6 +430,7 @@
  {
   "id": "CHAR-15",
   "family": "characters-rigs",
+  "domain": "motion",
   "name_ar": "الشخصية في إطارها المحلي",
   "name_en": "Character built in its own local frame",
   "status": "proven",
@@ -446,6 +461,7 @@
  {
   "id": "CHAR-16",
   "family": "characters-rigs",
+  "domain": "motion",
   "name_ar": "أدوات تفاصيل المخلوقات",
   "name_en": "Creature detail builders",
   "status": "ready",
@@ -476,6 +492,7 @@
  {
   "id": "CHAR-17",
   "family": "characters-rigs",
+  "domain": "motion",
   "name_ar": "الرجل العصوي الكوميدي",
   "name_en": "Stickman comic style",
   "status": "ready",
@@ -511,6 +528,7 @@
  {
   "id": "CHAR-18",
   "family": "characters-rigs",
+  "domain": "motion",
   "name_ar": "تحريك رسمة واحدة بعظام",
   "name_en": "2D mesh bone rig from one image",
   "status": "seen",
@@ -542,6 +560,7 @@
  {
   "id": "CHAR-19",
   "family": "characters-rigs",
+  "domain": "motion",
   "name_ar": "أشياء بوجوه وتمائم",
   "name_en": "Object-as-character faces & mascots",
   "status": "seen",
@@ -576,6 +595,7 @@
  {
   "id": "CHAR-20",
   "family": "characters-rigs",
+  "domain": "motion",
   "name_ar": "مسرح شخصية بديكور واحد",
   "name_en": "Single-set character stage",
   "status": "seen",
@@ -605,6 +625,7 @@
  {
   "id": "CHAR-21",
   "family": "characters-rigs",
+  "domain": "motion",
   "name_ar": "شخصيات ظلية مسطحة",
   "name_en": "Flat silhouette characters",
   "status": "seen",
@@ -636,6 +657,7 @@
  {
   "id": "CHAR-22",
   "family": "characters-rigs",
+  "domain": "motion",
   "name_ar": "تمائم البكسل والسبرايت",
   "name_en": "Pixel & sprite mascots",
   "status": "seen",
@@ -667,6 +689,7 @@
  {
   "id": "CHAR-23",
   "family": "characters-rigs",
+  "domain": "motion",
   "name_ar": "تحولات الشخصية",
   "name_en": "Character transformations & variants",
   "status": "seen",
@@ -696,6 +719,7 @@
  {
   "id": "CHAR-24",
   "family": "characters-rigs",
+  "domain": "motion",
   "name_ar": "دورة المشي بلا انزلاق",
   "name_en": "Walk cycle without foot sliding",
   "status": "proven",
@@ -725,6 +749,7 @@
  {
   "id": "CHAR-25",
   "family": "characters-rigs",
+  "domain": "motion",
   "name_ar": "ساق مشي إجرائية",
   "name_en": "Procedural walk-cycle leg",
   "status": "proven",
@@ -754,6 +779,7 @@
  {
   "id": "CHAR-26",
   "family": "characters-rigs",
+  "domain": "motion",
   "name_ar": "آلة حالات الوضعية",
   "name_en": "Keyframed pose state machine",
   "status": "proven",
@@ -782,6 +808,7 @@
  {
   "id": "CHAR-27",
   "family": "characters-rigs",
+  "domain": "motion",
   "name_ar": "مولد المشي للسبرايت",
   "name_en": "Procedural sprite walk generator",
   "status": "documented",
@@ -809,6 +836,7 @@
  {
   "id": "CHAR-28",
   "family": "characters-rigs",
+  "domain": "motion",
   "name_ar": "الوضعيات المفتاحية أولًا",
   "name_en": "Pose-to-pose blocking",
   "status": "documented",
@@ -837,6 +865,7 @@
  {
   "id": "CHAR-29",
   "family": "characters-rigs",
+  "domain": "motion",
   "name_ar": "لحظة رد الفعل والقفزة",
   "name_en": "Reaction & jump recipe",
   "status": "proven",
@@ -866,6 +895,7 @@
  {
   "id": "CHAR-30",
   "family": "characters-rigs",
+  "domain": "motion",
   "name_ar": "الإشارة والكشف",
   "name_en": "Point and reveal",
   "status": "documented",
@@ -894,6 +924,7 @@
  {
   "id": "CHAR-31",
   "family": "characters-rigs",
+  "domain": "motion",
   "name_ar": "الحديث للكاميرا",
   "name_en": "Talk-to-camera behaviours",
   "status": "documented",
@@ -920,6 +951,7 @@
  {
   "id": "CHAR-32",
   "family": "characters-rigs",
+  "domain": "motion",
   "name_ar": "ظهور التمائم وقفزاتها",
   "name_en": "Mascot pop-ins & hop arcs",
   "status": "seen",
@@ -951,6 +983,7 @@
  {
   "id": "CHAR-33",
   "family": "characters-rigs",
+  "domain": "motion",
   "name_ar": "لمسات تمثيل",
   "name_en": "Acting accents: celebrate, sleep, run",
   "status": "seen",
@@ -983,6 +1016,7 @@
  {
   "id": "CHAR-34",
   "family": "characters-rigs",
+  "domain": "motion",
   "name_ar": "مبادئ التحريك للهياكل",
   "name_en": "Animation principles for rigs",
   "status": "documented",
@@ -1010,6 +1044,7 @@
  {
   "id": "CHAR-35",
   "family": "characters-rigs",
+  "domain": "motion",
   "name_ar": "الشخصية العربية وفقاعة كلامها",
   "name_en": "RTL staging & Arabic speech bubble",
   "status": "proven",
@@ -1039,6 +1074,7 @@
  {
   "id": "CHAR-36",
   "family": "characters-rigs",
+  "domain": "motion",
   "name_ar": "حياة الخمول",
   "name_en": "Idle life (breath, blink, glances)",
   "status": "ready",
@@ -1068,6 +1104,7 @@
  {
   "id": "CHAR-37",
   "family": "characters-rigs",
+  "domain": "motion",
   "name_ar": "حركة ثانوية بالنوابض والسلاسل",
   "name_en": "Spring & chain secondary motion",
   "status": "proven",
@@ -1100,6 +1137,7 @@
  {
   "id": "CHAR-38",
   "family": "characters-rigs",
+  "domain": "motion",
   "name_ar": "فراشة ويراعة مرافقة",
   "name_en": "Winged companions (butterfly, firefly)",
   "status": "proven",
@@ -1130,6 +1168,7 @@
  {
   "id": "CHAR-39",
   "family": "characters-rigs",
+  "domain": "motion",
   "name_ar": "سرب طيور",
   "name_en": "Flock of birds",
   "status": "ready",
@@ -1155,6 +1194,7 @@
  {
   "id": "CHAR-40",
   "family": "characters-rigs",
+  "domain": "motion",
   "name_ar": "الأرنب القطيفة المنحوت",
   "name_en": "SDF plush bunny (rigged)",
   "status": "proven",
@@ -1184,6 +1224,7 @@
  {
   "id": "CHAR-41",
   "family": "characters-rigs",
+  "domain": "motion",
   "name_ar": "عيون لامعة وعيون برمش",
   "name_en": "Glossy & blinking eyes",
   "status": "ready",
@@ -1211,6 +1252,7 @@
  {
   "id": "CHAR-42",
   "family": "characters-rigs",
+  "domain": "motion",
   "name_ar": "أرنب وأسد المختبر",
   "name_en": "Lab rabbit & lion characters",
   "status": "ready",
@@ -1242,6 +1284,7 @@
  {
   "id": "CHAR-43",
   "family": "characters-rigs",
+  "domain": "motion",
   "name_ar": "سمكة كوي إجرائية",
   "name_en": "Procedural koi",
   "status": "ready",
@@ -1269,6 +1312,7 @@
  {
   "id": "CHAR-44",
   "family": "characters-rigs",
+  "domain": "motion",
   "name_ar": "شخصيات من أشكال أولية",
   "name_en": "Primitive toon figures",
   "status": "ready",
@@ -1298,6 +1342,7 @@
  {
   "id": "CHAR-45",
   "family": "characters-rigs",
+  "domain": "motion",
   "name_ar": "دوران 360 لورقة الشخصية",
   "name_en": "Turntable character sheet",
   "status": "ready",
@@ -1324,6 +1369,7 @@
  {
   "id": "CHAR-46",
   "family": "characters-rigs",
+  "domain": "motion",
   "name_ar": "جسد من الجسيمات بحركة حقيقية",
   "name_en": "Particle body from real motion (mocap)",
   "status": "ready",
@@ -1354,6 +1400,7 @@
  {
   "id": "CHAR-47",
   "family": "characters-rigs",
+  "domain": "motion",
   "name_ar": "تمثيل الشخصيات بلوتي",
   "name_en": "Lottie character acting",
   "status": "install",
@@ -1385,6 +1432,7 @@
  {
   "id": "CHAR-48",
   "family": "characters-rigs",
+  "domain": "motion",
   "name_ar": "لوحات الكوميكس",
   "name_en": "Comics panels",
   "status": "ready",
@@ -1416,6 +1464,7 @@
  {
   "id": "CHAR-49",
   "family": "characters-rigs",
+  "domain": "motion",
   "name_ar": "أنمي أكشن",
   "name_en": "Anime action",
   "status": "ready",
@@ -1448,6 +1497,7 @@
  {
   "id": "CHAR-50",
   "family": "characters-rigs",
+  "domain": "motion",
   "name_ar": "صفحات ويبتون بشخصيات حيوانية",
   "name_en": "Webtoon pages with Arabic overlay",
   "status": "key",

@@ -2,6 +2,7 @@
  {
   "id": "ARAB-01",
   "family": "typography-arabic",
+  "domain": "motion",
   "name_ar": "الكلمة كاملة لا الحرف",
   "name_en": "Whole-word law",
   "status": "proven",
@@ -41,6 +42,7 @@
  {
   "id": "ARAB-02",
   "family": "typography-arabic",
+  "domain": "motion",
   "name_ar": "حصر الاتجاه في عناصر النص",
   "name_en": "RTL scoping for renderers",
   "status": "proven",
@@ -81,6 +83,7 @@
  {
   "id": "ARAB-03",
   "family": "typography-arabic",
+  "domain": "motion",
   "name_ar": "لا تباعد ولا مطّ — الكشيدة فقط",
   "name_en": "No tracking, no stretch — kashida only",
   "status": "documented",
@@ -118,6 +121,7 @@
  {
   "id": "ARAB-04",
   "family": "typography-arabic",
+  "domain": "motion",
   "name_ar": "بوابة تحميل الخط قبل الإطار الأول",
   "name_en": "Font-ready gate before frame 0",
   "status": "ready",
@@ -157,6 +161,7 @@
  {
   "id": "ARAB-05",
   "family": "typography-arabic",
+  "domain": "motion",
   "name_ar": "مساحة التشكيل وحواف الأقنعة",
   "name_en": "Harakat headroom & mask padding",
   "status": "ready",
@@ -195,6 +200,7 @@
  {
   "id": "ARAB-06",
   "family": "typography-arabic",
+  "domain": "motion",
   "name_ar": "توجيه محرك التشكيل",
   "name_en": "Shaping-engine routing",
   "status": "proven",
@@ -243,6 +249,7 @@
  {
   "id": "ARAB-07",
   "family": "typography-arabic",
+  "domain": "motion",
   "name_ar": "كشف الاتجاه تلقائيًا",
   "name_en": "Auto RTL detection",
   "status": "ready",
@@ -278,6 +285,7 @@
  {
   "id": "ARAB-08",
   "family": "typography-arabic",
+  "domain": "motion",
   "name_ar": "مفتاح لغة المحتوى",
   "name_en": "Content-language switch ar|en|both",
   "status": "proven",
@@ -313,6 +321,7 @@
  {
   "id": "ARAB-09",
   "family": "typography-arabic",
+  "domain": "motion",
   "name_ar": "نص حقيقي فوق لوحات التوليد",
   "name_en": "Real type over generated plates",
   "status": "proven",
@@ -354,6 +363,7 @@
  {
   "id": "ARAB-10",
   "family": "typography-arabic",
+  "domain": "motion",
   "name_ar": "العربية داخل مشهد ثلاثي الأبعاد",
   "name_en": "Arabic inside 3D scenes",
   "status": "documented",
@@ -388,6 +398,7 @@
  {
   "id": "ARAB-11",
   "family": "typography-arabic",
+  "domain": "motion",
   "name_ar": "خريطة أصوات الخطوط",
   "name_en": "Arabic font voice map",
   "status": "ready",
@@ -441,6 +452,7 @@
  {
   "id": "ARAB-12",
   "family": "typography-arabic",
+  "domain": "motion",
   "name_ar": "كايرو المقسوم بنطاق يونيكود",
   "name_en": "Cairo split by unicode-range",
   "status": "proven",
@@ -479,6 +491,7 @@
  {
   "id": "ARAB-13",
   "family": "typography-arabic",
+  "domain": "motion",
   "name_ar": "اكتشاف الخطوط وسلسلة البدائل",
   "name_en": "Font discovery & fallback chain",
   "status": "ready",
@@ -521,6 +534,7 @@
  {
   "id": "ARAB-14",
   "family": "typography-arabic",
+  "domain": "motion",
   "name_ar": "محمّل الخطوط الحي ومنتقي الخط",
   "name_en": "Live Google Fonts loader & picker",
   "status": "ready",
@@ -557,6 +571,7 @@
  {
   "id": "ARAB-15",
   "family": "typography-arabic",
+  "domain": "motion",
   "name_ar": "اقترانات الخطوط",
   "name_en": "Type pairings",
   "status": "proven",
@@ -597,6 +612,7 @@
  {
   "id": "ARAB-16",
   "family": "typography-arabic",
+  "domain": "motion",
   "name_ar": "سلّم أحجام الفيديو",
   "name_en": "Video type scale at 1080 px",
   "status": "documented",
@@ -633,6 +649,7 @@
  {
   "id": "ARAB-17",
   "family": "typography-arabic",
+  "domain": "motion",
   "name_ar": "سلّم القراءة للشاشات",
   "name_en": "Screen reading scale (v17 / SQC)",
   "status": "ready",
@@ -670,6 +687,7 @@
  {
   "id": "ARAB-18",
   "family": "typography-arabic",
+  "domain": "motion",
   "name_ar": "قواعد التايبوغرافي العربي الحركي",
   "name_en": "Kinetic Arabic grammar",
   "status": "ready",
@@ -709,6 +727,7 @@
  {
   "id": "ARAB-19",
   "family": "typography-arabic",
+  "domain": "motion",
   "name_ar": "أقنعة الكلمات: إظهار وإخفاء",
   "name_en": "Word-mask reveal & hide",
   "status": "proven",
@@ -749,6 +768,7 @@
  {
   "id": "ARAB-20",
   "family": "typography-arabic",
+  "domain": "motion",
   "name_ar": "صعود الكلمات من الضباب",
   "name_en": "Rise-from-blur words",
   "status": "ready",
@@ -788,6 +808,7 @@
  {
   "id": "ARAB-21",
   "family": "typography-arabic",
+  "domain": "motion",
   "name_ar": "مسح القناع من اليمين",
   "name_en": "RTL clip wipe",
   "status": "documented",
@@ -824,6 +845,7 @@
  {
   "id": "ARAB-22",
   "family": "typography-arabic",
+  "domain": "motion",
   "name_ar": "كتابة بقناع ناعم ورأس قلم",
   "name_en": "Feathered RTL write-on with pen head",
   "status": "install",
@@ -868,6 +890,7 @@
  {
   "id": "ARAB-23",
   "family": "typography-arabic",
+  "domain": "motion",
   "name_ar": "قناع ضربة فرشاة",
   "name_en": "Brush-stroke mask write-on",
   "status": "documented",
@@ -902,6 +925,7 @@
  {
   "id": "ARAB-24",
   "family": "typography-arabic",
+  "domain": "motion",
   "name_ar": "سطور تصعد من خلف خط قطع",
   "name_en": "Lines rising behind a cut line",
   "status": "proven",
@@ -936,6 +960,7 @@
  {
   "id": "ARAB-25",
   "family": "typography-arabic",
+  "domain": "motion",
   "name_ar": "انزلاق سطور عربية على Canvas",
   "name_en": "Canvas RTL staggered line slide",
   "status": "ready",
@@ -970,6 +995,7 @@
  {
   "id": "ARAB-26",
   "family": "typography-arabic",
+  "domain": "motion",
   "name_ar": "عنوان كلمات بنابض كل 160 مللي ثانية",
   "name_en": "Spring word-stagger title",
   "status": "proven",
@@ -1007,6 +1033,7 @@
  {
   "id": "ARAB-27",
   "family": "typography-arabic",
+  "domain": "motion",
   "name_ar": "عنوان Remotion بنابض وأقراص كلمات",
   "name_en": "Remotion spring title + keyword pills",
   "status": "install",
@@ -1043,6 +1070,7 @@
  {
   "id": "ARAB-28",
   "family": "typography-arabic",
+  "domain": "motion",
   "name_ar": "دخول الكلمة من العمق",
   "name_en": "3D word turn-in from depth",
   "status": "ready",
@@ -1079,6 +1107,7 @@
  {
   "id": "ARAB-29",
   "family": "typography-arabic",
+  "domain": "motion",
   "name_ar": "الآلة الكاتبة بمؤشر",
   "name_en": "Typewriter with caret",
   "status": "ready",
@@ -1117,6 +1146,7 @@
  {
   "id": "ARAB-30",
   "family": "typography-arabic",
+  "domain": "motion",
   "name_ar": "كلمة ضخمة من الضباب تنكمش إلى سطر",
   "name_en": "Blur-in hero word that shrinks into the sentence",
   "status": "seen",
@@ -1152,6 +1182,7 @@
  {
   "id": "ARAB-31",
   "family": "typography-arabic",
+  "domain": "motion",
   "name_ar": "كبسولة الكلمات الدوّارة",
   "name_en": "Rolling word pill with growing rings",
   "status": "seen",
@@ -1186,6 +1217,7 @@
  {
   "id": "ARAB-32",
   "family": "typography-arabic",
+  "domain": "motion",
   "name_ar": "كشف بالحبر وسحب التركيز",
   "name_en": "Ink-bleed / focus-pull word reveal",
   "status": "seen",
@@ -1224,6 +1256,7 @@
  {
   "id": "ARAB-33",
   "family": "typography-arabic",
+  "domain": "motion",
   "name_ar": "كلمات على مسار دائري",
   "name_en": "Words on a circular path",
   "status": "documented",
@@ -1259,6 +1292,7 @@
  {
   "id": "ARAB-34",
   "family": "typography-arabic",
+  "domain": "motion",
   "name_ar": "ضربة الكلمة المفتاحية بقناع صاعد",
   "name_en": "Keyword slam with upward mask",
   "status": "ready",
@@ -1294,6 +1328,7 @@
  {
   "id": "ARAB-35",
   "family": "typography-arabic",
+  "domain": "motion",
   "name_ar": "كلمة ترتطم وتستقر",
   "name_en": "Slam-and-settle word",
   "status": "documented",
@@ -1327,6 +1362,7 @@
  {
   "id": "ARAB-36",
   "family": "typography-arabic",
+  "domain": "motion",
   "name_ar": "ضربة الكلمة البطلة بتوهج",
   "name_en": "Hero-word punch with bloom",
   "status": "seen",
@@ -1364,6 +1400,7 @@
  {
   "id": "ARAB-37",
   "family": "typography-arabic",
+  "domain": "motion",
   "name_ar": "الكلمة تمثّل معناها",
   "name_en": "Word acts out its meaning",
   "status": "documented",
@@ -1399,6 +1436,7 @@
  {
   "id": "ARAB-38",
   "family": "typography-arabic",
+  "domain": "motion",
   "name_ar": "صدى طباعي يتلاشى",
   "name_en": "Typographic echo",
   "status": "documented",
@@ -1432,6 +1470,7 @@
  {
   "id": "ARAB-39",
   "family": "typography-arabic",
+  "domain": "motion",
   "name_ar": "تعبئات مذهّبة ومتدرجة ولمعة عابرة",
   "name_en": "Gilded, gradient & sweeping fills",
   "status": "ready",
@@ -1473,6 +1512,7 @@
  {
   "id": "ARAB-40",
   "family": "typography-arabic",
+  "domain": "motion",
   "name_ar": "هرمية بثلاث مستويات",
   "name_en": "Three-level type hierarchy",
   "status": "ready",
@@ -1511,6 +1551,7 @@
  {
   "id": "ARAB-41",
   "family": "typography-arabic",
+  "domain": "motion",
   "name_ar": "تمييز الكلمة بالنجمة",
   "name_en": "*Asterisk* emphasis convention",
   "status": "ready",
@@ -1545,6 +1586,7 @@
  {
   "id": "ARAB-42",
   "family": "typography-arabic",
+  "domain": "motion",
   "name_ar": "خط متموّج تحت الكلمة المفتاحية",
   "name_en": "Squiggle underline highlight",
   "status": "seen",
@@ -1580,6 +1622,7 @@
  {
   "id": "ARAB-43",
   "family": "typography-arabic",
+  "domain": "motion",
   "name_ar": "ممسحة التظليل من اليمين",
   "name_en": "RTL highlighter swipe",
   "status": "seen",
@@ -1616,6 +1659,7 @@
  {
   "id": "ARAB-44",
   "family": "typography-arabic",
+  "domain": "motion",
   "name_ar": "ختم أحمر يرتطم",
   "name_en": "Rubber-stamp slam",
   "status": "seen",
@@ -1649,6 +1693,7 @@
  {
   "id": "ARAB-45",
   "family": "typography-arabic",
+  "domain": "motion",
   "name_ar": "علامة استفهام عملاقة مفرّغة",
   "name_en": "Giant outlined question mark",
   "status": "ready",
@@ -1681,6 +1726,7 @@
  {
   "id": "ARAB-46",
   "family": "typography-arabic",
+  "domain": "motion",
   "name_ar": "ظل مزدوج مزاح",
   "name_en": "Offset duotone shadow hero",
   "status": "seen",
@@ -1714,6 +1760,7 @@
  {
   "id": "ARAB-47",
   "family": "typography-arabic",
+  "domain": "motion",
   "name_ar": "خط مضيء يتمدد تحت العنوان",
   "name_en": "Growing glow rule under the title",
   "status": "ready",
@@ -1746,6 +1793,7 @@
  {
   "id": "ARAB-48",
   "family": "typography-arabic",
+  "domain": "motion",
   "name_ar": "سطور تتكدس وتخفت",
   "name_en": "Stacked headline lines that dim",
   "status": "seen",
@@ -1780,6 +1828,7 @@
  {
   "id": "ARAB-49",
   "family": "typography-arabic",
+  "domain": "motion",
   "name_ar": "قوالب الموشن العربية الثمانية",
   "name_en": "Eight Arabic motion templates",
   "status": "proven",
@@ -1823,6 +1872,7 @@
  {
   "id": "ARAB-50",
   "family": "typography-arabic",
+  "domain": "motion",
   "name_ar": "شريط اسم سفلي تلقائي الاتجاه",
   "name_en": "Auto-RTL lower third",
   "status": "proven",
@@ -1857,6 +1907,7 @@
  {
   "id": "ARAB-51",
   "family": "typography-arabic",
+  "domain": "motion",
   "name_ar": "ثلاثة أشكال لعنوان الخطاف",
   "name_en": "Hook title looks: box · kinetic · minimal",
   "status": "install",
@@ -1892,6 +1943,7 @@
  {
   "id": "ARAB-52",
   "family": "typography-arabic",
+  "domain": "motion",
   "name_ar": "صندوق عنوان يحافظ على مركزه",
   "name_en": "Centre-locked resizing title box",
   "status": "documented",
@@ -1925,6 +1977,7 @@
  {
   "id": "ARAB-53",
   "family": "typography-arabic",
+  "domain": "motion",
   "name_ar": "ترويسة اليوم بالهجري والميلادي",
   "name_en": "Hijri + Gregorian day header",
   "status": "ready",
@@ -1963,6 +2016,7 @@
  {
   "id": "ARAB-54",
   "family": "typography-arabic",
+  "domain": "motion",
   "name_ar": "أقراص وشارات وأرقام مرقّمة",
   "name_en": "Pills, chips & numbered badges",
   "status": "ready",
@@ -2004,6 +2058,7 @@
  {
   "id": "ARAB-55",
   "family": "typography-arabic",
+  "domain": "motion",
   "name_ar": "مكدّس عربي/إنجليزي",
   "name_en": "Bilingual Arabic/English stacks & HUD",
   "status": "ready",
@@ -2042,6 +2097,7 @@
  {
   "id": "ARAB-56",
   "family": "typography-arabic",
+  "domain": "motion",
   "name_ar": "بطاقة شخصية من اليمين",
   "name_en": "RTL character card",
   "status": "seen",
@@ -2075,6 +2131,7 @@
  {
   "id": "ARAB-57",
   "family": "typography-arabic",
+  "domain": "motion",
   "name_ar": "عنوان عربي سينمائي فوق الفيديو",
   "name_en": "Cinematic Arabic headline over footage",
   "status": "ready",
@@ -2109,6 +2166,7 @@
  {
   "id": "ARAB-58",
   "family": "typography-arabic",
+  "domain": "motion",
   "name_ar": "عنوان ASS متحرك لكل لقطة",
   "name_en": "Per-shot ASS animated title card",
   "status": "ready",
@@ -2144,6 +2202,7 @@
  {
   "id": "ARAB-59",
   "family": "typography-arabic",
+  "domain": "motion",
   "name_ar": "غلاف بعنوان عربي مشكّل",
   "name_en": "Shaped Arabic cover / thumbnail",
   "status": "ready",
@@ -2180,6 +2239,7 @@
  {
   "id": "ARAB-60",
   "family": "typography-arabic",
+  "domain": "motion",
   "name_ar": "كاروسيل عربي PNG/PDF",
   "name_en": "Arabic carousel renderer",
   "status": "ready",
@@ -2216,6 +2276,7 @@
  {
   "id": "ARAB-61",
   "family": "typography-arabic",
+  "domain": "motion",
   "name_ar": "طبقات نص الخط الزمني JSON",
   "name_en": "Timeline-JSON text overlays",
   "status": "ready",
@@ -2249,6 +2310,7 @@
  {
   "id": "ARAB-62",
   "family": "typography-arabic",
+  "domain": "motion",
   "name_ar": "كاريوكي ASS عربي بثلاثة أنماط",
   "name_en": "Arabic ASS karaoke captions (reels · cinema · punchy)",
   "status": "proven",
@@ -2292,6 +2354,7 @@
  {
   "id": "ARAB-63",
   "family": "typography-arabic",
+  "domain": "motion",
   "name_ar": "قانون زمن القراءة والكثافة",
   "name_en": "Reading-time & density law",
   "status": "documented",
@@ -2326,6 +2389,7 @@
  {
   "id": "ARAB-64",
   "family": "typography-arabic",
+  "domain": "motion",
   "name_ar": "منطقة الترجمة الآمنة وشكلها",
   "name_en": "Caption safe zone & look",
   "status": "documented",
@@ -2364,6 +2428,7 @@
  {
   "id": "ARAB-65",
   "family": "typography-arabic",
+  "domain": "motion",
   "name_ar": "الكلمة المنطوقة تضيء",
   "name_en": "Spoken-word illumination (HTML captions)",
   "status": "seen",
@@ -2404,6 +2469,7 @@
  {
   "id": "ARAB-66",
   "family": "typography-arabic",
+  "domain": "motion",
   "name_ar": "فيلم الكلمات من الصوت",
   "name_en": "Verse film from sound (song · poem · dua)",
   "status": "install",
@@ -2447,6 +2513,7 @@
  {
   "id": "ARAB-67",
   "family": "typography-arabic",
+  "domain": "motion",
   "name_ar": "تقسيم الأسطر بالبرمجة الديناميكية",
   "name_en": "DP line breaking for lyrics & dua",
   "status": "proven",
@@ -2481,6 +2548,7 @@
  {
   "id": "ARAB-68",
   "family": "typography-arabic",
+  "domain": "motion",
   "name_ar": "اختيار الكلمة المفتاحية بالنبر",
   "name_en": "Stress-based keyword picking",
   "status": "proven",
@@ -2517,6 +2585,7 @@
  {
   "id": "ARAB-69",
   "family": "typography-arabic",
+  "domain": "motion",
   "name_ar": "توحيد النص العربي للمطابقة",
   "name_en": "Arabic normalisation for alignment & matching",
   "status": "proven",
@@ -2554,6 +2623,7 @@
  {
   "id": "ARAB-70",
   "family": "typography-arabic",
+  "domain": "motion",
   "name_ar": "النص المشكول مصدرًا للتوقيت",
   "name_en": "Vowelled source text over ASR",
   "status": "documented",
@@ -2586,6 +2656,7 @@
  {
   "id": "ARAB-71",
   "family": "typography-arabic",
+  "domain": "motion",
   "name_ar": "ستايل الكلمات العاطفي",
   "name_en": "Emotional lyric style preset",
   "status": "install",
@@ -2622,6 +2693,7 @@
  {
   "id": "ARAB-72",
   "family": "typography-arabic",
+  "domain": "motion",
   "name_ar": "العزل الاتجاهي",
   "name_en": "Bidi isolation",
   "status": "ready",
@@ -2661,6 +2733,7 @@
  {
   "id": "ARAB-73",
   "family": "typography-arabic",
+  "domain": "motion",
   "name_ar": "نظام أرقام واحد وأرقام جدولية",
   "name_en": "One digit system + tabular figures",
   "status": "ready",
@@ -2697,6 +2770,7 @@
  {
   "id": "ARAB-74",
   "family": "typography-arabic",
+  "domain": "motion",
   "name_ar": "منسّق الأرقام الهندية الحتمي",
   "name_en": "Deterministic Arabic-Indic money formatter",
   "status": "proven",
@@ -2733,6 +2807,7 @@
  {
   "id": "ARAB-75",
   "family": "typography-arabic",
+  "domain": "motion",
   "name_ar": "قراءة الأرقام والوحدات العربية",
   "name_en": "Digit parsing & number/unit detection",
   "status": "ready",
@@ -2768,6 +2843,7 @@
  {
   "id": "ARAB-76",
   "family": "typography-arabic",
+  "domain": "motion",
   "name_ar": "صيغ الجمع ومطابقة العدد",
   "name_en": "Plural & count agreement",
   "status": "ready",
@@ -2804,6 +2880,7 @@
  {
   "id": "ARAB-77",
   "family": "typography-arabic",
+  "domain": "motion",
   "name_ar": "رقم يتحول إلى عنوان",
   "name_en": "Number → headline",
   "status": "documented",
@@ -2841,6 +2918,7 @@
  {
   "id": "ARAB-78",
   "family": "typography-arabic",
+  "domain": "motion",
   "name_ar": "حوار طباعي",
   "name_en": "Typographic dialogue",
   "status": "documented",
@@ -2874,6 +2952,7 @@
  {
   "id": "ARAB-79",
   "family": "typography-arabic",
+  "domain": "motion",
   "name_ar": "الدعوة والسعر بالعربية",
   "name_en": "Arabic CTA & price isolation",
   "status": "documented",
@@ -2906,6 +2985,7 @@
  {
   "id": "ARAB-80",
   "family": "typography-arabic",
+  "domain": "motion",
   "name_ar": "تسميات عربية مُسقطة على الخرائط والعوالم",
   "name_en": "Projected Arabic labels (maps · isometric · charts)",
   "status": "install",
@@ -2947,6 +3027,7 @@
  {
   "id": "ARAB-81",
   "family": "typography-arabic",
+  "domain": "motion",
   "name_ar": "إصلاح أسماء الملفات العربية المشوّهة",
   "name_en": "Arabic file-name mojibake repair",
   "status": "proven",
@@ -2980,6 +3061,7 @@
  {
   "id": "ARAB-82",
   "family": "typography-arabic",
+  "domain": "motion",
   "name_ar": "سطر الحقوق الآمن",
   "name_en": "Safe credit-line burn",
   "status": "ready",
@@ -3014,6 +3096,7 @@
  {
   "id": "ARAB-83",
   "family": "typography-arabic",
+  "domain": "motion",
   "name_ar": "تسمية الألوان بالعربية",
   "name_en": "Arabic colour naming",
   "status": "ready",
@@ -3045,6 +3128,7 @@
  {
   "id": "ARAB-84",
   "family": "typography-arabic",
+  "domain": "motion",
   "name_ar": "التقاط ستايل النص وإعادة تركيبه",
   "name_en": "Text-style capture & compositing",
   "status": "proven",
@@ -3083,6 +3167,7 @@
  {
   "id": "ARAB-85",
   "family": "typography-arabic",
+  "domain": "motion",
   "name_ar": "قياس حركة النص وتصنيفها",
   "name_en": "Text-animation measurement & replay",
   "status": "ready",
@@ -3122,6 +3207,7 @@
  {
   "id": "ARAB-86",
   "family": "typography-arabic",
+  "domain": "motion",
   "name_ar": "مطابقة الخط بالحبر",
   "name_en": "Font matching by ink",
   "status": "ready",
@@ -3155,6 +3241,7 @@
  {
   "id": "ARAB-87",
   "family": "typography-arabic",
+  "domain": "motion",
   "name_ar": "ملاءمة العرض والتصغير التلقائي",
   "name_en": "Fit-width & shrink-to-fit",
   "status": "ready",
@@ -3189,6 +3276,7 @@
  {
   "id": "ARAB-88",
   "family": "typography-arabic",
+  "domain": "motion",
   "name_ar": "نص مشكّل في المشاهد المرسومة واستيراد SVG",
   "name_en": "Shaped text in painted scenes & SVG import",
   "status": "documented",
@@ -3227,6 +3315,7 @@
  {
   "id": "ARAB-89",
   "family": "typography-arabic",
+  "domain": "motion",
   "name_ar": "طبقات نص عربي على Canvas",
   "name_en": "Canvas RTL text-layer helpers",
   "status": "ready",
@@ -3264,6 +3353,7 @@
  {
   "id": "ARAB-90",
   "family": "typography-arabic",
+  "domain": "motion",
   "name_ar": "دوران كتلة النص 90° ككاميرا",
   "name_en": "Type-block 90° rotation as camera move",
   "status": "idea",

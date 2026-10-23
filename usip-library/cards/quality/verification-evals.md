@@ -51,7 +51,7 @@
 | نوع المخرج (A25، A27) | كود وتطبيقات ومواقع (`code`) |
 | الحالة في الكتالوج | 📄 `documented`: منهج موصوف يحتاج بناءً أو ربطًا قبل التشغيل |
 | سقف التحقق قبل العمل (A27) | V1 حتى تُبنى وتُشغَّل؛ لا تقدَّم جاهزة أبدًا |
-| نطاق الدليل | `none` |
+| نطاق الدليل | `repo` |
 | الرخصة | غير مذكورة في السجل: تُؤكَّد من المصدر قبل التسليم |
 
 **ما هي:** البيئة لا قناعتك هي الحقيقة: حوّل كل معيار إنجاز إلى فحص، وشغّل الفحوص بالأدوات ثم بالعين، وكرر حتى تنجح أو تنتهي الميزانية. — The environment, not your belief, is ground truth: turn each done-criterion into a check, run checks with tools and then with eyes, loop until they pass or the budget ends.
@@ -105,7 +105,7 @@
 
 #### 6. الأدلة
 
-- لا دليل مسجل: لا تُقدَّم أكثر من منهج.
+- `kosif-tool/.claude/skills/kosif-superpowers/references/verification.md`
 
 #### 7. قدرات قريبة في العائلة
 
@@ -704,7 +704,7 @@
 | نوع المخرج (A25، A27) | كود وتطبيقات ومواقع (`code`) |
 | الحالة في الكتالوج | 📄 `documented`: منهج موصوف يحتاج بناءً أو ربطًا قبل التشغيل |
 | سقف التحقق قبل العمل (A27) | V1 حتى تُبنى وتُشغَّل؛ لا تقدَّم جاهزة أبدًا |
-| نطاق الدليل | `none` |
+| نطاق الدليل | `repo` |
 | الرخصة | MIT |
 
 **ما هي:** صِف كل مرحلة بكلمتها الدقيقة: فُحص، عُدّل محليًا، تُحقق منه محليًا، أُودع (commit)، دُفع (push)، متوقف بمانع؛ وللموشن: كُتب الكود، عُرضت المعاينة، رُندر الفيديو، اجتاز الفحص. — Describe each stage with its exact word: inspected, changed locally, verified locally, committed, pushed, blocked; for motion: written, previewed, rendered, verified.
@@ -757,7 +757,7 @@
 
 #### 6. الأدلة
 
-- لا دليل مسجل: لا تُقدَّم أكثر من منهج.
+- `kosif-tool/.claude/skills/kosif-superpowers/references/cinematic-director-pro.md`
 
 #### 7. قدرات قريبة في العائلة
 
@@ -2279,7 +2279,7 @@
 | نوع المخرج (A25، A27) | كود وتطبيقات ومواقع (`code`) |
 | الحالة في الكتالوج | 📄 `documented`: منهج موصوف يحتاج بناءً أو ربطًا قبل التشغيل |
 | سقف التحقق قبل العمل (A27) | V1 حتى تُبنى وتُشغَّل؛ لا تقدَّم جاهزة أبدًا |
-| نطاق الدليل | `none` |
+| نطاق الدليل | `repo` |
 | الرخصة | owner |
 
 **ما هي:** لاختبار حزام وكيل لا نموذجه: خادم يرد من سيناريو مكتوب ويحفظ كل طلب يصله. — To test an agent harness, not its model: a server that answers from a script and saves every request it receives.
@@ -2331,7 +2331,7 @@
 
 #### 6. الأدلة
 
-- لا دليل مسجل: لا تُقدَّم أكثر من منهج.
+- `kosif-tool/.claude/skills/kosif-superpowers/references/codex-agent-harness.md`
 
 #### 7. قدرات قريبة في العائلة
 
@@ -2349,7 +2349,7 @@
 | نوع المخرج (A25، A27) | كود وتطبيقات ومواقع (`code`) |
 | الحالة في الكتالوج | 📄 `documented`: منهج موصوف يحتاج بناءً أو ربطًا قبل التشغيل |
 | سقف التحقق قبل العمل (A27) | V1 حتى تُبنى وتُشغَّل؛ لا تقدَّم جاهزة أبدًا |
-| نطاق الدليل | `none` |
+| نطاق الدليل | `repo` |
 | الرخصة | owner |
 
 **ما هي:** لكل سيناريو فحوص مسماة لكل ما يرسله البرنامج وما يفعله، لا حكم واحد. — Per scenario, named checks for everything the program sends and does, not one verdict.
@@ -2400,7 +2400,7 @@
 
 #### 6. الأدلة
 
-- لا دليل مسجل: لا تُقدَّم أكثر من منهج.
+- `kosif-tool/.claude/skills/kosif-superpowers/references/codex-agent-harness.md`
 
 #### 7. قدرات قريبة في العائلة
 
@@ -2487,7 +2487,7 @@
 | نوع المخرج (A25، A27) | كود وتطبيقات ومواقع (`code`) |
 | الحالة في الكتالوج | 📄 `documented`: منهج موصوف يحتاج بناءً أو ربطًا قبل التشغيل |
 | سقف التحقق قبل العمل (A27) | V1 حتى تُبنى وتُشغَّل؛ لا تقدَّم جاهزة أبدًا |
-| نطاق الدليل | `none` |
+| نطاق الدليل | `repo` |
 | الرخصة | owner |
 
 **ما هي:** لكل ما استُرد: الأداة التي أظهرته وما تغيّر وما تُحقق منه وما بقي، مع رقم قبل ورقم بعد على الامتحان نفسه. — For every recovery: the tool call that showed it, what changed, what was verified, what is missing, plus before/after numbers on the same exam.
@@ -2539,7 +2539,7 @@
 
 #### 6. الأدلة
 
-- لا دليل مسجل: لا تُقدَّم أكثر من منهج.
+- `kosif-tool/.claude/skills/kosif-superpowers/references/codex-agent-harness.md`
 
 #### 7. قدرات قريبة في العائلة
 

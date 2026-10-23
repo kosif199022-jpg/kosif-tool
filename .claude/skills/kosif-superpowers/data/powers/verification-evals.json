@@ -15,8 +15,10 @@
    "ffmpeg"
   ],
   "license": "",
-  "proof": [],
-  "proof_scope": "none",
+  "proof": [
+   "kosif-tool/.claude/skills/kosif-superpowers/references/verification.md"
+  ],
+  "proof_scope": "repo",
   "styles": [],
   "tags": [
    "verification",
@@ -310,8 +312,10 @@
   "install": "",
   "requires": [],
   "license": "MIT",
-  "proof": [],
-  "proof_scope": "none",
+  "proof": [
+   "kosif-tool/.claude/skills/kosif-superpowers/references/cinematic-director-pro.md"
+  ],
+  "proof_scope": "repo",
   "styles": [],
   "tags": [
    "status words",
@@ -991,8 +995,10 @@
    "python3"
   ],
   "license": "owner",
-  "proof": [],
-  "proof_scope": "none",
+  "proof": [
+   "kosif-tool/.claude/skills/kosif-superpowers/references/codex-agent-harness.md"
+  ],
+  "proof_scope": "repo",
   "styles": [],
   "tags": [
    "mock server",
@@ -1019,8 +1025,10 @@
   "install": "",
   "requires": [],
   "license": "owner",
-  "proof": [],
-  "proof_scope": "none",
+  "proof": [
+   "kosif-tool/.claude/skills/kosif-superpowers/references/codex-agent-harness.md"
+  ],
+  "proof_scope": "repo",
   "styles": [],
   "tags": [
    "observable surface",
@@ -1083,8 +1091,10 @@
    "npm:rea"
   ],
   "license": "owner",
-  "proof": [],
-  "proof_scope": "none",
+  "proof": [
+   "kosif-tool/.claude/skills/kosif-superpowers/references/codex-agent-harness.md"
+  ],
+  "proof_scope": "repo",
   "styles": [],
   "tags": [
    "honest notes",
