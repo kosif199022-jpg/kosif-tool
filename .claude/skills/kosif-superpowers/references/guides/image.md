@@ -8,7 +8,7 @@ Commands below are typed from the skill folder (`.claude/skills/kosif-superpower
 
 <!-- hub:area:image:start -->
 
-**الأدوات / tools (9)** — `python3 scripts/hub.py tool <id>` for every command, requirement and limit:
+**الأدوات / tools (10)** — `python3 scripts/hub.py tool <id>` for every command, requirement and limit:
 
 | tool | what it does | start with | evidence |
 |---|---|---|---|
@@ -18,6 +18,7 @@ Commands below are typed from the skill folder (`.claude/skills/kosif-superpower
 | `render-text` | Renders text samples in candidate font files through headless Chromium (HarfBuzz shaping) and saves one tightly cropped PNG per item plus a renders.json of box sizes, so the candidates can be compared side by side against a reference typeface. | `node scripts/render_text.cjs ./spec.json ./out/` | tested-elsewhere |
 | `unified-media` | One CLI links App Studio authorized local photo processing, Unified Draw freehand/geometric layers and Creative Paint keyframe animation for composited PNG/GIF/MP4. | `python3 scripts/unified_media.py doctor` | tested-here |
 | `telegram-typography-atlas` | Search a public metadata index of the 5,514 SHA-256-distinct fonts found in the user's own Telegram Desktop exports (4,634 with Arabic letters): one row per family with its styles, Arabic spelling-tolerant style words (كوفي، رقعة، ديواني، ثلث، نسخ), an open-license filter, and 16 original design directions. scan/enrich-zips rebuild the index on the user's machine (bounded, in-memory ZIP reads); refresh re-derives tags, name-based license flags, ideas and counts from the public index alone. Fonts, chats, images and local paths never leave the device. | `python3 scripts/telegram_typography_atlas.py find --index data/telegram-typography-catalog-complete-20261020.json "خط رقعة" --arabic-only --limit 15` | tested-here |
+| `style-library` | Looks up any of 586 visual styles by id, English or Arabic name or free words: the 86 paraphrased Futurepedia AI Style Atlas methods and 500 original KOSIF styles in 20 groups (Arabic heritage, world crafts, material fusion, scientific imaging, natural process, architecture, futures, print, optics, textile, edible media, toys, interfaces, cartography, motion and time, sound, folk art, type and calligraphy, generative systems, cinematic genres). Prints a style card (look, logic, palette, texture, composition), fills its prompt recipe for a subject with an optional 30% accent style, draws a deterministic procedural SVG swatch, and builds an illustrated catalog (HTML, and PDF through headless Chromium). | `python3 scripts/style_library.py groups` | tested-here |
 | `mosamem-rea-fusion` | Independent, standard-library Mosamem v0.1.0/REA workflow bridge: 19 upstream-anchored methodology nodes, actual read-only PSD/PSB/PNG/JPEG header preflight and SHA256, consent-gated REA plan via existing bridge. Does not install or control Mosamem, run REA or import GPL code. | `python3 scripts/mosamem_rea_fusion.py doctor` | tested-here |
 | `image-local-ai` | Runs open image models on this machine with no network: a BiRefNet-style subject matte turned into an RGBA PNG (remove-bg) and MI-GAN-style inpainting of a masked area (inpaint). It lists the three models Mosamem pins (BiRefNet lite MIT, SAM 2.1 tiny Apache-2.0, MI-GAN MIT) with commit-pinned URLs, sizes and SHA-256, and checks a downloaded file against its pin. It never downloads: with no model it prints the URL and asks the user to fetch it. | `python3 scripts/image_local_ai.py models --json` | tested-here |
 | `prompt-pack` | Turns a list of prompts or a scene/story spec into PACK.md and pack.json: every English prompt in ONE fenced block (wrapped in dir="ltr" for RTL pages), the Arabic explanation outside it, and a per-engine suffix from data/prompt_engines.json (Midjourney V7 flags marked version-sensitive, generic image negative line, generic video 'No subtitles or on-screen text.'). The lint only warns (contradictions, unseparated subjects, studio/artist/brand names, quality hype, text-in-image, missing negative baseline) and never rewrites a word; credential-like values are refused. It calls no engine. | `python3 scripts/prompt_pack.py build prompts.json --out out/demo/prompts --engine midjourney` | tested-here |
@@ -28,6 +29,7 @@ Commands below are typed from the skill folder (`.claude/skills/kosif-superpower
 
 1. [قدرات التطبيقات المحللة — Analyzed app capabilities (APPX)](#قدرات-التطبيقات-المحللة--analyzed-app-capabilities-appx)
 2. [Arabic font fidelity lab](#arabic-font-fidelity-lab)
+3. [مكتبة الأساليب — Style library (586 styles)](#مكتبة-الأساليب--style-library-586-styles)
 
 ## قدرات التطبيقات المحللة — Analyzed app capabilities (APPX)
 
@@ -38,3 +40,11 @@ Commands below are typed from the skill folder (`.claude/skills/kosif-superpower
 ## Arabic font fidelity lab
 
 When asked to **match, imitate, identify or create typography** (including Arabic calligraphy in a user-supplied image/video), use `scripts/font_fidelity_lab.py` with **user-authorized font files**, inspect GSUB/GPOS/cmap/axes, render shaped Arabic with libraqm, rank visual candidates against a tightly cropped reference, and independently compare multiple phrases. Follow the [font matching workflow](../font-matching.md) (observe the type, render candidates, decide); [font-innovation-50.md](../font-innovation-50.md) is only a research index of related repositories. Exact font identification requires evidence; do not assert it from pixel similarity alone. For the uploaded KOSIF Jumuah kit, inspect its OFL and Amiri/Bodoni Moda derivative sources; never commit its font binaries blindly.
+
+## مكتبة الأساليب — Style library (586 styles)
+
+حين يطلب المستخدم صورة أو مشهدًا «بأسلوب كذا»، أو يسأل «إيه الأسلوب اللي يناسب…»، أو يريد كتالوج الأساليب، استعمل `scripts/style_library.py`. فيه 586 أسلوبًا: 86 طريقة من أطلس Futurepedia أعيدت صياغتها (`FA-01…FA-86`، تفاصيل الحركة والشرح في [A15](../protocol/A15-futurepedia-style-atlas.md)) و500 أسلوب أصلي (`KS-001…KS-500`) في 20 مجموعة: التراث العربي والإسلامي، حِرف الشعوب، الخامات المدمجة، التصوير العلمي، عمليات الطبيعة، الرسم المعماري، المستقبل، الطباعة القديمة، البصريات، النسيج، خامات الطعام، الألعاب، الواجهات، الخرائط، الحركة والزمن، الصوت مرئيًا، الفن الشعبي، الحرف والخط، الأنظمة التوليدية، الأنواع السينمائية.
+
+When a request names a style or asks which style fits, run `find` (Arabic or English words), then `describe` for the card (look, logic, palette, texture, composition) and `prompt --subject "…"` for a filled recipe, optionally with `--mix <id>` for a 30% accent. `catalog --out <new dir> --pdf <file>` builds the illustrated A4 catalog (`--split-groups` adds one PDF per group); it needs node with Playwright Chromium, and without them the HTML catalog with SVG swatches still works.
+
+What to say when handing a style over: the swatches are procedural sketches of palette, texture and composition, not finished artwork; the 500 KS styles are original descriptions written for this library and have not each been produced as a film. A finished frame comes from an image tool the user chooses (ask before any paid generator) or from the motion engines with the card as the art brief. Source data: `data/style_library_500.json` (KS styles, groups and the swatch settings and Arabic names of the 86 FA methods) and `data/futurepedia_style_atlas_86.json`.

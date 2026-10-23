@@ -23,9 +23,10 @@
 | الحالة | العدد | المعنى |
 |---|---:|---|
 | `proven` | 17 | ✅ proven: a proof exists in the catalog; still check its requirements here before calling it ready |
+| `ready` | 3 | 🟢 ready: runnable without setup according to the catalog |
 | `documented` | 297 | 📄 documented: a described method; needs building or wiring before it runs |
 | `install` | 2 | 📦 install: needs a package, binary or model first |
-| **المجموع** | **316** | |
+| **المجموع** | **319** | |
 
 ## الأدوات القابلة للتشغيل / runnable tools
 
@@ -47,6 +48,7 @@
 | `requirements` | مخطط متطلبات القدرات | `python3 scripts/requirements.py present --json` | tested-here |
 | `see-pro-cognitive-gate` | فاحص عقود التفكير والتوليف KOSIF SEE Pro | `python3 scripts/see_pro_cognitive_gate.py --self-test` | tested-here |
 | `skill-intelligence` | محرك بروتوكول ذكاء المهارات الشامل | `python3 scripts/skill_intelligence.py brief "مونتاج ريلز على الإيقاع بترجمة عربية"` | tested-here |
+| `style-library` | مكتبة الأساليب: 586 أسلوبًا بصريًا بالاسم (86 من أطلس Futurepedia + 500 أصلي) — بحث ووصف وبرومنت وعينة وكتالوج PDF مصوّر | `python3 scripts/style_library.py groups` | tested-here |
 | `superpowers-unified` | موجّه مهارات العمل ومثبّتها | `python3 scripts/superpowers_unified.py doctor` | tested-here |
 | `think` | محرك التفكير وقوالبه | `python3 scripts/think.py ladder "design a 30-day plan for a course launch"` | tested-here |
 
@@ -61,7 +63,7 @@
 | `creativity-engine` | 29 | [creativity-engine.md](../powers/creativity-engine.md) |
 | `mental-models` | 63 | [mental-models.md](../powers/mental-models.md) |
 | `planning-execution` | 12 | [planning-execution.md](../powers/planning-execution.md) |
-| `prompt-craft` | 22 | [prompt-craft.md](../powers/prompt-craft.md) |
+| `prompt-craft` | 25 | [prompt-craft.md](../powers/prompt-craft.md) |
 | `strategy-finance` | 18 | [strategy-finance.md](../powers/strategy-finance.md) |
 | `thinking-core` | 46 | [thinking-core.md](../powers/thinking-core.md) |
 
@@ -88,6 +90,9 @@
 | `THINK-38` | تقدير فيرمي بمونت كارلو | Monte-Carlo Fermi estimate | proven | python3 |
 | `THINK-39` | ناقد المسودة الآلي | Automatic draft critic | proven | python3 |
 | `THINK-40` | اختيار النماذج الذهنية للمشكلة | Mental-model selection for a problem | proven | python3 |
+| `PROMPT-23` | اطلب أي أسلوب بصري بالاسم من مكتبة 586 أسلوبًا | Ask for any visual style by name from a 586-style library | ready | python3 |
+| `PROMPT-24` | دمج أسلوبين 70/30 في برومنت واحد | Fuse two styles 70/30 in one prompt | ready | python3 |
+| `PROMPT-25` | كتالوج أساليب مصوّر PDF بعينات مولّدة | Illustrated style catalog PDF with generated swatches | ready | python3, chromium |
 | `AMIND-01` | تصميم ذاكرة الوكيل وتقييمها وتدقيق التسميم | Agent memory design, eval and poisoning audit | documented |  |
 | `AMIND-02` | فرز النهج الوكيلي وتصميم الأدوات وتحصين التقييم | Agentic approach triage, tool design and eval hardening | documented |  |
 | `AMIND-03` | تنظيم الذاكرة التلقائية وترقيتها | Auto-memory curation and promotion | documented |  |

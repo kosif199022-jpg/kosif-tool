@@ -2163,6 +2163,27 @@
     "top_k": 8,
     "motion_output": false
    }
+  },
+  {
+   "id": 101,
+   "lang": "ar",
+   "domain": "craft",
+   "skills": [
+    "kosif-superpowers"
+   ],
+   "query": "عايز صورة لمكتبتي بأسلوب زليج النجوم، ابعت لي البرومنت ووصف الأسلوب",
+   "files": [],
+   "expected_behavior": [
+    "Runs scripts/style_library.py describe and prompt for KS-001 (Zellige Starfield) and returns the filled prompt",
+    "Says the KS styles are original descriptions with procedural swatches, not finished artwork, and asks before any paid image generation"
+   ],
+   "routing": {
+    "expect_any": [
+     "TOOL",
+     "PROMPT"
+    ],
+    "top_k": 8
+   }
   }
  ]
 }

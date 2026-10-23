@@ -1,6 +1,6 @@
 {
  "schema": "kosif.hubs-index.v1",
- "atoms": 5492,
+ "atoms": 5496,
  "superpowers": 454,
  "hubs": [
   {
@@ -175,6 +175,7 @@
     "SP-0022",
     "SP-0142",
     "SP-0009",
+    "SP-0033",
     "SP-0017",
     "SP-0034",
     "SP-0143",
@@ -192,11 +193,11 @@
     "SP-0141",
     "SP-0006",
     "SP-0014",
-    "SP-0035",
     "SP-0015",
     "SP-0016",
     "SP-0007",
     "SP-0025",
+    "SP-0035",
     "SP-0011",
     "SP-0008"
    ],
@@ -226,6 +227,14 @@
      "ready_now": 2
     },
     {
+     "id": "SP-0033",
+     "name_ar": "برومبت مولّد الصور",
+     "name_en": "Image-generator prompt",
+     "size": 17,
+     "best": "proven",
+     "ready_now": 2
+    },
+    {
      "id": "SP-0017",
      "name_ar": "خطة تسليم بإيصال",
      "name_en": "Delivery plan with a receipt",
@@ -235,11 +244,11 @@
     },
     {
      "id": "SP-0034",
-     "name_ar": "برومبت مولّد الصور",
-     "name_en": "Image-generator prompt",
-     "size": 18,
-     "best": "proven",
-     "ready_now": 1
+     "name_ar": "اطلب أي أسلوب بصري بالاسم من مكتبة 586 أسلوبًا",
+     "name_en": "Ask for any visual style by name from a 586-style library",
+     "size": 7,
+     "best": "ready",
+     "ready_now": 2
     },
     {
      "id": "SP-0143",
@@ -288,23 +297,16 @@
      "size": 13,
      "best": "documented",
      "ready_now": 0
-    },
-    {
-     "id": "SP-0138",
-     "name_ar": "حلقة مستقلة لتصريف قائمة المهام",
-     "name_en": "Autonomous backlog-draining loop and single-task ralph loop",
-     "size": 10,
-     "best": "documented",
-     "ready_now": 0
     }
    ],
-   "powers": 307,
+   "powers": 311,
    "status_mix": {
     "proven": 17,
+    "ready": 3,
     "install": 2,
-    "documented": 288
+    "documented": 289
    },
-   "ready_now": 17,
+   "ready_now": 20,
    "requires": [
     "python3",
     "claude:tools",
@@ -314,11 +316,11 @@
     "git",
     "node",
     "key:video-gen",
+    "chromium",
     "pip:pandas",
     "lean",
     "pip:sympy",
     "pip:ortools",
-    "chromium",
     "pip:duckdb",
     "npm:d3",
     "pip:numpy",
@@ -400,9 +402,9 @@
      "id": "SP-0124",
      "name_ar": "أطلس القدرات للبحث والتخطيط",
      "name_en": "Capability Atlas search and planner",
-     "size": 22,
+     "size": 23,
      "best": "proven",
-     "ready_now": 20
+     "ready_now": 21
     },
     {
      "id": "SP-0125",
@@ -493,15 +495,15 @@
      "ready_now": 0
     }
    ],
-   "powers": 166,
+   "powers": 167,
    "status_mix": {
-    "proven": 86,
+    "proven": 87,
     "ready": 5,
     "install": 8,
     "key": 2,
     "documented": 65
    },
-   "ready_now": 91,
+   "ready_now": 92,
    "requires": [
     "python3",
     "ffmpeg",
@@ -831,8 +833,8 @@
    ],
    "links": [
     "3d",
-    "motion",
     "thinking",
+    "motion",
     "quality"
    ]
   },
@@ -1545,8 +1547,8 @@
     "pip:vtracer"
    ],
    "links": [
-    "motion",
     "software",
+    "motion",
     "images",
     "quality"
    ]
@@ -2527,8 +2529,7 @@
     "SP-0096",
     "SP-0097",
     "SP-0098",
-    "SP-0101",
-    "SP-0033"
+    "SP-0101"
    ],
    "top": [
     {
@@ -2628,12 +2629,12 @@
      "ready_now": 0
     }
    ],
-   "powers": 137,
+   "powers": 136,
    "status_mix": {
     "proven": 32,
     "install": 8,
     "key": 4,
-    "documented": 93
+    "documented": 92
    },
    "ready_now": 32,
    "requires": [
@@ -2669,8 +2670,8 @@
    "links": [
     "thinking",
     "software",
-    "quality",
-    "type"
+    "type",
+    "quality"
    ]
   },
   {
@@ -2903,8 +2904,8 @@
    "links": [
     "3d",
     "software",
-    "images",
-    "motion"
+    "motion",
+    "images"
    ]
   },
   {

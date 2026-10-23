@@ -1,4 +1,4 @@
-# `runnable-tools` — الوكلاء والتوجيه الذكي (69 بطاقة)
+# `runnable-tools` — الوكلاء والتوجيه الذكي (70 بطاقة)
 
 > مكتبة بروتوكول USIP v5.5 الكاملة، مولّدة بـ `smart_capabilities.py cards` من `data/powers/runnable-tools.json` وقواعد الملاحق A25–A29؛ لا تُحرَّر يدويًا. [الفهرس الرئيسي](../../README.md) · [فصل المجموعة](../../../.claude/skills/kosif-superpowers/references/library/agents.md) · [النواة](../../../.claude/skills/kosif-superpowers/PROTOCOL.md)
 
@@ -73,6 +73,7 @@
 - [`TOOL-67` مصحّح الامتحان الخفي التفاضلي](#tool-67--مصحّح-الامتحان-الخفي-التفاضلي--differential-hidden-exam-scorer)
 - [`TOOL-68` مجلس البرو: خمسة متعارضين أو مجلس مناسب من 100 شخصية، ثلاث جولات وحكم بالدرجات](#tool-68--مجلس-البرو-خمسة-متعارضين-أو-مجلس-مناسب-من-100-شخصية-ثلاث-جولات-وحكم-بالدرجات--pro-council-five-opposing-members-or-a-task-fitted-council-from-100-personas-three-rounds-a-scored-verdict)
 - [`TOOL-69` محرك التفكير وقوالبه](#tool-69--محرك-التفكير-وقوالبه--thinking-engine-scaffolds)
+- [`TOOL-70` مكتبة الأساليب: 586 أسلوبًا بصريًا بالاسم (86 من أطلس Futurepedia + 500 أصلي) — بحث ووصف وبرومنت وعينة وكتالوج PDF مصوّر](#tool-70--مكتبة-الأساليب-586-أسلوبًا-بصريًا-بالاسم-86-من-أطلس-futurepedia--500-أصلي--بحث-ووصف-وبرومنت-وعينة-وكتالوج-pdf-مصوّر--style-library--586-visual-styles-by-name-86-futurepedia-derived--500-original-find-describe-prompt-swatch-illustrated-pdf-catalog)
 
 ## البطاقات / cards
 
@@ -4839,6 +4840,7 @@
 - `TOOL-66` مناهج مستخلصة من الكتب: التفكير الجانبي والهندسة العملية والأدلة البايزية والشخصية وفحوص المحاسبة ووضوح البرومنت / Book-distilled methods: lateral ideas, pragmatic engineering, Bayesian evidence, personality, accounting checks, prompt clarity (proven)
 - `TOOL-67` مصحّح الامتحان الخفي التفاضلي / Differential hidden-exam scorer (proven)
 - `TOOL-69` محرك التفكير وقوالبه / Thinking engine scaffolds (proven)
+- `TOOL-70` مكتبة الأساليب: 586 أسلوبًا بصريًا بالاسم (86 من أطلس Futurepedia + 500 أصلي) — بحث ووصف وبرومنت وعينة وكتالوج PDF مصوّر / Style library — 586 visual styles by name (86 Futurepedia-derived + 500 original): find, describe, prompt, swatch, illustrated PDF catalog (proven)
 
 ### `TOOL-69` — محرك التفكير وقوالبه / Thinking engine scaffolds
 
@@ -4909,4 +4911,73 @@
 
 - `TOOL-67` مصحّح الامتحان الخفي التفاضلي / Differential hidden-exam scorer (proven)
 - `TOOL-68` مجلس البرو: خمسة متعارضين أو مجلس مناسب من 100 شخصية، ثلاث جولات وحكم بالدرجات / Pro Council: five opposing members or a task-fitted council from 100 personas, three rounds, a scored verdict (proven)
+- `TOOL-70` مكتبة الأساليب: 586 أسلوبًا بصريًا بالاسم (86 من أطلس Futurepedia + 500 أصلي) — بحث ووصف وبرومنت وعينة وكتالوج PDF مصوّر / Style library — 586 visual styles by name (86 Futurepedia-derived + 500 original): find, describe, prompt, swatch, illustrated PDF catalog (proven)
+
+### `TOOL-70` — مكتبة الأساليب: 586 أسلوبًا بصريًا بالاسم (86 من أطلس Futurepedia + 500 أصلي) — بحث ووصف وبرومنت وعينة وكتالوج PDF مصوّر / Style library — 586 visual styles by name (86 Futurepedia-derived + 500 original): find, describe, prompt, swatch, illustrated PDF catalog
+
+| الحقل | القيمة |
+|---|---|
+| العائلة | `runnable-tools` ([فصل العائلة](../../../.claude/skills/kosif-superpowers/references/powers/runnable-tools.md)) |
+| المجموعة | الوكلاء والتوجيه الذكي (`agents`) |
+| نوع المخرج (A25، A27) | خطة واستراتيجية وقرار (`plan`) |
+| الحالة في الكتالوج | ✅ `proven`: مثبتة في الكتالوج؛ افحص متطلباتها هنا قبل كتابة ✅ في الخطة |
+| سقف التحقق قبل العمل (A27) | V3 بعد تشغيلها هنا وقياس معيار، لا قبل ذلك |
+| نطاق الدليل | `repo` |
+| الرخصة | غير مذكورة في السجل: تُؤكَّد من المصدر قبل التسليم |
+
+**ما هي:** يجد أي أسلوب من 586 بالرقم أو الاسم العربي أو الإنجليزي أو بكلمات حرة: 86 طريقة معاد صياغتها من أطلس Futurepedia و500 أسلوب أصلي من KOSIF في 20 مجموعة. يطبع بطاقة الأسلوب (الشكل والمنطق والألوان والملمس والتكوين)، ويملأ وصفة البرومنت لموضوعك مع أسلوب ثانٍ بنسبة 30% اختياريًا، ويرسم عينة SVG إجرائية ثابتة، ويبني كتالوجًا مصورًا HTML وPDF. — Looks up any of 586 visual styles by id, English or Arabic name or free words: the 86 paraphrased Futurepedia AI Style Atlas methods and 500 original KOSIF styles in 20 groups (Arabic heritage, world crafts, material fusion, scientific imaging, natural process, architecture, futures, print, optics, textile, edible media, toys, interfaces, cartography, motion and time, sound, folk art, type and calligraphy, generative systems, cinematic genres). Prints a style card (look, logic, palette, texture, composition), fills its prompt recipe for a subject with an optional 30% accent style, draws a deterministic procedural SVG swatch, and builds an illustrated catalog (HTML, and PDF through headless Chromium).
+
+**متى:** عايز أسلوب زليج النجوم لصورة / Describe the Cyanotype Sunprint style and give me a prompt
+
+**كيف:** groups: `python3 scripts/style_library.py groups`; find: `python3 scripts/style_library.py find "خط عربي نيون"`; describe: `python3 scripts/style_library.py describe KS-001`; prompt: `python3 scripts/style_library.py prompt KS-001 --subject "a reading corner" --mix FA-12`. Full card: `python3 scripts/hub.py tool style-library`. Limits: Swatches are procedural sketches of a style's palette, texture and composition, not finished artwork; the 500 KS styles are original descriptions written for this library and have not each been produced as a real film or image. For a finished frame, feed the prompt to an image tool you choose, or build the scene with the motion engines.
+
+**المعاملات:** in: data/style_library_500.json, data/futurepedia_style_atlas_86.json, a style name or words, a subject · out: Style cards, filled prompts, SVG swatches, an illustrated HTML catalog and PDF
+
+**التثبيت:** optional: node + playwright (Chromium) for catalog --pdf
+
+**الوسوم:** style-library · أسلوب · أساليب · ستايل · استايل · مكتبة الأساليب · كتالوج · بي دي اف · برومنت · عينة · لقطة · style · styles · style library · visual style · art style · prompt recipe · swatch · catalog · pdf · 586 · 500 · futurepedia · KS
+
+#### 1. الاستقبال (A25)
+
+- الهدف القابل للقياس: سؤال بإجابة مقترحة ← هدف مقترح بعتبة رقمية يُعرض للتعديل
+- الأفق الزمني: افتراض مكتوب ← 90 يومًا
+- الموارد والميزانية: افتراض مكتوب ← شخص واحد بلا صرف
+- لا تُفترض أبدًا: مادة الإنتاج نفسها، والإذن بخطوة مدفوعة أو منشورة أو لا رجعة فيها، والهوية والحقوق.
+
+#### 2. الجاهزية والشارة (A28)
+
+- `python3` ← افحص وجوده بأمر واحد قبل كتابة الشارة
+- `chromium` ← افحص وجوده بأمر واحد قبل كتابة الشارة
+- الوضع 1: شارة «هنا الآن» بعد الفحص، لا ✅ الكتالوج تلقائيًا · الوضع 2: `كتالوج: ✅ · هنا: غير مفحوص` · الوضع 3: بلا شارة ولا معرّف.
+
+#### 3. موضعها في الخطة (A26)
+
+- عقدة منمّطة: المدخل `brief` ← المخرج `plan`، والمنفّذ `method:TOOL-70` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
+- لا أداة مسجلة تخدم عائلتها: التنفيذ بالمكتبات أو بأداة من مجموعة أخرى.
+- مراحل النوع: الهدف بمؤشره ← ثلاثة خيارات مختلفة ← تقييم وحساسية ← تشريح مسبق ← بوابات مكتوبة ← خطوة أولى قابلة للتراجع.
+- إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
+
+#### 4. بوابة التحقق (A27)
+
+- إلزامي: لكل هدف مؤشر وعتبة وتاريخ ← جدول المؤشرات
+- إلزامي: ثلاثة خيارات مختلفة المنهج مع توصية ← جدول المقارنة
+- جودة: تشريح مسبق بأهم أسباب الفشل والوقاية ← think.py plan
+- جودة: بوابات go/pivot/kill مكتوبة قبل النتائج ← think.py gate
+- إلزامي: خطوة أولى صغيرة قابلة للتراجع هذا الأسبوع ← مراجعة
+- أمر الحكم في الوضع 1: `think.py qa plan --answers qa.json` (PASS / FAIL / INCOMPLETE).
+
+#### 5. التعافي (A29)
+
+- `missing_dependency` (اعتمادية مفقودة، ميزانية 2): سمِّ الاعتمادية بالضبط (حزمة، برنامج، خط، نموذج) ← ثبّت محليًا في بيئة العمل إن كان مجانيًا ومسموحًا (pip --user أو venv أو npm محلي) · البديل: مسار المكتبة القياسية أو أداة أخرى من نفس المجموعة · تصعيد: تثبيت نظامي أو مدفوع أو يحتاج مفتاحًا: توقف واسأل
+- `quality_below_threshold` (جودة دون العتبة، ميزانية 3): أي معيار فشل وبكم (المقيس مقابل العتبة) ← عالج السبب الأكبر وحده ثم أعد القياس · البديل: المنهج البديل المكتوب للمرحلة في الخطة · تصعيد: معيار إلزامي لا يتحقق بعد البديل: توقف وأبلغ بالأرقام
+
+#### 6. الأدلة
+
+- `kosif-tool/.claude/skills/kosif-superpowers/evals/test_style_library.py`
+- `kosif-tool/.claude/skills/kosif-superpowers/scripts/style_library.py`
+
+#### 7. قدرات قريبة في العائلة
+
+- `TOOL-68` مجلس البرو: خمسة متعارضين أو مجلس مناسب من 100 شخصية، ثلاث جولات وحكم بالدرجات / Pro Council: five opposing members or a task-fitted council from 100 personas, three rounds, a scored verdict (proven)
+- `TOOL-69` محرك التفكير وقوالبه / Thinking engine scaffolds (proven)
 

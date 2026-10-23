@@ -471,20 +471,20 @@
  },
  "counts": {
   "broken_links": 0,
-  "evals": 95,
+  "evals": 96,
   "families": 62,
   "gaps": {
    "family_without_tool": 21
   },
-  "powers": 5490,
-  "py_edges": 255,
-  "repo_tests": 34,
+  "powers": 5496,
+  "py_edges": 257,
+  "repo_tests": 35,
   "roles": {
    "helper": 2,
-   "registered": 126
+   "registered": 127
   },
-  "scripts": 128,
-  "tools": 144
+  "scripts": 129,
+  "tools": 145
  },
  "families": [
   {
@@ -600,7 +600,7 @@
   {
    "id": "color-palette-grading",
    "powers": 87,
-   "tools": 5
+   "tools": 6
   },
   {
    "id": "creativity-engine",
@@ -699,8 +699,8 @@
   },
   {
    "id": "prompt-craft",
-   "powers": 22,
-   "tools": 3
+   "powers": 25,
+   "tools": 4
   },
   {
    "id": "qa-verification",
@@ -709,7 +709,7 @@
   },
   {
    "id": "runnable-tools",
-   "powers": 67,
+   "powers": 70,
    "tools": 0
   },
   {
@@ -745,7 +745,7 @@
   {
    "id": "texture-material",
    "powers": 96,
-   "tools": 1
+   "tools": 2
   },
   {
    "id": "thinking-core",
@@ -885,7 +885,7 @@
    "kind": "family_without_tool"
   },
   {
-   "detail": "67 powers, no tools.json entry lists this family",
+   "detail": "70 powers, no tools.json entry lists this family",
    "id": "runnable-tools",
    "kind": "family_without_tool"
   },
@@ -1497,6 +1497,11 @@
   {
    "from": "think",
    "kind": "imports",
+   "to": "council"
+  },
+  {
+   "from": "think",
+   "kind": "imports",
    "to": "powers"
   },
   {
@@ -2068,6 +2073,11 @@
    "from": "test_style_atlas_bridge",
    "kind": "imports",
    "to": "style_atlas_bridge"
+  },
+  {
+   "from": "test_style_library",
+   "kind": "imports",
+   "to": "style_library"
   },
   {
    "from": "test_superpower_fusion",
@@ -3552,13 +3562,18 @@
   {
    "ci": false,
    "id": "council",
-   "imported_by": [],
+   "imported_by": [
+    "think"
+   ],
    "path": "scripts/council.py",
-   "power_count": 0,
-   "powers": [],
+   "power_count": 1,
+   "powers": [
+    "TOOL-68"
+   ],
    "role": "registered",
    "tests": [
-    "evals/test_council.py"
+    "evals/test_council.py",
+    "tests/test_think_pro.py"
    ],
    "tools": [
     "council"
@@ -3845,7 +3860,7 @@
     "smart_capabilities"
    ],
    "path": "scripts/hub.py",
-   "power_count": 67,
+   "power_count": 70,
    "powers": [
     "TOOL-01",
     "TOOL-02",
@@ -4804,6 +4819,26 @@
   },
   {
    "ci": false,
+   "id": "style_library",
+   "imported_by": [],
+   "path": "scripts/style_library.py",
+   "power_count": 4,
+   "powers": [
+    "PROMPT-23",
+    "PROMPT-24",
+    "PROMPT-25",
+    "TOOL-70"
+   ],
+   "role": "registered",
+   "tests": [
+    "evals/test_style_library.py"
+   ],
+   "tools": [
+    "style-library"
+   ]
+  },
+  {
+   "ci": false,
    "id": "superpower_fusion",
    "imported_by": [
     "capability_mindmap",
@@ -4857,6 +4892,7 @@
     "tests/test_superpowers_unified.py",
     "tests/test_think.py",
     "tests/test_think_intel.py",
+    "tests/test_think_pro.py",
     "tests/test_think_reasoning.py",
     "tests/test_verify_source_audio.py"
    ],
@@ -4939,7 +4975,7 @@
     "powers"
    ],
    "path": "scripts/think.py",
-   "power_count": 10,
+   "power_count": 11,
    "powers": [
     "IDEA-26",
     "IDEA-29",
@@ -4950,12 +4986,14 @@
     "THINK-37",
     "THINK-38",
     "THINK-39",
-    "THINK-40"
+    "THINK-40",
+    "TOOL-69"
    ],
    "role": "registered",
    "tests": [
     "tests/test_think.py",
     "tests/test_think_intel.py",
+    "tests/test_think_pro.py",
     "tests/test_think_reasoning.py"
    ],
    "tools": [
@@ -5084,20 +5122,20 @@
   "areas": {
    "(root)": 8,
    "assets": 4,
-   "data": 116,
+   "data": 118,
    "dua-wednesday": 10,
-   "evals": 88,
+   "evals": 89,
    "examples": 12,
    "montage-pro": 2,
    "proofs": 239,
-   "references": 216,
+   "references": 217,
    "resources": 3,
    "schemas": 5,
-   "scripts": 159,
+   "scripts": 160,
    "templates": 16,
    "vendor": 76
   },
-  "bytes": 54712058,
+  "bytes": 55636565,
   "extensions": {
    "(none)": 8,
    ".bru": 7,
@@ -5105,17 +5143,17 @@
    ".html": 22,
    ".jpg": 23,
    ".js": 14,
-   ".json": 172,
-   ".md": 331,
+   ".json": 174,
+   ".md": 332,
    ".mjs": 9,
    ".png": 6,
-   ".py": 269,
+   ".py": 271,
    ".sh": 5,
    ".ttf": 14,
    ".txt": 54,
    ".woff2": 8
   },
-  "files": 954,
+  "files": 959,
   "symlinks": 0
  }
 }

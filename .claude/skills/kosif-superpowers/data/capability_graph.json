@@ -15,7 +15,7 @@
    "id": "root",
    "kind": "root",
    "label": "KOSIF Superpowers",
-   "count": 5492
+   "count": 5496
   },
   {
    "id": "dom:motion",
@@ -1320,12 +1320,18 @@
    "label": "Prompt craft",
    "ar": "صناعة البرومبت",
    "prefix": "PROMPT",
-   "count": 22,
+   "count": 25,
    "proven": 1,
    "status": {
     "documented": 21,
-    "proven": 1
+    "proven": 1,
+    "ready": 3
    }
+  },
+  {
+   "id": "script:scripts/style_library.py",
+   "kind": "script",
+   "label": "scripts/style_library.py"
   },
   {
    "id": "script:scripts/probe_env.py",
@@ -1372,10 +1378,10 @@
    "label": "Runnable KOSIF tools",
    "ar": "الأدوات القابلة للتشغيل",
    "prefix": "TOOL",
-   "count": 69,
-   "proven": 59,
+   "count": 70,
+   "proven": 60,
    "status": {
-    "proven": 59,
+    "proven": 60,
     "ready": 5,
     "install": 5
    }
@@ -5022,17 +5028,17 @@
    "from": "dom:craft",
    "to": "fam:prompt-craft",
    "rel": "has",
-   "w": 22
-  },
-  {
-   "from": "fam:prompt-craft",
-   "to": "req:claude:tools",
-   "rel": "needs",
-   "w": 2
+   "w": 25
   },
   {
    "from": "fam:prompt-craft",
    "to": "req:python3",
+   "rel": "needs",
+   "w": 5
+  },
+  {
+   "from": "fam:prompt-craft",
+   "to": "req:claude:tools",
    "rel": "needs",
    "w": 2
   },
@@ -5047,6 +5053,18 @@
    "to": "req:key:openai",
    "rel": "needs",
    "w": 1
+  },
+  {
+   "from": "fam:prompt-craft",
+   "to": "req:chromium",
+   "rel": "needs",
+   "w": 1
+  },
+  {
+   "from": "fam:prompt-craft",
+   "to": "script:scripts/style_library.py",
+   "rel": "runs",
+   "w": 3
   },
   {
    "from": "fam:prompt-craft",
@@ -5154,13 +5172,13 @@
    "from": "dom:build",
    "to": "fam:runnable-tools",
    "rel": "has",
-   "w": 69
+   "w": 70
   },
   {
    "from": "fam:runnable-tools",
    "to": "req:python3",
    "rel": "needs",
-   "w": 56
+   "w": 57
   },
   {
    "from": "fam:runnable-tools",
@@ -5170,13 +5188,13 @@
   },
   {
    "from": "fam:runnable-tools",
-   "to": "req:pip:pillow",
+   "to": "req:chromium",
    "rel": "needs",
-   "w": 8
+   "w": 9
   },
   {
    "from": "fam:runnable-tools",
-   "to": "req:chromium",
+   "to": "req:pip:pillow",
    "rel": "needs",
    "w": 8
   },
@@ -5208,7 +5226,7 @@
    "from": "fam:runnable-tools",
    "to": "script:scripts/hub.py",
    "rel": "runs",
-   "w": 74
+   "w": 75
   },
   {
    "from": "fam:runnable-tools",

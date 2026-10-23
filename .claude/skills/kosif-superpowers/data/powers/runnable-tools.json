@@ -3018,5 +3018,57 @@
   ],
   "section": "Think, ideate and write / التفكير والأفكار والكتابة",
   "source": "data/tools.json"
+ },
+ {
+  "id": "TOOL-70",
+  "family": "runnable-tools",
+  "domain": "build",
+  "name_ar": "مكتبة الأساليب: 586 أسلوبًا بصريًا بالاسم (86 من أطلس Futurepedia + 500 أصلي) — بحث ووصف وبرومنت وعينة وكتالوج PDF مصوّر",
+  "name_en": "Style library — 586 visual styles by name (86 Futurepedia-derived + 500 original): find, describe, prompt, swatch, illustrated PDF catalog",
+  "status": "proven",
+  "what": "يجد أي أسلوب من 586 بالرقم أو الاسم العربي أو الإنجليزي أو بكلمات حرة: 86 طريقة معاد صياغتها من أطلس Futurepedia و500 أسلوب أصلي من KOSIF في 20 مجموعة. يطبع بطاقة الأسلوب (الشكل والمنطق والألوان والملمس والتكوين)، ويملأ وصفة البرومنت لموضوعك مع أسلوب ثانٍ بنسبة 30% اختياريًا، ويرسم عينة SVG إجرائية ثابتة، ويبني كتالوجًا مصورًا HTML وPDF. — Looks up any of 586 visual styles by id, English or Arabic name or free words: the 86 paraphrased Futurepedia AI Style Atlas methods and 500 original KOSIF styles in 20 groups (Arabic heritage, world crafts, material fusion, scientific imaging, natural process, architecture, futures, print, optics, textile, edible media, toys, interfaces, cartography, motion and time, sound, folk art, type and calligraphy, generative systems, cinematic genres). Prints a style card (look, logic, palette, texture, composition), fills its prompt recipe for a subject with an optional 30% accent style, draws a deterministic procedural SVG swatch, and builds an illustrated catalog (HTML, and PDF through headless Chromium).",
+  "when": "عايز أسلوب زليج النجوم لصورة / Describe the Cyanotype Sunprint style and give me a prompt",
+  "how": "groups: `python3 scripts/style_library.py groups`; find: `python3 scripts/style_library.py find \"خط عربي نيون\"`; describe: `python3 scripts/style_library.py describe KS-001`; prompt: `python3 scripts/style_library.py prompt KS-001 --subject \"a reading corner\" --mix FA-12`. Full card: `python3 scripts/hub.py tool style-library`. Limits: Swatches are procedural sketches of a style's palette, texture and composition, not finished artwork; the 500 KS styles are original descriptions written for this library and have not each been produced as a real film or image. For a finished frame, feed the prompt to an image tool you choose, or build the scene with the motion engines.",
+  "params": "in: data/style_library_500.json, data/futurepedia_style_atlas_86.json, a style name or words, a subject · out: Style cards, filled prompts, SVG swatches, an illustrated HTML catalog and PDF",
+  "install": "optional: node + playwright (Chromium) for catalog --pdf",
+  "requires": [
+   "python3",
+   "chromium"
+  ],
+  "license": "",
+  "proof": [
+   "kosif-tool/.claude/skills/kosif-superpowers/evals/test_style_library.py",
+   "kosif-tool/.claude/skills/kosif-superpowers/scripts/style_library.py"
+  ],
+  "proof_scope": "repo",
+  "styles": [],
+  "tags": [
+   "style-library",
+   "أسلوب",
+   "أساليب",
+   "ستايل",
+   "استايل",
+   "مكتبة الأساليب",
+   "كتالوج",
+   "بي دي اف",
+   "برومنت",
+   "عينة",
+   "لقطة",
+   "style",
+   "styles",
+   "style library",
+   "visual style",
+   "art style",
+   "prompt recipe",
+   "swatch",
+   "catalog",
+   "pdf",
+   "586",
+   "500",
+   "futurepedia",
+   "KS"
+  ],
+  "section": "Image, design and fonts / الصور والتصميم والخطوط",
+  "source": "data/tools.json"
  }
 ]

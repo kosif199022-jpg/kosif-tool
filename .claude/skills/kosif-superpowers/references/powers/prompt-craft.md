@@ -3,7 +3,7 @@
 
 > **قوتك هنا / what this gives you:** كتابة البرومبت وتحسينه واختباره لنماذج النص والصورة والفيديو. — Write, improve and test prompts for text, image and video models.
 > **أقوى دليل / strongest evidence:** **PROMPT-02** Preservation ledger with an automatic check (`kosif-tool/.claude/skills/kosif-superpowers/proofs/general-writing/README.md`)
-> **22 powers follow** — ✅ 1 · 🟢 0 · 📦 0 · 🔑 0 · 👁 0 · 📄 21 · 💡 0.
+> **25 powers follow** — ✅ 1 · 🟢 3 · 📦 0 · 🔑 0 · 👁 0 · 📄 21 · 💡 0.
 
 **الحالة / status:** ✅ مُثبت (شُغّل فعلًا وله مسار دليل) · 🟢 جاهز (كود موجود يعمل بما هو متاح عادة) · 📦 بأمر تثبيت واحد · 🔑 يحتاج مفتاحًا أو حسابًا أو موصلًا · 👁 شوهد في فيديو مرجعي (للموشن فقط) · 📄 طريقة موثقة · 💡 فكرة. الشارة هي أدنى مستوى صادق — the badge is the lowest level that is true.
 مسارات الدليل نسبية إلى `/home/user/`؛ و`session-<date>:<file>#<section>` تشير إلى تشغيل موثق في جلسة سابقة؛ و`owner-upload:` إلى ملف داخل أرشيف أرسله المالك. Proof paths are relative to `/home/user/`.
@@ -16,7 +16,7 @@
 - **التوجيه والحفظ — Route and preserve** — PROMPT-01 … PROMPT-16 (3)
 - **بناء البرومبت — Building the prompt** — PROMPT-03 … PROMPT-20 (7)
 - **محوّلات الأهداف — Target adapters** — PROMPT-06 … PROMPT-11 (6)
-- **الفحص والإثبات — Check and prove** — PROMPT-13 … PROMPT-22 (6)
+- **الفحص والإثبات — Check and prove** — PROMPT-13 … PROMPT-25 (9)
 - المصادر والرخص / sources & licences
 
 ## التوجيه والحفظ — Route and preserve
@@ -189,9 +189,33 @@
 - **الدليل / proof:** — (لا دليل تشغيل بعد / no run proof yet)
 - **المصدر / source:** https://code.claude.com/docs/en/skills (paraphrased); https://platform.claude.com/docs/en/agents-and-tools/agent-skills/best-practices (paraphrased)
 
+#### PROMPT-23 · اطلب أي أسلوب بصري بالاسم من مكتبة 586 أسلوبًا · Ask for any visual style by name from a 586-style library · 🟢 جاهز / ready
+- **ماذا / what:** مكتبة أساليب بصرية: 86 طريقة من أطلس Futurepedia معاد صياغتها و500 أسلوب أصلي في 20 مجموعة، لكل أسلوب شكل ومنطق وألوان وملمس وتكوين ووصفة برومنت. — A visual style library: 86 paraphrased Futurepedia methods plus 500 original styles in 20 groups, each with look, logic, palette, texture, composition and a prompt recipe.
+- **متى أستخدمها / when:** عايز صورة أو مشهد بأسلوب معيّن، أو تدوّر على أسلوب بالاسم أو بالوصف / A request names a visual style or asks which style fits a subject.
+- **كيف / how:** python3 scripts/style_library.py find "<words>" → describe <KS-NNN|FA-NN|name> → prompt <id> --subject "<subject>". Treat the card as an art brief: keep the medium's surface, palette and composition on every frame, and change only the subject. The KS styles are descriptions, not produced films; say so when you hand one over.
+- **يحتاج / needs:** [`python3`](../requirements.md#req-python3)
+- **الدليل / proof:** `kosif-tool/.claude/skills/kosif-superpowers/evals/test_style_library.py`
+- **المصدر / source:** KOSIF original library (data/style_library_500.json); 86 methods paraphrased from https://www.futurepedia.io/resources/ai-style-atlas/view
+
+#### PROMPT-24 · دمج أسلوبين 70/30 في برومنت واحد · Fuse two styles 70/30 in one prompt · 🟢 جاهز / ready
+- **ماذا / what:** أسلوب أساسي يحكم الخامة والتكوين، وأسلوب ثانٍ يضيف لمسة لون أو عنصر بنسبة 30% فقط. — One base style owns the medium and composition; a second adds about 30% accent (a colour or one motif), never more.
+- **متى أستخدمها / when:** عايز تمزج أسلوبين أو أسلوب بلمسة من غيره / Mixing two looks without losing either one's identity.
+- **كيف / how:** python3 scripts/style_library.py prompt <base> --subject "…" --mix <accent>. Keep the base's surface and finishing on every frame; take from the accent only its first look cue and one palette colour. A 50/50 mix usually reads as neither.
+- **يحتاج / needs:** [`python3`](../requirements.md#req-python3)
+- **الدليل / proof:** `kosif-tool/.claude/skills/kosif-superpowers/evals/test_style_library.py`
+- **المصدر / source:** KOSIF original method (extends the 85/15 fusion of style_atlas_bridge.py plan)
+
+#### PROMPT-25 · كتالوج أساليب مصوّر PDF بعينات مولّدة · Illustrated style catalog PDF with generated swatches · 🟢 جاهز / ready
+- **ماذا / what:** كتالوج A4 فيه اسم كل أسلوب بالعربي والإنجليزي ورقمه وعينة إجرائية أصلية، مقسوم بالمجموعات وقابل للتقسيم ملفًا لكل مجموعة. — An A4 catalog with each style's id, Arabic and English name and an original procedural swatch, grouped, optionally one PDF per group.
+- **متى أستخدمها / when:** عايز تشوف الأساليب كلها وتختار منها، أو ملف PDF للأساليب / Someone wants to browse and pick styles visually.
+- **كيف / how:** python3 scripts/style_library.py catalog --out <new dir> --pdf <file.pdf> [--split-groups]. Needs node + Playwright Chromium; without them the HTML catalog with SVG swatches still works. Swatches show palette, texture and composition only; never present them as finished artwork.
+- **يحتاج / needs:** [`python3`](../requirements.md#req-python3) · [`chromium`](../requirements.md#req-chromium)
+- **الدليل / proof:** `kosif-tool/.claude/skills/kosif-superpowers/evals/test_style_library.py`
+- **المصدر / source:** KOSIF original tool
+
 ## المصادر والرخص / sources & licences
 
-- الرخص / licences: — (21) · original (this skill) (1)
+- الرخص / licences: — (24) · original (this skill) (1)
 - الأفكار مكتوبة بكلماتنا مع رابط المصدر؛ لا يُنسخ نص طرف ثالث طويل. Ideas are paraphrased with a link to the source; no long third-party text is copied. `—` = no licence recorded (own method or own wording).
 
 ---
