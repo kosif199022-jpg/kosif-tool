@@ -1,0 +1,24 @@
+{
+  "_note": "Geometry is in SOURCE-image pixels (here 941x1672, the saluting-man photo). Edit these for a new photo, then run `masks` and check out/mask_overlay.jpg.",
+  "size": [1080, 1920],
+  "fps": 30,
+  "loop_seconds": 24,
+  "duration_seconds": 240,
+  "crf": 14,
+  "person_model": "u2net_human_seg",
+  "person_threshold": 0.35,
+  "person_dilate_px": 15,
+  "sky_skyline": [[0,295],[150,300],[155,365],[310,375],[312,440],[480,445],[500,520],[590,560],[700,545],[800,560],[941,575]],
+  "sky_exclude_boxes": [[36,55,56,330],[676,130,698,700]],
+  "cloud_speed_px_s": 0.55,
+  "water_polygon": [[600,700],[941,700],[941,1260],[790,1260],[800,1000],[620,880]],
+  "water_min_brightness": 150,
+  "flags": [
+    {"box": [40,80,352,356], "pole_x": 52},
+    {"box": [684,155,935,425], "pole_x": 692}
+  ],
+  "flag_wave_px": 4.0,
+  "sun": [730, 497],
+  "light_sweep_strength": 0.07,
+  "sun_glow_strength": 0.05
+}
