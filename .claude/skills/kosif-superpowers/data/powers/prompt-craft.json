@@ -611,5 +611,108 @@
   ],
   "section": "الفحص والإثبات — Check and prove",
   "source": "https://code.claude.com/docs/en/skills (paraphrased); https://platform.claude.com/docs/en/agents-and-tools/agent-skills/best-practices (paraphrased)"
+ },
+ {
+  "id": "PROMPT-23",
+  "family": "prompt-craft",
+  "domain": "craft",
+  "name_ar": "اطلب أي أسلوب بصري بالاسم من مكتبة 586 أسلوبًا",
+  "name_en": "Ask for any visual style by name from a 586-style library",
+  "status": "ready",
+  "what": "مكتبة أساليب بصرية: 86 طريقة من أطلس Futurepedia معاد صياغتها و500 أسلوب أصلي في 20 مجموعة، لكل أسلوب شكل ومنطق وألوان وملمس وتكوين ووصفة برومنت. — A visual style library: 86 paraphrased Futurepedia methods plus 500 original styles in 20 groups, each with look, logic, palette, texture, composition and a prompt recipe.",
+  "when": "عايز صورة أو مشهد بأسلوب معيّن، أو تدوّر على أسلوب بالاسم أو بالوصف / A request names a visual style or asks which style fits a subject.",
+  "how": "python3 scripts/style_library.py find \"<words>\" → describe <KS-NNN|FA-NN|name> → prompt <id> --subject \"<subject>\". Treat the card as an art brief: keep the medium's surface, palette and composition on every frame, and change only the subject. The KS styles are descriptions, not produced films; say so when you hand one over.",
+  "params": "",
+  "install": "",
+  "requires": [
+   "python3"
+  ],
+  "license": "",
+  "proof": [
+   "kosif-tool/.claude/skills/kosif-superpowers/evals/test_style_library.py"
+  ],
+  "proof_scope": "repo",
+  "styles": [],
+  "tags": [
+   "style library",
+   "visual style",
+   "art style",
+   "أسلوب",
+   "أساليب",
+   "ستايل",
+   "استايل",
+   "مكتبة الأساليب",
+   "موسوعة الأساليب",
+   "futurepedia",
+   "KS"
+  ],
+  "section": "الفحص والإثبات — Check and prove",
+  "source": "KOSIF original library (data/style_library_500.json); 86 methods paraphrased from https://www.futurepedia.io/resources/ai-style-atlas/view"
+ },
+ {
+  "id": "PROMPT-24",
+  "family": "prompt-craft",
+  "domain": "craft",
+  "name_ar": "دمج أسلوبين 70/30 في برومنت واحد",
+  "name_en": "Fuse two styles 70/30 in one prompt",
+  "status": "ready",
+  "what": "أسلوب أساسي يحكم الخامة والتكوين، وأسلوب ثانٍ يضيف لمسة لون أو عنصر بنسبة 30% فقط. — One base style owns the medium and composition; a second adds about 30% accent (a colour or one motif), never more.",
+  "when": "عايز تمزج أسلوبين أو أسلوب بلمسة من غيره / Mixing two looks without losing either one's identity.",
+  "how": "python3 scripts/style_library.py prompt <base> --subject \"…\" --mix <accent>. Keep the base's surface and finishing on every frame; take from the accent only its first look cue and one palette colour. A 50/50 mix usually reads as neither.",
+  "params": "",
+  "install": "",
+  "requires": [
+   "python3"
+  ],
+  "license": "",
+  "proof": [
+   "kosif-tool/.claude/skills/kosif-superpowers/evals/test_style_library.py"
+  ],
+  "proof_scope": "repo",
+  "styles": [],
+  "tags": [
+   "style fusion",
+   "mix styles",
+   "دمج أساليب",
+   "مزج",
+   "accent",
+   "fusion"
+  ],
+  "section": "الفحص والإثبات — Check and prove",
+  "source": "KOSIF original method (extends the 85/15 fusion of style_atlas_bridge.py plan)"
+ },
+ {
+  "id": "PROMPT-25",
+  "family": "prompt-craft",
+  "domain": "craft",
+  "name_ar": "كتالوج أساليب مصوّر PDF بعينات مولّدة",
+  "name_en": "Illustrated style catalog PDF with generated swatches",
+  "status": "ready",
+  "what": "كتالوج A4 فيه اسم كل أسلوب بالعربي والإنجليزي ورقمه وعينة إجرائية أصلية، مقسوم بالمجموعات وقابل للتقسيم ملفًا لكل مجموعة. — An A4 catalog with each style's id, Arabic and English name and an original procedural swatch, grouped, optionally one PDF per group.",
+  "when": "عايز تشوف الأساليب كلها وتختار منها، أو ملف PDF للأساليب / Someone wants to browse and pick styles visually.",
+  "how": "python3 scripts/style_library.py catalog --out <new dir> --pdf <file.pdf> [--split-groups]. Needs node + Playwright Chromium; without them the HTML catalog with SVG swatches still works. Swatches show palette, texture and composition only; never present them as finished artwork.",
+  "params": "",
+  "install": "",
+  "requires": [
+   "python3",
+   "chromium"
+  ],
+  "license": "",
+  "proof": [
+   "kosif-tool/.claude/skills/kosif-superpowers/evals/test_style_library.py"
+  ],
+  "proof_scope": "repo",
+  "styles": [],
+  "tags": [
+   "style catalog",
+   "pdf",
+   "كتالوج",
+   "ملف بي دي اف",
+   "عينات",
+   "swatches",
+   "contact sheet"
+  ],
+  "section": "الفحص والإثبات — Check and prove",
+  "source": "KOSIF original tool"
  }
 ]
