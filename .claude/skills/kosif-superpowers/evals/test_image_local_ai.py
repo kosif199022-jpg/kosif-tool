@@ -215,6 +215,19 @@ class InferenceTests(unittest.TestCase):
             self.assertEqual(res.getpixel((13, 13)), (200, 120, 60))   # grown margin not pasted back
             self.assertEqual(res.getpixel((0, 0)), (200, 120, 60))
 
+    def test_corrupt_model_exits_2_with_plain_message(self):
+        from PIL import Image
+        with tempfile.TemporaryDirectory() as d:
+            d = Path(d)
+            model = d / "broken.onnx"
+            model.write_bytes(b"not an onnx file")
+            Image.new("RGB", (8, 8)).save(d / "in.png")
+            code, out, err = run(["remove-bg", "--model", str(model), str(d / "in.png"), str(d / "out.png")])
+            self.assertEqual(code, 2)
+            self.assertIn("cannot load", err)
+            self.assertNotIn("Traceback", err)
+            self.assertFalse((d / "out.png").exists())
+
     def test_onnx_helper_graph_when_available(self):
         if not have("onnx"):
             self.skipTest("onnx not installed; the hand-encoded graph covers inference")
