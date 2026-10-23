@@ -37,7 +37,6 @@ Commands below are typed from the skill folder (`.claude/skills/kosif-superpower
 5. [REA-backed cinematic editor capability study and footage-first EDL (2026-10-19)](#rea-backed-cinematic-editor-capability-study-and-footage-first-edl-2026-10-19)
 6. [Footage-first FFmpeg film rendering and REA-derived editor benchmark (2026-10-19)](#footage-first-ffmpeg-film-rendering-and-rea-derived-editor-benchmark-2026-10-19)
 7. [Global Video Platform Intelligence / Video Workflow Bridge (2026-10-19)](#global-video-platform-intelligence--video-workflow-bridge-2026-10-19)
-8. [دعاء يوم الأربعاء — Wednesday-morning dua reel (2026-10-21)](#دعاء-يوم-الأربعاء--wednesday-morning-dua-reel-2026-10-21)
 
 **Katana analysis-only policy:** إذا طلب المستخدم تحليل صور/مقاطع أو مرجع مونتاج، طبّق [سياسة Katana في A8](../protocol/A8-motion-brain.md#katana--higgsfield--سياسة-التحليل-فقط-وحفظ-الرصيد): النتيجة ردود وتحليل نصي، وليس إعادة إنشاء/إخراج صور أو فيديو عبر Katana، ولا استخدام أرصدة توليد Higgsfield. لا تفترض أن Katana لديها واجهة تحليل read-only؛ عند عدم إثباتها استخدم أدوات فحص KOSIF/FFmpeg أو الرؤية مباشرة مع تمييز المصدر.
 
@@ -96,11 +95,3 @@ For requests to compare major editing services (Premiere, CapCut, Resolve, Descr
 Two new clean-room local adapters support actual production work: scripts/video_workflow_bridge.py paper-edit words.json --keep "1-3,7-9" --fps 30 --out paper-edit.json creates frame-aligned VIDEO-ONLY edit decisions, while scripts/video_workflow_bridge.py review notes.json --duration 60 --fps 30 --out review-markers.json generates stable, frame-accurate spatial review notes. Both are deterministic JSON workflows, NOT licensed vendor AI/editor engines. Run python -m unittest discover -s evals -p test_video_workflow_bridge.py -v; raise status to verified only after a successful run.
 
 For documentary/audio-master requests, NEVER apply paper-edit decisions to the original narration: preserve its source bytes/stream and fit captions and visual cuts to existing word timing. Frame-review notes can be used without touching the sound. Run REA via its verified CLI or an explicitly configured provider; REA doctor failures for optional native engines do not prevent static artifact inspection.
-
-## دعاء يوم الأربعاء — Wednesday-morning dua reel (2026-10-21)
-
-When the owner sends a dua video or voice and asks for «نفس استايل دعاء يوم الأربعاء» (the same Wednesday dua style), use
-`dua-wednesday`: read [dua-wednesday/WORKFLOW.md](../../dua-wednesday/WORKFLOW.md) first, then `fetch` → `asr` → `init` →
-licensed clips → `prep` → `sprites` → `stills` (review) → `render`. Keep the fixed idea (one phrase = one shot, a different
-transition per cut, word-by-word gold karaoke text, mihrab + crescent, untouched voice, no star ornament); change the
-footage, text, day title and dates, and add new animation on top only through `Engine.transition` or a new draw function.
