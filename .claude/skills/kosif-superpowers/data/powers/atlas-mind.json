@@ -2571,5 +2571,312 @@
    "stage": "extracted",
    "verified_by": "b036-education-learning-1.json"
   }
+ },
+ {
+  "id": "AMIND-45",
+  "family": "atlas-mind",
+  "domain": "mind",
+  "name_ar": "تطوير قائم على الشك: مراجعة عدائية للقرارات غير البديهية",
+  "name_en": "Doubt-driven development for non-trivial decisions",
+  "status": "documented",
+  "what": "يخضع كل قرار غير بديهي لمراجعة عدائية بسياق جديد قبل اعتماده، ولا يطبقها على الأعمال الآلية. — Cross-examines each non-trivial decision with a fresh-context adversarial review before it stands, and skips mechanical work.",
+  "when": "تأكد من القرار، راجع افتراضاتك، هل هذا آمن فعلاً / challenge this decision, adversarial review, is this really safe",
+  "how": "1) A decision is non-trivial when it adds or changes branching, crosses a module or service boundary, asserts what the compiler cannot check (thread safety, idempotence, ordering), depends on context a future reader cannot see, or is irreversible (deploy, migration, public API). 2) For those, state the claim, then have an independent reviewer with no shared context try to break it. 3) Not for renames, formatting, file moves, clear instructions, summaries or one-line obvious fixes, or when the user asked for speed. 4) Doubting every keystroke ships nothing; the gate applies only to the list above.",
+  "params": "non-trivial criteria",
+  "install": "",
+  "requires": [],
+  "license": "method paraphrased from Atlas skills under MIT; the skills keep their own licenses — see each folder's SOURCE.md",
+  "proof": [
+   "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/3221-doubt-driven-development/13634-doubt-driven-development"
+  ],
+  "proof_scope": "url",
+  "styles": [],
+  "tags": [
+   "doubt",
+   "review",
+   "مراجعة",
+   "شك",
+   "assumptions",
+   "افتراضات"
+  ],
+  "section": "سير عمل الوكلاء — Agent workflows & orchestration",
+  "source": "KOSIF Atlas-5000 mining 2026-10-23 (https://github.com/kosif199022-jpg/kosif-atlas @ 99bb108d): doubt-driven-development/doubt-driven-development (#13634) · theme verification-review · 1 supporting skills · SKILL.md read in full as inert text: skills/3221-doubt-driven-development/13634-doubt-driven-development",
+  "atlas": {
+   "ids": [
+    "13634"
+   ],
+   "examples": [
+    {
+     "id": "13634",
+     "plugin": "doubt-driven-development",
+     "skill": "doubt-driven-development",
+     "url": "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/3221-doubt-driven-development/13634-doubt-driven-development"
+    }
+   ],
+   "theme": "verification-review",
+   "risk_notes": "Method guidance only; no Atlas code imported or executed.",
+   "kosif_overlap_ids": [],
+   "stage": "extracted",
+   "verified_by": "atlas-5000-mining-20261023.json",
+   "skill_md_sha256": {
+    "13634": "59aef769adeae40aad67a1d54474aaf914ea7ecdfc2a4752a54840a8d29f80de"
+   }
+  }
+ },
+ {
+  "id": "AMIND-46",
+  "family": "atlas-mind",
+  "domain": "mind",
+  "name_ar": "تخطيط بأسلوب Heuer: اختبار الافتراضات دون مجاملة",
+  "name_en": "Heuer-style structured planning with tested premises",
+  "status": "documented",
+  "what": "شريك تفكير منظم يبني الخطة ويهاجمها في الوقت نفسه، ويعامل كل ادعاء كفرضية حتى يثبت. — A structured thinking partner that builds the plan and attacks it at the same time, treating every claim as a hypothesis until it earns its place.",
+  "when": "خطط معي بجدية، انقد فكرتي، عصف ذهني صارم / rigorous planning, critique my idea, structured brainstorming",
+  "how": "1) No empathic filler ('great idea'); acknowledge facts and move on. 2) Every significant premise is a hypothesis: list load-bearing assumptions and test each. 3) Collaborator and devil's advocate run in parallel, not in turns. 4) Externalise the reasoning chain: inferences, assumptions, uncertainty. 5) Do not converge early; compare competing hypotheses against the evidence and keep the one with least disconfirming evidence. 6) Output a plan that survived scrutiny, with its failure modes named.",
+  "params": "assumptions list",
+  "install": "",
+  "requires": [
+   "pip:hypothesis"
+  ],
+  "license": "method paraphrased from Atlas skills under MIT; the skills keep their own licenses — see each folder's SOURCE.md",
+  "proof": [
+   "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/3243-heuer-planning/13679-heuer-planning"
+  ],
+  "proof_scope": "url",
+  "styles": [],
+  "tags": [
+   "planning",
+   "تخطيط",
+   "assumptions",
+   "Heuer",
+   "critique",
+   "نقد"
+  ],
+  "section": "سير عمل الوكلاء — Agent workflows & orchestration",
+  "source": "KOSIF Atlas-5000 mining 2026-10-23 (https://github.com/kosif199022-jpg/kosif-atlas @ 99bb108d): heuer-planning/heuer-planning (#13679) · theme planning-specs · 1 supporting skills · SKILL.md read in full as inert text: skills/3243-heuer-planning/13679-heuer-planning",
+  "atlas": {
+   "ids": [
+    "13679"
+   ],
+   "examples": [
+    {
+     "id": "13679",
+     "plugin": "heuer-planning",
+     "skill": "heuer-planning",
+     "url": "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/3243-heuer-planning/13679-heuer-planning"
+    }
+   ],
+   "theme": "planning-specs",
+   "risk_notes": "Method guidance only; no Atlas code imported or executed.",
+   "kosif_overlap_ids": [],
+   "stage": "extracted",
+   "verified_by": "atlas-5000-mining-20261023.json",
+   "skill_md_sha256": {
+    "13679": "5ebc2548935e3a6a6fb9a9a8428e4e689c0c72c3ef3b1b05ee793759730630ce"
+   }
+  }
+ },
+ {
+  "id": "AMIND-47",
+  "family": "atlas-mind",
+  "domain": "mind",
+  "name_ar": "استخراج المتطلبات: اسأل ولا تخترع",
+  "name_en": "Requirements elicitation: elicit, do not invent",
+  "status": "documented",
+  "what": "يقرأ وثيقة منتج ويستخرج ما ينقصها بأسئلة موجهة لكل طرف، دون أن يملأ الفراغات بافتراضات تقنية. — Reads a product document and surfaces what is missing as targeted questions per stakeholder, without filling gaps with invented technical detail.",
+  "when": "حلّل الـ PRD، ما الناقص في المواصفات، متطلبات تقنية / analyse PRD, missing requirements, spec gaps",
+  "how": "1) Point out ambiguous or underspecified statements, quoting the source line. 2) Turn each gap into a specific question grouped by stakeholder (product, design, engineering, legal). 3) Rate the technical risk each gap creates. 4) Never invent stack, architecture or data models the document does not state, and never add scope. 5) Rank risky assumptions on an impact x risk matrix and propose a cheap experiment for the top ones.",
+  "params": "stakeholders",
+  "install": "",
+  "requires": [],
+  "license": "method paraphrased from Atlas skills under MIT; the skills keep their own licenses — see each folder's SOURCE.md",
+  "proof": [
+   "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/3395-requirements-elicitation/13931-requirements-elicitation"
+  ],
+  "proof_scope": "url",
+  "styles": [],
+  "tags": [
+   "requirements",
+   "متطلبات",
+   "PRD",
+   "spec",
+   "مواصفات",
+   "questions"
+  ],
+  "section": "سير عمل الوكلاء — Agent workflows & orchestration",
+  "source": "KOSIF Atlas-5000 mining 2026-10-23 (https://github.com/kosif199022-jpg/kosif-atlas @ 99bb108d): requirements-elicitation/requirements-elicitation (#13931) · theme planning-specs · 3 supporting skills · SKILL.md read in full as inert text: skills/3395-requirements-elicitation/13931-requirements-elicitation",
+  "atlas": {
+   "ids": [
+    "13931",
+    "11649",
+    "11644"
+   ],
+   "examples": [
+    {
+     "id": "13931",
+     "plugin": "requirements-elicitation",
+     "skill": "requirements-elicitation",
+     "url": "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/3395-requirements-elicitation/13931-requirements-elicitation"
+    }
+   ],
+   "theme": "planning-specs",
+   "risk_notes": "Method guidance only; no Atlas code imported or executed.",
+   "kosif_overlap_ids": [],
+   "stage": "extracted",
+   "verified_by": "atlas-5000-mining-20261023.json",
+   "skill_md_sha256": {
+    "13931": "4f029d668bc05896b71422ecd45a4e116a99584c5b0514c284014dad092ce4f2"
+   }
+  }
+ },
+ {
+  "id": "AMIND-48",
+  "family": "atlas-mind",
+  "domain": "mind",
+  "name_ar": "توجيه إلى أخصائي واحد مع إلزام القراءة",
+  "name_en": "Route to one specialist, read before answering",
+  "status": "documented",
+  "what": "يوجّه المسألة الهندسية إلى أخصائي واحد مناسب ويقرأ ملفه قبل أي إجابة؛ تحميل أخصائيين كثر يعني أن التوجيه فشل. — Routes an engineering question to one fitting specialist and reads its file before answering; loading many specialists means routing failed.",
+  "when": "أي خبير يناسب المسألة، توجيه المهمة / pick the right specialist, route the task",
+  "how": "1) Classify the request (architecture, reliability, security, data, rollout...) and pick the single best specialist. 2) Read its reference completely before giving guidance; an answer from priors without the read does not count. 3) Load a second specialist only for a named sub-decision. 4) This mirrors KOSIF's own rule: brief and hub first, then the smallest set of powers.",
+  "params": "one specialist",
+  "install": "",
+  "requires": [],
+  "license": "method paraphrased from Atlas skills under MIT; the skills keep their own licenses — see each folder's SOURCE.md",
+  "proof": [
+   "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/3056-staff-engineer-mode/13185-staff-engineer-mode"
+  ],
+  "proof_scope": "url",
+  "styles": [],
+  "tags": [
+   "routing",
+   "توجيه",
+   "specialist",
+   "خبير",
+   "router"
+  ],
+  "section": "سير عمل الوكلاء — Agent workflows & orchestration",
+  "source": "KOSIF Atlas-5000 mining 2026-10-23 (https://github.com/kosif199022-jpg/kosif-atlas @ 99bb108d): staff-engineer-mode/staff-engineer-mode (#13185) · theme planning-specs · 1 supporting skills · SKILL.md read in full as inert text: skills/3056-staff-engineer-mode/13185-staff-engineer-mode",
+  "atlas": {
+   "ids": [
+    "13185"
+   ],
+   "examples": [
+    {
+     "id": "13185",
+     "plugin": "staff-engineer-mode",
+     "skill": "staff-engineer-mode",
+     "url": "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/3056-staff-engineer-mode/13185-staff-engineer-mode"
+    }
+   ],
+   "theme": "planning-specs",
+   "risk_notes": "Method guidance only; no Atlas code imported or executed.",
+   "kosif_overlap_ids": [],
+   "stage": "extracted",
+   "verified_by": "atlas-5000-mining-20261023.json",
+   "skill_md_sha256": {
+    "13185": "a0b63fd3c89bf00b7c6a19cfbb368122e95fa18dae37a09565d8ff44c6f8fd72"
+   }
+  }
+ },
+ {
+  "id": "AMIND-49",
+  "family": "atlas-mind",
+  "domain": "mind",
+  "name_ar": "أعد الاستخدام أو استبدل علناً: لا طريقتين لشيء واحد",
+  "name_en": "Reuse or openly replace: one way to do a thing",
+  "status": "documented",
+  "what": "إذا وُجدت طريقة معتمدة لفعل شيء، يعيد العمل الجديد استخدامها أو يستبدلها صراحة، ولا يضيف طريقة موازية صامتة. — When an established way exists, new work reuses it or openly replaces it, never adds a silent parallel one.",
+  "when": "لا تكرر الكود، أداة جديدة بجانب القديمة / duplicate implementation, parallel helper, fragmentation",
+  "how": "1) Before adding a helper, script, format or process, search for the existing one. 2) Reuse it, or replace it and migrate callers in the same change, saying so. 3) Two coexisting ways split the reader's model, double the drift surface and tax every future change with 'which one?'. 4) If the project states its own one-way rule, follow that first. 5) When caught mid-work: re-anchor, audit what is in flight, correct forward, report.",
+  "params": "",
+  "install": "",
+  "requires": [],
+  "license": "method paraphrased from Atlas skills under MIT; the skills keep their own licenses — see each folder's SOURCE.md",
+  "proof": [
+   "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/2431-discipline/9423-reuse-or-replace"
+  ],
+  "proof_scope": "url",
+  "styles": [],
+  "tags": [
+   "reuse",
+   "duplication",
+   "تكرار",
+   "refactor",
+   "إعادة استخدام"
+  ],
+  "section": "سير عمل تطوير عام — General development workflow",
+  "source": "KOSIF Atlas-5000 mining 2026-10-23 (https://github.com/kosif199022-jpg/kosif-atlas @ 99bb108d): discipline/reuse-or-replace (#9423) · theme refactoring-architecture · 1 supporting skills · SKILL.md read in full as inert text: skills/2431-discipline/9423-reuse-or-replace",
+  "atlas": {
+   "ids": [
+    "9423"
+   ],
+   "examples": [
+    {
+     "id": "9423",
+     "plugin": "discipline",
+     "skill": "reuse-or-replace",
+     "url": "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/2431-discipline/9423-reuse-or-replace"
+    }
+   ],
+   "theme": "refactoring-architecture",
+   "risk_notes": "Method guidance only; no Atlas code imported or executed.",
+   "kosif_overlap_ids": [],
+   "stage": "extracted",
+   "verified_by": "atlas-5000-mining-20261023.json",
+   "skill_md_sha256": {
+    "9423": "b52f688bf50305595edd5d2bdb02c7479eef19a4efbd00cd07a9ed2fac2d4e11"
+   }
+  }
+ },
+ {
+  "id": "AMIND-50",
+  "family": "atlas-mind",
+  "domain": "mind",
+  "name_ar": "تحديث خارطة الطريق من الأدلة مع ذكر وضع الفحص",
+  "name_en": "Evidence-based roadmap update with an explicit scan mode",
+  "status": "documented",
+  "what": "يحدّث ملف خارطة الطريق بحسب ما في الكود فعلاً، ويصرّح هل فحص المستودع كاملاً أم اعتمد على سياق الجلسة. — Updates the roadmap file from what the code actually shows and states whether it did a full scan or relied on session context.",
+  "when": "حدّث خارطة الطريق، ما الذي أنجز فعلاً / update roadmap, what is actually done",
+  "how": "1) Ask once: full scan or short-circuit from evidence already in the session. 2) Locate ROADMAP.md in a fixed search order. 3) Mark a task done only with evidence (file, commit, test); otherwise leave it open. 4) In short-circuit mode prefix each status line with its source ([SC] from context, [SC->FS] fallback scan) so 'not scanned because known' differs from 'forgot to scan'. 5) The report states MODE explicitly.",
+  "params": "scan mode",
+  "install": "",
+  "requires": [],
+  "license": "method paraphrased from Atlas skills under MIT; the skills keep their own licenses — see each folder's SOURCE.md",
+  "proof": [
+   "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/2840-roadmapsmith/11548-roadmap-update"
+  ],
+  "proof_scope": "url",
+  "styles": [],
+  "tags": [
+   "roadmap",
+   "خارطة طريق",
+   "evidence",
+   "أدلة",
+   "status"
+  ],
+  "section": "سير عمل الوكلاء — Agent workflows & orchestration",
+  "source": "KOSIF Atlas-5000 mining 2026-10-23 (https://github.com/kosif199022-jpg/kosif-atlas @ 99bb108d): roadmapsmith/roadmap-update (#11548) · theme planning-specs · 1 supporting skills · SKILL.md read in full as inert text: skills/2840-roadmapsmith/11548-roadmap-update",
+  "atlas": {
+   "ids": [
+    "11548"
+   ],
+   "examples": [
+    {
+     "id": "11548",
+     "plugin": "roadmapsmith",
+     "skill": "roadmap-update",
+     "url": "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/2840-roadmapsmith/11548-roadmap-update"
+    }
+   ],
+   "theme": "planning-specs",
+   "risk_notes": "Method guidance only; no Atlas code imported or executed.",
+   "kosif_overlap_ids": [],
+   "stage": "extracted",
+   "verified_by": "atlas-5000-mining-20261023.json",
+   "skill_md_sha256": {
+    "11548": "3fca5ad57a9abd76c8b24e7e577a2550bbe4f780d10c9793d7b0274e7665396d"
+   }
+  }
  }
 ]

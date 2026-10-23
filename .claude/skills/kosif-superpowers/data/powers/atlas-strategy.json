@@ -3173,5 +3173,258 @@
    "stage": "extracted",
    "verified_by": "b036-education-learning-1.json"
   }
+ },
+ {
+  "id": "ASTRAT-58",
+  "family": "atlas-strategy",
+  "domain": "strategy",
+  "name_ar": "الوظائف المطلوب إنجازها بأبعادها الثلاثة",
+  "name_en": "Jobs to Be Done with all three dimensions",
+  "status": "documented",
+  "what": "يفهم سبب «توظيف» العميل للمنتج: التقدم الذي يريده في ظرف معين، وظيفياً وعاطفياً واجتماعياً. — Understands why a customer 'hires' a product: the progress wanted in a circumstance, functional, emotional and social.",
+  "when": "لماذا يشتري العميل، احتياج العميل، JTBD / why customers buy, jobs to be done, customer needs",
+  "how": "1) Define the job as progress in specific circumstances, not a goal or a solution; demographics do not define it. 2) Capture all three dimensions: functional (what to get done), emotional (how to feel), social (how to be seen). 3) Map hiring and firing: what they used before and why they switched. 4) Interview about past behaviour, not opinions about your idea (Mom Test). 5) Score seven diagnostic rows plus depth points.",
+  "params": "",
+  "install": "",
+  "requires": [],
+  "license": "method paraphrased from Atlas skills under MIT; the skills keep their own licenses — see each folder's SOURCE.md",
+  "proof": [
+   "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/3433-product-strategy/14093-jobs-to-be-done"
+  ],
+  "proof_scope": "url",
+  "styles": [],
+  "tags": [
+   "JTBD",
+   "customer",
+   "عميل",
+   "product",
+   "منتج",
+   "needs"
+  ],
+  "section": "الأعمال والمال — Business, finance & legal",
+  "source": "KOSIF Atlas-5000 mining 2026-10-23 (https://github.com/kosif199022-jpg/kosif-atlas @ 99bb108d): product-strategy/jobs-to-be-done (#14093) · theme product-management · 1 supporting skills · SKILL.md read in full as inert text: skills/3433-product-strategy/14093-jobs-to-be-done",
+  "atlas": {
+   "ids": [
+    "14093"
+   ],
+   "examples": [
+    {
+     "id": "14093",
+     "plugin": "product-strategy",
+     "skill": "jobs-to-be-done",
+     "url": "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/3433-product-strategy/14093-jobs-to-be-done"
+    }
+   ],
+   "theme": "product-management",
+   "risk_notes": "Method guidance only; no Atlas code imported or executed.",
+   "kosif_overlap_ids": [],
+   "stage": "extracted",
+   "verified_by": "atlas-5000-mining-20261023.json",
+   "skill_md_sha256": {
+    "14093": "cc227aa837bda4ae0910324e52a90d338354501d005f7ef2fbd0cff9fd73aaf1"
+   }
+  }
+ },
+ {
+  "id": "ASTRAT-59",
+  "family": "atlas-strategy",
+  "domain": "strategy",
+  "name_ar": "التموضع: السياق قبل الرسالة",
+  "name_en": "Positioning as context (Obviously Awesome canvas)",
+  "status": "documented",
+  "what": "يحدد الفئة والبدائل والصفات الفريدة والقيمة والعميل الأنسب قبل كتابة أي رسالة تسويقية. — Defines category, alternatives, unique attributes, value and best-fit customer before writing any marketing message.",
+  "when": "تموضع المنتج، كيف نميز منتجنا، المنافسين / product positioning, differentiation, competitors",
+  "how": "1) List the real competitive alternatives customers would use instead (including spreadsheets or doing nothing). 2) Extract attributes only you have. 3) Translate attributes into value with proof. 4) Identify who cares most about that value. 5) Choose the market category that makes the value obvious. 6) Only then write messaging. 7) Score 0-10: 7-8 when all components are defined and the team agrees.",
+  "params": "",
+  "install": "",
+  "requires": [],
+  "license": "method paraphrased from Atlas skills under MIT; the skills keep their own licenses — see each folder's SOURCE.md",
+  "proof": [
+   "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/3435-strategy-growth/14106-obviously-awesome"
+  ],
+  "proof_scope": "url",
+  "styles": [],
+  "tags": [
+   "positioning",
+   "تموضع",
+   "marketing",
+   "تسويق",
+   "competitors"
+  ],
+  "section": "الأعمال والمال — Business, finance & legal",
+  "source": "KOSIF Atlas-5000 mining 2026-10-23 (https://github.com/kosif199022-jpg/kosif-atlas @ 99bb108d): strategy-growth/obviously-awesome (#14106) · theme product-management · 2 supporting skills · SKILL.md read in full as inert text: skills/3435-strategy-growth/14106-obviously-awesome",
+  "atlas": {
+   "ids": [
+    "14106",
+    "14297"
+   ],
+   "examples": [
+    {
+     "id": "14106",
+     "plugin": "strategy-growth",
+     "skill": "obviously-awesome",
+     "url": "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/3435-strategy-growth/14106-obviously-awesome"
+    }
+   ],
+   "theme": "product-management",
+   "risk_notes": "Method guidance only; no Atlas code imported or executed.",
+   "kosif_overlap_ids": [],
+   "stage": "extracted",
+   "verified_by": "atlas-5000-mining-20261023.json",
+   "skill_md_sha256": {
+    "14106": "403b215c80ce3b124947598e9547c11f6eff142cc18a4f7fe508e15ac8ec35e0"
+   }
+  }
+ },
+ {
+  "id": "ASTRAT-60",
+  "family": "atlas-strategy",
+  "domain": "strategy",
+  "name_ar": "تحسين التحويل: اكتشف ولا تخمّن",
+  "name_en": "Conversion optimisation: discover, do not guess",
+  "status": "documented",
+  "what": "يبحث عن أسباب عدم تحويل الزوار (من هم، ما الذي يعيقهم، ما اعتراضاتهم) قبل أي اختبار A/B. — Researches why visitors do not convert (who they are, what blocks them, what objections stop them) before any A/B test.",
+  "when": "الصفحة لا تبيع، تحسين التحويل، صفحة هبوط / landing page not converting, CRO, A/B test",
+  "how": "1) Define the success metric tied to business KPIs first. 2) Map the funnel to find high-traffic underperforming paths and missing stages. 3) Research visitors on three axes: who they are, UX blockers, objections (surveys, recordings, analytics). 4) Turn findings into hypotheses, prioritise, and test one change at a time with enough traffic. 5) Scale wins across pages; record losses too.",
+  "params": "metric",
+  "install": "",
+  "requires": [],
+  "license": "method paraphrased from Atlas skills under MIT; the skills keep their own licenses — see each folder's SOURCE.md",
+  "proof": [
+   "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/3430-marketing-cro/14069-cro-methodology"
+  ],
+  "proof_scope": "url",
+  "styles": [],
+  "tags": [
+   "CRO",
+   "conversion",
+   "تحويل",
+   "landing page",
+   "A/B"
+  ],
+  "section": "الأعمال والمال — Business, finance & legal",
+  "source": "KOSIF Atlas-5000 mining 2026-10-23 (https://github.com/kosif199022-jpg/kosif-atlas @ 99bb108d): marketing-cro/cro-methodology (#14069) · theme marketing-seo · 1 supporting skills · SKILL.md read in full as inert text: skills/3430-marketing-cro/14069-cro-methodology",
+  "atlas": {
+   "ids": [
+    "14069"
+   ],
+   "examples": [
+    {
+     "id": "14069",
+     "plugin": "marketing-cro",
+     "skill": "cro-methodology",
+     "url": "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/3430-marketing-cro/14069-cro-methodology"
+    }
+   ],
+   "theme": "marketing-seo",
+   "risk_notes": "Method guidance only; no Atlas code imported or executed.",
+   "kosif_overlap_ids": [],
+   "stage": "extracted",
+   "verified_by": "atlas-5000-mining-20261023.json",
+   "skill_md_sha256": {
+    "14069": "52bfedca17750ad117d838bfdcb5c5db190fb8a7c6e9b82abe44f939830e3897"
+   }
+  }
+ },
+ {
+  "id": "ASTRAT-61",
+  "family": "atlas-strategy",
+  "domain": "strategy",
+  "name_ar": "تحسين الظهور في البحث ومحركات الإجابة والذكاء التوليدي",
+  "name_en": "SEO, answer-engine and generative-engine visibility",
+  "status": "documented",
+  "what": "يحسّن ظهور المحتوى في محركات البحث وفي إجابات المساعدات الذكية، مستنداً إلى أبحاث حديثة لا إلى الموروث. — Improves visibility in search engines and AI assistant answers, grounded in current research rather than folklore.",
+  "when": "سيو، الظهور في جوجل، الظهور في إجابات الذكاء الاصطناعي / SEO, AEO, GEO, AI search visibility",
+  "how": "1) Pull current research first; treat vendor-blog insights as lower trust than the durable model and weigh each on provenance. 2) Write answer-first sections that state the fact in the first sentence, with clear headings matching real questions. 3) Use structured data and clean entities so engines can cite you. 4) Earn mentions on sources assistants already cite. 5) Measure with search console data and citation checks, not guesses.",
+  "params": "",
+  "install": "",
+  "requires": [],
+  "license": "method paraphrased from Atlas skills under MIT; the skills keep their own licenses — see each folder's SOURCE.md",
+  "proof": [
+   "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/99-seo-aeo-geo/208-seo-aeo-geo"
+  ],
+  "proof_scope": "url",
+  "styles": [],
+  "tags": [
+   "SEO",
+   "سيو",
+   "AEO",
+   "GEO",
+   "search",
+   "بحث"
+  ],
+  "section": "الأعمال والمال — Business, finance & legal",
+  "source": "KOSIF Atlas-5000 mining 2026-10-23 (https://github.com/kosif199022-jpg/kosif-atlas @ 99bb108d): seo-aeo-geo/seo-aeo-geo (#208) · theme marketing-seo · 1 supporting skills · SKILL.md read in full as inert text: skills/99-seo-aeo-geo/208-seo-aeo-geo",
+  "atlas": {
+   "ids": [
+    "208"
+   ],
+   "examples": [
+    {
+     "id": "208",
+     "plugin": "seo-aeo-geo",
+     "skill": "seo-aeo-geo",
+     "url": "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/99-seo-aeo-geo/208-seo-aeo-geo"
+    }
+   ],
+   "theme": "marketing-seo",
+   "risk_notes": "Method guidance only; no Atlas code imported or executed.",
+   "kosif_overlap_ids": [],
+   "stage": "extracted",
+   "verified_by": "atlas-5000-mining-20261023.json",
+   "skill_md_sha256": {
+    "208": "1fff372015456b54fe53a5407dc575b6ef76b83488229aaa4a025d7a1543bf1e"
+   }
+  }
+ },
+ {
+  "id": "ASTRAT-62",
+  "family": "atlas-strategy",
+  "domain": "strategy",
+  "name_ar": "مراجعة تصميم بأسلوب الطرح حتى الجوهر",
+  "name_en": "Subtractive design review from the customer backwards",
+  "status": "documented",
+  "what": "يراجع المنتج من تجربة العميل إلى التقنية، ويحذف حتى يصبح الحذف التالي كاسراً للمنتج. — Reviews a product from the customer experience back to the technology, subtracting until one more removal would break it.",
+  "when": "راجع تصميم منتجي، بسّط المنتج / design review, simplify product, product critique",
+  "how": "1) Start from what the customer sees, feels and does, then work back to the technology. 2) Remove elements until removing one more breaks the product; prefer one good default over a setting. 3) Count steps to value and cut them. 4) If it needs explaining, redesign it. 5) Score seven diagnostic rows: 7/7 = 10, 6/7 = 9, 5/7 = 7, 4/7 = 6.",
+  "params": "",
+  "install": "",
+  "requires": [],
+  "license": "method paraphrased from Atlas skills under MIT; the skills keep their own licenses — see each folder's SOURCE.md",
+  "proof": [
+   "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/3438-ux-design/14123-steve-jobs-design-review"
+  ],
+  "proof_scope": "url",
+  "styles": [],
+  "tags": [
+   "design review",
+   "مراجعة تصميم",
+   "simplicity",
+   "بساطة",
+   "product"
+  ],
+  "section": "الأعمال والمال — Business, finance & legal",
+  "source": "KOSIF Atlas-5000 mining 2026-10-23 (https://github.com/kosif199022-jpg/kosif-atlas @ 99bb108d): ux-design/steve-jobs-design-review (#14123) · theme verification-review · 1 supporting skills · SKILL.md read in full as inert text: skills/3438-ux-design/14123-steve-jobs-design-review",
+  "atlas": {
+   "ids": [
+    "14123"
+   ],
+   "examples": [
+    {
+     "id": "14123",
+     "plugin": "ux-design",
+     "skill": "steve-jobs-design-review",
+     "url": "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/3438-ux-design/14123-steve-jobs-design-review"
+    }
+   ],
+   "theme": "verification-review",
+   "risk_notes": "Method guidance only; no Atlas code imported or executed.",
+   "kosif_overlap_ids": [],
+   "stage": "extracted",
+   "verified_by": "atlas-5000-mining-20261023.json",
+   "skill_md_sha256": {
+    "14123": "0bbfdcaf8d00ab82877a247369ce08b3ac7c2646d08b28d76f93bbe9456fa2ad"
+   }
+  }
  }
 ]

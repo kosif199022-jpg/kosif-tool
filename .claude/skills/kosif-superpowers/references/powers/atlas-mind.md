@@ -3,21 +3,21 @@
 
 > **قوتك هنا / what this gives you:** طرق سير عمل الوكلاء والتخطيط والمواصفات وبوابات المراجعة المستخرجة من مهارات أطلس المفتوحة. — Agent-workflow, planning, spec and review-gate methods mined from the open Atlas skills.
 > **أقوى دليل / strongest evidence:** لا قوة مثبتة بعد في هذه العائلة — no ✅ power yet; the strongest badge here is 📄 documented.
-> **44 powers follow** — ✅ 0 · 🟢 0 · 📦 0 · 🔑 0 · 👁 0 · 📄 44 · 💡 0.
+> **50 powers follow** — ✅ 0 · 🟢 0 · 📦 0 · 🔑 0 · 👁 0 · 📄 50 · 💡 0.
 
 **الحالة / status:** ✅ مُثبت (شُغّل فعلًا وله مسار دليل) · 🟢 جاهز (كود موجود يعمل بما هو متاح عادة) · 📦 بأمر تثبيت واحد · 🔑 يحتاج مفتاحًا أو حسابًا أو موصلًا · 👁 شوهد في فيديو مرجعي (للموشن فقط) · 📄 طريقة موثقة · 💡 فكرة. الشارة هي أدنى مستوى صادق — the badge is the lowest level that is true.
 مسارات الدليل نسبية إلى `/home/user/`؛ و`session-<date>:<file>#<section>` تشير إلى تشغيل موثق في جلسة سابقة؛ و`owner-upload:` إلى ملف داخل أرشيف أرسله المالك. Proof paths are relative to `/home/user/`.
 
 **المجال / domain:** العقل والتفكير — Mind & thinking · **البادئة / prefix:** `AMIND` · **البيانات / data:** `data/powers/atlas-mind.json` · **بحث / search:** `python3 scripts/powers.py family atlas-mind`
-**مراجع ذات صلة / related references:** [CLAUDE_3_MINUTE_MAP.md](../CLAUDE_3_MINUTE_MAP.md) · [hubs.md](../hubs.md)
+**مراجع ذات صلة / related references:** [CLAUDE_3_MINUTE_MAP.md](../CLAUDE_3_MINUTE_MAP.md) · [atlas-5000-mining-20261023.md](../atlas-5000-mining-20261023.md) · [hubs.md](../hubs.md)
 
 ## الفهرس / contents
 
-- **سير عمل الوكلاء — Agent workflows & orchestration** — AMIND-01 … AMIND-38 (38)
+- **سير عمل الوكلاء — Agent workflows & orchestration** — AMIND-01 … AMIND-50 (43)
 - **التصحيح — Debugging & diagnosis** — AMIND-39 (1)
 - **DevOps والسحابة — DevOps, CI/CD, cloud & infrastructure** — AMIND-40 (1)
 - **المخططات — Diagrams & visual documentation** — AMIND-41 (1)
-- **سير عمل تطوير عام — General development workflow** — AMIND-42 … AMIND-43 (2)
+- **سير عمل تطوير عام — General development workflow** — AMIND-42 … AMIND-49 (3)
 - **التعليم والتعلم — Teaching, learning & study** — AMIND-44 (1)
 - المصادر والرخص / sources & licences
 
@@ -338,6 +338,47 @@
 - **الدليل / proof:** `https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/2980-sdd-composy/12610-sdd-fleet` · `https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/2980-sdd-composy/12612-sdd-loop`
 - **المصدر / source:** KOSIF Atlas mining 2026-10-20 (https://github.com/kosif199022-jpg/kosif-atlas): sdd-composy/sdd-fleet (#12610); sdd-composy/sdd-loop (#12612) · theme agent-workflow · 6 supporting skills · verifier read: skills/2980-sdd-composy/12610-sdd-fleet, skills/2980-sdd-composy/12612-sdd-loop
 
+#### AMIND-45 · تطوير قائم على الشك: مراجعة عدائية للقرارات غير البديهية · Doubt-driven development for non-trivial decisions · 📄 موصوف / documented only
+- **ماذا / what:** يخضع كل قرار غير بديهي لمراجعة عدائية بسياق جديد قبل اعتماده، ولا يطبقها على الأعمال الآلية. — Cross-examines each non-trivial decision with a fresh-context adversarial review before it stands, and skips mechanical work.
+- **متى أستخدمها / when:** تأكد من القرار، راجع افتراضاتك، هل هذا آمن فعلاً / challenge this decision, adversarial review, is this really safe
+- **كيف / how:** 1) A decision is non-trivial when it adds or changes branching, crosses a module or service boundary, asserts what the compiler cannot check (thread safety, idempotence, ordering), depends on context a future reader cannot see, or is irreversible (deploy, migration, public API). 2) For those, state the claim, then have an independent reviewer with no shared context try to break it. 3) Not for renames, formatting, file moves, clear instructions, summaries or one-line obvious fixes, or when the user asked for speed. 4) Doubting every keystroke ships nothing; the gate applies only to the list above. **أرقام / params:** non-trivial criteria
+- **الرخصة / license:** method paraphrased from Atlas skills under MIT; the skills keep their own licenses — see each folder's SOURCE.md
+- **الدليل / proof:** `https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/3221-doubt-driven-development/13634-doubt-driven-development`
+- **المصدر / source:** KOSIF Atlas-5000 mining 2026-10-23 (https://github.com/kosif199022-jpg/kosif-atlas @ 99bb108d): doubt-driven-development/doubt-driven-development (#13634) · theme verification-review · 1 supporting skills · SKILL.md read in full as inert text: skills/3221-doubt-driven-development/13634-doubt-driven-development
+
+#### AMIND-46 · تخطيط بأسلوب Heuer: اختبار الافتراضات دون مجاملة · Heuer-style structured planning with tested premises · 📄 موصوف / documented only
+- **ماذا / what:** شريك تفكير منظم يبني الخطة ويهاجمها في الوقت نفسه، ويعامل كل ادعاء كفرضية حتى يثبت. — A structured thinking partner that builds the plan and attacks it at the same time, treating every claim as a hypothesis until it earns its place.
+- **متى أستخدمها / when:** خطط معي بجدية، انقد فكرتي، عصف ذهني صارم / rigorous planning, critique my idea, structured brainstorming
+- **كيف / how:** 1) No empathic filler ('great idea'); acknowledge facts and move on. 2) Every significant premise is a hypothesis: list load-bearing assumptions and test each. 3) Collaborator and devil's advocate run in parallel, not in turns. 4) Externalise the reasoning chain: inferences, assumptions, uncertainty. 5) Do not converge early; compare competing hypotheses against the evidence and keep the one with least disconfirming evidence. 6) Output a plan that survived scrutiny, with its failure modes named. **أرقام / params:** assumptions list
+- **يحتاج / needs:** [`pip:hypothesis`](../requirements.md#req-pip-hypothesis)
+- **الرخصة / license:** method paraphrased from Atlas skills under MIT; the skills keep their own licenses — see each folder's SOURCE.md
+- **الدليل / proof:** `https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/3243-heuer-planning/13679-heuer-planning`
+- **المصدر / source:** KOSIF Atlas-5000 mining 2026-10-23 (https://github.com/kosif199022-jpg/kosif-atlas @ 99bb108d): heuer-planning/heuer-planning (#13679) · theme planning-specs · 1 supporting skills · SKILL.md read in full as inert text: skills/3243-heuer-planning/13679-heuer-planning
+
+#### AMIND-47 · استخراج المتطلبات: اسأل ولا تخترع · Requirements elicitation: elicit, do not invent · 📄 موصوف / documented only
+- **ماذا / what:** يقرأ وثيقة منتج ويستخرج ما ينقصها بأسئلة موجهة لكل طرف، دون أن يملأ الفراغات بافتراضات تقنية. — Reads a product document and surfaces what is missing as targeted questions per stakeholder, without filling gaps with invented technical detail.
+- **متى أستخدمها / when:** حلّل الـ PRD، ما الناقص في المواصفات، متطلبات تقنية / analyse PRD, missing requirements, spec gaps
+- **كيف / how:** 1) Point out ambiguous or underspecified statements, quoting the source line. 2) Turn each gap into a specific question grouped by stakeholder (product, design, engineering, legal). 3) Rate the technical risk each gap creates. 4) Never invent stack, architecture or data models the document does not state, and never add scope. 5) Rank risky assumptions on an impact x risk matrix and propose a cheap experiment for the top ones. **أرقام / params:** stakeholders
+- **الرخصة / license:** method paraphrased from Atlas skills under MIT; the skills keep their own licenses — see each folder's SOURCE.md
+- **الدليل / proof:** `https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/3395-requirements-elicitation/13931-requirements-elicitation`
+- **المصدر / source:** KOSIF Atlas-5000 mining 2026-10-23 (https://github.com/kosif199022-jpg/kosif-atlas @ 99bb108d): requirements-elicitation/requirements-elicitation (#13931) · theme planning-specs · 3 supporting skills · SKILL.md read in full as inert text: skills/3395-requirements-elicitation/13931-requirements-elicitation
+
+#### AMIND-48 · توجيه إلى أخصائي واحد مع إلزام القراءة · Route to one specialist, read before answering · 📄 موصوف / documented only
+- **ماذا / what:** يوجّه المسألة الهندسية إلى أخصائي واحد مناسب ويقرأ ملفه قبل أي إجابة؛ تحميل أخصائيين كثر يعني أن التوجيه فشل. — Routes an engineering question to one fitting specialist and reads its file before answering; loading many specialists means routing failed.
+- **متى أستخدمها / when:** أي خبير يناسب المسألة، توجيه المهمة / pick the right specialist, route the task
+- **كيف / how:** 1) Classify the request (architecture, reliability, security, data, rollout...) and pick the single best specialist. 2) Read its reference completely before giving guidance; an answer from priors without the read does not count. 3) Load a second specialist only for a named sub-decision. 4) This mirrors KOSIF's own rule: brief and hub first, then the smallest set of powers. **أرقام / params:** one specialist
+- **الرخصة / license:** method paraphrased from Atlas skills under MIT; the skills keep their own licenses — see each folder's SOURCE.md
+- **الدليل / proof:** `https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/3056-staff-engineer-mode/13185-staff-engineer-mode`
+- **المصدر / source:** KOSIF Atlas-5000 mining 2026-10-23 (https://github.com/kosif199022-jpg/kosif-atlas @ 99bb108d): staff-engineer-mode/staff-engineer-mode (#13185) · theme planning-specs · 1 supporting skills · SKILL.md read in full as inert text: skills/3056-staff-engineer-mode/13185-staff-engineer-mode
+
+#### AMIND-50 · تحديث خارطة الطريق من الأدلة مع ذكر وضع الفحص · Evidence-based roadmap update with an explicit scan mode · 📄 موصوف / documented only
+- **ماذا / what:** يحدّث ملف خارطة الطريق بحسب ما في الكود فعلاً، ويصرّح هل فحص المستودع كاملاً أم اعتمد على سياق الجلسة. — Updates the roadmap file from what the code actually shows and states whether it did a full scan or relied on session context.
+- **متى أستخدمها / when:** حدّث خارطة الطريق، ما الذي أنجز فعلاً / update roadmap, what is actually done
+- **كيف / how:** 1) Ask once: full scan or short-circuit from evidence already in the session. 2) Locate ROADMAP.md in a fixed search order. 3) Mark a task done only with evidence (file, commit, test); otherwise leave it open. 4) In short-circuit mode prefix each status line with its source ([SC] from context, [SC->FS] fallback scan) so 'not scanned because known' differs from 'forgot to scan'. 5) The report states MODE explicitly. **أرقام / params:** scan mode
+- **الرخصة / license:** method paraphrased from Atlas skills under MIT; the skills keep their own licenses — see each folder's SOURCE.md
+- **الدليل / proof:** `https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/2840-roadmapsmith/11548-roadmap-update`
+- **المصدر / source:** KOSIF Atlas-5000 mining 2026-10-23 (https://github.com/kosif199022-jpg/kosif-atlas @ 99bb108d): roadmapsmith/roadmap-update (#11548) · theme planning-specs · 1 supporting skills · SKILL.md read in full as inert text: skills/2840-roadmapsmith/11548-roadmap-update
+
 ## التصحيح — Debugging & diagnosis
 
 #### AMIND-39 · قاطع التكرار العقيم بعد محاولتين فاشلتين · Anti-thrashing circuit breaker after two failed fixes · 📄 موصوف / documented only
@@ -387,6 +428,14 @@
 - **الدليل / proof:** `https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/1072-craftsman/2375-caveats-and-status`
 - **المصدر / source:** KOSIF Atlas mining 2026-10-20 (https://github.com/kosif199022-jpg/kosif-atlas): craftsman/caveats-and-status (#2375) · theme general-dev-workflow · 2 supporting skills · verifier read: skills/1072-craftsman/2375-caveats-and-status
 
+#### AMIND-49 · أعد الاستخدام أو استبدل علناً: لا طريقتين لشيء واحد · Reuse or openly replace: one way to do a thing · 📄 موصوف / documented only
+- **ماذا / what:** إذا وُجدت طريقة معتمدة لفعل شيء، يعيد العمل الجديد استخدامها أو يستبدلها صراحة، ولا يضيف طريقة موازية صامتة. — When an established way exists, new work reuses it or openly replaces it, never adds a silent parallel one.
+- **متى أستخدمها / when:** لا تكرر الكود، أداة جديدة بجانب القديمة / duplicate implementation, parallel helper, fragmentation
+- **كيف / how:** 1) Before adding a helper, script, format or process, search for the existing one. 2) Reuse it, or replace it and migrate callers in the same change, saying so. 3) Two coexisting ways split the reader's model, double the drift surface and tax every future change with 'which one?'. 4) If the project states its own one-way rule, follow that first. 5) When caught mid-work: re-anchor, audit what is in flight, correct forward, report.
+- **الرخصة / license:** method paraphrased from Atlas skills under MIT; the skills keep their own licenses — see each folder's SOURCE.md
+- **الدليل / proof:** `https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/2431-discipline/9423-reuse-or-replace`
+- **المصدر / source:** KOSIF Atlas-5000 mining 2026-10-23 (https://github.com/kosif199022-jpg/kosif-atlas @ 99bb108d): discipline/reuse-or-replace (#9423) · theme refactoring-architecture · 1 supporting skills · SKILL.md read in full as inert text: skills/2431-discipline/9423-reuse-or-replace
+
 ## التعليم والتعلم — Teaching, learning & study
 
 #### AMIND-44 · تحقق خصومي أعمى من البراهين · Blind adversarial verification of proofs · 📄 موصوف / documented only
@@ -400,7 +449,7 @@
 
 ## المصادر والرخص / sources & licences
 
-- الرخص / licences: method paraphrased from Atlas skills under MIT; the skills keep their own licenses — see each folder's SOURCE.md (34) · method paraphrased from Atlas skills under Apache-2.0; the skills keep their own licenses — see each folder's SOURCE.md (3) · method paraphrased from Atlas skills under Apache-2.0 / MIT (no copyleft seen among supporting ids); the skills keep their own licenses — see each folder's SOURCE.md (2) · method paraphrased from Atlas skills under MIT (no copyleft seen among supporting ids); the skills keep their own licenses — see each folder's SOURCE.md (2) · method paraphrased from Atlas skills under MIT / Apache-2.0 (1300); the skills keep their own licenses — see each folder's SOURCE.md (1) · method paraphrased from Atlas skills under MIT / Apache-2.0 (3349); the skills keep their own licenses — see each folder's SOURCE.md (1) · method paraphrased from Atlas skills under MIT/Apache-2.0; the skills keep their own licenses — see each folder's SOURCE.md (1)
+- الرخص / licences: method paraphrased from Atlas skills under MIT; the skills keep their own licenses — see each folder's SOURCE.md (40) · method paraphrased from Atlas skills under Apache-2.0; the skills keep their own licenses — see each folder's SOURCE.md (3) · method paraphrased from Atlas skills under Apache-2.0 / MIT (no copyleft seen among supporting ids); the skills keep their own licenses — see each folder's SOURCE.md (2) · method paraphrased from Atlas skills under MIT (no copyleft seen among supporting ids); the skills keep their own licenses — see each folder's SOURCE.md (2) · method paraphrased from Atlas skills under MIT / Apache-2.0 (1300); the skills keep their own licenses — see each folder's SOURCE.md (1) · method paraphrased from Atlas skills under MIT / Apache-2.0 (3349); the skills keep their own licenses — see each folder's SOURCE.md (1) · method paraphrased from Atlas skills under MIT/Apache-2.0; the skills keep their own licenses — see each folder's SOURCE.md (1)
 - الأفكار مكتوبة بكلماتنا مع رابط المصدر؛ لا يُنسخ نص طرف ثالث طويل. Ideas are paraphrased with a link to the source; no long third-party text is copied. `—` = no licence recorded (own method or own wording).
 
 ---

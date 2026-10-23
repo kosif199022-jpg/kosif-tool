@@ -5940,6 +5940,125 @@
    "power_id": "TOOL-43"
   },
   {
+   "id": "atlas-body-audit",
+   "path": "scripts/atlas_body_audit.py",
+   "root": "skill",
+   "kind": "cli",
+   "area": "sources",
+   "tests": [
+    "tests/test_atlas_body_audit.py"
+   ],
+   "docs": [
+    ".claude/skills/kosif-superpowers/references/atlas-reviewed-audit.md",
+    ".claude/skills/kosif-superpowers/references/guides/sources.md"
+   ],
+   "families": [
+    "web-research",
+    "security-safety"
+   ],
+   "title_en": "Atlas skill-body static audit",
+   "title_ar": "مراجعة ساكنة لنصوص مهارات الأطلس",
+   "summary_en": "Picks a bounded, topic-stratified sample of skills from a KOSIF Atlas index (plus an optional copyleft index), fetches each raw SKILL.md and up to N of its script files from the kosif-atlas repository, and scans them for review indicators (remote script execution, destructive shell, secret collection, prompt override, installs). It never executes anything and writes the fetched text, records.json and summary.json only to a private --out directory.",
+   "summary_ar": "يختار عيّنة محدودة موزّعة على المواضيع من فهرس أطلس KOSIF (ومن فهرس copyleft اختياري)، ويجلب نص SKILL.md لكل مهارة وحتى N من ملفات سكربتاتها من مستودع kosif-atlas، ويفحصها بحثًا عن مؤشرات مراجعة (تنفيذ سكربت عن بُعد، أوامر حذف، جمع أسرار، تجاوز التعليمات، تثبيت حزم). لا ينفّذ شيئًا، ويكتب النصوص المجلوبة وrecords.json وsummary.json في مجلد --out خاص فقط.",
+   "use_when": [
+    "راجع لي نصوص مهارات الأطلس قبل ما نستخدمها",
+    "افحص عيّنة من مهارات Atlas بحثًا عن أوامر خطرة",
+    "statically review a sample of Atlas skill bodies before using them",
+    "audit the next 200 Atlas skills for risky instructions"
+   ],
+   "keywords": [
+    "Atlas",
+    "skill audit",
+    "static review",
+    "SKILL.md",
+    "risk indicators",
+    "prompt injection",
+    "مراجعة الأطلس",
+    "فحص المهارات",
+    "مؤشرات خطر"
+   ],
+   "commands": [
+    {
+     "name": "audit",
+     "example": "python3 scripts/atlas_body_audit.py --index ./atlas-index.json --out ./out/atlas-audit-private --limit 200",
+     "does": "Fetches the selected skills' SKILL.md and up to --scripts-per-skill code files (default 2), scans them for indicators, and writes source/, records.json and summary.json under --out; prints the summary."
+    }
+   ],
+   "inputs": "--index an Atlas index JSON with a skills list (id, skill, path, files, license, source); optional --copyleft-index; --out a private directory; --limit 1–1000 (default 200), --workers 1–16, --max-bytes per file (default 180000), --scripts-per-skill (default 2).",
+   "outputs": "Under --out: source/<id>/<kind>/<file> (fetched text), records.json (one record per file with status, SHA-256 and indicators) and summary.json; the summary is also printed.",
+   "requires": {
+    "python": [],
+    "binaries": [],
+    "node": [],
+    "optional": [],
+    "network": true
+   },
+   "safety": "network",
+   "consent": "Downloads third-party text from raw.githubusercontent.com into a private folder; keep it out of the repository and do not run or merge any fetched code without the owner's task-specific approval.",
+   "limits": "A sample, not full coverage, and static only: an indicator is a prompt for human review, not a malware verdict, and nothing proves a skill works; fetching needs network access to the kosif-atlas repository.",
+   "evidence": "tested-here",
+   "evidence_note": "tests/test_atlas_body_audit.py 4/4 passed offline on 2026-10-23 (path validation, indicator detection, sample selection, bridge annotation); the live fetch was not run here."
+  },
+  {
+   "id": "atlas-audit-synthesis",
+   "path": "scripts/atlas_audit_synthesis.py",
+   "root": "skill",
+   "kind": "cli",
+   "area": "sources",
+   "tests": [
+    "tests/test_atlas_body_audit.py"
+   ],
+   "docs": [
+    ".claude/skills/kosif-superpowers/references/atlas-reviewed-audit.md",
+    ".claude/skills/kosif-superpowers/references/guides/sources.md"
+   ],
+   "families": [
+    "web-research",
+    "security-safety"
+   ],
+   "title_en": "Atlas audit to reviewed manifest",
+   "title_ar": "تحويل مراجعة الأطلس إلى بيان مُراجَع",
+   "summary_en": "Turns the private records.json from atlas_body_audit.py and a folder of REA static-analysis results into a metadata-only reviewed manifest (per skill: SKILL.md SHA-256, code files read, indicators, licence claim) and a short findings report. No third-party text is copied into the outputs, so the manifest can be committed as data/atlas-reviewed/manifest.json, which atlas_external_bridge.py reads to annotate search results.",
+   "summary_ar": "يحوّل ملف records.json الخاص الناتج من atlas_body_audit.py ومجلد نتائج تحليل REA الساكن إلى بيان مُراجَع من البيانات الوصفية فقط (لكل مهارة: بصمة SHA-256 لـSKILL.md، وعدد ملفات الكود المقروءة، والمؤشرات، وادعاء الرخصة) وتقرير نتائج قصير. لا يُنسخ أي نص لطرف ثالث، فيمكن حفظ البيان في data/atlas-reviewed/manifest.json ليقرأه atlas_external_bridge.py ويعلّم نتائج البحث.",
+   "use_when": [
+    "حوّل نتائج مراجعة الأطلس إلى بيان نقدر نحفظه في الريبو",
+    "اعمل تقرير ملخص لمراجعة مهارات الأطلس",
+    "build the committed reviewed manifest from my private Atlas audit records",
+    "summarise the Atlas audit and REA results without copying third-party text"
+   ],
+   "keywords": [
+    "Atlas",
+    "reviewed manifest",
+    "audit synthesis",
+    "REA",
+    "metadata only",
+    "بيان المراجعة",
+    "تلخيص المراجعة",
+    "الأطلس"
+   ],
+   "commands": [
+    {
+     "name": "synthesize",
+     "example": "python3 scripts/atlas_audit_synthesis.py --records ./out/atlas-audit-private/records.json --rea-dir ./out/rea --manifest-out ./out/manifest.json --report-out ./out/atlas-reviewed-audit.md",
+     "does": "Groups the records by skill, attaches REA results from --rea-dir, and writes the metadata-only manifest and the Markdown findings report."
+    }
+   ],
+   "inputs": "--records the records.json from atlas_body_audit.py, --rea-dir a folder of REA JSON results, --manifest-out and --report-out output paths (all four required).",
+   "outputs": "A metadata-only manifest JSON (schema kosif.atlas.reviewed-manifest.v1) and a Markdown findings report.",
+   "requires": {
+    "python": [],
+    "binaries": [],
+    "node": [],
+    "optional": [],
+    "network": false
+   },
+   "safety": "writes-files",
+   "consent": "Writes only the two output paths given; review the manifest for private paths before committing it.",
+   "limits": "Only summarises what the audit and REA already recorded, so it adds no new verification; the counts describe the sample, not the whole Atlas.",
+   "evidence": "untested",
+   "evidence_note": "No direct test; its committed output data/atlas-reviewed/manifest.json is read by atlas_external_bridge.py, which tests/test_atlas_body_audit.py covers."
+  },
+  {
    "id": "atlas-metadata-audit",
    "path": "scripts/atlas_metadata_audit.py",
    "root": "skill",
@@ -8618,6 +8737,85 @@
    "evidence_note": "Eight focused unit tests passed locally on Windows for the Atlas miner."
   },
   {
+   "id": "atlas-5000",
+   "path": "scripts/atlas_5000.py",
+   "root": "skill",
+   "kind": "cli",
+   "area": "discover",
+   "title_en": "Atlas-5000 coverage map",
+   "title_ar": "خريطة تغطية أطلس الـ5000 مهارة",
+   "summary_en": "Maps the 5,116-skill safe core of KOSIF Atlas (READ_ONLY_OK, permissive license, no risk flags) against the KOSIF catalog: per-theme coverage, the themes with the most undistilled skills and their next candidates, and a bilingual search that shows which power already covers each Atlas skill.",
+   "summary_ar": "يقارن النواة الآمنة لأطلس KOSIF (5,116 مهارة بحكم READ_ONLY_OK وترخيص مفتوح وبلا علامات خطر) بكتالوج القدرات: التغطية لكل موضوع، والمواضيع الأكثر مهارات غير مستخرجة مع المرشحين التاليين، وبحث عربي وإنجليزي يبيّن أي قدرة تغطي كل مهارة.",
+   "use_when": [
+    "ايه المهارات اللي في أطلس الـ5000 ولسه ما اتعلمتهاش؟",
+    "دوّر في الأطلس على مهارات رسم ويبتون وشخصيات",
+    "Which Atlas themes are least covered by KOSIF powers?",
+    "Find Atlas skills for storyboard drawing and show which power covers them"
+   ],
+   "keywords": [
+    "atlas 5000",
+    "5000 skills",
+    "skill atlas",
+    "coverage",
+    "gaps",
+    "learnable skills",
+    "أطلس الـ5000",
+    "أطلس المهارات",
+    "تغطية",
+    "فجوات",
+    "مهارات يمكن تعلمها"
+   ],
+   "commands": [
+    {
+     "name": "stats",
+     "example": "python3 scripts/atlas_5000.py stats --json",
+     "does": "Prints the Atlas total, the safe-core size, and per theme how many safe skills a KOSIF power already cites (covered) with the coverage percentage."
+    },
+    {
+     "name": "gaps",
+     "example": "python3 scripts/atlas_5000.py gaps --top 8 --per-theme 3",
+     "does": "Ranks themes by safe skills no power cites yet and lists up to --per-theme candidates per theme (one per plugin, no duplicate descriptions)."
+    },
+    {
+     "name": "find",
+     "example": "python3 scripts/atlas_5000.py find \"storyboard character webtoon\" --top 10 --json",
+     "does": "Searches the safe core by name, theme and description with a few Arabic-to-English aliases; each hit lists covered_by power IDs. --uncovered keeps only skills not yet distilled."
+    },
+    {
+     "name": "show",
+     "example": "python3 scripts/atlas_5000.py show 2425 --json",
+     "does": "Prints one Atlas skill's metadata, whether it is in the safe core and which powers cite it; an unknown id exits 2."
+    }
+   ],
+   "inputs": "data/atlas_capability_index.json.gz (metadata of 14,793 Atlas skills) and data/powers/*.json.",
+   "outputs": "Text or JSON on stdout; writes nothing.",
+   "requires": {
+    "python": [],
+    "binaries": [
+     "python3"
+    ],
+    "node": [],
+    "optional": [],
+    "network": false
+   },
+   "safety": "read-only",
+   "consent": "None needed: it only reads two local data files.",
+   "limits": "covered means a power's proof or source cites the Atlas folder, not that the skill was run or verified; search is keyword overlap on metadata, and Atlas themes come from a keyword taxonomy that can misfile a skill.",
+   "evidence": "tested-here",
+   "evidence_note": "6/6 passed (evals/test_atlas_5000.py)",
+   "tests": [
+    ".claude/skills/kosif-superpowers/evals/test_atlas_5000.py"
+   ],
+   "docs": [
+    ".claude/skills/kosif-superpowers/references/atlas-5000-mining-20261023.md",
+    ".claude/skills/kosif-superpowers/references/guides/discover.md"
+   ],
+   "families": [
+    "self-discovery",
+    "software-investigation"
+   ]
+  },
+  {
    "id": "atlas-deep-fusion",
    "path": "scripts/atlas_deep_fusion.py",
    "root": "skill",
@@ -10559,6 +10757,129 @@
    "evidence_note": "evals/test_reel_factory.py 34/34 OK here (the build smoke test renders a tiny draft reel; it skips without ffmpeg, node or Chromium). On 22-10 the real dua audio declared as direct-permission without evidence planned with rights.json status incomplete and one RIGHTS_NOTE; an owned 6 s voice with three Pexels shots built a 1080x1920 reel that verify_video --source-audio passed 12/12 (packet MD5 equal to the source)."
   },
   {
+   "id": "dua-wednesday",
+   "path": "scripts/dua_wednesday.py",
+   "root": "skill",
+   "kind": "cli",
+   "area": "edit",
+   "title_en": "Wednesday-morning dua reel (دعاء يوم الأربعاء) — 9:16 motion-graphics dua engine",
+   "title_ar": "دعاء يوم الأربعاء — محرك ريل دعاء موشن جرافيك 9:16",
+   "summary_en": "Rebuilds the approved Wednesday-morning dua reel style on new footage and voice: one dua phrase per licensed shot cut just before the voice onset with nine different transitions (light leak, whip, gold ink reveal, zoom-through, gold iris, film burn, spin zoom, bokeh, slide), word-by-word Arabic text timed with faster-whisper and audio energy with a gold karaoke highlight, a gold Ruqaa day title under a drawn-on mihrab crowned by a crescent, golden dust, god rays, bloom, warm grade and grain. The voice is stream-copied and checked byte for byte.",
+   "summary_ar": "يعيد أسلوب ريل دعاء صباح الأربعاء المعتمد على لقطات وصوت جديدين: عبارة لكل لقطة مرخصة بقطع قبل بداية الصوت وتسعة انتقالات مختلفة، ونص عربي كلمة كلمة بتوقيت Whisper وطاقة الصوت مع تمييز ذهبي للكلمة المنطوقة، وعنوان اليوم بخط رقعة ذهبي تحت محراب يُرسم ويعلوه هلال، وغبار ذهبي وأشعة وتوهج وتدرج دافئ. الصوت يُنسخ دون أي تعديل ويُتحقق منه بايتًا ببايت.",
+   "use_when": [
+    "اعمل الفيديو ده بنفس استايل دعاء يوم الأربعاء",
+    "دعاء الصباح ريلز بنفس الأسلوب مع لقطات جديدة",
+    "Make this dua video in the same Wednesday dua style",
+    "حوّل فيديو الدعاء ده لموشن جرافيك 9:16 بخطوط ذهبية وانتقالات"
+   ],
+   "keywords": [
+    "dua",
+    "دعاء",
+    "الأربعاء",
+    "wednesday",
+    "صباح",
+    "morning",
+    "reel",
+    "ريلز",
+    "موشن",
+    "motion graphics",
+    "karaoke",
+    "mihrab",
+    "محراب",
+    "هلال",
+    "crescent",
+    "9:16",
+    "tiktok",
+    "تيك توك",
+    "kinetic arabic"
+   ],
+   "commands": [
+    {
+     "name": "doctor",
+     "example": "python3 scripts/dua_wednesday.py doctor",
+     "does": "Lists binaries, Python modules, Playwright and fonts."
+    },
+    {
+     "name": "fetch",
+     "example": "python3 scripts/dua_wednesday.py fetch \"https://vt.tiktok.com/XXXX/\" --job ./dua1",
+     "does": "Downloads the source (yt-dlp, TikTok fallback) and stream-copies its audio to voice.m4a."
+    },
+    {
+     "name": "caption-times",
+     "example": "python3 scripts/dua_wednesday.py caption-times ./dua1/source.mp4",
+     "does": "On-screen caption onsets of the reference reel."
+    },
+    {
+     "name": "asr",
+     "example": "python3 scripts/dua_wednesday.py asr --job ./dua1 --model medium",
+     "does": "faster-whisper word timings + energy-refined phrase onsets → words.json, lines.draft.json."
+    },
+    {
+     "name": "init",
+     "example": "python3 scripts/dua_wednesday.py init --job ./dua1",
+     "does": "Copies the approved Wednesday project.json to edit."
+    },
+    {
+     "name": "prep",
+     "example": "python3 scripts/dua_wednesday.py prep --job ./dua1 sunrise.mp4 candle.mp4:556",
+     "does": "Licensed clips → 1080×1920 30 fps sharpened mezzanine (SRC:X sets the crop)."
+    },
+    {
+     "name": "sprites",
+     "example": "python3 scripts/dua_wednesday.py sprites --job ./dua1",
+     "does": "Renders title, date, subtitle and per-word dua sprites in Chromium."
+    },
+    {
+     "name": "stills",
+     "example": "python3 scripts/dua_wednesday.py stills --job ./dua1 --t 1.6,5.4,20",
+     "does": "Review frames."
+    },
+    {
+     "name": "render",
+     "example": "python3 scripts/dua_wednesday.py render --job ./dua1 --workers 4",
+     "does": "Parallel render, concat, untouched audio, TikTok copy, frame and audio checks."
+    }
+   ],
+   "inputs": "A dua video or voice (URL or file), licensed clips (one per phrase), project.json",
+   "outputs": "JOB/out/master.mp4, JOB/out/tiktok.mp4, JOB/out/report.json, JOB/stills/*.jpg",
+   "requires": {
+    "python": [
+     "numpy",
+     "opencv-python-headless"
+    ],
+    "binaries": [
+     "ffmpeg",
+     "ffprobe",
+     "node"
+    ],
+    "node": [
+     "playwright"
+    ],
+    "optional": [
+     "pip:faster-whisper",
+     "bin:yt-dlp"
+    ],
+    "network": false
+   },
+   "safety": "runs-external-programs",
+   "consent": "fetch downloads the user's link (and may call the public tikwm.com endpoint for TikTok); asr downloads a Whisper model from huggingface.co once; footage must be the user's own or licensed (Mixkit, CC).",
+   "limits": "Fixed 1080×1920 layout for short Arabic phrases; ASR drafts need a human spelling pass; licensed stock is often 720p landscape, so crops are upscaled; loudness is left as in the source.",
+   "tests": [
+    ".claude/skills/kosif-superpowers/evals/test_dua_wednesday.py"
+   ],
+   "docs": [
+    ".claude/skills/kosif-superpowers/dua-wednesday/WORKFLOW.md",
+    ".claude/skills/kosif-superpowers/dua-wednesday/README.md"
+   ],
+   "families": [
+    "transitions-cuts",
+    "audio-sync-captions",
+    "photo-video-footage",
+    "formats-platforms"
+   ],
+   "evidence": "tested-here"
+  },
+  {
    "id": "stream-grabber",
    "path": "scripts/stream_grabber.py",
    "root": "skill",
@@ -10763,6 +11084,101 @@
    ],
    "evidence": "tested-elsewhere",
    "evidence_note": "22 narrow tests previously passed on authorized Windows laptop (7+7+8), not full professional quality proof."
+  },
+  {
+   "id": "drawing-methods",
+   "path": "scripts/drawing_methods.py",
+   "root": "skill",
+   "kind": "cli",
+   "area": "draw",
+   "title_en": "Drawing-book methods atlas with layered construction SVGs",
+   "title_ar": "أطلس مناهج كتب الرسم مع رسم بنائي بالطبقات",
+   "summary_en": "26 original method cards distilled from well-known drawing books (gesture, proportion, Loomis-style head, mannequin, shape language, silhouette, expression, light, value, colour, composition, inking); ranks them for an Arabic or English request, builds an ordered drawing plan or an image prompt, draws a head, figure, character or forms as a deterministic layered SVG (guide, construction, final, silhouette) and checks the drawing's geometry against the cards.",
+   "summary_ar": "26 بطاقة منهج أصلية مستخلصة من أشهر كتب الرسم (الإيماءة، النسب، رأس لوميس، المانيكان، لغة الأشكال، السيلويت، التعبير، الضوء، القيم، اللون، التكوين، التحبير)؛ يرتبها لطلبك بالعربي أو الإنجليزي، ويبني خطة رسم أو برومبت صورة، ويرسم رأسًا أو جسمًا أو شخصية أو أشكالًا SVG بطبقات، ثم يفحص هندستها مقابل البطاقات.",
+   "use_when": [
+    "ارسم شخصية كرتونية بلغة أشكال واضحة",
+    "علمني أرسم الوجه من زاوية",
+    "ارسم جسم بنسب صحيحة ووضعية ديناميكية",
+    "Draw a character using drawing-book methods",
+    "Plan a figure drawing with gesture and proportion"
+   ],
+   "keywords": [
+    "drawing books",
+    "كتب الرسم",
+    "loomis",
+    "لوميس",
+    "gesture",
+    "إيماءة",
+    "proportion",
+    "نسب",
+    "shape language",
+    "لغة الأشكال",
+    "silhouette",
+    "سيلويت",
+    "character design",
+    "تصميم شخصيات",
+    "expression",
+    "تعبير",
+    "head construction",
+    "رسم الوجه",
+    "mannequin",
+    "مانيكان",
+    "figure drawing",
+    "رسم الجسم",
+    "svg",
+    "رسم"
+   ],
+   "commands": [
+    {
+     "name": "find",
+     "example": "python3 scripts/drawing_methods.py find \"ارسم وش شخصية بتضحك\"",
+     "does": "Ranks the method cards for a request; prints JSON."
+    },
+    {
+     "name": "plan",
+     "example": "python3 scripts/drawing_methods.py plan \"ارسم شخصية كرتونية طفل سعيد\"",
+     "does": "Ordered intent-to-verify drawing plan with the chosen cards' steps and checks, plus the demo and check commands."
+    },
+    {
+     "name": "prompt",
+     "example": "python3 scripts/drawing_methods.py prompt \"a brave girl explorer\" --methods DM-13,DM-16",
+     "does": "Image-generation prompt and review checks from the cards; calls no model."
+    },
+    {
+     "name": "draw",
+     "example": "python3 scripts/drawing_methods.py draw character --shape circle --age child --expression happy --out out/character.svg",
+     "does": "Writes a layered SVG (head, figure, character or forms); refuses to overwrite without --force."
+    },
+    {
+     "name": "check",
+     "example": "python3 scripts/drawing_methods.py check --svg out/character.svg",
+     "does": "Measures the SVG's stages, proportions, tilts, shapes and expression against the cards; exits 1 on a failed check."
+    }
+   ],
+   "inputs": "A request in Arabic or English, method ids, or draw parameters (yaw/pitch, heads, pose, shape, age, expression, eye level)",
+   "outputs": "JSON method lists, plans, prompts and check reports; editable layered SVG drawings",
+   "requires": {
+    "python": [],
+    "binaries": [],
+    "node": [],
+    "optional": [],
+    "network": false
+   },
+   "safety": "writes-files",
+   "consent": "Writes only the SVG or JSON path you pass; refuses to overwrite without --force; no network, model calls or spend.",
+   "limits": "Method cards summarise widely taught book methods in original words; the books' full texts were not read here. The SVGs are construction demonstrations, and check measures geometry only, not artistic quality.",
+   "tests": [
+    ".claude/skills/kosif-superpowers/evals/test_drawing_methods.py"
+   ],
+   "docs": [
+    ".claude/skills/kosif-superpowers/references/drawing-methods-atlas.md"
+   ],
+   "families": [
+    "hand-drawn-draw-on",
+    "story-direction-ideas"
+   ],
+   "evidence": "tested-here",
+   "evidence_note": "10 unit tests passed on this checkout (cloud container, 2026-10-23), including draw+check of 9 variants and a rendered visual review of head, figure, character and forms SVGs."
   },
   {
    "id": "perspective-color-lab",
@@ -11482,6 +11898,107 @@
    "evidence": "tested-here",
    "evidence_note": "evals/test_business_workflows.py passed on 2026-10-23 (64 workflows, 286 steps, 220 native).",
    "power_id": "TOOL-65"
+  },
+  {
+   "id": "book-methods",
+   "path": "scripts/book_methods.py",
+   "root": "skill",
+   "kind": "cli",
+   "area": "think",
+   "title_en": "Book-distilled methods: lateral ideas, pragmatic engineering, Bayesian evidence, personality, accounting checks, prompt clarity",
+   "title_ar": "مناهج مستخلصة من الكتب: التفكير الجانبي والهندسة العملية والأدلة البايزية والشخصية وفحوص المحاسبة ووضوح البرومنت",
+   "summary_en": "Searches 45 methods distilled in our own words from ten uploaded PDFs (lateral-thinking course, The Pragmatic Programmer, Jaynes's Bayesian framework, the Cambridge Handbook of Personality Psychology, an IFRS/ISA accounting skill report, the owner's KOSIF v8 prompt spec, Shawqi's diwan, two English coursebooks), and runs five helpers: seeded random-word provocation, a Bayesian posterior with a decibel evidence ledger, a prompt clarity/context/specificity gate, a journal-entry checker (balance, integer minor units, VAT, duplicates, bank-receipt-is-settlement) and a Big Five character card.",
+   "summary_ar": "يبحث في 45 منهجًا مستخلصًا بكلماتنا من عشرة ملفات PDF، ويشغّل خمسة مساعدين: كلمات عشوائية محفّزة، وحساب بايزي بسجل أدلة بالديسيبل، وبوابة وضوح البرومنت، وفاحص قيود محاسبية، وبطاقة شخصية بالعوامل الخمسة.",
+   "use_when": [
+    "أعطني أفكار غير تقليدية لإعلان",
+    "افحص وضوح هذا البرومنت قبل التوليد",
+    "تأكد أن القيود متوازنة وأن التحصيل ليس إيرادًا",
+    "Build a character's voice from a Big Five profile",
+    "Weigh this evidence with Bayes in decibels"
+   ],
+   "keywords": [
+    "lateral thinking",
+    "random word",
+    "pragmatic programmer",
+    "bayes",
+    "bayesian",
+    "evidence",
+    "personality",
+    "big five",
+    "character",
+    "accounting",
+    "ifrs",
+    "ledger",
+    "vat",
+    "prompt clarity",
+    "تفكير جانبي",
+    "أفكار",
+    "احتمال",
+    "شخصية",
+    "محاسبة",
+    "قيود",
+    "ضريبة",
+    "وضوح البرومنت",
+    "شعر",
+    "كتب"
+   ],
+   "commands": [
+    {
+     "name": "search",
+     "example": "python3 scripts/book_methods.py search \"شخصية حوار\"",
+     "does": "Arabic/English method search."
+    },
+    {
+     "name": "rest",
+     "example": "python3 scripts/book_methods.py rest --problem \"إعلان لمقهى\" --seed 7",
+     "does": "Seeded random-word provocation in four modes."
+    },
+    {
+     "name": "bayes",
+     "example": "python3 scripts/book_methods.py bayes --h fraud=0.01 --h ok=0.99 --e \"flag:fraud=0.9,ok=0.05\"",
+     "does": "Posterior and decibel evidence ledger."
+    },
+    {
+     "name": "clarity",
+     "example": "python3 scripts/book_methods.py clarity \"صورة جميلة لشخص\"",
+     "does": "Clarity/context/specificity score; exit 3 = REVISE."
+    },
+    {
+     "name": "ledger",
+     "example": "python3 scripts/book_methods.py ledger --file entries.json --revenue 4101 --receivable 1201",
+     "does": "Draft journal-entry checks; exit 1 on an error."
+    },
+    {
+     "name": "persona",
+     "example": "python3 scripts/book_methods.py persona --name سارة --big5 O=4,C=2,E=5,A=2,N=3",
+     "does": "Character card with speech rules and if-then signatures."
+    }
+   ],
+   "inputs": "data/book_methods.json; a problem, hypotheses, a prompt, journal entries JSON or Big Five scores",
+   "outputs": "JSON to stdout",
+   "requires": {
+    "python": [],
+    "binaries": [],
+    "node": [],
+    "optional": [],
+    "network": false
+   },
+   "safety": "read-only",
+   "consent": "Reads only the given files and prints JSON; generates no media, posts no entry and profiles no real person.",
+   "limits": "Methods are summaries, not the books; clarity is a word-list heuristic; ledger is a draft check, not posting or an audit opinion; persona is for fiction and tone only.",
+   "tests": [
+    ".claude/skills/kosif-superpowers/evals/test_book_methods.py"
+   ],
+   "docs": [
+    ".claude/skills/kosif-superpowers/references/protocol/A20-book-distilled-methods.md"
+   ],
+   "families": [
+    "planning-execution",
+    "qa-verification"
+   ],
+   "evidence": "tested-here",
+   "evidence_note": "evals/test_book_methods.py passed on 2026-10-23 (10 sources, 45 methods, 8 tests).",
+   "power_id": "TOOL-66"
   },
   {
    "id": "owned-repos",

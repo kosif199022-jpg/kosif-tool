@@ -788,5 +788,702 @@
    "stage": "extracted",
    "verified_by": "b036-education-learning-1.json"
   }
+ },
+ {
+  "id": "AMEDIA-15",
+  "family": "atlas-media",
+  "domain": "media",
+  "name_ar": "حركة نابضية وسطح زجاجي لمواقع بمستوى Awwwards",
+  "name_en": "Spring-physics motion and a layered glass surface",
+  "status": "documented",
+  "what": "يحرّك العناصر بفيزياء النابض بدلاً من منحنيات المدة، ويبني السطح الزجاجي من أربع طبقات. — Animates with spring physics instead of duration curves and composes glass from four layers.",
+  "when": "حركة ناعمة، أنيميشن موقع فاخر، زجاج ضبابي / spring animation, premium web motion, glassmorphism",
+  "how": "1) Springs, not ease-in-out: slight overshoot (about 1.05x) then settle at 1.0, landing in 400-700 ms by travel distance (Framer Motion spring or GSAP; CSS only as fallback). 2) Glass stack bottom to top: backdrop blur 20-40 px (28 standard, 40 for modal), fill rgba(255,255,255,.05), 1 px inner border with a top-lit gradient, very soft wide ambient shadow. 3) Glass only on dark backgrounds, never with a solid fill. 4) Pair with noise, SDF and particle techniques for hero scenes.",
+  "params": "overshoot 1.05; 400-700 ms; blur 28/40 px",
+  "install": "",
+  "requires": [
+   "npm:gsap",
+   "npm:animejs"
+  ],
+  "license": "method paraphrased from Atlas skills under MIT; the skills keep their own licenses — see each folder's SOURCE.md",
+  "proof": [
+   "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/95-awwwards-motion/204-awwwards-motion"
+  ],
+  "proof_scope": "url",
+  "styles": [],
+  "tags": [
+   "spring",
+   "glass",
+   "زجاج",
+   "حركة",
+   "Framer Motion",
+   "GSAP"
+  ],
+  "section": "الفيديو والموشن — Video, motion & creative web",
+  "source": "KOSIF Atlas-5000 mining 2026-10-23 (https://github.com/kosif199022-jpg/kosif-atlas @ 99bb108d): awwwards-motion/awwwards-motion (#204) · theme video-motion · 1 supporting skills · SKILL.md read in full as inert text: skills/95-awwwards-motion/204-awwwards-motion",
+  "atlas": {
+   "ids": [
+    "204"
+   ],
+   "examples": [
+    {
+     "id": "204",
+     "plugin": "awwwards-motion",
+     "skill": "awwwards-motion",
+     "url": "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/95-awwwards-motion/204-awwwards-motion"
+    }
+   ],
+   "theme": "video-motion",
+   "risk_notes": "Method guidance only; no Atlas code imported or executed.",
+   "kosif_overlap_ids": [],
+   "stage": "extracted",
+   "verified_by": "atlas-5000-mining-20261023.json",
+   "skill_md_sha256": {
+    "204": "e08b590217f823c428b7efc80c9554ac7ab428c6b41dfaa06d69ec7ad97576ae"
+   }
+  }
+ },
+ {
+  "id": "AMEDIA-16",
+  "family": "atlas-media",
+  "domain": "media",
+  "name_ar": "نموذج الشيدر في React Three Fiber",
+  "name_en": "GLSL shader mental model in React Three Fiber",
+  "status": "documented",
+  "what": "يشرح كيف تتكوّن المادة المخصصة من شيدر رؤوس وشيدر بكسلات، وكيف تمر البيانات عبر uniforms وvaryings. — Explains how a custom material is a vertex plus fragment program and how data flows through uniforms and varyings.",
+  "when": "شيدر، GLSL، تأثير ثلاثي الأبعاد على الويب / shader, GLSL, R3F custom material",
+  "how": "1) Mesh = geometry + material; a shader material replaces the material with two GPU programs: the vertex shader writes gl_Position per vertex, the fragment shader writes the colour per pixel. 2) Uniforms carry JS values (time, mouse, textures) identical for all vertices; memoize the uniforms object and update values in useFrame. 3) Varyings pass data (uv, normals) from vertex to fragment. 4) Attributes are per-vertex data available only in the vertex stage. 5) Build effects from noise (Perlin, simplex, curl, FBM), SDFs and render targets for multi-pass work.",
+  "params": "uniforms, varyings",
+  "install": "",
+  "requires": [
+   "npm:three",
+   "npm:react"
+  ],
+  "license": "method paraphrased from Atlas skills under MIT; the skills keep their own licenses — see each folder's SOURCE.md",
+  "proof": [
+   "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/95-awwwards-motion/204-awwwards-motion"
+  ],
+  "proof_scope": "url",
+  "styles": [],
+  "tags": [
+   "shader",
+   "GLSL",
+   "شيدر",
+   "three.js",
+   "R3F",
+   "WebGL"
+  ],
+  "section": "الفيديو والموشن — Video, motion & creative web",
+  "source": "KOSIF Atlas-5000 mining 2026-10-23 (https://github.com/kosif199022-jpg/kosif-atlas @ 99bb108d): awwwards-motion/awwwards-motion (#204) · theme video-motion · 1 supporting skills · SKILL.md read in full as inert text: skills/95-awwwards-motion/204-awwwards-motion",
+  "atlas": {
+   "ids": [
+    "204"
+   ],
+   "examples": [
+    {
+     "id": "204",
+     "plugin": "awwwards-motion",
+     "skill": "awwwards-motion",
+     "url": "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/95-awwwards-motion/204-awwwards-motion"
+    }
+   ],
+   "theme": "video-motion",
+   "risk_notes": "Method guidance only; no Atlas code imported or executed.",
+   "kosif_overlap_ids": [],
+   "stage": "extracted",
+   "verified_by": "atlas-5000-mining-20261023.json",
+   "skill_md_sha256": {
+    "204": "e08b590217f823c428b7efc80c9554ac7ab428c6b41dfaa06d69ec7ad97576ae"
+   }
+  }
+ },
+ {
+  "id": "AMEDIA-17",
+  "family": "atlas-media",
+  "domain": "media",
+  "name_ar": "هيرو بخط حركي منفوخ تتصادم حروفه",
+  "name_en": "Kinetic inflated typography hero",
+  "status": "documented",
+  "what": "يملأ الشاشة بحروف لينة منفوخة تتحرك وتتصادم وتتجنب النصوص والأزرار كعوائق، مع تأثير كلمة تختفي وتعود. — Fills the viewport with soft inflated letters that drift, collide and flow around copy and buttons as obstacles, with a disappearing-word effect.",
+  "when": "خط متحرك، تايبوغرافي حركي، هيرو تفاعلي / kinetic typography hero, physics letters",
+  "how": "1) Full-bleed 100svh section; translucent nav; one compact support-copy block near lower centre and two CTAs. 2) Letters occupy the whole canvas including edges; text and buttons are physics obstacles (Matter.js or similar). 3) Optional: deform real font outlines with opentype.js into soft bodies; SVG filters for goo and blur. 4) Invisible-word effect: per-letter stagger, defocus to blur, opacity toward zero, slight rotation or drift, short hold, refocus. 5) Pointer and scroll are optional forces; run requestAnimationFrame only for the physics loop. 6) Avoid the standard centred-headline-plus-screenshot hero.",
+  "params": "stagger, blur, hold",
+  "install": "",
+  "requires": [
+   "npm:matter"
+  ],
+  "license": "method paraphrased from Atlas skills under MIT; the skills keep their own licenses — see each folder's SOURCE.md",
+  "proof": [
+   "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/100-ui-motion/209-kinetic-inflated-hero"
+  ],
+  "proof_scope": "url",
+  "styles": [],
+  "tags": [
+   "kinetic typography",
+   "خط متحرك",
+   "Matter.js",
+   "hero",
+   "physics"
+  ],
+  "section": "الفيديو والموشن — Video, motion & creative web",
+  "source": "KOSIF Atlas-5000 mining 2026-10-23 (https://github.com/kosif199022-jpg/kosif-atlas @ 99bb108d): ui-motion/kinetic-inflated-hero (#209) · theme video-motion · 1 supporting skills · SKILL.md read in full as inert text: skills/100-ui-motion/209-kinetic-inflated-hero",
+  "atlas": {
+   "ids": [
+    "209"
+   ],
+   "examples": [
+    {
+     "id": "209",
+     "plugin": "ui-motion",
+     "skill": "kinetic-inflated-hero",
+     "url": "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/100-ui-motion/209-kinetic-inflated-hero"
+    }
+   ],
+   "theme": "video-motion",
+   "risk_notes": "Method guidance only; no Atlas code imported or executed.",
+   "kosif_overlap_ids": [],
+   "stage": "extracted",
+   "verified_by": "atlas-5000-mining-20261023.json",
+   "skill_md_sha256": {
+    "209": "e5c94d90a9422db1b3773ba3b38c7e8d17a4f556d20c7e0d36150ae939ed4d8e"
+   }
+  }
+ },
+ {
+  "id": "AMEDIA-18",
+  "family": "atlas-media",
+  "domain": "media",
+  "name_ar": "حقل حراري يلطّخه الإصبع (شيدر واحد)",
+  "name_en": "Thermal finger-trail field in one fragment shader",
+  "status": "documented",
+  "what": "سطح يشبه كاميرا حرارية يسحب الإصبع ألوانه كطلاء مبلل ثم يعود، بشيدر واحد بلا قوام أو مخازن. — A heat-camera surface the pointer smears like wet paint that relaxes back, all in one fragment shader with no textures or buffers.",
+  "when": "تأثير حراري، تأثير لمس تفاعلي، شيدر يتبع الماوس / thermal effect, interactive smear shader, cursor trail",
+  "how": "1) Field: 5-octave fbm warps the coordinates, a second fbm warps them again. 2) A soft blob breathes via two low-frequency polar sines; heat 0-1, background 0.34-0.66, capped at 0.75. 3) Colour: thermal(heat) through seven smoothstep stops at 0, .12, .30, .45, .60, .78, 1 (teal, green, yellow, orange, red). 4) JS keeps the last 24 trail points with position, velocity and age; the field is sampled from where the finger came from, so colour drags along the path. 5) Defaults: smudge 9 (above ~14 tears), radius 0.17, follow 0.3 per frame, spacing 0.01, life 1.6 s; press ring expands for 0.9 s. 6) One focal object on dark ground, no text on top, cap DPR on weak phones.",
+  "params": "smudge 9, radius .17, follow .3, 24 points",
+  "install": "",
+  "requires": [
+   "npm:three"
+  ],
+  "license": "method paraphrased from Atlas skills under MIT; the skills keep their own licenses — see each folder's SOURCE.md",
+  "proof": [
+   "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/100-ui-motion/211-thermal-finger-trail"
+  ],
+  "proof_scope": "url",
+  "styles": [],
+  "tags": [
+   "shader",
+   "thermal",
+   "حراري",
+   "WebGL",
+   "interactive",
+   "تفاعلي"
+  ],
+  "section": "الفيديو والموشن — Video, motion & creative web",
+  "source": "KOSIF Atlas-5000 mining 2026-10-23 (https://github.com/kosif199022-jpg/kosif-atlas @ 99bb108d): ui-motion/thermal-finger-trail (#211) · theme game-dev · 1 supporting skills · SKILL.md read in full as inert text: skills/100-ui-motion/211-thermal-finger-trail",
+  "atlas": {
+   "ids": [
+    "211"
+   ],
+   "examples": [
+    {
+     "id": "211",
+     "plugin": "ui-motion",
+     "skill": "thermal-finger-trail",
+     "url": "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/100-ui-motion/211-thermal-finger-trail"
+    }
+   ],
+   "theme": "game-dev",
+   "risk_notes": "Method guidance only; no Atlas code imported or executed.",
+   "kosif_overlap_ids": [],
+   "stage": "extracted",
+   "verified_by": "atlas-5000-mining-20261023.json",
+   "skill_md_sha256": {
+    "211": "7b49781e27199e0fc3c22968d0c0e5b640e24a3dd8e7c26b51fbef1dae871bc4"
+   }
+  }
+ },
+ {
+  "id": "AMEDIA-19",
+  "family": "atlas-media",
+  "domain": "media",
+  "name_ar": "انتقالات العرض في React حسب ما تعنيه الحركة",
+  "name_en": "React View Transitions chosen by meaning",
+  "status": "documented",
+  "what": "يختار نوع الانتقال بين الصفحات والعناصر حسب ما يريد أن يقوله للمستخدم: نفس العنصر، بيانات وصلت، ترتيب جديد… — Chooses page and element transitions by what they tell the user: same thing deeper, data arrived, new arrangement...",
+  "when": "انتقال بين الصفحات، أنيميشن تنقل، view transition / view transitions, page transition, shared element",
+  "how": "1) Priority: shared element (name) for going deeper; Suspense reveal for data loaded; per-item key for list reorder; enter/exit for appear/disappear; route-level last. 2) Hierarchical navigation uses typed nav-forward/nav-back; tabs use a plain fade or none; background refresh uses default none. 3) Next.js App Router already bundles the canary React that has ViewTransition, do not install react@canary there; elsewhere install canary react and react-dom. 4) Browser support Chromium 125+, Firefox 144+, Safari 18.2+, with graceful degradation.",
+  "params": "transition type",
+  "install": "",
+  "requires": [
+   "chromium",
+   "npm:react"
+  ],
+  "license": "method paraphrased from Atlas skills under MIT; the skills keep their own licenses — see each folder's SOURCE.md",
+  "proof": [
+   "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/2931-react/12175-vercel-react-view-transitions"
+  ],
+  "proof_scope": "url",
+  "styles": [],
+  "tags": [
+   "view transitions",
+   "React",
+   "انتقالات",
+   "Next.js",
+   "animation"
+  ],
+  "section": "الفيديو والموشن — Video, motion & creative web",
+  "source": "KOSIF Atlas-5000 mining 2026-10-23 (https://github.com/kosif199022-jpg/kosif-atlas @ 99bb108d): react/vercel-react-view-transitions (#12175) · theme video-motion · 1 supporting skills · SKILL.md read in full as inert text: skills/2931-react/12175-vercel-react-view-transitions",
+  "atlas": {
+   "ids": [
+    "12175"
+   ],
+   "examples": [
+    {
+     "id": "12175",
+     "plugin": "react",
+     "skill": "vercel-react-view-transitions",
+     "url": "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/2931-react/12175-vercel-react-view-transitions"
+    }
+   ],
+   "theme": "video-motion",
+   "risk_notes": "Method guidance only; no Atlas code imported or executed.",
+   "kosif_overlap_ids": [],
+   "stage": "extracted",
+   "verified_by": "atlas-5000-mining-20261023.json",
+   "skill_md_sha256": {
+    "12175": "b4114e8ba2f66a1101178028cf6b002b22091cdaaaf50434e8405f8a64e6a64f"
+   }
+  }
+ },
+ {
+  "id": "AMEDIA-20",
+  "family": "atlas-media",
+  "domain": "media",
+  "name_ar": "حزمة تسليم من موجز إلى فيلم",
+  "name_en": "Brief-to-film handoff kit with a named upload order",
+  "status": "documented",
+  "what": "يحوّل طلباً من سطر واحد إلى مجلد جاهز لمحرك الفيديو: موجز، ترتيب رفع، أصول، إطارات مرجعية، وبيان بالعيوب. — Turns a one-line ask into a folder ready for a video engine: brief, upload order, assets, reference frames and a manifest of known defects.",
+  "when": "تجهيز ملفات فيديو للمحرك، موجز فيلم، تسليم مشروع موشن / film brief kit, handoff folder for video generation",
+  "how": "1) Deliver PROMPT.md (one page in the engine's own vocabulary: scenes, cues, named easings), START-HERE.md (which files to upload, in which order, in one message), ATTACH/ (every asset), frames/ (reference stills whose filenames carry the instruction) and KIT.md (each file, pixel size, known defects). 2) Every prompt lists, in order: the brief, the transformation chain as match anchors (what becomes what), the asset list with real filenames, and the failure conditions for this specific film. 3) Name what is missing; never invent a substitute asset.",
+  "params": "kit files",
+  "install": "",
+  "requires": [],
+  "license": "method paraphrased from Atlas skills under MIT; the skills keep their own licenses — see each folder's SOURCE.md",
+  "proof": [
+   "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/2681-emulo/10272-video"
+  ],
+  "proof_scope": "url",
+  "styles": [],
+  "tags": [
+   "film brief",
+   "موجز",
+   "video",
+   "handoff",
+   "تسليم",
+   "motion"
+  ],
+  "section": "الفيديو والموشن — Video, motion & creative web",
+  "source": "KOSIF Atlas-5000 mining 2026-10-23 (https://github.com/kosif199022-jpg/kosif-atlas @ 99bb108d): emulo/video (#10272) · theme video-motion · 1 supporting skills · SKILL.md read in full as inert text: skills/2681-emulo/10272-video",
+  "atlas": {
+   "ids": [
+    "10272"
+   ],
+   "examples": [
+    {
+     "id": "10272",
+     "plugin": "emulo",
+     "skill": "video",
+     "url": "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/2681-emulo/10272-video"
+    }
+   ],
+   "theme": "video-motion",
+   "risk_notes": "Method guidance only; no Atlas code imported or executed.",
+   "kosif_overlap_ids": [],
+   "stage": "extracted",
+   "verified_by": "atlas-5000-mining-20261023.json",
+   "skill_md_sha256": {
+    "10272": "33b21f6722ee21b5d1f43fbbfc1ef77182d954555a60a43b6d813e24b5ee550d"
+   }
+  }
+ },
+ {
+  "id": "AMEDIA-21",
+  "family": "atlas-media",
+  "domain": "media",
+  "name_ar": "فيديو عرض المنتج بأنماط احتياطية",
+  "name_en": "Product demo video pipeline with fallback modes",
+  "status": "documented",
+  "what": "يصنع فيديو عرض أو شرح منتج من مشاهد HTML ولقطات وتعليق صوتي، ويتحول لوضع يدوي إن غابت الأدوات. — Builds a product demo from HTML scenes, screenshots and narration, falling back to a manual mode when tools are missing.",
+  "when": "فيديو عرض منتج، ديمو، فيديو شرح تطبيق / product demo video, feature walkthrough, promo",
+  "how": "1) Probe the tools: browser automation for screenshots, a TTS engine, ffmpeg. 2) Full mode: HTML scene files -> screenshots -> narration audio -> ffmpeg composite; manual mode: write the scenes and give exact ffmpeg commands. 3) Pick a story structure (problem, solution, proof, call to action). 4) Terminal tools get dark monospace scenes with typed text; concepts get text-led scenes in the brand colours. 5) Size each scene to its narration length, then verify duration and audio.",
+  "params": "scene count, voice",
+  "install": "",
+  "requires": [
+   "ffmpeg"
+  ],
+  "license": "method paraphrased from Atlas skills under MIT; the skills keep their own licenses — see each folder's SOURCE.md",
+  "proof": [
+   "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/166-demo-video/535-demo-video"
+  ],
+  "proof_scope": "url",
+  "styles": [],
+  "tags": [
+   "demo video",
+   "فيديو عرض",
+   "ffmpeg",
+   "TTS",
+   "walkthrough"
+  ],
+  "section": "الفيديو والموشن — Video, motion & creative web",
+  "source": "KOSIF Atlas-5000 mining 2026-10-23 (https://github.com/kosif199022-jpg/kosif-atlas @ 99bb108d): demo-video/demo-video (#535) · theme video-motion · 3 supporting skills · SKILL.md read in full as inert text: skills/166-demo-video/535-demo-video",
+  "atlas": {
+   "ids": [
+    "535",
+    "4629",
+    "215"
+   ],
+   "examples": [
+    {
+     "id": "535",
+     "plugin": "demo-video",
+     "skill": "demo-video",
+     "url": "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/166-demo-video/535-demo-video"
+    }
+   ],
+   "theme": "video-motion",
+   "risk_notes": "Method guidance only; no Atlas code imported or executed.",
+   "kosif_overlap_ids": [],
+   "stage": "extracted",
+   "verified_by": "atlas-5000-mining-20261023.json",
+   "skill_md_sha256": {
+    "535": "1fd0bed0afa9965a6422005de8d930bdf17e1823d5319ca911a621be9e2c6d6d"
+   }
+  }
+ },
+ {
+  "id": "AMEDIA-22",
+  "family": "atlas-media",
+  "domain": "media",
+  "name_ar": "تشخيص FFmpeg: إطار متغير، HLS متعدد الدقات، فحص التيار",
+  "name_en": "FFmpeg diagnostics: VFR fix, aligned ABR HLS, stream health",
+  "status": "documented",
+  "what": "يشخّص انزياح الصوت والصورة وأخطاء الطوابع الزمنية، ويبني بث HLS بعدة دقات بإطارات مفتاحية متوافقة. — Diagnoses A/V drift and timestamp errors and builds multi-rendition HLS with aligned keyframes.",
+  "when": "الصوت غير متزامن، تحويل فيديو، بث HLS / audio drift, VFR video, HLS ladder, ffprobe",
+  "how": "1) Inspect first: ffprobe -show_streams -of json; look for variable frame rate (screen and phone recordings), odd PTS/DTS, missing audio. 2) VFR drift: force constant frame rate (-vsync cfr / fps filter) before editing. 3) 'Non-monotonous DTS': remux with regenerated timestamps (-fflags +genpts). 4) ABR ladder: H.264 as the reach floor plus HEVC/AV1 for efficiency; renditions 1080/720/480 with identical GOP (-g 60 -keyint_min 60 -sc_threshold 0) so segments align. 5) 'Unknown encoder h264_nvenc' means the build or driver lacks NVENC; fall back to libx264.",
+  "params": "GOP 60, renditions 1080/720/480",
+  "install": "",
+  "requires": [
+   "ffmpeg"
+  ],
+  "license": "method paraphrased from Atlas skills under MIT; the skills keep their own licenses — see each folder's SOURCE.md",
+  "proof": [
+   "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/235-mas-video-lab/754-ffmpeg"
+  ],
+  "proof_scope": "url",
+  "styles": [],
+  "tags": [
+   "ffmpeg",
+   "ffprobe",
+   "HLS",
+   "sync",
+   "تزامن",
+   "transcode"
+  ],
+  "section": "الفيديو والموشن — Video, motion & creative web",
+  "source": "KOSIF Atlas-5000 mining 2026-10-23 (https://github.com/kosif199022-jpg/kosif-atlas @ 99bb108d): mas-video-lab/ffmpeg (#754) · theme video-motion · 2 supporting skills · SKILL.md read in full as inert text: skills/235-mas-video-lab/754-ffmpeg",
+  "atlas": {
+   "ids": [
+    "754",
+    "9243"
+   ],
+   "examples": [
+    {
+     "id": "754",
+     "plugin": "mas-video-lab",
+     "skill": "ffmpeg",
+     "url": "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/235-mas-video-lab/754-ffmpeg"
+    }
+   ],
+   "theme": "video-motion",
+   "risk_notes": "Method guidance only; no Atlas code imported or executed.",
+   "kosif_overlap_ids": [],
+   "stage": "extracted",
+   "verified_by": "atlas-5000-mining-20261023.json",
+   "skill_md_sha256": {
+    "754": "981721674026233c2c5afd7d630934a392878d63ad2ce2557f1282482226d0a2"
+   }
+  }
+ },
+ {
+  "id": "AMEDIA-23",
+  "family": "atlas-media",
+  "domain": "media",
+  "name_ar": "قص بلا فقد على الإطارات المفتاحية",
+  "name_en": "Lossless keyframe-aligned cutting and smart cut",
+  "status": "documented",
+  "what": "يقص الفيديو بنسخ التيار دون إعادة ترميز، ويتجنب الشاشة السوداء بالقص على إطارات I أو بإعادة ترميز الجزء الصغير فقط. — Cuts video by stream copy without re-encoding, avoiding black starts by cutting on I-frames or re-encoding only the partial GOP.",
+  "when": "قص فيديو بدون فقد جودة، شاشة سوداء بعد القص / lossless cut, keyframe cut, black frames after trim",
+  "how": "1) Black or frozen first seconds = the cut started on a P/B frame; snap the in-point to the previous keyframe or use smart cut (re-encode only from the chosen frame to the next I-frame). 2) Audio plays but video freezes after export: set avoid_negative_ts make_zero. 3) Keep secondary audio, subtitles and chapters by mapping all streams (-map 0). 4) Generate cut lists with millisecond segments as project files so the edit is reproducible.",
+  "params": "cut points, streams",
+  "install": "",
+  "requires": [
+   "ffmpeg"
+  ],
+  "license": "method paraphrased from Atlas skills under MIT; the skills keep their own licenses — see each folder's SOURCE.md",
+  "proof": [
+   "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/235-mas-video-lab/756-losslesscut"
+  ],
+  "proof_scope": "url",
+  "styles": [],
+  "tags": [
+   "lossless",
+   "قص",
+   "keyframe",
+   "ffmpeg",
+   "trim"
+  ],
+  "section": "الفيديو والموشن — Video, motion & creative web",
+  "source": "KOSIF Atlas-5000 mining 2026-10-23 (https://github.com/kosif199022-jpg/kosif-atlas @ 99bb108d): mas-video-lab/losslesscut (#756) · theme video-motion · 1 supporting skills · SKILL.md read in full as inert text: skills/235-mas-video-lab/756-losslesscut",
+  "atlas": {
+   "ids": [
+    "756"
+   ],
+   "examples": [
+    {
+     "id": "756",
+     "plugin": "mas-video-lab",
+     "skill": "losslesscut",
+     "url": "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/235-mas-video-lab/756-losslesscut"
+    }
+   ],
+   "theme": "video-motion",
+   "risk_notes": "Method guidance only; no Atlas code imported or executed.",
+   "kosif_overlap_ids": [],
+   "stage": "extracted",
+   "verified_by": "atlas-5000-mining-20261023.json",
+   "skill_md_sha256": {
+    "756": "392e748cf37e3bac324015850cff97204b37554db36ede5d58bc6ce007b6cc3d"
+   }
+  }
+ },
+ {
+  "id": "AMEDIA-24",
+  "family": "atlas-media",
+  "domain": "media",
+  "name_ar": "مشهد After Effects بالسكربت: المواصفات أولاً",
+  "name_en": "Scripted After Effects comps: spec first, rigs, render queue",
+  "status": "documented",
+  "what": "ينشئ مشاهد After Effects بالسكربت بمواصفات محددة وأدوات تحكم قابلة لإعادة الاستخدام وطابور تصيير صريح. — Creates After Effects compositions by script with a fixed spec, reusable control rigs and an explicit render queue.",
+  "when": "سكربت أفتر إفكتس، قالب لوور ثيرد، أتمتة AE / After Effects script, lower third template, ExtendScript",
+  "how": "1) Define width, height, frame rate and duration before any layer. 2) Expressions for procedural or linked motion; keyframes for deliberate curves. 3) Build controller nulls and parent rigs instead of hard-coding layer indices. 4) Set the output module explicitly (format, path, post-render action) and catch missing template errors. 5) Use studio-licensed fonts and check substitution; test the script against the studio's AE major version.",
+  "params": "comp spec",
+  "install": "",
+  "requires": [],
+  "license": "method paraphrased from Atlas skills under MIT; the skills keep their own licenses — see each folder's SOURCE.md",
+  "proof": [
+   "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/235-mas-video-lab/751-adobe-after-effects"
+  ],
+  "proof_scope": "url",
+  "styles": [],
+  "tags": [
+   "After Effects",
+   "ExtendScript",
+   "أفتر إفكتس",
+   "motion graphics",
+   "lower third"
+  ],
+  "section": "الفيديو والموشن — Video, motion & creative web",
+  "source": "KOSIF Atlas-5000 mining 2026-10-23 (https://github.com/kosif199022-jpg/kosif-atlas @ 99bb108d): mas-video-lab/adobe-after-effects (#751) · theme video-motion · 1 supporting skills · SKILL.md read in full as inert text: skills/235-mas-video-lab/751-adobe-after-effects",
+  "atlas": {
+   "ids": [
+    "751"
+   ],
+   "examples": [
+    {
+     "id": "751",
+     "plugin": "mas-video-lab",
+     "skill": "adobe-after-effects",
+     "url": "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/235-mas-video-lab/751-adobe-after-effects"
+    }
+   ],
+   "theme": "video-motion",
+   "risk_notes": "Method guidance only; no Atlas code imported or executed.",
+   "kosif_overlap_ids": [],
+   "stage": "extracted",
+   "verified_by": "atlas-5000-mining-20261023.json",
+   "skill_md_sha256": {
+    "751": "169b8a4ae3cd55275b8728b7b2530a403a6ab0cdf01c6c72c8ef28814c6a6858"
+   }
+  }
+ },
+ {
+  "id": "AMEDIA-25",
+  "family": "atlas-media",
+  "domain": "media",
+  "name_ar": "تغليف الفيديو: عنوان ونص مصغّرة لا يتكرران",
+  "name_en": "Video packaging: title and thumbnail text that never overlap",
+  "status": "documented",
+  "what": "يكتب عنوان الفيديو ونص الصورة المصغرة كزوج: العنوان يحمل الموضوع والكلمات المفتاحية، والمصغرة تحمل التوتر. — Writes title and thumbnail text as a pair: the title carries topic and keywords, the thumbnail carries the tension.",
+  "when": "عنوان يوتيوب، صورة مصغرة، ثمبنيل / YouTube title, thumbnail text, video packaging",
+  "how": "1) Tag intent: search (front-load the query phrase), browse (more intrigue, the thumbnail breaks the pattern), or both (package for search, thumbnail does browse). 2) Reject any pair where a thumbnail word repeats in the title. 3) Title ≤60 characters where possible; thumbnail text 1-3 words (4 is a caption). 4) Clarity beats curiosity; never promise more than the video delivers. 5) Thumbnail: one accent colour, high contrast, a real face with a readable expression when the format calls for it, nothing that does not earn its place. 6) Always give at least three pairs or three fixes.",
+  "params": "title ≤60 chars; thumb 1-3 words",
+  "install": "",
+  "requires": [],
+  "license": "method paraphrased from Atlas skills under MIT; the skills keep their own licenses — see each folder's SOURCE.md",
+  "proof": [
+   "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/1520-digital-marketing-pro/4132-video-packaging",
+   "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/3067-youtube/13228-creator-thumbnail-agent"
+  ],
+  "proof_scope": "url",
+  "styles": [],
+  "tags": [
+   "thumbnail",
+   "ثمبنيل",
+   "YouTube",
+   "يوتيوب",
+   "title",
+   "عنوان"
+  ],
+  "section": "الفيديو والموشن — Video, motion & creative web",
+  "source": "KOSIF Atlas-5000 mining 2026-10-23 (https://github.com/kosif199022-jpg/kosif-atlas @ 99bb108d): digital-marketing-pro/video-packaging (#4132); youtube/creator-thumbnail-agent (#13228) · theme video-motion · 3 supporting skills · SKILL.md read in full as inert text: skills/1520-digital-marketing-pro/4132-video-packaging, skills/3067-youtube/13228-creator-thumbnail-agent",
+  "atlas": {
+   "ids": [
+    "4132",
+    "13228",
+    "4868"
+   ],
+   "examples": [
+    {
+     "id": "4132",
+     "plugin": "digital-marketing-pro",
+     "skill": "video-packaging",
+     "url": "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/1520-digital-marketing-pro/4132-video-packaging"
+    },
+    {
+     "id": "13228",
+     "plugin": "youtube",
+     "skill": "creator-thumbnail-agent",
+     "url": "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/3067-youtube/13228-creator-thumbnail-agent"
+    }
+   ],
+   "theme": "video-motion",
+   "risk_notes": "Method guidance only; no Atlas code imported or executed.",
+   "kosif_overlap_ids": [],
+   "stage": "extracted",
+   "verified_by": "atlas-5000-mining-20261023.json",
+   "skill_md_sha256": {
+    "4132": "9cccbea141603ffde92dad2f684b8deaf491141083d5be0e074a1f69c1ed97a9",
+    "13228": "72330118cdcfad66deab49c497b1f66a560a6b29c958f51299de3bf2fd5ca69d"
+   }
+  }
+ },
+ {
+  "id": "AMEDIA-26",
+  "family": "atlas-media",
+  "domain": "media",
+  "name_ar": "Substance Painter: مساحة لون PBR وخبز الخرائط",
+  "name_en": "Substance Painter PBR colour space and baking",
+  "status": "documented",
+  "what": "يضبط ترميز الألوان الصحيح لقنوات PBR ويحل مشكلات خبز خرائط النورمال ويؤتمت التصدير. — Sets the right colour encoding per PBR channel, fixes normal-map baking artefacts and automates export.",
+  "when": "خامات ثلاثية الأبعاد، نورمال ماب، تكستشر PBR / PBR textures, normal map baking, texture export",
+  "how": "1) sRGB for BaseColor and Emissive; linear for Normal, Roughness, Metallic, AO and Height. 2) Ray misses and seams: increase frontal/rear ray distance or use a cage; match low/high meshes by name suffix. 3) Long 4K/8K bakes crashing on Windows = GPU timeout (TDR); bake lower or raise the timeout. 4) Script projects, texture-set resolution, channel packing and batch export with the Python API; headless material builds with the Substance automation tools.",
+  "params": "channel colour spaces",
+  "install": "",
+  "requires": [
+   "python3",
+   "chromium"
+  ],
+  "license": "method paraphrased from Atlas skills under MIT; the skills keep their own licenses — see each folder's SOURCE.md",
+  "proof": [
+   "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/228-mas-3d-games/709-substance-painter"
+  ],
+  "proof_scope": "url",
+  "styles": [],
+  "tags": [
+   "PBR",
+   "texture",
+   "خامات",
+   "Substance",
+   "normal map",
+   "3D"
+  ],
+  "section": "تطوير الألعاب — Game development",
+  "source": "KOSIF Atlas-5000 mining 2026-10-23 (https://github.com/kosif199022-jpg/kosif-atlas @ 99bb108d): mas-3d-games/substance-painter (#709) · theme mcp-tooling · 1 supporting skills · SKILL.md read in full as inert text: skills/228-mas-3d-games/709-substance-painter",
+  "atlas": {
+   "ids": [
+    "709"
+   ],
+   "examples": [
+    {
+     "id": "709",
+     "plugin": "mas-3d-games",
+     "skill": "substance-painter",
+     "url": "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/228-mas-3d-games/709-substance-painter"
+    }
+   ],
+   "theme": "mcp-tooling",
+   "risk_notes": "Method guidance only; no Atlas code imported or executed.",
+   "kosif_overlap_ids": [],
+   "stage": "extracted",
+   "verified_by": "atlas-5000-mining-20261023.json",
+   "skill_md_sha256": {
+    "709": "64beacab7f22e7879aea6448e6b3764ca70029da902178e08f16628286545103"
+   }
+  }
+ },
+ {
+  "id": "AMEDIA-27",
+  "family": "atlas-media",
+  "domain": "media",
+  "name_ar": "Godot 4: سكربت مُنمّط وفيزياء وتصدير بلا واجهة",
+  "name_en": "Godot 4: typed GDScript, physics timing, headless export",
+  "status": "documented",
+  "what": "يكتب ألعاب Godot بأنواع صريحة ويضع الحركة في حلقة الفيزياء ويصدّر للويب والمنصات من سطر الأوامر. — Writes Godot games with static types, keeps movement in the physics loop and exports to web and desktop from the CLI.",
+  "when": "لعبة Godot، تطوير لعبة، تصدير لعبة للويب / Godot game, game export, character controller",
+  "how": "1) Typed GDScript 2.0 (@export, @onready, Array[T]). 2) Move CharacterBody2D/3D in _physics_process; add coyote time and jump buffering; update the camera in the same step to avoid jitter. 3) Decouple with signals and an autoload event bus. 4) Export with godot --headless --export-release per platform in CI. 5) Blank web build = missing cross-origin isolation headers (COOP/COEP) needed for SharedArrayBuffer. 6) Similar engine notes exist in the Atlas for Bevy (ECS), Unity and Unreal.",
+  "params": "export presets",
+  "install": "",
+  "requires": [
+   "chromium"
+  ],
+  "license": "method paraphrased from Atlas skills under MIT; the skills keep their own licenses — see each folder's SOURCE.md",
+  "proof": [
+   "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/228-mas-3d-games/707-godot"
+  ],
+  "proof_scope": "url",
+  "styles": [],
+  "tags": [
+   "Godot",
+   "game",
+   "لعبة",
+   "GDScript",
+   "تطوير ألعاب"
+  ],
+  "section": "تطوير الألعاب — Game development",
+  "source": "KOSIF Atlas-5000 mining 2026-10-23 (https://github.com/kosif199022-jpg/kosif-atlas @ 99bb108d): mas-3d-games/godot (#707) · theme game-dev · 4 supporting skills · SKILL.md read in full as inert text: skills/228-mas-3d-games/707-godot",
+  "atlas": {
+   "ids": [
+    "707",
+    "7588",
+    "710",
+    "711"
+   ],
+   "examples": [
+    {
+     "id": "707",
+     "plugin": "mas-3d-games",
+     "skill": "godot",
+     "url": "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/228-mas-3d-games/707-godot"
+    }
+   ],
+   "theme": "game-dev",
+   "risk_notes": "Method guidance only; no Atlas code imported or executed.",
+   "kosif_overlap_ids": [],
+   "stage": "extracted",
+   "verified_by": "atlas-5000-mining-20261023.json",
+   "skill_md_sha256": {
+    "707": "d0ed8e1374abaa201915aefc27cd4a2891d66e3c4643adfbb40a0c945822beab"
+   }
+  }
  }
 ]
