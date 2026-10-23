@@ -22,12 +22,12 @@
 
 | الحالة | العدد | المعنى |
 |---|---:|---|
-| `proven` | 153 | ✅ proven: a proof exists in the catalog; still check its requirements here before calling it ready |
-| `ready` | 21 | 🟢 ready: runnable without setup according to the catalog |
-| `documented` | 57 | 📄 documented: a described method; needs building or wiring before it runs |
+| `proven` | 161 | ✅ proven: a proof exists in the catalog; still check its requirements here before calling it ready |
+| `ready` | 22 | 🟢 ready: runnable without setup according to the catalog |
+| `documented` | 65 | 📄 documented: a described method; needs building or wiring before it runs |
 | `install` | 15 | 📦 install: needs a package, binary or model first |
 | `key` | 2 | 🔑 key: needs an account, key or paid service (ask before any spend) |
-| **المجموع** | **248** | |
+| **المجموع** | **265** | |
 
 ## الأدوات القابلة للتشغيل / runnable tools
 
@@ -55,6 +55,7 @@
 | `kosif-mcp` | خادم MCP لكتالوج KOSIF | `python3 scripts/kosif_mcp.py` | tested-here |
 | `kosif-remote-commander` | خادم KOSIF Remote Commander | `python3 scripts/kosif_remote_superpowers.py doctor` | tested-here |
 | `local-first` | مدخل محلي بلا استنساخ | `python3 scripts/local_first.py doctor` | tested-here |
+| `memory-ops` | عمليات الذاكرة | `python3 scripts/memory_ops.py propose --store memory.json --facts facts.json --out plan.json` | tested-here |
 | `owned-repos` | خريطة مستودعات المالك وخريطة المهارات | `python3 scripts/owned_repos.py find "رسم شخصيات"` | tested-here |
 | `powers` | البحث في كتالوج القدرات | `python3 scripts/powers.py stats --domain motion --json` | tested-here |
 | `probe-env` | فحص قدرات الجهاز | `python3 scripts/probe_env.py` | tested-elsewhere |
@@ -79,8 +80,8 @@
 
 | العائلة | القدرات | الفصل |
 |---|---:|---|
-| `agent-orchestration` | 46 | [agent-orchestration.md](../powers/agent-orchestration.md) |
-| `runnable-tools` | 159 | [runnable-tools.md](../powers/runnable-tools.md) |
+| `agent-orchestration` | 55 | [agent-orchestration.md](../powers/agent-orchestration.md) |
+| `runnable-tools` | 167 | [runnable-tools.md](../powers/runnable-tools.md) |
 | `self-discovery` | 43 | [self-discovery.md](../powers/self-discovery.md) |
 
 ## كل القدرات / every power
@@ -148,11 +149,19 @@
 | `TOOL-153` | رموز الهوية: ألوان الشعار ورموز بثلاث طبقات ومصفوفة تباين WCAG | Brand tokens: SVG palette, 3-tier design tokens and WCAG contrast matrix | proven | python3, npm:axe |
 | `TOOL-154` | حارس الوكيل: فحص الأوامر قبل تشغيلها وكشف الأسرار وخطة فروع متوازية | Agent guard: shell preflight, transcript secret scan and worktree plans | proven | python3, git |
 | `TOOL-156` | البحث في كتالوج القدرات | Power catalog search | proven | python3, npm:mermaid |
-| `TOOL-157` | رسم يدوي المظهر بالرصاص أو الفحم أو الحبر لأي صورة أو مشهد متخيَّل، خطًا بخط | Hand-drawn pencil, charcoal or ink drawing of any photo or imagined scene, built stroke by stroke | proven | chromium, blender, pip:numpy, pip:opencv |
+| `TOOL-157` | نسخة مرسومة أو ملوّنة باليد لأي صورة أو مشهد متخيَّل: رصاص، فحم، حبر، ألوان خشبية، فرشاة زيت أو ألوان مائية | Hand-drawn or hand-painted version of any photo or imagined scene: pencil, charcoal, ink, coloured pencil, oil brush or watercolour | proven | chromium, blender, pip:numpy, pip:opencv |
 | `TOOL-158` | مجلس خبراء الرسم: أحد عشر خبيرًا من بطاقات الكتب الـ48 يراجعون الصورة قبل إرسالها | Drawing council: eleven experts from the 48 method cards review an image before it is sent | proven | pip:pillow |
 | `TOOL-159` | مختبر البرومبت | Prompt Lab | proven | python3 |
 | `TOOL-16` | إنشاء فيلم سبورة مرسوم وتصييره | Doodle film runtime and renderer | proven | ffmpeg, node, python3, chromium |
 | `TOOL-160` | متابعة أشهر 1000 مستودع | GitHub Top-1000 Tracker | proven | python3 |
+| `TOOL-161` | خريطة المستودع | Repo Map | proven | python3 |
+| `TOOL-162` | عمليات الذاكرة | Memory Ops | proven | python3 |
+| `TOOL-163` | فيزياء الحركة | Motion Physics | proven | python3, npm:animejs, npm:react |
+| `TOOL-164` | سطور الترجمة: من توقيت الكلمات إلى ترجمة مقروءة | Caption lines: word timings to readable SRT/VTT | proven | pip:faster-whisper, key:openai |
+| `TOOL-165` | خط اللوك: تلوين واحد لـ ffmpeg وSVG وGLSL | Look pipeline: one colour grade for ffmpeg, SVG/CSS and GLSL | proven | ffmpeg, python3 |
+| `TOOL-166` | فاحص أرقام الدروس والشروح | Lesson number integrity checker | proven | python3 |
+| `TOOL-167` | التعديل السريع: قص فوري يعرف الإطارات المفتاحية، مغيّر صوت، تفتيح الفيديو المظلم، استخراج الصوت | Fast Edit: keyframe-aware instant cut, voice presets, low-light lift, audio extract | proven | ffmpeg, python3 |
+| `TOOL-168` | محرك الخامات الملوّنة: ألوان خشبية وفرشاة زيت وألوان مائية لأي صورة | Colour media engine: coloured pencil, oil brush and watercolour painting of a photo | proven | chromium, pip:numpy, pip:opencv, pip:mediapipe |
 | `TOOL-17` | مولّد مشاريع بداية لمحركات الحركة | Third-party motion engine scaffolder | proven | python3, npm:three, npm:gsap, npm:remotion |
 | `TOOL-18` | مكتبة رياضيات الحركة | Motion math toolkit | proven | node, python3 |
 | `TOOL-19` | تصيير لقطات B-roll بحركة كاميرا | Cinematic B-roll Renderer | proven | ffmpeg, python3 |
@@ -242,6 +251,7 @@
 | `SELF-32` | التوثيق الحي لا الذاكرة | Live docs over memory | proven | node, claude:tools |
 | `SELF-33` | واجهات الذاكرة قديمة | Training-data APIs are stale | proven | chromium, libreoffice, pip:numpy, pip:opencv |
 | `SELF-36` | حدود جلسة Claude Code السحابية | Claude Code cloud session limits | proven | python3, docker, npm:p5 |
+| `AGENT-50` | قرار الذاكرة: إضافة أو تحديث أو حذف أو لا شيء | Memory decision step: add, update, delete or no-op | ready | python3 |
 | `TOOL-101` | مولّد ملفات أطلس الأساليب | Style Atlas Builder | ready | python3 |
 | `TOOL-102` | فاحص أصالة الملفات الإبداعية | Brief originality checker | ready | python3 |
 | `TOOL-104` | تدقيق نصوص مصادر الأطلس | Atlas source-text audit | ready | python3, blender, engine:ghidra |
@@ -304,6 +314,14 @@
 | `AGENT-44` | المتابعة الاستباقية المحدودة | Bounded proactive follow-up | documented |  |
 | `AGENT-45` | غلاف نتيجة الأداة وتيار الأحداث | Tool result envelope and typed event stream | documented | chromium |
 | `AGENT-46` | ذاكرة على مرحلتين بعقود إيجار | Two-phase memory with leased jobs | documented |  |
+| `AGENT-47` | رسم حالة بنقاط حفظ واستئناف | Checkpointed state graph with resume and approval interrupts | documented |  |
+| `AGENT-48` | فريق بأدوار ومهام ومخرج متوقع | Role-goal crew with expected outputs | documented |  |
+| `AGENT-49` | خط إنتاج بإجراءات قياسية ووثائق تسليم | SOP assembly line with document handoffs | documented |  |
+| `AGENT-51` | ذاكرة بطبقات يحررها الوكيل | Tiered self-editing memory | documented |  |
+| `AGENT-52` | التقاط ملاحظات الجلسة وحقنها في التالية | Session observation capture and injection | documented |  |
+| `AGENT-53` | وكيل يتصرف بالكود | Code-as-action agent | documented | python3 |
+| `AGENT-54` | حواجز تفعيل وتسليم لمتخصص | Tripwire guardrails and specialist handoffs | documented |  |
+| `AGENT-55` | تيار أحداث قابل لإعادة التشغيل | Replayable event-stream agent | documented |  |
 | `SELF-01` | اعرف قبل أن تقول لا | Registry before no | documented | node, python3, claude:tools |
 | `SELF-02` | سُلَّم حقيقة القدرة | Capability-truth ladder | documented | ffmpeg, key:unspecified |
 | `SELF-03` | الإثبات له تاريخ صلاحية | Proofs are dated leases | documented | tesseract |

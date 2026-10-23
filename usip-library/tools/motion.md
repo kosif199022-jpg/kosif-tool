@@ -1,4 +1,4 @@
-# أدوات المجال `motion` (20 أداة)
+# أدوات المجال `motion` (21 أداة)
 
 > مولّد من `data/tools.json`. [الفهرس الرئيسي](../README.md) · `python3 scripts/hub.py tool <id>` للبطاقة الحية.
 

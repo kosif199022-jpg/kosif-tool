@@ -1,4 +1,4 @@
-# أدوات المجال `edit` (14 أداة)
+# أدوات المجال `edit` (15 أداة)
 
 > مولّد من `data/tools.json`. [الفهرس الرئيسي](../README.md) · `python3 scripts/hub.py tool <id>` للبطاقة الحية.
 

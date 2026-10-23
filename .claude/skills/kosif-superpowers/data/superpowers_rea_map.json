@@ -2,8 +2,8 @@
  "atlas": {
   "atlas_total": 14793,
   "available": true,
-  "coverage_pct": 6.8,
-  "covered": 350,
+  "coverage_pct": 8.5,
+  "covered": 433,
   "next_candidates": [
    {
     "next": [
@@ -25,27 +25,6 @@
     ],
     "theme": "agent-workflow",
     "uncovered": 384
-   },
-   {
-    "next": [
-     {
-      "id": 7149,
-      "plugin": "epharmoge",
-      "skill": "contextualize"
-     },
-     {
-      "id": 7150,
-      "plugin": "epistemic-cooperative",
-      "skill": "gate-check"
-     },
-     {
-      "id": 9395,
-      "plugin": "codebase-health",
-      "skill": "audit"
-     }
-    ],
-    "theme": "verification-review",
-    "uncovered": 334
    },
    {
     "next": [
@@ -134,6 +113,27 @@
    {
     "next": [
      {
+      "id": 7153,
+      "plugin": "epistemic-cooperative",
+      "skill": "probe"
+     },
+     {
+      "id": 9395,
+      "plugin": "codebase-health",
+      "skill": "audit"
+     },
+     {
+      "id": 9627,
+      "plugin": "toolchain",
+      "skill": "check"
+     }
+    ],
+    "theme": "verification-review",
+    "uncovered": 251
+   },
+   {
+    "next": [
+     {
       "id": 14073,
       "plugin": "metaskills",
       "skill": "architecture-optimization"
@@ -181,12 +181,6 @@
     "covered": 0,
     "safe": 6,
     "theme": "hardware-embedded"
-   },
-   {
-    "coverage_pct": 1.2,
-    "covered": 4,
-    "safe": 338,
-    "theme": "verification-review"
    },
    {
     "coverage_pct": 1.3,
@@ -423,6 +417,12 @@
     "theme": "localization-language"
    },
    {
+    "coverage_pct": 25.7,
+    "covered": 87,
+    "safe": 338,
+    "theme": "verification-review"
+   },
+   {
     "coverage_pct": 33.3,
     "covered": 11,
     "safe": 33,
@@ -471,36 +471,36 @@
  },
  "counts": {
   "broken_links": 0,
-  "evals": 101,
+  "evals": 118,
   "families": 62,
   "gaps": {
-   "family_without_tool": 21
+   "family_without_tool": 11
   },
-  "powers": 5528,
-  "py_edges": 266,
+  "powers": 5727,
+  "py_edges": 297,
   "repo_tests": 35,
   "roles": {
    "helper": 2,
-   "registered": 132
+   "registered": 149
   },
-  "scripts": 134,
-  "tools": 150
+  "scripts": 151,
+  "tools": 167
  },
  "families": [
   {
    "id": "3d-spatial",
-   "powers": 52,
+   "powers": 53,
    "tools": 12
   },
   {
    "id": "agent-orchestration",
-   "powers": 46,
-   "tools": 9
+   "powers": 55,
+   "tools": 11
   },
   {
    "id": "ai-generation",
-   "powers": 93,
-   "tools": 0
+   "powers": 94,
+   "tools": 1
   },
   {
    "id": "api-testing",
@@ -514,8 +514,8 @@
   },
   {
    "id": "apps-artifacts",
-   "powers": 23,
-   "tools": 1
+   "powers": 27,
+   "tools": 2
   },
   {
    "id": "arabic-language",
@@ -529,7 +529,7 @@
   },
   {
    "id": "atlas-code",
-   "powers": 247,
+   "powers": 277,
    "tools": 1
   },
   {
@@ -539,12 +539,12 @@
   },
   {
    "id": "atlas-data",
-   "powers": 52,
-   "tools": 0
+   "powers": 56,
+   "tools": 1
   },
   {
    "id": "atlas-docs",
-   "powers": 50,
+   "powers": 55,
    "tools": 0
   },
   {
@@ -554,7 +554,7 @@
   },
   {
    "id": "atlas-mind",
-   "powers": 54,
+   "powers": 60,
    "tools": 0
   },
   {
@@ -564,18 +564,18 @@
   },
   {
    "id": "atlas-strategy",
-   "powers": 72,
-   "tools": 0
+   "powers": 87,
+   "tools": 1
   },
   {
    "id": "audio-sync-captions",
    "powers": 61,
-   "tools": 22
+   "tools": 23
   },
   {
    "id": "brand-logo-identity",
    "powers": 43,
-   "tools": 0
+   "tools": 1
   },
   {
    "id": "camera-composition-layout",
@@ -594,8 +594,8 @@
   },
   {
    "id": "code-engineering",
-   "powers": 24,
-   "tools": 7
+   "powers": 26,
+   "tools": 8
   },
   {
    "id": "color-palette-grading",
@@ -610,12 +610,12 @@
   {
    "id": "data-analysis",
    "powers": 39,
-   "tools": 1
+   "tools": 2
   },
   {
    "id": "diagrams-explainers-code",
-   "powers": 67,
-   "tools": 0
+   "powers": 69,
+   "tools": 1
   },
   {
    "id": "documents-office",
@@ -624,12 +624,12 @@
   },
   {
    "id": "easing-timing-rhythm",
-   "powers": 102,
-   "tools": 5
+   "powers": 106,
+   "tools": 6
   },
   {
    "id": "engines-render-pipeline",
-   "powers": 443,
+   "powers": 445,
    "tools": 23
   },
   {
@@ -639,12 +639,12 @@
   },
   {
    "id": "hand-drawn-draw-on",
-   "powers": 63,
-   "tools": 20
+   "powers": 65,
+   "tools": 22
   },
   {
    "id": "knowledge-graph",
-   "powers": 21,
+   "powers": 23,
    "tools": 3
   },
   {
@@ -655,7 +655,7 @@
   {
    "id": "maps-geo",
    "powers": 62,
-   "tools": 0
+   "tools": 1
   },
   {
    "id": "media-image-audio",
@@ -680,12 +680,12 @@
   {
    "id": "particles-fluids-physics",
    "powers": 77,
-   "tools": 0
+   "tools": 1
   },
   {
    "id": "photo-video-footage",
    "powers": 71,
-   "tools": 22
+   "tools": 23
   },
   {
    "id": "pixel-retro-stylized",
@@ -694,7 +694,7 @@
   },
   {
    "id": "planning-execution",
-   "powers": 12,
+   "powers": 14,
    "tools": 16
   },
   {
@@ -709,38 +709,38 @@
   },
   {
    "id": "runnable-tools",
-   "powers": 70,
+   "powers": 167,
    "tools": 0
   },
   {
    "id": "security-safety",
    "powers": 23,
-   "tools": 11
+   "tools": 12
   },
   {
    "id": "self-discovery",
    "powers": 43,
-   "tools": 34
+   "tools": 35
   },
   {
    "id": "shapes-morph-geometry",
-   "powers": 95,
+   "powers": 97,
    "tools": 8
   },
   {
    "id": "software-investigation",
    "powers": 258,
-   "tools": 20
+   "tools": 21
   },
   {
    "id": "story-direction-ideas",
    "powers": 95,
-   "tools": 12
+   "tools": 14
   },
   {
    "id": "strategy-finance",
    "powers": 18,
-   "tools": 0
+   "tools": 1
   },
   {
    "id": "texture-material",
@@ -749,13 +749,13 @@
   },
   {
    "id": "thinking-core",
-   "powers": 46,
+   "powers": 47,
    "tools": 2
   },
   {
    "id": "transitions-cuts",
-   "powers": 474,
-   "tools": 12
+   "powers": 475,
+   "tools": 13
   },
   {
    "id": "typography-arabic",
@@ -770,12 +770,12 @@
   {
    "id": "ui-product-device",
    "powers": 93,
-   "tools": 0
+   "tools": 1
   },
   {
    "id": "verification-evals",
-   "powers": 35,
-   "tools": 14
+   "powers": 40,
+   "tools": 15
   },
   {
    "id": "video-download",
@@ -785,11 +785,11 @@
   {
    "id": "voice-tts",
    "powers": 55,
-   "tools": 0
+   "tools": 1
   },
   {
    "id": "web-research",
-   "powers": 24,
+   "powers": 26,
    "tools": 11
   },
   {
@@ -799,11 +799,6 @@
   }
  ],
  "gaps": [
-  {
-   "detail": "93 powers, no tools.json entry lists this family",
-   "id": "ai-generation",
-   "kind": "family_without_tool"
-  },
   {
    "detail": "22 powers, no tools.json entry lists this family",
    "id": "api-testing",
@@ -820,12 +815,7 @@
    "kind": "family_without_tool"
   },
   {
-   "detail": "52 powers, no tools.json entry lists this family",
-   "id": "atlas-data",
-   "kind": "family_without_tool"
-  },
-  {
-   "detail": "50 powers, no tools.json entry lists this family",
+   "detail": "55 powers, no tools.json entry lists this family",
    "id": "atlas-docs",
    "kind": "family_without_tool"
   },
@@ -835,7 +825,7 @@
    "kind": "family_without_tool"
   },
   {
-   "detail": "54 powers, no tools.json entry lists this family",
+   "detail": "60 powers, no tools.json entry lists this family",
    "id": "atlas-mind",
    "kind": "family_without_tool"
   },
@@ -845,28 +835,8 @@
    "kind": "family_without_tool"
   },
   {
-   "detail": "72 powers, no tools.json entry lists this family",
-   "id": "atlas-strategy",
-   "kind": "family_without_tool"
-  },
-  {
-   "detail": "43 powers, no tools.json entry lists this family",
-   "id": "brand-logo-identity",
-   "kind": "family_without_tool"
-  },
-  {
-   "detail": "67 powers, no tools.json entry lists this family",
-   "id": "diagrams-explainers-code",
-   "kind": "family_without_tool"
-  },
-  {
    "detail": "34 powers, no tools.json entry lists this family",
    "id": "documents-office",
-   "kind": "family_without_tool"
-  },
-  {
-   "detail": "62 powers, no tools.json entry lists this family",
-   "id": "maps-geo",
    "kind": "family_without_tool"
   },
   {
@@ -875,33 +845,13 @@
    "kind": "family_without_tool"
   },
   {
-   "detail": "77 powers, no tools.json entry lists this family",
-   "id": "particles-fluids-physics",
-   "kind": "family_without_tool"
-  },
-  {
    "detail": "32 powers, no tools.json entry lists this family",
    "id": "pixel-retro-stylized",
    "kind": "family_without_tool"
   },
   {
-   "detail": "70 powers, no tools.json entry lists this family",
+   "detail": "167 powers, no tools.json entry lists this family",
    "id": "runnable-tools",
-   "kind": "family_without_tool"
-  },
-  {
-   "detail": "18 powers, no tools.json entry lists this family",
-   "id": "strategy-finance",
-   "kind": "family_without_tool"
-  },
-  {
-   "detail": "93 powers, no tools.json entry lists this family",
-   "id": "ui-product-device",
-   "kind": "family_without_tool"
-  },
-  {
-   "detail": "55 powers, no tools.json entry lists this family",
-   "id": "voice-tts",
    "kind": "family_without_tool"
   }
  ],
@@ -928,6 +878,16 @@
    "from": "_usip_cards",
    "kind": "invokes",
    "to": "smart_capabilities"
+  },
+  {
+   "from": "agent_guard",
+   "kind": "imports",
+   "to": "_secrets"
+  },
+  {
+   "from": "agent_guard",
+   "kind": "invokes",
+   "to": "_secrets"
   },
   {
    "from": "app_studio",
@@ -1160,6 +1120,11 @@
    "to": "cinematic_cut_planner"
   },
   {
+   "from": "color_media",
+   "kind": "imports",
+   "to": "portrait_pipeline"
+  },
+  {
    "from": "council",
    "kind": "imports",
    "to": "_secrets"
@@ -1320,6 +1285,11 @@
    "to": "kosif_timeline"
   },
   {
+   "from": "memory_ops",
+   "kind": "imports",
+   "to": "_secrets"
+  },
+  {
    "from": "motion_director",
    "kind": "invokes",
    "to": "verify_video"
@@ -1353,6 +1323,16 @@
    "from": "package_skill",
    "kind": "invokes",
    "to": "check_skill"
+  },
+  {
+   "from": "portrait_pipeline",
+   "kind": "imports",
+   "to": "color_media"
+  },
+  {
+   "from": "portrait_pipeline",
+   "kind": "imports",
+   "to": "drawing_methods"
   },
   {
    "from": "powers",
@@ -1565,6 +1545,16 @@
    "to": "rea_bridge"
   },
   {
+   "from": "test_agent_guard",
+   "kind": "imports",
+   "to": "agent_guard"
+  },
+  {
+   "from": "test_agent_guard",
+   "kind": "invokes",
+   "to": "agent_guard"
+  },
+  {
    "from": "test_ai_tool_discovery",
    "kind": "imports",
    "to": "ai_tool_discovery"
@@ -1610,6 +1600,11 @@
    "to": "atlas_render"
   },
   {
+   "from": "test_atlas_vendor",
+   "kind": "imports",
+   "to": "atlas_5000"
+  },
+  {
    "from": "test_blender_bridge",
    "kind": "imports",
    "to": "blender_bridge"
@@ -1623,6 +1618,16 @@
    "from": "test_book_methods",
    "kind": "imports",
    "to": "book_methods"
+  },
+  {
+   "from": "test_brand_tokens",
+   "kind": "imports",
+   "to": "brand_tokens"
+  },
+  {
+   "from": "test_brand_tokens",
+   "kind": "invokes",
+   "to": "brand_tokens"
   },
   {
    "from": "test_browser_scout",
@@ -1735,6 +1740,16 @@
    "to": "reference_edit_engine"
   },
   {
+   "from": "test_decision_math",
+   "kind": "imports",
+   "to": "decision_math"
+  },
+  {
+   "from": "test_diagram_layout",
+   "kind": "imports",
+   "to": "diagram_layout"
+  },
+  {
    "from": "test_differential_exam",
    "kind": "imports",
    "to": "differential_exam"
@@ -1765,6 +1780,16 @@
    "to": "dua_wednesday"
   },
   {
+   "from": "test_fast_edit",
+   "kind": "imports",
+   "to": "fast_edit"
+  },
+  {
+   "from": "test_fast_edit",
+   "kind": "invokes",
+   "to": "fast_edit"
+  },
+  {
    "from": "test_fusionforge",
    "kind": "imports",
    "to": "_secrets"
@@ -1778,6 +1803,11 @@
    "from": "test_fusionforge",
    "kind": "invokes",
    "to": "fusionforge"
+  },
+  {
+   "from": "test_geo_plate",
+   "kind": "imports",
+   "to": "geo_plate"
   },
   {
    "from": "test_github_top_repos",
@@ -1835,6 +1865,11 @@
    "to": "powers"
   },
   {
+   "from": "test_lesson_integrity",
+   "kind": "imports",
+   "to": "lesson_integrity"
+  },
+  {
    "from": "test_local_first",
    "kind": "imports",
    "to": "local_first"
@@ -1848,6 +1883,16 @@
    "from": "test_look_pipeline",
    "kind": "imports",
    "to": "look_pipeline"
+  },
+  {
+   "from": "test_memory_ops",
+   "kind": "imports",
+   "to": "memory_ops"
+  },
+  {
+   "from": "test_memory_ops",
+   "kind": "invokes",
+   "to": "memory_ops"
   },
   {
    "from": "test_montage_pro",
@@ -1868,6 +1913,16 @@
    "from": "test_motion_kit_bridge",
    "kind": "imports",
    "to": "motion_kit_bridge"
+  },
+  {
+   "from": "test_motion_physics",
+   "kind": "imports",
+   "to": "motion_physics"
+  },
+  {
+   "from": "test_motion_physics",
+   "kind": "invokes",
+   "to": "motion_physics"
   },
   {
    "from": "test_music_rhythm_engine",
@@ -1910,9 +1965,19 @@
    "to": "owned_repos"
   },
   {
+   "from": "test_particles",
+   "kind": "imports",
+   "to": "particles"
+  },
+  {
    "from": "test_perspective_color_lab",
    "kind": "imports",
    "to": "perspective_color_lab"
+  },
+  {
+   "from": "test_prompt_forge",
+   "kind": "imports",
+   "to": "prompt_forge"
   },
   {
    "from": "test_prompt_lab",
@@ -2003,6 +2068,16 @@
    "from": "test_reference_visual_style",
    "kind": "imports",
    "to": "reference_visual_fingerprint"
+  },
+  {
+   "from": "test_repo_map",
+   "kind": "imports",
+   "to": "repo_map"
+  },
+  {
+   "from": "test_repo_map",
+   "kind": "invokes",
+   "to": "repo_map"
   },
   {
    "from": "test_routing_quality",
@@ -2105,6 +2180,16 @@
    "to": "sources_index"
   },
   {
+   "from": "test_stats_lab",
+   "kind": "imports",
+   "to": "stats_lab"
+  },
+  {
+   "from": "test_stats_lab",
+   "kind": "invokes",
+   "to": "stats_lab"
+  },
+  {
    "from": "test_story_pack",
    "kind": "imports",
    "to": "skill_intelligence"
@@ -2133,6 +2218,21 @@
    "from": "test_superpower_fusion",
    "kind": "imports",
    "to": "superpower_fusion"
+  },
+  {
+   "from": "test_tts_script",
+   "kind": "imports",
+   "to": "tts_script"
+  },
+  {
+   "from": "test_tts_script",
+   "kind": "invokes",
+   "to": "tts_script"
+  },
+  {
+   "from": "test_ui_beat",
+   "kind": "imports",
+   "to": "ui_beat"
   },
   {
    "from": "test_usip_shadow",
@@ -2193,6 +2293,11 @@
    "from": "test_kosif_timeline",
    "kind": "imports",
    "to": "kosif_timeline"
+  },
+  {
+   "from": "test_kosif_timeline",
+   "kind": "imports",
+   "to": "kosif_timeline_demo"
   },
   {
    "from": "test_telegram_typography_atlas",
@@ -2713,9 +2818,11 @@
    "ci": false,
    "id": "_secrets",
    "imported_by": [
+    "agent_guard",
     "charter_ingest",
     "council",
     "fusionforge",
+    "memory_ops",
     "prompt_pack",
     "sources_index"
    ],
@@ -2746,6 +2853,23 @@
   },
   {
    "ci": false,
+   "id": "agent_guard",
+   "imported_by": [],
+   "path": "scripts/agent_guard.py",
+   "power_count": 1,
+   "powers": [
+    "TOOL-154"
+   ],
+   "role": "registered",
+   "tests": [
+    "evals/test_agent_guard.py"
+   ],
+   "tools": [
+    "agent-guard"
+   ]
+  },
+  {
+   "ci": false,
    "id": "ai_tool_discovery",
    "imported_by": [],
    "path": "scripts/ai_tool_discovery.py",
@@ -2766,7 +2890,7 @@
    "id": "anchor_gate",
    "imported_by": [],
    "path": "scripts/anchor_gate.py",
-   "power_count": 11,
+   "power_count": 12,
    "powers": [
     "ARL-01",
     "ARL-03",
@@ -2775,6 +2899,7 @@
     "ARL-07",
     "ARL-15",
     "PROMPT-02",
+    "TOOL-74",
     "WRITE-06",
     "WRITE-07",
     "WRITE-08",
@@ -2795,7 +2920,7 @@
     "app_studio_paint"
    ],
    "path": "scripts/app_studio.py",
-   "power_count": 74,
+   "power_count": 76,
    "powers": [
     "APPX-100",
     "APPX-101",
@@ -2826,7 +2951,7 @@
     "app_studio"
    ],
    "path": "scripts/app_studio_paint.py",
-   "power_count": 15,
+   "power_count": 16,
    "powers": [
     "APPX-100",
     "APPX-101",
@@ -2873,8 +2998,10 @@
     "verify_video"
    ],
    "path": "scripts/aspects.py",
-   "power_count": 0,
-   "powers": [],
+   "power_count": 1,
+   "powers": [
+    "TOOL-77"
+   ],
    "role": "registered",
    "tests": [
     "evals/test_hub.py",
@@ -2893,13 +3020,15 @@
     "rea_superpowers_map"
    ],
    "path": "scripts/atlas_5000.py",
-   "power_count": 1,
+   "power_count": 2,
    "powers": [
-    "ACODE-247"
+    "ACODE-247",
+    "TOOL-106"
    ],
    "role": "registered",
    "tests": [
-    "evals/test_atlas_5000.py"
+    "evals/test_atlas_5000.py",
+    "evals/test_atlas_vendor.py"
    ],
    "tools": [
     "atlas-5000"
@@ -2910,8 +3039,10 @@
    "id": "atlas_audit_synthesis",
    "imported_by": [],
    "path": "scripts/atlas_audit_synthesis.py",
-   "power_count": 0,
-   "powers": [],
+   "power_count": 1,
+   "powers": [
+    "TOOL-92"
+   ],
    "role": "registered",
    "tests": [
     "tests/test_atlas_body_audit.py"
@@ -2925,8 +3056,10 @@
    "id": "atlas_body_audit",
    "imported_by": [],
    "path": "scripts/atlas_body_audit.py",
-   "power_count": 0,
-   "powers": [],
+   "power_count": 1,
+   "powers": [
+    "TOOL-91"
+   ],
    "role": "registered",
    "tests": [
     "tests/test_atlas_body_audit.py"
@@ -2940,8 +3073,10 @@
    "id": "atlas_bulk_source_audit",
    "imported_by": [],
    "path": "scripts/atlas_bulk_source_audit.py",
-   "power_count": 0,
-   "powers": [],
+   "power_count": 1,
+   "powers": [
+    "TOOL-104"
+   ],
    "role": "registered",
    "tests": [
     "evals/test_script_smoke.py"
@@ -2957,8 +3092,10 @@
     "atlas_transfer"
    ],
    "path": "scripts/atlas_capability_miner.py",
-   "power_count": 0,
-   "powers": [],
+   "power_count": 1,
+   "powers": [
+    "TOOL-105"
+   ],
    "role": "registered",
    "tests": [
     "evals/test_atlas_capability_miner.py"
@@ -2974,8 +3111,10 @@
     "atlas_bulk_source_audit"
    ],
    "path": "scripts/atlas_deep_fusion.py",
-   "power_count": 0,
-   "powers": [],
+   "power_count": 1,
+   "powers": [
+    "TOOL-109"
+   ],
    "role": "registered",
    "tests": [
     "evals/test_script_smoke.py"
@@ -3007,8 +3146,10 @@
    "id": "atlas_ledger",
    "imported_by": [],
    "path": "scripts/atlas_ledger.py",
-   "power_count": 0,
-   "powers": [],
+   "power_count": 1,
+   "powers": [
+    "TOOL-107"
+   ],
    "role": "registered",
    "tests": [
     "evals/test_atlas_ledger.py"
@@ -3058,8 +3199,10 @@
    "id": "atlas_review_summary",
    "imported_by": [],
    "path": "scripts/atlas_review_summary.py",
-   "power_count": 0,
-   "powers": [],
+   "power_count": 1,
+   "powers": [
+    "TOOL-110"
+   ],
    "role": "registered",
    "tests": [
     "evals/test_script_smoke.py"
@@ -3073,8 +3216,10 @@
    "id": "atlas_reviewed_methods_v3",
    "imported_by": [],
    "path": "scripts/atlas_reviewed_methods_v3.py",
-   "power_count": 0,
-   "powers": [],
+   "power_count": 1,
+   "powers": [
+    "TOOL-111"
+   ],
    "role": "registered",
    "tests": [
     "evals/test_atlas_reviewed_methods_v3.py"
@@ -3088,8 +3233,10 @@
    "id": "atlas_task_method_router",
    "imported_by": [],
    "path": "scripts/atlas_task_method_router.py",
-   "power_count": 0,
-   "powers": [],
+   "power_count": 1,
+   "powers": [
+    "TOOL-112"
+   ],
    "role": "registered",
    "tests": [
     "evals/test_script_smoke.py"
@@ -3103,8 +3250,10 @@
    "id": "atlas_transfer",
    "imported_by": [],
    "path": "scripts/atlas_transfer.py",
-   "power_count": 0,
-   "powers": [],
+   "power_count": 1,
+   "powers": [
+    "TOOL-113"
+   ],
    "role": "registered",
    "tests": [
     "evals/test_script_smoke.py"
@@ -3180,8 +3329,10 @@
    "id": "blender_cat_fur_upgrade",
    "imported_by": [],
    "path": "scripts/blender_cat_fur_upgrade.py",
-   "power_count": 0,
-   "powers": [],
+   "power_count": 1,
+   "powers": [
+    "TOOL-121"
+   ],
    "role": "registered",
    "tests": [
     "scripts/test_blender_cat_fur_upgrade.py"
@@ -3195,12 +3346,13 @@
    "id": "blender_cinema",
    "imported_by": [],
    "path": "scripts/blender_cinema.py",
-   "power_count": 4,
+   "power_count": 5,
    "powers": [
     "APPX-114",
     "APPX-115",
     "APPX-116",
-    "APPX-117"
+    "APPX-117",
+    "TOOL-87"
    ],
    "role": "registered",
    "tests": [
@@ -3215,8 +3367,11 @@
    "id": "blender_cinematic_bridge",
    "imported_by": [],
    "path": "scripts/blender_cinematic_bridge.py",
-   "power_count": 0,
-   "powers": [],
+   "power_count": 2,
+   "powers": [
+    "TOOL-119",
+    "TOOL-121"
+   ],
    "role": "registered",
    "tests": [
     "evals/test_blender_cinematic_bridge.py",
@@ -3252,8 +3407,10 @@
    "id": "blender_motion_video",
    "imported_by": [],
    "path": "scripts/blender_motion_video.py",
-   "power_count": 0,
-   "powers": [],
+   "power_count": 1,
+   "powers": [
+    "TOOL-114"
+   ],
    "role": "registered",
    "tests": [
     "evals/test_blender_motion_video.py"
@@ -3267,8 +3424,11 @@
    "id": "blender_rescue_scene",
    "imported_by": [],
    "path": "scripts/blender_rescue_scene.py",
-   "power_count": 0,
-   "powers": [],
+   "power_count": 2,
+   "powers": [
+    "TOOL-119",
+    "TOOL-120"
+   ],
    "role": "registered",
    "tests": [
     "scripts/test_blender_cinematic_bridge.py"
@@ -3333,6 +3493,23 @@
   },
   {
    "ci": false,
+   "id": "brand_tokens",
+   "imported_by": [],
+   "path": "scripts/brand_tokens.py",
+   "power_count": 1,
+   "powers": [
+    "TOOL-153"
+   ],
+   "role": "registered",
+   "tests": [
+    "evals/test_brand_tokens.py"
+   ],
+   "tools": [
+    "brand-tokens"
+   ]
+  },
+  {
+   "ci": false,
    "id": "browser_scout",
    "imported_by": [],
    "path": "scripts/browser_scout.py",
@@ -3356,9 +3533,10 @@
     "powers"
    ],
    "path": "scripts/build_chapters.py",
-   "power_count": 1,
+   "power_count": 2,
    "powers": [
-    "CHECK-24"
+    "CHECK-24",
+    "TOOL-99"
    ],
    "role": "registered",
    "tests": [],
@@ -3428,8 +3606,10 @@
     "skill_intelligence"
    ],
    "path": "scripts/capability_mindmap.py",
-   "power_count": 0,
-   "powers": [],
+   "power_count": 1,
+   "powers": [
+    "TOOL-128"
+   ],
    "role": "registered",
    "tests": [
     "evals/test_capability_mindmap.py"
@@ -3460,10 +3640,11 @@
    "id": "caption_lines",
    "imported_by": [],
    "path": "scripts/caption_lines.py",
-   "power_count": 2,
+   "power_count": 3,
    "powers": [
     "APPX-140",
-    "APPX-141"
+    "APPX-141",
+    "TOOL-164"
    ],
    "role": "registered",
    "tests": [
@@ -3534,8 +3715,10 @@
     "council"
    ],
    "path": "scripts/charter_ingest.py",
-   "power_count": 0,
-   "powers": [],
+   "power_count": 1,
+   "powers": [
+    "TOOL-139"
+   ],
    "role": "registered",
    "tests": [
     "evals/test_charter_index.py"
@@ -3624,13 +3807,34 @@
   },
   {
    "ci": false,
+   "id": "color_media",
+   "imported_by": [
+    "portrait_pipeline"
+   ],
+   "path": "scripts/color_media.py",
+   "power_count": 1,
+   "powers": [
+    "TOOL-168"
+   ],
+   "role": "registered",
+   "tests": [
+    "evals/test_portrait_pipeline.py"
+   ],
+   "tools": [
+    "color-media"
+   ]
+  },
+  {
+   "ci": false,
    "id": "council",
    "imported_by": [
     "think"
    ],
    "path": "scripts/council.py",
-   "power_count": 1,
+   "power_count": 3,
    "powers": [
+    "THINK-47",
+    "TOOL-139",
     "TOOL-68"
    ],
    "role": "registered",
@@ -3690,8 +3894,10 @@
    "id": "creative_principles",
    "imported_by": [],
    "path": "scripts/creative_principles.py",
-   "power_count": 0,
-   "powers": [],
+   "power_count": 1,
+   "powers": [
+    "TOOL-134"
+   ],
    "role": "registered",
    "tests": [
     "evals/test_creative_principles.py"
@@ -3738,6 +3944,40 @@
   },
   {
    "ci": false,
+   "id": "decision_math",
+   "imported_by": [],
+   "path": "scripts/decision_math.py",
+   "power_count": 1,
+   "powers": [
+    "TOOL-145"
+   ],
+   "role": "registered",
+   "tests": [
+    "evals/test_decision_math.py"
+   ],
+   "tools": [
+    "decision-math"
+   ]
+  },
+  {
+   "ci": false,
+   "id": "diagram_layout",
+   "imported_by": [],
+   "path": "scripts/diagram_layout.py",
+   "power_count": 1,
+   "powers": [
+    "TOOL-149"
+   ],
+   "role": "registered",
+   "tests": [
+    "evals/test_diagram_layout.py"
+   ],
+   "tools": [
+    "diagram-layout"
+   ]
+  },
+  {
+   "ci": false,
    "id": "differential_exam",
    "imported_by": [],
    "path": "scripts/differential_exam.py",
@@ -3760,8 +4000,10 @@
    "id": "drawing_academy",
    "imported_by": [],
    "path": "scripts/drawing_academy.py",
-   "power_count": 0,
-   "powers": [],
+   "power_count": 1,
+   "powers": [
+    "TOOL-135"
+   ],
    "role": "registered",
    "tests": [
     "evals/test_drawing_academy.py"
@@ -3775,8 +4017,10 @@
    "id": "drawing_council",
    "imported_by": [],
    "path": "scripts/drawing_council.py",
-   "power_count": 0,
-   "powers": [],
+   "power_count": 1,
+   "powers": [
+    "TOOL-158"
+   ],
    "role": "registered",
    "tests": [
     "evals/test_drawing_council.py"
@@ -3789,11 +4033,14 @@
    "ci": false,
    "id": "drawing_methods",
    "imported_by": [
-    "drawing_council"
+    "drawing_council",
+    "portrait_pipeline"
    ],
    "path": "scripts/drawing_methods.py",
-   "power_count": 0,
-   "powers": [],
+   "power_count": 1,
+   "powers": [
+    "TOOL-136"
+   ],
    "role": "registered",
    "tests": [
     "evals/test_drawing_council.py",
@@ -3808,8 +4055,10 @@
    "id": "drawing_visual_qa",
    "imported_by": [],
    "path": "scripts/drawing_visual_qa.py",
-   "power_count": 0,
-   "powers": [],
+   "power_count": 1,
+   "powers": [
+    "TOOL-144"
+   ],
    "role": "registered",
    "tests": [
     "evals/test_drawing_visual_qa.py"
@@ -3823,8 +4072,10 @@
    "id": "dua_wednesday",
    "imported_by": [],
    "path": "scripts/dua_wednesday.py",
-   "power_count": 0,
-   "powers": [],
+   "power_count": 1,
+   "powers": [
+    "TOOL-132"
+   ],
    "role": "registered",
    "tests": [
     "evals/test_dua_wednesday.py"
@@ -3835,12 +4086,30 @@
   },
   {
    "ci": false,
+   "id": "fast_edit",
+   "imported_by": [],
+   "path": "scripts/fast_edit.py",
+   "power_count": 1,
+   "powers": [
+    "TOOL-167"
+   ],
+   "role": "registered",
+   "tests": [
+    "evals/test_fast_edit.py"
+   ],
+   "tools": [
+    "fast-edit"
+   ]
+  },
+  {
+   "ci": false,
    "id": "fetch_reference",
    "imported_by": [],
    "path": "scripts/fetch_reference.py",
-   "power_count": 1,
+   "power_count": 2,
    "powers": [
-    "FOOT-X06"
+    "FOOT-X06",
+    "TOOL-93"
    ],
    "role": "registered",
    "tests": [
@@ -3856,7 +4125,7 @@
    "id": "fetch_video",
    "imported_by": [],
    "path": "scripts/fetch_video.py",
-   "power_count": 7,
+   "power_count": 8,
    "powers": [
     "DL-01",
     "DL-02",
@@ -3864,7 +4133,8 @@
     "DL-04",
     "DL-06",
     "DL-07",
-    "DL-09"
+    "DL-09",
+    "TOOL-94"
    ],
    "role": "registered",
    "tests": [
@@ -3900,9 +4170,10 @@
     "fusionforge_shared"
    ],
    "path": "scripts/fusionforge.py",
-   "power_count": 1,
+   "power_count": 2,
    "powers": [
-    "PROMPT-31"
+    "PROMPT-31",
+    "TOOL-125"
    ],
    "role": "registered",
    "tests": [
@@ -3920,8 +4191,10 @@
    "id": "fusionforge_shared",
    "imported_by": [],
    "path": "scripts/fusionforge_shared.py",
-   "power_count": 0,
-   "powers": [],
+   "power_count": 1,
+   "powers": [
+    "TOOL-126"
+   ],
    "role": "registered",
    "tests": [
     "evals/test_fusionforge_shared.py"
@@ -3932,11 +4205,30 @@
   },
   {
    "ci": false,
+   "id": "geo_plate",
+   "imported_by": [],
+   "path": "scripts/geo_plate.py",
+   "power_count": 1,
+   "powers": [
+    "TOOL-147"
+   ],
+   "role": "registered",
+   "tests": [
+    "evals/test_geo_plate.py"
+   ],
+   "tools": [
+    "geo-plate"
+   ]
+  },
+  {
+   "ci": false,
    "id": "github_top_repos",
    "imported_by": [],
    "path": "scripts/github_top_repos.py",
-   "power_count": 0,
-   "powers": [],
+   "power_count": 1,
+   "powers": [
+    "TOOL-160"
+   ],
    "role": "registered",
    "tests": [
     "evals/test_github_top_repos.py"
@@ -3958,7 +4250,7 @@
     "smart_capabilities"
    ],
    "path": "scripts/hub.py",
-   "power_count": 70,
+   "power_count": 167,
    "powers": [
     "TOOL-01",
     "TOOL-02",
@@ -3970,8 +4262,8 @@
     "TOOL-08",
     "TOOL-09",
     "TOOL-10",
-    "TOOL-11",
-    "TOOL-12"
+    "TOOL-100",
+    "TOOL-101"
    ],
    "role": "registered",
    "tests": [
@@ -3988,11 +4280,12 @@
    "id": "image_local_ai",
    "imported_by": [],
    "path": "scripts/image_local_ai.py",
-   "power_count": 3,
+   "power_count": 4,
    "powers": [
     "MEDIA-35",
     "MEDIA-36",
-    "MEDIA-37"
+    "MEDIA-37",
+    "TOOL-140"
    ],
    "role": "registered",
    "tests": [
@@ -4007,7 +4300,7 @@
    "id": "installer_triage",
    "imported_by": [],
    "path": "scripts/installer_triage.py",
-   "power_count": 7,
+   "power_count": 8,
    "powers": [
     "APPX-57",
     "REA-236",
@@ -4015,7 +4308,8 @@
     "REA-238",
     "REA-239",
     "REA-240",
-    "REA-241"
+    "REA-241",
+    "TOOL-97"
    ],
    "role": "registered",
    "tests": [
@@ -4049,8 +4343,10 @@
     "capability_mindmap"
    ],
    "path": "scripts/kosif_hubs.py",
-   "power_count": 0,
-   "powers": [],
+   "power_count": 1,
+   "powers": [
+    "TOOL-129"
+   ],
    "role": "registered",
    "tests": [
     "evals/test_kosif_hubs.py"
@@ -4105,8 +4401,10 @@
     "kosif_timeline_demo"
    ],
    "path": "scripts/kosif_timeline.py",
-   "power_count": 0,
-   "powers": [],
+   "power_count": 1,
+   "powers": [
+    "TOOL-122"
+   ],
    "role": "registered",
    "tests": [
     "evals/test_kosif_timeline.py",
@@ -4121,14 +4419,40 @@
    "id": "kosif_timeline_demo",
    "imported_by": [],
    "path": "scripts/kosif_timeline_demo.py",
-   "power_count": 0,
-   "powers": [],
+   "power_count": 2,
+   "powers": [
+    "TOOL-122",
+    "TOOL-123"
+   ],
    "role": "registered",
    "tests": [
+    "evals/test_kosif_timeline.py",
     "scripts/test_kosif_timeline.py"
    ],
    "tools": [
     "kosif-timeline-demo"
+   ]
+  },
+  {
+   "ci": false,
+   "id": "lesson_integrity",
+   "imported_by": [],
+   "path": "scripts/lesson_integrity.py",
+   "power_count": 6,
+   "powers": [
+    "APP-25",
+    "APP-26",
+    "CHECK-36",
+    "CHECK-37",
+    "CHECK-40",
+    "TOOL-166"
+   ],
+   "role": "registered",
+   "tests": [
+    "evals/test_lesson_integrity.py"
+   ],
+   "tools": [
+    "lesson-integrity"
    ]
   },
   {
@@ -4170,10 +4494,11 @@
    "id": "look_pipeline",
    "imported_by": [],
    "path": "scripts/look_pipeline.py",
-   "power_count": 2,
+   "power_count": 3,
    "powers": [
     "APPX-142",
-    "APPX-143"
+    "APPX-143",
+    "TOOL-165"
    ],
    "role": "registered",
    "tests": [
@@ -4204,13 +4529,33 @@
   },
   {
    "ci": false,
+   "id": "memory_ops",
+   "imported_by": [],
+   "path": "scripts/memory_ops.py",
+   "power_count": 2,
+   "powers": [
+    "AGENT-50",
+    "TOOL-162"
+   ],
+   "role": "registered",
+   "tests": [
+    "evals/test_memory_ops.py"
+   ],
+   "tools": [
+    "memory-ops"
+   ]
+  },
+  {
+   "ci": false,
    "id": "montage_pro",
    "imported_by": [
     "kosif_hubs"
    ],
    "path": "scripts/montage_pro.py",
-   "power_count": 0,
-   "powers": [],
+   "power_count": 1,
+   "powers": [
+    "TOOL-130"
+   ],
    "role": "registered",
    "tests": [
     "evals/test_montage_pro.py"
@@ -4224,8 +4569,10 @@
    "id": "mosamem_rea_fusion",
    "imported_by": [],
    "path": "scripts/mosamem_rea_fusion.py",
-   "power_count": 0,
-   "powers": [],
+   "power_count": 1,
+   "powers": [
+    "TOOL-138"
+   ],
    "role": "registered",
    "tests": [
     "evals/test_mosamem_rea_fusion.py"
@@ -4271,6 +4618,26 @@
    ],
    "tools": [
     "motion-kit-bridge"
+   ]
+  },
+  {
+   "ci": false,
+   "id": "motion_physics",
+   "imported_by": [],
+   "path": "scripts/motion_physics.py",
+   "power_count": 4,
+   "powers": [
+    "EASE-G01",
+    "EASE-G02",
+    "EASE-G03",
+    "TOOL-163"
+   ],
+   "role": "registered",
+   "tests": [
+    "evals/test_motion_physics.py"
+   ],
+   "tools": [
+    "motion-physics"
    ]
   },
   {
@@ -4385,8 +4752,10 @@
    "id": "owned_repos",
    "imported_by": [],
    "path": "scripts/owned_repos.py",
-   "power_count": 0,
-   "powers": [],
+   "power_count": 1,
+   "powers": [
+    "TOOL-143"
+   ],
    "role": "registered",
    "tests": [
     "evals/test_owned_repos.py"
@@ -4414,17 +4783,55 @@
   },
   {
    "ci": false,
+   "id": "particles",
+   "imported_by": [],
+   "path": "scripts/particles.py",
+   "power_count": 1,
+   "powers": [
+    "TOOL-146"
+   ],
+   "role": "registered",
+   "tests": [
+    "evals/test_particles.py"
+   ],
+   "tools": [
+    "particles"
+   ]
+  },
+  {
+   "ci": false,
    "id": "perspective_color_lab",
    "imported_by": [],
    "path": "scripts/perspective_color_lab.py",
-   "power_count": 0,
-   "powers": [],
+   "power_count": 1,
+   "powers": [
+    "TOOL-137"
+   ],
    "role": "registered",
    "tests": [
     "evals/test_perspective_color_lab.py"
    ],
    "tools": [
     "perspective-color-lab"
+   ]
+  },
+  {
+   "ci": false,
+   "id": "portrait_pipeline",
+   "imported_by": [
+    "color_media"
+   ],
+   "path": "scripts/portrait_pipeline.py",
+   "power_count": 1,
+   "powers": [
+    "TOOL-157"
+   ],
+   "role": "registered",
+   "tests": [
+    "evals/test_portrait_pipeline.py"
+   ],
+   "tools": [
+    "portrait-pipeline"
    ]
   },
   {
@@ -4448,7 +4855,7 @@
     "think"
    ],
    "path": "scripts/powers.py",
-   "power_count": 7,
+   "power_count": 9,
    "powers": [
     "CHECK-22",
     "IDEA-01",
@@ -4456,7 +4863,9 @@
     "SELF-01",
     "THINK-03",
     "THINK-04",
-    "THINK-19"
+    "THINK-19",
+    "TOOL-156",
+    "TOOL-99"
    ],
    "role": "registered",
    "tests": [
@@ -4486,7 +4895,7 @@
     "powers"
    ],
    "path": "scripts/probe_env.py",
-   "power_count": 7,
+   "power_count": 8,
    "powers": [
     "CHECK-22",
     "PROMPT-21",
@@ -4494,7 +4903,8 @@
     "SELF-13",
     "SELF-18",
     "SELF-36",
-    "THINK-03"
+    "THINK-03",
+    "TOOL-71"
    ],
    "role": "registered",
    "tests": [
@@ -4506,16 +4916,39 @@
   },
   {
    "ci": false,
+   "id": "prompt_forge",
+   "imported_by": [],
+   "path": "scripts/prompt_forge.py",
+   "power_count": 6,
+   "powers": [
+    "ARAB-09",
+    "GEN-02",
+    "GEN-06",
+    "GEN-10",
+    "GEN-11",
+    "TOOL-148"
+   ],
+   "role": "registered",
+   "tests": [
+    "evals/test_prompt_forge.py"
+   ],
+   "tools": [
+    "prompt-forge"
+   ]
+  },
+  {
+   "ci": false,
    "id": "prompt_lab",
    "imported_by": [],
    "path": "scripts/prompt_lab.py",
-   "power_count": 5,
+   "power_count": 6,
    "powers": [
     "PROMPT-34",
     "PROMPT-35",
     "PROMPT-39",
     "PROMPT-40",
-    "PROMPT-41"
+    "PROMPT-41",
+    "TOOL-159"
    ],
    "role": "registered",
    "tests": [
@@ -4530,8 +4963,10 @@
    "id": "prompt_pack",
    "imported_by": [],
    "path": "scripts/prompt_pack.py",
-   "power_count": 0,
-   "powers": [],
+   "power_count": 1,
+   "powers": [
+    "TOOL-141"
+   ],
    "role": "registered",
    "tests": [
     "evals/test_prompt_pack.py"
@@ -4564,9 +4999,10 @@
     "web_app_study"
    ],
    "path": "scripts/rea_bridge.py",
-   "power_count": 1,
+   "power_count": 2,
    "powers": [
-    "REA-241"
+    "REA-241",
+    "TOOL-98"
    ],
    "role": "registered",
    "tests": [
@@ -4634,8 +5070,10 @@
    "id": "rea_superpowers_map",
    "imported_by": [],
    "path": "scripts/rea_superpowers_map.py",
-   "power_count": 0,
-   "powers": [],
+   "power_count": 1,
+   "powers": [
+    "TOOL-108"
+   ],
    "role": "registered",
    "tests": [
     "evals/test_rea_superpowers_map.py",
@@ -4667,8 +5105,10 @@
    "id": "reel_factory",
    "imported_by": [],
    "path": "scripts/reel_factory.py",
-   "power_count": 0,
-   "powers": [],
+   "power_count": 1,
+   "powers": [
+    "TOOL-131"
+   ],
    "role": "registered",
    "tests": [
     "evals/test_reel_factory.py"
@@ -4738,6 +5178,24 @@
   },
   {
    "ci": false,
+   "id": "repo_map",
+   "imported_by": [],
+   "path": "scripts/repo_map.py",
+   "power_count": 2,
+   "powers": [
+    "CODE-25",
+    "TOOL-161"
+   ],
+   "role": "registered",
+   "tests": [
+    "evals/test_repo_map.py"
+   ],
+   "tools": [
+    "repo-map"
+   ]
+  },
+  {
+   "ci": false,
    "id": "repository_capability_packer",
    "imported_by": [],
    "path": "scripts/repository_capability_packer.py",
@@ -4766,11 +5224,12 @@
     "think"
    ],
    "path": "scripts/requirements.py",
-   "power_count": 3,
+   "power_count": 4,
    "powers": [
     "IDEA-26",
     "IDEA-29",
-    "PLAN-05"
+    "PLAN-05",
+    "TOOL-72"
    ],
    "role": "registered",
    "tests": [
@@ -4785,8 +5244,10 @@
    "id": "see_pro_cognitive_gate",
    "imported_by": [],
    "path": "scripts/see_pro_cognitive_gate.py",
-   "power_count": 0,
-   "powers": [],
+   "power_count": 1,
+   "powers": [
+    "TOOL-76"
+   ],
    "role": "registered",
    "tests": [
     "evals/test_see_pro_cognitive_gate.py"
@@ -4805,8 +5266,10 @@
     "kosif_hubs"
    ],
    "path": "scripts/skill_intelligence.py",
-   "power_count": 0,
-   "powers": [],
+   "power_count": 1,
+   "powers": [
+    "TOOL-124"
+   ],
    "role": "registered",
    "tests": [
     "evals/test_protocol_structure.py",
@@ -4826,8 +5289,10 @@
     "check_skill"
    ],
    "path": "scripts/skill_layout.py",
-   "power_count": 0,
-   "powers": [],
+   "power_count": 1,
+   "powers": [
+    "TOOL-100"
+   ],
    "role": "registered",
    "tests": [
     "evals/test_skill_layout.py"
@@ -4845,8 +5310,10 @@
     "skill_intelligence"
    ],
    "path": "scripts/smart_capabilities.py",
-   "power_count": 0,
-   "powers": [],
+   "power_count": 1,
+   "powers": [
+    "TOOL-116"
+   ],
    "role": "registered",
    "tests": [
     "evals/test_protocol_structure.py",
@@ -4897,8 +5364,10 @@
    "id": "sources_index",
    "imported_by": [],
    "path": "scripts/sources_index.py",
-   "power_count": 0,
-   "powers": [],
+   "power_count": 1,
+   "powers": [
+    "TOOL-142"
+   ],
    "role": "registered",
    "tests": [
     "evals/test_sources_index.py"
@@ -4909,11 +5378,30 @@
   },
   {
    "ci": false,
+   "id": "stats_lab",
+   "imported_by": [],
+   "path": "scripts/stats_lab.py",
+   "power_count": 1,
+   "powers": [
+    "TOOL-151"
+   ],
+   "role": "registered",
+   "tests": [
+    "evals/test_stats_lab.py"
+   ],
+   "tools": [
+    "stats-lab"
+   ]
+  },
+  {
+   "ci": false,
    "id": "stock_fetch",
    "imported_by": [],
    "path": "scripts/stock_fetch.py",
-   "power_count": 0,
-   "powers": [],
+   "power_count": 1,
+   "powers": [
+    "TOOL-95"
+   ],
    "role": "registered",
    "tests": [
     "tests/test_stock_fetch.py"
@@ -4927,8 +5415,10 @@
    "id": "stream_grabber",
    "imported_by": [],
    "path": "scripts/stream_grabber.py",
-   "power_count": 0,
-   "powers": [],
+   "power_count": 1,
+   "powers": [
+    "TOOL-133"
+   ],
    "role": "registered",
    "tests": [
     "evals/test_stream_grabber.py"
@@ -4983,8 +5473,10 @@
     "skill_intelligence"
    ],
    "path": "scripts/superpower_fusion.py",
-   "power_count": 0,
-   "powers": [],
+   "power_count": 1,
+   "powers": [
+    "TOOL-127"
+   ],
    "role": "registered",
    "tests": [
     "evals/test_protocol_structure.py",
@@ -4999,9 +5491,10 @@
    "id": "superpowers",
    "imported_by": [],
    "path": "scripts/superpowers.py",
-   "power_count": 1,
+   "power_count": 2,
    "powers": [
-    "ENG-X06"
+    "ENG-X06",
+    "TOOL-96"
    ],
    "role": "registered",
    "tests": [
@@ -5082,11 +5575,12 @@
    "id": "tell_scan",
    "imported_by": [],
    "path": "scripts/tell_scan.py",
-   "power_count": 11,
+   "power_count": 12,
    "powers": [
     "ARL-01",
     "ARL-02",
     "ARL-03",
+    "TOOL-75",
     "WRITE-02",
     "WRITE-03",
     "WRITE-04",
@@ -5139,13 +5633,49 @@
   },
   {
    "ci": false,
+   "id": "tts_script",
+   "imported_by": [],
+   "path": "scripts/tts_script.py",
+   "power_count": 1,
+   "powers": [
+    "TOOL-152"
+   ],
+   "role": "registered",
+   "tests": [
+    "evals/test_tts_script.py"
+   ],
+   "tools": [
+    "tts-script"
+   ]
+  },
+  {
+   "ci": false,
+   "id": "ui_beat",
+   "imported_by": [],
+   "path": "scripts/ui_beat.py",
+   "power_count": 1,
+   "powers": [
+    "TOOL-150"
+   ],
+   "role": "registered",
+   "tests": [
+    "evals/test_ui_beat.py"
+   ],
+   "tools": [
+    "ui-beat"
+   ]
+  },
+  {
+   "ci": false,
    "id": "unified_cinematic",
    "imported_by": [
     "blender_cinematic_bridge"
    ],
    "path": "scripts/unified_cinematic.py",
-   "power_count": 0,
-   "powers": [],
+   "power_count": 1,
+   "powers": [
+    "TOOL-118"
+   ],
    "role": "registered",
    "tests": [
     "evals/test_unified_cinematic.py",
@@ -5164,8 +5694,10 @@
     "unified_media"
    ],
    "path": "scripts/unified_draw.py",
-   "power_count": 0,
-   "powers": [],
+   "power_count": 1,
+   "powers": [
+    "TOOL-115"
+   ],
    "role": "registered",
    "tests": [
     "evals/test_blender_cinematic_bridge.py",
@@ -5188,8 +5720,10 @@
     "unified_cinematic"
    ],
    "path": "scripts/unified_media.py",
-   "power_count": 0,
-   "powers": [],
+   "power_count": 1,
+   "powers": [
+    "TOOL-117"
+   ],
    "role": "registered",
    "tests": [
     "evals/test_unified_cinematic.py",
@@ -5208,8 +5742,10 @@
     "motion_runtime"
    ],
    "path": "scripts/verify_video.py",
-   "power_count": 0,
-   "powers": [],
+   "power_count": 1,
+   "powers": [
+    "TOOL-79"
+   ],
    "role": "registered",
    "tests": [
     "evals/test_hub.py",
@@ -5259,38 +5795,38 @@
   "areas": {
    "(root)": 8,
    "assets": 4,
-   "data": 122,
+   "data": 128,
    "dua-wednesday": 10,
-   "evals": 94,
+   "evals": 111,
    "examples": 12,
    "montage-pro": 2,
    "proofs": 239,
-   "references": 221,
+   "references": 225,
    "resources": 3,
    "schemas": 5,
-   "scripts": 165,
+   "scripts": 182,
    "templates": 16,
-   "vendor": 76
+   "vendor": 391
   },
-  "bytes": 57041684,
+  "bytes": 62359596,
   "extensions": {
-   "(none)": 8,
+   "(none)": 14,
    ".bru": 7,
    ".cjs": 6,
    ".html": 22,
    ".jpg": 23,
    ".js": 14,
-   ".json": 178,
-   ".md": 336,
+   ".json": 187,
+   ".md": 590,
    ".mjs": 9,
    ".png": 6,
-   ".py": 281,
-   ".sh": 5,
+   ".py": 315,
    ".ttf": 14,
    ".txt": 54,
-   ".woff2": 8
+   ".woff2": 8,
+   ".yaml": 57
   },
-  "files": 977,
+  "files": 1336,
   "symlinks": 0
  }
 }

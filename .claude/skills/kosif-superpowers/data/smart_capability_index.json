@@ -1,10 +1,10 @@
 {
   "schema": "kosif.smart-capability-index.v1",
   "origin": "data/powers/*.json (catalog); no original records changed",
-  "catalog_powers": 5601,
+  "catalog_powers": 5727,
   "group_count": 15,
   "family_count": 62,
-  "tool_count": 159,
+  "tool_count": 167,
   "groups": [
     {
       "id": "research",
@@ -17,9 +17,9 @@
       ],
       "keywords": "research web source citations evidence knowledge search بحث مصادر مراجع معرفة",
       "workflow": [],
-      "count": 56,
+      "count": 60,
       "status_counts": {
-        "documented": 23,
+        "documented": 27,
         "idea": 1,
         "install": 2,
         "key": 9,
@@ -27,8 +27,8 @@
       },
       "family_counts": {
         "atlas-research": 11,
-        "knowledge-graph": 21,
-        "web-research": 24
+        "knowledge-graph": 23,
+        "web-research": 26
       },
       "examples": [
         {
@@ -74,22 +74,22 @@
       ],
       "keywords": "think reasoning idea brainstorm strategy plan finance decision تحليل تخطيط ابتكار قرار",
       "workflow": [],
-      "count": 335,
+      "count": 359,
       "status_counts": {
-        "documented": 308,
+        "documented": 332,
         "install": 2,
         "proven": 17,
         "ready": 8
       },
       "family_counts": {
-        "atlas-mind": 54,
-        "atlas-strategy": 72,
+        "atlas-mind": 60,
+        "atlas-strategy": 87,
         "creativity-engine": 29,
         "mental-models": 63,
-        "planning-execution": 12,
+        "planning-execution": 14,
         "prompt-craft": 41,
         "strategy-finance": 18,
-        "thinking-core": 46
+        "thinking-core": 47
       },
       "examples": [
         {
@@ -130,17 +130,17 @@
       ],
       "keywords": "agent orchestration tool routing discover automation وكلاء أدوات توجيه بحث",
       "workflow": [],
-      "count": 248,
+      "count": 265,
       "status_counts": {
-        "documented": 57,
+        "documented": 65,
         "install": 15,
         "key": 2,
-        "proven": 153,
-        "ready": 21
+        "proven": 161,
+        "ready": 22
       },
       "family_counts": {
-        "agent-orchestration": 46,
-        "runnable-tools": 159,
+        "agent-orchestration": 55,
+        "runnable-tools": 167,
         "self-discovery": 43
       },
       "examples": [
@@ -190,22 +190,22 @@
         "الاختبار",
         "النشر"
       ],
-      "count": 578,
+      "count": 630,
       "status_counts": {
-        "documented": 394,
+        "documented": 441,
         "idea": 2,
         "install": 32,
         "key": 7,
-        "proven": 111,
-        "ready": 16,
+        "proven": 115,
+        "ready": 17,
         "seen": 16
       },
       "family_counts": {
-        "app-feature-transfer": 139,
-        "apps-artifacts": 23,
+        "app-feature-transfer": 155,
+        "apps-artifacts": 27,
         "atlas-build": 52,
-        "atlas-code": 247,
-        "code-engineering": 24,
+        "atlas-code": 277,
+        "code-engineering": 26,
         "ui-product-device": 93
       },
       "examples": [
@@ -254,9 +254,9 @@
         "الدمج في مشهد/لوحة",
         "التصدير والتحقق"
       ],
-      "count": 300,
+      "count": 306,
       "status_counts": {
-        "documented": 83,
+        "documented": 89,
         "idea": 8,
         "install": 31,
         "key": 4,
@@ -266,10 +266,10 @@
       },
       "family_counts": {
         "brand-logo-identity": 43,
-        "diagrams-explainers-code": 67,
-        "hand-drawn-draw-on": 63,
+        "diagrams-explainers-code": 69,
+        "hand-drawn-draw-on": 65,
         "pixel-retro-stylized": 32,
-        "shapes-morph-geometry": 95
+        "shapes-morph-geometry": 97
       },
       "examples": [
         {
@@ -317,9 +317,9 @@
         "التوليد الاختياري",
         "تصدير النتيجة"
       ],
-      "count": 319,
+      "count": 320,
       "status_counts": {
-        "documented": 95,
+        "documented": 96,
         "idea": 2,
         "install": 27,
         "key": 35,
@@ -328,7 +328,7 @@
         "seen": 22
       },
       "family_counts": {
-        "ai-generation": 93,
+        "ai-generation": 94,
         "atlas-media": 27,
         "color-palette-grading": 87,
         "media-image-audio": 41,
@@ -380,9 +380,9 @@
         "المحاكاة/التحريك",
         "الرندر والتحقق"
       ],
-      "count": 755,
+      "count": 758,
       "status_counts": {
-        "documented": 125,
+        "documented": 128,
         "idea": 4,
         "install": 258,
         "key": 31,
@@ -391,8 +391,8 @@
         "seen": 74
       },
       "family_counts": {
-        "3d-spatial": 52,
-        "engines-render-pipeline": 443,
+        "3d-spatial": 53,
+        "engines-render-pipeline": 445,
         "light-glow-bloom": 87,
         "particles-fluids-physics": 77,
         "texture-material": 96
@@ -445,23 +445,23 @@
         "التحريك والمونتاج",
         "التصدير"
       ],
-      "count": 1228,
+      "count": 1233,
       "status_counts": {
-        "documented": 269,
+        "documented": 271,
         "idea": 33,
         "install": 314,
         "key": 23,
         "proven": 117,
-        "ready": 180,
+        "ready": 183,
         "seen": 292
       },
       "family_counts": {
         "camera-composition-layout": 425,
         "characters-rigs": 51,
-        "easing-timing-rhythm": 102,
+        "easing-timing-rhythm": 106,
         "formats-platforms": 70,
         "story-direction-ideas": 95,
-        "transitions-cuts": 474,
+        "transitions-cuts": 475,
         "video-download": 11
       },
       "examples": [
@@ -622,9 +622,9 @@
         "الرسم والخرائط",
         "التصدير"
       ],
-      "count": 258,
+      "count": 262,
       "status_counts": {
-        "documented": 101,
+        "documented": 105,
         "idea": 1,
         "install": 34,
         "key": 7,
@@ -633,7 +633,7 @@
         "seen": 48
       },
       "family_counts": {
-        "atlas-data": 52,
+        "atlas-data": 56,
         "charts-data-infographic": 105,
         "data-analysis": 39,
         "maps-geo": 62
@@ -678,16 +678,16 @@
       ],
       "keywords": "document pdf word excel office writing report مستند تقرير كتابة وورد",
       "workflow": [],
-      "count": 138,
+      "count": 143,
       "status_counts": {
-        "documented": 94,
+        "documented": 99,
         "install": 8,
         "key": 4,
         "proven": 32
       },
       "family_counts": {
         "atlas-craft": 26,
-        "atlas-docs": 50,
+        "atlas-docs": 55,
         "documents-office": 34,
         "writing-humanizer": 28
       },
@@ -736,9 +736,9 @@
         "اختبارات الانحدار",
         "إثبات النتائج"
       ],
-      "count": 464,
+      "count": 469,
       "status_counts": {
-        "documented": 195,
+        "documented": 200,
         "idea": 5,
         "install": 94,
         "key": 15,
@@ -750,7 +750,7 @@
         "api-testing": 22,
         "qa-verification": 384,
         "security-safety": 23,
-        "verification-evals": 35
+        "verification-evals": 40
       },
       "examples": [
         {
@@ -1811,6 +1811,23 @@
       "what": "كاميرا مشي بمنظور الشخص الأول داخل لوحة، مجرة نقاط المعاني، مشهد «مجرة المراجعة»، وسرد ثلاثي بالتمرير / أفكار بلا كود جاهز. — First-person walks, embedding galaxies, an audit galaxy and scroll-driven 3D — no ready code."
     },
     {
+      "id": "3D-G01",
+      "family": "3d-spatial",
+      "group": "3d",
+      "domain": "motion",
+      "name_en": "Deterministic three.js render loop",
+      "name_ar": "حلقة رندر three.js حتمية",
+      "status": "documented",
+      "requires": [
+        "python3",
+        "chromium",
+        "npm:three"
+      ],
+      "proof": [],
+      "source": "3d-spatial.json",
+      "what": "حرّك المشهد بالزمن لا بعدد الإطارات، واضبط الألوان والدقة مرة واحدة، وفي التصدير اجعل الزمن مدخلًا تبحث إليه لا ساعة حقيقية. — Drive the scene by time, not frame count, set colour and resolution once, and for export make time an input you seek to, not the wall clock."
+    },
+    {
       "id": "AGENT-01",
       "family": "agent-orchestration",
       "group": "agents",
@@ -2471,6 +2488,130 @@
       "proof": [],
       "source": "agent-orchestration.json",
       "what": "استخرج ذاكرة من كل جلسة منتهية خاملة ثم ادمج، بمهام محجوزة وسقف توازٍ وتنقيح أسرار. — Extract a memory from each idle finished session, then consolidate, with leased jobs, a concurrency cap and secret redaction."
+    },
+    {
+      "id": "AGENT-47",
+      "family": "agent-orchestration",
+      "group": "agents",
+      "domain": "mind",
+      "name_en": "Checkpointed state graph with resume and approval interrupts",
+      "name_ar": "رسم حالة بنقاط حفظ واستئناف",
+      "status": "documented",
+      "requires": [],
+      "proof": [],
+      "source": "agent-orchestration.json",
+      "what": "اكتب سير العمل كعقد وحواف على حالة مشتركة، واحفظ نقطة بعد كل عقدة، وتوقف قبل العقد الخطرة لموافقة المستخدم. — Model the workflow as nodes and edges over one shared state, checkpoint after every node, and pause before risky nodes for the user's approval."
+    },
+    {
+      "id": "AGENT-48",
+      "family": "agent-orchestration",
+      "group": "agents",
+      "domain": "mind",
+      "name_en": "Role-goal crew with expected outputs",
+      "name_ar": "فريق بأدوار ومهام ومخرج متوقع",
+      "status": "documented",
+      "requires": [],
+      "proof": [],
+      "source": "agent-orchestration.json",
+      "what": "لكل وكيل دور وهدف وحدود، ولكل مهمة وصف ومخرج متوقع مكتوب ووكيل مسؤول ومهام سابقة تغذيها. — Each agent has a role, a goal and limits; each task has a description, a written expected output, one owner and the earlier tasks that feed it."
+    },
+    {
+      "id": "AGENT-49",
+      "family": "agent-orchestration",
+      "group": "agents",
+      "domain": "mind",
+      "name_en": "SOP assembly line with document handoffs",
+      "name_ar": "خط إنتاج بإجراءات قياسية ووثائق تسليم",
+      "status": "documented",
+      "requires": [],
+      "proof": [],
+      "source": "agent-orchestration.json",
+      "what": "كل دور ينشر وثيقة منظمة بقالب ثابت (متطلبات، تصميم، قائمة مهام، كود، تقرير اختبار)، والدور التالي يقرأ الوثيقة لا المحادثة. — Each role publishes a structured document from a fixed template, and the next role reads the document, not the chat."
+    },
+    {
+      "id": "AGENT-50",
+      "family": "agent-orchestration",
+      "group": "agents",
+      "domain": "mind",
+      "name_en": "Memory decision step: add, update, delete or no-op",
+      "name_ar": "قرار الذاكرة: إضافة أو تحديث أو حذف أو لا شيء",
+      "status": "ready",
+      "requires": [
+        "python3"
+      ],
+      "proof": [
+        "kosif-tool/.claude/skills/kosif-superpowers/scripts/memory_ops.py",
+        "kosif-tool/.claude/skills/kosif-superpowers/evals/test_memory_ops.py"
+      ],
+      "source": "agent-orchestration.json",
+      "what": "قبل حفظ أي معلومة قارنها بالمحفوظ: جديدة تُضاف، وتعديل لقيمة قديمة يُحدّث مع حفظ القديم في السجل، والتراجع يحذف، والمكرر لا يُحفظ. — Before storing a fact compare it with the store: new is added, a changed value updates with the old one kept in history, a retraction deletes, a du"
+    },
+    {
+      "id": "AGENT-51",
+      "family": "agent-orchestration",
+      "group": "agents",
+      "domain": "mind",
+      "name_en": "Tiered self-editing memory",
+      "name_ar": "ذاكرة بطبقات يحررها الوكيل",
+      "status": "documented",
+      "requires": [],
+      "proof": [],
+      "source": "agent-orchestration.json",
+      "what": "كتل صغيرة دائمة في السياق (من المستخدم، ما المشروع) بحد حجم، ومخزن أرشيفي يُبحث فيه عند الحاجة، والوكيل يعدّل الكتل بأدوات صريحة. — Small always-in-context blocks with size limits, an archival store searched on demand, and explicit tools for the agent to edit the blocks."
+    },
+    {
+      "id": "AGENT-52",
+      "family": "agent-orchestration",
+      "group": "agents",
+      "domain": "mind",
+      "name_en": "Session observation capture and injection",
+      "name_ar": "التقاط ملاحظات الجلسة وحقنها في التالية",
+      "status": "documented",
+      "requires": [],
+      "proof": [],
+      "source": "agent-orchestration.json",
+      "what": "سجّل ما فعله الوكيل في الجلسة (أوامر، ملفات، قرارات) واضغطه في ملخص عند الانتهاء، واحقن الملخص المناسب في بداية الجلسة التالية. — Record what the agent did (commands, files, decisions), compress it into a summary at the end, and inject the relevant summary at the next session's s"
+    },
+    {
+      "id": "AGENT-53",
+      "family": "agent-orchestration",
+      "group": "agents",
+      "domain": "mind",
+      "name_en": "Code-as-action agent",
+      "name_ar": "وكيل يتصرف بالكود",
+      "status": "documented",
+      "requires": [
+        "python3"
+      ],
+      "proof": [],
+      "source": "agent-orchestration.json",
+      "what": "بدل أن يطلب الوكيل أداة واحدة كل خطوة، يكتب مقطع بايثون يستدعي الأدوات كدوال ويجمع نتائجها، ويُنفَّذ في بيئة معزولة بحدود. — Instead of one tool call per step the agent writes a Python snippet that calls tools as functions and combines their results, run in a sandbox with limits."
+    },
+    {
+      "id": "AGENT-54",
+      "family": "agent-orchestration",
+      "group": "agents",
+      "domain": "mind",
+      "name_en": "Tripwire guardrails and specialist handoffs",
+      "name_ar": "حواجز تفعيل وتسليم لمتخصص",
+      "status": "documented",
+      "requires": [],
+      "proof": [],
+      "source": "agent-orchestration.json",
+      "what": "فحص دخول يعمل بالتوازي مع الوكيل ويوقفه فورًا إن انطلق، وفحص خروج على الناتج النهائي، وتسليم المهمة لوكيل متخصص كاستدعاء أداة بسجل مفلتر. — An input check that runs alongside the agent and halts it when tripped, an output check on the final result, and handoff to a specialist as "
+    },
+    {
+      "id": "AGENT-55",
+      "family": "agent-orchestration",
+      "group": "agents",
+      "domain": "mind",
+      "name_en": "Replayable event-stream agent",
+      "name_ar": "تيار أحداث قابل لإعادة التشغيل",
+      "status": "documented",
+      "requires": [],
+      "proof": [],
+      "source": "agent-orchestration.json",
+      "what": "كل فعل وكل ملاحظة يُضاف إلى تيار أحداث واحد مرتب، والتنفيذ في بيئة معزولة، والأحداث القديمة تُلخَّص لا تُحذف. — Every action and observation is appended to one ordered event stream, execution happens in a sandbox, and old events are condensed, not dropped."
     },
     {
       "id": "GEN-01",
@@ -4214,6 +4355,23 @@
       ],
       "source": "ai-generation.json",
       "what": "ولّد لقطة طويلة متصلة ثم قصّها على إيقاع المرجع، بدل توليد كل لقطة وحدها. — Generate one long continuous take and cut it to the reference rhythm instead of generating every shot separately."
+    },
+    {
+      "id": "GEN-G01",
+      "family": "ai-generation",
+      "group": "images",
+      "domain": "motion",
+      "name_en": "Topic-to-short pipeline with reviewable stages",
+      "name_ar": "خط إنتاج من موضوع إلى فيديو قصير",
+      "status": "documented",
+      "requires": [
+        "node",
+        "python3",
+        "chromium"
+      ],
+      "proof": [],
+      "source": "ai-generation.json",
+      "what": "موضوع ← نص ← كلمات بحث لكل جملة ← لقطات مرخصة ← صوت ← ترجمة بتوقيت الكلمات ← تجميع مع خفض الموسيقى، وكل مرحلة ملف يُراجع قبل التالية. — Topic → script → search terms per sentence → licensed clips → voice → word-timed subtitles → assembly with ducked music, each stage a file revie"
     },
     {
       "id": "API-01",
@@ -7213,6 +7371,282 @@
       "what": "افحص أي حزمة مهارة خارجية قبل اعتمادها: نص فقط، حجم محدود، بلا ملفات تنفيذية، ومصدر معروف — vet third-party skill packages before importing them"
     },
     {
+      "id": "APPX-140",
+      "family": "app-feature-transfer",
+      "group": "software",
+      "domain": "build",
+      "name_en": "Caption lines with reading rules",
+      "name_ar": "سطور ترجمة بقواعد قراءة",
+      "status": "proven",
+      "requires": [
+        "pip:faster-whisper"
+      ],
+      "proof": [
+        "kosif-tool/.claude/skills/kosif-superpowers/scripts/caption_lines.py",
+        "kosif-tool/.claude/skills/kosif-superpowers/evals/test_caption_lines.py",
+        "kosif-tool/.claude/skills/kosif-superpowers/references/app-studies/montaji.md"
+      ],
+      "source": "app-feature-transfer.json",
+      "what": "يحوّل توقيت الكلمات إلى سطور ترجمة قصيرة مقروءة: حد للكلمات والحروف والمدة، وكسر عند الوقفة ونهاية الجملة (؟ ؛ . !) وعند الفاصلة بعد كلمتين، وسد الفجوات القصيرة، وحد أدنى للمدة بلا تداخل — word timings to readable SRT/VTT/JSON lines."
+    },
+    {
+      "id": "APPX-141",
+      "family": "app-feature-transfer",
+      "group": "software",
+      "domain": "build",
+      "name_en": "Screen speech-model inventions",
+      "name_ar": "تنقية هلوسة نموذج التفريغ",
+      "status": "proven",
+      "requires": [
+        "pip:faster-whisper"
+      ],
+      "proof": [
+        "kosif-tool/.claude/skills/kosif-superpowers/scripts/caption_lines.py",
+        "kosif-tool/.claude/skills/kosif-superpowers/evals/test_caption_lines.py",
+        "kosif-tool/.claude/skills/kosif-superpowers/references/app-studies/montaji.md"
+      ],
+      "source": "app-feature-transfer.json",
+      "what": "يحذف من الترجمة ما يخترعه نموذج الكلام فوق الصمت أو الموسيقى: حقوق الترجمة، و«اشتركوا في القناة»، و«شكرا للمشاهدة»، ووسوم الصوت، والنقط وحدها، وتكرار السطر نفسه ثلاث مرات — ويسرد المحذوف ليرجعه إنسان."
+    },
+    {
+      "id": "APPX-142",
+      "family": "app-feature-transfer",
+      "group": "software",
+      "domain": "build",
+      "name_en": "One colour look for every renderer",
+      "name_ar": "لوك ألوان واحد لكل المحركات",
+      "status": "proven",
+      "requires": [
+        "ffmpeg",
+        "python3"
+      ],
+      "proof": [
+        "kosif-tool/.claude/skills/kosif-superpowers/scripts/look_pipeline.py",
+        "kosif-tool/.claude/skills/kosif-superpowers/evals/test_look_pipeline.py",
+        "kosif-tool/.claude/skills/kosif-superpowers/references/app-studies/montaji.md"
+      ],
+      "source": "app-feature-transfer.json",
+      "what": "اللوك أرقام: خطوة خطية لكل قناة ثم مصفوفة 3×3، تخرج منها فلاتر ffmpeg (lutrgb + colorchannelmixer) وSVG/CSS وGLSL بالأرقام نفسها؛ 11 لوك (سينمائي، دافئ، أبيض وأسود، ليلي هادئ…) مع شدة وتعديل يدوي."
+    },
+    {
+      "id": "APPX-143",
+      "family": "app-feature-transfer",
+      "group": "software",
+      "domain": "build",
+      "name_en": "Measured preview/export colour parity",
+      "name_ar": "إثبات تطابق المعاينة والتصدير بالقياس",
+      "status": "proven",
+      "requires": [
+        "ffmpeg",
+        "python3"
+      ],
+      "proof": [
+        "kosif-tool/.claude/skills/kosif-superpowers/scripts/look_pipeline.py",
+        "kosif-tool/.claude/skills/kosif-superpowers/evals/test_look_pipeline.py",
+        "kosif-tool/.claude/skills/kosif-superpowers/references/app-studies/montaji.md"
+      ],
+      "source": "app-feature-transfer.json",
+      "what": "يمرّر إطار اختبار في ffmpeg ويقارن كل بكسل بالمعادلة المرجعية؛ أقصى فرق هنا 1 من 255 في كل اللوكات — قياس لا ادعاء."
+    },
+    {
+      "id": "APPX-144",
+      "family": "app-feature-transfer",
+      "group": "software",
+      "domain": "build",
+      "name_en": "Magnetic main track with clamped transitions",
+      "name_ar": "مسار رئيسي مغناطيسي بانتقالات محسوبة",
+      "status": "documented",
+      "requires": [
+        "ffmpeg",
+        "python3"
+      ],
+      "proof": [
+        "kosif-tool/.claude/skills/kosif-superpowers/references/app-studies/montaji.md"
+      ],
+      "source": "app-feature-transfer.json",
+      "what": "اللقطات تتبع بعضها بلا فراغ؛ الانتقال يُخزَّن على اللقطة الخارجة ولا يزيد على نصف أي من الجارتين؛ في ffmpeg: xfade بإزاحة = الطول المتراكم − مدة الانتقال، وacrossfade للصوت، وconcat عند غياب الانتقال."
+    },
+    {
+      "id": "APPX-145",
+      "family": "app-feature-transfer",
+      "group": "software",
+      "domain": "build",
+      "name_en": "Any audio speed with an atempo chain",
+      "name_ar": "أي سرعة صوت بسلسلة atempo",
+      "status": "documented",
+      "requires": [
+        "ffmpeg"
+      ],
+      "proof": [
+        "kosif-tool/.claude/skills/kosif-superpowers/references/app-studies/montaji.md"
+      ],
+      "source": "app-feature-transfer.json",
+      "what": "atempo يقبل 0.5 إلى 100 فقط؛ قسّم المعامل إلى خطوات (0.25 = 0.5×0.5) ليبقى الصوت متزامنًا مع setpts للفيديو."
+    },
+    {
+      "id": "APPX-146",
+      "family": "app-feature-transfer",
+      "group": "software",
+      "domain": "build",
+      "name_en": "Cheap blurred background fill",
+      "name_ar": "خلفية مموهة رخيصة للمقاس العمودي",
+      "status": "documented",
+      "requires": [
+        "ffmpeg"
+      ],
+      "proof": [
+        "kosif-tool/.claude/skills/kosif-superpowers/references/app-studies/montaji.md"
+      ],
+      "source": "app-feature-transfer.json",
+      "what": "لملء 9:16 بلقطة أفقية: صغّر نسخة إلى ربع المقاس، املأ وقص، طبّق gblur، ثم كبّر — أسرع بكثير من التمويه بالحجم الكامل والنتيجة نفسها بصريًا."
+    },
+    {
+      "id": "APPX-147",
+      "family": "app-feature-transfer",
+      "group": "software",
+      "domain": "build",
+      "name_en": "Arabic text raster in reference units",
+      "name_ar": "نص عربي مرسوم بوحدات مرجعية",
+      "status": "documented",
+      "requires": [
+        "ffmpeg"
+      ],
+      "proof": [
+        "kosif-tool/.claude/skills/kosif-superpowers/references/app-studies/montaji.md"
+      ],
+      "source": "app-feature-transfer.json",
+      "what": "ارسم النص في المتصفح (تشكيل عربي صحيح وحدّ وظل وخلفية مستديرة) بقياسات مرجعية للضلع القصير 1080 ثم كبّر مرة واحدة، فتبقى فواصل الأسطر واحدة في كل مقاس؛ قص الصورة على حدود النص بعد الدوران، ودع ffmpeg يحرّكها ويخفيها بتعابير تطابق منحنى المعاينة."
+    },
+    {
+      "id": "APPX-148",
+      "family": "app-feature-transfer",
+      "group": "software",
+      "domain": "build",
+      "name_en": "Media prep for an editor",
+      "name_ar": "تجهيز الوسائط لمحرر",
+      "status": "documented",
+      "requires": [
+        "ffmpeg"
+      ],
+      "proof": [
+        "kosif-tool/.claude/skills/kosif-superpowers/references/app-studies/montaji.md"
+      ],
+      "source": "app-feature-transfer.json",
+      "what": "عند الاستيراد: افحص بـ ffprobe (الدوران 90° يبدّل العرض والارتفاع)، صورة غلاف عند 10% (حتى ثانية)، شريط مصغرات من لقطات بحث سريع على دفعات ثم tile، غلاف موجة 50 قيمة/ث بجذر تربيعي، وبروكسي فقط إذا كان الترميز أو صيغة البكسل أو الحاوية لا تعمل في المتصفح."
+    },
+    {
+      "id": "APPX-149",
+      "family": "app-feature-transfer",
+      "group": "software",
+      "domain": "build",
+      "name_en": "Hardware encoder with software fallback",
+      "name_ar": "ترميز بالعتاد مع رجوع للبرمجي",
+      "status": "documented",
+      "requires": [
+        "ffmpeg"
+      ],
+      "proof": [
+        "kosif-tool/.claude/skills/kosif-superpowers/references/app-studies/montaji.md"
+      ],
+      "source": "app-feature-transfer.json",
+      "what": "جرّب مرمّز العتاد أولًا (VideoToolbox/NVENC) بمعدل بت = بت لكل بكسل × العرض × الارتفاع × الإطارات، وإن فشل فتح المرمّز أعد المحاولة بـ libx264/libx265 بـ CRF؛ احذف الملف الناقص عند الفشل."
+    },
+    {
+      "id": "APPX-150",
+      "family": "app-feature-transfer",
+      "group": "software",
+      "domain": "build",
+      "name_en": "A safe local editor server",
+      "name_ar": "خادم محلي آمن لأداة مونتاج",
+      "status": "documented",
+      "requires": [],
+      "proof": [
+        "kosif-tool/.claude/skills/kosif-superpowers/references/app-studies/montaji.md"
+      ],
+      "source": "app-feature-transfer.json",
+      "what": "لأي أداة تفتح واجهة على localhost: استمع على 127.0.0.1 فقط، اقبل Host معروفًا فقط (ضد DNS rebinding)، واطلب رأسًا خاصًا في كل طلب يغيّر شيئًا ليجبر المتصفح على preflight فلا تتحكم مواقع أخرى بالأداة، وطبّع المسارات، وتحقق من المعرّفات بنمط، واخرج عند الخمول أو موت العملية الأم."
+    },
+    {
+      "id": "APPX-151",
+      "family": "app-feature-transfer",
+      "group": "software",
+      "domain": "build",
+      "name_en": "Verified model downloads",
+      "name_ar": "تنزيل نماذج موثَّق",
+      "status": "documented",
+      "requires": [
+        "network"
+      ],
+      "proof": [
+        "kosif-tool/.claude/skills/kosif-superpowers/references/app-studies/montaji.md"
+      ],
+      "source": "app-feature-transfer.json",
+      "what": "نزّل النموذج إلى ملف .part مع تقدم مرئي وإلغاء، احسب SHA-256 أثناء التنزيل وقارنه ببصمة مثبتة، ثم أعد التسمية ذريًا؛ مرآة محلية للاختبارات فقط."
+    },
+    {
+      "id": "APPX-152",
+      "family": "app-feature-transfer",
+      "group": "software",
+      "domain": "build",
+      "name_en": "Undo that groups slider drags",
+      "name_ar": "تراجع يجمع سحب المنزلقات",
+      "status": "documented",
+      "requires": [],
+      "proof": [
+        "kosif-tool/.claude/skills/kosif-superpowers/references/app-studies/montaji.md"
+      ],
+      "source": "app-feature-transfer.json",
+      "what": "كل تعديل يمر بدالة واحدة تحفظ لقطة JSON (حتى 150)؛ التعديلات المتتالية بالمفتاح نفسه خلال ثانية ونصف خطوة واحدة؛ حفظ تلقائي مؤجل 0.7 ث بكتابة ذرية ونسخة .bak."
+    },
+    {
+      "id": "APPX-153",
+      "family": "app-feature-transfer",
+      "group": "software",
+      "domain": "build",
+      "name_en": "Self-test inside the real host",
+      "name_ar": "اختبار ذاتي داخل المضيف الحقيقي",
+      "status": "documented",
+      "requires": [],
+      "proof": [
+        "kosif-tool/.claude/skills/kosif-superpowers/references/app-studies/montaji.md"
+      ],
+      "source": "app-feature-transfer.json",
+      "what": "افتح الواجهة بمعامل selftest فتجري خطوات حقيقية (لون، نص عربي، مشروع، استيراد، فك ترميز، فلتر، تصدير، ترجمة) داخل المتصفح الفعلي، كل خطوة ok/error، مع فحص بكسلات (نسبة الإضاءة، رمادية الأبيض والأسود)، ويُكتب التقرير إلى ملف."
+    },
+    {
+      "id": "APPX-154",
+      "family": "app-feature-transfer",
+      "group": "software",
+      "domain": "build",
+      "name_en": "Content-addressed media cache with resume",
+      "name_ar": "ذاكرة وسائط بالمحتوى واستئناف",
+      "status": "documented",
+      "requires": [],
+      "proof": [
+        "kosif-tool/.claude/skills/kosif-superpowers/references/app-studies/montaji.md"
+      ],
+      "source": "app-feature-transfer.json",
+      "what": "معرّف الوسائط = بصمة (المسار، الحجم، وقت التعديل)، فلا يُعاد تجهيز ملف لم يتغير؛ طابور عمل باثنين معًا، ويستأنف عند التشغيل التالي ما انقطع؛ الأصل لا يُنسخ ولا يُعدَّل."
+    },
+    {
+      "id": "APPX-155",
+      "family": "app-feature-transfer",
+      "group": "software",
+      "domain": "build",
+      "name_en": "Offline Arabic speech stack",
+      "name_ar": "تفريغ عربي محلي بلا إنترنت",
+      "status": "documented",
+      "requires": [
+        "pip:faster-whisper",
+        "network"
+      ],
+      "proof": [
+        "kosif-tool/.claude/skills/kosif-superpowers/references/app-studies/montaji.md"
+      ],
+      "source": "app-feature-transfer.json",
+      "what": "whisper.cpp مع large-v3-turbo-q5_0 (574 ميجا، الأدق للعربي) أو small-q5_1 (190 ميجا) وSilero VAD، بكلمة لكل مدخل؛ يُمزج صوت التايملاين إلى 16 كيلوهرتز أحادي قبل التفريغ."
+    },
+    {
       "id": "APP-01",
       "family": "apps-artifacts",
       "group": "software",
@@ -7571,6 +8005,68 @@
       "proof": [],
       "source": "apps-artifacts.json",
       "what": "تدقيق الروابط أو ملفات HTML المحلية لإمكانية الوصول. — Audit URLs or local HTML for accessibility from the CLI. (Pa11y, ★4.6k, LGPL-3.0)."
+    },
+    {
+      "id": "APP-24",
+      "family": "apps-artifacts",
+      "group": "software",
+      "domain": "build",
+      "name_en": "Check an interactive challenge is solvable before posing it",
+      "name_ar": "تحدٍّ قابل للحل قبل عرضه",
+      "status": "documented",
+      "requires": [],
+      "proof": [],
+      "source": "apps-artifacts.json",
+      "what": "الهدف يُولّد من نموذج الدرس نفسه ويُفحص أنه ممكن ضمن حدود الأدوات، وإلا يقول الدرس صراحة إنه غير ممكن. — The target comes from the lesson's own model and is checked reachable within the controls' limits; otherwise the lesson says plainly it cannot be reached."
+    },
+    {
+      "id": "APP-25",
+      "family": "apps-artifacts",
+      "group": "software",
+      "domain": "build",
+      "name_en": "A 1-2-5 gauge scale and a two-length glossary",
+      "name_ar": "مقياس 1-2-5 وتعريف بطولين",
+      "status": "documented",
+      "requires": [
+        "python3"
+      ],
+      "proof": [
+        "kosif-tool/.claude/skills/kosif-superpowers/evals/test_lesson_integrity.py"
+      ],
+      "source": "apps-artifacts.json",
+      "what": "سعة العدّاد = أصغر 1 أو 2 أو 5 × 10ⁿ تملؤها القيمة 90% على الأكثر؛ ولكل مصطلح تعريف كامل وتعريف قصير للتلميح. — Gauge capacity is the smallest 1, 2 or 5 x 10^n the value fills to at most 90%; each term has a full and a short definition."
+    },
+    {
+      "id": "APP-26",
+      "family": "apps-artifacts",
+      "group": "software",
+      "domain": "build",
+      "name_en": "One sound sprite cut from real CC0 recordings",
+      "name_ar": "مؤثرات من تسجيلات حقيقية في ملف واحد",
+      "status": "documented",
+      "requires": [
+        "python3"
+      ],
+      "proof": [
+        "kosif-tool/.claude/skills/kosif-superpowers/evals/test_lesson_integrity.py"
+      ],
+      "source": "apps-artifacts.json",
+      "what": "كل المؤثرات في ملف واحد مضبوط الجهارة مع قائمة مناطق وعلامة محاذاة وجدول اعتمادات برخصة كل مؤثر. — Every effect in one loudness-matched file with a region manifest, an alignment marker and a credits table naming each cue's licence."
+    },
+    {
+      "id": "APP-27",
+      "family": "apps-artifacts",
+      "group": "software",
+      "domain": "build",
+      "name_en": "Motion and display preferences and an inline loader",
+      "name_ar": "تفضيلات الحركة والعرض وشاشة تحميل فورية",
+      "status": "documented",
+      "requires": [
+        "npm:three"
+      ],
+      "proof": [],
+      "source": "apps-artifacts.json",
+      "what": "احترام تقليل الحركة ووضع ثابت محفوظ ووضع بروجكتر وبديل نصي حين يفشل WebGL أو JavaScript ورابط تخطٍّ، وCSS شاشة التحميل داخل الصفحة. — Honour reduced motion, a remembered still mode, a projector mode, a text path when WebGL or JavaScript fails, a skip link, and inline loader CSS."
     },
     {
       "id": "ARL-01",
@@ -12831,7 +13327,9 @@
       "name_en": "Data lifecycle governance for data sent through a SaaS vendor",
       "name_ar": "دورة حياة البيانات المارّة بخدمة خارجية: تصنيف واحتفاظ وحذف",
       "status": "documented",
-      "requires": [],
+      "requires": [
+        "key:video-gen"
+      ],
       "proof": [
         "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/1836-clay-pack/5269-clay-data-handling",
         "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/1869-ideogram-pack/5949-ideogram-data-handling"
@@ -12975,6 +13473,486 @@
       ],
       "source": "atlas-code.json",
       "what": "خريطة توجيه لنحو 30 مرحلة تتكرر في حزم تكامل الخدمات بالأطلس (أكثر من 90 مزوّدًا): لكل مرحلة القدرة المقابلة في سوبر باور، والتفاصيل الخاصة بالمزوّد تبقى في مجلد الأطلس. — A routing map of the ~30 stages that repeat across the Atlas vendor packs (90+ vendors): each stage points t"
+    },
+    {
+      "id": "ACODE-248",
+      "family": "atlas-code",
+      "group": "software",
+      "domain": "code",
+      "name_en": "Ecosystem-native dependency audit: vulnerabilities, lag, licences, unused deps",
+      "name_ar": "تدقيق التبعيات بأدوات كل منظومة: ثغرات وتأخر إصدارات ورخص وتبعيات غير مستخدمة",
+      "status": "documented",
+      "requires": [
+        "node"
+      ],
+      "proof": [
+        "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/63-dependency-audit/103-deps-audit-workflow",
+        "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/2167-rust-plugin/7864-cargo-machete"
+      ],
+      "source": "atlas-code.json",
+      "what": "يدقق تبعيات المشروع بتشغيل أداة كل منظومة نفسها (npm/pip/cargo/go/…) ويبلغ فقط بما تقوله الأدوات وقواعد البيانات، مع وسم كل معلومة بدرجة دليلها، ودون أي إصلاح قسري. — Audits a project's dependencies with each ecosystem's own tools and reports only what tools and advisory database"
+    },
+    {
+      "id": "ACODE-249",
+      "family": "atlas-code",
+      "group": "software",
+      "domain": "code",
+      "name_en": "OpenTelemetry instrumentation audit: SDK setup, span hygiene, propagation",
+      "name_ar": "تدقيق قياس OpenTelemetry: إعداد SDK ونظافة الـspans وانتشار السياق",
+      "status": "documented",
+      "requires": [],
+      "proof": [
+        "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/75-opentelemetry/138-otel-audit-workflow"
+      ],
+      "source": "atlas-code.json",
+      "what": "يراجع قياس OpenTelemetry قائمًا ويخرج تقرير أعطال وإصلاحات: إعداد المزوّد والموارد، نظافة الـspans، ميزانية السمات وخلوها من البيانات الشخصية، انتشار السياق عبر async والخيوط والطوابير، والـexporters والـsampling. — Audits an existing OTel setup and reports what is broken, where,"
+    },
+    {
+      "id": "ACODE-250",
+      "family": "atlas-code",
+      "group": "software",
+      "domain": "code",
+      "name_en": "PWA audit and deterministic launch checklist",
+      "name_ar": "تدقيق تطبيق ويب تقدمي (PWA) وقائمة الإطلاق الحتمية",
+      "status": "documented",
+      "requires": [
+        "chromium"
+      ],
+      "proof": [
+        "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/79-pwa-expert/145-pwa-audit-workflow",
+        "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/79-pwa-expert/146-pwa-checklist-workflow"
+      ],
+      "source": "atlas-code.json",
+      "what": "يفحص تطبيق PWA محليًا أو على رابط حي: المانيفست ومعايير التثبيت وتسجيل الـservice worker ووسوم iOS ورؤوس الأمان والعمل دون اتصال وCore Web Vitals، مع وضعين: تدقيق عدائي للعيوب، وقائمة إطلاق حتمية PASS/FAIL/N-A لكل بند. — Audits a PWA locally or live, in two modes: an adversarial "
+    },
+    {
+      "id": "ACODE-251",
+      "family": "atlas-code",
+      "group": "software",
+      "domain": "code",
+      "name_en": "PII-redacted payload review before sending to an external AI",
+      "name_ar": "تجهيز مدخلات منقّحة من البيانات الشخصية قبل إرسالها لخدمة ذكاء اصطناعي خارجية",
+      "status": "documented",
+      "requires": [],
+      "proof": [
+        "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/229-mas-ai-workflows/718-ai-pii-redaction-review"
+      ],
+      "source": "atlas-code.json",
+      "what": "يعد نسخة من البيانات مزالًا منها ما لا يلزم ومستبدلًا فيها المعرّفات بعلامات ثابتة قبل أي إرسال خارجي، ويفحص المرفقات والأسماء والسجلات أيضًا، ويصف النتيجة بدقة: منقّحة أو مستعارة، لا مجهولة مضمونة. — Prepares a field-aware redacted payload with stable placeholders before any ext"
+    },
+    {
+      "id": "ACODE-252",
+      "family": "atlas-code",
+      "group": "software",
+      "domain": "code",
+      "name_en": "Visual proof of a terminal UI through a real PTY and a local browser",
+      "name_ar": "إثبات بصري لواجهة طرفية (TUI) عبر PTY حقيقي ومتصفح محلي",
+      "status": "documented",
+      "requires": [],
+      "proof": [
+        "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/891-codex-tui-proof/2013-validate-tui-in-codex"
+      ],
+      "source": "atlas-code.json",
+      "what": "يتحقق من واجهة طرفية تفاعلية بتشغيلها في PTY حقيقي بحجم ثابت معروض في صفحة محلية على 127.0.0.1، وقيادتها بلوحة المفاتيح من المتصفح وأخذ لقطات وسجل جلسة، دون التحكم في سطح مكتب المستخدم. — Validates an interactive TUI by running it in a real fixed-size PTY rendered on a localhost "
+    },
+    {
+      "id": "ACODE-253",
+      "family": "atlas-code",
+      "group": "software",
+      "domain": "code",
+      "name_en": "Dependabot config review and upgrade-PR triage",
+      "name_ar": "مراجعة إعداد Dependabot وفرز طلبات الترقية التي يفتحها",
+      "status": "documented",
+      "requires": [],
+      "proof": [
+        "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/968-review-dependabot-config/2252-review-dependabot-config",
+        "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/3168-dependabot-review/13497-dependabot-review"
+      ],
+      "source": "atlas-code.json",
+      "what": "يكشف أخطاء إعداد Dependabot الصامتة (منظومات أو مجلدات غير مدرجة، وسوم غير موجودة، أسرار ناقصة تُفشل CI) ثم يفرز طلبات الترقية المفتوحة بحكم لكل طلب: ما تغيّر upstream، ما قد ينكسر، ما يلمسه في الكود، وهل يُدمج. — Finds Dependabot's silent misconfigurations, then triages open upg"
+    },
+    {
+      "id": "ACODE-254",
+      "family": "atlas-code",
+      "group": "software",
+      "domain": "code",
+      "name_en": "Browser-extension manifest audit: least privilege and MV3",
+      "name_ar": "تدقيق أذونات إضافة المتصفح وفق أقل صلاحية وManifest V3",
+      "status": "documented",
+      "requires": [],
+      "proof": [
+        "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/2249-browser-extension-engineering/8563-manifest-permissions-audit"
+      ],
+      "source": "atlas-code.json",
+      "what": "يراجع manifest.json لإضافة متصفح: كل إذن يحتاج ميزة تبرره وإلا يُحذف، تضييق أذونات المواقع أو استبدالها بـactiveTab، نقل النادر إلى optional، وشروط MV3 (service worker، لا كود من بعيد). — Audits an extension manifest so every grant is justified by a feature, narrowed or made opti"
+    },
+    {
+      "id": "ACODE-255",
+      "family": "atlas-code",
+      "group": "software",
+      "domain": "code",
+      "name_en": "Schematic and PCB layout review before fab",
+      "name_ar": "مراجعة المخطط ولوحة PCB قبل التصنيع",
+      "status": "documented",
+      "requires": [],
+      "proof": [
+        "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/2313-hardware-electronics-engineering/8874-review-schematic-and-layout"
+      ],
+      "source": "atlas-code.json",
+      "what": "مراجعة منضبطة قبل إرسال اللوحة للتصنيع تلتقط أخطاء النسخة الأولى: ERC/DRC، البصمات والأطراف والقطبية مقابل datasheet، خطوط الطاقة، فصل الطاقة عند الطرف، مسارات العودة والأرضي، الـstack-up والممانعة، وقابلية التصنيع والتجميع والاختبار. — A disciplined pre-fab review that catches f"
+    },
+    {
+      "id": "ACODE-256",
+      "family": "atlas-code",
+      "group": "software",
+      "domain": "code",
+      "name_en": "macOS code-signing and entitlements failure diagnosis",
+      "name_ar": "تشخيص أعطال توقيع تطبيقات macOS والـentitlements",
+      "status": "documented",
+      "requires": [
+        "os:macos"
+      ],
+      "proof": [
+        "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/2688-build-macos-apps/10305-signing-entitlements"
+      ],
+      "source": "atlas-code.json",
+      "what": "حين يرفض macOS تشغيل تطبيق أو يشكو من توقيع أو entitlement أو sandbox، يفحص الحزمة ويصنف العطل (بلا توقيع، هوية خاطئة، entitlement غير مطابق، hardened runtime، sandbox، توقيع متداخل، متطلبات notarization) ويعطي أقصر مسار إصلاح. — Inspects the bundle, classifies the signing failur"
+    },
+    {
+      "id": "ACODE-257",
+      "family": "atlas-code",
+      "group": "software",
+      "domain": "code",
+      "name_en": "macOS SwiftUI apps: lightweight Logger telemetry and minimal-chrome Liquid Glass",
+      "name_ar": "تطبيقات macOS بـSwiftUI: قياس خفيف بـLogger وتبنّي Liquid Glass بأقل تخصيص",
+      "status": "documented",
+      "requires": [
+        "os:macos"
+      ],
+      "proof": [
+        "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/2688-build-macos-apps/10308-telemetry",
+        "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/2688-build-macos-apps/10303-liquid-glass"
+      ],
+      "source": "atlas-code.json",
+      "what": "طريقتان لتطبيق ماك: إضافة سجلات OSLog Logger بنظام subsystem/category سطرًا واحدًا لكل فعل والتحقق منها بـlog stream، وتحديث الواجهة لنظام Liquid Glass بإزالة الخلفيات والتعتيم المخصص أولًا والاعتماد على مكونات النظام قبل أي glassEffect مخصص. — Two macOS app methods: Logger telem"
+    },
+    {
+      "id": "ACODE-258",
+      "family": "atlas-code",
+      "group": "software",
+      "domain": "code",
+      "name_en": "SystemVerilog review: types, always blocks, synthesisability",
+      "name_ar": "مراجعة كود SystemVerilog: الأنواع وكتل always والقابلية للتوليف",
+      "status": "documented",
+      "requires": [],
+      "proof": [
+        "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/2807-hdl/11336-review-systemverilog"
+      ],
+      "source": "atlas-code.json",
+      "what": "مراجعة مرتبة لملفات SystemVerilog وفق IEEE 1800-2017: logic بدل wire/reg، always_ff/always_comb بدل always @، unique/priority case، الإسناد الصحيح، منافذ ANSI وتوصيلات بالاسم، الحزم للأنواع المشتركة، وكشف الـlatches وعدم تطابق العرض. — A prioritised SystemVerilog review covering "
+    },
+    {
+      "id": "ACODE-259",
+      "family": "atlas-code",
+      "group": "software",
+      "domain": "code",
+      "name_en": "UI state completeness and edge-case audit for React components",
+      "name_ar": "تدقيق حالات الواجهة الأربع وحالات الحدود في مكونات React",
+      "status": "documented",
+      "requires": [
+        "npm:react"
+      ],
+      "proof": [
+        "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/3000-pf-code-review/12810-pf-state-audit",
+        "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/3000-pf-code-review/12806-pf-adversarial-review"
+      ],
+      "source": "atlas-code.json",
+      "what": "يفحص كل مكون يعتمد على بيانات: هل يعرض حالات التحميل والخطأ والفراغ وعدم الصلاحية (الفرق تنسى عادةً اثنتين من أربع)، ثم يجرّب قيمًا حدية للخصائص (نصوص فارغة أو طويلة، أرقام سالبة وNaN، مصفوفات فارغة أو ضخمة، callbacks ترمي أخطاء) ويكشف غياب الحماية. — Checks every data-dependent "
+    },
+    {
+      "id": "ACODE-260",
+      "family": "atlas-code",
+      "group": "software",
+      "domain": "code",
+      "name_en": "i18n readiness audit: hardcoded strings, concatenation, locale formats, RTL",
+      "name_ar": "تدقيق جاهزية الواجهة للتعريب والتدويل والاتجاه من اليمين",
+      "status": "documented",
+      "requires": [],
+      "proof": [
+        "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/3000-pf-code-review/12807-pf-i18n-audit"
+      ],
+      "source": "atlas-code.json",
+      "what": "يكشف قبل الترجمة ما سيكسرها: نصوص ظاهرة مكتوبة في الكود، جمل مبنية بالدمج (ترتيب الكلمات والجمع يختلفان؛ العربية لها ست صيغ جمع)، تنسيق تاريخ وأرقام وعملات دون locale، وCSS لا يحتمل الاتجاه من اليمين. — Finds what will break translation: hardcoded strings, concatenated sentences,"
+    },
+    {
+      "id": "ACODE-261",
+      "family": "atlas-code",
+      "group": "software",
+      "domain": "code",
+      "name_en": "Heuristic evaluation with three independent evaluators and reconciliation",
+      "name_ar": "تقييم استكشافي للواجهة بثلاثة مقيّمين مستقلين ثم توفيق النتائج",
+      "status": "documented",
+      "requires": [],
+      "proof": [
+        "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/3011-uxd-research/12864-uxd-research-heuristic-eval"
+      ],
+      "source": "atlas-code.json",
+      "what": "يفحص واجهة (لقطات أو رابط حي أو وصف) مقابل إطار استكشافي يختاره الباحث (Nielsen، Shneiderman أو مخصص) بثلاثة مقيّمين كلٌّ على حدة، ثم يوفّق بين النتائج في تقرير موحّد للمخالفات المرصودة دون أن يقيّم الشدة أو يقترح الحلول؛ ذلك عمل الباحث بعدها. — Runs a structured heuristic evalua"
+    },
+    {
+      "id": "ACODE-262",
+      "family": "atlas-code",
+      "group": "software",
+      "domain": "code",
+      "name_en": "Agent-authored PR review: alignment passes and hallucinated references",
+      "name_ar": "مراجعة طلبات الدمج التي يكتبها وكيل: المواءمة مع المتطلبات والمراجع الوهمية",
+      "status": "documented",
+      "requires": [],
+      "proof": [
+        "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/3052-adlc-verify/13150-agent-code-review",
+        "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/3052-adlc-verify/13153-hallucination-checks"
+      ],
+      "source": "atlas-code.json",
+      "what": "مراجعة كود كتبه وكيل ذكاء اصطناعي تختلف عن مراجعة زميل: الكود يُبنى ويُقرأ جيدًا، والخطر في ما افترضه أو غيّره أو تركه بصمت. خمس تمريرات (المواءمة، سلامة الاختبارات، أنماط فشل الوكلاء، الأمان، التشغيل) مع تحقق من وجود كل حزمة ورمز وإعداد ورابط. — Five review passes for agent-writ"
+    },
+    {
+      "id": "ACODE-263",
+      "family": "atlas-code",
+      "group": "software",
+      "domain": "code",
+      "name_en": "Review capacity and release gates for agent-speed delivery",
+      "name_ar": "تصميم سعة المراجعة وبوابات الإصدار لعصر الوكلاء",
+      "status": "documented",
+      "requires": [],
+      "proof": [
+        "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/3052-adlc-verify/13154-review-capacity",
+        "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/3051-adlc-operate/13145-release-gates"
+      ],
+      "source": "atlas-code.json",
+      "what": "حين يصبح عنق الزجاجة هو قرار الدمج لا كتابة الكود: طبقات تحقق آلية قبل أن يرى إنسان الطلب، توجيه حسب درجة الخطر لا طابور واحد، وبوابات إصدار (دمج، تجربة، إنتاج، ما بعد الإصدار) مع فئات تغيير وتراجع مسبق التسليح. — When deciding to merge becomes the bottleneck: machine layers befo"
+    },
+    {
+      "id": "ACODE-264",
+      "family": "atlas-code",
+      "group": "software",
+      "domain": "code",
+      "name_en": "Whole-history secret audit before open-sourcing, and stale-audit reruns",
+      "name_ar": "تدقيق الأسرار في كل تاريخ git قبل جعل المستودع عامًا، وإعادة التدقيق حين يقدم",
+      "status": "documented",
+      "requires": [
+        "gitleaks"
+      ],
+      "proof": [
+        "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/3345-pre-open-source-credential-audit/13860-pre-open-source-credential-audit",
+        "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/3305-credential-audit-rerun/13819-credential-audit-rerun"
+      ],
+      "source": "atlas-code.json",
+      "what": "جعل مستودع خاص عامًا يكشف تاريخ git كله لا الشجرة الحالية فقط. يتحقق أن ملفات الأسرار متجاهلة وغير متتبعة معًا، ويبحث عن ملفات النسخ الاحتياطي للمحرر، ويمسح كل blob في كل commit، ويدوّر أي مفتاح حقيقي قبل إعادة كتابة التاريخ. ويعيد التدقيق القديم باشتقاق المسارات من جديد. — Makin"
+    },
+    {
+      "id": "ACODE-265",
+      "family": "atlas-code",
+      "group": "software",
+      "domain": "code",
+      "name_en": "Make Terraform check blocks actually fail CI",
+      "name_ar": "جعل كتل check في Terraform تُفشل CI فعلًا",
+      "status": "documented",
+      "requires": [],
+      "proof": [
+        "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/3364-terraform-check-block-warn-only-ci-gate/13879-terraform-check-block-warn-only-ci-gate"
+      ],
+      "source": "atlas-code.json",
+      "what": "كتل check في Terraform (1.5+) تحذّر فقط وتخرج بالرمز 0، فلا يحمي الحارس شيئًا. يلف خطوة plan بحيث يتحول نص فشل التأكيد إلى فشل صريح، ويكتب رسائل تسمّي المخالفين دون كشف قيم حساسة. — Terraform check blocks warn and exit 0; this wraps plan so a failed assertion fails CI, naming off"
+    },
+    {
+      "id": "ACODE-266",
+      "family": "atlas-code",
+      "group": "software",
+      "domain": "code",
+      "name_en": "Signed, offline-verifiable audit trail for agent tool calls",
+      "name_ar": "سجل تدقيق موقّع لكل استدعاء أداة يقوم به الوكيل",
+      "status": "documented",
+      "requires": [
+        "claude:tools"
+      ],
+      "proof": [
+        "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/3521-signed-audit-trails/14292-signed-audit-trails-recipe"
+      ],
+      "source": "atlas-code.json",
+      "what": "نمط يجعل كل استدعاء أداة لوكيل (Bash، تعديل، كتابة، جلب) يُقيَّم أولًا مقابل سياسة صريحة (Cedar) فيُمنع إن رُفض، ثم يُوقَّع بعد التنفيذ بإيصال Ed25519 قانوني الشكل يمكن لأي مدقق التحقق منه دون شبكة أو ثقة في المشغّل. — Every agent tool call is policy-checked before running and si"
+    },
+    {
+      "id": "ACODE-267",
+      "family": "atlas-code",
+      "group": "software",
+      "domain": "code",
+      "name_en": "Which permission gate refused, and services that inherit an operator's allow-list",
+      "name_ar": "تشخيص أي بوابة صلاحيات رفضت الأمر، وخطر توريث قائمة السماح في خدمة",
+      "status": "documented",
+      "requires": [],
+      "proof": [
+        "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/3339-permission-gate-allow-list-not-decisive/13853-permission-gate-allow-list-not-decisive",
+        "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/3340-permission-gate-inherits-operator-allow/13854-permission-gate-inherits-operator-allow"
+      ],
+      "source": "atlas-code.json",
+      "what": "قائمة السماح ليست سلطة واحدة: حين تقف بوابتان أمام نفس الأمر (مصنّف المضيف وhook وقاعدة خادم) قد تحترمها واحدة وتتجاهلها الأخرى دون أن يُذكر من رفض. وحين تُضمَّن بوابة مكتوبة لإنسان في خدمة أو بوت، ترث الخدمة صلاحيات الإنسان وتنفّذ بها طلبات لم يرها (نائب مرتبك). — Diagnose which"
+    },
+    {
+      "id": "ACODE-268",
+      "family": "atlas-code",
+      "group": "software",
+      "domain": "code",
+      "name_en": "Adopting a new major of a security gate you consume",
+      "name_ar": "تبنّي إصدار رئيسي جديد لبوابة أمان تعتمد عليها",
+      "status": "documented",
+      "requires": [],
+      "proof": [
+        "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/3304-consumed-gate-major-upgrade/13818-consumed-gate-major-upgrade"
+      ],
+      "source": "atlas-code.json",
+      "what": "تحسّن يقيسه المزوّد بشروط مضيفه قد يكون صحيحًا وخاطئًا لك، لأنكما تستهلكان تمييزات مختلفة. يسأل: هل يقرر شيء بعد هذه البوابة؟ ثم يعيد تشغيل الأوامر الحقيقية بمعاييرك أنت ويقيس ما عبر حدودك. — A vendor's measured improvement can be true and still wrong for you; replay in your own "
+    },
+    {
+      "id": "ACODE-269",
+      "family": "atlas-code",
+      "group": "software",
+      "domain": "code",
+      "name_en": "Linter migration: ESLint/Prettier → Biome and flake8/isort → ruff",
+      "name_ar": "ترحيل أدوات الفحص: ESLint/Prettier إلى Biome وflake8/isort إلى ruff",
+      "status": "documented",
+      "requires": [
+        "npm:react"
+      ],
+      "proof": [
+        "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/2160-migration-patterns-plugin/7801-eslint-to-biome",
+        "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/2160-migration-patterns-plugin/7802-flake8-to-ruff"
+      ],
+      "source": "atlas-code.json",
+      "what": "يرحّل فحص الكود إلى أداة واحدة سريعة مع الحفاظ على القواعد: يدقق الإعدادات والإضافات الحالية، يربط كل قاعدة بمكافئها، يحدد ما لا مكافئ له (فيبقي الأداة القديمة له فقط)، يحدّث pre-commit وCI ويزيل التبعيات القديمة، ثم يتحقق أن النتائج متكافئة. — Consolidates linting into one fast "
+    },
+    {
+      "id": "ACODE-270",
+      "family": "atlas-code",
+      "group": "software",
+      "domain": "code",
+      "name_en": "libGDX game project audit: setup, screen lifecycle, assets, rendering",
+      "name_ar": "تدقيق مشروع لعبة libGDX: الإعداد ودورة الشاشات والأصول والرسم",
+      "status": "documented",
+      "requires": [],
+      "proof": [
+        "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/71-libgdx-development/125-libgdx-audit-workflow"
+      ],
+      "source": "atlas-code.json",
+      "what": "يراجع مشروع لعبة libGDX ويخرج تقرير عيوب الصحة والأداء ودورة الحياة: إصدار المكتبة وJDK وGradle، بنية الوحدات والمنصات، جذر التطبيق، دورة Screen، تحميل الأصول والتخلص منها، خط الرسم، وحجب خيط GL. — Audits a libGDX project for correctness, performance and lifecycle defects."
+    },
+    {
+      "id": "ACODE-271",
+      "family": "atlas-code",
+      "group": "software",
+      "domain": "code",
+      "name_en": "Cross-platform engineering review: SPA, PWA, mobile, Electron, Tauri",
+      "name_ar": "مراجعة هندسة المنصات: ويب أحادي الصفحة وPWA وموبايل وElectron وTauri",
+      "status": "documented",
+      "requires": [
+        "npm:react"
+      ],
+      "proof": [
+        "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/77-platform-engineering/142-platform-review-workflow"
+      ],
+      "source": "atlas-code.json",
+      "what": "يكتشف خليط المنصات في المستودع أولًا ثم يراجع كل منصة بقواعدها في الأمان والمعمارية والأداء: التحقق على الخادم، التوكنات وpasskeys، CSP وXSS، الأسرار، تقوية Electron/Tauri، وحدود العميل والخادم، ويكتب تقريرًا دون إصلاح تلقائي. — Detects the platform mix, then reviews each against"
+    },
+    {
+      "id": "ACODE-272",
+      "family": "atlas-code",
+      "group": "software",
+      "domain": "code",
+      "name_en": "Repository validation harness: layered matrix, one entrypoint, honest fallbacks",
+      "name_ar": "تصميم حزمة تحقق موحدة للمستودع بطبقات وأوامر لكل نوع تغيير",
+      "status": "documented",
+      "requires": [],
+      "proof": [
+        "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/3604-agent-harness-skills/14471-validation-harness-design"
+      ],
+      "source": "atlas-code.json",
+      "what": "يحوّل الفحوص المتفرقة إلى أصغر سطح أوامر متكرر يثبت أن التغيير آمن للمراجعة: جرد الأوامر وCI الموجودة، مصفوفة طبقات (مستودع/وثائق، عقود، وحدة/أنواع/فحص، تشغيل، تبعيات خارجية)، أمر أدنى لكل نوع تغيير، مدخل موحّد doctor، ومخرجات JSON/JUnit مع أسباب صريحة لأي تخطٍّ. — Turns scattere"
+    },
+    {
+      "id": "ACODE-273",
+      "family": "atlas-code",
+      "group": "software",
+      "domain": "code",
+      "name_en": "Intended-vs-implemented gap audit",
+      "name_ar": "تدقيق الفجوة بين ما يُفترض أن يفعله النظام وما يفعله الكود فعلًا",
+      "status": "documented",
+      "requires": [],
+      "proof": [
+        "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/2876-pm-ai-shipping/11600-intended-vs-implemented"
+      ],
+      "source": "atlas-code.json",
+      "what": "أخطر أخطاء الأمان والصحة تعيش بين النية والتنفيذ: صلاحية موثقة لا تُفرض، endpoint 'للمجدول فقط' يستدعيه أي أحد، حقل 'عام فقط' يسرّب بيانات خاصة. يقرأ وثائق النية كادعاءات، ويجد نقطة الفرض في الكود لكل ادعاء، ويصنف كل فجوة حسب ما إذا كانت تسمح لفاعل حقيقي بالوصول لما لا يجب. — Rea"
+    },
+    {
+      "id": "ACODE-274",
+      "family": "atlas-code",
+      "group": "software",
+      "domain": "code",
+      "name_en": "Install shared review checklists for Copilot, Codex and Claude PR reviewers",
+      "name_ar": "تثبيت قوائم مراجعة موحّدة يقرؤها Copilot وCodex وClaude عند مراجعة طلبات الدمج",
+      "status": "documented",
+      "requires": [],
+      "proof": [
+        "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/979-set-up-review-config/2263-set-up-review-config"
+      ],
+      "source": "atlas-code.json",
+      "what": "يجعل ثلاثة مراجعين آليين لطلبات الدمج يطبقون نفس قواعد الأسلوب: ملف مهارة code-review لـCopilot، قسم 'Code Review Rules' في AGENTS.md لـCodex، وREVIEW.md لـClaude، داخل كتل مُدارة تُستبدل بأمان عند الإعادة، وكل قاعدة باسم تستشهد به النتائج. — Makes three AI PR reviewers apply the"
+    },
+    {
+      "id": "ACODE-275",
+      "family": "atlas-code",
+      "group": "software",
+      "domain": "code",
+      "name_en": "Triage a red AI-review CI check: four causes with opposite responses",
+      "name_ar": "فرز فحص CI أحمر لمراجعة يقوم بها ذكاء اصطناعي: أربعة أسباب مختلفة",
+      "status": "documented",
+      "requires": [],
+      "proof": [
+        "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/2153-github-actions-plugin/7753-ai-review-max-turns"
+      ],
+      "source": "atlas-code.json",
+      "what": "فحوص CI التي تشغّل Claude على الفرق تتحول للأحمر لأربعة أسباب تحتاج ردودًا متعاكسة: نفاد الميزانية أثناء التشغيل، تجاوز سقف الأدوار بعد اكتمال الفحص، نتيجة حقيقية لم تُنشر كتعليق، أو عطل بنية تحتية. يميز بينها من سجل التشغيل قبل أي فعل. — Separates the four reasons an AI-review c"
+    },
+    {
+      "id": "ACODE-276",
+      "family": "atlas-code",
+      "group": "software",
+      "domain": "code",
+      "name_en": "Home Assistant configuration validation: YAML, secrets, duplicate keys",
+      "name_ar": "التحقق من إعدادات Home Assistant: YAML والأسرار والمفاتيح المكررة",
+      "status": "documented",
+      "requires": [
+        "docker"
+      ],
+      "proof": [
+        "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/2155-home-assistant-plugin/7774-ha-validate"
+      ],
+      "source": "atlas-code.json",
+      "what": "يفحص ملفات إعداد Home Assistant قبل إعادة التشغيل: صحة YAML مع وسوم HA الخاصة، مراجع !secret غير معرفة في secrets.yaml، مفاتيح مكررة في scripts وscenes، ثم الفحص الكامل check_config عبر Docker أو HA OS، مع إصلاحات للأخطاء الشائعة. — Validates Home Assistant YAML, secret reference"
+    },
+    {
+      "id": "ACODE-277",
+      "family": "atlas-code",
+      "group": "software",
+      "domain": "code",
+      "name_en": "Cross-layer instruction-stack audit: rule-firing evidence, conflicts, permission bypasses",
+      "name_ar": "تدقيق طبقات التعليمات كلها: هل طُبّقت القاعدة يومًا؟ وأين تتعارض الطبقات؟",
+      "status": "documented",
+      "requires": [],
+      "proof": [
+        "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/1280-instruction-audit/2957-instruction-audit"
+      ],
+      "source": "atlas-code.json",
+      "what": "تدقيق للقراءة فقط لكل ما يصل إلى الوكيل (ملفات التعليمات العامة والمشروع والمتداخلة، تعريفات الوكلاء، الخطافات، الصلاحيات، والموجّه الذي يُجمّع للوكيل البعيد)، يبدأ بقياس الحجم قبل الحكم، ثم يختبر كل قاعدة بدليل سلوكي هل أثّرت يومًا، ويقتبس طرفي كل تعارض بين الطبقات، ويكشف بوابات"
     },
     {
       "id": "ACRAFT-01",
@@ -14240,6 +15218,71 @@
       "what": "بدل أتمتة متصفح يجد كتلة البيانات المضمنة في الصفحة، يفك مخططها من حلقة الرسم نفسها، وينقل صيغ المقاييس المشتقة حرفيًا، ثم يطابق كل رقم مع العرض. — Instead of driving a browser, finds the data blob embedded in the page, decodes its schema from the page's own render loop, ports de"
     },
     {
+      "id": "ADATA-53",
+      "family": "atlas-data",
+      "group": "data",
+      "domain": "data",
+      "name_en": "Event instrumentation from a tracking plan with CI schema gate and consent at source",
+      "name_ar": "تنفيذ خطة تتبع الأحداث مع بوابة schema في CI وموافقة المستخدم من المصدر",
+      "status": "documented",
+      "requires": [
+        "chromium"
+      ],
+      "proof": [
+        "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/2332-martech-event-instrumentation/8954-implement-event-instrumentation-and-cons"
+      ],
+      "source": "atlas-data.json",
+      "what": "يحوّل خطة التتبع إلى جمع أحداث فعلي: مكتبة تتبع typed مولّدة من الخطة، توزيع الأحداث بين العميل والخادم، ربط الهوية كما صُمم، بوابة CI تُفشل أي حدث خارج الخطة، وحجب الجمع قبل الموافقة (Consent Mode v2، TCF، GPC). — Turns a tracking plan into typed collection with a CI schema gate"
+    },
+    {
+      "id": "ADATA-54",
+      "family": "atlas-data",
+      "group": "data",
+      "domain": "data",
+      "name_en": "Recommender evaluation: temporal split, popularity baseline, A/B as verdict",
+      "name_ar": "تقييم أنظمة التوصية: تقسيم زمني وخط أساس شعبية والحكم للـA/B",
+      "status": "documented",
+      "requires": [],
+      "proof": [
+        "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/2367-recommendation-systems-engineering/9140-evaluate-recommenders"
+      ],
+      "source": "atlas-data.json",
+      "what": "يبني تقييمًا صادقًا لنظام توصية: تقسيم زمني بدل العشوائي، مقارنة دائمة بخط أساس الشعبية، مقاييس تناسب كل مرحلة، حواجز التغطية والتنوع والجدة، مراعاة انحياز الموضع، وتجربة A/B هي الحكم النهائي. — Builds an honest recommender evaluation where offline metrics filter and the online A"
+    },
+    {
+      "id": "ADATA-55",
+      "family": "atlas-data",
+      "group": "data",
+      "domain": "data",
+      "name_en": "Zero-provenance audit for multi-source metrics before believing a 0",
+      "name_ar": "تدقيق مصدر الأصفار في مقاييس متعددة المصادر قبل تصديقها",
+      "status": "documented",
+      "requires": [],
+      "proof": [
+        "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/3331-metrics-zero-provenance-audit/13845-metrics-zero-provenance-audit"
+      ],
+      "source": "atlas-data.json",
+      "what": "حين يجمع أداة واحدة مقاييس من عدة مصادر في مخطط ثابت، يعني الصفر واحدًا من ثلاثة: لم تفعل ذلك فعلًا، أو أن مصدرك لا يبلغ عن هذا الحقل أصلًا، أو أنك فعلته بطريقة لا يتعرف عليها الكاشف. يبحث عن الدالة التي تزيد كل حقل قبل تصديق أي صفر. — In a shared multi-source schema a 0 can mean"
+    },
+    {
+      "id": "ADATA-56",
+      "family": "atlas-data",
+      "group": "data",
+      "domain": "data",
+      "name_en": "Choose a data-quality approach: tests, monitors and contracts, and where each runs",
+      "name_ar": "اختيار منهج جودة البيانات: اختبارات للقواعد المعروفة ومراقبة للمجهول وعقود عند المنتِج",
+      "status": "documented",
+      "requires": [
+        "python3",
+        "npm:three"
+      ],
+      "proof": [
+        "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/2271-data-quality-observability/8666-choose-data-quality-approach"
+      ],
+      "source": "atlas-data.json",
+      "what": "يقرر كيف تُضمن جودة البيانات لمجموعة محددة: القاعدة المعروفة (لا قيم فارغة، فريدة، مرجعية) اختبار، والمجهول عبر الزمن (تأخر التحديث، الحجم، انحراف المخطط والتوزيع) مراقب، وضمان حدود المنتِج عقد؛ ثم الأداة ومكان التشغيل وسياسة الإيقاف أو التحذير والـSLA. — Decides the mix of tests"
+    },
+    {
       "id": "ADOCS-01",
       "family": "atlas-docs",
       "group": "documents",
@@ -15051,6 +16094,84 @@
       ],
       "source": "atlas-docs.json",
       "what": "يحكم على كل تعليق: هل يضيف معلومة عن الحالة الحالية لا يقولها الكود نفسه؟ ويحوّل وعود 'لا تغيّر هذا' إلى اختبارات. — Judges each comment by whether it adds present-tense information the code itself cannot say, and turns 'do not change this' promises into tests."
+    },
+    {
+      "id": "ADOCS-51",
+      "family": "atlas-docs",
+      "group": "documents",
+      "domain": "docs",
+      "name_en": "Persona-targeted CodeTour walkthroughs with verified anchors",
+      "name_ar": "جولات CodeTour في الكود موجّهة لشخصية القارئ",
+      "status": "documented",
+      "requires": [],
+      "proof": [
+        "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/162-code-tour/531-code-tour"
+      ],
+      "source": "atlas-docs.json",
+      "what": "يكتب ملفات .tour لإضافة CodeTour: جولة قصصية خطوة بخطوة في المستودع لشخص محدد (منضم جديد، مراجع PR، محقق سبب جذري، معماري، مراجع أمان)، كل خطوة مربوطة بملف وسطر حقيقيين، دون تعديل أي كود. — Writes CodeTour .tour files: a narrative, persona-specific walkthrough anchored to real fi"
+    },
+    {
+      "id": "ADOCS-52",
+      "family": "atlas-docs",
+      "group": "documents",
+      "domain": "docs",
+      "name_en": "LLM-facing prose audit: priming prohibitions and anchoring examples",
+      "name_ar": "تدقيق نصوص التعليمات الموجهة للنموذج: نواهٍ تلفت الانتباه وأمثلة تقيّد",
+      "status": "documented",
+      "requires": [],
+      "proof": [
+        "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/1990-epistemic-cooperative/7157-white-bear",
+        "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/1990-epistemic-cooperative/7158-zero-shot"
+      ],
+      "source": "atlas-docs.json",
+      "what": "يراجع ملفات المهارات وبرومبتات الوكلاء بحثًا عن نمطين يضعفان الاتباع: ذكر أفعال ممنوعة أو مسارات قديمة أو بدائل مرفوضة دون حاجة (يبقيها في انتباه النموذج)، وأمثلة few-shot تربط النموذج بحالات بعينها بدل المبدأ. قراءة فقط، والقرار للمؤلف. — Read-only audit of skill files and agent"
+    },
+    {
+      "id": "ADOCS-53",
+      "family": "atlas-docs",
+      "group": "documents",
+      "domain": "docs",
+      "name_en": "Book outline with per-chapter specs and a series bible",
+      "name_ar": "مخطط كتاب بمواصفة لكل فصل و'كتاب مرجعي' يحفظ الاتساق",
+      "status": "documented",
+      "requires": [],
+      "proof": [
+        "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/1376-velith/3225-book-outline"
+      ],
+      "source": "atlas-docs.json",
+      "what": "مخطط كتاب مفصل بما يكفي لكتابة كل فصل دون اختراع بنية: لكل فصل غرض وحالة دخول وخروج للقارئ (والبطل)، وسحب يشد القارئ، ومحتوى (مشاهد أو ادعاءات بأدلة أو مفاهيم)، مع 'كتاب مرجعي' للشخصيات والمصطلحات والقواعد، وتحقق ونقطة موافقة المؤلف. — A chapter-by-chapter outline with entry/exit"
+    },
+    {
+      "id": "ADOCS-54",
+      "family": "atlas-docs",
+      "group": "documents",
+      "domain": "docs",
+      "name_en": "Book publishing build: EPUB/PDF via Pandoc, epubcheck and metadata",
+      "name_ar": "بناء ونشر كتاب: EPUB وPDF عبر Pandoc مع epubcheck وبيانات النشر",
+      "status": "documented",
+      "requires": [
+        "pandoc"
+      ],
+      "proof": [
+        "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/1376-velith/3227-book-publish"
+      ],
+      "source": "atlas-docs.json",
+      "what": "يحول مسودات الكتاب النهائية إلى ملفات يقبلها الموزّع من أول رفع: بوابة جاهزية، بيانات وصفية، صفحات أمامية وخلفية (منها إفصاح استخدام الذكاء الاصطناعي حين يُطلب)، معالجة مسبقة للشعر والسيناريو والصور، بناء EPUB وPDF وغيرها بـPandoc، وفحص بـepubcheck. — Turns final drafts into dist"
+    },
+    {
+      "id": "ADOCS-55",
+      "family": "atlas-docs",
+      "group": "documents",
+      "domain": "docs",
+      "name_en": "Publish a digital collection through rights and cultural-sensitivity gates",
+      "name_ar": "نشر مجموعة رقمية بعد بوابتي الحقوق والحساسية الثقافية",
+      "status": "documented",
+      "requires": [],
+      "proof": [
+        "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/2342-museum-cultural-institution-operations/9003-publish-digital-collections-and-access"
+      ],
+      "source": "atlas-docs.json",
+      "what": "قبل نشر مقتنيات أو أرشيف على الإنترنت: بوابة حقوق (ملك عام، أو حقوق مُصرّح بها، أو غير مصرح فلا يُنشر إلا وصف وصورة مصغرة)، ثم بوابة حساسية ثقافية بالتشاور مع المجتمع المصدر، ثم قرار الوصول المفتوح أو المقيد بترخيص واضح، والبنية التقنية للنشر. — Rights gate, then community-consul"
     },
     {
       "id": "AMEDIA-01",
@@ -16404,6 +17525,97 @@
       "what": "يحلل مواصفة أو خطة بعدسات البنية والتنفيذ والافتراضات وعدم التطابق وأصحاب المصلحة، ثم يطرح أهم الأسئلة واحدًا تلو الآخر مع إجابة موصى بها. — Analyses a spec or plan through structure, execution, assumptions, mismatches and stakeholder lenses, then asks the top questions one at a "
     },
     {
+      "id": "AMIND-55",
+      "family": "atlas-mind",
+      "group": "thinking",
+      "domain": "mind",
+      "name_en": "Citation-support check: does each source really back its claim",
+      "name_ar": "التحقق من أن كل مصدر مذكور يدعم الادعاء فعلًا",
+      "status": "documented",
+      "requires": [],
+      "proof": [
+        "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/229-mas-ai-workflows/715-ai-citation-verification",
+        "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/1520-digital-marketing-pro/4131-verify-claims"
+      ],
+      "source": "atlas-mind.json",
+      "what": "يستخرج الادعاءات المادية ومصادرها من نص (إجابة ذكاء اصطناعي، محتوى تسويقي، تقرير) ويفتح المصدر الفعلي لكل ادعاء ويصنفه: مدعوم، مدعوم جزئيًا، متناقض، غير متاح، أو بلا مصدر، مع موضع الدليل. — Extracts material claims and their sources, opens each real source and classifies support "
+    },
+    {
+      "id": "AMIND-56",
+      "family": "atlas-mind",
+      "group": "thinking",
+      "domain": "mind",
+      "name_en": "arXiv prior-art check before designing a non-trivial mechanism",
+      "name_ar": "فحص الأدبيات السابقة على arXiv قبل تصميم آلية غير بسيطة",
+      "status": "documented",
+      "requires": [],
+      "proof": [
+        "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/3175-prior-art/13504-prior-art"
+      ],
+      "source": "atlas-mind.json",
+      "what": "قبل بناء آلية تقنية مكلفة (تخزين مؤقت، تنسيق، ترتيب واسترجاع، تقنية تدريب، بروتوكول) يبحث في arXiv عن أوراق حقيقية ويقرأ كل ورقة على حدة ثم يجمع ما تعلّمه، ومع ذلك لا يُشغّل إلا حين يستحق. — Before building an expensive mechanism, fetches real arXiv papers, reads each one in isol"
+    },
+    {
+      "id": "AMIND-57",
+      "family": "atlas-mind",
+      "group": "thinking",
+      "domain": "mind",
+      "name_en": "Verify a public numeric claim against the primary open-data series",
+      "name_ar": "التحقق من ادعاء رقمي عام مقابل البيانات المفتوحة الأولية",
+      "status": "documented",
+      "requires": [],
+      "proof": [
+        "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/3370-us-federal-open-data-claim-verification/13885-us-federal-open-data-claim-verification"
+      ],
+      "source": "atlas-mind.json",
+      "what": "الأرقام العامة تمر بطبقات (جهة رسمية ← خبر ← مجمّع ← منشور) حتى تتحول لسلسلة أخرى أو ضعف القيمة. يحدد أي سلسلة يسميها فعل الادعاء (عدد أم مبلغ)، وينزل لمستوى يمكنه نفي التعميمات، ويستعلم API البيانات المفتوحة مباشرة بأرقام غير مقرّبة واستعلام يمكن إعادته. — Picks the series the c"
+    },
+    {
+      "id": "AMIND-58",
+      "family": "atlas-mind",
+      "group": "thinking",
+      "domain": "mind",
+      "name_en": "Landing-fit check: does a result fit every place it reaches",
+      "name_ar": "فحص ملاءمة النتيجة لكل مكان تصل إليه وكل نية حُمّلت بها",
+      "status": "documented",
+      "requires": [],
+      "proof": [
+        "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/1989-epharmoge/7149-contextualize"
+      ],
+      "source": "atlas-mind.json",
+      "what": "النتيجة قد تكون صحيحة تقنيًا وغير ملائمة للسياق الذي تُطبق فيه. يتتبعها إلى كل مكان تصل إليه وكل نية كان يجب أن تحملها، ويضع كل عدم ملاءمة (والإغفالات أيضًا) مع أثرها في ورقة واحدة يجيب عنها المستخدم دفعة واحدة، ثم ينفذ ما يقرره. — Traces a result to everywhere it lands and every"
+    },
+    {
+      "id": "AMIND-59",
+      "family": "atlas-mind",
+      "group": "thinking",
+      "domain": "mind",
+      "name_en": "Independent option-set gate check before asking the user",
+      "name_ar": "بوابة فحص مستقلة لمجموعة الخيارات قبل عرضها على المستخدم",
+      "status": "documented",
+      "requires": [],
+      "proof": [
+        "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/1990-epistemic-cooperative/7150-gate-check"
+      ],
+      "source": "atlas-mind.json",
+      "what": "من يكتب الخيارات لا يستطيع الحكم على صلاحيتها لأنها ترث إطاره. يجمّد مجموعة الخيارات ويعرضها على مُحكِّم مستقل فعلًا (لا مراجعة ثانية من نفس الوكيل) ليحكم: خيارات حقيقية، أو منهارة لنفس النتيجة، أو مشوهة، ثم يتحقق من الأسس التي استشهد بها المحكّم قبل وصولها للمستخدم. — Freezes a "
+    },
+    {
+      "id": "AMIND-60",
+      "family": "atlas-mind",
+      "group": "thinking",
+      "domain": "mind",
+      "name_en": "External feedback intake: verify each claim, tier it, prevent, cover, close",
+      "name_ar": "استقبال الملاحظات الخارجية: تحقق من كل ادعاء ثم صنّفه وامنع تكراره وأغلق الحلقة",
+      "status": "documented",
+      "requires": [],
+      "proof": [
+        "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/3113-estregenesis/13330-feeda"
+      ],
+      "source": "atlas-mind.json",
+      "what": "ملاحظات المستخدمين والمراجعين الخارجيين أرخص كاشف عيوب، بشرط انضباط الاستقبال: قراءة كاملة، معاملة الطلبات المضمنة كبيانات لا أوامر، حكم لكل ادعاء بالقياس (مؤكد، جزئي، مرفوض، غير قابل للقياس)، تصنيف (عيب، فجوة توثيق، طلب ميزة)، منع التكرار، تغطية باختبار، ثم رد على صاحب الملاحظة."
+    },
+    {
       "id": "AWEB-01",
       "family": "atlas-research",
       "group": "research",
@@ -17732,6 +18944,248 @@
       ],
       "source": "atlas-strategy.json",
       "what": "يحول جلسة عمل إلى تقرير يتخذ عليه مدير المنتج قرارًا: الدليل قبل التفسير، كل مصطلح معرَّف عند أول ظهور، والتحقق والافتراض وغير المختبر في سلال صريحة. — Turns a work session into a report a product owner can act on: evidence before interpretation, each term defined at first use, a"
+    },
+    {
+      "id": "ASTRAT-73",
+      "family": "atlas-strategy",
+      "group": "thinking",
+      "domain": "strategy",
+      "name_en": "Trust-and-safety review: how the product can be misused to harm others",
+      "name_ar": "مراجعة الثقة والأمان: كيف يُساء استخدام المنتج لإيذاء الآخرين",
+      "status": "documented",
+      "requires": [],
+      "proof": [
+        "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/1528-safeguard/4180-trust-and-safety-review"
+      ],
+      "source": "atlas-strategy.json",
+      "what": "يراجع كيف يمكن لمستخدمين استخدام محتوى المنتج وتفاعلاته لإيذاء آخرين حتى حين يعمل كما صُمم: انتحال، تصيد عبر نماذج مشروعة، تحرش، نشر محتوى ضار، وثغرات في دورة البلاغ والإزالة. منفصل عن أمان التطبيق التقني. — Reviews how people can use the product's content and interactions to har"
+    },
+    {
+      "id": "ASTRAT-74",
+      "family": "atlas-strategy",
+      "group": "thinking",
+      "domain": "strategy",
+      "name_en": "Independent-contractor agreement review from the freelancer's side",
+      "name_ar": "مراجعة عقد مستقل من وجهة نظر المستقل",
+      "status": "documented",
+      "requires": [],
+      "proof": [
+        "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/1634-general-legal-assistant/4612-freelancer-review"
+      ],
+      "source": "atlas-strategy.json",
+      "what": "يقرأ عقد العمل الحر كما يقرؤه محامي المستقل: خطر تصنيف العلاقة كتوظيف مقنّع، ملكية الملكية الفكرية، شروط الدفع ومقابل الإلغاء، تحديد النطاق، عدم المنافسة، المسؤولية والتعويض، مع درجة لكل محور وبنود تفاوض مقترحة. ليس استشارة قانونية. — Reads a freelance contract the way the freela"
+    },
+    {
+      "id": "ASTRAT-75",
+      "family": "atlas-strategy",
+      "group": "thinking",
+      "domain": "strategy",
+      "name_en": "Write and rate internal-audit findings on the five Cs",
+      "name_ar": "كتابة وتقييم نتائج التدقيق الداخلي بالعناصر الخمسة",
+      "status": "documented",
+      "requires": [],
+      "proof": [
+        "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/2322-internal-audit/8913-rate-and-report-audit-findings"
+      ],
+      "source": "atlas-strategy.json",
+      "what": "يحوّل فجوات الرقابة المختبرة إلى نتائج تدقيق سليمة: المعيار، الحالة، السبب الجذري، الأثر، الإجراء التصحيحي، مع تقييم الأثر × الاحتمال للخطر المتبقي، وخطة إدارة يملكها أصحابها، وتقرير بمستوى الجمهور، وخطة متابعة للتحقق من الإغلاق. — Turns tested control gaps into five-C findings w"
+    },
+    {
+      "id": "ASTRAT-76",
+      "family": "atlas-strategy",
+      "group": "thinking",
+      "domain": "strategy",
+      "name_en": "Wire-fraud and trust-account controls",
+      "name_ar": "ضوابط احتيال التحويلات البنكية وحسابات الأمانة",
+      "status": "documented",
+      "requires": [],
+      "proof": [
+        "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/2397-title-escrow-settlement/9284-wire-fraud-and-trust-account-controls"
+      ],
+      "source": "atlas-strategy.json",
+      "what": "ضابطان يحميان أي جهة تحوّل أموال الغير: لا تحويل دون تحقق مستقل خارج القناة (اتصال برقم مصدره مستقل، تعليمات تتغير بالبريد = احتيال حتى يثبت العكس، موافقة شخصين)، وحساب الأمانة يُطابق ثلاثيًا ولا يُخلط ولا يصير أي سجل فيه سالبًا. ضوابط تشغيلية لا استشارة قانونية. — Two controls f"
+    },
+    {
+      "id": "ASTRAT-77",
+      "family": "atlas-strategy",
+      "group": "thinking",
+      "domain": "strategy",
+      "name_en": "PFMEA/DFMEA gap review against the AIAG-VDA method",
+      "name_ar": "مراجعة فجوات FMEA (تصميم وعملية) وفق AIAG-VDA",
+      "status": "documented",
+      "requires": [],
+      "proof": [
+        "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/2989-quality-engineering-skills/12642-fmea-reviewer"
+      ],
+      "source": "atlas-strategy.json",
+      "what": "يراجع جدول FMEA قائمًا ولا يقبله لأنه طويل أو يبدو كاملًا: الترويسة والنطاق والفريق، تحليل البنية والوظائف، سلسلة الأثر ← نمط الفشل ← السبب، تقييمات S/O/D وأولوية العمل، البنود عالية الأولوية بلا إجراء، والخصائص الخاصة وربطها بخطة التحكم. — Reviews an existing FMEA for missing fa"
+    },
+    {
+      "id": "ASTRAT-78",
+      "family": "atlas-strategy",
+      "group": "thinking",
+      "domain": "strategy",
+      "name_en": "APQP quality planning and PPAP submission",
+      "name_ar": "تخطيط جودة بدء الإنتاج APQP وحزمة اعتماد القطعة PPAP",
+      "status": "documented",
+      "requires": [],
+      "proof": [
+        "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/2989-quality-engineering-skills/12655-apqp",
+        "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/2989-quality-engineering-skills/12658-ppap"
+      ],
+      "source": "atlas-strategy.json",
+      "what": "يدير تقديم قطعة جديدة عبر مراحل APQP الخمس ببوابات ومخرجات لكل مرحلة، ثم يجهّز أو يراجع حزمة PPAP: تحديد المستوى، سبب إعادة التقديم، العناصر الثمانية عشر، وتشغيل إنتاجي تجريبي حقيقي. — Takes a new part through the five APQP phases with gates, then prepares or reviews the PPAP pac"
+    },
+    {
+      "id": "ASTRAT-79",
+      "family": "atlas-strategy",
+      "group": "thinking",
+      "domain": "strategy",
+      "name_en": "Quality-system internal audit: ISO 9001, IATF 16949 supplements, VDA 6.3 process audit",
+      "name_ar": "تدقيق داخلي لنظام الجودة: ISO 9001 وإضافات IATF 16949 وتدقيق عملية VDA 6.3",
+      "status": "documented",
+      "requires": [
+        "npm:p5"
+      ],
+      "proof": [
+        "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/2989-quality-engineering-skills/12648-iso-9001-internal-audit",
+        "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/2989-quality-engineering-skills/12647-iatf-16949-audit",
+        "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/2989-quality-engineering-skills/12649-vda-6-3-audit",
+        "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/2989-quality-engineering-skills/12640-audit-guide"
+      ],
+      "source": "atlas-strategy.json",
+      "what": "يخطط ويُجري تدقيقًا داخليًا بالأدلة: يبدأ بتدفق العملية ثم يربط بالبنود، أسئلة مفتوحة و'أرني'، عيّنات من عدة أشخاص وسجلات وفترات، تصنيف صحيح (رئيسي/ثانوي/فرصة تحسين)، وإضافات السيارات (ثلاثة أنواع تدقيق، متطلبات العميل، خطط الطوارئ) وتقييم VDA 6.3 من 0 إلى 10. — Plans and runs an"
+    },
+    {
+      "id": "ASTRAT-80",
+      "family": "atlas-strategy",
+      "group": "thinking",
+      "domain": "strategy",
+      "name_en": "DMAIC for chronic, data-driven process problems",
+      "name_ar": "حل مشكلة مزمنة بمنهج DMAIC (ستة سيجما)",
+      "status": "documented",
+      "requires": [
+        "pip:hypothesis"
+      ],
+      "proof": [
+        "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/2989-quality-engineering-skills/12661-dmaic"
+      ],
+      "source": "atlas-strategy.json",
+      "what": "منهج ستة سيجما لمشكلة تتكرر رغم الإجراءات التصحيحية: تعريف قابل للقياس بميثاق وSIPOC وخاصية حرجة للجودة، قياس بنظام قياس موثوق، تحليل إحصائي للأسباب، تحسين مثبت بالتجربة، ثم تحكم يمنع الرجوع. ليس بديلًا عن 8D للشكوى العاجلة ولا عن PDCA للتحسين البسيط. — Six Sigma's define-measure"
+    },
+    {
+      "id": "ASTRAT-81",
+      "family": "atlas-strategy",
+      "group": "thinking",
+      "domain": "strategy",
+      "name_en": "Is / Is-Not problem scoping",
+      "name_ar": "تحديد المشكلة بمصفوفة هي / ليست",
+      "status": "documented",
+      "requires": [
+        "pip:hypothesis"
+      ],
+      "proof": [
+        "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/2989-quality-engineering-skills/12663-is-is-not-scoping"
+      ],
+      "source": "atlas-strategy.json",
+      "what": "يحدد حدود المشكلة بدقة بمقارنة ما يُلاحظ فعلًا بما لا يُلاحظ في خمسة أبعاد (ماذا، أي قطعة، أين، متى، كم)، بحقائق مقاسة فقط، ثم يستبعد كل فرضية لا تفسّر النمط. — Bounds a problem by contrasting what is and is not observed across five dimensions, with measured facts only, then elim"
+    },
+    {
+      "id": "ASTRAT-82",
+      "family": "atlas-strategy",
+      "group": "thinking",
+      "domain": "strategy",
+      "name_en": "PDCA improvement cycle with a pre-defined pilot",
+      "name_ar": "دورة تحسين PDCA مع تجربة مسبقة التحديد",
+      "status": "documented",
+      "requires": [],
+      "proof": [
+        "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/2989-quality-engineering-skills/12664-pdca-improvement"
+      ],
+      "source": "atlas-strategy.json",
+      "what": "دورة خطط-نفّذ-افحص-تصرّف لتحسين استباقي: خط أساس مقاس وهدف SMART، تحليل السبب، خطة بمالكين ومخاطر تُراجع على FMEA، تجربة محدودة يُحدَّد حجمها ومعيار نجاحها قبل البدء، ثم تعميم أو تعديل. — Plan-do-check-act for proactive improvement, with the pilot's size and success criteria fixe"
+    },
+    {
+      "id": "ASTRAT-83",
+      "family": "atlas-strategy",
+      "group": "thinking",
+      "domain": "strategy",
+      "name_en": "Technical and management zeroing of a quality problem (double-five zeroing)",
+      "name_ar": "تصفير مشكلات الجودة تقنيًا وإداريًا (الصفر المزدوج)",
+      "status": "documented",
+      "requires": [],
+      "proof": [
+        "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/2989-quality-engineering-skills/12665-quality-problem-zeroing"
+      ],
+      "source": "atlas-strategy.json",
+      "what": "يغلق مشكلة جودة في المنتجات المعقدة أو الفضائية بأدلة على خمسة أمور: تحديد العطل وتفسيره، إزالة كل سبب جذري مؤكد والتحقق، إصلاح الضعف الإداري، تعميم الدرس على المنتجات والعمليات المعرضة، وعدم إخفاء أي إجراء أو خطر متبقٍّ عند الإغلاق. — Closes a complex-equipment quality problem w"
+    },
+    {
+      "id": "ASTRAT-84",
+      "family": "atlas-strategy",
+      "group": "thinking",
+      "domain": "strategy",
+      "name_en": "Executive forcing questions: six per C-suite lens to pressure-test a plan",
+      "name_ar": "أسئلة الإجبار التنفيذية: ستة أسئلة لكل دور قيادي تختبر الخطة",
+      "status": "documented",
+      "requires": [],
+      "proof": [
+        "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/146-c-level-agents/457-cco-review",
+        "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/146-c-level-agents/458-cdo-review",
+        "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/146-c-level-agents/460-ciso-review",
+        "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/146-c-level-agents/461-cmo-review",
+        "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/146-c-level-agents/462-cpo-review",
+        "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/146-c-level-agents/463-cro-review",
+        "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/146-c-level-agents/470-gc-review",
+        "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/146-c-level-agents/474-vpe-review"
+      ],
+      "source": "atlas-strategy.json",
+      "what": "يختبر خطة بعدسة كل دور قيادي يمسه القرار، بستة أسئلة محددة لكل دور تطلب رقمًا أو اسمًا لا رأيًا: الاحتفاظ الإجمالي لا الصافي، سبب المغادرة الأول، نموذج التهديد ونطاق الضرر، أي قرار تخدمه البيانات، ICP شخص حقيقي، تغطية خط المبيعات، معدل الدورة وDORA، وسقف المسؤولية في العقد. — Pre"
+    },
+    {
+      "id": "ASTRAT-85",
+      "family": "atlas-strategy",
+      "group": "thinking",
+      "domain": "strategy",
+      "name_en": "Multi-unit brand-standard audit turned into a coaching loop",
+      "name_ar": "تدقيق معايير العلامة عبر الفروع وتحويله إلى حلقة تدريب",
+      "status": "documented",
+      "requires": [],
+      "proof": [
+        "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/2300-franchise-operations/8825-run-brand-standard-audit"
+      ],
+      "source": "atlas-strategy.json",
+      "what": "قائمة تدقيق موزونة مربوطة بمعايير التشغيل التعاقدية (النظافة، المنتج، الخدمة، السلامة، العرض)، تُطبق على كل فرع بنفس الطريقة في نفس الفترة، وتحوّل الفجوات إلى مخاطر وإجراءات بمالك وتاريخ، ثم تدريب وإعادة تدقيق وترتيب الفروع. — A weighted, contract-anchored audit applied identical"
+    },
+    {
+      "id": "ASTRAT-86",
+      "family": "atlas-strategy",
+      "group": "thinking",
+      "domain": "strategy",
+      "name_en": "Define and validate an Ideal Customer Profile",
+      "name_ar": "تعريف العميل المثالي ICP والتحقق منه بخطة اختبار",
+      "status": "documented",
+      "requires": [],
+      "proof": [
+        "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/2216-majestic-sales/8360-icp-definition"
+      ],
+      "source": "atlas-strategy.json",
+      "what": "يحدد العميل المثالي للمبيعات: معايير ملاءمة (مؤسسية، تشغيلية، سلوكية، ومحفزات شراء) مشروطة بظرف يحتاج المنتج فعلًا، أدوار الشراء، قائمة 'ليس عميلنا' بمستبعدات صريحة، بطاقة نقاط بأوزان مبررة، وخطة تحقق بمعايير قبول ورفض. — Defines sales fit criteria, buyer roles, an anti-ICP, a sc"
+    },
+    {
+      "id": "ASTRAT-87",
+      "family": "atlas-strategy",
+      "group": "thinking",
+      "domain": "strategy",
+      "name_en": "Leader operating priorities: bottleneck, calendar audit, delegation",
+      "name_ar": "أولويات تشغيل القائد: عنق الزجاجة ومراجعة التقويم والتفويض",
+      "status": "documented",
+      "requires": [],
+      "proof": [
+        "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/2209-majestic-founder/8276-operating-priorities"
+      ],
+      "source": "atlas-strategy.json",
+      "what": "لقائد شركة مثقل أو مشتت: يحدد مرحلة الشركة ووظيفته الأساسية الآن وعنق الزجاجة الحالي، ثم النتائج الأعلى أثرًا لليوم والأسبوع والشهر، وما يُقطع أو يُفوض أو يُؤجل، ويعيد تشكيل التقويم حسب الغرض لا شكل الاجتماع، مع إيقاع مراجعة قصير. — For an overloaded leader: find the bottleneck, "
     },
     {
       "id": "SYNC-01",
@@ -29519,6 +30973,37 @@
       "what": "تعريف عقود بيانات لإطارات pandas وPolars وفرضها. — Declare and enforce schemas on pandas/Polars dataframes (data contracts). (Pandera, ★4.5k, MIT)."
     },
     {
+      "id": "CODE-25",
+      "family": "code-engineering",
+      "group": "software",
+      "domain": "code",
+      "name_en": "Ranked repository map",
+      "name_ar": "خريطة مستودع مرتبة بالأهمية",
+      "status": "ready",
+      "requires": [
+        "python3"
+      ],
+      "proof": [
+        "kosif-tool/.claude/skills/kosif-superpowers/scripts/repo_map.py",
+        "kosif-tool/.claude/skills/kosif-superpowers/evals/test_repo_map.py"
+      ],
+      "source": "code-engineering.json",
+      "what": "أهم الملفات والتعريفات في مستودع ضمن ميزانية صغيرة، مرتبة بمن يشير إليها أكثر. — The most important files and definitions of a repository within a small budget, ranked by how much the rest of the code refers to them."
+    },
+    {
+      "id": "CODE-26",
+      "family": "code-engineering",
+      "group": "software",
+      "domain": "code",
+      "name_en": "Search/replace edit blocks",
+      "name_ar": "تعديلات بكتل بحث واستبدال",
+      "status": "documented",
+      "requires": [],
+      "proof": [],
+      "source": "code-engineering.json",
+      "what": "عبّر عن كل تعديل كنص أصلي حرفي ونص بديل، واشترط أن يطابق الأصلي موضعًا واحدًا، وافشل بصوت عالٍ إن لم يوجد، ثم شغّل الفحص بعد كل تعديل. — Express each edit as an exact original block and its replacement, require the original to match exactly once, fail loudly when it does not, and"
+    },
+    {
       "id": "COLOR-01",
       "family": "color-palette-grading",
       "group": "images",
@@ -33425,6 +34910,32 @@
       "what": "للحظة «التحليل» جمّد إطارًا حادًا واحدًا بدل الإبطاء، عتّمه 30٪ وانزع إشباعه 40٪، ثم شبكة أرض بيضاء بحد داكن، 20–30 نقطة مميزة، و3–4 صناديق بأقواس زوايا سميكة وبطاقات اسم وإحداثيات. — Hold one sharp frame, dim 30 % and desaturate 40 %, then grid, 20–30 feature points and 3–4 brac"
     },
     {
+      "id": "EXPL-G01",
+      "family": "diagrams-explainers-code",
+      "group": "drawing",
+      "domain": "motion",
+      "name_en": "Explainer scene grammar",
+      "name_ar": "قواعد مشهد الشرح الرياضي",
+      "status": "documented",
+      "requires": [],
+      "proof": [],
+      "source": "diagrams-explainers-code.json",
+      "what": "فكرة واحدة لكل مشهد: اكتب أو ارسم العنصر عند تقديمه، حوّله عند تغيّر معناه، تتابع بنسبة تأخير للمجموعات، حرّك الكاميرا نحو التفصيلة، واترك وقفة بعد كل خطوة. — One idea per scene: write or draw an element when it is introduced, transform it when its meaning changes, lag groups, mo"
+    },
+    {
+      "id": "EXPL-G02",
+      "family": "diagrams-explainers-code",
+      "group": "drawing",
+      "domain": "motion",
+      "name_en": "Architecture diagram as code, revealed by cluster",
+      "name_ar": "مخطط بنية سحابية بالكود ثم كشفه",
+      "status": "documented",
+      "requires": [],
+      "proof": [],
+      "source": "diagrams-explainers-code.json",
+      "what": "اكتب مخطط البنية كودًا (عُقد بأيقونات مزود الخدمة ومجموعات وحواف)، ولّده صورة متجهة، ثم اكشفه مجموعة بعد مجموعة مع السرد. — Write the architecture as code (provider-icon nodes, clusters, edges), render it to a vector image, then reveal it cluster by cluster with the narration."
+    },
+    {
       "id": "DOC-01",
       "family": "documents-office",
       "group": "documents",
@@ -35806,6 +37317,76 @@
       ],
       "source": "easing-timing-rhythm.json",
       "what": "الضربة الكبرى في الفيلم تُبنى: تراجع تمهيدي ثم دفع متسارع ثم تركيز ثم ارتطام، مع اهتزاز بتردد عالٍ قصير العمر. — Build the film's main hit: anticipation dip, accelerating push, rack focus, snap, with a short high-frequency shake."
+    },
+    {
+      "id": "EASE-G01",
+      "family": "easing-timing-rhythm",
+      "group": "motion",
+      "domain": "motion",
+      "name_en": "Spring solved frame by frame",
+      "name_ar": "نابض بالفيزياء يطبع كل إطار",
+      "status": "ready",
+      "requires": [
+        "python3"
+      ],
+      "proof": [
+        "kosif-tool/.claude/skills/kosif-superpowers/scripts/motion_physics.py",
+        "kosif-tool/.claude/skills/kosif-superpowers/evals/test_motion_physics.py"
+      ],
+      "source": "easing-timing-rhythm.json",
+      "what": "احسب النابض من الكتلة والصلابة والتخميد لا من مدة، واطبع قيمته في كل إطار وزمن استقراره ونسبة تجاوزه، أو كإطارات CSS. — Solve the spring from mass, stiffness and damping instead of a duration, and print its value every frame, its settle time and overshoot, or CSS @keyframes."
+    },
+    {
+      "id": "EASE-G02",
+      "family": "easing-timing-rhythm",
+      "group": "motion",
+      "domain": "motion",
+      "name_en": "Browser-exact cubic-bezier sampling",
+      "name_ar": "منحنى CSS محسوب كما يحسبه المتصفح",
+      "status": "ready",
+      "requires": [
+        "python3"
+      ],
+      "proof": [
+        "kosif-tool/.claude/skills/kosif-superpowers/scripts/motion_physics.py",
+        "kosif-tool/.claude/skills/kosif-superpowers/evals/test_motion_physics.py"
+      ],
+      "source": "easing-timing-rhythm.json",
+      "what": "حوّل أي cubic-bezier أو اسم تسهيل CSS إلى قيم لكل إطار بنفس حل المتصفح، لتطابق الحركة في الفيديو ما يظهر في الصفحة. — Turn any cubic-bezier or named CSS easing into per-frame values with the browser's solution, so the rendered film matches the page."
+    },
+    {
+      "id": "EASE-G03",
+      "family": "easing-timing-rhythm",
+      "group": "motion",
+      "domain": "motion",
+      "name_en": "Stagger from an origin on a grid",
+      "name_ar": "تتابع من نقطة أصل على شبكة",
+      "status": "ready",
+      "requires": [
+        "python3"
+      ],
+      "proof": [
+        "kosif-tool/.claude/skills/kosif-superpowers/scripts/motion_physics.py",
+        "kosif-tool/.claude/skills/kosif-superpowers/evals/test_motion_physics.py"
+      ],
+      "source": "easing-timing-rhythm.json",
+      "what": "وزّع التأخير على العناصر حسب بعدها عن نقطة أصل (الأول، الأخير، المنتصف، الأطراف، عنصر بعينه) في صف أو شبكة، مع منحنى للتأخير نفسه. — Spread delays by each element's distance from an origin (first, last, center, edges, a given index) in a row or grid, with an easing on the delays "
+    },
+    {
+      "id": "EASE-G04",
+      "family": "easing-timing-rhythm",
+      "group": "motion",
+      "domain": "motion",
+      "name_en": "Timeline with relative offsets and labels",
+      "name_ar": "خط زمني بإزاحات نسبية وعلامات",
+      "status": "documented",
+      "requires": [
+        "npm:gsap",
+        "npm:animejs"
+      ],
+      "proof": [],
+      "source": "easing-timing-rhythm.json",
+      "what": "ابنِ المشهد كخط زمني واحد تُوضع فيه كل حركة بإزاحة نسبية من السابقة أو عند علامة مسماة، فيتغير التوقيت كله بتعديل رقم واحد. — Build the scene as one timeline where each move is placed by a relative offset from the previous one or at a named label, so retiming means editing one nu"
     },
     {
       "id": "ENG-01",
@@ -43732,6 +45313,34 @@
       "what": "خط أنابيب بايثون كامل داخل المهارة: تحليل المرجع (لقطات، انتقالات، طبقة نص بألفا حقيقية وظل بالمربعات الصغرى، مطابقة خط، مظهر لوني) ثم بناء بإطار واحد لكل إطار مرجعي: نقل لوني Reinhard كـLUT، كين بيرنز، الانتقال بمنحناه المقاس، تعتيم وحبيبات معايرة، والنص بالخط المطابَق وحركته ال"
     },
     {
+      "id": "ENG-G01",
+      "family": "engines-render-pipeline",
+      "group": "3d",
+      "domain": "motion",
+      "name_en": "Lottie export that plays everywhere",
+      "name_ar": "تصدير لوتي يعمل في كل مشغل",
+      "status": "documented",
+      "requires": [
+        "npm:lottie"
+      ],
+      "proof": [],
+      "source": "engines-render-pipeline.json",
+      "what": "صمم بطبقات أشكال متجهة فقط، وتجنب المؤثرات والتعبيرات غير المدعومة، وضع علامات للمقاطع، واختبر في المشغل قبل التسليم. — Design with vector shape layers only, avoid unsupported effects and expressions, add markers for segments, and test in the player before delivery."
+    },
+    {
+      "id": "ENG-G02",
+      "family": "engines-render-pipeline",
+      "group": "3d",
+      "domain": "motion",
+      "name_en": "2D scenes with thousands of sprites",
+      "name_ar": "رسم ثنائي الأبعاد بآلاف العناصر",
+      "status": "documented",
+      "requires": [],
+      "proof": [],
+      "source": "engines-render-pipeline.json",
+      "what": "اجمع الصور في أطلس واحد، وارسم العناصر الكثيرة في حاوية جسيمات، وحرّك بفرق الزمن، فتبقى آلاف العناصر سلسة. — Pack images into one atlas, draw many elements in a particle container and move them by time delta, so thousands stay smooth."
+    },
+    {
       "id": "FMT-01",
       "family": "formats-platforms",
       "group": "motion",
@@ -46112,6 +47721,32 @@
       "what": "كل إطار يُحسب من الزمن المطلق (لا ساعة متراكمة): القفز والإعادة بلا انجراف والرندر المتوازي ممكن؛ سنّ القلم مربوط بنهاية الخط النشط وكشف الحبر على المسار وملمس ورق؛ الصوت الأصلي مسار رئيسي. اذكر دقة الرسم الأصلية (720×1280 مكبّرة إلى 1080×1920 في المشروع) وأن المشاهد تقريبية حين "
     },
     {
+      "id": "DRAW-G01",
+      "family": "hand-drawn-draw-on",
+      "group": "drawing",
+      "domain": "motion",
+      "name_en": "Seeded rough hand-drawn rendering",
+      "name_ar": "رسم يدوي خشن ثابت البذرة",
+      "status": "documented",
+      "requires": [],
+      "proof": [],
+      "source": "hand-drawn-draw-on.json",
+      "what": "ارسم الأشكال بمظهر يدوي (خشونة، انحناء، تهشير) ببذرة ثابتة لكل شكل حتى لا يرتعش عند إعادة الرسم، ثم اكشفه بطول المسار. — Draw shapes with a hand-made look (roughness, bowing, hachure) with one fixed seed per shape so it does not jitter on redraw, then reveal it by path length."
+    },
+    {
+      "id": "DRAW-G02",
+      "family": "hand-drawn-draw-on",
+      "group": "drawing",
+      "domain": "motion",
+      "name_en": "Drag momentum and rubber-band edges",
+      "name_ar": "زخم السحب والارتداد المطاطي",
+      "status": "documented",
+      "requires": [],
+      "proof": [],
+      "source": "hand-drawn-draw-on.json",
+      "what": "بعد إفلات السحب تستمر الحركة بسرعتها ثم تتباطأ أسيًا، وعند الحافة تقاوم بمعامل مطاطي ثم ترتد. — After a drag is released motion continues at its speed and decays exponentially; at the edge it resists with a rubber-band factor and springs back."
+    },
+    {
       "id": "GRAPH-01",
       "family": "knowledge-graph",
       "group": "research",
@@ -46484,6 +48119,36 @@
       ],
       "source": "knowledge-graph.json",
       "what": "حين يكون commit الفهرس المستضاف أحدث من نسختك، تكشف rank_files وfile_neighbors ملفات لا تملكها محليًا: اجلب الفرع الرئيسي وادمجه ثم أعد الاستعلام؛ واحفظ القرارات بـ remember() لمراجعة الفريق. — When the hosted index is ahead of your checkout, rank_files/file_neighbors surface fil"
+    },
+    {
+      "id": "GRAPH-22",
+      "family": "knowledge-graph",
+      "group": "research",
+      "domain": "code",
+      "name_en": "Graph RAG with community summaries",
+      "name_ar": "استرجاع بالرسم المعرفي وملخصات المجتمعات",
+      "status": "documented",
+      "requires": [
+        "pip:chromadb"
+      ],
+      "proof": [],
+      "source": "knowledge-graph.json",
+      "what": "استخرج الكيانات والعلاقات من كل مقطع، وجمّعها في مجتمعات، ولخص كل مجتمع؛ الأسئلة العامة تُجاب بتجميع ملخصات المجتمعات، والمحددة من جوار الكيان. — Extract entities and relations per chunk, cluster them into communities, summarise each; global questions map-reduce over community su"
+    },
+    {
+      "id": "GRAPH-23",
+      "family": "knowledge-graph",
+      "group": "research",
+      "domain": "code",
+      "name_en": "Dual-level retrieval with incremental graph updates",
+      "name_ar": "استرجاع بمستويين وتحديث تدريجي",
+      "status": "documented",
+      "requires": [
+        "pip:chromadb"
+      ],
+      "proof": [],
+      "source": "knowledge-graph.json",
+      "what": "قسّم كلمات السؤال إلى مستوى منخفض (كيانات محددة) ومرتفع (موضوعات)، واسترجع بالاثنين، وأضف المستندات الجديدة للرسم دون إعادة بنائه. — Split the query's keywords into low-level (specific entities) and high-level (themes), retrieve with both, and add new documents to the graph witho"
     },
     {
       "id": "GLOW-01",
@@ -59879,6 +61544,34 @@
       "what": "يسمّي المعلم الأخير إيصال التحقق: fps والمدة والصوت والاختبارات والروابط، مما يستطيع المستخدم فحصه. — The last milestone names the verification receipt: fps, duration, audio, tests, links — what the user can check."
     },
     {
+      "id": "PLAN-13",
+      "family": "planning-execution",
+      "group": "thinking",
+      "domain": "mind",
+      "name_en": "Spec-driven development",
+      "name_ar": "تطوير يقوده المواصفات",
+      "status": "documented",
+      "requires": [],
+      "proof": [],
+      "source": "planning-execution.json",
+      "what": "مبادئ ثابتة أولًا، ثم مواصفة تقول ماذا ولماذا دون كيف، ثم توضيح المبهم، ثم خطة تقنية، ثم مهام مرتبة بالاختبار أولًا، ثم التنفيذ، مع فحص اتساق بينها. — Fixed principles first, then a spec of what and why without how, then clarification, a technical plan, ordered test-first tasks, "
+    },
+    {
+      "id": "PLAN-14",
+      "family": "planning-execution",
+      "group": "thinking",
+      "domain": "mind",
+      "name_en": "Brainstorm, plan, then a test-first subagent per task",
+      "name_ar": "عصف ثم خطة ثم وكيل لكل مهمة بالاختبار أولًا",
+      "status": "documented",
+      "requires": [
+        "claude:tools"
+      ],
+      "proof": [],
+      "source": "planning-execution.json",
+      "what": "صمّم بالأسئلة قبل الكود، واكتب خطة مهام صغيرة بملفاتها وطريقة تحققها، وأعطِ كل مهمة لوكيل فرعي جديد، وراجع بين المهام، ولا تقل «تم» قبل التحقق. — Design by questions before code, write a plan of small tasks with files and verification, give each task to a fresh subagent, review b"
+    },
+    {
       "id": "PROMPT-01",
       "family": "prompt-craft",
       "group": "thinking",
@@ -70044,8 +71737,8 @@
       "family": "runnable-tools",
       "group": "agents",
       "domain": "build",
-      "name_en": "Hand-drawn pencil, charcoal or ink drawing of any photo or imagined scene, built stroke by stroke",
-      "name_ar": "رسم يدوي المظهر بالرصاص أو الفحم أو الحبر لأي صورة أو مشهد متخيَّل، خطًا بخط",
+      "name_en": "Hand-drawn or hand-painted version of any photo or imagined scene: pencil, charcoal, ink, coloured pencil, oil brush or watercolour",
+      "name_ar": "نسخة مرسومة أو ملوّنة باليد لأي صورة أو مشهد متخيَّل: رصاص، فحم، حبر، ألوان خشبية، فرشاة زيت أو ألوان مائية",
       "status": "proven",
       "requires": [
         "chromium",
@@ -70114,6 +71807,158 @@
       ],
       "source": "runnable-tools.json",
       "what": "يحفظ مراجعة أشهر 1000 مستودع عام على GitHub: لقطة حقائق (الترتيب والنجوم واللغة والترخيص والوصف، مدموجة من فهرس gitstar-ranking وسجلات deps.dev لقائمة مكملة لما يفوته)، وتصنيف آلي حسب الموضوع والترخيص، ومراجعة يدوية للاستبعادات والنقل. build يكتب data/github_top1000.json والجدول "
+    },
+    {
+      "id": "TOOL-161",
+      "family": "runnable-tools",
+      "group": "agents",
+      "domain": "build",
+      "name_en": "Repo Map",
+      "name_ar": "خريطة المستودع",
+      "status": "proven",
+      "requires": [
+        "python3"
+      ],
+      "proof": [
+        "kosif-tool/.claude/skills/kosif-superpowers/evals/test_repo_map.py",
+        "kosif-tool/.claude/skills/kosif-superpowers/scripts/repo_map.py"
+      ],
+      "source": "runnable-tools.json",
+      "what": "يعطي وكيل الكود شكل المستودع في ميزانية صغيرة: يحلل بايثون بـ ast وجافاسكربت/تايبسكربت وGo وRust بأنماط الأسطر، ويعرف أين يُعرَّف كل اسم ومن يذكره، ويرتب الملفات بـ PageRank على رسم الإشارات (مع إمكانية التركيز على ملفات أو كلمات)، ويطبع أهم الملفات بأسطر تعريفاتها حتى تنفد الميز"
+    },
+    {
+      "id": "TOOL-162",
+      "family": "runnable-tools",
+      "group": "agents",
+      "domain": "build",
+      "name_en": "Memory Ops",
+      "name_ar": "عمليات الذاكرة",
+      "status": "proven",
+      "requires": [
+        "python3"
+      ],
+      "proof": [
+        "kosif-tool/.claude/skills/kosif-superpowers/evals/test_memory_ops.py",
+        "kosif-tool/.claude/skills/kosif-superpowers/scripts/memory_ops.py"
+      ],
+      "source": "runnable-tools.json",
+      "what": "يحفظ ملف ذاكرة محليًا طويل المدى بلا تناقضات: لكل معلومة مرشحة يقترح عملية واحدة بسببها (إضافة إن لم يوجد مثلها، تحديث إن تغيرت قيمة لنفس الموضوع والخاصية أو أضافت صياغة أدق تفصيلًا، حذف إن تراجعت عن محفوظ، ولا شيء للمكرر)، ويرفض المعلومات التي فيها أسرار، وينفذ الخطة المعتمدة مع"
+    },
+    {
+      "id": "TOOL-163",
+      "family": "runnable-tools",
+      "group": "agents",
+      "domain": "build",
+      "name_en": "Motion Physics",
+      "name_ar": "فيزياء الحركة",
+      "status": "proven",
+      "requires": [
+        "python3",
+        "npm:animejs",
+        "npm:react"
+      ],
+      "proof": [
+        "kosif-tool/.claude/skills/kosif-superpowers/evals/test_motion_physics.py",
+        "kosif-tool/.claude/skills/kosif-superpowers/scripts/motion_physics.py"
+      ],
+      "source": "runnable-tools.json",
+      "what": "يحسب أرقام الحركة بدل تخمينها: نابض من الصلابة والتخميد والكتلة (القيمة في كل إطار ونسبة التخميد وزمن الاستقرار والتجاوز، أو إطارات CSS)، وأي منحنى cubic-bezier أو تسهيل CSS مسمى بنفس حساب المتصفح، وتأخيرات التتابع من نقطة أصل (الأول أو الأخير أو المنتصف أو الأطراف أو عنصر بعينه)"
+    },
+    {
+      "id": "TOOL-164",
+      "family": "runnable-tools",
+      "group": "agents",
+      "domain": "build",
+      "name_en": "Caption lines: word timings to readable SRT/VTT",
+      "name_ar": "سطور الترجمة: من توقيت الكلمات إلى ترجمة مقروءة",
+      "status": "proven",
+      "requires": [
+        "pip:faster-whisper",
+        "key:openai"
+      ],
+      "proof": [
+        "kosif-tool/.claude/skills/kosif-superpowers/evals/test_caption_lines.py",
+        "kosif-tool/.claude/skills/kosif-superpowers/scripts/caption_lines.py"
+      ],
+      "source": "runnable-tools.json",
+      "what": "كُتبت بعد دراسة «مونتاجي»: تقسم توقيت الكلمات إلى سطور ترجمة قصيرة بحد للكلمات والحروف والمدة، وتكسر عند الوقفة ونهاية الجملة والفاصلة، وتسد الفجوات القصيرة، وتضيف علامة الاتجاه للعربي، وتحذف ما يخترعه نموذج التفريغ مثل «ترجمة نانسي» و«اشتركوا في القناة» مع سرده؛ وlint يفحص أي مل"
+    },
+    {
+      "id": "TOOL-165",
+      "family": "runnable-tools",
+      "group": "agents",
+      "domain": "build",
+      "name_en": "Look pipeline: one colour grade for ffmpeg, SVG/CSS and GLSL",
+      "name_ar": "خط اللوك: تلوين واحد لـ ffmpeg وSVG وGLSL",
+      "status": "proven",
+      "requires": [
+        "ffmpeg",
+        "python3"
+      ],
+      "proof": [
+        "kosif-tool/.claude/skills/kosif-superpowers/evals/test_look_pipeline.py",
+        "kosif-tool/.claude/skills/kosif-superpowers/scripts/look_pipeline.py"
+      ],
+      "source": "runnable-tools.json",
+      "what": "كُتبت بعد دراسة «مونتاجي»: 11 لوكًا وثمانية معاملات تصبح خطوة خطية ومصفوفة 3×3، تخرج بالأرقام نفسها لـ ffmpeg وSVG وCSS وGLSL فتتطابق المعاينة والتصدير؛ verify يقيس الفرق بكسلًا بكسلًا، وapply يلوّن فيديو في ملف جديد. — Written after a read-only study of the Montaji Arabic video "
+    },
+    {
+      "id": "TOOL-166",
+      "family": "runnable-tools",
+      "group": "agents",
+      "domain": "build",
+      "name_en": "Lesson number integrity checker",
+      "name_ar": "فاحص أرقام الدروس والشروح",
+      "status": "proven",
+      "requires": [
+        "python3"
+      ],
+      "proof": [
+        "kosif-tool/.claude/skills/kosif-superpowers/evals/test_lesson_integrity.py",
+        "kosif-tool/.claude/skills/kosif-superpowers/scripts/lesson_integrity.py"
+      ],
+      "source": "runnable-tools.json",
+      "what": "يفحص الأرقام التي يعرضها شرح أو فيديو تعليمي أو إنفوجراف أو درس تفاعلي. values يتحقق من سجل قيم يذكر لكل رقم مصدره والجملة المقتبسة التي تثبته أو ملاحظة فجوة صريحة، ويعيد حساب المجاميع والحواصل المشتقة؛ render يملأ العناصر النائبة {v:id} و{v:id|dp} و{n:id} في السكربت أو الصفحة وي"
+    },
+    {
+      "id": "TOOL-167",
+      "family": "runnable-tools",
+      "group": "agents",
+      "domain": "build",
+      "name_en": "Fast Edit: keyframe-aware instant cut, voice presets, low-light lift, audio extract",
+      "name_ar": "التعديل السريع: قص فوري يعرف الإطارات المفتاحية، مغيّر صوت، تفتيح الفيديو المظلم، استخراج الصوت",
+      "status": "proven",
+      "requires": [
+        "ffmpeg",
+        "python3"
+      ],
+      "proof": [
+        "kosif-tool/.claude/skills/kosif-superpowers/evals/test_fast_edit.py",
+        "kosif-tool/.claude/skills/kosif-superpowers/scripts/fast_edit.py"
+      ],
+      "source": "runnable-tools.json",
+      "what": "عمليات سريعة على ملف واحد بإيصال JSON: يعرض الإطارات المفتاحية، ويقص بالنسخ المباشر لو البداية على إطار مفتاحي وإلا يعيد الترميز بدقة ويقول قد إيه كان النسخ هيبدأ بدري، ويغيّر الصوت بنفس معدل العينة ونفس الطول، ويفتّح الفيديو المظلم ويقيس الإضاءة قبل وبعد، ويستخرج الصوت بدون إعاد"
+    },
+    {
+      "id": "TOOL-168",
+      "family": "runnable-tools",
+      "group": "agents",
+      "domain": "build",
+      "name_en": "Colour media engine: coloured pencil, oil brush and watercolour painting of a photo",
+      "name_ar": "محرك الخامات الملوّنة: ألوان خشبية وفرشاة زيت وألوان مائية لأي صورة",
+      "status": "proven",
+      "requires": [
+        "chromium",
+        "pip:numpy",
+        "pip:opencv",
+        "pip:mediapipe"
+      ],
+      "proof": [
+        "kosif-tool/.claude/skills/kosif-superpowers/evals/test_portrait_pipeline.py",
+        "kosif-tool/.claude/skills/kosif-superpowers/scripts/color_media.py"
+      ],
+      "source": "runnable-tools.json",
+      "what": "محرك الألوان لخط البورتريه: يقيس المرجع كما في الرصاص ثم يلوّن لوحة فارغة بالألوان الخشبية (30 قلمًا بطبقات من الفاتح للغامق) أو فرشاة الزيت (ضربات منحنية من الكبيرة للصغيرة بسماكة) أو الألوان المائية (رسم قلم خفيف ثم غسلات شفافة). لا ينسخ أي بكسل من الصورة. يُستدعى عادة عبر port"
     },
     {
       "id": "SEC-01",
@@ -72809,6 +74654,32 @@
       ],
       "source": "shapes-morph-geometry.json",
       "what": "العناصر نفسها تعيد ترتيب نفسها من شكل إلى آخر (مروحة ثم رسم بياني ثم حلقة) فتصنع فيلمًا بلا قطع. — The same elements rearrange from one formation to the next (fan, then graph, then ring), making a film with no cuts."
+    },
+    {
+      "id": "SHAPE-G01",
+      "family": "shapes-morph-geometry",
+      "group": "drawing",
+      "domain": "motion",
+      "name_en": "One animated value drives every dependent shape",
+      "name_ar": "رقم متحرك واحد يقود كل الأشكال",
+      "status": "documented",
+      "requires": [],
+      "proof": [],
+      "source": "shapes-morph-geometry.json",
+      "what": "حرّك قيمة واحدة (متتبع) واجعل كل شكل يعتمد عليها يُعاد رسمه من دالة في كل إطار، بدل تحريك كل شكل وحده. — Animate one value (a tracker) and redraw every dependent shape from a function of it each frame, instead of animating each shape alone."
+    },
+    {
+      "id": "SHAPE-G02",
+      "family": "shapes-morph-geometry",
+      "group": "drawing",
+      "domain": "motion",
+      "name_en": "Morph that matches shared parts",
+      "name_ar": "تحويل يطابق الأجزاء المشتركة",
+      "status": "documented",
+      "requires": [],
+      "proof": [],
+      "source": "shapes-morph-geometry.json",
+      "what": "عند تحويل معادلة أو نص أو شكل إلى آخر، أبقِ الأجزاء المتطابقة في مكانها وحرّكها، وحوّل المختلف فقط، بدل ذوبان كل شيء في كل شيء. — When morphing one equation, text or shape into another, keep matching parts and move them, morph only what differs, instead of melting everything into"
     },
     {
       "id": "REA-001",
@@ -81805,6 +83676,21 @@
       "what": "إيجاد المشكلة، وإعادة التأطير، والكمية أولًا، والتشبيه البعيد، واللعب التوافقي، والبساطة بعد الإتقان، والذوق، والتحقق الوسواسي، والأفق الطويل، والصدق — لكل منها فحص. — Problem finding, reframing, quantity first, distant analogy, combinatorial play, simplicity after mastery, taste"
     },
     {
+      "id": "THINK-47",
+      "family": "thinking-core",
+      "group": "thinking",
+      "domain": "mind",
+      "name_en": "Anonymous peer-ranked council",
+      "name_ar": "مجلس بتقييم متبادل مجهول الهوية",
+      "status": "documented",
+      "requires": [
+        "python3"
+      ],
+      "proof": [],
+      "source": "thinking-core.json",
+      "what": "عدة نماذج تجيب، ثم كل نموذج يرتب إجابات الآخرين بعد إخفاء أصحابها، ثم رئيس يكتب الإجابة النهائية مستعينًا بالترتيب. — Several models answer, each ranks the others' answers with authors hidden, then a chair writes the final answer using the rankings."
+    },
+    {
       "id": "TRANS-01",
       "family": "transitions-cuts",
       "group": "motion",
@@ -89822,6 +91708,19 @@
       "what": "p = 0.46·easeOut((t−t0)/0.8) + 0.10·smoothstep((t−t0−0.5)/2.05) + 0.44·easeInOut((t−t0−2.3)/0.95): ينزلق سريعًا إلى المنتصف، يزحف ببطء دون توقف ~1.5–2 ث للمقارنة، ثم يتسارع إلى كشف كامل. — Fast glide to the middle, a slow never-stopping crawl for comparison, then an accelerating "
     },
     {
+      "id": "TRANS-G01",
+      "family": "transitions-cuts",
+      "group": "motion",
+      "domain": "motion",
+      "name_en": "Auto-animate between two states (magic move)",
+      "name_ar": "انتقال سحري بين حالتين",
+      "status": "documented",
+      "requires": [],
+      "proof": [],
+      "source": "transitions-cuts.json",
+      "what": "طابق العناصر بين حالتين بمعرّف ثابت، وحرّك الموضع والحجم واللون للمتطابق، وأظهر أو أخفِ غير المتطابق، فيبدو الانتقال حركة واحدة. — Match elements between two states by a stable id, tween position, size and colour of matches, and fade the rest, so the change reads as one move."
+    },
+    {
       "id": "ARAB-01",
       "family": "typography-arabic",
       "group": "type",
@@ -95508,6 +97407,89 @@
       "what": "لكل ما استُرد: الأداة التي أظهرته وما تغيّر وما تُحقق منه وما بقي، مع رقم قبل ورقم بعد على الامتحان نفسه. — For every recovery: the tool call that showed it, what changed, what was verified, what is missing, plus before/after numbers on the same exam."
     },
     {
+      "id": "CHECK-36",
+      "family": "verification-evals",
+      "group": "quality",
+      "domain": "mind",
+      "name_en": "One value registry: a source and the supporting sentence for every number",
+      "name_ar": "سجل قيم بمصدر واقتباس لكل رقم",
+      "status": "documented",
+      "requires": [
+        "python3"
+      ],
+      "proof": [
+        "kosif-tool/.claude/skills/kosif-superpowers/evals/test_lesson_integrity.py"
+      ],
+      "source": "verification-evals.json",
+      "what": "كل رقم يظهر في درس أو شرح أو إنفوجراف له مدخل واحد: القيمة والوحدة وماذا يقيس والمدى ومرجع المصدر والجملة المقتبسة التي تثبته. — Every number a lesson, explainer or infographic shows has one entry: value, unit, what it measures, range, source ref and the quoted sentence that supp"
+    },
+    {
+      "id": "CHECK-37",
+      "family": "verification-evals",
+      "group": "quality",
+      "domain": "mind",
+      "name_en": "Text refers to numbers by id and fails closed",
+      "name_ar": "النص يشير إلى الرقم بمعرّفه ويفشل مغلقًا",
+      "status": "documented",
+      "requires": [
+        "python3"
+      ],
+      "proof": [
+        "kosif-tool/.claude/skills/kosif-superpowers/evals/test_lesson_integrity.py"
+      ],
+      "source": "verification-evals.json",
+      "what": "الجمل تكتب {v:id} لا الرقم نفسه؛ لو غاب المعرّف أو جُهلت طباعة الوحدة يتوقف البناء ولا يطبع تخمينًا. — Sentences write {v:id}, not the number; a missing id or an unknown unit print form stops the build instead of printing a guess."
+    },
+    {
+      "id": "CHECK-38",
+      "family": "verification-evals",
+      "group": "quality",
+      "domain": "mind",
+      "name_en": "An explicit gaps list instead of an invented number",
+      "name_ar": "ملف فجوات بدل اختراع رقم",
+      "status": "documented",
+      "requires": [],
+      "proof": [
+        "kosif-tool/.claude/skills/kosif-superpowers/evals/test_lesson_integrity.py"
+      ],
+      "source": "verification-evals.json",
+      "what": "رقم بلا مصدر يُترك فارغًا مع سبب مكتوب ولا يُعرض، ويظهر كتحذير في التقرير. — A number with no source is left unset with a written reason, never shown, and reported as a warning."
+    },
+    {
+      "id": "CHECK-39",
+      "family": "verification-evals",
+      "group": "quality",
+      "domain": "mind",
+      "name_en": "A fact-check pass that restores the published figure",
+      "name_ar": "مراجعة حقائق تعيد الرقم المنشور",
+      "status": "documented",
+      "requires": [
+        "python3"
+      ],
+      "proof": [
+        "kosif-tool/.claude/skills/kosif-superpowers/evals/test_lesson_integrity.py"
+      ],
+      "source": "verification-evals.json",
+      "what": "حين يختلف رقم محسوب بالتحويل عن الرقم المنشور في المصدر نعرض المنشور ونكتب ملاحظة بالتصحيح ونعيد حساب ما اشتُق منه. — When a converted figure differs from the one the source publishes, show the published one, note the correction and recompute everything derived from it."
+    },
+    {
+      "id": "CHECK-40",
+      "family": "verification-evals",
+      "group": "quality",
+      "domain": "mind",
+      "name_en": "A conservation ledger: account for every unit",
+      "name_ar": "دفتر حفظ: ابحث عن كل وحدة",
+      "status": "documented",
+      "requires": [
+        "python3"
+      ],
+      "proof": [
+        "kosif-tool/.claude/skills/kosif-superpowers/evals/test_lesson_integrity.py"
+      ],
+      "source": "verification-evals.json",
+      "what": "ما دخل يساوي ما خرج ضمن سماحية، بلا قيم سالبة، مع حصة كل مخرج والكفاءة. — What goes in equals what comes out within tolerance, with no negative amounts, each output's share and the efficiency."
+    },
+    {
       "id": "DL-01",
       "family": "video-download",
       "group": "motion",
@@ -97092,6 +99074,32 @@
       "proof": [],
       "source": "web-research.json",
       "what": "قيادة متصفح بلا واجهة لإنجاز مهام ويب متعددة الخطوات من هدف لغوي. — Drive a headless browser through multi-step web tasks from a goal. (browser-use, ★118.4k, MIT)."
+    },
+    {
+      "id": "WEB-25",
+      "family": "web-research",
+      "group": "research",
+      "domain": "research",
+      "name_en": "Perspective-guided research, outline, then cited writing",
+      "name_ar": "بحث بوجهات نظر ثم مخطط ثم كتابة بمصادر",
+      "status": "documented",
+      "requires": [],
+      "proof": [],
+      "source": "web-research.json",
+      "what": "اكتشف وجهات النظر حول الموضوع، واسأل من كل وجهة أسئلة يجيب عنها بحث حقيقي، واجمع المقاطع بمصادرها، ثم ابنِ المخطط، ثم اكتب كل قسم بمراجعه. — Discover the perspectives on a topic, ask questions from each perspective answered by real search, collect cited snippets, build the outlin"
+    },
+    {
+      "id": "WEB-26",
+      "family": "web-research",
+      "group": "research",
+      "domain": "research",
+      "name_en": "Planner, parallel researchers, then report",
+      "name_ar": "مخطِّط وباحثون متوازيون ثم تقرير",
+      "status": "documented",
+      "requires": [],
+      "proof": [],
+      "source": "web-research.json",
+      "what": "قسّم السؤال إلى أسئلة فرعية، ووزعها على باحثين متوازيين يبحث كل منهم ويلخص بمصادره، ثم يجمع محرر واحد التقرير بقائمة مصادر. — Split the question into sub-questions, give each to a parallel researcher that searches and summarises with sources, then one editor writes the report wit"
     },
     {
       "id": "WRITE-01",

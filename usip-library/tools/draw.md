@@ -1,4 +1,4 @@
-# أدوات المجال `draw` (16 أداة)
+# أدوات المجال `draw` (17 أداة)
 
 > مولّد من `data/tools.json`. [الفهرس الرئيسي](../README.md) · `python3 scripts/hub.py tool <id>` للبطاقة الحية.
 
@@ -200,6 +200,49 @@
 #### عند الفشل (A29)
 
 - ابدأ بـ `think.py recover --message "<نص الخطأ>"`، ثم سجّل `fusionforge.py trace --project <slug> --id <FUSE-ID> --stage <stage> --node <N> --action "<ما جُرّب>" --result failed --error-class <الصنف> --tool tool:code-drawing-master --evidence <ملف>`.
+
+### `color-media` — محرك الخامات الملوّنة: ألوان خشبية وفرشاة زيت وألوان مائية لأي صورة / Colour media engine: coloured pencil, oil brush and watercolour painting of a photo
+
+| الحقل | القيمة |
+|---|---|
+| المسار | `scripts/color_media.py` (جذر: skill) |
+| المجال | `draw` |
+| الدليل | `tested-here` |
+| العائلات | `hand-drawn-draw-on`, `story-direction-ideas` |
+
+**ما تفعله:** محرك الألوان لخط البورتريه: يقيس المرجع كما في الرصاص ثم يلوّن لوحة فارغة بالألوان الخشبية (30 قلمًا بطبقات من الفاتح للغامق) أو فرشاة الزيت (ضربات منحنية من الكبيرة للصغيرة بسماكة) أو الألوان المائية (رسم قلم خفيف ثم غسلات شفافة). لا ينسخ أي بكسل من الصورة. يُستدعى عادة عبر portrait_pipeline.py.
+
+**What it does:** The portrait pipeline's colour engine. It measures the reference as for graphite and paints a blank canvas: coloured pencil (30 named pencils glazed light to dark), oil (toned ground, coarse-to-fine curved brush strokes with bristle streaks and lit impasto) or watercolour (pencil underdrawing, transparent washes light to dark with edge darkening and granulation). No photo pixel is copied. Usually called through portrait_pipeline.py --medium colored-pencil\|oil\|watercolor.
+
+#### متى تُستدعى
+
+- «ارسم صورتي بالألوان الخشبية»
+- «حوّل الصورة للوحة ألوان مائية»
+- «Paint this photo as an oil painting with visible brush strokes»
+
+#### الأوامر
+
+- **draw**: Paints the photo in the chosen colour medium; writes PNG, SVG and receipt into --out.
+  - `python3 scripts/color_media.py draw --photo in.png --out out/x --medium oil`
+- **palette**: Lists the 30 pencils of the coloured-pencil set with their colours.
+  - `python3 scripts/color_media.py palette`
+
+#### المتطلبات والأمان
+
+- optional: mediapipe (+ face_landmarker.task, selfie_multiclass_256x256.tflite from storage.googleapis.com/mediapipe-models)
+- python: numpy, opencv-python-headless
+- الأمان: writes-files
+- الموافقة: Writes only into --out; no network, model calls or spend. A photo of a real person is personal data: draw people only with their consent and never publish without the user's permission.
+- الحدود: Algorithmic rendering, not a human hand or neural model; oil takes each stroke's colour from a blurred reference and watercolour washes are flat per segmented shape; impasto, weave and granulation are simulated.
+
+#### الاختبارات والأدلة
+
+- `.claude/skills/kosif-superpowers/evals/test_portrait_pipeline.py`
+- مرجع: `.claude/skills/kosif-superpowers/references/portrait-drawing.md`
+
+#### عند الفشل (A29)
+
+- ابدأ بـ `think.py recover --message "<نص الخطأ>"`، ثم سجّل `fusionforge.py trace --project <slug> --id <FUSE-ID> --stage <stage> --node <N> --action "<ما جُرّب>" --result failed --error-class <الصنف> --tool tool:color-media --evidence <ملف>`.
 
 ### `creative-paint` — الرسم الإبداعي بالطبقات / Creative Paint layered renderer
 

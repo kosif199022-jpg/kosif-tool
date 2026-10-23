@@ -24,9 +24,9 @@
 |---|---:|---|
 | `proven` | 17 | ✅ proven: a proof exists in the catalog; still check its requirements here before calling it ready |
 | `ready` | 8 | 🟢 ready: runnable without setup according to the catalog |
-| `documented` | 311 | 📄 documented: a described method; needs building or wiring before it runs |
+| `documented` | 332 | 📄 documented: a described method; needs building or wiring before it runs |
 | `install` | 2 | 📦 install: needs a package, binary or model first |
-| **المجموع** | **338** | |
+| **المجموع** | **359** | |
 
 ## الأدوات القابلة للتشغيل / runnable tools
 

@@ -1,7 +1,7 @@
 # Claude: understand KOSIF in under three minutes
 
 ## 30-second map
-Full catalog: 5,601 power records, 62 families, 15 groups; 159 tool records in existing manifest.
+Full catalog: 5,727 power records, 62 families, 15 groups; 167 tool records in existing manifest.
 Classification is NOT proof of runtime compatibility. Respect each power's status, requirements, proof.
 
 ## Commands (run from .claude/skills/kosif-superpowers)
@@ -15,18 +15,18 @@ python scripts/smart_capabilities.py verify
 
 ## Group routing cheatsheet
 
-- **البحث والمعرفة** (`research`, 56): atlas-research, web-research, knowledge-graph
-- **التفكير والتخطيط والاستراتيجية** (`thinking`, 335): atlas-mind, atlas-strategy, creativity-engine, mental-models, planning-execution, prompt-craft, strategy-finance, thinking-core
-- **الوكلاء والتوجيه الذكي** (`agents`, 248): agent-orchestration, runnable-tools, self-discovery
-- **البرمجة وبناء التطبيقات** (`software`, 578): app-feature-transfer, apps-artifacts, atlas-build, atlas-code, code-engineering, ui-product-device
-- **الرسم والأشكال والتصميم** (`drawing`, 300): brand-logo-identity, diagrams-explainers-code, hand-drawn-draw-on, pixel-retro-stylized, shapes-morph-geometry
-- **الصور والتحرير والتوليد** (`images`, 319): ai-generation, atlas-media, color-palette-grading, media-image-audio, photo-video-footage
-- **الثري دي والمحاكاة والرندر** (`3d`, 755): 3d-spatial, engines-render-pipeline, light-glow-bloom, particles-fluids-physics, texture-material
-- **الموشن والمونتاج والسينما** (`motion`, 1,228): camera-composition-layout, characters-rigs, easing-timing-rhythm, formats-platforms, story-direction-ideas, transitions-cuts, video-download
+- **البحث والمعرفة** (`research`, 60): atlas-research, web-research, knowledge-graph
+- **التفكير والتخطيط والاستراتيجية** (`thinking`, 359): atlas-mind, atlas-strategy, creativity-engine, mental-models, planning-execution, prompt-craft, strategy-finance, thinking-core
+- **الوكلاء والتوجيه الذكي** (`agents`, 265): agent-orchestration, runnable-tools, self-discovery
+- **البرمجة وبناء التطبيقات** (`software`, 630): app-feature-transfer, apps-artifacts, atlas-build, atlas-code, code-engineering, ui-product-device
+- **الرسم والأشكال والتصميم** (`drawing`, 306): brand-logo-identity, diagrams-explainers-code, hand-drawn-draw-on, pixel-retro-stylized, shapes-morph-geometry
+- **الصور والتحرير والتوليد** (`images`, 320): ai-generation, atlas-media, color-palette-grading, media-image-audio, photo-video-footage
+- **الثري دي والمحاكاة والرندر** (`3d`, 758): 3d-spatial, engines-render-pipeline, light-glow-bloom, particles-fluids-physics, texture-material
+- **الموشن والمونتاج والسينما** (`motion`, 1,233): camera-composition-layout, characters-rigs, easing-timing-rhythm, formats-platforms, story-direction-ideas, transitions-cuts, video-download
 - **الصوت والموسيقى والتعليق** (`audio`, 422): audio-sync-captions, music-beat-sound, voice-tts
 - **الخطوط والنصوص العربية واللاتينية** (`type`, 215): arabic-language, typography-arabic, typography-latin
-- **البيانات والرسوم والمواقع** (`data`, 258): atlas-data, charts-data-infographic, data-analysis, maps-geo
-- **المستندات والكتابة** (`documents`, 138): atlas-craft, atlas-docs, documents-office, writing-humanizer
+- **البيانات والرسوم والمواقع** (`data`, 262): atlas-data, charts-data-infographic, data-analysis, maps-geo
+- **المستندات والكتابة** (`documents`, 143): atlas-craft, atlas-docs, documents-office, writing-humanizer
 - **الاختبارات والجودة والأمان** (`quality`, 469): api-testing, qa-verification, security-safety, verification-evals
 - **التحليل العكسي وفحص البرامج** (`reverse`, 258): software-investigation
 - **قدرات مساندة غير مصنفة** (`misc`, 27): other

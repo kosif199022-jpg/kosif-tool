@@ -22,14 +22,14 @@
 
 | الحالة | العدد | المعنى |
 |---|---:|---|
-| `proven` | 111 | ✅ proven: a proof exists in the catalog; still check its requirements here before calling it ready |
+| `proven` | 115 | ✅ proven: a proof exists in the catalog; still check its requirements here before calling it ready |
 | `ready` | 17 | 🟢 ready: runnable without setup according to the catalog |
-| `documented` | 395 | 📄 documented: a described method; needs building or wiring before it runs |
+| `documented` | 441 | 📄 documented: a described method; needs building or wiring before it runs |
 | `seen` | 16 | 👁 seen: observed in a reference or demo, not executed here |
 | `install` | 32 | 📦 install: needs a package, binary or model first |
 | `key` | 7 | 🔑 key: needs an account, key or paid service (ask before any spend) |
 | `idea` | 2 | 💡 idea: not built |
-| **المجموع** | **580** | |
+| **المجموع** | **630** | |
 
 ## الأدوات القابلة للتشغيل / runnable tools
 
@@ -44,7 +44,8 @@
 | `caption-lines` | سطور الترجمة: من توقيت الكلمات إلى ترجمة مقروءة | `python3 scripts/caption_lines.py group words.json -o captions.srt --rlm` | tested-here |
 | `installer-triage` | فرز المثبّتات | `python3 scripts/installer_triage.py scan ./setup.exe` | tested-here |
 | `kosif-remote-commander` | خادم KOSIF Remote Commander | `python3 scripts/kosif_remote_superpowers.py doctor` | tested-here |
-| `look-pipeline` | خط اللوك: تلوين واحد لـ ffmpeg وSVG وGLSL | `python3 scripts/look_pipeline.py presets` | tested-here · `lesson-integrity` · `python3 scripts/lesson_integrity.py values --registry values.json` |
+| `lesson-integrity` | فاحص أرقام الدروس والشروح | `python3 scripts/lesson_integrity.py values --registry values.json` | tested-here |
+| `look-pipeline` | خط اللوك: تلوين واحد لـ ffmpeg وSVG وGLSL | `python3 scripts/look_pipeline.py presets` | tested-here |
 | `mosamem-rea-fusion` | تكامل مصمم وREA: فحص صور وتوليف مهارات آمن | `python3 scripts/mosamem_rea_fusion.py doctor` | tested-here |
 | `motion-kit-bridge` | جسر توقيتات Motion Starter Kit | `python3 scripts/motion_kit_bridge.py styles` | tested-here |
 | `motion-stack` | مولّد مشاريع بداية لمحركات الحركة | `python3 scripts/motion_stack.py list` | tested-here |
@@ -63,9 +64,9 @@
 | العائلة | القدرات | الفصل |
 |---|---:|---|
 | `app-feature-transfer` | 155 | [app-feature-transfer.md](../powers/app-feature-transfer.md) |
-| `apps-artifacts` | 23 | [apps-artifacts.md](../powers/apps-artifacts.md) |
+| `apps-artifacts` | 27 | [apps-artifacts.md](../powers/apps-artifacts.md) |
 | `atlas-build` | 52 | [atlas-build.md](../powers/atlas-build.md) |
-| `atlas-code` | 247 | [atlas-code.md](../powers/atlas-code.md) |
+| `atlas-code` | 277 | [atlas-code.md](../powers/atlas-code.md) |
 | `code-engineering` | 26 | [code-engineering.md](../powers/code-engineering.md) |
 | `ui-product-device` | 93 | [ui-product-device.md](../powers/ui-product-device.md) |
 
